@@ -39,614 +39,30770 @@ namespace ra2 { namespace game { int FootClass::GetCurrentSpeed() const { return
 // 0x0 (lnk)
 namespace ra2 { namespace game { void FootClass::SetSpeedPercentage(double) { } } }
 // 0x401170
-namespace ra2 { namespace game { int ObjectClass::ClearFlags2() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ClearFlags2() {
+// [IDA decompile]
+int __thiscall ObjectClass::ClearFlags2(_DWORD *this)
+{
+  *this &= ~2u;
+  *(this + 20) &= ~2u;
+  *(this + 10) &= ~2u;
+  return -3;
+}
+
+/* ASM:
+ObjectClass__ClearFlags_2:
+mov     edx, [ecx]
+mov     eax, 0FFFFFFFDh
+and     edx, eax
+mov     [ecx], edx
+mov     edx, [ecx+50h]
+and     edx, eax
+mov     [ecx+50h], edx
+mov     edx, [ecx+28h]
+and     edx, eax
+mov     [ecx+28h], edx
+retn
+*/
+} } }
 // 0x402040
-namespace ra2 { namespace game { void* AudioController::Constructor() { return nullptr; } } }
+namespace ra2 { namespace game { void* AudioController::Constructor() {
+// [IDA decompile]
+int *__thiscall AudioController::Constructor(_DWORD *this)
+{
+  int *v2; // ebx
+
+  v2 = (int *)__2_YAPAXI_Z(448);
+  memset(v2, 0, 0x1C0u);
+  DListNode::InitEmpty(v2);
+  v2[42] = 0;
+  v2[41] = 0;
+  AudioMixer::Init(v2 + 54);
+  v2[87] = (int)AudioController::AdvanceQueue;
+  v2[88] = (int)AudioController::UpdatePlayback;
+  v2[89] = (int)AudioController::CleanupStream;
+  v2[44] = 0;
+  v2[45] = 0;
+  v2[46] = 0;
+  v2[47] = 0;
+  v2[48] = 0;
+  v2[3] = 1;
+  v2[42] = 0;
+  v2[41] = 0;
+  v2[40] = 0;
+  v2[37] = dword_87DE30;
+  v2[36] = 0;
+  v2[38] = 0;
+  v2[39] = 0;
+  AudioMixer::Init(v2 + 4);
+  v2[90] = 0;
+  v2[43] = (int)this;
+  v2[53] = *(this + 116);
+  qmemcpy(v2 + 95, this + 17, 0x20u);
+  v2[103] = 0;
+  v2[104] = 0;
+  if ( !(*(int (__thiscall **)(int *))(*(this + 116) + 4))(v2) )
+    return v2;
+  if ( v2 )
+  {
+    (*(void (__thiscall **)(int *))(v2[53] + 8))(v2);
+    __3_YAXPAX_Z(v2);
+  }
+  return 0;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+push    1C0h            ; Size
+mov     [esp+18h+var_4], esi
+call    ??2_YAPAXI_Z
+mov     ebx, eax
+mov     ecx, 70h ; 'p'
+xor     eax, eax
+mov     edi, ebx
+rep stosd
+add     esp, 4
+mov     ecx, ebx
+call    DListNode__InitEmpty
+xor     ebp, ebp
+mov     [ebx+0A8h], ebp
+mov     [ebx+0A4h], ebp
+lea     ecx, [ebx+0D8h]
+call    AudioMixer__Init
+mov     dword ptr [ebx+15Ch], offset AudioController__AdvanceQueue
+mov     dword ptr [ebx+160h], offset AudioController__UpdatePlayback
+mov     dword ptr [ebx+164h], offset AudioController__CleanupStream
+mov     [ebx+0B0h], ebp
+mov     [ebx+0B4h], ebp
+mov     [ebx+0B8h], ebp
+mov     [ebx+0BCh], ebp
+mov     [ebx+0C0h], ebp
+mov     dword ptr [ebx+0Ch], 1
+mov     [ebx+0A8h], ebp
+mov     [ebx+0A4h], ebp
+mov     [ebx+0A0h], ebp
+mov     eax, dword_87DE30
+lea     ecx, [ebx+10h]
+mov     [ebx+94h], eax
+mov     [ebx+90h], ebp
+mov     [ebx+98h], ebp
+mov     [ebx+9Ch], ebp
+call    AudioMixer__Init
+mov     edx, [esp+14h+var_4]
+mov     [ebx+168h], ebp
+mov     [ebx+0ACh], esi
+mov     ecx, [esi+1D0h]
+mov     [ebx+0D4h], ecx
+add     esi, 44h ; 'D'
+lea     edi, [ebx+17Ch]
+mov     ecx, 8
+rep movsd
+mov     [ebx+19Ch], ebp
+mov     [ebx+1A0h], ebp
+mov     eax, [edx+1D0h]
+mov     ecx, ebx
+call    dword ptr [eax+4]
+test    eax, eax
+jz      short loc_402166
+cmp     ebx, ebp
+jz      short loc_40215E
+mov     edx, [ebx+0D4h]
+mov     ecx, ebx
+call    dword ptr [edx+8]
+push    ebx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_40215E:                             ; CODE XREF: AudioController__Constructor+108↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_402166:                             ; CODE XREF: AudioController__Constructor+104↑j
+pop     edi
+pop     esi
+mov     eax, ebx
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
+} } }
 // 0x402220
-namespace ra2 { namespace game { int ObjectClass::Cleanup() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Cleanup() {
+// [IDA decompile]
+int __thiscall sub_402220(int *this)
+{
+  int v2; // ebp
+  int *v3; // edi
+  _DWORD *v4; // edx
+  _DWORD *v5; // edx
+  _DWORD *v6; // edx
+  _DWORD *v7; // edx
+  int result; // eax
+  _DWORD *v9; // edx
+
+  v2 = *(this + 43);
+  v3 = this + 54;
+  AudioMixer::Init(this + 54);
+  EndFrameAudioMixer(v3, this + 4);
+  ObjectClass::ClearFlags2(this + 4);
+  v4 = (_DWORD *)*(this + 36);
+  if ( v4 )
+  {
+    EndFrameAudioMixer(v3, v4);
+    ObjectClass::ClearFlags2((_DWORD *)*(this + 36));
+  }
+  v5 = (_DWORD *)*(this + 37);
+  if ( v5 )
+    EndFrameAudioMixer(v3, v5);
+  v6 = (_DWORD *)*(this + 38);
+  if ( v6 )
+    EndFrameAudioMixer(v3, v6);
+  v7 = (_DWORD *)*(this + 39);
+  if ( v7 )
+    EndFrameAudioMixer(v3, v7);
+  result = EndFrameAudioMixer(v3, (_DWORD *)(v2 + 104));
+  v9 = *(_DWORD **)(v2 + 232);
+  if ( v9 )
+    return EndFrameAudioMixer(v3, v9);
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     ebp, [esi+0ACh]
+lea     edi, [esi+0D8h]
+mov     ecx, edi
+call    AudioMixer__Init
+lea     ebx, [esi+10h]
+mov     ecx, edi
+mov     edx, ebx
+call    EndFrameAudioMixer
+mov     ecx, ebx
+call    ObjectClass__ClearFlags2
+mov     edx, [esi+90h]
+test    edx, edx
+jz      short loc_402268
+mov     ecx, edi
+call    EndFrameAudioMixer
+mov     ecx, [esi+90h]
+call    ObjectClass__ClearFlags2
+
+loc_402268:                             ; CODE XREF: ObjectClass__Cleanup+34↑j
+mov     edx, [esi+94h]
+test    edx, edx
+jz      short loc_402279
+mov     ecx, edi
+call    EndFrameAudioMixer
+
+loc_402279:                             ; CODE XREF: ObjectClass__Cleanup+50↑j
+mov     edx, [esi+98h]
+test    edx, edx
+jz      short loc_40228A
+mov     ecx, edi
+call    EndFrameAudioMixer
+
+loc_40228A:                             ; CODE XREF: ObjectClass__Cleanup+61↑j
+mov     edx, [esi+9Ch]
+test    edx, edx
+jz      short loc_40229B
+mov     ecx, edi
+call    EndFrameAudioMixer
+
+loc_40229B:                             ; CODE XREF: ObjectClass__Cleanup+72↑j
+lea     edx, [ebp+68h]
+mov     ecx, edi
+call    EndFrameAudioMixer
+mov     edx, [ebp+0E8h]
+test    edx, edx
+jz      short loc_4022B6
+mov     ecx, edi
+call    EndFrameAudioMixer
+
+loc_4022B6:                             ; CODE XREF: ObjectClass__Cleanup+8D↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
+} } }
 // 0x4022C0
-namespace ra2 { namespace game { int AudioController::AdvanceQueue() { return 0; } } }
+namespace ra2 { namespace game { int AudioController::AdvanceQueue() {
+// [IDA decompile]
+int __thiscall sub_4022C0(_DWORD *this)
+{
+  int (*v2)(void); // eax
+  int result; // eax
+  int *v4; // ecx
+  int Next; // eax
+  int v6; // eax
+
+  v2 = (int (*)(void))*(this + 44);
+  if ( v2 )
+  {
+    result = v2();
+    if ( result )
+    {
+      *(this + 93) = 0;
+      *(this + 94) = 0;
+      *(this + 92) = 0;
+      return result;
+    }
+  }
+  else
+  {
+    v4 = (int *)*(this + 91);
+    if ( v4 )
+    {
+      Next = Queue::GetNext(v4);
+      *(this + 91) = Next;
+      if ( Next )
+      {
+        *(this + 92) = *(_DWORD *)(Next + 12);
+        v6 = *(_DWORD *)(Next + 16);
+        *(this + 93) = v6;
+        *(this + 94) = v6;
+        return 0;
+      }
+    }
+    *(this + 93) = 0;
+  }
+  return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+xor     edi, edi
+mov     eax, [esi+0B0h]
+cmp     eax, edi
+jz      short loc_4022EB
+call    eax
+cmp     eax, edi
+jz      short loc_402327
+mov     [esi+174h], edi
+mov     [esi+178h], edi
+mov     [esi+170h], edi
+pop     edi
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4022EB:                             ; CODE XREF: AudioController__AdvanceQueue+E↑j
+mov     ecx, [esi+16Ch]
+cmp     ecx, edi
+jz      short loc_402321
+call    Queue__GetNext
+cmp     eax, edi
+mov     [esi+16Ch], eax
+jz      short loc_402321
+mov     ecx, [eax+0Ch]
+pop     edi
+mov     [esi+170h], ecx
+mov     eax, [eax+10h]
+mov     [esi+174h], eax
+mov     [esi+178h], eax
+xor     eax, eax
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_402321:                             ; CODE XREF: AudioController__AdvanceQueue+33↑j
+; AudioController__AdvanceQueue+42↑j
+mov     [esi+174h], edi
+
+loc_402327:                             ; CODE XREF: AudioController__AdvanceQueue+14↑j
+pop     edi
+xor     eax, eax
+pop     esi
+retn
+*/
+} } }
 // 0x402330
-namespace ra2 { namespace game { int AudioController::UpdatePlayback() { return 0; } } }
+namespace ra2 { namespace game { int AudioController::UpdatePlayback() {
+// [IDA decompile]
+int __thiscall AudioController::UpdatePlayback(int this)
+{
+  _DWORD *v2; // edi
+  int v3; // eax
+  int v4; // eax
+  _DWORD *v5; // eax
+  int v6; // eax
+  void (__thiscall *v7)(int); // eax
+
+  if ( *(_DWORD *)(this + 168) )
+  {
+    if ( *(_DWORD *)(this + 168) != -1 )
+      --*(_DWORD *)(this + 168);
+    v2 = *(_DWORD **)(this + 360);
+    if ( v2 )
+    {
+      v3 = AudioController::GetOffset(*(int **)(this + 360));
+      *(_DWORD *)(this + 364) = v3;
+      if ( v3 )
+      {
+        *(_DWORD *)(this + 368) = *(_DWORD *)(v3 + 12);
+        v4 = *(_DWORD *)(v3 + 16);
+        *(_DWORD *)(this + 372) = v4;
+        *(_DWORD *)(this + 376) = v4;
+        *v2 = 0;
+      }
+      else
+      {
+        v5 = *(_DWORD **)(this + 360);
+        *(_DWORD *)(this + 368) = *v5;
+        v6 = v5[1];
+        *(_DWORD *)(this + 372) = v6;
+        *(_DWORD *)(this + 376) = v6;
+      }
+    }
+  }
+  else
+  {
+    *(_DWORD *)(this + 360) = 0;
+  }
+  v7 = *(void (__thiscall **)(int))(this + 180);
+  if ( v7 )
+    v7(this);
+  if ( *(_DWORD *)(this + 360) )
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 212) + 36))(this);
+  return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+0A8h]
+test    eax, eax
+jz      short loc_4023B0
+mov     eax, [esi+0A8h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_402356
+mov     eax, [esi+0A8h]
+dec     eax
+mov     [esi+0A8h], eax
+
+loc_402356:                             ; CODE XREF: AudioController__UpdatePlayback+17↑j
+mov     edi, [esi+168h]
+test    edi, edi
+jz      short loc_4023BA
+mov     ecx, edi
+call    AudioController__GetOffset
+test    eax, eax
+mov     [esi+16Ch], eax
+jz      short loc_402391
+mov     ecx, [eax+0Ch]
+mov     [esi+170h], ecx
+mov     eax, [eax+10h]
+mov     [esi+174h], eax
+mov     [esi+178h], eax
+mov     dword ptr [edi], 0
+jmp     short loc_4023BA
+; ---------------------------------------------------------------------------
+
+loc_402391:                             ; CODE XREF: AudioController__UpdatePlayback+3F↑j
+mov     eax, [esi+168h]
+mov     edx, [eax]
+mov     [esi+170h], edx
+mov     eax, [eax+4]
+mov     [esi+174h], eax
+mov     [esi+178h], eax
+jmp     short loc_4023BA
+; ---------------------------------------------------------------------------
+
+loc_4023B0:                             ; CODE XREF: AudioController__UpdatePlayback+C↑j
+mov     dword ptr [esi+168h], 0
+
+loc_4023BA:                             ; CODE XREF: AudioController__UpdatePlayback+2E↑j
+; AudioController__UpdatePlayback+5F↑j ...
+mov     eax, [esi+0B4h]
+test    eax, eax
+jz      short loc_4023C8
+mov     ecx, esi
+call    eax
+
+loc_4023C8:                             ; CODE XREF: AudioController__UpdatePlayback+92↑j
+mov     eax, [esi+168h]
+test    eax, eax
+jz      short loc_4023DD
+mov     eax, [esi+0D4h]
+mov     ecx, esi
+call    dword ptr [eax+24h]
+
+loc_4023DD:                             ; CODE XREF: AudioController__UpdatePlayback+A0↑j
+pop     edi
+xor     eax, eax
+pop     esi
+retn
+*/
+} } }
 // 0x4023F0
-namespace ra2 { namespace game { int AudioController::CleanupStream() { return 0; } } }
+namespace ra2 { namespace game { int AudioController::CleanupStream() {
+// [IDA decompile]
+int __thiscall sub_4023F0(int *this)
+{
+  int v2; // eax
+  int (__thiscall *v3)(int *); // eax
+
+  *(this + 90) = 0;
+  v2 = *(this + 41);
+  LOBYTE(v2) = v2 & 0xFA;
+  *(this + 41) = v2;
+  *(this + 42) = 0;
+  AudioMixer::Init(this + 4);
+  v3 = (int (__thiscall *)(int *))*(this + 46);
+  if ( v3 )
+    return v3(this);
+  else
+    return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi+168h], 0
+mov     eax, [esi+0A4h]
+and     al, 0FAh
+mov     [esi+0A4h], eax
+mov     dword ptr [esi+0A8h], 0
+lea     ecx, [esi+10h]
+call    AudioMixer__Init
+mov     eax, [esi+0B8h]
+test    eax, eax
+jz      short loc_40242C
+mov     ecx, esi
+pop     esi
+jmp     eax
+; ---------------------------------------------------------------------------
+
+loc_40242C:                             ; CODE XREF: AudioController__CleanupStream+35↑j
+xor     eax, eax
+pop     esi
+retn
+*/
+} } }
 // 0x405BE0
-namespace ra2 { namespace game { int AudioController::Init() { return 0; } } }
+namespace ra2 { namespace game { int AudioController::Init() {
+// [IDA decompile]
+int __thiscall sub_405BE0(_DWORD *this)
+{
+  *(this + 3) = &unk_87E294;
+  *this = 0;
+  *(this + 1) = 0;
+  *(this + 2) = 0;
+  return 0;
+}
+
+/* ASM:
+xor     eax, eax
+mov     dword ptr [ecx+0Ch], offset unk_87E294
+mov     [ecx], eax
+mov     [ecx+4], eax
+mov     [ecx+8], eax
+retn
+*/
+} } }
 // 0x408520
-namespace ra2 { namespace game { int AudioController::GetOffset() { return 0; } } }
+namespace ra2 { namespace game { int AudioController::GetOffset() {
+// [IDA decompile]
+int __thiscall sub_408520(int *this)
+{
+  return Queue::GetNext(this + 2);
+}
+
+/* ASM:
+add     ecx, 8          ; TODO: classify (grp=blit, sz=0x8)
+jmp     Queue__GetNext
+*/
+} } }
 // 0x40DD20
 namespace ra2 { namespace game { void* AbstractClass::IsTechno() { return nullptr; } } }
 // 0x40DD70
 namespace ra2 { namespace game { void* AbstractClass::IsTechnoType() { return nullptr; } } }
 // 0x410170
-namespace ra2 { namespace game { void* AbstractClass::Constructor() { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::Constructor() {
+// [IDA decompile]
+#373 *__thiscall AbstractClass_Constructor(#373 *this)
+{
+  #373 *result; // eax
+  char v2; // cl
+
+  result = this;
+  *((_DWORD *)this + 2) = &INoticeSink::`vftable';
+  *((_DWORD *)this + 3) = &INoticeSource::`vftable';
+  *((_DWORD *)this + 6) = 0;
+  *((_DWORD *)this + 7) = 0;
+  *((_BYTE *)this + 32) = 0;
+  v2 = *((_BYTE *)this + 20) & 0xF8;
+  *((_DWORD *)result + 4) = -1;
+  *(_DWORD *)result = &AbstractClass::`vftable';
+  *((_DWORD *)result + 1) = &AbstractClass::`vftable';
+  *((_DWORD *)result + 2) = &AbstractClass::`vftable';
+  *((_DWORD *)result + 3) = &AbstractClass::`vftable';
+  *((_BYTE *)result + 20) = v2;
+  return result;
+}
+
+/* ASM:
+mov     eax, ecx
+xor     ecx, ecx
+mov     dword ptr [eax+8], offset ??_7INoticeSink@@6B@ ; const INoticeSink::`vftable'
+mov     dword ptr [eax+0Ch], offset ??_7INoticeSource@@6B@ ; const INoticeSource::`vftable'
+
+AbstractClass__sub_410182:
+mov     [eax+18h], ecx
+mov     [eax+1Ch], ecx
+mov     [eax+20h], cl
+mov     cl, [eax+14h]
+and     cl, 0F8h
+mov     dword ptr [eax+10h], 0FFFFFFFFh
+mov     dword ptr [eax], offset ??_7AbstractClass@@6B@ ; const AbstractClass::`vftable'
+mov     dword ptr [eax+4], offset ??_7AbstractClass@@6B@_0 ; const AbstractClass::`vftable'
+mov     dword ptr [eax+8], offset ??_7AbstractClass@@6B@_1 ; const AbstractClass::`vftable'
+mov     dword ptr [eax+0Ch], offset ??_7AbstractClass@@6B@_2 ; const AbstractClass::`vftable'
+mov     [eax+14h], cl
+retn
+*/
+} } }
 // 0x4101C0
-namespace ra2 { namespace game { void* AbstractClass::InitVtables(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::InitVtables(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass_InitVtables(_DWORD *this, int a2)
+{
+  *(this + 2) = &INoticeSink::`vftable';
+  *(this + 3) = &INoticeSource::`vftable';
+  *this = &AbstractClass::`vftable';
+  *(this + 1) = &AbstractClass::`vftable';
+  *(this + 2) = &AbstractClass::`vftable';
+  *(this + 3) = &AbstractClass::`vftable';
+  return this;
+}
+
+/* ASM:
+mov     eax, ecx
+mov     dword ptr [eax+8], offset ??_7INoticeSink@@6B@ ; const INoticeSink::`vftable'
+mov     dword ptr [eax+0Ch], offset ??_7INoticeSource@@6B@ ; const INoticeSource::`vftable'
+mov     dword ptr [eax], offset ??_7AbstractClass@@6B@ ; const AbstractClass::`vftable'
+mov     dword ptr [eax+4], offset ??_7AbstractClass@@6B@_0 ; const AbstractClass::`vftable'
+mov     dword ptr [eax+8], offset ??_7AbstractClass@@6B@_1 ; const AbstractClass::`vftable'
+mov     dword ptr [eax+0Ch], offset ??_7AbstractClass@@6B@_2 ; const AbstractClass::`vftable'
+retn    4
+*/
+} } }
 // 0x410300
-namespace ra2 { namespace game { int AbstractClass::COMStub_AddRef() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_AddRef() {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt1(#374 *this)
+{
+  return 1;
+}
+
+/* ASM:
+mov     eax, 1
+retn    4
+*/
+} } }
 // 0x410310
-namespace ra2 { namespace game { int AbstractClass::COMStub_Release() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_Release() {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt2(#374 *this)
+{
+  return 1;
+}
+
+/* ASM:
+mov     eax, 1
+retn    4
+*/
+} } }
 // 0x4103E0
-namespace ra2 { namespace game { int ObjectClass::GetSizeMax() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetSizeMax() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetSizeMax(#374 *this)
+{
+  int v2; // [esp+8h] [ebp+4h]
+  _DWORD *v3; // [esp+Ch] [ebp+8h]
+
+  if ( !v3 )
+    return -2147467261;
+  *v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 48))(v2) + 4;
+  v3[1] = 0;
+  return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, [esp+4+arg_4]
+test    esi, esi
+jnz     short loc_4103F2
+mov     eax, 80004003h
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4103F2:                             ; CODE XREF: ObjectClass__GetSizeMax+7↑j
+mov     ecx, [esp+4+arg_0]
+mov     eax, [ecx]
+call    dword ptr [eax+30h]
+add     eax, 4
+mov     [esi], eax
+mov     dword ptr [esi+4], 0
+xor     eax, eax
+pop     esi
+retn    8
+*/
+} } }
 // 0x410410
-namespace ra2 { namespace game { int AbstractClass::ProcessPower() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::ProcessPower() {
+// [IDA decompile]
+int __thiscall AbstractClass::ProcessPower(#378 *this)
+{
+  int v2; // ecx
+  int *v4; // [esp+Ch] [ebp+4h]
+
+  Power::TimerProcess(*((_DWORD *)this + 4));
+  LOBYTE(v2) = *((_BYTE *)this + 32);
+  return Power::FlagProcess(v4, v2);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+8+arg_0]
+
+AbstractClass__sub_410418:
+mov     eax, [esi+10h]
+mov     ecx, edi
+push    eax
+call    Power__TimerProcess
+mov     cl, [esi+20h]
+push    ecx
+mov     ecx, edi
+call    Power__FlagProcess
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x410450
-namespace ra2 { namespace game { int AbstractClass::IsClean() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::IsClean() {
+// [IDA decompile]
+int __thiscall AbstractClass::IsClean(#374 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+
+  return *(_BYTE *)(v2 + 32) == 0;
+}
+
+/* ASM:
+mov     ecx, [esp+arg_0]
+xor     eax, eax
+mov     dl, [ecx+20h]
+test    dl, dl
+setz    al
+retn    4
+*/
+} } }
 // 0x4104F0
-namespace ra2 { namespace game { int AbstractClass::GetCoordsEx() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::GetCoordsEx() {
+// [IDA decompile]
+int __thiscall AbstractClass::GetCoordsEx(#374 *this)
+{
+  _DWORD *v1; // ecx
+  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  _DWORD *v4; // [esp+14h] [ebp+4h]
+
+  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3);
+  *v4 = *v1;
+  v4[1] = v1[1];
+  v4[2] = v1[2];
+  return (int)v4;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [esp+10h+arg_0]
+mov     edx, eax
+mov     esi, [ecx]
+
+AbstractClass__sub_410508:
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+add     esp, 0Ch
+retn    8
+*/
+} } }
 // 0x4105A0
-namespace ra2 { namespace game { int AbstractClass::COMStub_8() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_8() {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt08(#373 *this)
+{
+  char v3; // [esp+8h] [ebp+4h]
+
+  *(_DWORD *)this = &AbstractClass::`vftable';
+  *((_DWORD *)this + 1) = &AbstractClass::`vftable';
+  *((_DWORD *)this + 2) = &AbstractClass::`vftable';
+  *((_DWORD *)this + 3) = &AbstractClass::`vftable';
+  if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+  return (int)this;
+}
+
+/* ASM:
+mov     al, [esp+arg_0]
+push    esi
+mov     esi, ecx
+test    al, 1
+mov     dword ptr [esi], offset ??_7AbstractClass@@6B@ ; const AbstractClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7AbstractClass@@6B@_0 ; const AbstractClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7AbstractClass@@6B@_1 ; const AbstractClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7AbstractClass@@6B@_2 ; const AbstractClass::`vftable'
+jz      short loc_4105CF
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4105CF:                             ; CODE XREF: AbstractClass__COMStub_8+24↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x414BB0
-namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() {
+// [IDA decompile]
+char __thiscall TechnoClass::SmokeUpdate(char *this)
+{
+  int v2; // ecx
+  void **v3; // eax
+  int v4; // eax
+  int v5; // ecx
+  _BYTE *v6; // eax
+  _DWORD *v7; // ecx
+  int v8; // eax
+  int v9; // ebp
+  int v10; // ebx
+  int v11; // eax
+  int v12; // edi
+  int v13; // edx
+  void **v14; // eax
+  int v15; // ecx
+  void **v16; // eax
+  int v17; // eax
+  __int16 *v18; // eax
+  __int16 *v19; // eax
+  int v20; // eax
+  int v21; // edi
+  void **v22; // edi
+  int Index; // eax
+  int v24; // ecx
+  int v25; // edx
+  int DB; // eax
+  int v28; // [esp+40h] [ebp-28h] BYREF
+  int v29; // [esp+44h] [ebp-24h] BYREF
+  int v30; // [esp+48h] [ebp-20h]
+  int v31; // [esp+4Ch] [ebp-1Ch]
+  int v32; // [esp+50h] [ebp-18h] BYREF
+  int v33; // [esp+54h] [ebp-14h]
+  int v34; // [esp+58h] [ebp-10h]
+  int v35[3]; // [esp+5Ch] [ebp-Ch] BYREF
+
+  switch ( *((_DWORD *)this + 43) )
+  {
+    case 1:
+    case 0x1B:
+    case 0x1E:
+    case 0x1F:
+      break;
+    default:
+      *(this + 1746) = 0;
+      break;
+  }
+  v2 = *((_DWORD *)this + 158);
+  if ( v2 )
+    (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 92))(v2);
+  if ( ((*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 468))(this)
+     || (*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 472))(this))
+    && !(dword_A8ED54[12] % 24) )
+  {
+    if ( *(_DWORD *)(MEMORY[0x87F7E8][7806] + 836) )
+    {
+      v3 = (void **)__2_YAPAXI_Z(456);
+      if ( v3 )
+      {
+        v29 = *((_DWORD *)this + 39);
+        v30 = *((_DWORD *)this + 40);
+        v31 = *((_DWORD *)this + 41);
+        AnimClass::ctor(v3, *(void **)(MEMORY[0x87F7E8][7806] + 836), &v29, 0, 1, (void *)0x600, 0, 0);
+      }
+    }
+  }
+  if ( !(*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 472))(this)
+    && (!(*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 468))(this) || !*(this + 636)) )
+  {
+    goto LABEL_70;
+  }
+  if ( !*((_DWORD *)this + 413) )
+    WinAPI::Wrapper(-2147467261);
+  (*(void (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 64))(*((_DWORD *)this + 413));
+  LOBYTE(v4) = *(this + 144);
+  if ( (_BYTE)v4 )
+  {
+LABEL_70:
+    if ( (*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 472))(this) && *((_DWORD *)this + 158)
+      || (*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 468))(this) )
+    {
+      if ( *((_DWORD *)this + 173) )
+        (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 968))(this, 0);
+      v4 = *((_DWORD *)this + 361);
+      if ( v4 )
+        LOBYTE(v4) = (*(char (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1);
+    }
+    else
+    {
+      v5 = *((_DWORD *)this + 173);
+      if ( v5 )
+      {
+        if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v5 + 84))(v5)
+          || (v6 = (_BYTE *)*((_DWORD *)this + 173)) != 0
+          && (v6[20] & 1) != 0
+          && !Object::IsAlliedWithObjectSimpleHouse(*((_DWORD **)this + 135), v6)
+          && (v7 = (_DWORD *)*((_DWORD *)this + 173), v7[136] == 2)
+          && !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v7 + 812))(v7, *((_DWORD *)this + 135)) )
+        {
+          (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 968))(this, 0);
+        }
+      }
+      FootClass::MovementAI((int)this);
+      LOBYTE(v4) = *(this + 144);
+      if ( (_BYTE)v4 )
+      {
+        if ( *(this + 973) )
+        {
+          v29 = *((_DWORD *)this + 39);
+          v32 = v29;
+          v8 = *(_DWORD *)this;
+          v30 = *((_DWORD *)this + 40);
+          v33 = v30;
+          v31 = *((_DWORD *)this + 41);
+          v34 = v31 - 5;
+          (*(void (__thiscall **)(char *, int *))(v8 + 436))(this, &v32);
+          if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this) < -400 )
+          {
+            (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 224))(this, 0);
+            LOBYTE(v4) = (*(char (__thiscall **)(char *))(*(_DWORD *)this + 248))(this);
+            return v4;
+          }
+          if ( (dword_A8ED54[12] & 3) == 0 )
+          {
+            v9 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), -170, 170);
+            v10 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), -170, 170);
+            v11 = (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this);
+            v12 = *((_DWORD *)this + 41);
+            v13 = v9 + *((_DWORD *)this + 40);
+            v29 = v10 + *((_DWORD *)this + 39);
+            v30 = v13;
+            v31 = v12 - v11;
+            v14 = (void **)__2_YAPAXI_Z(456);
+            if ( v14 )
+              AnimClass::ctor(v14, *(void **)(MEMORY[0x87F7E8][7806] + 148), &v29, 0, 1, (void *)0x600, 0, 0);
+          }
+        }
+        v35[0] = *((_DWORD *)this + 39);
+        v35[1] = *((_DWORD *)this + 40);
+        v15 = *((_DWORD *)this + 433);
+        v35[2] = *((_DWORD *)this + 41);
+        if ( *(_DWORD *)(v15 + 3584) )
+        {
+          if ( !(dword_A8ED54[12] % *(_DWORD *)(v15 + 3588)) )
+          {
+            v16 = (void **)__2_YAPAXI_Z(456);
+            if ( v16 )
+              AnimClass::ctor(v16, *(void **)(*((_DWORD *)this + 433) + 3584), v35, (void *)1, 1, (void *)0x600, 0, 0);
+          }
+        }
+        v17 = *((_DWORD *)this + 433);
+        if ( (*(_BYTE *)(v17 + 3595)
+           || *(_BYTE *)(v17 + 3596)
+           || (v18 = (__int16 *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)this + 440))(this, &v28),
+               LayerClass::IsWithinUsableArea(MEMORY[0x87F7E8], v18, 1))
+           || !(*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 1244))(this))
+          && ((v19 = (__int16 *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)this + 440))(this, &v28),
+               LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], v19))
+           || !(*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 1244))(this)) )
+        {
+          if ( *((int **)this + 361) == &dword_A8ED54[48063] )
+          {
+            (*(void (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1);
+            (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 968))(this, 0);
+            (*(void (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1);
+          }
+          if ( *((int **)this + 173) == &dword_A8ED54[48063] )
+          {
+            (*(void (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1);
+            (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 968))(this, 0);
+            (*(void (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1);
+          }
+          if ( (*(unsigned __int8 (__thiscall **)(char *))(*(_DWORD *)this + 512))(this) )
+            (*(void (__thiscall **)(char *))(*(_DWORD *)this + 492))(this);
+          if ( *(this + 1736) && *((_DWORD *)this + 43) != 1 )
+          {
+            v20 = *((_DWORD *)this + 191);
+            *(this + 1736) = 0;
+            *((_DWORD *)this + 191) = v20 - 1;
+          }
+          if ( BuildingClass::GetHealthRatio((int *)this) < *(double *)(MEMORY[0x87F7E8][7806] + 5896)
+            && (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this) > 0 )
+          {
+            v21 = *((_DWORD *)this + 27) != 0 ? 10 : 80;
+            if ( Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 99) < v21 )
+            {
+              v22 = (void **)__2_YAPAXI_Z(456);
+              if ( v22 )
+              {
+                v32 = *((_DWORD *)this + 39);
+                v33 = *((_DWORD *)this + 40);
+                v34 = *((_DWORD *)this + 41);
+                Index = AnimTypeClass::FindIndex(aSgrysmk1);
+                AnimClass::ctor(v22, *(void **)(MEMORY[0x87F7E8][53851] + 4 * Index), &v32, 0, 1, (void *)0x600, 0, 0);
+              }
+            }
+          }
+          v4 = *((_DWORD *)this + 70);
+          if ( v4 )
+          {
+            LOBYTE(v4) = *(_BYTE *)(*((_DWORD *)this + 433) + 3580);
+            if ( (_BYTE)v4 )
+            {
+              qmemcpy((void *)(CCINIClass::GetDB((_DWORD *)this + 69) + 904), this + 928, 0x18u);
+              qmemcpy((void *)(CCINIClass::GetDB((_DWORD *)this + 69) + 928), this + 928, 0x18u);
+              v24 = *((_DWORD *)this + 40);
+              v32 = *((_DWORD *)this + 39);
+              v25 = *((_DWORD *)this + 41);
+              v33 = v24;
+              v34 = v25;
+              DB = CCINIClass::GetDB((_DWORD *)this + 69);
+              LOBYTE(v4) = (*(char (__thiscall **)(int, int *))(*(_DWORD *)DB + 436))(DB, &v32);
+            }
+          }
+        }
+        else
+        {
+          LOBYTE(v4) = (*(char (__thiscall **)(char *))(*(_DWORD *)this + 248))(this);
+        }
+      }
+    }
+  }
+  return v4;
+}
+
+/* ASM:
+sub     esp, 30h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+0ACh]
+dec     eax             ; switch 31 cases
+cmp     eax, 1Eh
+ja      short def_414BCD ; jumptable 00414BCD default case, cases 2-26,28,29
+xor     ecx, ecx
+mov     cl, ds:byte_4151C0[eax]
+jmp     ds:jpt_414BCD[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+def_414BCD:                             ; CODE XREF: TechnoClass__SmokeUpdate+13↑j
+; TechnoClass__SmokeUpdate+1D↑j
+; DATA XREF: ...
+mov     byte ptr [esi+6D2h], 0 ; jumptable 00414BCD default case, cases 2-26,28,29
+
+loc_414BDB:                             ; CODE XREF: TechnoClass__SmokeUpdate+1D↑j
+; DATA XREF: .text:jpt_414BCD↓o
+mov     ecx, [esi+278h] ; jumptable 00414BCD cases 1,27,30,31
+test    ecx, ecx
+jz      short loc_414BEA
+mov     edx, [ecx]
+call    dword ptr [edx+5Ch]
+
+loc_414BEA:                             ; CODE XREF: TechnoClass__SmokeUpdate+33↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1D4h]
+test    al, al
+jnz     short loc_414C06
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1D8h]
+test    al, al
+jz      short loc_414C78
+
+loc_414C06:                             ; CODE XREF: TechnoClass__SmokeUpdate+46↑j
+mov     eax, dword_A8ED54+30h
+mov     ecx, 18h
+cdq
+idiv    ecx
+test    edx, edx
+jnz     short loc_414C78
+mov     edx, ds:8871E0h
+mov     eax, [edx+344h]
+test    eax, eax
+jz      short loc_414C78
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_414C78
+lea     ecx, [esi+9Ch]
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+mov     edx, [ecx]
+push    1               ; int
+mov     [esp+50h+var_24], edx
+push    0               ; int
+mov     edx, [ecx+4]
+mov     [esp+54h+var_20], edx
+lea     edx, [esp+54h+var_24]
+mov     ecx, [ecx+8]
+push    edx             ; int
+mov     [esp+58h+var_1C], ecx
+mov     ecx, ds:8871E0h
+mov     edx, [ecx+344h]
+mov     ecx, eax        ; void **
+push    edx             ; int
+call    AnimClass__ctor
+
+loc_414C78:                             ; CODE XREF: TechnoClass__SmokeUpdate+54↑j
+; TechnoClass__SmokeUpdate+65↑j ...
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1D8h]
+test    al, al
+jnz     short loc_414C9E
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1D4h]
+test    al, al
+jz      short loc_414CCC
+mov     al, [esi+27Ch]
+test    al, al
+jz      short loc_414CCC
+
+loc_414C9E:                             ; CODE XREF: TechnoClass__SmokeUpdate+D4↑j
+mov     eax, [esi+674h]
+test    eax, eax
+jnz     short loc_414CB2
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_414CB2:                             ; CODE XREF: TechnoClass__SmokeUpdate+F6↑j
+mov     eax, [esi+674h]
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+40h]
+mov     al, [esi+90h]
+test    al, al
+jz      loc_4151B0
+
+loc_414CCC:                             ; CODE XREF: TechnoClass__SmokeUpdate+E2↑j
+; TechnoClass__SmokeUpdate+EC↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1D8h]
+test    al, al
+jz      short loc_414CE4
+mov     eax, [esi+278h]
+test    eax, eax
+jnz     short loc_414CF2
+
+loc_414CE4:                             ; CODE XREF: TechnoClass__SmokeUpdate+128↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1D4h]
+test    al, al
+jz      short loc_414D2C
+
+loc_414CF2:                             ; CODE XREF: TechnoClass__SmokeUpdate+132↑j
+mov     eax, [esi+2B4h]
+test    eax, eax
+jz      short loc_414D08
+mov     edx, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+
+loc_414D08:                             ; CODE XREF: TechnoClass__SmokeUpdate+14A↑j
+mov     eax, [esi+5A4h]
+test    eax, eax
+jz      loc_4151B0
+mov     eax, [esi]
+push    1
+push    0
+mov     ecx, esi
+call    dword ptr [eax+480h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 30h
+retn
+; ---------------------------------------------------------------------------
+
+loc_414D2C:                             ; CODE XREF: TechnoClass__SmokeUpdate+140↑j
+mov     ecx, [esi+2B4h]
+test    ecx, ecx
+jz      short loc_414DA1
+mov     edx, [ecx]
+call    dword ptr [edx+54h]
+test    al, al
+jz      short loc_414D4D
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+jmp     short loc_414DA1
+; ---------------------------------------------------------------------------
+
+loc_414D4D:                             ; CODE XREF: TechnoClass__SmokeUpdate+18D↑j
+mov     eax, [esi+2B4h]
+test    eax, eax
+jz      short loc_414DA1
+mov     cl, [eax+14h]
+and     cl, 1
+mov     byte ptr [esp+40h+var_30+3], cl
+jz      short loc_414DA1
+mov     ecx, [esi+21Ch]
+push    eax
+call    Object__IsAlliedWithObjectSimpleHouse
+test    al, al
+jnz     short loc_414DA1
+mov     ecx, [esi+2B4h]
+cmp     dword ptr [ecx+220h], 2
+jnz     short loc_414DA1
+mov     eax, [esi+21Ch]
+mov     edx, [ecx]
+push    eax
+call    dword ptr [edx+32Ch]
+test    al, al
+jnz     short loc_414DA1
+mov     edx, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+
+loc_414DA1:                             ; CODE XREF: TechnoClass__SmokeUpdate+184↑j
+; TechnoClass__SmokeUpdate+19B↑j ...
+mov     ecx, esi
+call    FootClass__MovementAI
+mov     al, [esi+90h]
+test    al, al
+jz      loc_4151B0
+mov     al, [esi+3CDh]
+test    al, al
+jz      loc_414ED0
+lea     edi, [esi+9Ch]
+mov     edx, edi
+mov     eax, [edx]
+mov     [esp+40h+var_24], eax
+mov     [esp+40h+var_18], eax
+mov     ecx, [edx+4]
+mov     eax, [esi]
+mov     [esp+40h+var_20], ecx
+mov     [esp+40h+var_14], ecx
+mov     edx, [edx+8]
+lea     ecx, [esp+40h+var_18]
+mov     [esp+40h+var_1C], edx
+add     edx, 0FFFFFFFBh
+push    ecx
+mov     ecx, esi
+mov     [esp+44h+var_10], edx
+call    dword ptr [eax+1B4h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+cmp     eax, 0FFFFFE70h
+jge     short loc_414E2D
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+0E0h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0F8h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 30h
+retn
+; ---------------------------------------------------------------------------
+
+loc_414E2D:                             ; CODE XREF: TechnoClass__SmokeUpdate+25D↑j
+test    byte ptr dword_A8ED54+30h, 3
+jnz     loc_414ED0
+mov     eax, ds:0A8B230h
+push    0AAh
+push    0FFFFFF56h
+lea     ecx, [eax+218h]
+call    Random__Range
+mov     ecx, ds:0A8B230h
+push    0AAh
+push    0FFFFFF56h
+add     ecx, 218h
+mov     ebp, eax
+call    Random__Range
+mov     edx, [esi]
+mov     ecx, esi
+mov     ebx, eax
+call    dword ptr [edx+1C8h]
+mov     ecx, [edi]
+mov     edx, [edi+4]
+mov     edi, [edi+8]
+add     ecx, ebx
+neg     eax
+add     edx, ebp
+add     eax, edi
+push    1C8h            ; Size
+mov     [esp+44h+var_24], ecx
+mov     [esp+44h+var_20], edx
+mov     [esp+44h+var_1C], eax
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_414ED0
+mov     edx, ds:8871E0h
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+push    1               ; int
+lea     ecx, [esp+50h+var_24]
+push    0               ; int
+push    ecx             ; int
+mov     ecx, [edx+94h]
+push    ecx             ; int
+mov     ecx, eax        ; void **
+call    AnimClass__ctor
+
+loc_414ED0:                             ; CODE XREF: TechnoClass__SmokeUpdate+20E↑j
+; TechnoClass__SmokeUpdate+284↑j ...
+lea     ebx, [esi+9Ch]
+mov     edx, ebx
+mov     [esp+40h+var_2C], ebx
+mov     eax, [edx]
+mov     [esp+40h+var_C], eax
+mov     ecx, [edx+4]
+mov     [esp+40h+var_8], ecx
+mov     ecx, [esi+6C4h]
+mov     edx, [edx+8]
+mov     [esp+40h+var_4], edx
+mov     eax, [ecx+0E00h]
+test    eax, eax
+jz      short loc_414F47
+mov     eax, dword_A8ED54+30h
+cdq
+idiv    dword ptr [ecx+0E04h]
+test    edx, edx
+jnz     short loc_414F47
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_414F47
+mov     edx, [esi+6C4h]
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+push    1               ; int
+lea     ecx, [esp+50h+var_C]
+push    1               ; int
+push    ecx             ; int
+mov     ecx, [edx+0E00h]
+push    ecx             ; int
+mov     ecx, eax        ; void **
+call    AnimClass__ctor
+
+loc_414F47:                             ; CODE XREF: TechnoClass__SmokeUpdate+34E↑j
+; TechnoClass__SmokeUpdate+35E↑j ...
+mov     eax, [esi+6C4h]
+mov     cl, [eax+0E0Bh]
+test    cl, cl
+jnz     short loc_414FA1
+mov     cl, [eax+0E0Ch]
+test    cl, cl
+jnz     short loc_414FA1
+mov     edx, [esi]
+lea     eax, [esp+40h+var_28]
+push    1
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B8h]
+push    eax
+mov     ecx, 87F7E8h
+call    LayerClass__IsWithinUsableArea
+test    al, al
+jnz     short loc_414FA1
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4DCh]
+test    al, al
+jz      short loc_414FA1
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0F8h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 30h
+retn
+; ---------------------------------------------------------------------------
+
+loc_414FA1:                             ; CODE XREF: TechnoClass__SmokeUpdate+3A5↑j
+; TechnoClass__SmokeUpdate+3AF↑j ...
+mov     edx, [esi]
+lea     eax, [esp+40h+var_28]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B8h]
+push    eax
+mov     ecx, 87F7E8h
+call    LayerClass__CoordinatesLegal
+test    al, al
+jnz     short loc_414FDF
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4DCh]
+test    al, al
+jz      short loc_414FDF
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0F8h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 30h
+retn
+; ---------------------------------------------------------------------------
+
+loc_414FDF:                             ; CODE XREF: TechnoClass__SmokeUpdate+40D↑j
+; TechnoClass__SmokeUpdate+41B↑j
+mov     eax, [esi+5A4h]
+mov     edi, (offset dword_A8ED54+2EEFCh)
+cmp     eax, edi
+jnz     short loc_415016
+mov     edx, [esi]
+push    1
+push    0
+mov     ecx, esi
+call    dword ptr [edx+480h]
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+mov     edx, [esi]
+push    1
+push    0
+mov     ecx, esi
+call    dword ptr [edx+484h]
+
+loc_415016:                             ; CODE XREF: TechnoClass__SmokeUpdate+43C↑j
+cmp     [esi+2B4h], edi
+jnz     short loc_415046
+mov     eax, [esi]
+push    1
+push    0
+mov     ecx, esi
+call    dword ptr [eax+480h]
+mov     edx, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+mov     eax, [esi]
+push    1
+push    0
+mov     ecx, esi
+call    dword ptr [eax+484h]
+
+loc_415046:                             ; CODE XREF: TechnoClass__SmokeUpdate+46C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+200h]
+test    al, al
+jz      short loc_41505E
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1ECh]
+
+loc_41505E:                             ; CODE XREF: TechnoClass__SmokeUpdate+4A2↑j
+mov     al, [esi+6C8h]
+test    al, al
+jz      short loc_415085
+cmp     dword ptr [esi+0ACh], 1
+jz      short loc_415085
+mov     eax, [esi+2FCh]
+mov     byte ptr [esi+6C8h], 0
+dec     eax
+mov     [esi+2FCh], eax
+
+loc_415085:                             ; CODE XREF: TechnoClass__SmokeUpdate+4B6↑j
+; TechnoClass__SmokeUpdate+4BF↑j
+mov     ecx, esi
+call    BuildingClass__GetHealthRatio
+mov     ecx, ds:8871E0h
+fcomp   qword ptr [ecx+1708h]
+fnstsw  ax
+test    ah, 1
+jz      loc_41512C
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jle     short loc_41512C
+mov     edi, [esi+6Ch]
+mov     eax, ds:0A8B230h
+neg     edi
+sbb     edi, edi
+push    63h ; 'c'
+and     edi, 0FFFFFFBAh
+push    0
+lea     ecx, [eax+218h]
+add     edi, 50h ; 'P'
+call    Random__Range
+cmp     eax, edi
+jge     short loc_41512C
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+mov     edi, eax
+add     esp, 4
+test    edi, edi
+jz      short loc_41512C
+mov     ecx, [ebx]
+mov     [esp+40h+var_18], ecx
+mov     ecx, offset aSgrysmk1 ; "SGRYSMK1"
+mov     edx, [ebx+4]
+mov     [esp+40h+var_14], edx
+mov     eax, [ebx+8]
+mov     [esp+40h+var_10], eax
+call    AnimTypeClass__FindIndex
+mov     ecx, ds:8B4154h
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+lea     eax, [ecx+eax*4]
+push    1               ; int
+lea     edx, [esp+50h+var_18]
+push    0               ; int
+mov     eax, [eax]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi        ; void **
+call    AnimClass__ctor
+
+loc_41512C:                             ; CODE XREF: TechnoClass__SmokeUpdate+4ED↑j
+; TechnoClass__SmokeUpdate+4FF↑j ...
+mov     eax, [esi+118h]
+test    eax, eax
+jz      short loc_4151B0
+mov     ecx, [esi+6C4h]
+mov     al, [ecx+0DFCh]
+test    al, al
+jz      short loc_4151B0
+lea     ebx, [esi+114h]
+lea     ebp, [esi+3A0h]
+mov     ecx, ebx
+call    CCINIClass__GetDB
+mov     edi, eax
+mov     ecx, 6
+add     edi, 388h
+mov     esi, ebp
+rep movsd
+mov     ecx, ebx
+call    CCINIClass__GetDB
+mov     edi, eax
+mov     eax, [esp+40h+var_2C]
+add     edi, 3A0h
+mov     ecx, 6
+mov     esi, ebp
+rep movsd
+mov     edx, [eax]
+mov     ecx, [eax+4]
+mov     [esp+40h+var_18], edx
+mov     edx, [eax+8]
+mov     [esp+40h+var_14], ecx
+mov     ecx, ebx
+mov     [esp+40h+var_10], edx
+call    CCINIClass__GetDB
+mov     edx, [eax]
+lea     ecx, [esp+40h+var_18]
+push    ecx
+mov     ecx, eax
+call    dword ptr [edx+1B4h]
+
+loc_4151B0:                             ; CODE XREF: TechnoClass__SmokeUpdate+116↑j
+; TechnoClass__SmokeUpdate+160↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 30h
+retn
+*/
+} } }
 // 0x417C80
-namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
+// [IDA decompile]
+char __thiscall ObjectClass::vt_entry_140(_BYTE *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+{
+  return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5);
+}
+
+/* ASM:
+mov     eax, [esp+arg_C]
+mov     edx, [esp+arg_8]
+push    eax
+mov     eax, [esp+4+arg_4]
+push    edx
+mov     edx, [esp+8+arg_0]
+push    eax
+push    edx
+call    ObjectClass__SpawnInfantry
+retn    10h
+*/
+} } }
 // 0x41B5E0
-namespace ra2 { namespace game { bool MissionClass::vt_entry_200() { return false; } } }
+namespace ra2 { namespace game { bool MissionClass::vt_entry_200() {
+// [IDA decompile]
+bool __thiscall MissionClass::vt_entry_200(int this)
+{
+  int v1; // eax
+
+  v1 = *(_DWORD *)(this + 172);
+  return v1 != 6 && v1 != 21 && (!*(_BYTE *)(this + 1746) || v1 == 30) && *(_BYTE *)(this + 1748) != 0;
+}
+
+/* ASM:
+mov     eax, [ecx+0ACh]
+cmp     eax, 6
+jz      short loc_41B60B
+cmp     eax, 15h
+jz      short loc_41B60B
+mov     dl, [ecx+6D2h]
+test    dl, dl
+jz      short loc_41B5FF
+cmp     eax, 1Eh
+jnz     short loc_41B60B
+
+loc_41B5FF:                             ; CODE XREF: MissionClass__vt_entry_200+18↑j
+mov     al, [ecx+6D4h]
+test    al, al
+setnz   al
+retn
+; ---------------------------------------------------------------------------
+
+loc_41B60B:                             ; CODE XREF: MissionClass__vt_entry_200+9↑j
+; MissionClass__vt_entry_200+E↑j ...
+xor     al, al
+retn
+*/
+} } }
 // 0x41B9E0
-namespace ra2 { namespace game { int TechnoClass::updateROFTimer() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::updateROFTimer() {
+// [IDA decompile]
+char __thiscall TechnoClass::sub_41B9E0(_BYTE *this)
+{
+  return *(this + 1749);
+}
+
+/* ASM:
+mov     al, [ecx+6D5h]
+retn
+*/
+} } }
 // 0x41BDD0
-namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCoordsThunk1(#374 *this)
+{
+  _DWORD *v1; // ecx
+  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  _DWORD *v4; // [esp+14h] [ebp+4h]
+
+  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3);
+  *v4 = *v1;
+  v4[1] = v1[1];
+  v4[2] = v1[2];
+  return (int)v4;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [esp+10h+arg_0]
+mov     edx, eax
+mov     esi, [ecx]
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x41BE30
-namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk3() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk3() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCoordsThunk3(#374 *this)
+{
+  _DWORD *v1; // ecx
+  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  _DWORD *v4; // [esp+14h] [ebp+4h]
+
+  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3);
+  *v4 = *v1;
+  v4[1] = v1[1];
+  v4[2] = v1[2];
+  return (int)v4;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [esp+10h+arg_0]
+mov     edx, eax
+mov     esi, [ecx]
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+add     esp, 0Ch
+retn    8
+*/
+} } }
 // 0x41BEA0
-namespace ra2 { namespace game { int ObjectClass::GetCellCoords_Alt() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCellCoords_Alt() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCellCoords_Alt(#374 *this)
+{
+  int v2; // [esp+0h] [ebp-4h]
+  _DWORD *v3; // [esp+8h] [ebp+4h]
+
+  LOWORD(v2) = *((_DWORD *)this + 39) / 256;
+  HIWORD(v2) = *((_DWORD *)this + 40) / 256;
+  *v3 = v2;
+  return (int)v3;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [ecx+9Ch]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+4+var_4], ax
+mov     eax, [ecx+0A0h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+4+var_4+2], ax
+mov     eax, [esp+4+arg_0]
+mov     ecx, [esp+4+var_4]
+mov     [eax], ecx
+pop     ecx
+retn    4
+*/
+} } }
 // 0x41C490
-namespace ra2 { namespace game { void* AbstractClass::processCleanup(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::processCleanup(int a1) {
+// [IDA decompile]
+char *__thiscall sub_41C490(_DWORD *Block, char a2)
+{
+  int v3; // eax
+  char *v4; // ebp
+  int v5; // ecx
+  int v6; // eax
+  char *v7; // esi
+  int v8; // edi
+
+  if ( (a2 & 2) != 0 )
+  {
+    v3 = *(Block - 1);
+    v4 = (char *)(Block - 1);
+    v5 = 3 * v3;
+    v6 = v3 - 1;
+    v7 = (char *)(Block + v5);
+    if ( v6 >= 0 )
+    {
+      v8 = v6 + 1;
+      do
+      {
+        v7 -= 12;
+        nullsub_84(v7);
+        --v8;
+      }
+      while ( v8 );
+    }
+    if ( (a2 & 1) != 0 )
+      __3_YAXPAX_Z(v4);
+    return v4;
+  }
+  else
+  {
+    nullsub_84(Block);
+    if ( (a2 & 1) != 0 )
+      __3_YAXPAX_Z(Block);
+    return (char *)Block;
+  }
+}
+
+/* ASM:
+push    ebx
+mov     bl, [esp+4+arg_0]
+push    esi
+mov     esi, ecx
+test    bl, 2
+jz      short loc_41C4D5
+mov     eax, [esi-4]
+push    ebp
+lea     ebp, [esi-4]
+lea     ecx, [eax+eax*2]
+dec     eax
+lea     esi, [esi+ecx*4]
+js      short loc_41C4BF
+push    edi
+lea     edi, [eax+1]
+
+loc_41C4B1:                             ; CODE XREF: AbstractClass__processCleanup+2C↓j
+sub     esi, 0Ch
+mov     ecx, esi
+call    nullsub_84
+dec     edi
+jnz     short loc_41C4B1
+pop     edi
+
+loc_41C4BF:                             ; CODE XREF: AbstractClass__processCleanup+1B↑j
+test    bl, 1
+jz      short loc_41C4CD
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_41C4CD:                             ; CODE XREF: AbstractClass__processCleanup+32↑j
+mov     eax, ebp
+pop     ebp
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41C4D5:                             ; CODE XREF: AbstractClass__processCleanup+B↑j
+mov     ecx, esi
+call    nullsub_84
+test    bl, 1
+jz      short loc_41C4EA
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_41C4EA:                             ; CODE XREF: AbstractClass__processCleanup+4F↑j
+mov     eax, esi
+pop     esi
+pop     ebx
+retn    4
+*/
+} } }
 // 0x41C640
-namespace ra2 { namespace game { int TechnoClass::processIdleState(int a1, void* a2, void* a3) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processIdleState(int a1, void* a2, void* a3) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C640(#374 *this, int a2, void *a3, void **a4)
+{
+  return AircraftClass::QueryInterface(this, (#373 *)(a2 - 4), a3, a4);
+}
+
+/* ASM:
+sub     [esp+arg_0], 4
+jmp     AircraftClass__QueryInterface
+*/
+} } }
 // 0x41C650
-namespace ra2 { namespace game { int TechnoClass::processGuardState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processGuardState(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C650(#374 *this, int a2)
+{
+  return AircraftClass::AddRef(this, a2 - 4);
+}
+
+/* ASM:
+sub     [esp+arg_0], 4
+jmp     AircraftClass__AddRef
+*/
+} } }
 // 0x41C660
-namespace ra2 { namespace game { int TechnoClass::processAttackState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processAttackState(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C660(#374 *this, int a2)
+{
+  return AircraftClass::Release(this, a2 - 4);
+}
+
+/* ASM:
+sub     [esp+arg_0], 4
+jmp     AircraftClass__Release
+*/
+} } }
 // 0x41C670
-namespace ra2 { namespace game { int TechnoClass::processMoveState(int a1, void* a2, void* a3) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processMoveState(int a1, void* a2, void* a3) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C670(#374 *this, int a2, void *a3, void **a4)
+{
+  return AircraftClass::QueryInterface(this, (#373 *)(a2 - 1728), a3, a4);
+}
+
+/* ASM:
+sub     [esp+arg_0], 6C0h
+jmp     AircraftClass__QueryInterface
+*/
+} } }
 // 0x41C680
-namespace ra2 { namespace game { int TechnoClass::processHarvestState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processHarvestState(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C680(#374 *this, int a2)
+{
+  return AircraftClass::AddRef(this, a2 - 1728);
+}
+
+/* ASM:
+sub     [esp+arg_0], 6C0h
+jmp     AircraftClass__AddRef
+*/
+} } }
 // 0x41C690
-namespace ra2 { namespace game { int TechnoClass::processDeployState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processDeployState(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_41C690(#374 *this, int a2)
+{
+  return AircraftClass::Release(this, a2 - 1728);
+}
+
+/* ASM:
+sub     [esp+arg_0], 6C0h
+jmp     AircraftClass__Release
+*/
+} } }
 // 0x41CFA0
-namespace ra2 { namespace game { int ObjectClass::GetMember41_2() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetMember41_2() {
+// [IDA decompile]
+int __thiscall ObjectClass_GetMember41_2(_DWORD *this)
+{
+  return *(this + 41);
+}
+
+/* ASM:
+mov     eax, [ecx+0A4h]
+retn
+*/
+} } }
 // 0x41D300
-namespace ra2 { namespace game { void* AbstractClass::Create() { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::Create() {
+// [IDA decompile]
+#373 *__thiscall sub_41D300(#373 *this)
+{
+  int v2; // eax
+
+  AbstractClass::Constructor(this);
+  *(_DWORD *)this = &AirstrikeClass::`vftable';
+  *((_DWORD *)this + 1) = &AirstrikeClass::`vftable';
+  *((_DWORD *)this + 2) = &AirstrikeClass::`vftable';
+  *((_DWORD *)this + 3) = &AirstrikeClass::`vftable';
+  if ( MEMORY[0x87F7E8][10744] < MEMORY[0x87F7E8][10742]
+    || (BYTE1(MEMORY[0x87F7E8][10743]) || !MEMORY[0x87F7E8][10742])
+    && MEMORY[0x87F7E8][10745] > 0
+    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][10740] + 8))(
+         &MEMORY[0x87F7E8][10740],
+         MEMORY[0x87F7E8][10742] + MEMORY[0x87F7E8][10745],
+         0) )
+  {
+    v2 = MEMORY[0x87F7E8][10744]++;
+    *(_DWORD *)(MEMORY[0x87F7E8][10741] + 4 * v2) = this;
+  }
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    AbstractClass__Constructor
+mov     dword ptr [esi], offset ??_7AirstrikeClass@@6B@ ; const AirstrikeClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7AirstrikeClass@@6B@_0 ; const AirstrikeClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7AirstrikeClass@@6B@_1 ; const AirstrikeClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7AirstrikeClass@@6B@_2 ; const AirstrikeClass::`vftable'
+mov     eax, ds:889FC0h
+mov     ecx, ds:889FC8h
+cmp     ecx, eax
+jl      short loc_41D360
+mov     cl, ds:889FC5h
+test    cl, cl
+jnz     short loc_41D340
+test    eax, eax
+jnz     short loc_41D378
+
+loc_41D340:                             ; CODE XREF: AbstractClass__Create+3A↑j
+mov     ecx, ds:889FCCh
+test    ecx, ecx
+jle     short loc_41D378
+add     ecx, eax
+mov     eax, ds:889FB8h
+push    0
+push    ecx
+mov     ecx, 889FB8h
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_41D378
+
+loc_41D360:                             ; CODE XREF: AbstractClass__Create+30↑j
+mov     ecx, ds:889FC8h
+mov     eax, ecx
+inc     ecx
+mov     ds:889FC8h, ecx
+mov     ecx, ds:889FBCh
+mov     [ecx+eax*4], esi
+
+loc_41D378:                             ; CODE XREF: AbstractClass__Create+3E↑j
+; AbstractClass__Create+48↑j ...
+mov     eax, esi
+pop     esi
+retn
+*/
+} } }
 // 0x41D540
-namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1) {
+// [IDA decompile]
+char __thiscall sub_41D540(int this, int a2)
+{
+  int v3; // ebp
+  int v4; // eax
+  int v5; // ecx
+  _DWORD *v6; // eax
+  int i; // eax
+  int j; // esi
+  _DWORD v10[3]; // [esp+Ch] [ebp-Ch] BYREF
+
+  if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
+  {
+    if ( a2 )
+    {
+      v3 = (*(_BYTE *)(a2 + 20) & 4) != 0 ? a2 : 0;
+      v4 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 6 ? a2 : 0;
+    }
+    else
+    {
+      v3 = 0;
+      v4 = 0;
+    }
+    v5 = *(_DWORD *)(this + 76);
+    if ( a2 == v5 )
+    {
+      if ( *(_BYTE *)(this + 61)
+        && v5
+        && *(_DWORD *)(this + 92)
+        && (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v5 + 540)) )
+      {
+        v6 = (_DWORD *)(*(_DWORD *)(this + 92) + 156);
+        v10[0] = *v6;
+        v10[1] = v6[1];
+        v10[2] = v6[2];
+        StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 604), (int)v10, 0);
+      }
+      WTFMode::ResetUnitFlags(this);
+      for ( i = *(_DWORD *)(this + 92); i; i = *(_DWORD *)(this + 92) )
+        AirstrikeClass::RemoveAircraft(this, i);
+      v4 = *(_DWORD *)(this + 80);
+      if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 )
+      {
+        v4 = (*(_BYTE *)(v4 + 20) & 1) != 0 ? v4 : 0;
+        *(_DWORD *)(v4 + 660) = 0;
+      }
+      *(_DWORD *)(this + 80) = 0;
+    }
+    else if ( v3 && *(_DWORD *)(v3 + 660) == this )
+    {
+      LOBYTE(v4) = AirstrikeClass::RemoveAircraft(this, v3);
+    }
+    else if ( v4 && *(_DWORD *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !*(_BYTE *)(v4 + 144)) )
+    {
+      LOBYTE(v4) = WTFMode::ResetUnitFlags(this);
+    }
+  }
+  else
+  {
+    LOBYTE(v4) = a2;
+    if ( a2 == *(_DWORD *)(this + 76) )
+    {
+      for ( j = *(_DWORD *)(this + 92); j; j = *(_DWORD *)(j + 1496) )
+        *(_DWORD *)(j + 660) = 0;
+    }
+    else if ( a2 && (*(_BYTE *)(a2 + 20) & 4) != 0 && *(_DWORD *)(a2 + 660) == this )
+    {
+      LOBYTE(v4) = AirstrikeClass::RemoveAircraft(this, a2);
+    }
+  }
+  return v4;
+}
+
+/* ASM:
+mov     al, ds:0A8E9A0h
+sub     esp, 0Ch
+push    ebx
+xor     ebx, ebx
+push    ebp
+push    esi
+cmp     al, bl
+mov     esi, ecx
+jz      loc_41D686
+push    edi
+mov     edi, [esp+1Ch+arg_0]
+cmp     edi, ebx
+jnz     short loc_41D566
+xor     ebp, ebp
+xor     eax, eax
+jmp     short loc_41D585
+; ---------------------------------------------------------------------------
+
+loc_41D566:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+1E↑j
+mov     al, [edi+14h]
+mov     edx, [edi]
+and     al, 4
+mov     ecx, edi
+neg     al
+sbb     eax, eax
+and     eax, edi
+mov     ebp, eax
+call    dword ptr [edx+2Ch]
+sub     eax, 6
+neg     eax
+sbb     eax, eax
+not     eax
+and     eax, edi
+
+loc_41D585:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+24↑j
+mov     ecx, [esi+4Ch]
+cmp     edi, ecx
+pop     edi
+jnz     loc_41D640
+cmp     [esi+3Dh], bl
+jz      short loc_41D5E0
+cmp     ecx, ebx
+jz      short loc_41D5E0
+cmp     [esi+5Ch], ebx
+jz      short loc_41D5E0
+mov     ecx, [ecx+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_41D5E0
+mov     eax, [esi+5Ch]
+push    ebx
+add     eax, 9Ch
+mov     ecx, [eax]
+mov     [esp+1Ch+var_C], ecx
+mov     ecx, ds:8871E0h
+mov     edx, [eax+4]
+mov     [esp+1Ch+var_8], edx
+lea     edx, [esp+1Ch+var_C]
+mov     eax, [eax+8]
+mov     [esp+1Ch+var_4], eax
+mov     ecx, [ecx+25Ch]
+call    StartAudioControllerAt
+
+loc_41D5E0:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+54↑j
+; ObjectClass__CleanupAirstrikeTarget+58↑j ...
+mov     ecx, esi
+call    WTFMode__ResetUnitFlags
+mov     eax, [esi+5Ch]
+cmp     eax, ebx
+jz      short loc_41D5FD
+
+loc_41D5EE:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+BB↓j
+push    eax
+mov     ecx, esi
+call    AirstrikeClass__RemoveAircraft
+mov     eax, [esi+5Ch]
+cmp     eax, ebx
+jnz     short loc_41D5EE
+
+loc_41D5FD:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+AC↑j
+mov     eax, [esi+50h]
+cmp     eax, ebx
+jz      short loc_41D634
+test    byte ptr [eax+14h], 1
+jz      short loc_41D634
+cmp     eax, ebx
+jnz     short loc_41D622
+xor     eax, eax
+mov     [eax+294h], ebx
+mov     [esi+50h], ebx
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41D622:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+CC↑j
+mov     dl, [eax+14h]
+and     dl, 1
+neg     dl
+sbb     edx, edx
+and     eax, edx
+mov     [eax+294h], ebx
+
+loc_41D634:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+C2↑j
+; ObjectClass__CleanupAirstrikeTarget+C8↑j
+mov     [esi+50h], ebx
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41D640:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+4B↑j
+cmp     ebp, ebx
+jz      short loc_41D65D
+cmp     [ebp+294h], esi
+jnz     short loc_41D65D
+push    ebp
+mov     ecx, esi
+call    AirstrikeClass__RemoveAircraft
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41D65D:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+102↑j
+; ObjectClass__CleanupAirstrikeTarget+10A↑j
+cmp     eax, ebx
+jz      short loc_41D6CB
+cmp     [eax+294h], esi
+jnz     short loc_41D6CB
+cmp     [eax+6Ch], ebx
+jle     short loc_41D676
+cmp     [eax+90h], bl
+jnz     short loc_41D6CB
+
+loc_41D676:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+12C↑j
+mov     ecx, esi
+call    WTFMode__ResetUnitFlags
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41D686:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+11↑j
+mov     eax, [esp+18h+arg_0]
+mov     ecx, [esi+4Ch]
+cmp     eax, ecx
+jnz     short loc_41D6B1
+mov     esi, [esi+5Ch]
+cmp     esi, ebx
+jz      short loc_41D6CB
+
+loc_41D698:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+166↓j
+mov     [esi+294h], ebx
+mov     esi, [esi+5D8h]
+cmp     esi, ebx
+jnz     short loc_41D698
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_41D6B1:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+14F↑j
+cmp     eax, ebx
+jz      short loc_41D6CB
+test    byte ptr [eax+14h], 4
+jz      short loc_41D6CB
+cmp     [eax+294h], esi
+jnz     short loc_41D6CB
+push    eax
+mov     ecx, esi
+call    AirstrikeClass__RemoveAircraft
+
+loc_41D6CB:                             ; CODE XREF: ObjectClass__CleanupAirstrikeTarget+11F↑j
+; ObjectClass__CleanupAirstrikeTarget+127↑j ...
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x4263D0
-namespace ra2 { namespace game { int ObjectClass::GetDrawPosition() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetDrawPosition() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetDrawPosition(#374 *this)
+{
+  int *v1; // eax
+  int v2; // ecx
+  int v3; // edx
+  int v4; // eax
+  _BYTE v6[12]; // [esp+8h] [ebp-Ch] BYREF
+  _DWORD *v7; // [esp+18h] [ebp+4h]
+
+  v1 = (int *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v6);
+  v2 = *v1;
+  v3 = v1[1];
+  v4 = v1[2];
+  *v7 = v2;
+  v7[1] = v3;
+  v7[2] = v4 + 50;
+  return (int)v7;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+push    edi
+push    edx
+call    dword ptr [eax+48h]
+mov     esi, [esp+14h+arg_0]
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     edi, esi
+add     eax, 32h ; '2'
+mov     [edi], ecx
+mov     [edi+4], edx
+mov     [edi+8], eax
+mov     eax, esi
+pop     edi
+pop     esi
+add     esp, 0Ch
+retn    14h
+*/
+} } }
 // 0x431A30
-namespace ra2 { namespace game { int ObjectClass::Set(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Set(void* a1) {
+// [IDA decompile]
+int __thiscall sub_431A30(int this, char *Source)
+{
+  *(_BYTE *)(this + 4) = 0;
+  *(_DWORD *)(this + 8) = 1;
+  *(_DWORD *)(this + 12) = 0;
+  *(_DWORD *)(this + 16) = -1;
+  *(_DWORD *)(this + 20) = -1;
+  *(_DWORD *)(this + 24) = 0;
+  *(_WORD *)(this + 28) = 0;
+  *(_WORD *)(this + 30) = 0;
+  *(_BYTE *)(this + 32) = 0;
+  *(_BYTE *)(this + 36) = 0;
+  *(_BYTE *)(this + 37) = 0;
+  *(_BYTE *)(this + 38) = 0;
+  *(_BYTE *)(this + 39) = 0;
+  *(_BYTE *)(this + 40) = 0;
+  *(_BYTE *)(this + 41) = 0;
+  *(_DWORD *)(this + 44) = 0;
+  *(_DWORD *)(this + 48) = 0;
+  *(_DWORD *)(this + 52) = 0;
+  *(_DWORD *)(this + 56) = 0;
+  *(_DWORD *)(this + 60) = 0;
+  *(_DWORD *)(this + 64) = -1;
+  *(_DWORD *)(this + 68) = -1;
+  *(_DWORD *)(this + 72) = 0;
+  *(_DWORD *)(this + 76) = 0;
+  *(_DWORD *)(this + 80) = 0;
+  *(_DWORD *)this = &BufferIOFileClass::`vftable';
+  if ( ObjectClass::GetMember06((_DWORD *)this) && *(_BYTE *)(this + 41) )
+  {
+    if ( !strcmp(Source, (const char *)(*(int (__thiscall **)(int))(*(_DWORD *)this + 4))(this)) )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)this + 4))(this);
+      return this;
+    }
+    BufferIO::Flush(this);
+    *(_BYTE *)(this + 39) = 0;
+  }
+  FileClass::SetName((_DWORD *)this, Source);
+  (*(void (__thiscall **)(int))(*(_DWORD *)this + 4))(this);
+  return this;
+}
+
+/* ASM:
+Source          = dword ptr  4
+
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+or      eax, 0FFFFFFFFh
+mov     [esi+4], bl
+mov     dword ptr [esi+8], 1
+mov     [esi+0Ch], ebx
+mov     [esi+10h], eax
+mov     [esi+14h], eax
+mov     [esi+18h], ebx
+mov     [esi+1Ch], bx
+mov     [esi+1Eh], bx
+mov     [esi+20h], bl
+mov     [esi+24h], bl
+mov     [esi+25h], bl
+mov     [esi+26h], bl
+mov     [esi+27h], bl
+mov     [esi+28h], bl
+mov     [esi+29h], bl
+mov     [esi+2Ch], ebx
+mov     [esi+30h], ebx
+mov     [esi+34h], ebx
+mov     [esi+38h], ebx
+mov     [esi+3Ch], ebx
+mov     [esi+40h], eax
+mov     [esi+44h], eax
+mov     [esi+48h], ebx
+mov     [esi+4Ch], ebx
+mov     [esi+50h], ebx
+mov     dword ptr [esi], offset ??_7BufferIOFileClass@@6B@ ; const BufferIOFileClass::`vftable'
+call    ds:off_7E3A30
+test    eax, eax
+jz      short loc_431AFA
+cmp     [esi+29h], bl
+jz      short loc_431AFA
+mov     eax, [esi]
+push    ebp
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+4]
+mov     edi, [esp+10h+Source]
+mov     ebp, eax
+
+loc_431AAE:                             ; CODE XREF: ObjectClass__Set+A1↓j
+mov     cl, [edi]
+mov     dl, [ebp+0]
+mov     al, cl
+cmp     cl, dl
+jnz     short loc_431AD7
+cmp     al, bl
+jz      short loc_431AD3
+mov     dl, [edi+1]
+mov     cl, [ebp+1]
+mov     al, dl
+cmp     dl, cl
+jnz     short loc_431AD7
+add     edi, 2
+add     ebp, 2
+cmp     al, bl
+jnz     short loc_431AAE
+
+loc_431AD3:                             ; CODE XREF: ObjectClass__Set+8B↑j
+xor     eax, eax
+jmp     short loc_431ADC
+; ---------------------------------------------------------------------------
+
+loc_431AD7:                             ; CODE XREF: ObjectClass__Set+87↑j
+; ObjectClass__Set+97↑j
+sbb     eax, eax
+sbb     eax, 0FFFFFFFFh
+
+loc_431ADC:                             ; CODE XREF: ObjectClass__Set+A5↑j
+pop     edi
+cmp     eax, ebx
+pop     ebp
+jnz     short loc_431AF0
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+4]
+mov     eax, esi
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_431AF0:                             ; CODE XREF: ObjectClass__Set+B0↑j
+mov     ecx, esi
+call    BufferIO__Flush
+mov     [esi+27h], bl
+
+loc_431AFA:                             ; CODE XREF: ObjectClass__Set+68↑j
+; ObjectClass__Set+6D↑j
+mov     ecx, [esp+8+Source]
+push    ecx             ; Source
+mov     ecx, esi
+call    FileClass__SetName
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4]
+mov     eax, esi
+pop     esi
+pop     ebx
+retn    4
+*/
+} } }
 // 0x4389B0
-namespace ra2 { namespace game { int ObjectClass::CleanupAudioAndRefs() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CleanupAudioAndRefs() {
+// [IDA decompile]
+int __thiscall ObjectClass_CleanupAudioAndRefs(int this)
+{
+  int v2; // eax
+  int result; // eax
+
+  v2 = *(_DWORD *)(this + 44);
+  if ( v2 )
+  {
+    *(_DWORD *)(v2 + 56) = 0;
+    *(_BYTE *)(*(_DWORD *)(this + 44) + 104) = 0;
+  }
+  *(_BYTE *)(this + 88) = 1;
+  *(_DWORD *)(this + 36) = 0;
+  *(_DWORD *)(this + 44) = 0;
+  *(_DWORD *)(this + 40) = 0;
+  result = AudioFile::Stop((_DWORD *)(this + 60));
+  *(_DWORD *)(this + 84) = 0;
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+2Ch]
+cmp     eax, ebx
+jz      short loc_4389C6
+mov     [eax+38h], ebx
+mov     eax, [esi+2Ch]
+mov     [eax+68h], bl
+
+loc_4389C6:                             ; CODE XREF: ObjectClass__CleanupAudioAndRefs+B↑j
+lea     ecx, [esi+3Ch]
+mov     byte ptr [esi+58h], 1
+mov     [esi+24h], ebx
+mov     [esi+2Ch], ebx
+mov     [esi+28h], ebx
+call    AudioFile__Stop
+mov     [esi+54h], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x439080
-namespace ra2 { namespace game { int TechnoClass::checkRange(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::checkRange(int a1) {
+// [IDA decompile]
+char __thiscall sub_439080(_DWORD *this, int a2)
+{
+  int v2; // eax
+  _DWORD *v3; // esi
+  int v4; // ecx
+  int v5; // eax
+  int v6; // edx
+
+  v2 = *(this + 10);
+  v3 = this + 6;
+  v4 = *(this + 8);
+  if ( v2 < v4
+    || ((LOBYTE(v5) = *((_BYTE *)v3 + 13), (_BYTE)v5) || !v4)
+    && (v5 = v3[5], v5 > 0)
+    && (LOBYTE(v5) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v4 + v5, 0), (_BYTE)v5) )
+  {
+    v5 = v3[4];
+    v6 = v3[1];
+    v3[4] = v5 + 1;
+    *(_DWORD *)(v6 + 4 * v5) = a2;
+  }
+  return v5;
+}
+
+/* ASM:
+mov     eax, [ecx+28h]
+push    esi
+lea     esi, [ecx+18h]
+mov     ecx, [ecx+20h]
+cmp     eax, ecx
+jl      short loc_4390B0
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_439099
+test    ecx, ecx
+jnz     short loc_4390C3
+
+loc_439099:                             ; CODE XREF: TechnoClass__checkRange+13↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_4390C3
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4390C3
+
+loc_4390B0:                             ; CODE XREF: TechnoClass__checkRange+C↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     ecx, [esp+4+arg_0]
+mov     [edx+eax*4], ecx
+
+loc_4390C3:                             ; CODE XREF: TechnoClass__checkRange+17↑j
+; TechnoClass__checkRange+1E↑j ...
+pop     esi
+retn    4
+*/
+} } }
 // 0x439150
-namespace ra2 { namespace game { int AbstractClass::processDetection(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::processDetection(int a1) {
+// [IDA decompile]
+int __thiscall sub_439150(int *this, int a2)
+{
+  int v3; // edi
+  int v4; // eax
+  int v5; // ecx
+  int v6; // ecx
+  int result; // eax
+  int i; // ecx
+  int v9; // eax
+
+  v3 = a2;
+  v4 = (*(int (__thiscall **)(int *, int *))(*this + 16))(this, &a2);
+  if ( v4 != -1 )
+  {
+    v5 = *(this + 4);
+    if ( v4 < v5 )
+    {
+      v6 = v5 - 1;
+      for ( *(this + 4) = v6; v4 < *(this + 4); *(_DWORD *)(*(this + 1) + 4 * v4 - 4) = *(_DWORD *)(*(this + 1) + 4 * v4) )
+        ++v4;
+    }
+  }
+  result = *(this + 4);
+  for ( i = 0; i < result; ++i )
+  {
+    v9 = *(_DWORD *)(*(this + 1) + 4 * i);
+    if ( v9 )
+    {
+      if ( *(_DWORD *)(v9 + 36) == v3 )
+        *(_DWORD *)(v9 + 36) = 0;
+    }
+    result = *(this + 4);
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+4+arg_0]
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+mov     [esp+0Ch+arg_0], edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_43918E
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_43918E
+dec     ecx
+cmp     eax, ecx
+mov     [esi+10h], ecx
+jge     short loc_43918E
+
+loc_43917C:                             ; CODE XREF: AbstractClass__processDetection+3C↓j
+mov     ecx, [esi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jl      short loc_43917C
+
+loc_43918E:                             ; CODE XREF: AbstractClass__processDetection+1B↑j
+; AbstractClass__processDetection+22↑j ...
+mov     eax, [esi+10h]
+xor     edx, edx
+xor     ecx, ecx
+cmp     eax, edx
+jle     short loc_4391B3
+
+loc_439199:                             ; CODE XREF: AbstractClass__processDetection+61↓j
+mov     eax, [esi+4]
+mov     eax, [eax+ecx*4]
+cmp     eax, edx
+jz      short loc_4391AB
+cmp     [eax+24h], edi
+jnz     short loc_4391AB
+mov     [eax+24h], edx
+
+loc_4391AB:                             ; CODE XREF: AbstractClass__processDetection+51↑j
+; AbstractClass__processDetection+56↑j
+mov     eax, [esi+10h]
+inc     ecx
+cmp     ecx, eax
+jl      short loc_439199
+
+loc_4391B3:                             ; CODE XREF: AbstractClass__processDetection+47↑j
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x43A7E0
-namespace ra2 { namespace game { int AbstractClass::Construct(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::Construct(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::Construct(int this, _DWORD *a2)
+{
+  _DWORD *v2; // edi
+  int result; // eax
+  int v5; // eax
+  #373 *v6; // eax
+  #373 *v7; // esi
+  int v8; // eax
+  int v9; // eax
+  int v10; // ecx
+  int v11; // eax
+  int v12; // eax
+  int v13; // edx
+  int v14; // [esp+30h] [ebp-8h] BYREF
+  int v15; // [esp+34h] [ebp-4h]
+
+  v2 = a2;
+  if ( !a2 )
+    return -2147467261;
+  v5 = *a2;
+  v14 = 0;
+  result = (*(int (__stdcall **)(_DWORD *, int *, int, _DWORD))(v5 + 12))(a2, &v14, 4, 0);
+  if ( result >= 0 )
+  {
+    v15 = 0;
+    if ( v14 <= 0 )
+    {
+      return 0;
+    }
+    else
+    {
+      while ( 1 )
+      {
+        v6 = (#373 *)__2_YAPAXI_Z(56);
+        v7 = v6;
+        if ( !v6 )
+          break;
+        AbstractClass::Constructor(v6);
+        *((_DWORD *)v7 + 9) = 0;
+        *((_DWORD *)v7 + 10) = 0;
+        *((_DWORD *)v7 + 11) = 0;
+        *((_DWORD *)v7 + 12) = dword_A8ED54[12];
+        *(_DWORD *)v7 = &NeuronClass::`vftable';
+        *((_DWORD *)v7 + 1) = &NeuronClass::`vftable';
+        *((_DWORD *)v7 + 2) = &NeuronClass::`vftable';
+        *((_DWORD *)v7 + 3) = &NeuronClass::`vftable';
+        if ( dword_A8ED54[131621] < dword_A8ED54[131619]
+          || (BYTE1(dword_A8ED54[131620]) || !dword_A8ED54[131619])
+          && dword_A8ED54[131622] > 0
+          && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131617] + 8))(
+               &dword_A8ED54[131617],
+               dword_A8ED54[131619] + dword_A8ED54[131622],
+               0) )
+        {
+          v8 = dword_A8ED54[131621]++;
+          *(_DWORD *)(dword_A8ED54[131618] + 4 * v8) = v7;
+        }
+        if ( dword_A8ED54[131659] < dword_A8ED54[131657]
+          || (BYTE1(dword_A8ED54[131658]) || !dword_A8ED54[131657])
+          && dword_A8ED54[131660] > 0
+          && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131655] + 8))(
+               &dword_A8ED54[131655],
+               dword_A8ED54[131657] + dword_A8ED54[131660],
+               0) )
+        {
+          v9 = dword_A8ED54[131659]++;
+          *(_DWORD *)(dword_A8ED54[131656] + 4 * v9) = v7;
+        }
+        result = (*(int (__stdcall **)(#373 *, _DWORD *))(*(_DWORD *)v7 + 20))(v7, v2);
+        if ( result < 0 )
+          return result;
+        if ( *(_DWORD *)(this + 20) < *(_DWORD *)(this + 32) )
+        {
+          v10 = *(_DWORD *)(this + 12);
+          if ( *(_DWORD *)(this + 20) < v10
+            || (*(_BYTE *)(this + 17) || !v10)
+            && (v11 = *(_DWORD *)(this + 24), v11 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 4) + 8))(this + 4, v10 + v11, 0) )
+          {
+            v12 = *(_DWORD *)(this + 20);
+            v13 = *(_DWORD *)(this + 8);
+            *(_DWORD *)(this + 20) = v12 + 1;
+            *(_DWORD *)(v13 + 4 * v12) = v7;
+          }
+          v2 = a2;
+          *((_DWORD *)v7 + 11) = this;
+        }
+        if ( ++v15 >= v14 )
+          return 0;
+      }
+      return -2147024882;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, [esp+18h+arg_0]
+xor     ebx, ebx
+cmp     edi, ebx
+mov     ebp, ecx
+jnz     short loc_43A802
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 80004003h
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_43A802:                             ; CODE XREF: AbstractClass__Construct+11↑j
+mov     eax, [edi]
+push    ebx
+lea     ecx, [esp+1Ch+var_8]
+push    4
+push    ecx
+push    edi
+mov     [esp+28h+var_8], ebx
+call    dword ptr [eax+0Ch]
+cmp     eax, ebx
+jl      loc_43A995
+mov     eax, [esp+18h+var_8]
+mov     [esp+18h+var_4], ebx
+cmp     eax, ebx
+jle     loc_43A993
+
+loc_43A82C:                             ; CODE XREF: AbstractClass__Construct+19F↓j
+push    38h ; '8'       ; Size
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+cmp     esi, ebx
+jz      loc_43A984
+mov     ecx, esi        ; this
+call    AbstractClass__Constructor
+mov     [esi+24h], ebx
+mov     [esi+28h], ebx
+mov     [esi+2Ch], ebx
+mov     edx, dword_A8ED54+30h
+mov     [esi+30h], edx
+mov     dword ptr [esi], offset ??_7NeuronClass@@6B@ ; const NeuronClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7NeuronClass@@6B@_0 ; const NeuronClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7NeuronClass@@6B@_1 ; const NeuronClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7NeuronClass@@6B@_2 ; const NeuronClass::`vftable'
+mov     eax, dword_A8ED54+8088Ch
+cmp     dword_A8ED54+80894h, eax
+jl      short loc_43A8AC
+cmp     byte ptr dword_A8ED54+80891h, bl
+jnz     short loc_43A88D
+cmp     eax, ebx
+jnz     short loc_43A8C4
+
+loc_43A88D:                             ; CODE XREF: AbstractClass__Construct+A7↑j
+mov     ecx, dword_A8ED54+80898h
+cmp     ecx, ebx
+jle     short loc_43A8C4
+add     ecx, eax
+mov     eax, dword_A8ED54+80884h
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+80884h)
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_43A8C4
+
+loc_43A8AC:                             ; CODE XREF: AbstractClass__Construct+9F↑j
+mov     ecx, dword_A8ED54+80894h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+80894h, ecx
+mov     ecx, dword_A8ED54+80888h
+mov     [ecx+eax*4], esi
+
+loc_43A8C4:                             ; CODE XREF: AbstractClass__Construct+AB↑j
+; AbstractClass__Construct+B5↑j ...
+mov     eax, dword_A8ED54+80924h
+mov     ecx, dword_A8ED54+8092Ch
+cmp     ecx, eax
+jl      short loc_43A8FF
+cmp     byte ptr dword_A8ED54+80929h, bl
+jnz     short loc_43A8DF
+cmp     eax, ebx
+jnz     short loc_43A917
+
+loc_43A8DF:                             ; CODE XREF: AbstractClass__Construct+F9↑j
+mov     ecx, dword_A8ED54+80930h
+cmp     ecx, ebx
+jle     short loc_43A917
+mov     edx, dword_A8ED54+8091Ch
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+8091Ch)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_43A917
+
+loc_43A8FF:                             ; CODE XREF: AbstractClass__Construct+F1↑j
+mov     ecx, dword_A8ED54+8092Ch
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+8092Ch, ecx
+mov     ecx, dword_A8ED54+80920h
+mov     [ecx+eax*4], esi
+
+loc_43A917:                             ; CODE XREF: AbstractClass__Construct+FD↑j
+; AbstractClass__Construct+107↑j ...
+mov     edx, [esi]
+push    edi
+push    esi
+call    dword ptr [edx+14h]
+cmp     eax, ebx
+jl      short loc_43A995
+mov     eax, [ebp+14h]
+mov     ecx, [ebp+20h]
+cmp     eax, ecx
+jge     short loc_43A96E
+mov     ecx, [ebp+0Ch]
+mov     eax, [ebp+14h]
+lea     edi, [ebp+4]
+cmp     eax, ecx
+jl      short loc_43A958
+cmp     [edi+0Dh], bl
+jnz     short loc_43A942
+cmp     ecx, ebx
+jnz     short loc_43A967
+
+loc_43A942:                             ; CODE XREF: AbstractClass__Construct+15C↑j
+mov     eax, [edi+14h]
+cmp     eax, ebx
+jle     short loc_43A967
+mov     edx, [edi]
+add     eax, ecx
+push    ebx
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_43A967
+
+loc_43A958:                             ; CODE XREF: AbstractClass__Construct+157↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_43A967:                             ; CODE XREF: AbstractClass__Construct+160↑j
+; AbstractClass__Construct+167↑j ...
+mov     edi, [esp+18h+arg_0]
+mov     [esi+2Ch], ebp
+
+loc_43A96E:                             ; CODE XREF: AbstractClass__Construct+14A↑j
+mov     eax, [esp+18h+var_4]
+mov     ecx, [esp+18h+var_8]
+inc     eax
+cmp     eax, ecx
+mov     [esp+18h+var_4], eax
+jge     short loc_43A993
+jmp     loc_43A82C
+; ---------------------------------------------------------------------------
+
+loc_43A984:                             ; CODE XREF: AbstractClass__Construct+5A↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 8007000Eh
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_43A993:                             ; CODE XREF: AbstractClass__Construct+46↑j
+; AbstractClass__Construct+19D↑j
+xor     eax, eax
+
+loc_43A995:                             ; CODE XREF: AbstractClass__Construct+36↑j
+; AbstractClass__Construct+140↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+*/
+} } }
 // 0x43DA80
-namespace ra2 { namespace game { int FootClass::DrawPlacementPreview() { return 0; } } }
+namespace ra2 { namespace game { int FootClass::DrawPlacementPreview() {
+// [IDA decompile]
+int __thiscall BuildingClass::DrawPlacementPreview(#377 *this)
+{
+  int v2; // edx
+  int (__thiscall **vfptr0)(#377 *); // eax
+  int i; // edi
+  float *v5; // eax
+  float *v6; // esi
+  float *v7; // eax
+  float v8; // ecx
+  float v9; // edx
+  _DWORD *v10; // eax
+  int v11; // eax
+  int v12; // esi
+  int v13; // eax
+  char *v14; // edx
+  unsigned __int8 v15; // bl
+  int v16; // eax
+  int v17; // edx
+  int v18; // ecx
+  int v19; // eax
+  char *v20; // edx
+  unsigned __int8 v21; // bl
+  int v22; // eax
+  int v23; // edx
+  int v24; // ecx
+  _DWORD *v25; // eax
+  _DWORD *v26; // eax
+  int result; // eax
+  double v28; // st7
+  int v29; // edi
+  int v30; // eax
+  int v31; // eax
+  int v32; // eax
+  int v33; // esi
+  int v34; // ecx
+  int v35; // ecx
+  char v36; // dl
+  unsigned int v37; // ebx
+  unsigned int v38; // edi
+  int v39; // eax
+  int v40; // esi
+  int v41; // ecx
+  int v42; // ecx
+  int v43; // ebx
+  int v44; // edi
+  int v45; // ecx
+  int v46; // eax
+  int v47; // esi
+  int (__thiscall **v48)(#377 *); // edi
+  float *inited; // eax
+  float *v50; // eax
+  int v51; // esi
+  int (__thiscall **v52)(#377 *); // edi
+  float *v53; // eax
+  float *v54; // eax
+  int v55; // esi
+  int (__thiscall **v56)(#377 *); // edi
+  float *v57; // eax
+  float *v58; // eax
+  int v59; // ecx
+  int v60; // eax
+  int v61; // edx
+  int v62; // esi
+  int v63; // ecx
+  int (__thiscall **v64)(#377 *); // ebx
+  float *v65; // eax
+  float *v66; // eax
+  char v67; // dl
+  int v68; // eax
+  _BYTE *v69; // edi
+  int v70; // ecx
+  int v71; // esi
+  int v72; // eax
+  int v73; // edx
+  int v74; // ecx
+  int (__thiscall **v75)(#377 *); // ebx
+  float *v76; // eax
+  float *v77; // eax
+  int v78; // [esp+8Eh] [ebp-138h]
+  int v79; // [esp+8Eh] [ebp-138h]
+  int v80; // [esp+8Eh] [ebp-138h]
+  int v81; // [esp+8Eh] [ebp-138h]
+  int v82; // [esp+8Eh] [ebp-138h]
+  int v83; // [esp+92h] [ebp-134h]
+  int v84; // [esp+92h] [ebp-134h]
+  int v85; // [esp+92h] [ebp-134h]
+  int v86; // [esp+92h] [ebp-134h]
+  int v87; // [esp+92h] [ebp-134h]
+  float v88; // [esp+96h] [ebp-130h]
+  float v89; // [esp+96h] [ebp-130h]
+  float v90; // [esp+96h] [ebp-130h]
+  float v91; // [esp+96h] [ebp-130h]
+  float v92; // [esp+96h] [ebp-130h]
+  float v93; // [esp+96h] [ebp-130h]
+  float v94; // [esp+96h] [ebp-130h]
+  int *v95; // [esp+9Ah] [ebp-12Ch]
+  unsigned __int8 v96; // [esp+ACh] [ebp-11Ah]
+  unsigned __int8 v97; // [esp+ACh] [ebp-11Ah]
+  char v98; // [esp+ACh] [ebp-11Ah]
+  bool v99; // [esp+ACh] [ebp-11Ah]
+  unsigned __int8 v100; // [esp+ADh] [ebp-119h]
+  unsigned __int8 v101; // [esp+ADh] [ebp-119h]
+  int v102; // [esp+AEh] [ebp-118h] BYREF
+  int v103; // [esp+B2h] [ebp-114h]
+  int v104; // [esp+B6h] [ebp-110h]
+  float v105; // [esp+BAh] [ebp-10Ch] BYREF
+  float v106; // [esp+BEh] [ebp-108h]
+  float v107; // [esp+C2h] [ebp-104h]
+  int v108; // [esp+C6h] [ebp-100h] BYREF
+  int v109; // [esp+CAh] [ebp-FCh] BYREF
+  int v110; // [esp+CEh] [ebp-F8h] BYREF
+  int v111; // [esp+D2h] [ebp-F4h] BYREF
+  float v112; // [esp+D6h] [ebp-F0h] BYREF
+  float v113; // [esp+DAh] [ebp-ECh]
+  float v114; // [esp+DEh] [ebp-E8h]
+  float v115; // [esp+E2h] [ebp-E4h] BYREF
+  float v116; // [esp+E6h] [ebp-E0h]
+  float v117; // [esp+EAh] [ebp-DCh]
+  float v118; // [esp+EEh] [ebp-D8h] BYREF
+  float v119; // [esp+F2h] [ebp-D4h]
+  float v120; // [esp+F6h] [ebp-D0h]
+  float v121[12]; // [esp+FAh] [ebp-CCh] BYREF
+  float v122[12]; // [esp+12Ah] [ebp-9Ch] BYREF
+  _BYTE v123[12]; // [esp+15Ah] [ebp-6Ch] BYREF
+  float v124[12]; // [esp+166h] [ebp-60h] BYREF
+  float v125[12]; // [esp+196h] [ebp-30h] BYREF
+  _DWORD *v126; // [esp+1CAh] [ebp+4h]
+  int *v127; // [esp+1CEh] [ebp+8h]
+
+  v2 = *(_DWORD *)(*(int (__thiscall **)(#377 *, int *))(*(_DWORD *)this + 440))(this, &v102);
+  vfptr0 = *(int (__thiscall ***)(#377 *))this;
+  v108 = v2;
+  if ( vfptr0[97](this) == 16
+    && (Window::IsVisible((_BYTE *)this + 848)
+     || BuildingClass::CheckPowerFlags((_BYTE *)this + 848)
+     || Flag::CheckNone((_BYTE *)this + 848)
+     || BuildingClass::CheckFlag24((_BYTE *)this + 848)) )
+  {
+    if ( *((_BYTE *)this + 1048) )
+    {
+      for ( i = 0; i < *((_DWORD *)this + 58); ++i )
+      {
+        v5 = (float *)Array::Get(this, i);
+        v6 = v5;
+        if ( v5 )
+        {
+          if ( !*((_BYTE *)v5 + 129) && (*(int (__thiscall **)(float *))(*(_DWORD *)v5 + 44))(v5) != 6 )
+          {
+            v7 = (float *)(*(int (__thiscall **)(float *, float *, _DWORD))(*(_DWORD *)v6 + 76))(v6, &v115, 0);
+            v112 = *v7;
+            v113 = v7[1];
+            v114 = v7[2];
+            v118 = v6[39];
+            v119 = v6[40];
+            v114 = v6[41];
+            if ( !dword_A8ED54[233983]
+              || HIBYTE(dword_A8ED54[5])
+              || (*(_DWORD *)MEMORY[0x87F7E8][536210] & 0x1000) == 0
+              || (v8 = v6[40], v105 = v6[39], v9 = v6[41], v106 = v8, v107 = v9, !Game::Stub3((int)&v105))
+              && !Game::Stub3((int)&v112) )
+            {
+              v10 = (_DWORD *)(*(int (__thiscall **)(float *, _BYTE *, int *))(*(_DWORD *)v6 + 172))(v6, v123, &v109);
+              Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v10, v95);
+              v95 = v127;
+              (*(void (__thiscall **)(float *, int *))(*(_DWORD *)v6 + 276))(v6, &v110);
+            }
+          }
+        }
+      }
+    }
+  }
+  v11 = *((_DWORD *)this + 165);
+  v12 = 0;
+  v104 = 0;
+  if ( v11 )
+  {
+    v13 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6308);
+    v14 = (char *)(MEMORY[0x87F7E8][7806] + 2 * v13);
+    v15 = v14[v13 + 6261];
+    v100 = v14[v13 + 6260];
+    v96 = v14[v13 + 6262];
+    v16 = DDraw::GetStatus() - 1;
+    if ( v16 )
+    {
+      if ( --v16 )
+      {
+LABEL_23:
+        LOWORD(v18) = v100;
+        LOWORD(v17) = v96;
+        LOWORD(v16) = v15 >> 1;
+        v12 |= v17 | (32 * ((32 * v18) | v16));
+        v104 = v12;
+        goto LABEL_24;
+      }
+      LOWORD(v12) = v100;
+      LOWORD(v18) = v96;
+      v12 = v18 | (32 * (v15 | (v12 << 6)));
+    }
+    LOWORD(v18) = v100;
+    LOWORD(v16) = v15 >> 1;
+    LOWORD(v17) = v96;
+    v18 *= 32;
+    v16 = v17 | ((v18 | v16) << 6);
+    v12 |= v16;
+    goto LABEL_23;
+  }
+LABEL_24:
+  if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 352))(this) && *((_DWORD *)this + 113) == 1 )
+  {
+    v19 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6320);
+    v20 = (char *)(MEMORY[0x87F7E8][7806] + 2 * v19);
+    v21 = v20[v19 + 6261];
+    v97 = v20[v19 + 6260];
+    v101 = v20[v19 + 6262];
+    v22 = DDraw::GetStatus() - 1;
+    if ( v22 )
+    {
+      if ( --v22 )
+      {
+LABEL_30:
+        LOWORD(v23) = v97;
+        LOWORD(v22) = v101;
+        LOWORD(v24) = v21 >> 1;
+        v104 = v22 | (32 * ((32 * v23) | v24)) | v12;
+        goto LABEL_31;
+      }
+      LOWORD(v23) = v101;
+      LOWORD(v24) = v21;
+      v22 = v23 | (32 * (v24 | (v97 << 6)));
+      v12 |= v22;
+    }
+    LOWORD(v23) = v97;
+    LOWORD(v24) = v21 >> 1;
+    LOWORD(v22) = v101;
+    v23 *= 32;
+    v24 = v22 | ((v23 | v24) << 6);
+    v12 |= v24;
+    goto LABEL_30;
+  }
+LABEL_31:
+  v25 = (_DWORD *)(*(int (__thiscall **)(#377 *, _BYTE *))(*(_DWORD *)this + 72))(this, v123);
+  LOWORD(v103) = *v25 / 256;
+  HIWORD(v103) = v25[1] / 256;
+  v102 = v103;
+  v26 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v102);
+  if ( CellClass::QuickPassable(v26) )
+    v104 = 0;
+  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this);
+  if ( result == 16 )
+  {
+    result = *(_DWORD *)(*((_DWORD *)this + 328) + 5388);
+    if ( result )
+    {
+      if ( Flag::CheckNone((_BYTE *)this + 848)
+        || Window::IsVisible((_BYTE *)this + 848)
+        || BuildingClass::CheckFlag24((_BYTE *)this + 848)
+        || BuildingClass::CheckPowerFlags((_BYTE *)this + 848) )
+      {
+        v28 = Animation::GetProgress((int)this + 848);
+        v29 = Math::RoundToInt(v28 * (double)*(int *)(*((_DWORD *)this + 328) + 3840));
+        if ( BuildingClass::CheckFlag24((_BYTE *)this + 848) )
+          v29 = *(_DWORD *)(*((_DWORD *)this + 328) + 3840) - v29;
+        if ( Flag::CheckNone((_BYTE *)this + 848) )
+          v29 = 0;
+        v30 = *(_DWORD *)(*((_DWORD *)this + 328) + 3840);
+        if ( v29 >= v30 )
+          v29 = v30 - 1;
+        if ( v29 < 0 )
+          v29 = 0;
+        if ( BuildingClass::GetHealthRatio((int *)this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
+        {
+          v31 = *((_DWORD *)this + 328);
+          if ( *(_BYTE *)(v31 + 5888) )
+            v29 += *(_DWORD *)(v31 + 3840);
+        }
+        v32 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 464))(this);
+        v33 = -5 - ZCoordToScreenY(v32);
+        v34 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+        ((void (__thiscall *)(#377 *, _DWORD, int, _DWORD *, int *, _DWORD, int, int, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))loc_705E00)(
+          this,
+          *(_DWORD *)(*((_DWORD *)this + 328) + 5388),
+          v29,
+          v126,
+          v127,
+          0,
+          256,
+          v33,
+          0,
+          0,
+          v34,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0);
+        if ( BuildingClass::CheckFlag24((_BYTE *)this + 848) && !v29 )
+          *((_BYTE *)this + 128) = 1;
+      }
+    }
+  }
+  v35 = *((_DWORD *)this + 328);
+  if ( *(_BYTE *)(v35 + 5829) )
+  {
+    result = *((_DWORD *)this + 43);
+    v36 = 0;
+    if ( (result == 18 || *((_DWORD *)this + 45) == 18)
+      && *((_DWORD *)this + 62) < *(_DWORD *)(v35 + 3848) + *(_DWORD *)(v35 + 3844) - 1 )
+    {
+      v36 = 1;
+    }
+    if ( (result != 19 || (result = *((_DWORD *)this + 62), result <= 0)) && !v36
+      || (LOBYTE(result) = *(_BYTE *)(v35 + 5834), (_BYTE)result) )
+    {
+      if ( LOBYTE(MEMORY[0x87F7E8][7948]) )
+      {
+        v37 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v102) >> 10) + 1) >> 1) & 0x1F;
+        v38 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v102) >> 10) + 1) >> 1) & 0x1F;
+      }
+      else
+      {
+        v37 = -1;
+        v38 = -1;
+      }
+      v39 = *((_DWORD *)this + 328);
+      LOBYTE(v40) = 0;
+      v103 = 0;
+      v102 = 0;
+      v41 = *(_DWORD *)(v39 + 188);
+      if ( v41 )
+        v103 = *((_DWORD *)this + 82) % *(_DWORD *)(v41 + 8);
+      v42 = *(_DWORD *)(*((_DWORD *)this + 328) + 196);
+      if ( v42 )
+      {
+        v40 = *((_DWORD *)this + 82) % *(_DWORD *)(v42 + 8);
+        v102 = v40;
+      }
+      v43 = ((unsigned __int8)v103 << 16) | v37;
+      v44 = ((unsigned __int8)v40 << 16) | v38;
+      Matrix3x4::Identity(v121);
+      result = *((_DWORD *)this + 328);
+      if ( *(_DWORD *)(result + 184) )
+      {
+        v102 = (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v111) >> 10) + 1) >> 1) & 0x1F) - 8;
+        v88 = (double)v102 * -0.1963495408493621;
+        Matrix2D::Rotate(v121, v88);
+        v102 = *(_DWORD *)(*((_DWORD *)this + 328) + 1824) / 8;
+        v89 = (float)v102;
+        Matrix3x4::Translate(v121, v89);
+        v112 = -v121[3];
+        v115 = v121[3];
+        v117 = v121[11];
+        v113 = -v121[7];
+        qmemcpy(v122, v121, sizeof(v122));
+        v105 = v112;
+        v116 = v121[7];
+        v114 = -v121[11];
+        v106 = v113;
+        v107 = v114;
+        Matrix3x3::Multiply(v122, &v105);
+        if ( *((_DWORD *)this + 252) )
+        {
+          v90 = -*((float *)this + 251);
+          Matrix3x4::Translate(v121, v90);
+          v43 = -1;
+        }
+        if ( *((_DWORD *)this + 260) )
+        {
+          v91 = -*((float *)this + 259);
+          Matrix3x4::Translate(v122, v91);
+          v43 = -1;
+        }
+        v102 = (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 440, &v111) >> 10) + 1) >> 1) & 0x1F) - 8;
+        v92 = -((double)v102 * -0.1963495408493621);
+        Matrix3D::RotateZ(v122, v92);
+        Matrix3x3::Multiply(v122, &v115);
+        v45 = *((_DWORD *)this + 328);
+        v46 = *v126 + *(_DWORD *)(v45 + 4576);
+        v110 = *(_DWORD *)(v45 + 4580) + v126[1];
+        v109 = v46;
+        if ( (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v111) >> 13) + 1) >> 1) & 3) == 0
+          || (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v102) >> 13) + 1) >> 1) & 3) == 3 )
+        {
+          v98 = 0;
+          if ( *(_DWORD *)(*((_DWORD *)this + 328) + 192) && *(_DWORD *)(*((_DWORD *)this + 328) + 196) )
+          {
+            v47 = *((_DWORD *)this + 328);
+            v48 = *(int (__thiscall ***)(#377 *))this;
+            v83 = v104;
+            v78 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+            inited = (float *)AudioConfig::InitDefault(v125);
+            v50 = MultiplyMatrix3x4(v124, inited, v122);
+            ((void (__thiscall *)(#377 *, int, _DWORD, int, int, int *, int *, float *, int, int, _DWORD))v48[273])(
+              this,
+              v47 + 192,
+              0,
+              v43,
+              v47 + 640,
+              v127,
+              &v109,
+              v50,
+              v78,
+              v83,
+              0);
+          }
+        }
+        else
+        {
+          v98 = 1;
+        }
+        v51 = *((_DWORD *)this + 328);
+        v52 = *(int (__thiscall ***)(#377 *))this;
+        v84 = v104;
+        v79 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+        v53 = (float *)AudioConfig::InitDefault(v124);
+        v54 = MultiplyMatrix3x4(v125, v53, v121);
+        result = ((int (__thiscall *)(#377 *, int, int, int, int, int *, int *, float *, int, int, _DWORD))v52[273])(
+                   this,
+                   v51 + 184,
+                   v103,
+                   v43,
+                   v51 + 600,
+                   v127,
+                   &v109,
+                   v54,
+                   v79,
+                   v84,
+                   0);
+        LOBYTE(result) = v98;
+        if ( v98 )
+        {
+          result = *((_DWORD *)this + 328) + 192;
+          if ( *(_DWORD *)result )
+          {
+            if ( *(_DWORD *)(*((_DWORD *)this + 328) + 196) )
+            {
+              v55 = *((_DWORD *)this + 328);
+              v56 = *(int (__thiscall ***)(#377 *))this;
+              v85 = v104;
+              v80 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+              v57 = (float *)AudioConfig::InitDefault(v124);
+              v58 = MultiplyMatrix3x4(v125, v57, v122);
+              return ((int (__thiscall *)(#377 *, int, _DWORD, int, int, int *, int *, float *, int, int, _DWORD))v56[273])(
+                       this,
+                       v55 + 192,
+                       0,
+                       v43,
+                       v55 + 640,
+                       v127,
+                       &v109,
+                       v58,
+                       v80,
+                       v85,
+                       0);
+            }
+          }
+        }
+      }
+      else if ( *(_DWORD *)(result + 192) && *(_DWORD *)(result + 196) )
+      {
+        v105 = v121[3];
+        v106 = v121[7];
+        v107 = v121[11];
+        v112 = -v121[3];
+        v118 = v121[3];
+        v119 = v121[7];
+        v113 = -v121[7];
+        v115 = v112;
+        v114 = -v121[11];
+        v120 = v121[11];
+        v116 = v113;
+        v117 = v114;
+        Matrix3x3::Multiply(v121, &v115);
+        v103 = (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v111) >> 10) + 1) >> 1) & 0x1F) - 8;
+        v93 = (double)v103 * -0.1963495408493621;
+        Matrix2D::Rotate(v121, v93);
+        v103 = (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 440, &v111) >> 10) + 1) >> 1) & 0x1F) - 8;
+        v94 = -((double)v103 * -0.1963495408493621);
+        Matrix3D::RotateZ(v121, v94);
+        Matrix3x3::Multiply(v121, &v118);
+        v59 = *((_DWORD *)this + 328);
+        v60 = *(_DWORD *)(v59 + 4576);
+        v61 = *(_DWORD *)(v59 + 4580);
+        v62 = v59;
+        v63 = v126[1];
+        v64 = *(int (__thiscall ***)(#377 *))this;
+        v109 = *v126 + v60;
+        v110 = v61 + v63;
+        v86 = v104;
+        v81 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+        v65 = (float *)AudioConfig::InitDefault(v124);
+        v66 = MultiplyMatrix3x4(v125, v65, v121);
+        return ((int (__thiscall *)(#377 *, int, int, int, int, int *, int *, float *, int, int, _DWORD))v64[273])(
+                 this,
+                 v62 + 192,
+                 v102,
+                 v44,
+                 v62 + 640,
+                 v127,
+                 &v109,
+                 v66,
+                 v81,
+                 v86,
+                 0);
+      }
+    }
+  }
+  else
+  {
+    LOBYTE(result) = *(_BYTE *)(v35 + 5830);
+    if ( (_BYTE)result )
+    {
+      result = *((_DWORD *)this + 43);
+      v67 = 0;
+      if ( (result == 18 || *((_DWORD *)this + 45) == 18)
+        && *((_DWORD *)this + 62) < *(_DWORD *)(v35 + 3848) + *(_DWORD *)(v35 + 3844) - 1 )
+      {
+        v67 = 1;
+      }
+      if ( result != 19 || (result = *((_DWORD *)this + 62), result <= 0) )
+      {
+        if ( !v67 )
+        {
+          qmemcpy(
+            v122,
+            (const void *)((const void *(__stdcall *)(float *))BuildingClass::BuildTurretTransform)(v124),
+            sizeof(v122));
+          v68 = (int)(dword_818CB0
+                    + (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v111) >> 10) + 1) >> 1) & 0x1F))
+              % 32;
+          v69 = (_BYTE *)*((_DWORD *)this + 352);
+          v99 = v68 <= 16;
+          if ( v68 <= 16 && v69 )
+          {
+            if ( byte_818CB4 )
+              v69[413] = 0;
+            (*(void (__thiscall **)(_BYTE *, _DWORD *, int, _DWORD))(*(_DWORD *)v69 + 260))(
+              v69,
+              &MEMORY[0x87F7E8][7662],
+              1,
+              0);
+            v69[413] = 1;
+          }
+          v70 = *((_DWORD *)this + 328);
+          v71 = v70;
+          v72 = *(_DWORD *)(v70 + 4576);
+          v73 = *(_DWORD *)(v70 + 4580);
+          v74 = v126[1];
+          v75 = *(int (__thiscall ***)(#377 *))this;
+          v109 = *v126 + v72;
+          v110 = v73 + v74;
+          v87 = v104;
+          v82 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v108) + 133);
+          v76 = (float *)AudioConfig::InitDefault(v124);
+          v77 = MultiplyMatrix3x4(v125, v76, v122);
+          result = ((int (__thiscall *)(#377 *, int, _DWORD, int, int, int *, int *, float *, int, int, _DWORD))v75[273])(
+                     this,
+                     v71 + 192,
+                     0,
+                     -1,
+                     v71 + 580,
+                     v127,
+                     &v109,
+                     v77,
+                     v82,
+                     v87,
+                     0);
+          LOBYTE(result) = v99;
+          if ( !v99 && v69 )
+          {
+            if ( byte_818CB4 )
+              v69[413] = 0;
+            result = (*(int (__thiscall **)(_BYTE *, _DWORD *, int, _DWORD))(*(_DWORD *)v69 + 260))(
+                       v69,
+                       &MEMORY[0x87F7E8][7662],
+                       1,
+                       0);
+            v69[413] = 1;
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 11Ch
+push    ebx
+push    ebp
+mov     ebp, ecx
+push    esi
+lea     ecx, [esp+128h+var_118]
+push    edi
+mov     eax, [ebp+0]
+push    ecx
+mov     ecx, ebp
+call    dword ptr [eax+1B8h]
+mov     edx, [eax]
+mov     eax, [ebp+0]
+mov     ecx, ebp
+mov     [esp+12Ch+var_100], edx
+call    dword ptr [eax+184h]
+mov     ebx, [esp+12Ch+arg_4]
+cmp     eax, 10h
+jnz     loc_43DC1C
+lea     esi, [ebp+350h]
+mov     ecx, esi
+call    Window__IsVisible
+test    al, al
+jnz     short loc_43DAF3
+mov     ecx, esi
+call    BuildingClass__CheckPowerFlags
+test    al, al
+jnz     short loc_43DAF3
+mov     ecx, esi
+call    Flag__CheckNone
+test    al, al
+jnz     short loc_43DAF3
+mov     ecx, esi
+call    BuildingClass__CheckFlag24
+test    al, al
+jz      loc_43DC1C
+
+loc_43DAF3:                             ; CODE XREF: FootClass__DrawPlacementPreview+4C↑j
+; FootClass__DrawPlacementPreview+57↑j ...
+mov     al, [ebp+418h]
+test    al, al
+jz      loc_43DC1C
+mov     eax, [ebp+0E8h]
+xor     edi, edi
+test    eax, eax
+jle     loc_43DC1C
+
+loc_43DB11:                             ; CODE XREF: FootClass__DrawPlacementPreview+196↓j
+push    edi
+mov     ecx, ebp
+call    Array__Get
+mov     esi, eax
+test    esi, esi
+jz      loc_43DC0D
+mov     al, [esi+81h]
+test    al, al
+jnz     loc_43DC0D
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 6
+jz      loc_43DC0D
+mov     eax, [esi]
+lea     ecx, [esp+12Ch+var_E4]
+push    0
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+4Ch]
+mov     edx, [eax]
+mov     [esp+12Ch+var_F0], edx
+mov     ecx, [eax+4]
+mov     [esp+12Ch+var_EC], ecx
+mov     edx, [eax+8]
+lea     eax, [esi+9Ch]
+mov     ecx, eax
+mov     [esp+12Ch+var_E8], edx
+mov     edx, [ecx]
+mov     [esp+12Ch+var_D8], edx
+mov     edx, [ecx+4]
+mov     [esp+12Ch+var_D4], edx
+mov     ecx, [ecx+8]
+mov     [esp+12Ch+var_E8], ecx
+mov     ecx, dword_A8ED54+0E47FCh
+test    ecx, ecx
+jz      short loc_43DBDA
+mov     cl, byte ptr dword_A8ED54+17h
+test    cl, cl
+jnz     short loc_43DBDA
+mov     ecx, ds:0A8B230h
+mov     edx, [ecx]
+test    dh, 10h
+jz      short loc_43DBDA
+mov     edx, [eax]
+mov     ecx, [eax+4]
+mov     [esp+12Ch+var_10C], edx
+mov     edx, [eax+8]
+lea     eax, [esp+12Ch+var_10C]
+mov     [esp+12Ch+var_108], ecx
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+130h+var_104], edx
+call    Game__Stub3
+test    al, al
+jnz     short loc_43DC0D
+lea     ecx, [esp+12Ch+var_F0]
+push    ecx
+mov     ecx, 87F7E8h
+call    Game__Stub3
+test    al, al
+jnz     short loc_43DC0D
+
+loc_43DBDA:                             ; CODE XREF: FootClass__DrawPlacementPreview+107↑j
+; FootClass__DrawPlacementPreview+111↑j ...
+mov     eax, [esi]
+lea     edx, [esp+12Ch+var_FC]
+lea     ecx, [esp+12Ch+var_6C]
+push    edx
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+0ACh]
+mov     ecx, ds:887324h
+push    eax
+call    Coord__To_Screen
+mov     edx, [esi]
+lea     eax, [esp+128h+var_F8]
+push    ebx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+114h]
+
+loc_43DC0D:                             ; CODE XREF: FootClass__DrawPlacementPreview+9D↑j
+; FootClass__DrawPlacementPreview+AB↑j ...
+mov     eax, [ebp+0E8h]
+inc     edi
+cmp     edi, eax
+jl      loc_43DB11
+
+loc_43DC1C:                             ; CODE XREF: FootClass__DrawPlacementPreview+37↑j
+; FootClass__DrawPlacementPreview+6D↑j ...
+mov     eax, [ebp+294h]
+xor     esi, esi
+test    eax, eax
+mov     [esp+12Ch+var_110], esi
+jz      loc_43DCCE
+mov     ecx, ds:8871E0h
+mov     eax, [ecx+18A4h]
+lea     edx, [ecx+eax*2]
+lea     ecx, [ecx+eax*2+104Eh]
+lea     edi, [eax+edx]
+mov     bl, [eax+ecx+827h]
+mov     dl, [edi+1874h]
+mov     byte ptr [esp+12Ch+var_11C+3], dl
+mov     dl, [edi+1876h]
+mov     byte ptr [esp+12Ch+var_11C+2], dl
+call    DDraw__GetStatus
+dec     eax
+jz      short loc_43DC8A
+dec     eax
+jnz     short loc_43DCAB
+movzx   si, byte ptr [esp+12Ch+var_11C+3]
+movzx   cx, byte ptr [esp+12Ch+var_11C+2]
+xor     ax, ax
+shl     esi, 6
+mov     al, bl
+or      esi, eax
+shl     esi, 5
+or      esi, ecx
+
+loc_43DC8A:                             ; CODE XREF: FootClass__DrawPlacementPreview+1EA↑j
+movzx   cx, byte ptr [esp+12Ch+var_11C+3]
+mov     dl, bl
+xor     ax, ax
+shr     dl, 1
+mov     al, dl
+movzx   dx, byte ptr [esp+12Ch+var_11C+2]
+shl     ecx, 5
+or      eax, ecx
+shl     eax, 6
+or      eax, edx
+or      esi, eax
+
+loc_43DCAB:                             ; CODE XREF: FootClass__DrawPlacementPreview+1ED↑j
+movzx   cx, byte ptr [esp+12Ch+var_11C+3]
+movzx   dx, byte ptr [esp+12Ch+var_11C+2]
+shr     bl, 1
+xor     ax, ax
+mov     al, bl
+shl     ecx, 5
+or      eax, ecx
+shl     eax, 5
+or      eax, edx
+or      esi, eax
+mov     [esp+12Ch+var_110], esi
+
+loc_43DCCE:                             ; CODE XREF: FootClass__DrawPlacementPreview+1AA↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+160h]
+test    al, al
+jz      loc_43DD8E
+cmp     dword ptr [ebp+1C4h], 1
+jnz     loc_43DD8E
+mov     ecx, ds:8871E0h
+mov     eax, [ecx+18B0h]
+lea     edx, [ecx+eax*2]
+lea     ecx, [ecx+eax*2+104Eh]
+lea     edi, [eax+edx]
+mov     bl, [eax+ecx+827h]
+mov     dl, [edi+1874h]
+mov     byte ptr [esp+12Ch+var_11C+2], dl
+mov     dl, [edi+1876h]
+mov     byte ptr [esp+12Ch+var_11C+3], dl
+call    DDraw__GetStatus
+dec     eax
+jz      short loc_43DD4A
+dec     eax
+jnz     short loc_43DD6B
+movzx   ax, byte ptr [esp+12Ch+var_11C+2]
+movzx   dx, byte ptr [esp+12Ch+var_11C+3]
+xor     cx, cx
+shl     eax, 6
+mov     cl, bl
+or      eax, ecx
+shl     eax, 5
+or      eax, edx
+or      esi, eax
+
+loc_43DD4A:                             ; CODE XREF: FootClass__DrawPlacementPreview+2A8↑j
+movzx   dx, byte ptr [esp+12Ch+var_11C+2]
+mov     al, bl
+xor     cx, cx
+shr     al, 1
+mov     cl, al
+movzx   ax, byte ptr [esp+12Ch+var_11C+3]
+shl     edx, 5
+or      ecx, edx
+shl     ecx, 6
+or      ecx, eax
+or      esi, ecx
+
+loc_43DD6B:                             ; CODE XREF: FootClass__DrawPlacementPreview+2AB↑j
+movzx   dx, byte ptr [esp+12Ch+var_11C+2]
+movzx   ax, byte ptr [esp+12Ch+var_11C+3]
+shr     bl, 1
+xor     cx, cx
+mov     cl, bl
+shl     edx, 5
+or      ecx, edx
+shl     ecx, 5
+or      ecx, eax
+or      esi, ecx
+mov     [esp+12Ch+var_110], esi
+
+loc_43DD8E:                             ; CODE XREF: FootClass__DrawPlacementPreview+25B↑j
+; FootClass__DrawPlacementPreview+268↑j
+mov     edx, [ebp+0]
+lea     eax, [esp+12Ch+var_6C]
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+12Ch+var_114], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+12Ch+var_118]
+sar     eax, 8
+mov     word ptr [esp+12Ch+var_114+2], ax
+mov     ecx, [esp+12Ch+var_114]
+mov     [esp+12Ch+var_118], ecx
+push    edx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    CellClass__QuickPassable
+test    al, al
+jz      short loc_43DDF1
+mov     [esp+12Ch+var_110], 0
+
+loc_43DDF1:                             ; CODE XREF: FootClass__DrawPlacementPreview+367↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+184h]
+cmp     eax, 10h
+jnz     loc_43DF5A
+mov     ecx, [ebp+520h]
+mov     eax, [ecx+150Ch]
+test    eax, eax
+jz      loc_43DF5A
+lea     ebx, [ebp+350h]
+mov     ecx, ebx
+call    Flag__CheckNone
+test    al, al
+jnz     short loc_43DE4F
+mov     ecx, ebx
+call    Window__IsVisible
+test    al, al
+jnz     short loc_43DE4F
+mov     ecx, ebx
+call    BuildingClass__CheckFlag24
+test    al, al
+jnz     short loc_43DE4F
+mov     ecx, ebx
+call    BuildingClass__CheckPowerFlags
+test    al, al
+jz      loc_43DF5A
+
+loc_43DE4F:                             ; CODE XREF: FootClass__DrawPlacementPreview+3A8↑j
+; FootClass__DrawPlacementPreview+3B3↑j ...
+mov     ecx, ebx
+call    Animation__GetProgress
+mov     edx, [ebp+520h]
+fimul   dword ptr [edx+0F00h]
+call    Math__RoundToInt
+mov     ecx, ebx
+mov     edi, eax
+call    BuildingClass__CheckFlag24
+test    al, al
+jz      short loc_43DE84
+mov     eax, [ebp+520h]
+mov     ecx, [eax+0F00h]
+sub     ecx, edi
+mov     edi, ecx
+
+loc_43DE84:                             ; CODE XREF: FootClass__DrawPlacementPreview+3F2↑j
+mov     ecx, ebx
+call    Flag__CheckNone
+test    al, al
+jz      short loc_43DE91
+xor     edi, edi
+
+loc_43DE91:                             ; CODE XREF: FootClass__DrawPlacementPreview+40D↑j
+mov     edx, [ebp+520h]
+mov     eax, [edx+0F00h]
+cmp     edi, eax
+jl      short loc_43DEA4
+lea     edi, [eax-1]
+
+loc_43DEA4:                             ; CODE XREF: FootClass__DrawPlacementPreview+41F↑j
+test    edi, edi
+jge     short loc_43DEAA
+xor     edi, edi
+
+loc_43DEAA:                             ; CODE XREF: FootClass__DrawPlacementPreview+426↑j
+mov     ecx, ebp
+call    BuildingClass__GetHealthRatio
+mov     eax, ds:8871E0h
+fcomp   qword ptr [eax+1700h]
+fnstsw  ax
+test    ah, 41h
+jz      short loc_43DED9
+mov     eax, [ebp+520h]
+mov     cl, [eax+1700h]
+test    cl, cl
+jz      short loc_43DED9
+add     edi, [eax+0F00h]
+
+loc_43DED9:                             ; CODE XREF: FootClass__DrawPlacementPreview+441↑j
+; FootClass__DrawPlacementPreview+451↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1D0h]
+mov     ecx, eax
+call    ZCoordToScreenY
+mov     esi, 0FFFFFFFBh
+xor     ecx, ecx
+sub     esi, eax
+xor     eax, eax
+push    ecx
+push    ecx
+push    eax
+push    ecx
+push    ecx
+lea     eax, [esp+140h+var_100]
+push    ecx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   ecx, word ptr [eax+10Ah]
+mov     edx, [esp+144h+arg_4]
+mov     eax, [esp+144h+arg_0]
+push    ecx
+mov     ecx, [ebp+520h]
+push    0
+push    0
+push    esi
+push    100h
+push    0
+push    edx
+mov     edx, [ecx+150Ch]
+push    eax
+push    edi
+push    edx
+mov     ecx, ebp
+call    loc_705E00
+mov     ecx, ebx
+call    BuildingClass__CheckFlag24
+test    al, al
+jz      short loc_43DF5A
+test    edi, edi
+jnz     short loc_43DF5A
+mov     byte ptr [ebp+80h], 1
+
+loc_43DF5A:                             ; CODE XREF: FootClass__DrawPlacementPreview+37F↑j
+; FootClass__DrawPlacementPreview+393↑j ...
+mov     ecx, [ebp+520h]
+mov     al, [ecx+16C5h]
+test    al, al
+jz      loc_43E5D9
+mov     eax, [ebp+0ACh]
+xor     dl, dl
+cmp     eax, 12h
+jz      short loc_43DF84
+cmp     dword ptr [ebp+0B4h], 12h
+jnz     short loc_43DFA0
+
+loc_43DF84:                             ; CODE XREF: FootClass__DrawPlacementPreview+4F9↑j
+mov     esi, [ecx+0F08h]
+mov     edi, [ecx+0F04h]
+lea     esi, [esi+edi-1]
+mov     edi, [ebp+0F8h]
+cmp     edi, esi
+jge     short loc_43DFA0
+mov     dl, 1
+
+loc_43DFA0:                             ; CODE XREF: FootClass__DrawPlacementPreview+502↑j
+; FootClass__DrawPlacementPreview+51C↑j
+cmp     eax, 13h
+jnz     short loc_43DFAF
+mov     eax, [ebp+0F8h]
+test    eax, eax
+jg      short loc_43DFB3
+
+loc_43DFAF:                             ; CODE XREF: FootClass__DrawPlacementPreview+523↑j
+test    dl, dl
+jz      short loc_43DFC1
+
+loc_43DFB3:                             ; CODE XREF: FootClass__DrawPlacementPreview+52D↑j
+mov     al, [ecx+16CAh]
+test    al, al
+jz      loc_43E795
+
+loc_43DFC1:                             ; CODE XREF: FootClass__DrawPlacementPreview+531↑j
+mov     al, ds:887418h
+test    al, al
+jz      short loc_43E000
+lea     esi, [ebp+388h]
+lea     eax, [esp+12Ch+var_118]
+push    eax
+mov     ecx, esi
+call    ProgressTimer__GetValue
+mov     ebx, [eax]
+lea     ecx, [esp+12Ch+var_118]
+shr     ebx, 0Ah
+inc     ebx
+push    ecx
+shr     ebx, 1
+mov     ecx, esi
+and     ebx, 1Fh
+call    ProgressTimer__GetValue
+mov     edi, [eax]
+shr     edi, 0Ah
+inc     edi
+shr     edi, 1
+and     edi, 1Fh
+jmp     short loc_43E006
+; ---------------------------------------------------------------------------
+
+loc_43E000:                             ; CODE XREF: FootClass__DrawPlacementPreview+548↑j
+or      ebx, 0FFFFFFFFh
+or      edi, 0FFFFFFFFh
+
+loc_43E006:                             ; CODE XREF: FootClass__DrawPlacementPreview+57E↑j
+mov     eax, [ebp+520h]
+xor     esi, esi
+mov     [esp+12Ch+var_114], esi
+mov     [esp+12Ch+var_118], esi
+mov     ecx, [eax+0BCh]
+cmp     ecx, esi
+jz      short loc_43E02E
+mov     eax, [ebp+148h]
+cdq
+idiv    dword ptr [ecx+8]
+mov     [esp+12Ch+var_114], edx
+
+loc_43E02E:                             ; CODE XREF: FootClass__DrawPlacementPreview+59E↑j
+mov     eax, [ebp+520h]
+mov     ecx, [eax+0C4h]
+test    ecx, ecx
+jz      short loc_43E04E
+mov     eax, [ebp+148h]
+cdq
+idiv    dword ptr [ecx+8]
+mov     esi, edx
+mov     [esp+12Ch+var_118], esi
+
+loc_43E04E:                             ; CODE XREF: FootClass__DrawPlacementPreview+5BC↑j
+mov     edx, [esp+12Ch+var_114]
+and     esi, 0FFh
+and     edx, 0FFh
+lea     ecx, [esp+12Ch+var_CC]
+shl     edx, 10h
+shl     esi, 10h
+or      ebx, edx
+or      edi, esi
+call    Matrix3x4__Identity
+mov     eax, [ebp+520h]
+mov     ecx, [eax+0B8h]
+test    ecx, ecx
+jz      loc_43E41D
+lea     eax, [esp+12Ch+var_F4]
+lea     ecx, [ebp+388h]
+push    eax
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+shr     ecx, 0Ah
+inc     ecx
+shr     ecx, 1
+and     ecx, 1Fh
+sub     ecx, 8
+mov     [esp+12Ch+var_118], ecx
+push    ecx
+fild    [esp+130h+var_118]
+lea     ecx, [esp+130h+var_CC]
+fmul    ds:dbl_7E4408
+fstp    [esp+130h+var_130] ; float
+call    Matrix2D__Rotate
+mov     edx, [ebp+520h]
+push    ecx
+lea     ecx, [esp+130h+var_CC]
+mov     eax, [edx+720h]
+cdq
+and     edx, 7
+add     eax, edx
+sar     eax, 3
+mov     [esp+130h+var_118], eax
+fild    [esp+130h+var_118]
+fstp    [esp+130h+var_130] ; float
+call    Matrix3x4__Translate
+fld     [esp+12Ch+var_C0]
+fstp    [esp+12Ch+var_10C]
+fld     [esp+12Ch+var_B0]
+fstp    [esp+12Ch+var_108]
+fld     [esp+12Ch+var_A0]
+fstp    [esp+12Ch+var_104]
+fld     [esp+12Ch+var_10C]
+fchs
+fstp    [esp+12Ch+var_F0]
+fld     [esp+12Ch+var_108]
+mov     eax, [esp+12Ch+var_10C]
+mov     edx, [esp+12Ch+var_104]
+fchs
+mov     ecx, 0Ch
+lea     esi, [esp+12Ch+var_CC]
+lea     edi, [esp+12Ch+var_9C]
+mov     [esp+12Ch+var_E4], eax
+mov     eax, [esp+12Ch+var_F0]
+mov     [esp+12Ch+var_DC], edx
+fstp    [esp+12Ch+var_EC]
+fld     [esp+12Ch+var_104]
+rep movsd
+fchs
+mov     ecx, [esp+12Ch+var_108]
+mov     [esp+12Ch+var_10C], eax
+mov     [esp+12Ch+var_E0], ecx
+mov     ecx, [esp+12Ch+var_EC]
+fstp    [esp+12Ch+var_E8]
+mov     edx, [esp+12Ch+var_E8]
+lea     eax, [esp+12Ch+var_10C]
+mov     [esp+12Ch+var_108], ecx
+push    eax
+lea     ecx, [esp+130h+var_9C]
+mov     [esp+130h+var_104], edx
+call    Matrix3x3__Multiply
+mov     eax, [ebp+3F0h]
+test    eax, eax
+jz      short loc_43E196
+fld     dword ptr [ebp+3ECh]
+push    ecx
+lea     ecx, [esp+130h+var_CC]
+fchs
+fstp    [esp+130h+var_130] ; float
+call    Matrix3x4__Translate
+or      ebx, 0FFFFFFFFh
+
+loc_43E196:                             ; CODE XREF: FootClass__DrawPlacementPreview+6FC↑j
+mov     eax, [ebp+410h]
+test    eax, eax
+jz      short loc_43E1BB
+fld     dword ptr [ebp+40Ch]
+push    ecx
+lea     ecx, [esp+130h+var_9C]
+fchs
+fstp    [esp+130h+var_130] ; float
+call    Matrix3x4__Translate
+or      ebx, 0FFFFFFFFh
+
+loc_43E1BB:                             ; CODE XREF: FootClass__DrawPlacementPreview+71E↑j
+lea     ecx, [esp+12Ch+var_F4]
+push    ecx
+lea     ecx, [ebp+370h]
+call    ProgressTimer__GetValue
+mov     edx, [eax]
+push    ecx
+shr     edx, 0Ah
+inc     edx
+lea     ecx, [esp+130h+var_9C]
+shr     edx, 1
+and     edx, 1Fh
+sub     edx, 8
+mov     [esp+130h+var_118], edx
+fild    [esp+130h+var_118]
+fmul    ds:dbl_7E4408
+fchs
+fstp    [esp+130h+var_130] ; float
+call    Matrix3D__RotateZ
+lea     eax, [esp+12Ch+var_E4]
+lea     ecx, [esp+12Ch+var_9C]
+push    eax
+call    Matrix3x3__Multiply
+mov     ecx, [ebp+520h]
+lea     esi, [ebp+388h]
+mov     eax, [ecx+11E0h]
+mov     edx, [ecx+11E4h]
+mov     ecx, [esp+12Ch+arg_0]
+mov     edi, [ecx]
+mov     ecx, [ecx+4]
+add     ecx, edx
+add     eax, edi
+mov     [esp+12Ch+var_F8], ecx
+lea     ecx, [esp+12Ch+var_F4]
+push    ecx
+mov     ecx, esi
+mov     [esp+130h+var_FC], eax
+call    ProgressTimer__GetValue
+mov     edx, [eax]
+shr     edx, 0Dh
+inc     edx
+shr     edx, 1
+test    dl, 3
+jle     short loc_43E279
+lea     eax, [esp+12Ch+var_118]
+mov     ecx, esi
+push    eax
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+shr     ecx, 0Dh
+inc     ecx
+shr     ecx, 1
+and     ecx, 3
+cmp     cl, 3
+jge     short loc_43E279
+mov     byte ptr [esp+12Ch+var_11C+2], 1
+jmp     loc_43E305
+; ---------------------------------------------------------------------------
+
+loc_43E279:                             ; CODE XREF: FootClass__DrawPlacementPreview+7D1↑j
+; FootClass__DrawPlacementPreview+7ED↑j
+mov     eax, [ebp+520h]
+mov     byte ptr [esp+12Ch+var_11C+2], 0
+add     eax, 0C0h
+cmp     dword ptr [eax], 0
+jz      short loc_43E305
+mov     ecx, [eax+4]
+test    ecx, ecx
+jz      short loc_43E305
+mov     edx, [esp+12Ch+var_110]
+mov     esi, [ebp+520h]
+mov     edi, [ebp+0]
+push    0
+lea     eax, [esp+130h+var_100]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   ecx, word ptr [eax+10Ah]
+lea     edx, [esp+134h+var_9C]
+push    ecx
+push    edx
+lea     ecx, [esp+13Ch+var_30]
+call    AudioConfig__InitDefault
+mov     edx, eax
+lea     ecx, [esp+13Ch+var_60]
+call    MultiplyMatrix3x4
+mov     ecx, [esp+138h+arg_4]
+push    eax
+lea     eax, [esp+13Ch+var_FC]
+lea     edx, [esi+280h]
+push    eax
+push    ecx
+push    edx
+push    ebx
+add     esi, 0C0h
+push    0
+push    esi
+mov     ecx, ebp
+call    dword ptr [edi+444h]
+
+loc_43E305:                             ; CODE XREF: FootClass__DrawPlacementPreview+7F4↑j
+; FootClass__DrawPlacementPreview+80C↑j ...
+mov     eax, [esp+12Ch+var_110]
+mov     esi, [ebp+520h]
+mov     edi, [ebp+0]
+push    0
+lea     ecx, [esp+130h+var_100]
+push    eax
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   edx, word ptr [eax+10Ah]
+lea     eax, [esp+134h+var_CC]
+push    edx
+push    eax
+lea     ecx, [esp+13Ch+var_60]
+call    AudioConfig__InitDefault
+mov     edx, eax
+lea     ecx, [esp+13Ch+var_30]
+call    MultiplyMatrix3x4
+mov     edx, [esp+138h+arg_4]
+lea     ecx, [esp+138h+var_FC]
+push    eax
+push    ecx
+mov     ecx, [esp+140h+var_114]
+lea     eax, [esi+258h]
+push    edx
+push    eax
+push    ebx
+add     esi, 0B8h
+push    ecx
+push    esi
+mov     ecx, ebp
+call    dword ptr [edi+444h]
+mov     al, byte ptr [esp+12Ch+var_11C+2]
+test    al, al
+jz      loc_43E795
+mov     eax, [ebp+520h]
+add     eax, 0C0h
+cmp     dword ptr [eax], 0
+jz      loc_43E795
+mov     ecx, [eax+4]
+test    ecx, ecx
+jz      loc_43E795
+mov     edx, [esp+12Ch+var_110]
+mov     esi, [ebp+520h]
+mov     edi, [ebp+0]
+push    0
+lea     eax, [esp+130h+var_100]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   ecx, word ptr [eax+10Ah]
+lea     edx, [esp+134h+var_9C]
+push    ecx
+push    edx
+lea     ecx, [esp+13Ch+var_60]
+call    AudioConfig__InitDefault
+mov     edx, eax
+lea     ecx, [esp+13Ch+var_30]
+call    MultiplyMatrix3x4
+mov     ecx, [esp+138h+arg_4]
+push    eax
+lea     eax, [esp+13Ch+var_FC]
+lea     edx, [esi+280h]
+push    eax
+push    ecx
+push    edx
+push    ebx
+add     esi, 0C0h
+push    0
+push    esi
+mov     ecx, ebp
+call    dword ptr [edi+444h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 11Ch
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_43E41D:                             ; CODE XREF: FootClass__DrawPlacementPreview+5FF↑j
+mov     ecx, [eax+0C0h]
+test    ecx, ecx
+jz      loc_43E795
+mov     ecx, [eax+0C4h]
+test    ecx, ecx
+jz      loc_43E795
+fld     [esp+12Ch+var_C0]
+fstp    [esp+12Ch+var_10C]
+fld     [esp+12Ch+var_B0]
+fstp    [esp+12Ch+var_108]
+fld     [esp+12Ch+var_A0]
+fstp    [esp+12Ch+var_104]
+fld     [esp+12Ch+var_10C]
+fchs
+fstp    [esp+12Ch+var_F0]
+fld     [esp+12Ch+var_108]
+mov     eax, [esp+12Ch+var_10C]
+mov     ecx, [esp+12Ch+var_108]
+mov     edx, [esp+12Ch+var_104]
+mov     [esp+12Ch+var_D8], eax
+mov     eax, [esp+12Ch+var_F0]
+mov     [esp+12Ch+var_D4], ecx
+fchs
+fstp    [esp+12Ch+var_EC]
+fld     [esp+12Ch+var_104]
+mov     ecx, [esp+12Ch+var_EC]
+mov     [esp+12Ch+var_E4], eax
+fchs
+fstp    [esp+12Ch+var_E8]
+mov     [esp+12Ch+var_D0], edx
+mov     edx, [esp+12Ch+var_E8]
+lea     eax, [esp+12Ch+var_E4]
+mov     [esp+12Ch+var_E0], ecx
+push    eax
+lea     ecx, [esp+130h+var_CC]
+mov     [esp+130h+var_DC], edx
+call    Matrix3x3__Multiply
+lea     ecx, [esp+12Ch+var_F4]
+push    ecx
+lea     ecx, [ebp+388h]
+call    ProgressTimer__GetValue
+mov     edx, [eax]
+push    ecx
+shr     edx, 0Ah
+inc     edx
+lea     ecx, [esp+130h+var_CC]
+shr     edx, 1
+and     edx, 1Fh
+sub     edx, 8
+mov     [esp+130h+var_114], edx
+fild    [esp+130h+var_114]
+fmul    ds:dbl_7E4408
+fstp    [esp+130h+var_130] ; float
+call    Matrix2D__Rotate
+lea     eax, [esp+12Ch+var_F4]
+lea     ecx, [ebp+370h]
+push    eax
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+shr     ecx, 0Ah
+inc     ecx
+shr     ecx, 1
+and     ecx, 1Fh
+sub     ecx, 8
+mov     [esp+12Ch+var_114], ecx
+push    ecx
+fild    [esp+130h+var_114]
+lea     ecx, [esp+130h+var_CC]
+fmul    ds:dbl_7E4408
+fchs
+fstp    [esp+130h+var_130] ; float
+call    Matrix3D__RotateZ
+lea     edx, [esp+12Ch+var_D8]
+lea     ecx, [esp+12Ch+var_CC]
+push    edx
+call    Matrix3x3__Multiply
+mov     ecx, [ebp+520h]
+mov     eax, [ecx+11E0h]
+mov     edx, [ecx+11E4h]
+mov     ecx, [esp+12Ch+arg_0]
+mov     esi, [ebp+520h]
+push    0
+mov     ebx, [ecx]
+mov     ecx, [ecx+4]
+add     eax, ebx
+mov     ebx, [ebp+0]
+add     ecx, edx
+mov     [esp+130h+var_FC], eax
+mov     eax, [esp+130h+var_110]
+mov     [esp+130h+var_F8], ecx
+lea     ecx, [esp+130h+var_100]
+push    eax
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   edx, word ptr [eax+10Ah]
+lea     eax, [esp+134h+var_CC]
+push    edx
+push    eax
+lea     ecx, [esp+13Ch+var_60]
+call    AudioConfig__InitDefault
+mov     edx, eax
+lea     ecx, [esp+13Ch+var_30]
+call    MultiplyMatrix3x4
+mov     edx, [esp+138h+arg_4]
+lea     ecx, [esp+138h+var_FC]
+push    eax
+push    ecx
+mov     ecx, [esp+140h+var_118]
+lea     eax, [esi+280h]
+push    edx
+push    eax
+push    edi
+add     esi, 0C0h
+push    ecx
+push    esi
+mov     ecx, ebp
+call    dword ptr [ebx+444h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 11Ch
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_43E5D9:                             ; CODE XREF: FootClass__DrawPlacementPreview+4E8↑j
+mov     al, [ecx+16C6h]
+test    al, al
+jz      loc_43E795
+mov     eax, [ebp+0ACh]
+xor     dl, dl
+cmp     eax, 12h
+jz      short loc_43E5FD
+cmp     dword ptr [ebp+0B4h], 12h
+jnz     short loc_43E619
+
+loc_43E5FD:                             ; CODE XREF: FootClass__DrawPlacementPreview+B72↑j
+mov     esi, [ecx+0F08h]
+mov     ecx, [ecx+0F04h]
+lea     ecx, [esi+ecx-1]
+mov     esi, [ebp+0F8h]
+cmp     esi, ecx
+jge     short loc_43E619
+mov     dl, 1
+
+loc_43E619:                             ; CODE XREF: FootClass__DrawPlacementPreview+B7B↑j
+; FootClass__DrawPlacementPreview+B95↑j
+cmp     eax, 13h
+jnz     short loc_43E62C
+mov     eax, [ebp+0F8h]
+test    eax, eax
+jg      loc_43E795
+
+loc_43E62C:                             ; CODE XREF: FootClass__DrawPlacementPreview+B9C↑j
+test    dl, dl
+jnz     loc_43E795
+lea     edx, [esp+12Ch+var_60]
+mov     ecx, ebp
+push    edx
+call    BuildingClass__BuildTurretTransform
+mov     ecx, 0Ch
+mov     esi, eax
+lea     edi, [esp+12Ch+var_9C]
+lea     eax, [esp+12Ch+var_F4]
+rep movsd
+push    eax
+lea     ecx, [ebp+388h]
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+mov     ecx, dword_818CB0
+shr     eax, 0Ah
+inc     eax
+shr     eax, 1
+and     eax, 1Fh
+add     eax, ecx
+and     eax, 8000001Fh
+jns     short loc_43E682
+dec     eax
+or      eax, 0FFFFFFE0h
+inc     eax
+
+loc_43E682:                             ; CODE XREF: FootClass__DrawPlacementPreview+BFB↑j
+mov     edi, [ebp+580h]
+cmp     eax, 10h
+setle   al
+test    al, al
+mov     byte ptr [esp+12Ch+var_11C+2], al
+jz      short loc_43E6C4
+test    edi, edi
+jz      short loc_43E6C4
+mov     al, byte_818CB4
+test    al, al
+jz      short loc_43E6AA
+mov     byte ptr [edi+19Dh], 0
+
+loc_43E6AA:                             ; CODE XREF: FootClass__DrawPlacementPreview+C21↑j
+mov     edx, [edi]
+push    0
+push    1
+push    886FA0h
+mov     ecx, edi
+call    dword ptr [edx+104h]
+mov     byte ptr [edi+19Dh], 1
+
+loc_43E6C4:                             ; CODE XREF: FootClass__DrawPlacementPreview+C14↑j
+; FootClass__DrawPlacementPreview+C18↑j
+mov     ecx, [ebp+520h]
+mov     esi, [ebp+520h]
+push    0
+mov     eax, [ecx+11E0h]
+mov     edx, [ecx+11E4h]
+mov     ecx, [esp+130h+arg_0]
+mov     ebx, [ecx]
+mov     ecx, [ecx+4]
+add     eax, ebx
+mov     ebx, [ebp+0]
+add     ecx, edx
+mov     [esp+130h+var_FC], eax
+mov     eax, [esp+130h+var_110]
+mov     [esp+130h+var_F8], ecx
+lea     ecx, [esp+130h+var_100]
+push    eax
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   edx, word ptr [eax+10Ah]
+lea     eax, [esp+134h+var_9C]
+push    edx
+push    eax
+lea     ecx, [esp+13Ch+var_60]
+call    AudioConfig__InitDefault
+mov     edx, eax
+lea     ecx, [esp+13Ch+var_30]
+call    MultiplyMatrix3x4
+mov     edx, [esp+138h+arg_4]
+lea     ecx, [esp+138h+var_FC]
+push    eax
+push    ecx
+lea     eax, [esi+244h]
+push    edx
+push    eax
+push    0FFFFFFFFh
+add     esi, 0C0h
+push    0
+push    esi
+mov     ecx, ebp
+call    dword ptr [ebx+444h]
+mov     al, byte ptr [esp+12Ch+var_11C+2]
+test    al, al
+jnz     short loc_43E795
+test    edi, edi
+jz      short loc_43E795
+mov     al, byte_818CB4
+test    al, al
+jz      short loc_43E77B
+mov     byte ptr [edi+19Dh], 0
+
+loc_43E77B:                             ; CODE XREF: FootClass__DrawPlacementPreview+CF2↑j
+mov     edx, [edi]
+push    0
+push    1
+push    886FA0h
+mov     ecx, edi
+call    dword ptr [edx+104h]
+mov     byte ptr [edi+19Dh], 1
+
+loc_43E795:                             ; CODE XREF: FootClass__DrawPlacementPreview+53B↑j
+; FootClass__DrawPlacementPreview+8FB↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 11Ch
+retn    8
+*/
+} } }
 // 0x4436F0
-namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
+// [IDA decompile]
+int __thiscall ObjectClass::HandleRallyPointCommand(#377 *this)
+{
+  int result; // eax
+  int v3; // edi
+  void *v4; // eax
+  char v5; // bl
+  _BYTE *WaypointCoords; // eax
+  int v7; // eax
+  int v8; // [esp-8h] [ebp-8Ch]
+  char v9; // [esp-4h] [ebp-88h]
+  char v10[8]; // [esp+Ch] [ebp-78h] BYREF
+  char v11[112]; // [esp+14h] [ebp-70h] BYREF
+  int v12; // [esp+88h] [ebp+4h]
+  __int16 *v13; // [esp+8Ch] [ebp+8h]
+
+  result = v12;
+  if ( v12 == 5 )
+  {
+    v3 = *(_DWORD *)this;
+    v4 = CellCoord::To_CellObj(MEMORY[0x87F7E8], v13);
+    result = (*(int (__thiscall **)(#377 *, int, void *, _DWORD, _DWORD))(v3 + 888))(this, 1, v4, 0, 0);
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    if ( v12 == 6 || v12 == 1 )
+    {
+      v5 = 0;
+      if ( !*(_BYTE *)(*((_DWORD *)this + 328) + 5817)
+        || (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
+        && MEMORY[0x87F7E8][536212]
+        && LOBYTE(MEMORY[0x87F7E8][536270])
+        && !*((_DWORD *)this + 176) )
+      {
+        if ( *(_DWORD *)(*((_DWORD *)this + 328) + 1032)
+          || (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 644))(this) )
+        {
+          BuildingClass::SetRallyPoint((int)this, v13, 1);
+        }
+      }
+      else
+      {
+        v5 = 1;
+      }
+      result = *(_DWORD *)(*((_DWORD *)this + 328) + 1032);
+      if ( result && !v5 )
+      {
+        WaypointCoords = ScriptAction::GetWaypointCoords(v10, this);
+        v8 = *(_DWORD *)WaypointCoords;
+        v9 = WaypointCoords[4];
+        v7 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 56))(this);
+        result = (int)EventClass::Add(v11, v7, 0x16u, v8, v9);
+        if ( MEMORY[0x87F7E8][524984] < 128 )
+        {
+          qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], (const void *)result, 0x6Fu);
+          MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
+          result = MEMORY[0x87F7E8][524984] + 1;
+          MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
+          ++MEMORY[0x87F7E8][524984];
+        }
+      }
+    }
+    LOBYTE(result) = 1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 78h
+cmp     eax, 5
+push    ebx
+push    esi
+push    edi
+mov     esi, ecx
+jnz     short loc_44372F
+mov     eax, [esp+84h+arg_4]
+mov     edi, [esi]
+push    0
+push    0
+push    eax
+mov     ecx, 87F7E8h
+
+loc_443714:                             ; DATA XREF: .text:0060061E↓o
+; Dialog__InitializeControls+137↓o
+call    CellCoord__To_CellObj
+push    eax
+push    1
+mov     ecx, esi
+call    dword ptr [edi+378h]
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 78h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_44372F:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+F↑j
+cmp     eax, 6
+jz      short loc_44373D
+cmp     eax, 1
+jnz     loc_44384E
+
+loc_44373D:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+42↑j
+mov     ecx, [esi+520h]
+xor     bl, bl
+mov     al, [ecx+16B9h]
+test    al, al
+jz      short loc_44377E
+mov     ecx, [esi+21Ch] ; this
+call    House__IsCurrentPlayer
+test    al, al
+jz      short loc_44377A
+mov     eax, ds:0A8B238h
+test    eax, eax
+jz      short loc_44377A
+mov     al, ds:0A8B320h
+test    al, al
+jz      short loc_44377A
+mov     eax, [esi+2C0h]
+test    eax, eax
+jz      short loc_44377E
+
+loc_44377A:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+6C↑j
+; ObjectClass__HandleRallyPointCommand+75↑j ...
+mov     bl, 1
+jmp     short loc_4437AD
+; ---------------------------------------------------------------------------
+
+loc_44377E:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+5D↑j
+; ObjectClass__HandleRallyPointCommand+88↑j
+mov     edx, [esi+520h]
+mov     eax, [edx+408h]
+test    eax, eax
+jnz     short loc_44379C
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+284h]
+test    al, al
+jz      short loc_4437AD
+
+loc_44379C:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+9C↑j
+mov     ecx, [esp+84h+arg_4]
+push    1
+push    ecx
+mov     ecx, esi
+call    BuildingClass__SetRallyPoint
+
+loc_4437AD:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+8C↑j
+; ObjectClass__HandleRallyPointCommand+AA↑j
+mov     edx, [esi+520h]
+mov     eax, [edx+408h]
+test    eax, eax
+jz      loc_44384E
+test    bl, bl
+jnz     loc_44384E
+push    esi
+lea     ecx, [esp+88h+var_78]
+call    ScriptAction__GetWaypointCoords
+mov     edx, [eax]
+sub     esp, 8
+mov     ecx, esp
+mov     al, [eax+4]
+push    16h
+mov     [ecx], edx
+mov     edx, [esi]
+mov     [ecx+4], al
+mov     ecx, esi
+call    dword ptr [edx+38h]
+push    eax
+lea     ecx, [esp+94h+var_70]
+call    EventClass__Add
+cmp     dword ptr ds:0A802C8h, 80h
+jge     short loc_44384E
+mov     ecx, ds:0A802D0h
+mov     esi, eax
+lea     edx, [ecx+ecx*8]
+lea     ecx, [ecx+edx*4]
+lea     edi, [ecx+ecx*2+0A802D4h]
+mov     ecx, 1Bh
+rep movsd
+movsw
+movsb
+call    ds:__imp_timeGetTime
+mov     ecx, ds:0A802D0h
+mov     ds:0A83A54h[ecx*4], eax
+mov     edx, ds:0A802D0h
+mov     eax, ds:0A802C8h
+inc     edx
+and     edx, 7Fh
+inc     eax
+mov     ds:0A802D0h, edx
+mov     ds:0A802C8h, eax
+
+loc_44384E:                             ; CODE XREF: ObjectClass__HandleRallyPointCommand+47↑j
+; ObjectClass__HandleRallyPointCommand+CB↑j ...
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 78h
+retn    10h
+*/
+} } }
 // 0x454250
-namespace ra2 { namespace game { int MissionClass::IsProducing() { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::IsProducing() {
+// [IDA decompile]
+int __thiscall BuildingClass::IsProducing(#377 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 1757) != 0;
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+6DDh]
+test    al, al
+setnz   al
+retn
+*/
+} } }
 // 0x455C20
-namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() {
+// [IDA decompile]
+int __thiscall BuildingClass::GetScreenCoords(#377 *this)
+{
+  int *v2; // eax
+  bool v3; // zf
+  int v4; // edx
+  int v5; // edi
+  char *v6; // eax
+  int v7; // ecx
+  int v8; // edx
+  int v9; // esi
+  int v10; // edi
+  _DWORD *v11; // eax
+  int v12; // edi
+  int v13; // eax
+  _DWORD *v14; // esi
+  struct #108 *lpVtbl; // [esp+10h] [ebp-34h]
+  struct #108 *v17; // [esp+14h] [ebp-30h]
+  int v18; // [esp+18h] [ebp-2Ch] BYREF
+  int v19; // [esp+1Ch] [ebp-28h]
+  int v20; // [esp+20h] [ebp-24h]
+  int v21; // [esp+24h] [ebp-20h]
+  int v22; // [esp+28h] [ebp-1Ch] BYREF
+  int v23; // [esp+2Ch] [ebp-18h]
+  int v24; // [esp+30h] [ebp-14h]
+  _BYTE v25[16]; // [esp+34h] [ebp-10h] BYREF
+  _DWORD *v26; // [esp+48h] [ebp+4h]
+
+  v2 = (int *)(*(int (__thiscall **)(#377 *, int *))(*(_DWORD *)this + 172))(this, &v18);
+  v22 = *v2;
+  v3 = v22 == *((_DWORD *)this + 403);
+  v4 = v2[1];
+  v23 = v4;
+  v5 = v2[2];
+  v24 = v5;
+  lpVtbl = *(struct #108 **)(MEMORY[0x87F7E8][7887] + 176);
+  v17 = *(struct #108 **)(MEMORY[0x87F7E8][7887] + 180);
+  if ( v3
+    && v4 == *((_DWORD *)this + 404)
+    && v5 == *((_DWORD *)this + 405)
+    && *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176) == *((_DWORD *)this + 406)
+    && *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180) == *((_DWORD *)this + 407) )
+  {
+    v6 = (char *)this + 1596;
+    v7 = *((_DWORD *)this + 399);
+    v8 = *((_DWORD *)this + 400);
+    v9 = *((_DWORD *)this + 401);
+    v10 = *((_DWORD *)v6 + 3);
+  }
+  else
+  {
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], &v22, &v18);
+    v11 = (_DWORD *)((_DWORD *(__stdcall *)(_BYTE *))CalculateBuildingFoundationBounds)(v25);
+    v7 = v18 + *v11;
+    v8 = v19 + v11[1];
+    v12 = v11[2];
+    v13 = v11[3];
+    *((_DWORD *)this + 403) = v22;
+    v20 = v12;
+    *((_DWORD *)this + 404) = v23;
+    *((_DWORD *)this + 405) = v24;
+    *((_DWORD *)this + 406) = lpVtbl;
+    *((_DWORD *)this + 407) = v17;
+    v14 = (_DWORD *)((char *)this + 1596);
+    v19 = v8;
+    v21 = v13;
+    *v14 = v7;
+    v14[1] = v8;
+    v14[2] = v12;
+    v10 = v13;
+    v14[3] = v13;
+    v9 = v20;
+  }
+  *v26 = v7;
+  v26[1] = v8;
+  v26[2] = v9;
+  v26[3] = v10;
+  return (int)v26;
+}
+
+/* ASM:
+sub     esp, 34h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+40h+var_2C]
+push    edi
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+0ACh]
+mov     ecx, eax
+mov     eax, [ecx]
+mov     [esp+44h+var_1C], eax
+cmp     eax, [esi+64Ch]
+mov     edx, [ecx+4]
+mov     [esp+44h+var_18], edx
+mov     edi, [ecx+8]
+mov     ecx, ds:887324h
+mov     [esp+44h+var_14], edi
+mov     ebx, [ecx+0B0h]
+mov     ebp, [ecx+0B4h]
+mov     [esp+44h+var_34], ebx
+mov     [esp+44h+var_30], ebp
+jnz     short loc_455CA8
+cmp     edx, [esi+650h]
+jnz     short loc_455CA8
+cmp     edi, [esi+654h]
+jnz     short loc_455CA8
+cmp     ebx, [esi+658h]
+jnz     short loc_455CA8
+cmp     ebp, [esi+65Ch]
+jnz     short loc_455CA8
+add     esi, 63Ch
+mov     eax, esi
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     esi, [eax+8]
+mov     edi, [eax+0Ch]
+jmp     loc_455D33
+; ---------------------------------------------------------------------------
+
+loc_455CA8:                             ; CODE XREF: ObjectClass__GetScreenCoords+4E↑j
+; ObjectClass__GetScreenCoords+56↑j ...
+lea     edx, [esp+44h+var_2C]
+lea     eax, [esp+44h+var_1C]
+push    edx
+push    eax
+call    Coord__To_Screen
+lea     ecx, [esp+44h+var_10]
+push    ecx
+mov     ecx, [esi+520h]
+call    CalculateBuildingFoundationBounds
+mov     ecx, [eax]
+mov     edi, [esp+44h+var_2C]
+mov     edx, [eax+4]
+mov     ebx, [esp+44h+var_1C]
+add     ecx, edi
+mov     edi, [esp+44h+var_28]
+add     edx, edi
+mov     edi, [eax+8]
+mov     eax, [eax+0Ch]
+mov     [esi+64Ch], ebx
+mov     ebx, [esp+44h+var_18]
+mov     [esp+44h+var_24], edi
+mov     [esi+650h], ebx
+mov     ebx, [esp+44h+var_14]
+mov     [esi+654h], ebx
+mov     ebx, [esp+44h+var_34]
+mov     [esi+658h], ebx
+mov     ebx, [esp+44h+var_30]
+mov     [esi+65Ch], ebx
+add     esi, 63Ch
+mov     [esp+44h+var_28], edx
+mov     [esp+44h+var_20], eax
+mov     [esi], ecx
+mov     [esi+4], edx
+mov     [esi+8], edi
+mov     edi, eax
+mov     [esi+0Ch], eax
+mov     esi, [esp+44h+var_24]
+
+loc_455D33:                             ; CODE XREF: ObjectClass__GetScreenCoords+83↑j
+mov     eax, [esp+44h+arg_0]
+mov     ebx, eax
+mov     [ebx], ecx
+mov     [ebx+4], edx
+mov     [ebx+8], esi
+mov     [ebx+0Ch], edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 34h
+retn    4
+*/
+} } }
 // 0x45A040
-namespace ra2 { namespace game { int FootClass::Get(int a1) { return 0; } } }
+namespace ra2 { namespace game { int FootClass::Get(int a1) {
+// [IDA decompile]
+int __thiscall VectorClass_ptr_InfantryClass::Get(_DWORD *this, int a2)
+{
+  return *(_DWORD *)(*(this + 1) + 4 * a2);
+}
+
+/* ASM:
+mov     eax, [ecx+4]
+mov     ecx, [esp+arg_0]
+mov     eax, [eax+ecx*4]
+retn    4
+*/
+} } }
 // 0x45A3E0
-namespace ra2 { namespace game { int FootClass::Add(int a1) { return 0; } } }
+namespace ra2 { namespace game { int FootClass::Add(int a1) {
+// [IDA decompile]
+char __thiscall VectorClass_ptr_InfantryClass::Add(int *this, int a2)
+{
+  int v2; // esi
+  int v3; // edx
+  _DWORD *v4; // eax
+  int v5; // ecx
+
+  v2 = *(this + 2);
+  if ( v2 == *(_DWORD *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+      return 1;
+    v4 = (_DWORD *)*(this + 1);
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4;
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) )
+    {
+      ++v3;
+      ++v4;
+      if ( v3 >= v2 )
+        return 1;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [ecx+8]
+push    edi
+mov     edi, [esp+0Ch+arg_0]
+cmp     esi, [edi+8]
+jnz     short loc_45A416
+xor     edx, edx
+test    esi, esi
+jle     short loc_45A40E
+mov     eax, [ecx+4]
+mov     ecx, [edi+4]
+sub     ecx, eax
+
+loc_45A3FD:                             ; CODE XREF: FootClass__Add+2C↓j
+mov     edi, [eax]
+mov     ebx, [ecx+eax]
+cmp     edi, ebx
+jnz     short loc_45A416
+inc     edx
+add     eax, 4
+cmp     edx, esi
+jl      short loc_45A3FD
+
+loc_45A40E:                             ; CODE XREF: FootClass__Add+13↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_45A416:                             ; CODE XREF: FootClass__Add+D↑j
+; FootClass__Add+24↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn    4
+*/
+} } }
 // 0x45A420
-namespace ra2 { namespace game { int FootClass::Release(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int FootClass::Release(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall FootClass::Release(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( v4 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v6 = *((_DWORD *)this + 2);
+        if ( a2 < v6 )
+          v6 = a2;
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+          ++i;
+        if ( *((_BYTE *)this + 13) )
+        {
+          __3_YAXPAX_Z(*((void **)this + 1));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v4;
+      *((_DWORD *)this + 2) = a2;
+      *((_BYTE *)this + 13) = a3 == 0;
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      loc_45A4BE
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_45A452
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_45A454
+; ---------------------------------------------------------------------------
+
+loc_45A452:                             ; CODE XREF: FootClass__Release+1C↑j
+mov     edi, ebx
+
+loc_45A454:                             ; CODE XREF: FootClass__Release+30↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_45A465
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_45A465:                             ; CODE XREF: FootClass__Release+3A↑j
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_45A4A5
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_45A475
+mov     ecx, ebp
+
+loc_45A475:                             ; CODE XREF: FootClass__Release+51↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_45A48B
+
+loc_45A47B:                             ; CODE XREF: FootClass__Release+69↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_45A47B
+
+loc_45A48B:                             ; CODE XREF: FootClass__Release+59↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_45A4A5
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_45A4A5:                             ; CODE XREF: FootClass__Release+4A↑j
+; FootClass__Release+70↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_45A4BE:                             ; CODE XREF: FootClass__Release+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
+} } }
 // 0x45A500
-namespace ra2 { namespace game { int FootClass::GetSize(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int FootClass::GetSize(void* a1) {
+// [IDA decompile]
+int __thiscall VectorClass_ptr_InfantryClass::_vt04(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
+    return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+push    esi
+test    al, al
+jnz     short loc_45A50E
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_45A50E:                             ; CODE XREF: FootClass__GetSize+6↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_45A52C
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_45A520:                             ; CODE XREF: FootClass__GetSize+2A↓j
+cmp     [ecx], esi
+jz      short loc_45A52F
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_45A520
+
+loc_45A52C:                             ; CODE XREF: FootClass__GetSize+15↑j
+or      eax, 0FFFFFFFFh
+
+loc_45A52F:                             ; CODE XREF: FootClass__GetSize+22↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x45AA60
-namespace ra2 { namespace game { void* FootClass::QueryInterface(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* FootClass::QueryInterface(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall VectorClass_ptr_InfantryClass::_vt00(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<InfantryClass *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAVInfantryClass@@@@6B@ ; const VectorClass<InfantryClass *>::`vftable'
+test    eax, eax
+jz      short loc_45AA87
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_45AA87
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_45AA87:                             ; CODE XREF: FootClass__QueryInterface+E↑j
+; FootClass__QueryInterface+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_45AAA3
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_45AAA3:                             ; CODE XREF: FootClass__QueryInterface+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x45E800
-namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::clearRefCount(void *this, __int16 *a2, int a3)
+{
+  int v4; // eax
+  int v5; // eax
+  int v6; // edx
+  _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v4 = __2_YAPAXI_Z(1824);
+  if ( !v4 )
+    return 0;
+  v5 = BuildingClass::Construct(v4, (int)this, a3);
+  if ( !v5 )
+    return 0;
+  v8[2] = 0;
+  v6 = *a2 << 8;
+  v8[1] = (a2[1] << 8) + 128;
+  v8[0] = v6 + 128;
+  return (*(char (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v5 + 216))(v5, v8, 0);
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+push    720h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_45E86D
+mov     ecx, [esp+10h+arg_4]
+push    ecx
+push    esi
+mov     ecx, eax
+call    BuildingClass__Construct
+test    eax, eax
+jz      short loc_45E86D
+mov     ecx, [esp+10h+arg_0]
+push    0
+mov     [esp+14h+var_4], 0
+movsx   edx, word ptr [ecx]
+movsx   ecx, word ptr [ecx+2]
+shl     ecx, 8
+shl     edx, 8
+add     ecx, 80h
+add     edx, 80h
+mov     [esp+14h+var_8], ecx
+lea     ecx, [esp+14h+var_C]
+mov     [esp+14h+var_C], edx
+mov     edx, [eax]
+push    ecx
+mov     ecx, eax
+call    dword ptr [edx+0D8h]
+pop     esi
+add     esp, 0Ch
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_45E86D:                             ; CODE XREF: AbstractClass__clearRefCount+15↑j
+; AbstractClass__clearRefCount+26↑j
+xor     al, al
+pop     esi
+add     esp, 0Ch
+retn    8
+*/
+} } }
 // 0x45E880
-namespace ra2 { namespace game { int AbstractClass::addRefCount(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::addRefCount(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::addRefCount(void *this, int a2)
+{
+  int v3; // eax
+
+  v3 = __2_YAPAXI_Z(1824);
+  if ( v3 )
+    return BuildingClass::Construct(v3, (int)this, a2);
+  else
+    return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    720h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_45E8A5
+mov     ecx, [esp+4+arg_0]
+push    ecx
+push    esi
+mov     ecx, eax
+call    BuildingClass__Construct
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_45E8A5:                             ; CODE XREF: AbstractClass__addRefCount+12↑j
+xor     eax, eax
+pop     esi
+retn    4
+*/
+} } }
 // 0x45EBD0
-namespace ra2 { namespace game { void* AbstractClass::checkPointer(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::checkPointer(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_45EBD0(void *this, _DWORD *a2)
+{
+  _DWORD *FoundationSize; // eax
+  int v3; // ecx
+  int v4; // edx
+  _DWORD v6[4]; // [esp+10h] [ebp-10h] BYREF
+
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this) )
+  {
+    FoundationSize = Building::GetFoundationSize(v6, 0);
+    v3 = FoundationSize[2];
+    v4 = FoundationSize[3];
+  }
+  else
+  {
+    v3 = 0;
+    v4 = 0;
+  }
+  *a2 = v3;
+  a2[1] = v3;
+  a2[2] = v4;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 20h
+call    dword ptr [eax+9Ch]
+test    eax, eax
+jz      short loc_45EC02
+lea     ecx, [esp+20h+var_10]
+push    0
+push    ecx
+mov     ecx, eax
+call    Building__GetFoundationSize
+mov     edx, [eax]
+mov     [esp+20h+var_20], edx
+mov     ecx, [eax+4]
+mov     [esp+20h+var_1C], ecx
+mov     ecx, [eax+8]
+mov     edx, [eax+0Ch]
+jmp     short loc_45EC06
+; ---------------------------------------------------------------------------
+
+loc_45EC02:                             ; CODE XREF: AbstractClass__checkPointer+D↑j
+xor     ecx, ecx
+xor     edx, edx
+
+loc_45EC06:                             ; CODE XREF: AbstractClass__checkPointer+30↑j
+mov     eax, [esp+20h+arg_0]
+push    esi
+mov     esi, eax
+mov     [esi], ecx
+mov     [esi+4], ecx
+mov     [esi+8], edx
+pop     esi
+add     esp, 20h
+retn    4
+*/
+} } }
 // 0x45EC20
-namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) {
+// [IDA decompile]
+int *__thiscall AbstractClass::sub_45EC20(int **this, int a2)
+{
+  int *result; // eax
+
+  if ( (MEMORY[0x89C890] & 1) == 0 )
+  {
+    MEMORY[0x89C890] |= 1u;
+    MEMORY[0x89C8E8] = 2147450879;
+    atexit(nullsub_107);
+  }
+  result = *(this + 895);
+  if ( !result )
+    return &MEMORY[0x89C8E8];
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+mov     cl, ds:89C890h
+mov     al, 1
+test    al, cl
+jnz     short loc_45EC5F
+mov     dl, cl
+push    offset nullsub_107 ; void (__cdecl *)()
+or      dl, al
+mov     eax, 7FFFh
+mov     word ptr [esp+0Ch+var_4], ax
+mov     word ptr [esp+0Ch+var_4+2], ax
+mov     eax, [esp+0Ch+var_4]
+mov     ds:89C890h, dl
+mov     ds:89C8E8h, eax
+call    _atexit
+add     esp, 4
+
+loc_45EC5F:                             ; CODE XREF: AbstractClass__validatePointer+E↑j
+mov     eax, [esi+0DFCh]
+pop     esi
+test    eax, eax
+jnz     short loc_45EC6F
+mov     eax, 89C8E8h
+
+loc_45EC6F:                             ; CODE XREF: AbstractClass__validatePointer+48↑j
+pop     ecx
+retn    4
+*/
+} } }
 // 0x45ED50
-namespace ra2 { namespace game { int AbstractClass::removePointer() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::removePointer() {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_45ED50(_DWORD *this)
+{
+  int Member388; // esi
+  int *v3; // eax
+  int v4; // edi
+  int v5; // ebp
+  int v6; // ebx
+  int v7; // eax
+
+  Member388 = TechnoClass::GetMember388(this);
+  v3 = *(int **)(MEMORY[0x87F7E8][7806] + 2908);
+  v4 = *v3;
+  if ( this == **(_DWORD ***)(*v3 + 1004) && !*(_BYTE *)(MEMORY[0x87F7E8][7806] + 6120) )
+  {
+    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v3[1] + 172))(v3[1]);
+    Member388 += (v5 + (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 172))(v4)) / -2;
+  }
+  v6 = *(this + 936);
+  if ( !v6 )
+    return Member388;
+  v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 172))(v6);
+  return (Member388 - v7) & ((Member388 - v7 <= 0) - 1);
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+call    TechnoClass__GetMember388
+mov     ecx, ds:8871E0h
+mov     esi, eax
+mov     eax, [ecx+0B5Ch]
+mov     edi, [eax]
+mov     edx, [edi+3ECh]
+cmp     ebx, [edx]
+jnz     short loc_45EDA3
+mov     dl, [ecx+17E8h]
+test    dl, dl
+jnz     short loc_45EDA3
+mov     eax, [eax+4]
+mov     ecx, eax
+mov     edx, [eax]
+call    dword ptr [edx+0ACh]
+mov     ebp, eax
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+0ACh]
+add     eax, ebp
+cdq
+sub     eax, edx
+sar     eax, 1
+neg     eax
+add     esi, eax
+
+loc_45EDA3:                             ; CODE XREF: AbstractClass__removePointer+23↑j
+; AbstractClass__removePointer+2D↑j
+mov     ebx, [ebx+0EA0h]
+test    ebx, ebx
+jz      short loc_45EDC8
+mov     edx, [ebx]
+mov     ecx, ebx
+call    dword ptr [edx+0ACh]
+sub     esi, eax
+xor     eax, eax
+test    esi, esi
+setle   al
+dec     eax
+pop     edi
+and     eax, esi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_45EDC8:                             ; CODE XREF: AbstractClass__removePointer+5B↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
+} } }
 // 0x45EDD0
-namespace ra2 { namespace game { int AbstractClass::addPointer(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::addPointer(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_45EDD0(_DWORD *this, int a2)
+{
+  int v4; // esi
+  int *v5; // eax
+  int v6; // edi
+  int v7; // ebx
+  int v8; // eax
+  int v10; // [esp+14h] [ebp+4h]
+
+  v4 = TechnoTypeClass::ComputeValueSimple(this, a2);
+  v5 = *(int **)(MEMORY[0x87F7E8][7806] + 2908);
+  v6 = *v5;
+  if ( this == **(_DWORD ***)(*v5 + 1004) && !*(_BYTE *)(MEMORY[0x87F7E8][7806] + 6120) )
+  {
+    v10 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v5[1] + 132))(v5[1], a2);
+    v4 += (v10 + (*(int (__thiscall **)(int, int))(*(_DWORD *)v6 + 132))(v6, a2)) / 2;
+  }
+  v7 = *(this + 936);
+  if ( !v7 )
+    return v4;
+  v8 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v7 + 132))(v7, a2);
+  return v8 + v4 <= 0 ? 0 : v8 + v4;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+mov     ebx, ecx
+push    ebp
+call    TechnoTypeClass__ComputeValueSimple
+mov     ecx, ds:8871E0h
+mov     esi, eax
+mov     eax, [ecx+0B5Ch]
+mov     edi, [eax]
+mov     edx, [edi+3ECh]
+cmp     ebx, [edx]
+jnz     short loc_45EE30
+mov     dl, [ecx+17E8h]
+test    dl, dl
+jnz     short loc_45EE30
+mov     eax, [eax+4]
+push    ebp
+mov     ecx, eax
+mov     edx, [eax]
+call    dword ptr [edx+84h]
+mov     edx, eax
+mov     eax, [edi]
+push    ebp
+mov     ecx, edi
+mov     [esp+14h+arg_0], edx
+call    dword ptr [eax+84h]
+mov     ecx, [esp+10h+arg_0]
+add     eax, ecx
+cdq
+sub     eax, edx
+sar     eax, 1
+add     esi, eax
+
+loc_45EE30:                             ; CODE XREF: AbstractClass__addPointer+28↑j
+; AbstractClass__addPointer+32↑j
+mov     ebx, [ebx+0EA0h]
+test    ebx, ebx
+jz      short loc_45EE58
+mov     edx, [ebx]
+push    ebp
+mov     ecx, ebx
+call    dword ptr [edx+84h]
+add     esi, eax
+xor     eax, eax
+test    esi, esi
+setle   al
+dec     eax
+pop     edi
+and     eax, esi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_45EE58:                             ; CODE XREF: AbstractClass__addPointer+68↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x45F040
-namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() {
+// [IDA decompile]
+int __thiscall AbstractClass::LoadTypeFile(int this)
+{
+  int result; // eax
+  void *EntireFile; // eax
+  void *v4; // eax
+  _DWORD v5[22]; // [esp+4h] [ebp-1DCh] BYREF
+  _BYTE v6[12]; // [esp+5Ch] [ebp-184h] BYREF
+  int v7; // [esp+68h] [ebp-178h]
+  _DWORD v8[22]; // [esp+70h] [ebp-170h] BYREF
+  _BYTE v9[12]; // [esp+C8h] [ebp-118h] BYREF
+  int v10; // [esp+D4h] [ebp-10Ch]
+  char Destination[260]; // [esp+DCh] [ebp-104h] BYREF
+
+  result = *(_DWORD *)(this + 164);
+  if ( !result && *(_BYTE *)(this + 5984) )
+  {
+    if ( *(_BYTE *)(this + 5994) )
+    {
+      CCFileClass::Construct(v5, (char *)(this + 5994));
+      CCFileClass::Open(v5, 0);
+      EntireFile = CCFileClass::ReadEntireFile(v5);
+      *(_DWORD *)(this + 164) = EntireFile;
+      if ( EntireFile )
+      {
+        *(_BYTE *)(this + 168) = 1;
+      }
+      else
+      {
+        strncpy(Destination, (const char *)(this + 5994), 19);
+        ObjectTypeClass::SetRTTI71(Destination);
+        CCFileClass::Construct(v8, Destination);
+        v4 = CCFileClass::ReadEntireFile(v8);
+        *(_DWORD *)(this + 164) = v4;
+        if ( v4 )
+          *(_BYTE *)(this + 168) = 1;
+        v8[0] = &CCFileClass::`vftable';
+        v10 = 0;
+        Vector::Clear((int)v9);
+        v8[0] = &off_7E1668;
+        BufferIOFileClass::Dtor(v8);
+      }
+      v5[0] = &CCFileClass::`vftable';
+      v7 = 0;
+      Vector::Clear((int)v6);
+      v5[0] = &off_7E1668;
+      BufferIOFileClass::Dtor(v5);
+    }
+    return *(_DWORD *)(this + 164);
+  }
+  return result;
+}
+
+/* ASM:
+Destination     = byte ptr -104h
+
+sub     esp, 1DCh
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0A4h]
+test    eax, eax
+jnz     loc_45F156
+mov     cl, [esi+1760h]
+test    cl, cl
+jz      loc_45F156
+mov     al, [esi+176Ah]
+push    edi
+lea     edi, [esi+176Ah]
+test    al, al
+jz      loc_45F14F
+push    edi             ; Source
+lea     ecx, [esp+1E8h+var_1DC]
+call    CCFileClass__Construct
+push    0
+lea     ecx, [esp+1E8h+var_1DC]
+call    CCFileClass__Open
+lea     ecx, [esp+1E4h+var_1DC]
+call    CCFileClass__ReadEntireFile
+test    eax, eax
+mov     [esi+0A4h], eax
+jz      short loc_45F0AB
+mov     byte ptr [esi+0A8h], 1
+jmp     short loc_45F125
+; ---------------------------------------------------------------------------
+
+loc_45F0AB:                             ; CODE XREF: AbstractClass__LoadTypeFile+60↑j
+push    13h             ; Count
+lea     eax, [esp+1E8h+Destination]
+push    edi             ; Source
+push    eax             ; Destination
+call    _strncpy
+add     esp, 0Ch
+lea     ecx, [esp+1E4h+Destination]
+call    ObjectTypeClass__SetRTTI71
+lea     ecx, [esp+1E4h+Destination]
+push    ecx             ; Source
+lea     ecx, [esp+1E8h+var_170]
+call    CCFileClass__Construct
+lea     ecx, [esp+1E4h+var_170]
+call    CCFileClass__ReadEntireFile
+test    eax, eax
+mov     [esi+0A4h], eax
+jz      short loc_45F0F5
+mov     byte ptr [esi+0A8h], 1
+
+loc_45F0F5:                             ; CODE XREF: AbstractClass__LoadTypeFile+AC↑j
+lea     ecx, [esp+1E4h+var_118]
+mov     [esp+1E4h+var_170], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+1E4h+var_10C], 0
+call    Vector__Clear
+lea     ecx, [esp+1E4h+var_170]
+mov     [esp+1E4h+var_170], offset off_7E1668
+call    BufferIOFileClass__Dtor
+
+loc_45F125:                             ; CODE XREF: AbstractClass__LoadTypeFile+69↑j
+lea     ecx, [esp+1E4h+var_184]
+mov     [esp+1E4h+var_1DC], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+1E4h+var_178], 0
+call    Vector__Clear
+lea     ecx, [esp+1E4h+var_1DC]
+mov     [esp+1E4h+var_1DC], offset off_7E1668
+call    BufferIOFileClass__Dtor
+
+loc_45F14F:                             ; CODE XREF: AbstractClass__LoadTypeFile+34↑j
+mov     eax, [esi+0A4h]
+pop     edi
+
+loc_45F156:                             ; CODE XREF: AbstractClass__LoadTypeFile+11↑j
+; AbstractClass__LoadTypeFile+1F↑j
+pop     esi
+add     esp, 1DCh
+retn
+*/
+} } }
 // 0x465960
-namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_465960(int this)
+{
+  int result; // eax
+  __int16 *EntireFile; // edi
+  int v4; // ecx
+  int v5; // edi
+  int v6; // [esp+4h] [ebp-1E0h]
+  _DWORD v7[22]; // [esp+8h] [ebp-1DCh] BYREF
+  _BYTE v8[12]; // [esp+60h] [ebp-184h] BYREF
+  int v9; // [esp+6Ch] [ebp-178h]
+  _DWORD v10[22]; // [esp+74h] [ebp-170h] BYREF
+  _BYTE v11[12]; // [esp+CCh] [ebp-118h] BYREF
+  int v12; // [esp+D8h] [ebp-10Ch]
+  char Buffer[260]; // [esp+E0h] [ebp-104h] BYREF
+
+  result = *(_DWORD *)(this + 3584);
+  if ( !result && *(_BYTE *)(this + 5985) )
+  {
+    if ( strlen((const char *)(this + 3676)) )
+    {
+      _makepath(Buffer, 0, 0, (const char *)(this + 3676), Ext);
+      TheaterObjectTypeClassSpecificID(Buffer, *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696));
+      CCFileClass::Construct(v10, Buffer);
+      EntireFile = (__int16 *)CCFileClass::ReadEntireFile(v10);
+      if ( !EntireFile )
+      {
+        ObjectTypeClass::SetRTTI71(Buffer);
+        CCFileClass::Construct(v7, Buffer);
+        EntireFile = (__int16 *)CCFileClass::ReadEntireFile(v7);
+        v7[0] = &CCFileClass::`vftable';
+        v9 = 0;
+        Vector::Clear((int)v8);
+        v7[0] = &off_7E1668;
+        BufferIOFileClass::Dtor(v7);
+      }
+      *(_DWORD *)(this + 3584) = EntireFile;
+      if ( EntireFile )
+      {
+        v4 = 1;
+        *(_BYTE *)(this + 3588) = 1;
+        v5 = EntireFile[3] / 2;
+        v6 = v5;
+        if ( *(_BYTE *)(this + 5815) )
+        {
+          v5 = *(_DWORD *)(this + 5880) + 1;
+          v6 = v5;
+        }
+        if ( v5 > 0 )
+          v4 = Math::RoundToInt(*(double *)(MEMORY[0x87F7E8][7806] + 5400) * 900.0 / (double)v6);
+        *(_DWORD *)(this + 3844) = 0;
+        *(_DWORD *)(this + 3848) = v5;
+        *(_DWORD *)(this + 3852) = v4;
+      }
+      v10[0] = &CCFileClass::`vftable';
+      v12 = 0;
+      Vector::Clear((int)v11);
+      v10[0] = &off_7E1668;
+      BufferIOFileClass::Dtor(v10);
+    }
+    return *(_DWORD *)(this + 3584);
+  }
+  return result;
+}
+
+/* ASM:
+Buffer          = byte ptr -104h
+
+sub     esp, 1E0h
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0E00h]
+test    eax, eax
+jnz     loc_465AE5
+mov     cl, [esi+1761h]
+test    cl, cl
+jz      loc_465AE5
+lea     edx, [esi+0E5Ch]
+push    edi
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+jz      loc_465ADE
+push    offset Ext      ; ".SHP"
+push    edx             ; Filename
+push    eax             ; Dir
+push    eax             ; Drive
+lea     eax, [esp+1F8h+Buffer]
+push    eax             ; Buffer
+call    __makepath
+mov     ecx, ds:0A8B230h
+add     esp, 14h
+mov     edx, [ecx+1258h]
+lea     ecx, [esp+1E8h+Buffer]
+call    TheaterObjectTypeClassSpecificID
+lea     edx, [esp+1E8h+Buffer]
+lea     ecx, [esp+1E8h+var_170]
+push    edx             ; Source
+call    CCFileClass__Construct
+lea     ecx, [esp+1E8h+var_170]
+call    CCFileClass__ReadEntireFile
+mov     edi, eax
+test    edi, edi
+jnz     short loc_465A3E
+lea     ecx, [esp+1E8h+Buffer]
+call    ObjectTypeClass__SetRTTI71
+lea     eax, [esp+1E8h+Buffer]
+lea     ecx, [esp+1E8h+var_1DC]
+push    eax             ; Source
+call    CCFileClass__Construct
+lea     ecx, [esp+1E8h+var_1DC]
+call    CCFileClass__ReadEntireFile
+lea     ecx, [esp+1E8h+var_184]
+mov     edi, eax
+mov     [esp+1E8h+var_1DC], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+1E8h+var_178], 0
+call    Vector__Clear
+lea     ecx, [esp+1E8h+var_1DC]
+mov     [esp+1E8h+var_1DC], offset off_7E1668
+call    BufferIOFileClass__Dtor
+
+loc_465A3E:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+8A↑j
+test    edi, edi
+mov     [esi+0E00h], edi
+jz      short loc_465AAE
+mov     ecx, 1
+mov     [esi+0E04h], cl
+movsx   eax, word ptr [edi+6]
+cdq
+sub     eax, edx
+mov     edi, eax
+mov     al, [esi+16B7h]
+sar     edi, 1
+test    al, al
+mov     [esp+1E8h+var_1E0], edi
+jz      short loc_465A77
+mov     edi, [esi+16F8h]
+inc     edi
+mov     [esp+1E8h+var_1E0], edi
+
+loc_465A77:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+10A↑j
+test    edi, edi
+jle     short loc_465A98
+mov     ecx, ds:8871E0h
+fld     qword ptr [ecx+1518h]
+fmul    ds:dbl_7E27F8
+fidiv   [esp+1E8h+var_1E0]
+call    Math__RoundToInt
+mov     ecx, eax
+
+loc_465A98:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+119↑j
+mov     dword ptr [esi+0F04h], 0
+mov     [esi+0F08h], edi
+mov     [esi+0F0Ch], ecx
+
+loc_465AAE:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+E6↑j
+lea     ecx, [esp+1E8h+var_118]
+mov     [esp+1E8h+var_170], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+1E8h+var_10C], 0
+call    Vector__Clear
+lea     ecx, [esp+1E8h+var_170]
+mov     [esp+1E8h+var_170], offset off_7E1668
+call    BufferIOFileClass__Dtor
+
+loc_465ADE:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+36↑j
+mov     eax, [esi+0E00h]
+pop     edi
+
+loc_465AE5:                             ; CODE XREF: AbstractClass__LoadTheaterSHP+11↑j
+; AbstractClass__LoadTheaterSHP+1F↑j
+pop     esi
+add     esp, 1E0h
+retn
+*/
+} } }
 // 0x46B270
-namespace ra2 { namespace game { int TechnoClass::updateHealthBar() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::updateHealthBar() {
+// [IDA decompile]
+int __thiscall sub_46B270(_DWORD *this)
+{
+  return *(this + 76);
+}
+
+/* ASM:
+mov     eax, [ecx+130h]
+retn
+*/
+} } }
 // 0x471F90
-namespace ra2 { namespace game { int ObjectClass::RemoveFromPointerList(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::RemoveFromPointerList(int a1) {
+// [IDA decompile]
+char __thiscall sub_471F90(int *this, int a2)
+{
+  int v3; // edi
+  _DWORD *v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+
+  v3 = *(this + 13) - 1;
+  if ( v3 < 0 )
+    return 1;
+  do
+  {
+    v4 = *(_DWORD **)(*(this + 10) + 4 * v3);
+    if ( *v4 == a2 )
+    {
+      if ( v4 )
+        __3_YAXPAX_Z(*(void **)(*(this + 10) + 4 * v3));
+      v5 = *(this + 13);
+      if ( v3 < v5 )
+      {
+        v6 = v5 - 1;
+        v7 = v3;
+        for ( *(this + 13) = v6;
+              v7 < *(this + 13);
+              *(_DWORD *)(*(this + 10) + 4 * v7 - 4) = *(_DWORD *)(*(this + 10) + 4 * v7) )
+        {
+          ++v7;
+        }
+      }
+    }
+    --v3;
+  }
+  while ( v3 >= 0 );
+  return 1;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esi+34h]
+dec     edi
+js      short loc_471FE6
+push    ebx
+mov     ebx, [esp+0Ch+arg_0]
+
+loc_471F9F:                             ; CODE XREF: ObjectClass__RemoveFromPointerList+4C↓j
+mov     eax, [esi+28h]
+mov     eax, [eax+edi*4]
+cmp     [eax], ebx
+jnz     short loc_471FDB
+test    eax, eax
+jz      short loc_471FB6
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_471FB6:                             ; CODE XREF: ObjectClass__RemoveFromPointerList+1B↑j
+mov     eax, [esi+34h]
+cmp     edi, eax
+jge     short loc_471FDB
+lea     ecx, [eax-1]
+mov     eax, edi
+cmp     edi, ecx
+mov     [esi+34h], ecx
+jge     short loc_471FDB
+
+loc_471FC9:                             ; CODE XREF: ObjectClass__RemoveFromPointerList+49↓j
+mov     ecx, [esi+28h]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+34h]
+cmp     eax, ecx
+jl      short loc_471FC9
+
+loc_471FDB:                             ; CODE XREF: ObjectClass__RemoveFromPointerList+17↑j
+; ObjectClass__RemoveFromPointerList+2B↑j ...
+dec     edi
+jns     short loc_471F9F
+pop     ebx
+pop     edi
+mov     al, 1
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_471FE6:                             ; CODE XREF: ObjectClass__RemoveFromPointerList+8↑j
+pop     edi
+mov     al, 1
+pop     esi
+retn    4
+*/
+} } }
 // 0x4734B0
-namespace ra2 { namespace game { void FootClass::updateMovementAnimation(int a1) { } } }
+namespace ra2 { namespace game { void FootClass::updateMovementAnimation(int a1) {
+// [IDA decompile]
+void __thiscall sub_4734B0(_DWORD *this, int a2)
+{
+  int v2; // edx
+  int v3; // eax
+
+  if ( a2 )
+  {
+    v2 = *(this + 1);
+    if ( v2 )
+    {
+      v3 = *(_DWORD *)(v2 + 48);
+      if ( v2 == a2 )
+      {
+        *(this + 1) = v3;
+        --*this;
+      }
+      else if ( v3 )
+      {
+        while ( a2 != v3 )
+        {
+          v2 = v3;
+          v3 = *(_DWORD *)(v3 + 48);
+          if ( !v3 )
+            return;
+        }
+        *(_DWORD *)(v2 + 48) = *(_DWORD *)(*(_DWORD *)(v2 + 48) + 48);
+        --*this;
+      }
+    }
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, [esp+4+arg_0]
+test    esi, esi
+jz      short loc_4734F6
+mov     edx, [ecx+4]
+test    edx, edx
+jz      short loc_4734F6
+mov     eax, [edx+30h]
+cmp     edx, esi
+jnz     short loc_4734D3
+mov     [ecx+4], eax
+mov     eax, [ecx]
+dec     eax
+pop     esi
+mov     [ecx], eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4734D3:                             ; CODE XREF: FootClass__updateMovementAnimation+15↑j
+test    eax, eax
+jz      short loc_4734F6
+
+loc_4734D7:                             ; CODE XREF: FootClass__updateMovementAnimation+32↓j
+cmp     esi, eax
+jz      short loc_4734E8
+mov     edx, eax
+mov     eax, [edx+30h]
+test    eax, eax
+jnz     short loc_4734D7
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4734E8:                             ; CODE XREF: FootClass__updateMovementAnimation+29↑j
+mov     eax, [edx+30h]
+mov     eax, [eax+30h]
+mov     [edx+30h], eax
+mov     eax, [ecx]
+dec     eax
+mov     [ecx], eax
+
+loc_4734F6:                             ; CODE XREF: FootClass__updateMovementAnimation+7↑j
+; FootClass__updateMovementAnimation+E↑j ...
+pop     esi
+retn    4
+*/
+} } }
 // 0x4818E0
-namespace ra2 { namespace game { int ObjectClass::UpdateTiberiumGrowth(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::UpdateTiberiumGrowth(int a1) {
+// [IDA decompile]
+int __thiscall sub_4818E0(int this, char a2)
+{
+  int v3; // ecx
+  int BuildingByTiberiumType; // eax
+  int v5; // ebx
+  int v6; // ebp
+  _DWORD *v7; // eax
+  int v8; // edi
+  bool v9; // cf
+  _DWORD *v10; // eax
+  int v11; // edx
+  unsigned __int8 v12; // al
+  int v14; // [esp+8h] [ebp-8h] BYREF
+  int v15; // [esp+Ch] [ebp-4h]
+  int v16; // [esp+14h] [ebp+4h]
+
+  v3 = *(_DWORD *)(this + 68);
+  if ( v3 == -1 )
+    return 0;
+  BuildingByTiberiumType = FindBuildingByTiberiumType(v3);
+  v5 = BuildingByTiberiumType;
+  if ( BuildingByTiberiumType == -1 )
+    return 0;
+  v6 = 0;
+  v7 = *(_DWORD **)(dword_A8ED54[131558] + 4 * BuildingByTiberiumType);
+  v15 = v7[46];
+  if ( a2 )
+    *(_DWORD *)(this + 68) = Random::Range(
+                               (_DWORD *)(MEMORY[0x87F7E8][536210] + 536),
+                               v7[56],
+                               v7[56] + 700 * v7[58] - 700);
+  v8 = 0;
+  v9 = 1;
+  do
+  {
+    if ( v9 )
+    {
+      v11 = v8 & 7;
+      v14 = *(_DWORD *)(this + 36);
+      LOWORD(v16) = v14 + LOWORD(MEMORY[0x87F7E8][v11 + 32680]);
+      HIWORD(v16) = HIWORD(v14) + HIWORD(MEMORY[0x87F7E8][v11 + 32680]);
+      v14 = v16;
+      v10 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v14);
+    }
+    else
+    {
+      v10 = (_DWORD *)this;
+    }
+    if ( FindBuildingByTiberiumType(v10[17]) == v5 )
+      ++v6;
+    v9 = (unsigned int)++v8 < 8;
+  }
+  while ( v8 < 8 );
+  v12 = byte_81CD28[4 * (v6 % *(_DWORD *)(*(_DWORD *)(dword_A8ED54[131558] + 4 * v5) + 228))];
+  *(_BYTE *)(this + 286) = v12;
+  return v15 * (v12 + 1);
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+44h]
+cmp     ecx, 0FFFFFFFFh
+jz      loc_4819F1
+call    FindBuildingByTiberiumType
+mov     ebx, eax
+cmp     ebx, 0FFFFFFFFh
+jz      loc_4819F1
+mov     eax, dword_A8ED54+80798h
+push    ebp
+xor     ebp, ebp
+push    edi
+mov     eax, [eax+ebx*4]
+mov     ecx, [eax+0B8h]
+mov     [esp+18h+var_4], ecx
+mov     cl, byte ptr [esp+18h+arg_0]
+test    cl, cl
+jz      short loc_481958
+mov     edx, [eax+0E8h]
+mov     ecx, [eax+0E0h]
+lea     eax, ds:0[edx*8]
+sub     eax, edx
+lea     eax, [eax+eax*4]
+lea     edx, [eax+eax*4]
+lea     eax, [ecx+edx*4-2BCh]
+push    eax
+mov     eax, ds:0A8B230h
+push    ecx
+lea     ecx, [eax+218h]
+call    Random__Range
+mov     [esi+44h], eax
+
+loc_481958:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth+3F↑j
+xor     edi, edi
+cmp     edi, 8
+
+loc_48195D:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth+DC↓j
+jb      short loc_481963
+mov     eax, esi
+jmp     short loc_4819AB
+; ---------------------------------------------------------------------------
+
+loc_481963:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth:loc_48195D↑j
+mov     ecx, [esi+24h]
+mov     edx, edi
+and     edx, 7
+mov     [esp+18h+var_8], ecx
+lea     eax, ds:89F688h[edx*4]
+mov     dx, ds:89F688h[edx*4]
+mov     ax, [eax+2]
+add     ax, word ptr [esp+18h+var_8+2]
+add     dx, cx
+mov     word ptr [esp+18h+arg_0], dx
+lea     edx, [esp+18h+var_8]
+mov     word ptr [esp+18h+arg_0+2], ax
+mov     ecx, [esp+18h+arg_0]
+mov     [esp+18h+var_8], ecx
+push    edx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+
+loc_4819AB:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth+81↑j
+mov     ecx, [eax+44h]
+call    FindBuildingByTiberiumType
+cmp     eax, ebx
+jnz     short loc_4819B8
+inc     ebp
+
+loc_4819B8:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth+D5↑j
+inc     edi
+cmp     edi, 8
+jl      short loc_48195D
+mov     eax, dword_A8ED54+80798h
+pop     edi
+mov     ecx, [eax+ebx*4]
+mov     eax, ebp
+cdq
+idiv    dword ptr [ecx+0E4h]
+pop     ebp
+mov     al, byte_81CD28[edx*4]
+mov     [esi+11Eh], al
+and     eax, 0FFh
+inc     eax
+pop     esi
+imul    eax, [esp+0Ch+var_4]
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4819F1:                             ; CODE XREF: ObjectClass__UpdateTiberiumGrowth+D↑j
+; ObjectClass__UpdateTiberiumGrowth+1D↑j
+pop     esi
+xor     eax, eax
+pop     ebx
+add     esp, 8
+retn    4
+*/
+} } }
 // 0x485240
-namespace ra2 { namespace game { void* ObjectClass::SetMember09(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::SetMember09(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall ObjectClass_SetMember09(_DWORD *this, _DWORD *a2)
+{
+  *(this + 9) = *a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [eax]
+mov     [ecx+24h], edx
+retn    4
+*/
+} } }
 // 0x485250
-namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass::SetTriggerTarget(_DWORD *this, int a2)
+{
+  int v3; // eax
+  int result; // eax
+
+  v3 = *(this + 15);
+  if ( v3 )
+    --*(_DWORD *)(v3 + 44);
+  result = a2;
+  *(this + 15) = a2;
+  if ( a2 )
+  {
+    result = MEMORY[0x88094C];
+    if ( MEMORY[0x880954] < MEMORY[0x88094C]
+      || (MEMORY[0x880951] || !MEMORY[0x88094C])
+      && MEMORY[0x880958] > 0
+      && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0x880944] + 8))(
+                     &MEMORY[0x880944],
+                     MEMORY[0x88094C] + MEMORY[0x880958],
+                     0),
+          (_BYTE)result) )
+    {
+      result = MEMORY[0x880954]++;
+      *(_DWORD *)(MEMORY[0x880948] + 4 * result) = *(this + 9);
+    }
+    ++*(_DWORD *)(*(this + 15) + 44);
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+3Ch]
+test    eax, eax
+jz      short loc_48525D
+dec     dword ptr [eax+2Ch]
+
+loc_48525D:                             ; CODE XREF: ObjectClass__SetTriggerTarget+8↑j
+mov     eax, [esp+4+arg_0]
+test    eax, eax
+mov     [esi+3Ch], eax
+jz      short loc_4852C6
+mov     eax, ds:88094Ch
+mov     ecx, ds:880954h
+cmp     ecx, eax
+jl      short loc_4852A5
+mov     cl, ds:880951h
+test    cl, cl
+jnz     short loc_485285
+test    eax, eax
+jnz     short loc_4852C0
+
+loc_485285:                             ; CODE XREF: ObjectClass__SetTriggerTarget+2F↑j
+mov     ecx, ds:880958h
+test    ecx, ecx
+jle     short loc_4852C0
+add     ecx, eax
+mov     eax, ds:880944h
+push    0
+push    ecx
+mov     ecx, 880944h
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_4852C0
+
+loc_4852A5:                             ; CODE XREF: ObjectClass__SetTriggerTarget+25↑j
+mov     ecx, ds:880954h
+mov     edx, ds:880948h
+mov     eax, ecx
+inc     ecx
+mov     ds:880954h, ecx
+mov     ecx, [esi+24h]
+mov     [edx+eax*4], ecx
+
+loc_4852C0:                             ; CODE XREF: ObjectClass__SetTriggerTarget+33↑j
+; ObjectClass__SetTriggerTarget+3D↑j ...
+mov     esi, [esi+3Ch]
+inc     dword ptr [esi+2Ch]
+
+loc_4852C6:                             ; CODE XREF: ObjectClass__SetTriggerTarget+16↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x4914C0
-namespace ra2 { namespace game { int AbstractClass::getFactoryCount(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::getFactoryCount(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+// [IDA decompile]
+unsigned __int8 __thiscall AbstractClass::sub_4914C0(
+{
+  unsigned __int8 result; // al
+  int v12; // edi
+
+  result = a4;
+  if ( a4 > 0 )
+  {
+    v12 = a4;
+    do
+    {
+      result = *a3++;
+      if ( result )
+      {
+        result = *(_BYTE *)(*(this + 1) + result);
+        *a2 = result;
+      }
+      ++a2;
+      --v12;
+    }
+    while ( v12 );
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_8]
+test    eax, eax
+jle     short locret_4914F8
+mov     edx, [esp+arg_0]
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_4]
+push    edi
+mov     edi, eax
+
+loc_4914D5:                             ; CODE XREF: AbstractClass__getFactoryCount+33↓j
+mov     al, [esi]
+inc     esi
+test    al, al
+mov     byte ptr [esp+0Ch+arg_8], al
+jz      short loc_4914F1
+mov     eax, [esp+0Ch+arg_8]
+mov     ebx, [ecx+4]
+and     eax, 0FFh
+mov     al, [ebx+eax]
+mov     [edx], al
+
+loc_4914F1:                             ; CODE XREF: AbstractClass__getFactoryCount+1E↑j
+inc     edx
+dec     edi
+jnz     short loc_4914D5
+pop     edi
+pop     esi
+pop     ebx
+
+locret_4914F8:                          ; CODE XREF: AbstractClass__getFactoryCount+6↑j
+retn    20h ; ' '
+*/
+} } }
 // 0x491500
-namespace ra2 { namespace game { int AbstractClass::getFactoryIndex(int a1, int a2, int a3, int a4, int a5, int a6, int a7) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::getFactoryIndex(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_491500(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    1Ch
+*/
+} } }
 // 0x491530
-namespace ra2 { namespace game { int AbstractClass::setFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::setFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_491530(
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    24h ; '$'
+*/
+} } }
 // 0x491560
-namespace ra2 { namespace game { int AbstractClass::checkFactoryQueue(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkFactoryQueue(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_491560(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    20h ; ' '
+*/
+} } }
 // 0x491590
-namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+// [IDA decompile]
+unsigned __int8 __thiscall AbstractClass::sub_491590(
+{
+  int v9; // edi
+  unsigned __int8 result; // al
+  int v13; // ebp
+
+  v9 = **(_DWORD **)(this + 4);
+  result = a4;
+  if ( a4 > 0 )
+  {
+    v13 = a4;
+    do
+    {
+      result = *a3++;
+      if ( result )
+      {
+        result = *(_BYTE *)(*(unsigned __int8 *)(result + v9) + *(_DWORD *)(this + 8));
+        *a2 = result;
+      }
+      ++a2;
+      --v13;
+    }
+    while ( v13 );
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+4]
+push    edi
+mov     edi, [eax]
+mov     eax, [esp+4+arg_8]
+test    eax, eax
+jle     short loc_4915D3
+mov     edx, [esp+4+arg_0]
+push    ebx
+push    ebp
+push    esi
+mov     esi, [esp+10h+arg_4]
+mov     ebp, eax
+
+loc_4915AB:                             ; CODE XREF: AbstractClass__readFactoryINI+3E↓j
+mov     al, [esi]
+inc     esi
+test    al, al
+mov     byte ptr [esp+10h+arg_8], al
+jz      short loc_4915CC
+mov     eax, [esp+10h+arg_8]
+and     eax, 0FFh
+xor     ebx, ebx
+mov     bl, [eax+edi]
+mov     eax, [ecx+8]
+mov     al, [ebx+eax]
+mov     [edx], al
+
+loc_4915CC:                             ; CODE XREF: AbstractClass__readFactoryINI+24↑j
+inc     edx
+dec     ebp
+jnz     short loc_4915AB
+pop     esi
+pop     ebp
+pop     ebx
+
+loc_4915D3:                             ; CODE XREF: AbstractClass__readFactoryINI+C↑j
+pop     edi
+retn    20h ; ' '
+*/
+} } }
 // 0x4915E0
-namespace ra2 { namespace game { int AbstractClass::writeFactoryINI(int a1, int a2, int a3, int a4, int a5, int a6, int a7) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::writeFactoryINI(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_4915E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    1Ch
+*/
+} } }
 // 0x491610
-namespace ra2 { namespace game { int AbstractClass::resetFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::resetFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_491610(
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    24h ; '$'
+*/
+} } }
 // 0x491640
-namespace ra2 { namespace game { int AbstractClass::validateFactory(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::validateFactory(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_491640(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_18]
+push    0
+push    edx
+mov     edx, [esp+8+arg_14]
+push    edx
+mov     edx, [esp+0Ch+arg_10]
+push    edx
+mov     edx, [esp+10h+arg_C]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+14h+arg_8]
+push    edx
+mov     edx, [esp+18h+arg_4]
+push    edx
+mov     edx, [esp+1Ch+arg_0]
+push    edx
+call    dword ptr [eax+4]
+retn    20h ; ' '
+*/
+} } }
 // 0x49B610
-namespace ra2 { namespace game { void* MissionClass::Init() { return nullptr; } } }
+namespace ra2 { namespace game { void* MissionClass::Init() {
+// [IDA decompile]
+_DWORD *__thiscall MissionClass_Init(_DWORD *this)
+{
+  *(this + 5) = -2;
+  *(this + 12) = -2;
+  *(this + 6) = -2;
+  *(this + 13) = -2;
+  *(_BYTE *)this = 0;
+  *((_BYTE *)this + 28) = 0;
+  *(this + 15) = 0;
+  *(this + 17) = -1;
+  *((_BYTE *)this + 108) = 0;
+  *(this + 16) = 0;
+  *(this + 14) = -1;
+  *(this + 18) = 0;
+  *(this + 19) = 0;
+  *(this + 20) = 0;
+  *(this + 21) = 0;
+  *(this + 22) = 0;
+  *(this + 23) = 0;
+  *(this + 26) = 0;
+  *(this + 24) = 0;
+  *(this + 25) = 0;
+  return this;
+}
+
+/* ASM:
+mov     eax, ecx
+mov     edx, 0FFFFFFFEh
+xor     ecx, ecx
+mov     [eax+14h], edx
+mov     [eax+30h], edx
+mov     [eax+18h], edx
+mov     [eax+34h], edx
+or      edx, 0FFFFFFFFh
+mov     [eax], cl
+mov     [eax+1Ch], cl
+mov     [eax+3Ch], ecx
+mov     [eax+44h], edx
+mov     [eax+6Ch], cl
+mov     [eax+40h], ecx
+mov     [eax+38h], edx
+mov     [eax+48h], ecx
+mov     [eax+4Ch], ecx
+mov     [eax+50h], ecx
+mov     [eax+54h], ecx
+mov     [eax+58h], ecx
+mov     [eax+5Ch], ecx
+mov     [eax+68h], ecx
+mov     [eax+60h], ecx
+mov     [eax+64h], ecx
+retn
+*/
+} } }
 // 0x4A50F0
-namespace ra2 { namespace game { int TechnoClass::checkCloakState() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::checkCloakState() {
+// [IDA decompile]
+int __thiscall sub_4A50F0(int this)
+{
+  *(_DWORD *)(this + 8) = MEMORY[0xA8ED84];
+  *(_DWORD *)(this + 16) = 0;
+  *(_DWORD *)(this + 20) = 0;
+  *(_BYTE *)(this + 24) = 0;
+  *(_BYTE *)(this + 25) = 0;
+  return this;
+}
+
+/* ASM:
+mov     eax, ecx
+mov     ecx, dword_A8ED54+30h
+mov     [eax+8], ecx
+xor     ecx, ecx
+mov     [eax+10h], ecx
+mov     [eax+14h], ecx
+mov     [eax+18h], cl
+mov     [eax+19h], cl
+retn
+*/
+} } }
 // 0x4C9470
-namespace ra2 { namespace game { void* TechnoClass::GetWeaponType(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* TechnoClass::GetWeaponType(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall TechnoClass::GetWeaponType(_DWORD *this, _DWORD *a2)
+{
+  *a2 = *this;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     ecx, [ecx]
+mov     [eax], ecx
+retn    4
+*/
+} } }
 // 0x4CA130
-namespace ra2 { namespace game { bool ObjectClass::IsCliffWall() { return false; } } }
+namespace ra2 { namespace game { bool ObjectClass::IsCliffWall() {
+// [IDA decompile]
+bool __thiscall ObjectClass_IsCliffWall(_DWORD *this)
+{
+  if ( *(this + 22) && *(this + 9) == 54 )
+    return 1;
+  return *(this + 26) != -1 && *(this + 9) == 54;
+}
+
+/* ASM:
+mov     edx, [ecx+58h]
+mov     eax, 36h ; '6'
+test    edx, edx
+jz      short loc_4CA144
+cmp     [ecx+24h], eax
+jnz     short loc_4CA144
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_4CA144:                             ; CODE XREF: ObjectClass__IsCliffWall+A↑j
+; ObjectClass__IsCliffWall+F↑j
+cmp     dword ptr [ecx+68h], 0FFFFFFFFh
+jz      short loc_4CA152
+cmp     [ecx+24h], eax
+jnz     short loc_4CA152
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_4CA152:                             ; CODE XREF: ObjectClass__IsCliffWall+18↑j
+; ObjectClass__IsCliffWall+1D↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x4CA890
-namespace ra2 { namespace game { void AbstractClass::processScriptEvent() { } } }
+namespace ra2 { namespace game { void AbstractClass::processScriptEvent() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_4CA890(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_4CA8B1
+cmp     [esi+0Dh], bl
+jz      short loc_4CA8B1
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_4CA8B1:                             ; CODE XREF: AbstractClass__processScriptEvent+E↑j
+; AbstractClass__processScriptEvent+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x4CA8C0
-namespace ra2 { namespace game { int AbstractClass::checkScriptCondition(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkScriptCondition(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_4CA8C0(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_4CA8CC
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4CA8CC:                             ; CODE XREF: AbstractClass__checkScriptCondition+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} } }
 // 0x4CAA70
-namespace ra2 { namespace game { int AbstractClass::executeScriptAction(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::executeScriptAction(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::executeScriptAction(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( !v4 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v5 = *((_DWORD *)this + 2);
+      if ( a2 < v5 )
+        v5 = a2;
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        ++i;
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v4;
+    *((_DWORD *)this + 2) = a2;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v7 = *((_DWORD *)this + 2);
+  if ( v7 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v7;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      short loc_4CAAFA
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_4CAA9E
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_4CAAA0
+; ---------------------------------------------------------------------------
+
+loc_4CAA9E:                             ; CODE XREF: AbstractClass__executeScriptAction+18↑j
+mov     edi, ebx
+
+loc_4CAAA0:                             ; CODE XREF: AbstractClass__executeScriptAction+2C↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      short loc_4CAB17
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_4CAAE8
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_4CAAB8
+mov     ecx, ebp
+
+loc_4CAAB8:                             ; CODE XREF: AbstractClass__executeScriptAction+44↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_4CAACE
+
+loc_4CAABE:                             ; CODE XREF: AbstractClass__executeScriptAction+5C↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_4CAABE
+
+loc_4CAACE:                             ; CODE XREF: AbstractClass__executeScriptAction+4C↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_4CAAE8
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4CAAE8:                             ; CODE XREF: AbstractClass__executeScriptAction+3D↑j
+; AbstractClass__executeScriptAction+63↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_4CAB01
+; ---------------------------------------------------------------------------
+
+loc_4CAAFA:                             ; CODE XREF: AbstractClass__executeScriptAction+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_4CAB01:                             ; CODE XREF: AbstractClass__executeScriptAction+88↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_4CAB0E
+mov     [esi+10h], eax
+
+loc_4CAB0E:                             ; CODE XREF: AbstractClass__executeScriptAction+99↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4CAB17:                             ; CODE XREF: AbstractClass__executeScriptAction+36↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} } }
 // 0x4CAB20
-namespace ra2 { namespace game { int AbstractClass::validateScriptArgs(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::validateScriptArgs(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_4CAB20(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]
+xor     eax, eax
+push    esi
+test    edx, edx
+jle     short loc_4CAB3F
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_4CAB33:                             ; CODE XREF: AbstractClass__validateScriptArgs+1D↓j
+cmp     [ecx], esi
+jz      short loc_4CAB42
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_4CAB33
+
+loc_4CAB3F:                             ; CODE XREF: AbstractClass__validateScriptArgs+8↑j
+or      eax, 0FFFFFFFFh
+
+loc_4CAB42:                             ; CODE XREF: AbstractClass__validateScriptArgs+15↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x4CABA0
-namespace ra2 { namespace game { void* AbstractClass::resetScriptState(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::resetScriptState(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_4CABA0(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<TechnoTypeClass const *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PBVTechnoTypeClass@@@@6B@ ; const VectorClass<TechnoTypeClass const *>::`vftable'
+test    eax, eax
+jz      short loc_4CABC7
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_4CABC7
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4CABC7:                             ; CODE XREF: AbstractClass__resetScriptState+E↑j
+; AbstractClass__resetScriptState+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_4CABE3
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4CABE3:                             ; CODE XREF: AbstractClass__resetScriptState+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x4D08B0
-namespace ra2 { namespace game { void* ObjectClass::Construct() { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::Construct() {
+// [IDA decompile]
+_DWORD *__thiscall sub_4D08B0(_DWORD *this)
+{
+  int v2; // eax
+
+  AbstractClass::Constructor((int)this);
+  *(this + 9) = -1;
+  *(this + 10) = 0;
+  *(this + 11) = 0;
+  *(this + 12) = 0;
+  *(this + 13) = 0;
+  *(this + 14) = 0;
+  *(this + 15) = 0;
+  *(this + 16) = 0;
+  *(this + 17) = 0;
+  *(this + 18) = 0;
+  *(this + 19) = 0;
+  *(this + 21) = -1;
+  *(this + 20) = 0;
+  *(this + 22) = 0;
+  *(this + 24) = 0;
+  *(this + 25) = 0;
+  *((_BYTE *)this + 104) = 1;
+  *((_BYTE *)this + 105) = 0;
+  *(this + 23) = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable';
+  *(this + 28) = 10;
+  *(this + 27) = 0;
+  *((_BYTE *)this + 116) = 1;
+  *this = &FoggedObjectClass::`vftable';
+  *(this + 1) = &FoggedObjectClass::`vftable';
+  *(this + 2) = &FoggedObjectClass::`vftable';
+  *(this + 3) = &FoggedObjectClass::`vftable';
+  if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18]
+    || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
+    && MEMORY[0x8B3D24] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B3D10] + 8))(
+         &MEMORY[0x8B3D10],
+         MEMORY[0x8B3D18] + MEMORY[0x8B3D24],
+         0) )
+  {
+    v2 = MEMORY[0x8B3D20]++;
+    *((_DWORD *)MEMORY[0x8B3D14] + v2) = this;
+  }
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    AbstractClass__Constructor
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     [esi+24h], ecx
+mov     [esi+28h], eax
+mov     [esi+2Ch], eax
+mov     [esi+30h], eax
+mov     [esi+34h], eax
+mov     [esi+38h], eax
+mov     [esi+3Ch], eax
+mov     [esi+40h], eax
+mov     [esi+44h], eax
+mov     [esi+48h], eax
+mov     [esi+4Ch], eax
+mov     [esi+54h], ecx
+mov     cl, 1
+mov     [esi+50h], eax
+mov     [esi+58h], eax
+mov     [esi+60h], eax
+mov     [esi+64h], eax
+mov     [esi+68h], cl
+mov     [esi+69h], al
+mov     dword ptr [esi+5Ch], offset ??_7?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@@@6B@ ; const DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'
+mov     dword ptr [esi+70h], 0Ah
+mov     [esi+6Ch], eax
+mov     [esi+74h], cl
+mov     dword ptr [esi], offset ??_7FoggedObjectClass@@6B@ ; const FoggedObjectClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7FoggedObjectClass@@6B@_0 ; const FoggedObjectClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7FoggedObjectClass@@6B@_1 ; const FoggedObjectClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7FoggedObjectClass@@6B@_2 ; const FoggedObjectClass::`vftable'
+mov     ecx, ds:8B3D18h
+cmp     ds:8B3D20h, ecx
+jl      short loc_4D095D
+cmp     ds:8B3D1Dh, al
+jnz     short loc_4D093E
+cmp     ecx, eax
+jnz     short loc_4D0975
+
+loc_4D093E:                             ; CODE XREF: ObjectClass__Construct+88↑j
+mov     edx, ds:8B3D24h
+cmp     edx, eax
+jle     short loc_4D0975
+push    eax
+mov     eax, ds:8B3D10h
+add     edx, ecx
+mov     ecx, 8B3D10h
+push    edx
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_4D0975
+
+loc_4D095D:                             ; CODE XREF: ObjectClass__Construct+80↑j
+mov     ecx, ds:8B3D20h
+mov     eax, ecx
+inc     ecx
+mov     ds:8B3D20h, ecx
+mov     ecx, ds:8B3D14h
+mov     [ecx+eax*4], esi
+
+loc_4D0975:                             ; CODE XREF: ObjectClass__Construct+8C↑j
+; ObjectClass__Construct+96↑j ...
+mov     eax, esi
+pop     esi
+retn
+*/
+} } }
 // 0x4D28C0
-namespace ra2 { namespace game { int TechnoClass::recalcThreat() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::recalcThreat() {
+// [IDA decompile]
+int __thiscall sub_4D28C0(int this)
+{
+  if ( *(int *)(this + 108) <= 0 )
+    return 0;
+  else
+    return **(_DWORD **)(this + 96);
+}
+
+/* ASM:
+mov     eax, [ecx+6Ch]
+test    eax, eax
+jle     short loc_4D28CD
+mov     eax, [ecx+60h]
+mov     eax, [eax]
+retn
+; ---------------------------------------------------------------------------
+
+loc_4D28CD:                             ; CODE XREF: TechnoClass__recalcThreat+5↑j
+xor     eax, eax
+retn
+*/
+} } }
 // 0x4D2930
-namespace ra2 { namespace game { void AbstractClass::getMissionState() { } } }
+namespace ra2 { namespace game { void AbstractClass::getMissionState() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_4D2930(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_4D2951
+cmp     [esi+0Dh], bl
+jz      short loc_4D2951
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_4D2951:                             ; CODE XREF: AbstractClass__getMissionState+E↑j
+; AbstractClass__getMissionState+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x4D2960
-namespace ra2 { namespace game { int AbstractClass::setMissionState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::setMissionState(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_4D2960(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 4;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_4D296C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4D296C:                             ; CODE XREF: AbstractClass__setMissionState+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 4
+retn    4
+*/
+} } }
 // 0x4D31E0
-namespace ra2 { namespace game { void* FootClass::Construct(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* FootClass::Construct(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall sub_4D31E0(_DWORD *this, int a2)
+{
+  #72 *v3; // eax
+  int v4; // eax
+  int v5; // eax
+
+  TechnoClass::TechnoClass(a2);
+  *(this + 328) = -1;
+  *((_WORD *)this + 658) = 0;
+  *((_WORD *)this + 659) = 0;
+  *((_WORD *)this + 660) = 0;
+  *((_WORD *)this + 661) = 0;
+  *(this + 332) = 0;
+  *(this + 333) = 0;
+  *(this + 334) = 0;
+  *((_BYTE *)this + 1340) = 0;
+  *(this + 336) = 0;
+  *((_WORD *)this + 684) = 0;
+  *((_WORD *)this + 685) = 0;
+  *((_WORD *)this + 686) = 0;
+  *((_WORD *)this + 687) = 0;
+  *((_WORD *)this + 688) = 0;
+  *((_WORD *)this + 689) = 0;
+  *((_WORD *)this + 690) = 0;
+  *((_WORD *)this + 691) = 0;
+  *(this + 346) = 0;
+  *(this + 347) = 0;
+  *(this + 348) = 0;
+  *(this + 350) = 0;
+  *(this + 351) = 0;
+  *(this + 352) = 0;
+  *(this + 353) = 1072693248;
+  AbstractClassVector::Construct(0, 0);
+  *(this + 354) = &DynamicVectorClass<AbstractClass *>::`vftable';
+  *(this + 359) = 10;
+  *(this + 358) = 0;
+  *(this + 360) = 0;
+  *(this + 361) = 0;
+  *(this + 362) = 0;
+  AbstractClassVector::Construct(0, 0);
+  *(this + 363) = &DynamicVectorClass<AbstractClass *>::`vftable';
+  *(this + 368) = 10;
+  *(this + 367) = 0;
+  *(this + 369) = -1;
+  *(this + 370) = 0;
+  *(this + 371) = 0;
+  *((_BYTE *)this + 1489) = 0;
+  *(this + 373) = 0;
+  *(this + 374) = 0;
+  *(this + 375) = 0;
+  *(this + 400) = MEMORY[0xA8ED84];
+  *(this + 402) = 0;
+  *(this + 403) = 10;
+  *(this + 404) = MEMORY[0xA8ED84];
+  *(this + 406) = 0;
+  v3 = MEMORY[0xA8ED84];
+  *(this + 409) = 0;
+  *(this + 407) = v3;
+  *(this + 410) = MEMORY[0xA8ED84];
+  *(this + 412) = 0;
+  *(this + 413) = 0;
+  *(this + 414) = MEMORY[0x8B3DA8];
+  *(this + 415) = MEMORY[0x8B3DAC];
+  *(this + 416) = MEMORY[0x8B3DB0];
+  *((_BYTE *)this + 1668) = -1;
+  *((_BYTE *)this + 1669) = 0;
+  *((_BYTE *)this + 1670) = 0;
+  *((_BYTE *)this + 1671) = 0;
+  *((_BYTE *)this + 1672) = 0;
+  *((_BYTE *)this + 1673) = 0;
+  *((_BYTE *)this + 1674) = 0;
+  *((_BYTE *)this + 1675) = 0;
+  *((_BYTE *)this + 1676) = 0;
+  *((_BYTE *)this + 1677) = 0;
+  *((_BYTE *)this + 1678) = 0;
+  *((_BYTE *)this + 1679) = 0;
+  *((_BYTE *)this + 1680) = 0;
+  *((_BYTE *)this + 1681) = 0;
+  *(this + 421) = 0;
+  *(this + 422) = 0;
+  *(this + 423) = 0;
+  *(this + 424) = MEMORY[0xA8ED84];
+  *(this + 426) = 0;
+  *((_BYTE *)this + 1708) = 0;
+  *((_BYTE *)this + 1709) = 0;
+  *((_BYTE *)this + 1710) = 0;
+  *((_BYTE *)this + 1711) = 0;
+  *((_BYTE *)this + 1712) = 0;
+  *((_BYTE *)this + 1713) = 0;
+  *((_BYTE *)this + 1714) = 0;
+  *((_BYTE *)this + 1715) = 0;
+  *((_BYTE *)this + 1716) = 0;
+  *((_BYTE *)this + 1717) = 0;
+  *((_BYTE *)this + 1718) = 1;
+  *((_BYTE *)this + 1719) = 0;
+  *((_BYTE *)this + 1720) = 0;
+  *this = &FootClass::`vftable';
+  *(this + 1) = &FootClass::`vftable';
+  *(this + 2) = &FootClass::`vftable';
+  *(this + 3) = &FootClass::`vftable';
+  *(this + 376) = -1;
+  AudioController::Init(this + 337);
+  if ( MEMORY[0x8B3DD0] < MEMORY[0x8B3DC8]
+    || (MEMORY[0x8B3DCD] || !MEMORY[0x8B3DC8])
+    && MEMORY[0x8B3DD4] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B3DC0] + 8))(
+         &MEMORY[0x8B3DC0],
+         MEMORY[0x8B3DC8] + MEMORY[0x8B3DD4],
+         0) )
+  {
+    v4 = MEMORY[0x8B3DD0]++;
+    *((_DWORD *)MEMORY[0x8B3DC4] + v4) = this;
+  }
+  *((_BYTE *)this + 20) |= 4u;
+  if ( MEMORY[0xB0F5E8] < MEMORY[0xB0F5E0]
+    || (MEMORY[0xB0F5E5] || !MEMORY[0xB0F5E0])
+    && MEMORY[0xB0F5EC] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F5D8] + 8))(
+         &MEMORY[0xB0F5D8],
+         MEMORY[0xB0F5E0] + MEMORY[0xB0F5EC],
+         0) )
+  {
+    v5 = MEMORY[0xB0F5E8]++;
+    *((_DWORD *)MEMORY[0xB0F5DC] + v5) = this;
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    esi
+push    edi
+mov     esi, ecx
+push    eax
+call    TechnoClass__TechnoClass
+xor     ebx, ebx
+mov     dword ptr [esi+520h], 0FFFFFFFFh
+mov     [esi+524h], bx
+mov     [esi+526h], bx
+mov     [esi+528h], bx
+mov     [esi+52Ah], bx
+mov     [esi+530h], ebx
+mov     [esi+534h], ebx
+mov     [esi+538h], ebx
+mov     [esi+53Ch], bl
+mov     [esi+540h], ebx
+mov     [esi+558h], bx
+mov     [esi+55Ah], bx
+mov     [esi+55Ch], bx
+mov     [esi+55Eh], bx
+mov     [esi+560h], bx
+mov     [esi+562h], bx
+mov     [esi+564h], bx
+mov     [esi+566h], bx
+mov     [esi+568h], ebx
+mov     [esi+56Ch], ebx
+mov     [esi+570h], ebx
+mov     [esi+578h], ebx
+lea     edi, [esi+588h]
+mov     [esi+57Ch], ebx
+push    ebx
+mov     [esi+580h], ebx
+push    ebx
+mov     ecx, edi
+mov     dword ptr [esi+584h], 3FF00000h
+call    AbstractClassVector__Construct
+mov     dword ptr [edi], offset ??_7?$DynamicVectorClass@PAVAbstractClass@@@@6B@ ; const DynamicVectorClass<AbstractClass *>::`vftable'
+mov     dword ptr [edi+14h], 0Ah
+mov     [edi+10h], ebx
+lea     edi, [esi+5ACh]
+mov     [esi+5A0h], ebx
+push    ebx
+mov     [esi+5A4h], ebx
+push    ebx
+mov     ecx, edi
+mov     [esi+5A8h], ebx
+call    AbstractClassVector__Construct
+mov     eax, 0Ah
+mov     dword ptr [edi], offset ??_7?$DynamicVectorClass@PAVAbstractClass@@@@6B@ ; const DynamicVectorClass<AbstractClass *>::`vftable'
+mov     [edi+14h], eax
+mov     [edi+10h], ebx
+mov     dword ptr [esi+5C4h], 0FFFFFFFFh
+mov     [esi+5C8h], ebx
+mov     [esi+5CCh], ebx
+mov     [esi+5D1h], bl
+mov     [esi+5D4h], ebx
+mov     [esi+5D8h], ebx
+mov     [esi+5DCh], ebx
+mov     ecx, dword_A8ED54+30h
+mov     [esi+640h], ecx
+mov     [esi+648h], ebx
+mov     [esi+64Ch], eax
+mov     edx, dword_A8ED54+30h
+mov     [esi+650h], edx
+mov     [esi+658h], ebx
+mov     eax, dword_A8ED54+30h
+mov     [esi+664h], ebx
+mov     [esi+65Ch], eax
+mov     ecx, dword_A8ED54+30h
+mov     [esi+668h], ecx
+mov     [esi+670h], ebx
+mov     [esi+674h], ebx
+mov     eax, ds:8B3DA8h
+lea     edx, [esi+678h]
+mov     [esi+678h], eax
+mov     ecx, ds:8B3DACh
+mov     [edx+4], ecx
+mov     eax, ds:8B3DB0h
+mov     [edx+8], eax
+mov     byte ptr [esi+684h], 0FFh
+mov     [esi+685h], bl
+mov     [esi+686h], bl
+mov     [esi+687h], bl
+mov     [esi+688h], bl
+mov     [esi+689h], bl
+mov     [esi+68Ah], bl
+mov     [esi+68Bh], bl
+mov     [esi+68Ch], bl
+mov     [esi+68Dh], bl
+mov     [esi+68Eh], bl
+mov     [esi+68Fh], bl
+mov     [esi+690h], bl
+mov     [esi+691h], bl
+mov     [esi+694h], ebx
+mov     [esi+698h], ebx
+mov     [esi+69Ch], ebx
+mov     ecx, dword_A8ED54+30h
+mov     [esi+6A0h], ecx
+mov     [esi+6A8h], ebx
+lea     ecx, [esi+544h]
+mov     [esi+6ACh], bl
+mov     [esi+6ADh], bl
+mov     [esi+6AEh], bl
+mov     [esi+6AFh], bl
+mov     [esi+6B0h], bl
+mov     [esi+6B1h], bl
+mov     [esi+6B2h], bl
+mov     [esi+6B3h], bl
+mov     [esi+6B4h], bl
+mov     [esi+6B5h], bl
+mov     byte ptr [esi+6B6h], 1
+mov     [esi+6B7h], bl
+mov     [esi+6B8h], bl
+mov     dword ptr [esi], offset ??_7FootClass@@6B@ ; const FootClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7FootClass@@6B@_0 ; const FootClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7FootClass@@6B@_1 ; const FootClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7FootClass@@6B@_2 ; const FootClass::`vftable'
+mov     dword ptr [esi+5E0h], 0FFFFFFFFh
+call    AudioController__Init
+mov     eax, ds:8B3DC8h
+mov     ecx, ds:8B3DD0h
+cmp     ecx, eax
+jl      short loc_4D34C2
+cmp     ds:8B3DCDh, bl
+jnz     short loc_4D34A2
+cmp     eax, ebx
+jnz     short loc_4D34DA
+
+loc_4D34A2:                             ; CODE XREF: FootClass__Construct+2BC↑j
+mov     ecx, ds:8B3DD4h
+cmp     ecx, ebx
+jle     short loc_4D34DA
+mov     edx, ds:8B3DC0h
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, 8B3DC0h
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4D34DA
+
+loc_4D34C2:                             ; CODE XREF: FootClass__Construct+2B4↑j
+mov     ecx, ds:8B3DD0h
+mov     eax, ecx
+inc     ecx
+mov     ds:8B3DD0h, ecx
+mov     ecx, ds:8B3DC4h
+mov     [ecx+eax*4], esi
+
+loc_4D34DA:                             ; CODE XREF: FootClass__Construct+2C0↑j
+; FootClass__Construct+2CA↑j ...
+mov     dl, [esi+14h]
+or      dl, 4
+mov     [esi+14h], dl
+mov     eax, dword_A8ED54+8088Ch
+cmp     dword_A8ED54+80894h, eax
+jl      short loc_4D351C
+cmp     byte ptr dword_A8ED54+80891h, bl
+jnz     short loc_4D34FC
+cmp     eax, ebx
+jnz     short loc_4D3534
+
+loc_4D34FC:                             ; CODE XREF: FootClass__Construct+316↑j
+mov     ecx, dword_A8ED54+80898h
+cmp     ecx, ebx
+jle     short loc_4D3534
+mov     edx, dword_A8ED54+80884h
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+80884h)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4D3534
+
+loc_4D351C:                             ; CODE XREF: FootClass__Construct+30E↑j
+mov     ecx, dword_A8ED54+80894h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+80894h, ecx
+mov     ecx, dword_A8ED54+80888h
+mov     [ecx+eax*4], esi
+
+loc_4D3534:                             ; CODE XREF: FootClass__Construct+31A↑j
+; FootClass__Construct+324↑j ...
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
+} } }
 // 0x4D94A0
-namespace ra2 { namespace game { int ObjectClass::SetMember360(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetMember360(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass_SetMember360(_DWORD *this, int a2)
+{
+  *(this + 360) = a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     [ecx+5A0h], eax
+retn    4
+*/
+} } }
 // 0x4DB0D0
-namespace ra2 { namespace game { int TechnoClass::QueueDrawVoiceResponse(void* a1, int a2, int a3, int a4, int a5, void* a6, int a7, int a8, int a9, int a10, int a11) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::QueueDrawVoiceResponse(void* a1, int a2, int a3, int a4, int a5, void* a6, int a7, int a8, int a9, int a10, int a11) {
+// [IDA decompile]
+int __thiscall TechnoClass::QueueDrawVoiceResponse(
+{
+  int result; // eax
+  int v14; // edx
+  int v15; // eax
+  _DWORD *v16; // eax
+  int v17; // edx
+  int v18; // ecx
+  int v19; // [esp+Ch] [ebp-10h] BYREF
+  int v20; // [esp+10h] [ebp-Ch]
+  int v21; // [esp+14h] [ebp-8h] BYREF
+
+  result = *(this + 413);
+  if ( result )
+  {
+    result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 32))(*(this + 413));
+    if ( (_BYTE)result == 1 )
+    {
+      v14 = *a7;
+      v20 = a7[1];
+      v15 = *(this + 413);
+      v19 = v14;
+      if ( v15 )
+      {
+        v16 = (_DWORD *)(*(int (__stdcall **)(_DWORD, int *))(*(_DWORD *)*(this + 413) + 48))(*(this + 413), &v21);
+        v17 = v16[1];
+        v18 = a7[1];
+        v19 = *v16 + *a7;
+        v20 = v17 + v18;
+      }
+      return QueueTechnoVoiceLine(this, a2, a3, a4, a5, a6, (int)&v19, a8, a9, a10, a11, a12);
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     eax, [esi+674h]
+test    eax, eax
+jz      loc_4DB196
+test    eax, eax
+jnz     short loc_4DB0F2
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_4DB0F2:                             ; CODE XREF: TechnoClass__QueueDrawVoiceResponse+16↑j
+mov     eax, [esi+674h]
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+20h]
+cmp     al, 1
+jnz     loc_4DB196
+push    edi
+mov     edi, [esp+18h+arg_14]
+mov     eax, [edi+4]
+mov     edx, [edi]
+mov     [esp+18h+var_C], eax
+mov     eax, [esi+674h]
+test    eax, eax
+mov     [esp+18h+var_10], edx
+jz      short loc_4DB157
+test    eax, eax
+jnz     short loc_4DB130
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_4DB130:                             ; CODE XREF: TechnoClass__QueueDrawVoiceResponse+54↑j
+mov     eax, [esi+674h]
+lea     edx, [esp+18h+var_8]
+push    edx
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+30h]
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     eax, [edi]
+add     eax, ecx
+mov     ecx, [edi+4]
+add     ecx, edx
+mov     [esp+18h+var_10], eax
+mov     [esp+18h+var_C], ecx
+
+loc_4DB157:                             ; CODE XREF: TechnoClass__QueueDrawVoiceResponse+50↑j
+mov     eax, [esp+18h+arg_28]
+mov     ecx, [esp+18h+arg_24]
+mov     edx, [esp+18h+arg_20]
+push    eax
+mov     eax, [esp+1Ch+arg_1C]
+push    ecx
+mov     ecx, [esp+20h+arg_18]
+push    edx
+push    eax
+mov     eax, [esp+28h+arg_10]
+lea     edx, [esp+28h+var_10]
+push    ecx
+mov     ecx, [esp+2Ch+arg_C]
+push    edx
+mov     edx, [esp+30h+arg_8]
+push    eax
+mov     eax, [esp+34h+arg_4]
+push    ecx
+mov     ecx, [esp+38h+arg_0]
+push    edx
+push    eax
+push    ecx
+mov     ecx, esi
+call    QueueTechnoVoiceLine
+pop     edi
+
+loc_4DB196:                             ; CODE XREF: TechnoClass__QueueDrawVoiceResponse+E↑j
+; TechnoClass__QueueDrawVoiceResponse+30↑j
+pop     esi
+add     esp, 10h
+retn    2Ch ; ','
+*/
+} } }
 // 0x4E0190
-namespace ra2 { namespace game { void AbstractClass::updateMission() { } } }
+namespace ra2 { namespace game { void AbstractClass::updateMission() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_4E0190(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_4E01B1
+cmp     [esi+0Dh], bl
+jz      short loc_4E01B1
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_4E01B1:                             ; CODE XREF: AbstractClass__updateMission+E↑j
+; AbstractClass__updateMission+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x4E0270
-namespace ra2 { namespace game { void* AbstractClass::processMissionQueue(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::processMissionQueue(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_4E0270(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<AbstractClass *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAVAbstractClass@@@@6B@ ; const VectorClass<AbstractClass *>::`vftable'
+test    eax, eax
+jz      short loc_4E0297
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_4E0297
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4E0297:                             ; CODE XREF: AbstractClass__processMissionQueue+E↑j
+; AbstractClass__processMissionQueue+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_4E02B3
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4E02B3:                             ; CODE XREF: AbstractClass__processMissionQueue+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x4E04A0
-namespace ra2 { namespace game { int AbstractClass::completeMission(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::completeMission(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::completeMission(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( !v4 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v5 = *((_DWORD *)this + 2);
+      if ( a2 < v5 )
+        v5 = a2;
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        ++i;
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v4;
+    *((_DWORD *)this + 2) = a2;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v7 = *((_DWORD *)this + 2);
+  if ( v7 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v7;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      short loc_4E052A
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_4E04CE
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_4E04D0
+; ---------------------------------------------------------------------------
+
+loc_4E04CE:                             ; CODE XREF: AbstractClass__completeMission+18↑j
+mov     edi, ebx
+
+loc_4E04D0:                             ; CODE XREF: AbstractClass__completeMission+2C↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      short loc_4E0547
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_4E0518
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_4E04E8
+mov     ecx, ebp
+
+loc_4E04E8:                             ; CODE XREF: AbstractClass__completeMission+44↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_4E04FE
+
+loc_4E04EE:                             ; CODE XREF: AbstractClass__completeMission+5C↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_4E04EE
+
+loc_4E04FE:                             ; CODE XREF: AbstractClass__completeMission+4C↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_4E0518
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4E0518:                             ; CODE XREF: AbstractClass__completeMission+3D↑j
+; AbstractClass__completeMission+63↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_4E0531
+; ---------------------------------------------------------------------------
+
+loc_4E052A:                             ; CODE XREF: AbstractClass__completeMission+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_4E0531:                             ; CODE XREF: AbstractClass__completeMission+88↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_4E053E
+mov     [esi+10h], eax
+
+loc_4E053E:                             ; CODE XREF: AbstractClass__completeMission+99↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4E0547:                             ; CODE XREF: AbstractClass__completeMission+36↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} } }
 // 0x4E13F0
-namespace ra2 { namespace game { int ObjectClass::DispatchEvent(int a1, int a2, int a3, int a4, int a5) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DispatchEvent(int a1, int a2, int a3, int a4, int a5) {
+// [IDA decompile]
+int __thiscall ObjectClass_DispatchEvent(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
+{
+  int v6; // eax
+
+  v6 = *(this + 8) & a3;
+  if ( this == (_DWORD *)MEMORY[0x8B3E88]
+    || (v6 & 0x100) != 0
+    || v6 && (unsigned int)(a4 - *(this + 3)) < *(this + 5) && (unsigned int)(a5 - *(this + 4)) < *(this + 6) )
+  {
+    return (*(int (__thiscall **)(_DWORD *, int, int, int))(*this + 124))(this, v6, a2, a6);
+  }
+  else
+  {
+    return 0;
+  }
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+mov     edx, ds:8B3E88h
+push    esi
+mov     esi, [ecx+20h]
+and     eax, esi
+cmp     ecx, edx
+jz      short loc_4E1433
+test    ah, 1
+jnz     short loc_4E1433
+test    eax, eax
+jz      short loc_4E142D
+mov     edx, [esp+4+arg_8]
+mov     esi, [ecx+0Ch]
+sub     edx, esi
+mov     esi, [ecx+14h]
+cmp     edx, esi
+jnb     short loc_4E142D
+mov     edx, [esp+4+arg_C]
+mov     esi, [ecx+10h]
+sub     edx, esi
+mov     esi, [ecx+18h]
+cmp     edx, esi
+jb      short loc_4E1433
+
+loc_4E142D:                             ; CODE XREF: ObjectClass__DispatchEvent+1B↑j
+; ObjectClass__DispatchEvent+2B↑j
+xor     eax, eax
+pop     esi
+retn    14h
+; ---------------------------------------------------------------------------
+
+loc_4E1433:                             ; CODE XREF: ObjectClass__DispatchEvent+12↑j
+; ObjectClass__DispatchEvent+17↑j ...
+mov     esi, [esp+4+arg_10]
+mov     edx, [ecx]
+push    esi
+mov     esi, [esp+8+arg_0]
+push    esi
+push    eax
+call    dword ptr [edx+7Ch]
+pop     esi
+retn    14h
+*/
+} } }
 // 0x4E14C0
-namespace ra2 { namespace game { int ObjectClass::DestroyChain() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DestroyChain() {
+// [IDA decompile]
+int __thiscall ObjectClass_DestroyChain(void *this)
+{
+  int v1; // esi
+  int result; // eax
+  int (__thiscall ***v3)(_DWORD, int); // edi
+
+  v1 = (int)this;
+  for ( result = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 8))(this);
+        result;
+        result = (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 8))(v1) )
+  {
+    v1 = (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 8))(v1);
+  }
+  for ( ; v1; result = (**v3)(v3, 1) )
+  {
+    (*(void (__thiscall **)(int))(*(_DWORD *)v1 + 84))(v1);
+    v3 = (int (__thiscall ***)(_DWORD, int))v1;
+    v1 = (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 4))(v1);
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+8]
+test    eax, eax
+jz      short loc_4E14E0
+
+loc_4E14CC:                             ; CODE XREF: ObjectClass__DestroyChain+1E↓j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+8]
+mov     esi, eax
+mov     ecx, esi
+mov     eax, [esi]
+call    dword ptr [eax+8]
+test    eax, eax
+jnz     short loc_4E14CC
+
+loc_4E14E0:                             ; CODE XREF: ObjectClass__DestroyChain+A↑j
+test    esi, esi
+jz      short loc_4E1508
+push    edi
+
+loc_4E14E5:                             ; CODE XREF: ObjectClass__DestroyChain+45↓j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+54h]
+mov     eax, [esi]
+mov     ecx, esi
+mov     edi, esi
+call    dword ptr [eax+4]
+test    edi, edi
+mov     esi, eax
+jz      short loc_4E1503
+mov     edx, [edi]
+push    1
+mov     ecx, edi
+call    dword ptr [edx]
+
+loc_4E1503:                             ; CODE XREF: ObjectClass__DestroyChain+39↑j
+test    esi, esi
+jnz     short loc_4E14E5
+pop     edi
+
+loc_4E1508:                             ; CODE XREF: ObjectClass__DestroyChain+22↑j
+pop     esi
+retn
+*/
+} } }
 // 0x4E1570
-namespace ra2 { namespace game { void ObjectClass::BroadcastFlag(int a1) { } } }
+namespace ra2 { namespace game { void ObjectClass::BroadcastFlag(int a1) {
+// [IDA decompile]
+void __thiscall ObjectClass_BroadcastFlag(void *this, unsigned __int8 a2)
+{
+  int v2; // esi
+
+  v2 = (int)this;
+  if ( this )
+  {
+    do
+    {
+      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 108))(v2, a2);
+      v2 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 4))(v2);
+    }
+    while ( v2 );
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+test    esi, esi
+jz      short loc_4E1598
+push    edi
+mov     edi, [esp+8+arg_0]
+and     edi, 0FFh
+
+loc_4E1582:                             ; CODE XREF: ObjectClass__BroadcastFlag+25↓j
+mov     eax, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+6Ch]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4]
+mov     esi, eax
+test    esi, esi
+jnz     short loc_4E1582
+pop     edi
+
+loc_4E1598:                             ; CODE XREF: ObjectClass__BroadcastFlag+5↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x4E1A40
-namespace ra2 { namespace game { int ObjectClass::SetPositionXY(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetPositionXY(int a1, int a2) {
+// [IDA decompile]
+int __thiscall ObjectClass_SetPositionXY(_DWORD *this, int a2, int a3)
+{
+  *(this + 5) = a2;
+  *(this + 6) = a3;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [esp+arg_4]
+mov     [ecx+14h], eax
+mov     [ecx+18h], edx
+retn    8
+*/
+} } }
 // 0x505180
-namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() { } } }
+namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() {
+// [IDA decompile]
+void __thiscall sub_505180(int this)
+{
+  char v2; // al
+  int v3; // edi
+
+  v2 = *(_BYTE *)(this + 492);
+  if ( !MEMORY[0xA8B238][0] )
+    v2 = v2 || *(_BYTE *)(this + 493);
+  if ( !v2 && MEMORY[0xA8B238][0] )
+    HouseClass::CanDetect();
+  if ( !*(_DWORD *)(this + 22292) )
+  {
+    v3 = MEMORY[0xA8E7AC];
+    MEMORY[0xA8E7AC] = 0;
+    HouseClass::GenerateAIBuildListEnsureSanity((_DWORD *)this);
+    MEMORY[0xA8E7AC] = v3;
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, ds:0A8B238h
+mov     al, [esi+1ECh]
+test    ecx, ecx
+jnz     short loc_5051A7
+test    al, al
+jnz     short loc_5051A5
+mov     al, [esi+1EDh]
+test    al, al
+jnz     short loc_5051A5
+xor     al, al
+jmp     short loc_5051A7
+; ---------------------------------------------------------------------------
+
+loc_5051A5:                             ; CODE XREF: TechnoClass__checkBuildLimit+15↑j
+; TechnoClass__checkBuildLimit+1F↑j
+mov     al, 1
+
+loc_5051A7:                             ; CODE XREF: TechnoClass__checkBuildLimit+11↑j
+; TechnoClass__checkBuildLimit+23↑j
+test    al, al
+jnz     short loc_5051B4
+test    ecx, ecx
+jz      short loc_5051B4
+call    HouseClass__CanDetect
+
+loc_5051B4:                             ; CODE XREF: TechnoClass__checkBuildLimit+29↑j
+; TechnoClass__checkBuildLimit+2D↑j
+mov     eax, [esi+5714h]
+test    eax, eax
+jnz     short loc_5051DD
+push    edi
+mov     edi, ds:0A8E7ACh
+mov     ecx, esi
+mov     dword ptr ds:0A8E7ACh, 0
+call    HouseClass__GenerateAIBuildListEnsureSanity
+mov     ds:0A8E7ACh, edi
+pop     edi
+
+loc_5051DD:                             ; CODE XREF: TechnoClass__checkBuildLimit+3C↑j
+pop     esi
+retn
+*/
+} } }
 // 0x50D9C0
-namespace ra2 { namespace game { bool TechnoClass::processExperienceGain() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::processExperienceGain() {
+// [IDA decompile]
+BOOL __thiscall TechnoClass::processExperienceGain(_DWORD *this)
+{
+  return *(this + 89) > 0;
+}
+
+/* ASM:
+mov     edx, [ecx+164h]
+xor     eax, eax
+test    edx, edx
+setnle  al
+retn
+*/
+} } }
 // 0x50D9D0
-namespace ra2 { namespace game { bool TechnoClass::updateVeterancy() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::updateVeterancy() {
+// [IDA decompile]
+BOOL __thiscall TechnoClass::updateVeterancy(_DWORD *this)
+{
+  return *(this + 90) > 0;
+}
+
+/* ASM:
+mov     edx, [ecx+168h]
+xor     eax, eax
+test    edx, edx
+setnle  al
+retn
+*/
+} } }
 // 0x50DAA0
-namespace ra2 { namespace game { int FootClass::checkTurning() { return 0; } } }
+namespace ra2 { namespace game { int FootClass::checkTurning() {
+// [IDA decompile]
+unsigned int __thiscall sub_50DAA0(unsigned int *this)
+{
+  unsigned int result; // eax
+
+  result = *(this + 120);
+  if ( result >= 4 )
+    return 0;
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+1E0h]
+test    eax, eax
+jl      short loc_50DAAF
+cmp     eax, 3
+jle     short locret_50DAB1
+
+loc_50DAAF:                             ; CODE XREF: FootClass__checkTurning+8↑j
+xor     eax, eax
+
+locret_50DAB1:                          ; CODE XREF: FootClass__checkTurning+D↑j
+retn
+*/
+} } }
 // 0x50E010
-namespace ra2 { namespace game { void TechnoClass::Find(int a1) { } } }
+namespace ra2 { namespace game { void TechnoClass::Find(int a1) {
+// [IDA decompile]
+void __thiscall sub_50E010(int this, int a2)
+{
+  int v3; // eax
+  char v4; // bl
+  int v5; // ebp
+  int v6; // esi
+
+  v3 = *(_DWORD *)(this + 728) + 1;
+  *(_DWORD *)(this + 728) = v3;
+  if ( v3 == 1 )
+  {
+    if ( a2 )
+    {
+      v4 = 0;
+      v5 = MEMORY[0xA8EC88] - 1;
+      if ( MEMORY[0xA8EC88] - 1 >= 0 )
+      {
+        do
+        {
+          v6 = *((_DWORD *)MEMORY[0xA8EC7C] + v5);
+          if ( *(_DWORD *)(v6 + 540) == this
+            && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 132))(*((_DWORD *)MEMORY[0xA8EC7C] + v5)) == a2
+            && !*(_BYTE *)(v6 + 129) )
+          {
+            TechnoClass::Activate((_DWORD *)v6);
+            v4 = 1;
+          }
+          --v5;
+        }
+        while ( v5 >= 0 );
+        if ( v4 && MEMORY[0xA8E9A0] )
+        {
+          if ( MEMORY[0xA8B238][0] )
+          {
+            if ( (#375 *)this != MEMORY[0xA83D4C] )
+              return;
+            goto LABEL_16;
+          }
+          if ( *(_BYTE *)(this + 492) || *(_BYTE *)(this + 493) )
+          {
+LABEL_16:
+            if ( !MEMORY[0xA8E7AC] )
+              VoxClass::FindAndPlay(aEvaRobottanksb, -1);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    edi
+mov     edi, ecx
+mov     edx, [edi+2D8h]
+inc     edx
+mov     eax, edx
+mov     [edi+2D8h], edx
+cmp     eax, 1
+jnz     loc_50E0D5
+mov     eax, [esp+0Ch+arg_0]
+test    eax, eax
+jz      loc_50E0D5
+mov     eax, ds:0A8EC88h
+xor     bl, bl
+lea     ebp, [eax-1]
+test    ebp, ebp
+jl      loc_50E0D5
+push    esi
+
+loc_50E04C:                             ; CODE XREF: TechnoClass__Find+71↓j
+mov     ecx, ds:0A8EC7Ch
+mov     esi, [ecx+ebp*4]
+cmp     [esi+21Ch], edi
+jnz     short loc_50E080
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+cmp     eax, [esp+10h+arg_0]
+jnz     short loc_50E080
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_50E080
+mov     ecx, esi
+call    TechnoClass__Activate
+mov     bl, 1
+
+loc_50E080:                             ; CODE XREF: TechnoClass__Find+4B↑j
+; TechnoClass__Find+5B↑j ...
+dec     ebp
+jns     short loc_50E04C
+test    bl, bl
+pop     esi
+jz      short loc_50E0D5
+mov     al, ds:0A8E9A0h
+test    al, al
+jz      short loc_50E0D5
+mov     eax, ds:0A8B238h
+test    eax, eax
+jnz     short loc_50E0B0
+mov     al, [edi+1ECh]
+test    al, al
+jnz     short loc_50E0BD
+mov     al, [edi+1EDh]
+test    al, al
+jz      short loc_50E0D5
+jmp     short loc_50E0BD
+; ---------------------------------------------------------------------------
+
+loc_50E0B0:                             ; CODE XREF: TechnoClass__Find+88↑j
+cmp     edi, ds:0A83D4Ch
+setz    al
+test    al, al
+jz      short loc_50E0D5
+
+loc_50E0BD:                             ; CODE XREF: TechnoClass__Find+92↑j
+; TechnoClass__Find+9E↑j
+mov     eax, ds:0A8E7ACh
+test    eax, eax
+jnz     short loc_50E0D5
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaRobottanksb ; "EVA_RobotTanksBackOnline"
+call    VoxClass__FindAndPlay
+
+loc_50E0D5:                             ; CODE XREF: TechnoClass__Find+17↑j
+; TechnoClass__Find+23↑j ...
+pop     edi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x50E1C0
-namespace ra2 { namespace game { void TechnoClass::Process(int a1) { } } }
+namespace ra2 { namespace game { void TechnoClass::Process(int a1) {
+// [IDA decompile]
+void __thiscall sub_50E1C0(int this, int a2)
+{
+  char v3; // bl
+  int v4; // edi
+  int v5; // esi
+
+  if ( a2 )
+  {
+    v3 = 0;
+    v4 = MEMORY[0xA8EC88] - 1;
+    if ( MEMORY[0xA8EC88] - 1 >= 0 )
+    {
+      do
+      {
+        v5 = *((_DWORD *)MEMORY[0xA8EC7C] + v4);
+        if ( *(_DWORD *)(v5 + 540) == this
+          && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 132))(*((_DWORD *)MEMORY[0xA8EC7C] + v4)) == a2
+          && !*(_BYTE *)(v5 + 129) )
+        {
+          TechnoClass::Deactivate((_DWORD *)v5);
+          v3 = 1;
+        }
+        --v4;
+      }
+      while ( v4 >= 0 );
+      if ( v3 && MEMORY[0xA8E9A0] )
+      {
+        if ( MEMORY[0xA8B238][0] )
+        {
+          if ( (#375 *)this != MEMORY[0xA83D4C] )
+            return;
+          goto LABEL_15;
+        }
+        if ( *(_BYTE *)(this + 492) || *(_BYTE *)(this + 493) )
+        {
+LABEL_15:
+          if ( !MEMORY[0xA8E7AC] )
+            VoxClass::FindAndPlay(g_Str_EVA_RobotTanksOffline, -1);
+        }
+      }
+    }
+  }
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+push    edi
+test    eax, eax
+mov     ebp, ecx
+jz      loc_50E26D
+mov     eax, ds:0A8EC88h
+xor     bl, bl
+lea     edi, [eax-1]
+test    edi, edi
+jl      loc_50E26D
+push    esi
+
+loc_50E1E4:                             ; CODE XREF: TechnoClass__Process+59↓j
+mov     ecx, ds:0A8EC7Ch
+mov     esi, [ecx+edi*4]
+cmp     [esi+21Ch], ebp
+jnz     short loc_50E218
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+cmp     eax, [esp+10h+arg_0]
+jnz     short loc_50E218
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_50E218
+mov     ecx, esi
+call    TechnoClass__Deactivate
+mov     bl, 1
+
+loc_50E218:                             ; CODE XREF: TechnoClass__Process+33↑j
+; TechnoClass__Process+43↑j ...
+dec     edi
+jns     short loc_50E1E4
+test    bl, bl
+pop     esi
+jz      short loc_50E26D
+mov     al, ds:0A8E9A0h
+test    al, al
+jz      short loc_50E26D
+mov     eax, ds:0A8B238h
+test    eax, eax
+jnz     short loc_50E248
+mov     al, [ebp+1ECh]
+test    al, al
+jnz     short loc_50E255
+mov     al, [ebp+1EDh]
+test    al, al
+jz      short loc_50E26D
+jmp     short loc_50E255
+; ---------------------------------------------------------------------------
+
+loc_50E248:                             ; CODE XREF: TechnoClass__Process+70↑j
+cmp     ebp, ds:0A83D4Ch
+setz    al
+test    al, al
+jz      short loc_50E26D
+
+loc_50E255:                             ; CODE XREF: TechnoClass__Process+7A↑j
+; TechnoClass__Process+86↑j
+mov     eax, ds:0A8E7ACh
+test    eax, eax
+jnz     short loc_50E26D
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset g_Str_EVA_RobotTanksOffline ; "EVA_RobotTanksOffline"
+call    VoxClass__FindAndPlay
+
+loc_50E26D:                             ; CODE XREF: TechnoClass__Process+B↑j
+; TechnoClass__Process+1D↑j ...
+pop     edi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x50E380
-namespace ra2 { namespace game { void* AbstractClass::getMovementSpeed(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::getMovementSpeed(int a1) {
+// [IDA decompile]
+void *__thiscall AbstractClass::sub_50E380(void *Block, char a2)
+{
+  HouseClass::Destruct((int)Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    HouseClass__Destruct
+test    [esp+4+arg_0], 1
+jz      short loc_50E398
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_50E398:                             ; CODE XREF: AbstractClass__getMovementSpeed+D↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x50E5D0
-namespace ra2 { namespace game { void AbstractClass::getTargetCoordinates() { } } }
+namespace ra2 { namespace game { void AbstractClass::getTargetCoordinates() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_50E5D0(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_50E5F1
+cmp     [esi+0Dh], bl
+jz      short loc_50E5F1
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_50E5F1:                             ; CODE XREF: AbstractClass__getTargetCoordinates+E↑j
+; AbstractClass__getTargetCoordinates+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x50E600
-namespace ra2 { namespace game { int AbstractClass::setTargetCoordinates(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::setTargetCoordinates(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_50E600(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_50E60C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_50E60C:                             ; CODE XREF: AbstractClass__setTargetCoordinates+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 3
+retn    4
+*/
+} } }
 // 0x50F3A0
-namespace ra2 { namespace game { int AbstractClass::evaluateTarget(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::evaluateTarget(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::evaluateTarget(void *this, int a2, char *a3)
+{
+  int v3; // ebp
+  char *v5; // edi
+  char *v6; // eax
+  char *v7; // ecx
+  int v8; // edx
+  char *v9; // eax
+  int v10; // ecx
+  int v11; // edx
+  int v12; // ecx
+  int v13; // eax
+  _DWORD *v14; // ebx
+  int v15; // eax
+
+  v3 = a2;
+  if ( a2 )
+  {
+    v5 = a3;
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+    {
+      v9 = a3;
+      if ( a2 - 1 >= 0 )
+      {
+        v10 = a2;
+        do
+        {
+          *(_DWORD *)v9 = 0;
+          v9[4] = 0;
+          v9 += 8;
+          --v10;
+        }
+        while ( v10 );
+      }
+    }
+    else
+    {
+      v6 = (char *)__2_YAPAXI_Z(8 * a2);
+      if ( v6 )
+      {
+        v7 = v6;
+        if ( a2 - 1 >= 0 )
+        {
+          v8 = a2;
+          do
+          {
+            *(_DWORD *)v7 = 0;
+            v7[4] = 0;
+            v7 += 8;
+            --v8;
+          }
+          while ( v8 );
+        }
+        v5 = v6;
+      }
+      else
+      {
+        v5 = 0;
+      }
+    }
+    *((_BYTE *)this + 12) = 1;
+    if ( !v5 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v11 = *((_DWORD *)this + 2);
+      if ( a2 < v11 )
+        v11 = a2;
+      v12 = 0;
+      if ( v11 > 0 )
+      {
+        do
+        {
+          v13 = 8 * v12;
+          v14 = (_DWORD *)(*((_DWORD *)this + 1) + 8 * v12++);
+          *(_DWORD *)&v5[v13] = *v14;
+          *(_DWORD *)&v5[v13 + 4] = v14[1];
+        }
+        while ( v12 < v11 );
+        v3 = a2;
+      }
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v5;
+    *((_DWORD *)this + 2) = v3;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v15 = *((_DWORD *)this + 2);
+  if ( v15 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v15;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+xor     ebx, ebx
+push    esi
+cmp     ebp, ebx
+push    edi
+mov     esi, ecx
+jz      loc_50F474
+mov     edi, [esp+10h+arg_4]
+mov     [esi+0Ch], bl
+cmp     edi, ebx
+jnz     short loc_50F3F0
+lea     eax, ds:0[ebp*8]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+jz      short loc_50F3EC
+lea     edx, [ebp-1]
+mov     ecx, eax
+cmp     edx, ebx
+jl      short loc_50F3E8
+inc     edx
+
+loc_50F3DD:                             ; CODE XREF: AbstractClass__evaluateTarget+46↓j
+mov     [ecx], ebx
+mov     [ecx+4], bl
+add     ecx, 8
+dec     edx
+jnz     short loc_50F3DD
+
+loc_50F3E8:                             ; CODE XREF: AbstractClass__evaluateTarget+3A↑j
+mov     edi, eax
+jmp     short loc_50F405
+; ---------------------------------------------------------------------------
+
+loc_50F3EC:                             ; CODE XREF: AbstractClass__evaluateTarget+31↑j
+xor     edi, edi
+jmp     short loc_50F405
+; ---------------------------------------------------------------------------
+
+loc_50F3F0:                             ; CODE XREF: AbstractClass__evaluateTarget+1D↑j
+lea     ecx, [ebp-1]
+mov     eax, edi
+cmp     ecx, ebx
+jl      short loc_50F405
+inc     ecx
+
+loc_50F3FA:                             ; CODE XREF: AbstractClass__evaluateTarget+63↓j
+mov     [eax], ebx
+mov     [eax+4], bl
+add     eax, 8
+dec     ecx
+jnz     short loc_50F3FA
+
+loc_50F405:                             ; CODE XREF: AbstractClass__evaluateTarget+4A↑j
+; AbstractClass__evaluateTarget+4E↑j ...
+cmp     edi, ebx
+mov     byte ptr [esi+0Ch], 1
+jz      loc_50F491
+cmp     [esi+4], ebx
+jz      short loc_50F45E
+mov     edx, [esi+8]
+cmp     ebp, edx
+jge     short loc_50F41F
+mov     edx, ebp
+
+loc_50F41F:                             ; CODE XREF: AbstractClass__evaluateTarget+7B↑j
+xor     ecx, ecx
+cmp     edx, ebx
+jle     short loc_50F44A
+
+loc_50F425:                             ; CODE XREF: AbstractClass__evaluateTarget+A2↓j
+mov     ebp, [esi+4]
+lea     eax, ds:0[ecx*8]
+mov     ebx, eax
+add     ebx, ebp
+inc     ecx
+cmp     ecx, edx
+mov     ebp, [ebx]
+mov     [eax+edi], ebp
+mov     ebx, [ebx+4]
+mov     [eax+edi+4], ebx
+jl      short loc_50F425
+mov     ebp, [esp+10h+arg_0]
+xor     ebx, ebx
+
+loc_50F44A:                             ; CODE XREF: AbstractClass__evaluateTarget+83↑j
+cmp     [esi+0Dh], bl
+jz      short loc_50F45E
+mov     ecx, [esi+4]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_50F45E:                             ; CODE XREF: AbstractClass__evaluateTarget+74↑j
+; AbstractClass__evaluateTarget+AD↑j
+mov     ecx, [esp+10h+arg_4]
+xor     eax, eax
+cmp     ecx, ebx
+mov     [esi+4], edi
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_50F47B
+; ---------------------------------------------------------------------------
+
+loc_50F474:                             ; CODE XREF: AbstractClass__evaluateTarget+E↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_50F47B:                             ; CODE XREF: AbstractClass__evaluateTarget+D2↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_50F488
+mov     [esi+10h], eax
+
+loc_50F488:                             ; CODE XREF: AbstractClass__evaluateTarget+E3↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_50F491:                             ; CODE XREF: AbstractClass__evaluateTarget+6B↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} } }
 // 0x50F4A0
-namespace ra2 { namespace game { int AbstractClass::selectBestTarget(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::selectBestTarget(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_50F4A0(int *this, int a2)
+{
+  int v2; // esi
+  int result; // eax
+  int i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = *(this + 1); *(_DWORD *)i != *(_DWORD *)a2 || *(_BYTE *)(i + 4) != *(_BYTE *)(a2 + 4); i += 8 )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, [ecx+10h]
+xor     eax, eax
+push    edi
+test    esi, esi
+jle     short loc_50F4CC
+mov     edi, [esp+10h+arg_0]
+mov     ecx, [ecx+4]
+mov     ebp, [edi]
+
+loc_50F4B6:                             ; CODE XREF: AbstractClass__selectBestTarget+2A↓j
+cmp     [ecx], ebp
+jnz     short loc_50F4C4
+mov     dl, [ecx+4]
+mov     bl, [edi+4]
+cmp     dl, bl
+jz      short loc_50F4CF
+
+loc_50F4C4:                             ; CODE XREF: AbstractClass__selectBestTarget+18↑j
+inc     eax
+add     ecx, 8
+cmp     eax, esi
+jl      short loc_50F4B6
+
+loc_50F4CC:                             ; CODE XREF: AbstractClass__selectBestTarget+B↑j
+or      eax, 0FFFFFFFFh
+
+loc_50F4CF:                             ; CODE XREF: AbstractClass__selectBestTarget+22↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x510220
-namespace ra2 { namespace game { void* AbstractClass::updateThreatMap(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::updateThreatMap(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_510220(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<ScoutStruct>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@UScoutStruct@@@@6B@ ; const VectorClass<ScoutStruct>::`vftable'
+test    eax, eax
+jz      short loc_510247
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_510247
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_510247:                             ; CODE XREF: AbstractClass__updateThreatMap+E↑j
+; AbstractClass__updateThreatMap+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_510263
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_510263:                             ; CODE XREF: AbstractClass__updateThreatMap+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x5224F0
-namespace ra2 { namespace game { bool TechnoClass::updateTurretRotation() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::updateTurretRotation() {
+// [IDA decompile]
+bool __thiscall sub_5224F0(_DWORD *this)
+{
+  return *(_DWORD *)(*(this + 432) + 1732) > -1;
+}
+
+/* ASM:
+mov     eax, [ecx+6C0h]
+xor     ecx, ecx
+cmp     dword ptr [eax+6C4h], 0FFFFFFFFh
+setnle  cl
+mov     al, cl
+retn
+*/
+} } }
 // 0x543330
-namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) {
+// [IDA decompile]
+char __thiscall AbstractClass::ModifyCellTiles(#374 *this, int a2)
+{
+  #374 *v2; // edi
+  int v3; // esi
+  int v4; // eax
+  int v5; // ecx
+  int v6; // ebp
+  _WORD *v7; // eax
+  _DWORD *v8; // esi
+  int v9; // eax
+  int v10; // ebx
+  int v11; // eax
+  int v12; // eax
+  int v13; // eax
+  int v14; // edx
+  int v15; // eax
+  int v16; // edx
+  _DWORD *v17; // eax
+  int v18; // edx
+  _DWORD *v19; // ecx
+  bool v20; // cc
+  void *NeighbourContent; // eax
+  void *v22; // eax
+  void *v23; // eax
+  void *v24; // eax
+  int v25; // eax
+  int v27; // [esp+Ch] [ebp-40h]
+  int v28; // [esp+10h] [ebp-3Ch]
+  int v30; // [esp+18h] [ebp-34h]
+  int v31; // [esp+1Ch] [ebp-30h]
+  int v32; // [esp+20h] [ebp-2Ch] BYREF
+  int v33; // [esp+24h] [ebp-28h]
+  int v34; // [esp+28h] [ebp-24h]
+  int v35; // [esp+2Ch] [ebp-20h]
+  int v36; // [esp+30h] [ebp-1Ch] BYREF
+  int v37; // [esp+38h] [ebp-14h]
+  int v38; // [esp+3Ch] [ebp-10h]
+  _BYTE v39[12]; // [esp+40h] [ebp-Ch] BYREF
+
+  v2 = this;
+  v30 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 108))(this);
+  if ( !v30 )
+    return 0;
+  v3 = a2;
+  if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay(v2) )
+    return 0;
+  v4 = *((_DWORD *)v2 + 43);
+  v27 = 0;
+  if ( *(int *)(v4 + 744) > 0 )
+  {
+    while ( 1 )
+    {
+      v5 = *(_DWORD *)(v4 + 740);
+      v6 = 0;
+      v34 = 0;
+      if ( v5 <= 0 )
+        goto LABEL_45;
+      do
+      {
+        v7 = (_WORD *)(*(int (__thiscall **)(#374 *, int *))(*(_DWORD *)v2 + 440))(v2, &v36);
+        LOWORD(v31) = *v7 + v6;
+        HIWORD(v31) = v27 + v7[1];
+        v32 = v31;
+        if ( !LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&v32) )
+          goto LABEL_44;
+        v8 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v32);
+        v9 = *((_DWORD *)v2 + 43);
+        v10 = v6 + v27 * *(_DWORD *)(v9 + 740);
+        if ( !*(_DWORD *)(v30 + 4 * v10 + 16) )
+          goto LABEL_44;
+        if ( !a2 )
+        {
+          if ( v8[14] == *(_DWORD *)(v9 + 660) && *((unsigned __int8 *)v8 + 282) == v10 )
+          {
+            v8[14] = 0xFFFF;
+            *((_BYTE *)v8 + 282) = 0;
+            *((_BYTE *)v8 + 283) -= *(_BYTE *)(*(_DWORD *)(v30 + 4 * v10 + 16) + 40);
+          }
+          goto LABEL_43;
+        }
+        if ( a2 != 1 && a2 != 3 )
+          goto LABEL_43;
+        v11 = *(_DWORD *)(v9 + 660);
+        if ( v11 == dword_A8ED54[18647] )
+        {
+          v8[14] = 0xFFFF;
+        }
+        else
+        {
+          v8[14] = v11;
+          *((_BYTE *)v8 + 282) = v10;
+          *((_BYTE *)v8 + 284) = HouseClass::GetCameoTypeIndex(*((void **)v2 + 43), v10);
+          if ( v8[14] == dword_A8ED54[46377] + 5 )
+          {
+            switch ( *((_BYTE *)v8 + 282) )
+            {
+              case 0:
+              case 3:
+              case 6:
+              case 9:
+                v12 = dword_A8ED54[46369];
+                *((_BYTE *)v8 + 282) = 0;
+                v8[14] = v12 + 1;
+                break;
+              default:
+                break;
+            }
+          }
+          if ( v8[14] == dword_A8ED54[18641] + 5 )
+          {
+            switch ( *((_BYTE *)v8 + 282) )
+            {
+              case 0:
+              case 3:
+              case 6:
+              case 9:
+                v13 = dword_A8ED54[18642];
+                *((_BYTE *)v8 + 282) = 0;
+                v8[14] = v13 + 1;
+                break;
+              default:
+                break;
+            }
+          }
+          if ( v8[14] == dword_A8ED54[46377] + 8 && *((_BYTE *)v8 + 282) <= 3u )
+          {
+            v14 = dword_A8ED54[46369];
+            *((_BYTE *)v8 + 282) = 0;
+            v8[14] = v14;
+          }
+          if ( v8[14] != dword_A8ED54[18641] + 8 || *((_BYTE *)v8 + 282) > 3u )
+            goto LABEL_28;
+          v8[14] = dword_A8ED54[18642];
+        }
+        *((_BYTE *)v8 + 282) = 0;
+LABEL_28:
+        v15 = v8[17];
+        v8[18] = -1;
+        *((_BYTE *)v8 + 287) = 0;
+        if ( v15 < 27 )
+          goto LABEL_42;
+        if ( v15 >= 38 )
+          goto LABEL_42;
+        v16 = *v8;
+        v8[80] &= ~0x20000u;
+        v17 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(v16 + 72))(v8, v39);
+        v18 = *v17 + 384;
+        v37 = v17[1] + 384;
+        v38 = v17[2];
+        v33 = 0;
+        if ( MEMORY[0x87F7E8][539764] <= 0 )
+          goto LABEL_42;
+        v35 = *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v8[17]) + 668);
+        v28 = MEMORY[0x87F7E8][539761];
+        while ( 1 )
+        {
+          v19 = *(_DWORD **)v28;
+          if ( *(_DWORD *)(*(_DWORD *)v28 + 200) == v35 )
+            break;
+LABEL_37:
+          v20 = ++v33 < MEMORY[0x87F7E8][539764];
+          v28 += 4;
+          if ( !v20 )
+            goto LABEL_42;
+        }
+        if ( v19[39] != v18 || v19[40] != v37 || v19[41] != v38 )
+        {
+          v2 = this;
+          goto LABEL_37;
+        }
+        if ( v19 )
+          (*(void (__thiscall **)(_DWORD *, int))(*v19 + 32))(v19, 1);
+        v2 = this;
+LABEL_42:
+        v8[17] = -1;
+        *((_BYTE *)v8 + 286) = 0;
+        *((_BYTE *)v8 + 283) += *(_BYTE *)(*(_DWORD *)(v30 + 4 * v10 + 16) + 40);
+        CellClass::DetermineTileType((int)v8);
+        NeighbourContent = Cell::GetNeighbourContent(v8, 0);
+        CellClass::DetermineTileType((int)NeighbourContent);
+        v22 = Cell::GetNeighbourContent(v8, 2u);
+        CellClass::DetermineTileType((int)v22);
+        v23 = Cell::GetNeighbourContent(v8, 4u);
+        CellClass::DetermineTileType((int)v23);
+        v24 = Cell::GetNeighbourContent(v8, 6u);
+        CellClass::DetermineTileType((int)v24);
+        v6 = v34;
+LABEL_43:
+        House::AnnounceUpgrade((int)v8, (_DWORD *)0xFFFFFFFF);
+LABEL_44:
+        v25 = *((_DWORD *)v2 + 43);
+        v34 = ++v6;
+      }
+      while ( v6 < *(_DWORD *)(v25 + 740) );
+LABEL_45:
+      v4 = *((_DWORD *)v2 + 43);
+      if ( ++v27 >= *(_DWORD *)(v4 + 744) )
+      {
+        v3 = a2;
+        break;
+      }
+    }
+  }
+  if ( v3 == 1 || v3 == 3 )
+  {
+    *((_BYTE *)v2 + 116) = 0;
+    if ( v2 )
+      (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)v2 + 32))(v2, 1);
+  }
+  return 1;
+}
+
+/* ASM:
+sub     esp, 40h
+push    esi
+push    edi
+mov     edi, ecx
+mov     [esp+48h+var_38], edi
+mov     eax, [edi]
+call    dword ptr [eax+6Ch]
+test    eax, eax
+mov     [esp+48h+var_34], eax
+jz      loc_543740
+mov     esi, [esp+48h+arg_0]
+mov     ecx, edi        ; this
+push    esi
+call    ObjectClass__UpdateProductionDisplay
+test    al, al
+jz      loc_543740
+mov     eax, [edi+0ACh]
+mov     [esp+48h+var_40], 0
+mov     ecx, [eax+2E8h]
+test    ecx, ecx
+jle     loc_54371B
+push    ebx
+push    ebp
+
+loc_54337E:                             ; CODE XREF: AbstractClass__ModifyCellTiles+3DF↓j
+mov     ecx, [eax+2E4h]
+xor     ebp, ebp
+test    ecx, ecx
+mov     [esp+50h+var_24], ebp
+jle     loc_5436F8
+
+loc_543392:                             ; CODE XREF: AbstractClass__ModifyCellTiles+3C2↓j
+mov     edx, [edi]
+lea     eax, [esp+50h+var_1C]
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+1B8h]
+mov     dx, [eax+2]
+mov     cx, bp
+add     cx, [eax]
+add     dx, word ptr [esp+50h+var_40]
+mov     word ptr [esp+50h+var_30], cx
+lea     ecx, [esp+50h+var_2C]
+mov     word ptr [esp+50h+var_30+2], dx
+mov     eax, [esp+50h+var_30]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+54h+var_2C], eax
+call    LayerClass__CoordinatesLegal
+test    al, al
+jz      loc_5436E1
+lea     edx, [esp+50h+var_2C]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     esi, eax
+mov     eax, [edi+0ACh]
+mov     ecx, [esp+50h+var_34]
+mov     ebx, [eax+2E4h]
+imul    ebx, [esp+50h+var_40]
+add     ebx, ebp
+mov     edx, [ecx+ebx*4+10h]
+test    edx, edx
+jz      loc_5436E1
+mov     ecx, [esp+50h+arg_0]
+test    ecx, ecx
+jnz     short loc_543462
+mov     edx, [esi+38h]
+mov     ecx, [eax+294h]
+cmp     edx, ecx
+jnz     loc_5436D8
+xor     eax, eax
+mov     al, [esi+11Ah]
+cmp     eax, ebx
+jnz     loc_5436D8
+mov     ecx, [esp+50h+var_34]
+mov     dword ptr [esi+38h], 0FFFFh
+mov     byte ptr [esi+11Ah], 0
+mov     edx, [ecx+ebx*4+10h]
+mov     cl, [esi+11Bh]
+mov     al, [edx+28h]
+sub     cl, al
+mov     [esi+11Bh], cl
+jmp     loc_5436D8
+; ---------------------------------------------------------------------------
+
+loc_543462:                             ; CODE XREF: AbstractClass__ModifyCellTiles+E3↑j
+cmp     ecx, 1
+jz      short loc_543470
+cmp     ecx, 3
+jnz     loc_5436D8
+
+loc_543470:                             ; CODE XREF: AbstractClass__ModifyCellTiles+135↑j
+mov     eax, [eax+294h]
+mov     ecx, dword_A8ED54+1235Ch
+cmp     eax, ecx
+jnz     short loc_54348C
+mov     dword ptr [esi+38h], 0FFFFh
+jmp     loc_543569
+; ---------------------------------------------------------------------------
+
+loc_54348C:                             ; CODE XREF: AbstractClass__ModifyCellTiles+14E↑j
+mov     [esi+38h], eax
+mov     [esi+11Ah], bl
+mov     ecx, [edi+0ACh]
+push    ebx
+call    HouseClass__GetCameoTypeIndex
+mov     [esi+11Ch], al
+mov     ecx, dword_A8ED54+2D4A4h
+mov     eax, [esi+38h]
+add     ecx, 5
+cmp     eax, ecx
+jnz     short def_5434CC ; jumptable 005434CC default case, cases 1,2,4,5,7,8
+xor     eax, eax
+mov     al, [esi+11Ah]
+cmp     eax, 9          ; switch 10 cases
+ja      short def_5434CC ; jumptable 005434CC default case, cases 1,2,4,5,7,8
+xor     edx, edx
+mov     dl, ds:byte_543754[eax]
+jmp     ds:jpt_5434CC[edx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_5434D3:                             ; CODE XREF: AbstractClass__ModifyCellTiles+19C↑j
+; DATA XREF: .text:jpt_5434CC↓o
+mov     eax, dword_A8ED54+2D484h ; jumptable 005434CC cases 0,3,6,9
+mov     byte ptr [esi+11Ah], 0
+inc     eax
+mov     [esi+38h], eax
+
+def_5434CC:                             ; CODE XREF: AbstractClass__ModifyCellTiles+185↑j
+; AbstractClass__ModifyCellTiles+192↑j ...
+mov     ecx, dword_A8ED54+12344h ; jumptable 005434CC default case, cases 1,2,4,5,7,8
+mov     eax, [esi+38h]
+add     ecx, 5
+cmp     eax, ecx
+jnz     short def_543508 ; jumptable 00543508 default case, cases 1,2,4,5,7,8
+xor     eax, eax
+mov     al, [esi+11Ah]
+cmp     eax, 9          ; switch 10 cases
+ja      short def_543508 ; jumptable 00543508 default case, cases 1,2,4,5,7,8
+xor     edx, edx
+mov     dl, ds:byte_543768[eax]
+jmp     ds:jpt_543508[edx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_54350F:                             ; CODE XREF: AbstractClass__ModifyCellTiles+1D8↑j
+; DATA XREF: .text:jpt_543508↓o
+mov     eax, dword_A8ED54+12348h ; jumptable 00543508 cases 0,3,6,9
+mov     byte ptr [esi+11Ah], 0
+inc     eax
+mov     [esi+38h], eax
+
+def_543508:                             ; CODE XREF: AbstractClass__ModifyCellTiles+1C1↑j
+; AbstractClass__ModifyCellTiles+1CE↑j ...
+mov     ecx, dword_A8ED54+2D4A4h ; jumptable 00543508 default case, cases 1,2,4,5,7,8
+mov     eax, [esi+38h]
+add     ecx, 8
+cmp     eax, ecx
+jnz     short loc_543548
+cmp     byte ptr [esi+11Ah], 3
+ja      short loc_543548
+mov     edx, dword_A8ED54+2D484h
+mov     byte ptr [esi+11Ah], 0
+mov     [esi+38h], edx
+
+loc_543548:                             ; CODE XREF: AbstractClass__ModifyCellTiles+1FD↑j
+; AbstractClass__ModifyCellTiles+206↑j
+mov     eax, dword_A8ED54+12344h
+mov     ecx, [esi+38h]
+add     eax, 8
+cmp     ecx, eax
+jnz     short loc_543570
+cmp     byte ptr [esi+11Ah], 3
+ja      short loc_543570
+mov     ecx, dword_A8ED54+12348h
+mov     [esi+38h], ecx
+
+loc_543569:                             ; CODE XREF: AbstractClass__ModifyCellTiles+157↑j
+mov     byte ptr [esi+11Ah], 0
+
+loc_543570:                             ; CODE XREF: AbstractClass__ModifyCellTiles+225↑j
+; AbstractClass__ModifyCellTiles+22E↑j
+mov     eax, [esi+44h]
+mov     dword ptr [esi+48h], 0FFFFFFFFh
+cmp     eax, 1Bh
+mov     byte ptr [esi+11Fh], 0
+jl      loc_543666
+cmp     eax, 26h ; '&'
+jge     loc_543666
+mov     eax, [esi+140h]
+mov     edx, [esi]
+and     eax, 0FFFDFFFFh
+mov     ecx, esi
+mov     [esi+140h], eax
+lea     eax, [esp+50h+var_C]
+push    eax
+call    dword ptr [edx+48h]
+mov     ecx, [eax+4]
+mov     edx, [eax]
+add     ecx, 180h
+add     edx, 180h
+mov     [esp+50h+var_14], ecx
+mov     ecx, [eax+8]
+mov     eax, ds:0A8E9B8h
+mov     [esp+50h+var_10], ecx
+test    eax, eax
+mov     [esp+50h+var_28], 0
+jle     loc_543666
+mov     eax, [esi+44h]
+mov     ecx, ds:0A83D84h
+mov     eax, [ecx+eax*4]
+mov     ecx, [eax+29Ch]
+mov     eax, ds:0A8E9ACh
+mov     [esp+50h+var_20], ecx
+mov     [esp+50h+var_3C], eax
+
+loc_543600:                             ; CODE XREF: AbstractClass__ModifyCellTiles+325↓j
+mov     ecx, [esp+50h+var_3C]
+mov     eax, [esp+50h+var_20]
+mov     ecx, [ecx]
+cmp     [ecx+0C8h], eax
+jnz     short loc_543637
+lea     eax, [ecx+9Ch]
+mov     ebp, eax
+mov     edi, [ebp+0]
+cmp     edi, edx
+mov     eax, [ebp+4]
+mov     ebp, [ebp+8]
+jnz     short loc_543633
+cmp     eax, [esp+50h+var_14]
+jnz     short loc_543633
+cmp     ebp, [esp+50h+var_10]
+jz      short loc_543657
+
+loc_543633:                             ; CODE XREF: AbstractClass__ModifyCellTiles+2F5↑j
+; AbstractClass__ModifyCellTiles+2FB↑j
+mov     edi, [esp+50h+var_38]
+
+loc_543637:                             ; CODE XREF: AbstractClass__ModifyCellTiles+2E0↑j
+mov     eax, [esp+50h+var_28]
+mov     ebp, [esp+50h+var_3C]
+mov     ecx, ds:0A8E9B8h
+inc     eax
+add     ebp, 4
+cmp     eax, ecx
+mov     [esp+50h+var_28], eax
+mov     [esp+50h+var_3C], ebp
+jge     short loc_543666
+jmp     short loc_543600
+; ---------------------------------------------------------------------------
+
+loc_543657:                             ; CODE XREF: AbstractClass__ModifyCellTiles+301↑j
+test    ecx, ecx
+jz      short loc_543662
+mov     edx, [ecx]
+push    1
+call    dword ptr [edx+20h]
+
+loc_543662:                             ; CODE XREF: AbstractClass__ModifyCellTiles+329↑j
+mov     edi, [esp+50h+var_38]
+
+loc_543666:                             ; CODE XREF: AbstractClass__ModifyCellTiles+254↑j
+; AbstractClass__ModifyCellTiles+25D↑j ...
+mov     eax, [esp+50h+var_34]
+mov     dword ptr [esi+44h], 0FFFFFFFFh
+mov     byte ptr [esi+11Eh], 0
+mov     ecx, [eax+ebx*4+10h]
+mov     al, [esi+11Bh]
+mov     dl, [ecx+28h]
+mov     ecx, esi
+add     al, dl
+mov     [esi+11Bh], al
+call    CellClass__DetermineTileType
+push    0
+mov     ecx, esi
+call    Cell__GetNeighbourContent
+mov     ecx, eax
+call    CellClass__DetermineTileType
+push    2
+mov     ecx, esi
+call    Cell__GetNeighbourContent
+mov     ecx, eax
+call    CellClass__DetermineTileType
+push    4
+mov     ecx, esi
+call    Cell__GetNeighbourContent
+mov     ecx, eax
+call    CellClass__DetermineTileType
+push    6
+mov     ecx, esi
+call    Cell__GetNeighbourContent
+mov     ecx, eax
+call    CellClass__DetermineTileType
+mov     ebp, [esp+50h+var_24]
+
+loc_5436D8:                             ; CODE XREF: AbstractClass__ModifyCellTiles+F0↑j
+; AbstractClass__ModifyCellTiles+100↑j ...
+push    0FFFFFFFFh
+mov     ecx, esi
+call    House__AnnounceUpgrade
+
+loc_5436E1:                             ; CODE XREF: AbstractClass__ModifyCellTiles+A3↑j
+; AbstractClass__ModifyCellTiles+D7↑j
+mov     eax, [edi+0ACh]
+inc     ebp
+mov     [esp+50h+var_24], ebp
+cmp     ebp, [eax+2E4h]
+jl      loc_543392
+
+loc_5436F8:                             ; CODE XREF: AbstractClass__ModifyCellTiles+5C↑j
+mov     eax, [edi+0ACh]
+mov     ecx, [esp+50h+var_40]
+inc     ecx
+mov     edx, [eax+2E8h]
+mov     [esp+50h+var_40], ecx
+cmp     ecx, edx
+jl      loc_54337E
+mov     esi, [esp+50h+arg_0]
+pop     ebp
+pop     ebx
+
+loc_54371B:                             ; CODE XREF: AbstractClass__ModifyCellTiles+46↑j
+cmp     esi, 1
+jz      short loc_543725
+cmp     esi, 3
+jnz     short loc_543736
+
+loc_543725:                             ; CODE XREF: AbstractClass__ModifyCellTiles+3EE↑j
+test    edi, edi
+mov     byte ptr [edi+74h], 0
+jz      short loc_543736
+mov     edx, [edi]
+push    1
+mov     ecx, edi
+call    dword ptr [edx+20h]
+
+loc_543736:                             ; CODE XREF: AbstractClass__ModifyCellTiles+3F3↑j
+; AbstractClass__ModifyCellTiles+3FB↑j
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 40h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_543740:                             ; CODE XREF: AbstractClass__ModifyCellTiles+16↑j
+; AbstractClass__ModifyCellTiles+2A↑j
+pop     edi
+xor     al, al
+pop     esi
+add     esp, 40h
+retn    4
+*/
+} } }
 // 0x543990
-namespace ra2 { namespace game { int AbstractClass::COMStub_5(void* a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_5(void* a1, int a2) {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt5(#374 *this, _DWORD *a2, int a3)
+{
+  int Register; // edi
+
+  Register = BuildingClass::SaveLoad_Register(this);
+  if ( Register >= 0 )
+  {
+    if ( a2 )
+    {
+      ObjectClass::Init(a2, (int)&a3);
+      *a2 = &IsometricTileClass::`vftable';
+      a2[1] = &IsometricTileClass::`vftable';
+      a2[2] = &IsometricTileClass::`vftable';
+      a2[3] = &IsometricTileClass::`vftable';
+    }
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], a2 + 43);
+  }
+  return Register;
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+push    esi
+mov     esi, [esp+4+arg_0]
+push    edi
+push    eax
+push    esi
+call    BuildingClass__SaveLoad_Register
+mov     edi, eax
+test    edi, edi
+jl      short loc_5439E3
+test    esi, esi
+jz      short loc_5439D2
+lea     ecx, [esp+8+arg_4]
+push    ecx
+mov     ecx, esi
+call    ObjectClass__Init
+mov     dword ptr [esi], offset ??_7IsometricTileClass@@6B@ ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7IsometricTileClass@@6B@_0 ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7IsometricTileClass@@6B@_1 ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7IsometricTileClass@@6B@_2 ; const IsometricTileClass::`vftable'
+
+loc_5439D2:                             ; CODE XREF: AbstractClass__COMStub_5+19↑j
+add     esi, 0ACh
+push    esi
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+
+loc_5439E3:                             ; CODE XREF: AbstractClass__COMStub_5+15↑j
+mov     eax, edi
+pop     edi
+pop     esi
+retn    8
+*/
+} } }
 // 0x543A10
-namespace ra2 { namespace game { int AbstractClass::COMStub_54(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_54(int a1, int a2) {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt54(_BYTE *this, int a2, int a3)
+{
+  int v4; // eax
+
+  v4 = *(_DWORD *)this;
+  *(this + 129) = 0;
+  (*(void (__thiscall **)(_BYTE *, int))(v4 + 436))(this, a2);
+  return (*(int (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 292))(this, 1);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+4+arg_0]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+mov     byte ptr [esi+81h], 0
+call    dword ptr [eax+1B4h]
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+124h]
+pop     esi
+retn    8
+*/
+} } }
 // 0x543A40
-namespace ra2 { namespace game { int AbstractClass::COMStub_53() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_53() {
+// [IDA decompile]
+char __thiscall AbstractClass::_vt53(_BYTE *this)
+{
+  if ( !MEMORY[0xA8E9A0] || *(this + 129) )
+    return 0;
+  (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 336))(this);
+  (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 220))(this, 1);
+  (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)this + 292))(this, 0);
+  *(this + 129) = 1;
+  *(this + 128) = 0;
+  return 1;
+}
+
+/* ASM:
+mov     al, ds:0A8E9A0h
+push    esi
+test    al, al
+mov     esi, ecx
+jz      short loc_543A88
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_543A88
+mov     eax, [esi]
+call    dword ptr [eax+150h]
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+0DCh]
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+124h]
+mov     byte ptr [esi+81h], 1
+mov     byte ptr [esi+80h], 0
+mov     al, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_543A88:                             ; CODE XREF: AbstractClass__COMStub_53+A↑j
+; AbstractClass__COMStub_53+14↑j
+xor     al, al
+pop     esi
+retn
+*/
+} } }
 // 0x543B10
-namespace ra2 { namespace game { void* AbstractClass::CreateInstance(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::CreateInstance(int a1) {
+// [IDA decompile]
+void **__thiscall AbstractClass::_vt8(void **Block, char a2)
+{
+  int v3; // eax
+  int v4; // eax
+  void **v6; // [esp+Ch] [ebp-4h] BYREF
+
+  *Block = &IsometricTileClass::`vftable';
+  *(Block + 1) = &IsometricTileClass::`vftable';
+  *(Block + 2) = &IsometricTileClass::`vftable';
+  *(Block + 3) = &IsometricTileClass::`vftable';
+  AbstractClass::AnnounceExpiredPointer(Block, 1);
+  if ( MEMORY[0xA8E9A0] && !*((_BYTE *)Block + 129) )
+  {
+    (*((void (__thiscall **)(void **))*Block + 84))(Block);
+    (*((void (__thiscall **)(void **, int))*Block + 55))(Block, 1);
+    (*((void (__thiscall **)(void **, _DWORD))*Block + 73))(Block, 0);
+    *((_BYTE *)Block + 129) = 1;
+    *((_BYTE *)Block + 128) = 0;
+  }
+  *(Block + 43) = 0;
+  v6 = Block;
+  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x87F750] + 16))(&MEMORY[0x87F750], &v6);
+  if ( v3 != -1 && v3 < MEMORY[0x87F760] && v3 < --MEMORY[0x87F760] )
+  {
+    do
+    {
+      ++v3;
+      *((_DWORD *)MEMORY[0x87F754] + v3 - 1) = *((_DWORD *)MEMORY[0x87F754] + v3);
+    }
+    while ( v3 < MEMORY[0x87F760] );
+  }
+  v6 = Block;
+  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6);
+  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] )
+  {
+    do
+    {
+      ++v4;
+      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4);
+    }
+    while ( v4 < MEMORY[0xB0F680] );
+  }
+  ObjectClass::Dtor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+mov     dl, 1
+mov     dword ptr [esi], offset ??_7IsometricTileClass@@6B@ ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7IsometricTileClass@@6B@_0 ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7IsometricTileClass@@6B@_1 ; const IsometricTileClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7IsometricTileClass@@6B@_2 ; const IsometricTileClass::`vftable'
+call    AbstractClass__AnnounceExpiredPointer
+mov     al, ds:0A8E9A0h
+test    al, al
+jz      short loc_543B79
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_543B79
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+150h]
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+0DCh]
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+124h]
+mov     byte ptr [esi+81h], 1
+mov     byte ptr [esi+80h], 0
+
+loc_543B79:                             ; CODE XREF: AbstractClass__CreateInstance+2D↑j
+; AbstractClass__CreateInstance+37↑j
+lea     ecx, [esp+8+var_4]
+mov     dword ptr [esi+0ACh], 0
+mov     edx, ds:87F750h
+push    ecx
+mov     ecx, 87F750h
+mov     [esp+0Ch+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_543BCC
+mov     ecx, ds:87F760h
+cmp     eax, ecx
+jge     short loc_543BCC
+dec     ecx
+cmp     eax, ecx
+mov     ds:87F760h, ecx
+jge     short loc_543BCC
+
+loc_543BB4:                             ; CODE XREF: AbstractClass__CreateInstance+BA↓j
+mov     ecx, ds:87F754h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, ds:87F760h
+cmp     eax, ecx
+jl      short loc_543BB4
+
+loc_543BCC:                             ; CODE XREF: AbstractClass__CreateInstance+8D↑j
+; AbstractClass__CreateInstance+97↑j ...
+mov     edx, dword_A8ED54+8091Ch
+lea     eax, [esp+8+var_4]
+push    eax
+mov     ecx, (offset dword_A8ED54+8091Ch)
+mov     [esp+0Ch+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_543C15
+mov     ecx, dword_A8ED54+8092Ch
+cmp     eax, ecx
+jge     short loc_543C15
+dec     ecx
+cmp     eax, ecx
+mov     dword_A8ED54+8092Ch, ecx
+jge     short loc_543C15
+
+loc_543BFD:                             ; CODE XREF: AbstractClass__CreateInstance+103↓j
+mov     ecx, dword_A8ED54+80920h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, dword_A8ED54+8092Ch
+cmp     eax, ecx
+jl      short loc_543BFD
+
+loc_543C15:                             ; CODE XREF: AbstractClass__CreateInstance+D6↑j
+; AbstractClass__CreateInstance+E0↑j ...
+mov     ecx, esi
+call    ObjectClass__Dtor
+test    [esp+8+arg_0], 1
+jz      short loc_543C2C
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_543C2C:                             ; CODE XREF: AbstractClass__CreateInstance+111↑j
+mov     eax, esi
+pop     esi
+pop     ecx
+retn    4
+*/
+} } }
 // 0x54E590
-namespace ra2 { namespace game { void AbstractClass::processStateTransition(int a1) { } } }
+namespace ra2 { namespace game { void AbstractClass::processStateTransition(int a1) {
+// [IDA decompile]
+void __thiscall sub_54E590(int *this, int a2)
+{
+  int v3; // esi
+  int v4; // ebx
+  int i; // edx
+  int v6; // eax
+  int v7; // ecx
+  int v8; // eax
+  _DWORD *v9; // eax
+  void *v10; // ebx
+  _DWORD *v11; // eax
+  int v12; // ecx
+  int v13; // [esp+Ch] [ebp-10h] BYREF
+  char v14[12]; // [esp+10h] [ebp-Ch] BYREF
+  int v15; // [esp+20h] [ebp+4h]
+
+  v3 = *(this + 7) - 1;
+  if ( v3 >= 0 )
+  {
+    v4 = *(this + 4);
+    for ( i = v4 + 4 * v3; a2 != **(_DWORD **)i; i -= 4 )
+    {
+      if ( a2 == *(_DWORD *)(*(_DWORD *)i + 4) )
+      {
+        v9 = (_DWORD *)(*(int (__stdcall **)(char *))(*(_DWORD *)a2 + 72))(v14);
+        LOWORD(v15) = *v9 / 256;
+        HIWORD(v15) = v9[1] / 256;
+        v13 = v15;
+        v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13);
+        v11 = *(_DWORD **)(*(this + 4) + 4 * v3);
+        (*(void (__thiscall **)(_DWORD, void *))(*(_DWORD *)*v11 + 968))(*v11, v10);
+        v12 = **(_DWORD **)(*(this + 4) + 4 * v3);
+        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v12 + 488))(v12, 1, 0);
+        *(_DWORD *)(*(_DWORD *)(*(this + 4) + 4 * v3) + 4) = v10;
+        return;
+      }
+      if ( --v3 < 0 )
+        return;
+    }
+    __3_YAXPAX_Z(*(void **)(v4 + 4 * v3));
+    v6 = *(this + 7);
+    if ( v3 < v6 )
+    {
+      v7 = v6 - 1;
+      v8 = v3;
+      for ( *(this + 7) = v7; v8 < *(this + 7); *(_DWORD *)(*(this + 4) + 4 * v8 - 4) = *(_DWORD *)(*(this + 4) + 4 * v8) )
+        ++v8;
+    }
+  }
+}
+
+/* ASM:
+sub     esp, 10h
+push    ebx
+push    esi
+push    edi
+mov     edi, ecx
+mov     esi, [edi+1Ch]
+dec     esi
+js      loc_54E684
+mov     ebx, [edi+10h]
+mov     ecx, [esp+1Ch+arg_0]
+lea     edx, [ebx+esi*4]
+
+loc_54E5AC:                             ; CODE XREF: AbstractClass__processStateTransition+2D↓j
+mov     eax, [edx]
+cmp     ecx, [eax]
+jz      short loc_54E5C8
+cmp     ecx, [eax+4]
+jz      short loc_54E60A
+dec     esi
+sub     edx, 4
+test    esi, esi
+jge     short loc_54E5AC
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 10h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_54E5C8:                             ; CODE XREF: AbstractClass__processStateTransition+20↑j
+mov     eax, [ebx+esi*4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, [edi+1Ch]
+add     esp, 4
+cmp     esi, eax
+jge     loc_54E684
+lea     ecx, [eax-1]
+mov     eax, esi
+cmp     esi, ecx
+mov     [edi+1Ch], ecx
+jge     loc_54E684
+
+loc_54E5EF:                             ; CODE XREF: AbstractClass__processStateTransition+6F↓j
+mov     ecx, [edi+10h]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+1Ch]
+cmp     eax, ecx
+jl      short loc_54E5EF
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 10h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_54E60A:                             ; CODE XREF: AbstractClass__processStateTransition+25↑j
+mov     eax, [ecx]
+lea     edx, [esp+1Ch+var_C]
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1Ch+arg_0], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+lea     ecx, [esp+1Ch+var_10]
+add     eax, edx
+push    ecx
+sar     eax, 8
+mov     word ptr [esp+20h+arg_0+2], ax
+mov     eax, [esp+20h+arg_0]
+mov     ecx, 87F7E8h
+mov     [esp+20h+var_10], eax
+call    CellCoord__To_CellObj
+mov     edx, [edi+10h]
+mov     ebx, eax
+push    ebx
+mov     eax, [edx+esi*4]
+mov     ecx, [eax]
+mov     edx, [ecx]
+call    dword ptr [edx+3C8h]
+mov     eax, [edi+10h]
+push    0
+push    1
+mov     ecx, [eax+esi*4]
+mov     ecx, [ecx]
+mov     edx, [ecx]
+call    dword ptr [edx+1E8h]
+mov     eax, [edi+10h]
+mov     ecx, [eax+esi*4]
+mov     [ecx+4], ebx
+
+loc_54E684:                             ; CODE XREF: AbstractClass__processStateTransition+C↑j
+; AbstractClass__processStateTransition+49↑j ...
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 10h
+retn    4
+*/
+} } }
 // 0x5B2DA0
-namespace ra2 { namespace game { int RadioClass::Constructor() { return 0; } } }
+namespace ra2 { namespace game { int RadioClass::Constructor() {
+// [IDA decompile]
+int __thiscall sub_5B2DA0(int this)
+{
+  #72 *v2; // ecx
+
+  ObjectClass::ctor((_DWORD *)this);
+  *(_DWORD *)(this + 172) = -1;
+  *(_DWORD *)(this + 176) = -1;
+  *(_DWORD *)(this + 180) = -1;
+  *(_BYTE *)(this + 184) = 0;
+  *(_DWORD *)(this + 188) = 0;
+  *(_DWORD *)(this + 192) = 0;
+  *(_DWORD *)(this + 196) = 0;
+  v2 = MEMORY[0xA8ED84];
+  *(_DWORD *)(this + 208) = 0;
+  *(_DWORD *)(this + 200) = v2;
+  *(_DWORD *)this = &MissionClass::`vftable';
+  *(_DWORD *)(this + 4) = &MissionClass::`vftable';
+  *(_DWORD *)(this + 8) = &MissionClass::`vftable';
+  *(_DWORD *)(this + 12) = &MissionClass::`vftable';
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    ObjectClass__ctor
+or      eax, 0FFFFFFFFh
+mov     [esi+0ACh], eax
+mov     [esi+0B0h], eax
+mov     [esi+0B4h], eax
+xor     eax, eax
+mov     [esi+0B8h], al
+mov     [esi+0BCh], eax
+mov     [esi+0C0h], eax
+mov     [esi+0C4h], eax
+mov     ecx, dword_A8ED54+30h
+mov     [esi+0D0h], eax
+mov     [esi+0C8h], ecx
+mov     dword ptr [esi], offset ??_7MissionClass@@6B@ ; const MissionClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7MissionClass@@6B@_0 ; const MissionClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7MissionClass@@6B@_1 ; const MissionClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7MissionClass@@6B@_2 ; const MissionClass::`vftable'
+mov     eax, esi
+pop     esi
+retn
+*/
+} } }
 // 0x5B2FD0
-namespace ra2 { namespace game { int MissionClass::SetState() { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::SetState() {
+// [IDA decompile]
+int __thiscall MissionClass::SetState(#377 *this)
+{
+  int result; // eax
+  _DWORD *v2; // ecx
+  int v3; // [esp+4h] [ebp-8h]
+  int v4; // [esp+10h] [ebp+4h]
+
+  result = v4;
+  if ( *((_DWORD *)this + 43) != 28 || v4 != 5 )
+  {
+    *((_DWORD *)this + 43) = v4;
+    *((_DWORD *)this + 45) = -1;
+    *((_BYTE *)this + 184) = 0;
+    *((_DWORD *)this + 47) = 0;
+    *((_DWORD *)this + 48) = MEMORY[0xA8ED84];
+    *((_DWORD *)this + 49) = 0;
+    v2 = (_DWORD *)((char *)this + 200);
+    *v2 = MEMORY[0xA8ED84];
+    v2[1] = v3;
+    v2[2] = 0;
+    return v3;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+0ACh]
+sub     esp, 0Ch
+cmp     eax, 1Ch
+mov     eax, [esp+0Ch+arg_0]
+jnz     short loc_5B2FE7
+cmp     eax, 5
+jz      short loc_5B302D
+
+loc_5B2FE7:                             ; CODE XREF: MissionClass__SetState+10↑j
+xor     edx, edx
+mov     [ecx+0ACh], eax
+mov     dword ptr [ecx+0B4h], 0FFFFFFFFh
+mov     [ecx+0B8h], dl
+mov     [ecx+0BCh], edx
+mov     eax, dword_A8ED54+30h
+mov     [ecx+0C0h], eax
+mov     [ecx+0C4h], edx
+mov     eax, dword_A8ED54+30h
+add     ecx, 0C8h
+mov     [ecx], eax
+mov     eax, [esp+0Ch+var_8]
+mov     [ecx+4], eax
+mov     [ecx+8], edx
+
+loc_5B302D:                             ; CODE XREF: MissionClass__SetState+15↑j
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x5B3040
-namespace ra2 { namespace game { int MissionClass::GetPrimaryOrFallback() { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::GetPrimaryOrFallback() {
+// [IDA decompile]
+int __thiscall MissionClass::GetPrimaryOrFallback(#377 *this)
+{
+  int result; // eax
+
+  result = *((_DWORD *)this + 43);
+  if ( result == -1 )
+    return *((_DWORD *)this + 45);
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+0ACh]
+cmp     eax, 0FFFFFFFFh
+jnz     short locret_5B3051
+mov     eax, [ecx+0B4h]
+
+locret_5B3051:                          ; CODE XREF: MissionClass__GetPrimaryOrFallback+9↑j
+retn
+*/
+} } }
 // 0x5B3060
-namespace ra2 { namespace game { int ObjectClass::ProcessCloaking() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ProcessCloaking() {
+// [IDA decompile]
+char __thiscall ObjectClass_ProcessCloaking(int this)
+{
+  int v2; // eax
+  int v3; // edx
+  _DWORD *v4; // esi
+  int v6; // [esp+Ch] [ebp-8h]
+
+  ObjectClass::DetectCloaked((int *)this);
+  LOBYTE(v2) = *(_BYTE *)(this + 144);
+  if ( !(_BYTE)v2 )
+    return v2;
+  v3 = *(_DWORD *)(this + 200);
+  v2 = *(_DWORD *)(this + 208);
+  v4 = (_DWORD *)(this + 200);
+  if ( v3 == -1 )
+    goto LABEL_5;
+  if ( (int)MEMORY[0xA8ED84] - v3 < v2 )
+  {
+    v2 -= (int)MEMORY[0xA8ED84] - v3;
+LABEL_5:
+    if ( v2 )
+      return v2;
+  }
+  v2 = *(_DWORD *)(this + 108);
+  if ( v2 > 0 )
+  {
+    switch ( *(_DWORD *)(this + 172) )
+    {
+      case 1:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 528))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 2:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 556))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 4:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 560))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 5:
+      case 6:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 540))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 7:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 576))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 8:
+      case 0x11:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 532))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 9:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 536))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xA:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 548))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xB:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 544))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xC:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 564))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xD:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 568))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xE:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 524))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0xF:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 552))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x10:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 572))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x12:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 580))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x13:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 584))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x14:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 588))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x15:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 600))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x16:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 592))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x17:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 520))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x18:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 596))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x19:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 604))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x1A:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 608))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x1B:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 612))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x1C:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 616))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x1E:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 620))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      case 0x1F:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 624))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+      default:
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 516))(this);
+        *v4 = MEMORY[0xA8ED84];
+        *(_DWORD *)(this + 204) = v6;
+        *(_DWORD *)(this + 208) = v2;
+        break;
+    }
+  }
+  return v2;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+push    edi
+mov     edi, ecx
+call    ObjectClass__DetectCloaked
+mov     al, [edi+90h]
+test    al, al
+jz      loc_5B34E0
+mov     edx, [edi+0C8h]
+mov     eax, [edi+0D0h]
+lea     esi, [edi+0C8h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_5B309F
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_5B30A7
+sub     eax, ecx
+
+loc_5B309F:                             ; CODE XREF: ObjectClass__ProcessCloaking+2F↑j
+test    eax, eax
+jnz     loc_5B34E0
+
+loc_5B30A7:                             ; CODE XREF: ObjectClass__ProcessCloaking+3B↑j
+mov     eax, [edi+6Ch]
+test    eax, eax
+jle     loc_5B34E0
+mov     eax, [edi+0ACh]
+cmp     eax, 1Fh        ; switch 32 cases
+ja      def_5B30C1      ; jumptable 005B30C1 default case, cases 3,29
+jmp     ds:jpt_5B30C1[eax*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_5B30C8:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     eax, [edi]      ; jumptable 005B30C1 case 0
+mov     ecx, edi
+call    dword ptr [eax+204h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B30EA:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 23
+mov     ecx, edi
+call    dword ptr [edx+208h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B310C:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 7
+mov     ecx, edi
+call    dword ptr [edx+240h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B312E:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 18
+mov     ecx, edi
+call    dword ptr [edx+244h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3150:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 19
+mov     ecx, edi
+call    dword ptr [edx+248h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3172:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 1
+mov     ecx, edi
+call    dword ptr [edx+210h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3194:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 4
+mov     ecx, edi
+call    dword ptr [edx+230h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B31B6:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 10
+mov     ecx, edi
+call    dword ptr [edx+224h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B31D8:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 11
+mov     ecx, edi
+call    dword ptr [edx+220h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B31FA:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 12
+mov     ecx, edi
+call    dword ptr [edx+234h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B321C:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 13
+mov     ecx, edi
+call    dword ptr [edx+238h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B323E:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 14
+mov     ecx, edi
+call    dword ptr [edx+20Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3260:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 16
+mov     ecx, edi
+call    dword ptr [edx+23Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3282:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 20
+mov     ecx, edi
+call    dword ptr [edx+24Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B32A4:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 24
+mov     ecx, edi
+call    dword ptr [edx+254h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B32C6:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 22
+mov     ecx, edi
+call    dword ptr [edx+250h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B32E8:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 5
+mov     ecx, edi
+call    dword ptr [edx+21Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B330A:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 8
+mov     ecx, edi
+call    dword ptr [edx+214h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B332C:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 9
+mov     ecx, edi
+call    dword ptr [edx+218h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B334E:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 2
+mov     ecx, edi
+call    dword ptr [edx+22Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3370:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 15
+mov     ecx, edi
+call    dword ptr [edx+228h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3392:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 21
+mov     ecx, edi
+call    dword ptr [edx+258h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B33B4:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 25
+mov     ecx, edi
+call    dword ptr [edx+25Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B33D6:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 26
+mov     ecx, edi
+call    dword ptr [edx+260h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B33F8:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 27
+mov     ecx, edi
+call    dword ptr [edx+264h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B341A:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 30
+mov     ecx, edi
+call    dword ptr [edx+26Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B343C:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 31
+mov     ecx, edi
+call    dword ptr [edx+270h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B345E:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 28
+mov     ecx, edi
+call    dword ptr [edx+268h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3480:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 6
+mov     ecx, edi
+call    dword ptr [edx+21Ch]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B34A2:                             ; CODE XREF: ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: .text:jpt_5B30C1↓o
+mov     edx, [edi]      ; jumptable 005B30C1 case 17
+mov     ecx, edi
+call    dword ptr [edx+214h]
+mov     ecx, dword_A8ED54+30h
+pop     edi
+mov     [esi], ecx
+mov     ecx, [esp+10h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+def_5B30C1:                             ; CODE XREF: ObjectClass__ProcessCloaking+5B↑j
+; ObjectClass__ProcessCloaking+61↑j
+; DATA XREF: ...
+mov     edx, [edi]      ; jumptable 005B30C1 default case, cases 3,29
+mov     ecx, edi
+call    dword ptr [edx+204h]
+mov     ecx, dword_A8ED54+30h
+mov     [esi], ecx
+mov     ecx, [esp+14h+var_8]
+mov     [esi+4], ecx
+mov     [esi+8], eax
+
+loc_5B34E0:                             ; CODE XREF: ObjectClass__ProcessCloaking+14↑j
+; ObjectClass__ProcessCloaking+41↑j ...
+pop     edi
+pop     esi
+add     esp, 0Ch
+retn
+*/
+} } }
 // 0x5B3570
-namespace ra2 { namespace game { int MissionClass::AdvanceState() { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::AdvanceState() {
+// [IDA decompile]
+int __thiscall MissionClass::AdvanceState(#377 *this)
+{
+  int result; // eax
+  #72 *v2; // eax
+  int v3; // [esp+4h] [ebp-8h]
+
+  result = *((_DWORD *)this + 45);
+  if ( result == -1 )
+  {
+    LOBYTE(result) = 0;
+  }
+  else
+  {
+    *((_DWORD *)this + 43) = result;
+    *((_DWORD *)this + 45) = -1;
+    v2 = MEMORY[0xA8ED84];
+    *((_DWORD *)this + 47) = 0;
+    *((_DWORD *)this + 50) = v2;
+    *((_DWORD *)this + 51) = v3;
+    *((_DWORD *)this + 52) = 0;
+    result = (int)MEMORY[0xA8ED84];
+    *((_DWORD *)this + 48) = MEMORY[0xA8ED84];
+    *((_DWORD *)this + 49) = 0;
+    *((_BYTE *)this + 184) = 0;
+    LOBYTE(result) = 1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+0B4h]
+sub     esp, 0Ch
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5B35CC
+push    esi
+mov     [ecx+0ACh], eax
+mov     dword ptr [ecx+0B4h], 0FFFFFFFFh
+mov     eax, dword_A8ED54+30h
+lea     esi, [ecx+0C8h]
+xor     edx, edx
+mov     [ecx+0BCh], edx
+mov     [esi], eax
+mov     eax, [esp+10h+var_8]
+mov     [esi+4], eax
+mov     [esi+8], edx
+mov     eax, dword_A8ED54+30h
+mov     [ecx+0C0h], eax
+mov     [ecx+0C4h], edx
+mov     [ecx+0B8h], dl
+mov     al, 1
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B35CC:                             ; CODE XREF: MissionClass__AdvanceState+C↑j
+xor     al, al
+add     esp, 0Ch
+retn
+*/
+} } }
 // 0x5B3650
-namespace ra2 { namespace game { int AbstractClass::COMStub_125(int a1, int a2, int a3) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_125(int a1, int a2, int a3) {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt125(int this, int a2, int a3, int a4)
+{
+  int result; // eax
+  int v5; // edx
+
+  result = *(_DWORD *)(this + 172);
+  if ( (result != 28 || a2 != 5) && result != 19 )
+  {
+    v5 = *(_DWORD *)(this + 180);
+    if ( v5 == -1 )
+    {
+      *(_DWORD *)(this + 176) = result;
+      *(_DWORD *)(this + 172) = a2;
+    }
+    else
+    {
+      *(_DWORD *)(this + 172) = a2;
+      *(_DWORD *)(this + 176) = v5;
+    }
+    *(_BYTE *)(this + 184) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+0ACh]
+push    esi
+mov     esi, [esp+4+arg_0]
+cmp     eax, 1Ch
+jnz     short loc_5B3665
+cmp     esi, 5
+jz      short loc_5B369F
+
+loc_5B3665:                             ; CODE XREF: AbstractClass__COMStub_125+E↑j
+cmp     eax, 13h
+jz      short loc_5B369F
+mov     edx, [ecx+0B4h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_5B368C
+mov     [ecx+0ACh], esi
+mov     [ecx+0B0h], edx
+mov     byte ptr [ecx+0B8h], 0
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5B368C:                             ; CODE XREF: AbstractClass__COMStub_125+23↑j
+mov     [ecx+0B0h], eax
+mov     [ecx+0ACh], esi
+mov     byte ptr [ecx+0B8h], 0
+
+loc_5B369F:                             ; CODE XREF: AbstractClass__COMStub_125+13↑j
+; AbstractClass__COMStub_125+18↑j
+pop     esi
+retn    0Ch
+*/
+} } }
 // 0x5B36B0
-namespace ra2 { namespace game { int AbstractClass::COMStub_126() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_126() {
+// [IDA decompile]
+char __thiscall AbstractClass::_vt126(int this)
+{
+  int v1; // eax
+
+  v1 = *(_DWORD *)(this + 176);
+  if ( v1 == -1 )
+    return 0;
+  *(_DWORD *)(this + 172) = v1;
+  *(_DWORD *)(this + 176) = -1;
+  *(_BYTE *)(this + 184) = 0;
+  return 1;
+}
+
+/* ASM:
+mov     eax, [ecx+0B0h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5B36D5
+mov     [ecx+0ACh], eax
+mov     dword ptr [ecx+0B0h], 0FFFFFFFFh
+mov     byte ptr [ecx+0B8h], 0
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B36D5:                             ; CODE XREF: AbstractClass__COMStub_126+9↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x5B3700
-namespace ra2 { namespace game { void* MissionClass::FindName() { return nullptr; } } }
+namespace ra2 { namespace game { void* MissionClass::FindName() {
+// [IDA decompile]
+_BYTE *__thiscall MissionClass::FindName(_BYTE *this)
+{
+  *(this + 4) = 0;
+  *(this + 5) = 0;
+  *(this + 7) = 0;
+  *(this + 6) = 1;
+  *(this + 8) = 1;
+  *(this + 9) = 1;
+  *((_DWORD *)this + 4) = -755914244;
+  *((_DWORD *)this + 6) = -755914244;
+  *(_DWORD *)this = -1;
+  *((_DWORD *)this + 5) = 1066426957;
+  *((_DWORD *)this + 7) = 1066426957;
+  return this;
+}
+
+/* ASM:
+mov     eax, ecx
+xor     dl, dl
+mov     cl, 1
+mov     [eax+4], dl
+mov     [eax+5], dl
+mov     [eax+7], dl
+mov     [eax+6], cl
+mov     [eax+8], cl
+mov     [eax+9], cl
+mov     edx, 0D2F1A9FCh
+mov     ecx, 3F90624Dh
+mov     [eax+10h], edx
+mov     [eax+18h], edx
+mov     dword ptr [eax], 0FFFFFFFFh
+mov     [eax+14h], ecx
+mov     [eax+1Ch], ecx
+retn
+*/
+} } }
 // 0x5B3970
-namespace ra2 { namespace game { int AbstractClass::COMStub_13(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_13(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt13(int this, int a2)
+{
+  int v3; // edx
+  int v4; // eax
+
+  HouseClass::ProcessPower((#374 *)this);
+  Power::TimerProcess(*(_DWORD *)(this + 172));
+  Power::TimerProcess(*(_DWORD *)(this + 176));
+  Power::TimerProcess(*(_DWORD *)(this + 180));
+  Power::TimerProcess(*(_DWORD *)(this + 188));
+  v3 = *(_DWORD *)(this + 200);
+  v4 = *(_DWORD *)(this + 208);
+  if ( v3 != -1 )
+  {
+    if ( (int)MEMORY[0xA8ED84] - v3 >= v4 )
+      v4 = 0;
+    else
+      v4 -= (int)MEMORY[0xA8ED84] - v3;
+  }
+  Power::TimerProcess(v4);
+  return Power::TimerProcess(*(_DWORD *)(this + 192));
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    edi
+call    HouseClass__ProcessPower
+mov     eax, [esi+0ACh]
+mov     ecx, edi
+push    eax
+call    Power__TimerProcess
+mov     ecx, [esi+0B0h]
+push    ecx
+mov     ecx, edi
+call    Power__TimerProcess
+mov     edx, [esi+0B4h]
+mov     ecx, edi
+push    edx
+call    Power__TimerProcess
+mov     eax, [esi+0BCh]
+mov     ecx, edi
+push    eax
+call    Power__TimerProcess
+mov     edx, [esi+0C8h]
+mov     eax, [esi+0D0h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_5B39D9
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_5B39D7
+sub     eax, ecx
+jmp     short loc_5B39D9
+; ---------------------------------------------------------------------------
+
+loc_5B39D7:                             ; CODE XREF: AbstractClass__COMStub_13+61↑j
+xor     eax, eax
+
+loc_5B39D9:                             ; CODE XREF: AbstractClass__COMStub_13+55↑j
+; AbstractClass__COMStub_13+65↑j
+push    eax
+mov     ecx, edi
+call    Power__TimerProcess
+mov     ecx, [esi+0C0h]
+push    ecx
+mov     ecx, edi
+call    Power__TimerProcess
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x5B3A00
-namespace ra2 { namespace game { void* MissionClass::GetMissionControl() { return nullptr; } } }
+namespace ra2 { namespace game { void* MissionClass::GetMissionControl() {
+// [IDA decompile]
+char *__thiscall MissionClass_GetMissionControl(_DWORD *this)
+{
+  return (char *)&MEMORY[0xA8E3A8] + 32 * *(this + 43);
+}
+
+/* ASM:
+mov     eax, [ecx+0ACh]
+shl     eax, 5
+add     eax, 0A8E3A8h
+retn
+*/
+} } }
 // 0x5B46E0
-namespace ra2 { namespace game { void* AbstractClass::getWeaponSpeed(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::getWeaponSpeed(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_5B46E0(_DWORD *Block, char a2)
+{
+  int v3; // eax
+  int v4; // ecx
+  int v5; // edx
+  int v6; // edx
+  int v7; // ecx
+  int v8; // edx
+  int v9; // ecx
+
+  *Block = &GenericList::`vftable';
+  while ( 1 )
+  {
+    v3 = *(Block + 2);
+    if ( !v3 )
+      break;
+    if ( !*(_DWORD *)(v3 + 4) )
+      break;
+    v4 = *(_DWORD *)(v3 + 8);
+    if ( !v4 )
+      break;
+    v5 = *(_DWORD *)(v3 + 4);
+    if ( v5 )
+    {
+      *(_DWORD *)(v4 + 4) = v5;
+      *(_DWORD *)(*(_DWORD *)(v3 + 4) + 8) = *(_DWORD *)(v3 + 8);
+      *(_DWORD *)(v3 + 8) = 0;
+      *(_DWORD *)(v3 + 4) = 0;
+    }
+  }
+  *(Block + 4) = &GenericNode::`vftable';
+  if ( Block != (_DWORD *)-16 )
+  {
+    v6 = *(Block + 5);
+    if ( v6 )
+    {
+      v7 = *(Block + 6);
+      if ( v7 )
+      {
+        *(_DWORD *)(v7 + 4) = v6;
+        *(_DWORD *)(*(Block + 5) + 8) = *(Block + 6);
+        *(Block + 6) = 0;
+        *(Block + 5) = 0;
+      }
+    }
+  }
+  *(Block + 1) = &GenericNode::`vftable';
+  if ( Block != (_DWORD *)-4 )
+  {
+    v8 = *(Block + 2);
+    if ( v8 )
+    {
+      v9 = *(Block + 3);
+      if ( v9 )
+      {
+        *(_DWORD *)(v9 + 4) = v8;
+        *(_DWORD *)(*(Block + 2) + 8) = *(Block + 3);
+        *(Block + 3) = 0;
+        *(Block + 2) = 0;
+      }
+    }
+  }
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, ecx
+xor     esi, esi
+mov     dword ptr [edi], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
+
+loc_5B46EC:                             ; CODE XREF: AbstractClass__getWeaponSpeed+21↓j
+; AbstractClass__getWeaponSpeed+28↓j ...
+mov     eax, [edi+8]
+cmp     eax, esi
+jz      short loc_5B4722
+cmp     [eax+4], esi
+jz      short loc_5B4722
+mov     ecx, [eax+8]
+cmp     ecx, esi
+jz      short loc_5B4722
+cmp     eax, esi
+jz      short loc_5B46EC
+mov     edx, [eax+4]
+cmp     edx, esi
+jz      short loc_5B46EC
+cmp     ecx, esi
+jz      short loc_5B46EC
+mov     [ecx+4], edx
+mov     ecx, [eax+4]
+mov     edx, [eax+8]
+mov     [ecx+8], edx
+mov     [eax+8], esi
+mov     [eax+4], esi
+jmp     short loc_5B46EC
+; ---------------------------------------------------------------------------
+
+loc_5B4722:                             ; CODE XREF: AbstractClass__getWeaponSpeed+11↑j
+; AbstractClass__getWeaponSpeed+16↑j ...
+lea     eax, [edi+10h]
+cmp     eax, esi
+mov     dword ptr [eax], offset ??_7GenericNode@@6B@ ; const GenericNode::`vftable'
+jz      short loc_5B474F
+mov     edx, [eax+4]
+cmp     edx, esi
+jz      short loc_5B474F
+mov     ecx, [eax+8]
+cmp     ecx, esi
+jz      short loc_5B474F
+mov     [ecx+4], edx
+mov     ecx, [eax+4]
+mov     edx, [eax+8]
+mov     [ecx+8], edx
+mov     [eax+8], esi
+mov     [eax+4], esi
+
+loc_5B474F:                             ; CODE XREF: AbstractClass__getWeaponSpeed+4D↑j
+; AbstractClass__getWeaponSpeed+54↑j ...
+lea     eax, [edi+4]
+cmp     eax, esi
+mov     dword ptr [eax], offset ??_7GenericNode@@6B@ ; const GenericNode::`vftable'
+jz      short loc_5B477C
+mov     edx, [eax+4]
+cmp     edx, esi
+jz      short loc_5B477C
+mov     ecx, [eax+8]
+cmp     ecx, esi
+jz      short loc_5B477C
+mov     [ecx+4], edx
+mov     ecx, [eax+4]
+mov     edx, [eax+8]
+mov     [ecx+8], edx
+mov     [eax+8], esi
+mov     [eax+4], esi
+
+loc_5B477C:                             ; CODE XREF: AbstractClass__getWeaponSpeed+7A↑j
+; AbstractClass__getWeaponSpeed+81↑j ...
+test    [esp+8+arg_0], 1
+jz      short loc_5B478C
+push    edi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5B478C:                             ; CODE XREF: AbstractClass__getWeaponSpeed+A1↑j
+mov     eax, edi
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x5C0280
-namespace ra2 { namespace game { void AbstractClass::checkLOS(int a1) { } } }
+namespace ra2 { namespace game { void AbstractClass::checkLOS(int a1) {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_5C0280(int **this, char a2)
+{
+  int *v2; // eax
+  int v3; // eax
+  _BYTE *v4; // eax
+
+  v2 = *(this + 4);
+  if ( a2 )
+  {
+    if ( v2 )
+    {
+      v3 = *v2;
+      if ( v3 )
+        AbstractClass::processConstruction(v3);
+    }
+  }
+  else if ( v2 )
+  {
+    v4 = (_BYTE *)*v2;
+    if ( v4 )
+      AbstractClass::checkBuildProgress(v4);
+  }
+}
+
+/* ASM:
+mov     al, [esp+arg_0]
+test    al, al
+mov     eax, [ecx+10h]
+jz      short loc_5C029F
+test    eax, eax
+jz      short locret_5C02B0
+mov     eax, [eax]
+test    eax, eax
+jz      short locret_5C02B0
+mov     ecx, eax
+call    AbstractClass__processConstruction
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5C029F:                             ; CODE XREF: AbstractClass__checkLOS+9↑j
+test    eax, eax
+jz      short locret_5C02B0
+mov     eax, [eax]
+test    eax, eax
+jz      short locret_5C02B0
+mov     ecx, eax
+call    AbstractClass__checkBuildProgress
+
+locret_5C02B0:                          ; CODE XREF: AbstractClass__checkLOS+D↑j
+; AbstractClass__checkLOS+13↑j ...
+retn    4
+*/
+} } }
 // 0x5C02C0
-namespace ra2 { namespace game { int AbstractClass::computePathCost() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::computePathCost() {
+// [IDA decompile]
+char __thiscall AbstractClass::sub_5C02C0(int *this)
+{
+  char result; // al
+
+  MEMORY[0xABF3F8] = (int)this;
+  result = RenderMovieFrame(*(this + 4), 1, -1, 0);
+  MEMORY[0xABF3F8] = 0;
+  return result;
+}
+
+/* ASM:
+mov     dword_A8ED54+306A4h, ecx
+mov     ecx, [ecx+10h]
+push    0
+push    0FFFFFFFFh
+mov     dl, 1
+call    RenderMovieFrame
+mov     dword_A8ED54+306A4h, 0
+retn
+*/
+} } }
 // 0x5C02F0
-namespace ra2 { namespace game { int AbstractClass::processPathNode() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::processPathNode() {
+// [IDA decompile]
+char __thiscall AbstractClass::sub_5C02F0(int this)
+{
+  char **v1; // eax
+  char result; // al
+
+  v1 = *(char ***)(this + 16);
+  if ( (*v1)[1360] || !*((_BYTE *)v1 + 69) || MEMORY[0xABF3F4] )
+    return 0;
+  MEMORY[0xABF3F4] = *(_DWORD *)(this + 16);
+  result = VQAClass::AdvanceFrame(*v1, (_BYTE *)(this + 20));
+  MEMORY[0xABF3F4] = 0;
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+10h]
+push    ebx
+mov     edx, [eax]
+mov     bl, [edx+550h]
+test    bl, bl
+pop     ebx
+jnz     short loc_5C032D
+mov     dl, [eax+45h]
+test    dl, dl
+jz      short loc_5C032D
+mov     edx, dword_A8ED54+306A0h
+test    edx, edx
+jnz     short loc_5C032D
+add     ecx, 14h
+mov     dword_A8ED54+306A0h, eax
+push    ecx
+mov     ecx, [eax]
+call    VQAClass__AdvanceFrame
+mov     dword_A8ED54+306A0h, 0
+retn
+; ---------------------------------------------------------------------------
+
+loc_5C032D:                             ; CODE XREF: AbstractClass__processPathNode+F↑j
+; AbstractClass__processPathNode+16↑j ...
+xor     al, al
+retn
+*/
+} } }
 // 0x5C0340
-namespace ra2 { namespace game { int AbstractClass::computePathDistance(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::computePathDistance(int a1, int a2) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_5C0340(_DWORD *this, int a2, int a3)
+{
+  _DWORD *v3; // ecx
+  _DWORD *v4; // eax
+  int result; // eax
+
+  *(_DWORD *)(*(this + 4) + 36) = a2;
+  *(_DWORD *)(*(this + 4) + 40) = a3;
+  v3 = (_DWORD *)*(this + 4);
+  v4 = v3 + 9;
+  v3 += 13;
+  *v3 = *v4;
+  v3[1] = v4[1];
+  v3[2] = v4[2];
+  result = v4[3];
+  v3[3] = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+10h]
+mov     edx, [esp+arg_0]
+mov     [eax+24h], edx
+mov     eax, [ecx+10h]
+mov     edx, [esp+arg_4]
+mov     [eax+28h], edx
+mov     ecx, [ecx+10h]
+lea     eax, [ecx+24h]
+add     ecx, 34h ; '4'
+mov     edx, [eax]
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     edx, [eax+8]
+mov     [ecx+8], edx
+mov     eax, [eax+0Ch]
+mov     [ecx+0Ch], eax
+retn    8
+*/
+} } }
 // 0x5C0380
-namespace ra2 { namespace game { int AbstractClass::checkPathEnd(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkPathEnd(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_5C0380(_DWORD *this, int a2)
+{
+  return AbstractClass::getTotalValue(*(_DWORD **)(*(this + 4) + 72), a2);
+}
+
+/* ASM:
+mov     ecx, [ecx+10h]
+mov     eax, [esp+arg_0]
+push    eax
+mov     ecx, [ecx+48h]
+call    AbstractClass__getTotalValue
+retn    4
+*/
+} } }
 // 0x5C03A0
-namespace ra2 { namespace game { void AbstractClass::finalizePath(int a1) { } } }
+namespace ra2 { namespace game { void AbstractClass::finalizePath(int a1) {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_5C03A0(int ***this, signed int a2)
+{
+  AbstractClass::finalizeConstruction(**(this + 4));
+  AbstractClass::updateBuildingState(**(this + 4), a2);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+10h]
+mov     ecx, [eax]
+call    AbstractClass__finalizeConstruction
+mov     ecx, [esp+4+arg_0]
+mov     edx, [esi+10h]
+push    ecx
+mov     ecx, [edx]
+call    AbstractClass__updateBuildingState
+pop     esi
+retn    4
+*/
+} } }
 // 0x5C09B0
-namespace ra2 { namespace game { void* AbstractClass::processCombatState(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::processCombatState(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_5C09B0(_DWORD *Block, char a2)
+{
+  _DWORD **v3; // esi
+  void *v4; // edi
+  _DWORD *v5; // edi
+
+  v3 = (_DWORD **)*(Block + 4);
+  *Block = &VQMovieHandle::`vftable';
+  if ( v3 )
+  {
+    if ( *v3 )
+    {
+      DSurface::FlipIfNeeded((int)*v3);
+      v4 = *v3;
+      if ( *v3 )
+      {
+        CCFileClass::Cleanup(*v3);
+        __3_YAXPAX_Z(v4);
+      }
+      *v3 = 0;
+    }
+    v5 = v3[18];
+    if ( v5 )
+    {
+      BinkMovie::FreeSurfaceTracker(v3[18]);
+      __3_YAXPAX_Z(v5);
+      v3[18] = 0;
+    }
+    *((_BYTE *)v3 + 69) = 0;
+  }
+  *Block = &MovieHandle::`vftable';
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    ebp
+mov     ebp, ecx
+push    esi
+mov     esi, [ebp+10h]
+mov     dword ptr [ebp+0], offset ??_7VQMovieHandle@@6B@ ; const VQMovieHandle::`vftable'
+test    esi, esi
+jz      short loc_5C0A0D
+mov     ecx, [esi]
+push    edi
+test    ecx, ecx
+jz      short loc_5C09EA
+call    DSurface__FlipIfNeeded
+mov     edi, [esi]
+test    edi, edi
+jz      short loc_5C09E4
+mov     ecx, edi
+call    CCFileClass__Cleanup
+push    edi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5C09E4:                             ; CODE XREF: AbstractClass__processCombatState+22↑j
+mov     dword ptr [esi], 0
+
+loc_5C09EA:                             ; CODE XREF: AbstractClass__processCombatState+17↑j
+mov     edi, [esi+48h]
+test    edi, edi
+jz      short loc_5C0A08
+mov     ecx, edi
+call    BinkMovie__FreeSurfaceTracker
+push    edi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+48h], 0
+
+loc_5C0A08:                             ; CODE XREF: AbstractClass__processCombatState+3F↑j
+mov     byte ptr [esi+45h], 0
+pop     edi
+
+loc_5C0A0D:                             ; CODE XREF: AbstractClass__processCombatState+10↑j
+mov     al, [esp+8+arg_0]
+mov     dword ptr [ebp+0], offset ??_7MovieHandle@@6B@ ; const MovieHandle::`vftable'
+test    al, 1
+jz      short loc_5C0A25
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5C0A25:                             ; CODE XREF: AbstractClass__processCombatState+6A↑j
+mov     eax, ebp
+pop     esi
+pop     ebp
+retn    4
+*/
+} } }
 // 0x5C0B10
-namespace ra2 { namespace game { int AbstractClass::checkCombatFlags(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkCombatFlags(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::checkCombatFlags(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( v4 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v6 = *((_DWORD *)this + 2);
+        if ( a2 < v6 )
+          v6 = a2;
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+          ++i;
+        if ( *((_BYTE *)this + 13) )
+        {
+          __3_YAXPAX_Z(*((void **)this + 1));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v4;
+      *((_DWORD *)this + 2) = a2;
+      *((_BYTE *)this + 13) = a3 == 0;
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      loc_5C0BAE
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_5C0B42
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_5C0B44
+; ---------------------------------------------------------------------------
+
+loc_5C0B42:                             ; CODE XREF: AbstractClass__checkCombatFlags+1C↑j
+mov     edi, ebx
+
+loc_5C0B44:                             ; CODE XREF: AbstractClass__checkCombatFlags+30↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_5C0B55
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5C0B55:                             ; CODE XREF: AbstractClass__checkCombatFlags+3A↑j
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_5C0B95
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_5C0B65
+mov     ecx, ebp
+
+loc_5C0B65:                             ; CODE XREF: AbstractClass__checkCombatFlags+51↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_5C0B7B
+
+loc_5C0B6B:                             ; CODE XREF: AbstractClass__checkCombatFlags+69↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_5C0B6B
+
+loc_5C0B7B:                             ; CODE XREF: AbstractClass__checkCombatFlags+59↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_5C0B95
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_5C0B95:                             ; CODE XREF: AbstractClass__checkCombatFlags+4A↑j
+; AbstractClass__checkCombatFlags+70↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5C0BAE:                             ; CODE XREF: AbstractClass__checkCombatFlags+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
+} } }
 // 0x5C0BC0
-namespace ra2 { namespace game { void AbstractClass::processDamageEvent() { } } }
+namespace ra2 { namespace game { void AbstractClass::processDamageEvent() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_5C0BC0(int this)
+{
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_5C0BDE
+cmp     [esi+0Dh], bl
+jz      short loc_5C0BDE
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_5C0BDE:                             ; CODE XREF: AbstractClass__processDamageEvent+B↑j
+; AbstractClass__processDamageEvent+10↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x5C0BF0
-namespace ra2 { namespace game { int AbstractClass::applyDamageEffects(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::applyDamageEffects(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_5C0BF0(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
+    return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+push    esi
+test    al, al
+jnz     short loc_5C0BFE
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5C0BFE:                             ; CODE XREF: AbstractClass__applyDamageEffects+6↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_5C0C1C
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_5C0C10:                             ; CODE XREF: AbstractClass__applyDamageEffects+2A↓j
+cmp     [ecx], esi
+jz      short loc_5C0C1F
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_5C0C10
+
+loc_5C0C1C:                             ; CODE XREF: AbstractClass__applyDamageEffects+15↑j
+or      eax, 0FFFFFFFFh
+
+loc_5C0C1F:                             ; CODE XREF: AbstractClass__applyDamageEffects+22↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x5C0C30
-namespace ra2 { namespace game { int AbstractClass::checkDamageThreshold(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkDamageThreshold(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_5C0C30(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_5C0C3C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5C0C3C:                             ; CODE XREF: AbstractClass__checkDamageThreshold+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} } }
 // 0x5C0D30
-namespace ra2 { namespace game { void* AbstractClass::processDeathEvent(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::processDeathEvent(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_5C0D30(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<char const *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PBD@@6B@ ; const VectorClass<char const *>::`vftable'
+test    eax, eax
+jz      short loc_5C0D57
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_5C0D57
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_5C0D57:                             ; CODE XREF: AbstractClass__processDeathEvent+E↑j
+; AbstractClass__processDeathEvent+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_5C0D73
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5C0D73:                             ; CODE XREF: AbstractClass__processDeathEvent+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x5C5A30
-namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int a1, int a2) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int a1, int a2) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::updateAnimationState(_DWORD *this, int a2, int a3)
+{
+  *(this + 1) = 0;
+  *(this + 2) = a2;
+  *((_BYTE *)this + 12) = 1;
+  *((_BYTE *)this + 13) = 0;
+  *this = &VectorClass<NodeNameType *>::`vftable';
+  if ( a2 )
+  {
+    if ( a3 )
+    {
+      *(this + 1) = a3;
+      return this;
+    }
+    *(this + 1) = __2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 13) = 1;
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+xor     edx, edx
+cmp     eax, edx
+mov     [esi+4], edx
+mov     [esi+8], eax
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], dl
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAUNodeNameType@@@@6B@ ; const VectorClass<NodeNameType *>::`vftable'
+jz      short loc_5C5A74
+mov     ecx, [esp+4+arg_4]
+cmp     ecx, edx
+jz      short loc_5C5A61
+mov     [esi+4], ecx
+mov     eax, esi
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5C5A61:                             ; CODE XREF: AbstractClass__updateAnimationState+26↑j
+shl     eax, 2
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esi+4], eax
+mov     byte ptr [esi+0Dh], 1
+
+loc_5C5A74:                             ; CODE XREF: AbstractClass__updateAnimationState+1E↑j
+mov     eax, esi
+pop     esi
+retn    8
+*/
+} } }
 // 0x5F1960
-namespace ra2 { namespace game { int ObjectClass::FreeResources() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::FreeResources() {
+// [IDA decompile]
+int __thiscall ObjectClass_FreeResources(int this)
+{
+  void (__thiscall ***v2)(_DWORD, int); // ecx
+
+  v2 = *(void (__thiscall ****)(_DWORD, int))(this + 56);
+  if ( v2 )
+  {
+    (**v2)(v2, 1);
+    *(_DWORD *)(this + 56) = 0;
+  }
+  if ( *(_DWORD *)(this + 80) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 80));
+    *(_DWORD *)(this + 80) = 0;
+  }
+  if ( *(_DWORD *)(this + 4) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  if ( *(_DWORD *)(this + 12) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 12));
+    *(_DWORD *)(this + 12) = 0;
+  }
+  *(_DWORD *)(this + 60) = 0;
+  return 1;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+xor     edi, edi
+mov     ecx, [esi+38h]
+cmp     ecx, edi
+jz      short loc_5F1976
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+mov     [esi+38h], edi
+
+loc_5F1976:                             ; CODE XREF: ObjectClass__FreeResources+B↑j
+mov     eax, [esi+50h]
+cmp     eax, edi
+jz      short loc_5F1989
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+50h], edi
+
+loc_5F1989:                             ; CODE XREF: ObjectClass__FreeResources+1B↑j
+mov     eax, [esi+4]
+cmp     eax, edi
+jz      short loc_5F199C
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], edi
+
+loc_5F199C:                             ; CODE XREF: ObjectClass__FreeResources+2E↑j
+mov     eax, [esi+0Ch]
+cmp     eax, edi
+jz      short loc_5F19AF
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+0Ch], edi
+
+loc_5F19AF:                             ; CODE XREF: ObjectClass__FreeResources+41↑j
+mov     [esi+3Ch], edi
+pop     edi
+mov     eax, 1
+pop     esi
+retn
+*/
+} } }
 // 0x5F1B70
-namespace ra2 { namespace game { int ObjectClass::DetachAndFree() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DetachAndFree() {
+// [IDA decompile]
+int __thiscall ObjectClass_DetachAndFree(_DWORD *this)
+{
+  int result; // eax
+
+  if ( *(this + 16) != -1 && dword_A8ED54[233459] )
+  {
+    ((void (*)(void))SerialPort::Close)();
+    if ( dword_A8ED54[233459] )
+      (**(void (__thiscall ***)(int, int))dword_A8ED54[233459])(dword_A8ED54[233459], 1);
+    dword_A8ED54[233459] = 0;
+    *(this + 16) = -1;
+    return ObjectClass::FreeResources((int)this);
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+cmp     dword ptr [esi+40h], 0FFFFFFFFh
+jz      short loc_5F1BB0
+mov     ecx, dword_A8ED54+0E3FCCh
+test    ecx, ecx
+jz      short loc_5F1BB0
+call    SerialPort__Close
+mov     ecx, dword_A8ED54+0E3FCCh
+test    ecx, ecx
+jz      short loc_5F1B98
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+
+loc_5F1B98:                             ; CODE XREF: ObjectClass__DetachAndFree+20↑j
+mov     dword_A8ED54+0E3FCCh, 0
+mov     ecx, esi
+mov     dword ptr [esi+40h], 0FFFFFFFFh
+call    ObjectClass__FreeResources
+
+loc_5F1BB0:                             ; CODE XREF: ObjectClass__DetachAndFree+7↑j
+; ObjectClass__DetachAndFree+11↑j
+pop     esi
+retn
+*/
+} } }
 // 0x5F3900
 namespace ra2 { namespace game { void* ObjectClass::ctor() { return nullptr; } } }
 // 0x5F3B50
-namespace ra2 { namespace game { void* ObjectClass::Init(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::Init(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall ObjectClass_Init(_DWORD *this, int a2)
+{
+  AbstractClass::InitVtables(this, a2);
+  *this = &ObjectClass::`vftable';
+  *(this + 1) = &ObjectClass::`vftable';
+  *(this + 2) = &ObjectClass::`vftable';
+  *(this + 3) = &ObjectClass::`vftable';
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    eax
+call    AbstractClass__InitVtables
+mov     dword ptr [esi], offset ??_7ObjectClass@@6B@ ; const ObjectClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7ObjectClass@@6B@_0 ; const ObjectClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7ObjectClass@@6B@_1 ; const ObjectClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7ObjectClass@@6B@_2 ; const ObjectClass::`vftable'
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x5F3DB0
-namespace ra2 { namespace game { void* ObjectClass::CalcTargetFacing(void* a1, int a2) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::CalcTargetFacing(void* a1, int a2) {
+// [IDA decompile]
+int *__thiscall ObjectClass_CalcTargetFacing(void *this, int *a2, int a3)
+{
+  int *v4; // edi
+  int *v5; // eax
+  double v6; // st7
+  _BYTE v8[12]; // [esp+24h] [ebp-18h] BYREF
+  _BYTE v9[12]; // [esp+30h] [ebp-Ch] BYREF
+  int v10; // [esp+44h] [ebp+8h]
+
+  v4 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a3 + 72))(a3, v8);
+  v5 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v9);
+  v10 = *v4;
+  v6 = Math::CalcAngle((double)v5[1] - (double)v4[1], (double)*v4 - (double)*v5);
+  LOWORD(v10) = Math::RoundToInt((v6 - 1.570796326794897) * -10430.06004058427);
+  *a2 = v10;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 1Ch
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+20h+arg_4]
+lea     edx, [esp+20h+var_18]
+push    edi
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+lea     ecx, [esp+24h+var_C]
+mov     edi, eax
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+mov     ecx, [edi]
+mov     edx, [eax]
+mov     [esp+24h+arg_4], ecx
+mov     [esp+24h+var_1C], edx
+fild    [esp+24h+arg_4]
+sub     esp, 8
+sub     esp, 8
+fisub   [esp+34h+var_1C]
+fstp    [esp+34h+var_2C] ; double
+fild    dword ptr [eax+4]
+fisub   dword ptr [edi+4]
+fstp    [esp+34h+var_34] ; double
+call    Math__CalcAngle
+fsub    ds:dbl_7E2820
+add     esp, 10h
+fmul    ds:dbl_7E2818
+call    Math__RoundToInt
+mov     word ptr [esp+24h+arg_4], ax
+mov     eax, [esp+24h+arg_0]
+mov     edx, [esp+24h+arg_4]
+pop     edi
+mov     [eax], edx
+pop     esi
+add     esp, 1Ch
+retn    8
+*/
+} } }
 // 0x5F3E30
-namespace ra2 { namespace game { int ObjectClass::HasC4() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::HasC4() {
+// [IDA decompile]
+int __thiscall ObjectClass::HasC4(#374 *this)
+{
+  int v1; // eax
+
+  v1 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+  return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 156))(v1);
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+88h]
+mov     edx, [eax]
+mov     ecx, eax
+jmp     dword ptr [edx+9Ch]
+*/
+} } }
 // 0x5F3E50
-namespace ra2 { namespace game { int ObjectClass::StepCleanup(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::StepCleanup(void* a1) {
+// [IDA decompile]
+int __thiscall ObjectClass_StepCleanup(void *this, void *a2)
+{
+  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 136))(this);
+  return AbstractTypeClass::NameEquals(a2);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [ecx]
+push    eax             ; void *
+call    dword ptr [edx+88h]
+mov     ecx, eax
+call    AbstractTypeClass__NameEquals
+retn    4
+*/
+} } }
 // 0x5F3E70
-namespace ra2 { namespace game { int ObjectClass::DetectCloaked() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DetectCloaked() {
+// [IDA decompile]
+int __thiscall ObjectClass::DetectCloaked(#374 *this)
+{
+  int result; // eax
+  int v3; // edx
+  int v4; // eax
+  int v5; // ecx
+  int v6; // ebp
+  int v7; // edi
+  int v8; // edx
+  int v9; // eax
+  int v10; // eax
+  int v11; // edi
+  int v12; // eax
+  int v13; // ecx
+  int v14; // edx
+  int v15; // eax
+  int *v16; // edx
+  int *v17; // esi
+  int v18; // edx
+  int v19; // edx
+  int v20; // edi
+  int v21; // esi
+  int v22; // [esp+20h] [ebp-10h] BYREF
+  int v23; // [esp+24h] [ebp-Ch] BYREF
+  int v24; // [esp+28h] [ebp-8h]
+  int v25; // [esp+2Ch] [ebp-4h]
+
+  if ( !*((_BYTE *)this + 129) )
+  {
+    result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+    if ( result )
+    {
+      result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+      if ( *(_DWORD *)(result + 500) != -1 )
+      {
+        v23 = *((_DWORD *)this + 39);
+        v24 = *((_DWORD *)this + 40);
+        v3 = *(_DWORD *)this;
+        v25 = *((_DWORD *)this + 41);
+        v4 = (*(int (__thiscall **)(#374 *))(v3 + 136))(this);
+        result = StartAudioControllerAt(*(_DWORD *)(v4 + 500), (int)&v23, (int)this + 60);
+      }
+    }
+    v5 = *((_DWORD *)this + 25);
+    if ( v5 != -1 )
+    {
+      v23 = *((_DWORD *)this + 39);
+      v24 = *((_DWORD *)this + 40);
+      v25 = *((_DWORD *)this + 41);
+      result = StartAudioControllerAt(v5, (int)&v23, (int)this + 80);
+    }
+  }
+  LOBYTE(result) = *((_BYTE *)this + 141);
+  if ( (_BYTE)result )
+  {
+    v6 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 120))(this);
+    v7 = *((_DWORD *)this + 11) + (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 464))(this);
+    if ( *((_BYTE *)this + 116) )
+    {
+      (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 292))(this, 0);
+      v8 = *(_DWORD *)this;
+      *((_DWORD *)this + 41) = v7;
+      (*(void (__thiscall **)(#374 *, int))(v8 + 292))(this, 1);
+    }
+    else
+    {
+      *((_DWORD *)this + 41) = v7;
+    }
+    if ( (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this) <= 0 )
+    {
+      (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 460))(this, 0);
+      v9 = *(_DWORD *)this;
+      *((_BYTE *)this + 141) = 0;
+      (*(void (__thiscall **)(#374 *, int))(v9 + 396))(this, 2);
+      v10 = *((_DWORD *)this + 34);
+      if ( v10 )
+        *(_BYTE *)(v10 + 405) = 0;
+    }
+    if ( *((_BYTE *)this + 129) )
+    {
+      RemoveTarget((int)this);
+      return result;
+    }
+    if ( *((_BYTE *)this + 132) )
+    {
+      v11 = *((_DWORD *)this + 11) - 1;
+      *((_DWORD *)this + 11) = v11;
+      v12 = v11;
+      v13 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1976);
+      if ( v11 <= v13 )
+        goto LABEL_19;
+    }
+    else
+    {
+      v12 = Math::RoundToInt((double)*((int *)this + 11) - 1.4);
+      *((_DWORD *)this + 11) = v12;
+      v13 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1980);
+      if ( v12 <= v13 )
+LABEL_19:
+        v12 = v13;
+    }
+    *((_DWORD *)this + 11) = v12;
+    result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 120))(this);
+    if ( v6 != result )
+      Targeting::Readd(this);
+    LOBYTE(result) = *((_BYTE *)this + 141);
+    if ( !(_BYTE)result )
+    {
+      if ( *((_BYTE *)this + 143) && *((int *)this + 27) > 0 )
+      {
+        v14 = *(_DWORD *)this;
+        v22 = *((_DWORD *)this + 27);
+        (*(void (__thiscall **)(#374 *, int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))(v14 + 364))(
+          this,
+          &v22,
+          0,
+          *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4008),
+          0,
+          1,
+          1,
+          0);
+      }
+      result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 44))(this);
+      if ( result == 4 )
+      {
+        result = *((_DWORD *)this + 50);
+        if ( *(_BYTE *)(result + 852) )
+        {
+          *((_BYTE *)this + 410) = 1;
+          v15 = dword_A8ED54[12];
+          v16 = (int *)((char *)this + 180);
+          *((_DWORD *)this + 48) = 1;
+          v17 = (int *)((char *)this + 156);
+          *v16 = v15;
+          v16[1] = v24;
+          v16[2] = 1;
+          v18 = *v17;
+          v17[4] = 8 * *(_DWORD *)(v17[11] + 848) + 1;
+          v23 = v18;
+          v24 = v17[1];
+          v25 = v17[2];
+          result = (int)Coord::To_Cell(MEMORY[0x87F7E8], &v23);
+          if ( *(_DWORD *)(result + 236) == 2 )
+          {
+            result = __2_YAPAXI_Z(456);
+            if ( result )
+            {
+              v19 = *v17;
+              v20 = v17[1];
+              v21 = v17[2];
+              v23 = v19;
+              v24 = v20;
+              v25 = v21 + 3;
+              return (int)AnimClass::ctor(
+                            (void **)result,
+                            **(void ***)(MEMORY[0x87F7E8][7806] + 3012),
+                            &v23,
+                            0,
+                            1,
+                            (void *)0x600,
+                            0,
+                            0);
+            }
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     al, [esi+81h]
+test    al, al
+jnz     loc_5F3F11
+mov     eax, [esi]
+call    dword ptr [eax+88h]
+test    eax, eax
+jz      short loc_5F3EDE
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+88h]
+cmp     dword ptr [eax+1F4h], 0FFFFFFFFh
+jz      short loc_5F3EDE
+lea     eax, [esi+9Ch]
+lea     edi, [esp+1Ch+var_C]
+mov     ecx, [eax]
+mov     [esp+1Ch+var_C], ecx
+lea     ecx, [esi+3Ch]
+mov     edx, [eax+4]
+push    ecx
+mov     [esp+20h+var_8], edx
+mov     edx, [esi]
+mov     eax, [eax+8]
+mov     ecx, esi
+mov     [esp+20h+var_4], eax
+call    dword ptr [edx+88h]
+mov     ecx, [eax+1F4h]
+mov     edx, edi
+call    StartAudioControllerAt
+
+loc_5F3EDE:                             ; CODE XREF: ObjectClass__DetectCloaked+20↑j
+; ObjectClass__DetectCloaked+33↑j
+mov     ecx, [esi+64h]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_5F3F11
+lea     eax, [esi+9Ch]
+mov     edx, [esi+9Ch]
+mov     [esp+1Ch+var_C], edx
+mov     edx, [eax+4]
+mov     [esp+1Ch+var_8], edx
+lea     edx, [esi+50h]
+mov     eax, [eax+8]
+push    edx
+lea     edx, [esp+20h+var_C]
+mov     [esp+20h+var_4], eax
+call    StartAudioControllerAt
+
+loc_5F3F11:                             ; CODE XREF: ObjectClass__DetectCloaked+10↑j
+; ObjectClass__DetectCloaked+74↑j
+mov     al, [esi+8Dh]
+test    al, al
+jz      loc_5F4151
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+78h]
+mov     edx, [esi]
+mov     ecx, esi
+mov     ebp, eax
+call    dword ptr [edx+1D0h]
+mov     ecx, [esi+2Ch]
+mov     edi, eax
+mov     al, [esi+74h]
+add     edi, ecx
+test    al, al
+jz      short loc_5F3F60
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+124h]
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+mov     [esi+0A4h], edi
+call    dword ptr [edx+124h]
+jmp     short loc_5F3F66
+; ---------------------------------------------------------------------------
+
+loc_5F3F60:                             ; CODE XREF: ObjectClass__DetectCloaked+CE↑j
+mov     [esi+0A4h], edi
+
+loc_5F3F66:                             ; CODE XREF: ObjectClass__DetectCloaked+EE↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1C8h]
+test    eax, eax
+jg      short loc_5F3FA4
+mov     edx, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [edx+1CCh]
+mov     eax, [esi]
+push    2
+mov     ecx, esi
+mov     byte ptr [esi+8Dh], 0
+call    dword ptr [eax+18Ch]
+mov     eax, [esi+88h]
+test    eax, eax
+jz      short loc_5F3FA4
+mov     byte ptr [eax+195h], 0
+
+loc_5F3FA4:                             ; CODE XREF: ObjectClass__DetectCloaked+102↑j
+; ObjectClass__DetectCloaked+12B↑j
+mov     al, [esi+81h]
+test    al, al
+jnz     loc_5F4146
+mov     al, [esi+84h]
+test    al, al
+jz      short loc_5F3FD7
+mov     edi, [esi+2Ch]
+dec     edi
+mov     [esi+2Ch], edi
+mov     ecx, ds:8871E0h
+mov     eax, edi
+mov     ecx, [ecx+7B8h]
+cmp     eax, ecx
+jg      short loc_5F3FFA
+jmp     short loc_5F3FF8
+; ---------------------------------------------------------------------------
+
+loc_5F3FD7:                             ; CODE XREF: ObjectClass__DetectCloaked+14A↑j
+fild    dword ptr [esi+2Ch]
+fsub    ds:dbl_7EF248
+call    Math__RoundToInt
+mov     [esi+2Ch], eax
+mov     edx, ds:8871E0h
+mov     ecx, [edx+7BCh]
+cmp     eax, ecx
+jg      short loc_5F3FFA
+
+loc_5F3FF8:                             ; CODE XREF: ObjectClass__DetectCloaked+165↑j
+mov     eax, ecx
+
+loc_5F3FFA:                             ; CODE XREF: ObjectClass__DetectCloaked+163↑j
+; ObjectClass__DetectCloaked+186↑j
+mov     [esi+2Ch], eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+78h]
+cmp     ebp, eax
+jz      short loc_5F4013
+push    esi
+mov     ecx, 87F7E8h
+call    Targeting__Readd
+
+loc_5F4013:                             ; CODE XREF: ObjectClass__DetectCloaked+196↑j
+mov     al, [esi+8Dh]
+test    al, al
+jnz     loc_5F4151
+mov     al, [esi+8Fh]
+test    al, al
+jz      short loc_5F405B
+mov     eax, [esi+6Ch]
+test    eax, eax
+jle     short loc_5F405B
+mov     edx, [esi]
+mov     [esp+1Ch+var_10], eax
+mov     eax, ds:8871E0h
+push    0
+push    1
+push    1
+mov     ecx, [eax+0FA8h]
+push    0
+push    ecx
+lea     eax, [esp+30h+var_10]
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+16Ch]
+
+loc_5F405B:                             ; CODE XREF: ObjectClass__DetectCloaked+1B9↑j
+; ObjectClass__DetectCloaked+1C0↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 4
+jnz     loc_5F4151
+mov     eax, [esi+0C8h]
+mov     cl, [eax+354h]
+test    cl, cl
+jz      loc_5F4151
+mov     byte ptr [esi+19Ah], 1
+mov     eax, dword_A8ED54+30h
+lea     edx, [esi+0B4h]
+mov     ecx, 1
+mov     [esi+0C0h], ecx
+add     esi, 9Ch
+mov     [edx], eax
+mov     eax, [esp+1Ch+var_8]
+mov     [edx+4], eax
+mov     [edx+8], ecx
+mov     ecx, [esi+2Ch]
+mov     edx, [ecx+350h]
+mov     ecx, esi
+lea     eax, ds:1[edx*8]
+mov     edx, [ecx]
+mov     [esi+10h], eax
+mov     [esp+1Ch+var_C], edx
+mov     eax, [ecx+4]
+lea     edx, [esp+1Ch+var_C]
+push    edx
+mov     [esp+20h+var_8], eax
+mov     ecx, [ecx+8]
+mov     [esp+20h+var_4], ecx
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+cmp     dword ptr [eax+0ECh], 2
+jnz     short loc_5F4151
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_5F4151
+mov     edx, [esi]
+mov     edi, [esi+4]
+mov     esi, [esi+8]
+push    0               ; char
+push    0               ; int
+mov     [esp+24h+var_C], edx
+mov     edx, ds:8871E0h
+push    600h            ; int
+add     esi, 3
+push    1               ; int
+lea     ecx, [esp+2Ch+var_C]
+push    0               ; int
+mov     [esp+30h+var_8], edi
+mov     [esp+30h+var_4], esi
+push    ecx             ; int
+mov     ecx, [edx+0BC4h]
+mov     edx, [ecx]
+mov     ecx, eax        ; void **
+push    edx             ; int
+call    AnimClass__ctor
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 10h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F4146:                             ; CODE XREF: ObjectClass__DetectCloaked+13C↑j
+push    esi
+mov     ecx, 87F7E8h
+call    RemoveTarget
+
+loc_5F4151:                             ; CODE XREF: ObjectClass__DetectCloaked+A9↑j
+; ObjectClass__DetectCloaked+1AB↑j ...
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 10h
+retn
+*/
+} } }
 // 0x5F4260
-namespace ra2 { namespace game { int ObjectClass::GetThreatLevel() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetThreatLevel() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetThreatLevel(#374 *this)
+{
+  if ( (*(unsigned __int8 (__thiscall **)(#374 *))(*(_DWORD *)this + 84))(this) )
+    return ((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this) >= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1056))
+         + 3;
+  else
+    return 2;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+54h]
+test    al, al
+jnz     short loc_5F4273
+mov     eax, 2
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F4273:                             ; CODE XREF: ObjectClass__GetThreatLevel+A↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+mov     edx, ds:8871E0h
+xor     ecx, ecx
+mov     esi, [edx+420h]
+cmp     eax, esi
+pop     esi
+setnl   cl
+add     ecx, 3
+mov     eax, ecx
+retn
+*/
+} } }
 // 0x5F4410
-namespace ra2 { namespace game { int ObjectClass::MoveToDirection() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::MoveToDirection() {
+// [IDA decompile]
+int __thiscall ObjectClass::MoveToDirection(#374 *this)
+{
+  int v2; // edx
+  int v3; // edi
+  int v4; // eax
+  int v5; // ecx
+  int v6; // edi
+  void *v7; // eax
+  _DWORD v9[3]; // [esp+18h] [ebp-Ch] BYREF
+  int v10; // [esp+28h] [ebp+4h]
+
+  (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 292))(this, 0);
+  v2 = *((_DWORD *)this + 39);
+  v3 = *((_DWORD *)this + 40);
+  v9[2] = *((_DWORD *)this + 41);
+  v4 = MEMORY[0x89F6D8][2 * (v10 & 7)];
+  v5 = v3 + MEMORY[0x89F6DC][2 * (v10 & 7)];
+  v6 = *(_DWORD *)this;
+  v9[1] = v5;
+  v9[0] = v2 + v4;
+  v7 = Coord::To_Cell(&MEMORY[0x87F7E8], v9);
+  if ( !(*(int (__thiscall **)(#374 *, void *, int, int, _DWORD, int))(v6 + 428))(this, v7, v10, -1, 0, 1) )
+    (*(void (__thiscall **)(#374 *, _DWORD *))(*(_DWORD *)this + 436))(this, v9);
+  return (*(int (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 1);
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+push    0
+mov     eax, [esi]
+call    dword ptr [eax+124h]
+mov     ebp, [esp+1Ch+arg_0]
+lea     ecx, [esi+9Ch]
+mov     eax, ebp
+push    1
+mov     edx, [ecx]
+and     eax, 7
+push    0
+push    0FFFFFFFFh
+mov     edi, [ecx+4]
+push    ebp
+mov     ebx, [ecx+8]
+lea     ecx, ds:89F6D8h[eax*8]
+mov     [esp+2Ch+var_4], ebx
+mov     eax, [ecx]
+mov     ecx, [ecx+4]
+add     ecx, edi
+mov     edi, [esi]
+mov     [esp+2Ch+var_8], ecx
+lea     ecx, [esp+2Ch+var_C]
+add     eax, edx
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+30h+var_C], eax
+call    Coord__To_Cell
+push    eax
+mov     ecx, esi
+call    dword ptr [edi+1ACh]
+test    eax, eax
+jnz     short loc_5F448A
+mov     edx, [esi]
+lea     eax, [esp+1Ch+var_C]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B4h]
+
+loc_5F448A:                             ; CODE XREF: ObjectClass__MoveToDirection+69↑j
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+124h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x5F4520
-namespace ra2 { namespace game { int ObjectClass::HandleSelection() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::HandleSelection() {
+// [IDA decompile]
+int __thiscall ObjectClass::HandleSelection(#374 *this)
+{
+  int result; // eax
+  _BYTE *v3; // edi
+  #375 *v4; // ebx
+  #375 *v5; // edi
+  int v6; // eax
+  int v7; // eax
+  char IsHumanPlayer; // [esp+Bh] [ebp-1h]
+
+  if ( !HIBYTE(dword_A8ED54[5]) )
+  {
+    if ( *((_BYTE *)this + 129)
+      || *((_BYTE *)this + 131)
+      || (result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 312))(this), !(_BYTE)result) )
+    {
+      LOBYTE(result) = 0;
+      return result;
+    }
+  }
+  v3 = AbstractClass::IsTechnoType(this);
+  if ( !HIBYTE(dword_A8ED54[5]) )
+  {
+    result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 160))(this);
+    if ( (_BYTE)result )
+    {
+      if ( !v3 )
+        goto LABEL_14;
+      if ( v3[980] )
+      {
+        LOBYTE(result) = 0;
+        return result;
+      }
+    }
+  }
+  if ( v3 )
+  {
+    result = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 468))(v3);
+    if ( (_BYTE)result )
+    {
+      LOBYTE(result) = 0;
+      return result;
+    }
+  }
+LABEL_14:
+  result = MEMORY[0x87F7E8][1130];
+  if ( MEMORY[0x87F7E8][1130] )
+  {
+    LOBYTE(result) = 0;
+    return result;
+  }
+  if ( MEMORY[0x87F7E8][539960] > 0 )
+  {
+    v4 = (#375 *)(*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 60))(this);
+    v5 = (#375 *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)MEMORY[0x87F7E8][539957] + 60))(*(_DWORD *)MEMORY[0x87F7E8][539957]);
+    IsHumanPlayer = House::IsHumanPlayer(v5);
+    if ( IsHumanPlayer != (unsigned __int8)House::IsHumanPlayer(v4) || !(unsigned __int8)House::IsHumanPlayer(v5) )
+      MapClass::UnselectAll_ClearLimboLaunchers();
+  }
+  if ( !this
+    || (*((_BYTE *)this + 20) & 1) == 0
+    || !*(_BYTE *)((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this) + 3228) )
+  {
+    if ( MEMORY[0x87F7E8][539960] < MEMORY[0x87F7E8][539958]
+      || (BYTE1(MEMORY[0x87F7E8][539959]) || !MEMORY[0x87F7E8][539958])
+      && MEMORY[0x87F7E8][539961] > 0
+      && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][539956] + 8))(
+           &MEMORY[0x87F7E8][539956],
+           MEMORY[0x87F7E8][539958] + MEMORY[0x87F7E8][539961],
+           0) )
+    {
+      v7 = MEMORY[0x87F7E8][539960]++;
+      *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v7) = this;
+    }
+    goto LABEL_38;
+  }
+  v6 = MEMORY[0x87F7E8][539960];
+  if ( MEMORY[0x87F7E8][539960] >= MEMORY[0x87F7E8][539958] )
+  {
+    if ( (BYTE1(MEMORY[0x87F7E8][539959]) || !MEMORY[0x87F7E8][539958])
+      && MEMORY[0x87F7E8][539961] > 0
+      && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][539956] + 8))(
+           &MEMORY[0x87F7E8][539956],
+           MEMORY[0x87F7E8][539958] + MEMORY[0x87F7E8][539961],
+           0) )
+    {
+      v6 = MEMORY[0x87F7E8][539960];
+      goto LABEL_29;
+    }
+LABEL_38:
+    Selection::SetCurrent(0);
+    *((_BYTE *)this + 131) = 1;
+    LOBYTE(result) = 1;
+    return result;
+  }
+LABEL_29:
+  if ( v6 )
+    memcpy((void *)(MEMORY[0x87F7E8][539957] + 4), (const void *)MEMORY[0x87F7E8][539957], 4 * v6);
+  *(_DWORD *)MEMORY[0x87F7E8][539957] = this;
+  ++MEMORY[0x87F7E8][539960];
+  Selection::SetCurrent(0);
+  *((_BYTE *)this + 131) = 1;
+  LOBYTE(result) = 1;
+  return result;
+}
+
+/* ASM:
+push    ecx
+mov     al, byte ptr dword_A8ED54+17h
+push    esi
+test    al, al
+push    edi
+mov     esi, ecx
+jnz     short loc_5F4554
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_5F454E
+mov     al, [esi+83h]
+test    al, al
+jnz     short loc_5F454E
+mov     eax, [esi]
+call    dword ptr [eax+138h]
+test    al, al
+jnz     short loc_5F4554
+
+loc_5F454E:                             ; CODE XREF: ObjectClass__HandleSelection+16↑j
+; ObjectClass__HandleSelection+20↑j
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F4554:                             ; CODE XREF: ObjectClass__HandleSelection+C↑j
+; ObjectClass__HandleSelection+2C↑j
+mov     ecx, esi
+call    AbstractClass__IsTechnoType
+mov     edi, eax
+mov     al, byte ptr dword_A8ED54+17h
+test    al, al
+jnz     short loc_5F4588
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0A0h]
+test    al, al
+jz      short loc_5F4588
+test    edi, edi
+jz      short loc_5F45A0
+mov     al, [edi+3D4h]
+test    al, al
+jz      short loc_5F4588
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F4588:                             ; CODE XREF: ObjectClass__HandleSelection+44↑j
+; ObjectClass__HandleSelection+52↑j ...
+test    edi, edi
+jz      short loc_5F45A0
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+1D4h]
+test    al, al
+jz      short loc_5F45A0
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F45A0:                             ; CODE XREF: ObjectClass__HandleSelection+56↑j
+; ObjectClass__HandleSelection+6A↑j ...
+mov     eax, ds:880990h
+test    eax, eax
+jz      short loc_5F45AF
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F45AF:                             ; CODE XREF: ObjectClass__HandleSelection+87↑j
+mov     eax, ds:0A8ECC8h
+test    eax, eax
+jle     short loc_5F45FD
+mov     edx, [esi]
+push    ebx
+mov     ecx, esi
+call    dword ptr [edx+3Ch]
+mov     ebx, eax
+mov     eax, ds:0A8ECBCh
+mov     ecx, [eax]
+mov     edx, [ecx]
+call    dword ptr [edx+3Ch]
+mov     edi, eax
+mov     ecx, edi        ; this
+call    House__IsHumanPlayer
+mov     dl, al
+mov     ecx, ebx        ; this
+mov     [esp+10h+var_1], dl
+call    House__IsHumanPlayer
+mov     cl, [esp+10h+var_1]
+pop     ebx
+cmp     cl, al
+jnz     short loc_5F45F8
+mov     ecx, edi        ; this
+call    House__IsHumanPlayer
+test    al, al
+jnz     short loc_5F45FD
+
+loc_5F45F8:                             ; CODE XREF: ObjectClass__HandleSelection+CB↑j
+call    MapClass__UnselectAll_ClearLimboLaunchers
+
+loc_5F45FD:                             ; CODE XREF: ObjectClass__HandleSelection+96↑j
+; ObjectClass__HandleSelection+D6↑j
+test    esi, esi
+jz      loc_5F46BB
+mov     dl, [esi+14h]
+and     dl, 1
+mov     [esp+0Ch+var_1], dl
+jz      loc_5F46BB
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+88h]
+mov     cl, [eax+0C9Ch]
+test    cl, cl
+jz      loc_5F46BB
+mov     eax, ds:0A8ECC8h
+mov     ecx, ds:0A8ECC0h
+cmp     eax, ecx
+jl      short loc_5F467A
+mov     al, ds:0A8ECC5h
+test    al, al
+jnz     short loc_5F464D
+test    ecx, ecx
+jnz     loc_5F4711
+
+loc_5F464D:                             ; CODE XREF: ObjectClass__HandleSelection+123↑j
+mov     eax, ds:0A8ECCCh
+test    eax, eax
+jle     loc_5F4711
+mov     edx, ds:0A8ECB8h
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, 0A8ECB8h
+call    dword ptr [edx+8]
+test    al, al
+jz      loc_5F4711
+mov     eax, ds:0A8ECC8h
+
+loc_5F467A:                             ; CODE XREF: ObjectClass__HandleSelection+11A↑j
+test    eax, eax
+jz      short loc_5F4694
+shl     eax, 2
+push    eax             ; Size
+mov     eax, ds:0A8ECBCh
+push    eax             ; Src
+add     eax, 4
+push    eax             ; void *
+call    _memcpy
+add     esp, 0Ch
+
+loc_5F4694:                             ; CODE XREF: ObjectClass__HandleSelection+15C↑j
+mov     ecx, ds:0A8ECBCh
+mov     [ecx], esi
+mov     eax, ds:0A8ECC8h
+inc     eax
+xor     ecx, ecx
+mov     ds:0A8ECC8h, eax
+call    Selection__SetCurrent
+mov     byte ptr [esi+83h], 1
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F46BB:                             ; CODE XREF: ObjectClass__HandleSelection+DF↑j
+; ObjectClass__HandleSelection+EF↑j ...
+mov     eax, ds:0A8ECC0h
+mov     ecx, ds:0A8ECC8h
+cmp     ecx, eax
+jl      short loc_5F46F9
+mov     cl, ds:0A8ECC5h
+test    cl, cl
+jnz     short loc_5F46D8
+test    eax, eax
+jnz     short loc_5F4711
+
+loc_5F46D8:                             ; CODE XREF: ObjectClass__HandleSelection+1B2↑j
+mov     ecx, ds:0A8ECCCh
+test    ecx, ecx
+jle     short loc_5F4711
+mov     edx, ds:0A8ECB8h
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, 0A8ECB8h
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_5F4711
+
+loc_5F46F9:                             ; CODE XREF: ObjectClass__HandleSelection+1A8↑j
+mov     ecx, ds:0A8ECC8h
+mov     eax, ecx
+inc     ecx
+mov     ds:0A8ECC8h, ecx
+mov     ecx, ds:0A8ECBCh
+mov     [ecx+eax*4], esi
+
+loc_5F4711:                             ; CODE XREF: ObjectClass__HandleSelection+127↑j
+; ObjectClass__HandleSelection+134↑j ...
+xor     ecx, ecx
+call    Selection__SetCurrent
+mov     byte ptr [esi+83h], 1
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn
+*/
+} } }
 // 0x5F4730
-namespace ra2 { namespace game { int ObjectClass::GetPlacementScreenRect() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetPlacementScreenRect() {
+// [IDA decompile]
+int __thiscall BuildingClass::GetPlacementScreenRect(#374 *this)
+{
+  _DWORD *v2; // eax
+  int v3; // edi
+  int *FoundationSize; // eax
+  int v6; // ecx
+  int v7; // esi
+  int v8; // ebx
+  int v9; // ebp
+  int v10; // kr00_4
+  int v11; // ecx
+  int v12; // esi
+  int v13; // ecx
+  int v14; // [esp+10h] [ebp-18h] BYREF
+  int v15; // [esp+14h] [ebp-14h]
+  _DWORD v16[3]; // [esp+18h] [ebp-10h] BYREF
+  int v17; // [esp+24h] [ebp-4h]
+  _DWORD *v18; // [esp+2Ch] [ebp+4h]
+
+  v2 = (_DWORD *)(*(int (__thiscall **)(#374 *, _DWORD *))(*(_DWORD *)this + 172))(this, v16);
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v2, &v14);
+  v3 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 108))(this);
+  if ( v3 )
+  {
+    FoundationSize = Building::GetFoundationSize(v16, 0);
+    v6 = *FoundationSize;
+    v7 = FoundationSize[1];
+    v8 = FoundationSize[2];
+    v9 = FoundationSize[3];
+    v10 = *(__int16 *)(v3 + 2);
+    v17 = v9;
+    v11 = v14 + v6 - v10 / 2;
+    v12 = v15 + v7 - *(__int16 *)(v3 + 4) / 2;
+    v15 = v12 + MEMORY[0x87F7E8][7663];
+    if ( MEMORY[0x87F7E8][7662] >= MEMORY[0x87F7E8][7662] + v11 + v8
+      || MEMORY[0x87F7E8][7663] >= v15 + v9
+      || MEMORY[0x87F7E8][7662] + MEMORY[0x87F7E8][7664] <= MEMORY[0x87F7E8][7662] + v11
+      || MEMORY[0x87F7E8][7665] + MEMORY[0x87F7E8][7663] <= v15 )
+    {
+      *v18 = dword_A8ED54[51583];
+      v18[1] = dword_A8ED54[51584];
+      v18[2] = dword_A8ED54[51585];
+      v18[3] = dword_A8ED54[51586];
+      return (int)v18;
+    }
+    else
+    {
+      *v18 = v11;
+      v13 = v17;
+      v18[1] = v12;
+      v18[2] = v8;
+      v18[3] = v13;
+      return (int)v18;
+    }
+  }
+  else
+  {
+    *v18 = dword_A8ED54[51583];
+    v18[1] = dword_A8ED54[51584];
+    v18[2] = dword_A8ED54[51585];
+    v18[3] = dword_A8ED54[51586];
+    return (int)v18;
+  }
+}
+
+/* ASM:
+sub     esp, 18h
+lea     eax, [esp+18h+var_18]
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+push    eax
+lea     eax, [esp+2Ch+var_10]
+mov     edx, [esi]
+push    eax
+call    dword ptr [edx+0ACh]
+mov     ecx, ds:887324h
+push    eax
+call    Coord__To_Screen
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+6Ch]
+mov     edi, eax
+test    edi, edi
+jnz     short loc_5F4797
+mov     eax, [esp+28h+arg_0]
+mov     edx, dword_A8ED54+325FCh
+mov     ecx, eax
+pop     edi
+pop     esi
+pop     ebp
+mov     [ecx], edx
+mov     edx, dword_A8ED54+32600h
+pop     ebx
+mov     [ecx+4], edx
+mov     edx, dword_A8ED54+32604h
+mov     [ecx+8], edx
+mov     edx, dword_A8ED54+32608h
+mov     [ecx+0Ch], edx
+add     esp, 18h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F4797:                             ; CODE XREF: ObjectClass__GetPlacementScreenRect+32↑j
+lea     eax, [esp+28h+var_10]
+push    0
+push    eax
+mov     ecx, edi
+call    Building__GetFoundationSize
+mov     ecx, [eax]
+mov     esi, [eax+4]
+mov     ebx, [eax+8]
+mov     ebp, [eax+0Ch]
+movsx   eax, word ptr [edi+2]
+cdq
+sub     eax, edx
+mov     [esp+28h+var_4], ebp
+sar     eax, 1
+sub     ecx, eax
+mov     eax, [esp+28h+var_18]
+add     ecx, eax
+movsx   eax, word ptr [edi+4]
+cdq
+sub     eax, edx
+mov     edi, ds:886FA4h
+sar     eax, 1
+sub     esi, eax
+mov     eax, [esp+28h+var_14]
+add     esi, eax
+mov     eax, ds:886FA0h
+add     edi, esi
+lea     edx, [eax+ecx]
+mov     [esp+28h+var_14], edi
+lea     edi, [edx+ebx]
+cmp     eax, edi
+jge     short loc_5F483C
+mov     edi, [esp+28h+var_14]
+add     ebp, edi
+mov     edi, ds:886FA4h
+cmp     edi, ebp
+jge     short loc_5F483C
+mov     ebp, ds:886FA8h
+add     ebp, eax
+cmp     ebp, edx
+jle     short loc_5F483C
+mov     edx, ds:886FACh
+mov     eax, [esp+28h+var_14]
+add     edi, edx
+cmp     edi, eax
+jle     short loc_5F483C
+mov     eax, [esp+28h+arg_0]
+pop     edi
+mov     edx, eax
+mov     [edx], ecx
+mov     ecx, [esp+24h+var_4]
+mov     [edx+4], esi
+pop     esi
+pop     ebp
+mov     [edx+8], ebx
+pop     ebx
+mov     [edx+0Ch], ecx
+add     esp, 18h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F483C:                             ; CODE XREF: ObjectClass__GetPlacementScreenRect+BF↑j
+; ObjectClass__GetPlacementScreenRect+CF↑j ...
+mov     eax, [esp+28h+arg_0]
+mov     ecx, dword_A8ED54+325FCh
+mov     edx, eax
+pop     edi
+pop     esi
+pop     ebp
+mov     [edx], ecx
+mov     ecx, dword_A8ED54+32600h
+pop     ebx
+mov     [edx+4], ecx
+mov     ecx, dword_A8ED54+32604h
+mov     [edx+8], ecx
+mov     ecx, dword_A8ED54+32608h
+mov     [edx+0Ch], ecx
+add     esp, 18h
+retn    4
+*/
+} } }
 // 0x5F4B10
-namespace ra2 { namespace game { int ObjectClass::CalcDrawRect() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CalcDrawRect() {
+// [IDA decompile]
+int __thiscall ObjectClass::CalcDrawRect(#374 *this)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *v4; // eax
+  int *v5; // ebx
+  int v6; // eax
+  int v7; // ecx
+  int v8; // edx
+  int v9; // esi
+  int v10; // edi
+  int v11; // ebx
+  int v12; // ebx
+  int v13; // ecx
+  int v14; // [esp+4h] [ebp-20h]
+  int v16; // [esp+Ch] [ebp-18h] BYREF
+  int v17; // [esp+10h] [ebp-14h]
+  int v18; // [esp+14h] [ebp-10h] BYREF
+  int v19; // [esp+18h] [ebp-Ch]
+  int v20; // [esp+1Ch] [ebp-8h]
+  int v21; // [esp+20h] [ebp-4h]
+  int *v22; // [esp+28h] [ebp+4h]
+  char v23; // [esp+2Ch] [ebp+8h]
+  int v24; // [esp+2Ch] [ebp+8h]
+  int v25; // [esp+2Ch] [ebp+8h]
+
+  if ( (HIBYTE(dword_A8ED54[5])
+     || (result = dword_A8ED54[233983]) == 0
+     || (v23 || *((_BYTE *)this + 128)) && !*((_BYTE *)this + 129))
+    && ((v3 = *(_DWORD *)this,
+         *((_BYTE *)this + 128) = 0,
+         v4 = (_DWORD *)(*(int (__thiscall **)(#374 *, int *))(v3 + 172))(this, &v18),
+         Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v4, &v16))
+     || (result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 44))(this), result == 24)) )
+  {
+    v19 = MEMORY[0x87F7E8][7663];
+    v20 = MEMORY[0x87F7E8][7664];
+    v21 = MEMORY[0x87F7E8][7665];
+    v5 = v22;
+    v6 = 0;
+    v7 = 0;
+    v8 = 0;
+    v9 = 0;
+    v10 = MEMORY[0x87F7E8][7662];
+    v14 = v22[2];
+    if ( v14 > 0 && v22[3] > 0 && MEMORY[0x87F7E8][7664] > 0 && MEMORY[0x87F7E8][7665] > 0 )
+    {
+      v24 = *v22;
+      if ( MEMORY[0x87F7E8][7662] < *v22 )
+      {
+        v10 = *v22;
+        v20 += MEMORY[0x87F7E8][7662] - *v22;
+      }
+      if ( v20 >= 1 )
+      {
+        v11 = v22[1];
+        if ( v19 >= v11 )
+        {
+          v5 = v22;
+        }
+        else
+        {
+          v21 += v19 - v11;
+          v5 = v22;
+          v19 = v22[1];
+        }
+        if ( v21 >= 1 )
+        {
+          v5 = v22;
+          if ( v10 + v20 > v14 + v24 )
+            v20 = v22[2] + v24 - v10;
+          if ( v20 >= 1 )
+          {
+            v25 = v22[3] + v22[1];
+            if ( v21 + v19 <= v25 )
+              v12 = v21;
+            else
+              v12 = v25 - v19;
+            if ( v12 >= 1 )
+            {
+              v7 = v19;
+              v8 = v20;
+              v6 = v10;
+              v9 = v12;
+            }
+            v5 = v22;
+          }
+        }
+      }
+    }
+    *v5 = v6;
+    v5[1] = v7;
+    v5[2] = v8;
+    v5[3] = v9;
+    if ( *v5 > MEMORY[0x87F7E8][7662] )
+      v16 += MEMORY[0x87F7E8][7662] - *v5;
+    v13 = v5[1];
+    if ( v13 > MEMORY[0x87F7E8][7663] )
+      v17 += MEMORY[0x87F7E8][7663] - v13;
+    result = (*(int (__thiscall **)(#374 *, int *, int *))(*(_DWORD *)this + 276))(this, &v16, v5);
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 20h
+mov     al, byte ptr dword_A8ED54+17h
+push    esi
+mov     esi, ecx
+test    al, al
+mov     [esp+24h+var_1C], esi
+jnz     short loc_5F4B48
+mov     eax, dword_A8ED54+0E47FCh
+test    eax, eax
+jz      short loc_5F4B48
+mov     al, [esp+24h+arg_4]
+test    al, al
+jnz     short loc_5F4B3E
+mov     al, [esi+80h]
+test    al, al
+jz      short loc_5F4B7F
+
+loc_5F4B3E:                             ; CODE XREF: ObjectClass__CalcDrawRect+22↑j
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_5F4B7F
+
+loc_5F4B48:                             ; CODE XREF: ObjectClass__CalcDrawRect+11↑j
+; ObjectClass__CalcDrawRect+1A↑j
+mov     edx, [esi]
+lea     eax, [esp+24h+var_18]
+push    eax
+lea     eax, [esp+28h+var_10]
+push    eax
+mov     ecx, esi
+mov     byte ptr [esi+80h], 0
+call    dword ptr [edx+0ACh]
+mov     ecx, ds:887324h
+push    eax
+call    Coord__To_Screen
+test    al, al
+jnz     short loc_5F4B88
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 18h
+jz      short loc_5F4B88
+
+loc_5F4B7F:                             ; CODE XREF: ObjectClass__CalcDrawRect+2C↑j
+; ObjectClass__CalcDrawRect+36↑j
+xor     al, al
+pop     esi
+add     esp, 20h
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5F4B88:                             ; CODE XREF: ObjectClass__CalcDrawRect+61↑j
+; ObjectClass__CalcDrawRect+6D↑j
+push    ebx
+mov     ebx, ds:886FA4h
+mov     [esp+28h+var_C], ebx
+mov     ebx, ds:886FA8h
+mov     [esp+28h+var_8], ebx
+mov     ebx, ds:886FACh
+mov     [esp+28h+var_4], ebx
+mov     ebx, [esp+28h+arg_0]
+push    ebp
+xor     eax, eax
+mov     ebp, [ebx+8]
+xor     ecx, ecx
+xor     edx, edx
+xor     esi, esi
+push    edi
+mov     edi, ds:886FA0h
+test    ebp, ebp
+mov     [esp+30h+var_20], ebp
+jle     loc_5F4CB4
+mov     ebp, [ebx+0Ch]
+test    ebp, ebp
+jle     loc_5F4CB4
+mov     ebp, ds:886FA8h
+test    ebp, ebp
+jle     loc_5F4CB4
+mov     ebp, ds:886FACh
+test    ebp, ebp
+jle     loc_5F4CB4
+mov     ebp, [ebx]
+cmp     edi, ebp
+mov     dword ptr [esp+30h+arg_4], ebp
+jge     short loc_5F4C0B
+sub     edi, ebp
+mov     ebp, [esp+30h+var_8]
+add     ebp, edi
+mov     edi, dword ptr [esp+30h+arg_4]
+mov     [esp+30h+var_8], ebp
+
+loc_5F4C0B:                             ; CODE XREF: ObjectClass__CalcDrawRect+E9↑j
+cmp     [esp+30h+var_8], 1
+jl      loc_5F4CB4
+mov     ebx, [ebx+4]
+mov     ebp, [esp+30h+var_C]
+cmp     ebp, ebx
+jge     short loc_5F4C3A
+sub     ebp, ebx
+mov     ebx, [esp+30h+var_4]
+add     ebx, ebp
+mov     [esp+30h+var_4], ebx
+mov     ebx, [esp+30h+arg_0]
+mov     ebp, [ebx+4]
+mov     [esp+30h+var_C], ebp
+jmp     short loc_5F4C3E
+; ---------------------------------------------------------------------------
+
+loc_5F4C3A:                             ; CODE XREF: ObjectClass__CalcDrawRect+10F↑j
+mov     ebx, [esp+30h+arg_0]
+
+loc_5F4C3E:                             ; CODE XREF: ObjectClass__CalcDrawRect+128↑j
+cmp     [esp+30h+var_4], 1
+jl      short loc_5F4CB4
+mov     ebx, dword ptr [esp+30h+arg_4]
+mov     ebp, [esp+30h+var_20]
+add     ebx, ebp
+mov     ebp, [esp+30h+var_8]
+add     ebp, edi
+cmp     ebp, ebx
+jle     short loc_5F4C6C
+mov     ebp, dword ptr [esp+30h+arg_4]
+mov     ebx, [esp+30h+arg_0]
+sub     ebp, edi
+add     ebp, [ebx+8]
+mov     [esp+30h+var_8], ebp
+jmp     short loc_5F4C70
+; ---------------------------------------------------------------------------
+
+loc_5F4C6C:                             ; CODE XREF: ObjectClass__CalcDrawRect+147↑j
+mov     ebx, [esp+30h+arg_0]
+
+loc_5F4C70:                             ; CODE XREF: ObjectClass__CalcDrawRect+15A↑j
+cmp     [esp+30h+var_8], 1
+jl      short loc_5F4CB4
+mov     ebp, [ebx+0Ch]
+mov     ebx, [ebx+4]
+add     ebx, ebp
+mov     ebp, [esp+30h+var_C]
+mov     dword ptr [esp+30h+arg_4], ebx
+mov     ebx, [esp+30h+var_4]
+add     ebp, ebx
+mov     ebx, dword ptr [esp+30h+arg_4]
+cmp     ebp, ebx
+jle     short loc_5F4C9B
+sub     ebx, [esp+30h+var_C]
+jmp     short loc_5F4C9F
+; ---------------------------------------------------------------------------
+
+loc_5F4C9B:                             ; CODE XREF: ObjectClass__CalcDrawRect+183↑j
+mov     ebx, [esp+30h+var_4]
+
+loc_5F4C9F:                             ; CODE XREF: ObjectClass__CalcDrawRect+189↑j
+cmp     ebx, 1
+jl      short loc_5F4CB0
+mov     ecx, [esp+30h+var_C]
+mov     edx, [esp+30h+var_8]
+mov     eax, edi
+mov     esi, ebx
+
+loc_5F4CB0:                             ; CODE XREF: ObjectClass__CalcDrawRect+192↑j
+mov     ebx, [esp+30h+arg_0]
+
+loc_5F4CB4:                             ; CODE XREF: ObjectClass__CalcDrawRect+B4↑j
+; ObjectClass__CalcDrawRect+BF↑j ...
+mov     edi, ebx
+mov     [edi], eax
+mov     [edi+4], ecx
+mov     [edi+8], edx
+mov     [edi+0Ch], esi
+mov     eax, [ebx]
+mov     ecx, ds:886FA0h
+cmp     eax, ecx
+jle     short loc_5F4CD9
+sub     ecx, eax
+mov     eax, [esp+30h+var_18]
+add     eax, ecx
+mov     [esp+30h+var_18], eax
+
+loc_5F4CD9:                             ; CODE XREF: ObjectClass__CalcDrawRect+1BB↑j
+mov     ecx, [ebx+4]
+mov     eax, ds:886FA4h
+cmp     ecx, eax
+jle     short loc_5F4CF1
+sub     eax, ecx
+mov     ecx, [esp+30h+var_14]
+add     ecx, eax
+mov     [esp+30h+var_14], ecx
+
+loc_5F4CF1:                             ; CODE XREF: ObjectClass__CalcDrawRect+1D3↑j
+mov     ecx, [esp+30h+var_1C]
+lea     edx, [esp+30h+var_18]
+push    ebx
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+114h]
+pop     edi
+pop     ebp
+pop     ebx
+mov     al, 1
+pop     esi
+add     esp, 20h
+retn    0Ch
+*/
+} } }
 // 0x5F5320
-namespace ra2 { namespace game { int ObjectClass::ProcessInputKey() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ProcessInputKey() {
+// [IDA decompile]
+int __thiscall ObjectClass::ProcessInputKey(#374 *this)
+{
+  double v2; // [esp+0h] [ebp-8h]
+  int v3; // [esp+10h] [ebp+8h]
+
+  if ( v3 == 13 )
+  {
+    (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 2);
+  }
+  else
+  {
+    if ( v3 != 34 )
+      return 0;
+    v2 = (double)*((int *)this + 27);
+    if ( v2 / (double)*(int *)((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this) + 160) >= *(double *)(MEMORY[0x87F7E8][7806] + 5880) )
+      return 10;
+  }
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+sub     esp, 8
+cmp     eax, 0Dh
+jz      short loc_5F5370
+cmp     eax, 22h ; '"'
+jz      short loc_5F5339
+xor     eax, eax
+add     esp, 8
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5F5339:                             ; CODE XREF: ObjectClass__ProcessInputKey+F↑j
+fild    dword ptr [ecx+6Ch]
+mov     eax, [ecx]
+fstp    [esp+8+var_8]
+call    dword ptr [eax+88h]
+fild    dword ptr [eax+0A0h]
+mov     ecx, ds:8871E0h
+fdivr   [esp+8+var_8]
+fcomp   qword ptr [ecx+16F8h]
+fnstsw  ax
+test    ah, 1
+jnz     short loc_5F537A
+mov     eax, 0Ah
+add     esp, 8
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5F5370:                             ; CODE XREF: ObjectClass__ProcessInputKey+A↑j
+mov     edx, [ecx]
+push    2
+call    dword ptr [edx+124h]
+
+loc_5F537A:                             ; CODE XREF: ObjectClass__ProcessInputKey+43↑j
+mov     eax, 1
+add     esp, 8
+retn    0Ch
+*/
+} } }
 // 0x5F5930
-namespace ra2 { namespace game { int AbstractClass::IsNotNull() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::IsNotNull() {
+// [IDA decompile]
+int __thiscall AbstractClass::IsNotNull(#374 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+
+  return v2 != 0;
+}
+
+/* ASM:
+mov     ecx, [esp+arg_0]
+xor     eax, eax
+test    ecx, ecx
+setnz   al
+retn    4
+*/
+} } }
 // 0x5F5940
-namespace ra2 { namespace game { int ObjectClass::ParachuteDrop() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ParachuteDrop() {
+// [IDA decompile]
+int __thiscall ObjectClass::ParachuteDrop(#374 *this)
+{
+  int *v1; // edi
+  int result; // eax
+  int v4; // ebp
+  int v5; // ecx
+  int v6; // edx
+  int v7; // eax
+  _DWORD *v8; // edi
+  int v9; // eax
+  int v10; // ecx
+  int v11; // edi
+  int TileIndex; // [esp-10h] [ebp-28h]
+  int v13; // [esp-Ch] [ebp-24h]
+  int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
+  int v15; // [esp+1Ch] [ebp+4h] BYREF
+
+  v1 = (int *)v15;
+  if ( IsCoordVisibleMap(MEMORY[0x87F7E8], (_DWORD *)v15) )
+  {
+    *((_BYTE *)this + 141) = 1;
+    result = (int)Coord::To_Cell(MEMORY[0x87F7E8], v1);
+    v4 = result;
+    if ( result )
+    {
+      if ( (*(_DWORD *)(result + 320) & 0x100) == 0
+        || (*((_BYTE *)this + 140) = 1, result = *(_DWORD *)(result + 320), (result & 0x200) != 0) )
+      {
+        if ( !this )
+          goto LABEL_23;
+        LOBYTE(v15) = *((_BYTE *)this + 20) & 1;
+        if ( !(_BYTE)v15
+          || (v5 = *(_DWORD *)((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 132))(this) + 1460),
+              LOWORD(v15) = *v1 / 256,
+              v13 = v5,
+              v6 = *((unsigned __int8 *)this + 140),
+              HIWORD(v15) = v1[1] / 256,
+              TileIndex = MapClass::GetTileIndex(MEMORY[0x87F7E8], (__int16 *)&v15, v5, v6),
+              v7 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 132))(this),
+              Cell::IsBuildable(v4, *(_DWORD *)(v7 + 1660), 0, 0, TileIndex, v13, -1, 1)) )
+        {
+LABEL_23:
+          result = (*(int (__thiscall **)(#374 *, int *, int))(*(_DWORD *)this + 216))(this, v1, 128);
+          if ( (_BYTE)result )
+          {
+            (*(void (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 436))(this, v1);
+            if ( (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 44))(this) == 8 )
+            {
+              result = __2_YAPAXI_Z(456);
+              if ( !result )
+              {
+LABEL_19:
+                LOBYTE(result) = 1;
+                return result;
+              }
+              result = (int)AnimClass::ctor(
+                              (void **)result,
+                              *(void **)(MEMORY[0x87F7E8][7806] + 3000),
+                              v1,
+                              0,
+                              1,
+                              (void *)0x600,
+                              0,
+                              0);
+              v8 = (_DWORD *)result;
+            }
+            else
+            {
+              v9 = *v1;
+              v10 = v1[1];
+              v11 = v1[2] + 75;
+              v14[0] = v9;
+              v14[1] = v10;
+              v14[2] = v11;
+              result = __2_YAPAXI_Z(456);
+              if ( result )
+              {
+                result = (int)AnimClass::ctor(
+                                (void **)result,
+                                *(void **)(MEMORY[0x87F7E8][7806] + 3004),
+                                v14,
+                                0,
+                                1,
+                                (void *)0x600,
+                                0,
+                                0);
+                v8 = (_DWORD *)result;
+              }
+              else
+              {
+                v8 = 0;
+              }
+              *((_DWORD *)this + 34) = v8;
+            }
+            if ( v8 )
+            {
+              BuildingClass::AimTurret(v8, this);
+              result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 44))(this);
+              if ( result != 8 )
+              {
+                v8[53] = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 484))(this);
+                result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 444))(this);
+                v8[63] = *(__int16 *)(result + 266);
+              }
+            }
+            goto LABEL_19;
+          }
+        }
+      }
+    }
+  }
+  LOBYTE(result) = 0;
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebp
+push    esi
+push    edi
+mov     edi, [esp+18h+arg_0]
+mov     esi, ecx
+push    edi
+mov     ecx, 87F7E8h
+call    IsCoordVisibleMap
+test    al, al
+jz      loc_5F5B41
+push    edi
+mov     ecx, 87F7E8h
+mov     byte ptr [esi+8Dh], 1
+call    Coord__To_Cell
+mov     ebp, eax
+test    ebp, ebp
+jz      loc_5F5B41
+mov     eax, [ebp+140h]
+test    ah, 1
+jz      short loc_5F599C
+mov     byte ptr [esi+8Ch], 1
+mov     eax, [ebp+140h]
+test    ah, 2
+jz      loc_5F5B41
+
+loc_5F599C:                             ; CODE XREF: ObjectClass__ParachuteDrop+44↑j
+test    esi, esi
+jz      loc_5F5A33
+mov     al, [esi+14h]
+and     al, 1
+mov     byte ptr [esp+18h+arg_0], al
+jz      loc_5F5A33
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     ecx, [eax+5B4h]
+mov     eax, [edi]
+cdq
+and     edx, 0FFh
+push    1
+add     eax, edx
+push    0FFFFFFFFh
+sar     eax, 8
+mov     word ptr [esp+20h+arg_0], ax
+mov     eax, [edi+4]
+cdq
+and     edx, 0FFh
+push    ecx
+add     eax, edx
+mov     dl, [esi+8Ch]
+sar     eax, 8
+mov     word ptr [esp+24h+arg_0+2], ax
+mov     eax, [esp+24h+arg_0]
+mov     [esp+24h+arg_0], eax
+push    edx
+lea     eax, [esp+28h+arg_0]
+push    ecx
+push    eax
+mov     ecx, 87F7E8h
+call    MapClass__GetTileIndex
+mov     edx, [esi]
+push    eax
+push    0
+push    0
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     eax, [eax+67Ch]
+mov     ecx, ebp
+push    eax
+call    Cell__IsBuildable
+test    al, al
+jz      loc_5F5B41
+
+loc_5F5A33:                             ; CODE XREF: ObjectClass__ParachuteDrop+5E↑j
+; ObjectClass__ParachuteDrop+6D↑j
+mov     edx, [esi]
+push    80h
+push    edi
+mov     ecx, esi
+call    dword ptr [edx+0D8h]
+test    al, al
+jz      loc_5F5B41
+mov     eax, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+1B4h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 8
+jnz     short loc_5F5A9D
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      loc_5F5B36
+mov     ecx, ds:8871E0h
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+mov     edx, [ecx+0BB8h]
+push    1               ; int
+push    0               ; int
+push    edi             ; int
+push    edx             ; int
+mov     ecx, eax        ; void **
+call    AnimClass__ctor
+mov     edi, eax
+jmp     short loc_5F5AF7
+; ---------------------------------------------------------------------------
+
+loc_5F5A9D:                             ; CODE XREF: ObjectClass__ParachuteDrop+120↑j
+mov     eax, [edi]
+mov     ecx, [edi+4]
+mov     edi, [edi+8]
+push    1C8h            ; Size
+add     edi, 4Bh ; 'K'
+mov     [esp+1Ch+var_C], eax
+mov     [esp+1Ch+var_8], ecx
+mov     [esp+1Ch+var_4], edi
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_5F5AEF
+mov     ecx, ds:8871E0h
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+push    1               ; int
+lea     edx, [esp+28h+var_C]
+push    0               ; int
+push    edx             ; int
+mov     edx, [ecx+0BBCh]
+mov     ecx, eax        ; void **
+push    edx             ; int
+call    AnimClass__ctor
+mov     edi, eax
+jmp     short loc_5F5AF1
+; ---------------------------------------------------------------------------
+
+loc_5F5AEF:                             ; CODE XREF: ObjectClass__ParachuteDrop+183↑j
+xor     edi, edi
+
+loc_5F5AF1:                             ; CODE XREF: ObjectClass__ParachuteDrop+1AD↑j
+mov     [esi+88h], edi
+
+loc_5F5AF7:                             ; CODE XREF: ObjectClass__ParachuteDrop+15B↑j
+test    edi, edi
+jz      short loc_5F5B36
+push    esi
+mov     ecx, edi
+call    BuildingClass__AimTurret
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 8
+jz      short loc_5F5B36
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1E4h]
+mov     [edi+0D4h], eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1BCh]
+movsx   ecx, word ptr [eax+10Ah]
+mov     [edi+0FCh], ecx
+
+loc_5F5B36:                             ; CODE XREF: ObjectClass__ParachuteDrop+131↑j
+; ObjectClass__ParachuteDrop+1B9↑j ...
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebp
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F5B41:                             ; CODE XREF: ObjectClass__ParachuteDrop+19↑j
+; ObjectClass__ParachuteDrop+35↑j ...
+pop     edi
+pop     esi
+xor     al, al
+pop     ebp
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x5F5B50
-namespace ra2 { namespace game { int ObjectClass::SetReference(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetReference(int a1) {
+// [IDA decompile]
+char __thiscall ObjectClass_SetReference(_DWORD *this, int a2)
+{
+  int v2; // eax
+
+  v2 = *(this + 13);
+  if ( v2 )
+  {
+    --*(_DWORD *)(v2 + 44);
+    *(this + 13) = 0;
+  }
+  if ( !a2 )
+    return 0;
+  *(this + 13) = a2;
+  ++*(_DWORD *)(a2 + 44);
+  return 1;
+}
+
+/* ASM:
+mov     eax, [ecx+34h]
+test    eax, eax
+jz      short loc_5F5B65
+mov     edx, [eax+2Ch]
+dec     edx
+mov     [eax+2Ch], edx
+mov     dword ptr [ecx+34h], 0
+
+loc_5F5B65:                             ; CODE XREF: ObjectClass__SetReference+5↑j
+mov     eax, [esp+arg_0]
+test    eax, eax
+jz      short loc_5F5B7C
+mov     [ecx+34h], eax
+mov     ecx, [eax+2Ch]
+inc     ecx
+mov     [eax+2Ch], ecx
+mov     al, 1
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F5B7C:                             ; CODE XREF: ObjectClass__SetReference+1B↑j
+xor     al, al
+retn    4
+*/
+} } }
 // 0x5F5B90
-namespace ra2 { namespace game { int ObjectClass::GetOrCreateResHandle() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetOrCreateResHandle() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetOrCreateResHandle(#374 *this)
+{
+  int v3; // eax
+  int v4; // [esp+Ch] [ebp+4h]
+
+  if ( (MEMORY[0xAC1398] & 1) == 0 )
+  {
+    MEMORY[0xAC1398] |= 1u;
+    MEMORY[0xAC139C] = 2147450879;
+    atexit(nullsub_205);
+  }
+  if ( !(*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this) )
+    return (int)&MEMORY[0xAC139C];
+  v3 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+  return (*(int (__thiscall **)(int, int))(*(_DWORD *)v3 + 144))(v3, v4);
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+mov     cl, byte ptr dword_A8ED54+32644h
+mov     al, 1
+test    al, cl
+jnz     short loc_5F5BCF
+mov     dl, cl
+push    offset nullsub_205 ; void (__cdecl *)()
+or      dl, al
+mov     eax, 7FFFh
+mov     word ptr [esp+0Ch+var_4], ax
+mov     word ptr [esp+0Ch+var_4+2], ax
+mov     eax, [esp+0Ch+var_4]
+mov     byte ptr dword_A8ED54+32644h, dl
+mov     dword_A8ED54+32648h, eax
+call    _atexit
+add     esp, 4
+
+loc_5F5BCF:                             ; CODE XREF: ObjectClass__GetOrCreateResHandle+E↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+88h]
+test    eax, eax
+jnz     short loc_5F5BE7
+mov     eax, (offset dword_A8ED54+32648h)
+pop     esi
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F5BE7:                             ; CODE XREF: ObjectClass__GetOrCreateResHandle+4B↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+88h]
+mov     ecx, [esp+8+arg_0]
+mov     edx, [eax]
+push    ecx
+mov     ecx, eax
+call    dword ptr [edx+90h]
+pop     esi
+pop     ecx
+retn    4
+*/
+} } }
 // 0x5F5C20
-namespace ra2 { namespace game { int ObjectClass::Fire() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Fire() {
+// [IDA decompile]
+int __thiscall ObjectClass::Fire(#374 *this)
+{
+  int *v2; // edi
+  int v3; // ebx
+  int v5; // [esp-4h] [ebp-10h]
+  int v6; // [esp+10h] [ebp+4h]
+  int v7; // [esp+14h] [ebp+8h]
+
+  v2 = (int *)(*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+  v3 = *v2;
+  v5 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 60))(this);
+  return (*(int (__thiscall **)(int *, int, int, _DWORD, int))(v3 + 148))(v2, v6, v7, 0, v5);
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+88h]
+mov     edx, [esi]
+mov     edi, eax
+mov     ecx, esi
+mov     ebx, [edi]
+call    dword ptr [edx+3Ch]
+mov     ecx, [esp+0Ch+arg_0]
+push    eax
+mov     eax, [esp+10h+arg_4]
+push    0
+push    eax
+push    ecx
+mov     ecx, edi
+call    dword ptr [ebx+94h]
+pop     edi
+pop     esi
+pop     ebx
+retn    8
+*/
+} } }
 // 0x5F5D20
-namespace ra2 { namespace game { bool ObjectClass::IsYellowHP() { return false; } } }
+namespace ra2 { namespace game { bool ObjectClass::IsYellowHP() {
+// [IDA decompile]
+BOOL __thiscall ObjectClass::IsYellowHP(int *this)
+{
+  BOOL result; // eax
+  double v3; // [esp+4h] [ebp-8h]
+  double v4; // [esp+4h] [ebp-8h]
+
+  v3 = (double)*(this + 27);
+  result = 0;
+  if ( v3 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) > *(double *)(MEMORY[0x87F7E8][7806] + 5896) )
+  {
+    v4 = (double)*(this + 27);
+    if ( v4 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
+      return 1;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+push    esi
+mov     esi, ecx
+fild    dword ptr [esi+6Ch]
+mov     eax, [esi]
+fstp    [esp+0Ch+var_8]
+call    dword ptr [eax+88h]
+fild    dword ptr [eax+0A0h]
+mov     ecx, ds:8871E0h
+fdivr   [esp+0Ch+var_8]
+fcomp   qword ptr [ecx+1708h]
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_5F5D89
+fild    dword ptr [esi+6Ch]
+mov     edx, [esi]
+mov     ecx, esi
+fstp    [esp+0Ch+var_8]
+call    dword ptr [edx+88h]
+fild    dword ptr [eax+0A0h]
+mov     eax, ds:8871E0h
+fdivr   [esp+0Ch+var_8]
+fcomp   qword ptr [eax+1700h]
+fnstsw  ax
+test    ah, 41h
+jz      short loc_5F5D89
+mov     eax, 1
+pop     esi
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F5D89:                             ; CODE XREF: ObjectClass__IsYellowHP+30↑j
+; ObjectClass__IsYellowHP+5D↑j
+xor     eax, eax
+pop     esi
+add     esp, 8
+retn
+*/
+} } }
 // 0x5F5D90
-namespace ra2 { namespace game { bool ObjectClass::IsGreenHP() { return false; } } }
+namespace ra2 { namespace game { bool ObjectClass::IsGreenHP() {
+// [IDA decompile]
+BOOL __thiscall ObjectClass::IsGreenHP(int *this)
+{
+  double v2; // [esp+0h] [ebp-8h]
+
+  v2 = (double)*(this + 27);
+  return v2 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) > *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+}
+
+/* ASM:
+sub     esp, 8
+fild    dword ptr [ecx+6Ch]
+mov     eax, [ecx]
+fstp    [esp+8+var_8]
+call    dword ptr [eax+88h]
+fild    dword ptr [eax+0A0h]
+mov     ecx, ds:8871E0h
+fdivr   [esp+8+var_8]
+fcomp   qword ptr [ecx+1700h]
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_5F5DC8
+mov     eax, 1
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F5DC8:                             ; CODE XREF: ObjectClass__IsGreenHP+2D↑j
+xor     eax, eax
+add     esp, 8
+retn
+*/
+} } }
 // 0x5F5F00
-namespace ra2 { namespace game { int ObjectClass::GetLandHeight() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetLandHeight() {
+// [IDA decompile]
+int __thiscall ObjectClass_GetLandHeight(_BYTE *this)
+{
+  return *(char *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 444))(this) + 283) + (*(this + 140) != 0 ? 4 : 0);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+1BCh]
+mov     cl, [esi+8Ch]
+pop     esi
+movsx   edx, byte ptr [eax+11Bh]
+neg     cl
+sbb     ecx, ecx
+and     ecx, 4
+add     ecx, edx
+mov     eax, ecx
+retn
+*/
+} } }
 // 0x5F5F30
-namespace ra2 { namespace game { int ObjectClass::GetMember41() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetMember41() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetMember41(#374 *this)
+{
+  return *((_DWORD *)this + 41);
+}
+
+/* ASM:
+mov     eax, [ecx+0A4h]
+retn
+*/
+} } }
 // 0x5F5FA0
-namespace ra2 { namespace game { int ObjectClass::SetZ() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetZ() {
+// [IDA decompile]
+int __thiscall ObjectClass::SetZ(#374 *this)
+{
+  int v2; // edi
+  int result; // eax
+  int v4; // [esp+8h] [ebp-Ch] BYREF
+  int v5; // [esp+Ch] [ebp-8h]
+  int v6; // [esp+10h] [ebp-4h]
+  int v7; // [esp+18h] [ebp+4h]
+
+  v2 = v7;
+  if ( *((_BYTE *)this + 140) )
+    v2 = MEMORY[0xAC13BC] + v7;
+  if ( *((_BYTE *)this + 116) )
+  {
+    (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 292))(this, 0);
+    v4 = *((_DWORD *)this + 39);
+    v5 = *((_DWORD *)this + 40);
+    v6 = *((_DWORD *)this + 41);
+    *((_DWORD *)this + 41) = v2 + Cell::GetGroundHeight(&v4);
+    return (*(int (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 1);
+  }
+  else
+  {
+    v4 = *((_DWORD *)this + 39);
+    v5 = *((_DWORD *)this + 40);
+    v6 = *((_DWORD *)this + 41);
+    result = v2 + Cell::GetGroundHeight(&v4);
+    *((_DWORD *)this + 41) = result;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+14h+arg_0]
+mov     al, [esi+8Ch]
+test    al, al
+jz      short loc_5F5FBB
+add     edi, dword_A8ED54+32668h
+
+loc_5F5FBB:                             ; CODE XREF: ObjectClass__SetZ+13↑j
+mov     al, [esi+74h]
+test    al, al
+jz      short loc_5F6017
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+124h]
+lea     ecx, [esi+9Ch]
+mov     edx, [esi+9Ch]
+mov     [esp+14h+var_C], edx
+lea     edx, [esp+14h+var_C]
+mov     eax, [ecx+4]
+push    edx
+mov     [esp+18h+var_8], eax
+mov     ecx, [ecx+8]
+mov     [esp+18h+var_4], ecx
+mov     ecx, 87F7E8h
+call    Cell__GetGroundHeight
+add     eax, edi
+push    1
+mov     [esi+0A4h], eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+124h]
+pop     edi
+pop     esi
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6017:                             ; CODE XREF: ObjectClass__SetZ+20↑j
+lea     ecx, [esi+9Ch]
+mov     edx, [esi+9Ch]
+mov     [esp+14h+var_C], edx
+lea     edx, [esp+14h+var_C]
+mov     eax, [ecx+4]
+push    edx
+mov     [esp+18h+var_8], eax
+mov     ecx, [ecx+8]
+mov     [esp+18h+var_4], ecx
+mov     ecx, 87F7E8h
+call    Cell__GetGroundHeight
+add     eax, edi
+pop     edi
+mov     [esi+0A4h], eax
+pop     esi
+add     esp, 0Ch
+retn    4
+*/
+} } }
 // 0x5F6060
-namespace ra2 { namespace game { int ObjectClass::SetAnim(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetAnim(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass_SetAnim(_DWORD *this, int a2)
+{
+  int v3; // edx
+
+  if ( *((_BYTE *)this + 116) )
+  {
+    (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 292))(this, 0);
+    v3 = *this;
+    *(this + 41) = a2;
+    return (*(int (__thiscall **)(_DWORD *, int))(v3 + 292))(this, 1);
+  }
+  else
+  {
+    *(this + 41) = a2;
+    return a2;
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     al, [esi+74h]
+test    al, al
+jz      short loc_5F608E
+mov     eax, [esi]
+push    0
+call    dword ptr [eax+124h]
+mov     ecx, [esp+4+arg_0]
+mov     edx, [esi]
+mov     [esi+0A4h], ecx
+push    1
+mov     ecx, esi
+call    dword ptr [edx+124h]
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F608E:                             ; CODE XREF: ObjectClass__SetAnim+8↑j
+mov     eax, [esp+4+arg_0]
+mov     [esi+0A4h], eax
+pop     esi
+retn    4
+*/
+} } }
 // 0x5F6440
-namespace ra2 { namespace game { int ObjectClass::ComputeDistance(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ComputeDistance(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass_ComputeDistance(void *this, int a2)
+{
+  int *v4; // eax
+  int v5; // ebx
+  int v6; // ebp
+  _DWORD *v7; // eax
+  double v8; // st7
+  int v9; // ebx
+  int v10; // eax
+  int v11; // esi
+  int FoundationHeight; // edi
+  _BYTE v13[12]; // [esp+28h] [ebp-18h] BYREF
+  _BYTE v14[12]; // [esp+34h] [ebp-Ch] BYREF
+
+  if ( !a2 )
+    return 0;
+  v4 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v13);
+  v5 = *v4;
+  v6 = v4[1];
+  v7 = (_DWORD *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v14);
+  v8 = Math::Sqrt((double)(*v7 - v5) * (double)(*v7 - v5) + (double)(v7[1] - v6) * (double)(v7[1] - v6));
+  v9 = Math::RoundToInt(v8);
+  v10 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2);
+  v11 = v10 == 6 ? a2 : 0;
+  if ( v11 )
+  {
+    FoundationHeight = BuildingTypeClass::GetFoundationHeight(*(_DWORD *)(v10 == 6 ? a2 + 0x520 : 1312), 0);
+    v9 += -64 * (BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v11 + 1312)) + FoundationHeight);
+    if ( v9 < 0 )
+      return 0;
+  }
+  return v9;
+}
+
+/* ASM:
+sub     esp, 20h
+push    esi
+push    edi
+mov     edi, [esp+28h+arg_0]
+mov     esi, ecx
+test    edi, edi
+jnz     short loc_5F6459
+pop     edi
+xor     eax, eax
+pop     esi
+add     esp, 20h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6459:                             ; CODE XREF: ObjectClass__ComputeDistance+D↑j
+mov     eax, [edi]
+push    ebx
+lea     ecx, [esp+2Ch+var_18]
+push    ebp
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+48h]
+mov     ebx, [eax]
+mov     ebp, [eax+4]
+mov     edx, [esi]
+lea     eax, [esp+30h+var_C]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+48h]
+mov     ecx, [eax]
+mov     eax, [eax+4]
+sub     eax, ebp
+sub     ecx, ebx
+mov     [esp+30h+var_1C], eax
+mov     [esp+30h+var_20], ecx
+fild    [esp+30h+var_1C]
+fild    [esp+30h+var_20]
+sub     esp, 8
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fstp    [esp+38h+var_38] ; double
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     edx, [edi]
+mov     ecx, edi
+mov     ebx, eax
+call    dword ptr [edx+2Ch]
+mov     esi, eax
+sub     esi, 6
+neg     esi
+sbb     esi, esi
+not     esi
+and     esi, edi
+jz      short loc_5F64F1
+mov     ecx, [esi+520h]
+push    0
+call    BuildingTypeClass__GetFoundationHeight
+mov     ecx, [esi+520h]
+mov     edi, eax
+call    BuildingTypeClass__GetFoundationWidth
+add     edi, eax
+neg     edi
+shl     edi, 6
+add     ebx, edi
+jns     short loc_5F64F1
+xor     ebx, ebx
+
+loc_5F64F1:                             ; CODE XREF: ObjectClass__ComputeDistance+88↑j
+; ObjectClass__ComputeDistance+AD↑j
+mov     eax, ebx
+pop     ebp
+pop     ebx
+pop     edi
+pop     esi
+add     esp, 20h
+retn    4
+*/
+} } }
 // 0x5F65A0
-namespace ra2 { namespace game { int ObjectClass::GetCoords() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCoords() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCoords(#374 *this)
+{
+  int *v2; // ecx
+  #363 *out; // [esp+8h] [ebp+4h]
+
+  v2 = (int *)((char *)this + 156);
+  *(_DWORD *)out = *v2;
+  *((_DWORD *)out + 1) = v2[1];
+  *((_DWORD *)out + 2) = v2[2];
+  return (int)out;
+}
+
+/* ASM:
+out             = dword ptr  4
+
+mov     eax, [esp+out]
+add     ecx, 9Ch
+push    esi
+mov     edx, eax
+mov     esi, [ecx]
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+retn    4
+*/
+} } }
 // 0x5F65D0
-namespace ra2 { namespace game { int ObjectClass::DelegateVt69() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DelegateVt69() {
+// [IDA decompile]
+int __thiscall ObjectClass::DelegateVt69(#374 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+  int v3; // [esp+8h] [ebp+8h]
+
+  return (*(int (__thiscall **)(#374 *, int, int))(*(_DWORD *)this + 276))(this, v2, v3);
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+4+arg_0]
+push    edx
+call    dword ptr [eax+114h]
+retn    8
+*/
+} } }
 // 0x5F6940
-namespace ra2 { namespace game { int ObjectClass::SetPosition() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetPosition() {
+// [IDA decompile]
+int __thiscall ObjectClass::SetPosition(#374 *this)
+{
+  _DWORD *v1; // ecx
+  int result; // eax
+  _DWORD *v3; // [esp+4h] [ebp+4h]
+
+  v1 = (_DWORD *)((char *)this + 156);
+  *v1 = *v3;
+  v1[1] = v3[1];
+  result = v3[2];
+  v1[2] = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+add     ecx, 9Ch
+mov     edx, [eax]
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     eax, [eax+8]
+mov     [ecx+8], eax
+retn    4
+*/
+} } }
 // 0x5F6960
-namespace ra2 { namespace game { int ObjectClass::GetCellCoords() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCellCoords() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCellCoords(#374 *this)
+{
+  int *v1; // esi
+  int v2; // ecx
+  int v3; // eax
+  int v5; // [esp+4h] [ebp-Ch] BYREF
+  int v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
+
+  v1 = (int *)((char *)this + 156);
+  v5 = *((_DWORD *)this + 39);
+  v6 = *((_DWORD *)this + 40);
+  v7 = *((_DWORD *)this + 41);
+  Coord::To_Cell(&MEMORY[0x87F7E8], &v5);
+  v2 = v1[2];
+  v3 = v1[1];
+  v5 = *v1;
+  v7 = v2;
+  v6 = v3;
+  return (int)Coord::To_Cell(&MEMORY[0x87F7E8], &v5);
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+lea     esi, [ecx+9Ch]
+mov     eax, esi
+mov     ecx, [eax]
+mov     [esp+10h+var_C], ecx
+lea     ecx, [esp+10h+var_C]
+mov     edx, [eax+4]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+14h+var_8], edx
+mov     eax, [eax+8]
+mov     [esp+14h+var_4], eax
+call    Coord__To_Cell
+mov     edx, [esi]
+mov     ecx, [esi+8]
+mov     eax, [esi+4]
+mov     [esp+10h+var_C], edx
+lea     edx, [esp+10h+var_C]
+mov     [esp+10h+var_4], ecx
+push    edx
+mov     ecx, 87F7E8h
+mov     [esp+14h+var_8], eax
+call    Coord__To_Cell
+pop     esi
+add     esp, 0Ch
+retn
+*/
+} } }
 // 0x5F69C0
-namespace ra2 { namespace game { int ObjectClass::CoordToCell() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CoordToCell() {
+// [IDA decompile]
+int __thiscall ObjectClass::CoordToCell(#374 *this)
+{
+  _DWORD *v1; // eax
+  int v3; // [esp+8h] [ebp-10h]
+  _BYTE v4[12]; // [esp+Ch] [ebp-Ch] BYREF
+  _DWORD *v5; // [esp+1Ch] [ebp+4h]
+
+  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *, _DWORD))(*(_DWORD *)this + 76))(this, v4, 0);
+  LOWORD(v3) = *v1 / 256;
+  HIWORD(v3) = v1[1] / 256;
+  *v5 = v3;
+  return (int)v5;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     eax, [ecx]
+lea     edx, [esp+10h+var_C]
+push    0
+push    edx
+call    dword ptr [eax+4Ch]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+10h+var_10], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+10h+var_10+2], ax
+mov     eax, [esp+10h+arg_0]
+mov     ecx, [esp+10h+var_10]
+mov     [eax], ecx
+add     esp, 10h
+retn    4
+*/
+} } }
 // 0x5F6A70
-namespace ra2 { namespace game { int ObjectClass::CheckGroundHeightDiff() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CheckGroundHeightDiff() {
+// [IDA decompile]
+int __thiscall ObjectClass::CheckGroundHeightDiff(#374 *this)
+{
+  char v2; // bl
+  _DWORD *v3; // eax
+  int GroundHeight; // edi
+  int v5; // ebp
+  int result; // eax
+  _DWORD v7[3]; // [esp+10h] [ebp-18h] BYREF
+  _DWORD v8[3]; // [esp+1Ch] [ebp-Ch] BYREF
+  int v9; // [esp+2Ch] [ebp+4h]
+
+  v2 = *((_BYTE *)this + 140);
+  v3 = (_DWORD *)(*(int (__thiscall **)(#374 *, _DWORD *, int))(*(_DWORD *)this + 76))(this, v8, v9);
+  v7[0] = *v3;
+  v7[1] = v3[1];
+  v7[2] = v3[2];
+  GroundHeight = Cell::GetGroundHeight(v7);
+  v8[0] = *((_DWORD *)this + 39);
+  v8[1] = *((_DWORD *)this + 40);
+  v8[2] = *((_DWORD *)this + 41);
+  v5 = Cell::GetGroundHeight(v8);
+  if ( *((_BYTE *)this + 140) )
+  {
+LABEL_5:
+    result = MEMORY[0xAC13C8];
+    goto LABEL_6;
+  }
+  result = MEMORY[0xAC13C8];
+  if ( v5 - GroundHeight > 3 * MEMORY[0xAC13C8] )
+  {
+    result = (int)Coord::To_Cell(&MEMORY[0x87F7E8], v7);
+    if ( (*(_DWORD *)(result + 320) & 0x100) != 0 )
+    {
+      LOBYTE(result) = 1;
+      return result;
+    }
+    goto LABEL_5;
+  }
+LABEL_6:
+  if ( *((_BYTE *)this + 140) && GroundHeight - v5 > 3 * result )
+    LOBYTE(result) = 0;
+  else
+    LOBYTE(result) = v2;
+  return result;
+}
+
+/* ASM:
+sub     esp, 18h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+24h+arg_0]
+push    edi
+mov     eax, [esi]
+mov     bl, [esi+8Ch]
+lea     edx, [esp+28h+var_C]
+push    ecx
+push    edx
+mov     ecx, esi
+call    dword ptr [eax+4Ch]
+mov     ecx, [eax]
+mov     [esp+28h+var_18], ecx
+lea     ecx, [esp+28h+var_18]
+mov     edx, [eax+4]
+push    ecx
+mov     [esp+2Ch+var_14], edx
+mov     ecx, 87F7E8h
+mov     eax, [eax+8]
+mov     [esp+2Ch+var_10], eax
+call    Cell__GetGroundHeight
+lea     edx, [esi+9Ch]
+mov     edi, eax
+mov     eax, [edx]
+mov     [esp+28h+var_C], eax
+lea     eax, [esp+28h+var_C]
+mov     ecx, [edx+4]
+push    eax
+mov     [esp+2Ch+var_8], ecx
+mov     ecx, 87F7E8h
+mov     edx, [edx+8]
+mov     [esp+2Ch+var_4], edx
+call    Cell__GetGroundHeight
+mov     ebp, eax
+mov     al, [esi+8Ch]
+test    al, al
+jnz     short loc_5F6B20
+mov     eax, dword_A8ED54+32674h
+mov     ecx, ebp
+sub     ecx, edi
+lea     edx, [eax+eax*2]
+cmp     ecx, edx
+jle     short loc_5F6B25
+lea     eax, [esp+28h+var_18]
+mov     ecx, 87F7E8h
+push    eax
+call    Coord__To_Cell
+mov     ecx, [eax+140h]
+test    ch, 1
+jz      short loc_5F6B20
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+add     esp, 18h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6B20:                             ; CODE XREF: ObjectClass__CheckGroundHeightDiff+78↑j
+; ObjectClass__CheckGroundHeightDiff+A2↑j
+mov     eax, dword_A8ED54+32674h
+
+loc_5F6B25:                             ; CODE XREF: ObjectClass__CheckGroundHeightDiff+88↑j
+mov     cl, [esi+8Ch]
+test    cl, cl
+jz      short loc_5F6B44
+sub     edi, ebp
+lea     ecx, [eax+eax*2]
+cmp     edi, ecx
+jle     short loc_5F6B44
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 18h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6B44:                             ; CODE XREF: ObjectClass__CheckGroundHeightDiff+BD↑j
+; ObjectClass__CheckGroundHeightDiff+C6↑j
+pop     edi
+pop     esi
+mov     al, bl
+pop     ebp
+pop     ebx
+add     esp, 18h
+retn    4
+*/
+} } }
 // 0x5F6B60
-namespace ra2 { namespace game { int ObjectClass::IsBelowScreen() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::IsBelowScreen() {
+// [IDA decompile]
+int __thiscall ObjectClass::IsBelowScreen(#374 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 116)
+                && (result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this), result < 2 * MEMORY[0xAC13C8]);
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+74h]
+test    al, al
+jz      short loc_5F6B7F
+mov     eax, [ecx]
+call    dword ptr [eax+1C8h]
+mov     ecx, dword_A8ED54+32674h
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jge     short loc_5F6B7F
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F6B7F:                             ; CODE XREF: ObjectClass__IsBelowScreen+5↑j
+; ObjectClass__IsBelowScreen+1A↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x5F6B90
-namespace ra2 { namespace game { int ObjectClass::IsHeightAboveThreshold() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::IsHeightAboveThreshold() {
+// [IDA decompile]
+int __thiscall ObjectClass::IsHeightAboveThreshold(#374 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 116)
+                && (result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this),
+                    result >= 2 * MEMORY[0xAC13C8]);
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+74h]
+test    al, al
+jz      short loc_5F6BAF
+mov     eax, [ecx]
+call    dword ptr [eax+1C8h]
+mov     ecx, dword_A8ED54+32674h
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jl      short loc_5F6BAF
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F6BAF:                             ; CODE XREF: ObjectClass__IsHeightAboveThreshold+5↑j
+; ObjectClass__IsHeightAboveThreshold+1A↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x5F6C30
-namespace ra2 { namespace game { int ObjectClass::IsPlayerOwnedAndCheck() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::IsPlayerOwnedAndCheck() {
+// [IDA decompile]
+int __thiscall ObjectClass::IsPlayerOwnedAndCheck(#374 *this)
+{
+  int result; // eax
+
+  if ( !(*(unsigned __int8 (__thiscall **)(#374 *, #375 *))(*(_DWORD *)this + 200))(this, MEMORY[0xA83D4C])
+    || (result = (*(int (__thiscall **)(#374 *, int))(*(_DWORD *)this + 208))(this, 1)) != 0 )
+  {
+    result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this);
+    LOBYTE(result) = *(_BYTE *)(result + 560);
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, ds:0A83D4Ch
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+0C8h]
+test    al, al
+jz      short loc_5F6C5C
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+0D0h]
+test    eax, eax
+jnz     short loc_5F6C5C
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F6C5C:                             ; CODE XREF: ObjectClass__IsPlayerOwnedAndCheck+16↑j
+; ObjectClass__IsPlayerOwnedAndCheck+26↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+88h]
+mov     al, [eax+230h]
+pop     esi
+retn
+*/
+} } }
 // 0x5F6C70
-namespace ra2 { namespace game { int AbstractClass::COMStub_79() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::COMStub_79() {
+// [IDA decompile]
+int __thiscall AbstractClass::_vt79(#374 *this)
+{
+  return (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 312))(this);
+}
+
+/* ASM:
+mov     eax, [ecx]
+jmp     dword ptr [eax+138h]
+*/
+} } }
 // 0x5F6C80
-namespace ra2 { namespace game { int ObjectClass::GetCoords_Alt() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetCoords_Alt() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetCoords_Alt(#374 *this)
+{
+  _DWORD *v1; // ecx
+  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  _DWORD *v4; // [esp+14h] [ebp+4h]
+
+  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3);
+  *v4 = *v1;
+  v4[1] = v1[1];
+  v4[2] = v1[2];
+  return (int)v4;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [esp+10h+arg_0]
+mov     edx, eax
+mov     esi, [ecx]
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+add     esp, 0Ch
+retn    8
+*/
+} } }
 // 0x5F6CB0
-namespace ra2 { namespace game { int ObjectClass::CheckFlagD0(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CheckFlagD0(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass::CheckFlagD0(_DWORD *this, int a2)
+{
+  int result; // eax
+
+  result = a2;
+  *(this + 25) = a2;
+  if ( a2 == -1 )
+    return AudioFile::Stop(this + 20);
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+cmp     eax, 0FFFFFFFFh
+mov     [ecx+64h], eax
+jnz     short locret_5F6CC4
+add     ecx, 50h ; 'P'
+call    AudioFile__Stop
+
+locret_5F6CC4:                          ; CODE XREF: ObjectClass__CheckFlagD0+A↑j
+retn    4
+*/
+} } }
 // 0x5F6CD0
-namespace ra2 { namespace game { bool ObjectClass::IsCrushable(void* a1) { return false; } } }
+namespace ra2 { namespace game { bool ObjectClass::IsCrushable(void* a1) {
+// [IDA decompile]
+bool __thiscall ObjectClass_IsCrushable(_BYTE *this, _DWORD **a2)
+{
+  if ( a2
+    && *(_BYTE *)(((int (__thiscall *)(_DWORD **))(*a2)[33])(a2) + 3369)
+    && this
+    && (*(this + 20) & 1) != 0
+    && !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 132))(this) + 3370)
+    && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 44))(this) != 6
+    && !Object::IsAlliedWithObjectHouse(a2[135], (int)this)
+    && !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)this + 352))(this) )
+  {
+    return 1;
+  }
+  return *(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 136))(this) + 557)
+      && this
+      && (*(this + 20) & 1) != 0
+      && !*(this + 676)
+      && !Object::IsAlliedWithObjectHouse(a2[135], (int)this)
+      && !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)this + 352))(this);
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+test    edi, edi
+jz      short loc_5F6D3F
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+84h]
+mov     cl, [eax+0D29h]
+test    cl, cl
+jz      short loc_5F6D3F
+test    esi, esi
+jz      short loc_5F6D3F
+test    byte ptr [esi+14h], 1
+jz      short loc_5F6D3F
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D2Ah]
+test    cl, cl
+jnz     short loc_5F6D3F
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jz      short loc_5F6D3F
+mov     ecx, [edi+21Ch]
+push    esi
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jnz     short loc_5F6D3F
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+160h]
+test    al, al
+jnz     short loc_5F6D3F
+pop     edi
+mov     al, 1
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6D3F:                             ; CODE XREF: ObjectClass__IsCrushable+A↑j
+; ObjectClass__IsCrushable+1E↑j ...
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+88h]
+mov     cl, [eax+22Dh]
+test    cl, cl
+jz      short loc_5F6D8C
+test    esi, esi
+jz      short loc_5F6D8C
+test    byte ptr [esi+14h], 1
+jz      short loc_5F6D8C
+mov     al, [esi+2A4h]
+test    al, al
+jnz     short loc_5F6D8C
+mov     ecx, [edi+21Ch]
+push    esi
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jnz     short loc_5F6D8C
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+160h]
+test    al, al
+jnz     short loc_5F6D8C
+pop     edi
+mov     al, 1
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F6D8C:                             ; CODE XREF: ObjectClass__IsCrushable+81↑j
+; ObjectClass__IsCrushable+85↑j ...
+pop     edi
+xor     al, al
+pop     esi
+retn    4
+*/
+} } }
 // 0x5F6DA0
-namespace ra2 { namespace game { int ObjectClass::ResetPointerIfMatch() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ResetPointerIfMatch() {
+// [IDA decompile]
+int __thiscall ObjectClass::ResetPointerIfMatch(#374 *this)
+{
+  int result; // eax
+  int v2; // [esp+4h] [ebp+4h]
+
+  result = v2;
+  if ( v2 == *((_DWORD *)this + 34) )
+    *((_DWORD *)this + 34) = 0;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+88h]
+cmp     eax, edx
+jnz     short locret_5F6DB8
+mov     dword ptr [ecx+88h], 0
+
+locret_5F6DB8:                          ; CODE XREF: ObjectClass__ResetPointerIfMatch+C↑j
+retn    4
+*/
+} } }
 // 0x5FC570
-namespace ra2 { namespace game { int ObjectClass::FinalizeCellPlacement(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::FinalizeCellPlacement(int a1) {
+// [IDA decompile]
+char __thiscall ObjectClass::FinalizeCellPlacement(#374 *this, int a2)
+{
+  int v2; // esi
+  __int16 *v4; // eax
+  int v5; // edx
+  int v6; // ecx
+  int v7; // ebp
+  int v8; // esi
+  int v9; // eax
+  int v10; // eax
+  signed int i; // esi
+  _DWORD *NeighbourContent; // eax
+  #374 *v13; // eax
+  int v14; // eax
+  signed int j; // esi
+  _BYTE *v16; // eax
+  int v18; // ecx
+  int v19; // esi
+  __int16 v20; // bp
+  __int16 v21; // ax
+  char v22; // bl
+  _WORD *v23; // edi
+  __int16 v24; // dx
+  bool v25; // zf
+  int v26; // ebx
+  _DWORD *v27; // eax
+  __int16 v28; // ax
+  int v29; // esi
+  char v30; // bl
+  int v31; // edx
+  __int16 v32; // cx
+  _WORD *v33; // edi
+  _DWORD *v34; // eax
+  __int16 v35; // ax
+  char v36; // si
+  int v37; // eax
+  __int16 v38; // di
+  int v39; // ecx
+  signed int v40; // eax
+  int v41; // ebp
+  int v42; // ebx
+  _WORD *v43; // edi
+  __int16 v44; // dx
+  _DWORD *v45; // esi
+  __int16 v46; // dx
+  int v47; // esi
+  __int16 v48; // bp
+  __int16 v49; // ax
+  char v50; // bl
+  _WORD *v51; // edi
+  __int16 v52; // dx
+  int v53; // ebx
+  _DWORD *v54; // eax
+  __int16 v55; // ax
+  int v56; // esi
+  char v57; // bl
+  int v58; // edx
+  __int16 v59; // cx
+  _WORD *v60; // edi
+  _WORD **v61; // eax
+  __int16 v62; // ax
+  char v63; // si
+  int v64; // eax
+  __int16 v65; // di
+  int v66; // eax
+  int v67; // ecx
+  signed int v68; // eax
+  int v69; // ebp
+  int v70; // ebx
+  _WORD *v71; // edi
+  __int16 v72; // dx
+  _DWORD *v73; // esi
+  __int16 v74; // dx
+  int v75; // ecx
+  bool IsBuildable; // al
+  int v77; // ecx
+  #374 *v78; // eax
+  int v79; // esi
+  int v80; // edi
+  int v81; // edx
+  int v82; // eax
+  int GroundHeight; // ebx
+  void **v84; // eax
+  int v85; // edx
+  void **v86; // esi
+  int v87; // eax
+  int v88; // eax
+  #374 *v89; // ecx
+  int v90; // edx
+  int v91; // [esp-1Ch] [ebp-58h]
+  char v92; // [esp-18h] [ebp-54h]
+  char v93; // [esp-14h] [ebp-50h]
+  int v94; // [esp+10h] [ebp-2Ch] BYREF
+  #374 *v95; // [esp+14h] [ebp-28h]
+  int v96; // [esp+18h] [ebp-24h]
+  int v97; // [esp+1Ch] [ebp-20h]
+  int v98; // [esp+20h] [ebp-1Ch]
+  _WORD *v99; // [esp+24h] [ebp-18h] BYREF
+  _WORD *v100; // [esp+28h] [ebp-14h] BYREF
+  int v101; // [esp+2Ch] [ebp-10h]
+  int v102; // [esp+30h] [ebp-Ch] BYREF
+  int v103; // [esp+34h] [ebp-8h]
+  int v104; // [esp+38h] [ebp-4h]
+
+  v2 = a2;
+  v95 = this;
+  if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay(this) || v2 != 1 && v2 != 3 )
+    return 0;
+  v94 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 440))(this, &a2);
+  v4 = (__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v94);
+  v6 = *((_DWORD *)this + 43);
+  v7 = (int)v4;
+  v101 = (int)v4;
+  v8 = *(_DWORD *)(v6 + 660);
+  if ( *((_BYTE *)v4 + 284) > 4u && v8 != 178 )
+    return 0;
+  switch ( v8 )
+  {
+    case 24:
+      UpdateCellClassNeighborTerrain((int)v4, v5, 0, 1);
+      break;
+    case 25:
+      UpdateCellClassNeighborTerrain((int)v4, v5, 6u, 1);
+      break;
+    case 237:
+      SetCellClassOccupancyFlags((int)v4, v5, 0, 1);
+      break;
+    case 238:
+      SetCellClassOccupancyFlags((int)v4, v5, 6u, 1);
+      break;
+    case 167:
+      if ( ObjectClass::IsCellSuitableForPlacement(v4 + 18) )
+      {
+        for ( i = 0; i < 8; ++i )
+        {
+          NeighbourContent = Cell::GetNeighbourContent((_DWORD *)v7, i);
+          NeighbourContent[17] = 178;
+          *((_BYTE *)NeighbourContent + 286) = 0;
+        }
+        *(_DWORD *)(v7 + 68) = 167;
+        *(_BYTE *)(v7 + 286) = 0;
+        v13 = (#374 *)__2_YAPAXI_Z(264);
+        if ( v13 )
+          VeinholeMonsterClass::Constructor(v13, (__int16 *)(v7 + 36));
+      }
+      goto LABEL_131;
+    default:
+      if ( v8 == 126 && !MEMORY[0x87F7E8][539633] )
+      {
+        BuildingClass::VisualizePlacement(v4);
+        goto LABEL_131;
+      }
+      break;
+  }
+  v9 = *((_DWORD *)v95 + 43);
+  if ( *(_DWORD *)(v9 + 664) != 9 )
+  {
+    if ( *(_BYTE *)(v9 + 680) )
+    {
+      if ( CellClass::IsPassable(v7, 1, 0, 0) )
+      {
+        v14 = *(_DWORD *)(*((_DWORD *)v95 + 43) + 660);
+        *(_BYTE *)(v7 + 286) = 0;
+        *(_DWORD *)(v7 + 68) = v14;
+        BuildingClass::ValidatePlacement((void **)v7, 1);
+        if ( !MEMORY[0x87F7E8][539633] )
+        {
+          CellClass::DetermineTileConnectivity(MEMORY[0x87F7E8], (__int16 *)(v7 + 36));
+          Radar::Update(MEMORY[0x87F7E8], (__int16 *)(v7 + 36));
+        }
+        if ( dword_8333BC != -1 )
+          *(_DWORD *)(v7 + 80) = MEMORY[0x87F7E8][1131];
+        for ( j = 0; j < 8; ++j )
+        {
+          v16 = Cell::GetNeighbourContent((_DWORD *)v7, j);
+          ++v16[290];
+        }
+        goto LABEL_131;
+      }
+      (*(void (__thiscall **)(#374 *))(*(_DWORD *)v95 + 248))(v95);
+      return 0;
+    }
+    v18 = *(_DWORD *)(v9 + 660);
+    if ( v18 >= 122 && v18 <= 125 )
+    {
+      v19 = v18 - 122;
+      if ( (dword_A8ED54[51709] & 1) == 0 )
+      {
+        LOBYTE(dword_A8ED54[51709]) |= 1u;
+        dword_A8ED54[51710] = -65536;
+        a2 = 0xFFFF;
+        dword_A8ED54[51711] = -65536;
+        dword_A8ED54[51712] = 0xFFFF;
+        dword_A8ED54[51713] = 0xFFFF;
+        atexit(nullsub_211);
+      }
+      if ( (dword_A8ED54[51709] & 2) == 0 )
+      {
+        LOBYTE(dword_A8ED54[51709]) |= 2u;
+        dword_A8ED54[51725] = 0xFFFF;
+        dword_A8ED54[51726] = 0;
+        dword_A8ED54[51727] = 1;
+        dword_A8ED54[51728] = -65536;
+        v96 = 0x10000;
+        dword_A8ED54[51729] = 0;
+        dword_A8ED54[51730] = 0x10000;
+        atexit(nullsub_210);
+      }
+      v20 = LOWORD(dword_A8ED54[v19 + 51710]) + v94;
+      v21 = HIWORD(v94) + HIWORD(dword_A8ED54[v19 + 51710]);
+      v22 = 1;
+      v98 = 3;
+      LOWORD(v96) = v20;
+      HIWORD(v96) = v21;
+      a2 = v96;
+      v23 = (_WORD *)(4 * (dword_8333C0[v19] & 7) + 9041544);
+      do
+      {
+        if ( *((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2) + 17) != -1 )
+          v22 = 0;
+        v24 = a2 + *v23;
+        HIWORD(v97) = v23[1] + HIWORD(a2);
+        LOWORD(v97) = v24;
+        v25 = v98 == 1;
+        a2 = v97;
+        --v98;
+      }
+      while ( !v25 );
+      a2 = v96;
+      if ( v22 )
+      {
+        v26 = 0;
+        do
+        {
+          v27 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2);
+          v27[17] = dword_8333D0[v19];
+          *((_BYTE *)v27 + 286) = v26;
+          House::AnnounceUpgrade((int)v27, (_DWORD *)0xFFFFFFFF);
+          v28 = v23[1] + HIWORD(a2);
+          ++v26;
+          LOWORD(v98) = *v23 + a2;
+          HIWORD(v98) = v28;
+          a2 = v98;
+        }
+        while ( v26 < 3 );
+        v29 = dword_8333E0[v19];
+        v30 = 0;
+        v31 = v29 & 7;
+        v32 = HIWORD(v94) + HIWORD(MEMORY[0x87F7E8][v31 + 32680]);
+        v33 = (_WORD *)(4 * v31 + 9041544);
+        LOWORD(v98) = v94 + LOWORD(MEMORY[0x87F7E8][v31 + 32680]);
+        HIWORD(v98) = v32;
+        a2 = v98;
+        v97 = dword_8333F8[v29 / 2];
+        if ( LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&a2) )
+        {
+          while ( !v30 )
+          {
+            v34 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2);
+            if ( v34[17] == v97 && *((_BYTE *)v34 + 286) == 1 )
+            {
+              v30 = 1;
+            }
+            else
+            {
+              v35 = v33[1];
+              LOWORD(v98) = a2 + *v33;
+              HIWORD(v98) = HIWORD(a2) + v35;
+              a2 = v98;
+            }
+            if ( !LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&a2) )
+            {
+              if ( !v30 )
+                goto LABEL_131;
+              break;
+            }
+          }
+          v36 = (v29 - 4) & 7;
+          v37 = v36 & 7;
+          v38 = MEMORY[0x87F7E8][v37 + 32680];
+          v100 = (_WORD *)(4 * v37 + 9041544);
+          LOWORD(v37) = HIWORD(a2) + HIWORD(MEMORY[0x87F7E8][v37 + 32680]);
+          LOWORD(v98) = a2 + v38;
+          HIWORD(v98) = v37;
+          a2 = v98;
+          v39 = abs32((__int16)v37 - SHIWORD(v96));
+          v40 = abs32((__int16)v98 - v20);
+          if ( v40 > v39 )
+            v39 = v40;
+          if ( v39 > 0 )
+          {
+            v96 = v39;
+            v41 = (v36 & 3) / 2;
+            do
+            {
+              v42 = 0;
+              v43 = (_WORD *)(12 * v41 + 11277704);
+              do
+              {
+                v44 = HIWORD(a2) + v43[1];
+                LOWORD(v98) = a2 + *v43;
+                HIWORD(v98) = v44;
+                v99 = (_WORD *)v98;
+                v45 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v99);
+                v45[17] = dword_8333F0[v41] + (Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536)) & 3);
+                *((_BYTE *)v45 + 286) = v42;
+                House::AnnounceUpgrade((int)v45, (_DWORD *)0xFFFFFFFF);
+                ++v42;
+                v43 += 2;
+              }
+              while ( v42 < 3 );
+              v46 = v100[1];
+              LOWORD(v97) = *v100 + a2;
+              HIWORD(v97) = HIWORD(a2) + v46;
+              a2 = v97;
+              --v96;
+            }
+            while ( v96 );
+          }
+        }
+      }
+      goto LABEL_131;
+    }
+    if ( v18 >= 233 && v18 <= 236 )
+    {
+      v47 = *(_DWORD *)(v9 + 660) - 233;
+      if ( (dword_A8ED54[51709] & 4) == 0 )
+      {
+        LOBYTE(dword_A8ED54[51709]) |= 4u;
+        dword_A8ED54[51714] = -65536;
+        a2 = 0xFFFF;
+        dword_A8ED54[51715] = -65536;
+        dword_A8ED54[51716] = 0xFFFF;
+        dword_A8ED54[51717] = 0xFFFF;
+        atexit(nullsub_209);
+      }
+      if ( (dword_A8ED54[51709] & 8) == 0 )
+      {
+        LOBYTE(dword_A8ED54[51709]) |= 8u;
+        dword_A8ED54[51732] = 0;
+        dword_A8ED54[51731] = 0xFFFF;
+        dword_A8ED54[51733] = 1;
+        dword_A8ED54[51734] = -65536;
+        v98 = 0x10000;
+        dword_A8ED54[51735] = 0;
+        dword_A8ED54[51736] = 0x10000;
+        atexit(nullsub_208);
+      }
+      v48 = v94 + LOWORD(dword_A8ED54[v47 + 51714]);
+      v49 = HIWORD(v94) + HIWORD(dword_A8ED54[v47 + 51714]);
+      v50 = 1;
+      v97 = 3;
+      LOWORD(v96) = v48;
+      HIWORD(v96) = v49;
+      a2 = v96;
+      v51 = (_WORD *)(4 * (dword_833408[v47] & 7) + 9041544);
+      do
+      {
+        if ( *((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2) + 17) != -1 )
+          v50 = 0;
+        v52 = a2 + *v51;
+        HIWORD(v98) = v51[1] + HIWORD(a2);
+        LOWORD(v98) = v52;
+        v25 = v97 == 1;
+        a2 = v98;
+        --v97;
+      }
+      while ( !v25 );
+      a2 = v96;
+      if ( v50 )
+      {
+        v53 = 0;
+        do
+        {
+          v54 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2);
+          v54[17] = dword_833418[v47];
+          *((_BYTE *)v54 + 286) = v53;
+          House::AnnounceUpgrade((int)v54, (_DWORD *)0xFFFFFFFF);
+          v55 = v51[1] + HIWORD(a2);
+          ++v53;
+          LOWORD(v98) = *v51 + a2;
+          HIWORD(v98) = v55;
+          a2 = v98;
+        }
+        while ( v53 < 3 );
+        v56 = dword_833428[v47];
+        v57 = 0;
+        v58 = v56 & 7;
+        v59 = HIWORD(v94) + HIWORD(MEMORY[0x87F7E8][v58 + 32680]);
+        v60 = (_WORD *)(4 * v58 + 9041544);
+        LOWORD(v98) = v94 + LOWORD(MEMORY[0x87F7E8][v58 + 32680]);
+        HIWORD(v98) = v59;
+        a2 = v98;
+        v100 = (_WORD *)dword_833440[v56 / 2];
+        if ( LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&a2) )
+        {
+          while ( !v57 )
+          {
+            v61 = (_WORD **)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2);
+            if ( v61[17] == v100 && *((_BYTE *)v61 + 286) == 1 )
+            {
+              v57 = 1;
+            }
+            else
+            {
+              v62 = v60[1];
+              LOWORD(v98) = a2 + *v60;
+              HIWORD(v98) = HIWORD(a2) + v62;
+              a2 = v98;
+            }
+            if ( !LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&a2) )
+            {
+              if ( !v57 )
+                goto LABEL_131;
+              break;
+            }
+          }
+          v63 = (v56 - 4) & 7;
+          v64 = v63 & 7;
+          v65 = LOWORD(MEMORY[0x87F7E8][v64 + 32680]) + a2;
+          v99 = (_WORD *)(4 * v64 + 9041544);
+          LOWORD(v64) = HIWORD(MEMORY[0x87F7E8][v64 + 32680]);
+          LOWORD(v98) = v65;
+          HIWORD(v98) = HIWORD(a2) + v64;
+          v66 = (__int16)(HIWORD(a2) + v64) - SHIWORD(v96);
+          a2 = v98;
+          v67 = abs32(v66);
+          v68 = abs32(v65 - v48);
+          if ( v68 > v67 )
+            v67 = v68;
+          if ( v67 > 0 )
+          {
+            v96 = v67;
+            v69 = (v63 & 3) / 2;
+            do
+            {
+              v70 = 0;
+              v71 = (_WORD *)(12 * v69 + 11277728);
+              do
+              {
+                v72 = HIWORD(a2) + v71[1];
+                LOWORD(v98) = a2 + *v71;
+                HIWORD(v98) = v72;
+                v100 = (_WORD *)v98;
+                v73 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v100);
+                v73[17] = dword_833438[v69] + (Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536)) & 3);
+                *((_BYTE *)v73 + 286) = v70;
+                House::AnnounceUpgrade((int)v73, (_DWORD *)0xFFFFFFFF);
+                ++v70;
+                v71 += 2;
+              }
+              while ( v70 < 3 );
+              v74 = v99[1];
+              LOWORD(v97) = *v99 + a2;
+              HIWORD(v97) = HIWORD(a2) + v74;
+              a2 = v97;
+              --v96;
+            }
+            while ( v96 );
+          }
+        }
+      }
+      goto LABEL_131;
+    }
+    if ( MEMORY[0x87F7E8][539633] )
+    {
+      IsBuildable = 1;
+    }
+    else
+    {
+      if ( v9 == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 256) )
+      {
+        v93 = 0;
+        v92 = 0;
+        v91 = 5;
+        v75 = v7;
+LABEL_97:
+        IsBuildable = Cell::IsBuildable(v75, v91, v92, v93, -1, 0, -1, 1);
+        goto LABEL_110;
+      }
+      if ( v9 == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 252) || v9 == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 248) )
+      {
+        IsBuildable = Cell::IsBuildable(v7, 1, 0, 0, -1, 0, -1, 1);
+      }
+      else
+      {
+        if ( v18 == 24 || v18 == 25 || v18 == 237 || v18 == 238 )
+        {
+          IsBuildable = 1;
+          goto LABEL_111;
+        }
+        v93 = 1;
+        v25 = v18 == 102;
+        v92 = 1;
+        v91 = 1;
+        v75 = v7;
+        if ( !v25 )
+          goto LABEL_97;
+        IsBuildable = Cell::IsBuildable(v7, 1, 1, 1, -1, 0, -1, 1);
+        if ( *(_BYTE *)(v7 + 284) > 4u )
+          IsBuildable = 0;
+      }
+    }
+LABEL_110:
+    if ( MEMORY[0x87F7E8][539633] )
+    {
+LABEL_113:
+      if ( IsBuildable )
+      {
+        v78 = v95;
+        *(_DWORD *)(v7 + 68) = *(_DWORD *)(*((_DWORD *)v95 + 43) + 660);
+        if ( v8 != 24 && v8 != 25 && v8 != 237 && v8 != 238 )
+          *(_BYTE *)(v7 + 286) = 0;
+        if ( *(_DWORD *)(*((_DWORD *)v78 + 43) + 664) == 5 )
+        {
+          *(_BYTE *)(v7 + 286) = 1;
+          ObjectClass::UpdateTiberiumGrowth(v7, 0);
+          v78 = v95;
+        }
+        if ( *(_BYTE *)(*((_DWORD *)v78 + 43) + 682) )
+          *(_BYTE *)(v7 + 286) = -1;
+        goto LABEL_124;
+      }
+LABEL_123:
+      v78 = v95;
+LABEL_124:
+      if ( *(_DWORD *)(*((_DWORD *)v78 + 43) + 668) )
+      {
+        v79 = *((_DWORD *)v95 + 39);
+        v80 = *((_DWORD *)v95 + 40);
+        v81 = *((_DWORD *)v95 + 41);
+        v102 = v79;
+        v104 = v81;
+        v82 = *((_DWORD *)v95 + 41);
+        v103 = *((_DWORD *)v95 + 40);
+        v104 = v82;
+        GroundHeight = Cell::GetGroundHeight(&v102);
+        v84 = (void **)__2_YAPAXI_Z(456);
+        if ( v84 )
+        {
+          v102 = v79 + 384;
+          v103 = v80 + 384;
+          v85 = *((_DWORD *)v95 + 43);
+          v104 = GroundHeight;
+          v86 = AnimClass::ctor(v84, *(void **)(v85 + 668), &v102, 0, 1, (void *)0x600, 0, 0);
+        }
+        else
+        {
+          v86 = 0;
+        }
+        v87 = BuildingClass::FindByCellHash((_DWORD *)v7);
+        if ( v87 != -1 )
+        {
+          v88 = *(_DWORD *)(dword_A8ED54[131558] + 4 * v87);
+          if ( v88 )
+          {
+            v86[53] = *(void **)(*(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(v88 + 192)) + 780);
+            v86[63] = (void *)*(__int16 *)(v7 + 266);
+          }
+        }
+      }
+      goto LABEL_131;
+    }
+LABEL_111:
+    v77 = *(_DWORD *)(v7 + 68);
+    if ( v77 != -1 && *(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v77) + 690) )
+      goto LABEL_123;
+    goto LABEL_113;
+  }
+  v10 = *(_DWORD *)(v9 + 660);
+  *(_BYTE *)(v7 + 286) = 0;
+  *(_DWORD *)(v7 + 68) = v10;
+LABEL_131:
+  House::AnnounceUpgrade(v101, (_DWORD *)0xFFFFFFFF);
+  v89 = v95;
+  v90 = *(_DWORD *)v95;
+  *((_BYTE *)v95 + 116) = 0;
+  *((_BYTE *)v89 + 129) = 1;
+  (*(void (**)(void))(v90 + 248))();
+  return 1;
+}
+
+/* ASM:
+sub     esp, 2Ch
+push    ebx
+push    ebp
+push    esi
+mov     esi, [esp+38h+arg_0]
+push    edi
+mov     edi, ecx
+push    esi
+mov     [esp+40h+var_28], edi
+call    ObjectClass__UpdateProductionDisplay
+test    al, al
+jz      loc_5FC784
+cmp     esi, 1
+jz      short loc_5FC59D
+cmp     esi, 3
+jnz     loc_5FC784
+
+loc_5FC59D:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+22↑j
+mov     eax, [edi]
+lea     ecx, [esp+3Ch+arg_0]
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+1B8h]
+mov     edx, [eax]
+lea     eax, [esp+3Ch+var_2C]
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+40h+var_2C], edx
+call    CellCoord__To_CellObj
+mov     ecx, [edi+0ACh]
+mov     ebp, eax
+mov     [esp+3Ch+var_10], ebp
+mov     al, [ebp+11Ch]
+mov     esi, [ecx+294h]
+cmp     al, 4
+jbe     short loc_5FC5E9
+cmp     esi, 0B2h
+jnz     loc_5FC784
+
+loc_5FC5E9:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+6B↑j
+or      ebx, 0FFFFFFFFh
+xor     edi, edi
+cmp     esi, 18h
+jz      short loc_5FC605
+cmp     esi, 19h
+jnz     short loc_5FC611
+push    1
+push    6
+mov     ecx, ebp
+call    UpdateCellClassNeighborTerrain
+jmp     short loc_5FC631
+; ---------------------------------------------------------------------------
+
+loc_5FC605:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+81↑j
+push    1
+push    edi
+mov     ecx, ebp
+call    UpdateCellClassNeighborTerrain
+jmp     short loc_5FC631
+; ---------------------------------------------------------------------------
+
+loc_5FC611:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+86↑j
+cmp     esi, 0EDh
+jz      short loc_5FC627
+cmp     esi, 0EEh
+jnz     short loc_5FC65D
+push    1
+push    6
+jmp     short loc_5FC62A
+; ---------------------------------------------------------------------------
+
+loc_5FC627:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+A7↑j
+push    1
+push    edi
+
+loc_5FC62A:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B5↑j
+mov     ecx, ebp
+call    SetCellClassOccupancyFlags
+
+loc_5FC631:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+93↑j
+; ObjectClass__FinalizeCellPlacement+9F↑j ...
+mov     edx, [esp+3Ch+var_28]
+mov     eax, [edx+0ACh]
+cmp     dword ptr [eax+298h], 9
+jnz     loc_5FC6E6
+mov     eax, [eax+294h]
+mov     byte ptr [ebp+11Eh], 0
+mov     [ebp+44h], eax
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FC65D:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+AF↑j
+cmp     esi, 0A7h
+jnz     short loc_5FC6C5
+lea     ebx, [ebp+24h]
+mov     ecx, ebx
+call    ObjectClass__IsCellSuitableForPlacement
+test    al, al
+jz      loc_5FD1FA
+xor     esi, esi
+
+loc_5FC679:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+123↓j
+push    esi
+mov     ecx, ebp
+call    Cell__GetNeighbourContent
+inc     esi
+mov     dword ptr [eax+44h], 0B2h
+cmp     esi, 8
+mov     byte ptr [eax+11Eh], 0
+jl      short loc_5FC679
+push    108h            ; Size
+mov     dword ptr [ebp+44h], 0A7h
+mov     byte ptr [ebp+11Eh], 0
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, edi
+jz      loc_5FD1FA
+push    ebx
+mov     ecx, eax
+call    VeinholeMonsterClass__Constructor
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FC6C5:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+F3↑j
+cmp     esi, 7Eh ; '~'
+jnz     loc_5FC631
+cmp     ds:0A8E7ACh, edi
+jnz     loc_5FC631
+mov     ecx, ebp
+call    BuildingClass__VisualizePlacement
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FC6E6:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+D2↑j
+mov     cl, [eax+2A8h]
+test    cl, cl
+jz      loc_5FC790
+push    edi
+push    edi
+push    1
+mov     ecx, ebp
+call    CellClass__IsPassable
+mov     ecx, [esp+3Ch+var_28]
+test    al, al
+jz      short loc_5FC77C
+mov     edx, [ecx+0ACh]
+push    1               ; char
+mov     ecx, ebp        ; void **
+mov     eax, [edx+294h]
+mov     byte ptr [ebp+11Eh], 0
+mov     [ebp+44h], eax
+call    BuildingClass__ValidatePlacement
+cmp     ds:0A8E7ACh, edi
+jnz     short loc_5FC747
+lea     esi, [ebp+24h]
+mov     ecx, 87F7E8h
+push    esi
+call    CellClass__DetermineTileConnectivity
+push    esi
+mov     ecx, 87F7E8h
+call    Radar__Update
+
+loc_5FC747:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+1BC↑j
+cmp     dword_8333BC, ebx
+jz      short loc_5FC758
+mov     ecx, ds:880994h
+mov     [ebp+50h], ecx
+
+loc_5FC758:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+1DD↑j
+xor     esi, esi
+
+loc_5FC75A:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+205↓j
+push    esi
+mov     ecx, ebp
+call    Cell__GetNeighbourContent
+mov     dl, [eax+122h]
+add     eax, 122h
+inc     dl
+inc     esi
+cmp     esi, 8
+mov     [eax], dl
+jl      short loc_5FC75A
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FC77C:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+195↑j
+mov     edx, [ecx]
+call    dword ptr [edx+0F8h]
+
+loc_5FC784:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+19↑j
+; ObjectClass__FinalizeCellPlacement+27↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 2Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5FC790:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+17E↑j
+mov     ecx, [eax+294h]
+cmp     ecx, 7Ah ; 'z'
+jl      loc_5FCBB9
+cmp     ecx, 7Dh ; '}'
+jg      loc_5FCBB9
+mov     al, byte ptr dword_A8ED54+327F4h
+mov     esi, ecx
+sub     esi, 7Ah ; 'z'
+test    al, 1
+jnz     short loc_5FC81C
+mov     dl, al
+mov     word ptr [esp+3Ch+arg_0], di
+mov     word ptr [esp+3Ch+arg_0+2], bx
+mov     eax, [esp+3Ch+arg_0]
+or      dl, 1
+mov     word ptr [esp+3Ch+arg_0], di
+mov     word ptr [esp+3Ch+arg_0+2], bx
+mov     ecx, [esp+3Ch+arg_0]
+mov     byte ptr dword_A8ED54+327F4h, dl
+mov     word ptr [esp+3Ch+arg_0], bx
+mov     word ptr [esp+3Ch+arg_0+2], di
+mov     edx, [esp+3Ch+arg_0]
+mov     dword_A8ED54+327F8h, eax
+mov     word ptr [esp+3Ch+arg_0], bx
+mov     word ptr [esp+3Ch+arg_0+2], di
+mov     eax, [esp+3Ch+arg_0]
+push    offset nullsub_211 ; void (__cdecl *)()
+mov     dword_A8ED54+327FCh, ecx
+mov     dword_A8ED54+32800h, edx
+mov     dword_A8ED54+32804h, eax
+call    _atexit
+add     esp, 4
+
+loc_5FC81C:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+244↑j
+mov     cl, byte ptr dword_A8ED54+327F4h
+mov     al, 2
+test    al, cl
+jnz     loc_5FC8C0
+mov     dl, cl
+mov     word ptr [esp+3Ch+var_24], bx
+or      dl, al
+mov     word ptr [esp+3Ch+var_24+2], di
+mov     ecx, [esp+3Ch+var_24]
+mov     byte ptr dword_A8ED54+327F4h, dl
+mov     word ptr [esp+3Ch+var_24], di
+mov     word ptr [esp+3Ch+var_24+2], di
+mov     edx, [esp+3Ch+var_24]
+mov     eax, 1
+mov     dword_A8ED54+32834h, ecx
+mov     word ptr [esp+3Ch+var_24], ax
+mov     word ptr [esp+3Ch+var_24+2], di
+mov     ecx, [esp+3Ch+var_24]
+mov     dword_A8ED54+32838h, edx
+mov     word ptr [esp+3Ch+var_24], di
+mov     word ptr [esp+3Ch+var_24+2], bx
+mov     edx, [esp+3Ch+var_24]
+mov     dword_A8ED54+3283Ch, ecx
+mov     word ptr [esp+3Ch+var_24], di
+mov     word ptr [esp+3Ch+var_24+2], di
+mov     ecx, [esp+3Ch+var_24]
+mov     dword_A8ED54+32840h, edx
+mov     word ptr [esp+3Ch+var_24], di
+mov     word ptr [esp+3Ch+var_24+2], ax
+mov     edx, [esp+3Ch+var_24]
+push    offset nullsub_210 ; void (__cdecl *)()
+mov     dword_A8ED54+32844h, ecx
+mov     dword_A8ED54+32848h, edx
+call    _atexit
+add     esp, 4
+
+loc_5FC8C0:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+2B6↑j
+mov     bp, word ptr [esp+3Ch+var_2C]
+mov     ax, word ptr dword_A8ED54+327FAh[esi*4]
+add     bp, word ptr dword_A8ED54+327F8h[esi*4]
+add     ax, word ptr [esp+3Ch+var_2C+2]
+mov     bl, 1
+mov     [esp+3Ch+var_1C], 3
+mov     word ptr [esp+3Ch+var_24], bp
+mov     word ptr [esp+3Ch+var_24+2], ax
+mov     eax, [esp+3Ch+var_24]
+mov     [esp+3Ch+arg_0], eax
+mov     eax, dword_8333C0[esi*4]
+and     eax, 7
+lea     edi, ds:89F688h[eax*4]
+
+loc_5FC907:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+3DA↓j
+lea     ecx, [esp+3Ch+arg_0]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+cmp     dword ptr [eax+44h], 0FFFFFFFFh
+jz      short loc_5FC91E
+xor     bl, bl
+
+loc_5FC91E:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+3AA↑j
+mov     ax, word ptr [esp+3Ch+arg_0+2]
+mov     dx, [edi]
+add     ax, [edi+2]
+add     dx, word ptr [esp+3Ch+arg_0]
+mov     word ptr [esp+3Ch+var_20+2], ax
+mov     eax, [esp+3Ch+var_1C]
+mov     word ptr [esp+3Ch+var_20], dx
+mov     ecx, [esp+3Ch+var_20]
+dec     eax
+mov     [esp+3Ch+arg_0], ecx
+mov     [esp+3Ch+var_1C], eax
+jnz     short loc_5FC907
+mov     edx, [esp+3Ch+var_24]
+test    bl, bl
+mov     [esp+3Ch+arg_0], edx
+jz      loc_5FD1FA
+xor     ebx, ebx
+
+loc_5FC95E:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+43D↓j
+lea     eax, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+mov     ecx, dword_8333D0[esi*4]
+push    0FFFFFFFFh
+mov     [eax+44h], ecx
+mov     ecx, eax
+mov     [eax+11Eh], bl
+call    House__AnnounceUpgrade
+mov     dx, word ptr [esp+3Ch+arg_0]
+mov     ax, word ptr [esp+3Ch+arg_0+2]
+add     dx, [edi]
+add     ax, [edi+2]
+inc     ebx
+mov     word ptr [esp+3Ch+var_1C], dx
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+cmp     ebx, 3
+mov     [esp+3Ch+arg_0], ecx
+jl      short loc_5FC95E
+mov     esi, dword_8333E0[esi*4]
+xor     bl, bl
+mov     edx, esi
+and     edx, 7
+mov     ax, ds:89F688h[edx*4]
+mov     cx, ds:89F68Ah[edx*4]
+add     ax, word ptr [esp+3Ch+var_2C]
+add     cx, word ptr [esp+3Ch+var_2C+2]
+lea     edi, ds:89F688h[edx*4]
+mov     word ptr [esp+3Ch+var_1C], ax
+mov     word ptr [esp+3Ch+var_1C+2], cx
+mov     edx, [esp+3Ch+var_1C]
+mov     eax, esi
+mov     [esp+3Ch+arg_0], edx
+lea     ecx, [esp+3Ch+arg_0]
+cdq
+sub     eax, edx
+push    ecx
+sar     eax, 1
+mov     ecx, 87F7E8h
+mov     eax, dword_8333F8[eax*4]
+mov     [esp+40h+var_20], eax
+call    LayerClass__CoordinatesLegal
+test    al, al
+jz      loc_5FD1FA
+
+loc_5FCA19:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+508↓j
+test    bl, bl
+jnz     short loc_5FCA82
+lea     edx, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     ecx, [esp+3Ch+var_20]
+mov     edx, [eax+44h]
+cmp     edx, ecx
+jnz     short loc_5FCA44
+cmp     byte ptr [eax+11Eh], 1
+jnz     short loc_5FCA44
+mov     bl, 1
+jmp     short loc_5FCA67
+; ---------------------------------------------------------------------------
+
+loc_5FCA44:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+4C5↑j
+; ObjectClass__FinalizeCellPlacement+4CE↑j
+mov     dx, [edi]
+mov     ax, [edi+2]
+add     dx, word ptr [esp+3Ch+arg_0]
+add     ax, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C], dx
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+mov     [esp+3Ch+arg_0], ecx
+
+loc_5FCA67:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+4D2↑j
+lea     edx, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    edx
+call    LayerClass__CoordinatesLegal
+test    al, al
+jnz     short loc_5FCA19
+test    bl, bl
+jz      loc_5FD1FA
+
+loc_5FCA82:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+4AB↑j
+add     esi, 0FFFFFFFCh
+and     esi, 7
+mov     eax, esi
+and     eax, 7
+movsx   edx, word ptr [esp+3Ch+var_24+2]
+mov     di, ds:89F688h[eax*4]
+lea     eax, ds:89F688h[eax*4]
+mov     [esp+3Ch+var_14], eax
+add     di, word ptr [esp+3Ch+arg_0]
+mov     ax, [eax+2]
+add     ax, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C], di
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+movsx   eax, ax
+sub     eax, edx
+mov     [esp+3Ch+arg_0], ecx
+cdq
+mov     ecx, eax
+xor     ecx, edx
+sub     ecx, edx
+movsx   eax, di
+movsx   edx, bp
+sub     eax, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, ecx
+jle     short loc_5FCAE4
+mov     ecx, eax
+
+loc_5FCAE4:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+570↑j
+test    ecx, ecx
+jle     loc_5FD1FA
+mov     eax, esi
+and     eax, 80000003h
+jns     short loc_5FCAFA
+dec     eax
+or      eax, 0FFFFFFFCh
+inc     eax
+
+loc_5FCAFA:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+583↑j
+cdq
+sub     eax, edx
+mov     [esp+3Ch+var_24], ecx
+mov     ebp, eax
+sar     ebp, 1
+
+loc_5FCB05:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+63E↓j
+lea     eax, [ebp+ebp*2+0]
+xor     ebx, ebx
+lea     edi, ds:0AC1588h[eax*4]
+
+loc_5FCB12:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+60C↓j
+mov     cx, [edi]
+mov     dx, [edi+2]
+add     cx, word ptr [esp+3Ch+arg_0]
+add     dx, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C], cx
+lea     ecx, [esp+3Ch+var_18]
+mov     word ptr [esp+3Ch+var_1C+2], dx
+mov     eax, [esp+3Ch+var_1C]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+40h+var_18], eax
+call    CellCoord__To_CellObj
+mov     edx, ds:0A8B230h
+mov     esi, eax
+lea     ecx, [edx+218h]
+call    Random__State
+mov     ecx, dword_8333F0[ebp*4]
+and     eax, 3
+add     eax, ecx
+push    0FFFFFFFFh
+mov     ecx, esi
+mov     [esi+44h], eax
+mov     [esi+11Eh], bl
+call    House__AnnounceUpgrade
+inc     ebx
+add     edi, 4
+cmp     ebx, 3
+jl      short loc_5FCB12
+mov     eax, [esp+3Ch+var_14]
+mov     cx, word ptr [esp+3Ch+arg_0]
+mov     dx, [eax+2]
+add     cx, [eax]
+add     dx, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_20], cx
+mov     word ptr [esp+3Ch+var_20+2], dx
+mov     eax, [esp+3Ch+var_20]
+mov     [esp+3Ch+arg_0], eax
+mov     eax, [esp+3Ch+var_24]
+dec     eax
+mov     [esp+3Ch+var_24], eax
+jnz     loc_5FCB05
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FCBB9:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+229↑j
+; ObjectClass__FinalizeCellPlacement+232↑j
+cmp     ecx, 0E9h
+jl      loc_5FCFE7
+cmp     ecx, 0ECh
+jg      loc_5FCFE7
+mov     esi, [eax+294h]
+mov     al, byte ptr dword_A8ED54+327F4h
+sub     esi, 0E9h
+test    al, 4
+jnz     short loc_5FCC4D
+mov     dl, al
+mov     word ptr [esp+3Ch+arg_0], di
+or      dl, 4
+mov     word ptr [esp+3Ch+arg_0+2], bx
+mov     ecx, [esp+3Ch+arg_0]
+mov     byte ptr dword_A8ED54+327F4h, dl
+mov     word ptr [esp+3Ch+arg_0], di
+mov     word ptr [esp+3Ch+arg_0+2], bx
+mov     edx, [esp+3Ch+arg_0]
+mov     word ptr [esp+3Ch+arg_0], bx
+mov     word ptr [esp+3Ch+arg_0+2], di
+mov     eax, [esp+3Ch+arg_0]
+mov     dword_A8ED54+32808h, ecx
+mov     word ptr [esp+3Ch+arg_0], bx
+mov     word ptr [esp+3Ch+arg_0+2], di
+mov     ecx, [esp+3Ch+arg_0]
+push    offset nullsub_209 ; void (__cdecl *)()
+mov     dword_A8ED54+3280Ch, edx
+mov     dword_A8ED54+32810h, eax
+mov     dword_A8ED54+32814h, ecx
+call    _atexit
+add     esp, 4
+
+loc_5FCC4D:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+674↑j
+mov     al, byte ptr dword_A8ED54+327F4h
+test    al, 8
+jnz     loc_5FCCEE
+mov     dl, al
+mov     word ptr [esp+3Ch+var_1C], bx
+or      dl, 8
+mov     word ptr [esp+3Ch+var_1C+2], di
+mov     byte ptr dword_A8ED54+327F4h, dl
+mov     edx, [esp+3Ch+var_1C]
+mov     word ptr [esp+3Ch+var_1C], di
+mov     word ptr [esp+3Ch+var_1C+2], di
+mov     eax, [esp+3Ch+var_1C]
+mov     word ptr [esp+3Ch+var_1C+2], di
+mov     dword_A8ED54+32850h, eax
+mov     eax, 1
+mov     word ptr [esp+3Ch+var_1C], ax
+mov     ecx, [esp+3Ch+var_1C]
+mov     dword_A8ED54+3284Ch, edx
+mov     word ptr [esp+3Ch+var_1C], di
+mov     word ptr [esp+3Ch+var_1C+2], bx
+mov     edx, [esp+3Ch+var_1C]
+mov     dword_A8ED54+32854h, ecx
+mov     word ptr [esp+3Ch+var_1C], di
+mov     word ptr [esp+3Ch+var_1C+2], di
+mov     ecx, [esp+3Ch+var_1C]
+mov     dword_A8ED54+32858h, edx
+mov     word ptr [esp+3Ch+var_1C], di
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     edx, [esp+3Ch+var_1C]
+push    offset nullsub_208 ; void (__cdecl *)()
+mov     dword_A8ED54+3285Ch, ecx
+mov     dword_A8ED54+32860h, edx
+call    _atexit
+add     esp, 4
+
+loc_5FCCEE:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+6E4↑j
+mov     bp, word ptr dword_A8ED54+32808h[esi*4]
+mov     ax, word ptr dword_A8ED54+3280Ah[esi*4]
+add     bp, word ptr [esp+3Ch+var_2C]
+add     ax, word ptr [esp+3Ch+var_2C+2]
+mov     bl, 1
+mov     [esp+3Ch+var_20], 3
+mov     word ptr [esp+3Ch+var_24], bp
+mov     word ptr [esp+3Ch+var_24+2], ax
+mov     eax, [esp+3Ch+var_24]
+mov     [esp+3Ch+arg_0], eax
+mov     eax, dword_833408[esi*4]
+and     eax, 7
+lea     edi, ds:89F688h[eax*4]
+
+loc_5FCD35:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+808↓j
+lea     ecx, [esp+3Ch+arg_0]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+cmp     dword ptr [eax+44h], 0FFFFFFFFh
+jz      short loc_5FCD4C
+xor     bl, bl
+
+loc_5FCD4C:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+7D8↑j
+mov     ax, word ptr [esp+3Ch+arg_0+2]
+mov     dx, [edi]
+add     ax, [edi+2]
+add     dx, word ptr [esp+3Ch+arg_0]
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     eax, [esp+3Ch+var_20]
+mov     word ptr [esp+3Ch+var_1C], dx
+mov     ecx, [esp+3Ch+var_1C]
+dec     eax
+mov     [esp+3Ch+arg_0], ecx
+mov     [esp+3Ch+var_20], eax
+jnz     short loc_5FCD35
+mov     edx, [esp+3Ch+var_24]
+test    bl, bl
+mov     [esp+3Ch+arg_0], edx
+jz      loc_5FD1FA
+xor     ebx, ebx
+
+loc_5FCD8C:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+86B↓j
+lea     eax, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+mov     ecx, dword_833418[esi*4]
+push    0FFFFFFFFh
+mov     [eax+44h], ecx
+mov     ecx, eax
+mov     [eax+11Eh], bl
+call    House__AnnounceUpgrade
+mov     dx, word ptr [esp+3Ch+arg_0]
+mov     ax, word ptr [esp+3Ch+arg_0+2]
+add     dx, [edi]
+add     ax, [edi+2]
+inc     ebx
+mov     word ptr [esp+3Ch+var_1C], dx
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+cmp     ebx, 3
+mov     [esp+3Ch+arg_0], ecx
+jl      short loc_5FCD8C
+mov     esi, dword_833428[esi*4]
+xor     bl, bl
+mov     edx, esi
+and     edx, 7
+mov     ax, ds:89F688h[edx*4]
+mov     cx, ds:89F68Ah[edx*4]
+add     ax, word ptr [esp+3Ch+var_2C]
+add     cx, word ptr [esp+3Ch+var_2C+2]
+lea     edi, ds:89F688h[edx*4]
+mov     word ptr [esp+3Ch+var_1C], ax
+mov     word ptr [esp+3Ch+var_1C+2], cx
+mov     edx, [esp+3Ch+var_1C]
+mov     eax, esi
+mov     [esp+3Ch+arg_0], edx
+lea     ecx, [esp+3Ch+arg_0]
+cdq
+sub     eax, edx
+push    ecx
+sar     eax, 1
+mov     ecx, 87F7E8h
+mov     eax, dword_833440[eax*4]
+mov     [esp+40h+var_14], eax
+call    LayerClass__CoordinatesLegal
+test    al, al
+jz      loc_5FD1FA
+
+loc_5FCE47:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+936↓j
+test    bl, bl
+jnz     short loc_5FCEB0
+lea     edx, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     ecx, [esp+3Ch+var_14]
+mov     edx, [eax+44h]
+cmp     edx, ecx
+jnz     short loc_5FCE72
+cmp     byte ptr [eax+11Eh], 1
+jnz     short loc_5FCE72
+mov     bl, 1
+jmp     short loc_5FCE95
+; ---------------------------------------------------------------------------
+
+loc_5FCE72:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+8F3↑j
+; ObjectClass__FinalizeCellPlacement+8FC↑j
+mov     dx, [edi]
+mov     ax, [edi+2]
+add     dx, word ptr [esp+3Ch+arg_0]
+add     ax, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C], dx
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+mov     [esp+3Ch+arg_0], ecx
+
+loc_5FCE95:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+900↑j
+lea     edx, [esp+3Ch+arg_0]
+mov     ecx, 87F7E8h
+push    edx
+call    LayerClass__CoordinatesLegal
+test    al, al
+jnz     short loc_5FCE47
+test    bl, bl
+jz      loc_5FD1FA
+
+loc_5FCEB0:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+8D9↑j
+add     esi, 0FFFFFFFCh
+mov     di, word ptr [esp+3Ch+arg_0]
+and     esi, 7
+mov     eax, esi
+and     eax, 7
+movsx   edx, word ptr [esp+3Ch+var_24+2]
+add     di, ds:89F688h[eax*4]
+lea     eax, ds:89F688h[eax*4]
+mov     [esp+3Ch+var_18], eax
+mov     ax, [eax+2]
+mov     word ptr [esp+3Ch+var_1C], di
+add     ax, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C+2], ax
+mov     ecx, [esp+3Ch+var_1C]
+movsx   eax, ax
+sub     eax, edx
+mov     [esp+3Ch+arg_0], ecx
+cdq
+mov     ecx, eax
+xor     ecx, edx
+sub     ecx, edx
+movsx   eax, di
+movsx   edx, bp
+sub     eax, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, ecx
+jle     short loc_5FCF12
+mov     ecx, eax
+
+loc_5FCF12:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+99E↑j
+test    ecx, ecx
+jle     loc_5FD1FA
+mov     eax, esi
+and     eax, 80000003h
+jns     short loc_5FCF28
+dec     eax
+or      eax, 0FFFFFFFCh
+inc     eax
+
+loc_5FCF28:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+9B1↑j
+cdq
+sub     eax, edx
+mov     [esp+3Ch+var_24], ecx
+mov     ebp, eax
+sar     ebp, 1
+
+loc_5FCF33:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+A6C↓j
+lea     eax, [ebp+ebp*2+0]
+xor     ebx, ebx
+lea     edi, ds:0AC15A0h[eax*4]
+
+loc_5FCF40:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+A3A↓j
+mov     cx, [edi]
+mov     dx, [edi+2]
+add     cx, word ptr [esp+3Ch+arg_0]
+add     dx, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_1C], cx
+lea     ecx, [esp+3Ch+var_14]
+mov     word ptr [esp+3Ch+var_1C+2], dx
+mov     eax, [esp+3Ch+var_1C]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+40h+var_14], eax
+call    CellCoord__To_CellObj
+mov     edx, ds:0A8B230h
+mov     esi, eax
+lea     ecx, [edx+218h]
+call    Random__State
+mov     ecx, dword_833438[ebp*4]
+and     eax, 3
+add     eax, ecx
+push    0FFFFFFFFh
+mov     ecx, esi
+mov     [esi+44h], eax
+mov     [esi+11Eh], bl
+call    House__AnnounceUpgrade
+inc     ebx
+add     edi, 4
+cmp     ebx, 3
+jl      short loc_5FCF40
+mov     eax, [esp+3Ch+var_18]
+mov     cx, word ptr [esp+3Ch+arg_0]
+mov     dx, [eax+2]
+add     cx, [eax]
+add     dx, word ptr [esp+3Ch+arg_0+2]
+mov     word ptr [esp+3Ch+var_20], cx
+mov     word ptr [esp+3Ch+var_20+2], dx
+mov     eax, [esp+3Ch+var_20]
+mov     [esp+3Ch+arg_0], eax
+mov     eax, [esp+3Ch+var_24]
+dec     eax
+mov     [esp+3Ch+var_24], eax
+jnz     loc_5FCF33
+jmp     loc_5FD1FA
+; ---------------------------------------------------------------------------
+
+loc_5FCFE7:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+64F↑j
+; ObjectClass__FinalizeCellPlacement+65B↑j
+cmp     ds:0A8E7ACh, edi
+jnz     loc_5FD077
+mov     edx, ds:8871E0h
+cmp     eax, [edx+100h]
+jnz     short loc_5FD013
+push    1
+push    ebx
+push    edi
+push    ebx
+push    edi
+push    edi
+push    5
+mov     ecx, ebp
+
+loc_5FD00C:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+ADD↓j
+call    Cell__IsBuildable
+jmp     short loc_5FD079
+; ---------------------------------------------------------------------------
+
+loc_5FD013:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+A8F↑j
+cmp     eax, [edx+0FCh]
+jz      short loc_5FD065
+cmp     eax, [edx+0F8h]
+jz      short loc_5FD065
+cmp     ecx, 18h
+jz      short loc_5FD061
+cmp     ecx, 19h
+jz      short loc_5FD061
+cmp     ecx, 0EDh
+jz      short loc_5FD061
+cmp     ecx, 0EEh
+jz      short loc_5FD061
+push    1
+push    ebx
+push    edi
+push    ebx
+push    1
+cmp     ecx, 66h ; 'f'
+push    1
+push    1
+mov     ecx, ebp
+jnz     short loc_5FD00C
+call    Cell__IsBuildable
+cmp     byte ptr [ebp+11Ch], 4
+jbe     short loc_5FD079
+xor     al, al
+jmp     short loc_5FD079
+; ---------------------------------------------------------------------------
+
+loc_5FD061:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+AB6↑j
+; ObjectClass__FinalizeCellPlacement+ABB↑j ...
+mov     al, 1
+jmp     short loc_5FD081
+; ---------------------------------------------------------------------------
+
+loc_5FD065:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+AA9↑j
+; ObjectClass__FinalizeCellPlacement+AB1↑j
+push    1
+push    ebx
+push    edi
+push    ebx
+push    edi
+push    edi
+push    1
+mov     ecx, ebp
+call    Cell__IsBuildable
+jmp     short loc_5FD079
+; ---------------------------------------------------------------------------
+
+loc_5FD077:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+A7D↑j
+mov     al, 1
+
+loc_5FD079:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+AA1↑j
+; ObjectClass__FinalizeCellPlacement+AEB↑j ...
+cmp     ds:0A8E7ACh, edi
+jnz     short loc_5FD09B
+
+loc_5FD081:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+AF3↑j
+mov     ecx, [ebp+44h]
+cmp     ecx, ebx
+jz      short loc_5FD09B
+mov     edx, ds:0A83D84h
+mov     ecx, [edx+ecx*4]
+mov     dl, [ecx+2B2h]
+test    dl, dl
+jnz     short loc_5FD10E
+
+loc_5FD09B:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B0F↑j
+; ObjectClass__FinalizeCellPlacement+B16↑j
+test    al, al
+jz      short loc_5FD10E
+mov     eax, [esp+3Ch+var_28]
+cmp     esi, 18h
+mov     edx, [eax+0ACh]
+mov     ecx, [edx+294h]
+mov     [ebp+44h], ecx
+jz      short loc_5FD0D3
+cmp     esi, 19h
+jz      short loc_5FD0D3
+cmp     esi, 0EDh
+jz      short loc_5FD0D3
+cmp     esi, 0EEh
+jz      short loc_5FD0D3
+mov     byte ptr [ebp+11Eh], 0
+
+loc_5FD0D3:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B45↑j
+; ObjectClass__FinalizeCellPlacement+B4A↑j ...
+mov     edx, [eax+0ACh]
+cmp     dword ptr [edx+298h], 5
+jnz     short loc_5FD0F5
+push    edi
+mov     ecx, ebp
+mov     byte ptr [ebp+11Eh], 1
+call    ObjectClass__UpdateTiberiumGrowth
+mov     eax, [esp+3Ch+var_28]
+
+loc_5FD0F5:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B70↑j
+mov     ecx, [eax+0ACh]
+mov     dl, [ecx+2AAh]
+test    dl, dl
+jz      short loc_5FD112
+mov     byte ptr [ebp+11Eh], 0FFh
+jmp     short loc_5FD112
+; ---------------------------------------------------------------------------
+
+loc_5FD10E:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B29↑j
+; ObjectClass__FinalizeCellPlacement+B2D↑j
+mov     eax, [esp+3Ch+var_28]
+
+loc_5FD112:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+B93↑j
+; ObjectClass__FinalizeCellPlacement+B9C↑j
+mov     edx, [eax+0ACh]
+cmp     [edx+29Ch], edi
+jz      loc_5FD1FA
+mov     eax, [esp+3Ch+var_28]
+add     eax, 9Ch
+mov     ecx, eax
+mov     esi, [ecx]
+mov     edi, [ecx+4]
+mov     edx, [ecx+8]
+mov     ecx, [eax]
+mov     [esp+3Ch+var_C], ecx
+mov     [esp+3Ch+var_4], edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+lea     ecx, [esp+3Ch+var_C]
+mov     [esp+3Ch+var_8], edx
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+40h+var_4], eax
+call    Cell__GetGroundHeight
+push    1C8h            ; Size
+mov     ebx, eax
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_5FD1B7
+lea     ecx, [esi+180h]
+lea     edx, [edi+180h]
+push    0               ; char
+push    0               ; int
+mov     [esp+44h+var_C], ecx
+mov     ecx, [esp+44h+var_28]
+mov     [esp+44h+var_8], edx
+push    600h            ; int
+push    1               ; int
+lea     edx, [esp+4Ch+var_C]
+push    0               ; int
+push    edx             ; int
+mov     edx, [ecx+0ACh]
+mov     [esp+54h+var_4], ebx
+mov     ecx, [edx+29Ch]
+push    ecx             ; int
+mov     ecx, eax        ; void **
+call    AnimClass__ctor
+mov     esi, eax
+jmp     short loc_5FD1B9
+; ---------------------------------------------------------------------------
+
+loc_5FD1B7:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+BFF↑j
+xor     esi, esi
+
+loc_5FD1B9:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+C45↑j
+mov     ecx, ebp
+call    BuildingClass__FindByCellHash
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5FD1FA
+mov     edx, dword_A8ED54+80798h
+mov     eax, [edx+eax*4]
+test    eax, eax
+jz      short loc_5FD1FA
+mov     eax, [eax+0C0h]
+mov     ecx, dword_A8ED54+76780h
+mov     edx, [ecx+eax*4]
+mov     eax, [edx+30Ch]
+mov     [esi+0D4h], eax
+movsx   ecx, word ptr [ebp+10Ah]
+mov     [esi+0FCh], ecx
+
+loc_5FD1FA:                             ; CODE XREF: ObjectClass__FinalizeCellPlacement+E8↑j
+; ObjectClass__FinalizeCellPlacement+101↑j ...
+mov     ecx, [esp+3Ch+var_10]
+push    0FFFFFFFFh
+call    House__AnnounceUpgrade
+mov     ecx, [esp+3Ch+var_28]
+mov     edx, [ecx]
+mov     byte ptr [ecx+74h], 0
+mov     byte ptr [ecx+81h], 1
+call    dword ptr [edx+0F8h]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+add     esp, 2Ch
+retn    4
+*/
+} } }
 // 0x5FF250
-namespace ra2 { namespace game { void* ObjectClass::RegisterInArray(int a1, int a2, int a3, int a4) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::RegisterInArray(int a1, int a2, int a3, int a4) {
+// [IDA decompile]
+_DWORD *__thiscall ObjectClass_RegisterInArray(_DWORD *this, int a2, int a3, int a4, int a5)
+{
+  int v6; // eax
+
+  *this = a2;
+  *(this + 1) = a3;
+  *(this + 3) = 0;
+  *(this + 5) = 0;
+  *(this + 2) = a4;
+  *(this + 4) = a5;
+  if ( MEMORY[0xAC1688] < MEMORY[0xAC1680]
+    || (MEMORY[0xAC1685] || !MEMORY[0xAC1680])
+    && MEMORY[0xAC168C] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xAC1678] + 8))(
+         &MEMORY[0xAC1678],
+         MEMORY[0xAC1680] + MEMORY[0xAC168C],
+         0) )
+  {
+    v6 = MEMORY[0xAC1688]++;
+    *((_DWORD *)MEMORY[0xAC167C] + v6) = this;
+  }
+  return this;
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+4+arg_0]
+mov     eax, esi
+mov     [eax], ecx
+mov     ecx, [esp+4+arg_8]
+mov     [eax+4], edx
+xor     edx, edx
+mov     [esi+0Ch], edx
+mov     [esi+14h], edx
+mov     [eax+8], ecx
+mov     eax, [esp+4+arg_C]
+mov     [esi+10h], eax
+mov     eax, dword_A8ED54+3292Ch
+cmp     dword_A8ED54+32934h, eax
+jl      short loc_5FF2B1
+cmp     byte ptr dword_A8ED54+32931h, dl
+jnz     short loc_5FF291
+cmp     eax, edx
+jnz     short loc_5FF2C9
+
+loc_5FF291:                             ; CODE XREF: ObjectClass__RegisterInArray+3B↑j
+mov     ecx, dword_A8ED54+32938h
+cmp     ecx, edx
+jle     short loc_5FF2C9
+add     ecx, eax
+push    edx
+mov     edx, dword_A8ED54+32924h
+push    ecx
+mov     ecx, (offset dword_A8ED54+32924h)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_5FF2C9
+
+loc_5FF2B1:                             ; CODE XREF: ObjectClass__RegisterInArray+33↑j
+mov     ecx, dword_A8ED54+32934h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+32934h, ecx
+mov     ecx, dword_A8ED54+32928h
+mov     [ecx+eax*4], esi
+
+loc_5FF2C9:                             ; CODE XREF: ObjectClass__RegisterInArray+3F↑j
+; ObjectClass__RegisterInArray+49↑j ...
+mov     eax, esi
+pop     esi
+retn    10h
+*/
+} } }
 // 0x6293E0
-namespace ra2 { namespace game { void AbstractClass::ProcessData() { } } }
+namespace ra2 { namespace game { void AbstractClass::ProcessData() {
+// [IDA decompile]
+void __thiscall sub_6293E0(int this)
+{
+  int v2; // ecx
+  int v3; // eax
+  int v4; // eax
+  int v5; // [esp+8h] [ebp-4h] BYREF
+
+  v2 = *(_DWORD *)(this + 68);
+  *(_DWORD *)this = &ParasiteClass::`vftable';
+  *(_DWORD *)(this + 4) = &ParasiteClass::`vftable';
+  *(_DWORD *)(this + 8) = &ParasiteClass::`vftable';
+  *(_DWORD *)(this + 12) = &ParasiteClass::`vftable';
+  *(_DWORD *)(this + 76) = 0;
+  *(_DWORD *)(this + 80) = 0;
+  *(_DWORD *)(this + 72) = 0;
+  if ( v2 )
+  {
+    (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2);
+    *(_DWORD *)(this + 68) = 0;
+  }
+  if ( *(_BYTE *)(this + 84) )
+  {
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v5);
+    if ( v3 != -1 && v3 < MEMORY[0xB0F5C8] && v3 < --MEMORY[0xB0F5C8] )
+    {
+      do
+      {
+        ++v3;
+        *((_DWORD *)MEMORY[0xB0F5BC] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F5BC] + v3);
+      }
+      while ( v3 < MEMORY[0xB0F5C8] );
+    }
+    *(_BYTE *)(this + 84) = 0;
+  }
+  v5 = this;
+  v4 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xAC4910] + 16))(&MEMORY[0xAC4910], &v5);
+  if ( v4 != -1 && v4 < MEMORY[0xAC4920] && v4 < --MEMORY[0xAC4920] )
+  {
+    do
+    {
+      ++v4;
+      *((_DWORD *)MEMORY[0xAC4914] + v4 - 1) = *((_DWORD *)MEMORY[0xAC4914] + v4);
+    }
+    while ( v4 < MEMORY[0xAC4920] );
+  }
+  AbstractClass::DTOR((_DWORD *)this);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     ecx, [esi+44h]
+mov     dword ptr [esi], offset ??_7ParasiteClass@@6B@ ; const ParasiteClass::`vftable'
+cmp     ecx, ebx
+mov     dword ptr [esi+4], offset ??_7ParasiteClass@@6B@_0 ; const ParasiteClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7ParasiteClass@@6B@_1 ; const ParasiteClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7ParasiteClass@@6B@_2 ; const ParasiteClass::`vftable'
+mov     [esi+4Ch], ebx
+mov     [esi+50h], ebx
+mov     [esi+48h], ebx
+jz      short loc_62941D
+mov     eax, [ecx]
+call    dword ptr [eax+0F8h]
+mov     [esi+44h], ebx
+
+loc_62941D:                             ; CODE XREF: AbstractClass__ProcessData+30↑j
+cmp     [esi+54h], bl
+jz      short loc_62946E
+mov     edx, dword_A8ED54+80864h
+lea     ecx, [esp+0Ch+var_4]
+push    ecx
+mov     ecx, (offset dword_A8ED54+80864h)
+mov     [esp+10h+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_62946B
+mov     ecx, dword_A8ED54+80874h
+cmp     eax, ecx
+jge     short loc_62946B
+dec     ecx
+cmp     eax, ecx
+mov     dword_A8ED54+80874h, ecx
+jge     short loc_62946B
+
+loc_629453:                             ; CODE XREF: AbstractClass__ProcessData+89↓j
+mov     ecx, dword_A8ED54+80868h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, dword_A8ED54+80874h
+cmp     eax, ecx
+jl      short loc_629453
+
+loc_62946B:                             ; CODE XREF: AbstractClass__ProcessData+5C↑j
+; AbstractClass__ProcessData+66↑j ...
+mov     [esi+54h], bl
+
+loc_62946E:                             ; CODE XREF: AbstractClass__ProcessData+40↑j
+mov     edx, dword_A8ED54+35BBCh
+lea     eax, [esp+0Ch+var_4]
+push    eax
+mov     ecx, (offset dword_A8ED54+35BBCh)
+mov     [esp+10h+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_6294B7
+mov     ecx, dword_A8ED54+35BCCh
+cmp     eax, ecx
+jge     short loc_6294B7
+dec     ecx
+cmp     eax, ecx
+mov     dword_A8ED54+35BCCh, ecx
+jge     short loc_6294B7
+
+loc_62949F:                             ; CODE XREF: AbstractClass__ProcessData+D5↓j
+mov     ecx, dword_A8ED54+35BC0h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, dword_A8ED54+35BCCh
+cmp     eax, ecx
+jl      short loc_62949F
+
+loc_6294B7:                             ; CODE XREF: AbstractClass__ProcessData+A8↑j
+; AbstractClass__ProcessData+B2↑j ...
+mov     ecx, esi
+call    AbstractClass__DTOR
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
+} } }
 // 0x62BB20
-namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
+// [IDA decompile]
+int __thiscall sub_62BB20(int this)
+{
+  int v2; // eax
+
+  ObjectClass::ctor((_DWORD *)this);
+  *(_DWORD *)(this + 172) = 0;
+  *(_BYTE *)(this + 176) = 0;
+  *(_BYTE *)(this + 177) = 0;
+  *(_BYTE *)(this + 178) = 0;
+  *(_DWORD *)(this + 184) = 0;
+  *(_DWORD *)(this + 180) = 0;
+  *(_DWORD *)(this + 188) = 0;
+  *(_DWORD *)(this + 192) = 0;
+  *(_DWORD *)(this + 196) = 0;
+  *(_DWORD *)(this + 200) = 0;
+  *(_DWORD *)(this + 204) = 0;
+  *(_DWORD *)(this + 208) = 0;
+  *(_DWORD *)(this + 212) = -1082130432;
+  *(_DWORD *)(this + 216) = 0;
+  *(_DWORD *)(this + 220) = 0;
+  *(_DWORD *)(this + 224) = 0;
+  *(_DWORD *)(this + 228) = 0;
+  *(_DWORD *)(this + 232) = MEMORY[0xAC49D8];
+  *(_DWORD *)(this + 236) = MEMORY[0xAC49DC];
+  *(_DWORD *)(this + 240) = MEMORY[0xAC49E0];
+  *(_DWORD *)(this + 244) = MEMORY[0xAC49D8];
+  *(_DWORD *)(this + 248) = MEMORY[0xAC49DC];
+  *(_DWORD *)(this + 252) = MEMORY[0xAC49E0];
+  *(_DWORD *)(this + 256) = MEMORY[0xAC49D8];
+  *(_DWORD *)(this + 260) = MEMORY[0xAC49DC];
+  *(_DWORD *)(this + 264) = MEMORY[0xAC49E0];
+  *(_DWORD *)(this + 268) = 0;
+  *(_DWORD *)(this + 272) = 0;
+  *(_DWORD *)(this + 276) = 0;
+  *(_DWORD *)(this + 280) = 0;
+  *(_DWORD *)(this + 284) = 0;
+  *(_DWORD *)(this + 288) = 0;
+  *(_DWORD *)(this + 292) = 0;
+  *(_BYTE *)(this + 300) = 0;
+  *(_BYTE *)(this + 301) = 0;
+  *(_BYTE *)(this + 302) = 0;
+  *(_BYTE *)(this + 303) = 0;
+  *(_BYTE *)(this + 304) = 0;
+  *(_BYTE *)(this + 305) = 0;
+  *(_DWORD *)this = &ParticleClass::`vftable';
+  *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
+  *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
+  *(_DWORD *)(this + 12) = &ParticleClass::`vftable';
+  if ( MEMORY[0xA83DD8] < MEMORY[0xA83DD0]
+    || (MEMORY[0xA83DD5] || !MEMORY[0xA83DD0])
+    && MEMORY[0xA83DDC] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA83DC8] + 8))(
+         &MEMORY[0xA83DC8],
+         MEMORY[0xA83DD0] + MEMORY[0xA83DDC],
+         0) )
+  {
+    v2 = MEMORY[0xA83DD8]++;
+    *((_DWORD *)MEMORY[0xA83DCC] + v2) = this;
+  }
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    ObjectClass__ctor
+xor     eax, eax
+lea     ecx, [esi+0E8h]
+mov     [esi+0ACh], eax
+mov     [esi+0B0h], al
+mov     [esi+0B1h], al
+mov     [esi+0B2h], al
+mov     [esi+0B8h], eax
+mov     [esi+0B4h], eax
+mov     [esi+0BCh], eax
+mov     [esi+0C0h], eax
+mov     [esi+0C4h], eax
+mov     [esi+0C8h], eax
+mov     [esi+0CCh], eax
+mov     [esi+0D0h], eax
+mov     dword ptr [esi+0D4h], 0BF800000h
+mov     [esi+0D8h], eax
+mov     [esi+0DCh], eax
+mov     [esi+0E0h], eax
+mov     [esi+0E4h], eax
+mov     edx, dword_A8ED54+35C84h
+mov     [ecx], edx
+mov     edx, dword_A8ED54+35C88h
+mov     [ecx+4], edx
+mov     edx, dword_A8ED54+35C8Ch
+mov     [ecx+8], edx
+mov     edx, dword_A8ED54+35C84h
+lea     ecx, [esi+0F4h]
+mov     [esi+0F4h], edx
+mov     edx, dword_A8ED54+35C88h
+mov     [ecx+4], edx
+mov     edx, dword_A8ED54+35C8Ch
+mov     [ecx+8], edx
+mov     edx, dword_A8ED54+35C84h
+lea     ecx, [esi+100h]
+mov     [esi+100h], edx
+mov     edx, dword_A8ED54+35C88h
+mov     [ecx+4], edx
+mov     edx, dword_A8ED54+35C8Ch
+mov     [ecx+8], edx
+mov     [esi+10Ch], eax
+mov     [esi+110h], eax
+mov     [esi+114h], eax
+mov     [esi+118h], eax
+mov     [esi+11Ch], eax
+mov     [esi+120h], eax
+mov     [esi+124h], eax
+mov     [esi+12Ch], al
+mov     [esi+12Dh], al
+mov     [esi+12Eh], al
+mov     [esi+12Fh], al
+mov     [esi+130h], al
+mov     [esi+131h], al
+mov     dword ptr [esi], offset ??_7ParticleClass@@6B@ ; const ParticleClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7ParticleClass@@6B@_0 ; const ParticleClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7ParticleClass@@6B@_1 ; const ParticleClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7ParticleClass@@6B@_2 ; const ParticleClass::`vftable'
+mov     ecx, ds:0A83DD0h
+mov     edx, ds:0A83DD8h
+cmp     edx, ecx
+jl      short loc_62BCA0
+cmp     ds:0A83DD5h, al
+jnz     short loc_62BC81
+cmp     ecx, eax
+jnz     short loc_62BCB8
+
+loc_62BC81:                             ; CODE XREF: ObjectClass__ProcessUpdate+15B↑j
+mov     edx, ds:0A83DDCh
+cmp     edx, eax
+jle     short loc_62BCB8
+push    eax
+mov     eax, ds:0A83DC8h
+add     edx, ecx
+mov     ecx, 0A83DC8h
+push    edx
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_62BCB8
+
+loc_62BCA0:                             ; CODE XREF: ObjectClass__ProcessUpdate+153↑j
+mov     ecx, ds:0A83DD8h
+mov     eax, ecx
+inc     ecx
+mov     ds:0A83DD8h, ecx
+mov     ecx, ds:0A83DCCh
+mov     [ecx+eax*4], esi
+
+loc_62BCB8:                             ; CODE XREF: ObjectClass__ProcessUpdate+15F↑j
+; ObjectClass__ProcessUpdate+169↑j ...
+mov     eax, esi
+pop     esi
+retn
+*/
+} } }
 // 0x6301F0
-namespace ra2 { namespace game { int ObjectClass::SetMember59(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::SetMember59(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass_SetMember59(_DWORD *this, int a2)
+{
+  *(this + 59) = a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     [ecx+0ECh], eax
+retn    4
+*/
+} } }
 // 0x645B10
-namespace ra2 { namespace game { void* AbstractClass::getTeamIndex(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::getTeamIndex(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_645B10(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<RGBClass>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@VRGBClass@@@@6B@ ; const VectorClass<RGBClass>::`vftable'
+test    eax, eax
+jz      short loc_645B37
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_645B37
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_645B37:                             ; CODE XREF: AbstractClass__getTeamIndex+E↑j
+; AbstractClass__getTeamIndex+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_645B53
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_645B53:                             ; CODE XREF: AbstractClass__getTeamIndex+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x6594A0
-namespace ra2 { namespace game { int TechnoClass::drawPipScale(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::drawPipScale(void* a1) {
+// [IDA decompile]
+int __thiscall sub_6594A0(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v2; // ecx
+  int result; // eax
+
+  v2 = this + 9;
+  *v2 = *a2;
+  v2[1] = a2[1];
+  result = a2[2];
+  v2[2] = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+add     ecx, 24h ; '$'
+mov     edx, [eax]
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     eax, [eax+8]
+mov     [ecx+8], eax
+retn    4
+*/
+} } }
 // 0x6594C0
-namespace ra2 { namespace game { int TechnoClass::drawSpawnPips(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::drawSpawnPips(void* a1) {
+// [IDA decompile]
+int __thiscall sub_6594C0(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v2; // ecx
+  int result; // eax
+
+  v2 = this + 12;
+  *v2 = *a2;
+  v2[1] = a2[1];
+  result = a2[2];
+  v2[2] = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+add     ecx, 30h ; '0'
+mov     edx, [eax]
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     eax, [eax+8]
+mov     [ecx+8], eax
+retn    4
+*/
+} } }
 // 0x6594E0
-namespace ra2 { namespace game { int TechnoClass::drawAmmoPips(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::drawAmmoPips(int a1) {
+// [IDA decompile]
+int __thiscall sub_6594E0(_DWORD *this, int a2)
+{
+  *(this + 15) = a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     [ecx+3Ch], eax
+retn    4
+*/
+} } }
 // 0x6594F0
-namespace ra2 { namespace game { int TechnoClass::drawTiberiumPips(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::drawTiberiumPips(int a1, int a2) {
+// [IDA decompile]
+int __thiscall sub_6594F0(_DWORD *this, int a2, int a3)
+{
+  *(this + 16) = a2;
+  *(this + 17) = a3;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [esp+arg_4]
+mov     [ecx+40h], eax
+mov     [ecx+44h], edx
+retn    8
+*/
+} } }
 // 0x65A820
-namespace ra2 { namespace game { int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
+// [IDA decompile]
+int __thiscall ObjectClass::ProcessGroupInput(int this, int a2, int a3, int a4)
+{
+  int v5; // eax
+  int v6; // ecx
+  int v7; // ecx
+  int v8; // edi
+  _DWORD *i; // eax
+  int v11; // edx
+  int v12; // eax
+  _DWORD *v13; // ecx
+  int v14; // edx
+  int v15; // eax
+  _DWORD *v16; // esi
+  _DWORD *j; // ecx
+
+  v5 = *(_DWORD *)(this + 212);
+  if ( a3 != v5 )
+  {
+    v6 = *(_DWORD *)(this + 216);
+    *(_DWORD *)(this + 216) = v5;
+    *(_DWORD *)(this + 220) = v6;
+    *(_DWORD *)(this + 212) = a3;
+  }
+  if ( a3 == 3 )
+  {
+    v7 = *(_DWORD *)(this + 232);
+    v8 = 0;
+    if ( v7 > 0 )
+    {
+      for ( i = *(_DWORD **)(this + 228); a2 != *i; ++i )
+      {
+        if ( ++v8 >= v7 )
+          return ObjectClass::ProcessInputKey((#374 *)this);
+      }
+      ObjectClass::ProcessInputKey((#374 *)this);
+      *(_DWORD *)(*(_DWORD *)(this + 228) + 4 * v8) = 0;
+      return 1;
+    }
+    return ObjectClass::ProcessInputKey((#374 *)this);
+  }
+  if ( a3 != 2 || !*(_DWORD *)(this + 108) )
+    return ObjectClass::ProcessInputKey((#374 *)this);
+  if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(a2 + 540), this) )
+    return 10;
+  if ( this && (*(_BYTE *)(this + 20) & 1) != 0 && !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), a2) )
+    return 10;
+  if ( a2 )
+  {
+    v11 = *(_DWORD *)(this + 232);
+    v12 = 0;
+    if ( v11 > 0 )
+    {
+      v13 = *(_DWORD **)(this + 228);
+      while ( *v13 != a2 )
+      {
+        ++v12;
+        ++v13;
+        if ( v12 >= v11 )
+          goto LABEL_23;
+      }
+      if ( v12 != -1 )
+        return 1;
+    }
+  }
+LABEL_23:
+  v14 = *(_DWORD *)(this + 232);
+  v15 = 0;
+  if ( v14 <= 0 )
+    return 10;
+  v16 = *(_DWORD **)(this + 228);
+  for ( j = v16; *j; ++j )
+  {
+    if ( ++v15 >= v14 )
+      return 10;
+  }
+  v16[v15] = a2;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+0D4h]
+cmp     ebx, eax
+jz      short loc_65A84B
+mov     ecx, [esi+0D8h]
+mov     [esi+0D8h], eax
+mov     [esi+0DCh], ecx
+mov     [esi+0D4h], ebx
+
+loc_65A84B:                             ; CODE XREF: ObjectClass__ProcessGroupInput+11↑j
+mov     edx, [esp+0Ch+arg_0]
+cmp     ebx, 3
+jnz     short loc_65A8AD
+mov     ecx, [esi+0E8h]
+xor     edi, edi
+test    ecx, ecx
+jle     short loc_65A872
+mov     eax, [esi+0E4h]
+
+loc_65A866:                             ; CODE XREF: ObjectClass__ProcessGroupInput+50↓j
+cmp     edx, [eax]
+jz      short loc_65A886
+inc     edi
+add     eax, 4
+cmp     edi, ecx
+jl      short loc_65A866
+
+loc_65A872:                             ; CODE XREF: ObjectClass__ProcessGroupInput+3E↑j
+; ObjectClass__ProcessGroupInput+90↓j ...
+mov     eax, [esp+0Ch+arg_8]
+mov     ecx, esi        ; this
+push    eax
+push    ebx
+push    edx
+call    ObjectClass__ProcessInputKey
+pop     edi
+pop     esi
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A886:                             ; CODE XREF: ObjectClass__ProcessGroupInput+48↑j
+mov     eax, [esp+0Ch+arg_8]
+mov     ecx, esi        ; this
+push    eax
+push    3
+push    edx
+call    ObjectClass__ProcessInputKey
+mov     ecx, [esi+0E4h]
+mov     eax, 1
+mov     dword ptr [ecx+edi*4], 0
+pop     edi
+pop     esi
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A8AD:                             ; CODE XREF: ObjectClass__ProcessGroupInput+32↑j
+cmp     ebx, 2
+jnz     short loc_65A872
+mov     eax, [esi+6Ch]
+test    eax, eax
+jz      short loc_65A872
+mov     edi, [esp+0Ch+arg_0]
+push    esi
+mov     ecx, [edi+21Ch]
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jnz     short loc_65A8D8
+pop     edi
+pop     esi
+mov     eax, 0Ah
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A8D8:                             ; CODE XREF: ObjectClass__ProcessGroupInput+AB↑j
+test    esi, esi
+jz      short loc_65A8FD
+test    byte ptr [esi+14h], 1
+jz      short loc_65A8FD
+mov     ecx, [esi+21Ch]
+push    edi
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jnz     short loc_65A8FD
+
+loc_65A8F2:                             ; CODE XREF: ObjectClass__ProcessGroupInput+109↓j
+pop     edi
+pop     esi
+mov     eax, 0Ah
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A8FD:                             ; CODE XREF: ObjectClass__ProcessGroupInput+BA↑j
+; ObjectClass__ProcessGroupInput+C0↑j ...
+test    edi, edi
+jz      short loc_65A91F
+mov     edx, [esi+0E8h]
+xor     eax, eax
+test    edx, edx
+jle     short loc_65A91F
+mov     ecx, [esi+0E4h]
+
+loc_65A913:                             ; CODE XREF: ObjectClass__ProcessGroupInput+FD↓j
+cmp     [ecx], edi
+jz      short loc_65A94B
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_65A913
+
+loc_65A91F:                             ; CODE XREF: ObjectClass__ProcessGroupInput+DF↑j
+; ObjectClass__ProcessGroupInput+EB↑j ...
+mov     edx, [esi+0E8h]
+xor     eax, eax
+test    edx, edx
+jle     short loc_65A8F2
+mov     esi, [esi+0E4h]
+mov     ecx, esi
+
+loc_65A933:                             ; CODE XREF: ObjectClass__ProcessGroupInput+11E↓j
+cmp     dword ptr [ecx], 0
+jz      short loc_65A95B
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_65A933
+pop     edi
+pop     esi
+mov     eax, 0Ah
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A94B:                             ; CODE XREF: ObjectClass__ProcessGroupInput+F5↑j
+cmp     eax, 0FFFFFFFFh
+jz      short loc_65A91F
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_65A95B:                             ; CODE XREF: ObjectClass__ProcessGroupInput+116↑j
+mov     [esi+eax*4], edi
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebx
+retn    0Ch
+*/
+} } }
 // 0x65AAA0
-namespace ra2 { namespace game { int ObjectClass::ThunkTo636() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ThunkTo636() {
+// [IDA decompile]
+int __thiscall ObjectClass::ThunkTo636(#377 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+  int v3; // [esp+8h] [ebp+8h]
+
+  return (*(int (__thiscall **)(#377 *, int, void *, int))(*(_DWORD *)this + 636))(this, v2, &MEMORY[0xA8EC30], v3);
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+4+arg_0]
+push    0A8EC30h
+push    edx
+call    dword ptr [eax+27Ch]
+retn    8
+*/
+} } }
 // 0x65ACB0
-namespace ra2 { namespace game { int ObjectClass::ThunkTo159x4() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ThunkTo159x4() {
+// [IDA decompile]
+int __thiscall ObjectClass::ThunkTo159x4(#377 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+
+  if ( **((_DWORD **)this + 57) )
+    return (*(int (__thiscall **)(#377 *, int, void *, _DWORD))(*(_DWORD *)this + 636))(
+             this,
+             v2,
+             &MEMORY[0xA8EC30],
+             **((_DWORD **)this + 57));
+  else
+    return 0;
+}
+
+/* ASM:
+mov     eax, [ecx+0E4h]
+mov     eax, [eax]
+test    eax, eax
+jz      short loc_65ACD2
+mov     edx, [ecx]
+push    eax
+mov     eax, [esp+4+arg_0]
+push    0A8EC30h
+push    eax
+call    dword ptr [edx+27Ch]
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_65ACD2:                             ; CODE XREF: ObjectClass__ThunkTo159x4+A↑j
+xor     eax, eax
+retn    4
+*/
+} } }
 // 0x65AEB0
-namespace ra2 { namespace game { void* RadioClass::ProcessEvent(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* RadioClass::ProcessEvent(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall RadioClass::_vt08(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  *Block = &RadioClass::`vftable';
+  *(Block + 1) = &RadioClass::`vftable';
+  *(Block + 2) = &RadioClass::`vftable';
+  *(Block + 3) = &RadioClass::`vftable';
+  v3 = (void *)*(Block + 57);
+  *(Block + 56) = &VectorClass<TechnoClass *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 237) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 57) = 0;
+  }
+  *((_BYTE *)Block + 237) = 0;
+  *(Block + 58) = 0;
+  *Block = &MissionClass::`vftable';
+  *(Block + 1) = &MissionClass::`vftable';
+  *(Block + 2) = &MissionClass::`vftable';
+  *(Block + 3) = &MissionClass::`vftable';
+  ObjectClass::Dtor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi], offset ??_7RadioClass@@6B@ ; const RadioClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7RadioClass@@6B@_0 ; const RadioClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7RadioClass@@6B@_1 ; const RadioClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7RadioClass@@6B@_2 ; const RadioClass::`vftable'
+mov     eax, [esi+0E4h]
+mov     dword ptr [esi+0E0h], offset ??_7?$VectorClass@PAVTechnoClass@@@@6B@ ; const VectorClass<TechnoClass *>::`vftable'
+test    eax, eax
+jz      short loc_65AEFF
+mov     cl, [esi+0EDh]
+test    cl, cl
+jz      short loc_65AEFF
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+0E4h], 0
+
+loc_65AEFF:                             ; CODE XREF: RadioClass__ProcessEvent+30↑j
+; RadioClass__ProcessEvent+3A↑j
+mov     byte ptr [esi+0EDh], 0
+mov     dword ptr [esi+0E8h], 0
+mov     ecx, esi
+mov     dword ptr [esi], offset ??_7MissionClass@@6B@ ; const MissionClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7MissionClass@@6B@_0 ; const MissionClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7MissionClass@@6B@_1 ; const MissionClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7MissionClass@@6B@_2 ; const MissionClass::`vftable'
+call    ObjectClass__Dtor
+test    [esp+4+arg_0], 1
+jz      short loc_65AF42
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_65AF42:                             ; CODE XREF: RadioClass__ProcessEvent+87↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x65C2E0
-namespace ra2 { namespace game { int AbstractClass::checkTeamMembership() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkTeamMembership() {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_65C2E0(_DWORD *this)
+{
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
+    return 0;
+  *(this + 4) = 0;
+  return 1;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+18h]
+test    al, al
+jnz     short loc_65C2FA
+mov     dword ptr [esi+10h], 0
+mov     eax, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_65C2FA:                             ; CODE XREF: AbstractClass__checkTeamMembership+A↑j
+xor     eax, eax
+pop     esi
+retn
+*/
+} } }
 // 0x65C340
-namespace ra2 { namespace game { int AbstractClass::dispatchTeamEvent(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::dispatchTeamEvent(int a1, int a2) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_65C340(void *this, int a2, int a3)
+{
+  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 28))(this, a3);
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+mov     eax, [ecx]
+push    edx
+call    dword ptr [eax+1Ch]
+retn    8
+*/
+} } }
 // 0x65C4B0
-namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() {
+// [IDA decompile]
+int __thiscall AbstractClass::validateTeamConfig(_DWORD *this, void *Src, int Size)
+{
+  int v4; // edi
+  char v5; // bl
+  int v6; // edx
+  int v7; // ecx
+  int v8; // edx
+
+  if ( !*(this + 2) )
+    return 0;
+  if ( !Src )
+    return 0;
+  v4 = Size;
+  if ( !Size )
+    return 0;
+  v5 = 0;
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
+  {
+    if ( (*(_BYTE *)(this + 6) & 2) != 0 )
+      goto LABEL_7;
+    return 0;
+  }
+  (*(void (__thiscall **)(_DWORD *, int))(*this + 28))(this, 2);
+  v5 = 1;
+LABEL_7:
+  v6 = *(this + 5);
+  if ( Size >= *(this + 3) - v6 )
+    v4 = *(this + 3) - v6;
+  memcpy((void *)(*(this + 2) + *(this + 5)), Src, v4);
+  v7 = *(this + 4);
+  v8 = v4 + *(this + 5);
+  *(this + 5) = v8;
+  if ( v8 > v7 )
+    *(this + 4) = v8;
+  if ( v5 )
+    (*(void (__thiscall **)(_DWORD *))(*this + 52))(this);
+  return v4;
+}
+
+/* ASM:
+Src             = dword ptr  4
+Size            = dword ptr  8
+
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+8]
+test    eax, eax
+jz      short loc_65C534
+mov     ebp, [esp+10h+Src]
+test    ebp, ebp
+jz      short loc_65C534
+mov     edi, [esp+10h+Size]
+test    edi, edi
+jz      short loc_65C534
+mov     eax, [esi]
+xor     bl, bl
+call    dword ptr [eax+18h]
+test    al, al
+jnz     short loc_65C4E5
+mov     edx, [esi]
+push    2
+mov     ecx, esi
+call    dword ptr [edx+1Ch]
+mov     bl, 1
+jmp     short loc_65C4EB
+; ---------------------------------------------------------------------------
+
+loc_65C4E5:                             ; CODE XREF: AbstractClass__validateTeamConfig+26↑j
+test    byte ptr [esi+18h], 2
+jz      short loc_65C534
+
+loc_65C4EB:                             ; CODE XREF: AbstractClass__validateTeamConfig+33↑j
+mov     eax, [esi+0Ch]
+mov     edx, [esi+14h]
+sub     eax, edx
+cmp     edi, eax
+jl      short loc_65C4F9
+mov     edi, eax
+
+loc_65C4F9:                             ; CODE XREF: AbstractClass__validateTeamConfig+45↑j
+mov     eax, [esi+14h]
+mov     edx, [esi+8]
+push    edi             ; Size
+add     eax, edx
+push    ebp             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     edx, [esi+14h]
+mov     ecx, [esi+10h]
+add     edx, edi
+add     esp, 0Ch
+mov     eax, edx
+mov     [esi+14h], edx
+cmp     eax, ecx
+jle     short loc_65C520
+mov     [esi+10h], eax
+
+loc_65C520:                             ; CODE XREF: AbstractClass__validateTeamConfig+6B↑j
+test    bl, bl
+jz      short loc_65C52B
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+34h]
+
+loc_65C52B:                             ; CODE XREF: AbstractClass__validateTeamConfig+72↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_65C534:                             ; CODE XREF: AbstractClass__validateTeamConfig+B↑j
+; AbstractClass__validateTeamConfig+13↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    8
+*/
+} } }
 // 0x65D4D0
-namespace ra2 { namespace game { void* AbstractClass::checkAICondition(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::checkAICondition(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_65D4D0(_DWORD *Block, char a2)
+{
+  int v3; // ecx
+
+  v3 = *(Block + 1);
+  *Block = &rc_ptr_base::`vftable';
+  if ( v3 )
+  {
+    *(Block + 1) = 0;
+    (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 8))(v3);
+  }
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+4]
+mov     dword ptr [esi], offset ??_7rc_ptr_base@@6B@ ; const rc_ptr_base::`vftable'
+test    ecx, ecx
+jz      short loc_65D4EC
+mov     dword ptr [esi+4], 0
+mov     eax, [ecx]
+call    dword ptr [eax+8]
+
+loc_65D4EC:                             ; CODE XREF: AbstractClass__checkAICondition+E↑j
+test    [esp+4+arg_0], 1
+jz      short loc_65D4FC
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_65D4FC:                             ; CODE XREF: AbstractClass__checkAICondition+21↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x68BCB0
-namespace ra2 { namespace game { int AbstractClass::updateAITimer() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::updateAITimer() {
+// [IDA decompile]
+int __thiscall sub_68BCB0(_DWORD *this)
+{
+  int result; // eax
+
+  result = *(this + 133) + 1;
+  *(this + 133) = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+214h]
+inc     eax
+mov     [ecx+214h], eax
+retn
+*/
+} } }
 // 0x6A92E0
 namespace ra2 { namespace game { void* ObjectClass::GetSidebarTooltip(int a1) { return nullptr; } } }
 // 0x6AC210
-namespace ra2 { namespace game { void* ObjectClass::GetTooltipText(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::GetTooltipText(int a1) {
+// [IDA decompile]
+#72 *__thiscall ObjectClass::GetTooltipText(_DWORD *this, int a2)
+{
+  #72 *Available; // edi
+  int *v4; // ecx
+  #72 *StringCSF; // eax
+  int v7; // eax
+
+  Available = PowerClass::getAvailable(this, a2);
+  if ( !Available )
+  {
+    if ( a2 == 200 )
+    {
+      Available = GetStringCSF((#72 *)aTipScrollup, 0, g_Str_File_Sidebar_CPP, 5069);
+      v4 = &dword_A8ED54[127405];
+      goto LABEL_4;
+    }
+    if ( a2 == 201 )
+    {
+      Available = GetStringCSF((#72 *)aTipScrolldown, 0, g_Str_File_Sidebar_CPP, 5075);
+      v4 = &dword_A8ED54[127349];
+      goto LABEL_4;
+    }
+    if ( a2 >= 203 && a2 < 207 )
+    {
+      switch ( a2 )
+      {
+        case 203:
+          StringCSF = GetStringCSF((#72 *)aTipTab1, 0, g_Str_File_Sidebar_CPP, 5083);
+          break;
+        case 204:
+          StringCSF = GetStringCSF((#72 *)aTipTab2, 0, g_Str_File_Sidebar_CPP, 5085);
+          break;
+        case 205:
+          StringCSF = GetStringCSF((#72 *)aTipTab3, 0, g_Str_File_Sidebar_CPP, 5087);
+          break;
+        default:
+          StringCSF = GetStringCSF((#72 *)aTipTab4, 0, g_Str_File_Sidebar_CPP, 5089);
+          break;
+      }
+      Available = StringCSF;
+      v4 = &dword_A8ED54[24 * a2 + 118965];
+LABEL_4:
+      if ( !DialogControl::IsHidden(v4) )
+      {
+        GetStringCSF((#72 *)aTipDisabled, 0, g_Str_File_Sidebar_CPP, 5108);
+        swprintf((#72 *const)&dword_A8ED54[123671], aSS_0);
+        return (#72 *)&dword_A8ED54[123671];
+      }
+      return Available;
+    }
+    v7 = 26;
+    if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496) )
+      v7 = 18;
+    if ( a2 >= 1000
+      && a2 < 2 * ((MEMORY[0x87F7E8][7661] - dword_A8ED54[127465] - v7 + MEMORY[0x87F7E8][7659] - 7) / 50) + 1000 )
+    {
+      return ObjectClass::GetSidebarTooltip(this + 997 * *(this + 5351) + 1361, a2 - 1000);
+    }
+  }
+  return Available;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+push    edi
+mov     ebx, ecx
+push    esi
+call    PowerClass__getAvailable
+mov     edi, eax
+test    edi, edi
+jnz     loc_6AC3CE
+cmp     esi, 0C8h
+jnz     short loc_6AC295
+push    13CDh           ; int
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipScrollup ; "Tip:ScrollUp"
+call    GetStringCSF
+mov     edi, eax
+mov     ecx, (offset dword_A8ED54+7C6B4h)
+
+loc_6AC24E:                             ; CODE XREF: ObjectClass__GetTooltipText+AA↓j
+; ObjectClass__GetTooltipText+136↓j
+call    DialogControl__IsHidden
+test    al, al
+setz    al
+test    al, al
+jz      loc_6AC3CE
+push    13F4h           ; int
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipDisabled ; "Tip:Disabled"
+call    GetStringCSF
+push    eax
+push    edi             ; Format
+push    offset aSS_0    ; "%s\n(%s)"
+push    (offset dword_A8ED54+78C5Ch) ; Buffer
+call    _swprintf
+add     esp, 10h
+mov     eax, (offset dword_A8ED54+78C5Ch)
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6AC295:                             ; CODE XREF: ObjectClass__GetTooltipText+1F↑j
+cmp     esi, 0C9h
+jnz     short loc_6AC2BC
+push    13D3h           ; int
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipScrolldown ; "Tip:ScrollDown"
+call    GetStringCSF
+mov     edi, eax
+mov     ecx, (offset dword_A8ED54+7C5D4h)
+jmp     short loc_6AC24E
+; ---------------------------------------------------------------------------
+
+loc_6AC2BC:                             ; CODE XREF: ObjectClass__GetTooltipText+8B↑j
+cmp     esi, 0CBh
+jl      loc_6AC34B
+cmp     esi, 0CFh
+jge     short loc_6AC34B
+add     esi, 0FFFFFF35h
+test    esi, esi
+jnz     short loc_6AC2ED
+push    13DBh
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipTab1 ; "Tip:Tab1"
+jmp     short loc_6AC333
+; ---------------------------------------------------------------------------
+
+loc_6AC2ED:                             ; CODE XREF: ObjectClass__GetTooltipText+C8↑j
+cmp     esi, 1
+jnz     short loc_6AC305
+push    13DDh
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipTab2 ; "Tip:Tab2"
+jmp     short loc_6AC333
+; ---------------------------------------------------------------------------
+
+loc_6AC305:                             ; CODE XREF: ObjectClass__GetTooltipText+E0↑j
+cmp     esi, 2
+jnz     short loc_6AC31D
+push    13DFh
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipTab3 ; "Tip:Tab3"
+jmp     short loc_6AC333
+; ---------------------------------------------------------------------------
+
+loc_6AC31D:                             ; CODE XREF: ObjectClass__GetTooltipText+F8↑j
+cmp     esi, 3
+jnz     short loc_6AC33A
+push    13E1h           ; int
+push    offset g_Str_File_Sidebar_CPP ; "D:\\ra2mdpost\\Sidebar.CPP"
+xor     edx, edx
+mov     ecx, offset aTipTab4 ; "Tip:Tab4"
+
+loc_6AC333:                             ; CODE XREF: ObjectClass__GetTooltipText+DB↑j
+; ObjectClass__GetTooltipText+F3↑j ...
+call    GetStringCSF
+mov     edi, eax
+
+loc_6AC33A:                             ; CODE XREF: ObjectClass__GetTooltipText+110↑j
+lea     ecx, [esi+esi*2]
+shl     ecx, 5
+add     ecx, (offset dword_A8ED54+78EF4h)
+jmp     loc_6AC24E
+; ---------------------------------------------------------------------------
+
+loc_6AC34B:                             ; CODE XREF: ObjectClass__GetTooltipText+B2↑j
+; ObjectClass__GetTooltipText+BE↑j
+mov     eax, ds:0A8B230h
+mov     ecx, [eax+34B8h]
+mov     eax, 1Ah
+test    ecx, ecx
+jz      short loc_6AC364
+mov     eax, 12h
+
+loc_6AC364:                             ; CODE XREF: ObjectClass__GetTooltipText+14D↑j
+cmp     esi, 3E8h
+jl      short loc_6AC3CE
+mov     ecx, ds:886F9Ch
+mov     edx, dword_A8ED54+7C7A4h
+sub     ecx, edx
+mov     edx, ds:886F94h
+sub     ecx, eax
+mov     eax, 51EB851Fh
+lea     ecx, [ecx+edx-7]
+imul    ecx
+sar     edx, 4
+mov     eax, edx
+shr     eax, 1Fh
+add     edx, eax
+lea     ecx, [edx+edx+3E8h]
+cmp     esi, ecx
+jge     short loc_6AC3CE
+mov     eax, [ebx+539Ch]
+add     esi, 0FFFFFC18h
+mov     edx, eax
+push    esi
+shl     edx, 5
+sub     edx, eax
+lea     ecx, [eax+edx*8]
+lea     edx, [eax+ecx*4]
+lea     ecx, [ebx+edx*4+1544h]
+call    ObjectClass__GetSidebarTooltip
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6AC3CE:                             ; CODE XREF: ObjectClass__GetTooltipText+13↑j
+; ObjectClass__GetTooltipText+4A↑j ...
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
+} } }
 // 0x6AC7F0
-namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a1) {
+// [IDA decompile]
+char *__thiscall ObjectClass::sub_6AC7F0(char *Block, char a2)
+{
+  char *v3; // esi
+  int v4; // edi
+
+  v3 = Block + 21484;
+  v4 = 4;
+  do
+  {
+    v3 -= 3988;
+    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56);
+    --v4;
+  }
+  while ( v4 );
+  RadarClass::Destruct(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, ecx
+push    esi
+push    edi
+lea     esi, [ebx+53ECh]
+mov     edi, 4
+
+loc_6AC800:                             ; CODE XREF: ObjectClass__DestructWithRadar+26↓j
+push    offset nullsub_56
+sub     esi, 0F94h
+push    4Bh ; 'K'
+push    34h ; '4'
+push    esi
+call    Array__ForEachReverse
+dec     edi
+jnz     short loc_6AC800
+mov     ecx, ebx
+call    RadarClass__Destruct
+test    [esp+0Ch+arg_0], 1
+jz      short loc_6AC82F
+push    ebx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_6AC82F:                             ; CODE XREF: ObjectClass__DestructWithRadar+34↑j
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    4
+*/
+} } }
 // 0x6B14B0
-namespace ra2 { namespace game { int AbstractClass::getAIPriority(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::getAIPriority(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::getAIPriority(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( v4 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v6 = *((_DWORD *)this + 2);
+        if ( a2 < v6 )
+          v6 = a2;
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+          ++i;
+        if ( *((_BYTE *)this + 13) )
+        {
+          __3_YAXPAX_Z(*((void **)this + 1));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v4;
+      *((_DWORD *)this + 2) = a2;
+      *((_BYTE *)this + 13) = a3 == 0;
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      loc_6B154E
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_6B14E2
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_6B14E4
+; ---------------------------------------------------------------------------
+
+loc_6B14E2:                             ; CODE XREF: AbstractClass__getAIPriority+1C↑j
+mov     edi, ebx
+
+loc_6B14E4:                             ; CODE XREF: AbstractClass__getAIPriority+30↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_6B14F5
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6B14F5:                             ; CODE XREF: AbstractClass__getAIPriority+3A↑j
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_6B1535
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_6B1505
+mov     ecx, ebp
+
+loc_6B1505:                             ; CODE XREF: AbstractClass__getAIPriority+51↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_6B151B
+
+loc_6B150B:                             ; CODE XREF: AbstractClass__getAIPriority+69↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_6B150B
+
+loc_6B151B:                             ; CODE XREF: AbstractClass__getAIPriority+59↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_6B1535
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_6B1535:                             ; CODE XREF: AbstractClass__getAIPriority+4A↑j
+; AbstractClass__getAIPriority+70↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6B154E:                             ; CODE XREF: AbstractClass__getAIPriority+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
+} } }
 // 0x6B1560
-namespace ra2 { namespace game { void AbstractClass::setAIPriority() { } } }
+namespace ra2 { namespace game { void AbstractClass::setAIPriority() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_6B1560(int this)
+{
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_6B157E
+cmp     [esi+0Dh], bl
+jz      short loc_6B157E
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_6B157E:                             ; CODE XREF: AbstractClass__setAIPriority+B↑j
+; AbstractClass__setAIPriority+10↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x6B1590
-namespace ra2 { namespace game { int AbstractClass::evaluateAIOption(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::evaluateAIOption(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_6B1590(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
+    return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+push    esi
+test    al, al
+jnz     short loc_6B159E
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6B159E:                             ; CODE XREF: AbstractClass__evaluateAIOption+6↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_6B15BC
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_6B15B0:                             ; CODE XREF: AbstractClass__evaluateAIOption+2A↓j
+cmp     [ecx], esi
+jz      short loc_6B15BF
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_6B15B0
+
+loc_6B15BC:                             ; CODE XREF: AbstractClass__evaluateAIOption+15↑j
+or      eax, 0FFFFFFFFh
+
+loc_6B15BF:                             ; CODE XREF: AbstractClass__evaluateAIOption+22↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x6B15D0
-namespace ra2 { namespace game { int AbstractClass::selectAIAction(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::selectAIAction(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_6B15D0(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_6B15DC
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6B15DC:                             ; CODE XREF: AbstractClass__selectAIAction+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} } }
 // 0x6B1930
-namespace ra2 { namespace game { void* AbstractClass::checkAIResources(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::checkAIResources(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_6B1930(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAUSlaveControl@SlaveManagerClass@@@@6B@ ; const VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'
+test    eax, eax
+jz      short loc_6B1957
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_6B1957
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_6B1957:                             ; CODE XREF: AbstractClass__checkAIResources+E↑j
+; AbstractClass__checkAIResources+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_6B1973
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_6B1973:                             ; CODE XREF: AbstractClass__checkAIResources+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x6B8260
-namespace ra2 { namespace game { int AbstractClass::allocatePathMemory(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::allocatePathMemory(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::allocatePathMemory(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( v4 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v6 = *((_DWORD *)this + 2);
+        if ( a2 < v6 )
+          v6 = a2;
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+          ++i;
+        if ( *((_BYTE *)this + 13) )
+        {
+          __3_YAXPAX_Z(*((void **)this + 1));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v4;
+      *((_DWORD *)this + 2) = a2;
+      *((_BYTE *)this + 13) = a3 == 0;
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      loc_6B82FE
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_6B8292
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_6B8294
+; ---------------------------------------------------------------------------
+
+loc_6B8292:                             ; CODE XREF: AbstractClass__allocatePathMemory+1C↑j
+mov     edi, ebx
+
+loc_6B8294:                             ; CODE XREF: AbstractClass__allocatePathMemory+30↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_6B82A5
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6B82A5:                             ; CODE XREF: AbstractClass__allocatePathMemory+3A↑j
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_6B82E5
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_6B82B5
+mov     ecx, ebp
+
+loc_6B82B5:                             ; CODE XREF: AbstractClass__allocatePathMemory+51↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_6B82CB
+
+loc_6B82BB:                             ; CODE XREF: AbstractClass__allocatePathMemory+69↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_6B82BB
+
+loc_6B82CB:                             ; CODE XREF: AbstractClass__allocatePathMemory+59↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_6B82E5
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_6B82E5:                             ; CODE XREF: AbstractClass__allocatePathMemory+4A↑j
+; AbstractClass__allocatePathMemory+70↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6B82FE:                             ; CODE XREF: AbstractClass__allocatePathMemory+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
+} } }
 // 0x6B8310
-namespace ra2 { namespace game { void AbstractClass::freePathMemory() { } } }
+namespace ra2 { namespace game { void AbstractClass::freePathMemory() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_6B8310(int this)
+{
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_6B832E
+cmp     [esi+0Dh], bl
+jz      short loc_6B832E
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_6B832E:                             ; CODE XREF: AbstractClass__freePathMemory+B↑j
+; AbstractClass__freePathMemory+10↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x6B8340
-namespace ra2 { namespace game { int AbstractClass::initPathState(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::initPathState(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_6B8340(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
+    return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+push    esi
+test    al, al
+jnz     short loc_6B834E
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6B834E:                             ; CODE XREF: AbstractClass__initPathState+6↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_6B836C
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_6B8360:                             ; CODE XREF: AbstractClass__initPathState+2A↓j
+cmp     [ecx], esi
+jz      short loc_6B836F
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_6B8360
+
+loc_6B836C:                             ; CODE XREF: AbstractClass__initPathState+15↑j
+or      eax, 0FFFFFFFFh
+
+loc_6B836F:                             ; CODE XREF: AbstractClass__initPathState+22↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x6B8380
-namespace ra2 { namespace game { int AbstractClass::resetPathMemory(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::resetPathMemory(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_6B8380(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_6B838C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6B838C:                             ; CODE XREF: AbstractClass__resetPathMemory+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} } }
 // 0x6B8740
-namespace ra2 { namespace game { void* AbstractClass::validatePathMemory(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::validatePathMemory(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_6B8740(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAUSpawnControl@SpawnManagerClass@@@@6B@ ; const VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'
+test    eax, eax
+jz      short loc_6B8767
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_6B8767
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_6B8767:                             ; CODE XREF: AbstractClass__validatePathMemory+E↑j
+; AbstractClass__validatePathMemory+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_6B8783
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_6B8783:                             ; CODE XREF: AbstractClass__validatePathMemory+38↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x6C9600
-namespace ra2 { namespace game { int AbstractClass::GetTotalValue() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::GetTotalValue() {
+// [IDA decompile]
+int __thiscall AbstractClass::GetTotalValue(float *this)
+{
+  int v1; // edx
+  float *v2; // esi
+  char *v3; // edi
+  int v4; // ebx
+  int v6; // [esp+Ch] [ebp-4h]
+
+  v1 = 0;
+  v2 = this;
+  v6 = 0;
+  v3 = (char *)((char *)MEMORY[0xB0F4EC] - (char *)this);
+  v4 = 4;
+  do
+  {
+    if ( *v2 > 0.0 )
+    {
+      v1 = Math::RoundToInt((double)*(int *)(*(_DWORD *)((char *)v2 + (_DWORD)v3) + 184) * *v2 + (double)v6);
+      v6 = v1;
+    }
+    ++v2;
+    --v4;
+  }
+  while ( v4 );
+  return v1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+push    edi
+mov     edi, dword_A8ED54+80798h
+xor     edx, edx
+mov     esi, ecx
+mov     [esp+10h+var_4], edx
+sub     edi, ecx
+mov     ebx, 4
+
+loc_6C9619:                             ; CODE XREF: AbstractClass__GetTotalValue+46↓j
+fld     dword ptr [esi]
+fcomp   ds:flt_7E1748
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_6C9642
+mov     eax, [edi+esi]
+fild    dword ptr [eax+0B8h]
+fmul    dword ptr [esi]
+fiadd   [esp+10h+var_4]
+call    Math__RoundToInt
+mov     edx, eax
+mov     [esp+10h+var_4], edx
+
+loc_6C9642:                             ; CODE XREF: AbstractClass__GetTotalValue+26↑j
+add     esi, 4
+dec     ebx
+jnz     short loc_6C9619
+pop     edi
+pop     esi
+mov     eax, edx
+pop     ebx
+pop     ecx
+retn
+*/
+} } }
 // 0x6C9D30
-namespace ra2 { namespace game { int AbstractClass::getTotalValue(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::getTotalValue(int a1) {
+// [IDA decompile]
+int __thiscall sub_6C9D30(_DWORD *this, int a2)
+{
+  *(this + 3) = a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     [ecx+0Ch], eax
+retn    4
+*/
+} } }
 // 0x6D0F00
-namespace ra2 { namespace game { int ObjectClass::PreDraw() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::PreDraw() {
+// [IDA decompile]
+int __thiscall ObjectClass_PreDraw(_BYTE *this)
+{
+  int v1; // eax
+
+  v1 = *(_DWORD *)this;
+  *(this + 21829) = 1;
+  return (*(int (__stdcall **)(_DWORD))(v1 + 56))(0);
+}
+
+/* ASM:
+mov     eax, [ecx]
+push    0
+mov     byte ptr [ecx+5545h], 1
+call    dword ptr [eax+38h]
+retn
+*/
+} } }
 // 0x6D6190
-namespace ra2 { namespace game { void* ObjectClass::ComputeDelta(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::ComputeDelta(void* a1) {
+// [IDA decompile]
+int *__thiscall ObjectClass_ComputeDelta(_DWORD *this, int *a2)
+{
+  int v2; // edx
+  int v4; // ecx
+
+  v2 = *(this + 857) - *(this + 44);
+  v4 = *(this + 858) - *(this + 45);
+  *a2 = v2;
+  a2[1] = v4;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [ecx+0B0h]
+mov     edx, [ecx+0D64h]
+push    esi
+mov     esi, [ecx+0B4h]
+mov     ecx, [ecx+0D68h]
+sub     edx, eax
+mov     eax, [esp+4+arg_0]
+sub     ecx, esi
+pop     esi
+mov     [eax], edx
+mov     [eax+4], ecx
+retn    4
+*/
+} } }
 // 0x6E1440
-namespace ra2 { namespace game { int ObjectClass::Render(int a1, int a2, int a3, int a4) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Render(int a1, int a2, int a3, int a4) {
+// [IDA decompile]
+char __thiscall sub_6E1440(_DWORD *this, int a2, int a3, int a4, int a5)
+{
+  _DWORD *v5; // edx
+  int v6; // edi
+  int v7; // eax
+  int v8; // esi
+  int v9; // eax
+  int v11; // [esp+10h] [ebp-8h]
+
+  v5 = (char *)MEMORY[0xA8B230] + 4584;
+  v6 = *((_DWORD *)MEMORY[0xA8B230] + 1146);
+  v7 = *((_DWORD *)MEMORY[0xA8B230] + 1148);
+  if ( v6 != -1 )
+  {
+    if ( (int)MEMORY[0xA8ED84] - v6 >= v7 )
+    {
+      v8 = 0;
+      goto LABEL_5;
+    }
+    v7 -= (int)MEMORY[0xA8ED84] - v6;
+  }
+  v8 = v7;
+LABEL_5:
+  v9 = *(this + 36);
+  *v5 = MEMORY[0xA8ED84];
+  v5[1] = v11;
+  v5[2] = v8 + 12 * v9 + 3 * v9;
+  ObjectClass::PreDraw(&MEMORY[0x87F7E8]);
+  return 1;
+}
+
+/* ASM:
+mov     eax, ds:0A8B230h
+sub     esp, 0Ch
+push    ebx
+mov     ebx, dword_A8ED54+30h
+lea     edx, [eax+11E8h]
+push    esi
+push    edi
+mov     edi, [edx]
+mov     eax, [edx+8]
+cmp     edi, 0FFFFFFFFh
+jz      short loc_6E146B
+mov     esi, ebx
+sub     esi, edi
+cmp     esi, eax
+jge     short loc_6E149C
+sub     eax, esi
+
+loc_6E146B:                             ; CODE XREF: ObjectClass__Render+1F↑j
+mov     esi, eax
+
+loc_6E146D:                             ; CODE XREF: ObjectClass__Render+5E↓j
+mov     eax, [ecx+90h]
+mov     [edx], ebx
+lea     eax, [eax+eax*2]
+lea     ecx, [esi+eax*4]
+add     eax, ecx
+mov     ecx, [esp+18h+var_8]
+mov     [edx+4], ecx
+mov     ecx, 87F7E8h
+mov     [edx+8], eax
+call    ObjectClass__PreDraw
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 0Ch
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_6E149C:                             ; CODE XREF: ObjectClass__Render+27↑j
+xor     esi, esi
+jmp     short loc_6E146D
+*/
+} } }
 // 0x6E15F0
-namespace ra2 { namespace game { int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) {
+// [IDA decompile]
+char __thiscall ObjectClass::ReadINIEntry(const char *this, int a2, int a3, int a4, int a5)
+{
+  #72 *v5; // esi
+  char *v6; // edi
+  char *v7; // esi
+  char Destination[32]; // [esp+Ch] [ebp-40h] BYREF
+  char v10[32]; // [esp+2Ch] [ebp-20h] BYREF
+
+  v5 = (#72 *)(this + 109);
+  if ( *(this + 109) && this != (const char *)-109 )
+  {
+    strncpy(Destination, this + 109, 31);
+    Destination[31] = 0;
+    *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4596) = GetStringCSF(v5, 0, g_Str_File_TAction_CPP, 2242);
+    v6 = (char *)(MEMORY[0x87F7E8][536210] + 4600);
+    if ( Destination != (char *)(MEMORY[0x87F7E8][536210] + 4600) )
+    {
+      v7 = Destination;
+LABEL_10:
+      qmemcpy(v6, v7, 0x20u);
+    }
+  }
+  else
+  {
+    Destination[0] = 0;
+    *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4596) = &MEMORY[0x87F7E8][8147];
+    if ( MEMORY[0x87F7E8] == (_DWORD *)-42876 )
+    {
+      v10[0] = 0;
+    }
+    else
+    {
+      strncpy(v10, (const char *)&MEMORY[0x87F7E8][10719], 31);
+      v10[31] = 0;
+    }
+    v6 = (char *)(MEMORY[0x87F7E8][536210] + 4600);
+    if ( v10 != (char *)(MEMORY[0x87F7E8][536210] + 4600) )
+    {
+      v7 = v10;
+      goto LABEL_10;
+    }
+  }
+  ObjectClass::PreDraw(MEMORY[0x87F7E8]);
+  return 1;
+}
+
+/* ASM:
+Destination     = byte ptr -40h
+var_21          = byte ptr -21h
+var_20          = byte ptr -20h
+var_1           = byte ptr -1
+
+sub     esp, 40h
+mov     al, [ecx+6Dh]
+push    ebx
+push    esi
+lea     esi, [ecx+6Dh]
+xor     ebx, ebx
+cmp     al, bl
+push    edi
+jz      short loc_6E1606
+cmp     esi, ebx
+jnz     short loc_6E1629
+
+loc_6E1606:                             ; CODE XREF: ObjectClass__ReadINIEntry+10↑j
+mov     ecx, ds:0A8B230h
+mov     edx, 889F64h
+mov     [esp+4Ch+Destination], bl
+test    edx, edx
+mov     dword ptr [ecx+11F4h], 887734h
+jnz     short loc_6E167B
+mov     [esp+4Ch+var_20], bl
+jmp     short loc_6E1693
+; ---------------------------------------------------------------------------
+
+loc_6E1629:                             ; CODE XREF: ObjectClass__ReadINIEntry+14↑j
+push    1Fh             ; Count
+lea     eax, [esp+50h+Destination]
+push    esi             ; Source
+push    eax             ; Destination
+call    _strncpy
+add     esp, 0Ch
+xor     edx, edx
+mov     ecx, esi        ; Format
+mov     [esp+4Ch+var_21], bl
+push    8C2h            ; int
+push    offset g_Str_File_TAction_CPP ; "D:\\ra2mdpost\\TAction.CPP"
+call    GetStringCSF
+mov     ecx, ds:0A8B230h
+mov     [ecx+11F4h], eax
+mov     edx, ds:0A8B230h
+lea     eax, [esp+4Ch+Destination]
+lea     edi, [edx+11F8h]
+cmp     eax, edi
+jz      short loc_6E16B2
+mov     ecx, 8
+lea     esi, [esp+4Ch+Destination]
+jmp     short loc_6E16B0
+; ---------------------------------------------------------------------------
+
+loc_6E167B:                             ; CODE XREF: ObjectClass__ReadINIEntry+31↑j
+push    1Fh             ; Count
+lea     eax, [esp+50h+var_20]
+push    889F64h         ; Source
+push    eax             ; Destination
+call    _strncpy
+add     esp, 0Ch
+mov     [esp+4Ch+var_1], bl
+
+loc_6E1693:                             ; CODE XREF: ObjectClass__ReadINIEntry+37↑j
+mov     ecx, ds:0A8B230h
+lea     edx, [esp+4Ch+var_20]
+lea     edi, [ecx+11F8h]
+cmp     edx, edi
+jz      short loc_6E16B2
+mov     ecx, 8
+lea     esi, [esp+4Ch+var_20]
+
+loc_6E16B0:                             ; CODE XREF: ObjectClass__ReadINIEntry+89↑j
+rep movsd
+
+loc_6E16B2:                             ; CODE XREF: ObjectClass__ReadINIEntry+7E↑j
+; ObjectClass__ReadINIEntry+B5↑j
+mov     ecx, 87F7E8h
+call    ObjectClass__PreDraw
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 40h
+retn    10h
+*/
+} } }
 // 0x6E52F0
-namespace ra2 { namespace game { void* FootClass::processScriptAction(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* FootClass::processScriptAction(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall sub_6E52F0(_DWORD *this, _DWORD *a2)
+{
+  *a2 = *(this + 12);
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     ecx, [ecx+30h]
+mov     [eax], ecx
+retn    4
+*/
+} } }
 // 0x6E57C0
-namespace ra2 { namespace game { bool TechnoClass::HasAnyMission() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::HasAnyMission() {
+// [IDA decompile]
+bool __thiscall TechnoClass_HasAnyMission(_DWORD *this)
+{
+  int v1; // eax
+  #345 *v2; // ecx
+
+  v1 = *(this + 10);
+  if ( !v1 )
+    return 0;
+  while ( 1 )
+  {
+    v2 = *(#345 **)(v1 + 36);
+    if ( *((_BYTE *)v2 + 160) )
+      break;
+    v1 = *(_DWORD *)(v1 + 40);
+    if ( !v1 )
+      return 0;
+  }
+  return _do_always_noconv_codecvt_base_std__MBE_NXZ_18(v2);
+}
+
+/* ASM:
+mov     eax, [ecx+28h]
+test    eax, eax
+jz      short loc_6E57DB
+
+loc_6E57C7:                             ; CODE XREF: TechnoClass__HasAnyMission+19↓j
+mov     ecx, [eax+24h]  ; this
+mov     dl, [ecx+0A0h]
+test    dl, dl
+jnz     short ?do_always_noconv_codecvt_base_std__MBE_NXZ_18
+mov     eax, [eax+28h]
+test    eax, eax
+jnz     short loc_6E57C7
+
+loc_6E57DB:                             ; CODE XREF: TechnoClass__HasAnyMission+5↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x6E8A90
-namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int a3) { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int a3) {
+// [IDA decompile]
+int __thiscall MissionClass::Construct(int this, int a2, int a3, int a4)
+{
+  int v5; // ecx
+  int v6; // edx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  int v12; // eax
+  int v13; // ecx
+  int v14; // eax
+  __int16 *WaypointCoords; // eax
+  int v16; // eax
+  int Type; // eax
+  #373 *v18; // eax
+
+  AbstractClass::Constructor((#373 *)this);
+  v5 = a3;
+  v6 = a4;
+  *(_DWORD *)(this + 36) = a2;
+  *(_DWORD *)(this + 40) = 0;
+  *(_DWORD *)(this + 44) = v5;
+  *(_DWORD *)(this + 48) = 0;
+  *(_DWORD *)(this + 52) = 0;
+  *(_DWORD *)(this + 56) = 0;
+  *(_DWORD *)(this + 60) = 0;
+  *(_DWORD *)(this + 64) = 0;
+  *(_DWORD *)(this + 68) = v6;
+  *(_DWORD *)(this + 72) = 0;
+  *(_DWORD *)(this + 76) = 0;
+  *(_DWORD *)(this + 80) = dword_A8ED54[12];
+  *(_DWORD *)(this + 84) = 0;
+  v7 = dword_A8ED54[12];
+  *(_DWORD *)(this + 96) = 0;
+  *(_DWORD *)(this + 88) = v7;
+  *(_DWORD *)(this + 100) = dword_A8ED54[12];
+  *(_DWORD *)(this + 108) = 0;
+  *(_DWORD *)(this + 112) = 0;
+  *(_BYTE *)(this + 116) = 0;
+  *(_BYTE *)(this + 117) = 0;
+  *(_BYTE *)(this + 118) = 0;
+  *(_BYTE *)(this + 119) = 0;
+  *(_BYTE *)(this + 120) = 0;
+  *(_BYTE *)(this + 121) = 0;
+  *(_BYTE *)(this + 122) = 1;
+  *(_BYTE *)(this + 123) = 0;
+  *(_BYTE *)(this + 124) = 0;
+  *(_BYTE *)(this + 125) = 1;
+  *(_BYTE *)(this + 126) = 0;
+  *(_BYTE *)(this + 127) = 0;
+  *(_BYTE *)(this + 128) = 1;
+  *(_BYTE *)(this + 129) = 0;
+  *(_BYTE *)(this + 130) = 0;
+  *(_BYTE *)(this + 131) = 0;
+  *(_BYTE *)(this + 132) = 0;
+  *(_DWORD *)this = &TeamClass::`vftable';
+  *(_DWORD *)(this + 4) = &TeamClass::`vftable';
+  *(_DWORD *)(this + 8) = &TeamClass::`vftable';
+  *(_DWORD *)(this + 12) = &TeamClass::`vftable';
+  if ( MEMORY[0x87F7E8][53828] < MEMORY[0x87F7E8][53826]
+    || (BYTE1(MEMORY[0x87F7E8][53827]) || !MEMORY[0x87F7E8][53826])
+    && MEMORY[0x87F7E8][53829] > 0
+    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][53824] + 8))(
+         &MEMORY[0x87F7E8][53824],
+         MEMORY[0x87F7E8][53826] + MEMORY[0x87F7E8][53829],
+         0) )
+  {
+    v8 = MEMORY[0x87F7E8][53828]++;
+    *(_DWORD *)(MEMORY[0x87F7E8][53825] + 4 * v8) = this;
+  }
+  if ( dword_A8ED54[131659] < dword_A8ED54[131657]
+    || (BYTE1(dword_A8ED54[131658]) || !dword_A8ED54[131657])
+    && dword_A8ED54[131660] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131655] + 8))(
+         &dword_A8ED54[131655],
+         dword_A8ED54[131657] + dword_A8ED54[131660],
+         0) )
+  {
+    v9 = dword_A8ED54[131659]++;
+    *(_DWORD *)(dword_A8ED54[131656] + 4 * v9) = this;
+  }
+  if ( dword_A8ED54[131637] < dword_A8ED54[131635]
+    || (BYTE1(dword_A8ED54[131636]) || !dword_A8ED54[131635])
+    && dword_A8ED54[131638] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131633] + 8))(
+         &dword_A8ED54[131633],
+         dword_A8ED54[131635] + dword_A8ED54[131638],
+         0) )
+  {
+    v10 = dword_A8ED54[131637]++;
+    *(_DWORD *)(dword_A8ED54[131634] + 4 * v10) = this;
+  }
+  if ( dword_A8ED54[131703] < dword_A8ED54[131701]
+    || (BYTE1(dword_A8ED54[131702]) || !dword_A8ED54[131701])
+    && dword_A8ED54[131704] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131699] + 8))(
+         &dword_A8ED54[131699],
+         dword_A8ED54[131701] + dword_A8ED54[131704],
+         0) )
+  {
+    v11 = dword_A8ED54[131703]++;
+    *(_DWORD *)(dword_A8ED54[131700] + 4 * v11) = this;
+  }
+  if ( dword_A8ED54[131691] < dword_A8ED54[131689]
+    || (BYTE1(dword_A8ED54[131690]) || !dword_A8ED54[131689])
+    && dword_A8ED54[131692] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131687] + 8))(
+         &dword_A8ED54[131687],
+         dword_A8ED54[131689] + dword_A8ED54[131692],
+         0) )
+  {
+    v12 = dword_A8ED54[131691]++;
+    *(_DWORD *)(dword_A8ED54[131688] + 4 * v12) = this;
+  }
+  memset((void *)(this + 136), 0, 0x18u);
+  v13 = *(_DWORD *)(this + 36);
+  if ( v13 )
+  {
+    v14 = *(_DWORD *)(this + 44);
+    if ( v14 && *(_BYTE *)(v13 + 246) )
+      ++*(_DWORD *)(v14 + 22124);
+    if ( *TechnoClass::GetWaypointCoords(*(_DWORD **)(this + 36), &a2) != dword_A8ED54[130813] )
+    {
+      WaypointCoords = (__int16 *)TechnoClass::GetWaypointCoords(*(_DWORD **)(this + 36), &a2);
+      *(_DWORD *)(this + 52) = CellCoord::To_CellObj(MEMORY[0x87F7E8], WaypointCoords);
+    }
+    ++*(_DWORD *)(*(_DWORD *)(this + 36) + 220);
+    if ( *(_DWORD *)(*(_DWORD *)(this + 36) + 208) )
+    {
+      v16 = __2_YAPAXI_Z(56);
+      if ( v16 )
+        Type = TeknoClass::GetType(v16, *(_DWORD *)(*(_DWORD *)(this + 36) + 208));
+      else
+        Type = 0;
+      *(_DWORD *)(this + 112) = Type;
+    }
+    v18 = (#373 *)__2_YAPAXI_Z(48);
+    if ( v18 )
+    {
+      *(_DWORD *)(this + 40) = ScriptClass::Construct(v18, *(_DWORD *)(*(_DWORD *)(this + 36) + 224));
+      return this;
+    }
+    *(_DWORD *)(this + 40) = 0;
+  }
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+call    AbstractClass__Constructor
+mov     eax, [esp+8+arg_0]
+mov     ecx, [esp+8+arg_4]
+mov     edx, [esp+8+arg_8]
+xor     ebx, ebx
+mov     [esi+24h], eax
+mov     [esi+28h], ebx
+mov     [esi+2Ch], ecx
+mov     [esi+30h], ebx
+mov     [esi+34h], ebx
+mov     [esi+38h], ebx
+mov     [esi+3Ch], ebx
+mov     [esi+40h], ebx
+mov     [esi+44h], edx
+mov     [esi+48h], ebx
+mov     [esi+4Ch], ebx
+mov     eax, dword_A8ED54+30h
+mov     [esi+50h], eax
+mov     [esi+54h], ebx
+mov     ecx, dword_A8ED54+30h
+mov     [esi+60h], ebx
+mov     [esi+58h], ecx
+mov     edx, dword_A8ED54+30h
+mov     al, 1
+mov     [esi+64h], edx
+mov     [esi+6Ch], ebx
+mov     [esi+70h], ebx
+mov     [esi+74h], bl
+mov     [esi+75h], bl
+mov     [esi+76h], bl
+mov     [esi+77h], bl
+mov     [esi+78h], bl
+mov     [esi+79h], bl
+mov     [esi+7Ah], al
+mov     [esi+7Bh], bl
+mov     [esi+7Ch], bl
+mov     [esi+7Dh], al
+mov     [esi+7Eh], bl
+mov     [esi+7Fh], bl
+mov     [esi+80h], al
+mov     [esi+81h], bl
+mov     [esi+82h], bl
+mov     [esi+83h], bl
+mov     [esi+84h], bl
+mov     dword ptr [esi], offset ??_7TeamClass@@6B@ ; const TeamClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7TeamClass@@6B@_0 ; const TeamClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7TeamClass@@6B@_1 ; const TeamClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7TeamClass@@6B@_2 ; const TeamClass::`vftable'
+mov     eax, ds:8B40F0h
+cmp     ds:8B40F8h, eax
+jl      short loc_6E8B85
+cmp     ds:8B40F5h, bl
+jnz     short loc_6E8B66
+cmp     eax, ebx
+jnz     short loc_6E8B9D
+
+loc_6E8B66:                             ; CODE XREF: MissionClass__Construct+D0↑j
+mov     ecx, ds:8B40FCh
+cmp     ecx, ebx
+jle     short loc_6E8B9D
+add     ecx, eax
+mov     eax, ds:8B40E8h
+push    ebx
+push    ecx
+mov     ecx, 8B40E8h
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_6E8B9D
+
+loc_6E8B85:                             ; CODE XREF: MissionClass__Construct+C8↑j
+mov     ecx, ds:8B40F8h
+mov     eax, ecx
+inc     ecx
+mov     ds:8B40F8h, ecx
+mov     ecx, ds:8B40ECh
+mov     [ecx+eax*4], esi
+
+loc_6E8B9D:                             ; CODE XREF: MissionClass__Construct+D4↑j
+; MissionClass__Construct+DE↑j ...
+mov     eax, dword_A8ED54+80924h
+mov     ecx, dword_A8ED54+8092Ch
+cmp     ecx, eax
+jl      short loc_6E8BD8
+cmp     byte ptr dword_A8ED54+80929h, bl
+jnz     short loc_6E8BB8
+cmp     eax, ebx
+jnz     short loc_6E8BF0
+
+loc_6E8BB8:                             ; CODE XREF: MissionClass__Construct+122↑j
+mov     ecx, dword_A8ED54+80930h
+cmp     ecx, ebx
+jle     short loc_6E8BF0
+mov     edx, dword_A8ED54+8091Ch
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+8091Ch)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_6E8BF0
+
+loc_6E8BD8:                             ; CODE XREF: MissionClass__Construct+11A↑j
+mov     ecx, dword_A8ED54+8092Ch
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+8092Ch, ecx
+mov     ecx, dword_A8ED54+80920h
+mov     [ecx+eax*4], esi
+
+loc_6E8BF0:                             ; CODE XREF: MissionClass__Construct+126↑j
+; MissionClass__Construct+130↑j ...
+mov     eax, dword_A8ED54+808CCh
+mov     ecx, dword_A8ED54+808D4h
+cmp     ecx, eax
+jl      short loc_6E8C2B
+cmp     byte ptr dword_A8ED54+808D1h, bl
+jnz     short loc_6E8C0B
+cmp     eax, ebx
+jnz     short loc_6E8C43
+
+loc_6E8C0B:                             ; CODE XREF: MissionClass__Construct+175↑j
+mov     ecx, dword_A8ED54+808D8h
+cmp     ecx, ebx
+jle     short loc_6E8C43
+mov     edx, dword_A8ED54+808C4h
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+808C4h)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_6E8C43
+
+loc_6E8C2B:                             ; CODE XREF: MissionClass__Construct+16D↑j
+mov     ecx, dword_A8ED54+808D4h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+808D4h, ecx
+mov     ecx, dword_A8ED54+808C8h
+mov     [ecx+eax*4], esi
+
+loc_6E8C43:                             ; CODE XREF: MissionClass__Construct+179↑j
+; MissionClass__Construct+183↑j ...
+mov     eax, dword_A8ED54+809D4h
+mov     ecx, dword_A8ED54+809DCh
+cmp     ecx, eax
+jl      short loc_6E8C7E
+cmp     byte ptr dword_A8ED54+809D9h, bl
+jnz     short loc_6E8C5E
+cmp     eax, ebx
+jnz     short loc_6E8C96
+
+loc_6E8C5E:                             ; CODE XREF: MissionClass__Construct+1C8↑j
+mov     ecx, dword_A8ED54+809E0h
+cmp     ecx, ebx
+jle     short loc_6E8C96
+mov     edx, dword_A8ED54+809CCh
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+809CCh)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_6E8C96
+
+loc_6E8C7E:                             ; CODE XREF: MissionClass__Construct+1C0↑j
+mov     ecx, dword_A8ED54+809DCh
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+809DCh, ecx
+mov     ecx, dword_A8ED54+809D0h
+mov     [ecx+eax*4], esi
+
+loc_6E8C96:                             ; CODE XREF: MissionClass__Construct+1CC↑j
+; MissionClass__Construct+1D6↑j ...
+mov     eax, dword_A8ED54+809A4h
+mov     ecx, dword_A8ED54+809ACh
+cmp     ecx, eax
+jl      short loc_6E8CD1
+cmp     byte ptr dword_A8ED54+809A9h, bl
+jnz     short loc_6E8CB1
+cmp     eax, ebx
+jnz     short loc_6E8CE9
+
+loc_6E8CB1:                             ; CODE XREF: MissionClass__Construct+21B↑j
+mov     ecx, dword_A8ED54+809B0h
+cmp     ecx, ebx
+jle     short loc_6E8CE9
+mov     edx, dword_A8ED54+8099Ch
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, (offset dword_A8ED54+8099Ch)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_6E8CE9
+
+loc_6E8CD1:                             ; CODE XREF: MissionClass__Construct+213↑j
+mov     ecx, dword_A8ED54+809ACh
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+809ACh, ecx
+mov     ecx, dword_A8ED54+809A0h
+mov     [ecx+eax*4], esi
+
+loc_6E8CE9:                             ; CODE XREF: MissionClass__Construct+21F↑j
+; MissionClass__Construct+229↑j ...
+push    edi
+mov     ecx, 6
+xor     eax, eax
+lea     edi, [esi+88h]
+rep stosd
+mov     ecx, [esi+24h]
+pop     edi
+cmp     ecx, ebx
+jz      loc_6E8DCA
+mov     eax, [esi+2Ch]
+cmp     eax, ebx
+jz      short loc_6E8D1A
+cmp     [ecx+0F6h], bl
+jz      short loc_6E8D1A
+inc     dword ptr [eax+566Ch]
+
+loc_6E8D1A:                             ; CODE XREF: MissionClass__Construct+27A↑j
+; MissionClass__Construct+282↑j
+mov     ecx, [esi+24h]
+lea     edx, [esp+8+arg_0]
+push    edx
+call    TechnoClass__GetWaypointCoords
+mov     cx, [eax]
+cmp     cx, word ptr dword_A8ED54+7FBF4h
+jnz     short loc_6E8D40
+mov     dx, [eax+2]
+cmp     dx, word ptr dword_A8ED54+7FBF6h
+jz      short loc_6E8D5B
+
+loc_6E8D40:                             ; CODE XREF: MissionClass__Construct+2A1↑j
+mov     ecx, [esi+24h]
+lea     eax, [esp+8+arg_0]
+push    eax
+call    TechnoClass__GetWaypointCoords
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     [esi+34h], eax
+
+loc_6E8D5B:                             ; CODE XREF: MissionClass__Construct+2AE↑j
+mov     eax, [esi+24h]
+mov     ecx, [eax+0DCh]
+inc     ecx
+mov     [eax+0DCh], ecx
+mov     ecx, [esi+24h]
+cmp     [ecx+0D0h], ebx
+jz      short loc_6E8D9C
+push    38h ; '8'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+jz      short loc_6E8D97
+mov     edx, [esi+24h]
+mov     ecx, [edx+0D0h]
+push    ecx
+mov     ecx, eax
+call    TeknoClass__GetType
+jmp     short loc_6E8D99
+; ---------------------------------------------------------------------------
+
+loc_6E8D97:                             ; CODE XREF: MissionClass__Construct+2F2↑j
+xor     eax, eax
+
+loc_6E8D99:                             ; CODE XREF: MissionClass__Construct+305↑j
+mov     [esi+70h], eax
+
+loc_6E8D9C:                             ; CODE XREF: MissionClass__Construct+2E4↑j
+push    30h ; '0'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+jz      short loc_6E8DC5
+mov     edx, [esi+24h]
+mov     ecx, [edx+0E0h]
+push    ecx
+mov     ecx, eax
+call    ScriptClass__Construct
+mov     [esi+28h], eax
+mov     eax, esi
+pop     esi
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_6E8DC5:                             ; CODE XREF: MissionClass__Construct+318↑j
+xor     eax, eax
+mov     [esi+28h], eax
+
+loc_6E8DCA:                             ; CODE XREF: MissionClass__Construct+26F↑j
+mov     eax, esi
+pop     esi
+pop     ebx
+retn    0Ch
+*/
+} } }
 // 0x6EC130
-namespace ra2 { namespace game { int ObjectClass::Get(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Get(int a1) {
+// [IDA decompile]
+char __thiscall sub_6EC130(int this, int a2)
+{
+  int v3; // eax
+  int v4; // edi
+  int v6; // [esp+8h] [ebp-8h] BYREF
+
+  if ( !a2
+    || !*(_BYTE *)(a2 + 144)
+    || !*(_DWORD *)(a2 + 108)
+    || !MEMORY[0x87F7E8][539633] && *(_BYTE *)(a2 + 129)
+    || *(_BYTE *)(a2 + 1673) )
+  {
+    return 0;
+  }
+  v3 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), &v6);
+  if ( v3 == 54 || v3 == 53 )
+    v4 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5920);
+  else
+    v4 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5916);
+  if ( ObjectClass::DistanceTo((void *)a2, *(_DWORD *)(this + 52)) <= v4 )
+  {
+    *(_BYTE *)(a2 + 1673) = 1;
+    return 0;
+  }
+  if ( !*(_DWORD *)(a2 + 1444) )
+  {
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a2 + 488))(a2, 2, 0);
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a2 + 968))(a2, 0);
+    (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a2 + 1152))(a2, *(_DWORD *)(this + 52), 1);
+  }
+  return 1;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    esi
+mov     esi, [esp+10h+arg_0]
+mov     ebx, ecx
+test    esi, esi
+jz      loc_6EC20A
+mov     al, [esi+90h]
+test    al, al
+jz      loc_6EC20A
+mov     eax, [esi+6Ch]
+test    eax, eax
+jz      loc_6EC20A
+mov     eax, ds:0A8E7ACh
+test    eax, eax
+jnz     short loc_6EC173
+mov     al, [esi+81h]
+test    al, al
+jnz     loc_6EC20A
+
+loc_6EC173:                             ; CODE XREF: ObjectClass__Get+33↑j
+mov     al, [esi+689h]
+test    al, al
+jnz     loc_6EC20A
+mov     ecx, [ebx+28h]
+lea     eax, [esp+10h+var_8]
+push    edi
+push    eax
+call    SessionClass__GetEntry
+mov     eax, [eax]
+cmp     eax, 36h ; '6'
+jz      short loc_6EC1A9
+cmp     eax, 35h ; '5'
+jz      short loc_6EC1A9
+mov     ecx, ds:8871E0h
+mov     edi, [ecx+171Ch]
+jmp     short loc_6EC1B5
+; ---------------------------------------------------------------------------
+
+loc_6EC1A9:                             ; CODE XREF: ObjectClass__Get+64↑j
+; ObjectClass__Get+69↑j
+mov     edx, ds:8871E0h
+mov     edi, [edx+1720h]
+
+loc_6EC1B5:                             ; CODE XREF: ObjectClass__Get+77↑j
+mov     eax, [ebx+34h]
+mov     ecx, esi
+push    eax
+call    ObjectClass__DistanceTo
+cmp     eax, edi
+pop     edi
+jle     short loc_6EC203
+mov     eax, [esi+5A4h]
+test    eax, eax
+jnz     short loc_6EC1F9
+mov     edx, [esi]
+push    0
+push    2
+mov     ecx, esi
+call    dword ptr [edx+1E8h]
+mov     eax, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+mov     eax, [ebx+34h]
+mov     edx, [esi]
+push    1
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+480h]
+
+loc_6EC1F9:                             ; CODE XREF: ObjectClass__Get+9D↑j
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6EC203:                             ; CODE XREF: ObjectClass__Get+93↑j
+mov     byte ptr [esi+689h], 1
+
+loc_6EC20A:                             ; CODE XREF: ObjectClass__Get+D↑j
+; ObjectClass__Get+1B↑j ...
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 8
+retn    4
+*/
+} } }
 // 0x6F3270
-namespace ra2 { namespace game { int ObjectClass::Vt34Thunk() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Vt34Thunk() {
+// [IDA decompile]
+int __thiscall ObjectClass::Vt34Thunk(#377 *this)
+{
+  return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 136))(this);
+}
+
+/* ASM:
+mov     eax, [ecx]
+jmp     dword ptr [eax+88h]
+*/
+} } }
 // 0x6F3D60
-namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, int a2) { return nullptr; } } }
+namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, int a2) {
+// [IDA decompile]
+_DWORD *__thiscall TechnoClass_GetTurretOffset(_DWORD **this, _DWORD *a2, int a3)
+{
+  int v4; // ebp
+  const void *v5; // eax
+  _DWORD *v6; // eax
+  _DWORD *v7; // esi
+  float *v8; // eax
+  int v9; // edx
+  float v10; // eax
+  int v11; // esi
+  int v12; // edi
+  int v13; // ebp
+  int *v14; // eax
+  int v15; // ecx
+  int v16; // edx
+  int v17; // eax
+  float v19; // [esp+4h] [ebp-D8h]
+  float v20; // [esp+Ch] [ebp-D0h]
+  double v21; // [esp+24h] [ebp-B8h] BYREF
+  float v22; // [esp+2Ch] [ebp-B0h]
+  float v23[3]; // [esp+30h] [ebp-ACh] BYREF
+  _BYTE v24[4]; // [esp+3Ch] [ebp-A0h] BYREF
+  float v25[3]; // [esp+40h] [ebp-9Ch] BYREF
+  float v26[12]; // [esp+4Ch] [ebp-90h] BYREF
+  _BYTE v27[48]; // [esp+7Ch] [ebp-60h] BYREF
+  _BYTE v28[48]; // [esp+ACh] [ebp-30h] BYREF
+
+  v4 = ((int (__thiscall *)(_DWORD **))(*this)[33])(this);
+  if ( this && (*(_BYTE *)(this + 5) & 4) != 0 && *(this + 413) )
+  {
+    v5 = (const void *)(*(int (__stdcall **)(_DWORD, _BYTE *, _DWORD))(**(this + 413) + 36))(*(this + 413), v28, 0);
+    Transform::Copy(v27, v5);
+    v6 = *this;
+    qmemcpy(v26, v27, sizeof(v26));
+    v7 = (_DWORD *)((int (__thiscall *)(_DWORD **, _BYTE *))v6[170])(this, v24);
+    v21 = (double)(int)((((unsigned int)((*v7 >> 10) + 1) >> 1) & 0x1F) - 8) * -0.1963495408493621
+        - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v21) >> 10) + 1) >> 1) & 0x1F)
+                      - 8)
+        * -0.1963495408493621;
+  }
+  else
+  {
+    Matrix3x4::Identity(v26);
+    v21 = (double)(int)((((unsigned int)((*(_DWORD *)((int (__thiscall *)(_DWORD **, double *))(*this)[170])(this, &v21) >> 10)
+                                       + 1) >> 1)
+                       & 0x1F)
+                      - 8)
+        * -0.1963495408493621;
+  }
+  v19 = (float)*(int *)(v4 + 1824);
+  Vector::MatrixMulVectorMath(v19, 0.0, 0.0);
+  v20 = v21;
+  Matrix2D::Rotate(v26, v20);
+  memset(v23, 0, sizeof(v23));
+  v8 = TransformMatrix3x4Point(v25, v26, v23);
+  *(float *)&v21 = *v8;
+  v9 = *((_DWORD *)v8 + 1);
+  v10 = v8[2];
+  HIDWORD(v21) = v9;
+  v22 = v10;
+  v11 = Math::RoundToInt(*(float *)&v21);
+  v12 = Math::RoundToInt(-*((float *)&v21 + 1));
+  v13 = Math::RoundToInt(v22);
+  v14 = (int *)((int (__thiscall *)(_DWORD **, float *))(*this)[43])(this, v25);
+  v15 = *v14;
+  v16 = v14[1];
+  v17 = v14[2];
+  *a2 = v11 + v15;
+  a2[1] = v12 + v16;
+  a2[2] = v13 + v17;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 0BCh
+push    ebx
+mov     ebx, ecx
+push    ebp
+push    esi
+mov     eax, [ebx]
+push    edi
+call    dword ptr [eax+84h]
+test    ebx, ebx
+mov     ebp, eax
+jz      loc_6F3E36
+test    byte ptr [ebx+14h], 4
+jz      loc_6F3E36
+mov     eax, [ebx+674h]
+test    eax, eax
+jz      loc_6F3E36
+test    eax, eax
+jnz     short loc_6F3DA4
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_6F3DA4:                             ; CODE XREF: TechnoClass__GetTurretOffset+38↑j
+mov     eax, [ebx+674h]
+lea     edx, [esp+0CCh+var_30]
+push    0
+push    edx
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+24h]
+push    eax
+lea     ecx, [esp+0D0h+var_60]
+call    Transform__Copy
+mov     eax, [ebx]
+mov     ecx, 0Ch
+lea     esi, [esp+0CCh+var_60]
+lea     edi, [esp+0CCh+var_90]
+rep movsd
+lea     ecx, [esp+0CCh+var_A0]
+push    ecx
+mov     ecx, ebx
+call    dword ptr [eax+2A8h]
+lea     edx, [esp+0CCh+var_BC+4]
+lea     ecx, [ebx+388h]
+push    edx
+mov     esi, eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+mov     ecx, [esi]
+shr     eax, 0Ah
+inc     eax
+shr     eax, 1
+and     eax, 1Fh
+shr     ecx, 0Ah
+sub     eax, 8
+inc     ecx
+shr     ecx, 1
+mov     dword ptr [esp+0CCh+var_BC], eax
+and     ecx, 1Fh
+fild    dword ptr [esp+0CCh+var_BC]
+sub     ecx, 8
+mov     dword ptr [esp+0CCh+var_BC], ecx
+fmul    ds:dbl_7E4408
+fild    dword ptr [esp+0CCh+var_BC]
+fmul    ds:dbl_7E4408
+fsub    st, st(1)
+fstp    [esp+0CCh+var_BC+4]
+fstp    st
+jmp     short loc_6F3E6E
+; ---------------------------------------------------------------------------
+
+loc_6F3E36:                             ; CODE XREF: TechnoClass__GetTurretOffset+18↑j
+; TechnoClass__GetTurretOffset+22↑j ...
+lea     ecx, [esp+0CCh+var_90]
+call    Matrix3x4__Identity
+mov     edx, [ebx]
+lea     eax, [esp+0CCh+var_BC+4]
+push    eax
+mov     ecx, ebx
+call    dword ptr [edx+2A8h]
+mov     ecx, [eax]
+shr     ecx, 0Ah
+inc     ecx
+shr     ecx, 1
+and     ecx, 1Fh
+sub     ecx, 8
+mov     dword ptr [esp+0CCh+var_BC], ecx
+fild    dword ptr [esp+0CCh+var_BC]
+fmul    ds:dbl_7E4408
+fstp    [esp+0CCh+var_BC+4]
+
+loc_6F3E6E:                             ; CODE XREF: TechnoClass__GetTurretOffset+D4↑j
+fild    dword ptr [ebp+720h]
+push    0               ; float
+push    0               ; float
+push    ecx
+lea     ecx, [esp+0D8h+var_90]
+fstp    [esp+0D8h+var_D8] ; float
+call    Vector__MatrixMulVectorMath
+fld     [esp+0CCh+var_BC+4]
+push    ecx
+lea     ecx, [esp+0D0h+var_90]
+fstp    [esp+0D0h+var_D0] ; float
+call    Matrix2D__Rotate
+lea     edx, [esp+0CCh+var_AC]
+lea     ecx, [esp+0CCh+var_9C]
+push    edx
+lea     edx, [esp+0D0h+var_90]
+mov     [esp+0D0h+var_AC], 0
+mov     [esp+0D0h+var_A8], 0
+mov     [esp+0D0h+var_A4], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+mov     dword ptr [esp+0CCh+var_BC+4], ecx
+mov     edx, [eax+4]
+fld     dword ptr [esp+0CCh+var_BC+4]
+mov     eax, [eax+8]
+mov     [esp+0CCh+var_B4], edx
+mov     [esp+0CCh+var_B0], eax
+call    Math__RoundToInt
+fld     [esp+0CCh+var_B4]
+fchs
+mov     esi, eax
+call    Math__RoundToInt
+fld     [esp+0CCh+var_B0]
+mov     edi, eax
+call    Math__RoundToInt
+mov     edx, [ebx]
+mov     ebp, eax
+lea     eax, [esp+0CCh+var_9C]
+mov     ecx, ebx
+push    eax
+call    dword ptr [edx+0ACh]
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+add     ecx, esi
+mov     esi, [esp+0CCh+arg_0]
+add     edx, edi
+mov     edi, esi
+add     eax, ebp
+mov     [edi], ecx
+mov     [edi+4], edx
+mov     [edi+8], eax
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0BCh
+retn    8
+*/
+} } }
 // 0x6F4300
-namespace ra2 { namespace game { void* TechnoClass::Constructor(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* TechnoClass::Constructor(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall sub_6F4300(_DWORD *this, int a2)
+{
+  #72 *v3; // ecx
+  int v4; // ecx
+  void **v5; // edx
+  int v6; // eax
+  char v8; // [esp+10h] [ebp+4h]
+
+  Helper_65A7E0(a2);
+  *(this + 106) = MEMORY[0xA8ED84];
+  *(this + 108) = 0;
+  v3 = MEMORY[0xA8ED84];
+  *(this + 111) = 0;
+  *(this + 109) = v3;
+  *(this + 137) = 0;
+  *((_BYTE *)this + 552) = 0;
+  *(this + 139) = MEMORY[0xA8ED84];
+  *(this + 141) = 0;
+  *(this + 142) = 0;
+  *(this + 143) = 1;
+  __4type_info_AAEAAV0_ABV0__Z(a2);
+  *(this + 247) = 1;
+  *(this + 246) = 2;
+  *(this + 248) = 1;
+  *(this + 249) = 1;
+  *(this + 251) = 0;
+  *(this + 252) = 0;
+  *(this + 255) = 1;
+  *(this + 256) = 1;
+  *(this + 257) = 1;
+  *(this + 254) = 2;
+  *(this + 259) = 0;
+  *(this + 260) = 0;
+  VectorClass::Construct(0, 0);
+  *(this + 272) = &DynamicVectorClass<int>::`vftable';
+  *(this + 277) = 10;
+  *(this + 276) = 0;
+  AbstractClassVector::Construct(this + 278, 0, 0);
+  *(this + 278) = &DynamicVectorClass<AbstractClass *>::`vftable';
+  *(this + 283) = 10;
+  *(this + 282) = 0;
+  AbstractClassVector::Construct(this + 284, 0, 0);
+  *(this + 284) = &DynamicVectorClass<AbstractClass *>::`vftable';
+  *(this + 289) = 10;
+  *(this + 288) = 0;
+  *this = &TechnoClass::`vftable';
+  *(this + 1) = &TechnoClass::`vftable';
+  *(this + 2) = &TechnoClass::`vftable';
+  *(this + 3) = &off_7F4934;
+  v4 = 0;
+  v8 = 0;
+  if ( MEMORY[0xA8EC88] > 0 )
+  {
+    v5 = (void **)MEMORY[0xA8EC7C];
+    while ( *v5 != this )
+    {
+      ++v4;
+      ++v5;
+      if ( v4 >= MEMORY[0xA8EC88] )
+        goto LABEL_7;
+    }
+    v8 = 1;
+  }
+LABEL_7:
+  AudioController::Init(this + 290);
+  AudioController::Init(this + 297);
+  AudioController::Init(this + 304);
+  AudioController::Init(this + 311);
+  *(this + 316) = -1;
+  *(this + 317) = -1;
+  if ( !v8
+    && (MEMORY[0xA8EC88] < MEMORY[0xA8EC80]
+     || (MEMORY[0xA8EC85] || !MEMORY[0xA8EC80])
+     && MEMORY[0xA8EC8C] > 0
+     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8EC78] + 8))(
+          &MEMORY[0xA8EC78],
+          MEMORY[0xA8EC80] + MEMORY[0xA8EC8C],
+          0)) )
+  {
+    v6 = MEMORY[0xA8EC88]++;
+    *((_DWORD *)MEMORY[0xA8EC7C] + v6) = this;
+  }
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+mov     esi, ecx
+push    ebp
+call    Helper_65A7E0
+mov     eax, dword_A8ED54+30h
+xor     ebx, ebx
+mov     [esi+1A8h], eax
+mov     [esi+1B0h], ebx
+mov     ecx, dword_A8ED54+30h
+mov     [esi+1BCh], ebx
+mov     [esi+1B4h], ecx
+mov     [esi+224h], ebx
+mov     [esi+228h], bl
+mov     edx, dword_A8ED54+30h
+mov     edi, 1
+mov     [esi+22Ch], edx
+mov     [esi+234h], ebx
+push    ebp
+lea     ecx, [esi+358h]
+mov     [esi+238h], ebx
+mov     [esi+23Ch], edi
+call    ??4type_info_AAEAAV0_ABV0__Z
+mov     eax, 2
+mov     [esi+3DCh], edi
+mov     [esi+3D8h], eax
+mov     [esi+3E0h], edi
+mov     [esi+3E4h], edi
+mov     [esi+3ECh], ebx
+mov     [esi+3F0h], ebx
+mov     [esi+3FCh], edi
+mov     [esi+400h], edi
+mov     [esi+404h], edi
+lea     edi, [esi+440h]
+push    ebx
+push    ebx
+mov     ecx, edi
+mov     [esi+3F8h], eax
+mov     [esi+40Ch], ebx
+mov     [esi+410h], ebx
+call    VectorClass__Construct
+mov     ebp, 0Ah
+mov     dword ptr [edi], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     [edi+14h], ebp
+mov     [edi+10h], ebx
+lea     edi, [esi+458h]
+push    ebx
+push    ebx
+mov     ecx, edi
+call    AbstractClassVector__Construct
+mov     dword ptr [edi], offset ??_7?$DynamicVectorClass@PAVAbstractClass@@@@6B@ ; const DynamicVectorClass<AbstractClass *>::`vftable'
+mov     [edi+14h], ebp
+mov     [edi+10h], ebx
+lea     edi, [esi+470h]
+push    ebx
+push    ebx
+mov     ecx, edi
+call    AbstractClassVector__Construct
+mov     dword ptr [edi], offset ??_7?$DynamicVectorClass@PAVAbstractClass@@@@6B@ ; const DynamicVectorClass<AbstractClass *>::`vftable'
+mov     [edi+14h], ebp
+mov     [edi+10h], ebx
+mov     dword ptr [esi], offset ??_7TechnoClass@@6B@ ; const TechnoClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7TechnoClass@@6B@_0 ; const TechnoClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7TechnoClass@@6B@_1 ; const TechnoClass::`vftable'
+mov     dword ptr [esi+0Ch], offset off_7F4934
+mov     eax, ds:0A8EC88h
+xor     ecx, ecx
+cmp     eax, ebx
+mov     byte ptr [esp+10h+arg_0], bl
+jle     short loc_6F4456
+mov     edx, ds:0A8EC7Ch
+
+loc_6F4443:                             ; CODE XREF: TechnoClass__Constructor+14D↓j
+cmp     [edx], esi
+jz      short loc_6F4451
+inc     ecx
+add     edx, 4
+cmp     ecx, eax
+jl      short loc_6F4443
+jmp     short loc_6F4456
+; ---------------------------------------------------------------------------
+
+loc_6F4451:                             ; CODE XREF: TechnoClass__Constructor+145↑j
+mov     byte ptr [esp+10h+arg_0], 1
+
+loc_6F4456:                             ; CODE XREF: TechnoClass__Constructor+13B↑j
+; TechnoClass__Constructor+14F↑j
+lea     ecx, [esi+488h]
+call    AudioController__Init
+lea     ecx, [esi+4A4h]
+call    AudioController__Init
+lea     ecx, [esi+4C0h]
+call    AudioController__Init
+lea     ecx, [esi+4DCh]
+call    AudioController__Init
+or      eax, 0FFFFFFFFh
+mov     [esi+4F0h], eax
+mov     [esi+4F4h], eax
+cmp     byte ptr [esp+10h+arg_0], bl
+jnz     short loc_6F44E9
+mov     eax, ds:0A8EC80h
+mov     ecx, ds:0A8EC88h
+cmp     ecx, eax
+jl      short loc_6F44D1
+cmp     ds:0A8EC85h, bl
+jnz     short loc_6F44B2
+cmp     eax, ebx
+jnz     short loc_6F44E9
+
+loc_6F44B2:                             ; CODE XREF: TechnoClass__Constructor+1AC↑j
+mov     ecx, ds:0A8EC8Ch
+cmp     ecx, ebx
+jle     short loc_6F44E9
+add     ecx, eax
+mov     eax, ds:0A8EC78h
+push    ebx
+push    ecx
+mov     ecx, 0A8EC78h
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_6F44E9
+
+loc_6F44D1:                             ; CODE XREF: TechnoClass__Constructor+1A4↑j
+mov     ecx, ds:0A8EC88h
+mov     eax, ecx
+inc     ecx
+mov     ds:0A8EC88h, ecx
+mov     ecx, ds:0A8EC7Ch
+mov     [ecx+eax*4], esi
+
+loc_6F44E9:                             ; CODE XREF: TechnoClass__Constructor+195↑j
+; TechnoClass__Constructor+1B0↑j ...
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x6FBFA0
-namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
+// [IDA decompile]
+int __thiscall TechnoClass::ExecuteMoveCommand(#377 *this)
+{
+  int result; // eax
+  void **v3; // ecx
+
+  if ( (*((_BYTE *)this + 1051)
+     || (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135))
+     || (result = dword_A8ED54[233983]) == 0)
+    && (result = ObjectClass::HandleSelection(this), (_BYTE)result) )
+  {
+    v3 = (void **)*((_DWORD *)this + 13);
+    if ( v3 )
+      TeamClass::Update_0(v3, 33, (int)this, dword_A8ED54[130879], 0, 0);
+    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135))
+      || *(_BYTE *)(*(_DWORD *)(*((_DWORD *)this + 135) + 52) + 422) )
+    {
+      if ( MoveFeedback )
+        (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 864))(this);
+    }
+    TechnoClass::IsProductionChainActive(this);
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     al, [esi+41Bh]
+test    al, al
+jnz     short loc_6FBFC5
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jnz     short loc_6FBFC5
+mov     eax, dword_A8ED54+0E47FCh
+test    eax, eax
+jnz     short loc_6FC029
+
+loc_6FBFC5:                             ; CODE XREF: TechnoClass__ExecuteMoveCommand+B↑j
+; TechnoClass__ExecuteMoveCommand+1A↑j
+mov     ecx, esi        ; this
+call    ObjectClass__HandleSelection
+test    al, al
+jz      short loc_6FC029
+mov     ecx, [esi+34h]  ; void **
+test    ecx, ecx
+jz      short loc_6FBFE9
+mov     eax, dword_A8ED54+7FCFCh
+push    0               ; int
+push    0               ; int
+push    eax             ; int
+push    esi             ; int
+push    21h ; '!'       ; int
+call    TeamClass__Update_0
+
+loc_6FBFE9:                             ; CODE XREF: TechnoClass__ExecuteMoveCommand+35↑j
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jnz     short loc_6FC00B
+mov     ecx, [esi+21Ch]
+mov     edx, [ecx+34h]
+mov     al, [edx+1A6h]
+test    al, al
+jz      short loc_6FC01E
+
+loc_6FC00B:                             ; CODE XREF: TechnoClass__ExecuteMoveCommand+56↑j
+mov     al, MoveFeedback
+test    al, al
+jz      short loc_6FC01E
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+360h]
+
+loc_6FC01E:                             ; CODE XREF: TechnoClass__ExecuteMoveCommand+69↑j
+; TechnoClass__ExecuteMoveCommand+72↑j
+mov     ecx, esi
+call    TechnoClass__IsProductionChainActive
+mov     al, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_6FC029:                             ; CODE XREF: TechnoClass__ExecuteMoveCommand+23↑j
+; TechnoClass__ExecuteMoveCommand+2E↑j
+xor     al, al
+pop     esi
+retn
+*/
+} } }
 // 0x6FC090
-namespace ra2 { namespace game { int TechnoClass::Vt240Thunk() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::Vt240Thunk() {
+// [IDA decompile]
+int __thiscall TechnoClass::Vt240Thunk(#377 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+  int v3; // [esp+8h] [ebp+8h]
+
+  return (*(int (__thiscall **)(#377 *, int, int, _DWORD))(*(_DWORD *)this + 960))(this, v2, v3, 0);
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+mov     eax, [ecx]
+push    0
+push    edx
+mov     edx, [esp+8+arg_0]
+push    edx
+call    dword ptr [eax+3C0h]
+retn    8
+*/
+} } }
 // 0x6FF960
-namespace ra2 { namespace game { int TechnoClass::DrawTargetLine() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::DrawTargetLine() {
+// [IDA decompile]
+char __thiscall TechnoClass_DrawTargetLine(int *this)
+{
+  int v2; // eax
+  _DWORD *v3; // eax
+  int *TargetCoords; // eax
+  int v5; // esi
+  int *v6; // eax
+  int *v7; // eax
+  int v8; // edi
+  int *v9; // eax
+  int v10; // eax
+  int v12; // [esp+18h] [ebp-84h] BYREF
+  int v13; // [esp+1Ch] [ebp-80h]
+  int v14; // [esp+20h] [ebp-7Ch] BYREF
+  int v15; // [esp+24h] [ebp-78h]
+  int v16; // [esp+28h] [ebp-74h] BYREF
+  int v17; // [esp+2Ch] [ebp-70h]
+  int v18; // [esp+30h] [ebp-6Ch]
+  int v19; // [esp+34h] [ebp-68h]
+  int v20; // [esp+38h] [ebp-64h] BYREF
+  int v21; // [esp+3Ch] [ebp-60h]
+  int v22; // [esp+40h] [ebp-5Ch]
+  int v23; // [esp+44h] [ebp-58h]
+  int v24[3]; // [esp+48h] [ebp-54h] BYREF
+  _DWORD v25[3]; // [esp+54h] [ebp-48h] BYREF
+  _DWORD v26[3]; // [esp+60h] [ebp-3Ch] BYREF
+  int v27[4]; // [esp+6Ch] [ebp-30h] BYREF
+  _DWORD v28[4]; // [esp+7Ch] [ebp-20h] BYREF
+  _DWORD v29[4]; // [esp+8Ch] [ebp-10h] BYREF
+
+  v2 = *(this + 173);
+  if ( v2 )
+  {
+    v3 = (_DWORD *)(*(int (__thiscall **)(int *, int *, _DWORD))(*this + 768))(this, v24, 0);
+    v26[0] = *v3;
+    v26[1] = v3[1];
+    v26[2] = v3[2];
+    TargetCoords = TechnoClass::GetTargetCoords(this, v24);
+    v25[0] = *TargetCoords;
+    v25[1] = TargetCoords[1];
+    v25[2] = TargetCoords[2];
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v26, &v12);
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v25, &v14);
+    v13 += MEMORY[0x87F7E8][7663];
+    v15 += MEMORY[0x87F7E8][7663];
+    v5 = *(_DWORD *)(MEMORY[0x87F6C0][1] + 4) == 1
+       ? *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 8)
+       : *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 16);
+    v24[1] = v13 - 2;
+    v24[0] = v12 - 2;
+    v6 = Rect::Construct(v29, v24, 3, 3);
+    v20 = *v6;
+    v21 = v6[1];
+    v22 = v6[2];
+    v23 = v6[3];
+    v7 = ClipRectIntersection(v28, &MEMORY[0x87F7E8][7662], &v20, 0, 0);
+    v16 = *v7;
+    v17 = v7[1];
+    v18 = v7[2];
+    v19 = v7[3];
+    (*(void (__thiscall **)(_DWORD, int *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 20))(
+      MEMORY[0x87F7E8][7883],
+      &v16,
+      v5);
+    v8 = *(_DWORD *)(MEMORY[0x87F6C0][1] + 4) == 1
+       ? *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 8)
+       : *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 16);
+    v18 = 3;
+    v17 = v15 - 2;
+    v16 = v14 - 2;
+    v19 = 3;
+    v9 = ClipRectIntersection(v28, &MEMORY[0x87F7E8][7662], &v16, 0, 0);
+    v20 = *v9;
+    v21 = v9[1];
+    v22 = v9[2];
+    v23 = v9[3];
+    (*(void (__thiscall **)(_DWORD, int *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 20))(
+      MEMORY[0x87F7E8][7883],
+      &v20,
+      v8);
+    v27[1] = MEMORY[0x87F7E8][7663];
+    v27[0] = MEMORY[0x87F7E8][7662];
+    v27[2] = MEMORY[0x87F7E8][7664];
+    v27[3] = MEMORY[0x87F7E8][7665];
+    LOBYTE(v2) = ClipLine(&v12, &v14, v27);
+    if ( (_BYTE)v2 )
+    {
+      if ( *(_DWORD *)(MEMORY[0x87F6C0][1] + 4) == 1 )
+        v10 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 8);
+      else
+        v10 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 16);
+      LOBYTE(v2) = (*(int (__stdcall **)(int *, int *, int, void *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 72))(
+                     &v12,
+                     &v14,
+                     v10,
+                     &unk_84310C,
+                     7 * dword_A8ED54[12] % 16);
+    }
+  }
+  return v2;
+}
+
+/* ASM:
+sub     esp, 84h
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+2B4h]
+test    eax, eax
+jz      loc_6FFBD5
+mov     eax, [esi]
+lea     ecx, [esp+8Ch+var_54]
+push    0
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+300h]
+mov     edx, [eax]
+mov     [esp+8Ch+var_3C], edx
+mov     ecx, [eax+4]
+mov     [esp+8Ch+var_38], ecx
+mov     ecx, esi
+mov     edx, [eax+8]
+lea     eax, [esp+8Ch+var_54]
+push    eax
+mov     [esp+90h+var_34], edx
+call    TechnoClass__GetTargetCoords
+mov     ecx, [eax]
+mov     [esp+8Ch+var_48], ecx
+lea     ecx, [esp+8Ch+var_84]
+mov     edx, [eax+4]
+push    ecx
+mov     ecx, ds:887324h
+mov     [esp+90h+var_44], edx
+mov     eax, [eax+8]
+lea     edx, [esp+90h+var_3C]
+push    edx
+mov     [esp+94h+var_40], eax
+call    Coord__To_Screen
+lea     eax, [esp+8Ch+var_7C]
+lea     ecx, [esp+8Ch+var_48]
+push    eax
+push    ecx
+mov     ecx, ds:887324h
+call    Coord__To_Screen
+mov     eax, ds:886FA4h
+mov     esi, [esp+8Ch+var_80]
+mov     edx, [esp+8Ch+var_78]
+add     esi, eax
+add     edx, eax
+mov     eax, ds:87F6C4h
+mov     [esp+8Ch+var_80], esi
+mov     [esp+8Ch+var_78], edx
+cmp     dword ptr [eax+4], 1
+jnz     short loc_6FFA1A
+mov     edx, [eax+174h]
+xor     eax, eax
+mov     al, [edx+8]
+mov     esi, eax
+jmp     short loc_6FFA26
+; ---------------------------------------------------------------------------
+
+loc_6FFA1A:                             ; CODE XREF: TechnoClass__DrawTargetLine+A9↑j
+mov     ecx, [eax+174h]
+xor     esi, esi
+mov     si, [ecx+10h]
+
+loc_6FFA26:                             ; CODE XREF: TechnoClass__DrawTargetLine+B8↑j
+mov     edx, [esp+8Ch+var_84]
+mov     ecx, [esp+8Ch+var_80]
+add     ecx, 0FFFFFFFEh
+push    3
+lea     eax, [edx-2]
+lea     edx, [esp+90h+var_54]
+mov     [esp+90h+var_50], ecx
+push    3
+push    edx
+lea     ecx, [esp+98h+var_10]
+mov     dword ptr [esp+98h+var_54], eax
+call    Rect__Construct
+mov     ecx, [eax]
+push    0
+mov     [esp+90h+var_64], ecx
+push    0
+mov     edx, [eax+4]
+mov     [esp+94h+var_60], edx
+mov     ecx, [eax+8]
+mov     [esp+94h+var_5C], ecx
+lea     ecx, [esp+94h+var_20]
+mov     edx, [eax+0Ch]
+lea     eax, [esp+94h+var_64]
+mov     [esp+94h+var_58], edx
+push    eax
+mov     edx, 886FA0h
+call    ClipRectIntersection
+mov     ecx, [eax]
+push    esi
+mov     [esp+90h+var_74], ecx
+mov     edx, [eax+4]
+mov     [esp+90h+var_70], edx
+mov     ecx, [eax+8]
+mov     [esp+90h+var_6C], ecx
+mov     ecx, ds:887314h
+mov     edx, [eax+0Ch]
+mov     [esp+90h+var_68], edx
+mov     eax, [ecx]
+lea     edx, [esp+90h+var_74]
+push    edx
+call    dword ptr [eax+14h]
+mov     eax, ds:87F6C4h
+cmp     dword ptr [eax+4], 1
+jnz     short loc_6FFAC9
+mov     eax, [eax+174h]
+xor     ecx, ecx
+mov     cl, [eax+8]
+mov     edi, ecx
+jmp     short loc_6FFAD5
+; ---------------------------------------------------------------------------
+
+loc_6FFAC9:                             ; CODE XREF: TechnoClass__DrawTargetLine+158↑j
+mov     edx, [eax+174h]
+xor     edi, edi
+mov     di, [edx+10h]
+
+loc_6FFAD5:                             ; CODE XREF: TechnoClass__DrawTargetLine+167↑j
+mov     ecx, [esp+8Ch+var_78]
+mov     eax, [esp+8Ch+var_7C]
+mov     edx, 3
+add     ecx, 0FFFFFFFEh
+mov     esi, edx
+mov     [esp+8Ch+var_6C], edx
+push    0
+lea     edx, [esp+90h+var_74]
+push    0
+add     eax, 0FFFFFFFEh
+mov     [esp+94h+var_70], ecx
+push    edx
+mov     edx, 886FA0h
+lea     ecx, [esp+98h+var_20]
+mov     [esp+98h+var_74], eax
+mov     [esp+98h+var_68], esi
+call    ClipRectIntersection
+mov     ecx, [eax]
+push    edi
+mov     [esp+90h+var_64], ecx
+mov     edx, [eax+4]
+mov     [esp+90h+var_60], edx
+mov     ecx, [eax+8]
+mov     [esp+90h+var_5C], ecx
+mov     ecx, ds:887314h
+mov     edx, [eax+0Ch]
+mov     [esp+90h+var_58], edx
+mov     eax, [ecx]
+lea     edx, [esp+90h+var_64]
+push    edx
+call    dword ptr [eax+14h]
+mov     ecx, ds:886FA4h
+mov     eax, ds:886FA0h
+mov     edx, ds:886FA8h
+mov     [esp+8Ch+var_2C], ecx
+lea     ecx, [esp+8Ch+var_30]
+mov     dword ptr [esp+8Ch+var_30], eax
+mov     eax, ds:886FACh
+mov     dword ptr [esp+8Ch+var_28], edx
+push    ecx
+lea     edx, [esp+90h+var_7C]
+lea     ecx, [esp+90h+var_84]
+mov     [esp+90h+var_24], eax
+call    ClipLine
+test    al, al
+jz      short loc_6FFBD5
+mov     eax, ds:87F6C4h
+cmp     dword ptr [eax+4], 1
+jnz     short loc_6FFB91
+mov     edx, [eax+174h]
+xor     eax, eax
+mov     al, [edx+8]
+jmp     short loc_6FFB9D
+; ---------------------------------------------------------------------------
+
+loc_6FFB91:                             ; CODE XREF: TechnoClass__DrawTargetLine+222↑j
+mov     ecx, [eax+174h]
+xor     eax, eax
+mov     ax, [ecx+10h]
+
+loc_6FFB9D:                             ; CODE XREF: TechnoClass__DrawTargetLine+22F↑j
+mov     edx, dword_A8ED54+30h
+mov     ecx, ds:887314h
+mov     esi, [ecx]
+lea     edi, ds:0[edx*8]
+sub     edi, edx
+and     edi, 8000000Fh
+jns     short loc_6FFBC1
+dec     edi
+or      edi, 0FFFFFFF0h
+inc     edi
+
+loc_6FFBC1:                             ; CODE XREF: TechnoClass__DrawTargetLine+25A↑j
+push    edi
+push    offset unk_84310C
+push    eax
+lea     edx, [esp+98h+var_7C]
+lea     eax, [esp+98h+var_84]
+push    edx
+push    eax
+call    dword ptr [esi+48h]
+
+loc_6FFBD5:                             ; CODE XREF: TechnoClass__DrawTargetLine+12↑j
+; TechnoClass__DrawTargetLine+217↑j
+pop     edi
+pop     esi
+add     esp, 84h
+retn
+*/
+} } }
 // 0x7010D0
-namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() {
+// [IDA decompile]
+int __thiscall TechnoClass::HasValidWeapon(#377 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = !*((_BYTE *)this + 456)
+                && (result = House::IsHumanPlayer(*((#375 **)this + 135)), (_BYTE)result)
+                && (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1012))(this)) != 0
+                && *(_DWORD *)result
+                && (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 892))(this), !(_BYTE)result);
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     al, [esi+1C8h]
+test    al, al
+jnz     short loc_701111
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_701111
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+3F4h]
+test    eax, eax
+jz      short loc_701111
+cmp     dword ptr [eax], 0
+jz      short loc_701111
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+37Ch]
+test    al, al
+jnz     short loc_701111
+mov     al, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_701111:                             ; CODE XREF: TechnoClass__HasValidWeapon+B↑j
+; TechnoClass__HasValidWeapon+1A↑j ...
+xor     al, al
+pop     esi
+retn
+*/
+} } }
 // 0x7013A0
-namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() { return 0; } } }
+namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() {
+// [IDA decompile]
+int __thiscall TechnoClass::OverrideMission_SyncLog(#377 *this)
+{
+  int v3; // [esp+Ch] [ebp+4h]
+  int v4; // [esp+10h] [ebp+8h]
+  int v5; // [esp+14h] [ebp+Ch]
+
+  *((_DWORD *)this + 174) = *((_DWORD *)this + 173);
+  AbstractClass::COMStub_125((int)this, v3, v4, v5);
+  return (*(int (__thiscall **)(#377 *, int))(*(_DWORD *)this + 968))(this, v4);
+}
+
+/* ASM:
+mov     edx, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [esp+8+arg_8]
+mov     edi, [esp+8+arg_4]
+mov     eax, [esi+2B4h]
+push    ecx
+push    edi
+push    edx
+mov     ecx, esi
+mov     [esi+2B8h], eax
+call    AbstractClass__COMStub_125
+mov     eax, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+pop     edi
+pop     esi
+retn    0Ch
+*/
+} } }
 // 0x704350
-namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() {
+// [IDA decompile]
+int __thiscall TechnoClass::GetDrawHeight(int *this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // edx
+  int v5; // ebp
+  _BYTE *v6; // ebx
+  int v7; // eax
+  int v8; // edi
+  _DWORD *v10; // eax
+  _DWORD *v11; // eax
+  _DWORD *v12; // edi
+  _DWORD *v13; // ebx
+  _DWORD *v14; // eax
+  int v15; // edi
+  int v16; // ebx
+  int v17; // eax
+  _WORD *v18; // esi
+  int v19; // eax
+  __int16 v20; // dx
+  _BYTE *v21; // edi
+  int v22; // eax
+  __int16 v23; // dx
+  unsigned int v24; // eax
+  __int16 v25; // dx
+  int v26; // eax
+  __int16 v27; // dx
+  _BYTE *v28; // ebx
+  int v29; // eax
+  __int16 v30; // dx
+  _BYTE *v31; // ebp
+  int v32; // eax
+  __int16 v33; // dx
+  _BYTE *v34; // eax
+  int v35; // eax
+  _DWORD *v36; // ecx
+  int v37; // edi
+  _DWORD *i; // esi
+  int v39; // eax
+  int v40; // ecx
+  int v41; // [esp+10h] [ebp-5Ch] BYREF
+  int v42; // [esp+14h] [ebp-58h]
+  _BYTE *v43; // [esp+18h] [ebp-54h] BYREF
+  _BYTE *v44; // [esp+1Ch] [ebp-50h] BYREF
+  _BYTE *v45; // [esp+20h] [ebp-4Ch] BYREF
+  _BYTE *v46; // [esp+24h] [ebp-48h]
+  _BYTE *v47; // [esp+28h] [ebp-44h] BYREF
+  _BYTE *v48; // [esp+2Ch] [ebp-40h] BYREF
+  _BYTE *v49; // [esp+30h] [ebp-3Ch] BYREF
+  _BYTE *v50; // [esp+34h] [ebp-38h] BYREF
+  _BYTE *v51; // [esp+38h] [ebp-34h] BYREF
+  _BYTE *v52; // [esp+3Ch] [ebp-30h] BYREF
+  int v53; // [esp+40h] [ebp-2Ch] BYREF
+  int v54; // [esp+44h] [ebp-28h] BYREF
+  int v55; // [esp+48h] [ebp-24h] BYREF
+  int v56; // [esp+4Ch] [ebp-20h] BYREF
+  int v57; // [esp+50h] [ebp-1Ch] BYREF
+  int v58; // [esp+54h] [ebp-18h] BYREF
+  int v59; // [esp+58h] [ebp-14h] BYREF
+  int v60; // [esp+5Ch] [ebp-10h] BYREF
+  _BYTE *v61; // [esp+60h] [ebp-Ch] BYREF
+  _BYTE *v62; // [esp+64h] [ebp-8h]
+  _BYTE *v63; // [esp+68h] [ebp-4h]
+
+  v2 = (*(int (__thiscall **)(int *))(*this + 464))(this);
+  v3 = ZCoordToScreenY(v2);
+  v4 = *this;
+  v5 = -v3;
+  v42 = -v3;
+  v41 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE **))(v4 + 440))(this, &v52);
+  v6 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v41);
+  v7 = *this;
+  v46 = v6;
+  if ( (*(int (__thiscall **)(int *))(v7 + 44))(this) == 1 )
+  {
+    if ( *((_BYTE *)this + 1048) )
+    {
+      v8 = Array::Get(this, 0);
+      if ( (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 44))(v8) == 6
+        && (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 388))(v8) == 16 )
+      {
+        return v5 - 3;
+      }
+    }
+    if ( *(_BYTE *)(*(this + 433) + 3598) )
+    {
+      v10 = (_DWORD *)(*(int (__thiscall **)(int *))(*this + 444))(this);
+      v11 = Cell::IsBridge(v10);
+      if ( v11 )
+      {
+        if ( *(_BYTE *)(v11[328] + 5819) )
+          return v5 - 14;
+      }
+    }
+  }
+  if ( v6[284] )
+  {
+    LOWORD(v43) = LOWORD(MEMORY[0x87F7E8][32684]) + v41;
+    HIWORD(v43) = HIWORD(MEMORY[0x87F7E8][32684]) + HIWORD(v41);
+    v45 = v43;
+    v12 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v45);
+    LOWORD(v43) = LOWORD(MEMORY[0x87F7E8][32682]) + v41;
+    HIWORD(v43) = HIWORD(MEMORY[0x87F7E8][32682]) + HIWORD(v41);
+    v44 = v43;
+    v13 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v44);
+    HIWORD(v43) = HIWORD(MEMORY[0x87F7E8][32683]) + HIWORD(v41);
+    LOWORD(v43) = LOWORD(MEMORY[0x87F7E8][32683]) + v41;
+    v14 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v43);
+    if ( v12 )
+    {
+      if ( v13 && v14 )
+      {
+        v15 = v12[17];
+        if ( v15 == -1 )
+        {
+          v16 = v13[17];
+          if ( v16 == -1 )
+          {
+            v17 = v14[17];
+            if ( v17 != -1 && *(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v17) + 693) )
+              return dword_843124 + v5 - 1;
+          }
+          else if ( *(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v16) + 693) )
+          {
+            return dword_843124 + v5 - 1;
+          }
+        }
+        else if ( *(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v15) + 693) )
+        {
+          return dword_843124 + v5 - 1;
+        }
+      }
+    }
+  }
+  v18 = this + 226;
+  v19 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v18, &v54) >> 12) + 1) >> 1) + 1) & 7;
+  v20 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v19 + 32680]);
+  LOWORD(v43) = v41 + LOWORD(MEMORY[0x87F7E8][v19 + 32680]);
+  HIWORD(v43) = v20;
+  v47 = v43;
+  v21 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v47);
+  v22 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v18, &v55) >> 12) + 1) >> 1) - 1) & 7;
+  v23 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v22 + 32680]);
+  LOWORD(v43) = v41 + LOWORD(MEMORY[0x87F7E8][v22 + 32680]);
+  HIWORD(v43) = v23;
+  v48 = v43;
+  v44 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v48);
+  v24 = ((unsigned int)((*ProgressTimer::GetValue(v18, &v56) >> 12) + 1) >> 1) & 7;
+  v25 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v24 + 32680]);
+  LOWORD(v43) = LOWORD(MEMORY[0x87F7E8][v24 + 32680]) + v41;
+  HIWORD(v43) = v25;
+  v49 = v43;
+  v45 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v49);
+  v26 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v18, &v57) >> 12) + 1) >> 1) - 4) & 7;
+  v27 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v26 + 32680]);
+  LOWORD(v43) = LOWORD(MEMORY[0x87F7E8][v26 + 32680]) + v41;
+  HIWORD(v43) = v27;
+  v50 = v43;
+  v28 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v50);
+  v29 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v18, &v58) >> 12) + 1) >> 1) + 3) & 7;
+  v30 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v29 + 32680]);
+  LOWORD(v43) = v41 + LOWORD(MEMORY[0x87F7E8][v29 + 32680]);
+  HIWORD(v43) = v30;
+  v51 = v43;
+  v31 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v51);
+  v32 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v18, &v59) >> 12) + 1) >> 1) - 3) & 7;
+  v33 = HIWORD(v41) + HIWORD(MEMORY[0x87F7E8][v32 + 32680]);
+  LOWORD(v43) = v41 + LOWORD(MEMORY[0x87F7E8][v32 + 32680]);
+  HIWORD(v43) = v33;
+  v52 = v43;
+  v34 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v52);
+  v43 = v34;
+  if ( !v21 || !v44 || !v45 )
+    return v42 - 1;
+  if ( v21[284] || v44[284] || v45[284] )
+    return dword_843120 + v42;
+  if ( !v28 || !v31 || !v34 )
+    return v42 - 1;
+  if ( v28[284] || v31[284] || v34[284] )
+    return dword_843120 + v42;
+  if ( v46[284] )
+    return v42 + dword_84311C;
+  if ( (((unsigned __int8)(*ProgressTimer::GetValue(v18, &v59) >> 12) + 1) & 0xE) == 0xC
+    || (((unsigned __int8)(*ProgressTimer::GetValue(v18, &v59) >> 12) + 1) & 0xE) == 0 )
+  {
+    v61 = v28;
+    v62 = v31;
+    v63 = v43;
+  }
+  else
+  {
+    if ( (((unsigned __int8)(*ProgressTimer::GetValue(v18, &v59) >> 12) + 1) & 0xE) != 8
+      && (((unsigned __int8)(*ProgressTimer::GetValue(v18, &v59) >> 12) + 1) & 0xE) != 4 )
+    {
+      return v42 - 1;
+    }
+    v61 = v21;
+    v62 = v44;
+    v63 = v45;
+  }
+  if ( (*((_DWORD *)v46 + 80) & 0x10000) != 0 )
+    return v42 - 1;
+  v35 = 0;
+  v36 = &v61;
+  do
+  {
+    if ( (*(_DWORD *)(*v36 + 320) & 0x10000) != 0 )
+      return v42 - 1;
+    ++v35;
+    ++v36;
+  }
+  while ( v35 < 3 );
+  v37 = 0;
+  for ( i = &v61; ; ++i )
+  {
+    v39 = *(_DWORD *)(*i + 56);
+    if ( v39 == 0xFFFF || v39 == 255 )
+      v40 = 0;
+    else
+      v40 = *(unsigned __int8 *)(*i + 282);
+    ((void (__stdcall *)(int, int *, int *))TechnoClass::GetTileAnimationData)(v40, &v60, &v53);
+    if ( v53 > 36 )
+      break;
+    if ( ++v37 >= 3 )
+      return v42 - 1;
+  }
+  return v42 - 2;
+}
+
+/* ASM:
+sub     esp, 5Ch
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+1D0h]
+mov     ecx, eax
+call    ZCoordToScreenY
+mov     edx, [esi]
+mov     ebp, eax
+lea     eax, [esp+6Ch+var_30]
+mov     ecx, esi
+neg     ebp
+push    eax
+mov     [esp+70h+var_58], ebp
+call    dword ptr [edx+1B8h]
+mov     ecx, [eax]
+lea     edx, [esp+6Ch+var_5C]
+mov     [esp+6Ch+var_5C], ecx
+push    edx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ebx, eax
+mov     eax, [esi]
+mov     ecx, esi
+mov     [esp+6Ch+var_48], ebx
+call    dword ptr [eax+2Ch]
+cmp     eax, 1
+jnz     short loc_704421
+mov     al, [esi+418h]
+test    al, al
+jz      short loc_7043E1
+push    0
+mov     ecx, esi
+call    Array__Get
+mov     edi, eax
+mov     ecx, edi
+mov     edx, [edi]
+call    dword ptr [edx+2Ch]
+cmp     eax, 6
+jnz     short loc_7043E1
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+184h]
+cmp     eax, 10h
+jnz     short loc_7043E1
+pop     edi
+lea     eax, [ebp-3]
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_7043E1:                             ; CODE XREF: TechnoClass__GetDrawHeight+5E↑j
+; TechnoClass__GetDrawHeight+75↑j ...
+mov     ecx, [esi+6C4h]
+mov     al, [ecx+0E0Eh]
+test    al, al
+jz      short loc_704421
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1BCh]
+mov     ecx, eax
+call    Cell__IsBridge
+test    eax, eax
+jz      short loc_704421
+mov     eax, [eax+520h]
+mov     cl, [eax+16BBh]
+test    cl, cl
+jz      short loc_704421
+pop     edi
+lea     eax, [ebp-0Eh]
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_704421:                             ; CODE XREF: TechnoClass__GetDrawHeight+54↑j
+; TechnoClass__GetDrawHeight+9F↑j ...
+mov     al, [ebx+11Ch]
+test    al, al
+jz      loc_70457B
+mov     ax, word ptr [esp+6Ch+var_5C+2]
+mov     ecx, [esp+6Ch+var_5C]
+mov     edx, ds:89F698h
+add     ax, ds:89F69Ah
+add     ecx, edx
+lea     edx, [esp+6Ch+var_4C]
+mov     word ptr [esp+6Ch+var_54], cx
+mov     word ptr [esp+6Ch+var_54+2], ax
+mov     ecx, [esp+6Ch+var_54]
+push    edx
+mov     [esp+70h+var_4C], ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     dx, word ptr [esp+6Ch+var_5C+2]
+mov     ecx, ds:89F690h
+add     dx, ds:89F692h
+mov     edi, eax
+mov     eax, [esp+6Ch+var_5C]
+add     eax, ecx
+lea     ecx, [esp+6Ch+var_50]
+mov     word ptr [esp+6Ch+var_54], ax
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_50], eax
+call    CellCoord__To_CellObj
+mov     cx, word ptr [esp+6Ch+var_5C+2]
+mov     edx, [esp+6Ch+var_5C]
+add     cx, ds:89F696h
+mov     ebx, eax
+mov     eax, ds:89F694h
+add     edx, eax
+mov     word ptr [esp+6Ch+var_54+2], cx
+mov     word ptr [esp+6Ch+var_54], dx
+mov     edx, [esp+6Ch+var_54]
+lea     eax, [esp+6Ch+var_54]
+mov     ecx, 87F7E8h
+push    eax
+mov     [esp+70h+var_54], edx
+call    CellCoord__To_CellObj
+test    edi, edi
+jz      loc_70457B
+test    ebx, ebx
+jz      loc_70457B
+test    eax, eax
+jz      loc_70457B
+mov     edi, [edi+44h]
+cmp     edi, 0FFFFFFFFh
+jz      short loc_704522
+mov     ecx, ds:0A83D84h
+mov     edx, [ecx+edi*4]
+mov     al, [edx+2B5h]
+test    al, al
+jz      short loc_70457B
+mov     ecx, dword_843124
+pop     edi
+pop     esi
+lea     eax, [ecx+ebp-1]
+pop     ebp
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_704522:                             ; CODE XREF: TechnoClass__GetDrawHeight+1AB↑j
+mov     ebx, [ebx+44h]
+cmp     ebx, 0FFFFFFFFh
+jz      short loc_70454E
+mov     eax, ds:0A83D84h
+mov     ecx, [eax+ebx*4]
+mov     al, [ecx+2B5h]
+test    al, al
+jz      short loc_70457B
+mov     ecx, dword_843124
+pop     edi
+pop     esi
+lea     eax, [ecx+ebp-1]
+pop     ebp
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_70454E:                             ; CODE XREF: TechnoClass__GetDrawHeight+1D8↑j
+mov     eax, [eax+44h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_70457B
+mov     edx, ds:0A83D84h
+mov     eax, [edx+eax*4]
+mov     cl, [eax+2B5h]
+test    cl, cl
+jz      short loc_70457B
+mov     ecx, dword_843124
+pop     edi
+pop     esi
+lea     eax, [ecx+ebp-1]
+pop     ebp
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_70457B:                             ; CODE XREF: TechnoClass__GetDrawHeight+D9↑j
+; TechnoClass__GetDrawHeight+18F↑j ...
+add     esi, 388h
+lea     edx, [esp+6Ch+var_28]
+push    edx
+mov     ecx, esi
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+inc     eax
+and     eax, 7
+mov     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     cx, word ptr [esp+6Ch+var_5C]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_44]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_44], eax
+call    CellCoord__To_CellObj
+lea     edx, [esp+6Ch+var_24]
+mov     ecx, esi
+push    edx
+mov     edi, eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+dec     eax
+and     eax, 7
+mov     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     cx, word ptr [esp+6Ch+var_5C]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_40]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_40], eax
+call    CellCoord__To_CellObj
+lea     edx, [esp+6Ch+var_20]
+mov     ecx, esi
+push    edx
+mov     [esp+70h+var_50], eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+mov     cx, word ptr [esp+6Ch+var_5C]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+and     eax, 7
+add     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_3C]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_3C], eax
+call    CellCoord__To_CellObj
+lea     edx, [esp+6Ch+var_1C]
+mov     ecx, esi
+push    edx
+mov     [esp+70h+var_4C], eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+sub     eax, 4
+mov     cx, word ptr [esp+6Ch+var_5C]
+and     eax, 7
+add     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_38]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_38], eax
+call    CellCoord__To_CellObj
+lea     edx, [esp+6Ch+var_18]
+mov     ecx, esi
+push    edx
+mov     ebx, eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+add     eax, 3
+and     eax, 7
+mov     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     cx, word ptr [esp+6Ch+var_5C]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_34]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_34], eax
+call    CellCoord__To_CellObj
+lea     edx, [esp+6Ch+var_14]
+mov     ecx, esi
+push    edx
+mov     ebp, eax
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+shr     eax, 1
+sub     eax, 3
+and     eax, 7
+mov     cx, ds:89F688h[eax*4]
+mov     dx, ds:89F68Ah[eax*4]
+add     cx, word ptr [esp+6Ch+var_5C]
+add     dx, word ptr [esp+6Ch+var_5C+2]
+lea     eax, ds:89F688h[eax*4]
+mov     word ptr [esp+6Ch+var_54], cx
+lea     ecx, [esp+6Ch+var_30]
+mov     word ptr [esp+6Ch+var_54+2], dx
+mov     eax, [esp+6Ch+var_54]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+70h+var_30], eax
+call    CellCoord__To_CellObj
+test    edi, edi
+mov     [esp+6Ch+var_54], eax
+jz      loc_70498B
+mov     edx, [esp+6Ch+var_50]
+test    edx, edx
+jz      loc_70498B
+mov     ecx, [esp+6Ch+var_4C]
+test    ecx, ecx
+jz      loc_70498B
+cmp     byte ptr [edi+11Ch], 0
+jnz     loc_7049A9
+cmp     byte ptr [edx+11Ch], 0
+jnz     loc_7049A9
+mov     dl, [ecx+11Ch]
+test    dl, dl
+jnz     loc_7049A9
+test    ebx, ebx
+jz      loc_70498B
+test    ebp, ebp
+jz      loc_70498B
+test    eax, eax
+jz      loc_70498B
+mov     cl, [ebx+11Ch]
+test    cl, cl
+jnz     loc_7049A9
+mov     cl, [ebp+11Ch]
+test    cl, cl
+jnz     loc_7049A9
+mov     cl, [eax+11Ch]
+test    cl, cl
+jnz     loc_7049A9
+mov     edx, [esp+6Ch+var_48]
+mov     al, [edx+11Ch]
+test    al, al
+jz      short loc_70485F
+mov     eax, dword_84311C
+mov     ecx, [esp+6Ch+var_58]
+pop     edi
+pop     esi
+pop     ebp
+add     eax, ecx
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_70485F:                             ; CODE XREF: TechnoClass__GetDrawHeight+4FA↑j
+lea     edx, [esp+6Ch+var_14]
+mov     ecx, esi
+push    edx
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+and     eax, 0Eh
+cmp     al, 0Ch
+jz      short loc_7048DC
+lea     ecx, [esp+6Ch+var_14]
+push    ecx
+mov     ecx, esi
+call    ProgressTimer__GetValue
+mov     edx, [eax]
+shr     edx, 0Ch
+inc     edx
+test    dl, 0Eh
+jz      short loc_7048DC
+lea     eax, [esp+6Ch+var_14]
+mov     ecx, esi
+push    eax
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+shr     ecx, 0Ch
+inc     ecx
+and     ecx, 0Eh
+cmp     cl, 8
+jz      short loc_7048C6
+lea     edx, [esp+6Ch+var_14]
+mov     ecx, esi
+push    edx
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+shr     eax, 0Ch
+inc     eax
+and     eax, 0Eh
+cmp     al, 4
+jnz     loc_70498B
+
+loc_7048C6:                             ; CODE XREF: TechnoClass__GetDrawHeight+557↑j
+mov     edx, [esp+6Ch+var_50]
+mov     eax, [esp+6Ch+var_4C]
+mov     [esp+6Ch+var_C], edi
+mov     [esp+6Ch+var_8], edx
+mov     [esp+6Ch+var_4], eax
+jmp     short loc_7048EC
+; ---------------------------------------------------------------------------
+
+loc_7048DC:                             ; CODE XREF: TechnoClass__GetDrawHeight+526↑j
+; TechnoClass__GetDrawHeight+53D↑j
+mov     ecx, [esp+6Ch+var_54]
+mov     [esp+6Ch+var_C], ebx
+mov     [esp+6Ch+var_8], ebp
+mov     [esp+6Ch+var_4], ecx
+
+loc_7048EC:                             ; CODE XREF: TechnoClass__GetDrawHeight+58A↑j
+mov     eax, [esp+6Ch+var_48]
+mov     edx, 10000h
+test    [eax+140h], edx
+jnz     loc_70498B
+xor     eax, eax
+lea     ecx, [esp+6Ch+var_C]
+
+loc_704907:                             ; CODE XREF: TechnoClass__GetDrawHeight+5C8↓j
+mov     esi, [ecx]
+test    [esi+140h], edx
+jnz     short loc_70494B
+inc     eax
+add     ecx, 4
+cmp     eax, 3
+jl      short loc_704907
+xor     edi, edi
+lea     esi, [esp+6Ch+var_C]
+mov     ebp, 24h ; '$'
+
+loc_704925:                             ; CODE XREF: TechnoClass__GetDrawHeight+639↓j
+mov     edx, [esi]
+mov     eax, [edx+38h]
+cmp     eax, 0FFFFh
+jz      short loc_70495A
+cmp     eax, 0FFh
+jz      short loc_70495A
+mov     ecx, ds:0A8ED2Ch
+mov     eax, [ecx+eax*4]
+xor     ecx, ecx
+mov     cl, [edx+11Ah]
+jmp     short loc_70496A
+; ---------------------------------------------------------------------------
+
+loc_70494B:                             ; CODE XREF: TechnoClass__GetDrawHeight+5BF↑j
+mov     edx, [esp+6Ch+var_58]
+pop     edi
+pop     esi
+pop     ebp
+lea     eax, [edx-1]
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_70495A:                             ; CODE XREF: TechnoClass__GetDrawHeight+5DF↑j
+; TechnoClass__GetDrawHeight+5E6↑j
+mov     edx, ds:0A8ED2Ch
+mov     eax, dword_A8ED54+1235Ch
+xor     ecx, ecx
+mov     eax, [edx+eax*4]
+
+loc_70496A:                             ; CODE XREF: TechnoClass__GetDrawHeight+5F9↑j
+lea     edx, [esp+6Ch+var_2C]
+push    edx
+lea     edx, [esp+70h+var_10]
+push    edx
+push    ecx
+mov     ecx, eax
+call    TechnoClass__GetTileAnimationData
+cmp     [esp+6Ch+var_2C], ebp
+jg      short loc_70499A
+inc     edi
+add     esi, 4
+cmp     edi, 3
+jl      short loc_704925
+
+loc_70498B:                             ; CODE XREF: TechnoClass__GetDrawHeight+466↑j
+; TechnoClass__GetDrawHeight+472↑j ...
+mov     ecx, [esp+6Ch+var_58]
+pop     edi
+pop     esi
+pop     ebp
+lea     eax, [ecx-1]
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_70499A:                             ; CODE XREF: TechnoClass__GetDrawHeight+630↑j
+mov     eax, [esp+6Ch+var_58]
+pop     edi
+pop     esi
+pop     ebp
+add     eax, 0FFFFFFFEh
+pop     ebx
+add     esp, 5Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_7049A9:                             ; CODE XREF: TechnoClass__GetDrawHeight+48B↑j
+; TechnoClass__GetDrawHeight+498↑j ...
+mov     edx, dword_843120
+mov     eax, [esp+6Ch+var_58]
+pop     edi
+pop     esi
+pop     ebp
+add     eax, edx
+pop     ebx
+add     esp, 5Ch
+retn
+*/
+} } }
 // 0x7077C0
-namespace ra2 { namespace game { int ObjectClass::NotifyExpired(void* a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::NotifyExpired(void* a1, void* a2) {
+// [IDA decompile]
+int __thiscall ObjectClass_NotifyExpired(int *this, _BYTE *a2, _BYTE *a3)
+{
+  int v5; // ecx
+  int v6; // eax
+  int v7; // eax
+  int v8; // eax
+  int v9; // edi
+  int v10; // ecx
+  int v11; // eax
+  int v12; // eax
+  _DWORD *v13; // eax
+  int v14; // edx
+  int v15; // eax
+  int v16; // eax
+  int v17; // edx
+  _DWORD *v18; // eax
+  int v19; // ecx
+  int v20; // ecx
+  int v21; // eax
+  int v22; // eax
+  int v23; // eax
+  int v24; // edx
+  int v25; // eax
+  _DWORD *v26; // ecx
+  int v27; // ecx
+  int v28; // ecx
+  int v29; // eax
+  int v30; // eax
+  int v31; // ecx
+  int v32; // ecx
+  int v33; // eax
+  _DWORD *v34; // esi
+  int result; // eax
+  int v36; // ecx
+  int v37; // ecx
+  _DWORD v38[3]; // [esp+14h] [ebp-Ch] BYREF
+  char v39; // [esp+24h] [ebp+4h]
+
+  RadioClass::ExecuteAction(a2, a3);
+  if ( (_BYTE)a3 )
+    FootClass::updateMovementAnimation(a2);
+  v39 = 1;
+  if ( a2 == (_BYTE *)*(this + 181) )
+    *(this + 181) = 0;
+  if ( a2 == (_BYTE *)*(this + 184) )
+    *(this + 184) = 0;
+  if ( a2 == (_BYTE *)*(this + 179) )
+    *(this + 179) = 0;
+  if ( a2 == (_BYTE *)*(this + 158) )
+    *(this + 158) = 0;
+  if ( a2 == (_BYTE *)*(this + 165) )
+    *(this + 165) = 0;
+  if ( a2 == (_BYTE *)*(this + 266) )
+    *(this + 266) = 0;
+  if ( a2 == (_BYTE *)*(this + 185) && MEMORY[0xA8E7AC] )
+    *(this + 185) = 0;
+  if ( a2 == (_BYTE *)*(this + 115) )
+  {
+    v5 = *(this + 117);
+    if ( v5 )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)v5 + 248))(v5);
+      *(this + 117) = 0;
+    }
+    v6 = *(this + 115);
+    if ( v6 )
+    {
+      *(_DWORD *)(v6 + 464) = 0;
+      v7 = *(_DWORD *)(*(this + 115) + 540);
+      if ( v7 )
+        *(_BYTE *)(v7 + 22392) = 1;
+      *(this + 115) = 0;
+    }
+    *(this + 115) = 0;
+  }
+  v8 = *(this + 71);
+  if ( a2 == (_BYTE *)v8 && v8 && (!*(_BYTE *)(v8 + 144) || !*(_DWORD *)(v8 + 108) || MEMORY[0xA8E7AC]) )
+    *(this + 71) = 0;
+  v9 = *(this + 116);
+  if ( a2 == (_BYTE *)v9 )
+  {
+    v10 = *(_DWORD *)(v9 + 468);
+    if ( v10 )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)v10 + 248))(v10);
+      *(_DWORD *)(v9 + 468) = 0;
+    }
+    v11 = *(_DWORD *)(v9 + 460);
+    if ( v11 )
+    {
+      *(_DWORD *)(v11 + 464) = 0;
+      v12 = *(_DWORD *)(*(_DWORD *)(v9 + 460) + 540);
+      if ( v12 )
+        *(_BYTE *)(v12 + 22392) = 1;
+      *(_DWORD *)(v9 + 460) = 0;
+    }
+    *(this + 116) = 0;
+  }
+  if ( a2 == (_BYTE *)*(this + 117) )
+    *(this + 117) = 0;
+  if ( a2 == (_BYTE *)*(this + 178) )
+    *(this + 178) = 0;
+  if ( a2 == (_BYTE *)*(this + 76) )
+    *(this + 76) = 0;
+  if ( !(_BYTE)a3 )
+  {
+    if ( a2 )
+    {
+      if ( (a2[20] & 1) != 0 )
+      {
+        v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *))(*(_DWORD *)a2 + 72))(a2, v38);
+        Coord::To_Cell(&MEMORY[0x87F7E8], v13);
+        if ( (unsigned __int8)Cell::IsPassableOffset(*(_DWORD *)(*(this + 135) + 48)) )
+          v39 = 0;
+      }
+    }
+  }
+  if ( (_BYTE *)*(this + 173) == a2
+    && v39
+    && ((_BYTE)a3 || (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a2 + 60))(a2) != *(this + 135)) )
+  {
+    v14 = *(this + 96);
+    v15 = *(this + 98);
+    if ( v14 != -1 )
+    {
+      if ( (int)MEMORY[0xA8ED84] - v14 >= v15 )
+      {
+LABEL_61:
+        (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+        if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 508))(this) )
+        {
+          (*(void (__thiscall **)(int *))(*this + 504))(this);
+          if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 2 && *(this + 43) == 25 )
+          {
+            *(this + 47) = 0;
+            *((_BYTE *)this + 1746) = 0;
+          }
+        }
+        goto LABEL_65;
+      }
+      v15 -= (int)MEMORY[0xA8ED84] - v14;
+    }
+    if ( v15 > 10 && !MEMORY[0xA8E7AC] )
+    {
+      v16 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 4, 8);
+      v17 = v38[1];
+      *(this + 96) = (int)MEMORY[0xA8ED84];
+      *(this + 97) = v17;
+      *(this + 98) = v16;
+    }
+    goto LABEL_61;
+  }
+LABEL_65:
+  if ( (_BYTE *)*(this + 174) == a2 && v39 )
+    *(this + 174) = 0;
+  if ( (_BYTE *)*(this + 135) == a2 )
+  {
+    *(this + 135) = 0;
+    *((_BYTE *)this + 1050) = 0;
+  }
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 196))(this)
+    && (_BYTE *)(*(int (__thiscall **)(int *, int))(*this + 208))(this, 1) == a2 )
+  {
+    (*(void (__thiscall **)(int *))(*this + 1136))(this);
+  }
+  v18 = this + 193;
+  v19 = 8;
+  do
+  {
+    if ( (_BYTE *)*v18 == a2 )
+      *v18 = 0;
+    ++v18;
+    --v19;
+  }
+  while ( v19 );
+  if ( (_BYTE *)*(this + 201) == a2 )
+    *(this + 201) = 0;
+  if ( (_BYTE)a3 )
+  {
+    if ( (_BYTE *)*(this + 320) == a2 )
+      *(this + 320) = 0;
+    if ( (_BYTE *)*(this + 134) == a2 )
+      *(this + 134) = 0;
+    if ( *(this + 175) )
+      ObjectClass::RemoveFromPointerList(a2);
+  }
+  if ( *(this + 180) )
+    UnitClass::ClearTargetRef(a2);
+  if ( *(this + 157) )
+    ObjectClass::UnlinkFromFactory(a2);
+  v20 = *(this + 165);
+  if ( v20 && *(int **)(v20 + 76) == this )
+    ObjectClass::CleanupAirstrikeTarget(a2);
+  v21 = *(this + 170);
+  if ( a2 == (_BYTE *)v21 )
+  {
+    *(_DWORD *)(v21 + 680) = 0;
+    *(this + 170) = 0;
+  }
+  if ( a2 == (_BYTE *)*(this + 171) )
+  {
+    TechnoClass::EjectPassengers(1);
+    v22 = *(this + 171);
+    if ( v22 )
+    {
+      *(_DWORD *)(v22 + 688) = 0;
+      *(this + 171) = 0;
+    }
+  }
+  if ( a2 == (_BYTE *)*(this + 172) )
+  {
+    TechnoClass::EjectPassengers(1);
+    v23 = *(this + 172);
+    if ( v23 )
+    {
+      *(_DWORD *)(v23 + 684) = 0;
+      *(this + 172) = 0;
+    }
+  }
+  if ( a2 == (_BYTE *)*(this + 269) )
+    *(this + 269) = 0;
+  if ( a2 == (_BYTE *)*(this + 75) )
+    *(this + 75) = 0;
+  v24 = *(this + 282);
+  v25 = 0;
+  if ( v24 > 0 )
+  {
+    v26 = (_DWORD *)*(this + 279);
+    while ( a2 != (_BYTE *)*v26 )
+    {
+      ++v25;
+      ++v26;
+      if ( v25 >= v24 )
+        goto LABEL_118;
+    }
+    if ( v25 != -1 )
+    {
+      v27 = *(this + 276);
+      if ( v25 < v27 )
+      {
+        v28 = v27 - 1;
+        for ( *(this + 276) = v28;
+              v25 < *(this + 276);
+              *(_DWORD *)(*(this + 273) + 4 * v25 - 4) = *(_DWORD *)(*(this + 273) + 4 * v25) )
+        {
+          ++v25;
+        }
+      }
+      v29 = *(this + 278);
+      a3 = a2;
+      v30 = (*(int (__thiscall **)(int *, _BYTE **))(v29 + 16))(this + 278, &a3);
+      if ( v30 != -1 )
+      {
+        v31 = *(this + 282);
+        if ( v30 < v31 )
+        {
+          v32 = v31 - 1;
+          for ( *(this + 282) = v32;
+                v30 < *(this + 282);
+                *(_DWORD *)(*(this + 279) + 4 * v30 - 4) = *(_DWORD *)(*(this + 279) + 4 * v30) )
+          {
+            ++v30;
+          }
+        }
+      }
+    }
+  }
+LABEL_118:
+  v33 = *(this + 284);
+  v34 = this + 284;
+  a3 = a2;
+  result = (*(int (__thiscall **)(_DWORD *, _BYTE **))(v33 + 16))(v34, &a3);
+  if ( result != -1 )
+  {
+    v36 = v34[4];
+    if ( result < v36 )
+    {
+      v37 = v36 - 1;
+      for ( v34[4] = v37; result < v34[4]; *(_DWORD *)(v34[1] + 4 * result - 4) = *(_DWORD *)(v34[1] + 4 * result) )
+        ++result;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+sub     esp, 10h
+push    ebx
+push    ebp
+mov     ebp, [esp+18h+arg_0]
+push    esi
+push    edi
+push    eax
+mov     esi, ecx
+push    ebp
+call    RadioClass__ExecuteAction
+mov     al, byte ptr [esp+20h+arg_4]
+xor     ebx, ebx
+cmp     al, bl
+jz      short loc_7077EE
+push    ebp
+lea     ecx, [esi+114h]
+call    FootClass__updateMovementAnimation
+
+loc_7077EE:                             ; CODE XREF: ObjectClass__NotifyExpired+20↑j
+mov     eax, [esi+2D4h]
+mov     byte ptr [esp+20h+arg_0], 1
+cmp     ebp, eax
+jnz     short loc_707803
+mov     [esi+2D4h], ebx
+
+loc_707803:                             ; CODE XREF: ObjectClass__NotifyExpired+3B↑j
+cmp     ebp, [esi+2E0h]
+jnz     short loc_707811
+mov     [esi+2E0h], ebx
+
+loc_707811:                             ; CODE XREF: ObjectClass__NotifyExpired+49↑j
+cmp     ebp, [esi+2CCh]
+jnz     short loc_70781F
+mov     [esi+2CCh], ebx
+
+loc_70781F:                             ; CODE XREF: ObjectClass__NotifyExpired+57↑j
+cmp     ebp, [esi+278h]
+jnz     short loc_70782D
+mov     [esi+278h], ebx
+
+loc_70782D:                             ; CODE XREF: ObjectClass__NotifyExpired+65↑j
+cmp     ebp, [esi+294h]
+jnz     short loc_70783B
+mov     [esi+294h], ebx
+
+loc_70783B:                             ; CODE XREF: ObjectClass__NotifyExpired+73↑j
+cmp     ebp, [esi+428h]
+jnz     short loc_707849
+mov     [esi+428h], ebx
+
+loc_707849:                             ; CODE XREF: ObjectClass__NotifyExpired+81↑j
+cmp     ebp, [esi+2E4h]
+jnz     short loc_70785F
+cmp     ds:0A8E7ACh, ebx
+jz      short loc_70785F
+mov     [esi+2E4h], ebx
+
+loc_70785F:                             ; CODE XREF: ObjectClass__NotifyExpired+8F↑j
+; ObjectClass__NotifyExpired+97↑j
+cmp     ebp, [esi+1CCh]
+
+loc_707865:                             ; DATA XREF: .rdata:off_7FA444↓o
+jnz     short loc_7078B2
+mov     ecx, [esi+1D4h]
+cmp     ecx, ebx
+jz      short loc_70787F
+mov     edx, [ecx]
+call    dword ptr [edx+0F8h]
+mov     [esi+1D4h], ebx
+
+loc_70787F:                             ; CODE XREF: ObjectClass__NotifyExpired+AF↑j
+mov     eax, [esi+1CCh]
+cmp     eax, ebx
+jz      short loc_7078AC
+mov     [eax+1D0h], ebx
+mov     eax, [esi+1CCh]
+mov     eax, [eax+21Ch]
+cmp     eax, ebx
+jz      short loc_7078A6
+mov     byte ptr [eax+5778h], 1
+
+loc_7078A6:                             ; CODE XREF: ObjectClass__NotifyExpired+DD↑j
+mov     [esi+1CCh], ebx
+
+loc_7078AC:                             ; CODE XREF: ObjectClass__NotifyExpired+C7↑j
+mov     [esi+1CCh], ebx
+
+loc_7078B2:                             ; CODE XREF: ObjectClass__NotifyExpired:loc_707865↑j
+mov     eax, [esi+11Ch]
+cmp     ebp, eax
+jnz     short loc_7078DB
+cmp     eax, ebx
+jz      short loc_7078DB
+cmp     [eax+90h], bl
+jz      short loc_7078D5
+cmp     [eax+6Ch], ebx
+jz      short loc_7078D5
+cmp     ds:0A8E7ACh, ebx
+jz      short loc_7078DB
+
+loc_7078D5:                             ; CODE XREF: ObjectClass__NotifyExpired+106↑j
+; ObjectClass__NotifyExpired+10B↑j
+mov     [esi+11Ch], ebx
+
+loc_7078DB:                             ; CODE XREF: ObjectClass__NotifyExpired+FA↑j
+; ObjectClass__NotifyExpired+FE↑j ...
+mov     edi, [esi+1D0h]
+cmp     ebp, edi
+jnz     short loc_707930
+mov     ecx, [edi+1D4h]
+cmp     ecx, ebx
+jz      short loc_7078FD
+mov     edx, [ecx]
+call    dword ptr [edx+0F8h]
+mov     [edi+1D4h], ebx
+
+loc_7078FD:                             ; CODE XREF: ObjectClass__NotifyExpired+12D↑j
+mov     eax, [edi+1CCh]
+cmp     eax, ebx
+jz      short loc_70792A
+mov     [eax+1D0h], ebx
+mov     eax, [edi+1CCh]
+mov     eax, [eax+21Ch]
+cmp     eax, ebx
+jz      short loc_707924
+mov     byte ptr [eax+5778h], 1
+
+loc_707924:                             ; CODE XREF: ObjectClass__NotifyExpired+15B↑j
+mov     [edi+1CCh], ebx
+
+loc_70792A:                             ; CODE XREF: ObjectClass__NotifyExpired+145↑j
+mov     [esi+1D0h], ebx
+
+loc_707930:                             ; CODE XREF: ObjectClass__NotifyExpired+123↑j
+cmp     ebp, [esi+1D4h]
+jnz     short loc_70793E
+mov     [esi+1D4h], ebx
+
+loc_70793E:                             ; CODE XREF: ObjectClass__NotifyExpired+176↑j
+cmp     ebp, [esi+2C8h]
+jnz     short loc_70794C
+mov     [esi+2C8h], ebx
+
+loc_70794C:                             ; CODE XREF: ObjectClass__NotifyExpired+184↑j
+cmp     ebp, [esi+130h]
+jnz     short loc_70795A
+mov     [esi+130h], ebx
+
+loc_70795A:                             ; CODE XREF: ObjectClass__NotifyExpired+192↑j
+cmp     byte ptr [esp+20h+arg_4], bl
+jnz     short loc_7079A1
+cmp     ebp, ebx
+jz      short loc_7079A1
+mov     cl, [ebp+14h]
+and     cl, 1
+mov     [esp+20h+var_D], cl
+jz      short loc_7079A1
+mov     edx, [ebp+0]
+lea     eax, [esp+20h+var_C]
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+48h]
+push    eax
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, [esi+21Ch]
+mov     edx, [ecx+30h]
+mov     ecx, eax
+push    edx
+call    Cell__IsPassableOffset
+test    al, al
+jz      short loc_7079A1
+mov     byte ptr [esp+20h+arg_0], bl
+
+loc_7079A1:                             ; CODE XREF: ObjectClass__NotifyExpired+19E↑j
+; ObjectClass__NotifyExpired+1A2↑j ...
+cmp     [esi+2B4h], ebp
+jnz     loc_707A72
+cmp     byte ptr [esp+20h+arg_0], bl
+jz      loc_707A72
+cmp     byte ptr [esp+20h+arg_4], bl
+jnz     short loc_7079D1
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+3Ch]
+cmp     eax, [esi+21Ch]
+jz      loc_707A72
+
+loc_7079D1:                             ; CODE XREF: ObjectClass__NotifyExpired+1FB↑j
+mov     edx, [esi+180h]
+mov     eax, [esi+188h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_7079F0
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_707A2E
+sub     eax, ecx
+
+loc_7079F0:                             ; CODE XREF: ObjectClass__NotifyExpired+220↑j
+cmp     eax, 0Ah
+jle     short loc_707A2E
+cmp     ds:0A8E7ACh, ebx
+jnz     short loc_707A2E
+mov     ecx, ds:0A8B230h
+push    8
+push    4
+add     ecx, 218h
+call    Random__Range
+mov     ecx, dword_A8ED54+30h
+mov     edx, [esp+20h+var_8]
+mov     [esi+180h], ecx
+mov     [esi+184h], edx
+mov     [esi+188h], eax
+
+loc_707A2E:                             ; CODE XREF: ObjectClass__NotifyExpired+22C↑j
+; ObjectClass__NotifyExpired+233↑j ...
+mov     eax, [esi]
+push    ebx
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1FCh]
+test    al, al
+jz      short loc_707A72
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1F8h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 2
+jnz     short loc_707A72
+cmp     dword ptr [esi+0ACh], 19h
+jnz     short loc_707A72
+mov     [esi+0BCh], ebx
+mov     [esi+6D2h], bl
+
+loc_707A72:                             ; CODE XREF: ObjectClass__NotifyExpired+1E7↑j
+; ObjectClass__NotifyExpired+1F1↑j ...
+cmp     [esi+2B8h], ebp
+jnz     short loc_707A86
+cmp     byte ptr [esp+20h+arg_0], bl
+jz      short loc_707A86
+mov     [esi+2B8h], ebx
+
+loc_707A86:                             ; CODE XREF: ObjectClass__NotifyExpired+2B8↑j
+; ObjectClass__NotifyExpired+2BE↑j
+cmp     [esi+21Ch], ebp
+jnz     short loc_707A9A
+mov     [esi+21Ch], ebx
+mov     [esi+41Ah], bl
+
+loc_707A9A:                             ; CODE XREF: ObjectClass__NotifyExpired+2CC↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0C4h]
+test    al, al
+jz      short loc_707AC2
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+0D0h]
+cmp     eax, ebp
+jnz     short loc_707AC2
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+470h]
+
+loc_707AC2:                             ; CODE XREF: ObjectClass__NotifyExpired+2E6↑j
+; ObjectClass__NotifyExpired+2F6↑j
+lea     eax, [esi+304h]
+mov     ecx, 8
+
+loc_707ACD:                             ; CODE XREF: ObjectClass__NotifyExpired+317↓j
+cmp     [eax], ebp
+jnz     short loc_707AD3
+mov     [eax], ebx
+
+loc_707AD3:                             ; CODE XREF: ObjectClass__NotifyExpired+30F↑j
+add     eax, 4
+dec     ecx
+jnz     short loc_707ACD
+cmp     [esi+324h], ebp
+jnz     short loc_707AE7
+mov     [esi+324h], ebx
+
+loc_707AE7:                             ; CODE XREF: ObjectClass__NotifyExpired+31F↑j
+cmp     byte ptr [esp+20h+arg_4], bl
+jz      short loc_707B19
+cmp     [esi+500h], ebp
+jnz     short loc_707AFB
+mov     [esi+500h], ebx
+
+loc_707AFB:                             ; CODE XREF: ObjectClass__NotifyExpired+333↑j
+cmp     [esi+218h], ebp
+jnz     short loc_707B09
+mov     [esi+218h], ebx
+
+loc_707B09:                             ; CODE XREF: ObjectClass__NotifyExpired+341↑j
+mov     ecx, [esi+2BCh]
+cmp     ecx, ebx
+jz      short loc_707B19
+push    ebp
+call    ObjectClass__RemoveFromPointerList
+
+loc_707B19:                             ; CODE XREF: ObjectClass__NotifyExpired+32B↑j
+; ObjectClass__NotifyExpired+351↑j
+mov     ecx, [esi+2D0h]
+cmp     ecx, ebx
+jz      short loc_707B29
+push    ebp
+call    UnitClass__ClearTargetRef
+
+loc_707B29:                             ; CODE XREF: ObjectClass__NotifyExpired+361↑j
+mov     ecx, [esi+274h]
+cmp     ecx, ebx
+jz      short loc_707B39
+push    ebp
+call    ObjectClass__UnlinkFromFactory
+
+loc_707B39:                             ; CODE XREF: ObjectClass__NotifyExpired+371↑j
+mov     ecx, [esi+294h]
+cmp     ecx, ebx
+jz      short loc_707B4E
+cmp     [ecx+4Ch], esi
+jnz     short loc_707B4E
+push    ebp
+call    ObjectClass__CleanupAirstrikeTarget
+
+loc_707B4E:                             ; CODE XREF: ObjectClass__NotifyExpired+381↑j
+; ObjectClass__NotifyExpired+386↑j
+mov     eax, [esi+2A8h]
+cmp     ebp, eax
+jnz     short loc_707B64
+mov     [eax+2A8h], ebx
+mov     [esi+2A8h], ebx
+
+loc_707B64:                             ; CODE XREF: ObjectClass__NotifyExpired+396↑j
+cmp     ebp, [esi+2ACh]
+jnz     short loc_707B8B
+push    1
+mov     ecx, esi
+call    TechnoClass__EjectPassengers
+mov     eax, [esi+2ACh]
+cmp     eax, ebx
+jz      short loc_707B8B
+mov     [eax+2B0h], ebx
+mov     [esi+2ACh], ebx
+
+loc_707B8B:                             ; CODE XREF: ObjectClass__NotifyExpired+3AA↑j
+; ObjectClass__NotifyExpired+3BD↑j
+mov     ecx, [esi+2B0h]
+cmp     ebp, ecx
+jnz     short loc_707BB2
+push    1
+call    TechnoClass__EjectPassengers
+mov     eax, [esi+2B0h]
+cmp     eax, ebx
+jz      short loc_707BB2
+mov     [eax+2ACh], ebx
+mov     [esi+2B0h], ebx
+
+loc_707BB2:                             ; CODE XREF: ObjectClass__NotifyExpired+3D3↑j
+; ObjectClass__NotifyExpired+3E4↑j
+cmp     ebp, [esi+434h]
+jnz     short loc_707BC0
+mov     [esi+434h], ebx
+
+loc_707BC0:                             ; CODE XREF: ObjectClass__NotifyExpired+3F8↑j
+cmp     ebp, [esi+12Ch]
+jnz     short loc_707BCE
+mov     [esi+12Ch], ebx
+
+loc_707BCE:                             ; CODE XREF: ObjectClass__NotifyExpired+406↑j
+mov     edx, [esi+468h]
+xor     eax, eax
+cmp     edx, ebx
+jle     loc_707C64
+mov     ecx, [esi+45Ch]
+
+loc_707BE4:                             ; CODE XREF: ObjectClass__NotifyExpired+42E↓j
+cmp     ebp, [ecx]
+jz      short loc_707BF2
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_707BE4
+jmp     short loc_707C64
+; ---------------------------------------------------------------------------
+
+loc_707BF2:                             ; CODE XREF: ObjectClass__NotifyExpired+426↑j
+cmp     eax, 0FFFFFFFFh
+jz      short loc_707C64
+mov     ecx, [esi+450h]
+cmp     eax, ecx
+jge     short loc_707C24
+dec     ecx
+cmp     eax, ecx
+mov     [esi+450h], ecx
+jge     short loc_707C24
+
+loc_707C0C:                             ; CODE XREF: ObjectClass__NotifyExpired+462↓j
+mov     ecx, [esi+444h]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+450h]
+cmp     eax, ecx
+jl      short loc_707C0C
+
+loc_707C24:                             ; CODE XREF: ObjectClass__NotifyExpired+43F↑j
+; ObjectClass__NotifyExpired+44A↑j
+mov     eax, [esi+458h]
+lea     edi, [esi+458h]
+lea     ecx, [esp+20h+arg_4]
+mov     [esp+20h+arg_4], ebp
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_707C64
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_707C64
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_707C64
+
+loc_707C52:                             ; CODE XREF: ObjectClass__NotifyExpired+4A2↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_707C52
+
+loc_707C64:                             ; CODE XREF: ObjectClass__NotifyExpired+418↑j
+; ObjectClass__NotifyExpired+430↑j ...
+mov     eax, [esi+470h]
+add     esi, 470h
+lea     ecx, [esp+20h+arg_4]
+mov     [esp+20h+arg_4], ebp
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_707CA4
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_707CA4
+dec     ecx
+cmp     eax, ecx
+mov     [esi+10h], ecx
+jge     short loc_707CA4
+
+loc_707C92:                             ; CODE XREF: ObjectClass__NotifyExpired+4E2↓j
+mov     ecx, [esi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jl      short loc_707C92
+
+loc_707CA4:                             ; CODE XREF: ObjectClass__NotifyExpired+4C1↑j
+; ObjectClass__NotifyExpired+4C8↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    8
+*/
+} } }
 // 0x707CB0
-namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass_CleanupAll(_DWORD *this, int a2)
+{
+  int result; // eax
+  int DB; // eax
+  int v5; // eax
+  int v6; // esi
+
+  for ( result = *(this + 70); result; result = *(this + 70) )
+  {
+    DB = CCINIClass::GetDB(this + 69);
+    if ( *(_DWORD *)(DB + 1492) )
+      TeamClass::LiberateMember_Start(DB, -1, 0);
+    v5 = LinkedList::Pop(this + 69);
+    v6 = v5;
+    if ( v5 )
+    {
+      TechnoClass::CleanupAll(v5);
+      (*(void (__thiscall **)(int, int))(*(_DWORD *)v6 + 224))(v6, a2);
+      (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 248))(v6);
+    }
+  }
+  return result;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, ecx
+mov     eax, [ebx+118h]
+test    eax, eax
+jz      short loc_707D1C
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+lea     edi, [ebx+114h]
+
+loc_707CCA:                             ; CODE XREF: TechnoClass__CleanupAll+67↓j
+mov     ecx, edi
+call    CCINIClass__GetDB
+mov     ecx, [eax+5D4h]
+test    ecx, ecx
+jz      short loc_707CE5
+push    0
+push    0FFFFFFFFh
+push    eax
+call    TeamClass__LiberateMember_Start
+
+loc_707CE5:                             ; CODE XREF: TechnoClass__CleanupAll+29↑j
+mov     ecx, edi
+call    LinkedList__Pop
+mov     esi, eax
+test    esi, esi
+jz      short loc_707D0F
+push    esi
+mov     ecx, esi
+call    TechnoClass__CleanupAll
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+0E0h]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0F8h]
+
+loc_707D0F:                             ; CODE XREF: TechnoClass__CleanupAll+40↑j
+mov     eax, [ebx+118h]
+test    eax, eax
+jnz     short loc_707CCA
+pop     edi
+pop     esi
+pop     ebp
+
+loc_707D1C:                             ; CODE XREF: TechnoClass__CleanupAll+B↑j
+pop     ebx
+retn    4
+*/
+} } }
 // 0x708B30
-namespace ra2 { namespace game { int ObjectClass::GetTypeVt28() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetTypeVt28() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetTypeVt28(#377 *this)
+{
+  int v1; // eax
+
+  v1 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this);
+  return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 112))(v1);
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     edx, [eax]
+mov     ecx, eax
+jmp     dword ptr [edx+70h]
+*/
+} } }
 // 0x7091D0
-namespace ra2 { namespace game { bool FootClass::CanEnterBuilding() { return false; } } }
+namespace ra2 { namespace game { bool FootClass::CanEnterBuilding() {
+// [IDA decompile]
+bool __thiscall sub_7091D0(int *this)
+{
+  int v2; // ecx
+  bool v3; // bl
+  bool result; // al
+
+  result = 0;
+  if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 476))(this)
+    && !*(this + 183)
+    && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3481)
+    && ((*(int (__thiscall **)(int *))(*this + 44))(this) != 6
+     || !*(_BYTE *)(*(this + 328) + 5499)
+     || (*(int (__thiscall **)(int *))(*this + 1032))(this)) )
+  {
+    v2 = *(this + 175);
+    v3 = v2 && CaptureManagerClass::CannotControlAnyMore(v2);
+    if ( (!(*(unsigned __int8 (__thiscall **)(int *))(*this + 816))(this)
+       || !(unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135)))
+      && !v3
+      && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
+    {
+      return 1;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+1DCh]
+test    al, al
+jnz     loc_70927D
+mov     eax, [esi+2DCh]
+test    eax, eax
+jnz     loc_70927D
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D99h]
+test    cl, cl
+jz      short loc_70927D
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jnz     short loc_709230
+mov     ecx, [esi+520h]
+mov     al, [ecx+157Bh]
+test    al, al
+jz      short loc_709230
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+408h]
+test    eax, eax
+jz      short loc_70927D
+
+loc_709230:                             ; CODE XREF: FootClass__CanEnterBuilding+40↑j
+; FootClass__CanEnterBuilding+50↑j
+mov     ecx, [esi+2BCh]
+test    ecx, ecx
+jz      short loc_709247
+call    CaptureManagerClass__CannotControlAnyMore
+test    al, al
+jz      short loc_709247
+mov     bl, 1
+jmp     short loc_709249
+; ---------------------------------------------------------------------------
+
+loc_709247:                             ; CODE XREF: FootClass__CanEnterBuilding+68↑j
+; FootClass__CanEnterBuilding+71↑j
+xor     bl, bl
+
+loc_709249:                             ; CODE XREF: FootClass__CanEnterBuilding+75↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+330h]
+test    al, al
+jz      short loc_709266
+mov     ecx, [esi+21Ch] ; this
+call    House__IsCurrentPlayer
+test    al, al
+jnz     short loc_70927D
+
+loc_709266:                             ; CODE XREF: FootClass__CanEnterBuilding+85↑j
+test    bl, bl
+jnz     short loc_70927D
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2ACh]
+test    al, al
+jz      short loc_70927D
+pop     esi
+mov     al, 1
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_70927D:                             ; CODE XREF: FootClass__CanEnterBuilding+E↑j
+; FootClass__CanEnterBuilding+1C↑j ...
+pop     esi
+xor     al, al
+pop     ebx
+retn
+*/
+} } }
 // 0x709A90
-namespace ra2 { namespace game { int TechnoClass::DrawPips() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::DrawPips() {
+// [IDA decompile]
+int __thiscall TechnoClass::DrawPips(#377 *this)
+{
+  int v2; // esi
+  int v3; // ecx
+  int v4; // eax
+  int v5; // edx
+  int v6; // edx
+  int v7; // ebx
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int result; // eax
+  int v12; // edi
+  int v13; // ebx
+  int v14; // edx
+  void *v15; // ebx
+  int v16; // edi
+  int v17; // ebx
+  int v18; // eax
+  int v19; // edx
+  int v20; // eax
+  int v21; // ebx
+  int v22; // eax
+  void *v23; // edi
+  int v24; // edi
+  int v25; // eax
+  _DWORD *DB; // edi
+  _DWORD *v27; // ebx
+  int v28; // eax
+  _DWORD *v29; // ebx
+  int v30; // eax
+  int v31; // eax
+  _DWORD *v32; // ecx
+  int v33; // eax
+  int v34; // eax
+  _DWORD *v35; // ecx
+  int v36; // edx
+  signed int v37; // edi
+  unsigned int v38; // edi
+  unsigned int v39; // ebx
+  signed int v40; // ecx
+  bool v41; // zf
+  int v42; // eax
+  void *v43; // ebx
+  int v44; // eax
+  int v45; // edi
+  int v46; // ebx
+  int v47; // ecx
+  int v48; // eax
+  int v49; // eax
+  signed int v50; // eax
+  int v51; // edx
+  int v52; // eax
+  int v53; // ebx
+  int v54; // edi
+  unsigned int v55; // edx
+  int v56; // ebx
+  int v57; // eax
+  int v58; // ecx
+  signed int v59; // edi
+  int v60; // edi
+  int v61; // edx
+  int v62; // ecx
+  int v63; // eax
+  int v64; // edx
+  unsigned int v65; // ebx
+  int v66; // edi
+  int v67; // esi
+  int v68; // ecx
+  int v69; // edx
+  unsigned int v70; // edi
+  int v71; // esi
+  _DWORD *TextBoundingRect; // eax
+  int v73; // ebx
+  int v74; // ecx
+  int v75; // edx
+  int v76; // ebx
+  unsigned int v77; // eax
+  int v78; // edx
+  int v79; // esi
+  int v80; // esi
+  unsigned int v81; // ecx
+  int v82; // edx
+  int v83; // esi
+  int v84; // [esp-10h] [ebp-84h]
+  char v85; // [esp+12h] [ebp-62h]
+  bool v86; // [esp+13h] [ebp-61h] BYREF
+  void *Block[2]; // [esp+14h] [ebp-60h] BYREF
+  int v88; // [esp+1Ch] [ebp-58h]
+  float v89; // [esp+20h] [ebp-54h]
+  signed int v90; // [esp+24h] [ebp-50h]
+  signed int v91; // [esp+28h] [ebp-4Ch]
+  double v92; // [esp+2Ch] [ebp-48h] BYREF
+  int v93; // [esp+34h] [ebp-40h]
+  int v94; // [esp+38h] [ebp-3Ch]
+  int v95; // [esp+3Ch] [ebp-38h]
+  double v96; // [esp+40h] [ebp-34h] BYREF
+  int v97; // [esp+48h] [ebp-2Ch]
+  int v98; // [esp+4Ch] [ebp-28h]
+  int v99; // [esp+50h] [ebp-24h] BYREF
+  int v100; // [esp+54h] [ebp-20h]
+  int v101; // [esp+58h] [ebp-1Ch] BYREF
+  int v102; // [esp+5Ch] [ebp-18h]
+  _BYTE Buffer[20]; // [esp+60h] [ebp-14h] BYREF
+  int *v104; // [esp+78h] [ebp+4h]
+  int *v105; // [esp+80h] [ebp+Ch]
+
+  v101 = 4;
+  v2 = 2;
+  v3 = v104[1] - 1;
+  v99 = *v104 + 6;
+  v4 = *(_DWORD *)this;
+  v100 = v3;
+  (*(void (__thiscall **)(#377 *))(v4 + 136))(this);
+  v5 = *(_DWORD *)this;
+  v88 = dword_A8ED54[51658];
+  (*(void (__thiscall **)(#377 *))(v5 + 136))(this);
+  v6 = *(_DWORD *)this;
+  v95 = dword_A8ED54[51658];
+  (*(void (__thiscall **)(#377 *))(v6 + 136))(this);
+  v7 = dword_A8ED54[51659];
+  v8 = *(_DWORD *)this;
+  LODWORD(v92) = dword_A8ED54[51659];
+  v9 = (*(int (__thiscall **)(#377 *))(v8 + 44))(this);
+  v86 = v9 == 6;
+  if ( v9 != 6 )
+  {
+    v10 = *v104;
+    v100 = v104[1];
+    v99 = v10 - 5;
+    v2 = 0;
+    v101 = 4;
+    v88 = v7;
+  }
+  if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 15 )
+    v99 += 11;
+  if ( !v86 || (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this), *(_DWORD *)(result + 980) != 2) )
+  {
+    v89 = *(float *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3420);
+    if ( SLODWORD(v89) > 0 )
+    {
+      v12 = 0;
+      *(float *)&v91 = COERCE_FLOAT(SpawnManagerClass::CountDockedSpawns(*((int **)this + 180)));
+      v13 = 0;
+      *(float *)&v90 = 0.0;
+      do
+      {
+        Block[0] = (void *)(v13 + v99);
+        HIDWORD(v96) = v90 + v100;
+        LODWORD(v96) = v13 + v99;
+        DrawToSurfaceSHP(
+          (int *)MEMORY[0x87F7E8][7883],
+          (_DWORD *)MEMORY[0x87F6C0][1],
+          v88,
+          v12++ < v91,
+          (int *)&v96,
+          v105,
+          1536,
+          0,
+          0,
+          0,
+          1000,
+          0,
+          0,
+          0,
+          0,
+          0);
+        v13 += v101;
+        v90 += v2;
+      }
+      while ( v12 < SLODWORD(v89) );
+    }
+    if ( v86 )
+    {
+      v14 = *(_DWORD *)this;
+      v15 = *(void **)(*((_DWORD *)this + 328) + 5504);
+      Block[0] = v15;
+      v89 = COERCE_FLOAT((*(int (__thiscall **)(#377 *))(v14 + 1032))(this));
+      if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5508) )
+      {
+        if ( (int)v15 > 0 )
+        {
+          v16 = 0;
+          v17 = 0;
+          *(float *)&v90 = 0.0;
+          do
+          {
+            if ( v16 < SLODWORD(v89) && (v18 = *(_DWORD *)(*((_DWORD *)this + 418) + 4 * v16)) != 0 )
+              v91 = *(signed int *)(*(_DWORD *)(v18 + 1728) + 3584);
+            else
+              v91 = 6;
+            LODWORD(v96) = v17 + v99;
+            HIDWORD(v96) = v100 + v90;
+            DrawToSurfaceSHP(
+              (int *)MEMORY[0x87F7E8][7883],
+              (_DWORD *)MEMORY[0x87F6C0][1],
+              v88,
+              v91,
+              (int *)&v96,
+              v105,
+              1536,
+              0,
+              0,
+              0,
+              1000,
+              0,
+              0,
+              0,
+              0,
+              0);
+            ++v16;
+            v17 += v101;
+            v90 += v2;
+          }
+          while ( v16 < (int)Block[0] );
+        }
+      }
+    }
+    if ( *(int *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1504) <= 0 )
+    {
+      v89 = COERCE_FLOAT((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 696))(this));
+      v42 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this);
+      v43 = (void *)(*(int (__thiscall **)(int))(*(_DWORD *)v42 + 116))(v42);
+      v44 = *(_DWORD *)this;
+      Block[0] = v43;
+      if ( *(_DWORD *)((*(int (__thiscall **)(#377 *))(v44 + 132))(this) + 980) == 5 )
+      {
+        v45 = 0;
+        if ( (int)v43 > 0 )
+        {
+          v46 = 0;
+          *(float *)&v91 = 0.0;
+          do
+          {
+            v90 = v45 < SLODWORD(v89);
+            LODWORD(v96) = v46 + v99;
+            HIDWORD(v96) = v100 + v91;
+            DrawToSurfaceSHP(
+              (int *)MEMORY[0x87F7E8][7883],
+              (_DWORD *)MEMORY[0x87F6C0][1],
+              v88,
+              v90,
+              (int *)&v96,
+              v105,
+              1536,
+              0,
+              0,
+              0,
+              1000,
+              0,
+              0,
+              0,
+              0,
+              0);
+            ++v45;
+            v46 += v101;
+            v91 += v2;
+          }
+          while ( v45 < (int)Block[0] );
+        }
+        v47 = *((_DWORD *)this + 175);
+        v86 = 0;
+        if ( v47 && CaptureManagerClass::IsOverloading(v47, &v86) )
+        {
+          LODWORD(v96) = v99 + v101 * v45;
+          HIDWORD(v96) = v100 + v45 * v2;
+          DrawToSurfaceSHP(
+            (int *)MEMORY[0x87F7E8][7883],
+            (_DWORD *)MEMORY[0x87F6C0][1],
+            v88,
+            4 - v86,
+            (int *)&v96,
+            v105,
+            1536,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+        }
+      }
+      if ( *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 980) == 2 )
+      {
+        *(float *)&v90 = FloatArray::Get((float *)this + 207, 0);
+        *(float *)&v91 = FloatArray::Get((float *)this + 207, 2);
+        *(float *)&v92 = FloatArray::Get((float *)this + 207, 3);
+        v89 = FloatArray::Get((float *)this + 207, 1);
+        v48 = *(_DWORD *)this;
+        v96 = (double)(int)Block[0];
+        v92 = *(float *)&v92 + *(float *)&v91 + *(float *)&v90;
+        v49 = (*(int (__thiscall **)(#377 *))(v48 + 132))(this);
+        v50 = Math::RoundToInt(v92 / (double)*(int *)(v49 + 2048) * v96 + 0.5);
+        v51 = *(_DWORD *)this;
+        v92 = v89;
+        v90 = v50;
+        v52 = (*(int (__thiscall **)(#377 *))(v51 + 132))(this);
+        v91 = Math::RoundToInt(v92 / (double)*(int *)(v52 + 2048) * v96 + 0.5);
+        if ( (int)Block[0] > 0 )
+        {
+          v53 = 0;
+          v54 = 0;
+          v89 = *(float *)Block;
+          do
+          {
+            v55 = 0;
+            if ( v91 <= 0 )
+            {
+              if ( v90 > 0 )
+              {
+                v55 = 2;
+                --v90;
+              }
+            }
+            else
+            {
+              v55 = 5;
+              --v91;
+            }
+            LODWORD(v96) = v54 + v99;
+            HIDWORD(v96) = v53 + v100;
+            DrawToSurfaceSHP(
+              (int *)MEMORY[0x87F7E8][7883],
+              (_DWORD *)MEMORY[0x87F6C0][1],
+              v88,
+              v55,
+              (int *)&v96,
+              v105,
+              1536,
+              0,
+              0,
+              0,
+              1000,
+              0,
+              0,
+              0,
+              0,
+              0);
+            v54 += v101;
+            v53 += v2;
+            --LODWORD(v89);
+          }
+          while ( v89 != 0.0 );
+        }
+      }
+      else if ( *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 980) == 1 )
+      {
+        LODWORD(v96) = *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 996);
+        v56 = LODWORD(v96);
+        if ( LODWORD(v96) )
+        {
+          v60 = 0;
+          if ( SLODWORD(v96) > 0 )
+          {
+            v61 = 0;
+            LODWORD(v89) = (int)Block[0] / SLODWORD(v96) - 1;
+            *(float *)&v90 = 0.0;
+            do
+            {
+              v62 = LODWORD(v89);
+              v91 = 14;
+              if ( v89 >= 0.0 )
+              {
+                v88 = -v56;
+                v63 = v60 + v56 * LODWORD(v89);
+                while ( v63 >= *((_DWORD *)this + 191) )
+                {
+                  --v62;
+                  v63 += v88;
+                  if ( v62 < 0 )
+                    goto LABEL_87;
+                }
+                v91 = v62 + 15;
+              }
+LABEL_87:
+              Block[0] = (void *)(v99 + v61);
+              Block[1] = (void *)(v100 + v60 * v2 - 3);
+              DrawToSurfaceSHP(
+                (int *)MEMORY[0x87F7E8][7883],
+                (_DWORD *)MEMORY[0x87F6C0][1],
+                SLODWORD(v92),
+                v91,
+                (int *)Block,
+                v105,
+                1536,
+                0,
+                0,
+                0,
+                1000,
+                0,
+                0,
+                0,
+                0,
+                0);
+              v56 = LODWORD(v96);
+              ++v60;
+              v61 = v101 + v90;
+              v90 += v101;
+            }
+            while ( v60 < SLODWORD(v96) );
+          }
+        }
+        else
+        {
+          v57 = LODWORD(v89);
+          v58 = 0;
+          *(float *)&v91 = 0.0;
+          if ( (int)Block[0] > 0 )
+          {
+            v59 = 0;
+            *(float *)&v90 = 0.0;
+            do
+            {
+              if ( v57 > 0 )
+              {
+                LODWORD(v89) = v57 - 1;
+                HIDWORD(v96) = v100 + v58 * v2 - 3;
+                LODWORD(v96) = v99 + v59;
+                DrawToSurfaceSHP(
+                  (int *)MEMORY[0x87F7E8][7883],
+                  (_DWORD *)MEMORY[0x87F6C0][1],
+                  SLODWORD(v92),
+                  0xDu,
+                  (int *)&v96,
+                  v105,
+                  1536,
+                  0,
+                  0,
+                  0,
+                  1000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0);
+                v58 = v91;
+                v57 = LODWORD(v89);
+                v59 = v90;
+              }
+              ++v58;
+              v59 += v101;
+              v91 = v58;
+              v90 = v59;
+            }
+            while ( v58 < (int)Block[0] );
+          }
+        }
+      }
+    }
+    else
+    {
+      v19 = *(_DWORD *)this;
+      v96 = 0.0;
+      v20 = (*(int (__thiscall **)(#377 *))(v19 + 136))(this);
+      v21 = (*(int (__thiscall **)(int))(*(_DWORD *)v20 + 116))(v20);
+      v22 = *(_DWORD *)this;
+      v91 = v21;
+      (*(void (__thiscall **)(#377 *))(v22 + 132))(this);
+      v23 = (void *)__2_YAPAXI_Z(4 * v21);
+      Block[0] = v23;
+      if ( v21 > 0 )
+        memset(v23, 0, 4 * v21);
+      v90 = *((signed int *)this + 69);
+      v24 = HouseClass::SumPowerDrain((int *)this + 69) - 1;
+      if ( this
+        && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 6
+        && (v25 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this),
+            InfantryClass::updateDeployAnimation(v25 == 6 ? this : 0)) )
+      {
+        DB = (_DWORD *)CCINIClass::GetDB((_DWORD *)this + 69);
+        v89 = 0.0;
+        if ( v90 > 0 )
+        {
+          v27 = Block[0];
+          do
+          {
+            if ( !DB )
+              break;
+            if ( (*(int (__thiscall **)(_DWORD *))(*DB + 44))(DB) == 15 )
+            {
+              *v27 = *(_DWORD *)(DB[432] + 3580);
+            }
+            else
+            {
+              v28 = -((*(int (__thiscall **)(_DWORD *))(*DB + 44))(DB) != 1);
+              LOBYTE(v28) = v28 & 0xFD;
+              *v27 = v28 + 4;
+            }
+            DB = (_DWORD *)DB[12];
+            ++v27;
+            ++LODWORD(v89);
+          }
+          while ( SLODWORD(v89) < v90 );
+        }
+      }
+      else
+      {
+        if ( v24 >= v91 )
+        {
+          __3_YAXPAX_Z(Block[0]);
+          return result;
+        }
+        v29 = (_DWORD *)CCINIClass::GetDB((_DWORD *)this + 69);
+        v89 = 0.0;
+        if ( v90 > 0 )
+        {
+          do
+          {
+            if ( !v29 )
+              break;
+            if ( (*(int (__thiscall **)(_DWORD *))(*v29 + 44))(v29) == 15 )
+            {
+              v30 = (*(int (__thiscall **)(_DWORD *))(*v29 + 132))(v29);
+              v31 = Math::RoundToInt(*(double *)(v30 + 896) - 1.0);
+              if ( v31 > 0 )
+              {
+                v32 = (char *)Block[0] + 4 * v24;
+                v24 -= v31;
+                do
+                {
+                  *v32-- = 3;
+                  --v31;
+                }
+                while ( v31 );
+              }
+              *((_DWORD *)Block[0] + v24) = *(_DWORD *)(v29[432] + 3580);
+            }
+            else if ( (*(int (__thiscall **)(_DWORD *))(*v29 + 44))(v29) == 1 )
+            {
+              v33 = (*(int (__thiscall **)(_DWORD *))(*v29 + 132))(v29);
+              v34 = Math::RoundToInt(*(double *)(v33 + 896) - 1.0);
+              if ( v34 > 0 )
+              {
+                v35 = (char *)Block[0] + 4 * v24;
+                v24 -= v34;
+                do
+                {
+                  *v35-- = 3;
+                  --v34;
+                }
+                while ( v34 );
+              }
+              *((_DWORD *)Block[0] + v24) = 5;
+            }
+            else
+            {
+              *((_DWORD *)Block[0] + v24) = 1;
+            }
+            v29 = (_DWORD *)v29[12];
+            --v24;
+            ++LODWORD(v89);
+          }
+          while ( SLODWORD(v89) < v90 );
+        }
+      }
+      v36 = *(_DWORD *)this;
+      v37 = 0;
+      *(float *)&v90 = 0.0;
+      if ( *(_BYTE *)((*(int (__thiscall **)(#377 *))(v36 + 132))(this) + 2053) )
+      {
+        DrawToSurfaceSHP(
+          (int *)MEMORY[0x87F7E8][7883],
+          (_DWORD *)MEMORY[0x87F6C0][1],
+          v88,
+          *(_DWORD *)Block[0],
+          &v99,
+          v105,
+          1536,
+          0,
+          0,
+          0,
+          1000,
+          0,
+          0,
+          0,
+          0,
+          0);
+        v37 = 1;
+        v90 = 1;
+        HIDWORD(v96) = 2 * v2;
+        LODWORD(v96) = 2 * v101;
+      }
+      if ( v37 < v91 )
+      {
+        v38 = v101 * v90;
+        v39 = v90 * v2;
+        v40 = v91 - v90;
+        v90 = (signed int)Block[0] + 4 * v90;
+        v91 = v40;
+        do
+        {
+          LODWORD(v92) = v38 + LODWORD(v96) + v99;
+          HIDWORD(v92) = v39 + v100 + HIDWORD(v96);
+          DrawToSurfaceSHP(
+            (int *)MEMORY[0x87F7E8][7883],
+            (_DWORD *)MEMORY[0x87F6C0][1],
+            v88,
+            *(_DWORD *)v90,
+            (int *)&v92,
+            v105,
+            1536,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+          v38 += v101;
+          v39 += v2;
+          v41 = v91 == 1;
+          v90 += 4;
+          --v91;
+        }
+        while ( !v41 );
+      }
+      __3_YAXPAX_Z(Block[0]);
+    }
+    v64 = *(_DWORD *)this;
+    v85 = 0;
+    v86 = 0;
+    v65 = 13;
+    v66 = 0;
+    v67 = 0;
+    if ( ((*(int (__thiscall **)(#377 *))(v64 + 44))(this) == 15
+       || (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 1
+       && *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3479))
+      && TechnoClass::processExperienceGain(*((_DWORD **)this + 135)) )
+    {
+      v85 = 1;
+      if ( dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 48) <= 5
+        && *((_DWORD *)this + 27) < *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 160) )
+      {
+        v86 = 1;
+      }
+      v65 = 13;
+    }
+    if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 1
+      && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3479)
+      && TechnoClass::updateVeterancy(*((_DWORD **)this + 135)) )
+    {
+      v85 = 1;
+      if ( dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56) <= 5
+        && *((_DWORD *)this + 27) < *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 160) )
+      {
+        v86 = 1;
+      }
+      v65 = 20;
+    }
+    if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 1 )
+    {
+      v66 = 38;
+      v67 = -32;
+    }
+    else if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 15 )
+    {
+      v66 = 19;
+      v67 = -35;
+    }
+    if ( v85 )
+    {
+      v101 = v99 + v66;
+      v102 = v67 + v100;
+      if ( v86 )
+        DrawToSurfaceSHP(
+          (int *)MEMORY[0x87F7E8][7883],
+          (_DWORD *)MEMORY[0x87F6C0][1],
+          v95,
+          v65,
+          &v101,
+          v105,
+          1537,
+          0,
+          0,
+          0,
+          1000,
+          0,
+          0,
+          0,
+          0,
+          0);
+      else
+        DrawToSurfaceSHP(
+          (int *)MEMORY[0x87F7E8][7883],
+          (_DWORD *)MEMORY[0x87F6C0][1],
+          v95,
+          v65,
+          &v101,
+          v105,
+          1536,
+          0,
+          0,
+          0,
+          1000,
+          0,
+          0,
+          0,
+          0,
+          0);
+    }
+    result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this);
+    if ( result != 6 )
+    {
+      v68 = v104[1];
+      v69 = *(_DWORD *)this;
+      v101 = *v104 - 10;
+      v102 = v68 + 10;
+      result = (*(int (__thiscall **)(#377 *, int *, int *, int *))(v69 + 1112))(this, &v101, v104, v105);
+    }
+    v70 = *((_DWORD *)this + 133);
+    if ( v70 <= 9 )
+    {
+      v71 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) != 15 ? -33 : -36;
+      swprintf((#72 *const)Buffer, g_Str_Fmt_PctD);
+      v84 = v104[1] + v71 - 3;
+      v101 = *v104 - 4;
+      v102 = v84;
+      TextBoundingRect = GetTextBoundingRect(&v96, (int)Buffer, v101, v84, 73, 2, -2);
+      LODWORD(v92) = *TextBoundingRect;
+      v73 = *v105;
+      HIDWORD(v92) = TextBoundingRect[1];
+      v74 = TextBoundingRect[2];
+      v93 = v74;
+      v75 = TextBoundingRect[3];
+      LODWORD(v96) = v73;
+      v76 = v105[1];
+      v94 = v75;
+      HIDWORD(v96) = v76;
+      v77 = 0;
+      v78 = 0;
+      v79 = v105[3];
+      v97 = v105[2];
+      v98 = v79;
+      if ( v74 <= 0 || v94 <= 0 || v105[2] <= 0 || v105[3] <= 0 )
+        goto LABEL_132;
+      if ( SLODWORD(v96) < SLODWORD(v92) )
+      {
+        v97 += LODWORD(v96) - LODWORD(v92);
+        LODWORD(v96) = LODWORD(v92);
+      }
+      if ( v97 < 1 )
+        goto LABEL_132;
+      if ( SHIDWORD(v96) < SHIDWORD(v92) )
+      {
+        v98 += HIDWORD(v96) - HIDWORD(v92);
+        HIDWORD(v96) = HIDWORD(v92);
+      }
+      if ( v98 < 1 )
+        goto LABEL_132;
+      if ( LODWORD(v96) + v97 > v74 + LODWORD(v92) )
+        v97 = LODWORD(v92) + v74 - LODWORD(v96);
+      if ( v97 < 1
+        || (v98 + HIDWORD(v96) <= HIDWORD(v92) + v94 ? (v80 = v98) : (v80 = v94 + HIDWORD(v92) - HIDWORD(v96)), v80 < 1) )
+      {
+LABEL_132:
+        v81 = 0;
+        v80 = 0;
+      }
+      else
+      {
+        v81 = HIDWORD(v96);
+        v77 = LODWORD(v96);
+        v78 = v97;
+      }
+      v92 = COERCE_DOUBLE(__PAIR64__(v81, v77));
+      v93 = v78 + 1;
+      v82 = *((_DWORD *)this + 135) + 22265;
+      v94 = v80;
+      LODWORD(v92) = v77 - 1;
+      LOWORD(v96) = *(_WORD *)v82;
+      BYTE2(v96) = *(_BYTE *)(v82 + 2);
+      v83 = (LOBYTE(v96) >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+          | (BYTE1(v96) >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
+          | (BYTE2(v96) >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+      (*(void (__thiscall **)(_DWORD, double *, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 20))(
+        MEMORY[0x87F7E8][7883],
+        &v92,
+        0);
+      (*(void (__thiscall **)(_DWORD, double *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 88))(
+        MEMORY[0x87F7E8][7883],
+        &v92,
+        v83);
+      return (int)globalHelper_0A66D0(
+                    (int *)&v96,
+                    (int)Buffer,
+                    MEMORY[0x87F7E8][7883],
+                    v105,
+                    (int)&v101,
+                    v83,
+                    0,
+                    73,
+                    -1,
+                    1);
+    }
+  }
+  return result;
+}
+
+/* ASM:
+Block           = dword ptr -60h
+var_5C          = dword ptr -5Ch
+var_58          = dword ptr -58h
+var_54          = dword ptr -54h
+var_50          = dword ptr -50h
+var_4C          = dword ptr -4Ch
+var_48          = qword ptr -48h
+var_40          = dword ptr -40h
+var_3C          = dword ptr -3Ch
+var_38          = dword ptr -38h
+var_34          = qword ptr -34h
+var_2C          = dword ptr -2Ch
+var_28          = dword ptr -28h
+var_24          = dword ptr -24h
+var_20          = dword ptr -20h
+var_1C          = dword ptr -1Ch
+var_18          = dword ptr -18h
+Buffer          = byte ptr -14h
+arg_0           = dword ptr  4
+arg_8           = dword ptr  0Ch
+
+sub     esp, 64h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, [esp+74h+arg_0]
+mov     ebp, ecx
+mov     [esp+74h+var_1C], 4
+mov     esi, 2
+mov     eax, [edi]
+mov     ecx, [edi+4]
+add     eax, 6
+dec     ecx
+mov     [esp+74h+var_24], eax
+mov     eax, [ebp+0]
+mov     [esp+74h+var_20], ecx
+mov     ecx, ebp
+call    dword ptr [eax+88h]
+mov     ecx, dword_A8ED54+32728h
+mov     edx, [ebp+0]
+mov     [esp+74h+var_58], ecx
+mov     ecx, ebp
+call    dword ptr [edx+88h]
+mov     eax, dword_A8ED54+32728h
+mov     edx, [ebp+0]
+mov     ecx, ebp
+mov     [esp+74h+var_38], eax
+call    dword ptr [edx+88h]
+mov     ebx, dword_A8ED54+3272Ch
+mov     eax, [ebp+0]
+mov     ecx, ebp
+mov     dword ptr [esp+74h+var_48], ebx
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+setz    al
+test    al, al
+mov     [esp+74h+var_61], al
+jnz     short loc_709B2E
+mov     eax, [edi]
+mov     edi, [edi+4]
+sub     eax, 5
+mov     [esp+74h+var_20], edi
+mov     [esp+74h+var_24], eax
+mov     eax, 4
+xor     esi, esi
+mov     [esp+74h+var_1C], eax
+mov     [esp+74h+var_58], ebx
+
+loc_709B2E:                             ; CODE XREF: TechnoClass__DrawPips+7D↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jnz     short loc_709B4E
+mov     eax, [esp+74h+var_24]
+mov     ecx, [esp+74h+var_20]
+add     eax, 0Bh
+mov     [esp+74h+var_20], ecx
+mov     [esp+74h+var_24], eax
+
+loc_709B4E:                             ; CODE XREF: TechnoClass__DrawPips+A9↑j
+mov     al, [esp+74h+var_61]
+test    al, al
+jz      short loc_709B6E
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+cmp     dword ptr [eax+3D4h], 2
+jz      loc_70A980
+
+loc_709B6E:                             ; CODE XREF: TechnoClass__DrawPips+C4↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+mov     ebx, [eax+0D5Ch]
+test    ebx, ebx
+mov     [esp+74h+var_54], ebx
+jle     loc_709C27
+mov     ecx, [ebp+2D0h]
+call    SpawnManagerClass__CountDockedSpawns
+xor     edi, edi
+mov     [esp+74h+var_4C], eax
+test    ebx, ebx
+jle     loc_709C27
+xor     ebx, ebx
+mov     [esp+74h+var_50], ebx
+
+loc_709BAA:                             ; CODE XREF: TechnoClass__DrawPips+195↓j
+mov     ecx, [esp+74h+var_4C]
+xor     eax, eax
+cmp     edi, ecx
+mov     ecx, [esp+74h+var_24]
+setl    al
+lea     edx, [ebx+ecx]
+mov     ecx, [esp+74h+var_20]
+mov     [esp+74h+Block], edx
+mov     edx, [esp+74h+var_50]
+add     ecx, edx
+mov     edx, [esp+74h+Block]
+mov     dword ptr [esp+74h+var_34+4], ecx
+xor     ecx, ecx
+push    ecx
+push    ecx
+push    ecx
+push    ecx
+push    ecx
+push    3E8h
+push    ecx
+push    ecx
+push    ecx
+mov     ecx, [esp+98h+arg_8]
+mov     dword ptr [esp+98h+var_34], edx
+push    600h
+lea     edx, [esp+9Ch+var_34]
+push    ecx
+mov     ecx, ds:887314h
+push    edx
+mov     edx, ds:87F6C4h
+push    eax
+mov     eax, [esp+0A8h+var_58]
+push    eax
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_1C]
+mov     ecx, [esp+74h+var_50]
+mov     eax, [esp+74h+var_54]
+inc     edi
+add     ebx, edx
+add     ecx, esi
+cmp     edi, eax
+mov     [esp+74h+var_50], ecx
+jl      short loc_709BAA
+
+loc_709C27:                             ; CODE XREF: TechnoClass__DrawPips+F5↑j
+; TechnoClass__DrawPips+10E↑j
+mov     al, [esp+74h+var_61]
+test    al, al
+jz      loc_709D1D
+mov     ecx, [ebp+520h]
+mov     edx, [ebp+0]
+mov     ebx, [ecx+1580h]
+mov     ecx, ebp
+mov     [esp+74h+Block], ebx
+call    dword ptr [edx+408h]
+mov     [esp+74h+var_54], eax
+mov     eax, [ebp+520h]
+mov     cl, [eax+1584h]
+test    cl, cl
+jz      loc_709D1D
+test    ebx, ebx
+jle     loc_709D1D
+xor     edi, edi
+test    ebx, ebx
+jle     loc_709D1D
+xor     ebx, ebx
+mov     [esp+74h+var_50], ebx
+
+loc_709C7E:                             ; CODE XREF: TechnoClass__DrawPips+287↓j
+cmp     edi, [esp+74h+var_54]
+jge     short loc_709CA3
+mov     ecx, [ebp+688h]
+mov     eax, [ecx+edi*4]
+test    eax, eax
+jz      short loc_709CA3
+mov     edx, [eax+6C0h]
+mov     eax, [edx+0E00h]
+mov     [esp+74h+var_4C], eax
+jmp     short loc_709CAB
+; ---------------------------------------------------------------------------
+
+loc_709CA3:                             ; CODE XREF: TechnoClass__DrawPips+1F2↑j
+; TechnoClass__DrawPips+1FF↑j
+mov     [esp+74h+var_4C], 6
+
+loc_709CAB:                             ; CODE XREF: TechnoClass__DrawPips+211↑j
+mov     ecx, [esp+74h+var_24]
+mov     edx, [esp+74h+var_20]
+lea     eax, [ebx+ecx]
+mov     ecx, [esp+74h+var_50]
+mov     dword ptr [esp+74h+var_34], eax
+xor     eax, eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    3E8h
+push    eax
+add     ecx, edx
+mov     edx, [esp+90h+arg_8]
+push    eax
+push    eax
+mov     dword ptr [esp+98h+var_34+4], ecx
+mov     ecx, [esp+98h+var_4C]
+push    600h
+lea     eax, [esp+9Ch+var_34]
+push    edx
+mov     edx, [esp+0A0h+var_58]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+push    edx
+mov     edx, ds:87F6C4h
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_1C]
+mov     ecx, [esp+74h+var_50]
+mov     eax, [esp+74h+Block]
+inc     edi
+add     ebx, edx
+add     ecx, esi
+cmp     edi, eax
+mov     [esp+74h+var_50], ecx
+jl      loc_709C7E
+
+loc_709D1D:                             ; CODE XREF: TechnoClass__DrawPips+19D↑j
+; TechnoClass__DrawPips+1D0↑j ...
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+mov     edx, [eax+5E0h]
+xor     ecx, ecx
+cmp     edx, ecx
+jle     loc_70A083
+mov     edx, [ebp+0]
+mov     dword ptr [esp+74h+var_34], ecx
+mov     dword ptr [esp+74h+var_34+4], ecx
+mov     ecx, ebp
+call    dword ptr [edx+88h]
+mov     edx, [eax]
+mov     ecx, eax
+call    dword ptr [edx+74h]
+mov     ebx, eax
+mov     eax, [ebp+0]
+mov     ecx, ebp
+mov     [esp+74h+var_4C], ebx
+call    dword ptr [eax+84h]
+lea     ecx, ds:0[ebx*4]
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+test    ebx, ebx
+mov     [esp+74h+Block], edi
+jle     short loc_709D83
+mov     ecx, ebx
+xor     eax, eax
+rep stosd
+
+loc_709D83:                             ; CODE XREF: TechnoClass__DrawPips+2EB↑j
+mov     edx, [ebp+114h]
+lea     ebx, [ebp+114h]
+mov     ecx, ebx
+mov     [esp+74h+var_50], edx
+call    HouseClass__SumPowerDrain
+mov     edi, eax
+dec     edi
+test    ebp, ebp
+jz      loc_709E48
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jnz     loc_709E48
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2Ch]
+sub     eax, 6
+neg     eax
+sbb     eax, eax
+not     eax
+and     eax, ebp
+mov     ecx, eax
+call    InfantryClass__updateDeployAnimation
+test    al, al
+jz      short loc_709E48
+mov     ecx, ebx
+call    CCINIClass__GetDB
+mov     edi, eax
+mov     eax, [esp+74h+var_50]
+test    eax, eax
+mov     [esp+74h+var_54], 0
+jle     loc_709F50
+mov     ebx, [esp+74h+Block]
+
+loc_709DF5:                             ; CODE XREF: TechnoClass__DrawPips+3B1↓j
+test    edi, edi
+jz      loc_709F50
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+2Ch]
+cmp     eax, 0Fh
+jnz     short loc_709E19
+mov     ecx, [edi+6C0h]
+mov     edx, [ecx+0DFCh]
+mov     [ebx], edx
+jmp     short loc_709E2C
+; ---------------------------------------------------------------------------
+
+loc_709E19:                             ; CODE XREF: TechnoClass__DrawPips+377↑j
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+2Ch]
+dec     eax
+neg     eax
+sbb     eax, eax
+and     al, 0FDh
+add     eax, 4
+mov     [ebx], eax
+
+loc_709E2C:                             ; CODE XREF: TechnoClass__DrawPips+387↑j
+mov     eax, [esp+74h+var_54]
+mov     ecx, [esp+74h+var_50]
+mov     edi, [edi+30h]
+inc     eax
+add     ebx, 4
+cmp     eax, ecx
+mov     [esp+74h+var_54], eax
+jl      short loc_709DF5
+jmp     loc_709F50
+; ---------------------------------------------------------------------------
+
+loc_709E48:                             ; CODE XREF: TechnoClass__DrawPips+30F↑j
+; TechnoClass__DrawPips+320↑j ...
+cmp     edi, [esp+74h+var_4C]
+jl      short loc_709E65
+mov     ecx, [esp+74h+Block]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 64h
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_709E65:                             ; CODE XREF: TechnoClass__DrawPips+3BC↑j
+mov     ecx, ebx
+call    CCINIClass__GetDB
+mov     ebx, eax
+mov     eax, [esp+74h+var_50]
+test    eax, eax
+mov     [esp+74h+var_54], 0
+jle     loc_709F50
+
+loc_709E82:                             ; CODE XREF: TechnoClass__DrawPips+4BA↓j
+test    ebx, ebx
+jz      loc_709F50
+mov     edx, [ebx]
+mov     ecx, ebx
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jnz     short loc_709EDF
+mov     eax, [ebx]
+mov     ecx, ebx
+call    dword ptr [eax+84h]
+fld     qword ptr [eax+380h]
+fsub    ds:dbl_7E1718
+call    Math__RoundToInt
+test    eax, eax
+jle     short loc_709ECA
+mov     ecx, [esp+74h+Block]
+lea     ecx, [ecx+edi*4]
+sub     edi, eax
+
+loc_709EBE:                             ; CODE XREF: TechnoClass__DrawPips+438↓j
+mov     dword ptr [ecx], 3
+sub     ecx, 4
+dec     eax
+jnz     short loc_709EBE
+
+loc_709ECA:                             ; CODE XREF: TechnoClass__DrawPips+423↑j
+mov     edx, [ebx+6C0h]
+mov     ecx, [esp+74h+Block]
+mov     eax, [edx+0DFCh]
+mov     [ecx+edi*4], eax
+jmp     short loc_709F37
+; ---------------------------------------------------------------------------
+
+loc_709EDF:                             ; CODE XREF: TechnoClass__DrawPips+404↑j
+mov     edx, [ebx]
+mov     ecx, ebx
+call    dword ptr [edx+2Ch]
+cmp     eax, 1
+jnz     short loc_709F2C
+mov     eax, [ebx]
+mov     ecx, ebx
+call    dword ptr [eax+84h]
+fld     qword ptr [eax+380h]
+fsub    ds:dbl_7E1718
+call    Math__RoundToInt
+test    eax, eax
+jle     short loc_709F1F
+mov     ecx, [esp+74h+Block]
+lea     ecx, [ecx+edi*4]
+sub     edi, eax
+
+loc_709F13:                             ; CODE XREF: TechnoClass__DrawPips+48D↓j
+mov     dword ptr [ecx], 3
+sub     ecx, 4
+dec     eax
+jnz     short loc_709F13
+
+loc_709F1F:                             ; CODE XREF: TechnoClass__DrawPips+478↑j
+mov     edx, [esp+74h+Block]
+mov     dword ptr [edx+edi*4], 5
+jmp     short loc_709F37
+; ---------------------------------------------------------------------------
+
+loc_709F2C:                             ; CODE XREF: TechnoClass__DrawPips+459↑j
+mov     eax, [esp+74h+Block]
+mov     dword ptr [eax+edi*4], 1
+
+loc_709F37:                             ; CODE XREF: TechnoClass__DrawPips+44D↑j
+; TechnoClass__DrawPips+49A↑j
+mov     eax, [esp+74h+var_54]
+mov     ecx, [esp+74h+var_50]
+mov     ebx, [ebx+30h]
+dec     edi
+inc     eax
+cmp     eax, ecx
+mov     [esp+74h+var_54], eax
+jl      loc_709E82
+
+loc_709F50:                             ; CODE XREF: TechnoClass__DrawPips+35B↑j
+; TechnoClass__DrawPips+367↑j ...
+mov     edx, [ebp+0]
+xor     edi, edi
+mov     ecx, ebp
+mov     [esp+74h+var_50], edi
+call    dword ptr [edx+84h]
+mov     cl, [eax+805h]
+test    cl, cl
+jz      short loc_709FC6
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+mov     edx, [esp+78h+Block]
+push    eax
+mov     eax, [esp+7Ch+arg_8]
+push    ecx
+push    ecx
+push    ecx
+push    3E8h
+push    ecx
+push    ecx
+push    ecx
+push    600h
+lea     ecx, [esp+9Ch+var_24]
+push    eax
+mov     eax, [edx]
+mov     edx, ds:87F6C4h
+push    ecx
+mov     ecx, [esp+0A4h+var_58]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_1C]
+mov     edi, 1
+lea     ecx, [esi+esi]
+mov     [esp+74h+var_50], edi
+lea     eax, [edx+edx]
+mov     dword ptr [esp+74h+var_34+4], ecx
+mov     dword ptr [esp+74h+var_34], eax
+
+loc_709FC6:                             ; CODE XREF: TechnoClass__DrawPips+4D9↑j
+cmp     edi, [esp+74h+var_4C]
+jge     loc_70A071
+mov     eax, [esp+74h+var_50]
+mov     ecx, [esp+74h+Block]
+mov     ebx, esi
+mov     edi, eax
+imul    edi, [esp+74h+var_1C]
+imul    ebx, eax
+lea     edx, [ecx+eax*4]
+mov     ecx, [esp+74h+var_4C]
+sub     ecx, eax
+mov     [esp+74h+var_50], edx
+mov     [esp+74h+var_4C], ecx
+
+loc_709FF5:                             ; CODE XREF: TechnoClass__DrawPips+5DF↓j
+mov     eax, [esp+74h+var_24]
+mov     ecx, dword ptr [esp+74h+var_34]
+add     eax, ecx
+mov     edx, [esp+74h+var_20]
+mov     ecx, dword ptr [esp+74h+var_34+4]
+add     eax, edi
+mov     dword ptr [esp+74h+var_48], eax
+xor     eax, eax
+push    eax
+push    eax
+push    eax
+add     ecx, edx
+mov     edx, [esp+80h+arg_8]
+push    eax
+push    eax
+add     ecx, ebx
+push    3E8h
+push    eax
+mov     dword ptr [esp+90h+var_48+4], ecx
+mov     ecx, [esp+90h+var_50]
+push    eax
+push    eax
+push    600h
+lea     eax, [esp+9Ch+var_48]
+push    edx
+mov     edx, [ecx]
+mov     ecx, ds:887314h
+push    eax
+mov     eax, [esp+0A4h+var_58]
+push    edx
+mov     edx, ds:87F6C4h
+push    eax
+call    DrawToSurfaceSHP
+mov     eax, [esp+74h+var_1C]
+mov     ecx, [esp+74h+var_50]
+add     edi, eax
+mov     eax, [esp+74h+var_4C]
+add     ebx, esi
+add     ecx, 4
+dec     eax
+mov     [esp+74h+var_50], ecx
+mov     [esp+74h+var_4C], eax
+jnz     short loc_709FF5
+
+loc_70A071:                             ; CODE XREF: TechnoClass__DrawPips+53A↑j
+mov     ecx, [esp+74h+Block]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+jmp     loc_70A4EC
+; ---------------------------------------------------------------------------
+
+loc_70A083:                             ; CODE XREF: TechnoClass__DrawPips+2A2↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2B8h]
+mov     [esp+74h+var_54], eax
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+mov     edx, [eax]
+mov     ecx, eax
+call    dword ptr [edx+74h]
+mov     ebx, eax
+mov     eax, [ebp+0]
+mov     ecx, ebp
+mov     [esp+74h+Block], ebx
+call    dword ptr [eax+84h]
+cmp     dword ptr [eax+3D4h], 5
+jnz     loc_70A1DE
+xor     edi, edi
+test    ebx, ebx
+jle     loc_70A15C
+xor     ebx, ebx
+mov     [esp+74h+var_4C], ebx
+
+loc_70A0D2:                             ; CODE XREF: TechnoClass__DrawPips+6C6↓j
+mov     eax, [esp+74h+var_54]
+mov     [esp+74h+var_50], 0
+cmp     edi, eax
+jge     short loc_70A0EA
+mov     [esp+74h+var_50], 1
+
+loc_70A0EA:                             ; CODE XREF: TechnoClass__DrawPips+650↑j
+mov     ecx, [esp+74h+var_24]
+mov     edx, [esp+74h+var_20]
+lea     eax, [ebx+ecx]
+mov     ecx, [esp+74h+var_4C]
+mov     dword ptr [esp+74h+var_34], eax
+xor     eax, eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    3E8h
+push    eax
+add     ecx, edx
+mov     edx, [esp+90h+arg_8]
+push    eax
+push    eax
+mov     dword ptr [esp+98h+var_34+4], ecx
+mov     ecx, [esp+98h+var_50]
+push    600h
+lea     eax, [esp+9Ch+var_34]
+push    edx
+mov     edx, [esp+0A0h+var_58]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+push    edx
+mov     edx, ds:87F6C4h
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_1C]
+mov     ecx, [esp+74h+var_4C]
+mov     eax, [esp+74h+Block]
+inc     edi
+add     ebx, edx
+add     ecx, esi
+cmp     edi, eax
+mov     [esp+74h+var_4C], ecx
+jl      loc_70A0D2
+
+loc_70A15C:                             ; CODE XREF: TechnoClass__DrawPips+636↑j
+mov     ecx, [ebp+2BCh]
+mov     [esp+74h+var_61], 0
+test    ecx, ecx
+jz      short loc_70A1DE
+lea     eax, [esp+74h+var_61]
+push    eax
+call    CaptureManagerClass__IsOverloading
+test    al, al
+jz      short loc_70A1DE
+mov     dl, [esp+74h+var_61]
+mov     eax, edi
+neg     dl
+sbb     edx, edx
+imul    eax, [esp+74h+var_1C]
+mov     ebx, [esp+74h+var_24]
+mov     ecx, esi
+imul    ecx, edi
+add     eax, ebx
+mov     ebx, [esp+74h+var_20]
+mov     dword ptr [esp+74h+var_34], eax
+xor     eax, eax
+xor     edi, edi
+push    eax
+push    edi
+push    eax
+push    eax
+push    eax
+add     ecx, ebx
+push    3E8h
+push    eax
+mov     dword ptr [esp+90h+var_34+4], ecx
+mov     ecx, [esp+90h+arg_8]
+push    eax
+push    eax
+push    600h
+lea     eax, [esp+9Ch+var_34]
+add     edx, 4
+push    ecx
+mov     ecx, [esp+0A0h+var_58]
+push    eax
+push    edx
+mov     edx, ds:87F6C4h
+push    ecx
+mov     ecx, ds:887314h
+call    DrawToSurfaceSHP
+
+loc_70A1DE:                             ; CODE XREF: TechnoClass__DrawPips+62C↑j
+; TechnoClass__DrawPips+6D9↑j ...
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+cmp     dword ptr [eax+3D4h], 2
+jnz     loc_70A345
+lea     edi, [ebp+33Ch]
+push    0
+mov     ecx, edi
+call    FloatArray__Get
+fstp    [esp+74h+var_50]
+push    2
+mov     ecx, edi
+call    FloatArray__Get
+fstp    [esp+74h+var_4C]
+push    3
+mov     ecx, edi
+call    FloatArray__Get
+fstp    dword ptr [esp+74h+var_48]
+push    1
+mov     ecx, edi
+call    FloatArray__Get
+fstp    [esp+74h+var_54]
+fild    [esp+74h+Block]
+mov     eax, [ebp+0]
+mov     ecx, ebp
+fstp    [esp+74h+var_34]
+fld     dword ptr [esp+74h+var_48]
+fadd    [esp+74h+var_4C]
+fadd    [esp+74h+var_50]
+fstp    [esp+74h+var_48]
+call    dword ptr [eax+84h]
+fild    dword ptr [eax+800h]
+fdivr   [esp+74h+var_48]
+fmul    [esp+74h+var_34]
+fadd    ds:dbl_7E1738
+call    Math__RoundToInt
+fld     [esp+74h+var_54]
+mov     edx, [ebp+0]
+mov     ecx, ebp
+fstp    [esp+74h+var_48]
+mov     [esp+74h+var_50], eax
+call    dword ptr [edx+84h]
+fild    dword ptr [eax+800h]
+fdivr   [esp+74h+var_48]
+fmul    [esp+74h+var_34]
+fadd    ds:dbl_7E1738
+call    Math__RoundToInt
+mov     [esp+74h+var_4C], eax
+mov     eax, [esp+74h+Block]
+test    eax, eax
+jle     loc_70A4EC
+xor     ebx, ebx
+xor     edi, edi
+mov     [esp+74h+var_54], eax
+
+loc_70A2B4:                             ; CODE XREF: TechnoClass__DrawPips+8AA↓j
+mov     eax, [esp+74h+var_4C]
+xor     edx, edx
+test    eax, eax
+jle     short loc_70A2CA
+dec     eax
+mov     edx, 5
+mov     [esp+74h+var_4C], eax
+jmp     short loc_70A2DC
+; ---------------------------------------------------------------------------
+
+loc_70A2CA:                             ; CODE XREF: TechnoClass__DrawPips+82C↑j
+mov     eax, [esp+74h+var_50]
+test    eax, eax
+jle     short loc_70A2DC
+dec     eax
+mov     edx, 2
+mov     [esp+74h+var_50], eax
+
+loc_70A2DC:                             ; CODE XREF: TechnoClass__DrawPips+838↑j
+; TechnoClass__DrawPips+840↑j
+mov     ecx, [esp+74h+var_24]
+lea     eax, [edi+ecx]
+mov     ecx, [esp+74h+var_20]
+mov     dword ptr [esp+74h+var_34], eax
+xor     eax, eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    eax
+push    3E8h
+push    eax
+add     ecx, ebx
+push    eax
+push    eax
+mov     eax, [esp+98h+arg_8]
+mov     dword ptr [esp+98h+var_34+4], ecx
+push    600h
+lea     ecx, [esp+9Ch+var_34]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+push    edx
+mov     edx, [esp+0A8h+var_58]
+push    edx
+mov     edx, ds:87F6C4h
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_1C]
+mov     eax, [esp+74h+var_54]
+add     edi, edx
+add     ebx, esi
+dec     eax
+mov     [esp+74h+var_54], eax
+jnz     loc_70A2B4
+jmp     loc_70A4EC
+; ---------------------------------------------------------------------------
+
+loc_70A345:                             ; CODE XREF: TechnoClass__DrawPips+760↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+cmp     dword ptr [eax+3D4h], 1
+jnz     loc_70A4EC
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+mov     ebx, [eax+3E4h]
+test    ebx, ebx
+mov     dword ptr [esp+74h+var_34], ebx
+jnz     loc_70A421
+mov     edx, [esp+74h+Block]
+mov     eax, [esp+74h+var_54]
+xor     ecx, ecx
+test    edx, edx
+mov     [esp+74h+var_4C], ecx
+jle     loc_70A4EC
+xor     edi, edi
+mov     [esp+74h+var_50], edi
+
+loc_70A396:                             ; CODE XREF: TechnoClass__DrawPips+986↓j
+test    eax, eax
+jle     short loc_70A401
+dec     eax
+mov     ebx, [esp+74h+var_24]
+mov     [esp+74h+var_54], eax
+mov     eax, esi
+imul    eax, ecx
+xor     edx, edx
+xor     ecx, ecx
+push    edx
+add     edi, ebx
+mov     ebx, [esp+78h+var_20]
+push    ecx
+push    edx
+push    edx
+push    edx
+lea     eax, [ebx+eax-3]
+push    3E8h
+push    edx
+mov     dword ptr [esp+90h+var_34+4], eax
+mov     eax, [esp+90h+arg_8]
+push    edx
+push    edx
+mov     edx, dword ptr [esp+98h+var_48]
+push    600h
+lea     ecx, [esp+9Ch+var_34]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+push    0Dh
+push    edx
+mov     edx, ds:87F6C4h
+mov     dword ptr [esp+0ACh+var_34], edi
+call    DrawToSurfaceSHP
+mov     ecx, [esp+74h+var_4C]
+mov     eax, [esp+74h+var_54]
+mov     edi, [esp+74h+var_50]
+
+loc_70A401:                             ; CODE XREF: TechnoClass__DrawPips+908↑j
+mov     ebx, [esp+74h+var_1C]
+mov     edx, [esp+74h+Block]
+inc     ecx
+add     edi, ebx
+cmp     ecx, edx
+mov     [esp+74h+var_4C], ecx
+mov     [esp+74h+var_50], edi
+jl      loc_70A396
+jmp     loc_70A4EC
+; ---------------------------------------------------------------------------
+
+loc_70A421:                             ; CODE XREF: TechnoClass__DrawPips+8E4↑j
+mov     eax, [esp+74h+Block]
+xor     edi, edi
+cdq
+idiv    ebx
+test    ebx, ebx
+jle     loc_70A4EC
+dec     eax
+xor     edx, edx
+mov     [esp+74h+var_54], eax
+mov     [esp+74h+var_50], edx
+
+loc_70A43D:                             ; CODE XREF: TechnoClass__DrawPips+A56↓j
+mov     ecx, [esp+74h+var_54]
+mov     [esp+74h+var_4C], 0Eh
+test    ecx, ecx
+jl      short loc_70A478
+mov     eax, ebx
+neg     eax
+mov     [esp+74h+var_58], eax
+mov     eax, ecx
+imul    eax, ebx
+add     eax, edi
+
+loc_70A45C:                             ; CODE XREF: TechnoClass__DrawPips+9DD↓j
+cmp     eax, [ebp+2FCh]
+jl      short loc_70A471
+mov     ebx, [esp+74h+var_58]
+dec     ecx
+add     eax, ebx
+test    ecx, ecx
+jge     short loc_70A45C
+jmp     short loc_70A478
+; ---------------------------------------------------------------------------
+
+loc_70A471:                             ; CODE XREF: TechnoClass__DrawPips+9D2↑j
+add     ecx, 0Fh
+mov     [esp+74h+var_4C], ecx
+
+loc_70A478:                             ; CODE XREF: TechnoClass__DrawPips+9BB↑j
+; TechnoClass__DrawPips+9DF↑j
+mov     eax, esi
+mov     ebx, [esp+74h+var_24]
+imul    eax, edi
+add     edx, ebx
+mov     ebx, [esp+74h+var_20]
+xor     ecx, ecx
+mov     [esp+74h+Block], edx
+lea     eax, [ebx+eax-3]
+mov     edx, [esp+74h+var_4C]
+mov     [esp+74h+var_5C], eax
+xor     eax, eax
+push    eax
+push    ecx
+push    eax
+push    eax
+push    eax
+push    3E8h
+push    eax
+push    eax
+push    eax
+mov     eax, [esp+98h+arg_8]
+push    600h
+lea     ecx, [esp+9Ch+Block]
+push    eax
+mov     eax, dword ptr [esp+0A0h+var_48]
+push    ecx
+mov     ecx, ds:887314h
+push    edx
+mov     edx, ds:87F6C4h
+push    eax
+call    DrawToSurfaceSHP
+mov     edx, [esp+74h+var_50]
+mov     ecx, [esp+74h+var_1C]
+mov     ebx, dword ptr [esp+74h+var_34]
+inc     edi
+add     edx, ecx
+cmp     edi, ebx
+mov     [esp+74h+var_50], edx
+jl      loc_70A43D
+
+loc_70A4EC:                             ; CODE XREF: TechnoClass__DrawPips+5EE↑j
+; TechnoClass__DrawPips+816↑j ...
+mov     edx, [ebp+0]
+mov     ecx, ebp
+mov     [esp+74h+var_62], 0
+mov     [esp+74h+var_61], 0
+mov     ebx, 0Dh
+xor     edi, edi
+xor     esi, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jz      short loc_70A52E
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+2Ch]
+cmp     eax, 1
+jnz     short loc_70A578
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D97h]
+test    cl, cl
+jz      short loc_70A578
+
+loc_70A52E:                             ; CODE XREF: TechnoClass__DrawPips+A7A↑j
+mov     ecx, [ebp+21Ch]
+call    TechnoClass__processExperienceGain
+test    al, al
+jz      short loc_70A578
+mov     eax, dword_A8ED54+30h
+mov     ecx, ds:8871E0h
+cdq
+idiv    dword ptr [ecx+30h]
+mov     [esp+74h+var_62], 1
+cmp     edx, 5
+jg      short loc_70A573
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+mov     ecx, [ebp+6Ch]
+mov     edx, [eax+0A0h]
+cmp     ecx, edx
+jge     short loc_70A573
+mov     [esp+74h+var_61], 1
+
+loc_70A573:                             ; CODE XREF: TechnoClass__DrawPips+AC4↑j
+; TechnoClass__DrawPips+ADC↑j
+mov     ebx, 0Dh
+
+loc_70A578:                             ; CODE XREF: TechnoClass__DrawPips+A87↑j
+; TechnoClass__DrawPips+A9C↑j ...
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2Ch]
+cmp     eax, 1
+jnz     short loc_70A5E4
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+mov     cl, [eax+0D97h]
+test    cl, cl
+jnz     short loc_70A5E4
+mov     ecx, [ebp+21Ch]
+call    TechnoClass__updateVeterancy
+test    al, al
+jz      short loc_70A5E4
+mov     eax, dword_A8ED54+30h
+mov     ecx, ds:8871E0h
+cdq
+idiv    dword ptr [ecx+38h]
+mov     [esp+74h+var_62], 1
+cmp     edx, 5
+jg      short loc_70A5DF
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+mov     ecx, [ebp+6Ch]
+mov     edx, [eax+0A0h]
+cmp     ecx, edx
+jge     short loc_70A5DF
+mov     [esp+74h+var_61], 1
+
+loc_70A5DF:                             ; CODE XREF: TechnoClass__DrawPips+B30↑j
+; TechnoClass__DrawPips+B48↑j
+mov     ebx, 14h
+
+loc_70A5E4:                             ; CODE XREF: TechnoClass__DrawPips+AF3↑j
+; TechnoClass__DrawPips+B08↑j ...
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2Ch]
+cmp     eax, 1
+jnz     short loc_70A5FD
+mov     edi, 26h ; '&'
+mov     esi, 0FFFFFFE0h
+jmp     short loc_70A614
+; ---------------------------------------------------------------------------
+
+loc_70A5FD:                             ; CODE XREF: TechnoClass__DrawPips+B5F↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+2Ch]
+cmp     eax, 0Fh
+jnz     short loc_70A614
+mov     edi, 13h
+mov     esi, 0FFFFFFDDh
+
+loc_70A614:                             ; CODE XREF: TechnoClass__DrawPips+B6B↑j
+; TechnoClass__DrawPips+B78↑j
+mov     al, [esp+74h+var_62]
+test    al, al
+jz      loc_70A6C0
+mov     al, [esp+74h+var_61]
+test    al, al
+jz      short loc_70A669
+mov     edx, [esp+74h+var_24]
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+push    eax
+mov     eax, [esp+7Ch+arg_8]
+push    ecx
+push    ecx
+push    ecx
+add     edi, edx
+mov     edx, [esp+88h+var_20]
+push    3E8h
+push    ecx
+push    ecx
+add     edx, esi
+push    ecx
+push    601h
+mov     [esp+9Ch+var_1C], edi
+mov     [esp+9Ch+var_18], edx
+push    eax
+lea     ecx, [esp+0A0h+var_1C]
+jmp     short loc_70A6A8
+; ---------------------------------------------------------------------------
+
+loc_70A669:                             ; CODE XREF: TechnoClass__DrawPips+B96↑j
+mov     edx, [esp+74h+var_24]
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+push    eax
+mov     eax, [esp+7Ch+arg_8]
+push    ecx
+push    ecx
+push    ecx
+add     edx, edi
+mov     edi, [esp+88h+var_20]
+push    3E8h
+push    ecx
+push    ecx
+add     esi, edi
+push    ecx
+push    600h
+mov     [esp+9Ch+var_1C], edx
+mov     [esp+9Ch+var_18], esi
+push    eax
+lea     ecx, [esp+0A0h+var_1C]
+
+loc_70A6A8:                             ; CODE XREF: TechnoClass__DrawPips+BD7↑j
+mov     edx, [esp+0A0h+var_38]
+push    ecx
+mov     ecx, ds:887314h
+push    ebx
+push    edx
+mov     edx, ds:87F6C4h
+call    DrawToSurfaceSHP
+
+loc_70A6C0:                             ; CODE XREF: TechnoClass__DrawPips+B8A↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+2Ch]
+mov     ebx, [esp+74h+arg_0]
+cmp     eax, 6
+jz      short loc_70A6FD
+mov     eax, [ebx]
+mov     ecx, [ebx+4]
+mov     edx, [ebp+0]
+sub     eax, 0Ah
+add     ecx, 0Ah
+mov     [esp+74h+var_1C], eax
+mov     eax, [esp+74h+arg_8]
+mov     [esp+74h+var_18], ecx
+push    eax
+lea     ecx, [esp+78h+var_1C]
+push    ebx
+push    ecx
+mov     ecx, ebp
+call    dword ptr [edx+458h]
+
+loc_70A6FD:                             ; CODE XREF: TechnoClass__DrawPips+C3F↑j
+mov     edi, [ebp+214h]
+test    edi, edi
+jl      loc_70A980
+cmp     edi, 0Ah
+jge     loc_70A980
+inc     edi
+cmp     edi, 0Ah
+jnz     short loc_70A71C
+xor     edi, edi
+
+loc_70A71C:                             ; CODE XREF: TechnoClass__DrawPips+C88↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+2Ch]
+mov     esi, eax
+lea     ecx, [esp+74h+Buffer]
+sub     esi, 0Fh
+neg     esi
+sbb     esi, esi
+xor     eax, eax
+and     esi, 3
+add     esi, 0FFFFFFDCh
+cmp     edi, 0Ah
+setnl   al
+dec     eax
+and     eax, edi
+push    eax             ; Format
+push    offset g_Str_Fmt_PctD ; BufferCount
+push    ecx             ; Buffer
+call    _swprintf
+mov     ecx, [ebx+4]
+mov     eax, [ebx]
+add     esp, 0Ch
+add     esi, 0FFFFFFFDh
+add     esi, ecx
+sub     eax, 4
+push    0FFFFFFFEh
+push    2
+push    49h ; 'I'
+push    esi
+push    eax
+lea     edx, [esp+88h+Buffer]
+lea     ecx, [esp+88h+var_34]
+mov     [esp+88h+var_1C], eax
+mov     [esp+88h+var_18], esi
+call    GetTextBoundingRect
+mov     edx, [eax]
+mov     esi, [esp+74h+arg_8]
+mov     dword ptr [esp+74h+var_48], edx
+xor     edi, edi
+mov     ecx, [eax+4]
+mov     ebx, [esi]
+mov     dword ptr [esp+74h+var_48+4], ecx
+mov     ecx, [eax+8]
+mov     [esp+74h+var_40], ecx
+mov     edx, [eax+0Ch]
+mov     dword ptr [esp+74h+var_34], ebx
+mov     ebx, [esi+4]
+mov     [esp+74h+var_3C], edx
+mov     dword ptr [esp+74h+var_34+4], ebx
+xor     eax, eax
+mov     ebx, [esi+8]
+xor     edx, edx
+test    ecx, ecx
+mov     esi, [esi+0Ch]
+mov     [esp+74h+var_2C], ebx
+mov     [esp+74h+var_28], esi
+jle     loc_70A8AB
+mov     esi, [esp+74h+var_3C]
+test    esi, esi
+jle     loc_70A8AB
+mov     esi, [esp+74h+arg_8]
+mov     ebx, [esi+8]
+test    ebx, ebx
+jle     loc_70A8AB
+mov     ebx, [esi+0Ch]
+test    ebx, ebx
+jle     loc_70A8AB
+mov     esi, dword ptr [esp+74h+var_34]
+mov     ebx, dword ptr [esp+74h+var_48]
+cmp     esi, ebx
+jge     short loc_70A80F
+sub     esi, ebx
+mov     ebx, [esp+74h+var_2C]
+add     ebx, esi
+mov     esi, dword ptr [esp+74h+var_48]
+mov     [esp+74h+var_2C], ebx
+mov     dword ptr [esp+74h+var_34], esi
+
+loc_70A80F:                             ; CODE XREF: TechnoClass__DrawPips+D69↑j
+cmp     [esp+74h+var_2C], 1
+jl      loc_70A8AB
+mov     esi, dword ptr [esp+74h+var_34+4]
+mov     ebx, dword ptr [esp+74h+var_48+4]
+cmp     esi, ebx
+jge     short loc_70A83A
+sub     esi, ebx
+mov     ebx, [esp+74h+var_28]
+add     ebx, esi
+mov     esi, dword ptr [esp+74h+var_48+4]
+mov     [esp+74h+var_28], ebx
+mov     dword ptr [esp+74h+var_34+4], esi
+
+loc_70A83A:                             ; CODE XREF: TechnoClass__DrawPips+D94↑j
+cmp     [esp+74h+var_28], 1
+jl      short loc_70A8AB
+mov     esi, [esp+74h+var_2C]
+mov     ebx, dword ptr [esp+74h+var_34]
+add     esi, ebx
+mov     ebx, dword ptr [esp+74h+var_48]
+add     ebx, ecx
+cmp     esi, ebx
+jle     short loc_70A865
+mov     ebx, dword ptr [esp+74h+var_34]
+mov     esi, dword ptr [esp+74h+var_48]
+sub     ecx, ebx
+add     ecx, esi
+mov     [esp+74h+var_2C], ecx
+
+loc_70A865:                             ; CODE XREF: TechnoClass__DrawPips+DC3↑j
+cmp     [esp+74h+var_2C], 1
+jl      short loc_70A8AB
+mov     ecx, [esp+74h+var_28]
+mov     esi, dword ptr [esp+74h+var_34+4]
+mov     ebx, [esp+74h+var_3C]
+add     esi, ecx
+mov     ecx, dword ptr [esp+74h+var_48+4]
+add     ebx, ecx
+cmp     esi, ebx
+jle     short loc_70A894
+mov     ebx, dword ptr [esp+74h+var_34+4]
+mov     esi, [esp+74h+var_3C]
+sub     ecx, ebx
+add     ecx, esi
+mov     esi, ecx
+jmp     short loc_70A898
+; ---------------------------------------------------------------------------
+
+loc_70A894:                             ; CODE XREF: TechnoClass__DrawPips+DF2↑j
+mov     esi, [esp+74h+var_28]
+
+loc_70A898:                             ; CODE XREF: TechnoClass__DrawPips+E02↑j
+cmp     esi, 1
+jl      short loc_70A8AB
+mov     eax, dword ptr [esp+74h+var_34]
+mov     ecx, dword ptr [esp+74h+var_34+4]
+mov     edx, [esp+74h+var_2C]
+jmp     short loc_70A8AF
+; ---------------------------------------------------------------------------
+
+loc_70A8AB:                             ; CODE XREF: TechnoClass__DrawPips+D30↑j
+; TechnoClass__DrawPips+D3C↑j ...
+mov     ecx, edi
+xor     esi, esi
+
+loc_70A8AF:                             ; CODE XREF: TechnoClass__DrawPips+E19↑j
+mov     dword ptr [esp+74h+var_48], eax
+dec     eax
+inc     edx
+mov     dword ptr [esp+74h+var_48+4], ecx
+mov     [esp+74h+var_40], edx
+mov     edx, [ebp+21Ch]
+add     edx, 56F9h
+mov     [esp+74h+var_3C], esi
+mov     dword ptr [esp+74h+var_48], eax
+push    0
+mov     ax, [edx]
+mov     word ptr [esp+78h+var_34], ax
+mov     cl, [edx+2]
+mov     byte ptr [esp+78h+var_34+2], cl
+mov     esi, dword ptr [esp+78h+var_34+2]
+mov     cl, ds:8A0DDCh
+mov     edx, dword ptr [esp+78h+var_34+1]
+and     esi, 0FFh
+mov     eax, dword ptr [esp+78h+var_34]
+shr     esi, cl
+mov     ecx, ds:8A0DD8h
+and     edx, 0FFh
+and     eax, 0FFh
+shl     esi, cl
+mov     cl, ds:8A0DE4h
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+mov     cl, ds:8A0DD4h
+shr     eax, cl
+mov     ecx, ds:8A0DD0h
+or      esi, edx
+shl     eax, cl
+mov     ecx, ds:887314h
+mov     edx, [ecx]
+or      esi, eax
+lea     eax, [esp+78h+var_48]
+push    eax
+call    dword ptr [edx+14h]
+mov     ecx, ds:887314h
+lea     eax, [esp+74h+var_48]
+push    esi
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+58h]
+mov     edx, [esp+74h+arg_8]
+mov     eax, ds:887314h
+push    1
+push    0FFFFFFFFh
+push    49h ; 'I'
+push    0
+lea     ecx, [esp+84h+var_1C]
+push    esi
+push    ecx
+push    edx
+push    eax
+lea     edx, [esp+94h+Buffer]
+lea     ecx, [esp+94h+var_34]
+call    globalHelper_0A66D0
+
+loc_70A980:                             ; CODE XREF: TechnoClass__DrawPips+D8↑j
+; TechnoClass__DrawPips+C75↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 64h
+retn    0Ch
+*/
+} } }
 // 0x70A990
-namespace ra2 { namespace game { int TechnoClass::DrawVeterancy() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::DrawVeterancy() {
+// [IDA decompile]
+int __thiscall TechnoClass::DrawVeterancy(#377 *this)
+{
+  int v2; // ebp
+  unsigned int v3; // ebx
+  int result; // eax
+  int v5; // edx
+  int v6; // eax
+  int v7; // [esp+10h] [ebp-8h] BYREF
+  int v8; // [esp+14h] [ebp-4h]
+  _DWORD *v9; // [esp+1Ch] [ebp+4h]
+  int *v10; // [esp+20h] [ebp+8h]
+
+  (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 136))(this);
+  v2 = dword_A8ED54[51658];
+  v3 = -1;
+  if ( (unsigned __int8)Audio::IsMediumVolume((char *)this + 336) )
+    v3 = 14;
+  if ( (unsigned __int8)Audio::IsLoud((char *)this + 336) )
+    v3 = 15;
+  result = VeinholeClass::GetState((char *)this + 336);
+  if ( (_BYTE)result )
+  {
+    v3 = 19;
+  }
+  else if ( v3 == -1 )
+  {
+    return result;
+  }
+  v5 = *(_DWORD *)this;
+  v6 = *v9 + 5;
+  v8 = v9[1] + 2;
+  v7 = v6;
+  if ( (*(int (__thiscall **)(#377 *))(v5 + 44))(this) != 15 )
+  {
+    v7 += 5;
+    v8 += 4;
+  }
+  DrawToSurfaceSHP(
+    (int *)MEMORY[0x87F7E8][7883],
+    (_DWORD *)MEMORY[0x87F6C0][1],
+    v2,
+    v3,
+    &v7,
+    v10,
+    3584,
+    0,
+    -2,
+    0,
+    1000,
+    0,
+    0,
+    0,
+    0,
+    0);
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+88h]
+mov     ebp, dword_A8ED54+32728h
+lea     edi, [esi+150h]
+mov     ecx, edi
+or      ebx, 0FFFFFFFFh
+call    Audio__IsMediumVolume
+test    al, al
+jz      short loc_70A9C0
+mov     ebx, 0Eh
+
+loc_70A9C0:                             ; CODE XREF: TechnoClass__DrawVeterancy+29↑j
+mov     ecx, edi
+call    Audio__IsLoud
+test    al, al
+jz      short loc_70A9D0
+mov     ebx, 0Fh
+
+loc_70A9D0:                             ; CODE XREF: TechnoClass__DrawVeterancy+39↑j
+mov     ecx, edi
+call    VeinholeClass__GetState
+test    al, al
+jz      short loc_70A9E2
+mov     ebx, 13h
+jmp     short loc_70A9E7
+; ---------------------------------------------------------------------------
+
+loc_70A9E2:                             ; CODE XREF: TechnoClass__DrawVeterancy+49↑j
+cmp     ebx, 0FFFFFFFFh
+jz      short loc_70AA54
+
+loc_70A9E7:                             ; CODE XREF: TechnoClass__DrawVeterancy+50↑j
+mov     ecx, [esp+18h+arg_0]
+mov     edx, [esi]
+mov     eax, [ecx]
+mov     ecx, [ecx+4]
+add     ecx, 2
+add     eax, 5
+mov     [esp+18h+var_4], ecx
+mov     ecx, esi
+mov     [esp+18h+var_8], eax
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jz      short loc_70AA20
+mov     ecx, [esp+18h+var_8]
+mov     eax, [esp+18h+var_4]
+add     ecx, 5
+add     eax, 4
+mov     [esp+18h+var_8], ecx
+mov     [esp+18h+var_4], eax
+
+loc_70AA20:                             ; CODE XREF: TechnoClass__DrawVeterancy+78↑j
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+push    eax
+mov     eax, [esp+20h+arg_4]
+push    ecx
+push    ecx
+push    ecx
+push    3E8h
+mov     edx, ds:87F6C4h
+push    ecx
+push    0FFFFFFFEh
+push    ecx
+push    0E00h
+lea     ecx, [esp+40h+var_8]
+push    eax
+push    ecx
+mov     ecx, ds:887314h
+push    ebx
+push    ebp
+call    DrawToSurfaceSHP
+
+loc_70AA54:                             ; CODE XREF: TechnoClass__DrawVeterancy+55↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    8
+*/
+} } }
 // 0x70AA60
-namespace ra2 { namespace game { int TechnoClass::DrawPowerIndicator() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::DrawPowerIndicator() {
+// [IDA decompile]
+int __thiscall TechnoClass::DrawPowerIndicator(#377 *this)
+{
+  int result; // eax
+  #72 *v3; // esi
+  int v4; // eax
+  #72 *StringCSF; // eax
+  int *TextBoundingRect; // eax
+  int *v7; // eax
+  #72 *v8; // edx
+  unsigned __int8 *v9; // eax
+  int v10; // esi
+  #72 *v11; // eax
+  int v12; // edx
+  int *v13; // eax
+  int *v14; // eax
+  unsigned __int8 *v15; // edi
+  int v16; // esi
+  int v17; // [esp+20h] [ebp-130h] BYREF
+  int v18; // [esp+24h] [ebp-12Ch] BYREF
+  int v19; // [esp+28h] [ebp-128h]
+  int v20; // [esp+2Ch] [ebp-124h]
+  #72 *v21; // [esp+30h] [ebp-120h] BYREF
+  _DWORD v22[3]; // [esp+34h] [ebp-11Ch] BYREF
+  _DWORD v23[4]; // [esp+40h] [ebp-110h] BYREF
+  _BYTE v24[4]; // [esp+50h] [ebp-100h] BYREF
+  _BYTE Buffer[252]; // [esp+54h] [ebp-FCh] BYREF
+  int *v26; // [esp+158h] [ebp+8h]
+  int *v27; // [esp+15Ch] [ebp+Ch]
+
+  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this);
+  if ( result != 6 || (result = *(_DWORD *)(*((_DWORD *)this + 328) + 3808), result <= 0) )
+  {
+LABEL_5:
+    LOBYTE(result) = *((_BYTE *)this + 979);
+    if ( !(_BYTE)result )
+      return result;
+    goto LABEL_6;
+  }
+  if ( !*((_BYTE *)this + 979) )
+  {
+    v21 = (#72 *)(*((_DWORD *)this + 135) + 36);
+    v3 = v21;
+    v4 = (*(int (__stdcall **)(#72 *))(*(_DWORD *)v3 + 36))(v3);
+    (*(void (__stdcall **)(#72 *, int))(*(_DWORD *)v3 + 32))(v3, v4);
+    StringCSF = GetStringCSF((#72 *)aTxtPowerDrain2, 0, g_Str_File_Techno_CPP, 15483);
+    swprintf((#72 *const)Buffer, StringCSF);
+    TextBoundingRect = GetTextBoundingRect(v22, (int)Buffer, *v26, v26[1], 329, 4, 2);
+    v18 = *TextBoundingRect;
+    v19 = TextBoundingRect[1];
+    v20 = TextBoundingRect[2];
+    v21 = (#72 *)TextBoundingRect[3];
+    v7 = ClipRectIntersection(v22, &v18, v27, 0, 0);
+    v18 = *v7;
+    v19 = v7[1];
+    v20 = v7[2];
+    v8 = (#72 *)v7[3];
+    v9 = (unsigned __int8 *)(*((_DWORD *)this + 135) + 22265);
+    v21 = v8;
+    v10 = (*v9 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+        | (v9[1] >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
+        | (v9[2] >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 20))(MEMORY[0x87F7E8][7883], &v18);
+    (*(void (__thiscall **)(_DWORD, int *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 88))(
+      MEMORY[0x87F7E8][7883],
+      &v17,
+      v10);
+    result = (int)RenderTextLabel((int *)&v21, (int)v24, MEMORY[0x87F7E8][7883], v27, (int)v26, v10, 0, 329, 1);
+    goto LABEL_5;
+  }
+LABEL_6:
+  v11 = GetStringCSF((#72 *)aTxtPrimary, 0, g_Str_File_Techno_CPP, 15502);
+  v12 = *(_DWORD *)this;
+  v21 = v11;
+  if ( (*(int (__thiscall **)(#377 *))(v12 + 44))(this) == 6
+    && BuildingTypeClass::GetFoundationWidth(*((_DWORD **)this + 328)) == 1 )
+  {
+    v21 = GetStringCSF((#72 *)aTxtPri, 0, g_Str_File_Techno_CPP, 15504);
+  }
+  v13 = GetTextBoundingRect(v23, (int)v21, *v26, v26[1], 329, 4, 2);
+  v17 = *v13;
+  v18 = v13[1];
+  v19 = v13[2];
+  v20 = v13[3];
+  v14 = ClipRectIntersection(v23, &v17, v27, 0, 0);
+  v15 = (unsigned __int8 *)*((_DWORD *)this + 135);
+  v17 = *v14;
+  v18 = v14[1];
+  v19 = v14[2];
+  v20 = v14[3];
+  v16 = (v15[22265] >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+      | (v15[22266] >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
+      | (v15[22267] >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+  (*(void (__stdcall **)(int *, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 20))(&v17, 0);
+  (*(void (__thiscall **)(_DWORD, int *, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 88))(
+    MEMORY[0x87F7E8][7883],
+    &v17,
+    v16);
+  return (int)RenderTextLabel((int *)&v21, (int)v21, MEMORY[0x87F7E8][7883], v27, (int)v26, v16, 0, 329, 1);
+}
+
+/* ASM:
+Buffer          = byte ptr -0FCh
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+sub     esp, 130h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+mov     eax, [edi]
+call    dword ptr [eax+2Ch]
+mov     ebp, [esp+140h+arg_8]
+mov     ebx, [esp+140h+arg_4]
+cmp     eax, 6
+jnz     loc_70ABEA
+mov     ecx, [edi+520h]
+mov     eax, [ecx+0EE0h]
+test    eax, eax
+jle     loc_70ABEA
+mov     al, [edi+3D3h]
+test    al, al
+jnz     loc_70ABF8
+mov     esi, [edi+21Ch]
+mov     eax, [edi+21Ch]
+add     esi, 24h ; '$'
+add     eax, 24h ; '$'
+push    esi
+mov     [esp+144h+var_120], eax
+mov     edx, [esi]
+call    dword ptr [edx+24h]
+push    eax
+mov     eax, [esi]
+push    esi
+call    dword ptr [eax+20h]
+push    eax             ; Format
+push    3C7Bh           ; int
+push    offset g_Str_File_Techno_CPP ; "D:\\ra2mdpost\\Techno.CPP"
+xor     edx, edx
+mov     ecx, offset aTxtPowerDrain2 ; "TXT_POWER_DRAIN2"
+call    GetStringCSF
+lea     ecx, [esp+144h+Buffer]
+push    eax             ; BufferCount
+push    ecx             ; Buffer
+call    _swprintf
+mov     edx, [ebx+4]
+mov     eax, [ebx]
+add     esp, 10h
+lea     ecx, [esp+13Ch+var_11C]
+push    2
+push    4
+push    149h
+push    edx
+push    eax
+lea     edx, [esp+150h+Buffer]
+call    GetTextBoundingRect
+mov     ecx, [eax]
+push    0
+mov     [esp+140h+var_12C], ecx
+push    0
+mov     edx, [eax+4]
+push    ebp
+mov     [esp+148h+var_128], edx
+mov     ecx, [eax+8]
+mov     [esp+148h+var_124], ecx
+lea     ecx, [esp+148h+var_11C]
+mov     edx, [eax+0Ch]
+mov     [esp+148h+var_120], edx
+lea     edx, [esp+148h+var_12C]
+call    ClipRectIntersection
+mov     ecx, [eax]
+mov     [esp+13Ch+var_12C], ecx
+mov     edx, [eax+4]
+mov     [esp+13Ch+var_128], edx
+mov     ecx, [eax+8]
+mov     [esp+13Ch+var_124], ecx
+xor     ecx, ecx
+mov     edx, [eax+0Ch]
+mov     eax, [edi+21Ch]
+add     eax, 56F9h
+mov     [esp+13Ch+var_120], edx
+xor     edx, edx
+mov     cl, [eax+2]
+mov     dl, [eax+1]
+mov     esi, ecx
+mov     cl, ds:8A0DDCh
+shr     esi, cl
+mov     ecx, ds:8A0DD8h
+shl     esi, cl
+mov     cl, ds:8A0DE4h
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+xor     ecx, ecx
+mov     cl, [eax]
+or      esi, edx
+mov     edx, ecx
+mov     cl, ds:8A0DD4h
+shr     edx, cl
+mov     ecx, ds:8A0DD0h
+shl     edx, cl
+mov     ecx, ds:887314h
+mov     eax, [ecx]
+or      esi, edx
+lea     edx, [esp+13Ch+var_12C]
+push    0
+push    edx
+call    dword ptr [eax+14h]
+mov     ecx, ds:887314h
+lea     edx, [esp+140h+var_130]
+push    esi
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+58h]
+mov     eax, ds:887314h
+push    1
+push    149h
+push    0
+push    esi
+push    ebx
+push    ebp
+push    eax
+lea     edx, [esp+15Ch+var_100]
+lea     ecx, [esp+15Ch+var_120]
+call    RenderTextLabel
+
+loc_70ABEA:                             ; CODE XREF: TechnoClass__DrawPowerIndicator+22↑j
+; TechnoClass__DrawPowerIndicator+36↑j
+mov     al, [edi+3D3h]
+test    al, al
+jz      loc_70AD42
+
+loc_70ABF8:                             ; CODE XREF: TechnoClass__DrawPowerIndicator+44↑j
+push    3C8Eh           ; int
+push    offset g_Str_File_Techno_CPP ; "D:\\ra2mdpost\\Techno.CPP"
+xor     edx, edx
+mov     ecx, offset aTxtPrimary ; "TXT_PRIMARY"
+call    GetStringCSF
+mov     edx, [edi]
+mov     ecx, edi
+mov     [esp+140h+var_120], eax
+call    dword ptr [edx+2Ch]
+cmp     eax, 6
+jnz     short loc_70AC48
+mov     ecx, [edi+520h]
+call    BuildingTypeClass__GetFoundationWidth
+cmp     eax, 1
+jnz     short loc_70AC48
+push    3C90h           ; int
+push    offset g_Str_File_Techno_CPP ; "D:\\ra2mdpost\\Techno.CPP"
+xor     edx, edx
+mov     ecx, offset aTxtPri ; "TXT_PRI"
+call    GetStringCSF
+mov     [esp+140h+var_120], eax
+
+loc_70AC48:                             ; CODE XREF: TechnoClass__DrawPowerIndicator+1BC↑j
+; TechnoClass__DrawPowerIndicator+1CC↑j
+mov     eax, [ebx+4]
+mov     ecx, [ebx]
+mov     edx, [esp+140h+var_120]
+push    2
+push    4
+push    149h
+push    eax
+push    ecx
+lea     ecx, [esp+154h+var_110]
+call    GetTextBoundingRect
+mov     edx, [eax]
+push    0
+mov     [esp+144h+var_130], edx
+push    0
+mov     ecx, [eax+4]
+push    ebp
+mov     [esp+14Ch+var_12C], ecx
+lea     ecx, [esp+14Ch+var_110]
+mov     edx, [eax+8]
+mov     [esp+14Ch+var_128], edx
+lea     edx, [esp+14Ch+var_130]
+mov     eax, [eax+0Ch]
+mov     [esp+14Ch+var_124], eax
+call    ClipRectIntersection
+mov     ecx, [eax]
+mov     edi, [edi+21Ch]
+mov     [esp+140h+var_130], ecx
+add     edi, 56F9h
+mov     edx, [eax+4]
+push    0
+mov     [esp+144h+var_12C], edx
+mov     ecx, [eax+8]
+mov     [esp+144h+var_128], ecx
+mov     cl, ds:8A0DDCh
+mov     edx, [eax+0Ch]
+xor     eax, eax
+mov     [esp+144h+var_124], edx
+mov     al, [edi+2]
+mov     esi, eax
+xor     eax, eax
+shr     esi, cl
+mov     ecx, ds:8A0DD8h
+mov     al, [edi]
+shl     esi, cl
+xor     ecx, ecx
+mov     cl, [edi+1]
+mov     edx, ecx
+mov     cl, ds:8A0DE4h
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+mov     cl, ds:8A0DD4h
+shr     eax, cl
+mov     ecx, ds:8A0DD0h
+or      esi, edx
+shl     eax, cl
+mov     ecx, ds:887314h
+mov     edx, [ecx]
+or      esi, eax
+lea     eax, [esp+144h+var_130]
+push    eax
+call    dword ptr [edx+14h]
+mov     ecx, ds:887314h
+lea     eax, [esp+140h+var_130]
+push    esi
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+58h]
+mov     ecx, ds:887314h
+mov     edx, [esp+140h+var_120]
+push    1
+push    149h
+push    0
+push    esi
+push    ebx
+push    ebp
+push    ecx
+lea     ecx, [esp+15Ch+var_120]
+call    RenderTextLabel
+
+loc_70AD42:                             ; CODE XREF: TechnoClass__DrawPowerIndicator+192↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 130h
+retn    0Ch
+*/
+} } }
 // 0x70C5B0
-namespace ra2 { namespace game { int ObjectClass::GetShroudByte() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetShroudByte(#377 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 624);
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+270h]
+retn
+*/
+} } }
 // 0x70C5C0
-namespace ra2 { namespace game { int ObjectClass::GetFogByte() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetFogByte() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetFogByte(#377 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 625);
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+271h]
+retn
+*/
+} } }
 // 0x70C5D0
-namespace ra2 { namespace game { int ObjectClass::HasSubObject() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
+// [IDA decompile]
+int __thiscall ObjectClass::HasSubObject(#377 *this)
+{
+  int result; // eax
+
+  result = *((_DWORD *)this + 157);
+  LOBYTE(result) = result && *(_DWORD *)(result + 40);
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+274h]
+test    eax, eax
+jz      short loc_70C5E4
+mov     ecx, [eax+28h]
+test    ecx, ecx
+jz      short loc_70C5E4
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_70C5E4:                             ; CODE XREF: ObjectClass__HasSubObject+8↑j
+; ObjectClass__HasSubObject+F↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x70C5F0
-namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() {
+// [IDA decompile]
+int __thiscall ObjectClass::IsNotShrouded(#377 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = !*((_BYTE *)this + 624) && !*((_BYTE *)this + 625);
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+270h]
+test    al, al
+jnz     short loc_70C607
+mov     al, [ecx+271h]
+test    al, al
+jnz     short loc_70C607
+mov     al, 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_70C607:                             ; CODE XREF: ObjectClass__IsNotShrouded+8↑j
+; ObjectClass__IsNotShrouded+12↑j
+xor     al, al
+retn
+*/
+} } }
 // 0x70DC50
-namespace ra2 { namespace game { int TechnoClass::processEMPulse() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processEMPulse() {
+// [IDA decompile]
+char __thiscall sub_70DC50(void *this)
+{
+  return *(_BYTE *)((*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this) + 2054);
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     al, [eax+806h]
+retn
+*/
+} } }
 // 0x70DCE0
-namespace ra2 { namespace game { bool TechnoClass::checkEMPState() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::checkEMPState() {
+// [IDA decompile]
+BOOL __thiscall TechnoClass::checkEMPState(_DWORD *this)
+{
+  return *(this + 73) != -1;
+}
+
+/* ASM:
+mov     edx, [ecx+124h]
+xor     eax, eax
+cmp     edx, 0FFFFFFFFh
+setnz   al
+retn
+*/
+} } }
 // 0x70DCF0
-namespace ra2 { namespace game { int TechnoClass::applyEMPulseDamage() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::applyEMPulseDamage() {
+// [IDA decompile]
+int __thiscall sub_70DCF0(_DWORD *this)
+{
+  return *(this + 73);
+}
+
+/* ASM:
+mov     eax, [ecx+124h]
+retn
+*/
+} } }
 // 0x70DD70
-namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681() {
+// [IDA decompile]
+int __thiscall ObjectClass::CheckTypeFlag1681(#377 *this)
+{
+  return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0;
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     dl, [eax+691h]
+xor     ecx, ecx
+test    dl, dl
+setz    cl
+mov     eax, ecx
+retn
+*/
+} } }
 // 0x70DDA0
-namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681_2() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681_2() {
+// [IDA decompile]
+int __thiscall ObjectClass::CheckTypeFlag1681_2(#377 *this)
+{
+  return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0;
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     dl, [eax+691h]
+xor     ecx, ecx
+test    dl, dl
+setz    cl
+mov     eax, ecx
+retn
+*/
+} } }
 // 0x70DDF0
-namespace ra2 { namespace game { int TechnoClass::GetMember81() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::GetMember81() {
+// [IDA decompile]
+int __thiscall TechnoClass_GetMember81(_DWORD *this)
+{
+  return *(this + 81);
+}
+
+/* ASM:
+mov     eax, [ecx+144h]
+retn
+*/
+} } }
 // 0x70E120
-namespace ra2 { namespace game { int TechnoClass::Vt249to254() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::Vt249to254() {
+// [IDA decompile]
+int __thiscall TechnoClass::Vt249to254(#377 *this)
+{
+  int v2; // edi
+  int v3; // eax
+
+  v2 = *(_DWORD *)this;
+  v3 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 996))(this);
+  return (*(int (__thiscall **)(#377 *, int))(v2 + 1016))(this, v3);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esi]
+call    dword ptr [edi+3E4h]
+push    eax
+mov     ecx, esi
+call    dword ptr [edi+3F8h]
+pop     edi
+pop     esi
+retn
+*/
+} } }
 // 0x70E340
-namespace ra2 { namespace game { int ObjectClass::ResetTimer2() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ResetTimer2() {
+// [IDA decompile]
+int __thiscall ObjectClass::ResetTimer2(#377 *this)
+{
+  _DWORD *v1; // ecx
+  int v3; // [esp+4h] [ebp-8h]
+
+  v1 = (_DWORD *)((char *)this + 424);
+  *v1 = MEMORY[0xA8ED84];
+  v1[1] = v3;
+  v1[2] = 0;
+  return v3;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+30h
+sub     esp, 0Ch
+xor     edx, edx
+add     ecx, 1A8h
+mov     [ecx], eax
+mov     eax, [esp+0Ch+var_8]
+mov     [ecx+4], eax
+mov     [ecx+8], edx
+add     esp, 0Ch
+retn
+*/
+} } }
 // 0x70E4B0
-namespace ra2 { namespace game { int TechnoClass::CalcFlashAlpha(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::CalcFlashAlpha(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass_CalcFlashAlpha(_DWORD *this, int a2)
+{
+  int v2; // edx
+  int v3; // esi
+  unsigned int v4; // edx
+  int v5; // eax
+  int result; // eax
+
+  v2 = *(this + 111);
+  v3 = *(this + 109);
+  if ( v3 != -1 )
+  {
+    if ( (int)MEMORY[0xA8ED84] - v3 >= v2 )
+      v2 = 0;
+    else
+      v2 -= (int)MEMORY[0xA8ED84] - v3;
+  }
+  switch ( *(this + 112) )
+  {
+    case 1:
+    case 7:
+      v4 = (unsigned __int64)(715827883LL * ((12 - v2) << 8)) >> 32;
+      v5 = (v4 >> 31) + v4;
+      goto LABEL_12;
+    case 2:
+    case 8:
+      v5 = 512;
+      goto LABEL_12;
+    case 3:
+    case 9:
+      v5 = ((v2 + 20) << 8) / 20;
+      goto LABEL_12;
+    case 4:
+      v5 = ((128 - v2) << 8) / 64;
+      goto LABEL_12;
+    case 5:
+      v5 = ((v2 + 64) << 8) / 64;
+      goto LABEL_12;
+    case 6:
+      v5 = 256;
+LABEL_12:
+      result = (a2 * v5) >> 8;
+      if ( result > 2000 )
+        result = 2000;
+      break;
+    default:
+      result = a2;
+      break;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+1BCh]
+push    esi
+mov     esi, [ecx+1B4h]
+cmp     esi, 0FFFFFFFFh
+jz      short loc_70E4D3
+mov     eax, dword_A8ED54+30h
+sub     eax, esi
+cmp     eax, edx
+jge     short loc_70E4D1
+sub     edx, eax
+jmp     short loc_70E4D3
+; ---------------------------------------------------------------------------
+
+loc_70E4D1:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+1B↑j
+xor     edx, edx
+
+loc_70E4D3:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+10↑j
+; TechnoClass__CalcFlashAlpha+1F↑j
+mov     ecx, [ecx+1C0h]
+pop     esi
+lea     eax, [ecx-1]    ; switch 9 cases
+cmp     eax, 8
+ja      def_70E4E6      ; jumptable 0070E4E6 default case
+jmp     ds:jpt_70E4E6[eax*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_70E4ED:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+mov     ecx, 0Ch        ; jumptable 0070E4E6 cases 1,7
+mov     eax, 2AAAAAABh
+sub     ecx, edx
+shl     ecx, 8
+imul    ecx
+mov     eax, edx
+mov     ecx, eax
+shr     ecx, 1Fh
+add     eax, ecx
+jmp     short loc_70E556
+; ---------------------------------------------------------------------------
+
+loc_70E509:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+mov     eax, 200h       ; jumptable 0070E4E6 cases 2,8
+jmp     short loc_70E556
+; ---------------------------------------------------------------------------
+
+loc_70E510:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+mov     eax, 80h        ; jumptable 0070E4E6 case 4
+sub     eax, edx
+shl     eax, 8
+cdq
+and     edx, 3Fh
+add     eax, edx
+sar     eax, 6
+jmp     short loc_70E556
+; ---------------------------------------------------------------------------
+
+loc_70E525:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+lea     eax, [edx+40h]  ; jumptable 0070E4E6 case 5
+shl     eax, 8
+cdq
+and     edx, 3Fh
+add     eax, edx
+sar     eax, 6
+jmp     short loc_70E556
+; ---------------------------------------------------------------------------
+
+loc_70E536:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+mov     eax, 100h       ; jumptable 0070E4E6 case 6
+jmp     short loc_70E556
+; ---------------------------------------------------------------------------
+
+loc_70E53D:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+36↑j
+; DATA XREF: .text:jpt_70E4E6↓o
+lea     ecx, [edx+14h]  ; jumptable 0070E4E6 cases 3,9
+mov     eax, 66666667h
+shl     ecx, 8
+imul    ecx
+mov     eax, edx
+sar     eax, 3
+mov     edx, eax
+shr     edx, 1Fh
+add     eax, edx
+
+loc_70E556:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+57↑j
+; TechnoClass__CalcFlashAlpha+5E↑j ...
+imul    eax, [esp+arg_0]
+sar     eax, 8
+cmp     eax, 7D0h
+jle     short locret_70E571
+mov     eax, 7D0h
+retn    4
+; ---------------------------------------------------------------------------
+
+def_70E4E6:                             ; CODE XREF: TechnoClass__CalcFlashAlpha+30↑j
+mov     eax, [esp+arg_0] ; jumptable 0070E4E6 default case
+
+locret_70E571:                          ; CODE XREF: TechnoClass__CalcFlashAlpha+B3↑j
+retn    4
+*/
+} } }
 // 0x70F000
-namespace ra2 { namespace game { int TechnoClass::ClearUnknownFlag() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::ClearUnknownFlag() {
+// [IDA decompile]
+int __thiscall BuildingClass::_vt297(#377 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+
+  return *(char *)(v2 + 12);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+movsx   eax, byte ptr [eax+0Ch]
+retn    4
+*/
+} } }
 // 0x70F090
-namespace ra2 { namespace game { int ObjectClass::GetTypeVt41() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetTypeVt41() {
+// [IDA decompile]
+int __thiscall ObjectClass::GetTypeVt41(#377 *this)
+{
+  int v1; // eax
+
+  v1 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this);
+  return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 164))(v1);
+}
+
+/* ASM:
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     edx, [eax]
+mov     ecx, eax
+jmp     dword ptr [edx+0A4h]
+*/
+} } }
 // 0x70F820
-namespace ra2 { namespace game { int ObjectClass::GetPriorityTarget() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetPriorityTarget() {
+// [IDA decompile]
+int __thiscall ObjectClass_GetPriorityTarget(_DWORD *this)
+{
+  if ( *(this + 176) )
+    return CaptureManagerClass::GetOriginalOwner(this);
+  if ( *(this + 179) )
+    return *(this + 184);
+  return *(this + 135);
+}
+
+/* ASM:
+mov     eax, [ecx+2C0h]
+test    eax, eax
+jz      short loc_70F837
+push    ecx
+mov     ecx, [eax+2BCh]
+call    CaptureManagerClass__GetOriginalOwner
+retn
+; ---------------------------------------------------------------------------
+
+loc_70F837:                             ; CODE XREF: ObjectClass__GetPriorityTarget+8↑j
+mov     eax, [ecx+2CCh]
+test    eax, eax
+jz      short loc_70F848
+mov     eax, [ecx+2E0h]
+retn
+; ---------------------------------------------------------------------------
+
+loc_70F848:                             ; CODE XREF: ObjectClass__GetPriorityTarget+1F↑j
+mov     eax, [ecx+21Ch]
+retn
+*/
+} } }
 // 0x70FEB0
-namespace ra2 { namespace game { bool FootClass::checkPassability() { return false; } } }
+namespace ra2 { namespace game { bool FootClass::checkPassability() {
+// [IDA decompile]
+BOOL __thiscall FootClass::checkPassability(_DWORD *this)
+{
+  return *(this + 115) != 0;
+}
+
+/* ASM:
+mov     edx, [ecx+1CCh]
+xor     eax, eax
+test    edx, edx
+setnz   al
+retn
+*/
+} } }
 // 0x70FEC0
-namespace ra2 { namespace game { bool ObjectClass::HasLocation() { return false; } } }
+namespace ra2 { namespace game { bool ObjectClass::HasLocation() {
+// [IDA decompile]
+BOOL __thiscall ObjectClass::HasLocation(_DWORD *this)
+{
+  return *(this + 116) != 0;
+}
+
+/* ASM:
+mov     edx, [ecx+1D0h]
+xor     eax, eax
+test    edx, edx
+setnz   al
+retn
+*/
+} } }
 // 0x710410
-namespace ra2 { namespace game { int ObjectClass::ClearPointerRefs() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ClearPointerRefs() {
+// [IDA decompile]
+int __thiscall ObjectClass::ClearPointerRefs(#377 *this)
+{
+  int v2; // [esp+4h] [ebp+4h]
+
+  if ( v2 == *((_DWORD *)this + 75) )
+    *((_DWORD *)this + 75) = 0;
+  if ( v2 == *((_DWORD *)this + 117) )
+    *((_DWORD *)this + 117) = 0;
+  if ( v2 == *((_DWORD *)this + 178) )
+    *((_DWORD *)this + 178) = 0;
+  if ( v2 == *((_DWORD *)this + 76) )
+    *((_DWORD *)this + 76) = 0;
+  return ObjectClass::ResetPointerIfMatch(this);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, [ecx+12Ch]
+xor     edx, edx
+cmp     eax, esi
+jnz     short loc_710427
+mov     [ecx+12Ch], edx
+
+loc_710427:                             ; CODE XREF: ObjectClass__ClearPointerRefs+F↑j
+cmp     eax, [ecx+1D4h]
+jnz     short loc_710435
+mov     [ecx+1D4h], edx
+
+loc_710435:                             ; CODE XREF: ObjectClass__ClearPointerRefs+1D↑j
+cmp     eax, [ecx+2C8h]
+jnz     short loc_710443
+mov     [ecx+2C8h], edx
+
+loc_710443:                             ; CODE XREF: ObjectClass__ClearPointerRefs+2B↑j
+mov     esi, [ecx+130h]
+cmp     eax, esi
+pop     esi
+jnz     short loc_710454
+mov     [ecx+130h], edx
+
+loc_710454:                             ; CODE XREF: ObjectClass__ClearPointerRefs+3C↑j
+push    eax
+call    ObjectClass__ResetPointerIfMatch
+retn    4
+*/
+} } }
 // 0x710460
-namespace ra2 { namespace game { int ObjectClass::FreeCaptureManager() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::FreeCaptureManager() {
+// [IDA decompile]
+int __thiscall ObjectClass::FreeCaptureManager(#377 *this)
+{
+  _DWORD *v1; // ecx
+  int result; // eax
+
+  v1 = (_DWORD *)*((_DWORD *)this + 175);
+  if ( v1 )
+    return CaptureManager::FreeAll(v1);
+  return result;
+}
+
+/* ASM:
+mov     ecx, [ecx+2BCh]
+test    ecx, ecx
+jz      short locret_71046F
+jmp     CaptureManager__FreeAll
+; ---------------------------------------------------------------------------
+
+locret_71046F:                          ; CODE XREF: ObjectClass__FreeCaptureManager+8↑j
+retn
+*/
+} } }
 // 0x7120D0
-namespace ra2 { namespace game { int ObjectClass::ComputeValue() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ComputeValue() {
+// [IDA decompile]
+int __thiscall ObjectClass_ComputeValue(_DWORD *this)
+{
+  int v2; // eax
+  int result; // eax
+
+  v2 = (*(int (__thiscall **)(_DWORD *))(*this + 172))(this);
+  result = Math::RoundToInt((double)(v2 / (*(this + 40) / *((_DWORD *)MEMORY[0x8871E0] + 1459))) * *((double *)MEMORY[0x8871E0] + 730));
+  if ( result <= 1 )
+    return 1;
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+0ACh]
+mov     ecx, ds:8871E0h
+mov     edi, eax
+mov     eax, [esi+0A0h]
+cdq
+idiv    dword ptr [ecx+16CCh]
+mov     esi, eax
+mov     eax, edi
+cdq
+idiv    esi
+mov     [esp+0Ch+var_4], eax
+fild    [esp+0Ch+var_4]
+fmul    qword ptr [ecx+16D0h]
+call    Math__RoundToInt
+pop     edi
+cmp     eax, 1
+pop     esi
+jg      short loc_712118
+mov     eax, 1
+
+loc_712118:                             ; CODE XREF: ObjectClass__ComputeValue+41↑j
+pop     ecx
+retn
+*/
+} } }
 // 0x716290
-namespace ra2 { namespace game { int ObjectClass::GetModeSpecificValue() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::GetModeSpecificValue() {
+// [IDA decompile]
+int __thiscall ObjectClass_GetModeSpecificValue(int *this)
+{
+  int result; // eax
+
+  switch ( *(this + 245) )
+  {
+    case 1:
+      result = *(this + 417);
+      break;
+    case 2:
+      result = (*(int (__thiscall **)(int *))(*this + 44))(this) != 16 ? 5 : 3;
+      break;
+    case 3:
+      result = *(this + 376);
+      break;
+    case 4:
+      result = 10;
+      break;
+    case 5:
+      result = *(_DWORD *)(*(this + 550) + 164);
+      break;
+    default:
+      result = 0;
+      break;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx+3D4h]
+dec     eax             ; switch 5 cases
+cmp     eax, 4
+ja      short def_71629C ; jumptable 0071629C default case
+jmp     ds:jpt_71629C[eax*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_7162A3:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+C↑j
+; DATA XREF: .text:jpt_71629C↓o
+mov     eax, 0Ah        ; jumptable 0071629C case 4
+retn
+; ---------------------------------------------------------------------------
+
+loc_7162A9:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+C↑j
+; DATA XREF: .text:jpt_71629C↓o
+mov     eax, [ecx+684h] ; jumptable 0071629C case 1
+retn
+; ---------------------------------------------------------------------------
+
+loc_7162B0:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+C↑j
+; DATA XREF: .text:jpt_71629C↓o
+mov     eax, [ecx+898h] ; jumptable 0071629C case 5
+mov     eax, [eax+0A4h]
+retn
+; ---------------------------------------------------------------------------
+
+loc_7162BD:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+C↑j
+; DATA XREF: .text:jpt_71629C↓o
+mov     edx, [ecx]      ; jumptable 0071629C case 2
+call    dword ptr [edx+2Ch]
+sub     eax, 10h
+neg     eax
+sbb     eax, eax
+and     eax, 2
+add     eax, 3
+retn
+; ---------------------------------------------------------------------------
+
+loc_7162D0:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+C↑j
+; DATA XREF: .text:jpt_71629C↓o
+mov     eax, [ecx+5E0h] ; jumptable 0071629C case 3
+retn
+; ---------------------------------------------------------------------------
+
+def_71629C:                             ; CODE XREF: ObjectClass__GetModeSpecificValue+A↑j
+xor     eax, eax        ; jumptable 0071629C default case
+retn
+*/
+} } }
 // 0x7177E0
-namespace ra2 { namespace game { int TechnoClass::processSpyAction(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::processSpyAction(int a1) {
+// [IDA decompile]
+int __thiscall sub_7177E0(void *this, int a2)
+{
+  return (int)this + 28 * a2 + 2708;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+lea     edx, ds:0[eax*8]
+sub     edx, eax
+lea     eax, [ecx+edx*4+0A94h]
+retn    4
+*/
+} } }
 // 0x71AB60
-namespace ra2 { namespace game { void* ObjectClass::UnlinkFromFactory(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* ObjectClass::UnlinkFromFactory(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall sub_71AB60(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *result; // eax
+  _DWORD *v4; // ecx
+
+  result = a2;
+  v4 = (_DWORD *)*(this + 9);
+  if ( a2 == v4 )
+  {
+    result = (_DWORD *)*(this + 10);
+    if ( result )
+    {
+      result = FactoryClass::CompleteItem(this);
+      *(this + 10) = 0;
+    }
+  }
+  else if ( a2 == (_DWORD *)*(this + 10) )
+  {
+    *(this + 10) = 0;
+    *(this + 17) = 0;
+    *(this + 16) = 0;
+    *(this + 15) = 0;
+    *(this + 14) = 0;
+    if ( v4 )
+      return (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v4 + 1156))(v4, 0, 1);
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [esi+24h]
+cmp     eax, ecx
+jnz     short loc_71AB87
+mov     eax, [esi+28h]
+xor     edi, edi
+cmp     eax, edi
+jz      short loc_71ABAC
+mov     ecx, esi
+call    FactoryClass__CompleteItem
+mov     [esi+28h], edi
+pop     edi
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_71AB87:                             ; CODE XREF: ObjectClass__UnlinkFromFactory+D↑j
+cmp     eax, [esi+28h]
+jnz     short loc_71ABAC
+xor     edi, edi
+cmp     ecx, edi
+mov     [esi+28h], edi
+mov     [esi+44h], edi
+mov     [esi+40h], edi
+mov     [esi+3Ch], edi
+mov     [esi+38h], edi
+jz      short loc_71ABAC
+mov     eax, [ecx]
+push    1
+push    edi
+call    dword ptr [eax+484h]
+
+loc_71ABAC:                             ; CODE XREF: ObjectClass__UnlinkFromFactory+16↑j
+; ObjectClass__UnlinkFromFactory+2A↑j ...
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x71BDF0
-namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
+// [IDA decompile]
+int __thiscall ObjectClass::ProcessFoggedState(int this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // ebp
+  int v5; // edi
+  int i; // eax
+  _DWORD *v7; // ecx
+  int Vtable3; // [esp+14h] [ebp-4h]
+
+  ObjectClass::ctor((_DWORD *)this);
+  *(_DWORD *)(this + 172) = 0;
+  *(_BYTE *)(this + 176) = 0;
+  v2 = dword_A8ED54[12];
+  *(_DWORD *)(this + 188) = 0;
+  *(_DWORD *)(this + 180) = v2;
+  *(_DWORD *)(this + 192) = 0;
+  *(_DWORD *)(this + 196) = 1;
+  *(_DWORD *)(this + 200) = 0;
+  *(_BYTE *)(this + 204) = 0;
+  *(_BYTE *)(this + 205) = 0;
+  *(_DWORD *)(this + 208) = 0;
+  *(_DWORD *)(this + 212) = 0;
+  *(_DWORD *)(this + 216) = 0;
+  *(_DWORD *)(this + 220) = 0;
+  *(_DWORD *)this = &TerrainClass::`vftable';
+  *(_DWORD *)(this + 4) = &off_7F5200;
+  *(_DWORD *)(this + 8) = &TerrainClass::`vftable';
+  *(_DWORD *)(this + 12) = &TerrainClass::`vftable';
+  if ( MEMORY[0x87F7E8][539756] < MEMORY[0x87F7E8][539754]
+    || (BYTE1(MEMORY[0x87F7E8][539755]) || !MEMORY[0x87F7E8][539754])
+    && MEMORY[0x87F7E8][539757] > 0
+    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][539752] + 8))(
+         &MEMORY[0x87F7E8][539752],
+         MEMORY[0x87F7E8][539754] + MEMORY[0x87F7E8][539757],
+         0) )
+  {
+    v3 = MEMORY[0x87F7E8][539756]++;
+    *(_DWORD *)(MEMORY[0x87F7E8][539753] + 4 * v3) = this;
+  }
+  Vtable3 = AbstractClass::GetVtable3(this + 4);
+  if ( dword_A8ED54[130748] + 1 <= dword_A8ED54[130749] )
+    goto LABEL_15;
+  if ( dword_A8ED54[130749] )
+  {
+    v4 = dword_A8ED54[130749];
+    if ( dword_A8ED54[130749] < 0 )
+      return this;
+  }
+  else
+  {
+    v4 = 10;
+  }
+  v5 = __2_YAPAXI_Z(8 * (v4 + dword_A8ED54[130749]));
+  if ( v5 )
+  {
+    for ( i = 0; i < dword_A8ED54[130748]; *(_DWORD *)(v5 + 8 * i - 4) = v7[1] )
+    {
+      v7 = (_DWORD *)(dword_A8ED54[130747] + 8 * i++);
+      *(_DWORD *)(v5 + 8 * i - 8) = *v7;
+    }
+    __3_YAXPAX_Z((void *)dword_A8ED54[130747]);
+    dword_A8ED54[130747] = v5;
+    dword_A8ED54[130749] += v4;
+    dword_A8ED54[130751] = 0;
+LABEL_15:
+    *(_DWORD *)(dword_A8ED54[130747] + 8 * dword_A8ED54[130748]) = Vtable3;
+    *(_DWORD *)(dword_A8ED54[130747] + 8 * dword_A8ED54[130748] + 4) = this;
+    LOBYTE(dword_A8ED54[130750]) = 0;
+    ++dword_A8ED54[130748];
+  }
+  return this;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+call    ObjectClass__ctor
+xor     ebx, ebx
+lea     edi, [esi+4]
+mov     [esi+0ACh], ebx
+mov     [esi+0B0h], bl
+mov     eax, dword_A8ED54+30h
+mov     [esi+0BCh], ebx
+mov     [esi+0B4h], eax
+mov     [esi+0C0h], ebx
+mov     dword ptr [esi+0C4h], 1
+mov     [esi+0C8h], ebx
+mov     [esi+0CCh], bl
+mov     [esi+0CDh], bl
+mov     [esi+0D0h], ebx
+mov     [esi+0D4h], ebx
+mov     [esi+0D8h], ebx
+mov     [esi+0DCh], ebx
+mov     dword ptr [esi], offset ??_7TerrainClass@@6B@ ; const TerrainClass::`vftable'
+mov     dword ptr [edi], offset off_7F5200
+mov     dword ptr [esi+8], offset ??_7TerrainClass@@6B@_0 ; const TerrainClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7TerrainClass@@6B@_1 ; const TerrainClass::`vftable'
+mov     eax, ds:0A8E990h
+mov     ecx, ds:0A8E998h
+cmp     ecx, eax
+jl      short loc_71BEAF
+cmp     ds:0A8E995h, bl
+jnz     short loc_71BE8F
+cmp     eax, ebx
+jnz     short loc_71BEC7
+
+loc_71BE8F:                             ; CODE XREF: ObjectClass__ProcessFoggedState+99↑j
+mov     ecx, ds:0A8E99Ch
+cmp     ecx, ebx
+jle     short loc_71BEC7
+mov     edx, ds:0A8E988h
+add     ecx, eax
+push    ebx
+push    ecx
+mov     ecx, 0A8E988h
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_71BEC7
+
+loc_71BEAF:                             ; CODE XREF: ObjectClass__ProcessFoggedState+91↑j
+mov     ecx, ds:0A8E998h
+mov     eax, ecx
+inc     ecx
+mov     ds:0A8E998h, ecx
+mov     ecx, ds:0A8E98Ch
+mov     [ecx+eax*4], esi
+
+loc_71BEC7:                             ; CODE XREF: ObjectClass__ProcessFoggedState+9D↑j
+; ObjectClass__ProcessFoggedState+A7↑j ...
+push    edi
+call    AbstractClass__GetVtable3
+mov     edx, dword_A8ED54+7FAF0h
+mov     [esp+18h+var_4], eax
+mov     eax, dword_A8ED54+7FAF4h
+inc     edx
+cmp     edx, eax
+jle     loc_71BF73
+cmp     eax, ebx
+jnz     short loc_71BEF0
+mov     ebp, 0Ah
+jmp     short loc_71BEFA
+; ---------------------------------------------------------------------------
+
+loc_71BEF0:                             ; CODE XREF: ObjectClass__ProcessFoggedState+F7↑j
+mov     ebp, eax
+cmp     ebp, ebx
+jl      loc_71BFA6
+
+loc_71BEFA:                             ; CODE XREF: ObjectClass__ProcessFoggedState+FE↑j
+add     eax, ebp
+mov     [esp+18h+var_8], eax
+shl     eax, 3
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+mov     edi, eax
+add     esp, 4
+cmp     edi, ebx
+jz      loc_71BFA6
+mov     ecx, [esp+18h+var_8]
+xor     eax, eax
+dec     ecx
+mov     [esp+18h+var_8], ecx
+mov     ecx, dword_A8ED54+7FAF0h
+cmp     ecx, ebx
+jle     short loc_71BF4C
+
+loc_71BF2B:                             ; CODE XREF: ObjectClass__ProcessFoggedState+15A↓j
+mov     edx, dword_A8ED54+7FAECh
+lea     ecx, [edx+eax*8]
+inc     eax
+mov     edx, [ecx]
+mov     [edi+eax*8-8], edx
+mov     ecx, [ecx+4]
+mov     [edi+eax*8-4], ecx
+mov     ecx, dword_A8ED54+7FAF0h
+cmp     eax, ecx
+jl      short loc_71BF2B
+
+loc_71BF4C:                             ; CODE XREF: ObjectClass__ProcessFoggedState+139↑j
+mov     edx, dword_A8ED54+7FAECh
+push    edx             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, dword_A8ED54+7FAF4h
+add     esp, 4
+add     eax, ebp
+mov     dword_A8ED54+7FAECh, edi
+mov     dword_A8ED54+7FAF4h, eax
+mov     dword_A8ED54+7FAFCh, ebx
+
+loc_71BF73:                             ; CODE XREF: ObjectClass__ProcessFoggedState+EF↑j
+mov     ecx, dword_A8ED54+7FAECh
+mov     edx, dword_A8ED54+7FAF0h
+mov     eax, [esp+18h+var_4]
+mov     [ecx+edx*8], eax
+mov     eax, dword_A8ED54+7FAF0h
+mov     ecx, dword_A8ED54+7FAECh
+mov     [ecx+eax*8+4], esi
+mov     eax, dword_A8ED54+7FAF0h
+inc     eax
+mov     byte ptr dword_A8ED54+7FAF8h, bl
+mov     dword_A8ED54+7FAF0h, eax
+
+loc_71BFA6:                             ; CODE XREF: ObjectClass__ProcessFoggedState+104↑j
+; ObjectClass__ProcessFoggedState+120↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+*/
+} } }
 // 0x71FFE0
-namespace ra2 { namespace game { int AbstractClass::checkWeaponCooldown(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkWeaponCooldown(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_71FFE0(_DWORD *this, int a2)
+{
+  if ( !Control::DispatchClick(this, a2) )
+    return 0;
+  (*(void (__thiscall **)(_DWORD *))(*this + 144))(this);
+  (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 148))(this, *(this + 14));
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    eax
+call    Control__DispatchClick
+test    eax, eax
+jz      short loc_720012
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+90h]
+mov     ecx, [esi+38h]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+94h]
+mov     eax, 1
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_720012:                             ; CODE XREF: AbstractClass__checkWeaponCooldown+F↑j
+xor     eax, eax
+pop     esi
+retn    4
+*/
+} } }
 // 0x720020
-namespace ra2 { namespace game { int AbstractClass::getCurrentWeapon(int a1, int a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::getCurrentWeapon(int a1, int a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::sub_720020(int *this, int a2, char a3)
+{
+  int v4; // edx
+  int v5; // eax
+  int Instance; // edi
+
+  v4 = *this;
+  *(this + 14) = a2;
+  (*(void (**)(void))(v4 + 72))();
+  LOBYTE(v5) = a3;
+  if ( a3 )
+  {
+    v5 = *(this + 14);
+    if ( v5 )
+    {
+      Instance = TextRenderer::GetInstance();
+      v5 = Text::MeasureWidth(*(this + 14), 0) + 8;
+      *(this + 5) = v5;
+      *(this + 6) = *(_DWORD *)(Instance + 28) + 2;
+    }
+  }
+  return v5;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+mov     edx, [esi]
+mov     [esi+38h], eax
+call    dword ptr [edx+48h]
+mov     al, [esp+4+arg_4]
+test    al, al
+jz      short loc_720066
+mov     eax, [esi+38h]
+test    eax, eax
+jz      short loc_720066
+mov     ecx, [esi+3Ch]
+
+loc_720041:                             ; DATA XREF: .data:off_820544↓o
+; .data:off_820558↓o ...
+push    edi
+
+loc_720042:                             ; DATA XREF: .data:off_82876C↓o
+; .data:off_82A224↓o
+call    TextRenderer__GetInstance
+mov     edi, eax
+mov     eax, [esi+38h]
+push    0
+push    eax
+
+loc_72004F:                             ; DATA XREF: .data:off_828788↓o
+mov     ecx, edi
+call    Text__MeasureWidth
+add     eax, 8
+mov     [esi+14h], eax
+mov     ecx, [edi+1Ch]
+add     ecx, 2
+pop     edi
+mov     [esi+18h], ecx
+
+loc_720066:                             ; CODE XREF: AbstractClass__getCurrentWeapon+15↑j
+; AbstractClass__getCurrentWeapon+1C↑j
+pop     esi
+retn    8
+*/
+} } }
 // 0x720070
-namespace ra2 { namespace game { int AbstractClass::selectWeapon() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::selectWeapon() {
+// [IDA decompile]
+char __thiscall AbstractClass::sub_720070(int this)
+{
+  char result; // al
+  int v3; // eax
+  int v4; // edx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // edx
+  int v8; // eax
+  int v9; // ecx
+  int v10; // eax
+  int v11; // [esp+8h] [ebp-10h] BYREF
+  int v12; // [esp+Ch] [ebp-Ch]
+  int v13; // [esp+10h] [ebp-8h]
+  int v14; // [esp+14h] [ebp-4h]
+
+  result = *(_BYTE *)(this + 53);
+  if ( !result )
+  {
+    if ( *(_BYTE *)(this + 52) )
+    {
+      v3 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + BuildingAnim::GetType()) + 780);
+      if ( *(_DWORD *)(v3 + 4) == 1 )
+        v4 = *(unsigned __int8 *)(*(_DWORD *)(v3 + 372) + 12);
+      else
+        v4 = *(unsigned __int16 *)(*(_DWORD *)(v3 + 372) + 24);
+      v5 = *(_DWORD *)(this + 12);
+      v11 = v5 - 1;
+      v6 = *(_DWORD *)(this + 16);
+      v12 = v6 - 1;
+      v13 = *(_DWORD *)(this + 20) + v5 + 2;
+      v14 = *(_DWORD *)(this + 24) + v6 + 2;
+      (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 88))(MEMORY[0x887314], &v11, v4);
+    }
+    if ( *(_BYTE *)(this + 30) )
+      v7 = 3;
+    else
+      v7 = *(_BYTE *)(this + 44) == 0;
+    v8 = *(_DWORD *)(this + 12);
+    v12 = *(_DWORD *)(this + 16);
+    v9 = *(_DWORD *)(this + 24);
+    v11 = v8;
+    v10 = *(_DWORD *)(this + 20);
+    v14 = v9;
+    v13 = v10;
+    return DrawBuildingTilesSHP(&v11, v7, 1);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     al, [esi+35h]
+test    al, al
+jnz     loc_72013A
+mov     al, [esi+34h]
+test    al, al
+jz      short loc_7200FB
+call    BuildingAnim__GetType
+mov     ecx, dword_A8ED54+76780h
+mov     edx, [ecx+eax*4]
+lea     eax, [ecx+eax*4]
+mov     eax, [edx+30Ch]
+cmp     dword ptr [eax+4], 1
+jnz     short loc_7200B2
+mov     eax, [eax+174h]
+xor     edx, edx
+mov     dl, [eax+0Ch]
+jmp     short loc_7200BE
+; ---------------------------------------------------------------------------
+
+loc_7200B2:                             ; CODE XREF: AbstractClass__selectWeapon+33↑j
+mov     ecx, [eax+174h]
+xor     edx, edx
+mov     dx, [ecx+18h]
+
+loc_7200BE:                             ; CODE XREF: AbstractClass__selectWeapon+40↑j
+mov     eax, [esi+0Ch]
+push    edi
+push    edx
+lea     edx, [esp+1Ch+var_10]
+lea     ecx, [eax-1]
+push    edx
+mov     [esp+20h+var_10], ecx
+mov     ecx, [esi+10h]
+lea     edi, [ecx-1]
+mov     [esp+20h+var_C], edi
+mov     edi, [esi+14h]
+lea     eax, [edi+eax+2]
+mov     [esp+20h+var_8], eax
+mov     eax, [esi+18h]
+lea     ecx, [eax+ecx+2]
+mov     [esp+20h+var_4], ecx
+mov     ecx, ds:887314h
+mov     eax, [ecx]
+call    dword ptr [eax+58h]
+pop     edi
+
+loc_7200FB:                             ; CODE XREF: AbstractClass__selectWeapon+16↑j
+mov     al, [esi+1Eh]
+test    al, al
+jz      short loc_720109
+mov     edx, 3
+jmp     short loc_720113
+; ---------------------------------------------------------------------------
+
+loc_720109:                             ; CODE XREF: AbstractClass__selectWeapon+90↑j
+mov     al, [esi+2Ch]
+xor     edx, edx
+test    al, al
+setz    dl
+
+loc_720113:                             ; CODE XREF: AbstractClass__selectWeapon+97↑j
+mov     ecx, [esi+10h]
+mov     eax, [esi+0Ch]
+mov     [esp+14h+var_C], ecx
+mov     ecx, [esi+18h]
+mov     [esp+14h+var_10], eax
+mov     eax, [esi+14h]
+mov     [esp+14h+var_4], ecx
+push    1
+lea     ecx, [esp+18h+var_10]
+mov     [esp+18h+var_8], eax
+call    DrawBuildingTilesSHP
+
+loc_72013A:                             ; CODE XREF: AbstractClass__selectWeapon+B↑j
+pop     esi
+add     esp, 10h
+retn
+*/
+} } }
 // 0x720140
-namespace ra2 { namespace game { void* AbstractClass::fireWeapon(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::fireWeapon(int a1) {
+// [IDA decompile]
+int *__thiscall AbstractClass::sub_720140(int this, int a2)
+{
+  int *result; // eax
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+  int v7; // [esp-14h] [ebp-38h]
+  int v8; // [esp-Ch] [ebp-30h]
+  _DWORD v9[2]; // [esp+4h] [ebp-20h] BYREF
+  int v10; // [esp+Ch] [ebp-18h] BYREF
+  _BYTE v11[16]; // [esp+14h] [ebp-10h] BYREF
+
+  result = (int *)BuildingAnim::GetType();
+  if ( *(_DWORD *)(this + 56) )
+  {
+    if ( *(_BYTE *)(this + 30) )
+    {
+      v4 = 0;
+    }
+    else if ( *(_BYTE *)(this + 44) || (v4 = 20480, *(_BYTE *)(this + 45)) )
+    {
+      v4 = 24576;
+    }
+    if ( MEMORY[0xB054E0] )
+    {
+      if ( (int)result <= 0 || (int)result >= MEMORY[0xB054E0] )
+        result = 0;
+      result = (int *)*((_DWORD *)MEMORY[0xB054D4] + (_DWORD)result);
+      if ( result )
+      {
+        v9[0] = (*(int *)(this + 20) >> 1) + *(_DWORD *)(this + 12) - 1;
+        v9[1] = *(_DWORD *)(this + 16) + 1;
+        v5 = v4 | *(_DWORD *)(this + 60);
+        BYTE1(v5) |= 1u;
+        v8 = v5;
+        v7 = (int)result;
+        v6 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v11);
+        return globalHelper_0A6010(&v10, a2, MEMORY[0x887314], v6, (int)v9, v7, 0, v8, 1);
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 20h
+push    esi
+mov     esi, ecx
+call    BuildingAnim__GetType
+mov     ecx, [esi+38h]
+test    ecx, ecx
+jz      loc_7201EB
+mov     cl, [esi+1Eh]
+test    cl, cl
+jz      short loc_720161
+xor     edx, edx
+jmp     short loc_720179
+; ---------------------------------------------------------------------------
+
+loc_720161:                             ; CODE XREF: AbstractClass__fireWeapon+1B↑j
+mov     cl, [esi+2Ch]
+test    cl, cl
+jnz     short loc_720174
+mov     cl, [esi+2Dh]
+mov     edx, 5000h
+test    cl, cl
+jz      short loc_720179
+
+loc_720174:                             ; CODE XREF: AbstractClass__fireWeapon+26↑j
+mov     edx, 6000h
+
+loc_720179:                             ; CODE XREF: AbstractClass__fireWeapon+1F↑j
+; AbstractClass__fireWeapon+32↑j
+mov     ecx, dword_A8ED54+7678Ch
+test    ecx, ecx
+jz      short loc_7201EB
+test    eax, eax
+jle     short loc_72018B
+cmp     eax, ecx
+jl      short loc_72018D
+
+loc_72018B:                             ; CODE XREF: AbstractClass__fireWeapon+45↑j
+xor     eax, eax
+
+loc_72018D:                             ; CODE XREF: AbstractClass__fireWeapon+49↑j
+mov     ecx, dword_A8ED54+76780h
+mov     eax, [ecx+eax*4]
+test    eax, eax
+jz      short loc_7201EB
+mov     ecx, [esi+14h]
+push    edi
+mov     edi, [esi+0Ch]
+push    1
+sar     ecx, 1
+lea     ecx, [ecx+edi-1]
+mov     [esp+2Ch+var_20], ecx
+mov     ecx, [esi+10h]
+inc     ecx
+mov     [esp+2Ch+var_1C], ecx
+mov     ecx, [esi+3Ch]
+or      ecx, edx
+lea     edx, [esp+2Ch+var_20]
+or      ch, 1
+push    ecx
+mov     ecx, ds:887314h
+push    0
+push    eax
+mov     eax, [ecx]
+push    edx
+lea     edx, [esp+3Ch+var_10]
+push    edx
+call    dword ptr [eax+78h]
+mov     edx, [esp+3Ch+arg_0]
+push    eax
+mov     eax, ds:887314h
+lea     ecx, [esp+40h+var_18]
+push    eax
+call    globalHelper_0A6010
+pop     edi
+
+loc_7201EB:                             ; CODE XREF: AbstractClass__fireWeapon+10↑j
+; AbstractClass__fireWeapon+41↑j ...
+pop     esi
+add     esp, 20h
+retn    4
+*/
+} } }
 // 0x720200
-namespace ra2 { namespace game { int AbstractClass::reloadWeapon(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::reloadWeapon(int a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_720200(_DWORD *this, int a2)
+{
+  *(this + 15) = a2;
+  return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     [ecx+3Ch], eax
+retn    4
+*/
+} } }
 // 0x720210
-namespace ra2 { namespace game { void* AbstractClass::checkAmmunition(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::checkAmmunition(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_720210(_DWORD *Block, char a2)
+{
+  GadgetClass::Dtor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    GadgetClass__Dtor
+test    [esp+4+arg_0], 1
+jz      short loc_720228
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_720228:                             ; CODE XREF: AbstractClass__checkAmmunition+D↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x729AA0
-namespace ra2 { namespace game { void FootClass::Process() { } } }
+namespace ra2 { namespace game { void FootClass::Process() {
+// [IDA decompile]
+void __thiscall sub_729AA0(int this)
+{
+  int v2; // edi
+  int v3; // edx
+  int v4; // eax
+  _BYTE *v5; // eax
+  _DWORD *v6; // ecx
+
+  v2 = *(_DWORD *)(this + 52);
+  if ( !v2 )
+    goto LABEL_7;
+  v3 = *(_DWORD *)(this + 40);
+  v4 = *(_DWORD *)(this + 48);
+  if ( v3 != -1 )
+  {
+    if ( (int)MEMORY[0xA8ED84] - v3 >= v4 )
+      v4 = 0;
+    else
+      v4 -= (int)MEMORY[0xA8ED84] - v3;
+  }
+  if ( (double)(v2 - v4) / (double)*(int *)(this + 52) == 1.0 )
+  {
+LABEL_7:
+    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 396))(*(_DWORD *)(this + 12), 2);
+    v5 = *(_BYTE **)(this + 12);
+    if ( v5[144] && !v5[129] && !v5[141] )
+    {
+      (*(void (__stdcall **)(int))(*(_DWORD *)(this + 4) + 72))(this + 4);
+      v6 = *(_DWORD **)(this + 12);
+      *(_DWORD *)(this + 24) = 0;
+      FootClass::ClearPathIndex(v6);
+    }
+  }
+}
+
+/* ASM:
+sub     esp, 8
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esi+34h]
+test    edi, edi
+mov     [esp+10h+var_4], edi
+jz      short loc_729AEA
+mov     edx, [esi+28h]
+mov     eax, [esi+30h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_729ACF
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_729ACD
+sub     eax, ecx
+jmp     short loc_729ACF
+; ---------------------------------------------------------------------------
+
+loc_729ACD:                             ; CODE XREF: FootClass__Process+27↑j
+xor     eax, eax
+
+loc_729ACF:                             ; CODE XREF: FootClass__Process+1B↑j
+; FootClass__Process+2B↑j
+sub     edi, eax
+mov     [esp+10h+var_8], edi
+fild    [esp+10h+var_8]
+fidiv   [esp+10h+var_4]
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 40h
+jz      short loc_729B31
+
+loc_729AEA:                             ; CODE XREF: FootClass__Process+10↑j
+mov     ecx, [esi+0Ch]
+push    2
+mov     eax, [ecx]
+call    dword ptr [eax+18Ch]
+mov     eax, [esi+0Ch]
+mov     cl, [eax+90h]
+test    cl, cl
+jz      short loc_729B31
+mov     cl, [eax+81h]
+test    cl, cl
+jnz     short loc_729B31
+mov     cl, [eax+8Dh]
+test    cl, cl
+jnz     short loc_729B31
+mov     ecx, [esi+4]
+lea     eax, [esi+4]
+push    eax
+call    dword ptr [ecx+48h]
+mov     ecx, [esi+0Ch]
+mov     dword ptr [esi+18h], 0
+call    FootClass__ClearPathIndex
+
+loc_729B31:                             ; CODE XREF: FootClass__Process+48↑j
+; FootClass__Process+62↑j ...
+pop     edi
+pop     esi
+add     esp, 8
+retn
+*/
+} } }
 // 0x72A4A0
-namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) {
+// [IDA decompile]
+int __thiscall ObjectClass::DrawTypewriterText(int this, int a2)
+{
+  int v3; // eax
+  int v4; // edi
+  int Instance; // eax
+  int v6; // edx
+  _DWORD *v7; // ebp
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // edi
+  int v12; // ebx
+  int v13; // eax
+  int v14; // ecx
+  int v15; // edx
+  unsigned __int8 v16; // al
+  int v18; // [esp-8h] [ebp-30h]
+  _DWORD *v19; // [esp+Ch] [ebp-1Ch]
+  int v20; // [esp+10h] [ebp-18h]
+  int v21[2]; // [esp+18h] [ebp-10h] BYREF
+  int v22; // [esp+20h] [ebp-8h]
+  int v23; // [esp+24h] [ebp-4h]
+
+  if ( *(_BYTE *)(this + 64) )
+    return 0;
+  if ( !GadgetClass::ClearState((_BYTE *)this, a2) )
+    return 0;
+  v3 = *(_DWORD *)(this + 52);
+  if ( !dword_A8ED54[121315] )
+    return 0;
+  if ( v3 <= 0 || v3 >= dword_A8ED54[121315] )
+    v3 = 0;
+  v4 = *(_DWORD *)(dword_A8ED54[121312] + 4 * v3);
+  if ( !v4 )
+    return 0;
+  Instance = TextRenderer::GetInstance();
+  v6 = *(_DWORD *)(this + 12);
+  v7 = (_DWORD *)Instance;
+  v19 = (_DWORD *)Instance;
+  v21[1] = *(_DWORD *)(this + 16);
+  v8 = *(_DWORD *)(this + 56);
+  v21[0] = v6;
+  if ( v8 < 0 )
+    v8 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 124))(MEMORY[0x87F7E8][7883]);
+  v22 = v8;
+  v23 = v7[7];
+  v9 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 124))(MEMORY[0x87F7E8][7883]);
+  if ( v22 + v21[0] - v9 > 0 )
+  {
+    v22 = v9 - v21[0];
+    if ( v9 - v21[0] <= 0 || v23 <= 0 )
+      return 0;
+  }
+  v10 = Color::ConvertToRGB((unsigned __int8 *)(v4 + 776), (int)&a2);
+  LOWORD(v20) = *(_WORD *)v10;
+  BYTE2(v20) = *(_BYTE *)(v10 + 2);
+  v11 = (unsigned __int8)*(_WORD *)v10 | (*(unsigned __int16 *)((char *)&v20 + 1) << 8);
+  v12 = wcslen(*(const #72 **)(this + 48));
+  if ( *(_BYTE *)(this + 65) )
+  {
+    v13 = ((int (*)(void))timeGetTime)();
+    v14 = *(_DWORD *)(this + 68);
+    if ( v14 )
+    {
+      v7 = v19;
+      *(_DWORD *)(this + 68) = v14 + ((unsigned int)(v13 - *(_DWORD *)(this + 72)) >> 4);
+    }
+    else
+    {
+      *(_DWORD *)(this + 68) = 1;
+    }
+    v15 = *(_DWORD *)(this + 68);
+    if ( v14 != v15 )
+      *(_DWORD *)(this + 72) = v13;
+    if ( v15 <= v12 )
+      PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 1732), 0x2000, 1.0, 0);
+  }
+  v18 = *(_DWORD *)(this + 68);
+  v16 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 88))(this);
+  DrawTextRendererMultiline(
+    (_DWORD *)MEMORY[0x87F7E8][7883],
+    v21,
+    *(#72 **)(this + 48),
+    v12,
+    v7,
+    v11,
+    (signed int *)(this + 60),
+    v16,
+    0,
+    1,
+    v18);
+  return 1;
+}
+
+/* ASM:
+sub     esp, 1Ch
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     al, [esi+40h]
+test    al, al
+jnz     loc_72A64C
+mov     eax, [esp+28h+arg_0]
+push    eax
+call    GadgetClass__ClearState
+test    eax, eax
+jz      loc_72A64C
+mov     ecx, dword_A8ED54+7678Ch
+mov     eax, [esi+34h]
+test    ecx, ecx
+jz      loc_72A64C
+test    eax, eax
+jle     short loc_72A4DE
+cmp     eax, ecx
+jl      short loc_72A4E0
+
+loc_72A4DE:                             ; CODE XREF: ObjectClass__DrawTypewriterText+38↑j
+xor     eax, eax
+
+loc_72A4E0:                             ; CODE XREF: ObjectClass__DrawTypewriterText+3C↑j
+mov     ecx, dword_A8ED54+76780h
+mov     edi, [ecx+eax*4]
+test    edi, edi
+jz      loc_72A64C
+mov     ecx, [esi+2Ch]
+call    TextRenderer__GetInstance
+mov     edx, [esi+0Ch]
+mov     ebp, eax
+mov     eax, [esi+10h]
+mov     [esp+28h+var_1C], ebp
+mov     [esp+28h+var_C], eax
+mov     eax, [esi+38h]
+test    eax, eax
+mov     [esp+28h+var_10], edx
+jge     short loc_72A51F
+mov     ecx, ds:887314h
+mov     edx, [ecx]
+call    dword ptr [edx+7Ch]
+
+loc_72A51F:                             ; CODE XREF: ObjectClass__DrawTypewriterText+72↑j
+mov     ecx, ds:887314h
+mov     [esp+28h+var_8], eax
+mov     eax, [ebp+1Ch]
+mov     [esp+28h+var_4], eax
+mov     edx, [ecx]
+call    dword ptr [edx+7Ch]
+mov     edx, [esp+28h+var_8]
+mov     ecx, [esp+28h+var_10]
+add     ecx, edx
+sub     ecx, eax
+test    ecx, ecx
+jle     short loc_72A55F
+sub     edx, ecx
+test    edx, edx
+mov     [esp+28h+var_8], edx
+jle     loc_72A64C
+mov     eax, [esp+28h+var_4]
+test    eax, eax
+jle     loc_72A64C
+
+loc_72A55F:                             ; CODE XREF: ObjectClass__DrawTypewriterText+A3↑j
+lea     edx, [esp+28h+arg_0]
+push    ebx
+push    edx
+lea     ecx, [edi+308h]
+call    Color__ConvertToRGB
+mov     cx, [eax]
+mov     word ptr [esp+2Ch+var_18], cx
+mov     dl, [eax+2]
+mov     byte ptr [esp+2Ch+var_18+2], dl
+mov     edi, [esp+2Ch+var_18+2]
+mov     eax, [esp+2Ch+var_18+1]
+mov     ecx, [esp+2Ch+var_18]
+mov     edx, [esi+30h]
+and     edi, 0FFh
+shl     edi, 8
+and     eax, 0FFh
+and     ecx, 0FFh
+or      edi, eax
+push    edx             ; String
+shl     edi, 8
+or      edi, ecx
+call    _wcslen
+mov     ebx, eax
+mov     al, [esi+41h]
+add     esp, 4
+test    al, al
+jz      short loc_72A60E
+call    ds:__imp_timeGetTime
+mov     ecx, [esi+44h]
+test    ecx, ecx
+jnz     short loc_72A5D1
+mov     dword ptr [esi+44h], 1
+jmp     short loc_72A5E4
+; ---------------------------------------------------------------------------
+
+loc_72A5D1:                             ; CODE XREF: ObjectClass__DrawTypewriterText+126↑j
+mov     ebp, [esi+48h]
+mov     edx, eax
+sub     edx, ebp
+mov     ebp, [esp+2Ch+var_1C]
+shr     edx, 4
+add     edx, ecx
+mov     [esi+44h], edx
+
+loc_72A5E4:                             ; CODE XREF: ObjectClass__DrawTypewriterText+12F↑j
+mov     edx, [esi+44h]
+cmp     ecx, edx
+jz      short loc_72A5EE
+mov     [esi+48h], eax
+
+loc_72A5EE:                             ; CODE XREF: ObjectClass__DrawTypewriterText+149↑j
+cmp     edx, ebx
+jg      short loc_72A60E
+mov     eax, ds:8871E0h
+push    0               ; int
+mov     edx, 2000h
+push    3F800000h       ; float
+mov     ecx, [eax+6C4h]
+call    PlayVocClass
+
+loc_72A60E:                             ; CODE XREF: ObjectClass__DrawTypewriterText+119↑j
+; ObjectClass__DrawTypewriterText+150↑j
+mov     ecx, [esi+44h]
+mov     edx, [esi]
+push    ecx             ; int
+push    1               ; int
+push    0               ; int
+mov     ecx, esi
+call    dword ptr [edx+58h]
+mov     ecx, [esi+30h]
+and     eax, 0FFh
+push    eax             ; int
+lea     eax, [esi+3Ch]
+push    eax             ; int
+push    edi             ; int
+push    ebp             ; int
+push    ebx             ; int
+push    ecx             ; String
+mov     ecx, ds:887314h
+lea     edx, [esp+50h+var_10]
+call    DrawTextRendererMultiline
+pop     ebx
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebp
+add     esp, 1Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_72A64C:                             ; CODE XREF: ObjectClass__DrawTypewriterText+D↑j
+; ObjectClass__DrawTypewriterText+1F↑j ...
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebp
+add     esp, 1Ch
+retn    4
+*/
+} } }
 // 0x733160
-namespace ra2 { namespace game { void AbstractClass::processRadarEvent() { } } }
+namespace ra2 { namespace game { void AbstractClass::processRadarEvent() {
+// [IDA decompile]
+void __thiscall sub_733160(void *this)
+{
+  int v2; // ecx
+  int v3; // eax
+  void **i; // edx
+  int v5; // edx
+  int v6; // edx
+
+  v2 = MEMORY[0xB0FE6C];
+  if ( MEMORY[0xB0FE6C] )
+  {
+    v3 = *(_DWORD *)(MEMORY[0xB0FE6C] + 16) - 1;
+    if ( v3 >= 0 )
+    {
+      for ( i = (void **)(*(_DWORD *)(MEMORY[0xB0FE6C] + 4) + 4 * v3); *i != this; --i )
+      {
+        if ( --v3 < 0 )
+          return;
+      }
+      v5 = *(_DWORD *)(MEMORY[0xB0FE6C] + 16);
+      if ( v3 < v5 )
+      {
+        v6 = v5 - 1;
+        *(_DWORD *)(MEMORY[0xB0FE6C] + 16) = v6;
+        if ( v3 < v6 )
+        {
+          do
+          {
+            ++v3;
+            *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v3);
+          }
+          while ( v3 < *(_DWORD *)(v2 + 16) );
+        }
+      }
+    }
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, dword_A8ED54+81118h
+test    ecx, ecx
+jz      short loc_7331A8
+mov     eax, [ecx+10h]
+dec     eax
+js      short loc_7331A8
+mov     edx, [ecx+4]
+lea     edx, [edx+eax*4]
+
+loc_733179:                             ; CODE XREF: AbstractClass__processRadarEvent+23↓j
+cmp     [edx], esi
+jz      short loc_733187
+dec     eax
+sub     edx, 4
+test    eax, eax
+jge     short loc_733179
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_733187:                             ; CODE XREF: AbstractClass__processRadarEvent+1B↑j
+mov     edx, [ecx+10h]
+cmp     eax, edx
+jge     short loc_7331A8
+dec     edx
+cmp     eax, edx
+mov     [ecx+10h], edx
+jge     short loc_7331A8
+
+loc_733196:                             ; CODE XREF: AbstractClass__processRadarEvent+46↓j
+mov     edx, [ecx+4]
+inc     eax
+mov     esi, [edx+eax*4]
+mov     [edx+eax*4-4], esi
+mov     edx, [ecx+10h]
+cmp     eax, edx
+jl      short loc_733196
+
+loc_7331A8:                             ; CODE XREF: AbstractClass__processRadarEvent+B↑j
+; AbstractClass__processRadarEvent+11↑j ...
+pop     esi
+retn
+*/
+} } }
 // 0x73B0B0
-namespace ra2 { namespace game { int TechnoClass::ShouldSkipOccupierDraw(int a1, int a2, int a3) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::ShouldSkipOccupierDraw(int a1, int a2, int a3) {
+// [IDA decompile]
+char __thiscall TechnoClass::sub_73B0B0(#374 *this, int a2, int a3, int a4)
+{
+  _DWORD *v5; // esi
+  _BYTE *v6; // esi
+
+  if ( *((_BYTE *)this + 1048)
+    && (v5 = (_DWORD *)Array::Get(this, 0), (*(int (__thiscall **)(_DWORD *))(*v5 + 44))(v5) == 6)
+    && ((*(int (__thiscall **)(_DWORD *))(*v5 + 388))(v5) == 16 || v5[45] == 16)
+    && ((v6 = v5 + 212, Window::IsVisible(v6))
+     || BuildingClass::CheckFlag24(v6)
+     || BuildingClass::CheckPowerFlags(v6)
+     || Flag::CheckNone(v6)) )
+  {
+    return 0;
+  }
+  else
+  {
+    return ObjectClass::CalcDrawRect(this);
+  }
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, ecx
+mov     al, [edi+418h]
+test    al, al
+jz      short loc_73B124
+push    0
+call    Array__Get
+mov     esi, eax
+mov     ecx, esi
+mov     eax, [esi]
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jnz     short loc_73B124
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+184h]
+cmp     eax, 10h
+jz      short loc_73B0EB
+cmp     dword ptr [esi+0B4h], 10h
+jnz     short loc_73B124
+
+loc_73B0EB:                             ; CODE XREF: TechnoClass__ShouldSkipOccupierDraw+30↑j
+add     esi, 350h
+mov     ecx, esi
+call    Window__IsVisible
+test    al, al
+jnz     short loc_73B11D
+mov     ecx, esi
+call    BuildingClass__CheckFlag24
+test    al, al
+jnz     short loc_73B11D
+mov     ecx, esi
+call    BuildingClass__CheckPowerFlags
+test    al, al
+jnz     short loc_73B11D
+mov     ecx, esi
+call    Flag__CheckNone
+test    al, al
+jz      short loc_73B124
+
+loc_73B11D:                             ; CODE XREF: TechnoClass__ShouldSkipOccupierDraw+4A↑j
+; TechnoClass__ShouldSkipOccupierDraw+55↑j ...
+pop     edi
+xor     al, al
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_73B124:                             ; CODE XREF: TechnoClass__ShouldSkipOccupierDraw+C↑j
+; TechnoClass__ShouldSkipOccupierDraw+21↑j ...
+mov     eax, [esp+8+arg_4]
+mov     ecx, [esp+8+arg_0]
+push    0
+push    eax
+push    ecx
+mov     ecx, edi        ; this
+call    ObjectClass__CalcDrawRect
+pop     edi
+pop     esi
+retn    0Ch
+*/
+} } }
 // 0x73CEC0
-namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
+// [IDA decompile]
+char __thiscall TechnoClass::Draw(int *this, int *a2, int *a3)
+{
+  int v4; // ebx
+  int v5; // edi
+  char v6; // al
+  int *v7; // eax
+  int v8; // edx
+  int v9; // eax
+  int v10; // ebx
+  _DWORD *v11; // edi
+  int v12; // eax
+  int v13; // edi
+  int *v14; // ebp
+  int v15; // edi
+  int *v16; // ebp
+  int v17; // edx
+  unsigned int v18; // edi
+  int *v19; // ebx
+  int v20; // edi
+  double v21; // st7
+  double v22; // st7
+  unsigned int v23; // edi
+  int v24; // eax
+  int *v25; // ebx
+  int v26; // eax
+  int v27; // eax
+  int v28; // edi
+  int v29; // edx
+  int v30; // edi
+  void *v31; // eax
+  int v32; // edx
+  unsigned int v34; // [esp-30h] [ebp-84h]
+  int *v35; // [esp-14h] [ebp-68h]
+  int v36; // [esp+14h] [ebp-40h] BYREF
+  double v37; // [esp+18h] [ebp-3Ch] BYREF
+  int v38; // [esp+20h] [ebp-34h]
+  int v39; // [esp+24h] [ebp-30h]
+  double v40; // [esp+28h] [ebp-2Ch] BYREF
+  int v41; // [esp+30h] [ebp-24h]
+  int v42[2]; // [esp+34h] [ebp-20h] BYREF
+  int v43[3]; // [esp+3Ch] [ebp-18h] BYREF
+  int v44[3]; // [esp+48h] [ebp-Ch] BYREF
+
+  if ( (dword_A8ED54[145554] & 1) == 0 )
+  {
+    LOBYTE(dword_A8ED54[145554]) |= 1u;
+    dword_A8ED54[145553] = (int)SearchMIXFile(aOregathShp, 0);
+  }
+  v4 = *a2;
+  v5 = a2[1] - *((char *)this + 1716);
+  v6 = *((_BYTE *)this + 1060);
+  v38 = v4;
+  v39 = v5;
+  v42[0] = v4;
+  v42[1] = v5;
+  if ( v6 )
+  {
+    v5 += 14;
+    v39 = v5;
+  }
+  v7 = (int *)(*(int (__thiscall **)(int *, int **))(*this + 440))(this, &a2);
+  v8 = *this;
+  v36 = *v7;
+  v9 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(v8 + 104))(this, 0, 0);
+  if ( v9 == 5 )
+    return v9;
+  LOBYTE(v9) = *((_BYTE *)this + 1761);
+  if ( (_BYTE)v9 )
+    return v9;
+  LOBYTE(v9) = *((_BYTE *)this + 1762);
+  if ( (_BYTE)v9 )
+    return v9;
+  TacticalClass::AddToDrawQueue((_DWORD *)MEMORY[0x87F7E8][7887], (int)this, v4, v5);
+  v10 = (*(int (__thiscall **)(int *))(*this + 456))(this);
+  v43[0] = *(this + 39);
+  v43[1] = *(this + 40);
+  v43[2] = *(this + 41);
+  v11 = Coord::To_Cell(MEMORY[0x87F7E8], v43);
+  if ( *((_BYTE *)this + 140) )
+  {
+    if ( v10 < 0 )
+      goto LABEL_25;
+  }
+  else if ( v10 < dword_A8ED54[145622] )
+  {
+LABEL_25:
+    v15 = 0;
+    if ( (*((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v36) + 80) & 0x10000) != 0
+      && !(*(unsigned __int8 (__thiscall **)(int *))(*this + 84))(this) )
+    {
+      v15 = -500;
+    }
+    a2 = (int *)(v15 + *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v36) + 133));
+    v14 = a2;
+    goto LABEL_29;
+  }
+  v12 = v11[80];
+  if ( (v12 & 0x100) == 0
+    || ((v12 & 0x800) == 0 || (*((_DWORD *)Cell::GetNeighbourContent(v11, 0) + 80) & 0x100) == 0)
+    && ((v11[80] & 0x800) != 0 || (*((_DWORD *)Cell::GetNeighbourContent(v11, 6u) + 80) & 0x100) == 0) )
+  {
+    goto LABEL_25;
+  }
+  if ( LightningStorm::IsActive() )
+  {
+    v13 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13660);
+  }
+  else if ( PsyDom::IsActive() )
+  {
+    v13 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13712);
+  }
+  else if ( NukeFlash::IsActive() )
+  {
+    v13 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13684);
+  }
+  else
+  {
+    v13 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13636);
+  }
+  v14 = (int *)(*((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v36) + 133) + 4 * v13);
+LABEL_29:
+  v16 = (int *)((char *)v14 + *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6100));
+  v17 = *(this + 433);
+  a2 = v16;
+  if ( !*(_BYTE *)(v17 + 3598) || !*((_BYTE *)this + 1746) )
+    goto LABEL_39;
+  if ( !*(this + 413) )
+    WinAPI::Wrapper(-2147467261);
+  if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 128))(*(this + 413)) )
+  {
+    v18 = (unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v37) >> 12) + 1) >> 1 << 13;
+    v19 = (int *)(*(int (__thiscall **)(int *, int *))(*this + 172))(this, v44);
+    LODWORD(v37) = (__int16)v18 - 0x3FFF;
+    v20 = v19[2];
+    v40 = (double)SLODWORD(v37) * -0.00009587672516830327;
+    v37 = (double)v19[1];
+    v21 = Math::SinCos(v40);
+    LODWORD(v37) = Math::RoundToInt(v37 - v21 * 30.0);
+    v22 = Math::ArcTan2(v40);
+    LODWORD(v40) = Math::RoundToInt(v22 * 30.0 + (double)*v19);
+    HIDWORD(v40) = LODWORD(v37);
+    v41 = v20;
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], &v40, v43);
+    v23 = 7 - (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v37) >> 12) + 1) >> 1) & 7);
+    if ( *(this + 158)
+      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 468))(this)
+      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 472))(this) )
+    {
+      v25 = a3;
+      v16 = a2;
+    }
+    else
+    {
+      v35 = a2;
+      v24 = (*(int (__thiscall **)(int *))(*this + 748))(this);
+      v25 = a3;
+      DrawToSurfaceSHP(
+        (int *)MEMORY[0x87F7E8][7883],
+        (_DWORD *)MEMORY[0x87F6C0][0],
+        dword_A8ED54[145553],
+        15 * v23 + (dword_A8ED54[12] + *(this + 334)) % 15,
+        v43,
+        a3,
+        10752,
+        0,
+        v24 - 2,
+        0,
+        (int)v35,
+        0,
+        0,
+        0,
+        0,
+        0);
+      v16 = a2;
+    }
+  }
+  else
+  {
+LABEL_39:
+    v25 = a3;
+  }
+  v26 = *(this + 433);
+  a3 = (int *)v26;
+  if ( *(_BYTE *)(v26 + 3598) )
+  {
+    if ( *((_BYTE *)this + 1745) )
+    {
+      v27 = *(_DWORD *)(v26 + 1720);
+      if ( v27 )
+        *(this + 433) = v27;
+    }
+  }
+  v28 = *(this + 433);
+  if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 1088))(this, MEMORY[0x87F7E8][528729]) )
+    v28 = (*(int (__thiscall **)(int *, int))(*this + 204))(this, 1);
+  if ( *((_BYTE *)this + 1760) && *(_DWORD *)(*(this + 433) + 1720) )
+    v28 = *(_DWORD *)(*(this + 433) + 1720);
+  if ( *((_BYTE *)this + 1668) == 0xFF )
+  {
+    if ( *(_BYTE *)(v28 + 566) )
+    {
+      if ( *(_DWORD *)(v28 + 176) )
+        (*(void (__thiscall **)(int *, int, int, int, int, int, int, int *, _DWORD))(*this + 1364))(
+          this,
+          v38,
+          v39,
+          *v25,
+          v25[1],
+          v25[2],
+          v25[3],
+          v16,
+          0);
+    }
+    else
+    {
+      (*(void (__thiscall **)(int *, int, int, int, int, int, int, int *, _DWORD))(*this + 1368))(
+        this,
+        v38,
+        v39,
+        *v25,
+        v25[1],
+        v25[2],
+        v25[3],
+        v16,
+        0);
+    }
+  }
+  v29 = *(this + 435);
+  *(this + 433) = (int)a3;
+  if ( v29 != -1 )
+  {
+    v30 = dword_A8ED54[121312] + 4 * *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v29) + 90196);
+    v34 = dword_A8ED54[12] % 14;
+    v31 = SearchMIXFile(aFlagflyShp, 0);
+    DrawToSurfaceSHP(
+      (int *)MEMORY[0x87F7E8][7883],
+      *(_DWORD **)(*(_DWORD *)v30 + 780),
+      (int)v31,
+      v34,
+      v42,
+      v25,
+      2560,
+      0,
+      0,
+      0,
+      (int)v16,
+      0,
+      0,
+      0,
+      0,
+      0);
+  }
+  AbstractClass::COMStub_Return0_69((int)v42, (int)v25);
+  v32 = *(this + 239);
+  v9 = *(this + 241);
+  if ( v32 != -1 )
+  {
+    if ( dword_A8ED54[12] - v32 >= v9 )
+      return v9;
+    v9 -= dword_A8ED54[12] - v32;
+  }
+  if ( v9 )
+    LOBYTE(v9) = TechnoClass::DrawTargetLine(this);
+  return v9;
+}
+
+/* ASM:
+mov     al, byte ptr dword_A8ED54+8E248h
+sub     esp, 40h
+test    al, 1
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+jnz     short loc_73CEEA
+or      al, 1
+xor     dl, dl
+mov     ecx, offset aOregathShp ; "OREGATH.SHP"
+mov     byte ptr dword_A8ED54+8E248h, al
+call    SearchMIXFile
+mov     dword_A8ED54+8E244h, eax
+
+loc_73CEEA:                             ; CODE XREF: TechnoClass__Draw+10↑j
+mov     eax, [esp+50h+arg_0]
+mov     ebx, [eax]
+mov     edi, [eax+4]
+movsx   eax, byte ptr [esi+6B4h]
+sub     edi, eax
+mov     al, [esi+424h]
+test    al, al
+mov     [esp+50h+var_34], ebx
+mov     [esp+50h+var_30], edi
+mov     [esp+50h+var_20], ebx
+mov     [esp+50h+var_1C], edi
+jz      short loc_73CF1D
+add     edi, 0Eh
+mov     [esp+50h+var_30], edi
+
+loc_73CF1D:                             ; CODE XREF: TechnoClass__Draw+54↑j
+mov     edx, [esi]
+lea     eax, [esp+50h+arg_0]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B8h]
+mov     ecx, [eax]
+mov     edx, [esi]
+mov     dword ptr [esp+50h+var_40], ecx
+push    0
+push    0
+mov     ecx, esi
+call    dword ptr [edx+68h]
+cmp     eax, 5
+jz      loc_73D43F
+mov     al, [esi+6E1h]
+test    al, al
+jnz     loc_73D43F
+mov     al, [esi+6E2h]
+test    al, al
+jnz     loc_73D43F
+mov     ecx, ds:887324h
+push    edi
+push    ebx
+push    esi
+call    TacticalClass__AddToDrawQueue
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1C8h]
+lea     ecx, [esi+9Ch]
+mov     ebx, eax
+mov     edx, [ecx]
+mov     [esp+50h+var_18], edx
+lea     edx, [esp+50h+var_18]
+mov     eax, [ecx+4]
+push    edx
+mov     [esp+54h+var_14], eax
+mov     ecx, [ecx+8]
+mov     [esp+54h+var_10], ecx
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     edi, eax
+mov     al, [esi+8Ch]
+test    al, al
+jnz     short loc_73CFC1
+cmp     ebx, dword_A8ED54+8E358h
+jge     short loc_73CFC9
+test    al, al
+jz      loc_73D078
+
+loc_73CFC1:                             ; CODE XREF: TechnoClass__Draw+EF↑j
+test    ebx, ebx
+jl      loc_73D078
+
+loc_73CFC9:                             ; CODE XREF: TechnoClass__Draw+F7↑j
+mov     eax, [edi+140h]
+mov     ebx, 100h
+test    ebx, eax
+jz      loc_73D078
+test    ah, 8
+jz      short loc_73CFF2
+push    0
+mov     ecx, edi
+call    Cell__GetNeighbourContent
+test    [eax+140h], ebx
+jnz     short loc_73D00E
+
+loc_73CFF2:                             ; CODE XREF: TechnoClass__Draw+11F↑j
+mov     eax, [edi+140h]
+test    ah, 8
+jnz     short loc_73D078
+push    6
+mov     ecx, edi
+call    Cell__GetNeighbourContent
+test    [eax+140h], ebx
+jz      short loc_73D078
+
+loc_73D00E:                             ; CODE XREF: TechnoClass__Draw+130↑j
+call    LightningStorm__IsActive
+test    al, al
+jz      short loc_73D024
+mov     eax, ds:0A8B230h
+mov     edi, [eax+355Ch]
+jmp     short loc_73D05D
+; ---------------------------------------------------------------------------
+
+loc_73D024:                             ; CODE XREF: TechnoClass__Draw+155↑j
+call    PsyDom__IsActive
+test    al, al
+jz      short loc_73D03B
+mov     ecx, ds:0A8B230h
+mov     edi, [ecx+3590h]
+jmp     short loc_73D05D
+; ---------------------------------------------------------------------------
+
+loc_73D03B:                             ; CODE XREF: TechnoClass__Draw+16B↑j
+call    NukeFlash__IsActive
+test    al, al
+jz      short loc_73D052
+mov     edx, ds:0A8B230h
+mov     edi, [edx+3574h]
+jmp     short loc_73D05D
+; ---------------------------------------------------------------------------
+
+loc_73D052:                             ; CODE XREF: TechnoClass__Draw+182↑j
+mov     eax, ds:0A8B230h
+mov     edi, [eax+3544h]
+
+loc_73D05D:                             ; CODE XREF: TechnoClass__Draw+162↑j
+; TechnoClass__Draw+179↑j ...
+lea     ecx, [esp+50h+var_40]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   edx, word ptr [eax+10Ah]
+lea     ebp, [edx+edi*4]
+jmp     short loc_73D0C3
+; ---------------------------------------------------------------------------
+
+loc_73D078:                             ; CODE XREF: TechnoClass__Draw+FB↑j
+; TechnoClass__Draw+103↑j ...
+lea     eax, [esp+50h+var_40]
+mov     ecx, 87F7E8h
+push    eax
+xor     edi, edi
+call    CellCoord__To_CellObj
+test    dword ptr [eax+140h], 10000h
+jz      short loc_73D0A5
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+54h]
+test    al, al
+jnz     short loc_73D0A5
+mov     edi, 0FFFFFE0Ch
+
+loc_73D0A5:                             ; CODE XREF: TechnoClass__Draw+1D3↑j
+; TechnoClass__Draw+1DE↑j
+lea     eax, [esp+50h+var_40]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+movsx   eax, word ptr [eax+10Ah]
+add     eax, edi
+mov     [esp+50h+arg_0], eax
+mov     ebp, eax
+
+loc_73D0C3:                             ; CODE XREF: TechnoClass__Draw+1B6↑j
+mov     ecx, ds:8871E0h
+mov     edx, [ecx+17D4h]
+add     ebp, edx
+mov     edx, [esi+6C4h]
+mov     [esp+50h+arg_0], ebp
+mov     al, [edx+0E0Eh]
+test    al, al
+jz      loc_73D298
+mov     al, [esi+6D2h]
+test    al, al
+jz      loc_73D298
+mov     eax, [esi+674h]
+test    eax, eax
+jnz     short loc_73D10B
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_73D10B:                             ; CODE XREF: TechnoClass__Draw+23F↑j
+mov     eax, [esi+674h]
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+80h]
+test    al, al
+jnz     loc_73D298
+lea     ebp, [esi+388h]
+lea     edx, [esp+50h+var_40+4]
+push    edx
+mov     ecx, ebp
+call    ProgressTimer__GetValue
+mov     edi, [eax]
+mov     eax, [esi]
+shr     edi, 0Ch
+inc     edi
+lea     ecx, [esp+50h+var_C]
+shr     edi, 1
+push    ecx
+mov     ecx, esi
+shl     edi, 0Dh
+call    dword ptr [eax+0ACh]
+movsx   edx, di
+sub     edx, 3FFFh
+mov     ebx, eax
+mov     dword ptr [esp+50h+var_40+4], edx
+fild    dword ptr [esp+50h+var_40+4]
+mov     edi, [ebx+8]
+fmul    ds:dbl_7E2810
+fstp    [esp+50h+var_2C]
+fild    dword ptr [ebx+4]
+mov     eax, dword ptr [esp+50h+var_2C+4]
+mov     ecx, dword ptr [esp+50h+var_2C]
+push    eax
+push    ecx             ; double
+fstp    [esp+58h+var_40+4]
+call    Math__SinCos
+fmul    ds:dbl_7F61D0
+fsubr   [esp+58h+var_40+4]
+call    Math__RoundToInt
+mov     edx, dword ptr [esp+58h+var_2C+4]
+mov     dword ptr [esp+58h+var_40+4], eax
+mov     eax, dword ptr [esp+58h+var_2C]
+push    edx
+push    eax             ; double
+call    Math__ArcTan2
+fmul    ds:dbl_7F61D0
+add     esp, 10h
+fiadd   dword ptr [ebx]
+call    Math__RoundToInt
+mov     ecx, dword ptr [esp+50h+var_40+4]
+mov     dword ptr [esp+50h+var_2C], eax
+lea     edx, [esp+50h+var_18]
+lea     eax, [esp+50h+var_2C]
+mov     dword ptr [esp+50h+var_2C+4], ecx
+mov     ecx, ds:887324h
+push    edx
+push    eax
+mov     [esp+58h+var_24], edi
+call    Coord__To_Screen
+lea     ecx, [esp+50h+var_40+4]
+push    ecx
+mov     ecx, ebp
+call    ProgressTimer__GetValue
+mov     edx, [eax]
+mov     eax, [esi+278h]
+shr     edx, 0Ch
+inc     edx
+mov     edi, 7
+shr     edx, 1
+and     edx, 7
+sub     edi, edx
+test    eax, eax
+jnz     loc_73D28E
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1D4h]
+test    al, al
+jnz     short loc_73D28E
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1D8h]
+test    al, al
+jnz     short loc_73D28E
+xor     ecx, ecx
+mov     edx, [esi]
+xor     eax, eax
+push    ecx
+push    eax
+mov     eax, [esp+58h+arg_0]
+push    ecx
+push    ecx
+push    ecx
+push    eax
+push    ecx
+mov     ecx, esi
+call    dword ptr [edx+2ECh]
+mov     ebx, [esp+6Ch+arg_4]
+mov     ebp, dword_A8ED54+30h
+sub     eax, 2
+mov     ecx, 0Fh
+push    eax
+push    0
+push    2A00h
+lea     eax, [esp+78h+var_18]
+push    ebx
+push    eax
+mov     eax, [esi+538h]
+lea     edi, [edi+edi*2]
+add     eax, ebp
+cdq
+idiv    ecx
+mov     ecx, dword_A8ED54+8E244h
+lea     eax, [edi+edi*4]
+add     edx, eax
+push    edx
+mov     edx, ds:87F6C0h
+push    ecx
+mov     ecx, ds:887314h
+call    DrawToSurfaceSHP
+mov     ebp, [esp+50h+arg_0]
+jmp     short loc_73D29C
+; ---------------------------------------------------------------------------
+
+loc_73D28E:                             ; CODE XREF: TechnoClass__Draw+341↑j
+; TechnoClass__Draw+353↑j ...
+mov     ebx, [esp+50h+arg_4]
+mov     ebp, [esp+50h+arg_0]
+jmp     short loc_73D29C
+; ---------------------------------------------------------------------------
+
+loc_73D298:                             ; CODE XREF: TechnoClass__Draw+223↑j
+; TechnoClass__Draw+231↑j ...
+mov     ebx, [esp+50h+arg_4]
+
+loc_73D29C:                             ; CODE XREF: TechnoClass__Draw+3CC↑j
+; TechnoClass__Draw+3D6↑j
+mov     eax, [esi+6C4h]
+mov     [esp+50h+arg_4], eax
+mov     cl, [eax+0E0Eh]
+test    cl, cl
+jz      short loc_73D2CA
+mov     cl, [esi+6D1h]
+test    cl, cl
+jz      short loc_73D2CA
+mov     eax, [eax+6B8h]
+test    eax, eax
+jz      short loc_73D2CA
+mov     [esi+6C4h], eax
+
+loc_73D2CA:                             ; CODE XREF: TechnoClass__Draw+3EE↑j
+; TechnoClass__Draw+3F8↑j ...
+mov     eax, ds:0A83D4Ch
+mov     edx, [esi]
+mov     edi, [esi+6C4h]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+440h]
+test    al, al
+jnz     short loc_73D2F2
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+0CCh]
+mov     edi, eax
+
+loc_73D2F2:                             ; CODE XREF: TechnoClass__Draw+422↑j
+mov     al, [esi+6E0h]
+test    al, al
+jz      short loc_73D30E
+mov     eax, [esi+6C4h]
+mov     eax, [eax+6B8h]
+test    eax, eax
+jz      short loc_73D30E
+mov     edi, eax
+
+loc_73D30E:                             ; CODE XREF: TechnoClass__Draw+43A↑j
+; TechnoClass__Draw+44A↑j
+cmp     byte ptr [esi+684h], 0FFh
+jnz     short loc_73D395
+mov     al, [edi+236h]
+test    al, al
+jz      short loc_73D361
+mov     eax, [edi+0B0h]
+test    eax, eax
+jz      short loc_73D395
+push    0
+push    ebp
+sub     esp, 10h
+mov     eax, ebx
+mov     ecx, esp
+mov     edx, [esi]
+mov     edi, [eax]
+mov     [ecx], edi
+mov     edi, [eax+4]
+mov     [ecx+4], edi
+mov     edi, [eax+8]
+mov     [ecx+8], edi
+mov     eax, [eax+0Ch]
+mov     [ecx+0Ch], eax
+mov     ecx, [esp+68h+var_30]
+mov     eax, [esp+68h+var_34]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+554h]
+jmp     short loc_73D395
+; ---------------------------------------------------------------------------
+
+loc_73D361:                             ; CODE XREF: TechnoClass__Draw+45F↑j
+push    0
+push    ebp
+sub     esp, 10h
+mov     eax, ebx
+mov     ecx, esp
+mov     edx, [esi]
+mov     edi, [eax]
+mov     [ecx], edi
+mov     edi, [eax+4]
+mov     [ecx+4], edi
+mov     edi, [eax+8]
+mov     [ecx+8], edi
+mov     eax, [eax+0Ch]
+mov     [ecx+0Ch], eax
+mov     ecx, [esp+68h+var_30]
+mov     eax, [esp+68h+var_34]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+558h]
+
+loc_73D395:                             ; CODE XREF: TechnoClass__Draw+455↑j
+; TechnoClass__Draw+469↑j ...
+mov     edx, [esi+6CCh]
+mov     ecx, [esp+50h+arg_4]
+cmp     edx, 0FFFFFFFFh
+mov     [esi+6C4h], ecx
+jz      short loc_73D408
+mov     edi, ds:0A8022Ch
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+mov     edx, [edi+edx*4]
+push    eax
+mov     edi, dword_A8ED54+76780h
+push    ecx
+mov     edx, [edx+16054h]
+push    ecx
+push    ecx
+push    ebp
+push    ecx
+push    ecx
+push    ecx
+push    0A00h
+lea     eax, [esp+78h+var_20]
+push    ebx
+push    eax
+mov     eax, dword_A8ED54+30h
+lea     edi, [edi+edx*4]
+mov     ecx, 0Eh
+cdq
+idiv    ecx
+mov     ecx, offset aFlagflyShp ; "FLAGFLY.SHP"
+push    edx
+xor     dl, dl
+call    SearchMIXFile
+mov     edx, [edi]
+mov     ecx, ds:887314h
+push    eax
+mov     edx, [edx+30Ch]
+call    DrawToSurfaceSHP
+
+loc_73D408:                             ; CODE XREF: TechnoClass__Draw+4E8↑j
+lea     eax, [esp+50h+var_20]
+push    ebx
+push    eax
+mov     ecx, esi
+call    AbstractClass__COMStub_Return0_69
+mov     edx, [esi+3BCh]
+mov     eax, [esi+3C4h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_73D434
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_73D43F
+sub     eax, ecx
+
+loc_73D434:                             ; CODE XREF: TechnoClass__Draw+564↑j
+test    eax, eax
+jz      short loc_73D43F
+mov     ecx, esi
+call    TechnoClass__DrawTargetLine
+
+loc_73D43F:                             ; CODE XREF: TechnoClass__Draw+80↑j
+; TechnoClass__Draw+8E↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 40h
+retn    8
+*/
+} } }
 // 0x740B10
-namespace ra2 { namespace game { int TechnoClass::updateTargeting() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::updateTargeting() {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_740B10(int this)
+{
+  _BYTE *v2; // edi
+
+  v2 = (_BYTE *)(this + 848);
+  *(_BYTE *)(this + 1746) = 0;
+  if ( !Flag::CheckNone((_BYTE *)(this + 848)) )
+    Timer::StartDouble(v2, *(double *)(*(_DWORD *)(this + 1732) + 968));
+  return UnitClass::ApproachEvaluate((_DWORD *)this);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+lea     edi, [esi+350h]
+mov     byte ptr [esi+6D2h], 0
+mov     ecx, edi
+call    Flag__CheckNone
+test    al, al
+jnz     short loc_740B47
+mov     eax, [esi+6C4h]
+mov     ecx, [eax+3CCh]
+push    ecx
+mov     ecx, edi
+mov     edx, [eax+3C8h]
+push    edx             ; double
+call    Timer__StartDouble
+
+loc_740B47:                             ; CODE XREF: TechnoClass__updateTargeting+1A↑j
+mov     ecx, esi
+call    UnitClass__ApproachEvaluate
+pop     edi
+pop     esi
+retn
+*/
+} } }
 // 0x7465B0
-namespace ra2 { namespace game { int TechnoClass::updateParasiteState(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::updateParasiteState(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_7465B0(int this, char a2)
+{
+  if ( !(unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(this + 540), MEMORY[0xA83D4C]) || a2 )
+    return *(_DWORD *)(this + 1304);
+  else
+    return *(_DWORD *)(this + 1732);
+}
+
+/* ASM:
+mov     eax, ds:0A83D4Ch
+push    esi
+mov     esi, ecx
+push    eax             ; other
+mov     ecx, [esi+21Ch] ; this
+call    HouseClass__IsAlliedWith
+test    al, al
+jz      short loc_7465DA
+mov     al, [esp+4+arg_0]
+test    al, al
+jnz     short loc_7465DA
+mov     eax, [esi+6C4h]
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7465DA:                             ; CODE XREF: TechnoClass__updateParasiteState+16↑j
+; TechnoClass__updateParasiteState+1E↑j
+mov     eax, [esi+518h]
+pop     esi
+retn    4
+*/
+} } }
 // 0x7465F0
-namespace ra2 { namespace game { int TechnoClass::detachParasites(int a1) { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::detachParasites(int a1) {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_7465F0(int this, char a2)
+{
+  if ( !(unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(this + 540), MEMORY[0xA83D4C]) || a2 )
+    return *(_DWORD *)(this + 1308);
+  else
+    return *(_DWORD *)(this + 540);
+}
+
+/* ASM:
+mov     eax, ds:0A83D4Ch
+push    esi
+mov     esi, ecx
+push    eax             ; other
+mov     ecx, [esi+21Ch] ; this
+call    HouseClass__IsAlliedWith
+test    al, al
+jz      short loc_74661A
+mov     al, [esp+4+arg_0]
+test    al, al
+jnz     short loc_74661A
+mov     eax, [esi+21Ch]
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_74661A:                             ; CODE XREF: TechnoClass__detachParasites+16↑j
+; TechnoClass__detachParasites+1E↑j
+mov     eax, [esi+51Ch]
+pop     esi
+retn    4
+*/
+} } }
 // 0x746C90
-namespace ra2 { namespace game { bool TechnoClass::checkSpawnState() { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::checkSpawnState() {
+// [IDA decompile]
+BOOL __thiscall TechnoClass::checkSpawnState(int this)
+{
+  return *(_DWORD *)(this + 1752) != -1 || (unsigned __int8)TechnoClass::HasPassengers((#377 *)this);
+}
+
+/* ASM:
+cmp     dword ptr [ecx+6D8h], 0FFFFFFFFh
+jnz     short loc_746CA5
+call    TechnoClass__HasPassengers
+test    al, al
+jnz     short loc_746CA5
+xor     eax, eax
+retn
+; ---------------------------------------------------------------------------
+
+loc_746CA5:                             ; CODE XREF: TechnoClass__checkSpawnState+7↑j
+; TechnoClass__checkSpawnState+10↑j
+mov     eax, 1
+retn
+*/
+} } }
 // 0x746D00
-namespace ra2 { namespace game { int TechnoClass::updateSpawnManager() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::updateSpawnManager() {
+// [IDA decompile]
+char __thiscall sub_746D00(_DWORD *this)
+{
+  return *(_BYTE *)(*(this + 433) + 1708);
+}
+
+/* ASM:
+mov     eax, [ecx+6C4h]
+mov     al, [eax+6ACh]
+retn
+*/
+} } }
 // 0x746D60
-namespace ra2 { namespace game { int TechnoClass::releaseSpawns() { return 0; } } }
+namespace ra2 { namespace game { int TechnoClass::releaseSpawns() {
+// [IDA decompile]
+int __thiscall TechnoClass::sub_746D60(#377 *this)
+{
+  TechnoClass::CreateDeathAnim((int)this);
+  return ObjectClass::FreeCaptureManager(this);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    TechnoClass__CreateDeathAnim
+mov     ecx, esi        ; this
+call    ObjectClass__FreeCaptureManager
+pop     esi
+retn
+*/
+} } }
 // 0x746D80
-namespace ra2 { namespace game { int FootClass::updateScanRange() { return 0; } } }
+namespace ra2 { namespace game { int FootClass::updateScanRange() {
+// [IDA decompile]
+char __thiscall sub_746D80(_BYTE *this)
+{
+  return *(this + 1760);
+}
+
+/* ASM:
+mov     al, [ecx+6E0h]
+retn
+*/
+} } }
 // 0x746E30
-namespace ra2 { namespace game { void* TechnoClass::checkIronCurtainState(void* a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* TechnoClass::checkIronCurtainState(void* a1) {
+// [IDA decompile]
+_DWORD *__thiscall TechnoClass::sub_746E30(int this, _DWORD *a2)
+{
+  int v2; // ecx
+  int v4; // [esp+0h] [ebp-4h] BYREF
+
+  v4 = this;
+  if ( *(_BYTE *)(*(_DWORD *)(this + 1732) + 3233) )
+    v2 = *ProgressTimer::GetValue((_WORD *)(this + 928), &v4);
+  else
+    v2 = *ProgressTimer::GetValue((_WORD *)(this + 904), &v4);
+  *a2 = v2;
+  return a2;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [ecx+6C4h]
+mov     dl, [eax+0CA1h]
+test    dl, dl
+jz      short loc_746E5D
+lea     edx, [esp+4+var_4]
+add     ecx, 3A0h
+push    edx
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+mov     eax, [esp+4+arg_0]
+mov     [eax], ecx
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_746E5D:                             ; CODE XREF: TechnoClass__checkIronCurtainState+F↑j
+lea     edx, [esp+4+var_4]
+add     ecx, 388h
+push    edx
+call    ProgressTimer__GetValue
+mov     ecx, [eax]
+mov     eax, [esp+4+arg_0]
+mov     [eax], ecx
+pop     ecx
+retn    4
+*/
+} } }
 // 0x746EA0
-namespace ra2 { namespace game { bool TechnoClass::processIronCurtainExpiry(void* a1) { return false; } } }
+namespace ra2 { namespace game { bool TechnoClass::processIronCurtainExpiry(void* a1) {
+// [IDA decompile]
+bool __thiscall sub_746EA0(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v2; // eax
+
+  v2 = (_DWORD *)*(this + 4);
+  return v2 && *v2 == *a2;
+}
+
+/* ASM:
+mov     eax, [ecx+10h]
+test    eax, eax
+jz      short loc_746EB6
+mov     ecx, [esp+arg_0]
+mov     eax, [eax]
+cmp     eax, [ecx]
+jnz     short loc_746EB6
+mov     al, 1
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_746EB6:                             ; CODE XREF: TechnoClass__processIronCurtainExpiry+5↑j
+; TechnoClass__processIronCurtainExpiry+F↑j
+xor     al, al
+retn    4
+*/
+} } }
 // 0x7498D0
-namespace ra2 { namespace game { int ObjectClass::Initialize() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::Initialize() {
+// [IDA decompile]
+int __thiscall sub_7498D0(int this)
+{
+  int v2; // eax
+
+  ObjectClass::ctor((_DWORD *)this);
+  *(_DWORD *)(this + 176) = 0;
+  *(_DWORD *)(this + 184) = 0;
+  *(_DWORD *)(this + 192) = 0;
+  *(_DWORD *)(this + 180) = 0;
+  *(_DWORD *)(this + 188) = 0;
+  *(_DWORD *)(this + 196) = 0;
+  Int4::Set((_DWORD *)(this + 224), 0, 0, 0, 1065353216);
+  Int4::Set((_DWORD *)(this + 240), 0, 0, 0, 1065353216);
+  *(_DWORD *)(this + 256) = -1;
+  *(_DWORD *)(this + 260) = 0;
+  *(_DWORD *)(this + 264) = 0;
+  *(_DWORD *)(this + 268) = 0;
+  *(_BYTE *)(this + 272) = 0;
+  *(_BYTE *)(this + 316) = 0;
+  *(_DWORD *)(this + 320) = 0;
+  *(_DWORD *)this = &VoxelAnimClass::`vftable';
+  *(_DWORD *)(this + 4) = &VoxelAnimClass::`vftable';
+  *(_DWORD *)(this + 8) = &VoxelAnimClass::`vftable';
+  *(_DWORD *)(this + 12) = &VoxelAnimClass::`vftable';
+  AbstractClass::GenerateUniqueID(this + 4);
+  AudioController::Init((_DWORD *)(this + 276));
+  AudioController::Init((_DWORD *)(this + 296));
+  if ( MEMORY[0x887398] < MEMORY[0x887390]
+    || (MEMORY[0x887395] || !MEMORY[0x887390])
+    && MEMORY[0x88739C] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x887388] + 8))(
+         &MEMORY[0x887388],
+         MEMORY[0x887390] + MEMORY[0x88739C],
+         0) )
+  {
+    v2 = MEMORY[0x887398]++;
+    *((_DWORD *)MEMORY[0x88738C] + v2) = this;
+  }
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+call    ObjectClass__ctor
+xor     ebx, ebx
+push    3F800000h
+push    ebx
+push    ebx
+mov     [esi+0B0h], ebx
+mov     [esi+0B8h], ebx
+mov     [esi+0C0h], ebx
+push    ebx
+lea     ecx, [esi+0E0h]
+mov     [esi+0B4h], ebx
+mov     [esi+0BCh], ebx
+mov     [esi+0C4h], ebx
+call    Int4__Set
+push    3F800000h
+push    ebx
+push    ebx
+push    ebx
+lea     ecx, [esi+0F0h]
+call    Int4__Set
+lea     eax, [esi+4]
+mov     dword ptr [esi+100h], 0FFFFFFFFh
+push    eax
+mov     [esi+104h], ebx
+mov     [esi+108h], ebx
+mov     [esi+10Ch], ebx
+mov     [esi+110h], bl
+mov     [esi+13Ch], bl
+mov     [esi+140h], ebx
+mov     dword ptr [esi], offset ??_7VoxelAnimClass@@6B@ ; const VoxelAnimClass::`vftable'
+mov     dword ptr [eax], offset ??_7VoxelAnimClass@@6B@_0 ; const VoxelAnimClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7VoxelAnimClass@@6B@_1 ; const VoxelAnimClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7VoxelAnimClass@@6B@_2 ; const VoxelAnimClass::`vftable'
+call    AbstractClass__GenerateUniqueID
+lea     ecx, [esi+114h]
+call    AudioController__Init
+lea     ecx, [esi+128h]
+call    AudioController__Init
+mov     eax, ds:887390h
+mov     ecx, ds:887398h
+cmp     ecx, eax
+jl      short loc_7499C6
+cmp     ds:887395h, bl
+jnz     short loc_7499A7
+cmp     eax, ebx
+jnz     short loc_7499DE
+
+loc_7499A7:                             ; CODE XREF: ObjectClass__Initialize+D1↑j
+mov     ecx, ds:88739Ch
+cmp     ecx, ebx
+jle     short loc_7499DE
+add     ecx, eax
+mov     eax, ds:887388h
+push    ebx
+push    ecx
+mov     ecx, 887388h
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_7499DE
+
+loc_7499C6:                             ; CODE XREF: ObjectClass__Initialize+C9↑j
+mov     ecx, ds:887398h
+mov     eax, ecx
+inc     ecx
+mov     ds:887398h, ecx
+mov     ecx, ds:88738Ch
+mov     [ecx+eax*4], esi
+
+loc_7499DE:                             ; CODE XREF: ObjectClass__Initialize+D5↑j
+; ObjectClass__Initialize+DF↑j ...
+mov     eax, esi
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x74D670
-namespace ra2 { namespace game { int ObjectClass::IsCellSuitableForPlacement() { return 0; } } }
+namespace ra2 { namespace game { int ObjectClass::IsCellSuitableForPlacement() {
+// [IDA decompile]
+char __thiscall sub_74D670(__int16 *this)
+{
+  int v2; // edi
+  char *v3; // ebx
+  __int64 v4; // rax
+  __int64 v5; // rax
+  int v6; // ebp
+  int v8; // ebx
+  int v9; // edi
+  _BYTE *v10; // eax
+  int v11; // [esp+10h] [ebp-8h]
+  int v12; // [esp+14h] [ebp-4h] BYREF
+
+  if ( MEMORY[0xA8E7AC] > 0 )
+    return 1;
+  v2 = MEMORY[0xB1D2A0] - 1;
+  if ( MEMORY[0xB1D2A0] - 1 < 0 )
+  {
+LABEL_7:
+    v6 = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], this) + 283);
+    if ( v6 >= 1 )
+    {
+      v8 = -1;
+LABEL_10:
+      v9 = -1;
+      while ( 1 )
+      {
+        LOWORD(v11) = v9 + *this;
+        HIWORD(v11) = v8 + *(this + 1);
+        v12 = v11;
+        v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12);
+        if ( v10[284] || *((_DWORD *)v10 + 59) || (char)v10[283] != v6 )
+          break;
+        if ( ++v9 > 1 )
+        {
+          if ( ++v8 <= 1 )
+            goto LABEL_10;
+          return 1;
+        }
+      }
+    }
+  }
+  else
+  {
+    v3 = (char *)MEMORY[0xB1D294] + 4 * v2;
+    while ( 1 )
+    {
+      v4 = *this - *(__int16 *)(*(_DWORD *)v3 + 248);
+      if ( (int)((HIDWORD(v4) ^ v4) - HIDWORD(v4)) < 3 )
+      {
+        v5 = *(this + 1) - *(__int16 *)(*(_DWORD *)v3 + 250);
+        if ( (int)((HIDWORD(v5) ^ v5) - HIDWORD(v5)) < 3 )
+          break;
+      }
+      --v2;
+      v3 -= 4;
+      if ( v2 < 0 )
+        goto LABEL_7;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+mov     eax, ds:0A8E7ACh
+sub     esp, 8
+test    eax, eax
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+jg      loc_74D754
+mov     eax, dword_A8ED54+8E54Ch
+lea     edi, [eax-1]
+test    edi, edi
+jl      short loc_74D6D4
+mov     ecx, dword_A8ED54+8E540h
+movsx   ebp, word ptr [esi]
+lea     ebx, [ecx+edi*4]
+
+loc_74D69E:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+62↓j
+mov     ecx, [ebx]
+mov     eax, ebp
+movsx   edx, word ptr [ecx+0F8h]
+sub     eax, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, 3
+jge     short loc_74D6CC
+movsx   ecx, word ptr [ecx+0FAh]
+movsx   eax, word ptr [esi+2]
+sub     eax, ecx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, 3
+jl      short loc_74D6EB
+
+loc_74D6CC:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+43↑j
+dec     edi
+sub     ebx, 4
+test    edi, edi
+jge     short loc_74D69E
+
+loc_74D6D4:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+20↑j
+push    esi
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+movsx   ebp, byte ptr [eax+11Bh]
+cmp     ebp, 1
+jge     short loc_74D6F5
+
+loc_74D6EB:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+5A↑j
+; ObjectClass__IsCellSuitableForPlacement+C1↓j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_74D6F5:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+79↑j
+or      ebx, 0FFFFFFFFh
+
+loc_74D6F8:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+E2↓j
+or      edi, 0FFFFFFFFh
+
+loc_74D6FB:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+DC↓j
+mov     dx, [esi]
+mov     ax, [esi+2]
+add     dx, di
+add     ax, bx
+mov     word ptr [esp+18h+var_8], dx
+mov     word ptr [esp+18h+var_8+2], ax
+mov     ecx, [esp+18h+var_8]
+lea     edx, [esp+18h+var_4]
+mov     [esp+18h+var_4], ecx
+push    edx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     cl, [eax+11Ch]
+test    cl, cl
+jnz     short loc_74D6EB
+mov     ecx, [eax+0ECh]
+test    ecx, ecx
+jnz     short loc_74D6EB
+movsx   eax, byte ptr [eax+11Bh]
+cmp     eax, ebp
+jnz     short loc_74D6EB
+inc     edi
+cmp     edi, 1
+jle     short loc_74D6FB
+inc     ebx
+cmp     ebx, 1
+jle     short loc_74D6F8
+
+loc_74D754:                             ; CODE XREF: ObjectClass__IsCellSuitableForPlacement+10↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn
+*/
+} } }
 // 0x74F360
-namespace ra2 { namespace game { void IRTTITypeInfo::ClearBuffer() { } } }
+namespace ra2 { namespace game { void IRTTITypeInfo::ClearBuffer() {
+// [IDA decompile]
+void __thiscall IRTTITypeInfo::sub_74F360(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0x2a)
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_74F381
+cmp     [esi+0Dh], bl
+jz      short loc_74F381
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_74F381:                             ; CODE XREF: IRTTITypeInfo__ClearBuffer+E↑j
+; IRTTITypeInfo__ClearBuffer+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x74F390
-namespace ra2 { namespace game { int IRTTITypeInfo::PointerToIndex(int a1) { return 0; } } }
+namespace ra2 { namespace game { int IRTTITypeInfo::PointerToIndex(int a1) {
+// [IDA decompile]
+unsigned int __thiscall IRTTITypeInfo::sub_74F390(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x1b)
+test    al, al
+jnz     short loc_74F39C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_74F39C:                             ; CODE XREF: IRTTITypeInfo__PointerToIndex+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} } }
 // 0x74F540
-namespace ra2 { namespace game { int IRTTITypeInfo::SetCapacity(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int IRTTITypeInfo::SetCapacity(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall IRTTITypeInfo::SetCapacity(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( !v4 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v5 = *((_DWORD *)this + 2);
+      if ( a2 < v5 )
+        v5 = a2;
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        ++i;
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v4;
+    *((_DWORD *)this + 2) = a2;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v7 = *((_DWORD *)this + 2);
+  if ( v7 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v7;
+  return 1;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0xb0)
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      short loc_74F5CA
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_74F56E
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_74F570
+; ---------------------------------------------------------------------------
+
+loc_74F56E:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+18↑j
+mov     edi, ebx
+
+loc_74F570:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+2C↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      short loc_74F5E7
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_74F5B8
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_74F588
+mov     ecx, ebp
+
+loc_74F588:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+44↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_74F59E
+
+loc_74F58E:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+5C↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_74F58E
+
+loc_74F59E:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+4C↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_74F5B8
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_74F5B8:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+3D↑j
+; IRTTITypeInfo__SetCapacity+63↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_74F5D1
+; ---------------------------------------------------------------------------
+
+loc_74F5CA:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_74F5D1:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+88↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_74F5DE
+mov     [esi+10h], eax
+
+loc_74F5DE:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+99↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_74F5E7:                             ; CODE XREF: IRTTITypeInfo__SetCapacity+36↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} } }
 // 0x74F5F0
-namespace ra2 { namespace game { int IRTTITypeInfo::FindItem(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int IRTTITypeInfo::FindItem(void* a1) {
+// [IDA decompile]
+int __thiscall IRTTITypeInfo::sub_74F5F0(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]  ; TODO: classify (grp=blit, sz=0x26)
+xor     eax, eax
+push    esi
+test    edx, edx
+jle     short loc_74F60F
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_74F603:                             ; CODE XREF: IRTTITypeInfo__FindItem+1D↓j
+cmp     [ecx], esi
+jz      short loc_74F612
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_74F603
+
+loc_74F60F:                             ; CODE XREF: IRTTITypeInfo__FindItem+8↑j
+or      eax, 0FFFFFFFFh
+
+loc_74F612:                             ; CODE XREF: IRTTITypeInfo__FindItem+15↑j
+pop     esi
+retn    4
+*/
+} } }
 // 0x7598D0
-namespace ra2 { namespace game { void AbstractClass::updateBuildingState(int a1) { } } }
+namespace ra2 { namespace game { void AbstractClass::updateBuildingState(int a1) {
+// [IDA decompile]
+void __thiscall sub_7598D0(int *this, signed int a2)
+{
+  if ( a2 != *(this + 321) && ProcessAudioStreamBuffer(*(this + 128), a2, 0) != -6 )
+    *(this + 321) = a2;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+8+arg_0]
+cmp     edi, [esi+504h]
+jz      short loc_7598FA
+mov     ecx, [esi+200h]
+push    0
+mov     edx, edi
+call    ProcessAudioStreamBuffer
+cmp     eax, 0FFFFFFFAh
+jz      short loc_7598FA
+mov     [esi+504h], edi
+
+loc_7598FA:                             ; CODE XREF: AbstractClass__updateBuildingState+E↑j
+; AbstractClass__updateBuildingState+22↑j
+pop     edi
+pop     esi
+retn    4
+*/
+} } }
 // 0x759E10
-namespace ra2 { namespace game { int AbstractClass::processConstruction() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::processConstruction() {
+// [IDA decompile]
+char __thiscall sub_759E10(int this)
+{
+  char result; // al
+
+  result = *(_BYTE *)(this + 1300);
+  if ( result )
+  {
+    result = *(_BYTE *)(this + 1360);
+    if ( !result )
+      result = ProcessAudioStreamPipeline(*(_DWORD *)(this + 512), 2, 0);
+  }
+  *(_BYTE *)(this + 1360) = 1;
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     al, [esi+514h]
+test    al, al
+jz      short loc_759E39
+mov     al, [esi+550h]
+test    al, al
+jnz     short loc_759E39
+mov     ecx, [esi+200h]
+push    0
+mov     edx, 2
+call    ProcessAudioStreamPipeline
+
+loc_759E39:                             ; CODE XREF: AbstractClass__processConstruction+B↑j
+; AbstractClass__processConstruction+15↑j
+mov     byte ptr [esi+550h], 1
+pop     esi
+retn
+*/
+} } }
 // 0x759E50
-namespace ra2 { namespace game { void AbstractClass::checkBuildProgress() { } } }
+namespace ra2 { namespace game { void AbstractClass::checkBuildProgress() {
+// [IDA decompile]
+void __thiscall sub_759E50(_BYTE *this)
+{
+  *(this + 1360) = 0;
+}
+
+/* ASM:
+mov     byte ptr [ecx+550h], 0
+retn
+*/
+} } }
 // 0x759E80
-namespace ra2 { namespace game { int AbstractClass::finalizeConstruction() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::finalizeConstruction() {
+// [IDA decompile]
+int __thiscall sub_759E80(int *this)
+{
+  int result; // eax
+  int v3; // ecx
+
+  result = AbstractClass::finalizeDestruction(*(this + 128));
+  v3 = *this;
+  if ( *this )
+  {
+    *(_DWORD *)(v3 + 4) = 0;
+    *(_DWORD *)(v3 + 8) = 0;
+    return 0;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+200h]
+call    AbstractClass__finalizeDestruction
+mov     ecx, [esi]
+pop     esi
+test    ecx, ecx
+jz      short locret_759E9A
+jmp     loc_6C9D20
+; ---------------------------------------------------------------------------
+
+locret_759E9A:                          ; CODE XREF: AbstractClass__finalizeConstruction+13↑j
+retn
+*/
+} } }
 // 0x75D230
-namespace ra2 { namespace game { int AbstractClass::ProcessInit() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
+// [IDA decompile]
+int __thiscall sub_75D230(int this)
+{
+  int v2; // eax
+  int v3; // eax
+  void *v4; // eax
+  void *v5; // eax
+  void *v6; // eax
+  int v8; // [esp+8h] [ebp-4h] BYREF
+
+  *(_DWORD *)this = &WarheadTypeClass::`vftable';
+  *(_DWORD *)(this + 4) = &WarheadTypeClass::`vftable';
+  *(_DWORD *)(this + 8) = &WarheadTypeClass::`vftable';
+  *(_DWORD *)(this + 12) = &WarheadTypeClass::`vftable';
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1);
+  v8 = this;
+  v2 = (*(int (__thiscall **)(_DWORD *, int *))(MEMORY[0x87F7E8][7990] + 16))(&MEMORY[0x87F7E8][7990], &v8);
+  if ( v2 != -1 && v2 < MEMORY[0x87F7E8][7994] )
+  {
+    --MEMORY[0x87F7E8][7994];
+    for ( ;
+          v2 < MEMORY[0x87F7E8][7994];
+          *(_DWORD *)(MEMORY[0x87F7E8][7991] + 4 * v2 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][7991] + 4 * v2) )
+    {
+      ++v2;
+    }
+  }
+  v8 = this;
+  v3 = (*(int (__thiscall **)(int *, int *))(dword_A8ED54[131655] + 16))(&dword_A8ED54[131655], &v8);
+  if ( v3 != -1 && v3 < dword_A8ED54[131659] )
+  {
+    --dword_A8ED54[131659];
+    for ( ;
+          v3 < dword_A8ED54[131659];
+          *(_DWORD *)(dword_A8ED54[131656] + 4 * v3 - 4) = *(_DWORD *)(dword_A8ED54[131656] + 4 * v3) )
+    {
+      ++v3;
+    }
+  }
+  v4 = *(void **)(this + 428);
+  *(_DWORD *)(this + 424) = &VectorClass<int>::`vftable';
+  if ( v4 && *(_BYTE *)(this + 437) )
+  {
+    __3_YAXPAX_Z(v4);
+    *(_DWORD *)(this + 428) = 0;
+  }
+  *(_BYTE *)(this + 437) = 0;
+  *(_DWORD *)(this + 432) = 0;
+  v5 = *(void **)(this + 400);
+  *(_DWORD *)(this + 396) = &VectorClass<VoxelAnimTypeClass const *>::`vftable';
+  if ( v5 && *(_BYTE *)(this + 409) )
+  {
+    __3_YAXPAX_Z(v5);
+    *(_DWORD *)(this + 400) = 0;
+  }
+  *(_BYTE *)(this + 409) = 0;
+  *(_DWORD *)(this + 404) = 0;
+  v6 = *(void **)(this + 264);
+  *(_DWORD *)(this + 260) = &VectorClass<AnimTypeClass const *>::`vftable';
+  if ( v6 && *(_BYTE *)(this + 273) )
+  {
+    __3_YAXPAX_Z(v6);
+    *(_DWORD *)(this + 264) = 0;
+  }
+  *(_BYTE *)(this + 273) = 0;
+  *(_DWORD *)(this + 268) = 0;
+  return AbstractTypeClass::Dtor((_DWORD *)this);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, ecx
+mov     dl, 1
+mov     dword ptr [esi], offset ??_7WarheadTypeClass@@6B@ ; const WarheadTypeClass::`vftable'
+mov     dword ptr [esi+4], offset ??_7WarheadTypeClass@@6B@_0 ; const WarheadTypeClass::`vftable'
+mov     dword ptr [esi+8], offset ??_7WarheadTypeClass@@6B@_1 ; const WarheadTypeClass::`vftable'
+mov     dword ptr [esi+0Ch], offset ??_7WarheadTypeClass@@6B@_2 ; const WarheadTypeClass::`vftable'
+call    AbstractClass__AnnounceExpiredPointer
+mov     edx, ds:8874C0h
+lea     eax, [esp+0Ch+var_4]
+push    eax
+mov     ecx, 8874C0h
+mov     [esp+10h+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_75D2A0
+mov     ecx, ds:8874D0h
+cmp     eax, ecx
+jge     short loc_75D2A0
+dec     ecx
+cmp     eax, ecx
+mov     ds:8874D0h, ecx
+jge     short loc_75D2A0
+
+loc_75D288:                             ; CODE XREF: AbstractClass__ProcessInit+6E↓j
+mov     ecx, ds:8874C4h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, ds:8874D0h
+cmp     eax, ecx
+jl      short loc_75D288
+
+loc_75D2A0:                             ; CODE XREF: AbstractClass__ProcessInit+41↑j
+; AbstractClass__ProcessInit+4B↑j ...
+mov     edx, dword_A8ED54+8091Ch
+lea     eax, [esp+0Ch+var_4]
+push    eax
+mov     ecx, (offset dword_A8ED54+8091Ch)
+mov     [esp+10h+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_75D2E9
+mov     ecx, dword_A8ED54+8092Ch
+cmp     eax, ecx
+jge     short loc_75D2E9
+dec     ecx
+cmp     eax, ecx
+mov     dword_A8ED54+8092Ch, ecx
+jge     short loc_75D2E9
+
+loc_75D2D1:                             ; CODE XREF: AbstractClass__ProcessInit+B7↓j
+mov     ecx, dword_A8ED54+80920h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, dword_A8ED54+8092Ch
+cmp     eax, ecx
+jl      short loc_75D2D1
+
+loc_75D2E9:                             ; CODE XREF: AbstractClass__ProcessInit+8A↑j
+; AbstractClass__ProcessInit+94↑j ...
+mov     eax, [esi+1ACh]
+xor     ebx, ebx
+cmp     eax, ebx
+mov     dword ptr [esi+1A8h], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_75D316
+cmp     [esi+1B5h], bl
+jz      short loc_75D316
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+1ACh], ebx
+
+loc_75D316:                             ; CODE XREF: AbstractClass__ProcessInit+CD↑j
+; AbstractClass__ProcessInit+D5↑j
+mov     [esi+1B5h], bl
+mov     [esi+1B0h], ebx
+mov     eax, [esi+190h]
+mov     dword ptr [esi+18Ch], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
+cmp     eax, ebx
+jz      short loc_75D34D
+cmp     [esi+199h], bl
+jz      short loc_75D34D
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+190h], ebx
+
+loc_75D34D:                             ; CODE XREF: AbstractClass__ProcessInit+104↑j
+; AbstractClass__ProcessInit+10C↑j
+mov     [esi+199h], bl
+mov     [esi+194h], ebx
+mov     eax, [esi+108h]
+mov     dword ptr [esi+104h], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+cmp     eax, ebx
+jz      short loc_75D384
+cmp     [esi+111h], bl
+jz      short loc_75D384
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+108h], ebx
+
+loc_75D384:                             ; CODE XREF: AbstractClass__ProcessInit+13B↑j
+; AbstractClass__ProcessInit+143↑j
+mov     ecx, esi
+mov     [esi+111h], bl
+mov     [esi+10Ch], ebx
+call    AbstractTypeClass__Dtor
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
+} } }
 // 0x763EF0
-namespace ra2 { namespace game { void AbstractClass::checkSuperWeaponStatus() { } } }
+namespace ra2 { namespace game { void AbstractClass::checkSuperWeaponStatus() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_763EF0(int this)
+{
+  int v2; // eax
+
+  v2 = *(_DWORD *)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_763F1C
+cmp     [esi+0Dh], bl
+jz      short loc_763F1C
+cmp     eax, ebx
+jz      short loc_763F19
+mov     ecx, [eax-4]
+add     eax, 0FFFFFFFCh
+dec     ecx
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_763F19:                             ; CODE XREF: AbstractClass__checkSuperWeaponStatus+17↑j
+mov     [esi+4], ebx
+
+loc_763F1C:                             ; CODE XREF: AbstractClass__checkSuperWeaponStatus+E↑j
+; AbstractClass__checkSuperWeaponStatus+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x763F30
-namespace ra2 { namespace game { int AbstractClass::updateSuperWeaponTimer(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::updateSuperWeaponTimer(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_763F30(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (a2 - *(_DWORD *)(this + 4)) / 0xCu;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_763F3C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_763F3C:                             ; CODE XREF: AbstractClass__updateSuperWeaponTimer+5↑j
+mov     edx, [esp+arg_0]
+mov     eax, [ecx+4]
+sub     edx, eax
+mov     eax, 0AAAAAAABh
+mul     edx
+mov     eax, edx
+shr     eax, 3
+retn    4
+*/
+} } }
 // 0x763F60
 namespace ra2 { namespace game { void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } }
 // 0x763FF0
-namespace ra2 { namespace game { void* AbstractClass::checkSWTarget(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::checkSWTarget(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_763FF0(_DWORD *Block, char a2)
+{
+  int v3; // eax
+
+  v3 = *(Block + 1);
+  *Block = &VectorClass<WaypointClass>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@VWaypointClass@@@@6B@ ; const VectorClass<WaypointClass>::`vftable'
+test    eax, eax
+jz      short loc_764022
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_764022
+test    eax, eax
+jz      short loc_76401B
+mov     ecx, [eax-4]
+add     eax, 0FFFFFFFCh
+dec     ecx
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_76401B:                             ; CODE XREF: AbstractClass__checkSWTarget+19↑j
+mov     dword ptr [esi+4], 0
+
+loc_764022:                             ; CODE XREF: AbstractClass__checkSWTarget+E↑j
+; AbstractClass__checkSWTarget+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_76403E
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_76403E:                             ; CODE XREF: AbstractClass__checkSWTarget+43↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x764050
-namespace ra2 { namespace game { void* AbstractClass::getSWChargeState(int a1) { return nullptr; } } }
+namespace ra2 { namespace game { void* AbstractClass::getSWChargeState(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall AbstractClass::sub_764050(_DWORD *Block, char a2)
+{
+  int v3; // eax
+
+  v3 = *(Block + 1);
+  *Block = &VectorClass<WaypointClass>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@VWaypointClass@@@@6B@ ; const VectorClass<WaypointClass>::`vftable'
+test    eax, eax
+jz      short loc_764082
+mov     cl, [esi+0Dh]
+test    cl, cl
+jz      short loc_764082
+test    eax, eax
+jz      short loc_76407B
+mov     ecx, [eax-4]
+add     eax, 0FFFFFFFCh
+dec     ecx
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_76407B:                             ; CODE XREF: AbstractClass__getSWChargeState+19↑j
+mov     dword ptr [esi+4], 0
+
+loc_764082:                             ; CODE XREF: AbstractClass__getSWChargeState+E↑j
+; AbstractClass__getSWChargeState+15↑j
+mov     al, [esp+4+arg_0]
+mov     byte ptr [esi+0Dh], 0
+test    al, 1
+mov     dword ptr [esi+8], 0
+jz      short loc_76409E
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_76409E:                             ; CODE XREF: AbstractClass__getSWChargeState+43↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} } }
 // 0x7640B0
-namespace ra2 { namespace game { int AbstractClass::setSWCharge(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::setSWCharge(int a1) {
+// [IDA decompile]
+char __thiscall AbstractClass::sub_7640B0(int *this, int a2)
+{
+  int v2; // edi
+  int v3; // esi
+  int v4; // edx
+  _DWORD *v5; // eax
+  _DWORD *v6; // ecx
+  int v7; // edx
+
+  v2 = *(this + 2);
+  if ( v2 == *(_DWORD *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+      return 1;
+    v4 = *(_DWORD *)(a2 + 4);
+    v5 = (_DWORD *)*(this + 1);
+    v6 = (_DWORD *)(v4 + 8);
+    v7 = v4 - (_DWORD)v5;
+    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 )
+    {
+      ++v3;
+      v6 += 3;
+      v5 += 3;
+      if ( v3 >= v2 )
+        return 1;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+push    esi
+mov     edx, [eax+8]
+push    edi
+mov     edi, [ecx+8]
+cmp     edi, edx
+jnz     short loc_764103
+xor     esi, esi
+test    edi, edi
+jle     short loc_7640FA
+mov     edx, [eax+4]
+mov     eax, [ecx+4]
+lea     ecx, [edx+8]
+sub     edx, eax
+
+loc_7640D3:                             ; CODE XREF: AbstractClass__setSWCharge+48↓j
+mov     ebx, [eax]
+mov     ebp, [edx+eax]
+cmp     ebx, ebp
+jnz     short loc_764103
+mov     ebx, [eax+4]
+mov     ebp, [ecx-4]
+cmp     ebx, ebp
+jnz     short loc_764103
+mov     ebx, [eax+8]
+mov     ebp, [ecx]
+cmp     ebx, ebp
+jnz     short loc_764103
+inc     esi
+add     ecx, 0Ch
+add     eax, 0Ch
+cmp     esi, edi
+jl      short loc_7640D3
+
+loc_7640FA:                             ; CODE XREF: AbstractClass__setSWCharge+16↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_764103:                             ; CODE XREF: AbstractClass__setSWCharge+10↑j
+; AbstractClass__setSWCharge+2A↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    4
+*/
+} } }
 // 0x764110
-namespace ra2 { namespace game { int AbstractClass::resetSWCharge(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::resetSWCharge(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::resetSWCharge(_BYTE *this, int a2, int *a3)
+{
+  int v3; // ebp
+  _DWORD *v5; // eax
+  int *v6; // edi
+  _DWORD *v7; // eax
+  int v8; // ecx
+  int *v9; // eax
+  int v10; // ecx
+  int v12; // ecx
+  int v13; // eax
+  int *v14; // edx
+  int *v15; // ebx
+  int v16; // eax
+
+  v3 = a2;
+  if ( a2 )
+  {
+    *(this + 12) = 0;
+    if ( a3 )
+    {
+      v6 = a3 + 1;
+      *a3 = a2;
+      v9 = a3 + 1;
+      if ( a2 - 1 >= 0 )
+      {
+        v10 = a2;
+        do
+        {
+          *v9 = 0;
+          v9[1] = 0;
+          v9[2] = 0;
+          v9 += 3;
+          --v10;
+        }
+        while ( v10 );
+      }
+    }
+    else
+    {
+      v5 = (_DWORD *)__2_YAPAXI_Z(12 * a2 + 4);
+      if ( v5 )
+      {
+        v6 = v5 + 1;
+        *v5 = a2;
+        v7 = v5 + 1;
+        if ( a2 - 1 >= 0 )
+        {
+          v8 = a2;
+          do
+          {
+            *v7 = 0;
+            v7[1] = 0;
+            v7[2] = 0;
+            v7 += 3;
+            --v8;
+          }
+          while ( v8 );
+        }
+      }
+      else
+      {
+        v6 = 0;
+      }
+    }
+    *(this + 12) = 1;
+    if ( v6 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v12 = *((_DWORD *)this + 2);
+        if ( a2 < v12 )
+          v12 = a2;
+        if ( v12 > 0 )
+        {
+          v13 = 0;
+          do
+          {
+            v14 = (int *)(*((_DWORD *)this + 1) + v13 * 4);
+            v15 = &v6[v13];
+            v13 += 3;
+            --v12;
+            *v15 = *v14;
+            v15[1] = v14[1];
+            v15[2] = v14[2];
+          }
+          while ( v12 );
+          v3 = a2;
+        }
+        if ( *(this + 13) )
+        {
+          v16 = *((_DWORD *)this + 1);
+          if ( v16 )
+            __3_YAXPAX_Z((void *)(v16 - 4));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v6;
+      *((_DWORD *)this + 2) = v3;
+      *(this + 13) = a3 == 0;
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+xor     ebx, ebx
+push    esi
+cmp     ebp, ebx
+push    edi
+mov     esi, ecx
+jz      loc_76420E
+mov     eax, [esp+10h+arg_4]
+mov     [esi+0Ch], bl
+cmp     eax, ebx
+jnz     short loc_76416A
+lea     eax, [ebp+ebp*2+0]
+lea     ecx, ds:4[eax*4]
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+jz      short loc_764166
+lea     ecx, [ebp-1]
+lea     edi, [eax+4]
+mov     [eax], ebp
+cmp     ecx, ebx
+mov     eax, edi
+jl      short loc_764187
+inc     ecx
+
+loc_764156:                             ; CODE XREF: AbstractClass__resetSWCharge+52↓j
+mov     [eax], ebx
+mov     [eax+4], ebx
+mov     [eax+8], ebx
+add     eax, 0Ch
+dec     ecx
+jnz     short loc_764156
+jmp     short loc_764187
+; ---------------------------------------------------------------------------
+
+loc_764166:                             ; CODE XREF: AbstractClass__resetSWCharge+35↑j
+xor     edi, edi
+jmp     short loc_764187
+; ---------------------------------------------------------------------------
+
+loc_76416A:                             ; CODE XREF: AbstractClass__resetSWCharge+1D↑j
+lea     ecx, [ebp-1]
+lea     edi, [eax+4]
+mov     [eax], ebp
+cmp     ecx, ebx
+mov     eax, edi
+jl      short loc_764187
+inc     ecx
+
+loc_764179:                             ; CODE XREF: AbstractClass__resetSWCharge+75↓j
+mov     [eax], ebx
+mov     [eax+4], ebx
+mov     [eax+8], ebx
+add     eax, 0Ch
+dec     ecx
+jnz     short loc_764179
+
+loc_764187:                             ; CODE XREF: AbstractClass__resetSWCharge+43↑j
+; AbstractClass__resetSWCharge+54↑j ...
+cmp     edi, ebx
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_764198
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_764198:                             ; CODE XREF: AbstractClass__resetSWCharge+7D↑j
+cmp     [esi+4], ebx
+jz      short loc_7641F1
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_7641A6
+mov     ecx, ebp
+
+loc_7641A6:                             ; CODE XREF: AbstractClass__resetSWCharge+92↑j
+cmp     ecx, ebx
+jle     short loc_7641D2
+xor     eax, eax
+
+loc_7641AC:                             ; CODE XREF: AbstractClass__resetSWCharge+BA↓j
+mov     ebp, [esi+4]
+mov     edx, eax
+add     edx, ebp
+lea     ebx, [eax+edi]
+add     eax, 0Ch
+dec     ecx
+mov     ebp, [edx]
+mov     [ebx], ebp
+mov     ebp, [edx+4]
+mov     [ebx+4], ebp
+mov     edx, [edx+8]
+mov     [ebx+8], edx
+jnz     short loc_7641AC
+mov     ebp, [esp+10h+arg_0]
+xor     ebx, ebx
+
+loc_7641D2:                             ; CODE XREF: AbstractClass__resetSWCharge+98↑j
+cmp     [esi+0Dh], bl
+jz      short loc_7641F1
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_7641EE
+mov     ecx, [eax-4]
+add     eax, 0FFFFFFFCh
+dec     ecx
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7641EE:                             ; CODE XREF: AbstractClass__resetSWCharge+CC↑j
+mov     [esi+4], ebx
+
+loc_7641F1:                             ; CODE XREF: AbstractClass__resetSWCharge+8B↑j
+; AbstractClass__resetSWCharge+C5↑j
+mov     ecx, [esp+10h+arg_4]
+xor     eax, eax
+cmp     ecx, ebx
+mov     [esi+4], edi
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_76420E:                             ; CODE XREF: AbstractClass__resetSWCharge+E↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
+} } }
 // 0x764220
-namespace ra2 { namespace game { void AbstractClass::processSpecialAbility() { } } }
+namespace ra2 { namespace game { void AbstractClass::processSpecialAbility() {
+// [IDA decompile]
+void __thiscall AbstractClass::sub_764220(int this)
+{
+  int v2; // eax
+
+  v2 = *(_DWORD *)(this + 4);
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_764249
+cmp     [esi+0Dh], bl
+jz      short loc_764249
+cmp     eax, ebx
+jz      short loc_764246
+mov     ecx, [eax-4]
+add     eax, 0FFFFFFFCh
+dec     ecx
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_764246:                             ; CODE XREF: AbstractClass__processSpecialAbility+14↑j
+mov     [esi+4], ebx
+
+loc_764249:                             ; CODE XREF: AbstractClass__processSpecialAbility+B↑j
+; AbstractClass__processSpecialAbility+10↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} } }
 // 0x764260
-namespace ra2 { namespace game { int AbstractClass::checkSpecialCooldown(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::checkSpecialCooldown(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_764260(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
+    return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+push    ebx
+push    ebp
+push    esi
+test    al, al
+push    edi
+jnz     short loc_764274
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_764274:                             ; CODE XREF: AbstractClass__checkSpecialCooldown+9↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_7642A6
+mov     esi, [esp+10h+arg_0]
+mov     ecx, [ecx+4]
+mov     edi, [esi]
+
+loc_764286:                             ; CODE XREF: AbstractClass__checkSpecialCooldown+44↓j
+cmp     [ecx], edi
+jnz     short loc_76429E
+mov     ebx, [ecx+4]
+mov     ebp, [esi+4]
+cmp     ebx, ebp
+jnz     short loc_76429E
+mov     ebx, [ecx+8]
+mov     ebp, [esi+8]
+cmp     ebx, ebp
+jz      short loc_7642A9
+
+loc_76429E:                             ; CODE XREF: AbstractClass__checkSpecialCooldown+28↑j
+; AbstractClass__checkSpecialCooldown+32↑j
+inc     eax
+add     ecx, 0Ch
+cmp     eax, edx
+jl      short loc_764286
+
+loc_7642A6:                             ; CODE XREF: AbstractClass__checkSpecialCooldown+1B↑j
+or      eax, 0FFFFFFFFh
+
+loc_7642A9:                             ; CODE XREF: AbstractClass__checkSpecialCooldown+3C↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x7642B0
-namespace ra2 { namespace game { int AbstractClass::updateSpecialTimer(int a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::updateSpecialTimer(int a1) {
+// [IDA decompile]
+unsigned int __thiscall AbstractClass::sub_7642B0(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (a2 - *(_DWORD *)(this + 4)) / 0xCu;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]
+test    al, al
+jnz     short loc_7642BC
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7642BC:                             ; CODE XREF: AbstractClass__updateSpecialTimer+5↑j
+mov     edx, [esp+arg_0]
+mov     eax, [ecx+4]
+sub     edx, eax
+mov     eax, 0AAAAAAABh
+mul     edx
+mov     eax, edx
+shr     eax, 3
+retn    4
+*/
+} } }
 // 0x7642E0
-namespace ra2 { namespace game { int AbstractClass::AllocateCoordArray(int a1, void* a2) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::AllocateCoordArray(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall AbstractClass::AllocateCoordArray(_BYTE *this, int a2, int *a3)
+{
+  int v3; // ebx
+  int *v5; // ebp
+  _DWORD *v6; // eax
+  _DWORD *v7; // edi
+  int v8; // ebp
+  int *v9; // edi
+  int v10; // ebp
+  int v11; // ecx
+  int v12; // eax
+  _DWORD *v13; // ebx
+  _DWORD *v14; // edx
+  _DWORD *v15; // ecx
+  int v16; // eax
+  _DWORD *v18; // [esp+10h] [ebp-4h]
+
+  v3 = a2;
+  if ( a2 )
+  {
+    v5 = a3;
+    *(this + 12) = 0;
+    if ( a3 )
+    {
+      *a3 = a2;
+      v9 = a3 + 1;
+      if ( a2 - 1 >= 0 )
+      {
+        v10 = a2;
+        do
+        {
+          Coord::Subtract(v9, 0, 0, 0);
+          v9 += 3;
+          --v10;
+        }
+        while ( v10 );
+        v5 = a3;
+      }
+      v7 = v5 + 1;
+    }
+    else
+    {
+      v6 = (_DWORD *)__2_YAPAXI_Z(12 * a2 + 4);
+      if ( v6 )
+      {
+        *v6 = a2;
+        v7 = v6 + 1;
+        v18 = v6 + 1;
+        if ( a2 - 1 >= 0 )
+        {
+          v8 = a2;
+          do
+          {
+            Coord3D::Set(v7, 0, 0, 0);
+            v7 += 3;
+            --v8;
+          }
+          while ( v8 );
+          v7 = v18;
+          v5 = 0;
+        }
+      }
+      else
+      {
+        v7 = 0;
+      }
+    }
+    *(this + 12) = 1;
+    if ( !v7 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v11 = *((_DWORD *)this + 2);
+      if ( a2 < v11 )
+        v11 = a2;
+      if ( v11 > 0 )
+      {
+        v12 = 0;
+        do
+        {
+          v13 = &v7[v12];
+          v14 = (_DWORD *)(v12 * 4 + *((_DWORD *)this + 1));
+          v12 += 3;
+          --v11;
+          *v13 = *v14;
+          v13[1] = v14[1];
+          v13[2] = v14[2];
+        }
+        while ( v11 );
+        v3 = a2;
+        v5 = a3;
+      }
+      if ( *(this + 13) )
+      {
+        v15 = (_DWORD *)*((_DWORD *)this + 1);
+        if ( v15 )
+          AbstractClass::processCleanup(v15, 3);
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v7;
+    *((_DWORD *)this + 2) = v3;
+    *(this + 13) = v5 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this);
+  }
+  v16 = *((_DWORD *)this + 2);
+  if ( v16 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v16;
+  return 1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+mov     ebx, [esp+8+arg_0]
+push    ebp
+push    esi
+test    ebx, ebx
+push    edi
+mov     esi, ecx
+jz      loc_7643EA
+mov     ebp, [esp+14h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebp, ebp
+jnz     short loc_76434A
+lea     eax, [ebx+ebx*2]
+lea     ecx, ds:4[eax*4]
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_764346
+mov     [eax], ebx
+lea     edi, [eax+4]
+lea     eax, [ebx-1]
+mov     [esp+14h+var_4], edi
+test    eax, eax
+jl      short loc_764374
+lea     ebp, [eax+1]
+
+loc_764329:                             ; CODE XREF: AbstractClass__AllocateCoordArray+5A↓j
+push    0
+push    0
+push    0
+mov     ecx, edi
+call    Coord3D__Set
+add     edi, 0Ch
+dec     ebp
+jnz     short loc_764329
+mov     edi, [esp+14h+var_4]
+mov     ebp, [esp+14h+arg_4]
+jmp     short loc_764374
+; ---------------------------------------------------------------------------
+
+loc_764346:                             ; CODE XREF: AbstractClass__AllocateCoordArray+34↑j
+xor     edi, edi
+jmp     short loc_764374
+; ---------------------------------------------------------------------------
+
+loc_76434A:                             ; CODE XREF: AbstractClass__AllocateCoordArray+1D↑j
+lea     eax, [ebx-1]
+mov     [ebp+0], ebx
+test    eax, eax
+lea     edi, [ebp+4]
+jl      short loc_764371
+lea     ebp, [eax+1]
+
+loc_76435A:                             ; CODE XREF: AbstractClass__AllocateCoordArray+8B↓j
+push    0
+push    0
+push    0
+mov     ecx, edi
+call    Coord__Subtract
+add     edi, 0Ch
+dec     ebp
+jnz     short loc_76435A
+mov     ebp, [esp+14h+arg_4]
+
+loc_764371:                             ; CODE XREF: AbstractClass__AllocateCoordArray+75↑j
+lea     edi, [ebp+4]
+
+loc_764374:                             ; CODE XREF: AbstractClass__AllocateCoordArray+44↑j
+; AbstractClass__AllocateCoordArray+64↑j ...
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      loc_764408
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_7643D8
+mov     ecx, [esi+8]
+cmp     ebx, ecx
+jge     short loc_764390
+mov     ecx, ebx
+
+loc_764390:                             ; CODE XREF: AbstractClass__AllocateCoordArray+AC↑j
+test    ecx, ecx
+jle     short loc_7643BC
+xor     eax, eax
+
+loc_764396:                             ; CODE XREF: AbstractClass__AllocateCoordArray+D2↓j
+mov     edx, [esi+4]
+lea     ebx, [eax+edi]
+add     edx, eax
+add     eax, 0Ch
+dec     ecx
+mov     ebp, [edx]
+mov     [ebx], ebp
+mov     ebp, [edx+4]
+mov     [ebx+4], ebp
+mov     edx, [edx+8]
+mov     [ebx+8], edx
+jnz     short loc_764396
+mov     ebx, [esp+14h+arg_0]
+mov     ebp, [esp+14h+arg_4]
+
+loc_7643BC:                             ; CODE XREF: AbstractClass__AllocateCoordArray+B2↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_7643D8
+mov     ecx, [esi+4]    ; Block
+test    ecx, ecx
+jz      short loc_7643D1
+push    3               ; char
+call    AbstractClass__processCleanup
+
+loc_7643D1:                             ; CODE XREF: AbstractClass__AllocateCoordArray+E8↑j
+mov     dword ptr [esi+4], 0
+
+loc_7643D8:                             ; CODE XREF: AbstractClass__AllocateCoordArray+A5↑j
+; AbstractClass__AllocateCoordArray+E1↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebp, ebp
+setz    al
+mov     [esi+8], ebx
+mov     [esi+0Dh], al
+jmp     short loc_7643F1
+; ---------------------------------------------------------------------------
+
+loc_7643EA:                             ; CODE XREF: AbstractClass__AllocateCoordArray+D↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0Ch]
+
+loc_7643F1:                             ; CODE XREF: AbstractClass__AllocateCoordArray+108↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_7643FE
+mov     [esi+10h], eax
+
+loc_7643FE:                             ; CODE XREF: AbstractClass__AllocateCoordArray+119↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_764408:                             ; CODE XREF: AbstractClass__AllocateCoordArray+9A↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+pop     ecx
+retn    8
+*/
+} } }
 // 0x764420
-namespace ra2 { namespace game { int AbstractClass::processSpecialEffect(void* a1) { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::processSpecialEffect(void* a1) {
+// [IDA decompile]
+int __thiscall AbstractClass::sub_764420(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]
+push    ebx
+push    ebp
+xor     eax, eax
+push    esi
+push    edi
+test    edx, edx
+jle     short loc_764456
+mov     esi, [esp+10h+arg_0]
+mov     ecx, [ecx+4]
+mov     edi, [esi]
+
+loc_764436:                             ; CODE XREF: AbstractClass__processSpecialEffect+34↓j
+cmp     [ecx], edi
+jnz     short loc_76444E
+mov     ebx, [ecx+4]
+mov     ebp, [esi+4]
+cmp     ebx, ebp
+jnz     short loc_76444E
+mov     ebx, [ecx+8]
+mov     ebp, [esi+8]
+cmp     ebx, ebp
+jz      short loc_764459
+
+loc_76444E:                             ; CODE XREF: AbstractClass__processSpecialEffect+18↑j
+; AbstractClass__processSpecialEffect+22↑j
+inc     eax
+add     ecx, 0Ch
+cmp     eax, edx
+jl      short loc_764436
+
+loc_764456:                             ; CODE XREF: AbstractClass__processSpecialEffect+B↑j
+or      eax, 0FFFFFFFFh
+
+loc_764459:                             ; CODE XREF: AbstractClass__processSpecialEffect+2C↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} } }
 // 0x7C35C0
-namespace ra2 { namespace game { int AbstractClass::finalizeDestruction() { return 0; } } }
+namespace ra2 { namespace game { int AbstractClass::finalizeDestruction() {
+// [IDA decompile]
+int __thiscall sub_7C35C0(int this)
+{
+  unsigned __int16 v1; // ax
+  int v2; // esi
+  unsigned int v4; // esi
+
+  v1 = *(_WORD *)(this + 236);
+  *(_DWORD *)(this + 20) = 0;
+  *(_DWORD *)(this + 24) = 0;
+  v2 = v1 - 1;
+  *(_DWORD *)(this + 284) = v2;
+  *(_DWORD *)(this + 300) = v2;
+  *(_DWORD *)(this + 320) = v2;
+  v4 = *(_DWORD *)(this + 1980) & 0xFFFFF87F;
+  *(_DWORD *)(this + 32) = 0;
+  *(_DWORD *)(this + 1980) = v4;
+  *(_DWORD *)(this + 36) = 0;
+  *(_DWORD *)(this + 336) = 0;
+  *(_DWORD *)(this + 292) = 0;
+  *(_DWORD *)(this + 288) = -1;
+  *(_DWORD *)(this + 296) = -1;
+  *(_DWORD *)(this + 304) = -1;
+  *(_DWORD *)(this + 308) = -1;
+  *(_DWORD *)(this + 316) = -1;
+  *(_DWORD *)(this + 312) = -1;
+  *(_DWORD *)(this + 324) = -1;
+  *(_DWORD *)(this + 40) = -1;
+  *(_DWORD *)(this + 44) = 0;
+  *(_DWORD *)(this + 1952) = 0;
+  *(_DWORD *)(this + 1956) = -1;
+  *(_DWORD *)(this + 1988) = 0;
+  *(_DWORD *)(this + 56) = 0;
+  *(_DWORD *)(this + 1808) = -1;
+  *(_DWORD *)(this + 1800) = -1;
+  *(_DWORD *)(this + 1804) = -1;
+  return -1;
+}
+
+/* ASM:
+xor     eax, eax
+push    esi
+mov     ax, [ecx+0ECh]
+xor     edx, edx
+mov     [ecx+14h], edx
+mov     [ecx+18h], edx
+lea     esi, [eax-1]
+or      eax, 0FFFFFFFFh
+mov     [ecx+11Ch], esi
+mov     [ecx+12Ch], esi
+mov     [ecx+140h], esi
+mov     esi, [ecx+7BCh]
+and     esi, 0FFFFF87Fh
+mov     [ecx+20h], edx
+mov     [ecx+7BCh], esi
+mov     [ecx+24h], edx
+mov     [ecx+150h], edx
+mov     [ecx+124h], edx
+mov     [ecx+120h], eax
+mov     [ecx+128h], eax
+mov     [ecx+130h], eax
+mov     [ecx+134h], eax
+mov     [ecx+13Ch], eax
+mov     [ecx+138h], eax
+mov     [ecx+144h], eax
+mov     [ecx+28h], eax
+mov     [ecx+2Ch], edx
+mov     [ecx+7A0h], edx
+mov     [ecx+7A4h], eax
+mov     [ecx+7C4h], edx
+mov     [ecx+38h], edx
+mov     [ecx+710h], eax
+mov     [ecx+708h], eax
+mov     [ecx+70Ch], eax
+pop     esi
+retn
+*/
+} } }

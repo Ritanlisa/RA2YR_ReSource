@@ -8,668 +8,9370 @@ namespace gamemd {
 
 // 0x0069BCC0 (63 bytes)
 void CallToWideStringChar_69BCC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0069BCC0.json)
-    // Size: 63 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_69BCC0 ( void *a1 ) { int v1 ; // edi !char **v2 ! ; // esi !char *v3 ! ; // eax v1 = 0 ; v2 = ( char ** ) & g_NetworkPlayerName ; while ( 1 ) { v3 = ToWideStringChar ( * v2 ) ; if ( ! _strcmpi ( a1 , v3 ) ) break ; ++ v2 ; ++ v1 ; if ( ( int ) v2 >= ( int ) & g_PlayerNameListEnd ) return 0 ; } return v1 ; }
-    
+// [IDA decompile]
+int __stdcall sub_69BCC0(void *a1)
+{
+  int v1; // edi
+  char **v2; // esi
+  char *v3; // eax
+
+  v1 = 0;
+  v2 = (char **)&MEMORY[0xA8DA90];
+  while ( 1 )
+  {
+    v3 = ToWideStringChar(*v2);
+    if ( !_strcmpi(a1, v3) )
+      break;
+    ++v2;
+    ++v1;
+    if ( (int)v2 >= (int)&MEMORY[0xA8DAB0] )
+      return 0;
+  }
+  return v1;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_0]
+push    esi
+push    edi
+xor     edi, edi
+mov     esi, 0A8DA90h
+
+loc_69BCCE:                             ; CODE XREF: sub_69BCC0+2D↓j
+mov     ecx, [esi]
+call    ToWideStringChar
+push    eax             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_69BCF7
+add     esi, 4
+inc     edi
+cmp     esi, 0A8DAB0h
+jl      short loc_69BCCE
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_69BCF7:                             ; CODE XREF: sub_69BCC0+21↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0069BD00 (90 bytes)
 const char* CallToWideStringChar_69BD00() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0069BD00.json)
-    // Size: 90 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_69BD00 ( int a1 ) { int v1 ; // ebx !char *v2 ! ; // esi !char *v3 ! ; // edi !char *v4 ! ; // eax v1 = 0 ; if ( Game_PlayerCount <= 0 ) return 0 ; while ( 1 ) { v2 = ( char * ) * ( & g_NetworkPlayerName + a1 ) ; v3 = ToWideStringChar ( * ( char ** ) ( Game_PlayerInfoArray + 4 * v1 ) ) ; v4 = ToWideStringChar ( v2 ) ; if ( ! _strcmpi ( v3 , v4 ) ) break ; if ( ++ v1 >= Game_PlayerCount ) return 0 ; } return v1 ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_69BD00(int a1)
+{
+  int v1; // ebx
+  char *v2; // esi
+  char *v3; // edi
+  char *v4; // eax
+
+  v1 = 0;
+  if ( MEMORY[0x87F7E8][538791] <= 0 )
+    return 0;
+  while ( 1 )
+  {
+    v2 = (char *)MEMORY[0x87F7E8][a1 + 538794];
+    v3 = ToWideStringChar(*(char **)(MEMORY[0x87F7E8][538788] + 4 * v1));
+    v4 = ToWideStringChar(v2);
+    if ( !_strcmpi(v3, v4) )
+      break;
+    if ( ++v1 >= MEMORY[0x87F7E8][538791] )
+      return 0;
+  }
+  return v1;
+}
+
+/* ASM:
+mov     eax, ds:0A8DA84h
+push    ebx
+push    ebp
+xor     ebx, ebx
+push    esi
+push    edi
+test    eax, eax
+jle     short loc_69BD48
+mov     ebp, [esp+10h+arg_0]
+
+loc_69BD13:                             ; CODE XREF: sub_69BD00+46↓j
+mov     eax, ds:0A8DA78h
+mov     esi, ds:0A8DA90h[ebp*4]
+mov     ecx, [eax+ebx*4]
+call    ToWideStringChar
+mov     ecx, esi
+mov     edi, eax
+call    ToWideStringChar
+push    eax             ; void *
+push    edi             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_69BD51
+mov     eax, ds:0A8DA84h
+inc     ebx
+cmp     ebx, eax
+jl      short loc_69BD13
+
+loc_69BD48:                             ; CODE XREF: sub_69BD00+D↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_69BD51:                             ; CODE XREF: sub_69BD00+3C↑j
+pop     edi
+pop     esi
+mov     eax, ebx
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x005F34D0 (73 bytes)
 const char* Callisdigit_5F34D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005F34D0.json)
-    // Size: 73 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_5F34D0 ( char *String ) { int v1 ; // esi !unsigned int v2 ! ; // kr04_4 v1 = 0 ; v2 = strlen ( String ) + 1 ; if ( ( int ) ( v2 - 1 ) <= 0 ) return atoi ( String ) ; while ( isdigit ( String [ v1 ] ) ) { if ( ++ v1 >= ( int ) ( v2 - 1 ) ) return atoi ( String ) ; } return -1 ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_5F34D0(char *String)
+{
+  int v1; // esi
+  unsigned int v2; // kr04_4
+
+  v1 = 0;
+  v2 = strlen(String) + 1;
+  if ( (int)(v2 - 1) <= 0 )
+    return atoi(String);
+  while ( isdigit(String[v1]) )
+  {
+    if ( ++v1 >= (int)(v2 - 1) )
+      return atoi(String);
+  }
+  return -1;
+}
+
+/* ASM:
+String          = dword ptr  4
+
+push    ebx
+mov     ebx, [esp+4+String]
+push    esi
+push    edi
+mov     edi, ebx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+xor     esi, esi
+repne scasb
+not     ecx
+dec     ecx
+mov     edi, ecx
+test    edi, edi
+jle     short loc_5F3501
+
+loc_5F34EB:                             ; CODE XREF: sub_5F34D0+2F↓j
+movsx   eax, byte ptr [esi+ebx]
+push    eax             ; C
+call    _isdigit
+add     esp, 4
+test    eax, eax
+jz      short loc_5F3510
+inc     esi
+cmp     esi, edi
+jl      short loc_5F34EB
+
+loc_5F3501:                             ; CODE XREF: sub_5F34D0+19↑j
+push    ebx             ; String
+call    _atoi
+add     esp, 4
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5F3510:                             ; CODE XREF: sub_5F34D0+2A↑j
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn    4
+*/
 }
 
 // 0x004A40C0 (108 bytes)
 void* Callsprintf_4A40C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A40C0.json)
-    // Size: 108 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   LPDIRECTDRAW sub_4A40C0 ( ) { !LPDIRECTDRAW result ! ; // eax !CHAR Text[80] ! ; // [esp+4h] [ebp-50h] BYREF result = g_lpDirectDraw7 ; if ( g_lpDirectDraw7 ) { result = ( LPDIRECTDRAW ) g_lpDirectDraw7 -> lpVtbl -> Release ( g_lpDirectDraw7 ) ; if ( result ) { if ( g_DDraw_ErrorCallback ) { result = ( LPDIRECTDRAW ) g_DDraw_ErrorCallback ( result ) ; g_lpDirectDraw7 = 0 ; return result ; } sprintf ( Text , "DDRAW.DLL Error code = %08X" , result ) ; result = ( LPDIRECTDRAW ) "MessageBoxA " ( g_hWnd , Text , g_Str_Direct_X , 0x30u ) ; } g_lpDirectDraw7 = 0 ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int sub_4A40C0()
+{
+  int result; // eax
+  char Text[80]; // [esp+4h] [ebp-50h] BYREF
+
+  result = MEMORY[0x87F7E8][33323];
+  if ( MEMORY[0x87F7E8][33323] )
+  {
+    result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][33323] + 8))(MEMORY[0x87F7E8][33323]);
+    if ( result )
+    {
+      if ( MEMORY[0x87F7E8][33330] )
+      {
+        result = ((int (__thiscall *)(int))MEMORY[0x87F7E8][33330])(result);
+        MEMORY[0x87F7E8][33323] = 0;
+        return result;
+      }
+      sprintf(Text, "DDRAW.DLL Error code = %08X", result);
+      result = ((int (__stdcall *)(int, char *, char *, int))MessageBoxA)(
+                 dword_A8ED54[233983],
+                 Text,
+                 g_Str_Direct_X,
+                 48);
+    }
+    MEMORY[0x87F7E8][33323] = 0;
+  }
+  return result;
+}
+
+/* ASM:
+Text            = OMOTestDerived ptr -50h
+
+mov     eax, ds:8A0094h
+sub     esp, 50h
+test    eax, eax
+jz      short loc_4A4128
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+8]
+test    eax, eax
+jz      short loc_4A411E
+mov     edx, ds:8A00B0h
+test    edx, edx
+jz      short loc_4A40F2
+mov     ecx, eax
+call    edx
+mov     dword ptr ds:8A0094h, 0
+add     esp, 50h
+retn
+; ---------------------------------------------------------------------------
+
+loc_4A40F2:                             ; CODE XREF: sub_4A40C0+1E↑j
+push    eax
+lea     edx, [esp+54h+Text]
+push    offset g_Str_Trace_DDRAW_DLL_Error_code____08X ; "DDRAW.DLL Error code = %08X"
+push    edx             ; Buffer
+call    _sprintf
+mov     ecx, dword_A8ED54+0E47FCh
+add     esp, 0Ch
+lea     eax, [esp+50h+Text]
+push    30h ; '0'       ; uType
+push    offset g_Str_Direct_X ; "Direct X"
+push    eax             ; lpText
+push    ecx             ; hWnd
+call    ds:__imp_MessageBoxA
+
+loc_4A411E:                             ; CODE XREF: sub_4A40C0+14↑j
+mov     dword ptr ds:8A0094h, 0
+
+loc_4A4128:                             ; CODE XREF: sub_4A40C0+A↑j
+add     esp, 50h
+retn
+*/
 }
 
 // 0x004067D0 (69 bytes)
 void Callstrcmpi_4067D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004067D0.json)
-    // Size: 69 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   BOOL __fastcall sub_4067D0 ( void *a1, _DWORD *a2 ) { !char **v4 ! ; // esi !char *v5 ! ; // eax v4 = & off_816018 ; if ( off_816018 ) { do { if ( ! _strcmpi ( a1 , * v4 ) ) break ; v5 = v4 [ 2 ] ; v4 += 2 ; } while ( v5 ) ; } if ( a2 ) * a2 = v4 [ 1 ] ; return * v4 != 0 ; }
-    
+// [IDA decompile]
+BOOL __fastcall sub_4067D0(void *a1, _DWORD *a2)
+{
+  char **v4; // esi
+  char *v5; // eax
+
+  v4 = &off_816018;
+  if ( off_816018 )
+  {
+    do
+    {
+      if ( !_strcmpi(a1, *v4) )
+        break;
+      v5 = v4[2];
+      v4 += 2;
+    }
+    while ( v5 );
+  }
+  if ( a2 )
+    *a2 = v4[1];
+  return *v4 != 0;
+}
+
+/* ASM:
+mov     eax, off_816018 ; "LOWEST"
+push    ebx
+push    esi
+push    edi
+test    eax, eax
+mov     ebx, edx
+mov     edi, ecx
+mov     esi, offset off_816018 ; "LOWEST"
+jz      short loc_4067FF
+
+loc_4067E5:                             ; CODE XREF: sub_4067D0+2D↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    edi             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_4067FF
+mov     eax, [esi+8]
+add     esi, 8
+test    eax, eax
+jnz     short loc_4067E5
+
+loc_4067FF:                             ; CODE XREF: sub_4067D0+13↑j
+; sub_4067D0+23↑j
+test    ebx, ebx
+jz      short loc_406808
+mov     ecx, [esi+4]
+mov     [ebx], ecx
+
+loc_406808:                             ; CODE XREF: sub_4067D0+31↑j
+mov     ecx, [esi]
+xor     eax, eax
+test    ecx, ecx
+pop     edi
+pop     esi
+setnz   al
+pop     ebx
+retn
+*/
 }
 
 // 0x00406820 (73 bytes)
 void Callstrcmpi_406820() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00406820.json)
-    // Size: 73 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   BOOL __fastcall sub_406820 ( _DWORD *a1, const void *a2 ) { !const void **v4 ! ; // esi _UNKNOWN **v5 ; // eax v4 = ( const void ** ) & off_8160C0 ; if ( off_8160C0 ) { do { if ( ! _strcmpi ( a2 , * v4 ) ) break ; v5 = ( _UNKNOWN ** ) v4 [ 2 ] ; v4 += 2 ; } while ( v5 ) ; } if ( a1 ) * a1 |= ( unsigned int ) v4 [ 1 ] ; return * v4 != 0 ; }
-    
+// [IDA decompile]
+BOOL __fastcall sub_406820(_DWORD *a1, const void *a2)
+{
+  const void **v4; // esi
+  _UNKNOWN **v5; // eax
+
+  v4 = (const void **)&off_8160C0;
+  if ( off_8160C0 )
+  {
+    do
+    {
+      if ( !_strcmpi(a2, *v4) )
+        break;
+      v5 = (_UNKNOWN **)v4[2];
+      v4 += 2;
+    }
+    while ( v5 );
+  }
+  if ( a1 )
+    *a1 |= (unsigned int)v4[1];
+  return *v4 != 0;
+}
+
+/* ASM:
+mov     eax, off_8160C0
+push    ebx
+push    esi
+push    edi
+test    eax, eax
+mov     edi, edx
+mov     ebx, ecx
+mov     esi, offset off_8160C0
+jz      short loc_40684F
+
+loc_406835:                             ; CODE XREF: sub_406820+2D↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    edi             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_40684F
+mov     eax, [esi+8]
+add     esi, 8
+test    eax, eax
+jnz     short loc_406835
+
+loc_40684F:                             ; CODE XREF: sub_406820+13↑j
+; sub_406820+23↑j
+test    ebx, ebx
+jz      short loc_40685C
+mov     ecx, [esi+4]
+mov     eax, [ebx]
+or      eax, ecx
+mov     [ebx], eax
+
+loc_40685C:                             ; CODE XREF: sub_406820+31↑j
+mov     ecx, [esi]
+xor     eax, eax
+test    ecx, ecx
+pop     edi
+pop     esi
+setnz   al
+pop     ebx
+retn
+*/
 }
 
 // 0x00751EA0 (369 bytes)
 void* Callstrcmpi_751EA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00751EA0.json)
-    // Size: 369 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   HANDLE __fastcall sub_751EA0 ( const CHAR *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4 ) { !const char *v4 ! ; // edi HANDLE result ; // eax void *v7 ; // esi HANDLE v9 ; // [esp+10h] [ebp-248h] !CHAR FileName[260] ! ; // [esp+14h] [ebp-244h] BYREF !struct _WIN32_FIND_DATAA FindFileData ! ; // [esp+118h] [ebp-140h] BYREF v4 = a1 ; result = "FindFirstFileA " ( a1 , & FindFileData ) ; v7 = result ; v9 = result ; if ( result != ( HANDLE ) -1 ) { do { if ( ( FindFileData . dwFileAttributes & 0x10 ) != 0 ) { if ( _strcmpi ( FindFileData . cFileName , asc_826598 ) ) { if ( _strcmpi ( FindFileData . cFileName , asc_846610 ) ) { ++ * a2 ; strcpy ( FileName , v4 ) ; FileName [ strlen ( FileName ) - 1 ] = 0 ; strcat ( FileName , FindFileData . cFileName ) ; strcat ( FileName , asc_84660C ) ; sub_751EA0 ( a3 , a4 ) ; v7 = v9 ; v4 = a1 ; } } } else { ++ * a3 ; * a4 += FindFileData . nFileSizeLow ; } } while ( "FindNextFileA " ( v7 , & FindFileData ) ) ; return ( HANDLE ) "FindClose " ( v7 ) ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __fastcall sub_751EA0(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4)
+{
+  const char *v4; // edi
+  int result; // eax
+  int v7; // esi
+  int v9; // [esp+10h] [ebp-248h]
+  char FileName[260]; // [esp+14h] [ebp-244h] BYREF
+  _DWORD FindFileData[80]; // [esp+118h] [ebp-140h] BYREF
+
+  v4 = a1;
+  result = ((int (__stdcall *)(const char *, _DWORD *))FindFirstFileA)(a1, FindFileData);
+  v7 = result;
+  v9 = result;
+  if ( result != -1 )
+  {
+    do
+    {
+      if ( (FindFileData[0] & 0x10) != 0 )
+      {
+        if ( _strcmpi(&FindFileData[11], asc_826598) )
+        {
+          if ( _strcmpi(&FindFileData[11], asc_846610) )
+          {
+            ++*a2;
+            strcpy(FileName, v4);
+            FileName[strlen(FileName) - 1] = 0;
+            strcat(FileName, (const char *)&FindFileData[11]);
+            strcat(FileName, asc_84660C);
+            sub_751EA0(a3, a4);
+            v7 = v9;
+            v4 = a1;
+          }
+        }
+      }
+      else
+      {
+        ++*a3;
+        *a4 += FindFileData[8];
+      }
+    }
+    while ( ((int (__stdcall *)(int, _DWORD *))FindNextFileA)(v7, FindFileData) );
+    return ((int (__stdcall *)(int))FindClose)(v7);
+  }
+  return result;
+}
+
+/* ASM:
+FileName        = OMOTestDerived ptr -244h
+FindFileData    = byte ptr -140h
+arg_0           = dword ptr  4
+arg_4           = dword ptr  8
+
+sub     esp, 24Ch
+push    ebp
+push    esi
+push    edi
+lea     eax, [esp+258h+FindFileData]
+mov     edi, ecx
+push    eax             ; lpFindFileData
+mov     ebp, edx
+push    edi             ; lpFileName
+mov     [esp+260h+var_24C], edi
+call    ds:__imp_FindFirstFileA
+mov     esi, eax
+cmp     esi, 0FFFFFFFFh
+mov     [esp+258h+var_248], esi
+jz      loc_752005
+push    ebx
+mov     ebx, [esp+25Ch+arg_4]
+
+loc_751ED7:                             ; CODE XREF: sub_751EA0+157↓j
+test    [esp+25Ch+FindFileData], 10h
+jz      loc_751FD1
+lea     ecx, [esp+25Ch+FindFileData+2Ch]
+push    offset asc_826598 ; "."
+push    ecx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      loc_751FE6
+lea     edx, [esp+25Ch+FindFileData+2Ch]
+push    offset asc_846610 ; ".."
+push    edx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      loc_751FE6
+mov     ecx, [ebp+0]
+xor     eax, eax
+inc     ecx
+lea     edx, [esp+25Ch+FileName]
+mov     [ebp+0], ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+sub     edi, ecx
+push    ebx
+mov     eax, ecx
+mov     esi, edi
+shr     ecx, 2
+mov     edi, edx
+lea     edx, [esp+260h+FileName]
+rep movsd
+mov     ecx, eax
+xor     eax, eax
+and     ecx, 3
+rep movsb
+lea     edi, [esp+260h+FileName]
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+lea     edi, [esp+260h+FindFileData+2Ch]
+mov     byte ptr [esp+ecx+260h+var_248+3], al
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     esi, edi
+mov     edi, edx
+mov     edx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+mov     ecx, edx
+dec     edi
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+lea     edx, [esp+260h+FileName]
+and     ecx, 3
+rep movsb
+mov     edi, offset asc_84660C ; "\\*"
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     esi, edi
+mov     edi, edx
+mov     edx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+mov     ecx, edx
+dec     edi
+shr     ecx, 2
+rep movsd
+mov     eax, [esp+260h+arg_0]
+mov     ecx, edx
+and     ecx, 3
+push    eax
+rep movsb
+mov     edx, ebp
+lea     ecx, [esp+264h+FileName]
+call    sub_751EA0
+mov     esi, [esp+25Ch+var_248]
+mov     edi, [esp+25Ch+var_24C]
+jmp     short loc_751FE6
+; ---------------------------------------------------------------------------
+
+loc_751FD1:                             ; CODE XREF: sub_751EA0+3F↑j
+mov     eax, [esp+25Ch+arg_0]
+mov     ecx, [eax]
+inc     ecx
+mov     [eax], ecx
+mov     ecx, dword ptr [esp+25Ch+FindFileData+20h]
+add     [ebx], ecx
+
+loc_751FE6:                             ; CODE XREF: sub_751EA0+5C↑j
+; sub_751EA0+79↑j ...
+lea     edx, [esp+25Ch+FindFileData]
+push    edx             ; lpFindFileData
+push    esi             ; hFindFile
+call    ds:__imp_FindNextFileA
+test    eax, eax
+jnz     loc_751ED7
+push    esi             ; hFindFile
+call    ds:__imp_FindClose
+pop     ebx
+
+loc_752005:                             ; CODE XREF: sub_751EA0+29↑j
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 24Ch
+retn    8
+*/
 }
 
 // 0x007830C0 (219 bytes)
 int Callstrcmpi_7830C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007830C0.json)
-    // Size: 219 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7830C0 ( signed int *a1, signed int *a2 ) { !signed int v2 ! ; // eax !int v3 ! ; // eax !signed int v5 ! ; // eax !signed int v6 ! ; // ecx !int v7 ! ; // eax !signed int v8 ! ; // eax !signed int v9 ! ; // eax _BYTE v10[108] ; // [esp+4h] [ebp-D8h] BYREF _BYTE v11[108] ; // [esp+70h] [ebp-6Ch] BYREF v2 = a1 [ 2 ] ; if ( v2 == a2 [ 2 ] ) { v5 = a1 [ 1 ] ; v6 = a2 [ 1 ] ; if ( v5 >= v6 ) { if ( v5 <= v6 ) { memset ( v11 , 0 , sizeof ( v11 ) ) ; memset ( v10 , 0 , sizeof ( v10 ) ) ; v8 = * a1 ; if ( * a1 >= 0 && v8 < ( int ) g_WOL_State ) qmemcpy ( v11 , ( char * ) g_WOL_ConnectionFlags + 108 * v8 , sizeof ( v11 ) ) ; v9 = * a2 ; if ( * a2 >= 0 && v9 < ( int ) g_WOL_State ) qmemcpy ( v10 , ( char * ) g_WOL_ConnectionFlags + 108 * v9 , sizeof ( v10 ) ) ; return _strcmpi ( & v11 [ 36 ] , & v10 [ 36 ] ) ; } else { return v6 != -1 ? 1 : -1 ; } } else { v7 = - ( v5 != -1 ) ; LOBYTE ( v7 ) = v7 & 0xFE ; return v7 + 1 ; } } else { v3 = - ( v2 != 0 ) ; LOBYTE ( v3 ) = v3 & 0xFE ; return v3 + 1 ; } }
-    return 0;
+// [IDA decompile]
+int __cdecl sub_7830C0(signed int *a1, signed int *a2)
+{
+  signed int v2; // eax
+  int v3; // eax
+  signed int v5; // eax
+  signed int v6; // ecx
+  int v7; // eax
+  signed int v8; // eax
+  signed int v9; // eax
+  _BYTE v10[108]; // [esp+4h] [ebp-D8h] BYREF
+  _BYTE v11[108]; // [esp+70h] [ebp-6Ch] BYREF
+
+  v2 = a1[2];
+  if ( v2 == a2[2] )
+  {
+    v5 = a1[1];
+    v6 = a2[1];
+    if ( v5 >= v6 )
+    {
+      if ( v5 <= v6 )
+      {
+        memset(v11, 0, sizeof(v11));
+        memset(v10, 0, sizeof(v10));
+        v8 = *a1;
+        if ( *a1 >= 0 && v8 < dword_A8ED54[238315] )
+          qmemcpy(v11, (const void *)(dword_A8ED54[238317] + 108 * v8), sizeof(v11));
+        v9 = *a2;
+        if ( *a2 >= 0 && v9 < dword_A8ED54[238315] )
+          qmemcpy(v10, (const void *)(dword_A8ED54[238317] + 108 * v9), sizeof(v10));
+        return _strcmpi(&v11[36], &v10[36]);
+      }
+      else
+      {
+        return v6 != -1 ? 1 : -1;
+      }
+    }
+    else
+    {
+      v7 = -(v5 != -1);
+      LOBYTE(v7) = v7 & 0xFE;
+      return v7 + 1;
+    }
+  }
+  else
+  {
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+  }
+}
+
+/* ASM:
+mov     edx, [esp+arg_0]
+sub     esp, 0D8h
+mov     eax, [edx+8]
+push    ebx
+mov     ebx, [esp+0DCh+arg_4]
+cmp     eax, [ebx+8]
+jz      short loc_7830E9
+neg     eax
+sbb     eax, eax
+pop     ebx
+and     al, 0FEh
+inc     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7830E9:                             ; CODE XREF: sub_7830C0+18↑j
+mov     eax, [edx+4]
+mov     ecx, [ebx+4]
+cmp     eax, ecx
+jge     short loc_783103
+inc     eax
+pop     ebx
+neg     eax
+sbb     eax, eax
+and     al, 0FEh
+inc     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_783103:                             ; CODE XREF: sub_7830C0+31↑j
+jle     short loc_783118
+mov     eax, ecx
+pop     ebx
+inc     eax
+neg     eax
+sbb     eax, eax
+and     eax, 2
+dec     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_783118:                             ; CODE XREF: sub_7830C0:loc_783103↑j
+push    ebp
+push    esi
+push    edi
+mov     ecx, 1Bh
+xor     eax, eax
+lea     edi, [esp+0E8h+var_6C]
+rep stosd
+mov     ebp, dword_A8ED54+0E8BACh
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+rep stosd
+mov     eax, [edx]
+mov     edx, dword_A8ED54+0E8BB4h
+test    eax, eax
+jl      short loc_78315D
+cmp     eax, ebp
+jge     short loc_78315D
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_6C]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_78315D:                             ; CODE XREF: sub_7830C0+83↑j
+; sub_7830C0+87↑j
+mov     eax, [ebx]
+test    eax, eax
+jl      short loc_78317B
+cmp     eax, ebp
+jge     short loc_78317B
+lea     eax, [eax+eax*2]
+lea     edi, [esp+0E8h+var_D8]
+lea     ecx, [eax+eax*8]
+lea     esi, [edx+ecx*4]
+mov     ecx, 1Bh
+rep movsd
+
+loc_78317B:                             ; CODE XREF: sub_7830C0+A1↑j
+; sub_7830C0+A5↑j
+lea     edx, [esp+0E8h+var_B4]
+lea     eax, [esp+0E8h+var_48]
+push    edx             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0D8h
+retn
+*/
 }
 
 // 0x007831A0 (208 bytes)
 int Callstrcmpi_7831A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007831A0.json)
-    // Size: 208 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7831A0 ( signed int *a1, signed int *a2 ) { !signed int v2 ! ; // eax !int v3 ! ; // eax !signed int v5 ! ; // eax !signed int v6 ! ; // ecx !signed int v7 ! ; // eax !signed int v8 ! ; // eax _BYTE v9[108] ; // [esp+4h] [ebp-D8h] BYREF _BYTE v10[108] ; // [esp+70h] [ebp-6Ch] BYREF v2 = a1 [ 2 ] ; if ( v2 == a2 [ 2 ] ) { v5 = a1 [ 1 ] ; v6 = a2 [ 1 ] ; if ( v5 <= v6 ) { if ( v5 >= v6 ) { memset ( v10 , 0 , sizeof ( v10 ) ) ; memset ( v9 , 0 , sizeof ( v9 ) ) ; v7 = * a1 ; if ( * a1 >= 0 && v7 < ( int ) g_WOL_State ) qmemcpy ( v10 , ( char * ) g_WOL_ConnectionFlags + 108 * v7 , sizeof ( v10 ) ) ; v8 = * a2 ; if ( * a2 >= 0 && v8 < ( int ) g_WOL_State ) qmemcpy ( v9 , ( char * ) g_WOL_ConnectionFlags + 108 * v8 , sizeof ( v9 ) ) ; return _strcmpi ( & v10 [ 36 ] , & v9 [ 36 ] ) ; } else { return 1 ; } } else { return -1 ; } } else { v3 = - ( v2 != 0 ) ; LOBYTE ( v3 ) = v3 & 0xFE ; return v3 + 1 ; } }
-    return 0;
+// [IDA decompile]
+int __cdecl sub_7831A0(signed int *a1, signed int *a2)
+{
+  signed int v2; // eax
+  int v3; // eax
+  signed int v5; // eax
+  signed int v6; // ecx
+  signed int v7; // eax
+  signed int v8; // eax
+  _BYTE v9[108]; // [esp+4h] [ebp-D8h] BYREF
+  _BYTE v10[108]; // [esp+70h] [ebp-6Ch] BYREF
+
+  v2 = a1[2];
+  if ( v2 == a2[2] )
+  {
+    v5 = a1[1];
+    v6 = a2[1];
+    if ( v5 <= v6 )
+    {
+      if ( v5 >= v6 )
+      {
+        memset(v10, 0, sizeof(v10));
+        memset(v9, 0, sizeof(v9));
+        v7 = *a1;
+        if ( *a1 >= 0 && v7 < dword_A8ED54[238315] )
+          qmemcpy(v10, (const void *)(dword_A8ED54[238317] + 108 * v7), sizeof(v10));
+        v8 = *a2;
+        if ( *a2 >= 0 && v8 < dword_A8ED54[238315] )
+          qmemcpy(v9, (const void *)(dword_A8ED54[238317] + 108 * v8), sizeof(v9));
+        return _strcmpi(&v10[36], &v9[36]);
+      }
+      else
+      {
+        return 1;
+      }
+    }
+    else
+    {
+      return -1;
+    }
+  }
+  else
+  {
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+  }
+}
+
+/* ASM:
+mov     edx, [esp+arg_0]
+sub     esp, 0D8h
+mov     eax, [edx+8]
+push    ebx
+mov     ebx, [esp+0DCh+arg_4]
+cmp     eax, [ebx+8]
+jz      short loc_7831C9
+neg     eax
+sbb     eax, eax
+pop     ebx
+and     al, 0FEh
+inc     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7831C9:                             ; CODE XREF: sub_7831A0+18↑j
+mov     eax, [edx+4]
+mov     ecx, [ebx+4]
+cmp     eax, ecx
+jle     short loc_7831DE
+or      eax, 0FFFFFFFFh
+pop     ebx
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7831DE:                             ; CODE XREF: sub_7831A0+31↑j
+jge     short loc_7831ED
+mov     eax, 1
+pop     ebx
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7831ED:                             ; CODE XREF: sub_7831A0:loc_7831DE↑j
+push    ebp
+push    esi
+push    edi
+mov     ecx, 1Bh
+xor     eax, eax
+lea     edi, [esp+0E8h+var_6C]
+rep stosd
+mov     ebp, dword_A8ED54+0E8BACh
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+rep stosd
+mov     eax, [edx]
+mov     edx, dword_A8ED54+0E8BB4h
+test    eax, eax
+jl      short loc_783232
+cmp     eax, ebp
+jge     short loc_783232
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_6C]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_783232:                             ; CODE XREF: sub_7831A0+78↑j
+; sub_7831A0+7C↑j
+mov     eax, [ebx]
+test    eax, eax
+jl      short loc_783250
+cmp     eax, ebp
+jge     short loc_783250
+lea     eax, [eax+eax*2]
+lea     edi, [esp+0E8h+var_D8]
+lea     ecx, [eax+eax*8]
+lea     esi, [edx+ecx*4]
+mov     ecx, 1Bh
+rep movsd
+
+loc_783250:                             ; CODE XREF: sub_7831A0+96↑j
+; sub_7831A0+9A↑j
+lea     edx, [esp+0E8h+var_B4]
+lea     eax, [esp+0E8h+var_48]
+push    edx             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0D8h
+retn
+*/
 }
 
 // 0x00783520 (79 bytes)
 const char* Callstrcmpi_783520() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00783520.json)
-    // Size: 79 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_783520 ( const char *a1, const char *a2 ) { !unsigned int v2 ! ; // kr04_4 !unsigned int v3 ! ; // kr08_4 v2 = strlen ( a1 ) + 1 ; v3 = strlen ( a2 ) + 1 ; if ( v2 == 1 ) return ( int ) ( v3 - 1 ) > 0 ; if ( v3 != 1 ) return _strcmpi ( a1 , a2 ) ; if ( ( int ) ( v2 - 1 ) <= 0 ) return ( int ) ( v3 - 1 ) > 0 ; else return -1 ; }
-    return nullptr;
+// [IDA decompile]
+int __cdecl sub_783520(const char *a1, const char *a2)
+{
+  unsigned int v2; // kr04_4
+  unsigned int v3; // kr08_4
+
+  v2 = strlen(a1) + 1;
+  v3 = strlen(a2) + 1;
+  if ( v2 == 1 )
+    return (int)(v3 - 1) > 0;
+  if ( v3 != 1 )
+    return _strcmpi(a1, a2);
+  if ( (int)(v2 - 1) <= 0 )
+    return (int)(v3 - 1) > 0;
+  else
+    return -1;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+push    edi
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     ebx, [esp+0Ch+arg_4]
+repne scasb
+not     ecx
+dec     ecx
+mov     edi, ebx
+mov     edx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+test    edx, edx
+jz      short loc_783564
+test    ecx, ecx
+jz      short loc_783559
+push    ebx             ; void *
+push    esi             ; void *
+call    __strcmpi
+add     esp, 8
+pop     edi
+pop     esi
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_783559:                             ; CODE XREF: sub_783520+29↑j
+test    edx, edx
+jle     short loc_783564
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_783564:                             ; CODE XREF: sub_783520+25↑j
+; sub_783520+3B↑j
+xor     eax, eax
+pop     edi
+test    ecx, ecx
+pop     esi
+pop     ebx
+setnle  al
+retn
+*/
 }
 
 // 0x00783570 (79 bytes)
 const char* Callstrcmpi_783570() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00783570.json)
-    // Size: 79 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_783570 ( const char *a1, const char *a2 ) { !unsigned int v2 ! ; // kr04_4 !unsigned int v3 ! ; // kr08_4 v2 = strlen ( a1 ) + 1 ; v3 = strlen ( a2 ) + 1 ; if ( v2 == 1 ) return ( int ) ( v3 - 1 ) > 0 ; if ( v3 != 1 ) return _strcmpi ( a2 , a1 ) ; if ( ( int ) ( v2 - 1 ) <= 0 ) return ( int ) ( v3 - 1 ) > 0 ; else return -1 ; }
-    return nullptr;
+// [IDA decompile]
+int __cdecl sub_783570(const char *a1, const char *a2)
+{
+  unsigned int v2; // kr04_4
+  unsigned int v3; // kr08_4
+
+  v2 = strlen(a1) + 1;
+  v3 = strlen(a2) + 1;
+  if ( v2 == 1 )
+    return (int)(v3 - 1) > 0;
+  if ( v3 != 1 )
+    return _strcmpi(a2, a1);
+  if ( (int)(v2 - 1) <= 0 )
+    return (int)(v3 - 1) > 0;
+  else
+    return -1;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+push    edi
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     ebx, [esp+0Ch+arg_4]
+repne scasb
+not     ecx
+dec     ecx
+mov     edi, ebx
+mov     edx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+test    edx, edx
+jz      short loc_7835B4
+test    ecx, ecx
+jz      short loc_7835A9
+push    esi             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+pop     edi
+pop     esi
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_7835A9:                             ; CODE XREF: sub_783570+29↑j
+test    edx, edx
+jle     short loc_7835B4
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_7835B4:                             ; CODE XREF: sub_783570+25↑j
+; sub_783570+3B↑j
+xor     eax, eax
+pop     edi
+test    ecx, ecx
+pop     esi
+pop     ebx
+setnle  al
+retn
+*/
 }
 
 // 0x007835C0 (284 bytes)
 int Callstrcmpi_7835C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007835C0.json)
-    // Size: 284 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7835C0 ( int a1, signed int *a2 ) { int v2 ; // eax !int v3 ! ; // eax !int result ! ; // eax !const char *v5 ! ; // edx !unsigned int v6 ! ; // kr04_4 !unsigned int v7 ! ; // kr08_4 !signed int v8 ! ; // eax !signed int v9 ! ; // eax _BYTE v10[108] ; // [esp+4h] [ebp-D8h] BYREF _BYTE v11[108] ; // [esp+70h] [ebp-6Ch] BYREF v2 = * ( _DWORD * ) ( a1 + 8 ) ; if ( v2 != a2 [ 2 ] ) { v3 = - ( v2 != 0 ) ; LOBYTE ( v3 ) = v3 & 0xFE ; return v3 + 1 ; } v5 = ( const char * ) a2 [ 1 ] ; v6 = strlen ( * ( const char ** ) ( a1 + 4 ) ) + 1 ; v7 = strlen ( v5 ) + 1 ; if ( v6 != 1 ) { if ( v7 != 1 ) { result = _strcmpi ( * ( const void ** ) ( a1 + 4 ) , v5 ) ; if ( result ) return result ; goto LABEL_6 ; } if ( ( int ) ( v6 - 1 ) > 0 ) return -1 ; } if ( ( int ) ( v7 - 1 ) > 0 ) return 1 ; LABEL_6 : memset ( v11 , 0 , sizeof ( v11 ) ) ; memset ( v10 , 0 , sizeof ( v10 ) ) ; v8 = * ( _DWORD * ) a1 ; if ( * ( int * ) a1 >= 0 && v8 < ( int ) g_WOL_State ) qmemcpy ( v11 , ( char * ) g_WOL_ConnectionFlags + 108 * v8 , sizeof ( v11 ) ) ; v9 = * a2 ; if ( * a2 >= 0 && v9 < ( int ) g_WOL_State ) qmemcpy ( v10 , ( char * ) g_WOL_ConnectionFlags + 108 * v9 , sizeof ( v10 ) ) ; return _strcmpi ( & v11 [ 36 ] , & v10 [ 36 ] ) ; }
-    return 0;
+// [IDA decompile]
+int __cdecl sub_7835C0(int a1, signed int *a2)
+{
+  int v2; // eax
+  int v3; // eax
+  int result; // eax
+  const char *v5; // edx
+  unsigned int v6; // kr04_4
+  unsigned int v7; // kr08_4
+  signed int v8; // eax
+  signed int v9; // eax
+  _BYTE v10[108]; // [esp+4h] [ebp-D8h] BYREF
+  _BYTE v11[108]; // [esp+70h] [ebp-6Ch] BYREF
+
+  v2 = *(_DWORD *)(a1 + 8);
+  if ( v2 != a2[2] )
+  {
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+  }
+  v5 = (const char *)a2[1];
+  v6 = strlen(*(const char **)(a1 + 4)) + 1;
+  v7 = strlen(v5) + 1;
+  if ( v6 != 1 )
+  {
+    if ( v7 != 1 )
+    {
+      result = _strcmpi(*(const void **)(a1 + 4), v5);
+      if ( result )
+        return result;
+      goto LABEL_6;
+    }
+    if ( (int)(v6 - 1) > 0 )
+      return -1;
+  }
+  if ( (int)(v7 - 1) > 0 )
+    return 1;
+LABEL_6:
+  memset(v11, 0, sizeof(v11));
+  memset(v10, 0, sizeof(v10));
+  v8 = *(_DWORD *)a1;
+  if ( *(int *)a1 >= 0 && v8 < dword_A8ED54[238315] )
+    qmemcpy(v11, (const void *)(dword_A8ED54[238317] + 108 * v8), sizeof(v11));
+  v9 = *a2;
+  if ( *a2 >= 0 && v9 < dword_A8ED54[238315] )
+    qmemcpy(v10, (const void *)(dword_A8ED54[238317] + 108 * v9), sizeof(v10));
+  return _strcmpi(&v11[36], &v10[36]);
+}
+
+/* ASM:
+mov     ecx, [esp+arg_4]
+sub     esp, 0D8h
+mov     edx, [ecx+8]
+push    ebp
+mov     ebp, [esp+0DCh+arg_0]
+mov     eax, [ebp+8]
+cmp     eax, edx
+jz      short loc_7835EB
+neg     eax
+sbb     eax, eax
+pop     ebp
+and     al, 0FEh
+inc     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7835EB:                             ; CODE XREF: sub_7835C0+1A↑j
+mov     edx, [ecx+4]
+push    ebx
+push    esi
+mov     esi, [ebp+4]
+push    edi
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+mov     edi, edx
+mov     ebx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+test    ebx, ebx
+jz      loc_7836C4
+test    ecx, ecx
+jz      loc_7836B2
+push    edx             ; void *
+push    esi             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jnz     short loc_7836A7
+
+loc_78362A:                             ; CODE XREF: sub_7835C0+106↓j
+mov     ecx, 1Bh
+xor     eax, eax
+lea     edi, [esp+0E8h+var_6C]
+mov     edx, dword_A8ED54+0E8BB4h
+rep stosd
+mov     ebx, dword_A8ED54+0E8BACh
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+rep stosd
+mov     eax, [ebp+0]
+test    eax, eax
+jl      short loc_78366D
+cmp     eax, ebx
+jge     short loc_78366D
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_6C]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_78366D:                             ; CODE XREF: sub_7835C0+93↑j
+; sub_7835C0+97↑j
+mov     ecx, [esp+0E8h+arg_4]
+mov     eax, [ecx]
+test    eax, eax
+jl      short loc_783692
+cmp     eax, ebx
+jge     short loc_783692
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_783692:                             ; CODE XREF: sub_7835C0+B8↑j
+; sub_7835C0+BC↑j
+lea     ecx, [esp+0E8h+var_B4]
+lea     edx, [esp+0E8h+var_48]
+push    ecx             ; void *
+push    edx             ; void *
+call    __strcmpi
+add     esp, 8
+
+loc_7836A7:                             ; CODE XREF: sub_7835C0+68↑j
+pop     edi
+pop     esi
+pop     ebx
+pop     ebp
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7836B2:                             ; CODE XREF: sub_7835C0+56↑j
+test    ebx, ebx
+jle     short loc_7836C4
+pop     edi
+pop     esi
+pop     ebx
+or      eax, 0FFFFFFFFh
+pop     ebp
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7836C4:                             ; CODE XREF: sub_7835C0+4E↑j
+; sub_7835C0+F4↑j
+test    ecx, ecx
+jle     loc_78362A
+pop     edi
+pop     esi
+pop     ebx
+mov     eax, 1
+pop     ebp
+add     esp, 0D8h
+retn
+*/
 }
 
 // 0x007836E0 (284 bytes)
 void Callstrcmpi_7836E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007836E0.json)
-    // Size: 284 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7836E0 ( const void *a1, signed int *a2 ) { int v2 ; // eax !int v3 ! ; // eax int result ; // eax !const char *v5 ! ; // edx !unsigned int v6 ! ; // kr04_4 !unsigned int v7 ! ; // kr08_4 !signed int v8 ! ; // eax !signed int v9 ! ; // eax _BYTE v10[108] ; // [esp+4h] [ebp-D8h] BYREF _BYTE v11[108] ; // [esp+70h] [ebp-6Ch] BYREF v2 = * ( ( _DWORD * ) a1 + 2 ) ; if ( v2 != a2 [ 2 ] ) { v3 = - ( v2 != 0 ) ; LOBYTE ( v3 ) = v3 & 0xFE ; return v3 + 1 ; } v5 = ( const char * ) a2 [ 1 ] ; v6 = strlen ( * ( ( const char ** ) a1 + 1 ) ) + 1 ; v7 = strlen ( v5 ) + 1 ; if ( v6 != 1 ) { if ( v7 != 1 ) { result = _strcmpi ( v5 , * ( ( const void ** ) a1 + 1 ) ) ; if ( result ) return result ; goto LABEL_6 ; } if ( ( int ) ( v6 - 1 ) > 0 ) return -1 ; } if ( ( int ) ( v7 - 1 ) > 0 ) return 1 ; LABEL_6 : memset ( v11 , 0 , sizeof ( v11 ) ) ; memset ( v10 , 0 , sizeof ( v10 ) ) ; v8 = * ( _DWORD * ) a1 ; if ( * ( int * ) a1 >= 0 && v8 < ( int ) g_WOL_State ) qmemcpy ( v11 , ( char * ) g_WOL_ConnectionFlags + 108 * v8 , sizeof ( v11 ) ) ; v9 = * a2 ; if ( * a2 >= 0 && v9 < ( int ) g_WOL_State ) qmemcpy ( v10 , ( char * ) g_WOL_ConnectionFlags + 108 * v9 , sizeof ( v10 ) ) ; return _strcmpi ( & v11 [ 36 ] , & v10 [ 36 ] ) ; }
-    
+// [IDA decompile]
+int __cdecl sub_7836E0(const void *a1, signed int *a2)
+{
+  int v2; // eax
+  int v3; // eax
+  int result; // eax
+  const char *v5; // edx
+  unsigned int v6; // kr04_4
+  unsigned int v7; // kr08_4
+  signed int v8; // eax
+  signed int v9; // eax
+  _BYTE v10[108]; // [esp+4h] [ebp-D8h] BYREF
+  _BYTE v11[108]; // [esp+70h] [ebp-6Ch] BYREF
+
+  v2 = *((_DWORD *)a1 + 2);
+  if ( v2 != a2[2] )
+  {
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+  }
+  v5 = (const char *)a2[1];
+  v6 = strlen(*((const char **)a1 + 1)) + 1;
+  v7 = strlen(v5) + 1;
+  if ( v6 != 1 )
+  {
+    if ( v7 != 1 )
+    {
+      result = _strcmpi(v5, *((const void **)a1 + 1));
+      if ( result )
+        return result;
+      goto LABEL_6;
+    }
+    if ( (int)(v6 - 1) > 0 )
+      return -1;
+  }
+  if ( (int)(v7 - 1) > 0 )
+    return 1;
+LABEL_6:
+  memset(v11, 0, sizeof(v11));
+  memset(v10, 0, sizeof(v10));
+  v8 = *(_DWORD *)a1;
+  if ( *(int *)a1 >= 0 && v8 < dword_A8ED54[238315] )
+    qmemcpy(v11, (const void *)(dword_A8ED54[238317] + 108 * v8), sizeof(v11));
+  v9 = *a2;
+  if ( *a2 >= 0 && v9 < dword_A8ED54[238315] )
+    qmemcpy(v10, (const void *)(dword_A8ED54[238317] + 108 * v9), sizeof(v10));
+  return _strcmpi(&v11[36], &v10[36]);
+}
+
+/* ASM:
+mov     ecx, [esp+arg_4]
+sub     esp, 0D8h
+mov     edx, [ecx+8]
+push    ebp
+mov     ebp, [esp+0DCh+arg_0]
+mov     eax, [ebp+8]
+cmp     eax, edx
+jz      short loc_78370B
+neg     eax
+sbb     eax, eax
+pop     ebp
+and     al, 0FEh
+inc     eax
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_78370B:                             ; CODE XREF: sub_7836E0+1A↑j
+mov     edx, [ecx+4]
+push    ebx
+push    esi
+mov     esi, [ebp+4]
+push    edi
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+mov     edi, edx
+mov     ebx, ecx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+test    ebx, ebx
+jz      loc_7837E4
+test    ecx, ecx
+jz      loc_7837D2
+push    esi             ; void *
+push    edx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jnz     short loc_7837C7
+
+loc_78374A:                             ; CODE XREF: sub_7836E0+106↓j
+mov     ecx, 1Bh
+xor     eax, eax
+lea     edi, [esp+0E8h+var_6C]
+mov     edx, dword_A8ED54+0E8BB4h
+rep stosd
+mov     ebx, dword_A8ED54+0E8BACh
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+rep stosd
+mov     eax, [ebp+0]
+test    eax, eax
+jl      short loc_78378D
+cmp     eax, ebx
+jge     short loc_78378D
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_6C]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_78378D:                             ; CODE XREF: sub_7836E0+93↑j
+; sub_7836E0+97↑j
+mov     ecx, [esp+0E8h+arg_4]
+mov     eax, [ecx]
+test    eax, eax
+jl      short loc_7837B2
+cmp     eax, ebx
+jge     short loc_7837B2
+lea     eax, [eax+eax*2]
+mov     ecx, 1Bh
+lea     edi, [esp+0E8h+var_D8]
+lea     eax, [eax+eax*8]
+lea     esi, [edx+eax*4]
+rep movsd
+
+loc_7837B2:                             ; CODE XREF: sub_7836E0+B8↑j
+; sub_7836E0+BC↑j
+lea     ecx, [esp+0E8h+var_B4]
+lea     edx, [esp+0E8h+var_48]
+push    ecx             ; void *
+push    edx             ; void *
+call    __strcmpi
+add     esp, 8
+
+loc_7837C7:                             ; CODE XREF: sub_7836E0+68↑j
+pop     edi
+pop     esi
+pop     ebx
+pop     ebp
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7837D2:                             ; CODE XREF: sub_7836E0+56↑j
+test    ebx, ebx
+jle     short loc_7837E4
+pop     edi
+pop     esi
+pop     ebx
+or      eax, 0FFFFFFFFh
+pop     ebp
+add     esp, 0D8h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7837E4:                             ; CODE XREF: sub_7836E0+4E↑j
+; sub_7836E0+F4↑j
+test    ecx, ecx
+jle     loc_78374A
+pop     edi
+pop     esi
+pop     ebx
+mov     eax, 1
+pop     ebp
+add     esp, 0D8h
+retn
+*/
 }
 
 // 0x005C7BA0 (462 bytes)
 const char* Calltoupper_5C7BA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005C7BA0.json)
-    // Size: 462 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_5C7BA0 ( const char *a1, unsigned __int16 *a2, int a3 ) { !unsigned __int16 *v3 ! ; // ebp !const char *v4 ! ; // esi !unsigned __int16 *v5 ! ; // eax !unsigned int v6 ! ; // kr04_4 int v7 ; // ebx unsigned __int8 *v8 ; // esi !unsigned int v9 ! ; // ebx !int v10 ! ; // eax !unsigned int v11 ! ; // edx !unsigned __int16 *v12 ! ; // ecx !int v13 ! ; // esi !unsigned __int16 v14 ! ; // ax !unsigned int v15 ! ; // eax !unsigned int *v16 ! ; // edi !unsigned int *v17 ! ; // edx !int v18 ! ; // ebp !unsigned int v19 ! ; // esi !unsigned int v20 ! ; // eax !int *v21 ! ; // eax !int v22 ! ; // ecx int v23 ; // esi !int v24 ! ; // ecx !bool v25 ! ; // zf !bool v27 ! ; // [esp+Fh] [ebp-11h] !__int16 v28 ! ; // [esp+10h] [ebp-10h] !bool v29 ! ; // [esp+14h] [ebp-Ch] unsigned __int8 *i ; // [esp+18h] [ebp-8h] v3 = a2 ; v4 = a1 ; LOBYTE ( v5 ) = 0 ; memset ( a2 , 0 , 4 * a3 ) ; * ( _DWORD * ) a2 = 0 ; if ( a1 ) { v6 = strlen ( a1 ) + 1 ; if ( v6 != 1 ) { switch ( toupper ( v4 [ v6 - 2 ] ) ) { case 'B' : v28 = 2 ; break ; case 'H' : v28 = 16 ; break ; case 'O' : v28 = 8 ; break ; default : v28 = 10 ; break ; } v27 = * v4 == 45 ; if ( * v4 == 45 ) ++ v4 ; v7 = * ( unsigned __int8 * ) v4 ; v8 = ( unsigned __int8 * ) ( v4 + 1 ) ; for ( i = v8 ; v7 ; i = v8 ) { if ( v7 != 44 ) { if ( ! isxdigit ( ( char ) v7 ) ) break ; v9 = isdigit ( ( char ) v7 ) ? v7 - 48 : ( unsigned __int8 ) ( toupper ( ( char ) v7 ) - 65 ) + 10 ; if ( v9 >= ( unsigned __int16 ) v28 ) break ; v10 = a3 ; v11 = 0 ; v12 = v3 ; v13 = 2 * a3 ; if ( 2 * a3 > 0 ) { do { v14 = * v12 ++ ; v15 = v11 + v28 * v14 ; * ( v12 - 1 ) = v15 ; -- v13 ; v11 = HIWORD ( v15 ) ; } while ( v13 ) ; v10 = a3 ; } v29 = 0 ; v16 = ( unsigned int * ) v3 ; v17 = ( unsigned int * ) v3 ; if ( v10 ) { v18 = v10 ; do { v19 = * v16 + v9 ; v20 = v19 + v29 ; v29 = v19 < * v16 || v29 && ! v20 ; * v17 = v20 ; v9 = 0 ; ++ v16 ; ++ v17 ; -- v18 ; } while ( v18 ) ; v3 = a2 ; } v8 = i ; } v7 = * v8 ++ ; } LOBYTE ( v5 ) = v27 ; if ( v27 ) { v21 = ( int * ) v3 ; if ( a3 > 0 ) { v22 = a3 ; do { v23 = * v21 ++ ; * ( v21 - 1 ) = ~ v23 ; -- v22 ; } while ( v22 ) ; } v24 = a3 ; v25 = * ( _DWORD * ) v3 == -1 ; v5 = v3 ; ++ * ( _DWORD * ) v3 ; for ( ; v25 ; v25 = ( * ( _DWORD * ) v5 ) ++ == -1 ) { v5 += 2 ; if ( ! -- v24 ) break ; } } } } return ( char ) v5 ; }
-    return nullptr;
+// [IDA decompile]
+char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
+{
+  unsigned __int16 *v3; // ebp
+  const char *v4; // esi
+  unsigned __int16 *v5; // eax
+  unsigned int v6; // kr04_4
+  int v7; // ebx
+  unsigned __int8 *v8; // esi
+  unsigned int v9; // ebx
+  int v10; // eax
+  unsigned int v11; // edx
+  unsigned __int16 *v12; // ecx
+  int v13; // esi
+  unsigned __int16 v14; // ax
+  unsigned int v15; // eax
+  unsigned int *v16; // edi
+  unsigned int *v17; // edx
+  int v18; // ebp
+  unsigned int v19; // esi
+  unsigned int v20; // eax
+  int *v21; // eax
+  int v22; // ecx
+  int v23; // esi
+  int v24; // ecx
+  bool v25; // zf
+  bool v27; // [esp+Fh] [ebp-11h]
+  __int16 v28; // [esp+10h] [ebp-10h]
+  bool v29; // [esp+14h] [ebp-Ch]
+  unsigned __int8 *i; // [esp+18h] [ebp-8h]
+
+  v3 = a2;
+  v4 = a1;
+  LOBYTE(v5) = 0;
+  memset(a2, 0, 4 * a3);
+  *(_DWORD *)a2 = 0;
+  if ( a1 )
+  {
+    v6 = strlen(a1) + 1;
+    if ( v6 != 1 )
+    {
+      switch ( toupper(v4[v6 - 2]) )
+      {
+        case 'B':
+          v28 = 2;
+          break;
+        case 'H':
+          v28 = 16;
+          break;
+        case 'O':
+          v28 = 8;
+          break;
+        default:
+          v28 = 10;
+          break;
+      }
+      v27 = *v4 == 45;
+      if ( *v4 == 45 )
+        ++v4;
+      v7 = *(unsigned __int8 *)v4;
+      v8 = (unsigned __int8 *)(v4 + 1);
+      for ( i = v8; v7; i = v8 )
+      {
+        if ( v7 != 44 )
+        {
+          if ( !isxdigit((char)v7) )
+            break;
+          v9 = isdigit((char)v7) ? v7 - 48 : (unsigned __int8)(toupper((char)v7) - 65) + 10;
+          if ( v9 >= (unsigned __int16)v28 )
+            break;
+          v10 = a3;
+          v11 = 0;
+          v12 = v3;
+          v13 = 2 * a3;
+          if ( 2 * a3 > 0 )
+          {
+            do
+            {
+              v14 = *v12++;
+              v15 = v11 + v28 * v14;
+              *(v12 - 1) = v15;
+              --v13;
+              v11 = HIWORD(v15);
+            }
+            while ( v13 );
+            v10 = a3;
+          }
+          v29 = 0;
+          v16 = (unsigned int *)v3;
+          v17 = (unsigned int *)v3;
+          if ( v10 )
+          {
+            v18 = v10;
+            do
+            {
+              v19 = *v16 + v9;
+              v20 = v19 + v29;
+              v29 = v19 < *v16 || v29 && !v20;
+              *v17 = v20;
+              v9 = 0;
+              ++v16;
+              ++v17;
+              --v18;
+            }
+            while ( v18 );
+            v3 = a2;
+          }
+          v8 = i;
+        }
+        v7 = *v8++;
+      }
+      LOBYTE(v5) = v27;
+      if ( v27 )
+      {
+        v21 = (int *)v3;
+        if ( a3 > 0 )
+        {
+          v22 = a3;
+          do
+          {
+            v23 = *v21++;
+            *(v21 - 1) = ~v23;
+            --v22;
+          }
+          while ( v22 );
+        }
+        v24 = a3;
+        v25 = *(_DWORD *)v3 == -1;
+        v5 = v3;
+        ++*(_DWORD *)v3;
+        for ( ; v25; v25 = (*(_DWORD *)v5)++ == -1 )
+        {
+          v5 += 2;
+          if ( !--v24 )
+            break;
+        }
+      }
+    }
+  }
+  return (char)v5;
+}
+
+/* ASM:
+sub     esp, 14h
+push    ebp
+push    esi
+mov     ebp, edx
+mov     esi, ecx
+mov     ecx, [esp+1Ch+arg_0]
+push    edi
+xor     eax, eax
+mov     edi, ebp
+rep stosd
+test    esi, esi
+mov     [esp+20h+var_4], ebp
+mov     [ebp+0], eax
+jz      loc_5C7D65
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+jz      loc_5C7D65
+movsx   eax, byte ptr [ecx+esi-1]
+push    eax             ; C
+call    _toupper
+add     eax, 0FFFFFFD2h ; switch 34 cases
+add     esp, 4
+cmp     eax, 21h
+ja      short def_5C7BF1 ; jumptable 005C7BF1 default case, cases 46-65,67-71,73-78
+xor     ecx, ecx
+mov     cl, ds:byte_5C7D84[eax]
+jmp     ds:jpt_5C7BF1[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_5C7BF8:                             ; CODE XREF: sub_5C7BA0+51↑j
+; DATA XREF: .text:jpt_5C7BF1↓o
+mov     [esp+20h+var_10], 10h ; jumptable 005C7BF1 case 72
+jmp     short loc_5C7C1E
+; ---------------------------------------------------------------------------
+
+loc_5C7C02:                             ; CODE XREF: sub_5C7BA0+51↑j
+; DATA XREF: .text:jpt_5C7BF1↓o
+mov     [esp+20h+var_10], 8 ; jumptable 005C7BF1 case 79
+jmp     short loc_5C7C1E
+; ---------------------------------------------------------------------------
+
+loc_5C7C0C:                             ; CODE XREF: sub_5C7BA0+51↑j
+; DATA XREF: .text:jpt_5C7BF1↓o
+mov     [esp+20h+var_10], 2 ; jumptable 005C7BF1 case 66
+jmp     short loc_5C7C1E
+; ---------------------------------------------------------------------------
+
+def_5C7BF1:                             ; CODE XREF: sub_5C7BA0+47↑j
+; sub_5C7BA0+51↑j
+; DATA XREF: ...
+mov     [esp+20h+var_10], 0Ah ; jumptable 005C7BF1 default case, cases 46-65,67-71,73-78
+
+loc_5C7C1E:                             ; CODE XREF: sub_5C7BA0+60↑j
+; sub_5C7BA0+6A↑j ...
+cmp     byte ptr [esi], 2Dh ; '-'
+setz    al
+test    al, al
+mov     [esp+20h+var_11], al
+jz      short loc_5C7C2D
+inc     esi
+
+loc_5C7C2D:                             ; CODE XREF: sub_5C7BA0+8A↑j
+push    ebx
+xor     ebx, ebx
+mov     bl, [esi]
+inc     esi
+test    ebx, ebx
+mov     [esp+24h+var_8], esi
+jz      loc_5C7D29
+
+loc_5C7C3F:                             ; CODE XREF: sub_5C7BA0+183↓j
+cmp     ebx, 2Ch ; ','
+jz      loc_5C7D18
+movsx   esi, bl
+push    esi             ; C
+call    _isxdigit
+add     esp, 4
+test    eax, eax
+jz      loc_5C7D29
+push    esi             ; C
+call    _isdigit
+add     esp, 4
+test    eax, eax
+jz      short loc_5C7C6E
+sub     ebx, 30h ; '0'
+jmp     short loc_5C7C85
+; ---------------------------------------------------------------------------
+
+loc_5C7C6E:                             ; CODE XREF: sub_5C7BA0+C7↑j
+push    esi             ; C
+call    _toupper
+mov     ebx, eax
+add     esp, 4
+sub     bl, 41h ; 'A'
+and     ebx, 0FFh
+add     ebx, 0Ah
+
+loc_5C7C85:                             ; CODE XREF: sub_5C7BA0+CC↑j
+mov     edi, [esp+24h+var_10]
+mov     edx, edi
+and     edx, 0FFFFh
+cmp     ebx, edx
+jnb     loc_5C7D29
+mov     eax, [esp+24h+arg_0]
+xor     edx, edx
+mov     ecx, ebp
+lea     esi, [eax+eax]
+test    esi, esi
+jle     short loc_5C7CC8
+movsx   edi, di
+
+loc_5C7CAB:                             ; CODE XREF: sub_5C7BA0+122↓j
+xor     eax, eax
+mov     ax, [ecx]
+add     ecx, 2
+imul    eax, edi
+add     eax, edx
+mov     [ecx-2], ax
+shr     eax, 10h
+dec     esi
+mov     edx, eax
+jnz     short loc_5C7CAB
+mov     eax, [esp+24h+arg_0]
+
+loc_5C7CC8:                             ; CODE XREF: sub_5C7BA0+106↑j
+test    eax, eax
+mov     byte ptr [esp+24h+var_C], 0
+mov     edi, ebp
+mov     edx, ebp
+jz      short loc_5C7D14
+lea     ebp, [eax]
+
+loc_5C7CD7:                             ; CODE XREF: sub_5C7BA0+16E↓j
+mov     ecx, [edi]
+mov     eax, [esp+24h+var_C]
+and     eax, 0FFh
+lea     esi, [ecx+ebx]
+add     eax, esi
+cmp     esi, ecx
+jb      short loc_5C7CFE
+mov     cl, byte ptr [esp+24h+var_C]
+test    cl, cl
+jz      short loc_5C7CF7
+test    eax, eax
+jz      short loc_5C7CFE
+
+loc_5C7CF7:                             ; CODE XREF: sub_5C7BA0+151↑j
+mov     byte ptr [esp+24h+var_C], 0
+jmp     short loc_5C7D03
+; ---------------------------------------------------------------------------
+
+loc_5C7CFE:                             ; CODE XREF: sub_5C7BA0+149↑j
+; sub_5C7BA0+155↑j
+mov     byte ptr [esp+24h+var_C], 1
+
+loc_5C7D03:                             ; CODE XREF: sub_5C7BA0+15C↑j
+mov     [edx], eax
+xor     ebx, ebx
+add     edi, 4
+add     edx, 4
+dec     ebp
+jnz     short loc_5C7CD7
+mov     ebp, [esp+24h+var_4]
+
+loc_5C7D14:                             ; CODE XREF: sub_5C7BA0+133↑j
+mov     esi, [esp+24h+var_8]
+
+loc_5C7D18:                             ; CODE XREF: sub_5C7BA0+A2↑j
+xor     ebx, ebx
+mov     bl, [esi]
+inc     esi
+test    ebx, ebx
+mov     [esp+24h+var_8], esi
+jnz     loc_5C7C3F
+
+loc_5C7D29:                             ; CODE XREF: sub_5C7BA0+99↑j
+; sub_5C7BA0+B6↑j ...
+mov     al, [esp+24h+var_11]
+pop     ebx
+test    al, al
+jz      short loc_5C7D65
+mov     edx, [esp+20h+arg_0]
+mov     eax, ebp
+test    edx, edx
+jle     short loc_5C7D4B
+mov     ecx, edx
+
+loc_5C7D3E:                             ; CODE XREF: sub_5C7BA0+1A9↓j
+mov     esi, [eax]
+add     eax, 4
+not     esi
+mov     [eax-4], esi
+dec     ecx
+jnz     short loc_5C7D3E
+
+loc_5C7D4B:                             ; CODE XREF: sub_5C7BA0+19A↑j
+mov     ecx, edx
+mov     edx, [ebp+0]
+inc     edx
+mov     eax, ebp
+mov     [ebp+0], edx
+jnz     short loc_5C7D65
+
+loc_5C7D58:                             ; CODE XREF: sub_5C7BA0+1C3↓j
+add     eax, 4
+dec     ecx
+jz      short loc_5C7D65
+mov     edx, [eax]
+inc     edx
+mov     [eax], edx
+jz      short loc_5C7D58
+
+loc_5C7D65:                             ; CODE XREF: sub_5C7BA0+1D↑j
+; sub_5C7BA0+2D↑j ...
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 14h
+retn    4
+*/
 }
 
 // 0x00789630 (103 bytes)
 void DeleteString_789630() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00789630.json)
-    // Size: 103 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char **__fastcall sub_789630 ( char **a1, int a2 ) { !int v3 ! ; // eax void *v5 ; // [esp+4h] [ebp-8h] BYREF !int v6 ! ; // [esp+8h] [ebp-4h] BYREF String::Assign ( ( char ** ) & v5 , ( const char * ) ( a2 + 24 ) ) ; unknown_libname_73 ( & v6 ) ; v3 = String::Tokenize ( ( const char ** ) & v5 , 0 , asc_8318B8 , ( void ** ) & v6 ) ; if ( v3 >= 0 ) String::Erase ( ( const char ** ) & v5 , 0 , v3 + 1 ) ; String::AssignFromPtr ( a1 , ( const char ** ) & v5 ) ; DeleteAndZero ( ( void ** ) & v6 ) ; DeleteAndZero ( & v5 ) ; return a1 ; }
-    
+// [IDA decompile]
+char **__fastcall sub_789630(char **a1, int a2)
+{
+  int v3; // eax
+  void *v5; // [esp+4h] [ebp-8h] BYREF
+  int v6; // [esp+8h] [ebp-4h] BYREF
+
+  String::Assign((char **)&v5, (const char *)(a2 + 24));
+  unknown_libname_73(&v6);
+  v3 = String::Tokenize((const char **)&v5, 0, asc_8318B8, (void **)&v6);
+  if ( v3 >= 0 )
+    String::Erase((const char **)&v5, 0, v3 + 1);
+  String::AssignFromPtr(a1, (const char **)&v5);
+  DeleteAndZero((void **)&v6);
+  DeleteAndZero(&v5);
+  return a1;
+}
+
+/* ASM:
+sub     esp, 8
+add     edx, 18h
+push    esi
+mov     esi, ecx
+push    edx
+lea     ecx, [esp+10h+var_8]
+call    String__Assign
+lea     ecx, [esp+0Ch+var_4]
+call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
+lea     eax, [esp+0Ch+var_4]
+lea     ecx, [esp+0Ch+var_8]
+push    eax             ; int
+push    offset asc_8318B8 ; ":"
+push    0               ; int
+call    String__Tokenize
+test    eax, eax
+jl      short loc_789672
+inc     eax
+lea     ecx, [esp+0Ch+var_8]
+push    eax
+push    0
+call    String__Erase
+
+loc_789672:                             ; CODE XREF: sub_789630+33↑j
+lea     ecx, [esp+0Ch+var_8]
+push    ecx
+mov     ecx, esi
+call    String__AssignFromPtr
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+var_8]
+call    DeleteAndZero
+mov     eax, esi
+pop     esi
+add     esp, 8
+retn
+*/
 }
 
 // 0x0079F0A0 (152 bytes)
 const char* GetString_79F0A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0079F0A0.json)
-    // Size: 152 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_79F0A0 ( char **a1, int *a2, char *a3 ) { char *v3 ; // esi !int v5 ! ; // eax !int v6 ! ; // edi !int v7 ! ; // ebp !char *v8 ! ; // eax !int v10 ! ; // [esp+10h] [ebp-8h] v3 = a3 ; memset ( a3 , 0 , 0x10Cu ) ; v5 = * a2 ; v6 = 0 ; v10 = 0 ; if ( * a2 <= 0 ) { LABEL_8 : memset ( v3 , 0 , 0x10Cu ) ; return 0 ; } else { v7 = 0 ; while ( 1 ) { if ( v7 >= 0 && v6 < v5 ) { qmemcpy ( a3 , ( const void * ) ( v7 + a2 [ 2 ] ) , 0x10Cu ) ; v3 = a3 ; v6 = v10 ; } v8 = String::GetOrEmpty_Alt ( a1 ) ; if ( ! _strcmpi ( v3 + 52 , v8 ) ) return 1 ; v5 = * a2 ; ++ v6 ; v7 += 268 ; v10 = v6 ; if ( v6 >= * a2 ) goto LABEL_8 ; } } }
-    return nullptr;
+// [IDA decompile]
+char __fastcall sub_79F0A0(char **a1, int *a2, char *a3)
+{
+  char *v3; // esi
+  int v5; // eax
+  int v6; // edi
+  int v7; // ebp
+  char *v8; // eax
+  int v10; // [esp+10h] [ebp-8h]
+
+  v3 = a3;
+  memset(a3, 0, 0x10Cu);
+  v5 = *a2;
+  v6 = 0;
+  v10 = 0;
+  if ( *a2 <= 0 )
+  {
+LABEL_8:
+    memset(v3, 0, 0x10Cu);
+    return 0;
+  }
+  else
+  {
+    v7 = 0;
+    while ( 1 )
+    {
+      if ( v7 >= 0 && v6 < v5 )
+      {
+        qmemcpy(a3, (const void *)(v7 + a2[2]), 0x10Cu);
+        v3 = a3;
+        v6 = v10;
+      }
+      v8 = String::GetOrEmpty_Alt(a1);
+      if ( !_strcmpi(v3 + 52, v8) )
+        return 1;
+      v5 = *a2;
+      ++v6;
+      v7 += 268;
+      v10 = v6;
+      if ( v6 >= *a2 )
+        goto LABEL_8;
+    }
+  }
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+mov     esi, [esp+14h+arg_0]
+mov     [esp+14h+var_4], ecx
+push    edi
+mov     ebx, edx
+mov     ecx, 43h ; 'C'
+xor     eax, eax
+mov     edi, esi
+rep stosd
+mov     eax, [ebx]
+xor     edi, edi
+test    eax, eax
+mov     [esp+18h+var_8], edi
+jle     short loc_79F115
+xor     ebp, ebp
+
+loc_79F0CA:                             ; CODE XREF: sub_79F0A0+73↓j
+test    ebp, ebp
+jl      short loc_79F0EA
+cmp     edi, eax
+jge     short loc_79F0EA
+mov     esi, [ebx+8]
+mov     edi, [esp+18h+arg_0]
+add     esi, ebp
+mov     ecx, 43h ; 'C'
+rep movsd
+mov     esi, [esp+18h+arg_0]
+mov     edi, [esp+18h+var_8]
+
+loc_79F0EA:                             ; CODE XREF: sub_79F0A0+2C↑j
+; sub_79F0A0+30↑j
+mov     ecx, [esp+18h+var_4]
+call    String__GetOrEmpty_Alt
+push    eax             ; void *
+lea     eax, [esi+34h]
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_79F12C
+mov     eax, [ebx]
+inc     edi
+add     ebp, 10Ch
+cmp     edi, eax
+mov     [esp+18h+var_8], edi
+jl      short loc_79F0CA
+
+loc_79F115:                             ; CODE XREF: sub_79F0A0+26↑j
+mov     ecx, 43h ; 'C'
+xor     eax, eax
+mov     edi, esi
+rep stosd
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_79F12C:                             ; CODE XREF: sub_79F0A0+62↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn    4
+*/
 }
 
 // 0x00406760 (100 bytes)
 void MethodSprintf_406760() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00406760.json)
-    // Size: 100 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void *__thiscall sub_406760 ( void ( __thiscall *this ) ( char * ) ) { void *result ; // eax !char Buffer[200] ! ; // [esp+4h] [ebp-C8h] BYREF result = dword_87E298 ; if ( dword_87E298 ) { sprintf ( Buffer , "AudioEvents : %05d - Max: %05d" , dword_87E28C , dword_87E290 ) ; this ( Buffer ) ; sprintf ( Buffer , "StaticSounds: %05d - Max: %05d" , dword_B1D3A8 , dword_B1D3AC ) ; return ( void * ) ( ( int (__thiscall *)(char *) ) this ) ( Buffer ) ; } return result ; }
-    
+// [IDA decompile]
+void *__thiscall sub_406760(void (__thiscall *this)(char *))
+{
+  void *result; // eax
+  char Buffer[200]; // [esp+4h] [ebp-C8h] BYREF
+
+  result = unk_87E298;
+  if ( unk_87E298 )
+  {
+    sprintf(Buffer, "AudioEvents : %05d - Max: %05d", unk_87E28C, unk_87E290);
+    this(Buffer);
+    sprintf(Buffer, "StaticSounds: %05d - Max: %05d", MEMORY[0xB1D3A8], MEMORY[0xB1D3AC]);
+    return (void *)((int (__thiscall *)(char *))this)(Buffer);
+  }
+  return result;
+}
+
+/* ASM:
+Buffer          = byte ptr -0C8h
+
+mov     eax, dword ptr unk_87E298
+sub     esp, 0C8h
+test    eax, eax
+push    esi
+mov     esi, ecx
+jz      short loc_4067BC
+mov     eax, dword ptr unk_87E290
+mov     ecx, dword ptr unk_87E28C
+push    eax
+push    ecx
+lea     edx, [esp+0D4h+Buffer]
+push    offset aAudioevents05d ; "AudioEvents : %05d - Max: %05d"
+push    edx             ; Buffer
+call    _sprintf
+add     esp, 10h
+lea     ecx, [esp+0CCh+Buffer]
+call    esi
+mov     eax, dword_A8ED54+8E658h
+mov     ecx, dword_A8ED54+8E654h
+push    eax
+push    ecx
+lea     edx, [esp+0D4h+Buffer]
+push    offset aStaticsounds05 ; "StaticSounds: %05d - Max: %05d"
+push    edx             ; Buffer
+call    _sprintf
+add     esp, 10h
+lea     ecx, [esp+0CCh+Buffer]
+call    esi
+
+loc_4067BC:                             ; CODE XREF: sub_406760+10↑j
+pop     esi
+add     esp, 0C8h
+retn
+*/
 }
 
 // 0x005B3E90 (188 bytes)
 void MethodStrcmpi_5B3E90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B3E90.json)
-    // Size: 188 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5B3E90 ( void *this ) { !int i ! ; // esi !char Filename[256] ! ; // [esp+8h] [ebp-304h] BYREF !char Ext[256] ! ; // [esp+108h] [ebp-204h] BYREF !char Buffer[260] ! ; // [esp+208h] [ebp-104h] BYREF for ( i = dword_ABEFE0 ; ; i = * ( _DWORD * ) ( i + 4 ) ) { if ( ! i || ! * ( _DWORD * ) ( i + 4 ) || ! * ( _DWORD * ) ( i + 8 ) ) return 0 ; _splitpath ( * ( const char ** ) ( i + 12 ) , 0 , 0 , Filename , Ext ) ; _makepath ( Buffer , 0 , 0 , Filename , Ext ) ; if ( ! _strcmpi ( Buffer , this ) ) break ; } if ( * ( _DWORD * ) ( i + 36 ) ) { if ( * ( _BYTE * ) ( i + 18 ) ) __3_YAXPAX_Z ( * ( void ** ) ( i + 36 ) ) ; } * ( _DWORD * ) ( i + 36 ) = 0 ; * ( _BYTE * ) ( i + 18 ) = 0 ; return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_5B3E90(void *this)
+{
+  int i; // esi
+  char Filename[256]; // [esp+8h] [ebp-304h] BYREF
+  char Ext[256]; // [esp+108h] [ebp-204h] BYREF
+  char Buffer[260]; // [esp+208h] [ebp-104h] BYREF
+
+  for ( i = MEMORY[0xABEFE0]; ; i = *(_DWORD *)(i + 4) )
+  {
+    if ( !i || !*(_DWORD *)(i + 4) || !*(_DWORD *)(i + 8) )
+      return 0;
+    _splitpath(*(const char **)(i + 12), 0, 0, Filename, Ext);
+    _makepath(Buffer, 0, 0, Filename, Ext);
+    if ( !_strcmpi(Buffer, this) )
+      break;
+  }
+  if ( *(_DWORD *)(i + 36) )
+  {
+    if ( *(_BYTE *)(i + 18) )
+      __3_YAXPAX_Z(*(void **)(i + 36));
+  }
+  *(_DWORD *)(i + 36) = 0;
+  *(_BYTE *)(i + 18) = 0;
+  return 1;
+}
+
+/* ASM:
+Filename        = byte ptr -304h
+Ext             = byte ptr -204h
+Buffer          = byte ptr -104h
+
+sub     esp, 304h
+push    esi
+mov     esi, dword_A8ED54+3028Ch
+push    edi
+mov     edi, ecx
+
+loc_5B3EA0:                             ; CODE XREF: sub_5B3E90+7E↓j
+test    esi, esi
+jz      loc_5B3F41
+mov     eax, [esi+4]
+test    eax, eax
+jz      loc_5B3F41
+mov     eax, [esi+8]
+test    eax, eax
+jz      loc_5B3F41
+mov     edx, [esi+0Ch]
+lea     eax, [esp+30Ch+Ext]
+lea     ecx, [esp+30Ch+Filename]
+push    eax             ; Ext
+push    ecx             ; Filename
+push    0               ; Dir
+push    0               ; Drive
+push    edx             ; FullPath
+call    __splitpath
+lea     eax, [esp+320h+Ext]
+lea     ecx, [esp+320h+Filename]
+push    eax             ; Ext
+push    ecx             ; Filename
+push    0               ; Dir
+lea     edx, [esp+32Ch+Buffer]
+push    0               ; Drive
+push    edx             ; Buffer
+call    __makepath
+lea     eax, [esp+334h+Buffer]
+push    edi             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 30h
+test    eax, eax
+jz      short loc_5B3F10
+mov     esi, [esi+4]
+jmp     short loc_5B3EA0
+; ---------------------------------------------------------------------------
+
+loc_5B3F10:                             ; CODE XREF: sub_5B3E90+79↑j
+test    esi, esi
+jz      short loc_5B3F41
+mov     eax, [esi+24h]
+test    eax, eax
+jz      short loc_5B3F2B
+mov     cl, [esi+12h]
+test    cl, cl
+jz      short loc_5B3F2B
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5B3F2B:                             ; CODE XREF: sub_5B3E90+89↑j
+; sub_5B3E90+90↑j
+mov     dword ptr [esi+24h], 0
+mov     byte ptr [esi+12h], 0
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 304h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B3F41:                             ; CODE XREF: sub_5B3E90+12↑j
+; sub_5B3E90+1D↑j ...
+pop     edi
+xor     al, al
+pop     esi
+add     esp, 304h
+retn
+*/
 }
 
 // 0x005B4350 (138 bytes)
 void MethodStrcmpi_5B4350() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B4350.json)
-    // Size: 138 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5B4350 ( void *this ) { !int i ! ; // esi !char Filename[256] ! ; // [esp+8h] [ebp-304h] BYREF !char Ext[256] ! ; // [esp+108h] [ebp-204h] BYREF !char Buffer[260] ! ; // [esp+208h] [ebp-104h] BYREF for ( i = dword_ABEFE0 ; i && * ( _DWORD * ) ( i + 4 ) && * ( _DWORD * ) ( i + 8 ) ; i = * ( _DWORD * ) ( i + 4 ) ) { _splitpath ( * ( const char ** ) ( i + 12 ) , 0 , 0 , Filename , Ext ) ; _makepath ( Buffer , 0 , 0 , Filename , Ext ) ; if ( ! _strcmpi ( Buffer , this ) ) return i ; } return 0 ; }
-    
+// [IDA decompile]
+int __thiscall sub_5B4350(void *this)
+{
+  int i; // esi
+  char Filename[256]; // [esp+8h] [ebp-304h] BYREF
+  char Ext[256]; // [esp+108h] [ebp-204h] BYREF
+  char Buffer[260]; // [esp+208h] [ebp-104h] BYREF
+
+  for ( i = MEMORY[0xABEFE0]; i && *(_DWORD *)(i + 4) && *(_DWORD *)(i + 8); i = *(_DWORD *)(i + 4) )
+  {
+    _splitpath(*(const char **)(i + 12), 0, 0, Filename, Ext);
+    _makepath(Buffer, 0, 0, Filename, Ext);
+    if ( !_strcmpi(Buffer, this) )
+      return i;
+  }
+  return 0;
+}
+
+/* ASM:
+Filename        = byte ptr -304h
+Ext             = byte ptr -204h
+Buffer          = byte ptr -104h
+
+sub     esp, 304h
+push    esi
+mov     esi, dword_A8ED54+3028Ch
+push    edi
+mov     edi, ecx
+
+loc_5B4360:                             ; CODE XREF: sub_5B4350+72↓j
+test    esi, esi
+jz      short loc_5B43CF
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_5B43CF
+mov     eax, [esi+8]
+test    eax, eax
+jz      short loc_5B43CF
+mov     edx, [esi+0Ch]
+lea     eax, [esp+30Ch+Ext]
+lea     ecx, [esp+30Ch+Filename]
+push    eax             ; Ext
+push    ecx             ; Filename
+push    0               ; Dir
+push    0               ; Drive
+push    edx             ; FullPath
+call    __splitpath
+lea     eax, [esp+320h+Ext]
+lea     ecx, [esp+320h+Filename]
+push    eax             ; Ext
+push    ecx             ; Filename
+push    0               ; Dir
+lea     edx, [esp+32Ch+Buffer]
+push    0               ; Drive
+push    edx             ; Buffer
+call    __makepath
+lea     eax, [esp+334h+Buffer]
+push    edi             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 30h
+test    eax, eax
+jz      short loc_5B43C4
+mov     esi, [esi+4]
+jmp     short loc_5B4360
+; ---------------------------------------------------------------------------
+
+loc_5B43C4:                             ; CODE XREF: sub_5B4350+6D↑j
+mov     eax, esi
+pop     edi
+pop     esi
+add     esp, 304h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5B43CF:                             ; CODE XREF: sub_5B4350+12↑j
+; sub_5B4350+19↑j ...
+pop     edi
+xor     eax, eax
+pop     esi
+add     esp, 304h
+retn
+*/
 }
 
 // 0x00644850 (53 bytes)
 void MethodStrcmpi_644850() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00644850.json)
-    // Size: 53 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_644850 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) off_836EE0 ; while ( _strcmpi ( this , * v3 ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) g_INI_Key_Railgun ) return -1 ; } return v2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_644850(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)off_836EE0;
+  while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)g_INI_Key_Railgun )
+      return -1;
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_836EE0 ; "Smoke"
+
+loc_64485C:                             ; CODE XREF: sub_644850+26↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_64487F
+add     esi, 4
+inc     edi
+cmp     esi, offset g_INI_Key_Railgun ; "Railgun"
+jl      short loc_64485C
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_64487F:                             ; CODE XREF: sub_644850+1A↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x006458D0 (53 bytes)
 void MethodStrcmpi_6458D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006458D0.json)
-    // Size: 53 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_6458D0 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) off_8370BC ; while ( _strcmpi ( this , * v3 ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) & ParticleTypeClass RTTI Type Descriptor' ) return -1 ; } return v2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_6458D0(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)off_8370BC;
+  while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&ParticleTypeClass `RTTI Type Descriptor' )
+      return -1;
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_8370BC
+
+loc_6458DC:                             ; CODE XREF: sub_6458D0+26↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_6458FF
+add     esi, 4
+inc     edi
+cmp     esi, offset ??_R0?AVParticleTypeClass@@@8 ; ParticleTypeClass `RTTI Type Descriptor'
+jl      short loc_6458DC
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_6458FF:                             ; CODE XREF: sub_6458D0+1A↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x00645B60 (52 bytes)
 void MethodStrcmpi_645B60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00645B60.json)
-    // Size: 52 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_645B60 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) off_7F0248 ; while ( _strcmpi ( this , * v3 ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) & flt_7F0278 ) return 0 ; } return v2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_645B60(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)off_7F0248;
+  while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&flt_7F0278 )
+      return 0;
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_7F0248 ; "N/A"
+
+loc_645B6C:                             ; CODE XREF: sub_645B60+26↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_645B8E
+add     esi, 4
+inc     edi
+cmp     esi, offset flt_7F0278
+jl      short loc_645B6C
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_645B8E:                             ; CODE XREF: sub_645B60+1A↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x006CE570 (53 bytes)
 void MethodStrcmpi_6CE570() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006CE570.json)
-    // Size: 53 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_6CE570 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) off_8425C0 ; while ( _strcmpi ( * v3 , this ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) g_INI_Key_MultiMissile ) return -1 ; } return v2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_6CE570(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)off_8425C0;
+  while ( _strcmpi(*v3, this) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)g_INI_Key_MultiMissile )
+      return -1;
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_8425C0 ; "MultiMissile"
+
+loc_6CE57C:                             ; CODE XREF: sub_6CE570+26↓j
+mov     eax, [esi]
+push    ebx             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_6CE59F
+add     esi, 4
+inc     edi
+cmp     esi, offset g_INI_Key_MultiMissile ; "MultiMissile"
+jl      short loc_6CE57C
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_6CE59F:                             ; CODE XREF: sub_6CE570+1A↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x00727190 (52 bytes)
 void MethodStrcmpi_727190() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00727190.json)
-    // Size: 52 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_727190 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) off_8449F8 ; while ( _strcmpi ( this , * v3 ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) aPersistent ) return 0 ; } return v2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_727190(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)off_8449F8;
+  while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)aPersistent )
+      return 0;
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_8449F8 ; "Volatile"
+
+loc_72719C:                             ; CODE XREF: sub_727190+26↓j
+mov     eax, [esi]
+push    eax             ; void *
+push    ebx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_7271BE
+add     esi, 4
+inc     edi
+cmp     esi, offset aPersistent ; "Persistent"
+jl      short loc_72719C
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_7271BE:                             ; CODE XREF: sub_727190+1A↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x004CB580 (84 bytes)
 const char* MethodStrncpy_4CB580() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004CB580.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char *__thiscall sub_4CB580 ( char *Destination, char *Source, char a3 ) { char *v4 ; // eax !unsigned int v5 ! ; // edx !char *v6 ! ; // edi strncpy ( Destination , Source , 4u ) ; * ( ( _WORD * ) Destination + 2 ) = 1 ; * ( ( _WORD * ) Destination + 3 ) = 1 ; v4 = ( char * ) __2_YAPAXI_Z ( 1u ) ; v5 = * ( ( unsigned __int16 * ) Destination + 3 ) ; * ( ( _DWORD * ) Destination + 2 ) = v4 ; qmemcpy ( v4 , & a3 , 4 * ( v5 >> 2 ) ) ; v6 = & v4 [ 4 * ( v5 >> 2 ) ] ; qmemcpy ( v6 , & a3 + 4 * ( v5 >> 2 ) , v5 & 3 ) ; * ( ( _DWORD * ) Destination + 3 ) = 0 ; return Destination ; }
-    return nullptr;
+// [IDA decompile]
+char *__thiscall sub_4CB580(char *Destination, char *Source, int a3)
+{
+  char *v4; // eax
+  unsigned int v5; // edx
+  char *v6; // edi
+
+  strncpy(Destination, Source, 4);
+  *((_WORD *)Destination + 2) = 1;
+  *((_WORD *)Destination + 3) = 1;
+  v4 = (char *)__2_YAPAXI_Z(1);
+  v5 = *((unsigned __int16 *)Destination + 3);
+  *((_DWORD *)Destination + 2) = v4;
+  qmemcpy(v4, &a3, 4 * (v5 >> 2));
+  v6 = &v4[4 * (v5 >> 2)];
+  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3);
+  *((_DWORD *)Destination + 3) = 0;
+  return Destination;
+}
+
+/* ASM:
+Source          = dword ptr  4
+arg_4           = byte ptr  8
+
+mov     eax, [esp+Source]
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+push    4               ; Count
+push    eax             ; Source
+push    ebx             ; Destination
+call    _strncpy
+mov     eax, 1
+push    eax             ; Size
+mov     [ebx+4], ax
+mov     [ebx+6], ax
+call    ??2_YAPAXI_Z
+xor     ecx, ecx
+lea     esi, [esp+1Ch+arg_4]
+mov     cx, [ebx+6]
+mov     edi, eax
+mov     edx, ecx
+mov     [ebx+8], eax
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+add     esp, 10h
+and     ecx, 3
+mov     eax, ebx
+rep movsb
+pop     edi
+mov     dword ptr [ebx+0Ch], 0
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // 0x004CB640 (84 bytes)
 const char* MethodStrncpy_4CB640() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004CB640.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char *__thiscall sub_4CB640 ( char *Destination, char *Source, char a3 ) { char *v4 ; // eax !unsigned int v5 ! ; // edx !char *v6 ! ; // edi strncpy ( Destination , Source , 4u ) ; * ( ( _WORD * ) Destination + 2 ) = 3 ; * ( ( _WORD * ) Destination + 3 ) = 2 ; v4 = ( char * ) __2_YAPAXI_Z ( 2u ) ; v5 = * ( ( unsigned __int16 * ) Destination + 3 ) ; * ( ( _DWORD * ) Destination + 2 ) = v4 ; qmemcpy ( v4 , & a3 , 4 * ( v5 >> 2 ) ) ; v6 = & v4 [ 4 * ( v5 >> 2 ) ] ; qmemcpy ( v6 , & a3 + 4 * ( v5 >> 2 ) , v5 & 3 ) ; * ( ( _DWORD * ) Destination + 3 ) = 0 ; return Destination ; }
-    return nullptr;
+// [IDA decompile]
+char *__thiscall sub_4CB640(char *Destination, char *Source, int a3)
+{
+  char *v4; // eax
+  unsigned int v5; // edx
+  char *v6; // edi
+
+  strncpy(Destination, Source, 4);
+  *((_WORD *)Destination + 2) = 3;
+  *((_WORD *)Destination + 3) = 2;
+  v4 = (char *)__2_YAPAXI_Z(2);
+  v5 = *((unsigned __int16 *)Destination + 3);
+  *((_DWORD *)Destination + 2) = v4;
+  qmemcpy(v4, &a3, 4 * (v5 >> 2));
+  v6 = &v4[4 * (v5 >> 2)];
+  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3);
+  *((_DWORD *)Destination + 3) = 0;
+  return Destination;
+}
+
+/* ASM:
+Source          = dword ptr  4
+arg_4           = byte ptr  8
+
+mov     eax, [esp+Source]
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+push    4               ; Count
+push    eax             ; Source
+push    ebx             ; Destination
+call    _strncpy
+push    2               ; Size
+mov     word ptr [ebx+4], 3
+mov     word ptr [ebx+6], 2
+call    ??2_YAPAXI_Z
+xor     ecx, ecx
+lea     esi, [esp+1Ch+arg_4]
+mov     cx, [ebx+6]
+mov     edi, eax
+mov     edx, ecx
+mov     [ebx+8], eax
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+add     esp, 10h
+and     ecx, 3
+mov     eax, ebx
+rep movsb
+pop     edi
+mov     dword ptr [ebx+0Ch], 0
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // 0x004CB6A0 (84 bytes)
 const char* MethodStrncpy_4CB6A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004CB6A0.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char *__thiscall sub_4CB6A0 ( char *Destination, char *Source, char a3 ) { char *v4 ; // eax !unsigned int v5 ! ; // edx !char *v6 ! ; // edi strncpy ( Destination , Source , 4u ) ; * ( ( _WORD * ) Destination + 2 ) = 4 ; * ( ( _WORD * ) Destination + 3 ) = 2 ; v4 = ( char * ) __2_YAPAXI_Z ( 2u ) ; v5 = * ( ( unsigned __int16 * ) Destination + 3 ) ; * ( ( _DWORD * ) Destination + 2 ) = v4 ; qmemcpy ( v4 , & a3 , 4 * ( v5 >> 2 ) ) ; v6 = & v4 [ 4 * ( v5 >> 2 ) ] ; qmemcpy ( v6 , & a3 + 4 * ( v5 >> 2 ) , v5 & 3 ) ; * ( ( _DWORD * ) Destination + 3 ) = 0 ; return Destination ; }
-    return nullptr;
+// [IDA decompile]
+char *__thiscall sub_4CB6A0(char *Destination, char *Source, int a3)
+{
+  char *v4; // eax
+  unsigned int v5; // edx
+  char *v6; // edi
+
+  strncpy(Destination, Source, 4);
+  *((_WORD *)Destination + 2) = 4;
+  *((_WORD *)Destination + 3) = 2;
+  v4 = (char *)__2_YAPAXI_Z(2);
+  v5 = *((unsigned __int16 *)Destination + 3);
+  *((_DWORD *)Destination + 2) = v4;
+  qmemcpy(v4, &a3, 4 * (v5 >> 2));
+  v6 = &v4[4 * (v5 >> 2)];
+  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3);
+  *((_DWORD *)Destination + 3) = 0;
+  return Destination;
+}
+
+/* ASM:
+Source          = dword ptr  4
+arg_4           = byte ptr  8
+
+mov     eax, [esp+Source]
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+push    4               ; Count
+push    eax             ; Source
+push    ebx             ; Destination
+call    _strncpy
+push    2               ; Size
+mov     word ptr [ebx+4], 4
+mov     word ptr [ebx+6], 2
+call    ??2_YAPAXI_Z
+xor     ecx, ecx
+lea     esi, [esp+1Ch+arg_4]
+mov     cx, [ebx+6]
+mov     edi, eax
+mov     edx, ecx
+mov     [ebx+8], eax
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+add     esp, 10h
+and     ecx, 3
+mov     eax, ebx
+rep movsb
+pop     edi
+mov     dword ptr [ebx+0Ch], 0
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // 0x00776EB0 (139 bytes)
 void MethodStrncpy_776EB0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00776EB0.json)
-    // Size: 139 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void *__thiscall sub_776EB0 ( void *this ) { !DWORD dwBuildNumber ! ; // eax !DWORD dwMinorVersion ! ; // edx !DWORD dwPlatformId ! ; // eax !struct _OSVERSIONINFOA VersionInformation ! ; // [esp+8h] [ebp-94h] BYREF * ( _DWORD * ) this = 0 ; * ( ( _DWORD * ) this + 1 ) = 0 ; * ( ( _DWORD * ) this + 2 ) = 0 ; * ( ( _BYTE * ) this + 140 ) = 0 ; * ( ( _BYTE * ) this + 141 ) = 0 ; VersionInformation . dwOSVersionInfoSize = 148 ; "GetVersionExA " ( & VersionInformation ) ; dwBuildNumber = VersionInformation . dwBuildNumber ; dwMinorVersion = VersionInformation . dwMinorVersion ; * ( _DWORD * ) this = VersionInformation . dwMajorVersion ; * ( ( _DWORD * ) this + 2 ) = dwBuildNumber ; dwPlatformId = VersionInformation . dwPlatformId ; * ( ( _DWORD * ) this + 1 ) = dwMinorVersion ; if ( dwPlatformId == 1 ) { * ( ( _BYTE * ) this + 140 ) = 1 ; } else if ( dwPlatformId == 2 ) { * ( ( _BYTE * ) this + 141 ) = 1 ; } strncpy ( ( char * ) this + 12 , VersionInformation . szCSDVersion , 0x7Fu ) ; * ( ( _BYTE * ) this + 139 ) = 0 ; return this ; }
-    
+// [IDA decompile]
+void *__thiscall sub_776EB0(void *this)
+{
+  int v2; // eax
+  int v3; // edx
+  int v4; // eax
+  _DWORD VersionInformation[37]; // [esp+8h] [ebp-94h] BYREF
+
+  *(_DWORD *)this = 0;
+  *((_DWORD *)this + 1) = 0;
+  *((_DWORD *)this + 2) = 0;
+  *((_BYTE *)this + 140) = 0;
+  *((_BYTE *)this + 141) = 0;
+  VersionInformation[0] = 148;
+  ((void (__stdcall *)(_DWORD *))GetVersionExA)(VersionInformation);
+  v2 = VersionInformation[3];
+  v3 = VersionInformation[2];
+  *(_DWORD *)this = VersionInformation[1];
+  *((_DWORD *)this + 2) = v2;
+  v4 = VersionInformation[4];
+  *((_DWORD *)this + 1) = v3;
+  if ( v4 == 1 )
+  {
+    *((_BYTE *)this + 140) = 1;
+  }
+  else if ( v4 == 2 )
+  {
+    *((_BYTE *)this + 141) = 1;
+  }
+  strncpy((char *)this + 12, (const char *)&VersionInformation[5], 127);
+  *((_BYTE *)this + 139) = 0;
+  return this;
+}
+
+/* ASM:
+VersionInformation= byte ptr -94h
+
+sub     esp, 94h
+push    ebx
+push    esi
+mov     esi, ecx
+lea     eax, [esp+9Ch+VersionInformation]
+xor     ebx, ebx
+push    eax             ; lpVersionInformation
+mov     [esi], ebx
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     [esi+8Ch], bl
+mov     [esi+8Dh], bl
+mov     dword ptr [esp+0A0h+VersionInformation], 94h
+call    ds:__imp_GetVersionExA
+mov     ecx, dword ptr [esp+9Ch+VersionInformation+4]
+mov     eax, dword ptr [esp+9Ch+VersionInformation+0Ch]
+mov     edx, dword ptr [esp+9Ch+VersionInformation+8]
+mov     [esi], ecx
+mov     [esi+8], eax
+mov     eax, dword ptr [esp+9Ch+VersionInformation+10h]
+mov     ecx, 1
+mov     [esi+4], edx
+cmp     eax, ecx
+jnz     short loc_776F0C
+mov     [esi+8Ch], cl
+jmp     short loc_776F17
+; ---------------------------------------------------------------------------
+
+loc_776F0C:                             ; CODE XREF: sub_776EB0+52↑j
+cmp     eax, 2
+jnz     short loc_776F17
+mov     [esi+8Dh], cl
+
+loc_776F17:                             ; CODE XREF: sub_776EB0+5A↑j
+; sub_776EB0+5F↑j
+lea     ecx, [esp+9Ch+VersionInformation+14h]
+push    7Fh             ; Count
+lea     edx, [esi+0Ch]
+push    ecx             ; Source
+push    edx             ; Destination
+call    _strncpy
+add     esp, 0Ch
+mov     [esi+8Bh], bl
+mov     eax, esi
+pop     esi
+pop     ebx
+add     esp, 94h
+retn
+*/
 }
 
 // 0x007B53B0 (80 bytes)
 const char* MethodStrncpy_7B53B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B53B0.json)
-    // Size: 80 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __thiscall sub_7B53B0 ( const char **this, char *Destination, size_t Count ) { !unsigned int v4 ! ; // kr08_4 !unsigned int result ! ; // eax strncpy ( Destination , * this , Count ) ; v4 = strlen ( * this ) + 1 ; result = v4 - 1 ; if ( v4 - 1 < Count ) { result = 538976288 ; memset ( & Destination [ v4 - 1 ] , 0x20u , Count - ( v4 - 1 ) ) ; } Destination [ Count ] = 0 ; return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_7B53B0(const char **this, char *Destination, unsigned int Count)
+{
+  unsigned int v4; // kr08_4
+  int result; // eax
+
+  strncpy(Destination, *this, Count);
+  v4 = strlen(*this) + 1;
+  result = v4 - 1;
+  if ( v4 - 1 < Count )
+  {
+    result = 538976288;
+    memset(&Destination[v4 - 1], 0x20u, Count - (v4 - 1));
+  }
+  Destination[Count] = 0;
+  return result;
+}
+
+/* ASM:
+Destination     = dword ptr  4
+Count           = dword ptr  8
+
+push    ebx
+mov     ebx, [esp+4+Destination]
+push    esi
+mov     esi, [esp+8+Count]
+push    edi
+mov     edi, ecx
+push    esi             ; Count
+mov     eax, [edi]
+push    eax             ; Source
+push    ebx             ; Destination
+call    _strncpy
+mov     edi, [edi]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+add     esp, 0Ch
+repne scasb
+not     ecx
+dec     ecx
+mov     eax, ecx
+cmp     eax, esi
+jnb     short loc_7B53F6
+mov     ecx, esi
+lea     edi, [eax+ebx]
+sub     ecx, eax
+mov     eax, 20202020h
+mov     edx, ecx
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+
+loc_7B53F6:                             ; CODE XREF: sub_7B53B0+2A↑j
+mov     byte ptr [ebx+esi], 0
+pop     edi
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // 0x007B60E0 (405 bytes)
 void MethodStrncpy_7B60E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B60E0.json)
-    // Size: 405 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_7B60E0 ( const char **this, signed int a2, void **a3 ) { !signed int v5 ! ; // esi !signed int v6 ! ; // ecx !signed int v8 ! ; // ecx !const char *v9 ! ; // eax !const char *v10 ! ; // esi !size_t v11 ! ; // ecx _BYTE *v12 ; // eax !const char *v13 ! ; // edi !size_t v14 ! ; // esi !char *v15 ! ; // eax !char *v16 ! ; // ebp !const char *v17 ! ; // esi !size_t v18 ! ; // ecx _BYTE *v19 ; // eax !signed int v20 ! ; // [esp+14h] [ebp+4h] v5 = a2 ; if ( * this ) v6 = strlen ( * this ) ; else v6 = 0 ; if ( a2 >= v6 ) return -1 ; while ( 1 ) { v8 = * this ? strlen ( * this ) : 0 ; if ( v5 >= v8 || strchr ( String2 , ( * this ) [ v5 ] ) ) break ; ++ v5 ; } v9 = * this ; v20 = v5 ; if ( ( * this ) [ v5 ] == 13 && v9 [ v5 + 1 ] == 10 ) v20 = v5 + 1 ; v10 = & v9 [ a2 ] ; if ( * a3 ) __3_YAXPAX_Z ( * a3 ) ; * a3 = 0 ; if ( v10 ) v11 = strlen ( v10 ) + 1 ; else v11 = 1 ; v12 = __2_YAPAXI_Z ( v11 ) ; * a3 = v12 ; * v12 = 0 ; if ( v10 ) strcpy ( ( char * ) * a3 , v10 ) ; v13 = & g_INI_DefaultBuffer ; v14 = v20 - a2 + 1 ; if ( * a3 ) v13 = ( const char * ) * a3 ; v15 = ( char * ) __2_YAPAXI_Z ( v20 - a2 + 2 ) ; v16 = v15 ; * v15 = 0 ; if ( v13 ) strncpy ( v15 , v13 , v14 ) ; v16 [ v14 ] = 0 ; v17 = & g_INI_DefaultBuffer ; if ( v16 ) v17 = v16 ; if ( * a3 ) __3_YAXPAX_Z ( * a3 ) ; * a3 = 0 ; if ( v17 ) v18 = strlen ( v17 ) + 1 ; else v18 = 1 ; v19 = __2_YAPAXI_Z ( v18 ) ; * a3 = v19 ; * v19 = 0 ; if ( v17 ) strcpy ( ( char * ) * a3 , v17 ) ; if ( v16 ) __3_YAXPAX_Z ( v16 ) ; return v20 + 1 ; }
-    
+// [IDA decompile]
+int __thiscall sub_7B60E0(const char **this, signed int a2, void **a3)
+{
+  signed int v5; // esi
+  signed int v6; // ecx
+  signed int v8; // ecx
+  const char *v9; // eax
+  const char *v10; // esi
+  unsigned int v11; // ecx
+  _BYTE *v12; // eax
+  const char *v13; // edi
+  int v14; // esi
+  char *v15; // eax
+  char *v16; // ebp
+  const char *v17; // esi
+  unsigned int v18; // ecx
+  _BYTE *v19; // eax
+  signed int v20; // [esp+14h] [ebp+4h]
+
+  v5 = a2;
+  if ( *this )
+    v6 = strlen(*this);
+  else
+    v6 = 0;
+  if ( a2 >= v6 )
+    return -1;
+  while ( 1 )
+  {
+    v8 = *this ? strlen(*this) : 0;
+    if ( v5 >= v8 || strchr(String2, (*this)[v5]) )
+      break;
+    ++v5;
+  }
+  v9 = *this;
+  v20 = v5;
+  if ( (*this)[v5] == 13 && v9[v5 + 1] == 10 )
+    v20 = v5 + 1;
+  v10 = &v9[a2];
+  if ( *a3 )
+    __3_YAXPAX_Z(*a3);
+  *a3 = 0;
+  if ( v10 )
+    v11 = strlen(v10) + 1;
+  else
+    v11 = 1;
+  v12 = (_BYTE *)__2_YAPAXI_Z(v11);
+  *a3 = v12;
+  *v12 = 0;
+  if ( v10 )
+    strcpy((char *)*a3, v10);
+  v13 = (const char *)&MEMORY[0x87F7E8][10719];
+  v14 = v20 - a2 + 1;
+  if ( *a3 )
+    v13 = (const char *)*a3;
+  v15 = (char *)__2_YAPAXI_Z(v20 - a2 + 2);
+  v16 = v15;
+  *v15 = 0;
+  if ( v13 )
+    strncpy(v15, v13, v14);
+  v16[v14] = 0;
+  v17 = (const char *)&MEMORY[0x87F7E8][10719];
+  if ( v16 )
+    v17 = v16;
+  if ( *a3 )
+    __3_YAXPAX_Z(*a3);
+  *a3 = 0;
+  if ( v17 )
+    v18 = strlen(v17) + 1;
+  else
+    v18 = 1;
+  v19 = (_BYTE *)__2_YAPAXI_Z(v18);
+  *a3 = v19;
+  *v19 = 0;
+  if ( v17 )
+    strcpy((char *)*a3, v17);
+  if ( v16 )
+    __3_YAXPAX_Z(v16);
+  return v20 + 1;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+mov     ebx, ecx
+push    esi
+push    edi
+mov     edi, [ebx]
+mov     esi, ebp
+test    edi, edi
+jnz     short loc_7B60F6
+xor     ecx, ecx
+jmp     short loc_7B6100
+; ---------------------------------------------------------------------------
+
+loc_7B60F6:                             ; CODE XREF: sub_7B60E0+10↑j
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+
+loc_7B6100:                             ; CODE XREF: sub_7B60E0+14↑j
+cmp     ebp, ecx
+jl      short loc_7B610E
+pop     edi
+pop     esi
+pop     ebp
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_7B610E:                             ; CODE XREF: sub_7B60E0+22↑j
+; sub_7B60E0+5F↓j
+mov     edx, [ebx]
+test    edx, edx
+jnz     short loc_7B6118
+xor     ecx, ecx
+jmp     short loc_7B6124
+; ---------------------------------------------------------------------------
+
+loc_7B6118:                             ; CODE XREF: sub_7B60E0+32↑j
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+
+loc_7B6124:                             ; CODE XREF: sub_7B60E0+36↑j
+cmp     esi, ecx
+jge     short loc_7B6141
+movsx   eax, byte ptr [edx+esi]
+push    eax             ; Val
+push    offset String2  ; "\r\n"
+call    _strchr
+add     esp, 8
+test    eax, eax
+jnz     short loc_7B6141
+inc     esi
+jmp     short loc_7B610E
+; ---------------------------------------------------------------------------
+
+loc_7B6141:                             ; CODE XREF: sub_7B60E0+46↑j
+; sub_7B60E0+5C↑j
+mov     eax, [ebx]
+mov     [esp+10h+arg_0], esi
+cmp     byte ptr [eax+esi], 0Dh
+jnz     short loc_7B6159
+cmp     byte ptr [eax+esi+1], 0Ah
+jnz     short loc_7B6159
+inc     esi
+mov     [esp+10h+arg_0], esi
+
+loc_7B6159:                             ; CODE XREF: sub_7B60E0+6B↑j
+; sub_7B60E0+72↑j
+mov     ebx, [esp+10h+arg_4]
+lea     esi, [eax+ebp]
+mov     eax, [ebx]
+test    eax, eax
+jz      short loc_7B616F
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7B616F:                             ; CODE XREF: sub_7B60E0+84↑j
+test    esi, esi
+mov     dword ptr [ebx], 0
+jz      short loc_7B6186
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+jmp     short loc_7B618B
+; ---------------------------------------------------------------------------
+
+loc_7B6186:                             ; CODE XREF: sub_7B60E0+97↑j
+mov     ecx, 1
+
+loc_7B618B:                             ; CODE XREF: sub_7B60E0+A4↑j
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [ebx], eax
+test    esi, esi
+mov     byte ptr [eax], 0
+jz      short loc_7B61BC
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     edx, ecx
+mov     esi, edi
+mov     edi, [ebx]
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+and     ecx, 3
+rep movsb
+
+loc_7B61BC:                             ; CODE XREF: sub_7B60E0+BB↑j
+mov     esi, [esp+10h+arg_0]
+mov     eax, [ebx]
+sub     esi, ebp
+mov     edi, 889F64h
+inc     esi
+test    eax, eax
+jz      short loc_7B61D0
+mov     edi, eax
+
+loc_7B61D0:                             ; CODE XREF: sub_7B60E0+EC↑j
+lea     eax, [esi+1]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+mov     ebp, eax
+add     esp, 4
+test    edi, edi
+mov     byte ptr [ebp+0], 0
+jz      short loc_7B61F1
+push    esi             ; Count
+push    edi             ; Source
+push    ebp             ; Destination
+call    _strncpy
+add     esp, 0Ch
+
+loc_7B61F1:                             ; CODE XREF: sub_7B60E0+104↑j
+mov     byte ptr [esi+ebp], 0
+mov     esi, 889F64h
+test    ebp, ebp
+jz      short loc_7B6200
+mov     esi, ebp
+
+loc_7B6200:                             ; CODE XREF: sub_7B60E0+11C↑j
+mov     eax, [ebx]
+test    eax, eax
+jz      short loc_7B620F
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7B620F:                             ; CODE XREF: sub_7B60E0+124↑j
+test    esi, esi
+mov     dword ptr [ebx], 0
+jz      short loc_7B6226
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+jmp     short loc_7B622B
+; ---------------------------------------------------------------------------
+
+loc_7B6226:                             ; CODE XREF: sub_7B60E0+137↑j
+mov     ecx, 1
+
+loc_7B622B:                             ; CODE XREF: sub_7B60E0+144↑j
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [ebx], eax
+test    esi, esi
+mov     byte ptr [eax], 0
+jz      short loc_7B625C
+mov     edi, esi
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     edx, ecx
+mov     esi, edi
+mov     edi, [ebx]
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+and     ecx, 3
+rep movsb
+
+loc_7B625C:                             ; CODE XREF: sub_7B60E0+15B↑j
+test    ebp, ebp
+jz      short loc_7B6269
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7B6269:                             ; CODE XREF: sub_7B60E0+17E↑j
+mov     eax, [esp+10h+arg_0]
+pop     edi
+pop     esi
+pop     ebp
+inc     eax
+pop     ebx
+retn    8
+*/
 }
 
 // 0x007B5C50 (66 bytes)
 void MethodToupper_7B5C50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B5C50.json)
-    // Size: 66 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_7B5C50 ( const char **this ) { !unsigned int i ! ; // esi !char v3 ! ; // dl for ( i = 0 ; * this && i < strlen ( * this ) ; ++ i ) { v3 = ( * this ) [ i ] ; if ( v3 >= 97 && v3 <= 122 ) ( * this ) [ i ] = toupper ( v3 ) ; } }
-    
+// [IDA decompile]
+void __thiscall sub_7B5C50(const char **this)
+{
+  unsigned int i; // esi
+  char v3; // dl
+
+  for ( i = 0; *this && i < strlen(*this); ++i )
+  {
+    v3 = (*this)[i];
+    if ( v3 >= 97 && v3 <= 122 )
+      (*this)[i] = toupper(v3);
+  }
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     esi, esi
+
+loc_7B5C57:                             ; CODE XREF: sub_7B5C50+3C↓j
+mov     edx, [ebx]
+test    edx, edx
+jz      short loc_7B5C8E
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+cmp     esi, ecx
+jnb     short loc_7B5C8E
+mov     dl, [edx+esi]
+cmp     dl, 61h ; 'a'
+jl      short loc_7B5C8B
+cmp     dl, 7Ah ; 'z'
+jg      short loc_7B5C8B
+movsx   eax, dl
+push    eax             ; C
+call    _toupper
+mov     ecx, [ebx]
+add     esp, 4
+mov     [ecx+esi], al
+
+loc_7B5C8B:                             ; CODE XREF: sub_7B5C50+23↑j
+; sub_7B5C50+28↑j
+inc     esi
+jmp     short loc_7B5C57
+; ---------------------------------------------------------------------------
+
+loc_7B5C8E:                             ; CODE XREF: sub_7B5C50+B↑j
+; sub_7B5C50+1B↑j
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x007B5CA0 (202 bytes)
 const char* MethodToupper_7B5CA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B5CA0.json)
-    // Size: 202 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char **__thiscall sub_7B5CA0 ( const char **this, char **a2 ) { !char *v3 ! ; // ebx !unsigned int i ! ; // esi !char v5 ! ; // al !char *v6 ! ; // edx v3 = 0 ; if ( * this ) { v3 = ( char * ) __2_YAPAXI_Z ( strlen ( * this ) + 1 ) ; strcpy ( v3 , * this ) ; } for ( i = 0 ; v3 && i < strlen ( v3 ) ; ++ i ) { v5 = v3 [ i ] ; if ( v5 >= 97 && v5 <= 122 ) v3 [ i ] = toupper ( v5 ) ; } * a2 = 0 ; if ( v3 ) { v6 = ( char * ) __2_YAPAXI_Z ( strlen ( v3 ) + 1 ) ; * a2 = v6 ; strcpy ( v6 , v3 ) ; __3_YAXPAX_Z ( v3 ) ; } return a2 ; }
-    return nullptr;
+// [IDA decompile]
+char **__thiscall sub_7B5CA0(const char **this, char **a2)
+{
+  char *v3; // ebx
+  unsigned int i; // esi
+  char v5; // al
+  char *v6; // edx
+
+  v3 = 0;
+  if ( *this )
+  {
+    v3 = (char *)__2_YAPAXI_Z(strlen(*this) + 1);
+    strcpy(v3, *this);
+  }
+  for ( i = 0; v3 && i < strlen(v3); ++i )
+  {
+    v5 = v3[i];
+    if ( v5 >= 97 && v5 <= 122 )
+      v3[i] = toupper(v5);
+  }
+  *a2 = 0;
+  if ( v3 )
+  {
+    v6 = (char *)__2_YAPAXI_Z(strlen(v3) + 1);
+    *a2 = v6;
+    strcpy(v6, v3);
+    __3_YAXPAX_Z(v3);
+  }
+  return a2;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+xor     ebx, ebx
+mov     edi, [esi]
+test    edi, edi
+jz      short loc_7B5CE1
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+mov     edi, [esi]
+mov     ebx, eax
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+add     esp, 4
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, ebx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+
+loc_7B5CE1:                             ; CODE XREF: sub_7B5CA0+C↑j
+xor     esi, esi
+
+loc_7B5CE3:                             ; CODE XREF: sub_7B5CA0+72↓j
+test    ebx, ebx
+jz      short loc_7B5D14
+mov     edi, ebx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+cmp     esi, ecx
+jnb     short loc_7B5D14
+mov     al, [esi+ebx]
+cmp     al, 61h ; 'a'
+jl      short loc_7B5D11
+cmp     al, 7Ah ; 'z'
+jg      short loc_7B5D11
+movsx   ecx, al
+push    ecx             ; C
+call    _toupper
+add     esp, 4
+mov     [esi+ebx], al
+
+loc_7B5D11:                             ; CODE XREF: sub_7B5CA0+5C↑j
+; sub_7B5CA0+60↑j
+inc     esi
+jmp     short loc_7B5CE3
+; ---------------------------------------------------------------------------
+
+loc_7B5D14:                             ; CODE XREF: sub_7B5CA0+45↑j
+; sub_7B5CA0+55↑j
+mov     ebp, [esp+10h+arg_0]
+test    ebx, ebx
+mov     dword ptr [ebp+0], 0
+jz      short loc_7B5D61
+mov     edi, ebx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+mov     edx, eax
+mov     edi, ebx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     [ebp+0], edx
+push    ebx             ; Block
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, edx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+call    ??3_YAXPAX_Z
+add     esp, 8
+
+loc_7B5D61:                             ; CODE XREF: sub_7B5CA0+81↑j
+pop     edi
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0045DD50 (57 bytes)
 void ObjectTypeClass_Strcmpi_45DD50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0045DD50.json)
-    // Size: 57 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_45DD50 ( void *this ) { int v2 ; // edi !const void **v3 ! ; // esi v2 = 0 ; v3 = ( const void ** ) & off_819288 ; while ( _strcmpi ( * v3 , this ) ) { v3 += 2 ; ++ v2 ; if ( ( int ) v3 >= ( int ) dword_8192B8 ) return 0 ; } return dword_81928C [ 2 * v2 ] ; }
-    
+// [IDA decompile]
+int __thiscall sub_45DD50(void *this)
+{
+  int v2; // edi
+  const void **v3; // esi
+
+  v2 = 0;
+  v3 = (const void **)&off_819288;
+  while ( _strcmpi(*v3, this) )
+  {
+    v3 += 2;
+    ++v2;
+    if ( (int)v3 >= (int)dword_8192B8 )
+      return 0;
+  }
+  return dword_81928C[2 * v2];
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+xor     edi, edi
+mov     esi, offset off_819288 ; "DontCare"
+
+loc_45DD5C:                             ; CODE XREF: sub_45DD50+26↓j
+mov     eax, [esi]
+push    ebx             ; void *
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_45DD7E
+add     esi, 8
+inc     edi
+cmp     esi, offset dword_8192B8
+jl      short loc_45DD5C
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_45DD7E:                             ; CODE XREF: sub_45DD50+1A↑j
+mov     eax, dword_81928C[edi*8]
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x005CDB90 (185 bytes)
 int StringWideString_5CDB90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CDB90.json)
-    // Size: 185 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_5CDB90 ( const wchar_t **a1, int a2, int a3 ) { int v5 ; // ebx !size_t v6 ! ; // esi int v7 ; // ebp if ( String_Helper ( a1 , 0 ) || ! a2 || a3 < * ( _DWORD * ) ( a2 + 8 ) ) return 0 ; v5 = 0 ; v6 = 0 ; v7 = 0 ; while ( WideString::GetChar ( a1 , v6 ) ) { for ( ; WideString::GetChar ( a1 , v6 ) ; ++ v6 ) { if ( WideString::GetChar ( a1 , v6 ) == 10 ) break ; } if ( WideString::GetChar ( a1 , v6 ) != 10 ) { v5 += * ( _DWORD * ) ( a2 + 8 ) ; if ( v5 >= a3 ) { v5 = 0 ; ++ v7 ; String_Helper_7B7660 ( a1 , 0xCu , v6 ) ; } ++ v6 ; } } return v7 ; }
+// [IDA decompile]
+int __fastcall sub_5CDB90(const #72 **a1, int a2, int a3)
+{
+  int v4; // ebx
+  int v5; // esi
+  int v6; // ebp
+
+  if ( String_Helper(a1, 0) || !a2 || a3 < *(_DWORD *)(a2 + 8) )
     return 0;
+  v4 = 0;
+  v5 = 0;
+  v6 = 0;
+  while ( (unsigned __int16)WideString::GetChar(v5) )
+  {
+    for ( ; (unsigned __int16)WideString::GetChar(v5); ++v5 )
+    {
+      if ( (unsigned __int16)WideString::GetChar(v5) == 10 )
+        break;
+    }
+    if ( (unsigned __int16)WideString::GetChar(v5) != 10 )
+    {
+      v4 += *(_DWORD *)(a2 + 8);
+      if ( v4 >= a3 )
+      {
+        v4 = 0;
+        ++v6;
+        String_Helper_7B7660(12, v5);
+      }
+      ++v5;
+    }
+  }
+  return v6;
+}
+
+/* ASM:
+push    ecx
+push    esi
+push    edi
+mov     esi, edx
+mov     edi, ecx
+push    0               ; String2
+mov     [esp+10h+var_4], esi
+call    String_Helper
+test    al, al
+jnz     loc_5CDC41
+test    esi, esi
+jz      loc_5CDC41
+mov     eax, [esp+0Ch+arg_0]
+mov     ecx, [esi+8]
+cmp     eax, ecx
+jl      loc_5CDC41
+push    ebx
+xor     ebx, ebx
+push    ebp
+push    ebx
+mov     ecx, edi
+xor     esi, esi
+xor     ebp, ebp
+call    WideString__GetChar
+test    ax, ax
+jz      short loc_5CDC37
+
+loc_5CDBD6:                             ; CODE XREF: sub_5CDB90+A5↓j
+push    esi
+mov     ecx, edi
+call    WideString__GetChar
+test    ax, ax
+jz      short loc_5CDBFF
+
+loc_5CDBE3:                             ; CODE XREF: sub_5CDB90+6D↓j
+push    esi
+mov     ecx, edi
+call    WideString__GetChar
+cmp     ax, 0Ah
+jz      short loc_5CDBFF
+inc     esi
+mov     ecx, edi
+push    esi
+call    WideString__GetChar
+test    ax, ax
+jnz     short loc_5CDBE3
+
+loc_5CDBFF:                             ; CODE XREF: sub_5CDB90+51↑j
+; sub_5CDB90+5F↑j
+push    esi
+mov     ecx, edi
+call    WideString__GetChar
+cmp     ax, 0Ah
+jz      short loc_5CDC2A
+mov     ecx, [esp+14h+var_4]
+mov     eax, [esp+14h+arg_0]
+add     ebx, [ecx+8]
+cmp     ebx, eax
+jl      short loc_5CDC29
+push    esi
+xor     ebx, ebx
+push    0Ch
+mov     ecx, edi
+inc     ebp
+call    String_Helper_7B7660
+
+loc_5CDC29:                             ; CODE XREF: sub_5CDB90+8A↑j
+inc     esi
+
+loc_5CDC2A:                             ; CODE XREF: sub_5CDB90+7B↑j
+push    esi
+mov     ecx, edi
+call    WideString__GetChar
+test    ax, ax
+jnz     short loc_5CDBD6
+
+loc_5CDC37:                             ; CODE XREF: sub_5CDB90+44↑j
+mov     eax, ebp
+pop     ebp
+pop     ebx
+pop     edi
+pop     esi
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5CDC41:                             ; CODE XREF: sub_5CDB90+14↑j
+; sub_5CDB90+1C↑j ...
+pop     edi
+xor     eax, eax
+pop     esi
+pop     ecx
+retn    4
+*/
 }
 
 // 0x005D0240 (80 bytes)
 const char* String_Assign_5D0240() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005D0240.json)
-    // Size: 80 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char **__thiscall sub_5D0240 ( int *this, char **a2, char a3 ) { !int v3 ! ; // esi !int v4 ! ; // eax int v5 ; // edi int v6 ; // ecx v3 = * ( this + 25 ) ; v4 = 0 ; if ( v3 <= 0 ) { LABEL_5 : String::Assign ( a2 , 0 ) ; return a2 ; } else { v5 = * ( this + 22 ) ; v6 = v5 ; while ( a3 != * ( _BYTE * ) ( * ( _DWORD * ) v6 + 4 ) ) { ++ v4 ; v6 += 4 ; if ( v4 >= v3 ) goto LABEL_5 ; } String::AssignFromPtr ( a2 , * ( const char *** ) ( v5 + 4 * v4 ) ) ; return a2 ; } }
-    return nullptr;
+// [IDA decompile]
+char **__thiscall sub_5D0240(int *this, char **a2, char a3)
+{
+  int v3; // esi
+  int v4; // eax
+  int v5; // edi
+  int v6; // ecx
+
+  v3 = *(this + 25);
+  v4 = 0;
+  if ( v3 <= 0 )
+  {
+LABEL_5:
+    String::Assign(a2, 0);
+    return a2;
+  }
+  else
+  {
+    v5 = *(this + 22);
+    v6 = v5;
+    while ( a3 != *(_BYTE *)(*(_DWORD *)v6 + 4) )
+    {
+      ++v4;
+      v6 += 4;
+      if ( v4 >= v3 )
+        goto LABEL_5;
+    }
+    String::AssignFromPtr(a2, *(const char ***)(v5 + 4 * v4));
+    return a2;
+  }
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [ecx+64h]
+xor     eax, eax
+test    esi, esi
+push    edi
+jle     short loc_5D0264
+mov     edi, [ecx+58h]
+mov     dl, [esp+0Ch+arg_4]
+mov     ecx, edi
+
+loc_5D0255:                             ; CODE XREF: sub_5D0240+22↓j
+mov     ebx, [ecx]
+cmp     dl, [ebx+4]
+jz      short loc_5D0279
+inc     eax
+add     ecx, 4
+cmp     eax, esi
+jl      short loc_5D0255
+
+loc_5D0264:                             ; CODE XREF: sub_5D0240+A↑j
+mov     esi, [esp+0Ch+arg_0]
+push    0
+mov     ecx, esi
+call    String__Assign
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5D0279:                             ; CODE XREF: sub_5D0240+1A↑j
+mov     eax, [edi+eax*4]
+mov     esi, [esp+0Ch+arg_0]
+push    eax
+mov     ecx, esi
+call    String__AssignFromPtr
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // 0x005B5A50 (114 bytes)
 char String_CopyWideString_5B5A50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B5A50.json)
-    // Size: 114 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5B5A50 ( int this, char a2 ) { !HWND DlgItem ! ; // eax !HWND v4 ! ; // esi wchar_t lParam[22] ; // [esp+8h] [ebp-2Ch] BYREF DlgItem = "GetDlgItem " ( * ( HWND * ) this , 1473 ) ; v4 = DlgItem ; if ( DlgItem ) { "SendMessageA " ( DlgItem , 0x4B3u , 0x15u , ( LPARAM ) lParam ) ; WideString::Trim ( lParam ) ; if ( ! a2 ) "SendMessageA " ( v4 , 0x4B2u , 0 , ( LPARAM ) lParam ) ; CopyWideToChar ( g_GameSetupBuffer , ( char * ) lParam , -1 ) ; * ( _BYTE * ) ( this + 9 ) = 1 ; * ( _BYTE * ) ( this + 8 ) = 1 ; LOBYTE ( DlgItem ) = 1 ; } return ( char ) DlgItem ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_5B5A50(_BYTE *this, char a2)
+{
+  int v3; // eax
+  int v4; // esi
+  char lParam[44]; // [esp+8h] [ebp-2Ch] BYREF
+
+  v3 = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1473);
+  v4 = v3;
+  if ( v3 )
+  {
+    ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v3, 1203, 21, lParam);
+    WideString::Trim((#72 *)lParam);
+    if ( !a2 )
+      ((void (__stdcall *)(int, int, _DWORD, char *))SendMessageA)(v4, 1202, 0, lParam);
+    CopyWideToChar(&MEMORY[0x87F7E8][536294], lParam, -1);
+    *(this + 9) = 1;
+    *(this + 8) = 1;
+    LOBYTE(v3) = 1;
+  }
+  return v3;
+}
+
+/* ASM:
+lParam          = byte ptr -2Ch
+arg_0           = byte ptr  4
+
+sub     esp, 2Ch
+push    esi
+push    edi
+mov     edi, ecx
+push    5C1h            ; nIDDlgItem
+mov     eax, [edi]
+push    eax             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      short loc_5B5ABA
+lea     ecx, [esp+34h+lParam]
+push    ebx
+mov     ebx, ds:__imp_SendMessageA
+push    ecx             ; lParam
+push    15h             ; wParam
+push    4B3h            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+lea     ecx, [esp+38h+lParam] ; Source
+call    WideString__Trim
+mov     al, [esp+38h+arg_0]
+test    al, al
+jnz     short loc_5B5AA1
+lea     edx, [esp+38h+lParam]
+push    edx             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+
+loc_5B5AA1:                             ; CODE XREF: sub_5B5A50+40↑j
+push    0FFFFFFFFh
+lea     edx, [esp+3Ch+lParam]
+mov     ecx, 0A8B380h
+call    CopyWideToChar
+mov     al, 1
+pop     ebx
+mov     [edi+9], al
+mov     [edi+8], al
+
+loc_5B5ABA:                             ; CODE XREF: sub_5B5A50+19↑j
+pop     edi
+pop     esi
+add     esp, 2Ch
+retn    4
+*/
 }
 
 // 0x006274F0 (160 bytes)
 const char* String_Copy_6274F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006274F0.json)
-    // Size: 160 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_6274F0 ( _DWORD *this, const char *a2 ) { int v3 ; // esi !int v4 ! ; // ebp !int v5 ! ; // esi !int i ! ; // ebx !int v7 ! ; // edi !char String[256] ! ; // [esp+10h] [ebp-100h] BYREF String::CopyUpper ( String , a2 ) ; v3 = * ( this + 3 ) ; v4 = * ( _DWORD * ) v3 + 24 * ( ( * ( int (__thiscall **)(char *) ) ( v3 + 4 ) ) ( String ) % * ( _DWORD * ) ( v3 + 8 ) ) ; v5 = * ( _DWORD * ) ( v4 + 16 ) - 1 ; if ( v5 < 0 ) return 0 ; for ( i = 260 * v5 ; ; i -= 260 ) { v7 = * ( _DWORD * ) ( v4 + 4 ) + i ; if ( String::Equals ( ( const char * ) v7 , String ) ) break ; if ( -- v5 < 0 ) return 0 ; } if ( v7 == -256 ) return 0 ; else return * ( _DWORD * ) ( * ( _DWORD * ) ( v7 + 256 ) + 256 ) ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_6274F0(_DWORD *this, const char *a2)
+{
+  int v3; // esi
+  int v4; // ebp
+  int v5; // esi
+  int i; // ebx
+  int v7; // edi
+  char String[256]; // [esp+10h] [ebp-100h] BYREF
+
+  String::CopyUpper(String, a2);
+  v3 = *(this + 3);
+  v4 = *(_DWORD *)v3 + 24 * ((*(int (__thiscall **)(char *))(v3 + 4))(String) % *(_DWORD *)(v3 + 8));
+  v5 = *(_DWORD *)(v4 + 16) - 1;
+  if ( v5 < 0 )
+    return 0;
+  for ( i = 260 * v5; ; i -= 260 )
+  {
+    v7 = *(_DWORD *)(v4 + 4) + i;
+    if ( String::Equals((const char *)v7, String) )
+      break;
+    if ( --v5 < 0 )
+      return 0;
+  }
+  if ( v7 == -256 )
+    return 0;
+  else
+    return *(_DWORD *)(*(_DWORD *)(v7 + 256) + 256);
+}
+
+/* ASM:
+String          = byte ptr -100h
+arg_0           = dword ptr  4
+
+mov     eax, [esp+arg_0]
+sub     esp, 100h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+push    eax             ; int
+lea     ecx, [esp+114h+String] ; String
+call    String__CopyUpper
+mov     esi, [esi+0Ch]
+lea     ecx, [esp+110h+String]
+call    dword ptr [esi+4]
+cdq
+idiv    dword ptr [esi+8]
+lea     ecx, [edx+edx*2]
+mov     edx, [esi]
+mov     esi, [edx+ecx*8+10h]
+lea     ebp, [edx+ecx*8]
+dec     esi
+js      short loc_62756C
+mov     ebx, esi
+shl     ebx, 6
+add     ebx, esi
+shl     ebx, 2
+
+loc_627531:                             ; CODE XREF: sub_6274F0+61↓j
+mov     eax, [ebp+4]
+mov     edi, ebx
+add     edi, eax
+lea     eax, [esp+110h+String]
+push    eax
+mov     ecx, edi
+call    String__Equals
+test    al, al
+jnz     short loc_627562
+dec     esi
+sub     ebx, 104h
+test    esi, esi
+jge     short loc_627531
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 100h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_627562:                             ; CODE XREF: sub_6274F0+56↑j
+lea     eax, [edi+100h]
+test    eax, eax
+jnz     short loc_62757B
+
+loc_62756C:                             ; CODE XREF: sub_6274F0+35↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 100h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_62757B:                             ; CODE XREF: sub_6274F0+7A↑j
+mov     ecx, [eax]
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, [ecx+100h]
+pop     ebx
+add     esp, 100h
+retn    4
+*/
 }
 
 // 0x006278C0 (321 bytes)
 const char* String_Copy_6278C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006278C0.json)
-    // Size: 321 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6278C0 ( _DWORD *this, const char *a2 ) { !char *v3 ! ; // edx _DWORD *v4 ; // ecx int v5 ; // esi !int v6 ! ; // eax int v7 ; // edi !int v8 ! ; // esi !int v9 ! ; // edi !int v10 ! ; // ebx !int v11 ! ; // eax int v12 ; // ecx !int v13 ! ; // edx int v14 ; // eax int v15 ; // esi _DWORD *v17 ; // [esp+10h] [ebp-208h] !char *v18 ! ; // [esp+10h] [ebp-208h] !char String[256] ! ; // [esp+14h] [ebp-204h] BYREF char v20[256] ; // [esp+114h] [ebp-104h] BYREF !char *v21 ! ; // [esp+214h] [ebp-4h] v17 = MIXFile::Load ( this , a2 ) ; v3 = ( char * ) __2_YAPAXI_Z ( 0x104u ) ; if ( v3 ) { strcpy ( v3 , a2 ) ; v4 = v17 ; v18 = v3 ; * ( ( _DWORD * ) v3 + 64 ) = v4 ; } else { v18 = 0 ; } String::CopyUpper ( String , a2 ) ; v5 = * ( this + 3 ) ; v6 = ( * ( int (__thiscall **)(char *) ) ( v5 + 4 ) ) ( String ) ; v7 = * ( _DWORD * ) ( * ( _DWORD * ) v5 + 24 * ( v6 % * ( _DWORD * ) ( v5 + 8 ) ) + 16 ) ; v8 = * ( _DWORD * ) v5 + 24 * ( v6 % * ( _DWORD * ) ( v5 + 8 ) ) ; v9 = v7 - 1 ; if ( v9 < 0 ) { LABEL_8 : String::Copy ( v20 , String ) ; v12 = * ( _DWORD * ) ( v8 + 8 ) ; v21 = v18 ; if ( * ( _DWORD * ) ( v8 + 16 ) < v12 || ( ( LOBYTE ( v11 ) = * ( _BYTE * ) ( v8 + 13 ) , ( _BYTE ) v11 ) || ! v12 ) && ( v11 = * ( _DWORD * ) ( v8 + 20 ) , v11 > 0 ) && ( LOBYTE ( v11 ) = ( * ( int (__thiscall **)(int, int, _DWORD) ) ( * ( _DWORD * ) v8 + 8 ) ) ( v8 , v12 + v11 , 0 ) , ( _BYTE ) v11 ) ) { v13 = 65 * * ( _DWORD * ) ( v8 + 16 ) ; v14 = * ( _DWORD * ) ( v8 + 4 ) ; ++ * ( _DWORD * ) ( v8 + 16 ) ; v15 = v14 + 4 * v13 ; LOBYTE ( v11 ) = ( unsigned __int8 ) String::CopyChecked ( ( char * ) v15 , v20 ) ; * ( _DWORD * ) ( v15 + 256 ) = v21 ; } } else { v10 = 260 * v9 ; while ( 1 ) { LOBYTE ( v11 ) = String::Equals ( ( const char * ) ( v10 + * ( _DWORD * ) ( v8 + 4 ) ) , String ) ; if ( ( _BYTE ) v11 ) break ; -- v9 ; v10 -= 260 ; if ( v9 < 0 ) goto LABEL_8 ; } } return v11 ; }
-    return nullptr;
+// [IDA decompile]
+char __thiscall sub_6278C0(_DWORD *this, const char *a2)
+{
+  int v3; // edx
+  _DWORD *v4; // ecx
+  int v5; // esi
+  int v6; // eax
+  int v7; // edi
+  int v8; // esi
+  int v9; // edi
+  int v10; // ebx
+  int v11; // eax
+  int v12; // ecx
+  int v13; // edx
+  int v14; // eax
+  int v15; // esi
+  _DWORD *v17; // [esp+10h] [ebp-208h]
+  int v18; // [esp+10h] [ebp-208h]
+  char String[256]; // [esp+14h] [ebp-204h] BYREF
+  char v20[256]; // [esp+114h] [ebp-104h] BYREF
+  int v21; // [esp+214h] [ebp-4h]
+
+  v17 = MIXFile::Load(this, a2);
+  v3 = __2_YAPAXI_Z(260);
+  if ( v3 )
+  {
+    strcpy((char *)v3, a2);
+    v4 = v17;
+    v18 = v3;
+    *(_DWORD *)(v3 + 256) = v4;
+  }
+  else
+  {
+    v18 = 0;
+  }
+  String::CopyUpper(String, a2);
+  v5 = *(this + 3);
+  v6 = (*(int (__thiscall **)(char *))(v5 + 4))(String);
+  v7 = *(_DWORD *)(*(_DWORD *)v5 + 24 * (v6 % *(_DWORD *)(v5 + 8)) + 16);
+  v8 = *(_DWORD *)v5 + 24 * (v6 % *(_DWORD *)(v5 + 8));
+  v9 = v7 - 1;
+  if ( v9 < 0 )
+  {
+LABEL_8:
+    String::Copy(v20, String);
+    v12 = *(_DWORD *)(v8 + 8);
+    v21 = v18;
+    if ( *(_DWORD *)(v8 + 16) < v12
+      || ((LOBYTE(v11) = *(_BYTE *)(v8 + 13), (_BYTE)v11) || !v12)
+      && (v11 = *(_DWORD *)(v8 + 20), v11 > 0)
+      && (LOBYTE(v11) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v8 + 8))(v8, v12 + v11, 0), (_BYTE)v11) )
+    {
+      v13 = 65 * *(_DWORD *)(v8 + 16);
+      v14 = *(_DWORD *)(v8 + 4);
+      ++*(_DWORD *)(v8 + 16);
+      v15 = v14 + 4 * v13;
+      LOBYTE(v11) = (unsigned __int8)String::CopyChecked((char *)v15, v20);
+      *(_DWORD *)(v15 + 256) = v21;
+    }
+  }
+  else
+  {
+    v10 = 260 * v9;
+    while ( 1 )
+    {
+      LOBYTE(v11) = String::Equals((const char *)(v10 + *(_DWORD *)(v8 + 4)), String);
+      if ( (_BYTE)v11 )
+        break;
+      --v9;
+      v10 -= 260;
+      if ( v9 < 0 )
+        goto LABEL_8;
+    }
+  }
+  return v11;
+}
+
+/* ASM:
+String          = byte ptr -204h
+var_104         = byte ptr -104h
+var_4           = dword ptr -4
+arg_0           = dword ptr  4
+
+sub     esp, 208h
+push    ebx
+push    ebp
+mov     ebp, [esp+210h+arg_0]
+push    esi
+push    edi
+mov     ebx, ecx
+push    ebp
+call    MIXFile__Load
+push    104h            ; Size
+mov     [esp+21Ch+var_208], eax
+call    ??2_YAPAXI_Z
+mov     edx, eax
+add     esp, 4
+test    edx, edx
+jz      short loc_62791F
+mov     edi, ebp
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, edx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+mov     ecx, [esp+218h+var_208]
+mov     [esp+218h+var_208], edx
+mov     [edx+100h], ecx
+jmp     short loc_627927
+; ---------------------------------------------------------------------------
+
+loc_62791F:                             ; CODE XREF: sub_6278C0+2E↑j
+mov     [esp+218h+var_208], 0
+
+loc_627927:                             ; CODE XREF: sub_6278C0+5D↑j
+push    ebp             ; int
+lea     ecx, [esp+21Ch+String] ; String
+call    String__CopyUpper
+mov     esi, [ebx+0Ch]
+lea     ecx, [esp+218h+String]
+call    dword ptr [esi+4]
+cdq
+idiv    dword ptr [esi+8]
+mov     eax, [esi]
+lea     edx, [edx+edx*2]
+mov     edi, [eax+edx*8+10h]
+lea     esi, [eax+edx*8]
+dec     edi
+js      short loc_62797A
+mov     ebx, edi
+shl     ebx, 6
+add     ebx, edi
+shl     ebx, 2
+
+loc_627958:                             ; CODE XREF: sub_6278C0+B8↓j
+lea     ecx, [esp+218h+String]
+push    ecx
+mov     ecx, [esi+4]
+add     ecx, ebx
+call    String__Equals
+test    al, al
+jnz     loc_6279F4
+dec     edi
+sub     ebx, 104h
+test    edi, edi
+jge     short loc_627958
+
+loc_62797A:                             ; CODE XREF: sub_6278C0+8C↑j
+lea     edx, [esp+218h+String]
+lea     ecx, [esp+218h+var_104]
+push    edx
+call    String__Copy
+mov     eax, [esp+218h+var_208]
+mov     ecx, [esi+8]
+mov     [esp+218h+var_4], eax
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_6279C2
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_6279AB
+test    ecx, ecx
+jnz     short loc_6279F4
+
+loc_6279AB:                             ; CODE XREF: sub_6278C0+E5↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_6279F4
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_6279F4
+
+loc_6279C2:                             ; CODE XREF: sub_6278C0+DE↑j
+mov     eax, [esi+10h]
+mov     edx, eax
+shl     edx, 6
+lea     ecx, [eax+1]
+add     edx, eax
+mov     eax, [esi+4]
+mov     [esi+10h], ecx
+lea     ecx, [esp+218h+var_104]
+lea     esi, [eax+edx*4]
+push    ecx
+mov     ecx, esi
+call    String__CopyChecked
+mov     edx, [esp+218h+var_4]
+mov     [esi+100h], edx
+
+loc_6279F4:                             ; CODE XREF: sub_6278C0+A9↑j
+; sub_6278C0+E9↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 208h
+retn    4
+*/
 }
 
 // 0x00627A10 (272 bytes)
 const char* String_Copy_627A10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00627A10.json)
-    // Size: 272 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_627A10 ( _DWORD *this, const char *a2 ) { int v3 ; // esi !int v4 ! ; // ebp !int v5 ! ; // esi !int v6 ! ; // ebx !const char *v7 ! ; // edi !int *v8 ! ; // edi int v9 ; // esi _DWORD *v10 ; // ecx _DWORD *result ; // eax int v12 ; // ebp int i ; // ebx int v14 ; // eax void *v15 ; // edi void (__thiscall ***v16)(_DWORD, int) ; // ecx _DWORD *v18 ; // [esp+10h] [ebp-104h] !char String[256] ! ; // [esp+14h] [ebp-100h] BYREF String::CopyUpper ( String , a2 ) ; v3 = * ( this + 3 ) ; v4 = * ( _DWORD * ) v3 + 24 * ( ( * ( int (__thiscall **)(char *) ) ( v3 + 4 ) ) ( String ) % * ( _DWORD * ) ( v3 + 8 ) ) ; v5 = * ( _DWORD * ) ( v4 + 16 ) - 1 ; if ( v5 < 0 ) { LABEL_5 : v8 = 0 ; } else { v6 = 260 * v5 ; while ( 1 ) { v7 = ( const char * ) ( * ( _DWORD * ) ( v4 + 4 ) + v6 ) ; if ( String::Equals ( v7 , String ) ) break ; -- v5 ; v6 -= 260 ; if ( v5 < 0 ) goto LABEL_5 ; } v8 = ( int * ) ( v7 + 256 ) ; } v9 = * v8 ; v10 = MIXFile::Load ( this , a2 ) ; result = * ( _DWORD ** ) ( v9 + 256 ) ; v18 = v10 ; if ( result ) { v12 = result [ 4 ] ; for ( i = 0 ; i < v12 ; ++ i ) { v14 = * ( _DWORD * ) ( * ( _DWORD * ) ( v9 + 256 ) + 4 ) ; v15 = * ( void ** ) ( v14 + 4 * i ) ; if ( v15 ) { ColorScheme::Destructor ( * ( _DWORD * ) ( v14 + 4 * i ) ) ; __3_YAXPAX_Z ( v15 ) ; } } v16 = * ( void (__thiscall ****)(_DWORD, int) ) ( v9 + 256 ) ; if ( v16 ) ( * * v16 ) ( v16 , 1 ) ; * ( _DWORD * ) ( v9 + 256 ) = 0 ; * ( _DWORD * ) ( v9 + 256 ) = v18 ; return v18 ; } else { * ( _DWORD * ) ( v9 + 256 ) = v10 ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+_DWORD *__thiscall sub_627A10(_DWORD *this, const char *a2)
+{
+  int v3; // esi
+  int v4; // ebp
+  int v5; // esi
+  int v6; // ebx
+  const char *v7; // edi
+  int *v8; // edi
+  int v9; // esi
+  _DWORD *v10; // ecx
+  _DWORD *result; // eax
+  int v12; // ebp
+  int i; // ebx
+  int v14; // eax
+  void *v15; // edi
+  void (__thiscall ***v16)(_DWORD, int); // ecx
+  _DWORD *v18; // [esp+10h] [ebp-104h]
+  char String[256]; // [esp+14h] [ebp-100h] BYREF
+
+  String::CopyUpper(String, a2);
+  v3 = *(this + 3);
+  v4 = *(_DWORD *)v3 + 24 * ((*(int (__thiscall **)(char *))(v3 + 4))(String) % *(_DWORD *)(v3 + 8));
+  v5 = *(_DWORD *)(v4 + 16) - 1;
+  if ( v5 < 0 )
+  {
+LABEL_5:
+    v8 = 0;
+  }
+  else
+  {
+    v6 = 260 * v5;
+    while ( 1 )
+    {
+      v7 = (const char *)(*(_DWORD *)(v4 + 4) + v6);
+      if ( String::Equals(v7, String) )
+        break;
+      --v5;
+      v6 -= 260;
+      if ( v5 < 0 )
+        goto LABEL_5;
+    }
+    v8 = (int *)(v7 + 256);
+  }
+  v9 = *v8;
+  v10 = MIXFile::Load(this, a2);
+  result = *(_DWORD **)(v9 + 256);
+  v18 = v10;
+  if ( result )
+  {
+    v12 = result[4];
+    for ( i = 0; i < v12; ++i )
+    {
+      v14 = *(_DWORD *)(*(_DWORD *)(v9 + 256) + 4);
+      v15 = *(void **)(v14 + 4 * i);
+      if ( v15 )
+      {
+        ColorScheme::Destructor(*(_DWORD *)(v14 + 4 * i));
+        __3_YAXPAX_Z(v15);
+      }
+    }
+    v16 = *(void (__thiscall ****)(_DWORD, int))(v9 + 256);
+    if ( v16 )
+      (**v16)(v16, 1);
+    *(_DWORD *)(v9 + 256) = 0;
+    *(_DWORD *)(v9 + 256) = v18;
+    return v18;
+  }
+  else
+  {
+    *(_DWORD *)(v9 + 256) = v10;
+  }
+  return result;
+}
+
+/* ASM:
+String          = byte ptr -100h
+arg_0           = dword ptr  4
+
+sub     esp, 104h
+mov     eax, [esp+104h+arg_0]
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+push    eax             ; int
+lea     ecx, [esp+118h+String] ; String
+mov     [esp+118h+var_104], esi
+call    String__CopyUpper
+mov     esi, [esi+0Ch]
+lea     ecx, [esp+114h+String]
+call    dword ptr [esi+4]
+cdq
+idiv    dword ptr [esi+8]
+lea     ecx, [edx+edx*2]
+mov     edx, [esi]
+mov     esi, [edx+ecx*8+10h]
+lea     ebp, [edx+ecx*8]
+dec     esi
+js      short loc_627A7E
+mov     ebx, esi
+shl     ebx, 6
+add     ebx, esi
+shl     ebx, 2
+
+loc_627A58:                             ; CODE XREF: sub_627A10+6C↓j
+mov     eax, [ebp+4]
+mov     edi, ebx
+add     edi, eax
+lea     eax, [esp+114h+String]
+push    eax
+mov     ecx, edi
+call    String__Equals
+test    al, al
+jnz     loc_627B02
+dec     esi
+sub     ebx, 104h
+test    esi, esi
+jge     short loc_627A58
+
+loc_627A7E:                             ; CODE XREF: sub_627A10+3C↑j
+xor     edi, edi
+
+loc_627A80:                             ; CODE XREF: sub_627A10+F8↓j
+mov     ecx, [esp+114h+arg_0]
+mov     esi, [edi]
+push    ecx
+mov     ecx, [esp+118h+var_104]
+call    MIXFile__Load
+mov     ecx, eax
+mov     eax, [esi+100h]
+test    eax, eax
+mov     [esp+114h+var_104], ecx
+jz      short loc_627B0D
+mov     ebp, [eax+10h]
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_627AD1
+
+loc_627AAC:                             ; CODE XREF: sub_627A10+BF↓j
+mov     edx, [esi+100h]
+mov     eax, [edx+4]
+mov     edi, [eax+ebx*4]
+test    edi, edi
+jz      short loc_627ACC
+mov     ecx, edi
+call    ColorScheme__Destructor
+push    edi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_627ACC:                             ; CODE XREF: sub_627A10+AA↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_627AAC
+
+loc_627AD1:                             ; CODE XREF: sub_627A10+9A↑j
+mov     ecx, [esi+100h]
+test    ecx, ecx
+jz      short loc_627AE1
+mov     edx, [ecx]
+push    1
+call    dword ptr [edx]
+
+loc_627AE1:                             ; CODE XREF: sub_627A10+C9↑j
+mov     eax, [esp+114h+var_104]
+mov     dword ptr [esi+100h], 0
+mov     [esi+100h], eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 104h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_627B02:                             ; CODE XREF: sub_627A10+5D↑j
+add     edi, 100h
+jmp     loc_627A80
+; ---------------------------------------------------------------------------
+
+loc_627B0D:                             ; CODE XREF: sub_627A10+91↑j
+mov     [esi+100h], ecx
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 104h
+retn    4
+*/
 }
 
 // 0x004F3D40 (328 bytes)
 const char* String_Delet_4F3D40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F3D40.json)
-    // Size: 328 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4F3D40 ( const char **this ) { !int v1 ! ; // ebx !unsigned int v2 ! ; // eax !int v3 ! ; // edi !const char **v4 ! ; // esi !int v5 ! ; // ebx !int v7 ! ; // eax void *v8 ; // [esp+Ch] [ebp-8h] BYREF void *v9 ; // [esp+10h] [ebp-4h] BYREF v1 = 0 ; String::AssignFromPtr ( ( char ** ) & v8 , this ) ; String::ToLower ( ( const char ** ) & v8 ) ; String::AssignFromPtr ( ( char ** ) & v9 , ( const char ** ) & v8 ) ; String::CopyTruncated ( & v9 , 5u ) ; if ( String::Equals_Alt ( ( const char ** ) & v9 , aCtrl ) ) { v1 = 512 ; String::Erase ( ( const char ** ) & v8 , 0 , 5 ) ; } String::Reassign ( ( char ** ) & v9 , ( const char ** ) & v8 ) ; String::CopyTruncated ( & v9 , 4u ) ; if ( String::Equals_Alt ( ( const char ** ) & v9 , aAlt ) ) { BYTE1 ( v1 ) |= 4u ; String::Erase ( ( const char ** ) & v8 , 0 , 4 ) ; } String::Reassign ( ( char ** ) & v9 , ( const char ** ) & v8 ) ; String::CopyTruncated ( & v9 , 6u ) ; if ( String::Equals_Alt ( ( const char ** ) & v9 , aShift ) ) { BYTE1 ( v1 ) |= 1u ; String::Erase ( ( const char ** ) & v8 , 0 , 6 ) ; } v2 = String::Length ( ( const char ** ) & v8 ) ; if ( v2 ) { if ( v2 == 1 ) { v7 = sub_7B5410 ( ( const char ** ) & v8 , 0 ) - 32 ; } else { v3 = 1 ; v4 = ( const char ** ) & off_824328 ; while ( String::NotEquals ( ( const char ** ) & v8 , * v4 ) ) { v4 -= 2 ; -- v3 ; if ( ( int ) v4 < ( int ) & off_824320 ) goto LABEL_12 ; } if ( v3 < 0 ) goto LABEL_12 ; v7 = dword_824324 [ 2 * v3 ] ; } if ( v7 ) { v5 = v7 | v1 ; goto LABEL_13 ; } } LABEL_12 : v5 = 0 ; LABEL_13 : DeleteAndZero ( & v9 ) ; DeleteAndZero ( & v8 ) ; return v5 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_4F3D40(const char **this)
+{
+  int v1; // ebx
+  unsigned int v2; // eax
+  int v3; // edi
+  const char **v4; // esi
+  int v5; // ebx
+  int v7; // eax
+  void *v8; // [esp+Ch] [ebp-8h] BYREF
+  void *v9; // [esp+10h] [ebp-4h] BYREF
+
+  v1 = 0;
+  String::AssignFromPtr((char **)&v8, this);
+  String::ToLower((const char **)&v8);
+  String::AssignFromPtr((char **)&v9, (const char **)&v8);
+  String::CopyTruncated(5);
+  if ( String::Equals_Alt((const char **)&v9, aCtrl) )
+  {
+    v1 = 512;
+    String::Erase((const char **)&v8, 0, 5);
+  }
+  String::Reassign((char **)&v9, (const char **)&v8);
+  String::CopyTruncated(4);
+  if ( String::Equals_Alt((const char **)&v9, aAlt) )
+  {
+    BYTE1(v1) |= 4u;
+    String::Erase((const char **)&v8, 0, 4);
+  }
+  String::Reassign((char **)&v9, (const char **)&v8);
+  String::CopyTruncated(6);
+  if ( String::Equals_Alt((const char **)&v9, aShift) )
+  {
+    BYTE1(v1) |= 1u;
+    String::Erase((const char **)&v8, 0, 6);
+  }
+  v2 = String::Length((const char **)&v8);
+  if ( v2 )
+  {
+    if ( v2 == 1 )
+    {
+      v7 = sub_7B5410((const char **)&v8, 0) - 32;
+    }
+    else
+    {
+      v3 = 1;
+      v4 = (const char **)&off_824328;
+      while ( String::NotEquals((const char **)&v8, *v4) )
+      {
+        v4 -= 2;
+        --v3;
+        if ( (int)v4 < (int)&off_824320 )
+          goto LABEL_12;
+      }
+      if ( v3 < 0 )
+        goto LABEL_12;
+      v7 = dword_824324[2 * v3];
+    }
+    if ( v7 )
+    {
+      v5 = v7 | v1;
+      goto LABEL_13;
+    }
+  }
+LABEL_12:
+  v5 = 0;
+LABEL_13:
+  DeleteAndZero(&v9);
+  DeleteAndZero(&v8);
+  return v5;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    esi
+push    edi
+push    ecx
+lea     ecx, [esp+18h+var_8]
+xor     ebx, ebx
+call    String__AssignFromPtr
+lea     ecx, [esp+14h+var_8]
+call    String__ToLower
+lea     eax, [esp+14h+var_8]
+lea     ecx, [esp+14h+var_4]
+push    eax
+call    String__AssignFromPtr
+lea     ecx, [esp+14h+var_4]
+push    5               ; Count
+call    String__CopyTruncated
+lea     ecx, [esp+14h+var_4]
+push    offset aCtrl    ; "ctrl-"
+call    String__Equals_Alt
+test    al, al
+jz      short loc_4F3D98
+push    5
+push    0
+lea     ecx, [esp+1Ch+var_8]
+mov     ebx, 200h
+call    String__Erase
+
+loc_4F3D98:                             ; CODE XREF: sub_4F3D40+44↑j
+lea     ecx, [esp+14h+var_8]
+push    ecx
+lea     ecx, [esp+18h+var_4]
+call    String__Reassign
+lea     ecx, [esp+14h+var_4]
+push    4               ; Count
+call    String__CopyTruncated
+lea     ecx, [esp+14h+var_4]
+push    offset aAlt     ; "alt-"
+call    String__Equals_Alt
+test    al, al
+jz      short loc_4F3DD3
+push    4
+push    0
+lea     ecx, [esp+1Ch+var_8]
+or      bh, 4
+call    String__Erase
+
+loc_4F3DD3:                             ; CODE XREF: sub_4F3D40+81↑j
+lea     edx, [esp+14h+var_8]
+lea     ecx, [esp+14h+var_4]
+push    edx
+call    String__Reassign
+lea     ecx, [esp+14h+var_4]
+push    6               ; Count
+call    String__CopyTruncated
+lea     ecx, [esp+14h+var_4]
+push    offset aShift   ; "shift-"
+call    String__Equals_Alt
+test    al, al
+jz      short loc_4F3E0E
+push    6
+push    0
+lea     ecx, [esp+1Ch+var_8]
+or      bh, 1
+call    String__Erase
+
+loc_4F3E0E:                             ; CODE XREF: sub_4F3D40+BC↑j
+lea     ecx, [esp+14h+var_8]
+call    String__Length
+sub     eax, 0
+jz      short loc_4F3E45
+dec     eax
+jz      short loc_4F3E6F
+mov     edi, 1
+mov     esi, offset off_824328
+
+loc_4F3E29:                             ; CODE XREF: sub_4F3D40+103↓j
+mov     eax, [esi]
+lea     ecx, [esp+14h+var_8]
+push    eax
+call    String__NotEquals
+test    al, al
+jz      short loc_4F3E62
+sub     esi, 8
+dec     edi
+cmp     esi, offset off_824320 ; "backspace"
+jge     short loc_4F3E29
+
+loc_4F3E45:                             ; CODE XREF: sub_4F3D40+DA↑j
+; sub_4F3D40+124↓j ...
+xor     ebx, ebx
+
+loc_4F3E47:                             ; CODE XREF: sub_4F3D40+146↓j
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+lea     ecx, [esp+14h+var_8]
+call    DeleteAndZero
+mov     eax, ebx
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_4F3E62:                             ; CODE XREF: sub_4F3D40+F7↑j
+test    edi, edi
+jl      short loc_4F3E45
+mov     eax, dword_824324[edi*8]
+jmp     short loc_4F3E80
+; ---------------------------------------------------------------------------
+
+loc_4F3E6F:                             ; CODE XREF: sub_4F3D40+DD↑j
+push    0
+lea     ecx, [esp+18h+var_8]
+call    sub_7B5410
+movsx   eax, al
+sub     eax, 20h ; ' '
+
+loc_4F3E80:                             ; CODE XREF: sub_4F3D40+12D↑j
+test    eax, eax
+jz      short loc_4F3E45
+or      ebx, eax
+jmp     short loc_4F3E47
+*/
 }
 
 // 0x005D0190 (163 bytes)
 const char* String_Delet_5D0190() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005D0190.json)
-    // Size: 163 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5D0190 ( _DWORD *this, const char *a2 ) { int v3 ; // esi int v5 ; // esi void *v6 ; // [esp+8h] [ebp-4h] BYREF String::Assign ( ( char ** ) & v6 , a2 ) ; String::ToLower ( ( const char ** ) & v6 ) ; v3 = 0 ; if ( ( int ) * ( this + 25 ) <= 0 ) { LABEL_6 : DeleteAndZero ( & v6 ) ; return 0 ; } while ( ! String::NotEquals ( * ( const char *** ) ( * ( this + 22 ) + 4 * v3 ) , 0 ) ) { LABEL_5 : if ( ++ v3 >= * ( this + 25 ) ) goto LABEL_6 ; } String::AssignFromPtr ( ( char ** ) & a2 , * ( const char *** ) ( * ( this + 22 ) + 4 * v3 ) ) ; String::ToLower ( & a2 ) ; if ( ! String::Compare ( ( const char ** ) & v6 , & a2 ) ) { DeleteAndZero ( ( void ** ) & a2 ) ; goto LABEL_5 ; } v5 = * ( _DWORD * ) ( * ( this + 22 ) + 4 * v3 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( & v6 ) ; return v5 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_5D0190(_DWORD *this, const char *a2)
+{
+  int v3; // esi
+  int v5; // esi
+  void *v6; // [esp+8h] [ebp-4h] BYREF
+
+  String::Assign((char **)&v6, a2);
+  String::ToLower((const char **)&v6);
+  v3 = 0;
+  if ( (int)*(this + 25) <= 0 )
+  {
+LABEL_6:
+    DeleteAndZero(&v6);
+    return 0;
+  }
+  while ( !String::NotEquals(*(const char ***)(*(this + 22) + 4 * v3), 0) )
+  {
+LABEL_5:
+    if ( ++v3 >= *(this + 25) )
+      goto LABEL_6;
+  }
+  String::AssignFromPtr((char **)&a2, *(const char ***)(*(this + 22) + 4 * v3));
+  String::ToLower(&a2);
+  if ( !String::Compare((const char **)&v6, &a2) )
+  {
+    DeleteAndZero((void **)&a2);
+    goto LABEL_5;
+  }
+  v5 = *(_DWORD *)(*(this + 22) + 4 * v3);
+  DeleteAndZero((void **)&a2);
+  DeleteAndZero(&v6);
+  return v5;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_0]
+push    esi
+push    edi
+mov     edi, ecx
+push    eax
+lea     ecx, [esp+10h+var_4]
+call    String__Assign
+lea     ecx, [esp+0Ch+var_4]
+call    String__ToLower
+mov     eax, [edi+64h]
+xor     esi, esi
+test    eax, eax
+jle     short loc_5D0202
+
+loc_5D01B5:                             ; CODE XREF: sub_5D0190+70↓j
+mov     ecx, [edi+58h]
+push    0
+mov     ecx, [ecx+esi*4]
+call    String__NotEquals
+test    al, al
+jz      short loc_5D01FA
+mov     edx, [edi+58h]
+lea     ecx, [esp+0Ch+arg_0]
+mov     eax, [edx+esi*4]
+push    eax
+call    String__AssignFromPtr
+lea     ecx, [esp+0Ch+arg_0]
+call    String__ToLower
+lea     ecx, [esp+0Ch+arg_0]
+push    ecx
+lea     ecx, [esp+10h+var_4]
+call    String__Compare
+test    al, al
+jnz     short loc_5D0213
+lea     ecx, [esp+0Ch+arg_0]
+call    DeleteAndZero
+
+loc_5D01FA:                             ; CODE XREF: sub_5D0190+34↑j
+mov     eax, [edi+64h]
+inc     esi
+cmp     esi, eax
+jl      short loc_5D01B5
+
+loc_5D0202:                             ; CODE XREF: sub_5D0190+23↑j
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero
+pop     edi
+xor     eax, eax
+pop     esi
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5D0213:                             ; CODE XREF: sub_5D0190+5F↑j
+mov     edx, [edi+58h]
+lea     ecx, [esp+0Ch+arg_0]
+mov     esi, [edx+esi*4]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ecx
+retn    4
+*/
 }
 
 // 0x00770D70 (159 bytes)
 void String_Delet_770D70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770D70.json)
-    // Size: 159 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __fastcall sub_770D70 ( const char **a1, _DWORD *a2 ) { !int i ! ; // edi int v5 ; // ecx int v6 ; // eax int v7 ; // ebp !int v8 ! ; // eax int v9 ; // eax int v10 ; // edx !int v11 ! ; // [esp+Ch] [ebp-4h] BYREF ( * ( void (__thiscall **)(_DWORD *) ) ( * a2 + 12 ) ) ( a2 ) ; unknown_libname_73 ( & v11 ) ; for ( i = String::Tokenize ( a1 , 0 , Delimiter , ( void ** ) & v11 ) ; i != -1 ; i = String::Tokenize ( a1 , i , Delimiter , ( void ** ) & v11 ) ) { __1_Timevec_std__QAE_XZ ( ( std::_Timevec * ) & v11 ) ; v5 = a2 [ 2 ] ; v7 = v6 ; if ( a2 [ 4 ] >= v5 ) { if ( ! * ( ( _BYTE * ) a2 + 13 ) && v5 ) continue ; v8 = a2 [ 5 ] ; if ( v8 <= 0 || ! ( * ( unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD) ) ( * a2 + 8 ) ) ( a2 , v5 + v8 , 0 ) ) continue ; } v9 = a2 [ 4 ] ; v10 = a2 [ 1 ] ; a2 [ 4 ] = v9 + 1 ; * ( _DWORD * ) ( v10 + 4 * v9 ) = v7 ; } DeleteAndZero ( ( void ** ) & v11 ) ; }
-    
+// [IDA decompile]
+void __fastcall sub_770D70(const char **a1, _DWORD *a2)
+{
+  int i; // edi
+  int v5; // ecx
+  int v6; // eax
+  int v7; // ebp
+  int v8; // eax
+  int v9; // eax
+  int v10; // edx
+  int v11; // [esp+Ch] [ebp-4h] BYREF
+
+  (*(void (__thiscall **)(_DWORD *))(*a2 + 12))(a2);
+  unknown_libname_73(&v11);
+  for ( i = String::Tokenize(a1, 0, Delimiter, (void **)&v11);
+        i != -1;
+        i = String::Tokenize(a1, i, Delimiter, (void **)&v11) )
+  {
+    __1_Timevec_std__QAE_XZ((#354 *)&v11);
+    v5 = a2[2];
+    v7 = v6;
+    if ( a2[4] >= v5 )
+    {
+      if ( !*((_BYTE *)a2 + 13) && v5 )
+        continue;
+      v8 = a2[5];
+      if ( v8 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*a2 + 8))(a2, v5 + v8, 0) )
+        continue;
+    }
+    v9 = a2[4];
+    v10 = a2[1];
+    a2[4] = v9 + 1;
+    *(_DWORD *)(v10 + 4 * v9) = v7;
+  }
+  DeleteAndZero((void **)&v11);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, edx
+mov     ebx, ecx
+push    edi
+mov     ecx, esi
+mov     eax, [esi]
+call    dword ptr [eax+0Ch]
+lea     ecx, [esp+10h+var_4]
+call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
+lea     ecx, [esp+10h+var_4]
+push    ecx             ; int
+push    offset Delimiter ; ","
+push    0               ; int
+mov     ecx, ebx
+call    String__Tokenize
+mov     edi, eax
+cmp     edi, 0FFFFFFFFh
+jz      short loc_770E01
+push    ebp
+
+loc_770DA3:                             ; CODE XREF: sub_770D70+8E↓j
+lea     ecx, [esp+14h+var_4] ; this
+call    ??1_Timevec_std__QAE_XZ
+mov     ecx, [esi+8]
+mov     ebp, eax
+cmp     [esi+10h], ecx
+jl      short loc_770DD8
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_770DC1
+test    ecx, ecx
+jnz     short loc_770DE7
+
+loc_770DC1:                             ; CODE XREF: sub_770D70+4B↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_770DE7
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_770DE7
+
+loc_770DD8:                             ; CODE XREF: sub_770D70+44↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], ebp
+
+loc_770DE7:                             ; CODE XREF: sub_770D70+4F↑j
+; sub_770D70+56↑j ...
+lea     eax, [esp+14h+var_4]
+mov     ecx, ebx
+push    eax             ; int
+push    offset Delimiter ; ","
+push    edi             ; int
+call    String__Tokenize
+mov     edi, eax
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_770DA3
+pop     ebp
+
+loc_770E01:                             ; CODE XREF: sub_770D70+30↑j
+lea     ecx, [esp+10h+var_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x0077D3F0 (160 bytes)
 const char* String_Delet_77D3F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0077D3F0.json)
-    // Size: 160 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_77D3F0 ( const char *this ) { !int v2 ! ; // ebx !int v3 ! ; // edi !const char *v4 ! ; // ebp void *v6 ; // [esp+10h] [ebp-4h] BYREF if ( ! this ) return 0 ; v2 = g_WindowManager ; unknown_libname_73 ( & v6 ) ; v3 = 0 ; if ( v2 <= 0 ) { LABEL_9 : DeleteAndZero ( & v6 ) ; return 0 ; } v4 = this + 36 ; while ( 1 ) { if ( v3 >= 0 && v3 < g_WindowManager ) String::Reassign ( ( char ** ) & v6 , ( const char ** ) g_WOL_LoginQueue + v3 ) ; if ( ! strcmp ( String::GetOrEmpty ( ( char ** ) & v6 ) , v4 ) ) break ; if ( ++ v3 >= v2 ) goto LABEL_9 ; } DeleteAndZero ( & v6 ) ; return 1 ; }
-    return nullptr;
+// [IDA decompile]
+char __thiscall sub_77D3F0(const char *this)
+{
+  int v2; // ebx
+  int v3; // edi
+  const char *v4; // ebp
+  void *v6; // [esp+10h] [ebp-4h] BYREF
+
+  if ( !this )
+    return 0;
+  v2 = MEMORY[0xB73AA8];
+  unknown_libname_73(&v6);
+  v3 = 0;
+  if ( v2 <= 0 )
+  {
+LABEL_9:
+    DeleteAndZero(&v6);
+    return 0;
+  }
+  v4 = this + 36;
+  while ( 1 )
+  {
+    if ( v3 >= 0 && v3 < MEMORY[0xB73AA8] )
+      String::Reassign((char **)&v6, (const char **)MEMORY[0xB73AB0] + v3);
+    if ( !strcmp(String::GetOrEmpty((char **)&v6), v4) )
+      break;
+    if ( ++v3 >= v2 )
+      goto LABEL_9;
+  }
+  DeleteAndZero(&v6);
+  return 1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+test    esi, esi
+push    edi
+jz      short loc_77D477
+mov     ebx, dword_A8ED54+0E4D54h
+lea     ecx, [esp+14h+var_4]
+call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_77D46E
+lea     ebp, [esi+24h]
+
+loc_77D413:                             ; CODE XREF: sub_77D3F0+7C↓j
+test    edi, edi
+jl      short loc_77D431
+cmp     edi, dword_A8ED54+0E4D54h
+jge     short loc_77D431
+mov     eax, dword_A8ED54+0E4D5Ch
+lea     ecx, [eax+edi*4]
+push    ecx
+lea     ecx, [esp+18h+var_4]
+call    String__Reassign
+
+loc_77D431:                             ; CODE XREF: sub_77D3F0+25↑j
+; sub_77D3F0+2D↑j
+lea     ecx, [esp+14h+var_4]
+mov     esi, ebp
+call    String__GetOrEmpty
+
+loc_77D43C:                             ; CODE XREF: sub_77D3F0+6A↓j
+mov     dl, [eax]
+mov     cl, dl
+cmp     dl, [esi]
+jnz     short loc_77D460
+test    cl, cl
+jz      short loc_77D45C
+mov     dl, [eax+1]
+mov     cl, dl
+cmp     dl, [esi+1]
+jnz     short loc_77D460
+add     eax, 2
+add     esi, 2
+test    cl, cl
+jnz     short loc_77D43C
+
+loc_77D45C:                             ; CODE XREF: sub_77D3F0+56↑j
+xor     eax, eax
+jmp     short loc_77D465
+; ---------------------------------------------------------------------------
+
+loc_77D460:                             ; CODE XREF: sub_77D3F0+52↑j
+; sub_77D3F0+60↑j
+sbb     eax, eax
+sbb     eax, 0FFFFFFFFh
+
+loc_77D465:                             ; CODE XREF: sub_77D3F0+6E↑j
+test    eax, eax
+jz      short loc_77D47F
+inc     edi
+cmp     edi, ebx
+jl      short loc_77D413
+
+loc_77D46E:                             ; CODE XREF: sub_77D3F0+1E↑j
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+
+loc_77D477:                             ; CODE XREF: sub_77D3F0+9↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_77D47F:                             ; CODE XREF: sub_77D3F0+77↑j
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x004F3C40 (249 bytes)
 const char* String_Delete_4F3C40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F3C40.json)
-    // Size: 249 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4F3C40 ( _DWORD *this, int a2, const char **a3 ) { _DWORD *v3 ; // ebp _DWORD *v4 ; // esi !int v5 ! ; // edi !int v6 ! ; // ebp int v7 ; // ecx !int v8 ! ; // eax int v9 ; // eax int v10 ; // edx v3 = this ; GraphicMenuItem::Constructor ( this , a2 ) ; v4 = v3 + 4 ; v3 [ 5 ] = 0 ; v3 [ 6 ] = 0 ; * ( ( _BYTE * ) v3 + 28 ) = 1 ; * ( ( _BYTE * ) v3 + 29 ) = 0 ; v3 [ 4 ] = & DynamicVectorClass<unsigned int>::vftable' ; v3 [ 9 ] = 10 ; v3 [ 8 ] = 0 ; * v3 = & GraphicMenuShortcutItem::vftable' ; unknown_libname_73 ( & a2 ) ; v5 = String::Tokenize ( a3 , 0 , Delimiter , ( void ** ) & a2 ) ; if ( String::Length ( ( const char ** ) & a2 ) ) { do { v6 = sub_4F3D40 ( ( const char ** ) & a2 ) ; if ( v6 ) { v7 = v4 [ 2 ] ; if ( v4 [ 4 ] < v7 || ( * ( ( _BYTE * ) v4 + 13 ) || ! v7 ) && ( v8 = v4 [ 5 ] , v8 > 0 ) && ( * ( unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD) ) ( * v4 + 8 ) ) ( v4 , v7 + v8 , 0 ) ) { v9 = v4 [ 4 ] ; v10 = v4 [ 1 ] ; v4 [ 4 ] = v9 + 1 ; * ( _DWORD * ) ( v10 + 4 * v9 ) = v6 ; } } v5 = String::Tokenize ( a3 , v5 , asc_824370 , ( void ** ) & a2 ) ; if ( v5 == -1 ) DeleteAndZero::Alt2 ( ( void ** ) & a2 ) ; } while ( String::Length ( ( const char ** ) & a2 ) ) ; v3 = this ; } DeleteAndZero ( ( void ** ) & a2 ) ; return v3 ; }
-    return nullptr;
+// [IDA decompile]
+_DWORD *__thiscall sub_4F3C40(_DWORD *this, int a2, const char **a3)
+{
+  _DWORD *v3; // ebp
+  _DWORD *v4; // esi
+  int v5; // edi
+  int v6; // ebp
+  int v7; // ecx
+  int v8; // eax
+  int v9; // eax
+  int v10; // edx
+
+  v3 = this;
+  GraphicMenuItem::Constructor(this, a2);
+  v4 = v3 + 4;
+  v3[5] = 0;
+  v3[6] = 0;
+  *((_BYTE *)v3 + 28) = 1;
+  *((_BYTE *)v3 + 29) = 0;
+  v3[4] = &DynamicVectorClass<unsigned int>::`vftable';
+  v3[9] = 10;
+  v3[8] = 0;
+  *v3 = &GraphicMenuShortcutItem::`vftable';
+  unknown_libname_73(&a2);
+  v5 = String::Tokenize(a3, 0, Delimiter, (void **)&a2);
+  if ( String::Length((const char **)&a2) )
+  {
+    do
+    {
+      v6 = sub_4F3D40((const char **)&a2);
+      if ( v6 )
+      {
+        v7 = v4[2];
+        if ( v4[4] < v7
+          || (*((_BYTE *)v4 + 13) || !v7)
+          && (v8 = v4[5], v8 > 0)
+          && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v7 + v8, 0) )
+        {
+          v9 = v4[4];
+          v10 = v4[1];
+          v4[4] = v9 + 1;
+          *(_DWORD *)(v10 + 4 * v9) = v6;
+        }
+      }
+      v5 = String::Tokenize(a3, v5, asc_824370, (void **)&a2);
+      if ( v5 == -1 )
+        DeleteAndZero::Alt2((void **)&a2);
+    }
+    while ( String::Length((const char **)&a2) );
+    v3 = this;
+  }
+  DeleteAndZero((void **)&a2);
+  return v3;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebp, ecx
+push    eax
+mov     [esp+18h+var_4], ebp
+call    GraphicMenuItem__Constructor
+lea     esi, [ebp+10h]
+xor     ebx, ebx
+lea     ecx, [esp+14h+arg_0]
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], bl
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@I@@6B@ ; const DynamicVectorClass<uint>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     [esi+10h], ebx
+mov     dword ptr [ebp+0], offset ??_7GraphicMenuShortcutItem@@6B@ ; const GraphicMenuShortcutItem::`vftable'
+call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
+lea     ecx, [esp+14h+arg_0]
+push    ecx             ; int
+mov     ecx, [esp+18h+arg_4]
+push    offset Delimiter ; ","
+push    ebx             ; int
+call    String__Tokenize
+lea     ecx, [esp+14h+arg_0]
+mov     edi, eax
+call    String__Length
+test    eax, eax
+jbe     short loc_4F3D26
+
+loc_4F3CAA:                             ; CODE XREF: sub_4F3C40+E0↓j
+lea     ecx, [esp+14h+arg_0]
+call    sub_4F3D40
+mov     ebp, eax
+cmp     ebp, ebx
+jz      short loc_4F3CF1
+mov     ecx, [esi+8]
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_4F3CE2
+cmp     [esi+0Dh], bl
+jnz     short loc_4F3CCC
+cmp     ecx, ebx
+jnz     short loc_4F3CF1
+
+loc_4F3CCC:                             ; CODE XREF: sub_4F3C40+86↑j
+mov     eax, [esi+14h]
+cmp     eax, ebx
+jle     short loc_4F3CF1
+mov     edx, [esi]
+add     eax, ecx
+push    ebx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4F3CF1
+
+loc_4F3CE2:                             ; CODE XREF: sub_4F3C40+81↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], ebp
+
+loc_4F3CF1:                             ; CODE XREF: sub_4F3C40+77↑j
+; sub_4F3C40+8A↑j ...
+mov     ecx, [esp+14h+arg_4]
+lea     eax, [esp+14h+arg_0]
+push    eax             ; int
+push    offset asc_824370 ; ",;"
+push    edi             ; int
+call    String__Tokenize
+mov     edi, eax
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_4F3D15
+lea     ecx, [esp+14h+arg_0]
+call    DeleteAndZero__Alt2
+
+loc_4F3D15:                             ; CODE XREF: sub_4F3C40+CA↑j
+lea     ecx, [esp+14h+arg_0]
+call    String__Length
+test    eax, eax
+ja      short loc_4F3CAA
+mov     ebp, [esp+14h+var_4]
+
+loc_4F3D26:                             ; CODE XREF: sub_4F3C40+68↑j
+lea     ecx, [esp+14h+arg_0]
+call    DeleteAndZero
+pop     edi
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn    8
+*/
 }
 
 // 0x00786E70 (117 bytes)
 const char* String_EqualsAlt_786E70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00786E70.json)
-    // Size: 117 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_786E70 ( const char **this ) { !int v2 ! ; // ecx !int v3 ! ; // edi !int i ! ; // esi char *v5 ; // eax !char *v6 ! ; // eax if ( ! String::Length ( this ) ) return -1 ; v2 = g_WOL_UserList ; v3 = 1 ; if ( g_WOL_UserList <= 1 ) return -1 ; for ( i = 248 ; ; i += 248 ) { v5 = 0 ; if ( i >= 0 && v3 < v2 ) v5 = ( char * ) dword_B778E0 + i ; v6 = strchr ( v5 + 24 , 58 ) ; if ( v6 ) { if ( * v6 && String::Equals_Alt ( this , v6 + 1 ) ) break ; } v2 = g_WOL_UserList ; if ( ++ v3 >= g_WOL_UserList ) return -1 ; } return v3 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_786E70(const char **this)
+{
+  int v2; // ecx
+  int v3; // edi
+  int i; // esi
+  char *v5; // eax
+  char *v6; // eax
+
+  if ( !String::Length(this) )
+    return -1;
+  v2 = MEMORY[0xB778D8];
+  v3 = 1;
+  if ( MEMORY[0xB778D8] <= 1 )
+    return -1;
+  for ( i = 248; ; i += 248 )
+  {
+    v5 = 0;
+    if ( i >= 0 && v3 < v2 )
+      v5 = (char *)MEMORY[0xB778E0] + i;
+    v6 = strchr(v5 + 24, 58);
+    if ( v6 )
+    {
+      if ( *v6 && String::Equals_Alt(this, v6 + 1) )
+        break;
+    }
+    v2 = MEMORY[0xB778D8];
+    if ( ++v3 >= MEMORY[0xB778D8] )
+      return -1;
+  }
+  return v3;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+call    String__Length
+test    eax, eax
+jz      short loc_786ED8
+mov     ecx, dword_A8ED54+0E8B84h
+mov     edi, 1
+cmp     ecx, edi
+jle     short loc_786ED8
+mov     esi, 0F8h
+
+loc_786E92:                             ; CODE XREF: sub_786E70+66↓j
+xor     eax, eax
+test    esi, esi
+jl      short loc_786EA3
+cmp     edi, ecx
+jge     short loc_786EA3
+mov     eax, dword_A8ED54+0E8B8Ch
+add     eax, esi
+
+loc_786EA3:                             ; CODE XREF: sub_786E70+26↑j
+; sub_786E70+2A↑j
+add     eax, 18h
+push    3Ah ; ':'       ; Val
+push    eax             ; Str
+call    _strchr
+add     esp, 8
+test    eax, eax
+jz      short loc_786EC7
+cmp     byte ptr [eax], 0
+jz      short loc_786EC7
+inc     eax
+mov     ecx, ebx
+push    eax
+call    String__Equals_Alt
+test    al, al
+jnz     short loc_786EDF
+
+loc_786EC7:                             ; CODE XREF: sub_786E70+43↑j
+; sub_786E70+48↑j
+mov     ecx, dword_A8ED54+0E8B84h
+inc     edi
+add     esi, 0F8h
+cmp     edi, ecx
+jl      short loc_786E92
+
+loc_786ED8:                             ; CODE XREF: sub_786E70+C↑j
+; sub_786E70+1B↑j
+pop     edi
+pop     esi
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_786EDF:                             ; CODE XREF: sub_786E70+55↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x007B6EE0 (84 bytes)
 int String_Erase_7B6EE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B6EE0.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   __int16 __thiscall sub_7B6EE0 ( const wchar_t **this, const wchar_t **a2 ) { !unsigned int i ! ; // esi void *v4 ; // eax !const wchar_t *v5 ! ; // eax for ( i = 0 ; ; ++ i ) { v4 = ( void * ) * this ; if ( ! * this ) break ; v4 = ( void * ) wcslen ( * this ) ; if ( i >= ( unsigned int ) v4 ) break ; v5 = * a2 ; if ( ! * a2 ) v5 = & g_TypeClass_DefaultString ; v4 = wcschr ( v5 , ( * this ) [ i ] ) ; if ( ! v4 ) break ; } if ( i ) LOWORD ( v4 ) = WideString::Erase ( this , 0 , i ) ; return ( __int16 ) v4 ; }
-    return 0;
+// [IDA decompile]
+__int16 __thiscall sub_7B6EE0(const #72 **this, const #72 **a2)
+{
+  unsigned int i; // esi
+  const #72 *v4; // eax
+  const #72 *v5; // eax
+
+  for ( i = 0; ; ++i )
+  {
+    v4 = *this;
+    if ( !*this )
+      break;
+    v4 = (const #72 *)wcslen(*this);
+    if ( i >= (unsigned int)v4 )
+      break;
+    v5 = *a2;
+    if ( !*a2 )
+      v5 = (const #72 *)&MEMORY[0x87F7E8][8147];
+    v4 = (const #72 *)wcschr(v5, *((_WORD *)*this + i));
+    if ( !v4 )
+      break;
+  }
+  if ( i )
+    LOWORD(v4) = WideString::Erase(this, 0, i);
+  return (__int16)v4;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_0]
+push    esi
+push    edi
+mov     edi, ecx
+xor     esi, esi
+
+loc_7B6EEB:                             ; CODE XREF: sub_7B6EE0+3E↓j
+mov     eax, [edi]
+test    eax, eax
+jz      short loc_7B6F20
+push    eax             ; String
+call    _wcslen
+add     esp, 4
+cmp     esi, eax
+jnb     short loc_7B6F20
+mov     eax, [ebx]
+test    eax, eax
+jnz     short loc_7B6F09
+mov     eax, 887734h
+
+loc_7B6F09:                             ; CODE XREF: sub_7B6EE0+22↑j
+mov     ecx, [edi]
+mov     dx, [ecx+esi*2]
+push    edx             ; Ch
+push    eax             ; Str
+call    _wcschr
+add     esp, 8
+test    eax, eax
+jz      short loc_7B6F20
+inc     esi
+jmp     short loc_7B6EEB
+; ---------------------------------------------------------------------------
+
+loc_7B6F20:                             ; CODE XREF: sub_7B6EE0+F↑j
+; sub_7B6EE0+1C↑j ...
+test    esi, esi
+jbe     short loc_7B6F2E
+push    esi
+push    0
+mov     ecx, edi
+call    WideString__Erase
+
+loc_7B6F2E:                             ; CODE XREF: sub_7B6EE0+42↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0079BF50 (231 bytes)
 bool String_Find_79BF50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0079BF50.json)
-    // Size: 231 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   BOOL __thiscall sub_79BF50 ( HWND hDlg ) { !HWND DlgItem ! ; // eax !HWND v3 ! ; // eax int v4 ; // esi !HWND v5 ! ; // eax !BOOL v7 ! ; // [esp-4h] [ebp-18h] !BOOL BuddyWOL ! ; // [esp-4h] [ebp-18h] !unsigned __int8 v9 ! ; // [esp+10h] [ebp-4h] v7 = String::Length ( & g_WOL_LoginObject ) != 0 ; DlgItem = "GetDlgItem " ( hDlg , 1795 ) ; "EnableWindow " ( DlgItem , v7 ) ; BuddyWOL = FindBuddyWOL ( ) ; v3 = "GetDlgItem " ( hDlg , 1581 ) ; "EnableWindow " ( v3 , BuddyWOL ) ; if ( String::Length ( & g_WOL_LoginObject ) ) { if ( ! dword_B76994 ) goto LABEL_10 ; v4 = * ( ( _DWORD * ) g_WOL_AccountInfo + ( dword_B769A8 ( & g_WOL_LoginObject ) & ( ( 1 << dword_B7699C ) - 1 ) ) ) ; if ( ! v4 ) goto LABEL_10 ; while ( ! String::Compare ( ( const char ** ) v4 , & g_WOL_LoginObject ) ) { v4 = * ( _DWORD * ) ( v4 + 8 ) ; if ( ! v4 ) { v9 = 0 ; goto LABEL_12 ; } } if ( v4 != -4 && * ( _DWORD * ) ( v4 + 4 ) > 2u ) v9 = 1 ; else LABEL_10 : v9 = 0 ; } else { v9 = 0 ; } LABEL_12 : v5 = "GetDlgItem " ( hDlg , 1474 ) ; return "EnableWindow " ( v5 , v9 ) ; }
-    return false;
+// [IDA decompile]
+int __thiscall sub_79BF50(void *this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // esi
+  int v5; // eax
+  BOOL v7; // [esp-4h] [ebp-18h]
+  BOOL BuddyWOL; // [esp-4h] [ebp-18h]
+  unsigned __int8 v9; // [esp+10h] [ebp-4h]
+
+  v7 = String::Length((const char **)&dword_A8ED54[237620]) != 0;
+  v2 = ((int (__stdcall *)(void *, int))GetDlgItem)(this, 1795);
+  ((void (__stdcall *)(int, BOOL))EnableWindow)(v2, v7);
+  BuddyWOL = FindBuddyWOL();
+  v3 = ((int (__stdcall *)(void *, int))GetDlgItem)(this, 1581);
+  ((void (__stdcall *)(int, BOOL))EnableWindow)(v3, BuddyWOL);
+  if ( String::Length((const char **)&dword_A8ED54[237620]) )
+  {
+    if ( !dword_A8ED54[237328] )
+      goto LABEL_10;
+    v4 = *(_DWORD *)(dword_A8ED54[237327]
+                   + 4
+                   * (((int (__thiscall *)(int *))dword_A8ED54[237333])(&dword_A8ED54[237620])
+                    & ((1 << SLOBYTE(dword_A8ED54[237330])) - 1)));
+    if ( !v4 )
+      goto LABEL_10;
+    while ( !String::Compare((const char **)v4, (const char **)&dword_A8ED54[237620]) )
+    {
+      v4 = *(_DWORD *)(v4 + 8);
+      if ( !v4 )
+      {
+        v9 = 0;
+        goto LABEL_12;
+      }
+    }
+    if ( v4 != -4 && *(_DWORD *)(v4 + 4) > 2u )
+      v9 = 1;
+    else
+LABEL_10:
+      v9 = 0;
+  }
+  else
+  {
+    v9 = 0;
+  }
+LABEL_12:
+  v5 = ((int (__stdcall *)(void *, int))GetDlgItem)(this, 1474);
+  return ((int (__stdcall *)(int, _DWORD))EnableWindow)(v5, v9);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+mov     ecx, (offset dword_A8ED54+0E80D0h)
+call    String__Length
+xor     ecx, ecx
+mov     ebx, ds:__imp_GetDlgItem
+cmp     ecx, eax
+sbb     edx, edx
+neg     edx
+push    edx             ; bEnable
+push    703h            ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_GetDlgItem
+mov     ebp, ds:__imp_EnableWindow
+push    eax             ; hWnd
+call    ebp ; __imp_EnableWindow
+call    FindBuddyWOL
+and     eax, 0FFh
+push    eax             ; bEnable
+push    62Dh            ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_GetDlgItem
+push    eax             ; hWnd
+call    ebp ; __imp_EnableWindow
+mov     ecx, (offset dword_A8ED54+0E80D0h)
+call    String__Length
+test    eax, eax
+jnz     short loc_79BFAB
+mov     byte ptr [esp+14h+var_4], al
+jmp     short loc_79C01B
+; ---------------------------------------------------------------------------
+
+loc_79BFAB:                             ; CODE XREF: sub_79BF50+53↑j
+mov     eax, dword_A8ED54+0E7C40h
+test    eax, eax
+jz      short loc_79C00F
+mov     ecx, (offset dword_A8ED54+0E80D0h)
+call    dword_A8ED54+0E7C54h
+mov     ecx, dword_A8ED54+0E7C48h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+0E7C3Ch
+mov     esi, [eax+edx*4]
+test    esi, esi
+jz      short loc_79C00F
+
+loc_79BFDB:                             ; CODE XREF: sub_79BF50+A0↓j
+push    (offset dword_A8ED54+0E80D0h)
+mov     ecx, esi
+call    String__Compare
+test    al, al
+jnz     short loc_79BFF9
+mov     esi, [esi+8]
+test    esi, esi
+jnz     short loc_79BFDB
+mov     byte ptr [esp+14h+var_4], 0
+jmp     short loc_79C01B
+; ---------------------------------------------------------------------------
+
+loc_79BFF9:                             ; CODE XREF: sub_79BF50+99↑j
+test    esi, esi
+jz      short loc_79C00F
+lea     eax, [esi+4]
+test    eax, eax
+jz      short loc_79C00F
+mov     eax, [eax]
+test    eax, eax
+jl      short loc_79C016
+cmp     eax, 2
+jg      short loc_79C016
+
+loc_79C00F:                             ; CODE XREF: sub_79BF50+62↑j
+; sub_79BF50+89↑j ...
+mov     byte ptr [esp+14h+var_4], 0
+jmp     short loc_79C01B
+; ---------------------------------------------------------------------------
+
+loc_79C016:                             ; CODE XREF: sub_79BF50+B8↑j
+; sub_79BF50+BD↑j
+mov     byte ptr [esp+14h+var_4], 1
+
+loc_79C01B:                             ; CODE XREF: sub_79BF50+59↑j
+; sub_79BF50+A7↑j ...
+mov     ecx, [esp+14h+var_4]
+and     ecx, 0FFh
+push    ecx             ; bEnable
+push    5C2h            ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_GetDlgItem
+push    eax             ; hWnd
+call    ebp ; __imp_EnableWindow
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x005CD570 (277 bytes)
 int String_GetWideString_5CD570() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CD570.json)
-    // Size: 277 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5CD570 ( int this, const wchar_t **a2, int a3, int a4, int a5, int *a6, int a7, int a8, char a9, char a10 ) { !size_t v11 ! ; // ebx int v12 ; // ebp int v13 ; // eax int v15 ; // [esp+14h] [ebp-8h] int v16 ; // [esp+3Ch] [ebp+20h] int v17 ; // [esp+40h] [ebp+24h] * ( _DWORD * ) ( this + 8 ) = a4 ; * ( _DWORD * ) ( this + 4 ) = a3 ; * ( _BYTE * ) ( this + 12 ) = 1 ; v11 = 0 ; * ( _DWORD * ) ( this + 16 ) = Timer::GetTicks ( ) ; * ( _DWORD * ) ( this + 24 ) = 0 ; * ( _DWORD * ) this = & MSAnim::vftable' ; WideString::AssignFromPtr ( ( wchar_t ** ) ( this + 28 ) , a2 ) ; * ( _DWORD * ) ( this + 44 ) = a8 ; * ( _BYTE * ) ( this + 48 ) = a9 ; * ( _DWORD * ) ( this + 32 ) = 0 ; * ( _DWORD * ) ( this + 36 ) = a7 ; * ( _DWORD * ) ( this + 40 ) = 0 ; * ( _DWORD * ) ( this + 52 ) = a5 ; * ( _BYTE * ) ( this + 72 ) = 0 ; * ( _BYTE * ) ( this + 73 ) = a10 ; * ( _DWORD * ) ( this + 76 ) = 0 ; * ( _DWORD * ) this = & MSPrintAnim::vftable' ; * ( _DWORD * ) ( this + 16 ) = Timer::GetTicks ( ) ; * ( _DWORD * ) ( this + 20 ) = v15 ; * ( _DWORD * ) ( this + 24 ) = a7 ; sub_5CD690 ( this , a6 ) ; if ( a10 ) { v17 = 0 ; v16 = * ( _DWORD * ) ( * ( _DWORD * ) ( this + 52 ) + 4 ) ; if ( WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , 0 ) ) { do { if ( WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v11 ) == 10 ) break ; v12 = * * ( _DWORD ** ) ( this + 52 ) ; LOWORD ( v13 ) = WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v11 ++ ) ; v17 += ( * ( int (__thiscall **)(_DWORD, int) ) ( v12 + 4 ) ) ( * ( _DWORD * ) ( this + 52 ) , v13 ) ; } while ( WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v11 ) ) ; } * ( _DWORD * ) ( this + 76 ) = ( * ( _DWORD * ) ( this + 64 ) - v17 - v16 ) / 2 ; } return this ; }
-    return 0;
+// [IDA decompile]
+char *__thiscall sub_5CD570(
+{
+  int v11; // ebx
+  int Ticks; // eax
+  int v13; // ecx
+  int v14; // ebp
+  int Char; // eax
+  int v17; // [esp+14h] [ebp-8h] BYREF
+  int v18; // [esp+3Ch] [ebp+20h]
+  int v19; // [esp+40h] [ebp+24h]
+
+  *((_DWORD *)this + 2) = a4;
+  *((_DWORD *)this + 1) = a3;
+  *(this + 12) = 1;
+  v11 = 0;
+  *((_DWORD *)this + 4) = Timer::GetTicks(this + 20);
+  *((_DWORD *)this + 6) = 0;
+  *(_DWORD *)this = &MSAnim::`vftable';
+  WideString::AssignFromPtr((#72 **)this + 7, a2);
+  *((_DWORD *)this + 11) = a8;
+  *(this + 48) = a9;
+  *((_DWORD *)this + 8) = 0;
+  *((_DWORD *)this + 9) = a7;
+  *((_DWORD *)this + 10) = 0;
+  *((_DWORD *)this + 13) = a5;
+  *(this + 72) = 0;
+  *(this + 73) = a10;
+  *((_DWORD *)this + 19) = 0;
+  *(_DWORD *)this = &MSPrintAnim::`vftable';
+  Ticks = Timer::GetTicks(&v17);
+  v13 = v17;
+  *((_DWORD *)this + 4) = Ticks;
+  *((_DWORD *)this + 5) = v13;
+  *((_DWORD *)this + 6) = a7;
+  sub_5CD690((int)this, a6);
+  if ( a10 )
+  {
+    v19 = 0;
+    v18 = *(_DWORD *)(*((_DWORD *)this + 13) + 4);
+    if ( (unsigned __int16)WideString::GetChar(0) )
+    {
+      do
+      {
+        if ( (unsigned __int16)WideString::GetChar(v11) == 10 )
+          break;
+        v14 = **((_DWORD **)this + 13);
+        Char = WideString::GetChar(v11++);
+        v19 += (*(int (__thiscall **)(_DWORD, int))(v14 + 4))(*((_DWORD *)this + 13), Char);
+      }
+      while ( (unsigned __int16)WideString::GetChar(v11) );
+    }
+    *((_DWORD *)this + 19) = (*((_DWORD *)this + 16) - v19 - v18) / 2;
+  }
+  return this;
+}
+
+/* ASM:
+sub     esp, 0Ch
+mov     eax, [esp+0Ch+arg_4]
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+18h+arg_8]
+push    edi
+mov     [esi+8], ecx
+lea     ecx, [esi+14h]
+mov     [esi+4], eax
+mov     byte ptr [esi+0Ch], 1
+call    Timer__GetTicks
+mov     edx, [esp+1Ch+arg_0]
+xor     ebx, ebx
+lea     edi, [esi+1Ch]
+mov     [esi+10h], eax
+mov     [esi+18h], ebx
+push    edx
+mov     ecx, edi
+mov     dword ptr [esi], offset ??_7MSAnim@@6B@ ; const MSAnim::`vftable'
+call    WideString__AssignFromPtr
+mov     eax, [esp+1Ch+arg_18]
+mov     cl, byte ptr [esp+1Ch+arg_1C]
+mov     ebp, [esp+1Ch+arg_14]
+mov     edx, [esp+1Ch+arg_C]
+mov     [esi+2Ch], eax
+mov     al, byte ptr [esp+1Ch+arg_20]
+mov     [esi+30h], cl
+lea     ecx, [esp+1Ch+var_8]
+mov     [esi+20h], ebx
+mov     [esi+24h], ebp
+mov     [esi+28h], ebx
+mov     [esi+34h], edx
+mov     [esi+48h], bl
+mov     [esi+49h], al
+mov     [esi+4Ch], ebx
+mov     dword ptr [esi], offset ??_7MSPrintAnim@@6B@ ; const MSPrintAnim::`vftable'
+call    Timer__GetTicks
+mov     ecx, [esp+1Ch+var_8]
+mov     edx, [esp+1Ch+arg_10]
+mov     [esi+10h], eax
+mov     [esi+14h], ecx
+push    edx
+mov     ecx, esi
+mov     [esi+18h], ebp
+call    sub_5CD690
+cmp     byte ptr [esp+1Ch+arg_20], bl
+jz      short loc_5CD679
+mov     eax, [esi+34h]
+push    ebx
+mov     [esp+20h+arg_20], ebx
+mov     ecx, [eax+4]
+mov     [esp+20h+arg_1C], ecx
+mov     ecx, edi
+call    WideString__GetChar
+test    ax, ax
+jz      short loc_5CD662
+
+loc_5CD628:                             ; CODE XREF: sub_5CD570+F0↓j
+push    ebx
+mov     ecx, edi
+call    WideString__GetChar
+cmp     ax, 0Ah
+jz      short loc_5CD662
+mov     edx, [esi+34h]
+push    ebx
+mov     ecx, edi
+mov     ebp, [edx]
+call    WideString__GetChar
+mov     ecx, [esi+34h]
+push    eax
+call    dword ptr [ebp+4]
+mov     ecx, [esp+1Ch+arg_20]
+add     ecx, eax
+inc     ebx
+mov     [esp+1Ch+arg_20], ecx
+push    ebx
+mov     ecx, edi
+call    WideString__GetChar
+test    ax, ax
+jnz     short loc_5CD628
+
+loc_5CD662:                             ; CODE XREF: sub_5CD570+B6↑j
+; sub_5CD570+C4↑j
+mov     eax, [esi+40h]
+mov     ebp, [esp+1Ch+arg_20]
+mov     ebx, [esp+1Ch+arg_1C]
+sub     eax, ebp
+sub     eax, ebx
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [esi+4Ch], eax
+
+loc_5CD679:                             ; CODE XREF: sub_5CD570+9B↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    24h ; '$'
+*/
 }
 
 // 0x005CE0C0 (484 bytes)
 char String_GetWideString_5CE0C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CE0C0.json)
-    // Size: 484 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5CE0C0 ( int this, int a2, _DWORD *a3 ) { !signed int v4 ! ; // edi !signed int v5 ! ; // eax int v6 ; // edi !int v7 ! ; // eax int v9 ; // ebx !size_t v10 ! ; // ebp int v11 ; // eax int v12 ; // edi int v13 ; // eax int v14 ; // edx int v15 ; // ecx !int v16 ! ; // eax !unsigned int v17 ! ; // edx !size_t v18 ! ; // [esp+Ch] [ebp-20h] !size_t v19 ! ; // [esp+Ch] [ebp-20h] int v20 ; // [esp+24h] [ebp-8h] int v21 ; // [esp+30h] [ebp+4h] v4 = * ( _DWORD * ) ( this + 24 ) ; if ( * ( _DWORD * ) ( this + 16 ) != -1 ) { v5 = Timer::GetTicks ( ) - * ( _DWORD * ) ( this + 16 ) ; if ( v5 >= v4 ) goto LABEL_5 ; v4 -= v5 ; } if ( v4 ) { LABEL_24 : * a3 = 0 ; a3 [ 1 ] = 0 ; a3 [ 2 ] = 0 ; a3 [ 3 ] = 0 ; return 0 ; } LABEL_5 : if ( * ( _BYTE * ) ( this + 12 ) != 1 ) goto LABEL_24 ; v6 = * ( _DWORD * ) ( this + 44 ) ; * ( _DWORD * ) ( this + 16 ) = Timer::GetTicks ( ) ; * ( _DWORD * ) ( this + 20 ) = v20 ; * ( _DWORD * ) ( this + 24 ) = v6 ; if ( * ( _DWORD * ) ( this + 32 ) >= ( unsigned int ) WideString::Length ( ( const wchar_t ** ) ( this + 28 ) ) ) { v7 = Math::RoundToInt ( flt_A8EB98 * 64.0 ) ; sub_406670 ( aBleep1 , v7 ) ; return 1 ; } if ( * ( _BYTE * ) ( this + 48 ) == 1 && * ( int * ) ( this + 92 ) > 0 && * ( int * ) ( this + 96 ) > 0 ) ( * ( void (__thiscall **)(int, int, int, int, _DWORD, int) ) ( * ( _DWORD * ) a2 + 8 ) ) ( a2 , this + 84 , DSurface_Alternate , this + 84 , 0 , 1 ) ; v9 = * ( _DWORD * ) ( this + 4 ) ; if ( * ( _BYTE * ) ( this + 73 ) ) v9 += * ( _DWORD * ) ( this + 76 ) ; v18 = * ( _DWORD * ) ( this + 32 ) ; v10 = v18 + 1 ; LOWORD ( v11 ) = WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v18 ) ; v12 = v11 ; if ( ( _WORD ) v11 != 10 ) { do { if ( ! ( _WORD ) v12 ) break ; ( * ( void (__thiscall **)(_DWORD, int, int, int, _DWORD, _DWORD, _DWORD) ) ( * * ( _DWORD ** ) ( this + 52 ) + 16 ) ) ( * ( _DWORD * ) ( this + 52 ) , a2 , v12 , v9 , * ( _DWORD * ) ( this + 80 ) , * ( _DWORD * ) ( this + 36 ) , 0 ) ; v9 += ( * ( int (__thiscall **)(_DWORD, int) ) ( * * ( _DWORD ** ) ( this + 52 ) + 4 ) ) ( * ( _DWORD * ) ( this + 52 ) , v12 ) ; v19 = v10 ++ ; LOWORD ( v13 ) = WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v19 ) ; v12 = v13 ; } while ( ( _WORD ) v13 != 10 ) ; } v14 = * ( _DWORD * ) ( this + 64 ) ; v15 = * ( _DWORD * ) ( * ( _DWORD * ) ( this + 52 ) + 8 ) ; v21 = * ( _DWORD * ) ( this + 80 ) ; * a3 = * ( _DWORD * ) ( this + 56 ) ; a3 [ 1 ] = v21 ; a3 [ 2 ] = v14 ; a3 [ 3 ] = v15 ; if ( * ( _DWORD * ) ( this + 36 ) == 2 ) { * ( _DWORD * ) ( this + 84 ) = 0 ; * ( _DWORD * ) ( this + 88 ) = 0 ; * ( _DWORD * ) ( this + 92 ) = 0 ; * ( _DWORD * ) ( this + 96 ) = 0 ; * ( _DWORD * ) ( this + 32 ) = v10 ; if ( ( _WORD ) v12 == 10 ) { v16 = Math::RoundToInt ( flt_A8EB98 * 64.0 ) ; sub_406670 ( aBleep1 , v16 ) ; * ( _DWORD * ) ( this + 80 ) += * ( _DWORD * ) ( * ( _DWORD * ) ( this + 52 ) + 8 ) ; } } else { * ( _DWORD * ) ( this + 84 ) = * a3 ; * ( _DWORD * ) ( this + 88 ) = a3 [ 1 ] ; * ( _DWORD * ) ( this + 92 ) = a3 [ 2 ] ; * ( _DWORD * ) ( this + 96 ) = a3 [ 3 ] ; } if ( * ( _BYTE * ) ( this + 48 ) == 1 ) { v17 = * ( _DWORD * ) ( this + 36 ) + 1 ; * ( _DWORD * ) ( this + 36 ) = v17 ; if ( v17 > 2 ) { * ( _DWORD * ) ( this + 36 ) = 0 ; return 0 ; } } return 0 ; }
+// [IDA decompile]
+char __thiscall sub_5CE0C0(int this, int a2, _DWORD *a3)
+{
+  int v4; // edi
+  int v5; // eax
+  int v6; // edi
+  int v7; // eax
+  int v9; // ebx
+  int v10; // ebp
+  int i; // edi
+  int v12; // edx
+  int v13; // ecx
+  int v14; // eax
+  unsigned int v15; // edx
+  int v16; // [esp+Ch] [ebp-20h]
+  int v17; // [esp+Ch] [ebp-20h]
+  int v18; // [esp+24h] [ebp-8h] BYREF
+  int v19; // [esp+30h] [ebp+4h]
+
+  v4 = *(_DWORD *)(this + 24);
+  if ( *(_DWORD *)(this + 16) != -1 )
+  {
+    v5 = Timer::GetTicks(this + 20) - *(_DWORD *)(this + 16);
+    if ( v5 >= v4 )
+      goto LABEL_5;
+    v4 -= v5;
+  }
+  if ( v4 )
+  {
+LABEL_24:
+    *a3 = 0;
+    a3[1] = 0;
+    a3[2] = 0;
+    a3[3] = 0;
     return 0;
+  }
+LABEL_5:
+  if ( *(_BYTE *)(this + 12) != 1 )
+    goto LABEL_24;
+  v6 = *(_DWORD *)(this + 44);
+  *(_DWORD *)(this + 16) = Timer::GetTicks(&v18);
+  *(_DWORD *)(this + 20) = v18;
+  *(_DWORD *)(this + 24) = v6;
+  if ( *(_DWORD *)(this + 32) >= (unsigned int)WideString::Length((const #72 **)(this + 28)) )
+  {
+    v7 = Math::RoundToInt(*(float *)&MEMORY[0x87F7E8][539884] * 64.0);
+    sub_406670(aBleep1, v7);
+    return 1;
+  }
+  if ( *(_BYTE *)(this + 48) == 1 && *(int *)(this + 92) > 0 && *(int *)(this + 96) > 0 )
+    (*(void (__thiscall **)(int, int, _DWORD, int, _DWORD, int))(*(_DWORD *)a2 + 8))(
+      a2,
+      this + 84,
+      MEMORY[0x87F7E8][7882],
+      this + 84,
+      0,
+      1);
+  v9 = *(_DWORD *)(this + 4);
+  if ( *(_BYTE *)(this + 73) )
+    v9 += *(_DWORD *)(this + 76);
+  v16 = *(_DWORD *)(this + 32);
+  v10 = v16 + 1;
+  for ( i = WideString::GetChar(v16); (_WORD)i != 10; i = WideString::GetChar(v17) )
+  {
+    if ( !(_WORD)i )
+      break;
+    (*(void (__thiscall **)(_DWORD, int, int, int, _DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 52) + 16))(
+      *(_DWORD *)(this + 52),
+      a2,
+      i,
+      v9,
+      *(_DWORD *)(this + 80),
+      *(_DWORD *)(this + 36),
+      0);
+    v9 += (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 52) + 4))(*(_DWORD *)(this + 52), i);
+    v17 = v10++;
+  }
+  v12 = *(_DWORD *)(this + 64);
+  v13 = *(_DWORD *)(*(_DWORD *)(this + 52) + 8);
+  v19 = *(_DWORD *)(this + 80);
+  *a3 = *(_DWORD *)(this + 56);
+  a3[1] = v19;
+  a3[2] = v12;
+  a3[3] = v13;
+  if ( *(_DWORD *)(this + 36) == 2 )
+  {
+    *(_DWORD *)(this + 84) = 0;
+    *(_DWORD *)(this + 88) = 0;
+    *(_DWORD *)(this + 92) = 0;
+    *(_DWORD *)(this + 96) = 0;
+    *(_DWORD *)(this + 32) = v10;
+    if ( (_WORD)i == 10 )
+    {
+      v14 = Math::RoundToInt(*(float *)&MEMORY[0x87F7E8][539884] * 64.0);
+      sub_406670(aBleep1, v14);
+      *(_DWORD *)(this + 80) += *(_DWORD *)(*(_DWORD *)(this + 52) + 8);
+    }
+  }
+  else
+  {
+    *(_DWORD *)(this + 84) = *a3;
+    *(_DWORD *)(this + 88) = a3[1];
+    *(_DWORD *)(this + 92) = a3[2];
+    *(_DWORD *)(this + 96) = a3[3];
+  }
+  if ( *(_BYTE *)(this + 48) == 1 )
+  {
+    v15 = *(_DWORD *)(this + 36) + 1;
+    *(_DWORD *)(this + 36) = v15;
+    if ( v15 > 2 )
+    {
+      *(_DWORD *)(this + 36) = 0;
+      return 0;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+10h]
+mov     edi, [esi+18h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5CE0E4
+lea     ecx, [esi+14h]
+call    Timer__GetTicks
+sub     eax, [esi+10h]
+cmp     eax, edi
+jge     short loc_5CE0F0
+sub     edi, eax
+
+loc_5CE0E4:                             ; CODE XREF: sub_5CE0C0+11↑j
+xor     ebx, ebx
+cmp     edi, ebx
+jnz     loc_5CE28A
+jmp     short loc_5CE0F2
+; ---------------------------------------------------------------------------
+
+loc_5CE0F0:                             ; CODE XREF: sub_5CE0C0+20↑j
+xor     ebx, ebx
+
+loc_5CE0F2:                             ; CODE XREF: sub_5CE0C0+2E↑j
+cmp     byte ptr [esi+0Ch], 1
+jnz     loc_5CE28A
+mov     edi, [esi+2Ch]
+lea     ecx, [esp+18h+var_8]
+call    Timer__GetTicks
+mov     [esi+10h], eax
+mov     eax, [esp+18h+var_8]
+mov     [esi+14h], eax
+mov     [esi+18h], edi
+lea     edi, [esi+1Ch]
+mov     ecx, edi
+call    WideString__Length
+cmp     [esi+20h], eax
+jb      short loc_5CE14C
+fld     dword ptr ds:0A8EB98h
+fmul    ds:flt_7EEA24
+call    Math__RoundToInt
+mov     edx, eax
+mov     ecx, offset aBleep1 ; "bleep1"
+call    sub_406670
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 0Ch
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5CE14C:                             ; CODE XREF: sub_5CE0C0+62↑j
+cmp     byte ptr [esi+30h], 1
+jnz     short loc_5CE176
+mov     ecx, [esi+5Ch]
+lea     eax, [esi+54h]
+cmp     ecx, ebx
+jle     short loc_5CE176
+cmp     [eax+0Ch], ebx
+jle     short loc_5CE176
+mov     ecx, [esp+18h+arg_0]
+push    1
+push    ebx
+mov     ebx, ds:887310h
+mov     edx, [ecx]
+push    eax
+push    ebx
+push    eax
+call    dword ptr [edx+8]
+
+loc_5CE176:                             ; CODE XREF: sub_5CE0C0+90↑j
+; sub_5CE0C0+9A↑j ...
+mov     al, [esi+49h]
+mov     ebx, [esi+4]
+test    al, al
+jz      short loc_5CE183
+add     ebx, [esi+4Ch]
+
+loc_5CE183:                             ; CODE XREF: sub_5CE0C0+BE↑j
+push    ebp
+mov     ebp, [esi+20h]
+mov     eax, ebp
+mov     ecx, edi
+push    eax
+inc     ebp
+call    WideString__GetChar
+mov     edi, eax
+cmp     di, 0Ah
+jz      short loc_5CE1D7
+
+loc_5CE19A:                             ; CODE XREF: sub_5CE0C0+115↓j
+test    di, di
+jz      short loc_5CE1D7
+mov     edx, [esi+24h]
+mov     ecx, [esi+34h]
+push    0
+push    edx
+mov     edx, [esi+50h]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+28h+arg_0]
+push    ebx
+push    edi
+push    edx
+call    dword ptr [eax+10h]
+mov     ecx, [esi+34h]
+push    edi
+mov     eax, [ecx]
+call    dword ptr [eax+4]
+add     ebx, eax
+mov     eax, ebp
+push    eax
+lea     ecx, [esi+1Ch]
+inc     ebp
+call    WideString__GetChar
+mov     edi, eax
+cmp     di, 0Ah
+jnz     short loc_5CE19A
+
+loc_5CE1D7:                             ; CODE XREF: sub_5CE0C0+D8↑j
+; sub_5CE0C0+DD↑j
+mov     eax, [esi+50h]
+mov     ecx, [esi+34h]
+mov     ebx, [esi+38h]
+mov     edx, [esi+40h]
+mov     ecx, [ecx+8]
+mov     [esp+1Ch+arg_0], eax
+mov     eax, [esp+1Ch+arg_4]
+mov     [eax], ebx
+mov     ebx, [esp+1Ch+arg_0]
+mov     [eax+4], ebx
+mov     [eax+8], edx
+mov     [eax+0Ch], ecx
+mov     ecx, [esi+24h]
+cmp     ecx, 2
+jnz     short loc_5CE249
+xor     eax, eax
+cmp     di, 0Ah
+mov     [esi+54h], eax
+mov     [esi+58h], eax
+mov     [esi+5Ch], eax
+mov     [esi+60h], eax
+mov     [esi+20h], ebp
+jnz     short loc_5CE265
+fld     dword ptr ds:0A8EB98h
+fmul    ds:flt_7EEA24
+call    Math__RoundToInt
+mov     edx, eax
+mov     ecx, offset aBleep1 ; "bleep1"
+call    sub_406670
+mov     ecx, [esi+34h]
+mov     eax, [esi+50h]
+mov     edx, [ecx+8]
+add     eax, edx
+mov     [esi+50h], eax
+jmp     short loc_5CE263
+; ---------------------------------------------------------------------------
+
+loc_5CE249:                             ; CODE XREF: sub_5CE0C0+143↑j
+mov     edx, [eax]
+lea     ecx, [esi+54h]
+mov     [esi+54h], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     edx, [eax+8]
+mov     [ecx+8], edx
+mov     eax, [eax+0Ch]
+mov     [ecx+0Ch], eax
+
+loc_5CE263:                             ; CODE XREF: sub_5CE0C0+187↑j
+xor     eax, eax
+
+loc_5CE265:                             ; CODE XREF: sub_5CE0C0+15A↑j
+mov     cl, [esi+30h]
+pop     ebp
+cmp     cl, 1
+jnz     short loc_5CE299
+mov     edx, [esi+24h]
+inc     edx
+mov     ecx, edx
+mov     [esi+24h], edx
+cmp     ecx, 2
+jbe     short loc_5CE299
+mov     [esi+24h], eax
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 0Ch
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5CE28A:                             ; CODE XREF: sub_5CE0C0+28↑j
+; sub_5CE0C0+36↑j
+mov     eax, [esp+18h+arg_4]
+mov     [eax], ebx
+mov     [eax+4], ebx
+mov     [eax+8], ebx
+mov     [eax+0Ch], ebx
+
+loc_5CE299:                             ; CODE XREF: sub_5CE0C0+1AC↑j
+; sub_5CE0C0+1BA↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 0Ch
+retn    8
+*/
 }
 
 // 0x006B94E0 (68 bytes)
 const char* String_Get_6B94E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006B94E0.json)
-    // Size: 68 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __thiscall sub_6B94E0 ( const char **this ) { !unsigned int v2 ! ; // esi !unsigned int i ! ; // edi !char *v4 ! ; // eax v2 = String::Length ( this ) ; for ( i = 0 ; i < String::Length ( this ) ; ++ i ) { v4 = String::GetOrEmpty ( ( char ** ) this ) ; v2 = ( ( i + v4 [ i ] + v2 ) >> 24 ) ^ ( ( i + v4 [ i ] + v2 ) << 8 ) ; } return v2 ; }
-    return nullptr;
+// [IDA decompile]
+unsigned int __thiscall sub_6B94E0(const char **this)
+{
+  unsigned int v2; // esi
+  unsigned int i; // edi
+  char *v4; // eax
+
+  v2 = String::Length(this);
+  for ( i = 0; i < String::Length(this); ++i )
+  {
+    v4 = String::GetOrEmpty((char **)this);
+    v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8);
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+call    String__Length
+mov     ecx, ebx
+mov     esi, eax
+xor     edi, edi
+call    String__Length
+test    eax, eax
+jbe     short loc_6B951E
+
+loc_6B94F9:                             ; CODE XREF: sub_6B94E0+3C↓j
+mov     ecx, ebx
+call    String__GetOrEmpty
+movsx   eax, byte ptr [eax+edi]
+add     eax, edi
+add     esi, eax
+mov     ecx, esi
+shr     ecx, 18h
+shl     esi, 8
+xor     esi, ecx
+mov     ecx, ebx
+inc     edi
+call    String__Length
+cmp     edi, eax
+jb      short loc_6B94F9
+
+loc_6B951E:                             ; CODE XREF: sub_6B94E0+17↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x00767320 (221 bytes)
 const char* String_Get_767320() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00767320.json)
-    // Size: 221 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   wchar_t **__thiscall sub_767320 ( const char **this, wchar_t **a2, int a3, const wchar_t **a4 ) { !int v5 ! ; // eax !char **v6 ! ; // eax !const wchar_t **v7 ! ; // esi !char *v8 ! ; // eax !wchar_t **v9 ! ; // eax !char *v11 ! ; // eax !wchar_t *v12 ! ; // eax !wchar_t *StringCSF ! ; // [esp-8h] [ebp-10h] void *v14 ; // [esp+4h] [ebp-4h] BYREF v5 = ( * ( ( int (__thiscall **)(const char **, int) ) * this + 5 ) ) ( this , a3 ) ; v6 = FromStringInt ( ( char ** ) & v14 , v5 ) ; ConcatStringAlloc ( ( char ** ) & a3 , this + 4 , v6 ) ; DeleteAndZero ( & v14 ) ; v7 = a4 ; if ( WideString::Length ( a4 ) ) { WideString::Assign ( ( wchar_t ** ) & a4 , ( wchar_t * ) L ", " ) ; v8 = String::GetOrEmpty ( ( char ** ) & a3 ) ; StringCSF = GetStringCSF ( ( wchar_t * ) v8 , 0 , g_Str_File_WDTGameOptions_cpp , 22 ) ; v9 = ConcatWString ( ( wchar_t ** ) & v14 , v7 , ( const wchar_t ** ) & a4 ) ; WideString::AssignConcat ( ( const wchar_t ** ) v9 , a2 , StringCSF ) ; DeleteAndZero::Alt ( & v14 ) ; DeleteAndZero::Alt ( ( void ** ) & a4 ) ; } else { v11 = String::GetOrEmpty ( ( char ** ) & a3 ) ; v12 = GetStringCSF ( ( wchar_t * ) v11 , 0 , g_Str_File_WDTGameOptions_cpp , 25 ) ; WideString::Assign ( a2 , v12 ) ; } DeleteAndZero ( ( void ** ) & a3 ) ; return a2 ; }
-    return nullptr;
+// [IDA decompile]
+#72 **__thiscall sub_767320(const char **this, #72 **a2, int a3, const #72 **a4)
+{
+  int v5; // eax
+  char **v6; // eax
+  const #72 **v7; // esi
+  char *v8; // eax
+  #72 **v9; // eax
+  char *v11; // eax
+  #72 *v12; // eax
+  #72 *StringCSF; // [esp-8h] [ebp-10h]
+  void *v14; // [esp+4h] [ebp-4h] BYREF
+
+  v5 = (*((int (__thiscall **)(const char **, int))*this + 5))(this, a3);
+  v6 = FromStringInt((char **)&v14, v5);
+  ConcatStringAlloc((char **)&a3, this + 4, v6);
+  DeleteAndZero(&v14);
+  v7 = a4;
+  if ( WideString::Length(a4) )
+  {
+    WideString::Assign((#72 **)&a4, (#72 *)L", ");
+    v8 = String::GetOrEmpty((char **)&a3);
+    StringCSF = GetStringCSF((#72 *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22);
+    v9 = ConcatWString((#72 **)&v14, v7, (const #72 **)&a4);
+    WideString::AssignConcat((const #72 **)v9, a2, StringCSF);
+    DeleteAndZero::Alt(&v14);
+    DeleteAndZero::Alt((void **)&a4);
+  }
+  else
+  {
+    v11 = String::GetOrEmpty((char **)&a3);
+    v12 = GetStringCSF((#72 *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25);
+    WideString::Assign(a2, v12);
+  }
+  DeleteAndZero((void **)&a3);
+  return a2;
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+8+arg_4]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+14h]
+mov     edx, eax
+lea     ecx, [esp+8+var_4]
+call    FromStringInt
+push    eax
+lea     edx, [esi+10h]
+lea     ecx, [esp+0Ch+arg_4]
+call    ConcatStringAlloc
+lea     ecx, [esp+8+var_4]
+call    DeleteAndZero
+mov     esi, [esp+8+arg_8]
+mov     ecx, esi
+call    WideString__Length
+test    eax, eax
+jz      short loc_7673C8
+push    edi
+push    offset Control  ; ", "
+lea     ecx, [esp+10h+arg_8]
+call    WideString__Assign
+push    16h             ; int
+push    offset g_Str_File_WDTGameOptions_cpp ; "D:\\ra2mdpost\\WDTGameOptions.cpp"
+lea     ecx, [esp+14h+arg_4]
+call    String__GetOrEmpty
+mov     ecx, eax        ; Format
+xor     edx, edx
+call    GetStringCSF
+mov     edi, [esp+0Ch+arg_0]
+push    eax             ; String
+lea     edx, [esp+10h+arg_8]
+push    edi             ; int
+push    edx
+mov     edx, esi
+lea     ecx, [esp+18h+var_4]
+call    ConcatWString
+mov     ecx, eax
+call    WideString__AssignConcat
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero__Alt
+lea     ecx, [esp+0Ch+arg_8]
+call    DeleteAndZero__Alt
+lea     ecx, [esp+0Ch+arg_4]
+call    DeleteAndZero
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_7673C8:                             ; CODE XREF: sub_767320+3E↑j
+push    19h             ; int
+push    offset g_Str_File_WDTGameOptions_cpp ; "D:\\ra2mdpost\\WDTGameOptions.cpp"
+lea     ecx, [esp+10h+arg_4]
+call    String__GetOrEmpty
+mov     ecx, eax        ; Format
+xor     edx, edx
+call    GetStringCSF
+mov     esi, [esp+8+arg_0]
+push    eax             ; String
+mov     ecx, esi
+call    WideString__Assign
+lea     ecx, [esp+8+arg_4]
+call    DeleteAndZero
+mov     eax, esi
+pop     esi
+pop     ecx
+retn    0Ch
+*/
 }
 
 // 0x0077D240 (89 bytes)
 const char* String_Get_77D240() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0077D240.json)
-    // Size: 89 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_77D240 ( char **this ) { !signed int v1 ! ; // eax char *v2 ; // ebx !signed int v3 ! ; // esi !int i ! ; // edi !char *v6 ! ; // eax v1 = g_WOL_State ; v2 = 0 ; v3 = 0 ; if ( ( int ) g_WOL_State <= 0 ) return -1 ; for ( i = 0 ; ; i += 108 ) { if ( i >= 0 && v3 < v1 ) v2 = ( char * ) g_WOL_ConnectionFlags + i ; v6 = String::GetOrEmpty_Alt ( this ) ; if ( ! _strcmpi ( v6 , v2 + 36 ) ) break ; v1 = g_WOL_State ; if ( ++ v3 >= ( int ) g_WOL_State ) return -1 ; } return v3 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_77D240(char **this)
+{
+  signed int v1; // eax
+  char *v2; // ebx
+  signed int v3; // esi
+  int i; // edi
+  char *v6; // eax
+
+  v1 = dword_A8ED54[238315];
+  v2 = 0;
+  v3 = 0;
+  if ( dword_A8ED54[238315] <= 0 )
+    return -1;
+  for ( i = 0; ; i += 108 )
+  {
+    if ( i >= 0 && v3 < v1 )
+      v2 = (char *)(i + dword_A8ED54[238317]);
+    v6 = String::GetOrEmpty_Alt(this);
+    if ( !_strcmpi(v6, v2 + 36) )
+      break;
+    v1 = dword_A8ED54[238315];
+    if ( ++v3 >= dword_A8ED54[238315] )
+      return -1;
+  }
+  return v3;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+0E8BACh
+push    ebx
+push    ebp
+push    esi
+xor     ebx, ebx
+xor     esi, esi
+test    eax, eax
+push    edi
+mov     ebp, ecx
+jle     short loc_77D28A
+xor     edi, edi
+
+loc_77D255:                             ; CODE XREF: sub_77D240+48↓j
+test    edi, edi
+jl      short loc_77D265
+cmp     esi, eax
+jge     short loc_77D265
+mov     eax, dword_A8ED54+0E8BB4h
+lea     ebx, [edi+eax]
+
+loc_77D265:                             ; CODE XREF: sub_77D240+17↑j
+; sub_77D240+1B↑j
+lea     ecx, [ebx+24h]
+push    ecx             ; void *
+mov     ecx, ebp
+call    String__GetOrEmpty_Alt
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_77D292
+mov     eax, dword_A8ED54+0E8BACh
+inc     esi
+add     edi, 6Ch ; 'l'
+cmp     esi, eax
+jl      short loc_77D255
+
+loc_77D28A:                             ; CODE XREF: sub_77D240+11↑j
+pop     edi
+pop     esi
+pop     ebp
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_77D292:                             ; CODE XREF: sub_77D240+3B↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x00786DC0 (164 bytes)
 const char* String_Get_786DC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00786DC0.json)
-    // Size: 164 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_786DC0 ( char **this ) { !int v2 ! ; // esi !char *v3 ! ; // eax void *v5 ; // [esp+0h] [ebp-18h] !void *v6 ! ; // [esp+10h] [ebp-8h] BYREF const char *v7 ; // [esp+14h] [ebp-4h] BYREF DeleteAndZero::Alt2 ( ( void ** ) & g_WebBrowserConfig ) ; v2 = 1 ; while ( 1 ) { if ( ! ( * ( int (__stdcall **)(LPVOID, int, void **, const char **) ) ( * ( _DWORD * ) ppv + 144 ) ) ( ppv , v2 , & v6 , & v7 ) ) { if ( v6 ) { if ( strlen ( ( const char * ) v6 ) ) { v5 = v6 ; v3 = String::GetOrEmpty_Alt ( this ) ; if ( ! _strcmpi ( v3 , v5 ) ) break ; } } } if ( ++ v2 > 32 ) { DeleteAndZero::Alt2 ( ( void ** ) & g_WebBrowser ) ; return 0 ; } } String::Assign_Alt ( ( void ** ) & g_WebBrowser , ( const char * ) v6 ) ; String::Assign_Alt ( ( void ** ) & g_WebBrowserConfig , v7 ) ; LOBYTE ( dword_84A238 ) = 0 ; return 1 ; }
-    return nullptr;
+// [IDA decompile]
+char __thiscall sub_786DC0(char **this)
+{
+  int v2; // esi
+  char *v3; // eax
+  void *v5; // [esp+0h] [ebp-18h]
+  void *v6; // [esp+10h] [ebp-8h] BYREF
+  const char *v7; // [esp+14h] [ebp-4h] BYREF
+
+  DeleteAndZero::Alt2((void **)&dword_A8ED54[238222]);
+  v2 = 1;
+  while ( 1 )
+  {
+    if ( !(*(int (__stdcall **)(int, int, void **, const char **))(*(_DWORD *)dword_A8ED54[51462] + 144))(
+            dword_A8ED54[51462],
+            v2,
+            &v6,
+            &v7) )
+    {
+      if ( v6 )
+      {
+        if ( strlen((const char *)v6) )
+        {
+          v5 = v6;
+          v3 = String::GetOrEmpty_Alt(this);
+          if ( !_strcmpi(v3, v5) )
+            break;
+        }
+      }
+    }
+    if ( ++v2 > 32 )
+    {
+      DeleteAndZero::Alt2((void **)&dword_A8ED54[234555]);
+      return 0;
+    }
+  }
+  String::Assign_Alt((void **)&dword_A8ED54[234555], (const char *)v6);
+  String::Assign_Alt((void **)&dword_A8ED54[238222], v7);
+  LOBYTE(dword_84A238) = 0;
+  return 1;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+mov     ebx, ecx
+push    esi
+push    edi
+mov     ecx, (offset dword_A8ED54+0E8A38h)
+call    DeleteAndZero__Alt2
+mov     esi, 1
+
+loc_786DD7:                             ; CODE XREF: sub_786DC0+61↓j
+mov     eax, dword_A8ED54+32418h
+lea     edx, [esp+14h+var_4]
+push    edx
+lea     edx, [esp+18h+var_8]
+mov     ecx, [eax]
+push    edx
+push    esi
+push    eax
+call    dword ptr [ecx+90h]
+test    eax, eax
+jnz     short loc_786E1D
+mov     edx, [esp+14h+var_8]
+test    edx, edx
+jz      short loc_786E1D
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+repne scasb
+not     ecx
+dec     ecx
+jz      short loc_786E1D
+push    edx             ; void *
+mov     ecx, ebx
+call    String__GetOrEmpty_Alt
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_786E36
+
+loc_786E1D:                             ; CODE XREF: sub_786DC0+32↑j
+; sub_786DC0+3A↑j ...
+inc     esi
+cmp     esi, 20h ; ' '
+jle     short loc_786DD7
+mov     ecx, (offset dword_A8ED54+0E50ECh)
+call    DeleteAndZero__Alt2
+xor     al, al
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_786E36:                             ; CODE XREF: sub_786DC0+5B↑j
+mov     eax, [esp+14h+var_8]
+mov     ecx, (offset dword_A8ED54+0E50ECh)
+push    eax
+call    String__Assign_Alt
+mov     ecx, [esp+14h+var_4]
+push    ecx
+mov     ecx, (offset dword_A8ED54+0E8A38h)
+call    String__Assign_Alt
+mov     byte ptr dword_84A238, 0
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x00793120 (117 bytes)
 bool String_Get_793120() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00793120.json)
-    // Size: 117 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __thiscall sub_793120 ( char **this ) { !int v1 ! ; // eax char *i ; // edx !char *v4 ! ; // eax v1 = 0 ; if ( ( int ) g_WOL_State <= 0 ) return 0 ; for ( i = ( char * ) g_WOL_ConnectionFlags ; ; i += 108 ) { if ( v1 >= 0 && v1 < ( int ) g_WOL_State ) qmemcpy ( & g_IsMultiplayerSession , i , 0x6Cu ) ; if ( ( g_IsMultiplayerSession & 1 ) != 0 ) break ; if ( ++ v1 >= ( int ) g_WOL_State ) return 0 ; } if ( ! & g_IsMultiplayerSession ) return 0 ; v4 = String::GetOrEmpty_Alt ( this ) ; return _strcmpi ( byte_B777D4 , v4 ) == 0 ; }
-    return false;
+// [IDA decompile]
+bool __thiscall sub_793120(char **this)
+{
+  int v1; // eax
+  char *i; // edx
+  char *v4; // eax
+
+  v1 = 0;
+  if ( dword_A8ED54[238315] <= 0 )
+    return 0;
+  for ( i = (char *)dword_A8ED54[238317]; ; i += 108 )
+  {
+    if ( v1 >= 0 && v1 < dword_A8ED54[238315] )
+      qmemcpy(&dword_A8ED54[238231], i, 0x6Cu);
+    if ( (dword_A8ED54[238231] & 1) != 0 )
+      break;
+    if ( ++v1 >= dword_A8ED54[238315] )
+      return 0;
+  }
+  if ( dword_A8ED54 == (int *)-952924 )
+    return 0;
+  v4 = String::GetOrEmpty_Alt(this);
+  return _strcmpi(&dword_A8ED54[238240], v4) == 0;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, dword_A8ED54+0E8BACh
+push    ebp
+xor     eax, eax
+push    esi
+push    edi
+test    ebx, ebx
+mov     ebp, ecx
+jle     short loc_79316F
+mov     edx, dword_A8ED54+0E8BB4h
+
+loc_793138:                             ; CODE XREF: sub_793120+3D↓j
+test    eax, eax
+jl      short loc_79314E
+cmp     eax, ebx
+jge     short loc_79314E
+mov     ecx, 1Bh
+mov     esi, edx
+mov     edi, (offset dword_A8ED54+0E8A5Ch)
+rep movsd
+
+loc_79314E:                             ; CODE XREF: sub_793120+1A↑j
+; sub_793120+1E↑j
+test    byte ptr dword_A8ED54+0E8A5Ch, 1
+jnz     short loc_793166
+inc     eax
+add     edx, 6Ch ; 'l'
+cmp     eax, ebx
+jl      short loc_793138
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_793166:                             ; CODE XREF: sub_793120+35↑j
+mov     eax, (offset dword_A8ED54+0E8A5Ch)
+test    eax, eax
+jnz     short loc_793176
+
+loc_79316F:                             ; CODE XREF: sub_793120+10↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_793176:                             ; CODE XREF: sub_793120+4D↑j
+mov     ecx, ebp
+call    String__GetOrEmpty_Alt
+push    eax             ; void *
+push    (offset dword_A8ED54+0E8A80h) ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+setz    al
+retn
+*/
 }
 
 // 0x007A2830 (127 bytes)
 const char* String_Get_7A2830() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007A2830.json)
-    // Size: 127 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_7A2830 ( char **this ) { !int result ! ; // eax !int v2 ! ; // ebp !signed int v3 ! ; // ebx !char *v4 ! ; // eax _DWORD v6[27] ; // [esp+14h] [ebp-6Ch] BYREF result = g_WOL_State ; v2 = 0 ; v3 = 0 ; v6 [ 0 ] = 0 ; if ( ( int ) g_WOL_State > 0 ) { while ( 1 ) { if ( v2 >= 0 && v3 < result ) qmemcpy ( v6 , ( char * ) g_WOL_ConnectionFlags + v2 , sizeof ( v6 ) ) ; v4 = String::GetOrEmpty_Alt ( this ) ; if ( ! _strcmpi ( v4 , & v6 [ 9 ] ) ) break ; result = g_WOL_State ; ++ v3 ; v2 += 108 ; if ( v3 >= ( int ) g_WOL_State ) return result ; } return ( * ( int (__stdcall **)(LPVOID, _DWORD *) ) ( * ( _DWORD * ) ppv + 84 ) ) ( ppv , v6 ) ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_7A2830(char **this)
+{
+  int result; // eax
+  int v2; // ebp
+  signed int v3; // ebx
+  char *v4; // eax
+  _DWORD v6[27]; // [esp+14h] [ebp-6Ch] BYREF
+
+  result = dword_A8ED54[238315];
+  v2 = 0;
+  v3 = 0;
+  v6[0] = 0;
+  if ( dword_A8ED54[238315] > 0 )
+  {
+    while ( 1 )
+    {
+      if ( v2 >= 0 && v3 < result )
+        qmemcpy(v6, (const void *)(dword_A8ED54[238317] + v2), sizeof(v6));
+      v4 = String::GetOrEmpty_Alt(this);
+      if ( !_strcmpi(v4, &v6[9]) )
+        break;
+      result = dword_A8ED54[238315];
+      ++v3;
+      v2 += 108;
+      if ( v3 >= dword_A8ED54[238315] )
+        return result;
+    }
+    return (*(int (__stdcall **)(int, _DWORD *))(*(_DWORD *)dword_A8ED54[51462] + 84))(dword_A8ED54[51462], v6);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 70h
+mov     eax, dword_A8ED54+0E8BACh
+push    ebx
+push    ebp
+xor     ebp, ebp
+xor     ebx, ebx
+push    esi
+cmp     eax, ebp
+push    edi
+mov     [esp+80h+var_70], ecx
+mov     [esp+80h+var_6C], ebp
+jle     short loc_7A28A7
+
+loc_7A284C:                             ; CODE XREF: sub_7A2830+5D↓j
+test    ebp, ebp
+jl      short loc_7A2867
+cmp     ebx, eax
+jge     short loc_7A2867
+mov     eax, dword_A8ED54+0E8BB4h
+mov     ecx, 1Bh
+lea     edi, [esp+80h+var_6C]
+lea     esi, [eax+ebp]
+rep movsd
+
+loc_7A2867:                             ; CODE XREF: sub_7A2830+1E↑j
+; sub_7A2830+22↑j
+lea     ecx, [esp+80h+var_48]
+push    ecx             ; void *
+mov     ecx, [esp+84h+var_70]
+call    String__GetOrEmpty_Alt
+push    eax             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_7A2897
+mov     eax, dword_A8ED54+0E8BACh
+inc     ebx
+add     ebp, 6Ch ; 'l'
+cmp     ebx, eax
+jl      short loc_7A284C
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 70h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7A2897:                             ; CODE XREF: sub_7A2830+50↑j
+mov     eax, dword_A8ED54+32418h
+lea     ecx, [esp+80h+var_6C]
+push    ecx
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+54h]
+
+loc_7A28A7:                             ; CODE XREF: sub_7A2830+1A↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 70h
+retn
+*/
 }
 
 // 0x0076DFD0 (181 bytes)
 void String_Has_76DFD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0076DFD0.json)
-    // Size: 181 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_76DFD0 ( char *this ) { void *v2 ; // [esp+4h] [ebp-10h] BYREF !void **v3 ! ; // [esp+8h] [ebp-Ch] BYREF char *v4 ; // [esp+Ch] [ebp-8h] int v5 ; // [esp+10h] [ebp-4h] String::Assign ( ( char ** ) & v2 , aMapenter ) ; if ( String::NotEquals ( ( const char ** ) & v2 , 0 ) ) { v4 = this + 1172 ; v5 = 0 ; v3 = & VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::vftable' ; if ( Vector::HasCapacity ( & v3 ) ) { do { if ( ! String::Compare ( ( const char ** ) & v2 , * ( const char *** ) ( * ( ( _DWORD * ) v4 + 1 ) + 4 * v5 ) ) ) break ; ( ( void (__thiscall *)(void ***) ) v3 [ 2 ] ) ( & v3 ) ; } while ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v3 [ 1 ] ) ( & v3 ) ) ; } if ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v3 [ 1 ] ) ( & v3 ) ) nullsub_24 ( * ( _DWORD * ) ( * ( ( _DWORD * ) v4 + 1 ) + 4 * v5 ) ) ; } DeleteAndZero ( & v2 ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_76DFD0(char *this)
+{
+  void *v2; // [esp+4h] [ebp-10h] BYREF
+  void **v3; // [esp+8h] [ebp-Ch] BYREF
+  char *v4; // [esp+Ch] [ebp-8h]
+  int v5; // [esp+10h] [ebp-4h]
+
+  String::Assign((char **)&v2, aMapenter);
+  if ( String::NotEquals((const char **)&v2, 0) )
+  {
+    v4 = this + 1172;
+    v5 = 0;
+    v3 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable';
+    if ( (unsigned __int8)Vector::HasCapacity(&v3) )
+    {
+      do
+      {
+        if ( !String::Compare((const char **)&v2, *(const char ***)(*((_DWORD *)v4 + 1) + 4 * v5)) )
+          break;
+        ((void (__thiscall *)(void ***))v3[2])(&v3);
+      }
+      while ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) );
+    }
+    if ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) )
+      nullsub_24(*(_DWORD *)(*((_DWORD *)v4 + 1) + 4 * v5));
+  }
+  DeleteAndZero(&v2);
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+push    offset aMapenter ; "MapEnter"
+lea     ecx, [esp+18h+var_10]
+call    String__Assign
+push    0
+lea     ecx, [esp+18h+var_10]
+call    String__NotEquals
+test    al, al
+jz      loc_76E077
+add     esi, 494h
+lea     ecx, [esp+14h+var_C]
+mov     [esp+14h+var_8], esi
+mov     [esp+14h+var_4], 0
+mov     [esp+14h+var_C], offset ??_7?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@@@6B@ ; const VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'
+call    ds:off_7F72C8
+test    al, al
+jz      short loc_76E055
+
+loc_76E01F:                             ; CODE XREF: sub_76DFD0+83↓j
+mov     eax, [esp+14h+var_8]
+mov     edx, [esp+14h+var_4]
+mov     ecx, [eax+4]
+mov     eax, [ecx+edx*4]
+lea     ecx, [esp+14h+var_10]
+push    eax
+call    String__Compare
+test    al, al
+jz      short loc_76E055
+mov     edx, [esp+14h+var_C]
+lea     ecx, [esp+14h+var_C]
+call    dword ptr [edx+8]
+mov     eax, [esp+14h+var_C]
+lea     ecx, [esp+14h+var_C]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_76E01F
+
+loc_76E055:                             ; CODE XREF: sub_76DFD0+4D↑j
+; sub_76DFD0+69↑j
+mov     edx, [esp+14h+var_C]
+lea     ecx, [esp+14h+var_C]
+call    dword ptr [edx+4]
+test    al, al
+jz      short loc_76E077
+mov     eax, [esp+14h+var_8]
+mov     edx, [esp+14h+var_4]
+mov     ecx, [eax+4]
+mov     ecx, [ecx+edx*4]
+call    nullsub_24
+
+loc_76E077:                             ; CODE XREF: sub_76DFD0+21↑j
+; sub_76DFD0+92↑j
+lea     ecx, [esp+14h+var_10]
+call    DeleteAndZero
+pop     esi
+add     esp, 10h
+retn
+*/
 }
 
 // 0x005CF840 (151 bytes)
 const char* String_Is_5CF840() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CF840.json)
-    // Size: 151 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   const char **__thiscall sub_5CF840 ( _DWORD *this, const char **a2 ) { int v3 ; // esi !const char **v4 ! ; // ebp !const char **v5 ! ; // edi void *v7 ; // [esp+10h] [ebp-4h] BYREF if ( ! Audio::IsSoundEnabled ( ) ) return 0 ; v3 = 0 ; if ( ( int ) * ( this + 21 ) <= 0 ) return 0 ; v4 = a2 ; while ( 1 ) { v5 = * ( const char *** ) ( * ( this + 18 ) + 4 * v3 ) ; String::AssignFromPtr ( ( char ** ) & v7 , v5 ) ; String::ToLower ( ( const char ** ) & v7 ) ; String::AssignFromPtr ( ( char ** ) & a2 , v4 ) ; String::ToLower ( ( const char ** ) & a2 ) ; if ( String::Compare ( ( const char ** ) & v7 , ( const char ** ) & a2 ) ) break ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( & v7 ) ; if ( ++ v3 >= * ( this + 21 ) ) return 0 ; } DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( & v7 ) ; return v5 ; }
-    return nullptr;
+// [IDA decompile]
+const char **__thiscall sub_5CF840(_DWORD *this, const char **a2)
+{
+  int v3; // esi
+  const char **v4; // ebp
+  const char **v5; // edi
+  void *v7; // [esp+10h] [ebp-4h] BYREF
+
+  if ( !Audio::IsSoundEnabled() )
+    return 0;
+  v3 = 0;
+  if ( (int)*(this + 21) <= 0 )
+    return 0;
+  v4 = a2;
+  while ( 1 )
+  {
+    v5 = *(const char ***)(*(this + 18) + 4 * v3);
+    String::AssignFromPtr((char **)&v7, v5);
+    String::ToLower((const char **)&v7);
+    String::AssignFromPtr((char **)&a2, v4);
+    String::ToLower((const char **)&a2);
+    if ( String::Compare((const char **)&v7, (const char **)&a2) )
+      break;
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero(&v7);
+    if ( ++v3 >= *(this + 21) )
+      return 0;
+  }
+  DeleteAndZero((void **)&a2);
+  DeleteAndZero(&v7);
+  return v5;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+call    Audio__IsSoundEnabled
+test    eax, eax
+jz      short loc_5CF8B5
+mov     eax, [ebx+54h]
+xor     esi, esi
+test    eax, eax
+jle     short loc_5CF8B5
+mov     ebp, [esp+14h+arg_0]
+
+loc_5CF85D:                             ; CODE XREF: sub_5CF840+73↓j
+mov     eax, [ebx+48h]
+lea     ecx, [esp+14h+var_4]
+mov     edi, [eax+esi*4]
+push    edi
+call    String__AssignFromPtr
+lea     ecx, [esp+14h+var_4]
+call    String__ToLower
+push    ebp
+lea     ecx, [esp+18h+arg_0]
+call    String__AssignFromPtr
+lea     ecx, [esp+14h+arg_0]
+call    String__ToLower
+lea     ecx, [esp+14h+arg_0]
+push    ecx
+lea     ecx, [esp+18h+var_4]
+call    String__Compare
+test    al, al
+lea     ecx, [esp+14h+arg_0]
+jnz     short loc_5CF8BF
+call    DeleteAndZero
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+mov     eax, [ebx+54h]
+inc     esi
+cmp     esi, eax
+jl      short loc_5CF85D
+
+loc_5CF8B5:                             ; CODE XREF: sub_5CF840+E↑j
+; sub_5CF840+17↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5CF8BF:                             ; CODE XREF: sub_5CF840+5D↑j
+call    DeleteAndZero
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn    4
+*/
 }
 
 // 0x004F3460 (413 bytes)
 int String_Parse_4F3460() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F3460.json)
-    // Size: 413 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4F3460 ( int this, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, const char **a6, const char **a7, const char **a8, const char **a9, const char **a10 ) { !char v10 ! ; // bl _DWORD *v12 ; // edi _DWORD *v13 ; // edx int v14 ; // edx !const char **v15 ! ; // ebp !int v16 ! ; // eax !const char **v17 ! ; // ebx !unsigned int v18 ! ; // eax _DWORD *v19 ; // ebp _DWORD *v20 ; // eax _DWORD *v21 ; // eax !const char **v22 ! ; // ebx _DWORD *v23 ; // eax _DWORD *v24 ; // eax !const char **v25 ! ; // ebx _DWORD *v26 ; // eax _DWORD *v27 ; // eax v10 = 0 ; GraphicMenuItem::Constructor ( ( _DWORD * ) this , a2 ) ; v12 = a3 ; v13 = a5 ; * ( _DWORD * ) ( this + 16 ) = a3 ; * ( _DWORD * ) ( this + 20 ) = * v13 ; * ( _DWORD * ) ( this + 24 ) = v13 [ 1 ] ; * ( _DWORD * ) ( this + 28 ) = v13 [ 2 ] ; v14 = v13 [ 3 ] ; * ( _DWORD * ) ( this + 36 ) = 0 ; * ( _DWORD * ) ( this + 32 ) = v14 ; * ( _DWORD * ) ( this + 40 ) = 0 ; * ( _DWORD * ) ( this + 44 ) = 0 ; * ( _DWORD * ) ( this + 48 ) = 0 ; unknown_libname_73 ( this + 52 ) ; v15 = a9 ; * ( _DWORD * ) this = & GraphicMenuImageItem::vftable' ; if ( String::Length ( v15 ) && ( a3 = __2_YAPAXI_Z ( 0x10u ) ) != 0 ) { String::Assign ( ( char ** ) & a2 , aHighlightsound ) ; v10 = 1 ; v16 = Audio::ParseVolume ( ( int ) a3 , ( const char ** ) & a2 , v15 ) ; } else { v16 = 0 ; } * ( _DWORD * ) ( this + 48 ) = v16 ; if ( ( v10 & 1 ) != 0 ) DeleteAndZero ( ( void ** ) & a2 ) ; String::Reassign ( ( char ** ) ( this + 52 ) , a10 ) ; v17 = a7 ; v18 = String::Length ( a7 ) ; v19 = a4 ; if ( v18 ) { v20 = __2_YAPAXI_Z ( 0x3Cu ) ; v21 = v20 ? MSPCXAnim::Construct ( v20 , v17 , ( int ) ( v12 + 6 ) , v19 , 1 ) : 0 ; * ( _DWORD * ) ( this + 40 ) = v21 ; if ( v21 ) { ( * ( void (__thiscall **)(_DWORD *, _DWORD) ) ( * v21 + 4 ) ) ( v21 , 0 ) ; PriorityQueue::Add ( v12 , * ( _DWORD * ) ( this + 40 ) ) ; } } v22 = a6 ; if ( String::Length ( a6 ) ) { v23 = __2_YAPAXI_Z ( 0x3Cu ) ; v24 = v23 ? MSPCXAnim::Construct ( v23 , v22 , ( int ) ( v12 + 6 ) , v19 , 1 ) : 0 ; * ( _DWORD * ) ( this + 36 ) = v24 ; if ( v24 ) PriorityQueue::Add ( v12 , ( int ) v24 ) ; } v25 = a8 ; if ( String::Length ( a8 ) ) { v26 = __2_YAPAXI_Z ( 0x3Cu ) ; if ( v26 ) v27 = MSPCXAnim::Construct ( v26 , v25 , ( int ) ( v12 + 6 ) , v19 , 1 ) ; else v27 = 0 ; * ( _DWORD * ) ( this + 44 ) = v27 ; if ( v27 ) { ( * ( void (__thiscall **)(_DWORD *, _DWORD) ) ( * v27 + 4 ) ) ( v27 , 0 ) ; PriorityQueue::Add ( v12 , * ( _DWORD * ) ( this + 44 ) ) ; } } return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_4F3460(
+{
+  char v10; // bl
+  _DWORD *v12; // edi
+  _DWORD *v13; // edx
+  int v14; // edx
+  const char **v15; // ebp
+  int v16; // eax
+  const char **v17; // ebx
+  unsigned int v18; // eax
+  _DWORD *v19; // ebp
+  _DWORD *v20; // eax
+  _DWORD *v21; // eax
+  const char **v22; // ebx
+  _DWORD *v23; // eax
+  _DWORD *v24; // eax
+  const char **v25; // ebx
+  _DWORD *v26; // eax
+  _DWORD *v27; // eax
+
+  v10 = 0;
+  GraphicMenuItem::Constructor(this, a2);
+  v12 = a3;
+  v13 = a5;
+  *(this + 4) = a3;
+  *(this + 5) = *v13;
+  *(this + 6) = v13[1];
+  *(this + 7) = v13[2];
+  v14 = v13[3];
+  *(this + 9) = 0;
+  *(this + 8) = v14;
+  *(this + 10) = 0;
+  *(this + 11) = 0;
+  *(this + 12) = 0;
+  unknown_libname_73(this + 13);
+  v15 = a9;
+  *this = &GraphicMenuImageItem::`vftable';
+  if ( String::Length(v15) && (a3 = (_DWORD *)__2_YAPAXI_Z(16)) != 0 )
+  {
+    String::Assign((char **)&a2, aHighlightsound);
+    v10 = 1;
+    v16 = Audio::ParseVolume((int)a3, (const char **)&a2, v15);
+  }
+  else
+  {
+    v16 = 0;
+  }
+  *(this + 12) = v16;
+  if ( (v10 & 1) != 0 )
+    DeleteAndZero((void **)&a2);
+  String::Reassign((char **)this + 13, a10);
+  v17 = a7;
+  v18 = String::Length(a7);
+  v19 = a4;
+  if ( v18 )
+  {
+    v20 = (_DWORD *)__2_YAPAXI_Z(60);
+    v21 = v20 ? MSPCXAnim::Construct(v20, v17, (int)(v12 + 6), v19, 1) : 0;
+    *(this + 10) = v21;
+    if ( v21 )
+    {
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(*v21 + 4))(v21, 0);
+      PriorityQueue::Add(v12, *(this + 10));
+    }
+  }
+  v22 = a6;
+  if ( String::Length(a6) )
+  {
+    v23 = (_DWORD *)__2_YAPAXI_Z(60);
+    v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
+    *(this + 9) = v24;
+    if ( v24 )
+      PriorityQueue::Add(v12, (int)v24);
+  }
+  v25 = a8;
+  if ( String::Length(a8) )
+  {
+    v26 = (_DWORD *)__2_YAPAXI_Z(60);
+    if ( v26 )
+      v27 = MSPCXAnim::Construct(v26, v25, (int)(v12 + 6), v19, 1);
+    else
+      v27 = 0;
+    *(this + 11) = v27;
+    if ( v27 )
+    {
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(*v27 + 4))(v27, 0);
+      PriorityQueue::Add(v12, *(this + 11));
+    }
+  }
+  return this;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+xor     ebx, ebx
+mov     esi, ecx
+push    eax
+mov     [esp+18h+var_4], ebx
+call    GraphicMenuItem__Constructor
+mov     edi, [esp+14h+arg_4]
+mov     edx, [esp+14h+arg_C]
+mov     [esi+10h], edi
+lea     ecx, [esi+14h]
+mov     eax, [edx]
+mov     [ecx], eax
+mov     eax, [edx+4]
+mov     [ecx+4], eax
+mov     eax, [edx+8]
+mov     [ecx+8], eax
+mov     edx, [edx+0Ch]
+mov     [esi+24h], ebx
+mov     [ecx+0Ch], edx
+lea     ecx, [esi+34h]
+mov     [esi+28h], ebx
+mov     [esi+2Ch], ebx
+mov     [esi+30h], ebx
+call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
+mov     ebp, [esp+14h+arg_1C]
+mov     dword ptr [esi], offset ??_7GraphicMenuImageItem@@6B@ ; const GraphicMenuImageItem::`vftable'
+mov     ecx, ebp
+call    String__Length
+test    eax, eax
+jbe     short loc_4F34FA
+push    10h             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esp+14h+arg_4], eax
+test    eax, eax
+jz      short loc_4F34FA
+push    offset aHighlightsound ; "HighlightSound"
+lea     ecx, [esp+18h+arg_0]
+call    String__Assign
+mov     ecx, [esp+14h+arg_4]
+lea     eax, [esp+14h+arg_0]
+push    ebp
+push    eax
+mov     ebx, 1
+call    Audio__ParseVolume
+jmp     short loc_4F34FC
+; ---------------------------------------------------------------------------
+
+loc_4F34FA:                             ; CODE XREF: sub_4F3460+62↑j
+; sub_4F3460+74↑j
+xor     eax, eax
+
+loc_4F34FC:                             ; CODE XREF: sub_4F3460+98↑j
+test    bl, 1
+mov     [esi+30h], eax
+jz      short loc_4F350D
+lea     ecx, [esp+14h+arg_0]
+call    DeleteAndZero
+
+loc_4F350D:                             ; CODE XREF: sub_4F3460+A2↑j
+mov     ecx, [esp+14h+arg_20]
+push    ecx
+lea     ecx, [esi+34h]
+call    String__Reassign
+mov     ebx, [esp+14h+arg_14]
+mov     ecx, ebx
+call    String__Length
+mov     ebp, [esp+14h+arg_8]
+test    eax, eax
+jbe     short loc_4F3569
+push    3Ch ; '<'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_4F354C
+push    1
+lea     edx, [edi+18h]
+push    ebp
+push    edx
+push    ebx
+mov     ecx, eax
+call    MSPCXAnim__Construct
+jmp     short loc_4F354E
+; ---------------------------------------------------------------------------
+
+loc_4F354C:                             ; CODE XREF: sub_4F3460+D9↑j
+xor     eax, eax
+
+loc_4F354E:                             ; CODE XREF: sub_4F3460+EA↑j
+test    eax, eax
+mov     [esi+28h], eax
+jz      short loc_4F3569
+mov     edx, [eax]
+push    0
+mov     ecx, eax
+call    dword ptr [edx+4]
+mov     eax, [esi+28h]
+mov     ecx, edi
+push    eax
+call    PriorityQueue__Add
+
+loc_4F3569:                             ; CODE XREF: sub_4F3460+CB↑j
+; sub_4F3460+F3↑j
+mov     ebx, [esp+14h+arg_10]
+mov     ecx, ebx
+call    String__Length
+test    eax, eax
+jbe     short loc_4F35A8
+push    3Ch ; '<'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_4F3597
+push    1
+lea     ecx, [edi+18h]
+push    ebp
+push    ecx
+push    ebx
+mov     ecx, eax
+call    MSPCXAnim__Construct
+jmp     short loc_4F3599
+; ---------------------------------------------------------------------------
+
+loc_4F3597:                             ; CODE XREF: sub_4F3460+124↑j
+xor     eax, eax
+
+loc_4F3599:                             ; CODE XREF: sub_4F3460+135↑j
+test    eax, eax
+mov     [esi+24h], eax
+jz      short loc_4F35A8
+push    eax
+mov     ecx, edi
+call    PriorityQueue__Add
+
+loc_4F35A8:                             ; CODE XREF: sub_4F3460+116↑j
+; sub_4F3460+13E↑j
+mov     ebx, [esp+14h+arg_18]
+mov     ecx, ebx
+call    String__Length
+test    eax, eax
+jbe     short loc_4F35F3
+push    3Ch ; '<'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_4F35D6
+push    1
+lea     edx, [edi+18h]
+push    ebp
+push    edx
+push    ebx
+mov     ecx, eax
+call    MSPCXAnim__Construct
+jmp     short loc_4F35D8
+; ---------------------------------------------------------------------------
+
+loc_4F35D6:                             ; CODE XREF: sub_4F3460+163↑j
+xor     eax, eax
+
+loc_4F35D8:                             ; CODE XREF: sub_4F3460+174↑j
+test    eax, eax
+mov     [esi+2Ch], eax
+jz      short loc_4F35F3
+mov     edx, [eax]
+push    0
+mov     ecx, eax
+call    dword ptr [edx+4]
+mov     eax, [esi+2Ch]
+mov     ecx, edi
+push    eax
+call    PriorityQueue__Add
+
+loc_4F35F3:                             ; CODE XREF: sub_4F3460+155↑j
+; sub_4F3460+17D↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn    24h ; '$'
+*/
 }
 
 // 0x007651D0 (425 bytes)
 const char* String_PrependCCFil_7651D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007651D0.json)
-    // Size: 425 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char *__thiscall sub_7651D0 ( char **this ) { !char **v2 ! ; // edi !int i ! ; // esi !char **v4 ! ; // eax !char **RegionStringWOL ! ; // [esp-4h] [ebp-108h] void *v7 ; // [esp+Ch] [ebp-F8h] BYREF void *v8 ; // [esp+10h] [ebp-F4h] BYREF void *v9[4] ; // [esp+14h] [ebp-F0h] BYREF _DWORD v10[3] ; // [esp+24h] [ebp-E0h] BYREF _DWORD v11[6] ; // [esp+30h] [ebp-D4h] BYREF char v12 ; // [esp+48h] [ebp-BCh] int v13 ; // [esp+4Ch] [ebp-B8h] int v14 ; // [esp+50h] [ebp-B4h] _DWORD v15[22] ; // [esp+54h] [ebp-B0h] BYREF _DWORD v16[22] ; // [esp+ACh] [ebp-58h] BYREF v9 [ 1 ] = 0 ; v9 [ 2 ] = 0 ; GenericNode::Constructor ( v10 ) ; GenericNode::Constructor ( v11 ) ; LinkedList::Prepend ( v10 , ( int ) v11 ) ; v9 [ 3 ] = & List<INIClass::INISection *>::vftable' ; memset ( & v11 [ 3 ] , 0 , 12 ) ; v12 = 0 ; v13 = 0 ; v14 = 0 ; v9 [ 0 ] = & INIClass::vftable' ; BufferIOFile::Init ( v15 ) ; CCFileClass::Reopen ( v15 , g_Str_File_WDTHist_ini , 1 ) ; if ( ! File::IsReady ( v15 , 0 ) ) { FileClass::Close ( v15 ) ; CCFileClass::Close ( v15 ) ; CCFileClass::Reopen ( v15 , g_Str_File_WDTHist_ini , 1 ) ; } FileStraw::Open ( v9 , ( int ) v15 , 0 ) ; CCFileClass::Close ( v15 ) ; v15 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v15 ) ; String::Assign ( ( char ** ) & v7 , g_INI_Key_CampaignID ) ; v2 = this + 18 ; INIClass::SetIntFormat ( ( char * ) v9 , this + 18 , ( char ** ) & v7 , 0 , 0 ) ; DeleteAndZero ( & v7 ) ; for ( i = 0 ; i < 4 ; ++ i ) { RegionStringWOL = GetRegionStringWOL ( ( void * ) i ) ; v4 = String::Assign ( ( char ** ) & v8 , g_INI_Key_LastDay ) ; String::Concat ( ( const char ** ) v4 , ( char ** ) & v7 , RegionStringWOL ) ; DeleteAndZero ( & v8 ) ; INIClass::SetIntFormat ( ( char * ) v9 , v2 , ( char ** ) & v7 , 0 , 0 ) ; DeleteAndZero ( & v7 ) ; } BufferIOFile::Init ( v16 ) ; CCFileClass::Reopen ( v16 , g_Str_File_WDTHist_ini , 2 ) ; INIClass::SaveToPipe ( v9 , ( int ) v16 ) ; v16 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v16 ) ; return HashTable::DestroyHashTableINIClass ( v9 ) ; }
-    return nullptr;
+// [IDA decompile]
+char *__thiscall sub_7651D0(char **this)
+{
+  char **v2; // edi
+  int i; // esi
+  char **v4; // eax
+  char **RegionStringWOL; // [esp-4h] [ebp-108h]
+  void *v7; // [esp+Ch] [ebp-F8h] BYREF
+  void *v8; // [esp+10h] [ebp-F4h] BYREF
+  void *v9[4]; // [esp+14h] [ebp-F0h] BYREF
+  _DWORD v10[3]; // [esp+24h] [ebp-E0h] BYREF
+  _DWORD v11[6]; // [esp+30h] [ebp-D4h] BYREF
+  char v12; // [esp+48h] [ebp-BCh]
+  int v13; // [esp+4Ch] [ebp-B8h]
+  int v14; // [esp+50h] [ebp-B4h]
+  _DWORD v15[22]; // [esp+54h] [ebp-B0h] BYREF
+  _DWORD v16[22]; // [esp+ACh] [ebp-58h] BYREF
+
+  v9[1] = 0;
+  v9[2] = 0;
+  GenericNode::Constructor(v10);
+  GenericNode::Constructor(v11);
+  LinkedList::Prepend(v10, (int)v11);
+  v9[3] = &List<INIClass::INISection *>::`vftable';
+  memset(&v11[3], 0, 12);
+  v12 = 0;
+  v13 = 0;
+  v14 = 0;
+  v9[0] = &INIClass::`vftable';
+  BufferIOFile::Init(v15);
+  CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 1);
+  if ( !File::IsReady(v15, 0) )
+  {
+    FileClass::Close(v15);
+    CCFileClass::Close(v15);
+    CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 1);
+  }
+  FileStraw::Open(v9, (int)v15, 0);
+  CCFileClass::Close(v15);
+  v15[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v15);
+  String::Assign((char **)&v7, g_INI_Key_CampaignID);
+  v2 = this + 18;
+  INIClass::SetIntFormat((char *)v9, this + 18, (char **)&v7, 0, 0);
+  DeleteAndZero(&v7);
+  for ( i = 0; i < 4; ++i )
+  {
+    RegionStringWOL = GetRegionStringWOL((void *)i);
+    v4 = String::Assign((char **)&v8, g_INI_Key_LastDay);
+    String::Concat((const char **)v4, (char **)&v7, RegionStringWOL);
+    DeleteAndZero(&v8);
+    INIClass::SetIntFormat((char *)v9, v2, (char **)&v7, 0, 0);
+    DeleteAndZero(&v7);
+  }
+  BufferIOFile::Init(v16);
+  CCFileClass::Reopen(v16, g_Str_File_WDTHist_ini, 2);
+  INIClass::SaveToPipe(v9, (int)v16);
+  v16[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v16);
+  return HashTable::DestroyHashTableINIClass(v9);
+}
+
+/* ASM:
+sub     esp, 0F8h
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+push    edi
+lea     ecx, [esp+104h+var_E0]
+mov     [esp+104h+var_EC], ebx
+mov     [esp+104h+var_E8], ebx
+call    GenericNode__Constructor
+lea     ecx, [esp+104h+var_D4]
+call    GenericNode__Constructor
+lea     eax, [esp+104h+var_D4]
+lea     ecx, [esp+104h+var_E0]
+push    eax
+mov     [esp+108h+var_E4], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
+call    LinkedList__Prepend
+lea     ecx, [esp+104h+var_B0]
+mov     [esp+104h+var_E4], offset ??_7?$List@PAUINISection@INIClass@@@@6B@ ; const List<INIClass::INISection *>::`vftable'
+mov     [esp+104h+var_C8], ebx
+mov     [esp+104h+var_C4], ebx
+mov     [esp+104h+var_C0], ebx
+mov     [esp+104h+var_BC], bl
+mov     [esp+104h+var_B8], ebx
+mov     [esp+104h+var_B4], ebx
+mov     [esp+104h+var_F0], offset ??_7INIClass@@6B@ ; const INIClass::`vftable'
+call    BufferIOFile__Init
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+10Ch+var_B0]
+call    CCFileClass__Reopen
+push    ebx
+lea     ecx, [esp+108h+var_B0]
+call    File__IsReady
+test    al, al
+jnz     short loc_76527E
+lea     ecx, [esp+104h+var_B0]
+call    FileClass__Close
+lea     ecx, [esp+104h+var_B0]
+call    CCFileClass__Close
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+10Ch+var_B0]
+call    CCFileClass__Reopen
+
+loc_76527E:                             ; CODE XREF: sub_7651D0+8A↑j
+lea     ecx, [esp+104h+var_B0]
+push    ebx
+push    ecx
+lea     ecx, [esp+10Ch+var_F0]
+call    FileStraw__Open
+lea     ecx, [esp+104h+var_B0]
+call    CCFileClass__Close
+lea     ecx, [esp+104h+var_B0]
+mov     [esp+104h+var_B0], offset off_7E1668
+call    BufferIOFileClass__Dtor
+push    offset g_INI_Key_CampaignID ; "CampaignID"
+lea     ecx, [esp+108h+var_F8]
+call    String__Assign
+push    ebx
+lea     edx, [esp+108h+var_F8]
+lea     edi, [esi+48h]
+push    ebx
+push    edx
+push    edi
+lea     ecx, [esp+114h+var_F0]
+call    INIClass__SetIntFormat
+lea     ecx, [esp+104h+var_F8]
+call    DeleteAndZero
+xor     esi, esi
+
+loc_7652D4:                             ; CODE XREF: sub_7651D0+14D↓j
+mov     ecx, esi
+call    GetRegionStringWOL
+push    eax
+lea     eax, [esp+108h+var_F8]
+push    eax
+push    offset g_INI_Key_LastDay ; "LastDay"
+lea     ecx, [esp+110h+var_F4]
+call    String__Assign
+mov     ecx, eax
+call    String__Concat
+lea     ecx, [esp+104h+var_F4]
+call    DeleteAndZero
+push    ebx
+lea     ecx, [esp+108h+var_F8]
+push    ebx
+push    ecx
+push    edi
+lea     ecx, [esp+114h+var_F0]
+call    INIClass__SetIntFormat
+lea     ecx, [esp+104h+var_F8]
+call    DeleteAndZero
+inc     esi
+cmp     esi, 4
+jl      short loc_7652D4
+lea     ecx, [esp+104h+var_58]
+call    BufferIOFile__Init
+push    2               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+10Ch+var_58]
+call    CCFileClass__Reopen
+lea     edx, [esp+104h+var_58]
+lea     ecx, [esp+104h+var_F0]
+push    edx
+call    INIClass__SaveToPipe
+lea     ecx, [esp+104h+var_58]
+mov     [esp+104h+var_58], offset off_7E1668
+call    BufferIOFileClass__Dtor
+lea     ecx, [esp+104h+var_F0]
+call    HashTable__DestroyHashTableINIClass
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 0F8h
+retn
+*/
 }
 
 // 0x00771710 (111 bytes)
 int String_Reassign_771710() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00771710.json)
-    // Size: 111 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_771710 ( int this ) { int v2 ; // eax !int v3 ! ; // ebx int v4 ; // eax int v5 ; // eax int v6 ; // esi !int v7 ! ; // edx int result ; // eax v2 = * ( _DWORD * ) ( this + 976 ) ; v3 = v2 - 1 ; if ( v2 > * ( _DWORD * ) ( this + 956 ) ) { do { v4 = * ( _DWORD * ) ( this + 976 ) ; if ( v3 < v4 ) { v5 = v4 - 1 ; v6 = v3 ; for ( * ( _DWORD * ) ( this + 976 ) = v5 ; v6 < * ( _DWORD * ) ( this + 976 ) ; ++ v6 ) String::Reassign ( ( char ** ) ( * ( _DWORD * ) ( this + 964 ) + 4 * v6 ) , ( const char ** ) ( * ( _DWORD * ) ( this + 964 ) + 4 * v6 + 4 ) ) ; } v7 = v3 -- ; } while ( v7 > * ( _DWORD * ) ( this + 956 ) ) ; } result = * ( _DWORD * ) ( this + 956 ) ; if ( ! result ) * ( _BYTE * ) ( this + 952 ) = 1 ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_771710(int this)
+{
+  int v2; // eax
+  int v3; // ebx
+  int v4; // eax
+  int v5; // eax
+  int v6; // esi
+  int v7; // edx
+  int result; // eax
+
+  v2 = *(_DWORD *)(this + 976);
+  v3 = v2 - 1;
+  if ( v2 > *(_DWORD *)(this + 956) )
+  {
+    do
+    {
+      v4 = *(_DWORD *)(this + 976);
+      if ( v3 < v4 )
+      {
+        v5 = v4 - 1;
+        v6 = v3;
+        for ( *(_DWORD *)(this + 976) = v5; v6 < *(_DWORD *)(this + 976); ++v6 )
+          String::Reassign(
+            (char **)(*(_DWORD *)(this + 964) + 4 * v6),
+            (const char **)(*(_DWORD *)(this + 964) + 4 * v6 + 4));
+      }
+      v7 = v3--;
+    }
+    while ( v7 > *(_DWORD *)(this + 956) );
+  }
+  result = *(_DWORD *)(this + 956);
+  if ( !result )
+    *(_BYTE *)(this + 952) = 1;
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    edi
+mov     edi, ecx
+mov     ebx, [edi+3D0h]
+mov     ecx, [edi+3BCh]
+mov     eax, ebx
+dec     ebx
+cmp     eax, ecx
+jle     short loc_77176B
+push    esi
+
+loc_771728:                             ; CODE XREF: sub_771710+58↓j
+mov     eax, [edi+3D0h]
+cmp     ebx, eax
+jge     short loc_77175D
+dec     eax
+mov     esi, ebx
+cmp     ebx, eax
+mov     [edi+3D0h], eax
+jge     short loc_77175D
+
+loc_77173F:                             ; CODE XREF: sub_771710+4B↓j
+mov     eax, [edi+3C4h]
+lea     ecx, [eax+esi*4+4]
+push    ecx
+lea     ecx, [eax+esi*4]
+call    String__Reassign
+mov     eax, [edi+3D0h]
+inc     esi
+cmp     esi, eax
+jl      short loc_77173F
+
+loc_77175D:                             ; CODE XREF: sub_771710+20↑j
+; sub_771710+2D↑j
+mov     eax, [edi+3BCh]
+mov     edx, ebx
+dec     ebx
+cmp     edx, eax
+jg      short loc_771728
+pop     esi
+
+loc_77176B:                             ; CODE XREF: sub_771710+15↑j
+mov     eax, [edi+3BCh]
+test    eax, eax
+jnz     short loc_77177C
+mov     byte ptr [edi+3B8h], 1
+
+loc_77177C:                             ; CODE XREF: sub_771710+63↑j
+pop     edi
+pop     ebx
+retn
+*/
 }
 
 // 0x00529E70 (455 bytes)
 const char* String_SetMember1_529E70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00529E70.json)
-    // Size: 455 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char **__thiscall sub_529E70 ( _DWORD *this, char **a2, char *Source, char **a4, char **a5 ) { !char *v6 ! ; // edi !char *v7 ! ; // ebp int v8 ; // ebx !unsigned int v9 ! ; // kr04_4 !unsigned int *v10 ! ; // eax !int v11 ! ; // ebx int v12 ; // eax !char *v13 ! ; // eax !char *v14 ! ; // ecx !char *v15 ! ; // edx !char *v16 ! ; // esi !unsigned int v17 ! ; // kr0C_4 !unsigned int *v18 ! ; // eax !int v19 ! ; // edi !unsigned __int8 *v21 ! ; // [esp-Ch] [ebp-7Ch] int v22 ; // [esp+0h] [ebp-70h] BYREF int v23 ; // [esp+Ch] [ebp-64h] BYREF int v24 ; // [esp+10h] [ebp-60h] BYREF !char *v25 ! ; // [esp+14h] [ebp-5Ch] BYREF int v26[3] ; // [esp+18h] [ebp-58h] BYREF int v27[3] ; // [esp+24h] [ebp-4Ch] BYREF !char Destination[64] ! ; // [esp+30h] [ebp-40h] BYREF v6 = String::GetOrEmpty_Alt ( a4 ) ; a4 = ( char ** ) v6 ; v7 = String::GetOrEmpty_Alt ( ( char ** ) Source ) ; Source = & g_INI_DefaultBuffer ; if ( & v22 == ( int * ) -48 || ! v7 || ! v6 ) goto LABEL_18 ; if ( v7 == ( char * ) * ( this + 1 ) ) { v8 = * ( this + 2 ) ; } else { v17 = strlen ( v7 ) + 1 ; v18 = KeyValuePair::Init ( v26 , 0 ) ; v19 = Checksummer::Add_Buffer ( v18 , ( unsigned __int8 * ) v7 , v17 - 1 ) ; v23 = v19 ; if ( ! HashTable::BinarySearch ( ( int ) ( this + 10 ) , & v23 ) || ( v24 = v19 , ( v8 = * ( _DWORD * ) SortedArray::FindValue ( ( int ) ( this + 10 ) , & v24 ) ) == 0 ) ) { * ( this + 1 ) = 0 ; * ( this + 2 ) = 0 ; goto LABEL_11 ; } v6 = ( char * ) a4 ; * ( this + 2 ) = v8 ; * ( this + 1 ) = v7 ; } if ( v8 ) { v9 = strlen ( v6 ) + 1 ; v21 = ( unsigned __int8 * ) a4 ; v10 = KeyValuePair::Init ( v27 , 0 ) ; v11 = v8 + 44 ; a4 = ( char ** ) Checksummer::Add_Buffer ( v10 , v21 , v9 - 1 ) ; if ( SortedArray::Find ( v11 , ( int * ) & a4 ) ) { v12 = * ( _DWORD * ) SortedArray::BinarySearch2 ( v11 , ( int * ) & a4 ) ; if ( v12 ) { v13 = * ( char ** ) ( v12 + 16 ) ; if ( v13 ) Source = v13 ; } } } LABEL_11 : if ( ! Source || ( strncpy ( Destination , Source , 0x40u ) , Destination [ 63 ] = 0 , String::Trim ( Destination ) , ! strlen ( Destination ) ) ) { LABEL_18 : v14 = * a5 ; v15 = a5 [ 1 ] ; v16 = a5 [ 2 ] ; goto LABEL_19 ; } sscanf ( Destination , "%d,%d,%d" , & Source , & a5 , & v25 ) ; v14 = Source ; v15 = ( char * ) a5 ; v16 = v25 ; LABEL_19 : * a2 = v14 ; a2 [ 1 ] = v15 ; a2 [ 2 ] = v16 ; return a2 ; }
-    return nullptr;
+// [IDA decompile]
+char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, char **a5)
+{
+  char **v6; // edi
+  char *v7; // ebp
+  int v8; // ebx
+  unsigned int v9; // kr04_4
+  unsigned int *v10; // eax
+  int v11; // ebx
+  int v12; // eax
+  char *v13; // eax
+  char *v14; // ecx
+  char *v15; // edx
+  char *v16; // esi
+  unsigned int v17; // kr0C_4
+  unsigned int *v18; // eax
+  int v19; // edi
+  unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
+  int v22; // [esp+0h] [ebp-70h] BYREF
+  int v23; // [esp+Ch] [ebp-64h] BYREF
+  int v24; // [esp+10h] [ebp-60h] BYREF
+  char *v25; // [esp+14h] [ebp-5Ch] BYREF
+  int v26[3]; // [esp+18h] [ebp-58h] BYREF
+  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
+  char Destination[64]; // [esp+30h] [ebp-40h] BYREF
+
+  v6 = (char **)String::GetOrEmpty_Alt(a4);
+  a4 = v6;
+  v7 = String::GetOrEmpty_Alt((char **)Source);
+  Source = (char *)&MEMORY[0x87F7E8][10719];
+  if ( &v22 == (int *)-48 || !v7 || !v6 )
+    goto LABEL_18;
+  if ( v7 == (char *)*(this + 1) )
+  {
+    v8 = *(this + 2);
+  }
+  else
+  {
+    v17 = strlen(v7) + 1;
+    v18 = KeyValuePair::Init(v26, 0);
+    v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1);
+    v23 = v19;
+    if ( !HashTable::BinarySearch((int)(this + 10), &v23)
+      || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
+    {
+      *(this + 1) = 0;
+      *(this + 2) = 0;
+      goto LABEL_11;
+    }
+    v6 = a4;
+    *(this + 2) = v8;
+    *(this + 1) = v7;
+  }
+  if ( v8 )
+  {
+    v9 = strlen((const char *)v6) + 1;
+    v21 = (unsigned __int8 *)a4;
+    v10 = KeyValuePair::Init(v27, 0);
+    v11 = v8 + 44;
+    a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1);
+    if ( SortedArray::Find(v11, (int *)&a4) )
+    {
+      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4);
+      if ( v12 )
+      {
+        v13 = *(char **)(v12 + 16);
+        if ( v13 )
+          Source = v13;
+      }
+    }
+  }
+LABEL_11:
+  if ( !Source
+    || (strncpy(Destination, Source, 64), Destination[63] = 0, String::Trim(Destination), !strlen(Destination)) )
+  {
+LABEL_18:
+    v14 = *a5;
+    v15 = a5[1];
+    v16 = a5[2];
+    goto LABEL_19;
+  }
+  sscanf(Destination, "%d,%d,%d", &Source, &a5, &v25);
+  v14 = Source;
+  v15 = (char *)a5;
+  v16 = v25;
+LABEL_19:
+  *a2 = v14;
+  a2[1] = v15;
+  a2[2] = v16;
+  return a2;
+}
+
+/* ASM:
+Destination     = byte ptr -40h
+var_1           = byte ptr -1
+arg_0           = dword ptr  4
+Source          = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+sub     esp, 64h
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [esp+70h+arg_8]
+call    String__GetOrEmpty_Alt
+mov     ecx, [esp+70h+Source]
+mov     edi, eax
+mov     [esp+70h+arg_8], edi
+call    String__GetOrEmpty_Alt
+mov     ebp, eax
+lea     eax, [esp+70h+Destination]
+test    eax, eax
+mov     [esp+70h+Source], 889F64h
+jz      loc_52A011
+test    ebp, ebp
+jz      loc_52A011
+test    edi, edi
+jz      loc_52A011
+mov     eax, [esi+4]
+push    ebx
+cmp     ebp, eax
+jnz     loc_529FA4
+mov     ebx, [esi+8]
+
+loc_529EC5:                             ; CODE XREF: sub_529E70+18F↓j
+test    ebx, ebx
+jz      short loc_529F2B
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+mov     eax, [esp+74h+arg_8]
+not     ecx
+dec     ecx
+push    ecx
+push    eax
+push    0
+lea     ecx, [esp+80h+var_4C]
+call    KeyValuePair__Init
+mov     ecx, eax
+call    Checksummer__Add_Buffer
+lea     ecx, [esp+74h+arg_8]
+add     ebx, 2Ch ; ','
+push    ecx
+mov     ecx, ebx
+mov     [esp+78h+arg_8], eax
+call    SortedArray__Find
+test    al, al
+jz      short loc_529F2B
+lea     edx, [esp+74h+arg_8]
+mov     ecx, ebx
+push    edx
+call    SortedArray__BinarySearch2
+mov     eax, [eax]
+test    eax, eax
+jz      short loc_529F2B
+mov     eax, [eax+10h]
+test    eax, eax
+jz      short loc_529F2B
+mov     [esp+74h+Source], eax
+
+loc_529F2B:                             ; CODE XREF: sub_529E70+57↑j
+; sub_529E70+99↑j ...
+mov     eax, [esp+74h+Source]
+pop     ebx
+test    eax, eax
+jz      loc_52A011
+push    40h ; '@'       ; Count
+push    eax             ; Source
+lea     eax, [esp+78h+Destination]
+push    eax             ; Destination
+call    _strncpy
+add     esp, 0Ch
+lea     ecx, [esp+70h+Destination]
+mov     [esp+70h+var_1], 0
+call    String__Trim
+lea     edi, [esp+70h+Destination]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+test    ecx, ecx
+jz      loc_52A011
+lea     ecx, [esp+70h+var_5C]
+lea     edx, [esp+70h+arg_C]
+push    ecx
+lea     eax, [esp+74h+Source]
+push    edx
+push    eax
+lea     ecx, [esp+7Ch+Destination]
+push    offset g_Str_Trace__d__d__d ; "%d,%d,%d"
+push    ecx             ; Buffer
+call    _sscanf
+mov     ecx, [esp+84h+Source]
+mov     edx, [esp+84h+arg_C]
+mov     esi, [esp+84h+var_5C]
+add     esp, 14h
+jmp     short loc_52A020
+; ---------------------------------------------------------------------------
+
+loc_529FA4:                             ; CODE XREF: sub_529E70+4C↑j
+mov     edi, ebp
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    ebp
+push    eax
+lea     ecx, [esp+80h+var_58]
+call    KeyValuePair__Init
+mov     ecx, eax
+call    Checksummer__Add_Buffer
+lea     ecx, [esp+74h+var_64]
+lea     ebx, [esi+28h]
+mov     edi, eax
+push    ecx
+mov     ecx, ebx
+mov     [esp+78h+var_64], edi
+call    HashTable__BinarySearch
+test    al, al
+jz      short loc_52A004
+lea     edx, [esp+74h+var_60]
+mov     ecx, ebx
+push    edx
+mov     [esp+78h+var_60], edi
+call    SortedArray__FindValue
+mov     ebx, [eax]
+test    ebx, ebx
+jz      short loc_52A004
+mov     edi, [esp+74h+arg_8]
+mov     [esi+8], ebx
+mov     [esi+4], ebp
+jmp     loc_529EC5
+; ---------------------------------------------------------------------------
+
+loc_52A004:                             ; CODE XREF: sub_529E70+16A↑j
+; sub_529E70+180↑j
+xor     eax, eax
+mov     [esi+4], eax
+mov     [esi+8], eax
+jmp     loc_529F2B
+; ---------------------------------------------------------------------------
+
+loc_52A011:                             ; CODE XREF: sub_529E70+30↑j
+; sub_529E70+38↑j ...
+mov     eax, [esp+70h+arg_C]
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     esi, [eax+8]
+
+loc_52A020:                             ; CODE XREF: sub_529E70+132↑j
+mov     eax, [esp+70h+arg_0]
+mov     edi, eax
+mov     [edi], ecx
+mov     [edi+4], edx
+mov     [edi+8], esi
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 64h
+retn    10h
+*/
 }
 
 // 0x0076E090 (237 bytes)
 void String_SetMember280_76E090() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0076E090.json)
-    // Size: 237 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_76E090 ( int *this ) { void *v3 ; // [esp+4h] [ebp-18h] BYREF _DWORD v4[2] ; // [esp+8h] [ebp-14h] BYREF !void **v5 ! ; // [esp+10h] [ebp-Ch] BYREF !int *v6 ! ; // [esp+14h] [ebp-8h] int v7 ; // [esp+18h] [ebp-4h] String::Assign ( ( char ** ) & v3 , aMapleave ) ; if ( String::NotEquals ( ( const char ** ) & v3 , 0 ) ) { v6 = this + 293 ; v7 = 0 ; v5 = & VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::vftable' ; if ( Vector::HasCapacity ( & v5 ) ) { do { if ( ! String::Compare ( ( const char ** ) & v3 , * ( const char *** ) ( v6 [ 1 ] + 4 * v7 ) ) ) break ; ( ( void (__thiscall *)(void ***) ) v5 [ 2 ] ) ( & v5 ) ; } while ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v5 [ 1 ] ) ( & v5 ) ) ; } if ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v5 [ 1 ] ) ( & v5 ) ) nullsub_24 ( * ( _DWORD * ) ( v6 [ 1 ] + 4 * v7 ) ) ; } DeleteAndZero ( & v3 ) ; * ( this + 280 ) = -1 ; ComPtr::Constructor ( v4 ) ; v4 [ 0 ] = & rc_ptr<WorldDominationTour::Territory>::vftable' ; TerritorySelectWDT ( this , ( int ) v4 ) ; v4 [ 0 ] = & rc_ptr<WorldDominationTour::Territory>::vftable' ; return ComPtr::Release ( v4 ) ; }
-    
+// [IDA decompile]
+_DWORD *__thiscall sub_76E090(int *this)
+{
+  void *v3; // [esp+4h] [ebp-18h] BYREF
+  _DWORD v4[2]; // [esp+8h] [ebp-14h] BYREF
+  void **v5; // [esp+10h] [ebp-Ch] BYREF
+  int *v6; // [esp+14h] [ebp-8h]
+  int v7; // [esp+18h] [ebp-4h]
+
+  String::Assign((char **)&v3, aMapleave);
+  if ( String::NotEquals((const char **)&v3, 0) )
+  {
+    v6 = this + 293;
+    v7 = 0;
+    v5 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable';
+    if ( (unsigned __int8)Vector::HasCapacity(&v5) )
+    {
+      do
+      {
+        if ( !String::Compare((const char **)&v3, *(const char ***)(v6[1] + 4 * v7)) )
+          break;
+        ((void (__thiscall *)(void ***))v5[2])(&v5);
+      }
+      while ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) );
+    }
+    if ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) )
+      nullsub_24(*(_DWORD *)(v6[1] + 4 * v7));
+  }
+  DeleteAndZero(&v3);
+  *(this + 280) = -1;
+  ComPtr::Constructor(v4);
+  v4[0] = &rc_ptr<WorldDominationTour::Territory>::`vftable';
+  TerritorySelectWDT(this, (int)v4);
+  v4[0] = &rc_ptr<WorldDominationTour::Territory>::`vftable';
+  return ComPtr::Release(v4);
+}
+
+/* ASM:
+sub     esp, 18h
+push    esi
+mov     esi, ecx
+push    offset aMapleave ; "MapLeave"
+lea     ecx, [esp+20h+var_18]
+call    String__Assign
+push    0
+lea     ecx, [esp+20h+var_18]
+call    String__NotEquals
+test    al, al
+jz      loc_76E137
+lea     eax, [esi+494h]
+lea     ecx, [esp+1Ch+var_C]
+mov     [esp+1Ch+var_8], eax
+mov     [esp+1Ch+var_4], 0
+mov     [esp+1Ch+var_C], offset ??_7?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@@@6B@ ; const VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'
+call    ds:off_7F72C8
+test    al, al
+jz      short loc_76E115
+
+loc_76E0DF:                             ; CODE XREF: sub_76E090+83↓j
+mov     ecx, [esp+1Ch+var_8]
+mov     eax, [esp+1Ch+var_4]
+mov     edx, [ecx+4]
+mov     ecx, [edx+eax*4]
+push    ecx
+lea     ecx, [esp+20h+var_18]
+call    String__Compare
+test    al, al
+jz      short loc_76E115
+mov     edx, [esp+1Ch+var_C]
+lea     ecx, [esp+1Ch+var_C]
+call    dword ptr [edx+8]
+mov     eax, [esp+1Ch+var_C]
+lea     ecx, [esp+1Ch+var_C]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_76E0DF
+
+loc_76E115:                             ; CODE XREF: sub_76E090+4D↑j
+; sub_76E090+69↑j
+mov     edx, [esp+1Ch+var_C]
+lea     ecx, [esp+1Ch+var_C]
+call    dword ptr [edx+4]
+test    al, al
+jz      short loc_76E137
+mov     eax, [esp+1Ch+var_8]
+mov     edx, [esp+1Ch+var_4]
+mov     ecx, [eax+4]
+mov     ecx, [ecx+edx*4]
+call    nullsub_24
+
+loc_76E137:                             ; CODE XREF: sub_76E090+21↑j
+; sub_76E090+92↑j
+lea     ecx, [esp+1Ch+var_18]
+call    DeleteAndZero
+lea     ecx, [esp+1Ch+var_14]
+mov     dword ptr [esi+460h], 0FFFFFFFFh
+call    ComPtr__Constructor
+lea     eax, [esp+1Ch+var_14]
+mov     ecx, esi
+push    eax
+mov     [esp+20h+var_14], offset ??_7?$rc_ptr@VTerritory@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Territory>::`vftable'
+call    TerritorySelectWDT
+lea     ecx, [esp+1Ch+var_14]
+mov     [esp+1Ch+var_14], offset ??_7?$rc_ptr@VTerritory@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Territory>::`vftable'
+call    ComPtr__Release
+pop     esi
+add     esp, 18h
+retn
+*/
 }
 
 // 0x004F2F10 (348 bytes)
 int String_SetMember4_4F2F10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F2F10.json)
-    // Size: 348 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int *__thiscall sub_4F2F10 ( int *this, int a2, _DWORD *a3, int *a4, int *a5, char **a6, char **a7, int a8, char a9 ) { !int v10 ! ; // edx !char *v11 ! ; // eax void *v12 ; // eax void *v13 ; // eax void *v15 ; // [esp+10h] [ebp-DCh] BYREF _DWORD v16[22] ; // [esp+14h] [ebp-D8h] BYREF char v17[12] ; // [esp+6Ch] [ebp-80h] BYREF int v18 ; // [esp+78h] [ebp-74h] _DWORD v19[22] ; // [esp+80h] [ebp-6Ch] BYREF char v20[12] ; // [esp+D8h] [ebp-14h] BYREF int v21 ; // [esp+E4h] [ebp-8h] GraphicMenuItem::Constructor ( this , a2 ) ; * ( this + 4 ) = * a5 ; * ( this + 5 ) = a5 [ 1 ] ; * ( this + 6 ) = a5 [ 2 ] ; v10 = a5 [ 3 ] ; * ( this + 8 ) = 0 ; * ( this + 7 ) = v10 ; * ( this + 9 ) = 0 ; * this = ( int ) & GraphicMenuAnimItem::vftable' ; CCFileClass::Construct2 ( v19 , a6 ) ; CCFileClass::Construct2 ( v16 , a7 ) ; if ( CCFileClass::Open ( v19 , 0 ) ) { if ( CCFileClass::Open ( v16 , 0 ) ) { v11 = String::GetOrEmpty_Alt ( a7 ) ; String::Assign ( ( char ** ) & v15 , v11 ) ; * ( this + 9 ) = ( int ) PaletteClass::Load ( ( const char ** ) & v15 ) ; DeleteAndZero ( & v15 ) ; v12 = __2_YAPAXI_Z ( 0x40u ) ; if ( v12 ) { v13 = MSShapeAnim::Constructor ( v12 , a6 , * a4 , a4 [ 1 ] , * ( this + 9 ) , a8 , a9 , 0 ) ; if ( v13 ) PriorityQueue::Add ( a3 , ( int ) v13 ) ; } } } v16 [ 0 ] = & CCFileClass::vftable' ; v18 = 0 ; Vector::Clear ( ( int ) v17 ) ; v16 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v16 ) ; v19 [ 0 ] = & CCFileClass::vftable' ; v21 = 0 ; Vector::Clear ( ( int ) v20 ) ; v19 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v19 ) ; return this ; }
-    return 0;
+// [IDA decompile]
+int *__thiscall sub_4F2F10(int *this, int a2, _DWORD *a3, int *a4, int *a5, char **a6, char **a7, int a8, char a9)
+{
+  int v10; // edx
+  char *v11; // eax
+  void *v12; // eax
+  void *v13; // eax
+  void *v15; // [esp+10h] [ebp-DCh] BYREF
+  _DWORD v16[22]; // [esp+14h] [ebp-D8h] BYREF
+  char v17[12]; // [esp+6Ch] [ebp-80h] BYREF
+  int v18; // [esp+78h] [ebp-74h]
+  _DWORD v19[22]; // [esp+80h] [ebp-6Ch] BYREF
+  char v20[12]; // [esp+D8h] [ebp-14h] BYREF
+  int v21; // [esp+E4h] [ebp-8h]
+
+  GraphicMenuItem::Constructor(this, a2);
+  *(this + 4) = *a5;
+  *(this + 5) = a5[1];
+  *(this + 6) = a5[2];
+  v10 = a5[3];
+  *(this + 8) = 0;
+  *(this + 7) = v10;
+  *(this + 9) = 0;
+  *this = (int)&GraphicMenuAnimItem::`vftable';
+  CCFileClass::Construct2(v19, a6);
+  CCFileClass::Construct2(v16, a7);
+  if ( CCFileClass::Open(v19, 0) )
+  {
+    if ( CCFileClass::Open(v16, 0) )
+    {
+      v11 = String::GetOrEmpty_Alt(a7);
+      String::Assign((char **)&v15, v11);
+      *(this + 9) = (int)PaletteClass::Load((const char **)&v15);
+      DeleteAndZero(&v15);
+      v12 = (void *)__2_YAPAXI_Z(64);
+      if ( v12 )
+      {
+        v13 = MSShapeAnim::Constructor(v12, a6, *a4, a4[1], *(this + 9), a8, a9, 0);
+        if ( v13 )
+          PriorityQueue::Add(a3, (int)v13);
+      }
+    }
+  }
+  v16[0] = &CCFileClass::`vftable';
+  v18 = 0;
+  Vector::Clear((int)v17);
+  v16[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v16);
+  v19[0] = &CCFileClass::`vftable';
+  v21 = 0;
+  Vector::Clear((int)v20);
+  v19[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v19);
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 0DCh
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+push    eax
+call    GraphicMenuItem__Constructor
+mov     edx, [esp+0ECh+arg_C]
+lea     ecx, [esi+10h]
+mov     edi, [esp+0ECh+arg_10]
+xor     ebp, ebp
+mov     eax, [edx]
+push    edi
+mov     [ecx], eax
+mov     eax, [edx+4]
+mov     [ecx+4], eax
+mov     eax, [edx+8]
+mov     [ecx+8], eax
+mov     edx, [edx+0Ch]
+mov     [esi+20h], ebp
+mov     [ecx+0Ch], edx
+lea     ecx, [esp+0F0h+var_6C]
+mov     [esi+24h], ebp
+mov     dword ptr [esi], offset ??_7GraphicMenuAnimItem@@6B@ ; const GraphicMenuAnimItem::`vftable'
+call    CCFileClass__Construct2
+mov     ebx, [esp+0ECh+arg_14]
+lea     ecx, [esp+0ECh+var_D8]
+push    ebx
+call    CCFileClass__Construct2
+push    ebp
+lea     ecx, [esp+0F0h+var_6C]
+call    CCFileClass__Open
+test    al, al
+jz      short loc_4F3008
+push    ebp
+lea     ecx, [esp+0F0h+var_D8]
+call    CCFileClass__Open
+test    al, al
+jz      short loc_4F3008
+mov     ecx, ebx
+call    String__GetOrEmpty_Alt
+push    eax
+lea     ecx, [esp+0F0h+var_DC]
+call    String__Assign
+lea     ecx, [esp+0ECh+var_DC]
+call    PaletteClass__Load
+lea     ecx, [esp+0ECh+var_DC]
+mov     [esi+24h], eax
+call    DeleteAndZero
+push    40h ; '@'       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebp
+jz      short loc_4F3008
+mov     ecx, [esp+0ECh+arg_1C]
+mov     edx, [esp+0ECh+arg_18]
+push    ebp
+push    ecx
+mov     ecx, [esi+24h]
+push    edx
+push    ecx
+mov     ecx, [esp+0FCh+arg_8]
+mov     edx, [ecx+4]
+mov     ecx, [ecx]
+push    edx
+push    ecx
+push    edi
+mov     ecx, eax
+call    MSShapeAnim__Constructor
+cmp     eax, ebp
+jz      short loc_4F3008
+mov     ecx, [esp+0ECh+arg_4]
+push    eax
+call    PriorityQueue__Add
+
+loc_4F3008:                             ; CODE XREF: sub_4F2F10+78↑j
+; sub_4F2F10+86↑j ...
+mov     ebx, offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+lea     ecx, [esp+0ECh+var_80]
+mov     [esp+0ECh+var_D8], ebx
+mov     [esp+0ECh+var_74], ebp
+call    Vector__Clear
+mov     edi, offset off_7E1668
+lea     ecx, [esp+0ECh+var_D8]
+mov     [esp+0ECh+var_D8], edi
+call    BufferIOFileClass__Dtor
+lea     ecx, [esp+0ECh+var_14]
+mov     [esp+0ECh+var_6C], ebx
+mov     [esp+0ECh+var_8], ebp
+call    Vector__Clear
+lea     ecx, [esp+0ECh+var_6C]
+mov     [esp+0ECh+var_6C], edi
+call    BufferIOFileClass__Dtor
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0DCh
+retn    20h ; ' '
+*/
 }
 
 // 0x0052A110 (475 bytes)
 float String_SetMember_52A110() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0052A110.json)
-    // Size: 475 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   float *__thiscall sub_52A110 ( _DWORD *this, float *a2, unsigned __int8 *a3, float a4, float *a5 ) { !unsigned __int8 *v6 ! ; // ebx !const char *v7 ! ; // edx int v8 ; // esi !unsigned int v9 ! ; // kr04_4 !unsigned int *v10 ! ; // eax !int v11 ! ; // esi int v12 ; // eax !char *v13 ! ; // eax double v15 ; // st7 !unsigned __int8 *v16 ! ; // esi !float v17 ! ; // ecx !unsigned __int8 *v18 ! ; // [esp-8h] [ebp-78h] !char *Source ! ; // [esp+10h] [ebp-60h] !unsigned __int8 *v20 ! ; // [esp+14h] [ebp-5Ch] BYREF !float v21 ! ; // [esp+18h] [ebp-58h] BYREF float v22 ; // [esp+1Ch] [ebp-54h] float v23 ; // [esp+20h] [ebp-50h] _DWORD v24[3] ; // [esp+24h] [ebp-4Ch] BYREF !char Destination[64] ! ; // [esp+30h] [ebp-40h] BYREF Source = & g_INI_DefaultBuffer ; if ( ! Destination ) goto LABEL_18 ; v6 = a3 ; if ( * ( float * ) & a3 == 0.0 ) goto LABEL_18 ; v7 = ( const char * ) LODWORD ( a4 ) ; if ( a4 == 0.0 ) goto LABEL_18 ; if ( a3 == ( unsigned __int8 * ) * ( this + 1 ) ) { v8 = * ( this + 2 ) ; } else { v21 = 0.0 ; v22 = 0.0 ; v23 = 0.0 ; * ( float * ) & v16 = COERCE_FLOAT ( Checksummer::Add_Buffer ( ( unsigned int * ) & v21 , a3 , strlen ( ( const char * ) a3 ) ) ) ; a3 = v16 ; if ( ! HashTable::BinarySearch ( ( int ) ( this + 10 ) , ( int * ) & a3 ) || ( v20 = v16 , ( v8 = * ( _DWORD * ) SortedArray::FindValue ( ( int ) ( this + 10 ) , ( int * ) & v20 ) ) == 0 ) ) { * ( this + 1 ) = 0 ; * ( this + 2 ) = 0 ; goto LABEL_11 ; } v7 = ( const char * ) LODWORD ( a4 ) ; * ( this + 2 ) = v8 ; * ( this + 1 ) = v6 ; } if ( v8 ) { v9 = strlen ( v7 ) + 1 ; v18 = ( unsigned __int8 * ) v7 ; v10 = KeyValuePair::Init ( v24 , 0 ) ; a4 = COERCE_FLOAT ( Checksummer::Add_Buffer ( v10 , v18 , v9 - 1 ) ) ; v11 = v8 + 44 ; if ( SortedArray::Find ( v11 , ( int * ) & a4 ) ) { v12 = * ( _DWORD * ) SortedArray::BinarySearch2 ( v11 , ( int * ) & a4 ) ; if ( v12 ) { v13 = * ( char ** ) ( v12 + 16 ) ; if ( v13 ) Source = v13 ; } } } LABEL_11 : if ( Source ) { strncpy ( Destination , Source , 0x40u ) ; Destination [ 63 ] = 0 ; String::Trim ( Destination ) ; if ( strlen ( Destination ) ) { sscanf ( Destination , "%f,%f,%f" , & a4 , & a3 , & a5 ) ; v21 = a4 ; v22 = * ( float * ) & a3 ; v15 = * ( float * ) & a5 ; * a2 = a4 ; v23 = v15 ; a2 [ 1 ] = v22 ; a2 [ 2 ] = v23 ; return a2 ; } } LABEL_18 : v17 = * ( float * ) & a5 ; * a2 = * a5 ; a2 [ 1 ] = * ( float * ) ( LODWORD ( v17 ) + 4 ) ; a2 [ 2 ] = * ( float * ) ( LODWORD ( v17 ) + 8 ) ; return a2 ; }
-    return 0.0f;
+// [IDA decompile]
+float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float a4, float *a5)
+{
+  unsigned __int8 *v6; // ebx
+  char *v7; // edx
+  int v8; // esi
+  unsigned int v9; // kr04_4
+  unsigned int *v10; // eax
+  int v11; // esi
+  int v12; // eax
+  char *v13; // eax
+  double v15; // st7
+  unsigned __int8 *v16; // esi
+  float *v17; // ecx
+  unsigned __int8 *v18; // [esp-8h] [ebp-78h]
+  char *Source; // [esp+10h] [ebp-60h]
+  unsigned __int8 *v20; // [esp+14h] [ebp-5Ch] BYREF
+  float v21; // [esp+18h] [ebp-58h] BYREF
+  float v22; // [esp+1Ch] [ebp-54h]
+  float v23; // [esp+20h] [ebp-50h]
+  _DWORD v24[3]; // [esp+24h] [ebp-4Ch] BYREF
+  char Destination[64]; // [esp+30h] [ebp-40h] BYREF
+
+  Source = (char *)&MEMORY[0x87F7E8][10719];
+  if ( !Destination )
+    goto LABEL_18;
+  v6 = a3;
+  if ( *(float *)&a3 == 0.0 )
+    goto LABEL_18;
+  v7 = (char *)LODWORD(a4);
+  if ( a4 == 0.0 )
+    goto LABEL_18;
+  if ( a3 == (unsigned __int8 *)*(this + 1) )
+  {
+    v8 = *(this + 2);
+  }
+  else
+  {
+    v21 = 0.0;
+    v22 = 0.0;
+    v23 = 0.0;
+    v16 = (unsigned __int8 *)Checksummer::Add_Buffer((unsigned int *)&v21, a3, strlen((const char *)a3));
+    a3 = v16;
+    if ( !HashTable::BinarySearch((int)(this + 10), (int *)&a3)
+      || (v20 = v16, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), (int *)&v20)) == 0) )
+    {
+      *(this + 1) = 0;
+      *(this + 2) = 0;
+      goto LABEL_11;
+    }
+    v7 = (char *)LODWORD(a4);
+    *(this + 2) = v8;
+    *(this + 1) = v6;
+  }
+  if ( v8 )
+  {
+    v9 = strlen(v7) + 1;
+    v18 = (unsigned __int8 *)v7;
+    v10 = KeyValuePair::Init(v24, 0);
+    a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1));
+    v11 = v8 + 44;
+    if ( SortedArray::Find(v11, (int *)&a4) )
+    {
+      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4);
+      if ( v12 )
+      {
+        v13 = *(char **)(v12 + 16);
+        if ( v13 )
+          Source = v13;
+      }
+    }
+  }
+LABEL_11:
+  if ( Source )
+  {
+    strncpy(Destination, Source, 64);
+    Destination[63] = 0;
+    String::Trim(Destination);
+    if ( strlen(Destination) )
+    {
+      sscanf(Destination, "%f,%f,%f", &a4, &a3, &a5);
+      v21 = a4;
+      v22 = *(float *)&a3;
+      v15 = *(float *)&a5;
+      *a2 = a4;
+      v23 = v15;
+      a2[1] = v22;
+      a2[2] = v23;
+      return a2;
+    }
+  }
+LABEL_18:
+  v17 = a5;
+  *a2 = *a5;
+  a2[1] = v17[1];
+  a2[2] = v17[2];
+  return a2;
+}
+
+/* ASM:
+Source          = dword ptr -60h
+var_5C          = dword ptr -5Ch
+var_58          = dword ptr -58h
+var_54          = dword ptr -54h
+var_50          = dword ptr -50h
+var_4C          = dword ptr -4Ch
+Destination     = byte ptr -40h
+var_1           = byte ptr -1
+arg_0           = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+sub     esp, 60h
+push    ebx
+lea     eax, [esp+64h+Destination]
+push    ebp
+push    esi
+test    eax, eax
+push    edi
+mov     ebp, ecx
+mov     [esp+70h+Source], 889F64h
+jz      loc_52A2C4
+mov     ebx, [esp+70h+arg_4]
+xor     eax, eax
+cmp     ebx, eax
+jz      loc_52A2C4
+mov     edx, [esp+70h+arg_8]
+cmp     edx, eax
+jz      loc_52A2C4
+cmp     ebx, [ebp+4]
+jnz     loc_52A256
+mov     esi, [ebp+8]
+
+loc_52A153:                             ; CODE XREF: sub_52A110+1A2↓j
+test    esi, esi
+jz      short loc_52A1AA
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    edx
+push    eax
+lea     ecx, [esp+7Ch+var_4C]
+call    KeyValuePair__Init
+mov     ecx, eax
+call    Checksummer__Add_Buffer
+mov     [esp+70h+arg_8], eax
+add     esi, 2Ch ; ','
+lea     eax, [esp+70h+arg_8]
+mov     ecx, esi
+push    eax
+call    SortedArray__Find
+test    al, al
+jz      short loc_52A1AA
+lea     ecx, [esp+70h+arg_8]
+push    ecx
+mov     ecx, esi
+call    SortedArray__BinarySearch2
+mov     eax, [eax]
+test    eax, eax
+jz      short loc_52A1AA
+mov     eax, [eax+10h]
+test    eax, eax
+jz      short loc_52A1AA
+mov     [esp+70h+Source], eax
+
+loc_52A1AA:                             ; CODE XREF: sub_52A110+45↑j
+; sub_52A110+7B↑j ...
+mov     eax, [esp+70h+Source]
+test    eax, eax
+jz      loc_52A2C4
+push    40h ; '@'       ; Count
+lea     edx, [esp+74h+Destination]
+push    eax             ; Source
+push    edx             ; Destination
+call    _strncpy
+add     esp, 0Ch
+lea     ecx, [esp+70h+Destination]
+mov     [esp+70h+var_1], 0
+call    String__Trim
+lea     edi, [esp+70h+Destination]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+test    ecx, ecx
+jz      loc_52A2C4
+lea     eax, [esp+70h+arg_C]
+lea     ecx, [esp+70h+arg_4]
+push    eax
+lea     edx, [esp+74h+arg_8]
+push    ecx
+push    edx
+lea     eax, [esp+7Ch+Destination]
+push    offset g_Str_Trace__f__f__f ; "%f,%f,%f"
+push    eax             ; Buffer
+call    _sscanf
+fld     [esp+84h+arg_8]
+mov     eax, [esp+84h+arg_0]
+add     esp, 14h
+fstp    [esp+70h+var_58]
+fld     [esp+70h+arg_4]
+mov     edx, [esp+70h+var_58]
+mov     ecx, eax
+fstp    [esp+70h+var_54]
+fld     [esp+70h+arg_C]
+mov     [ecx], edx
+mov     edx, [esp+70h+var_54]
+fstp    [esp+70h+var_50]
+mov     [ecx+4], edx
+mov     edx, [esp+70h+var_50]
+pop     edi
+pop     esi
+pop     ebp
+mov     [ecx+8], edx
+pop     ebx
+add     esp, 60h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_52A256:                             ; CODE XREF: sub_52A110+3A↑j
+mov     [esp+70h+var_58], eax
+mov     [esp+70h+var_54], eax
+mov     [esp+70h+var_50], eax
+mov     edi, ebx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    ebx
+lea     ecx, [esp+78h+var_58]
+call    Checksummer__Add_Buffer
+lea     ecx, [esp+70h+arg_4]
+lea     edi, [ebp+28h]
+mov     esi, eax
+push    ecx
+mov     ecx, edi
+mov     [esp+74h+arg_4], esi
+call    HashTable__BinarySearch
+test    al, al
+jz      short loc_52A2B7
+lea     edx, [esp+70h+var_5C]
+mov     ecx, edi
+push    edx
+mov     [esp+74h+var_5C], esi
+call    SortedArray__FindValue
+mov     esi, [eax]
+test    esi, esi
+jz      short loc_52A2B7
+mov     edx, [esp+70h+arg_8]
+mov     [ebp+8], esi
+mov     [ebp+4], ebx
+jmp     loc_52A153
+; ---------------------------------------------------------------------------
+
+loc_52A2B7:                             ; CODE XREF: sub_52A110+180↑j
+; sub_52A110+196↑j
+xor     eax, eax
+mov     [ebp+4], eax
+mov     [ebp+8], eax
+jmp     loc_52A1AA
+; ---------------------------------------------------------------------------
+
+loc_52A2C4:                             ; CODE XREF: sub_52A110+17↑j
+; sub_52A110+25↑j ...
+mov     ecx, [esp+70h+arg_C]
+mov     eax, [esp+70h+arg_0]
+mov     edx, eax
+pop     edi
+mov     esi, [ecx]
+mov     [edx], esi
+mov     esi, [ecx+4]
+mov     [edx+4], esi
+pop     esi
+mov     ecx, [ecx+8]
+pop     ebp
+mov     [edx+8], ecx
+pop     ebx
+add     esp, 60h
+retn    10h
+*/
 }
 
 // 0x0052A2F0 (479 bytes)
 const char* String_SetMember_52A2F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0052A2F0.json)
-    // Size: 479 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   float *__thiscall sub_52A2F0 ( _DWORD *this, float *a2, float Source, char **a4, float *a5 ) { !char *v6 ! ; // edi !char *v7 ! ; // ebp int v8 ; // ebx !unsigned int v9 ! ; // kr04_4 !unsigned int *v10 ! ; // eax !int v11 ! ; // ebx int v12 ; // eax !char *v13 ! ; // eax !float v14 ! ; // ecx !float *v15 ! ; // edx !float v16 ! ; // esi !unsigned int v17 ! ; // kr0C_4 !unsigned int *v18 ! ; // eax !int v19 ! ; // edi !unsigned __int8 *v21 ! ; // [esp-Ch] [ebp-7Ch] int v22 ; // [esp+0h] [ebp-70h] BYREF int v23 ; // [esp+Ch] [ebp-64h] BYREF int v24 ; // [esp+10h] [ebp-60h] BYREF float v25 ; // [esp+14h] [ebp-5Ch] BYREF float v26[3] ; // [esp+18h] [ebp-58h] BYREF int v27[3] ; // [esp+24h] [ebp-4Ch] BYREF !char Destination[64] ! ; // [esp+30h] [ebp-40h] BYREF v6 = String::GetOrEmpty_Alt ( a4 ) ; a4 = ( char ** ) v6 ; v7 = String::GetOrEmpty_Alt ( ( char ** ) LODWORD ( Source ) ) ; Source = COERCE_FLOAT ( & g_INI_DefaultBuffer ) ; if ( & v22 == ( int * ) -48 || ! v7 || ! v6 ) goto LABEL_18 ; if ( v7 == ( char * ) * ( this + 1 ) ) { v8 = * ( this + 2 ) ; } else { v17 = strlen ( v7 ) + 1 ; v18 = KeyValuePair::Init ( v26 , 0 ) ; v19 = Checksummer::Add_Buffer ( v18 , ( unsigned __int8 * ) v7 , v17 - 1 ) ; v23 = v19 ; if ( ! HashTable::BinarySearch ( ( int ) ( this + 10 ) , & v23 ) || ( v24 = v19 , ( v8 = * ( _DWORD * ) SortedArray::FindValue ( ( int ) ( this + 10 ) , & v24 ) ) == 0 ) ) { * ( this + 1 ) = 0 ; * ( this + 2 ) = 0 ; goto LABEL_11 ; } v6 = ( char * ) a4 ; * ( this + 2 ) = v8 ; * ( this + 1 ) = v7 ; } if ( v8 ) { v9 = strlen ( v6 ) + 1 ; v21 = ( unsigned __int8 * ) a4 ; v10 = KeyValuePair::Init ( v27 , 0 ) ; v11 = v8 + 44 ; a4 = ( char ** ) Checksummer::Add_Buffer ( v10 , v21 , v9 - 1 ) ; if ( SortedArray::Find ( v11 , ( int * ) & a4 ) ) { v12 = * ( _DWORD * ) SortedArray::BinarySearch2 ( v11 , ( int * ) & a4 ) ; if ( v12 ) { v13 = * ( char ** ) ( v12 + 16 ) ; if ( * ( float * ) & v13 != 0.0 ) Source = * ( float * ) & v13 ; } } } LABEL_11 : if ( Source == 0.0 || ( strncpy ( Destination , ( const char * ) LODWORD ( Source ) , 0x40u ) , Destination [ 63 ] = 0 , String::Trim ( Destination ) , ! strlen ( Destination ) ) ) { LABEL_18 : v14 = * a5 ; v15 = ( float * ) * ( ( _DWORD * ) a5 + 1 ) ; v16 = a5 [ 2 ] ; goto LABEL_19 ; } sscanf ( Destination , "%f,%f,%f" , & Source , & a5 , & v25 ) ; v26 [ 0 ] = Source ; v14 = Source ; v26 [ 1 ] = * ( float * ) & a5 ; v15 = a5 ; v26 [ 2 ] = v25 ; v16 = v25 ; LABEL_19 : * a2 = v14 ; * ( ( _DWORD * ) a2 + 1 ) = v15 ; a2 [ 2 ] = v16 ; return a2 ; }
-    return nullptr;
+// [IDA decompile]
+float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, float *a5)
+{
+  char **v6; // edi
+  char *v7; // ebp
+  int v8; // ebx
+  unsigned int v9; // kr04_4
+  unsigned int *v10; // eax
+  int v11; // ebx
+  int v12; // eax
+  float v13; // eax
+  float v14; // ecx
+  float *v15; // edx
+  float v16; // esi
+  unsigned int v17; // kr0C_4
+  unsigned int *v18; // eax
+  int v19; // edi
+  unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
+  int v22; // [esp+0h] [ebp-70h] BYREF
+  int v23; // [esp+Ch] [ebp-64h] BYREF
+  int v24; // [esp+10h] [ebp-60h] BYREF
+  float v25; // [esp+14h] [ebp-5Ch] BYREF
+  float v26[3]; // [esp+18h] [ebp-58h] BYREF
+  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
+  char Destination[64]; // [esp+30h] [ebp-40h] BYREF
+
+  v6 = (char **)String::GetOrEmpty_Alt(a4);
+  a4 = v6;
+  v7 = String::GetOrEmpty_Alt((char **)LODWORD(Source));
+  Source = COERCE_FLOAT(&MEMORY[0x87F7E8][10719]);
+  if ( &v22 == (int *)-48 || !v7 || !v6 )
+    goto LABEL_18;
+  if ( v7 == (char *)*(this + 1) )
+  {
+    v8 = *(this + 2);
+  }
+  else
+  {
+    v17 = strlen(v7) + 1;
+    v18 = KeyValuePair::Init(v26, 0);
+    v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1);
+    v23 = v19;
+    if ( !HashTable::BinarySearch((int)(this + 10), &v23)
+      || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
+    {
+      *(this + 1) = 0;
+      *(this + 2) = 0;
+      goto LABEL_11;
+    }
+    v6 = a4;
+    *(this + 2) = v8;
+    *(this + 1) = v7;
+  }
+  if ( v8 )
+  {
+    v9 = strlen((const char *)v6) + 1;
+    v21 = (unsigned __int8 *)a4;
+    v10 = KeyValuePair::Init(v27, 0);
+    v11 = v8 + 44;
+    a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1);
+    if ( SortedArray::Find(v11, (int *)&a4) )
+    {
+      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4);
+      if ( v12 )
+      {
+        v13 = *(float *)(v12 + 16);
+        if ( v13 != 0.0 )
+          Source = v13;
+      }
+    }
+  }
+LABEL_11:
+  if ( Source == 0.0
+    || (strncpy(Destination, (const char *)LODWORD(Source), 64),
+        Destination[63] = 0,
+        String::Trim(Destination),
+        !strlen(Destination)) )
+  {
+LABEL_18:
+    v14 = *a5;
+    v15 = (float *)*((_DWORD *)a5 + 1);
+    v16 = a5[2];
+    goto LABEL_19;
+  }
+  sscanf(Destination, "%f,%f,%f", &Source, &a5, &v25);
+  v26[0] = Source;
+  v14 = Source;
+  v26[1] = *(float *)&a5;
+  v15 = a5;
+  v26[2] = v25;
+  v16 = v25;
+LABEL_19:
+  *a2 = v14;
+  *((_DWORD *)a2 + 1) = v15;
+  a2[2] = v16;
+  return a2;
+}
+
+/* ASM:
+Destination     = byte ptr -40h
+var_1           = byte ptr -1
+arg_0           = dword ptr  4
+Source          = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+sub     esp, 64h
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [esp+70h+arg_8]
+call    String__GetOrEmpty_Alt
+mov     ecx, [esp+70h+Source]
+mov     edi, eax
+mov     [esp+70h+arg_8], edi
+call    String__GetOrEmpty_Alt
+mov     ebp, eax
+lea     eax, [esp+70h+Destination]
+test    eax, eax
+mov     [esp+70h+Source], 889F64h
+jz      loc_52A4A9
+test    ebp, ebp
+jz      loc_52A4A9
+test    edi, edi
+jz      loc_52A4A9
+mov     eax, [esi+4]
+push    ebx
+cmp     ebp, eax
+jnz     loc_52A43C
+mov     ebx, [esi+8]
+
+loc_52A345:                             ; CODE XREF: sub_52A2F0+1A7↓j
+test    ebx, ebx
+jz      short loc_52A3AB
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+mov     eax, [esp+74h+arg_8]
+not     ecx
+dec     ecx
+push    ecx
+push    eax
+push    0
+lea     ecx, [esp+80h+var_4C]
+call    KeyValuePair__Init
+mov     ecx, eax
+call    Checksummer__Add_Buffer
+lea     ecx, [esp+74h+arg_8]
+add     ebx, 2Ch ; ','
+push    ecx
+mov     ecx, ebx
+mov     [esp+78h+arg_8], eax
+call    SortedArray__Find
+test    al, al
+jz      short loc_52A3AB
+lea     edx, [esp+74h+arg_8]
+mov     ecx, ebx
+push    edx
+call    SortedArray__BinarySearch2
+mov     eax, [eax]
+test    eax, eax
+jz      short loc_52A3AB
+mov     eax, [eax+10h]
+test    eax, eax
+jz      short loc_52A3AB
+mov     [esp+74h+Source], eax
+
+loc_52A3AB:                             ; CODE XREF: sub_52A2F0+57↑j
+; sub_52A2F0+99↑j ...
+mov     eax, [esp+74h+Source]
+pop     ebx
+test    eax, eax
+jz      loc_52A4A9
+push    40h ; '@'       ; Count
+push    eax             ; Source
+lea     eax, [esp+78h+Destination]
+push    eax             ; Destination
+call    _strncpy
+add     esp, 0Ch
+lea     ecx, [esp+70h+Destination]
+mov     [esp+70h+var_1], 0
+call    String__Trim
+lea     edi, [esp+70h+Destination]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+test    ecx, ecx
+jz      loc_52A4A9
+lea     ecx, [esp+70h+var_5C]
+lea     edx, [esp+70h+arg_C]
+push    ecx
+lea     eax, [esp+74h+Source]
+push    edx
+push    eax
+lea     ecx, [esp+7Ch+Destination]
+push    offset g_Str_Trace__f__f__f ; "%f,%f,%f"
+push    ecx             ; Buffer
+call    _sscanf
+fld     [esp+84h+Source]
+fstp    [esp+84h+var_58]
+fld     [esp+84h+arg_C]
+mov     ecx, [esp+84h+var_58]
+add     esp, 14h
+fstp    [esp+70h+var_54]
+fld     [esp+70h+var_5C]
+mov     edx, [esp+70h+var_54]
+fstp    [esp+70h+var_50]
+mov     esi, [esp+70h+var_50]
+jmp     short loc_52A4B8
+; ---------------------------------------------------------------------------
+
+loc_52A43C:                             ; CODE XREF: sub_52A2F0+4C↑j
+mov     edi, ebp
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    ebp
+push    eax
+lea     ecx, [esp+80h+var_58]
+call    KeyValuePair__Init
+mov     ecx, eax
+call    Checksummer__Add_Buffer
+lea     ecx, [esp+74h+var_64]
+lea     ebx, [esi+28h]
+mov     edi, eax
+push    ecx
+mov     ecx, ebx
+mov     [esp+78h+var_64], edi
+call    HashTable__BinarySearch
+test    al, al
+jz      short loc_52A49C
+lea     edx, [esp+74h+var_60]
+mov     ecx, ebx
+push    edx
+mov     [esp+78h+var_60], edi
+call    SortedArray__FindValue
+mov     ebx, [eax]
+test    ebx, ebx
+jz      short loc_52A49C
+mov     edi, [esp+74h+arg_8]
+mov     [esi+8], ebx
+mov     [esi+4], ebp
+jmp     loc_52A345
+; ---------------------------------------------------------------------------
+
+loc_52A49C:                             ; CODE XREF: sub_52A2F0+182↑j
+; sub_52A2F0+198↑j
+xor     eax, eax
+mov     [esi+4], eax
+mov     [esi+8], eax
+jmp     loc_52A3AB
+; ---------------------------------------------------------------------------
+
+loc_52A4A9:                             ; CODE XREF: sub_52A2F0+30↑j
+; sub_52A2F0+38↑j ...
+mov     eax, [esp+70h+arg_C]
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     esi, [eax+8]
+
+loc_52A4B8:                             ; CODE XREF: sub_52A2F0+14A↑j
+mov     eax, [esp+70h+arg_0]
+mov     edi, eax
+mov     [edi], ecx
+mov     [edi+4], edx
+mov     [edi+8], esi
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 64h
+retn    10h
+*/
 }
 
 // 0x005CD690 (439 bytes)
 int String_SetRect_5CD690() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CD690.json)
-    // Size: 439 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_5CD690 ( int this, int *a2 ) { !int *v4 ! ; // edi !wchar_t *v5 ! ; // eax int v6 ; // eax !int v7 ! ; // edx int v8 ; // eax int v9 ; // ebp int v10 ; // ecx !int v11 ! ; // edx int v12 ; // eax int v13 ; // ebx !int v14 ! ; // ebx !int v15 ! ; // ebx !int v16 ! ; // edx int v17 ; // eax int v18 ; // eax _DWORD *result ; // eax _DWORD *v20 ; // edi !wchar_t *v21 ! ; // eax int v22 ; // edx _DWORD *v23 ; // [esp-8h] [ebp-3Ch] int v24 ; // [esp+Ch] [ebp-28h] !int v25 ! ; // [esp+10h] [ebp-24h] _DWORD v26[6] ; // [esp+14h] [ebp-20h] BYREF !int v27 ! ; // [esp+2Ch] [ebp-8h] !int v28 ! ; // [esp+30h] [ebp-4h] int v29 ; // [esp+38h] [ebp+4h] if ( a2 [ 2 ] <= 0 || a2 [ 3 ] <= 0 ) { v20 = ( _DWORD * ) ( this + 56 ) ; v21 = WideString::GetOrEmpty ( ( wchar_t ** ) ( this + 28 ) ) ; result = sub_5D30C0 ( * ( size_t ** ) ( this + 52 ) , v21 , ( _DWORD * ) ( this + 56 ) ) ; v22 = * ( _DWORD * ) ( this + 8 ) ; * v20 = * ( _DWORD * ) ( this + 4 ) ; * ( _DWORD * ) ( this + 60 ) = v22 ; } else { v4 = ( int * ) ( this + 56 ) ; v23 = ( _DWORD * ) ( this + 56 ) ; v5 = WideString::GetOrEmpty ( ( wchar_t ** ) ( this + 28 ) ) ; sub_5D30C0 ( * ( size_t ** ) ( this + 52 ) , v5 , v23 ) ; v6 = * ( _DWORD * ) ( this + 52 ) ; * ( _DWORD * ) ( this + 4 ) += ( a2 [ 2 ] - * ( _DWORD * ) ( this + 64 ) ) / 2 ; v7 = a2 [ 3 ] % * ( _DWORD * ) ( v6 + 8 ) / 2 + * ( _DWORD * ) ( this + 8 ) ; v8 = * ( _DWORD * ) ( this + 60 ) ; * v4 += * ( _DWORD * ) ( this + 4 ) ; * ( _DWORD * ) ( this + 8 ) = v7 ; * ( _DWORD * ) ( this + 60 ) = v7 + v8 ; Rect::Set ( v26 , 0 , 0 , 0 , 0 ) ; v9 = * v4 ; v10 = * ( _DWORD * ) ( this + 60 ) ; v11 = * ( _DWORD * ) ( this + 64 ) ; v27 = v11 ; v28 = * ( _DWORD * ) ( this + 68 ) ; v29 = a2 [ 2 ] ; if ( a2 [ 2 ] <= 0 ) goto LABEL_20 ; v25 = a2 [ 3 ] ; if ( v25 <= 0 || * ( int * ) ( this + 64 ) <= 0 || * ( int * ) ( this + 68 ) <= 0 ) goto LABEL_20 ; v12 = * a2 ; if ( v9 < * a2 ) { v11 += v9 - v12 ; v9 = * a2 ; v27 = v11 ; } if ( v11 < 1 ) goto LABEL_20 ; v13 = a2 [ 1 ] ; v24 = v13 ; if ( v10 < v13 ) { v14 = v10 - v13 + v28 ; v10 = v24 ; v28 = v14 ; } if ( v28 < 1 ) goto LABEL_20 ; if ( v9 + v11 > v12 + v29 ) v27 = v29 + v12 - v9 ; if ( v27 < 1 ) goto LABEL_20 ; v15 = v28 ; if ( v28 + v10 > v24 + v25 ) v15 = v24 + v25 - v10 ; if ( v15 < 1 ) { LABEL_20 : v17 = v26 [ 0 ] ; v10 = v26 [ 1 ] ; v16 = v26 [ 2 ] ; v15 = v26 [ 3 ] ; } else { v16 = v27 ; v17 = v9 ; } * v4 = v17 ; v18 = * ( _DWORD * ) ( this + 52 ) ; * ( _DWORD * ) ( this + 60 ) = v10 ; * ( _DWORD * ) ( this + 64 ) = v16 ; * ( _DWORD * ) ( this + 68 ) = v15 ; result = ( _DWORD * ) ( * ( _DWORD * ) ( v18 + 4 ) / 2 ) ; * ( _DWORD * ) ( this + 4 ) += result ; } return result ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_5CD690(int this, int *a2)
+{
+  int *v4; // edi
+  #72 *v5; // eax
+  int v6; // eax
+  int v7; // edx
+  int v8; // eax
+  int v9; // ebp
+  int v10; // ecx
+  int v11; // edx
+  int v12; // eax
+  int v13; // ebx
+  int v14; // ebx
+  int v15; // ebx
+  int v16; // edx
+  int v17; // eax
+  int v18; // eax
+  _DWORD *result; // eax
+  _DWORD *v20; // edi
+  #72 *v21; // eax
+  int v22; // edx
+  _DWORD *v23; // [esp-8h] [ebp-3Ch]
+  int v24; // [esp+Ch] [ebp-28h]
+  int v25; // [esp+10h] [ebp-24h]
+  _DWORD v26[6]; // [esp+14h] [ebp-20h] BYREF
+  int v27; // [esp+2Ch] [ebp-8h]
+  int v28; // [esp+30h] [ebp-4h]
+  int v29; // [esp+38h] [ebp+4h]
+
+  if ( a2[2] <= 0 || a2[3] <= 0 )
+  {
+    v20 = (_DWORD *)(this + 56);
+    v21 = WideString::GetOrEmpty((#72 **)(this + 28));
+    result = sub_5D30C0(*(#247 **)(this + 52), v21, (_DWORD *)(this + 56));
+    v22 = *(_DWORD *)(this + 8);
+    *v20 = *(_DWORD *)(this + 4);
+    *(_DWORD *)(this + 60) = v22;
+  }
+  else
+  {
+    v4 = (int *)(this + 56);
+    v23 = (_DWORD *)(this + 56);
+    v5 = WideString::GetOrEmpty((#72 **)(this + 28));
+    sub_5D30C0(*(#247 **)(this + 52), v5, v23);
+    v6 = *(_DWORD *)(this + 52);
+    *(_DWORD *)(this + 4) += (a2[2] - *(_DWORD *)(this + 64)) / 2;
+    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + *(_DWORD *)(this + 8);
+    v8 = *(_DWORD *)(this + 60);
+    *v4 += *(_DWORD *)(this + 4);
+    *(_DWORD *)(this + 8) = v7;
+    *(_DWORD *)(this + 60) = v7 + v8;
+    Rect::Set(v26, 0, 0, 0, 0);
+    v9 = *v4;
+    v10 = *(_DWORD *)(this + 60);
+    v11 = *(_DWORD *)(this + 64);
+    v27 = v11;
+    v28 = *(_DWORD *)(this + 68);
+    v29 = a2[2];
+    if ( a2[2] <= 0 )
+      goto LABEL_20;
+    v25 = a2[3];
+    if ( v25 <= 0 || *(int *)(this + 64) <= 0 || *(int *)(this + 68) <= 0 )
+      goto LABEL_20;
+    v12 = *a2;
+    if ( v9 < *a2 )
+    {
+      v11 += v9 - v12;
+      v9 = *a2;
+      v27 = v11;
+    }
+    if ( v11 < 1 )
+      goto LABEL_20;
+    v13 = a2[1];
+    v24 = v13;
+    if ( v10 < v13 )
+    {
+      v14 = v10 - v13 + v28;
+      v10 = v24;
+      v28 = v14;
+    }
+    if ( v28 < 1 )
+      goto LABEL_20;
+    if ( v9 + v11 > v12 + v29 )
+      v27 = v29 + v12 - v9;
+    if ( v27 < 1 )
+      goto LABEL_20;
+    v15 = v28;
+    if ( v28 + v10 > v24 + v25 )
+      v15 = v24 + v25 - v10;
+    if ( v15 < 1 )
+    {
+LABEL_20:
+      v17 = v26[0];
+      v10 = v26[1];
+      v16 = v26[2];
+      v15 = v26[3];
+    }
+    else
+    {
+      v16 = v27;
+      v17 = v9;
+    }
+    *v4 = v17;
+    v18 = *(_DWORD *)(this + 52);
+    *(_DWORD *)(this + 60) = v10;
+    *(_DWORD *)(this + 64) = v16;
+    *(_DWORD *)(this + 68) = v15;
+    result = (_DWORD *)(*(_DWORD *)(v18 + 4) / 2);
+    *(_DWORD *)(this + 4) += result;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 28h
+push    ebx
+mov     ebx, [esp+2Ch+arg_0]
+push    esi
+push    edi
+mov     eax, [ebx+8]
+mov     esi, ecx
+test    eax, eax
+jle     loc_5CD81E
+mov     eax, [ebx+0Ch]
+test    eax, eax
+jle     loc_5CD81E
+lea     edi, [esi+38h]
+push    ebp
+push    edi             ; int
+lea     ecx, [esi+1Ch]
+call    WideString__GetOrEmpty
+mov     ecx, [esi+34h]
+push    eax             ; String
+call    sub_5D30C0
+mov     eax, [ebx+8]
+mov     ecx, [esi+40h]
+sub     eax, ecx
+mov     ecx, [esi+4]
+cdq
+sub     eax, edx
+push    0
+sar     eax, 1
+add     ecx, eax
+mov     eax, [esi+34h]
+mov     [esi+4], ecx
+mov     ebp, [ebx+0Ch]
+mov     ecx, [eax+8]
+mov     eax, ebp
+cdq
+idiv    ecx
+push    0
+push    0
+push    0
+mov     edx, eax
+mov     eax, ebp
+imul    edx, ecx
+sub     eax, edx
+mov     ecx, [edi]
+cdq
+sub     eax, edx
+mov     edx, [esi+8]
+sar     eax, 1
+add     edx, eax
+mov     eax, [esi+4]
+add     ecx, eax
+mov     eax, [esi+3Ch]
+mov     [edi], ecx
+mov     ecx, edx
+add     eax, ecx
+lea     ecx, [esp+48h+var_20]
+mov     [esi+8], edx
+mov     [esi+3Ch], eax
+call    Rect__Set
+mov     eax, edi
+mov     ebp, [eax]
+mov     ecx, [eax+4]
+mov     edx, [eax+8]
+mov     [esp+38h+var_8], edx
+mov     eax, [eax+0Ch]
+mov     [esp+38h+var_4], eax
+mov     eax, [ebx+8]
+test    eax, eax
+mov     [esp+38h+arg_0], eax
+jle     loc_5CD7E6
+mov     eax, [ebx+0Ch]
+test    eax, eax
+mov     [esp+38h+var_24], eax
+jle     loc_5CD7E6
+mov     eax, [edi+8]
+test    eax, eax
+jle     loc_5CD7E6
+mov     eax, [edi+0Ch]
+test    eax, eax
+jle     short loc_5CD7E6
+mov     eax, [ebx]
+cmp     ebp, eax
+jge     short loc_5CD77A
+sub     ebp, eax
+add     edx, ebp
+mov     ebp, eax
+mov     [esp+38h+var_8], edx
+
+loc_5CD77A:                             ; CODE XREF: sub_5CD690+DE↑j
+cmp     edx, 1
+jl      short loc_5CD7E6
+mov     ebx, [ebx+4]
+cmp     ecx, ebx
+mov     [esp+38h+var_28], ebx
+jge     short loc_5CD79A
+sub     ecx, ebx
+mov     ebx, [esp+38h+var_4]
+add     ebx, ecx
+mov     ecx, [esp+38h+var_28]
+mov     [esp+38h+var_4], ebx
+
+loc_5CD79A:                             ; CODE XREF: sub_5CD690+F8↑j
+cmp     [esp+38h+var_4], 1
+jl      short loc_5CD7E6
+mov     ebx, [esp+38h+arg_0]
+add     edx, ebp
+add     ebx, eax
+cmp     edx, ebx
+jle     short loc_5CD7B9
+mov     edx, [esp+38h+arg_0]
+sub     eax, ebp
+add     eax, edx
+mov     [esp+38h+var_8], eax
+
+loc_5CD7B9:                             ; CODE XREF: sub_5CD690+11B↑j
+cmp     [esp+38h+var_8], 1
+jl      short loc_5CD7E6
+mov     edx, [esp+38h+var_28]
+mov     eax, [esp+38h+var_24]
+mov     ebx, [esp+38h+var_4]
+add     eax, edx
+lea     edx, [ebx+ecx]
+cmp     edx, eax
+jle     short loc_5CD7D9
+sub     eax, ecx
+mov     ebx, eax
+
+loc_5CD7D9:                             ; CODE XREF: sub_5CD690+143↑j
+cmp     ebx, 1
+jl      short loc_5CD7E6
+mov     edx, [esp+38h+var_8]
+mov     eax, ebp
+jmp     short loc_5CD7F6
+; ---------------------------------------------------------------------------
+
+loc_5CD7E6:                             ; CODE XREF: sub_5CD690+B3↑j
+; sub_5CD690+C2↑j ...
+mov     eax, [esp+38h+var_20]
+mov     ecx, [esp+38h+var_1C]
+mov     edx, [esp+38h+var_18]
+mov     ebx, [esp+38h+var_14]
+
+loc_5CD7F6:                             ; CODE XREF: sub_5CD690+154↑j
+mov     [edi], eax
+mov     eax, [esi+34h]
+mov     [edi+4], ecx
+mov     [edi+8], edx
+mov     [edi+0Ch], ebx
+mov     eax, [eax+4]
+mov     ecx, [esi+4]
+pop     ebp
+cdq
+sub     eax, edx
+pop     edi
+sar     eax, 1
+add     ecx, eax
+mov     [esi+4], ecx
+pop     esi
+pop     ebx
+add     esp, 28h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5CD81E:                             ; CODE XREF: sub_5CD690+11↑j
+; sub_5CD690+1C↑j
+lea     edi, [esi+38h]
+lea     ecx, [esi+1Ch]
+push    edi             ; int
+call    WideString__GetOrEmpty
+mov     ecx, [esi+34h]
+push    eax             ; String
+call    sub_5D30C0
+mov     ecx, [esi+4]
+mov     edx, [esi+8]
+mov     [edi], ecx
+mov     [esi+3Ch], edx
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 28h
+retn    4
+*/
 }
 
 // 0x005B94C0 (141 bytes)
 char String_Trim_5B94C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B94C0.json)
-    // Size: 141 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5B94C0 ( int this, char a2 ) { !HWND DlgItem ! ; // eax !HWND v4 ! ; // esi wchar_t lParam[20] ; // [esp+8h] [ebp-28h] BYREF DlgItem = "GetDlgItem " ( * ( HWND * ) this , 1473 ) ; v4 = DlgItem ; if ( DlgItem ) { "SendMessageA " ( DlgItem , 0x4B3u , 0x14u , ( LPARAM ) lParam ) ; WideString::Trim ( lParam ) ; if ( ! a2 ) "SendMessageA " ( v4 , 0x4B2u , 0 , ( LPARAM ) lParam ) ; strcpy ( g_GameSetupBuffer , ToWideStringChar ( ( char * ) lParam ) ) ; * ( _BYTE * ) ( this + 9 ) = 1 ; * ( _BYTE * ) ( this + 8 ) = 1 ; LOBYTE ( DlgItem ) = 1 ; } return ( char ) DlgItem ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_5B94C0(_BYTE *this, char a2)
+{
+  int v3; // eax
+  int v4; // esi
+  char lParam[40]; // [esp+8h] [ebp-28h] BYREF
+
+  v3 = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1473);
+  v4 = v3;
+  if ( v3 )
+  {
+    ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v3, 1203, 20, lParam);
+    WideString::Trim((#72 *)lParam);
+    if ( !a2 )
+      ((void (__stdcall *)(int, int, _DWORD, char *))SendMessageA)(v4, 1202, 0, lParam);
+    strcpy((char *)&MEMORY[0x87F7E8][536294], ToWideStringChar(lParam));
+    *(this + 9) = 1;
+    *(this + 8) = 1;
+    LOBYTE(v3) = 1;
+  }
+  return v3;
+}
+
+/* ASM:
+lParam          = byte ptr -28h
+arg_0           = byte ptr  4
+
+sub     esp, 28h
+push    ebx
+mov     ebx, ecx
+push    esi
+push    5C1h            ; nIDDlgItem
+mov     eax, [ebx]
+push    eax             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      short loc_5B9545
+lea     ecx, [esp+30h+lParam]
+push    edi
+mov     edi, ds:__imp_SendMessageA
+push    ecx             ; lParam
+push    14h             ; wParam
+push    4B3h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+lea     ecx, [esp+34h+lParam] ; Source
+call    WideString__Trim
+mov     al, [esp+34h+arg_0]
+test    al, al
+jnz     short loc_5B9511
+lea     edx, [esp+34h+lParam]
+push    edx             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+
+loc_5B9511:                             ; CODE XREF: sub_5B94C0+40↑j
+lea     ecx, [esp+34h+lParam]
+call    ToWideStringChar
+mov     edi, eax
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, 0A8B380h
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+mov     al, 1
+and     ecx, 3
+rep movsb
+mov     [ebx+9], al
+mov     [ebx+8], al
+pop     edi
+
+loc_5B9545:                             ; CODE XREF: sub_5B94C0+19↑j
+pop     esi
+pop     ebx
+add     esp, 28h
+retn    4
+*/
 }
 
 // 0x006CA4F0 (172 bytes)
 int String_Trim_6CA4F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006CA4F0.json)
-    // Size: 172 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   wchar_t *__fastcall sub_6CA4F0 ( _DWORD *a1 ) { !wchar_t *v1 ! ; // ebp int v2 ; // ebx !int v3 ! ; // esi !wchar_t *v4 ! ; // edi _DWORD *v5 ; // eax !wchar_t *v6 ! ; // esi !char v8 ! ; // [esp+11h] [ebp-7h] !wchar_t v9 ! ; // [esp+12h] [ebp-6h] BYREF _DWORD *v10 ; // [esp+14h] [ebp-4h] v10 = a1 ; v1 = ( wchar_t * ) ( a1 + 1 ) ; while ( 1 ) { v2 = * a1 ; * v1 = 0 ; v8 = 0 ; v3 = 0 ; v4 = v1 ; while ( ( * ( int (__thiscall **)(int, wchar_t *, int) ) ( * ( _DWORD * ) v2 + 8 ) ) ( v2 , & v9 , 2 ) == 2 ) { if ( v9 != 10 ) { if ( v9 != 13 ) { * v4 = v9 ; ++ v3 ; ++ v4 ; } if ( v3 < 1024 ) continue ; } goto LABEL_11 ; } v8 = 1 ; LABEL_11 : v5 = v10 ; v1 [ v3 ] = 0 ; ++ v5 [ 513 ] ; v6 = WideString::Trim ( v1 ) ; if ( wcslen ( v6 ) ) { if ( * v6 != 59 ) return v6 ; } if ( v8 ) return 0 ; a1 = v10 ; } }
-    return 0;
+// [IDA decompile]
+#72 *__fastcall sub_6CA4F0(_DWORD *a1)
+{
+  #72 *v1; // ebp
+  int v2; // ebx
+  int v3; // esi
+  #72 *v4; // edi
+  _DWORD *v5; // eax
+  #72 *v6; // esi
+  char v8; // [esp+11h] [ebp-7h]
+  __int16 v9; // [esp+12h] [ebp-6h] BYREF
+  _DWORD *v10; // [esp+14h] [ebp-4h]
+
+  v10 = a1;
+  v1 = (#72 *)(a1 + 1);
+  while ( 1 )
+  {
+    v2 = *a1;
+    *(_WORD *)v1 = 0;
+    v8 = 0;
+    v3 = 0;
+    v4 = v1;
+    while ( (*(int (__thiscall **)(int, __int16 *, int))(*(_DWORD *)v2 + 8))(v2, &v9, 2) == 2 )
+    {
+      if ( v9 != 10 )
+      {
+        if ( v9 != 13 )
+        {
+          *(_WORD *)v4 = v9;
+          ++v3;
+          v4 = (#72 *)((char *)v4 + 2);
+        }
+        if ( v3 < 1024 )
+          continue;
+      }
+      goto LABEL_11;
+    }
+    v8 = 1;
+LABEL_11:
+    v5 = v10;
+    *((_WORD *)v1 + v3) = 0;
+    ++v5[513];
+    v6 = WideString::Trim(v1);
+    if ( wcslen(v6) )
+    {
+      if ( *(_WORD *)v6 != 59 )
+        return v6;
+    }
+    if ( v8 )
+      return 0;
+    a1 = v10;
+  }
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     [esp+18h+var_4], ecx
+lea     ebp, [ecx+4]
+jmp     short loc_6CA504
+; ---------------------------------------------------------------------------
+
+loc_6CA500:                             ; CODE XREF: sub_6CA4F0+92↓j
+mov     ecx, [esp+18h+var_4]
+
+loc_6CA504:                             ; CODE XREF: sub_6CA4F0+E↑j
+mov     ebx, [ecx]
+mov     word ptr [ebp+0], 0
+mov     [esp+18h+var_7], 0
+xor     esi, esi
+mov     edi, ebp
+
+loc_6CA515:                             ; CODE XREF: sub_6CA4F0+56↓j
+mov     eax, [ebx]
+lea     ecx, [esp+18h+var_6]
+push    2
+push    ecx
+mov     ecx, ebx
+call    dword ptr [eax+8]
+cmp     eax, 2
+jnz     short loc_6CA54A
+mov     ax, [esp+18h+var_6]
+cmp     ax, 0Ah
+jz      short loc_6CA54F
+cmp     ax, 0Dh
+jz      short loc_6CA540
+mov     [edi], ax
+inc     esi
+add     edi, 2
+
+loc_6CA540:                             ; CODE XREF: sub_6CA4F0+47↑j
+cmp     esi, 400h
+jl      short loc_6CA515
+jmp     short loc_6CA54F
+; ---------------------------------------------------------------------------
+
+loc_6CA54A:                             ; CODE XREF: sub_6CA4F0+36↑j
+mov     [esp+18h+var_7], 1
+
+loc_6CA54F:                             ; CODE XREF: sub_6CA4F0+41↑j
+; sub_6CA4F0+58↑j
+mov     eax, [esp+18h+var_4]
+mov     word ptr [ebp+esi*2+0], 0
+mov     ecx, ebp        ; Source
+inc     dword ptr [eax+804h]
+call    WideString__Trim
+mov     esi, eax
+push    esi             ; String
+call    _wcslen
+add     esp, 4
+test    eax, eax
+jbe     short loc_6CA57C
+cmp     word ptr [esi], 3Bh ; ';'
+jnz     short loc_6CA592
+
+loc_6CA57C:                             ; CODE XREF: sub_6CA4F0+84↑j
+mov     al, [esp+18h+var_7]
+test    al, al
+jz      loc_6CA500
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_6CA592:                             ; CODE XREF: sub_6CA4F0+8A↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x007767F0 (138 bytes)
 const char* String_Trim_7767F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007767F0.json)
-    // Size: 138 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __thiscall sub_7767F0 ( char **this ) { !char *v2 ! ; // edi !LPARAM lParam[10] ! ; // [esp+8h] [ebp-28h] BYREF v2 = * ( this + 7 ) ; if ( ! v2 ) return 0 ; String::Trim ( v2 ) ; strcpy ( ( char * ) dword_B73080 , v2 ) ; lParam [ 1 ] = ( LPARAM ) * ( this + 4 ) ; lParam [ 0 ] = 1 ; lParam [ 4 ] = dword_B73080 ; "SendMessageA " ( qword_B730A0 , 0x110Du , 0 , ( LPARAM ) lParam ) ; return strlen ( ( const char * ) dword_B73080 ) ; }
-    return nullptr;
+// [IDA decompile]
+unsigned int __thiscall sub_7767F0(char **this)
+{
+  char *v2; // edi
+  _DWORD lParam[10]; // [esp+8h] [ebp-28h] BYREF
+
+  v2 = *(this + 7);
+  if ( !v2 )
+    return 0;
+  String::Trim(v2);
+  strcpy((char *)dword_A8ED54[233675], v2);
+  lParam[1] = *(this + 4);
+  lParam[0] = 1;
+  lParam[4] = dword_A8ED54[233675];
+  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(dword_A8ED54[233683], 4365, 0, lParam);
+  return strlen((const char *)dword_A8ED54[233675]);
+}
+
+/* ASM:
+lParam          = dword ptr -28h
+var_24          = dword ptr -24h
+var_18          = dword ptr -18h
+
+sub     esp, 28h
+push    ebx
+mov     ebx, ecx
+push    edi
+mov     edi, [ebx+1Ch]
+test    edi, edi
+jz      short loc_776872
+push    esi
+mov     ecx, edi
+call    String__Trim
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, dword_A8ED54+0E432Ch
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+lea     eax, [esp+34h+lParam]
+and     ecx, 3
+push    eax             ; lParam
+rep movsb
+mov     ecx, [ebx+10h]
+mov     edx, dword_A8ED54+0E432Ch
+mov     [esp+38h+var_24], ecx
+mov     ecx, dword_A8ED54+0E434Ch
+push    0               ; wParam
+push    110Dh           ; Msg
+push    ecx             ; hWnd
+mov     [esp+44h+lParam], 1
+mov     [esp+44h+var_18], edx
+call    ds:__imp_SendMessageA
+mov     edi, dword_A8ED54+0E432Ch
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+pop     esi
+repne scasb
+not     ecx
+dec     ecx
+pop     edi
+mov     eax, ecx
+pop     ebx
+add     esp, 28h
+retn
+; ---------------------------------------------------------------------------
+
+loc_776872:                             ; CODE XREF: sub_7767F0+C↑j
+pop     edi
+xor     eax, eax
+pop     ebx
+add     esp, 28h
+retn
+*/
 }
 
 // 0x006CA730 (120 bytes)
 int WideCharManager_6CA730() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006CA730.json)
-    // Size: 120 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_6CA730 ( wchar_t *Str, _DWORD *a2 ) { !wchar_t *v4 ! ; // edi !char v5 ! ; // al !int v6 ! ; // esi !wchar_t *v7 ! ; // edi !unsigned __int8 v9 ! ; // [esp+Ch] [ebp-Ch] !char v10 ! ; // [esp+10h] [ebp-8h] !char v11 ! ; // [esp+14h] [ebp-4h] v4 = wcschr ( Str , 0x3Au ) ; * v4 = 0 ; v5 = WideChar::ToLong ( ( int ) Str , 0 , 10 ) ; v6 = ( int ) ( v4 + 1 ) ; v11 = v5 ; v7 = wcschr ( v4 + 1 , 0x3Au ) ; * v7 = 0 ; v10 = WideChar::ToLong ( v6 , 0 , 10 ) ; v9 = WideChar::ToLong ( ( int ) ( v7 + 1 ) , 0 , 10 ) ; return sub_6C9940 ( a2 , v11 , v10 , v9 ) ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_6CA730(#72 *Str, _DWORD *a2)
+{
+  int v4; // edi
+  char v5; // al
+  int v6; // esi
+  _WORD *v7; // edi
+  unsigned __int8 v9; // [esp+Ch] [ebp-Ch]
+  char v10; // [esp+10h] [ebp-8h]
+  char v11; // [esp+14h] [ebp-4h]
+
+  v4 = wcschr(Str, 58);
+  *(_WORD *)v4 = 0;
+  v5 = WideChar::ToLong((int)Str, 0, 10);
+  v6 = v4 + 2;
+  v11 = v5;
+  v7 = (_WORD *)wcschr((const #72 *)(v4 + 2), 58);
+  *v7 = 0;
+  v10 = WideChar::ToLong(v6, 0, 10);
+  v9 = WideChar::ToLong((int)(v7 + 1), 0, 10);
+  return sub_6C9940(a2, v11, v10, v9);
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    esi
+push    edi
+mov     esi, ecx
+push    3Ah ; ':'       ; Ch
+mov     ebx, edx
+push    esi             ; Str
+call    _wcschr
+mov     edi, eax
+push    0Ah
+push    0
+push    esi
+mov     word ptr [edi], 0
+call    WideChar__ToLong
+lea     esi, [edi+2]
+push    3Ah ; ':'       ; Ch
+push    esi             ; Str
+mov     byte ptr [esp+34h+var_4], al
+call    _wcschr
+mov     edi, eax
+push    0Ah
+push    0
+push    esi
+mov     word ptr [edi], 0
+call    WideChar__ToLong
+push    0Ah
+add     edi, 2
+push    0
+push    edi
+mov     byte ptr [esp+4Ch+var_8], al
+call    WideChar__ToLong
+mov     ecx, [esp+4Ch+var_8]
+mov     edx, [esp+4Ch+var_4]
+mov     byte ptr [esp+4Ch+var_C], al
+add     esp, 34h
+mov     eax, [esp+18h+var_C]
+push    eax
+push    ecx
+push    edx
+mov     ecx, ebx
+call    sub_6C9940
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x006CA5A0 (196 bytes)
 int WideChar_ToLong_6CA5A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006CA5A0.json)
-    // Size: 196 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __thiscall sub_6CA5A0 ( wchar_t *Source ) { !wchar_t *v1 ! ; // esi !int v2 ! ; // edi !wchar_t *v3 ! ; // ebx !int v4 ! ; // eax !int v5 ! ; // esi !int v6 ! ; // ebp !wchar_t *v7 ! ; // ebx !int v8 ! ; // esi !wchar_t Destination[12] ! ; // [esp+10h] [ebp-18h] BYREF wcsncpy ( Destination , Source , 0xCu ) ; Destination [ 11 ] = 0 ; v1 = wcschr ( Destination , 0x3Au ) ; * v1 ++ = 0 ; v2 = WideChar::ToLong ( ( int ) Destination , 0 , 10 ) ; v3 = wcschr ( v1 , 0x3Au ) ; * v3 = 0 ; v4 = WideChar::ToLong ( ( int ) v1 , 0 , 10 ) ; v5 = ( int ) ( v3 + 1 ) ; v6 = v4 ; v7 = wcschr ( v3 + 1 , 0x3Au ) ; * v7 = 0 ; v8 = WideChar::ToLong ( v5 , 0 , 10 ) ; return 60 * WideChar::ToLong ( ( int ) ( v7 + 1 ) , 0 , 10 ) / 0x64u + 60 * ( v8 + 60 * ( v6 + 60 * v2 ) ) ; }
-    return 0;
+// [IDA decompile]
+unsigned int __thiscall sub_6CA5A0(#72 *Source)
+{
+  const #72 *v1; // esi
+  int v2; // edi
+  int v3; // ebx
+  int v4; // eax
+  int v5; // esi
+  int v6; // ebp
+  _WORD *v7; // ebx
+  int v8; // esi
+  _BYTE Destination[22]; // [esp+10h] [ebp-18h] BYREF
+  __int16 v11; // [esp+26h] [ebp-2h]
+
+  wcsncpy((#72 *)Destination, Source, 12);
+  v11 = 0;
+  v1 = (const #72 *)wcschr((const #72 *)Destination, 58);
+  *(_WORD *)v1 = 0;
+  v1 = (const #72 *)((char *)v1 + 2);
+  v2 = WideChar::ToLong((int)Destination, 0, 10);
+  v3 = wcschr(v1, 58);
+  *(_WORD *)v3 = 0;
+  v4 = WideChar::ToLong((int)v1, 0, 10);
+  v5 = v3 + 2;
+  v6 = v4;
+  v7 = (_WORD *)wcschr((const #72 *)(v3 + 2), 58);
+  *v7 = 0;
+  v8 = WideChar::ToLong(v5, 0, 10);
+  return 60 * WideChar::ToLong((int)(v7 + 1), 0, 10) / 0x64u + 60 * (v8 + 60 * (v6 + 60 * v2));
+}
+
+/* ASM:
+Destination     = byte ptr -18h
+var_2           = word ptr -2
+
+sub     esp, 18h
+push    ebx
+push    ebp
+push    esi
+push    edi
+push    0Ch             ; Count
+lea     eax, [esp+2Ch+Destination]
+push    ecx             ; Source
+push    eax             ; Destination
+call    _wcsncpy
+lea     ecx, [esp+34h+Destination]
+push    3Ah ; ':'       ; Ch
+push    ecx             ; Str
+mov     [esp+3Ch+var_2], 0
+call    _wcschr
+mov     esi, eax
+push    0Ah
+lea     edx, [esp+40h+Destination]
+push    0
+push    edx
+mov     word ptr [esi], 0
+call    WideChar__ToLong
+add     esi, 2
+push    3Ah ; ':'       ; Ch
+push    esi             ; Str
+mov     edi, eax
+call    _wcschr
+mov     ebx, eax
+push    0Ah
+push    0
+push    esi
+mov     word ptr [ebx], 0
+call    WideChar__ToLong
+lea     esi, [ebx+2]
+push    3Ah ; ':'       ; Ch
+push    esi             ; Str
+mov     ebp, eax
+call    _wcschr
+mov     ebx, eax
+push    0Ah
+push    0
+push    esi
+mov     word ptr [ebx], 0
+call    WideChar__ToLong
+add     esp, 48h
+add     ebx, 2
+mov     esi, eax
+push    0Ah
+push    0
+push    ebx
+call    WideChar__ToLong
+lea     eax, [eax+eax*2]
+add     esp, 0Ch
+lea     ecx, [eax+eax*4]
+mov     eax, 51EB851Fh
+shl     ecx, 2
+mul     ecx
+lea     eax, [edi+edi*2]
+pop     edi
+shr     edx, 5
+lea     eax, [eax+eax*4]
+lea     eax, [ebp+eax*4+0]
+lea     eax, [eax+eax*2]
+lea     ecx, [eax+eax*4]
+lea     eax, [esi+ecx*4]
+pop     esi
+pop     ebp
+pop     ebx
+lea     eax, [eax+eax*2]
+lea     eax, [eax+eax*4]
+lea     eax, [edx+eax*4]
+add     esp, 18h
+retn
+*/
 }
 
 // 0x00603FC0 (152 bytes)
 int WideStringManager_603FC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00603FC0.json)
-    // Size: 152 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   wchar_t **__fastcall sub_603FC0 ( wchar_t **a1, HWND a2, HWND hWnd, unsigned __int16 a4, void *a5 ) { !LPARAM lParam[2] ! ; // [esp+10h] [ebp-Ch] BYREF void *v9 ; // [esp+18h] [ebp-4h] BYREF !LRESULT v10 ! ; // [esp+24h] [ebp+8h] v10 = "SendMessageA " ( hWnd , 0x4E8u , 0 , a4 | ( ( unsigned __int16 ) a5 << 16 ) ) ; unknown_libname_74 ( & v9 ) ; lParam [ 0 ] = ( LPARAM ) hWnd ; lParam [ 1 ] = v10 ; "SendMessageA " ( a2 , 0x4E9u , 0 , ( LPARAM ) lParam ) ; WideString::AssignFromPtr ( ( wchar_t ** ) & a5 , ( const wchar_t ** ) & v9 ) ; DeleteAndZero::Alt ( & v9 ) ; WideString::AssignFromPtr ( a1 , ( const wchar_t ** ) & a5 ) ; DeleteAndZero::Alt ( & a5 ) ; return a1 ; }
-    return 0;
+// [IDA decompile]
+#72 **__fastcall sub_603FC0(#72 **a1, int a2, int hWnd, unsigned __int16 a4, void *a5)
+{
+  _DWORD lParam[2]; // [esp+10h] [ebp-Ch] BYREF
+  void *v9; // [esp+18h] [ebp-4h] BYREF
+  int v10; // [esp+24h] [ebp+8h]
+
+  v10 = ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(hWnd, 1256, 0, a4 | ((unsigned __int16)a5 << 16));
+  unknown_libname_74(&v9);
+  lParam[0] = hWnd;
+  lParam[1] = v10;
+  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(a2, 1257, 0, lParam);
+  WideString::AssignFromPtr((#72 **)&a5, (const #72 **)&v9);
+  DeleteAndZero::Alt(&v9);
+  WideString::AssignFromPtr(a1, (const #72 **)&a5);
+  DeleteAndZero::Alt(&a5);
+  return a1;
+}
+
+/* ASM:
+lParam          = dword ptr -0Ch
+var_8           = dword ptr -8
+var_4           = dword ptr -4
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+sub     esp, 0Ch
+mov     eax, [esp+0Ch+arg_8]
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+mov     ebx, [esp+18h+hWnd]
+mov     ecx, [esp+18h+arg_4]
+and     eax, 0FFFFh
+mov     ebp, ds:__imp_SendMessageA
+and     ecx, 0FFFFh
+shl     eax, 10h
+or      eax, ecx
+push    edi
+push    eax             ; lParam
+push    0               ; wParam
+push    4E8h            ; Msg
+mov     edi, edx
+push    ebx             ; hWnd
+call    ebp ; __imp_SendMessageA
+lea     ecx, [esp+1Ch+var_4]
+mov     [esp+1Ch+arg_4], eax
+call    unknown_libname_74 ; Microsoft VisualC 2-14/net runtime
+mov     edx, [esp+1Ch+arg_4]
+lea     eax, [esp+1Ch+lParam]
+push    eax             ; lParam
+push    0               ; wParam
+push    4E9h            ; Msg
+push    edi             ; hWnd
+mov     [esp+2Ch+lParam], ebx
+mov     [esp+2Ch+var_8], edx
+call    ebp ; __imp_SendMessageA
+lea     ecx, [esp+1Ch+var_4]
+push    ecx
+lea     ecx, [esp+20h+arg_8]
+call    WideString__AssignFromPtr
+lea     ecx, [esp+1Ch+var_4]
+call    DeleteAndZero__Alt
+lea     edx, [esp+1Ch+arg_8]
+mov     ecx, esi
+push    edx
+call    WideString__AssignFromPtr
+lea     ecx, [esp+1Ch+arg_8]
+call    DeleteAndZero__Alt
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    0Ch
+*/
 }
 
 // 0x005CE330 (100 bytes)
 int WideString_Get_5CE330() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CE330.json)
-    // Size: 100 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5CE330 ( _DWORD **this, const wchar_t **a2 ) { int v3 ; // ebp !size_t v4 ! ; // esi int v5 ; // ebp int v6 ; // eax int i ; // [esp+Ch] [ebp-4h] v3 = 0 ; v4 = 0 ; for ( i = 0 ; WideString::GetChar ( a2 , v4 ) ; i = v3 ) { if ( WideString::GetChar ( a2 , v4 ) == 10 ) break ; v5 = * * ( this + 13 ) ; LOWORD ( v6 ) = WideString::GetChar ( a2 , v4 ) ; v3 = ( * ( int (__thiscall **)(_DWORD, int) ) ( v5 + 4 ) ) ( * ( this + 13 ) , v6 ) + i ; ++ v4 ; } return v3 ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5CE330(_DWORD **this, const #72 **a2)
+{
+  int v3; // ebp
+  int v4; // esi
+  int v5; // ebp
+  int Char; // eax
+  int i; // [esp+Ch] [ebp-4h]
+
+  v3 = 0;
+  v4 = 0;
+  for ( i = 0; (unsigned __int16)WideString::GetChar(v4); i = v3 )
+  {
+    if ( (unsigned __int16)WideString::GetChar(v4) == 10 )
+      break;
+    v5 = **(this + 13);
+    Char = WideString::GetChar(v4);
+    v3 = (*(int (__thiscall **)(_DWORD, int))(v5 + 4))(*(this + 13), Char) + i;
+    ++v4;
+  }
+  return v3;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, [esp+14h+arg_0]
+mov     ebx, ecx
+xor     ebp, ebp
+mov     ecx, edi
+push    ebp
+xor     esi, esi
+mov     [esp+18h+var_4], ebp
+call    WideString__GetChar
+test    ax, ax
+jz      short loc_5CE38A
+
+loc_5CE350:                             ; CODE XREF: sub_5CE330+58↓j
+push    esi
+mov     ecx, edi
+call    WideString__GetChar
+cmp     ax, 0Ah
+jz      short loc_5CE38A
+mov     eax, [ebx+34h]
+push    esi
+mov     ecx, edi
+mov     ebp, [eax]
+call    WideString__GetChar
+mov     ecx, [ebx+34h]
+push    eax
+call    dword ptr [ebp+4]
+mov     ebp, [esp+14h+var_4]
+mov     ecx, edi
+add     ebp, eax
+inc     esi
+push    esi
+mov     [esp+18h+var_4], ebp
+call    WideString__GetChar
+test    ax, ax
+jnz     short loc_5CE350
+
+loc_5CE38A:                             ; CODE XREF: sub_5CE330+1E↑j
+; sub_5CE330+2C↑j
+pop     edi
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn    4
+*/
 }
 
 // 0x005CE3A0 (246 bytes)
 int WideString_Get_5CE3A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005CE3A0.json)
-    // Size: 246 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5CE3A0 ( int this, int a2, int *a3 ) { _DWORD *v4 ; // ecx !int result ! ; // eax !int v6 ! ; // ecx int v7 ; // ebp int v8 ; // ebx !size_t v9 ! ; // edi int v10 ; // eax int v11 ; // ebp int v12 ; // eax !int v13 ! ; // eax int v14 ; // [esp+18h] [ebp-28h] int v15 ; // [esp+18h] [ebp-28h] !size_t i ! ; // [esp+1Ch] [ebp-24h] _DWORD v17[4] ; // [esp+30h] [ebp-10h] BYREF int v18 ; // [esp+48h] [ebp+8h] if ( ! a3 || ( v4 = ClipRectIntersection ( v17 , a3 , ( int * ) ( this + 56 ) , 0 , 0 ) , result = v4 [ 2 ] , v6 = v4 [ 3 ] , result > 0 ) && v6 > 0 ) { result = * ( _DWORD * ) ( this + 32 ) ; v7 = * ( _DWORD * ) ( this + 8 ) ; v8 = * ( _DWORD * ) ( this + 4 ) ; v9 = 0 ; v18 = v7 ; for ( i = result ; v9 < i ; ++ v9 ) { if ( WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v9 ) == 10 ) { v8 = * ( _DWORD * ) ( this + 4 ) ; v7 += * ( _DWORD * ) ( * ( _DWORD * ) ( this + 52 ) + 8 ) ; v14 = * ( _DWORD * ) ( * ( _DWORD * ) ( this + 52 ) + 8 ) ; v18 = v7 ; result = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a2 + 128 ) ) ( a2 ) ; if ( v7 + v14 >= result ) return result ; } else { v15 = * * ( _DWORD ** ) ( this + 52 ) ; LOWORD ( v10 ) = WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v9 ) ; ( * ( void (__thiscall **)(_DWORD, int, int, int, int, int, int) ) ( v15 + 16 ) ) ( * ( _DWORD * ) ( this + 52 ) , a2 , v10 , v8 , v7 , 2 , 1 ) ; v11 = * * ( _DWORD ** ) ( this + 52 ) ; LOWORD ( v12 ) = WideString::GetChar ( ( const wchar_t ** ) ( this + 28 ) , v9 ) ; v13 = ( * ( int (__thiscall **)(_DWORD, int) ) ( v11 + 4 ) ) ( * ( _DWORD * ) ( this + 52 ) , v12 ) ; v7 = v18 ; v8 += v13 ; } result = i ; } } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5CE3A0(int *this, int a2, int *a3)
+{
+  _DWORD *v4; // ecx
+  int result; // eax
+  int v6; // ecx
+  int v7; // ebp
+  int v8; // ebx
+  unsigned int v9; // edi
+  int Char; // eax
+  int v11; // ebp
+  int v12; // eax
+  int v13; // eax
+  int v14; // [esp+18h] [ebp-28h]
+  int v15; // [esp+18h] [ebp-28h]
+  unsigned int i; // [esp+1Ch] [ebp-24h]
+  _DWORD v17[4]; // [esp+30h] [ebp-10h] BYREF
+  int v18; // [esp+48h] [ebp+8h]
+
+  if ( !a3 || (v4 = ClipRectIntersection(v17, a3, this + 14, 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
+  {
+    result = *(this + 8);
+    v7 = *(this + 2);
+    v8 = *(this + 1);
+    v9 = 0;
+    v18 = v7;
+    for ( i = result; v9 < i; ++v9 )
+    {
+      if ( (unsigned __int16)WideString::GetChar(v9) == 10 )
+      {
+        v8 = *(this + 1);
+        v7 += *(_DWORD *)(*(this + 13) + 8);
+        v14 = *(_DWORD *)(*(this + 13) + 8);
+        v18 = v7;
+        result = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 128))(a2);
+        if ( v7 + v14 >= result )
+          return result;
+      }
+      else
+      {
+        v15 = *(_DWORD *)*(this + 13);
+        Char = WideString::GetChar(v9);
+        (*(void (__thiscall **)(_DWORD, int, int, int, int, int, int))(v15 + 16))(*(this + 13), a2, Char, v8, v7, 2, 1);
+        v11 = *(_DWORD *)*(this + 13);
+        v12 = WideString::GetChar(v9);
+        v13 = (*(int (__thiscall **)(_DWORD, int))(v11 + 4))(*(this + 13), v12);
+        v7 = v18;
+        v8 += v13;
+      }
+      result = i;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+sub     esp, 28h
+test    edx, edx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+jz      short loc_5CE3E7
+push    0
+lea     eax, [esi+38h]
+push    0
+push    eax
+lea     ecx, [esp+44h+var_10]
+call    ClipRectIntersection
+mov     ecx, eax
+mov     edx, [ecx]
+mov     [esp+38h+var_20], edx
+mov     eax, [ecx+4]
+mov     [esp+38h+var_1C], eax
+mov     eax, [ecx+8]
+test    eax, eax
+mov     ecx, [ecx+0Ch]
+jle     loc_5CE48C
+test    ecx, ecx
+jle     loc_5CE48C
+
+loc_5CE3E7:                             ; CODE XREF: sub_5CE3A0+F↑j
+mov     eax, [esi+20h]
+mov     ebp, [esi+8]
+mov     ebx, [esi+4]
+xor     edi, edi
+test    eax, eax
+mov     [esp+38h+arg_4], ebp
+mov     [esp+38h+var_24], eax
+jbe     loc_5CE48C
+
+loc_5CE402:                             ; CODE XREF: sub_5CE3A0+E6↓j
+push    edi
+lea     ecx, [esi+1Ch]
+call    WideString__GetChar
+cmp     ax, 0Ah
+jnz     short loc_5CE43C
+mov     ecx, [esi+34h]
+mov     ebx, [esi+4]
+mov     eax, [ecx+8]
+mov     ecx, [esp+38h+arg_0]
+add     ebp, eax
+mov     [esp+38h+var_28], eax
+mov     edx, [ecx]
+mov     [esp+38h+arg_4], ebp
+call    dword ptr [edx+80h]
+mov     ecx, [esp+38h+var_28]
+add     ecx, ebp
+cmp     ecx, eax
+jge     short loc_5CE48C
+jmp     short loc_5CE47F
+; ---------------------------------------------------------------------------
+
+loc_5CE43C:                             ; CODE XREF: sub_5CE3A0+6F↑j
+mov     edx, [esi+34h]
+push    1
+push    2
+push    ebp
+mov     edx, [edx]
+push    ebx
+push    edi
+lea     ecx, [esi+1Ch]
+mov     [esp+4Ch+var_28], edx
+call    WideString__GetChar
+mov     edx, [esp+48h+var_28]
+mov     ecx, [esi+34h]
+push    eax
+mov     eax, [esp+4Ch+arg_0]
+push    eax
+call    dword ptr [edx+10h]
+mov     eax, [esi+34h]
+push    edi
+lea     ecx, [esi+1Ch]
+mov     ebp, [eax]
+call    WideString__GetChar
+mov     ecx, [esi+34h]
+push    eax
+call    dword ptr [ebp+4]
+mov     ebp, [esp+38h+arg_4]
+add     ebx, eax
+
+loc_5CE47F:                             ; CODE XREF: sub_5CE3A0+9A↑j
+mov     eax, [esp+38h+var_24]
+inc     edi
+cmp     edi, eax
+jb      loc_5CE402
+
+loc_5CE48C:                             ; CODE XREF: sub_5CE3A0+39↑j
+; sub_5CE3A0+41↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    8
+*/
 }
 
 } // namespace gamemd

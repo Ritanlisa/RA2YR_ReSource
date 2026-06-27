@@ -29,38 +29,134 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-    // 0x410267: if (!ppv) return E_POINTER
-    if (!ppv)
-        return E_POINTER;  // 0x80004003 = -2147467261
+// [IDA decompile]
+int __thiscall AbstractClass::QueryInterface(#374 *this)
+{
+  int *v2; // ecx
+  #373 *thisa; // [esp+8h] [ebp+4h]
+  const void *iid; // [esp+Ch] [ebp+8h]
+  void **ppv; // [esp+10h] [ebp+Ch]
 
-    // 0x410286: *ppv = 0
-    *ppv = nullptr;
+  if ( !ppv )
+    return -2147467261;
+  *ppv = 0;
+  if ( !memcmp(iid, &IID_IUnknown, 0x10u) )
+    *ppv = thisa;
+  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) )
+    *ppv = thisa;
+  if ( !memcmp(iid, &IID_IPersist, 0x10u) )
+    *ppv = thisa;
+  if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) )
+  {
+    if ( thisa )
+      v2 = (int *)((char *)thisa + 4);
+    else
+      v2 = 0;
+    *ppv = v2;
+  }
+  if ( !*ppv )
+    return -2147467262;
+  (*(void (__stdcall **)(#373 *))(*(_DWORD *)thisa + 4))(thisa);
+  return 0;
+}
 
-    // 0x410290: if iid == IID_IUnknown -- *ppv = this (IPersistStream sub-object)
-    if (iid == IID_IUnknown)
-        *ppv = (IPersistStream*)(this);
+/* ASM:
+this            = dword ptr  4
+iid             = dword ptr  8
+ppv             = dword ptr  0Ch
 
-    // 0x4102A5: if iid == IID_IPersistStream -- *ppv = this
-    if (iid == IID_IPersistStream)
-        *ppv = (IPersistStream*)(this);
+mov     eax, [esp+ppv]
 
-    // 0x4102B9: if iid == IID_IPersist -- *ppv = this
-    if (iid == IID_IPersist)
-        *ppv = (IPersistStream*)(this);
+AbstractClass__sub_410264:
+push    ebx
+test    eax, eax
+jnz     short loc_410272
+mov     eax, 80004003h
 
-    // 0x4102CE: if iid == IID_IRTTITypeInfo -- *ppv = IRTTITypeInfo sub-object (vtable[1])
-    if (iid == IID_IRTTITypeInfo)
-        *ppv = (IRTTITypeInfo*)(this);
+AbstractClass__sub_41026E:
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
 
-    // 0x4102E1: if !*ppv -- return E_NOINTERFACE
-    if (!*ppv)
-        return E_NOINTERFACE;  // 0x80004002 = -2147467262
+loc_410272:                             ; CODE XREF: AbstractClass__QueryInterface+7↑j
+mov     edx, [esp+4+iid]
+push    esi
+push    edi
+mov     ecx, 4
+mov     edi, offset IID_IUnknown
+mov     esi, edx
+xor     ebx, ebx
+mov     dword ptr [eax], 0
+mov     ebx, [esp+0Ch+this]
+repe cmpsd
+jnz     short loc_410296
 
-    // 0x4102F2: AddRef() -- calls vtable[0][1]
-    AddRef();
+AbstractClass__sub_410294:
+mov     [eax], ebx
 
-    // 0x41026E: return S_OK
-    return S_OK;
+loc_410296:                             ; CODE XREF: AbstractClass__QueryInterface+32↑j
+push    ebp
+mov     ecx, 4
+mov     edi, offset IID_IPersistStream
+mov     esi, edx
+xor     ebp, ebp
+repe cmpsd
+jnz     short loc_4102AB
+mov     [eax], ebx
+
+loc_4102AB:                             ; CODE XREF: AbstractClass__QueryInterface+47↑j
+mov     ecx, 4
+mov     edi, offset IID_IPersist
+mov     esi, edx
+xor     ebp, ebp
+repe cmpsd
+pop     ebp
+jnz     short loc_4102C0
+mov     [eax], ebx
+
+loc_4102C0:                             ; CODE XREF: AbstractClass__QueryInterface+5C↑j
+mov     esi, edx
+
+AbstractClass__sub_4102C2:
+mov     ecx, 4
+mov     edi, offset IID_IRTTITypeInfo
+xor     edx, edx
+repe cmpsd
+pop     edi
+pop     esi
+jnz     short loc_4102E1
+test    ebx, ebx
+
+AbstractClass__sub_4102D6:
+jz      short loc_4102DD
+lea     ecx, [ebx+4]
+jmp     short loc_4102DF
+; ---------------------------------------------------------------------------
+
+loc_4102DD:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102D6↑j
+xor     ecx, ecx
+
+loc_4102DF:                             ; CODE XREF: AbstractClass__QueryInterface+7B↑j
+mov     [eax], ecx
+
+loc_4102E1:                             ; CODE XREF: AbstractClass__QueryInterface+72↑j
+cmp     dword ptr [eax], 0
+
+AbstractClass__sub_4102E4:
+jnz     short loc_4102EF
+mov     eax, 80004002h
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_4102EF:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102E4↑j
+mov     eax, [ebx]
+push    ebx
+call    dword ptr [eax+4]
+xor     eax, eax
+pop     ebx
+retn    0Ch
+*/
 }
 
 // IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)

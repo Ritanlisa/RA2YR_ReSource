@@ -420,110 +420,398 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
 bool MixFileClass::Bootstrap()
 {
-    LOG_INFO("MixFileClass::Bootstrap: scanning all .mix files");
+// [IDA decompile]
+char MixFileClass::Bootstrap()
+{
+  int i; // edi
+  _DWORD *v1; // eax
+  char v2; // bl
+  _DWORD *v3; // eax
+  _DWORD *v4; // esi
+  int v5; // eax
+  _DWORD *v6; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  _DWORD *v10; // eax
+  _DWORD *v11; // eax
+  _DWORD *v12; // eax
+  _DWORD *v13; // eax
+  _DWORD *v14; // eax
+  _DWORD *v15; // eax
+  int v16; // [esp+10h] [ebp-68h]
+  int v17[9]; // [esp+14h] [ebp-64h] BYREF
+  char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
 
-    g_mixPool.Clear();
-
-    // Load all .mix files in current directory
-    WIN32_FIND_DATAA fd;
-    HANDLE hFind = FindFirstFileA("*.mix", &fd);
-    if (hFind != INVALID_HANDLE_VALUE) {
-        do {
-            if (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) continue;
-            auto* mix = new MixFileClass(fd.cFileName);
-            if (mix->IsValid()) {
-                LOG_INFO("  %s: %d files, %d bytes", fd.cFileName, mix->CountFiles, mix->FileSize);
-                // Copy the filename since fd buffer will be overwritten
-                mix->FileName = _strdup(fd.cFileName);
-                g_mixPool.AddItem(mix);
-            } else {
-                delete mix;
-                LOG_WARN("  %s: FAILED to load", fd.cFileName);
-            }
-        } while (FindNextFileA(hFind, &fd));
-        FindClose(hFind);
-    }
-
-    // Set Generics references for known MIX files
-    auto find_in_pool = [](const char* name) -> MixFileClass* {
-        for (int i = 0; i < g_mixPool.Count; ++i)
-            if (g_mixPool[i] && g_mixPool[i]->FileName && _stricmp(g_mixPool[i]->FileName, name) == 0)
-                return g_mixPool[i];
-        return nullptr;
-    };
-
-    Generics.RA2MD    = find_in_pool("expandmd01.mix");
-    Generics.RA2      = find_in_pool("ra2md.mix");
-    Generics.LANGMD   = find_in_pool("langmd.mix");
-    Generics.LANGUAGE = find_in_pool("language.mix");
-    Generics.MAIN     = find_in_pool("ra2.mix");
-    Generics.MULTI    = find_in_pool("multi.mix");
-    Generics.MULTIMD  = find_in_pool("multimd.mix");
-
-    LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
-
-    // Reorder: expansion ("md") MIXes must come AFTER base MIXes so
-    // reverse search finds them first (overriding base versions).
-    // e.g. langmd.mix overrides language.mix for ra2ts_l.bik
+  v16 = dword_81C1D0;
+  SetSoundWarning(-2);
+  for ( i = 99; i >= 0; --i )
+  {
+    sprintf(Buffer, "EXPANDMD%02d.MIX", i);
+    v1 = RawFileClass::Construct(v17, (int)Buffer);
+    v2 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v1 + 20))(v1, 0);
+    RawFileClass::Dtor(v17);
+    if ( v2 )
     {
-        int remaining = g_mixPool.Count;
-        for (int i = 0; i < remaining; ) {
-            if (!g_mixPool[i] || !g_mixPool[i]->FileName) { ++i; continue; }
-            const char* name = g_mixPool[i]->FileName;
-            int len = (int)strlen(name);
-            if (len > 6 && _stricmp(name + len - 6, "md.mix") == 0) {
-                MixFileClass* mdMix = g_mixPool[i];
-                g_mixPool.RemoveItem(i);
-                g_mixPool.AddItem(mdMix);
-                --remaining; // one less item before the end zone
-                // Don't ++i -- check the item that shifted into position i
-            } else {
-                ++i;
-            }
+      v3 = (_DWORD *)__2_YAPAXI_Z(40);
+      if ( v3 )
+      {
+        v4 = MixFileClass::FromFile(v3, Buffer, (int)&MEMORY[0x87F7E8][7270]);
+        if ( v4 )
+        {
+          if ( MEMORY[0x87F7E8][5486] < MEMORY[0x87F7E8][5484]
+            || (BYTE1(MEMORY[0x87F7E8][5485]) || !MEMORY[0x87F7E8][5484])
+            && MEMORY[0x87F7E8][5487] > 0
+            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][5482] + 8))(
+                 &MEMORY[0x87F7E8][5482],
+                 MEMORY[0x87F7E8][5484] + MEMORY[0x87F7E8][5487],
+                 0) )
+          {
+            v5 = MEMORY[0x87F7E8][5486]++;
+            *(_DWORD *)(MEMORY[0x87F7E8][5483] + 4 * v5) = v4;
+          }
+          Debug::Log_0();
         }
+      }
     }
+  }
+  v6 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v6 )
+  {
+    MEMORY[0x87F7E8][5508] = 0;
+    return 0;
+  }
+  MEMORY[0x87F7E8][5508] = MixFileClass::FromFile(v6, aRa2mdMix, (int)&MEMORY[0x87F7E8][7270]);
+  if ( !MEMORY[0x87F7E8][5508] )
+    return 0;
+  v7 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v7 )
+  {
+    MEMORY[0x87F7E8][5509] = 0;
+    return 0;
+  }
+  v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&MEMORY[0x87F7E8][7270]);
+  MEMORY[0x87F7E8][5509] = v8;
+  if ( !v8 )
+    return 0;
+  Debug::Log_0();
+  v10 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v10 )
+  {
+    MEMORY[0x87F7E8][5528] = 0;
+    return 0;
+  }
+  MEMORY[0x87F7E8][5528] = MixFileClass::FromFile(v10, aCachemdMix, (int)&MEMORY[0x87F7E8][7270]);
+  if ( !MEMORY[0x87F7E8][5528] || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCachemdMix) )
+    return 0;
+  Debug::Log_0();
+  v11 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v11 )
+  {
+    MEMORY[0x87F7E8][5529] = 0;
+    return 0;
+  }
+  v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&MEMORY[0x87F7E8][7270]);
+  MEMORY[0x87F7E8][5529] = v12;
+  if ( !v12 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCacheMix_0) )
+    return 0;
+  Debug::Log_0();
+  v13 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v13 )
+  {
+    MEMORY[0x87F7E8][5530] = 0;
+    return 0;
+  }
+  MEMORY[0x87F7E8][5530] = MixFileClass::FromFile(v13, aLocalmdMix, (int)&MEMORY[0x87F7E8][7270]);
+  if ( !MEMORY[0x87F7E8][5530] )
+    return 0;
+  v14 = (_DWORD *)__2_YAPAXI_Z(40);
+  if ( !v14 )
+  {
+    MEMORY[0x87F7E8][5531] = 0;
+    return 0;
+  }
+  v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&MEMORY[0x87F7E8][7270]);
+  MEMORY[0x87F7E8][5531] = v15;
+  if ( !v15 )
+    return 0;
+  Debug::Log_0();
+  SetSoundWarning(v16);
+  return 1;
+}
 
-    // Recursively extract sub-MIX files by trying to load every entry
-    // from the top-level MIX files as encrypted MIX
-    int processed = 0;
-    const int MAX_SUB_MIX = 50;
-    while (processed < g_mixPool.Count && g_mixPool.Count < MAX_SUB_MIX) {
-        MixFileClass* parent = g_mixPool[processed++];
-        for (int i = 0; i < parent->CountFiles && g_mixPool.Count < MAX_SUB_MIX; ++i) {
-            int sz = parent->GetSize(i);
-            if (sz < 1000) continue; // sub-MIX files are at least 1KB
+/* ASM:
+Buffer          = byte ptr -40h
 
-            // Peek at first 4 bytes - must be 0x0000 for RA2 encrypted MIX
-            uint8_t head[4];
-            if (!parent->Peek(i, head, 4)) continue;
-            if (head[0] != 0 || head[1] != 0) continue;
-            uint16_t flags = *(uint16_t*)(head + 2);
-            if (!(flags & 2)) continue; // must be encrypted
+sub     esp, 68h
+mov     eax, dword_81C1D0
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ecx, 0FFFFFFFEh
+mov     [esp+78h+var_68], eax
+call    SetSoundWarning
+mov     edi, 63h ; 'c'
 
-            uint8_t* data = (uint8_t*)malloc(sz);
-            if (!data || !parent->Extract(i, data, sz)) { free(data); continue; }
+loc_5301BF:                             ; CODE XREF: MixFileClass__Bootstrap+EA↓j
+push    edi
+lea     ecx, [esp+7Ch+Buffer]
+push    offset aExpandmd02dMix ; "EXPANDMD%02d.MIX"
+push    ecx             ; Buffer
+call    _sprintf
+add     esp, 0Ch
+lea     edx, [esp+78h+Buffer]
+lea     ecx, [esp+78h+var_64]
+push    edx
+call    RawFileClass__Construct
+mov     edx, [eax]
+xor     ebp, ebp
+push    ebp
+mov     ecx, eax
+call    dword ptr [edx+14h]
+lea     ecx, [esp+78h+var_64]
+mov     bl, al
+call    RawFileClass__Dtor
+test    bl, bl
+jz      loc_530289
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebp
+jz      short loc_530289
+lea     ecx, [esp+78h+Buffer]
+push    886980h         ; int
+push    ecx             ; char *
+mov     ecx, eax
+call    MixFileClass__FromFile
+mov     esi, eax
+cmp     esi, ebp
+jz      short loc_530289
+mov     eax, ds:884D98h
+mov     ecx, ds:884DA0h
+cmp     ecx, eax
+jl      short loc_53025F
+mov     cl, ds:884D9Dh
+test    cl, cl
+jnz     short loc_53023F
+cmp     eax, ebp
+jnz     short loc_530277
 
-            char tmpname[64];
-            snprintf(tmpname, sizeof(tmpname), "sub:0x%08X", parent->GetFileID(i));
+loc_53023F:                             ; CODE XREF: MixFileClass__Bootstrap+99↑j
+mov     ecx, ds:884DA4h
+cmp     ecx, ebp
+jle     short loc_530277
+mov     edx, ds:884D90h
+add     ecx, eax
+push    ebp
+push    ecx
+mov     ecx, 884D90h
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_530277
 
-            auto* submix = new MixFileClass(data, sz, tmpname);
-            if (submix->IsValid()) {
-                LOG_INFO("  Sub-MIX: hash=0x%08X -> %d files, %d bytes (body %d, avg %d)",
-                    parent->GetFileID(i), submix->CountFiles, sz,
-                    submix->FileSize, submix->CountFiles > 0 ? submix->FileSize / submix->CountFiles : 0);
-                g_mixPool.AddItem(submix); // submix owns data via MemoryData
-            } else {
-                delete submix; // destructor frees MemoryData (= data)
-            }
-        }
-    }
+loc_53025F:                             ; CODE XREF: MixFileClass__Bootstrap+8F↑j
+mov     ecx, ds:884DA0h
+mov     eax, ecx
+inc     ecx
+mov     ds:884DA0h, ecx
+mov     ecx, ds:884D94h
+mov     [ecx+eax*4], esi
 
-    LOG_INFO("MixFileClass::Bootstrap: done, %d total MIX in pool after recursion", g_mixPool.Count);
-    // Dump first 3 MIX entries for hash verification
-    for (int i = 0; i < g_mixPool.Count && i < 3; ++i)
-        if (g_mixPool[i]) g_mixPool[i]->DumpEntries();
+loc_530277:                             ; CODE XREF: MixFileClass__Bootstrap+9D↑j
+; MixFileClass__Bootstrap+A7↑j ...
+lea     edx, [esp+78h+Buffer]
+push    edx
+push    offset off_826688
+call    Debug__Log_0
+add     esp, 8
 
-    return true;
+loc_530289:                             ; CODE XREF: MixFileClass__Bootstrap+57↑j
+; MixFileClass__Bootstrap+69↑j ...
+dec     edi
+jns     loc_5301BF
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebp
+jz      short loc_5302DE
+push    886980h         ; int
+push    offset aRa2mdMix ; "RA2MD.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+cmp     eax, ebp
+mov     ds:884DF8h, eax
+jz      short loc_5302E4
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebp
+jz      short loc_5302EE
+push    886980h         ; int
+push    offset aRa2Mix  ; "RA2.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+mov     ds:884DFCh, eax
+jmp     short loc_5302FE
+; ---------------------------------------------------------------------------
+
+loc_5302DE:                             ; CODE XREF: MixFileClass__Bootstrap+FC↑j
+mov     ds:884DF8h, ebp
+
+loc_5302E4:                             ; CODE XREF: MixFileClass__Bootstrap+116↑j
+; MixFileClass__Bootstrap+160↓j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5302EE:                             ; CODE XREF: MixFileClass__Bootstrap+124↑j
+pop     edi
+mov     ds:884DFCh, ebp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5302FE:                             ; CODE XREF: MixFileClass__Bootstrap+13C↑j
+cmp     eax, ebp
+jz      short loc_5302E4
+push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
+call    Debug__Log_0
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 8
+cmp     eax, ebp
+jz      short loc_530374
+push    886980h         ; int
+push    offset aCachemdMix ; "CACHEMD.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+cmp     eax, ebp
+mov     ds:884E48h, eax
+jz      short loc_5302E4
+xor     edx, edx
+mov     ecx, offset aCachemdMix ; "CACHEMD.MIX"
+call    ?do_always_noconv_codecvt_base_std__MBE_NXZ_7
+test    al, al
+jz      short loc_5302E4
+push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
+call    Debug__Log_0
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 8
+cmp     eax, ebp
+jz      short loc_530384
+push    886980h         ; int
+push    offset aCacheMix_0 ; "CACHE.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+mov     ds:884E4Ch, eax
+jmp     short loc_530394
+; ---------------------------------------------------------------------------
+
+loc_530374:                             ; CODE XREF: MixFileClass__Bootstrap+178↑j
+pop     edi
+mov     ds:884E48h, ebp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_530384:                             ; CODE XREF: MixFileClass__Bootstrap+1BA↑j
+pop     edi
+mov     ds:884E4Ch, ebp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_530394:                             ; CODE XREF: MixFileClass__Bootstrap+1D2↑j
+cmp     eax, ebp
+jz      loc_5302E4
+xor     edx, edx
+mov     ecx, offset aCacheMix_0 ; "CACHE.MIX"
+call    ?do_always_noconv_codecvt_base_std__MBE_NXZ_7
+test    al, al
+jz      loc_5302E4
+push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
+call    Debug__Log_0
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 8
+cmp     eax, ebp
+jz      short loc_53040C
+push    886980h         ; int
+push    offset aLocalmdMix ; "LOCALMD.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+cmp     eax, ebp
+mov     ds:884E50h, eax
+jz      loc_5302E4
+push    28h ; '('       ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebp
+jz      short loc_53041C
+push    886980h         ; int
+push    offset aLocalMix ; "LOCAL.MIX"
+mov     ecx, eax
+call    MixFileClass__FromFile
+mov     ds:884E54h, eax
+jmp     short loc_53042C
+; ---------------------------------------------------------------------------
+
+loc_53040C:                             ; CODE XREF: MixFileClass__Bootstrap+226↑j
+pop     edi
+mov     ds:884E50h, ebp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_53041C:                             ; CODE XREF: MixFileClass__Bootstrap+252↑j
+pop     edi
+mov     ds:884E54h, ebp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_53042C:                             ; CODE XREF: MixFileClass__Bootstrap+26A↑j
+cmp     eax, ebp
+jz      loc_5302E4
+push    offset aLocalMix_0 ; " LOCAL.MIX"
+call    Debug__Log_0
+mov     ecx, [esp+7Ch+var_68]
+add     esp, 4
+call    SetSoundWarning
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 68h
+retn
+*/
 }
 
 // ============================================================

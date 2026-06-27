@@ -14,11 +14,55 @@
 #include "type/techno_type.hpp"
 
 // 0x45EC90
-namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const { return 0; } }
+namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
+// [IDA decompile]
+int __thiscall BuildingTypeClass_GetFoundationWidth(_DWORD *this)
+{
+  return dword_8192B8[*(this + 956)];
+}
+
+/* ASM:
+mov     eax, [ecx+0EF0h]
+mov     eax, dword_8192B8[eax*4]
+retn
+*/
+} }
 // 0x0 (lnk)
 namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
 // 0x45ECA0
-namespace gamemd { short BuildingTypeClass::GetFoundationHeight(bool) const { return 0; } }
+namespace gamemd { short BuildingTypeClass::GetFoundationHeight(bool) const {
+// [IDA decompile]
+int __thiscall BuildingTypeClass_GetFoundationHeight(int this, char a2)
+{
+  if ( a2 && *(_BYTE *)(this + 5488) )
+    return dword_819310[*(_DWORD *)(this + 3824)] + 1;
+  else
+    return dword_819310[*(_DWORD *)(this + 3824)];
+}
+
+/* ASM:
+mov     al, [esp+arg_0]
+test    al, al
+jz      short loc_45ECC9
+mov     al, [ecx+1570h]
+test    al, al
+jz      short loc_45ECC9
+mov     eax, [ecx+0EF0h]
+mov     edx, 1
+mov     eax, dword_819310[eax*4]
+add     eax, edx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_45ECC9:                             ; CODE XREF: BuildingTypeClass__GetFoundationHeight+6↑j
+; BuildingTypeClass__GetFoundationHeight+10↑j
+mov     eax, [ecx+0EF0h]
+xor     edx, edx
+mov     eax, dword_819310[eax*4]
+add     eax, edx
+retn    4
+*/
+} }
 // 0x0 (lnk)
 namespace gamemd { bool BuildingTypeClass::IsCellClearOfTerrainObstacles(gamemd::Vector2D<short> const &) const { return false; } }
 // 0x0 (lnk)

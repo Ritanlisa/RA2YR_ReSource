@@ -8,11 +8,97 @@ namespace gamemd {
 
 // 0x004E2A50 (147 bytes)
 int ControlClass_Construct_4E2A50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004E2A50.json)
-    // Size: 147 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4E2A50 ( int this, int a2, int a3, int a4, int a5, int a6 ) { int v7 ; // ecx int v8 ; // eax ControlClass::Construct ( ( _DWORD * ) this , a2 , a3 , a4 , a5 , a6 , 7 , 1 ) ; v7 = * ( _DWORD * ) ( this + 48 ) ; * ( _DWORD * ) this = & GaugeClass::vftable' ; if ( v7 != 255 ) { * ( _DWORD * ) ( this + 48 ) = 255 ; VectorClass_ptr_ConvertClass::MarkDirty ( ( _BYTE * ) this ) ; } v8 = 0 ; if ( * ( int * ) ( this + 48 ) < 0 ) v8 = * ( _DWORD * ) ( this + 48 ) ; if ( v8 != * ( _DWORD * ) ( this + 52 ) ) { * ( _DWORD * ) ( this + 52 ) = v8 ; ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) this + 72 ) ) ( this ) ; } * ( _BYTE * ) ( this + 45 ) = 1 ; * ( _BYTE * ) ( this + 46 ) = a5 > a6 ; * ( _BYTE * ) ( this + 44 ) = 1 ; * ( _DWORD * ) ( this + 56 ) = 0 ; * ( _DWORD * ) ( this + 60 ) = 0 ; * ( _DWORD * ) ( this + 64 ) = 0 ; * ( _DWORD * ) this = & TriColorGaugeClass::vftable' ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4E2A50(int this, int a2, int a3, int a4, int a5, int a6)
+{
+  int v7; // ecx
+  int v8; // eax
+
+  ControlClass::Construct((_DWORD *)this, a2, a3, a4, a5, a6, 7, 1);
+  v7 = *(_DWORD *)(this + 48);
+  *(_DWORD *)this = &GaugeClass::`vftable';
+  if ( v7 != 255 )
+  {
+    *(_DWORD *)(this + 48) = 255;
+    VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this);
+  }
+  v8 = 0;
+  if ( *(int *)(this + 48) < 0 )
+    v8 = *(_DWORD *)(this + 48);
+  if ( v8 != *(_DWORD *)(this + 52) )
+  {
+    *(_DWORD *)(this + 52) = v8;
+    (*(void (__thiscall **)(int))(*(_DWORD *)this + 72))(this);
+  }
+  *(_BYTE *)(this + 45) = 1;
+  *(_BYTE *)(this + 46) = a5 > a6;
+  *(_BYTE *)(this + 44) = 1;
+  *(_DWORD *)(this + 56) = 0;
+  *(_DWORD *)(this + 60) = 0;
+  *(_DWORD *)(this + 64) = 0;
+  *(_DWORD *)this = &TriColorGaugeClass::`vftable';
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_8]
+mov     edx, [esp+arg_0]
+push    ebx
+mov     ebx, [esp+4+arg_C]
+push    ebp
+mov     ebp, [esp+8+arg_10]
+push    esi
+push    1
+mov     esi, ecx
+push    7
+mov     ecx, [esp+14h+arg_4]
+push    ebp
+push    ebx
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    ControlClass__Construct
+mov     ecx, [esi+30h]
+mov     eax, 0FFh
+cmp     ecx, eax
+mov     dword ptr [esi], offset ??_7GaugeClass@@6B@ ; const GaugeClass::`vftable'
+jz      short loc_4E2A96
+mov     ecx, esi
+mov     [esi+30h], eax
+call    ds:off_7E93CC
+
+loc_4E2A96:                             ; CODE XREF: sub_4E2A50+39↑j
+mov     ecx, [esi+30h]
+xor     eax, eax
+test    ecx, ecx
+jge     short loc_4E2AA1
+mov     eax, ecx
+
+loc_4E2AA1:                             ; CODE XREF: sub_4E2A50+4D↑j
+cmp     eax, [esi+34h]
+jz      short loc_4E2AB0
+mov     [esi+34h], eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+48h]
+
+loc_4E2AB0:                             ; CODE XREF: sub_4E2A50+54↑j
+cmp     ebx, ebp
+mov     byte ptr [esi+2Dh], 1
+setnle  cl
+mov     [esi+2Eh], cl
+mov     byte ptr [esi+2Ch], 1
+mov     dword ptr [esi+38h], 0
+mov     dword ptr [esi+3Ch], 0
+mov     dword ptr [esi+40h], 0
+mov     dword ptr [esi], offset ??_7TriColorGaugeClass@@6B@ ; const TriColorGaugeClass::`vftable'
+mov     eax, esi
+pop     esi
+pop     ebp
+pop     ebx
+retn    14h
+*/
 }
 
 } // namespace gamemd

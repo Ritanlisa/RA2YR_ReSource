@@ -8,20 +8,235 @@ namespace gamemd {
 
 // 0x00412610 (74 bytes)
 const char* TaskForceClass_Toupper_412610() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00412610.json)
-    // Size: 74 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_412610 ( char *this ) { !char *v1 ! ; // edi !int v2 ! ; // esi !char v3 ! ; // al !int v4 ! ; // esi v1 = this ; v2 = 0 ; while ( v1 ) { if ( ! isxdigit ( * v1 ) ) break ; v3 = * v1 ; v4 = 16 * v2 ; ++ v1 ; if ( v3 < 48 || v3 > 57 ) v2 = v4 + toupper ( v3 ) - 55 ; else v2 = v4 + v3 - 48 ; } return v2 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_412610(char *this)
+{
+  char *v1; // edi
+  int v2; // esi
+  char v3; // al
+  int v4; // esi
+
+  v1 = this;
+  v2 = 0;
+  while ( v1 )
+  {
+    if ( !isxdigit(*v1) )
+      break;
+    v3 = *v1;
+    v4 = 16 * v2;
+    ++v1;
+    if ( v3 < 48 || v3 > 57 )
+      v2 = v4 + toupper(v3) - 55;
+    else
+      v2 = v4 + v3 - 48;
+  }
+  return v2;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, ecx
+xor     esi, esi
+test    edi, edi
+jz      short loc_412655
+
+loc_41261A:                             ; CODE XREF: sub_412610+43↓j
+movsx   eax, byte ptr [edi]
+push    eax             ; C
+call    _isxdigit
+add     esp, 4
+test    eax, eax
+jz      short loc_412655
+mov     al, [edi]
+shl     esi, 4
+inc     edi
+cmp     al, 30h ; '0'
+jl      short loc_412641
+cmp     al, 39h ; '9'
+jg      short loc_412641
+movsx   ecx, al
+lea     esi, [esi+ecx-30h]
+jmp     short loc_412651
+; ---------------------------------------------------------------------------
+
+loc_412641:                             ; CODE XREF: sub_412610+22↑j
+; sub_412610+26↑j
+movsx   edx, al
+push    edx             ; C
+call    _toupper
+add     esp, 4
+lea     esi, [esi+eax-37h]
+
+loc_412651:                             ; CODE XREF: sub_412610+2F↑j
+test    edi, edi
+jnz     short loc_41261A
+
+loc_412655:                             ; CODE XREF: sub_412610+8↑j
+; sub_412610+18↑j
+mov     eax, esi
+pop     edi
+pop     esi
+retn
+*/
 }
 
 // 0x00610810 (306 bytes)
 char TriggerClass_FindTrigger_610810() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00610810.json)
-    // Size: 306 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_610810 ( int a1, const wchar_t *a2, int a3 ) { !wchar_t *StringCSF ! ; // eax int v6 ; // ecx !const wchar_t *v8 ! ; // [esp+0h] [ebp-30h] _DWORD v9[2] ; // [esp+10h] [ebp-20h] BYREF __int64 v10 ; // [esp+18h] [ebp-18h] !__int128 v11 ! ; // [esp+20h] [ebp-10h] BYREF if ( dword_AC1DCC ) { if ( dword_AC1DD0 != 1 ) { if ( ! dword_AC1CC8 ) { LABEL_7 : dword_AC1CC8 = 0 ; dword_AC1DCC = 0 ; dword_AC1DD0 = 0 ; goto LABEL_8 ; } v11 = xmmword_AC1CB8 ; v9 [ 0 ] = 0 ; v9 [ 1 ] = 0 ; v10 = * ( ( _QWORD * ) & xmmword_AC1CB8 + 1 ) ; ( * ( void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int) ) ( * ( _DWORD * ) DSurface_Primary + 8 ) ) ( DSurface_Primary , & v11 , dword_AC1CC8 , v9 , 0 , 1 ) ; dword_AC1DD0 = 1 ; } if ( dword_AC1CC8 ) ( * * ( void (__thiscall ***)(int, int) ) dword_AC1CC8 ) ( dword_AC1CC8 , 1 ) ; goto LABEL_7 ; } LABEL_8 : dword_AC48D8 = time ( 0 ) ; StringCSF = GetStringCSF ( aGuiTooltip , 0 , g_Str_File_ownrdraw_cpp , 7457 ) ; swprintf ( word_AC1CCC , ( const size_t ) StringCSF , v8 ) ; if ( a2 ) wcscpy ( word_AC1CCC , a2 ) ; * ( _QWORD * ) & xmmword_AC1CB8 = * ( _QWORD * ) a1 ; DWORD2 ( xmmword_AC1CB8 ) = * ( _DWORD * ) ( a1 + 8 ) ; v6 = * ( _DWORD * ) ( a1 + 12 ) ; dword_AC1DCC = 1 ; HIDWORD ( xmmword_AC1CB8 ) = v6 ; dword_AC1DD4 = a3 ; return TriggerClass::FindByEventType ( 1 ) ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_610810(int *a1, const #72 *a2, int a3)
+{
+  #72 *StringCSF; // eax
+  int v6; // ecx
+  _DWORD v8[2]; // [esp+10h] [ebp-20h] BYREF
+  __int64 v9; // [esp+18h] [ebp-18h]
+  _QWORD v10[2]; // [esp+20h] [ebp-10h] BYREF
+
+  if ( dword_A8ED54[52254] )
+  {
+    if ( dword_A8ED54[52255] != 1 )
+    {
+      if ( !dword_A8ED54[52189] )
+      {
+LABEL_7:
+        dword_A8ED54[52189] = 0;
+        dword_A8ED54[52254] = 0;
+        dword_A8ED54[52255] = 0;
+        goto LABEL_8;
+      }
+      v10[0] = *(_QWORD *)&dword_A8ED54[52185];
+      v10[1] = *(_QWORD *)&dword_A8ED54[52187];
+      v8[0] = 0;
+      v8[1] = 0;
+      v9 = *(_QWORD *)&dword_A8ED54[52187];
+      (*(void (__thiscall **)(_DWORD, _QWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x87F7E8][7880] + 8))(
+        MEMORY[0x87F7E8][7880],
+        v10,
+        dword_A8ED54[52189],
+        v8,
+        0,
+        1);
+      dword_A8ED54[52255] = 1;
+    }
+    if ( dword_A8ED54[52189] )
+      (**(void (__thiscall ***)(int, int))dword_A8ED54[52189])(dword_A8ED54[52189], 1);
+    goto LABEL_7;
+  }
+LABEL_8:
+  dword_A8ED54[55009] = time(0);
+  StringCSF = GetStringCSF((#72 *)aGuiTooltip, 0, g_Str_File_ownrdraw_cpp, 7457);
+  swprintf((#72 *const)&dword_A8ED54[52190], StringCSF);
+  if ( a2 )
+    wcscpy((#72 *)&dword_A8ED54[52190], a2);
+  dword_A8ED54[52185] = *a1;
+  dword_A8ED54[52186] = a1[1];
+  dword_A8ED54[52187] = a1[2];
+  v6 = a1[3];
+  dword_A8ED54[52254] = 1;
+  dword_A8ED54[52188] = v6;
+  dword_A8ED54[52256] = a3;
+  return TriggerClass::FindByEventType(1);
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+33078h
+sub     esp, 20h
+push    ebx
+push    ebp
+push    esi
+xor     esi, esi
+push    edi             ; Format
+cmp     eax, esi
+mov     ebp, edx
+mov     edi, ecx
+mov     ebx, 1
+jz      loc_6108BB
+cmp     dword_A8ED54+3307Ch, ebx
+jz      short loc_61089A
+mov     edx, dword_A8ED54+32F74h
+cmp     edx, esi
+jz      short loc_6108A9
+mov     ecx, dword_A8ED54+32F68h
+mov     eax, dword_A8ED54+32F64h
+mov     dword ptr [esp+30h+var_10+4], ecx
+mov     ecx, dword_A8ED54+32F70h
+push    ebx
+lea     ebx, [esp+34h+var_20]
+mov     dword ptr [esp+34h+var_10], eax
+mov     eax, dword_A8ED54+32F6Ch
+mov     dword ptr [esp+34h+var_8+4], ecx
+mov     dword ptr [esp+34h+var_18+4], ecx
+mov     ecx, ds:887308h
+push    esi
+push    ebx
+push    edx
+mov     dword ptr [esp+40h+var_8], eax
+mov     [esp+40h+var_20], esi
+mov     [esp+40h+var_1C], esi
+mov     dword ptr [esp+40h+var_18], eax
+mov     eax, [ecx]
+lea     edx, [esp+40h+var_10]
+push    edx
+call    dword ptr [eax+8]
+mov     ebx, 1
+mov     dword_A8ED54+3307Ch, ebx
+
+loc_61089A:                             ; CODE XREF: sub_610810+25↑j
+mov     ecx, dword_A8ED54+32F74h
+cmp     ecx, esi
+jz      short loc_6108A9
+mov     eax, [ecx]
+push    ebx
+call    dword ptr [eax]
+
+loc_6108A9:                             ; CODE XREF: sub_610810+2F↑j
+; sub_610810+92↑j
+mov     dword_A8ED54+32F74h, esi
+mov     dword_A8ED54+33078h, esi
+mov     dword_A8ED54+3307Ch, esi
+
+loc_6108BB:                             ; CODE XREF: sub_610810+19↑j
+push    esi             ; Time
+call    _time
+add     esp, 4
+xor     edx, edx
+mov     ecx, offset aGuiTooltip ; "GUI:ToolTip"
+mov     dword_A8ED54+35B84h, eax
+push    1D21h           ; int
+push    offset g_Str_File_ownrdraw_cpp ; "D:\\ra2mdpost\\ownrdraw.cpp"
+call    GetStringCSF
+push    eax             ; BufferCount
+push    (offset dword_A8ED54+32F78h) ; Buffer
+call    _swprintf
+add     esp, 8
+cmp     ebp, esi
+jz      short loc_6108FF
+push    ebp             ; Source
+push    (offset dword_A8ED54+32F78h) ; Destination
+call    _wcscpy
+add     esp, 8
+
+loc_6108FF:                             ; CODE XREF: sub_610810+DF↑j
+mov     ecx, [edi]
+mov     dword_A8ED54+32F64h, ecx
+mov     edx, [edi+4]
+mov     dword_A8ED54+32F68h, edx
+mov     eax, [edi+8]
+mov     edx, [esp+30h+arg_0]
+mov     dword_A8ED54+32F6Ch, eax
+mov     ecx, [edi+0Ch]
+mov     dword_A8ED54+33078h, ebx
+mov     dword_A8ED54+32F70h, ecx
+mov     cl, bl
+mov     dword_A8ED54+33080h, edx
+call    TriggerClass__FindByEventType
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 20h
+retn    4
+*/
 }
 
 } // namespace gamemd

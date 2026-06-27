@@ -16,78 +16,29677 @@
 #include "misc/super_weapon.hpp"
 
 // 0x405170
-namespace gamemd { void* VocClass::GetSampleName() { return nullptr; } }
+namespace gamemd { void* VocClass::GetSampleName() {
+// [IDA decompile]
+char *__thiscall VocClass_GetSampleName(char *this)
+{
+  char *result; // eax
+
+  result = aNoEvents;
+  if ( MEMORY[0x87E2A0] )
+    return this + 108;
+  return result;
+}
+
+/* ASM:
+mov     eax, ds:87E2A0h
+test    eax, eax
+mov     eax, offset aNoEvents ; "no events"
+jz      short locret_405181
+lea     eax, [ecx+6Ch]
+
+locret_405181:                          ; CODE XREF: VocClass__GetSampleName+C↑j
+retn
+*/
+} }
 // 0x406170
-namespace gamemd { int VocClass::Check() { return 0; } }
+namespace gamemd { int VocClass::Check() {
+// [IDA decompile]
+int __thiscall sub_406170(int this)
+{
+  if ( MEMORY[0x87E2A0] && *(int **)(this + 12) == &unk_87E294 )
+    return *(_DWORD *)(this + 8);
+  else
+    return 0;
+}
+
+/* ASM:
+mov     eax, ds:87E2A0h ; TODO: classify (grp=blit, sz=0x19)
+test    eax, eax
+jz      short loc_406186
+cmp     dword ptr [ecx+0Ch], offset unk_87E294
+jnz     short loc_406186
+mov     eax, [ecx+8]
+retn
+; ---------------------------------------------------------------------------
+
+loc_406186:                             ; CODE XREF: VocClass__Check+7↑j
+; VocClass__Check+10↑j
+xor     eax, eax
+retn
+*/
+} }
 // 0x408000
-namespace gamemd { void AudioMixer::ProcessAudioFrame() { } }
+namespace gamemd { void AudioMixer::ProcessAudioFrame() {
+// [IDA decompile]
+void __thiscall AudioMixer::ProcessAudioFrame(int this)
+{
+  int v2; // eax
+  int v3; // eax
+
+  if ( *(_DWORD *)(this + 128) )
+  {
+    v2 = *(_DWORD *)(this + 128) - 1;
+    *(_DWORD *)(this + 128) = v2;
+    if ( v2 < 0 )
+      *(_DWORD *)(this + 128) = 0;
+    if ( !*(_DWORD *)(this + 128) && *(_DWORD *)(this + 20) )
+    {
+      ((void (__stdcall *)(void *))EnterCriticalSection)(&MEMORY[0x87E7F8]);
+      v3 = *(_DWORD *)(this + 12);
+      if ( (v3 & 2) != 0 )
+      {
+        LOBYTE(v3) = v3 & 0xFC | 1;
+        *(_DWORD *)(this + 12) = v3;
+      }
+      AudioChannel::ActivatePlay(*(_DWORD **)(this + 20));
+      ((void (__stdcall *)(void *))LeaveCriticalSection)(&MEMORY[0x87E7F8]);
+    }
+  }
+}
+
+/* ASM:
+push    esi             ; TODO: classify (grp=blit, sz=0x67)
+mov     esi, ecx
+mov     eax, [esi+80h]
+test    eax, eax
+jz      short loc_408065
+mov     eax, [esi+80h]
+dec     eax
+test    eax, eax
+mov     [esi+80h], eax
+jge     short loc_408028
+mov     dword ptr [esi+80h], 0
+
+loc_408028:                             ; CODE XREF: AudioMixer__ProcessAudioFrame+1C↑j
+mov     eax, [esi+80h]
+test    eax, eax
+jnz     short loc_408065
+mov     eax, [esi+14h]
+test    eax, eax
+jz      short loc_408065
+push    87E7F8h         ; lpCriticalSection
+call    ds:__imp_EnterCriticalSection
+mov     eax, [esi+0Ch]
+test    al, 2
+jz      short loc_408052
+and     al, 0FDh
+or      al, 1
+mov     [esi+0Ch], eax
+
+loc_408052:                             ; CODE XREF: AudioMixer__ProcessAudioFrame+49↑j
+mov     ecx, [esi+14h]
+call    AudioChannel__ActivatePlay
+push    87E7F8h         ; lpCriticalSection
+call    ds:__imp_LeaveCriticalSection
+
+loc_408065:                             ; CODE XREF: AudioMixer__ProcessAudioFrame+B↑j
+; AudioMixer__ProcessAudioFrame+30↑j ...
+pop     esi
+retn
+*/
+} }
 // 0x408A70
-namespace gamemd { int AudioMixer::SetupChannels() { return 0; } }
+namespace gamemd { int AudioMixer::SetupChannels() {
+// [IDA decompile]
+int __thiscall sub_408A70(int *this)
+{
+  int *v1; // edi
+  int v2; // ebx
+  int *v3; // eax
+  _DWORD *v4; // edx
+  int v5; // esi
+  int *v6; // esi
+  int v7; // edx
+  _DWORD *v8; // eax
+  int result; // eax
+
+  v1 = (int *)*(this + 1);
+  if ( v1 == this + 1 )
+  {
+    v1 = 0;
+  }
+  else
+  {
+    v2 = 0;
+    if ( v1 )
+    {
+      v3 = (int *)*(this + 1);
+      do
+      {
+        v4 = v3 + 9;
+        v5 = 2;
+        do
+        {
+          *(v4 - 1) = v3[6];
+          *v4 = v3[7];
+          v4 += 2;
+          --v5;
+        }
+        while ( v5 );
+        v3[13] = v2;
+        v3 = (int *)*v3;
+        ++v2;
+      }
+      while ( v3 != this + 1 );
+    }
+  }
+  v6 = this + 19;
+  v7 = 2;
+  v8 = this + 19;
+  do
+  {
+    *(v8 - 3) = v1;
+    *v8 = -1001;
+    v8[1] = *v8;
+    *(v8 - 1) = 0;
+    *(v8 - 2) = 0;
+    *(v8 - 10) = v1;
+    if ( v1 )
+      *(v8 - 12) = v1[2 * *(v8 - 8) + 8];
+    else
+      *(v8 - 12) = 0;
+    *(v8 - 11) = 0;
+    *(v8 - 9) &= ~1u;
+    v8 += 16;
+    --v7;
+  }
+  while ( v7 );
+  result = *v6 + *(this + 5);
+  *v6 = result;
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+lea     ebp, [ecx+4]
+push    esi
+push    edi
+mov     [esp+14h+var_4], ecx
+mov     edi, [ebp+0]
+cmp     edi, ebp
+jnz     short loc_408A89
+xor     ebx, ebx
+xor     edi, edi
+jmp     short loc_408ABA
+; ---------------------------------------------------------------------------
+
+loc_408A89:                             ; CODE XREF: AudioMixer__SetupChannels+11↑j
+xor     ebx, ebx
+cmp     edi, ebx
+jz      short loc_408ABA
+mov     eax, edi
+
+loc_408A91:                             ; CODE XREF: AudioMixer__SetupChannels+42↓j
+lea     edx, [eax+24h]
+mov     esi, 2
+
+loc_408A99:                             ; CODE XREF: AudioMixer__SetupChannels+38↓j
+mov     ecx, [eax+18h]
+mov     [edx-4], ecx
+mov     ecx, [eax+1Ch]
+mov     [edx], ecx
+add     edx, 8
+dec     esi
+jnz     short loc_408A99
+mov     [eax+34h], ebx
+mov     eax, [eax]
+inc     ebx
+cmp     eax, ebp
+jnz     short loc_408A91
+mov     ecx, [esp+14h+var_4]
+xor     ebx, ebx
+
+loc_408ABA:                             ; CODE XREF: AudioMixer__SetupChannels+17↑j
+; AudioMixer__SetupChannels+1D↑j
+lea     esi, [ecx+4Ch]
+mov     edx, 2
+mov     eax, esi
+
+loc_408AC4:                             ; CODE XREF: AudioMixer__SetupChannels+8E↓j
+mov     [eax-0Ch], edi
+mov     dword ptr [eax], 0FFFFFC17h
+mov     ebp, [eax]
+mov     [eax+4], ebp
+cmp     edi, ebx
+mov     [eax-4], ebx
+mov     [eax-8], ebx
+mov     [eax-28h], edi
+jz      short loc_408AEB
+mov     ebp, [eax-20h]
+mov     ebp, [edi+ebp*8+20h]
+mov     [eax-30h], ebp
+jmp     short loc_408AEE
+; ---------------------------------------------------------------------------
+
+loc_408AEB:                             ; CODE XREF: AudioMixer__SetupChannels+6D↑j
+mov     [eax-30h], ebx
+
+loc_408AEE:                             ; CODE XREF: AudioMixer__SetupChannels+79↑j
+mov     [eax-2Ch], ebx
+mov     ebp, [eax-24h]
+and     ebp, 0FFFFFFFEh
+mov     [eax-24h], ebp
+add     eax, 40h ; '@'
+dec     edx
+jnz     short loc_408AC4
+mov     edx, [esi]
+mov     eax, [ecx+14h]
+add     eax, edx
+mov     [esi], eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
+} }
 // 0x514F70
-namespace gamemd { int MovementAI::MainFootClass(int a1) { return 0; } }
+namespace gamemd { int MovementAI::MainFootClass(int a1) {
+// [IDA decompile]
+int __thiscall sub_514F70(int *this, char a2)
+{
+  _DWORD *v3; // esi
+  int result; // eax
+  int *v5; // ecx
+  int *v6; // ecx
+  int v7; // eax
+  _DWORD *v8; // ecx
+  int v9; // ecx
+  int v10; // eax
+  int v11; // edx
+  int v12; // edx
+  int v13; // esi
+  int v14; // edi
+  _DWORD *v15; // eax
+  int *Coords; // eax
+  int v17; // edx
+  int v18; // ecx
+  _DWORD *v19; // esi
+  int v20; // edx
+  int *v21; // eax
+  int *v22; // edi
+  int v23; // eax
+  int v24; // edx
+  int v25; // edi
+  int v26; // esi
+  int *v27; // ecx
+  int GroundHeight; // edi
+  int v29; // ecx
+  int v30; // eax
+  int v31; // ecx
+  int v32; // ecx
+  _WORD *v33; // eax
+  int v34; // edi
+  __int16 v35; // dx
+  int v36; // eax
+  int *v37; // ecx
+  _DWORD *v38; // eax
+  int v39; // eax
+  int v40; // eax
+  int *v41; // eax
+  _DWORD *v42; // eax
+  int v43; // ecx
+  _BYTE *v44; // ecx
+  int v45; // edi
+  void *v46; // eax
+  void *v47; // eax
+  int v48; // ecx
+  _DWORD *v49; // ecx
+  int v50; // edx
+  int v51; // ecx
+  int v52; // ecx
+  int v53; // edx
+  int v54; // ecx
+  _DWORD *v55; // edx
+  _DWORD *v56; // eax
+  int *v57; // eax
+  int *v58; // ecx
+  __int64 v59; // rax
+  int *v60; // ecx
+  int v61; // edi
+  int v62; // ecx
+  _DWORD *v63; // eax
+  int v64; // ecx
+  _BYTE *v65; // ecx
+  int v66; // edx
+  int v67; // ecx
+  _DWORD *v68; // edx
+  _DWORD *v69; // eax
+  _DWORD *v70; // eax
+  int Object; // eax
+  int *v72; // ecx
+  int v73; // edi
+  _DWORD *v74; // eax
+  int v75; // eax
+  int v76; // edi
+  void *v77; // eax
+  int v78; // ecx
+  int v79; // eax
+  _DWORD *v80; // edx
+  int v81; // ecx
+  _DWORD *v82; // esi
+  #72 *v83; // edi
+  int v84; // edx
+  int v85; // eax
+  int v86; // ecx
+  int v87; // eax
+  int v88; // ecx
+  int v89; // edi
+  char v90; // al
+  int v91; // [esp+10h] [ebp-78h]
+  int LandHeight; // [esp+14h] [ebp-74h]
+  int v93; // [esp+1Ch] [ebp-6Ch]
+  char v94; // [esp+1Ch] [ebp-6Ch]
+  int v95; // [esp+2Ch] [ebp-5Ch] BYREF
+  int v96; // [esp+30h] [ebp-58h] BYREF
+  int v97; // [esp+34h] [ebp-54h] BYREF
+  _DWORD v98[2]; // [esp+38h] [ebp-50h] BYREF
+  int v99; // [esp+40h] [ebp-48h] BYREF
+  int v100; // [esp+44h] [ebp-44h]
+  int v101; // [esp+48h] [ebp-40h]
+  int v102; // [esp+4Ch] [ebp-3Ch] BYREF
+  int v103; // [esp+50h] [ebp-38h]
+  int v104; // [esp+54h] [ebp-34h]
+  int v105; // [esp+58h] [ebp-30h] BYREF
+  int v106; // [esp+5Ch] [ebp-2Ch]
+  int v107; // [esp+60h] [ebp-28h]
+  int v108; // [esp+64h] [ebp-24h] BYREF
+  int v109; // [esp+68h] [ebp-20h]
+  int v110; // [esp+6Ch] [ebp-1Ch]
+  char v111[12]; // [esp+70h] [ebp-18h] BYREF
+  int v112; // [esp+7Ch] [ebp-Ch] BYREF
+  int v113; // [esp+80h] [ebp-8h]
+
+  v3 = this + 9;
+  if ( *(this + 9) != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+  {
+    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+    *v3 = MEMORY[0xA8F180];
+    *(this + 10) = MEMORY[0xA8F184];
+    *(this + 11) = MEMORY[0xA8F188];
+  }
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 896))(*(this + 3)) )
+    return 7;
+  if ( !(*(unsigned __int8 (__stdcall **)(int *))(*(this + 1) + 16))(this + 1)
+    || *(this + 6) == MEMORY[0xA8F180] && *(this + 7) == MEMORY[0xA8F184] && *(this + 8) == MEMORY[0xA8F188] )
+  {
+    return 0;
+  }
+  v5 = (int *)*(this + 3);
+  v96 = v5[376];
+  if ( v96 == 8 )
+  {
+    v6 = v5 + 39;
+    v102 = *v6;
+    v103 = v6[1];
+    v104 = v6[2];
+    v7 = *((__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v102) + 139);
+    v95 = v7;
+    if ( v7 < 0 || v7 >= MEMORY[0x8B4148] )
+    {
+      *(_DWORD *)(*(this + 3) + 1504) = -1;
+      *v3 = MEMORY[0xA8F180];
+      v31 = *(this + 3);
+      *(this + 10) = MEMORY[0xA8F184];
+      *(this + 11) = MEMORY[0xA8F188];
+      (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v31 + 1152))(v31, 0, 1);
+      v32 = *(this + 3);
+      *(this + 20) = 0;
+      *(this + 18) = 0;
+      *(this + 21) = 0;
+      *(this + 19) = 0;
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v32 + 1348))(v32, 0, 0);
+      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+      return 7;
+    }
+    else
+    {
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 292))(*(this + 3), 0);
+      v8 = (_DWORD *)*(this + 3);
+      v99 = v8[39];
+      v100 = v8[40];
+      v101 = v8[41];
+      (*(void (__thiscall **)(_DWORD *, int *))(*v8 + 244))(v8, &v99);
+      v97 = *((_DWORD *)MEMORY[0x8B413C] + v95);
+      v96 = *(_DWORD *)(v97 + 40);
+      v9 = SHIWORD(v96) << 8;
+      *(this + 9) = ((__int16)v96 << 8) + 128;
+      v10 = *(this + 3);
+      *(this + 10) = v9 + 128;
+      *(this + 11) = 0;
+      qmemcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu);
+      LOWORD(v96) = *(this + 9) / 256;
+      v11 = *(this + 3);
+      HIWORD(v96) = *(this + 10) / 256;
+      *(_DWORD *)(v11 + 1368) = v96;
+      LOBYTE(v10) = v95;
+      *(_DWORD *)(*(this + 3) + 1596) = -1;
+      *(_BYTE *)(*(this + 3) + 1668) = v10;
+      *(_BYTE *)(*(this + 3) + 1669) = 0;
+      v12 = *(_DWORD *)(v97 + 48) & 7;
+      v96 = *(_DWORD *)(v97 + 36);
+      v95 = v96;
+      v13 = (__int16)v96 << 8;
+      LOWORD(v96) = v96 + LOWORD(MEMORY[0x89F688][v12]);
+      v14 = (SHIWORD(v96) << 8) + 128;
+      HIWORD(v96) = HIWORD(v95) + HIWORD(MEMORY[0x89F688][v12]);
+      v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v96);
+      Coords = CellClass::GetCoords(v15, &v108);
+      v17 = Coords[1];
+      v18 = *Coords - (v13 + 128);
+      v19 = (_DWORD *)*(this + 3);
+      v110 = Coords[2];
+      v20 = v17 - v14;
+      v21 = v19 + 39;
+      v19 += 346;
+      v22 = v21;
+      v102 = *v21;
+      v23 = v20 + v21[1];
+      v24 = v110;
+      v104 = v22[2];
+      v25 = v104;
+      *v19 = v102 + v18;
+      v19[1] = v23;
+      v19[2] = v25 + v24;
+      v26 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 464))(*(this + 3));
+      v27 = (int *)(*(this + 3) + 156);
+      v102 = *v27;
+      v103 = v27[1];
+      v104 = v27[2];
+      GroundHeight = Cell::GetGroundHeight(&v102);
+      v104 = 0;
+      v29 = *(_DWORD *)(v97 + 40);
+      v97 = *(_DWORD *)(v97 + 448);
+      v102 = ((__int16)v29 << 8) + 128;
+      v103 = (SHIWORD(v29) << 8) + 128;
+      v30 = Cell::GetGroundHeight(&v102);
+      *(_DWORD *)(*(this + 3) + 1392) = v26 + (v30 - GroundHeight) / v97;
+      return 7;
+    }
+  }
+  if ( v96 == -1 )
+  {
+    MovementAI::StepFootClass(this, 0);
+    return 0;
+  }
+  v33 = (_WORD *)(*(int (__thiscall **)(int *, int *))(*v5 + 440))(v5, &v97);
+  v34 = v96 & 7;
+  v35 = v33[1] + HIWORD(MEMORY[0x89F688][v34]);
+  *v3 = ((__int16)(LOWORD(MEMORY[0x89F688][v34]) + *v33) << 8) + 128;
+  *(this + 10) = (v35 << 8) + 128;
+  *(this + 11) = 0;
+  v36 = Cell::GetGroundHeight(this + 9);
+  v37 = (int *)*(this + 3);
+  *(this + 11) = v36;
+  v37 += 39;
+  v102 = *v37;
+  v103 = v37[1];
+  v104 = v37[2];
+  if ( v104 >= v36 + 2 * MEMORY[0xA8F1C0] + MEMORY[0xA8F1C0] )
+    *(this + 11) = MEMORY[0xA8F1B4] + v36;
+  v93 = *(this + 3);
+  v38 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
+  if ( !CrateClass::ProcessPickup(v38, v93) )
+  {
+    v39 = *(this + 3);
+    if ( !*(_BYTE *)(v39 + 129) )
+    {
+      if ( *(_BYTE *)(v39 + 144) && !*(_BYTE *)(v39 + 141) )
+      {
+        *(_DWORD *)(v39 + 1504) = -1;
+        *v3 = MEMORY[0xA8F180];
+        *(this + 10) = MEMORY[0xA8F184];
+        *(this + 11) = MEMORY[0xA8F188];
+        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+        *(this + 20) = 0;
+        *(this + 18) = 0;
+        *(this + 21) = 0;
+        *(this + 19) = 0;
+        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 1348))(*(this + 3), 0, 0);
+        return 7;
+      }
+      return 7;
+    }
+  }
+  v40 = *(this + 3);
+  if ( !*(_BYTE *)(v40 + 144) || *(_BYTE *)(v40 + 129) || *(_BYTE *)(v40 + 141) )
+    return 7;
+  v41 = Coord::Subtract(
+          &v108,
+          MEMORY[0x89F6D8][2 * v34] + *(_DWORD *)(v40 + 156),
+          *(_DWORD *)(v40 + 160) + MEMORY[0x89F6DC][2 * v34],
+          *(_DWORD *)(v40 + 164));
+  v102 = *v41;
+  v103 = v41[1];
+  v104 = v41[2];
+  v42 = Coord::To_Cell(&MEMORY[0x87F7E8], &v102);
+  v43 = *(this + 3);
+  if ( *(_BYTE *)(v43 + 140) != ((v42[80] >> 8) & 1) )
+    *(_BYTE *)(v43 + 1675) = 1;
+  LOWORD(v97) = *v3 / 256;
+  HIWORD(v97) = *(this + 10) / 256;
+  v95 = v97;
+  v44 = (_BYTE *)*(this + 3);
+  v45 = *(_DWORD *)v44;
+  LandHeight = ObjectClass::GetLandHeight(v44);
+  v91 = v96;
+  v46 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+  v96 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v45 + 428))(
+          *(this + 3),
+          v46,
+          v91,
+          LandHeight,
+          0,
+          1);
+  switch ( v96 )
+  {
+    case 0:
+      (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)*(this + 3) + 396))(*(this + 3), 2);
+      v65 = (_BYTE *)*(this + 3);
+      if ( !v65[144] || v65[129] || v65[141] )
+        return 7;
+      if ( v65[981] )
+        (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v65 + 240))(v65, this + 9);
+      qmemcpy((void *)(*(this + 3) + 1504), (const void *)(*(this + 3) + 1508), 0x5Cu);
+      *(_DWORD *)(*(this + 3) + 1596) = -1;
+      LOWORD(v97) = *(this + 9) / 256;
+      v66 = *(this + 3);
+      HIWORD(v97) = *(this + 10) / 256;
+      *(_DWORD *)(v66 + 1368) = v97;
+      return v96;
+    case 1:
+    case 7:
+      v47 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
+      CellClass::DamageAllObjects(v47);
+      if ( a2 )
+      {
+        v48 = *(this + 3);
+        *(this + 20) = 0;
+        *(this + 18) = 0;
+        *(this + 21) = 0;
+        *(this + 19) = 0;
+        (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v48 + 1348))(v48, 0, 0);
+        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        {
+          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+          *v3 = MEMORY[0xA8F180];
+          *(this + 10) = MEMORY[0xA8F184];
+          *(this + 11) = MEMORY[0xA8F188];
+        }
+        v49 = (_DWORD *)(*(this + 3) + 1600);
+        *v49 = MEMORY[0xA8ED84];
+        v49[1] = v109;
+        v49[2] = 0;
+        *(_DWORD *)(*(this + 3) + 1504) = -1;
+        MovementAI::StepFootClass(this, 0);
+        v96 = MovementAI::MainFootClass(0);
+      }
+      if ( v96 )
+      {
+        *v3 = MEMORY[0xA8F180];
+        *(this + 10) = MEMORY[0xA8F184];
+        v50 = MEMORY[0xA8F188];
+        *(this + 20) = 0;
+        *(this + 18) = 0;
+        *(this + 11) = v50;
+        v51 = *(this + 3);
+        *(this + 21) = 0;
+        *(this + 19) = 0;
+        (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v51 + 1348))(v51, 0, 0);
+        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        {
+          (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), v3);
+          *v3 = MEMORY[0xA8F180];
+          v3[1] = MEMORY[0xA8F184];
+          v3[2] = MEMORY[0xA8F188];
+        }
+      }
+      return v96;
+    case 2:
+      *v3 = MEMORY[0xA8F180];
+      *(this + 10) = MEMORY[0xA8F184];
+      v78 = *(this + 3);
+      *(this + 11) = MEMORY[0xA8F188];
+      *(this + 20) = 0;
+      *(this + 18) = 0;
+      *(this + 21) = 0;
+      *(this + 19) = 0;
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v78 + 1348))(v78, 0, 0);
+      if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+      {
+        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+        *v3 = MEMORY[0xA8F180];
+        *(this + 10) = MEMORY[0xA8F184];
+        *(this + 11) = MEMORY[0xA8F188];
+      }
+      v79 = *(this + 3);
+      if ( !*(_BYTE *)(v79 + 1719) )
+      {
+        *(_BYTE *)(v79 + 1719) = 1;
+        v80 = (_DWORD *)(*(this + 3) + 1640);
+        v81 = *((_DWORD *)MEMORY[0x8871E0] + 1498);
+        *v80 = MEMORY[0xA8ED84];
+        v80[1] = v113;
+        v80[2] = v81;
+      }
+      v82 = (_DWORD *)*(this + 3);
+      v83 = MEMORY[0xA8ED84];
+      v84 = v82[400];
+      v85 = v82[402];
+      if ( v84 == -1 )
+        goto LABEL_90;
+      if ( (int)MEMORY[0xA8ED84] - v84 >= v85 )
+        goto LABEL_91;
+      v85 -= (int)MEMORY[0xA8ED84] - v84;
+LABEL_90:
+      if ( !v85 )
+      {
+LABEL_91:
+        v82[376] = -1;
+        v83 = MEMORY[0xA8ED84];
+      }
+      v86 = *(this + 3);
+      if ( !*(_BYTE *)(v86 + 1719) )
+        goto LABEL_98;
+      v87 = *(_DWORD *)(v86 + 1648);
+      v88 = *(_DWORD *)(v86 + 1640);
+      if ( v88 == -1 )
+        goto LABEL_96;
+      v89 = (int)v83 - v88;
+      if ( v89 >= v87 )
+        goto LABEL_97;
+      v87 -= v89;
+LABEL_96:
+      if ( v87 )
+LABEL_98:
+        v90 = 0;
+      else
+LABEL_97:
+        v90 = 1;
+      MovementAI::StepFootClass(this, (v90 != 0) + 1);
+      return v96;
+    case 3:
+      *v3 = MEMORY[0xA8F180];
+      *(this + 10) = MEMORY[0xA8F184];
+      *(this + 11) = MEMORY[0xA8F188];
+      Cell::IsPassableAllied(*(this + 3), (__int16 *)&v95);
+      v52 = *(this + 3);
+      *(this + 20) = 0;
+      *(this + 18) = 0;
+      *(this + 21) = 0;
+      *(this + 19) = 0;
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v52 + 1348))(v52, 0, 0);
+      if ( *v3 == MEMORY[0xA8F180] && *(this + 10) == MEMORY[0xA8F184] )
+        goto LABEL_61;
+      goto LABEL_62;
+    case 4:
+    case 5:
+      *v3 = MEMORY[0xA8F180];
+      *(this + 10) = MEMORY[0xA8F184];
+      *(this + 11) = MEMORY[0xA8F188];
+      if ( a2 )
+      {
+        v67 = *(this + 3);
+        *(this + 20) = 0;
+        *(this + 18) = 0;
+        *(this + 21) = 0;
+        *(this + 19) = 0;
+        (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v67 + 1348))(v67, 0, 0);
+        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        {
+          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+          *v3 = MEMORY[0xA8F180];
+          *(this + 10) = MEMORY[0xA8F184];
+          *(this + 11) = MEMORY[0xA8F188];
+        }
+        v68 = (_DWORD *)(*(this + 3) + 1600);
+        *v68 = MEMORY[0xA8ED84];
+        v68[1] = v113;
+        v68[2] = 0;
+        *(_DWORD *)(*(this + 3) + 1504) = -1;
+        MovementAI::StepFootClass(this, 0);
+        result = MovementAI::MainFootClass(0);
+        v96 = result;
+        return result;
+      }
+      v98[0] = 0;
+      v98[1] = 0;
+      v69 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+      if ( Object::FindObjectCell(v69, v98, 0) )
+      {
+        v99 = 0;
+        v100 = 0;
+        v70 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        Object = Object::FindObjectCell(v70, &v99, 0);
+        if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(this + 3) + 540), Object) )
+          return v96;
+        v72 = (int *)*(this + 3);
+        v102 = 0;
+        v103 = 0;
+        v73 = *v72;
+        v74 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        v75 = Object::FindObjectCell(v74, &v102, 0);
+        (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v73 + 500))(*(this + 3), 1, v75, 0);
+        return v96;
+      }
+      if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17) != -1
+        && *(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84]
+                      + *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17))
+                    + 680) )
+      {
+        v76 = *(_DWORD *)*(this + 3);
+        v77 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v76 + 500))(*(this + 3), 1, v77, 0);
+        return v96;
+      }
+      return v96;
+    case 6:
+      if ( !a2 )
+      {
+        v56 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v111);
+        v57 = Coord::Subtract(&v112, *v56 - *(this + 6), v56[1] - *(this + 7), v56[2] - *(this + 8));
+        v105 = *v57;
+        v106 = v57[1];
+        v107 = v57[2];
+        if ( (int)Coord::Length(&v105) < *((_DWORD *)MEMORY[0x8871E0] + 1478) )
+        {
+          v58 = (int *)(*(this + 3) + 156);
+          v105 = *v58;
+          v106 = v58[1];
+          v59 = *(this + 8) - v58[2];
+          if ( (int)((HIDWORD(v59) ^ v59) - HIDWORD(v59)) < 2 * MEMORY[0xA8F1C0] )
+          {
+            v108 = *v58;
+            v109 = v58[1];
+            v110 = v58[2];
+            if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v108) + 59) != 10 )
+            {
+              (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1);
+              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+              return 7;
+            }
+          }
+        }
+        if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], this + 9) + 80) & 0x100) == 0
+          || (v60 = (int *)(*(this + 3) + 156),
+              v105 = *v60,
+              v106 = v60[1],
+              v61 = v60[2],
+              v62 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], this + 9) + 283),
+              LOBYTE(v97) = 1,
+              (int)abs32(v61 / MEMORY[0xA8F1C0] - v62) <= 2) )
+        {
+          LOBYTE(v97) = 0;
+        }
+        v94 = v97;
+        v63 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
+        Cell::ApplyDamage(v63, (int)&MEMORY[0xA8F180], 1, 1, v94);
+        *v3 = MEMORY[0xA8F180];
+        *(this + 10) = MEMORY[0xA8F184];
+        *(this + 11) = MEMORY[0xA8F188];
+        v64 = *(this + 3);
+        *(this + 20) = 0;
+        *(this + 18) = 0;
+        *(this + 21) = 0;
+        *(this + 19) = 0;
+        (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v64 + 1348))(v64, 0, 0);
+        if ( *v3 == MEMORY[0xA8F180] && *(this + 10) == MEMORY[0xA8F184] )
+        {
+LABEL_61:
+          if ( *(this + 11) == MEMORY[0xA8F188] )
+            return v96;
+        }
+LABEL_62:
+        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), v3);
+        *v3 = MEMORY[0xA8F180];
+        v3[1] = MEMORY[0xA8F184];
+        v3[2] = MEMORY[0xA8F188];
+        return v96;
+      }
+      *v3 = MEMORY[0xA8F180];
+      *(this + 10) = MEMORY[0xA8F184];
+      v53 = MEMORY[0xA8F188];
+      *(this + 20) = 0;
+      *(this + 18) = 0;
+      *(this + 11) = v53;
+      v54 = *(this + 3);
+      *(this + 21) = 0;
+      *(this + 19) = 0;
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v54 + 1348))(v54, 0, 0);
+      if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+      {
+        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+        *v3 = MEMORY[0xA8F180];
+        *(this + 10) = MEMORY[0xA8F184];
+        *(this + 11) = MEMORY[0xA8F188];
+      }
+      v55 = (_DWORD *)(*(this + 3) + 1600);
+      *v55 = MEMORY[0xA8ED84];
+      v55[1] = v109;
+      v55[2] = 0;
+      *(_DWORD *)(*(this + 3) + 1504) = -1;
+      MovementAI::StepFootClass(this, 0);
+      result = MovementAI::MainFootClass(0);
+      v96 = result;
+      break;
+    default:
+      return v96;
+  }
+  return result;
+}
+
+/* ASM:
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 5Ch
+push    ebx
+mov     ebx, ecx
+mov     ecx, dword_A8ED54+42Ch
+push    esi
+mov     eax, [ebx+24h]
+lea     esi, [ebx+24h]
+cmp     eax, ecx
+push    edi
+jnz     short loc_514FA6
+mov     ecx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_514FA6
+mov     edx, [esi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_514FCD
+
+loc_514FA6:                             ; CODE XREF: MovementAI__MainFootClass+1C↑j
+; MovementAI__MainFootClass+28↑j
+mov     ecx, [ebx+0Ch]
+push    esi
+mov     eax, [ecx]
+call    dword ptr [eax+0F4h]
+mov     edx, dword_A8ED54+42Ch
+mov     ecx, esi
+mov     [ecx], edx
+mov     eax, dword_A8ED54+430h
+mov     [ecx+4], eax
+mov     edx, dword_A8ED54+434h
+mov     [ecx+8], edx
+
+loc_514FCD:                             ; CODE XREF: MovementAI__MainFootClass+34↑j
+mov     ecx, [ebx+0Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+380h]
+test    al, al
+jz      short loc_514FEA
+mov     eax, 7
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_514FEA:                             ; CODE XREF: MovementAI__MainFootClass+6A↑j
+mov     ecx, [ebx+4]
+lea     eax, [ebx+4]
+push    eax
+call    dword ptr [ecx+10h]
+test    al, al
+jz      loc_515DF7
+mov     edx, [ebx+18h]
+mov     eax, dword_A8ED54+42Ch
+cmp     edx, eax
+jnz     short loc_515025
+mov     eax, [ebx+1Ch]
+mov     ecx, dword_A8ED54+430h
+cmp     eax, ecx
+jnz     short loc_515025
+mov     ecx, [ebx+20h]
+mov     eax, dword_A8ED54+434h
+cmp     ecx, eax
+jz      loc_515DF7
+
+loc_515025:                             ; CODE XREF: MovementAI__MainFootClass+96↑j
+; MovementAI__MainFootClass+A3↑j
+mov     ecx, [ebx+0Ch]
+mov     edi, [ecx+5E0h]
+cmp     edi, 8
+mov     [esp+68h+var_58], edi
+jnz     loc_51533C
+add     ecx, 9Ch
+mov     edx, [ecx]
+mov     [esp+68h+var_3C], edx
+lea     edx, [esp+68h+var_3C]
+mov     eax, [ecx+4]
+push    edx
+mov     [esp+6Ch+var_38], eax
+mov     ecx, [ecx+8]
+mov     [esp+6Ch+var_34], ecx
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+movsx   eax, word ptr [eax+116h]
+xor     edi, edi
+mov     [esp+68h+var_5C], eax
+cmp     eax, edi
+jl      loc_5152D1
+cmp     eax, ds:8B4148h
+jge     loc_5152D1
+mov     ecx, [ebx+0Ch]
+push    edi
+mov     eax, [ecx]
+call    dword ptr [eax+124h]
+mov     ecx, [ebx+0Ch]
+lea     edx, [ecx+9Ch]
+mov     eax, [ecx+9Ch]
+mov     [esp+68h+var_48], eax
+mov     eax, [edx+4]
+mov     [esp+68h+var_44], eax
+mov     edx, [edx+8]
+mov     [esp+68h+var_40], edx
+mov     eax, [ecx]
+lea     edx, [esp+68h+var_48]
+push    edx
+call    dword ptr [eax+0F4h]
+mov     eax, ds:8B413Ch
+mov     ecx, [esp+68h+var_5C]
+lea     edx, [ebx+24h]
+xor     esi, esi
+mov     eax, [eax+ecx*4]
+mov     [esp+68h+var_54], eax
+mov     eax, [eax+28h]
+mov     [esp+68h+var_58], eax
+movsx   ecx, word ptr [esp+68h+var_58+2]
+movsx   eax, ax
+shl     eax, 8
+add     eax, 80h
+shl     ecx, 8
+mov     [edx], eax
+mov     eax, [ebx+0Ch]
+add     ecx, 80h
+mov     [edx+4], ecx
+lea     edi, [eax+5E0h]
+mov     ecx, 17h
+mov     [edx+8], esi
+lea     esi, [eax+5E4h]
+rep movsd
+mov     eax, [ebx+24h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+68h+var_58], ax
+mov     eax, [ebx+28h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     edx, [ebx+0Ch]
+sar     eax, 8
+mov     word ptr [esp+68h+var_58+2], ax
+mov     eax, [esp+68h+var_58]
+mov     [edx+558h], eax
+mov     ecx, [ebx+0Ch]
+mov     al, byte ptr [esp+68h+var_5C]
+mov     dword ptr [ecx+63Ch], 0FFFFFFFFh
+mov     edx, [ebx+0Ch]
+mov     [edx+684h], al
+mov     ecx, [ebx+0Ch]
+mov     byte ptr [ecx+685h], 0
+mov     ecx, [esp+68h+var_54]
+mov     edx, [ecx+30h]
+mov     eax, [ecx+24h]
+and     edx, 7
+mov     [esp+68h+var_58], eax
+movsx   edi, word ptr [esp+68h+var_58+2]
+lea     ecx, ds:89F688h[edx*4]
+mov     [esp+68h+var_5C], eax
+movsx   esi, ax
+mov     dx, [ecx]
+add     dx, ax
+shl     esi, 8
+shl     edi, 8
+mov     word ptr [esp+68h+var_58], dx
+mov     ax, [ecx+2]
+add     esi, 80h
+add     edi, 80h
+add     ax, word ptr [esp+68h+var_5C+2]
+mov     word ptr [esp+68h+var_58+2], ax
+mov     ecx, [esp+68h+var_58]
+mov     [esp+68h+var_58], ecx
+lea     edx, [esp+68h+var_24]
+lea     eax, [esp+68h+var_58]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    CellClass__GetCoords
+mov     ecx, [eax]
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+sub     ecx, esi
+mov     esi, [ebx+0Ch]
+mov     [esp+68h+var_1C], eax
+sub     edx, edi
+lea     eax, [esi+9Ch]
+add     esi, 568h
+mov     edi, eax
+mov     eax, [edi]
+mov     [esp+68h+var_3C], eax
+mov     eax, [edi+4]
+add     eax, edx
+mov     edx, [esp+68h+var_1C]
+mov     edi, [edi+8]
+mov     [esp+68h+var_34], edi
+mov     edi, [esp+68h+var_3C]
+add     ecx, edi
+mov     edi, [esp+68h+var_34]
+mov     [esi], ecx
+add     edx, edi
+mov     [esi+4], eax
+mov     [esi+8], edx
+mov     ecx, [ebx+0Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+1D0h]
+mov     ecx, [ebx+0Ch]
+mov     esi, eax
+add     ecx, 9Ch
+mov     edx, [ecx]
+mov     [esp+68h+var_3C], edx
+lea     edx, [esp+68h+var_3C]
+mov     eax, [ecx+4]
+push    edx
+mov     [esp+6Ch+var_38], eax
+mov     ecx, [ecx+8]
+mov     [esp+6Ch+var_34], ecx
+mov     ecx, 87F7E8h
+call    Cell__GetGroundHeight
+mov     edi, eax
+mov     eax, [esp+68h+var_54]
+mov     [esp+68h+var_34], 0
+mov     ecx, [eax+28h]
+mov     eax, [eax+1C0h]
+mov     [esp+68h+var_54], ecx
+movsx   edx, word ptr [esp+68h+var_54+2]
+movsx   ecx, cx
+shl     ecx, 8
+add     ecx, 80h
+mov     [esp+68h+var_54], eax
+mov     [esp+68h+var_3C], ecx
+lea     ecx, [esp+68h+var_3C]
+shl     edx, 8
+add     edx, 80h
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+6Ch+var_38], edx
+call    Cell__GetGroundHeight
+sub     eax, edi
+cdq
+idiv    [esp+68h+var_54]
+mov     edx, [ebx+0Ch]
+add     eax, esi
+mov     [edx+570h], eax
+mov     eax, 7
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5152D1:                             ; CODE XREF: MovementAI__MainFootClass+103↑j
+; MovementAI__MainFootClass+10F↑j
+mov     eax, [ebx+0Ch]
+push    1
+push    edi
+mov     dword ptr [eax+5E0h], 0FFFFFFFFh
+mov     ecx, dword_A8ED54+42Ch
+mov     [esi], ecx
+mov     edx, dword_A8ED54+430h
+mov     ecx, [ebx+0Ch]
+mov     [esi+4], edx
+mov     eax, dword_A8ED54+434h
+mov     [esi+8], eax
+mov     edx, [ecx]
+call    dword ptr [edx+480h]
+mov     ecx, [ebx+0Ch]
+mov     [ebx+50h], edi
+mov     [ebx+48h], edi
+mov     [ebx+54h], edi
+mov     [ebx+4Ch], edi
+mov     eax, [ecx]
+push    edi
+push    edi
+call    dword ptr [eax+544h]
+mov     ebx, [ebx+0Ch]
+push    1
+push    edi
+mov     ecx, ebx
+mov     edx, [ebx]
+call    dword ptr [edx+480h]
+mov     eax, 7
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_51533C:                             ; CODE XREF: MovementAI__MainFootClass+C5↑j
+cmp     edi, 0FFFFFFFFh
+jz      loc_515DEE
+mov     eax, [ecx]
+lea     edx, [esp+68h+var_54]
+push    edx
+call    dword ptr [eax+1B8h]
+mov     cx, [eax]
+and     edi, 7
+push    esi
+add     cx, ds:89F688h[edi*4]
+mov     dx, ds:89F68Ah[edi*4]
+add     dx, [eax+2]
+movsx   eax, cx
+movsx   ecx, dx
+shl     eax, 8
+mov     edx, esi
+add     eax, 80h
+shl     ecx, 8
+mov     [edx], eax
+add     ecx, 80h
+xor     eax, eax
+mov     [edx+4], ecx
+mov     ecx, 87F7E8h
+mov     [edx+8], eax
+call    Cell__GetGroundHeight
+mov     ecx, [ebx+0Ch]
+mov     [ebx+2Ch], eax
+add     ecx, 9Ch
+mov     edx, [ecx]
+mov     [esp+68h+var_3C], edx
+mov     edx, [ecx+4]
+mov     [esp+68h+var_38], edx
+mov     ecx, [ecx+8]
+mov     [esp+68h+var_34], ecx
+mov     ecx, dword_A8ED54+46Ch
+lea     edx, [eax+ecx*2]
+add     ecx, edx
+mov     edx, [esp+68h+var_34]
+cmp     edx, ecx
+jl      short loc_5153D8
+mov     ecx, dword_A8ED54+460h
+add     eax, ecx
+mov     [ebx+2Ch], eax
+
+loc_5153D8:                             ; CODE XREF: MovementAI__MainFootClass+45B↑j
+mov     eax, [ebx+0Ch]
+mov     ecx, 87F7E8h
+push    eax
+push    esi
+call    Coord__To_Cell
+mov     ecx, eax
+call    CrateClass__ProcessPickup
+test    al, al
+jnz     loc_51547B
+mov     eax, [ebx+0Ch]
+mov     cl, [eax+81h]
+test    cl, cl
+jnz     short loc_51547B
+mov     cl, [eax+90h]
+test    cl, cl
+jz      loc_5158F4
+mov     cl, [eax+8Dh]
+test    cl, cl
+jnz     loc_5158F4
+mov     dword ptr [eax+5E0h], 0FFFFFFFFh
+mov     edx, dword_A8ED54+42Ch
+mov     [esi], edx
+mov     eax, dword_A8ED54+430h
+mov     [esi+4], eax
+mov     ecx, dword_A8ED54+434h
+mov     [esi+8], ecx
+mov     ecx, [ebx+0Ch]
+xor     esi, esi
+push    1
+mov     edx, [ecx]
+push    esi
+call    dword ptr [edx+480h]
+mov     [ebx+50h], esi
+mov     [ebx+48h], esi
+mov     [ebx+54h], esi
+mov     [ebx+4Ch], esi
+mov     ebx, [ebx+0Ch]
+push    esi
+push    esi
+mov     ecx, ebx
+mov     eax, [ebx]
+call    dword ptr [eax+544h]
+mov     eax, 7
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_51547B:                             ; CODE XREF: MovementAI__MainFootClass+480↑j
+; MovementAI__MainFootClass+491↑j
+mov     eax, [ebx+0Ch]
+mov     cl, [eax+90h]
+test    cl, cl
+jz      loc_5158F4
+mov     cl, [eax+81h]
+test    cl, cl
+jnz     loc_5158F4
+mov     cl, [eax+8Dh]
+test    cl, cl
+jnz     loc_5158F4
+add     eax, 9Ch
+mov     edx, eax
+mov     eax, [edx]
+mov     ecx, [edx+4]
+mov     edx, [edx+8]
+push    edx
+mov     edx, ds:89F6DCh[edi*8]
+add     edx, ecx
+lea     ecx, [esp+6Ch+var_24]
+push    edx
+mov     edx, ds:89F6D8h[edi*8]
+add     eax, edx
+push    eax
+call    Coord__Subtract
+mov     ecx, [eax]
+mov     [esp+68h+var_3C], ecx
+lea     ecx, [esp+68h+var_3C]
+mov     edx, [eax+4]
+push    ecx
+mov     [esp+6Ch+var_38], edx
+mov     ecx, 87F7E8h
+mov     eax, [eax+8]
+mov     [esp+6Ch+var_34], eax
+call    Coord__To_Cell
+mov     edx, [eax+140h]
+mov     ecx, [ebx+0Ch]
+shr     edx, 8
+xor     eax, eax
+and     edx, 1
+mov     al, [ecx+8Ch]
+xor     edx, eax
+jz      short loc_51551A
+mov     byte ptr [ecx+68Bh], 1
+
+loc_51551A:                             ; CODE XREF: MovementAI__MainFootClass+5A1↑j
+mov     eax, [esi]
+push    1
+cdq
+and     edx, 0FFh
+push    0
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+70h+var_54], ax
+mov     eax, [esi+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+70h+var_54+2], ax
+mov     ecx, [esp+70h+var_54]
+mov     [esp+70h+var_5C], ecx
+mov     ecx, [ebx+0Ch]
+mov     edi, [ecx]
+call    ObjectClass__GetLandHeight
+mov     edx, [esp+70h+var_58]
+push    eax
+lea     eax, [esp+74h+var_5C]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, [ebx+0Ch]
+push    eax
+call    dword ptr [edi+1ACh]
+cmp     eax, 7          ; switch 8 cases
+mov     [esp+68h+var_58], eax
+ja      def_515583      ; jumptable 00515583 default case
+jmp     ds:jpt_515583[eax*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_51558A:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+push    esi             ; jumptable 00515583 cases 1,7
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, eax
+call    CellClass__DamageAllObjects
+mov     al, [ebp+arg_0]
+test    al, al
+jz      loc_51564A
+mov     ecx, [ebx+0Ch]
+xor     edi, edi
+mov     [ebx+50h], edi
+mov     [ebx+48h], edi
+mov     [ebx+54h], edi
+mov     [ebx+4Ch], edi
+mov     edx, [ecx]
+push    edi
+push    edi
+call    dword ptr [edx+544h]
+mov     eax, [esi]
+mov     ecx, dword_A8ED54+42Ch
+cmp     eax, ecx
+jnz     short loc_5155E6
+mov     ecx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_5155E6
+mov     edx, [esi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_51560D
+
+loc_5155E6:                             ; CODE XREF: MovementAI__MainFootClass+65C↑j
+; MovementAI__MainFootClass+668↑j
+mov     ecx, [ebx+0Ch]
+push    esi
+mov     eax, [ecx]
+call    dword ptr [eax+0F4h]
+mov     edx, dword_A8ED54+42Ch
+mov     ecx, esi
+mov     [ecx], edx
+mov     eax, dword_A8ED54+430h
+mov     [ecx+4], eax
+mov     edx, dword_A8ED54+434h
+mov     [ecx+8], edx
+
+loc_51560D:                             ; CODE XREF: MovementAI__MainFootClass+674↑j
+mov     ecx, [ebx+0Ch]
+mov     eax, dword_A8ED54+30h
+add     ecx, 640h
+push    edi
+mov     [ecx], eax
+mov     edx, [esp+6Ch+var_20]
+mov     [ecx+4], edx
+mov     [ecx+8], edi
+mov     eax, [ebx+0Ch]
+mov     ecx, ebx
+mov     dword ptr [eax+5E0h], 0FFFFFFFFh
+call    MovementAI__StepFootClass
+push    edi
+mov     ecx, ebx
+call    MovementAI__MainFootClass
+mov     [esp+68h+var_58], eax
+jmp     short loc_51564C
+; ---------------------------------------------------------------------------
+
+loc_51564A:                             ; CODE XREF: MovementAI__MainFootClass+631↑j
+xor     edi, edi
+
+loc_51564C:                             ; CODE XREF: MovementAI__MainFootClass+6D8↑j
+cmp     [esp+68h+var_58], edi
+jz      short loc_5156D1
+mov     edx, dword_A8ED54+42Ch
+mov     ecx, esi
+push    edi
+push    edi
+mov     [ecx], edx
+mov     eax, dword_A8ED54+430h
+mov     [ecx+4], eax
+mov     edx, dword_A8ED54+434h
+mov     [ebx+50h], edi
+mov     [ebx+48h], edi
+mov     [ecx+8], edx
+mov     ecx, [ebx+0Ch]
+mov     [ebx+54h], edi
+mov     [ebx+4Ch], edi
+mov     eax, [ecx]
+call    dword ptr [eax+544h]
+mov     ecx, [esi]
+mov     eax, dword_A8ED54+42Ch
+cmp     ecx, eax
+jnz     short loc_5156AA
+mov     edx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     edx, eax
+jnz     short loc_5156AA
+mov     eax, [esi+8]
+mov     ecx, dword_A8ED54+434h
+cmp     eax, ecx
+jz      short loc_5156D1
+
+loc_5156AA:                             ; CODE XREF: MovementAI__MainFootClass+71F↑j
+; MovementAI__MainFootClass+72B↑j
+mov     ebx, [ebx+0Ch]
+push    esi
+mov     ecx, ebx
+mov     edx, [ebx]
+call    dword ptr [edx+0F4h]
+mov     eax, dword_A8ED54+42Ch
+mov     [esi], eax
+mov     ecx, dword_A8ED54+430h
+mov     [esi+4], ecx
+mov     edx, dword_A8ED54+434h
+mov     [esi+8], edx
+
+loc_5156D1:                             ; CODE XREF: MovementAI__MainFootClass+6E0↑j
+; MovementAI__MainFootClass+738↑j
+mov     eax, [esp+68h+var_58]
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5156DE:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+mov     ecx, dword_A8ED54+42Ch ; jumptable 00515583 case 3
+mov     eax, esi
+mov     [eax], ecx
+mov     edx, dword_A8ED54+430h
+mov     [eax+4], edx
+mov     ecx, dword_A8ED54+434h
+lea     edx, [esp+68h+var_5C]
+mov     [eax+8], ecx
+mov     eax, [ebx+0Ch]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    Cell__IsPassableAllied
+mov     ecx, [ebx+0Ch]
+xor     eax, eax
+mov     [ebx+50h], eax
+mov     [ebx+48h], eax
+mov     [ebx+54h], eax
+mov     [ebx+4Ch], eax
+mov     edx, [ecx]
+push    eax
+push    eax
+call    dword ptr [edx+544h]
+mov     eax, [esi]
+mov     ecx, dword_A8ED54+42Ch
+cmp     eax, ecx
+jnz     loc_5159E1
+mov     ecx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     loc_5159E1
+jmp     loc_5159D1
+; ---------------------------------------------------------------------------
+
+loc_51574D:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+mov     al, [ebp+arg_0] ; jumptable 00515583 case 6
+test    al, al
+jz      loc_51581D
+mov     edx, dword_A8ED54+42Ch
+mov     ecx, esi
+xor     edi, edi
+mov     [ecx], edx
+mov     eax, dword_A8ED54+430h
+push    edi
+push    edi
+mov     [ecx+4], eax
+mov     edx, dword_A8ED54+434h
+mov     [ebx+50h], edi
+mov     [ebx+48h], edi
+mov     [ecx+8], edx
+mov     ecx, [ebx+0Ch]
+mov     [ebx+54h], edi
+mov     [ebx+4Ch], edi
+mov     eax, [ecx]
+call    dword ptr [eax+544h]
+mov     ecx, [esi]
+mov     eax, dword_A8ED54+42Ch
+cmp     ecx, eax
+jnz     short loc_5157B2
+mov     edx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     edx, eax
+jnz     short loc_5157B2
+mov     eax, [esi+8]
+mov     ecx, dword_A8ED54+434h
+cmp     eax, ecx
+jz      short loc_5157D7
+
+loc_5157B2:                             ; CODE XREF: MovementAI__MainFootClass+827↑j
+; MovementAI__MainFootClass+833↑j
+mov     ecx, [ebx+0Ch]
+push    esi
+mov     edx, [ecx]
+call    dword ptr [edx+0F4h]
+mov     eax, dword_A8ED54+42Ch
+mov     [esi], eax
+mov     ecx, dword_A8ED54+430h
+mov     [esi+4], ecx
+mov     edx, dword_A8ED54+434h
+mov     [esi+8], edx
+
+loc_5157D7:                             ; CODE XREF: MovementAI__MainFootClass+840↑j
+mov     edx, [ebx+0Ch]
+mov     eax, dword_A8ED54+30h
+add     edx, 640h
+xor     ecx, ecx
+push    edi
+mov     [edx], eax
+mov     eax, [esp+6Ch+var_20]
+mov     [edx+4], eax
+mov     [edx+8], ecx
+mov     ecx, [ebx+0Ch]
+mov     dword ptr [ecx+5E0h], 0FFFFFFFFh
+mov     ecx, ebx
+call    MovementAI__StepFootClass
+push    edi
+mov     ecx, ebx
+call    MovementAI__MainFootClass
+mov     [esp+68h+var_58], eax
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_51581D:                             ; CODE XREF: MovementAI__MainFootClass+7E2↑j
+mov     ecx, [ebx+0Ch]
+lea     eax, [esp+68h+var_18]
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+48h]
+mov     ecx, [eax+8]
+mov     edi, [ebx+20h]
+mov     edx, [eax+4]
+mov     eax, [eax]
+sub     ecx, edi
+push    ecx
+mov     ecx, [ebx+1Ch]
+sub     edx, ecx
+mov     ecx, [ebx+18h]
+sub     eax, ecx
+push    edx
+push    eax
+lea     ecx, [esp+74h+var_C]
+call    Coord__Subtract
+mov     ecx, [eax]
+mov     [esp+68h+var_30], ecx
+lea     ecx, [esp+68h+var_30]
+mov     edx, [eax+4]
+mov     [esp+68h+var_2C], edx
+mov     eax, [eax+8]
+mov     [esp+68h+var_28], eax
+call    Coord__Length
+mov     ecx, ds:8871E0h
+cmp     eax, [ecx+1718h]
+jge     loc_515902
+mov     ecx, [ebx+0Ch]
+add     ecx, 9Ch
+mov     edx, ecx
+mov     eax, [edx]
+mov     [esp+68h+var_30], eax
+mov     eax, [edx+4]
+mov     [esp+68h+var_2C], eax
+mov     eax, [ebx+20h]
+mov     edx, [edx+8]
+sub     eax, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+mov     edx, dword_A8ED54+46Ch
+add     edx, edx
+cmp     eax, edx
+jge     short loc_515902
+mov     eax, [ecx]
+mov     [esp+68h+var_24], eax
+mov     edx, [ecx+4]
+mov     [esp+68h+var_20], edx
+mov     eax, [ecx+8]
+lea     ecx, [esp+68h+var_24]
+mov     [esp+68h+var_1C], eax
+push    ecx
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+cmp     dword ptr [eax+0ECh], 0Ah
+jz      short loc_515902
+mov     edx, [ebx+4]
+lea     eax, [ebx+4]
+push    eax
+call    dword ptr [edx+48h]
+mov     ebx, [ebx+0Ch]
+push    1
+push    0
+mov     ecx, ebx
+mov     eax, [ebx]
+call    dword ptr [eax+480h]
+
+loc_5158F4:                             ; CODE XREF: MovementAI__MainFootClass+49B↑j
+; MovementAI__MainFootClass+4A9↑j ...
+mov     eax, 7
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515902:                             ; CODE XREF: MovementAI__MainFootClass+906↑j
+; MovementAI__MainFootClass+93B↑j ...
+push    esi
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, [eax+140h]
+test    ch, 1
+jz      short loc_51595D
+mov     ecx, [ebx+0Ch]
+push    esi
+add     ecx, 9Ch
+mov     edx, [ecx]
+mov     [esp+6Ch+var_30], edx
+mov     eax, [ecx+4]
+mov     [esp+6Ch+var_2C], eax
+mov     edi, [ecx+8]
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+movsx   ecx, byte ptr [eax+11Bh]
+mov     eax, edi
+mov     byte ptr [esp+68h+var_54], 1
+cdq
+idiv    dword_A8ED54+46Ch
+sub     eax, ecx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, 2
+jg      short loc_515962
+
+loc_51595D:                             ; CODE XREF: MovementAI__MainFootClass+9A6↑j
+mov     byte ptr [esp+68h+var_54], 0
+
+loc_515962:                             ; CODE XREF: MovementAI__MainFootClass+9EB↑j
+mov     edx, [esp+68h+var_54]
+mov     ecx, 87F7E8h
+push    edx
+push    1
+push    1
+push    (offset dword_A8ED54+42Ch)
+push    esi
+call    Coord__To_Cell
+mov     ecx, eax
+call    Cell__ApplyDamage
+mov     ecx, dword_A8ED54+42Ch
+mov     eax, esi
+mov     [eax], ecx
+mov     edx, dword_A8ED54+430h
+mov     [eax+4], edx
+mov     ecx, dword_A8ED54+434h
+mov     [eax+8], ecx
+mov     ecx, [ebx+0Ch]
+xor     eax, eax
+mov     [ebx+50h], eax
+mov     [ebx+48h], eax
+mov     [ebx+54h], eax
+mov     [ebx+4Ch], eax
+mov     edx, [ecx]
+push    eax
+push    eax
+call    dword ptr [edx+544h]
+mov     eax, [esi]
+mov     ecx, dword_A8ED54+42Ch
+cmp     eax, ecx
+jnz     short loc_5159E1
+mov     ecx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_5159E1
+
+loc_5159D1:                             ; CODE XREF: MovementAI__MainFootClass+7D8↑j
+mov     edx, [esi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      def_515583      ; jumptable 00515583 default case
+
+loc_5159E1:                             ; CODE XREF: MovementAI__MainFootClass+7C2↑j
+; MovementAI__MainFootClass+7D2↑j ...
+mov     ebx, [ebx+0Ch]
+push    esi
+mov     ecx, ebx
+mov     eax, [ebx]
+call    dword ptr [eax+0F4h]
+mov     ecx, dword_A8ED54+42Ch
+mov     [esi], ecx
+mov     edx, dword_A8ED54+430h
+mov     [esi+4], edx
+mov     eax, dword_A8ED54+434h
+mov     [esi+8], eax
+mov     eax, [esp+68h+var_58]
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515A15:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+mov     ecx, [ebx+0Ch]  ; jumptable 00515583 case 0
+push    2
+mov     edx, [ecx]
+call    dword ptr [edx+18Ch]
+mov     ecx, [ebx+0Ch]
+mov     al, [ecx+90h]
+test    al, al
+jz      loc_5158F4
+mov     al, [ecx+81h]
+test    al, al
+jnz     loc_5158F4
+mov     al, [ecx+8Dh]
+test    al, al
+jnz     loc_5158F4
+mov     al, [ecx+3D5h]
+test    al, al
+jz      short loc_515A62
+mov     eax, [ecx]
+push    esi
+call    dword ptr [eax+0F0h]
+
+loc_515A62:                             ; CODE XREF: MovementAI__MainFootClass+AE7↑j
+mov     eax, [ebx+0Ch]
+mov     ecx, 17h
+lea     esi, [eax+5E4h]
+lea     edi, [eax+5E0h]
+rep movsd
+mov     ecx, [ebx+0Ch]
+mov     dword ptr [ecx+63Ch], 0FFFFFFFFh
+mov     eax, [ebx+24h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+68h+var_54], ax
+mov     eax, [ebx+28h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     edx, [ebx+0Ch]
+sar     eax, 8
+mov     word ptr [esp+68h+var_54+2], ax
+mov     eax, [esp+68h+var_54]
+mov     [edx+558h], eax
+mov     eax, [esp+68h+var_58]
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515AC7:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+mov     edx, dword_A8ED54+42Ch ; jumptable 00515583 cases 4,5
+mov     ecx, esi
+mov     [ecx], edx
+mov     eax, dword_A8ED54+430h
+mov     [ecx+4], eax
+mov     al, [ebp+arg_0]
+mov     edx, dword_A8ED54+434h
+test    al, al
+mov     [ecx+8], edx
+jz      loc_515B97
+mov     ecx, [ebx+0Ch]
+xor     edi, edi
+mov     [ebx+50h], edi
+mov     [ebx+48h], edi
+mov     [ebx+54h], edi
+mov     [ebx+4Ch], edi
+mov     eax, [ecx]
+push    edi
+push    edi
+call    dword ptr [eax+544h]
+mov     ecx, [esi]
+mov     eax, dword_A8ED54+42Ch
+cmp     ecx, eax
+jnz     short loc_515B2C
+mov     edx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     edx, eax
+jnz     short loc_515B2C
+mov     eax, [esi+8]
+mov     ecx, dword_A8ED54+434h
+cmp     eax, ecx
+jz      short loc_515B51
+
+loc_515B2C:                             ; CODE XREF: MovementAI__MainFootClass+BA1↑j
+; MovementAI__MainFootClass+BAD↑j
+mov     ecx, [ebx+0Ch]
+push    esi
+mov     edx, [ecx]
+call    dword ptr [edx+0F4h]
+mov     eax, dword_A8ED54+42Ch
+mov     [esi], eax
+mov     ecx, dword_A8ED54+430h
+mov     [esi+4], ecx
+mov     edx, dword_A8ED54+434h
+mov     [esi+8], edx
+
+loc_515B51:                             ; CODE XREF: MovementAI__MainFootClass+BBA↑j
+mov     edx, [ebx+0Ch]
+mov     eax, dword_A8ED54+30h
+add     edx, 640h
+xor     ecx, ecx
+push    edi
+mov     [edx], eax
+mov     eax, [esp+6Ch+var_8]
+mov     [edx+4], eax
+mov     [edx+8], ecx
+mov     ecx, [ebx+0Ch]
+mov     dword ptr [ecx+5E0h], 0FFFFFFFFh
+mov     ecx, ebx
+call    MovementAI__StepFootClass
+push    edi
+mov     ecx, ebx
+call    MovementAI__MainFootClass
+mov     [esp+68h+var_58], eax
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515B97:                             ; CODE XREF: MovementAI__MainFootClass+B77↑j
+xor     esi, esi
+lea     edx, [esp+68h+var_50]
+push    esi
+lea     eax, [esp+6Ch+var_5C]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+74h+var_50], esi
+mov     [esp+74h+var_4C], esi
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Object__FindObjectCell
+test    eax, eax
+jz      short loc_515C3F
+lea     ecx, [esp+68h+var_48]
+push    esi
+lea     edx, [esp+6Ch+var_5C]
+push    ecx
+push    edx
+mov     ecx, 87F7E8h
+mov     [esp+74h+var_48], esi
+mov     [esp+74h+var_44], esi
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Object__FindObjectCell
+push    eax
+mov     eax, [ebx+0Ch]
+mov     ecx, [eax+21Ch]
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jnz     def_515583      ; jumptable 00515583 default case
+mov     ecx, [ebx+0Ch]
+push    esi
+lea     edx, [esp+6Ch+var_3C]
+mov     [esp+6Ch+var_3C], esi
+mov     [esp+6Ch+var_38], esi
+mov     edi, [ecx]
+push    esi
+lea     eax, [esp+70h+var_5C]
+push    edx
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Object__FindObjectCell
+mov     ecx, [ebx+0Ch]
+push    eax
+push    1
+call    dword ptr [edi+1F4h]
+mov     eax, [esp+68h+var_58]
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515C3F:                             ; CODE XREF: MovementAI__MainFootClass+C4F↑j
+lea     ecx, [esp+68h+var_5C]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+cmp     dword ptr [eax+44h], 0FFFFFFFFh
+jz      def_515583      ; jumptable 00515583 default case
+lea     edx, [esp+68h+var_5C]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     eax, [eax+44h]
+mov     ecx, ds:0A83D84h
+mov     edx, [ecx+eax*4]
+mov     al, [edx+2A8h]
+test    al, al
+jz      def_515583      ; jumptable 00515583 default case
+mov     eax, [ebx+0Ch]
+lea     ecx, [esp+68h+var_5C]
+push    esi
+push    ecx
+mov     edi, [eax]
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, [ebx+0Ch]
+push    eax
+push    1
+call    dword ptr [edi+1F4h]
+mov     eax, [esp+68h+var_58]
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515CAF:                             ; CODE XREF: MovementAI__MainFootClass+613↑j
+; DATA XREF: .text:jpt_515583↓o
+mov     eax, dword_A8ED54+42Ch ; jumptable 00515583 case 2
+mov     edx, esi
+mov     [edx], eax
+mov     ecx, dword_A8ED54+430h
+mov     [edx+4], ecx
+mov     eax, dword_A8ED54+434h
+mov     ecx, [ebx+0Ch]
+mov     [edx+8], eax
+xor     eax, eax
+mov     [ebx+50h], eax
+mov     [ebx+48h], eax
+mov     [ebx+54h], eax
+mov     [ebx+4Ch], eax
+mov     edx, [ecx]
+push    eax
+push    eax
+call    dword ptr [edx+544h]
+mov     eax, [esi]
+mov     ecx, dword_A8ED54+42Ch
+cmp     eax, ecx
+jnz     short loc_515D08
+mov     ecx, [esi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_515D08
+mov     edx, [esi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_515D2D
+
+loc_515D08:                             ; CODE XREF: MovementAI__MainFootClass+D7E↑j
+; MovementAI__MainFootClass+D8A↑j
+mov     ecx, [ebx+0Ch]
+push    esi
+mov     eax, [ecx]
+call    dword ptr [eax+0F4h]
+mov     ecx, dword_A8ED54+42Ch
+mov     [esi], ecx
+mov     edx, dword_A8ED54+430h
+mov     [esi+4], edx
+mov     eax, dword_A8ED54+434h
+mov     [esi+8], eax
+
+loc_515D2D:                             ; CODE XREF: MovementAI__MainFootClass+D96↑j
+mov     eax, [ebx+0Ch]
+mov     cl, [eax+6B7h]
+test    cl, cl
+jnz     short loc_515D67
+mov     byte ptr [eax+6B7h], 1
+mov     edx, [ebx+0Ch]
+mov     ecx, ds:8871E0h
+mov     eax, dword_A8ED54+30h
+add     edx, 668h
+mov     ecx, [ecx+1768h]
+mov     [edx], eax
+mov     eax, [esp+68h+var_8]
+mov     [edx+4], eax
+mov     [edx+8], ecx
+
+loc_515D67:                             ; CODE XREF: MovementAI__MainFootClass+DC8↑j
+mov     esi, [ebx+0Ch]
+mov     edi, dword_A8ED54+30h
+mov     edx, [esi+640h]
+mov     eax, [esi+648h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_515D8B
+mov     ecx, edi
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_515D8F
+sub     eax, ecx
+
+loc_515D8B:                             ; CODE XREF: MovementAI__MainFootClass+E0F↑j
+test    eax, eax
+jnz     short loc_515D9F
+
+loc_515D8F:                             ; CODE XREF: MovementAI__MainFootClass+E17↑j
+mov     dword ptr [esi+5E0h], 0FFFFFFFFh
+mov     edi, dword_A8ED54+30h
+
+loc_515D9F:                             ; CODE XREF: MovementAI__MainFootClass+E1D↑j
+mov     ecx, [ebx+0Ch]
+mov     al, [ecx+6B7h]
+test    al, al
+jz      short loc_515DCF
+mov     eax, [ecx+670h]
+mov     ecx, [ecx+668h]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_515DC7
+sub     edi, ecx
+mov     ecx, edi
+cmp     ecx, eax
+jge     short loc_515DCB
+sub     eax, ecx
+
+loc_515DC7:                             ; CODE XREF: MovementAI__MainFootClass+E4B↑j
+test    eax, eax
+jnz     short loc_515DCF
+
+loc_515DCB:                             ; CODE XREF: MovementAI__MainFootClass+E53↑j
+mov     al, 1
+jmp     short loc_515DD1
+; ---------------------------------------------------------------------------
+
+loc_515DCF:                             ; CODE XREF: MovementAI__MainFootClass+E3A↑j
+; MovementAI__MainFootClass+E59↑j
+xor     al, al
+
+loc_515DD1:                             ; CODE XREF: MovementAI__MainFootClass+E5D↑j
+xor     ecx, ecx
+test    al, al
+setnz   cl
+inc     ecx
+push    ecx
+mov     ecx, ebx
+call    MovementAI__StepFootClass
+
+def_515583:                             ; CODE XREF: MovementAI__MainFootClass+60D↑j
+; MovementAI__MainFootClass+A6B↑j ...
+mov     eax, [esp+68h+var_58] ; jumptable 00515583 default case
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_515DEE:                             ; CODE XREF: MovementAI__MainFootClass+3CF↑j
+push    0
+mov     ecx, ebx
+call    MovementAI__StepFootClass
+
+loc_515DF7:                             ; CODE XREF: MovementAI__MainFootClass+86↑j
+; MovementAI__MainFootClass+AF↑j
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+*/
+} }
 // 0x5163B0
-namespace gamemd { int MovementAI::MarkOccupiedPathCell() { return 0; } }
+namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
+// [IDA decompile]
+char __thiscall sub_5163B0(_DWORD *this)
+{
+  int v2; // eax
+  int v3; // ecx
+  int v4; // ecx
+  _DWORD *v5; // eax
+  double v6; // st7
+  int v7; // eax
+  _DWORD *v9; // ecx
+  int v10; // [esp+18h] [ebp-14h]
+  int v11; // [esp+1Ch] [ebp-10h]
+  _BYTE v12[12]; // [esp+20h] [ebp-Ch] BYREF
+
+  if ( !(*(unsigned __int8 (__stdcall **)(_DWORD *))(*(this + 1) + 16))(this + 1) )
+    return 0;
+  v2 = *(this + 3);
+  if ( *(_DWORD *)(v2 + 1504) == -1 )
+    return 0;
+  v3 = *(_DWORD *)(v2 + 1444);
+  if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 1
+    || (v4 = *(_DWORD *)(*(this + 3) + 1444)) != 0 && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 15 )
+  {
+    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v12);
+    v10 = v5[1] - *(this + 7);
+    v11 = v5[2] - *(this + 8);
+    v6 = Math::Sqrt(
+           (double)(*v5 - *(this + 6)) * (double)(*v5 - *(this + 6))
+         + (double)v10 * (double)v10
+         + (double)v11 * (double)v11);
+    v7 = (int)Math::RoundToInt(v6) / 256;
+    if ( v7 < 24 )
+    {
+      *(_DWORD *)(*(this + 3) + 4 * v7 + 1504) = -1;
+      return 1;
+    }
+  }
+  v9 = (_DWORD *)*(this + 3);
+  if ( !v9[173] || !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v9 + 940))(v9, v9[173]) )
+    return 0;
+  *(_DWORD *)(*(this + 3) + 1504) = -1;
+  return 1;
+}
+
+/* ASM:
+sub     esp, 18h        ; TODO: classify (grp=blit, sz=0x11b)
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+4]
+lea     eax, [esi+4]
+push    eax
+call    dword ptr [ecx+10h]
+test    al, al
+jz      loc_5164C4
+mov     eax, [esi+0Ch]
+cmp     dword ptr [eax+5E0h], 0FFFFFFFFh
+jz      loc_5164C4
+mov     ecx, [eax+5A4h]
+test    ecx, ecx
+jz      short loc_5163EC
+mov     edx, [ecx]
+call    dword ptr [edx+2Ch]
+cmp     eax, 1
+jz      short loc_51640B
+
+loc_5163EC:                             ; CODE XREF: MovementAI__MarkOccupiedPathCell+30↑j
+mov     eax, [esi+0Ch]
+mov     ecx, [eax+5A4h]
+test    ecx, ecx
+jz      loc_516496
+mov     edx, [ecx]
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jnz     loc_516496
+
+loc_51640B:                             ; CODE XREF: MovementAI__MarkOccupiedPathCell+3A↑j
+mov     ecx, [esi+0Ch]
+lea     edx, [esp+1Ch+var_C]
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     ecx, [eax]
+mov     edx, [esi+18h]
+sub     ecx, edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [esp+1Ch+var_18], ecx
+mov     ecx, [esi+1Ch]
+sub     esp, 8
+sub     edx, ecx
+mov     ecx, [esi+20h]
+sub     eax, ecx
+mov     [esp+24h+var_14], edx
+mov     [esp+24h+var_10], eax
+fild    [esp+24h+var_10]
+fild    [esp+24h+var_14]
+fild    [esp+24h+var_18]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+24h+var_24] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+cmp     eax, 18h
+jge     short loc_516496
+mov     ecx, [esi+0Ch]
+pop     esi
+mov     dword ptr [ecx+eax*4+5E0h], 0FFFFFFFFh
+mov     al, 1
+add     esp, 18h
+retn
+; ---------------------------------------------------------------------------
+
+loc_516496:                             ; CODE XREF: MovementAI__MarkOccupiedPathCell+47↑j
+; MovementAI__MarkOccupiedPathCell+55↑j ...
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx+2B4h]
+test    eax, eax
+jz      short loc_5164C4
+mov     edx, [ecx]
+push    eax
+call    dword ptr [edx+3ACh]
+test    al, al
+jz      short loc_5164C4
+mov     eax, [esi+0Ch]
+pop     esi
+mov     dword ptr [eax+5E0h], 0FFFFFFFFh
+mov     al, 1
+add     esp, 18h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5164C4:                             ; CODE XREF: MovementAI__MarkOccupiedPathCell+12↑j
+; MovementAI__MarkOccupiedPathCell+22↑j ...
+xor     al, al
+pop     esi
+add     esp, 18h
+retn
+*/
+} }
 // 0x5164D0
-namespace gamemd { int MovementAI::StepFootClass(int a1) { return 0; } }
+namespace gamemd { int MovementAI::StepFootClass(int a1) {
+// [IDA decompile]
+int __thiscall FootClass_MovementAI_Step(int *this, int a2)
+{
+  _DWORD *v3; // ecx
+  _DWORD *v4; // edi
+  int result; // eax
+  int v6; // ebp
+  int v7; // ebx
+  __int64 v8; // rax
+  int v9; // ebp
+  int v10; // ebx
+  _WORD *v11; // eax
+  __int64 v12; // rax
+  int v13; // ecx
+  int v14; // ebx
+  #72 *v15; // ebx
+  double v16; // st7
+  #72 *v17; // eax
+  int v18; // edx
+  #72 **v19; // ecx
+  _DWORD *v20; // eax
+  int *v21; // eax
+  int v22; // edx
+  int v23; // eax
+  double v24; // st7
+  _DWORD *v25; // ecx
+  int v26; // eax
+  _DWORD *v27; // ecx
+  #72 *v28; // ebp
+  double v29; // st7
+  #72 *v30; // eax
+  #72 *v31; // edx
+  #72 **v32; // ecx
+  _DWORD *v33; // eax
+  int v34; // edx
+  _BYTE *v35; // ebx
+  int v36; // ebp
+  void *v37; // eax
+  _DWORD *v38; // ebx
+  int *v39; // edx
+  int v40; // ebp
+  int GroundHeight; // eax
+  int ClosestObject; // eax
+  _DWORD *v43; // eax
+  int v44; // ebp
+  int v45; // ecx
+  int v46; // edx
+  int v47; // eax
+  int v48; // eax
+  double v49; // st7
+  int *v50; // ecx
+  __int64 v51; // rax
+  int *v52; // ecx
+  __int64 v53; // rax
+  int v54; // [esp+20h] [ebp-48h]
+  int LandHeight; // [esp+24h] [ebp-44h]
+  int v56; // [esp+30h] [ebp-38h]
+  int v57; // [esp+40h] [ebp-28h]
+  int v58; // [esp+40h] [ebp-28h]
+  int v59; // [esp+40h] [ebp-28h]
+  char v60; // [esp+40h] [ebp-28h]
+  int v61; // [esp+44h] [ebp-24h] BYREF
+  int v62; // [esp+48h] [ebp-20h]
+  int v63; // [esp+4Ch] [ebp-1Ch]
+  int v64; // [esp+50h] [ebp-18h] BYREF
+  int v65; // [esp+54h] [ebp-14h]
+  int v66; // [esp+58h] [ebp-10h]
+  _DWORD v67[3]; // [esp+5Ch] [ebp-Ch] BYREF
+
+  MovementAI::MarkOccupiedPathCell();
+  v3 = (_DWORD *)*(this + 3);
+  v4 = this + 6;
+  v57 = v3[376];
+  if ( *(this + 6) != MEMORY[0xA8F180]
+    || *(this + 7) != MEMORY[0xA8F184]
+    || (result = MEMORY[0xA8F188], *(this + 8) != MEMORY[0xA8F188]) )
+  {
+    v6 = *v4 / 256;
+    v7 = *(this + 7) / 256;
+    result = (*(int (__thiscall **)(_DWORD *, int *))(*v3 + 440))(v3, &v61);
+    if ( *(_WORD *)result == (_WORD)v6 && *(_WORD *)(result + 2) == (_WORD)v7 )
+    {
+      v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 3) + 76))(
+                         *(this + 3),
+                         &v64,
+                         0)
+                     + 8)
+         - *(this + 8);
+      result = (HIDWORD(v8) ^ v8) - HIDWORD(v8);
+      if ( result < 2 * MEMORY[0xA8F1C0] )
+      {
+        (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1);
+        return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+      }
+    }
+  }
+  if ( v57 != -1 )
+    return result;
+  if ( *v4 == MEMORY[0xA8F180] && *(this + 7) == MEMORY[0xA8F184] )
+  {
+    result = *(this + 8);
+    if ( result == MEMORY[0xA8F188] )
+      return result;
+  }
+  v9 = *v4 / 256;
+  v10 = *(this + 7) / 256;
+  v11 = (_WORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 440))(*(this + 3), &v61);
+  if ( *v11 == (_WORD)v9 && v11[1] == (_WORD)v10 )
+  {
+    v12 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 3) + 76))(*(this + 3), &v64, 0)
+                    + 8)
+        - *(this + 8);
+    result = (HIDWORD(v12) ^ v12) - HIDWORD(v12);
+    if ( result <= 2 * MEMORY[0xA8F1C0] )
+      return result;
+  }
+  v13 = *(this + 3);
+  v14 = *(_DWORD *)(v13 + 1600);
+  result = *(_DWORD *)(v13 + 1608);
+  if ( v14 != -1 )
+  {
+    if ( (int)MEMORY[0xA8ED84] - v14 >= result )
+      goto LABEL_19;
+    result -= (int)MEMORY[0xA8ED84] - v14;
+  }
+  if ( result )
+    return result;
+LABEL_19:
+  LOWORD(v58) = *v4 / 256;
+  HIWORD(v58) = *(this + 7) / 256;
+  if ( FootClass::MovementStep(v13, (int)v4, v58, 0, a2, v56) )
+  {
+    v28 = MEMORY[0xA8ED84];
+    v29 = *((double *)MEMORY[0x8871E0] + 748) * 900.0;
+    v30 = (#72 *)Math::RoundToInt(v29);
+    v31 = (#72 *)v67[1];
+    v32 = (#72 **)(*(this + 3) + 1600);
+    *v32 = v28;
+    v32[1] = v31;
+    v32[2] = v30;
+    v33 = (_DWORD *)(*(int (__usercall **)@<eax>(_DWORD@<ecx>, _DWORD *, double@<st0>))(*(_DWORD *)*(this + 3) + 72))(
+                      *(this + 3),
+                      v67,
+                      v29);
+    v34 = *(_DWORD *)(*(this + 3) + 1504) & 7;
+    LOWORD(v59) = *v33 / 256 + LOWORD(MEMORY[0x89F688][v34]);
+    HIWORD(v59) = v33[1] / 256 + HIWORD(MEMORY[0x89F688][v34]);
+    a2 = v59;
+    if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&a2, 1) )
+    {
+      v35 = (_BYTE *)*(this + 3);
+      v36 = *(_DWORD *)v35;
+      LandHeight = ObjectClass::GetLandHeight(v35);
+      v54 = *(_DWORD *)(*(this + 3) + 1504);
+      v37 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+      if ( (*(int (__thiscall **)(_BYTE *, void *, int, int, _DWORD, int))(v36 + 428))(v35, v37, v54, LandHeight, 0, 1) == 6 )
+      {
+        v38 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+        v39 = (int *)(*(this + 3) + 156);
+        v64 = *v39;
+        v65 = v39[1];
+        v40 = v39[2];
+        v65 = (SHIWORD(a2) << 8) + 128;
+        v64 = ((__int16)a2 << 8) + 128;
+        v66 = 0;
+        v61 = 0;
+        v62 = 0;
+        GroundHeight = Cell::GetGroundHeight(&v64);
+        ClosestObject = Object::FindClosestObjectCell(v38, &v61, v40 > 3 * MEMORY[0xA8F1C0] + GroundHeight, 0);
+        if ( ClosestObject )
+        {
+          if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(this + 3) + 540), ClosestObject) )
+          {
+            v43 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v67);
+            v44 = *(this + 7);
+            v45 = *v43 - *v4;
+            v46 = v43[1];
+            v47 = v43[2];
+            v61 = v45;
+            v48 = v47 - *(this + 8);
+            v62 = v46 - v44;
+            v63 = v48;
+            v49 = Math::Sqrt((double)v45 * (double)v45 + (double)v48 * (double)v48 + (double)(v46 - v44)
+                                                                                   * (double)(v46 - v44));
+            if ( (int)Math::RoundToInt(v49) < *((_DWORD *)MEMORY[0x8871E0] + 1478)
+              && !Team::AllMembersValid((int *)*(this + 3)) )
+            {
+              v50 = (int *)(*(this + 3) + 156);
+              v64 = *v50;
+              v65 = v50[1];
+              v51 = *(this + 8) - v50[2];
+              if ( (int)((HIDWORD(v51) ^ v51) - HIDWORD(v51)) < 2 * MEMORY[0xA8F1C0] )
+              {
+                v64 = *v50;
+                v65 = v50[1];
+                v66 = v50[2];
+                if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v64) + 59) != 10 )
+                {
+                  (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1);
+                  return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+                }
+              }
+            }
+            if ( (v38[80] & 0x100) == 0
+              || (v60 = 1,
+                  v52 = (int *)(*(this + 3) + 156),
+                  v64 = *v52,
+                  v65 = v52[1],
+                  v53 = v52[2] / MEMORY[0xA8F1C0] - *((char *)v38 + 283),
+                  (int)((HIDWORD(v53) ^ v53) - HIDWORD(v53)) <= 2) )
+            {
+              v60 = 0;
+            }
+            Cell::ApplyDamage(v38, (int)&MEMORY[0xA8F180], 1, 1, v60);
+          }
+        }
+      }
+    }
+    result = *(this + 3);
+    *(_DWORD *)(result + 1612) = 10;
+  }
+  else
+  {
+    v15 = MEMORY[0xA8ED84];
+    v16 = *((double *)MEMORY[0x8871E0] + 748) * 900.0;
+    v17 = (#72 *)Math::RoundToInt(v16);
+    v18 = v65;
+    v19 = (#72 **)(*(this + 3) + 1600);
+    *v19 = v15;
+    v19[1] = (#72 *)v18;
+    v19[2] = v17;
+    if ( !(*(unsigned __int8 (__usercall **)@<al>(_DWORD@<ecx>, int *, double@<st0>))(*(_DWORD *)*(this + 3) + 716))(
+            *(this + 3),
+            this + 6,
+            v16) )
+      return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+    if ( (unsigned __int8)FootClass::ClearSomeVector2(*(this + 3)) )
+      goto LABEL_28;
+    v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), &v64);
+    v21 = Coord::Subtract(v67, *v20 - *v4, v20[1] - *(this + 7), v20[2] - *(this + 8));
+    v61 = *v21;
+    v22 = v21[1];
+    v23 = v21[2];
+    v62 = v22;
+    v63 = v23;
+    v24 = Math::Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v61 * (double)v61);
+    if ( (int)Math::RoundToInt(v24) >= *((_DWORD *)MEMORY[0x8871E0] + 1478) )
+      goto LABEL_28;
+    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 2
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 11 )
+    {
+      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+      result = *(this + 3);
+      if ( !*(_BYTE *)(result + 144) )
+        return result;
+    }
+    else
+    {
+LABEL_28:
+      v25 = (_DWORD *)*(this + 3);
+      v26 = v25[403];
+      if ( v26 <= 0 )
+      {
+        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v25 + 1152))(v25, 0, 1);
+        result = *(this + 3);
+        if ( !*(_BYTE *)(result + 144) )
+          return result;
+        if ( *(_BYTE *)(result + 1674) )
+          PlayVocClass(*((_DWORD *)MEMORY[0x8871E0] + 448), 0x2000, 1.0, 0);
+        *(_BYTE *)(*(this + 3) + 1674) = 0;
+      }
+      else
+      {
+        v25[403] = v26 - 1;
+      }
+    }
+    if ( !(*(unsigned __int8 (__stdcall **)(int *))(*(this + 1) + 16))(this + 1) )
+    {
+      v27 = (_DWORD *)*(this + 3);
+      if ( v27[173] )
+      {
+        if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v27 + 940))(v27, v27[173]) )
+        {
+          *(_BYTE *)(*(this + 3) + 1672) = 1;
+          if ( *(_DWORD *)(*(this + 3) + 1492) )
+            TeamClass::WakeUpAllMembers();
+          (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 968))(*(this + 3), 0);
+        }
+      }
+    }
+    if ( *(this + 9) != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+    {
+      (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+      *(this + 9) = MEMORY[0xA8F180];
+      *(this + 10) = MEMORY[0xA8F184];
+      *(this + 11) = MEMORY[0xA8F188];
+    }
+    return (*(int (__stdcall **)(int *))(*(this + 1) + 72))(this + 1);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 28h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     esi, ecx
+call    MovementAI__MarkOccupiedPathCell
+mov     ecx, [esi+0Ch]
+mov     edx, [esi+18h]
+lea     edi, [esi+18h]
+mov     eax, [ecx+5E0h]
+mov     [esp+38h+var_28], eax
+mov     eax, dword_A8ED54+42Ch
+cmp     edx, eax
+jnz     short loc_516513
+mov     eax, [edi+4]
+mov     edx, dword_A8ED54+430h
+cmp     eax, edx
+jnz     short loc_516513
+mov     edx, [edi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_516584
+
+loc_516513:                             ; CODE XREF: MovementAI__StepFootClass+28↑j
+; MovementAI__StepFootClass+35↑j
+mov     eax, [edi]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     ebp, eax
+mov     eax, [edi+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+38h+var_24]
+mov     ebx, eax
+mov     eax, [ecx]
+push    edx
+sar     ebp, 8
+sar     ebx, 8
+call    dword ptr [eax+1B8h]
+cmp     [eax], bp
+jnz     short loc_516584
+cmp     [eax+2], bx
+jnz     short loc_516584
+mov     ecx, [esi+0Ch]
+lea     edx, [esp+38h+var_18]
+push    0
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+4Ch]
+mov     eax, [eax+8]
+mov     ecx, [esi+20h]
+sub     eax, ecx
+mov     ecx, dword_A8ED54+46Ch
+cdq
+xor     eax, edx
+sub     eax, edx
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jge     short loc_516584
+mov     ecx, [esi+4]
+lea     eax, [esi+4]
+push    eax
+call    dword ptr [ecx+48h]
+jmp     loc_5166CC
+; ---------------------------------------------------------------------------
+
+loc_516584:                             ; CODE XREF: MovementAI__StepFootClass+41↑j
+; MovementAI__StepFootClass+74↑j ...
+cmp     [esp+38h+var_28], 0FFFFFFFFh
+jnz     loc_516BD7
+mov     eax, dword_A8ED54+42Ch
+mov     ecx, [edi]
+cmp     ecx, eax
+jnz     short loc_5165B8
+mov     ecx, dword_A8ED54+430h
+mov     eax, [edi+4]
+cmp     eax, ecx
+jnz     short loc_5165B8
+mov     edx, dword_A8ED54+434h
+mov     eax, [edi+8]
+cmp     eax, edx
+jz      loc_516BD7
+
+loc_5165B8:                             ; CODE XREF: MovementAI__StepFootClass+C8↑j
+; MovementAI__StepFootClass+D5↑j
+mov     eax, [edi]
+mov     ecx, [esi+0Ch]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     ebp, eax
+mov     eax, [edi+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+38h+var_24]
+mov     ebx, eax
+mov     eax, [ecx]
+push    edx
+sar     ebp, 8
+sar     ebx, 8
+call    dword ptr [eax+1B8h]
+cmp     [eax], bp
+jnz     short loc_516621
+cmp     [eax+2], bx
+jnz     short loc_516621
+mov     ecx, [esi+0Ch]
+lea     edx, [esp+38h+var_18]
+push    0
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+4Ch]
+mov     eax, [eax+8]
+mov     ecx, [esi+20h]
+sub     eax, ecx
+mov     ecx, dword_A8ED54+46Ch
+cdq
+xor     eax, edx
+sub     eax, edx
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jle     loc_516BD7
+
+loc_516621:                             ; CODE XREF: MovementAI__StepFootClass+11C↑j
+; MovementAI__StepFootClass+122↑j
+mov     ecx, [esi+0Ch]
+mov     ebx, [ecx+640h]
+mov     eax, [ecx+648h]
+cmp     ebx, 0FFFFFFFFh
+jz      short loc_516643
+mov     edx, dword_A8ED54+30h
+sub     edx, ebx
+cmp     edx, eax
+jge     short loc_51664B
+sub     eax, edx
+
+loc_516643:                             ; CODE XREF: MovementAI__StepFootClass+163↑j
+test    eax, eax
+jnz     loc_516BD7
+
+loc_51664B:                             ; CODE XREF: MovementAI__StepFootClass+16F↑j
+mov     eax, [edi]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+38h+var_28], ax
+mov     eax, [edi+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+38h+var_28+2], ax
+mov     eax, [esp+38h+arg_0]
+mov     edx, [esp+38h+var_28]
+push    eax
+push    0
+push    edx
+call    FootClass__MovementStep
+test    al, al
+jnz     loc_5168D0
+mov     eax, ds:8871E0h
+mov     ebx, dword_A8ED54+30h
+fld     qword ptr [eax+1760h]
+fmul    ds:dbl_7E27F8
+call    Math__RoundToInt
+mov     ecx, [esi+0Ch]
+mov     edx, [esp+38h+var_14]
+add     ecx, 640h
+push    edi
+mov     [ecx], ebx
+mov     [ecx+4], edx
+mov     [ecx+8], eax
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+2CCh]
+test    al, al
+jnz     short loc_5166E7
+
+loc_5166CC:                             ; CODE XREF: MovementAI__StepFootClass+AF↑j
+mov     esi, [esi+0Ch]
+push    1
+push    0
+mov     ecx, esi
+mov     edx, [esi]
+call    dword ptr [edx+480h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5166E7:                             ; CODE XREF: MovementAI__StepFootClass+1FA↑j
+mov     ecx, [esi+0Ch]
+call    FootClass__ClearSomeVector2
+test    al, al
+jnz     loc_5167BF
+mov     ecx, [esi+0Ch]
+lea     edx, [esp+38h+var_18]
+push    edx
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     ecx, [eax+8]
+mov     ebx, [edi+8]
+mov     edx, [eax+4]
+mov     ebp, [edi+4]
+mov     eax, [eax]
+sub     ecx, ebx
+push    ecx
+mov     ecx, [edi]
+sub     edx, ebp
+sub     eax, ecx
+push    edx
+push    eax
+lea     ecx, [esp+44h+var_C]
+call    Coord__Subtract
+mov     ecx, [eax]
+sub     esp, 8
+mov     [esp+40h+var_24], ecx
+mov     edx, [eax+4]
+fild    [esp+40h+var_24]
+mov     eax, [eax+8]
+mov     [esp+40h+var_20], edx
+fild    [esp+40h+var_20]
+mov     [esp+40h+var_1C], eax
+fild    [esp+40h+var_1C]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+40h+var_40] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ecx, ds:8871E0h
+cmp     eax, [ecx+1718h]
+jge     short loc_5167BF
+mov     ecx, [esi+0Ch]
+mov     edx, [ecx]
+call    dword ptr [edx+184h]
+cmp     eax, 2
+jz      short loc_51679D
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+184h]
+cmp     eax, 0Bh
+jnz     short loc_5167BF
+
+loc_51679D:                             ; CODE XREF: MovementAI__StepFootClass+2BB↑j
+mov     ecx, [esi+0Ch]
+push    1
+push    0
+mov     edx, [ecx]
+call    dword ptr [edx+480h]
+mov     eax, [esi+0Ch]
+mov     cl, [eax+90h]
+test    cl, cl
+jz      loc_516BD7
+jmp     short loc_516822
+; ---------------------------------------------------------------------------
+
+loc_5167BF:                             ; CODE XREF: MovementAI__StepFootClass+221↑j
+; MovementAI__StepFootClass+2AB↑j ...
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx+64Ch]
+test    eax, eax
+jle     short loc_5167D5
+dec     eax
+mov     [ecx+64Ch], eax
+jmp     short loc_516822
+; ---------------------------------------------------------------------------
+
+loc_5167D5:                             ; CODE XREF: MovementAI__StepFootClass+2FA↑j
+mov     edx, [ecx]
+push    1
+push    0
+call    dword ptr [edx+480h]
+mov     eax, [esi+0Ch]
+mov     cl, [eax+90h]
+test    cl, cl
+jz      loc_516BD7
+mov     cl, [eax+68Ah]
+test    cl, cl
+jz      short loc_516818
+mov     eax, ds:8871E0h
+push    0               ; int
+mov     edx, 2000h
+push    3F800000h       ; float
+mov     ecx, [eax+700h]
+call    PlayVocClass
+
+loc_516818:                             ; CODE XREF: MovementAI__StepFootClass+32A↑j
+mov     ecx, [esi+0Ch]
+mov     byte ptr [ecx+68Ah], 0
+
+loc_516822:                             ; CODE XREF: MovementAI__StepFootClass+2ED↑j
+; MovementAI__StepFootClass+303↑j
+mov     edx, [esi+4]
+lea     ebx, [esi+4]
+push    ebx
+call    dword ptr [edx+10h]
+test    al, al
+jnz     short loc_516873
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx+2B4h]
+test    eax, eax
+jz      short loc_516873
+mov     edx, [ecx]
+push    eax
+call    dword ptr [edx+3ACh]
+test    al, al
+jnz     short loc_516873
+mov     eax, [esi+0Ch]
+mov     byte ptr [eax+688h], 1
+mov     ecx, [esi+0Ch]
+mov     ecx, [ecx+5D4h]
+test    ecx, ecx
+jz      short loc_516866
+call    TeamClass__WakeUpAllMembers
+
+loc_516866:                             ; CODE XREF: MovementAI__StepFootClass+38F↑j
+mov     ecx, [esi+0Ch]
+push    0
+mov     edx, [ecx]
+call    dword ptr [edx+3C8h]
+
+loc_516873:                             ; CODE XREF: MovementAI__StepFootClass+35E↑j
+; MovementAI__StepFootClass+36B↑j ...
+mov     eax, [esi+24h]
+mov     ecx, dword_A8ED54+42Ch
+lea     edi, [esi+24h]
+cmp     eax, ecx
+jnz     short loc_51689B
+mov     ecx, [edi+4]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_51689B
+mov     edx, [edi+8]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_5168C0
+
+loc_51689B:                             ; CODE XREF: MovementAI__StepFootClass+3B1↑j
+; MovementAI__StepFootClass+3BD↑j
+mov     ecx, [esi+0Ch]
+push    edi
+mov     eax, [ecx]
+call    dword ptr [eax+0F4h]
+mov     ecx, dword_A8ED54+42Ch
+mov     [edi], ecx
+mov     edx, dword_A8ED54+430h
+mov     [edi+4], edx
+mov     eax, dword_A8ED54+434h
+mov     [edi+8], eax
+
+loc_5168C0:                             ; CODE XREF: MovementAI__StepFootClass+3C9↑j
+mov     ecx, [ebx]
+push    ebx
+call    dword ptr [ecx+48h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_5168D0:                             ; CODE XREF: MovementAI__StepFootClass+1B5↑j
+mov     edx, ds:8871E0h
+mov     ebp, dword_A8ED54+30h
+fld     qword ptr [edx+1760h]
+fmul    ds:dbl_7E27F8
+call    Math__RoundToInt
+mov     ecx, [esi+0Ch]
+mov     edx, [esp+38h+var_8]
+add     ecx, 640h
+mov     [ecx], ebp
+mov     [ecx+4], edx
+lea     edx, [esp+38h+var_C]
+push    edx
+mov     [ecx+8], eax
+mov     ecx, [esi+0Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     ebp, eax
+push    1
+mov     eax, [ebp+0]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     ecx, eax
+mov     eax, [ebp+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     edx, [esi+0Ch]
+sar     ecx, 8
+mov     edx, [edx+5E0h]
+and     edx, 7
+sar     eax, 8
+mov     bx, ds:89F688h[edx*4]
+lea     edx, ds:89F688h[edx*4]
+add     bx, cx
+mov     cx, [edx+2]
+mov     word ptr [esp+3Ch+var_28], bx
+add     cx, ax
+lea     eax, [esp+3Ch+arg_0]
+mov     word ptr [esp+3Ch+var_28+2], cx
+mov     edx, [esp+3Ch+var_28]
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+40h+arg_0], edx
+call    LayerClass__IsWithinUsableArea
+test    al, al
+jz      loc_516BCA
+mov     ebx, [esi+0Ch]
+push    1
+push    0
+mov     ecx, ebx
+mov     ebp, [ebx]
+call    ObjectClass__GetLandHeight
+mov     ecx, [esi+0Ch]
+push    eax
+lea     eax, [esp+44h+arg_0]
+mov     edx, [ecx+5E0h]
+mov     ecx, 87F7E8h
+push    edx
+push    eax
+call    CellCoord__To_CellObj
+push    eax
+mov     ecx, ebx
+call    dword ptr [ebp+1ACh]
+cmp     eax, 6
+jnz     loc_516BCA
+lea     ecx, [esp+38h+arg_0]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     edx, [esi+0Ch]
+mov     ebx, eax
+add     edx, 9Ch
+mov     eax, [edx]
+mov     [esp+38h+var_18], eax
+movsx   eax, word ptr [esp+38h+arg_0+2]
+mov     ecx, [edx+4]
+mov     [esp+38h+var_14], ecx
+lea     ecx, [esp+38h+var_18]
+mov     ebp, [edx+8]
+movsx   edx, word ptr [esp+38h+arg_0]
+shl     eax, 8
+add     eax, 80h
+mov     [esp+38h+var_14], eax
+xor     eax, eax
+shl     edx, 8
+push    eax
+add     edx, 80h
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+40h+var_18], edx
+mov     [esp+40h+var_10], eax
+mov     [esp+40h+var_24], eax
+mov     [esp+40h+var_20], eax
+call    Cell__GetGroundHeight
+mov     edx, eax
+mov     eax, dword_A8ED54+46Ch
+lea     eax, [eax+eax*2]
+add     edx, eax
+cmp     ebp, edx
+lea     edx, [esp+3Ch+var_24]
+setnle  cl
+push    ecx
+push    edx
+mov     ecx, ebx
+call    Object__FindClosestObjectCell
+test    eax, eax
+jz      loc_516BCA
+push    eax
+mov     eax, [esi+0Ch]
+mov     ecx, [eax+21Ch]
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jz      loc_516BCA
+mov     ecx, [esi+0Ch]
+lea     eax, [esp+38h+var_C]
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+48h]
+mov     ecx, [eax]
+mov     edx, [edi]
+mov     ebp, [edi+4]
+sub     ecx, edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [esp+38h+var_24], ecx
+mov     ecx, [edi+8]
+sub     edx, ebp
+sub     eax, ecx
+mov     [esp+38h+var_20], edx
+mov     [esp+38h+var_1C], eax
+fild    [esp+38h+var_20]
+fild    [esp+38h+var_1C]
+fild    [esp+38h+var_24]
+sub     esp, 8
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+40h+var_40] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ecx, ds:8871E0h
+cmp     eax, [ecx+1718h]
+jge     loc_516B6D
+mov     ecx, [esi+0Ch]
+call    Team__AllMembersValid
+test    al, al
+jnz     loc_516B6D
+mov     ecx, [esi+0Ch]
+add     ecx, 9Ch
+mov     edx, ecx
+mov     eax, [edx]
+mov     [esp+38h+var_18], eax
+mov     eax, [edx+4]
+mov     [esp+38h+var_14], eax
+mov     eax, [esi+20h]
+mov     edx, [edx+8]
+sub     eax, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+mov     edx, dword_A8ED54+46Ch
+add     edx, edx
+cmp     eax, edx
+jge     short loc_516B6D
+mov     eax, [ecx]
+mov     [esp+38h+var_18], eax
+mov     edx, [ecx+4]
+mov     [esp+38h+var_14], edx
+mov     eax, [ecx+8]
+lea     ecx, [esp+38h+var_18]
+mov     [esp+38h+var_10], eax
+push    ecx
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+cmp     dword ptr [eax+0ECh], 0Ah
+jz      short loc_516B6D
+mov     edx, [esi+4]
+lea     eax, [esi+4]
+push    eax
+call    dword ptr [edx+48h]
+mov     esi, [esi+0Ch]
+push    1
+push    0
+mov     ecx, esi
+mov     eax, [esi]
+call    dword ptr [eax+480h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_516B6D:                             ; CODE XREF: MovementAI__StepFootClass+605↑j
+; MovementAI__StepFootClass+615↑j ...
+mov     eax, [ebx+140h]
+test    ah, 1
+jz      short loc_516BB0
+mov     ecx, [esi+0Ch]
+mov     byte ptr [esp+38h+var_28], 1
+add     ecx, 9Ch
+mov     edx, [ecx]
+mov     [esp+38h+var_18], edx
+mov     eax, [ecx+4]
+mov     [esp+38h+var_14], eax
+mov     eax, [ecx+8]
+cdq
+idiv    dword_A8ED54+46Ch
+movsx   ecx, byte ptr [ebx+11Bh]
+sub     eax, ecx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, 2
+jg      short loc_516BB5
+
+loc_516BB0:                             ; CODE XREF: MovementAI__StepFootClass+6A6↑j
+mov     byte ptr [esp+38h+var_28], 0
+
+loc_516BB5:                             ; CODE XREF: MovementAI__StepFootClass+6DE↑j
+mov     edx, [esp+38h+var_28]
+mov     ecx, ebx
+push    edx
+push    1
+push    1
+push    (offset dword_A8ED54+42Ch)
+call    Cell__ApplyDamage
+
+loc_516BCA:                             ; CODE XREF: MovementAI__StepFootClass+4AB↑j
+; MovementAI__StepFootClass+4E7↑j ...
+mov     eax, [esi+0Ch]
+mov     dword ptr [eax+64Ch], 0Ah
+
+loc_516BD7:                             ; CODE XREF: MovementAI__StepFootClass+B9↑j
+; MovementAI__StepFootClass+E2↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    4
+*/
+} }
 // 0x583820
-namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) { return nullptr; } }
+namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
+// [IDA decompile]
+_DWORD *__thiscall Pathfinding_CheckCliff(int *this, _DWORD *a2, __int16 *a3, int a4, int a5)
+{
+  unsigned int v5; // eax
+  int *v6; // eax
+  int *v7; // ecx
+  int *NeighbourContent; // ebx
+  int v10; // eax
+  int *v11; // edi
+  unsigned int v12; // esi
+  int v13; // edx
+  int v14; // ebp
+  int v15; // esi
+  _WORD *v16; // ecx
+  int v17; // edi
+  __int16 **i; // esi
+  int v19; // eax
+  int v20; // edx
+  _DWORD *v21; // [esp+0h] [ebp-28h]
+  _DWORD *v22; // [esp+4h] [ebp-24h]
+  int v23; // [esp+4h] [ebp-24h]
+  int v24; // [esp+8h] [ebp-20h]
+  _DWORD v26[6]; // [esp+10h] [ebp-18h] BYREF
+
+  v5 = *a3 + (a3[1] << 9);
+  if ( v5 < 0x40000 && (v6 = *(int **)(MEMORY[0x87F924] + 4 * v5)) != 0 )
+  {
+    v7 = v6;
+  }
+  else
+  {
+    v7 = (int *)&MEMORY[0xABDC50];
+    MEMORY[0xABDC74] = *(_DWORD *)a3;
+  }
+  if ( (v7[80] & 0x100) != 0 )
+  {
+    NeighbourContent = v7;
+    v10 = -((v7[80] & 0x800) != 0);
+    v11 = v7;
+    LOBYTE(v10) = v10 & 0xFE;
+    v22 = v7 + 80;
+    v21 = v7 + 80;
+    v12 = v10 + 4;
+    a3 = (__int16 *)MEMORY[0xABD480];
+    v24 = MEMORY[0xABD480];
+    do
+    {
+      if ( (*v22 & 0x100) != 0 )
+      {
+        NeighbourContent = (int *)Cell::GetNeighbourContent(NeighbourContent, v12);
+        v22 = NeighbourContent + 80;
+        if ( (NeighbourContent[80] & 0x100) == 0
+          && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
+          && NeighbourContent[59] != 3 )
+        {
+          a3 = (__int16 *)NeighbourContent[9];
+        }
+      }
+      if ( (*v21 & 0x100) != 0 )
+      {
+        v11 = (int *)Cell::GetNeighbourContent(v11, ((_BYTE)v12 - 4) & 7);
+        v21 = v11 + 80;
+        if ( (v11[80] & 0x100) == 0 && (Cell::IsInRange(v11) || Cell::IsInRange2(v11)) && v11[59] != 3 )
+          v24 = v11[9];
+      }
+    }
+    while ( (*v21 & 0x100) != 0 || (*v22 & 0x100) != 0 );
+    v13 = ((_BYTE)v12 + 2) & 7;
+    v26[0] = a3;
+    v14 = a5;
+    v15 = ((_BYTE)v12 - 2) & 7;
+    LOWORD(v23) = LOWORD(MEMORY[0x89F688][v13]) + (_WORD)a3;
+    HIWORD(v23) = HIWORD(a3) + HIWORD(MEMORY[0x89F688][v13]);
+    v26[1] = v23;
+    v16 = (_WORD *)(4 * v15 + 9041544);
+    LOWORD(a3) = (_WORD)a3 + LOWORD(MEMORY[0x89F688][v15]);
+    HIWORD(a3) += HIWORD(MEMORY[0x89F688][v15]);
+    LOWORD(v15) = MEMORY[0x89F688][v13];
+    v26[2] = a3;
+    v26[3] = v24;
+    LOWORD(a3) = v24 + v15;
+    HIWORD(a3) = HIWORD(v24) + HIWORD(MEMORY[0x89F688][v13]);
+    v26[4] = a3;
+    LOWORD(v15) = *v16;
+    LOWORD(v16) = HIWORD(v24) + v16[1];
+    LOWORD(a3) = v24 + v15;
+    HIWORD(a3) = (_WORD)v16;
+    v26[5] = a3;
+    v17 = 0;
+    for ( i = (__int16 **)v26; ; ++i )
+    {
+      a3 = *i;
+      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&a3, 1) )
+      {
+        v19 = (__int16)a3 + SHIWORD(a3) * (*(this + 62) + *(this + 61) + 1);
+        if ( v19 >= 0 )
+        {
+          v20 = *(this + 27);
+          if ( v19 >= v20 )
+            v19 = v20 - 1;
+        }
+        else
+        {
+          v19 = 0;
+        }
+        if ( *(__int16 *)(*(this + 28) + 2 * (a4 + 4 * v19 + v19)) == v14 )
+          break;
+      }
+      if ( ++v17 >= 6 )
+      {
+        *a2 = MEMORY[0xABD480];
+        return a2;
+      }
+    }
+    *a2 = a3;
+    return a2;
+  }
+  else
+  {
+    *a2 = v7[9];
+    return a2;
+  }
+}
+
+/* ASM:
+sub     esp, 28h
+mov     [esp+28h+var_1C], ecx
+mov     ecx, [esp+28h+arg_4]
+movsx   eax, word ptr [ecx+2]
+movsx   edx, word ptr [ecx]
+shl     eax, 9
+add     eax, edx
+js      short loc_583851
+cmp     eax, 40000h
+jge     short loc_583851
+mov     edx, ds:87F924h
+mov     eax, [edx+eax*4]
+test    eax, eax
+jz      short loc_583851
+mov     ecx, eax
+jmp     short loc_58385D
+; ---------------------------------------------------------------------------
+
+loc_583851:                             ; CODE XREF: Pathfinding__CheckCliff+17↑j
+; Pathfinding__CheckCliff+1E↑j ...
+mov     eax, [ecx]
+mov     ecx, (offset dword_A8ED54+2EEFCh)
+mov     dword_A8ED54+2EF20h, eax
+
+loc_58385D:                             ; CODE XREF: Pathfinding__CheckCliff+2F↑j
+mov     eax, [ecx+140h]
+lea     edx, [ecx+140h]
+push    ebx
+push    ebp
+push    esi
+push    edi
+test    ah, 1
+jnz     short loc_583885
+mov     eax, [esp+38h+arg_0]
+mov     ecx, [ecx+24h]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], ecx
+pop     ebx
+add     esp, 28h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_583885:                             ; CODE XREF: Pathfinding__CheckCliff+50↑j
+and     eax, 800h
+mov     ebx, ecx
+neg     eax
+sbb     eax, eax
+mov     edi, ecx
+and     al, 0FEh
+mov     [esp+38h+var_24], edx
+add     eax, 4
+mov     [esp+38h+var_28], edx
+mov     esi, eax
+mov     eax, dword_A8ED54+2E72Ch
+mov     [esp+38h+arg_4], eax
+mov     [esp+38h+var_20], eax
+lea     ebp, [esi-4]
+and     ebp, 7
+
+loc_5838B4:                             ; CODE XREF: Pathfinding__CheckCliff+13D↓j
+; Pathfinding__CheckCliff+14C↓j
+mov     edx, [esp+38h+var_24]
+mov     eax, [edx]
+test    ah, 1
+jz      short loc_583904
+push    esi
+mov     ecx, ebx
+call    Cell__GetNeighbourContent
+mov     ebx, eax
+mov     ecx, [ebx+140h]
+lea     eax, [ebx+140h]
+test    ch, 1
+mov     [esp+38h+var_24], eax
+jnz     short loc_583904
+mov     ecx, ebx
+call    Cell__IsInRange
+test    al, al
+jnz     short loc_5838F4
+mov     ecx, ebx
+call    Cell__IsInRange2
+test    al, al
+jz      short loc_583904
+
+loc_5838F4:                             ; CODE XREF: Pathfinding__CheckCliff+C7↑j
+cmp     dword ptr [ebx+0ECh], 3
+jz      short loc_583904
+mov     eax, [ebx+24h]
+mov     [esp+38h+arg_4], eax
+
+loc_583904:                             ; CODE XREF: Pathfinding__CheckCliff+9D↑j
+; Pathfinding__CheckCliff+BC↑j ...
+mov     ecx, [esp+38h+var_28]
+mov     eax, [ecx]
+test    ah, 1
+jz      short loc_583954
+push    ebp
+mov     ecx, edi
+call    Cell__GetNeighbourContent
+mov     edi, eax
+mov     ecx, [edi+140h]
+lea     eax, [edi+140h]
+test    ch, 1
+mov     [esp+38h+var_28], eax
+jnz     short loc_583954
+mov     ecx, edi
+call    Cell__IsInRange
+test    al, al
+jnz     short loc_583944
+mov     ecx, edi
+call    Cell__IsInRange2
+test    al, al
+jz      short loc_583954
+
+loc_583944:                             ; CODE XREF: Pathfinding__CheckCliff+117↑j
+cmp     dword ptr [edi+0ECh], 3
+jz      short loc_583954
+mov     edx, [edi+24h]
+mov     [esp+38h+var_20], edx
+
+loc_583954:                             ; CODE XREF: Pathfinding__CheckCliff+ED↑j
+; Pathfinding__CheckCliff+10C↑j ...
+mov     eax, [esp+38h+var_28]
+mov     ecx, [eax]
+test    ch, 1
+jnz     loc_5838B4
+mov     ecx, [esp+38h+var_24]
+mov     eax, [ecx]
+test    ah, 1
+jnz     loc_5838B4
+mov     ecx, [esp+38h+arg_4]
+lea     edx, [esi+2]
+and     edx, 7
+mov     [esp+38h+var_18], ecx
+add     esi, 0FFFFFFFEh
+mov     ebp, [esp+38h+arg_C]
+add     cx, ds:89F688h[edx*4]
+lea     eax, ds:89F688h[edx*4]
+mov     dx, word ptr [esp+38h+arg_4+2]
+and     esi, 7
+mov     word ptr [esp+38h+var_24], cx
+mov     cx, [eax+2]
+add     cx, dx
+mov     word ptr [esp+38h+var_24+2], cx
+mov     ecx, [esp+38h+var_24]
+mov     [esp+38h+var_14], ecx
+lea     ecx, ds:89F688h[esi*4]
+mov     si, ds:89F688h[esi*4]
+add     si, word ptr [esp+38h+arg_4]
+mov     word ptr [esp+38h+arg_4], si
+mov     si, [ecx+2]
+add     si, dx
+mov     word ptr [esp+38h+arg_4+2], si
+mov     edx, [esp+38h+arg_4]
+mov     si, [eax]
+mov     [esp+38h+var_10], edx
+mov     edx, [esp+38h+var_20]
+add     si, dx
+mov     [esp+38h+var_C], edx
+mov     word ptr [esp+38h+arg_4], si
+mov     si, [eax+2]
+mov     ax, word ptr [esp+38h+var_20+2]
+add     si, ax
+mov     word ptr [esp+38h+arg_4+2], si
+mov     esi, [esp+38h+arg_4]
+mov     [esp+38h+var_8], esi
+mov     si, [ecx]
+mov     cx, [ecx+2]
+add     si, dx
+add     cx, ax
+mov     word ptr [esp+38h+arg_4], si
+mov     word ptr [esp+38h+arg_4+2], cx
+mov     edx, [esp+38h+arg_4]
+mov     [esp+38h+var_4], edx
+xor     edi, edi
+lea     esi, [esp+38h+var_18]
+
+loc_583A35:                             ; CODE XREF: Pathfinding__CheckCliff+280↓j
+mov     eax, [esi]
+lea     ecx, [esp+38h+arg_4]
+push    1
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+40h+arg_4], eax
+call    LayerClass__IsWithinUsableArea
+test    al, al
+jz      short loc_583A99
+mov     ecx, [esp+38h+var_1C]
+mov     ebx, [esp+38h+arg_4]
+mov     edx, [ecx+0F8h]
+mov     eax, [ecx+0F4h]
+lea     eax, [edx+eax+1]
+movsx   edx, word ptr [esp+38h+arg_4+2]
+imul    eax, edx
+movsx   edx, bx
+add     eax, edx
+jns     short loc_583A7B
+xor     eax, eax
+jmp     short loc_583A85
+; ---------------------------------------------------------------------------
+
+loc_583A7B:                             ; CODE XREF: Pathfinding__CheckCliff+255↑j
+mov     edx, [ecx+6Ch]
+cmp     eax, edx
+jl      short loc_583A85
+lea     eax, [edx-1]
+
+loc_583A85:                             ; CODE XREF: Pathfinding__CheckCliff+259↑j
+; Pathfinding__CheckCliff+260↑j
+mov     edx, [esp+38h+arg_8]
+mov     ecx, [ecx+70h]
+lea     edx, [edx+eax*4]
+add     eax, edx
+movsx   edx, word ptr [ecx+eax*2]
+cmp     edx, ebp
+jz      short loc_583AB8
+
+loc_583A99:                             ; CODE XREF: Pathfinding__CheckCliff+22E↑j
+inc     edi
+add     esi, 4
+cmp     edi, 6
+jl      short loc_583A35
+mov     eax, [esp+38h+arg_0]
+mov     ecx, dword_A8ED54+2E72Ch
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], ecx
+pop     ebx
+add     esp, 28h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_583AB8:                             ; CODE XREF: Pathfinding__CheckCliff+277↑j
+mov     eax, [esp+38h+arg_0]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], ebx
+pop     ebx
+add     esp, 28h
+retn    10h
+*/
+} }
 // 0x5B29C0
-namespace gamemd { int Movement::CompareAbsCoords(void* a1, void* a2) { return 0; } }
+namespace gamemd { int Movement::CompareAbsCoords(void* a1, void* a2) {
+// [IDA decompile]
+char __thiscall sub_5B29C0(__int16 *this, __int16 *a2, __int16 *a3)
+{
+  __int16 v3; // bp
+  __int16 v4; // di
+  __int16 v5; // si
+
+  v3 = *a3;
+  v4 = *a2;
+  v5 = *this;
+  if ( abs16(*a3) < (int)abs16(*this - *a2) )
+  {
+    if ( (__int16)(v4 - v5) >= 0 )
+      *this = v5 + v3;
+    else
+      *this = v5 - v3;
+    return 0;
+  }
+  else
+  {
+    *this = v4;
+    return 1;
+  }
+}
+
+/* ASM:
+mov     edx, [esp+arg_4] ; TODO: classify (grp=blit, sz=0x64)
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+mov     bp, [edx]
+push    esi
+push    edi
+mov     di, [eax]
+mov     si, [ecx]
+movsx   eax, bp
+cdq
+xor     eax, edx
+mov     ebx, esi
+sub     eax, edx
+sub     ebx, edi
+mov     [esp+10h+arg_0], eax
+movsx   eax, bx
+cdq
+xor     eax, edx
+sub     eax, edx
+mov     edx, [esp+10h+arg_0]
+cmp     edx, eax
+jl      short loc_5B2A01
+mov     [ecx], di
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5B2A01:                             ; CODE XREF: Movement__CompareAbsCoords+33↑j
+sub     edi, esi
+test    di, di
+jge     short loc_5B2A16
+sub     esi, ebp
+pop     edi
+mov     [ecx], si
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5B2A16:                             ; CODE XREF: Movement__CompareAbsCoords+46↑j
+add     ebp, esi
+pop     edi
+mov     [ecx], bp
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} }
 // 0x5B2A30
-namespace gamemd { void Movement::UpdateLocomotion(void* a1) { } }
+namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
+// [IDA decompile]
+void __thiscall sub_5B2A30(double *this, __int16 *a2)
+{
+  double v3; // st7
+  double v4; // st7
+  double v5; // [esp+18h] [ebp-10h]
+  double v6; // [esp+20h] [ebp-8h]
+
+  v3 = Math::Sqrt(*this * *this + *(this + 1) * *(this + 1));
+  v4 = Math::CalcAngle(*(this + 2), v3);
+  v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
+     * -0.00009587672516830327;
+  v6 = Math::Sqrt(*(this + 2) * *(this + 2) + *this * *this + *(this + 1) * *(this + 1));
+  if ( v5 != 0.0 )
+  {
+    *this = *this / Math::ArcTan2(v5);
+    *(this + 1) = *(this + 1) / Math::ArcTan2(v5);
+  }
+  *this = Math::ArcTan2((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * *this;
+  *(this + 1) = Math::ArcTan2((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * *(this + 1);
+  *(this + 2) = Math::SinCos((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * v6;
+}
+
+/* ASM:
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 14h
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+sub     esp, 8
+fld     qword ptr [esi+8]
+fld     qword ptr [esi]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fstp    [esp+28h+var_28] ; double
+fstp    st
+fstp    st
+call    Math__Sqrt
+mov     edx, [esi+14h]
+fstp    [esp+28h+var_10]
+mov     eax, dword ptr [esp+28h+var_10+4]
+mov     ecx, dword ptr [esp+28h+var_10]
+push    eax
+mov     eax, [esi+10h]
+push    ecx             ; double
+push    edx
+push    eax             ; double
+call    Math__CalcAngle
+fsub    ds:dbl_7E2820
+fmul    ds:dbl_7E2818
+call    Math__RoundToInt
+movsx   ecx, ax
+sub     ecx, 3FFFh
+add     esp, 10h
+mov     dword ptr [esp+28h+var_10], ecx
+fild    dword ptr [esp+28h+var_10]
+fmul    ds:dbl_7E2810
+fstp    [esp+28h+var_10]
+fld     qword ptr [esi+10h]
+fld     qword ptr [esi+8]
+fld     qword ptr [esi]
+fld     st(2)
+fmul    st, st(3)
+fld     st(1)
+fmul    st, st(2)
+faddp   st(1), st
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fstp    [esp+28h+var_28] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fstp    [esp+28h+var_8]
+fld     [esp+28h+var_10]
+fcomp   ds:dbl_7E2800
+add     esp, 8
+fnstsw  ax
+test    ah, 40h
+jnz     short loc_5B2B07
+mov     edi, dword ptr [esp+20h+var_10+4]
+mov     ebx, dword ptr [esp+20h+var_10]
+push    edi
+push    ebx             ; double
+call    Math__ArcTan2
+fdivr   qword ptr [esi]
+push    edi
+push    ebx             ; double
+fstp    qword ptr [esi]
+call    Math__ArcTan2
+fdivr   qword ptr [esi+8]
+add     esp, 10h
+fstp    qword ptr [esi+8]
+
+loc_5B2B07:                             ; CODE XREF: Movement__UpdateLocomotion+B2↑j
+mov     edi, [ebp+arg_0]
+sub     esp, 8
+movsx   edx, word ptr [edi]
+sub     edx, 3FFFh
+mov     dword ptr [esp+28h+var_10], edx
+fild    dword ptr [esp+28h+var_10]
+fmul    ds:dbl_7E2810
+fstp    [esp+28h+var_28] ; double
+call    Math__ArcTan2
+fmul    qword ptr [esi]
+fstp    qword ptr [esi]
+movsx   eax, word ptr [edi]
+sub     eax, 3FFFh
+mov     dword ptr [esp+28h+var_10], eax
+fild    dword ptr [esp+28h+var_10]
+fmul    ds:dbl_7E2810
+fstp    [esp+28h+var_28] ; double
+call    Math__ArcTan2
+fmul    qword ptr [esi+8]
+fstp    qword ptr [esi+8]
+movsx   ecx, word ptr [edi]
+sub     ecx, 3FFFh
+mov     dword ptr [esp+28h+var_10], ecx
+fild    dword ptr [esp+28h+var_10]
+fmul    ds:dbl_7E2810
+fstp    [esp+28h+var_28] ; double
+call    Math__SinCos
+fmul    [esp+28h+var_8]
+add     esp, 8
+pop     edi
+fstp    qword ptr [esi+10h]
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+*/
+} }
 // 0x668BF0
-namespace gamemd { int RulesClass::Addition() { return 0; } }
+namespace gamemd { int RulesClass::Addition() {
+// [IDA decompile]
+int __thiscall RulesClass_Addition(#381 *this)
+{
+  char *v1; // esi
+  int v3; // ebx
+  char *v4; // ebp
+  unsigned __int8 *v5; // eax
+  int Coord; // eax
+  char *v7; // edx
+  char v8; // cl
+  bool v9; // cc
+  int v10; // ebp
+  int i; // ebx
+  unsigned __int8 *v12; // eax
+  int v13; // ebp
+  int j; // ebx
+  unsigned __int8 *v15; // eax
+  int v16; // ebp
+  int k; // ebx
+  unsigned __int8 *v18; // eax
+  int v19; // ebp
+  int m; // ebx
+  unsigned __int8 *v21; // eax
+  int v22; // ebp
+  int n; // ebx
+  unsigned __int8 *v24; // eax
+  int v25; // ebp
+  int ii; // ebx
+  unsigned __int8 *v27; // eax
+  char v29[4]; // [esp+10h] [ebp-2Ch] BYREF
+  unsigned __int8 *StringByIndex; // [esp+14h] [ebp-28h]
+  int KeyCount; // [esp+18h] [ebp-24h]
+  char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
+  #381 *v33; // [esp+40h] [ebp+4h] BYREF
+
+  v1 = (char *)v33;
+  RulesClass::ReadColors(this);
+  if ( (unsigned __int8)INIEntry::Exists(aColoradd, 0) )
+  {
+    v3 = 0;
+    KeyCount = INIClass::GetKeyCount(v1, (unsigned __int8 *)aColoradd);
+    if ( KeyCount > 0 )
+    {
+      v4 = (char *)this + 6260;
+      do
+      {
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aColoradd, v3);
+        v5 = Palette::6BitTo16Bit(&v33, 0, 0, 0);
+        Coord = INIClass::GetCoord((unsigned __int8 ***)v1, (int)v29, (unsigned __int8 *)aColoradd, StringByIndex, v5);
+        v7 = v4;
+        ++v3;
+        v4 += 3;
+        v8 = *(_BYTE *)(Coord + 2);
+        *(_WORD *)v7 = *(_WORD *)Coord;
+        v9 = v3 < KeyCount;
+        v7[2] = v8;
+      }
+      while ( v9 );
+    }
+  }
+  v10 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aCountries);
+  for ( i = 0; i < v10; ++i )
+  {
+    v12 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aCountries, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)aCountries,
+           v12,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      WeaponTypeClass::Create(Destination);
+    }
+  }
+  RulesClass::ReadDataList(this);
+  v13 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aOverlaytypes);
+  for ( j = 0; j < v13; ++j )
+  {
+    v15 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aOverlaytypes, j);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)aOverlaytypes,
+           v15,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      BuildingTypeClass::FindOrCreate2(Destination);
+    }
+  }
+  v16 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aSuperweapontyp);
+  for ( k = 0; k < v16; ++k )
+  {
+    v18 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aSuperweapontyp, k);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)aSuperweapontyp,
+           v18,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      WeaponTypeClass::Process(Destination);
+    }
+  }
+  v19 = INIClass::GetKeyCount(v1, (unsigned __int8 *)g_INI_Key_Warheads);
+  for ( m = 0; m < v19; ++m )
+  {
+    v21 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)g_INI_Key_Warheads, m);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)g_INI_Key_Warheads,
+           v21,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      WarheadTypeClass::FindOrCreate(Destination);
+    }
+  }
+  v22 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aSmudgetypes);
+  for ( n = 0; n < v22; ++n )
+  {
+    v24 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aSmudgetypes, n);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)aSmudgetypes,
+           v24,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      FactoryClass::FindOrCreate(Destination);
+    }
+  }
+  v25 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aTerraintypes);
+  for ( ii = 0; ii < v25; ++ii )
+  {
+    v27 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aTerraintypes, ii);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v1,
+           (unsigned __int8 *)aTerraintypes,
+           v27,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      TerrainTypeClass::FindOrCreate(Destination);
+    }
+  }
+  RulesClass::LoadBuildingTypes(this);
+  CCINIClass::LoadBuildingTypes(this);
+  RulesClass::readRadiation(this);
+  RulesClass::readCrateRules(this);
+  RulesClass::LoadAnimTypes(this);
+  CCINIClass::LoadUnitTypes(this);
+  RulesClass::readColors(this);
+  CCINIClass::ReadBuildingSettings(this);
+  RulesClass::readDifficulty(this);
+  Dialog::ReadMultiplayerDialogSettings(this);
+  RulesClass::ReadMultiplayerDefaults(this);
+  RulesClass::ReadPowerupsSection(this);
+  RulesClass::LoadSpeedTypes(this);
+  RulesClass::ReadIQSection(this);
+  RulesClass::LoadFromINI(this);
+  SideClass::LoadAllFromINI(v1);
+  INIClass::ReadDifficultyModifiers((#381 *)v1);
+  INIClass::ReadDifficultyModifiers((#381 *)v1);
+  INIClass::ReadDifficultyModifiers((#381 *)v1);
+  ReadCrateRulesINI(this);
+  Rules::ReadCombatINI(this);
+  RulesClass::ReadCountryList(this);
+  RulesClass::readAudioVisual(this);
+  RulesClass::readSpecialWeapons(this);
+  Rules::ReadMiscINI(this);
+  RulesClass::LoadSpecialWeapons(this);
+  SmallFunc_721D10(v1);
+  return SidebarClass::ReadButtonList(this);
+}
+
+/* ASM:
+Destination     = byte ptr -20h
+arg_0           = dword ptr  4
+
+sub     esp, 2Ch
+push    ebx
+push    ebp
+push    esi
+mov     esi, [esp+38h+arg_0]
+push    edi
+mov     edi, ecx
+push    esi
+call    RulesClass__ReadColors
+mov     eax, ds:off_7F0C98 ; "ColorAdd"
+push    0
+push    eax
+mov     ecx, esi
+call    INIEntry__Exists
+test    al, al
+jz      short loc_668C8B
+mov     ecx, ds:off_7F0C98 ; "ColorAdd"
+push    ecx
+mov     ecx, esi
+call    INIClass__GetKeyCount
+xor     ebx, ebx
+mov     [esp+3Ch+var_24], eax
+test    eax, eax
+jle     short loc_668C8B
+lea     ebp, [edi+1874h]
+
+loc_668C34:                             ; CODE XREF: RulesClass__Addition+99↓j
+mov     edx, ds:off_7F0C98 ; "ColorAdd"
+push    ebx
+push    edx
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+push    0
+push    0
+push    0
+lea     ecx, [esp+48h+arg_0]
+mov     [esp+48h+var_28], eax
+call    Palette__6BitTo16Bit
+mov     ecx, ds:off_7F0C98 ; "ColorAdd"
+push    eax
+mov     eax, [esp+40h+var_28]
+lea     edx, [esp+40h+var_2C]
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    INIClass__GetCoord
+mov     ecx, eax
+mov     edx, ebp
+inc     ebx
+add     ebp, 3
+mov     ax, [ecx]
+mov     cl, [ecx+2]
+mov     [edx], ax
+mov     eax, [esp+3Ch+var_24]
+cmp     ebx, eax
+mov     [edx+2], cl
+jl      short loc_668C34
+
+loc_668C8B:                             ; CODE XREF: RulesClass__Addition+24↑j
+; RulesClass__Addition+3C↑j
+mov     eax, ds:off_7F0CAC ; "Countries"
+mov     ecx, esi
+push    eax
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668CDB
+
+loc_668CA0:                             ; CODE XREF: RulesClass__Addition+E9↓j
+mov     edx, ds:off_7F0CAC ; "Countries"
+lea     ecx, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    edx
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+mov     eax, ds:off_7F0CAC ; "Countries"
+push    eax             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668CD6
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    WeaponTypeClass__Create
+
+loc_668CD6:                             ; CODE XREF: RulesClass__Addition+DB↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668CA0
+
+loc_668CDB:                             ; CODE XREF: RulesClass__Addition+AE↑j
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__ReadDataList
+mov     ecx, ds:off_7F0CD0 ; "OverlayTypes"
+push    ecx
+mov     ecx, esi
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668D34
+
+loc_668CF9:                             ; CODE XREF: RulesClass__Addition+142↓j
+mov     eax, ds:off_7F0CD0 ; "OverlayTypes"
+lea     edx, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    eax
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+mov     ecx, ds:off_7F0CD0 ; "OverlayTypes"
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668D2F
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    BuildingTypeClass__FindOrCreate2
+
+loc_668D2F:                             ; CODE XREF: RulesClass__Addition+134↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668CF9
+
+loc_668D34:                             ; CODE XREF: RulesClass__Addition+107↑j
+mov     edx, ds:off_7F0CBC ; "SuperWeaponTypes"
+mov     ecx, esi
+push    edx
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668D86
+
+loc_668D4A:                             ; CODE XREF: RulesClass__Addition+194↓j
+mov     ecx, ds:off_7F0CBC ; "SuperWeaponTypes"
+lea     eax, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    ecx
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+mov     edx, ds:off_7F0CBC ; "SuperWeaponTypes"
+push    eax             ; int
+push    edx             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668D81
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    WeaponTypeClass__Process
+
+loc_668D81:                             ; CODE XREF: RulesClass__Addition+186↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668D4A
+
+loc_668D86:                             ; CODE XREF: RulesClass__Addition+158↑j
+push    offset g_INI_Key_Warheads ; "Warheads"
+mov     ecx, esi
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668DD2
+
+loc_668D9A:                             ; CODE XREF: RulesClass__Addition+1E0↓j
+lea     eax, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    offset g_INI_Key_Warheads ; "Warheads"
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+push    offset g_INI_Key_Warheads ; "Warheads"
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668DCD
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+
+loc_668DCD:                             ; CODE XREF: RulesClass__Addition+1D2↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668D9A
+
+loc_668DD2:                             ; CODE XREF: RulesClass__Addition+1A8↑j
+mov     ecx, ds:off_7F0CCC ; "SmudgeTypes"
+push    ecx
+mov     ecx, esi
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668E23
+
+loc_668DE8:                             ; CODE XREF: RulesClass__Addition+231↓j
+mov     eax, ds:off_7F0CCC ; "SmudgeTypes"
+lea     edx, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    eax
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+mov     ecx, ds:off_7F0CCC ; "SmudgeTypes"
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668E1E
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    FactoryClass__FindOrCreate
+
+loc_668E1E:                             ; CODE XREF: RulesClass__Addition+223↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668DE8
+
+loc_668E23:                             ; CODE XREF: RulesClass__Addition+1F6↑j
+mov     edx, ds:off_7F0CC4 ; "TerrainTypes"
+mov     ecx, esi
+push    edx
+call    INIClass__GetKeyCount
+mov     ebp, eax
+xor     ebx, ebx
+test    ebp, ebp
+jle     short loc_668E75
+
+loc_668E39:                             ; CODE XREF: RulesClass__Addition+283↓j
+mov     ecx, ds:off_7F0CC4 ; "TerrainTypes"
+lea     eax, [esp+3Ch+Destination]
+push    20h ; ' '       ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    ebx
+push    ecx
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+mov     edx, ds:off_7F0CC4 ; "TerrainTypes"
+push    eax             ; int
+push    edx             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_668E70
+lea     ecx, [esp+3Ch+Destination] ; Source
+call    TerrainTypeClass__FindOrCreate
+
+loc_668E70:                             ; CODE XREF: RulesClass__Addition+275↑j
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_668E39
+
+loc_668E75:                             ; CODE XREF: RulesClass__Addition+247↑j
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__LoadBuildingTypes
+push    esi
+mov     ecx, edi        ; this
+call    CCINIClass__LoadBuildingTypes
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readRadiation
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readCrateRules
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__LoadAnimTypes
+push    esi
+mov     ecx, edi        ; this
+call    CCINIClass__LoadUnitTypes
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readColors
+push    esi
+mov     ecx, edi        ; this
+call    CCINIClass__ReadBuildingSettings
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readDifficulty
+push    esi
+mov     ecx, edi        ; this
+call    Dialog__ReadMultiplayerDialogSettings
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__ReadMultiplayerDefaults
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__ReadPowerupsSection
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__LoadSpeedTypes
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__ReadIQSection
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__LoadFromINI
+push    esi
+mov     ecx, edi
+call    SideClass__LoadAllFromINI
+push    offset g_INI_Key_Easy ; "Easy"
+lea     edx, [edi+1538h]
+mov     ecx, esi        ; this
+call    INIClass__ReadDifficultyModifiers
+push    offset g_INI_Key_Normal ; "Normal"
+lea     edx, [edi+1588h]
+mov     ecx, esi        ; this
+call    INIClass__ReadDifficultyModifiers
+push    offset aDifficult ; "Difficult"
+lea     edx, [edi+15D8h]
+mov     ecx, esi        ; this
+call    INIClass__ReadDifficultyModifiers
+push    esi
+mov     ecx, edi        ; this
+call    ReadCrateRulesINI
+push    esi
+mov     ecx, edi        ; this
+call    Rules__ReadCombatINI
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__ReadCountryList
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readAudioVisual
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__readSpecialWeapons
+push    esi
+mov     ecx, edi        ; this
+call    Rules__ReadMiscINI
+push    esi
+mov     ecx, edi        ; this
+call    RulesClass__LoadSpecialWeapons
+mov     ecx, esi
+call    SmallFunc_721D10
+mov     eax, ds:0A8B238h
+test    eax, eax
+jz      short loc_668F90
+cmp     eax, 5
+jz      short loc_668F90
+mov     eax, 1
+mov     ecx, edi        ; this
+push    eax
+push    esi
+call    SidebarClass__ReadButtonList
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 2Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_668F90:                             ; CODE XREF: RulesClass__Addition+381↑j
+; RulesClass__Addition+386↑j
+xor     eax, eax
+mov     ecx, edi        ; this
+push    eax
+push    esi
+call    SidebarClass__ReadButtonList
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 2Ch
+retn    4
+*/
+} }
 // 0x668FB0
-namespace gamemd { int RulesClass::LoadSpecialWeapons() { return 0; } }
+namespace gamemd { int RulesClass::LoadSpecialWeapons() {
+// [IDA decompile]
+int __thiscall RulesClass::LoadSpecialWeapons(#381 *this)
+{
+  int result; // eax
+  int SellBack; // ebx
+  int v4; // eax
+  int AIBaseSpacing; // ebx
+  int v6; // eax
+  int v7; // ebx
+  int v8; // eax
+  int v9; // ebx
+  int v10; // eax
+  int v11; // ebx
+  int v12; // eax
+  int v13; // ebx
+  int v14; // eax
+  int v15; // ebx
+  int v16; // eax
+  int i; // esi
+  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
+  unsigned __int8 ***v19; // [esp+8Ch] [ebp+4h]
+
+  result = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)aSpecialweapons);
+  if ( result )
+  {
+    SellBack = *((_DWORD *)this + 995);
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aNukewarhead,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v4 = WarheadTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v4 = SellBack;
+    }
+    *((_DWORD *)this + 995) = v4;
+    AIBaseSpacing = *((_DWORD *)this + 996);
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aNukeprojectile,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v6 = (int)ObjectTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v6 = AIBaseSpacing;
+    }
+    v7 = *((_DWORD *)this + 997);
+    *((_DWORD *)this + 996) = v6;
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aNukedown,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v8 = (int)ObjectTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v8 = v7;
+    }
+    v9 = *((_DWORD *)this + 998);
+    *((_DWORD *)this + 997) = v8;
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aMutatewarhead,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v10 = WarheadTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v10 = v9;
+    }
+    *((_DWORD *)this + 998) = v10;
+    v11 = *((_DWORD *)this + 999);
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aMutateexplosio,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v12 = WarheadTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v12 = v11;
+    }
+    v13 = *((_DWORD *)this + 1000);
+    *((_DWORD *)this + 999) = v12;
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aEmpulsewarhead,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v14 = WarheadTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v14 = v13;
+    }
+    v15 = *((_DWORD *)this + 1001);
+    *((_DWORD *)this + 1000) = v14;
+    if ( INIClass::GetString(
+           v19,
+           (unsigned __int8 **)aSpecialweapons,
+           (unsigned __int8 *)aEmpulseproject,
+           (char *)&MEMORY[0x87F7E8][10719],
+           Destination,
+           128) )
+    {
+      v16 = (int)ObjectTypeClass::FindOrCreate(Destination);
+    }
+    else
+    {
+      v16 = v15;
+    }
+    *((_DWORD *)this + 1001) = v16;
+    result = MEMORY[0x87F7E8][7994];
+    for ( i = 0; i < MEMORY[0x87F7E8][7994]; ++i )
+    {
+      (*(void (__thiscall **)(_DWORD, unsigned __int8 ***))(**(_DWORD **)(MEMORY[0x87F7E8][7991] + 4 * i) + 100))(
+        *(_DWORD *)(MEMORY[0x87F7E8][7991] + 4 * i),
+        v19);
+      result = MEMORY[0x87F7E8][7994];
+    }
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+Destination     = byte ptr -80h
+arg_0           = dword ptr  4
+
+mov     eax, ds:off_7F0C78 ; "SpecialWeapons"
+sub     esp, 80h
+push    esi
+push    edi
+mov     edi, [esp+88h+arg_0]
+mov     esi, ecx
+push    eax
+mov     ecx, edi
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_6691C4
+mov     edx, ds:off_7F0C78 ; "SpecialWeapons"
+push    ebx
+mov     ebx, [esi+0F8Ch]
+lea     ecx, [esp+8Ch+Destination]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aNukewarhead ; "NukeWarhead"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_669013
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+jmp     short loc_669015
+; ---------------------------------------------------------------------------
+
+loc_669013:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+56↑j
+mov     eax, ebx
+
+loc_669015:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+61↑j
+mov     [esi+0F8Ch], eax
+mov     ecx, ds:off_7F0C78 ; "SpecialWeapons"
+mov     ebx, [esi+0F90h]
+lea     eax, [esp+8Ch+Destination]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aNukeprojectile ; "NukeProjectile"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_669052
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    ObjectTypeClass__FindOrCreate
+jmp     short loc_669054
+; ---------------------------------------------------------------------------
+
+loc_669052:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+95↑j
+mov     eax, ebx
+
+loc_669054:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+A0↑j
+mov     ebx, [esi+0F94h]
+lea     edx, [esp+8Ch+Destination]
+push    80h             ; Count
+mov     [esi+0F90h], eax
+mov     eax, ds:off_7F0C78 ; "SpecialWeapons"
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aNukedown ; "NukeDown"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_669090
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    ObjectTypeClass__FindOrCreate
+jmp     short loc_669092
+; ---------------------------------------------------------------------------
+
+loc_669090:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+D3↑j
+mov     eax, ebx
+
+loc_669092:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+DE↑j
+mov     ebx, [esi+0F98h]
+lea     ecx, [esp+8Ch+Destination]
+push    80h             ; Count
+mov     [esi+0F94h], eax
+mov     edx, ds:off_7F0C78 ; "SpecialWeapons"
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aMutatewarhead ; "MutateWarhead"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6690CF
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+jmp     short loc_6690D1
+; ---------------------------------------------------------------------------
+
+loc_6690CF:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+112↑j
+mov     eax, ebx
+
+loc_6690D1:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+11D↑j
+mov     [esi+0F98h], eax
+mov     ecx, ds:off_7F0C78 ; "SpecialWeapons"
+mov     ebx, [esi+0F9Ch]
+lea     eax, [esp+8Ch+Destination]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aMutateexplosio ; "MutateExplosionWarhead"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66910E
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+jmp     short loc_669110
+; ---------------------------------------------------------------------------
+
+loc_66910E:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+151↑j
+mov     eax, ebx
+
+loc_669110:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+15C↑j
+mov     ebx, [esi+0FA0h]
+lea     edx, [esp+8Ch+Destination]
+push    80h             ; Count
+mov     [esi+0F9Ch], eax
+mov     eax, ds:off_7F0C78 ; "SpecialWeapons"
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aEmpulsewarhead ; "EMPulseWarhead"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66914C
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+jmp     short loc_66914E
+; ---------------------------------------------------------------------------
+
+loc_66914C:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+18F↑j
+mov     eax, ebx
+
+loc_66914E:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+19A↑j
+mov     ebx, [esi+0FA4h]
+lea     ecx, [esp+8Ch+Destination]
+push    80h             ; Count
+mov     [esi+0FA0h], eax
+mov     edx, ds:off_7F0C78 ; "SpecialWeapons"
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aEmpulseproject ; "EMPulseProjectile"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66918B
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    ObjectTypeClass__FindOrCreate
+jmp     short loc_66918D
+; ---------------------------------------------------------------------------
+
+loc_66918B:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+1CE↑j
+mov     eax, ebx
+
+loc_66918D:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+1D9↑j
+mov     [esi+0FA4h], eax
+mov     eax, ds:8874D0h
+xor     esi, esi
+pop     ebx
+test    eax, eax
+jle     short loc_6691B7
+
+loc_66919F:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+205↓j
+mov     eax, ds:8874C4h
+push    edi
+mov     ecx, [eax+esi*4]
+mov     edx, [ecx]
+call    dword ptr [edx+64h]
+mov     eax, ds:8874D0h
+inc     esi
+cmp     esi, eax
+jl      short loc_66919F
+
+loc_6691B7:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+1ED↑j
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 80h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6691C4:                             ; CODE XREF: RulesClass__LoadSpecialWeapons+25↑j
+pop     edi
+xor     al, al
+pop     esi
+add     esp, 80h
+retn    4
+*/
+} }
 // 0x66CF70
-namespace gamemd { int RulesClass::ReadCountryList() { return 0; } }
+namespace gamemd { int RulesClass::ReadCountryList() {
+// [IDA decompile]
+int __thiscall sub_66CF70(#381 *this)
+{
+  int result; // eax
+  int Int_Overwrite; // eax
+  int v4; // edx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // edx
+  double Double_Overwrite; // st7
+  double v10; // rax
+  double v11; // st7
+  double v12; // rax
+  int Coord; // eax
+  int v14; // ebx
+  double v15; // [esp-Ch] [ebp-98h]
+  _BYTE v16[4]; // [esp+8h] [ebp-84h] BYREF
+  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
+  unsigned __int8 ***v18; // [esp+90h] [ebp+4h]
+
+  result = INIClass::BinarySearchSection((int)v18, (unsigned __int8 *)aRadiation);
+  if ( result )
+  {
+    *((_DWORD *)this + 1537) = INIClass::ReadInt_Overwrite(
+                                 (int)v18,
+                                 (unsigned __int8 *)aRadiation,
+                                 (unsigned __int8 *)aRaddurationmul,
+                                 *((_DWORD *)this + 1537));
+    Int_Overwrite = INIClass::ReadInt_Overwrite(
+                      (int)v18,
+                      (unsigned __int8 *)aRadiation,
+                      (unsigned __int8 *)aRadapplication,
+                      *((_DWORD *)this + 1538));
+    v4 = *((_DWORD *)this + 1539);
+    *((_DWORD *)this + 1538) = Int_Overwrite;
+    v5 = INIClass::ReadInt_Overwrite((int)v18, (unsigned __int8 *)aRadiation, (unsigned __int8 *)aRadlevelmax, v4);
+    v6 = *((_DWORD *)this + 1540);
+    *((_DWORD *)this + 1539) = v5;
+    *((_DWORD *)this + 1540) = INIClass::ReadInt_Overwrite(
+                                 (int)v18,
+                                 (unsigned __int8 *)aRadiation,
+                                 (unsigned __int8 *)aRadleveldelay,
+                                 v6);
+    v7 = INIClass::ReadInt_Overwrite(
+           (int)v18,
+           (unsigned __int8 *)aRadiation,
+           (unsigned __int8 *)aRadlightdelay,
+           *((_DWORD *)this + 1541));
+    v8 = *((_DWORD *)this + 1543);
+    *((_DWORD *)this + 1541) = v7;
+    HIDWORD(v15) = v8;
+    LODWORD(v15) = *((_DWORD *)this + 1542);
+    Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                         (int)v18,
+                         (unsigned __int8 *)aRadiation,
+                         (unsigned __int8 *)aRadlevelfactor,
+                         v15);
+    v10 = *((double *)this + 772);
+    *((double *)this + 771) = Double_Overwrite;
+    v11 = INIClass::ReadDouble_Overwrite(
+            (int)v18,
+            (unsigned __int8 *)aRadiation,
+            (unsigned __int8 *)aRadlightfactor,
+            v10);
+    v12 = *((double *)this + 773);
+    *((double *)this + 772) = v11;
+    *((double *)this + 773) = INIClass::ReadDouble_Overwrite(
+                                (int)v18,
+                                (unsigned __int8 *)aRadiation,
+                                (unsigned __int8 *)aRadtintfactor,
+                                v12);
+    Coord = INIClass::GetCoord(
+              v18,
+              (int)v16,
+              (unsigned __int8 *)aRadiation,
+              (unsigned __int8 *)aRadcolor,
+              (unsigned __int8 *)this + 6192);
+    *((_WORD *)this + 3096) = *(_WORD *)Coord;
+    *((_BYTE *)this + 6194) = *(_BYTE *)(Coord + 2);
+    v14 = *((_DWORD *)this + 1549);
+    if ( INIClass::GetString(
+           v18,
+           (unsigned __int8 *)aRadiation,
+           (unsigned __int8 *)aRadsitewarhead,
+           &MEMORY[0x889F64],
+           Destination,
+           128) )
+    {
+      result = WarheadTypeClass::FindOrCreate(Destination);
+      *((_DWORD *)this + 1549) = result;
+    }
+    else
+    {
+      result = v14;
+      *((_DWORD *)this + 1549) = v14;
+    }
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+Destination     = byte ptr -80h
+arg_0           = dword ptr  4
+
+mov     eax, ds:off_7F0C88 ; "Radiation"
+sub     esp, 84h
+push    esi
+push    edi
+mov     edi, [esp+8Ch+arg_0]
+mov     esi, ecx
+push    eax
+mov     ecx, edi
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_66D13A
+mov     ecx, [esi+1804h]
+mov     edx, ds:off_7F0C88 ; "Radiation"
+push    ebx
+push    ecx
+push    offset aRaddurationmul ; "RadDurationMultiple"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1804h], eax
+mov     eax, [esi+1808h]
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+push    eax
+push    offset aRadapplication ; "RadApplicationDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+180Ch]
+mov     [esi+1808h], eax
+mov     eax, ds:off_7F0C88 ; "Radiation"
+push    edx
+push    offset aRadlevelmax ; "RadLevelMax"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1810h]
+mov     [esi+180Ch], eax
+mov     edx, ds:off_7F0C88 ; "Radiation"
+push    ecx
+push    offset aRadleveldelay ; "RadLevelDelay"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1810h], eax
+mov     eax, [esi+1814h]
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+push    eax
+push    offset aRadlightdelay ; "RadLightDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+181Ch]
+mov     [esi+1814h], eax
+mov     eax, [esi+1818h]
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+push    edx
+push    eax             ; double
+push    offset aRadlevelfactor ; "RadLevelFactor"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+1824h]
+mov     eax, [esi+1820h]
+fstp    qword ptr [esi+1818h]
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+push    edx
+push    eax             ; double
+push    offset aRadlightfactor ; "RadLightFactor"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+182Ch]
+mov     eax, [esi+1828h]
+fstp    qword ptr [esi+1820h]
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+push    edx
+push    eax             ; double
+push    offset aRadtintfactor ; "RadTintFactor"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1828h]
+mov     edx, ds:off_7F0C88 ; "Radiation"
+lea     ebx, [esi+1830h]
+push    ebx
+push    offset aRadcolor ; "RadColor"
+lea     eax, [esp+98h+var_84]
+push    edx
+push    eax
+mov     ecx, edi
+call    INIClass__GetCoord
+mov     cx, [eax]
+mov     [ebx], cx
+mov     dl, [eax+2]
+lea     eax, [esp+90h+Destination]
+push    80h             ; Count
+mov     [ebx+2], dl
+mov     ecx, ds:off_7F0C88 ; "Radiation"
+mov     ebx, [esi+1834h]
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aRadsitewarhead ; "RadSiteWarhead"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D124
+lea     ecx, [esp+90h+Destination] ; Source
+call    WarheadTypeClass__FindOrCreate
+pop     ebx
+mov     [esi+1834h], eax
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 84h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_66D124:                             ; CODE XREF: RulesClass__ReadCountryList+195↑j
+mov     eax, ebx
+pop     ebx
+mov     [esi+1834h], eax
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 84h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_66D13A:                             ; CODE XREF: RulesClass__ReadCountryList+25↑j
+pop     edi
+xor     al, al
+pop     esi
+add     esp, 84h
+retn    4
+*/
+} }
 // 0x66D530
-namespace gamemd { int RulesClass::LoadFromINI() { return 0; } }
+namespace gamemd { int RulesClass::LoadFromINI() {
+// [IDA decompile]
+int __thiscall RulesClass_LoadFromINI(#381 *this)
+{
+  __int64 v1; // st7
+  int result; // eax
+  char *i; // eax
+  int v5; // ebx
+  int v6; // eax
+  int BarrelExplode; // ebx
+  int v8; // eax
+  char *j; // eax
+  float RadarEventSpeed; // ebx
+  float v11; // eax
+  int InfantryHeadPop; // ebx
+  int v13; // eax
+  int FlamingInfantry; // ebx
+  int v15; // eax
+  char *k; // eax
+  char *m; // eax
+  char *n; // eax
+  char *ii; // eax
+  int WeatherConBoltExplosion; // ebx
+  int v21; // eax
+  int DominatorWarhead; // ebx
+  int v23; // eax
+  char *jj; // eax
+  char *kk; // eax
+  int WeaponNullifyAnim; // ebx
+  int v27; // eax
+  int AtmosphereEntry; // ebx
+  int v29; // eax
+  int v30; // ebx
+  int v31; // eax
+  int v32; // ebx
+  int v33; // eax
+  int Int_Overwrite; // eax
+  int v35; // ebx
+  int v36; // eax
+  int v37; // ebx
+  int v38; // eax
+  int v39; // ebx
+  int v40; // eax
+  int v41; // ebx
+  int v42; // eax
+  int v43; // ebx
+  int v44; // eax
+  int v45; // ebx
+  int v46; // eax
+  int v47; // ebx
+  int v48; // eax
+  int v49; // ebx
+  int v50; // eax
+  int v51; // ebx
+  int v52; // eax
+  int v53; // ebx
+  int v54; // eax
+  int v55; // ebx
+  int v56; // eax
+  int InfantryNuked; // ebx
+  int v58; // eax
+  int InfantryVirus; // ebx
+  int v60; // eax
+  int InfantryBrute; // ebx
+  int v62; // eax
+  int InfantryMutate; // ebx
+  int v64; // eax
+  int Behind; // ebx
+  int v66; // eax
+  int v67; // ebx
+  int v68; // eax
+  int v69; // ebx
+  int v70; // eax
+  int AITriggerSuccessWeightDelta; // ebx
+  int v72; // eax
+  float FallingDamageMultiplier; // ebx
+  float v74; // eax
+  int Technician; // ebx
+  int v76; // eax
+  int v77; // ebx
+  int v78; // eax
+  int v79; // ebx
+  int v80; // eax
+  int v81; // ebx
+  int v82; // eax
+  int LargeVisceroid; // ebx
+  int Alt; // eax
+  int SmallVisceroid; // ebx
+  int v86; // eax
+  int TiberiumHeal; // eax
+  _DWORD *v88; // ebx
+  int v89; // eax
+  _DWORD *v90; // ebx
+  int v91; // eax
+  _DWORD *v92; // ebx
+  int v93; // eax
+  _DWORD *v94; // ebx
+  int v95; // eax
+  _DWORD *v96; // ebx
+  int v97; // eax
+  _DWORD *v98; // ebx
+  int v99; // eax
+  int v100; // ecx
+  double v101; // st7
+  double v102; // st7
+  double v103; // st7
+  double v104; // st7
+  int v105; // ecx
+  int v106; // ecx
+  int v107; // eax
+  int VeteranRatio_high; // ebx
+  int v109; // eax
+  int VeteranSpeed; // eax
+  int VeteranArmor; // eax
+  int TunnelSpeed; // eax
+  int GameForming; // eax
+  int VeteranCap; // eax
+  int CloakSound; // edx
+  int GameClosed; // edx
+  int SystemError; // edx
+  int ShellButtonSlideSound; // edx
+  int WallBuildSpeedCoefficient; // edx
+  int ChargeToDrainRatio; // edx
+  int TrackedUphill; // edx
+  int TrackedDownhill; // edx
+  int WheeledUphill; // edx
+  char *mm; // eax
+  int v125; // eax
+  int RadarOn; // ebx
+  int v127; // eax
+  int RadarOff; // ebx
+  int v129; // eax
+  int TeslaCharge; // edx
+  int GenericClick; // edx
+  int BuildingDamageSound; // edx
+  int PlayerJoined; // ecx
+  int GDIPowerPlant; // ecx
+  int NodAdvancedPower; // ecx
+  int v136; // ecx
+  int v137; // ecx
+  int v138; // eax
+  char *nn; // eax
+  int v140; // ebx
+  int v141; // eax
+  int v142; // ebx
+  int v143; // eax
+  int v144; // ebx
+  int v145; // eax
+  int v146; // ebx
+  int v147; // eax
+  int v148; // ebx
+  int v149; // eax
+  char *i1; // eax
+  int v151; // ebx
+  int v152; // eax
+  int v153; // ebx
+  int v154; // eax
+  int v155; // ebx
+  int v156; // eax
+  int v157; // ebx
+  int v158; // eax
+  int v159; // ebx
+  int v160; // eax
+  char *i2; // eax
+  char *i3; // eax
+  int v163; // eax
+  int *InfantryTypeList; // eax
+  int v165; // eax
+  int *BuildingTypeList; // eax
+  int v167; // ebx
+  int v168; // ebx
+  double v169; // st7
+  double v170; // st7
+  int *IntList; // eax
+  int *v172; // eax
+  int v173; // edx
+  int *v174; // eax
+  int *v175; // eax
+  int *v176; // eax
+  int *v177; // eax
+  double v178; // st7
+  int *v179; // eax
+  int *v180; // eax
+  int *v181; // eax
+  int *v182; // eax
+  int *v183; // eax
+  int *v184; // eax
+  int *v185; // eax
+  int *v186; // eax
+  int *v187; // eax
+  int *v188; // eax
+  int *v189; // eax
+  double v190; // st7
+  int *v191; // eax
+  int *v192; // eax
+  int *v193; // eax
+  int *v194; // eax
+  int *v195; // eax
+  int *v196; // eax
+  int *v197; // eax
+  int *v198; // eax
+  int *v199; // eax
+  int *v200; // eax
+  int *v201; // eax
+  int *v202; // eax
+  int *v203; // eax
+  int *v204; // eax
+  int *v205; // eax
+  int *v206; // eax
+  int *v207; // eax
+  int *v208; // eax
+  int *v209; // eax
+  int *v210; // eax
+  int *v211; // eax
+  int *v212; // eax
+  int *v213; // eax
+  int *v214; // eax
+  int *v215; // eax
+  int *v216; // eax
+  int *v217; // eax
+  int BerserkColor; // eax
+  float DirectRockingCoefficient; // eax
+  int v220; // eax
+  int v221; // edx
+  int v222; // ecx
+  int v223; // ecx
+  int v224; // ecx
+  int v225; // ecx
+  int v226; // ecx
+  int v227; // eax
+  int v228; // eax
+  int v229; // eax
+  int v230; // eax
+  int v231; // eax
+  int v232; // ecx
+  int v233; // ecx
+  int v234; // ecx
+  double ZoomInFactor_high; // st7
+  double MinLowPowerProductionSpeed; // st7
+  double MaxLowPowerProductionSpeed; // st7
+  double LowPowerPenaltyModifier; // st7
+  double MultipleFactory_low; // st7
+  double v240; // st7
+  double v241; // st7
+  double v242; // st7
+  double v243; // st7
+  double DropPodAngle_low; // st7
+  double v245; // st7
+  double v246; // st7
+  double v247; // st7
+  double v248; // st7
+  double HoverAcceleration_high; // st7
+  double v250; // st7
+  int v251; // eax
+  int v252; // eax
+  int v253; // eax
+  int v254; // ecx
+  int v255; // ecx
+  int BridgeVoxelMax; // ecx
+  int TireVoxelDebris; // ecx
+  int AITriggerFailureWeightDelta; // ecx
+  int AITriggerTrackRecordCoefficient; // ecx
+  int VeinholeMonsterStrength; // ecx
+  double v261; // st7
+  double v262; // st7
+  int *v263; // eax
+  int *v264; // eax
+  int *v265; // eax
+  double RadarEventRotationSpeed; // st7
+  int SavourDelay; // eax
+  int Players; // eax
+  int BaseDefenseDelay; // eax
+  int SuspendPriority; // eax
+  int SuspendDelay; // eax
+  int SurvivorRate; // eax
+  int AlliedSurvivorDivisor; // eax
+  int ThirdSurvivorDivisor; // eax
+  int ReloadRate; // eax
+  int AutocreateTime; // eax
+  int BuildupTime; // eax
+  int v278; // eax
+  double v279; // st7
+  double v280; // st7
+  double v281; // st7
+  void **v282; // [esp-14h] [ebp-ECh] BYREF
+  void *v283; // [esp-10h] [ebp-E8h]
+  int v284; // [esp-Ch] [ebp-E4h]
+  int v285; // [esp-8h] [ebp-E0h]
+  int v286; // [esp-4h] [ebp-DCh]
+  int v287[5]; // [esp+0h] [ebp-D8h]
+  int v288; // [esp+18h] [ebp-C0h] BYREF
+  void *v289; // [esp+1Ch] [ebp-BCh]
+  char v290; // [esp+25h] [ebp-B3h]
+  __int64 v291; // [esp+34h] [ebp-A4h] BYREF
+  void **v292; // [esp+3Ch] [ebp-9Ch] BYREF
+  void *Block; // [esp+40h] [ebp-98h]
+  char v294; // [esp+49h] [ebp-8Fh]
+  int v295; // [esp+4Ch] [ebp-8Ch]
+  float v296; // [esp+50h] [ebp-88h]
+  int v297; // [esp+54h] [ebp-84h]
+  char String[128]; // [esp+58h] [ebp-80h] BYREF
+  unsigned __int8 ***v299; // [esp+E0h] [ebp+8h]
+
+  result = INIClass::BinarySearchSection((int)v299, (unsigned __int8 *)g_INI_Key_General);
+  if ( result )
+  {
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDamagefiretype,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) )
+      {
+        if ( !*i )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(i);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 168);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 168, &v292);
+    *((_DWORD *)this + 172) = v295;
+    *((float *)this + 173) = v296;
+    *((_DWORD *)this + 174) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    v5 = *((_DWORD *)this + 1564);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aOretwinkle,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v6 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v6 = v5;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 1564) = v6;
+    BarrelExplode = *((_DWORD *)this + 21);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBarrelexplode,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v8 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v8 = BarrelExplode;
+    }
+    *((_DWORD *)this + 21) = v8;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBarreldebris,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
+      v288 = (int)&TypeList<VoxelAnimTypeClass const *>::`vftable';
+      for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
+      {
+        if ( !*j )
+          break;
+        LODWORD(v291) = UnitTypeClass::FindOrCreate(j);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add2(&v288, &v291);
+      }
+      TypeList::CopyVoxelAnim(&v292, &v288);
+      v288 = (int)&VectorClass<VoxelAnimTypeClass const *>::`vftable';
+      Vector::Cleanup2((int)&v288);
+    }
+    else
+    {
+      TypeList::CopyVoxelAnim(&v292, (_DWORD *)this + 22);
+    }
+    ((void (__stdcall *)(void ***))VectorClass::CopyAssign)(&v292);
+    *((_DWORD *)this + 26) = v295;
+    *((float *)this + 27) = v296;
+    *((_DWORD *)this + 28) = v297;
+    v292 = &VectorClass<VoxelAnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    RadarEventSpeed = *((float *)this + 29);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBarrelparticle,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v11 = COERCE_FLOAT((int)BuildingTypeClass::LoadOrGet(String));
+    }
+    else
+    {
+      v11 = RadarEventSpeed;
+    }
+    *((float *)this + 29) = v11;
+    InfantryHeadPop = *((_DWORD *)this + 38);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aNuketakeoff,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v13 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v13 = InfantryHeadPop;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 38) = v13;
+    FlamingInfantry = *((_DWORD *)this + 37);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWake,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v15 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v15 = FlamingInfantry;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 37) = v15;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDroppod,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) )
+      {
+        if ( !*k )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(k);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 65);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 65, &v292);
+    *((_DWORD *)this + 69) = v295;
+    *((float *)this + 70) = v296;
+    *((_DWORD *)this + 71) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDeadbodies,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( m = strtok(String, Delimiter); m; m = strtok(0, Delimiter) )
+      {
+        if ( !*m )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(m);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 72);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 72, &v292);
+    *((_DWORD *)this + 76) = v295;
+    *((float *)this + 77) = v296;
+    *((_DWORD *)this + 78) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aMetallicdebris,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( n = strtok(String, Delimiter); n; n = strtok(0, Delimiter) )
+      {
+        if ( !*n )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(n);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 79);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 79, &v292);
+    *((_DWORD *)this + 83) = v295;
+    *((float *)this + 84) = v296;
+    *((_DWORD *)this + 85) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBridgeexplosio,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( ii = strtok(String, Delimiter); ii; ii = strtok(0, Delimiter) )
+      {
+        if ( !*ii )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(ii);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 86);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 86, &v292);
+    *((_DWORD *)this + 90) = v295;
+    *((float *)this + 91) = v296;
+    *((_DWORD *)this + 92) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    WeatherConBoltExplosion = *((_DWORD *)this + 166);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aIonblast,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v21 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v21 = WeatherConBoltExplosion;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 166) = v21;
+    DominatorWarhead = *((_DWORD *)this + 167);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aIonbeam,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v23 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v23 = DominatorWarhead;
+    }
+    *((_DWORD *)this + 167) = v23;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWeatherconclou,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( jj = strtok(String, Delimiter); jj; jj = strtok(0, Delimiter) )
+      {
+        if ( !*jj )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(jj);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 175);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 175, &v292);
+    *((_DWORD *)this + 179) = v295;
+    *((float *)this + 180) = v296;
+    *((_DWORD *)this + 181) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWeatherconbolt,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
+      for ( kk = strtok(String, Delimiter); kk; kk = strtok(0, Delimiter) )
+      {
+        if ( !*kk )
+          break;
+        LODWORD(v291) = AnimTypeClass::FindOrCreate(kk);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt4(&v288, &v291);
+      }
+      TypeList::AnimTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy_Alt((int)&v288);
+    }
+    else
+    {
+      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 182);
+    }
+    VectorClass::CopyDefault((_DWORD *)this + 182, &v292);
+    *((_DWORD *)this + 186) = v295;
+    *((float *)this + 187) = v296;
+    *((_DWORD *)this + 188) = v297;
+    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    WeaponNullifyAnim = *((_DWORD *)this + 189);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWeatherconbolt_0,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v27 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v27 = WeaponNullifyAnim;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 189) = v27;
+    AtmosphereEntry = *((_DWORD *)this + 190);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDominatorwarhe,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v29 = WarheadTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v29 = AtmosphereEntry;
+    }
+    *((_DWORD *)this + 190) = v29;
+    v30 = *((_DWORD *)this + 191);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDominatorfirst,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v31 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v31 = v30;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 191) = v31;
+    v32 = *((_DWORD *)this + 192);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDominatorsecon,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v33 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v33 = v32;
+    }
+    *((_DWORD *)this + 192) = v33;
+    *((_DWORD *)this + 193) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDominatorfirea,
+                                *((_DWORD *)this + 193));
+    *((_DWORD *)this + 194) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDominatorcaptu,
+                                *((_DWORD *)this + 194));
+    Int_Overwrite = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                      g_INI_Key_General,
+                      aDominatordamag,
+                      *((_DWORD *)this + 195));
+    v287[1] = 128;
+    *((_DWORD *)this + 195) = Int_Overwrite;
+    v35 = *((_DWORD *)this + 204);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aChronoplacemen,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v36 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v36 = v35;
+    }
+    *((_DWORD *)this + 204) = v36;
+    v37 = *((_DWORD *)this + 205);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aChronobeam,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v38 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v38 = v37;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 205) = v38;
+    v39 = *((_DWORD *)this + 202);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aChronoblast,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v40 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v40 = v39;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 202) = v40;
+    v41 = *((_DWORD *)this + 203);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aChronoblastdes,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v42 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v42 = v41;
+    }
+    *((_DWORD *)this + 203) = v42;
+    v43 = *((_DWORD *)this + 206);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWarpin,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v44 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v44 = v43;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 206) = v44;
+    v45 = *((_DWORD *)this + 207);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWarpout,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v46 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v46 = v45;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 207) = v46;
+    v47 = *((_DWORD *)this + 208);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWarpaway,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v48 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v48 = v47;
+    }
+    *((_DWORD *)this + 208) = v48;
+    v49 = *((_DWORD *)this + 210);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aIroncurtaininv,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v50 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v50 = v49;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 210) = v50;
+    v51 = *((_DWORD *)this + 211);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aForceshieldinv,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v52 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v52 = v51;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 211) = v52;
+    v53 = *((_DWORD *)this + 212);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWeaponnullifya,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v54 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v54 = v53;
+    }
+    *((_DWORD *)this + 212) = v54;
+    v55 = *((_DWORD *)this + 209);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aChronosparkle1,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v56 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v56 = v55;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 209) = v56;
+    InfantryNuked = *((_DWORD *)this + 39);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantryexplod,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v58 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v58 = InfantryNuked;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 39) = v58;
+    InfantryVirus = *((_DWORD *)this + 40);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aFlaminginfantr,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v60 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v60 = InfantryVirus;
+    }
+    *((_DWORD *)this + 40) = v60;
+    InfantryBrute = *((_DWORD *)this + 41);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantryheadpo,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v62 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v62 = InfantryBrute;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 41) = v62;
+    InfantryMutate = *((_DWORD *)this + 42);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantrynuked,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v64 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v64 = InfantryMutate;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 42) = v64;
+    Behind = *((_DWORD *)this + 43);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantryvirus,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v66 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v66 = Behind;
+    }
+    *((_DWORD *)this + 43) = v66;
+    v67 = *((_DWORD *)this + 44);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantrybrute,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v68 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v68 = v67;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 44) = v68;
+    v69 = *((_DWORD *)this + 45);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aInfantrymutate,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v70 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v70 = v69;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 45) = v70;
+    AITriggerSuccessWeightDelta = *((_DWORD *)this + 46);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBehind,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v72 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v72 = AITriggerSuccessWeightDelta;
+    }
+    *((_DWORD *)this + 46) = v72;
+    FallingDamageMultiplier = *((float *)this + 749);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aMoveflash,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v74 = COERCE_FLOAT((int)AnimTypeClass::FindOrCreate(String));
+    }
+    else
+    {
+      v74 = FallingDamageMultiplier;
+    }
+    v287[1] = 128;
+    *((float *)this + 749) = v74;
+    Technician = *((_DWORD *)this + 751);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aParachute,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v76 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v76 = Technician;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 751) = v76;
+    v77 = *((_DWORD *)this + 750);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBombparachute,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v78 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v78 = v77;
+    }
+    *((_DWORD *)this + 750) = v78;
+    v79 = *((_DWORD *)this + 1311);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDropzoneanim,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v80 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v80 = v79;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 1311) = v80;
+    v81 = *((_DWORD *)this + 1533);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aEmpulsesparkle,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v82 = (int)AnimTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v82 = v81;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 1533) = v82;
+    LargeVisceroid = *((_DWORD *)this + 4);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aLargevisceroid,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      Alt = BuildingTypeClass::FindOrCreateAlt(String);
+    }
+    else
+    {
+      Alt = LargeVisceroid;
+    }
+    *((_DWORD *)this + 4) = Alt;
+    SmallVisceroid = *((_DWORD *)this + 5);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aSmallvisceroid,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v86 = BuildingTypeClass::FindOrCreateAlt(String);
+    }
+    else
+    {
+      v86 = SmallVisceroid;
+    }
+    *((_DWORD *)this + 5) = v86;
+    TiberiumHeal = *((_DWORD *)this + 10);
+    v287[1] = *((_DWORD *)this + 11);
+    v287[0] = TiberiumHeal;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTiberiumheal,
+      *(double *)v287);
+    *((double *)this + 5) = *(double *)&v1;
+    *((_DWORD *)this + 12) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aSelfhealinfant,
+                               *((_DWORD *)this + 12));
+    *((_DWORD *)this + 13) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aSelfhealinfant_0,
+                               *((_DWORD *)this + 13));
+    *((_DWORD *)this + 14) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aSelfhealunitfr,
+                               *((_DWORD *)this + 14));
+    *((_DWORD *)this + 15) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aSelfhealunitam,
+                               *((_DWORD *)this + 15));
+    LODWORD(v291) = (char *)this + 856;
+    IntVector::Copy(&v282, (_DWORD *)this + 214);
+    v88 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisitepo,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *(_DWORD *)(v291 + 16),
+            *(_DWORD *)(v291 + 20),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 856;
+    TypeList::Copy((_DWORD *)this + 214, v88);
+    v89 = v291;
+    *(_DWORD *)(v291 + 16) = v88[4];
+    *(_DWORD *)(v89 + 20) = v88[5];
+    *(_DWORD *)(v89 + 24) = v88[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    IntVector::Copy(&v282, (_DWORD *)this + 221);
+    v90 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisitefa,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *((_DWORD *)this + 225),
+            *((_DWORD *)this + 226),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 884;
+    TypeList::Copy((_DWORD *)this + 221, v90);
+    v91 = v291;
+    *(_DWORD *)(v291 + 16) = v90[4];
+    *(_DWORD *)(v91 + 20) = v90[5];
+    *(_DWORD *)(v91 + 24) = v90[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    IntVector::Copy(&v282, (_DWORD *)this + 228);
+    v92 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisiteba,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *((_DWORD *)this + 232),
+            *((_DWORD *)this + 233),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 912;
+    TypeList::Copy((_DWORD *)this + 228, v92);
+    v93 = v291;
+    *(_DWORD *)(v291 + 16) = v92[4];
+    *(_DWORD *)(v93 + 20) = v92[5];
+    *(_DWORD *)(v93 + 24) = v92[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    IntVector::Copy(&v282, (_DWORD *)this + 235);
+    v94 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisitera,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *((_DWORD *)this + 239),
+            *((_DWORD *)this + 240),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 940;
+    TypeList::Copy((_DWORD *)this + 235, v94);
+    v95 = v291;
+    *(_DWORD *)(v291 + 16) = v94[4];
+    *(_DWORD *)(v95 + 20) = v94[5];
+    *(_DWORD *)(v95 + 24) = v94[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    IntVector::Copy(&v282, (_DWORD *)this + 242);
+    v96 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisitete,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *((_DWORD *)this + 246),
+            *((_DWORD *)this + 247),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 968;
+    TypeList::Copy((_DWORD *)this + 242, v96);
+    v97 = v291;
+    *(_DWORD *)(v291 + 16) = v96[4];
+    *(_DWORD *)(v97 + 20) = v96[5];
+    *(_DWORD *)(v97 + 24) = v96[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    IntVector::Copy(&v282, (_DWORD *)this + 249);
+    v98 = LoadBuildingTypeClassPrerequisites(
+            &v288,
+            v299,
+            (unsigned __int8 *)g_INI_Key_General,
+            (unsigned __int8 *)aPrerequisitepr,
+            &TypeList<int>::`vftable',
+            (int)v283,
+            v284,
+            v285,
+            *((_DWORD *)this + 253),
+            *((_DWORD *)this + 254),
+            v287[1]);
+    LODWORD(v291) = (char *)this + 996;
+    TypeList::Copy((_DWORD *)this + 249, v98);
+    v99 = v291;
+    *(_DWORD *)(v291 + 16) = v98[4];
+    *(_DWORD *)(v99 + 20) = v98[5];
+    *(_DWORD *)(v99 + 24) = v98[6];
+    v288 = (int)&VectorClass<int>::`vftable';
+    if ( v289 && v290 )
+      __3_YAXPAX_Z(v289);
+    v100 = *((_DWORD *)this + 340);
+    v287[1] = *((_DWORD *)this + 341);
+    v287[0] = v100;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aZoominfactor,
+      *(double *)v287);
+    *((double *)this + 170) = *(double *)&v1;
+    *((_BYTE *)this + 6126) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aRevealbyheight,
+                                *((_BYTE *)this + 6126));
+    *((_BYTE *)this + 6127) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aAllowshroudeds,
+                                *((_BYTE *)this + 6127));
+    *((_DWORD *)this + 61) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aAircraftfogrev,
+                               *((_DWORD *)this + 61));
+    v101 = *((float *)this + 348);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMinlowpowerpro,
+      v101);
+    *((float *)this + 348) = v101;
+    v102 = *((float *)this + 349);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMaxlowpowerpro,
+      v102);
+    *((float *)this + 349) = v102;
+    v103 = *((float *)this + 350);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aLowpowerpenalt,
+      v103);
+    *((float *)this + 350) = v103;
+    v104 = *((float *)this + 351);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMultiplefactor,
+      v104);
+    *((float *)this + 351) = v104;
+    *((_DWORD *)this + 352) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aMaximumcheerra,
+                                *((_DWORD *)this + 352));
+    v105 = *((_DWORD *)this + 354);
+    v287[1] = *((_DWORD *)this + 355);
+    v287[0] = v105;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTreeflammabili,
+      *(double *)v287);
+    *((double *)this + 177) = v104;
+    v106 = *((_DWORD *)this + 358);
+    v287[1] = *((_DWORD *)this + 359);
+    v287[0] = v106;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMissilerotvar,
+      *(double *)v287);
+    *((double *)this + 179) = v104;
+    *((_DWORD *)this + 360) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aMissilesafetya,
+                                *((_DWORD *)this + 360));
+    v107 = *((_DWORD *)this + 356);
+    v287[1] = *((_DWORD *)this + 357);
+    v287[0] = v107;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMissilespeedva,
+      *(double *)v287);
+    *((double *)this + 178) = v104;
+    VeteranRatio_high = *((_DWORD *)this + 361);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aDroppodweapon,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v109 = InfantryTypeClass::Find(String);
+    }
+    else
+    {
+      v109 = VeteranRatio_high;
+    }
+    *((_DWORD *)this + 361) = v109;
+    *((_DWORD *)this + 362) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDroppodheight,
+                                *((_DWORD *)this + 362));
+    *((_DWORD *)this + 363) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDroppodspeed,
+                                *((_DWORD *)this + 363));
+    VeteranSpeed = *((_DWORD *)this + 364);
+    v287[1] = *((_DWORD *)this + 365);
+    v287[0] = VeteranSpeed;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDroppodangle,
+      *(double *)v287);
+    *((double *)this + 182) = v104;
+    if ( v104 >= 1.178097245096172 )
+      v104 = 1.178097245096172;
+    *((double *)this + 182) = v104;
+    if ( v104 <= 0.3926990816987241 )
+      v104 = 0.3926990816987241;
+    *((double *)this + 182) = v104;
+    VeteranArmor = *((_DWORD *)this + 368);
+    v287[1] = *((_DWORD *)this + 369);
+    v287[0] = VeteranArmor;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCrewescape,
+      *(double *)v287);
+    *((double *)this + 184) = v104;
+    TunnelSpeed = *((_DWORD *)this + 8);
+    v287[1] = *((_DWORD *)this + 9);
+    v287[0] = TunnelSpeed;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTunnelspeed,
+      *(double *)v287);
+    *((double *)this + 4) = v104;
+    GameForming = *((_DWORD *)this + 380);
+    v287[1] = *((_DWORD *)this + 381);
+    v287[0] = GameForming;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHoverdampen,
+      *(double *)v287);
+    *((double *)this + 190) = v104;
+    VeteranCap = *((_DWORD *)this + 372);
+    v287[1] = *((_DWORD *)this + 373);
+    v287[0] = VeteranCap;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHoverbob,
+      *(double *)v287);
+    *((double *)this + 186) = v104;
+    *((_DWORD *)this + 371) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aHoverheight,
+                                *((_DWORD *)this + 371));
+    CloakSound = *((_DWORD *)this + 374);
+    v287[1] = *((_DWORD *)this + 375);
+    v287[0] = CloakSound;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHoverboost,
+      *(double *)v287);
+    *((double *)this + 187) = v104;
+    GameClosed = *((_DWORD *)this + 376);
+    v287[1] = *((_DWORD *)this + 377);
+    v287[0] = GameClosed;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHoveraccelerat,
+      *(double *)v287);
+    *((double *)this + 188) = v104;
+    SystemError = *((_DWORD *)this + 378);
+    v287[1] = *((_DWORD *)this + 379);
+    v287[0] = SystemError;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHoverbrake,
+      *(double *)v287);
+    *((double *)this + 189) = v104;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeteranratio,
+      *((double *)this + 205));
+    *((double *)this + 205) = v104;
+    ShellButtonSlideSound = *((_DWORD *)this + 412);
+    v287[1] = *((_DWORD *)this + 413);
+    v287[0] = ShellButtonSlideSound;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeterancombat,
+      *(double *)v287);
+    *((double *)this + 206) = v104;
+    WallBuildSpeedCoefficient = *((_DWORD *)this + 414);
+    v287[1] = *((_DWORD *)this + 415);
+    v287[0] = WallBuildSpeedCoefficient;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeteranspeed,
+      *(double *)v287);
+    *((double *)this + 207) = v104;
+    ChargeToDrainRatio = *((_DWORD *)this + 416);
+    v287[1] = *((_DWORD *)this + 417);
+    v287[0] = ChargeToDrainRatio;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeteransight,
+      *(double *)v287);
+    *((double *)this + 208) = v104;
+    TrackedUphill = *((_DWORD *)this + 418);
+    v287[1] = *((_DWORD *)this + 419);
+    v287[0] = TrackedUphill;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeteranarmor,
+      *(double *)v287);
+    *((double *)this + 209) = v104;
+    TrackedDownhill = *((_DWORD *)this + 420);
+    v287[1] = *((_DWORD *)this + 421);
+    v287[0] = TrackedDownhill;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeteranrof,
+      *(double *)v287);
+    *((double *)this + 210) = v104;
+    WheeledUphill = *((_DWORD *)this + 422);
+    v287[1] = *((_DWORD *)this + 423);
+    v287[0] = WheeledUphill;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aVeterancap,
+      *(double *)v287);
+    *((double *)this + 211) = v104;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aExplosivevoxel,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
+      v288 = (int)&TypeList<VoxelAnimTypeClass const *>::`vftable';
+      for ( mm = strtok(String, Delimiter); mm; mm = strtok(0, Delimiter) )
+      {
+        if ( !*mm )
+          break;
+        LODWORD(v291) = UnitTypeClass::FindOrCreate(mm);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add2(&v288, &v291);
+      }
+      TypeList::CopyVoxelAnim(&v292, &v288);
+      v288 = (int)&VectorClass<VoxelAnimTypeClass const *>::`vftable';
+      Vector::Cleanup2((int)&v288);
+    }
+    else
+    {
+      TypeList::CopyVoxelAnim(&v292, (_DWORD *)this + 384);
+    }
+    ((void (__stdcall *)(void ***))VectorClass::CopyAssign)(&v292);
+    *((_DWORD *)this + 388) = v295;
+    *((float *)this + 389) = v296;
+    *((_DWORD *)this + 390) = v297;
+    v292 = &VectorClass<VoxelAnimTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    v125 = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+             g_INI_Key_General,
+             aBridgevoxelmax,
+             *((_DWORD *)this + 393));
+    v287[1] = 128;
+    *((_DWORD *)this + 393) = v125;
+    RadarOn = *((_DWORD *)this + 391);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aTirevoxeldebri,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v127 = UnitTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v127 = RadarOn;
+    }
+    *((_DWORD *)this + 391) = v127;
+    RadarOff = *((_DWORD *)this + 392);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aScrapvoxeldebr,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v129 = UnitTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v129 = RadarOff;
+    }
+    *((_DWORD *)this + 392) = v129;
+    *((_DWORD *)this + 394) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCloakingstages,
+                                *((_DWORD *)this + 394));
+    TeslaCharge = *((_DWORD *)this + 396);
+    v287[1] = *((_DWORD *)this + 397);
+    v287[0] = TeslaCharge;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aShipsinkingwei,
+      *(double *)v287);
+    *((double *)this + 198) = v104;
+    GenericClick = *((_DWORD *)this + 398);
+    v287[1] = *((_DWORD *)this + 399);
+    v287[0] = GenericClick;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aIcecrackingwei,
+      *(double *)v287);
+    *((double *)this + 199) = v104;
+    BuildingDamageSound = *((_DWORD *)this + 400);
+    v287[1] = *((_DWORD *)this + 401);
+    v287[0] = BuildingDamageSound;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aIcebreakingwei,
+      *(double *)v287);
+    *((double *)this + 200) = v104;
+    *((_BYTE *)this + 1636) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCliffbackimpas,
+                                *((char *)this + 1636));
+    PlayerJoined = *((_DWORD *)this + 382);
+    v287[1] = *((_DWORD *)this + 383);
+    v287[0] = PlayerJoined;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aPlacementdelay,
+      *(double *)v287);
+    *((double *)this + 191) = v104;
+    GDIPowerPlant = *((_DWORD *)this + 474);
+    v287[1] = *((_DWORD *)this + 475);
+    v287[0] = GDIPowerPlant;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTrackeduphill,
+      *(double *)v287);
+    *((double *)this + 237) = v104;
+    NodAdvancedPower = *((_DWORD *)this + 476);
+    v287[1] = *((_DWORD *)this + 477);
+    v287[0] = NodAdvancedPower;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTrackeddownhil,
+      *(double *)v287);
+    *((double *)this + 238) = v104;
+    v136 = *((_DWORD *)this + 478);
+    v287[1] = *((_DWORD *)this + 479);
+    v287[0] = v136;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aWheeleduphill,
+      *(double *)v287);
+    *((double *)this + 239) = v104;
+    v137 = *((_DWORD *)this + 480);
+    v287[1] = *((_DWORD *)this + 481);
+    v287[0] = v137;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aWheeleddownhil,
+      *(double *)v287);
+    *((double *)this + 240) = v104;
+    *((_DWORD *)this + 491) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aWinddirection,
+                                *((_DWORD *)this + 491));
+    *((_DWORD *)this + 492) = INIClass::ReadCoord(
+                                v104,
+                                (int)g_INI_Key_General,
+                                (int)aCamerarange,
+                                *((_DWORD *)this + 492));
+    *((_DWORD *)this + 493) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aFlightlevel,
+                                *((_DWORD *)this + 493));
+    *((_DWORD *)this + 494) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aParachutemaxfa,
+                                *((_DWORD *)this + 494));
+    v138 = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+             g_INI_Key_General,
+             aNoparachutemax,
+             *((_DWORD *)this + 495));
+    v287[1] = 128;
+    *((_DWORD *)this + 495) = v138;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aRepairbay,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( nn = strtok(String, Delimiter); nn; nn = strtok(0, Delimiter) )
+      {
+        if ( !*nn )
+          break;
+        LODWORD(v291) = BuildingTypeClass::FindOrCreate(nn);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt3(&v288, &v291);
+      }
+      TypeList::BuildingTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)&v288);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(&v292, (_DWORD *)this + 532);
+    }
+    VectorClass::CopyBuilding((_DWORD *)this + 532, &v292);
+    *((_DWORD *)this + 536) = v295;
+    *((float *)this + 537) = v296;
+    *((_DWORD *)this + 538) = v297;
+    v292 = &VectorClass<BuildingTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    v140 = *((_DWORD *)this + 539);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aGdigateone,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v141 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v141 = v140;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 539) = v141;
+    v142 = *((_DWORD *)this + 540);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aGdigatetwo,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v143 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v143 = v142;
+    }
+    *((_DWORD *)this + 540) = v143;
+    v144 = *((_DWORD *)this + 541);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aNodgateone,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v145 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v145 = v144;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 541) = v145;
+    v146 = *((_DWORD *)this + 542);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aNodgatetwo,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v147 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v147 = v146;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 542) = v147;
+    v148 = *((_DWORD *)this + 543);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aWalltower,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v149 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v149 = v148;
+    }
+    *((_DWORD *)this + 543) = v149;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aShipyard,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
+      v288 = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( i1 = strtok(String, Delimiter); i1; i1 = strtok(0, Delimiter) )
+      {
+        if ( !*i1 )
+          break;
+        LODWORD(v291) = BuildingTypeClass::FindOrCreate(i1);
+        if ( (_DWORD)v291 )
+          DynamicVector::Add_Alt3(&v288, &v291);
+      }
+      TypeList::BuildingTypeCopy(&v292, &v288);
+      v288 = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)&v288);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(&v292, (_DWORD *)this + 544);
+    }
+    VectorClass::CopyBuilding((_DWORD *)this + 544, &v292);
+    *((_DWORD *)this + 548) = v295;
+    *((float *)this + 549) = v296;
+    *((_DWORD *)this + 550) = v297;
+    v292 = &VectorClass<BuildingTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    v151 = *((_DWORD *)this + 551);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aGdipowerplant,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v152 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v152 = v151;
+    }
+    *((_DWORD *)this + 551) = v152;
+    v153 = *((_DWORD *)this + 552);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aNodregularpowe,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v154 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v154 = v153;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 552) = v154;
+    v155 = *((_DWORD *)this + 553);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aNodadvancedpow,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v156 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v156 = v155;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 553) = v156;
+    v157 = *((_DWORD *)this + 554);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aThirdpowerplan,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      v158 = BuildingTypeClass::FindOrCreate(String);
+    }
+    else
+    {
+      v158 = v157;
+    }
+    *((_DWORD *)this + 554) = v158;
+    v159 = *((_DWORD *)this + 256);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aPrerequisitepr_0,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      v160 = BuildingTypeClass::FindOrCreateAlt(String);
+    }
+    else
+    {
+      v160 = v159;
+    }
+    v287[1] = 128;
+    *((_DWORD *)this + 256) = v160;
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aBaseunit,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           v287[1]) )
+    {
+      UnitTypeVector::Construct(&v288, 0, 0);
+      v288 = (int)&TypeList<UnitTypeClass const *>::`vftable';
+      for ( i2 = strtok(String, Delimiter); i2; i2 = strtok(0, Delimiter) )
+      {
+        if ( !*i2 )
+          break;
+        LODWORD(v291) = BuildingTypeClass::FindOrCreateAlt(i2);
+        if ( (_DWORD)v291 )
+          VectorClass::PushBack(&v288, &v291);
+      }
+      TypeList::CopyConstructor(&v292, &v288);
+      v288 = (int)&VectorClass<UnitTypeClass const *>::`vftable';
+      Vector::Destructor((int)&v288);
+    }
+    else
+    {
+      TypeList::CopyConstructor(&v292, (_DWORD *)this + 712);
+    }
+    VectorClass::CopyConstructor((_DWORD *)this + 712, &v292);
+    *((_DWORD *)this + 716) = v295;
+    *((float *)this + 717) = v296;
+    *((_DWORD *)this + 718) = v297;
+    v292 = &VectorClass<UnitTypeClass const *>::`vftable';
+    if ( Block && v294 )
+      __3_YAXPAX_Z(Block);
+    if ( INIClass::GetString(
+           v299,
+           (unsigned __int8 **)g_INI_Key_General,
+           (unsigned __int8 *)aHarvesterunit,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      UnitTypeVector::Construct(&v288, 0, 0);
+      v288 = (int)&TypeList<UnitTypeClass const *>::`vftable';
+      for ( i3 = strtok(String, Delimiter); i3; i3 = strtok(0, Delimiter) )
+      {
+        if ( !*i3 )
+          break;
+        LODWORD(v291) = BuildingTypeClass::FindOrCreateAlt(i3);
+        if ( (_DWORD)v291 )
+          VectorClass::PushBack(&v288, &v291);
+      }
+      TypeList::CopyConstructor(&v292, &v288);
+      v288 = (int)&VectorClass<UnitTypeClass const *>::`vftable';
+      Vector::Destructor((int)&v288);
+    }
+    else
+    {
+      TypeList::CopyConstructor(&v292, (_DWORD *)this + 719);
+    }
+    VectorClass::CopyConstructor((_DWORD *)this + 719, &v292);
+    *((_DWORD *)this + 723) = v295;
+    *((float *)this + 724) = v296;
+    *((_DWORD *)this + 725) = v297;
+    v292 = &VectorClass<UnitTypeClass const *>::`vftable';
+    if ( Block )
+    {
+      if ( v294 )
+        __3_YAXPAX_Z(Block);
+    }
+    v163 = ((int (__stdcall *)(char *, char *, char *))HouseTypeClass::ReadCountryName)(
+             g_INI_Key_General,
+             aPadaircraft,
+             (char *)this + 2904);
+    ((void (__stdcall *)(int))RulesClass::readSuperWeaponTypes)(v163);
+    RulesClass::readCountries(&v288);
+    *((_DWORD *)this + 761) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aParatrooper,
+                                *((_DWORD *)this + 761));
+    InfantryTypeList = (int *)ReadINIClassInfantryTypeList(
+                                (int)&v288,
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aSecretinfantry,
+                                (_DWORD *)this + 832);
+    TypeList::CopyInfantry((int *)this + 832, InfantryTypeList);
+    TypeList::InfantryCleanup(&v288);
+    v165 = ((int (__stdcall *)(char *, char *, char *))BuildingClass::LoadBuildingTypes)(
+             g_INI_Key_General,
+             aSecretunits,
+             (char *)this + 3356);
+    ((void (__stdcall *)(int))RulesClass::readAircraftTypes)(v165);
+    RulesClass::readInfantryTypes(&v288);
+    BuildingTypeList = (int *)ReadINIClassBuildingTypeList(
+                                (int)&v288,
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aSecretbuilding,
+                                (_DWORD *)this + 846);
+    TypeList::CopyAircraft((int *)this + 846, BuildingTypeList);
+    RulesClass::readMaximums(&v288);
+    v167 = RulesClass::readWarheads((_DWORD *)this + 832);
+    v168 = RulesClass::readOverlayTypes((_DWORD *)this + 839) + v167;
+    *((_DWORD *)this + 853) = RulesClass::readSmudgeTypes((_DWORD *)this + 846) + v168;
+    *((_DWORD *)this + 763) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronodelay,
+                                *((_DWORD *)this + 763));
+    *((_DWORD *)this + 764) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronoreinfdel,
+                                *((_DWORD *)this + 764));
+    *((_DWORD *)this + 765) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronodistance,
+                                *((_DWORD *)this + 765));
+    *((_BYTE *)this + 3064) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aChronotrigger,
+                                *((_BYTE *)this + 3064));
+    *((_DWORD *)this + 767) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronominimumd,
+                                *((_DWORD *)this + 767));
+    *((_DWORD *)this + 768) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronorangemin,
+                                *((_DWORD *)this + 768));
+    *((_DWORD *)this + 854) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aAllieddisguise,
+                                *((_DWORD *)this + 854));
+    *((_DWORD *)this + 855) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aSovietdisguise,
+                                *((_DWORD *)this + 855));
+    *((_DWORD *)this + 856) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aThirddisguise,
+                                *((_DWORD *)this + 856));
+    *((_DWORD *)this + 857) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aSpypowerblacko,
+                                *((_DWORD *)this + 857));
+    v169 = *((float *)this + 858);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSpymoneystealp,
+      v169);
+    *((float *)this + 858) = v169;
+    *((_BYTE *)this + 3436) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aAttackcursoron,
+                                *((_BYTE *)this + 3436));
+    v170 = *((float *)this + 975);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aPurifierbonus,
+      v170);
+    *((float *)this + 975) = v170;
+    *((_DWORD *)this + 988) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aEngineer,
+                                *((_DWORD *)this + 988));
+    *((_DWORD *)this + 987) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aTechnician,
+                                *((_DWORD *)this + 987));
+    *((_DWORD *)this + 989) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aPilot,
+                                *((_DWORD *)this + 989));
+    *((_DWORD *)this + 990) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aAlliedcrew,
+                                *((_DWORD *)this + 990));
+    *((_DWORD *)this + 991) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aSovietcrew,
+                                *((_DWORD *)this + 991));
+    *((_DWORD *)this + 992) = GetINIClassInt(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aThirdcrew,
+                                *((_DWORD *)this + 992));
+    *((_BYTE *)this + 6113) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aCurleyshuffle,
+                                *((_BYTE *)this + 6113));
+    *((_BYTE *)this + 6116) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aFinediffcontro,
+                                *((_BYTE *)this + 6116));
+    VectorClass::Copy(&v282, (_DWORD *)this + 1110);
+    IntList = (int *)INIClass::ReadIntList(
+                       v299,
+                       (int)&v288,
+                       (unsigned __int8 *)g_INI_Key_General,
+                       (unsigned __int8 *)aTeamdelays,
+                       v282,
+                       v283,
+                       v284,
+                       v285,
+                       v286,
+                       v287[0],
+                       v287[1]);
+    TypeList::CopyFull((int *)this + 1110, IntList);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1117);
+    v172 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAihatedelays,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1117, v172);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 1216) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aAialternatepro,
+                                 *((_DWORD *)this + 1216));
+    v173 = *((_DWORD *)this + 1274);
+    v287[1] = *((_DWORD *)this + 1275);
+    v287[0] = v173;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAiuseturbineup,
+      *(double *)v287);
+    *((double *)this + 637) = v170;
+    *((_BYTE *)this + 6129) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aNodaibuildswal,
+                                *((_BYTE *)this + 6129));
+    *((_BYTE *)this + 6130) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aAibuildswalls,
+                                *((_BYTE *)this + 6130));
+    VectorClass::Copy(&v282, (_DWORD *)this + 1276);
+    v174 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aFillearliestte,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1276, v174);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1252);
+    v175 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aMinimumaidefen,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1252, v175);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1259);
+    v176 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aMaximumaidefen,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1259, v176);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1266);
+    v177 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aTotalaiteamcap,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1266, v177);
+    VectorClass::Dtor(&v288);
+    *((_BYTE *)this + 6131) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aUsemindefenser,
+                                *((_BYTE *)this + 6131));
+    *((_DWORD *)this + 1124) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aDissolveunfill,
+                                 *((_DWORD *)this + 1124));
+    *((_DWORD *)this + 861) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aAisafedistance,
+                                *((_DWORD *)this + 861));
+    v178 = *((float *)this + 860);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAiminorsuperre,
+      v178);
+    *((float *)this + 860) = v178;
+    *((_DWORD *)this + 862) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aHarvestertoofa,
+                                *((_DWORD *)this + 862));
+    *((_DWORD *)this + 863) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aChronoharvtoof,
+                                *((_DWORD *)this + 863));
+    VectorClass::Copy(&v282, (_DWORD *)this + 864);
+    v179 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAlliedbasedefe,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 864, v179);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 871);
+    v180 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aSovietbasedefe,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 871, v180);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 878);
+    v181 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aThirdbasedefen,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 878, v181);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 885);
+    v182 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAipickwalldefe,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 885, v182);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 892) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aAirestrictrepl,
+                                *((_DWORD *)this + 892));
+    *((_DWORD *)this + 893) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aThreatperoccup,
+                                *((_DWORD *)this + 893));
+    *((_DWORD *)this + 894) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aApproachtarget,
+                                *((_DWORD *)this + 894));
+    *((_DWORD *)this + 895) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCampaignmoneyd,
+                                *((_DWORD *)this + 895));
+    *((_DWORD *)this + 896) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCampaignmoneyd_0,
+                                *((_DWORD *)this + 896));
+    *((_DWORD *)this + 897) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aGuardareatarge,
+                                *((_DWORD *)this + 897));
+    *((_DWORD *)this + 898) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aNormaltargetin,
+                                *((_DWORD *)this + 898));
+    *((_DWORD *)this + 899) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aAinavalyardadj,
+                                *((_DWORD *)this + 899));
+    VectorClass::Copy(&v282, (_DWORD *)this + 900);
+    v183 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aDisableddisgui,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 900, v183);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 907);
+    v184 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiautodeployfr,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 907, v184);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 914) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aMaximumbuildin,
+                                *((_DWORD *)this + 914));
+    *((_DWORD *)this + 1502) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aTiberiumshorts,
+                                 *((_DWORD *)this + 1502));
+    *((_DWORD *)this + 1503) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aTiberiumlongsc,
+                                 *((_DWORD *)this + 1503));
+    *((_DWORD *)this + 1504) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aSlaveminershor,
+                                 *((_DWORD *)this + 1504));
+    *((_DWORD *)this + 1505) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aSlaveminerslav,
+                                 *((_DWORD *)this + 1505));
+    *((_DWORD *)this + 1506) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aSlaveminerlong,
+                                 *((_DWORD *)this + 1506));
+    *((_DWORD *)this + 1507) = INIClass::ReadCoord(
+                                 v178,
+                                 (int)g_INI_Key_General,
+                                 (int)aSlaveminerscan,
+                                 *((_DWORD *)this + 1507));
+    *((_DWORD *)this + 1508) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aSlaveminerkick,
+                                 *((_DWORD *)this + 1508));
+    VectorClass::Copy(&v282, (_DWORD *)this + 945);
+    v185 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAisuperdefense,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 945, v185);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 952) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aAisuperdefense_0,
+                                *((_DWORD *)this + 952));
+    *((_DWORD *)this + 953) = INIClass::ReadCoord(
+                                v178,
+                                (int)g_INI_Key_General,
+                                (int)aAisuperdefense_1,
+                                *((_DWORD *)this + 953));
+    VectorClass::Copy(&v282, (_DWORD *)this + 915);
+    v186 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAicapturenorma,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 915, v186);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 922);
+    v187 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAicapturewound,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 922, v187);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 929);
+    v188 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAicapturelowpo,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 929, v188);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 936);
+    v189 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAicapturelowmo,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 936, v189);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 943) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aAicapturelowmo_0,
+                                *((_DWORD *)this + 943));
+    v190 = *((float *)this + 944);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAicapturewound_0,
+      v190);
+    *((float *)this + 944) = v190;
+    VectorClass::Copy(&v282, (_DWORD *)this + 1217);
+    v191 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aMultiplayeraic,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1217, v191);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1224);
+    v192 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAivirtualpurif,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1224, v192);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1231);
+    v193 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAislaveminernu,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1231, v193);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1238);
+    v194 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aHarvestersperr,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1238, v194);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1245);
+    v195 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiextrarefiner,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1245, v195);
+    VectorClass::Dtor(&v288);
+    v196 = (int *)ReadINIClassInfantryTypeList(
+                    (int)&v288,
+                    v299,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAmerparadropin,
+                    (_DWORD *)this + 769);
+    TypeList::CopyInfantry((int *)this + 769, v196);
+    TypeList::InfantryCleanup(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 776);
+    v197 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAmerparadropnu,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 776, v197);
+    VectorClass::Dtor(&v288);
+    v198 = (int *)ReadINIClassInfantryTypeList(
+                    (int)&v288,
+                    v299,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAllyparadropin,
+                    (_DWORD *)this + 783);
+    TypeList::CopyInfantry((int *)this + 783, v198);
+    TypeList::InfantryCleanup(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 790);
+    v199 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAllyparadropnu,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 790, v199);
+    VectorClass::Dtor(&v288);
+    v200 = (int *)ReadINIClassInfantryTypeList(
+                    (int)&v288,
+                    v299,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aSovparadropinf,
+                    (_DWORD *)this + 797);
+    TypeList::CopyInfantry((int *)this + 797, v200);
+    TypeList::InfantryCleanup(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 804);
+    v201 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aSovparadropnum,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 804, v201);
+    VectorClass::Dtor(&v288);
+    v202 = (int *)ReadINIClassInfantryTypeList(
+                    (int)&v288,
+                    v299,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aYuriparadropin,
+                    (_DWORD *)this + 811);
+    TypeList::CopyInfantry((int *)this + 811, v202);
+    TypeList::InfantryCleanup(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 818);
+    v203 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aYuriparadropnu,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 818, v203);
+    VectorClass::Dtor(&v288);
+    v204 = (int *)ReadINIClassInfantryTypeList(
+                    (int)&v288,
+                    v299,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAnimtoinfantry,
+                    (_DWORD *)this + 825);
+    TypeList::CopyInfantry((int *)this + 825, v204);
+    TypeList::InfantryCleanup(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1125);
+    v205 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannoncon,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1125, v205);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1132);
+    v206 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonwar,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1132, v206);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1139);
+    v207 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonpow,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1139, v207);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1146);
+    v208 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannontec,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1146, v208);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1153);
+    v209 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannoneng,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1153, v209);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1160);
+    v210 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonthi,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1160, v210);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1167);
+    v211 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonhar,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1167, v211);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1174);
+    v212 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonmcv,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1174, v212);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1181);
+    v213 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonapc,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1181, v213);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1188);
+    v214 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonbas,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1188, v214);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1195);
+    v215 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonplu,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1195, v215);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1202);
+    v216 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannonhel,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1202, v216);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 1209);
+    v217 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aAiioncannontem,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 1209, v217);
+    VectorClass::Dtor(&v288);
+    BerserkColor = *((_DWORD *)this + 1284);
+    v287[1] = *((_DWORD *)this + 1285);
+    v287[0] = BerserkColor;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCloakdelay,
+      *(double *)v287);
+    *((double *)this + 642) = v190;
+    DirectRockingCoefficient = *((float *)this + 1286);
+    v287[1] = *((_DWORD *)this + 1287);
+    *(float *)v287 = DirectRockingCoefficient;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aGamespeedbias,
+      *(double *)v287);
+    *((double *)this + 643) = v190;
+    v220 = *((_DWORD *)this + 1288);
+    v287[1] = *((_DWORD *)this + 1289);
+    v287[0] = v220;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aBasebias,
+      *(double *)v287);
+    *((double *)this + 644) = v190;
+    *((_BYTE *)this + 6120) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aSeparateaircra,
+                                *((_BYTE *)this + 6120));
+    v221 = *((_DWORD *)this + 1334);
+    v287[1] = *((_DWORD *)this + 1335);
+    v287[0] = v221;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aBasedefensedel,
+      *(double *)v287);
+    *((double *)this + 667) = v190;
+    *((_DWORD *)this + 1336) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aSuspendpriorit,
+                                 *((_DWORD *)this + 1336));
+    v222 = *((_DWORD *)this + 1338);
+    v287[1] = *((_DWORD *)this + 1339);
+    v287[0] = v222;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSuspenddelay,
+      *(double *)v287);
+    *((double *)this + 669) = v190;
+    v223 = *((_DWORD *)this + 1340);
+    v287[1] = *((_DWORD *)this + 1341);
+    v287[0] = v223;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSurvivorrate,
+      *(double *)v287);
+    *((double *)this + 670) = v190;
+    *((_DWORD *)this + 1342) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aAlliedsurvivor,
+                                 *((_DWORD *)this + 1342));
+    *((_DWORD *)this + 1343) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aSovietsurvivor,
+                                 *((_DWORD *)this + 1343));
+    *((_DWORD *)this + 1344) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aThirdsurvivord,
+                                 *((_DWORD *)this + 1344));
+    v224 = *((_DWORD *)this + 1346);
+    v287[1] = *((_DWORD *)this + 1347);
+    v287[0] = v224;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aReloadrate,
+      *(double *)v287);
+    *((double *)this + 673) = v190;
+    v225 = *((_DWORD *)this + 1350);
+    v287[1] = *((_DWORD *)this + 1351);
+    v287[0] = v225;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aBuilduptime,
+      *(double *)v287);
+    *((double *)this + 675) = v190;
+    v226 = *((_DWORD *)this + 1354);
+    v287[1] = *((_DWORD *)this + 1355);
+    v287[0] = v226;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aHarvesterdumpr,
+      *(double *)v287);
+    *((double *)this + 677) = v190;
+    *((_DWORD *)this + 1352) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aHarvesterloadr,
+                                 *((_DWORD *)this + 1352));
+    v227 = *((_DWORD *)this + 1490);
+    v287[1] = *((_DWORD *)this + 1491);
+    v287[0] = v227;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aBuildspeed,
+      *(double *)v287);
+    *((double *)this + 745) = v190;
+    v228 = *((_DWORD *)this + 1452);
+    v287[1] = *((_DWORD *)this + 1453);
+    v287[0] = v228;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDamagedelay,
+      *(double *)v287);
+    *((double *)this + 726) = v190;
+    v229 = *((_DWORD *)this + 1422);
+    v287[1] = *((_DWORD *)this + 1423);
+    v287[0] = v229;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aGrowthrate,
+      *(double *)v287);
+    *((double *)this + 711) = v190;
+    v230 = *((_DWORD *)this + 1486);
+    v287[1] = *((_DWORD *)this + 1487);
+    v287[0] = v230;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRefundpercent,
+      *(double *)v287);
+    *((double *)this + 743) = v190;
+    v231 = *((_DWORD *)this + 1460);
+    v287[1] = *((_DWORD *)this + 1461);
+    v287[0] = v231;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRepairpercent,
+      *(double *)v287);
+    *((double *)this + 730) = v190;
+    *((_DWORD *)this + 1459) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aRepairstep,
+                                 *((_DWORD *)this + 1459));
+    *((_DWORD *)this + 1462) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aIrepairstep,
+                                 *((_DWORD *)this + 1462));
+    v232 = *((_DWORD *)this + 1464);
+    v287[1] = *((_DWORD *)this + 1465);
+    v287[0] = v232;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRepairrate,
+      *(double *)v287);
+    *((double *)this + 732) = v190;
+    v233 = *((_DWORD *)this + 1466);
+    v287[1] = *((_DWORD *)this + 1467);
+    v287[0] = v233;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aUrepairrate,
+      *(double *)v287);
+    *((double *)this + 733) = v190;
+    v234 = *((_DWORD *)this + 1468);
+    v287[1] = *((_DWORD *)this + 1469);
+    v287[0] = v234;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aIrepairrate,
+      *(double *)v287);
+    *((double *)this + 734) = v190;
+    *((_DWORD *)this + 1479) = INIClass::ReadCoord(v190, (int)g_INI_Key_General, (int)aStray, *((_DWORD *)this + 1479));
+    *((_DWORD *)this + 1480) = INIClass::ReadCoord(
+                                 v190,
+                                 (int)g_INI_Key_General,
+                                 (int)aRelaxedstray,
+                                 *((_DWORD *)this + 1480));
+    *((_DWORD *)this + 1481) = INIClass::ReadCoord(
+                                 v190,
+                                 (int)g_INI_Key_General,
+                                 (int)aGuardmodestray,
+                                 *((_DWORD *)this + 1481));
+    *((_DWORD *)this + 1478) = INIClass::ReadCoord(
+                                 v190,
+                                 (int)g_INI_Key_General,
+                                 (int)aCloseenough,
+                                 *((_DWORD *)this + 1478));
+    *((_BYTE *)this + 6114) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aBlendedfog,
+                                *((_BYTE *)this + 6114));
+    *((_DWORD *)this + 6) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                              g_INI_Key_General,
+                              aAttackingaircr,
+                              *((_DWORD *)this + 6));
+    *((_DWORD *)this + 1455) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLeptonspersigh,
+                                 *((_DWORD *)this + 1455));
+    *((_DWORD *)this + 1442) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aTiberiumtransm,
+                                 *((_DWORD *)this + 1442));
+    *((_DWORD *)this + 1509) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningdefer,
+                                 *((_DWORD *)this + 1509));
+    *((_DWORD *)this + 1510) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningdamag,
+                                 *((_DWORD *)this + 1510));
+    *((_DWORD *)this + 1511) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningstorm,
+                                 *((_DWORD *)this + 1511));
+    *((_DWORD *)this + 1512) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightninghitde,
+                                 *((_DWORD *)this + 1512));
+    *((_DWORD *)this + 1513) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningscatt,
+                                 *((_DWORD *)this + 1513));
+    *((_DWORD *)this + 1514) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningcells,
+                                 *((_DWORD *)this + 1514));
+    *((_DWORD *)this + 1515) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aLightningsepar,
+                                 *((_DWORD *)this + 1515));
+    *((_DWORD *)this + 1517) = SmallFunc_67B500(
+                                 v299,
+                                 (unsigned __int8 *)g_INI_Key_General,
+                                 (unsigned __int8 *)aLightningwarhe,
+                                 *((_DWORD *)this + 1517));
+    *((_BYTE *)this + 6064) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aLightningprint,
+                                *((_BYTE *)this + 6064));
+    *((_DWORD *)this + 1518) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aForceshieldrad,
+                                 *((_DWORD *)this + 1518));
+    *((_DWORD *)this + 1519) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aForceshielddur,
+                                 *((_DWORD *)this + 1519));
+    *((_DWORD *)this + 1520) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aForceshieldbla,
+                                 *((_DWORD *)this + 1520));
+    *((_DWORD *)this + 1521) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aForceshieldpla,
+                                 *((_DWORD *)this + 1521));
+    *((_BYTE *)this + 6088) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aMutateexplosio_0,
+                                *((_BYTE *)this + 6088));
+    *((_DWORD *)this + 294) = SmallFunc_67BCE0(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aPrismtype,
+                                *((_DWORD *)this + 294));
+    ZoomInFactor_high = (double)*((int *)this + 295);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aPrismsupportmo,
+      ZoomInFactor_high);
+    *((_DWORD *)this + 295) = Math::RoundToInt(ZoomInFactor_high * 100.0);
+    *((_DWORD *)this + 296) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aPrismsupportma,
+                                *((_DWORD *)this + 296));
+    *((_DWORD *)this + 297) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aPrismsupportde,
+                                *((_DWORD *)this + 297));
+    *((_DWORD *)this + 298) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aPrismsupportdu,
+                                *((_DWORD *)this + 298));
+    *((_DWORD *)this + 299) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aPrismsupporthe,
+                                *((_DWORD *)this + 299));
+    *((_DWORD *)this + 300) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketpausef,
+                                *((_DWORD *)this + 300));
+    *((_DWORD *)this + 301) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rockettiltfr,
+                                *((_DWORD *)this + 301));
+    MinLowPowerProductionSpeed = *((float *)this + 302);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aV3rocketpitchi,
+      MinLowPowerProductionSpeed);
+    *((float *)this + 302) = MinLowPowerProductionSpeed;
+    MaxLowPowerProductionSpeed = *((float *)this + 303);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aV3rocketpitchf,
+      MaxLowPowerProductionSpeed);
+    *((float *)this + 303) = MaxLowPowerProductionSpeed;
+    LowPowerPenaltyModifier = *((float *)this + 304);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aV3rocketturnra,
+      LowPowerPenaltyModifier);
+    *((float *)this + 304) = LowPowerPenaltyModifier;
+    MultipleFactory_low = (double)*((int *)this + 305);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aV3rocketraiser,
+      MultipleFactory_low);
+    *((_DWORD *)this + 305) = Math::RoundToInt(MultipleFactory_low);
+    v240 = *((float *)this + 306);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aV3rocketaccele,
+      v240);
+    *((float *)this + 306) = v240;
+    *((_DWORD *)this + 307) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketaltitu,
+                                *((_DWORD *)this + 307));
+    *((_DWORD *)this + 308) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketdamage,
+                                *((_DWORD *)this + 308));
+    *((_DWORD *)this + 309) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketelited,
+                                *((_DWORD *)this + 309));
+    *((_DWORD *)this + 310) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketbodyle,
+                                *((_DWORD *)this + 310));
+    *((_BYTE *)this + 1244) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aV3rocketlazycu,
+                                *((_BYTE *)this + 1244));
+    *((_DWORD *)this + 312) = GetINIClassKeyword(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aV3rockettype,
+                                *((_DWORD *)this + 312));
+    *((_DWORD *)this + 313) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmislpausefram,
+                                *((_DWORD *)this + 313));
+    *((_DWORD *)this + 314) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmisltiltframe,
+                                *((_DWORD *)this + 314));
+    v241 = *((float *)this + 315);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDmislpitchinit,
+      v241);
+    *((float *)this + 315) = v241;
+    v242 = *((float *)this + 316);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDmislpitchfina,
+      v242);
+    *((float *)this + 316) = v242;
+    v243 = *((float *)this + 317);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDmislturnrate,
+      v243);
+    *((float *)this + 317) = v243;
+    DropPodAngle_low = (double)*((int *)this + 318);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDmislraiserate,
+      DropPodAngle_low);
+    *((_DWORD *)this + 318) = Math::RoundToInt(DropPodAngle_low);
+    v245 = *((float *)this + 319);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDmislaccelerat,
+      v245);
+    *((float *)this + 319) = v245;
+    *((_DWORD *)this + 320) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmislaltitude,
+                                *((_DWORD *)this + 320));
+    *((_DWORD *)this + 321) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmisldamage,
+                                *((_DWORD *)this + 321));
+    *((_DWORD *)this + 322) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmislelitedama,
+                                *((_DWORD *)this + 322));
+    *((_DWORD *)this + 323) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aDmislbodylengt,
+                                *((_DWORD *)this + 323));
+    *((_BYTE *)this + 1296) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aDmisllazycurve,
+                                *((_BYTE *)this + 1296));
+    *((_DWORD *)this + 325) = GetINIClassKeyword(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aDmisltype,
+                                *((_DWORD *)this + 325));
+    *((_DWORD *)this + 326) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmislpausefram,
+                                *((_DWORD *)this + 326));
+    *((_DWORD *)this + 327) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmisltiltframe,
+                                *((_DWORD *)this + 327));
+    v246 = *((float *)this + 328);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCmislpitchinit,
+      v246);
+    *((float *)this + 328) = v246;
+    v247 = *((float *)this + 329);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCmislpitchfina,
+      v247);
+    *((float *)this + 329) = v247;
+    v248 = *((float *)this + 330);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCmislturnrate,
+      v248);
+    *((float *)this + 330) = v248;
+    HoverAcceleration_high = (double)*((int *)this + 331);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCmislraiserate,
+      HoverAcceleration_high);
+    *((_DWORD *)this + 331) = Math::RoundToInt(HoverAcceleration_high);
+    v250 = *((float *)this + 319);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aCmislaccelerat,
+      v250);
+    *((float *)this + 332) = v250;
+    *((_DWORD *)this + 333) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmislaltitude,
+                                *((_DWORD *)this + 333));
+    *((_DWORD *)this + 334) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmisldamage,
+                                *((_DWORD *)this + 334));
+    *((_DWORD *)this + 335) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmislelitedama,
+                                *((_DWORD *)this + 335));
+    *((_DWORD *)this + 336) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aCmislbodylengt,
+                                *((_DWORD *)this + 336));
+    *((_BYTE *)this + 1348) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
+                                g_INI_Key_General,
+                                aCmisllazycurve,
+                                *((_BYTE *)this + 1348));
+    *((_DWORD *)this + 338) = GetINIClassKeyword(
+                                v299,
+                                (unsigned __int8 *)g_INI_Key_General,
+                                (unsigned __int8 *)aCmisltype,
+                                *((_DWORD *)this + 338));
+    *((_DWORD *)this + 339) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aParadropradius,
+                                *((_DWORD *)this + 339));
+    *((_DWORD *)this + 482) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aSpotlightmovem,
+                                *((_DWORD *)this + 482));
+    *((_DWORD *)this + 483) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aSpotlightlocat,
+                                *((_DWORD *)this + 483));
+    v251 = *((_DWORD *)this + 484);
+    v287[1] = *((_DWORD *)this + 485);
+    v287[0] = v251;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSpotlightspeed,
+      *(double *)v287);
+    *((double *)this + 242) = v250;
+    v252 = *((_DWORD *)this + 486);
+    v287[1] = *((_DWORD *)this + 487);
+    v287[0] = v252;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSpotlightaccel,
+      *(double *)v287);
+    *((double *)this + 243) = v250;
+    v253 = *((_DWORD *)this + 488);
+    v287[1] = *((_DWORD *)this + 489);
+    v287[0] = v253;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aSpotlightangle,
+      *(double *)v287);
+    *((double *)this + 244) = v250;
+    *((_DWORD *)this + 490) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aSpotlightradiu,
+                                *((_DWORD *)this + 490));
+    *((_DWORD *)this + 395) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                g_INI_Key_General,
+                                aRevealtriggerr,
+                                *((_DWORD *)this + 395));
+    v254 = *((_DWORD *)this + 472);
+    v287[1] = *((_DWORD *)this + 473);
+    v287[0] = v254;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aChargetodrainr,
+      *(double *)v287);
+    *((double *)this + 236) = v250;
+    v255 = *((_DWORD *)this + 470);
+    v287[1] = *((_DWORD *)this + 471);
+    v287[0] = v255;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aWallbuildspeed,
+      *(double *)v287);
+    *((double *)this + 235) = v250;
+    BridgeVoxelMax = *((_DWORD *)this + 344);
+    v287[1] = *((_DWORD *)this + 345);
+    v287[0] = BridgeVoxelMax;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aConditionyello_0,
+      *(double *)v287);
+    *((double *)this + 172) = v250;
+    TireVoxelDebris = *((_DWORD *)this + 342);
+    v287[1] = *((_DWORD *)this + 343);
+    v287[0] = TireVoxelDebris;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aConditionredsp,
+      *(double *)v287);
+    *((double *)this + 171) = v250;
+    AITriggerFailureWeightDelta = *((_DWORD *)this + 48);
+    v287[1] = *((_DWORD *)this + 49);
+    v287[0] = AITriggerFailureWeightDelta;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAitriggersucce,
+      *(double *)v287);
+    *((double *)this + 24) = v250;
+    AITriggerTrackRecordCoefficient = *((_DWORD *)this + 50);
+    v287[1] = *((_DWORD *)this + 51);
+    v287[0] = AITriggerTrackRecordCoefficient;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAitriggerfailu,
+      *(double *)v287);
+    *((double *)this + 25) = v250;
+    VeinholeMonsterStrength = *((_DWORD *)this + 52);
+    v287[1] = *((_DWORD *)this + 53);
+    v287[0] = VeinholeMonsterStrength;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aAitriggertrack,
+      *(double *)v287);
+    *((double *)this + 26) = v250;
+    *((_DWORD *)this + 1524) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aWeedcapacity,
+                                 *((_DWORD *)this + 1524));
+    *((_DWORD *)this + 34) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aFlashframetime,
+                               *((_DWORD *)this + 34));
+    *((_DWORD *)this + 35) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aRadarcombatfla,
+                               *((_DWORD *)this + 35));
+    v261 = *((float *)this + 32);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRadareventspee,
+      v261);
+    *((float *)this + 32) = v261;
+    v262 = *((float *)this + 33);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRadareventrota,
+      v262);
+    *((float *)this + 33) = v262;
+    VectorClass::Copy(&v282, (_DWORD *)this + 271);
+    v263 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aRadareventsupp,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 271, v263);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 278);
+    v264 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aRadareventvisi,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 278, v264);
+    VectorClass::Dtor(&v288);
+    VectorClass::Copy(&v282, (_DWORD *)this + 285);
+    v265 = (int *)INIClass::ReadIntList(
+                    v299,
+                    (int)&v288,
+                    (unsigned __int8 *)g_INI_Key_General,
+                    (unsigned __int8 *)aRadareventdura,
+                    v282,
+                    v283,
+                    v284,
+                    v285,
+                    v286,
+                    v287[0],
+                    v287[1]);
+    TypeList::CopyFull((int *)this + 285, v265);
+    VectorClass::Dtor(&v288);
+    *((_DWORD *)this + 31) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aRadareventminr,
+                               *((_DWORD *)this + 31));
+    RadarEventRotationSpeed = *((float *)this + 30);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aRadareventcolo,
+      RadarEventRotationSpeed);
+    *((float *)this + 30) = RadarEventRotationSpeed;
+    SavourDelay = *((_DWORD *)this + 1040);
+    v287[1] = *((_DWORD *)this + 1041);
+    v287[0] = SavourDelay;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aMyeffectivenes,
+      *(double *)v287);
+    *((double *)this + 520) = RadarEventRotationSpeed;
+    Players = *((_DWORD *)this + 1042);
+    v287[1] = *((_DWORD *)this + 1043);
+    v287[0] = Players;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTargeteffectiv,
+      *(double *)v287);
+    *((double *)this + 521) = RadarEventRotationSpeed;
+    BaseDefenseDelay = *((_DWORD *)this + 1044);
+    v287[1] = *((_DWORD *)this + 1045);
+    v287[0] = BaseDefenseDelay;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTargetspecialt,
+      *(double *)v287);
+    *((double *)this + 522) = RadarEventRotationSpeed;
+    SuspendPriority = *((_DWORD *)this + 1046);
+    v287[1] = *((_DWORD *)this + 1047);
+    v287[0] = SuspendPriority;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTargetstrength,
+      *(double *)v287);
+    *((double *)this + 523) = RadarEventRotationSpeed;
+    SuspendDelay = *((_DWORD *)this + 1048);
+    v287[1] = *((_DWORD *)this + 1049);
+    v287[0] = SuspendDelay;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTargetdistance,
+      *(double *)v287);
+    *((double *)this + 524) = RadarEventRotationSpeed;
+    SurvivorRate = *((_DWORD *)this + 1050);
+    v287[1] = *((_DWORD *)this + 1051);
+    v287[0] = SurvivorRate;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDumbmyeffectiv,
+      *(double *)v287);
+    *((double *)this + 525) = RadarEventRotationSpeed;
+    AlliedSurvivorDivisor = *((_DWORD *)this + 1052);
+    v287[1] = *((_DWORD *)this + 1053);
+    v287[0] = AlliedSurvivorDivisor;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDumbtargeteffe,
+      *(double *)v287);
+    *((double *)this + 526) = RadarEventRotationSpeed;
+    ThirdSurvivorDivisor = *((_DWORD *)this + 1054);
+    v287[1] = *((_DWORD *)this + 1055);
+    v287[0] = ThirdSurvivorDivisor;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDumbtargetspec,
+      *(double *)v287);
+    *((double *)this + 527) = RadarEventRotationSpeed;
+    ReloadRate = *((_DWORD *)this + 1056);
+    v287[1] = *((_DWORD *)this + 1057);
+    v287[0] = ReloadRate;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDumbtargetstre,
+      *(double *)v287);
+    *((double *)this + 528) = RadarEventRotationSpeed;
+    AutocreateTime = *((_DWORD *)this + 1058);
+    v287[1] = *((_DWORD *)this + 1059);
+    v287[0] = AutocreateTime;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aDumbtargetdist,
+      *(double *)v287);
+    *((double *)this + 529) = RadarEventRotationSpeed;
+    BuildupTime = *((_DWORD *)this + 1060);
+    v287[1] = *((_DWORD *)this + 1061);
+    v287[0] = BuildupTime;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aEnemyhousethre,
+      *(double *)v287);
+    *((double *)this + 530) = RadarEventRotationSpeed;
+    *((_DWORD *)this + 54) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aVeinholemonste,
+                               *((_DWORD *)this + 54));
+    *((_DWORD *)this + 55) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aMaxveinholegro,
+                               *((_DWORD *)this + 55));
+    *((_DWORD *)this + 56) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aVeinholegrowth,
+                               *((_DWORD *)this + 56));
+    *((_DWORD *)this + 57) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aVeinholeshrink,
+                               *((_DWORD *)this + 57));
+    *((_DWORD *)this + 59) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aVeindamage,
+                               *((_DWORD *)this + 59));
+    *((_DWORD *)this + 1021) = SmallFunc_67BD80(
+                                 v299,
+                                 (unsigned __int8 *)g_INI_Key_General,
+                                 (unsigned __int8 *)aVeinholetypecl,
+                                 *((_DWORD *)this + 1021));
+    v278 = ((int (__stdcall *)(char *, char *, char *))RulesClass::LoadTypeList)(
+             g_INI_Key_General,
+             aDefaultmiraged,
+             (char *)this + 4088);
+    ((void (__stdcall *)(int))RulesClass::readBuildingTypes)(v278);
+    RulesClass::readVehicleTypes(&v288);
+    *((_DWORD *)this + 1029) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aInfantryblinkd,
+                                 *((_DWORD *)this + 1029));
+    *((_DWORD *)this + 60) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aMaximumqueuedo,
+                               *((_DWORD *)this + 60));
+    *((_DWORD *)this + 36) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                               g_INI_Key_General,
+                               aMaxwaypointpat,
+                               *((_DWORD *)this + 36));
+    *((_DWORD *)this + 1105) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
+                                 g_INI_Key_General,
+                                 aTreestrength,
+                                 *((_DWORD *)this + 1105));
+    v279 = *((float *)this + 1534);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aEngineercaptur,
+      v279);
+    *((float *)this + 1534) = v279;
+    v280 = *((float *)this + 1535);
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aEngineercaptur,
+      v280);
+    *((float *)this + 1535) = v280;
+    v291 = *((unsigned int *)this + 1536);
+    v281 = (double)v291 * 0.016666668;
+    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
+      (int)g_INI_Key_General,
+      (int)aTalkbubbletime,
+      v281);
+    result = Math::RoundToInt(v281 * 60.0);
+    *((_DWORD *)this + 1536) = result;
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+Block           = dword ptr -98h
+var_8F          = byte ptr -8Fh
+var_8C          = dword ptr -8Ch
+var_88          = dword ptr -88h
+var_84          = dword ptr -84h
+String          = byte ptr -80h
+arg_0           = dword ptr  8
+
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 0C4h
+mov     eax, ds:off_7F0C9C ; "General"
+push    ebx
+push    esi
+push    edi
+mov     edi, [ebp+arg_0]
+mov     esi, ecx
+push    eax
+mov     ecx, edi
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_671E8E
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aDamagefiretype ; "DamageFireTypes"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66D609
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66D5E8
+
+loc_66D5B3:                             ; CODE XREF: RulesClass__LoadFromINI+B6↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66D5E8
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66D5D5
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add_Alt4
+
+loc_66D5D5:                             ; CODE XREF: RulesClass__LoadFromINI+95↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66D5B3
+
+loc_66D5E8:                             ; CODE XREF: RulesClass__LoadFromINI+81↑j
+; RulesClass__LoadFromINI+86↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66D619
+; ---------------------------------------------------------------------------
+
+loc_66D609:                             ; CODE XREF: RulesClass__LoadFromINI+52↑j
+lea     eax, [esi+2A0h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__AnimTypeCopy
+
+loc_66D619:                             ; CODE XREF: RulesClass__LoadFromINI+D7↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+2A0h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66D661
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66D661
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66D661:                             ; CODE XREF: RulesClass__LoadFromINI+11E↑j
+; RulesClass__LoadFromINI+126↑j
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+1870h]
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aOretwinkle ; "OreTwinkle"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D697
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66D699
+; ---------------------------------------------------------------------------
+
+loc_66D697:                             ; CODE XREF: RulesClass__LoadFromINI+15A↑j
+mov     eax, ebx
+
+loc_66D699:                             ; CODE XREF: RulesClass__LoadFromINI+165↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+1870h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+54h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBarrelexplode ; "BarrelExplode"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D6D3
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66D6D5
+; ---------------------------------------------------------------------------
+
+loc_66D6D3:                             ; CODE XREF: RulesClass__LoadFromINI+196↑j
+mov     eax, ebx
+
+loc_66D6D5:                             ; CODE XREF: RulesClass__LoadFromINI+1A1↑j
+mov     [esi+54h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aBarreldebris ; "BarrelDebris"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66D783
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVector__Constructor_VoxelAnim
+lea     edx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVVoxelAnimTypeClass@@@@6B@ ; const TypeList<VoxelAnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66D762
+
+loc_66D72D:                             ; CODE XREF: RulesClass__LoadFromINI+230↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66D762
+mov     ecx, eax        ; Source
+call    UnitTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66D74F
+lea     eax, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    eax
+call    DynamicVector__Add2
+
+loc_66D74F:                             ; CODE XREF: RulesClass__LoadFromINI+20F↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66D72D
+
+loc_66D762:                             ; CODE XREF: RulesClass__LoadFromINI+1FB↑j
+; RulesClass__LoadFromINI+200↑j
+lea     ecx, [esp+0D0h+var_C0]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__CopyVoxelAnim
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
+call    Vector__Cleanup2
+jmp     short loc_66D790
+; ---------------------------------------------------------------------------
+
+loc_66D783:                             ; CODE XREF: RulesClass__LoadFromINI+1CC↑j
+lea     edx, [esi+58h]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__CopyVoxelAnim
+
+loc_66D790:                             ; CODE XREF: RulesClass__LoadFromINI+251↑j
+lea     ebx, [esi+58h]
+lea     eax, [esp+0D0h+var_9C]
+push    eax
+mov     ecx, ebx
+call    VectorClass__CopyAssign
+mov     ecx, [esp+0D0h+var_8C]
+mov     [ebx+10h], ecx
+mov     edx, [esp+0D0h+var_88]
+mov     [ebx+14h], edx
+mov     eax, [esp+0D0h+var_84]
+mov     [ebx+18h], eax
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
+jz      short loc_66D7D5
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66D7D5
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66D7D5:                             ; CODE XREF: RulesClass__LoadFromINI+292↑j
+; RulesClass__LoadFromINI+29A↑j
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+74h]
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBarrelparticle ; "BarrelParticle"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D809
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__LoadOrGet
+jmp     short loc_66D80B
+; ---------------------------------------------------------------------------
+
+loc_66D809:                             ; CODE XREF: RulesClass__LoadFromINI+2CC↑j
+mov     eax, ebx
+
+loc_66D80B:                             ; CODE XREF: RulesClass__LoadFromINI+2D7↑j
+mov     [esi+74h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+98h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aNuketakeoff ; "NukeTakeOff"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D845
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66D847
+; ---------------------------------------------------------------------------
+
+loc_66D845:                             ; CODE XREF: RulesClass__LoadFromINI+308↑j
+mov     eax, ebx
+
+loc_66D847:                             ; CODE XREF: RulesClass__LoadFromINI+313↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+98h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+94h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aWake    ; "Wake"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66D883
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66D885
+; ---------------------------------------------------------------------------
+
+loc_66D883:                             ; CODE XREF: RulesClass__LoadFromINI+346↑j
+mov     eax, ebx
+
+loc_66D885:                             ; CODE XREF: RulesClass__LoadFromINI+351↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+94h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aDroppod ; "DropPod"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66D936
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66D915
+
+loc_66D8E0:                             ; CODE XREF: RulesClass__LoadFromINI+3E3↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66D915
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66D902
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add_Alt4
+
+loc_66D902:                             ; CODE XREF: RulesClass__LoadFromINI+3C2↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66D8E0
+
+loc_66D915:                             ; CODE XREF: RulesClass__LoadFromINI+3AE↑j
+; RulesClass__LoadFromINI+3B3↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66D946
+; ---------------------------------------------------------------------------
+
+loc_66D936:                             ; CODE XREF: RulesClass__LoadFromINI+37F↑j
+lea     eax, [esi+104h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__AnimTypeCopy
+
+loc_66D946:                             ; CODE XREF: RulesClass__LoadFromINI+404↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+104h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66D98E
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66D98E
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66D98E:                             ; CODE XREF: RulesClass__LoadFromINI+44B↑j
+; RulesClass__LoadFromINI+453↑j
+mov     eax, ds:off_7F0C9C ; "General"
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aDeadbodies ; "DeadBodies"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66DA38
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     ecx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66DA17
+
+loc_66D9E2:                             ; CODE XREF: RulesClass__LoadFromINI+4E5↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66DA17
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66DA04
+lea     edx, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    edx
+call    DynamicVector__Add_Alt4
+
+loc_66DA04:                             ; CODE XREF: RulesClass__LoadFromINI+4C4↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66D9E2
+
+loc_66DA17:                             ; CODE XREF: RulesClass__LoadFromINI+4B0↑j
+; RulesClass__LoadFromINI+4B5↑j
+lea     eax, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66DA48
+; ---------------------------------------------------------------------------
+
+loc_66DA38:                             ; CODE XREF: RulesClass__LoadFromINI+481↑j
+lea     ecx, [esi+120h]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__AnimTypeCopy
+
+loc_66DA48:                             ; CODE XREF: RulesClass__LoadFromINI+506↑j
+lea     ebx, [esi+120h]
+lea     edx, [esp+0D0h+var_9C]
+push    edx
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     eax, [esp+0D0h+var_8C]
+mov     [ebx+10h], eax
+mov     ecx, [esp+0D0h+var_88]
+mov     [ebx+14h], ecx
+mov     edx, [esp+0D0h+var_84]
+mov     [ebx+18h], edx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66DA90
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66DA90
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66DA90:                             ; CODE XREF: RulesClass__LoadFromINI+54D↑j
+; RulesClass__LoadFromINI+555↑j
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aMetallicdebris ; "MetallicDebris"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66DB3B
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     edx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66DB1A
+
+loc_66DAE5:                             ; CODE XREF: RulesClass__LoadFromINI+5E8↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66DB1A
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66DB07
+lea     eax, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    eax
+call    DynamicVector__Add_Alt4
+
+loc_66DB07:                             ; CODE XREF: RulesClass__LoadFromINI+5C7↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66DAE5
+
+loc_66DB1A:                             ; CODE XREF: RulesClass__LoadFromINI+5B3↑j
+; RulesClass__LoadFromINI+5B8↑j
+lea     ecx, [esp+0D0h+var_C0]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66DB4B
+; ---------------------------------------------------------------------------
+
+loc_66DB3B:                             ; CODE XREF: RulesClass__LoadFromINI+584↑j
+lea     edx, [esi+13Ch]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+
+loc_66DB4B:                             ; CODE XREF: RulesClass__LoadFromINI+609↑j
+lea     ebx, [esi+13Ch]
+lea     eax, [esp+0D0h+var_9C]
+push    eax
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     ecx, [esp+0D0h+var_8C]
+mov     [ebx+10h], ecx
+mov     edx, [esp+0D0h+var_88]
+mov     [ebx+14h], edx
+mov     eax, [esp+0D0h+var_84]
+mov     [ebx+18h], eax
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66DB93
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66DB93
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66DB93:                             ; CODE XREF: RulesClass__LoadFromINI+650↑j
+; RulesClass__LoadFromINI+658↑j
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBridgeexplosio ; "BridgeExplosions"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66DC3E
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66DC1D
+
+loc_66DBE8:                             ; CODE XREF: RulesClass__LoadFromINI+6EB↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66DC1D
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66DC0A
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add_Alt4
+
+loc_66DC0A:                             ; CODE XREF: RulesClass__LoadFromINI+6CA↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66DBE8
+
+loc_66DC1D:                             ; CODE XREF: RulesClass__LoadFromINI+6B6↑j
+; RulesClass__LoadFromINI+6BB↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66DC4E
+; ---------------------------------------------------------------------------
+
+loc_66DC3E:                             ; CODE XREF: RulesClass__LoadFromINI+687↑j
+lea     eax, [esi+158h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__AnimTypeCopy
+
+loc_66DC4E:                             ; CODE XREF: RulesClass__LoadFromINI+70C↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+158h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66DC96
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66DC96
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66DC96:                             ; CODE XREF: RulesClass__LoadFromINI+753↑j
+; RulesClass__LoadFromINI+75B↑j
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+298h]
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aIonblast ; "IonBlast"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66DCCC
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66DCCE
+; ---------------------------------------------------------------------------
+
+loc_66DCCC:                             ; CODE XREF: RulesClass__LoadFromINI+78F↑j
+mov     eax, ebx
+
+loc_66DCCE:                             ; CODE XREF: RulesClass__LoadFromINI+79A↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+298h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+29Ch]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aIonbeam ; "IonBeam"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66DD0B
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66DD0D
+; ---------------------------------------------------------------------------
+
+loc_66DD0B:                             ; CODE XREF: RulesClass__LoadFromINI+7CE↑j
+mov     eax, ebx
+
+loc_66DD0D:                             ; CODE XREF: RulesClass__LoadFromINI+7D9↑j
+mov     [esi+29Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aWeatherconclou ; "WeatherConClouds"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66DDBE
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     edx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66DD9D
+
+loc_66DD68:                             ; CODE XREF: RulesClass__LoadFromINI+86B↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66DD9D
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66DD8A
+lea     eax, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    eax
+call    DynamicVector__Add_Alt4
+
+loc_66DD8A:                             ; CODE XREF: RulesClass__LoadFromINI+84A↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66DD68
+
+loc_66DD9D:                             ; CODE XREF: RulesClass__LoadFromINI+836↑j
+; RulesClass__LoadFromINI+83B↑j
+lea     ecx, [esp+0D0h+var_C0]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66DDCE
+; ---------------------------------------------------------------------------
+
+loc_66DDBE:                             ; CODE XREF: RulesClass__LoadFromINI+807↑j
+lea     edx, [esi+2BCh]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+
+loc_66DDCE:                             ; CODE XREF: RulesClass__LoadFromINI+88C↑j
+lea     ebx, [esi+2BCh]
+lea     eax, [esp+0D0h+var_9C]
+push    eax
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     ecx, [esp+0D0h+var_8C]
+mov     [ebx+10h], ecx
+mov     edx, [esp+0D0h+var_88]
+mov     [ebx+14h], edx
+mov     eax, [esp+0D0h+var_84]
+mov     [ebx+18h], eax
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66DE16
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66DE16
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66DE16:                             ; CODE XREF: RulesClass__LoadFromINI+8D3↑j
+; RulesClass__LoadFromINI+8DB↑j
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aWeatherconbolt ; "WeatherConBolts"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66DEC1
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__AnimTypeConstructor
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66DEA0
+
+loc_66DE6B:                             ; CODE XREF: RulesClass__LoadFromINI+96E↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66DEA0
+mov     ecx, eax        ; Source
+call    AnimTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66DE8D
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add_Alt4
+
+loc_66DE8D:                             ; CODE XREF: RulesClass__LoadFromINI+94D↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66DE6B
+
+loc_66DEA0:                             ; CODE XREF: RulesClass__LoadFromINI+939↑j
+; RulesClass__LoadFromINI+93E↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__AnimTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy_Alt
+jmp     short loc_66DED1
+; ---------------------------------------------------------------------------
+
+loc_66DEC1:                             ; CODE XREF: RulesClass__LoadFromINI+90A↑j
+lea     eax, [esi+2D8h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__AnimTypeCopy
+
+loc_66DED1:                             ; CODE XREF: RulesClass__LoadFromINI+98F↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+2D8h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyDefault
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
+jz      short loc_66DF19
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66DF19
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66DF19:                             ; CODE XREF: RulesClass__LoadFromINI+9D6↑j
+; RulesClass__LoadFromINI+9DE↑j
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+2F4h]
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aWeatherconbolt_0 ; "WeatherConBoltExplosion"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66DF4F
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66DF51
+; ---------------------------------------------------------------------------
+
+loc_66DF4F:                             ; CODE XREF: RulesClass__LoadFromINI+A12↑j
+mov     eax, ebx
+
+loc_66DF51:                             ; CODE XREF: RulesClass__LoadFromINI+A1D↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+2F4h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+2F8h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aDominatorwarhe ; "DominatorWarhead"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66DF8E
+lea     ecx, [esp+0D0h+String] ; Source
+call    WarheadTypeClass__FindOrCreate
+jmp     short loc_66DF90
+; ---------------------------------------------------------------------------
+
+loc_66DF8E:                             ; CODE XREF: RulesClass__LoadFromINI+A51↑j
+mov     eax, ebx
+
+loc_66DF90:                             ; CODE XREF: RulesClass__LoadFromINI+A5C↑j
+mov     [esi+2F8h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+2FCh]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aDominatorfirst ; "DominatorFirstAnim"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66DFCD
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66DFCF
+; ---------------------------------------------------------------------------
+
+loc_66DFCD:                             ; CODE XREF: RulesClass__LoadFromINI+A90↑j
+mov     eax, ebx
+
+loc_66DFCF:                             ; CODE XREF: RulesClass__LoadFromINI+A9B↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+2FCh], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+300h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aDominatorsecon ; "DominatorSecondAnim"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E00B
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E00D
+; ---------------------------------------------------------------------------
+
+loc_66E00B:                             ; CODE XREF: RulesClass__LoadFromINI+ACE↑j
+mov     eax, ebx
+
+loc_66E00D:                             ; CODE XREF: RulesClass__LoadFromINI+AD9↑j
+mov     [esi+300h], eax
+mov     ecx, [esi+304h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aDominatorfirea ; "DominatorFireAtPercentage"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+304h], eax
+mov     eax, [esi+308h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDominatorcaptu ; "DominatorCaptureRange"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+308h], eax
+mov     edx, [esi+30Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aDominatordamag ; "DominatorDamage"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+30Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+330h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aChronoplacemen ; "ChronoPlacement"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E0A9
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E0AB
+; ---------------------------------------------------------------------------
+
+loc_66E0A9:                             ; CODE XREF: RulesClass__LoadFromINI+B6C↑j
+mov     eax, ebx
+
+loc_66E0AB:                             ; CODE XREF: RulesClass__LoadFromINI+B77↑j
+mov     [esi+330h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+334h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aChronobeam ; "ChronoBeam"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E0E8
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E0EA
+; ---------------------------------------------------------------------------
+
+loc_66E0E8:                             ; CODE XREF: RulesClass__LoadFromINI+BAB↑j
+mov     eax, ebx
+
+loc_66E0EA:                             ; CODE XREF: RulesClass__LoadFromINI+BB6↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+334h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+328h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aChronoblast ; "ChronoBlast"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E126
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E128
+; ---------------------------------------------------------------------------
+
+loc_66E126:                             ; CODE XREF: RulesClass__LoadFromINI+BE9↑j
+mov     eax, ebx
+
+loc_66E128:                             ; CODE XREF: RulesClass__LoadFromINI+BF4↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+328h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+32Ch]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aChronoblastdes ; "ChronoBlastDest"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E165
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E167
+; ---------------------------------------------------------------------------
+
+loc_66E165:                             ; CODE XREF: RulesClass__LoadFromINI+C28↑j
+mov     eax, ebx
+
+loc_66E167:                             ; CODE XREF: RulesClass__LoadFromINI+C33↑j
+mov     [esi+32Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+338h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aWarpin  ; "WarpIn"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E1A4
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E1A6
+; ---------------------------------------------------------------------------
+
+loc_66E1A4:                             ; CODE XREF: RulesClass__LoadFromINI+C67↑j
+mov     eax, ebx
+
+loc_66E1A6:                             ; CODE XREF: RulesClass__LoadFromINI+C72↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+338h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+33Ch]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aWarpout ; "WarpOut"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E1E2
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E1E4
+; ---------------------------------------------------------------------------
+
+loc_66E1E2:                             ; CODE XREF: RulesClass__LoadFromINI+CA5↑j
+mov     eax, ebx
+
+loc_66E1E4:                             ; CODE XREF: RulesClass__LoadFromINI+CB0↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+33Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+340h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aWarpaway ; "WarpAway"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E221
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E223
+; ---------------------------------------------------------------------------
+
+loc_66E221:                             ; CODE XREF: RulesClass__LoadFromINI+CE4↑j
+mov     eax, ebx
+
+loc_66E223:                             ; CODE XREF: RulesClass__LoadFromINI+CEF↑j
+mov     [esi+340h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+348h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aIroncurtaininv ; "IronCurtainInvokeAnim"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E260
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E262
+; ---------------------------------------------------------------------------
+
+loc_66E260:                             ; CODE XREF: RulesClass__LoadFromINI+D23↑j
+mov     eax, ebx
+
+loc_66E262:                             ; CODE XREF: RulesClass__LoadFromINI+D2E↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+348h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+34Ch]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aForceshieldinv ; "ForceShieldInvokeAnim"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E29E
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E2A0
+; ---------------------------------------------------------------------------
+
+loc_66E29E:                             ; CODE XREF: RulesClass__LoadFromINI+D61↑j
+mov     eax, ebx
+
+loc_66E2A0:                             ; CODE XREF: RulesClass__LoadFromINI+D6C↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+34Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+350h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aWeaponnullifya ; "WeaponNullifyAnim"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E2DD
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E2DF
+; ---------------------------------------------------------------------------
+
+loc_66E2DD:                             ; CODE XREF: RulesClass__LoadFromINI+DA0↑j
+mov     eax, ebx
+
+loc_66E2DF:                             ; CODE XREF: RulesClass__LoadFromINI+DAB↑j
+mov     [esi+350h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+344h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aChronosparkle1 ; "ChronoSparkle1"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E31C
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E31E
+; ---------------------------------------------------------------------------
+
+loc_66E31C:                             ; CODE XREF: RulesClass__LoadFromINI+DDF↑j
+mov     eax, ebx
+
+loc_66E31E:                             ; CODE XREF: RulesClass__LoadFromINI+DEA↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+344h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+9Ch]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aInfantryexplod ; "InfantryExplode"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E35A
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E35C
+; ---------------------------------------------------------------------------
+
+loc_66E35A:                             ; CODE XREF: RulesClass__LoadFromINI+E1D↑j
+mov     eax, ebx
+
+loc_66E35C:                             ; CODE XREF: RulesClass__LoadFromINI+E28↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+9Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0A0h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aFlaminginfantr ; "FlamingInfantry"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E399
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E39B
+; ---------------------------------------------------------------------------
+
+loc_66E399:                             ; CODE XREF: RulesClass__LoadFromINI+E5C↑j
+mov     eax, ebx
+
+loc_66E39B:                             ; CODE XREF: RulesClass__LoadFromINI+E67↑j
+mov     [esi+0A0h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0A4h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aInfantryheadpo ; "InfantryHeadPop"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E3D8
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E3DA
+; ---------------------------------------------------------------------------
+
+loc_66E3D8:                             ; CODE XREF: RulesClass__LoadFromINI+E9B↑j
+mov     eax, ebx
+
+loc_66E3DA:                             ; CODE XREF: RulesClass__LoadFromINI+EA6↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0A4h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0A8h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aInfantrynuked ; "InfantryNuked"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E416
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E418
+; ---------------------------------------------------------------------------
+
+loc_66E416:                             ; CODE XREF: RulesClass__LoadFromINI+ED9↑j
+mov     eax, ebx
+
+loc_66E418:                             ; CODE XREF: RulesClass__LoadFromINI+EE4↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0A8h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0ACh]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aInfantryvirus ; "InfantryVirus"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E455
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E457
+; ---------------------------------------------------------------------------
+
+loc_66E455:                             ; CODE XREF: RulesClass__LoadFromINI+F18↑j
+mov     eax, ebx
+
+loc_66E457:                             ; CODE XREF: RulesClass__LoadFromINI+F23↑j
+mov     [esi+0ACh], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0B0h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aInfantrybrute ; "InfantryBrute"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E494
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E496
+; ---------------------------------------------------------------------------
+
+loc_66E494:                             ; CODE XREF: RulesClass__LoadFromINI+F57↑j
+mov     eax, ebx
+
+loc_66E496:                             ; CODE XREF: RulesClass__LoadFromINI+F62↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0B0h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0B4h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aInfantrymutate ; "InfantryMutate"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E4D2
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E4D4
+; ---------------------------------------------------------------------------
+
+loc_66E4D2:                             ; CODE XREF: RulesClass__LoadFromINI+F95↑j
+mov     eax, ebx
+
+loc_66E4D4:                             ; CODE XREF: RulesClass__LoadFromINI+FA0↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0B4h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0B8h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBehind  ; "Behind"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E511
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E513
+; ---------------------------------------------------------------------------
+
+loc_66E511:                             ; CODE XREF: RulesClass__LoadFromINI+FD4↑j
+mov     eax, ebx
+
+loc_66E513:                             ; CODE XREF: RulesClass__LoadFromINI+FDF↑j
+mov     [esi+0B8h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0BB4h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aMoveflash ; "MoveFlash"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E550
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E552
+; ---------------------------------------------------------------------------
+
+loc_66E550:                             ; CODE XREF: RulesClass__LoadFromINI+1013↑j
+mov     eax, ebx
+
+loc_66E552:                             ; CODE XREF: RulesClass__LoadFromINI+101E↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0BB4h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0BBCh]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aParachute ; "Parachute"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E58E
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E590
+; ---------------------------------------------------------------------------
+
+loc_66E58E:                             ; CODE XREF: RulesClass__LoadFromINI+1051↑j
+mov     eax, ebx
+
+loc_66E590:                             ; CODE XREF: RulesClass__LoadFromINI+105C↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+0BBCh], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+0BB8h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBombparachute ; "BombParachute"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E5CD
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E5CF
+; ---------------------------------------------------------------------------
+
+loc_66E5CD:                             ; CODE XREF: RulesClass__LoadFromINI+1090↑j
+mov     eax, ebx
+
+loc_66E5CF:                             ; CODE XREF: RulesClass__LoadFromINI+109B↑j
+mov     [esi+0BB8h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+147Ch]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aDropzoneanim ; "DropZoneAnim"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E60C
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E60E
+; ---------------------------------------------------------------------------
+
+loc_66E60C:                             ; CODE XREF: RulesClass__LoadFromINI+10CF↑j
+mov     eax, ebx
+
+loc_66E60E:                             ; CODE XREF: RulesClass__LoadFromINI+10DA↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+147Ch], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+17F4h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aEmpulsesparkle ; "EMPulseSparkles"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E64A
+lea     ecx, [esp+0D0h+String] ; Source
+call    AnimTypeClass__FindOrCreate
+jmp     short loc_66E64C
+; ---------------------------------------------------------------------------
+
+loc_66E64A:                             ; CODE XREF: RulesClass__LoadFromINI+110D↑j
+mov     eax, ebx
+
+loc_66E64C:                             ; CODE XREF: RulesClass__LoadFromINI+1118↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+17F4h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+10h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aLargevisceroid ; "LargeVisceroid"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E686
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreateAlt
+jmp     short loc_66E688
+; ---------------------------------------------------------------------------
+
+loc_66E686:                             ; CODE XREF: RulesClass__LoadFromINI+1149↑j
+mov     eax, ebx
+
+loc_66E688:                             ; CODE XREF: RulesClass__LoadFromINI+1154↑j
+mov     [esi+10h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+14h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aSmallvisceroid ; "SmallVisceroid"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66E6BF
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreateAlt
+jmp     short loc_66E6C1
+; ---------------------------------------------------------------------------
+
+loc_66E6BF:                             ; CODE XREF: RulesClass__LoadFromINI+1182↑j
+mov     eax, ebx
+
+loc_66E6C1:                             ; CODE XREF: RulesClass__LoadFromINI+118D↑j
+mov     [esi+14h], eax
+mov     edx, [esi+2Ch]
+mov     eax, [esi+28h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTiberiumheal ; "TiberiumHeal"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+28h]
+mov     edx, [esi+30h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSelfhealinfant ; "SelfHealInfantryFrames"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+30h], eax
+mov     ecx, [esi+34h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSelfhealinfant_0 ; "SelfHealInfantryAmount"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+34h], eax
+mov     eax, [esi+38h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aSelfhealunitfr ; "SelfHealUnitFrames"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+38h], eax
+mov     edx, [esi+3Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSelfhealunitam ; "SelfHealUnitAmount"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+sub     esp, 1Ch
+mov     [esi+3Ch], eax
+lea     eax, [esi+358h]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+mov     dword ptr [esp+0F0h+var_A4], eax
+call    IntVector__Copy
+mov     eax, dword ptr [esp+0ECh+var_A4]
+push    offset aPrerequisitepo ; "PrerequisitePower"
+mov     ecx, [eax+10h]
+mov     [ebx+10h], ecx
+mov     edx, [eax+14h]
+mov     [ebx+14h], edx
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     eax, ds:off_7F0C9C ; "General"
+push    eax
+mov     edx, edi
+lea     ecx, [esp+0F4h+var_C0]
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+358h]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     ecx, [ebx+10h]
+mov     [eax+10h], ecx
+mov     edx, [ebx+14h]
+mov     [eax+14h], edx
+mov     ecx, [ebx+18h]
+mov     [eax+18h], ecx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66E7DA
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66E7DA
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66E7DA:                             ; CODE XREF: RulesClass__LoadFromINI+1297↑j
+; RulesClass__LoadFromINI+129F↑j
+sub     esp, 1Ch
+lea     eax, [esi+374h]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+call    IntVector__Copy
+mov     edx, [esi+384h]
+lea     eax, [esi+374h]
+mov     [ebx+10h], edx
+push    offset aPrerequisitefa ; "PrerequisiteFactory"
+mov     eax, [eax+14h]
+mov     edx, edi
+mov     [ebx+14h], eax
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     ecx, ds:off_7F0C9C ; "General"
+push    ecx
+lea     ecx, [esp+0F4h+var_C0]
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+374h]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     edx, [ebx+10h]
+mov     [eax+10h], edx
+mov     ecx, [ebx+14h]
+mov     [eax+14h], ecx
+mov     edx, [ebx+18h]
+mov     [eax+18h], edx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66E86E
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66E86E
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66E86E:                             ; CODE XREF: RulesClass__LoadFromINI+132B↑j
+; RulesClass__LoadFromINI+1333↑j
+sub     esp, 1Ch
+lea     eax, [esi+390h]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+call    IntVector__Copy
+mov     ecx, [esi+3A0h]
+lea     eax, [esi+390h]
+mov     [ebx+10h], ecx
+push    offset aPrerequisiteba ; "PrerequisiteBarracks"
+mov     edx, [eax+14h]
+lea     ecx, [esp+0F0h+var_C0]
+mov     [ebx+14h], edx
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     eax, ds:off_7F0C9C ; "General"
+push    eax
+mov     edx, edi
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+390h]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     ecx, [ebx+10h]
+mov     [eax+10h], ecx
+mov     edx, [ebx+14h]
+mov     [eax+14h], edx
+mov     ecx, [ebx+18h]
+mov     [eax+18h], ecx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66E901
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66E901
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66E901:                             ; CODE XREF: RulesClass__LoadFromINI+13BE↑j
+; RulesClass__LoadFromINI+13C6↑j
+sub     esp, 1Ch
+lea     eax, [esi+3ACh]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+call    IntVector__Copy
+mov     edx, [esi+3BCh]
+lea     eax, [esi+3ACh]
+mov     [ebx+10h], edx
+push    offset aPrerequisitera ; "PrerequisiteRadar"
+mov     eax, [eax+14h]
+mov     edx, edi
+mov     [ebx+14h], eax
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     ecx, ds:off_7F0C9C ; "General"
+push    ecx
+lea     ecx, [esp+0F4h+var_C0]
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+3ACh]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     edx, [ebx+10h]
+mov     [eax+10h], edx
+mov     ecx, [ebx+14h]
+mov     [eax+14h], ecx
+mov     edx, [ebx+18h]
+mov     [eax+18h], edx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66E995
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66E995
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66E995:                             ; CODE XREF: RulesClass__LoadFromINI+1452↑j
+; RulesClass__LoadFromINI+145A↑j
+sub     esp, 1Ch
+lea     eax, [esi+3C8h]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+call    IntVector__Copy
+mov     ecx, [esi+3D8h]
+lea     eax, [esi+3C8h]
+mov     [ebx+10h], ecx
+push    offset aPrerequisitete ; "PrerequisiteTech"
+mov     edx, [eax+14h]
+lea     ecx, [esp+0F0h+var_C0]
+mov     [ebx+14h], edx
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     eax, ds:off_7F0C9C ; "General"
+push    eax
+mov     edx, edi
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+3C8h]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     ecx, [ebx+10h]
+mov     [eax+10h], ecx
+mov     edx, [ebx+14h]
+mov     [eax+14h], edx
+mov     ecx, [ebx+18h]
+mov     [eax+18h], ecx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66EA28
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66EA28
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66EA28:                             ; CODE XREF: RulesClass__LoadFromINI+14E5↑j
+; RulesClass__LoadFromINI+14ED↑j
+sub     esp, 1Ch
+lea     eax, [esi+3E4h]
+mov     ebx, esp
+push    eax
+mov     ecx, ebx
+call    IntVector__Copy
+mov     edx, [esi+3F4h]
+lea     eax, [esi+3E4h]
+mov     [ebx+10h], edx
+push    offset aPrerequisitepr ; "PrerequisiteProc"
+mov     eax, [eax+14h]
+mov     edx, edi
+mov     [ebx+14h], eax
+mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     ecx, ds:off_7F0C9C ; "General"
+push    ecx
+lea     ecx, [esp+0F4h+var_C0]
+call    LoadBuildingTypeClassPrerequisites
+mov     ebx, eax
+lea     ecx, [esi+3E4h]
+push    ebx
+mov     dword ptr [esp+0D4h+var_A4], ecx
+call    TypeList__Copy
+mov     eax, dword ptr [esp+0D0h+var_A4]
+mov     edx, [ebx+10h]
+mov     [eax+10h], edx
+mov     ecx, [ebx+14h]
+mov     [eax+14h], ecx
+mov     edx, [ebx+18h]
+mov     [eax+18h], edx
+mov     eax, [esp+0D0h+var_BC]
+test    eax, eax
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_66EABC
+mov     cl, [esp+0D0h+var_B3]
+test    cl, cl
+jz      short loc_66EABC
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66EABC:                             ; CODE XREF: RulesClass__LoadFromINI+1579↑j
+; RulesClass__LoadFromINI+1581↑j
+mov     eax, [esi+554h]
+mov     ecx, [esi+550h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aZoominfactor ; "ZoomInFactor"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+550h]
+mov     al, [esi+17EEh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aRevealbyheight ; "RevealByHeight"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17EEh], al
+mov     dl, [esi+17EFh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aAllowshroudeds ; "AllowShroudedSubteranneanMoves"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17EFh], al
+mov     ecx, [esi+0F4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aAircraftfogrev ; "AircraftFogReveal"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0F4h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+570h]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aMinlowpowerpro ; "MinLowPowerProductionSpeed"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+570h]
+fld     dword ptr [esi+574h]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aMaxlowpowerpro ; "MaxLowPowerProductionSpeed"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+574h]
+fld     dword ptr [esi+578h]
+mov     edx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aLowpowerpenalt ; "LowPowerPenaltyModifier"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+578h]
+fld     dword ptr [esi+57Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aMultiplefactor ; "MultipleFactory"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+57Ch]
+mov     ecx, [esi+580h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aMaximumcheerra ; "MaximumCheerRate"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+580h], eax
+mov     eax, [esi+58Ch]
+mov     ecx, [esi+588h]
+push    eax
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; double
+push    offset aTreeflammabili ; "TreeFlammability"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+588h]
+mov     eax, [esi+59Ch]
+mov     ecx, [esi+598h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aMissilerotvar ; "MissileROTVar"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+598h]
+mov     eax, [esi+5A0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aMissilesafetya ; "MissileSafetyAltitude"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+5A0h], eax
+mov     edx, [esi+594h]
+mov     eax, [esi+590h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aMissilespeedva ; "MissileSpeedVar"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+590h]
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+5A4h]
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aDroppodweapon ; "DropPodWeapon"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66ECBF
+lea     ecx, [esp+0D0h+String] ; Source
+call    InfantryTypeClass__Find
+jmp     short loc_66ECC1
+; ---------------------------------------------------------------------------
+
+loc_66ECBF:                             ; CODE XREF: RulesClass__LoadFromINI+1782↑j
+mov     eax, ebx
+
+loc_66ECC1:                             ; CODE XREF: RulesClass__LoadFromINI+178D↑j
+mov     [esi+5A4h], eax
+mov     ecx, [esi+5A8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aDroppodheight ; "DropPodHeight"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+5A8h], eax
+mov     eax, [esi+5ACh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDroppodspeed ; "DropPodSpeed"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+5ACh], eax
+mov     edx, [esi+5B4h]
+mov     eax, [esi+5B0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDroppodangle ; "DropPodAngle"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fst     qword ptr [esi+5B0h]
+fld     st
+fcomp   ds:dbl_7F0DC0
+fnstsw  ax
+test    ah, 1
+jz      short loc_66ED3F
+jmp     short loc_66ED47
+; ---------------------------------------------------------------------------
+
+loc_66ED3F:                             ; CODE XREF: RulesClass__LoadFromINI+180B↑j
+fstp    st
+fld     ds:dbl_7F0DC0
+
+loc_66ED47:                             ; CODE XREF: RulesClass__LoadFromINI+180D↑j
+fst     qword ptr [esi+5B0h]
+fld     st
+fcomp   ds:dbl_7ED8A0
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_66ED5E
+jmp     short loc_66ED66
+; ---------------------------------------------------------------------------
+
+loc_66ED5E:                             ; CODE XREF: RulesClass__LoadFromINI+182A↑j
+fstp    st
+fld     ds:dbl_7ED8A0
+
+loc_66ED66:                             ; CODE XREF: RulesClass__LoadFromINI+182C↑j
+fstp    qword ptr [esi+5B0h]
+mov     edx, [esi+5C4h]
+mov     eax, [esi+5C0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aCrewescape ; "CrewEscape"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5C0h]
+mov     edx, [esi+24h]
+mov     eax, [esi+20h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTunnelspeed ; "TunnelSpeed"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+20h]
+mov     edx, [esi+5F4h]
+mov     eax, [esi+5F0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aHoverdampen ; "HoverDampen"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5F0h]
+mov     edx, [esi+5D4h]
+mov     eax, [esi+5D0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aHoverbob ; "HoverBob"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5D0h]
+mov     edx, [esi+5CCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aHoverheight ; "HoverHeight"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+5CCh], eax
+mov     ecx, [esi+5DCh]
+mov     edx, [esi+5D8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aHoverboost ; "HoverBoost"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5D8h]
+mov     ecx, [esi+5E4h]
+mov     edx, [esi+5E0h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aHoveraccelerat ; "HoverAcceleration"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5E0h]
+mov     ecx, [esi+5ECh]
+mov     edx, [esi+5E8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aHoverbrake ; "HoverBrake"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5E8h]
+mov     ecx, [esi+66Ch]
+push    ecx
+mov     edx, [esi+668h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx             ; double
+push    offset aVeteranratio ; "VeteranRatio"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+668h]
+mov     ecx, [esi+674h]
+mov     edx, [esi+670h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeterancombat ; "VeteranCombat"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+670h]
+mov     ecx, [esi+67Ch]
+mov     edx, [esi+678h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeteranspeed ; "VeteranSpeed"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+678h]
+mov     ecx, [esi+684h]
+mov     edx, [esi+680h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeteransight ; "VeteranSight"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+680h]
+mov     ecx, [esi+68Ch]
+mov     edx, [esi+688h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeteranarmor ; "VeteranArmor"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+688h]
+mov     ecx, [esi+694h]
+mov     edx, [esi+690h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeteranrof ; "VeteranROF"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+690h]
+mov     ecx, [esi+69Ch]
+mov     edx, [esi+698h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aVeterancap ; "VeteranCap"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+698h]
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aExplosivevoxel ; "ExplosiveVoxelDebris"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66F045
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVector__Constructor_VoxelAnim
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVVoxelAnimTypeClass@@@@6B@ ; const TypeList<VoxelAnimTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66F024
+
+loc_66EFEF:                             ; CODE XREF: RulesClass__LoadFromINI+1AF2↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66F024
+mov     ecx, eax        ; Source
+call    UnitTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66F011
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add2
+
+loc_66F011:                             ; CODE XREF: RulesClass__LoadFromINI+1AD1↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66EFEF
+
+loc_66F024:                             ; CODE XREF: RulesClass__LoadFromINI+1ABD↑j
+; RulesClass__LoadFromINI+1AC2↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__CopyVoxelAnim
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
+call    Vector__Cleanup2
+jmp     short loc_66F055
+; ---------------------------------------------------------------------------
+
+loc_66F045:                             ; CODE XREF: RulesClass__LoadFromINI+1A8E↑j
+lea     eax, [esi+600h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__CopyVoxelAnim
+
+loc_66F055:                             ; CODE XREF: RulesClass__LoadFromINI+1B13↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+600h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyAssign
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
+jz      short loc_66F09D
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66F09D
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66F09D:                             ; CODE XREF: RulesClass__LoadFromINI+1B5A↑j
+; RulesClass__LoadFromINI+1B62↑j
+mov     edx, [esi+624h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aBridgevoxelmax ; "BridgeVoxelMax"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+624h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+61Ch]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aTirevoxeldebri ; "TireVoxelDebris"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F0F3
+lea     ecx, [esp+0D0h+String] ; Source
+call    UnitTypeClass__FindOrCreate
+jmp     short loc_66F0F5
+; ---------------------------------------------------------------------------
+
+loc_66F0F3:                             ; CODE XREF: RulesClass__LoadFromINI+1BB6↑j
+mov     eax, ebx
+
+loc_66F0F5:                             ; CODE XREF: RulesClass__LoadFromINI+1BC1↑j
+mov     [esi+61Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+620h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aScrapvoxeldebr ; "ScrapVoxelDebris"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F132
+lea     ecx, [esp+0D0h+String] ; Source
+call    UnitTypeClass__FindOrCreate
+jmp     short loc_66F134
+; ---------------------------------------------------------------------------
+
+loc_66F132:                             ; CODE XREF: RulesClass__LoadFromINI+1BF5↑j
+mov     eax, ebx
+
+loc_66F134:                             ; CODE XREF: RulesClass__LoadFromINI+1C00↑j
+mov     [esi+620h], eax
+mov     edx, [esi+628h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCloakingstages ; "CloakingStages"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+628h], eax
+mov     ecx, [esi+634h]
+mov     edx, [esi+630h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aShipsinkingwei ; "ShipSinkingWeight"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+630h]
+mov     ecx, [esi+63Ch]
+mov     edx, [esi+638h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aIcecrackingwei ; "IceCrackingWeight"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+638h]
+mov     ecx, [esi+644h]
+mov     edx, [esi+640h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aIcebreakingwei ; "IceBreakingWeight"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+640h]
+movsx   ecx, byte ptr [esi+664h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aCliffbackimpas ; "CliffBackImpassability"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+664h], al
+mov     eax, [esi+5FCh]
+mov     ecx, [esi+5F8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aPlacementdelay ; "PlacementDelay"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+5F8h]
+mov     eax, [esi+76Ch]
+mov     ecx, [esi+768h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aTrackeduphill ; "TrackedUphill"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+768h]
+mov     eax, [esi+774h]
+mov     ecx, [esi+770h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aTrackeddownhil ; "TrackedDownhill"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+770h]
+mov     eax, [esi+77Ch]
+mov     ecx, [esi+778h]
+push    eax
+push    ecx             ; double
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aWheeleduphill ; "WheeledUphill"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+778h]
+mov     eax, [esi+784h]
+mov     ecx, [esi+780h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aWheeleddownhil ; "WheeledDownhill"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+780h]
+mov     eax, [esi+7ACh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aWinddirection ; "WindDirection"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+7ACh], eax
+mov     edx, [esi+7B0h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCamerarange ; "CameraRange"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+7B0h], eax
+mov     ecx, [esi+7B4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aFlightlevel ; "FlightLevel"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+7B4h], eax
+mov     eax, [esi+7B8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aParachutemaxfa ; "ParachuteMaxFallRate"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+7B8h], eax
+mov     edx, [esi+7BCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aNoparachutemax ; "NoParachuteMaxFallRate"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+7BCh], eax
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aRepairbay ; "RepairBay"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66F3F8
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     eax, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66F3D7
+
+loc_66F3A2:                             ; CODE XREF: RulesClass__LoadFromINI+1EA5↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66F3D7
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66F3C4
+lea     ecx, [esp+0D0h+var_A4]
+push    ecx
+lea     ecx, [esp+0D4h+var_C0]
+call    DynamicVector__Add_Alt3
+
+loc_66F3C4:                             ; CODE XREF: RulesClass__LoadFromINI+1E84↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66F3A2
+
+loc_66F3D7:                             ; CODE XREF: RulesClass__LoadFromINI+1E70↑j
+; RulesClass__LoadFromINI+1E75↑j
+lea     edx, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_66F408
+; ---------------------------------------------------------------------------
+
+loc_66F3F8:                             ; CODE XREF: RulesClass__LoadFromINI+1E41↑j
+lea     eax, [esi+850h]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_66F408:                             ; CODE XREF: RulesClass__LoadFromINI+1EC6↑j
+lea     ecx, [esp+0D0h+var_9C]
+lea     ebx, [esi+850h]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyBuilding
+mov     edx, [esp+0D0h+var_8C]
+mov     [ebx+10h], edx
+mov     eax, [esp+0D0h+var_88]
+mov     [ebx+14h], eax
+mov     ecx, [esp+0D0h+var_84]
+mov     [ebx+18h], ecx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+jz      short loc_66F450
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66F450
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66F450:                             ; CODE XREF: RulesClass__LoadFromINI+1F0D↑j
+; RulesClass__LoadFromINI+1F15↑j
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+86Ch]
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aGdigateone ; "GDIGateOne"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F486
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F488
+; ---------------------------------------------------------------------------
+
+loc_66F486:                             ; CODE XREF: RulesClass__LoadFromINI+1F49↑j
+mov     eax, ebx
+
+loc_66F488:                             ; CODE XREF: RulesClass__LoadFromINI+1F54↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+86Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+870h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aGdigatetwo ; "GDIGateTwo"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F4C5
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F4C7
+; ---------------------------------------------------------------------------
+
+loc_66F4C5:                             ; CODE XREF: RulesClass__LoadFromINI+1F88↑j
+mov     eax, ebx
+
+loc_66F4C7:                             ; CODE XREF: RulesClass__LoadFromINI+1F93↑j
+mov     [esi+870h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+874h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aNodgateone ; "NodGateOne"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F504
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F506
+; ---------------------------------------------------------------------------
+
+loc_66F504:                             ; CODE XREF: RulesClass__LoadFromINI+1FC7↑j
+mov     eax, ebx
+
+loc_66F506:                             ; CODE XREF: RulesClass__LoadFromINI+1FD2↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+874h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+878h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aNodgatetwo ; "NodGateTwo"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F542
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F544
+; ---------------------------------------------------------------------------
+
+loc_66F542:                             ; CODE XREF: RulesClass__LoadFromINI+2005↑j
+mov     eax, ebx
+
+loc_66F544:                             ; CODE XREF: RulesClass__LoadFromINI+2010↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+878h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+87Ch]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aWalltower ; "WallTower"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F581
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F583
+; ---------------------------------------------------------------------------
+
+loc_66F581:                             ; CODE XREF: RulesClass__LoadFromINI+2044↑j
+mov     eax, ebx
+
+loc_66F583:                             ; CODE XREF: RulesClass__LoadFromINI+204F↑j
+mov     [esi+87Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aShipyard ; "Shipyard"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66F634
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     edx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66F613
+
+loc_66F5DE:                             ; CODE XREF: RulesClass__LoadFromINI+20E1↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66F613
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66F600
+lea     eax, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    eax
+call    DynamicVector__Add_Alt3
+
+loc_66F600:                             ; CODE XREF: RulesClass__LoadFromINI+20C0↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66F5DE
+
+loc_66F613:                             ; CODE XREF: RulesClass__LoadFromINI+20AC↑j
+; RulesClass__LoadFromINI+20B1↑j
+lea     ecx, [esp+0D0h+var_C0]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_66F644
+; ---------------------------------------------------------------------------
+
+loc_66F634:                             ; CODE XREF: RulesClass__LoadFromINI+207D↑j
+lea     edx, [esi+880h]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__BuildingTypeCopy
+
+loc_66F644:                             ; CODE XREF: RulesClass__LoadFromINI+2102↑j
+lea     ebx, [esi+880h]
+lea     eax, [esp+0D0h+var_9C]
+push    eax
+mov     ecx, ebx
+call    VectorClass__CopyBuilding
+mov     ecx, [esp+0D0h+var_8C]
+mov     [ebx+10h], ecx
+mov     edx, [esp+0D0h+var_88]
+mov     [ebx+14h], edx
+mov     eax, [esp+0D0h+var_84]
+mov     [ebx+18h], eax
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+jz      short loc_66F68C
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66F68C
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66F68C:                             ; CODE XREF: RulesClass__LoadFromINI+2149↑j
+; RulesClass__LoadFromINI+2151↑j
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+89Ch]
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aGdipowerplant ; "GDIPowerPlant"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F6C3
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F6C5
+; ---------------------------------------------------------------------------
+
+loc_66F6C3:                             ; CODE XREF: RulesClass__LoadFromINI+2186↑j
+mov     eax, ebx
+
+loc_66F6C5:                             ; CODE XREF: RulesClass__LoadFromINI+2191↑j
+mov     [esi+89Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+8A0h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aNodregularpowe ; "NodRegularPower"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F702
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F704
+; ---------------------------------------------------------------------------
+
+loc_66F702:                             ; CODE XREF: RulesClass__LoadFromINI+21C5↑j
+mov     eax, ebx
+
+loc_66F704:                             ; CODE XREF: RulesClass__LoadFromINI+21D0↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+8A0h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+8A4h]
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aNodadvancedpow ; "NodAdvancedPower"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F740
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F742
+; ---------------------------------------------------------------------------
+
+loc_66F740:                             ; CODE XREF: RulesClass__LoadFromINI+2203↑j
+mov     eax, ebx
+
+loc_66F742:                             ; CODE XREF: RulesClass__LoadFromINI+220E↑j
+lea     ecx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+8A4h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+8A8h]
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aThirdpowerplan ; "ThirdPowerPlant"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F77F
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreate
+jmp     short loc_66F781
+; ---------------------------------------------------------------------------
+
+loc_66F77F:                             ; CODE XREF: RulesClass__LoadFromINI+2242↑j
+mov     eax, ebx
+
+loc_66F781:                             ; CODE XREF: RulesClass__LoadFromINI+224D↑j
+mov     [esi+8A8h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+mov     ebx, [esi+400h]
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aPrerequisitepr_0 ; "PrerequisiteProcAlternate"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_66F7BE
+lea     ecx, [esp+0D0h+String] ; Source
+call    BuildingTypeClass__FindOrCreateAlt
+jmp     short loc_66F7C0
+; ---------------------------------------------------------------------------
+
+loc_66F7BE:                             ; CODE XREF: RulesClass__LoadFromINI+2281↑j
+mov     eax, ebx
+
+loc_66F7C0:                             ; CODE XREF: RulesClass__LoadFromINI+228C↑j
+lea     edx, [esp+0D0h+String]
+push    80h             ; Count
+mov     [esi+400h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aBaseunit ; "BaseUnit"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66F870
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    UnitTypeVector__Construct
+lea     ecx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVUnitTypeClass@@@@6B@ ; const TypeList<UnitTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66F84F
+
+loc_66F81A:                             ; CODE XREF: RulesClass__LoadFromINI+231D↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66F84F
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreateAlt
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66F83C
+lea     edx, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    edx
+call    VectorClass__PushBack
+
+loc_66F83C:                             ; CODE XREF: RulesClass__LoadFromINI+22FC↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66F81A
+
+loc_66F84F:                             ; CODE XREF: RulesClass__LoadFromINI+22E8↑j
+; RulesClass__LoadFromINI+22ED↑j
+lea     eax, [esp+0D0h+var_C0]
+lea     ecx, [esp+0D0h+var_9C]
+push    eax
+call    TypeList__CopyConstructor
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
+call    Vector__Destructor
+jmp     short loc_66F880
+; ---------------------------------------------------------------------------
+
+loc_66F870:                             ; CODE XREF: RulesClass__LoadFromINI+22B9↑j
+lea     ecx, [esi+0B20h]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__CopyConstructor
+
+loc_66F880:                             ; CODE XREF: RulesClass__LoadFromINI+233E↑j
+lea     ebx, [esi+0B20h]
+lea     edx, [esp+0D0h+var_9C]
+push    edx
+mov     ecx, ebx
+call    VectorClass__CopyConstructor
+mov     eax, [esp+0D0h+var_8C]
+mov     [ebx+10h], eax
+mov     ecx, [esp+0D0h+var_88]
+mov     [ebx+14h], ecx
+mov     edx, [esp+0D0h+var_84]
+mov     [ebx+18h], edx
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
+jz      short loc_66F8C8
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66F8C8
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66F8C8:                             ; CODE XREF: RulesClass__LoadFromINI+2385↑j
+; RulesClass__LoadFromINI+238D↑j
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esp+0D0h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aHarvesterunit ; "HarvesterUnit"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_66F973
+push    0
+push    0
+lea     ecx, [esp+0D8h+var_C0]
+call    UnitTypeVector__Construct
+lea     edx, [esp+0D0h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVUnitTypeClass@@@@6B@ ; const TypeList<UnitTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_66F952
+
+loc_66F91D:                             ; CODE XREF: RulesClass__LoadFromINI+2420↓j
+cmp     byte ptr [eax], 0
+jz      short loc_66F952
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreateAlt
+test    eax, eax
+mov     dword ptr [esp+0D0h+var_A4], eax
+jz      short loc_66F93F
+lea     eax, [esp+0D0h+var_A4]
+lea     ecx, [esp+0D0h+var_C0]
+push    eax
+call    VectorClass__PushBack
+
+loc_66F93F:                             ; CODE XREF: RulesClass__LoadFromINI+23FF↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_66F91D
+
+loc_66F952:                             ; CODE XREF: RulesClass__LoadFromINI+23EB↑j
+; RulesClass__LoadFromINI+23F0↑j
+lea     ecx, [esp+0D0h+var_C0]
+push    ecx
+lea     ecx, [esp+0D4h+var_9C]
+call    TypeList__CopyConstructor
+lea     ecx, [esp+0D0h+var_C0]
+mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
+call    Vector__Destructor
+jmp     short loc_66F983
+; ---------------------------------------------------------------------------
+
+loc_66F973:                             ; CODE XREF: RulesClass__LoadFromINI+23BC↑j
+lea     edx, [esi+0B3Ch]
+lea     ecx, [esp+0D0h+var_9C]
+push    edx
+call    TypeList__CopyConstructor
+
+loc_66F983:                             ; CODE XREF: RulesClass__LoadFromINI+2441↑j
+lea     ebx, [esi+0B3Ch]
+lea     eax, [esp+0D0h+var_9C]
+push    eax
+mov     ecx, ebx
+call    VectorClass__CopyConstructor
+mov     ecx, [esp+0D0h+var_8C]
+mov     [ebx+10h], ecx
+mov     edx, [esp+0D0h+var_88]
+mov     [ebx+14h], edx
+mov     eax, [esp+0D0h+var_84]
+mov     [ebx+18h], eax
+mov     eax, [esp+0D0h+Block]
+test    eax, eax
+mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
+jz      short loc_66F9CB
+mov     cl, [esp+0D0h+var_8F]
+test    cl, cl
+jz      short loc_66F9CB
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_66F9CB:                             ; CODE XREF: RulesClass__LoadFromINI+2488↑j
+; RulesClass__LoadFromINI+2490↑j
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0B58h]
+push    ebx
+push    offset aPadaircraft ; "PadAircraft"
+push    ecx
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    HouseTypeClass__ReadCountryName
+push    eax
+mov     ecx, ebx
+call    RulesClass__readSuperWeaponTypes
+lea     ecx, [esp+0D0h+var_C0]
+call    RulesClass__readCountries
+mov     edx, [esi+0BE4h]
+mov     ecx, edi
+push    edx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aParatrooper ; "Paratrooper"
+call    GetINIClassInt
+lea     ebx, [esi+0D00h]
+mov     [esi+0BE4h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+push    ebx
+push    offset aSecretinfantry ; "SecretInfantry"
+push    eax
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+mov     ecx, ds:off_7F0C9C ; "General"
+lea     eax, [esi+0D1Ch]
+push    eax
+push    offset aSecretunits ; "SecretUnits"
+push    ecx
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    BuildingClass__LoadBuildingTypes
+push    eax
+lea     ecx, [esi+0D1Ch]
+call    RulesClass__readAircraftTypes
+lea     ecx, [esp+0D0h+var_C0]
+call    RulesClass__readInfantryTypes
+mov     edx, ds:off_7F0C9C ; "General"
+lea     eax, [esi+0D38h]
+push    eax
+push    offset aSecretbuilding ; "SecretBuildings"
+push    edx
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassBuildingTypeList
+push    eax
+lea     ecx, [esi+0D38h]
+call    TypeList__CopyAircraft
+lea     ecx, [esp+0D0h+var_C0]
+call    RulesClass__readMaximums
+mov     ecx, ebx
+call    RulesClass__readWarheads
+lea     ecx, [esi+0D1Ch]
+mov     ebx, eax
+call    RulesClass__readOverlayTypes
+lea     ecx, [esi+0D38h]
+add     ebx, eax
+call    RulesClass__readSmudgeTypes
+add     ebx, eax
+mov     [esi+0D54h], ebx
+mov     eax, [esi+0BECh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aChronodelay ; "ChronoDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0BECh], eax
+mov     edx, [esi+0BF0h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aChronoreinfdel ; "ChronoReinfDelay"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0BF0h], eax
+mov     ecx, [esi+0BF4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aChronodistance ; "ChronoDistanceFactor"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0BF4h], eax
+mov     al, [esi+0BF8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aChronotrigger ; "ChronoTrigger"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+0BF8h], al
+mov     edx, [esi+0BFCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aChronominimumd ; "ChronoMinimumDelay"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0BFCh], eax
+mov     ecx, [esi+0C00h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aChronorangemin ; "ChronoRangeMinimum"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0C00h], eax
+mov     eax, [esi+0D58h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aAllieddisguise ; "AlliedDisguise"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0D58h], eax
+mov     ecx, [esi+0D5Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSovietdisguise ; "SovietDisguise"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0D5Ch], eax
+mov     edx, [esi+0D60h]
+push    edx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aThirddisguise ; "ThirdDisguise"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0D60h], eax
+mov     eax, [esi+0D64h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aSpypowerblacko ; "SpyPowerBlackout"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0D64h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+0D68h]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aSpymoneystealp ; "SpyMoneyStealPercent"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+0D68h]
+mov     al, [esi+0D6Ch]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aAttackcursoron ; "AttackCursorOnDisguise"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+0D6Ch], al
+mov     edx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+0F3Ch]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aPurifierbonus ; "PurifierBonus"
+push    edx             ; char
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+0F3Ch]
+mov     eax, [esi+0F70h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aEngineer ; "Engineer"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F70h], eax
+mov     ecx, [esi+0F6Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aTechnician ; "Technician"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F6Ch], eax
+mov     edx, [esi+0F74h]
+push    edx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aPilot   ; "Pilot"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F74h], eax
+mov     eax, [esi+0F78h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aAlliedcrew ; "AlliedCrew"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F78h], eax
+mov     ecx, [esi+0F7Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSovietcrew ; "SovietCrew"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F7Ch], eax
+mov     edx, [esi+0F80h]
+push    edx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aThirdcrew ; "ThirdCrew"
+mov     ecx, edi
+call    GetINIClassInt
+mov     [esi+0F80h], eax
+mov     al, [esi+17E1h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aCurleyshuffle ; "CurleyShuffle"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17E1h], al
+mov     dl, [esi+17E4h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx             ; int
+push    offset aFinediffcontro ; "FineDiffControl"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+sub     esp, 1Ch
+lea     ebx, [esi+1158h]
+mov     ecx, esp
+mov     [esi+17E4h], al
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aTeamdelays ; "TeamDelays"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1174h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAihatedelays ; "AIHateDelays"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, [esi+1300h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aAialternatepro ; "AIAlternateProductionCreditCutoff"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1300h], eax
+mov     ecx, [esi+13ECh]
+mov     edx, [esi+13E8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aAiuseturbineup ; "AIUseTurbineUpgradeProbability"
+push    eax             ; char
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+13E8h]
+mov     cl, [esi+17F1h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aNodaibuildswal ; "NodAIBuildsWalls"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17F1h], al
+mov     al, [esi+17F2h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax             ; int
+push    offset aAibuildswalls ; "AIBuildsWalls"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+sub     esp, 1Ch
+lea     ebx, [esi+13F0h]
+mov     ecx, esp
+mov     [esi+17F2h], al
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aFillearliestte ; "FillEarliestTeamProbability"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1390h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aMinimumaidefen ; "MinimumAIDefensiveTeams"
+push    ecx             ; int
+lea     edx, [esp+0F4h+var_C0]
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+13ACh]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aMaximumaidefen ; "MaximumAIDefensiveTeams"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+13C8h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aTotalaiteamcap ; "TotalAITeamCap"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     cl, [esi+17F3h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aUsemindefenser ; "UseMinDefenseRule"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17F3h], al
+mov     eax, [esi+1190h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDissolveunfill ; "DissolveUnfilledTeamDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1190h], eax
+mov     edx, [esi+0D74h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aAisafedistance ; "AISafeDistance"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0D74h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+0D70h]
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aAiminorsuperre ; "AIMinorSuperReadyPercent"
+push    ecx             ; char
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+0D70h]
+mov     edx, [esi+0D78h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aHarvestertoofa ; "HarvesterTooFarDistance"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0D78h], eax
+mov     ecx, [esi+0D7Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; int
+push    offset aChronoharvtoof ; "ChronoHarvTooFarDistance"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+sub     esp, 1Ch
+lea     ebx, [esi+0D80h]
+mov     ecx, esp
+mov     [esi+0D7Ch], eax
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAlliedbasedefe ; "AlliedBaseDefenseCounts"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0D9Ch]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aSovietbasedefe ; "SovietBaseDefenseCounts"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0DB8h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aThirdbasedefen ; "ThirdBaseDefenseCounts"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0DD4h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAipickwalldefe ; "AIPickWallDefensePercent"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, [esi+0DF0h]
+push    edx
+push    offset aAirestrictrepl ; "AIRestrictReplaceTime"
+mov     eax, ds:off_7F0C9C ; "General"
+mov     ecx, edi
+push    eax
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0DF0h], eax
+mov     ecx, [esi+0DF4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aThreatperoccup ; "ThreatPerOccupant"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0DF4h], eax
+mov     eax, [esi+0DF8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aApproachtarget ; "ApproachTargetResetMultiplier"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0DF8h], eax
+mov     edx, [esi+0DFCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCampaignmoneyd ; "CampaignMoneyDeltaEasy"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0DFCh], eax
+mov     ecx, [esi+0E00h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aCampaignmoneyd_0 ; "CampaignMoneyDeltaHard"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E00h], eax
+mov     eax, [esi+0E04h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aGuardareatarge ; "GuardAreaTargetingDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E04h], eax
+mov     edx, [esi+0E08h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aNormaltargetin ; "NormalTargetingDelay"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E08h], eax
+mov     ecx, [esi+0E0Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; int
+push    offset aAinavalyardadj ; "AINavalYardAdjacency"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+sub     esp, 1Ch
+lea     ebx, [esi+0E10h]
+mov     ecx, esp
+mov     [esi+0E0Ch], eax
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aDisableddisgui ; "DisabledDisguiseDetectionPercent"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0E2Ch]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAiautodeployfr ; "AIAutoDeployFrameDelay"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     ecx, [esi+0E48h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aMaximumbuildin ; "MaximumBuildingPlacementFailures"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E48h], eax
+mov     eax, [esi+1778h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aTiberiumshorts ; "TiberiumShortScan"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1778h], eax
+mov     edx, [esi+177Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aTiberiumlongsc ; "TiberiumLongScan"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+177Ch], eax
+mov     ecx, [esi+1780h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSlaveminershor ; "SlaveMinerShortScan"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1780h], eax
+mov     eax, [esi+1784h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aSlaveminerslav ; "SlaveMinerSlaveScan"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1784h], eax
+mov     edx, [esi+1788h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSlaveminerlong ; "SlaveMinerLongScan"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1788h], eax
+mov     ecx, [esi+178Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSlaveminerscan ; "SlaveMinerScanCorrection"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+178Ch], eax
+mov     eax, [esi+1790h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax             ; int
+push    offset aSlaveminerkick ; "SlaveMinerKickFrameDelay"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+sub     esp, 1Ch
+mov     [esi+1790h], eax
+lea     ebx, [esi+0EC4h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAisuperdefense ; "AISuperDefenseProbability"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     ecx, [esi+0EE0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aAisuperdefense_0 ; "AISuperDefenseFrames"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0EE0h], eax
+mov     eax, [esi+0EE4h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax             ; int
+push    offset aAisuperdefense_1 ; "AISuperDefenseDistance"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadCoord
+sub     esp, 1Ch
+lea     ebx, [esi+0E4Ch]
+mov     ecx, esp
+mov     [esi+0EE4h], eax
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAicapturenorma ; "AICaptureNormal"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0E68h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aAicapturewound ; "AICaptureWounded"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0E84h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAicapturelowpo ; "AICaptureLowPower"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+0EA0h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAicapturelowmo ; "AICaptureLowMoney"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     ecx, [esi+0EBCh]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; int
+push    offset aAicapturelowmo_0 ; "AICaptureLowMoneyMark"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0EBCh], eax
+mov     eax, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+0EC0h]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; int
+push    offset aAicapturewound_0 ; "AICaptureWoundedMark"
+push    eax             ; char
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+0EC0h]
+sub     esp, 1Ch
+lea     ebx, [esi+1304h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aMultiplayeraic ; "MultiplayerAICM"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1320h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAivirtualpurif ; "AIVirtualPurifiers"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+133Ch]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAislaveminernu ; "AISlaveMinerNumber"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1358h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aHarvestersperr ; "HarvestersPerRefinery"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1374h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiextrarefiner ; "AIExtraRefineries"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0C04h]
+push    ebx
+push    offset aAmerparadropin ; "AmerParaDropInf"
+push    edx             ; int
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+sub     esp, 1Ch
+lea     ebx, [esi+0C20h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAmerparadropnu ; "AmerParaDropNum"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0C3Ch]
+push    ebx
+push    offset aAllyparadropin ; "AllyParaDropInf"
+push    edx             ; int
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+sub     esp, 1Ch
+lea     ebx, [esi+0C58h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAllyparadropnu ; "AllyParaDropNum"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0C74h]
+push    ebx
+push    offset aSovparadropinf ; "SovParaDropInf"
+push    edx             ; int
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+sub     esp, 1Ch
+lea     ebx, [esi+0C90h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aSovparadropnum ; "SovParaDropNum"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0CACh]
+push    ebx
+push    offset aYuriparadropin ; "YuriParaDropInf"
+push    edx             ; int
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+sub     esp, 1Ch
+lea     ebx, [esi+0CC8h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aYuriparadropnu ; "YuriParaDropNum"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, ds:off_7F0C9C ; "General"
+lea     ebx, [esi+0CE4h]
+push    ebx
+push    offset aAnimtoinfantry ; "AnimToInfantry"
+push    edx             ; int
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    ReadINIClassInfantryTypeList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyInfantry
+lea     ecx, [esp+0D0h+var_C0]
+call    TypeList__InfantryCleanup
+sub     esp, 1Ch
+lea     ebx, [esi+1194h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiioncannoncon ; "AIIonCannonConYardValue"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+11B0h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonwar ; "AIIonCannonWarFactoryValue"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+11CCh]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonpow ; "AIIonCannonPowerValue"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+11E8h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiioncannontec ; "AIIonCannonTechCenterValue"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1204h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannoneng ; "AIIonCannonEngineerValue"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1220h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonthi ; "AIIonCannonThiefValue"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+123Ch]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonhar ; "AIIonCannonHarvesterValue"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1258h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonmcv ; "AIIonCannonMCVValue"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1274h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonapc ; "AIIonCannonAPCValue"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+1290h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonbas ; "AIIonCannonBaseDefenseValue"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+12ACh]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonplu ; "AIIonCannonPlugValue"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+12C8h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aAiioncannonhel ; "AIIonCannonHelipadValue"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+12E4h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aAiioncannontem ; "AIIonCannonTempleValue"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, [esi+1414h]
+mov     eax, [esi+1410h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aCloakdelay ; "CloakDelay"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1410h]
+mov     edx, [esi+141Ch]
+mov     eax, [esi+1418h]
+push    edx
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax             ; double
+push    offset aGamespeedbias ; "GameSpeedBias"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1418h]
+mov     edx, [esi+1424h]
+mov     eax, [esi+1420h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aBasebias ; "BaseBias"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1420h]
+mov     dl, [esi+17E8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSeparateaircra ; "SeparateAircraft"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17E8h], al
+mov     ecx, [esi+14DCh]
+mov     edx, [esi+14D8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    ecx
+push    edx             ; double
+push    offset aBasedefensedel ; "BaseDefenseDelay"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+14D8h]
+mov     ecx, [esi+14E0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSuspendpriorit ; "SuspendPriority"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+14E0h], eax
+mov     eax, [esi+14ECh]
+mov     ecx, [esi+14E8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aSuspenddelay ; "SuspendDelay"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+14E8h]
+mov     eax, [esi+14F4h]
+mov     ecx, [esi+14F0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aSurvivorrate ; "SurvivorRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+14F0h]
+mov     eax, [esi+14F8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aAlliedsurvivor ; "AlliedSurvivorDivisor"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+14F8h], eax
+mov     edx, [esi+14FCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSovietsurvivor ; "SovietSurvivorDivisor"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+14FCh], eax
+mov     ecx, [esi+1500h]
+push    ecx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aThirdsurvivord ; "ThirdSurvivorDivisor"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1500h], eax
+mov     eax, [esi+150Ch]
+mov     ecx, [esi+1508h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aReloadrate ; "ReloadRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1508h]
+mov     eax, [esi+151Ch]
+mov     ecx, [esi+1518h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aBuilduptime ; "BuildupTime"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1518h]
+mov     eax, [esi+152Ch]
+mov     ecx, [esi+1528h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aHarvesterdumpr ; "HarvesterDumpRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1528h]
+mov     eax, [esi+1520h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aHarvesterloadr ; "HarvesterLoadRate"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1520h], eax
+mov     edx, [esi+174Ch]
+mov     eax, [esi+1748h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aBuildspeed ; "BuildSpeed"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1748h]
+mov     edx, [esi+16B4h]
+mov     eax, [esi+16B0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDamagedelay ; "DamageDelay"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+16B0h]
+mov     edx, [esi+163Ch]
+mov     eax, [esi+1638h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aGrowthrate ; "GrowthRate"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1638h]
+mov     edx, [esi+173Ch]
+mov     eax, [esi+1738h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aRefundpercent ; "RefundPercent"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1738h]
+mov     edx, [esi+16D4h]
+mov     eax, [esi+16D0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aRepairpercent ; "RepairPercent"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+16D0h]
+mov     edx, [esi+16CCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aRepairstep ; "RepairStep"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+16CCh], eax
+mov     ecx, [esi+16D8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aIrepairstep ; "IRepairStep"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+16D8h], eax
+mov     eax, [esi+16E4h]
+mov     ecx, [esi+16E0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aRepairrate ; "RepairRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+16E0h]
+mov     eax, [esi+16ECh]
+mov     ecx, [esi+16E8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aUrepairrate ; "URepairRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+16E8h]
+mov     eax, [esi+16F4h]
+mov     ecx, [esi+16F0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aIrepairrate ; "IRepairRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+16F0h]
+mov     eax, [esi+171Ch]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aStray   ; "Stray"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+171Ch], eax
+mov     edx, [esi+1720h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aRelaxedstray ; "RelaxedStray"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1720h], eax
+mov     ecx, [esi+1724h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aGuardmodestray ; "GuardModeStray"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1724h], eax
+mov     eax, [esi+1718h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aCloseenough ; "CloseEnough"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadCoord
+mov     [esi+1718h], eax
+mov     dl, [esi+17E2h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aBlendedfog ; "BlendedFog"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17E2h], al
+mov     ecx, [esi+18h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aAttackingaircr ; "AttackingAircraftSightRange"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+18h], eax
+mov     eax, [esi+16BCh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aLeptonspersigh ; "LeptonsPerSightIncrease"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+16BCh], eax
+mov     edx, [esi+1688h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aTiberiumtransm ; "TiberiumTransmogrify"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1688h], eax
+mov     ecx, [esi+1794h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aLightningdefer ; "LightningDeferment"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1794h], eax
+mov     eax, [esi+1798h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aLightningdamag ; "LightningDamage"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1798h], eax
+mov     edx, [esi+179Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aLightningstorm ; "LightningStormDuration"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+179Ch], eax
+mov     ecx, [esi+17A0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aLightninghitde ; "LightningHitDelay"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17A0h], eax
+mov     eax, [esi+17A4h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aLightningscatt ; "LightningScatterDelay"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17A4h], eax
+mov     edx, [esi+17A8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aLightningcells ; "LightningCellSpread"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17A8h], eax
+mov     ecx, [esi+17ACh]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aLightningsepar ; "LightningSeparation"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17ACh], eax
+mov     eax, [esi+17B4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aLightningwarhe ; "LightningWarhead"
+mov     ecx, edi
+call    SmallFunc_67B500
+mov     [esi+17B4h], eax
+mov     cl, [esi+17B0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aLightningprint ; "LightningPrintText"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17B0h], al
+mov     eax, [esi+17B8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aForceshieldrad ; "ForceShieldRadius"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17B8h], eax
+mov     edx, [esi+17BCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aForceshielddur ; "ForceShieldDuration"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17BCh], eax
+mov     ecx, [esi+17C0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aForceshieldbla ; "ForceShieldBlackoutDuration"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17C0h], eax
+mov     eax, [esi+17C4h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aForceshieldpla ; "ForceShieldPlayFadeSoundTime"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17C4h], eax
+mov     dl, [esi+17C8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aMutateexplosio_0 ; "MutateExplosion"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17C8h], al
+mov     ecx, [esi+498h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aPrismtype ; "PrismType"
+mov     ecx, edi
+call    SmallFunc_67BCE0
+mov     [esi+498h], eax
+sub     esp, 8
+fild    dword ptr [esi+49Ch]
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aPrismsupportmo ; "PrismSupportModifier"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fmul    ds:dbl_7E2AC0
+call    Math__RoundToInt
+mov     [esi+49Ch], eax
+mov     eax, [esi+4A0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aPrismsupportma ; "PrismSupportMax"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4A0h], eax
+mov     edx, [esi+4A4h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aPrismsupportde ; "PrismSupportDelay"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4A4h], eax
+mov     ecx, [esi+4A8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aPrismsupportdu ; "PrismSupportDuration"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4A8h], eax
+mov     eax, [esi+4ACh]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aPrismsupporthe ; "PrismSupportHeight"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4ACh], eax
+mov     edx, [esi+4B0h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aV3rocketpausef ; "V3RocketPauseFrames"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4B0h], eax
+mov     ecx, [esi+4B4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aV3rockettiltfr ; "V3RocketTiltFrames"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4B4h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+4B8h]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aV3rocketpitchi ; "V3RocketPitchInitial"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4B8h]
+fld     dword ptr [esi+4BCh]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aV3rocketpitchf ; "V3RocketPitchFinal"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4BCh]
+fld     dword ptr [esi+4C0h]
+mov     edx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aV3rocketturnra ; "V3RocketTurnRate"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4C0h]
+fild    dword ptr [esi+4C4h]
+mov     eax, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aV3rocketraiser ; "V3RocketRaiseRate"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+call    Math__RoundToInt
+mov     [esi+4C4h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+4C8h]
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aV3rocketaccele ; "V3RocketAcceleration"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4C8h]
+mov     edx, [esi+4CCh]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aV3rocketaltitu ; "V3RocketAltitude"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4CCh], eax
+mov     ecx, [esi+4D0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aV3rocketdamage ; "V3RocketDamage"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4D0h], eax
+mov     eax, [esi+4D4h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aV3rocketelited ; "V3RocketEliteDamage"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4D4h], eax
+mov     edx, [esi+4D8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aV3rocketbodyle ; "V3RocketBodyLength"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4D8h], eax
+mov     cl, [esi+4DCh]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aV3rocketlazycu ; "V3RocketLazyCurve"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+4DCh], al
+mov     eax, [esi+4E0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aV3rockettype ; "V3RocketType"
+mov     ecx, edi
+call    GetINIClassKeyword
+mov     [esi+4E0h], eax
+mov     ecx, [esi+4E4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aDmislpausefram ; "DMislPauseFrames"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4E4h], eax
+mov     eax, [esi+4E8h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDmisltiltframe ; "DMislTiltFrames"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+4E8h], eax
+mov     edx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+4ECh]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aDmislpitchinit ; "DMislPitchInitial"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4ECh]
+fld     dword ptr [esi+4F0h]
+mov     eax, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aDmislpitchfina ; "DMislPitchFinal"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4F0h]
+fld     dword ptr [esi+4F4h]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aDmislturnrate ; "DMislTurnRate"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4F4h]
+fild    dword ptr [esi+4F8h]
+mov     edx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aDmislraiserate ; "DMislRaiseRate"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+call    Math__RoundToInt
+mov     [esi+4F8h], eax
+mov     eax, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+4FCh]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aDmislaccelerat ; "DMislAcceleration"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+4FCh]
+mov     ecx, [esi+500h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aDmislaltitude ; "DMislAltitude"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+500h], eax
+mov     eax, [esi+504h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDmisldamage ; "DMislDamage"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+504h], eax
+mov     edx, [esi+508h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aDmislelitedama ; "DMislEliteDamage"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+508h], eax
+mov     ecx, [esi+50Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aDmislbodylengt ; "DMislBodyLength"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+50Ch], eax
+mov     al, [esi+510h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aDmisllazycurve ; "DMislLazyCurve"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+510h], al
+mov     edx, [esi+514h]
+push    edx
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aDmisltype ; "DMislType"
+mov     ecx, edi
+call    GetINIClassKeyword
+mov     [esi+514h], eax
+mov     eax, [esi+518h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aCmislpausefram ; "CMislPauseFrames"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+518h], eax
+mov     edx, [esi+51Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCmisltiltframe ; "CMislTiltFrames"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+51Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+520h]
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aCmislpitchinit ; "CMislPitchInitial"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+520h]
+fld     dword ptr [esi+524h]
+mov     edx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aCmislpitchfina ; "CMislPitchFinal"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+524h]
+fld     dword ptr [esi+528h]
+mov     eax, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aCmislturnrate ; "CMislTurnRate"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+528h]
+fild    dword ptr [esi+52Ch]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aCmislraiserate ; "CMislRaiseRate"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+call    Math__RoundToInt
+mov     [esi+52Ch], eax
+mov     edx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+4FCh]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aCmislaccelerat ; "CMislAcceleration"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+530h]
+mov     eax, [esi+534h]
+push    eax
+push    offset aCmislaltitude ; "CMislAltitude"
+mov     ecx, ds:off_7F0C9C ; "General"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+534h], eax
+mov     edx, [esi+538h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCmisldamage ; "CMislDamage"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+538h], eax
+mov     ecx, [esi+53Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aCmislelitedama ; "CMislEliteDamage"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+53Ch], eax
+mov     eax, [esi+540h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aCmislbodylengt ; "CMislBodyLength"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+540h], eax
+mov     dl, [esi+544h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aCmisllazycurve ; "CMislLazyCurve"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+544h], al
+mov     ecx, [esi+548h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aCmisltype ; "CMislType"
+mov     ecx, edi
+call    GetINIClassKeyword
+mov     [esi+548h], eax
+mov     edx, [esi+54Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aParadropradius ; "ParadropRadius"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+54Ch], eax
+mov     ecx, [esi+788h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aSpotlightmovem ; "SpotlightMovementRadius"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+788h], eax
+mov     eax, [esi+78Ch]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aSpotlightlocat ; "SpotlightLocationRadius"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+78Ch], eax
+mov     edx, [esi+794h]
+mov     eax, [esi+790h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aSpotlightspeed ; "SpotlightSpeed"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+790h]
+mov     edx, [esi+79Ch]
+mov     eax, [esi+798h]
+push    edx
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax             ; double
+push    offset aSpotlightaccel ; "SpotlightAcceleration"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+798h]
+mov     edx, [esi+7A4h]
+mov     eax, [esi+7A0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aSpotlightangle ; "SpotlightAngle"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+7A0h]
+mov     edx, [esi+7A8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aSpotlightradiu ; "SpotlightRadius"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+7A8h], eax
+mov     ecx, [esi+62Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aRevealtriggerr ; "RevealTriggerRadius"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+62Ch], eax
+mov     eax, [esi+764h]
+mov     ecx, [esi+760h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aChargetodrainr ; "ChargeToDrainRatio"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+760h]
+mov     eax, [esi+75Ch]
+mov     ecx, [esi+758h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aWallbuildspeed ; "WallBuildSpeedCoefficient"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+758h]
+mov     eax, [esi+564h]
+mov     ecx, [esi+560h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aConditionyello_0 ; "ConditionYellowSparkingProbability"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+560h]
+mov     eax, [esi+55Ch]
+mov     ecx, [esi+558h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aConditionredsp ; "ConditionRedSparkingProbability"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+558h]
+mov     eax, [esi+0C4h]
+mov     ecx, [esi+0C0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aAitriggersucce ; "AITriggerSuccessWeightDelta"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+0C0h]
+mov     eax, [esi+0CCh]
+mov     ecx, [esi+0C8h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aAitriggerfailu ; "AITriggerFailureWeightDelta"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+0C8h]
+mov     eax, [esi+0D4h]
+mov     ecx, [esi+0D0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    ecx             ; double
+push    offset aAitriggertrack ; "AITriggerTrackRecordCoefficient"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+0D0h]
+mov     eax, [esi+17D0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aWeedcapacity ; "WeedCapacity"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+17D0h], eax
+mov     edx, [esi+88h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aFlashframetime ; "FlashFrameTime"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+88h], eax
+mov     ecx, [esi+8Ch]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx             ; int
+push    offset aRadarcombatfla ; "RadarCombatFlashTime"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+8Ch], eax
+mov     eax, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+80h]
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aRadareventspee ; "RadarEventSpeed"
+push    eax             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+80h]
+fld     dword ptr [esi+84h]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; int
+push    offset aRadareventrota ; "RadarEventRotationSpeed"
+push    ecx             ; char
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+84h]
+sub     esp, 1Ch
+lea     ebx, [esi+43Ch]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     edx, ds:off_7F0C9C ; "General"
+push    offset aRadareventsupp ; "RadarEventSuppressionDistances"
+lea     eax, [esp+0F0h+var_C0]
+push    edx             ; int
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+458h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     ecx, ds:off_7F0C9C ; "General"
+push    offset aRadareventvisi ; "RadarEventVisibilityDurations"
+lea     edx, [esp+0F0h+var_C0]
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax             ; int
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+sub     esp, 1Ch
+lea     ebx, [esi+474h]
+mov     ecx, esp
+push    ebx
+call    VectorClass__Copy
+mov     eax, ds:off_7F0C9C ; "General"
+push    offset aRadareventdura ; "RadarEventDurations"
+lea     ecx, [esp+0F0h+var_C0]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyFull
+lea     ecx, [esp+0D0h+var_C0]
+call    VectorClass__Dtor
+mov     edx, [esi+7Ch]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aRadareventminr ; "RadarEventMinRadius"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+7Ch], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+78h]
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aRadareventcolo ; "RadarEventColorSpeed"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+78h]
+mov     edx, [esi+1044h]
+mov     eax, [esi+1040h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aMyeffectivenes ; "MyEffectivenessCoefficientDefault"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1040h]
+mov     edx, [esi+104Ch]
+mov     eax, [esi+1048h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTargeteffectiv ; "TargetEffectivenessCoefficientDefault"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1048h]
+mov     edx, [esi+1054h]
+mov     eax, [esi+1050h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTargetspecialt ; "TargetSpecialThreatCoefficientDefault"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1050h]
+mov     edx, [esi+105Ch]
+mov     eax, [esi+1058h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTargetstrength ; "TargetStrengthCoefficientDefault"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1058h]
+mov     edx, [esi+1064h]
+mov     eax, [esi+1060h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aTargetdistance ; "TargetDistanceCoefficientDefault"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1060h]
+mov     edx, [esi+106Ch]
+mov     eax, [esi+1068h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDumbmyeffectiv ; "DumbMyEffectivenessCoefficient"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1068h]
+mov     edx, [esi+1074h]
+mov     eax, [esi+1070h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDumbtargeteffe ; "DumbTargetEffectivenessCoefficient"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1070h]
+mov     edx, [esi+107Ch]
+mov     eax, [esi+1078h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDumbtargetspec ; "DumbTargetSpecialThreatCoefficient"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1078h]
+mov     edx, [esi+1084h]
+mov     eax, [esi+1080h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDumbtargetstre ; "DumbTargetStrengthCoefficient"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1080h]
+mov     edx, [esi+108Ch]
+mov     eax, [esi+1088h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aDumbtargetdist ; "DumbTargetDistanceCoefficient"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1088h]
+mov     edx, [esi+1094h]
+mov     eax, [esi+1090h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    edx
+push    eax             ; double
+push    offset aEnemyhousethre ; "EnemyHouseThreatBonus"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1090h]
+mov     edx, [esi+0D8h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aVeinholemonste ; "VeinholeMonsterStrength"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0D8h], eax
+mov     ecx, [esi+0DCh]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aMaxveinholegro ; "MaxVeinholeGrowth"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0DCh], eax
+mov     eax, [esi+0E0h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aVeinholegrowth ; "VeinholeGrowthRate"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E0h], eax
+mov     edx, [esi+0E4h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aVeinholeshrink ; "VeinholeShrinkRate"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0E4h], eax
+mov     ecx, [esi+0ECh]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aVeindamage ; "VeinDamage"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0ECh], eax
+mov     eax, [esi+0FF4h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aVeinholetypecl ; "VeinholeTypeClass"
+mov     ecx, edi
+call    SmallFunc_67BD80
+lea     ebx, [esi+0FF8h]
+mov     [esi+0FF4h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+push    ebx
+push    offset aDefaultmiraged ; "DefaultMirageDisguises"
+push    ecx
+mov     edx, edi
+lea     ecx, [esp+0DCh+var_C0]
+call    RulesClass__LoadTypeList
+push    eax
+mov     ecx, ebx
+call    RulesClass__readBuildingTypes
+lea     ecx, [esp+0D0h+var_C0]
+call    RulesClass__readVehicleTypes
+mov     edx, [esi+1014h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aInfantryblinkd ; "InfantryBlinkDisguiseTime"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1014h], eax
+mov     ecx, [esi+0F0h]
+mov     edx, ds:off_7F0C9C ; "General"
+push    ecx
+push    offset aMaximumqueuedo ; "MaximumQueuedObjects"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0F0h], eax
+mov     eax, [esi+90h]
+mov     ecx, ds:off_7F0C9C ; "General"
+push    eax
+push    offset aMaxwaypointpat ; "MaxWaypointPathLength"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+90h], eax
+mov     edx, [esi+1144h]
+mov     eax, ds:off_7F0C9C ; "General"
+push    edx
+push    offset aTreestrength ; "TreeStrength"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1144h], eax
+mov     ecx, ds:off_7F0C9C ; "General"
+fld     dword ptr [esi+17F8h]
+sub     esp, 8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aEngineercaptur ; "EngineerCaptureLevel"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+17F8h]
+fld     dword ptr [esi+17FCh]
+mov     edx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+mov     ecx, edi
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aEngineercaptur ; "EngineerCaptureLevel"
+push    edx             ; int
+call    INIClass__ReadDouble_Overwrite
+fstp    dword ptr [esi+17FCh]
+mov     eax, [esi+1800h]
+add     esi, 1800h
+mov     dword ptr [esp+0D0h+var_A4], eax
+mov     dword ptr [esp+0D0h+var_A4+4], 0
+fild    [esp+0D0h+var_A4]
+mov     ecx, ds:off_7F0C9C ; "General"
+sub     esp, 8
+fmul    ds:flt_7F0DB8
+fstp    qword ptr [esp+0D8h+var_D8] ; double
+push    offset aTalkbubbletime ; "TalkBubbleTime"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fmul    ds:dbl_7E1728
+call    Math__RoundToInt
+mov     [esi], eax
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_671E8E:                             ; CODE XREF: RulesClass__LoadFromINI+28↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+*/
+} }
 // 0x6722F0
-namespace gamemd { int RulesClass::LoadCountries() { return 0; } }
+namespace gamemd { int RulesClass::LoadCountries() {
+// [IDA decompile]
+int __thiscall RulesClass::LoadCountries(#381 *this)
+{
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aCountries);
+  for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aCountries, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)aCountries,
+           StringByIndex,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      WeaponTypeClass::Create(Destination);
+    }
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Destination     = byte ptr -20h
+arg_0           = dword ptr  4
+
+mov     eax, ds:off_7F0CAC ; "Countries"
+sub     esp, 20h
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+push    eax
+mov     ecx, edi
+call    INIClass__GetKeyCount
+mov     ebx, eax
+xor     esi, esi
+test    ebx, ebx
+jle     short loc_67234A
+
+loc_67230F:                             ; CODE XREF: RulesClass__LoadCountries+58↓j
+mov     edx, ds:off_7F0CAC ; "Countries"
+lea     ecx, [esp+2Ch+Destination]
+push    20h ; ' '       ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    esi
+push    edx
+mov     ecx, edi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+mov     eax, ds:off_7F0CAC ; "Countries"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_672345
+lea     ecx, [esp+2Ch+Destination] ; Source
+call    WeaponTypeClass__Create
+
+loc_672345:                             ; CODE XREF: RulesClass__LoadCountries+4A↑j
+inc     esi
+cmp     esi, ebx
+jl      short loc_67230F
+
+loc_67234A:                             ; CODE XREF: RulesClass__LoadCountries+1D↑j
+xor     eax, eax
+pop     edi
+test    ebx, ebx
+pop     esi
+pop     ebx
+setnle  al
+add     esp, 20h
+retn    4
+*/
+} }
 // 0x672440
-namespace gamemd { int RulesClass::ReadDataList() { return 0; } }
+namespace gamemd { int RulesClass::ReadDataList() {
+// [IDA decompile]
+int __thiscall RulesClass::ReadDataList(#381 *this)
+{
+  int KeyCount; // edi
+  int v2; // esi
+  void *StringByIndex; // ebx
+  int v4; // eax
+  _DWORD *v5; // eax
+  _DWORD *v6; // ebp
+  _DWORD *v7; // edi
+  void *v8; // eax
+  bool v9; // zf
+  int v10; // eax
+  int v11; // esi
+  int v12; // eax
+  int v13; // edi
+  _DWORD *v14; // edx
+  _DWORD v16[3]; // [esp-1Ch] [ebp-50h] BYREF
+  __int16 v17; // [esp-10h] [ebp-44h]
+  char *v18; // [esp-Ch] [ebp-40h]
+  char *v19; // [esp-8h] [ebp-3Ch]
+  char *v20; // [esp-4h] [ebp-38h]
+  int v21; // [esp+10h] [ebp-24h]
+  int v22; // [esp+14h] [ebp-20h]
+  int v23; // [esp+18h] [ebp-1Ch] BYREF
+  void *Block; // [esp+1Ch] [ebp-18h]
+  int v25; // [esp+20h] [ebp-14h]
+  char v26; // [esp+25h] [ebp-Fh]
+  char *v27; // [esp+38h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v27, (unsigned __int8 *)aSides);
+  v20 = aProcessingSide;
+  v22 = KeyCount;
+  Debug::Log();
+  v2 = 0;
+  v21 = 0;
+  if ( KeyCount > 0 )
+  {
+    while ( 1 )
+    {
+      StringByIndex = (void *)INIClass::GetStringByIndex(v27, (unsigned __int8 *)aSides, v2);
+      v4 = HouseTypeClass::Find(StringByIndex);
+      if ( v4 == -1 )
+      {
+        v5 = (_DWORD *)__2_YAPAXI_Z(180);
+        if ( v5 )
+          v6 = SideClass::Construct(v5, (char *)StringByIndex);
+        else
+          v6 = 0;
+      }
+      else
+      {
+        v6 = *(_DWORD **)(MEMORY[0x87F7E8][53839] + 4 * v4);
+      }
+      v20 = (char *)(v6 + 9);
+      v19 = (char *)v2;
+      v18 = aSideDS;
+      Debug::Log();
+      IntVector::Copy(v16, v6 + 38);
+      v7 = INIClass::ReadSuperWeaponTypeList(
+             (unsigned __int8 ***)v27,
+             &v23,
+             (unsigned __int8 *)aSides,
+             (unsigned __int8 *)StringByIndex,
+             &TypeList<int>::`vftable',
+             (void *)v16[1],
+             v16[2],
+             v17,
+             v6[42],
+             v6[43],
+             (int)v20);
+      TypeList::Copy(v6 + 38, v7);
+      v6[42] = v7[4];
+      v6[43] = v7[5];
+      v8 = Block;
+      v9 = Block == 0;
+      v6[44] = v7[6];
+      v23 = (int)&VectorClass<int>::`vftable';
+      if ( !v9 && v26 )
+      {
+        __3_YAXPAX_Z(v8);
+        Block = 0;
+      }
+      v10 = v6[42];
+      v11 = 0;
+      v26 = 0;
+      v25 = 0;
+      if ( v10 > 0 )
+      {
+        do
+        {
+          v12 = 0;
+          v13 = *(_DWORD *)(v6[39] + 4 * v11);
+          if ( MEMORY[0x87F7E8][53842] <= 0 )
+          {
+LABEL_17:
+            v12 = -1;
+          }
+          else
+          {
+            v14 = (_DWORD *)MEMORY[0x87F7E8][53839];
+            while ( (_DWORD *)*v14 != v6 )
+            {
+              ++v12;
+              ++v14;
+              if ( v12 >= MEMORY[0x87F7E8][53842] )
+                goto LABEL_17;
+            }
+          }
+          *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528685] + 4 * v13) + 188) = v12;
+          v20 = (char *)(*(_DWORD *)(MEMORY[0x87F7E8][528685] + 4 * v13) + 36);
+          v19 = aS_0;
+          Debug::Log();
+          ++v11;
+        }
+        while ( v11 < v6[42] );
+      }
+      if ( ++v21 >= v22 )
+        break;
+      v2 = v21;
+    }
+    KeyCount = v22;
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Block           = dword ptr -18h
+var_14          = dword ptr -14h
+var_F           = byte ptr -0Fh
+arg_0           = dword ptr  4
+
+sub     esp, 24h
+mov     eax, ds:off_7F0CB8 ; "Sides"
+mov     ecx, [esp+24h+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+push    eax
+call    INIClass__GetKeyCount
+mov     edi, eax
+push    offset aProcessingSide ; "Processing sides.\n"
+mov     [esp+38h+var_20], edi
+call    Debug__Log
+add     esp, 4
+xor     esi, esi
+test    edi, edi
+mov     [esp+34h+var_24], esi
+jle     loc_6725DB
+jmp     short loc_67247D
+; ---------------------------------------------------------------------------
+
+loc_672479:                             ; CODE XREF: RulesClass__ReadDataList+193↓j
+mov     esi, [esp+34h+var_24]
+
+loc_67247D:                             ; CODE XREF: RulesClass__ReadDataList+37↑j
+mov     ecx, ds:off_7F0CB8 ; "Sides"
+push    esi
+push    ecx
+mov     ecx, [esp+3Ch+arg_0]
+call    INIClass__GetStringByIndex
+mov     ebx, eax
+mov     ecx, ebx        ; void *
+call    HouseTypeClass__Find
+cmp     eax, 0FFFFFFFFh
+jnz     short loc_6724BD
+push    0B4h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_6724B9
+push    ebx             ; Source
+mov     ecx, eax
+call    SideClass__Construct
+mov     ebp, eax
+jmp     short loc_6724C6
+; ---------------------------------------------------------------------------
+
+loc_6724B9:                             ; CODE XREF: RulesClass__ReadDataList+6B↑j
+xor     ebp, ebp
+jmp     short loc_6724C6
+; ---------------------------------------------------------------------------
+
+loc_6724BD:                             ; CODE XREF: RulesClass__ReadDataList+5A↑j
+mov     edx, ds:8B4124h
+mov     ebp, [edx+eax*4]
+
+loc_6724C6:                             ; CODE XREF: RulesClass__ReadDataList+77↑j
+; RulesClass__ReadDataList+7B↑j
+lea     eax, [ebp+24h]
+push    eax             ; int
+push    esi             ; int
+push    offset aSideDS  ; "Side %d: %s \n"
+call    Debug__Log
+sub     esp, 10h
+lea     esi, [ebp+98h]
+mov     edi, esp
+push    esi
+mov     ecx, edi
+call    IntVector__Copy
+mov     ecx, [esi+10h]
+push    ebx             ; int
+mov     [edi+10h], ecx
+mov     edx, [esi+14h]
+mov     [edi+14h], edx
+mov     dword ptr [edi], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     eax, ds:off_7F0CB8 ; "Sides"
+lea     ecx, [esp+54h+var_1C]
+push    eax             ; int
+push    ecx             ; int
+mov     ecx, [esp+5Ch+arg_0]
+call    INIClass__ReadSuperWeaponTypeList
+mov     edi, eax
+mov     ecx, esi
+push    edi
+call    TypeList__Copy
+mov     edx, [edi+10h]
+xor     ebx, ebx
+mov     [esi+10h], edx
+mov     eax, [edi+14h]
+mov     [esi+14h], eax
+mov     eax, [esp+34h+Block]
+mov     ecx, [edi+18h]
+cmp     eax, ebx
+mov     [esi+18h], ecx
+mov     [esp+34h+var_1C], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_672552
+mov     cl, [esp+34h+var_F]
+test    cl, cl
+jz      short loc_672552
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esp+34h+Block], ebx
+
+loc_672552:                             ; CODE XREF: RulesClass__ReadDataList+FB↑j
+; RulesClass__ReadDataList+103↑j
+mov     eax, [ebp+0A8h]
+xor     esi, esi
+cmp     eax, ebx
+mov     [esp+34h+var_F], 0
+mov     [esp+34h+var_14], ebx
+jle     short loc_6725C4
+
+loc_672567:                             ; CODE XREF: RulesClass__ReadDataList+182↓j
+mov     edx, [ebp+9Ch]
+mov     ecx, ds:8B4130h
+xor     eax, eax
+cmp     ecx, ebx
+mov     edi, [edx+esi*4]
+jle     short loc_67258E
+mov     edx, ds:8B4124h
+
+loc_672582:                             ; CODE XREF: RulesClass__ReadDataList+14C↓j
+cmp     [edx], ebp
+jz      short loc_672591
+inc     eax
+add     edx, 4
+cmp     eax, ecx
+jl      short loc_672582
+
+loc_67258E:                             ; CODE XREF: RulesClass__ReadDataList+13A↑j
+or      eax, 0FFFFFFFFh
+
+loc_672591:                             ; CODE XREF: RulesClass__ReadDataList+144↑j
+mov     ecx, ds:0A83C9Ch
+mov     edx, [ecx+edi*4]
+mov     [edx+0BCh], eax
+mov     eax, ds:0A83C9Ch
+mov     ecx, [eax+edi*4]
+add     ecx, 24h ; '$'
+push    ecx
+push    offset aS_0     ; "  %s\n"
+call    Debug__Log
+mov     eax, [ebp+0A8h]
+add     esp, 8
+inc     esi
+cmp     esi, eax
+jl      short loc_672567
+
+loc_6725C4:                             ; CODE XREF: RulesClass__ReadDataList+125↑j
+mov     eax, [esp+34h+var_24]
+mov     ecx, [esp+34h+var_20]
+inc     eax
+cmp     eax, ecx
+mov     [esp+34h+var_24], eax
+jl      loc_672479
+mov     edi, ecx
+
+loc_6725DB:                             ; CODE XREF: RulesClass__ReadDataList+31↑j
+xor     eax, eax
+test    edi, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+setnle  al
+add     esp, 24h
+retn    4
+*/
+} }
 // 0x672660
-namespace gamemd { int RulesClass::LoadBuildingTypes() { return 0; } }
+namespace gamemd { int RulesClass::LoadBuildingTypes() {
+// [IDA decompile]
+int __thiscall sub_672660(#381 *this)
+{
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aBuildingtypes);
+  for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aBuildingtypes, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)aBuildingtypes,
+           StringByIndex,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      BuildingTypeClass::FindOrCreate(Destination);
+    }
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Destination     = byte ptr -20h
+arg_0           = dword ptr  4
+
+mov     eax, ds:off_7F0CC0 ; "BuildingTypes"
+sub     esp, 20h
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+push    eax
+mov     ecx, edi
+call    INIClass__GetKeyCount
+mov     ebx, eax
+xor     esi, esi
+test    ebx, ebx
+jle     short loc_6726BA
+
+loc_67267F:                             ; CODE XREF: RulesClass__LoadBuildingTypes+58↓j
+mov     edx, ds:off_7F0CC0 ; "BuildingTypes"
+lea     ecx, [esp+2Ch+Destination]
+push    20h ; ' '       ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    esi
+push    edx
+mov     ecx, edi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+mov     eax, ds:off_7F0CC0 ; "BuildingTypes"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6726B5
+lea     ecx, [esp+2Ch+Destination] ; Source
+call    BuildingTypeClass__FindOrCreate
+
+loc_6726B5:                             ; CODE XREF: RulesClass__LoadBuildingTypes+4A↑j
+inc     esi
+cmp     esi, ebx
+jl      short loc_67267F
+
+loc_6726BA:                             ; CODE XREF: RulesClass__LoadBuildingTypes+1D↑j
+xor     eax, eax
+pop     edi
+test    ebx, ebx
+pop     esi
+pop     ebx
+setnle  al
+add     esp, 20h
+retn    4
+*/
+} }
 // 0x672740
-namespace gamemd { int RulesClass::ReadSideData() { return 0; } }
+namespace gamemd { int RulesClass::ReadSideData() {
+// [IDA decompile]
+int __thiscall sub_672740(#381 *this)
+{
+  int KeyCount; // ebx
+  int i; // edi
+  unsigned __int8 *StringByIndex; // eax
+  _DWORD *v4; // eax
+  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
+  char *v7; // [esp+90h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v7, (unsigned __int8 *)aTeams);
+  for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)aTeams, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v7,
+           (unsigned __int8 *)aTeams,
+           StringByIndex,
+           &MEMORY[0x889F64],
+           Destination,
+           128) )
+    {
+      v4 = TechnoClass::Create(Destination);
+    }
+    else
+    {
+      v4 = 0;
+    }
+    (*(void (__thiscall **)(_DWORD *, char *))(*v4 + 100))(v4, v7);
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Destination     = byte ptr -80h
+arg_0           = dword ptr  4
+
+mov     eax, ds:off_7F0CC8 ; "Teams"
+sub     esp, 80h
+push    ebx
+push    esi
+mov     esi, [esp+88h+arg_0]
+push    edi
+push    eax
+mov     ecx, esi
+call    INIClass__GetKeyCount
+mov     ebx, eax
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_6727AF
+
+loc_672765:                             ; CODE XREF: RulesClass__ReadSideData+6D↓j
+mov     ecx, ds:off_7F0CC8 ; "Teams"
+push    edi
+push    ecx
+mov     ecx, esi
+call    INIClass__GetStringByIndex
+lea     edx, [esp+8Ch+Destination]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    eax             ; int
+mov     eax, ds:off_7F0CC8 ; "Teams"
+push    eax             ; int
+mov     ecx, esi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6727A0
+lea     ecx, [esp+8Ch+Destination] ; Source
+call    TechnoClass__Create
+jmp     short loc_6727A2
+; ---------------------------------------------------------------------------
+
+loc_6727A0:                             ; CODE XREF: RulesClass__ReadSideData+53↑j
+xor     eax, eax
+
+loc_6727A2:                             ; CODE XREF: RulesClass__ReadSideData+5E↑j
+mov     edx, [eax]
+push    esi
+mov     ecx, eax
+call    dword ptr [edx+64h]
+inc     edi
+cmp     edi, ebx
+jl      short loc_672765
+
+loc_6727AF:                             ; CODE XREF: RulesClass__ReadSideData+23↑j
+xor     eax, eax
+pop     edi
+test    ebx, ebx
+pop     esi
+pop     ebx
+setnle  al
+add     esp, 80h
+retn    4
+*/
+} }
 // 0x6728B0
-namespace gamemd { int RulesClass::LoadAnimTypes() { return 0; } }
+namespace gamemd { int RulesClass::LoadAnimTypes() {
+// [IDA decompile]
+int __thiscall sub_6728B0(#381 *this)
+{
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)g_INI_Key_Animations);
+  for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)g_INI_Key_Animations, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)g_INI_Key_Animations,
+           StringByIndex,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      AnimTypeClass::FindOrCreate(Destination);
+    }
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Destination     = byte ptr -20h
+arg_0           = dword ptr  4
+
+sub     esp, 20h
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+push    offset g_INI_Key_Animations ; "Animations"
+mov     ecx, edi
+call    INIClass__GetKeyCount
+mov     ebx, eax
+xor     esi, esi
+test    ebx, ebx
+jle     short loc_672906
+
+loc_6728CE:                             ; CODE XREF: RulesClass__LoadAnimTypes+54↓j
+lea     eax, [esp+2Ch+Destination]
+push    20h ; ' '       ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    esi
+push    offset g_INI_Key_Animations ; "Animations"
+mov     ecx, edi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+push    offset g_INI_Key_Animations ; "Animations"
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_672901
+lea     ecx, [esp+2Ch+Destination] ; Source
+call    AnimTypeClass__FindOrCreate
+
+loc_672901:                             ; CODE XREF: RulesClass__LoadAnimTypes+46↑j
+inc     esi
+cmp     esi, ebx
+jl      short loc_6728CE
+
+loc_672906:                             ; CODE XREF: RulesClass__LoadAnimTypes+1C↑j
+xor     eax, eax
+pop     edi
+test    ebx, ebx
+pop     esi
+pop     ebx
+setnle  al
+add     esp, 20h
+retn    4
+*/
+} }
 // 0x672A00
-namespace gamemd { int RulesClass::readColors() { return 0; } }
+namespace gamemd { int RulesClass::readColors() {
+// [IDA decompile]
+int __thiscall sub_672A00(#381 *this)
+{
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)g_INI_Key_Particles);
+  for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)g_INI_Key_Particles, i);
+    if ( INIClass::GetString(
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)g_INI_Key_Particles,
+           StringByIndex,
+           &MEMORY[0x889F64],
+           Destination,
+           32) )
+    {
+      NetworkEventClass::Process(Destination);
+    }
+  }
+  return KeyCount > 0;
+}
+
+/* ASM:
+Destination     = byte ptr -20h
+arg_0           = dword ptr  4
+
+sub     esp, 20h
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+push    offset g_INI_Key_Particles ; "Particles"
+mov     ecx, edi
+call    INIClass__GetKeyCount
+mov     ebx, eax
+xor     esi, esi
+test    ebx, ebx
+jle     short loc_672A56
+
+loc_672A1E:                             ; CODE XREF: RulesClass__readColors+54↓j
+lea     eax, [esp+2Ch+Destination]
+push    20h ; ' '       ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    esi
+push    offset g_INI_Key_Particles ; "Particles"
+mov     ecx, edi
+call    INIClass__GetStringByIndex
+push    eax             ; int
+push    offset g_INI_Key_Particles ; "Particles"
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_672A51
+lea     ecx, [esp+2Ch+Destination] ; Source
+call    NetworkEventClass__Process
+
+loc_672A51:                             ; CODE XREF: RulesClass__readColors+46↑j
+inc     esi
+cmp     esi, ebx
+jl      short loc_672A1E
+
+loc_672A56:                             ; CODE XREF: RulesClass__readColors+1C↑j
+xor     eax, eax
+pop     edi
+test    ebx, ebx
+pop     esi
+pop     ebx
+setnle  al
+add     esp, 20h
+retn    4
+*/
+} }
 // 0x672AE0
-namespace gamemd { int RulesClass::ReadMultiplayerDefaults() { return 0; } }
+namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
+// [IDA decompile]
+int __thiscall Rules::ReadBuildingsINI(#381 *this)
+{
+  int result; // eax
+  char *i; // eax
+  int v4; // edx
+  int v5; // eax
+  char *j; // eax
+  char *k; // eax
+  char *m; // eax
+  char *n; // eax
+  char *ii; // eax
+  char *jj; // eax
+  char *kk; // eax
+  char *mm; // eax
+  int v14; // ecx
+  char *nn; // eax
+  char *i1; // eax
+  char *i2; // eax
+  char *i3; // eax
+  char *i4; // eax
+  char *i5; // eax
+  int v21; // ecx
+  int *INIClassBuildingTypeList; // eax
+  int *v23; // eax
+  int *v24; // eax
+  int *v25; // eax
+  int Int_Overwrite; // eax
+  unsigned int v27; // ecx
+  unsigned int v28; // edx
+  double Double_Overwrite; // st7
+  int v30; // ecx
+  int v31; // eax
+  int v32; // edx
+  int v33; // eax
+  int v34; // ecx
+  int v35; // eax
+  int v36; // ecx
+  double v37; // st7
+  int v38; // eax
+  int v39; // eax
+  double v40; // rax
+  double v41; // st7
+  int v42; // edx
+  int v43; // eax
+  int v44; // ecx
+  int v45; // edx
+  double v46; // st7
+  int v47; // ecx
+  int v48; // eax
+  int v49; // ecx
+  double v50; // st7
+  int v51; // eax
+  int v52; // eax
+  double v53; // rax
+  double v54; // st7
+  int v55; // edx
+  int v56; // eax
+  int v57; // ecx
+  int v58; // edx
+  double v59; // st7
+  int v60; // ecx
+  int v61; // eax
+  int v62; // ecx
+  double v63; // st7
+  int v64; // eax
+  int v65; // eax
+  double v66; // rax
+  double v67; // st7
+  int v68; // edx
+  int v69; // eax
+  char v70; // cl
+  char Bool_Overwrite; // al
+  double v72; // rax
+  double v73; // st7
+  int v74; // edx
+  int v75; // eax
+  int v76; // ecx
+  int MaximumBuildingPlacementFailures; // edx
+  double v78; // st7
+  int v79; // ecx
+  int v80; // edx
+  double v81; // st7
+  int v82; // ecx
+  int v83; // edx
+  double v84; // st7
+  int v85; // ecx
+  int v86; // edx
+  double v87; // st7
+  int v88; // ecx
+  void **v89[3]; // [esp-1Ch] [ebp-E4h] BYREF
+  __int16 v90; // [esp-10h] [ebp-D8h]
+  int v91; // [esp-Ch] [ebp-D4h]
+  double v92; // [esp-8h] [ebp-D0h]
+  void ***IntList; // [esp+Ch] [ebp-BCh] BYREF
+  int v94[6]; // [esp+10h] [ebp-B8h] BYREF
+  int v95; // [esp+28h] [ebp-A0h]
+  _DWORD v96[6]; // [esp+2Ch] [ebp-9Ch] BYREF
+  int v97; // [esp+44h] [ebp-84h]
+  char String[128]; // [esp+48h] [ebp-80h] BYREF
+  unsigned __int8 ***v99; // [esp+D0h] [ebp+8h]
+
+  result = INIClass::BinarySearchSection((int)v99, (unsigned __int8 *)aAi);
+  if ( result )
+  {
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildconst,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) )
+      {
+        if ( !*i )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v94, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v96, v94);
+      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v94);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 555);
+    }
+    VectorClass::CopyBuilding((_DWORD *)this + 555, v96);
+    v4 = v96[4];
+    v5 = v96[5];
+    *((_DWORD *)this + 561) = v97;
+    *((_DWORD *)this + 559) = v4;
+    *((_DWORD *)this + 560) = v5;
+    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v96);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildpower,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
+      {
+        if ( !*j )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(j);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v94, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v96, v94);
+      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v94);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 562);
+    }
+    DynamicVector::Copy((_DWORD *)this + 562, v96);
+    *((_DWORD *)this + 568) = v97;
+    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v96);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildrefinery,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) )
+      {
+        if ( !*k )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(k);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v94, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v96, v94);
+      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v94);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 569);
+    }
+    DynamicVector::Copy((_DWORD *)this + 569, v96);
+    *((_DWORD *)this + 575) = v97;
+    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v96);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildbarracks,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
+      for ( m = strtok(String, Delimiter); m; m = strtok(0, Delimiter) )
+      {
+        if ( !*m )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(m);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v94, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v96, v94);
+      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v94);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 576);
+    }
+    DynamicVector::Copy((_DWORD *)this + 576, v96);
+    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+    *((_DWORD *)this + 582) = v97;
+    DynamicVectorClass::Destroy((int)v96);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildtech,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( n = strtok(String, Delimiter); n; n = strtok(0, Delimiter) )
+      {
+        if ( !*n )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(n);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 583);
+    }
+    DynamicVector::Copy((_DWORD *)this + 583, v94);
+    *((_DWORD *)this + 589) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildweapons,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( ii = strtok(String, Delimiter); ii; ii = strtok(0, Delimiter) )
+      {
+        if ( !*ii )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(ii);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 590);
+    }
+    DynamicVector::Copy((_DWORD *)this + 590, v94);
+    *((_DWORD *)this + 596) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aAlliedbasedefe_0,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( jj = strtok(String, Delimiter); jj; jj = strtok(0, Delimiter) )
+      {
+        if ( !*jj )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(jj);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 597);
+    }
+    DynamicVector::Copy((_DWORD *)this + 597, v94);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    *((_DWORD *)this + 603) = v95;
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aSovietbasedefe_0,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( kk = strtok(String, Delimiter); kk; kk = strtok(0, Delimiter) )
+      {
+        if ( !*kk )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(kk);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 604);
+    }
+    DynamicVector::Copy((_DWORD *)this + 604, v94);
+    *((_DWORD *)this + 610) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aThirdbasedefen_0,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( mm = strtok(String, Delimiter); mm; mm = strtok(0, Delimiter) )
+      {
+        if ( !*mm )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(mm);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 611);
+    }
+    DynamicVector::Copy((_DWORD *)this + 611, v94);
+    *((_DWORD *)this + 617) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    IntList = v89;
+    DynamicVectorClass::Copy(v89, (_DWORD *)this + 618);
+    *IntList = &TypeList<int>::`vftable';
+    IntList = (void ***)INIClass::ReadIntList(
+                          v99,
+                          (int)v94,
+                          (unsigned __int8 *)aAi,
+                          (unsigned __int8 *)aAiforcepredict,
+                          v89[0],
+                          v89[1],
+                          (int)v89[2],
+                          v90,
+                          v91,
+                          SLODWORD(v92),
+                          SHIDWORD(v92));
+    Rules::CopyDataArray((_DWORD *)this + 618, IntList);
+    v14 = (int)IntList[6];
+    v94[0] = (int)&VectorClass<int>::`vftable';
+    *((_DWORD *)this + 624) = v14;
+    VectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuilddefense,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( nn = strtok(String, Delimiter); nn; nn = strtok(0, Delimiter) )
+      {
+        if ( !*nn )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(nn);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 625);
+    }
+    DynamicVector::Copy((_DWORD *)this + 625, v94);
+    *((_DWORD *)this + 631) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildpdefense,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( i1 = strtok(String, Delimiter); i1; i1 = strtok(0, Delimiter) )
+      {
+        if ( !*i1 )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i1);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 632);
+    }
+    DynamicVector::Copy((_DWORD *)this + 632, v94);
+    *((_DWORD *)this + 638) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildaa,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( i2 = strtok(String, Delimiter); i2; i2 = strtok(0, Delimiter) )
+      {
+        if ( !*i2 )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i2);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 639);
+    }
+    DynamicVector::Copy((_DWORD *)this + 639, v94);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    *((_DWORD *)this + 645) = v95;
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildhelipad,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( i3 = strtok(String, Delimiter); i3; i3 = strtok(0, Delimiter) )
+      {
+        if ( !*i3 )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i3);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 646);
+    }
+    DynamicVector::Copy((_DWORD *)this + 646, v94);
+    *((_DWORD *)this + 652) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aBuildradar,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( i4 = strtok(String, Delimiter); i4; i4 = strtok(0, Delimiter) )
+      {
+        if ( !*i4 )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i4);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 653);
+    }
+    DynamicVector::Copy((_DWORD *)this + 653, v94);
+    *((_DWORD *)this + 659) = v95;
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    if ( INIClass::GetString(
+           v99,
+           (unsigned __int8 **)aAi,
+           (unsigned __int8 *)aConcretewalls,
+           (char *)&MEMORY[0x87F7E8][10719],
+           String,
+           128) )
+    {
+      TypeList::BuildingTypeConstructor(v96);
+      for ( i5 = strtok(String, Delimiter); i5; i5 = strtok(0, Delimiter) )
+      {
+        if ( !*i5 )
+          break;
+        IntList = (void ***)BuildingTypeClass::FindOrCreate(i5);
+        if ( IntList )
+          DynamicVector::Add_Alt3(v96, &IntList);
+      }
+      TypeList::BuildingTypeCopy(v94, v96);
+      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
+      DynamicVectorClass::Destroy((int)v96);
+    }
+    else
+    {
+      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 660);
+    }
+    DynamicVector::Copy((_DWORD *)this + 660, v94);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    *((_DWORD *)this + 666) = v95;
+    DynamicVectorClass::Destroy((int)v94);
+    IntList = (void ***)ReadINIClassBuildingTypeList(
+                          (int)v94,
+                          v99,
+                          (unsigned __int8 *)aAi,
+                          (unsigned __int8 *)aNsgates,
+                          (_DWORD *)this + 667);
+    DynamicVector::Copy((_DWORD *)this + 667, IntList);
+    v21 = (int)IntList[6];
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    *((_DWORD *)this + 673) = v21;
+    DynamicVectorClass::Destroy((int)v94);
+    INIClassBuildingTypeList = (int *)ReadINIClassBuildingTypeList(
+                                        (int)v94,
+                                        v99,
+                                        (unsigned __int8 *)aAi,
+                                        (unsigned __int8 *)aEwgates,
+                                        (_DWORD *)this + 674);
+    TypeList::CopyAircraft((int *)this + 674, INIClassBuildingTypeList);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    v23 = (int *)ReadINIClassBuildingTypeList(
+                   (int)v94,
+                   v99,
+                   (unsigned __int8 *)aAi,
+                   (unsigned __int8 *)aBuildnavalyard,
+                   (_DWORD *)this + 681);
+    TypeList::CopyAircraft((int *)this + 681, v23);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    v24 = (int *)ReadINIClassBuildingTypeList(
+                   (int)v94,
+                   v99,
+                   (unsigned __int8 *)aAi,
+                   (unsigned __int8 *)aBuilddummy,
+                   (_DWORD *)this + 688);
+    TypeList::CopyAircraft((int *)this + 688, v24);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    v25 = (int *)ReadINIClassBuildingTypeList(
+                   (int)v94,
+                   v99,
+                   (unsigned __int8 *)aAi,
+                   (unsigned __int8 *)aNeutraltechbui,
+                   (_DWORD *)this + 695);
+    TypeList::CopyAircraft((int *)this + 695, v25);
+    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
+    DynamicVectorClass::Destroy((int)v94);
+    *((double *)this + 532) = INIClass::ReadDouble_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aAttackinterval,
+                                *((double *)this + 532));
+    *((double *)this + 533) = INIClass::ReadDouble_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aAttackdelay,
+                                *((double *)this + 533));
+    *((double *)this + 554) = INIClass::ReadDouble_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aPatrolscan,
+                                *((double *)this + 554));
+    *((_DWORD *)this + 1494) = INIClass::ReadInt_Overwrite(
+                                 (int)v99,
+                                 (unsigned __int8 *)aAi,
+                                 (unsigned __int8 *)aCreditreserve,
+                                 *((_DWORD *)this + 1494));
+    *((double *)this + 748) = INIClass::ReadDouble_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aPathdelay,
+                                *((double *)this + 748));
+    Int_Overwrite = INIClass::ReadInt_Overwrite(
+                      (int)v99,
+                      (unsigned __int8 *)aAi,
+                      (unsigned __int8 *)aBlockagepathde,
+                      *((_DWORD *)this + 1498));
+    v27 = *((_DWORD *)this + 1349);
+    v28 = *((_DWORD *)this + 1348);
+    *((_DWORD *)this + 1498) = Int_Overwrite;
+    Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                         (int)v99,
+                         (unsigned __int8 *)aAi,
+                         (unsigned __int8 *)aAutocreatetime,
+                         COERCE_DOUBLE(__PAIR64__(v27, v28)));
+    v30 = *((_DWORD *)this + 1102);
+    *((double *)this + 674) = Double_Overwrite;
+    *((_DWORD *)this + 1102) = INIClass::ReadInt_Overwrite(
+                                 (int)v99,
+                                 (unsigned __int8 *)aAi,
+                                 (unsigned __int8 *)aInfantryreserv,
+                                 v30);
+    v31 = INIClass::ReadInt_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aInfantrybasemu,
+            *((_DWORD *)this + 1103));
+    v32 = *((_DWORD *)this + 1101);
+    *((_DWORD *)this + 1103) = v31;
+    v33 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aPowersurplus, v32);
+    v34 = *((_DWORD *)this + 1100);
+    *((_DWORD *)this + 1101) = v33;
+    v35 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBasesizeadd, v34);
+    v36 = *((_DWORD *)this + 1098);
+    *((_DWORD *)this + 1100) = v35;
+    HIDWORD(v92) = *((_DWORD *)this + 1099);
+    LODWORD(v92) = v36;
+    v37 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aRefineryratio, v92);
+    v38 = *((_DWORD *)this + 1097);
+    *((double *)this + 549) = v37;
+    v39 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aRefinerylimit, v38);
+    HIDWORD(v40) = *((_DWORD *)this + 1095);
+    *((_DWORD *)this + 1097) = v39;
+    LODWORD(v40) = *((_DWORD *)this + 1094);
+    v41 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBarracksratio, v40);
+    v42 = *((_DWORD *)this + 1096);
+    *((double *)this + 547) = v41;
+    v43 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBarrackslimit, v42);
+    v44 = *((_DWORD *)this + 1091);
+    v45 = *((_DWORD *)this + 1090);
+    *((_DWORD *)this + 1096) = v43;
+    v46 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aWarratio,
+            COERCE_DOUBLE(__PAIR64__(v44, v45)));
+    v47 = *((_DWORD *)this + 1092);
+    *((double *)this + 545) = v46;
+    v48 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aWarlimit, v47);
+    v49 = *((_DWORD *)this + 1086);
+    *((_DWORD *)this + 1092) = v48;
+    HIDWORD(v92) = *((_DWORD *)this + 1087);
+    LODWORD(v92) = v49;
+    v50 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aDefenseratio, v92);
+    v51 = *((_DWORD *)this + 1088);
+    *((double *)this + 543) = v50;
+    v52 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aDefenselimit, v51);
+    HIDWORD(v53) = *((_DWORD *)this + 1083);
+    *((_DWORD *)this + 1088) = v52;
+    LODWORD(v53) = *((_DWORD *)this + 1082);
+    v54 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAaratio, v53);
+    v55 = *((_DWORD *)this + 1084);
+    *((double *)this + 541) = v54;
+    v56 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAalimit, v55);
+    v57 = *((_DWORD *)this + 1079);
+    v58 = *((_DWORD *)this + 1078);
+    *((_DWORD *)this + 1084) = v56;
+    v59 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aTeslaratio,
+            COERCE_DOUBLE(__PAIR64__(v57, v58)));
+    v60 = *((_DWORD *)this + 1080);
+    *((double *)this + 539) = v59;
+    v61 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aTeslalimit, v60);
+    v62 = *((_DWORD *)this + 1074);
+    *((_DWORD *)this + 1080) = v61;
+    HIDWORD(v92) = *((_DWORD *)this + 1075);
+    LODWORD(v92) = v62;
+    v63 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aHelipadratio, v92);
+    v64 = *((_DWORD *)this + 1076);
+    *((double *)this + 537) = v63;
+    v65 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aHelipadlimit, v64);
+    HIDWORD(v66) = *((_DWORD *)this + 1071);
+    *((_DWORD *)this + 1076) = v65;
+    LODWORD(v66) = *((_DWORD *)this + 1070);
+    v67 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAirstripratio, v66);
+    v68 = *((_DWORD *)this + 1072);
+    *((double *)this + 535) = v67;
+    v69 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAirstriplimit, v68);
+    v70 = *((_BYTE *)this + 6115);
+    *((_DWORD *)this + 1072) = v69;
+    *((_BYTE *)this + 6115) = INIClass::ReadBool_Overwrite(
+                                v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aCompeasybonus,
+                                v70);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                       v99,
+                       (unsigned __int8 *)aAi,
+                       (unsigned __int8 *)aParanoid,
+                       *((_BYTE *)this + 6112));
+    HIDWORD(v72) = *((_DWORD *)this + 1069);
+    *((_BYTE *)this + 6112) = Bool_Overwrite;
+    LODWORD(v72) = *((_DWORD *)this + 1068);
+    v73 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aPoweremergency, v72);
+    v74 = *((_DWORD *)this + 1304);
+    *((double *)this + 534) = v73;
+    v75 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAibasespacing, v74);
+    v76 = *((_DWORD *)this + 703);
+    MaximumBuildingPlacementFailures = *((_DWORD *)this + 702);
+    *((_DWORD *)this + 1304) = v75;
+    v78 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aGdiwalldefense,
+            COERCE_DOUBLE(__PAIR64__(v76, MaximumBuildingPlacementFailures)));
+    v79 = *((_DWORD *)this + 705);
+    v80 = *((_DWORD *)this + 704);
+    *((double *)this + 351) = v78;
+    v81 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aGdiwalldefense_0,
+            COERCE_DOUBLE(__PAIR64__(v79, v80)));
+    v82 = *((_DWORD *)this + 707);
+    v83 = *((_DWORD *)this + 706);
+    *((double *)this + 352) = v81;
+    v84 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aNodbasedefense,
+            COERCE_DOUBLE(__PAIR64__(v82, v83)));
+    v85 = *((_DWORD *)this + 709);
+    v86 = *((_DWORD *)this + 708);
+    *((double *)this + 353) = v84;
+    v87 = INIClass::ReadDouble_Overwrite(
+            (int)v99,
+            (unsigned __int8 *)aAi,
+            (unsigned __int8 *)aGdibasedefense,
+            COERCE_DOUBLE(__PAIR64__(v85, v86)));
+    v88 = *((_DWORD *)this + 711);
+    *((double *)this + 354) = v87;
+    *((_DWORD *)this + 711) = INIClass::ReadInt_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)aAi,
+                                (unsigned __int8 *)aMaximumbasedef,
+                                v88);
+    result = INIClass::ReadInt_Overwrite(
+               (int)v99,
+               (unsigned __int8 *)aAi,
+               (unsigned __int8 *)aComputerbasede,
+               *((_DWORD *)this + 710));
+    *((_DWORD *)this + 710) = result;
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+String          = byte ptr -80h
+arg_0           = dword ptr  8
+
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 0BCh
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ebx
+push    esi
+push    edi
+mov     edi, [ebp+arg_0]
+mov     esi, ecx
+push    eax
+mov     ecx, edi
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_673E6C
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildconst ; "BuildConst"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_672BB9
+push    0
+push    0
+lea     ecx, [esp+0D0h+var_B8]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672B98
+
+loc_672B63:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B6↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672B98
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672B85
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    DynamicVector__Add_Alt3
+
+loc_672B85:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+95↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672B63
+
+loc_672B98:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+81↑j
+; RulesClass__ReadMultiplayerDefaults+86↑j
+lea     edx, [esp+0C8h+var_B8]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_672BC9
+; ---------------------------------------------------------------------------
+
+loc_672BB9:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+52↑j
+lea     eax, [esi+8ACh]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_672BC9:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+D7↑j
+lea     ecx, [esp+0C8h+var_9C]
+lea     ebx, [esi+8ACh]
+push    ecx
+mov     ecx, ebx
+call    VectorClass__CopyBuilding
+mov     ecx, [esp+0C8h+var_84]
+mov     edx, [esp+0C8h+var_8C]
+mov     eax, [esp+0C8h+var_88]
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_9C]
+mov     [ebx+10h], edx
+mov     [ebx+14h], eax
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     edx, [esp+0C8h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildpower ; "BuildPower"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_672CAB
+push    0
+push    0
+lea     ecx, [esp+0D0h+var_B8]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     ecx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672C8A
+
+loc_672C55:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+1A8↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672C8A
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672C77
+lea     edx, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    DynamicVector__Add_Alt3
+
+loc_672C77:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+187↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672C55
+
+loc_672C8A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+173↑j
+; RulesClass__ReadMultiplayerDefaults+178↑j
+lea     eax, [esp+0C8h+var_B8]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_672CBB
+; ---------------------------------------------------------------------------
+
+loc_672CAB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+144↑j
+lea     ecx, [esi+8C8h]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    TypeList__BuildingTypeCopy
+
+loc_672CBB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+1C9↑j
+lea     ebx, [esi+8C8h]
+lea     edx, [esp+0C8h+var_9C]
+push    edx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_84]
+lea     ecx, [esp+0C8h+var_9C]
+mov     [ebx+18h], eax
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildrefinery ; "BuildRefinery"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_672D90
+push    0
+push    0
+lea     ecx, [esp+0D0h+var_B8]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672D6F
+
+loc_672D3A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+28D↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672D6F
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672D5C
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    DynamicVector__Add_Alt3
+
+loc_672D5C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+26C↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672D3A
+
+loc_672D6F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+258↑j
+; RulesClass__ReadMultiplayerDefaults+25D↑j
+lea     edx, [esp+0C8h+var_B8]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_672DA0
+; ---------------------------------------------------------------------------
+
+loc_672D90:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+229↑j
+lea     eax, [esi+8E4h]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_672DA0:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+2AE↑j
+lea     ecx, [esp+0C8h+var_9C]
+lea     ebx, [esi+8E4h]
+push    ecx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     edx, [esp+0C8h+var_84]
+lea     ecx, [esp+0C8h+var_9C]
+mov     [ebx+18h], edx
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     ecx, ds:off_7F0CD4 ; "AI"
+lea     eax, [esp+0C8h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aBuildbarracks ; "BuildBarracks"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      loc_672E75
+push    0
+push    0
+lea     ecx, [esp+0D0h+var_B8]
+call    DynamicVectorClass__BuildingTypeConstructor
+lea     edx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672E54
+
+loc_672E1F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+372↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672E54
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672E41
+lea     eax, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    DynamicVector__Add_Alt3
+
+loc_672E41:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+351↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672E1F
+
+loc_672E54:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+33D↑j
+; RulesClass__ReadMultiplayerDefaults+342↑j
+lea     ecx, [esp+0C8h+var_B8]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_672E85
+; ---------------------------------------------------------------------------
+
+loc_672E75:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+30E↑j
+lea     edx, [esi+900h]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    TypeList__BuildingTypeCopy
+
+loc_672E85:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+393↑j
+lea     ebx, [esi+900h]
+lea     eax, [esp+0C8h+var_9C]
+push    eax
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     ecx, [esp+0C8h+var_84]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_9C]
+call    DynamicVectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     edx, [esp+0C8h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildtech ; "BuildTech"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_672F49
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     ecx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672F28
+
+loc_672EF3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+446↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672F28
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672F15
+lea     edx, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    DynamicVector__Add_Alt3
+
+loc_672F15:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+425↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672EF3
+
+loc_672F28:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+411↑j
+; RulesClass__ReadMultiplayerDefaults+416↑j
+lea     eax, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_672F59
+; ---------------------------------------------------------------------------
+
+loc_672F49:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+3F2↑j
+lea     ecx, [esi+91Ch]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+
+loc_672F59:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+467↑j
+lea     ebx, [esi+91Ch]
+lea     edx, [esp+0C8h+var_B8]
+push    edx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], eax
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildweapons ; "BuildWeapons"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_67301E
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_672FFD
+
+loc_672FC8:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+51B↓j
+cmp     byte ptr [eax], 0
+jz      short loc_672FFD
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_672FEA
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    DynamicVector__Add_Alt3
+
+loc_672FEA:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4FA↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_672FC8
+
+loc_672FFD:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4E6↑j
+; RulesClass__ReadMultiplayerDefaults+4EB↑j
+lea     edx, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_67302E
+; ---------------------------------------------------------------------------
+
+loc_67301E:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4C7↑j
+lea     eax, [esi+938h]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_67302E:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+53C↑j
+lea     ecx, [esp+0C8h+var_B8]
+lea     ebx, [esi+938h]
+push    ecx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     edx, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], edx
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     ecx, ds:off_7F0CD4 ; "AI"
+lea     eax, [esp+0C8h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aAlliedbasedefe_0 ; "AlliedBaseDefenses"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6730F3
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     edx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_6730D2
+
+loc_67309D:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5F0↓j
+cmp     byte ptr [eax], 0
+jz      short loc_6730D2
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_6730BF
+lea     eax, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    DynamicVector__Add_Alt3
+
+loc_6730BF:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5CF↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_67309D
+
+loc_6730D2:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5BB↑j
+; RulesClass__ReadMultiplayerDefaults+5C0↑j
+lea     ecx, [esp+0C8h+var_9C]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_673103
+; ---------------------------------------------------------------------------
+
+loc_6730F3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+59C↑j
+lea     edx, [esi+954h]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+
+loc_673103:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+611↑j
+lea     ebx, [esi+954h]
+lea     eax, [esp+0C8h+var_B8]
+push    eax
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     ecx, [esp+0C8h+var_A0]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_B8]
+call    DynamicVectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     edx, [esp+0C8h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aSovietbasedefe_0 ; "SovietBaseDefenses"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6731C7
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     ecx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_6731A6
+
+loc_673171:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6C4↓j
+cmp     byte ptr [eax], 0
+jz      short loc_6731A6
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_673193
+lea     edx, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    DynamicVector__Add_Alt3
+
+loc_673193:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6A3↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_673171
+
+loc_6731A6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+68F↑j
+; RulesClass__ReadMultiplayerDefaults+694↑j
+lea     eax, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_6731D7
+; ---------------------------------------------------------------------------
+
+loc_6731C7:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+670↑j
+lea     ecx, [esi+970h]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+
+loc_6731D7:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6E5↑j
+lea     ebx, [esi+970h]
+lea     edx, [esp+0C8h+var_B8]
+push    edx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], eax
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; int
+push    889F64h         ; int
+push    offset aThirdbasedefen_0 ; "ThirdBaseDefenses"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_67329C
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_67327B
+
+loc_673246:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+799↓j
+cmp     byte ptr [eax], 0
+jz      short loc_67327B
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_673268
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    DynamicVector__Add_Alt3
+
+loc_673268:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+778↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_673246
+
+loc_67327B:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+764↑j
+; RulesClass__ReadMultiplayerDefaults+769↑j
+lea     edx, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_6732AC
+; ---------------------------------------------------------------------------
+
+loc_67329C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+745↑j
+lea     eax, [esi+98Ch]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_6732AC:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+7BA↑j
+lea     ecx, [esp+0C8h+var_B8]
+lea     ebx, [esi+98Ch]
+push    ecx             ; int
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     edx, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], edx
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+sub     esp, 1Ch
+lea     ebx, [esi+9A8h]
+mov     ecx, esp
+push    ebx
+mov     [esp+0E8h+var_BC], ecx
+call    DynamicVectorClass__Copy
+mov     eax, [esp+0E4h+var_BC]
+push    offset aAiforcepredict ; "AIForcePredictionFudge"
+lea     edx, [esp+0E8h+var_B8]
+mov     dword ptr [eax], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    ecx             ; int
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadIntList
+push    eax
+mov     ecx, ebx
+mov     [esp+0CCh+var_BC], eax
+call    Rules__CopyDataArray
+mov     eax, [esp+0C8h+var_BC]
+mov     ecx, [eax+18h]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_B8]
+call    VectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     edx, [esp+0C8h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aBuilddefense ; "BuildDefense"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6733CE
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     ecx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_6733AD
+
+loc_673378:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8CB↓j
+cmp     byte ptr [eax], 0
+jz      short loc_6733AD
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_67339A
+lea     edx, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    DynamicVector__Add_Alt3
+
+loc_67339A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8AA↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_673378
+
+loc_6733AD:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+896↑j
+; RulesClass__ReadMultiplayerDefaults+89B↑j
+lea     eax, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_6733DE
+; ---------------------------------------------------------------------------
+
+loc_6733CE:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+877↑j
+lea     ecx, [esi+9C4h]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+
+loc_6733DE:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8EC↑j
+lea     ebx, [esi+9C4h]
+lea     edx, [esp+0C8h+var_B8]
+push    edx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], eax
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildpdefense ; "BuildPDefense"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6734A3
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_673482
+
+loc_67344D:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+9A0↓j
+cmp     byte ptr [eax], 0
+jz      short loc_673482
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_67346F
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    DynamicVector__Add_Alt3
+
+loc_67346F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+97F↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_67344D
+
+loc_673482:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+96B↑j
+; RulesClass__ReadMultiplayerDefaults+970↑j
+lea     edx, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_6734B3
+; ---------------------------------------------------------------------------
+
+loc_6734A3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+94C↑j
+lea     eax, [esi+9E0h]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_6734B3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+9C1↑j
+lea     ecx, [esp+0C8h+var_B8]
+lea     ebx, [esi+9E0h]
+push    ecx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     edx, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], edx
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     ecx, ds:off_7F0CD4 ; "AI"
+lea     eax, [esp+0C8h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aBuildaa ; "BuildAA"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_673578
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     edx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_673557
+
+loc_673522:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A75↓j
+cmp     byte ptr [eax], 0
+jz      short loc_673557
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_673544
+lea     eax, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    DynamicVector__Add_Alt3
+
+loc_673544:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A54↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_673522
+
+loc_673557:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A40↑j
+; RulesClass__ReadMultiplayerDefaults+A45↑j
+lea     ecx, [esp+0C8h+var_9C]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_673588
+; ---------------------------------------------------------------------------
+
+loc_673578:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A21↑j
+lea     edx, [esi+9FCh]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+
+loc_673588:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A96↑j
+lea     ebx, [esi+9FCh]
+lea     eax, [esp+0C8h+var_B8]
+push    eax
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     ecx, [esp+0C8h+var_A0]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_B8]
+call    DynamicVectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     edx, [esp+0C8h+String]
+push    80h             ; Count
+push    edx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildhelipad ; "BuildHelipad"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_67364C
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     ecx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    ecx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_67362B
+
+loc_6735F6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B49↓j
+cmp     byte ptr [eax], 0
+jz      short loc_67362B
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_673618
+lea     edx, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    edx
+call    DynamicVector__Add_Alt3
+
+loc_673618:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B28↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_6735F6
+
+loc_67362B:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B14↑j
+; RulesClass__ReadMultiplayerDefaults+B19↑j
+lea     eax, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_67365C
+; ---------------------------------------------------------------------------
+
+loc_67364C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+AF5↑j
+lea     ecx, [esi+0A18h]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+
+loc_67365C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B6A↑j
+lea     ebx, [esi+0A18h]
+lea     edx, [esp+0C8h+var_B8]
+push    edx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], eax
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ecx, [esp+0C8h+String]
+push    80h             ; Count
+push    ecx             ; Destination
+push    889F64h         ; Source
+push    offset aBuildradar ; "BuildRadar"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_673721
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     eax, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    eax             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_673700
+
+loc_6736CB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C1E↓j
+cmp     byte ptr [eax], 0
+jz      short loc_673700
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_6736ED
+lea     ecx, [esp+0C8h+var_BC]
+push    ecx
+lea     ecx, [esp+0CCh+var_9C]
+call    DynamicVector__Add_Alt3
+
+loc_6736ED:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BFD↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_6736CB
+
+loc_673700:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BE9↑j
+; RulesClass__ReadMultiplayerDefaults+BEE↑j
+lea     edx, [esp+0C8h+var_9C]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_673731
+; ---------------------------------------------------------------------------
+
+loc_673721:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BCA↑j
+lea     eax, [esi+0A34h]
+lea     ecx, [esp+0C8h+var_B8]
+push    eax
+call    TypeList__BuildingTypeCopy
+
+loc_673731:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C3F↑j
+lea     ecx, [esp+0C8h+var_B8]
+lea     ebx, [esi+0A34h]
+push    ecx
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     edx, [esp+0C8h+var_A0]
+lea     ecx, [esp+0C8h+var_B8]
+mov     [ebx+18h], edx
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     ecx, ds:off_7F0CD4 ; "AI"
+lea     eax, [esp+0C8h+String]
+push    80h             ; Count
+push    eax             ; Destination
+push    889F64h         ; Source
+push    offset aConcretewalls ; "ConcreteWalls"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__GetString
+test    eax, eax
+jz      short loc_6737F6
+lea     ecx, [esp+0C8h+var_9C]
+call    TypeList__BuildingTypeConstructor
+lea     edx, [esp+0C8h+String]
+push    offset Delimiter ; ","
+push    edx             ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jz      short loc_6737D5
+
+loc_6737A0:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CF3↓j
+cmp     byte ptr [eax], 0
+jz      short loc_6737D5
+mov     ecx, eax        ; Source
+call    BuildingTypeClass__FindOrCreate
+test    eax, eax
+mov     [esp+0C8h+var_BC], eax
+jz      short loc_6737C2
+lea     eax, [esp+0C8h+var_BC]
+lea     ecx, [esp+0C8h+var_9C]
+push    eax
+call    DynamicVector__Add_Alt3
+
+loc_6737C2:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CD2↑j
+push    offset Delimiter ; ","
+push    0               ; String
+call    _strtok
+add     esp, 8
+test    eax, eax
+jnz     short loc_6737A0
+
+loc_6737D5:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CBE↑j
+; RulesClass__ReadMultiplayerDefaults+CC3↑j
+lea     ecx, [esp+0C8h+var_9C]
+push    ecx
+lea     ecx, [esp+0CCh+var_B8]
+call    TypeList__BuildingTypeCopy
+lea     ecx, [esp+0C8h+var_9C]
+mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+jmp     short loc_673806
+; ---------------------------------------------------------------------------
+
+loc_6737F6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C9F↑j
+lea     edx, [esi+0A50h]
+lea     ecx, [esp+0C8h+var_B8]
+push    edx
+call    TypeList__BuildingTypeCopy
+
+loc_673806:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+D14↑j
+lea     ebx, [esi+0A50h]
+lea     eax, [esp+0C8h+var_B8]
+push    eax
+mov     ecx, ebx
+call    DynamicVector__Copy
+mov     ecx, [esp+0C8h+var_A0]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_B8]
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ebx, [esi+0A6Ch]
+push    ebx
+push    offset aNsgates ; "NSGates"
+push    edx
+mov     edx, edi
+lea     ecx, [esp+0D4h+var_B8]
+call    ReadINIClassBuildingTypeList
+push    eax
+mov     ecx, ebx
+mov     [esp+0CCh+var_BC], eax
+call    DynamicVector__Copy
+mov     eax, [esp+0C8h+var_BC]
+mov     ecx, [eax+18h]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+mov     [ebx+18h], ecx
+lea     ecx, [esp+0C8h+var_B8]
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ebx, [esi+0A88h]
+push    ebx
+push    offset aEwgates ; "EWGates"
+push    edx
+mov     edx, edi
+lea     ecx, [esp+0D4h+var_B8]
+call    ReadINIClassBuildingTypeList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyAircraft
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     eax, ds:off_7F0CD4 ; "AI"
+lea     ebx, [esi+0AA4h]
+push    ebx
+push    offset aBuildnavalyard ; "BuildNavalYard"
+push    eax
+mov     edx, edi
+lea     ecx, [esp+0D4h+var_B8]
+call    ReadINIClassBuildingTypeList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyAircraft
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     ecx, ds:off_7F0CD4 ; "AI"
+lea     ebx, [esi+0AC0h]
+push    ebx
+push    offset aBuilddummy ; "BuildDummy"
+push    ecx
+mov     edx, edi
+lea     ecx, [esp+0D4h+var_B8]
+call    ReadINIClassBuildingTypeList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyAircraft
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     edx, ds:off_7F0CD4 ; "AI"
+lea     ebx, [esi+0ADCh]
+push    ebx
+push    offset aNeutraltechbui ; "NeutralTechBuildings"
+push    edx
+mov     edx, edi
+lea     ecx, [esp+0D4h+var_B8]
+call    ReadINIClassBuildingTypeList
+push    eax
+mov     ecx, ebx
+call    TypeList__CopyAircraft
+lea     ecx, [esp+0C8h+var_B8]
+mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
+call    DynamicVectorClass__Destroy
+mov     eax, [esi+10A4h]
+mov     ecx, [esi+10A0h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aAttackinterval ; "AttackInterval"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+10A0h]
+mov     eax, [esi+10ACh]
+mov     ecx, [esi+10A8h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aAttackdelay ; "AttackDelay"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+10A8h]
+mov     eax, [esi+1154h]
+mov     ecx, [esi+1150h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aPatrolscan ; "PatrolScan"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1150h]
+mov     eax, [esi+1758h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aCreditreserve ; "CreditReserve"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1758h], eax
+mov     edx, [esi+1764h]
+mov     eax, [esi+1760h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    edx
+push    eax             ; double
+push    offset aPathdelay ; "PathDelay"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fstp    qword ptr [esi+1760h]
+mov     edx, [esi+1768h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aBlockagepathde ; "BlockagePathDelay"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1514h]
+mov     edx, [esi+1510h]
+mov     [esi+1768h], eax
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aAutocreatetime ; "AutocreateTime"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+1138h]
+fstp    qword ptr [esi+1510h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aInfantryreserv ; "InfantryReserve"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1138h], eax
+mov     eax, [esi+113Ch]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aInfantrybasemu ; "InfantryBaseMult"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+1134h]
+mov     [esi+113Ch], eax
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aPowersurplus ; "PowerSurplus"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1130h]
+mov     [esi+1134h], eax
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aBasesizeadd ; "BaseSizeAdd"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1128h]
+mov     [esi+1130h], eax
+mov     eax, [esi+112Ch]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aRefineryratio ; "RefineryRatio"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     eax, [esi+1124h]
+fstp    qword ptr [esi+1128h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aRefinerylimit ; "RefineryLimit"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+111Ch]
+mov     [esi+1124h], eax
+mov     eax, [esi+1118h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    edx
+push    eax             ; double
+push    offset aBarracksratio ; "BarracksRatio"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+1120h]
+mov     ecx, edi
+fstp    qword ptr [esi+1118h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aBarrackslimit ; "BarracksLimit"
+push    eax
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+110Ch]
+mov     edx, [esi+1108h]
+mov     [esi+1120h], eax
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aWarratio ; "WarRatio"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+1110h]
+fstp    qword ptr [esi+1108h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aWarlimit ; "WarLimit"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+10F8h]
+mov     [esi+1110h], eax
+mov     eax, [esi+10FCh]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aDefenseratio ; "DefenseRatio"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     eax, [esi+1100h]
+fstp    qword ptr [esi+10F8h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aDefenselimit ; "DefenseLimit"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+10ECh]
+mov     [esi+1100h], eax
+mov     eax, [esi+10E8h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    edx
+push    eax             ; double
+push    offset aAaratio ; "AARatio"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+10F0h]
+mov     ecx, edi
+fstp    qword ptr [esi+10E8h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aAalimit ; "AALimit"
+push    eax
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+10DCh]
+mov     edx, [esi+10D8h]
+mov     [esi+10F0h], eax
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aTeslaratio ; "TeslaRatio"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+10E0h]
+fstp    qword ptr [esi+10D8h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aTeslalimit ; "TeslaLimit"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+10C8h]
+mov     [esi+10E0h], eax
+mov     eax, [esi+10CCh]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    ecx             ; double
+push    offset aHelipadratio ; "HelipadRatio"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     eax, [esi+10D0h]
+fstp    qword ptr [esi+10C8h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aHelipadlimit ; "HelipadLimit"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+10BCh]
+mov     [esi+10D0h], eax
+mov     eax, [esi+10B8h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    edx
+push    eax             ; double
+push    offset aAirstripratio ; "AirstripRatio"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+10C0h]
+mov     ecx, edi
+fstp    qword ptr [esi+10B8h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aAirstriplimit ; "AirstripLimit"
+push    eax
+call    INIClass__ReadInt_Overwrite
+mov     cl, [esi+17E3h]
+mov     [esi+10C0h], eax
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aCompeasybonus ; "CompEasyBonus"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [esi+17E3h], al
+mov     al, [esi+17E0h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aParanoid ; "Paranoid"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     edx, [esi+10B4h]
+mov     [esi+17E0h], al
+mov     eax, [esi+10B0h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    edx
+push    eax             ; double
+push    offset aPoweremergency ; "PowerEmergency"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     edx, [esi+1460h]
+mov     ecx, edi
+fstp    qword ptr [esi+10B0h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    edx
+push    offset aAibasespacing ; "AIBaseSpacing"
+push    eax
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+0AFCh]
+mov     edx, [esi+0AF8h]
+mov     [esi+1460h], eax
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aGdiwalldefense ; "GDIWallDefense"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+0B04h]
+mov     edx, [esi+0B00h]
+fstp    qword ptr [esi+0AF8h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aGdiwalldefense_0 ; "GDIWallDefenseCoefficient"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+0B0Ch]
+mov     edx, [esi+0B08h]
+fstp    qword ptr [esi+0B00h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aNodbasedefense ; "NodBaseDefenseCoefficient"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+0B14h]
+mov     edx, [esi+0B10h]
+fstp    qword ptr [esi+0B08h]
+mov     eax, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    edx             ; double
+push    offset aGdibasedefense ; "GDIBaseDefenseCoefficient"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+mov     ecx, [esi+0B1Ch]
+fstp    qword ptr [esi+0B10h]
+mov     edx, ds:off_7F0CD4 ; "AI"
+push    ecx
+push    offset aMaximumbasedef ; "MaximumBaseDefenseValue"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0B1Ch], eax
+mov     eax, [esi+0B18h]
+mov     ecx, ds:off_7F0CD4 ; "AI"
+push    eax
+push    offset aComputerbasede ; "ComputerBaseDefenseResponse"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+0B18h], eax
+mov     al, 1
+pop     edi
+pop     esi
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_673E6C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+28↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn    4
+*/
+} }
 // 0x674000
-namespace gamemd { int RulesClass::LoadSpeedTypes() { return 0; } }
+namespace gamemd { int RulesClass::LoadSpeedTypes() {
+// [IDA decompile]
+int __thiscall RulesClass::LoadSpeedTypes(#381 *this)
+{
+  double v1; // st7
+  unsigned __int8 **v2; // esi
+  float *v3; // ebx
+  int result; // eax
+  unsigned __int8 *v5; // edx
+  unsigned __int8 *v6; // ecx
+  unsigned __int8 *v7; // eax
+  unsigned __int8 *v8; // edx
+  unsigned __int8 *v9; // ecx
+  unsigned __int8 *v10; // eax
+  unsigned __int8 *v11; // edx
+  int v12; // [esp+10h] [ebp+4h]
+
+  v2 = (unsigned __int8 **)off_839D68;
+  v3 = (float *)&MEMORY[0x89EA44];
+  do
+  {
+    result = INIClass::BinarySearchSection(v12, *v2);
+    if ( result )
+    {
+      INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0);
+      v5 = *v2;
+      v3[2] = v1;
+      INIClass::ReadDouble_Overwrite((int)v5, (int)g_INI_Key_Foot, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Foot, 1.0);
+      v6 = *v2;
+      *(v3 - 1) = v1;
+      INIClass::ReadDouble_Overwrite((int)v6, (int)g_INI_Key_Track, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Track, 1.0);
+      v7 = *v2;
+      *v3 = v1;
+      INIClass::ReadDouble_Overwrite((int)v7, (int)g_INI_Key_Wheel, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Wheel, 1.0);
+      v8 = *v2;
+      v3[1] = v1;
+      v3[3] = 1.0;
+      INIClass::ReadDouble_Overwrite((int)v8, (int)g_INI_Key_Float, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Float, 1.0);
+      v9 = *v2;
+      v3[4] = v1;
+      INIClass::ReadDouble_Overwrite((int)v9, (int)g_INI_Key_Amphibious, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Amphibious, 1.0);
+      v10 = *v2;
+      v3[5] = v1;
+      INIClass::ReadDouble_Overwrite((int)v10, (int)g_INI_Key_FloatBeach, 1.0);
+      if ( v1 >= 1.0 )
+        v1 = 1.0;
+      else
+        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_FloatBeach, 1.0);
+      v11 = *v2;
+      v3[6] = v1;
+      result = INIClass::ReadBool_Overwrite(v11, aBuildable, 0);
+      *((_BYTE *)v3 + 28) = result;
+    }
+    v3 += 9;
+    ++v2;
+  }
+  while ( (int)v3 < (int)((float *)&MEMORY[0x89EBF0] + 1) );
+  LOBYTE(result) = 1;
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+0Ch+arg_0]
+mov     esi, offset off_839D68 ; "Clear"
+mov     ebx, 89EA44h
+
+loc_674011:                             ; CODE XREF: RulesClass__LoadSpeedTypes+22A↓j
+mov     eax, [esi]
+mov     ecx, edi
+push    eax
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_67421E
+mov     eax, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Hover ; "Hover"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_674063
+mov     ecx, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Hover ; "Hover"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_674069
+; ---------------------------------------------------------------------------
+
+loc_674063:                             ; CODE XREF: RulesClass__LoadSpeedTypes+49↑j
+fld     ds:dbl_7E1718
+
+loc_674069:                             ; CODE XREF: RulesClass__LoadSpeedTypes+61↑j
+mov     edx, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx+8]
+push    0               ; double
+push    offset g_INI_Key_Foot ; "Foot"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_6740A7
+mov     eax, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Foot ; "Foot"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_6740AD
+; ---------------------------------------------------------------------------
+
+loc_6740A7:                             ; CODE XREF: RulesClass__LoadSpeedTypes+8D↑j
+fld     ds:dbl_7E1718
+
+loc_6740AD:                             ; CODE XREF: RulesClass__LoadSpeedTypes+A5↑j
+mov     ecx, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx-4]
+push    0               ; double
+push    offset g_INI_Key_Track ; "Track"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_6740EB
+mov     edx, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Track ; "Track"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_6740F1
+; ---------------------------------------------------------------------------
+
+loc_6740EB:                             ; CODE XREF: RulesClass__LoadSpeedTypes+D1↑j
+fld     ds:dbl_7E1718
+
+loc_6740F1:                             ; CODE XREF: RulesClass__LoadSpeedTypes+E9↑j
+mov     eax, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx]
+push    0               ; double
+push    offset g_INI_Key_Wheel ; "Wheel"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_67412E
+mov     ecx, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Wheel ; "Wheel"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_674134
+; ---------------------------------------------------------------------------
+
+loc_67412E:                             ; CODE XREF: RulesClass__LoadSpeedTypes+114↑j
+fld     ds:dbl_7E1718
+
+loc_674134:                             ; CODE XREF: RulesClass__LoadSpeedTypes+12C↑j
+mov     edx, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx+4]
+push    0               ; double
+push    offset g_INI_Key_Float ; "Float"
+push    edx             ; int
+mov     ecx, edi
+mov     dword ptr [ebx+0Ch], 3F800000h
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_674179
+mov     eax, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Float ; "Float"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_67417F
+; ---------------------------------------------------------------------------
+
+loc_674179:                             ; CODE XREF: RulesClass__LoadSpeedTypes+15F↑j
+fld     ds:dbl_7E1718
+
+loc_67417F:                             ; CODE XREF: RulesClass__LoadSpeedTypes+177↑j
+mov     ecx, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx+10h]
+push    0               ; double
+push    offset g_INI_Key_Amphibious ; "Amphibious"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_6741BD
+mov     edx, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_Amphibious ; "Amphibious"
+push    edx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_6741C3
+; ---------------------------------------------------------------------------
+
+loc_6741BD:                             ; CODE XREF: RulesClass__LoadSpeedTypes+1A3↑j
+fld     ds:dbl_7E1718
+
+loc_6741C3:                             ; CODE XREF: RulesClass__LoadSpeedTypes+1BB↑j
+mov     eax, [esi]
+push    3FF00000h
+fstp    dword ptr [ebx+14h]
+push    0               ; double
+push    offset g_INI_Key_FloatBeach ; "FloatBeach"
+push    eax             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_674201
+mov     ecx, [esi]
+push    3FF00000h
+push    0               ; double
+push    offset g_INI_Key_FloatBeach ; "FloatBeach"
+push    ecx             ; int
+mov     ecx, edi
+call    INIClass__ReadDouble_Overwrite
+jmp     short loc_674207
+; ---------------------------------------------------------------------------
+
+loc_674201:                             ; CODE XREF: RulesClass__LoadSpeedTypes+1E7↑j
+fld     ds:dbl_7E1718
+
+loc_674207:                             ; CODE XREF: RulesClass__LoadSpeedTypes+1FF↑j
+mov     edx, [esi]
+push    0
+fstp    dword ptr [ebx+18h]
+push    offset aBuildable ; "Buildable"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadBool_Overwrite
+mov     [ebx+1Ch], al
+
+loc_67421E:                             ; CODE XREF: RulesClass__LoadSpeedTypes+22↑j
+add     ebx, 24h ; '$'
+add     esi, 4
+cmp     ebx, 89EBF4h
+jl      loc_674011
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+retn    4
+*/
+} }
 // 0x674240
-namespace gamemd { int RulesClass::ReadIQSection() { return 0; } }
+namespace gamemd { int RulesClass::ReadIQSection() {
+// [IDA decompile]
+int __thiscall sub_674240(#381 *this)
+{
+  int result; // eax
+  int Int_Overwrite; // eax
+  int v4; // edx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // edx
+  int v9; // eax
+  int v10; // ecx
+  int v11; // eax
+  int v12; // edx
+  int v13; // eax
+  int v14; // ecx
+  int v15; // [esp+Ch] [ebp+4h]
+
+  result = INIClass::BinarySearchSection(v15, (unsigned __int8 *)g_INI_Key_IQ);
+  if ( result )
+  {
+    *((_DWORD *)this + 1293) = INIClass::ReadInt_Overwrite(
+                                 v15,
+                                 (unsigned __int8 *)g_INI_Key_IQ,
+                                 (unsigned __int8 *)aMaxiqlevels,
+                                 *((_DWORD *)this + 1293));
+    Int_Overwrite = INIClass::ReadInt_Overwrite(
+                      v15,
+                      (unsigned __int8 *)g_INI_Key_IQ,
+                      (unsigned __int8 *)aSuperweapons,
+                      *((_DWORD *)this + 1294));
+    v4 = *((_DWORD *)this + 1295);
+    *((_DWORD *)this + 1294) = Int_Overwrite;
+    v5 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)aProduction, v4);
+    v6 = *((_DWORD *)this + 1296);
+    *((_DWORD *)this + 1295) = v5;
+    *((_DWORD *)this + 1296) = INIClass::ReadInt_Overwrite(
+                                 v15,
+                                 (unsigned __int8 *)g_INI_Key_IQ,
+                                 (unsigned __int8 *)aGuardarea,
+                                 v6);
+    v7 = INIClass::ReadInt_Overwrite(
+           v15,
+           (unsigned __int8 *)g_INI_Key_IQ,
+           (unsigned __int8 *)aRepairsell,
+           *((_DWORD *)this + 1297));
+    v8 = *((_DWORD *)this + 1298);
+    *((_DWORD *)this + 1297) = v7;
+    v9 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)aAutocrush, v8);
+    v10 = *((_DWORD *)this + 1299);
+    *((_DWORD *)this + 1298) = v9;
+    *((_DWORD *)this + 1299) = INIClass::ReadInt_Overwrite(
+                                 v15,
+                                 (unsigned __int8 *)g_INI_Key_IQ,
+                                 (unsigned __int8 *)aScatter,
+                                 v10);
+    v11 = INIClass::ReadInt_Overwrite(
+            v15,
+            (unsigned __int8 *)g_INI_Key_IQ,
+            (unsigned __int8 *)aContentscan,
+            *((_DWORD *)this + 1300));
+    v12 = *((_DWORD *)this + 1301);
+    *((_DWORD *)this + 1300) = v11;
+    v13 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)aAircraft, v12);
+    v14 = *((_DWORD *)this + 1302);
+    *((_DWORD *)this + 1301) = v13;
+    *((_DWORD *)this + 1302) = INIClass::ReadInt_Overwrite(
+                                 v15,
+                                 (unsigned __int8 *)g_INI_Key_IQ,
+                                 (unsigned __int8 *)aHarvester,
+                                 v14);
+    result = INIClass::ReadInt_Overwrite(
+               v15,
+               (unsigned __int8 *)g_INI_Key_IQ,
+               (unsigned __int8 *)aSellback,
+               *((_DWORD *)this + 1303));
+    *((_DWORD *)this + 1303) = result;
+    LOBYTE(result) = 1;
+  }
+  else
+  {
+    LOBYTE(result) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, ds:off_7F0CDC ; "IQ"
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    eax
+mov     ecx, edi
+call    INIClass__BinarySearchSection
+test    eax, eax
+setnz   al
+test    al, al
+jz      loc_6743C6
+mov     ecx, [esi+1434h]
+mov     edx, ds:off_7F0CDC ; "IQ"
+push    ecx
+push    offset aMaxiqlevels ; "MaxIQLevels"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1434h], eax
+mov     eax, [esi+1438h]
+mov     ecx, ds:off_7F0CDC ; "IQ"
+push    eax
+push    offset aSuperweapons ; "SuperWeapons"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+143Ch]
+mov     [esi+1438h], eax
+mov     eax, ds:off_7F0CDC ; "IQ"
+push    edx
+push    offset aProduction ; "Production"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1440h]
+mov     [esi+143Ch], eax
+mov     edx, ds:off_7F0CDC ; "IQ"
+push    ecx
+push    offset aGuardarea ; "GuardArea"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1440h], eax
+mov     eax, [esi+1444h]
+mov     ecx, ds:off_7F0CDC ; "IQ"
+push    eax
+push    offset aRepairsell ; "RepairSell"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+1448h]
+mov     [esi+1444h], eax
+mov     eax, ds:off_7F0CDC ; "IQ"
+push    edx
+push    offset aAutocrush ; "AutoCrush"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+144Ch]
+mov     [esi+1448h], eax
+mov     edx, ds:off_7F0CDC ; "IQ"
+push    ecx
+push    offset aScatter ; "Scatter"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+144Ch], eax
+mov     eax, [esi+1450h]
+mov     ecx, ds:off_7F0CDC ; "IQ"
+push    eax
+push    offset aContentscan ; "ContentScan"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     edx, [esi+1454h]
+mov     [esi+1450h], eax
+mov     eax, ds:off_7F0CDC ; "IQ"
+push    edx
+push    offset aAircraft ; "Aircraft"
+push    eax
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     ecx, [esi+1458h]
+mov     [esi+1454h], eax
+mov     edx, ds:off_7F0CDC ; "IQ"
+push    ecx
+push    offset aHarvester ; "Harvester"
+push    edx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+1458h], eax
+mov     eax, [esi+145Ch]
+mov     ecx, ds:off_7F0CDC ; "IQ"
+push    eax
+push    offset aSellback ; "SellBack"
+push    ecx
+mov     ecx, edi
+call    INIClass__ReadInt_Overwrite
+mov     [esi+145Ch], eax
+pop     edi
+mov     al, 1
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6743C6:                             ; CODE XREF: RulesClass__ReadIQSection+1C↑j
+pop     edi
+xor     al, al
+pop     esi
+retn    4
+*/
+} }
 // 0x674730
-namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) { return 0; } }
+namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
+// [IDA decompile]
+int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
+{
+  int *v2; // esi
+  int v4; // edx
+  int i; // ebx
+  int v6; // edx
+  int j; // ebx
+  int v8; // edx
+  int k; // ebx
+  int v10; // edx
+  int m; // ebx
+  int v12; // edx
+  int n; // ebx
+  int v14; // edx
+  int ii; // ebx
+  int v16; // edx
+  int jj; // ebx
+  int v18; // edx
+  int kk; // ebx
+  int v20; // edx
+  int mm; // ebx
+  int v22; // edx
+  int nn; // ebx
+  int v24; // edx
+  int i1; // ebx
+  int v26; // edx
+  int i2; // ebx
+  int v28; // edx
+  int i3; // ebx
+  int v30; // edx
+  int i4; // ebx
+  int v32; // edx
+  int i5; // ebx
+  int v34; // edx
+  int i6; // ebx
+  int v36; // edx
+  int i7; // ebx
+  int v38; // edx
+  int i8; // ebx
+  int v40; // edx
+  int i9; // ebx
+  int v42; // edx
+  int i10; // ebx
+  int v44; // edx
+  int i11; // ebx
+  int v46; // edx
+  int i12; // ebx
+  int v48; // edx
+  int i13; // ebx
+  int v50; // edx
+  int i14; // ebx
+  int v52; // edx
+  int i15; // ebx
+  int v54; // edx
+  int i16; // ebx
+  int v56; // edx
+  int i17; // ebx
+  int v58; // edx
+  int i18; // ebx
+  char *v60; // edi
+  int v61; // ebx
+  int result; // eax
+
+  v2 = a2;
+  (*(void (__stdcall **)(int *, _DWORD *, int, _DWORD))(*a2 + 16))(a2, this, 6336, 0);
+  v4 = *v2;
+  a2 = (int *)*(this + 1129);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v4 + 16))(v2, &a2, 4, 0);
+  for ( i = 0; i < (int)a2; ++i )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1126) + 4 * i, 4, 0);
+  v6 = *v2;
+  a2 = (int *)*(this + 1136);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v6 + 16))(v2, &a2, 4, 0);
+  for ( j = 0; j < (int)a2; ++j )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1133) + 4 * j, 4, 0);
+  v8 = *v2;
+  a2 = (int *)*(this + 1143);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v8 + 16))(v2, &a2, 4, 0);
+  for ( k = 0; k < (int)a2; ++k )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1140) + 4 * k, 4, 0);
+  v10 = *v2;
+  a2 = (int *)*(this + 1150);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v10 + 16))(v2, &a2, 4, 0);
+  for ( m = 0; m < (int)a2; ++m )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1147) + 4 * m, 4, 0);
+  v12 = *v2;
+  a2 = (int *)*(this + 1157);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v12 + 16))(v2, &a2, 4, 0);
+  for ( n = 0; n < (int)a2; ++n )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1154) + 4 * n, 4, 0);
+  v14 = *v2;
+  a2 = (int *)*(this + 1164);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v14 + 16))(v2, &a2, 4, 0);
+  for ( ii = 0; ii < (int)a2; ++ii )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1161) + 4 * ii, 4, 0);
+  v16 = *v2;
+  a2 = (int *)*(this + 1171);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v16 + 16))(v2, &a2, 4, 0);
+  for ( jj = 0; jj < (int)a2; ++jj )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1168) + 4 * jj, 4, 0);
+  v18 = *v2;
+  a2 = (int *)*(this + 1178);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v18 + 16))(v2, &a2, 4, 0);
+  for ( kk = 0; kk < (int)a2; ++kk )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1175) + 4 * kk, 4, 0);
+  v20 = *v2;
+  a2 = (int *)*(this + 1185);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v20 + 16))(v2, &a2, 4, 0);
+  for ( mm = 0; mm < (int)a2; ++mm )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1182) + 4 * mm, 4, 0);
+  v22 = *v2;
+  a2 = (int *)*(this + 1192);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v22 + 16))(v2, &a2, 4, 0);
+  for ( nn = 0; nn < (int)a2; ++nn )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1189) + 4 * nn, 4, 0);
+  v24 = *v2;
+  a2 = (int *)*(this + 1199);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v24 + 16))(v2, &a2, 4, 0);
+  for ( i1 = 0; i1 < (int)a2; ++i1 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1196) + 4 * i1, 4, 0);
+  v26 = *v2;
+  a2 = (int *)*(this + 1206);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v26 + 16))(v2, &a2, 4, 0);
+  for ( i2 = 0; i2 < (int)a2; ++i2 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1203) + 4 * i2, 4, 0);
+  v28 = *v2;
+  a2 = (int *)*(this + 1213);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v28 + 16))(v2, &a2, 4, 0);
+  for ( i3 = 0; i3 < (int)a2; ++i3 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1210) + 4 * i3, 4, 0);
+  v30 = *v2;
+  a2 = (int *)*(this + 1280);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v30 + 16))(v2, &a2, 4, 0);
+  for ( i4 = 0; i4 < (int)a2; ++i4 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1277) + 4 * i4, 4, 0);
+  v32 = *v2;
+  a2 = (int *)*(this + 1114);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v32 + 16))(v2, &a2, 4, 0);
+  for ( i5 = 0; i5 < (int)a2; ++i5 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1111) + 4 * i5, 4, 0);
+  v34 = *v2;
+  a2 = (int *)*(this + 622);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v34 + 16))(v2, &a2, 4, 0);
+  for ( i6 = 0; i6 < (int)a2; ++i6 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 619) + 4 * i6, 4, 0);
+  v36 = *v2;
+  a2 = (int *)*(this + 868);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v36 + 16))(v2, &a2, 4, 0);
+  for ( i7 = 0; i7 < (int)a2; ++i7 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 865) + 4 * i7, 4, 0);
+  v38 = *v2;
+  a2 = (int *)*(this + 875);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v38 + 16))(v2, &a2, 4, 0);
+  for ( i8 = 0; i8 < (int)a2; ++i8 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 872) + 4 * i8, 4, 0);
+  v40 = *v2;
+  a2 = (int *)*(this + 882);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v40 + 16))(v2, &a2, 4, 0);
+  for ( i9 = 0; i9 < (int)a2; ++i9 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 879) + 4 * i9, 4, 0);
+  v42 = *v2;
+  a2 = (int *)*(this + 958);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v42 + 16))(v2, &a2, 4, 0);
+  for ( i10 = 0; i10 < (int)a2; ++i10 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 955) + 4 * i10, 4, 0);
+  v44 = *v2;
+  a2 = (int *)*(this + 965);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v44 + 16))(v2, &a2, 4, 0);
+  for ( i11 = 0; i11 < (int)a2; ++i11 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 962) + 4 * i11, 4, 0);
+  v46 = *v2;
+  a2 = (int *)*(this + 972);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v46 + 16))(v2, &a2, 4, 0);
+  for ( i12 = 0; i12 < (int)a2; ++i12 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 969) + 4 * i12, 4, 0);
+  v48 = *v2;
+  a2 = (int *)*(this + 904);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v48 + 16))(v2, &a2, 4, 0);
+  for ( i13 = 0; i13 < (int)a2; ++i13 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 901) + 4 * i13, 4, 0);
+  v50 = *v2;
+  a2 = (int *)*(this + 949);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v50 + 16))(v2, &a2, 4, 0);
+  for ( i14 = 0; i14 < (int)a2; ++i14 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 946) + 4 * i14, 4, 0);
+  v52 = *v2;
+  a2 = (int *)*(this + 911);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v52 + 16))(v2, &a2, 4, 0);
+  for ( i15 = 0; i15 < (int)a2; ++i15 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 908) + 4 * i15, 4, 0);
+  v54 = *v2;
+  a2 = (int *)*(this + 889);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v54 + 16))(v2, &a2, 4, 0);
+  for ( i16 = 0; i16 < (int)a2; ++i16 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 886) + 4 * i16, 4, 0);
+  v56 = *v2;
+  a2 = (int *)*(this + 1256);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v56 + 16))(v2, &a2, 4, 0);
+  for ( i17 = 0; i17 < (int)a2; ++i17 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1253) + 4 * i17, 4, 0);
+  v58 = *v2;
+  a2 = (int *)*(this + 1263);
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v58 + 16))(v2, &a2, 4, 0);
+  for ( i18 = 0; i18 < (int)a2; ++i18 )
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1260) + 4 * i18, 4, 0);
+  DynamicVector::Read(this + 915, v2);
+  DynamicVector::Read(this + 922, v2);
+  DynamicVector::Read(this + 929, v2);
+  DynamicVector::Read(this + 936, v2);
+  DynamicVector::Read(this + 1217, v2);
+  DynamicVector::Read(this + 1224, v2);
+  DynamicVector::Read(this + 1231, v2);
+  DynamicVector::Read(this + 1238, v2);
+  DynamicVector::Read(this + 1245, v2);
+  DynamicVector::Read(this + 1266, v2);
+  DynamicVector::Read(this + 1117, v2);
+  DynamicVector::Read(this + 271, v2);
+  DynamicVector::Read(this + 278, v2);
+  DynamicVector::Read(this + 285, v2);
+  RulesClass::readTerrainTypes(this + 22, v2);
+  RulesClass::readTerrainTypes(this + 384, v2);
+  DynamicVector::Read(this + 214, v2);
+  DynamicVector::Read(this + 221, v2);
+  DynamicVector::Read(this + 228, v2);
+  DynamicVector::Read(this + 235, v2);
+  DynamicVector::Read(this + 242, v2);
+  DynamicVector::Read(this + 249, v2);
+  DynamicVector::Read(this + 435, v2);
+  DynamicVector::Read(this + 461, v2);
+  VectorClass::LoadStream(this + 497, v2);
+  VectorClass::LoadStream(this + 504, v2);
+  VectorClass::LoadStream(this + 511, v2);
+  VectorClass::LoadStream(this + 518, v2);
+  VectorClass::LoadStream(this + 525, v2);
+  DynamicVector::Read_Alt(this + 532, v2);
+  DynamicVector::Read_Alt(this + 544, v2);
+  DynamicVector::Read_Alt(this + 555, v2);
+  DynamicVector::Read_Alt(this + 562, v2);
+  DynamicVector::Read_Alt(this + 569, v2);
+  DynamicVector::Read_Alt(this + 576, v2);
+  DynamicVector::Read_Alt(this + 583, v2);
+  DynamicVector::Read_Alt(this + 590, v2);
+  DynamicVector::Read_Alt(this + 597, v2);
+  DynamicVector::Read_Alt(this + 604, v2);
+  DynamicVector::Read_Alt(this + 611, v2);
+  DynamicVector::Read_Alt(this + 625, v2);
+  DynamicVector::Read_Alt(this + 632, v2);
+  DynamicVector::Read_Alt(this + 639, v2);
+  DynamicVector::Read_Alt(this + 646, v2);
+  DynamicVector::Read_Alt(this + 653, v2);
+  DynamicVector::Read_Alt(this + 660, v2);
+  DynamicVector::Read_Alt(this + 667, v2);
+  DynamicVector::Read_Alt(this + 674, v2);
+  DynamicVector::Read_Alt(this + 681, v2);
+  DynamicVector::Read_Alt(this + 688, v2);
+  DynamicVector::Read_Alt(this + 695, v2);
+  RulesClass::readAnimations(this + 726, v2);
+  Stream::WriteIntArray(this + 733, v2);
+  Stream::WriteIntArray(this + 740, v2);
+  Stream::WriteIntArray(this + 752, v2);
+  SaveLoad::StreamVector(this + 712, v2);
+  RulesClass::readParticleSystems(this + 1022, v2);
+  SaveLoad::StreamVector(this + 719, v2);
+  VectorClass::SaveLoad(this + 832, v2);
+  SaveLoad::StreamVector(this + 839, v2);
+  DynamicVector::Read_Alt(this + 846, v2);
+  Stream::WriteIntArray(this + 72, v2);
+  Stream::WriteIntArray(this + 65, v2);
+  Stream::WriteIntArray(this + 79, v2);
+  Stream::WriteIntArray(this + 86, v2);
+  DynamicVector::Read(this + 402, v2);
+  VectorClass::SaveLoad(this + 769, v2);
+  DynamicVector::Read(this + 776, v2);
+  VectorClass::SaveLoad(this + 783, v2);
+  DynamicVector::Read(this + 790, v2);
+  VectorClass::SaveLoad(this + 797, v2);
+  DynamicVector::Read(this + 804, v2);
+  VectorClass::SaveLoad(this + 811, v2);
+  DynamicVector::Read(this + 818, v2);
+  VectorClass::SaveLoad(this + 825, v2);
+  Stream::WriteIntArray(this + 168, v2);
+  Stream::WriteIntArray(this + 175, v2);
+  Stream::WriteIntArray(this + 182, v2);
+  v60 = (char *)(this + 1565);
+  v61 = 16;
+  do
+  {
+    result = RulesClass::readGeneralSection(v60, (int)v2);
+    v60 += 3;
+    --v61;
+  }
+  while ( v61 );
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+push    edi
+mov     edi, ecx
+push    0
+mov     eax, [esi]
+push    18C0h
+push    edi
+push    esi
+call    dword ptr [eax+10h]
+mov     ecx, [edi+11A4h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674787
+
+loc_67476A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+55↓j
+mov     edx, [edi+1198h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67476A
+
+loc_674787:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+38↑j
+mov     ecx, [edi+11C0h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6747C7
+
+loc_6747AA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+95↓j
+mov     edx, [edi+11B4h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6747AA
+
+loc_6747C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+78↑j
+mov     ecx, [edi+11DCh]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674807
+
+loc_6747EA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+D5↓j
+mov     edx, [edi+11D0h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6747EA
+
+loc_674807:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+B8↑j
+mov     ecx, [edi+11F8h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674847
+
+loc_67482A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+115↓j
+mov     edx, [edi+11ECh]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67482A
+
+loc_674847:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+F8↑j
+mov     ecx, [edi+1214h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674887
+
+loc_67486A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+155↓j
+mov     edx, [edi+1208h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67486A
+
+loc_674887:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+138↑j
+mov     ecx, [edi+1230h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6748C7
+
+loc_6748AA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+195↓j
+mov     edx, [edi+1224h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6748AA
+
+loc_6748C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+178↑j
+mov     ecx, [edi+124Ch]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674907
+
+loc_6748EA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+1D5↓j
+mov     edx, [edi+1240h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6748EA
+
+loc_674907:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+1B8↑j
+mov     ecx, [edi+1268h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674947
+
+loc_67492A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+215↓j
+mov     edx, [edi+125Ch]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67492A
+
+loc_674947:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+1F8↑j
+mov     ecx, [edi+1284h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674987
+
+loc_67496A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+255↓j
+mov     edx, [edi+1278h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67496A
+
+loc_674987:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+238↑j
+mov     ecx, [edi+12A0h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6749C7
+
+loc_6749AA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+295↓j
+mov     edx, [edi+1294h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6749AA
+
+loc_6749C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+278↑j
+mov     ecx, [edi+12BCh]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674A07
+
+loc_6749EA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+2D5↓j
+mov     edx, [edi+12B0h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6749EA
+
+loc_674A07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+2B8↑j
+mov     ecx, [edi+12D8h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674A47
+
+loc_674A2A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+315↓j
+mov     edx, [edi+12CCh]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674A2A
+
+loc_674A47:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+2F8↑j
+mov     ecx, [edi+12F4h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674A87
+
+loc_674A6A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+355↓j
+mov     edx, [edi+12E8h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674A6A
+
+loc_674A87:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+338↑j
+mov     ecx, [edi+1400h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674AC7
+
+loc_674AAA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+395↓j
+mov     edx, [edi+13F4h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674AAA
+
+loc_674AC7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+378↑j
+mov     ecx, [edi+1168h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674B07
+
+loc_674AEA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+3D5↓j
+mov     edx, [edi+115Ch]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674AEA
+
+loc_674B07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+3B8↑j
+mov     ecx, [edi+9B8h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674B47
+
+loc_674B2A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+415↓j
+mov     edx, [edi+9ACh]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674B2A
+
+loc_674B47:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+3F8↑j
+mov     ecx, [edi+0D90h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674B87
+
+loc_674B6A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+455↓j
+mov     edx, [edi+0D84h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674B6A
+
+loc_674B87:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+438↑j
+mov     ecx, [edi+0DACh]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674BC7
+
+loc_674BAA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+495↓j
+mov     edx, [edi+0DA0h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674BAA
+
+loc_674BC7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+478↑j
+mov     ecx, [edi+0DC8h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674C07
+
+loc_674BEA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+4D5↓j
+mov     edx, [edi+0DBCh]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674BEA
+
+loc_674C07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+4B8↑j
+mov     ecx, [edi+0EF8h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674C47
+
+loc_674C2A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+515↓j
+mov     edx, [edi+0EECh]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674C2A
+
+loc_674C47:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+4F8↑j
+mov     ecx, [edi+0F14h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674C87
+
+loc_674C6A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+555↓j
+mov     edx, [edi+0F08h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674C6A
+
+loc_674C87:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+538↑j
+mov     ecx, [edi+0F30h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674CC7
+
+loc_674CAA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+595↓j
+mov     edx, [edi+0F24h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674CAA
+
+loc_674CC7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+578↑j
+mov     ecx, [edi+0E20h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674D07
+
+loc_674CEA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+5D5↓j
+mov     edx, [edi+0E14h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674CEA
+
+loc_674D07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+5B8↑j
+mov     ecx, [edi+0ED4h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674D47
+
+loc_674D2A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+615↓j
+mov     edx, [edi+0EC8h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674D2A
+
+loc_674D47:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+5F8↑j
+mov     ecx, [edi+0E3Ch]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674D87
+
+loc_674D6A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+655↓j
+mov     edx, [edi+0E30h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674D6A
+
+loc_674D87:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+638↑j
+mov     ecx, [edi+0DE4h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674DC7
+
+loc_674DAA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+695↓j
+mov     edx, [edi+0DD8h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674DAA
+
+loc_674DC7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+678↑j
+mov     ecx, [edi+13A0h]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674E07
+
+loc_674DEA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+6D5↓j
+mov     edx, [edi+1394h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674DEA
+
+loc_674E07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+6B8↑j
+mov     ecx, [edi+13BCh]
+mov     edx, [esi]
+push    0
+lea     eax, [esp+10h+arg_0]
+push    4
+push    eax
+push    esi
+mov     [esp+1Ch+arg_0], ecx
+call    dword ptr [edx+10h]
+mov     eax, [esp+0Ch+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_674E47
+
+loc_674E2A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+715↓j
+mov     edx, [edi+13B0h]
+mov     ecx, [esi]
+push    0
+push    4
+lea     eax, [edx+ebx*4]
+push    eax
+push    esi
+call    dword ptr [ecx+10h]
+mov     eax, [esp+0Ch+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_674E2A
+
+loc_674E47:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+6F8↑j
+push    esi
+lea     ecx, [edi+0E4Ch]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0E68h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0E84h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0EA0h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+1304h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+1320h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+133Ch]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+1358h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+1374h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+13C8h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+1174h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+43Ch]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+458h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+474h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+58h]
+call    RulesClass__readTerrainTypes
+push    esi
+lea     ecx, [edi+600h]
+call    RulesClass__readTerrainTypes
+push    esi
+lea     ecx, [edi+358h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+374h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+390h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+3ACh]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+3C8h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+3E4h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+6CCh]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+734h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+7C4h]
+call    VectorClass__LoadStream
+push    esi
+lea     ecx, [edi+7E0h]
+call    VectorClass__LoadStream
+push    esi
+lea     ecx, [edi+7FCh]
+call    VectorClass__LoadStream
+push    esi
+lea     ecx, [edi+818h]
+call    VectorClass__LoadStream
+push    esi
+lea     ecx, [edi+834h]
+call    VectorClass__LoadStream
+push    esi
+lea     ecx, [edi+850h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+880h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+8ACh]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+8C8h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+8E4h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+900h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+91Ch]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+938h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+954h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+970h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+98Ch]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+9C4h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+9E0h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+9FCh]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0A18h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0A34h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0A50h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0A6Ch]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0A88h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0AA4h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0AC0h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0ADCh]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+0B58h]
+call    RulesClass__readAnimations
+push    esi
+lea     ecx, [edi+0B74h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+0B90h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+0BC0h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+0B20h]
+call    SaveLoad__StreamVector
+push    esi
+lea     ecx, [edi+0FF8h]
+call    RulesClass__readParticleSystems
+push    esi
+lea     ecx, [edi+0B3Ch]
+call    SaveLoad__StreamVector
+push    esi
+lea     ecx, [edi+0D00h]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+0D1Ch]
+call    SaveLoad__StreamVector
+push    esi
+lea     ecx, [edi+0D38h]
+call    DynamicVector__Read_Alt
+push    esi
+lea     ecx, [edi+120h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+104h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+13Ch]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+158h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+648h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0C04h]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+0C20h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0C3Ch]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+0C58h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0C74h]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+0C90h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0CACh]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+0CC8h]
+call    DynamicVector__Read
+push    esi
+lea     ecx, [edi+0CE4h]
+call    VectorClass__SaveLoad
+push    esi
+lea     ecx, [edi+2A0h]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+2BCh]
+call    Stream__WriteIntArray
+push    esi
+lea     ecx, [edi+2D8h]
+call    Stream__WriteIntArray
+add     edi, 1874h
+mov     ebx, 10h
+
+loc_6751F7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix+AD3↓j
+push    esi
+mov     ecx, edi
+call    RulesClass__readGeneralSection
+add     edi, 3
+dec     ebx
+jnz     short loc_6751F7
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
+} }
 // 0x675210
-namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) { return 0; } }
+namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
+// [IDA decompile]
+int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
+{
+  _DWORD *v3; // ebx
+  int v4; // edi
+  int j; // ebx
+  int k; // ebx
+  int m; // ebx
+  int n; // ebx
+  int ii; // ebx
+  int jj; // ebx
+  int kk; // ebx
+  int mm; // ebx
+  int nn; // ebx
+  int i1; // ebx
+  int i2; // ebx
+  int i3; // ebx
+  int i4; // ebx
+  int i5; // ebx
+  int i6; // ebx
+  int i7; // ebx
+  int i8; // ebx
+  int i9; // ebx
+  int i10; // ebx
+  int i11; // ebx
+  int i12; // ebx
+  int i13; // ebx
+  int i14; // ebx
+  int i15; // ebx
+  int i16; // ebx
+  int i17; // ebx
+  int i18; // ebx
+  int i19; // ebx
+  int i20; // ebx
+  int i21; // ebx
+  int i22; // ebx
+  int i23; // ebx
+  int i24; // ebx
+  int i25; // ebx
+  int i26; // ebx
+  int i27; // ebx
+  int i28; // ebx
+  int i29; // ebx
+  int i30; // ebx
+  int i31; // ebx
+  int i32; // ebx
+  int i33; // ebx
+  int i34; // ebx
+  int i35; // ebx
+  int i36; // ebx
+  int i37; // ebx
+  int i38; // ebx
+  int i39; // ebx
+  int i40; // ebx
+  int i41; // ebx
+  int i42; // ebx
+  int i43; // ebx
+  int i44; // ebx
+  int i45; // ebx
+  int i46; // ebx
+  int i47; // ebx
+  int i48; // ebx
+  int i49; // ebx
+  int i50; // ebx
+  int i51; // ebx
+  int i52; // ebx
+  int i53; // ebx
+  int i54; // ebx
+  int i55; // ebx
+  int i56; // ebx
+  int i57; // ebx
+  int i58; // ebx
+  int i59; // ebx
+  int i60; // ebx
+  int i61; // ebx
+  int i62; // ebx
+  int i63; // ebx
+  int i64; // ebx
+  int i65; // ebx
+  int i66; // ebx
+  int i67; // ebx
+  int i68; // ebx
+  int i69; // ebx
+  int i70; // ebx
+  int i71; // ebx
+  int i72; // ebx
+  int i73; // ebx
+  int i74; // ebx
+  int i75; // ebx
+  int i76; // ebx
+  int i77; // ebx
+  int i78; // ebx
+  int i79; // ebx
+  int i80; // ebx
+  int i81; // ebx
+  int i82; // ebx
+  int i83; // ebx
+  int i84; // ebx
+  int i85; // ebx
+  int i86; // ebx
+  int i87; // ebx
+  int i88; // ebx
+  int i89; // ebx
+  int i90; // ebx
+  int i91; // ebx
+  int i92; // ebx
+  int i93; // ebx
+  int i94; // ebx
+  int i95; // ebx
+  int i96; // ebx
+  char *v110; // ebx
+  int v111; // ebp
+  int i97; // edi
+  int i98; // edi
+  int i99; // edi
+  int i100; // edi
+  int i101; // edi
+  int i102; // edi
+  int i103; // edi
+  int i104; // edi
+  int i105; // edi
+  int i106; // edi
+  int i107; // edi
+  int i108; // edi
+  int i109; // edi
+  int i110; // edi
+  int i111; // edi
+  int i112; // edi
+  int i113; // edi
+  int i114; // edi
+  int i115; // edi
+  int i116; // edi
+  int i117; // edi
+  int i118; // edi
+  int i119; // edi
+  int i120; // edi
+  int i121; // edi
+  int i122; // edi
+  int i123; // edi
+  int i124; // edi
+  int i125; // edi
+  int i126; // edi
+  int i127; // edi
+  int i128; // edi
+  int i129; // edi
+  int i130; // edi
+  int i131; // edi
+  int i132; // edi
+  int i133; // edi
+  int i134; // edi
+  int i135; // edi
+  int i136; // edi
+  int i137; // edi
+  int i138; // edi
+  int i139; // edi
+  int v155; // ebx
+  int i140; // edi
+  int v157; // ebx
+  int i141; // edi
+  int i142; // edi
+  int i143; // edi
+  int i144; // edi
+  int i145; // edi
+  int result; // eax
+  int i146; // edi
+  int v165; // ebx
+  int v166; // edi
+  _DWORD *v167; // esi
+  int v168; // [esp+D4Ch] [ebp-8h] BYREF
+  int v169; // [esp+D50h] [ebp-4h] BYREF
+
+  v3 = this + 1125;
+  (*(void (__thiscall **)(int *))(*(this + 1125) + 12))(this + 1125);
+  (*(void (__thiscall **)(int *))(*(this + 1132) + 12))(this + 1132);
+  (*(void (__thiscall **)(int *))(*(this + 1139) + 12))(this + 1139);
+  (*(void (__thiscall **)(int *))(*(this + 1146) + 12))(this + 1146);
+  (*(void (__thiscall **)(int *))(*(this + 1153) + 12))(this + 1153);
+  (*(void (__thiscall **)(int *))(*(this + 1160) + 12))(this + 1160);
+  (*(void (__thiscall **)(int *))(*(this + 1167) + 12))(this + 1167);
+  (*(void (__thiscall **)(int *))(*(this + 1174) + 12))(this + 1174);
+  (*(void (__thiscall **)(int *))(*(this + 1181) + 12))(this + 1181);
+  (*(void (__thiscall **)(int *))(*(this + 1188) + 12))(this + 1188);
+  (*(void (__thiscall **)(int *))(*(this + 1195) + 12))(this + 1195);
+  (*(void (__thiscall **)(int *))(*(this + 1202) + 12))(this + 1202);
+  (*(void (__thiscall **)(int *))(*(this + 1209) + 12))(this + 1209);
+  (*(void (__thiscall **)(int *))(*(this + 1276) + 12))(this + 1276);
+  (*(void (__thiscall **)(int *))(*(this + 1110) + 12))(this + 1110);
+  (*(void (__thiscall **)(int *))(*(this + 618) + 12))(this + 618);
+  (*(void (__thiscall **)(int *))(*(this + 864) + 12))(this + 864);
+  (*(void (__thiscall **)(int *))(*(this + 871) + 12))(this + 871);
+  (*(void (__thiscall **)(int *))(*(this + 878) + 12))(this + 878);
+  (*(void (__thiscall **)(int *))(*(this + 954) + 12))(this + 954);
+  (*(void (__thiscall **)(int *))(*(this + 961) + 12))(this + 961);
+  (*(void (__thiscall **)(int *))(*(this + 968) + 12))(this + 968);
+  (*(void (__thiscall **)(int *))(*(this + 900) + 12))(this + 900);
+  (*(void (__thiscall **)(int *))(*(this + 945) + 12))(this + 945);
+  (*(void (__thiscall **)(int *))(*(this + 907) + 12))(this + 907);
+  (*(void (__thiscall **)(int *))(*(this + 885) + 12))(this + 885);
+  (*(void (__thiscall **)(int *))(*(this + 1252) + 12))(this + 1252);
+  (*(void (__thiscall **)(int *))(*(this + 1259) + 12))(this + 1259);
+  (*(void (__thiscall **)(int *))(*(this + 915) + 12))(this + 915);
+  (*(void (__thiscall **)(int *))(*(this + 922) + 12))(this + 922);
+  (*(void (__thiscall **)(int *))(*(this + 929) + 12))(this + 929);
+  (*(void (__thiscall **)(int *))(*(this + 936) + 12))(this + 936);
+  (*(void (__thiscall **)(int *))(*(this + 1217) + 12))(this + 1217);
+  (*(void (__thiscall **)(int *))(*(this + 1224) + 12))(this + 1224);
+  (*(void (__thiscall **)(int *))(*(this + 1231) + 12))(this + 1231);
+  (*(void (__thiscall **)(int *))(*(this + 1238) + 12))(this + 1238);
+  (*(void (__thiscall **)(int *))(*(this + 1245) + 12))(this + 1245);
+  (*(void (__thiscall **)(int *))(*(this + 1266) + 12))(this + 1266);
+  (*(void (__thiscall **)(int *))(*(this + 1117) + 12))(this + 1117);
+  (*(void (__thiscall **)(int *))(*(this + 271) + 12))(this + 271);
+  (*(void (__thiscall **)(int *))(*(this + 278) + 12))(this + 278);
+  (*(void (__thiscall **)(int *))(*(this + 285) + 12))(this + 285);
+  (*(void (__thiscall **)(int *))(*(this + 384) + 12))(this + 384);
+  (*(void (__thiscall **)(int *))(*(this + 214) + 12))(this + 214);
+  (*(void (__thiscall **)(int *))(*(this + 221) + 12))(this + 221);
+  (*(void (__thiscall **)(int *))(*(this + 228) + 12))(this + 228);
+  (*(void (__thiscall **)(int *))(*(this + 235) + 12))(this + 235);
+  (*(void (__thiscall **)(int *))(*(this + 242) + 12))(this + 242);
+  (*(void (__thiscall **)(int *))(*(this + 249) + 12))(this + 249);
+  (*(void (__thiscall **)(int *))(*(this + 435) + 12))(this + 435);
+  (*(void (__thiscall **)(int *))(*(this + 461) + 12))(this + 461);
+  (*(void (__thiscall **)(int *))(*(this + 497) + 12))(this + 497);
+  (*(void (__thiscall **)(int *))(*(this + 504) + 12))(this + 504);
+  (*(void (__thiscall **)(int *))(*(this + 511) + 12))(this + 511);
+  (*(void (__thiscall **)(int *))(*(this + 518) + 12))(this + 518);
+  (*(void (__thiscall **)(int *))(*(this + 525) + 12))(this + 525);
+  (*(void (__thiscall **)(int *))(*(this + 532) + 12))(this + 532);
+  (*(void (__thiscall **)(int *))(*(this + 544) + 12))(this + 544);
+  (*(void (__thiscall **)(int *))(*(this + 555) + 12))(this + 555);
+  (*(void (__thiscall **)(int *))(*(this + 562) + 12))(this + 562);
+  (*(void (__thiscall **)(int *))(*(this + 569) + 12))(this + 569);
+  (*(void (__thiscall **)(int *))(*(this + 576) + 12))(this + 576);
+  (*(void (__thiscall **)(int *))(*(this + 583) + 12))(this + 583);
+  (*(void (__thiscall **)(int *))(*(this + 590) + 12))(this + 590);
+  (*(void (__thiscall **)(int *))(*(this + 597) + 12))(this + 597);
+  (*(void (__thiscall **)(int *))(*(this + 604) + 12))(this + 604);
+  (*(void (__thiscall **)(int *))(*(this + 611) + 12))(this + 611);
+  (*(void (__thiscall **)(int *))(*(this + 625) + 12))(this + 625);
+  (*(void (__thiscall **)(int *))(*(this + 632) + 12))(this + 632);
+  (*(void (__thiscall **)(int *))(*(this + 639) + 12))(this + 639);
+  (*(void (__thiscall **)(int *))(*(this + 646) + 12))(this + 646);
+  (*(void (__thiscall **)(int *))(*(this + 653) + 12))(this + 653);
+  (*(void (__thiscall **)(int *))(*(this + 660) + 12))(this + 660);
+  (*(void (__thiscall **)(int *))(*(this + 667) + 12))(this + 667);
+  (*(void (__thiscall **)(int *))(*(this + 674) + 12))(this + 674);
+  (*(void (__thiscall **)(int *))(*(this + 681) + 12))(this + 681);
+  (*(void (__thiscall **)(int *))(*(this + 688) + 12))(this + 688);
+  (*(void (__thiscall **)(int *))(*(this + 695) + 12))(this + 695);
+  (*(void (__thiscall **)(int *))(*(this + 726) + 12))(this + 726);
+  (*(void (__thiscall **)(int *))(*(this + 733) + 12))(this + 733);
+  (*(void (__thiscall **)(int *))(*(this + 740) + 12))(this + 740);
+  (*(void (__thiscall **)(int *))(*(this + 752) + 12))(this + 752);
+  (*(void (__thiscall **)(int *))(*(this + 712) + 12))(this + 712);
+  (*(void (__thiscall **)(int *))(*(this + 1022) + 12))(this + 1022);
+  (*(void (__thiscall **)(int *))(*(this + 719) + 12))(this + 719);
+  (*(void (__thiscall **)(int *))(*(this + 832) + 12))(this + 832);
+  (*(void (__thiscall **)(int *))(*(this + 839) + 12))(this + 839);
+  (*(void (__thiscall **)(int *))(*(this + 846) + 12))(this + 846);
+  (*(void (__thiscall **)(int *))(*(this + 402) + 12))(this + 402);
+  (*(void (__thiscall **)(int *))(*(this + 769) + 12))(this + 769);
+  (*(void (__thiscall **)(int *))(*(this + 776) + 12))(this + 776);
+  (*(void (__thiscall **)(int *))(*(this + 783) + 12))(this + 783);
+  (*(void (__thiscall **)(int *))(*(this + 790) + 12))(this + 790);
+  (*(void (__thiscall **)(int *))(*(this + 797) + 12))(this + 797);
+  (*(void (__thiscall **)(int *))(*(this + 804) + 12))(this + 804);
+  (*(void (__thiscall **)(int *))(*(this + 811) + 12))(this + 811);
+  (*(void (__thiscall **)(int *))(*(this + 818) + 12))(this + 818);
+  (*(void (__thiscall **)(int *))(*(this + 825) + 12))(this + 825);
+  v4 = i;
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)i + 12))(i, this, 6336, 0);
+  if ( this )
+    HouseClass::InitTypeVectors(this, (int)&i);
+  if ( v3 )
+    TypeList::Construct(v3);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v168, 4, 0);
+  for ( i = 0; i < v168; ++i )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(v3, &v169);
+  }
+  if ( this != (int *)-4528 )
+    TypeList::Construct(this + 1132);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( j = 0; j < i; ++j )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1132, &v169);
+  }
+  if ( this != (int *)-4556 )
+    TypeList::Construct(this + 1139);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( k = 0; k < i; ++k )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1139, &v169);
+  }
+  if ( this != (int *)-4584 )
+    TypeList::Construct(this + 1146);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( m = 0; m < i; ++m )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1146, &v169);
+  }
+  if ( this != (int *)-4612 )
+    TypeList::Construct(this + 1153);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( n = 0; n < i; ++n )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1153, &v169);
+  }
+  if ( this != (int *)-4640 )
+    TypeList::Construct(this + 1160);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( ii = 0; ii < i; ++ii )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1160, &v169);
+  }
+  if ( this != (int *)-4668 )
+    TypeList::Construct(this + 1167);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( jj = 0; jj < i; ++jj )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1167, &v169);
+  }
+  if ( this != (int *)-4696 )
+    TypeList::Construct(this + 1174);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( kk = 0; kk < i; ++kk )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1174, &v169);
+  }
+  if ( this != (int *)-4724 )
+    TypeList::Construct(this + 1181);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( mm = 0; mm < i; ++mm )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1181, &v169);
+  }
+  if ( this != (int *)-4752 )
+    TypeList::Construct(this + 1188);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( nn = 0; nn < i; ++nn )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1188, &v169);
+  }
+  if ( this != (int *)-4780 )
+    TypeList::Construct(this + 1195);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i1 = 0; i1 < i; ++i1 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1195, &v169);
+  }
+  if ( this != (int *)-4808 )
+    TypeList::Construct(this + 1202);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i2 = 0; i2 < i; ++i2 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1202, &v169);
+  }
+  if ( this != (int *)-4836 )
+    TypeList::Construct(this + 1209);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i3 = 0; i3 < i; ++i3 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1209, &v169);
+  }
+  if ( this != (int *)-5104 )
+    TypeList::Construct(this + 1276);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i4 = 0; i4 < i; ++i4 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1276, &v169);
+  }
+  if ( this != (int *)-4440 )
+    TypeList::Construct(this + 1110);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i5 = 0; i5 < i; ++i5 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1110, &v169);
+  }
+  if ( this != (int *)-2472 )
+    TypeList::Construct(this + 618);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i6 = 0; i6 < i; ++i6 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 618, &v169);
+  }
+  if ( this != (int *)-3456 )
+    TypeList::Construct(this + 864);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i7 = 0; i7 < i; ++i7 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 864, &v169);
+  }
+  if ( this != (int *)-3484 )
+    TypeList::Construct(this + 871);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i8 = 0; i8 < i; ++i8 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 871, &v169);
+  }
+  if ( this != (int *)-3512 )
+    TypeList::Construct(this + 878);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i9 = 0; i9 < i; ++i9 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 878, &v169);
+  }
+  if ( this != (int *)-3816 )
+    TypeList::Construct(this + 954);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i10 = 0; i10 < i; ++i10 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 954, &v169);
+  }
+  if ( this != (int *)-3844 )
+    TypeList::Construct(this + 961);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i11 = 0; i11 < i; ++i11 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 961, &v169);
+  }
+  if ( this != (int *)-3872 )
+    TypeList::Construct(this + 968);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i12 = 0; i12 < i; ++i12 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 968, &v169);
+  }
+  if ( this != (int *)-3600 )
+    TypeList::Construct(this + 900);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i13 = 0; i13 < i; ++i13 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 900, &v169);
+  }
+  if ( this != (int *)-3780 )
+    TypeList::Construct(this + 945);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i14 = 0; i14 < i; ++i14 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 945, &v169);
+  }
+  if ( this != (int *)-3628 )
+    TypeList::Construct(this + 907);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i15 = 0; i15 < i; ++i15 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 907, &v169);
+  }
+  if ( this != (int *)-3540 )
+    TypeList::Construct(this + 885);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i16 = 0; i16 < i; ++i16 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 885, &v169);
+  }
+  if ( this != (int *)-5008 )
+    TypeList::Construct(this + 1252);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i17 = 0; i17 < i; ++i17 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1252, &v169);
+  }
+  if ( this != (int *)-5036 )
+    TypeList::Construct(this + 1259);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i18 = 0; i18 < i; ++i18 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1259, &v169);
+  }
+  if ( this != (int *)-3660 )
+    TypeList::Construct(this + 915);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i19 = 0; i19 < i; ++i19 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 915, &v169);
+  }
+  if ( this != (int *)-3688 )
+    TypeList::Construct(this + 922);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i20 = 0; i20 < i; ++i20 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 922, &v169);
+  }
+  if ( this != (int *)-3716 )
+    TypeList::Construct(this + 929);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i21 = 0; i21 < i; ++i21 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 929, &v169);
+  }
+  if ( this != (int *)-3744 )
+    TypeList::Construct(this + 936);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i22 = 0; i22 < i; ++i22 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 936, &v169);
+  }
+  if ( this != (int *)-4868 )
+    TypeList::Construct(this + 1217);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i23 = 0; i23 < i; ++i23 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1217, &v169);
+  }
+  if ( this != (int *)-4896 )
+    TypeList::Construct(this + 1224);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i24 = 0; i24 < i; ++i24 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1224, &v169);
+  }
+  if ( this != (int *)-4924 )
+    TypeList::Construct(this + 1231);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i25 = 0; i25 < i; ++i25 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1231, &v169);
+  }
+  if ( this != (int *)-4952 )
+    TypeList::Construct(this + 1238);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i26 = 0; i26 < i; ++i26 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1238, &v169);
+  }
+  if ( this != (int *)-4980 )
+    TypeList::Construct(this + 1245);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i27 = 0; i27 < i; ++i27 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1245, &v169);
+  }
+  if ( this != (int *)-5064 )
+    TypeList::Construct(this + 1266);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i28 = 0; i28 < i; ++i28 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1266, &v169);
+  }
+  if ( this != (int *)-4468 )
+    TypeList::Construct(this + 1117);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i29 = 0; i29 < i; ++i29 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 1117, &v169);
+  }
+  if ( this != (int *)-1084 )
+    TypeList::Construct(this + 271);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i30 = 0; i30 < i; ++i30 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 271, &v169);
+  }
+  if ( this != (int *)-1112 )
+    TypeList::Construct(this + 278);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i31 = 0; i31 < i; ++i31 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 278, &v169);
+  }
+  if ( this != (int *)-1140 )
+    TypeList::Construct(this + 285);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i32 = 0; i32 < i; ++i32 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 285, &v169);
+  }
+  if ( this != (int *)-88 )
+    TypeList::VoxelAnimConstructor(this + 22);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i33 = 0; i33 < i; ++i33 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add2(this + 22, &v169);
+  }
+  if ( this != (int *)-1536 )
+    TypeList::VoxelAnimConstructor(this + 384);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i34 = 0; i34 < i; ++i34 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add2(this + 384, &v169);
+  }
+  if ( this != (int *)-856 )
+    TypeList::Construct(this + 214);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i35 = 0; i35 < i; ++i35 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 214, &v169);
+  }
+  if ( this != (int *)-884 )
+    TypeList::Construct(this + 221);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i36 = 0; i36 < i; ++i36 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 221, &v169);
+  }
+  if ( this != (int *)-912 )
+    TypeList::Construct(this + 228);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i37 = 0; i37 < i; ++i37 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 228, &v169);
+  }
+  if ( this != (int *)-940 )
+    TypeList::Construct(this + 235);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i38 = 0; i38 < i; ++i38 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 235, &v169);
+  }
+  if ( this != (int *)-968 )
+    TypeList::Construct(this + 242);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i39 = 0; i39 < i; ++i39 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 242, &v169);
+  }
+  if ( this != (int *)-996 )
+    TypeList::Construct(this + 249);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i40 = 0; i40 < i; ++i40 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 249, &v169);
+  }
+  if ( this != (int *)-1740 )
+    TypeList::Construct(this + 435);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i41 = 0; i41 < i; ++i41 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 435, &v169);
+  }
+  if ( this != (int *)-1844 )
+    TypeList::Construct(this + 461);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i42 = 0; i42 < i; ++i42 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 461, &v169);
+  }
+  if ( this != (int *)-1988 )
+    TypeList::ConstructSmudge(this + 497);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i43 = 0; i43 < i; ++i43 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    SmudgeTypeVector::Add(this + 497, &v169);
+  }
+  if ( this != (int *)-2016 )
+    TypeList::ConstructSmudge(this + 504);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i44 = 0; i44 < i; ++i44 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    SmudgeTypeVector::Add(this + 504, &v169);
+  }
+  if ( this != (int *)-2044 )
+    TypeList::ConstructSmudge(this + 511);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i45 = 0; i45 < i; ++i45 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    SmudgeTypeVector::Add(this + 511, &v169);
+  }
+  if ( this != (int *)-2072 )
+    TypeList::ConstructSmudge(this + 518);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i46 = 0; i46 < i; ++i46 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    SmudgeTypeVector::Add(this + 518, &v169);
+  }
+  if ( this != (int *)-2100 )
+    TypeList::ConstructSmudge(this + 525);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i47 = 0; i47 < i; ++i47 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    SmudgeTypeVector::Add(this + 525, &v169);
+  }
+  if ( this != (int *)-2128 )
+    TypeList::BuildingTypeConstructor(this + 532);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i48 = 0; i48 < i; ++i48 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 532, &v169);
+  }
+  if ( this != (int *)-2176 )
+    TypeList::BuildingTypeConstructor(this + 544);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i49 = 0; i49 < i; ++i49 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 544, &v169);
+  }
+  if ( this != (int *)-2220 )
+    TypeList::BuildingTypeConstructor(this + 555);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i50 = 0; i50 < i; ++i50 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 555, &v169);
+  }
+  if ( this != (int *)-2248 )
+    TypeList::BuildingTypeConstructor(this + 562);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i51 = 0; i51 < i; ++i51 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 562, &v169);
+  }
+  if ( this != (int *)-2276 )
+    TypeList::BuildingTypeConstructor(this + 569);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i52 = 0; i52 < i; ++i52 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 569, &v169);
+  }
+  if ( this != (int *)-2304 )
+    TypeList::BuildingTypeConstructor(this + 576);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i53 = 0; i53 < i; ++i53 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 576, &v169);
+  }
+  if ( this != (int *)-2332 )
+    TypeList::BuildingTypeConstructor(this + 583);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i54 = 0; i54 < i; ++i54 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 583, &v169);
+  }
+  if ( this != (int *)-2360 )
+    TypeList::BuildingTypeConstructor(this + 590);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i55 = 0; i55 < i; ++i55 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 590, &v169);
+  }
+  if ( this != (int *)-2388 )
+    TypeList::BuildingTypeConstructor(this + 597);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i56 = 0; i56 < i; ++i56 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 597, &v169);
+  }
+  if ( this != (int *)-2416 )
+    TypeList::BuildingTypeConstructor(this + 604);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i57 = 0; i57 < i; ++i57 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 604, &v169);
+  }
+  if ( this != (int *)-2444 )
+    TypeList::BuildingTypeConstructor(this + 611);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i58 = 0; i58 < i; ++i58 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 611, &v169);
+  }
+  if ( this != (int *)-2500 )
+    TypeList::BuildingTypeConstructor(this + 625);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i59 = 0; i59 < i; ++i59 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 625, &v169);
+  }
+  if ( this != (int *)-2528 )
+    TypeList::BuildingTypeConstructor(this + 632);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i60 = 0; i60 < i; ++i60 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 632, &v169);
+  }
+  if ( this != (int *)-2556 )
+    TypeList::BuildingTypeConstructor(this + 639);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i61 = 0; i61 < i; ++i61 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 639, &v169);
+  }
+  if ( this != (int *)-2584 )
+    TypeList::BuildingTypeConstructor(this + 646);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i62 = 0; i62 < i; ++i62 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 646, &v169);
+  }
+  if ( this != (int *)-2612 )
+    TypeList::BuildingTypeConstructor(this + 653);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i63 = 0; i63 < i; ++i63 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 653, &v169);
+  }
+  if ( this != (int *)-2640 )
+    TypeList::BuildingTypeConstructor(this + 660);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i64 = 0; i64 < i; ++i64 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 660, &v169);
+  }
+  if ( this != (int *)-2668 )
+    TypeList::BuildingTypeConstructor(this + 667);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i65 = 0; i65 < i; ++i65 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 667, &v169);
+  }
+  if ( this != (int *)-2696 )
+    TypeList::BuildingTypeConstructor(this + 674);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i66 = 0; i66 < i; ++i66 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 674, &v169);
+  }
+  if ( this != (int *)-2724 )
+    TypeList::BuildingTypeConstructor(this + 681);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i67 = 0; i67 < i; ++i67 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 681, &v169);
+  }
+  if ( this != (int *)-2752 )
+    TypeList::BuildingTypeConstructor(this + 688);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i68 = 0; i68 < i; ++i68 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 688, &v169);
+  }
+  if ( this != (int *)-2780 )
+    TypeList::BuildingTypeConstructor(this + 695);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i69 = 0; i69 < i; ++i69 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 695, &v169);
+  }
+  if ( this != (int *)-2904 )
+    HouseTypeClass::readStartUnit(this + 726);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i70 = 0; i70 < i; ++i70 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    HouseTypeClass::readPowerPlants(this + 726, &v169);
+  }
+  if ( this != (int *)-2932 )
+    AnimTypeList::Constructor(this + 733);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i71 = 0; i71 < i; ++i71 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 733, &v169);
+  }
+  if ( this != (int *)-2960 )
+    AnimTypeList::Constructor(this + 740);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i72 = 0; i72 < i; ++i72 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 740, &v169);
+  }
+  if ( this != (int *)-3008 )
+    AnimTypeList::Constructor(this + 752);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i73 = 0; i73 < i; ++i73 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 752, &v169);
+  }
+  if ( this != (int *)-2848 )
+    UnitTypeList::Constructor(this + 712);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i74 = 0; i74 < i; ++i74 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    VectorClass::PushBack(this + 712, &v169);
+  }
+  if ( this != (int *)-4088 )
+    RulesClass::readParticles(this + 1022);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i75 = 0; i75 < i; ++i75 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    RulesClass::readAI(this + 1022, &v169);
+  }
+  if ( this != (int *)-2876 )
+    UnitTypeList::Constructor(this + 719);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i76 = 0; i76 < i; ++i76 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    VectorClass::PushBack(this + 719, &v169);
+  }
+  if ( this != (int *)-3328 )
+    TypeList::InfantryConstructor(this + 832);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i77 = 0; i77 < i; ++i77 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 832, &v169);
+  }
+  if ( this != (int *)-3356 )
+    UnitTypeList::Constructor(this + 839);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i78 = 0; i78 < i; ++i78 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    VectorClass::PushBack(this + 839, &v169);
+  }
+  if ( this != (int *)-3384 )
+    TypeList::BuildingTypeConstructor(this + 846);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i79 = 0; i79 < i; ++i79 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt3(this + 846, &v169);
+  }
+  if ( this != (int *)-288 )
+    AnimTypeList::Constructor(this + 72);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i80 = 0; i80 < i; ++i80 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 72, &v169);
+  }
+  if ( this != (int *)-260 )
+    AnimTypeList::Constructor(this + 65);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i81 = 0; i81 < i; ++i81 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 65, &v169);
+  }
+  if ( this != (int *)-316 )
+    AnimTypeList::Constructor(this + 79);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i82 = 0; i82 < i; ++i82 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 79, &v169);
+  }
+  if ( this != (int *)-344 )
+    AnimTypeList::Constructor(this + 86);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i83 = 0; i83 < i; ++i83 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 86, &v169);
+  }
+  if ( this != (int *)-1608 )
+    TypeList::Construct(this + 402);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i84 = 0; i84 < i; ++i84 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 402, &v169);
+  }
+  if ( this != (int *)-3076 )
+    TypeList::InfantryConstructor(this + 769);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i85 = 0; i85 < i; ++i85 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 769, &v169);
+  }
+  if ( this != (int *)-3104 )
+    TypeList::Construct(this + 776);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i86 = 0; i86 < i; ++i86 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 776, &v169);
+  }
+  if ( this != (int *)-3132 )
+    TypeList::InfantryConstructor(this + 783);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i87 = 0; i87 < i; ++i87 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 783, &v169);
+  }
+  if ( this != (int *)-3160 )
+    TypeList::Construct(this + 790);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i88 = 0; i88 < i; ++i88 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 790, &v169);
+  }
+  if ( this != (int *)-3188 )
+    TypeList::InfantryConstructor(this + 797);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i89 = 0; i89 < i; ++i89 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 797, &v169);
+  }
+  if ( this != (int *)-3216 )
+    TypeList::Construct(this + 804);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i90 = 0; i90 < i; ++i90 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 804, &v169);
+  }
+  if ( this != (int *)-3244 )
+    TypeList::InfantryConstructor(this + 811);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i91 = 0; i91 < i; ++i91 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 811, &v169);
+  }
+  if ( this != (int *)-3272 )
+    TypeList::Construct(this + 818);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i92 = 0; i92 < i; ++i92 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt(this + 818, &v169);
+  }
+  if ( this != (int *)-3300 )
+    TypeList::InfantryConstructor(this + 825);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i93 = 0; i93 < i; ++i93 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    InfantryTypeVector::Add(this + 825, &v169);
+  }
+  if ( this != (int *)-672 )
+    AnimTypeList::Constructor(this + 168);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i94 = 0; i94 < i; ++i94 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 168, &v169);
+  }
+  if ( this != (int *)-700 )
+    AnimTypeList::Constructor(this + 175);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i95 = 0; i95 < i; ++i95 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 175, &v169);
+  }
+  if ( this != (int *)-728 )
+    AnimTypeList::Constructor(this + 182);
+  (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
+  for ( i96 = 0; i96 < i; ++i96 )
+  {
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
+    DynamicVector::Add_Alt4(this + 182, &v169);
+  }
+  v110 = (char *)(this + 1565);
+  v111 = 16;
+  do
+  {
+    RulesClass::readCombatDamage(v110, v4);
+    v110 += 3;
+    --v111;
+  }
+  while ( v111 );
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 995);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 998);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 999);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 993);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 994);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 4);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 5);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 361);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1000);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1002);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1003);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1004);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1005);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1006);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1007);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1008);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1009);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 312);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 325);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 338);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 294);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1010);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1015);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1020);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1030);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1031);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1032);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1033);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1034);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1035);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1036);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1037);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1038);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1021);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 189);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 191);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 192);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 199);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 200);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 201);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 747);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 748);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 749);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 750);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 751);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 759);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 760);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1311);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1106);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 761);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 854);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 855);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 856);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 987);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 988);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 989);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 990);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 991);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 992);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 539);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 540);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 541);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 542);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 543);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 551);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 552);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 553);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 554);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 256);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 996);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 997);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1001);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 391);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 392);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 213);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 39);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 166);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 205);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 202);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 203);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 204);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 167);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 206);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 207);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 208);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 209);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 210);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 211);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 212);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 165);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1533);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 37);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1564);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 40);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 38);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 41);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 42);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 43);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 44);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 45);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 46);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 58);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 21);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 29);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 19);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1517);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 190);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1549);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 62);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 63);
+  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 64);
+  *(this + 1016) = SearchMIXFile(aBombcursShp, 0);
+  *(this + 1017) = SearchMIXFile(aChronoskShp, 0);
+  for ( i97 = 0; i97 < *(this + 26); ++i97 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 23) + 4 * i97));
+  for ( i98 = 0; i98 < *(this + 737); ++i98 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 734) + 4 * i98));
+  for ( i99 = 0; i99 < *(this + 744); ++i99 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 741) + 4 * i99));
+  for ( i100 = 0; i100 < *(this + 756); ++i100 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 753) + 4 * i100));
+  for ( i101 = 0; i101 < *(this + 501); ++i101 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 498) + 4 * i101));
+  for ( i102 = 0; i102 < *(this + 508); ++i102 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 505) + 4 * i102));
+  for ( i103 = 0; i103 < *(this + 515); ++i103 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 512) + 4 * i103));
+  for ( i104 = 0; i104 < *(this + 522); ++i104 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 519) + 4 * i104));
+  for ( i105 = 0; i105 < *(this + 529); ++i105 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 526) + 4 * i105));
+  for ( i106 = 0; i106 < *(this + 716); ++i106 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 713) + 4 * i106));
+  for ( i107 = 0; i107 < *(this + 1026); ++i107 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 1023) + 4 * i107));
+  for ( i108 = 0; i108 < *(this + 723); ++i108 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 720) + 4 * i108));
+  for ( i109 = 0; i109 < *(this + 836); ++i109 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 833) + 4 * i109));
+  for ( i110 = 0; i110 < *(this + 843); ++i110 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 840) + 4 * i110));
+  for ( i111 = 0; i111 < *(this + 850); ++i111 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 847) + 4 * i111));
+  for ( i112 = 0; i112 < *(this + 536); ++i112 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 533) + 4 * i112));
+  for ( i113 = 0; i113 < *(this + 548); ++i113 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 545) + 4 * i113));
+  for ( i114 = 0; i114 < *(this + 559); ++i114 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 556) + 4 * i114));
+  for ( i115 = 0; i115 < *(this + 566); ++i115 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 563) + 4 * i115));
+  for ( i116 = 0; i116 < *(this + 573); ++i116 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 570) + 4 * i116));
+  for ( i117 = 0; i117 < *(this + 580); ++i117 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 577) + 4 * i117));
+  for ( i118 = 0; i118 < *(this + 587); ++i118 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 584) + 4 * i118));
+  for ( i119 = 0; i119 < *(this + 594); ++i119 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 591) + 4 * i119));
+  for ( i120 = 0; i120 < *(this + 601); ++i120 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 598) + 4 * i120));
+  for ( i121 = 0; i121 < *(this + 608); ++i121 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 605) + 4 * i121));
+  for ( i122 = 0; i122 < *(this + 615); ++i122 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 612) + 4 * i122));
+  for ( i123 = 0; i123 < *(this + 629); ++i123 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 626) + 4 * i123));
+  for ( i124 = 0; i124 < *(this + 636); ++i124 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 633) + 4 * i124));
+  for ( i125 = 0; i125 < *(this + 643); ++i125 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 640) + 4 * i125));
+  for ( i126 = 0; i126 < *(this + 650); ++i126 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 647) + 4 * i126));
+  for ( i127 = 0; i127 < *(this + 657); ++i127 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 654) + 4 * i127));
+  for ( i128 = 0; i128 < *(this + 664); ++i128 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 661) + 4 * i128));
+  for ( i129 = 0; i129 < *(this + 671); ++i129 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 668) + 4 * i129));
+  for ( i130 = 0; i130 < *(this + 678); ++i130 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 675) + 4 * i130));
+  for ( i131 = 0; i131 < *(this + 685); ++i131 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 682) + 4 * i131));
+  for ( i132 = 0; i132 < *(this + 692); ++i132 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 689) + 4 * i132));
+  for ( i133 = 0; i133 < *(this + 699); ++i133 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 696) + 4 * i133));
+  for ( i134 = 0; i134 < *(this + 730); ++i134 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 727) + 4 * i134));
+  for ( i135 = 0; i135 < *(this + 388); ++i135 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 385) + 4 * i135));
+  for ( i136 = 0; i136 < *(this + 76); ++i136 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 73) + 4 * i136));
+  for ( i137 = 0; i137 < *(this + 69); ++i137 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 66) + 4 * i137));
+  for ( i138 = 0; i138 < *(this + 83); ++i138 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 80) + 4 * i138));
+  for ( i139 = 0; i139 < *(this + 90); ++i139 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 87) + 4 * i139));
+  v155 = *(this + 179);
+  for ( i140 = 0; i140 < v155; ++i140 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 176) + 4 * i140));
+  v157 = *(this + 186);
+  for ( i141 = 0; i141 < v157; ++i141 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 183) + 4 * i141));
+  for ( i142 = 0; i142 < *(this + 773); ++i142 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 770) + 4 * i142));
+  for ( i143 = 0; i143 < *(this + 787); ++i143 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 784) + 4 * i143));
+  for ( i144 = 0; i144 < *(this + 801); ++i144 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 798) + 4 * i144));
+  for ( i145 = 0; i145 < *(this + 815); ++i145 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 812) + 4 * i145));
+  result = *(this + 829);
+  for ( i146 = 0; i146 < result; ++i146 )
+  {
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 826) + 4 * i146));
+    result = *(this + 829);
+  }
+  v165 = *(this + 172);
+  v166 = 0;
+  if ( v165 > 0 )
+  {
+    v167 = this + 169;
+    do
+      result = ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*v167 + 4 * v166++));
+    while ( v166 < v165 );
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+1194h]
+lea     ebx, [esi+1194h]
+mov     ecx, ebx
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+11B0h]
+lea     ebp, [esi+11B0h]
+mov     ecx, ebp
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+11CCh]
+lea     ecx, [esi+11CCh]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+11E8h]
+lea     ecx, [esi+11E8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1204h]
+lea     ecx, [esi+1204h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+1220h]
+lea     ecx, [esi+1220h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+123Ch]
+lea     ecx, [esi+123Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+1258h]
+lea     ecx, [esi+1258h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1274h]
+lea     ecx, [esi+1274h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+1290h]
+lea     ecx, [esi+1290h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+12ACh]
+lea     ecx, [esi+12ACh]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+12C8h]
+lea     ecx, [esi+12C8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+12E4h]
+lea     ecx, [esi+12E4h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+13F0h]
+lea     ecx, [esi+13F0h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1158h]
+lea     ecx, [esi+1158h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+9A8h]
+lea     ecx, [esi+9A8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0D80h]
+lea     ecx, [esi+0D80h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0D9Ch]
+lea     ecx, [esi+0D9Ch]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0DB8h]
+lea     ecx, [esi+0DB8h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0EE8h]
+lea     ecx, [esi+0EE8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0F04h]
+lea     ecx, [esi+0F04h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0F20h]
+lea     ecx, [esi+0F20h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0E10h]
+lea     ecx, [esi+0E10h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0EC4h]
+lea     ecx, [esi+0EC4h]
+call    dword ptr [edx+0Ch]
+lea     ecx, [esi+0E2Ch]
+mov     eax, [ecx]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0DD4h]
+lea     ecx, [esi+0DD4h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1390h]
+lea     ecx, [esi+1390h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+13ACh]
+lea     ecx, [esi+13ACh]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0E4Ch]
+lea     ecx, [esi+0E4Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0E68h]
+lea     ecx, [esi+0E68h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0E84h]
+lea     ecx, [esi+0E84h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0EA0h]
+lea     ecx, [esi+0EA0h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1304h]
+lea     ecx, [esi+1304h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+1320h]
+lea     ecx, [esi+1320h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+133Ch]
+lea     ecx, [esi+133Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+1358h]
+lea     ecx, [esi+1358h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1374h]
+lea     ecx, [esi+1374h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+13C8h]
+lea     ecx, [esi+13C8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+1174h]
+lea     ecx, [esi+1174h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+43Ch]
+lea     ecx, [esi+43Ch]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+458h]
+lea     ecx, [esi+458h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+474h]
+lea     ecx, [esi+474h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+600h]
+lea     ecx, [esi+600h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+358h]
+lea     ecx, [esi+358h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+374h]
+lea     ecx, [esi+374h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+390h]
+lea     ecx, [esi+390h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+3ACh]
+lea     ecx, [esi+3ACh]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+3C8h]
+lea     ecx, [esi+3C8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+3E4h]
+lea     ecx, [esi+3E4h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+6CCh]
+lea     ecx, [esi+6CCh]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+734h]
+lea     ecx, [esi+734h]
+call    dword ptr [eax+0Ch]
+lea     ecx, [esi+7C4h]
+mov     edx, [ecx]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+7E0h]
+lea     ecx, [esi+7E0h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+7FCh]
+lea     ecx, [esi+7FCh]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+818h]
+lea     ecx, [esi+818h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+834h]
+lea     ecx, [esi+834h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+850h]
+lea     ecx, [esi+850h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+880h]
+lea     ecx, [esi+880h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+8ACh]
+lea     ecx, [esi+8ACh]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+8C8h]
+lea     ecx, [esi+8C8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+8E4h]
+lea     ecx, [esi+8E4h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+900h]
+lea     ecx, [esi+900h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+91Ch]
+lea     ecx, [esi+91Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+938h]
+lea     ecx, [esi+938h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+954h]
+lea     ecx, [esi+954h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+970h]
+lea     ecx, [esi+970h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+98Ch]
+lea     ecx, [esi+98Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+9C4h]
+lea     ecx, [esi+9C4h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+9E0h]
+lea     ecx, [esi+9E0h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+9FCh]
+lea     ecx, [esi+9FCh]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0A18h]
+lea     ecx, [esi+0A18h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0A34h]
+lea     ecx, [esi+0A34h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0A50h]
+lea     ecx, [esi+0A50h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0A6Ch]
+lea     ecx, [esi+0A6Ch]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0A88h]
+lea     ecx, [esi+0A88h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0AA4h]
+lea     ecx, [esi+0AA4h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0AC0h]
+lea     ecx, [esi+0AC0h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0ADCh]
+lea     ecx, [esi+0ADCh]
+call    dword ptr [edx+0Ch]
+lea     ecx, [esi+0B58h]
+mov     eax, [ecx]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0B74h]
+lea     ecx, [esi+0B74h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0B90h]
+lea     ecx, [esi+0B90h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0BC0h]
+lea     ecx, [esi+0BC0h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0B20h]
+lea     ecx, [esi+0B20h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0FF8h]
+lea     ecx, [esi+0FF8h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0B3Ch]
+lea     ecx, [esi+0B3Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0D00h]
+lea     ecx, [esi+0D00h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0D1Ch]
+lea     ecx, [esi+0D1Ch]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0D38h]
+lea     ecx, [esi+0D38h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+648h]
+lea     ecx, [esi+648h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0C04h]
+lea     ecx, [esi+0C04h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0C20h]
+lea     ecx, [esi+0C20h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0C3Ch]
+lea     ecx, [esi+0C3Ch]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0C58h]
+lea     ecx, [esi+0C58h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0C74h]
+lea     ecx, [esi+0C74h]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0C90h]
+lea     ecx, [esi+0C90h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0CACh]
+lea     ecx, [esi+0CACh]
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+0CC8h]
+lea     ecx, [esi+0CC8h]
+call    dword ptr [eax+0Ch]
+mov     edx, [esi+0CE4h]
+lea     ecx, [esi+0CE4h]
+call    dword ptr [edx+0Ch]
+mov     edi, [esp+18h+arg_0]
+push    0
+push    18C0h
+push    esi
+mov     eax, [edi]
+push    edi
+call    dword ptr [eax+0Ch]
+test    esi, esi
+jz      short loc_6757F1
+lea     ecx, [esp+18h+arg_0]
+push    ecx
+mov     ecx, esi
+call    HouseClass__InitTypeVectors
+
+loc_6757F1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+5D3↑j
+test    ebx, ebx
+jz      short loc_6757FC
+mov     ecx, ebx
+call    TypeList__Construct
+
+loc_6757FC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+5E3↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_8]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+var_8]
+mov     [esp+18h+arg_0], 0
+test    eax, eax
+jle     short loc_675847
+
+loc_67581B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+635↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebx
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+mov     ecx, [esp+18h+var_8]
+inc     eax
+cmp     eax, ecx
+mov     [esp+18h+arg_0], eax
+jl      short loc_67581B
+
+loc_675847:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+609↑j
+test    ebp, ebp
+jz      short loc_675852
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675852:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+639↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67588F
+
+loc_67586B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+67D↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67586B
+
+loc_67588F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+659↑j
+lea     ebp, [esi+11CCh]
+test    ebp, ebp
+jz      short loc_6758A0
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6758A0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+687↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6758DD
+
+loc_6758B9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+6CB↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6758B9
+
+loc_6758DD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+6A7↑j
+lea     ebp, [esi+11E8h]
+test    ebp, ebp
+jz      short loc_6758EE
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6758EE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+6D5↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67592B
+
+loc_675907:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+719↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675907
+
+loc_67592B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+6F5↑j
+lea     ebp, [esi+1204h]
+test    ebp, ebp
+jz      short loc_67593C
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67593C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+723↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675979
+
+loc_675955:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+767↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675955
+
+loc_675979:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+743↑j
+lea     ebp, [esi+1220h]
+test    ebp, ebp
+jz      short loc_67598A
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67598A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+771↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6759C7
+
+loc_6759A3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+7B5↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6759A3
+
+loc_6759C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+791↑j
+lea     ebp, [esi+123Ch]
+test    ebp, ebp
+jz      short loc_6759D8
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6759D8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+7BF↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675A15
+
+loc_6759F1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+803↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6759F1
+
+loc_675A15:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+7DF↑j
+lea     ebp, [esi+1258h]
+test    ebp, ebp
+jz      short loc_675A26
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675A26:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+80D↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675A63
+
+loc_675A3F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+851↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675A3F
+
+loc_675A63:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+82D↑j
+lea     ebp, [esi+1274h]
+test    ebp, ebp
+jz      short loc_675A74
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675A74:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+85B↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675AB1
+
+loc_675A8D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+89F↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675A8D
+
+loc_675AB1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+87B↑j
+lea     ebp, [esi+1290h]
+test    ebp, ebp
+jz      short loc_675AC2
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675AC2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+8A9↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675AFF
+
+loc_675ADB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+8ED↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675ADB
+
+loc_675AFF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+8C9↑j
+lea     ebp, [esi+12ACh]
+test    ebp, ebp
+jz      short loc_675B10
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675B10:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+8F7↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675B4D
+
+loc_675B29:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+93B↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675B29
+
+loc_675B4D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+917↑j
+lea     ebp, [esi+12C8h]
+test    ebp, ebp
+jz      short loc_675B5E
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675B5E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+945↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675B9B
+
+loc_675B77:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+989↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675B77
+
+loc_675B9B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+965↑j
+lea     ebp, [esi+12E4h]
+test    ebp, ebp
+jz      short loc_675BAC
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675BAC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+993↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675BE9
+
+loc_675BC5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+9D7↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675BC5
+
+loc_675BE9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+9B3↑j
+lea     ebp, [esi+13F0h]
+test    ebp, ebp
+jz      short loc_675BFA
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675BFA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+9E1↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675C37
+
+loc_675C13:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A25↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675C13
+
+loc_675C37:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A01↑j
+lea     ebp, [esi+1158h]
+test    ebp, ebp
+jz      short loc_675C48
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675C48:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A2F↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675C85
+
+loc_675C61:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A73↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675C61
+
+loc_675C85:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A4F↑j
+lea     ebp, [esi+9A8h]
+test    ebp, ebp
+jz      short loc_675C96
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675C96:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A7D↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675CD3
+
+loc_675CAF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+AC1↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675CAF
+
+loc_675CD3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+A9D↑j
+lea     ebp, [esi+0D80h]
+test    ebp, ebp
+jz      short loc_675CE4
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675CE4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+ACB↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675D21
+
+loc_675CFD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B0F↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675CFD
+
+loc_675D21:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+AEB↑j
+lea     ebp, [esi+0D9Ch]
+test    ebp, ebp
+jz      short loc_675D32
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675D32:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B19↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675D6F
+
+loc_675D4B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B5D↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675D4B
+
+loc_675D6F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B39↑j
+lea     ebp, [esi+0DB8h]
+test    ebp, ebp
+jz      short loc_675D80
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675D80:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B67↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675DBD
+
+loc_675D99:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+BAB↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675D99
+
+loc_675DBD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+B87↑j
+lea     ebp, [esi+0EE8h]
+test    ebp, ebp
+jz      short loc_675DCE
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675DCE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+BB5↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675E0B
+
+loc_675DE7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+BF9↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675DE7
+
+loc_675E0B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+BD5↑j
+lea     ebp, [esi+0F04h]
+test    ebp, ebp
+jz      short loc_675E1C
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675E1C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C03↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675E59
+
+loc_675E35:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C47↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675E35
+
+loc_675E59:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C23↑j
+lea     ebp, [esi+0F20h]
+test    ebp, ebp
+jz      short loc_675E6A
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675E6A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C51↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675EA7
+
+loc_675E83:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C95↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675E83
+
+loc_675EA7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C71↑j
+lea     ebp, [esi+0E10h]
+test    ebp, ebp
+jz      short loc_675EB8
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675EB8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+C9F↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675EF5
+
+loc_675ED1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+CE3↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675ED1
+
+loc_675EF5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+CBF↑j
+lea     ebp, [esi+0EC4h]
+test    ebp, ebp
+jz      short loc_675F06
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675F06:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+CED↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675F43
+
+loc_675F1F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D31↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675F1F
+
+loc_675F43:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D0D↑j
+lea     ebp, [esi+0E2Ch]
+test    ebp, ebp
+jz      short loc_675F54
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675F54:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D3B↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675F91
+
+loc_675F6D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D7F↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675F6D
+
+loc_675F91:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D5B↑j
+lea     ebp, [esi+0DD4h]
+test    ebp, ebp
+jz      short loc_675FA2
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675FA2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+D89↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_675FDF
+
+loc_675FBB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+DCD↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_675FBB
+
+loc_675FDF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+DA9↑j
+lea     ebp, [esi+1390h]
+test    ebp, ebp
+jz      short loc_675FF0
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_675FF0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+DD7↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67602D
+
+loc_676009:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E1B↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676009
+
+loc_67602D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+DF7↑j
+lea     ebp, [esi+13ACh]
+test    ebp, ebp
+jz      short loc_67603E
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67603E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E25↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67607B
+
+loc_676057:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E69↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676057
+
+loc_67607B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E45↑j
+lea     ebp, [esi+0E4Ch]
+test    ebp, ebp
+jz      short loc_67608C
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67608C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E73↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6760C9
+
+loc_6760A5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+EB7↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6760A5
+
+loc_6760C9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+E93↑j
+lea     ebp, [esi+0E68h]
+test    ebp, ebp
+jz      short loc_6760DA
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6760DA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+EC1↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676117
+
+loc_6760F3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F05↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6760F3
+
+loc_676117:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+EE1↑j
+lea     ebp, [esi+0E84h]
+test    ebp, ebp
+jz      short loc_676128
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676128:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F0F↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676165
+
+loc_676141:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F53↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+
+loc_676154:                             ; DATA XREF: .data:off_81728C↓o
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676141
+
+loc_676165:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F2F↑j
+lea     ebp, [esi+0EA0h]
+test    ebp, ebp
+jz      short loc_676176
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676176:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F5D↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6761B3
+
+loc_67618F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+FA1↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67618F
+
+loc_6761B3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+F7D↑j
+lea     ebp, [esi+1304h]
+test    ebp, ebp
+jz      short loc_6761C4
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6761C4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+FAB↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676201
+
+loc_6761DD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+FEF↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6761DD
+
+loc_676201:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+FCB↑j
+lea     ebp, [esi+1320h]
+test    ebp, ebp
+jz      short loc_676212
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676212:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+FF9↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67624F
+
+loc_67622B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+103D↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67622B
+
+loc_67624F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1019↑j
+lea     ebp, [esi+133Ch]
+test    ebp, ebp
+jz      short loc_676260
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676260:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1047↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67629D
+
+loc_676279:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+108B↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676279
+
+loc_67629D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1067↑j
+lea     ebp, [esi+1358h]
+test    ebp, ebp
+jz      short loc_6762AE
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6762AE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1095↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6762EB
+
+loc_6762C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+10D9↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6762C7
+
+loc_6762EB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+10B5↑j
+lea     ebp, [esi+1374h]
+test    ebp, ebp
+jz      short loc_6762FC
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6762FC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+10E3↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676339
+
+loc_676315:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1127↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676315
+
+loc_676339:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1103↑j
+lea     ebp, [esi+13C8h]
+test    ebp, ebp
+jz      short loc_67634A
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67634A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1131↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676387
+
+loc_676363:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1175↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676363
+
+loc_676387:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1151↑j
+lea     ebp, [esi+1174h]
+test    ebp, ebp
+jz      short loc_676398
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676398:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+117F↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6763D5
+
+loc_6763B1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+11C3↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6763B1
+
+loc_6763D5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+119F↑j
+lea     ebp, [esi+43Ch]
+test    ebp, ebp
+jz      short loc_6763E6
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6763E6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+11CD↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676423
+
+loc_6763FF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1211↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6763FF
+
+loc_676423:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+11ED↑j
+lea     ebp, [esi+458h]
+test    ebp, ebp
+jz      short loc_676434
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676434:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+121B↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676471
+
+loc_67644D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+125F↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67644D
+
+loc_676471:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+123B↑j
+lea     ebp, [esi+474h]
+test    ebp, ebp
+jz      short loc_676482
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676482:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1269↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6764BF
+
+loc_67649B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+12AD↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67649B
+
+loc_6764BF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1289↑j
+lea     ebp, [esi+58h]
+test    ebp, ebp
+jz      short loc_6764CD
+mov     ecx, ebp
+call    TypeList__VoxelAnimConstructor
+
+loc_6764CD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+12B4↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67650A
+
+loc_6764E6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+12F8↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add2
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6764E6
+
+loc_67650A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+12D4↑j
+lea     ebp, [esi+600h]
+test    ebp, ebp
+jz      short loc_67651B
+mov     ecx, ebp
+call    TypeList__VoxelAnimConstructor
+
+loc_67651B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1302↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676558
+
+loc_676534:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1346↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add2
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676534
+
+loc_676558:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1322↑j
+lea     ebp, [esi+358h]
+test    ebp, ebp
+jz      short loc_676569
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676569:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1350↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6765A6
+
+loc_676582:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1394↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676582
+
+loc_6765A6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1370↑j
+lea     ebp, [esi+374h]
+test    ebp, ebp
+jz      short loc_6765B7
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6765B7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+139E↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6765F4
+
+loc_6765D0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+13E2↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6765D0
+
+loc_6765F4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+13BE↑j
+lea     ebp, [esi+390h]
+test    ebp, ebp
+jz      short loc_676605
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676605:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+13EC↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676642
+
+loc_67661E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1430↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67661E
+
+loc_676642:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+140C↑j
+lea     ebp, [esi+3ACh]
+test    ebp, ebp
+jz      short loc_676653
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_676653:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+143A↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676690
+
+loc_67666C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+147E↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67666C
+
+loc_676690:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+145A↑j
+lea     ebp, [esi+3C8h]
+test    ebp, ebp
+jz      short loc_6766A1
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6766A1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1488↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6766DE
+
+loc_6766BA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+14CC↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6766BA
+
+loc_6766DE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+14A8↑j
+lea     ebp, [esi+3E4h]
+test    ebp, ebp
+jz      short loc_6766EF
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6766EF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+14D6↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67672C
+
+loc_676708:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+151A↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676708
+
+loc_67672C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+14F6↑j
+lea     ebp, [esi+6CCh]
+test    ebp, ebp
+jz      short loc_67673D
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67673D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1524↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67677A
+
+loc_676756:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1568↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676756
+
+loc_67677A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1544↑j
+lea     ebp, [esi+734h]
+test    ebp, ebp
+jz      short loc_67678B
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67678B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1572↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6767C8
+
+loc_6767A4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+15B6↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6767A4
+
+loc_6767C8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1592↑j
+lea     ebp, [esi+7C4h]
+test    ebp, ebp
+jz      short loc_6767D9
+mov     ecx, ebp
+call    TypeList__ConstructSmudge
+
+loc_6767D9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+15C0↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676816
+
+loc_6767F2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1604↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    SmudgeTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6767F2
+
+loc_676816:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+15E0↑j
+lea     ebp, [esi+7E0h]
+test    ebp, ebp
+jz      short loc_676827
+mov     ecx, ebp
+call    TypeList__ConstructSmudge
+
+loc_676827:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+160E↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676864
+
+loc_676840:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1652↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    SmudgeTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676840
+
+loc_676864:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+162E↑j
+lea     ebp, [esi+7FCh]
+test    ebp, ebp
+jz      short loc_676875
+mov     ecx, ebp
+call    TypeList__ConstructSmudge
+
+loc_676875:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+165C↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6768B2
+
+loc_67688E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+16A0↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    SmudgeTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67688E
+
+loc_6768B2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+167C↑j
+lea     ebp, [esi+818h]
+test    ebp, ebp
+jz      short loc_6768C3
+mov     ecx, ebp
+call    TypeList__ConstructSmudge
+
+loc_6768C3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+16AA↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676900
+
+loc_6768DC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+16EE↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    SmudgeTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6768DC
+
+loc_676900:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+16CA↑j
+lea     ebp, [esi+834h]
+test    ebp, ebp
+jz      short loc_676911
+mov     ecx, ebp
+call    TypeList__ConstructSmudge
+
+loc_676911:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+16F8↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67694E
+
+loc_67692A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+173C↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+
+loc_676940:                             ; DATA XREF: .data:off_83A5CC↓o
+call    SmudgeTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67692A
+
+loc_67694E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1718↑j
+lea     ebp, [esi+850h]
+test    ebp, ebp
+jz      short loc_67695F
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_67695F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1746↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67699C
+
+loc_676978:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+178A↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676978
+
+loc_67699C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1766↑j
+lea     ebp, [esi+880h]
+test    ebp, ebp
+jz      short loc_6769AD
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_6769AD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1794↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6769EA
+
+loc_6769C6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+17D8↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6769C6
+
+loc_6769EA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+17B4↑j
+lea     ebp, [esi+8ACh]
+test    ebp, ebp
+jz      short loc_6769FB
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_6769FB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+17E2↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676A38
+
+loc_676A14:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1826↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676A14
+
+loc_676A38:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1802↑j
+lea     ebp, [esi+8C8h]
+test    ebp, ebp
+jz      short loc_676A49
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676A49:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1830↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676A86
+
+loc_676A62:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1874↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676A62
+
+loc_676A86:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1850↑j
+lea     ebp, [esi+8E4h]
+test    ebp, ebp
+jz      short loc_676A97
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676A97:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+187E↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676AD4
+
+loc_676AB0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+18C2↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676AB0
+
+loc_676AD4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+189E↑j
+lea     ebp, [esi+900h]
+test    ebp, ebp
+jz      short loc_676AE5
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676AE5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+18CC↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676B22
+
+loc_676AFE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1910↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676AFE
+
+loc_676B22:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+18EC↑j
+lea     ebp, [esi+91Ch]
+test    ebp, ebp
+jz      short loc_676B33
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676B33:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+191A↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676B70
+
+loc_676B4C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+195E↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676B4C
+
+loc_676B70:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+193A↑j
+lea     ebp, [esi+938h]
+test    ebp, ebp
+jz      short loc_676B81
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676B81:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1968↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676BBE
+
+loc_676B9A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+19AC↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676B9A
+
+loc_676BBE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1988↑j
+lea     ebp, [esi+954h]
+test    ebp, ebp
+jz      short loc_676BCF
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676BCF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+19B6↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676C0C
+
+loc_676BE8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+19FA↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676BE8
+
+loc_676C0C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+19D6↑j
+lea     ebp, [esi+970h]
+test    ebp, ebp
+jz      short loc_676C1D
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676C1D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A04↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676C5A
+
+loc_676C36:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A48↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676C36
+
+loc_676C5A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A24↑j
+lea     ebp, [esi+98Ch]
+test    ebp, ebp
+jz      short loc_676C6B
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676C6B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A52↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676CA8
+
+loc_676C84:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A96↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676C84
+
+loc_676CA8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1A72↑j
+lea     ebp, [esi+9C4h]
+test    ebp, ebp
+jz      short loc_676CB9
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676CB9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1AA0↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676CF6
+
+loc_676CD2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1AE4↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676CD2
+
+loc_676CF6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1AC0↑j
+lea     ebp, [esi+9E0h]
+test    ebp, ebp
+jz      short loc_676D07
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676D07:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1AEE↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676D44
+
+loc_676D20:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B32↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676D20
+
+loc_676D44:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B0E↑j
+lea     ebp, [esi+9FCh]
+test    ebp, ebp
+jz      short loc_676D55
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676D55:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B3C↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676D92
+
+loc_676D6E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B80↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676D6E
+
+loc_676D92:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B5C↑j
+lea     ebp, [esi+0A18h]
+test    ebp, ebp
+jz      short loc_676DA3
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676DA3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1B8A↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676DE0
+
+loc_676DBC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1BCE↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676DBC
+
+loc_676DE0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1BAA↑j
+lea     ebp, [esi+0A34h]
+test    ebp, ebp
+jz      short loc_676DF1
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676DF1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1BD8↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676E2E
+
+loc_676E0A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C1C↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676E0A
+
+loc_676E2E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1BF8↑j
+lea     ebp, [esi+0A50h]
+test    ebp, ebp
+jz      short loc_676E3F
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676E3F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C26↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676E7C
+
+loc_676E58:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C6A↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676E58
+
+loc_676E7C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C46↑j
+lea     ebp, [esi+0A6Ch]
+test    ebp, ebp
+jz      short loc_676E8D
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676E8D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C74↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676ECA
+
+loc_676EA6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1CB8↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676EA6
+
+loc_676ECA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1C94↑j
+lea     ebp, [esi+0A88h]
+test    ebp, ebp
+jz      short loc_676EDB
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676EDB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1CC2↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676F18
+
+loc_676EF4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D06↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676EF4
+
+loc_676F18:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1CE2↑j
+lea     ebp, [esi+0AA4h]
+test    ebp, ebp
+jz      short loc_676F29
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676F29:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D10↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676F66
+
+loc_676F42:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D54↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676F42
+
+loc_676F66:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D30↑j
+lea     ebp, [esi+0AC0h]
+test    ebp, ebp
+jz      short loc_676F77
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676F77:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D5E↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_676FB4
+
+loc_676F90:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1DA2↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676F90
+
+loc_676FB4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1D7E↑j
+lea     ebp, [esi+0ADCh]
+test    ebp, ebp
+jz      short loc_676FC5
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_676FC5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1DAC↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677002
+
+loc_676FDE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1DF0↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_676FDE
+
+loc_677002:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1DCC↑j
+lea     ebp, [esi+0B58h]
+test    ebp, ebp
+jz      short loc_677013
+mov     ecx, ebp
+call    HouseTypeClass__readStartUnit
+
+loc_677013:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1DFA↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677050
+
+loc_67702C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E3E↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    HouseTypeClass__readPowerPlants
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67702C
+
+loc_677050:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E1A↑j
+lea     ebp, [esi+0B74h]
+test    ebp, ebp
+jz      short loc_677061
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_677061:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E48↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67709E
+
+loc_67707A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E8C↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67707A
+
+loc_67709E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E68↑j
+lea     ebp, [esi+0B90h]
+test    ebp, ebp
+jz      short loc_6770AF
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_6770AF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1E96↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6770EC
+
+loc_6770C8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1EDA↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6770C8
+
+loc_6770EC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1EB6↑j
+lea     ebp, [esi+0BC0h]
+test    ebp, ebp
+jz      short loc_6770FD
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_6770FD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1EE4↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67713A
+
+loc_677116:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F28↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677116
+
+loc_67713A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F04↑j
+lea     ebp, [esi+0B20h]
+test    ebp, ebp
+jz      short loc_67714B
+mov     ecx, ebp
+call    UnitTypeList__Constructor
+
+loc_67714B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F32↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677188
+
+loc_677164:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F76↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    VectorClass__PushBack
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677164
+
+loc_677188:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F52↑j
+lea     ebp, [esi+0FF8h]
+test    ebp, ebp
+jz      short loc_677199
+mov     ecx, ebp
+call    RulesClass__readParticles
+
+loc_677199:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1F80↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6771D6
+
+loc_6771B2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1FC4↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    RulesClass__readAI
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6771B2
+
+loc_6771D6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1FA0↑j
+lea     ebp, [esi+0B3Ch]
+test    ebp, ebp
+jz      short loc_6771E7
+mov     ecx, ebp
+call    UnitTypeList__Constructor
+
+loc_6771E7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1FCE↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677224
+
+loc_677200:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2012↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    VectorClass__PushBack
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677200
+
+loc_677224:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+1FEE↑j
+lea     ebp, [esi+0D00h]
+test    ebp, ebp
+jz      short loc_677235
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_677235:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+201C↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677272
+
+loc_67724E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2060↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67724E
+
+loc_677272:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+203C↑j
+lea     ebp, [esi+0D1Ch]
+test    ebp, ebp
+jz      short loc_677283
+mov     ecx, ebp
+call    UnitTypeList__Constructor
+
+loc_677283:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+206A↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6772C0
+
+loc_67729C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+20AE↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    VectorClass__PushBack
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67729C
+
+loc_6772C0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+208A↑j
+lea     ebp, [esi+0D38h]
+test    ebp, ebp
+jz      short loc_6772D1
+mov     ecx, ebp
+call    TypeList__BuildingTypeConstructor
+
+loc_6772D1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+20B8↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67730E
+
+loc_6772EA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+20FC↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt3
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6772EA
+
+loc_67730E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+20D8↑j
+lea     ebp, [esi+120h]
+test    ebp, ebp
+jz      short loc_67731F
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_67731F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2106↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67735C
+
+loc_677338:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+214A↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677338
+
+loc_67735C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2126↑j
+lea     ebp, [esi+104h]
+test    ebp, ebp
+jz      short loc_67736D
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_67736D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2154↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6773AA
+
+loc_677386:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2198↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677386
+
+loc_6773AA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2174↑j
+lea     ebp, [esi+13Ch]
+test    ebp, ebp
+jz      short loc_6773BB
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_6773BB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+21A2↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6773F8
+
+loc_6773D4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+21E6↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6773D4
+
+loc_6773F8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+21C2↑j
+lea     ebp, [esi+158h]
+test    ebp, ebp
+jz      short loc_677409
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_677409:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+21F0↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677446
+
+loc_677422:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2234↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677422
+
+loc_677446:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2210↑j
+lea     ebp, [esi+648h]
+test    ebp, ebp
+jz      short loc_677457
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_677457:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+223E↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677494
+
+loc_677470:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2282↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677470
+
+loc_677494:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+225E↑j
+lea     ebp, [esi+0C04h]
+test    ebp, ebp
+jz      short loc_6774A5
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_6774A5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+228C↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6774E2
+
+loc_6774BE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+22D0↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6774BE
+
+loc_6774E2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+22AC↑j
+lea     ebp, [esi+0C20h]
+test    ebp, ebp
+jz      short loc_6774F3
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6774F3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+22DA↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677530
+
+loc_67750C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+231E↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67750C
+
+loc_677530:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+22FA↑j
+lea     ebp, [esi+0C3Ch]
+test    ebp, ebp
+jz      short loc_677541
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_677541:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2328↑j
+; DATA XREF: .rdata:off_7F970C↓o
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67757E
+
+loc_67755A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+236C↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67755A
+
+loc_67757E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2348↑j
+lea     ebp, [esi+0C58h]
+test    ebp, ebp
+jz      short loc_67758F
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67758F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2376↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6775CC
+
+loc_6775A8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+23BA↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6775A8
+
+loc_6775CC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2396↑j
+lea     ebp, [esi+0C74h]
+test    ebp, ebp
+jz      short loc_6775DD
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_6775DD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+23C4↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67761A
+
+loc_6775F6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2408↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6775F6
+
+loc_67761A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+23E4↑j
+lea     ebp, [esi+0C90h]
+test    ebp, ebp
+jz      short loc_67762B
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_67762B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2412↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677668
+
+loc_677644:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2456↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677644
+
+loc_677668:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2432↑j
+lea     ebp, [esi+0CACh]
+test    ebp, ebp
+jz      short loc_677679
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_677679:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2460↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6776B6
+
+loc_677692:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+24A4↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677692
+
+loc_6776B6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2480↑j
+lea     ebp, [esi+0CC8h]
+test    ebp, ebp
+jz      short loc_6776C7
+mov     ecx, ebp
+call    TypeList__Construct
+
+loc_6776C7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+24AE↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677704
+
+loc_6776E0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+24F2↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6776E0
+
+loc_677704:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+24CE↑j
+lea     ebp, [esi+0CE4h]
+test    ebp, ebp
+jz      short loc_677715
+mov     ecx, ebp
+call    TypeList__InfantryConstructor
+
+loc_677715:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+24FC↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_677752
+
+loc_67772E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2540↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    InfantryTypeVector__Add
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67772E
+
+loc_677752:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+251C↑j
+lea     ebp, [esi+2A0h]
+test    ebp, ebp
+jz      short loc_677763
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_677763:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+254A↑j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+arg_0]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6777A0
+
+loc_67777C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+258E↓j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+var_4]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+lea     edx, [esp+18h+var_4]
+mov     ecx, ebp
+push    edx
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67777C
+
+loc_6777A0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+256A↑j
+lea     ebp, [esi+2BCh]
+test    ebp, ebp
+jz      short loc_6777B1
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_6777B1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2598↑j
+mov     eax, [edi]
+push    0
+lea     ecx, [esp+1Ch+arg_0]
+push    4
+push    ecx
+push    edi
+call    dword ptr [eax+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_6777EE
+
+loc_6777CA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+25DC↓j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+var_4]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+lea     ecx, [esp+18h+var_4]
+push    ecx
+mov     ecx, ebp
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_6777CA
+
+loc_6777EE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+25B8↑j
+lea     ebp, [esi+2D8h]
+test    ebp, ebp
+jz      short loc_6777FF
+mov     ecx, ebp
+call    AnimTypeList__Constructor
+
+loc_6777FF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+25E6↑j
+mov     edx, [edi]
+push    0
+lea     eax, [esp+1Ch+arg_0]
+push    4
+push    eax
+push    edi
+call    dword ptr [edx+0Ch]
+mov     eax, [esp+18h+arg_0]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67783C
+
+loc_677818:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+262A↓j
+mov     ecx, [edi]
+push    0
+lea     edx, [esp+1Ch+var_4]
+push    4
+push    edx
+push    edi
+call    dword ptr [ecx+0Ch]
+lea     eax, [esp+18h+var_4]
+mov     ecx, ebp
+push    eax
+call    DynamicVector__Add_Alt4
+mov     eax, [esp+18h+arg_0]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_677818
+
+loc_67783C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2606↑j
+lea     ebx, [esi+1874h]
+mov     ebp, 10h
+
+loc_677847:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2643↓j
+push    edi
+mov     ecx, ebx
+call    RulesClass__readCombatDamage
+add     ebx, 3
+dec     ebp
+jnz     short loc_677847
+lea     ecx, [esi+0F8Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0F98h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0F9Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0F84h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0F88h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+10h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+14h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+5A4h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0FA0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0FA8h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0FACh]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0FB0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0FB4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0FB8h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0FBCh]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0FC0h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0FC4h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+4E0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+514h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+548h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+498h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0FC8h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0FDCh]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0FF0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+1018h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+101Ch]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+1020h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+1024h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+1028h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+102Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+1030h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+1034h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+1038h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0FF4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+2F4h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+2FCh]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+300h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+31Ch]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+320h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+324h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0BACh]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0BB0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0BB4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0BB8h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0BBCh]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0BDCh]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0BE0h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+147Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+1148h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0BE4h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0D58h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0D5Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0D60h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0F6Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0F70h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0F74h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0F78h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0F7Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0F80h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+86Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+870h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+874h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+878h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+87Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+89Ch]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+8A0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+8A4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+8A8h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+400h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0F90h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0F94h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0FA4h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+61Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+620h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+354h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+9Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+298h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+334h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+328h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+32Ch]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+330h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+29Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+338h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+33Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+340h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+344h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+348h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+34Ch]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+350h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+294h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+17F4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+94h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+1870h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0A0h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+98h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0A4h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0A8h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0ACh]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0B0h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0B4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0B8h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+0E8h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+54h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+74h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+4Ch]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+17B4h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+2F8h]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+1834h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     ecx, [esi+0F8h]
+push    ecx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     edx, [esi+0FCh]
+push    edx
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+lea     eax, [esi+100h]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+xor     dl, dl
+mov     ecx, offset aBombcursShp ; "BOMBCURS.SHP"
+call    SearchMIXFile
+xor     dl, dl
+mov     ecx, offset aChronoskShp ; "CHRONOSK.SHP"
+mov     [esi+0FE0h], eax
+call    SearchMIXFile
+mov     [esi+0FE4h], eax
+mov     eax, [esi+68h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_677FEB
+
+loc_677FD2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2DD9↓j
+mov     ecx, [esi+5Ch]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+68h]
+inc     edi
+cmp     edi, eax
+jl      short loc_677FD2
+
+loc_677FEB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2DC0↑j
+mov     eax, [esi+0B84h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678016
+
+loc_677FF7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E04↓j
+mov     edx, [esi+0B78h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0B84h]
+inc     edi
+cmp     edi, eax
+jl      short loc_677FF7
+
+loc_678016:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2DE5↑j
+mov     eax, [esi+0BA0h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678041
+
+loc_678022:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E2F↓j
+mov     eax, [esi+0B94h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0BA0h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678022
+
+loc_678041:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E10↑j
+mov     eax, [esi+0BD0h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67806C
+
+loc_67804D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E5A↓j
+mov     ecx, [esi+0BC4h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0BD0h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67804D
+
+loc_67806C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E3B↑j
+mov     eax, [esi+7D4h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678097
+
+loc_678078:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E85↓j
+mov     edx, [esi+7C8h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+7D4h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678078
+
+loc_678097:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E66↑j
+mov     eax, [esi+7F0h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6780C2
+
+loc_6780A3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2EB0↓j
+mov     eax, [esi+7E4h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+7F0h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6780A3
+
+loc_6780C2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2E91↑j
+mov     eax, [esi+80Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6780ED
+
+loc_6780CE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2EDB↓j
+mov     ecx, [esi+800h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+80Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_6780CE
+
+loc_6780ED:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2EBC↑j
+mov     eax, [esi+828h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678118
+
+loc_6780F9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F06↓j
+mov     edx, [esi+81Ch]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+828h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6780F9
+
+loc_678118:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2EE7↑j
+mov     eax, [esi+844h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678143
+
+loc_678124:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F31↓j
+mov     eax, [esi+838h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+844h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678124
+
+loc_678143:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F12↑j
+mov     eax, [esi+0B30h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67816E
+
+loc_67814F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F5C↓j
+mov     ecx, [esi+0B24h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0B30h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67814F
+
+loc_67816E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F3D↑j
+mov     eax, [esi+1008h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678199
+
+loc_67817A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F87↓j
+mov     edx, [esi+0FFCh]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+1008h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67817A
+
+loc_678199:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F68↑j
+mov     eax, [esi+0B4Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6781C4
+
+loc_6781A5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2FB2↓j
+mov     eax, [esi+0B40h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0B4Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_6781A5
+
+loc_6781C4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2F93↑j
+mov     eax, [esi+0D10h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6781EF
+
+loc_6781D0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2FDD↓j
+mov     ecx, [esi+0D04h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0D10h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6781D0
+
+loc_6781EF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2FBE↑j
+mov     eax, [esi+0D2Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67821A
+
+loc_6781FB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3008↓j
+mov     edx, [esi+0D20h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0D2Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_6781FB
+
+loc_67821A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+2FE9↑j
+mov     eax, [esi+0D48h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678245
+
+loc_678226:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3033↓j
+mov     eax, [esi+0D3Ch]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0D48h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678226
+
+loc_678245:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3014↑j
+mov     eax, [esi+860h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678270
+
+loc_678251:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+305E↓j
+mov     ecx, [esi+854h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+860h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678251
+
+loc_678270:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+303F↑j
+mov     eax, [esi+890h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67829B
+
+loc_67827C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3089↓j
+mov     edx, [esi+884h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+890h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67827C
+
+loc_67829B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+306A↑j
+mov     eax, [esi+8BCh]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6782C6
+
+loc_6782A7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+30B4↓j
+mov     eax, [esi+8B0h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+8BCh]
+inc     edi
+cmp     edi, eax
+jl      short loc_6782A7
+
+loc_6782C6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3095↑j
+mov     eax, [esi+8D8h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6782F1
+
+loc_6782D2:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+30DF↓j
+mov     ecx, [esi+8CCh]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+8D8h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6782D2
+
+loc_6782F1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+30C0↑j
+mov     eax, [esi+8F4h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67831C
+
+loc_6782FD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+310A↓j
+mov     edx, [esi+8E8h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+8F4h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6782FD
+
+loc_67831C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+30EB↑j
+mov     eax, [esi+910h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678347
+
+loc_678328:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3135↓j
+mov     eax, [esi+904h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+910h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678328
+
+loc_678347:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3116↑j
+mov     eax, [esi+92Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678372
+
+loc_678353:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3160↓j
+mov     ecx, [esi+920h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+92Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_678353
+
+loc_678372:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3141↑j
+mov     eax, [esi+948h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67839D
+
+loc_67837E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+318B↓j
+mov     edx, [esi+93Ch]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+948h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67837E
+
+loc_67839D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+316C↑j
+mov     eax, [esi+964h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6783C8
+
+loc_6783A9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+31B6↓j
+mov     eax, [esi+958h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+964h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6783A9
+
+loc_6783C8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3197↑j
+mov     eax, [esi+980h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6783F3
+
+loc_6783D4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+31E1↓j
+mov     ecx, [esi+974h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+980h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6783D4
+
+loc_6783F3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+31C2↑j
+mov     eax, [esi+99Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67841E
+
+loc_6783FF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+320C↓j
+mov     edx, [esi+990h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+99Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_6783FF
+
+loc_67841E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+31ED↑j
+mov     eax, [esi+9D4h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678449
+
+loc_67842A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3237↓j
+mov     eax, [esi+9C8h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+9D4h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67842A
+
+loc_678449:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3218↑j
+mov     eax, [esi+9F0h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678474
+
+loc_678455:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3262↓j
+mov     ecx, [esi+9E4h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+9F0h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678455
+
+loc_678474:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3243↑j
+mov     eax, [esi+0A0Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67849F
+
+loc_678480:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+328D↓j
+mov     edx, [esi+0A00h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A0Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_678480
+
+loc_67849F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+326E↑j
+mov     eax, [esi+0A28h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6784CA
+
+loc_6784AB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+32B8↓j
+mov     eax, [esi+0A1Ch]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A28h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6784AB
+
+loc_6784CA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3299↑j
+mov     eax, [esi+0A44h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6784F5
+
+loc_6784D6:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+32E3↓j
+mov     ecx, [esi+0A38h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A44h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6784D6
+
+loc_6784F5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+32C4↑j
+mov     eax, [esi+0A60h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678520
+
+loc_678501:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+330E↓j
+mov     edx, [esi+0A54h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A60h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678501
+
+loc_678520:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+32EF↑j
+mov     eax, [esi+0A7Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67854B
+
+loc_67852C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3339↓j
+mov     eax, [esi+0A70h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A7Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_67852C
+
+loc_67854B:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+331A↑j
+mov     eax, [esi+0A98h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678576
+
+loc_678557:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3364↓j
+mov     ecx, [esi+0A8Ch]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0A98h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678557
+
+loc_678576:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3345↑j
+mov     eax, [esi+0AB4h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6785A1
+
+loc_678582:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+338F↓j
+mov     edx, [esi+0AA8h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0AB4h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678582
+
+loc_6785A1:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3370↑j
+mov     eax, [esi+0AD0h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6785CC
+
+loc_6785AD:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+33BA↓j
+mov     eax, [esi+0AC4h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0AD0h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6785AD
+
+loc_6785CC:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+339B↑j
+mov     eax, [esi+0AECh]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6785F7
+
+loc_6785D8:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+33E5↓j
+mov     ecx, [esi+0AE0h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0AECh]
+inc     edi
+cmp     edi, eax
+jl      short loc_6785D8
+
+loc_6785F7:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+33C6↑j
+mov     eax, [esi+0B68h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678622
+
+loc_678603:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3410↓j
+mov     edx, [esi+0B5Ch]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0B68h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678603
+
+loc_678622:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+33F1↑j
+mov     eax, [esi+610h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67864D
+
+loc_67862E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+343B↓j
+mov     eax, [esi+604h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+610h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67862E
+
+loc_67864D:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+341C↑j
+mov     eax, [esi+130h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678678
+
+loc_678659:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3466↓j
+mov     ecx, [esi+124h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+130h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678659
+
+loc_678678:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3447↑j
+mov     eax, [esi+114h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6786A3
+
+loc_678684:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3491↓j
+mov     edx, [esi+108h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+114h]
+inc     edi
+cmp     edi, eax
+jl      short loc_678684
+
+loc_6786A3:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3472↑j
+mov     eax, [esi+14Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6786CE
+
+loc_6786AF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+34BC↓j
+mov     eax, [esi+140h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+14Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_6786AF
+
+loc_6786CE:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+349D↑j
+mov     eax, [esi+168h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6786F9
+
+loc_6786DA:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+34E7↓j
+mov     ecx, [esi+15Ch]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+168h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6786DA
+
+loc_6786F9:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+34C8↑j
+mov     ebx, [esi+2CCh]
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_67871E
+
+loc_678705:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+350C↓j
+mov     edx, [esi+2C0h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+inc     edi
+cmp     edi, ebx
+jl      short loc_678705
+
+loc_67871E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+34F3↑j
+mov     ebx, [esi+2E8h]
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_678743
+
+loc_67872A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3531↓j
+mov     eax, [esi+2DCh]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+inc     edi
+cmp     edi, ebx
+jl      short loc_67872A
+
+loc_678743:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3518↑j
+mov     eax, [esi+0C14h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67876E
+
+loc_67874F:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+355C↓j
+mov     ecx, [esi+0C08h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0C14h]
+inc     edi
+cmp     edi, eax
+jl      short loc_67874F
+
+loc_67876E:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+353D↑j
+mov     eax, [esi+0C4Ch]
+xor     edi, edi
+test    eax, eax
+jle     short loc_678799
+
+loc_67877A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3587↓j
+mov     edx, [esi+0C40h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0C4Ch]
+inc     edi
+cmp     edi, eax
+jl      short loc_67877A
+
+loc_678799:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3568↑j
+mov     eax, [esi+0C84h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6787C4
+
+loc_6787A5:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+35B2↓j
+mov     eax, [esi+0C78h]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0C84h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6787A5
+
+loc_6787C4:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3593↑j
+mov     eax, [esi+0CBCh]
+xor     edi, edi
+test    eax, eax
+jle     short loc_6787EF
+
+loc_6787D0:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+35DD↓j
+mov     ecx, [esi+0CB0h]
+lea     eax, [ecx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0CBCh]
+inc     edi
+cmp     edi, eax
+jl      short loc_6787D0
+
+loc_6787EF:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+35BE↑j
+mov     eax, [esi+0CF4h]
+xor     edi, edi
+test    eax, eax
+jle     short loc_67881A
+
+loc_6787FB:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3608↓j
+mov     edx, [esi+0CE8h]
+lea     eax, [edx+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+mov     eax, [esi+0CF4h]
+inc     edi
+cmp     edi, eax
+jl      short loc_6787FB
+
+loc_67881A:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+35E9↑j
+mov     ebx, [esi+2B0h]
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_678841
+add     esi, 2A4h
+
+loc_67882C:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+362F↓j
+mov     eax, [esi]
+lea     eax, [eax+edi*4]
+push    eax
+push    (offset dword_A8ED54+7D3BCh)
+call    ObjectPtr__RegisterForTracking
+inc     edi
+cmp     edi, ebx
+jl      short loc_67882C
+
+loc_678841:                             ; CODE XREF: RulesClass__SaveLoad_Prefix_0+3614↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+*/
+} }
 // 0x6CE220
-namespace gamemd { void* SuperClass::ProcessEvent(int a1) { return nullptr; } }
+namespace gamemd { void* SuperClass::ProcessEvent(int a1) {
+// [IDA decompile]
+void *__thiscall SuperClass::_vt08(void *Block, char a2)
+{
+  SuperClass::CleanupMembers((int)Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    SuperClass__CleanupMembers
+test    [esp+4+arg_0], 1
+jz      short loc_6CE238
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_6CE238:                             ; CODE XREF: SuperClass__ProcessEvent+D↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x6CE270
-namespace gamemd { int SuperClass::SetFieldX() { return 0; } }
+namespace gamemd { int SuperClass::SetFieldX() {
+// [IDA decompile]
+int __thiscall sub_6CE270(int *this)
+{
+  int result; // eax
+
+  result = *this;
+  if ( *this )
+    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 4))(result);
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx]      ; TODO: classify (grp=blit, sz=0xd)
+test    eax, eax
+jz      short locret_6CE27C
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+4]
+
+locret_6CE27C:                          ; CODE XREF: SuperClass__SetFieldX+4↑j
+retn
+*/
+} }
 // 0x6CE280
-namespace gamemd { void SuperClass::AdvanceCountdown() { } }
+namespace gamemd { void SuperClass::AdvanceCountdown() {
+// [IDA decompile]
+void __thiscall sub_6CE280(int *this)
+{
+  int v1; // esi
+  int v2; // eax
+  char *v3; // edx
+
+  v1 = *this;
+  if ( *this != -1 )
+  {
+    v2 = *(this + 2);
+    v3 = (char *)MEMORY[0xA8ED84] - v1;
+    if ( (int)MEMORY[0xA8ED84] - v1 >= v2 )
+    {
+      *(this + 2) = 0;
+      *this = -1;
+    }
+    else
+    {
+      *this = -1;
+      *(this + 2) = v2 - (_DWORD)v3;
+    }
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, [ecx]
+cmp     esi, 0FFFFFFFFh
+jz      short loc_6CE2B4
+mov     eax, [ecx+8]
+cmp     esi, 0FFFFFFFFh
+jz      short loc_6CE2AB
+mov     edx, dword_A8ED54+30h
+sub     edx, esi
+cmp     edx, eax
+jge     short loc_6CE2A9
+sub     eax, edx
+mov     dword ptr [ecx], 0FFFFFFFFh
+mov     [ecx+8], eax
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_6CE2A9:                             ; CODE XREF: SuperClass__AdvanceCountdown+1A↑j
+xor     eax, eax
+
+loc_6CE2AB:                             ; CODE XREF: SuperClass__AdvanceCountdown+E↑j
+mov     [ecx+8], eax
+mov     dword ptr [ecx], 0FFFFFFFFh
+
+loc_6CE2B4:                             ; CODE XREF: SuperClass__AdvanceCountdown+6↑j
+pop     esi
+retn
+*/
+} }
 // 0x6CE2C0
-namespace gamemd { void* SuperClass::SetCurrentFrame() { return nullptr; } }
+namespace gamemd { void* SuperClass::SetCurrentFrame() {
+// [IDA decompile]
+#72 *__thiscall sub_6CE2C0(_DWORD *this)
+{
+  #72 *result; // eax
+
+  if ( *this == -1 )
+  {
+    result = MEMORY[0xA8ED84];
+    *this = MEMORY[0xA8ED84];
+  }
+  return result;
+}
+
+/* ASM:
+cmp     dword ptr [ecx], 0FFFFFFFFh ; TODO: classify (grp=blit, sz=0xd)
+jnz     short locret_6CE2CC
+mov     eax, dword_A8ED54+30h
+mov     [ecx], eax
+
+locret_6CE2CC:                          ; CODE XREF: SuperClass__SetCurrentFrame+3↑j
+retn
+*/
+} }
 // 0x6CE320
-namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) { return 0; } }
+namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
+// [IDA decompile]
+char __thiscall sub_6CE320(_DWORD *this, int a2)
+{
+  int v2; // edx
+  int v3; // eax
+  int v4; // edx
+
+  v2 = *(this + 4);
+  v3 = a2;
+  if ( a2 >= v2 )
+    return 0;
+  v4 = v2 - 1;
+  *(this + 4) = v4;
+  if ( a2 < v4 )
+  {
+    do
+    {
+      ++v3;
+      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3);
+    }
+    while ( v3 < *(this + 4) );
+  }
+  return 1;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]
+mov     eax, [esp+arg_0]
+cmp     eax, edx
+jge     short loc_6CE34C
+dec     edx
+cmp     eax, edx
+mov     [ecx+10h], edx
+jge     short loc_6CE347
+push    esi
+
+loc_6CE334:                             ; CODE XREF: SuperClass__RemoveFromPointerArray+24↓j
+mov     edx, [ecx+4]
+inc     eax
+mov     esi, [edx+eax*4]
+mov     [edx+eax*4-4], esi
+mov     edx, [ecx+10h]
+cmp     eax, edx
+jl      short loc_6CE334
+pop     esi
+
+loc_6CE347:                             ; CODE XREF: SuperClass__RemoveFromPointerArray+11↑j
+mov     al, 1
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_6CE34C:                             ; CODE XREF: SuperClass__RemoveFromPointerArray+9↑j
+xor     al, al
+retn    4
+*/
+} }
 // 0x6E1C40
-namespace gamemd { int SuperClass::Get(int a1, int a2, int a3, int a4) { return 0; } }
+namespace gamemd { int SuperClass::Get(int a1, int a2, int a3, int a4) {
+// [IDA decompile]
+char __thiscall sub_6E1C40(int *this, int a2, int a3, int a4, int a5)
+{
+  int Status; // eax
+
+  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(this + 36)), 0, 0, 0);
+  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(this + 36)) + 96) = 0;
+  if ( MEMORY[0xA83D4C] == (#375 *)a2 )
+  {
+    SidebarClass::AddCameo((int *)&MEMORY[0x87F7E8], 31, *(this + 36));
+    Status = HouseClass::GetStatus((void *)0x1F, 0);
+    Sidebar::ActivateTab((int)&MEMORY[0x87F7E8], Status);
+  }
+  return 1;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    0
+push    0
+mov     eax, [esi+90h]
+mov     ecx, [edi+258h]
+push    0
+mov     ecx, [ecx+eax*4]
+call    SuperClass__StartTimer
+mov     edx, [esi+90h]
+mov     eax, [edi+258h]
+mov     ecx, [eax+edx*4]
+mov     byte ptr [ecx+60h], 0
+mov     eax, ds:0A83D4Ch
+cmp     eax, edi
+jnz     short loc_6E1CAE
+mov     edx, [esi+90h]
+mov     ecx, 87F7E8h
+push    edx
+push    1Fh
+call    SidebarClass__AddCameo
+mov     edx, [esi+90h]
+push    0
+mov     ecx, 1Fh
+call    HouseClass__GetStatus
+push    eax
+mov     ecx, 87F7E8h
+call    Sidebar__ActivateTab
+
+loc_6E1CAE:                             ; CODE XREF: SuperClass__Get+3C↑j
+pop     edi
+mov     al, 1
+pop     esi
+retn    10h
+*/
+} }
 // 0x6F9E50
-namespace gamemd { int MovementAI::Begin() { return 0; } }
+namespace gamemd { int MovementAI::Begin() {
+// [IDA decompile]
+char __thiscall MovementAI::Begin(int *this)
+{
+  int v2; // ecx
+  int v3; // eax
+  int v4; // eax
+  int v5; // eax
+  int v6; // edx
+  int v7; // eax
+  int v8; // edi
+  int *v9; // ebx
+  int v10; // edi
+  int v11; // eax
+  int v12; // ecx
+  int v13; // eax
+  int v14; // eax
+  int v15; // eax
+  _DWORD *v16; // eax
+  _DWORD *v17; // edi
+  int v18; // ecx
+  #375 *v19; // edi
+  int v20; // eax
+  bool v21; // bl
+  bool v22; // al
+  bool v23; // al
+  int v24; // ecx
+  int v25; // edi
+  int v26; // eax
+  int v27; // eax
+  int v28; // eax
+  int v29; // edi
+  int v30; // edx
+  int v31; // eax
+  int v32; // edi
+  int v33; // eax
+  int v34; // edx
+  char v35; // al
+  int v36; // eax
+  int v37; // edx
+  int v38; // eax
+  int v39; // eax
+  int v40; // ebx
+  int v41; // edi
+  int v42; // eax
+  int v43; // ecx
+  int v44; // ecx
+  int v45; // ecx
+  int v46; // ecx
+  int v47; // edi
+  bool v48; // bl
+  int v49; // edi
+  int v50; // eax
+  int v51; // ecx
+  int v52; // edi
+  int InfSelfHealStep; // eax
+  int v54; // ecx
+  _DWORD *v55; // eax
+  _DWORD *v56; // eax
+  _DWORD *v57; // eax
+  _DWORD *v58; // eax
+  int v59; // ecx
+  int v60; // edi
+  int v61; // edi
+  _DWORD *v62; // eax
+  int *v63; // edi
+  int v64; // eax
+  int v65; // edx
+  int v66; // eax
+  int v67; // eax
+  int v68; // ecx
+  int v69; // edx
+  int v70; // edx
+  int v71; // ebx
+  int *v72; // edi
+  int *v73; // eax
+  int v74; // ebx
+  int v75; // edx
+  int v76; // eax
+  int v77; // ecx
+  int v78; // ebp
+  int v79; // edi
+  int v80; // eax
+  int v81; // ecx
+  int v82; // eax
+  int v83; // ebp
+  int v84; // eax
+  _DWORD *UpgradeOffset; // edi
+  _DWORD *v86; // eax
+  int v87; // ecx
+  int v88; // edx
+  int v89; // edi
+  int v90; // ebx
+  int v91; // eax
+  int v92; // eax
+  int i; // ecx
+  int v94; // eax
+  _BYTE *v96; // [esp+6Eh] [ebp-7Ch]
+  int v97; // [esp+6Eh] [ebp-7Ch]
+  int v98; // [esp+6Eh] [ebp-7Ch]
+  _DWORD *v99; // [esp+72h] [ebp-78h]
+  char v100; // [esp+84h] [ebp-66h]
+  bool v101; // [esp+85h] [ebp-65h]
+  int v102; // [esp+86h] [ebp-64h]
+  bool v103; // [esp+86h] [ebp-64h]
+  int v104; // [esp+86h] [ebp-64h]
+  int v105; // [esp+8Ah] [ebp-60h] BYREF
+  double v106; // [esp+8Eh] [ebp-5Ch] BYREF
+  int v107; // [esp+96h] [ebp-54h]
+  char v108[4]; // [esp+9Ah] [ebp-50h] BYREF
+  int v109; // [esp+9Eh] [ebp-4Ch]
+  char v110[12]; // [esp+A6h] [ebp-44h] BYREF
+  char v111[4]; // [esp+B2h] [ebp-38h] BYREF
+  char v112[12]; // [esp+B6h] [ebp-34h] BYREF
+  char v113[16]; // [esp+C2h] [ebp-28h] BYREF
+  void **v114; // [esp+D2h] [ebp-18h] BYREF
+  void *Block; // [esp+D6h] [ebp-14h]
+  int v116; // [esp+DAh] [ebp-10h]
+  char v117; // [esp+DEh] [ebp-Ch]
+  char v118; // [esp+DFh] [ebp-Bh]
+  int v119; // [esp+E2h] [ebp-8h]
+  int v120; // [esp+E6h] [ebp-4h]
+
+  if ( *((_BYTE *)this + 1073) )
+    *((_BYTE *)this + 1073) = 0;
+  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3285) )
+  {
+    v106 = *(double *)(this + 39);
+    v107 = *(this + 41);
+    StartAudioController((int)&v106, (int)(this + 297));
+  }
+  UpdateTechnoIdleTimer(this);
+  UpdateTimedStateMachine(this);
+  if ( *(this + 316) != -1 )
+  {
+    if ( !AudioSource::Get((int **)this + 311) )
+    {
+      v2 = *(this + 316);
+      *(this + 317) = v2;
+      PlayVocClass(v2, 0x2000, 1.0, (int)(this + 311));
+LABEL_9:
+      *(this + 316) = -1;
+      goto LABEL_10;
+    }
+    if ( *(this + 317) == *(this + 316) )
+      goto LABEL_9;
+  }
+LABEL_10:
+  if ( *((_BYTE *)this + 664) )
+  {
+    v3 = *(this + 167) - 1;
+    *(this + 167) = v3;
+    if ( v3 <= 0 )
+    {
+      *((_BYTE *)this + 664) = 0;
+      *(this + 167) = 0;
+      (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+      if ( *(_BYTE *)(*(this + 135) + 492) )
+        (*(void (__thiscall **)(int *, int, _DWORD))(*this + 488))(this, 5, 0);
+      else
+        (*(void (__thiscall **)(int *, int, _DWORD))(*this + 488))(this, 15, 0);
+    }
+  }
+  v4 = *(this + 27);
+  if ( *(this + 28) > v4 )
+    *(this + 28) = v4;
+  if ( (dword_A8ED54[12] & 4) != 0 )
+  {
+    v5 = *(this + 28);
+    if ( v5 < *(this + 27) )
+    {
+      if ( v5 + 30 < 0 )
+        *(this + 28) = -30;
+      ++*(this + 28);
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3233) )
+  {
+    if ( *(this + 296) )
+    {
+      if ( *(this + 295) )
+      {
+        AudioController::Stop(this + 290);
+        v106 = *(double *)(this + 39);
+        v6 = *this;
+        v107 = *(this + 41);
+        v7 = (*(int (__thiscall **)(int *))(v6 + 132))(this);
+        StartAudioControllerAt(*(_DWORD *)(v7 + 1376), (int)&v106, (int)(this + 290));
+        *(this + 295) = 0;
+      }
+    }
+    else
+    {
+      Mixer::ReleaseChannel((int **)this + 290);
+      *(this + 295) = 1;
+    }
+    v106 = *(double *)(this + 39);
+    v107 = *(this + 41);
+    StartAudioController((int)&v106, (int)(this + 290));
+  }
+  v8 = *(this + 79);
+  v9 = this + 84;
+  if ( v8 != FootClass::CheckAccelLimit((float *)this + 84) )
+  {
+    if ( v8 != -1 )
+    {
+      if ( FootClass::CheckAccelLimit((float *)this + 84) )
+      {
+        if ( FootClass::CheckAccelLimit((float *)this + 84) == 1
+          && (unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135)) )
+        {
+          v106 = *(double *)(this + 39);
+          v107 = *(this + 41);
+          StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 552), (int)&v106, 0);
+          VoxClass::FindAndPlay(aEvaUnitpromote, -1);
+        }
+      }
+      else
+      {
+        if ( (unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135)) )
+        {
+          v106 = *(double *)(this + 39);
+          v107 = *(this + 41);
+          StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 556), (int)&v106, 0);
+          VoxClass::FindAndPlay(aEvaUnitpromote, -1);
+        }
+        *(this + 60) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3048);
+      }
+    }
+    *(this + 79) = FootClass::CheckAccelLimit((float *)this + 84);
+  }
+  if ( *(this + 116)
+    && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 1517)
+    && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 788)) )
+  {
+    v10 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 792);
+    if ( (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 135) + 36) + 24))(*(this + 135) + 36) < v10 )
+      v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 135) + 36) + 24))(*(this + 135) + 36);
+    HouseClass::ProcessPowerDrain(*(this + 135), v10);
+    HouseClass::AddPower(*(_DWORD **)(*(this + 116) + 540), v10);
+  }
+  v11 = *(this + 115);
+  if ( v11 && Object::IsAlliedWithObjectHouse(*(_DWORD **)(v11 + 540), (int)this) )
+  {
+    v12 = *(this + 117);
+    if ( v12 )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12);
+      *(this + 117) = 0;
+    }
+    v13 = *(this + 115);
+    if ( v13 )
+    {
+      *(_DWORD *)(v13 + 464) = 0;
+      v14 = *(_DWORD *)(*(this + 115) + 540);
+      if ( v14 )
+        *(_BYTE *)(v14 + 22392) = 1;
+      *(this + 115) = 0;
+    }
+  }
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 664))(this) )
+  {
+    (*(void (__thiscall **)(int *))(*this + 1052))(this);
+    LOBYTE(v15) = *((_BYTE *)this + 144);
+    if ( !(_BYTE)v15 )
+      return v15;
+  }
+  v16 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 72))(this, &v106);
+  LOWORD(v102) = *v16 / 256;
+  HIWORD(v102) = v16[1] / 256;
+  v105 = v102;
+  v17 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v105);
+  if ( !*(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 1828)
+    || !MovementAI::IsPathMovementAllowed(v17)
+    || this && (*(int (__thiscall **)(int *))(*this + 44))(this) == 2 )
+  {
+    if ( *(this + 75) )
+    {
+      if ( (*(int (__thiscall **)(int *))(*this + 44))(this) != 6 )
+        (*(void (__thiscall **)(int *))(*this + 132))(this);
+      (*(void (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 75) + 248))(*(this + 75));
+      *(this + 75) = 0;
+    }
+  }
+  else
+  {
+    DrawBuildingRangeIndicator((void ***)this, (int *)v108, (int)v113);
+  }
+  v18 = *(this + 71);
+  LOBYTE(v9) = 0;
+  v19 = 0;
+  if ( v18
+    && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v18 + 132))(v18) + 1508)
+    && (v20 = *(_DWORD *)(*(this + 71) + 704)) != 0 )
+  {
+    v19 = *(#375 **)(v20 + 540);
+    LOBYTE(v9) = 1;
+    if ( (unsigned __int8)House::IsCurrentPlayer(v19) )
+      goto LABEL_93;
+  }
+  else if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135)) )
+  {
+    goto LABEL_93;
+  }
+  if ( *(this + 173) )
+  {
+    v96 = (_BYTE *)*(this + 173);
+    if ( (_BYTE)v9 )
+    {
+      if ( !Object::IsAlliedWithObjectSimpleHouse(v19, v96) )
+        goto LABEL_93;
+    }
+    else if ( !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), v96) )
+    {
+      goto LABEL_93;
+    }
+    v21 = (*(int (__thiscall **)(int *))(*this + 44))(this) == 15;
+    v22 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 173) + 44))(*(this + 173)) == 6;
+    v101 = v22;
+    if ( !v21 || !v22 || (v100 = 1, !BuildingClass::CanRepair((_DWORD *)*(this + 173), (int)this)) )
+      v100 = 0;
+    LOBYTE(v9) = v21 && *(_BYTE *)(*(this + 432) + 3779);
+    v23 = *(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, 1)
+       && *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, 1) + 172) + 344)
+       && v101
+       && *(_BYTE *)(*(_DWORD *)(*(this + 173) + 1312) + 5493);
+    if ( !(_BYTE)v9 && !v23 && !v100 && !*((_BYTE *)this + 664) )
+      (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+  }
+LABEL_93:
+  if ( *(this + 173) )
+  {
+    if ( !(dword_A8ED54[12] % 16) )
+    {
+      v24 = *(this + 43);
+      if ( v24 != 8 && v24 != 17 )
+      {
+        v25 = *this;
+        v26 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, *(this + 173));
+        v27 = (*(int (__thiscall **)(int *, _DWORD, int))(v25 + 956))(this, *(this + 173), v26);
+        if ( v27 == 5 || v27 == 6 )
+          (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+      }
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3234) )
+  {
+    TechnoClass::Update2(this + 246);
+    TechnoClass::Update2(this + 254);
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 2064) )
+  {
+    v28 = (*(int (__thiscall **)(int *))(*this + 132))(this);
+    if ( (unsigned __int8)HouseClass::HasPower(v28) )
+    {
+      if ( !*(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3285) )
+      {
+        v29 = 0;
+        if ( *(this + 190) <= 0 )
+        {
+LABEL_115:
+          *(this + 73) = v29;
+          goto LABEL_116;
+        }
+        v30 = *(this + 187);
+        v31 = *(this + 189);
+        if ( v30 != -1 )
+        {
+          if ( dword_A8ED54[12] - v30 >= v31 )
+          {
+            v32 = 0;
+LABEL_110:
+            v33 = (*(int (__thiscall **)(int *))(*this + 132))(this);
+            v34 = v32 * *(_DWORD *)(v33 + 2056) % *(this + 190);
+            v29 = v32 * *(_DWORD *)(v33 + 2056) / *(this + 190);
+            if ( v29 < *(_DWORD *)((*(int (__fastcall **)(int *, int))(*this + 132))(this, v34) + 2056) )
+            {
+              if ( v29 < 0 )
+                v29 = 0;
+            }
+            else
+            {
+              v29 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 2056) - 1;
+            }
+            goto LABEL_115;
+          }
+          v31 -= dword_A8ED54[12] - v30;
+        }
+        v32 = v31;
+        goto LABEL_110;
+      }
+    }
+  }
+LABEL_116:
+  if ( MovementAI::IsProgressAtEnd((int)(this + 212)) )
+    MovementAI::Check((_BYTE *)this + 848);
+  v35 = *((_BYTE *)this + 1054);
+  if ( v35 )
+    *((_BYTE *)this + 1054) = v35 - 1;
+  if ( *(this + 173) )
+  {
+    if ( *((_BYTE *)this + 1292) )
+    {
+      v36 = *(this + 43);
+      if ( !v36
+        || v36 == 7
+        || v36 == 13
+        || v36 == 14
+        || v36 == 16
+        || v36 == 18
+        || v36 == 19
+        || v36 == 20
+        || v36 == 22
+        || v36 == 23
+        || v36 == 28
+        || v36 == 24 )
+      {
+        (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+      }
+    }
+  }
+  ++*(this + 49);
+  ObjectClass::ProcessCloaking((int)this);
+  v37 = *(this + 96);
+  v38 = *(this + 98);
+  if ( v37 == -1 )
+  {
+LABEL_138:
+    if ( v38 )
+      goto LABEL_148;
+    goto LABEL_139;
+  }
+  if ( dword_A8ED54[12] - v37 < v38 )
+  {
+    v38 -= dword_A8ED54[12] - v37;
+    goto LABEL_138;
+  }
+LABEL_139:
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 1220))(this) )
+  {
+    (*(void (__thiscall **)(int *))(*this + 1228))(this);
+  }
+  else
+  {
+    v39 = *(this + 43);
+    if ( (v39 == 2 || v39 == 10 || v39 == 5) && FootClass::CanEnterCell((int)this, (int)v9) )
+    {
+      v40 = *this;
+      v41 = *(this + 173);
+      *(this + 319) = dword_A8ED54[12];
+      v42 = (*(int (__thiscall **)(int *, double *, int))(v40 + 72))(this, &v106, 1);
+      if ( (*(unsigned __int8 (__thiscall **)(int *, int))(v40 + 924))(this, v42) )
+      {
+        if ( *(this + 173) != v41 )
+          *((_BYTE *)this + 1292) = 1;
+      }
+    }
+  }
+LABEL_148:
+  v43 = *(this + 14);
+  if ( v43 && !*((_BYTE *)this + 129) && BombClass::TimeToExplode(v43) )
+    TechnoClass::ApplyDamageEffects(*(this + 14));
+  v44 = *(this + 182);
+  if ( v44 )
+    (*(void (__thiscall **)(int))(*(_DWORD *)v44 + 92))(v44);
+  v45 = *(this + 175);
+  if ( v45 )
+    CaptureManagerClass::HandleOverload(v45);
+  LOBYTE(v15) = *((_BYTE *)this + 144);
+  if ( !(_BYTE)v15 )
+    return v15;
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 660))(this) )
+  {
+    ++*(this + 27);
+    if ( BuildingClass::GetHealthRatio(this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888)
+      || (*(int (__thiscall **)(int *))(*this + 456))(this) < -10 )
+    {
+      v46 = *(this + 196);
+      if ( v46 )
+        (*(void (__thiscall **)(int))(*(_DWORD *)v46 + 248))(v46);
+    }
+  }
+  v47 = *(this + 27);
+  v48 = v47 >= *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160);
+  if ( !v47 )
+    v48 = 1;
+  if ( (*(int (__thiscall **)(int *))(*this + 44))(this) != 1
+    || *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3479)
+    || v48 )
+  {
+    if ( ((*(int (__thiscall **)(int *))(*this + 44))(this) == 15
+       || (*(int (__thiscall **)(int *))(*this + 44))(this) == 1
+       && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3479))
+      && !v48
+      && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 48))
+      && TechnoClass::processExperienceGain((_DWORD *)*(this + 135)) )
+    {
+      v52 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
+      if ( HouseClass::GetInfSelfHealStep((_DWORD *)*(this + 135)) >= v52 )
+        InfSelfHealStep = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
+      else
+        InfSelfHealStep = HouseClass::GetInfSelfHealStep((_DWORD *)*(this + 135));
+      *(this + 27) += InfSelfHealStep;
+    }
+  }
+  else if ( !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56))
+         && TechnoClass::updateVeterancy((_DWORD *)*(this + 135)) )
+  {
+    v49 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
+    v50 = HouseClass::GetUnitSelfHealStep((_DWORD *)*(this + 135)) >= v49
+        ? *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27)
+        : HouseClass::GetUnitSelfHealStep((_DWORD *)*(this + 135));
+    *(this + 27) += v50;
+    if ( BuildingClass::GetHealthRatio(this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888)
+      || (*(int (__thiscall **)(int *))(*this + 456))(this) < -10 )
+    {
+      v51 = *(this + 196);
+      if ( v51 )
+        (*(void (__thiscall **)(int))(*(_DWORD *)v51 + 248))(v51);
+    }
+  }
+  (*(void (__thiscall **)(int *, _DWORD))(*this + 1040))(this, 0);
+  v54 = *(this + 180);
+  if ( v54 )
+    (*(void (__thiscall **)(int))(*(_DWORD *)v54 + 92))(v54);
+  if ( !*(this + 136) )
+  {
+    v97 = *(_DWORD *)(*(this + 135) + 48);
+    v55 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 72))(this, &v106);
+    v56 = Coord::To_Cell(MEMORY[0x87F7E8], v55);
+    if ( Cell::HasOccupierBit(v56, v97) )
+      (*(void (__thiscall **)(int *))(*this + 1056))(this);
+  }
+  if ( *(this + 136) == 2 )
+  {
+    v98 = *(_DWORD *)(*(this + 135) + 48);
+    v57 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 72))(this, &v106);
+    v58 = Coord::To_Cell(MEMORY[0x87F7E8], v57);
+    if ( !Cell::HasOccupierBit(v58, v98) )
+      (*(void (__thiscall **)(int *))(*this + 1056))(this);
+  }
+  if ( !MEMORY[0x87F7E8][536212]
+    && !(unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135))
+    && *(this + 173)
+    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173))
+    && TechnoClass::GetValue(this, -1) < 0 )
+  {
+    (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+  }
+  if ( *(this + 173)
+    && MEMORY[0x87F7E8][536212]
+    && *(_BYTE *)(*(this + 135) + 492)
+    && TechnoClass::GetValue(this, -1) < 0
+    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173)) )
+  {
+    (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+  }
+  v59 = *(this + 173);
+  if ( v59 )
+  {
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)v59 + 44))(v59) == 2 )
+    {
+      v60 = *(this + 173);
+      if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 1 && TechnoClass::GetValue(this, -1) < 0 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)v60 + 456))(v60) > 0
+          || (v61 = v60 + 156,
+              v106 = *(double *)v61,
+              v107 = *(_DWORD *)(v61 + 8),
+              v62 = Coord::To_Cell(MEMORY[0x87F7E8], &v106),
+              Cell::IsBridge(v62)) )
+        {
+          (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+        }
+      }
+    }
+  }
+  if ( (*(int (__thiscall **)(int *))(*this + 44))(this) != 2 )
+  {
+    if ( *(this + 173) )
+    {
+      if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 656))(this) )
+      {
+        v63 = 0;
+        if ( !this || (*(_BYTE *)(this + 5) & 4) == 0 || (v63 = this, !*(this + 361)) )
+        {
+          if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 708))(this, *(this + 173))
+            || *((_BYTE *)this + 130) )
+          {
+            if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
+              (*(void (__thiscall **)(int *, _DWORD))(*v63 + 1340))(v63, 0);
+            if ( !v63 || !v63[361] )
+            {
+              v64 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, *(this + 173));
+              if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD, int))(*this + 936))(this, *(this + 173), v64) )
+                (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+  if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 6 )
+    goto LABEL_236;
+  v65 = *(this + 64);
+  v66 = *(this + 66);
+  if ( v65 != -1 )
+  {
+    if ( dword_A8ED54[12] - v65 >= v66 )
+      goto LABEL_233;
+    v66 -= dword_A8ED54[12] - v65;
+  }
+  if ( v66 )
+  {
+LABEL_235:
+    *((_BYTE *)this + 252) = 0;
+    goto LABEL_236;
+  }
+LABEL_233:
+  v67 = *(this + 67);
+  if ( !v67 )
+    goto LABEL_235;
+  v68 = *(this + 68);
+  v69 = *(this + 62);
+  *((_BYTE *)this + 252) = 1;
+  *(this + 62) = v68 + v69;
+  v70 = v109;
+  *(this + 64) = dword_A8ED54[12];
+  *(this + 65) = v70;
+  *(this + 66) = v67;
+LABEL_236:
+  v71 = *(this + 60);
+  v72 = this + 60;
+  v103 = (*(_BYTE *)(this + 60) & 2) == 2;
+  if ( TechnoClass::UpdateThunk((_BYTE *)this + 240) )
+    (*(void (__thiscall **)(int *, int))(*this + 292))(this, 2);
+  if ( v71
+    && v71 != *v72
+    && (*(int (__thiscall **)(int *))(*this + 44))(this) == 6
+    && v103 != ((*(_BYTE *)v72 & 2) == 2) )
+  {
+    v73 = (int *)(*(int (__thiscall **)(int *, char *))(*this + 300))(this, v111);
+    Cell::CreateCrater(*v73, v73[1], v73[2], v73[3], 0);
+    sub_452000(this);
+  }
+  v74 = (*(int (__thiscall **)(int *))(*this + 132))(this);
+  if ( *(_BYTE *)(v74 + 3215)
+    && BuildingClass::GetHealthRatio(this) < *(double *)(MEMORY[0x87F7E8][7806] + 5888)
+    && (*(int (__thiscall **)(int *))(*this + 456))(this) > -10 )
+  {
+    v75 = *(_DWORD *)(v74 + 1928);
+    v76 = 0;
+    v77 = 10;
+    v78 = 0;
+    Block = 0;
+    v116 = 0;
+    v117 = 1;
+    v118 = 0;
+    v114 = &DynamicVectorClass<ParticleSystemTypeClass const *>::`vftable';
+    v120 = 10;
+    v119 = 0;
+    if ( v75 > 0 )
+    {
+      while ( 1 )
+      {
+        v79 = *(_DWORD *)(v74 + 1916) + 4 * v78;
+        if ( *(_DWORD *)(*(_DWORD *)v79 + 692) != 3 )
+          goto LABEL_257;
+        if ( v119 < v76 )
+          goto LABEL_255;
+        if ( (v118 || !v76) && v77 > 0 )
+          break;
+LABEL_257:
+        if ( ++v78 >= *(_DWORD *)(v74 + 1928) )
+          goto LABEL_258;
+        v77 = v120;
+      }
+      if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v114[2])(&v114, v77 + v76, 0) )
+      {
+LABEL_255:
+        v80 = v119++;
+        *((_DWORD *)Block + v80) = *(_DWORD *)v79;
+      }
+      v76 = v116;
+      goto LABEL_257;
+    }
+LABEL_258:
+    if ( !*(this + 194) && v119 > 0 )
+    {
+      if ( BuildingClass::GetHealthRatio(this) >= *(double *)(MEMORY[0x87F7E8][7806] + 5896) )
+      {
+        v82 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1380);
+        LODWORD(v106) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1376);
+        HIDWORD(v106) = v82;
+      }
+      else
+      {
+        v81 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1372);
+        LODWORD(v106) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1368);
+        HIDWORD(v106) = v81;
+      }
+      v104 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2147483646);
+      if ( (double)v104 * 4.656612877414201e-10 < v106 )
+      {
+        v83 = __2_YAPAXI_Z(256);
+        if ( v83 )
+        {
+          v84 = (*(int (__thiscall **)(int *, char *))(*this + 132))(this, v110);
+          UpgradeOffset = BuildingTypeClass::GetUpgradeOffset(v84, v99);
+          v86 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*this + 72))(this, v112);
+          v87 = *v86 + *UpgradeOffset;
+          v88 = UpgradeOffset[1];
+          v89 = UpgradeOffset[2];
+          v90 = v86[2];
+          v106 = COERCE_DOUBLE(__PAIR64__(v86[1] + v88, v87));
+          v107 = v90 + v89;
+          v91 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, v119 - 1);
+          v92 = ParticleSystemClass::Constructor(
+                  v83,
+                  *((_DWORD *)Block + v91),
+                  (int *)&v106,
+                  0,
+                  this,
+                  &dword_A8ED54[130895],
+                  0);
+        }
+        else
+        {
+          v92 = 0;
+        }
+        *(this + 194) = v92;
+      }
+    }
+    v114 = &VectorClass<ParticleSystemTypeClass const *>::`vftable';
+    if ( Block && v118 )
+      __3_YAXPAX_Z(Block);
+  }
+  (*(void (__thiscall **)(int *, _DWORD))(*this + 1184))(this, 0);
+  v15 = *(this + 321);
+  if ( v15 > 0 )
+  {
+    *(this + 321) = --v15;
+    if ( !v15 )
+    {
+      v15 = (*(int (__thiscall **)(int *))(*this + 44))(this);
+      if ( v15 == 6 )
+      {
+        if ( this )
+        {
+          LOBYTE(v15) = *(_BYTE *)(*(this + 328) + 5889);
+          if ( !(_BYTE)v15 )
+          {
+            BuildingClass::EnableStuff((int)this);
+            LOBYTE(v15) = *(_BYTE *)(*(this + 328) + 5796);
+            if ( (_BYTE)v15 )
+            {
+              v15 = *(this + 135);
+              *(_BYTE *)(v15 + 22393) = 1;
+            }
+          }
+        }
+      }
+      else if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
+      {
+        if ( *(this + 413) )
+          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 88))(*(this + 413));
+        LOBYTE(v15) = MEMORY[0x87F7E8][539764];
+        for ( i = 0; i < MEMORY[0x87F7E8][539764]; ++i )
+        {
+          v94 = *(_DWORD *)(MEMORY[0x87F7E8][539761] + 4 * i);
+          if ( v94
+            && *(int **)(v94 + 204) == this
+            && *(_DWORD *)(v94 + 200) == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6132) )
+          {
+            *(_BYTE *)(v94 + 405) = 0;
+          }
+          LOBYTE(v15) = MEMORY[0x87F7E8][539764];
+        }
+      }
+    }
+  }
+  return v15;
+}
+
+/* ASM:
+Block           = dword ptr -14h
+var_10          = dword ptr -10h
+var_C           = byte ptr -0Ch
+var_B           = byte ptr -0Bh
+var_8           = dword ptr -8
+var_4           = dword ptr -4
+
+sub     esp, 68h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+xor     ebp, ebp
+push    edi
+mov     al, [esi+431h]
+test    al, al
+jz      short loc_6F9E6C
+mov     byte ptr [esi+431h], 0
+
+loc_6F9E6C:                             ; CODE XREF: MovementAI__Begin+13↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     cl, [eax+0CD5h]
+test    cl, cl
+jz      short loc_6F9EAD
+lea     ecx, [esi+9Ch]
+mov     edx, [esi+9Ch]
+mov     [esp+78h+var_5C], edx
+lea     edx, [esi+4A4h]
+mov     eax, [ecx+4]
+mov     [esp+78h+var_58], eax
+mov     ecx, [ecx+8]
+mov     [esp+78h+var_54], ecx
+lea     ecx, [esp+78h+var_5C]
+call    StartAudioController
+
+loc_6F9EAD:                             ; CODE XREF: MovementAI__Begin+2E↑j
+mov     ecx, esi
+call    UpdateTechnoIdleTimer
+mov     ecx, esi
+call    UpdateTimedStateMachine
+mov     eax, [esi+4F0h]
+or      ebx, 0FFFFFFFFh
+cmp     eax, ebx
+jz      short loc_6F9F0D
+lea     edi, [esi+4DCh]
+mov     ecx, edi
+call    AudioSource__Get
+test    eax, eax
+jnz     short loc_6F9EF7
+mov     ecx, [esi+4F0h]
+push    edi             ; int
+mov     edx, 2000h
+push    3F800000h       ; float
+mov     [esi+4F4h], ecx
+call    PlayVocClass
+jmp     short loc_6F9F07
+; ---------------------------------------------------------------------------
+
+loc_6F9EF7:                             ; CODE XREF: MovementAI__Begin+87↑j
+mov     edx, [esi+4F4h]
+mov     eax, [esi+4F0h]
+cmp     edx, eax
+jnz     short loc_6F9F0D
+
+loc_6F9F07:                             ; CODE XREF: MovementAI__Begin+A5↑j
+mov     [esi+4F0h], ebx
+
+loc_6F9F0D:                             ; CODE XREF: MovementAI__Begin+76↑j
+; MovementAI__Begin+B5↑j
+mov     al, [esi+298h]
+test    al, al
+jz      short loc_6F9F6E
+mov     ecx, [esi+29Ch]
+dec     ecx
+mov     eax, ecx
+mov     [esi+29Ch], ecx
+cmp     eax, ebp
+jg      short loc_6F9F6E
+mov     byte ptr [esi+298h], 0
+mov     [esi+29Ch], ebp
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+mov     ecx, [esi+21Ch]
+mov     al, [ecx+1ECh]
+test    al, al
+jz      short loc_6F9F61
+mov     edx, [esi]
+push    ebp
+push    5
+mov     ecx, esi
+call    dword ptr [edx+1E8h]
+jmp     short loc_6F9F6E
+; ---------------------------------------------------------------------------
+
+loc_6F9F61:                             ; CODE XREF: MovementAI__Begin+100↑j
+mov     eax, [esi]
+push    ebp
+push    0Fh
+mov     ecx, esi
+call    dword ptr [eax+1E8h]
+
+loc_6F9F6E:                             ; CODE XREF: MovementAI__Begin+C5↑j
+; MovementAI__Begin+D8↑j ...
+mov     eax, [esi+6Ch]
+mov     ecx, [esi+70h]
+cmp     ecx, eax
+jle     short loc_6F9F7B
+mov     [esi+70h], eax
+
+loc_6F9F7B:                             ; CODE XREF: MovementAI__Begin+126↑j
+test    byte ptr dword_A8ED54+30h, 4
+jz      short loc_6F9F9F
+mov     eax, [esi+70h]
+mov     ecx, [esi+6Ch]
+cmp     eax, ecx
+jge     short loc_6F9F9F
+add     eax, 1Eh
+test    eax, eax
+jge     short loc_6F9F9C
+mov     dword ptr [esi+70h], 0FFFFFFE2h
+
+loc_6F9F9C:                             ; CODE XREF: MovementAI__Begin+143↑j
+inc     dword ptr [esi+70h]
+
+loc_6F9F9F:                             ; CODE XREF: MovementAI__Begin+132↑j
+; MovementAI__Begin+13C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0CA1h]
+test    cl, cl
+jz      loc_6FA054
+cmp     [esi+4A0h], ebp
+jz      short loc_6FA012
+cmp     [esi+49Ch], ebp
+jz      short loc_6FA027
+lea     edi, [esi+488h]
+mov     ecx, edi
+call    AudioController__Stop
+lea     eax, [esi+9Ch]
+push    edi
+lea     edi, [esp+7Ch+var_5C]
+mov     ecx, [eax]
+mov     [esp+7Ch+var_5C], ecx
+mov     ecx, esi
+mov     edx, [eax+4]
+mov     [esp+7Ch+var_58], edx
+mov     edx, [esi]
+mov     eax, [eax+8]
+mov     [esp+7Ch+var_54], eax
+call    dword ptr [edx+84h]
+mov     ecx, [eax+560h]
+mov     edx, edi
+call    StartAudioControllerAt
+mov     [esi+49Ch], ebp
+jmp     short loc_6FA027
+; ---------------------------------------------------------------------------
+
+loc_6FA012:                             ; CODE XREF: MovementAI__Begin+16D↑j
+lea     ecx, [esi+488h]
+call    Mixer__ReleaseChannel
+mov     dword ptr [esi+49Ch], 1
+
+loc_6FA027:                             ; CODE XREF: MovementAI__Begin+175↑j
+; MovementAI__Begin+1C0↑j
+lea     eax, [esi+9Ch]
+mov     ecx, [esi+9Ch]
+mov     [esp+78h+var_5C], ecx
+lea     ecx, [esp+78h+var_5C]
+mov     edx, [eax+4]
+mov     [esp+78h+var_58], edx
+lea     edx, [esi+488h]
+mov     eax, [eax+8]
+mov     [esp+78h+var_54], eax
+call    StartAudioController
+
+loc_6FA054:                             ; CODE XREF: MovementAI__Begin+161↑j
+mov     edi, [esi+13Ch]
+lea     ebx, [esi+150h]
+mov     ecx, ebx
+call    FootClass__CheckAccelLimit
+cmp     edi, eax
+jz      loc_6FA14B
+cmp     edi, 0FFFFFFFFh
+jz      loc_6FA13E
+mov     ecx, ebx
+call    FootClass__CheckAccelLimit
+test    eax, eax
+jnz     short loc_6FA0E4
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_6FA0D0
+lea     ecx, [esi+9Ch]
+push    ebp
+mov     edx, [ecx]
+mov     [esp+7Ch+var_5C], edx
+lea     edx, [esp+7Ch+var_5C]
+mov     eax, [ecx+4]
+mov     [esp+7Ch+var_58], eax
+mov     eax, ds:8871E0h
+mov     ecx, [ecx+8]
+mov     [esp+7Ch+var_54], ecx
+mov     ecx, [eax+22Ch]
+call    StartAudioControllerAt
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaUnitpromote ; "EVA_UnitPromoted"
+call    VoxClass__FindAndPlay
+
+loc_6FA0D0:                             ; CODE XREF: MovementAI__Begin+240↑j
+mov     ecx, ds:8871E0h
+mov     edx, [ecx+0BE8h]
+mov     [esi+0F0h], edx
+jmp     short loc_6FA13E
+; ---------------------------------------------------------------------------
+
+loc_6FA0E4:                             ; CODE XREF: MovementAI__Begin+231↑j
+mov     ecx, ebx
+call    FootClass__CheckAccelLimit
+cmp     eax, 1
+jnz     short loc_6FA13E
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_6FA13E
+lea     eax, [esi+9Ch]
+push    ebp
+mov     ecx, [eax]
+mov     [esp+7Ch+var_5C], ecx
+mov     ecx, ds:8871E0h
+mov     edx, [eax+4]
+mov     [esp+7Ch+var_58], edx
+lea     edx, [esp+7Ch+var_5C]
+mov     eax, [eax+8]
+mov     [esp+7Ch+var_54], eax
+mov     ecx, [ecx+228h]
+call    StartAudioControllerAt
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaUnitpromote ; "EVA_UnitPromoted"
+call    VoxClass__FindAndPlay
+
+loc_6FA13E:                             ; CODE XREF: MovementAI__Begin+222↑j
+; MovementAI__Begin+292↑j ...
+mov     ecx, ebx
+call    FootClass__CheckAccelLimit
+mov     [esi+13Ch], eax
+
+loc_6FA14B:                             ; CODE XREF: MovementAI__Begin+219↑j
+cmp     [esi+1D0h], ebp
+jz      short loc_6FA1C5
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+5EDh]
+test    cl, cl
+jz      short loc_6FA1C5
+mov     eax, dword_A8ED54+30h
+mov     ecx, ds:8871E0h
+cdq
+idiv    dword ptr [ecx+314h]
+test    edx, edx
+jnz     short loc_6FA1C5
+mov     eax, [esi+21Ch]
+mov     edi, [ecx+318h]
+add     eax, 24h ; '$'
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+18h]
+cmp     eax, edi
+jge     short loc_6FA1A7
+mov     eax, [esi+21Ch]
+add     eax, 24h ; '$'
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+18h]
+mov     edi, eax
+
+loc_6FA1A7:                             ; CODE XREF: MovementAI__Begin+344↑j
+mov     ecx, [esi+21Ch]
+push    edi
+call    HouseClass__ProcessPowerDrain
+mov     eax, [esi+1D0h]
+push    edi
+mov     ecx, [eax+21Ch]
+call    HouseClass__AddPower
+
+loc_6FA1C5:                             ; CODE XREF: MovementAI__Begin+301↑j
+; MovementAI__Begin+315↑j ...
+mov     eax, [esi+1CCh]
+cmp     eax, ebp
+jz      short loc_6FA224
+mov     ecx, [eax+21Ch]
+push    esi
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jz      short loc_6FA224
+mov     ecx, [esi+1D4h]
+cmp     ecx, ebp
+jz      short loc_6FA1F7
+mov     edx, [ecx]
+call    dword ptr [edx+0F8h]
+mov     [esi+1D4h], ebp
+
+loc_6FA1F7:                             ; CODE XREF: MovementAI__Begin+397↑j
+mov     eax, [esi+1CCh]
+cmp     eax, ebp
+jz      short loc_6FA224
+mov     [eax+1D0h], ebp
+mov     eax, [esi+1CCh]
+mov     eax, [eax+21Ch]
+cmp     eax, ebp
+jz      short loc_6FA21E
+mov     byte ptr [eax+5778h], 1
+
+loc_6FA21E:                             ; CODE XREF: MovementAI__Begin+3C5↑j
+mov     [esi+1CCh], ebp
+
+loc_6FA224:                             ; CODE XREF: MovementAI__Begin+37D↑j
+; MovementAI__Begin+38D↑j ...
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+298h]
+test    al, al
+jz      short loc_6FA24A
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+41Ch]
+mov     al, [esi+90h]
+test    al, al
+jz      loc_6FAFFD
+
+loc_6FA24A:                             ; CODE XREF: MovementAI__Begin+3E0↑j
+mov     edx, [esi]
+lea     eax, [esp+78h+var_5C]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+78h+var_64], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+78h+var_60]
+sar     eax, 8
+mov     word ptr [esp+78h+var_64+2], ax
+mov     ecx, [esp+78h+var_64]
+mov     [esp+78h+var_60], ecx
+push    edx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     edi, eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     cl, [eax+724h]
+test    cl, cl
+jz      short loc_6FA2DA
+mov     ecx, edi
+call    MovementAI__IsPathMovementAllowed
+test    al, al
+jz      short loc_6FA2DA
+cmp     esi, ebp
+jz      short loc_6FA2C7
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 2
+jz      short loc_6FA2DA
+
+loc_6FA2C7:                             ; CODE XREF: MovementAI__Begin+469↑j
+lea     eax, [esp+78h+var_28]
+lea     ecx, [esp+78h+var_50]
+push    eax
+push    ecx
+mov     ecx, esi
+call    DrawBuildingRangeIndicator
+jmp     short loc_6FA30C
+; ---------------------------------------------------------------------------
+
+loc_6FA2DA:                             ; CODE XREF: MovementAI__Begin+45A↑j
+; MovementAI__Begin+465↑j ...
+cmp     [esi+12Ch], ebp
+jz      short loc_6FA30C
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 6
+jz      short loc_6FA2F8
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+
+loc_6FA2F8:                             ; CODE XREF: MovementAI__Begin+49C↑j
+mov     ecx, [esi+12Ch]
+mov     edx, [ecx]
+call    dword ptr [edx+0F8h]
+mov     [esi+12Ch], ebp
+
+loc_6FA30C:                             ; CODE XREF: MovementAI__Begin+488↑j
+; MovementAI__Begin+490↑j
+mov     ecx, [esi+11Ch]
+xor     bl, bl
+xor     edi, edi
+cmp     ecx, ebp
+jz      short loc_6FA37A
+mov     eax, [ecx]
+call    dword ptr [eax+84h]
+mov     cl, [eax+5E4h]
+test    cl, cl
+jz      short loc_6FA37A
+mov     ecx, [esi+11Ch]
+mov     eax, [ecx+2C0h]
+cmp     eax, ebp
+jz      short loc_6FA37A
+mov     edi, [eax+21Ch]
+mov     bl, 1
+mov     ecx, edi        ; this
+call    House__IsCurrentPlayer
+test    al, al
+jnz     loc_6FA472
+
+loc_6FA353:                             ; CODE XREF: MovementAI__Begin+537↓j
+mov     eax, [esi+2B4h]
+cmp     eax, ebp
+jz      loc_6FA472
+test    bl, bl
+push    eax
+jnz     short loc_6FA38E
+mov     ecx, [esi+21Ch]
+call    Object__IsAlliedWithObjectSimpleHouse
+test    al, al
+jnz     short loc_6FA39D
+jmp     loc_6FA472
+; ---------------------------------------------------------------------------
+
+loc_6FA37A:                             ; CODE XREF: MovementAI__Begin+4C8↑j
+; MovementAI__Begin+4DA↑j ...
+mov     ecx, [esi+21Ch] ; this
+call    House__IsCurrentPlayer
+test    al, al
+jz      short loc_6FA353
+jmp     loc_6FA472
+; ---------------------------------------------------------------------------
+
+loc_6FA38E:                             ; CODE XREF: MovementAI__Begin+514↑j
+mov     ecx, edi
+call    Object__IsAlliedWithObjectSimpleHouse
+test    al, al
+jz      loc_6FA472
+
+loc_6FA39D:                             ; CODE XREF: MovementAI__Begin+523↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+mov     ecx, [esi+2B4h]
+cmp     eax, 0Fh
+setz    bl
+mov     eax, [ecx]
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+setz    al
+test    bl, bl
+mov     byte ptr [esp+78h+var_68+3], al
+jz      short loc_6FA3DC
+test    al, al
+jz      short loc_6FA3DC
+mov     ecx, [esi+2B4h]
+push    esi
+call    BuildingClass__CanRepair
+test    al, al
+mov     byte ptr [esp+78h+var_68+2], 1
+jnz     short loc_6FA3E1
+
+loc_6FA3DC:                             ; CODE XREF: MovementAI__Begin+571↑j
+; MovementAI__Begin+575↑j
+mov     byte ptr [esp+78h+var_68+2], 0
+
+loc_6FA3E1:                             ; CODE XREF: MovementAI__Begin+58A↑j
+test    bl, bl
+jz      short loc_6FA3F9
+mov     ecx, [esi+6C0h]
+mov     al, [ecx+0EC3h]
+test    al, al
+jz      short loc_6FA3F9
+mov     bl, 1
+jmp     short loc_6FA3FB
+; ---------------------------------------------------------------------------
+
+loc_6FA3F9:                             ; CODE XREF: MovementAI__Begin+593↑j
+; MovementAI__Begin+5A3↑j
+xor     bl, bl
+
+loc_6FA3FB:                             ; CODE XREF: MovementAI__Begin+5A7↑j
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx+3F8h]
+cmp     [eax], ebp
+jz      short loc_6FA44B
+mov     eax, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [eax+3F8h]
+mov     ecx, [eax]
+mov     edx, [ecx+0ACh]
+mov     al, [edx+158h]
+test    al, al
+jz      short loc_6FA44B
+mov     al, byte ptr [esp+78h+var_68+3]
+test    al, al
+jz      short loc_6FA44B
+mov     eax, [esi+2B4h]
+mov     ecx, [eax+520h]
+mov     al, [ecx+1575h]
+test    al, al
+jz      short loc_6FA44B
+mov     al, 1
+jmp     short loc_6FA44D
+; ---------------------------------------------------------------------------
+
+loc_6FA44B:                             ; CODE XREF: MovementAI__Begin+5B9↑j
+; MovementAI__Begin+5D7↑j ...
+xor     al, al
+
+loc_6FA44D:                             ; CODE XREF: MovementAI__Begin+5F9↑j
+test    bl, bl
+jnz     short loc_6FA472
+test    al, al
+jnz     short loc_6FA472
+mov     al, byte ptr [esp+78h+var_68+2]
+test    al, al
+jnz     short loc_6FA472
+mov     al, [esi+298h]
+test    al, al
+jnz     short loc_6FA472
+mov     edx, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+
+loc_6FA472:                             ; CODE XREF: MovementAI__Begin+4FD↑j
+; MovementAI__Begin+50B↑j ...
+mov     eax, [esi+2B4h]
+cmp     eax, ebp
+jz      short loc_6FA4D1
+mov     ecx, dword_A8ED54+30h
+and     ecx, 8000000Fh
+jns     short loc_6FA48F
+dec     ecx
+or      ecx, 0FFFFFFF0h
+inc     ecx
+
+loc_6FA48F:                             ; CODE XREF: MovementAI__Begin+638↑j
+jnz     short loc_6FA4D1
+mov     ecx, [esi+0ACh]
+cmp     ecx, 8
+jz      short loc_6FA4D1
+cmp     ecx, 11h
+jz      short loc_6FA4D1
+mov     edi, [esi]
+push    eax
+mov     ecx, esi
+call    dword ptr [edi+2E4h]
+mov     edx, [esi+2B4h]
+push    eax
+push    edx
+mov     ecx, esi
+call    dword ptr [edi+3BCh]
+cmp     eax, 5
+jz      short loc_6FA4C6
+cmp     eax, 6
+jnz     short loc_6FA4D1
+
+loc_6FA4C6:                             ; CODE XREF: MovementAI__Begin+66F↑j
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+
+loc_6FA4D1:                             ; CODE XREF: MovementAI__Begin+62A↑j
+; MovementAI__Begin:loc_6FA48F↑j ...
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0CA2h]
+test    cl, cl
+jz      short loc_6FA4FB
+lea     ecx, [esi+3D8h]
+call    TechnoClass__Update2
+lea     ecx, [esi+3F8h]
+call    TechnoClass__Update2
+
+loc_6FA4FB:                             ; CODE XREF: MovementAI__Begin+693↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     cl, [eax+810h]
+test    cl, cl
+jz      loc_6FA5BE
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     ecx, eax
+call    HouseClass__HasPower
+test    al, al
+jz      loc_6FA5BE
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     cl, [eax+0CD5h]
+test    cl, cl
+jnz     short loc_6FA5BE
+mov     eax, [esi+2F8h]
+xor     edi, edi
+cmp     eax, ebp
+jle     short loc_6FA5B8
+mov     edx, [esi+2ECh]
+mov     eax, [esi+2F4h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_6FA56B
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_6FA5AE
+sub     eax, ecx
+
+loc_6FA56B:                             ; CODE XREF: MovementAI__Begin+70B↑j
+mov     edi, eax
+
+loc_6FA56D:                             ; CODE XREF: MovementAI__Begin+760↓j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     eax, [eax+808h]
+mov     ecx, esi
+imul    eax, edi
+cdq
+idiv    dword ptr [esi+2F8h]
+mov     edi, eax
+mov     eax, [esi]
+call    dword ptr [eax+84h]
+cmp     edi, [eax+808h]
+jl      short loc_6FA5B2
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     edi, [eax+808h]
+dec     edi
+jmp     short loc_6FA5B8
+; ---------------------------------------------------------------------------
+
+loc_6FA5AE:                             ; CODE XREF: MovementAI__Begin+717↑j
+xor     edi, edi
+jmp     short loc_6FA56D
+; ---------------------------------------------------------------------------
+
+loc_6FA5B2:                             ; CODE XREF: MovementAI__Begin+749↑j
+cmp     edi, ebp
+jge     short loc_6FA5B8
+xor     edi, edi
+
+loc_6FA5B8:                             ; CODE XREF: MovementAI__Begin+6FA↑j
+; MovementAI__Begin+75C↑j ...
+mov     [esi+124h], edi
+
+loc_6FA5BE:                             ; CODE XREF: MovementAI__Begin+6BD↑j
+; MovementAI__Begin+6D6↑j ...
+lea     edi, [esi+350h]
+mov     ecx, edi
+call    MovementAI__IsProgressAtEnd
+test    al, al
+jz      short loc_6FA5D6
+mov     ecx, edi
+call    MovementAI__Check
+
+loc_6FA5D6:                             ; CODE XREF: MovementAI__Begin+77D↑j
+mov     al, [esi+41Eh]
+test    al, al
+jz      short loc_6FA5E8
+dec     al
+mov     [esi+41Eh], al
+
+loc_6FA5E8:                             ; CODE XREF: MovementAI__Begin+78E↑j
+cmp     [esi+2B4h], ebp
+jz      short loc_6FA646
+mov     al, [esi+50Ch]
+test    al, al
+jz      short loc_6FA646
+mov     eax, [esi+0ACh]
+cmp     eax, ebp
+jz      short loc_6FA63B
+cmp     eax, 7
+jz      short loc_6FA63B
+cmp     eax, 0Dh
+jz      short loc_6FA63B
+cmp     eax, 0Eh
+jz      short loc_6FA63B
+cmp     eax, 10h
+jz      short loc_6FA63B
+cmp     eax, 12h
+jz      short loc_6FA63B
+cmp     eax, 13h
+jz      short loc_6FA63B
+cmp     eax, 14h
+jz      short loc_6FA63B
+cmp     eax, 16h
+jz      short loc_6FA63B
+cmp     eax, 17h
+jz      short loc_6FA63B
+cmp     eax, 1Ch
+jz      short loc_6FA63B
+cmp     eax, 18h
+jnz     short loc_6FA646
+
+loc_6FA63B:                             ; CODE XREF: MovementAI__Begin+7B2↑j
+; MovementAI__Begin+7B7↑j ...
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+
+loc_6FA646:                             ; CODE XREF: MovementAI__Begin+79E↑j
+; MovementAI__Begin+7A8↑j ...
+mov     edx, [esi+0C4h]
+mov     ecx, esi
+inc     edx
+mov     [esi+0C4h], edx
+call    ObjectClass__ProcessCloaking
+mov     edx, [esi+180h]
+mov     eax, [esi+188h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_6FA679
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_6FA67D
+sub     eax, ecx
+
+loc_6FA679:                             ; CODE XREF: MovementAI__Begin+819↑j
+cmp     eax, ebp
+jnz     short loc_6FA6F5
+
+loc_6FA67D:                             ; CODE XREF: MovementAI__Begin+825↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4C4h]
+test    al, al
+jz      short loc_6FA697
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+4CCh]
+jmp     short loc_6FA6F5
+; ---------------------------------------------------------------------------
+
+loc_6FA697:                             ; CODE XREF: MovementAI__Begin+839↑j
+mov     eax, [esi+0ACh]
+cmp     eax, 2
+jz      short loc_6FA6AC
+cmp     eax, 0Ah
+jz      short loc_6FA6AC
+cmp     eax, 5
+jnz     short loc_6FA6F5
+
+loc_6FA6AC:                             ; CODE XREF: MovementAI__Begin+850↑j
+; MovementAI__Begin+855↑j
+mov     ecx, esi
+call    FootClass__CanEnterCell
+test    al, al
+jz      short loc_6FA6F5
+mov     ecx, dword_A8ED54+30h
+mov     ebx, [esi]
+mov     edi, [esi+2B4h]
+lea     eax, [esp+78h+var_5C]
+mov     [esi+4FCh], ecx
+push    1
+mov     edx, ebx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+48h]
+push    eax
+mov     ecx, esi
+call    dword ptr [ebx+39Ch]
+test    al, al
+jz      short loc_6FA6F5
+cmp     [esi+2B4h], edi
+jz      short loc_6FA6F5
+mov     byte ptr [esi+50Ch], 1
+
+loc_6FA6F5:                             ; CODE XREF: MovementAI__Begin+82B↑j
+; MovementAI__Begin+845↑j ...
+mov     ecx, [esi+38h]
+cmp     ecx, ebp
+jz      short loc_6FA717
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_6FA717
+call    BombClass__TimeToExplode
+test    al, al
+jz      short loc_6FA717
+mov     ecx, [esi+38h]
+call    TechnoClass__ApplyDamageEffects
+
+loc_6FA717:                             ; CODE XREF: MovementAI__Begin+8AA↑j
+; MovementAI__Begin+8B4↑j ...
+mov     ecx, [esi+2D8h]
+cmp     ecx, ebp
+jz      short loc_6FA726
+mov     edx, [ecx]
+call    dword ptr [edx+5Ch]
+
+loc_6FA726:                             ; CODE XREF: MovementAI__Begin+8CF↑j
+mov     ecx, [esi+2BCh]
+cmp     ecx, ebp
+jz      short loc_6FA735
+call    CaptureManagerClass__HandleOverload
+
+loc_6FA735:                             ; CODE XREF: MovementAI__Begin+8DE↑j
+mov     al, [esi+90h]
+test    al, al
+jz      loc_6FAFFD
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+294h]
+test    al, al
+jz      short loc_6FA793
+mov     eax, [esi+6Ch]
+mov     ecx, esi
+inc     eax
+mov     [esi+6Ch], eax
+call    BuildingClass__GetHealthRatio
+mov     ecx, ds:8871E0h
+fcomp   qword ptr [ecx+1700h]
+fnstsw  ax
+test    ah, 41h
+jz      short loc_6FA781
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+cmp     eax, 0FFFFFFF6h
+jge     short loc_6FA793
+
+loc_6FA781:                             ; CODE XREF: MovementAI__Begin+920↑j
+mov     ecx, [esi+310h]
+cmp     ecx, ebp
+jz      short loc_6FA793
+mov     eax, [ecx]
+call    dword ptr [eax+0F8h]
+
+loc_6FA793:                             ; CODE XREF: MovementAI__Begin+8FF↑j
+; MovementAI__Begin+92F↑j ...
+mov     edx, [esi]
+mov     edi, [esi+6Ch]
+mov     ecx, esi
+xor     bl, bl
+call    dword ptr [edx+84h]
+cmp     edi, [eax+0A0h]
+jl      short loc_6FA7AC
+mov     bl, 1
+
+loc_6FA7AC:                             ; CODE XREF: MovementAI__Begin+958↑j
+cmp     edi, ebp
+jnz     short loc_6FA7B2
+mov     bl, 1
+
+loc_6FA7B2:                             ; CODE XREF: MovementAI__Begin+95E↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 1
+jnz     loc_6FA8A2
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D97h]
+test    cl, cl
+jnz     loc_6FA8A2
+test    bl, bl
+jnz     loc_6FA8A2
+mov     eax, dword_A8ED54+30h
+mov     ecx, ds:8871E0h
+cdq
+idiv    dword ptr [ecx+38h]
+test    edx, edx
+jnz     loc_6FA941
+mov     ecx, [esi+21Ch]
+call    TechnoClass__updateVeterancy
+test    al, al
+jz      loc_6FA941
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     edi, [eax+0A0h]
+mov     edx, [esi+6Ch]
+mov     ecx, [esi+21Ch]
+sub     edi, edx
+call    HouseClass__GetUnitSelfHealStep
+cmp     eax, edi
+jge     short loc_6FA83D
+mov     ecx, [esi+21Ch]
+call    HouseClass__GetUnitSelfHealStep
+jmp     short loc_6FA852
+; ---------------------------------------------------------------------------
+
+loc_6FA83D:                             ; CODE XREF: MovementAI__Begin+9DE↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     eax, [eax+0A0h]
+mov     ecx, [esi+6Ch]
+sub     eax, ecx
+
+loc_6FA852:                             ; CODE XREF: MovementAI__Begin+9EB↑j
+mov     ecx, [esi+6Ch]
+add     ecx, eax
+mov     [esi+6Ch], ecx
+mov     ecx, esi
+call    BuildingClass__GetHealthRatio
+mov     ecx, ds:8871E0h
+fcomp   qword ptr [ecx+1700h]
+fnstsw  ax
+test    ah, 41h
+jz      short loc_6FA887
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+cmp     eax, 0FFFFFFF6h
+jge     loc_6FA941
+
+loc_6FA887:                             ; CODE XREF: MovementAI__Begin+A22↑j
+mov     ecx, [esi+310h]
+cmp     ecx, ebp
+jz      loc_6FA941
+mov     eax, [ecx]
+call    dword ptr [eax+0F8h]
+jmp     loc_6FA941
+; ---------------------------------------------------------------------------
+
+loc_6FA8A2:                             ; CODE XREF: MovementAI__Begin+96C↑j
+; MovementAI__Begin+984↑j ...
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 0Fh
+jz      short loc_6FA8D2
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 1
+jnz     loc_6FA941
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D97h]
+test    cl, cl
+jz      short loc_6FA941
+
+loc_6FA8D2:                             ; CODE XREF: MovementAI__Begin+A5C↑j
+test    bl, bl
+jnz     short loc_6FA941
+mov     eax, dword_A8ED54+30h
+mov     ecx, ds:8871E0h
+cdq
+idiv    dword ptr [ecx+30h]
+test    edx, edx
+jnz     short loc_6FA941
+mov     ecx, [esi+21Ch]
+call    TechnoClass__processExperienceGain
+test    al, al
+jz      short loc_6FA941
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     edi, [eax+0A0h]
+mov     edx, [esi+6Ch]
+mov     ecx, [esi+21Ch]
+sub     edi, edx
+call    HouseClass__GetInfSelfHealStep
+cmp     eax, edi
+jge     short loc_6FA929
+mov     ecx, [esi+21Ch]
+call    HouseClass__GetInfSelfHealStep
+jmp     short loc_6FA93E
+; ---------------------------------------------------------------------------
+
+loc_6FA929:                             ; CODE XREF: MovementAI__Begin+ACA↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     eax, [eax+0A0h]
+mov     ecx, [esi+6Ch]
+sub     eax, ecx
+
+loc_6FA93E:                             ; CODE XREF: MovementAI__Begin+AD7↑j
+add     [esi+6Ch], eax
+
+loc_6FA941:                             ; CODE XREF: MovementAI__Begin+9A3↑j
+; MovementAI__Begin+9B6↑j ...
+mov     edx, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [edx+410h]
+mov     ecx, [esi+2D0h]
+cmp     ecx, ebp
+jz      short loc_6FA95B
+mov     eax, [ecx]
+call    dword ptr [eax+5Ch]
+
+loc_6FA95B:                             ; CODE XREF: MovementAI__Begin+B04↑j
+cmp     [esi+220h], ebp
+jnz     short loc_6FA999
+mov     ecx, [esi+21Ch]
+mov     eax, [esi]
+mov     edx, [ecx+30h]
+lea     ecx, [esp+78h+var_5C]
+push    edx
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+push    eax
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, eax
+call    Cell__HasOccupierBit
+test    al, al
+jz      short loc_6FA999
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+420h]
+
+loc_6FA999:                             ; CODE XREF: MovementAI__Begin+B11↑j
+; MovementAI__Begin+B3D↑j
+cmp     dword ptr [esi+220h], 2
+jnz     short loc_6FA9D8
+mov     eax, [esi+21Ch]
+mov     edx, [esi]
+mov     ecx, [eax+30h]
+lea     eax, [esp+78h+var_5C]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+48h]
+push    eax
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, eax
+call    Cell__HasOccupierBit
+test    al, al
+jnz     short loc_6FA9D8
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+420h]
+
+loc_6FA9D8:                             ; CODE XREF: MovementAI__Begin+B50↑j
+; MovementAI__Begin+B7C↑j
+cmp     ds:0A8B238h, ebp
+jnz     short loc_6FAA21
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jnz     short loc_6FAA21
+mov     eax, [esi+2B4h]
+cmp     eax, ebp
+jz      short loc_6FAA21
+mov     ecx, [esi+21Ch]
+push    eax
+call    Object__IsAlliedWithObjectSimpleHouse
+test    al, al
+jnz     short loc_6FAA21
+push    0FFFFFFFFh
+mov     ecx, esi
+call    TechnoClass__GetValue
+test    eax, eax
+jge     short loc_6FAA21
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+
+loc_6FAA21:                             ; CODE XREF: MovementAI__Begin+B8E↑j
+; MovementAI__Begin+B9D↑j ...
+cmp     [esi+2B4h], ebp
+jz      short loc_6FAA6F
+cmp     ds:0A8B238h, ebp
+jz      short loc_6FAA6F
+mov     ecx, [esi+21Ch]
+mov     al, [ecx+1ECh]
+test    al, al
+jz      short loc_6FAA6F
+push    0FFFFFFFFh
+mov     ecx, esi
+call    TechnoClass__GetValue
+test    eax, eax
+jge     short loc_6FAA6F
+mov     edx, [esi+2B4h]
+mov     ecx, [esi+21Ch]
+push    edx
+call    Object__IsAlliedWithObjectSimpleHouse
+test    al, al
+jnz     short loc_6FAA6F
+mov     eax, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+3C8h]
+
+loc_6FAA6F:                             ; CODE XREF: MovementAI__Begin+BD7↑j
+; MovementAI__Begin+BDF↑j ...
+mov     ecx, [esi+2B4h]
+cmp     ecx, ebp
+jz      short loc_6FAAEF
+mov     edx, [ecx]
+call    dword ptr [edx+2Ch]
+cmp     eax, 2
+jnz     short loc_6FAAEF
+mov     eax, [esi]
+mov     edi, [esi+2B4h]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 1
+jnz     short loc_6FAAEF
+push    0FFFFFFFFh
+mov     ecx, esi
+call    TechnoClass__GetValue
+test    eax, eax
+jge     short loc_6FAAEF
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jg      short loc_6FAAE4
+add     edi, 9Ch
+mov     eax, [edi]
+mov     [esp+78h+var_5C], eax
+lea     eax, [esp+78h+var_5C]
+mov     ecx, [edi+4]
+push    eax
+mov     [esp+7Ch+var_58], ecx
+mov     ecx, 87F7E8h
+mov     edx, [edi+8]
+mov     [esp+7Ch+var_54], edx
+call    Coord__To_Cell
+mov     ecx, eax
+call    Cell__IsBridge
+test    eax, eax
+jz      short loc_6FAAEF
+
+loc_6FAAE4:                             ; CODE XREF: MovementAI__Begin+C5E↑j
+mov     edx, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+
+loc_6FAAEF:                             ; CODE XREF: MovementAI__Begin+C27↑j
+; MovementAI__Begin+C31↑j ...
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 2
+jz      loc_6FABB8
+cmp     [esi+2B4h], ebp
+jz      loc_6FABB8
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+290h]
+test    al, al
+jnz     loc_6FABB8
+xor     edi, edi
+cmp     esi, ebp
+jz      short loc_6FAB3D
+mov     al, [esi+14h]
+shr     al, 2
+and     al, 1
+mov     byte ptr [esp+78h+var_68+3], al
+jz      short loc_6FAB3D
+mov     eax, [esi+5A4h]
+mov     edi, esi
+cmp     eax, ebp
+jnz     short loc_6FABB8
+
+loc_6FAB3D:                             ; CODE XREF: MovementAI__Begin+CD1↑j
+; MovementAI__Begin+CDF↑j
+mov     eax, [esi+2B4h]
+mov     edx, [esi]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+2C4h]
+test    al, al
+jz      short loc_6FAB5C
+mov     al, [esi+82h]
+test    al, al
+jz      short loc_6FABB8
+
+loc_6FAB5C:                             ; CODE XREF: MovementAI__Begin+D00↑j
+cmp     esi, ebp
+jz      short loc_6FAB7A
+mov     cl, [esi+14h]
+shr     cl, 2
+and     cl, 1
+mov     byte ptr [esp+78h+var_68+3], cl
+jz      short loc_6FAB7A
+mov     edx, [edi]
+push    ebp
+mov     ecx, edi
+call    dword ptr [edx+53Ch]
+
+loc_6FAB7A:                             ; CODE XREF: MovementAI__Begin+D0E↑j
+; MovementAI__Begin+D1D↑j
+cmp     edi, ebp
+jz      short loc_6FAB86
+cmp     [edi+5A4h], ebp
+jnz     short loc_6FABB8
+
+loc_6FAB86:                             ; CODE XREF: MovementAI__Begin+D2C↑j
+mov     ecx, [esi+2B4h]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+2E4h]
+mov     edx, [esi]
+push    eax
+mov     eax, [esi+2B4h]
+mov     ecx, esi
+push    eax
+call    dword ptr [edx+3A8h]
+test    al, al
+jnz     short loc_6FABB8
+mov     edx, [esi]
+push    ebp
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+
+loc_6FABB8:                             ; CODE XREF: MovementAI__Begin+CA9↑j
+; MovementAI__Begin+CB5↑j ...
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jz      short loc_6FAC31
+mov     edx, [esi+100h]
+mov     eax, [esi+108h]
+cmp     edx, 0FFFFFFFFh
+jz      short loc_6FABE3
+mov     ecx, dword_A8ED54+30h
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_6FABE7
+sub     eax, ecx
+
+loc_6FABE3:                             ; CODE XREF: MovementAI__Begin+D83↑j
+cmp     eax, ebp
+jnz     short loc_6FAC2A
+
+loc_6FABE7:                             ; CODE XREF: MovementAI__Begin+D8F↑j
+mov     eax, [esi+10Ch]
+cmp     eax, ebp
+jz      short loc_6FAC2A
+mov     ecx, [esi+110h]
+mov     edx, [esi+0F8h]
+add     edx, ecx
+mov     byte ptr [esi+0FCh], 1
+mov     [esi+0F8h], edx
+mov     ecx, dword_A8ED54+30h
+mov     edx, [esp+78h+var_4C]
+mov     [esi+100h], ecx
+mov     [esi+104h], edx
+mov     [esi+108h], eax
+jmp     short loc_6FAC31
+; ---------------------------------------------------------------------------
+
+loc_6FAC2A:                             ; CODE XREF: MovementAI__Begin+D95↑j
+; MovementAI__Begin+D9F↑j
+mov     byte ptr [esi+0FCh], 0
+
+loc_6FAC31:                             ; CODE XREF: MovementAI__Begin+D72↑j
+; MovementAI__Begin+DD8↑j
+mov     ebx, [esi+0F0h]
+lea     edi, [esi+0F0h]
+mov     eax, ebx
+and     eax, 2
+cmp     al, 2
+setz    cl
+mov     byte ptr [esp+78h+var_64], cl
+mov     ecx, edi
+call    TechnoClass__UpdateThunk
+test    al, al
+jz      short loc_6FAC62
+mov     edx, [esi]
+push    2
+mov     ecx, esi
+call    dword ptr [edx+124h]
+
+loc_6FAC62:                             ; CODE XREF: MovementAI__Begin+E04↑j
+cmp     ebx, ebp
+jz      short loc_6FACCD
+cmp     ebx, [edi]
+jz      short loc_6FACCD
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jnz     short loc_6FACCD
+mov     ecx, [edi]
+mov     eax, [esp+78h+var_64]
+and     ecx, 2
+xor     edx, edx
+cmp     cl, 2
+setz    dl
+and     eax, 0FFh
+cmp     eax, edx
+jz      short loc_6FACCD
+mov     edx, [esi]
+lea     eax, [esp+78h+var_38]
+push    ebp
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+12Ch]
+mov     edx, [eax]
+sub     esp, 10h
+mov     ecx, esp
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     edx, [eax+8]
+mov     eax, [eax+0Ch]
+mov     [ecx+8], edx
+mov     [ecx+0Ch], eax
+mov     ecx, ds:887324h
+call    Cell__CreateCrater
+mov     ecx, esi
+call    sub_452000
+
+loc_6FACCD:                             ; CODE XREF: MovementAI__Begin+E14↑j
+; MovementAI__Begin+E18↑j ...
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     ebx, eax
+mov     al, [ebx+0C8Fh]
+test    al, al
+jz      loc_6FAF01
+mov     ecx, esi
+call    BuildingClass__GetHealthRatio
+mov     eax, ds:8871E0h
+fcomp   qword ptr [eax+1700h]
+fnstsw  ax
+test    ah, 1
+jz      loc_6FAF01
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1C8h]
+cmp     eax, 0FFFFFFF6h
+jle     loc_6FAF01
+mov     edx, [ebx+788h]
+xor     eax, eax
+mov     ecx, 0Ah
+xor     ebp, ebp
+cmp     edx, eax
+mov     [esp+78h+Block], eax
+mov     [esp+78h+var_10], eax
+mov     [esp+78h+var_C], 1
+mov     [esp+78h+var_B], al
+mov     [esp+78h+var_18], offset ??_7?$DynamicVectorClass@PBVParticleSystemTypeClass@@@@6B@ ; const DynamicVectorClass<ParticleSystemTypeClass const *>::`vftable'
+mov     [esp+78h+var_4], ecx
+mov     [esp+78h+var_8], eax
+jle     short loc_6FADB3
+jmp     short loc_6FAD51
+; ---------------------------------------------------------------------------
+
+loc_6FAD4D:                             ; CODE XREF: MovementAI__Begin+F61↓j
+mov     ecx, [esp+78h+var_4]
+
+loc_6FAD51:                             ; CODE XREF: MovementAI__Begin+EFB↑j
+mov     edx, [ebx+77Ch]
+lea     edi, [edx+ebp*4]
+mov     edx, [edx+ebp*4]
+cmp     dword ptr [edx+2B4h], 3
+jnz     short loc_6FADA8
+cmp     [esp+78h+var_8], eax
+jl      short loc_6FAD90
+mov     dl, [esp+78h+var_B]
+test    dl, dl
+jnz     short loc_6FAD78
+test    eax, eax
+jnz     short loc_6FADA8
+
+loc_6FAD78:                             ; CODE XREF: MovementAI__Begin+F22↑j
+test    ecx, ecx
+jle     short loc_6FADA8
+add     eax, ecx
+push    0
+push    eax
+mov     eax, [esp+80h+var_18]
+lea     ecx, [esp+80h+var_18]
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_6FADA4
+
+loc_6FAD90:                             ; CODE XREF: MovementAI__Begin+F1A↑j
+mov     ecx, [esp+78h+var_8]
+mov     edx, [esp+78h+Block]
+mov     eax, ecx
+inc     ecx
+mov     [esp+78h+var_8], ecx
+mov     ecx, [edi]
+mov     [edx+eax*4], ecx
+
+loc_6FADA4:                             ; CODE XREF: MovementAI__Begin+F3E↑j
+mov     eax, [esp+78h+var_10]
+
+loc_6FADA8:                             ; CODE XREF: MovementAI__Begin+F14↑j
+; MovementAI__Begin+F26↑j ...
+mov     ecx, [ebx+788h]
+inc     ebp
+cmp     ebp, ecx
+jl      short loc_6FAD4D
+
+loc_6FADB3:                             ; CODE XREF: MovementAI__Begin+EF9↑j
+mov     eax, [esi+308h]
+test    eax, eax
+jnz     loc_6FAEE0
+mov     eax, [esp+78h+var_8]
+test    eax, eax
+jle     loc_6FAEE0
+mov     ecx, esi
+call    BuildingClass__GetHealthRatio
+mov     ecx, ds:8871E0h
+fcomp   qword ptr [ecx+1708h]
+fnstsw  ax
+test    ah, 1
+jz      short loc_6FADFD
+mov     eax, [ecx+558h]
+mov     ecx, [ecx+55Ch]
+mov     [esp+78h+var_5C], eax
+mov     [esp+78h+var_58], ecx
+jmp     short loc_6FAE11
+; ---------------------------------------------------------------------------
+
+loc_6FADFD:                             ; CODE XREF: MovementAI__Begin+F95↑j
+mov     edx, [ecx+560h]
+mov     eax, [ecx+564h]
+mov     [esp+78h+var_5C], edx
+mov     [esp+78h+var_58], eax
+
+loc_6FAE11:                             ; CODE XREF: MovementAI__Begin+FAB↑j
+mov     ecx, ds:0A8B230h
+push    7FFFFFFEh
+push    0
+add     ecx, 218h
+call    Random__Range
+mov     [esp+78h+var_64], eax
+fild    [esp+78h+var_64]
+fmul    ds:dbl_7E3570
+fcomp   qword ptr [esp+78h+var_5C]
+fnstsw  ax
+test    ah, 1
+jz      loc_6FAEE0
+push    100h            ; Size
+call    ??2_YAPAXI_Z
+mov     ebp, eax
+add     esp, 4
+test    ebp, ebp
+jz      short loc_6FAED8
+mov     eax, [esi]
+lea     edx, [esp+78h+var_44]
+push    edx
+mov     ecx, esi
+call    dword ptr [eax+84h]
+mov     ecx, eax
+call    BuildingTypeClass__GetUpgradeOffset
+mov     edx, [esi]
+mov     edi, eax
+lea     eax, [esp+74h+var_34]
+mov     ecx, esi
+push    eax
+call    dword ptr [edx+48h]
+mov     ecx, [edi]
+mov     edx, [eax]
+mov     ebx, [eax+4]
+add     ecx, edx
+mov     edx, [edi+4]
+mov     edi, [edi+8]
+add     edx, ebx
+mov     ebx, [eax+8]
+mov     [esp+78h+var_5C], ecx
+mov     ecx, [esp+78h+var_8]
+add     edi, ebx
+mov     [esp+78h+var_58], edx
+mov     edx, ds:0A8B230h
+dec     ecx
+push    ecx
+push    0
+lea     ecx, [edx+218h]
+mov     [esp+80h+var_54], edi
+call    Random__Range
+mov     edx, [esp+78h+Block]
+push    0
+push    (offset dword_A8ED54+7FD3Ch)
+push    esi
+mov     eax, [edx+eax*4]
+lea     ecx, [esp+84h+var_5C]
+push    0
+push    ecx
+push    eax
+mov     ecx, ebp
+call    ParticleSystemClass__Constructor
+jmp     short loc_6FAEDA
+; ---------------------------------------------------------------------------
+
+loc_6FAED8:                             ; CODE XREF: MovementAI__Begin+1007↑j
+xor     eax, eax
+
+loc_6FAEDA:                             ; CODE XREF: MovementAI__Begin+1086↑j
+mov     [esi+308h], eax
+
+loc_6FAEE0:                             ; CODE XREF: MovementAI__Begin+F6B↑j
+; MovementAI__Begin+F77↑j ...
+mov     eax, [esp+78h+Block]
+mov     [esp+78h+var_18], offset ??_7?$VectorClass@PBVParticleSystemTypeClass@@@@6B@ ; const VectorClass<ParticleSystemTypeClass const *>::`vftable'
+test    eax, eax
+jz      short loc_6FAF01
+mov     cl, [esp+78h+var_B]
+test    cl, cl
+jz      short loc_6FAF01
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_6FAF01:                             ; CODE XREF: MovementAI__Begin+E91↑j
+; MovementAI__Begin+EAE↑j ...
+mov     edx, [esi]
+push    0
+mov     ecx, esi
+call    dword ptr [edx+4A0h]
+mov     eax, [esi+504h]
+test    eax, eax
+jle     loc_6FAFFD
+dec     eax
+test    eax, eax
+mov     [esi+504h], eax
+jnz     loc_6FAFFD
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jnz     short loc_6FAF82
+test    esi, esi
+jz      loc_6FAFFD
+mov     ecx, [esi+520h]
+mov     al, [ecx+1701h]
+test    al, al
+jnz     loc_6FAFFD
+mov     ecx, esi
+call    BuildingClass__EnableStuff
+mov     edx, [esi+520h]
+mov     al, [edx+16A4h]
+test    al, al
+jz      loc_6FAFFD
+mov     eax, [esi+21Ch]
+mov     byte ptr [eax+5779h], 1
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 68h
+retn
+; ---------------------------------------------------------------------------
+
+loc_6FAF82:                             ; CODE XREF: MovementAI__Begin+10E4↑j
+test    esi, esi
+jz      short loc_6FAFFD
+mov     cl, [esi+14h]
+shr     cl, 2
+and     cl, 1
+mov     byte ptr [esp+78h+var_68+3], cl
+jz      short loc_6FAFFD
+mov     eax, [esi+674h]
+test    eax, eax
+jz      short loc_6FAFB9
+test    eax, eax
+jnz     short loc_6FAFAD
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_6FAFAD:                             ; CODE XREF: MovementAI__Begin+1151↑j
+mov     eax, [esi+674h]
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+58h]
+
+loc_6FAFB9:                             ; CODE XREF: MovementAI__Begin+114D↑j
+mov     eax, ds:0A8E9B8h
+xor     ecx, ecx
+test    eax, eax
+jle     short loc_6FAFFD
+
+loc_6FAFC4:                             ; CODE XREF: MovementAI__Begin+11AB↓j
+mov     eax, ds:0A8E9ACh
+mov     eax, [eax+ecx*4]
+test    eax, eax
+jz      short loc_6FAFF3
+cmp     [eax+0CCh], esi
+jnz     short loc_6FAFF3
+mov     edi, ds:8871E0h
+mov     edx, [eax+0C8h]
+cmp     edx, [edi+17F4h]
+jnz     short loc_6FAFF3
+mov     byte ptr [eax+195h], 0
+
+loc_6FAFF3:                             ; CODE XREF: MovementAI__Begin+117E↑j
+; MovementAI__Begin+1186↑j ...
+mov     eax, ds:0A8E9B8h
+inc     ecx
+cmp     ecx, eax
+jl      short loc_6FAFC4
+
+loc_6FAFFD:                             ; CODE XREF: MovementAI__Begin+3F4↑j
+; MovementAI__Begin+8ED↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 68h
+retn
+*/
+} }
 // 0x7209B0
-namespace gamemd { int AudioSettings::Check(int a1) { return 0; } }
+namespace gamemd { int AudioSettings::Check(int a1) {
+// [IDA decompile]
+int __thiscall sub_7209B0(_DWORD *this, unsigned int a2)
+{
+  if ( a2 >= *(this + 9) )
+    return 0;
+  else
+    return *(_DWORD *)(*(this + 6) + 4 * a2) + 512;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x1e)
+mov     edx, [ecx+24h]
+cmp     eax, edx
+jnb     short loc_7209C9
+mov     ecx, [ecx+18h]
+mov     eax, [ecx+eax*4]
+add     eax, 200h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7209C9:                             ; CODE XREF: AudioSettings__Check+9↑j
+xor     eax, eax
+retn    4
+*/
+} }
 // 0x720BB0
-namespace gamemd { int ThemeClass::Play(int a1) { return 0; } }
+namespace gamemd { int ThemeClass::Play(int a1) {
+// [IDA decompile]
+unsigned int __thiscall ThemeClass::Play(unsigned int *this, unsigned int a2)
+{
+  int v3; // ecx
+  int *v4; // ecx
+  int v5; // eax
+  int v6; // ecx
+
+  if ( LOBYTE(MEMORY[0x87F7E8][539939]) && Audio::IsSoundEnabled() && !LOBYTE(dword_A8ED54[4]) )
+  {
+    v3 = *(this + 11);
+    if ( !v3 )
+      goto LABEL_13;
+    if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v3) )
+      Audio::Release((int *)*(this + 11));
+    if ( !Audio::IsSoundPlaying((_DWORD *)*(this + 11)) || *(this + 1) != a2 )
+    {
+LABEL_13:
+      if ( LOBYTE(MEMORY[0x87F7E8][539939]) && Audio::IsSoundEnabled() && !LOBYTE(dword_A8ED54[4]) && *this != -1 )
+      {
+        Debug::Log();
+        v4 = (int *)*(this + 11);
+        if ( v4 )
+          Audio::Release(v4);
+        *this = -1;
+        *(this + 1) = -1;
+        *(this + 2) = -1;
+      }
+      *((_BYTE *)this + 17) = 0;
+      if ( a2 != -1 && a2 != -3 )
+      {
+        if ( (int)a2 <= -1 || (int)*(this + 3) <= 0 )
+          goto LABEL_47;
+        *(this + 1) = a2;
+        v5 = LOBYTE(MEMORY[0x87F7E8][31470]) ? 0 : Game::CheckForGameCD(0);
+        v6 = *(this + 11);
+        if ( v6 && v5 > -1 )
+        {
+          if ( a2 >= *(this + 9) )
+          {
+            ThreadAudioMixerMain((_DWORD *)*(this + 11), (char *)&MEMORY[0x87F7E8][10719], 1);
+          }
+          else
+          {
+            _makepath(
+              (char *)&dword_A8ED54[131369],
+              0,
+              0,
+              (const char *)(*(_DWORD *)(*(this + 6) + 4 * a2) + 256),
+              g_Str_File__WAV);
+            ThreadAudioMixerMain((_DWORD *)*(this + 11), (char *)&dword_A8ED54[131369], 1);
+          }
+          *this = a2;
+        }
+        else
+        {
+          *this = -1;
+          if ( v6 )
+          {
+            if ( v5 <= -1 && *(this + 2) == -1 )
+            {
+              if ( LOBYTE(MEMORY[0x87F7E8][539939]) )
+              {
+                if ( Audio::IsSoundEnabled() )
+                {
+                  if ( !LOBYTE(dword_A8ED54[4]) )
+                  {
+                    MEMORY[0x87F7E8][528716] = a2;
+                    if ( a2 != MEMORY[0x87F7E8][528715] )
+                    {
+                      Debug::Log();
+                      if ( MEMORY[0x87F7E8][528725] )
+                      {
+                        if ( BYTE1(MEMORY[0x87F7E8][528718]) && !AudioSample::IsBuffering(MEMORY[0x87F7E8][528725]) )
+                          Audio::Release((int *)MEMORY[0x87F7E8][528725]);
+                        if ( Audio::IsSoundPlaying((_DWORD *)MEMORY[0x87F7E8][528725]) != 0 )
+                        {
+                          if ( MEMORY[0x87F7E8][528725] )
+                            ThemeClass::RequestBuffer((_DWORD *)MEMORY[0x87F7E8][528725]);
+                          BYTE1(MEMORY[0x87F7E8][528718]) = 1;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        Debug::Log();
+        if ( *((_BYTE *)this + 16) == 1 || *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * a2) + 649) == 1 )
+LABEL_47:
+          *(this + 2) = a2;
+      }
+    }
+  }
+  return *this;
+}
+
+/* ASM:
+mov     al, ds:0A8EC74h
+push    ebx
+push    esi
+push    edi
+test    al, al
+mov     esi, ecx
+jz      loc_720E08
+call    Audio__IsSoundEnabled
+test    eax, eax
+jz      loc_720E08
+mov     al, byte ptr dword_A8ED54+10h
+test    al, al
+jnz     loc_720E08
+mov     ecx, [esi+2Ch]
+mov     edi, [esp+0Ch+arg_0]
+test    ecx, ecx
+jz      short loc_720C19
+mov     al, [esi+11h]
+test    al, al
+jz      short loc_720BFF
+call    AudioSample__IsBuffering
+test    eax, eax
+jnz     short loc_720BFF
+mov     ecx, [esi+2Ch]
+call    Audio__Release
+
+loc_720BFF:                             ; CODE XREF: ThemeClass__Play+3C↑j
+; ThemeClass__Play+45↑j
+mov     ecx, [esi+2Ch]
+call    Audio__IsSoundPlaying
+test    eax, eax
+setnz   al
+test    al, al
+jz      short loc_720C19
+cmp     [esi+4], edi
+jz      loc_720E08
+
+loc_720C19:                             ; CODE XREF: ThemeClass__Play+35↑j
+; ThemeClass__Play+5E↑j
+mov     al, ds:0A8EC74h
+test    al, al
+jz      short loc_720C6A
+call    Audio__IsSoundEnabled
+test    eax, eax
+jz      short loc_720C6A
+mov     al, byte ptr dword_A8ED54+10h
+test    al, al
+jnz     short loc_720C6A
+cmp     dword ptr [esi], 0FFFFFFFFh
+jz      short loc_720C6A
+mov     eax, [esi+4]
+push    eax
+push    offset aThemeStopD ; "Theme::Stop(%d)\n"
+call    Debug__Log
+mov     ecx, [esi+2Ch]
+add     esp, 8
+test    ecx, ecx
+jz      short loc_720C56
+call    Audio__Release
+
+loc_720C56:                             ; CODE XREF: ThemeClass__Play+9F↑j
+mov     dword ptr [esi], 0FFFFFFFFh
+mov     dword ptr [esi+4], 0FFFFFFFFh
+mov     dword ptr [esi+8], 0FFFFFFFFh
+
+loc_720C6A:                             ; CODE XREF: ThemeClass__Play+70↑j
+; ThemeClass__Play+79↑j ...
+cmp     edi, 0FFFFFFFFh
+mov     byte ptr [esi+11h], 0
+jz      loc_720E08
+cmp     edi, 0FFFFFFFDh
+jz      loc_720E08
+cmp     edi, 0FFFFFFFFh
+jle     loc_720E05
+mov     eax, [esi+0Ch]
+test    eax, eax
+jle     loc_720E05
+mov     [esi+4], edi
+mov     al, ds:89E3A0h
+test    al, al
+jz      short loc_720CA4
+xor     eax, eax
+jmp     short loc_720CAB
+; ---------------------------------------------------------------------------
+
+loc_720CA4:                             ; CODE XREF: ThemeClass__Play+EE↑j
+xor     ecx, ecx
+call    Game__CheckForGameCD
+
+loc_720CAB:                             ; CODE XREF: ThemeClass__Play+F2↑j
+mov     ecx, [esi+2Ch]
+mov     ebx, 1
+test    ecx, ecx
+jz      short loc_720D0E
+cmp     eax, 0FFFFFFFFh
+jle     short loc_720D0E
+cmp     edi, [esi+24h]
+jnb     short loc_720CF9
+mov     ecx, [esi+18h]
+push    offset g_Str_File__WAV ; ".WAV"
+mov     edx, [ecx+edi*4]
+add     edx, 100h
+push    edx             ; Filename
+push    0               ; Dir
+push    0               ; Drive
+push    (offset dword_A8ED54+804A4h) ; Buffer
+call    __makepath
+mov     ecx, [esi+2Ch]
+add     esp, 14h
+mov     edx, (offset dword_A8ED54+804A4h)
+push    ebx
+call    ThreadAudioMixerMain
+mov     [esi], edi
+jmp     loc_720DBF
+; ---------------------------------------------------------------------------
+
+loc_720CF9:                             ; CODE XREF: ThemeClass__Play+10F↑j
+mov     ecx, [esi+2Ch]
+mov     edx, 889F64h
+push    ebx
+call    ThreadAudioMixerMain
+mov     [esi], edi
+jmp     loc_720DBF
+; ---------------------------------------------------------------------------
+
+loc_720D0E:                             ; CODE XREF: ThemeClass__Play+105↑j
+; ThemeClass__Play+10A↑j
+test    ecx, ecx
+mov     dword ptr [esi], 0FFFFFFFFh
+jz      loc_720DBF
+cmp     eax, 0FFFFFFFFh
+jg      loc_720DBF
+cmp     dword ptr [esi+8], 0FFFFFFFFh
+jnz     loc_720DBF
+mov     al, ds:0A8EC74h
+test    al, al
+jz      loc_720DBF
+call    Audio__IsSoundEnabled
+test    eax, eax
+jz      short loc_720DBF
+mov     al, byte ptr dword_A8ED54+10h
+test    al, al
+jnz     short loc_720DBF
+cmp     edi, 0FFFFFFFEh
+mov     ds:0A83D18h, edi
+jz      short loc_720DBF
+cmp     edi, ds:0A83D14h
+jz      short loc_720DBF
+push    edi
+push    offset g_Str_Trace_Theme__QueueSong__d_ ; "Theme::QueueSong(%d)\n"
+call    Debug__Log
+mov     ecx, ds:0A83D3Ch
+add     esp, 8
+test    ecx, ecx
+jz      short loc_720DBF
+mov     al, ds:0A83D21h
+test    al, al
+jz      short loc_720D96
+call    AudioSample__IsBuffering
+test    eax, eax
+jnz     short loc_720D96
+mov     ecx, ds:0A83D3Ch
+call    Audio__Release
+
+loc_720D96:                             ; CODE XREF: ThemeClass__Play+1D0↑j
+; ThemeClass__Play+1D9↑j
+mov     ecx, ds:0A83D3Ch
+call    Audio__IsSoundPlaying
+test    eax, eax
+setnz   al
+cmp     al, bl
+jnz     short loc_720DBF
+mov     ecx, ds:0A83D3Ch
+test    ecx, ecx
+jz      short loc_720DB9
+call    ThemeClass__RequestBuffer
+
+loc_720DB9:                             ; CODE XREF: ThemeClass__Play+202↑j
+mov     ds:0A83D21h, bl
+
+loc_720DBF:                             ; CODE XREF: ThemeClass__Play+144↑j
+; ThemeClass__Play+159↑j ...
+cmp     [esi+10h], bl
+jz      short loc_720DD9
+mov     eax, [esi+18h]
+mov     ecx, [eax+edi*4]
+mov     al, [ecx+289h]
+cmp     al, bl
+mov     eax, offset aPlaying ; "Playing"
+jnz     short loc_720DDE
+
+loc_720DD9:                             ; CODE XREF: ThemeClass__Play+212↑j
+mov     eax, offset aRepeating ; "Repeating"
+
+loc_720DDE:                             ; CODE XREF: ThemeClass__Play+227↑j
+mov     edx, [esi+4]
+push    eax
+push    edx
+push    offset aThemePlaysongD ; "Theme::PlaySong(%d) - %s\n"
+call    Debug__Log
+mov     al, [esi+10h]
+add     esp, 0Ch
+cmp     al, bl
+jz      short loc_720E05
+mov     eax, [esi+18h]
+mov     ecx, [eax+edi*4]
+cmp     [ecx+289h], bl
+jnz     short loc_720E08
+
+loc_720E05:                             ; CODE XREF: ThemeClass__Play+D3↑j
+; ThemeClass__Play+DE↑j ...
+mov     [esi+8], edi
+
+loc_720E08:                             ; CODE XREF: ThemeClass__Play+C↑j
+; ThemeClass__Play+19↑j ...
+mov     eax, [esi]
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
+} }
 // 0x720E50
-namespace gamemd { int AudioSettings::ComputeTransform(int a1) { return 0; } }
+namespace gamemd { int AudioSettings::ComputeTransform(int a1) {
+// [IDA decompile]
+int __thiscall sub_720E50(_DWORD *this, unsigned int a2)
+{
+  if ( a2 >= *(this + 9) )
+    return 0;
+  else
+    return Math::RoundToInt(*(float *)(*(_DWORD *)(*(this + 6) + 4 * a2) + 644));
+}
+
+/* ASM:
+mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x24)
+mov     edx, [ecx+24h]
+cmp     eax, edx
+jnb     short loc_720E6F
+mov     ecx, [ecx+18h]
+mov     edx, [ecx+eax*4]
+fld     dword ptr [edx+284h]
+call    Math__RoundToInt
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_720E6F:                             ; CODE XREF: AudioSettings__ComputeTransform+9↑j
+xor     eax, eax
+retn    4
+*/
+} }
 // 0x721140
-namespace gamemd { bool RulesClass::IsTypeBuildable(int a1) { return false; } }
+namespace gamemd { bool RulesClass::IsTypeBuildable(int a1) {
+// [IDA decompile]
+bool __thiscall RulesClass_IsTypeBuildable(_DWORD *this, unsigned int a2)
+{
+  int v3; // eax
+  int v4; // ecx
+
+  if ( a2 == -3 || a2 == -2 )
+    return 1;
+  if ( a2 >= *(this + 9) )
+    return 0;
+  v3 = *(_DWORD *)(*(this + 6) + 4 * a2);
+  if ( !*(_BYTE *)(v3 + 650) )
+    return 0;
+  if ( !*(_BYTE *)(v3 + 648) )
+    return 0;
+  if ( MEMORY[0xA83D4C] )
+  {
+    v4 = *(_DWORD *)(v3 + 652);
+    if ( v4 != -1 && *(_DWORD *)(*((_DWORD *)MEMORY[0xA83D4C] + 13) + 188) != v4 )
+      return 0;
+  }
+  return MEMORY[0xA8B238][0] || *((_DWORD *)MEMORY[0xA8B230] + 1173) >= *(_DWORD *)(v3 + 640);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+cmp     eax, 0FFFFFFFDh
+jz      loc_7211CE
+cmp     eax, 0FFFFFFFEh
+jz      short loc_7211CE
+cmp     eax, [ecx+24h]
+jb      short loc_72115C
+xor     al, al
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_72115C:                             ; CODE XREF: RulesClass__IsTypeBuildable+15↑j
+mov     ecx, [ecx+18h]
+mov     eax, [ecx+eax*4]
+mov     cl, [eax+28Ah]
+test    cl, cl
+jnz     short loc_721171
+xor     al, al
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_721171:                             ; CODE XREF: RulesClass__IsTypeBuildable+2A↑j
+mov     cl, [eax+288h]
+test    cl, cl
+jnz     short loc_721180
+xor     al, al
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_721180:                             ; CODE XREF: RulesClass__IsTypeBuildable+39↑j
+mov     edx, ds:0A83D4Ch
+test    edx, edx
+jz      short loc_7211A9
+mov     ecx, [eax+28Ch]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_7211A9
+mov     edx, [edx+34h]
+push    esi
+mov     esi, [edx+0BCh]
+cmp     esi, ecx
+pop     esi
+jz      short loc_7211A9
+xor     al, al
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7211A9:                             ; CODE XREF: RulesClass__IsTypeBuildable+48↑j
+; RulesClass__IsTypeBuildable+53↑j ...
+mov     ecx, ds:0A8B238h
+test    ecx, ecx
+jnz     short loc_7211CE
+mov     ecx, ds:0A8B230h
+mov     edx, [ecx+1254h]
+mov     ecx, [eax+280h]
+cmp     edx, ecx
+jge     short loc_7211CE
+xor     al, al
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7211CE:                             ; CODE XREF: RulesClass__IsTypeBuildable+7↑j
+; RulesClass__IsTypeBuildable+10↑j ...
+mov     al, 1
+retn    4
+*/
+} }
 // 0x74E6B0
-namespace gamemd { int RulesClass::Reset() { return 0; } }
+namespace gamemd { int RulesClass::Reset() {
+// [IDA decompile]
+int __thiscall sub_74E6B0(int this)
+{
+  _DWORD *v2; // eax
+  int i; // ecx
+  int result; // eax
+  int j; // ebx
+  __int16 *v6; // edi
+  int v7; // ebp
+  int v8; // eax
+  double v9; // st7
+  int v10; // eax
+  _DWORD *v11; // edi
+  unsigned int v12; // ebp
+  unsigned int v13; // ecx
+  unsigned int v14; // edx
+  int v15; // ebx
+  unsigned int v16; // eax
+  float v17; // [esp+1Ch] [ebp-Ch]
+  int v18; // [esp+20h] [ebp-8h]
+  int v19; // [esp+24h] [ebp-4h]
+
+  v2 = *(_DWORD **)(this + 176);
+  *(_DWORD *)(this + 172) = 0;
+  for ( i = 0; i <= *v2; *(_DWORD *)(v2[2] + 4 * i - 4) = 0 )
+    ++i;
+  *v2 = 0;
+  *(_DWORD *)(this + 260) = 0;
+  LayerClass::CellIteratorReset(MEMORY[0x87F7E8]);
+  result = LayerClass::CellIteratorNext(MEMORY[0x87F7E8]);
+  for ( j = result; result; j = result )
+  {
+    if ( *(_DWORD *)(j + 68) == 126 && *(_BYTE *)(j + 286) >= 0x30u )
+    {
+      v6 = (__int16 *)(j + 36);
+      v7 = Cell::PosToIndex((__int16 *)(j + 36));
+      if ( v7 >= 0 && v7 < Object::ComputeAllocationSize() )
+      {
+        if ( *(_BYTE *)(*(_DWORD *)(this + 196) + v7) )
+        {
+          v8 = *(_DWORD *)(this + 172);
+          if ( v8 < *(_DWORD *)(MEMORY[0x87F7E8][7806] + 220) )
+          {
+            *(_DWORD *)(*(_DWORD *)(this + 180) + 8 * v8) = *(_DWORD *)v6;
+            v19 = *(__int16 *)(j + 38) - *(__int16 *)(this + 250);
+            v18 = *v6 - *(__int16 *)(this + 248);
+            v9 = Math::Sqrt((double)v18 * (double)v18 + (double)v19 * (double)v19);
+            *(float *)(*(_DWORD *)(this + 180) + 8 * *(_DWORD *)(this + 172) + 4) = (float)(int)(1000
+                                                                                               - Math::RoundToInt(v9));
+            v10 = *(_DWORD *)(this + 172);
+            v11 = *(_DWORD **)(this + 176);
+            v12 = *(_DWORD *)(this + 180) + 8 * v10;
+            *(_DWORD *)(this + 172) = v10 + 1;
+            v13 = *v11 + 1;
+            v17 = *(float *)(v12 + 4);
+            v14 = v13 >> 1;
+            if ( v13 < v11[1] )
+            {
+              for ( ; v13 > 1; v14 >>= 1 )
+              {
+                v15 = v11[2];
+                if ( *(float *)(*(_DWORD *)(v15 + 4 * v14) + 4) <= (double)v17 )
+                  break;
+                *(_DWORD *)(v15 + 4 * v13) = *(_DWORD *)(v15 + 4 * v14);
+                v13 = v14;
+              }
+              *(_DWORD *)(v11[2] + 4 * v13) = v12;
+              v16 = v11[3];
+              ++*v11;
+              if ( v12 > v16 )
+                v11[3] = v12;
+              if ( v12 < v11[4] )
+                v11[4] = v12;
+            }
+            ++*(_DWORD *)(this + 260);
+          }
+        }
+      }
+    }
+    result = LayerClass::CellIteratorNext(MEMORY[0x87F7E8]);
+  }
+  return result;
+}
+
+/* ASM:
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 10h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+xor     edi, edi
+mov     eax, [esi+0B0h]
+mov     [esi+0ACh], edi
+xor     ecx, ecx
+cmp     [eax], edi
+jl      short loc_74E6E1
+
+loc_74E6D3:                             ; CODE XREF: RulesClass__Reset+2F↓j
+mov     edx, [eax+8]
+inc     ecx
+mov     [edx+ecx*4-4], edi
+mov     edx, [eax]
+cmp     ecx, edx
+jle     short loc_74E6D3
+
+loc_74E6E1:                             ; CODE XREF: RulesClass__Reset+21↑j
+mov     [eax], edi
+mov     ecx, 87F7E8h
+mov     [esi+104h], edi
+call    LayerClass__CellIteratorReset
+mov     ecx, 87F7E8h
+call    LayerClass__CellIteratorNext
+mov     ebx, eax
+cmp     ebx, edi
+jz      loc_74E86B
+
+loc_74E707:                             ; CODE XREF: RulesClass__Reset+1B5↓j
+cmp     dword ptr [ebx+44h], 7Eh ; '~'
+jnz     loc_74E857
+cmp     byte ptr [ebx+11Eh], 30h ; '0'
+jb      loc_74E857
+lea     edi, [ebx+24h]
+mov     ecx, edi
+call    Cell__PosToIndex
+mov     ebp, eax
+test    ebp, ebp
+jl      loc_74E857
+call    Object__ComputeAllocationSize
+cmp     ebp, eax
+jge     loc_74E857
+mov     eax, [esi+0C4h]
+cmp     byte ptr [eax+ebp], 0
+jz      loc_74E857
+mov     ecx, ds:8871E0h
+mov     eax, [esi+0ACh]
+cmp     eax, [ecx+0DCh]
+jge     loc_74E857
+mov     edx, [esi+0B4h]
+mov     ecx, [edi]
+sub     esp, 8
+mov     [edx+eax*8], ecx
+movsx   ebp, word ptr [esi+0FAh]
+movsx   ecx, word ptr [ebx+26h]
+movsx   edx, word ptr [esi+0F8h]
+movsx   eax, word ptr [edi]
+sub     ecx, ebp
+sub     eax, edx
+mov     [esp+28h+var_4], ecx
+mov     [esp+28h+var_8], eax
+fild    [esp+28h+var_4]
+fild    [esp+28h+var_8]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fstp    [esp+28h+var_28] ; double
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ecx, [esi+0B4h]
+mov     edx, 3E8h
+sub     edx, eax
+mov     eax, [esi+0ACh]
+mov     [esp+20h+var_10], edx
+fild    [esp+20h+var_10]
+fstp    dword ptr [ecx+eax*8+4]
+mov     eax, [esi+0ACh]
+mov     edx, [esi+0B4h]
+mov     edi, [esi+0B0h]
+lea     ebp, [edx+eax*8]
+inc     eax
+mov     [esi+0ACh], eax
+mov     ecx, [edi]
+mov     eax, [ebp+4]
+inc     ecx
+mov     edx, ecx
+mov     [esp+20h+var_C], eax
+mov     eax, [edi+4]
+shr     edx, 1
+cmp     ecx, eax
+jnb     short loc_74E851
+cmp     ecx, 1
+jbe     short loc_74E834
+
+loc_74E811:                             ; CODE XREF: RulesClass__Reset+182↓j
+mov     ebx, [edi+8]
+mov     eax, [ebx+edx*4]
+fld     dword ptr [eax+4]
+fcomp   [esp+20h+var_C]
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_74E834
+mov     eax, [ebx+edx*4]
+mov     [ebx+ecx*4], eax
+mov     ecx, edx
+shr     edx, 1
+cmp     ecx, 1
+ja      short loc_74E811
+
+loc_74E834:                             ; CODE XREF: RulesClass__Reset+15F↑j
+; RulesClass__Reset+173↑j
+mov     edx, [edi+8]
+mov     [edx+ecx*4], ebp
+mov     ecx, [edi]
+mov     eax, [edi+0Ch]
+inc     ecx
+cmp     ebp, eax
+mov     [edi], ecx
+jbe     short loc_74E849
+mov     [edi+0Ch], ebp
+
+loc_74E849:                             ; CODE XREF: RulesClass__Reset+194↑j
+cmp     ebp, [edi+10h]
+jnb     short loc_74E851
+mov     [edi+10h], ebp
+
+loc_74E851:                             ; CODE XREF: RulesClass__Reset+15A↑j
+; RulesClass__Reset+19C↑j
+inc     dword ptr [esi+104h]
+
+loc_74E857:                             ; CODE XREF: RulesClass__Reset+5B↑j
+; RulesClass__Reset+68↑j ...
+mov     ecx, 87F7E8h
+call    LayerClass__CellIteratorNext
+mov     ebx, eax
+test    ebx, ebx
+jnz     loc_74E707
+
+loc_74E86B:                             ; CODE XREF: RulesClass__Reset+51↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn
+*/
+} }
 // 0x7534E0
-namespace gamemd { int VoxClass::SetEVAIndex() { return 0; } }
+namespace gamemd { int VoxClass::SetEVAIndex() {
+// [IDA decompile]
+int __thiscall VoxClass::SetEVAIndex(void *this)
+{
+  int result; // eax
+
+  if ( this == (void *)-1 )
+  {
+    MEMORY[0xB1D4C8] = 0;
+    return 0;
+  }
+  else
+  {
+    MEMORY[0xB1D4C8] = (int)this;
+  }
+  return result;
+}
+
+/* ASM:
+cmp     ecx, 0FFFFFFFFh
+jnz     short loc_7534ED
+xor     eax, eax
+mov     dword_A8ED54+8E774h, eax
+retn
+; ---------------------------------------------------------------------------
+
+loc_7534ED:                             ; CODE XREF: VoxClass__SetEVAIndex+3↑j
+mov     dword_A8ED54+8E774h, ecx
+retn
+*/
+} }

@@ -8,119 +8,1977 @@ namespace gamemd {
 
 // 0x007CB302 (59 bytes)
 int Calllockfile_7CB302() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007CB302.json)
-    // Size: 59 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7CB302 ( FILE *Stream, int a2, int a3 ) { int v3 ; // edi !int v4 ! ; // ebx _lock_file ( Stream ) ; v3 = _stbuf ( Stream ) ; v4 = _output ( Stream , a2 , a3 ) ; _ftbuf ( v3 , Stream ) ; _unlock_file ( Stream ) ; return v4 ; }
-    return 0;
+// [IDA decompile]
+int __cdecl sub_7CB302(#252 *Stream, int a2, int a3)
+{
+  int v3; // edi
+  int v4; // ebx
+
+  _lock_file(Stream);
+  v3 = _stbuf(Stream);
+  v4 = _output(Stream, a2, a3);
+  _ftbuf(v3, Stream);
+  _unlock_file(Stream);
+  return v4;
+}
+
+/* ASM:
+Stream          = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+push    ebx
+push    esi
+mov     esi, [esp+8+Stream]
+push    edi
+push    esi             ; Stream
+call    __lock_file
+push    esi
+call    __stbuf
+push    [esp+14h+arg_8] ; int
+mov     edi, eax
+push    [esp+18h+arg_4] ; int
+push    esi             ; File
+call    __output
+push    esi
+push    edi
+mov     ebx, eax
+call    __ftbuf
+push    esi             ; Stream
+call    __unlock_file
+add     esp, 20h
+mov     eax, ebx
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x007BF240 (306 bytes)
 const char* Callread_7BF240() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007BF240.json)
-    // Size: 306 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   int __cdecl sub_7BF240 ( int a1, int a2, char *DstBuf, int MaxCharCount ) { int result ; // eax !int v5 ! ; // esi !int v6 ! ; // edi !int v7 ! ; // eax result = 0 ; v5 = * ( _DWORD * ) ( a1 + 184 ) ; switch ( a2 ) { case 1 : case 2 : return 0 ; case 3 : result = _open ( DstBuf , 0x8000 ) ; if ( result != -1 ) { * ( _DWORD * ) ( a1 + 184 ) = result ; return 0 ; } return result ; case 4 : _close ( * ( _DWORD * ) ( a1 + 184 ) ) ; return 0 ; case 5 : v6 = MaxCharCount ; return _read ( v5 , DstBuf , MaxCharCount ) != v6 ; case 6 : return 1 ; case 7 : v7 = _lseek ( v5 , MaxCharCount , ( int ) DstBuf ) ; return v7 == -1 ; case 8 : if ( MaxCharCount <= 0 ) { result = _lseek ( v5 , MaxCharCount , ( int ) DstBuf ) == -1 ; if ( ! result ) { result = _read ( v5 , & MaxCharCount , 1u ) != 1 ; if ( ! result ) { v7 = _lseek ( v5 , -1 , 1 ) ; return v7 == -1 ; } } } else { result = _lseek ( v5 , MaxCharCount - 1 , ( int ) DstBuf ) == -1 ; if ( ! result ) return _read ( v5 , & MaxCharCount , 1u ) != 1 ; } return result ; case 9 : * ( _DWORD * ) DstBuf = _filelength ( * ( _DWORD * ) ( a1 + 184 ) ) ; return 0 ; default : return result ; } }
-    return nullptr;
+// [IDA decompile]
+int __cdecl sub_7BF240(int a1, int a2, char *DstBuf, int MaxCharCount)
+{
+  int result; // eax
+  int v5; // esi
+  int v6; // edi
+  int v7; // eax
+
+  result = 0;
+  v5 = *(_DWORD *)(a1 + 184);
+  switch ( a2 )
+  {
+    case 1:
+    case 2:
+      return 0;
+    case 3:
+      result = _open(DstBuf, 0x8000);
+      if ( result != -1 )
+      {
+        *(_DWORD *)(a1 + 184) = result;
+        return 0;
+      }
+      return result;
+    case 4:
+      _close(*(_DWORD *)(a1 + 184));
+      return 0;
+    case 5:
+      v6 = MaxCharCount;
+      return _read(v5, DstBuf, MaxCharCount) != v6;
+    case 6:
+      return 1;
+    case 7:
+      v7 = _lseek(v5, MaxCharCount, (int)DstBuf);
+      return v7 == -1;
+    case 8:
+      if ( MaxCharCount <= 0 )
+      {
+        result = _lseek(v5, MaxCharCount, (int)DstBuf) == -1;
+        if ( !result )
+        {
+          result = _read(v5, &MaxCharCount, 1u) != 1;
+          if ( !result )
+          {
+            v7 = _lseek(v5, -1, 1);
+            return v7 == -1;
+          }
+        }
+      }
+      else
+      {
+        result = _lseek(v5, MaxCharCount - 1, (int)DstBuf) == -1;
+        if ( !result )
+          return _read(v5, &MaxCharCount, 1u) != 1;
+      }
+      return result;
+    case 9:
+      *(_DWORD *)DstBuf = _filelength(*(_DWORD *)(a1 + 184));
+      return 0;
+    default:
+      return result;
+  }
+}
+
+/* ASM:
+DstBuf          = dword ptr  0Ch
+MaxCharCount    = dword ptr  10h
+
+mov     ecx, [esp+arg_4]
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+xor     eax, eax
+dec     ecx             ; switch 9 cases
+mov     esi, [edi+0B8h]
+cmp     ecx, 8
+ja      def_7BF25C      ; jumptable 007BF25C default case
+jmp     ds:jpt_7BF25C[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_7BF263:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+mov     edx, [esp+8+DstBuf] ; jumptable 007BF25C case 3
+push    8000h           ; OpenFlag
+push    edx             ; FileName
+call    __open
+add     esp, 8
+cmp     eax, 0FFFFFFFFh
+jz      def_7BF25C      ; jumptable 007BF25C default case
+mov     [edi+0B8h], eax
+pop     edi
+xor     eax, eax
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF289:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+mov     edi, [esp+8+MaxCharCount] ; jumptable 007BF25C case 5
+mov     eax, [esp+8+DstBuf]
+push    edi             ; MaxCharCount
+push    eax             ; DstBuf
+push    esi             ; FileHandle
+call    __read
+add     esp, 0Ch
+xor     ecx, ecx
+cmp     eax, edi
+setnz   cl
+pop     edi
+mov     eax, ecx
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF2A8:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+pop     edi             ; jumptable 007BF25C case 6
+mov     eax, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF2B0:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+mov     edx, [esp+8+DstBuf] ; jumptable 007BF25C case 7
+mov     eax, [esp+8+MaxCharCount]
+push    edx
+push    eax
+jmp     short loc_7BF33A
+; ---------------------------------------------------------------------------
+
+loc_7BF2BC:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+mov     eax, [esp+8+MaxCharCount] ; jumptable 007BF25C case 8
+test    eax, eax
+jle     short loc_7BF300
+mov     edx, [esp+8+DstBuf]
+dec     eax
+push    edx             ; Origin
+push    eax             ; Offset
+push    esi             ; FileHandle
+call    __lseek
+add     esp, 0Ch
+xor     ecx, ecx
+cmp     eax, 0FFFFFFFFh
+setz    cl
+mov     eax, ecx
+test    eax, eax
+jnz     def_7BF25C      ; jumptable 007BF25C default case
+lea     edx, [esp+8+MaxCharCount]
+push    1               ; MaxCharCount
+push    edx             ; DstBuf
+push    esi             ; FileHandle
+call    __read
+add     esp, 0Ch
+dec     eax
+neg     eax
+sbb     eax, eax
+pop     edi
+neg     eax
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF300:                             ; CODE XREF: sub_7BF240+82↑j
+mov     ecx, [esp+8+DstBuf]
+push    ecx             ; Origin
+push    eax             ; Offset
+push    esi             ; FileHandle
+call    __lseek
+add     esp, 0Ch
+xor     edx, edx
+cmp     eax, 0FFFFFFFFh
+setz    dl
+mov     eax, edx
+test    eax, eax
+jnz     short def_7BF25C ; jumptable 007BF25C default case
+lea     eax, [esp+8+MaxCharCount]
+push    1               ; MaxCharCount
+push    eax             ; DstBuf
+push    esi             ; FileHandle
+call    __read
+add     esp, 0Ch
+dec     eax
+neg     eax
+sbb     eax, eax
+neg     eax
+jnz     short def_7BF25C ; jumptable 007BF25C default case
+push    1               ; Origin
+push    0FFFFFFFFh      ; Offset
+
+loc_7BF33A:                             ; CODE XREF: sub_7BF240+7A↑j
+push    esi             ; FileHandle
+call    __lseek
+add     esp, 0Ch
+xor     ecx, ecx
+cmp     eax, 0FFFFFFFFh
+setz    cl
+pop     edi
+mov     eax, ecx
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF350:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+push    esi             ; jumptable 007BF25C case 9
+call    __filelength
+mov     edx, [esp+0Ch+DstBuf]
+add     esp, 4
+mov     [edx], eax
+pop     edi
+xor     eax, eax
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_7BF364:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+push    esi             ; jumptable 007BF25C case 4
+call    __close
+add     esp, 4
+
+loc_7BF36D:                             ; CODE XREF: sub_7BF240+1C↑j
+; DATA XREF: .text:jpt_7BF25C↓o
+xor     eax, eax        ; jumptable 007BF25C cases 1,2
+
+def_7BF25C:                             ; CODE XREF: sub_7BF240+16↑j
+; sub_7BF240+38↑j ...
+pop     edi             ; jumptable 007BF25C default case
+pop     esi
+retn
+*/
 }
 
 // 0x004C9160 (80 bytes)
 char ClearCCFile_4C9160() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C9160.json)
-    // Size: 80 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char sub_4C9160 ( ) { !char v0 ! ; // bl _DWORD v2[22] ; // [esp+4h] [ebp-6Ch] BYREF _BYTE v3[12] ; // [esp+5Ch] [ebp-14h] BYREF int v4 ; // [esp+68h] [ebp-8h] CCFileClass::Construct ( v2 , aExpandDat ) ; v0 = CCFileClass::Open ( v2 , 0 ) ; v2 [ 0 ] = & CCFileClass::vftable' ; v4 = 0 ; Vector::Clear ( ( int ) v3 ) ; v2 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v2 ) ; return v0 ; }
-    return 0;
+// [IDA decompile]
+char sub_4C9160()
+{
+  char v0; // bl
+  _DWORD v2[22]; // [esp+4h] [ebp-6Ch] BYREF
+  _BYTE v3[12]; // [esp+5Ch] [ebp-14h] BYREF
+  int v4; // [esp+68h] [ebp-8h]
+
+  CCFileClass::Construct(v2, aExpandDat);
+  v0 = CCFileClass::Open(v2, 0);
+  v2[0] = &CCFileClass::`vftable';
+  v4 = 0;
+  Vector::Clear((int)v3);
+  v2[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v2);
+  return v0;
+}
+
+/* ASM:
+sub     esp, 6Ch
+push    ebx
+push    offset aExpandDat ; "EXPAND.DAT"
+lea     ecx, [esp+74h+var_6C]
+call    CCFileClass__Construct
+lea     ecx, [esp+70h+var_6C]
+push    0
+call    CCFileClass__Open
+lea     ecx, [esp+70h+var_14]
+mov     bl, al
+mov     [esp+70h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+70h+var_8], 0
+call    Vector__Clear
+lea     ecx, [esp+70h+var_6C]
+mov     [esp+70h+var_6C], offset off_7E1668
+call    BufferIOFileClass__Dtor
+mov     al, bl
+pop     ebx
+add     esp, 6Ch
+retn
+*/
 }
 
 // 0x00431BC0 (457 bytes)
 bool FileClass_SetMember18_431BC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00431BC0.json)
-    // Size: 457 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __thiscall sub_431BC0 ( size_t *this, int a2, size_t a3 ) { !int v5 ! ; // edi !signed int v6 ! ; // eax !int v7 ! ; // edi !bool v8 ! ; // zf !size_t v9 ! ; // eax !signed int v10 ! ; // [esp+24h] [ebp+4h] !int v11 ! ; // [esp+28h] [ebp+8h] if ( * ( this + 12 ) ) return ! a2 && ! a3 ; if ( ( * ( unsigned __int8 (__thiscall **)(size_t *, _DWORD) ) ( * this + 20 ) ) ( this , 0 ) ) * ( this + 18 ) = ( * ( int (__thiscall **)(size_t *) ) ( * this + 44 ) ) ( this ) ; else * ( this + 18 ) = 0 ; v5 = a2 ; if ( a2 ) { if ( a2 < 1024 ) { v5 = 1024 ; if ( a3 ) ( * ( void (__thiscall **)(size_t *, int, _DWORD, _DWORD) ) ( * this + 64 ) ) ( this , 22 , 0 , 0 ) ; } * ( this + 13 ) = v5 ; if ( v5 ) goto LABEL_14 ; } else { * ( this + 13 ) = * ( this + 18 ) ; } if ( a3 ) return 0 ; LABEL_14 : if ( ! * ( this + 13 ) ) return 0 ; if ( a3 ) * ( this + 12 ) = a3 ; else * ( this + 12 ) = ( size_t ) __2_YAPAXI_Z ( * ( this + 13 ) ) ; if ( ! * ( this + 12 ) ) { ( * ( void (__thiscall **)(size_t *, int, _DWORD, _DWORD) ) ( * this + 64 ) ) ( this , 12 , 0 , 0 ) ; return 0 ; } v6 = * ( this + 18 ) ; * ( ( _BYTE * ) this + 36 ) = 1 ; * ( ( _BYTE * ) this + 38 ) = 0 ; * ( this + 14 ) = 0 ; * ( this + 15 ) = 0 ; * ( this + 16 ) = -1 ; * ( this + 17 ) = -1 ; * ( this + 19 ) = 0 ; * ( this + 20 ) = 0 ; if ( v6 ) { v7 = 0 ; v11 = 0 ; v10 = v6 ; if ( v6 > ( int ) * ( this + 13 ) ) v10 = * ( this + 13 ) ; v8 = ( * ( unsigned __int8 (__thiscall **)(size_t *) ) ( * this + 24 ) ) ( this ) == 0 ; v9 = * this ; if ( v8 ) { if ( ( * ( int (__thiscall **)(size_t *, int) ) ( v9 + 28 ) ) ( this , 1 ) ) { * ( this + 20 ) = FileClass::Seek ( ( int * ) this , 0 , 1u ) ; v11 = 1 ; } } else { v7 = ( * ( int (__thiscall **)(size_t *, _DWORD) ) ( v9 + 40 ) ) ( this , 0 ) ; if ( * ( this + 5 ) == -1 ) * ( this + 20 ) = v7 ; else * ( this + 20 ) = FileClass::Seek ( ( int * ) this , 0 , 1u ) ; if ( ( int ) * ( this + 18 ) > ( int ) * ( this + 13 ) ) { * ( this + 15 ) = v7 ; * ( this + 19 ) = v7 ; } else { if ( v7 ) ( * ( void (__thiscall **)(size_t *, _DWORD, _DWORD) ) ( * this + 40 ) ) ( this , 0 , 0 ) ; * ( this + 14 ) = v7 ; * ( this + 19 ) = v7 ; } } if ( ( * ( int (__thiscall **)(size_t *, _DWORD, signed int) ) ( * this + 36 ) ) ( this , * ( this + 12 ) , v10 ) != v10 ) ( * ( void (__thiscall **)(size_t *, int, _DWORD, _DWORD) ) ( * this + 64 ) ) ( this , 5 , 0 , 0 ) ; if ( v11 ) { ( * ( void (__thiscall **)(size_t *) ) ( * this + 52 ) ) ( this ) ; * ( ( _BYTE * ) this + 39 ) = 1 ; * ( ( _BYTE * ) this + 41 ) = 1 ; return 1 ; } ( * ( void (__thiscall **)(size_t *, int, _DWORD) ) ( * this + 40 ) ) ( this , v7 , 0 ) ; * ( ( _BYTE * ) this + 39 ) = 1 ; } * ( ( _BYTE * ) this + 41 ) = 1 ; return 1 ; }
-    return false;
+// [IDA decompile]
+bool __thiscall sub_431BC0(_DWORD *this, int a2, int a3)
+{
+  int v5; // edi
+  int v6; // eax
+  int v7; // edi
+  bool v8; // zf
+  int v9; // eax
+  int v10; // [esp+24h] [ebp+4h]
+  int v11; // [esp+28h] [ebp+8h]
+
+  if ( *(this + 12) )
+    return !a2 && !a3;
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 20))(this, 0) )
+    *(this + 18) = (*(int (__thiscall **)(_DWORD *))(*this + 44))(this);
+  else
+    *(this + 18) = 0;
+  v5 = a2;
+  if ( a2 )
+  {
+    if ( a2 < 1024 )
+    {
+      v5 = 1024;
+      if ( a3 )
+        (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD))(*this + 64))(this, 22, 0, 0);
+    }
+    *(this + 13) = v5;
+    if ( v5 )
+      goto LABEL_14;
+  }
+  else
+  {
+    *(this + 13) = *(this + 18);
+  }
+  if ( a3 )
+    return 0;
+LABEL_14:
+  if ( !*(this + 13) )
+    return 0;
+  if ( a3 )
+    *(this + 12) = a3;
+  else
+    *(this + 12) = __2_YAPAXI_Z(*(this + 13));
+  if ( !*(this + 12) )
+  {
+    (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD))(*this + 64))(this, 12, 0, 0);
+    return 0;
+  }
+  v6 = *(this + 18);
+  *((_BYTE *)this + 36) = 1;
+  *((_BYTE *)this + 38) = 0;
+  *(this + 14) = 0;
+  *(this + 15) = 0;
+  *(this + 16) = -1;
+  *(this + 17) = -1;
+  *(this + 19) = 0;
+  *(this + 20) = 0;
+  if ( v6 )
+  {
+    v7 = 0;
+    v11 = 0;
+    v10 = v6;
+    if ( v6 > *(this + 13) )
+      v10 = *(this + 13);
+    v8 = (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) == 0;
+    v9 = *this;
+    if ( v8 )
+    {
+      if ( (*(int (__thiscall **)(_DWORD *, int))(v9 + 28))(this, 1) )
+      {
+        *(this + 20) = FileClass::Seek(0, 1);
+        v11 = 1;
+      }
+    }
+    else
+    {
+      v7 = (*(int (__thiscall **)(_DWORD *, _DWORD))(v9 + 40))(this, 0);
+      if ( *(this + 5) == -1 )
+        *(this + 20) = v7;
+      else
+        *(this + 20) = FileClass::Seek(0, 1);
+      if ( *(this + 18) > *(this + 13) )
+      {
+        *(this + 15) = v7;
+        *(this + 19) = v7;
+      }
+      else
+      {
+        if ( v7 )
+          (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 40))(this, 0, 0);
+        *(this + 14) = v7;
+        *(this + 19) = v7;
+      }
+    }
+    if ( (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*this + 36))(this, *(this + 12), v10) != v10 )
+      (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD))(*this + 64))(this, 5, 0, 0);
+    if ( v11 )
+    {
+      (*(void (__thiscall **)(_DWORD *))(*this + 52))(this);
+      *((_BYTE *)this + 39) = 1;
+      *((_BYTE *)this + 41) = 1;
+      return 1;
+    }
+    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 40))(this, v7, 0);
+    *((_BYTE *)this + 39) = 1;
+  }
+  *((_BYTE *)this + 41) = 1;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+push    edi
+cmp     [esi+30h], ebx
+jz      short loc_431BEA
+cmp     [esp+10h+arg_0], ebx
+jnz     loc_431D80
+cmp     [esp+10h+arg_4], ebx
+jnz     loc_431D80
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_431BEA:                             ; CODE XREF: sub_431BC0+B↑j
+mov     eax, [esi]
+push    ebx
+mov     ecx, esi
+call    dword ptr [eax+14h]
+test    al, al
+jz      short loc_431C02
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+mov     [esi+48h], eax
+jmp     short loc_431C05
+; ---------------------------------------------------------------------------
+
+loc_431C02:                             ; CODE XREF: sub_431BC0+34↑j
+mov     [esi+48h], ebx
+
+loc_431C05:                             ; CODE XREF: sub_431BC0+40↑j
+mov     edi, [esp+10h+arg_0]
+mov     ebp, [esp+10h+arg_4]
+cmp     edi, ebx
+jz      short loc_431C50
+cmp     edi, 400h
+jge     short loc_431C2D
+cmp     ebp, ebx
+mov     edi, 400h
+jz      short loc_431C2D
+mov     eax, [esi]
+push    ebx
+push    ebx
+push    16h
+mov     ecx, esi
+call    dword ptr [eax+40h]
+
+loc_431C2D:                             ; CODE XREF: sub_431BC0+57↑j
+; sub_431BC0+60↑j
+cmp     edi, ebx
+mov     [esi+34h], edi
+jnz     short loc_431C3C
+
+loc_431C34:                             ; CODE XREF: sub_431BC0+96↓j
+cmp     ebp, ebx
+jnz     loc_431D80
+
+loc_431C3C:                             ; CODE XREF: sub_431BC0+72↑j
+mov     eax, [esi+34h]
+cmp     eax, ebx
+jz      loc_431D80
+cmp     ebp, ebx
+jz      short loc_431C58
+mov     [esi+30h], ebp
+jmp     short loc_431C64
+; ---------------------------------------------------------------------------
+
+loc_431C50:                             ; CODE XREF: sub_431BC0+4F↑j
+mov     ecx, [esi+48h]
+mov     [esi+34h], ecx
+jmp     short loc_431C34
+; ---------------------------------------------------------------------------
+
+loc_431C58:                             ; CODE XREF: sub_431BC0+89↑j
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esi+30h], eax
+
+loc_431C64:                             ; CODE XREF: sub_431BC0+8E↑j
+cmp     [esi+30h], ebx
+jz      loc_431D75
+mov     eax, [esi+48h]
+or      ebp, 0FFFFFFFFh
+cmp     eax, ebx
+mov     byte ptr [esi+24h], 1
+mov     [esi+26h], bl
+mov     [esi+38h], ebx
+mov     [esi+3Ch], ebx
+mov     [esi+40h], ebp
+mov     [esi+44h], ebp
+mov     [esi+4Ch], ebx
+mov     [esi+50h], ebx
+jz      loc_431D68
+mov     ecx, [esi+34h]
+xor     edi, edi
+cmp     eax, ecx
+mov     [esp+10h+arg_4], ebx
+mov     [esp+10h+arg_0], eax
+jle     short loc_431CA9
+mov     [esp+10h+arg_0], ecx
+
+loc_431CA9:                             ; CODE XREF: sub_431BC0+E3↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+18h]
+test    al, al
+mov     eax, [esi]
+push    1
+jz      short loc_431D00
+push    ebx
+mov     ecx, esi
+call    dword ptr [eax+28h]
+mov     edi, eax
+mov     eax, [esi+14h]
+cmp     eax, ebp
+jz      short loc_431CD6
+push    1               ; dwMoveMethod
+push    ebx             ; lDistanceToMove
+mov     ecx, esi
+call    FileClass__Seek
+mov     [esi+50h], eax
+jmp     short loc_431CD9
+; ---------------------------------------------------------------------------
+
+loc_431CD6:                             ; CODE XREF: sub_431BC0+105↑j
+mov     [esi+50h], edi
+
+loc_431CD9:                             ; CODE XREF: sub_431BC0+114↑j
+mov     ecx, [esi+48h]
+mov     eax, [esi+34h]
+cmp     ecx, eax
+jg      short loc_431CF8
+cmp     edi, ebx
+jz      short loc_431CF0
+mov     edx, [esi]
+push    ebx
+push    ebx
+mov     ecx, esi
+call    dword ptr [edx+28h]
+
+loc_431CF0:                             ; CODE XREF: sub_431BC0+125↑j
+mov     [esi+38h], edi
+mov     [esi+4Ch], edi
+jmp     short loc_431D1E
+; ---------------------------------------------------------------------------
+
+loc_431CF8:                             ; CODE XREF: sub_431BC0+121↑j
+mov     [esi+3Ch], edi
+mov     [esi+4Ch], edi
+jmp     short loc_431D1E
+; ---------------------------------------------------------------------------
+
+loc_431D00:                             ; CODE XREF: sub_431BC0+F6↑j
+mov     ecx, esi
+call    dword ptr [eax+1Ch]
+test    eax, eax
+jz      short loc_431D1E
+push    1               ; dwMoveMethod
+push    ebx             ; lDistanceToMove
+mov     ecx, esi
+call    FileClass__Seek
+mov     [esi+50h], eax
+mov     [esp+10h+arg_4], 1
+
+loc_431D1E:                             ; CODE XREF: sub_431BC0+136↑j
+; sub_431BC0+13E↑j ...
+mov     ebp, [esp+10h+arg_0]
+mov     eax, [esi+30h]
+mov     edx, [esi]
+push    ebp
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+24h]
+cmp     eax, ebp
+jz      short loc_431D3D
+mov     edx, [esi]
+push    ebx
+push    ebx
+push    5
+mov     ecx, esi
+call    dword ptr [edx+40h]
+
+loc_431D3D:                             ; CODE XREF: sub_431BC0+170↑j
+cmp     [esp+10h+arg_4], ebx
+jz      short loc_431D5B
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+34h]
+mov     byte ptr [esi+27h], 1
+mov     byte ptr [esi+29h], 1
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_431D5B:                             ; CODE XREF: sub_431BC0+181↑j
+mov     edx, [esi]
+push    ebx
+push    edi
+mov     ecx, esi
+call    dword ptr [edx+28h]
+mov     byte ptr [esi+27h], 1
+
+loc_431D68:                             ; CODE XREF: sub_431BC0+CE↑j
+mov     byte ptr [esi+29h], 1
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_431D75:                             ; CODE XREF: sub_431BC0+A7↑j
+mov     eax, [esi]
+push    ebx
+push    ebx
+push    0Ch
+mov     ecx, esi
+call    dword ptr [eax+40h]
+
+loc_431D80:                             ; CODE XREF: sub_431BC0+11↑j
+; sub_431BC0+1B↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
 }
 
 // 0x0065D510 (176 bytes)
 const char* FileStrawDestru_Release_65D510() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0065D510.json)
-    // Size: 176 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __fastcall sub_65D510 ( int a1, const char *a2, int a3, _BYTE *a4 ) { !unsigned int v4 ! ; // esi int v6 ; // ebp !char *v7 ! ; // esi !char v9 ! ; // [esp+Bh] [ebp-15h] BYREF _DWORD v10[4] ; // [esp+Ch] [ebp-14h] BYREF char v11 ; // [esp+1Ch] [ebp-4h] v4 = 0 ; v10 [ 1 ] = 0 ; v10 [ 2 ] = 0 ; v10 [ 3 ] = a1 ; v11 = 0 ; v10 [ 0 ] = & FileStraw::vftable' ; if ( a3 && a2 ) { v6 = 0 ; if ( FileStraw_Destru::Release ( ( int ) v10 , ( int ) & v9 , 1 ) == 1 ) { v7 = ( char * ) a2 ; while ( v9 != 10 ) { if ( v9 != 13 && ( int ) & v7 [ 1 - ( _DWORD ) a2 ] < a3 ) { * v7 = v9 ; ++ v6 ; ++ v7 ; } if ( ( * ( int (__thiscall **)(_DWORD *, char *, int) ) ( v10 [ 0 ] + 8 ) ) ( v10 , & v9 , 1 ) != 1 ) goto LABEL_10 ; } } else { LABEL_10 : * a4 = 1 ; a2 [ v6 ] = 0 ; } a2 [ v6 ] = 0 ; v4 = strlen ( a2 ) ; } FileStraw::Destructor ( ( int ) v10 ) ; return v4 ; }
-    return nullptr;
+// [IDA decompile]
+unsigned int __fastcall sub_65D510(int a1, const char *a2, int a3, _BYTE *a4)
+{
+  unsigned int v4; // esi
+  int v6; // ebp
+  char *v7; // esi
+  char v9; // [esp+Bh] [ebp-15h] BYREF
+  _DWORD v10[4]; // [esp+Ch] [ebp-14h] BYREF
+  char v11; // [esp+1Ch] [ebp-4h]
+
+  v4 = 0;
+  v10[1] = 0;
+  v10[2] = 0;
+  v10[3] = a1;
+  v11 = 0;
+  v10[0] = &FileStraw::`vftable';
+  if ( a3 && a2 )
+  {
+    v6 = 0;
+    if ( FileStraw_Destru::Release((int)v10, (int)&v9, 1) == 1 )
+    {
+      v7 = (char *)a2;
+      while ( v9 != 10 )
+      {
+        if ( v9 != 13 && (int)&v7[1 - (_DWORD)a2] < a3 )
+        {
+          *v7 = v9;
+          ++v6;
+          ++v7;
+        }
+        if ( (*(int (__thiscall **)(_DWORD *, char *, int))(v10[0] + 8))(v10, &v9, 1) != 1 )
+          goto LABEL_10;
+      }
+    }
+    else
+    {
+LABEL_10:
+      *a4 = 1;
+      a2[v6] = 0;
+    }
+    a2[v6] = 0;
+    v4 = strlen(a2);
+  }
+  FileStraw::Destructor((int)v10);
+  return v4;
+}
+
+/* ASM:
+sub     esp, 18h
+mov     eax, [esp+18h+arg_0]
+push    esi
+xor     esi, esi
+push    edi
+cmp     eax, esi
+mov     edi, edx
+mov     [esp+20h+var_10], esi
+mov     [esp+20h+var_C], esi
+mov     [esp+20h+var_8], ecx
+mov     [esp+20h+var_4], 0
+mov     [esp+20h+var_14], offset ??_7FileStraw@@6B@ ; const FileStraw::`vftable'
+jz      short loc_65D5AD
+cmp     edi, esi
+jz      short loc_65D5AD
+push    ebx
+push    ebp
+lea     eax, [esp+28h+var_15]
+push    1
+push    eax
+lea     ecx, [esp+30h+var_14]
+xor     ebp, ebp
+call    ds:off_7E4D98
+cmp     eax, 1
+jnz     short loc_65D590
+mov     ebx, eax
+mov     esi, edi
+sub     ebx, edi
+
+loc_65D55E:                             ; CODE XREF: sub_65D510+7E↓j
+mov     al, [esp+28h+var_15]
+cmp     al, 0Ah
+jz      short loc_65D59B
+cmp     al, 0Dh
+jz      short loc_65D579
+mov     edx, [esp+28h+arg_0]
+lea     ecx, [ebx+esi]
+cmp     ecx, edx
+jge     short loc_65D579
+mov     [esi], al
+inc     ebp
+inc     esi
+
+loc_65D579:                             ; CODE XREF: sub_65D510+58↑j
+; sub_65D510+63↑j
+mov     eax, [esp+28h+var_14]
+lea     edx, [esp+28h+var_15]
+push    1
+push    edx
+lea     ecx, [esp+30h+var_14]
+call    dword ptr [eax+8]
+cmp     eax, 1
+jz      short loc_65D55E
+
+loc_65D590:                             ; CODE XREF: sub_65D510+46↑j
+mov     ecx, [esp+28h+arg_4]
+mov     byte ptr [ecx], 1
+mov     byte ptr [edi+ebp], 0
+
+loc_65D59B:                             ; CODE XREF: sub_65D510+54↑j
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     byte ptr [edi+ebp], 0
+pop     ebp
+repne scasb
+not     ecx
+dec     ecx
+pop     ebx
+mov     esi, ecx
+
+loc_65D5AD:                             ; CODE XREF: sub_65D510+28↑j
+; sub_65D510+2C↑j
+lea     ecx, [esp+20h+var_14]
+call    FileStraw__Destructor
+mov     eax, esi
+pop     edi
+pop     esi
+add     esp, 18h
+retn    8
+*/
 }
 
 // 0x00765580 (125 bytes)
 int IsCCFile_765580() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00765580.json)
-    // Size: 125 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_765580 ( _DWORD *a1 ) { _DWORD v2[22] ; // [esp+0h] [ebp-58h] BYREF BufferIOFile::Init ( v2 ) ; CCFileClass::Reopen ( v2 , g_Str_File_WDTHist_ini , 1 ) ; if ( ! File::IsReady ( v2 , 0 ) ) { FileClass::Close ( v2 ) ; CCFileClass::Close ( v2 ) ; CCFileClass::Reopen ( v2 , g_Str_File_WDTHist_ini , 1 ) ; } FileStraw::Open ( a1 , ( int ) v2 , 0 ) ; CCFileClass::Close ( v2 ) ; v2 [ 0 ] = & off_7E1668 ; return BufferIOFileClass::Dtor ( v2 ) ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_765580(_DWORD *a1)
+{
+  _DWORD v2[22]; // [esp+0h] [ebp-58h] BYREF
+
+  BufferIOFile::Init(v2);
+  CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1);
+  if ( !File::IsReady(v2, 0) )
+  {
+    FileClass::Close(v2);
+    CCFileClass::Close(v2);
+    CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1);
+  }
+  FileStraw::Open(a1, (int)v2, 0);
+  CCFileClass::Close(v2);
+  v2[0] = &off_7E1668;
+  return BufferIOFileClass::Dtor(v2);
+}
+
+/* ASM:
+sub     esp, 58h
+lea     ecx, [esp+58h+var_58]
+call    BufferIOFile__Init
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+60h+var_58]
+call    CCFileClass__Reopen
+push    0
+lea     ecx, [esp+5Ch+var_58]
+call    File__IsReady
+test    al, al
+jnz     short loc_7655CD
+lea     ecx, [esp+58h+var_58]
+call    FileClass__Close
+lea     ecx, [esp+58h+var_58]
+call    CCFileClass__Close
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+60h+var_58]
+call    CCFileClass__Reopen
+
+loc_7655CD:                             ; CODE XREF: sub_765580+29↑j
+mov     ecx, [esp+58h+arg_0]
+lea     eax, [esp+58h+var_58]
+push    0
+push    eax
+call    FileStraw__Open
+lea     ecx, [esp+58h+var_58]
+call    CCFileClass__Close
+lea     ecx, [esp+58h+var_58]
+mov     [esp+58h+var_58], offset off_7E1668
+call    BufferIOFileClass__Dtor
+add     esp, 58h
+retn    4
+*/
 }
 
 // 0x0075A120 (351 bytes)
 bool MethodLookupFileInfoCache_75A120() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0075A120.json)
-    // Size: 351 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   BOOL __thiscall sub_75A120 ( int this, int a2, int *a3, int a4 ) { !BOOL result ! ; // eax !bool v6 ! ; // zf int v7 ; // eax !int v8 ! ; // esi int v9 ; // esi int v10 ; // esi !int v11 ! ; // eax int v12 ; // [esp-Ch] [ebp-10h] result = 1 ; switch ( a2 ) { case 1 : case 2 : goto LABEL_14 ; case 3 : a2 = 0 ; a3 = 0 ; if ( ! LookupFileInfoCache ( ( const char * ) ( this + 113 ) , 0 , & a3 , & a2 , 0 ) ) goto LABEL_5 ; v6 = ( * ( int (__thiscall **)(int, int, int) ) ( * ( _DWORD * ) ( this + 4 ) + 32 ) ) ( this + 4 , a3 [ 3 ] , 1 ) == 0 ; v7 = * ( _DWORD * ) ( this + 4 ) ; v12 = a2 ; * ( _BYTE * ) ( this + 112 ) = ! v6 ; result = ( * ( int (__thiscall **)(int, int, int) ) ( v7 + 40 ) ) ( this + 4 , v12 , 1 ) == 0 ; break ; case 4 : ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) ( this + 4 ) + 52 ) ) ( this + 4 ) ; * ( _BYTE * ) ( this + 112 ) = 0 ; return 0 ; case 5 : v8 = a4 ; return ( * ( int (__thiscall **)(int, int *, int) ) ( * ( _DWORD * ) ( this + 4 ) + 36 ) ) ( this + 4 , a3 , a4 ) != v8 ; case 6 : LABEL_5 : result = 1 ; break ; case 7 : result = ( * ( int (__thiscall **)(int, int, int *) ) ( * ( _DWORD * ) ( this + 4 ) + 40 ) ) ( this + 4 , a4 , a3 ) == 0 ; break ; case 8 : if ( a4 <= 0 ) { v10 = this + 4 ; result = ( * ( int (__thiscall **)(int, int, int *) ) ( * ( _DWORD * ) ( this + 4 ) + 40 ) ) ( this + 4 , a4 , a3 ) == 0 ; if ( ! result ) { result = ( * ( int (__thiscall **)(int, int *, int) ) ( * ( _DWORD * ) v10 + 36 ) ) ( v10 , & a4 , 1 ) != 1 ; if ( ! result ) result = ( * ( int (__thiscall **)(int, int, int) ) ( * ( _DWORD * ) v10 + 40 ) ) ( v10 , -1 , 1 ) == 0 ; } } else { v9 = this + 4 ; result = ( * ( int (__thiscall **)(int, int, int *) ) ( * ( _DWORD * ) ( this + 4 ) + 40 ) ) ( this + 4 , a4 - 1 , a3 ) == 0 ; if ( ! result ) result = ( * ( int (__thiscall **)(int, int *, int) ) ( * ( _DWORD * ) v9 + 36 ) ) ( v9 , & a4 , 1 ) != 1 ; } break ; case 9 : v11 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) ( this + 4 ) + 44 ) ) ( this + 4 ) ; * a3 = v11 ; LABEL_14 : result = 0 ; break ; default : return result ; } return result ; }
-    return false;
+// [IDA decompile]
+BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
+{
+  BOOL result; // eax
+  bool v6; // zf
+  int v7; // eax
+  int v8; // esi
+  int v9; // esi
+  int v10; // esi
+  int v11; // eax
+  int v12; // [esp-Ch] [ebp-10h]
+
+  result = 1;
+  switch ( a2 )
+  {
+    case 1:
+    case 2:
+      goto LABEL_14;
+    case 3:
+      a2 = 0;
+      a3 = 0;
+      if ( !LookupFileInfoCache((const char *)(this + 113), 0, &a3, &a2, 0) )
+        goto LABEL_5;
+      v6 = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)(this + 4) + 32))(this + 4, a3[3], 1) == 0;
+      v7 = *(_DWORD *)(this + 4);
+      v12 = a2;
+      *(_BYTE *)(this + 112) = !v6;
+      result = (*(int (__thiscall **)(int, int, int))(v7 + 40))(this + 4, v12, 1) == 0;
+      break;
+    case 4:
+      (*(void (__thiscall **)(int))(*(_DWORD *)(this + 4) + 52))(this + 4);
+      *(_BYTE *)(this + 112) = 0;
+      return 0;
+    case 5:
+      v8 = a4;
+      return (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)(this + 4) + 36))(this + 4, a3, a4) != v8;
+    case 6:
+LABEL_5:
+      result = 1;
+      break;
+    case 7:
+      result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0;
+      break;
+    case 8:
+      if ( a4 <= 0 )
+      {
+        v10 = this + 4;
+        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0;
+        if ( !result )
+        {
+          result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v10 + 36))(v10, &a4, 1) != 1;
+          if ( !result )
+            result = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v10 + 40))(v10, -1, 1) == 0;
+        }
+      }
+      else
+      {
+        v9 = this + 4;
+        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4 - 1, a3) == 0;
+        if ( !result )
+          result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v9 + 36))(v9, &a4, 1) != 1;
+      }
+      break;
+    case 9:
+      v11 = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 4) + 44))(this + 4);
+      *a3 = v11;
+LABEL_14:
+      result = 0;
+      break;
+    default:
+      return result;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+4+arg_0]
+mov     eax, 1
+dec     ecx             ; switch 9 cases
+cmp     ecx, 8
+ja      def_75A136      ; jumptable 0075A136 default case
+jmp     ds:jpt_75A136[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_75A13D:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+xor     eax, eax        ; jumptable 0075A136 case 3
+lea     edx, [esp+4+arg_0]
+mov     [esp+4+arg_0], eax
+mov     [esp+4+arg_4], eax
+push    eax
+lea     eax, [esp+8+arg_4]
+push    edx
+push    eax
+xor     edx, edx
+lea     ecx, [esi+71h]
+call    LookupFileInfoCache
+test    al, al
+jz      short loc_75A1B6 ; jumptable 0075A136 case 6
+mov     eax, [esp+4+arg_4]
+mov     edx, [esi+4]
+push    edi
+lea     edi, [esi+4]
+mov     ecx, [eax+0Ch]
+push    1
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+20h]
+mov     ecx, [esp+8+arg_0]
+push    1
+test    eax, eax
+mov     eax, [edi]
+push    ecx
+setnz   dl
+mov     ecx, edi
+mov     [esi+70h], dl
+call    dword ptr [eax+28h]
+neg     eax
+sbb     eax, eax
+pop     edi
+inc     eax
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A196:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+mov     eax, [esp+4+arg_4] ; jumptable 0075A136 case 5
+mov     edx, [esi+4]
+lea     ecx, [esi+4]
+mov     esi, [esp+4+arg_8]
+push    esi
+push    eax
+call    dword ptr [edx+24h]
+xor     ecx, ecx
+cmp     eax, esi
+setnz   cl
+mov     eax, ecx
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A1B6:                             ; CODE XREF: sub_75A120+16↑j
+; sub_75A120+3E↑j
+; DATA XREF: ...
+mov     eax, 1          ; jumptable 0075A136 case 6
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A1BF:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+mov     eax, [esp+4+arg_4] ; jumptable 0075A136 case 7
+mov     edx, [esi+4]
+lea     ecx, [esi+4]
+push    eax
+mov     eax, [esp+8+arg_8]
+push    eax
+call    dword ptr [edx+28h]
+neg     eax
+sbb     eax, eax
+pop     esi
+inc     eax
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A1DB:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+mov     eax, [esp+4+arg_8] ; jumptable 0075A136 case 8
+test    eax, eax
+jle     short loc_75A215
+mov     ecx, [esp+4+arg_4]
+mov     edx, [esi+4]
+add     esi, 4
+dec     eax
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+28h]
+neg     eax
+sbb     eax, eax
+inc     eax
+jnz     short def_75A136 ; jumptable 0075A136 default case
+mov     edx, [esi]
+lea     eax, [esp+4+arg_8]
+push    1
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+24h]
+dec     eax
+pop     esi
+neg     eax
+sbb     eax, eax
+neg     eax
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A215:                             ; CODE XREF: sub_75A120+C1↑j
+mov     ecx, [esp+4+arg_4]
+mov     edx, [esi+4]
+add     esi, 4
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+28h]
+neg     eax
+sbb     eax, eax
+inc     eax
+jnz     short def_75A136 ; jumptable 0075A136 default case
+mov     edx, [esi]
+lea     eax, [esp+4+arg_8]
+push    1
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+24h]
+dec     eax
+neg     eax
+sbb     eax, eax
+neg     eax
+jnz     short def_75A136 ; jumptable 0075A136 default case
+mov     edx, [esi]
+push    1
+push    0FFFFFFFFh
+mov     ecx, esi
+call    dword ptr [edx+28h]
+neg     eax
+sbb     eax, eax
+pop     esi
+inc     eax
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A258:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+mov     eax, [esi+4]    ; jumptable 0075A136 case 9
+lea     ecx, [esi+4]
+call    dword ptr [eax+2Ch]
+mov     ecx, [esp+4+arg_4]
+mov     [ecx], eax
+
+loc_75A267:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+xor     eax, eax        ; jumptable 0075A136 cases 1,2
+
+def_75A136:                             ; CODE XREF: sub_75A120+10↑j
+; sub_75A120+DA↑j ...
+pop     esi             ; jumptable 0075A136 default case
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_75A26D:                             ; CODE XREF: sub_75A120+16↑j
+; DATA XREF: .text:jpt_75A136↓o
+mov     edx, [esi+4]    ; jumptable 0075A136 case 4
+lea     ecx, [esi+4]
+call    dword ptr [edx+34h]
+xor     eax, eax
+mov     [esi+70h], al
+pop     esi
+retn    0Ch
+*/
 }
 
 // 0x00408F80 (174 bytes)
 const char* MethodRead_408F80() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00408F80.json)
-    // Size: 174 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __fastcall sub_408F80 ( int *a1, int *a2, int a3, char *a4 ) { !int v7 ! ; // eax int v8 ; // edx !int v9 ! ; // esi !bool v10 ! ; // zf !int v12 ! ; // [esp-8h] [ebp-1Ch] char v13 ; // [esp+10h] [ebp-4h] BYREF ReadAudioStream ( a1 , 0 ) ; if ( ! a4 ) a4 = & v13 ; * ( _DWORD * ) a4 = 0 ; do { v7 = a1 [ 2 ] ; if ( v7 > a3 ) v7 = a3 ; if ( ! v7 ) break ; v8 = * a2 ; v12 = a1 [ 1 ] ; if ( a1 [ 5 ] ) { v9 = ( * ( int (__thiscall **)(int *, int, int) ) ( v8 + 48 ) ) ( a2 , v12 , v7 ) ; v10 = v9 == 0 ; if ( v9 < 0 ) goto LABEL_11 ; } else { v9 = ( * ( int (__thiscall **)(int *, int, int) ) ( v8 + 36 ) ) ( a2 , v12 , v7 ) ; v10 = v9 == 0 ; if ( v9 < 0 ) { LABEL_11 : a1 [ 9 ] = -2147221504 ; v10 = v9 == 0 ; } } if ( v10 ) return 2 ; if ( v9 == -1 ) return 0 ; ReadAudioStream ( a1 , v9 ) ; a3 -= v9 ; * ( _DWORD * ) a4 += v9 ; } while ( a3 ) ; return 1 ; }
-    return nullptr;
+// [IDA decompile]
+int __fastcall sub_408F80(int *a1, int *a2, int a3, char *a4)
+{
+  int v7; // eax
+  int v8; // edx
+  int v9; // esi
+  bool v10; // zf
+  int v12; // [esp-8h] [ebp-1Ch]
+  char v13; // [esp+10h] [ebp-4h] BYREF
+
+  ReadAudioStream(a1, 0);
+  if ( !a4 )
+    a4 = &v13;
+  *(_DWORD *)a4 = 0;
+  do
+  {
+    v7 = a1[2];
+    if ( v7 > a3 )
+      v7 = a3;
+    if ( !v7 )
+      break;
+    v8 = *a2;
+    v12 = a1[1];
+    if ( a1[5] )
+    {
+      v9 = (*(int (__thiscall **)(int *, int, int))(v8 + 48))(a2, v12, v7);
+      v10 = v9 == 0;
+      if ( v9 < 0 )
+        goto LABEL_11;
+    }
+    else
+    {
+      v9 = (*(int (__thiscall **)(int *, int, int))(v8 + 36))(a2, v12, v7);
+      v10 = v9 == 0;
+      if ( v9 < 0 )
+      {
+LABEL_11:
+        a1[9] = -2147221504;
+        v10 = v9 == 0;
+      }
+    }
+    if ( v10 )
+      return 2;
+    if ( v9 == -1 )
+      return 0;
+    ReadAudioStream(a1, v9);
+    a3 -= v9;
+    *(_DWORD *)a4 += v9;
+  }
+  while ( a3 );
+  return 1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+push    esi
+mov     ebx, edx
+push    edi
+mov     edi, ecx
+xor     edx, edx
+call    ReadAudioStream
+mov     eax, [esp+14h+arg_4]
+test    eax, eax
+jnz     short loc_408FA0
+lea     eax, [esp+14h+var_4]
+mov     [esp+14h+arg_4], eax
+
+loc_408FA0:                             ; CODE XREF: sub_408F80+16↑j
+mov     ecx, [esp+14h+arg_4]
+mov     ebp, [esp+14h+arg_0]
+mov     dword ptr [ecx], 0
+
+loc_408FAE:                             ; CODE XREF: sub_408F80+88↓j
+mov     eax, [edi+8]
+cmp     eax, ebp
+jle     short loc_408FB7
+mov     eax, ebp
+
+loc_408FB7:                             ; CODE XREF: sub_408F80+33↑j
+test    eax, eax
+jz      short loc_409021
+mov     ecx, [edi+14h]
+mov     edx, [ebx]
+push    eax
+mov     eax, [edi+4]
+test    ecx, ecx
+push    eax
+mov     ecx, ebx
+jz      short loc_408FD6
+call    dword ptr [edx+30h]
+mov     esi, eax
+test    esi, esi
+jge     short loc_408FE8
+jmp     short loc_408FDF
+; ---------------------------------------------------------------------------
+
+loc_408FD6:                             ; CODE XREF: sub_408F80+49↑j
+call    dword ptr [edx+24h]
+mov     esi, eax
+test    esi, esi
+jge     short loc_408FE8
+
+loc_408FDF:                             ; CODE XREF: sub_408F80+54↑j
+mov     dword ptr [edi+24h], 80040000h
+test    esi, esi
+
+loc_408FE8:                             ; CODE XREF: sub_408F80+52↑j
+; sub_408F80+5D↑j
+jz      short loc_40900A
+cmp     esi, 0FFFFFFFFh
+jz      short loc_409017
+mov     edx, esi
+mov     ecx, edi
+call    ReadAudioStream
+mov     eax, [esp+14h+arg_4]
+sub     ebp, esi
+mov     ecx, [eax]
+add     ecx, esi
+test    ebp, ebp
+mov     [eax], ecx
+jz      short loc_409021
+jmp     short loc_408FAE
+; ---------------------------------------------------------------------------
+
+loc_40900A:                             ; CODE XREF: sub_408F80:loc_408FE8↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 2
+pop     ebx
+pop     ecx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_409017:                             ; CODE XREF: sub_408F80+6D↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+pop     ecx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_409021:                             ; CODE XREF: sub_408F80+39↑j
+; sub_408F80+86↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+pop     ecx
+retn    8
+*/
 }
 
 // 0x00798360 (116 bytes)
 char OpenStub_798360() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00798360.json)
-    // Size: 116 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char sub_798360 ( ) { !LSTATUS v0 ! ; // eax !LSTATUS v1 ! ; // esi !HKEY phkResult ! ; // [esp+0h] [ebp-20Ch] BYREF !DWORD cbData ! ; // [esp+4h] [ebp-208h] BYREF !DWORD Type ! ; // [esp+8h] [ebp-204h] BYREF !BYTE Data[512] ! ; // [esp+Ch] [ebp-200h] BYREF v0 = "RegOpenKeyExA " ( HKEY_LOCAL_MACHINE , g_Str_WOL_URL_RegKey , 0 , 0x20019u , & phkResult ) ; if ( ! v0 ) { cbData = 512 ; v1 = "RegQueryValueExA " ( phkResult , g_INI_Key_Community , 0 , & Type , Data , & cbData ) ; LOBYTE ( v0 ) = "RegCloseKey " ( phkResult ) ; if ( ! v1 ) LOBYTE ( v0 ) = OpenURLWOL ( ( const char * ) Data , 0 ) ; } return v0 ; }
-    return 0;
+// [IDA decompile]
+char sub_798360()
+{
+  int v0; // eax
+  int v1; // esi
+  int phkResult; // [esp+0h] [ebp-20Ch] BYREF
+  int cbData; // [esp+4h] [ebp-208h] BYREF
+  int Type; // [esp+8h] [ebp-204h] BYREF
+  char Data[512]; // [esp+Ch] [ebp-200h] BYREF
+
+  v0 = ((int (__stdcall *)(int, char *, _DWORD, int, int *))RegOpenKeyExA)(
+         -2147483646,
+         g_Str_WOL_URL_RegKey,
+         0,
+         131097,
+         &phkResult);
+  if ( !v0 )
+  {
+    cbData = 512;
+    v1 = ((int (__stdcall *)(int, char *, _DWORD, int *, char *, int *))RegQueryValueExA)(
+           phkResult,
+           g_INI_Key_Community,
+           0,
+           &Type,
+           Data,
+           &cbData);
+    LOBYTE(v0) = ((int (__stdcall *)(int))RegCloseKey)(phkResult);
+    if ( !v1 )
+      LOBYTE(v0) = OpenURLWOL(Data, 0);
+  }
+  return v0;
+}
+
+/* ASM:
+phkResult       = dword ptr -20Ch
+cbData          = dword ptr -208h
+Type            = dword ptr -204h
+Data            = byte ptr -200h
+
+sub     esp, 20Ch
+lea     eax, [esp+20Ch+phkResult]
+push    eax             ; phkResult
+push    20019h          ; samDesired
+push    0               ; ulOptions
+push    offset g_Str_WOL_URL_RegKey ; "Software\\Westwood\\Yuri's Revenge\\URL"
+push    80000002h       ; hKey
+call    ds:__imp_RegOpenKeyExA
+test    eax, eax
+jnz     short loc_7983CD
+lea     ecx, [esp+20Ch+cbData]
+push    esi
+lea     edx, [esp+210h+Data]
+push    ecx             ; lpcbData
+mov     ecx, [esp+214h+phkResult]
+lea     eax, [esp+214h+Type]
+push    edx             ; lpData
+push    eax             ; lpType
+push    0               ; lpReserved
+push    offset g_INI_Key_Community ; "Community"
+push    ecx             ; hKey
+mov     [esp+228h+cbData], 200h
+call    ds:__imp_RegQueryValueExA
+mov     esi, eax
+mov     edx, [esp+210h+phkResult]
+push    edx             ; hKey
+call    ds:__imp_RegCloseKey
+test    esi, esi
+pop     esi
+jnz     short loc_7983CD
+xor     edx, edx
+lea     ecx, [esp+20Ch+Data]
+call    OpenURLWOL
+
+loc_7983CD:                             ; CODE XREF: sub_798360+24↑j
+; sub_798360+60↑j
+add     esp, 20Ch
+retn
+*/
 }
 
 // 0x004FFD90 (63 bytes)
 int PathfindingClass_FindPathfinding_4FFD90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004FFD90.json)
-    // Size: 63 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4FFD90 ( _DWORD *this, __int16 *a2 ) { int v2 ; // eax unsigned int v4[3] ; // [esp+0h] [ebp-Ch] BYREF v4 [ 2 ] = 0 ; v2 = a2 [ 1 ] ; v4 [ 0 ] = ( * a2 << 8 ) + 128 ; v4 [ 1 ] = ( v2 << 8 ) + 128 ; return PathfindingClass::FindPath ( this , v4 ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
+{
+  int v2; // eax
+  unsigned int v4[3]; // [esp+0h] [ebp-Ch] BYREF
+
+  v4[2] = 0;
+  v2 = a2[1];
+  v4[0] = (*a2 << 8) + 128;
+  v4[1] = (v2 << 8) + 128;
+  return PathfindingClass::FindPath(this, v4);
+}
+
+/* ASM:
+sub     esp, 0Ch
+mov     eax, [esp+0Ch+arg_0]
+mov     [esp+0Ch+var_4], 0
+movsx   edx, word ptr [eax]
+movsx   eax, word ptr [eax+2]
+shl     edx, 8
+add     edx, 80h
+mov     [esp+0Ch+var_C], edx
+lea     edx, [esp+0Ch+var_C]
+shl     eax, 8
+add     eax, 80h
+push    edx
+mov     [esp+10h+var_8], eax
+call    PathfindingClass__FindPath
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x004F1B80 (286 bytes)
 const char* PrependCCFile_4F1B80() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F1B80.json)
-    // Size: 286 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char **__usercall sub_4F1B80 ( char **a1, char **a2, int a3 ) { !char **v5 ! ; // esi void *v6[4] ; // [esp+8h] [ebp-ACh] BYREF _DWORD v7[3] ; // [esp+18h] [ebp-9Ch] BYREF _DWORD v8[6] ; // [esp+24h] [ebp-90h] BYREF char v9 ; // [esp+3Ch] [ebp-78h] int v10 ; // [esp+40h] [ebp-74h] int v11 ; // [esp+44h] [ebp-70h] _DWORD v12[22] ; // [esp+48h] [ebp-6Ch] BYREF _BYTE v13[12] ; // [esp+A0h] [ebp-14h] BYREF int v14 ; // [esp+ACh] [ebp-8h] CCFileClass::Construct2 ( v12 , a2 ) ; if ( CCFileClass::Open ( v12 , 0 ) ) { v6 [ 1 ] = 0 ; v6 [ 2 ] = 0 ; v7 [ 1 ] = 0 ; v7 [ 2 ] = 0 ; v7 [ 0 ] = & GenericNode::vftable' ; GenericNode::Constructor ( v8 ) ; LinkedList::Prepend ( v7 , ( int ) v8 ) ; v6 [ 3 ] = & List<INIClass::INISection *>::vftable' ; memset ( & v8 [ 3 ] , 0 , 12 ) ; v9 = 0 ; v10 = 0 ; v11 = 0 ; v6 [ 0 ] = & INIClass::vftable' ; if ( FileStraw::Open ( v6 , ( int ) v12 , 0 ) <= 0 ) v5 = 0 ; else v5 = LoadFromINIGraphicMenu ( a1 , v6 , a3 ) ; HashTable::DestroyHashTableINIClass ( v6 ) ; v12 [ 0 ] = & CCFileClass::vftable' ; v14 = 0 ; Vector::Clear ( ( int ) v13 ) ; v12 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v12 ) ; return v5 ; } else { v12 [ 0 ] = & CCFileClass::vftable' ; v14 = 0 ; Vector::Clear ( ( int ) v13 ) ; v12 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v12 ) ; return 0 ; } }
-    return nullptr;
+// [IDA decompile]
+char **__usercall sub_4F1B80@<eax>(char **a1@<edx>, char **a2@<ecx>, int a3@<edi>)
+{
+  char **v5; // esi
+  void *v6[4]; // [esp+8h] [ebp-ACh] BYREF
+  _DWORD v7[3]; // [esp+18h] [ebp-9Ch] BYREF
+  _DWORD v8[6]; // [esp+24h] [ebp-90h] BYREF
+  char v9; // [esp+3Ch] [ebp-78h]
+  int v10; // [esp+40h] [ebp-74h]
+  int v11; // [esp+44h] [ebp-70h]
+  _DWORD v12[22]; // [esp+48h] [ebp-6Ch] BYREF
+  _BYTE v13[12]; // [esp+A0h] [ebp-14h] BYREF
+  int v14; // [esp+ACh] [ebp-8h]
+
+  CCFileClass::Construct2(v12, a2);
+  if ( CCFileClass::Open(v12, 0) )
+  {
+    v6[1] = 0;
+    v6[2] = 0;
+    v7[1] = 0;
+    v7[2] = 0;
+    v7[0] = &GenericNode::`vftable';
+    GenericNode::Constructor(v8);
+    LinkedList::Prepend(v7, (int)v8);
+    v6[3] = &List<INIClass::INISection *>::`vftable';
+    memset(&v8[3], 0, 12);
+    v9 = 0;
+    v10 = 0;
+    v11 = 0;
+    v6[0] = &INIClass::`vftable';
+    if ( FileStraw::Open(v6, (int)v12, 0) <= 0 )
+      v5 = 0;
+    else
+      v5 = LoadFromINIGraphicMenu(a1, v6, a3);
+    HashTable::DestroyHashTableINIClass(v6);
+    v12[0] = &CCFileClass::`vftable';
+    v14 = 0;
+    Vector::Clear((int)v13);
+    v12[0] = &off_7E1668;
+    BufferIOFileClass::Dtor(v12);
+    return v5;
+  }
+  else
+  {
+    v12[0] = &CCFileClass::`vftable';
+    v14 = 0;
+    Vector::Clear((int)v13);
+    v12[0] = &off_7E1668;
+    BufferIOFileClass::Dtor(v12);
+    return 0;
+  }
+}
+
+/* ASM:
+sub     esp, 0ACh
+push    ebx
+push    esi
+push    ecx
+mov     esi, edx
+lea     ecx, [esp+0B8h+var_6C]
+call    CCFileClass__Construct2
+xor     ebx, ebx
+lea     ecx, [esp+0B4h+var_6C]
+push    ebx
+call    CCFileClass__Open
+test    al, al
+jnz     short loc_4F1BDB
+lea     ecx, [esp+0B4h+var_14]
+mov     [esp+0B4h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+0B4h+var_8], ebx
+call    Vector__Clear
+lea     ecx, [esp+0B4h+var_6C]
+mov     [esp+0B4h+var_6C], offset off_7E1668
+call    BufferIOFileClass__Dtor
+xor     eax, eax
+pop     esi
+pop     ebx
+add     esp, 0ACh
+retn
+; ---------------------------------------------------------------------------
+
+loc_4F1BDB:                             ; CODE XREF: sub_4F1B80+22↑j
+lea     ecx, [esp+0B4h+var_90]
+mov     [esp+0B4h+var_A8], ebx
+mov     [esp+0B4h+var_A4], ebx
+mov     [esp+0B4h+var_98], ebx
+mov     [esp+0B4h+var_94], ebx
+mov     [esp+0B4h+var_9C], offset ??_7GenericNode@@6B@ ; const GenericNode::`vftable'
+call    GenericNode__Constructor
+lea     eax, [esp+0B4h+var_90]
+lea     ecx, [esp+0B4h+var_9C]
+push    eax
+mov     [esp+0B8h+var_A0], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
+call    LinkedList__Prepend
+lea     ecx, [esp+0B4h+var_6C]
+mov     [esp+0B4h+var_A0], offset ??_7?$List@PAUINISection@INIClass@@@@6B@ ; const List<INIClass::INISection *>::`vftable'
+push    ebx
+push    ecx
+lea     ecx, [esp+0BCh+var_AC]
+mov     [esp+0BCh+var_84], ebx
+mov     [esp+0BCh+var_80], ebx
+mov     [esp+0BCh+var_7C], ebx
+mov     [esp+0BCh+var_78], bl
+mov     [esp+0BCh+var_74], ebx
+mov     [esp+0BCh+var_70], ebx
+mov     [esp+0BCh+var_AC], offset ??_7INIClass@@6B@ ; const INIClass::`vftable'
+call    FileStraw__Open
+test    eax, eax
+jle     short loc_4F1C5C
+mov     edx, esi
+lea     ecx, [esp+0B4h+var_AC]
+call    LoadFromINIGraphicMenu
+mov     esi, eax
+jmp     short loc_4F1C5E
+; ---------------------------------------------------------------------------
+
+loc_4F1C5C:                             ; CODE XREF: sub_4F1B80+CB↑j
+xor     esi, esi
+
+loc_4F1C5E:                             ; CODE XREF: sub_4F1B80+DA↑j
+lea     ecx, [esp+0B4h+var_AC]
+call    HashTable__DestroyHashTableINIClass
+lea     ecx, [esp+0B4h+var_14]
+mov     [esp+0B4h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+0B4h+var_8], ebx
+call    Vector__Clear
+lea     ecx, [esp+0B4h+var_6C]
+mov     [esp+0B4h+var_6C], offset off_7E1668
+call    BufferIOFileClass__Dtor
+mov     eax, esi
+pop     esi
+pop     ebx
+add     esp, 0ACh
+retn
+*/
 }
 
 // 0x0042BCA0 (371 bytes)
 int SimplifyPathFilterHelper_42BCA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0042BCA0.json)
-    // Size: 371 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   __int16 __stdcall sub_42BCA0 ( int a1, int a2, int a3, _DWORD *a4, int *a5 ) { int v6 ; // edx int v7 ; // esi !__int16 v8 ! ; // cx !__int16 v9 ! ; // bx !bool v10 ! ; // cc !int v11 ! ; // eax __int16 v12 ; // si _WORD *v13 ; // eax __int16 v14 ; // bx __int16 v15 ; // bp int v16 ; // ecx int v17 ; // eax __int16 result ; // ax !int v19 ! ; // edi int v20 ; // [esp+10h] [ebp-18h] int v21 ; // [esp+14h] [ebp-14h] !__int16 v22 ! ; // [esp+18h] [ebp-10h] !__int16 v23 ! ; // [esp+1Ah] [ebp-Eh] int v24 ; // [esp+1Ch] [ebp-Ch] int v25 ; // [esp+20h] [ebp-8h] _DWORD *v26 ; // [esp+2Ch] [ebp+4h] !char v27 ! ; // [esp+30h] [ebp+8h] int v28 ; // [esp+34h] [ebp+Ch] v6 = * a5 ; v7 = a3 ; v8 = 0 ; v9 = 0 ; v10 = a2 < a3 ; v25 = 0 ; v20 = a2 ; v21 = * a5 ; v27 = 0 ; if ( v10 ) { LABEL_13 : * a4 = v7 ; * a5 = v6 ; return ( __int16 ) a4 ; } v26 = ( _DWORD * ) ( a1 + 4 * a2 ) ; while ( * v26 == -2 ) { -- v20 ; -- v26 ; LABEL_12 : if ( v20 < v7 ) goto LABEL_13 ; } v11 = ( ( unsigned __int8 ) * v26 - 4 ) & 7 ; v12 = Direction_X_Offsets [ v11 ] ; v13 = ( _WORD * ) ( 4 * v11 + 9041544 ) ; v22 = v8 + v12 ; v23 = v9 + v13 [ 1 ] ; v14 = HIWORD ( v21 ) + v13 [ 1 ] ; v15 = v6 + * v13 ; LOWORD ( v24 ) = v15 ; HIWORD ( v24 ) = v14 ; HIWORD ( v21 ) = v14 ; v16 = abs16 ( v23 ) ; v17 = abs16 ( v22 ) ; if ( v17 <= v16 ) v17 = v16 ; if ( v17 <= v25 ) { v27 = 1 ; goto LABEL_11 ; } if ( ! v27 ) { v25 = v17 ; LABEL_11 : v9 = v23 ; v7 = a3 ; v6 = v24 ; -- v20 ; v8 = v22 ; -- v26 ; goto LABEL_12 ; } v19 = ( ( ( ( unsigned __int8 ) * v26 - 4 ) & 7 ) - 4 ) & 7 ; * a4 = v20 + 1 ; LOWORD ( v28 ) = v15 + LOWORD ( Direction_X_Offsets [ v19 ] ) ; result = v14 + HIWORD ( Direction_X_Offsets [ v19 ] ) ; HIWORD ( v28 ) = result ; * a5 = v28 ; return result ; }
-    return 0;
+// [IDA decompile]
+__int16 __stdcall sub_42BCA0(int a1, int a2, int a3, _DWORD *a4, int *a5)
+{
+  int v6; // edx
+  int v7; // esi
+  __int16 v8; // cx
+  __int16 v9; // bx
+  bool v10; // cc
+  int v11; // eax
+  __int16 v12; // si
+  _WORD *v13; // eax
+  __int16 v14; // bx
+  __int16 v15; // bp
+  int v16; // ecx
+  int v17; // eax
+  __int16 result; // ax
+  int v19; // edi
+  int v20; // [esp+10h] [ebp-18h]
+  int v21; // [esp+14h] [ebp-14h]
+  __int16 v22; // [esp+18h] [ebp-10h]
+  __int16 v23; // [esp+1Ah] [ebp-Eh]
+  int v24; // [esp+1Ch] [ebp-Ch]
+  int v25; // [esp+20h] [ebp-8h]
+  _DWORD *v26; // [esp+2Ch] [ebp+4h]
+  char v27; // [esp+30h] [ebp+8h]
+  int v28; // [esp+34h] [ebp+Ch]
+
+  v6 = *a5;
+  v7 = a3;
+  v8 = 0;
+  v9 = 0;
+  v10 = a2 < a3;
+  v25 = 0;
+  v20 = a2;
+  v21 = *a5;
+  v27 = 0;
+  if ( v10 )
+  {
+LABEL_13:
+    *a4 = v7;
+    *a5 = v6;
+    return (__int16)a4;
+  }
+  v26 = (_DWORD *)(a1 + 4 * a2);
+  while ( *v26 == -2 )
+  {
+    --v20;
+    --v26;
+LABEL_12:
+    if ( v20 < v7 )
+      goto LABEL_13;
+  }
+  v11 = ((unsigned __int8)*v26 - 4) & 7;
+  v12 = MEMORY[0x89F688][v11];
+  v13 = (_WORD *)(4 * v11 + 9041544);
+  v22 = v8 + v12;
+  v23 = v9 + v13[1];
+  v14 = HIWORD(v21) + v13[1];
+  v15 = v6 + *v13;
+  LOWORD(v24) = v15;
+  HIWORD(v24) = v14;
+  HIWORD(v21) = v14;
+  v16 = abs16(v23);
+  v17 = abs16(v22);
+  if ( v17 <= v16 )
+    v17 = v16;
+  if ( v17 <= v25 )
+  {
+    v27 = 1;
+    goto LABEL_11;
+  }
+  if ( !v27 )
+  {
+    v25 = v17;
+LABEL_11:
+    v9 = v23;
+    v7 = a3;
+    v6 = v24;
+    --v20;
+    v8 = v22;
+    --v26;
+    goto LABEL_12;
+  }
+  v19 = ((((unsigned __int8)*v26 - 4) & 7) - 4) & 7;
+  *a4 = v20 + 1;
+  LOWORD(v28) = v15 + LOWORD(MEMORY[0x89F688][v19]);
+  result = v14 + HIWORD(MEMORY[0x89F688][v19]);
+  HIWORD(v28) = result;
+  *a5 = v28;
+  return result;
+}
+
+/* ASM:
+sub     esp, 18h
+mov     edx, [esp+18h+arg_10]
+mov     eax, [esp+18h+arg_4]
+push    ebx
+push    ebp
+mov     edx, [edx]
+push    esi
+mov     esi, [esp+24h+arg_8]
+xor     ecx, ecx
+xor     bx, bx
+cmp     eax, esi
+push    edi
+mov     [esp+28h+var_8], ecx
+mov     [esp+28h+var_18], eax
+mov     [esp+28h+var_14], edx
+mov     byte ptr [esp+28h+arg_4], bl
+jl      loc_42BDB5
+mov     edi, [esp+28h+arg_0]
+lea     eax, [edi+eax*4]
+mov     [esp+28h+arg_0], eax
+
+loc_42BCDD:                             ; CODE XREF: sub_42BCA0+10F↓j
+mov     eax, [esp+28h+arg_0]
+mov     edi, [eax]
+cmp     edi, 0FFFFFFFEh
+jnz     short loc_42BCFD
+mov     edi, [esp+28h+var_18]
+dec     edi
+sub     eax, 4
+mov     [esp+28h+var_18], edi
+mov     [esp+28h+arg_0], eax
+jmp     loc_42BDAB
+; ---------------------------------------------------------------------------
+
+loc_42BCFD:                             ; CODE XREF: sub_42BCA0+46↑j
+add     edi, 0FFFFFFFCh
+and     edi, 7
+mov     eax, edi
+and     eax, 7
+mov     si, ds:89F688h[eax*4]
+lea     eax, ds:89F688h[eax*4]
+add     si, cx
+mov     cx, [eax+2]
+mov     bp, [eax]
+add     cx, bx
+mov     word ptr [esp+28h+var_10], si
+mov     word ptr [esp+28h+var_10+2], cx
+mov     ebx, [esp+28h+var_10]
+mov     [esp+28h+var_4], ebx
+mov     bx, [eax+2]
+add     bx, word ptr [esp+28h+var_14+2]
+add     bp, dx
+mov     word ptr [esp+28h+var_C], bp
+mov     word ptr [esp+28h+var_C+2], bx
+mov     edx, [esp+28h+var_C]
+movsx   eax, cx
+mov     [esp+28h+var_14], edx
+cdq
+mov     ecx, eax
+movsx   eax, si
+xor     ecx, edx
+sub     ecx, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, ecx
+jg      short loc_42BD6C
+mov     eax, ecx
+
+loc_42BD6C:                             ; CODE XREF: sub_42BCA0+C8↑j
+cmp     eax, [esp+28h+var_8]
+jle     short loc_42BD80
+mov     cl, byte ptr [esp+28h+arg_4]
+test    cl, cl
+jnz     short loc_42BDCB
+mov     [esp+28h+var_8], eax
+jmp     short loc_42BD85
+; ---------------------------------------------------------------------------
+
+loc_42BD80:                             ; CODE XREF: sub_42BCA0+D0↑j
+mov     byte ptr [esp+28h+arg_4], 1
+
+loc_42BD85:                             ; CODE XREF: sub_42BCA0+DE↑j
+mov     ecx, [esp+28h+var_18]
+mov     eax, [esp+28h+arg_0]
+mov     bx, word ptr [esp+28h+var_4+2]
+mov     esi, [esp+28h+arg_8]
+mov     edx, [esp+28h+var_14]
+dec     ecx
+sub     eax, 4
+mov     [esp+28h+var_18], ecx
+mov     cx, word ptr [esp+28h+var_4]
+mov     [esp+28h+arg_0], eax
+
+loc_42BDAB:                             ; CODE XREF: sub_42BCA0+58↑j
+cmp     [esp+28h+var_18], esi
+jge     loc_42BCDD
+
+loc_42BDB5:                             ; CODE XREF: sub_42BCA0+2C↑j
+mov     eax, [esp+28h+arg_C]
+mov     ecx, [esp+28h+arg_10]
+pop     edi
+mov     [eax], esi
+pop     esi
+pop     ebp
+mov     [ecx], edx
+pop     ebx
+add     esp, 18h
+retn    14h
+; ---------------------------------------------------------------------------
+
+loc_42BDCB:                             ; CODE XREF: sub_42BCA0+D8↑j
+mov     eax, [esp+28h+var_18]
+mov     ecx, [esp+28h+arg_C]
+add     edi, 0FFFFFFFCh
+inc     eax
+and     edi, 7
+mov     [ecx], eax
+mov     dx, ds:89F688h[edi*4]
+lea     eax, ds:89F688h[edi*4]
+add     dx, bp
+pop     edi
+mov     ax, [eax+2]
+mov     word ptr [esp+24h+arg_8], dx
+mov     edx, [esp+24h+arg_10]
+add     ax, bx
+mov     word ptr [esp+24h+arg_8+2], ax
+mov     ecx, [esp+24h+arg_8]
+pop     esi
+pop     ebp
+mov     [edx], ecx
+pop     ebx
+add     esp, 18h
+retn    14h
+*/
 }
 
 // 0x00765000 (458 bytes)
 void String_PrependCCFile_765000() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00765000.json)
-    // Size: 458 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char *__thiscall sub_765000 ( int this, void *a2 ) { !char **v3 ! ; // eax !char **RegionStringWOL ! ; // [esp-4h] [ebp-10Ch] void *v6 ; // [esp+10h] [ebp-F8h] BYREF void *v7 ; // [esp+14h] [ebp-F4h] BYREF void *v8[4] ; // [esp+18h] [ebp-F0h] BYREF _DWORD v9[3] ; // [esp+28h] [ebp-E0h] BYREF _DWORD v10[6] ; // [esp+34h] [ebp-D4h] BYREF char v11 ; // [esp+4Ch] [ebp-BCh] int v12 ; // [esp+50h] [ebp-B8h] int v13 ; // [esp+54h] [ebp-B4h] _DWORD v14[22] ; // [esp+58h] [ebp-B0h] BYREF _DWORD v15[22] ; // [esp+B0h] [ebp-58h] BYREF * ( _DWORD * ) ( this + 48 ) = WDTObject::GetSize ( * ( _DWORD ** ) ( this + 12 ) ) ; * ( _DWORD * ) ( this + 4 * ( _DWORD ) a2 + 52 ) = Conflict::GetOwnerHouse ( * ( _DWORD ** ) ( this + 12 ) ) ; v8 [ 1 ] = 0 ; v8 [ 2 ] = 0 ; GenericNode::Constructor ( v9 ) ; GenericNode::Constructor ( v10 ) ; LinkedList::Prepend ( v9 , ( int ) v10 ) ; v8 [ 3 ] = & List<INIClass::INISection *>::vftable' ; memset ( & v10 [ 3 ] , 0 , 12 ) ; v11 = 0 ; v12 = 0 ; v13 = 0 ; v8 [ 0 ] = & INIClass::vftable' ; BufferIOFile::Init ( v14 ) ; CCFileClass::Reopen ( v14 , g_Str_File_WDTHist_ini , 1 ) ; if ( ! File::IsReady ( v14 , 0 ) ) { FileClass::Close ( v14 ) ; CCFileClass::Close ( v14 ) ; CCFileClass::Reopen ( v14 , g_Str_File_WDTHist_ini , 1 ) ; } FileStraw::Open ( v8 , ( int ) v14 , 0 ) ; CCFileClass::Close ( v14 ) ; v14 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v14 ) ; RegionStringWOL = GetRegionStringWOL ( a2 ) ; v3 = String::Assign ( ( char ** ) & v6 , g_INI_Key_LastDay ) ; String::Concat ( ( const char ** ) v3 , ( char ** ) & v7 , RegionStringWOL ) ; DeleteAndZero ( & v6 ) ; String::Assign ( ( char ** ) & v6 , g_INI_Key_CampaignID ) ; INIClass::SetIntFormat ( ( char * ) v8 , ( char ** ) ( this + 72 ) , ( char ** ) & v6 , * ( _DWORD * ) ( this + 48 ) , 0 ) ; DeleteAndZero ( & v6 ) ; INIClass::SetIntFormat ( ( char * ) v8 , ( char ** ) ( this + 72 ) , ( char ** ) & v7 , * ( _DWORD * ) ( this + 4 * ( _DWORD ) a2 + 52 ) , 0 ) ; BufferIOFile::Init ( v15 ) ; CCFileClass::Reopen ( v15 , g_Str_File_WDTHist_ini , 2 ) ; INIClass::SaveToPipe ( v8 , ( int ) v15 ) ; v15 [ 0 ] = & off_7E1668 ; BufferIOFileClass::Dtor ( v15 ) ; DeleteAndZero ( & v7 ) ; return HashTable::DestroyHashTableINIClass ( v8 ) ; }
-    
+// [IDA decompile]
+char *__thiscall sub_765000(int this, void *a2)
+{
+  char **v3; // eax
+  char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
+  void *v6; // [esp+10h] [ebp-F8h] BYREF
+  void *v7; // [esp+14h] [ebp-F4h] BYREF
+  void *v8[4]; // [esp+18h] [ebp-F0h] BYREF
+  _DWORD v9[3]; // [esp+28h] [ebp-E0h] BYREF
+  _DWORD v10[6]; // [esp+34h] [ebp-D4h] BYREF
+  char v11; // [esp+4Ch] [ebp-BCh]
+  int v12; // [esp+50h] [ebp-B8h]
+  int v13; // [esp+54h] [ebp-B4h]
+  _DWORD v14[22]; // [esp+58h] [ebp-B0h] BYREF
+  _DWORD v15[22]; // [esp+B0h] [ebp-58h] BYREF
+
+  *(_DWORD *)(this + 48) = WDTObject::GetSize(*(_DWORD **)(this + 12));
+  *(_DWORD *)(this + 4 * (_DWORD)a2 + 52) = Conflict::GetOwnerHouse(*(_DWORD **)(this + 12));
+  v8[1] = 0;
+  v8[2] = 0;
+  GenericNode::Constructor(v9);
+  GenericNode::Constructor(v10);
+  LinkedList::Prepend(v9, (int)v10);
+  v8[3] = &List<INIClass::INISection *>::`vftable';
+  memset(&v10[3], 0, 12);
+  v11 = 0;
+  v12 = 0;
+  v13 = 0;
+  v8[0] = &INIClass::`vftable';
+  BufferIOFile::Init(v14);
+  CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1);
+  if ( !File::IsReady(v14, 0) )
+  {
+    FileClass::Close(v14);
+    CCFileClass::Close(v14);
+    CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1);
+  }
+  FileStraw::Open(v8, (int)v14, 0);
+  CCFileClass::Close(v14);
+  v14[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v14);
+  RegionStringWOL = GetRegionStringWOL(a2);
+  v3 = String::Assign((char **)&v6, g_INI_Key_LastDay);
+  String::Concat((const char **)v3, (char **)&v7, RegionStringWOL);
+  DeleteAndZero(&v6);
+  String::Assign((char **)&v6, g_INI_Key_CampaignID);
+  INIClass::SetIntFormat((char *)v8, (char **)(this + 72), (char **)&v6, *(_DWORD *)(this + 48), 0);
+  DeleteAndZero(&v6);
+  INIClass::SetIntFormat((char *)v8, (char **)(this + 72), (char **)&v7, *(_DWORD *)(this + 4 * (_DWORD)a2 + 52), 0);
+  BufferIOFile::Init(v15);
+  CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2);
+  INIClass::SaveToPipe(v8, (int)v15);
+  v15[0] = &off_7E1668;
+  BufferIOFileClass::Dtor(v15);
+  DeleteAndZero(&v7);
+  return HashTable::DestroyHashTableINIClass(v8);
+}
+
+/* ASM:
+sub     esp, 0F8h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [esi+0Ch]
+call    WDTObject__GetSize
+mov     ebp, [esp+108h+arg_0]
+mov     [esi+30h], eax
+mov     ecx, [esi+0Ch]
+call    Conflict__GetOwnerHouse
+xor     ebx, ebx
+lea     ecx, [esp+108h+var_E0]
+mov     [esi+ebp*4+34h], eax
+mov     [esp+108h+var_EC], ebx
+mov     [esp+108h+var_E8], ebx
+call    GenericNode__Constructor
+lea     ecx, [esp+108h+var_D4]
+call    GenericNode__Constructor
+lea     eax, [esp+108h+var_D4]
+lea     ecx, [esp+108h+var_E0]
+push    eax
+mov     [esp+10Ch+var_E4], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
+call    LinkedList__Prepend
+lea     ecx, [esp+108h+var_B0]
+mov     [esp+108h+var_E4], offset ??_7?$List@PAUINISection@INIClass@@@@6B@ ; const List<INIClass::INISection *>::`vftable'
+mov     [esp+108h+var_C8], ebx
+mov     [esp+108h+var_C4], ebx
+mov     [esp+108h+var_C0], ebx
+mov     [esp+108h+var_BC], bl
+mov     [esp+108h+var_B8], ebx
+mov     [esp+108h+var_B4], ebx
+mov     [esp+108h+var_F0], offset ??_7INIClass@@6B@ ; const INIClass::`vftable'
+call    BufferIOFile__Init
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+110h+var_B0]
+call    CCFileClass__Reopen
+push    ebx
+lea     ecx, [esp+10Ch+var_B0]
+call    File__IsReady
+test    al, al
+jnz     short loc_7650CD
+lea     ecx, [esp+108h+var_B0]
+call    FileClass__Close
+lea     ecx, [esp+108h+var_B0]
+call    CCFileClass__Close
+push    1               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+110h+var_B0]
+call    CCFileClass__Reopen
+
+loc_7650CD:                             ; CODE XREF: sub_765000+A9↑j
+lea     ecx, [esp+108h+var_B0]
+push    ebx
+push    ecx
+lea     ecx, [esp+110h+var_F0]
+call    FileStraw__Open
+lea     ecx, [esp+108h+var_B0]
+call    CCFileClass__Close
+lea     ecx, [esp+108h+var_B0]
+mov     [esp+108h+var_B0], offset off_7E1668
+call    BufferIOFileClass__Dtor
+mov     ecx, ebp
+call    GetRegionStringWOL
+lea     edx, [esp+108h+var_F4]
+push    eax
+push    edx
+push    offset g_INI_Key_LastDay ; "LastDay"
+lea     ecx, [esp+114h+var_F8]
+call    String__Assign
+mov     ecx, eax
+call    String__Concat
+lea     ecx, [esp+108h+var_F8]
+call    DeleteAndZero
+push    offset g_INI_Key_CampaignID ; "CampaignID"
+lea     ecx, [esp+10Ch+var_F8]
+call    String__Assign
+mov     eax, [esi+30h]
+push    ebx
+lea     ecx, [esp+10Ch+var_F8]
+lea     edi, [esi+48h]
+push    eax
+push    ecx
+push    edi
+lea     ecx, [esp+118h+var_F0]
+call    INIClass__SetIntFormat
+lea     ecx, [esp+108h+var_F8]
+call    DeleteAndZero
+mov     edx, [esi+ebp*4+34h]
+push    ebx
+lea     eax, [esp+10Ch+var_F4]
+push    edx
+push    eax
+push    edi
+lea     ecx, [esp+118h+var_F0]
+call    INIClass__SetIntFormat
+lea     ecx, [esp+108h+var_58]
+call    BufferIOFile__Init
+push    2               ; int
+push    offset g_Str_File_WDTHist_ini ; "WDTHist.ini"
+lea     ecx, [esp+110h+var_58]
+call    CCFileClass__Reopen
+lea     ecx, [esp+108h+var_58]
+push    ecx
+lea     ecx, [esp+10Ch+var_F0]
+call    INIClass__SaveToPipe
+lea     ecx, [esp+108h+var_58]
+mov     [esp+108h+var_58], offset off_7E1668
+call    BufferIOFileClass__Dtor
+lea     ecx, [esp+108h+var_F4]
+call    DeleteAndZero
+lea     ecx, [esp+108h+var_F0]
+call    HashTable__DestroyHashTableINIClass
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0F8h
+retn    4
+*/
 }
 
 } // namespace gamemd

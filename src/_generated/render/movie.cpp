@@ -8,20 +8,195 @@ namespace gamemd {
 
 // 0x005C00E0 (177 bytes)
 char Frame_Test_5C00E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005C00E0.json)
-    // Size: 177 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __usercall sub_5C00E0 ( int a1, int a2, int a3 ) { char result ; // al int v4 ; // edx !int v5 ! ; // ecx int v6 ; // edi int v7 ; // [esp+4h] [ebp-20h] BYREF int v8 ; // [esp+8h] [ebp-1Ch] int *v9 ; // [esp+Ch] [ebp-18h] int v10 ; // [esp+10h] [ebp-14h] !struct tagRECT Rect ! ; // [esp+14h] [ebp-10h] BYREF result = g_BigIntPool ; if ( g_BigIntPool ) { ( * ( void (__thiscall **)(int, _DWORD) ) ( * ( _DWORD * ) DSurface_Alternate + 24 ) ) ( DSurface_Alternate , 0 ) ; Frame::Present ( DSurface_Alternate , a1 , a2 , a3 , 0 , v7 , v8 , v9 ) ; result = TestBitArray ( 15 ) ; if ( ! result ) { "GetClientRect " ( g_hWnd , & Rect ) ; "ClientToScreen " ( g_hWnd , ( LPPOINT ) & Rect ) ; v4 = * ( _DWORD * ) ( g_BigIntPool + 64 ) ; v5 = Rect . top + * ( _DWORD * ) ( g_BigIntPool + 56 ) ; v6 = * ( _DWORD * ) ( g_BigIntPool + 52 ) ; v9 = * ( int ** ) ( g_BigIntPool + 60 ) ; v8 = v5 ; v7 = Rect . left + v6 ; v10 = v4 ; return ( * ( int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int) ) ( * ( _DWORD * ) DSurface_Primary + 8 ) ) ( DSurface_Primary , & v7 , * ( _DWORD * ) ( g_BigIntPool + 8 ) , g_BigIntPool + 36 , 0 , 1 ) ; } } return result ; }
-    return 0;
+// [IDA decompile]
+char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
+{
+  char result; // al
+  int v4; // edx
+  int v5; // ecx
+  int v6; // edi
+  int v7; // [esp+4h] [ebp-20h] BYREF
+  int v8; // [esp+8h] [ebp-1Ch]
+  int *v9; // [esp+Ch] [ebp-18h]
+  int v10; // [esp+10h] [ebp-14h]
+  _DWORD Rect[4]; // [esp+14h] [ebp-10h] BYREF
+
+  result = dword_A8ED54[49576];
+  if ( dword_A8ED54[49576] )
+  {
+    (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7882] + 24))(MEMORY[0x87F7E8][7882], 0);
+    Frame::Present(MEMORY[0x87F7E8][7882], a1, a2, a3, 0, v7, v8, v9);
+    result = TestBitArray(15);
+    if ( !result )
+    {
+      ((void (__stdcall *)(int, _DWORD *))GetClientRect)(dword_A8ED54[233983], Rect);
+      ((void (__stdcall *)(int, _DWORD *))ClientToScreen)(dword_A8ED54[233983], Rect);
+      v4 = *(_DWORD *)(dword_A8ED54[49576] + 64);
+      v5 = Rect[1] + *(_DWORD *)(dword_A8ED54[49576] + 56);
+      v6 = *(_DWORD *)(dword_A8ED54[49576] + 52);
+      v9 = *(int **)(dword_A8ED54[49576] + 60);
+      v8 = v5;
+      v7 = Rect[0] + v6;
+      v10 = v4;
+      return (*(int (__thiscall **)(_DWORD, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)MEMORY[0x87F7E8][7880] + 8))(
+               MEMORY[0x87F7E8][7880],
+               &v7,
+               *(_DWORD *)(dword_A8ED54[49576] + 8),
+               dword_A8ED54[49576] + 36,
+               0,
+               1);
+    }
+  }
+  return result;
+}
+
+/* ASM:
+Rect            = xmmword ptr -10h
+
+mov     eax, dword_A8ED54+306A0h
+sub     esp, 20h
+test    eax, eax
+jz      loc_5C018D
+mov     ecx, ds:887310h
+push    0
+mov     eax, [ecx]
+call    dword ptr [eax+18h]
+mov     edx, ds:887310h
+xor     cl, cl
+push    0
+call    Frame__Present
+mov     ecx, 0Fh
+call    TestBitArray
+test    al, al
+jnz     short loc_5C018D
+mov     edx, dword_A8ED54+0E47FCh
+push    ebx
+push    esi
+lea     ecx, [esp+28h+Rect]
+push    edi
+push    ecx             ; lpRect
+push    edx             ; hWnd
+call    ds:__imp_GetClientRect
+mov     ecx, dword_A8ED54+0E47FCh
+lea     eax, [esp+2Ch+Rect]
+push    eax             ; lpPoint
+push    ecx             ; hWnd
+call    ds:__imp_ClientToScreen
+mov     eax, dword_A8ED54+306A0h
+mov     edi, dword ptr [esp+2Ch+Rect+4]
+mov     ebx, dword ptr [esp+2Ch+Rect]
+push    1
+mov     ecx, [eax+38h]
+mov     esi, [eax+3Ch]
+mov     edx, [eax+40h]
+add     ecx, edi
+mov     edi, [eax+34h]
+mov     [esp+30h+var_18], esi
+add     edi, ebx
+mov     [esp+30h+var_1C], ecx
+mov     ecx, ds:887308h
+mov     [esp+30h+var_20], edi
+mov     [esp+30h+var_14], edx
+lea     esi, [eax+24h]
+mov     eax, [eax+8]
+mov     edx, [ecx]
+push    0
+push    esi
+push    eax
+lea     eax, [esp+3Ch+var_20]
+push    eax
+call    dword ptr [edx+8]
+pop     edi
+pop     esi
+pop     ebx
+
+loc_5C018D:                             ; CODE XREF: sub_5C00E0+A↑j
+; sub_5C00E0+38↑j
+add     esp, 20h
+retn
+*/
 }
 
 // 0x00437F50 (110 bytes)
 int GameClass_Wrapper_437F50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00437F50.json)
-    // Size: 110 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_437F50 ( _DWORD *this ) { !HRESULT v2 ! ; // esi !LPVOID ppv ! ; // [esp+Ch] [ebp-4h] BYREF * this = 0 ; v2 = "CoCreateInstance " ( & stru_7E9500 , 0 , 7u , & riid , & ppv ) ; if ( v2 < 0 ) goto LABEL_5 ; v2 = "OleRun " ( ( LPUNKNOWN ) ppv ) ; if ( v2 >= 0 ) v2 = ( * * ( int (__stdcall ***)(LPVOID, void *, _DWORD *) ) ppv ) ( ppv , & unk_818C08 , this ) ; ( * ( void (__stdcall **)(LPVOID) ) ( * ( _DWORD * ) ppv + 8 ) ) ( ppv ) ; if ( v2 < 0 ) { LABEL_5 : if ( v2 != -2147467262 ) WinAPI::Wrapper ( v2 ) ; } return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_437F50(_DWORD *this)
+{
+  int v2; // esi
+  int ppv; // [esp+Ch] [ebp-4h] BYREF
+
+  *this = 0;
+  v2 = ((int (__stdcall *)(void *, _DWORD, int, void *, int *))CoCreateInstance)(&stru_7E9500, 0, 7, &riid, &ppv);
+  if ( v2 < 0 )
+    goto LABEL_5;
+  v2 = ((int (__stdcall *)(int))OleRun)(ppv);
+  if ( v2 >= 0 )
+    v2 = (**(int (__stdcall ***)(int, void *, _DWORD *))ppv)(ppv, &unk_818C08, this);
+  (*(void (__stdcall **)(int))(*(_DWORD *)ppv + 8))(ppv);
+  if ( v2 < 0 )
+  {
+LABEL_5:
+    if ( v2 != -2147467262 )
+      WinAPI::Wrapper(v2);
+  }
+  return this;
+}
+
+/* ASM:
+ppv             = dword ptr -4
+
+push    ecx
+push    esi
+lea     eax, [esp+8+ppv]
+push    edi
+push    eax             ; ppv
+push    offset riid     ; riid
+mov     edi, ecx
+push    7               ; dwClsContext
+push    0               ; pUnkOuter
+push    offset stru_7E9500 ; rclsid
+mov     dword ptr [edi], 0
+call    ds:__imp_CoCreateInstance
+mov     esi, eax
+test    esi, esi
+jl      short loc_437FAA
+mov     ecx, [esp+0Ch+ppv]
+push    ecx             ; pUnknown
+call    ds:__imp_OleRun
+mov     esi, eax
+test    esi, esi
+jl      short loc_437F9C
+mov     eax, [esp+0Ch+ppv]
+push    edi
+push    offset unk_818C08
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx]
+mov     esi, eax
+
+loc_437F9C:                             ; CODE XREF: sub_437F50+39↑j
+mov     eax, [esp+0Ch+ppv]
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+8]
+test    esi, esi
+jge     short loc_437FB8
+
+loc_437FAA:                             ; CODE XREF: sub_437F50+28↑j
+cmp     esi, 80004002h
+jz      short loc_437FB8
+push    esi
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_437FB8:                             ; CODE XREF: sub_437F50+58↑j
+; sub_437F50+60↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 } // namespace gamemd

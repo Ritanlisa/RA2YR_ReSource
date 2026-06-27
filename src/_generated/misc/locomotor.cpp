@@ -8,20 +8,364 @@ namespace gamemd {
 
 // 0x00517110 (169 bytes)
 int MovementAI_MainFootClass_517110() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00517110.json)
-    // Size: 169 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_517110 ( int this ) { !int v2 ! ; // edi !int v3 ! ; // ebx _WORD *v4 ; // eax !bool v5 ! ; // bl int v6 ; // ecx !int result ! ; // eax _BYTE v8[4] ; // [esp+8h] [ebp-4h] BYREF v5 = 1 ; if ( * ( _DWORD * ) ( this + 36 ) != g_ScoreDisplayState1 || * ( _DWORD * ) ( this + 40 ) != g_ScoreDisplayState2 || * ( _DWORD * ) ( this + 44 ) != g_ScoreDisplayState3 ) { v2 = * ( _DWORD * ) ( this + 36 ) / 256 ; v3 = * ( _DWORD * ) ( this + 40 ) / 256 ; v4 = ( _WORD * ) ( * ( int (__thiscall **)(_DWORD, _BYTE *) ) ( * * ( _DWORD ** ) ( this + 12 ) + 440 ) ) ( * ( _DWORD * ) ( this + 12 ) , v8 ) ; if ( * v4 != ( _WORD ) v2 || v4 [ 1 ] != ( _WORD ) v3 ) v5 = 0 ; } v6 = * ( _DWORD * ) ( this + 12 ) ; * ( _DWORD * ) ( this + 72 ) = 0 ; * ( _DWORD * ) ( this + 76 ) = 1072693248 ; ( * ( void (__thiscall **)(int, _DWORD, int) ) ( * ( _DWORD * ) v6 + 1348 ) ) ( v6 , 0 , 1072693248 ) ; result = MovementAI::StepFootClass ( ( int * ) this , 0 ) ; if ( v5 ) return MovementAI::MainFootClass ( ( int * ) this , 1 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_517110(int this)
+{
+  int v2; // edi
+  int v3; // ebx
+  _WORD *v4; // eax
+  bool v5; // bl
+  int v6; // ecx
+  int result; // eax
+  _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
+
+  v5 = 1;
+  if ( *(_DWORD *)(this + 36) != MEMORY[0xA8F180]
+    || *(_DWORD *)(this + 40) != MEMORY[0xA8F184]
+    || *(_DWORD *)(this + 44) != MEMORY[0xA8F188] )
+  {
+    v2 = *(_DWORD *)(this + 36) / 256;
+    v3 = *(_DWORD *)(this + 40) / 256;
+    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(*(_DWORD *)(this + 12), v8);
+    if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 )
+      v5 = 0;
+  }
+  v6 = *(_DWORD *)(this + 12);
+  *(_DWORD *)(this + 72) = 0;
+  *(_DWORD *)(this + 76) = 1072693248;
+  (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248);
+  result = MovementAI::StepFootClass((int *)this, 0);
+  if ( v5 )
+    return MovementAI::MainFootClass((int *)this, 1);
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, ecx
+mov     ecx, dword_A8ED54+42Ch
+mov     eax, [esi+24h]
+cmp     eax, ecx
+jnz     short loc_51713A
+mov     ecx, [esi+28h]
+mov     eax, dword_A8ED54+430h
+cmp     ecx, eax
+jnz     short loc_51713A
+mov     edx, [esi+2Ch]
+mov     eax, dword_A8ED54+434h
+cmp     edx, eax
+jz      short loc_51717D
+
+loc_51713A:                             ; CODE XREF: sub_517110+10↑j
+; sub_517110+1C↑j
+mov     eax, [esi+24h]
+push    edi
+cdq
+and     edx, 0FFh
+mov     ecx, [esi+0Ch]
+add     eax, edx
+mov     edi, eax
+mov     eax, [esi+28h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+10h+var_4]
+mov     ebx, eax
+mov     eax, [ecx]
+push    edx
+sar     edi, 8
+sar     ebx, 8
+call    dword ptr [eax+1B8h]
+cmp     [eax], di
+pop     edi
+jnz     short loc_517179
+cmp     [eax+2], bx
+jz      short loc_51717D
+
+loc_517179:                             ; CODE XREF: sub_517110+61↑j
+xor     bl, bl
+jmp     short loc_51717F
+; ---------------------------------------------------------------------------
+
+loc_51717D:                             ; CODE XREF: sub_517110+28↑j
+; sub_517110+67↑j
+mov     bl, 1
+
+loc_51717F:                             ; CODE XREF: sub_517110+6B↑j
+mov     ecx, [esi+0Ch]
+mov     dword ptr [esi+48h], 0
+mov     dword ptr [esi+4Ch], 3FF00000h
+push    3FF00000h
+mov     eax, [ecx]
+push    0
+call    dword ptr [eax+544h]
+push    0
+mov     ecx, esi
+call    MovementAI__StepFootClass
+test    bl, bl
+jz      short loc_5171B5
+push    1
+mov     ecx, esi
+call    MovementAI__MainFootClass
+
+loc_5171B5:                             ; CODE XREF: sub_517110+9A↑j
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x00600AF0 (369 bytes)
 void RemoveLinked_600AF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00600AF0.json)
-    // Size: 369 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   void __cdecl sub_600AF0 ( ) { !unsigned int v0 ! ; // eax !unsigned int v1 ! ; // ecx int j ; // ebp int v3 ; // edi _DWORD *k ; // eax !void **v5 ! ; // ecx !unsigned int v6 ! ; // ecx !int *v7 ! ; // ebp !int v8 ! ; // esi !int *v9 ! ; // edi !int v10 ! ; // ebx int v11 ; // esi !int v12 ! ; // edx int v13 ; // ecx int v14 ; // eax !unsigned int i ! ; // [esp+10h] [ebp-4h] v0 = dword_AC1B08 ; v1 = 0 ; for ( i = 0 ; v1 < dword_AC1B08 ; v0 = dword_AC1B08 ) { for ( j = * ( ( _DWORD * ) g_DialogHashMap_Base + v1 ) ; j ; v1 = i ) { v3 = j ; j = * ( _DWORD * ) ( j + 516 ) ; if ( * ( _DWORD * ) ( v3 + 44 ) ) { __3_YAXPAX_Z ( * ( void ** ) ( v3 + 44 ) ) ; * ( _DWORD * ) ( v3 + 44 ) = 0 ; } for ( k = * ( _DWORD ** ) ( v3 + 56 ) ; k ; k = * ( _DWORD ** ) ( v3 + 56 ) ) LinkedList::Remove ( ( _DWORD * ) ( v3 + 4 ) , k ) ; v5 = * ( void *** ) ( v3 + 64 ) ; if ( v5 ) DeleteAndZero::OrFree ( v5 , 1 ) ; __3_YAXPAX_Z ( ( void * ) v3 ) ; } i = ++ v1 ; * ( ( _DWORD * ) g_DialogHashMap_Base + v1 - 1 ) = 0 ; } v6 = dword_AC1B30 ; g_DialogHashMap_Count = 0 ; if ( v0 > dword_AC1B30 ) { do { if ( byte_AC1B14 || v0 <= v6 ) break ; v7 = ( int * ) g_DialogHashMap_Base ; v8 = v0 ; dword_AC1B08 = v0 >> 1 ; -- g_DialogHashMap_Buckets ; g_DialogHashMap_Base = __2_YAPAXI_Z ( 4 * ( v0 >> 1 ) ) ; memset ( g_DialogHashMap_Base , 0 , 4 * dword_AC1B08 ) ; if ( v8 > 0 ) { v9 = v7 ; v10 = v8 ; do { v11 = * v9 ; if ( * v9 ) { do { v12 = g_DialogHashMap_Hasher ( v11 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ; v13 = * ( ( _DWORD * ) g_DialogHashMap_Base + v12 ) ; * ( ( _DWORD * ) g_DialogHashMap_Base + v12 ) = v11 ; v14 = * ( _DWORD * ) ( v11 + 516 ) ; * ( _DWORD * ) ( v11 + 516 ) = v13 ; v11 = v14 ; } while ( v14 ) ; } ++ v9 ; -- v10 ; } while ( v10 ) ; } __3_YAXPAX_Z ( v7 ) ; v6 = dword_AC1B30 ; v0 = dword_AC1B08 ; } while ( dword_AC1B08 > ( unsigned int ) dword_AC1B30 ) ; } __3_YAXPAX_Z ( g_DialogHashMap_Base ) ; }
-    
+// [IDA decompile]
+void __cdecl sub_600AF0()
+{
+  unsigned int v0; // eax
+  unsigned int v1; // ecx
+  int j; // ebp
+  int v3; // edi
+  _DWORD *k; // eax
+  void **v5; // ecx
+  unsigned int v6; // ecx
+  int *v7; // ebp
+  int v8; // esi
+  int *v9; // edi
+  int v10; // ebx
+  int v11; // esi
+  int v12; // edx
+  int v13; // ecx
+  int v14; // eax
+  unsigned int i; // [esp+10h] [ebp-4h]
+
+  v0 = dword_A8ED54[52077];
+  v1 = 0;
+  for ( i = 0; v1 < dword_A8ED54[52077]; v0 = dword_A8ED54[52077] )
+  {
+    for ( j = *(_DWORD *)(dword_A8ED54[52075] + 4 * v1); j; v1 = i )
+    {
+      v3 = j;
+      j = *(_DWORD *)(j + 516);
+      if ( *(_DWORD *)(v3 + 44) )
+      {
+        __3_YAXPAX_Z(*(void **)(v3 + 44));
+        *(_DWORD *)(v3 + 44) = 0;
+      }
+      for ( k = *(_DWORD **)(v3 + 56); k; k = *(_DWORD **)(v3 + 56) )
+        LinkedList::Remove((_DWORD *)(v3 + 4), k);
+      v5 = *(void ***)(v3 + 64);
+      if ( v5 )
+        DeleteAndZero::OrFree(v5, 1);
+      __3_YAXPAX_Z((void *)v3);
+    }
+    i = ++v1;
+    *(_DWORD *)(dword_A8ED54[52075] + 4 * v1 - 4) = 0;
+  }
+  v6 = dword_A8ED54[52087];
+  dword_A8ED54[52076] = 0;
+  if ( v0 > dword_A8ED54[52087] )
+  {
+    do
+    {
+      if ( LOBYTE(dword_A8ED54[52080]) || v0 <= v6 )
+        break;
+      v7 = (int *)dword_A8ED54[52075];
+      v8 = v0;
+      dword_A8ED54[52077] = v0 >> 1;
+      --dword_A8ED54[52078];
+      dword_A8ED54[52075] = __2_YAPAXI_Z(4 * (v0 >> 1));
+      memset((void *)dword_A8ED54[52075], 0, 4 * dword_A8ED54[52077]);
+      if ( v8 > 0 )
+      {
+        v9 = v7;
+        v10 = v8;
+        do
+        {
+          v11 = *v9;
+          if ( *v9 )
+          {
+            do
+            {
+              v12 = ((int (__thiscall *)(int))dword_A8ED54[52081])(v11) & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1);
+              v13 = *(_DWORD *)(dword_A8ED54[52075] + 4 * v12);
+              *(_DWORD *)(dword_A8ED54[52075] + 4 * v12) = v11;
+              v14 = *(_DWORD *)(v11 + 516);
+              *(_DWORD *)(v11 + 516) = v13;
+              v11 = v14;
+            }
+            while ( v14 );
+          }
+          ++v9;
+          --v10;
+        }
+        while ( v10 );
+      }
+      __3_YAXPAX_Z(v7);
+      v6 = dword_A8ED54[52087];
+      v0 = dword_A8ED54[52077];
+    }
+    while ( dword_A8ED54[52077] > (unsigned int)dword_A8ED54[52087] );
+  }
+  __3_YAXPAX_Z((void *)dword_A8ED54[52075]);
+}
+
+/* ASM:
+push    ecx
+mov     eax, dword_A8ED54+32DB4h
+push    ebx
+xor     ebx, ebx
+push    ebp
+xor     ecx, ecx
+push    esi
+cmp     eax, ebx
+push    edi
+mov     [esp+14h+var_4], ecx
+jbe     short loc_600B81
+
+loc_600B06:                             ; CODE XREF: sub_600AF0+8F↓j
+mov     eax, dword_A8ED54+32DACh
+mov     ebp, [eax+ecx*4]
+cmp     ebp, ebx
+jz      short loc_600B69
+
+loc_600B12:                             ; CODE XREF: sub_600AF0+77↓j
+mov     edi, ebp
+mov     ebp, [ebp+204h]
+cmp     edi, ebx
+jz      short loc_600B65
+mov     eax, [edi+2Ch]
+lea     esi, [edi+4]
+cmp     eax, ebx
+jz      short loc_600B34
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+28h], ebx
+
+loc_600B34:                             ; CODE XREF: sub_600AF0+36↑j
+mov     eax, [esi+34h]
+cmp     eax, ebx
+jz      short loc_600B4A
+
+loc_600B3B:                             ; CODE XREF: sub_600AF0+58↓j
+push    eax
+mov     ecx, esi
+call    LinkedList__Remove
+mov     eax, [esi+34h]
+cmp     eax, ebx
+jnz     short loc_600B3B
+
+loc_600B4A:                             ; CODE XREF: sub_600AF0+49↑j
+mov     ecx, [esi+3Ch]  ; Block
+cmp     ecx, ebx
+jz      short loc_600B58
+push    1               ; char
+call    DeleteAndZero__OrFree
+
+loc_600B58:                             ; CODE XREF: sub_600AF0+5F↑j
+push    edi             ; Block
+call    ??3_YAXPAX_Z
+mov     ecx, [esp+18h+var_4]
+add     esp, 4
+
+loc_600B65:                             ; CODE XREF: sub_600AF0+2C↑j
+cmp     ebp, ebx
+jnz     short loc_600B12
+
+loc_600B69:                             ; CODE XREF: sub_600AF0+20↑j
+mov     edx, dword_A8ED54+32DACh
+inc     ecx
+mov     [esp+14h+var_4], ecx
+mov     [edx+ecx*4-4], ebx
+mov     eax, dword_A8ED54+32DB4h
+cmp     ecx, eax
+jb      short loc_600B06
+
+loc_600B81:                             ; CODE XREF: sub_600AF0+14↑j
+mov     ecx, dword_A8ED54+32DDCh
+mov     dword_A8ED54+32DB0h, ebx
+cmp     eax, ecx
+jbe     loc_600C4C
+
+loc_600B95:                             ; CODE XREF: sub_600AF0+156↓j
+mov     dl, byte ptr dword_A8ED54+32DC0h
+test    dl, dl
+jnz     loc_600C4C
+cmp     eax, ecx
+jbe     loc_600C4C
+mov     edi, dword_A8ED54+32DB8h
+mov     ebp, dword_A8ED54+32DACh
+mov     esi, eax
+shr     eax, 1
+mov     dword_A8ED54+32DB4h, eax
+dec     edi
+shl     eax, 2
+push    eax             ; Size
+mov     dword_A8ED54+32DB8h, edi
+call    ??2_YAPAXI_Z
+mov     ecx, dword_A8ED54+32DB4h
+mov     edi, eax
+add     esp, 4
+xor     eax, eax
+mov     dword_A8ED54+32DACh, edi
+cmp     esi, ebx
+rep stosd
+jle     short loc_600C30
+mov     edi, ebp
+mov     ebx, esi
+
+loc_600BED:                             ; CODE XREF: sub_600AF0+13C↓j
+mov     esi, [edi]
+test    esi, esi
+jz      short loc_600C28
+
+loc_600BF3:                             ; CODE XREF: sub_600AF0+136↓j
+mov     ecx, esi
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     ecx, [eax+edx*4]
+mov     [eax+edx*4], esi
+mov     eax, [esi+204h]
+mov     [esi+204h], ecx
+test    eax, eax
+mov     esi, eax
+jnz     short loc_600BF3
+
+loc_600C28:                             ; CODE XREF: sub_600AF0+101↑j
+add     edi, 4
+dec     ebx
+jnz     short loc_600BED
+xor     ebx, ebx
+
+loc_600C30:                             ; CODE XREF: sub_600AF0+F7↑j
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+mov     ecx, dword_A8ED54+32DDCh
+mov     eax, dword_A8ED54+32DB4h
+add     esp, 4
+cmp     eax, ecx
+ja      loc_600B95
+
+loc_600C4C:                             ; CODE XREF: sub_600AF0+9F↑j
+; sub_600AF0+AD↑j ...
+mov     ecx, dword_A8ED54+32DACh
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 } // namespace gamemd

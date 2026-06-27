@@ -8,11 +8,102 @@ namespace gamemd {
 
 // 0x006A93F0 (177 bytes)
 char Hash_Insert_6A93F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006A93F0.json)
-    // Size: 177 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6A93F0 ( int this ) { !int v2 ! ; // eax !int v3 ! ; // esi !int v4 ! ; // ecx !unsigned int v5 ! ; // eax !int v6 ! ; // ebp * ( _BYTE * ) ( this + 28 ) = 1 ; v2 = 26 ; if ( * ( ( _DWORD * ) ScenarioClass_Instance + 3374 ) ) v2 = 18 ; v3 = 0 ; v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7 ; v5 = ( unsigned int ) ( ( unsigned __int64 ) ( 1374389535LL * v4 ) >> 32 ) >> 31 ; v6 = 2 * ( v4 / 50 ) ; if ( v6 > 0 ) { do { Hash::Reset ( ( _DWORD * ) ( 56 * ( v3 + 60 * * ( _DWORD * ) ( this + 56 ) ) + 11566720 ) ) ; LOBYTE ( v5 ) = Hash::InsertOrdered ( & MapClass_Instance , 56 * ( v3 + 60 * * ( _DWORD * ) ( this + 56 ) ) + 11566720 ) ; ++ v3 ; } while ( v3 < v6 ) ; } g_CameoRenderFlag = 1 ; return v5 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6A93F0(int this)
+{
+  int v2; // eax
+  int v3; // esi
+  int v4; // ecx
+  unsigned int v5; // eax
+  int v6; // ebp
+
+  *(_BYTE *)(this + 28) = 1;
+  v2 = 26;
+  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) )
+    v2 = 18;
+  v3 = 0;
+  v4 = MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7;
+  v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31;
+  v6 = 2 * (v4 / 50);
+  if ( v6 > 0 )
+  {
+    do
+    {
+      Hash::Reset((_DWORD *)(56 * (v3 + 60 * *(_DWORD *)(this + 56)) + 11566720));
+      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * *(_DWORD *)(this + 56)) + 11566720);
+      ++v3;
+    }
+    while ( v3 < v6 );
+  }
+  MEMORY[0x884B8F] = 1;
+  return v5;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+mov     bl, 1
+mov     [edi+1Ch], bl
+mov     eax, ds:0A8B230h
+mov     eax, [eax+34B8h]
+test    eax, eax
+mov     eax, 1Ah
+jz      short loc_6A9414
+mov     eax, 12h
+
+loc_6A9414:                             ; CODE XREF: sub_6A93F0+1D↑j
+mov     ecx, ds:886F9Ch
+mov     esi, dword_A8ED54+7C7A4h
+mov     edx, ds:886F94h
+sub     ecx, esi
+sub     ecx, eax
+mov     eax, 51EB851Fh
+xor     esi, esi
+lea     ecx, [ecx+edx-7]
+imul    ecx
+sar     edx, 4
+mov     eax, edx
+shr     eax, 1Fh
+add     edx, eax
+shl     edx, 1
+mov     ebp, edx
+test    ebp, ebp
+jle     short loc_6A9496
+
+loc_6A9449:                             ; CODE XREF: sub_6A93F0+A4↓j
+mov     eax, [edi+38h]
+lea     eax, [eax+eax*2]
+lea     ecx, [eax+eax*4]
+lea     eax, [esi+ecx*4]
+lea     edx, ds:0[eax*8]
+sub     edx, eax
+lea     ecx, ds:0B07E80h[edx*8]
+call    Hash__Reset
+mov     eax, [edi+38h]
+lea     eax, [eax+eax*2]
+lea     eax, [eax+eax*4]
+lea     eax, [esi+eax*4]
+lea     ecx, ds:0[eax*8]
+sub     ecx, eax
+lea     edx, ds:0B07E80h[ecx*8]
+mov     ecx, 87F7E8h
+push    edx
+call    Hash__InsertOrdered
+inc     esi
+cmp     esi, ebp
+jl      short loc_6A9449
+
+loc_6A9496:                             ; CODE XREF: sub_6A93F0+57↑j
+pop     edi
+pop     esi
+mov     ds:884B8Fh, bl
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 } // namespace gamemd

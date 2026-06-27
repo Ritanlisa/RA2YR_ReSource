@@ -8,452 +8,4288 @@ namespace gamemd {
 
 // 0x0050E3A0 (143 bytes)
 int ArcMath_50E3A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0050E3A0.json)
-    // Size: 143 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   _DWORD *__fastcall sub_50E3A0 ( _DWORD *a1, int *a2, __int16 *a3, int a4 ) { !int v6 ! ; // ebx double v7 ; // st7 double v8 ; // st7 double v10 ; // [esp+10h] [ebp-18h] double v11 ; // [esp+18h] [ebp-10h] double v12 ; // [esp+20h] [ebp-8h] int v13 ; // [esp+2Ch] [ebp+4h] v6 = a2 [ 2 ] ; v10 = ( double ) ( * a3 - 0x3FFF ) * -0.00009587672516830327 ; v11 = ( double ) a4 ; v12 = ( double ) a2 [ 1 ] ; v7 = Math::SinCos ( v10 ) ; v13 = Math::RoundToInt ( v12 - v7 * v11 ) ; v8 = Math::ArcTan2 ( v10 ) ; * a1 = Math::RoundToInt ( v8 * v11 + ( double ) * a2 ) ; a1 [ 1 ] = v13 ; a1 [ 2 ] = v6 ; return a1 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__fastcall sub_50E3A0(_DWORD *a1, int *a2, __int16 *a3, int a4)
+{
+  int v6; // ebx
+  double v7; // st7
+  double v8; // st7
+  double v10; // [esp+10h] [ebp-18h]
+  double v11; // [esp+18h] [ebp-10h]
+  double v12; // [esp+20h] [ebp-8h]
+  int v13; // [esp+2Ch] [ebp+4h]
+
+  v6 = a2[2];
+  v10 = (double)(*a3 - 0x3FFF) * -0.00009587672516830327;
+  v11 = (double)a4;
+  v12 = (double)a2[1];
+  v7 = Math::SinCos(v10);
+  v13 = Math::RoundToInt(v12 - v7 * v11);
+  v8 = Math::ArcTan2(v10);
+  *a1 = Math::RoundToInt(v8 * v11 + (double)*a2);
+  a1[1] = v13;
+  a1[2] = v6;
+  return a1;
+}
+
+/* ASM:
+sub     esp, 18h
+mov     eax, [esp+18h+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+movsx   ecx, word ptr [eax]
+sub     ecx, 3FFFh
+mov     esi, edx
+mov     [esp+28h+arg_0], ecx
+fild    [esp+28h+arg_0]
+mov     ebx, [esi+8]
+fmul    ds:dbl_7E2810
+fstp    [esp+28h+var_18]
+fild    [esp+28h+arg_4]
+mov     ebp, dword ptr [esp+28h+var_18+4]
+mov     edx, dword ptr [esp+28h+var_18]
+push    ebp
+push    edx             ; double
+fstp    [esp+30h+var_10]
+fild    dword ptr [esi+4]
+fstp    [esp+30h+var_8]
+call    Math__SinCos
+fmul    [esp+30h+var_10]
+fsubr   [esp+30h+var_8]
+call    Math__RoundToInt
+mov     [esp+30h+arg_0], eax
+mov     eax, dword ptr [esp+30h+var_18]
+push    ebp
+push    eax             ; double
+call    Math__ArcTan2
+fmul    [esp+38h+var_10]
+add     esp, 10h
+fiadd   dword ptr [esi]
+call    Math__RoundToInt
+mov     edx, [esp+28h+arg_0]
+mov     ecx, edi
+mov     [ecx], eax
+mov     eax, edi
+pop     edi
+pop     esi
+mov     [ecx+4], edx
+pop     ebp
+mov     [ecx+8], ebx
+pop     ebx
+add     esp, 18h
+retn    8
+*/
 }
 
 // 0x005A1190 (221 bytes)
 double ArcMath_5A1190() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A1190.json)
-    // Size: 221 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_5A1190 ( __int16 *a1, __int16 *a2, double a3 ) { !int v3 ! ; // esi double v4 ; // st7 double v5 ; // st7 char v7 ; // c0 !double v9 ! ; // [esp+20h] [ebp+Ch] v3 = * a2 - * a1 ; if ( v3 ) { v4 = Math::ArcTan ( - ( ( double ) ( a2 [ 1 ] - a1 [ 1 ] ) / ( double ) v3 ) ) ; if ( v3 < 0 ) v4 = v4 + 3.141592653589793 ; } else { v4 = 1.570796326794897 ; } v5 = fabs ( v4 - a3 ) ; v9 = v5 ; if ( ! v7 ) { do v5 = v5 - 6.283185307179586 ; while ( v5 >= 6.283185307179586 ) ; v9 = v5 ; } if ( v5 > 3.141592653589793 ) v9 = 6.283185307179586 - v5 ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 2.328306437080797e-10 * 2.0 + 1.5 * v9 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_5A1190(__int16 *a1, __int16 *a2, double a3)
+{
+  int v3; // esi
+  double v4; // st7
+  double v5; // st7
+  char v7; // c0
+  double v9; // [esp+20h] [ebp+Ch]
+
+  v3 = *a2 - *a1;
+  if ( v3 )
+  {
+    v4 = Math::ArcTan(-((double)(a2[1] - a1[1]) / (double)v3));
+    if ( v3 < 0 )
+      v4 = v4 + 3.141592653589793;
+  }
+  else
+  {
+    v4 = 1.570796326794897;
+  }
+  v5 = fabs(v4 - a3);
+  v9 = v5;
+  if ( !v7 )
+  {
+    do
+      v5 = v5 - 6.283185307179586;
+    while ( v5 >= 6.283185307179586 );
+    v9 = v5;
+  }
+  if ( v5 > 3.141592653589793 )
+    v9 = 6.283185307179586 - v5;
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 2.328306437080797e-10 * 2.0 + 1.5 * v9;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [esp+8+arg_0]
+mov     ecx, [esp+8+arg_4]
+push    esi
+movsx   edx, word ptr [eax]
+movsx   esi, word ptr [ecx]
+movsx   eax, word ptr [eax+2]
+movsx   ecx, word ptr [ecx+2]
+sub     esi, edx
+sub     ecx, eax
+test    esi, esi
+mov     [esp+0Ch+arg_4], esi
+mov     [esp+0Ch+arg_0], ecx
+jz      loc_5A1262
+fild    [esp+0Ch+arg_0]
+sub     esp, 8
+fidiv   [esp+14h+arg_4]
+fchs
+fstp    [esp+14h+var_14] ; double
+call    Math__ArcTan
+add     esp, 8
+test    esi, esi
+jge     short loc_5A11E0
+fadd    ds:dbl_7E44D0
+
+loc_5A11E0:                             ; CODE XREF: sub_5A1190+48↑j
+; sub_5A1190+D8↓j
+fsub    [esp+0Ch+arg_8]
+pop     esi
+fabs
+fcom    ds:dbl_7E3CC0
+fst     [esp+8+arg_8]
+fnstsw  ax
+test    ah, 1
+jnz     short loc_5A120F
+
+loc_5A11F8:                             ; CODE XREF: sub_5A1190+79↓j
+fsub    ds:dbl_7E3CC0
+fcom    ds:dbl_7E3CC0
+fnstsw  ax
+test    ah, 1
+jz      short loc_5A11F8
+fst     [esp+8+arg_8]
+
+loc_5A120F:                             ; CODE XREF: sub_5A1190+66↑j
+fcom    ds:dbl_7E44D0
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_5A1228
+fld     ds:dbl_7E3CC0
+fsub    st, st(1)
+fstp    [esp+8+arg_8]
+
+loc_5A1228:                             ; CODE XREF: sub_5A1190+8A↑j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+fstp    st
+call    Random__State
+mov     dword ptr [esp+8+var_8], eax
+mov     dword ptr [esp+8+var_8+4], 0
+fild    [esp+8+var_8]
+fmul    ds:dbl_7ED898
+fmul    ds:dbl_7ED790
+fld     ds:dbl_7ED798
+fmul    [esp+8+arg_8]
+faddp   st(1), st
+add     esp, 8
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5A1262:                             ; CODE XREF: sub_5A1190+28↑j
+fld     ds:dbl_7E2820
+jmp     loc_5A11E0
+*/
 }
 
 // 0x004294B0 (78 bytes)
 int ArithmeticComput_4294B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004294B0.json)
-    // Size: 78 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_4294B0 ( int a1, BSTR *a2 ) { !WCHAR WideCharStr[32] ! ; // [esp+4h] [ebp-40h] BYREF if ( ! a2 ) return -2147467261 ; "MultiByteToWideChar " ( 0 , 1u , ( LPCCH ) ScenarioClass_Instance + 4700 , -1 , WideCharStr , 32 ) ; * a2 = "SysAllocString " ( WideCharStr ) ; return 0 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_4294B0(int a1, #160 *a2)
+{
+  _BYTE WideCharStr[64]; // [esp+4h] [ebp-40h] BYREF
+
+  if ( !a2 )
+    return -2147467261;
+  ((void (__stdcall *)(_DWORD, int, int, int, _BYTE *, int))MultiByteToWideChar)(
+    0,
+    1,
+    MEMORY[0x87F7E8][536210] + 4700,
+    -1,
+    WideCharStr,
+    32);
+  *(_DWORD *)a2 = ((int (__stdcall *)(_BYTE *))SysAllocString)(WideCharStr);
+  return 0;
+}
+
+/* ASM:
+WideCharStr     = byte ptr -40h
+arg_4           = dword ptr  8
+
+sub     esp, 40h
+push    esi
+mov     esi, [esp+44h+arg_4]
+test    esi, esi
+jnz     short loc_4294C8
+mov     eax, 80004003h
+pop     esi
+add     esp, 40h
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4294C8:                             ; CODE XREF: sub_4294B0+A↑j
+mov     ecx, ds:0A8B230h
+lea     eax, [esp+44h+WideCharStr]
+push    20h ; ' '       ; cchWideChar
+push    eax             ; lpWideCharStr
+add     ecx, 125Ch
+push    0FFFFFFFFh      ; cbMultiByte
+push    ecx             ; lpMultiByteStr
+push    1               ; dwFlags
+push    0               ; CodePage
+call    ds:__imp_MultiByteToWideChar
+lea     edx, [esp+44h+WideCharStr]
+push    edx             ; psz
+call    ds:__imp_SysAllocString
+mov     [esi], eax
+xor     eax, eax
+pop     esi
+add     esp, 40h
+retn    8
+*/
 }
 
 // 0x0049F2F0 (172 bytes)
 int ArithmeticComput_49F2F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0049F2F0.json)
-    // Size: 172 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   int sub_49F2F0 ( ) { Direction_X_Offsets [ 0 ] = -65536 ; dword_89F68C = -65535 ; g_CellDirectionOffsets = 1 ; dword_89F694 = 65537 ; dword_89F69C = 0x1FFFF ; g_DirectionOffsetPool = 0x10000 ; Direction_Y_Offsets = 0xFFFF ; dword_89F6A4 = -1 ; return -1 ; }
-    return 0;
+// [IDA decompile]
+int sub_49F2F0()
+{
+  MEMORY[0x89F688][0] = -65536;
+  MEMORY[0x89F68C] = -65535;
+  MEMORY[0x89F690] = 1;
+  MEMORY[0x89F694] = 65537;
+  MEMORY[0x89F69C] = 0x1FFFF;
+  MEMORY[0x89F698] = 0x10000;
+  MEMORY[0x89F6A0] = 0xFFFF;
+  MEMORY[0x89F6A4] = -1;
+  return -1;
+}
+
+/* ASM:
+push    ecx
+xor     edx, edx
+or      ecx, 0FFFFFFFFh
+mov     word ptr [esp+4+var_4], dx
+mov     word ptr [esp+4+var_4+2], cx
+mov     eax, [esp+4+var_4]
+push    esi
+mov     ds:89F688h, eax
+mov     eax, 1
+mov     word ptr [esp+8+var_4], ax
+mov     word ptr [esp+8+var_4+2], cx
+mov     esi, [esp+8+var_4]
+mov     word ptr [esp+8+var_4], ax
+mov     ds:89F68Ch, esi
+mov     word ptr [esp+8+var_4+2], dx
+mov     esi, [esp+8+var_4]
+mov     word ptr [esp+8+var_4], ax
+mov     ds:89F690h, esi
+mov     word ptr [esp+8+var_4+2], ax
+mov     esi, [esp+8+var_4]
+mov     word ptr [esp+8+var_4], dx
+mov     ds:89F694h, esi
+mov     word ptr [esp+8+var_4+2], ax
+mov     esi, [esp+8+var_4]
+mov     word ptr [esp+8+var_4], cx
+mov     word ptr [esp+8+var_4+2], ax
+mov     eax, [esp+8+var_4]
+mov     word ptr [esp+8+var_4], cx
+mov     word ptr [esp+8+var_4+2], dx
+mov     edx, [esp+8+var_4]
+mov     ds:89F69Ch, eax
+mov     word ptr [esp+8+var_4], cx
+mov     word ptr [esp+8+var_4+2], cx
+mov     eax, [esp+8+var_4]
+mov     ds:89F698h, esi
+mov     ds:89F6A0h, edx
+mov     ds:89F6A4h, eax
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 // 0x0049F3A0 (116 bytes)
 int ArithmeticComput_49F3A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0049F3A0.json)
-    // Size: 116 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   int sub_49F3A0 ( ) { dword_89F6DC [ 0 ] = -256 ; dword_89F6E4 = -256 ; dword_89F6D8 [ 0 ] = 0 ; dword_89F6EC = 0 ; dword_89F6E0 = 256 ; dword_89F6E8 = 256 ; dword_89F6F0 = 256 ; dword_89F6F4 = 256 ; dword_89F6FC = 256 ; dword_89F704 = 256 ; dword_89F6F8 = 0 ; dword_89F70C = 0 ; dword_89F700 = -256 ; dword_89F708 = -256 ; dword_89F710 = -256 ; dword_89F714 = -256 ; return -256 ; }
-    return 0;
+// [IDA decompile]
+int sub_49F3A0()
+{
+  MEMORY[0x89F6DC][0] = -256;
+  MEMORY[0x89F6E4] = -256;
+  MEMORY[0x89F6D8][0] = 0;
+  MEMORY[0x89F6EC] = 0;
+  MEMORY[0x89F6E0] = 256;
+  MEMORY[0x89F6E8] = 256;
+  MEMORY[0x89F6F0] = 256;
+  MEMORY[0x89F6F4] = 256;
+  MEMORY[0x89F6FC] = 256;
+  MEMORY[0x89F704] = 256;
+  MEMORY[0x89F6F8] = 0;
+  MEMORY[0x89F70C] = 0;
+  MEMORY[0x89F700] = -256;
+  MEMORY[0x89F708] = -256;
+  MEMORY[0x89F710] = -256;
+  MEMORY[0x89F714] = -256;
+  return -256;
+}
+
+/* ASM:
+mov     ecx, 0FFFFFF00h
+xor     eax, eax
+mov     ds:89F6DCh, ecx
+mov     ds:89F6E4h, ecx
+mov     ds:89F6D8h, eax
+xor     ecx, ecx
+mov     eax, 100h
+mov     ds:89F6ECh, ecx
+mov     ds:89F6E0h, eax
+mov     ds:89F6E8h, eax
+mov     ecx, eax
+mov     ds:89F6F0h, eax
+xor     eax, eax
+mov     ds:89F6F4h, ecx
+mov     ds:89F6FCh, ecx
+mov     ds:89F704h, ecx
+mov     ds:89F6F8h, eax
+xor     ecx, ecx
+mov     eax, 0FFFFFF00h
+mov     ds:89F70Ch, ecx
+mov     ecx, eax
+mov     ds:89F700h, eax
+mov     ds:89F708h, eax
+mov     ds:89F710h, eax
+mov     ds:89F714h, ecx
+retn
+*/
 }
 
 // 0x00549A00 (90 bytes)
 int ArithmeticComput_549A00() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00549A00.json)
-    // Size: 90 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_549A00 ( int a1, int a2, int *a3, int *a4 ) { !int result ! ; // eax * a3 = 60 * a1 / 2 ; * a4 = 30 * a1 / 2 ; * a3 += -60 * a2 / 2 ; result = 30 * a2 / 2 ; * a4 += result ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_549A00(int a1, int a2, int *a3, int *a4)
+{
+  int result; // eax
+
+  *a3 = 60 * a1 / 2;
+  *a4 = 30 * a1 / 2;
+  *a3 += -60 * a2 / 2;
+  result = 30 * a2 / 2;
+  *a4 += result;
+  return result;
+}
+
+/* ASM:
+lea     eax, [ecx+ecx*2]
+push    esi
+mov     esi, edx
+push    edi
+lea     eax, [eax+eax*4]
+mov     edi, [esp+8+arg_0]
+shl     eax, 2
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [edi], eax
+lea     eax, [ecx+ecx*2]
+mov     ecx, [esp+8+arg_4]
+lea     eax, [eax+eax*4]
+shl     eax, 1
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [ecx], eax
+mov     eax, esi
+shl     eax, 4
+sub     eax, esi
+neg     eax
+shl     eax, 2
+cdq
+sub     eax, edx
+mov     edx, [edi]
+sar     eax, 1
+add     edx, eax
+lea     eax, [esi+esi*2]
+mov     [edi], edx
+pop     edi
+lea     eax, [eax+eax*4]
+pop     esi
+shl     eax, 1
+cdq
+sub     eax, edx
+mov     edx, [ecx]
+sar     eax, 1
+add     edx, eax
+mov     [ecx], edx
+retn    8
+*/
 }
 
 // 0x006460C0 (69 bytes)
 float ArithmeticComput_6460C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006460C0.json)
-    // Size: 69 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   float *__fastcall sub_6460C0 ( float *a1, float *a2 ) { float v3 ; // [esp+0h] [ebp-10h] float v4 ; // [esp+4h] [ebp-Ch] float v5 ; // [esp+8h] [ebp-8h] float v6 ; // [esp+Ch] [ebp-4h] v3 = - * a2 ; v4 = - a2 [ 1 ] ; v5 = - a2 [ 2 ] ; v6 = a2 [ 3 ] ; * a1 = v3 ; a1 [ 1 ] = v4 ; a1 [ 2 ] = v5 ; a1 [ 3 ] = v6 ; return a1 ; }
-    return 0.0f;
+// [IDA decompile]
+float *__fastcall sub_6460C0(float *a1, float *a2)
+{
+  float v3; // [esp+0h] [ebp-10h]
+  float v4; // [esp+4h] [ebp-Ch]
+  float v5; // [esp+8h] [ebp-8h]
+  float v6; // [esp+Ch] [ebp-4h]
+
+  v3 = -*a2;
+  v4 = -a2[1];
+  v5 = -a2[2];
+  v6 = a2[3];
+  *a1 = v3;
+  a1[1] = v4;
+  a1[2] = v5;
+  a1[3] = v6;
+  return a1;
+}
+
+/* ASM:
+sub     esp, 10h
+fld     dword ptr [edx]
+fchs
+fstp    [esp+10h+var_10]
+fld     dword ptr [edx+4]
+fchs
+fstp    [esp+10h+var_C]
+fld     dword ptr [edx+8]
+fchs
+fstp    [esp+10h+var_8]
+fld     dword ptr [edx+0Ch]
+mov     edx, [esp+10h+var_10]
+mov     eax, ecx
+fstp    [esp+10h+var_4]
+mov     [ecx], edx
+mov     edx, [esp+10h+var_C]
+mov     [ecx+4], edx
+mov     edx, [esp+10h+var_8]
+mov     [ecx+8], edx
+mov     edx, [esp+10h+var_4]
+mov     [ecx+0Ch], edx
+add     esp, 10h
+retn
+*/
 }
 
 // 0x00646110 (69 bytes)
 float ArithmeticComput_646110() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00646110.json)
-    // Size: 69 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   float *__fastcall sub_646110 ( float *a1, float *a2 ) { float v3 ; // [esp+0h] [ebp-10h] float v4 ; // [esp+4h] [ebp-Ch] float v5 ; // [esp+8h] [ebp-8h] float v6 ; // [esp+Ch] [ebp-4h] v3 = - * a2 ; v4 = - a2 [ 1 ] ; v5 = - a2 [ 2 ] ; v6 = a2 [ 3 ] ; * a1 = v3 ; a1 [ 1 ] = v4 ; a1 [ 2 ] = v5 ; a1 [ 3 ] = v6 ; return a1 ; }
-    return 0.0f;
+// [IDA decompile]
+float *__fastcall sub_646110(float *a1, float *a2)
+{
+  float v3; // [esp+0h] [ebp-10h]
+  float v4; // [esp+4h] [ebp-Ch]
+  float v5; // [esp+8h] [ebp-8h]
+  float v6; // [esp+Ch] [ebp-4h]
+
+  v3 = -*a2;
+  v4 = -a2[1];
+  v5 = -a2[2];
+  v6 = a2[3];
+  *a1 = v3;
+  a1[1] = v4;
+  a1[2] = v5;
+  a1[3] = v6;
+  return a1;
+}
+
+/* ASM:
+sub     esp, 10h
+fld     dword ptr [edx]
+fchs
+fstp    [esp+10h+var_10]
+fld     dword ptr [edx+4]
+fchs
+fstp    [esp+10h+var_C]
+fld     dword ptr [edx+8]
+fchs
+fstp    [esp+10h+var_8]
+fld     dword ptr [edx+0Ch]
+mov     edx, [esp+10h+var_10]
+mov     eax, ecx
+fstp    [esp+10h+var_4]
+mov     [ecx], edx
+mov     edx, [esp+10h+var_C]
+mov     [ecx+4], edx
+mov     edx, [esp+10h+var_8]
+mov     [ecx+8], edx
+mov     edx, [esp+10h+var_4]
+mov     [ecx+0Ch], edx
+add     esp, 10h
+retn
+*/
 }
 
 // 0x006BB760 (378 bytes)
 int ArithmeticComput_6BB760() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006BB760.json)
-    // Size: 378 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   int sub_6BB760 ( ) { !CHAR String1[72] ! ; // [esp+8h] [ebp-1ECh] BYREF !CHAR MultiByteStr[40] ! ; // [esp+50h] [ebp-1A4h] BYREF !CHAR SubKey[300] ! ; // [esp+78h] [ebp-17Ch] BYREF !OLECHAR sz[40] ! ; // [esp+1A4h] [ebp-50h] BYREF "StringFromGUID2 " ( & rguid , sz , 39 ) ; "WideCharToMultiByte " ( 0 , 0x20u , sz , -1 , MultiByteStr , 39 , 0 , 0 ) ; "lstrcpyA " ( String1 , aClsid ) ; "lstrcatA " ( String1 , MultiByteStr ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , aWwTiberiansunC ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , aWwTiberiansunC_0 ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , g_Str_WW_TiberianSun ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , aWwTiberiansun1_0 ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , ( LPCSTR ) g_Str_WW_TiberianSun_1 ) ; "wsprintfA " ( SubKey , "%s\\%s" , String1 , aProgid ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , SubKey ) ; "wsprintfA " ( SubKey , "%s\\%s" , String1 , aVersionindepen ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , SubKey ) ; "wsprintfA " ( SubKey , "%s\\%s" , String1 , aNotinsertable ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , SubKey ) ; "wsprintfA " ( SubKey , "%s\\%s" , String1 , aInprocserver32 ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , SubKey ) ; "wsprintfA " ( SubKey , "%s\\%s" , String1 , aTypelib ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , SubKey ) ; "RegDeleteKeyA " ( HKEY_CLASSES_ROOT , String1 ) ; return 0 ; }
-    return 0;
+// [IDA decompile]
+int sub_6BB760()
+{
+  char String1[72]; // [esp+8h] [ebp-1ECh] BYREF
+  _BYTE MultiByteStr[40]; // [esp+50h] [ebp-1A4h] BYREF
+  _BYTE SubKey[300]; // [esp+78h] [ebp-17Ch] BYREF
+  _BYTE sz[80]; // [esp+1A4h] [ebp-50h] BYREF
+
+  ((void (__stdcall *)(void *, _BYTE *, int))StringFromGUID2)(&rguid, sz, 39);
+  ((void (__stdcall *)(_DWORD, int, _BYTE *, int, _BYTE *, int, _DWORD, _DWORD))WideCharToMultiByte)(
+    0,
+    32,
+    sz,
+    -1,
+    MultiByteStr,
+    39,
+    0,
+    0);
+  ((void (__stdcall *)(char *, char *))lstrcpyA)(String1, aClsid);
+  ((void (__stdcall *)(char *, _BYTE *))lstrcatA)(String1, MultiByteStr);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, aWwTiberiansunC);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, aWwTiberiansunC_0);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, g_Str_WW_TiberianSun);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, aWwTiberiansun1_0);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, g_Str_WW_TiberianSun_1);
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(SubKey, "%s\\%s", String1, aProgid);
+  ((void (__stdcall *)(unsigned int, _BYTE *))RegDeleteKeyA)(0x80000000, SubKey);
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(SubKey, "%s\\%s", String1, aVersionindepen);
+  ((void (__stdcall *)(unsigned int, _BYTE *))RegDeleteKeyA)(0x80000000, SubKey);
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(SubKey, "%s\\%s", String1, aNotinsertable);
+  ((void (__stdcall *)(unsigned int, _BYTE *))RegDeleteKeyA)(0x80000000, SubKey);
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(SubKey, "%s\\%s", String1, aInprocserver32);
+  ((void (__stdcall *)(unsigned int, _BYTE *))RegDeleteKeyA)(0x80000000, SubKey);
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(SubKey, "%s\\%s", String1, aTypelib);
+  ((void (__stdcall *)(unsigned int, _BYTE *))RegDeleteKeyA)(0x80000000, SubKey);
+  ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, String1);
+  return 0;
+}
+
+/* ASM:
+String1         = OMOTestDerived ptr -1ECh
+MultiByteStr    = byte ptr -1A4h
+SubKey          = OMOTestDerived ptr -17Ch
+sz              = byte ptr -50h
+
+sub     esp, 1ECh
+lea     eax, [esp+1ECh+sz]
+push    esi
+push    edi
+push    27h ; '''       ; cchMax
+push    eax             ; lpsz
+push    offset rguid    ; rguid
+call    ds:__imp_StringFromGUID2
+lea     ecx, [esp+1F4h+MultiByteStr]
+lea     edx, [esp+1F4h+sz]
+push    0               ; lpUsedDefaultChar
+push    0               ; lpDefaultChar
+push    27h ; '''       ; cbMultiByte
+push    ecx             ; lpMultiByteStr
+push    0FFFFFFFFh      ; cchWideChar
+push    edx             ; lpWideCharStr
+push    20h ; ' '       ; dwFlags
+push    0               ; CodePage
+call    ds:__imp_WideCharToMultiByte
+lea     eax, [esp+1F4h+String1]
+push    offset aClsid   ; "CLSID\\"
+push    eax             ; lpString1
+call    ds:__imp_lstrcpyA
+lea     ecx, [esp+1F4h+MultiByteStr]
+lea     edx, [esp+1F4h+String1]
+push    ecx             ; lpString2
+push    edx             ; lpString1
+call    ds:__imp_lstrcatA
+mov     esi, ds:__imp_RegDeleteKeyA
+push    offset aWwTiberiansunC ; "WW.TiberianSun\\CurVer"
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+push    offset aWwTiberiansunC_0 ; "WW.TiberianSun\\CLSID"
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+push    offset g_Str_WW_TiberianSun ; "WW.TiberianSun"
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+push    offset aWwTiberiansun1_0 ; "WW.TiberianSun.1\\CLSID"
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+push    offset g_Str_WW_TiberianSun_1 ; "WW.TiberianSun.1"
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+mov     edi, ds:__imp_wsprintfA
+lea     eax, [esp+1F4h+String1]
+push    offset aProgid  ; "ProgID"
+push    eax
+lea     ecx, [esp+1FCh+SubKey]
+push    offset g_Str_Trace__s__s ; "%s\\%s"
+push    ecx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 10h
+lea     edx, [esp+1F4h+SubKey]
+push    edx             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+lea     eax, [esp+1F4h+String1]
+lea     ecx, [esp+1F4h+SubKey]
+push    offset aVersionindepen ; "VersionIndependentProgID"
+push    eax
+push    offset g_Str_Trace__s__s ; "%s\\%s"
+push    ecx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 10h
+lea     edx, [esp+1F4h+SubKey]
+push    edx             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+lea     eax, [esp+1F4h+String1]
+lea     ecx, [esp+1F4h+SubKey]
+push    offset aNotinsertable ; "NotInsertable"
+push    eax
+push    offset g_Str_Trace__s__s ; "%s\\%s"
+push    ecx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 10h
+lea     edx, [esp+1F4h+SubKey]
+push    edx             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+lea     eax, [esp+1F4h+String1]
+push    offset aInprocserver32 ; "InprocServer32"
+push    eax
+lea     ecx, [esp+1FCh+SubKey]
+push    offset g_Str_Trace__s__s ; "%s\\%s"
+push    ecx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 10h
+lea     edx, [esp+1F4h+SubKey]
+push    edx             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+lea     eax, [esp+1F4h+String1]
+lea     ecx, [esp+1F4h+SubKey]
+push    offset aTypelib ; "Typelib"
+push    eax
+push    offset g_Str_Trace__s__s ; "%s\\%s"
+push    ecx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 10h
+lea     edx, [esp+1F4h+SubKey]
+push    edx             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+lea     eax, [esp+1F4h+String1]
+push    eax             ; lpSubKey
+push    80000000h       ; hKey
+call    esi ; __imp_RegDeleteKeyA
+xor     eax, eax
+pop     edi
+pop     esi
+add     esp, 1ECh
+retn
+*/
 }
 
 // 0x006CFD60 (71 bytes)
 int ArithmeticComput_6CFD60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006CFD60.json)
-    // Size: 71 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   _DWORD *__fastcall sub_6CFD60 ( _DWORD *a1, int a2 ) { _DWORD *result ; // eax !int v4 ! ; // ecx int v5 ; // esi int v6 ; // edi result = a1 ; v4 = dword_B0CC24 ; v5 = * ( ( _DWORD * ) dword_B0FC68 + 2 ) ; v6 = * ( ( _DWORD * ) dword_B0FC68 + 3 ) ; * a1 = * ( _DWORD * ) dword_B0FC68 + dword_B0CC38 * g_ObjectTrackingPool [ a2 ] ; a1 [ 1 ] = v4 ; a1 [ 2 ] = v5 ; a1 [ 3 ] = v6 ; return result ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
+{
+  _DWORD *result; // eax
+  int v4; // ecx
+  int v5; // esi
+  int v6; // edi
+
+  result = a1;
+  v4 = MEMORY[0xB0CC24];
+  v5 = *((_DWORD *)MEMORY[0xB0FC68] + 2);
+  v6 = *((_DWORD *)MEMORY[0xB0FC68] + 3);
+  *a1 = *(_DWORD *)MEMORY[0xB0FC68] + MEMORY[0xB0CC38] * MEMORY[0xB0CB78][a2];
+  a1[1] = v4;
+  a1[2] = v5;
+  a1[3] = v6;
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     edx, dword_A8ED54+7DE24h[edx*4]
+push    ebx
+imul    edx, dword_A8ED54+7DEE4h
+push    esi
+push    edi
+mov     edi, dword_A8ED54+80F14h
+mov     eax, ecx
+mov     ebx, eax
+mov     ecx, [edi]
+add     edx, ecx
+mov     ecx, dword_A8ED54+7DED0h
+mov     esi, [edi+4]
+mov     [esp+1Ch+var_C], esi
+mov     esi, [edi+8]
+mov     edi, [edi+0Ch]
+mov     [ebx], edx
+mov     [ebx+4], ecx
+mov     [ebx+8], esi
+mov     [ebx+0Ch], edi
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 10h
+retn
+*/
 }
 
 // 0x006D61C0 (90 bytes)
 int ArithmeticComput_6D61C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D61C0.json)
-    // Size: 90 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_6D61C0 ( int a1, int a2, int *a3, int *a4 ) { !int result ! ; // eax * a3 = 60 * a1 / 2 ; * a4 = 30 * a1 / 2 ; * a3 += -60 * a2 / 2 ; result = 30 * a2 / 2 ; * a4 += result ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_6D61C0(int a1, int a2, int *a3, int *a4)
+{
+  int result; // eax
+
+  *a3 = 60 * a1 / 2;
+  *a4 = 30 * a1 / 2;
+  *a3 += -60 * a2 / 2;
+  result = 30 * a2 / 2;
+  *a4 += result;
+  return result;
+}
+
+/* ASM:
+lea     eax, [ecx+ecx*2]
+push    esi
+mov     esi, edx
+push    edi
+lea     eax, [eax+eax*4]
+mov     edi, [esp+8+arg_0]
+shl     eax, 2
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [edi], eax
+lea     eax, [ecx+ecx*2]
+mov     ecx, [esp+8+arg_4]
+lea     eax, [eax+eax*4]
+shl     eax, 1
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [ecx], eax
+mov     eax, esi
+shl     eax, 4
+sub     eax, esi
+neg     eax
+shl     eax, 2
+cdq
+sub     eax, edx
+mov     edx, [edi]
+sar     eax, 1
+add     edx, eax
+lea     eax, [esi+esi*2]
+mov     [edi], edx
+pop     edi
+lea     eax, [eax+eax*4]
+pop     esi
+shl     eax, 1
+cdq
+sub     eax, edx
+mov     edx, [ecx]
+sar     eax, 1
+add     edx, eax
+mov     [ecx], edx
+retn    8
+*/
 }
 
 // 0x00755BF0 (86 bytes)
 float ArithmeticComput_755BF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00755BF0.json)
-    // Size: 86 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   float *__fastcall sub_755BF0 ( float *a1, int a2, int a3 ) { double v4 ; // st7 !int v5 ! ; // edx double v6 ; // st7 float v7 ; // [esp+0h] [ebp-Ch] float v8 ; // [esp+4h] [ebp-8h] float v9 ; // [esp+8h] [ebp-4h] v4 = flt_B432D8 [ 3 * a2 ] * 1.5 ; v5 = 12 * a2 + 11809496 ; v7 = v4 ; v8 = * ( float * ) ( v5 + 4 ) * 1.5 ; v6 = * ( float * ) ( v5 + 8 ) * 1.5 ; * a1 = v7 ; v9 = v6 ; a1 [ 1 ] = v8 ; a1 [ 2 ] = v9 ; return a1 ; }
-    return 0.0f;
+// [IDA decompile]
+float *__fastcall sub_755BF0(float *a1, int a2, int a3)
+{
+  double v4; // st7
+  int v5; // edx
+  double v6; // st7
+  float v7; // [esp+0h] [ebp-Ch]
+  float v8; // [esp+4h] [ebp-8h]
+  float v9; // [esp+8h] [ebp-4h]
+
+  v4 = MEMORY[0xB432D8][3 * a2] * 1.5;
+  v5 = 12 * a2 + 11809496;
+  v7 = v4;
+  v8 = *(float *)(v5 + 4) * 1.5;
+  v6 = *(float *)(v5 + 8) * 1.5;
+  *a1 = v7;
+  v9 = v6;
+  a1[1] = v8;
+  a1[2] = v9;
+  return a1;
+}
+
+/* ASM:
+sub     esp, 0Ch
+mov     eax, ecx
+lea     ecx, [edx+edx*2]
+fld     dword_A8ED54+0B4584h[ecx*4]
+fmul    ds:flt_7E4460
+lea     edx, ds:0B432D8h[ecx*4]
+fstp    [esp+0Ch+var_C]
+fld     dword ptr [edx+4]
+fmul    ds:flt_7E4460
+mov     ecx, [esp+0Ch+var_C]
+fstp    [esp+0Ch+var_8]
+fld     dword ptr [edx+8]
+fmul    ds:flt_7E4460
+mov     edx, eax
+mov     [edx], ecx
+mov     ecx, [esp+0Ch+var_8]
+fstp    [esp+0Ch+var_4]
+mov     [edx+4], ecx
+mov     ecx, [esp+0Ch+var_4]
+mov     [edx+8], ecx
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x00775B50 (78 bytes)
 int ArithmeticComput_775B50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00775B50.json)
-    // Size: 78 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_775B50 ( unsigned __int16 a1, INT_PTR ( __stdcall *a2 ) ( HWND, UINT, WPARAM, LPARAM ) , int a3, LONG *a4 ) { !HWND DialogParamA ! ; // esi !LONG bottom ! ; // ecx !struct tagRECT Rect ! ; // [esp+4h] [ebp-10h] BYREF DialogParamA = "CreateDialogParamA " ( g_hInstance , ( LPCSTR ) a1 , 0 , a2 , 0 ) ; "GetClientRect " ( DialogParamA , & Rect ) ; "DestroyWindow " ( DialogParamA ) ; bottom = Rect . bottom ; * a4 = Rect . right ; a4 [ 1 ] = bottom ; return 1 ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_775B50(unsigned __int16 a1, #104 (__stdcall *a2)(#44, #29, #46, #48), int a3, TechnoClass *a4)
+{
+  int v4; // esi
+  __int128 Rect; // [esp+4h] [ebp-10h] BYREF
+
+  v4 = ((int (__stdcall *)(int, _DWORD, _DWORD, #104 (__stdcall *)(#44, #29, #46, #48), _DWORD))CreateDialogParamA)(
+         dword_A8ED54[233831],
+         a1,
+         0,
+         a2,
+         0);
+  ((void (__stdcall *)(int, __int128 *))GetClientRect)(v4, &Rect);
+  ((void (__stdcall *)(int))DestroyWindow)(v4);
+  *(_QWORD *)a4 = *((_QWORD *)&Rect + 1);
+  return 1;
+}
+
+/* ASM:
+Rect            = xmmword ptr -10h
+arg_4           = dword ptr  8
+
+mov     eax, dword_A8ED54+0E459Ch
+sub     esp, 10h
+and     ecx, 0FFFFh
+push    esi
+push    0               ; dwInitParam
+push    edx             ; lpDialogFunc
+push    0               ; hWndParent
+push    ecx             ; lpTemplateName
+push    eax             ; hInstance
+call    ds:__imp_CreateDialogParamA
+lea     ecx, [esp+14h+Rect]
+mov     esi, eax
+push    ecx             ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_GetClientRect
+push    esi             ; hWnd
+call    ds:__imp_DestroyWindow
+mov     eax, [esp+14h+arg_4]
+mov     edx, dword ptr [esp+14h+Rect+8]
+mov     ecx, dword ptr [esp+14h+Rect+0Ch]
+pop     esi
+mov     [eax], edx
+mov     [eax+4], ecx
+mov     eax, 1
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x004C37D0 (256 bytes)
 int CalcColor_4C37D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C37D0.json)
-    // Size: 256 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   _BYTE *__fastcall sub_4C37D0 ( int a1, _BYTE *a2, int a3, unsigned __int8 a4 ) { !int v5 ! ; // eax !int v6 ! ; // eax !int v7 ! ; // ebx !int v8 ! ; // ebp !int i ! ; // esi !int v10 ! ; // eax _BYTE *v12 ; // [esp+4h] [ebp-10h] __int16 v13 ; // [esp+8h] [ebp-Ch] BYREF char v14 ; // [esp+Ah] [ebp-Ah] !int v15 ! ; // [esp+Ch] [ebp-8h] _BYTE *v16 ; // [esp+10h] [ebp-4h] v16 = a2 ; if ( ! a2 ) return 0 ; v5 = 0 ; v12 = a2 ; v15 = 0 ; do { if ( v5 <= 240 && v5 ) { v6 = a1 + 2 * ( v5 % 256 ) + v5 % 256 ; v13 = * ( _WORD * ) v6 ; v14 = * ( _BYTE * ) ( v6 + 2 ) ; Color::Lerp ( ( unsigned __int8 * ) & v13 , a4 , ( unsigned __int8 * ) ( a1 + 2 * ( a3 % 256 ) + a3 % 256 ) ) ; v7 = -1 ; v8 = 0 ; for ( i = 240 ; i < 255 ; ++ i ) { v10 = Palette::CalcColorDistance ( ( unsigned __int8 * ) ( a1 + 2 * ( i % 256 ) + i % 256 ) , ( unsigned __int8 * ) & v13 ) ; if ( v7 == -1 || v10 < v8 ) { v7 = i ; v8 = v10 ; } } a2 = v16 ; * v12 ++ = v7 ; v5 = v15 ; } else { * v12 ++ = v5 ; } v15 = ++ v5 ; } while ( v5 < 256 ) ; return a2 ; }
+// [IDA decompile]
+_BYTE *__fastcall sub_4C37D0(int a1, _BYTE *a2, int a3, unsigned __int8 a4)
+{
+  int v5; // eax
+  int v6; // eax
+  int v7; // ebx
+  int v8; // ebp
+  int i; // esi
+  int v10; // eax
+  _BYTE *v12; // [esp+4h] [ebp-10h]
+  __int16 v13; // [esp+8h] [ebp-Ch] BYREF
+  char v14; // [esp+Ah] [ebp-Ah]
+  int v15; // [esp+Ch] [ebp-8h]
+  _BYTE *v16; // [esp+10h] [ebp-4h]
+
+  v16 = a2;
+  if ( !a2 )
     return 0;
+  v5 = 0;
+  v12 = a2;
+  v15 = 0;
+  do
+  {
+    if ( v5 <= 240 && v5 )
+    {
+      v6 = a1 + 2 * (v5 % 256) + v5 % 256;
+      v13 = *(_WORD *)v6;
+      v14 = *(_BYTE *)(v6 + 2);
+      Color::Lerp((unsigned __int8 *)&v13, a4, (unsigned __int8 *)(a1 + 2 * (a3 % 256) + a3 % 256));
+      v7 = -1;
+      v8 = 0;
+      for ( i = 240; i < 255; ++i )
+      {
+        v10 = Palette::CalcColorDistance((unsigned __int8 *)(a1 + 2 * (i % 256) + i % 256), (unsigned __int8 *)&v13);
+        if ( v7 == -1 || v10 < v8 )
+        {
+          v7 = i;
+          v8 = v10;
+        }
+      }
+      a2 = v16;
+      *v12++ = v7;
+      v5 = v15;
+    }
+    else
+    {
+      *v12++ = v5;
+    }
+    v15 = ++v5;
+  }
+  while ( v5 < 256 );
+  return a2;
+}
+
+/* ASM:
+sub     esp, 10h
+push    edi
+mov     [esp+14h+var_4], edx
+test    edx, edx
+mov     edi, ecx
+jz      loc_4C38C7
+push    ebx
+xor     eax, eax
+push    ebp
+push    esi
+mov     [esp+20h+var_10], edx
+mov     [esp+20h+var_8], eax
+
+loc_4C37EF:                             ; CODE XREF: sub_4C37D0+E5↓j
+cmp     eax, 0F0h
+jg      loc_4C38A0
+test    eax, eax
+jz      loc_4C38A0
+and     eax, 800000FFh
+jns     short loc_4C3810
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_4C3810:                             ; CODE XREF: sub_4C37D0+37↑j
+lea     ecx, [edi+eax*2]
+add     eax, ecx
+mov     dx, [eax]
+mov     [esp+20h+var_C], dx
+mov     al, [eax+2]
+mov     [esp+20h+var_A], al
+mov     eax, [esp+20h+arg_0]
+and     eax, 800000FFh
+jns     short loc_4C3836
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_4C3836:                             ; CODE XREF: sub_4C37D0+5D↑j
+mov     edx, [esp+20h+arg_4]
+lea     ecx, [edi+eax*2]
+add     eax, ecx
+lea     ecx, [esp+20h+var_C]
+push    eax
+push    edx
+call    Color__Lerp
+or      ebx, 0FFFFFFFFh
+xor     ebp, ebp
+mov     esi, 0F0h
+
+loc_4C3854:                             ; CODE XREF: sub_4C37D0+B9↓j
+mov     ecx, esi
+lea     eax, [esp+20h+var_C]
+and     ecx, 800000FFh
+push    eax
+jns     short loc_4C386B
+dec     ecx
+or      ecx, 0FFFFFF00h
+inc     ecx
+
+loc_4C386B:                             ; CODE XREF: sub_4C37D0+91↑j
+lea     edx, [edi+ecx*2]
+add     ecx, edx
+call    Palette__CalcColorDistance
+cmp     ebx, 0FFFFFFFFh
+jz      short loc_4C387E
+cmp     eax, ebp
+jge     short loc_4C3882
+
+loc_4C387E:                             ; CODE XREF: sub_4C37D0+A8↑j
+mov     ebx, esi
+mov     ebp, eax
+
+loc_4C3882:                             ; CODE XREF: sub_4C37D0+AC↑j
+inc     esi
+cmp     esi, 0FFh
+jl      short loc_4C3854
+mov     eax, [esp+20h+var_10]
+mov     edx, [esp+20h+var_4]
+mov     [eax], bl
+inc     eax
+mov     [esp+20h+var_10], eax
+mov     eax, [esp+20h+var_8]
+jmp     short loc_4C38AB
+; ---------------------------------------------------------------------------
+
+loc_4C38A0:                             ; CODE XREF: sub_4C37D0+24↑j
+; sub_4C37D0+2C↑j
+mov     ecx, [esp+20h+var_10]
+mov     [ecx], al
+inc     ecx
+mov     [esp+20h+var_10], ecx
+
+loc_4C38AB:                             ; CODE XREF: sub_4C37D0+CE↑j
+inc     eax
+cmp     eax, 100h
+mov     [esp+20h+var_8], eax
+jl      loc_4C37EF
+pop     esi
+pop     ebp
+pop     ebx
+mov     eax, edx
+pop     edi
+add     esp, 10h
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4C38C7:                             ; CODE XREF: sub_4C37D0+C↑j
+mov     eax, edx
+pop     edi
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x00755AD0 (87 bytes)
 char CalcMath_755AD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00755AD0.json)
-    // Size: 87 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_755AD0 ( unsigned int *a1, int *a2 ) { double v2 ; // st7 !unsigned int v4 ! ; // [esp+14h] [ebp-4h] v4 = * a1 ; v2 = Math::CalcAngle ( ( double ) ( int ) a1 [ 1 ] - ( double ) a2 [ 1 ] , ( double ) * a2 - ( double ) ( int ) * a1 ) ; LOWORD ( v4 ) = Math::RoundToInt ( ( v2 - 1.570796326794897 ) * -10430.06004058427 ) ; return 32 - ( ( ( v4 >> 7 ) + 1 ) >> 1 ) ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_755AD0(unsigned int *a1, int *a2)
+{
+  double v2; // st7
+  unsigned int v4; // [esp+14h] [ebp-4h]
+
+  v4 = *a1;
+  v2 = Math::CalcAngle((double)(int)a1[1] - (double)a2[1], (double)*a2 - (double)(int)*a1);
+  LOWORD(v4) = Math::RoundToInt((v2 - 1.570796326794897) * -10430.06004058427);
+  return 32 - (((v4 >> 7) + 1) >> 1);
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [ecx]
+sub     esp, 8
+mov     [esp+10h+var_4], eax
+mov     eax, [edx]
+mov     [esp+10h+var_8], eax
+sub     esp, 8
+fild    [esp+18h+var_8]
+fisub   [esp+18h+var_4]
+fstp    [esp+18h+var_10] ; double
+fild    dword ptr [ecx+4]
+fisub   dword ptr [edx+4]
+fstp    [esp+18h+var_18] ; double
+call    Math__CalcAngle
+fsub    ds:dbl_7E2820
+fmul    ds:dbl_7E2818
+call    Math__RoundToInt
+mov     word ptr [esp+18h+var_4], ax
+mov     ecx, [esp+18h+var_4]
+shr     ecx, 7
+inc     ecx
+mov     al, 20h ; ' '
+shr     ecx, 1
+sub     al, cl
+add     esp, 18h
+retn
+*/
 }
 
 // 0x005C8930 (74 bytes)
 char CallShiftBigIntAndScan_5C8930() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005C8930.json)
-    // Size: 74 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_5C8930 ( int a1, int a2 ) { _WORD *v4 ; // esi _DWORD v6[64] ; // [esp+Ch] [ebp-100h] BYREF v4 = & unk_82E174 ; while ( ShiftBigIntAndScan ( v6 , a1 , * v4 , a2 ) ) { if ( ( unsigned int ) ++ v4 >= 0x82FCE2 ) return 1 ; } return 0 ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_5C8930(int a1, int a2)
+{
+  _WORD *v4; // esi
+  _DWORD v6[64]; // [esp+Ch] [ebp-100h] BYREF
+
+  v4 = &unk_82E174;
+  while ( ShiftBigIntAndScan(v6, a1, *v4, a2) )
+  {
+    if ( (unsigned int)++v4 >= 0x82FCE2 )
+      return 1;
+  }
+  return 0;
+}
+
+/* ASM:
+sub     esp, 100h
+push    ebx
+push    esi
+push    edi
+mov     edi, edx
+mov     ebx, ecx
+mov     esi, offset unk_82E174
+
+loc_5C8942:                             ; CODE XREF: sub_5C8930+30↓j
+mov     ax, [esi]
+push    edi
+push    eax
+mov     edx, ebx
+lea     ecx, [esp+114h+var_100]
+call    ShiftBigIntAndScan
+test    ax, ax
+jz      short loc_5C896E
+add     esi, 2
+cmp     esi, 82FCE2h
+jb      short loc_5C8942
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 100h
+retn
+; ---------------------------------------------------------------------------
+
+loc_5C896E:                             ; CODE XREF: sub_5C8930+25↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 100h
+retn
+*/
 }
 
 // 0x0053D9F0 (77 bytes)
 int ComputeStub_53D9F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0053D9F0.json)
-    // Size: 77 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_53D9F0 ( int a1 ) { !int v2 ! ; // edi _DWORD *v3 ; // esi !int *v4 ! ; // eax !int result ! ; // eax int v6 ; // [esp+Ch] [ebp-8h] BYREF dword_A9FAE8 [ 0 ] = 0 ; dword_AA0150 = a1 ; v2 = 1 ; v3 = & unk_A9FAEC ; do { v4 = ComputeSpiralOffset ( & v6 , v2 ) ; ++ v3 ; result = * v4 + a1 * v4 [ 1 ] ; ++ v2 ; * ( v3 - 1 ) = result ; } while ( ( int ) v3 < ( int ) & dword_A9FF6C ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_53D9F0(int a1)
+{
+  int v2; // edi
+  _DWORD *v3; // esi
+  int *v4; // eax
+  int result; // eax
+  int v6; // [esp+Ch] [ebp-8h] BYREF
+
+  MEMORY[0xA9FAE8][0] = 0;
+  MEMORY[0xAA0150] = a1;
+  v2 = 1;
+  v3 = &MEMORY[0xA9FAEC];
+  do
+  {
+    v4 = ComputeSpiralOffset(&v6, v2);
+    ++v3;
+    result = *v4 + a1 * v4[1];
+    ++v2;
+    *(v3 - 1) = result;
+  }
+  while ( (int)v3 < (int)&MEMORY[0xA9FF6C] );
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     dword_A8ED54+10D94h, 0
+push    ebx
+push    esi
+mov     ebx, ecx
+push    edi
+mov     dword_A8ED54+113FCh, ebx
+mov     edi, 1
+mov     esi, (offset dword_A8ED54+10D98h)
+
+loc_53DA12:                             ; CODE XREF: sub_53D9F0+44↓j
+mov     edx, edi
+lea     ecx, [esp+14h+var_8]
+call    ComputeSpiralOffset
+mov     ecx, [eax]
+add     esi, 4
+mov     eax, [eax+4]
+imul    eax, ebx
+add     eax, ecx
+inc     edi
+mov     [esi-4], eax
+cmp     esi, (offset dword_A8ED54+11218h)
+jl      short loc_53DA12
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x0069E9F0 (63 bytes)
 int Delegate_InvokeSHA1_69E9F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0069E9F0.json)
-    // Size: 63 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_69E9F0 ( int this, int a2, int a3 ) { !int v4 ! ; // ebx if ( ! a2 || a3 < 1 ) return 0 ; v4 = Delegate::Invoke ( ( _DWORD * ) this , a2 , a3 ) ; if ( ! * ( _BYTE * ) ( this + 12 ) ) SHA1::Process ( ( _DWORD * ) ( this + 16 ) , a2 , v4 ) ; return v4 ; }
+// [IDA decompile]
+int __thiscall sub_69E9F0(int this, int a2, int a3)
+{
+  int v4; // ebx
+
+  if ( !a2 || a3 < 1 )
     return 0;
+  v4 = Delegate::Invoke((_DWORD *)this, a2, a3);
+  if ( !*(_BYTE *)(this + 12) )
+    SHA1::Process((_DWORD *)(this + 16), a2, v4);
+  return v4;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+test    edi, edi
+jz      short loc_69EA28
+mov     eax, [esp+8+arg_4]
+cmp     eax, 1
+jl      short loc_69EA28
+push    ebx
+push    eax
+push    edi
+call    Delegate__Invoke
+mov     ebx, eax
+mov     al, [esi+0Ch]
+test    al, al
+jnz     short loc_69EA20
+push    ebx
+push    edi
+lea     ecx, [esi+10h]
+call    SHA1__Process
+
+loc_69EA20:                             ; CODE XREF: sub_69E9F0+24↑j
+mov     eax, ebx
+pop     ebx
+pop     edi
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_69EA28:                             ; CODE XREF: sub_69E9F0+A↑j
+; sub_69E9F0+13↑j
+pop     edi
+xor     eax, eax
+pop     esi
+retn    8
+*/
 }
 
 // 0x00621150 (126 bytes)
 double FloatCompute_621150() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00621150.json)
-    // Size: 126 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   double __fastcall sub_621150 ( int a1 ) { double result ; // st7 !int *v2 ! ; // edx !int v3 ! ; // esi !int v4 ! ; // eax double v5 ; // st7 _DWORD v6[3] ; // [esp+Ch] [ebp-Ch] BYREF result = 1.0 ; v6 [ 0 ] = 43 ; v6 [ 1 ] = 128 ; v6 [ 2 ] = 213 ; v2 = v6 ; v3 = 3 ; do { v4 = * v2 ; if ( a1 <= * v2 - 16 ) { if ( a1 <= v4 ) goto LABEL_9 ; } else if ( a1 <= v4 ) { v5 = ( double ) ( v4 - a1 ) ; goto LABEL_8 ; } if ( a1 > v4 + 16 ) goto LABEL_9 ; v5 = ( double ) ( a1 - v4 ) ; LABEL_8 : result = v5 * 0.0625 * 0.60000002 + 0.40000001 ; LABEL_9 : ++ v2 ; -- v3 ; } while ( v3 ) ; return result ; }
-    return 0.0;
+// [IDA decompile]
+double __fastcall sub_621150(int a1)
+{
+  double result; // st7
+  int *v2; // edx
+  int v3; // esi
+  int v4; // eax
+  double v5; // st7
+  _DWORD v6[3]; // [esp+Ch] [ebp-Ch] BYREF
+
+  result = 1.0;
+  v6[0] = 43;
+  v6[1] = 128;
+  v6[2] = 213;
+  v2 = v6;
+  v3 = 3;
+  do
+  {
+    v4 = *v2;
+    if ( a1 <= *v2 - 16 )
+    {
+      if ( a1 <= v4 )
+        goto LABEL_9;
+    }
+    else if ( a1 <= v4 )
+    {
+      v5 = (double)(v4 - a1);
+      goto LABEL_8;
+    }
+    if ( a1 > v4 + 16 )
+      goto LABEL_9;
+    v5 = (double)(a1 - v4);
+LABEL_8:
+    result = v5 * 0.0625 * 0.60000002 + 0.40000001;
+LABEL_9:
+    ++v2;
+    --v3;
+  }
+  while ( v3 );
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+fld     ds:flt_7E2AC8
+push    esi
+push    edi
+mov     [esp+18h+var_C], 2Bh ; '+'
+mov     [esp+18h+var_8], 80h
+mov     [esp+18h+var_4], 0D5h
+lea     edx, [esp+18h+var_C]
+mov     esi, 3
+
+loc_62117C:                             ; CODE XREF: sub_621150+76↓j
+mov     eax, [edx]
+lea     edi, [eax-10h]
+cmp     ecx, edi
+jle     short loc_621197
+cmp     ecx, eax
+jg      short loc_62119B
+sub     eax, ecx
+fstp    st
+mov     [esp+18h+var_10], eax
+fild    [esp+18h+var_10]
+jmp     short loc_6211B0
+; ---------------------------------------------------------------------------
+
+loc_621197:                             ; CODE XREF: sub_621150+33↑j
+cmp     ecx, eax
+jle     short loc_6211C2
+
+loc_62119B:                             ; CODE XREF: sub_621150+37↑j
+lea     edi, [eax+10h]
+cmp     ecx, edi
+jg      short loc_6211C2
+mov     edi, ecx
+sub     edi, eax
+fstp    st
+mov     [esp+18h+var_10], edi
+fild    [esp+18h+var_10]
+
+loc_6211B0:                             ; CODE XREF: sub_621150+45↑j
+fmul    ds:flt_7EF718
+fmul    ds:flt_7EF714
+fadd    ds:flt_7EF710
+
+loc_6211C2:                             ; CODE XREF: sub_621150+49↑j
+; sub_621150+50↑j
+add     edx, 4
+dec     esi
+jnz     short loc_62117C
+pop     edi
+pop     esi
+add     esp, 10h
+retn
+*/
 }
 
 // 0x0059D480 (137 bytes)
 double MathDispatch_59D480() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0059D480.json)
-    // Size: 137 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_59D480 ( __int16 *a1, __int16 *a2, int a3 ) { !int v3 ! ; // eax !int v4 ! ; // edx float v6 ; // [esp+18h] [ebp+4h] v3 = * a1 - * a2 ; v4 = a1 [ 1 ] - a2 [ 1 ] ; v6 = Math::Sqrt ( ( double ) ( v3 * v3 + v4 * v4 ) ) ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 2.328306437080797e-10 * 10.0 + 0.5 * v6 - ( double ) a3 * 0.02 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_59D480(__int16 *a1, __int16 *a2, int a3)
+{
+  int v3; // eax
+  int v4; // edx
+  float v6; // [esp+18h] [ebp+4h]
+
+  v3 = *a1 - *a2;
+  v4 = a1[1] - a2[1];
+  v6 = Math::Sqrt((double)(v3 * v3 + v4 * v4));
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 2.328306437080797e-10 * 10.0
+       + 0.5 * v6
+       - (double)a3 * 0.02;
+}
+
+/* ASM:
+sub     esp, 8
+mov     ecx, [esp+8+arg_0]
+mov     edx, [esp+8+arg_4]
+push    esi
+movsx   eax, word ptr [ecx]
+movsx   esi, word ptr [edx]
+movsx   ecx, word ptr [ecx+2]
+movsx   edx, word ptr [edx+2]
+sub     ecx, edx
+sub     eax, esi
+mov     edx, ecx
+sub     esp, 8
+imul    edx, ecx
+mov     ecx, eax
+imul    ecx, eax
+add     edx, ecx
+mov     [esp+14h+arg_0], edx
+fild    [esp+14h+arg_0]
+fstp    [esp+14h+var_14] ; double
+call    Math__Sqrt
+fstp    [esp+14h+arg_0]
+add     esp, 8
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+0Ch+var_8], eax
+mov     dword ptr [esp+0Ch+var_8+4], 0
+fild    [esp+0Ch+var_8]
+pop     esi
+fmul    ds:dbl_7ED898
+fmul    ds:flt_7ED768
+fld     ds:flt_7ED764
+fmul    [esp+8+arg_0]
+faddp   st(1), st
+fild    [esp+8+arg_8]
+fmul    ds:flt_7ED76C
+fsubp   st(1), st
+add     esp, 8
+retn    0Ch
+*/
 }
 
 // 0x005A2ED0 (117 bytes)
 double MathDispatch_5A2ED0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A2ED0.json)
-    // Size: 117 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_5A2ED0 ( __int16 *a1, __int16 *a2 ) { !int v2 ! ; // eax !int v3 ! ; // edx double v5 ; // [esp+14h] [ebp-8h] v2 = * a1 - * a2 ; v3 = a1 [ 1 ] - a2 [ 1 ] ; v5 = Math::Sqrt ( ( double ) ( v2 * v2 + v3 * v3 ) ) ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 5.0 * 2.328306437080797e-10 + v5 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_5A2ED0(__int16 *a1, __int16 *a2)
+{
+  int v2; // eax
+  int v3; // edx
+  double v5; // [esp+14h] [ebp-8h]
+
+  v2 = *a1 - *a2;
+  v3 = a1[1] - a2[1];
+  v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     ecx, [esp+10h+arg_0]
+mov     edx, [esp+10h+arg_4]
+push    esi
+movsx   eax, word ptr [ecx]
+movsx   esi, word ptr [edx]
+movsx   ecx, word ptr [ecx+2]
+movsx   edx, word ptr [edx+2]
+sub     ecx, edx
+sub     eax, esi
+mov     edx, ecx
+sub     esp, 8
+imul    edx, ecx
+mov     ecx, eax
+imul    ecx, eax
+add     edx, ecx
+mov     [esp+1Ch+arg_0], edx
+fild    [esp+1Ch+arg_0]
+fstp    [esp+1Ch+var_1C] ; double
+call    Math__Sqrt
+fstp    [esp+1Ch+var_8]
+add     esp, 8
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+14h+var_10], eax
+mov     dword ptr [esp+14h+var_10+4], 0
+fild    [esp+14h+var_10]
+pop     esi
+fmul    ds:dbl_7ED7C0
+fmul    ds:dbl_7ED898
+fadd    [esp+10h+var_8]
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x005A4AE0 (117 bytes)
 double MathDispatch_5A4AE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A4AE0.json)
-    // Size: 117 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_5A4AE0 ( __int16 *a1, __int16 *a2 ) { !int v2 ! ; // eax !int v3 ! ; // edx double v5 ; // [esp+14h] [ebp-8h] v2 = * a1 - * a2 ; v3 = a1 [ 1 ] - a2 [ 1 ] ; v5 = Math::Sqrt ( ( double ) ( v2 * v2 + v3 * v3 ) ) ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 5.0 * 2.328306437080797e-10 + v5 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_5A4AE0(__int16 *a1, __int16 *a2)
+{
+  int v2; // eax
+  int v3; // edx
+  double v5; // [esp+14h] [ebp-8h]
+
+  v2 = *a1 - *a2;
+  v3 = a1[1] - a2[1];
+  v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     ecx, [esp+10h+arg_0]
+mov     edx, [esp+10h+arg_4]
+push    esi
+movsx   eax, word ptr [ecx]
+movsx   esi, word ptr [edx]
+movsx   ecx, word ptr [ecx+2]
+movsx   edx, word ptr [edx+2]
+sub     ecx, edx
+sub     eax, esi
+mov     edx, ecx
+sub     esp, 8
+imul    edx, ecx
+mov     ecx, eax
+imul    ecx, eax
+add     edx, ecx
+mov     [esp+1Ch+arg_0], edx
+fild    [esp+1Ch+arg_0]
+fstp    [esp+1Ch+var_1C] ; double
+call    Math__Sqrt
+fstp    [esp+1Ch+var_8]
+add     esp, 8
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+14h+var_10], eax
+mov     dword ptr [esp+14h+var_10+4], 0
+fild    [esp+14h+var_10]
+pop     esi
+fmul    ds:dbl_7ED800
+fmul    ds:dbl_7ED898
+fadd    [esp+10h+var_8]
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x005A4FA0 (117 bytes)
 double MathDispatch_5A4FA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A4FA0.json)
-    // Size: 117 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_5A4FA0 ( __int16 *a1, __int16 *a2 ) { !int v2 ! ; // eax !int v3 ! ; // edx double v5 ; // [esp+14h] [ebp-8h] v2 = * a1 - * a2 ; v3 = a1 [ 1 ] - a2 [ 1 ] ; v5 = Math::Sqrt ( ( double ) ( v2 * v2 + v3 * v3 ) ) ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 5.0 * 2.328306437080797e-10 + v5 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_5A4FA0(__int16 *a1, __int16 *a2)
+{
+  int v2; // eax
+  int v3; // edx
+  double v5; // [esp+14h] [ebp-8h]
+
+  v2 = *a1 - *a2;
+  v3 = a1[1] - a2[1];
+  v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     ecx, [esp+10h+arg_0]
+mov     edx, [esp+10h+arg_4]
+push    esi
+movsx   eax, word ptr [ecx]
+movsx   esi, word ptr [edx]
+movsx   ecx, word ptr [ecx+2]
+movsx   edx, word ptr [edx+2]
+sub     ecx, edx
+sub     eax, esi
+mov     edx, ecx
+sub     esp, 8
+imul    edx, ecx
+mov     ecx, eax
+imul    ecx, eax
+add     edx, ecx
+mov     [esp+1Ch+arg_0], edx
+fild    [esp+1Ch+arg_0]
+fstp    [esp+1Ch+var_1C] ; double
+call    Math__Sqrt
+fstp    [esp+1Ch+var_8]
+add     esp, 8
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+14h+var_10], eax
+mov     dword ptr [esp+14h+var_10+4], 0
+fild    [esp+14h+var_10]
+pop     esi
+fmul    ds:dbl_7ED808
+fmul    ds:dbl_7ED898
+fadd    [esp+10h+var_8]
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x007559D0 (111 bytes)
 void MathProcess_7559D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007559D0.json)
-    // Size: 111 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   float *__fastcall sub_7559D0 ( float *a1, float *a2, void *a3, double a4 ) { !float *result ! ; // eax !float *v5 ! ; // eax float v6 ; // [esp+0h] [ebp-4Ch] _DWORD v7[4] ; // [esp+Ch] [ebp-40h] BYREF float v8[12] ; // [esp+1Ch] [ebp-30h] BYREF result = a2 ; if ( a1 == a2 ) { qmemcpy ( a3 , ( char * ) & unk_B43F10 + 48 * ( _DWORD ) a2 , 0x30u ) ; } else { v6 = a4 ; v5 = ( float * ) Math::QuaternionSlerp ( v7 , & flt_B44348 [ 4 * ( _DWORD ) a1 ] , & flt_B44348 [ 4 * ( _DWORD ) a2 ] , v6 ) ; result = ToQuaternionMatrix ( v8 , v5 ) ; qmemcpy ( a3 , result , 0x30u ) ; } return result ; }
-    
+// [IDA decompile]
+float *__fastcall sub_7559D0(float *a1, float *a2, void *a3, double a4)
+{
+  float *result; // eax
+  float *v5; // eax
+  float v6; // [esp+0h] [ebp-4Ch]
+  _DWORD v7[4]; // [esp+Ch] [ebp-40h] BYREF
+  float v8[12]; // [esp+1Ch] [ebp-30h] BYREF
+
+  result = a2;
+  if ( a1 == a2 )
+  {
+    qmemcpy(a3, (char *)&MEMORY[0xB43F10] + 48 * (_DWORD)a2, 0x30u);
+  }
+  else
+  {
+    v6 = a4;
+    v5 = (float *)Math::QuaternionSlerp(v7, &MEMORY[0xB44348][4 * (_DWORD)a1], &MEMORY[0xB44348][4 * (_DWORD)a2], v6);
+    result = ToQuaternionMatrix(v8, v5);
+    qmemcpy(a3, result, 0x30u);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 40h
+mov     eax, edx
+cmp     ecx, eax
+push    esi
+push    edi
+jnz     short loc_7559FA
+mov     edi, [esp+48h+arg_0]
+lea     esi, [eax+eax*2]
+shl     esi, 4
+add     esi, (offset dword_A8ED54+0B51BCh)
+mov     ecx, 0Ch
+rep movsd
+pop     edi
+pop     esi
+add     esp, 40h
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_7559FA:                             ; CODE XREF: sub_7559D0+9↑j
+fld     [esp+48h+arg_4]
+push    ecx
+mov     edx, ecx
+shl     eax, 4
+fstp    [esp+4Ch+var_4C] ; float
+add     eax, (offset dword_A8ED54+0B55F4h)
+lea     ecx, [esp+4Ch+var_40]
+shl     edx, 4
+push    eax             ; int
+add     edx, (offset dword_A8ED54+0B55F4h)
+call    Math__QuaternionSlerp
+mov     edx, eax
+lea     ecx, [esp+48h+var_30]
+call    ToQuaternionMatrix
+mov     edi, [esp+48h+arg_0]
+mov     ecx, 0Ch
+mov     esi, eax
+rep movsd
+pop     edi
+pop     esi
+add     esp, 40h
+retn    0Ch
+*/
 }
 
 // 0x006D1BB0 (52 bytes)
 void MathSinCos_6D1BB0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D1BB0.json)
-    // Size: 52 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void sub_6D1BB0 ( ) { dbl_B0CE18 = 60.0 / dbl_B0CD78 ; dbl_B0CD48 = Math::SinCos ( dbl_B0CD88 ) * dbl_B0CE18 ; }
-    
+// [IDA decompile]
+void sub_6D1BB0()
+{
+  MEMORY[0xB0CE18] = 60.0 / MEMORY[0xB0CD78];
+  MEMORY[0xB0CD48] = Math::SinCos(MEMORY[0xB0CD88]) * MEMORY[0xB0CE18];
+}
+
+/* ASM:
+fld     ds:dbl_7E1728
+fdiv    qword ptr dword_A8ED54+7E024h
+mov     eax, dword_A8ED54+7E038h
+mov     ecx, dword_A8ED54+7E034h
+push    eax
+push    ecx             ; double
+fstp    qword ptr dword_A8ED54+7E0C4h
+call    Math__SinCos
+fmul    qword ptr dword_A8ED54+7E0C4h
+add     esp, 8
+fstp    qword ptr dword_A8ED54+7DFF4h
+retn
+*/
 }
 
 // 0x00662240 (127 bytes)
 double Math_Ar_662240() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00662240.json)
-    // Size: 127 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   double __thiscall sub_662240 ( _DWORD *this ) { !int v1 ! ; // eax !int v2 ! ; // edx double v3 ; // st7 !int v5 ! ; // [esp+1Ch] [ebp-4h] v1 = * ( this + 6 ) - * ( _DWORD * ) ( * ( this + 3 ) + 156 ) ; v2 = * ( this + 7 ) - * ( _DWORD * ) ( * ( this + 3 ) + 160 ) ; v5 = * ( this + 8 ) - * ( _DWORD * ) ( * ( this + 3 ) + 164 ) ; v3 = Math::Sqrt ( ( double ) ( v2 * v2 + v1 * v1 ) ) ; if ( v3 <= 0.0 ) return -1.570796326794897 ; else return Math::ArcTan ( ( double ) v5 / v3 ) ; }
-    return 0.0;
+// [IDA decompile]
+double __thiscall sub_662240(_DWORD *this)
+{
+  int v1; // eax
+  int v2; // edx
+  double v3; // st7
+  int v5; // [esp+1Ch] [ebp-4h]
+
+  v1 = *(this + 6) - *(_DWORD *)(*(this + 3) + 156);
+  v2 = *(this + 7) - *(_DWORD *)(*(this + 3) + 160);
+  v5 = *(this + 8) - *(_DWORD *)(*(this + 3) + 164);
+  v3 = Math::Sqrt((double)(v2 * v2 + v1 * v1));
+  if ( v3 <= 0.0 )
+    return -1.570796326794897;
+  else
+    return Math::ArcTan((double)v5 / v3);
+}
+
+/* ASM:
+sub     esp, 10h
+mov     eax, [ecx+0Ch]
+push    esi
+add     eax, 9Ch
+push    edi
+sub     esp, 8
+mov     edx, [eax]
+mov     esi, [eax+4]
+mov     edi, [eax+8]
+mov     eax, [ecx+18h]
+sub     eax, edx
+mov     edx, [ecx+1Ch]
+mov     ecx, [ecx+20h]
+sub     edx, esi
+sub     ecx, edi
+mov     [esp+20h+var_4], ecx
+mov     ecx, eax
+imul    ecx, eax
+mov     eax, edx
+imul    eax, edx
+add     ecx, eax
+mov     [esp+20h+var_10], ecx
+fild    [esp+20h+var_10]
+fstp    [esp+20h+var_20] ; double
+call    Math__Sqrt
+fcom    ds:dbl_7E2800
+add     esp, 8
+pop     edi
+pop     esi
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_6622B3
+fild    [esp+10h+var_4]
+sub     esp, 8
+fdiv    st, st(1)
+fstp    [esp+18h+var_18] ; double
+fstp    st
+call    Math__ArcTan
+add     esp, 8
+add     esp, 10h
+retn
+; ---------------------------------------------------------------------------
+
+loc_6622B3:                             ; CODE XREF: sub_662240+57↑j
+fstp    st
+fld     ds:dbl_7F0C10
+add     esp, 10h
+retn
+*/
 }
 
 // 0x005AEC40 (264 bytes)
 float Math_Arc_5AEC40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AEC40.json)
-    // Size: 264 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5AEC40 ( int this, float a2 ) { double v2 ; // kr00_8 double v4 ; // st7 double v5 ; // st6 double v6 ; // st4 int result ; // eax !float v8 ! ; // [esp+0h] [ebp-24h] !float v9 ! ; // [esp+8h] [ebp-1Ch] !float v10 ! ; // [esp+Ch] [ebp-18h] !float v11 ! ; // [esp+14h] [ebp-10h] !float v12 ! ; // [esp+18h] [ebp-Ch] !float v13 ! ; // [esp+1Ch] [ebp-8h] float v14 ; // [esp+28h] [ebp+4h] v2 = a2 ; v14 = Math::SinCos ( a2 ) ; v4 = Math::ArcTan2 ( v2 ) ; v10 = * ( float * ) ( this + 20 ) ; v5 = - v14 ; v8 = * ( float * ) ( this + 32 ) ; v11 = * ( float * ) ( this + 24 ) ; v6 = * ( float * ) ( this + 16 ) ; v9 = * ( float * ) ( this + 36 ) ; v13 = * ( float * ) ( this + 28 ) ; result = * ( int * ) ( this + 40 ) ; v12 = * ( float * ) ( this + 44 ) ; * ( float * ) ( this + 16 ) = v8 * v5 + v6 * v4 ; * ( float * ) ( this + 20 ) = v9 * v5 + v10 * v4 ; * ( float * ) ( this + 24 ) = * ( float * ) & result * v5 + v11 * v4 ; * ( float * ) ( this + 28 ) = v12 * v5 + v13 * v4 ; * ( float * ) ( this + 32 ) = v8 * v4 + v6 * v14 ; * ( float * ) ( this + 36 ) = v9 * v4 + v10 * v14 ; * ( float * ) ( this + 40 ) = * ( float * ) & result * v4 + v11 * v14 ; * ( float * ) ( this + 44 ) = v12 * v4 + v13 * v14 ; return result ; }
-    return 0.0f;
+// [IDA decompile]
+int __thiscall sub_5AEC40(int this, float a2)
+{
+  double v2; // kr00_8
+  double v4; // st7
+  double v5; // st6
+  double v6; // st4
+  int result; // eax
+  float v8; // [esp+0h] [ebp-24h]
+  float v9; // [esp+8h] [ebp-1Ch]
+  float v10; // [esp+Ch] [ebp-18h]
+  float v11; // [esp+14h] [ebp-10h]
+  float v12; // [esp+18h] [ebp-Ch]
+  float v13; // [esp+1Ch] [ebp-8h]
+  float v14; // [esp+28h] [ebp+4h]
+
+  v2 = a2;
+  v14 = Math::SinCos(a2);
+  v4 = Math::ArcTan2(v2);
+  v10 = *(float *)(this + 20);
+  v5 = -v14;
+  v8 = *(float *)(this + 32);
+  v11 = *(float *)(this + 24);
+  v6 = *(float *)(this + 16);
+  v9 = *(float *)(this + 36);
+  v13 = *(float *)(this + 28);
+  result = *(int *)(this + 40);
+  v12 = *(float *)(this + 44);
+  *(float *)(this + 16) = v8 * v5 + v6 * v4;
+  *(float *)(this + 20) = v9 * v5 + v10 * v4;
+  *(float *)(this + 24) = *(float *)&result * v5 + v11 * v4;
+  *(float *)(this + 28) = v12 * v5 + v13 * v4;
+  *(float *)(this + 32) = v8 * v4 + v6 * v14;
+  *(float *)(this + 36) = v9 * v4 + v10 * v14;
+  *(float *)(this + 40) = *(float *)&result * v4 + v11 * v14;
+  *(float *)(this + 44) = v12 * v4 + v13 * v14;
+  return result;
+}
+
+/* ASM:
+sub     esp, 24h
+fld     [esp+24h+arg_0]
+push    ebx
+push    esi
+fstp    [esp+2Ch+var_8]
+mov     ebx, dword ptr [esp+2Ch+var_8]
+push    edi
+mov     edi, dword ptr [esp+30h+var_8+4]
+mov     esi, ecx
+push    edi
+push    ebx             ; double
+call    Math__SinCos
+fstp    [esp+38h+arg_0]
+push    edi
+push    ebx             ; double
+call    Math__ArcTan2
+mov     ecx, [esi+14h]
+mov     eax, [esi+10h]
+fld     [esp+40h+arg_0]
+mov     [esp+40h+var_18], ecx
+mov     ecx, [esi+20h]
+fchs
+mov     [esp+40h+var_24], ecx
+mov     edx, [esi+18h]
+fld     [esp+40h+var_24]
+fmul    st, st(1)
+mov     [esp+40h+var_20], eax
+mov     [esp+40h+var_10], edx
+fld     [esp+40h+var_20]
+mov     edx, [esi+24h]
+mov     eax, [esi+1Ch]
+fmul    st, st(3)
+mov     [esp+40h+var_1C], edx
+mov     dword ptr [esp+40h+var_8], eax
+mov     eax, [esi+28h]
+mov     ecx, [esi+2Ch]
+faddp   st(1), st
+mov     [esp+40h+var_14], eax
+mov     [esp+40h+var_C], ecx
+add     esp, 10h
+fstp    dword ptr [esi+10h]
+fld     [esp+30h+var_1C]
+fmul    st, st(1)
+fld     [esp+30h+var_18]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+14h]
+fld     [esp+30h+var_14]
+fmul    st, st(1)
+fld     [esp+30h+var_10]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+18h]
+fld     [esp+30h+var_C]
+fmul    st, st(1)
+fld     dword ptr [esp+30h+var_8]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+1Ch]
+fstp    st
+fld     [esp+30h+var_24]
+fmul    st, st(1)
+fld     [esp+30h+var_20]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+20h]
+fld     [esp+30h+var_1C]
+fmul    st, st(1)
+fld     [esp+30h+var_18]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+24h]
+fld     [esp+30h+var_14]
+fmul    st, st(1)
+fld     [esp+30h+var_10]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+28h]
+fld     [esp+30h+var_C]
+fmul    st, st(1)
+fld     dword ptr [esp+30h+var_8]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+pop     edi
+fstp    dword ptr [esi+2Ch]
+pop     esi
+pop     ebx
+fstp    st
+add     esp, 24h
+retn    4
+*/
 }
 
 // 0x005AF470 (93 bytes)
 void Math_Cal_5AF470() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF470.json)
-    // Size: 93 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_5AF470 ( float *this ) { !float *v1 ! ; // eax float v2[3] ; // [esp+1Ch] [ebp-18h] BYREF float v3[3] ; // [esp+28h] [ebp-Ch] BYREF v2 [ 0 ] = 1.0 ; v2 [ 1 ] = 0.0 ; v2 [ 2 ] = 0.0 ; v1 = TransformMatrix3x4Point ( v3 , this , v2 ) ; Math::CalcAngle ( v1 [ 1 ] , * v1 ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_5AF470(float *this)
+{
+  float *v1; // eax
+  float v2[3]; // [esp+1Ch] [ebp-18h] BYREF
+  float v3[3]; // [esp+28h] [ebp-Ch] BYREF
+
+  v2[0] = 1.0;
+  v2[1] = 0.0;
+  v2[2] = 0.0;
+  v1 = TransformMatrix3x4Point(v3, this, v2);
+  Math::CalcAngle(v1[1], *v1);
+}
+
+/* ASM:
+sub     esp, 24h
+lea     eax, [esp+24h+var_18]
+mov     edx, ecx
+push    eax
+lea     ecx, [esp+28h+var_C]
+mov     [esp+28h+var_18], 3F800000h
+mov     [esp+28h+var_14], 0
+mov     [esp+28h+var_10], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+sub     esp, 8
+mov     [esp+2Ch+var_24], ecx
+sub     esp, 8
+fld     [esp+34h+var_24]
+mov     edx, [eax+4]
+fstp    [esp+34h+var_2C] ; double
+mov     eax, [eax+8]
+mov     [esp+34h+var_20], edx
+fld     [esp+34h+var_20]
+mov     [esp+34h+var_1C], eax
+fstp    [esp+34h+var_34] ; double
+call    Math__CalcAngle
+add     esp, 34h
+retn
+*/
 }
 
 // 0x005AF3B0 (93 bytes)
 void Math_Calc_5AF3B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF3B0.json)
-    // Size: 93 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_5AF3B0 ( float *this ) { !float *v1 ! ; // eax float v2[3] ; // [esp+1Ch] [ebp-18h] BYREF float v3[3] ; // [esp+28h] [ebp-Ch] BYREF v2 [ 0 ] = 0.0 ; v2 [ 1 ] = 1.0 ; v2 [ 2 ] = 0.0 ; v1 = TransformMatrix3x4Point ( v3 , this , v2 ) ; Math::CalcAngle ( v1 [ 2 ] , v1 [ 1 ] ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_5AF3B0(float *this)
+{
+  float *v1; // eax
+  float v2[3]; // [esp+1Ch] [ebp-18h] BYREF
+  float v3[3]; // [esp+28h] [ebp-Ch] BYREF
+
+  v2[0] = 0.0;
+  v2[1] = 1.0;
+  v2[2] = 0.0;
+  v1 = TransformMatrix3x4Point(v3, this, v2);
+  Math::CalcAngle(v1[2], v1[1]);
+}
+
+/* ASM:
+sub     esp, 24h
+lea     eax, [esp+24h+var_18]
+mov     edx, ecx
+push    eax
+lea     ecx, [esp+28h+var_C]
+mov     [esp+28h+var_18], 0
+mov     [esp+28h+var_14], 3F800000h
+mov     [esp+28h+var_10], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+sub     esp, 8
+sub     esp, 8
+mov     [esp+34h+var_24], ecx
+mov     edx, [eax+4]
+mov     [esp+34h+var_20], edx
+fld     [esp+34h+var_20]
+mov     eax, [eax+8]
+fstp    [esp+34h+var_2C] ; double
+mov     [esp+34h+var_1C], eax
+fld     [esp+34h+var_1C]
+fstp    [esp+34h+var_34] ; double
+call    Math__CalcAngle
+add     esp, 34h
+retn
+*/
 }
 
 // 0x0068B8A0 (157 bytes)
 void Math_Get_68B8A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0068B8A0.json)
-    // Size: 157 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   __int64 __thiscall sub_68B8A0 ( void *this ) { !DWORD v1 ! ; // eax !unsigned int v2 ! ; // ecx char v4 ; // [esp+3h] [ebp-15h] BYREF !int v5 ! ; // [esp+4h] [ebp-14h] !int v6 ! ; // [esp+8h] [ebp-10h] !int v7 ! ; // [esp+Ch] [ebp-Ch] BYREF __int64 v8 ; // [esp+10h] [ebp-8h] BYREF v5 = ( int ) this ; v6 = 0 ; GetVersionString ( & v7 , & v4 , 0 , 0 ) ; if ( v7 > 5 ) v5 = Math::RoundToInt ( ( double ) v5 * 0.8 ) ; v1 = sub_5CAF70 ( ( LONG * ) & v8 ) ; v2 = v8 ; if ( v1 || ( _DWORD ) v8 ) { v8 = v1 ; v6 = Math::RoundToInt ( ( ( double ) v2 * 4294967296.0 + ( double ) v1 ) * 0.000001 ) ; } return Math::RoundToInt ( ( double ) v5 * 200.0 / ( double ) v6 ) ; }
-    
+// [IDA decompile]
+__int64 __thiscall sub_68B8A0(void *this)
+{
+  int v1; // eax
+  unsigned int v2; // ecx
+  char v4; // [esp+3h] [ebp-15h] BYREF
+  int v5; // [esp+4h] [ebp-14h]
+  int v6; // [esp+8h] [ebp-10h]
+  int v7; // [esp+Ch] [ebp-Ch] BYREF
+  __int64 v8; // [esp+10h] [ebp-8h] BYREF
+
+  v5 = (int)this;
+  v6 = 0;
+  GetVersionString(&v7, &v4, 0, 0);
+  if ( v7 > 5 )
+    v5 = Math::RoundToInt((double)v5 * 0.8);
+  v1 = sub_5CAF70(&v8);
+  v2 = v8;
+  if ( v1 || (_DWORD)v8 )
+  {
+    v8 = (unsigned int)v1;
+    v6 = Math::RoundToInt(((double)v2 * 4294967296.0 + (double)(unsigned int)v1) * 0.000001);
+  }
+  return Math::RoundToInt((double)v5 * 200.0 / (double)v6);
+}
+
+/* ASM:
+sub     esp, 18h
+mov     [esp+18h+var_14], ecx
+push    0               ; Count
+push    0               ; Destination
+lea     edx, [esp+20h+var_15]
+lea     ecx, [esp+20h+var_C]
+mov     [esp+20h+var_10], 0
+call    GetVersionString
+cmp     [esp+18h+var_C], 5
+jle     short loc_68B8DA
+fild    [esp+18h+var_14]
+fmul    ds:dbl_7F0E50
+call    Math__RoundToInt
+mov     [esp+18h+var_14], eax
+
+loc_68B8DA:                             ; CODE XREF: sub_68B8A0+25↑j
+lea     ecx, [esp+18h+var_8]
+call    sub_5CAF70
+mov     ecx, dword ptr [esp+18h+var_8]
+test    eax, eax
+jnz     short loc_68B8EF
+test    ecx, ecx
+jz      short loc_68B926
+
+loc_68B8EF:                             ; CODE XREF: sub_68B8A0+49↑j
+mov     dword ptr [esp+18h+var_8], ecx
+mov     dword ptr [esp+18h+var_8+4], 0
+fild    [esp+18h+var_8]
+mov     dword ptr [esp+18h+var_8], eax
+mov     dword ptr [esp+18h+var_8+4], 0
+fmul    ds:dbl_7E51F8
+fild    [esp+18h+var_8]
+faddp   st(1), st
+fmul    ds:dbl_7EF918
+call    Math__RoundToInt
+mov     [esp+18h+var_10], eax
+
+loc_68B926:                             ; CODE XREF: sub_68B8A0+4D↑j
+fild    [esp+18h+var_14]
+fmul    ds:dbl_7F0E58
+fidiv   [esp+18h+var_10]
+call    Math__RoundToInt
+add     esp, 18h
+retn
+*/
 }
 
 // 0x00659A30 (136 bytes)
 int Math_RoundToInt_659A30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00659A30.json)
-    // Size: 136 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   __int16 __thiscall sub_659A30 ( int this ) { !int v2 ! ; // eax int v3 ; // edi int v4 ; // ebx int v5 ; // ebp double v6 ; // st7 __int16 *v7 ; // edx int v8 ; // esi __int16 result ; // ax char v10 ; // cl v2 = Math::RoundToInt ( * ( double * ) ( this + 104 ) / * ( double * ) ( this + 24 ) ) ; v3 = * ( _DWORD * ) ( this + 92 ) ; v4 = * ( _DWORD * ) ( this + 96 ) ; v5 = * ( _DWORD * ) ( this + 100 ) ; * ( _DWORD * ) ( this + 140 ) = v2 ; if ( v2 ) { v3 /= v2 ; v4 /= v2 ; v5 /= v2 ; } v6 = ( double ) * ( int * ) ( this + 124 ) / ( double ) * ( int * ) ( this + 60 ) ; * ( _DWORD * ) ( this + 144 ) = v3 ; * ( _DWORD * ) ( this + 148 ) = v4 ; * ( _DWORD * ) ( this + 152 ) = v5 ; * ( _DWORD * ) ( this + 156 ) = * ( _DWORD * ) ( this + 36 ) ; * ( _DWORD * ) ( this + 160 ) = * ( _DWORD * ) ( this + 40 ) ; * ( _DWORD * ) ( this + 164 ) = * ( _DWORD * ) ( this + 44 ) ; v7 = ( __int16 * ) ( this + 32 ) ; v8 = this + 192 ; result = * v7 ; v10 = * ( ( _BYTE * ) v7 + 2 ) ; * ( double * ) ( v8 - 64 ) = v6 * * ( double * ) ( v8 - 128 ) ; * ( _WORD * ) v8 = result ; * ( _BYTE * ) ( v8 + 2 ) = v10 ; return result ; }
-    return 0;
+// [IDA decompile]
+__int16 __thiscall sub_659A30(int this)
+{
+  int v2; // eax
+  int v3; // edi
+  int v4; // ebx
+  int v5; // ebp
+  double v6; // st7
+  __int16 *v7; // edx
+  int v8; // esi
+  __int16 result; // ax
+  char v10; // cl
+
+  v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24));
+  v3 = *(_DWORD *)(this + 92);
+  v4 = *(_DWORD *)(this + 96);
+  v5 = *(_DWORD *)(this + 100);
+  *(_DWORD *)(this + 140) = v2;
+  if ( v2 )
+  {
+    v3 /= v2;
+    v4 /= v2;
+    v5 /= v2;
+  }
+  v6 = (double)*(int *)(this + 124) / (double)*(int *)(this + 60);
+  *(_DWORD *)(this + 144) = v3;
+  *(_DWORD *)(this + 148) = v4;
+  *(_DWORD *)(this + 152) = v5;
+  *(_DWORD *)(this + 156) = *(_DWORD *)(this + 36);
+  *(_DWORD *)(this + 160) = *(_DWORD *)(this + 40);
+  *(_DWORD *)(this + 164) = *(_DWORD *)(this + 44);
+  v7 = (__int16 *)(this + 32);
+  v8 = this + 192;
+  result = *v7;
+  v10 = *((_BYTE *)v7 + 2);
+  *(double *)(v8 - 64) = v6 * *(double *)(v8 - 128);
+  *(_WORD *)v8 = result;
+  *(_BYTE *)(v8 + 2) = v10;
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+fld     qword ptr [esi+68h]
+fdiv    qword ptr [esi+18h]
+call    Math__RoundToInt
+mov     edi, [esi+5Ch]
+mov     ebx, [esi+60h]
+mov     ebp, [esi+64h]
+mov     ecx, eax
+test    ecx, ecx
+mov     [esi+8Ch], ecx
+jz      short loc_659A6B
+mov     eax, edi
+cdq
+idiv    ecx
+mov     edi, eax
+mov     eax, ebx
+cdq
+idiv    ecx
+mov     ebx, eax
+mov     eax, ebp
+cdq
+idiv    ecx
+mov     ebp, eax
+
+loc_659A6B:                             ; CODE XREF: sub_659A30+24↑j
+fild    dword ptr [esi+7Ch]
+fidiv   dword ptr [esi+3Ch]
+lea     eax, [esi+90h]
+lea     ecx, [esi+24h]
+lea     edx, [esi+9Ch]
+mov     [eax], edi
+pop     edi
+mov     [eax+4], ebx
+mov     [eax+8], ebp
+mov     eax, [ecx]
+mov     [edx], eax
+mov     eax, [ecx+4]
+mov     [edx+4], eax
+mov     ecx, [ecx+8]
+mov     [edx+8], ecx
+lea     edx, [esi+20h]
+add     esi, 0C0h
+mov     ax, [edx]
+mov     cl, [edx+2]
+fmul    qword ptr [esi-80h]
+fstp    qword ptr [esi-40h]
+mov     [esi], ax
+mov     [esi+2], cl
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x006B1EE0 (99 bytes)
 double Math_RoundToInt_6B1EE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006B1EE0.json)
-    // Size: 99 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   __int64 __thiscall sub_6B1EE0 ( int this ) { int v2 ; // ebx double v3 ; // st7 !int v4 ! ; // edi !__int64 result ! ; // rax if ( * ( _BYTE * ) ( this + 46 ) ) v2 = * ( _DWORD * ) ( this + 20 ) ; else v2 = * ( _DWORD * ) ( this + 24 ) ; v3 = ( double ) * ( int * ) ( this + 48 ) ; v4 = Math::RoundToInt ( v3 ) ; if ( v4 <= 4 ) v4 = 4 ; * ( _DWORD * ) ( this + 76 ) = v4 ; result = Math::RoundToInt ( v3 ) ; if ( ( int ) result >= v2 - v4 ) * ( _DWORD * ) ( this + 80 ) = v2 - v4 ; else * ( _DWORD * ) ( this + 80 ) = result ; return result ; }
-    return 0.0;
+// [IDA decompile]
+__int64 __thiscall sub_6B1EE0(int this)
+{
+  int v2; // ebx
+  double v3; // st7
+  int v4; // edi
+  __int64 result; // rax
+
+  if ( *(_BYTE *)(this + 46) )
+    v2 = *(_DWORD *)(this + 20);
+  else
+    v2 = *(_DWORD *)(this + 24);
+  v3 = (double)*(int *)(this + 48);
+  v4 = Math::RoundToInt(v3);
+  if ( v4 <= 4 )
+    v4 = 4;
+  *(_DWORD *)(this + 76) = v4;
+  result = Math::RoundToInt(v3);
+  if ( (int)result >= v2 - v4 )
+    *(_DWORD *)(this + 80) = v2 - v4;
+  else
+    *(_DWORD *)(this + 80) = result;
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     al, [esi+2Eh]
+test    al, al
+jz      short loc_6B1EF2
+mov     ebx, [esi+14h]
+jmp     short loc_6B1EF5
+; ---------------------------------------------------------------------------
+
+loc_6B1EF2:                             ; CODE XREF: sub_6B1EE0+B↑j
+mov     ebx, [esi+18h]
+
+loc_6B1EF5:                             ; CODE XREF: sub_6B1EE0+10↑j
+fild    dword ptr [esi+30h]
+mov     [esp+10h+var_4], ebx
+fild    [esp+10h+var_4]
+fild    dword ptr [esi+48h]
+fdiv    st, st(2)
+fmul    st, st(1)
+call    Math__RoundToInt
+cmp     eax, 4
+mov     edi, eax
+jg      short loc_6B1F18
+mov     edi, 4
+
+loc_6B1F18:                             ; CODE XREF: sub_6B1EE0+31↑j
+fild    dword ptr [esi+34h]
+mov     [esi+4Ch], edi
+fdiv    st, st(2)
+fmul    st, st(1)
+call    Math__RoundToInt
+mov     ecx, ebx
+sub     ecx, edi
+fstp    st
+cmp     eax, ecx
+fstp    st
+jge     short loc_6B1F3B
+mov     [esi+50h], eax
+pop     edi
+pop     esi
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_6B1F3B:                             ; CODE XREF: sub_6B1EE0+51↑j
+mov     [esi+50h], ecx
+pop     edi
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x006D8C60 (329 bytes)
 int Math_RoundToInt_6D8C60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D8C60.json)
-    // Size: 329 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __fastcall sub_6D8C60 ( int a1, int a2 ) { _DWORD *v3 ; // eax !int v4 ! ; // edi !int v5 ! ; // esi int v6 ; // eax !int result ! ; // eax !int v8 ! ; // edi !int v9 ! ; // esi int v10 ; // [esp+18h] [ebp-1Ch] !int v12 ! ; // [esp+20h] [ebp-14h] BYREF int v13 ; // [esp+24h] [ebp-10h] _BYTE v14[12] ; // [esp+28h] [ebp-Ch] BYREF v3 = ( _DWORD * ) ( * ( int (__thiscall **)(int, _BYTE *) ) ( * ( _DWORD * ) a1 + 72 ) ) ( a1 , v14 ) ; v10 = v3 [ 1 ] ; v4 = ( -60 * v10 / 2 + 60 * * v3 / 2 ) / 256 ; v5 = ( 30 * v10 / 2 + 30 * * v3 / 2 ) / 256 ; v6 = Math::RoundToInt ( ( double ) ( int ) v3 [ 2 ] * dbl_B0CD48 + ( double ) ( v3 [ 2 ] >= 728 ) + 0.5 ) ; v12 = v4 ; v13 = v5 - v6 ; result = ( int ) TacticalClass_Instance [ 45 ] . lpVtbl ; v8 = v4 - ( unsigned int ) TacticalClass_Instance [ 44 ] . lpVtbl ; v9 = v13 - result ; v12 = v8 ; v13 -= result ; if ( v8 >= -360 ) { result = dword_B0CE30 + 360 ; if ( v8 <= dword_B0CE30 + 360 && v9 >= -180 && v9 <= dword_B0CE34 + 180 ) { ( * ( void (__thiscall **)(int, int *, int) ) ( * ( _DWORD * ) a1 + 268 ) ) ( a1 , & v12 , a2 ) ; return ( * ( int (__thiscall **)(int, int *, int) ) ( * ( _DWORD * ) a1 + 272 ) ) ( a1 , & v12 , a2 ) ; } } return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_6D8C60(int a1, int a2)
+{
+  _DWORD *v3; // eax
+  int v4; // edi
+  int v5; // esi
+  int v6; // eax
+  int result; // eax
+  int v8; // edi
+  int v9; // esi
+  int v10; // [esp+18h] [ebp-1Ch]
+  int v12; // [esp+20h] [ebp-14h] BYREF
+  int v13; // [esp+24h] [ebp-10h]
+  _BYTE v14[12]; // [esp+28h] [ebp-Ch] BYREF
+
+  v3 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a1 + 72))(a1, v14);
+  v10 = v3[1];
+  v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256;
+  v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256;
+  v6 = Math::RoundToInt((double)(int)v3[2] * *(double *)&dword_A8ED54[129021] + (double)(v3[2] >= 728) + 0.5);
+  v12 = v4;
+  v13 = v5 - v6;
+  result = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180);
+  v8 = v4 - *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176);
+  v9 = v13 - result;
+  v12 = v8;
+  v13 -= result;
+  if ( v8 >= -360 )
+  {
+    result = dword_A8ED54[129079] + 360;
+    if ( v8 <= dword_A8ED54[129079] + 360 && v9 >= -180 && v9 <= dword_A8ED54[129080] + 180 )
+    {
+      (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)a1 + 268))(a1, &v12, a2);
+      return (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)a1 + 272))(a1, &v12, a2);
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 24h
+push    ebx
+push    ebp
+mov     ebp, ecx
+push    esi
+lea     ecx, [esp+30h+var_C]
+push    edi
+mov     eax, [ebp+0]
+push    ecx
+mov     [esp+38h+var_18], edx
+mov     ecx, ebp
+call    dword ptr [eax+48h]
+mov     ebx, eax
+mov     [esp+34h+var_24], 0
+mov     esi, [ebx]
+mov     edx, [ebx+4]
+mov     [esp+34h+var_1C], edx
+mov     edi, [esp+34h+var_1C]
+lea     eax, [esi+esi*2]
+lea     esi, [esi+esi*2]
+mov     ebx, [ebx+8]
+lea     eax, [eax+eax*4]
+shl     eax, 2
+cdq
+sub     eax, edx
+mov     ecx, eax
+lea     eax, [esi+esi*4]
+shl     eax, 1
+cdq
+sub     eax, edx
+mov     esi, eax
+mov     eax, edi
+shl     eax, 4
+sub     eax, edi
+lea     edi, [edi+edi*2]
+neg     eax
+shl     eax, 2
+cdq
+sub     eax, edx
+sar     ecx, 1
+sar     eax, 1
+add     ecx, eax
+lea     eax, [edi+edi*4]
+shl     eax, 1
+cdq
+sub     eax, edx
+mov     [esp+34h+var_20], ecx
+sar     esi, 1
+sar     eax, 1
+add     esi, eax
+mov     eax, ecx
+cdq
+and     edx, 0FFh
+mov     [esp+34h+var_20], ebx
+add     eax, edx
+mov     edi, eax
+mov     eax, esi
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     esi, eax
+sar     edi, 8
+sar     esi, 8
+cmp     ebx, 2D8h
+jl      short loc_6D8D0D
+mov     [esp+34h+var_24], 1
+
+loc_6D8D0D:                             ; CODE XREF: sub_6D8C60+A3↑j
+fild    [esp+34h+var_20]
+fmul    qword ptr dword_A8ED54+7DFF4h
+fiadd   [esp+34h+var_24]
+fadd    ds:dbl_7E1738
+call    Math__RoundToInt
+sub     esi, eax
+mov     eax, ds:887324h
+mov     [esp+34h+var_14], edi
+mov     [esp+34h+var_10], esi
+mov     ecx, [eax+0B0h]
+mov     eax, [eax+0B4h]
+sub     edi, ecx
+sub     esi, eax
+cmp     edi, 0FFFFFE98h
+mov     [esp+34h+var_14], edi
+mov     [esp+34h+var_10], esi
+jl      short loc_6D8DA1
+mov     eax, dword_A8ED54+7E0DCh
+add     eax, 168h
+cmp     edi, eax
+jg      short loc_6D8DA1
+cmp     esi, 0FFFFFF4Ch
+jl      short loc_6D8DA1
+mov     ecx, dword_A8ED54+7E0E0h
+add     ecx, 0B4h
+cmp     esi, ecx
+jg      short loc_6D8DA1
+mov     esi, [esp+34h+var_18]
+mov     edx, [ebp+0]
+lea     eax, [esp+34h+var_14]
+push    esi
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+10Ch]
+mov     edx, [ebp+0]
+lea     eax, [esp+34h+var_14]
+push    esi
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+110h]
+
+loc_6D8DA1:                             ; CODE XREF: sub_6D8C60+F3↑j
+; sub_6D8C60+101↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 24h
+retn
+*/
 }
 
 // 0x005AED50 (246 bytes)
 float Math_SetMember1_5AED50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AED50.json)
-    // Size: 246 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5AED50 ( float *this, float a2 ) { double v2 ; // kr00_8 double v4 ; // st7 double v5 ; // st6 double v6 ; // st5 double v7 ; // st4 int result ; // eax !float v9 ! ; // [esp+0h] [ebp-1Ch] !float v10 ! ; // [esp+8h] [ebp-14h] !float v11 ! ; // [esp+Ch] [ebp-10h] !float v12 ! ; // [esp+10h] [ebp-Ch] !float v13 ! ; // [esp+14h] [ebp-8h] float v14 ; // [esp+20h] [ebp+4h] v2 = a2 ; v14 = Math::SinCos ( a2 ) ; v4 = Math::ArcTan2 ( v2 ) ; v5 = - v14 ; v6 = * this ; v7 = * ( this + 8 ) ; v9 = * ( this + 1 ) ; result = * ( ( int * ) this + 9 ) ; v10 = * ( this + 2 ) ; v11 = * ( this + 10 ) ; v12 = * ( this + 3 ) ; * this = v7 * v14 + v6 * v4 ; v13 = * ( this + 11 ) ; * ( this + 1 ) = * ( float * ) & result * v14 + v9 * v4 ; * ( this + 2 ) = v11 * v14 + v10 * v4 ; * ( this + 3 ) = v13 * v14 + v12 * v4 ; * ( this + 8 ) = v6 * v5 + v7 * v4 ; * ( this + 9 ) = v9 * v5 + * ( float * ) & result * v4 ; * ( this + 10 ) = v10 * v5 + v11 * v4 ; * ( this + 11 ) = v12 * v5 + v13 * v4 ; return result ; }
-    return 0.0f;
+// [IDA decompile]
+int __thiscall sub_5AED50(float *this, float a2)
+{
+  double v2; // kr00_8
+  double v4; // st7
+  double v5; // st6
+  double v6; // st5
+  double v7; // st4
+  int result; // eax
+  float v9; // [esp+0h] [ebp-1Ch]
+  float v10; // [esp+8h] [ebp-14h]
+  float v11; // [esp+Ch] [ebp-10h]
+  float v12; // [esp+10h] [ebp-Ch]
+  float v13; // [esp+14h] [ebp-8h]
+  float v14; // [esp+20h] [ebp+4h]
+
+  v2 = a2;
+  v14 = Math::SinCos(a2);
+  v4 = Math::ArcTan2(v2);
+  v5 = -v14;
+  v6 = *this;
+  v7 = *(this + 8);
+  v9 = *(this + 1);
+  result = *((int *)this + 9);
+  v10 = *(this + 2);
+  v11 = *(this + 10);
+  v12 = *(this + 3);
+  *this = v7 * v14 + v6 * v4;
+  v13 = *(this + 11);
+  *(this + 1) = *(float *)&result * v14 + v9 * v4;
+  *(this + 2) = v11 * v14 + v10 * v4;
+  *(this + 3) = v13 * v14 + v12 * v4;
+  *(this + 8) = v6 * v5 + v7 * v4;
+  *(this + 9) = v9 * v5 + *(float *)&result * v4;
+  *(this + 10) = v10 * v5 + v11 * v4;
+  *(this + 11) = v12 * v5 + v13 * v4;
+  return result;
+}
+
+/* ASM:
+sub     esp, 1Ch
+fld     [esp+1Ch+arg_0]
+push    ebx
+push    esi
+fstp    [esp+24h+var_8]
+mov     ebx, dword ptr [esp+24h+var_8]
+push    edi
+mov     edi, dword ptr [esp+28h+var_8+4]
+mov     esi, ecx
+push    edi
+push    ebx             ; double
+call    Math__SinCos
+fstp    [esp+30h+arg_0]
+push    edi
+push    ebx             ; double
+call    Math__ArcTan2
+fld     [esp+38h+arg_0]
+fchs
+fld     dword ptr [esi]
+fld     dword ptr [esi+20h]
+fld     st
+fmul    [esp+38h+arg_0]
+mov     eax, [esi+4]
+mov     ecx, [esi+8]
+fld     st(2)
+fmul    st, st(5)
+mov     [esp+38h+var_1C], eax
+mov     eax, [esi+24h]
+mov     [esp+38h+var_18], eax
+mov     [esp+38h+var_14], ecx
+faddp   st(1), st
+mov     ecx, [esi+28h]
+mov     edx, [esi+0Ch]
+mov     [esp+38h+var_10], ecx
+mov     [esp+38h+var_C], edx
+fstp    dword ptr [esi]
+fld     [esp+38h+var_18]
+fmul    [esp+38h+arg_0]
+fld     [esp+38h+var_1C]
+fmul    st, st(5)
+mov     edx, [esi+2Ch]
+add     esp, 10h
+mov     dword ptr [esp+28h+var_8], edx
+faddp   st(1), st
+fstp    dword ptr [esi+4]
+fld     [esp+28h+var_10]
+fmul    [esp+28h+arg_0]
+fld     [esp+28h+var_14]
+fmul    st, st(5)
+faddp   st(1), st
+fstp    dword ptr [esi+8]
+fld     dword ptr [esp+28h+var_8]
+fmul    [esp+28h+arg_0]
+fld     [esp+28h+var_C]
+fmul    st, st(5)
+faddp   st(1), st
+fstp    dword ptr [esi+0Ch]
+fxch    st(1)
+fmul    st, st(2)
+fxch    st(1)
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+20h]
+fld     [esp+28h+var_1C]
+fmul    st, st(1)
+fld     [esp+28h+var_18]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+24h]
+fld     [esp+28h+var_14]
+fmul    st, st(1)
+fld     [esp+28h+var_10]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+28h]
+fld     [esp+28h+var_C]
+fmul    st, st(1)
+fld     dword ptr [esp+28h+var_8]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+2Ch]
+fstp    st
+pop     edi
+pop     esi
+fstp    st
+pop     ebx
+add     esp, 1Ch
+retn    4
+*/
 }
 
 // 0x007294E0 (155 bytes)
 int Math_SetMember6_7294E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007294E0.json)
-    // Size: 155 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_7294E0 ( _DWORD *this ) { _DWORD *v2 ; // ecx !int v3 ! ; // eax !int result ! ; // eax !int v5 ! ; // [esp+4h] [ebp-10h] _DWORD v6[2] ; // [esp+8h] [ebp-Ch] BYREF !int v7 ! ; // [esp+10h] [ebp-4h] v2 = ( _DWORD * ) * ( this + 3 ) ; v6 [ 0 ] = v2 [ 39 ] ; v6 [ 1 ] = v2 [ 40 ] ; v7 = v2 [ 41 ] ; if ( v7 <= -256 ) { result = ( * ( int (__thiscall **)(_DWORD *, _DWORD) ) ( * v2 + 292 ) ) ( v2 , 0 ) ; * ( this + 6 ) = 4 ; } else { v5 = ( * ( int (__thiscall **)(_DWORD *) ) ( * v2 + 1336 ) ) ( v2 ) ; v3 = Math::RoundToInt ( ( double ) v5 * * ( double * ) & RulesClass_Instance -> TunnelSpeed ) ; if ( v3 <= 5 ) v3 = 5 ; v7 -= v3 ; if ( v7 < -256 ) v7 = -256 ; return ( * ( int (__thiscall **)(_DWORD, _DWORD *) ) ( * ( _DWORD * ) * ( this + 3 ) + 436 ) ) ( * ( this + 3 ) , v6 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_7294E0(_DWORD *this)
+{
+  _DWORD *v2; // ecx
+  int v3; // eax
+  int result; // eax
+  int v5; // [esp+4h] [ebp-10h]
+  _DWORD v6[2]; // [esp+8h] [ebp-Ch] BYREF
+  int v7; // [esp+10h] [ebp-4h]
+
+  v2 = (_DWORD *)*(this + 3);
+  v6[0] = v2[39];
+  v6[1] = v2[40];
+  v7 = v2[41];
+  if ( v7 <= -256 )
+  {
+    result = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v2 + 292))(v2, 0);
+    *(this + 6) = 4;
+  }
+  else
+  {
+    v5 = (*(int (__thiscall **)(_DWORD *))(*v2 + 1336))(v2);
+    v3 = Math::RoundToInt((double)v5 * *(double *)(MEMORY[0x87F7E8][7806] + 32));
+    if ( v3 <= 5 )
+      v3 = 5;
+    v7 -= v3;
+    if ( v7 < -256 )
+      v7 = -256;
+    return (*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 436))(*(this + 3), v6);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+0Ch]
+lea     eax, [ecx+9Ch]
+mov     edx, [ecx+9Ch]
+mov     [esp+14h+var_C], edx
+mov     edx, [eax+4]
+mov     [esp+14h+var_8], edx
+mov     eax, [eax+8]
+cmp     eax, 0FFFFFF00h
+mov     [esp+14h+var_4], eax
+jle     short loc_729565
+mov     eax, [ecx]
+call    dword ptr [eax+538h]
+mov     ecx, ds:8871E0h
+mov     [esp+14h+var_10], eax
+fild    [esp+14h+var_10]
+fmul    qword ptr [ecx+20h]
+call    Math__RoundToInt
+cmp     eax, 5
+jg      short loc_729536
+mov     eax, 5
+
+loc_729536:                             ; CODE XREF: sub_7294E0+4F↑j
+mov     ecx, [esp+14h+var_4]
+sub     ecx, eax
+cmp     ecx, 0FFFFFF00h
+mov     [esp+14h+var_4], ecx
+jge     short loc_729550
+mov     [esp+14h+var_4], 0FFFFFF00h
+
+loc_729550:                             ; CODE XREF: sub_7294E0+66↑j
+mov     ecx, [esi+0Ch]
+lea     eax, [esp+14h+var_C]
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+1B4h]
+pop     esi
+add     esp, 10h
+retn
+; ---------------------------------------------------------------------------
+
+loc_729565:                             ; CODE XREF: sub_7294E0+2C↑j
+mov     edx, [ecx]
+push    0
+call    dword ptr [edx+124h]
+mov     dword ptr [esi+18h], 4
+pop     esi
+add     esp, 10h
+retn
+*/
 }
 
 // 0x005AEE50 (262 bytes)
 float Math_SetMember_5AEE50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AEE50.json)
-    // Size: 262 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5AEE50 ( float *this, float a2 ) { double v2 ; // kr00_8 double v4 ; // st7 double v5 ; // st6 double v6 ; // st4 int result ; // eax !float v8 ! ; // [esp+0h] [ebp-24h] !float v9 ! ; // [esp+8h] [ebp-1Ch] !float v10 ! ; // [esp+Ch] [ebp-18h] !float v11 ! ; // [esp+14h] [ebp-10h] !float v12 ! ; // [esp+18h] [ebp-Ch] !float v13 ! ; // [esp+1Ch] [ebp-8h] float v14 ; // [esp+28h] [ebp+4h] v2 = a2 ; v14 = Math::SinCos ( a2 ) ; v4 = Math::ArcTan2 ( v2 ) ; v10 = * ( this + 1 ) ; v5 = - v14 ; v8 = * ( this + 4 ) ; v11 = * ( this + 2 ) ; v6 = * this ; v9 = * ( this + 5 ) ; v13 = * ( this + 3 ) ; result = * ( ( int * ) this + 6 ) ; v12 = * ( this + 7 ) ; * this = v8 * v5 + v6 * v4 ; * ( this + 1 ) = v9 * v5 + v10 * v4 ; * ( this + 2 ) = * ( float * ) & result * v5 + v11 * v4 ; * ( this + 3 ) = v12 * v5 + v13 * v4 ; * ( this + 4 ) = v8 * v4 + v6 * v14 ; * ( this + 5 ) = v9 * v4 + v10 * v14 ; * ( this + 6 ) = * ( float * ) & result * v4 + v11 * v14 ; * ( this + 7 ) = v12 * v4 + v13 * v14 ; return result ; }
-    return 0.0f;
+// [IDA decompile]
+int __thiscall sub_5AEE50(float *this, float a2)
+{
+  double v2; // kr00_8
+  double v4; // st7
+  double v5; // st6
+  double v6; // st4
+  int result; // eax
+  float v8; // [esp+0h] [ebp-24h]
+  float v9; // [esp+8h] [ebp-1Ch]
+  float v10; // [esp+Ch] [ebp-18h]
+  float v11; // [esp+14h] [ebp-10h]
+  float v12; // [esp+18h] [ebp-Ch]
+  float v13; // [esp+1Ch] [ebp-8h]
+  float v14; // [esp+28h] [ebp+4h]
+
+  v2 = a2;
+  v14 = Math::SinCos(a2);
+  v4 = Math::ArcTan2(v2);
+  v10 = *(this + 1);
+  v5 = -v14;
+  v8 = *(this + 4);
+  v11 = *(this + 2);
+  v6 = *this;
+  v9 = *(this + 5);
+  v13 = *(this + 3);
+  result = *((int *)this + 6);
+  v12 = *(this + 7);
+  *this = v8 * v5 + v6 * v4;
+  *(this + 1) = v9 * v5 + v10 * v4;
+  *(this + 2) = *(float *)&result * v5 + v11 * v4;
+  *(this + 3) = v12 * v5 + v13 * v4;
+  *(this + 4) = v8 * v4 + v6 * v14;
+  *(this + 5) = v9 * v4 + v10 * v14;
+  *(this + 6) = *(float *)&result * v4 + v11 * v14;
+  *(this + 7) = v12 * v4 + v13 * v14;
+  return result;
+}
+
+/* ASM:
+sub     esp, 24h
+fld     [esp+24h+arg_0]
+push    ebx
+push    esi
+fstp    [esp+2Ch+var_8]
+mov     ebx, dword ptr [esp+2Ch+var_8]
+push    edi
+mov     edi, dword ptr [esp+30h+var_8+4]
+mov     esi, ecx
+push    edi
+push    ebx             ; double
+call    Math__SinCos
+fstp    [esp+38h+arg_0]
+push    edi
+push    ebx             ; double
+call    Math__ArcTan2
+mov     ecx, [esi+4]
+mov     eax, [esi]
+fld     [esp+40h+arg_0]
+mov     [esp+40h+var_18], ecx
+mov     ecx, [esi+10h]
+fchs
+mov     [esp+40h+var_24], ecx
+mov     edx, [esi+8]
+fld     [esp+40h+var_24]
+fmul    st, st(1)
+mov     [esp+40h+var_20], eax
+mov     [esp+40h+var_10], edx
+fld     [esp+40h+var_20]
+mov     edx, [esi+14h]
+mov     eax, [esi+0Ch]
+fmul    st, st(3)
+mov     [esp+40h+var_1C], edx
+mov     dword ptr [esp+40h+var_8], eax
+mov     eax, [esi+18h]
+mov     ecx, [esi+1Ch]
+faddp   st(1), st
+mov     [esp+40h+var_14], eax
+mov     [esp+40h+var_C], ecx
+add     esp, 10h
+fstp    dword ptr [esi]
+fld     [esp+30h+var_1C]
+fmul    st, st(1)
+fld     [esp+30h+var_18]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+4]
+fld     [esp+30h+var_14]
+fmul    st, st(1)
+fld     [esp+30h+var_10]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+8]
+fld     [esp+30h+var_C]
+fmul    st, st(1)
+fld     dword ptr [esp+30h+var_8]
+fmul    st, st(3)
+faddp   st(1), st
+fstp    dword ptr [esi+0Ch]
+fstp    st
+fld     [esp+30h+var_24]
+fmul    st, st(1)
+fld     [esp+30h+var_20]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+10h]
+fld     [esp+30h+var_1C]
+fmul    st, st(1)
+fld     [esp+30h+var_18]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+14h]
+fld     [esp+30h+var_14]
+fmul    st, st(1)
+fld     [esp+30h+var_10]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+18h]
+fld     [esp+30h+var_C]
+fmul    st, st(1)
+fld     dword ptr [esp+30h+var_8]
+fmul    [esp+30h+arg_0]
+faddp   st(1), st
+pop     edi
+fstp    dword ptr [esi+1Ch]
+pop     esi
+pop     ebx
+fstp    st
+add     esp, 24h
+retn    4
+*/
 }
 
 // 0x00436DA0 (221 bytes)
 double Math_Sqrt_436DA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00436DA0.json)
-    // Size: 221 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   double __thiscall sub_436DA0 ( _DWORD **this ) { _DWORD *v2 ; // edi _DWORD *v3 ; // eax double v4 ; // st7 int v5 ; // eax !int v6 ! ; // esi double result ; // st7 !int v8 ! ; // [esp+1Ch] [ebp-28h] !int v9 ! ; // [esp+24h] [ebp-20h] !int v10 ! ; // [esp+28h] [ebp-1Ch] _BYTE v11[12] ; // [esp+2Ch] [ebp-18h] BYREF _BYTE v12[12] ; // [esp+38h] [ebp-Ch] BYREF v2 = ( _DWORD * ) ( * ( int (__thiscall **)(_DWORD, _BYTE *) ) ( * * ( this + 57 ) + 72 ) ) ( * ( this + 57 ) , v11 ) ; v3 = ( _DWORD * ) ( ( int (__thiscall *)(_DWORD **, _BYTE *) ) ( * this ) [ 18 ] ) ( this , v12 ) ; v9 = v3 [ 1 ] - v2 [ 1 ] ; v10 = v3 [ 2 ] - v2 [ 2 ] ; v4 = Math::Sqrt ( ( double ) ( * v3 - * v2 ) * ( double ) ( * v3 - * v2 ) + ( double ) v10 * ( double ) v10 + ( double ) v9 * ( double ) v9 ) ; v5 = Math::RoundToInt ( v4 ) ; v6 = RulesClass_Instance -> BuildPower [ 1 ] ; if ( v5 >= v6 ) v8 = ( v5 - v6 ) / ( ( RulesClass_Instance -> BuildPower [ 0 ] - v6 ) / 10 ) ; else v8 = 0 ; result = ( double ) v8 * 5.973333333333333 ; Math::RoundToInt ( result ) ; return result ; }
-    return 0.0;
+// [IDA decompile]
+double __thiscall sub_436DA0(_DWORD **this)
+{
+  _DWORD *v2; // edi
+  _DWORD *v3; // eax
+  double v4; // st7
+  int v5; // eax
+  int v6; // esi
+  double result; // st7
+  int v8; // [esp+1Ch] [ebp-28h]
+  int v9; // [esp+24h] [ebp-20h]
+  int v10; // [esp+28h] [ebp-1Ch]
+  _BYTE v11[12]; // [esp+2Ch] [ebp-18h] BYREF
+  _BYTE v12[12]; // [esp+38h] [ebp-Ch] BYREF
+
+  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(this + 57) + 72))(*(this + 57), v11);
+  v3 = (_DWORD *)((int (__thiscall *)(_DWORD **, _BYTE *))(*this)[18])(this, v12);
+  v9 = v3[1] - v2[1];
+  v10 = v3[2] - v2[2];
+  v4 = Math::Sqrt((double)(*v3 - *v2) * (double)(*v3 - *v2) + (double)v10 * (double)v10 + (double)v9 * (double)v9);
+  v5 = Math::RoundToInt(v4);
+  v6 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1932);
+  if ( v5 >= v6 )
+    v8 = (v5 - v6) / ((*(_DWORD *)(MEMORY[0x87F7E8][7806] + 1928) - v6) / 10);
+  else
+    v8 = 0;
+  result = (double)v8 * 5.973333333333333;
+  Math::RoundToInt(result);
+  return result;
+}
+
+/* ASM:
+sub     esp, 28h
+push    ebx
+push    esi
+mov     esi, ecx
+lea     edx, [esp+30h+var_18]
+push    edi
+push    edx
+mov     ecx, [esi+0E4h]
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+lea     ecx, [esp+34h+var_C]
+mov     edi, eax
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+mov     edx, [eax]
+mov     ecx, [edi]
+mov     ebx, [edi+4]
+mov     esi, [edi+8]
+sub     edx, ecx
+mov     ecx, [eax+4]
+mov     [esp+34h+var_24], edx
+mov     edx, [eax+8]
+sub     ecx, ebx
+sub     edx, esi
+mov     [esp+34h+var_20], ecx
+mov     [esp+34h+var_1C], edx
+fild    [esp+34h+var_20]
+fild    [esp+34h+var_1C]
+fild    [esp+34h+var_24]
+sub     esp, 8
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+3Ch+var_3C] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ebx, ds:8871E0h
+mov     edi, eax
+mov     esi, [ebx+78Ch]
+cmp     edi, esi
+jge     short loc_436E39
+mov     [esp+34h+var_28], 0
+jmp     short loc_436E5F
+; ---------------------------------------------------------------------------
+
+loc_436E39:                             ; CODE XREF: sub_436DA0+8D↑j
+mov     ecx, [ebx+788h]
+mov     eax, 66666667h
+sub     ecx, esi
+imul    ecx
+mov     ecx, edx
+sar     ecx, 2
+mov     eax, ecx
+shr     eax, 1Fh
+add     ecx, eax
+mov     eax, edi
+sub     eax, esi
+cdq
+idiv    ecx
+mov     [esp+34h+var_28], eax
+
+loc_436E5F:                             ; CODE XREF: sub_436DA0+97↑j
+fild    [esp+34h+var_28]
+fmul    ds:dbl_7E3A98
+call    Math__RoundToInt
+mov     ecx, [ebx+7A8h]
+pop     edi
+pop     esi
+add     eax, ecx
+pop     ebx
+add     esp, 28h
+retn
+*/
 }
 
 // 0x004528A0 (158 bytes)
 bool Math_Sqrt_4528A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004528A0.json)
-    // Size: 158 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __thiscall sub_4528A0 ( _DWORD *this, int a2 ) { !int *v3 ! ; // eax int v4 ; // edi int v5 ; // ebx int v6 ; // ebp _DWORD *v7 ; // eax !int v8 ! ; // edi int v9 ; // edx double v10 ; // st7 !int v12 ! ; // [esp+20h] [ebp-Ch] BYREF !int v13 ! ; // [esp+24h] [ebp-8h] int v14 ; // [esp+28h] [ebp-4h] v3 = ( int * ) ( * ( int (__thiscall **)(_DWORD *, int *) ) ( * this + 72 ) ) ( this , & v12 ) ; v4 = * v3 ; v5 = v3 [ 1 ] ; v6 = v3 [ 2 ] ; v7 = ( _DWORD * ) ( * ( int (__thiscall **)(int, int *) ) ( * ( _DWORD * ) a2 + 72 ) ) ( a2 , & v12 ) ; v8 = v4 - * v7 ; v9 = v7 [ 2 ] ; v13 = v5 - v7 [ 1 ] ; v12 = v8 ; v14 = v6 - v9 ; v10 = Math::Sqrt ( ( double ) v8 * ( double ) v8 + ( double ) ( v6 - v9 ) * ( double ) ( v6 - v9 ) + ( double ) v13 * ( double ) v13 ) ; return ( int ) Math::RoundToInt ( v10 ) <= * ( _DWORD * ) ( * ( this + 328 ) + 5900 ) << 8 ; }
-    return false;
+// [IDA decompile]
+bool __thiscall sub_4528A0(_DWORD *this, int a2)
+{
+  int *v3; // eax
+  int v4; // edi
+  int v5; // ebx
+  int v6; // ebp
+  _DWORD *v7; // eax
+  int v8; // edi
+  int v9; // edx
+  double v10; // st7
+  int v12; // [esp+20h] [ebp-Ch] BYREF
+  int v13; // [esp+24h] [ebp-8h]
+  int v14; // [esp+28h] [ebp-4h]
+
+  v3 = (int *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 72))(this, &v12);
+  v4 = *v3;
+  v5 = v3[1];
+  v6 = v3[2];
+  v7 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a2 + 72))(a2, &v12);
+  v8 = v4 - *v7;
+  v9 = v7[2];
+  v13 = v5 - v7[1];
+  v12 = v8;
+  v14 = v6 - v9;
+  v10 = Math::Sqrt((double)v8 * (double)v8 + (double)(v6 - v9) * (double)(v6 - v9) + (double)v13 * (double)v13);
+  return (int)Math::RoundToInt(v10) <= *(_DWORD *)(*(this + 328) + 5900) << 8;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+18h+var_C]
+push    edi
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+mov     edi, [eax]
+mov     ecx, [esp+1Ch+arg_0]
+mov     ebx, [eax+4]
+mov     edx, [ecx]
+mov     ebp, [eax+8]
+lea     eax, [esp+1Ch+var_C]
+push    eax
+call    dword ptr [edx+48h]
+mov     edx, eax
+sub     esp, 8
+mov     eax, [edx]
+sub     edi, eax
+mov     ecx, [edx+4]
+sub     ebx, ecx
+mov     edx, [edx+8]
+mov     [esp+24h+var_8], ebx
+fild    [esp+24h+var_8]
+sub     ebp, edx
+mov     [esp+24h+var_C], edi
+mov     [esp+24h+var_4], ebp
+fild    [esp+24h+var_4]
+fild    [esp+24h+var_C]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+24h+var_24] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ecx, [esi+520h]
+pop     edi
+pop     esi
+pop     ebp
+mov     edx, [ecx+170Ch]
+xor     ecx, ecx
+shl     edx, 8
+cmp     eax, edx
+pop     ebx
+setle   cl
+mov     al, cl
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x006599C0 (100 bytes)
 void Math_Sqrt_6599C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006599C0.json)
-    // Size: 100 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_6599C0 ( int this ) { !int v2 ! ; // eax !int v3 ! ; // edx !int v4 ! ; // ecx v2 = * ( _DWORD * ) ( this + 48 ) - * ( _DWORD * ) ( this + 36 ) ; v3 = * ( _DWORD * ) ( this + 56 ) - * ( _DWORD * ) ( this + 44 ) ; v4 = * ( _DWORD * ) ( this + 52 ) - * ( _DWORD * ) ( this + 40 ) ; * ( _DWORD * ) ( this + 92 ) = v2 ; * ( _DWORD * ) ( this + 96 ) = v4 ; * ( _DWORD * ) ( this + 100 ) = v3 ; * ( double * ) ( this + 104 ) = Math::Sqrt ( ( double ) ( * ( _DWORD * ) ( this + 100 ) * * ( _DWORD * ) ( this + 100 ) + * ( _DWORD * ) ( this + 96 ) * * ( _DWORD * ) ( this + 96 ) + * ( _DWORD * ) ( this + 92 ) * * ( _DWORD * ) ( this + 92 ) ) ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_6599C0(int this)
+{
+  int v2; // eax
+  int v3; // edx
+  int v4; // ecx
+
+  v2 = *(_DWORD *)(this + 48) - *(_DWORD *)(this + 36);
+  v3 = *(_DWORD *)(this + 56) - *(_DWORD *)(this + 44);
+  v4 = *(_DWORD *)(this + 52) - *(_DWORD *)(this + 40);
+  *(_DWORD *)(this + 92) = v2;
+  *(_DWORD *)(this + 96) = v4;
+  *(_DWORD *)(this + 100) = v3;
+  *(double *)(this + 104) = Math::Sqrt((double)(*(_DWORD *)(this + 100) * *(_DWORD *)(this + 100)
+                                              + *(_DWORD *)(this + 96) * *(_DWORD *)(this + 96)
+                                              + *(_DWORD *)(this + 92) * *(_DWORD *)(this + 92)));
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+sub     esp, 8
+mov     eax, [esi+30h]
+mov     ecx, [esi+24h]
+mov     edx, [esi+38h]
+mov     edi, [esi+2Ch]
+mov     ebx, [esi+28h]
+sub     eax, ecx
+mov     ecx, [esi+34h]
+sub     edx, edi
+lea     edi, [esi+5Ch]
+sub     ecx, ebx
+mov     ebx, edi
+mov     [ebx], eax
+mov     [ebx+4], ecx
+mov     [ebx+8], edx
+mov     edi, [edi]
+mov     ecx, [esi+60h]
+mov     eax, [esi+64h]
+mov     edx, edi
+imul    edx, edi
+mov     edi, ecx
+imul    edi, ecx
+mov     ecx, eax
+add     edx, edi
+imul    ecx, eax
+add     edx, ecx
+mov     [esp+18h+var_4], edx
+fild    [esp+18h+var_4]
+fstp    [esp+18h+var_18] ; double
+call    Math__Sqrt
+fstp    qword ptr [esi+68h]
+add     esp, 8
+pop     edi
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x005AF550 (446 bytes)
 void Matrix2D_Sqrt_5AF550() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF550.json)
-    // Size: 446 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_5AF550 ( int this, float *a2, float *a3, float a4 ) { double v7 ; // st7 double v8 ; // st7 double v9 ; // st7 double v10 ; // st7 float v11 ; // [esp+0h] [ebp-28h] !float v12 ! ; // [esp+10h] [ebp-18h] float v13 ; // [esp+10h] [ebp-18h] !float v14 ! ; // [esp+14h] [ebp-14h] !float v15 ! ; // [esp+14h] [ebp-14h] float v16 ; // [esp+14h] [ebp-14h] float v17 ; // [esp+18h] [ebp-10h] !float v18 ! ; // [esp+18h] [ebp-10h] float v19 ; // [esp+1Ch] [ebp-Ch] !float v20 ! ; // [esp+1Ch] [ebp-Ch] !float v21 ! ; // [esp+20h] [ebp-8h] !float v22 ! ; // [esp+24h] [ebp-4h] !float v23 ! ; // [esp+2Ch] [ebp+4h] !float v24 ! ; // [esp+2Ch] [ebp+4h] !int v25 ! ; // [esp+30h] [ebp+8h] v12 = * a3 - * a2 ; * ( float * ) & v25 = a3 [ 1 ] - a2 [ 1 ] ; v7 = a3 [ 2 ] - a2 [ 2 ] ; v14 = v7 ; v19 = v7 * v14 ; v17 = v12 * v12 ; v23 = Math::Sqrt ( * ( float * ) & v25 * * ( float * ) & v25 + v17 + v19 ) ; v8 = Math::Sqrt ( v17 + v19 ) ; if ( v23 == 0.0 ) { v21 = 0.0 ; v18 = 1.0 ; } else { v21 = * ( float * ) & v25 / v23 ; v18 = v8 / v23 ; } if ( v8 == 0.0 ) { v20 = 0.0 ; v24 = 1.0 ; } else { v20 = v12 / v8 ; v24 = v14 / v8 ; } * ( _DWORD * ) this = 1065353216 ; * ( _DWORD * ) ( this + 4 ) = 0 ; * ( _DWORD * ) ( this + 8 ) = 0 ; * ( _DWORD * ) ( this + 12 ) = 0 ; * ( _DWORD * ) ( this + 16 ) = 0 ; * ( _DWORD * ) ( this + 20 ) = 1065353216 ; * ( _DWORD * ) ( this + 24 ) = 0 ; * ( _DWORD * ) ( this + 28 ) = 0 ; * ( _DWORD * ) ( this + 32 ) = 0 ; * ( _DWORD * ) ( this + 36 ) = 0 ; * ( _DWORD * ) ( this + 40 ) = 1065353216 ; * ( _DWORD * ) ( this + 44 ) = 0 ; v9 = * a2 ; * ( float * ) ( this + 12 ) = * a2 ; * ( float * ) ( this + 28 ) = 0.0 ; * ( float * ) ( this + 44 ) = 0.0 ; v10 = v9 + 0.0 ; v15 = a2 [ 1 ] ; * ( float * ) ( this + 12 ) = v10 ; v16 = v15 + * ( float * ) ( this + 28 ) ; * ( float * ) ( this + 28 ) = v16 ; v13 = ( float ) 0.0 + 0.0 ; * ( float * ) ( this + 44 ) = v13 ; v22 = a2 [ 2 ] ; * ( float * ) ( this + 12 ) = v10 + 0.0 ; * ( float * ) ( this + 28 ) = v16 + 0.0 ; * ( float * ) ( this + 44 ) = v13 + v22 ; sub_5AF120 ( ( float * ) this , v20 , v24 ) ; v11 = - v21 ; sub_5AF000 ( ( float * ) this , v11 , v18 ) ; Matrix2D::Rotate ( ( float * ) this , a4 ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_5AF550(int this, float *a2, float *a3, float a4)
+{
+  double v7; // st7
+  double v8; // st7
+  double v9; // st7
+  double v10; // st7
+  float v11; // [esp+0h] [ebp-28h]
+  float v12; // [esp+10h] [ebp-18h]
+  float v13; // [esp+10h] [ebp-18h]
+  float v14; // [esp+14h] [ebp-14h]
+  float v15; // [esp+14h] [ebp-14h]
+  float v16; // [esp+14h] [ebp-14h]
+  float v17; // [esp+18h] [ebp-10h]
+  float v18; // [esp+18h] [ebp-10h]
+  float v19; // [esp+1Ch] [ebp-Ch]
+  float v20; // [esp+1Ch] [ebp-Ch]
+  float v21; // [esp+20h] [ebp-8h]
+  float v22; // [esp+24h] [ebp-4h]
+  float v23; // [esp+2Ch] [ebp+4h]
+  float v24; // [esp+2Ch] [ebp+4h]
+  int v25; // [esp+30h] [ebp+8h]
+
+  v12 = *a3 - *a2;
+  *(float *)&v25 = a3[1] - a2[1];
+  v7 = a3[2] - a2[2];
+  v14 = v7;
+  v19 = v7 * v14;
+  v17 = v12 * v12;
+  v23 = Math::Sqrt(*(float *)&v25 * *(float *)&v25 + v17 + v19);
+  v8 = Math::Sqrt(v17 + v19);
+  if ( v23 == 0.0 )
+  {
+    v21 = 0.0;
+    v18 = 1.0;
+  }
+  else
+  {
+    v21 = *(float *)&v25 / v23;
+    v18 = v8 / v23;
+  }
+  if ( v8 == 0.0 )
+  {
+    v20 = 0.0;
+    v24 = 1.0;
+  }
+  else
+  {
+    v20 = v12 / v8;
+    v24 = v14 / v8;
+  }
+  *(_DWORD *)this = 1065353216;
+  *(_DWORD *)(this + 4) = 0;
+  *(_DWORD *)(this + 8) = 0;
+  *(_DWORD *)(this + 12) = 0;
+  *(_DWORD *)(this + 16) = 0;
+  *(_DWORD *)(this + 20) = 1065353216;
+  *(_DWORD *)(this + 24) = 0;
+  *(_DWORD *)(this + 28) = 0;
+  *(_DWORD *)(this + 32) = 0;
+  *(_DWORD *)(this + 36) = 0;
+  *(_DWORD *)(this + 40) = 1065353216;
+  *(_DWORD *)(this + 44) = 0;
+  v9 = *a2;
+  *(float *)(this + 12) = *a2;
+  *(float *)(this + 28) = 0.0;
+  *(float *)(this + 44) = 0.0;
+  v10 = v9 + 0.0;
+  v15 = a2[1];
+  *(float *)(this + 12) = v10;
+  v16 = v15 + *(float *)(this + 28);
+  *(float *)(this + 28) = v16;
+  v13 = (float)0.0 + 0.0;
+  *(float *)(this + 44) = v13;
+  v22 = a2[2];
+  *(float *)(this + 12) = v10 + 0.0;
+  *(float *)(this + 28) = v16 + 0.0;
+  *(float *)(this + 44) = v13 + v22;
+  sub_5AF120((float *)this, v20, v24);
+  v11 = -v21;
+  sub_5AF000((float *)this, v11, v18);
+  Matrix2D::Rotate((float *)this, a4);
+}
+
+/* ASM:
+sub     esp, 18h
+mov     eax, [esp+18h+arg_4]
+push    esi
+push    edi
+mov     edi, [esp+20h+arg_0]
+fld     dword ptr [eax]
+fsub    dword ptr [edi]
+sub     esp, 8
+mov     esi, ecx
+fstp    [esp+28h+var_18]
+fld     dword ptr [eax+4]
+fsub    dword ptr [edi+4]
+fstp    [esp+28h+arg_4]
+fld     dword ptr [eax+8]
+fsub    dword ptr [edi+8]
+fst     [esp+28h+var_14]
+fmul    [esp+28h+var_14]
+fstp    [esp+28h+var_C]
+fld     [esp+28h+var_18]
+fmul    [esp+28h+var_18]
+fstp    [esp+28h+var_10]
+fld     [esp+28h+arg_4]
+fmul    [esp+28h+arg_4]
+fadd    [esp+28h+var_10]
+fadd    [esp+28h+var_C]
+fstp    qword ptr [esp+28h+var_28] ; double
+call    Math__Sqrt
+fstp    [esp+28h+arg_0]
+fld     [esp+28h+var_10]
+fadd    [esp+28h+var_C]
+fstp    qword ptr [esp+28h+var_28] ; double
+call    Math__Sqrt
+fld     [esp+28h+arg_0]
+fcomp   ds:flt_7E1748
+add     esp, 8
+fnstsw  ax
+test    ah, 40h
+jnz     short loc_5AF5EA
+fld     [esp+20h+arg_4]
+fdiv    [esp+20h+arg_0]
+fstp    [esp+20h+var_8]
+fld     st
+fdiv    [esp+20h+arg_0]
+fstp    [esp+20h+var_10]
+jmp     short loc_5AF5FA
+; ---------------------------------------------------------------------------
+
+loc_5AF5EA:                             ; CODE XREF: sub_5AF550+80↑j
+mov     [esp+20h+var_8], 0
+mov     [esp+20h+var_10], 3F800000h
+
+loc_5AF5FA:                             ; CODE XREF: sub_5AF550+98↑j
+fcom    ds:flt_7E1748
+fnstsw  ax
+test    ah, 40h
+jnz     short loc_5AF61F
+fld     [esp+20h+var_18]
+fdiv    st, st(1)
+fstp    [esp+20h+var_C]
+fld     [esp+20h+var_14]
+fdiv    st, st(1)
+fstp    [esp+20h+arg_0]
+fstp    st
+jmp     short loc_5AF631
+; ---------------------------------------------------------------------------
+
+loc_5AF61F:                             ; CODE XREF: sub_5AF550+B5↑j
+fstp    st
+mov     [esp+20h+var_C], 0
+mov     [esp+20h+arg_0], 3F800000h
+
+loc_5AF631:                             ; CODE XREF: sub_5AF550+CD↑j
+mov     ecx, 3F800000h
+xor     eax, eax
+mov     [esi], ecx
+mov     [esi+4], eax
+mov     [esi+8], eax
+mov     [esi+0Ch], eax
+mov     [esi+10h], eax
+mov     [esi+14h], ecx
+mov     [esi+18h], eax
+mov     [esi+1Ch], eax
+mov     [esi+20h], eax
+mov     [esi+24h], eax
+mov     [esi+28h], ecx
+mov     [esi+2Ch], eax
+fld     dword ptr [edi]
+mov     [esp+20h+arg_4], 0
+mov     edx, [esp+20h+arg_0]
+fst     dword ptr [esi+0Ch]
+fld     ds:flt_7E1748
+push    edx             ; float
+fst     [esp+24h+var_18]
+fst     dword ptr [esi+1Ch]
+fstp    dword ptr [esi+2Ch]
+mov     eax, [edi+4]
+fadd    [esp+24h+arg_4]
+mov     [esp+24h+var_14], eax
+mov     eax, [esp+24h+var_C]
+push    eax             ; float
+fst     dword ptr [esi+0Ch]
+fld     [esp+28h+var_14]
+fadd    dword ptr [esi+1Ch]
+fst     [esp+28h+var_14]
+fstp    dword ptr [esi+1Ch]
+fld     [esp+28h+arg_4]
+fadd    [esp+28h+var_18]
+mov     [esp+28h+arg_4], 0
+fst     [esp+28h+var_18]
+fstp    dword ptr [esi+2Ch]
+fld     [esp+28h+arg_4]
+mov     ecx, [edi+8]
+fadd    st, st(1)
+mov     [esp+28h+var_4], ecx
+mov     ecx, esi
+fstp    dword ptr [esi+0Ch]
+fstp    st
+fld     [esp+28h+arg_4]
+fadd    [esp+28h+var_14]
+fstp    dword ptr [esi+1Ch]
+fld     [esp+28h+var_18]
+fadd    [esp+28h+var_4]
+fstp    dword ptr [esi+2Ch]
+call    sub_5AF120
+mov     ecx, [esp+20h+var_10]
+fld     [esp+20h+var_8]
+push    ecx             ; float
+push    ecx
+fchs
+fstp    [esp+28h+var_28] ; float
+mov     ecx, esi
+call    sub_5AF000
+mov     edx, [esp+20h+arg_8]
+mov     ecx, esi
+push    edx             ; float
+call    Matrix2D__Rotate
+pop     edi
+pop     esi
+add     esp, 18h
+retn    0Ch
+*/
 }
 
 // 0x004AF9B0 (227 bytes)
 void Matrix3x4_Copy_4AF9B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004AF9B0.json)
-    // Size: 227 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void *__thiscall sub_4AF9B0 ( int *this, void *a2 ) { int v3 ; // ebx int v4 ; // edx int v5 ; // eax int v6 ; // edx double v7 ; // st7 int v8 ; // ecx int v9 ; // eax const void *v10 ; // eax !int v11 ! ; // edx _DWORD v13[12] ; // [esp+1Ch] [ebp-60h] BYREF char v14[48] ; // [esp+4Ch] [ebp-30h] BYREF Matrix3x4::Identity ( v13 ) ; v3 = * ( this + 12 ) ; if ( v3 ) { v4 = * ( this + 9 ) ; v5 = * ( this + 11 ) ; if ( v4 != -1 ) { if ( ( int ) CurrentFrame - v4 >= v5 ) v5 = 0 ; else v5 -= ( int ) CurrentFrame - v4 ; } if ( ( double ) ( v3 - v5 ) / ( double ) * ( this + 12 ) < 1.0 ) { v6 = * ( this + 12 ) ; if ( v6 ) { v8 = * ( this + 9 ) ; v9 = * ( this + 11 ) ; if ( v8 != -1 ) { if ( ( int ) CurrentFrame - v8 >= v9 ) v9 = 0 ; else v9 -= ( int ) CurrentFrame - v8 ; } v7 = ( double ) ( v6 - v9 ) / ( double ) * ( this + 12 ) ; } else { v7 = 1.0 ; } v10 = InterpolateVoxelAnimPose ( v14 , * ( this + 8 ) , * ( this + 7 ) , v7 ) ; goto LABEL_17 ; } } v11 = * ( this + 7 ) ; if ( v11 ) { v10 = CopyAudioData ( v14 , v11 ) ; LABEL_17 : qmemcpy ( v13 , v10 , sizeof ( v13 ) ) ; } qmemcpy ( a2 , v13 , 0x30u ) ; return a2 ; }
-    
+// [IDA decompile]
+void *__thiscall sub_4AF9B0(int *this, void *a2)
+{
+  int v3; // ebx
+  int v4; // edx
+  int v5; // eax
+  int v6; // edx
+  double v7; // st7
+  int v8; // ecx
+  int v9; // eax
+  const void *v10; // eax
+  int v11; // edx
+  _DWORD v13[12]; // [esp+1Ch] [ebp-60h] BYREF
+  char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
+
+  Matrix3x4::Identity(v13);
+  v3 = *(this + 12);
+  if ( v3 )
+  {
+    v4 = *(this + 9);
+    v5 = *(this + 11);
+    if ( v4 != -1 )
+    {
+      if ( (int)MEMORY[0xA8ED84] - v4 >= v5 )
+        v5 = 0;
+      else
+        v5 -= (int)MEMORY[0xA8ED84] - v4;
+    }
+    if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 )
+    {
+      v6 = *(this + 12);
+      if ( v6 )
+      {
+        v8 = *(this + 9);
+        v9 = *(this + 11);
+        if ( v8 != -1 )
+        {
+          if ( (int)MEMORY[0xA8ED84] - v8 >= v9 )
+            v9 = 0;
+          else
+            v9 -= (int)MEMORY[0xA8ED84] - v8;
+        }
+        v7 = (double)(v6 - v9) / (double)*(this + 12);
+      }
+      else
+      {
+        v7 = 1.0;
+      }
+      v10 = InterpolateVoxelAnimPose(v14, *(this + 8), *(this + 7), v7);
+      goto LABEL_17;
+    }
+  }
+  v11 = *(this + 7);
+  if ( v11 )
+  {
+    v10 = CopyAudioData(v14, v11);
+LABEL_17:
+    qmemcpy(v13, v10, sizeof(v13));
+  }
+  qmemcpy(a2, v13, 0x30u);
+  return a2;
+}
+
+/* ASM:
+sub     esp, 68h
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+74h+var_60]
+call    Matrix3x4__Identity
+mov     ebx, [esi+30h]
+test    ebx, ebx
+mov     [esp+74h+var_64], ebx
+jz      loc_4AFA5C
+mov     edx, [esi+24h]
+mov     eax, [esi+2Ch]
+mov     edi, dword_A8ED54+30h
+cmp     edx, 0FFFFFFFFh
+jz      short loc_4AF9EF
+mov     ecx, edi
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_4AF9ED
+sub     eax, ecx
+jmp     short loc_4AF9EF
+; ---------------------------------------------------------------------------
+
+loc_4AF9ED:                             ; CODE XREF: sub_4AF9B0+37↑j
+xor     eax, eax
+
+loc_4AF9EF:                             ; CODE XREF: sub_4AF9B0+2F↑j
+; sub_4AF9B0+3B↑j
+sub     ebx, eax
+mov     [esp+74h+var_68], ebx
+fild    [esp+74h+var_68]
+fidiv   [esp+74h+var_64]
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_4AFA5C
+mov     edx, [esi+30h]
+test    edx, edx
+mov     [esp+74h+var_68], edx
+jnz     short loc_4AFA1D
+fld     ds:dbl_7E1718
+jmp     short loc_4AFA44
+; ---------------------------------------------------------------------------
+
+loc_4AFA1D:                             ; CODE XREF: sub_4AF9B0+63↑j
+mov     ecx, [esi+24h]
+mov     eax, [esi+2Ch]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_4AFA36
+sub     edi, ecx
+mov     ecx, edi
+cmp     ecx, eax
+jge     short loc_4AFA34
+sub     eax, ecx
+jmp     short loc_4AFA36
+; ---------------------------------------------------------------------------
+
+loc_4AFA34:                             ; CODE XREF: sub_4AF9B0+7E↑j
+xor     eax, eax
+
+loc_4AFA36:                             ; CODE XREF: sub_4AF9B0+76↑j
+; sub_4AF9B0+82↑j
+sub     edx, eax
+mov     [esp+74h+var_64], edx
+fild    [esp+74h+var_64]
+fidiv   [esp+74h+var_68]
+
+loc_4AFA44:                             ; CODE XREF: sub_4AF9B0+6B↑j
+mov     eax, [esi+1Ch]
+mov     edx, [esi+20h]
+sub     esp, 8
+lea     ecx, [esp+7Ch+var_30]
+fstp    [esp+7Ch+var_7C] ; double
+push    eax             ; int
+call    InterpolateVoxelAnimPose
+jmp     short loc_4AFA6C
+; ---------------------------------------------------------------------------
+
+loc_4AFA5C:                             ; CODE XREF: sub_4AF9B0+1A↑j
+; sub_4AF9B0+58↑j
+mov     edx, [esi+1Ch]
+test    edx, edx
+jz      short loc_4AFA79
+lea     ecx, [esp+74h+var_30]
+call    CopyAudioData
+
+loc_4AFA6C:                             ; CODE XREF: sub_4AF9B0+AA↑j
+mov     ecx, 0Ch
+mov     esi, eax
+lea     edi, [esp+74h+var_60]
+rep movsd
+
+loc_4AFA79:                             ; CODE XREF: sub_4AF9B0+B1↑j
+mov     eax, [esp+74h+arg_0]
+mov     ecx, 0Ch
+lea     esi, [esp+74h+var_60]
+mov     edi, eax
+rep movsd
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 68h
+retn    4
+*/
 }
 
 // 0x0069F0C0 (227 bytes)
 void Matrix3x4_Copy_69F0C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0069F0C0.json)
-    // Size: 227 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void *__thiscall sub_69F0C0 ( int *this, void *a2 ) { int v3 ; // ebx int v4 ; // edx int v5 ; // eax int v6 ; // edx double v7 ; // st7 int v8 ; // ecx int v9 ; // eax const void *v10 ; // eax !int v11 ! ; // edx _DWORD v13[12] ; // [esp+1Ch] [ebp-60h] BYREF char v14[48] ; // [esp+4Ch] [ebp-30h] BYREF Matrix3x4::Identity ( v13 ) ; v3 = * ( this + 12 ) ; if ( v3 ) { v4 = * ( this + 9 ) ; v5 = * ( this + 11 ) ; if ( v4 != -1 ) { if ( ( int ) CurrentFrame - v4 >= v5 ) v5 = 0 ; else v5 -= ( int ) CurrentFrame - v4 ; } if ( ( double ) ( v3 - v5 ) / ( double ) * ( this + 12 ) < 1.0 ) { v6 = * ( this + 12 ) ; if ( v6 ) { v8 = * ( this + 9 ) ; v9 = * ( this + 11 ) ; if ( v8 != -1 ) { if ( ( int ) CurrentFrame - v8 >= v9 ) v9 = 0 ; else v9 -= ( int ) CurrentFrame - v8 ; } v7 = ( double ) ( v6 - v9 ) / ( double ) * ( this + 12 ) ; } else { v7 = 1.0 ; } v10 = InterpolateVoxelAnimPose ( v14 , * ( this + 8 ) , * ( this + 7 ) , v7 ) ; goto LABEL_17 ; } } v11 = * ( this + 7 ) ; if ( v11 ) { v10 = CopyAudioData ( v14 , v11 ) ; LABEL_17 : qmemcpy ( v13 , v10 , sizeof ( v13 ) ) ; } qmemcpy ( a2 , v13 , 0x30u ) ; return a2 ; }
-    
+// [IDA decompile]
+void *__thiscall sub_69F0C0(int *this, void *a2)
+{
+  int v3; // ebx
+  int v4; // edx
+  int v5; // eax
+  int v6; // edx
+  double v7; // st7
+  int v8; // ecx
+  int v9; // eax
+  const void *v10; // eax
+  int v11; // edx
+  _DWORD v13[12]; // [esp+1Ch] [ebp-60h] BYREF
+  char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
+
+  Matrix3x4::Identity(v13);
+  v3 = *(this + 12);
+  if ( v3 )
+  {
+    v4 = *(this + 9);
+    v5 = *(this + 11);
+    if ( v4 != -1 )
+    {
+      if ( (int)MEMORY[0xA8ED84] - v4 >= v5 )
+        v5 = 0;
+      else
+        v5 -= (int)MEMORY[0xA8ED84] - v4;
+    }
+    if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 )
+    {
+      v6 = *(this + 12);
+      if ( v6 )
+      {
+        v8 = *(this + 9);
+        v9 = *(this + 11);
+        if ( v8 != -1 )
+        {
+          if ( (int)MEMORY[0xA8ED84] - v8 >= v9 )
+            v9 = 0;
+          else
+            v9 -= (int)MEMORY[0xA8ED84] - v8;
+        }
+        v7 = (double)(v6 - v9) / (double)*(this + 12);
+      }
+      else
+      {
+        v7 = 1.0;
+      }
+      v10 = InterpolateVoxelAnimPose(v14, *(this + 8), *(this + 7), v7);
+      goto LABEL_17;
+    }
+  }
+  v11 = *(this + 7);
+  if ( v11 )
+  {
+    v10 = CopyAudioData(v14, v11);
+LABEL_17:
+    qmemcpy(v13, v10, sizeof(v13));
+  }
+  qmemcpy(a2, v13, 0x30u);
+  return a2;
+}
+
+/* ASM:
+sub     esp, 68h
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+74h+var_60]
+call    Matrix3x4__Identity
+mov     ebx, [esi+30h]
+test    ebx, ebx
+mov     [esp+74h+var_64], ebx
+jz      loc_69F16C
+mov     edx, [esi+24h]
+mov     eax, [esi+2Ch]
+mov     edi, dword_A8ED54+30h
+cmp     edx, 0FFFFFFFFh
+jz      short loc_69F0FF
+mov     ecx, edi
+sub     ecx, edx
+cmp     ecx, eax
+jge     short loc_69F0FD
+sub     eax, ecx
+jmp     short loc_69F0FF
+; ---------------------------------------------------------------------------
+
+loc_69F0FD:                             ; CODE XREF: sub_69F0C0+37↑j
+xor     eax, eax
+
+loc_69F0FF:                             ; CODE XREF: sub_69F0C0+2F↑j
+; sub_69F0C0+3B↑j
+sub     ebx, eax
+mov     [esp+74h+var_68], ebx
+fild    [esp+74h+var_68]
+fidiv   [esp+74h+var_64]
+fcomp   ds:dbl_7E1718
+fnstsw  ax
+test    ah, 1
+jz      short loc_69F16C
+mov     edx, [esi+30h]
+test    edx, edx
+mov     [esp+74h+var_68], edx
+jnz     short loc_69F12D
+fld     ds:dbl_7E1718
+jmp     short loc_69F154
+; ---------------------------------------------------------------------------
+
+loc_69F12D:                             ; CODE XREF: sub_69F0C0+63↑j
+mov     ecx, [esi+24h]
+mov     eax, [esi+2Ch]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_69F146
+sub     edi, ecx
+mov     ecx, edi
+cmp     ecx, eax
+jge     short loc_69F144
+sub     eax, ecx
+jmp     short loc_69F146
+; ---------------------------------------------------------------------------
+
+loc_69F144:                             ; CODE XREF: sub_69F0C0+7E↑j
+xor     eax, eax
+
+loc_69F146:                             ; CODE XREF: sub_69F0C0+76↑j
+; sub_69F0C0+82↑j
+sub     edx, eax
+mov     [esp+74h+var_64], edx
+fild    [esp+74h+var_64]
+fidiv   [esp+74h+var_68]
+
+loc_69F154:                             ; CODE XREF: sub_69F0C0+6B↑j
+mov     eax, [esi+1Ch]
+mov     edx, [esi+20h]
+sub     esp, 8
+lea     ecx, [esp+7Ch+var_30]
+fstp    [esp+7Ch+var_7C] ; double
+push    eax             ; int
+call    InterpolateVoxelAnimPose
+jmp     short loc_69F17C
+; ---------------------------------------------------------------------------
+
+loc_69F16C:                             ; CODE XREF: sub_69F0C0+1A↑j
+; sub_69F0C0+58↑j
+mov     edx, [esi+1Ch]
+test    edx, edx
+jz      short loc_69F189
+lea     ecx, [esp+74h+var_30]
+call    CopyAudioData
+
+loc_69F17C:                             ; CODE XREF: sub_69F0C0+AA↑j
+mov     ecx, 0Ch
+mov     esi, eax
+lea     edi, [esp+74h+var_60]
+rep movsd
+
+loc_69F189:                             ; CODE XREF: sub_69F0C0+B1↑j
+mov     eax, [esp+74h+arg_0]
+mov     ecx, 0Ch
+lea     esi, [esp+74h+var_60]
+mov     edi, eax
+rep movsd
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 68h
+retn    4
+*/
 }
 
 // 0x007BBFF0 (79 bytes)
 char MethodCalc_7BBFF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007BBFF0.json)
-    // Size: 79 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_7BBFF0 ( int a1, int a2, int *a3, int a4, _BYTE *a5, int *a6, int *a7 ) { !int v9 ! ; // eax !int *v11 ! ; // [esp-10h] [ebp-3Ch] _BYTE v12[20] ; // [esp+Ch] [ebp-20h] BYREF int v13[3] ; // [esp+20h] [ebp-Ch] BYREF v11 = ( int * ) ( * ( int (__thiscall **)(int *, _BYTE *, int) ) ( * a3 + 120 ) ) ( a3 , v12 , a4 ) ; v9 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 120 ) ) ( a1 ) ; return CalcSurfaceBlitRects ( a1 , v9 , v13 , a2 , a3 , v11 , a5 , a6 , a7 ) ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_7BBFF0(int a1, int a2, int *a3, int a4, _BYTE *a5, int *a6, int *a7)
+{
+  int v9; // eax
+  int *v11; // [esp-10h] [ebp-3Ch]
+  _BYTE v12[20]; // [esp+Ch] [ebp-20h] BYREF
+  int v13[3]; // [esp+20h] [ebp-Ch] BYREF
+
+  v11 = (int *)(*(int (__thiscall **)(int *, _BYTE *, int))(*a3 + 120))(a3, v12, a4);
+  v9 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 120))(a1);
+  return CalcSurfaceBlitRects(a1, v9, v13, a2, a3, v11, a5, a6, a7);
+}
+
+/* ASM:
+mov     eax, [esp+arg_10]
+sub     esp, 20h
+push    ebx
+push    esi
+mov     esi, ecx
+mov     ebx, edx
+mov     ecx, [esp+28h+arg_C]
+mov     edx, [esp+28h+arg_8]
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+push    eax
+mov     eax, [esp+30h+arg_4]
+push    ecx
+push    edx
+mov     edx, [edi]
+push    eax
+lea     eax, [esp+3Ch+var_20]
+mov     ecx, edi
+push    eax
+call    dword ptr [edx+78h]
+mov     edx, [esi]
+mov     ecx, esi
+push    eax
+push    edi
+lea     eax, [esp+40h+var_C]
+push    ebx
+push    eax
+call    dword ptr [edx+78h]
+mov     edx, eax
+mov     ecx, esi
+call    CalcSurfaceBlitRects
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 20h
+retn    14h
+*/
 }
 
 // 0x005DAB80 (122 bytes)
 const char* MethodCompute_5DAB80() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005DAB80.json)
-    // Size: 122 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5DAB80 ( const char *this ) { !unsigned int i ! ; // esi int v3 ; // [esp+8h] [ebp-54h] BYREF !char String[80] ! ; // [esp+Ch] [ebp-50h] BYREF v3 = 0 ; strcpy ( String , this ) ; _strupr ( String ) ; for ( i = 0 ; i < strlen ( String ) ; ++ i ) ComputeHash ( & v3 , String [ i ] ) ; return v3 ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_5DAB80(const char *this)
+{
+  unsigned int i; // esi
+  int v3; // [esp+8h] [ebp-54h] BYREF
+  char String[80]; // [esp+Ch] [ebp-50h] BYREF
+
+  v3 = 0;
+  strcpy(String, this);
+  _strupr(String);
+  for ( i = 0; i < strlen(String); ++i )
+    ComputeHash(&v3, String[i]);
+  return v3;
+}
+
+/* ASM:
+String          = byte ptr -50h
+
+sub     esp, 54h
+push    esi
+push    edi
+mov     edi, ecx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+lea     edx, [esp+5Ch+String]
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     [esp+5Ch+var_54], 0
+mov     eax, ecx
+mov     esi, edi
+mov     edi, edx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+lea     ecx, [esp+5Ch+String]
+push    ecx             ; String
+call    __strupr
+lea     edi, [esp+60h+String]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+add     esp, 4
+xor     esi, esi
+repne scasb
+not     ecx
+dec     ecx
+jz      short loc_5DABF0
+
+loc_5DABCF:                             ; CODE XREF: sub_5DAB80+6E↓j
+movsx   edx, [esp+esi+5Ch+String]
+lea     ecx, [esp+5Ch+var_54]
+call    ComputeHash
+lea     edi, [esp+5Ch+String]
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+inc     esi
+repne scasb
+not     ecx
+dec     ecx
+cmp     esi, ecx
+jb      short loc_5DABCF
+
+loc_5DABF0:                             ; CODE XREF: sub_5DAB80+4D↑j
+mov     eax, [esp+5Ch+var_54]
+pop     edi
+pop     esi
+add     esp, 54h
+retn
+*/
 }
 
 // 0x005AF2C0 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF2C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF2C0.json)
-    // Size: 71 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   double __thiscall sub_5AF2C0 ( float *this ) { float v2[3] ; // [esp+0h] [ebp-24h] BYREF float v3[3] ; // [esp+18h] [ebp-Ch] BYREF memset ( v2 , 0 , sizeof ( v2 ) ) ; return * TransformMatrix3x4Point ( v3 , this , v2 ) ; }
-    return 0.0f;
+// [IDA decompile]
+double __thiscall sub_5AF2C0(float *this)
+{
+  float v2[3]; // [esp+0h] [ebp-24h] BYREF
+  float v3[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  memset(v2, 0, sizeof(v2));
+  return *TransformMatrix3x4Point(v3, this, v2);
+}
+
+/* ASM:
+sub     esp, 24h
+lea     eax, [esp+24h+var_24]
+mov     edx, ecx
+push    eax
+lea     ecx, [esp+28h+var_C]
+mov     [esp+28h+var_24], 0
+mov     [esp+28h+var_20], 0
+mov     [esp+28h+var_1C], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+mov     [esp+24h+var_18], ecx
+mov     edx, [eax+4]
+fld     [esp+24h+var_18]
+mov     eax, [eax+8]
+mov     [esp+24h+var_14], edx
+mov     [esp+24h+var_10], eax
+add     esp, 24h
+retn
+*/
 }
 
 // 0x005AF310 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF310() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF310.json)
-    // Size: 71 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   double __thiscall sub_5AF310 ( float *this ) { !float *v1 ! ; // eax float v3[4] ; // [esp+0h] [ebp-24h] BYREF float v4[3] ; // [esp+18h] [ebp-Ch] BYREF memset ( v3 , 0 , 12 ) ; v1 = TransformMatrix3x4Point ( v4 , this , v3 ) ; v3 [ 3 ] = * v1 ; return v1 [ 1 ] ; }
-    return 0.0f;
+// [IDA decompile]
+double __thiscall sub_5AF310(float *this)
+{
+  float *v1; // eax
+  float v3[4]; // [esp+0h] [ebp-24h] BYREF
+  float v4[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  memset(v3, 0, 12);
+  v1 = TransformMatrix3x4Point(v4, this, v3);
+  v3[3] = *v1;
+  return v1[1];
+}
+
+/* ASM:
+sub     esp, 24h
+lea     eax, [esp+24h+var_24]
+mov     edx, ecx
+push    eax
+lea     ecx, [esp+28h+var_C]
+mov     [esp+28h+var_24], 0
+mov     [esp+28h+var_20], 0
+mov     [esp+28h+var_1C], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+mov     [esp+24h+var_18], ecx
+mov     edx, [eax+4]
+mov     [esp+24h+var_14], edx
+mov     eax, [eax+8]
+fld     [esp+24h+var_14]
+mov     [esp+24h+var_10], eax
+add     esp, 24h
+retn
+*/
 }
 
 // 0x005AF360 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF360() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AF360.json)
-    // Size: 71 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   double __thiscall sub_5AF360 ( float *this ) { !float *v1 ! ; // eax float v3[5] ; // [esp+0h] [ebp-24h] BYREF float v4[3] ; // [esp+18h] [ebp-Ch] BYREF memset ( v3 , 0 , 12 ) ; v1 = TransformMatrix3x4Point ( v4 , this , v3 ) ; v3 [ 3 ] = * v1 ; v3 [ 4 ] = v1 [ 1 ] ; return v1 [ 2 ] ; }
-    return 0.0f;
+// [IDA decompile]
+double __thiscall sub_5AF360(float *this)
+{
+  float *v1; // eax
+  float v3[5]; // [esp+0h] [ebp-24h] BYREF
+  float v4[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  memset(v3, 0, 12);
+  v1 = TransformMatrix3x4Point(v4, this, v3);
+  v3[3] = *v1;
+  v3[4] = v1[1];
+  return v1[2];
+}
+
+/* ASM:
+sub     esp, 24h
+lea     eax, [esp+24h+var_24]
+mov     edx, ecx
+push    eax
+lea     ecx, [esp+28h+var_C]
+mov     [esp+28h+var_24], 0
+mov     [esp+28h+var_20], 0
+mov     [esp+28h+var_1C], 0
+call    TransformMatrix3x4Point
+mov     ecx, [eax]
+mov     [esp+24h+var_18], ecx
+mov     edx, [eax+4]
+mov     [esp+24h+var_14], edx
+mov     eax, [eax+8]
+mov     [esp+24h+var_10], eax
+fld     [esp+24h+var_10]
+add     esp, 24h
+retn
+*/
 }
 
 // 0x00661A60 (259 bytes)
 const char* SHA1_Comput_661A60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00661A60.json)
-    // Size: 259 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_661A60 ( char *this, int a2 ) { !char *v3 ! ; // eax !int v4 ! ; // eax !unsigned int v5 ! ; // esi char *v6 ; // ebp !size_t v7 ! ; // eax !bool v8 ! ; // zf !int result ! ; // eax !int v10 ! ; // [esp+10h] [ebp-8Ch] char Src[20] ; // [esp+14h] [ebp-88h] BYREF _DWORD v12[29] ; // [esp+28h] [ebp-74h] BYREF v10 = 32 ; do { if ( ( a2 & 1 ) != 0 ) { v3 = this + ( unsigned __int8 ) ( * ( ( _DWORD * ) this + 3 ) / 8 ) + 20 ; * v3 ^= 1 << ( * ( ( _DWORD * ) this + 3 ) & 7 ) ; } v4 = * ( ( _DWORD * ) this + 3 ) + 1 ; * ( ( _DWORD * ) this + 3 ) = v4 ; if ( v4 == 2048 ) { v5 = 0 ; LOBYTE ( v12 [ 0 ] ) = 0 ; v12 [ 11 ] = 0 ; v12 [ 12 ] = 0 ; v12 [ 6 ] = 1732584193 ; v12 [ 7 ] = -271733879 ; v12 [ 8 ] = -1732584194 ; v12 [ 9 ] = 271733878 ; v12 [ 10 ] = -1009589776 ; v6 = this + 20 ; do { SHA1::Process ( v12 , ( int ) ( this + 20 ) , 256 ) ; SHA1::Compute ( v12 , Src ) ; v7 = 256 - v5 ; if ( 256 - v5 > 0x14 ) v7 = 20 ; memcpy ( v6 , Src , v7 ) ; ++ v5 ; ++ v6 ; } while ( v5 < 0x100 ) ; } result = v10 - 1 ; v8 = v10 == 1 ; a2 >>= 1 ; -- v10 ; } while ( ! v8 ) ; return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_661A60(char *this, int a2)
+{
+  char *v3; // eax
+  int v4; // eax
+  unsigned int v5; // esi
+  char *v6; // ebp
+  int v7; // eax
+  bool v8; // zf
+  int result; // eax
+  int v10; // [esp+10h] [ebp-8Ch]
+  char Src[20]; // [esp+14h] [ebp-88h] BYREF
+  _DWORD v12[29]; // [esp+28h] [ebp-74h] BYREF
+
+  v10 = 32;
+  do
+  {
+    if ( (a2 & 1) != 0 )
+    {
+      v3 = this + (unsigned __int8)(*((_DWORD *)this + 3) / 8) + 20;
+      *v3 ^= 1 << (*((_DWORD *)this + 3) & 7);
+    }
+    v4 = *((_DWORD *)this + 3) + 1;
+    *((_DWORD *)this + 3) = v4;
+    if ( v4 == 2048 )
+    {
+      v5 = 0;
+      LOBYTE(v12[0]) = 0;
+      v12[11] = 0;
+      v12[12] = 0;
+      v12[6] = 1732584193;
+      v12[7] = -271733879;
+      v12[8] = -1732584194;
+      v12[9] = 271733878;
+      v12[10] = -1009589776;
+      v6 = this + 20;
+      do
+      {
+        SHA1::Process(v12, (int)(this + 20), 256);
+        SHA1::Compute(v12, Src);
+        v7 = 256 - v5;
+        if ( 256 - v5 > 0x14 )
+          v7 = 20;
+        memcpy(v6, Src, v7);
+        ++v5;
+        ++v6;
+      }
+      while ( v5 < 0x100 );
+    }
+    result = v10 - 1;
+    v8 = v10 == 1;
+    a2 >>= 1;
+    --v10;
+  }
+  while ( !v8 );
+  return result;
+}
+
+/* ASM:
+Src             = byte ptr -88h
+var_74          = byte ptr -74h
+var_5C          = dword ptr -5Ch
+var_58          = dword ptr -58h
+var_54          = dword ptr -54h
+var_50          = dword ptr -50h
+var_4C          = dword ptr -4Ch
+var_48          = dword ptr -48h
+var_44          = dword ptr -44h
+arg_0           = dword ptr  4
+
+sub     esp, 8Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+mov     [esp+9Ch+var_8C], 20h ; ' '
+
+loc_661A74:                             ; CODE XREF: sub_661A60+F0↓j
+mov     ecx, [ebx+0Ch]
+mov     eax, ecx
+cdq
+and     edx, 7
+add     eax, edx
+mov     dl, byte ptr [esp+9Ch+arg_0]
+sar     eax, 3
+and     eax, 0FFh
+test    dl, 1
+lea     eax, [eax+ebx+14h]
+jz      short loc_661AA0
+and     ecx, 7
+mov     dl, 1
+shl     dl, cl
+xor     [eax], dl
+
+loc_661AA0:                             ; CODE XREF: sub_661A60+35↑j
+mov     ecx, [ebx+0Ch]
+inc     ecx
+mov     eax, ecx
+mov     [ebx+0Ch], ecx
+cmp     eax, 800h
+jnz     loc_661B37
+xor     esi, esi
+lea     edi, [ebx+14h]
+mov     [esp+9Ch+var_74], 0
+mov     [esp+9Ch+var_48], esi
+mov     [esp+9Ch+var_44], esi
+mov     [esp+9Ch+var_5C], 67452301h
+mov     [esp+9Ch+var_58], 0EFCDAB89h
+mov     [esp+9Ch+var_54], 98BADCFEh
+mov     [esp+9Ch+var_50], 10325476h
+mov     [esp+9Ch+var_4C], 0C3D2E1F0h
+mov     ebp, edi
+
+loc_661AF0:                             ; CODE XREF: sub_661A60+D5↓j
+push    100h
+push    edi
+lea     ecx, [esp+0A4h+var_74]
+call    SHA1__Process
+lea     eax, [esp+9Ch+Src]
+lea     ecx, [esp+9Ch+var_74]
+push    eax
+call    SHA1__Compute
+mov     eax, 100h
+sub     eax, esi
+cmp     eax, 14h
+jbe     short loc_661B1E
+mov     eax, 14h
+
+loc_661B1E:                             ; CODE XREF: sub_661A60+B7↑j
+lea     ecx, [esp+9Ch+Src]
+push    eax             ; Size
+push    ecx             ; Src
+push    ebp             ; void *
+call    _memcpy
+add     esp, 0Ch
+inc     esi
+inc     ebp
+cmp     esi, 100h
+jb      short loc_661AF0
+
+loc_661B37:                             ; CODE XREF: sub_661A60+4E↑j
+mov     ecx, [esp+9Ch+arg_0]
+mov     eax, [esp+9Ch+var_8C]
+sar     ecx, 1
+dec     eax
+mov     [esp+9Ch+arg_0], ecx
+mov     [esp+9Ch+var_8C], eax
+jnz     loc_661A74
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8Ch
+retn    4
+*/
 }
 
 // 0x00661B70 (151 bytes)
 void SHA1_Comput_661B70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00661B70.json)
-    // Size: 151 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void *__thiscall sub_661B70 ( char *this ) { !int v1 ! ; // ebx !unsigned int v2 ! ; // esi char *v3 ; // edi !size_t v4 ! ; // eax void *result ; // eax char Src[20] ; // [esp+Ch] [ebp-88h] BYREF _DWORD v7[29] ; // [esp+20h] [ebp-74h] BYREF v1 = ( int ) ( this + 20 ) ; LOBYTE ( v7 [ 0 ] ) = 0 ; v7 [ 11 ] = 0 ; v7 [ 12 ] = 0 ; v7 [ 6 ] = 1732584193 ; v7 [ 7 ] = -271733879 ; v7 [ 8 ] = -1732584194 ; v7 [ 9 ] = 271733878 ; v7 [ 10 ] = -1009589776 ; v2 = 0 ; v3 = this + 20 ; do { SHA1::Process ( v7 , v1 , 256 ) ; SHA1::Compute ( v7 , Src ) ; v4 = 256 - v2 ; if ( 256 - v2 > 0x14 ) v4 = 20 ; result = memcpy ( v3 , Src , v4 ) ; ++ v2 ; ++ v3 ; } while ( v2 < 0x100 ) ; return result ; }
-    
+// [IDA decompile]
+void *__thiscall sub_661B70(char *this)
+{
+  char *v1; // ebx
+  unsigned int v2; // esi
+  char *v3; // edi
+  int v4; // eax
+  void *result; // eax
+  char Src[20]; // [esp+Ch] [ebp-88h] BYREF
+  _DWORD v7[29]; // [esp+20h] [ebp-74h] BYREF
+
+  v1 = this + 20;
+  LOBYTE(v7[0]) = 0;
+  v7[11] = 0;
+  v7[12] = 0;
+  v7[6] = 1732584193;
+  v7[7] = -271733879;
+  v7[8] = -1732584194;
+  v7[9] = 271733878;
+  v7[10] = -1009589776;
+  v2 = 0;
+  v3 = this + 20;
+  do
+  {
+    SHA1::Process(v7, (int)v1, 256);
+    SHA1::Compute(v7, Src);
+    v4 = 256 - v2;
+    if ( 256 - v2 > 0x14 )
+      v4 = 20;
+    result = (void *)memcpy(v3, Src, v4);
+    ++v2;
+    ++v3;
+  }
+  while ( v2 < 0x100 );
+  return result;
+}
+
+/* ASM:
+Src             = byte ptr -88h
+var_74          = byte ptr -74h
+var_5C          = dword ptr -5Ch
+var_58          = dword ptr -58h
+var_54          = dword ptr -54h
+var_50          = dword ptr -50h
+var_4C          = dword ptr -4Ch
+var_48          = dword ptr -48h
+var_44          = dword ptr -44h
+
+sub     esp, 88h
+push    ebx
+push    esi
+xor     eax, eax
+lea     ebx, [ecx+14h]
+push    edi
+mov     [esp+94h+var_74], al
+mov     [esp+94h+var_48], eax
+mov     [esp+94h+var_44], eax
+mov     [esp+94h+var_5C], 67452301h
+mov     [esp+94h+var_58], 0EFCDAB89h
+mov     [esp+94h+var_54], 98BADCFEh
+mov     [esp+94h+var_50], 10325476h
+mov     [esp+94h+var_4C], 0C3D2E1F0h
+xor     esi, esi
+mov     edi, ebx
+
+loc_661BB6:                             ; CODE XREF: sub_661B70+8B↓j
+push    100h
+push    ebx
+lea     ecx, [esp+9Ch+var_74]
+call    SHA1__Process
+lea     eax, [esp+94h+Src]
+lea     ecx, [esp+94h+var_74]
+push    eax
+call    SHA1__Compute
+mov     eax, 100h
+sub     eax, esi
+cmp     eax, 14h
+jbe     short loc_661BE4
+mov     eax, 14h
+
+loc_661BE4:                             ; CODE XREF: sub_661B70+6D↑j
+lea     ecx, [esp+94h+Src]
+push    eax             ; Size
+push    ecx             ; Src
+push    edi             ; void *
+call    _memcpy
+add     esp, 0Ch
+inc     esi
+inc     edi
+cmp     esi, 100h
+jb      short loc_661BB6
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 88h
+retn
+*/
 }
 
 // 0x00661960 (251 bytes)
 const char* SHA1_Compute_661960() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00661960.json)
-    // Size: 251 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_661960 ( char *this, __int16 a2 ) { !char *v3 ! ; // eax !int v4 ! ; // eax !unsigned int v5 ! ; // esi char *v6 ; // ebp !size_t v7 ! ; // eax !int result ! ; // eax !int v9 ! ; // [esp+10h] [ebp-8Ch] char Src[20] ; // [esp+14h] [ebp-88h] BYREF _DWORD v11[29] ; // [esp+28h] [ebp-74h] BYREF v9 = 16 ; do { if ( ( a2 & 1 ) != 0 ) { v3 = this + ( unsigned __int8 ) ( * ( ( _DWORD * ) this + 3 ) / 8 ) + 20 ; * v3 ^= 1 << ( * ( ( _DWORD * ) this + 3 ) & 7 ) ; } v4 = * ( ( _DWORD * ) this + 3 ) + 1 ; * ( ( _DWORD * ) this + 3 ) = v4 ; if ( v4 == 2048 ) { v5 = 0 ; LOBYTE ( v11 [ 0 ] ) = 0 ; v11 [ 11 ] = 0 ; v11 [ 12 ] = 0 ; v11 [ 6 ] = 1732584193 ; v11 [ 7 ] = -271733879 ; v11 [ 8 ] = -1732584194 ; v11 [ 9 ] = 271733878 ; v11 [ 10 ] = -1009589776 ; v6 = this + 20 ; do { SHA1::Process ( v11 , ( int ) ( this + 20 ) , 256 ) ; SHA1::Compute ( v11 , Src ) ; v7 = 256 - v5 ; if ( 256 - v5 > 0x14 ) v7 = 20 ; memcpy ( v6 , Src , v7 ) ; ++ v5 ; ++ v6 ; } while ( v5 < 0x100 ) ; } a2 >>= 1 ; result = -- v9 ; } while ( v9 ) ; return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_661960(char *this, __int16 a2)
+{
+  char *v3; // eax
+  int v4; // eax
+  unsigned int v5; // esi
+  char *v6; // ebp
+  int v7; // eax
+  int result; // eax
+  int v9; // [esp+10h] [ebp-8Ch]
+  char Src[20]; // [esp+14h] [ebp-88h] BYREF
+  _DWORD v11[29]; // [esp+28h] [ebp-74h] BYREF
+
+  v9 = 16;
+  do
+  {
+    if ( (a2 & 1) != 0 )
+    {
+      v3 = this + (unsigned __int8)(*((_DWORD *)this + 3) / 8) + 20;
+      *v3 ^= 1 << (*((_DWORD *)this + 3) & 7);
+    }
+    v4 = *((_DWORD *)this + 3) + 1;
+    *((_DWORD *)this + 3) = v4;
+    if ( v4 == 2048 )
+    {
+      v5 = 0;
+      LOBYTE(v11[0]) = 0;
+      v11[11] = 0;
+      v11[12] = 0;
+      v11[6] = 1732584193;
+      v11[7] = -271733879;
+      v11[8] = -1732584194;
+      v11[9] = 271733878;
+      v11[10] = -1009589776;
+      v6 = this + 20;
+      do
+      {
+        SHA1::Process(v11, (int)(this + 20), 256);
+        SHA1::Compute(v11, Src);
+        v7 = 256 - v5;
+        if ( 256 - v5 > 0x14 )
+          v7 = 20;
+        memcpy(v6, Src, v7);
+        ++v5;
+        ++v6;
+      }
+      while ( v5 < 0x100 );
+    }
+    a2 >>= 1;
+    result = --v9;
+  }
+  while ( v9 );
+  return result;
+}
+
+/* ASM:
+Src             = byte ptr -88h
+var_74          = byte ptr -74h
+var_5C          = dword ptr -5Ch
+var_58          = dword ptr -58h
+var_54          = dword ptr -54h
+var_50          = dword ptr -50h
+var_4C          = dword ptr -4Ch
+var_48          = dword ptr -48h
+var_44          = dword ptr -44h
+arg_0           = word ptr  4
+
+sub     esp, 8Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+mov     [esp+9Ch+var_8C], 10h
+
+loc_661974:                             ; CODE XREF: sub_661960+E8↓j
+mov     ecx, [ebx+0Ch]
+mov     eax, ecx
+cdq
+and     edx, 7
+add     eax, edx
+mov     dl, byte ptr [esp+9Ch+arg_0]
+sar     eax, 3
+and     eax, 0FFh
+test    dl, 1
+lea     eax, [eax+ebx+14h]
+jz      short loc_6619A0
+and     ecx, 7
+mov     dl, 1
+shl     dl, cl
+xor     [eax], dl
+
+loc_6619A0:                             ; CODE XREF: sub_661960+35↑j
+mov     ecx, [ebx+0Ch]
+inc     ecx
+mov     eax, ecx
+mov     [ebx+0Ch], ecx
+cmp     eax, 800h
+jnz     loc_661A37
+xor     esi, esi
+lea     edi, [ebx+14h]
+mov     [esp+9Ch+var_74], 0
+mov     [esp+9Ch+var_48], esi
+mov     [esp+9Ch+var_44], esi
+mov     [esp+9Ch+var_5C], 67452301h
+mov     [esp+9Ch+var_58], 0EFCDAB89h
+mov     [esp+9Ch+var_54], 98BADCFEh
+mov     [esp+9Ch+var_50], 10325476h
+mov     [esp+9Ch+var_4C], 0C3D2E1F0h
+mov     ebp, edi
+
+loc_6619F0:                             ; CODE XREF: sub_661960+D5↓j
+push    100h
+push    edi
+lea     ecx, [esp+0A4h+var_74]
+call    SHA1__Process
+lea     eax, [esp+9Ch+Src]
+lea     ecx, [esp+9Ch+var_74]
+push    eax
+call    SHA1__Compute
+mov     eax, 100h
+sub     eax, esi
+cmp     eax, 14h
+jbe     short loc_661A1E
+mov     eax, 14h
+
+loc_661A1E:                             ; CODE XREF: sub_661960+B7↑j
+lea     ecx, [esp+9Ch+Src]
+push    eax             ; Size
+push    ecx             ; Src
+push    ebp             ; void *
+call    _memcpy
+add     esp, 0Ch
+inc     esi
+inc     ebp
+cmp     esi, 100h
+jb      short loc_6619F0
+
+loc_661A37:                             ; CODE XREF: sub_661960+4E↑j
+mov     eax, [esp+9Ch+var_8C]
+sar     [esp+9Ch+arg_0], 1
+dec     eax
+mov     [esp+9Ch+var_8C], eax
+jnz     loc_661974
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8Ch
+retn    4
+*/
 }
 
 } // namespace gamemd

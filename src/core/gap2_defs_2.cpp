@@ -15,106 +15,3159 @@
 #include "core/utility_ext.hpp"
 
 // 0x48BAA0
-namespace gamemd { int Rect::SetRedraw(int a1) { return 0; } }
+namespace gamemd { int Rect::SetRedraw(int a1) {
+// [IDA decompile]
+int __thiscall Rect_SetRedraw(_DWORD *this, char a2)
+{
+  int result; // eax
+
+  result = 0;
+  if ( a2 )
+  {
+    *(this + 5) = 0;
+    *(this + 6) = 0;
+    *(this + 7) = 0;
+  }
+  else
+  {
+    result = *(this + 7);
+    *(this + 6) = 1;
+    *(this + 5) = result;
+  }
+  *(this + 8) = result;
+  return result;
+}
+
+/* ASM:
+mov     dl, [esp+arg_0]
+xor     eax, eax
+cmp     dl, al
+jz      short loc_48BAB9
+mov     [ecx+14h], eax
+mov     [ecx+18h], eax
+mov     [ecx+1Ch], eax
+mov     [ecx+20h], eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_48BAB9:                             ; CODE XREF: Rect__SetRedraw+8↑j
+mov     eax, [ecx+1Ch]
+mov     dword ptr [ecx+18h], 1
+mov     [ecx+14h], eax
+mov     [ecx+20h], eax
+retn    4
+*/
+} }
 // 0x4A0E60
-namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a1) { return nullptr; } }
+namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall EnumConnectionPointsClass::sub_4A0E60(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<IConnectionPoint *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+
+*/
+} }
 // 0x4A0F20
-namespace gamemd { void EnumConnectionPointsClass::ClearBuffer() { } }
+namespace gamemd { void EnumConnectionPointsClass::ClearBuffer() {
+// [IDA decompile]
+void __thiscall EnumConnectionPointsClass::sub_4A0F20(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0x2a)
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_4A0F41
+cmp     [esi+0Dh], bl
+jz      short loc_4A0F41
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_4A0F41:                             ; CODE XREF: EnumConnectionPointsClass__ClearBuffer+E↑j
+; EnumConnectionPointsClass__ClearBuffer+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} }
 // 0x4A0F50
-namespace gamemd { int EnumConnectionPointsClass::PointerToIndex(int a1) { return 0; } }
+namespace gamemd { int EnumConnectionPointsClass::PointerToIndex(int a1) {
+// [IDA decompile]
+unsigned int __thiscall EnumConnectionPointsClass::sub_4A0F50(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x1b)
+test    al, al
+jnz     short loc_4A0F5C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4A0F5C:                             ; CODE XREF: EnumConnectionPointsClass__PointerToIndex+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} }
 // 0x4A13C0
-namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a1, void* a2) { return 0; } }
+namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall EnumConnectionPointsClass::SetCapacity(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( !v4 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v5 = *((_DWORD *)this + 2);
+      if ( a2 < v5 )
+        v5 = a2;
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        ++i;
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v4;
+    *((_DWORD *)this + 2) = a2;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v7 = *((_DWORD *)this + 2);
+  if ( v7 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v7;
+  return 1;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0xb0)
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      short loc_4A144A
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_4A13EE
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_4A13F0
+; ---------------------------------------------------------------------------
+
+loc_4A13EE:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+18↑j
+mov     edi, ebx
+
+loc_4A13F0:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+2C↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      short loc_4A1467
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_4A1438
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_4A1408
+mov     ecx, ebp
+
+loc_4A1408:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+44↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_4A141E
+
+loc_4A140E:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+5C↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_4A140E
+
+loc_4A141E:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+4C↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_4A1438
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4A1438:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+3D↑j
+; EnumConnectionPointsClass__SetCapacity+63↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_4A1451
+; ---------------------------------------------------------------------------
+
+loc_4A144A:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_4A1451:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+88↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_4A145E
+mov     [esi+10h], eax
+
+loc_4A145E:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+99↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4A1467:                             ; CODE XREF: EnumConnectionPointsClass__SetCapacity+36↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} }
 // 0x4A1470
-namespace gamemd { int EnumConnectionPointsClass::FindItem(void* a1) { return 0; } }
+namespace gamemd { int EnumConnectionPointsClass::FindItem(void* a1) {
+// [IDA decompile]
+int __thiscall EnumConnectionPointsClass::sub_4A1470(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]  ; TODO: classify (grp=blit, sz=0x26)
+xor     eax, eax
+push    esi
+test    edx, edx
+jle     short loc_4A148F
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_4A1483:                             ; CODE XREF: EnumConnectionPointsClass__FindItem+1D↓j
+cmp     [ecx], esi
+jz      short loc_4A1492
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_4A1483
+
+loc_4A148F:                             ; CODE XREF: EnumConnectionPointsClass__FindItem+8↑j
+or      eax, 0FFFFFFFFh
+
+loc_4A1492:                             ; CODE XREF: EnumConnectionPointsClass__FindItem+15↑j
+pop     esi
+retn    4
+*/
+} }
 // 0x4E1530
-namespace gamemd { int COMObject::ActivateThunk(int a1, int a2, int a3) { return 0; } }
+namespace gamemd { int COMObject::ActivateThunk(int a1, int a2, int a3) {
+// [IDA decompile]
+int __thiscall COMObject_ActivateThunk(_BYTE *this, int a2, int a3, int a4)
+{
+  int v4; // edx
+
+  if ( !a2 )
+    return 0;
+  v4 = *(_DWORD *)this;
+  *(this + 28) = 1;
+  (*(void (__stdcall **)(int))(v4 + 120))(a2);
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+test    eax, eax
+jz      short loc_4E154A
+mov     edx, [ecx]
+push    eax
+mov     byte ptr [ecx+1Ch], 1
+call    dword ptr [edx+78h]
+mov     eax, 1
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_4E154A:                             ; CODE XREF: COMObject__ActivateThunk+6↑j
+xor     eax, eax
+retn    0Ch
+*/
+} }
 // 0x4E1920
-namespace gamemd { int COMObject::FindInList(int a1) { return 0; } }
+namespace gamemd { int COMObject::FindInList(int a1) {
+// [IDA decompile]
+int __thiscall COMObject_FindInList(void *this, int a2)
+{
+  int v2; // esi
+
+  v2 = (int)this;
+  if ( !a2 || !this )
+    return 0;
+  while ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 68))(v2) != a2 )
+  {
+    v2 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 4))(v2);
+    if ( !v2 )
+      return 0;
+  }
+  return v2;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+test    edi, edi
+jz      short loc_4E1948
+test    esi, esi
+jz      short loc_4E1948
+
+loc_4E1930:                             ; CODE XREF: COMObject__FindInList+26↓j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+44h]
+cmp     eax, edi
+jz      short loc_4E194F
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+4]
+mov     esi, eax
+test    esi, esi
+jnz     short loc_4E1930
+
+loc_4E1948:                             ; CODE XREF: COMObject__FindInList+A↑j
+; COMObject__FindInList+E↑j
+pop     edi
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4E194F:                             ; CODE XREF: COMObject__FindInList+19↑j
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
+} }
 // 0x4E1970
-namespace gamemd { int COMObject::TrackCurrent(int a1) { return 0; } }
+namespace gamemd { int COMObject::TrackCurrent(int a1) {
+// [IDA decompile]
+char __thiscall COMObject_TrackCurrent(_BYTE *this, char a2)
+{
+  char result; // al
+
+  result = a2;
+  if ( *(this + 29) && (a2 & 0x11) != 0 )
+  {
+    MEMORY[0x8B3E88] = (int)this;
+  }
+  else if ( (_BYTE *)MEMORY[0x8B3E88] != this )
+  {
+    return result;
+  }
+  if ( (a2 & 0x44) != 0 )
+    MEMORY[0x8B3E88] = 0;
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+1Dh]
+test    al, al
+mov     al, [esp+arg_0]
+jz      short loc_4E1987
+test    al, 11h
+jz      short loc_4E1987
+mov     ds:8B3E88h, ecx
+jmp     short loc_4E198F
+; ---------------------------------------------------------------------------
+
+loc_4E1987:                             ; CODE XREF: COMObject__TrackCurrent+9↑j
+; COMObject__TrackCurrent+D↑j
+cmp     ds:8B3E88h, ecx
+jnz     short locret_4E199D
+
+loc_4E198F:                             ; CODE XREF: COMObject__TrackCurrent+15↑j
+test    al, 44h
+jz      short locret_4E199D
+mov     dword ptr ds:8B3E88h, 0
+
+locret_4E199D:                          ; CODE XREF: COMObject__TrackCurrent+1D↑j
+; COMObject__TrackCurrent+21↑j
+retn    4
+*/
+} }
 // 0x4E19A0
-namespace gamemd { int COMObject::ActivateGlobal() { return 0; } }
+namespace gamemd { int COMObject::ActivateGlobal() {
+// [IDA decompile]
+__int16 __thiscall COMObject_ActivateGlobal(_DWORD *this)
+{
+  int v2; // eax
+
+  if ( MEMORY[0x8B3E90] )
+  {
+    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x8B3E90] + 72))(MEMORY[0x8B3E90]);
+    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x8B3E90] + 84))(MEMORY[0x8B3E90]);
+  }
+  v2 = *(this + 8);
+  BYTE1(v2) |= 1u;
+  *(this + 8) = v2;
+  MEMORY[0x8B3E90] = (int)this;
+  return v2;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, ds:8B3E90h
+test    ecx, ecx
+jz      short loc_4E19BD
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     ecx, ds:8B3E90h
+mov     edx, [ecx]
+call    dword ptr [edx+54h]
+
+loc_4E19BD:                             ; CODE XREF: COMObject__ActivateGlobal+B↑j
+mov     eax, [esi+20h]
+or      ah, 1
+mov     [esi+20h], eax
+mov     ds:8B3E90h, esi
+pop     esi
+retn
+*/
+} }
 // 0x4E19D0
-namespace gamemd { int COMObject::DeactivateGlobal() { return 0; } }
+namespace gamemd { int COMObject::DeactivateGlobal() {
+// [IDA decompile]
+__int16 __thiscall COMObject_DeactivateGlobal(_DWORD *this)
+{
+  int v1; // eax
+
+  if ( (_DWORD *)MEMORY[0x8B3E90] == this )
+  {
+    v1 = *(this + 8);
+    BYTE1(v1) &= ~1u;
+    *(this + 8) = v1;
+    MEMORY[0x8B3E90] = 0;
+  }
+  return v1;
+}
+
+/* ASM:
+cmp     ds:8B3E90h, ecx
+jnz     short locret_4E19EB
+mov     eax, [ecx+20h]
+and     ah, 0FEh
+mov     [ecx+20h], eax
+mov     dword ptr ds:8B3E90h, 0
+
+locret_4E19EB:                          ; CODE XREF: COMObject__DeactivateGlobal+6↑j
+retn
+*/
+} }
 // 0x4E19F0
-namespace gamemd { bool COMObject::IsPrimaryInstance() { return false; } }
+namespace gamemd { bool COMObject::IsPrimaryInstance() {
+// [IDA decompile]
+BOOL __thiscall COMObject::IsPrimaryInstance(void *this)
+{
+  return this == (void *)MEMORY[0x87F7E8][53674];
+}
+
+/* ASM:
+mov     edx, ds:8B3E90h
+xor     eax, eax
+cmp     ecx, edx
+setz    al
+retn
+*/
+} }
 // 0x4E2AF0
-namespace gamemd { int COMObject::Check(int a1) { return 0; } }
+namespace gamemd { int COMObject::Check(int a1) {
+// [IDA decompile]
+int __thiscall COMObject::sub_4E2AF0(_DWORD *this, int a2)
+{
+  if ( a2 < 0 || a2 >= *(this + 12) )
+    return 0;
+  *(this + 15) = a2;
+  (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x22)
+test    eax, eax
+jl      short loc_4E2B0D
+cmp     eax, [ecx+30h]
+jge     short loc_4E2B0D
+mov     [ecx+3Ch], eax
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     eax, 1
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4E2B0D:                             ; CODE XREF: COMObject__Check+6↑j
+; COMObject__Check+B↑j
+xor     eax, eax
+retn    4
+*/
+} }
 // 0x4E2B20
-namespace gamemd { int COMObject::SetField(int a1) { return 0; } }
+namespace gamemd { int COMObject::SetField(int a1) {
+// [IDA decompile]
+int __thiscall COMObject::sub_4E2B20(_DWORD *this, int a2)
+{
+  if ( a2 < 0 || a2 >= *(this + 12) )
+    return 0;
+  *(this + 16) = a2;
+  (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x22)
+test    eax, eax
+jl      short loc_4E2B3D
+cmp     eax, [ecx+30h]
+jge     short loc_4E2B3D
+mov     [ecx+40h], eax
+mov     eax, [ecx]
+call    dword ptr [eax+48h]
+mov     eax, 1
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4E2B3D:                             ; CODE XREF: COMObject__SetField+6↑j
+; COMObject__SetField+B↑j
+xor     eax, eax
+retn    4
+*/
+} }
 // 0x4E30F0
-namespace gamemd { void* COMObject::ScalarDtor(int a1) { return nullptr; } }
+namespace gamemd { void* COMObject::ScalarDtor(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall COMObject::sub_4E30F0(_DWORD *Block, char a2)
+{
+  GadgetClass::Dtor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi             ; TODO: classify (grp=blit, sz=0x1e)
+mov     esi, ecx
+call    GadgetClass__Dtor
+test    [esp+4+arg_0], 1
+jz      short loc_4E3108
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4E3108:                             ; CODE XREF: COMObject__ScalarDtor+D↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x4F42B0
-namespace gamemd { int COMObject::DtorSequence(int a1) { return 0; } }
+namespace gamemd { int COMObject::DtorSequence(int a1) {
+// [IDA decompile]
+int __thiscall COMObject_DtorSequence(void *this, int a2)
+{
+  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 28))(this);
+  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 32))(this);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi]
+call    dword ptr [eax+1Ch]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+20h]
+pop     esi
+retn    4
+*/
+} }
 // 0x5233A0
-namespace gamemd { void* COMObject::SwapReference(int a1) { return nullptr; } }
+namespace gamemd { void* COMObject::SwapReference(int a1) {
+// [IDA decompile]
+int *__thiscall COMObject::SwapReference(int *this, int a2)
+{
+  int v3; // edi
+
+  v3 = *this;
+  if ( *this != a2 )
+  {
+    *this = a2;
+    if ( a2 )
+      (*(void (__stdcall **)(int))(*(_DWORD *)a2 + 4))(a2);
+    if ( v3 )
+      (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3);
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esi]
+cmp     edi, eax
+jz      short loc_5233C4
+test    eax, eax
+mov     [esi], eax
+jz      short loc_5233BA
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+4]
+
+loc_5233BA:                             ; CODE XREF: COMObject__SwapReference+12↑j
+test    edi, edi
+jz      short loc_5233C4
+mov     edx, [edi]
+push    edi
+call    dword ptr [edx+8]
+
+loc_5233C4:                             ; CODE XREF: COMObject__SwapReference+C↑j
+; COMObject__SwapReference+1C↑j
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
+} }
 // 0x53EDE0
-namespace gamemd { int Struct::Copy6Bytes(int a1) { return 0; } }
+namespace gamemd { int Struct::Copy6Bytes(int a1) {
+// [IDA decompile]
+__int16 __thiscall Struct_Copy6Bytes(char *this, int a2)
+{
+  char *v2; // ecx
+  __int16 result; // ax
+
+  v2 = this + 4;
+  *(_DWORD *)v2 = *(_DWORD *)a2;
+  result = *(_WORD *)(a2 + 4);
+  *((_WORD *)v2 + 2) = result;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+add     ecx, 4
+mov     edx, [eax]
+mov     [ecx], edx
+mov     ax, [eax+4]
+mov     [ecx+4], ax
+retn    4
+*/
+} }
 // 0x54A120
-namespace gamemd { void* Rect::Set4(int a1, int a2, int a3, int a4) { return nullptr; } }
+namespace gamemd { void* Rect::Set4(int a1, int a2, int a3, int a4) {
+// [IDA decompile]
+_DWORD *__thiscall sub_54A120(_DWORD *this, int a2, int a3, int a4, int a5)
+{
+  *this = a2;
+  *(this + 1) = a3;
+  *(this + 2) = a4;
+  *(this + 3) = a5;
+  return this;
+}
+
+/* ASM:
+mov     edx, [esp+arg_4]
+mov     eax, ecx
+mov     ecx, [esp+arg_0]
+mov     [eax], ecx
+mov     ecx, [esp+arg_8]
+mov     [eax+4], edx
+mov     edx, [esp+arg_C]
+mov     [eax+8], ecx
+mov     [eax+0Ch], edx
+retn    10h
+*/
+} }
 // 0x54F6B0
-namespace gamemd { bool EventQueue::CheckPosition() { return false; } }
+namespace gamemd { bool EventQueue::CheckPosition() {
+// [IDA decompile]
+bool __thiscall EventQueue_CheckPosition(_DWORD *this)
+{
+  return (*(this + 198) + 1) % 256 == *(this + 197);
+}
+
+/* ASM:
+mov     eax, [ecx+318h]
+inc     eax
+and     eax, 800000FFh
+jns     short loc_54F6C5
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_54F6C5:                             ; CODE XREF: EventQueue__CheckPosition+C↑j
+cmp     eax, [ecx+314h]
+setz    al
+retn
+*/
+} }
 // 0x589300
-namespace gamemd { int unknown::AddRef(int a1) { return 0; } }
+namespace gamemd { int unknown::AddRef(int a1) {
+// [IDA decompile]
+char __thiscall unknown::_vt01(int *this, int a2)
+{
+  int v2; // edi
+  int v3; // esi
+  int v4; // edx
+  _WORD *v5; // eax
+  _WORD *v6; // ecx
+  int v7; // edx
+
+  v2 = *(this + 2);
+  if ( v2 == *(_DWORD *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+      return 1;
+    v4 = *(_DWORD *)(a2 + 4);
+    v5 = (_WORD *)*(this + 1);
+    v6 = (_WORD *)(v4 + 2);
+    v7 = v4 - (_DWORD)v5;
+    while ( *v5 == *(_WORD *)((char *)v5 + v7) && v5[1] == *v6 && v5[2] == v6[1] && v5[3] == v6[2] )
+    {
+      ++v3;
+      v6 += 8;
+      v5 += 8;
+      if ( v3 >= v2 )
+        return 1;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    esi
+push    edi
+mov     edi, [ecx+8]
+mov     edx, [eax+8]
+cmp     edi, edx
+jnz     short loc_58935B
+xor     esi, esi
+test    edi, edi
+jle     short loc_589353
+mov     edx, [eax+4]
+mov     eax, [ecx+4]
+lea     ecx, [edx+2]
+sub     edx, eax
+
+loc_589322:                             ; CODE XREF: unknown__AddRef+51↓j
+mov     bx, [eax]
+cmp     bx, [edx+eax]
+jnz     short loc_58935B
+mov     bx, [eax+2]
+cmp     bx, [ecx]
+jnz     short loc_58935B
+mov     bx, [eax+4]
+cmp     bx, [ecx+2]
+jnz     short loc_58935B
+mov     bx, [eax+6]
+cmp     bx, [ecx+4]
+jnz     short loc_58935B
+inc     esi
+add     ecx, 10h
+add     eax, 10h
+cmp     esi, edi
+jl      short loc_589322
+
+loc_589353:                             ; CODE XREF: unknown__AddRef+15↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_58935B:                             ; CODE XREF: unknown__AddRef+F↑j
+; unknown__AddRef+29↑j ...
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn    4
+*/
+} }
 // 0x589550
-namespace gamemd { int unknown::Release(int a1, void* a2) { return 0; } }
+namespace gamemd { int unknown::Release(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall unknown::Release(void *this, int a2, _WORD *a3)
+{
+  int v3; // ebx
+  _WORD *v5; // esi
+  _WORD *v6; // ebp
+  _WORD *v7; // esi
+  int v8; // ebp
+  int v9; // ecx
+  int v10; // eax
+  _DWORD *v11; // ebx
+  _DWORD *v12; // edx
+  int v13; // eax
+
+  v3 = a2;
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+    {
+      if ( a2 - 1 >= 0 )
+      {
+        v7 = a3 + 2;
+        v8 = a2;
+        do
+        {
+          *(v7 - 2) = 0;
+          *(v7 - 1) = 0;
+          CellStruct::Set(v7, 0, 0);
+          *((_BYTE *)v7 + 4) = 0;
+          *((_DWORD *)v7 + 2) = -1;
+          v7 += 8;
+          --v8;
+        }
+        while ( v8 );
+      }
+      v5 = a3;
+    }
+    else
+    {
+      v5 = (_WORD *)__2_YAPAXI_Z(16 * a2);
+      if ( v5 )
+      {
+        v6 = v5;
+        if ( a2 - 1 >= 0 )
+        {
+          do
+          {
+            unknown::Init(v6);
+            v6 += 8;
+            --v3;
+          }
+          while ( v3 );
+          v3 = a2;
+        }
+      }
+      else
+      {
+        v5 = 0;
+      }
+    }
+    *((_BYTE *)this + 12) = 1;
+    if ( !v5 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v9 = *((_DWORD *)this + 2);
+      if ( v3 < v9 )
+        v9 = v3;
+      if ( v9 > 0 )
+      {
+        v10 = 0;
+        do
+        {
+          v11 = &v5[v10];
+          v12 = (_DWORD *)(v10 * 2 + *((_DWORD *)this + 1));
+          v10 += 8;
+          --v9;
+          *v11 = *v12;
+          v11[1] = v12[1];
+          v11[2] = v12[2];
+          v11[3] = v12[3];
+        }
+        while ( v9 );
+        v3 = a2;
+      }
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v5;
+    *((_DWORD *)this + 2) = v3;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v13 = *((_DWORD *)this + 2);
+  if ( v13 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v13;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_0]
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+test    ebx, ebx
+jz      loc_589654
+mov     esi, [esp+10h+arg_4]
+mov     byte ptr [edi+0Ch], 0
+test    esi, esi
+jnz     short loc_5895A5
+mov     eax, ebx
+shl     eax, 4
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+test    esi, esi
+jz      short loc_5895A1
+lea     eax, [ebx-1]
+mov     ebp, esi
+test    eax, eax
+jl      short loc_5895DA
+lea     ebx, [eax+1]
+
+loc_58958E:                             ; CODE XREF: unknown__Release+49↓j
+mov     ecx, ebp
+call    unknown__Init
+add     ebp, 10h
+dec     ebx
+jnz     short loc_58958E
+mov     ebx, [esp+10h+arg_0]
+jmp     short loc_5895DA
+; ---------------------------------------------------------------------------
+
+loc_5895A1:                             ; CODE XREF: unknown__Release+30↑j
+xor     esi, esi
+jmp     short loc_5895DA
+; ---------------------------------------------------------------------------
+
+loc_5895A5:                             ; CODE XREF: unknown__Release+1C↑j
+lea     eax, [ebx-1]
+test    eax, eax
+jl      short loc_5895D6
+add     esi, 4
+lea     ebp, [eax+1]
+
+loc_5895B2:                             ; CODE XREF: unknown__Release+84↓j
+xor     eax, eax
+mov     ecx, esi
+push    eax
+push    eax
+mov     [esi-4], ax
+mov     [esi-2], ax
+call    CellStruct__Set
+mov     byte ptr [esi+4], 0
+mov     dword ptr [esi+8], 0FFFFFFFFh
+add     esi, 10h
+dec     ebp
+jnz     short loc_5895B2
+
+loc_5895D6:                             ; CODE XREF: unknown__Release+5A↑j
+mov     esi, [esp+10h+arg_4]
+
+loc_5895DA:                             ; CODE XREF: unknown__Release+39↑j
+; unknown__Release+4F↑j ...
+test    esi, esi
+mov     byte ptr [edi+0Ch], 1
+jz      loc_589671
+mov     eax, [edi+4]
+test    eax, eax
+jz      short loc_58963E
+mov     ecx, [edi+8]
+cmp     ebx, ecx
+jge     short loc_5895F6
+mov     ecx, ebx
+
+loc_5895F6:                             ; CODE XREF: unknown__Release+A2↑j
+test    ecx, ecx
+jle     short loc_589624
+xor     eax, eax
+
+loc_5895FC:                             ; CODE XREF: unknown__Release+CE↓j
+mov     edx, [edi+4]
+lea     ebx, [eax+esi]
+add     edx, eax
+add     eax, 10h
+dec     ecx
+mov     ebp, [edx]
+mov     [ebx], ebp
+mov     ebp, [edx+4]
+mov     [ebx+4], ebp
+mov     ebp, [edx+8]
+mov     [ebx+8], ebp
+mov     edx, [edx+0Ch]
+mov     [ebx+0Ch], edx
+jnz     short loc_5895FC
+mov     ebx, [esp+10h+arg_0]
+
+loc_589624:                             ; CODE XREF: unknown__Release+A8↑j
+mov     al, [edi+0Dh]
+test    al, al
+jz      short loc_58963E
+mov     eax, [edi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [edi+4], 0
+
+loc_58963E:                             ; CODE XREF: unknown__Release+9B↑j
+; unknown__Release+D9↑j
+mov     ecx, [esp+10h+arg_4]
+xor     eax, eax
+test    ecx, ecx
+setz    al
+mov     [edi+4], esi
+mov     [edi+8], ebx
+mov     [edi+0Dh], al
+jmp     short loc_58965B
+; ---------------------------------------------------------------------------
+
+loc_589654:                             ; CODE XREF: unknown__Release+C↑j
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+0Ch]
+
+loc_58965B:                             ; CODE XREF: unknown__Release+102↑j
+mov     eax, [edi+8]
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_589668
+mov     [edi+10h], eax
+
+loc_589668:                             ; CODE XREF: unknown__Release+113↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_589671:                             ; CODE XREF: unknown__Release+90↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} }
 // 0x589680
 namespace gamemd { void* unknown::Init() { return nullptr; } }
 // 0x58A420
 namespace gamemd { void* unknown::QueryInterface(int a1) { return nullptr; } }
 // 0x5AD6F0
-namespace gamemd { void* StringVector::Construct(int a1, int a2) { return nullptr; } }
+namespace gamemd { void* StringVector::Construct(int a1, int a2) {
+// [IDA decompile]
+_DWORD *__thiscall StringVector::Construct(_DWORD *this, int a2, int a3)
+{
+  *(this + 1) = 0;
+  *(this + 2) = a2;
+  *((_BYTE *)this + 12) = 1;
+  *((_BYTE *)this + 13) = 0;
+  *this = &VectorClass<char *>::`vftable';
+  if ( a2 )
+  {
+    if ( a3 )
+    {
+      *(this + 1) = a3;
+      return this;
+    }
+    *(this + 1) = __2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 13) = 1;
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+xor     edx, edx
+cmp     eax, edx
+mov     [esi+4], edx
+mov     [esi+8], eax
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], dl
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAD@@6B@ ; const VectorClass<char *>::`vftable'
+jz      short loc_5AD734
+mov     ecx, [esp+4+arg_4]
+cmp     ecx, edx
+jz      short loc_5AD721
+mov     [esi+4], ecx
+mov     eax, esi
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_5AD721:                             ; CODE XREF: StringVector__Construct+26↑j
+shl     eax, 2
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esi+4], eax
+mov     byte ptr [esi+0Dh], 1
+
+loc_5AD734:                             ; CODE XREF: StringVector__Construct+1E↑j
+mov     eax, esi
+pop     esi
+retn    8
+*/
+} }
 // 0x6247D0
-namespace gamemd { void* Struct::WideStringCopy(int a1) { return nullptr; } }
+namespace gamemd { void* Struct::WideStringCopy(int a1) {
+// [IDA decompile]
+#72 **__thiscall Struct_WideStringCopy(#72 **this, int a2)
+{
+  *this = *(#72 **)a2;
+  WideString::AssignFromPtr(this + 1, (const #72 **)(a2 + 4));
+  WideString::AssignFromPtr(this + 2, (const #72 **)(a2 + 8));
+  *(this + 3) = *(#72 **)(a2 + 12);
+  *(this + 4) = *(#72 **)(a2 + 16);
+  *(this + 5) = *(#72 **)(a2 + 20);
+  return this;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+mov     eax, [edi]
+lea     ecx, [edi+4]
+push    ecx
+lea     ecx, [esi+4]
+mov     [esi], eax
+call    WideString__AssignFromPtr
+lea     edx, [edi+8]
+lea     ecx, [esi+8]
+push    edx
+call    WideString__AssignFromPtr
+mov     eax, [edi+0Ch]
+mov     [esi+0Ch], eax
+mov     ecx, [edi+10h]
+mov     [esi+10h], ecx
+mov     edx, [edi+14h]
+mov     [esi+14h], edx
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
+} }
 // 0x65D480
-namespace gamemd { int ComPtr::Set(int a1) { return 0; } }
+namespace gamemd { int ComPtr::Set(int a1) {
+// [IDA decompile]
+int __thiscall ComPtr_Set(_DWORD *this, int a2)
+{
+  int v3; // ecx
+  int result; // eax
+
+  if ( a2 != *(this + 1) )
+  {
+    if ( a2 )
+      ++*(_DWORD *)(a2 + 4);
+    v3 = *(this + 1);
+    if ( v3 )
+    {
+      *(this + 1) = 0;
+      result = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 8))(v3);
+    }
+    *(this + 1) = a2;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+8+arg_0]
+cmp     edi, [esi+4]
+jz      short loc_65D4AA
+test    edi, edi
+jz      short loc_65D494
+inc     dword ptr [edi+4]
+
+loc_65D494:                             ; CODE XREF: ComPtr__Set+F↑j
+mov     ecx, [esi+4]
+test    ecx, ecx
+jz      short loc_65D4A7
+mov     dword ptr [esi+4], 0
+mov     eax, [ecx]
+call    dword ptr [eax+8]
+
+loc_65D4A7:                             ; CODE XREF: ComPtr__Set+19↑j
+mov     [esi+4], edi
+
+loc_65D4AA:                             ; CODE XREF: ComPtr__Set+B↑j
+pop     edi
+pop     esi
+retn    4
+*/
+} }
 // 0x67FDD0
-namespace gamemd { int ComPtr::ReleaseSimple() { return 0; } }
+namespace gamemd { int ComPtr::ReleaseSimple() {
+// [IDA decompile]
+int __thiscall ComPtr_ReleaseSimple(int *this)
+{
+  int result; // eax
+
+  result = *this;
+  if ( *this )
+    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx]
+test    eax, eax
+jz      short locret_67FDDC
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+8]
+
+locret_67FDDC:                          ; CODE XREF: ComPtr__ReleaseSimple+4↑j
+retn
+*/
+} }
 // 0x683030
-namespace gamemd { int COMObject::ValidatePtr() { return 0; } }
+namespace gamemd { int COMObject::ValidatePtr() {
+// [IDA decompile]
+int __thiscall COMObject_ValidatePtr(void *this)
+{
+  if ( !*(_DWORD *)this )
+    WinAPI::Wrapper(-2147467261);
+  return *(_DWORD *)this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+cmp     dword ptr [esi], 0
+jnz     short loc_683042
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_683042:                             ; CODE XREF: COMObject__ValidatePtr+6↑j
+mov     eax, [esi]
+pop     esi
+retn
+*/
+} }
 // 0x69B8C0
-namespace gamemd { void Player::RandomAssign() { } }
+namespace gamemd { void Player::RandomAssign() {
+// [IDA decompile]
+void __thiscall Player_RandomAssign(_DWORD *this)
+{
+  int v1; // ebp
+  int i; // ebx
+  int v3; // esi
+  int v4; // eax
+  int v5; // ecx
+  int v6; // edi
+  int *v7; // ebx
+  int v8; // ecx
+  int v9; // eax
+  int v10; // eax
+  int v11; // edx
+  int v12; // esi
+  int v13; // ecx
+  int v14; // ecx
+  int v15; // ecx
+  int v17; // [esp+14h] [ebp-4h]
+
+  Debug::Log();
+  v1 = MEMORY[0xA8DA84];
+  for ( i = 0; i < v1; ++i )
+  {
+    v3 = *(_DWORD *)(MEMORY[0xA8DA78] + 4 * i);
+    v4 = *(_DWORD *)(v3 + 79);
+    if ( v4 == -3 || *(_DWORD *)(v3 + 75) == -3 )
+    {
+      *(_DWORD *)(v3 + 75) = -3;
+      *(_DWORD *)(v3 + 79) = -1;
+      *(_DWORD *)(v3 + 83) = 8;
+      *(_DWORD *)(v3 + 87) = -1;
+    }
+    else
+    {
+      if ( v4 == -2 )
+      {
+        *(_DWORD *)(v3 + 79) = -1;
+        v5 = *(this + 1);
+        if ( v5 )
+          *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5);
+        else
+          *(_DWORD *)(v3 + 75) = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 9);
+      }
+      if ( *(_DWORD *)(v3 + 87) == -2 )
+      {
+        *(_DWORD *)(v3 + 87) = -1;
+        *(_DWORD *)(v3 + 83) = -1;
+        do
+          v6 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7);
+        while ( (unsigned __int8)NetworkSession::IsPlayerInGame(v6) );
+        *(_DWORD *)(v3 + 83) = v6;
+      }
+    }
+    if ( !i )
+      MEMORY[0xA8B394] = *(_DWORD *)(v3 + 83);
+    ToWideStringChar((char *)v3);
+    Debug::Log();
+  }
+  v17 = 0;
+  v7 = MEMORY[0xA8B29C];
+  do
+  {
+    if ( *v7 == -2 )
+    {
+      v8 = *(this + 1);
+      if ( v8 )
+        v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8);
+      else
+        v9 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 9);
+      *v7 = v9;
+    }
+    if ( v7[8] == -2 )
+    {
+      while ( 1 )
+      {
+        v10 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7);
+        if ( v10 == -2 )
+          break;
+        v11 = 0;
+        if ( MEMORY[0xA8DA84] <= 0 )
+        {
+LABEL_32:
+          v15 = 33;
+          while ( MEMORY[0xA8B238][v15] != v10 )
+          {
+            if ( ++v15 >= 41 )
+              goto LABEL_35;
+          }
+        }
+        else
+        {
+          v12 = MEMORY[0xA8DA78];
+          while ( 1 )
+          {
+            v13 = *(_DWORD *)v12;
+            if ( *(_DWORD *)(*(_DWORD *)v12 + 87) == -2 && *(_DWORD *)(v13 + 83) == -1 )
+              v14 = -2;
+            else
+              v14 = *(_DWORD *)(v13 + 83);
+            if ( v14 == v10 )
+              break;
+            ++v11;
+            v12 += 4;
+            if ( v11 >= MEMORY[0xA8DA84] )
+              goto LABEL_32;
+          }
+        }
+      }
+LABEL_35:
+      v7[8] = v10;
+    }
+    Debug::Log();
+    ++v7;
+    ++v17;
+  }
+  while ( (int)v7 < (int)MEMORY[0xA8B2BC] );
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     [esp+18h+var_8], ecx
+push    offset aProcessingRand ; "Processing Random Assignments...\n"
+call    Debug__Log
+mov     ebp, ds:0A8DA84h
+add     esp, 4
+xor     ebx, ebx
+test    ebp, ebp
+jle     loc_69B9CE
+
+loc_69B8E8:                             ; CODE XREF: Player__RandomAssign+108↓j
+mov     eax, ds:0A8DA78h
+mov     ecx, 0FFFFFFFDh
+mov     esi, [eax+ebx*4]
+mov     eax, [esi+4Fh]
+cmp     eax, ecx
+jz      short loc_69B974
+cmp     [esi+4Bh], ecx
+jz      short loc_69B974
+cmp     eax, 0FFFFFFFEh
+jnz     short loc_69B93A
+mov     ecx, [esp+18h+var_8]
+or      edi, 0FFFFFFFFh
+mov     [esi+4Fh], edi
+mov     ecx, [ecx+4]
+test    ecx, ecx
+jz      short loc_69B921
+mov     edx, [ecx]
+call    dword ptr [edx+6Ch]
+mov     [esi+4Bh], eax
+jmp     short loc_69B93D
+; ---------------------------------------------------------------------------
+
+loc_69B921:                             ; CODE XREF: Player__RandomAssign+55↑j
+mov     eax, ds:0A8B230h
+push    9
+push    0
+lea     ecx, [eax+218h]
+call    Random__Range
+mov     [esi+4Bh], eax
+jmp     short loc_69B93D
+; ---------------------------------------------------------------------------
+
+loc_69B93A:                             ; CODE XREF: Player__RandomAssign+44↑j
+or      edi, 0FFFFFFFFh
+
+loc_69B93D:                             ; CODE XREF: Player__RandomAssign+5F↑j
+; Player__RandomAssign+78↑j
+cmp     dword ptr [esi+57h], 0FFFFFFFEh
+jnz     short loc_69B987
+mov     [esi+57h], edi
+mov     [esi+53h], edi
+
+loc_69B949:                             ; CODE XREF: Player__RandomAssign+AD↓j
+mov     ecx, ds:0A8B230h
+push    7
+push    0
+add     ecx, 218h
+call    Random__Range
+mov     edi, eax
+mov     ecx, 0A8B238h
+push    edi
+call    NetworkSession__IsPlayerInGame
+test    al, al
+jnz     short loc_69B949
+mov     [esi+53h], edi
+jmp     short loc_69B987
+; ---------------------------------------------------------------------------
+
+loc_69B974:                             ; CODE XREF: Player__RandomAssign+3A↑j
+; Player__RandomAssign+3F↑j
+or      eax, 0FFFFFFFFh
+mov     [esi+4Bh], ecx
+mov     [esi+4Fh], eax
+mov     dword ptr [esi+53h], 8
+mov     [esi+57h], eax
+
+loc_69B987:                             ; CODE XREF: Player__RandomAssign+81↑j
+; Player__RandomAssign+B2↑j
+test    ebx, ebx
+jnz     short loc_69B994
+mov     edx, [esi+53h]
+mov     ds:0A8B394h, edx
+
+loc_69B994:                             ; CODE XREF: Player__RandomAssign+C9↑j
+mov     ecx, [esi+57h]
+mov     eax, 0FFFFFFFEh
+cmp     ecx, eax
+mov     ecx, eax
+jz      short loc_69B9A5
+mov     ecx, [esi+53h]
+
+loc_69B9A5:                             ; CODE XREF: Player__RandomAssign+E0↑j
+cmp     [esi+4Fh], eax
+jz      short loc_69B9AD
+mov     eax, [esi+4Bh]
+
+loc_69B9AD:                             ; CODE XREF: Player__RandomAssign+E8↑j
+push    ecx
+push    eax
+mov     ecx, esi
+call    ToWideStringChar
+push    eax
+push    ebx
+push    offset aPlayerISSideIC ; "Player %i, %s: Side = %i, Color = %i\n"
+call    Debug__Log
+add     esp, 14h
+inc     ebx
+cmp     ebx, ebp
+jl      loc_69B8E8
+
+loc_69B9CE:                             ; CODE XREF: Player__RandomAssign+22↑j
+mov     [esp+18h+var_4], 0
+mov     ebx, 0A8B29Ch
+
+loc_69B9DB:                             ; CODE XREF: Player__RandomAssign+1E0↓j
+mov     eax, [ebx]
+mov     ebp, 0FFFFFFFEh
+cmp     eax, ebp
+jnz     short loc_69BA0E
+mov     eax, [esp+18h+var_8]
+mov     ecx, [eax+4]
+test    ecx, ecx
+jz      short loc_69B9F8
+mov     edx, [ecx]
+call    dword ptr [edx+70h]
+jmp     short loc_69BA0C
+; ---------------------------------------------------------------------------
+
+loc_69B9F8:                             ; CODE XREF: Player__RandomAssign+12F↑j
+mov     eax, ds:0A8B230h
+push    9
+push    0
+lea     ecx, [eax+218h]
+call    Random__Range
+
+loc_69BA0C:                             ; CODE XREF: Player__RandomAssign+136↑j
+mov     [ebx], eax
+
+loc_69BA0E:                             ; CODE XREF: Player__RandomAssign+124↑j
+cmp     [ebx+20h], ebp
+jnz     short loc_69BA79
+
+loc_69BA13:                             ; CODE XREF: Player__RandomAssign+194↓j
+; Player__RandomAssign+1A9↓j
+mov     ecx, ds:0A8B230h
+push    7
+push    0
+add     ecx, 218h
+call    Random__Range
+cmp     eax, ebp
+jz      short loc_69BA76
+mov     edi, ds:0A8DA84h
+xor     edx, edx
+test    edi, edi
+jle     short loc_69BA5E
+mov     esi, ds:0A8DA78h
+
+loc_69BA3E:                             ; CODE XREF: Player__RandomAssign+19C↓j
+mov     ecx, [esi]
+cmp     [ecx+57h], ebp
+jnz     short loc_69BA4F
+cmp     dword ptr [ecx+53h], 0FFFFFFFFh
+jnz     short loc_69BA4F
+mov     ecx, ebp
+jmp     short loc_69BA52
+; ---------------------------------------------------------------------------
+
+loc_69BA4F:                             ; CODE XREF: Player__RandomAssign+183↑j
+; Player__RandomAssign+189↑j
+mov     ecx, [ecx+53h]
+
+loc_69BA52:                             ; CODE XREF: Player__RandomAssign+18D↑j
+cmp     ecx, eax
+jz      short loc_69BA13
+inc     edx
+add     esi, 4
+cmp     edx, edi
+jl      short loc_69BA3E
+
+loc_69BA5E:                             ; CODE XREF: Player__RandomAssign+176↑j
+mov     ecx, 84h
+
+loc_69BA63:                             ; CODE XREF: Player__RandomAssign+1B4↓j
+cmp     [ecx+0A8B238h], eax
+jz      short loc_69BA13
+add     ecx, 4
+cmp     ecx, 0A4h
+jl      short loc_69BA63
+
+loc_69BA76:                             ; CODE XREF: Player__RandomAssign+16A↑j
+mov     [ebx+20h], eax
+
+loc_69BA79:                             ; CODE XREF: Player__RandomAssign+151↑j
+mov     edx, [ebx+20h]
+mov     eax, [ebx]
+mov     esi, [esp+18h+var_4]
+push    edx
+push    eax
+push    esi
+push    offset aAiISideIColorI ; "AI %i: Side = %i, Color = %i\n"
+call    Debug__Log
+add     esp, 10h
+add     ebx, 4
+inc     esi
+cmp     ebx, 0A8B2BCh
+mov     [esp+18h+var_4], esi
+jl      loc_69B9DB
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+*/
+} }
 // 0x6ABAC0
-namespace gamemd { bool PlayerClass::HasPlayers() { return false; } }
+namespace gamemd { bool PlayerClass::HasPlayers() {
+// [IDA decompile]
+BOOL __thiscall PlayerClass::HasPlayers(_DWORD *this)
+{
+  return *(this + 21) > 0;
+}
+
+/* ASM:
+mov     edx, [ecx+54h]
+xor     eax, eax
+test    edx, edx
+setnle  al
+retn
+*/
+} }
 // 0x6D1810
-namespace gamemd { void* Struct::Zero25() { return nullptr; } }
+namespace gamemd { void* Struct::Zero25() {
+// [IDA decompile]
+_DWORD *__thiscall Struct_Zero25(_DWORD *this)
+{
+  *this = 0;
+  *(this + 1) = 0;
+  *(this + 2) = 0;
+  *(this + 3) = 0;
+  *(this + 4) = 0;
+  *(this + 5) = 0;
+  *((_BYTE *)this + 24) = 0;
+  return this;
+}
+
+/* ASM:
+mov     eax, ecx
+xor     ecx, ecx
+mov     [eax], ecx
+mov     [eax+4], ecx
+mov     [eax+8], ecx
+mov     [eax+0Ch], ecx
+mov     [eax+10h], ecx
+mov     [eax+14h], ecx
+mov     [eax+18h], cl
+retn
+*/
+} }
 // 0x6D9FF0
-namespace gamemd { int PlayerClass::ProcessOccupancyUpdate(void* a1) { return 0; } }
+namespace gamemd { int PlayerClass::ProcessOccupancyUpdate(void* a1) {
+// [IDA decompile]
+int __thiscall sub_6D9FF0(int *this, void (__thiscall *a2)(_BYTE *))
+{
+  int result; // eax
+  int v4; // edx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // edi
+  int v8; // ebx
+  int v9[4]; // [esp+4h] [ebp-10h] BYREF
+
+  if ( *(this + 868) || (result = *(this + 869)) != 0 )
+  {
+    v4 = *(this + 868);
+    v5 = *(this + 870);
+    v6 = *(this + 871);
+    v7 = *(this + 869);
+    if ( v4 > v5 )
+    {
+      v8 = v4;
+      v4 = v5;
+      v5 = v8;
+    }
+    if ( v7 > v6 )
+    {
+      v7 = v6;
+      v6 = *(this + 869);
+    }
+    v9[2] = v5 - v4 + 1;
+    v9[3] = v6 - v7 + 1;
+    v9[0] = v4;
+    v9[1] = v7;
+    BuildingClass::ProcessOccupancy(this, v9, a2);
+    *(this + 868) = 0;
+    *(this + 869) = 0;
+    return 0;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h        ; TODO: classify (grp=blit, sz=0x88)
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0D90h]
+test    eax, eax
+jnz     short loc_6DA00A
+mov     eax, [esi+0D94h]
+test    eax, eax
+jz      short loc_6DA071
+
+loc_6DA00A:                             ; CODE XREF: PlayerClass__ProcessOccupancyUpdate+E↑j
+mov     edx, [esi+0D90h]
+mov     eax, [esi+0D98h]
+mov     ecx, [esi+0D9Ch]
+push    ebx
+push    edi
+mov     edi, [esi+0D94h]
+cmp     edx, eax
+jle     short loc_6DA02E
+mov     ebx, edx
+mov     edx, eax
+mov     eax, ebx
+
+loc_6DA02E:                             ; CODE XREF: PlayerClass__ProcessOccupancyUpdate+36↑j
+cmp     edi, ecx
+jle     short loc_6DA038
+mov     ebx, edi
+mov     edi, ecx
+mov     ecx, ebx
+
+loc_6DA038:                             ; CODE XREF: PlayerClass__ProcessOccupancyUpdate+40↑j
+sub     eax, edx
+sub     ecx, edi
+inc     eax
+inc     ecx
+mov     [esp+1Ch+var_8], eax
+mov     eax, [esp+1Ch+arg_0]
+mov     [esp+1Ch+var_4], ecx
+lea     ecx, [esp+1Ch+var_10]
+push    eax
+push    ecx
+mov     ecx, esi
+mov     [esp+24h+var_10], edx
+mov     [esp+24h+var_C], edi
+call    BuildingClass__ProcessOccupancy
+xor     eax, eax
+xor     ecx, ecx
+mov     [esi+0D90h], eax
+pop     edi
+mov     [esi+0D94h], ecx
+pop     ebx
+
+loc_6DA071:                             ; CODE XREF: PlayerClass__ProcessOccupancyUpdate+18↑j
+pop     esi
+add     esp, 10h
+retn    4
+*/
+} }
 // 0x6DA080
-namespace gamemd { int PlayerClass::HasOccupiedCell() { return 0; } }
+namespace gamemd { int PlayerClass::HasOccupiedCell() {
+// [IDA decompile]
+int __thiscall sub_6DA080(int *this)
+{
+  int v1; // eax
+  int v2; // edx
+  int v3; // ebx
+  int v4; // ebp
+  int v5; // edx
+  int *i; // esi
+  int v7; // eax
+  int v8; // edx
+  int v10; // [esp+10h] [ebp-14h]
+  int v11; // [esp+1Ch] [ebp-8h]
+  int v12; // [esp+20h] [ebp-4h]
+
+  v1 = *(this + 870);
+  v2 = *(this + 871);
+  v3 = *(this + 868);
+  v4 = *(this + 869);
+  if ( v3 > v1 )
+  {
+    v3 = *(this + 870);
+    v1 = *(this + 868);
+  }
+  if ( v4 > v2 )
+  {
+    v4 = *(this + 871);
+    v2 = *(this + 869);
+  }
+  v5 = v2 - v4 + 1;
+  v11 = v1 - v3 + 1;
+  v12 = v5;
+  if ( v11 <= 0 )
+    return 0;
+  if ( v5 <= 0 )
+    return 0;
+  v10 = 0;
+  if ( *(this + 876) <= 0 )
+    return 0;
+  for ( i = MEMORY[0xB0CEC8]; ; i += 3 )
+  {
+    if ( *i )
+    {
+      if ( *(_BYTE *)(*i + 144) )
+      {
+        v7 = i[1] - *(this + 44);
+        v8 = i[2] - *(this + 45);
+        if ( v7 >= v3 && v7 < v3 + v11 && v8 >= v4 && v8 < v4 + v12 )
+          break;
+      }
+    }
+    if ( ++v10 >= *(this + 876) )
+      return 0;
+  }
+  return 1;
+}
+
+/* ASM:
+mov     eax, [ecx+0D98h] ; TODO: classify (grp=blit, sz=0xd5)
+mov     edx, [ecx+0D9Ch]
+sub     esp, 14h
+push    ebx
+mov     ebx, [ecx+0D90h]
+push    ebp
+mov     ebp, [ecx+0D94h]
+push    esi
+cmp     ebx, eax
+push    edi
+jle     short loc_6DA0A9
+mov     esi, ebx
+mov     ebx, eax
+mov     eax, esi
+
+loc_6DA0A9:                             ; CODE XREF: PlayerClass__HasOccupiedCell+21↑j
+cmp     ebp, edx
+jle     short loc_6DA0B3
+mov     esi, ebp
+mov     ebp, edx
+mov     edx, esi
+
+loc_6DA0B3:                             ; CODE XREF: PlayerClass__HasOccupiedCell+2B↑j
+sub     eax, ebx
+sub     edx, ebp
+inc     eax
+inc     edx
+test    eax, eax
+mov     [esp+24h+var_8], eax
+mov     [esp+24h+var_4], edx
+jle     loc_6DA14B
+test    edx, edx
+jle     short loc_6DA14B
+mov     eax, [ecx+0DB0h]
+mov     [esp+24h+var_14], 0
+test    eax, eax
+jle     short loc_6DA14B
+mov     esi, (offset dword_A8ED54+7E174h)
+
+loc_6DA0E4:                             ; CODE XREF: PlayerClass__HasOccupiedCell+BC↓j
+mov     eax, [esi]
+test    eax, eax
+jz      short loc_6DA126
+mov     dl, [eax+90h]
+test    dl, dl
+jz      short loc_6DA126
+mov     edx, [ecx+0B0h]
+mov     eax, [esi+4]
+mov     edi, [ecx+0B4h]
+sub     eax, edx
+mov     edx, [esi+8]
+sub     edx, edi
+cmp     eax, ebx
+jl      short loc_6DA126
+mov     edi, [esp+24h+var_8]
+add     edi, ebx
+cmp     eax, edi
+jge     short loc_6DA126
+cmp     edx, ebp
+jl      short loc_6DA126
+mov     eax, [esp+24h+var_4]
+add     eax, ebp
+cmp     edx, eax
+jl      short loc_6DA13E
+
+loc_6DA126:                             ; CODE XREF: PlayerClass__HasOccupiedCell+68↑j
+; PlayerClass__HasOccupiedCell+72↑j ...
+mov     eax, [esp+24h+var_14]
+mov     edx, [ecx+0DB0h]
+inc     eax
+add     esi, 0Ch
+cmp     eax, edx
+mov     [esp+24h+var_14], eax
+jge     short loc_6DA14B
+jmp     short loc_6DA0E4
+; ---------------------------------------------------------------------------
+
+loc_6DA13E:                             ; CODE XREF: PlayerClass__HasOccupiedCell+A4↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+add     esp, 14h
+retn
+; ---------------------------------------------------------------------------
+
+loc_6DA14B:                             ; CODE XREF: PlayerClass__HasOccupiedCell+43↑j
+; PlayerClass__HasOccupiedCell+4B↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 14h
+retn
+*/
+} }
 // 0x732600
-namespace gamemd { int PlayerClass::UpdateAIUnits() { return 0; } }
+namespace gamemd { int PlayerClass::UpdateAIUnits() {
+// [IDA decompile]
+char __thiscall PlayerClass::UpdateAIUnits(void *this)
+{
+  int HeightMap; // eax
+  _DWORD *v2; // esi
+  int v3; // ebp
+  int v4; // ebx
+  int v5; // edi
+  int v6; // ecx
+  int v7; // edx
+  _DWORD *v8; // eax
+  int v9; // ebp
+  int i; // edi
+  int v11; // ebp
+  int j; // edi
+  int v13; // ecx
+  int v16; // [esp+14h] [ebp-4h] BYREF
+
+  if ( LOBYTE(dword_A8ED54[132164]) )
+  {
+    HeightMap = __2_YAPAXI_Z(24);
+    v2 = (_DWORD *)HeightMap;
+    v3 = 0;
+    if ( HeightMap )
+    {
+      LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((_DWORD *)HeightMap, 0, 0);
+      *v2 = &DynamicVectorClass<TechnoClass *>::`vftable';
+      v2[5] = 10;
+      v2[4] = 0;
+    }
+    else
+    {
+      v2 = 0;
+    }
+    v4 = MEMORY[0x87F7E8][539944];
+    if ( MEMORY[0x87F7E8][539944] > 0 )
+    {
+      do
+      {
+        v5 = *(_DWORD *)(MEMORY[0x87F7E8][539941] + 4 * v3);
+        LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this);
+        if ( (_BYTE)HeightMap )
+        {
+          v6 = v2[2];
+          if ( v2[4] < v6
+            || ((LOBYTE(HeightMap) = *((_BYTE *)v2 + 13), (_BYTE)HeightMap) || !v6)
+            && (HeightMap = v2[5], HeightMap > 0)
+            && (LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v2 + 8))(v2, v6 + HeightMap, 0),
+                (_BYTE)HeightMap) )
+          {
+            HeightMap = v2[4];
+            v7 = v2[1];
+            v2[4] = HeightMap + 1;
+            *(_DWORD *)(v7 + 4 * HeightMap) = v5;
+          }
+        }
+        ++v3;
+      }
+      while ( v3 < v4 );
+    }
+  }
+  else
+  {
+    v8 = (_DWORD *)__2_YAPAXI_Z(24);
+    v2 = v8;
+    if ( v8 )
+    {
+      EventClass::resetEvent(v8, 0, 0);
+      *v2 = &DynamicVectorClass<TechnoClass *>::`vftable';
+      v2[5] = 10;
+      v2[4] = 0;
+    }
+    else
+    {
+      v2 = 0;
+    }
+    HeightMap = GetHeightMap((_DWORD *)MEMORY[0x87F7E8][7887]);
+    v9 = HeightMap;
+    for ( i = 0; i < v9; ++i )
+    {
+      HeightMap = GetCoordDataMap(i);
+      if ( HeightMap )
+      {
+        if ( (*(_BYTE *)(HeightMap + 20) & 1) != 0 )
+        {
+          v16 = HeightMap;
+          LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this);
+          if ( (_BYTE)HeightMap )
+            LOBYTE(HeightMap) = DynamicVector::AddItem(v2, &v16);
+        }
+      }
+    }
+  }
+  v11 = v2[4];
+  for ( j = 0; j < v11; ++j )
+  {
+    v13 = *(_DWORD *)(v2[1] + 4 * j);
+    LOBYTE(HeightMap) = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 336))(v13);
+  }
+  if ( v2 )
+    LOBYTE(HeightMap) = (*(char (__thiscall **)(_DWORD *, int))*v2)(v2, 1);
+  return HeightMap;
+}
+
+/* ASM:
+sub     esp, 0Ch
+mov     al, byte ptr dword_A8ED54+81110h
+push    ebp
+push    esi
+push    edi
+test    al, al
+mov     [esp+18h+var_8], ecx
+push    18h             ; Size
+jz      loc_7326AE
+call    ??2_YAPAXI_Z
+mov     esi, eax
+xor     ebp, ebp
+add     esp, 4
+cmp     esi, ebp
+jz      short loc_732644
+push    ebp
+push    ebp
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     [esi+10h], ebp
+jmp     short loc_732646
+; ---------------------------------------------------------------------------
+
+loc_732644:                             ; CODE XREF: PlayerClass__UpdateAIUnits+27↑j
+xor     esi, esi
+
+loc_732646:                             ; CODE XREF: PlayerClass__UpdateAIUnits+42↑j
+push    ebx
+mov     ebx, ds:0A8EC88h
+cmp     ebx, ebp
+jle     short loc_7326A8
+
+loc_732651:                             ; CODE XREF: PlayerClass__UpdateAIUnits+A6↓j
+mov     eax, ds:0A8EC7Ch
+mov     edx, [esp+1Ch+var_8]
+mov     edi, [eax+ebp*4]
+mov     ecx, edi
+call    StepTechnoClassCleanupIfHuman
+test    al, al
+jz      short loc_7326A3
+mov     ecx, [esi+8]
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_732694
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_73267D
+test    ecx, ecx
+jnz     short loc_7326A3
+
+loc_73267D:                             ; CODE XREF: PlayerClass__UpdateAIUnits+77↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_7326A3
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_7326A3
+
+loc_732694:                             ; CODE XREF: PlayerClass__UpdateAIUnits+70↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], edi
+
+loc_7326A3:                             ; CODE XREF: PlayerClass__UpdateAIUnits+66↑j
+; PlayerClass__UpdateAIUnits+7B↑j ...
+inc     ebp
+cmp     ebp, ebx
+jl      short loc_732651
+
+loc_7326A8:                             ; CODE XREF: PlayerClass__UpdateAIUnits+4F↑j
+pop     ebx
+jmp     loc_732732
+; ---------------------------------------------------------------------------
+
+loc_7326AE:                             ; CODE XREF: PlayerClass__UpdateAIUnits+13↑j
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+test    esi, esi
+jz      short loc_7326DD
+push    0
+push    0
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     dword ptr [esi+10h], 0
+jmp     short loc_7326DF
+; ---------------------------------------------------------------------------
+
+loc_7326DD:                             ; CODE XREF: PlayerClass__UpdateAIUnits+BA↑j
+xor     esi, esi
+
+loc_7326DF:                             ; CODE XREF: PlayerClass__UpdateAIUnits+DB↑j
+mov     ecx, ds:887324h
+call    GetHeightMap
+mov     ebp, eax
+xor     edi, edi
+test    ebp, ebp
+jle     short loc_732732
+
+loc_7326F2:                             ; CODE XREF: PlayerClass__UpdateAIUnits+130↓j
+mov     ecx, ds:887324h
+push    edi
+call    GetCoordDataMap
+test    eax, eax
+jz      short loc_73272D
+mov     cl, [eax+14h]
+and     cl, 1
+mov     [esp+18h+var_9], cl
+jz      short loc_73272D
+mov     edx, [esp+18h+var_8]
+mov     ecx, eax
+mov     [esp+18h+var_4], eax
+call    StepTechnoClassCleanupIfHuman
+test    al, al
+jz      short loc_73272D
+lea     edx, [esp+18h+var_4]
+mov     ecx, esi
+push    edx
+call    DynamicVector__AddItem
+
+loc_73272D:                             ; CODE XREF: PlayerClass__UpdateAIUnits+100↑j
+; PlayerClass__UpdateAIUnits+10C↑j ...
+inc     edi
+cmp     edi, ebp
+jl      short loc_7326F2
+
+loc_732732:                             ; CODE XREF: PlayerClass__UpdateAIUnits+A9↑j
+; PlayerClass__UpdateAIUnits+F0↑j
+mov     ebp, [esi+10h]
+xor     edi, edi
+test    ebp, ebp
+jle     short loc_73274E
+
+loc_73273B:                             ; CODE XREF: PlayerClass__UpdateAIUnits+14C↓j
+mov     eax, [esi+4]
+mov     ecx, [eax+edi*4]
+mov     edx, [ecx]
+call    dword ptr [edx+150h]
+inc     edi
+cmp     edi, ebp
+jl      short loc_73273B
+
+loc_73274E:                             ; CODE XREF: PlayerClass__UpdateAIUnits+139↑j
+test    esi, esi
+jz      short loc_73275A
+mov     eax, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [eax]
+
+loc_73275A:                             ; CODE XREF: PlayerClass__UpdateAIUnits+150↑j
+pop     edi
+pop     esi
+pop     ebp
+add     esp, 0Ch
+retn
+*/
+} }
 // 0x765790
-namespace gamemd { void* COMClass::invokeMethod(int a1) { return nullptr; } }
+namespace gamemd { void* COMClass::invokeMethod(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall COMClass::sub_765790(_DWORD *Block, char a2)
+{
+  *Block = &rc_ptr<WorldDominationTour::Campaign>::`vftable';
+  ComPtr::Release(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VCampaign@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Campaign>::`vftable'
+call    ComPtr__Release
+test    [esp+4+arg_0], 1
+jz      short loc_7657AE
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7657AE:                             ; CODE XREF: COMClass__invokeMethod+13↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x7657C0
-namespace gamemd { void* COMClass::getTypeInfo(int a1) { return nullptr; } }
+namespace gamemd { void* COMClass::getTypeInfo(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall COMClass::sub_7657C0(_DWORD *Block, char a2)
+{
+  *Block = &rc_ptr<WorldDominationTour::State>::`vftable';
+  ComPtr::Release(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VState@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::State>::`vftable'
+call    ComPtr__Release
+test    [esp+4+arg_0], 1
+jz      short loc_7657DE
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7657DE:                             ; CODE XREF: COMClass__getTypeInfo+13↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x7659F0
-namespace gamemd { int COMClass::registerObject(int a1, void* a2) { return 0; } }
+namespace gamemd { int COMClass::registerObject(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall COMClass::registerObject(_BYTE *this, int a2, _DWORD *a3)
+{
+  int v3; // ebp
+  _DWORD *v5; // eax
+  _DWORD *v6; // ebx
+  _DWORD *v7; // esi
+  _DWORD *v8; // esi
+  int v9; // ebx
+  int i; // esi
+  void (__thiscall ***v11)(_DWORD, int); // ecx
+  int v12; // eax
+  int v14; // [esp+10h] [ebp-4h]
+
+  v3 = a2;
+  if ( a2 )
+  {
+    *(this + 12) = 0;
+    if ( a3 )
+    {
+      *a3 = a2;
+      v8 = a3 + 1;
+      if ( a2 - 1 >= 0 )
+      {
+        v9 = a2;
+        do
+        {
+          ComPtr::Constructor(v8);
+          *v8 = &rc_ptr<WorldDominationTour::Conflict>::`vftable';
+          v8 += 2;
+          --v9;
+        }
+        while ( v9 );
+        v8 = a3 + 1;
+      }
+      v6 = v8;
+    }
+    else
+    {
+      v5 = (_DWORD *)__2_YAPAXI_Z(8 * a2 + 4);
+      if ( v5 )
+      {
+        *v5 = a2;
+        v6 = v5 + 1;
+        v7 = v5 + 1;
+        if ( a2 - 1 >= 0 )
+        {
+          v14 = a2;
+          do
+          {
+            COMClass::releaseInterface(v7);
+            v7 += 2;
+            --v14;
+          }
+          while ( v14 );
+        }
+      }
+      else
+      {
+        v6 = 0;
+      }
+    }
+    *(this + 12) = 1;
+    if ( !v6 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      if ( a2 >= *((_DWORD *)this + 2) )
+        v3 = *((_DWORD *)this + 2);
+      for ( i = 0; i < v3; ++i )
+        ComPtr::Set(&v6[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4));
+      if ( *(this + 13) )
+      {
+        v11 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1);
+        if ( v11 )
+          (**v11)(v11, 3);
+        *((_DWORD *)this + 1) = 0;
+      }
+      v3 = a2;
+    }
+    *((_DWORD *)this + 1) = v6;
+    *((_DWORD *)this + 2) = v3;
+    *(this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this);
+  }
+  v12 = *((_DWORD *)this + 2);
+  if ( v12 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v12;
+  return 1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+mov     ebp, [esp+0Ch+arg_0]
+push    esi
+push    edi
+mov     edi, ecx
+test    ebp, ebp
+jz      loc_765AE5
+mov     eax, [esp+14h+arg_4]
+mov     byte ptr [edi+0Ch], 0
+test    eax, eax
+jnz     short loc_765A51
+lea     eax, ds:4[ebp*8]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_765A4D
+mov     [eax], ebp
+lea     ebx, [eax+4]
+lea     eax, [ebp-1]
+mov     esi, ebx
+test    eax, eax
+jl      short loc_765A7D
+inc     eax
+mov     [esp+14h+var_4], eax
+
+loc_765A36:                             ; CODE XREF: COMClass__registerObject+59↓j
+mov     ecx, esi
+call    COMClass__releaseInterface
+mov     eax, [esp+14h+var_4]
+add     esi, 8
+dec     eax
+mov     [esp+14h+var_4], eax
+jnz     short loc_765A36
+jmp     short loc_765A7D
+; ---------------------------------------------------------------------------
+
+loc_765A4D:                             ; CODE XREF: COMClass__registerObject+31↑j
+xor     ebx, ebx
+jmp     short loc_765A7D
+; ---------------------------------------------------------------------------
+
+loc_765A51:                             ; CODE XREF: COMClass__registerObject+1D↑j
+mov     [eax], ebp
+lea     esi, [eax+4]
+lea     eax, [ebp-1]
+mov     [esp+14h+var_4], esi
+test    eax, eax
+jl      short loc_765A7B
+lea     ebx, [eax+1]
+
+loc_765A64:                             ; CODE XREF: COMClass__registerObject+85↓j
+mov     ecx, esi
+call    ComPtr__Constructor
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VConflict@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Conflict>::`vftable'
+add     esi, 8
+dec     ebx
+jnz     short loc_765A64
+mov     esi, [esp+14h+var_4]
+
+loc_765A7B:                             ; CODE XREF: COMClass__registerObject+6F↑j
+mov     ebx, esi
+
+loc_765A7D:                             ; CODE XREF: COMClass__registerObject+3F↑j
+; COMClass__registerObject+5B↑j ...
+test    ebx, ebx
+mov     byte ptr [edi+0Ch], 1
+jz      short loc_765B03
+mov     eax, [edi+4]
+test    eax, eax
+jz      short loc_765ACF
+mov     eax, [edi+8]
+cmp     ebp, eax
+jl      short loc_765A95
+mov     ebp, eax
+
+loc_765A95:                             ; CODE XREF: COMClass__registerObject+A1↑j
+xor     esi, esi
+test    ebp, ebp
+jle     short loc_765AB0
+
+loc_765A9B:                             ; CODE XREF: COMClass__registerObject+BE↓j
+mov     ecx, [edi+4]
+mov     edx, [ecx+esi*8+4]
+lea     ecx, [ebx+esi*8]
+push    edx
+call    ComPtr__Set
+inc     esi
+cmp     esi, ebp
+jl      short loc_765A9B
+
+loc_765AB0:                             ; CODE XREF: COMClass__registerObject+A9↑j
+mov     al, [edi+0Dh]
+test    al, al
+jz      short loc_765ACB
+mov     ecx, [edi+4]
+test    ecx, ecx
+jz      short loc_765AC4
+mov     eax, [ecx]
+push    3
+call    dword ptr [eax]
+
+loc_765AC4:                             ; CODE XREF: COMClass__registerObject+CC↑j
+mov     dword ptr [edi+4], 0
+
+loc_765ACB:                             ; CODE XREF: COMClass__registerObject+C5↑j
+mov     ebp, [esp+14h+arg_0]
+
+loc_765ACF:                             ; CODE XREF: COMClass__registerObject+9A↑j
+mov     ecx, [esp+14h+arg_4]
+xor     eax, eax
+test    ecx, ecx
+setz    al
+mov     [edi+4], ebx
+mov     [edi+8], ebp
+mov     [edi+0Dh], al
+jmp     short loc_765AEC
+; ---------------------------------------------------------------------------
+
+loc_765AE5:                             ; CODE XREF: COMClass__registerObject+D↑j
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+0Ch]
+
+loc_765AEC:                             ; CODE XREF: COMClass__registerObject+F3↑j
+mov     eax, [edi+8]
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_765AF9
+mov     [edi+10h], eax
+
+loc_765AF9:                             ; CODE XREF: COMClass__registerObject+104↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_765B03:                             ; CODE XREF: COMClass__registerObject+93↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+pop     ecx
+retn    8
+*/
+} }
 // 0x765B10
-namespace gamemd { int COMClass::unregisterObject(int a1) { return 0; } }
+namespace gamemd { int COMClass::unregisterObject(int a1) {
+// [IDA decompile]
+int __thiscall COMClass::sub_765B10(int *this, int a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)(*(this + 1) + 4); *i != *(_DWORD *)(a2 + 4); i += 2 )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]
+xor     eax, eax
+push    esi
+test    edx, edx
+jle     short loc_765B33
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+add     ecx, 4
+mov     esi, [esi+4]
+
+loc_765B27:                             ; CODE XREF: COMClass__unregisterObject+21↓j
+cmp     [ecx], esi
+jz      short loc_765B36
+inc     eax
+add     ecx, 8
+cmp     eax, edx
+jl      short loc_765B27
+
+loc_765B33:                             ; CODE XREF: COMClass__unregisterObject+8↑j
+or      eax, 0FFFFFFFFh
+
+loc_765B36:                             ; CODE XREF: COMClass__unregisterObject+19↑j
+pop     esi
+retn    4
+*/
+} }
 // 0x765BB0
 namespace gamemd { void* COMClass::createInstance(int a1) { return nullptr; } }
 // 0x765C20
 namespace gamemd { void* COMClass::getInterface(int a1) { return nullptr; } }
 // 0x765C70
-namespace gamemd { void* COMClass::releaseInterface() { return nullptr; } }
+namespace gamemd { void* COMClass::releaseInterface() {
+// [IDA decompile]
+_DWORD *__thiscall sub_765C70(_DWORD *this)
+{
+  ComPtr::Constructor(this);
+  *this = &rc_ptr<WorldDominationTour::Conflict>::`vftable';
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+call    ComPtr__Constructor
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VConflict@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Conflict>::`vftable'
+mov     eax, esi
+pop     esi
+retn
+*/
+} }
 // 0x7669C0
-namespace gamemd { void* COMClass::connectPoint(int a1) { return nullptr; } }
+namespace gamemd { void* COMClass::connectPoint(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall COMClass::sub_7669C0(_DWORD *Block, char a2)
+{
+  *Block = &rc_ptr<WorldDominationTour::MapSizeGameOption>::`vftable';
+  ComPtr::Release(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::MapSizeGameOption>::`vftable'
+call    ComPtr__Release
+test    [esp+4+arg_0], 1
+jz      short loc_7669DE
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7669DE:                             ; CODE XREF: COMClass__connectPoint+13↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x766A80
-namespace gamemd { int COMClass::enumConnections(int a1) { return 0; } }
+namespace gamemd { int COMClass::enumConnections(int a1) {
+// [IDA decompile]
+int __thiscall COMClass::sub_766A80(_DWORD *this, int a2)
+{
+  bool v3; // zf
+  int result; // eax
+
+  v3 = Network_Connect_767310(a2) == 0;
+  result = 2;
+  if ( v3 )
+    return *(this + 3);
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    eax
+call    Network_Connect_767310
+test    al, al
+mov     eax, 2
+jnz     short loc_766A99
+mov     eax, [esi+0Ch]
+
+loc_766A99:                             ; CODE XREF: COMClass__enumConnections+14↑j
+pop     esi
+retn    4
+*/
+} }
 // 0x766AA0
-namespace gamemd { void* COMClass::adviseConnection(void* a1, int a2, void* a3) { return nullptr; } }
+namespace gamemd { void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
+// [IDA decompile]
+#72 **__thiscall COMClass::adviseConnection(int this, #72 **a2, int a3, const #72 **a4)
+{
+  int v5; // eax
+  char *v6; // eax
+  #72 *StringCSF; // eax
+  #72 *v8; // eax
+  #72 **v9; // eax
+  #72 *Format; // [esp+4h] [ebp-94h] BYREF
+  void *v12; // [esp+8h] [ebp-90h] BYREF
+  void *v13; // [esp+Ch] [ebp-8Ch] BYREF
+  int v14; // [esp+10h] [ebp-88h] BYREF
+  void *v15; // [esp+14h] [ebp-84h] BYREF
+  _BYTE Buffer[128]; // [esp+18h] [ebp-80h] BYREF
+
+  v5 = (*(int (__thiscall **)(_DWORD))(this + 16))(*(_DWORD *)(a3 + 4));
+  FromStringInt((char **)&Format, v5);
+  v6 = String::GetOrEmpty_Alt((char **)(this + 20));
+  StringCSF = GetStringCSF((#72 *)v6, 0, aDRa2mdpostWdtg, 161);
+  WideString::Assign((#72 **)&v12, StringCSF);
+  v8 = WideString::GetOrEmpty((#72 **)&v12);
+  swprintf((#72 *const)Buffer, v8);
+  if ( WideString::Length(a4) )
+  {
+    WideString::Assign((#72 **)&v13, (#72 *)L", ");
+    v9 = ConcatWString((#72 **)&v15, a4, (const #72 **)&v13);
+    WideString::AssignConcat(v9, (#72 **)&v14, (#72 *)Buffer);
+    DeleteAndZero::Alt((void **)&v14);
+    DeleteAndZero::Alt(&v15);
+    DeleteAndZero::Alt(&v13);
+  }
+  WideString::Assign(a2, (#72 *)Buffer);
+  DeleteAndZero::Alt(&v12);
+  DeleteAndZero((void **)&Format);
+  return a2;
+}
+
+/* ASM:
+Format          = dword ptr -94h
+var_90          = dword ptr -90h
+var_8C          = dword ptr -8Ch
+var_88          = dword ptr -88h
+var_84          = dword ptr -84h
+Buffer          = byte ptr -80h
+arg_0           = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+mov     eax, [esp+arg_4]
+sub     esp, 94h
+push    esi
+mov     esi, ecx
+mov     ecx, [eax+4]
+call    dword ptr [esi+10h]
+mov     edx, eax
+lea     ecx, [esp+98h+Format]
+call    FromStringInt
+push    0A1h            ; int
+push    offset aDRa2mdpostWdtg ; "D:\\ra2mdpost\\wdtgameoptions.h"
+lea     ecx, [esi+14h]
+call    String__GetOrEmpty_Alt
+mov     ecx, eax        ; Format
+xor     edx, edx
+call    GetStringCSF
+push    eax             ; String
+lea     ecx, [esp+9Ch+var_90]
+call    WideString__Assign
+mov     ecx, [esp+98h+Format]
+push    ecx             ; Format
+lea     ecx, [esp+9Ch+var_90]
+call    WideString__GetOrEmpty
+lea     edx, [esp+9Ch+Buffer]
+push    eax             ; BufferCount
+push    edx             ; Buffer
+call    _swprintf
+mov     esi, [esp+0A4h+arg_8]
+add     esp, 0Ch
+mov     ecx, esi
+call    WideString__Length
+test    eax, eax
+jz      short loc_766B5B
+push    offset Control  ; ", "
+lea     ecx, [esp+9Ch+var_8C]
+call    WideString__Assign
+lea     eax, [esp+98h+Buffer]
+lea     ecx, [esp+98h+var_88]
+push    eax             ; String
+lea     edx, [esp+9Ch+var_8C]
+push    ecx             ; int
+push    edx
+mov     edx, esi
+lea     ecx, [esp+0A4h+var_84]
+call    ConcatWString
+mov     ecx, eax
+call    WideString__AssignConcat
+lea     ecx, [esp+98h+var_88]
+call    DeleteAndZero__Alt
+lea     ecx, [esp+98h+var_84]
+call    DeleteAndZero__Alt
+lea     ecx, [esp+98h+var_8C]
+call    DeleteAndZero__Alt
+
+loc_766B5B:                             ; CODE XREF: COMClass__adviseConnection+6F↑j
+mov     esi, [esp+98h+arg_0]
+lea     eax, [esp+98h+Buffer]
+push    eax             ; String
+mov     ecx, esi
+call    WideString__Assign
+lea     ecx, [esp+98h+var_90]
+call    DeleteAndZero__Alt
+lea     ecx, [esp+98h+Format]
+call    DeleteAndZero
+mov     eax, esi
+pop     esi
+add     esp, 94h
+retn    0Ch
+*/
+} }
 // 0x766B90
-namespace gamemd { void* COMClass::unadviseConnection(int a1) { return nullptr; } }
+namespace gamemd { void* COMClass::unadviseConnection(int a1) {
+// [IDA decompile]
+void **__thiscall COMClass::sub_766B90(void **Block, char a2)
+{
+  DeleteAndZero(Block + 5);
+  GameOption_WorldDominationTour::Constructor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+lea     ecx, [esi+14h]
+call    DeleteAndZero
+mov     ecx, esi
+call    GameOption_WorldDominationTour__Constructor
+test    [esp+4+arg_0], 1
+jz      short loc_766BB2
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_766BB2:                             ; CODE XREF: COMClass__unadviseConnection+17↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x7674E0
-namespace gamemd { int COMClass::unlockServer(int a1) { return 0; } }
+namespace gamemd { int COMClass::unlockServer(int a1) {
+// [IDA decompile]
+int __thiscall COMClass::sub_7674E0(_DWORD *this, int a2)
+{
+  if ( (*(_DWORD *)(*(_DWORD *)(a2 + 4) + 56) & *(this + 2)) != 0 )
+    return *(this + 4);
+  else
+    return *(this + 3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, [eax+4]
+mov     eax, [edx+38h]
+mov     edx, [ecx+8]
+test    edx, eax
+jz      short loc_7674F7
+mov     eax, [ecx+10h]
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7674F7:                             ; CODE XREF: COMClass__unlockServer+F↑j
+mov     eax, [ecx+0Ch]
+retn    4
+*/
+} }
 // 0x767500
 namespace gamemd { void* COMClass::coInitialize(void* a1, int a2, void* a3) { return nullptr; } }
 // 0x767880
 namespace gamemd { void* COMClass::coUninitialize(int a1) { return nullptr; } }
 // 0x767C50
-namespace gamemd { void* COMClass::marshalInterface(int a1) { return nullptr; } }
+namespace gamemd { void* COMClass::marshalInterface(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall COMClass::sub_767C50(_DWORD *Block, char a2)
+{
+  *Block = &rc_ptr<WDTState>::`vftable';
+  ComPtr::Release(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     dword ptr [esi], offset ??_7?$rc_ptr@VWDTState@@@@6B@ ; const rc_ptr<WDTState>::`vftable'
+call    ComPtr__Release
+test    [esp+4+arg_0], 1
+jz      short loc_767C6E
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_767C6E:                             ; CODE XREF: COMClass__marshalInterface+13↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x76F060
-namespace gamemd { void* ComPtr::Territory_Dtor() { return nullptr; } }
+namespace gamemd { void* ComPtr::Territory_Dtor() {
+// [IDA decompile]
+_DWORD *__thiscall ComPtr_Territory_Dtor(_DWORD *this)
+{
+  *this = &rc_ptr<WorldDominationTour::Territory>::`vftable';
+  return ComPtr::Release(this);
+}
+
+/* ASM:
+mov     dword ptr [ecx], offset ??_7?$rc_ptr@VTerritory@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::Territory>::`vftable'
+jmp     ComPtr__Release
+*/
+} }
 // 0x7AE5D0
-namespace gamemd { int StringVector::Insert(void* a1, int a2) { return 0; } }
+namespace gamemd { int StringVector::Insert(void* a1, int a2) {
+// [IDA decompile]
+char __thiscall StringVector::Insert(int *this, const char **a2, int a3)
+{
+  int v4; // esi
+  int v5; // ecx
+  int v6; // eax
+  int v7; // eax
+  unsigned int v8; // esi
+  void *v9; // ebp
+  const void *v10; // esi
+  int v11; // eax
+  unsigned int v12; // esi
+  void *v13; // ebp
+  const void *v14; // esi
+  char **v15; // ecx
+  int v17; // [esp+8h] [ebp-4h]
+  int v18; // [esp+8h] [ebp-4h]
+
+  v4 = a3;
+  v5 = *this;
+  if ( a3 > v5 )
+  {
+    a3 = v5;
+    v4 = v5;
+  }
+  v6 = *(this + 1);
+  if ( v4 >= v6 && v5 >= v6 )
+  {
+    v7 = 2 * v5;
+    v17 = 2 * v5;
+    if ( 2 * v5 < 10 )
+    {
+      v17 = 10;
+      v7 = 10;
+    }
+    v8 = 4 * v7;
+    v9 = (void *)__2_YAPAXI_Z(4 * v7);
+    memset(v9, 0, v8);
+    v10 = (const void *)*(this + 2);
+    if ( v10 )
+      qmemcpy(v9, v10, 4 * *this);
+    __3_YAXPAX_Z((void *)*(this + 2));
+    v4 = a3;
+    *(this + 2) = (int)v9;
+    *(this + 1) = v17;
+  }
+  if ( *this >= *(this + 1) )
+  {
+    v11 = 2 * *this;
+    v18 = v11;
+    if ( v11 < 10 )
+    {
+      v18 = 10;
+      v11 = 10;
+    }
+    v12 = 4 * v11;
+    v13 = (void *)__2_YAPAXI_Z(4 * v11);
+    memset(v13, 0, v12);
+    v14 = (const void *)*(this + 2);
+    if ( v14 )
+      qmemcpy(v13, v14, 4 * *this);
+    __3_YAXPAX_Z((void *)*(this + 2));
+    v4 = a3;
+    *(this + 2) = (int)v13;
+    *(this + 1) = v18;
+  }
+  if ( v4 < *this )
+    memcpy((void *)(*(this + 2) + 4 * v4 + 4), (const void *)(*(this + 2) + 4 * v4), 4 * (*this + 0x3FFFFFFF * v4));
+  v15 = (char **)(*(this + 2) + 4 * v4);
+  if ( v15 )
+    String::AssignFromPtr(v15, a2);
+  ++*this;
+  return 1;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+mov     ebx, ecx
+push    esi
+mov     esi, [esp+0Ch+arg_4]
+mov     ecx, [ebx]
+cmp     esi, ecx
+jle     short loc_7AE5E5
+mov     [esp+0Ch+arg_4], ecx
+mov     esi, ecx
+
+loc_7AE5E5:                             ; CODE XREF: StringVector__Insert+D↑j
+mov     eax, [ebx+4]
+push    ebp
+cmp     esi, eax
+push    edi
+jl      short loc_7AE666
+cmp     ecx, eax
+jl      short loc_7AE666
+lea     eax, [ecx+ecx]
+cmp     eax, 0Ah
+mov     [esp+14h+var_4], eax
+jge     short loc_7AE60A
+mov     [esp+14h+var_4], 0Ah
+mov     eax, [esp+14h+var_4]
+
+loc_7AE60A:                             ; CODE XREF: StringVector__Insert+2C↑j
+lea     esi, ds:0[eax*4]
+push    esi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, esi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     esi, [ebx+8]
+test    esi, esi
+jz      short loc_7AE64C
+mov     ecx, [ebx]
+mov     edi, ebp
+shl     ecx, 2
+mov     eax, ecx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+
+loc_7AE64C:                             ; CODE XREF: StringVector__Insert+65↑j
+mov     ecx, [ebx+8]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+mov     edx, [esp+18h+var_4]
+mov     esi, [esp+18h+arg_4]
+add     esp, 4
+mov     [ebx+8], ebp
+mov     [ebx+4], edx
+
+loc_7AE666:                             ; CODE XREF: StringVector__Insert+1C↑j
+; StringVector__Insert+20↑j
+mov     eax, [ebx]
+mov     ecx, [ebx+4]
+cmp     eax, ecx
+jl      short loc_7AE6E2
+add     eax, eax
+cmp     eax, 0Ah
+mov     [esp+14h+var_4], eax
+jge     short loc_7AE686
+mov     [esp+14h+var_4], 0Ah
+mov     eax, [esp+14h+var_4]
+
+loc_7AE686:                             ; CODE XREF: StringVector__Insert+A8↑j
+lea     esi, ds:0[eax*4]
+push    esi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, esi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     esi, [ebx+8]
+test    esi, esi
+jz      short loc_7AE6C8
+mov     ecx, [ebx]
+mov     edi, ebp
+shl     ecx, 2
+mov     eax, ecx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+
+loc_7AE6C8:                             ; CODE XREF: StringVector__Insert+E1↑j
+mov     ecx, [ebx+8]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+mov     edx, [esp+18h+var_4]
+mov     esi, [esp+18h+arg_4]
+add     esp, 4
+mov     [ebx+8], ebp
+mov     [ebx+4], edx
+
+loc_7AE6E2:                             ; CODE XREF: StringVector__Insert+9D↑j
+mov     ecx, [ebx]
+pop     edi
+cmp     esi, ecx
+pop     ebp
+jge     short loc_7AE70B
+mov     eax, [ebx+8]
+mov     edx, esi
+shl     edx, 1Eh
+sub     edx, esi
+add     edx, ecx
+lea     ecx, [eax+esi*4]
+shl     edx, 2
+push    edx             ; Size
+lea     edx, [eax+esi*4+4]
+push    ecx             ; Src
+push    edx             ; void *
+call    _memcpy
+add     esp, 0Ch
+
+loc_7AE70B:                             ; CODE XREF: StringVector__Insert+118↑j
+mov     eax, [ebx+8]
+lea     ecx, [eax+esi*4]
+test    ecx, ecx
+jz      short loc_7AE71F
+mov     edx, [esp+0Ch+arg_0]
+push    edx
+call    String__AssignFromPtr
+
+loc_7AE71F:                             ; CODE XREF: StringVector__Insert+143↑j
+mov     eax, [ebx]
+pop     esi
+inc     eax
+mov     [ebx], eax
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    8
+*/
+} }

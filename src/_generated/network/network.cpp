@@ -8,11 +8,55 @@ namespace gamemd {
 
 // 0x00664750 (96 bytes)
 char Debug_Send_664750() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00664750.json)
-    // Size: 96 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_664750 ( unsigned __int8 *this, char a2 ) { int v2 ; // eax _BYTE v4[340] ; // [esp+4h] [ebp-154h] BYREF memset ( v4 , 0 , 338 ) ; v2 = * ( this + 24 ) ; if ( ( _BYTE ) v2 ) { v4 [ 0 ] = 6 ; v4 [ 1 ] = a2 ; Debug::Log ( ) ; LOBYTE ( v2 ) = Network::SendPacket ( ( int ) g_NetworkManager , ( int ) v4 , 338 , 1u ) ; } return v2 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_664750(unsigned __int8 *this, char a2)
+{
+  int v2; // eax
+  _BYTE v4[340]; // [esp+4h] [ebp-154h] BYREF
+
+  memset(v4, 0, 338);
+  v2 = *(this + 24);
+  if ( (_BYTE)v2 )
+  {
+    v4[0] = 6;
+    v4[1] = a2;
+    Debug::Log();
+    LOBYTE(v2) = Network::SendPacket((int)MEMORY[0xA8E9C0], (int)v4, 338, 1u);
+  }
+  return v2;
+}
+
+/* ASM:
+sub     esp, 154h
+mov     edx, ecx
+push    edi
+mov     ecx, 54h ; 'T'
+xor     eax, eax
+lea     edi, [esp+158h+var_153]
+mov     [esp+158h+var_154], 0
+rep stosd
+stosb
+mov     al, [edx+18h]
+pop     edi
+test    al, al
+jz      short loc_6647A7
+mov     al, [esp+154h+arg_0]
+push    offset aSendingTalkPor ; "Sending TALK_PORT_BLITZ to router\n"
+mov     [esp+158h+var_154], 6
+mov     [esp+158h+var_153], al
+call    Debug__Log
+add     esp, 4
+lea     ecx, [esp+154h+var_154]
+push    1
+push    152h
+push    ecx
+mov     ecx, 0A8E9C0h
+call    Network__SendPacket
+
+loc_6647A7:                             ; CODE XREF: sub_664750+22↑j
+add     esp, 154h
+retn    4
+*/
 }
 
 } // namespace gamemd

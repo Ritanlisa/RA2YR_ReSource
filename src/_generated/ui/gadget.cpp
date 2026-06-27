@@ -8,416 +8,6522 @@ namespace gamemd {
 
 // 0x007E01FB (208 bytes)
 void CallObfuscateDataBlock_7E01FB() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007E01FB.json)
-    // Size: 208 bytes, calling convention: cdecl
-    // IDA pseudocode:
-//   void __cdecl sub_7E01FB ( int *a1, char *a2, int a3, unsigned int a4, unsigned int a5 ) { _BYTE *v5 ; // [esp-24h] [ebp-34h] _BYTE *v6 ; // [esp+0h] [ebp-10h] _DWORD *v7 ; // [esp+4h] [ebp-Ch] !unsigned int v8 ! ; // [esp+8h] [ebp-8h] !char *v10 ! ; // [esp+Ch] [ebp-4h] !int *v11 ! ; // [esp+18h] [ebp+8h] int v12 ; // [esp+20h] [ebp+10h] !unsigned int v13 ! ; // [esp+28h] [ebp+18h] v8 = a4 >> 1 ; v13 = a5 >> 1 ; ObfuscateDataBlock ( a1 , dword_877D20 , a4 ) ; v7 = & unk_878720 ; v6 = dword_877D20 ; v11 = ( int * ) ( ( char * ) a1 + a4 ) ; v12 = a3 - 1 ; do { ObfuscateDataBlock ( v11 , v7 , a4 ) ; sub_7E01D2 ( v6 , v7 , byte_879124 , a4 ) ; qmemcpy ( a2 , v6 , 4 * v8 ) ; v10 = & a2 [ v13 ] ; qmemcpy ( v10 , byte_879124 , 4 * v8 ) ; v11 = ( int * ) ( ( char * ) v11 + a4 ) ; a2 = & v10 [ v13 ] ; v5 = v7 ; v7 = v6 ; v6 = v5 ; -- v12 ; } while ( v12 ) ; ObfuscateDataBlock ( v11 , v7 , a4 ) ; qmemcpy ( a2 , v7 , 4 * v8 ) ; }
-    
+// [IDA decompile]
+void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int a5)
+{
+  _BYTE *v5; // [esp-24h] [ebp-34h]
+  _BYTE *v6; // [esp+0h] [ebp-10h]
+  _DWORD *v7; // [esp+4h] [ebp-Ch]
+  unsigned int v8; // [esp+8h] [ebp-8h]
+  char *v10; // [esp+Ch] [ebp-4h]
+  int *v11; // [esp+18h] [ebp+8h]
+  int v12; // [esp+20h] [ebp+10h]
+  unsigned int v13; // [esp+28h] [ebp+18h]
+
+  v8 = a4 >> 1;
+  v13 = a5 >> 1;
+  ObfuscateDataBlock(a1, dword_877D20, a4);
+  v7 = &unk_878720;
+  v6 = dword_877D20;
+  v11 = (int *)((char *)a1 + a4);
+  v12 = a3 - 1;
+  do
+  {
+    ObfuscateDataBlock(v11, v7, a4);
+    sub_7E01D2(v6, v7, byte_879124, a4);
+    qmemcpy(a2, v6, 4 * v8);
+    v10 = &a2[v13];
+    qmemcpy(v10, byte_879124, 4 * v8);
+    v11 = (int *)((char *)v11 + a4);
+    a2 = &v10[v13];
+    v5 = v7;
+    v7 = v6;
+    v6 = v5;
+    --v12;
+  }
+  while ( v12 );
+  ObfuscateDataBlock(v11, v7, a4);
+  qmemcpy(a2, v7, 4 * v8);
+}
+
+/* ASM:
+push    ebp
+mov     ebp, esp
+add     esp, 0FFFFFFF0h
+pusha
+mov     eax, [ebp+arg_4]
+mov     [ebp+var_4], eax
+mov     [ebp+var_C], offset dword_877D20
+mov     [ebp+var_10], offset unk_878720
+mov     ecx, [ebp+arg_C]
+shr     ecx, 1
+mov     [ebp+var_8], ecx
+shr     [ebp+arg_10], 1
+push    [ebp+arg_C]
+push    [ebp+var_C]
+push    [ebp+arg_0]
+call    ObfuscateDataBlock
+add     esp, 0Ch
+mov     esi, [ebp+arg_C]
+push    [ebp+var_C]
+push    [ebp+var_10]
+pop     [ebp+var_C]
+pop     [ebp+var_10]
+add     [ebp+arg_0], esi
+dec     [ebp+arg_8]
+
+loc_7E0247:                             ; CODE XREF: sub_7E01FB+AF↓j
+push    [ebp+arg_C]
+push    [ebp+var_C]
+push    [ebp+arg_0]
+call    ObfuscateDataBlock
+add     esp, 0Ch
+push    [ebp+arg_C]
+push    offset byte_879124
+push    [ebp+var_C]
+push    [ebp+var_10]
+call    sub_7E01D2
+add     esp, 10h
+mov     esi, [ebp+var_10]
+mov     edi, [ebp+var_4]
+mov     ecx, [ebp+var_8]
+rep movsd
+mov     edi, [ebp+var_4]
+mov     esi, offset byte_879124
+add     edi, [ebp+arg_10]
+mov     ecx, [ebp+var_8]
+mov     [ebp+var_4], edi
+rep movsd
+mov     edi, [ebp+var_4]
+mov     esi, [ebp+arg_C]
+add     edi, [ebp+arg_10]
+add     [ebp+arg_0], esi
+mov     [ebp+var_4], edi
+push    [ebp+var_C]
+push    [ebp+var_10]
+pop     [ebp+var_C]
+pop     [ebp+var_10]
+dec     [ebp+arg_8]
+jnz     short loc_7E0247
+push    [ebp+arg_C]
+push    [ebp+var_C]
+push    [ebp+arg_0]
+call    ObfuscateDataBlock
+add     esp, 0Ch
+mov     esi, [ebp+var_C]
+mov     edi, [ebp+var_4]
+mov     ecx, [ebp+var_8]
+rep movsd
+popa
+leave
+retn
+*/
 }
 
 // 0x0046DE20 (423 bytes)
 int CampaignScoreDialogProcHelper_46DE20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0046DE20.json)
-    // Size: 423 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   HWND __fastcall sub_46DE20 ( HWND hDlg, int nCmdShow ) { !HWND DlgItem ! ; // eax !HWND v5 ! ; // eax !HWND v6 ! ; // eax !HWND v7 ! ; // eax !HWND v8 ! ; // eax !HWND v9 ! ; // eax !HWND v10 ! ; // eax !HWND v11 ! ; // eax !HWND v12 ! ; // eax !HWND v13 ! ; // eax !HWND v14 ! ; // eax !HWND v15 ! ; // eax !HWND v16 ! ; // eax !HWND v17 ! ; // eax !HWND v18 ! ; // eax !HWND v19 ! ; // eax !HWND v20 ! ; // eax !HWND v21 ! ; // eax !HWND v22 ! ; // eax !HWND v23 ! ; // eax !HWND v24 ! ; // eax !HWND v25 ! ; // eax !HWND result ! ; // eax !HWND hWnd ! ; // [esp+10h] [ebp-4h] DlgItem = "GetDlgItem " ( hDlg , 1842 ) ; hWnd = DlgItem ; if ( DlgItem ) { "ShowWindow " ( DlgItem , nCmdShow ) ; "InvalidateRect " ( hWnd , 0 , 0 ) ; } v5 = "GetDlgItem " ( hDlg , 1839 ) ; if ( v5 ) "ShowWindow " ( v5 , nCmdShow ) ; v6 = "GetDlgItem " ( hDlg , 1944 ) ; if ( v6 ) "ShowWindow " ( v6 , nCmdShow ) ; v7 = "GetDlgItem " ( hDlg , 1945 ) ; if ( v7 ) "ShowWindow " ( v7 , nCmdShow ) ; v8 = "GetDlgItem " ( hDlg , 1946 ) ; if ( v8 ) "ShowWindow " ( v8 , nCmdShow ) ; v9 = "GetDlgItem " ( hDlg , 1947 ) ; if ( v9 ) "ShowWindow " ( v9 , nCmdShow ) ; v10 = "GetDlgItem " ( hDlg , 1918 ) ; if ( v10 ) "ShowWindow " ( v10 , nCmdShow ) ; v11 = "GetDlgItem " ( hDlg , 1746 ) ; if ( v11 ) "ShowWindow " ( v11 , nCmdShow ) ; v12 = "GetDlgItem " ( hDlg , 1747 ) ; if ( v12 ) "ShowWindow " ( v12 , nCmdShow ) ; v13 = "GetDlgItem " ( hDlg , 1041 ) ; if ( v13 ) "ShowWindow " ( v13 , nCmdShow ) ; v14 = "GetDlgItem " ( hDlg , 1042 ) ; if ( v14 ) "ShowWindow " ( v14 , nCmdShow ) ; v15 = "GetDlgItem " ( hDlg , 1754 ) ; if ( v15 ) "ShowWindow " ( v15 , nCmdShow ) ; v16 = "GetDlgItem " ( hDlg , 1755 ) ; if ( v16 ) "ShowWindow " ( v16 , nCmdShow ) ; v17 = "GetDlgItem " ( hDlg , 1697 ) ; if ( v17 ) "ShowWindow " ( v17 , nCmdShow ) ; v18 = "GetDlgItem " ( hDlg , 1296 ) ; if ( v18 ) "ShowWindow " ( v18 , nCmdShow ) ; v19 = "GetDlgItem " ( hDlg , 1698 ) ; if ( v19 ) "ShowWindow " ( v19 , nCmdShow ) ; v20 = "GetDlgItem " ( hDlg , 1314 ) ; if ( v20 ) "ShowWindow " ( v20 , nCmdShow ) ; v21 = "GetDlgItem " ( hDlg , 1699 ) ; if ( v21 ) "ShowWindow " ( v21 , nCmdShow ) ; v22 = "GetDlgItem " ( hDlg , 1700 ) ; if ( v22 ) "ShowWindow " ( v22 , nCmdShow ) ; v23 = "GetDlgItem " ( hDlg , 1745 ) ; if ( v23 ) "ShowWindow " ( v23 , nCmdShow ) ; v24 = "GetDlgItem " ( hDlg , 1448 ) ; if ( v24 ) "ShowWindow " ( v24 , nCmdShow ) ; v25 = "GetDlgItem " ( hDlg , 1820 ) ; if ( v25 ) "ShowWindow " ( v25 , nCmdShow == 0 ) ; result = "GetDlgItem " ( hDlg , 1128 ) ; if ( result ) return ( HWND ) "ShowWindow " ( result , nCmdShow ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_46DE20(int a1, int a2)
+{
+  int v4; // eax
+  int v5; // eax
+  int v6; // eax
+  int v7; // eax
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  int v12; // eax
+  int v13; // eax
+  int v14; // eax
+  int v15; // eax
+  int v16; // eax
+  int v17; // eax
+  int v18; // eax
+  int v19; // eax
+  int v20; // eax
+  int v21; // eax
+  int v22; // eax
+  int v23; // eax
+  int v24; // eax
+  int v25; // eax
+  int result; // eax
+  int hWnd; // [esp+10h] [ebp-4h]
+
+  v4 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1842);
+  hWnd = v4;
+  if ( v4 )
+  {
+    ((void (__stdcall *)(int, int))ShowWindow)(v4, a2);
+    ((void (__stdcall *)(int, _DWORD, _DWORD))InvalidateRect)(hWnd, 0, 0);
+  }
+  v5 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1839);
+  if ( v5 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v5, a2);
+  v6 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1944);
+  if ( v6 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v6, a2);
+  v7 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1945);
+  if ( v7 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v7, a2);
+  v8 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1946);
+  if ( v8 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v8, a2);
+  v9 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1947);
+  if ( v9 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v9, a2);
+  v10 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1918);
+  if ( v10 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v10, a2);
+  v11 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1746);
+  if ( v11 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v11, a2);
+  v12 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1747);
+  if ( v12 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v12, a2);
+  v13 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1041);
+  if ( v13 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v13, a2);
+  v14 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1042);
+  if ( v14 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v14, a2);
+  v15 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1754);
+  if ( v15 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v15, a2);
+  v16 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1755);
+  if ( v16 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v16, a2);
+  v17 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1697);
+  if ( v17 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v17, a2);
+  v18 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1296);
+  if ( v18 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v18, a2);
+  v19 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1698);
+  if ( v19 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v19, a2);
+  v20 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1314);
+  if ( v20 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v20, a2);
+  v21 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1699);
+  if ( v21 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v21, a2);
+  v22 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1700);
+  if ( v22 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v22, a2);
+  v23 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1745);
+  if ( v23 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v23, a2);
+  v24 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1448);
+  if ( v24 )
+    ((void (__stdcall *)(int, int))ShowWindow)(v24, a2);
+  v25 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1820);
+  if ( v25 )
+    ((void (__stdcall *)(int, bool))ShowWindow)(v25, a2 == 0);
+  result = ((int (__stdcall *)(int, int))GetDlgItem)(a1, 1128);
+  if ( result )
+    return ((int (__stdcall *)(int, int))ShowWindow)(result, a2);
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr -4
+
+push    ecx
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ds:__imp_GetDlgItem
+mov     esi, ecx
+push    732h            ; nIDDlgItem
+mov     ebx, edx
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+mov     ebp, ds:__imp_ShowWindow
+test    eax, eax
+mov     [esp+14h+hWnd], eax
+jz      short loc_46DE58
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+mov     eax, [esp+14h+hWnd]
+push    0               ; bErase
+push    0               ; lpRect
+push    eax             ; hWnd
+call    ds:__imp_InvalidateRect
+
+loc_46DE58:                             ; CODE XREF: sub_46DE20+23↑j
+push    72Fh            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DE68
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DE68:                             ; CODE XREF: sub_46DE20+42↑j
+push    798h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DE78
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DE78:                             ; CODE XREF: sub_46DE20+52↑j
+push    799h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DE88
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DE88:                             ; CODE XREF: sub_46DE20+62↑j
+push    79Ah            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DE98
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DE98:                             ; CODE XREF: sub_46DE20+72↑j
+push    79Bh            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DEA8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DEA8:                             ; CODE XREF: sub_46DE20+82↑j
+push    77Eh            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DEB8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DEB8:                             ; CODE XREF: sub_46DE20+92↑j
+push    6D2h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DEC8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DEC8:                             ; CODE XREF: sub_46DE20+A2↑j
+push    6D3h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DED8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DED8:                             ; CODE XREF: sub_46DE20+B2↑j
+push    411h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DEE8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DEE8:                             ; CODE XREF: sub_46DE20+C2↑j
+push    412h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DEF8
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DEF8:                             ; CODE XREF: sub_46DE20+D2↑j
+push    6DAh            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF08
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF08:                             ; CODE XREF: sub_46DE20+E2↑j
+push    6DBh            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF18
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF18:                             ; CODE XREF: sub_46DE20+F2↑j
+push    6A1h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF28
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF28:                             ; CODE XREF: sub_46DE20+102↑j
+push    510h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF38
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF38:                             ; CODE XREF: sub_46DE20+112↑j
+push    6A2h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF48
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF48:                             ; CODE XREF: sub_46DE20+122↑j
+push    522h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF58
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF58:                             ; CODE XREF: sub_46DE20+132↑j
+push    6A3h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF68
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF68:                             ; CODE XREF: sub_46DE20+142↑j
+push    6A4h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF78
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF78:                             ; CODE XREF: sub_46DE20+152↑j
+push    6D1h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF88
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF88:                             ; CODE XREF: sub_46DE20+162↑j
+push    5A8h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DF98
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DF98:                             ; CODE XREF: sub_46DE20+172↑j
+push    71Ch            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DFB1
+test    ebx, ebx
+jnz     short loc_46DFAC
+push    1
+jmp     short loc_46DFAE
+; ---------------------------------------------------------------------------
+
+loc_46DFAC:                             ; CODE XREF: sub_46DE20+186↑j
+push    0               ; nCmdShow
+
+loc_46DFAE:                             ; CODE XREF: sub_46DE20+18A↑j
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DFB1:                             ; CODE XREF: sub_46DE20+182↑j
+push    468h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_46DFC1
+push    ebx             ; nCmdShow
+push    eax             ; hWnd
+call    ebp ; __imp_ShowWindow
+
+loc_46DFC1:                             ; CODE XREF: sub_46DE20+19B↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x004AA380 (185 bytes)
 int CreateTeamCommand_Metho_4AA380() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004AA380.json)
-    // Size: 185 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _BYTE *__stdcall sub_4AA380 ( _BYTE *a1 ) { _DWORD *v1 ; // ebx !int v2 ! ; // ebp _BYTE *v3 ; // esi _BYTE *v4 ; // edi _BYTE v6[5] ; // [esp+3h] [ebp-5h] v6 [ 4 ] = 0 ; * ( _DWORD * ) v6 = a1 == 0 ; v1 = & dword_82003C ; while ( 1 ) { v2 = dword_8A0370 [ 6 * * v1 ] - 1 ; if ( v2 >= 0 ) break ; LABEL_12 : if ( ( int ) ++ v1 >= ( int ) & DisplayClass::TacticalClass RTTI Type Descriptor' ) return * ( _BYTE ** ) & v6 [ 1 ] ; } while ( 1 ) { v3 = * ( _BYTE ** ) ( dword_8A0364 [ 6 * * v1 ] + 4 * v2 ) ; if ( ! v3 ) goto LABEL_11 ; v4 = ( v3 [ 20 ] & 1 ) != 0 ? v3 : 0 ; if ( ! ( * ( unsigned __int8 (__thiscall **)(_BYTE *) ) ( * ( _DWORD * ) v3 + 100 ) ) ( v3 ) || ! v4 || ! ( * ( unsigned __int8 (__thiscall **)(_BYTE *) ) ( * ( _DWORD * ) v4 + 316 ) ) ( v4 ) ) { goto LABEL_11 ; } if ( ! * ( _DWORD * ) & v6 [ 1 ] ) * ( _DWORD * ) & v6 [ 1 ] = v3 ; if ( v6 [ 0 ] ) return v3 ; v6 [ 0 ] = a1 == v3 ; LABEL_11 : if ( -- v2 < 0 ) goto LABEL_12 ; } }
-    return 0;
+// [IDA decompile]
+_BYTE *__stdcall sub_4AA380(_BYTE *a1)
+{
+  _DWORD *v1; // ebx
+  int v2; // ebp
+  _BYTE *v3; // esi
+  _BYTE *v4; // edi
+  _BYTE v6[5]; // [esp+3h] [ebp-5h]
+
+  v6[4] = 0;
+  *(_DWORD *)v6 = a1 == 0;
+  v1 = &dword_82003C;
+  while ( 1 )
+  {
+    v2 = MEMORY[0x8A0370][6 * *v1] - 1;
+    if ( v2 >= 0 )
+      break;
+LABEL_12:
+    if ( (int)++v1 >= (int)&DisplayClass::TacticalClass `RTTI Type Descriptor' )
+      return *(_BYTE **)&v6[1];
+  }
+  while ( 1 )
+  {
+    v3 = *(_BYTE **)(MEMORY[0x8A0364][6 * *v1] + 4 * v2);
+    if ( !v3 )
+      goto LABEL_11;
+    v4 = (v3[20] & 1) != 0 ? v3 : 0;
+    if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 100))(v3)
+      || !v4
+      || !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 316))(v4) )
+    {
+      goto LABEL_11;
+    }
+    if ( !*(_DWORD *)&v6[1] )
+      *(_DWORD *)&v6[1] = v3;
+    if ( v6[0] )
+      return v3;
+    v6[0] = a1 == v3;
+LABEL_11:
+    if ( --v2 < 0 )
+      goto LABEL_12;
+  }
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [esp+8+arg_0]
+mov     [esp+8+var_4], 0
+test    eax, eax
+mov     [esp+8+var_5], 0
+jnz     short loc_4AA39D
+mov     [esp+8+var_5], 1
+
+loc_4AA39D:                             ; CODE XREF: sub_4AA380+16↑j
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, offset dword_82003C
+
+loc_4AA3A6:                             ; CODE XREF: sub_4AA380+9D↓j
+mov     eax, [ebx]
+lea     eax, [eax+eax*2]
+mov     ebp, ds:8A0370h[eax*8]
+dec     ebp
+js      short loc_4AA414
+
+loc_4AA3B5:                             ; CODE XREF: sub_4AA380+92↓j
+mov     eax, [ebx]
+lea     ecx, [eax+eax*2]
+mov     edx, ds:8A0364h[ecx*8]
+mov     esi, [edx+ebp*4]
+test    esi, esi
+jz      short loc_4AA411
+mov     al, [esi+14h]
+mov     edx, [esi]
+and     al, 1
+mov     ecx, esi
+neg     al
+sbb     eax, eax
+and     eax, esi
+mov     edi, eax
+call    dword ptr [edx+64h]
+test    al, al
+jz      short loc_4AA411
+test    edi, edi
+jz      short loc_4AA411
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+13Ch]
+test    al, al
+jz      short loc_4AA411
+mov     eax, [esp+18h+var_4]
+test    eax, eax
+jnz     short loc_4AA3FE
+mov     [esp+18h+var_4], esi
+
+loc_4AA3FE:                             ; CODE XREF: sub_4AA380+78↑j
+mov     al, [esp+18h+var_5]
+test    al, al
+jnz     short loc_4AA42D
+cmp     [esp+18h+arg_0], esi
+jnz     short loc_4AA411
+mov     [esp+18h+var_5], 1
+
+loc_4AA411:                             ; CODE XREF: sub_4AA380+46↑j
+; sub_4AA380+5E↑j ...
+dec     ebp
+jns     short loc_4AA3B5
+
+loc_4AA414:                             ; CODE XREF: sub_4AA380+33↑j
+add     ebx, 4
+cmp     ebx, offset ??_R0?AVTacticalClass@DisplayClass@@@8 ; DisplayClass::TacticalClass `RTTI Type Descriptor'
+jl      short loc_4AA3A6
+mov     eax, [esp+18h+var_4]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4AA42D:                             ; CODE XREF: sub_4AA380+84↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+*/
 }
 
 // 0x004AA2B0 (203 bytes)
 int CreateTeamCommand_Method_4AA2B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004AA2B0.json)
-    // Size: 203 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _BYTE *__stdcall sub_4AA2B0 ( _BYTE *a1 ) { _DWORD *v1 ; // ebx !int v2 ! ; // ebp !int v3 ! ; // eax !int v4 ! ; // eax _BYTE *v5 ; // esi _BYTE *v6 ; // edi _BYTE v8[5] ; // [esp+3h] [ebp-5h] v8 [ 4 ] = 0 ; * ( _DWORD * ) v8 = a1 == 0 ; v1 = & unk_820030 ; while ( 1 ) { v2 = 0 ; v3 = 6 * * v1 ; if ( dword_8A0370 [ v3 ] > 0 ) break ; LABEL_12 : if ( ( int ) ++ v1 >= ( int ) dword_82003C ) return * ( _BYTE ** ) & v8 [ 1 ] ; } while ( 1 ) { v4 = dword_8A0364 [ v3 ] ; v5 = * ( _BYTE ** ) ( v4 + 4 * v2 ) ; if ( ! v5 ) goto LABEL_11 ; v6 = ( v5 [ 20 ] & 1 ) != 0 ? v5 : 0 ; if ( ! ( * ( unsigned __int8 (__thiscall **)(_DWORD) ) ( * ( _DWORD * ) v5 + 100 ) ) ( * ( _DWORD * ) ( v4 + 4 * v2 ) ) || ! v6 || ! ( * ( unsigned __int8 (__thiscall **)(_BYTE *) ) ( * ( _DWORD * ) v6 + 316 ) ) ( v6 ) ) { goto LABEL_11 ; } if ( ! * ( _DWORD * ) & v8 [ 1 ] ) * ( _DWORD * ) & v8 [ 1 ] = v5 ; if ( v8 [ 0 ] ) return v5 ; v8 [ 0 ] = a1 == v5 ; LABEL_11 : ++ v2 ; v3 = 6 * * v1 ; if ( v2 >= dword_8A0370 [ v3 ] ) goto LABEL_12 ; } }
-    return 0;
+// [IDA decompile]
+_BYTE *__stdcall sub_4AA2B0(_BYTE *a1)
+{
+  _DWORD *v1; // ebx
+  int v2; // ebp
+  int v3; // eax
+  int v4; // eax
+  _BYTE *v5; // esi
+  _BYTE *v6; // edi
+  _BYTE v8[5]; // [esp+3h] [ebp-5h]
+
+  v8[4] = 0;
+  *(_DWORD *)v8 = a1 == 0;
+  v1 = &unk_820030;
+  while ( 1 )
+  {
+    v2 = 0;
+    v3 = 6 * *v1;
+    if ( MEMORY[0x8A0370][v3] > 0 )
+      break;
+LABEL_12:
+    if ( (int)++v1 >= (int)dword_82003C )
+      return *(_BYTE **)&v8[1];
+  }
+  while ( 1 )
+  {
+    v4 = MEMORY[0x8A0364][v3];
+    v5 = *(_BYTE **)(v4 + 4 * v2);
+    if ( !v5 )
+      goto LABEL_11;
+    v6 = (v5[20] & 1) != 0 ? v5 : 0;
+    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 100))(*(_DWORD *)(v4 + 4 * v2))
+      || !v6
+      || !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 316))(v6) )
+    {
+      goto LABEL_11;
+    }
+    if ( !*(_DWORD *)&v8[1] )
+      *(_DWORD *)&v8[1] = v5;
+    if ( v8[0] )
+      return v5;
+    v8[0] = a1 == v5;
+LABEL_11:
+    ++v2;
+    v3 = 6 * *v1;
+    if ( v2 >= MEMORY[0x8A0370][v3] )
+      goto LABEL_12;
+  }
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [esp+8+arg_0]
+mov     [esp+8+var_4], 0
+test    eax, eax
+mov     [esp+8+var_5], 0
+jnz     short loc_4AA2CD
+mov     [esp+8+var_5], 1
+
+loc_4AA2CD:                             ; CODE XREF: sub_4AA2B0+16↑j
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, offset unk_820030
+
+loc_4AA2D6:                             ; CODE XREF: sub_4AA2B0+AB↓j
+mov     eax, [ebx]
+xor     ebp, ebp
+lea     eax, [eax+eax*2]
+shl     eax, 3
+mov     ecx, [eax+8A0370h]
+test    ecx, ecx
+jle     short loc_4AA352
+
+loc_4AA2EA:                             ; CODE XREF: sub_4AA2B0+A0↓j
+mov     eax, [eax+8A0364h]
+mov     esi, [eax+ebp*4]
+test    esi, esi
+jz      short loc_4AA341
+mov     cl, [esi+14h]
+mov     edx, [esi]
+and     cl, 1
+neg     cl
+sbb     ecx, ecx
+and     ecx, esi
+mov     edi, ecx
+mov     ecx, esi
+call    dword ptr [edx+64h]
+test    al, al
+jz      short loc_4AA341
+test    edi, edi
+jz      short loc_4AA341
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+13Ch]
+test    al, al
+jz      short loc_4AA341
+mov     eax, [esp+18h+var_4]
+test    eax, eax
+jnz     short loc_4AA32E
+mov     [esp+18h+var_4], esi
+
+loc_4AA32E:                             ; CODE XREF: sub_4AA2B0+78↑j
+mov     al, [esp+18h+var_5]
+test    al, al
+jnz     short loc_4AA36F
+cmp     [esp+18h+arg_0], esi
+jnz     short loc_4AA341
+mov     [esp+18h+var_5], 1
+
+loc_4AA341:                             ; CODE XREF: sub_4AA2B0+45↑j
+; sub_4AA2B0+5E↑j ...
+mov     eax, [ebx]
+inc     ebp
+lea     eax, [eax+eax*2]
+shl     eax, 3
+cmp     ebp, [eax+8A0370h]
+jl      short loc_4AA2EA
+
+loc_4AA352:                             ; CODE XREF: sub_4AA2B0+38↑j
+add     ebx, 4
+cmp     ebx, offset dword_82003C
+jl      loc_4AA2D6
+mov     eax, [esp+18h+var_4]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4AA36F:                             ; CODE XREF: sub_4AA2B0+84↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn    4
+*/
 }
 
 // 0x0052D790 (184 bytes)
 int DialogProcess_52D790() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0052D790.json)
-    // Size: 184 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_52D790 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax _DWORD *WindowLongA ; // eax !HWND DlgItem ! ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( result ) return result ; WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) ; if ( a2 == 15 ) { DlgItem = "GetDlgItem " ( hWnd , 1818 ) ; "SendMessageA " ( DlgItem , 0x4F0u , 0 , 0 ) ; return 0 ; } if ( a2 != 273 ) return 0 ; switch ( ( __int16 ) a3 ) { case 1670 : * WindowLongA = 18 ; result = 0 ; break ; case 1677 : * WindowLongA = 13 ; result = 0 ; break ; case 1678 : * WindowLongA = 14 ; result = 0 ; break ; case 1679 : * WindowLongA = 15 ; result = 0 ; break ; default : return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_52D790(int hWnd, int a2, int a3, int a4)
+{
+  int result; // eax
+  _DWORD *v5; // eax
+  int v6; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( result )
+    return result;
+  v5 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+  if ( a2 == 15 )
+  {
+    v6 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1818);
+    ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v6, 1264, 0, 0);
     return 0;
+  }
+  if ( a2 != 273 )
+    return 0;
+  switch ( (__int16)a3 )
+  {
+    case 1670:
+      *v5 = 18;
+      result = 0;
+      break;
+    case 1677:
+      *v5 = 13;
+      result = 0;
+      break;
+    case 1678:
+      *v5 = 14;
+      result = 0;
+      break;
+    case 1679:
+      *v5 = 15;
+      result = 0;
+      break;
+    default:
+      return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+arg_8]
+push    esi
+mov     esi, [esp+8+hWnd]
+push    edi
+mov     edi, [esp+0Ch+arg_4]
+push    eax             ; int
+push    ebx             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_52D842
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+cmp     edi, 0Fh
+jz      short loc_52D824
+cmp     edi, 111h
+jnz     short def_52D7E5 ; jumptable 0052D7E5 default case, cases 1671-1676
+and     ebx, 0FFFFh
+lea     ecx, [ebx-686h] ; switch 10 cases
+cmp     ecx, 9
+ja      short def_52D7E5 ; jumptable 0052D7E5 default case, cases 1671-1676
+xor     edx, edx
+mov     dl, ds:byte_52D85C[ecx]
+jmp     ds:jpt_52D7E5[edx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_52D7EC:                             ; CODE XREF: sub_52D790+55↑j
+; DATA XREF: .text:jpt_52D7E5↓o
+pop     edi             ; jumptable 0052D7E5 case 1677
+mov     dword ptr [eax], 0Dh
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_52D7FA:                             ; CODE XREF: sub_52D790+55↑j
+; DATA XREF: .text:jpt_52D7E5↓o
+pop     edi             ; jumptable 0052D7E5 case 1678
+mov     dword ptr [eax], 0Eh
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_52D808:                             ; CODE XREF: sub_52D790+55↑j
+; DATA XREF: .text:jpt_52D7E5↓o
+pop     edi             ; jumptable 0052D7E5 case 1679
+mov     dword ptr [eax], 0Fh
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_52D816:                             ; CODE XREF: sub_52D790+55↑j
+; DATA XREF: .text:jpt_52D7E5↓o
+pop     edi             ; jumptable 0052D7E5 case 1670
+mov     dword ptr [eax], 12h
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_52D824:                             ; CODE XREF: sub_52D790+32↑j
+push    71Ah            ; nIDDlgItem
+push    esi             ; hDlg
+call    ds:__imp_GetDlgItem
+push    0               ; lParam
+push    0               ; wParam
+push    4F0h            ; Msg
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+
+def_52D7E5:                             ; CODE XREF: sub_52D790+3A↑j
+; sub_52D790+4B↑j ...
+xor     eax, eax        ; jumptable 0052D7E5 default case, cases 1671-1676
+
+loc_52D842:                             ; CODE XREF: sub_52D790+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x005C6080 (67 bytes)
 int DialogProcess_5C6080() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005C6080.json)
-    // Size: 67 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_5C6080 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { if ( a2 == 273 ) * ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) = ( unsigned __int16 ) a3 ; return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_5C6080(int hWnd, int a2, int a3, int a4)
+{
+  int result; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 == 273 )
+      *(_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8) = (unsigned __int16)a3;
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    esi
+mov     esi, [esp+8+arg_8]
+push    edi
+mov     edi, [esp+0Ch+hWnd]
+push    eax             ; int
+push    esi             ; int
+mov     edx, ebx
+mov     ecx, edi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     short loc_5C60BD
+cmp     ebx, 111h
+jnz     short loc_5C60BB
+push    8               ; nIndex
+push    edi             ; hWnd
+and     esi, 0FFFFh
+call    ds:__imp_GetWindowLongA
+mov     [eax], esi
+
+loc_5C60BB:                             ; CODE XREF: sub_5C6080+28↑j
+xor     eax, eax
+
+loc_5C60BD:                             ; CODE XREF: sub_5C6080+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x005D36A0 (179 bytes)
 int DialogProcess_5D36A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005D36A0.json)
-    // Size: 179 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_5D36A0 ( HWND hWnd, unsigned int a2, unsigned int a3, int *a4 ) { int result ; // eax !unsigned int v5 ! ; // esi _DWORD *WindowLongA ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , ( unsigned int ) a4 ) ; if ( ! result ) { if ( a2 == 273 ) { v5 = HIWORD ( a3 ) ; WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) ; if ( ( unsigned __int16 ) a3 > 0x5AEu ) { if ( ( unsigned __int16 ) a3 == 1455 && ! v5 ) * WindowLongA = 2 ; } else if ( ( unsigned __int16 ) a3 == 1454 ) { if ( ! v5 ) { * WindowLongA = 0 ; return 0 ; } } else if ( ( _WORD ) a3 && ( unsigned __int16 ) a3 <= 2u && ! v5 ) { * WindowLongA = 1 ; return 0 ; } } else if ( a2 == 534 ) { return ( unsigned __int8 ) Window::ClampToScreen ( a4 ) ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_5D36A0(int hWnd, int a2, unsigned int a3, int *a4)
+{
+  int result; // eax
+  unsigned int v5; // esi
+  _DWORD *v6; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 == 273 )
+    {
+      v5 = HIWORD(a3);
+      v6 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+      if ( (unsigned __int16)a3 > 0x5AEu )
+      {
+        if ( (unsigned __int16)a3 == 1455 && !v5 )
+          *v6 = 2;
+      }
+      else if ( (unsigned __int16)a3 == 1454 )
+      {
+        if ( !v5 )
+        {
+          *v6 = 0;
+          return 0;
+        }
+      }
+      else if ( (_WORD)a3 && (unsigned __int16)a3 <= 2u && !v5 )
+      {
+        *v6 = 1;
+        return 0;
+      }
+    }
+    else if ( a2 == 534 )
+    {
+      return (unsigned __int8)Window::ClampToScreen(a4);
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+hWnd]
+push    ebp
+mov     ebp, [esp+8+arg_4]
+push    esi
+mov     esi, [esp+0Ch+arg_C]
+push    edi
+mov     edi, [esp+10h+arg_8]
+push    esi             ; int
+push    edi             ; int
+mov     edx, ebp
+mov     ecx, ebx        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_5D374C
+cmp     ebp, 111h
+jz      short loc_5D36ED
+cmp     ebp, 216h
+jnz     short loc_5D374A
+push    esi
+mov     edx, edi
+mov     ecx, ebx
+call    Window__ClampToScreen
+pop     edi
+pop     esi
+pop     ebp
+and     eax, 0FFh
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5D36ED:                             ; CODE XREF: sub_5D36A0+2D↑j
+mov     esi, edi
+push    8               ; nIndex
+push    ebx             ; hWnd
+shr     esi, 10h
+call    ds:__imp_GetWindowLongA
+mov     ecx, edi
+and     ecx, 0FFFFh
+cmp     ecx, 5AEh
+jg      short loc_5D3738
+jz      short loc_5D3729
+test    ecx, ecx
+jle     short loc_5D374A
+cmp     ecx, 2
+jg      short loc_5D374A
+test    esi, esi
+jnz     short loc_5D374A
+pop     edi
+pop     esi
+mov     dword ptr [eax], 1
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5D3729:                             ; CODE XREF: sub_5D36A0+6B↑j
+test    esi, esi
+jnz     short loc_5D374A
+mov     [eax], esi
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5D3738:                             ; CODE XREF: sub_5D36A0+69↑j
+cmp     ecx, 5AFh
+jnz     short loc_5D374A
+test    esi, esi
+jnz     short loc_5D374A
+mov     dword ptr [eax], 2
+
+loc_5D374A:                             ; CODE XREF: sub_5D36A0+35↑j
+; sub_5D36A0+6F↑j ...
+xor     eax, eax
+
+loc_5D374C:                             ; CODE XREF: sub_5D36A0+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00612A60 (264 bytes)
 int DialogProcess_612A60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00612A60.json)
-    // Size: 264 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   HGDIOBJ __stdcall sub_612A60 ( HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam ) { !LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM) ! ; // esi int v5 ; // eax !HWND v6 ! ; // ecx !LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM) ! ; // eax int v8 ; // eax !HWND v9 ! ; // ecx !HDC v10 ! ; // esi !struct tagRECT v12 ! ; // [esp+4h] [ebp-20h] BYREF !struct tagRECT Rect ! ; // [esp+14h] [ebp-10h] BYREF v4 = 0 ; if ( g_DialogHashMap_Grow && ( v5 = * ( ( _DWORD * ) g_DialogHashMap_Entries + ( g_DialogHashMap_Callback ( & hWnd ) & ( ( 1 << g_DialogHashMap_Insert ) - 1 ) ) ) ) != 0 ) { v6 = hWnd ; while ( * ( HWND * ) v5 != hWnd ) { v5 = * ( _DWORD * ) ( v5 + 8 ) ; if ( ! v5 ) goto LABEL_10 ; } v7 = ( LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM) ) ( v5 + 4 ) ; if ( v7 ) v4 = * v7 ; } else { v6 = hWnd ; } LABEL_10 : ScreenDialogToClient ( v6 , & v12 ) ; "GetClientRect " ( hWnd , & Rect ) ; if ( g_DialogHashMap_Count && ( v8 = * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & hWnd ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ) != 0 ) { v9 = hWnd ; do { if ( * ( HWND * ) v8 == hWnd ) break ; v8 = * ( _DWORD * ) ( v8 + 516 ) ; } while ( v8 ) ; } else { v9 = hWnd ; } if ( Msg != 307 ) return ( HGDIOBJ ) "CallWindowProcA " ( v4 , v9 , Msg , ( WPARAM ) hdc , lParam ) ; v10 = hdc ; "SetTextColor " ( hdc , yTop ) ; "SetBkMode " ( v10 , 1 ) ; return "GetStockObject " ( 5 ) ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_612A60(int hWnd, int Msg, int hdc, int lParam)
+{
+  int v4; // esi
+  _DWORD *v5; // eax
+  int v6; // ecx
+  int *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // ecx
+  int v10; // esi
+  __int128 v12; // [esp+4h] [ebp-20h] BYREF
+  __int128 Rect; // [esp+14h] [ebp-10h] BYREF
+
+  v4 = 0;
+  if ( dword_A8ED54[52094]
+    && (v5 = *(_DWORD **)(dword_A8ED54[52093]
+                        + 4
+                        * (((int (__thiscall *)(int *))dword_A8ED54[52099])(&hWnd)
+                         & ((1 << SLOBYTE(dword_A8ED54[52096])) - 1)))) != 0 )
+  {
+    v6 = hWnd;
+    while ( *v5 != hWnd )
+    {
+      v5 = (_DWORD *)v5[2];
+      if ( !v5 )
+        goto LABEL_10;
+    }
+    v7 = v5 + 1;
+    if ( v7 )
+      v4 = *v7;
+  }
+  else
+  {
+    v6 = hWnd;
+  }
+LABEL_10:
+  ScreenDialogToClient(v6, &v12);
+  ((void (__stdcall *)(int, __int128 *))GetClientRect)(hWnd, &Rect);
+  if ( dword_A8ED54[52076]
+    && (v8 = *(_DWORD **)(dword_A8ED54[52075]
+                        + 4
+                        * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&hWnd)
+                         & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)))) != 0 )
+  {
+    v9 = hWnd;
+    do
+    {
+      if ( *v8 == hWnd )
+        break;
+      v8 = (_DWORD *)v8[129];
+    }
+    while ( v8 );
+  }
+  else
+  {
+    v9 = hWnd;
+  }
+  if ( Msg != 307 )
+    return ((int (__stdcall *)(int, int, int, int, int))CallWindowProcA)(v4, v9, Msg, hdc, lParam);
+  v10 = hdc;
+  ((void (__stdcall *)(int, int))SetTextColor)(hdc, dword_A8ED54[51924]);
+  ((void (__stdcall *)(int, int))SetBkMode)(v10, 1);
+  return ((int (__stdcall *)(int))GetStockObject)(5);
+}
+
+/* ASM:
+Rect            = xmmword ptr -10h
+hWnd            = dword ptr  4
+Msg             = dword ptr  8
+hdc             = dword ptr  0Ch
+lParam          = dword ptr  10h
+
+mov     eax, dword_A8ED54+32DF8h
+sub     esp, 20h
+push    esi
+xor     esi, esi
+test    eax, eax
+jz      short loc_612AB5
+lea     ecx, [esp+24h+hWnd]
+call    dword_A8ED54+32E0Ch
+mov     ecx, dword_A8ED54+32E00h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DF4h
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_612AB5
+mov     ecx, [esp+24h+hWnd]
+
+loc_612A99:                             ; CODE XREF: sub_612A60+42↓j
+cmp     [eax], ecx
+jz      short loc_612AA6
+mov     eax, [eax+8]
+test    eax, eax
+jnz     short loc_612A99
+jmp     short loc_612AB9
+; ---------------------------------------------------------------------------
+
+loc_612AA6:                             ; CODE XREF: sub_612A60+3B↑j
+test    eax, eax
+jz      short loc_612AB9
+add     eax, 4
+test    eax, eax
+jz      short loc_612AB9
+mov     esi, [eax]
+jmp     short loc_612AB9
+; ---------------------------------------------------------------------------
+
+loc_612AB5:                             ; CODE XREF: sub_612A60+D↑j
+; sub_612A60+33↑j
+mov     ecx, [esp+24h+hWnd] ; hWnd
+
+loc_612AB9:                             ; CODE XREF: sub_612A60+44↑j
+; sub_612A60+48↑j ...
+lea     edx, [esp+24h+var_20] ; lpRect
+call    ScreenDialogToClient
+mov     edx, [esp+24h+hWnd]
+lea     ecx, [esp+24h+Rect]
+push    ecx             ; lpRect
+push    edx             ; hWnd
+call    ds:__imp_GetClientRect
+mov     eax, dword_A8ED54+32DB0h
+test    eax, eax
+jz      short loc_612B15
+lea     ecx, [esp+24h+hWnd]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_612B15
+mov     ecx, [esp+24h+hWnd]
+
+loc_612B05:                             ; CODE XREF: sub_612A60+B1↓j
+cmp     [eax], ecx
+jz      short loc_612B19
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_612B05
+jmp     short loc_612B19
+; ---------------------------------------------------------------------------
+
+loc_612B15:                             ; CODE XREF: sub_612A60+79↑j
+; sub_612A60+9F↑j
+mov     ecx, [esp+24h+hWnd]
+
+loc_612B19:                             ; CODE XREF: sub_612A60+A7↑j
+; sub_612A60+B3↑j
+mov     eax, [esp+24h+Msg]
+cmp     eax, 133h
+jnz     short loc_612B4E
+mov     ecx, dword_A8ED54+32B50h
+mov     esi, [esp+24h+hdc]
+push    ecx             ; color
+push    esi             ; hdc
+call    ds:__imp_SetTextColor
+push    1               ; mode
+push    esi             ; hdc
+call    ds:__imp_SetBkMode
+push    5               ; i
+call    ds:__imp_GetStockObject
+pop     esi
+add     esp, 20h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_612B4E:                             ; CODE XREF: sub_612A60+C2↑j
+mov     edx, [esp+24h+lParam]
+push    edx             ; lParam
+mov     edx, [esp+28h+hdc]
+push    edx             ; wParam
+push    eax             ; Msg
+push    ecx             ; hWnd
+push    esi             ; lpPrevWndFunc
+call    ds:__imp_CallWindowProcA
+pop     esi
+add     esp, 20h
+retn    10h
+*/
 }
 
 // 0x00623DA0 (83 bytes)
 int DialogProcess_623DA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00623DA0.json)
-    // Size: 83 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_623DA0 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax _DWORD *WindowLongA ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) ; if ( a2 == 273 && ( unsigned __int16 ) a3 >= 0x5C0u && ( unsigned __int16 ) a3 <= 0x5C1u ) * WindowLongA = ( unsigned __int16 ) a3 ; return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_623DA0(void *hWnd, unsigned int a2, int a3, int a4)
+{
+  int result; // eax
+  _DWORD *v5; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    v5 = (_DWORD *)((int (__stdcall *)(void *, int))GetWindowLongA)(hWnd, 8);
+    if ( a2 == 273 && (unsigned __int16)a3 >= 0x5C0u && (unsigned __int16)a3 <= 0x5C1u )
+      *v5 = (unsigned __int16)a3;
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+hWnd]
+push    esi
+mov     esi, [esp+8+arg_8]
+push    edi
+mov     edi, [esp+0Ch+arg_4]
+push    eax             ; int
+push    esi             ; int
+mov     edx, edi
+mov     ecx, ebx        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     short loc_623DED
+push    8               ; nIndex
+push    ebx             ; hWnd
+call    ds:__imp_GetWindowLongA
+cmp     edi, 111h
+jnz     short loc_623DEB
+and     esi, 0FFFFh
+cmp     esi, 5C0h
+jl      short loc_623DEB
+cmp     esi, 5C1h
+jg      short loc_623DEB
+mov     [eax], esi
+
+loc_623DEB:                             ; CODE XREF: sub_623DA0+31↑j
+; sub_623DA0+3F↑j ...
+xor     eax, eax
+
+loc_623DED:                             ; CODE XREF: sub_623DA0+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x0065F710 (136 bytes)
 int DialogProcess_65F710() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0065F710.json)
-    // Size: 136 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_65F710 ( HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd ) { int result ; // eax !HWND DlgItem ! ; // eax result = BaseDialogProc ( hDlg , a2 , a3 , ( unsigned int ) hWnd ) ; if ( ! result ) { if ( a2 == 273 ) { if ( "GetDlgCtrlID " ( hWnd ) == 1059 && ! HIWORD ( a3 ) ) * ( _DWORD * ) "GetWindowLongA " ( hDlg , 8 ) = 1059 ; } else if ( a2 == 1175 ) { DlgItem = "GetDlgItem " ( hDlg , 1767 ) ; "SendMessageA " ( DlgItem , 0x4B2u , 0 , dword_B04CA0 ) ; return 0 ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_65F710(void *hDlg, unsigned int a2, unsigned int a3, int hWnd)
+{
+  int result; // eax
+  int v5; // eax
+
+  result = BaseDialogProc(hDlg, a2, a3, hWnd);
+  if ( !result )
+  {
+    if ( a2 == 273 )
+    {
+      if ( ((int (__stdcall *)(int))GetDlgCtrlID)(hWnd) == 1059 && !HIWORD(a3) )
+        *(_DWORD *)((int (__stdcall *)(void *, int))GetWindowLongA)(hDlg, 8) = 1059;
+    }
+    else if ( a2 == 1175 )
+    {
+      v5 = ((int (__stdcall *)(void *, int))GetDlgItem)(hDlg, 1767);
+      ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v5, 1202, 0, dword_A8ED54[120787]);
+      return 0;
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hDlg            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+hWnd            = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+hWnd]
+push    ebp
+mov     ebp, [esp+8+arg_8]
+push    esi
+mov     esi, [esp+0Ch+hDlg]
+push    edi
+mov     edi, [esp+10h+arg_4]
+push    ebx             ; int
+push    ebp             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     short loc_65F791
+cmp     edi, 111h
+jz      short loc_65F76D
+cmp     edi, 497h
+jnz     short loc_65F78F
+push    6E7h            ; nIDDlgItem
+push    esi             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     ecx, dword_A8ED54+75F4Ch
+push    ecx             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_65F76D:                             ; CODE XREF: sub_65F710+29↑j
+push    ebx             ; hWnd
+call    ds:__imp_GetDlgCtrlID
+cmp     eax, 423h
+jnz     short loc_65F78F
+shr     ebp, 10h
+jnz     short loc_65F78F
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+mov     dword ptr [eax], 423h
+
+loc_65F78F:                             ; CODE XREF: sub_65F710+31↑j
+; sub_65F710+69↑j ...
+xor     eax, eax
+
+loc_65F791:                             ; CODE XREF: sub_65F710+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00773E30 (81 bytes)
 int DialogProcess_773E30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00773E30.json)
-    // Size: 81 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_773E30 ( HWND hWndParent, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax !LPARAM lParam[2] ! ; // [esp+8h] [ebp-8h] BYREF result = BaseDialogProc ( hWndParent , a2 , a3 , a4 ) ; if ( ! result ) { if ( a2 == 272 ) { lParam [ 0 ] = 800 ; lParam [ 1 ] = 600 ; ResizeDialogAndEnum ( hWndParent , ( LPARAM ) lParam ) ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_773E30(void *hWndParent, unsigned int a2, int a3, int a4)
+{
+  int result; // eax
+  _DWORD lParam[2]; // [esp+8h] [ebp-8h] BYREF
+
+  result = BaseDialogProc(hWndParent, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 == 272 )
+    {
+      lParam[0] = 800;
+      lParam[1] = 600;
+      ResizeDialogAndEnum((int)hWndParent, (int)lParam);
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+lParam          = dword ptr -8
+var_4           = dword ptr -4
+hWndParent      = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+mov     ecx, [esp+arg_8]
+sub     esp, 8
+push    esi
+mov     esi, [esp+0Ch+arg_4]
+push    edi
+mov     edi, [esp+10h+hWndParent]
+push    eax             ; int
+push    ecx             ; int
+mov     edx, esi
+mov     ecx, edi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     short loc_773E79
+cmp     esi, 110h
+jnz     short loc_773E77
+lea     edx, [esp+10h+lParam] ; lParam
+mov     ecx, edi        ; hWndParent
+mov     [esp+10h+lParam], 320h
+mov     [esp+10h+var_4], 258h
+call    ResizeDialogAndEnum
+
+loc_773E77:                             ; CODE XREF: sub_773E30+2A↑j
+xor     eax, eax
+
+loc_773E79:                             ; CODE XREF: sub_773E30+22↑j
+pop     edi
+pop     esi
+add     esp, 8
+retn    10h
+*/
 }
 
 // 0x0079AE00 (260 bytes)
 int Dialog_Stop_79AE00() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0079AE00.json)
-    // Size: 260 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_79AE00 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax !LONG WindowLongA ! ; // ebx !UINT v6 ! ; // eax if ( a2 == 272 ) { if ( a4 ) "SetWindowLongA " ( hWnd , 8 , * ( _DWORD * ) ( a4 + 4 ) ) ; } result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { WindowLongA = "GetWindowLongA " ( hWnd , 8 ) ; if ( a2 > 0x2B ) { if ( a2 == 273 ) { if ( ( unsigned __int16 ) a3 == 1 ) { ReadSettingsWOL ( & g_WebBrowser ) ; ( * ( void (__thiscall **)(LONG, HWND, int) ) ( * ( _DWORD * ) WindowLongA + 4 ) ) ( WindowLongA , hWnd , 1 ) ; } else if ( ( unsigned __int16 ) a3 == 2 ) { v6 = "IsDlgButtonChecked " ( hWnd , 1785 ) ; ReadWOLGameOption ( v6 != 1 ) ; ( * ( void (__thiscall **)(LONG, HWND, int) ) ( * ( _DWORD * ) WindowLongA + 4 ) ) ( WindowLongA , hWnd , 2 ) ; return 0 ; } } } else { switch ( a2 ) { case 0x2Bu : Dialog::Resize ( ( char * ) a4 ) ; return 1 ; case 0xFu : Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 1 ; case 0x14u : return 1 ; } } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_79AE00(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
+{
+  int result; // eax
+  int v5; // ebx
+  int v6; // eax
+
+  if ( a2 == 272 )
+  {
+    if ( a4 )
+      ((void (__stdcall *)(void *, int, _DWORD))SetWindowLongA)(hWnd, 8, a4[1]);
+  }
+  result = BaseDialogProc(hWnd, a2, a3, (int)a4);
+  if ( !result )
+  {
+    v5 = ((int (__stdcall *)(void *, int))GetWindowLongA)(hWnd, 8);
+    if ( a2 > 0x2B )
+    {
+      if ( a2 == 273 )
+      {
+        if ( (unsigned __int16)a3 == 1 )
+        {
+          ReadSettingsWOL(&dword_A8ED54[234555]);
+          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)v5 + 4))(v5, hWnd, 1);
+        }
+        else if ( (unsigned __int16)a3 == 2 )
+        {
+          v6 = ((int (__stdcall *)(void *, int))IsDlgButtonChecked)(hWnd, 1785);
+          ReadWOLGameOption(v6 != 1);
+          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)v5 + 4))(v5, hWnd, 2);
+          return 0;
+        }
+      }
+    }
+    else
+    {
+      switch ( a2 )
+      {
+        case 0x2Bu:
+          Dialog::Resize(a4);
+          return 1;
+        case 0xFu:
+          Dialog::DrawBackground(hWnd);
+          Dialog::StopBink(hWnd);
+          ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+          return 1;
+        case 0x14u:
+          return 1;
+      }
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+arg_C]
+push    ebp
+push    esi
+mov     esi, [esp+0Ch+hWnd]
+push    edi
+mov     edi, [esp+10h+arg_4]
+cmp     edi, 110h
+jnz     short loc_79AE29
+test    ebx, ebx
+jz      short loc_79AE29
+mov     eax, [ebx+4]
+push    eax             ; dwNewLong
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_SetWindowLongA
+
+loc_79AE29:                             ; CODE XREF: sub_79AE00+16↑j
+; sub_79AE00+1A↑j
+mov     ebp, [esp+10h+arg_8]
+push    ebx             ; int
+push    ebp             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_79AEFD
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+cmp     edi, 2Bh ; '+'
+mov     ebx, eax
+ja      short loc_79AEA4
+jz      short loc_79AE8F
+cmp     edi, 0Fh
+jz      short loc_79AE6C
+cmp     edi, 14h
+jnz     loc_79AEFB
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_79AE6C:                             ; CODE XREF: sub_79AE00+55↑j
+mov     ecx, esi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_ValidateRect
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_79AE8F:                             ; CODE XREF: sub_79AE00+50↑j
+mov     ecx, [esp+10h+arg_C]
+call    Dialog__Resize
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_79AEA4:                             ; CODE XREF: sub_79AE00+4E↑j
+cmp     edi, 111h
+jnz     short loc_79AEFB
+and     ebp, 0FFFFh
+dec     ebp
+jz      short loc_79AEE7
+dec     ebp
+jnz     short loc_79AEFB
+push    6F9h            ; nIDButton
+push    esi             ; hDlg
+call    ds:__imp_IsDlgButtonChecked
+cmp     eax, 1
+setz    al
+test    al, al
+setz    cl              ; char
+call    ReadWOLGameOption
+mov     edx, [ebx]
+push    2
+push    esi
+mov     ecx, ebx
+call    dword ptr [edx+4]
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_79AEE7:                             ; CODE XREF: sub_79AE00+B3↑j
+mov     ecx, (offset dword_A8ED54+0E50ECh)
+call    ReadSettingsWOL
+mov     eax, [ebx]
+push    1
+push    esi
+mov     ecx, ebx
+call    dword ptr [eax+4]
+
+loc_79AEFB:                             ; CODE XREF: sub_79AE00+5A↑j
+; sub_79AE00+AA↑j ...
+xor     eax, eax
+
+loc_79AEFD:                             ; CODE XREF: sub_79AE00+3A↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x007A0DD0 (118 bytes)
 void Dialog_Update_7A0DD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007A0DD0.json)
-    // Size: 118 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_7A0DD0 ( const char *this ) { !int v2 ! ; // ebp !char **v3 ! ; // edi !HWND GameUI ! ; // eax if ( this ) { v2 = 0 ; v3 = ( char ** ) & g_NetworkPlayerName ; while ( ! * v3 || strcmp ( ToWideStringChar ( * v3 ) , this + 36 ) ) { ++ v3 ; ++ v2 ; if ( ( int ) v3 >= ( int ) & g_PlayerNameListEnd ) return ; } GameUI = ( HWND ) Dialog::FindGameUI ( ) ; if ( GameUI ) UpdateLobbyGraphicsWOL ( GameUI , v2 , -1 ) ; } }
-    
+// [IDA decompile]
+void __thiscall sub_7A0DD0(const char *this)
+{
+  int v2; // ebp
+  char **v3; // edi
+  int GameUI; // eax
+
+  if ( this )
+  {
+    v2 = 0;
+    v3 = (char **)&MEMORY[0x87F7E8][538794];
+    while ( !*v3 || strcmp(ToWideStringChar(*v3), this + 36) )
+    {
+      ++v3;
+      ++v2;
+      if ( (int)v3 >= (int)&MEMORY[0x87F7E8][538802] )
+        return;
+    }
+    GameUI = Dialog::FindGameUI();
+    if ( GameUI )
+      UpdateLobbyGraphicsWOL(GameUI, v2, -1);
+  }
+}
+
+/* ASM:
+push    ebx
+mov     ebx, ecx
+push    ebp
+push    esi
+test    ebx, ebx
+push    edi
+jz      short loc_7A0E41
+xor     ebp, ebp
+mov     edi, 0A8DA90h
+
+loc_7A0DE1:                             ; CODE XREF: sub_7A0DD0+56↓j
+mov     ecx, [edi]
+test    ecx, ecx
+jz      short loc_7A0E1C
+lea     esi, [ebx+24h]
+call    ToWideStringChar
+
+loc_7A0DEF:                             ; CODE XREF: sub_7A0DD0+3D↓j
+mov     dl, [eax]
+mov     cl, dl
+cmp     dl, [esi]
+jnz     short loc_7A0E13
+test    cl, cl
+jz      short loc_7A0E0F
+mov     dl, [eax+1]
+mov     cl, dl
+cmp     dl, [esi+1]
+jnz     short loc_7A0E13
+add     eax, 2
+add     esi, 2
+test    cl, cl
+jnz     short loc_7A0DEF
+
+loc_7A0E0F:                             ; CODE XREF: sub_7A0DD0+29↑j
+xor     eax, eax
+jmp     short loc_7A0E18
+; ---------------------------------------------------------------------------
+
+loc_7A0E13:                             ; CODE XREF: sub_7A0DD0+25↑j
+; sub_7A0DD0+33↑j
+sbb     eax, eax
+sbb     eax, 0FFFFFFFFh
+
+loc_7A0E18:                             ; CODE XREF: sub_7A0DD0+41↑j
+test    eax, eax
+jz      short loc_7A0E2D
+
+loc_7A0E1C:                             ; CODE XREF: sub_7A0DD0+15↑j
+add     edi, 4
+inc     ebp
+cmp     edi, 0A8DAB0h
+jl      short loc_7A0DE1
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_7A0E2D:                             ; CODE XREF: sub_7A0DD0+4A↑j
+call    Dialog__FindGameUI
+test    eax, eax
+jz      short loc_7A0E41
+push    0FFFFFFFFh      ; int
+mov     edx, ebp
+mov     ecx, eax        ; hDlg
+call    UpdateLobbyGraphicsWOL
+
+loc_7A0E41:                             ; CODE XREF: sub_7A0DD0+8↑j
+; sub_7A0DD0+64↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x00621D30 (341 bytes)
 int FindHashTable_621D30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00621D30.json)
-    // Size: 341 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_621D30 ( int *a1, int a2 ) { int v4 ; // ebx !int v5 ! ; // edi !int result ! ; // eax !int v7 ! ; // eax !int v8 ! ; // edx !int v9 ! ; // eax int v10 ; // ecx int v11 ; // edx !int v12 ! ; // [esp+10h] [ebp-318h] BYREF !int v13 ! ; // [esp+14h] [ebp-314h] !int v14 ! ; // [esp+18h] [ebp-310h] !int v15 ! ; // [esp+1Ch] [ebp-30Ch] int v16 ; // [esp+20h] [ebp-308h] int v17 ; // [esp+24h] [ebp-304h] unsigned __int8 v18[768] ; // [esp+28h] [ebp-300h] BYREF v16 = HashTable::Find ( g_DialogHashTable , aBitsIPcx , v18 ) ; v4 = 0 ; v17 = HashTable::Find ( g_DialogHashTable , aBitsAPcx , 0 ) ; sub_6B93E0 ( v18 ) ; v5 = 0 ; v12 = * a1 ; v13 = a1 [ 1 ] ; v14 = a1 [ 2 ] ; v15 = a1 [ 3 ] ; result = a1 [ 2 ] ; if ( result > 0 ) { do { v7 = rand ( ) % 8 ; v8 = a1 [ 1 ] + 1 ; v12 = v5 + * a1 ; v13 = v8 ; v14 = 10 ; v15 = 12 ; Surface::AlphaBlend ( & v12 , a2 , v16 , v17 , ( int ) v18 , 0 , 10 * v7 , 0 ) ; v9 = rand ( ) % 8 ; v10 = a1 [ 1 ] ; v12 = v5 + * a1 ; v11 = a1 [ 3 ] ; v14 = 10 ; v15 = 12 ; v13 = v10 + v11 - 16 ; Surface::AlphaBlend ( & v12 , a2 , v16 , v17 , ( int ) v18 , 0 , 10 * v9 , 0 ) ; if ( ! ( ++ v4 % 6 ) ) v5 += 10 ; result = a1 [ 2 ] ; v5 += 10 ; } while ( v5 < result ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_621D30(int *a1, int a2)
+{
+  int v4; // ebx
+  int v5; // edi
+  int result; // eax
+  int v7; // eax
+  int v8; // edx
+  int v9; // eax
+  int v10; // ecx
+  int v11; // edx
+  int v12; // [esp+10h] [ebp-318h] BYREF
+  int v13; // [esp+14h] [ebp-314h]
+  int v14; // [esp+18h] [ebp-310h]
+  int v15; // [esp+1Ch] [ebp-30Ch]
+  int v16; // [esp+20h] [ebp-308h]
+  int v17; // [esp+24h] [ebp-304h]
+  unsigned __int8 v18[768]; // [esp+28h] [ebp-300h] BYREF
+
+  v16 = HashTable::Find(MEMORY[0xAC4848], aBitsIPcx, v18);
+  v4 = 0;
+  v17 = HashTable::Find(MEMORY[0xAC4848], aBitsAPcx, 0);
+  sub_6B93E0(v18);
+  v5 = 0;
+  v12 = *a1;
+  v13 = a1[1];
+  v14 = a1[2];
+  v15 = a1[3];
+  result = a1[2];
+  if ( result > 0 )
+  {
+    do
+    {
+      v7 = rand() % 8;
+      v8 = a1[1] + 1;
+      v12 = v5 + *a1;
+      v13 = v8;
+      v14 = 10;
+      v15 = 12;
+      Surface::AlphaBlend(&v12, a2, v16, v17, (int)v18, 0, 10 * v7, 0);
+      v9 = rand() % 8;
+      v10 = a1[1];
+      v12 = v5 + *a1;
+      v11 = a1[3];
+      v14 = 10;
+      v15 = 12;
+      v13 = v10 + v11 - 16;
+      Surface::AlphaBlend(&v12, a2, v16, v17, (int)v18, 0, 10 * v9, 0);
+      if ( !(++v4 % 6) )
+        v5 += 10;
+      result = a1[2];
+      v5 += 10;
+    }
+    while ( v5 < result );
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 318h
+push    ebx
+push    ebp
+push    esi
+lea     eax, [esp+324h+var_300]
+push    edi
+mov     esi, ecx
+push    eax
+mov     ebp, edx
+push    offset aBitsIPcx ; "bits_i.pcx"
+mov     ecx, (offset dword_A8ED54+35AF4h)
+call    HashTable__Find
+mov     ecx, (offset dword_A8ED54+35AF4h)
+push    0
+push    offset aBitsAPcx ; "bits_a.pcx"
+mov     [esp+330h+var_308], eax
+call    HashTable__Find
+lea     ecx, [esp+328h+var_300]
+xor     ebx, ebx
+mov     [esp+328h+var_304], eax
+call    sub_6B93E0
+mov     ecx, esi
+xor     edi, edi
+mov     edx, [ecx]
+mov     [esp+328h+var_318], edx
+mov     eax, [ecx+4]
+mov     [esp+328h+var_314], eax
+mov     edx, [ecx+8]
+mov     [esp+328h+var_310], edx
+mov     eax, [ecx+0Ch]
+mov     [esp+328h+var_30C], eax
+mov     eax, [esi+8]
+test    eax, eax
+jle     loc_621E7A
+
+loc_621DA0:                             ; CODE XREF: sub_621D30+144↓j
+call    _rand
+and     eax, 80000007h
+jns     short loc_621DB1
+dec     eax
+or      eax, 0FFFFFFF8h
+inc     eax
+
+loc_621DB1:                             ; CODE XREF: sub_621D30+7A↑j
+mov     ecx, [esi]
+mov     edx, [esi+4]
+lea     eax, [eax+eax*4]
+add     ecx, edi
+inc     edx
+mov     [esp+328h+var_318], ecx
+shl     eax, 1
+push    0
+mov     [esp+32Ch+var_314], edx
+mov     edx, [esp+32Ch+var_304]
+push    eax
+mov     eax, [esp+330h+var_308]
+lea     ecx, [esp+330h+var_300]
+push    0
+push    ecx
+push    edx
+push    eax
+lea     ecx, [esp+340h+var_318]
+push    ebp
+push    ecx
+mov     ecx, (offset dword_A8ED54+35AF4h)
+mov     [esp+348h+var_310], 0Ah
+mov     [esp+348h+var_30C], 0Ch
+call    Surface__AlphaBlend
+call    _rand
+and     eax, 80000007h
+jns     short loc_621E0B
+dec     eax
+or      eax, 0FFFFFFF8h
+inc     eax
+
+loc_621E0B:                             ; CODE XREF: sub_621D30+D4↑j
+mov     edx, [esi]
+mov     ecx, [esi+4]
+add     edx, edi
+push    0
+mov     [esp+32Ch+var_318], edx
+mov     edx, [esi+0Ch]
+mov     [esp+32Ch+var_310], 0Ah
+mov     [esp+32Ch+var_30C], 0Ch
+lea     ecx, [ecx+edx-10h]
+lea     edx, [eax+eax*4]
+shl     edx, 1
+mov     [esp+32Ch+var_314], ecx
+mov     ecx, [esp+32Ch+var_304]
+push    edx
+mov     edx, [esp+330h+var_308]
+lea     eax, [esp+330h+var_300]
+push    0
+push    eax
+push    ecx
+push    edx
+lea     eax, [esp+340h+var_318]
+push    ebp
+push    eax
+mov     ecx, (offset dword_A8ED54+35AF4h)
+call    Surface__AlphaBlend
+inc     ebx
+mov     ecx, 6
+mov     eax, ebx
+cdq
+idiv    ecx
+test    edx, edx
+jnz     short loc_621E6C
+add     edi, 0Ah
+
+loc_621E6C:                             ; CODE XREF: sub_621D30+137↑j
+mov     eax, [esi+8]
+add     edi, 0Ah
+cmp     edi, eax
+jl      loc_621DA0
+
+loc_621E7A:                             ; CODE XREF: sub_621D30+6A↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 318h
+retn
+*/
 }
 
 // 0x00774310 (241 bytes)
 char FindKey_774310() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00774310.json)
-    // Size: 241 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_774310 ( BYTE *a1, signed int a2 ) { !HKEY RegistrySubKey ! ; // eax !HKEY v6 ! ; // eax !HKEY v7 ! ; // eax !HKEY v8 ! ; // esi !DWORD v9 ! ; // ecx !DWORD cbData ! ; // [esp+Ch] [ebp-104h] BYREF !BYTE Data[256] ! ; // [esp+10h] [ebp-100h] BYREF cbData = 256 ; RegistrySubKey = FindRegistrySubKey ( HKEY_LOCAL_MACHINE , aEnum , 0 ) ; if ( ! RegistrySubKey ) return 0 ; v6 = FindRegistrySubKey ( RegistrySubKey , aRoot , 1 ) ; if ( ! v6 ) return 0 ; v7 = FindRegistrySubKey ( v6 , aModem , 1 ) ; if ( ! v7 ) return 0 ; v8 = FindRegistrySubKey ( v7 , a0000_0 , 1 ) ; if ( ! v8 ) return 0 ; if ( "RegQueryValueExA " ( v8 , aFriendlyname , 0 , 0 , Data , & cbData ) ) { "RegCloseKey " ( v8 ) ; return 0 ; } else { "RegCloseKey " ( v8 ) ; v9 = cbData ; if ( a2 < ( int ) cbData ) v9 = a2 ; qmemcpy ( a1 , Data , v9 ) ; return 1 ; } }
+// [IDA decompile]
+char __fastcall sub_774310(#63 *a1, signed int a2)
+{
+  int RegistrySubKey; // eax
+  int v6; // eax
+  int v7; // eax
+  int v8; // esi
+  unsigned int v9; // ecx
+  signed int cbData; // [esp+Ch] [ebp-104h] BYREF
+  _BYTE Data[256]; // [esp+10h] [ebp-100h] BYREF
+
+  cbData = 256;
+  RegistrySubKey = FindRegistrySubKey(-2147483646, aEnum, 0);
+  if ( !RegistrySubKey )
     return 0;
+  v6 = FindRegistrySubKey(RegistrySubKey, aRoot, 1);
+  if ( !v6 )
+    return 0;
+  v7 = FindRegistrySubKey(v6, aModem, 1);
+  if ( !v7 )
+    return 0;
+  v8 = FindRegistrySubKey(v7, a0000_0, 1);
+  if ( !v8 )
+    return 0;
+  if ( ((int (__stdcall *)(int, char *, _DWORD, _DWORD, _BYTE *, signed int *))RegQueryValueExA)(
+         v8,
+         aFriendlyname,
+         0,
+         0,
+         Data,
+         &cbData) )
+  {
+    ((void (__stdcall *)(int))RegCloseKey)(v8);
+    return 0;
+  }
+  else
+  {
+    ((void (__stdcall *)(int))RegCloseKey)(v8);
+    v9 = cbData;
+    if ( a2 < cbData )
+      v9 = a2;
+    qmemcpy(a1, Data, v9);
+    return 1;
+  }
+}
+
+/* ASM:
+cbData          = dword ptr -104h
+Data            = byte ptr -100h
+
+sub     esp, 104h
+push    ebx
+push    esi
+push    edi
+mov     ebx, edx
+mov     edi, ecx
+push    0               ; char
+mov     edx, offset aEnum ; "Enum"
+mov     ecx, 80000002h  ; hKey
+mov     [esp+114h+cbData], 100h
+call    FindRegistrySubKey
+test    eax, eax
+jnz     short loc_774346
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 104h
+retn
+; ---------------------------------------------------------------------------
+
+loc_774346:                             ; CODE XREF: sub_774310+28↑j
+push    1               ; char
+mov     edx, offset aRoot ; "Root"
+mov     ecx, eax        ; hKey
+call    FindRegistrySubKey
+test    eax, eax
+jnz     short loc_774364
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 104h
+retn
+; ---------------------------------------------------------------------------
+
+loc_774364:                             ; CODE XREF: sub_774310+46↑j
+push    1               ; char
+mov     edx, offset aModem ; "Modem"
+mov     ecx, eax        ; hKey
+call    FindRegistrySubKey
+test    eax, eax
+jnz     short loc_774382
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 104h
+retn
+; ---------------------------------------------------------------------------
+
+loc_774382:                             ; CODE XREF: sub_774310+64↑j
+push    1               ; char
+mov     edx, offset a0000_0 ; "0000"
+mov     ecx, eax        ; hKey
+call    FindRegistrySubKey
+mov     esi, eax
+test    esi, esi
+jnz     short loc_7743A2
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 104h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7743A2:                             ; CODE XREF: sub_774310+84↑j
+lea     eax, [esp+110h+cbData]
+lea     ecx, [esp+110h+Data]
+push    eax             ; lpcbData
+push    ecx             ; lpData
+push    0               ; lpType
+push    0               ; lpReserved
+push    offset aFriendlyname ; "FriendlyName"
+push    esi             ; hKey
+call    ds:__imp_RegQueryValueExA
+test    eax, eax
+push    esi             ; hKey
+jz      short loc_7743D3
+call    ds:__imp_RegCloseKey
+xor     al, al
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 104h
+retn
+; ---------------------------------------------------------------------------
+
+loc_7743D3:                             ; CODE XREF: sub_774310+AF↑j
+call    ds:__imp_RegCloseKey
+mov     ecx, [esp+110h+cbData]
+cmp     ebx, ecx
+jge     short loc_7743E3
+mov     ecx, ebx
+
+loc_7743E3:                             ; CODE XREF: sub_774310+CF↑j
+mov     edx, ecx
+lea     esi, [esp+110h+Data]
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+mov     al, 1
+and     ecx, 3
+rep movsb
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 104h
+retn
+*/
 }
 
 // 0x006A74A0 (231 bytes)
 int GadgetClass_SetMember5351_6A74A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006A74A0.json)
-    // Size: 231 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_6A74A0 ( _DWORD *this, int a2 ) { !int v3 ! ; // edi !int v4 ! ; // eax !int v5 ! ; // esi !int v6 ! ; // ebp * ( this + 5351 ) = a2 ; GadgetClass::Show ( ( _BYTE * ) & unk_B07C48 + 96 * a2 ) ; v3 = ( int ) ( this + 997 * * ( this + 5351 ) + 1361 ) ; * ( ( _BYTE * ) this + 3988 * * ( this + 5351 ) + 5472 ) = 1 ; v4 = 26 ; if ( * ( ( _DWORD * ) ScenarioClass_Instance + 3374 ) ) v4 = 18 ; v5 = 0 ; v6 = 2 * ( ( g_DSurface_ViewBounds - g_SidebarBounds - v4 + g_DSurface_SidebarBounds - 7 ) / 50 ) ; if ( v6 > 0 ) { do { Hash::Reset ( ( _DWORD * ) ( 56 * ( v5 + 60 * * ( _DWORD * ) ( v3 + 56 ) ) + 11566720 ) ) ; Hash::InsertOrdered ( & MapClass_Instance , 56 * ( v5 + 60 * * ( _DWORD * ) ( v3 + 56 ) ) + 11566720 ) ; ++ v5 ; } while ( v5 < v6 ) ; } g_CameoRenderFlag = 1 ; return Tactical::UpdateUIVisibility ( this ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_6A74A0(_DWORD *this, int a2)
+{
+  int v3; // edi
+  int v4; // eax
+  int v5; // esi
+  int v6; // ebp
+
+  *(this + 5351) = a2;
+  GadgetClass::Show((_BYTE *)&MEMORY[0xB07C48] + 96 * a2);
+  v3 = (int)(this + 997 * *(this + 5351) + 1361);
+  *((_BYTE *)this + 3988 * *(this + 5351) + 5472) = 1;
+  v4 = 26;
+  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) )
+    v4 = 18;
+  v5 = 0;
+  v6 = 2 * ((MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v4 + MEMORY[0x886F94] - 7) / 50);
+  if ( v6 > 0 )
+  {
+    do
+    {
+      Hash::Reset((_DWORD *)(56 * (v5 + 60 * *(_DWORD *)(v3 + 56)) + 11566720));
+      Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v5 + 60 * *(_DWORD *)(v3 + 56)) + 11566720);
+      ++v5;
+    }
+    while ( v5 < v6 );
+  }
+  MEMORY[0x884B8F] = 1;
+  return Tactical::UpdateUIVisibility(this);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+mov     ebx, ecx
+push    ebp
+lea     ecx, [eax+eax*2]
+push    esi
+shl     ecx, 5
+push    edi
+add     ecx, (offset dword_A8ED54+78EF4h)
+mov     [ebx+539Ch], eax
+call    GadgetClass__Show
+mov     eax, [ebx+539Ch]
+mov     ecx, eax
+shl     ecx, 5
+sub     ecx, eax
+lea     edx, [eax+ecx*8]
+lea     eax, [eax+edx*4]
+lea     edi, [ebx+eax*4+1544h]
+mov     byte ptr [edi+1Ch], 1
+mov     ecx, ds:0A8B230h
+mov     eax, [ecx+34B8h]
+test    eax, eax
+mov     eax, 1Ah
+jz      short loc_6A74F9
+mov     eax, 12h
+
+loc_6A74F9:                             ; CODE XREF: sub_6A74A0+52↑j
+mov     edx, ds:886F9Ch
+mov     esi, dword_A8ED54+7C7A4h
+sub     edx, esi
+xor     esi, esi
+sub     edx, eax
+mov     eax, ds:886F94h
+lea     ecx, [edx+eax-7]
+mov     eax, 51EB851Fh
+imul    ecx
+sar     edx, 4
+mov     ecx, edx
+shr     ecx, 1Fh
+add     edx, ecx
+shl     edx, 1
+mov     ebp, edx
+test    ebp, ebp
+jle     short loc_6A7572
+
+loc_6A752D:                             ; CODE XREF: sub_6A74A0+D0↓j
+mov     eax, [edi+38h]
+imul    eax, 3Ch ; '<'
+add     eax, esi
+lea     edx, ds:0[eax*8]
+sub     edx, eax
+lea     ecx, ds:0B07E80h[edx*8]
+call    Hash__Reset
+mov     eax, [edi+38h]
+imul    eax, 3Ch ; '<'
+add     eax, esi
+lea     ecx, ds:0[eax*8]
+sub     ecx, eax
+lea     edx, ds:0B07E80h[ecx*8]
+mov     ecx, 87F7E8h
+push    edx
+call    Hash__InsertOrdered
+inc     esi
+cmp     esi, ebp
+jl      short loc_6A752D
+
+loc_6A7572:                             ; CODE XREF: sub_6A74A0+8B↑j
+mov     ecx, ebx
+mov     byte ptr ds:884B8Fh, 1
+call    Tactical__UpdateUIVisibility
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x00488210 (70 bytes)
 int GadgetClass_Show_488210() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00488210.json)
-    // Size: 70 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_488210 ( _BYTE *this, unsigned int a2, _DWORD *a3, int a4 ) { if ( ( a2 & 4 ) != 0 ) { if ( * ( this + 45 ) ) { GadgetClass::Hide ( this ) ; return GadgetClass::ProcessMouseOver ( this , a2 , a3 , 0 ) ; } GadgetClass::Show ( this ) ; } return GadgetClass::ProcessMouseOver ( this , a2 , a3 , 0 ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_488210(_BYTE *this, unsigned int a2, _DWORD *a3, int a4)
+{
+  if ( (a2 & 4) != 0 )
+  {
+    if ( *(this + 45) )
+    {
+      GadgetClass::Hide(this);
+      return GadgetClass::ProcessMouseOver(this, a2, a3, 0);
+    }
+    GadgetClass::Show(this);
+  }
+  return GadgetClass::ProcessMouseOver(this, a2, a3, 0);
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_0]
+push    esi
+mov     esi, ecx
+test    bl, 4
+jz      short loc_488242
+mov     al, [esi+2Dh]
+test    al, al
+jz      short loc_48823D
+call    GadgetClass__Hide
+mov     eax, [esp+8+arg_4]
+push    0
+push    eax
+push    ebx
+mov     ecx, esi
+call    GadgetClass__ProcessMouseOver
+pop     esi
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_48823D:                             ; CODE XREF: sub_488210+12↑j
+call    GadgetClass__Show
+
+loc_488242:                             ; CODE XREF: sub_488210+B↑j
+mov     eax, [esp+8+arg_4]
+push    0
+push    eax
+push    ebx
+mov     ecx, esi
+call    GadgetClass__ProcessMouseOver
+pop     esi
+pop     ebx
+retn    0Ch
+*/
 }
 
 // 0x004F18B0 (490 bytes)
 int GetDialog_4F18B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F18B0.json)
-    // Size: 490 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_4F18B0 ( HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4 ) { int result ; // eax !HWND DlgItem ! ; // ebp !wchar_t *StringCSF ! ; // eax !HWND v7 ! ; // esi !int v8 ! ; // edi !wchar_t *v9 ! ; // eax !HouseClass *v10 ! ; // ecx !int v11 ! ; // edx !wchar_t *v12 ! ; // eax _DWORD *WindowLongA ; // eax result = BaseDialogProc ( hDlg , a2 , a3 , a4 ) ; if ( ! result ) { if ( a2 == 273 ) { WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hDlg , 8 ) ; if ( ! HIWORD ( a3 ) ) { if ( ( unsigned __int16 ) a3 > 0x6C9u ) { if ( ( unsigned __int16 ) a3 == 1810 ) * WindowLongA = dword_A8EE80 ; } else { if ( ( unsigned __int16 ) a3 == 1737 ) { * WindowLongA = dword_A8EE7C ; return 0 ; } if ( ( unsigned __int16 ) a3 == 1 || ( unsigned __int16 ) a3 == 1670 ) { * WindowLongA = 1 ; return 0 ; } } } } else if ( a2 == 1175 ) { DlgItem = "GetDlgItem " ( hDlg , 1737 ) ; StringCSF = GetStringCSF ( aGuiLeave , 0 , g_Str_File_GOptions_CPP , 547 ) ; "SendMessageA " ( DlgItem , 0x4B2u , 0 , ( LPARAM ) StringCSF ) ; dword_A8EE7C = 2 ; v7 = "GetDlgItem " ( hDlg , 1810 ) ; v8 = 0 ; dword_A8EE80 = 0 ; if ( GameMode_Current [ 0 ] ) { if ( GameMode_Current [ 0 ] == 5 ) goto LABEL_18 ; if ( GameMode_Current [ 0 ] != 3 && GameMode_Current [ 0 ] != 4 ) goto LABEL_19 ; if ( HouseClass_Count <= 0 ) goto LABEL_18 ; v10 = HouseClass_Array ; v11 = HouseClass_Count ; do { if ( * ( _BYTE * ) ( * ( _DWORD * ) v10 -> gap0 + 492 ) && ! * ( _BYTE * ) ( * ( _DWORD * ) v10 -> gap0 + 501 ) ) ++ v8 ; v10 = ( HouseClass * ) ( ( char * ) v10 + 4 ) ; -- v11 ; } while ( v11 ) ; if ( v8 < 2 || * ( ( _BYTE * ) HouseClass_Player + 501 ) ) { LABEL_18 : "ShowWindow " ( v7 , 0 ) ; } else { dword_A8EE7C = 3 ; v12 = GetStringCSF ( g_Str_GUI_Observe , 0 , g_Str_File_GOptions_CPP , 586 ) ; "SendMessageA " ( v7 , 0x4B2u , 0 , ( LPARAM ) v12 ) ; dword_A8EE80 = 4 ; } } else { v9 = GetStringCSF ( aGuiRestart , 0 , g_Str_File_GOptions_CPP , 558 ) ; "SendMessageA " ( v7 , 0x4B2u , 0 , ( LPARAM ) v9 ) ; dword_A8EE80 = 5 ; } LABEL_19 : sub_603E40 ( ( int ) DlgItem , dword_A8EE7C ) ; sub_603E40 ( ( int ) v7 , dword_A8EE80 ) ; return 0 ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_4F18B0(int hDlg, int a2, unsigned int a3, int a4)
+{
+  int result; // eax
+  int v5; // ebp
+  #72 *StringCSF; // eax
+  int v7; // esi
+  int v8; // edi
+  #72 *v9; // eax
+  int v10; // ecx
+  int v11; // edx
+  #72 *v12; // eax
+  _DWORD *v13; // eax
+
+  result = BaseDialogProc(hDlg, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 == 273 )
+    {
+      v13 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hDlg, 8);
+      if ( !HIWORD(a3) )
+      {
+        if ( (unsigned __int16)a3 > 0x6C9u )
+        {
+          if ( (unsigned __int16)a3 == 1810 )
+            *v13 = dword_A8ED54[75];
+        }
+        else
+        {
+          if ( (unsigned __int16)a3 == 1737 )
+          {
+            *v13 = dword_A8ED54[74];
+            return 0;
+          }
+          if ( (unsigned __int16)a3 == 1 || (unsigned __int16)a3 == 1670 )
+          {
+            *v13 = 1;
+            return 0;
+          }
+        }
+      }
+    }
+    else if ( a2 == 1175 )
+    {
+      v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hDlg, 1737);
+      StringCSF = GetStringCSF((#72 *)aGuiLeave, 0, g_Str_File_GOptions_CPP, 547);
+      ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v5, 1202, 0, StringCSF);
+      dword_A8ED54[74] = 2;
+      v7 = ((int (__stdcall *)(int, int))GetDlgItem)(hDlg, 1810);
+      v8 = 0;
+      dword_A8ED54[75] = 0;
+      if ( MEMORY[0x87F7E8][536212] )
+      {
+        if ( MEMORY[0x87F7E8][536212] == 5 )
+          goto LABEL_18;
+        if ( MEMORY[0x87F7E8][536212] != 3 && MEMORY[0x87F7E8][536212] != 4 )
+          goto LABEL_19;
+        if ( MEMORY[0x87F7E8][524948] <= 0 )
+          goto LABEL_18;
+        v10 = MEMORY[0x87F7E8][524945];
+        v11 = MEMORY[0x87F7E8][524948];
+        do
+        {
+          if ( *(_BYTE *)(*(_DWORD *)v10 + 492) && !*(_BYTE *)(*(_DWORD *)v10 + 501) )
+            ++v8;
+          v10 += 4;
+          --v11;
+        }
+        while ( v11 );
+        if ( v8 < 2 || *(_BYTE *)(MEMORY[0x87F7E8][528729] + 501) )
+        {
+LABEL_18:
+          ((void (__stdcall *)(int, _DWORD))ShowWindow)(v7, 0);
+        }
+        else
+        {
+          dword_A8ED54[74] = 3;
+          v12 = GetStringCSF((#72 *)g_Str_GUI_Observe, 0, g_Str_File_GOptions_CPP, 586);
+          ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v7, 1202, 0, v12);
+          dword_A8ED54[75] = 4;
+        }
+      }
+      else
+      {
+        v9 = GetStringCSF((#72 *)aGuiRestart, 0, g_Str_File_GOptions_CPP, 558);
+        ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v7, 1202, 0, v9);
+        dword_A8ED54[75] = 5;
+      }
+LABEL_19:
+      sub_603E40(v5, dword_A8ED54[74]);
+      sub_603E40(v7, dword_A8ED54[75]);
+      return 0;
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hDlg            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    esi
+mov     esi, [esp+8+hDlg]
+push    edi
+mov     edi, [esp+0Ch+arg_8]
+push    eax             ; int
+push    edi             ; int
+mov     edx, ebx
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_4F1A94
+cmp     ebx, 111h
+jz      loc_4F1A37
+cmp     ebx, 497h
+jnz     loc_4F1A92
+mov     edi, ds:__imp_GetDlgItem
+push    ebp
+push    6C9h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_GetDlgItem
+push    223h            ; int
+push    offset g_Str_File_GOptions_CPP ; "D:\\ra2mdpost\\GOptions.CPP"
+xor     edx, edx
+mov     ecx, offset aGuiLeave ; "GUI:Leave"
+mov     ebp, eax
+call    GetStringCSF
+mov     ebx, ds:__imp_SendMessageA
+push    eax             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    ebp             ; hWnd
+call    ebx ; __imp_SendMessageA
+push    712h            ; nIDDlgItem
+push    esi             ; hDlg
+mov     dword_A8ED54+128h, 2
+call    edi ; __imp_GetDlgItem
+mov     esi, eax
+mov     eax, ds:0A8B238h
+xor     edi, edi
+cmp     eax, edi
+mov     dword_A8ED54+12Ch, edi
+jnz     short loc_4F197A
+push    22Eh            ; int
+push    offset g_Str_File_GOptions_CPP ; "D:\\ra2mdpost\\GOptions.CPP"
+xor     edx, edx
+mov     ecx, offset aGuiRestart ; "GUI:Restart"
+call    GetStringCSF
+push    eax             ; lParam
+push    edi             ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+mov     dword_A8ED54+12Ch, 5
+jmp     loc_4F1A14
+; ---------------------------------------------------------------------------
+
+loc_4F197A:                             ; CODE XREF: sub_4F18B0+99↑j
+cmp     eax, 5
+jnz     short loc_4F1985
+push    edi
+jmp     loc_4F1A0D
+; ---------------------------------------------------------------------------
+
+loc_4F1985:                             ; CODE XREF: sub_4F18B0+CD↑j
+cmp     eax, 3
+jz      short loc_4F1993
+cmp     eax, 4
+jnz     loc_4F1A14
+
+loc_4F1993:                             ; CODE XREF: sub_4F18B0+D8↑j
+mov     eax, ds:0A80238h
+test    eax, eax
+jle     short loc_4F1A0B
+mov     ecx, ds:0A8022Ch
+mov     edx, eax
+
+loc_4F19A4:                             ; CODE XREF: sub_4F18B0+10D↓j
+mov     eax, [ecx]
+cmp     byte ptr [eax+1ECh], 0
+jz      short loc_4F19B9
+cmp     byte ptr [eax+1F5h], 0
+jnz     short loc_4F19B9
+inc     edi
+
+loc_4F19B9:                             ; CODE XREF: sub_4F18B0+FD↑j
+; sub_4F18B0+106↑j
+add     ecx, 4
+dec     edx
+jnz     short loc_4F19A4
+cmp     edi, 2
+jl      short loc_4F1A0B
+mov     ecx, ds:0A83D4Ch
+mov     al, [ecx+1F5h]
+test    al, al
+jnz     short loc_4F1A0B
+push    24Ah            ; int
+push    offset g_Str_File_GOptions_CPP ; "D:\\ra2mdpost\\GOptions.CPP"
+xor     edx, edx
+mov     ecx, offset g_Str_GUI_Observe ; "GUI:Observe"
+mov     dword_A8ED54+128h, 3
+call    GetStringCSF
+push    eax             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+mov     dword_A8ED54+12Ch, 4
+jmp     short loc_4F1A14
+; ---------------------------------------------------------------------------
+
+loc_4F1A0B:                             ; CODE XREF: sub_4F18B0+EA↑j
+; sub_4F18B0+112↑j ...
+push    0               ; nCmdShow
+
+loc_4F1A0D:                             ; CODE XREF: sub_4F18B0+D0↑j
+push    esi             ; hWnd
+call    ds:__imp_ShowWindow
+
+loc_4F1A14:                             ; CODE XREF: sub_4F18B0+C5↑j
+; sub_4F18B0+DD↑j ...
+mov     edx, dword_A8ED54+128h
+mov     ecx, ebp
+call    sub_603E40
+mov     edx, dword_A8ED54+12Ch
+mov     ecx, esi
+call    sub_603E40
+pop     ebp
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_4F1A37:                             ; CODE XREF: sub_4F18B0+2C↑j
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+mov     edx, edi
+shr     edx, 10h
+jnz     short loc_4F1A92
+mov     ecx, edi
+and     ecx, 0FFFFh
+cmp     ecx, 6C9h
+jg      short loc_4F1A82
+jz      short loc_4F1A72
+dec     ecx
+jz      short loc_4F1A64
+sub     ecx, 685h
+jnz     short loc_4F1A92
+
+loc_4F1A64:                             ; CODE XREF: sub_4F18B0+1AA↑j
+pop     edi
+mov     dword ptr [eax], 1
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_4F1A72:                             ; CODE XREF: sub_4F18B0+1A7↑j
+mov     ecx, dword_A8ED54+128h
+pop     edi
+mov     [eax], ecx
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_4F1A82:                             ; CODE XREF: sub_4F18B0+1A5↑j
+cmp     ecx, 712h
+jnz     short loc_4F1A92
+mov     edx, dword_A8ED54+12Ch
+mov     [eax], edx
+
+loc_4F1A92:                             ; CODE XREF: sub_4F18B0+38↑j
+; sub_4F18B0+195↑j ...
+xor     eax, eax
+
+loc_4F1A94:                             ; CODE XREF: sub_4F18B0+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x0055F980 (174 bytes)
 int GetDialog_55F980() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0055F980.json)
-    // Size: 174 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_55F980 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax _DWORD *WindowLongA ; // eax !wchar_t *StringCSF ! ; // edi !HWND DlgItem ! ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) ; if ( a2 == 273 ) { if ( ( unsigned __int16 ) a3 == 1473 ) { * WindowLongA = 1 ; } else if ( ( unsigned __int16 ) a3 == 1738 ) { * WindowLongA = 2 ; return 0 ; } } else if ( a2 == 1175 ) { StringCSF = GetStringCSF ( aTxtAboutToTryM , 0 , g_Str_File_MainOpt_cpp , 162 ) ; DlgItem = "GetDlgItem " ( hWnd , 1499 ) ; "SendMessageA " ( DlgItem , 0x4B2u , 0 , ( LPARAM ) StringCSF ) ; return 0 ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_55F980(int hWnd, int a2, int a3, int a4)
+{
+  int result; // eax
+  _DWORD *v5; // eax
+  #72 *StringCSF; // edi
+  int v7; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    v5 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+    if ( a2 == 273 )
+    {
+      if ( (unsigned __int16)a3 == 1473 )
+      {
+        *v5 = 1;
+      }
+      else if ( (unsigned __int16)a3 == 1738 )
+      {
+        *v5 = 2;
+        return 0;
+      }
+    }
+    else if ( a2 == 1175 )
+    {
+      StringCSF = GetStringCSF((#72 *)aTxtAboutToTryM, 0, g_Str_File_MainOpt_cpp, 162);
+      v7 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1499);
+      ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v7, 1202, 0, StringCSF);
+      return 0;
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+arg_8]
+push    esi
+mov     esi, [esp+8+hWnd]
+push    edi
+mov     edi, [esp+0Ch+arg_4]
+push    eax             ; int
+push    ebx             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_55FA28
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+cmp     edi, 111h
+jz      short loc_55F9FA
+cmp     edi, 497h
+jnz     short loc_55FA26
+push    0A2h            ; int
+push    offset g_Str_File_MainOpt_cpp ; "D:\\ra2mdpost\\MainOpt.cpp"
+xor     edx, edx
+mov     ecx, offset aTxtAboutToTryM ; "TXT_ABOUT_TO_TRY_MODE"
+call    GetStringCSF
+push    5DBh            ; nIDDlgItem
+push    esi             ; hDlg
+mov     edi, eax
+call    ds:__imp_GetDlgItem
+push    edi             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_55F9FA:                             ; CODE XREF: sub_55F980+35↑j
+mov     ecx, ebx
+and     ecx, 0FFFFh
+cmp     ecx, 5C1h
+jz      short loc_55FA20
+cmp     ecx, 6CAh
+jnz     short loc_55FA26
+pop     edi
+mov     dword ptr [eax], 2
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_55FA20:                             ; CODE XREF: sub_55F980+88↑j
+mov     dword ptr [eax], 1
+
+loc_55FA26:                             ; CODE XREF: sub_55F980+3D↑j
+; sub_55F980+90↑j
+xor     eax, eax
+
+loc_55FA28:                             ; CODE XREF: sub_55F980+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00561350 (174 bytes)
 int GetDialog_561350() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00561350.json)
-    // Size: 174 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_561350 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax _DWORD *WindowLongA ; // eax !wchar_t *StringCSF ! ; // edi !HWND DlgItem ! ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { WindowLongA = ( _DWORD * ) "GetWindowLongA " ( hWnd , 8 ) ; if ( a2 == 273 ) { if ( ( unsigned __int16 ) a3 == 1473 ) { * WindowLongA = 1 ; } else if ( ( unsigned __int16 ) a3 == 1738 ) { * WindowLongA = 2 ; return 0 ; } } else if ( a2 == 1175 ) { StringCSF = GetStringCSF ( aGuiConfirmmode , 0 , g_Str_File_MainOpt_cpp , 1501 ) ; DlgItem = "GetDlgItem " ( hWnd , 1499 ) ; "SendMessageA " ( DlgItem , 0x4B2u , 0 , ( LPARAM ) StringCSF ) ; return 0 ; } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_561350(int hWnd, int a2, int a3, int a4)
+{
+  int result; // eax
+  _DWORD *v5; // eax
+  #72 *StringCSF; // edi
+  int v7; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    v5 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+    if ( a2 == 273 )
+    {
+      if ( (unsigned __int16)a3 == 1473 )
+      {
+        *v5 = 1;
+      }
+      else if ( (unsigned __int16)a3 == 1738 )
+      {
+        *v5 = 2;
+        return 0;
+      }
+    }
+    else if ( a2 == 1175 )
+    {
+      StringCSF = GetStringCSF((#72 *)aGuiConfirmmode, 0, g_Str_File_MainOpt_cpp, 1501);
+      v7 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1499);
+      ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v7, 1202, 0, StringCSF);
+      return 0;
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_C]
+push    ebx
+mov     ebx, [esp+4+arg_8]
+push    esi
+mov     esi, [esp+8+hWnd]
+push    edi
+mov     edi, [esp+0Ch+arg_4]
+push    eax             ; int
+push    ebx             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_5613F8
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+cmp     edi, 111h
+jz      short loc_5613CA
+cmp     edi, 497h
+jnz     short loc_5613F6
+push    5DDh            ; int
+push    offset g_Str_File_MainOpt_cpp ; "D:\\ra2mdpost\\MainOpt.cpp"
+xor     edx, edx
+mov     ecx, offset aGuiConfirmmode ; "GUI:ConfirmModeChange"
+call    GetStringCSF
+push    5DBh            ; nIDDlgItem
+push    esi             ; hDlg
+mov     edi, eax
+call    ds:__imp_GetDlgItem
+push    edi             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5613CA:                             ; CODE XREF: sub_561350+35↑j
+mov     ecx, ebx
+and     ecx, 0FFFFh
+cmp     ecx, 5C1h
+jz      short loc_5613F0
+cmp     ecx, 6CAh
+jnz     short loc_5613F6
+pop     edi
+mov     dword ptr [eax], 2
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5613F0:                             ; CODE XREF: sub_561350+88↑j
+mov     dword ptr [eax], 1
+
+loc_5613F6:                             ; CODE XREF: sub_561350+3D↑j
+; sub_561350+90↑j
+xor     eax, eax
+
+loc_5613F8:                             ; CODE XREF: sub_561350+20↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00609AA0 (129 bytes)
 bool GetDialog_609AA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00609AA0.json)
-    // Size: 129 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   bool __fastcall sub_609AA0 ( int a1, HWND a2 ) { _DWORD *v4 ; // eax _DWORD *v6 ; // eax !HWND v7 ! ; // [esp+8h] [ebp-4h] BYREF if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) != 0xB ) return 0 ; v7 = a2 ; if ( ! g_DialogHashMap_Count ) return 0 ; v4 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v7 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( ! v4 ) return 0 ; while ( ( HWND ) * v4 != v7 ) { v4 = ( _DWORD * ) v4 [ 129 ] ; if ( ! v4 ) return 0 ; } v6 = v4 + 1 ; return v6 && ! v6 [ 26 ] && GetDialogDefaultButton ( a1 , a2 ) ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_609AA0(int a1, int a2)
+{
+  _DWORD *v4; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+8h] [ebp-4h] BYREF
+
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) != 0xB )
+    return 0;
+  v7 = a2;
+  if ( !dword_A8ED54[52076] )
+    return 0;
+  v4 = *(_DWORD **)(dword_A8ED54[52075]
+                  + 4
+                  * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v7) & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+  if ( !v4 )
+    return 0;
+  while ( *v4 != v7 )
+  {
+    v4 = (_DWORD *)v4[129];
+    if ( !v4 )
+      return 0;
+  }
+  v6 = v4 + 1;
+  return v6 && !v6[26] && GetDialogDefaultButton(a1, a2);
+}
+
+/* ASM:
+push    ecx
+push    esi
+push    edi
+mov     esi, edx
+push    0FFFFFFF0h      ; nIndex
+mov     edi, ecx
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     short loc_609AFC
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+0Ch+var_4], esi
+test    eax, eax
+jz      short loc_609AFC
+lea     ecx, [esp+0Ch+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_609AFC
+mov     ecx, [esp+0Ch+var_4]
+
+loc_609AEE:                             ; CODE XREF: sub_609AA0+5A↓j
+cmp     [eax], ecx
+jz      short loc_609B02
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_609AEE
+
+loc_609AFC:                             ; CODE XREF: sub_609AA0+15↑j
+; sub_609AA0+22↑j ...
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609B02:                             ; CODE XREF: sub_609AA0+50↑j
+test    eax, eax
+jz      short loc_609AFC
+add     eax, 4
+test    eax, eax
+jz      short loc_609AFC
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_609AFC
+mov     edx, esi
+mov     ecx, edi
+call    GetDialogDefaultButton
+pop     edi
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 // 0x0060A250 (168 bytes)
 bool GetDialog_60A250() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0060A250.json)
-    // Size: 168 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   BOOL __stdcall sub_60A250 ( HWND hWnd, LPARAM a2 ) { !HWND v2 ! ; // esi !HWND Parent ! ; // edi int v4 ; // eax int v6 ; // eax v2 = hWnd ; Parent = "GetParent " ( hWnd ) ; if ( ( "GetWindowLongA " ( v2 , -16 ) & 0xB ) == 0xB ) { hWnd = v2 ; if ( g_DialogHashMap_Count ) { v4 = * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & hWnd ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( v4 ) { while ( * ( HWND * ) v4 != hWnd ) { v4 = * ( _DWORD * ) ( v4 + 516 ) ; if ( ! v4 ) return 1 ; } v6 = v4 + 4 ; if ( v6 && ! * ( _DWORD * ) ( v6 + 104 ) && GetDialogDefaultButton ( ( int ) Parent , v2 ) ) { if ( "IsWindowVisible " ( v2 ) ) ++ dword_AC4894 ; } } } } return 1 ; }
-    return false;
+// [IDA decompile]
+int __stdcall sub_60A250(int hWnd, int a2)
+{
+  int v2; // esi
+  int v3; // edi
+  _DWORD *v4; // eax
+  _DWORD *v6; // eax
+
+  v2 = hWnd;
+  v3 = ((int (__stdcall *)(int))GetParent)(hWnd);
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(v2, -16) & 0xB) == 0xB )
+  {
+    hWnd = v2;
+    if ( dword_A8ED54[52076] )
+    {
+      v4 = *(_DWORD **)(dword_A8ED54[52075]
+                      + 4
+                      * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&hWnd)
+                       & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+      if ( v4 )
+      {
+        while ( *v4 != hWnd )
+        {
+          v4 = (_DWORD *)v4[129];
+          if ( !v4 )
+            return 1;
+        }
+        v6 = v4 + 1;
+        if ( v6 && !v6[26] && GetDialogDefaultButton(v3, v2) )
+        {
+          if ( ((int (__stdcall *)(int))IsWindowVisible)(v2) )
+            ++dword_A8ED54[54992];
+        }
+      }
+    }
+  }
+  return 1;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+
+push    esi
+mov     esi, [esp+4+hWnd]
+push    edi
+push    esi             ; hWnd
+call    ds:__imp_GetParent
+push    0FFFFFFF0h      ; nIndex
+push    esi             ; hWnd
+mov     edi, eax
+call    ds:__imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     short loc_60A2EE
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+8+hWnd], esi
+test    eax, eax
+jz      short loc_60A2EE
+lea     ecx, [esp+8+hWnd]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_60A2EE
+mov     ecx, [esp+8+hWnd]
+
+loc_60A2A6:                             ; CODE XREF: sub_60A250+62↓j
+cmp     [eax], ecx
+jz      short loc_60A2BE
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_60A2A6
+pop     edi
+mov     eax, 1
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_60A2BE:                             ; CODE XREF: sub_60A250+58↑j
+test    eax, eax
+jz      short loc_60A2EE
+add     eax, 4
+test    eax, eax
+jz      short loc_60A2EE
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_60A2EE
+mov     edx, esi
+mov     ecx, edi
+call    GetDialogDefaultButton
+test    al, al
+jz      short loc_60A2EE
+push    esi             ; hWnd
+call    ds:__imp_IsWindowVisible
+test    eax, eax
+jz      short loc_60A2EE
+inc     dword_A8ED54+35B40h
+
+loc_60A2EE:                             ; CODE XREF: sub_60A250+1D↑j
+; sub_60A250+2A↑j ...
+pop     edi
+mov     eax, 1
+pop     esi
+retn    8
+*/
 }
 
 // 0x00788710 (237 bytes)
 bool GetDialog_788710() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00788710.json)
-    // Size: 237 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   BOOL __fastcall sub_788710 ( int a1, char a2 ) { !wchar_t *StringCSF ! ; // eax !int i ! ; // esi !HWND v6 ! ; // eax !HWND Current ! ; // eax !HWND DlgItem ! ; // eax void *v10 ; // [esp+8h] [ebp-4h] BYREF if ( g_WOL_ChannelState ) { Debug::Log ( ) ; ( * ( void (__stdcall **)(LPVOID) ) ( * ( _DWORD * ) ppv + 36 ) ) ( ppv ) ; StringCSF = GetStringCSF ( g_Str_WOL_LeavingChannel , 0 , g_Str_File_wonline_cpp , 10704 ) ; WideString::Assign ( ( wchar_t ** ) & v10 , StringCSF ) ; ShowUIMessage ( a1 , ( wchar_t ** ) & v10 , a2 ) ; DeleteAndZero::Alt ( & v10 ) ; for ( i = 0 ; g_WOL_ChannelState ; ++ i ) { if ( i >= 150 ) break ; "Sleep " ( 0x64u ) ; Game::ProcessIdle ( ) ; } v6 = ( HWND ) Dialog::FindByHandle ( ( void * ) 0xC4 ) ; if ( v6 ) { g_WOL_ChannelList &= ~ 0x40u ; if ( ! g_WOL_ChannelList ) CloseDialog ( v6 , 0 ) ; } Current = Dialog::GetCurrent ( ) ; DlgItem = "GetDlgItem " ( Current , 1344 ) ; if ( DlgItem ) "SetFocus " ( DlgItem ) ; } return g_WOL_ChannelState == 0 ; }
-    return false;
+// [IDA decompile]
+BOOL __fastcall sub_788710(int a1, char a2)
+{
+  #72 *StringCSF; // eax
+  int i; // esi
+  void *v6; // eax
+  int Current; // eax
+  int v8; // eax
+  void *v10; // [esp+8h] [ebp-4h] BYREF
+
+  if ( dword_A8ED54[238623] )
+  {
+    Debug::Log();
+    (*(void (__stdcall **)(int))(*(_DWORD *)dword_A8ED54[51462] + 36))(dword_A8ED54[51462]);
+    StringCSF = GetStringCSF((#72 *)g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704);
+    WideString::Assign((#72 **)&v10, StringCSF);
+    ShowUIMessage(a1, (#72 **)&v10, a2);
+    DeleteAndZero::Alt(&v10);
+    for ( i = 0; dword_A8ED54[238623]; ++i )
+    {
+      if ( i >= 150 )
+        break;
+      ((void (__stdcall *)(int))Sleep)(100);
+      Game::ProcessIdle();
+    }
+    v6 = (void *)Dialog::FindByHandle((void *)0xC4);
+    if ( v6 )
+    {
+      dword_A8ED54[238621] &= ~0x40u;
+      if ( !dword_A8ED54[238621] )
+        CloseDialog(v6, 0);
+    }
+    Current = Dialog::GetCurrent();
+    v8 = ((int (__stdcall *)(int, int))GetDlgItem)(Current, 1344);
+    if ( v8 )
+      ((void (__stdcall *)(int))SetFocus)(v8);
+  }
+  return dword_A8ED54[238623] == 0;
+}
+
+/* ASM:
+push    ecx
+mov     eax, dword_A8ED54+0E907Ch
+push    esi
+push    edi
+mov     esi, edx
+test    eax, eax
+mov     edi, ecx
+jz      loc_7887EC
+mov     eax, dword_A8ED54+0E7DBCh
+push    eax
+push    (offset dword_A8ED54+0E7DF0h)
+push    offset g_Str_Trace_Leave_Channel__channel__s_type__d ; "Leave_Channel, channel %s type %d\n"
+call    Debug__Log
+mov     eax, dword_A8ED54+32418h
+add     esp, 0Ch
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+24h]
+xor     edx, edx
+mov     ecx, offset g_Str_WOL_LeavingChannel ; "WOL:LeavingChannel"
+push    29D0h           ; int
+push    offset g_Str_File_wonline_cpp ; "D:\\ra2mdpost\\wonline.cpp"
+call    GetStringCSF
+lea     ecx, [esp+0Ch+var_4]
+push    eax             ; String
+call    WideString__Assign
+lea     edx, [esp+0Ch+var_4]
+mov     ecx, edi
+push    esi
+call    ShowUIMessage
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero__Alt
+mov     eax, dword_A8ED54+0E907Ch
+xor     esi, esi
+test    eax, eax
+jz      short loc_7887A8
+mov     edi, ds:__imp_Sleep
+
+loc_78878D:                             ; CODE XREF: sub_788710+96↓j
+cmp     esi, 96h
+jge     short loc_7887A8
+push    64h ; 'd'       ; dwMilliseconds
+call    edi ; __imp_Sleep
+call    Game__ProcessIdle
+mov     eax, dword_A8ED54+0E907Ch
+inc     esi
+test    eax, eax
+jnz     short loc_78878D
+
+loc_7887A8:                             ; CODE XREF: sub_788710+75↑j
+; sub_788710+83↑j
+mov     ecx, 0C4h
+call    Dialog__FindByHandle
+test    eax, eax
+jz      short loc_7887D0
+mov     ecx, dword_A8ED54+0E9074h
+and     ecx, 0FFFFFFBFh
+mov     dword_A8ED54+0E9074h, ecx
+jnz     short loc_7887D0
+xor     edx, edx
+mov     ecx, eax
+call    CloseDialog
+
+loc_7887D0:                             ; CODE XREF: sub_788710+A4↑j
+; sub_788710+B5↑j
+call    Dialog__GetCurrent
+push    540h            ; nIDDlgItem
+push    eax             ; hDlg
+call    ds:__imp_GetDlgItem
+test    eax, eax
+jz      short loc_7887EC
+push    eax             ; hWnd
+call    ds:__imp_SetFocus
+
+loc_7887EC:                             ; CODE XREF: sub_788710+E↑j
+; sub_788710+D3↑j
+mov     ecx, dword_A8ED54+0E907Ch
+xor     eax, eax
+test    ecx, ecx
+pop     edi
+pop     esi
+setz    al
+pop     ecx
+retn
+*/
 }
 
 // 0x006D1570 (116 bytes)
 void HashTable_AddCommand_6D1570() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D1570.json)
-    // Size: 116 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6D1570 ( void *this ) { !char result ! ; // al _DWORD v2[6] ; // [esp+4h] [ebp-1Ch] BYREF char v3 ; // [esp+1Ch] [ebp-4h] result = ( * ( int (__thiscall **)(void *, _DWORD *) ) ( * ( _DWORD * ) this + 48 ) ) ( this , dword_B0CC40 ) ; if ( dword_B0CC40 ) { v2 [ 2 ] = dword_B0CC50 ; v2 [ 1 ] = dword_B0CC4C ; v2 [ 4 ] = dword_B0CC58 ; v3 = 0 ; v2 [ 0 ] = dword_B0CC64 ; v2 [ 5 ] = g_Str_Tip_ThumbClosed ; v2 [ 3 ] = dword_B0CC54 ; HashTable::Remove ( ( int * ) g_TacticalRender , dword_B0CC64 ) ; return CommandClass::AddAction ( g_TacticalRender , ( int ) v2 ) ; } return result ; }
-    
+// [IDA decompile]
+char __thiscall sub_6D1570(void *this)
+{
+  char result; // al
+  _DWORD v2[6]; // [esp+4h] [ebp-1Ch] BYREF
+  char v3; // [esp+1Ch] [ebp-4h]
+
+  result = (*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 48))(this, MEMORY[0xB0CC40]);
+  if ( MEMORY[0xB0CC40] )
+  {
+    v2[2] = MEMORY[0xB0CC50];
+    v2[1] = MEMORY[0xB0CC4C];
+    v2[4] = MEMORY[0xB0CC58];
+    v3 = 0;
+    v2[0] = MEMORY[0xB0CC64];
+    v2[5] = g_Str_Tip_ThumbClosed;
+    v2[3] = MEMORY[0xB0CC54];
+    HashTable::Remove((int *)MEMORY[0x887368], MEMORY[0xB0CC64]);
+    return CommandClass::AddAction(MEMORY[0x887368], (int)v2);
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [ecx]
+sub     esp, 1Ch
+push    (offset dword_A8ED54+7DEECh)
+call    dword ptr [eax+30h]
+mov     ecx, (offset dword_A8ED54+7DEECh)
+test    ecx, ecx
+jz      short loc_6D15E0
+mov     ecx, dword_A8ED54+7DEFCh
+mov     edx, dword_A8ED54+7DEF8h
+mov     eax, dword_A8ED54+7DF10h
+mov     [esp+1Ch+var_14], ecx
+mov     ecx, dword_A8ED54+7DF04h
+mov     [esp+1Ch+var_18], edx
+mov     edx, dword_A8ED54+7DF00h
+mov     [esp+1Ch+var_C], ecx
+mov     ecx, ds:887368h
+push    eax
+mov     [esp+20h+var_4], 0
+mov     [esp+20h+var_1C], eax
+mov     dword ptr [esp+20h+var_8], offset g_Str_Tip_ThumbClosed ; "Tip:ThumbClosed"
+mov     [esp+20h+var_10], edx
+call    HashTable__Remove
+mov     ecx, ds:887368h
+lea     edx, [esp+1Ch+var_1C]
+push    edx
+call    CommandClass__AddAction
+
+loc_6D15E0:                             ; CODE XREF: sub_6D1570+14↑j
+add     esp, 1Ch
+retn
+*/
 }
 
 // 0x00528220 (426 bytes)
 int HashTable_Add_528220() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00528220.json)
-    // Size: 426 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_528220 ( int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4 ) { !unsigned __int8 *v4 ! ; // ebp !unsigned __int8 *v6 ! ; // edx int v7 ; // esi !int v8 ! ; // eax int v9 ; // ecx int v10 ; // esi _DWORD *v11 ; // ecx !size_t v12 ! ; // eax _DWORD *v13 ; // ecx !size_t v14 ! ; // eax !int *v15 ! ; // esi !int v16 ! ; // edi _DWORD *v17 ; // eax !size_t v18 ! ; // eax !int *v19 ! ; // esi int v21 ; // esi !const char *v22 ! ; // esi unsigned int v23 ; // [esp+8h] [ebp-Ch] BYREF int v24 ; // [esp+Ch] [ebp-8h] int v25 ; // [esp+10h] [ebp-4h] v4 = a2 ; if ( a2 ) { v6 = a3 ; if ( a3 ) { if ( a2 == * ( unsigned __int8 ** ) ( this + 4 ) ) { v7 = * ( _DWORD * ) ( this + 8 ) ; LABEL_5 : if ( v7 ) { v23 = 0 ; v24 = 0 ; v25 = 0 ; v8 = Checksummer::Add_Buffer ( & v23 , v6 , strlen ( ( const char * ) v6 ) ) ; v9 = * ( _DWORD * ) ( v7 + 48 ) ; v10 = v7 + 44 ; a3 = ( unsigned __int8 * ) v8 ; if ( v9 ) { v11 = * ( _DWORD ** ) ( v10 + 16 ) ; if ( v11 && * v11 == v8 ) { LABEL_11 : if ( * ( _DWORD * ) ( v10 + 4 ) ) { v13 = * ( _DWORD ** ) ( v10 + 16 ) ; if ( v13 && * v13 == v8 ) goto LABEL_16 ; v14 = HashTable::BinarySearchAlt ( ( char ** ) v10 , ( int * ) & a3 ) ; if ( v14 ) { * ( _DWORD * ) ( v10 + 16 ) = v14 ; LABEL_16 : v15 = ( int * ) ( * ( _DWORD * ) ( v10 + 16 ) + 4 ) ; goto LABEL_29 ; } } v15 = ( int * ) & unk_B78830 ; LABEL_29 : v21 = * v15 ; if ( v21 ) { v22 = * ( const char ** ) ( v21 + 16 ) ; if ( v22 ) sscanf ( v22 , "%x" , & a4 ) ; } return a4 ; } v12 = HashTable::BinarySearchAlt ( ( char ** ) v10 , ( int * ) & a3 ) ; if ( v12 ) { * ( _DWORD * ) ( v10 + 16 ) = v12 ; v8 = ( int ) a3 ; goto LABEL_11 ; } } } return a4 ; } v23 = 0 ; v24 = 0 ; v25 = 0 ; v16 = Checksummer::Add_Buffer ( & v23 , a2 , strlen ( ( const char * ) a2 ) ) ; a2 = ( unsigned __int8 * ) v16 ; if ( * ( _DWORD * ) ( this + 44 ) ) { v17 = * ( _DWORD ** ) ( this + 56 ) ; if ( ! v17 || * v17 != v16 ) { v18 = SortedArray::BinarySearch ( ( char ** ) ( this + 40 ) , ( int * ) & a2 ) ; if ( ! v18 ) goto LABEL_27 ; * ( _DWORD * ) ( this + 56 ) = v18 ; } a2 = ( unsigned __int8 * ) v16 ; if ( HashTable::BinarySearch ( this + 40 , ( int * ) & a2 ) ) v19 = ( int * ) ( * ( _DWORD * ) ( this + 56 ) + 4 ) ; else v19 = ( int * ) & unk_B7882C ; v7 = * v19 ; if ( v7 ) { v6 = a3 ; * ( _DWORD * ) ( this + 8 ) = v7 ; * ( _DWORD * ) ( this + 4 ) = v4 ; goto LABEL_5 ; } } LABEL_27 : * ( _DWORD * ) ( this + 4 ) = 0 ; * ( _DWORD * ) ( this + 8 ) = 0 ; return a4 ; } } return a4 ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
+{
+  unsigned __int8 *v4; // ebp
+  unsigned __int8 *v6; // edx
+  int v7; // esi
+  unsigned __int8 *v8; // eax
+  int v9; // ecx
+  int v10; // esi
+  unsigned __int8 **v11; // ecx
+  int v12; // eax
+  unsigned __int8 **v13; // ecx
+  int v14; // eax
+  int *v15; // esi
+  unsigned __int8 *v16; // edi
+  unsigned __int8 **v17; // eax
+  int v18; // eax
+  int *v19; // esi
+  int v21; // esi
+  const char *v22; // esi
+  unsigned int v23; // [esp+8h] [ebp-Ch] BYREF
+  int v24; // [esp+Ch] [ebp-8h]
+  int v25; // [esp+10h] [ebp-4h]
+
+  v4 = a2;
+  if ( a2 )
+  {
+    v6 = a3;
+    if ( a3 )
+    {
+      if ( a2 == *(unsigned __int8 **)(this + 4) )
+      {
+        v7 = *(_DWORD *)(this + 8);
+LABEL_5:
+        if ( v7 )
+        {
+          v23 = 0;
+          v24 = 0;
+          v25 = 0;
+          v8 = (unsigned __int8 *)Checksummer::Add_Buffer(&v23, v6, strlen((const char *)v6));
+          v9 = *(_DWORD *)(v7 + 48);
+          v10 = v7 + 44;
+          a3 = v8;
+          if ( v9 )
+          {
+            v11 = *(unsigned __int8 ***)(v10 + 16);
+            if ( v11 && *v11 == v8 )
+            {
+LABEL_11:
+              if ( *(_DWORD *)(v10 + 4) )
+              {
+                v13 = *(unsigned __int8 ***)(v10 + 16);
+                if ( v13 && *v13 == v8 )
+                  goto LABEL_16;
+                v14 = HashTable::BinarySearchAlt(&a3);
+                if ( v14 )
+                {
+                  *(_DWORD *)(v10 + 16) = v14;
+LABEL_16:
+                  v15 = (int *)(*(_DWORD *)(v10 + 16) + 4);
+                  goto LABEL_29;
+                }
+              }
+              v15 = &dword_A8ED54[239287];
+LABEL_29:
+              v21 = *v15;
+              if ( v21 )
+              {
+                v22 = *(const char **)(v21 + 16);
+                if ( v22 )
+                  sscanf(v22, "%x", &a4);
+              }
+              return a4;
+            }
+            v12 = HashTable::BinarySearchAlt(&a3);
+            if ( v12 )
+            {
+              *(_DWORD *)(v10 + 16) = v12;
+              v8 = a3;
+              goto LABEL_11;
+            }
+          }
+        }
+        return a4;
+      }
+      v23 = 0;
+      v24 = 0;
+      v25 = 0;
+      v16 = (unsigned __int8 *)Checksummer::Add_Buffer(&v23, a2, strlen((const char *)a2));
+      a2 = v16;
+      if ( *(_DWORD *)(this + 44) )
+      {
+        v17 = *(unsigned __int8 ***)(this + 56);
+        if ( !v17 || *v17 != v16 )
+        {
+          v18 = SortedArray::BinarySearch(&a2);
+          if ( !v18 )
+            goto LABEL_27;
+          *(_DWORD *)(this + 56) = v18;
+        }
+        a2 = v16;
+        if ( HashTable::BinarySearch(this + 40, (int *)&a2) )
+          v19 = (int *)(*(_DWORD *)(this + 56) + 4);
+        else
+          v19 = &dword_A8ED54[239286];
+        v7 = *v19;
+        if ( v7 )
+        {
+          v6 = a3;
+          *(_DWORD *)(this + 8) = v7;
+          *(_DWORD *)(this + 4) = v4;
+          goto LABEL_5;
+        }
+      }
+LABEL_27:
+      *(_DWORD *)(this + 4) = 0;
+      *(_DWORD *)(this + 8) = 0;
+      return a4;
+    }
+  }
+  return a4;
+}
+
+/* ASM:
+sub     esp, 0Ch
+xor     eax, eax
+push    ebx
+push    ebp
+mov     ebp, [esp+14h+arg_0]
+mov     ebx, ecx
+cmp     ebp, eax
+jz      loc_5283BE
+mov     edx, [esp+14h+arg_4]
+cmp     edx, eax
+jz      loc_5283BE
+mov     ecx, [ebx+4]
+push    esi
+cmp     ebp, ecx
+push    edi
+jnz     loc_5282EC
+mov     esi, [ebx+8]
+
+loc_528251:                             ; CODE XREF: sub_528220+150↓j
+cmp     esi, eax
+jz      loc_5283B0
+mov     [esp+1Ch+var_C], eax
+mov     [esp+1Ch+var_8], eax
+mov     [esp+1Ch+var_4], eax
+mov     edi, edx
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    edx
+lea     ecx, [esp+24h+var_C]
+call    Checksummer__Add_Buffer
+mov     ecx, [esi+30h]
+add     esi, 2Ch ; ','
+test    ecx, ecx
+mov     [esp+1Ch+arg_4], eax
+jz      loc_5283B0
+mov     ecx, [esi+10h]
+test    ecx, ecx
+jz      short loc_528299
+cmp     [ecx], eax
+jz      short loc_5282B4
+
+loc_528299:                             ; CODE XREF: sub_528220+73↑j
+lea     edx, [esp+1Ch+arg_4]
+mov     ecx, esi
+push    edx
+call    HashTable__BinarySearchAlt
+test    eax, eax
+jz      loc_5283B0
+mov     [esi+10h], eax
+mov     eax, [esp+1Ch+arg_4]
+
+loc_5282B4:                             ; CODE XREF: sub_528220+77↑j
+mov     ecx, [esi+4]
+test    ecx, ecx
+jz      loc_52838B
+mov     ecx, [esi+10h]
+test    ecx, ecx
+jz      short loc_5282CA
+cmp     [ecx], eax
+jz      short loc_5282E1
+
+loc_5282CA:                             ; CODE XREF: sub_528220+A4↑j
+lea     eax, [esp+1Ch+arg_4]
+mov     ecx, esi
+push    eax
+call    HashTable__BinarySearchAlt
+test    eax, eax
+jz      loc_52838B
+mov     [esi+10h], eax
+
+loc_5282E1:                             ; CODE XREF: sub_528220+A8↑j
+mov     esi, [esi+10h]
+add     esi, 4
+jmp     loc_528390
+; ---------------------------------------------------------------------------
+
+loc_5282EC:                             ; CODE XREF: sub_528220+28↑j
+mov     [esp+1Ch+var_C], eax
+mov     [esp+1Ch+var_8], eax
+mov     [esp+1Ch+var_4], eax
+mov     edi, ebp
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+repne scasb
+not     ecx
+dec     ecx
+push    ecx
+push    ebp
+lea     ecx, [esp+24h+var_C]
+call    Checksummer__Add_Buffer
+lea     esi, [ebx+28h]
+mov     edi, eax
+mov     [esp+1Ch+arg_0], edi
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_528375
+mov     eax, [esi+10h]
+test    eax, eax
+jz      short loc_52832A
+cmp     [eax], edi
+jz      short loc_52833D
+
+loc_52832A:                             ; CODE XREF: sub_528220+104↑j
+lea     eax, [esp+1Ch+arg_0]
+mov     ecx, esi
+push    eax
+call    SortedArray__BinarySearch
+test    eax, eax
+jz      short loc_528375
+mov     [esi+10h], eax
+
+loc_52833D:                             ; CODE XREF: sub_528220+108↑j
+lea     ecx, [esp+1Ch+arg_0]
+mov     [esp+1Ch+arg_0], edi
+push    ecx
+mov     ecx, esi
+call    HashTable__BinarySearch
+test    al, al
+jz      short loc_528359
+mov     esi, [esi+10h]
+add     esi, 4
+jmp     short loc_52835E
+; ---------------------------------------------------------------------------
+
+loc_528359:                             ; CODE XREF: sub_528220+12F↑j
+mov     esi, (offset dword_A8ED54+0E9AD8h)
+
+loc_52835E:                             ; CODE XREF: sub_528220+137↑j
+mov     esi, [esi]
+test    esi, esi
+jz      short loc_528375
+mov     edx, [esp+1Ch+arg_4]
+mov     [ebx+8], esi
+mov     [ebx+4], ebp
+xor     eax, eax
+jmp     loc_528251
+; ---------------------------------------------------------------------------
+
+loc_528375:                             ; CODE XREF: sub_528220+FD↑j
+; sub_528220+118↑j ...
+xor     eax, eax
+pop     edi
+pop     esi
+mov     [ebx+4], eax
+mov     [ebx+8], eax
+mov     eax, [esp+14h+arg_8]
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_52838B:                             ; CODE XREF: sub_528220+99↑j
+; sub_528220+B8↑j
+mov     esi, (offset dword_A8ED54+0E9ADCh)
+
+loc_528390:                             ; CODE XREF: sub_528220+C7↑j
+mov     esi, [esi]
+test    esi, esi
+jz      short loc_5283B0
+mov     esi, [esi+10h]
+test    esi, esi
+jz      short loc_5283B0
+lea     ecx, [esp+1Ch+arg_8]
+push    ecx
+push    offset asc_825BD4 ; "%x"
+push    esi             ; Buffer
+call    _sscanf
+add     esp, 0Ch
+
+loc_5283B0:                             ; CODE XREF: sub_528220+33↑j
+; sub_528220+68↑j ...
+mov     eax, [esp+1Ch+arg_8]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5283BE:                             ; CODE XREF: sub_528220+F↑j
+; sub_528220+1B↑j
+mov     eax, [esp+14h+arg_8]
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    0Ch
+*/
 }
 
 // 0x0048BB60 (192 bytes)
 bool HotkeyOptions_Qsort_48BB60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0048BB60.json)
-    // Size: 192 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __fastcall sub_48BB60 ( int a1 ) { int v1 ; // ebp !int v2 ! ; // esi int v3 ; // ebx !int v4 ! ; // ecx _DWORD *v5 ; // edi int v6 ; // edx _DWORD *v7 ; // eax BYTE1 ( a1 ) &= ~ 8u ; v1 = a1 ; v2 = NumOfElements ; v3 = a1 ; BYTE1 ( v3 ) = BYTE1 ( a1 ) & 0xE8 ; if ( ! NumOfElements ) goto LABEL_12 ; v4 = g_FileSystemPool ; if ( g_FileSystemPool && * ( _DWORD * ) g_FileSystemPool == v3 ) { LABEL_17 : v7 = ( _DWORD * ) ( v4 + 4 ) ; return ! * v7 || ( * ( unsigned __int8 (__thiscall **)(_DWORD, int) ) ( * ( _DWORD * ) * v7 + 20 ) ) ( * v7 , v1 ) == 0 ; } if ( ! g_FileSystemInitFlag ) { qsort ( Base , NumOfElements , 8u , ( _CoreCrtNonSecureSearchSortCompareFunction ) CompareFuncInt ) ; v2 = NumOfElements ; g_FileSystemPool = 0 ; g_FileSystemInitFlag = 1 ; } v5 = Base ; if ( v2 <= 0 ) goto LABEL_12 ; while ( 1 ) { v6 = v5 [ 2 * ( v2 / 2 ) ] ; v4 = ( int ) & v5 [ 2 * ( v2 / 2 ) ] ; if ( v6 <= v3 ) break ; v2 /= 2 ; LABEL_11 : if ( v2 <= 0 ) goto LABEL_12 ; } if ( v6 != v3 ) { v5 = ( _DWORD * ) ( v4 + 8 ) ; v2 += -1 - v2 / 2 ; goto LABEL_11 ; } if ( v4 ) { g_FileSystemPool = ( int ) & v5 [ 2 * ( v2 / 2 ) ] ; goto LABEL_17 ; } LABEL_12 : v7 = & unk_B7883C ; return ! * v7 || ( * ( unsigned __int8 (__thiscall **)(_DWORD, int) ) ( * ( _DWORD * ) * v7 + 20 ) ) ( * v7 , v1 ) == 0 ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_48BB60(int a1)
+{
+  int v1; // ebp
+  int v2; // esi
+  int v3; // ebx
+  int v4; // ecx
+  int v5; // edi
+  int v6; // edx
+  int *v7; // eax
+
+  BYTE1(a1) &= ~8u;
+  v1 = a1;
+  v2 = dword_87F5D8[43];
+  v3 = a1;
+  BYTE1(v3) = BYTE1(a1) & 0xE8;
+  if ( !dword_87F5D8[43] )
+    goto LABEL_12;
+  v4 = dword_87F5D8[46];
+  if ( dword_87F5D8[46] && *(_DWORD *)dword_87F5D8[46] == v3 )
+  {
+LABEL_17:
+    v7 = (int *)(v4 + 4);
+    return !*v7 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0;
+  }
+  if ( !LOBYTE(dword_87F5D8[45]) )
+  {
+    qsort((void *)dword_87F5D8[42], dword_87F5D8[43], 8, CompareFuncInt);
+    v2 = dword_87F5D8[43];
+    dword_87F5D8[46] = 0;
+    LOBYTE(dword_87F5D8[45]) = 1;
+  }
+  v5 = dword_87F5D8[42];
+  if ( v2 <= 0 )
+    goto LABEL_12;
+  while ( 1 )
+  {
+    v6 = *(_DWORD *)(v5 + 8 * (v2 / 2));
+    v4 = v5 + 8 * (v2 / 2);
+    if ( v6 <= v3 )
+      break;
+    v2 /= 2;
+LABEL_11:
+    if ( v2 <= 0 )
+      goto LABEL_12;
+  }
+  if ( v6 != v3 )
+  {
+    v5 = v4 + 8;
+    v2 += -1 - v2 / 2;
+    goto LABEL_11;
+  }
+  if ( v4 )
+  {
+    dword_87F5D8[46] = v5 + 8 * (v2 / 2);
+    goto LABEL_17;
+  }
+LABEL_12:
+  v7 = &dword_A8ED54[239290];
+  return !*v7 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0;
+}
+
+/* ASM:
+push    ebx
+and     ch, 0F7h
+push    ebp
+mov     ebp, ecx
+push    esi
+mov     esi, dword_87F5D8+0ACh
+mov     ebx, ebp
+push    edi
+and     bh, 0E8h
+test    esi, esi
+jz      short loc_48BBEF
+mov     ecx, dword_87F5D8+0B8h
+test    ecx, ecx
+jz      short loc_48BB8A
+cmp     [ecx], ebx
+jz      loc_48BC0B
+
+loc_48BB8A:                             ; CODE XREF: sub_48BB60+20↑j
+mov     al, byte ptr dword_87F5D8+0B4h
+test    al, al
+jnz     short loc_48BBC0
+mov     eax, dword_87F5D8+0A8h
+push    offset CompareFuncInt ; CompareFunction
+push    8               ; SizeOfElements
+push    esi             ; NumOfElements
+push    eax             ; Base
+call    _qsort
+mov     esi, dword_87F5D8+0ACh
+add     esp, 10h
+mov     dword_87F5D8+0B8h, 0
+mov     byte ptr dword_87F5D8+0B4h, 1
+
+loc_48BBC0:                             ; CODE XREF: sub_48BB60+31↑j
+mov     edi, dword_87F5D8+0A8h
+test    esi, esi
+jle     short loc_48BBEF
+
+loc_48BBCA:                             ; CODE XREF: sub_48BB60+8D↓j
+mov     eax, esi
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     edx, [edi+eax*8]
+lea     ecx, [edi+eax*8]
+cmp     edx, ebx
+jle     short loc_48BBDF
+mov     esi, eax
+jmp     short loc_48BBEB
+; ---------------------------------------------------------------------------
+
+loc_48BBDF:                             ; CODE XREF: sub_48BB60+79↑j
+jz      short loc_48BC01
+lea     edi, [ecx+8]
+or      ecx, 0FFFFFFFFh
+sub     ecx, eax
+add     esi, ecx
+
+loc_48BBEB:                             ; CODE XREF: sub_48BB60+7D↑j
+test    esi, esi
+jg      short loc_48BBCA
+
+loc_48BBEF:                             ; CODE XREF: sub_48BB60+16↑j
+; sub_48BB60+68↑j ...
+mov     eax, (offset dword_A8ED54+0E9AE8h)
+
+loc_48BBF4:                             ; CODE XREF: sub_48BB60+AE↓j
+mov     ecx, [eax]
+test    ecx, ecx
+jnz     short loc_48BC10
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_48BC01:                             ; CODE XREF: sub_48BB60:loc_48BBDF↑j
+test    ecx, ecx
+jz      short loc_48BBEF
+mov     dword_87F5D8+0B8h, ecx
+
+loc_48BC0B:                             ; CODE XREF: sub_48BB60+24↑j
+lea     eax, [ecx+4]
+jmp     short loc_48BBF4
+; ---------------------------------------------------------------------------
+
+loc_48BC10:                             ; CODE XREF: sub_48BB60+98↑j
+mov     edx, [ecx]
+push    ebp
+call    dword ptr [edx+14h]
+neg     al
+pop     edi
+pop     esi
+sbb     eax, eax
+pop     ebp
+inc     eax
+pop     ebx
+retn
+*/
 }
 
 // 0x00796B30 (83 bytes)
 int InitSimpleDialogControl_796B30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00796B30.json)
-    // Size: 83 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int sub_796B30 ( ) { !int v0 ! ; // esi _DWORD v2[3] ; // [esp+4h] [ebp-Ch] BYREF SimpleDialogControl::Constructor ( v2 ) ; v2 [ 0 ] = & off_7F7624 ; v0 = RunDialog ( 0xFEu , ( INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM) ) LobbyDlgProcWOL , ( LPARAM ) v2 ) ; v2 [ 0 ] = & off_7F7624 ; OwnerDrawControl::InitVtable ( v2 ) ; if ( v0 >= 0 ) return v0 ; else return 0 ; }
+// [IDA decompile]
+int __usercall sub_796B30@<eax>(int a1@<ebp>)
+{
+  int v1; // esi
+  _DWORD v3[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  SimpleDialogControl::Constructor(v3);
+  v3[0] = &off_7F7624;
+  v1 = RunDialog((int)LobbyDlgProcWOL, 0xFEu, a1, (int)v3);
+  v3[0] = &off_7F7624;
+  OwnerDrawControl::InitVtable(v3);
+  if ( v1 >= 0 )
+    return v1;
+  else
     return 0;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+lea     ecx, [esp+10h+var_C]
+call    SimpleDialogControl__Constructor
+lea     eax, [esp+10h+var_C]
+mov     edx, offset LobbyDlgProcWOL
+push    eax
+mov     ecx, 0FEh
+mov     [esp+14h+var_C], offset off_7F7624
+call    RunDialog
+mov     esi, eax
+mov     [esp+10h+var_C], offset off_7F7624
+test    esi, esi
+lea     ecx, [esp+10h+var_C]
+jge     short loc_796B77
+call    OwnerDrawControl__InitVtable
+xor     eax, eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_796B77:                             ; CODE XREF: sub_796B30+39↑j
+call    OwnerDrawControl__InitVtable
+mov     eax, esi
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x006096A0 (129 bytes)
 char IsDialog_6096A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006096A0.json)
-    // Size: 129 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_6096A0 ( int a1, HWND a2 ) { _DWORD *v4 ; // eax _DWORD *v6 ; // eax !HWND v7 ! ; // [esp+8h] [ebp-4h] BYREF if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) != 0xB ) return 0 ; v7 = a2 ; if ( ! g_DialogHashMap_Count ) return 0 ; v4 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v7 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( ! v4 ) return 0 ; while ( ( HWND ) * v4 != v7 ) { v4 = ( _DWORD * ) v4 [ 129 ] ; if ( ! v4 ) return 0 ; } v6 = v4 + 1 ; if ( v6 && ! v6 [ 26 ] ) return IsDialogControlVisible ( a1 , a2 ) ; else return 0 ; }
+// [IDA decompile]
+char __fastcall sub_6096A0(int a1, int a2)
+{
+  _DWORD *v4; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+8h] [ebp-4h] BYREF
+
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) != 0xB )
     return 0;
+  v7 = a2;
+  if ( !dword_A8ED54[52076] )
+    return 0;
+  v4 = *(_DWORD **)(dword_A8ED54[52075]
+                  + 4
+                  * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v7) & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+  if ( !v4 )
+    return 0;
+  while ( *v4 != v7 )
+  {
+    v4 = (_DWORD *)v4[129];
+    if ( !v4 )
+      return 0;
+  }
+  v6 = v4 + 1;
+  if ( v6 && !v6[26] )
+    return IsDialogControlVisible(a1, a2);
+  else
+    return 0;
+}
+
+/* ASM:
+push    ecx
+push    esi
+push    edi
+mov     esi, edx
+push    0FFFFFFF0h      ; nIndex
+mov     edi, ecx
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     short loc_6096FC
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+0Ch+var_4], esi
+test    eax, eax
+jz      short loc_6096FC
+lea     ecx, [esp+0Ch+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_6096FC
+mov     ecx, [esp+0Ch+var_4]
+
+loc_6096EE:                             ; CODE XREF: sub_6096A0+5A↓j
+cmp     [eax], ecx
+jz      short loc_609702
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_6096EE
+
+loc_6096FC:                             ; CODE XREF: sub_6096A0+15↑j
+; sub_6096A0+22↑j ...
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609702:                             ; CODE XREF: sub_6096A0+50↑j
+test    eax, eax
+jz      short loc_6096FC
+add     eax, 4
+test    eax, eax
+jz      short loc_6096FC
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_6096FC
+mov     edx, esi
+mov     ecx, edi
+call    IsDialogControlVisible
+pop     edi
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 // 0x00609BC0 (292 bytes)
 bool IsDialog_609BC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00609BC0.json)
-    // Size: 292 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   bool __fastcall sub_609BC0 ( int a1, HWND a2 ) { _DWORD *v4 ; // eax _DWORD *v5 ; // eax _DWORD *v7 ; // eax _DWORD *v8 ; // eax !HWND v9 ! ; // [esp+Ch] [ebp-4h] BYREF if ( SessionClass::GetGameSpeed ( GameMode_Current ) ) return 0 ; if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) == 0xB ) { v9 = a2 ; if ( g_DialogHashMap_Count ) { v4 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v9 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( v4 ) { while ( ( HWND ) * v4 != v9 ) { v4 = ( _DWORD * ) v4 [ 129 ] ; if ( ! v4 ) goto LABEL_7 ; } v7 = v4 + 1 ; if ( v7 ) { if ( ! v7 [ 26 ] && IsDialogControlVisible ( a1 , a2 ) ) return 1 ; } } } } LABEL_7 : if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) != 0xB ) return 0 ; v9 = a2 ; if ( ! g_DialogHashMap_Count ) return 0 ; v5 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v9 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( ! v5 ) return 0 ; while ( ( HWND ) * v5 != v9 ) { v5 = ( _DWORD * ) v5 [ 129 ] ; if ( ! v5 ) return 0 ; } v8 = v5 + 1 ; return v8 && ! v8 [ 26 ] && GetDialogDefaultButton ( a1 , a2 ) ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_609BC0(int a1, int a2)
+{
+  _DWORD *v4; // eax
+  _DWORD *v5; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // [esp+Ch] [ebp-4h] BYREF
+
+  if ( SessionClass::GetGameSpeed(&MEMORY[0x87F7E8][536212]) )
+    return 0;
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) == 0xB )
+  {
+    v9 = a2;
+    if ( dword_A8ED54[52076] )
+    {
+      v4 = *(_DWORD **)(dword_A8ED54[52075]
+                      + 4
+                      * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v9)
+                       & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+      if ( v4 )
+      {
+        while ( *v4 != v9 )
+        {
+          v4 = (_DWORD *)v4[129];
+          if ( !v4 )
+            goto LABEL_7;
+        }
+        v7 = v4 + 1;
+        if ( v7 )
+        {
+          if ( !v7[26] && IsDialogControlVisible(a1, a2) )
+            return 1;
+        }
+      }
+    }
+  }
+LABEL_7:
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) != 0xB )
+    return 0;
+  v9 = a2;
+  if ( !dword_A8ED54[52076] )
+    return 0;
+  v5 = *(_DWORD **)(dword_A8ED54[52075]
+                  + 4
+                  * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v9) & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+  if ( !v5 )
+    return 0;
+  while ( *v5 != v9 )
+  {
+    v5 = (_DWORD *)v5[129];
+    if ( !v5 )
+      return 0;
+  }
+  v8 = v5 + 1;
+  return v8 && !v8[26] && GetDialogDefaultButton(a1, a2);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+mov     ebx, ecx
+push    esi
+push    edi
+mov     esi, edx
+mov     ecx, 0A8B238h
+call    SessionClass__GetGameSpeed
+test    al, al
+jnz     loc_609CDD
+mov     edi, ds:__imp_GetWindowLongA
+push    0FFFFFFF0h      ; nIndex
+push    esi             ; hWnd
+call    edi ; __imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     short loc_609C31
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+10h+var_4], esi
+test    eax, eax
+jz      short loc_609C31
+lea     ecx, [esp+10h+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_609C31
+mov     ecx, [esp+10h+var_4]
+
+loc_609C23:                             ; CODE XREF: sub_609BC0+6F↓j
+cmp     [eax], ecx
+jz      short loc_609C91
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_609C23
+
+loc_609C31:                             ; CODE XREF: sub_609BC0+2A↑j
+; sub_609BC0+37↑j ...
+push    0FFFFFFF0h      ; nIndex
+push    esi             ; hWnd
+call    edi ; __imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     loc_609CDD
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+10h+var_4], esi
+test    eax, eax
+jz      loc_609CDD
+lea     ecx, [esp+10h+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_609CDD
+mov     ecx, [esp+10h+var_4]
+
+loc_609C7C:                             ; CODE XREF: sub_609BC0+C8↓j
+cmp     [eax], ecx
+jz      short loc_609CB7
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_609C7C
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609C91:                             ; CODE XREF: sub_609BC0+65↑j
+test    eax, eax
+jz      short loc_609C31
+add     eax, 4
+test    eax, eax
+jz      short loc_609C31
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_609C31
+mov     edx, esi
+mov     ecx, ebx
+call    IsDialogControlVisible
+test    al, al
+jz      short loc_609C31
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609CB7:                             ; CODE XREF: sub_609BC0+BE↑j
+test    eax, eax
+jz      short loc_609CDD
+add     eax, 4
+test    eax, eax
+jz      short loc_609CDD
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_609CDD
+mov     edx, esi
+mov     ecx, ebx
+call    GetDialogDefaultButton
+test    al, al
+jz      short loc_609CDD
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609CDD:                             ; CODE XREF: sub_609BC0+14↑j
+; sub_609BC0+7B↑j ...
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x00609CF0 (292 bytes)
 bool IsDialog_609CF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00609CF0.json)
-    // Size: 292 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   bool __fastcall sub_609CF0 ( int a1, HWND a2 ) { _DWORD *v4 ; // eax _DWORD *v5 ; // eax _DWORD *v7 ; // eax _DWORD *v8 ; // eax !HWND v9 ! ; // [esp+Ch] [ebp-4h] BYREF if ( ! SessionClass::GetGameSpeed ( GameMode_Current ) ) return 0 ; if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) == 0xB ) { v9 = a2 ; if ( g_DialogHashMap_Count ) { v4 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v9 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( v4 ) { while ( ( HWND ) * v4 != v9 ) { v4 = ( _DWORD * ) v4 [ 129 ] ; if ( ! v4 ) goto LABEL_7 ; } v7 = v4 + 1 ; if ( v7 ) { if ( ! v7 [ 26 ] && IsDialogControlVisible ( a1 , a2 ) ) return 1 ; } } } } LABEL_7 : if ( ( "GetWindowLongA " ( a2 , -16 ) & 0xB ) != 0xB ) return 0 ; v9 = a2 ; if ( ! g_DialogHashMap_Count ) return 0 ; v5 = ( _DWORD * ) * ( ( _DWORD * ) g_DialogHashMap_Base + ( g_DialogHashMap_Hasher ( & v9 ) & ( ( 1 << g_DialogHashMap_Buckets ) - 1 ) ) ) ; if ( ! v5 ) return 0 ; while ( ( HWND ) * v5 != v9 ) { v5 = ( _DWORD * ) v5 [ 129 ] ; if ( ! v5 ) return 0 ; } v8 = v5 + 1 ; return v8 && ! v8 [ 26 ] && GetDialogDefaultButton ( a1 , a2 ) ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_609CF0(int a1, int a2)
+{
+  _DWORD *v4; // eax
+  _DWORD *v5; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // [esp+Ch] [ebp-4h] BYREF
+
+  if ( !SessionClass::GetGameSpeed(&MEMORY[0x87F7E8][536212]) )
+    return 0;
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) == 0xB )
+  {
+    v9 = a2;
+    if ( dword_A8ED54[52076] )
+    {
+      v4 = *(_DWORD **)(dword_A8ED54[52075]
+                      + 4
+                      * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v9)
+                       & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+      if ( v4 )
+      {
+        while ( *v4 != v9 )
+        {
+          v4 = (_DWORD *)v4[129];
+          if ( !v4 )
+            goto LABEL_7;
+        }
+        v7 = v4 + 1;
+        if ( v7 )
+        {
+          if ( !v7[26] && IsDialogControlVisible(a1, a2) )
+            return 1;
+        }
+      }
+    }
+  }
+LABEL_7:
+  if ( (((int (__stdcall *)(int, int))GetWindowLongA)(a2, -16) & 0xB) != 0xB )
+    return 0;
+  v9 = a2;
+  if ( !dword_A8ED54[52076] )
+    return 0;
+  v5 = *(_DWORD **)(dword_A8ED54[52075]
+                  + 4
+                  * (((int (__thiscall *)(int *))dword_A8ED54[52081])(&v9) & ((1 << SLOBYTE(dword_A8ED54[52078])) - 1)));
+  if ( !v5 )
+    return 0;
+  while ( *v5 != v9 )
+  {
+    v5 = (_DWORD *)v5[129];
+    if ( !v5 )
+      return 0;
+  }
+  v8 = v5 + 1;
+  return v8 && !v8[26] && GetDialogDefaultButton(a1, a2);
+}
+
+/* ASM:
+push    ecx
+push    ebx
+mov     ebx, ecx
+push    esi
+push    edi
+mov     esi, edx
+mov     ecx, 0A8B238h
+call    SessionClass__GetGameSpeed
+test    al, al
+jz      loc_609E0D
+mov     edi, ds:__imp_GetWindowLongA
+push    0FFFFFFF0h      ; nIndex
+push    esi             ; hWnd
+call    edi ; __imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     short loc_609D61
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+10h+var_4], esi
+test    eax, eax
+jz      short loc_609D61
+lea     ecx, [esp+10h+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_609D61
+mov     ecx, [esp+10h+var_4]
+
+loc_609D53:                             ; CODE XREF: sub_609CF0+6F↓j
+cmp     [eax], ecx
+jz      short loc_609DC1
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_609D53
+
+loc_609D61:                             ; CODE XREF: sub_609CF0+2A↑j
+; sub_609CF0+37↑j ...
+push    0FFFFFFF0h      ; nIndex
+push    esi             ; hWnd
+call    edi ; __imp_GetWindowLongA
+and     eax, 0Bh
+cmp     al, 0Bh
+jnz     loc_609E0D
+mov     eax, dword_A8ED54+32DB0h
+mov     [esp+10h+var_4], esi
+test    eax, eax
+jz      loc_609E0D
+lea     ecx, [esp+10h+var_4]
+call    dword_A8ED54+32DC4h
+mov     ecx, dword_A8ED54+32DB8h
+mov     edx, 1
+shl     edx, cl
+dec     edx
+and     edx, eax
+mov     eax, dword_A8ED54+32DACh
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_609E0D
+mov     ecx, [esp+10h+var_4]
+
+loc_609DAC:                             ; CODE XREF: sub_609CF0+C8↓j
+cmp     [eax], ecx
+jz      short loc_609DE7
+mov     eax, [eax+204h]
+test    eax, eax
+jnz     short loc_609DAC
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609DC1:                             ; CODE XREF: sub_609CF0+65↑j
+test    eax, eax
+jz      short loc_609D61
+add     eax, 4
+test    eax, eax
+jz      short loc_609D61
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_609D61
+mov     edx, esi
+mov     ecx, ebx
+call    IsDialogControlVisible
+test    al, al
+jz      short loc_609D61
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609DE7:                             ; CODE XREF: sub_609CF0+BE↑j
+test    eax, eax
+jz      short loc_609E0D
+add     eax, 4
+test    eax, eax
+jz      short loc_609E0D
+mov     ecx, [eax+68h]
+test    ecx, ecx
+jnz     short loc_609E0D
+mov     edx, esi
+mov     ecx, ebx
+call    GetDialogDefaultButton
+test    al, al
+jz      short loc_609E0D
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_609E0D:                             ; CODE XREF: sub_609CF0+14↑j
+; sub_609CF0+7B↑j ...
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x00759200 (90 bytes)
 char IsDialog_759200() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00759200.json)
-    // Size: 90 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char sub_759200 ( ) { !MSG Msg ! ; // [esp+0h] [ebp-1Ch] BYREF ++ dword_AA0430 ; if ( ! GameLoopMessagePump ( & Msg , 0 , 0 , 0 , 0 ) ) return 1 ; if ( IsMessageDialog ( & Msg , 0 , 0 , 0 ) ) { "TranslateMessage " ( & Msg ) ; "DispatchMessageA " ( & Msg ) ; return 1 ; } return 0 ; }
-    return 0;
+// [IDA decompile]
+char sub_759200()
+{
+  char Msg[28]; // [esp+0h] [ebp-1Ch] BYREF
+
+  ++dword_A8ED54[17847];
+  if ( !GameLoopMessagePump(Msg, 0, 0, 0, 0) )
+    return 1;
+  if ( IsMessageDialog((int)Msg, 0, 0, 0) )
+  {
+    TranslateMessage((const MSG *)Msg);
+    ((void (__stdcall *)(char *))DispatchMessageA)(Msg);
+    return 1;
+  }
+  return 0;
+}
+
+/* ASM:
+Msg             = byte ptr -1Ch
+
+mov     edx, dword_A8ED54+116DCh
+sub     esp, 1Ch
+inc     edx
+lea     ecx, [esp+1Ch+Msg] ; lpMsg
+push    0               ; wRemoveMsg
+mov     dword_A8ED54+116DCh, edx
+push    0               ; wMsgFilterMax
+push    0               ; wMsgFilterMin
+xor     edx, edx
+call    GameLoopMessagePump
+test    eax, eax
+jz      short loc_75924E
+push    0
+push    0
+xor     edx, edx
+lea     ecx, [esp+24h+Msg]
+call    IsMessageDialog
+test    eax, eax
+jz      short loc_759254
+lea     eax, [esp+1Ch+Msg]
+push    eax             ; lpMsg
+call    ds:__imp_TranslateMessage
+lea     ecx, [esp+1Ch+Msg]
+push    ecx             ; lpMsg
+call    ds:__imp_DispatchMessageA
+
+loc_75924E:                             ; CODE XREF: sub_759200+23↑j
+mov     al, 1
+add     esp, 1Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_759254:                             ; CODE XREF: sub_759200+36↑j
+xor     al, al
+add     esp, 1Ch
+retn
+*/
 }
 
 // 0x00776320 (362 bytes)
 char MethodHitDialogTest_776320() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00776320.json)
-    // Size: 362 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_776320 ( LPARAM lParam ) { int v2 ; // edx !HCURSOR CursorA ! ; // eax !char v4 ! ; // bl !HCURSOR v5 ! ; // eax struct tagPOINT v7[5] ; // [esp+4h] [ebp-88h] BYREF !struct tagRECT Rect ! ; // [esp+2Ch] [ebp-60h] BYREF !WPARAM wParam[10] ! ; // [esp+3Ch] [ebp-50h] BYREF !WPARAM v10[10] ! ; // [esp+64h] [ebp-28h] BYREF if ( ! byte_B7309C ) return 0 ; "ImageList_DragShowNolock " ( 0 ) ; qmemcpy ( v7 , HitDialogTest ( lParam , v2 , v7 ) , sizeof ( v7 ) ) ; qmemcpy ( wParam , v7 , sizeof ( wParam ) ) ; if ( "SendMessageA " ( ( HWND ) v7 [ 0 ] . y , 0x4C8u , ( WPARAM ) wParam , lParam ) ) { CursorA = "LoadCursorA " ( 0 , ( LPCSTR ) 0x7F00 ) ; "SetCursor " ( CursorA ) ; v4 = 1 ; } else { v5 = "LoadCursorA " ( 0 , ( LPCSTR ) 0x7F88 ) ; "SetCursor " ( v5 ) ; v4 = 0 ; } "ImageList_DragShowNolock " ( 1 ) ; "GetWindowRect " ( ( HWND ) wParam [ 1 ] , & Rect ) ; "ImageList_DragMove " ( wParam [ 4 ] - Rect . left , wParam [ 5 ] - Rect . top ) ; "ImageList_EndDrag " ( ) ; "ReleaseCapture " ( ) ; "ImageList_Destroy " ( himl ) ; himl = 0 ; byte_B7309C = 0 ; qmemcpy ( v7 , HitDialogTest ( lParam , ( int ) v7 , v7 ) , sizeof ( v7 ) ) ; qmemcpy ( v10 , v7 , sizeof ( v10 ) ) ; if ( v4 ) "SendMessageA " ( ( HWND ) v7 [ 0 ] . y , 0x4CAu , ( WPARAM ) v10 , lParam ) ; "KillTimer " ( ( HWND ) v10 [ 1 ] , 1u ) ; "SendMessageA " ( qword_B730A0 , 0x110Bu , 8u , 0 ) ; return 1 ; }
+// [IDA decompile]
+char __thiscall sub_776320(void *this)
+{
+  int v2; // edx
+  int v3; // eax
+  char v4; // bl
+  int v5; // eax
+  _DWORD v7[10]; // [esp+4h] [ebp-88h] BYREF
+  _DWORD Rect[4]; // [esp+2Ch] [ebp-60h] BYREF
+  _DWORD wParam[10]; // [esp+3Ch] [ebp-50h] BYREF
+  _DWORD v10[10]; // [esp+64h] [ebp-28h] BYREF
+
+  if ( !LOBYTE(dword_A8ED54[233682]) )
     return 0;
+  ImageList_DragShowNolock(0);
+  qmemcpy(v7, HitDialogTest((unsigned int)this, v2, (struct #51 *)v7), sizeof(v7));
+  qmemcpy(wParam, v7, sizeof(wParam));
+  if ( ((int (__stdcall *)(_DWORD, int, _DWORD *, void *))SendMessageA)(v7[1], 1224, wParam, this) )
+  {
+    v3 = ((int (__stdcall *)(_DWORD, int))LoadCursorA)(0, 32512);
+    ((void (__stdcall *)(int))SetCursor)(v3);
+    v4 = 1;
+  }
+  else
+  {
+    v5 = ((int (__stdcall *)(_DWORD, int))LoadCursorA)(0, 32648);
+    ((void (__stdcall *)(int))SetCursor)(v5);
+    v4 = 0;
+  }
+  ImageList_DragShowNolock(1);
+  ((void (__stdcall *)(_DWORD, _DWORD *))GetWindowRect)(wParam[1], Rect);
+  ImageList_DragMove(wParam[4] - Rect[0], wParam[5] - Rect[1]);
+  ImageList_EndDrag();
+  ReleaseCapture();
+  ((void (__stdcall *)(int))ImageList_Destroy)(dword_A8ED54[233685]);
+  dword_A8ED54[233685] = 0;
+  LOBYTE(dword_A8ED54[233682]) = 0;
+  qmemcpy(v7, HitDialogTest((unsigned int)this, (int)v7, (struct #51 *)v7), sizeof(v7));
+  qmemcpy(v10, v7, sizeof(v10));
+  if ( v4 )
+    ((void (__stdcall *)(_DWORD, int, _DWORD *, void *))SendMessageA)(v7[1], 1226, v10, this);
+  ((void (__stdcall *)(_DWORD, int))KillTimer)(v10[1], 1);
+  ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(dword_A8ED54[233683], 4363, 8, 0);
+  return 1;
+}
+
+/* ASM:
+hWnd            = byte ptr -84h
+Rect            = xmmword ptr -60h
+wParam          = dword ptr -50h
+var_4C          = byte ptr -4Ch
+var_40          = dword ptr -40h
+var_3C          = dword ptr -3Ch
+var_28          = dword ptr -28h
+var_24          = byte ptr -24h
+
+mov     al, byte ptr dword_A8ED54+0E4348h
+sub     esp, 88h
+test    al, al
+push    ebp
+mov     ebp, ecx
+jz      loc_776480
+push    ebx
+push    esi
+push    edi
+push    0               ; fShow
+call    ds:__imp_ImageList_DragShowNolock
+lea     eax, [esp+98h+var_88]
+mov     ecx, ebp
+push    eax
+call    HitDialogTest
+mov     ecx, 0Ah
+mov     esi, eax
+lea     edi, [esp+98h+var_88]
+push    ebp             ; lParam
+rep movsd
+mov     edx, dword ptr [esp+9Ch+hWnd]
+mov     ecx, 0Ah
+lea     esi, [esp+9Ch+var_88]
+lea     edi, [esp+9Ch+wParam]
+rep movsd
+lea     ecx, [esp+9Ch+wParam]
+push    ecx             ; wParam
+push    4C8h            ; Msg
+push    edx             ; hWnd
+call    ds:__imp_SendMessageA
+test    eax, eax
+jz      short loc_77639B
+push    7F00h           ; lpCursorName
+push    0               ; hInstance
+call    ds:__imp_LoadCursorA
+push    eax             ; hCursor
+call    ds:__imp_SetCursor
+mov     bl, 1
+jmp     short loc_7763B1
+; ---------------------------------------------------------------------------
+
+loc_77639B:                             ; CODE XREF: sub_776320+61↑j
+push    7F88h           ; lpCursorName
+push    0               ; hInstance
+call    ds:__imp_LoadCursorA
+push    eax             ; hCursor
+call    ds:__imp_SetCursor
+xor     bl, bl
+
+loc_7763B1:                             ; CODE XREF: sub_776320+79↑j
+push    1               ; fShow
+call    ds:__imp_ImageList_DragShowNolock
+lea     eax, [esp+98h+Rect]
+mov     ecx, dword ptr [esp+98h+var_4C]
+push    eax             ; lpRect
+push    ecx             ; hWnd
+call    ds:__imp_GetWindowRect
+mov     edi, dword ptr [esp+98h+Rect+4]
+mov     edx, [esp+98h+var_3C]
+mov     eax, [esp+98h+var_40]
+sub     edx, edi
+push    edx             ; y
+mov     edx, dword ptr [esp+9Ch+Rect]
+sub     eax, edx
+push    eax             ; x
+call    ds:__imp_ImageList_DragMove
+call    ds:__imp_ImageList_EndDrag
+call    ds:__imp_ReleaseCapture
+mov     ecx, dword_A8ED54+0E4354h
+push    ecx             ; himl
+call    ds:__imp_ImageList_Destroy
+lea     edx, [esp+98h+var_88]
+mov     ecx, ebp
+push    edx
+mov     dword_A8ED54+0E4354h, 0
+mov     byte ptr dword_A8ED54+0E4348h, 0
+call    HitDialogTest
+mov     ecx, 0Ah
+mov     esi, eax
+lea     edi, [esp+98h+var_88]
+rep movsd
+mov     ecx, 0Ah
+lea     esi, [esp+98h+var_88]
+lea     edi, [esp+98h+var_28]
+rep movsd
+pop     edi
+pop     esi
+test    bl, bl
+pop     ebx
+jz      short loc_776454
+mov     ecx, dword ptr [esp+8Ch+hWnd]
+lea     eax, [esp+8Ch+var_28]
+push    ebp             ; lParam
+push    eax             ; wParam
+push    4CAh            ; Msg
+push    ecx             ; hWnd
+call    ds:__imp_SendMessageA
+
+loc_776454:                             ; CODE XREF: sub_776320+11C↑j
+mov     edx, dword ptr [esp+8Ch+var_24]
+push    1               ; uIDEvent
+push    edx             ; hWnd
+call    ds:__imp_KillTimer
+mov     eax, dword_A8ED54+0E434Ch
+push    0               ; lParam
+push    8               ; wParam
+push    110Bh           ; Msg
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+mov     al, 1
+pop     ebp
+add     esp, 88h
+retn
+; ---------------------------------------------------------------------------
+
+loc_776480:                             ; CODE XREF: sub_776320+10↑j
+xor     al, al
+pop     ebp
+add     esp, 88h
+retn
+*/
 }
 
 // 0x00776670 (209 bytes)
 char MethodHitDialogTest_776670() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00776670.json)
-    // Size: 209 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_776670 ( LPARAM lParam ) { int v2 ; // edx !HCURSOR CursorA ! ; // eax !char v4 ! ; // bl !HCURSOR v5 ! ; // eax !struct tagRECT Rect ! ; // [esp+4h] [ebp-60h] BYREF !WPARAM wParam[10] ! ; // [esp+14h] [ebp-50h] BYREF struct tagPOINT v9[5] ; // [esp+3Ch] [ebp-28h] BYREF if ( ! byte_B7309C ) return 0 ; "ImageList_DragShowNolock " ( 0 ) ; qmemcpy ( v9 , HitDialogTest ( lParam , v2 , v9 ) , sizeof ( v9 ) ) ; qmemcpy ( wParam , v9 , sizeof ( wParam ) ) ; if ( "SendMessageA " ( ( HWND ) v9 [ 0 ] . y , 0x4C8u , ( WPARAM ) wParam , lParam ) ) { CursorA = "LoadCursorA " ( 0 , ( LPCSTR ) 0x7F00 ) ; "SetCursor " ( CursorA ) ; v4 = 1 ; } else { v5 = "LoadCursorA " ( 0 , ( LPCSTR ) 0x7F88 ) ; "SetCursor " ( v5 ) ; v4 = 0 ; } "ImageList_DragShowNolock " ( 1 ) ; "GetWindowRect " ( ( HWND ) wParam [ 1 ] , & Rect ) ; "ImageList_DragMove " ( wParam [ 4 ] - Rect . left , wParam [ 5 ] - Rect . top ) ; return v4 ; }
+// [IDA decompile]
+char __thiscall sub_776670(void *this)
+{
+  int v2; // edx
+  int v3; // eax
+  char v4; // bl
+  int v5; // eax
+  _DWORD Rect[4]; // [esp+4h] [ebp-60h] BYREF
+  _DWORD wParam[10]; // [esp+14h] [ebp-50h] BYREF
+  _DWORD v9[10]; // [esp+3Ch] [ebp-28h] BYREF
+
+  if ( !LOBYTE(dword_A8ED54[233682]) )
     return 0;
+  ImageList_DragShowNolock(0);
+  qmemcpy(v9, HitDialogTest((unsigned int)this, v2, (struct #51 *)v9), sizeof(v9));
+  qmemcpy(wParam, v9, sizeof(wParam));
+  if ( ((int (__stdcall *)(_DWORD, int, _DWORD *, void *))SendMessageA)(v9[1], 1224, wParam, this) )
+  {
+    v3 = ((int (__stdcall *)(_DWORD, int))LoadCursorA)(0, 32512);
+    ((void (__stdcall *)(int))SetCursor)(v3);
+    v4 = 1;
+  }
+  else
+  {
+    v5 = ((int (__stdcall *)(_DWORD, int))LoadCursorA)(0, 32648);
+    ((void (__stdcall *)(int))SetCursor)(v5);
+    v4 = 0;
+  }
+  ImageList_DragShowNolock(1);
+  ((void (__stdcall *)(_DWORD, _DWORD *))GetWindowRect)(wParam[1], Rect);
+  ImageList_DragMove(wParam[4] - Rect[0], wParam[5] - Rect[1]);
+  return v4;
+}
+
+/* ASM:
+Rect            = xmmword ptr -60h
+wParam          = dword ptr -50h
+var_4C          = byte ptr -4Ch
+var_40          = dword ptr -40h
+var_3C          = dword ptr -3Ch
+var_28          = byte ptr -28h
+hWnd            = byte ptr -24h
+
+mov     al, byte ptr dword_A8ED54+0E4348h
+sub     esp, 60h
+test    al, al
+push    ebx
+mov     ebx, ecx
+jz      loc_77673A
+push    ebp
+mov     ebp, ds:__imp_ImageList_DragShowNolock
+push    esi
+push    edi
+push    0               ; fShow
+call    ebp ; __imp_ImageList_DragShowNolock
+lea     eax, [esp+70h+var_28]
+mov     ecx, ebx
+push    eax
+call    HitDialogTest
+mov     ecx, 0Ah
+mov     esi, eax
+lea     edi, [esp+70h+var_28]
+push    ebx             ; lParam
+rep movsd
+mov     edx, dword ptr [esp+74h+hWnd]
+mov     ecx, 0Ah
+lea     esi, [esp+74h+var_28]
+lea     edi, [esp+74h+wParam]
+rep movsd
+lea     ecx, [esp+74h+wParam]
+push    ecx             ; wParam
+push    4C8h            ; Msg
+push    edx             ; hWnd
+call    ds:__imp_SendMessageA
+test    eax, eax
+jz      short loc_7766EA
+push    7F00h           ; lpCursorName
+push    0               ; hInstance
+call    ds:__imp_LoadCursorA
+push    eax             ; hCursor
+call    ds:__imp_SetCursor
+mov     bl, 1
+jmp     short loc_776700
+; ---------------------------------------------------------------------------
+
+loc_7766EA:                             ; CODE XREF: sub_776670+60↑j
+push    7F88h           ; lpCursorName
+push    0               ; hInstance
+call    ds:__imp_LoadCursorA
+push    eax             ; hCursor
+call    ds:__imp_SetCursor
+xor     bl, bl
+
+loc_776700:                             ; CODE XREF: sub_776670+78↑j
+push    1               ; fShow
+call    ebp ; __imp_ImageList_DragShowNolock
+lea     eax, [esp+70h+Rect]
+mov     ecx, dword ptr [esp+70h+var_4C]
+push    eax             ; lpRect
+push    ecx             ; hWnd
+call    ds:__imp_GetWindowRect
+mov     edi, dword ptr [esp+70h+Rect+4]
+mov     edx, [esp+70h+var_3C]
+mov     eax, [esp+70h+var_40]
+sub     edx, edi
+push    edx             ; y
+mov     edx, dword ptr [esp+74h+Rect]
+sub     eax, edx
+push    eax             ; x
+call    ds:__imp_ImageList_DragMove
+mov     al, bl
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 60h
+retn
+; ---------------------------------------------------------------------------
+
+loc_77673A:                             ; CODE XREF: sub_776670+D↑j
+xor     al, al
+pop     ebx
+add     esp, 60h
+retn
+*/
 }
 
 // 0x00631640 (151 bytes)
 void PhoneEditor_Pop_631640() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00631640.json)
-    // Size: 151 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_631640 ( int this ) { !HWND DlgItem ! ; // eax !LRESULT v3 ! ; // eax !HWND v4 ! ; // eax DlgItem = "GetDlgItem " ( * ( HWND * ) this , 1504 ) ; if ( DlgItem ) { v3 = "SendMessageA " ( DlgItem , 0x188u , 0 , 0 ) ; g_GameFlagsMisc = v3 ; if ( v3 > -1 ) { if ( v3 < ( int ) dword_A8DB44 && v3 < ( int ) -- dword_A8DB44 ) { do { ++ v3 ; * ( ( _DWORD * ) g_EventProcessState + v3 - 1 ) = * ( ( _DWORD * ) g_EventProcessState + v3 ) ; } while ( v3 < ( int ) dword_A8DB44 ) ; } * ( _BYTE * ) ( this + 8 ) = 1 ; PhoneEditor::PopulateList ( ( HWND * ) this ) ; if ( g_GameFlagsMisc == -1 ) { v4 = "GetDlgItem " ( * ( HWND * ) this , 1509 ) ; if ( v4 ) "SendMessageA " ( v4 , 0x4B4u , 0 , ( LPARAM ) & g_INI_DefaultBuffer ) ; } } } }
-    
+// [IDA decompile]
+void __thiscall sub_631640(#44 *this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // eax
+
+  v2 = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1504);
+  if ( v2 )
+  {
+    v3 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v2, 392, 0, 0);
+    MEMORY[0x87F7E8][538805] = v3;
+    if ( v3 > -1 )
+    {
+      if ( v3 < MEMORY[0x87F7E8][538839] )
+      {
+        --MEMORY[0x87F7E8][538839];
+        for ( ;
+              v3 < MEMORY[0x87F7E8][538839];
+              *(_DWORD *)(MEMORY[0x87F7E8][538836] + 4 * v3 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][538836] + 4 * v3) )
+        {
+          ++v3;
+        }
+      }
+      *((_BYTE *)this + 8) = 1;
+      PhoneEditor::PopulateList(this);
+      if ( MEMORY[0x87F7E8][538805] == -1 )
+      {
+        v4 = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1509);
+        if ( v4 )
+          ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v4, 1204, 0, &MEMORY[0x87F7E8][10719]);
+      }
+    }
+  }
+}
+
+/* ASM:
+push    ebx
+mov     ebx, ds:__imp_GetDlgItem
+push    esi
+mov     esi, ecx
+push    edi
+push    5E0h            ; nIDDlgItem
+mov     eax, [esi]
+push    eax             ; hDlg
+call    ebx ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_6316D3
+mov     edi, ds:__imp_SendMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    188h            ; Msg
+push    eax             ; hWnd
+call    edi ; __imp_SendMessageA
+cmp     eax, 0FFFFFFFFh
+mov     ds:0A8DABCh, eax
+jle     short loc_6316D3
+mov     ecx, ds:0A8DB44h
+cmp     eax, ecx
+jge     short loc_6316A2
+dec     ecx
+cmp     eax, ecx
+mov     ds:0A8DB44h, ecx
+jge     short loc_6316A2
+
+loc_63168A:                             ; CODE XREF: sub_631640+60↓j
+mov     ecx, ds:0A8DB38h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, ds:0A8DB44h
+cmp     eax, ecx
+jl      short loc_63168A
+
+loc_6316A2:                             ; CODE XREF: sub_631640+3D↑j
+; sub_631640+48↑j
+mov     ecx, esi
+mov     byte ptr [esi+8], 1
+call    PhoneEditor__PopulateList
+cmp     dword ptr ds:0A8DABCh, 0FFFFFFFFh
+jnz     short loc_6316D3
+mov     eax, [esi]
+push    5E5h            ; nIDDlgItem
+push    eax             ; hDlg
+call    ebx ; __imp_GetDlgItem
+test    eax, eax
+jz      short loc_6316D3
+push    889F64h         ; lParam
+push    0               ; wParam
+push    4B4h            ; Msg
+push    eax             ; hWnd
+call    edi ; __imp_SendMessageA
+
+loc_6316D3:                             ; CODE XREF: sub_631640+17↑j
+; sub_631640+33↑j ...
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x0060AA60 (50 bytes)
 bool ReturnOneDialog_60AA60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0060AA60.json)
-    // Size: 50 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   BOOL __stdcall sub_60AA60 ( HWND hWnd, LPARAM a2 ) { !HWND Parent ! ; // eax Parent = "GetParent " ( hWnd ) ; if ( IsValidActionDialog ( ( int ) Parent , hWnd ) ) "SendMessageA " ( hWnd , 0x4EEu , 0 , 0 ) ; return 1 ; }
-    return false;
+// [IDA decompile]
+int __stdcall sub_60AA60(int hWnd, int a2)
+{
+  int v2; // eax
+
+  v2 = ((int (__stdcall *)(int))GetParent)(hWnd);
+  if ( IsValidActionDialog(v2, hWnd) )
+    ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1262, 0, 0);
+  return 1;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+
+push    esi
+mov     esi, [esp+4+hWnd]
+push    esi             ; hWnd
+call    ds:__imp_GetParent
+mov     edx, esi
+mov     ecx, eax
+call    IsValidActionDialog
+test    al, al
+jz      short loc_60AA89
+push    0               ; lParam
+push    0               ; wParam
+push    4EEh            ; Msg
+push    esi             ; hWnd
+call    ds:__imp_SendMessageA
+
+loc_60AA89:                             ; CODE XREF: sub_60AA60+17↑j
+mov     eax, 1
+pop     esi
+retn    8
+*/
 }
 
 // 0x00558A30 (341 bytes)
 int StopDialog_558A30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00558A30.json)
-    // Size: 341 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_558A30 ( HWND hWnd, unsigned int a2, unsigned int a3, HWND a4 ) { int result ; // eax !unsigned int v5 ! ; // ebx !LONG WindowLongA ! ; // eax !LONG v7 ! ; // edi result = BaseDialogProc ( hWnd , a2 , a3 , ( unsigned int ) a4 ) ; if ( ! result ) { if ( a2 > 0x216 ) { if ( a2 == 1175 ) { "SendDlgItemMessageA " ( hWnd , 1317 , 0x4A6u , 0xF9u , 2 ) ; "SendDlgItemMessageA " ( hWnd , 1317 , 0x4A6u , 0x38u , 255 ) ; "SendDlgItemMessageA " ( hWnd , 1317 , 0x4A6u , 0 , 315 ) ; } } else { switch ( a2 ) { case 0x216u : return ( unsigned __int8 ) Window::ClampToScreen ( ( int * ) a4 ) ; case 0xFu : Dialog::StopBink ( hWnd ) ; return 1 ; case 0x111u : v5 = HIWORD ( a3 ) ; WindowLongA = "GetWindowLongA " ( hWnd , 8 ) ; v7 = WindowLongA ; switch ( ( unsigned __int16 ) a3 ) { case 0x40Fu : if ( ! v5 ) { * ( _DWORD * ) ( WindowLongA + 24 ) = 1039 ; return 0 ; } break ; case 0x525u : if ( v5 == 2 && "SendMessageA " ( a4 , 0x18Bu , 0 , 0 ) > 0 ) { * ( _DWORD * ) ( v7 + 24 ) = 1039 ; return 0 ; } break ; case 0x686u : * ( _DWORD * ) ( WindowLongA + 24 ) = 2 ; return 0 ; } break ; } } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_558A30(int hWnd, unsigned int a2, unsigned int a3, int *a4)
+{
+  int result; // eax
+  unsigned int v5; // ebx
+  int v6; // eax
+  int v7; // edi
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 > 0x216 )
+    {
+      if ( a2 == 1175 )
+      {
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1317, 1190, 249, 2);
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1317, 1190, 56, 255);
+        ((void (__stdcall *)(int, int, int, _DWORD, int))SendDlgItemMessageA)(hWnd, 1317, 1190, 0, 315);
+      }
+    }
+    else
+    {
+      switch ( a2 )
+      {
+        case 0x216u:
+          return (unsigned __int8)Window::ClampToScreen(a4);
+        case 0xFu:
+          Dialog::StopBink(hWnd);
+          return 1;
+        case 0x111u:
+          v5 = HIWORD(a3);
+          v6 = ((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+          v7 = v6;
+          switch ( (unsigned __int16)a3 )
+          {
+            case 0x40Fu:
+              if ( !v5 )
+              {
+                *(_DWORD *)(v6 + 24) = 1039;
+                return 0;
+              }
+              break;
+            case 0x525u:
+              if ( v5 == 2 && ((int (__stdcall *)(int *, int, _DWORD, _DWORD))SendMessageA)(a4, 395, 0, 0) > 0 )
+              {
+                *(_DWORD *)(v7 + 24) = 1039;
+                return 0;
+              }
+              break;
+            case 0x686u:
+              *(_DWORD *)(v6 + 24) = 2;
+              return 0;
+          }
+          break;
+      }
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    ebp
+mov     ebp, [esp+8+arg_C]
+push    esi
+mov     esi, [esp+0Ch+arg_8]
+push    edi
+mov     edi, [esp+10h+hWnd]
+push    ebp             ; int
+push    esi             ; int
+mov     edx, ebx
+mov     ecx, edi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_558B7E
+cmp     ebx, 216h
+ja      loc_558B32
+jz      loc_558B1C
+cmp     ebx, 0Fh
+jz      loc_558B09
+cmp     ebx, 111h
+jnz     loc_558B7C
+mov     ebx, esi
+push    8               ; nIndex
+push    edi             ; hWnd
+and     esi, 0FFFFh
+shr     ebx, 10h
+call    ds:__imp_GetWindowLongA
+cmp     esi, 40Fh
+mov     edi, eax
+jz      short loc_558AF1
+cmp     esi, 525h
+jz      short loc_558AC0
+cmp     esi, 686h
+jnz     loc_558B7C
+mov     dword ptr [edi+18h], 2
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558AC0:                             ; CODE XREF: sub_558A30+72↑j
+cmp     ebx, 2
+jnz     loc_558B7C
+push    0               ; lParam
+push    0               ; wParam
+push    18Bh            ; Msg
+push    ebp             ; hWnd
+call    ds:__imp_SendMessageA
+test    eax, eax
+jle     loc_558B7C
+mov     dword ptr [edi+18h], 40Fh
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558AF1:                             ; CODE XREF: sub_558A30+6A↑j
+test    ebx, ebx
+jnz     loc_558B7C
+mov     dword ptr [edi+18h], 40Fh
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558B09:                             ; CODE XREF: sub_558A30+3C↑j
+mov     ecx, edi        ; hDlg
+call    Dialog__StopBink
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558B1C:                             ; CODE XREF: sub_558A30+33↑j
+push    ebp
+mov     edx, esi
+mov     ecx, edi
+call    Window__ClampToScreen
+pop     edi
+pop     esi
+pop     ebp
+and     eax, 0FFh
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558B32:                             ; CODE XREF: sub_558A30+2D↑j
+cmp     ebx, 497h
+jnz     short loc_558B7C
+mov     esi, ds:__imp_SendDlgItemMessageA
+push    2               ; lParam
+push    0F9h            ; wParam
+push    4A6h            ; Msg
+push    525h            ; nIDDlgItem
+push    edi             ; hDlg
+call    esi ; __imp_SendDlgItemMessageA
+push    0FFh            ; lParam
+push    38h ; '8'       ; wParam
+push    4A6h            ; Msg
+push    525h            ; nIDDlgItem
+push    edi             ; hDlg
+call    esi ; __imp_SendDlgItemMessageA
+push    13Bh            ; lParam
+push    0               ; wParam
+push    4A6h            ; Msg
+push    525h            ; nIDDlgItem
+push    edi             ; hDlg
+call    esi ; __imp_SendDlgItemMessageA
+
+loc_558B7C:                             ; CODE XREF: sub_558A30+48↑j
+; sub_558A30+7A↑j ...
+xor     eax, eax
+
+loc_558B7E:                             ; CODE XREF: sub_558A30+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00558B90 (279 bytes)
 int StopDialog_558B90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00558B90.json)
-    // Size: 279 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_558B90 ( HWND hWnd, unsigned int a2, unsigned int a3, HWND a4 ) { int result ; // eax !HWND DlgItem ! ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , ( unsigned int ) a4 ) ; if ( ! result ) { if ( a2 > 0x216 ) { if ( a2 == 1175 ) { DlgItem = "GetDlgItem " ( hWnd , 1318 ) ; "SendMessageA " ( DlgItem , 0xC5u , 0x4Fu , 0 ) ; "SendDlgItemMessageA " ( hWnd , 1319 , 0x4A6u , 0xF9u , 2 ) ; "SendDlgItemMessageA " ( hWnd , 1319 , 0x4A6u , 0x38u , 255 ) ; "SendDlgItemMessageA " ( hWnd , 1319 , 0x4A6u , 0 , 315 ) ; } else if ( a2 == 1242 ) { * ( _DWORD * ) ( "GetWindowLongA " ( hWnd , 8 ) + 24 ) = 1 ; return 0 ; } } else { switch ( a2 ) { case 0x216u : return ( unsigned __int8 ) Window::ClampToScreen ( ( int * ) a4 ) ; case 0xFu : Dialog::StopBink ( hWnd ) ; return 1 ; case 0x111u : sub_5588E0 ( hWnd , ( unsigned __int16 ) a3 , a4 , HIWORD ( a3 ) ) ; return 0 ; } } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_558B90(int hWnd, unsigned int a2, unsigned int a3, int *a4)
+{
+  int result; // eax
+  int v5; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 > 0x216 )
+    {
+      if ( a2 == 1175 )
+      {
+        v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1318);
+        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v5, 197, 79, 0);
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1319, 1190, 249, 2);
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1319, 1190, 56, 255);
+        ((void (__stdcall *)(int, int, int, _DWORD, int))SendDlgItemMessageA)(hWnd, 1319, 1190, 0, 315);
+      }
+      else if ( a2 == 1242 )
+      {
+        *(_DWORD *)(((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8) + 24) = 1;
+        return 0;
+      }
+    }
+    else
+    {
+      switch ( a2 )
+      {
+        case 0x216u:
+          return (unsigned __int8)Window::ClampToScreen(a4);
+        case 0xFu:
+          Dialog::StopBink(hWnd);
+          return 1;
+        case 0x111u:
+          sub_5588E0(hWnd, (unsigned __int16)a3, (int)a4, HIWORD(a3));
+          return 0;
+      }
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+arg_8]
+push    ebp
+mov     ebp, [esp+8+arg_C]
+push    esi
+mov     esi, [esp+0Ch+hWnd]
+push    edi
+mov     edi, [esp+10h+arg_4]
+push    ebp             ; int
+push    ebx             ; int
+mov     edx, edi
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_558CA0
+cmp     edi, 216h
+ja      short loc_558C1A
+jz      short loc_558C04
+cmp     edi, 0Fh
+jz      short loc_558BF1
+cmp     edi, 111h
+jnz     loc_558C9E
+mov     eax, ebx
+mov     edx, ebx
+shr     eax, 10h
+push    eax             ; int
+push    ebp             ; hWnd
+and     edx, 0FFFFh
+mov     ecx, esi        ; hDlg
+call    sub_5588E0
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558BF1:                             ; CODE XREF: sub_558B90+34↑j
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558C04:                             ; CODE XREF: sub_558B90+2F↑j
+push    ebp
+mov     edx, ebx
+mov     ecx, esi
+call    Window__ClampToScreen
+pop     edi
+pop     esi
+pop     ebp
+and     eax, 0FFh
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558C1A:                             ; CODE XREF: sub_558B90+2D↑j
+sub     edi, 497h
+jz      short loc_558C40
+sub     edi, 43h ; 'C'
+jnz     short loc_558C9E
+push    8               ; nIndex
+push    esi             ; hWnd
+call    ds:__imp_GetWindowLongA
+pop     edi
+pop     esi
+mov     dword ptr [eax+18h], 1
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558C40:                             ; CODE XREF: sub_558B90+90↑j
+push    0               ; lParam
+push    4Fh ; 'O'       ; wParam
+push    0C5h            ; Msg
+push    526h            ; nIDDlgItem
+push    esi             ; hDlg
+call    ds:__imp_GetDlgItem
+push    eax             ; hWnd
+call    ds:__imp_SendMessageA
+mov     edi, ds:__imp_SendDlgItemMessageA
+push    2               ; lParam
+push    0F9h            ; wParam
+push    4A6h            ; Msg
+push    527h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+push    0FFh            ; lParam
+push    38h ; '8'       ; wParam
+push    4A6h            ; Msg
+push    527h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+push    13Bh            ; lParam
+push    0               ; wParam
+push    4A6h            ; Msg
+push    527h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+
+loc_558C9E:                             ; CODE XREF: sub_558B90+3C↑j
+; sub_558B90+95↑j
+xor     eax, eax
+
+loc_558CA0:                             ; CODE XREF: sub_558B90+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00558CB0 (279 bytes)
 int StopDialog_558CB0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00558CB0.json)
-    // Size: 279 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_558CB0 ( HWND hWnd, unsigned int a2, unsigned int a3, int *a4 ) { int result ; // eax !unsigned int v5 ! ; // ebx !LONG WindowLongA ! ; // eax result = BaseDialogProc ( hWnd , a2 , a3 , ( unsigned int ) a4 ) ; if ( ! result ) { if ( a2 > 0x216 ) { if ( a2 == 1175 ) { "SendDlgItemMessageA " ( hWnd , 1320 , 0x4A6u , 0xF9u , 2 ) ; "SendDlgItemMessageA " ( hWnd , 1320 , 0x4A6u , 0x38u , 255 ) ; "SendDlgItemMessageA " ( hWnd , 1320 , 0x4A6u , 0 , 315 ) ; } } else { switch ( a2 ) { case 0x216u : return ( unsigned __int8 ) Window::ClampToScreen ( a4 ) ; case 0xFu : Dialog::StopBink ( hWnd ) ; return 1 ; case 0x111u : v5 = HIWORD ( a3 ) ; WindowLongA = "GetWindowLongA " ( hWnd , 8 ) ; if ( ( unsigned __int16 ) a3 == 1670 ) { if ( ! v5 ) { * ( _DWORD * ) ( WindowLongA + 24 ) = 2 ; return 0 ; } } else if ( ( unsigned __int16 ) a3 == 1736 && ! v5 ) { * ( _DWORD * ) ( WindowLongA + 24 ) = 1 ; return 0 ; } break ; } } return 0 ; } return result ; }
+// [IDA decompile]
+int __stdcall sub_558CB0(int hWnd, unsigned int a2, unsigned int a3, int *a4)
+{
+  int result; // eax
+  unsigned int v5; // ebx
+  int v6; // eax
+
+  result = BaseDialogProc(hWnd, a2, a3, a4);
+  if ( !result )
+  {
+    if ( a2 > 0x216 )
+    {
+      if ( a2 == 1175 )
+      {
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1320, 1190, 249, 2);
+        ((void (__stdcall *)(int, int, int, int, int))SendDlgItemMessageA)(hWnd, 1320, 1190, 56, 255);
+        ((void (__stdcall *)(int, int, int, _DWORD, int))SendDlgItemMessageA)(hWnd, 1320, 1190, 0, 315);
+      }
+    }
+    else
+    {
+      switch ( a2 )
+      {
+        case 0x216u:
+          return (unsigned __int8)Window::ClampToScreen(a4);
+        case 0xFu:
+          Dialog::StopBink(hWnd);
+          return 1;
+        case 0x111u:
+          v5 = HIWORD(a3);
+          v6 = ((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+          if ( (unsigned __int16)a3 == 1670 )
+          {
+            if ( !v5 )
+            {
+              *(_DWORD *)(v6 + 24) = 2;
+              return 0;
+            }
+          }
+          else if ( (unsigned __int16)a3 == 1736 && !v5 )
+          {
+            *(_DWORD *)(v6 + 24) = 1;
+            return 0;
+          }
+          break;
+      }
+    }
     return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    ebp
+mov     ebp, [esp+8+arg_C]
+push    esi
+mov     esi, [esp+0Ch+hWnd]
+push    edi
+mov     edi, [esp+10h+arg_8]
+push    ebp             ; int
+push    edi             ; int
+mov     edx, ebx
+mov     ecx, esi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_558DC0
+cmp     ebx, 216h
+ja      loc_558D74
+jz      short loc_558D5E
+cmp     ebx, 0Fh
+jz      short loc_558D4B
+cmp     ebx, 111h
+jnz     loc_558DBE
+mov     ebx, edi
+push    8               ; nIndex
+push    esi             ; hWnd
+shr     ebx, 10h
+call    ds:__imp_GetWindowLongA
+and     edi, 0FFFFh
+sub     edi, 686h
+jz      short loc_558D33
+sub     edi, 42h ; 'B'
+jnz     loc_558DBE
+test    ebx, ebx
+jnz     loc_558DBE
+pop     edi
+pop     esi
+mov     dword ptr [eax+18h], 1
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558D33:                             ; CODE XREF: sub_558CB0+60↑j
+test    ebx, ebx
+jnz     loc_558DBE
+pop     edi
+pop     esi
+mov     dword ptr [eax+18h], 2
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558D4B:                             ; CODE XREF: sub_558CB0+38↑j
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558D5E:                             ; CODE XREF: sub_558CB0+33↑j
+push    ebp
+mov     edx, edi
+mov     ecx, esi
+call    Window__ClampToScreen
+pop     edi
+pop     esi
+pop     ebp
+and     eax, 0FFh
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_558D74:                             ; CODE XREF: sub_558CB0+2D↑j
+cmp     ebx, 497h
+jnz     short loc_558DBE
+mov     edi, ds:__imp_SendDlgItemMessageA
+push    2               ; lParam
+push    0F9h            ; wParam
+push    4A6h            ; Msg
+push    528h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+push    0FFh            ; lParam
+push    38h ; '8'       ; wParam
+push    4A6h            ; Msg
+push    528h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+push    13Bh            ; lParam
+push    0               ; wParam
+push    4A6h            ; Msg
+push    528h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+
+loc_558DBE:                             ; CODE XREF: sub_558CB0+40↑j
+; sub_558CB0+65↑j ...
+xor     eax, eax
+
+loc_558DC0:                             ; CODE XREF: sub_558CB0+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x005E2E40 (145 bytes)
 const char* StopDialog_5E2E40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005E2E40.json)
-    // Size: 145 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   INT_PTR __stdcall sub_5E2E40 ( HWND hWnd, UINT a2, WPARAM a3, char *a4 ) { INT_PTR result ; // eax if ( a2 <= 0x2B ) { switch ( a2 ) { case 0x2Bu : Dialog::Resize ( a4 ) ; return 1 ; case 0xFu : Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 1 ; case 0x14u : return 1 ; } return 0 ; } if ( a2 != 273 ) return 0 ; switch ( ( __int16 ) a3 ) { case 1 : case 2 : case 6 : case 7 : CloseDialog ( hWnd , ( unsigned __int16 ) a3 ) ; result = 1 ; break ; default : return 0 ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_5E2E40(int hWnd, unsigned int a2, unsigned __int16 a3, int a4)
+{
+  int result; // eax
+
+  if ( a2 <= 0x2B )
+  {
+    switch ( a2 )
+    {
+      case 0x2Bu:
+        Dialog::Resize(a4);
+        return 1;
+      case 0xFu:
+        Dialog::DrawBackground(hWnd);
+        Dialog::StopBink(hWnd);
+        ((void (__stdcall *)(int, _DWORD))ValidateRect)(hWnd, 0);
+        return 1;
+      case 0x14u:
+        return 1;
+    }
+    return 0;
+  }
+  if ( a2 != 273 )
+    return 0;
+  switch ( a3 )
+  {
+    case 1u:
+    case 2u:
+    case 6u:
+    case 7u:
+      CloseDialog(hWnd, a3);
+      result = 1;
+      break;
+    default:
+      return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_4]
+cmp     eax, 2Bh ; '+'
+ja      short loc_5E2E93
+jz      short loc_5E2E82
+cmp     eax, 0Fh
+jz      short loc_5E2E5D
+cmp     eax, 14h
+jnz     short def_5E2EB4 ; jumptable 005E2EB4 default case, cases 3-5
+mov     eax, 1
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5E2E5D:                             ; CODE XREF: sub_5E2E40+E↑j
+push    esi
+mov     esi, [esp+4+hWnd]
+mov     ecx, esi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_ValidateRect
+mov     eax, 1
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5E2E82:                             ; CODE XREF: sub_5E2E40+9↑j
+mov     ecx, [esp+arg_C]
+call    Dialog__Resize
+mov     eax, 1
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_5E2E93:                             ; CODE XREF: sub_5E2E40+7↑j
+cmp     eax, 111h
+jnz     short def_5E2EB4 ; jumptable 005E2EB4 default case, cases 3-5
+mov     edx, [esp+arg_8]
+and     edx, 0FFFFh
+lea     eax, [edx-1]    ; switch 7 cases
+cmp     eax, 6
+ja      short def_5E2EB4 ; jumptable 005E2EB4 default case, cases 3-5
+xor     ecx, ecx
+mov     cl, ds:byte_5E2EDC[eax]
+jmp     ds:jpt_5E2EB4[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_5E2EBB:                             ; CODE XREF: sub_5E2E40+74↑j
+; DATA XREF: .text:jpt_5E2EB4↓o
+mov     ecx, [esp+hWnd] ; jumptable 005E2EB4 cases 1,2,6,7
+call    CloseDialog
+mov     eax, 1
+retn    10h
+; ---------------------------------------------------------------------------
+
+def_5E2EB4:                             ; CODE XREF: sub_5E2E40+13↑j
+; sub_5E2E40+58↑j ...
+xor     eax, eax        ; jumptable 005E2EB4 default case, cases 3-5
+retn    10h
+*/
 }
 
 // 0x0078DA30 (306 bytes)
 int StopDialog_78DA30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0078DA30.json)
-    // Size: 306 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_78DA30 ( HWND hWnd, unsigned int a2, int a3, unsigned int a4 ) { int result ; // eax !wchar_t *v5 ! ; // eax if ( a2 == 272 ) { if ( a4 ) "SetWindowLongA " ( hWnd , 8 , * ( _DWORD * ) ( a4 + 4 ) ) ; } result = BaseDialogProc ( hWnd , a2 , a3 , a4 ) ; if ( ! result ) { if ( a2 > 0x110 ) { switch ( a2 ) { case 0x111u : if ( ( unsigned __int16 ) a3 != 2 ) return 0 ; ( * ( void (__stdcall **)(LPVOID) ) ( * ( _DWORD * ) dword_AC1174 + 16 ) ) ( dword_AC1174 ) ; break ; case 0x5F4u : CloseDialog ( hWnd , 1 ) ; return 1 ; case 0x5F5u : v5 = ( wchar_t * ) GetStringCSF ( aTxtDownloadFai , ( int ) g_Str_File_wonline_cpp , 14681 ) ; ShowDialogConfirm ( v5 , 0 , ( int ) GameLoop::Thunk , 0 ) ; ( * ( void (__stdcall **)(LPVOID) ) ( * ( _DWORD * ) dword_AC1174 + 16 ) ) ( dword_AC1174 ) ; break ; default : return 0 ; } CloseDialog ( hWnd , 2 ) ; } else if ( a2 != 272 ) { if ( a2 == 15 ) { Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 0 ; } if ( a2 != 20 ) { if ( a2 == 43 ) { Dialog::Resize ( a4 ) ; return 1 ; } return 0 ; } } return 1 ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_78DA30(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
+{
+  int result; // eax
+  #72 *StringCSF; // eax
+
+  if ( a2 == 272 )
+  {
+    if ( a4 )
+      ((void (__stdcall *)(void *, int, _DWORD))SetWindowLongA)(hWnd, 8, a4[1]);
+  }
+  result = BaseDialogProc(hWnd, a2, a3, (int)a4);
+  if ( !result )
+  {
+    if ( a2 > 0x110 )
+    {
+      switch ( a2 )
+      {
+        case 0x111u:
+          if ( (unsigned __int16)a3 != 2 )
+            return 0;
+          (*(void (__stdcall **)(int))(*(_DWORD *)dword_A8ED54[51464] + 16))(dword_A8ED54[51464]);
+          break;
+        case 0x5F4u:
+          CloseDialog(hWnd, 1);
+          return 1;
+        case 0x5F5u:
+          StringCSF = GetStringCSF((#72 *)aTxtDownloadFai, 0, g_Str_File_wonline_cpp, 14681);
+          ShowDialogConfirm(StringCSF, 0, (int)GameLoop::Thunk, 0);
+          (*(void (__stdcall **)(int))(*(_DWORD *)dword_A8ED54[51464] + 16))(dword_A8ED54[51464]);
+          break;
+        default:
+          return 0;
+      }
+      CloseDialog(hWnd, 2);
+    }
+    else if ( a2 != 272 )
+    {
+      if ( a2 == 15 )
+      {
+        Dialog::DrawBackground(hWnd);
+        Dialog::StopBink(hWnd);
+        ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+        return 0;
+      }
+      if ( a2 != 20 )
+      {
+        if ( a2 == 43 )
+        {
+          Dialog::Resize(a4);
+          return 1;
+        }
+        return 0;
+      }
+    }
+    return 1;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_C]
+push    esi
+mov     esi, [esp+0Ch+arg_4]
+push    edi
+mov     edi, [esp+10h+hWnd]
+cmp     esi, 110h
+jnz     short loc_78DA59
+test    ebp, ebp
+jz      short loc_78DA59
+mov     eax, [ebp+4]
+push    eax             ; dwNewLong
+push    8               ; nIndex
+push    edi             ; hWnd
+call    ds:__imp_SetWindowLongA
+
+loc_78DA59:                             ; CODE XREF: sub_78DA30+16↑j
+; sub_78DA30+1A↑j
+mov     ebx, [esp+10h+arg_8]
+push    ebp             ; int
+push    ebx             ; int
+mov     edx, esi
+mov     ecx, edi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_78DB5B
+cmp     esi, 110h
+ja      short loc_78DAC4
+jz      loc_78DB56
+cmp     esi, 0Fh
+jz      short loc_78DAA4
+cmp     esi, 14h
+jz      loc_78DB56
+cmp     esi, 2Bh ; '+'
+jnz     short loc_78DAD7
+mov     ecx, ebp
+call    Dialog__Resize
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_78DAA4:                             ; CODE XREF: sub_78DA30+51↑j
+mov     ecx, edi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, edi        ; hDlg
+call    Dialog__StopBink
+push    0               ; lpRect
+push    edi             ; hWnd
+call    ds:__imp_ValidateRect
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_78DAC4:                             ; CODE XREF: sub_78DA30+46↑j
+sub     esi, 111h
+jz      short loc_78DB2B
+sub     esi, 4E3h
+jz      short loc_78DB13
+dec     esi
+jz      short loc_78DAE0
+
+loc_78DAD7:                             ; CODE XREF: sub_78DA30+5F↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_78DAE0:                             ; CODE XREF: sub_78DA30+A5↑j
+push    0               ; char
+push    offset GameLoop__Thunk ; int
+push    3959h           ; int
+push    offset g_Str_File_wonline_cpp ; "D:\\ra2mdpost\\wonline.cpp"
+xor     edx, edx
+mov     ecx, offset aTxtDownloadFai ; "TXT_DOWNLOAD_FAILED"
+call    GetStringCSF
+mov     ecx, eax        ; String
+xor     edx, edx        ; nIDDlgItem
+call    ShowDialogConfirm
+mov     eax, dword_A8ED54+32420h
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+10h]
+jmp     short loc_78DB4A
+; ---------------------------------------------------------------------------
+
+loc_78DB13:                             ; CODE XREF: sub_78DA30+A2↑j
+mov     edx, 1
+mov     ecx, edi
+call    CloseDialog
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_78DB2B:                             ; CODE XREF: sub_78DA30+9A↑j
+and     ebx, 0FFFFh
+sub     ebx, 2
+jz      short loc_78DB3F
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_78DB3F:                             ; CODE XREF: sub_78DA30+104↑j
+mov     eax, dword_A8ED54+32420h
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+10h]
+
+loc_78DB4A:                             ; CODE XREF: sub_78DA30+E1↑j
+mov     edx, 2
+mov     ecx, edi
+call    CloseDialog
+
+loc_78DB56:                             ; CODE XREF: sub_78DA30+48↑j
+; sub_78DA30+56↑j
+mov     eax, 1
+
+loc_78DB5B:                             ; CODE XREF: sub_78DA30+3A↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00792CF0 (341 bytes)
 const char* StopDialog_792CF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00792CF0.json)
-    // Size: 341 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   INT_PTR __stdcall sub_792CF0 ( HWND hWnd, UINT a2, WPARAM a3, char *a4 ) { INT_PTR result ; // eax !HWND DlgItem ! ; // esi if ( a2 > 0x110 ) { switch ( a2 ) { case 0x111u : if ( ( unsigned __int16 ) a3 == 1421 ) { "SetEvent " ( Handles ) ; CloseDialog ( hWnd , 1 ) ; } else if ( ( unsigned __int16 ) a3 == 1422 ) { WebBrowser::ShowDialog ( aNetstatus ) ; return 0 ; } break ; case 0x113u : if ( a3 == 69 ) { "ShowWindow " ( hWnd , 5 ) ; "KillTimer " ( hWnd , 0x45u ) ; return 0 ; } break ; case 0x497u : "SendMessageA " ( hWnd , 0x4A9u , 0 , 1 ) ; "SetTimer " ( hWnd , 0x45u , uElapse , 0 ) ; HashTable::LookupAndMark ( hWnd ) ; DlgItem = "GetDlgItem " ( hWnd , 1961 ) ; "PostMessageA " ( DlgItem , 0x4D5u , 0 , 0 ) ; "PostMessageA " ( DlgItem , 0x4D3u , 0 , 0 ) ; return 0 ; } return 0 ; } if ( a2 == 272 ) return 0 ; switch ( a2 ) { case 2u : "KillTimer " ( hWnd , 0x45u ) ; return 0 ; case 0xFu : Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 0 ; case 0x14u : goto LABEL_6 ; case 0x2Bu : Dialog::Resize ( a4 ) ; LABEL_6 : result = 1 ; break ; default : return 0 ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_792CF0(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
+{
+  int result; // eax
+  int v5; // esi
+
+  if ( a2 > 0x110 )
+  {
+    switch ( a2 )
+    {
+      case 0x111u:
+        if ( (unsigned __int16)a3 == 1421 )
+        {
+          ((void (__stdcall *)(int))SetEvent)(dword_A8ED54[234060]);
+          CloseDialog(hWnd, 1);
+        }
+        else if ( (unsigned __int16)a3 == 1422 )
+        {
+          WebBrowser::ShowDialog(aNetstatus);
+          return 0;
+        }
+        break;
+      case 0x113u:
+        if ( a3 == 69 )
+        {
+          ((void (__stdcall *)(void *, int))ShowWindow)(hWnd, 5);
+          ((void (__stdcall *)(void *, int))KillTimer)(hWnd, 69);
+          return 0;
+        }
+        break;
+      case 0x497u:
+        ((void (__stdcall *)(void *, int, _DWORD, int))SendMessageA)(hWnd, 1193, 0, 1);
+        ((void (__stdcall *)(void *, int, _DWORD, _DWORD))SetTimer)(hWnd, 69, uElapse, 0);
+        HashTable::LookupAndMark(hWnd);
+        v5 = ((int (__stdcall *)(void *, int))GetDlgItem)(hWnd, 1961);
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))PostMessageA)(v5, 1237, 0, 0);
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))PostMessageA)(v5, 1235, 0, 0);
+        return 0;
+    }
+    return 0;
+  }
+  if ( a2 == 272 )
+    return 0;
+  switch ( a2 )
+  {
+    case 2u:
+      ((void (__stdcall *)(void *, int))KillTimer)(hWnd, 69);
+      return 0;
+    case 0xFu:
+      Dialog::DrawBackground(hWnd);
+      Dialog::StopBink(hWnd);
+      ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+      return 0;
+    case 0x14u:
+      goto LABEL_6;
+    case 0x2Bu:
+      Dialog::Resize(a4);
+LABEL_6:
+      result = 1;
+      break;
+    default:
+      return 0;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_4]
+push    esi
+cmp     eax, 110h
+ja      short loc_792D63
+jz      def_792D16      ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+add     eax, 0FFFFFFFEh ; switch 42 cases
+cmp     eax, 29h
+ja      def_792D16      ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+xor     ecx, ecx
+mov     cl, ds:byte_792E5C[eax]
+jmp     ds:jpt_792D16[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_792D1D:                             ; CODE XREF: sub_792CF0+26↑j
+; DATA XREF: .text:jpt_792D16↓o
+mov     edx, [esp+4+hWnd] ; jumptable 00792D16 case 2
+push    45h ; 'E'       ; uIDEvent
+push    edx             ; hWnd
+call    ds:__imp_KillTimer
+xor     eax, eax
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792D30:                             ; CODE XREF: sub_792CF0+26↑j
+; DATA XREF: .text:jpt_792D16↓o
+mov     ecx, [esp+4+arg_C] ; jumptable 00792D16 case 43
+call    Dialog__Resize
+
+loc_792D39:                             ; CODE XREF: sub_792CF0+26↑j
+; DATA XREF: .text:jpt_792D16↓o
+mov     eax, 1          ; jumptable 00792D16 case 20
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792D42:                             ; CODE XREF: sub_792CF0+26↑j
+; DATA XREF: .text:jpt_792D16↓o
+mov     esi, [esp+4+hWnd] ; jumptable 00792D16 case 15
+mov     ecx, esi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_ValidateRect
+xor     eax, eax
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792D63:                             ; CODE XREF: sub_792CF0+A↑j
+sub     eax, 111h
+jz      loc_792E01
+sub     eax, 2
+jz      short loc_792DDE
+sub     eax, 384h
+jnz     def_792D16      ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+mov     esi, [esp+4+hWnd]
+push    edi
+push    1               ; lParam
+push    0               ; wParam
+push    4A9h            ; Msg
+push    esi             ; hWnd
+call    ds:__imp_SendMessageA
+mov     eax, uElapse
+push    0               ; lpTimerFunc
+push    eax             ; uElapse
+push    45h ; 'E'       ; nIDEvent
+push    esi             ; hWnd
+call    ds:__imp_SetTimer
+mov     ecx, esi
+call    HashTable__LookupAndMark
+push    7A9h            ; nIDDlgItem
+push    esi             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     edi, ds:__imp_PostMessageA
+push    0               ; lParam
+mov     esi, eax
+push    0               ; wParam
+push    4D5h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_PostMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    4D3h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_PostMessageA
+pop     edi
+xor     eax, eax
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792DDE:                             ; CODE XREF: sub_792CF0+81↑j
+cmp     [esp+4+arg_8], 45h ; 'E'
+jnz     short def_792D16 ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+mov     esi, [esp+4+hWnd]
+push    5               ; nCmdShow
+push    esi             ; hWnd
+call    ds:__imp_ShowWindow
+push    45h ; 'E'       ; uIDEvent
+push    esi             ; hWnd
+call    ds:__imp_KillTimer
+xor     eax, eax
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792E01:                             ; CODE XREF: sub_792CF0+78↑j
+mov     eax, [esp+4+arg_8]
+and     eax, 0FFFFh
+sub     eax, 58Dh
+jz      short loc_792E24
+dec     eax
+jnz     short def_792D16 ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+mov     ecx, offset aNetstatus ; "NetStatus"
+call    WebBrowser__ShowDialog
+xor     eax, eax
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_792E24:                             ; CODE XREF: sub_792CF0+11F↑j
+mov     ecx, dword_A8ED54+0E4930h
+push    ecx             ; hEvent
+call    ds:__imp_SetEvent
+mov     edx, 1
+mov     ecx, [esp+4+hWnd]
+call    CloseDialog
+
+def_792D16:                             ; CODE XREF: sub_792CF0+C↑j
+; sub_792CF0+18↑j ...
+xor     eax, eax        ; jumptable 00792D16 default case, cases 3-14,16-19,21-42
+pop     esi
+retn    10h
+*/
 }
 
 // 0x007A2110 (287 bytes)
 const char* StopDialog_7A2110() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007A2110.json)
-    // Size: 287 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_7A2110 ( HWND hWnd, UINT a2, WPARAM a3, char *a4 ) { if ( a2 > 0x2B ) { switch ( a2 ) { case 0x111u : switch ( ( unsigned __int16 ) a3 ) { case 0x5C0u : if ( g_WOL_IdleHandler == 11 ) { CloseDialog ( hWnd , 0 ) ; return 0 ; } "SetEvent " ( Handles ) ; break ; case 0x708u : ( * ( void (__stdcall **)(LPVOID, char *) ) ( * ( _DWORD * ) ppv + 44 ) ) ( ppv , aStart443900100_0 ) ; return 0 ; case 0x709u : ( * ( void (__stdcall **)(LPVOID, char *) ) ( * ( _DWORD * ) ppv + 44 ) ) ( ppv , aStart443900100 ) ; return 0 ; } break ; case 0x113u : if ( ! a3 ) { sub_5E2AC0 ( ) ; return 0 ; } break ; case 0x497u : "SetTimer " ( hWnd , 0 , 0x7D0u , 0 ) ; return 0 ; } } else { switch ( a2 ) { case 0x2Bu : Dialog::Resize ( a4 ) ; return 1 ; case 2u : "KillTimer " ( hWnd , 0 ) ; return 0 ; case 0xFu : Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 1 ; case 0x14u : return 1 ; } } return 0 ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_7A2110(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
+{
+  if ( a2 > 0x2B )
+  {
+    switch ( a2 )
+    {
+      case 0x111u:
+        switch ( (unsigned __int16)a3 )
+        {
+          case 0x5C0u:
+            if ( dword_A8ED54[234291] == 11 )
+            {
+              CloseDialog(hWnd, 0);
+              return 0;
+            }
+            ((void (__stdcall *)(int))SetEvent)(dword_A8ED54[234060]);
+            break;
+          case 0x708u:
+            (*(void (__stdcall **)(int, char *))(*(_DWORD *)dword_A8ED54[51462] + 44))(
+              dword_A8ED54[51462],
+              aStart443900100_0);
+            return 0;
+          case 0x709u:
+            (*(void (__stdcall **)(int, char *))(*(_DWORD *)dword_A8ED54[51462] + 44))(
+              dword_A8ED54[51462],
+              aStart443900100);
+            return 0;
+        }
+        break;
+      case 0x113u:
+        if ( !a3 )
+        {
+          sub_5E2AC0();
+          return 0;
+        }
+        break;
+      case 0x497u:
+        ((void (__stdcall *)(void *, _DWORD, int, _DWORD))SetTimer)(hWnd, 0, 2000, 0);
+        return 0;
+    }
+  }
+  else
+  {
+    switch ( a2 )
+    {
+      case 0x2Bu:
+        Dialog::Resize(a4);
+        return 1;
+      case 2u:
+        ((void (__stdcall *)(void *, _DWORD))KillTimer)(hWnd, 0);
+        return 0;
+      case 0xFu:
+        Dialog::DrawBackground(hWnd);
+        Dialog::StopBink(hWnd);
+        ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+        return 1;
+      case 0x14u:
+        return 1;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_4]
+cmp     eax, 2Bh ; '+'
+ja      short loc_7A217E
+jz      short loc_7A216D
+sub     eax, 2
+jz      short loc_7A215B
+sub     eax, 0Dh
+jz      short loc_7A2136
+sub     eax, 5
+jnz     loc_7A222A
+mov     eax, 1
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A2136:                             ; CODE XREF: sub_7A2110+13↑j
+push    esi
+mov     esi, [esp+4+hWnd]
+mov     ecx, esi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, esi        ; hDlg
+call    Dialog__StopBink
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_ValidateRect
+mov     eax, 1
+pop     esi
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A215B:                             ; CODE XREF: sub_7A2110+E↑j
+mov     eax, [esp+hWnd]
+push    0               ; uIDEvent
+push    eax             ; hWnd
+call    ds:__imp_KillTimer
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A216D:                             ; CODE XREF: sub_7A2110+9↑j
+mov     ecx, [esp+arg_C]
+call    Dialog__Resize
+mov     eax, 1
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A217E:                             ; CODE XREF: sub_7A2110+7↑j
+sub     eax, 111h
+jz      short loc_7A21C0
+sub     eax, 2
+jz      short loc_7A21AE
+sub     eax, 384h
+jnz     loc_7A222A
+mov     ecx, [esp+hWnd]
+push    0               ; lpTimerFunc
+push    7D0h            ; uElapse
+push    0               ; nIDEvent
+push    ecx             ; hWnd
+call    ds:__imp_SetTimer
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A21AE:                             ; CODE XREF: sub_7A2110+78↑j
+mov     eax, [esp+arg_8]
+test    eax, eax
+jnz     short loc_7A222A
+call    sub_5E2AC0
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A21C0:                             ; CODE XREF: sub_7A2110+73↑j
+mov     eax, [esp+arg_8]
+and     eax, 0FFFFh
+sub     eax, 5C0h
+jz      short loc_7A2204
+sub     eax, 148h
+jz      short loc_7A21EF
+dec     eax
+jnz     short loc_7A222A
+mov     eax, dword_A8ED54+32418h
+push    offset aStart443900100 ; "start 4439,0,0,10000,10,1,1,1,3,Match,1"...
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+2Ch]
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A21EF:                             ; CODE XREF: sub_7A2110+C5↑j
+mov     eax, dword_A8ED54+32418h
+push    offset aStart443900100_0 ; "start 4439,0,0,10000,10,1,1,1,3,Match,1"...
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+2Ch]
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A2204:                             ; CODE XREF: sub_7A2110+BE↑j
+cmp     dword_A8ED54+0E4CCCh, 0Bh
+jnz     short loc_7A221D
+mov     ecx, [esp+hWnd]
+xor     edx, edx
+call    CloseDialog
+xor     eax, eax
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A221D:                             ; CODE XREF: sub_7A2110+FB↑j
+mov     edx, dword_A8ED54+0E4930h
+push    edx             ; hEvent
+call    ds:__imp_SetEvent
+
+loc_7A222A:                             ; CODE XREF: sub_7A2110+18↑j
+; sub_7A2110+7F↑j ...
+xor     eax, eax
+retn    10h
+*/
 }
 
 // 0x007A2600 (303 bytes)
 const char* StopDialog_7A2600() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007A2600.json)
-    // Size: 303 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_7A2600 ( HWND hWnd, unsigned int a2, int a3, char *a4 ) { int result ; // eax _DWORD *v5 ; // ecx void *v6 ; // esi result = BaseDialogProc ( hWnd , a2 , a3 , ( unsigned int ) a4 ) ; if ( ! result ) { if ( a2 > 0x2B ) { if ( a2 == 273 && ( _WORD ) a3 == 1472 ) { "SetEvent " ( Handles ) ; CloseDialog ( hWnd , 1472 ) ; } return 0 ; } if ( a2 == 43 ) { Dialog::Resize ( a4 ) ; return 1 ; } if ( a2 == 2 ) { v6 = g_UIControlState ; if ( g_UIControlState ) { ComPtr::Dtor ( g_UIControlState ) ; __3_YAXPAX_Z ( v6 ) ; g_UIControlState = 0 ; return 0 ; } return 0 ; } if ( a2 != 15 ) return a2 == 20 ; Dialog::DrawBackground ( hWnd ) ; Dialog::StopBink ( hWnd ) ; v5 = g_UIControlState ; if ( g_UIControlState || g_GameRulesOptions == -1 && ( v5 = g_Map_TiberiumConfig ) != 0 ) Skirmish::RenderPreview ( v5 , hWnd ) ; if ( LoadScreen::IsActive ( g_UIManager ) ) LoadScreen::Render ( ( int ) g_UIManager , a3 , ( int ) a4 , NAN ) ; "ValidateRect " ( hWnd , 0 ) ; return 1 ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_7A2600(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
+{
+  int result; // eax
+  _DWORD *v5; // ecx
+  void *v6; // esi
+
+  result = BaseDialogProc(hWnd, a2, a3, (int)a4);
+  if ( !result )
+  {
+    if ( a2 > 0x2B )
+    {
+      if ( a2 == 273 && (_WORD)a3 == 1472 )
+      {
+        ((void (__stdcall *)(int))SetEvent)(dword_A8ED54[234060]);
+        CloseDialog(hWnd, 1472);
+      }
+      return 0;
+    }
+    if ( a2 == 43 )
+    {
+      Dialog::Resize(a4);
+      return 1;
+    }
+    if ( a2 == 2 )
+    {
+      v6 = (void *)dword_A8ED54[51456];
+      if ( dword_A8ED54[51456] )
+      {
+        ComPtr::Dtor((_DWORD *)dword_A8ED54[51456]);
+        __3_YAXPAX_Z(v6);
+        dword_A8ED54[51456] = 0;
+        return 0;
+      }
+      return 0;
+    }
+    if ( a2 != 15 )
+      return a2 == 20;
+    Dialog::DrawBackground(hWnd);
+    Dialog::StopBink(hWnd);
+    v5 = (_DWORD *)dword_A8ED54[51456];
+    if ( dword_A8ED54[51456] || MEMORY[0x87F7E8][536219] == -1 && (v5 = (_DWORD *)dword_A8ED54[48384]) != 0 )
+      Skirmish::RenderPreview(v5, (int)hWnd);
+    if ( LoadScreen::IsActive(&dword_A8ED54[55425]) )
+      LoadScreen::Render((int)&dword_A8ED54[55425], a3, (int)a4, NAN);
+    ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+    return 1;
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+push    ebx
+mov     ebx, [esp+4+arg_8]
+push    ebp
+mov     ebp, [esp+8+arg_C]
+push    esi
+mov     esi, [esp+0Ch+arg_4]
+push    edi
+mov     edi, [esp+10h+hWnd]
+push    ebp             ; int
+push    ebx             ; int
+mov     edx, esi
+mov     ecx, edi        ; hWnd
+call    BaseDialogProc
+test    eax, eax
+jnz     loc_7A2728
+cmp     esi, 2Bh ; '+'
+ja      loc_7A26FF
+jz      loc_7A26EC
+sub     esi, 2
+jz      loc_7A26BF
+sub     esi, 0Dh
+jz      short loc_7A2659
+sub     esi, 5
+jnz     loc_7A2726
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A2659:                             ; CODE XREF: sub_7A2600+42↑j
+mov     ecx, edi        ; hWnd
+call    Dialog__DrawBackground
+mov     ecx, edi        ; hDlg
+call    Dialog__StopBink
+mov     ecx, dword_A8ED54+32400h
+test    ecx, ecx
+jnz     short loc_7A2684
+cmp     dword ptr ds:0A8B254h, 0FFFFFFFFh
+jnz     short loc_7A268A
+mov     ecx, dword_A8ED54+2F400h
+test    ecx, ecx
+jz      short loc_7A268A
+
+loc_7A2684:                             ; CODE XREF: sub_7A2600+6F↑j
+push    edi             ; hWnd
+call    Skirmish__RenderPreview
+
+loc_7A268A:                             ; CODE XREF: sub_7A2600+78↑j
+; sub_7A2600+82↑j
+mov     ecx, (offset dword_A8ED54+36204h)
+call    LoadScreen__IsActive
+test    al, al
+jz      short loc_7A26AA
+or      ecx, 0FFFFFFFFh
+or      eax, 0FFFFFFFFh
+push    ecx
+push    eax             ; double
+mov     ecx, (offset dword_A8ED54+36204h)
+call    LoadScreen__Render
+
+loc_7A26AA:                             ; CODE XREF: sub_7A2600+96↑j
+push    0               ; lpRect
+push    edi             ; hWnd
+call    ds:__imp_ValidateRect
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A26BF:                             ; CODE XREF: sub_7A2600+39↑j
+mov     esi, dword_A8ED54+32400h
+test    esi, esi
+jz      short loc_7A2726
+mov     ecx, esi
+call    ComPtr__Dtor
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword_A8ED54+32400h, 0
+xor     eax, eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A26EC:                             ; CODE XREF: sub_7A2600+30↑j
+mov     ecx, ebp
+call    Dialog__Resize
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7A26FF:                             ; CODE XREF: sub_7A2600+2A↑j
+cmp     esi, 111h
+jnz     short loc_7A2726
+cmp     bx, 5C0h
+jnz     short loc_7A2726
+mov     eax, dword_A8ED54+0E4930h
+push    eax             ; hEvent
+call    ds:__imp_SetEvent
+mov     edx, 5C0h
+mov     ecx, edi
+call    CloseDialog
+
+loc_7A2726:                             ; CODE XREF: sub_7A2600+47↑j
+; sub_7A2600+C7↑j ...
+xor     eax, eax
+
+loc_7A2728:                             ; CODE XREF: sub_7A2600+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x00696950 (100 bytes)
 int String_SetListBox_696950() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00696950.json)
-    // Size: 100 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   HWND __thiscall sub_696950 ( int this ) { !HWND result ! ; // eax !HWND v3 ! ; // ebx result = "GetDlgItem " ( * ( HWND * ) this , 1626 ) ; v3 = result ; if ( result ) { "ShowWindow " ( result , 0 ) ; "EnableWindow " ( v3 , 0 ) ; "SendMessageA " ( v3 , 0x4B5u , 0x10u , this + 8 ) ; * ( _BYTE * ) ( this + 23 ) = 0 ; String::Trim ( ( char * ) ( this + 8 ) ) ; _strupr ( ( char * ) ( this + 8 ) ) ; return ListBox::SetCustomEntry ( ( HWND * ) this , 1625 , 3 , ( void * ) ( this + 8 ) ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_696950(char *this)
+{
+  int result; // eax
+  int v3; // ebx
+
+  result = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1626);
+  v3 = result;
+  if ( result )
+  {
+    ((void (__stdcall *)(int, _DWORD))ShowWindow)(result, 0);
+    ((void (__stdcall *)(int, _DWORD))EnableWindow)(v3, 0);
+    ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v3, 1205, 16, this + 8);
+    *(this + 23) = 0;
+    String::Trim(this + 8);
+    _strupr(this + 8);
+    return ListBox::SetCustomEntry(1625, 3, this + 8);
+  }
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    edi
+mov     edi, ecx
+push    65Ah            ; nIDDlgItem
+mov     eax, [edi]
+push    eax             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     ebx, eax
+test    ebx, ebx
+jz      short loc_6969B1
+push    esi
+push    0               ; nCmdShow
+push    ebx             ; hWnd
+call    ds:__imp_ShowWindow
+push    0               ; bEnable
+push    ebx             ; hWnd
+call    ds:__imp_EnableWindow
+lea     esi, [edi+8]
+push    esi             ; lParam
+push    10h             ; wParam
+push    4B5h            ; Msg
+push    ebx             ; hWnd
+call    ds:__imp_SendMessageA
+mov     ecx, esi
+mov     byte ptr [edi+17h], 0
+call    String__Trim
+push    esi             ; String
+call    __strupr
+add     esp, 4
+mov     ecx, edi
+push    esi             ; void *
+push    3               ; LPARAM
+push    659h            ; nIDDlgItem
+call    ListBox__SetCustomEntry
+pop     esi
+
+loc_6969B1:                             ; CODE XREF: sub_696950+16↑j
+pop     edi
+pop     ebx
+retn
+*/
 }
 
 // 0x007B8610 (160 bytes)
 int UpdateWWMouse_7B8610() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B8610.json)
-    // Size: 160 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   DWORD __stdcall sub_7B8610 ( _DWORD *lpThreadParameter ) { lpThreadParameter [ 6 ] = 1 ; lpThreadParameter [ 2 ] = 0 ; if ( * lpThreadParameter ) { lpThreadParameter [ 2 ] = 1 ; return 0 ; } else { do { if ( "WaitForSingleObject " ( hMutex , 0x2710u ) == 258 ) Debug::Log ( ) ; if ( dword_B78164 ) WWMouseClass::UpdateCursorMovement ( ( LONG * ) dword_B78164 ) ; "ReleaseMutex " ( hMutex ) ; "Sleep " ( lpThreadParameter [ 4 ] ) ; ++ lpThreadParameter [ 1 ] ; } while ( ! * lpThreadParameter ) ; lpThreadParameter [ 2 ] = 1 ; return 0 ; } }
+// [IDA decompile]
+int __stdcall sub_7B8610(_DWORD *lpThreadParameter)
+{
+  lpThreadParameter[6] = 1;
+  lpThreadParameter[2] = 0;
+  if ( *lpThreadParameter )
+  {
+    lpThreadParameter[2] = 1;
     return 0;
+  }
+  else
+  {
+    do
+    {
+      if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
+        Debug::Log();
+      if ( dword_A8ED54[238852] )
+        WWMouseClass::UpdateCursorMovement((TechnoClass *)dword_A8ED54[238852]);
+      ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      ((void (__stdcall *)(_DWORD))Sleep)(lpThreadParameter[4]);
+      ++lpThreadParameter[1];
+    }
+    while ( !*lpThreadParameter );
+    lpThreadParameter[2] = 1;
+    return 0;
+  }
+}
+
+/* ASM:
+lpThreadParameter= dword ptr  4
+
+push    esi
+mov     esi, [esp+4+lpThreadParameter]
+mov     eax, 1
+mov     [esi+18h], eax
+mov     dword ptr [esi+8], 0
+cmp     dword ptr [esi], 0
+jnz     short loc_7B86A7
+push    ebx
+mov     ebx, ds:__imp_ReleaseMutex
+push    ebp
+mov     ebp, ds:__imp_WaitForSingleObject
+push    edi
+mov     edi, ds:__imp_Sleep
+
+loc_7B863E:                             ; CODE XREF: sub_7B8610+85↓j
+mov     eax, dword_A8ED54+0E9414h
+push    2710h           ; dwMilliseconds
+push    eax             ; hHandle
+call    ebp ; __imp_WaitForSingleObject
+cmp     eax, 102h
+jnz     short loc_7B8669
+push    4FDh
+push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
+push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
+call    Debug__Log
+add     esp, 0Ch
+
+loc_7B8669:                             ; CODE XREF: sub_7B8610+40↑j
+mov     ecx, dword_A8ED54+0E9410h
+test    ecx, ecx
+jz      short loc_7B8678
+call    WWMouseClass__UpdateCursorMovement
+
+loc_7B8678:                             ; CODE XREF: sub_7B8610+61↑j
+mov     ecx, dword_A8ED54+0E9414h
+push    ecx             ; hMutex
+call    ebx ; __imp_ReleaseMutex
+mov     edx, [esi+14h]
+mov     eax, [esi+10h]
+push    eax             ; dwMilliseconds
+call    edi ; __imp_Sleep
+mov     ecx, [esi+4]
+inc     ecx
+mov     [esi+4], ecx
+mov     eax, [esi]
+test    eax, eax
+jz      short loc_7B863E
+mov     dword ptr [esi+8], 1
+pop     edi
+pop     ebp
+pop     ebx
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_7B86A7:                             ; CODE XREF: sub_7B8610+17↑j
+mov     [esi+8], eax
+xor     eax, eax
+pop     esi
+retn    4
+*/
 }
 
 // 0x006A87F0 (109 bytes)
 char VoxClass_AddTabCameoList_6A87F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006A87F0.json)
-    // Size: 109 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6A87F0 ( int this, int a2, int a3 ) { !int v4 ! ; // edx !int v5 ! ; // ecx _DWORD *v6 ; // eax v4 = * ( _DWORD * ) ( this + 84 ) ; if ( v4 > 75 ) return 0 ; v5 = 0 ; if ( v4 > 0 ) { v6 = ( _DWORD * ) ( this + 88 ) ; while ( v6 [ 1 ] != a2 || * v6 != a3 ) { ++ v5 ; v6 += 13 ; if ( v5 >= v4 ) goto LABEL_7 ; } return 0 ; } LABEL_7 : if ( ! IKnowWhatImDoing && a2 != 31 ) VoxClass::FindAndPlay ( aEvaNewconstruc , -1 ) ; TabCameoListClass::AddCameo_ReplaceItAll ( ( int * ) this , a2 , a3 ) ; * ( _BYTE * ) ( this + 60 ) = 1 ; g_CameoRenderFlag = 1 ; return 1 ; }
+// [IDA decompile]
+char __thiscall sub_6A87F0(int this, int a2, int a3)
+{
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+
+  v4 = *(_DWORD *)(this + 84);
+  if ( v4 > 75 )
     return 0;
+  v5 = 0;
+  if ( v4 > 0 )
+  {
+    v6 = (_DWORD *)(this + 88);
+    while ( v6[1] != a2 || *v6 != a3 )
+    {
+      ++v5;
+      v6 += 13;
+      if ( v5 >= v4 )
+        goto LABEL_7;
+    }
+    return 0;
+  }
+LABEL_7:
+  if ( !MEMORY[0xA8E7AC] && a2 != 31 )
+    VoxClass::FindAndPlay(aEvaNewconstruc, -1);
+  TabCameoListClass::AddCameo_ReplaceItAll((int *)this, a2, a3);
+  *(_BYTE *)(this + 60) = 1;
+  MEMORY[0x884B8F] = 1;
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     edx, [esi+54h]
+cmp     edx, 4Bh ; 'K'
+jg      short loc_6A8855
+mov     ebx, [esp+0Ch+arg_4]
+mov     edi, [esp+0Ch+arg_0]
+xor     ecx, ecx
+test    edx, edx
+jle     short loc_6A881F
+lea     eax, [esi+58h]
+
+loc_6A880E:                             ; CODE XREF: sub_6A87F0+2D↓j
+cmp     [eax+4], edi
+jnz     short loc_6A8817
+cmp     [eax], ebx
+jz      short loc_6A8855
+
+loc_6A8817:                             ; CODE XREF: sub_6A87F0+21↑j
+inc     ecx
+add     eax, 34h ; '4'
+cmp     ecx, edx
+jl      short loc_6A880E
+
+loc_6A881F:                             ; CODE XREF: sub_6A87F0+19↑j
+mov     eax, ds:0A8E7ACh
+test    eax, eax
+jnz     short loc_6A883C
+cmp     edi, 1Fh
+jz      short loc_6A883C
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaNewconstruc ; "EVA_NewConstructionOptions"
+call    VoxClass__FindAndPlay
+
+loc_6A883C:                             ; CODE XREF: sub_6A87F0+36↑j
+; sub_6A87F0+3B↑j
+push    ebx
+push    edi
+mov     ecx, esi
+call    TabCameoListClass__AddCameo_ReplaceItAll
+mov     al, 1
+pop     edi
+mov     [esi+3Ch], al
+pop     esi
+mov     ds:884B8Fh, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6A8855:                             ; CODE XREF: sub_6A87F0+B↑j
+; sub_6A87F0+25↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn    8
+*/
 }
 
 } // namespace gamemd

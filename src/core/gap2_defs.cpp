@@ -15,36 +15,1442 @@
 #include "core/stream_ext.hpp"
 
 // 0x41DB40
-namespace gamemd { int WTFMode::ResetUnitFlags() { return 0; } }
+namespace gamemd { int WTFMode::ResetUnitFlags() {
+// [IDA decompile]
+char __thiscall WTFMode_ResetUnitFlags(int this)
+{
+  _DWORD *v1; // eax
+  int v3; // ecx
+  _DWORD *v4; // esi
+  int v5; // edi
+  _DWORD *v6; // esi
+  _DWORD *v7; // edx
+  _DWORD *v8; // ecx
+  int v9; // edi
+
+  LOBYTE(v1) = MEMORY[0xA8E9A0];
+  if ( MEMORY[0xA8E9A0] )
+  {
+    v3 = *(_DWORD *)(this + 92);
+    v1 = *(_DWORD **)(this + 92);
+    if ( v1 )
+    {
+      while ( v1[191] )
+      {
+        v1 = (_DWORD *)v1[374];
+        if ( !v1 )
+          goto LABEL_8;
+      }
+      v1 = *(_DWORD **)(this + 92);
+      if ( v3 )
+      {
+        do
+        {
+          v1[191] = 0;
+          v1 = (_DWORD *)v1[374];
+        }
+        while ( v1 );
+      }
+    }
+LABEL_8:
+    v4 = *(_DWORD **)(this + 92);
+    v5 = 0;
+    if ( v4 )
+    {
+      do
+      {
+        (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 488))(v4, 4, 0);
+        (*(void (__thiscall **)(_DWORD *, _DWORD))(*v4 + 968))(v4, 0);
+        LOBYTE(v1) = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v4 + 1152))(v4, 0, 1);
+        v4 = (_DWORD *)v4[374];
+        ++v5;
+      }
+      while ( v5 <= 100 && v4 );
+    }
+    v6 = *(_DWORD **)(this + 80);
+    *(_BYTE *)(this + 61) = 0;
+    if ( v6 )
+    {
+      v1 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v6 + 44))(v6);
+      if ( v1 == (_DWORD *)6 && v6[165] == this )
+      {
+        LOBYTE(v1) = MEMORY[0x889FC8];
+        v7 = 0;
+        if ( MEMORY[0x889FC8] > 0 )
+        {
+          v8 = MEMORY[0x889FBC];
+          v9 = MEMORY[0x889FC8];
+          do
+          {
+            v1 = (_DWORD *)*v8;
+            if ( *v8 != this && (_DWORD *)v1[20] == v6 )
+              v7 = (_DWORD *)*v8;
+            ++v8;
+            --v9;
+          }
+          while ( v9 );
+        }
+        v6[165] = v7;
+        if ( !v7 && MEMORY[0xA8E9A0] )
+          LOBYTE(v1) = (*(int (__thiscall **)(_DWORD *, int))(*v6 + 292))(v6, 2);
+        if ( v6[165] == this )
+          v6[165] = 0;
+      }
+    }
+    *(_DWORD *)(this + 80) = 0;
+  }
+  return (char)v1;
+}
+
+/* ASM:
+mov     al, ds:0A8E9A0h
+push    ebx
+xor     ebx, ebx
+push    ebp
+cmp     al, bl
+mov     ebp, ecx
+jz      loc_41DC3F
+mov     ecx, [ebp+5Ch]
+mov     eax, ecx
+cmp     eax, ebx
+jz      short loc_41DB8A
+
+loc_41DB5C:                             ; CODE XREF: WTFMode__ResetUnitFlags+2C↓j
+cmp     [eax+2FCh], ebx
+jz      short loc_41DB70
+mov     eax, [eax+5D8h]
+cmp     eax, ebx
+jnz     short loc_41DB5C
+jmp     short loc_41DB8A
+; ---------------------------------------------------------------------------
+
+loc_41DB70:                             ; CODE XREF: WTFMode__ResetUnitFlags+22↑j
+cmp     eax, ebx
+jz      short loc_41DB8A
+mov     eax, ecx
+cmp     eax, ebx
+jz      short loc_41DB8A
+
+loc_41DB7A:                             ; CODE XREF: WTFMode__ResetUnitFlags+48↓j
+mov     [eax+2FCh], ebx
+mov     eax, [eax+5D8h]
+cmp     eax, ebx
+jnz     short loc_41DB7A
+
+loc_41DB8A:                             ; CODE XREF: WTFMode__ResetUnitFlags+1A↑j
+; WTFMode__ResetUnitFlags+2E↑j ...
+push    esi
+mov     esi, [ebp+5Ch]
+push    edi
+xor     edi, edi
+cmp     esi, ebx
+jz      short loc_41DBCA
+
+loc_41DB95:                             ; CODE XREF: WTFMode__ResetUnitFlags+88↓j
+mov     eax, [esi]
+push    ebx
+push    4
+mov     ecx, esi
+call    dword ptr [eax+1E8h]
+mov     edx, [esi]
+push    ebx
+mov     ecx, esi
+call    dword ptr [edx+3C8h]
+mov     eax, [esi]
+push    1
+push    ebx
+mov     ecx, esi
+call    dword ptr [eax+480h]
+mov     esi, [esi+5D8h]
+inc     edi
+cmp     edi, 64h ; 'd'
+jg      short loc_41DBCA
+cmp     esi, ebx
+jnz     short loc_41DB95
+
+loc_41DBCA:                             ; CODE XREF: WTFMode__ResetUnitFlags+53↑j
+; WTFMode__ResetUnitFlags+84↑j
+mov     esi, [ebp+50h]
+mov     [ebp+3Dh], bl
+cmp     esi, ebx
+jz      short loc_41DC3A
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+cmp     eax, 6
+jnz     short loc_41DC3A
+cmp     [esi+294h], ebp
+jnz     short loc_41DC3A
+mov     eax, ds:889FC8h
+xor     edx, edx
+cmp     eax, ebx
+jle     short loc_41DC0E
+mov     ecx, ds:889FBCh
+mov     edi, eax
+
+loc_41DBFB:                             ; CODE XREF: WTFMode__ResetUnitFlags+CC↓j
+mov     eax, [ecx]
+cmp     eax, ebp
+jz      short loc_41DC08
+cmp     [eax+50h], esi
+jnz     short loc_41DC08
+mov     edx, eax
+
+loc_41DC08:                             ; CODE XREF: WTFMode__ResetUnitFlags+BF↑j
+; WTFMode__ResetUnitFlags+C4↑j
+add     ecx, 4
+dec     edi
+jnz     short loc_41DBFB
+
+loc_41DC0E:                             ; CODE XREF: WTFMode__ResetUnitFlags+B1↑j
+cmp     edx, ebx
+mov     [esi+294h], edx
+jnz     short loc_41DC2C
+cmp     ds:0A8E9A0h, bl
+jz      short loc_41DC2C
+mov     eax, [esi]
+push    2
+mov     ecx, esi
+call    dword ptr [eax+124h]
+
+loc_41DC2C:                             ; CODE XREF: WTFMode__ResetUnitFlags+D6↑j
+; WTFMode__ResetUnitFlags+DE↑j
+cmp     [esi+294h], ebp
+jnz     short loc_41DC3A
+mov     [esi+294h], ebx
+
+loc_41DC3A:                             ; CODE XREF: WTFMode__ResetUnitFlags+92↑j
+; WTFMode__ResetUnitFlags+9E↑j ...
+pop     edi
+mov     [ebp+50h], ebx
+pop     esi
+
+loc_41DC3F:                             ; CODE XREF: WTFMode__ResetUnitFlags+D↑j
+pop     ebp
+pop     ebx
+retn
+*/
+} }
 // 0x47EC40
-namespace gamemd { void* WTFMode::FindObjectByType(int a1) { return nullptr; } }
+namespace gamemd { void* WTFMode::FindObjectByType(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
+{
+  _DWORD *v2; // esi
+
+  if ( !MEMORY[0xA8E9A0] )
+    return 0;
+  v2 = (_DWORD *)(a2 ? *(this + 58) : *(this + 57));
+  if ( !v2 )
+    return 0;
+  while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 15 )
+  {
+    v2 = (_DWORD *)v2[12];
+    if ( !v2 )
+      return 0;
+  }
+  return v2;
+}
+
+/* ASM:
+mov     al, ds:0A8E9A0h
+push    esi
+test    al, al
+jz      short loc_47EC77
+mov     al, [esp+4+arg_0]
+test    al, al
+jz      short loc_47EC5A
+mov     esi, [ecx+0E8h]
+jmp     short loc_47EC60
+; ---------------------------------------------------------------------------
+
+loc_47EC5A:                             ; CODE XREF: WTFMode__FindObjectByType+10↑j
+mov     esi, [ecx+0E4h]
+
+loc_47EC60:                             ; CODE XREF: WTFMode__FindObjectByType+18↑j
+test    esi, esi
+jz      short loc_47EC77
+
+loc_47EC64:                             ; CODE XREF: WTFMode__FindObjectByType+35↓j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+cmp     eax, 0Fh
+jz      short loc_47EC7D
+mov     esi, [esi+30h]
+test    esi, esi
+jnz     short loc_47EC64
+
+loc_47EC77:                             ; CODE XREF: WTFMode__FindObjectByType+8↑j
+; WTFMode__FindObjectByType+22↑j
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_47EC7D:                             ; CODE XREF: WTFMode__FindObjectByType+2E↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x4A31F0
-namespace gamemd { bool CStreamClass::IsEmpty() { return false; } }
+namespace gamemd { bool CStreamClass::IsEmpty() {
+// [IDA decompile]
+BOOL __thiscall CStreamClass::IsEmpty(_DWORD *this, int a2)
+{
+  if ( a2 )
+    WinAPI::Wrapper(-2147467261);
+  return *this == 0;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x22)
+push    esi
+test    eax, eax
+mov     esi, ecx
+jz      short loc_4A3205
+push    80004003h
+call    WinAPI__Wrapper
+; ---------------------------------------------------------------------------
+
+loc_4A3205:                             ; CODE XREF: CStreamClass__IsEmpty+9↑j
+mov     ecx, [esi]
+xor     eax, eax
+test    ecx, ecx
+setz    al
+pop     esi
+retn    4
+*/
+} }
 // 0x4A4AD0
-namespace gamemd { void CStreamClass::ClearBuffer() { } }
+namespace gamemd { void CStreamClass::ClearBuffer() {
+// [IDA decompile]
+void __thiscall CStreamClass::sub_4A4AD0(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0x2a)
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_4A4AF1
+cmp     [esi+0Dh], bl
+jz      short loc_4A4AF1
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_4A4AF1:                             ; CODE XREF: CStreamClass__ClearBuffer+E↑j
+; CStreamClass__ClearBuffer+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} }
 // 0x4A4B00
-namespace gamemd { int CStreamClass::PointerToIndex(int a1) { return 0; } }
+namespace gamemd { int CStreamClass::PointerToIndex(int a1) {
+// [IDA decompile]
+unsigned int __thiscall CStreamClass::sub_4A4B00(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) )
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x1b)
+test    al, al
+jnz     short loc_4A4B0C
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4A4B0C:                             ; CODE XREF: CStreamClass__PointerToIndex+5↑j
+mov     eax, [esp+arg_0]
+mov     edx, [ecx+4]
+sub     eax, edx
+shr     eax, 2
+retn    4
+*/
+} }
 // 0x4A4CB0
-namespace gamemd { int CStreamClass::CopyItems(int a1, void* a2) { return 0; } }
+namespace gamemd { int CStreamClass::CopyItems(int a1, void* a2) {
+// [IDA decompile]
+char __thiscall CStreamClass::CopyItems(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( !v4 )
+      return 0;
+    if ( *((_DWORD *)this + 1) )
+    {
+      v5 = *((_DWORD *)this + 2);
+      if ( a2 < v5 )
+        v5 = a2;
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        ++i;
+      if ( *((_BYTE *)this + 13) )
+      {
+        __3_YAXPAX_Z(*((void **)this + 1));
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+    *((_DWORD *)this + 1) = v4;
+    *((_DWORD *)this + 2) = a2;
+    *((_BYTE *)this + 13) = a3 == 0;
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  }
+  v7 = *((_DWORD *)this + 2);
+  if ( v7 < *((_DWORD *)this + 4) )
+    *((_DWORD *)this + 4) = v7;
+  return 1;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0xb0)
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      short loc_4A4D3A
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_4A4CDE
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_4A4CE0
+; ---------------------------------------------------------------------------
+
+loc_4A4CDE:                             ; CODE XREF: CStreamClass__CopyItems+18↑j
+mov     edi, ebx
+
+loc_4A4CE0:                             ; CODE XREF: CStreamClass__CopyItems+2C↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jz      short loc_4A4D57
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_4A4D28
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_4A4CF8
+mov     ecx, ebp
+
+loc_4A4CF8:                             ; CODE XREF: CStreamClass__CopyItems+44↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_4A4D0E
+
+loc_4A4CFE:                             ; CODE XREF: CStreamClass__CopyItems+5C↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_4A4CFE
+
+loc_4A4D0E:                             ; CODE XREF: CStreamClass__CopyItems+4C↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_4A4D28
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_4A4D28:                             ; CODE XREF: CStreamClass__CopyItems+3D↑j
+; CStreamClass__CopyItems+63↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+jmp     short loc_4A4D41
+; ---------------------------------------------------------------------------
+
+loc_4A4D3A:                             ; CODE XREF: CStreamClass__CopyItems+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+
+loc_4A4D41:                             ; CODE XREF: CStreamClass__CopyItems+88↑j
+mov     eax, [esi+8]
+mov     ecx, [esi+10h]
+cmp     eax, ecx
+jge     short loc_4A4D4E
+mov     [esi+10h], eax
+
+loc_4A4D4E:                             ; CODE XREF: CStreamClass__CopyItems+99↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4A4D57:                             ; CODE XREF: CStreamClass__CopyItems+36↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+*/
+} }
 // 0x4A4D60
-namespace gamemd { int CStreamClass::FindItem(void* a1) { return 0; } }
+namespace gamemd { int CStreamClass::FindItem(void* a1) {
+// [IDA decompile]
+int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4);
+  result = 0;
+  if ( v2 <= 0 )
+    return -1;
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [ecx+10h]  ; TODO: classify (grp=blit, sz=0x26)
+xor     eax, eax
+push    esi
+test    edx, edx
+jle     short loc_4A4D7F
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_4A4D73:                             ; CODE XREF: CStreamClass__FindItem+1D↓j
+cmp     [ecx], esi
+jz      short loc_4A4D82
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_4A4D73
+
+loc_4A4D7F:                             ; CODE XREF: CStreamClass__FindItem+8↑j
+or      eax, 0FFFFFFFFh
+
+loc_4A4D82:                             ; CODE XREF: CStreamClass__FindItem+15↑j
+pop     esi
+retn    4
+*/
+} }
 // 0x4A4DE0
-namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a1) { return nullptr; } }
+namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall CStreamClass::sub_4A4DE0(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1);
+  *Block = &VectorClass<_DDSURFACEDESC *>::`vftable';
+  if ( v3 && *((_BYTE *)Block + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(Block + 1) = 0;
+  }
+  *((_BYTE *)Block + 13) = 0;
+  *(Block + 2) = 0;
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+
+*/
+} }
 // 0x55A150
-namespace gamemd { void LoadOptions::vt03() { } }
+namespace gamemd { void LoadOptions::vt03() {
+// [IDA decompile]
+void __thiscall LoadOptions::vt03(int this)
+{
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4);
+  *(_DWORD *)(this + 16) = 0;
+  if ( v2 && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(v2);
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+mov     [esi+10h], ebx
+cmp     eax, ebx
+jz      short loc_55A171
+cmp     [esi+0Dh], bl
+jz      short loc_55A171
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_55A171:                             ; CODE XREF: LoadOptions__vt03+E↑j
+; LoadOptions__vt03+13↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
+} }
 // 0x5AE6F0
-namespace gamemd { void* Matrix3D::Constructor(float a1, float a2) { return nullptr; } }
+namespace gamemd { void* Matrix3D::Constructor(float a1, float a2) {
+// [IDA decompile]
+_DWORD *__thiscall Matrix3D_Constructor(_DWORD *this, float a2, float a3)
+{
+  float v5; // [esp+0h] [ebp-8h]
+
+  *(this + 1) = 0;
+  *(this + 2) = 0;
+  *(this + 3) = 0;
+  *(this + 4) = 0;
+  *(this + 6) = 0;
+  *(this + 7) = 0;
+  *(this + 8) = 0;
+  *(this + 9) = 0;
+  *(this + 11) = 0;
+  *this = 1065353216;
+  *(this + 5) = 1065353216;
+  *(this + 10) = 1065353216;
+  Matrix2D::Rotate(a2);
+  Matrix3x3::RotateX(a3);
+  v5 = -a2;
+  Matrix2D::Rotate(v5);
+  return this;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+xor     eax, eax
+mov     ecx, 3F800000h
+mov     [esi+4], eax
+mov     [esi+8], eax
+mov     [esi+0Ch], eax
+mov     [esi+10h], eax
+mov     [esi+18h], eax
+mov     [esi+1Ch], eax
+mov     [esi+20h], eax
+mov     [esi+24h], eax
+mov     [esi+2Ch], eax
+mov     eax, [esp+4+arg_0]
+mov     [esi], ecx
+mov     [esi+14h], ecx
+mov     [esi+28h], ecx
+push    eax             ; float
+mov     ecx, esi
+call    Matrix2D__Rotate
+mov     ecx, [esp+4+arg_4]
+push    ecx             ; float
+mov     ecx, esi
+call    Matrix3x3__RotateX
+fld     [esp+4+arg_0]
+push    ecx
+mov     ecx, esi
+fchs
+fstp    [esp+8+var_8]   ; float
+call    Matrix2D__Rotate
+mov     eax, esi
+pop     esi
+retn    8
+*/
+} }
 // 0x5AF080
-namespace gamemd { void Matrix3D::RotateZ(float a1) { } }
+namespace gamemd { void Matrix3D::RotateZ(float a1) {
+// [IDA decompile]
+void __thiscall Matrix3D_RotateZ(float *this, float a2)
+{
+  double v2; // kr00_8
+  double v4; // st7
+  double v5; // st6
+  double v6; // st5
+  double v7; // st6
+  double v8; // st5
+  double v9; // st6
+  double v10; // st5
+  float v11; // [esp+Ch] [ebp+4h]
+
+  v2 = a2;
+  v11 = Math::SinCos(a2);
+  v4 = Math::ArcTan2(v2);
+  v5 = *this;
+  v6 = *(this + 2);
+  *this = v5 * v4 - v6 * v11;
+  *(this + 2) = v6 * v4 + v5 * v11;
+  v7 = *(this + 4);
+  v8 = *(this + 6);
+  *(this + 4) = v7 * v4 - v8 * v11;
+  *(this + 6) = v8 * v4 + v7 * v11;
+  v9 = *(this + 8);
+  v10 = *(this + 10);
+  *(this + 8) = v9 * v4 - v10 * v11;
+  *(this + 10) = v10 * v4 + v9 * v11;
+}
+
+/* ASM:
+sub     esp, 8
+fld     [esp+8+arg_0]
+push    ebx
+push    esi
+fstp    [esp+10h+var_8]
+mov     ebx, dword ptr [esp+10h+var_8]
+push    edi
+mov     edi, dword ptr [esp+14h+var_8+4]
+mov     esi, ecx
+push    edi
+push    ebx             ; double
+call    Math__SinCos
+fstp    [esp+1Ch+arg_0]
+push    edi
+push    ebx             ; double
+call    Math__ArcTan2
+fld     dword ptr [esi]
+fld     dword ptr [esi+8]
+fld     st(1)
+fmul    st, st(3)
+fld     st(1)
+fmul    [esp+24h+arg_0]
+add     esp, 10h
+fsubp   st(1), st
+pop     edi
+fstp    dword ptr [esi]
+fmul    st, st(2)
+fxch    st(1)
+fmul    [esp+10h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+8]
+fld     dword ptr [esi+10h]
+fld     dword ptr [esi+18h]
+fld     st(1)
+fmul    st, st(3)
+fld     st(1)
+fmul    [esp+10h+arg_0]
+fsubp   st(1), st
+fstp    dword ptr [esi+10h]
+fmul    st, st(2)
+fxch    st(1)
+fmul    [esp+10h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+18h]
+fld     dword ptr [esi+20h]
+fld     dword ptr [esi+28h]
+fld     st(1)
+fmul    st, st(3)
+fld     st(1)
+fmul    [esp+10h+arg_0]
+fsubp   st(1), st
+fstp    dword ptr [esi+20h]
+fmul    st, st(2)
+fxch    st(1)
+fmul    [esp+10h+arg_0]
+faddp   st(1), st
+fstp    dword ptr [esi+28h]
+pop     esi
+pop     ebx
+fstp    st
+add     esp, 8
+retn    4
+*/
+} }
 // 0x5F1BF0
-namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) { return 0; } }
+namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
+// [IDA decompile]
+int __thiscall Stream_WriteBlock(int this, int a2, int a3, int a4)
+{
+  int result; // eax
+
+  if ( !*(_DWORD *)(this + 60) )
+    return 0;
+  result = (*(int (__thiscall **)(_DWORD, int, int, int, _DWORD))(**(_DWORD **)(this + 56) + 8))(
+             *(_DWORD *)(this + 56),
+             a2,
+             a3,
+             a4,
+             0);
+  if ( !result )
+    ++*(_DWORD *)(this + 104);
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+3Ch]
+test    eax, eax
+jnz     short loc_5F1C00
+xor     eax, eax
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_5F1C00:                             ; CODE XREF: Stream__WriteBlock+8↑j
+mov     edx, [esp+4+arg_8]
+mov     ecx, [esi+38h]
+push    0
+push    edx
+mov     edx, [esp+0Ch+arg_4]
+mov     eax, [ecx]
+push    edx
+mov     edx, [esp+10h+arg_0]
+push    edx
+call    dword ptr [eax+8]
+test    eax, eax
+jnz     short loc_5F1C20
+inc     dword ptr [esi+68h]
+
+loc_5F1C20:                             ; CODE XREF: Stream__WriteBlock+2B↑j
+pop     esi
+retn    0Ch
+*/
+} }
 // 0x5F1C60
-namespace gamemd { int Stream::ReadPacket() { return 0; } }
+namespace gamemd { int Stream::ReadPacket() {
+// [IDA decompile]
+int __thiscall Stream::ReadPacket(int this)
+{
+  unsigned int v3; // ecx
+  int v4; // edi
+  char *v5; // eax
+  int v6; // ecx
+  char *v7; // ebp
+  int v8; // edi
+  int v9; // ecx
+  int v10; // ebx
+  int v11; // edi
+  int v12; // ecx
+  int v13; // edi
+  int v14; // ecx
+  unsigned int v15; // [esp+14h] [ebp-4h]
+
+  if ( !*(_DWORD *)(this + 60) )
+    return 0;
+  v3 = WinModemClass::ReadBytes(
+         (void (**)(void))dword_A8ED54[233459],
+         (_BYTE *)(*(_DWORD *)(this + 88) + *(_DWORD *)(this + 80)),
+         *(_DWORD *)(this + 84) - *(_DWORD *)(this + 88))
+     + *(_DWORD *)(this + 88);
+  *(_DWORD *)(this + 88) = v3;
+  if ( v3 < 0xB )
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56));
+  v4 = 0;
+  if ( (int)(v3 - 2) < 0 )
+    goto LABEL_11;
+  v5 = *(char **)(this + 80);
+  while ( *(_WORD *)&v5[v4] != 0xDABD )
+  {
+    if ( ++v4 > (int)(v3 - 2) )
+      goto LABEL_11;
+  }
+  if ( v4 == -1 )
+  {
+LABEL_11:
+    memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v4), 1);
+    v6 = *(_DWORD *)(this + 56);
+    *(_DWORD *)(this + 88) = 1;
+    return (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 20))(v6);
+  }
+  else if ( v3 - v4 >= 6 )
+  {
+    v7 = &v5[v4];
+    if ( *(_WORD *)&v5[v4 + 4] == 0xDEAF )
+    {
+      v10 = *((unsigned __int16 *)v7 + 1);
+      if ( v10 <= *(_DWORD *)(this + 8) )
+      {
+        v15 = v10 + v4 + 10;
+        if ( v15 > v3 )
+        {
+          if ( v4 )
+          {
+            memcpy(v5, &v5[v4], v3 - v4);
+            *(_DWORD *)(this + 88) -= v4;
+          }
+          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56));
+        }
+        if ( Audio_Read((int)(v7 + 6), v10) == *(_DWORD *)&v5[v10 + 6 + v4] )
+        {
+          if ( !(*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 56) + 12))(
+                  *(_DWORD *)(this + 56),
+                  *(_DWORD *)(this + 80) + v4 + 6,
+                  v10) )
+            ++*(_DWORD *)(this + 108);
+          memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v15), *(_DWORD *)(this + 88) - v15);
+          *(_DWORD *)(this + 88) -= v15;
+          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56));
+        }
+        else
+        {
+          ++*(_DWORD *)(this + 112);
+          Debug::Log();
+          v13 = v4 + 2;
+          memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v13), *(_DWORD *)(this + 88) - v13);
+          v14 = *(_DWORD *)(this + 56);
+          *(_DWORD *)(this + 88) -= v13;
+          return (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 20))(v14);
+        }
+      }
+      else
+      {
+        Debug::Log();
+        v11 = v4 + 2;
+        memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v11), *(_DWORD *)(this + 88) - v11);
+        v12 = *(_DWORD *)(this + 56);
+        *(_DWORD *)(this + 88) -= v11;
+        return (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 20))(v12);
+      }
+    }
+    else
+    {
+      v8 = v4 + 2;
+      memcpy(v5, &v5[v8], v3 - v8);
+      v9 = *(_DWORD *)(this + 56);
+      *(_DWORD *)(this + 88) -= v8;
+      return (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 20))(v9);
+    }
+  }
+  else
+  {
+    memcpy(v5, &v5[v4], v3 - v4);
+    *(_DWORD *)(this + 88) -= v4;
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56));
+  }
+}
+
+/* ASM:
+Size            = dword ptr -8
+var_4           = dword ptr -4
+
+sub     esp, 8
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+3Ch]
+test    eax, eax
+jnz     short loc_5F1C7A
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1C7A:                             ; CODE XREF: Stream__ReadPacket+E↑j
+mov     eax, [esi+58h]
+mov     ecx, [esi+54h]
+mov     edx, [esi+50h]
+sub     ecx, eax
+add     edx, eax
+push    ecx
+mov     ecx, dword_A8ED54+0E3FCCh
+push    edx
+call    WinModemClass__ReadBytes
+mov     ecx, [esi+58h]
+add     ecx, eax
+cmp     ecx, 0Bh
+mov     [esi+58h], ecx
+jnb     short loc_5F1CB1
+mov     ecx, [esi+38h]
+mov     eax, [ecx]
+call    dword ptr [eax+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1CB1:                             ; CODE XREF: Stream__ReadPacket+3F↑j
+lea     edx, [ecx-2]
+xor     edi, edi
+test    edx, edx
+jl      short loc_5F1CD1
+mov     eax, [esi+50h]
+
+loc_5F1CBD:                             ; CODE XREF: Stream__ReadPacket+68↓j
+cmp     word ptr [eax+edi], 0DABDh
+jz      short loc_5F1CCC
+inc     edi
+cmp     edi, edx
+jle     short loc_5F1CBD
+jmp     short loc_5F1CD1
+; ---------------------------------------------------------------------------
+
+loc_5F1CCC:                             ; CODE XREF: Stream__ReadPacket+63↑j
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_5F1CFA
+
+loc_5F1CD1:                             ; CODE XREF: Stream__ReadPacket+58↑j
+; Stream__ReadPacket+6A↑j
+mov     eax, [esi+50h]
+push    1               ; Size
+lea     ecx, [eax+edi]
+push    ecx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     ecx, [esi+38h]
+mov     dword ptr [esi+58h], 1
+add     esp, 0Ch
+mov     edx, [ecx]
+call    dword ptr [edx+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1CFA:                             ; CODE XREF: Stream__ReadPacket+6F↑j
+mov     edx, ecx
+sub     edx, edi
+cmp     edx, 6
+mov     [esp+18h+Size], edx
+jnb     short loc_5F1D2F
+lea     ecx, [eax+edi]
+push    edx             ; Size
+push    ecx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+add     esp, 0Ch
+sub     eax, edi
+mov     [esi+58h], eax
+mov     esi, [esi+38h]
+mov     ecx, esi
+mov     edx, [esi]
+call    dword ptr [edx+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1D2F:                             ; CODE XREF: Stream__ReadPacket+A5↑j
+cmp     word ptr [eax+edi+4], 0DEAFh
+lea     ebp, [eax+edi]
+jz      short loc_5F1D66
+add     edi, 2
+sub     ecx, edi
+push    ecx             ; Size
+lea     ecx, [eax+edi]
+push    ecx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+mov     ecx, [esi+38h]
+sub     eax, edi
+add     esp, 0Ch
+mov     [esi+58h], eax
+mov     edx, [ecx]
+call    dword ptr [edx+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1D66:                             ; CODE XREF: Stream__ReadPacket+D9↑j
+mov     bx, [ebp+2]
+mov     edx, [esi+8]
+and     ebx, 0FFFFh
+cmp     ebx, edx
+jle     short loc_5F1DB5
+sub     ebx, edx
+push    ebx
+push    offset aSerialPacketLe ; "Serial packet length too long by %d byt"...
+call    Debug__Log
+mov     eax, [esi+50h]
+mov     ecx, [esi+58h]
+add     edi, 2
+sub     ecx, edi
+lea     edx, [eax+edi]
+push    ecx             ; Size
+push    edx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+mov     ecx, [esi+38h]
+sub     eax, edi
+add     esp, 14h
+mov     [esi+58h], eax
+mov     eax, [ecx]
+call    dword ptr [eax+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1DB5:                             ; CODE XREF: Stream__ReadPacket+115↑j
+lea     edx, [ebx+edi+0Ah]
+cmp     edx, ecx
+mov     [esp+18h+var_4], edx
+jbe     short loc_5F1DEC
+test    edi, edi
+jz      short loc_5F1DDC
+mov     ecx, [esp+18h+Size]
+push    ecx             ; Size
+push    ebp             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+add     esp, 0Ch
+sub     eax, edi
+mov     [esi+58h], eax
+
+loc_5F1DDC:                             ; CODE XREF: Stream__ReadPacket+163↑j
+mov     ecx, [esi+38h]
+mov     edx, [ecx]
+call    dword ptr [edx+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1DEC:                             ; CODE XREF: Stream__ReadPacket+15F↑j
+add     eax, ebx
+mov     edx, ebx
+lea     ecx, [eax+edi+6]
+mov     [esp+18h+Size], ecx
+lea     ecx, [ebp+6]
+call    Audio_Read
+mov     edx, [esp+18h+Size]
+cmp     eax, [edx]
+jz      short loc_5F1E4A
+mov     eax, [esi+70h]
+push    offset aSerialPacketFa ; "Serial packet failed CRC check\n"
+inc     eax
+mov     [esi+70h], eax
+call    Debug__Log
+mov     eax, [esi+50h]
+mov     ecx, [esi+58h]
+add     edi, 2
+sub     ecx, edi
+lea     edx, [eax+edi]
+push    ecx             ; Size
+push    edx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+mov     ecx, [esi+38h]
+sub     eax, edi
+add     esp, 10h
+mov     [esi+58h], eax
+mov     eax, [ecx]
+call    dword ptr [eax+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1E4A:                             ; CODE XREF: Stream__ReadPacket+1A6↑j
+mov     eax, [esi+50h]
+mov     ecx, [esi+38h]
+push    ebx
+mov     edx, [ecx]
+lea     eax, [eax+edi+6]
+push    eax
+call    dword ptr [edx+0Ch]
+test    eax, eax
+jnz     short loc_5F1E62
+inc     dword ptr [esi+6Ch]
+
+loc_5F1E62:                             ; CODE XREF: Stream__ReadPacket+1FD↑j
+mov     eax, [esi+50h]
+mov     ecx, [esi+58h]
+mov     edi, [esp+18h+var_4]
+sub     ecx, edi
+lea     edx, [eax+edi]
+push    ecx             ; Size
+push    edx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, [esi+58h]
+add     esp, 0Ch
+sub     eax, edi
+mov     [esi+58h], eax
+mov     esi, [esi+38h]
+mov     ecx, esi
+mov     eax, [esi]
+call    dword ptr [eax+14h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+*/
+} }
 // 0x67C690
-namespace gamemd { int Stream::ReadOLEObjects() { return 0; } }
+namespace gamemd { int Stream::ReadOLEObjects() {
+// [IDA decompile]
+int __thiscall Stream::ReadOLEObjects(void *this)
+{
+  int result; // eax
+  int v3; // ebx
+  int v4; // [esp+10h] [ebp-8h] BYREF
+  int ppvObj; // [esp+14h] [ebp-4h] BYREF
+
+  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v4, 4, 0);
+  if ( result >= 0 )
+  {
+    v3 = 0;
+    if ( v4 <= 0 )
+    {
+      return 0;
+    }
+    else
+    {
+      while ( 1 )
+      {
+        result = ((int (__stdcall *)(void *, void *, int *))OleLoadFromStream)(this, &IID_IUnknown, &ppvObj);
+        if ( result < 0 )
+          break;
+        if ( ++v3 >= v4 )
+          return 0;
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+ppvObj          = dword ptr -4
+
+sub     esp, 8
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+push    0
+lea     ecx, [esp+18h+var_8]
+mov     eax, [esi]
+push    4
+push    ecx
+push    esi
+call    dword ptr [eax+0Ch]
+test    eax, eax
+jl      short loc_67C6D7
+mov     eax, [esp+14h+var_8]
+xor     ebx, ebx
+test    eax, eax
+jle     short loc_67C6D5
+mov     edi, ds:__imp_OleLoadFromStream
+
+loc_67C6BB:                             ; CODE XREF: Stream__ReadOLEObjects+43↓j
+lea     edx, [esp+14h+ppvObj]
+push    edx             ; ppvObj
+push    offset IID_IUnknown ; iidInterface
+push    esi             ; pStm
+call    edi ; __imp_OleLoadFromStream
+test    eax, eax
+jl      short loc_67C6D7
+mov     eax, [esp+14h+var_8]
+inc     ebx
+cmp     ebx, eax
+jl      short loc_67C6BB
+
+loc_67C6D5:                             ; CODE XREF: Stream__ReadOLEObjects+23↑j
+xor     eax, eax
+
+loc_67C6D7:                             ; CODE XREF: Stream__ReadOLEObjects+19↑j
+; Stream__ReadOLEObjects+3A↑j
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+*/
+} }
 // 0x7B0440
-namespace gamemd { void* StreamWrapper::QueryInterface(int a1) { return nullptr; } }
+namespace gamemd { void* StreamWrapper::QueryInterface(int a1) {
+// [IDA decompile]
+_DWORD *__thiscall _do::_vt00(_DWORD *Block, char a2)
+{
+  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v4)(_DWORD, int); // ecx
+  void (__thiscall ***v5)(_DWORD, int); // ecx
+
+  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 4);
+  *Block = &WorldDominationTour::FactionSelectDialogControl::`vftable';
+  if ( v3 )
+    (**v3)(v3, 1);
+  v4 = (void (__thiscall ***)(_DWORD, int))*(Block + 5);
+  if ( v4 )
+    (**v4)(v4, 1);
+  v5 = (void (__thiscall ***)(_DWORD, int))*(Block + 6);
+  if ( v5 )
+    (**v5)(v5, 1);
+  OwnerDrawControl::InitVtable(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+10h]
+mov     dword ptr [esi], offset ??_7FactionSelectDialogControl@WorldDominationTour@@6B@ ; const WorldDominationTour::FactionSelectDialogControl::`vftable'
+test    ecx, ecx
+jz      short loc_7B0456
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+
+loc_7B0456:                             ; CODE XREF: StreamWrapper__QueryInterface+E↑j
+mov     ecx, [esi+14h]
+test    ecx, ecx
+jz      short loc_7B0463
+mov     edx, [ecx]
+push    1
+call    dword ptr [edx]
+
+loc_7B0463:                             ; CODE XREF: StreamWrapper__QueryInterface+1B↑j
+mov     ecx, [esi+18h]
+test    ecx, ecx
+jz      short loc_7B0470
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+
+loc_7B0470:                             ; CODE XREF: StreamWrapper__QueryInterface+28↑j
+mov     ecx, esi
+call    OwnerDrawControl__InitVtable
+test    [esp+4+arg_0], 1
+jz      short loc_7B0487
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_7B0487:                             ; CODE XREF: StreamWrapper__QueryInterface+3C↑j
+mov     eax, esi
+pop     esi
+retn    4
+*/
+} }
 // 0x7BCAE0
-namespace gamemd { int Stream::GetField() { return 0; } }
+namespace gamemd { int Stream::GetField() {
+// [IDA decompile]
+int __thiscall Stream::GetField(_DWORD *this)
+{
+  int (__thiscall ***v1)(_DWORD, int); // ecx
+  int result; // eax
+
+  v1 = (int (__thiscall ***)(_DWORD, int))*(this + 5);
+  if ( v1 )
+    return (**v1)(v1, 1);
+  return result;
+}
+
+/* ASM:
+mov     ecx, [ecx+14h]
+test    ecx, ecx
+jz      short locret_7BCAED
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+
+locret_7BCAED:                          ; CODE XREF: Stream__GetField+5↑j
+retn
+*/
+} }
 // 0x7BE640
-namespace gamemd { void Stream::CopyFromTemplate() { } }
+namespace gamemd { void Stream::CopyFromTemplate() {
+// [IDA decompile]
+void __thiscall sub_7BE640(void *this)
+{
+  qmemcpy(this, &unk_84E738, 0x88u);
+}
+
+/* ASM:
+push    esi             ; TODO: classify (grp=blit, sz=0x13)
+push    edi
+mov     edi, ecx
+mov     esi, offset unk_84E738
+mov     ecx, 22h ; '"'
+rep movsd
+pop     edi
+pop     esi
+retn
+*/
+} }

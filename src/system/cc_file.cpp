@@ -27,54 +27,102 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 bool CCFileClass::Open(const char* pFileName)
 {
-    if (!pFileName || !pFileName[0])
-        return false;
-
-    // Compute the CRC32 hash used by MIX files
-    FileID = MixFileClass::ComputeID(pFileName);
-
-    // Search MIX pool (later-loaded MIXes override earlier ones)
-    auto& pool = MixFileClass::GetMixPool();
-    for (int i = pool.Count - 1; i >= 0; --i) {
-        auto* mix = pool[i];
-        if (!mix || !mix->IsValid())
-            continue;
-
-        int idx = mix->FindIndex(pFileName);
-        if (idx < 0)
-            continue;
-
-        int sz = mix->GetSize(idx);
-        if (sz <= 0)
-            continue;
-
-        LOG_TRACE("CCFileClass::Open '%s' found in MIX[%d] (%d bytes)", pFileName, i, sz);
-        MixFileIndex = idx;
-        Buffer = MemoryBuffer(sz);
-        if (mix->Extract(idx, Buffer.Buffer, sz)) {
-            return true;
-        }
-        Buffer.Clear();
+// [IDA decompile]
+char __thiscall sub_473C50(_DWORD *this, int a2)
+{
+  if ( *(this + 26) == 1 )
+    return 1;
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
+  {
+    *(this + 26) = 1;
+    return 1;
+  }
+  else
+  {
+    (*(void (__thiscall **)(_DWORD *))(*this + 4))(this);
+    if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) )
+    {
+      *(this + 26) = 1;
+      return 1;
     }
-
-    // Fall back to disk
-    FILE* fp = fopen(pFileName, "rb");
-    if (!fp)
-        return false;
-
-    fseek(fp, 0, SEEK_END);
-    long sz = ftell(fp);
-    fseek(fp, 0, SEEK_SET);
-
-    Buffer = MemoryBuffer((int)(sz));
-    if (fread(Buffer.Buffer, 1, sz, fp) == (size_t)sz) {
-        fclose(fp);
-        return true;
+    else if ( (unsigned __int8)File::IsReady(0) )
+    {
+      *(this + 26) = 1;
+      return 1;
     }
+    else
+    {
+      *(this + 26) = 2;
+      return 0;
+    }
+  }
+}
 
-    Buffer.Clear();
-    fclose(fp);
-    return false;
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+mov     ebx, 1
+cmp     [esi+68h], ebx
+jnz     short loc_473C65
+mov     al, bl
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_473C65:                             ; CODE XREF: CCFileClass__Open+C↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+18h]
+test    al, al
+jz      short loc_473C7A
+mov     [esi+68h], ebx
+mov     al, bl
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_473C7A:                             ; CODE XREF: CCFileClass__Open+1E↑j
+mov     edx, [esi]
+push    0
+push    0
+push    0
+mov     ecx, esi
+call    dword ptr [edx+4]
+mov     ecx, eax
+xor     edx, edx
+call    LookupFileInfoCache
+test    al, al
+jz      short loc_473C9E
+mov     [esi+68h], ebx
+mov     al, bl
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_473C9E:                             ; CODE XREF: CCFileClass__Open+42↑j
+push    0
+mov     ecx, esi
+call    File__IsReady
+test    al, al
+jz      short loc_473CB5
+mov     [esi+68h], ebx
+mov     al, bl
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_473CB5:                             ; CODE XREF: CCFileClass__Open+59↑j
+mov     dword ptr [esi+68h], 2
+pop     esi
+xor     al, al
+pop     ebx
+retn    4
+*/
 }
 
 REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
@@ -95,9 +143,35 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 void CCFileClass::Reset()
 {
-    Buffer.Clear();
-    FileID       = 0;
-    MixFileIndex = 0;
+// [IDA decompile]
+int __thiscall CCFileClass_Reset(_DWORD *this)
+{
+  _DWORD *v2; // ecx
+
+  v2 = this + 22;
+  if ( v2 )
+    Buffer::Init(v2, 0, 0);
+  *(this + 25) = 0;
+  return CCFileClass::Close(this);
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+lea     ecx, [esi+58h]
+test    ecx, ecx
+jz      short loc_473CF3
+push    0               ; Size
+push    0               ; int
+call    Buffer__Init
+
+loc_473CF3:                             ; CODE XREF: CCFileClass__Reset+8↑j
+mov     ecx, esi
+mov     dword ptr [esi+64h], 0
+call    CCFileClass__Close
+pop     esi
+retn
+*/
 }
 
 } // namespace gamemd

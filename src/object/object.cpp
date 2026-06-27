@@ -41,23 +41,182 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 // 0x5f44a0
 bool ObjectClass::Remove()
 {
-    if (!isSelected)
-        return false;
+// [IDA decompile]
+int __thiscall ObjectClass::Remove(#374 *this)
+{
+  int result; // eax
+  int v3; // eax
+  #374 *v4; // [esp+4h] [ebp-4h] BYREF
 
-    isSelected = false;
-    UnmarkAllOccupationBits(location);
-    isOnMap = false;
-    inLimbo = true;
+  LOBYTE(result) = *((_BYTE *)this + 131);
+  if ( (_BYTE)result )
+  {
+    v4 = this;
+    v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(MEMORY[0x87F7E8][539956] + 16))(&MEMORY[0x87F7E8][539956], &v4);
+    if ( v3 != -1 && v3 < MEMORY[0x87F7E8][539960] )
+    {
+      --MEMORY[0x87F7E8][539960];
+      for ( ;
+            v3 < MEMORY[0x87F7E8][539960];
+            *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v3 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v3) )
+      {
+        ++v3;
+      }
+    }
+    *((_BYTE *)this + 131) = 0;
+    result = MapClass::GetScrollMode((int)MEMORY[0x87F7E8]);
+    if ( (#374 *)result == this )
+      LOBYTE(result) = MapClass::SetScrollMode((int)MEMORY[0x87F7E8], 0);
+  }
+  return result;
+}
 
-    return true;
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+mov     al, [esi+83h]
+test    al, al
+jz      short loc_5F4518
+mov     edx, ds:0A8ECB8h
+lea     eax, [esp+8+var_4]
+push    eax
+mov     ecx, 0A8ECB8h
+mov     [esp+0Ch+var_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5F44F7
+mov     ecx, ds:0A8ECC8h
+cmp     eax, ecx
+jge     short loc_5F44F7
+dec     ecx
+cmp     eax, ecx
+mov     ds:0A8ECC8h, ecx
+jge     short loc_5F44F7
+
+loc_5F44DF:                             ; CODE XREF: ObjectClass__Remove+55↓j
+mov     ecx, ds:0A8ECBCh
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, ds:0A8ECC8h
+cmp     eax, ecx
+jl      short loc_5F44DF
+
+loc_5F44F7:                             ; CODE XREF: ObjectClass__Remove+28↑j
+; ObjectClass__Remove+32↑j ...
+mov     ecx, 87F7E8h
+mov     byte ptr [esi+83h], 0
+call    MapClass__GetScrollMode
+cmp     eax, esi
+jnz     short loc_5F4518
+push    0
+mov     ecx, 87F7E8h
+call    MapClass__SetScrollMode
+
+loc_5F4518:                             ; CODE XREF: ObjectClass__Remove+C↑j
+; ObjectClass__Remove+6A↑j
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
 // 0x5f65f0
 void ObjectClass::Destroy()
 {
-    isAliveFlag = false;
-    Remove();
+// [IDA decompile]
+int __thiscall ObjectClass::Destroy(#374 *this)
+{
+  int v2; // ecx
+  int result; // eax
+
+  v2 = *((_DWORD *)this + 14);
+  if ( v2 )
+    ObjectClass::CleanupAudioAndRefs(v2);
+  if ( this && (*((_BYTE *)this + 20) & 1) != 0 )
+    TechnoClass::CleanupAll(this, 0);
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1);
+  (*(void (__thiscall **)(#374 *))(*(_DWORD *)this + 212))(this);
+  *((_BYTE *)this + 144) = 0;
+  result = MEMORY[0xB0F6A0];
+  if ( MEMORY[0xB0F6A8] < MEMORY[0xB0F6A0]
+    || (MEMORY[0xB0F6A5] || !MEMORY[0xB0F6A0])
+    && MEMORY[0xB0F6AC] > 0
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F698] + 8))(
+                   &MEMORY[0xB0F698],
+                   MEMORY[0xB0F6A0] + MEMORY[0xB0F6AC],
+                   0),
+        (_BYTE)result) )
+  {
+    result = MEMORY[0xB0F6A8]++;
+    *((_DWORD *)MEMORY[0xB0F69C] + result) = this;
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+38h]
+test    ecx, ecx
+jz      short loc_5F65FF
+call    ObjectClass__CleanupAudioAndRefs
+
+loc_5F65FF:                             ; CODE XREF: ObjectClass__Destroy+8↑j
+test    esi, esi
+jz      short loc_5F6612
+test    byte ptr [esi+14h], 1
+jz      short loc_5F6612
+push    0
+mov     ecx, esi
+call    TechnoClass__CleanupAll
+
+loc_5F6612:                             ; CODE XREF: ObjectClass__Destroy+11↑j
+; ObjectClass__Destroy+17↑j
+mov     dl, 1
+mov     ecx, esi        ; void **
+call    AbstractClass__AnnounceExpiredPointer
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+0D4h]
+mov     byte ptr [esi+90h], 0
+mov     eax, dword_A8ED54+8094Ch
+cmp     dword_A8ED54+80954h, eax
+jl      short loc_5F6668
+mov     cl, byte ptr dword_A8ED54+80951h
+test    cl, cl
+jnz     short loc_5F6647
+test    eax, eax
+jnz     short loc_5F6680
+
+loc_5F6647:                             ; CODE XREF: ObjectClass__Destroy+51↑j
+mov     ecx, dword_A8ED54+80958h
+test    ecx, ecx
+jle     short loc_5F6680
+mov     edx, dword_A8ED54+80944h
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, (offset dword_A8ED54+80944h)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_5F6680
+
+loc_5F6668:                             ; CODE XREF: ObjectClass__Destroy+47↑j
+mov     ecx, dword_A8ED54+80954h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+80954h, ecx
+mov     ecx, dword_A8ED54+80948h
+mov     [ecx+eax*4], esi
+
+loc_5F6680:                             ; CODE XREF: ObjectClass__Destroy+55↑j
+; ObjectClass__Destroy+5F↑j ...
+pop     esi
+retn
+*/
 }
 
 void ObjectClass::RestoreMission(Mission mission)
@@ -259,9 +418,32 @@ void ObjectClass::Reveal()
 // 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
-    if (!needsRedraw) {
-        needsRedraw = true;
-    }
+// [IDA decompile]
+int __thiscall ObjectClass::MarkForRedraw(#374 *this)
+{
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 128);
+  if ( !(_BYTE)result )
+  {
+    *((_BYTE *)this + 128) = 1;
+    return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+80h]
+test    al, al
+jnz     short locret_5F4D2D
+mov     byte ptr [ecx+80h], 1
+push    0
+mov     ecx, 87F7E8h
+call    MapClass__MarkForRedraw
+
+locret_5F4D2D:                          ; CODE XREF: ObjectClass__MarkForRedraw+8↑j
+retn
+*/
 }
 
 void ObjectClass::Flash(int duration)

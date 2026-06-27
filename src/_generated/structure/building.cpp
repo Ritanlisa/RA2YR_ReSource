@@ -8,92 +8,1258 @@ namespace gamemd {
 
 // 0x004E3690 (305 bytes)
 int BuildingType_FindBuilding_4E3690() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004E3690.json)
-    // Size: 305 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   HWND *__fastcall sub_4E3690 ( HWND hDlg, int a2 ) { !int v4 ! ; // eax !HWND DlgItem ! ; // ebp !int v6 ! ; // esi !LRESULT v7 ! ; // eax !LRESULT v8 ! ; // eax !HWND Default ! ; // eax if ( a2 ) { switch ( a2 ) { case 1 : v4 = 1755 ; break ; case 2 : v4 = 1756 ; break ; case 3 : v4 = 1757 ; break ; case 4 : v4 = 1758 ; break ; case 5 : v4 = 1759 ; break ; case 6 : v4 = 1760 ; break ; default : v4 = a2 != 7 ? -1 : 1761 ; break ; } } else { v4 = 1754 ; } DlgItem = "GetDlgItem " ( hDlg , v4 ) ; if ( a2 ) { switch ( a2 ) { case 1 : v6 = 1296 ; break ; case 2 : v6 = 1299 ; break ; case 3 : v6 = 1310 ; break ; case 4 : v6 = 1300 ; break ; case 5 : v6 = 1311 ; break ; case 6 : v6 = 1312 ; break ; default : v6 = a2 != 7 ? -1 : 1313 ; break ; } } else { v6 = 1697 ; } v7 = "SendDlgItemMessageA " ( hDlg , v6 , 0x147u , 0 , 0 ) ; v8 = "SendDlgItemMessageA " ( hDlg , v6 , 0x150u , v7 , 0 ) ; if ( v8 < -3 || v8 > 9 ) { if ( g_GameStateFlags ) v8 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) g_GameStateFlags + 40 ) ) ( g_GameStateFlags ) ; else v8 = -2 ; } Default = ( HWND ) BuildingType::FindDefault ( ( void * ) v8 ) ; return CacheDialogInvalidate ( DlgItem , Default ) ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_4E3690(int a1, int a2)
+{
+  int v4; // eax
+  int v5; // ebp
+  int v6; // esi
+  int v7; // eax
+  int v8; // eax
+  int Default; // eax
+
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v4 = 1755;
+        break;
+      case 2:
+        v4 = 1756;
+        break;
+      case 3:
+        v4 = 1757;
+        break;
+      case 4:
+        v4 = 1758;
+        break;
+      case 5:
+        v4 = 1759;
+        break;
+      case 6:
+        v4 = 1760;
+        break;
+      default:
+        v4 = a2 != 7 ? -1 : 1761;
+        break;
+    }
+  }
+  else
+  {
+    v4 = 1754;
+  }
+  v5 = ((int (__stdcall *)(int, int))GetDlgItem)(a1, v4);
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v6 = 1296;
+        break;
+      case 2:
+        v6 = 1299;
+        break;
+      case 3:
+        v6 = 1310;
+        break;
+      case 4:
+        v6 = 1300;
+        break;
+      case 5:
+        v6 = 1311;
+        break;
+      case 6:
+        v6 = 1312;
+        break;
+      default:
+        v6 = a2 != 7 ? -1 : 1313;
+        break;
+    }
+  }
+  else
+  {
+    v6 = 1697;
+  }
+  v7 = ((int (__stdcall *)(int, int, int, _DWORD, _DWORD))SendDlgItemMessageA)(a1, v6, 327, 0, 0);
+  v8 = ((int (__stdcall *)(int, int, int, int, _DWORD))SendDlgItemMessageA)(a1, v6, 336, v7, 0);
+  if ( v8 < -3 || v8 > 9 )
+  {
+    if ( MEMORY[0x87F7E8][536213] )
+      v8 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][536213] + 40))(MEMORY[0x87F7E8][536213]);
+    else
+      v8 = -2;
+  }
+  Default = BuildingType::FindDefault((void *)v8);
+  return CacheDialogInvalidate(v5, Default);
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, edx
+test    esi, esi
+push    edi
+mov     ebx, ecx
+jnz     short loc_4E36A3
+mov     eax, 6DAh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36A3:                             ; CODE XREF: sub_4E3690+A↑j
+cmp     esi, 1
+jnz     short loc_4E36AF
+mov     eax, 6DBh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36AF:                             ; CODE XREF: sub_4E3690+16↑j
+cmp     esi, 2
+jnz     short loc_4E36BB
+mov     eax, 6DCh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36BB:                             ; CODE XREF: sub_4E3690+22↑j
+cmp     esi, 3
+jnz     short loc_4E36C7
+mov     eax, 6DDh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36C7:                             ; CODE XREF: sub_4E3690+2E↑j
+cmp     esi, 4
+jnz     short loc_4E36D3
+mov     eax, 6DEh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36D3:                             ; CODE XREF: sub_4E3690+3A↑j
+cmp     esi, 5
+jnz     short loc_4E36DF
+mov     eax, 6DFh
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36DF:                             ; CODE XREF: sub_4E3690+46↑j
+cmp     esi, 6
+jnz     short loc_4E36EB
+mov     eax, 6E0h
+jmp     short loc_4E36FE
+; ---------------------------------------------------------------------------
+
+loc_4E36EB:                             ; CODE XREF: sub_4E3690+52↑j
+mov     eax, esi
+sub     eax, 7
+neg     eax
+sbb     eax, eax
+and     eax, 0FFFFF91Eh
+add     eax, 6E1h
+
+loc_4E36FE:                             ; CODE XREF: sub_4E3690+11↑j
+; sub_4E3690+1D↑j ...
+push    eax             ; nIDDlgItem
+push    ebx             ; hDlg
+call    ds:__imp_GetDlgItem
+test    esi, esi
+mov     ebp, eax
+jnz     short loc_4E3713
+mov     esi, 6A1h
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E3713:                             ; CODE XREF: sub_4E3690+7A↑j
+cmp     esi, 1
+jnz     short loc_4E371F
+mov     esi, 510h
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E371F:                             ; CODE XREF: sub_4E3690+86↑j
+cmp     esi, 2
+jnz     short loc_4E372B
+mov     esi, 513h
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E372B:                             ; CODE XREF: sub_4E3690+92↑j
+cmp     esi, 3
+jnz     short loc_4E3737
+mov     esi, 51Eh
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E3737:                             ; CODE XREF: sub_4E3690+9E↑j
+cmp     esi, 4
+jnz     short loc_4E3743
+mov     esi, 514h
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E3743:                             ; CODE XREF: sub_4E3690+AA↑j
+cmp     esi, 5
+jnz     short loc_4E374F
+mov     esi, 51Fh
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E374F:                             ; CODE XREF: sub_4E3690+B6↑j
+cmp     esi, 6
+jnz     short loc_4E375B
+mov     esi, 520h
+jmp     short loc_4E376E
+; ---------------------------------------------------------------------------
+
+loc_4E375B:                             ; CODE XREF: sub_4E3690+C2↑j
+sub     esi, 7
+neg     esi
+sbb     esi, esi
+and     esi, 0FFFFFADEh
+add     esi, 521h
+
+loc_4E376E:                             ; CODE XREF: sub_4E3690+81↑j
+; sub_4E3690+8D↑j ...
+mov     edi, ds:__imp_SendDlgItemMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    147h            ; Msg
+push    esi             ; nIDDlgItem
+push    ebx             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+push    0               ; lParam
+push    eax             ; wParam
+push    150h            ; Msg
+push    esi             ; nIDDlgItem
+push    ebx             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+cmp     eax, 0FFFFFFFDh
+jl      short loc_4E3797
+cmp     eax, 9
+jle     short loc_4E37AD
+
+loc_4E3797:                             ; CODE XREF: sub_4E3690+100↑j
+mov     ecx, ds:0A8B23Ch
+test    ecx, ecx
+jz      short loc_4E37A8
+mov     eax, [ecx]
+call    dword ptr [eax+28h]
+jmp     short loc_4E37AD
+; ---------------------------------------------------------------------------
+
+loc_4E37A8:                             ; CODE XREF: sub_4E3690+10F↑j
+mov     eax, 0FFFFFFFEh
+
+loc_4E37AD:                             ; CODE XREF: sub_4E3690+105↑j
+; sub_4E3690+116↑j
+mov     ecx, eax
+call    BuildingType__FindDefault
+mov     ecx, ebp        ; hWnd
+mov     edx, eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+jmp     CacheDialogInvalidate
+*/
 }
 
 // 0x006435B0 (184 bytes)
 char BuildingType_FindBuilding_6435B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006435B0.json)
-    // Size: 184 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __stdcall sub_6435B0 ( int a1, int a2, int a3 ) { !int Default ! ; // eax !int v4 ! ; // esi !int v5 ! ; // edi !char result ! ; // al !int v7 ! ; // esi int v8[4] ; // [esp+8h] [ebp-10h] BYREF Default = BuildingType::FindDefault ( 0 ) ; v4 = Default ; if ( Default ) { v5 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) Default + 124 ) ) ( Default ) ; Default = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v4 + 128 ) ) ( v4 ) ; } else { v5 = 0 ; } v8 [ 0 ] = a1 ; v8 [ 3 ] = Default ; v8 [ 1 ] = a2 ; v8 [ 2 ] = v5 ; result = 0 ; v7 = ( 255 >> g_BitShift_Green_0 << g_BitShift_Red ) | ( 255 >> g_BitMask_Red << g_BitShift_Blue ) ; if ( DSurface_Hidden ) { result = sub_4BAFE0 ( ( _DWORD * ) DSurface_Hidden ) ; if ( ! result ) return Surface::BlitTransparent ( v8 , DSurface_Hidden , a3 , v7 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+char __stdcall sub_6435B0(int a1, int a2, int a3)
+{
+  int Default; // eax
+  int v4; // esi
+  int v5; // edi
+  char result; // al
+  int v7; // esi
+  int v8[4]; // [esp+8h] [ebp-10h] BYREF
+
+  Default = BuildingType::FindDefault(0);
+  v4 = Default;
+  if ( Default )
+  {
+    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default);
+    Default = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4);
+  }
+  else
+  {
+    v5 = 0;
+  }
+  v8[0] = a1;
+  v8[3] = Default;
+  v8[1] = a2;
+  v8[2] = v5;
+  result = 0;
+  v7 = (255 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+     | (255 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+  if ( MEMORY[0x87F7E8][7881] )
+  {
+    result = sub_4BAFE0((_DWORD *)MEMORY[0x87F7E8][7881]);
+    if ( !result )
+      return Surface::BlitTransparent(v8, MEMORY[0x87F7E8][7881], a3, v7);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+xor     ecx, ecx
+push    esi
+push    edi
+call    BuildingType__FindDefault
+mov     esi, eax
+test    esi, esi
+jnz     short loc_6435C6
+xor     edi, edi
+jmp     short loc_6435D9
+; ---------------------------------------------------------------------------
+
+loc_6435C6:                             ; CODE XREF: sub_6435B0+10↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+7Ch]
+mov     edx, [esi]
+mov     ecx, esi
+mov     edi, eax
+call    dword ptr [edx+80h]
+
+loc_6435D9:                             ; CODE XREF: sub_6435B0+14↑j
+mov     ecx, [esp+18h+arg_0]
+mov     esi, 0FFh
+mov     [esp+18h+var_10], ecx
+mov     ecx, ds:8A0DDCh
+sar     esi, cl
+mov     ecx, ds:8A0DD8h
+mov     edx, [esp+18h+arg_4]
+mov     [esp+18h+var_4], eax
+xor     eax, eax
+mov     [esp+18h+var_C], edx
+mov     edx, 0FFh
+shl     esi, cl
+mov     ecx, ds:8A0DE4h
+mov     [esp+18h+var_8], edi
+sar     eax, cl
+mov     ecx, ds:8A0DE0h
+shl     eax, cl
+mov     ecx, ds:8A0DD4h
+sar     edx, cl
+mov     ecx, ds:8A0DD0h
+or      esi, eax
+shl     edx, cl
+mov     ecx, ds:88730Ch
+or      esi, edx
+test    ecx, ecx
+jz      short loc_643660
+call    sub_4BAFE0
+test    al, al
+jnz     short loc_643660
+mov     eax, [esp+18h+arg_8]
+mov     ecx, ds:88730Ch
+push    esi
+push    eax
+lea     edx, [esp+20h+var_10]
+push    ecx
+push    edx
+mov     ecx, (offset dword_A8ED54+35AF4h)
+call    Surface__BlitTransparent
+
+loc_643660:                             ; CODE XREF: sub_6435B0+89↑j
+; sub_6435B0+92↑j
+pop     edi
+pop     esi
+add     esp, 10h
+retn    0Ch
+*/
 }
 
 // 0x00642FF0 (201 bytes)
 char BuildingType_GetBuilding_642FF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00642FF0.json)
-    // Size: 201 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_642FF0 ( int a1, int a2, char a3 ) { !int v3 ! ; // ebx !int Default ! ; // eax !int v5 ! ; // esi !int Instance ! ; // ebp _WORD *v7 ; // esi !int v8 ! ; // edi !int v9 ! ; // ebp !int v11 ! ; // [esp+Ch] [ebp-34h] _DWORD v12[7] ; // [esp+20h] [ebp-20h] BYREF __int16 v13 ; // [esp+3Eh] [ebp-2h] v3 = 0 ; v11 = Building::GetFoundationSize ( v12 , 0 ) [ 3 ] + 6 ; if ( a3 ) { Default = BuildingType::FindDefault ( 0 ) ; v5 = Default ; if ( Default ) { ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) Default + 124 ) ) ( Default ) ; v3 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v5 + 128 ) ) ( v5 ) ; } } Instance = TextRenderer::GetInstance ( ) ; v7 = v12 ; v8 = 15 ; do { * v7 ++ = * ( _WORD * ) CharToWideString ( g_Str_W ) ; -- v8 ; } while ( v8 ) ; v13 = 0 ; Text::MeasureWidth ( ( int ) v12 , 0 ) ; v9 = * ( _DWORD * ) ( Instance + 28 ) ; if ( v11 > v3 ) v3 = v11 ; if ( v3 <= v9 ) v3 = v9 ; return a1 + a2 * ( v3 + 4 ) ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_642FF0(int a1, int a2, char a3)
+{
+  int v3; // ebx
+  int Default; // eax
+  int v5; // esi
+  int Instance; // ebp
+  _WORD *v7; // esi
+  int v8; // edi
+  int v9; // ebp
+  int v11; // [esp+Ch] [ebp-34h]
+  _DWORD v12[7]; // [esp+20h] [ebp-20h] BYREF
+  __int16 v13; // [esp+3Eh] [ebp-2h]
+
+  v3 = 0;
+  v11 = Building::GetFoundationSize(v12, 0)[3] + 6;
+  if ( a3 )
+  {
+    Default = BuildingType::FindDefault(0);
+    v5 = Default;
+    if ( Default )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default);
+      v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 128))(v5);
+    }
+  }
+  Instance = TextRenderer::GetInstance();
+  v7 = v12;
+  v8 = 15;
+  do
+  {
+    *v7++ = *(_WORD *)CharToWideString(g_Str_W);
+    --v8;
+  }
+  while ( v8 );
+  v13 = 0;
+  Text::MeasureWidth((int)v12, 0);
+  v9 = *(_DWORD *)(Instance + 28);
+  if ( v11 > v3 )
+    v3 = v11;
+  if ( v3 <= v9 )
+    v3 = v9;
+  return a1 + a2 * (v3 + 4);
+}
+
+/* ASM:
+sub     esp, 34h
+mov     ecx, [ecx+54h]
+push    ebx
+push    ebp
+push    esi
+lea     eax, [esp+40h+var_20]
+push    0
+push    eax
+call    Building__GetFoundationSize
+mov     ecx, [eax]
+xor     ebx, ebx
+mov     [esp+40h+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+40h+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+40h+var_28], ecx
+mov     eax, [eax+0Ch]
+add     eax, 6
+mov     [esp+40h+var_34], eax
+mov     al, [esp+40h+arg_8]
+test    al, al
+jz      short loc_64304D
+xor     ecx, ecx
+call    BuildingType__FindDefault
+mov     esi, eax
+test    esi, esi
+jz      short loc_64304D
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+7Ch]
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+80h]
+mov     ebx, eax
+
+loc_64304D:                             ; CODE XREF: sub_642FF0+3B↑j
+; sub_642FF0+48↑j
+push    edi
+mov     ecx, 46h ; 'F'
+call    TextRenderer__GetInstance
+mov     ebp, eax
+lea     esi, [esp+44h+var_20]
+mov     edi, 0Fh
+
+loc_643063:                             ; CODE XREF: sub_642FF0+87↓j
+mov     ecx, offset g_Str_W ; "W"
+call    CharToWideString
+mov     cx, [eax]
+mov     [esi], cx
+add     esi, 2
+dec     edi
+jnz     short loc_643063
+lea     edx, [esp+44h+var_20]
+push    0
+push    edx
+mov     ecx, ebp
+mov     [esp+4Ch+var_2], 0
+call    Text__MeasureWidth
+mov     eax, [esp+44h+var_34]
+mov     ebp, [ebp+1Ch]
+cmp     eax, ebx
+pop     edi
+jle     short loc_64309C
+mov     ebx, eax
+
+loc_64309C:                             ; CODE XREF: sub_642FF0+A8↑j
+cmp     ebx, ebp
+jg      short loc_6430A2
+mov     ebx, ebp
+
+loc_6430A2:                             ; CODE XREF: sub_642FF0+AE↑j
+lea     eax, [ebx+4]
+mov     ecx, [esp+40h+arg_0]
+imul    eax, [esp+40h+arg_4]
+pop     esi
+pop     ebp
+add     eax, ecx
+pop     ebx
+add     esp, 34h
+retn    0Ch
+*/
 }
 
 // 0x006430C0 (245 bytes)
 char BuildingType_GetBuilding_6430C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006430C0.json)
-    // Size: 245 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_6430C0 ( char a1 ) { !int v1 ! ; // ebx !int Default ! ; // eax !int v3 ! ; // esi !int Instance ! ; // ebp _WORD *v5 ; // esi !int v6 ! ; // edi !int v7 ! ; // esi !int v8 ! ; // ebp !int v10 ! ; // [esp+Ch] [ebp-38h] _DWORD v11[7] ; // [esp+24h] [ebp-20h] BYREF __int16 v12 ; // [esp+42h] [ebp-2h] v1 = 0 ; v10 = Building::GetFoundationSize ( v11 , 0 ) [ 3 ] + 6 ; if ( a1 ) { Default = BuildingType::FindDefault ( 0 ) ; v3 = Default ; if ( Default ) { ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) Default + 124 ) ) ( Default ) ; v1 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v3 + 128 ) ) ( v3 ) ; } } Instance = TextRenderer::GetInstance ( ) ; v5 = v11 ; v6 = 15 ; do { * v5 ++ = * ( _WORD * ) CharToWideString ( g_Str_W ) ; -- v6 ; } while ( v6 ) ; v12 = 0 ; Text::MeasureWidth ( ( int ) v11 , 0 ) ; v7 = v10 ; v8 = * ( _DWORD * ) ( Instance + 28 ) ; if ( v10 <= v1 ) v7 = v1 ; if ( v7 <= v8 ) v7 = v8 ; return ( v7 - Building::GetFoundationSize ( v11 , 0 ) [ 3 ] - 2 ) / 2 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_6430C0(char a1)
+{
+  int v1; // ebx
+  int Default; // eax
+  int v3; // esi
+  int Instance; // ebp
+  _WORD *v5; // esi
+  int v6; // edi
+  int v7; // esi
+  int v8; // ebp
+  int v10; // [esp+Ch] [ebp-38h]
+  _DWORD v11[7]; // [esp+24h] [ebp-20h] BYREF
+  __int16 v12; // [esp+42h] [ebp-2h]
+
+  v1 = 0;
+  v10 = Building::GetFoundationSize(v11, 0)[3] + 6;
+  if ( a1 )
+  {
+    Default = BuildingType::FindDefault(0);
+    v3 = Default;
+    if ( Default )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default);
+      v1 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3);
+    }
+  }
+  Instance = TextRenderer::GetInstance();
+  v5 = v11;
+  v6 = 15;
+  do
+  {
+    *v5++ = *(_WORD *)CharToWideString(g_Str_W);
+    --v6;
+  }
+  while ( v6 );
+  v12 = 0;
+  Text::MeasureWidth((int)v11, 0);
+  v7 = v10;
+  v8 = *(_DWORD *)(Instance + 28);
+  if ( v10 <= v1 )
+    v7 = v1;
+  if ( v7 <= v8 )
+    v7 = v8;
+  return (v7 - Building::GetFoundationSize(v11, 0)[3] - 2) / 2;
+}
+
+/* ASM:
+sub     esp, 38h
+push    ebx
+push    ebp
+push    esi
+lea     eax, [esp+44h+var_20]
+mov     [esp+44h+var_34], ecx
+mov     ecx, [ecx+54h]
+push    0
+push    eax
+call    Building__GetFoundationSize
+mov     ecx, [eax]
+xor     ebx, ebx
+mov     [esp+44h+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+44h+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+44h+var_28], ecx
+mov     eax, [eax+0Ch]
+add     eax, 6
+mov     [esp+44h+var_38], eax
+mov     al, [esp+44h+arg_0]
+test    al, al
+jz      short loc_643121
+xor     ecx, ecx
+call    BuildingType__FindDefault
+mov     esi, eax
+test    esi, esi
+jz      short loc_643121
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+7Ch]
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+80h]
+mov     ebx, eax
+
+loc_643121:                             ; CODE XREF: sub_6430C0+3F↑j
+; sub_6430C0+4C↑j
+push    edi
+mov     ecx, 46h ; 'F'
+call    TextRenderer__GetInstance
+mov     ebp, eax
+lea     esi, [esp+48h+var_20]
+mov     edi, 0Fh
+
+loc_643137:                             ; CODE XREF: sub_6430C0+8B↓j
+mov     ecx, offset g_Str_W ; "W"
+call    CharToWideString
+mov     cx, [eax]
+mov     [esi], cx
+add     esi, 2
+dec     edi
+jnz     short loc_643137
+lea     edx, [esp+48h+var_20]
+push    0
+push    edx
+mov     ecx, ebp
+mov     [esp+50h+var_2], 0
+call    Text__MeasureWidth
+mov     esi, [esp+48h+var_38]
+mov     ebp, [ebp+1Ch]
+cmp     esi, ebx
+pop     edi
+jg      short loc_643170
+mov     esi, ebx
+
+loc_643170:                             ; CODE XREF: sub_6430C0+AC↑j
+cmp     esi, ebp
+jg      short loc_643176
+mov     esi, ebp
+
+loc_643176:                             ; CODE XREF: sub_6430C0+B2↑j
+mov     ecx, [esp+44h+var_34]
+lea     eax, [esp+44h+var_20]
+push    0
+push    eax
+mov     ecx, [ecx+54h]
+call    Building__GetFoundationSize
+mov     edx, [eax]
+mov     [esp+44h+var_30], edx
+mov     ecx, [eax+4]
+mov     [esp+44h+var_2C], ecx
+mov     edx, [eax+8]
+mov     [esp+44h+var_28], edx
+mov     ecx, [eax+0Ch]
+mov     eax, esi
+sub     eax, ecx
+pop     esi
+sub     eax, 2
+pop     ebp
+cdq
+sub     eax, edx
+pop     ebx
+sar     eax, 1
+add     esp, 38h
+retn    4
+*/
 }
 
 // 0x006431C0 (250 bytes)
 char BuildingType_GetBuilding_6431C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006431C0.json)
-    // Size: 250 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_6431C0 ( char a1 ) { !int v1 ! ; // edi !int Default ! ; // eax !int v3 ! ; // esi !int Instance ! ; // ebp _WORD *v5 ; // esi !int v6 ! ; // ebx !int v7 ! ; // ebp !int v8 ! ; // edi !int v9 ! ; // esi !int v11 ! ; // [esp+8h] [ebp-34h] _DWORD v12[7] ; // [esp+1Ch] [ebp-20h] BYREF __int16 v13 ; // [esp+3Ah] [ebp-2h] v1 = 0 ; v11 = Building::GetFoundationSize ( v12 , 0 ) [ 3 ] + 6 ; if ( a1 ) { Default = BuildingType::FindDefault ( 0 ) ; v3 = Default ; if ( Default ) { ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) Default + 124 ) ) ( Default ) ; v1 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v3 + 128 ) ) ( v3 ) ; } } Instance = TextRenderer::GetInstance ( ) ; v5 = v12 ; v6 = 15 ; do { * v5 ++ = * ( _WORD * ) CharToWideString ( g_Str_W ) ; -- v6 ; } while ( v6 ) ; v13 = 0 ; Text::MeasureWidth ( ( int ) v12 , 0 ) ; v7 = * ( _DWORD * ) ( Instance + 28 ) ; if ( v11 > v1 ) v1 = v11 ; if ( v1 <= v7 ) v1 = v7 ; v8 = v1 + 4 ; v9 = BuildingType::FindDefault ( 0 ) ; if ( ! v9 ) return v8 / 2 ; ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) v9 + 124 ) ) ( v9 ) ; return ( v8 - ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v9 + 128 ) ) ( v9 ) ) / 2 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_6431C0(char a1)
+{
+  int v1; // edi
+  int Default; // eax
+  int v3; // esi
+  int Instance; // ebp
+  _WORD *v5; // esi
+  int v6; // ebx
+  int v7; // ebp
+  int v8; // edi
+  int v9; // esi
+  int v11; // [esp+8h] [ebp-34h]
+  _DWORD v12[7]; // [esp+1Ch] [ebp-20h] BYREF
+  __int16 v13; // [esp+3Ah] [ebp-2h]
+
+  v1 = 0;
+  v11 = Building::GetFoundationSize(v12, 0)[3] + 6;
+  if ( a1 )
+  {
+    Default = BuildingType::FindDefault(0);
+    v3 = Default;
+    if ( Default )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default);
+      v1 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3);
+    }
+  }
+  Instance = TextRenderer::GetInstance();
+  v5 = v12;
+  v6 = 15;
+  do
+  {
+    *v5++ = *(_WORD *)CharToWideString(g_Str_W);
+    --v6;
+  }
+  while ( v6 );
+  v13 = 0;
+  Text::MeasureWidth((int)v12, 0);
+  v7 = *(_DWORD *)(Instance + 28);
+  if ( v11 > v1 )
+    v1 = v11;
+  if ( v1 <= v7 )
+    v1 = v7;
+  v8 = v1 + 4;
+  v9 = BuildingType::FindDefault(0);
+  if ( !v9 )
+    return v8 / 2;
+  (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 124))(v9);
+  return (v8 - (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 128))(v9)) / 2;
+}
+
+/* ASM:
+sub     esp, 34h
+mov     ecx, [ecx+54h]
+push    esi
+push    edi
+lea     eax, [esp+3Ch+var_20]
+push    0
+push    eax
+call    Building__GetFoundationSize
+mov     ecx, [eax]
+xor     edi, edi
+mov     [esp+3Ch+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+3Ch+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+3Ch+var_28], ecx
+mov     eax, [eax+0Ch]
+add     eax, 6
+mov     [esp+3Ch+var_34], eax
+mov     al, [esp+3Ch+arg_0]
+test    al, al
+jz      short loc_64321C
+xor     ecx, ecx
+call    BuildingType__FindDefault
+mov     esi, eax
+test    esi, esi
+jz      short loc_64321C
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+7Ch]
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+80h]
+mov     edi, eax
+
+loc_64321C:                             ; CODE XREF: sub_6431C0+3A↑j
+; sub_6431C0+47↑j
+push    ebx
+push    ebp
+mov     ecx, 46h ; 'F'
+call    TextRenderer__GetInstance
+mov     ebp, eax
+lea     esi, [esp+44h+var_20]
+mov     ebx, 0Fh
+
+loc_643233:                             ; CODE XREF: sub_6431C0+87↓j
+mov     ecx, offset g_Str_W ; "W"
+call    CharToWideString
+mov     cx, [eax]
+mov     [esi], cx
+add     esi, 2
+dec     ebx
+jnz     short loc_643233
+lea     edx, [esp+44h+var_20]
+push    0
+push    edx
+mov     ecx, ebp
+mov     [esp+4Ch+var_2], 0
+call    Text__MeasureWidth
+mov     eax, [esp+44h+var_34]
+mov     ebp, [ebp+1Ch]
+cmp     eax, edi
+jle     short loc_64326B
+mov     edi, eax
+
+loc_64326B:                             ; CODE XREF: sub_6431C0+A7↑j
+cmp     edi, ebp
+jg      short loc_643271
+mov     edi, ebp
+
+loc_643271:                             ; CODE XREF: sub_6431C0+AD↑j
+xor     ecx, ecx
+add     edi, 4
+call    BuildingType__FindDefault
+mov     esi, eax
+pop     ebp
+test    esi, esi
+pop     ebx
+jnz     short loc_643296
+xor     ecx, ecx
+mov     eax, edi
+sub     eax, ecx
+pop     edi
+cdq
+sub     eax, edx
+pop     esi
+sar     eax, 1
+add     esp, 34h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_643296:                             ; CODE XREF: sub_6431C0+C1↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+7Ch]
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+80h]
+mov     ecx, eax
+mov     eax, edi
+sub     eax, ecx
+pop     edi
+cdq
+sub     eax, edx
+pop     esi
+sar     eax, 1
+add     esp, 34h
+retn    4
+*/
 }
 
 // 0x006432C0 (266 bytes)
 char BuildingType_GetBuilding_6432C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006432C0.json)
-    // Size: 266 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_6432C0 ( char a1 ) { !int v1 ! ; // ebx !int Default ! ; // eax !int v3 ! ; // esi !int Instance ! ; // ebp _WORD *v5 ; // esi !int v6 ! ; // edi !int v7 ! ; // eax !int v8 ! ; // ebp !int v9 ! ; // ebp !int v10 ! ; // ebx _WORD *v11 ; // esi !int v12 ! ; // edi !int v14 ! ; // [esp+10h] [ebp-34h] _DWORD v15[7] ; // [esp+24h] [ebp-20h] BYREF __int16 v16 ; // [esp+42h] [ebp-2h] v1 = 0 ; v14 = Building::GetFoundationSize ( v15 , 0 ) [ 3 ] + 6 ; if ( a1 ) { Default = BuildingType::FindDefault ( 0 ) ; v3 = Default ; if ( Default ) { ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) Default + 124 ) ) ( Default ) ; v1 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v3 + 128 ) ) ( v3 ) ; } } Instance = TextRenderer::GetInstance ( ) ; v5 = v15 ; v6 = 15 ; do { * v5 ++ = * ( _WORD * ) CharToWideString ( g_Str_W ) ; -- v6 ; } while ( v6 ) ; v16 = 0 ; Text::MeasureWidth ( ( int ) v15 , 0 ) ; v7 = * ( _DWORD * ) ( Instance + 28 ) ; v8 = v14 ; if ( v14 <= v1 ) v8 = v1 ; if ( v8 <= v7 ) v8 = v7 ; v9 = v8 + 4 ; v10 = TextRenderer::GetInstance ( ) ; v11 = v15 ; v12 = 15 ; do { * v11 ++ = * ( _WORD * ) CharToWideString ( g_Str_W ) ; -- v12 ; } while ( v12 ) ; v16 = 0 ; Text::MeasureWidth ( ( int ) v15 , 0 ) ; return ( v9 - * ( _DWORD * ) ( v10 + 28 ) ) / 2 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_6432C0(char a1)
+{
+  int v1; // ebx
+  int Default; // eax
+  int v3; // esi
+  int Instance; // ebp
+  _WORD *v5; // esi
+  int v6; // edi
+  int v7; // eax
+  int v8; // ebp
+  int v9; // ebp
+  int v10; // ebx
+  _WORD *v11; // esi
+  int v12; // edi
+  int v14; // [esp+10h] [ebp-34h]
+  _DWORD v15[7]; // [esp+24h] [ebp-20h] BYREF
+  __int16 v16; // [esp+42h] [ebp-2h]
+
+  v1 = 0;
+  v14 = Building::GetFoundationSize(v15, 0)[3] + 6;
+  if ( a1 )
+  {
+    Default = BuildingType::FindDefault(0);
+    v3 = Default;
+    if ( Default )
+    {
+      (*(void (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default);
+      v1 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3);
+    }
+  }
+  Instance = TextRenderer::GetInstance();
+  v5 = v15;
+  v6 = 15;
+  do
+  {
+    *v5++ = *(_WORD *)CharToWideString(g_Str_W);
+    --v6;
+  }
+  while ( v6 );
+  v16 = 0;
+  Text::MeasureWidth((int)v15, 0);
+  v7 = *(_DWORD *)(Instance + 28);
+  v8 = v14;
+  if ( v14 <= v1 )
+    v8 = v1;
+  if ( v8 <= v7 )
+    v8 = v7;
+  v9 = v8 + 4;
+  v10 = TextRenderer::GetInstance();
+  v11 = v15;
+  v12 = 15;
+  do
+  {
+    *v11++ = *(_WORD *)CharToWideString(g_Str_W);
+    --v12;
+  }
+  while ( v12 );
+  v16 = 0;
+  Text::MeasureWidth((int)v15, 0);
+  return (v9 - *(_DWORD *)(v10 + 28)) / 2;
+}
+
+/* ASM:
+sub     esp, 34h
+mov     ecx, [ecx+54h]
+push    ebx
+push    ebp
+push    esi
+push    edi
+lea     eax, [esp+44h+var_20]
+push    0
+push    eax
+call    Building__GetFoundationSize
+mov     ecx, [eax]
+xor     ebx, ebx
+mov     [esp+44h+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+44h+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+44h+var_28], ecx
+mov     eax, [eax+0Ch]
+add     eax, 6
+mov     [esp+44h+var_34], eax
+mov     al, [esp+44h+arg_0]
+test    al, al
+jz      short loc_64331E
+xor     ecx, ecx
+call    BuildingType__FindDefault
+mov     esi, eax
+test    esi, esi
+jz      short loc_64331E
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+7Ch]
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+80h]
+mov     ebx, eax
+
+loc_64331E:                             ; CODE XREF: sub_6432C0+3C↑j
+; sub_6432C0+49↑j
+mov     ecx, 46h ; 'F'
+call    TextRenderer__GetInstance
+mov     ebp, eax
+lea     esi, [esp+44h+var_20]
+mov     edi, 0Fh
+
+loc_643333:                             ; CODE XREF: sub_6432C0+87↓j
+mov     ecx, offset g_Str_W ; "W"
+call    CharToWideString
+mov     cx, [eax]
+mov     [esi], cx
+add     esi, 2
+dec     edi
+jnz     short loc_643333
+lea     edx, [esp+44h+var_20]
+push    0
+push    edx
+mov     ecx, ebp
+mov     [esp+4Ch+var_2], 0
+call    Text__MeasureWidth
+mov     eax, [ebp+1Ch]
+mov     ebp, [esp+44h+var_34]
+cmp     ebp, ebx
+jg      short loc_64336B
+mov     ebp, ebx
+
+loc_64336B:                             ; CODE XREF: sub_6432C0+A7↑j
+cmp     ebp, eax
+jg      short loc_643371
+mov     ebp, eax
+
+loc_643371:                             ; CODE XREF: sub_6432C0+AD↑j
+mov     ecx, 46h ; 'F'
+add     ebp, 4
+call    TextRenderer__GetInstance
+mov     ebx, eax
+lea     esi, [esp+44h+var_20]
+mov     edi, 0Fh
+
+loc_643389:                             ; CODE XREF: sub_6432C0+DD↓j
+mov     ecx, offset g_Str_W ; "W"
+call    CharToWideString
+mov     ax, [eax]
+mov     [esi], ax
+add     esi, 2
+dec     edi
+jnz     short loc_643389
+lea     ecx, [esp+44h+var_20]
+push    0
+push    ecx
+mov     ecx, ebx
+mov     [esp+4Ch+var_2], 0
+call    Text__MeasureWidth
+mov     edi, [ebx+1Ch]
+mov     eax, ebp
+sub     eax, edi
+pop     edi
+cdq
+sub     eax, edx
+pop     esi
+pop     ebp
+pop     ebx
+sar     eax, 1
+add     esp, 34h
+retn    4
+*/
 }
 
 // 0x0063F8F0 (73 bytes)
 int PowerBar_Calc_63F8F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063F8F0.json)
-    // Size: 73 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   __int64 __thiscall sub_63F8F0 ( _DWORD *this ) { !int v2 ! ; // eax !int v4 ! ; // [esp+0h] [ebp-8h] v2 = PowerBar::CalcFill ( ) ; v4 = * ( this + 1355 ) + * ( this + 1356 ) + * ( this + 1357 ) ; if ( v4 > v2 ) v4 = v2 ; return Math::RoundToInt ( ( double ) v4 / ( double ) v2 * 5.0 ) ; }
-    return 0;
+// [IDA decompile]
+__int64 __thiscall sub_63F8F0(_DWORD *this)
+{
+  int v2; // eax
+  int v4; // [esp+0h] [ebp-8h]
+
+  v2 = PowerBar::CalcFill();
+  v4 = *(this + 1355) + *(this + 1356) + *(this + 1357);
+  if ( v4 > v2 )
+    v4 = v2;
+  return Math::RoundToInt((double)v4 / (double)v2 * 5.0);
+}
+
+/* ASM:
+sub     esp, 8
+push    esi
+mov     esi, ecx
+call    PowerBar__CalcFill
+mov     ecx, [esi+1534h]
+mov     edx, [esi+1530h]
+add     ecx, edx
+mov     edx, [esi+152Ch]
+add     ecx, edx
+mov     [esp+0Ch+var_4], eax
+cmp     ecx, eax
+mov     [esp+0Ch+var_8], ecx
+pop     esi
+jle     short loc_63F922
+mov     [esp+8+var_8], eax
+
+loc_63F922:                             ; CODE XREF: sub_63F8F0+2C↑j
+fild    [esp+8+var_8]
+fidiv   [esp+8+var_4]
+fmul    ds:dbl_7E3568
+call    Math__RoundToInt
+add     esp, 8
+retn
+*/
 }
 
 // 0x0063FDC0 (106 bytes)
 int PowerBar_SetMember1356_63FDC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063FDC0.json)
-    // Size: 106 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_63FDC0 ( _DWORD *this ) { int v2 ; // eax int result ; // eax int v4 ; // eax int v5 ; // [esp+4h] [ebp-Ch] BYREF int v6 ; // [esp+8h] [ebp-8h] BYREF int v7 ; // [esp+Ch] [ebp-4h] BYREF PowerBar::ComputeFill ( & v5 , & v7 , & v6 ) ; v2 = * ( this + 1355 ) ; if ( v2 <= v5 ) { v4 = * ( this + 1357 ) ; if ( v4 <= v6 ) { result = * ( this + 1356 ) ; if ( result > v7 ) * ( this + 1356 ) = -- result ; } else { result = v4 - 1 ; * ( this + 1357 ) = result ; } } else { result = v2 - 1 ; * ( this + 1355 ) = result ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_63FDC0(_DWORD *this)
+{
+  int v2; // eax
+  int result; // eax
+  int v4; // eax
+  int v5; // [esp+4h] [ebp-Ch] BYREF
+  int v6; // [esp+8h] [ebp-8h] BYREF
+  int v7; // [esp+Ch] [ebp-4h] BYREF
+
+  PowerBar::ComputeFill(&v5, &v7, &v6);
+  v2 = *(this + 1355);
+  if ( v2 <= v5 )
+  {
+    v4 = *(this + 1357);
+    if ( v4 <= v6 )
+    {
+      result = *(this + 1356);
+      if ( result > v7 )
+        *(this + 1356) = --result;
+    }
+    else
+    {
+      result = v4 - 1;
+      *(this + 1357) = result;
+    }
+  }
+  else
+  {
+    result = v2 - 1;
+    *(this + 1355) = result;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+lea     eax, [esp+0Ch+var_8]
+lea     edx, [esp+0Ch+var_C]
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+10h+var_4]
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    PowerBar__ComputeFill
+mov     eax, [esi+152Ch]
+mov     ecx, [esp+10h+var_C]
+cmp     eax, ecx
+jle     short loc_63FDF6
+dec     eax
+mov     [esi+152Ch], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_63FDF6:                             ; CODE XREF: sub_63FDC0+28↑j
+mov     eax, [esi+1534h]
+mov     ecx, [esp+10h+var_8]
+cmp     eax, ecx
+jle     short loc_63FE10
+dec     eax
+mov     [esi+1534h], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_63FE10:                             ; CODE XREF: sub_63FDC0+42↑j
+mov     eax, [esi+1530h]
+mov     ecx, [esp+10h+var_4]
+cmp     eax, ecx
+jle     short loc_63FE25
+dec     eax
+mov     [esi+1530h], eax
+
+loc_63FE25:                             ; CODE XREF: sub_63FDC0+5C↑j
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x0063FE30 (106 bytes)
 int PowerBar_SetMember_63FE30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063FE30.json)
-    // Size: 106 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_63FE30 ( _DWORD *this ) { int v2 ; // eax int result ; // eax int v4 ; // eax int v5 ; // [esp+4h] [ebp-Ch] BYREF int v6 ; // [esp+8h] [ebp-8h] BYREF int v7 ; // [esp+Ch] [ebp-4h] BYREF PowerBar::ComputeFill ( & v6 , & v7 , & v5 ) ; v2 = * ( this + 1357 ) ; if ( v2 >= v5 ) { v4 = * ( this + 1355 ) ; if ( v4 >= v6 ) { result = * ( this + 1356 ) ; if ( result < v7 ) * ( this + 1356 ) = ++ result ; } else { result = v4 + 1 ; * ( this + 1355 ) = result ; } } else { result = v2 + 1 ; * ( this + 1357 ) = result ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_63FE30(_DWORD *this)
+{
+  int v2; // eax
+  int result; // eax
+  int v4; // eax
+  int v5; // [esp+4h] [ebp-Ch] BYREF
+  int v6; // [esp+8h] [ebp-8h] BYREF
+  int v7; // [esp+Ch] [ebp-4h] BYREF
+
+  PowerBar::ComputeFill(&v6, &v7, &v5);
+  v2 = *(this + 1357);
+  if ( v2 >= v5 )
+  {
+    v4 = *(this + 1355);
+    if ( v4 >= v6 )
+    {
+      result = *(this + 1356);
+      if ( result < v7 )
+        *(this + 1356) = ++result;
+    }
+    else
+    {
+      result = v4 + 1;
+      *(this + 1355) = result;
+    }
+  }
+  else
+  {
+    result = v2 + 1;
+    *(this + 1357) = result;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+lea     eax, [esp+0Ch+var_C]
+lea     edx, [esp+0Ch+var_8]
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+10h+var_4]
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    PowerBar__ComputeFill
+mov     eax, [esi+1534h]
+mov     ecx, [esp+10h+var_C]
+cmp     eax, ecx
+jge     short loc_63FE66
+inc     eax
+mov     [esi+1534h], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_63FE66:                             ; CODE XREF: sub_63FE30+28↑j
+mov     eax, [esi+152Ch]
+mov     ecx, [esp+10h+var_8]
+cmp     eax, ecx
+jge     short loc_63FE80
+inc     eax
+mov     [esi+152Ch], eax
+pop     esi
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_63FE80:                             ; CODE XREF: sub_63FE30+42↑j
+mov     eax, [esi+1530h]
+mov     ecx, [esp+10h+var_4]
+cmp     eax, ecx
+jge     short loc_63FE95
+inc     eax
+mov     [esi+1530h], eax
+
+loc_63FE95:                             ; CODE XREF: sub_63FE30+5C↑j
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x004C4FC0 (64 bytes)
 int Power_TimerProcess_4C4FC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C4FC0.json)
-    // Size: 64 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4C4FC0 ( int *this, int a2 ) { !int result ! ; // eax int v4 ; // ecx !int v5 ! ; // eax !int v6 ! ; // eax result = Power::TimerProcess ( * this ) ; v4 = * ( this + 1 ) ; if ( v4 ) { v5 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v4 + 44 ) ) ( v4 ) ; Power::TimerProcess ( v5 ) ; v6 = ( * ( int (__stdcall **)(int) ) ( * ( _DWORD * ) ( * ( this + 1 ) + 4 ) + 16 ) ) ( * ( this + 1 ) + 4 ) ; return Power::TimerProcess ( v6 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4C4FC0(int *this, int a2)
+{
+  int result; // eax
+  int v4; // ecx
+  int v5; // eax
+  int v6; // eax
+
+  result = Power::TimerProcess(*this);
+  v4 = *(this + 1);
+  if ( v4 )
+  {
+    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4);
+    Power::TimerProcess(v5);
+    v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 1) + 4) + 16))(*(this + 1) + 4);
+    return Power::TimerProcess(v6);
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     eax, [esi]
+mov     ecx, edi
+push    eax
+call    Power__TimerProcess
+mov     ecx, [esi+4]
+test    ecx, ecx
+jz      short loc_4C4FFB
+mov     edx, [ecx]
+call    dword ptr [edx+2Ch]
+push    eax
+mov     ecx, edi
+call    Power__TimerProcess
+mov     esi, [esi+4]
+mov     ecx, [esi+4]
+lea     eax, [esi+4]
+push    eax
+call    dword ptr [ecx+10h]
+push    eax
+mov     ecx, edi
+call    Power__TimerProcess
+
+loc_4C4FFB:                             ; CODE XREF: sub_4C4FC0+17↑j
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 } // namespace gamemd

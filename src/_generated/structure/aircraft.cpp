@@ -8,20 +8,212 @@ namespace gamemd {
 
 // 0x00413CD0 (68 bytes)
 bool JumpjetLocomotionClass_Method_413CD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00413CD0.json)
-    // Size: 68 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __fastcall sub_413CD0 ( int a1 ) { !int v2 ! ; // eax if ( ! a1 ) return 0 ; v2 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 44 ) ) ( a1 ) == 15 ? a1 : 0 ; if ( ! v2 ) return 0 ; if ( * ( _BYTE * ) ( * ( _DWORD * ) ( v2 + 1728 ) + 3777 ) ) return * ( _BYTE * ) ( v2 + 1753 ) == 0 ; return 0 ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_413CD0(int a1)
+{
+  int v2; // eax
+
+  if ( !a1 )
+    return 0;
+  v2 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 15 ? a1 : 0;
+  if ( !v2 )
+    return 0;
+  if ( *(_BYTE *)(*(_DWORD *)(v2 + 1728) + 3777) )
+    return *(_BYTE *)(v2 + 1753) == 0;
+  return 0;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+test    esi, esi
+jnz     short loc_413CDB
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_413CDB:                             ; CODE XREF: sub_413CD0+5↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+2Ch]
+sub     eax, 0Fh
+neg     eax
+sbb     eax, eax
+not     eax
+and     eax, esi
+jnz     short loc_413CF3
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_413CF3:                             ; CODE XREF: sub_413CD0+1D↑j
+mov     ecx, [eax+6C0h]
+mov     dl, [ecx+0EC1h]
+test    dl, dl
+jnz     short loc_413D07
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_413D07:                             ; CODE XREF: sub_413CD0+31↑j
+mov     cl, [eax+6D9h]
+pop     esi
+test    cl, cl
+setz    al
+retn
+*/
 }
 
 // 0x004B0DF0 (242 bytes)
 char JumpjetLocomotion_MoveCrate_4B0DF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B0DF0.json)
-    // Size: 242 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_4B0DF0 ( int this, _DWORD *a2 ) { !int v2 ! ; // eax _DWORD *v4 ; // edi int v5 ; // eax int v6 ; // eax _DWORD *v7 ; // eax !int v9 ! ; // [esp-4h] [ebp-10h] v2 = g_DDraw_ClipRect ; v4 = ( _DWORD * ) ( this + 64 ) ; if ( * ( _DWORD * ) ( this + 64 ) != g_DDraw_ClipRect || * ( _QWORD * ) ( this + 68 ) != qword_8A0794 ) { * v4 = g_DDraw_ClipRect ; * ( _DWORD * ) ( this + 68 ) = qword_8A0794 ; v5 = HIDWORD ( qword_8A0794 ) ; * ( _BYTE * ) ( this + 99 ) = 0 ; * ( _DWORD * ) ( this + 72 ) = v5 ; v2 = g_DDraw_ClipRect ; } if ( * a2 != v2 || * ( _QWORD * ) ( a2 + 1 ) != qword_8A0794 ) { * v4 = * a2 ; * ( _DWORD * ) ( this + 68 ) = a2 [ 1 ] ; v6 = a2 [ 2 ] ; * ( _BYTE * ) ( this + 99 ) = 1 ; * ( _DWORD * ) ( this + 72 ) = v6 ; v9 = * ( _DWORD * ) ( this + 12 ) ; v7 = Coord::To_Cell ( & MapClass_Instance , a2 ) ; if ( CrateClass::ProcessPickup ( v7 , v9 ) && ! * ( _BYTE * ) ( * ( _DWORD * ) ( this + 12 ) + 129 ) ) { JumpjetLocomotion::MoveTo ( this , a2 , 1 ) ; return 1 ; } if ( * ( _BYTE * ) ( * ( _DWORD * ) ( this + 12 ) + 144 ) ) { * v4 = g_DDraw_ClipRect ; * ( _QWORD * ) ( this + 68 ) = qword_8A0794 ; * ( _BYTE * ) ( this + 99 ) = 0 ; } } return 0 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_4B0DF0(int this, _DWORD *a2)
+{
+  int v2; // eax
+  _DWORD *v4; // edi
+  int v5; // eax
+  int v6; // eax
+  _DWORD *v7; // eax
+  int v9; // [esp-4h] [ebp-10h]
+
+  v2 = MEMORY[0x8A0790];
+  v4 = (_DWORD *)(this + 64);
+  if ( *(_DWORD *)(this + 64) != MEMORY[0x8A0790] || *(_QWORD *)(this + 68) != MEMORY[0x8A0794] )
+  {
+    *v4 = MEMORY[0x8A0790];
+    *(_DWORD *)(this + 68) = MEMORY[0x8A0794];
+    v5 = HIDWORD(MEMORY[0x8A0794]);
+    *(_BYTE *)(this + 99) = 0;
+    *(_DWORD *)(this + 72) = v5;
+    v2 = MEMORY[0x8A0790];
+  }
+  if ( *a2 != v2 || *(_QWORD *)(a2 + 1) != MEMORY[0x8A0794] )
+  {
+    *v4 = *a2;
+    *(_DWORD *)(this + 68) = a2[1];
+    v6 = a2[2];
+    *(_BYTE *)(this + 99) = 1;
+    *(_DWORD *)(this + 72) = v6;
+    v9 = *(_DWORD *)(this + 12);
+    v7 = Coord::To_Cell(&MEMORY[0x87F7E8], a2);
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(*(_DWORD *)(this + 12) + 129) )
+    {
+      JumpjetLocomotion::MoveTo(this, a2, 1);
+      return 1;
+    }
+    if ( *(_BYTE *)(*(_DWORD *)(this + 12) + 144) )
+    {
+      *v4 = MEMORY[0x8A0790];
+      *(_QWORD *)(this + 68) = MEMORY[0x8A0794];
+      *(_BYTE *)(this + 99) = 0;
+    }
+  }
+  return 0;
+}
+
+/* ASM:
+push    ebp
+mov     eax, ds:8A0790h
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+40h]
+push    edi
+lea     edi, [esi+40h]
+cmp     ecx, eax
+jnz     short loc_4B0E1E
+mov     ecx, [edi+4]
+mov     edx, ds:8A0794h
+cmp     ecx, edx
+jnz     short loc_4B0E1E
+mov     edx, [edi+8]
+mov     ecx, ds:8A0798h
+cmp     edx, ecx
+jz      short loc_4B0E3C
+
+loc_4B0E1E:                             ; CODE XREF: sub_4B0DF0+12↑j
+; sub_4B0DF0+1F↑j
+mov     ecx, edi
+mov     [ecx], eax
+mov     edx, ds:8A0794h
+mov     [ecx+4], edx
+mov     eax, ds:8A0798h
+mov     byte ptr [esi+63h], 0
+mov     [ecx+8], eax
+mov     eax, ds:8A0790h
+
+loc_4B0E3C:                             ; CODE XREF: sub_4B0DF0+2C↑j
+mov     ebp, [esp+0Ch+arg_0]
+cmp     [ebp+0], eax
+jnz     short loc_4B0E5F
+mov     ecx, ds:8A0794h
+mov     eax, [ebp+4]
+cmp     eax, ecx
+jnz     short loc_4B0E5F
+mov     edx, ds:8A0798h
+mov     eax, [ebp+8]
+cmp     eax, edx
+jz      short loc_4B0EDA
+
+loc_4B0E5F:                             ; CODE XREF: sub_4B0DF0+53↑j
+; sub_4B0DF0+60↑j
+mov     eax, ebp
+mov     ecx, edi
+mov     edx, [eax]
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     [ecx+4], edx
+mov     eax, [eax+8]
+mov     byte ptr [esi+63h], 1
+mov     [ecx+8], eax
+mov     ecx, [esi+0Ch]
+push    ecx
+push    ebp
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, eax
+call    CrateClass__ProcessPickup
+test    al, al
+jz      short loc_4B0EB0
+mov     edx, [esi+0Ch]
+mov     al, [edx+81h]
+test    al, al
+jnz     short loc_4B0EB0
+push    1
+push    ebp
+mov     ecx, esi
+call    JumpjetLocomotion__MoveTo
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebp
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4B0EB0:                             ; CODE XREF: sub_4B0DF0+9F↑j
+; sub_4B0DF0+AC↑j
+mov     eax, [esi+0Ch]
+mov     cl, [eax+90h]
+test    cl, cl
+jz      short loc_4B0EDA
+mov     ecx, ds:8A0790h
+mov     [edi], ecx
+mov     edx, ds:8A0794h
+mov     [edi+4], edx
+mov     eax, ds:8A0798h
+mov     [edi+8], eax
+mov     byte ptr [esi+63h], 0
+
+loc_4B0EDA:                             ; CODE XREF: sub_4B0DF0+6D↑j
+; sub_4B0DF0+CB↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebp
+retn    4
+*/
 }
 
 } // namespace gamemd

@@ -8,83 +8,687 @@ namespace gamemd {
 
 // 0x00429500 (70 bytes)
 int GetTimer_429500() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00429500.json)
-    // Size: 70 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_429500 ( int a1, _DWORD *a2 ) { int v3 ; // edi _DWORD *v4 ; // esi if ( ! a2 ) return -2147467261 ; v3 = * ( ( _DWORD * ) ScenarioClass_Instance + 391 ) ; if ( * ( ( _DWORD * ) ScenarioClass_Instance + 389 ) != -1 ) { v4 = ( char * ) ScenarioClass_Instance + 1556 ; v3 += Timer::GetTicks ( ) - * v4 ; } * a2 = v3 ; return 0 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_429500(int a1, _DWORD *a2)
+{
+  int v3; // edi
+  _DWORD *v4; // esi
+
+  if ( !a2 )
+    return -2147467261;
+  v3 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 1564);
+  if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 1556) != -1 )
+  {
+    v4 = (_DWORD *)(MEMORY[0x87F7E8][536210] + 1556);
+    v3 += Timer::GetTicks(MEMORY[0x87F7E8][536210] + 1560) - *v4;
+  }
+  *a2 = v3;
+  return 0;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_4]
+test    ebx, ebx
+jnz     short loc_429512
+mov     eax, 80004003h
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_429512:                             ; CODE XREF: sub_429500+7↑j
+mov     eax, ds:0A8B230h
+push    esi
+push    edi
+mov     edi, [eax+61Ch]
+lea     esi, [eax+614h]
+mov     eax, [eax+614h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_42953C
+lea     ecx, [esi+4]
+call    Timer__GetTicks
+sub     eax, [esi]
+add     edi, eax
+
+loc_42953C:                             ; CODE XREF: sub_429500+2E↑j
+mov     [ebx], edi
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    8
+*/
 }
 
 // 0x004A50A0 (70 bytes)
 int GetTimer_4A50A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A50A0.json)
-    // Size: 70 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   signed int __fastcall sub_4A50A0 ( signed int a1 ) { !DWORD Ticks ! ; // ecx !DWORD v3 ! ; // eax !signed int result ! ; // eax !DWORD v5 ! ; // [esp+4h] [ebp-Ch] int v6 ; // [esp+Ch] [ebp-4h] Ticks = Timer::GetTicks ( ) ; v6 = a1 ; v5 = Ticks ; do { if ( Ticks == -1 ) { result = a1 ; } else { v3 = Timer::GetTicks ( ) ; Ticks = v5 ; result = v3 - v5 ; if ( result >= a1 ) return result ; result = a1 - result ; a1 = v6 ; } } while ( result ) ; return result ; }
-    return 0;
+// [IDA decompile]
+signed int __fastcall sub_4A50A0(signed int a1)
+{
+  int Ticks; // ecx
+  int v3; // eax
+  signed int result; // eax
+  int v5; // [esp+4h] [ebp-Ch]
+  _BYTE v6[4]; // [esp+8h] [ebp-8h] BYREF
+  signed int v7; // [esp+Ch] [ebp-4h]
+
+  Ticks = Timer::GetTicks(v6);
+  v7 = a1;
+  v5 = Ticks;
+  do
+  {
+    if ( Ticks == -1 )
+    {
+      result = a1;
+    }
+    else
+    {
+      v3 = Timer::GetTicks(v6);
+      Ticks = v5;
+      result = v3 - v5;
+      if ( result >= a1 )
+        return result;
+      result = a1 - result;
+      a1 = v7;
+    }
+  }
+  while ( result );
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+10h+var_8]
+call    Timer__GetTicks
+mov     ecx, eax
+mov     [esp+10h+var_4], esi
+mov     [esp+10h+var_C], ecx
+
+loc_4A50B9:                             ; CODE XREF: sub_4A50A0+3F↓j
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_4A50DB
+lea     ecx, [esp+10h+var_8]
+call    Timer__GetTicks
+mov     ecx, [esp+10h+var_C]
+sub     eax, ecx
+cmp     eax, esi
+jge     short loc_4A50E1
+sub     esi, eax
+mov     eax, esi
+mov     esi, [esp+10h+var_4]
+jmp     short loc_4A50DD
+; ---------------------------------------------------------------------------
+
+loc_4A50DB:                             ; CODE XREF: sub_4A50A0+1C↑j
+mov     eax, esi
+
+loc_4A50DD:                             ; CODE XREF: sub_4A50A0+39↑j
+test    eax, eax
+jnz     short loc_4A50B9
+
+loc_4A50E1:                             ; CODE XREF: sub_4A50A0+2F↑j
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x004A80D6 (400 bytes)
 int GetTimer_4A80D6() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A80D6.json)
-    // Size: 400 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   // positive sp value has been detected, the output may be wrong! int __fastcall sub_4A80D6 ( int a1, signed int a2 ) { !int v4 ! ; // esi !signed int v5 ! ; // ebx !signed int v6 ! ; // eax int v7 ; // ebp HANDLE FileA ; // eax !DWORD Ticks ! ; // [esp-110h] [ebp-120h] !signed int v11 ! ; // [esp-108h] [ebp-118h] DWORD v12 ; // [esp-104h] [ebp-114h] BYREF DWORD v13[4] ; // [esp-100h] [ebp-110h] BYREF CHAR v14[128] ; // [esp-F0h] [ebp-100h] BYREF CHAR v15[128] ; // [esp-70h] [ebp-80h] BYREF Timer::GetTicks ( ) ; v11 = a2 ; v4 = a1 + 65 ; Ticks = Timer::GetTicks ( ) ; "wsprintfA " ( v14 , "%c:\\" , a1 + 65 ) ; if ( "GetVolumeInformationA " ( v14 , v15 , 0x7Fu , 0 , & v12 , v13 , 0 , 0 ) ) { LABEL_8 : if ( ! _strcmpi ( aYr1 , v15 ) ) { v7 = 0 ; "wsprintfA " ( v14 , "%c:\\YR1.dsk" , v4 ) ; FileA = "CreateFileA " ( v14 , 0x80000000 , 1u , 0 , 3u , 0x80u , 0 ) ; if ( FileA != ( HANDLE ) -1 ) { LABEL_12 : "CloseHandle " ( FileA ) ; return 2 ; } while ( ++ v7 < 2 ) { "wsprintfA " ( v14 , "%c:\\YR1.dsk" , v4 ) ; FileA = "CreateFileA " ( v14 , 0x80000000 , 1u , 0 , 3u , 0x80u , 0 ) ; if ( FileA != ( HANDLE ) -1 ) goto LABEL_12 ; } } } else { while ( 1 ) { v5 = v11 ; if ( Ticks != -1 ) { v6 = Timer::GetTicks ( ) - Ticks ; if ( v6 >= v11 ) return -1 ; v5 = v11 - v6 ; } if ( ! v5 || "GetLastError " ( ) != 21 ) break ; "wsprintfA " ( v14 , "%c:\\" , v4 ) ; if ( "GetVolumeInformationA " ( v14 , v15 , 0x7Fu , 0 , & v12 , v13 , 0 , 0 ) ) goto LABEL_8 ; } } return -1 ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_4A80D6(int a1, signed int a2)
+{
+  int Ticks; // eax
+  int v5; // esi
+  signed int v6; // ebx
+  signed int v7; // eax
+  int v8; // ebp
+  int v9; // eax
+  int v11; // [esp-110h] [ebp-120h]
+  int v12; // [esp-10Ch] [ebp-11Ch] BYREF
+  signed int v13; // [esp-108h] [ebp-118h]
+  int v14; // [esp-104h] [ebp-114h] BYREF
+  _BYTE v15[8]; // [esp-100h] [ebp-110h] BYREF
+  int v16; // [esp-F8h] [ebp-108h] BYREF
+  _BYTE v17[128]; // [esp-F0h] [ebp-100h] BYREF
+  _BYTE v18[128]; // [esp-70h] [ebp-80h] BYREF
+
+  Timer::GetTicks(&v12);
+  v13 = 0;
+  Ticks = Timer::GetTicks(&v16);
+  v13 = a2;
+  v5 = a1 + 65;
+  v11 = Ticks;
+  v12 = v16;
+  ((void (*)(_BYTE *, const char *, ...))wsprintfA)(v17, "%c:\\", a1 + 65);
+  if ( ((int (__stdcall *)(_BYTE *, _BYTE *, int, _DWORD, int *, _BYTE *, _DWORD, _DWORD))GetVolumeInformationA)(
+         v17,
+         v18,
+         127,
+         0,
+         &v14,
+         v15,
+         0,
+         0) )
+  {
+LABEL_8:
+    if ( !_strcmpi(aYr1, v18) )
+    {
+      v8 = 0;
+      ((void (*)(_BYTE *, const char *, ...))wsprintfA)(v17, "%c:\\YR1.dsk", v5);
+      v9 = ((int (__stdcall *)(_BYTE *, unsigned int, int, _DWORD, int, int, _DWORD))CreateFileA)(
+             v17,
+             0x80000000,
+             1,
+             0,
+             3,
+             128,
+             0);
+      if ( v9 != -1 )
+      {
+LABEL_12:
+        ((void (__stdcall *)(int))CloseHandle)(v9);
+        return 2;
+      }
+      while ( ++v8 < 2 )
+      {
+        ((void (*)(_BYTE *, const char *, ...))wsprintfA)(v17, "%c:\\YR1.dsk", v5);
+        v9 = ((int (__stdcall *)(_BYTE *, unsigned int, int, _DWORD, int, int, _DWORD))CreateFileA)(
+               v17,
+               0x80000000,
+               1,
+               0,
+               3,
+               128,
+               0);
+        if ( v9 != -1 )
+          goto LABEL_12;
+      }
+    }
+  }
+  else
+  {
+    while ( 1 )
+    {
+      v6 = v13;
+      if ( v11 != -1 )
+      {
+        v7 = Timer::GetTicks(&v12) - v11;
+        if ( v7 >= v6 )
+          return -1;
+        v6 -= v7;
+      }
+      if ( !v6 || ((int (*)(void))GetLastError)() != 21 )
+        break;
+      ((void (*)(_BYTE *, const char *, ...))wsprintfA)(v17, "%c:\\", v5);
+      if ( ((int (__stdcall *)(_BYTE *, _BYTE *, int, _DWORD, int *, _BYTE *, _DWORD, _DWORD))GetVolumeInformationA)(
+             v17,
+             v18,
+             127,
+             0,
+             &v14,
+             v15,
+             0,
+             0) )
+      {
+        goto LABEL_8;
+      }
+    }
+  }
+  return -1;
+}
+
+/* ASM:
+MaximumComponentLength= dword ptr  0Ch
+FileSystemFlags = qword ptr  10h
+arg_14          = dword ptr  18h
+RootPathName    = OMOTestDerived ptr  20h
+VolumeNameBuffer= byte ptr  0A0h
+
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+mov     esi, edx
+lea     ecx, [esp+10h+arg_0]
+call    Timer__GetTicks
+lea     ecx, [esp+10h+arg_14]
+mov     [esp+10h], eax
+mov     [esp+10h+arg_4], 0
+call    Timer__GetTicks
+mov     [esp+10h+arg_4], esi
+lea     esi, [edi+41h]
+mov     edi, ds:__imp_wsprintfA
+mov     [esp+10h], eax
+mov     eax, [esp+10h+arg_14]
+push    esi
+lea     ecx, [esp+14h+RootPathName]
+push    offset g_Str_Trace__c__ ; "%c:\\"
+push    ecx             ; LPSTR
+mov     [esp+1Ch+arg_0], eax
+call    edi ; __imp_wsprintfA
+add     esp, 0Ch
+mov     ebp, ds:__imp_GetVolumeInformationA
+lea     edx, [esp+10h+FileSystemFlags]
+lea     eax, [esp+10h+MaximumComponentLength]
+push    0               ; nFileSystemNameSize
+push    0               ; lpFileSystemNameBuffer
+push    edx             ; lpFileSystemFlags
+push    eax             ; lpMaximumComponentLength
+push    0               ; lpVolumeSerialNumber
+lea     ecx, [esp+24h+VolumeNameBuffer]
+push    7Fh             ; nVolumeNameSize
+lea     edx, [esp+28h+RootPathName]
+push    ecx             ; lpVolumeNameBuffer
+push    edx             ; lpRootPathName
+call    ebp ; __imp_GetVolumeInformationA
+test    eax, eax
+jnz     short loc_4A81C0
+
+loc_4A8150:                             ; CODE XREF: sub_4A80D6+E8↓j
+mov     eax, [esp+10h]
+mov     ebx, [esp+10h+arg_4]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4A8174
+lea     ecx, [esp+10h+arg_0]
+call    Timer__GetTicks
+sub     eax, [esp+10h]
+cmp     eax, ebx
+jge     loc_4A8258
+sub     ebx, eax
+
+loc_4A8174:                             ; CODE XREF: sub_4A80D6+85↑j
+test    ebx, ebx
+jz      loc_4A8258
+call    ds:__imp_GetLastError
+cmp     eax, 15h
+jnz     loc_4A8258
+push    esi
+lea     eax, [esp+14h+RootPathName]
+push    offset g_Str_Trace__c__ ; "%c:\\"
+push    eax             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 0Ch
+lea     ecx, [esp+10h+FileSystemFlags]
+lea     edx, [esp+10h+MaximumComponentLength]
+lea     eax, [esp+10h+VolumeNameBuffer]
+push    0               ; nFileSystemNameSize
+push    0               ; lpFileSystemNameBuffer
+push    ecx             ; lpFileSystemFlags
+push    edx             ; lpMaximumComponentLength
+push    0               ; lpVolumeSerialNumber
+push    7Fh             ; nVolumeNameSize
+lea     ecx, [esp+28h+RootPathName]
+push    eax             ; lpVolumeNameBuffer
+push    ecx             ; lpRootPathName
+call    ebp ; __imp_GetVolumeInformationA
+test    eax, eax
+jz      short loc_4A8150
+
+loc_4A81C0:                             ; CODE XREF: sub_4A80D6+78↑j
+lea     edx, [esp+10h+VolumeNameBuffer]
+push    edx             ; void *
+push    offset aYr1     ; "YR1"
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jnz     short loc_4A8258
+push    esi
+lea     eax, [esp+14h+RootPathName]
+push    offset aCYr1Dsk ; "%c:\\YR1.dsk"
+push    eax             ; LPSTR
+xor     ebp, ebp
+call    edi ; __imp_wsprintfA
+add     esp, 0Ch
+mov     ebx, ds:__imp_CreateFileA
+lea     ecx, [esp+10h+RootPathName]
+push    ebp             ; hTemplateFile
+push    80h             ; dwFlagsAndAttributes
+push    3               ; dwCreationDisposition
+push    ebp             ; lpSecurityAttributes
+push    1               ; dwShareMode
+push    80000000h       ; dwDesiredAccess
+push    ecx             ; lpFileName
+call    ebx ; __imp_CreateFileA
+cmp     eax, 0FFFFFFFFh
+jnz     short loc_4A8241
+
+loc_4A820D:                             ; CODE XREF: sub_4A80D6+169↓j
+inc     ebp
+cmp     ebp, 2
+jge     short loc_4A8258
+push    esi
+lea     edx, [esp+14h+RootPathName]
+push    offset aCYr1Dsk ; "%c:\\YR1.dsk"
+push    edx             ; LPSTR
+call    edi ; __imp_wsprintfA
+add     esp, 0Ch
+lea     eax, [esp+10h+RootPathName]
+push    0               ; hTemplateFile
+push    80h             ; dwFlagsAndAttributes
+push    3               ; dwCreationDisposition
+push    0               ; lpSecurityAttributes
+push    1               ; dwShareMode
+push    80000000h       ; dwDesiredAccess
+push    eax             ; lpFileName
+call    ebx ; __imp_CreateFileA
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4A820D
+
+loc_4A8241:                             ; CODE XREF: sub_4A80D6+135↑j
+push    eax             ; hObject
+call    ds:__imp_CloseHandle
+mov     eax, 2
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 120h
+retn
+; ---------------------------------------------------------------------------
+
+loc_4A8258:                             ; CODE XREF: sub_4A80D6+96↑j
+; sub_4A80D6+A0↑j ...
+pop     edi
+pop     esi
+pop     ebp
+or      eax, 0FFFFFFFFh
+pop     ebx
+add     esp, 120h
+retn
+*/
 }
 
 // 0x0043EE50 (93 bytes)
 int ProgressTimer_Get_43EE50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0043EE50.json)
-    // Size: 93 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_43EE50 ( _DWORD *this ) { _DWORD *Value ; // eax int v3 ; // esi !int result ! ; // eax int v5 ; // [esp+8h] [ebp-4h] BYREF if ( ! ( * ( unsigned __int8 (__thiscall **)(_DWORD *) ) ( * this + 1020 ) ) ( this ) || ! * ( this + 352 ) ) return 0 ; Value = ProgressTimer::GetValue ( ( _WORD * ) this + 452 , & v5 ) ; v3 = * ( this + 352 ) ; result = dword_7F4890 [ ( ( unsigned int ) ( ( * Value >> 10 ) + 1 ) >> 1 ) & 0x1F ] ; if ( v3 ) { * ( _DWORD * ) ( v3 + 172 ) = result ; * ( _DWORD * ) ( v3 + 196 ) = 0 ; } return result ; }
+// [IDA decompile]
+int __thiscall sub_43EE50(_DWORD *this)
+{
+  _DWORD *Value; // eax
+  int v3; // esi
+  int result; // eax
+  int v5; // [esp+8h] [ebp-4h] BYREF
+
+  if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 1020))(this) || !*(this + 352) )
     return 0;
+  Value = ProgressTimer::GetValue((_WORD *)this + 452, &v5);
+  v3 = *(this + 352);
+  result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F];
+  if ( v3 )
+  {
+    *(_DWORD *)(v3 + 172) = result;
+    *(_DWORD *)(v3 + 196) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+push    edi
+xor     edi, edi
+mov     eax, [esi]
+call    dword ptr [eax+3FCh]
+test    al, al
+jz      short loc_43EEA7
+cmp     [esi+580h], edi
+jz      short loc_43EEA7
+lea     ecx, [esp+0Ch+var_4]
+push    ecx
+lea     ecx, [esi+388h]
+call    ProgressTimer__GetValue
+mov     eax, [eax]
+mov     esi, [esi+580h]
+shr     eax, 0Ah
+inc     eax
+shr     eax, 1
+and     eax, 1Fh
+cmp     esi, edi
+mov     eax, ds:dword_7F4890[eax*4]
+jz      short loc_43EEA9
+mov     [esi+0ACh], eax
+mov     [esi+0C4h], edi
+pop     edi
+pop     esi
+pop     ecx
+retn
+; ---------------------------------------------------------------------------
+
+loc_43EEA7:                             ; CODE XREF: sub_43EE50+11↑j
+; sub_43EE50+19↑j
+mov     eax, edi
+
+loc_43EEA9:                             ; CODE XREF: sub_43EE50+45↑j
+pop     edi
+pop     esi
+pop     ecx
+retn
+*/
 }
 
 // 0x005AE530 (60 bytes)
 const char* String_GetTimer_5AE530() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005AE530.json)
-    // Size: 60 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   DWORD __thiscall sub_5AE530 ( char **this, const char **a2, int a3 ) { _DWORD *v3 ; // esi !DWORD result ! ; // eax int v5 ; // [esp+8h] [ebp-8h] v3 = this ; String::Reassign ( this + 50 , a2 ) ; result = Timer::GetTicks ( ) ; v3 += 51 ; * v3 = result ; v3 [ 1 ] = v5 ; v3 [ 2 ] = a3 ; return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_5AE530(char **this, const char **a2, int a3)
+{
+  _DWORD *v3; // esi
+  int result; // eax
+  int v5; // edx
+  int v6; // [esp+8h] [ebp-8h] BYREF
+
+  v3 = this;
+  String::Reassign(this + 50, a2);
+  result = Timer::GetTicks(&v6);
+  v5 = v6;
+  v3 += 51;
+  *v3 = result;
+  v3[1] = v5;
+  v3[2] = a3;
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+push    eax
+lea     ecx, [esi+0C8h]
+call    String__Reassign
+lea     ecx, [esp+10h+var_8]
+call    Timer__GetTicks
+mov     edx, [esp+10h+var_8]
+mov     ecx, [esp+10h+arg_4]
+add     esi, 0CCh
+mov     [esi], eax
+mov     [esi+4], edx
+mov     [esi+8], ecx
+pop     esi
+add     esp, 0Ch
+retn    8
+*/
 }
 
 // 0x007717A0 (72 bytes)
 int Timer_Get_7717A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007717A0.json)
-    // Size: 72 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   DWORD __thiscall sub_7717A0 ( DWORD *this ) { !DWORD result ! ; // eax !DWORD *v3 ! ; // esi !DWORD v4 ! ; // [esp+8h] [ebp-8h] if ( ( int ) * ( this + 244 ) > 0 ) { StopThemeClass ( 1 ) ; ( * ( void (__thiscall **)(DWORD *) ) ( * ( this + 240 ) + 12 ) ) ( this + 240 ) ; } result = Timer::GetTicks ( ) ; v3 = this + 235 ; * v3 = result ; v3 [ 1 ] = v4 ; v3 [ 2 ] = 0 ; return result ; }
-    return 0;
+// [IDA decompile]
+unsigned int __thiscall sub_7717A0(unsigned int *this)
+{
+  unsigned int result; // eax
+  unsigned int *v3; // esi
+  unsigned int v4; // [esp+8h] [ebp-8h]
+
+  if ( (int)*(this + 244) > 0 )
+  {
+    StopThemeClass(1);
+    (*(void (__thiscall **)(unsigned int *))(*(this + 240) + 12))(this + 240);
+  }
+  result = Timer::GetTicks();
+  v3 = this + 235;
+  *v3 = result;
+  v3[1] = v4;
+  v3[2] = 0;
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+mov     eax, [esi+3D0h]
+test    eax, eax
+jle     short loc_7717C6
+mov     cl, 1
+call    StopThemeClass
+mov     eax, [esi+3C0h]
+lea     ecx, [esi+3C0h]
+call    dword ptr [eax+0Ch]
+
+loc_7717C6:                             ; CODE XREF: sub_7717A0+E↑j
+lea     ecx, [esp+10h+var_8]
+call    Timer__GetTicks
+mov     edx, [esp+10h+var_8]
+xor     ecx, ecx
+add     esi, 3ACh
+mov     [esi], eax
+mov     [esi+4], edx
+mov     [esi+8], ecx
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x00793CD0 (72 bytes)
 void Timer_Get_793CD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00793CD0.json)
-    // Size: 72 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_793CD0 ( void *this ) { !DWORD Ticks ! ; // eax !DWORD *v2 ! ; // ecx !DWORD v4 ! ; // [esp+4h] [ebp-8h] dword_A8E1A4 [ dword_A8E224 ] = ( int ) this ; Ticks = Timer::GetTicks ( ) ; v2 = ( DWORD * ) ( 12 * dword_A8E224 + 11067844 ) ; * v2 = Ticks ; v2 [ 1 ] = v4 ; v2 [ 2 ] = 1200 ; return ++ dword_A8E224 ; }
-    
+// [IDA decompile]
+int __thiscall sub_793CD0(void *this)
+{
+  unsigned int Ticks; // eax
+  unsigned int *v2; // ecx
+  unsigned int v4; // [esp+4h] [ebp-8h]
+
+  MEMORY[0x87F7E8][MEMORY[0x87F7E8][539279] + 539247] = this;
+  Ticks = Timer::GetTicks();
+  v2 = (unsigned int *)(12 * MEMORY[0x87F7E8][539279] + 11067844);
+  *v2 = Ticks;
+  v2[1] = v4;
+  v2[2] = 1200;
+  return ++MEMORY[0x87F7E8][539279];
+}
+
+/* ASM:
+mov     eax, ds:0A8E224h
+sub     esp, 0Ch
+mov     ds:0A8E1A4h[eax*4], ecx
+lea     ecx, [esp+0Ch+var_8]
+call    Timer__GetTicks
+mov     ecx, ds:0A8E224h
+mov     edx, 4B0h
+lea     ecx, [ecx+ecx*2]
+lea     ecx, ds:0A8E1C4h[ecx*4]
+mov     [ecx], eax
+mov     eax, [esp+0Ch+var_8]
+mov     [ecx+4], eax
+mov     [ecx+8], edx
+mov     eax, ds:0A8E224h
+inc     eax
+mov     ds:0A8E224h, eax
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x0063F810 (53 bytes)
 int Timer_SetMember1351_63F810() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063F810.json)
-    // Size: 53 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_63F810 ( _DWORD *this ) { _DWORD *v1 ; // esi int v3 ; // [esp+8h] [ebp-8h] * ( this + 1351 ) = 10 ; v1 = this + 1348 ; * ( this + 1348 ) = Timer::GetTicks ( ) ; v1 [ 1 ] = v3 ; v1 [ 2 ] = 3 ; return v3 ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_63F810(_DWORD *this)
+{
+  _DWORD *v1; // esi
+  int result; // eax
+  int v3; // [esp+8h] [ebp-8h] BYREF
+
+  *(this + 1351) = 10;
+  v1 = this + 1348;
+  *(this + 1348) = Timer::GetTicks(&v3);
+  result = v3;
+  v1[1] = v3;
+  v1[2] = 3;
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    esi
+mov     esi, ecx
+lea     ecx, [esp+10h+var_8]
+mov     dword ptr [esi+151Ch], 0Ah
+call    Timer__GetTicks
+add     esi, 1510h
+mov     ecx, 3
+mov     [esi], eax
+mov     eax, [esp+10h+var_8]
+mov     [esi+4], eax
+mov     [esi+8], ecx
+pop     esi
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x00431930 (64 bytes)
 int Timer_SetMember2_431930() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00431930.json)
-    // Size: 64 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_431930 ( int *this, int a2 ) { !unsigned int v3 ! ; // eax !int result ! ; // eax !int v5 ! ; // [esp+8h] [ebp-4h] if ( ( _BYTE ) a2 ) { * ( this + 2 ) = 0 ; * ( this + 3 ) = 0 ; * ( this + 4 ) = 0 ; } v3 = Timer::ReadTSC ( & a2 ) ; result = ( a2 << 28 ) | ( v3 >> 4 ) ; * this = result ; * ( this + 1 ) = v5 ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_431930(int *this, int a2)
+{
+  unsigned int v3; // eax
+  int result; // eax
+  int v5; // [esp+8h] [ebp-4h]
+
+  if ( (_BYTE)a2 )
+  {
+    *(this + 2) = 0;
+    *(this + 3) = 0;
+    *(this + 4) = 0;
+  }
+  v3 = Timer::ReadTSC(&a2);
+  result = (a2 << 28) | (v3 >> 4);
+  *this = result;
+  *(this + 1) = v5;
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+xor     eax, eax
+push    esi
+mov     esi, ecx
+cmp     byte ptr [esp+0Ch+arg_0], al
+jz      short loc_431947
+mov     [esi+8], eax
+mov     [esi+0Ch], eax
+mov     [esi+10h], eax
+
+loc_431947:                             ; CODE XREF: sub_431930+C↑j
+lea     eax, [esp+0Ch+arg_0]
+push    eax
+call    Timer__ReadTSC
+mov     ecx, [esp+10h+arg_0]
+mov     edx, [esp+10h+var_4]
+shr     eax, 4
+shl     ecx, 1Ch
+add     esp, 4
+or      eax, ecx
+mov     [esi], eax
+mov     [esi+4], edx
+pop     esi
+add     esp, 8
+retn    4
+*/
 }
 
 } // namespace gamemd

@@ -8,56 +8,905 @@ namespace gamemd {
 
 // 0x007331B0 (450 bytes)
 char House_IsEvent_7331B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007331B0.json)
-    // Size: 450 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char sub_7331B0 ( ) { !int v0 ! ; // ebp _DWORD *v1 ; // eax !int v2 ! ; // esi !wchar_t *v3 ! ; // ebx int v4 ; // edi int v5 ; // ecx !int v6 ! ; // eax int v7 ; // eax int v8 ; // edx !int HeightMap ! ; // eax _DWORD *v10 ; // eax !int v11 ! ; // esi !int v12 ! ; // ebx !#375 **v13 ! ; // edi int v14 ; // ecx int v15 ; // edx v0 = 0 ; if ( g_UnitTooltipState ) { ( * * ( void (__thiscall ***)(int, int) ) g_UnitTooltipState ) ( g_UnitTooltipState , 1 ) ; g_UnitTooltipState = 0 ; } v1 = __2_YAPAXI_Z ( 0x18u ) ; v2 = ( int ) v1 ; if ( v1 ) { EventClass::resetEvent ( v1 , 0 , 0 ) ; * ( _DWORD * ) v2 = & DynamicVectorClass<TechnoClass *>::vftable' ; * ( _DWORD * ) ( v2 + 20 ) = 10 ; * ( _DWORD * ) ( v2 + 16 ) = 0 ; } else { v2 = 0 ; } v3 = g_SelectionManager ; if ( ( int ) g_SelectionManager > 0 ) { do { v4 = * ( ( _DWORD * ) g_ObjectClass_CurrentCount + v0 ) ; if ( v4 && ( * ( _BYTE * ) ( v4 + 20 ) & 1 ) != 0 ) { v5 = * ( _DWORD * ) ( v2 + 8 ) ; if ( * ( _DWORD * ) ( v2 + 16 ) < v5 || ( * ( _BYTE * ) ( v2 + 13 ) || ! v5 ) && ( v6 = * ( _DWORD * ) ( v2 + 20 ) , v6 > 0 ) && ( * ( unsigned __int8 (__thiscall **)(int, int, _DWORD) ) ( * ( _DWORD * ) v2 + 8 ) ) ( v2 , v5 + v6 , 0 ) ) { v7 = * ( _DWORD * ) ( v2 + 16 ) ; v8 = * ( _DWORD * ) ( v2 + 4 ) ; * ( _DWORD * ) ( v2 + 16 ) = v7 + 1 ; * ( _DWORD * ) ( v8 + 4 * v7 ) = v4 ; } } ++ v0 ; } while ( v0 < ( int ) v3 ) ; v0 = 0 ; } g_UnitTooltipState = v2 ; HeightMap = * ( _DWORD * ) ( v2 + 16 ) ; if ( ! HeightMap ) { if ( v2 ) ( * * ( void (__thiscall ***)(int, int) ) v2 ) ( v2 , 1 ) ; g_UnitTooltipState = 0 ; v10 = __2_YAPAXI_Z ( 0x18u ) ; v11 = ( int ) v10 ; if ( v10 ) { EventClass::resetEvent ( v10 , 0 , 0 ) ; * ( _DWORD * ) v11 = & DynamicVectorClass<TechnoClass *>::vftable' ; * ( _DWORD * ) ( v11 + 20 ) = 10 ; * ( _DWORD * ) ( v11 + 16 ) = 0 ; } else { v11 = 0 ; } HeightMap = GetHeightMap ( TacticalClass_Instance ) ; v12 = HeightMap ; if ( HeightMap > 0 ) { do { HeightMap = GetCoordDataMap ( v0 ) ; v13 = ( #375 ** ) HeightMap ; if ( HeightMap ) { if ( ( * ( _BYTE * ) ( HeightMap + 20 ) & 1 ) != 0 ) { LOBYTE ( HeightMap ) = * ( _BYTE * ) ( HeightMap + 144 ) ; if ( ( _BYTE ) HeightMap ) { LOBYTE ( HeightMap ) = GameMode_Current [ 0 ] ? House::IsHumanPlayer ( v13 [ 135 ] ) : * ( ( _BYTE * ) v13 [ 135 ] + 493 ) ; if ( ( _BYTE ) HeightMap ) { HeightMap = ( * ( ( int (__thiscall **)(#375 **) ) * v13 + 11 ) ) ( v13 ) ; if ( HeightMap != 6 ) { v14 = * ( _DWORD * ) ( v11 + 8 ) ; if ( * ( _DWORD * ) ( v11 + 16 ) < v14 || ( ( LOBYTE ( HeightMap ) = * ( _BYTE * ) ( v11 + 13 ) , ( _BYTE ) HeightMap ) || ! v14 ) && ( HeightMap = * ( _DWORD * ) ( v11 + 20 ) , HeightMap > 0 ) && ( LOBYTE ( HeightMap ) = ( * ( int (__thiscall **)(int, int, _DWORD) ) ( * ( _DWORD * ) v11 + 8 ) ) ( v11 , v14 + HeightMap , 0 ) , ( _BYTE ) HeightMap ) ) { HeightMap = * ( _DWORD * ) ( v11 + 16 ) ; v15 = * ( _DWORD * ) ( v11 + 4 ) ; * ( _DWORD * ) ( v11 + 16 ) = HeightMap + 1 ; * ( _DWORD * ) ( v15 + 4 * HeightMap ) = v13 ; } } } } } } ++ v0 ; } while ( v0 < v12 ) ; } g_UnitTooltipState = v11 ; } return HeightMap ; }
-    return 0;
+// [IDA decompile]
+char sub_7331B0()
+{
+  int v0; // ebp
+  _DWORD *v1; // eax
+  int v2; // esi
+  int v3; // ebx
+  int v4; // edi
+  int v5; // ecx
+  int v6; // eax
+  int v7; // eax
+  int v8; // edx
+  int HeightMap; // eax
+  _DWORD *v10; // eax
+  int v11; // esi
+  int v12; // ebx
+  #375 **v13; // edi
+  int v14; // ecx
+  int v15; // edx
+
+  v0 = 0;
+  if ( dword_A8ED54[132166] )
+  {
+    (**(void (__thiscall ***)(int, int))dword_A8ED54[132166])(dword_A8ED54[132166], 1);
+    dword_A8ED54[132166] = 0;
+  }
+  v1 = (_DWORD *)__2_YAPAXI_Z(24);
+  v2 = (int)v1;
+  if ( v1 )
+  {
+    EventClass::resetEvent(v1, 0, 0);
+    *(_DWORD *)v2 = &DynamicVectorClass<TechnoClass *>::`vftable';
+    *(_DWORD *)(v2 + 20) = 10;
+    *(_DWORD *)(v2 + 16) = 0;
+  }
+  else
+  {
+    v2 = 0;
+  }
+  v3 = MEMORY[0x87F7E8][539960];
+  if ( MEMORY[0x87F7E8][539960] > 0 )
+  {
+    do
+    {
+      v4 = *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v0);
+      if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 )
+      {
+        v5 = *(_DWORD *)(v2 + 8);
+        if ( *(_DWORD *)(v2 + 16) < v5
+          || (*(_BYTE *)(v2 + 13) || !v5)
+          && (v6 = *(_DWORD *)(v2 + 20), v6 > 0)
+          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v2 + 8))(v2, v5 + v6, 0) )
+        {
+          v7 = *(_DWORD *)(v2 + 16);
+          v8 = *(_DWORD *)(v2 + 4);
+          *(_DWORD *)(v2 + 16) = v7 + 1;
+          *(_DWORD *)(v8 + 4 * v7) = v4;
+        }
+      }
+      ++v0;
+    }
+    while ( v0 < v3 );
+    v0 = 0;
+  }
+  dword_A8ED54[132166] = v2;
+  HeightMap = *(_DWORD *)(v2 + 16);
+  if ( !HeightMap )
+  {
+    if ( v2 )
+      (**(void (__thiscall ***)(int, int))v2)(v2, 1);
+    dword_A8ED54[132166] = 0;
+    v10 = (_DWORD *)__2_YAPAXI_Z(24);
+    v11 = (int)v10;
+    if ( v10 )
+    {
+      EventClass::resetEvent(v10, 0, 0);
+      *(_DWORD *)v11 = &DynamicVectorClass<TechnoClass *>::`vftable';
+      *(_DWORD *)(v11 + 20) = 10;
+      *(_DWORD *)(v11 + 16) = 0;
+    }
+    else
+    {
+      v11 = 0;
+    }
+    HeightMap = GetHeightMap((_DWORD *)MEMORY[0x87F7E8][7887]);
+    v12 = HeightMap;
+    if ( HeightMap > 0 )
+    {
+      do
+      {
+        HeightMap = GetCoordDataMap(v0);
+        v13 = (#375 **)HeightMap;
+        if ( HeightMap )
+        {
+          if ( (*(_BYTE *)(HeightMap + 20) & 1) != 0 )
+          {
+            LOBYTE(HeightMap) = *(_BYTE *)(HeightMap + 144);
+            if ( (_BYTE)HeightMap )
+            {
+              LOBYTE(HeightMap) = MEMORY[0x87F7E8][536212] ? House::IsHumanPlayer(v13[135]) : *((_BYTE *)v13[135] + 493);
+              if ( (_BYTE)HeightMap )
+              {
+                HeightMap = (*((int (__thiscall **)(#375 **))*v13 + 11))(v13);
+                if ( HeightMap != 6 )
+                {
+                  v14 = *(_DWORD *)(v11 + 8);
+                  if ( *(_DWORD *)(v11 + 16) < v14
+                    || ((LOBYTE(HeightMap) = *(_BYTE *)(v11 + 13), (_BYTE)HeightMap) || !v14)
+                    && (HeightMap = *(_DWORD *)(v11 + 20), HeightMap > 0)
+                    && (LOBYTE(HeightMap) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v11 + 8))(
+                                              v11,
+                                              v14 + HeightMap,
+                                              0),
+                        (_BYTE)HeightMap) )
+                  {
+                    HeightMap = *(_DWORD *)(v11 + 16);
+                    v15 = *(_DWORD *)(v11 + 4);
+                    *(_DWORD *)(v11 + 16) = HeightMap + 1;
+                    *(_DWORD *)(v15 + 4 * HeightMap) = v13;
+                  }
+                }
+              }
+            }
+          }
+        }
+        ++v0;
+      }
+      while ( v0 < v12 );
+    }
+    dword_A8ED54[132166] = v11;
+  }
+  return HeightMap;
+}
+
+/* ASM:
+push    ecx
+mov     ecx, dword_A8ED54+81118h
+push    ebx
+push    ebp
+xor     ebp, ebp
+push    esi
+cmp     ecx, ebp
+push    edi
+jz      short loc_7331CD
+mov     eax, [ecx]
+push    1
+call    dword ptr [eax]
+mov     dword_A8ED54+81118h, ebp
+
+loc_7331CD:                             ; CODE XREF: sub_7331B0+F↑j
+push    18h             ; Size
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+cmp     esi, ebp
+jz      short loc_7331F8
+push    ebp
+push    ebp
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     [esi+10h], ebp
+jmp     short loc_7331FA
+; ---------------------------------------------------------------------------
+
+loc_7331F8:                             ; CODE XREF: sub_7331B0+2B↑j
+xor     esi, esi
+
+loc_7331FA:                             ; CODE XREF: sub_7331B0+46↑j
+mov     ebx, ds:0A8ECC8h
+cmp     ebx, ebp
+jle     short loc_73325F
+
+loc_733204:                             ; CODE XREF: sub_7331B0+AB↓j
+mov     ecx, ds:0A8ECBCh
+mov     edi, [ecx+ebp*4]
+test    edi, edi
+jz      short loc_733258
+mov     dl, [edi+14h]
+and     dl, 1
+mov     [esp+14h+var_1], dl
+jz      short loc_733258
+mov     ecx, [esi+8]
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_733249
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_733232
+test    ecx, ecx
+jnz     short loc_733258
+
+loc_733232:                             ; CODE XREF: sub_7331B0+7C↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_733258
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_733258
+
+loc_733249:                             ; CODE XREF: sub_7331B0+75↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], edi
+
+loc_733258:                             ; CODE XREF: sub_7331B0+5F↑j
+; sub_7331B0+6B↑j ...
+inc     ebp
+cmp     ebp, ebx
+jl      short loc_733204
+xor     ebp, ebp
+
+loc_73325F:                             ; CODE XREF: sub_7331B0+52↑j
+mov     dword_A8ED54+81118h, esi
+mov     eax, [esi+10h]
+cmp     eax, ebp
+jnz     loc_73336C
+cmp     esi, ebp
+jz      short loc_73327C
+mov     eax, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [eax]
+
+loc_73327C:                             ; CODE XREF: sub_7331B0+C2↑j
+push    18h             ; Size
+mov     dword_A8ED54+81118h, ebp
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+cmp     esi, ebp
+jz      short loc_7332AD
+push    ebp
+push    ebp
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     [esi+10h], ebp
+jmp     short loc_7332AF
+; ---------------------------------------------------------------------------
+
+loc_7332AD:                             ; CODE XREF: sub_7331B0+E0↑j
+xor     esi, esi
+
+loc_7332AF:                             ; CODE XREF: sub_7331B0+FB↑j
+mov     ecx, ds:887324h
+call    GetHeightMap
+mov     ebx, eax
+cmp     ebx, ebp
+jle     loc_733366
+
+loc_7332C4:                             ; CODE XREF: sub_7331B0+1B0↓j
+mov     ecx, ds:887324h
+push    ebp
+call    GetCoordDataMap
+mov     edi, eax
+test    edi, edi
+jz      loc_73335D
+mov     cl, [edi+14h]
+and     cl, 1
+mov     [esp+14h+var_1], cl
+jz      short loc_73335D
+mov     al, [edi+90h]
+test    al, al
+jz      short loc_73335D
+mov     eax, ds:0A8B238h
+test    eax, eax
+jnz     short loc_733307
+mov     edx, [edi+21Ch]
+mov     al, [edx+1EDh]
+jmp     short loc_733312
+; ---------------------------------------------------------------------------
+
+loc_733307:                             ; CODE XREF: sub_7331B0+147↑j
+mov     ecx, [edi+21Ch] ; this
+call    House__IsHumanPlayer
+
+loc_733312:                             ; CODE XREF: sub_7331B0+155↑j
+test    al, al
+jz      short loc_73335D
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+2Ch]
+cmp     eax, 6
+jz      short loc_73335D
+mov     ecx, [esi+8]
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_73334E
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_733337
+test    ecx, ecx
+jnz     short loc_73335D
+
+loc_733337:                             ; CODE XREF: sub_7331B0+181↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_73335D
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_73335D
+
+loc_73334E:                             ; CODE XREF: sub_7331B0+17A↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], edi
+
+loc_73335D:                             ; CODE XREF: sub_7331B0+124↑j
+; sub_7331B0+134↑j ...
+inc     ebp
+cmp     ebp, ebx
+jl      loc_7332C4
+
+loc_733366:                             ; CODE XREF: sub_7331B0+10E↑j
+mov     dword_A8ED54+81118h, esi
+
+loc_73336C:                             ; CODE XREF: sub_7331B0+BA↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x0063CF10 (165 bytes)
 int House_Is_63CF10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063CF10.json)
-    // Size: 165 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_63CF10 ( _DWORD *this ) { int v1 ; // ecx int v2 ; // esi !int v3 ! ; // ecx __int16 v5 ; // [esp+4h] [ebp-8h] BYREF !unsigned __int8 v6 ! ; // [esp+6h] [ebp-6h] v1 = * ( this + 135 ) ; v2 = * ( _DWORD * ) ( v1 + 48 ) ; if ( ( unsigned __int8 ) House::IsHumanPlayer ( ( #375 * ) v1 ) && HouseClass_Player ) v2 = * ( ( _DWORD * ) HouseClass_Player + 12 ) ; v3 = * ( _DWORD * ) & HouseClass_Array -> gap0 [ 4 * v2 ] + 22265 ; v5 = * ( _WORD * ) v3 ; v6 = * ( _BYTE * ) ( v3 + 2 ) ; Color::Lerp ( ( unsigned __int8 * ) & v5 , 0x50u , ( unsigned __int8 * ) & byte_A83CD9 ) ; return ( HIBYTE ( v5 ) >> g_BitMask_Blue << g_BitMask_Green ) | ( ( unsigned __int8 ) v5 >> g_BitShift_Green_0 << g_BitShift_Red ) | ( v6 >> g_BitMask_Red << g_BitShift_Blue ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_63CF10(_DWORD *this)
+{
+  int v1; // ecx
+  int v2; // esi
+  int v3; // ecx
+  __int16 v5; // [esp+4h] [ebp-8h] BYREF
+  unsigned __int8 v6; // [esp+6h] [ebp-6h]
+
+  v1 = *(this + 135);
+  v2 = *(_DWORD *)(v1 + 48);
+  if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v1) && MEMORY[0x87F7E8][528729] )
+    v2 = *(_DWORD *)(MEMORY[0x87F7E8][528729] + 48);
+  v3 = *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v2) + 22265;
+  v5 = *(_WORD *)v3;
+  v6 = *(_BYTE *)(v3 + 2);
+  Color::Lerp((unsigned __int8 *)&v5, 0x50u, (unsigned __int8 *)&MEMORY[0x87F7E8][528700] + 1);
+  return (HIBYTE(v5) >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
+       | ((unsigned __int8)v5 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+       | (v6 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+}
+
+/* ASM:
+mov     ecx, [ecx+21Ch] ; this
+sub     esp, 8
+push    esi
+mov     esi, [ecx+30h]
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_63CF32
+mov     eax, ds:0A83D4Ch
+test    eax, eax
+jz      short loc_63CF32
+mov     esi, [eax+30h]
+
+loc_63CF32:                             ; CODE XREF: sub_63CF10+14↑j
+; sub_63CF10+1D↑j
+mov     eax, ds:0A8022Ch
+push    0A83CD9h
+push    50h ; 'P'
+mov     ecx, [eax+esi*4]
+add     ecx, 56F9h
+mov     dx, [ecx]
+mov     word ptr [esp+14h+var_8], dx
+mov     al, [ecx+2]
+lea     ecx, [esp+14h+var_8]
+mov     byte ptr [esp+14h+var_8+2], al
+call    Color__Lerp
+mov     cl, ds:8A0DDCh
+mov     eax, [esp+0Ch+var_8+2]
+mov     edx, [esp+0Ch+var_8]
+and     eax, 0FFh
+and     edx, 0FFh
+shr     eax, cl
+mov     ecx, ds:8A0DD8h
+pop     esi
+shl     eax, cl
+mov     cl, ds:8A0DD4h
+shr     edx, cl
+mov     ecx, ds:8A0DD0h
+shl     edx, cl
+mov     cl, ds:8A0DE4h
+or      eax, edx
+mov     edx, [esp+8+var_8+1]
+and     edx, 0FFh
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+or      eax, edx
+add     esp, 8
+retn
+*/
 }
 
 // 0x0063CFC0 (165 bytes)
 int House_Is_63CFC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0063CFC0.json)
-    // Size: 165 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_63CFC0 ( _DWORD *this ) { int v1 ; // ecx int v2 ; // esi !int v3 ! ; // ecx __int16 v5 ; // [esp+4h] [ebp-8h] BYREF !unsigned __int8 v6 ! ; // [esp+6h] [ebp-6h] v1 = * ( this + 135 ) ; v2 = * ( _DWORD * ) ( v1 + 48 ) ; if ( ( unsigned __int8 ) House::IsHumanPlayer ( ( #375 * ) v1 ) && HouseClass_Player ) v2 = * ( ( _DWORD * ) HouseClass_Player + 12 ) ; v3 = * ( _DWORD * ) & HouseClass_Array -> gap0 [ 4 * v2 ] + 22265 ; v5 = * ( _WORD * ) v3 ; v6 = * ( _BYTE * ) ( v3 + 2 ) ; Color::Lerp ( ( unsigned __int8 * ) & v5 , 0x64u , ( unsigned __int8 * ) & byte_A80220 ) ; return ( HIBYTE ( v5 ) >> g_BitMask_Blue << g_BitMask_Green ) | ( ( unsigned __int8 ) v5 >> g_BitShift_Green_0 << g_BitShift_Red ) | ( v6 >> g_BitMask_Red << g_BitShift_Blue ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_63CFC0(_DWORD *this)
+{
+  int v1; // ecx
+  int v2; // esi
+  int v3; // ecx
+  __int16 v5; // [esp+4h] [ebp-8h] BYREF
+  unsigned __int8 v6; // [esp+6h] [ebp-6h]
+
+  v1 = *(this + 135);
+  v2 = *(_DWORD *)(v1 + 48);
+  if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v1) && MEMORY[0x87F7E8][528729] )
+    v2 = *(_DWORD *)(MEMORY[0x87F7E8][528729] + 48);
+  v3 = *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v2) + 22265;
+  v5 = *(_WORD *)v3;
+  v6 = *(_BYTE *)(v3 + 2);
+  Color::Lerp((unsigned __int8 *)&v5, 0x64u, (unsigned __int8 *)&MEMORY[0x87F7E8][524942]);
+  return (HIBYTE(v5) >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
+       | ((unsigned __int8)v5 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
+       | (v6 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+}
+
+/* ASM:
+mov     ecx, [ecx+21Ch] ; this
+sub     esp, 8
+push    esi
+mov     esi, [ecx+30h]
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_63CFE2
+mov     eax, ds:0A83D4Ch
+test    eax, eax
+jz      short loc_63CFE2
+mov     esi, [eax+30h]
+
+loc_63CFE2:                             ; CODE XREF: sub_63CFC0+14↑j
+; sub_63CFC0+1D↑j
+mov     eax, ds:0A8022Ch
+push    0A80220h
+push    64h ; 'd'
+mov     ecx, [eax+esi*4]
+add     ecx, 56F9h
+mov     dx, [ecx]
+mov     word ptr [esp+14h+var_8], dx
+mov     al, [ecx+2]
+lea     ecx, [esp+14h+var_8]
+mov     byte ptr [esp+14h+var_8+2], al
+call    Color__Lerp
+mov     cl, ds:8A0DDCh
+mov     eax, [esp+0Ch+var_8+2]
+mov     edx, [esp+0Ch+var_8]
+and     eax, 0FFh
+and     edx, 0FFh
+shr     eax, cl
+mov     ecx, ds:8A0DD8h
+pop     esi
+shl     eax, cl
+mov     cl, ds:8A0DD4h
+shr     edx, cl
+mov     ecx, ds:8A0DD0h
+shl     edx, cl
+mov     cl, ds:8A0DE4h
+or      eax, edx
+mov     edx, [esp+8+var_8+1]
+and     edx, 0FFh
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+or      eax, edx
+add     esp, 8
+retn
+*/
 }
 
 // 0x00731130 (130 bytes)
 const char* House_Is_731130() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00731130.json)
-    // Size: 130 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_731130 ( char *this ) { !int v1 ! ; // edi int v3 ; // esi !char *v5 ! ; // ecx v1 = g_SidebarState - 1 ; if ( g_SidebarState - 1 < 0 ) return 1 ; while ( 1 ) { v3 = * ( ( _DWORD * ) g_TechnoClass_Count + v1 ) ; if ( v3 && ! * ( _BYTE * ) ( v3 + 129 ) ) { if ( GameMode_Current [ 0 ] ? House::IsHumanPlayer ( * ( #375 ** ) ( v3 + 540 ) ) : * ( _BYTE * ) ( * ( _DWORD * ) ( v3 + 540 ) + 493 ) ) { v5 = * ( char ** ) ( v3 + 532 ) ; if ( v5 != this - 1 ) goto LABEL_17 ; if ( ! * ( _BYTE * ) ( v3 + 131 ) ) return 0 ; if ( v5 != this - 1 ) { LABEL_17 : if ( * ( _BYTE * ) ( v3 + 131 ) ) return 0 ; } } } if ( -- v1 < 0 ) return 1 ; } }
-    return nullptr;
+// [IDA decompile]
+char __thiscall sub_731130(char *this)
+{
+  int v1; // edi
+  int v3; // esi
+  char *v5; // ecx
+
+  v1 = MEMORY[0xA8EC88] - 1;
+  if ( MEMORY[0xA8EC88] - 1 < 0 )
+    return 1;
+  while ( 1 )
+  {
+    v3 = *((_DWORD *)MEMORY[0xA8EC7C] + v1);
+    if ( v3 && !*(_BYTE *)(v3 + 129) )
+    {
+      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(_BYTE *)(*(_DWORD *)(v3 + 540) + 493) )
+      {
+        v5 = *(char **)(v3 + 532);
+        if ( v5 != this - 1 )
+          goto LABEL_17;
+        if ( !*(_BYTE *)(v3 + 131) )
+          return 0;
+        if ( v5 != this - 1 )
+        {
+LABEL_17:
+          if ( *(_BYTE *)(v3 + 131) )
+            return 0;
+        }
+      }
+    }
+    if ( --v1 < 0 )
+      return 1;
+  }
+}
+
+/* ASM:
+mov     eax, ds:0A8EC88h
+push    ebx
+push    esi
+push    edi
+lea     edi, [eax-1]
+mov     ebx, ecx
+test    edi, edi
+jl      short loc_7311A6
+
+loc_731141:                             ; CODE XREF: sub_731130+74↓j
+mov     ecx, ds:0A8EC7Ch
+mov     esi, [ecx+edi*4]
+test    esi, esi
+jz      short loc_7311A3
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_7311A3
+mov     eax, ds:0A8B238h
+test    eax, eax
+jnz     short loc_73116F
+mov     edx, [esi+21Ch]
+mov     al, [edx+1EDh]
+jmp     short loc_73117A
+; ---------------------------------------------------------------------------
+
+loc_73116F:                             ; CODE XREF: sub_731130+2F↑j
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+
+loc_73117A:                             ; CODE XREF: sub_731130+3D↑j
+test    al, al
+jz      short loc_7311A3
+mov     ecx, [esi+214h]
+lea     eax, [ebx-1]
+cmp     ecx, eax
+jnz     short loc_731199
+mov     dl, [esi+83h]
+test    dl, dl
+jz      short loc_7311AC
+cmp     ecx, eax
+jz      short loc_7311A3
+
+loc_731199:                             ; CODE XREF: sub_731130+59↑j
+mov     al, [esi+83h]
+test    al, al
+jnz     short loc_7311AC
+
+loc_7311A3:                             ; CODE XREF: sub_731130+1C↑j
+; sub_731130+26↑j ...
+dec     edi
+jns     short loc_731141
+
+loc_7311A6:                             ; CODE XREF: sub_731130+F↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_7311AC:                             ; CODE XREF: sub_731130+63↑j
+; sub_731130+71↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn
+*/
 }
 
 // 0x00639210 (187 bytes)
 int IsHouse_639210() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00639210.json)
-    // Size: 187 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_639210 ( int a1, int a2, int a3, int a4, int a5 ) { !int v5 ! ; // edi int v6 ; // ebx int v7 ; // esi _DWORD *ScenarioClassActionCoords ; // eax int v9 ; // ecx int v10 ; // edi !int v14 ! ; // [esp+18h] [ebp-10h] _DWORD v15[3] ; // [esp+1Ch] [ebp-Ch] BYREF v5 = dword_AC4B40 ; v6 = 0 ; v14 = dword_AC4B40 ; if ( dword_AC4B40 <= 0 ) return 0 ; while ( 1 ) { v7 = * ( ( _DWORD * ) dword_AC4B34 + v6 ) ; ScenarioClassActionCoords = GetScenarioClassActionCoords ( v15 , * ( _BYTE ** ) ( * * ( _DWORD ** ) ( v7 + 4 ) + 4 ) ) ; if ( * ScenarioClassActionCoords != a3 || ScenarioClassActionCoords [ 1 ] != a4 || ScenarioClassActionCoords [ 2 ] != a5 || a2 != -1 && a2 != * ( _DWORD * ) ( v7 + 24 ) ) { goto LABEL_13 ; } v9 = * ( _DWORD * ) ( * * * ( _DWORD *** ) ( v7 + 4 ) + 540 ) ; v10 = * ( _DWORD * ) ( v9 + 48 ) ; if ( ( unsigned __int8 ) House::IsHumanPlayer ( ( #375 * ) v9 ) && HouseClass_Player ) v10 = * ( ( _DWORD * ) HouseClass_Player + 12 ) ; if ( a1 == -1 || a1 == v10 ) return v7 ; v5 = v14 ; LABEL_13 : if ( ++ v6 >= v5 ) return 0 ; } }
+// [IDA decompile]
+int __fastcall sub_639210(int a1, int a2, int a3, int a4, int a5)
+{
+  int v5; // edi
+  int v6; // ebx
+  int v7; // esi
+  _DWORD *ScenarioClassActionCoords; // eax
+  int v9; // ecx
+  int v10; // edi
+  int v14; // [esp+18h] [ebp-10h]
+  _DWORD v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
+
+  v5 = MEMORY[0xAC4B40];
+  v6 = 0;
+  v14 = MEMORY[0xAC4B40];
+  if ( MEMORY[0xAC4B40] <= 0 )
     return 0;
+  while ( 1 )
+  {
+    v7 = *((_DWORD *)MEMORY[0xAC4B34] + v6);
+    ScenarioClassActionCoords = GetScenarioClassActionCoords(v15, *(_BYTE **)(**(_DWORD **)(v7 + 4) + 4));
+    if ( *ScenarioClassActionCoords != a3
+      || ScenarioClassActionCoords[1] != a4
+      || ScenarioClassActionCoords[2] != a5
+      || a2 != -1 && a2 != *(_DWORD *)(v7 + 24) )
+    {
+      goto LABEL_13;
+    }
+    v9 = *(_DWORD *)(***(_DWORD ***)(v7 + 4) + 540);
+    v10 = *(_DWORD *)(v9 + 48);
+    if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v9) && MEMORY[0xA83D4C] )
+      v10 = *((_DWORD *)MEMORY[0xA83D4C] + 12);
+    if ( a1 == -1 || a1 == v10 )
+      return v7;
+    v5 = v14;
+LABEL_13:
+    if ( ++v6 >= v5 )
+      return 0;
+  }
+}
+
+/* ASM:
+sub     esp, 18h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, dword_A8ED54+35DECh
+xor     ebx, ebx
+test    edi, edi
+mov     [esp+28h+var_18], edx
+mov     [esp+28h+var_14], ecx
+mov     [esp+28h+var_10], edi
+jle     loc_6392B3
+mov     ebp, [esp+28h+arg_0]
+
+loc_639237:                             ; CODE XREF: sub_639210+A1↓j
+mov     eax, dword_A8ED54+35DE0h
+mov     esi, [eax+ebx*4]
+mov     ecx, [esi+4]
+mov     edx, [ecx]
+lea     ecx, [esp+28h+var_C]
+mov     edx, [edx+4]
+call    GetScenarioClassActionCoords
+mov     edx, eax
+mov     eax, [edx]
+cmp     eax, ebp
+mov     ecx, [edx+4]
+mov     edx, [edx+8]
+jnz     short loc_6392AE
+cmp     ecx, [esp+28h+arg_4]
+jnz     short loc_6392AE
+cmp     edx, [esp+28h+arg_8]
+jnz     short loc_6392AE
+mov     eax, [esp+28h+var_18]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_639278
+cmp     eax, [esi+18h]
+jnz     short loc_6392AE
+
+loc_639278:                             ; CODE XREF: sub_639210+61↑j
+mov     eax, [esi+4]
+mov     ecx, [eax]
+mov     edx, [ecx]
+mov     ecx, [edx+21Ch] ; this
+mov     edi, [ecx+30h]
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_63929D
+mov     eax, ds:0A83D4Ch
+test    eax, eax
+jz      short loc_63929D
+mov     edi, [eax+30h]
+
+loc_63929D:                             ; CODE XREF: sub_639210+7F↑j
+; sub_639210+88↑j
+mov     eax, [esp+28h+var_14]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_6392BF
+cmp     eax, edi
+jz      short loc_6392BF
+mov     edi, [esp+28h+var_10]
+
+loc_6392AE:                             ; CODE XREF: sub_639210+4C↑j
+; sub_639210+52↑j ...
+inc     ebx
+cmp     ebx, edi
+jl      short loc_639237
+
+loc_6392B3:                             ; CODE XREF: sub_639210+1D↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 18h
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_6392BF:                             ; CODE XREF: sub_639210+94↑j
+; sub_639210+98↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 18h
+retn    0Ch
+*/
 }
 
 // 0x005D6000 (304 bytes)
 char String_ClearMultiplayerGameMode_5D6000() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005D6000.json)
-    // Size: 304 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_5D6000 ( HWND hWnd, int a2 ) { !int v3 ! ; // esi !char result ! ; // al !LPARAM v5 ! ; // esi !wchar_t *v6 ! ; // eax !LRESULT v7 ! ; // edi !bool v8 ! ; // [esp+13h] [ebp-9h] !int i ! ; // [esp+14h] [ebp-8h] ListBox::Clear ( hWnd ) ; v8 = GameMode_Current [ 0 ] == 5 ; v3 = 0 ; for ( i = 0 ; ; v3 = i ) { result = g_MultiplayerMode ; if ( ( g_MultiplayerMode & 1 ) == 0 ) { g_MultiplayerMode |= 1u ; MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass ( & g_MultiplayerModeConfig , 0 , 0 ) ; g_MultiplayerModeConfig = ( int ) & DynamicVectorClass<MultiplayerGameMode *>::vftable' ; dword_ABFDB4 = 10 ; g_MultiplayerGameList = 0 ; result = atexit ( MultiplayerConfig::Cleanup ) ; } if ( v3 >= g_MultiplayerGameList ) break ; if ( ( g_MultiplayerMode & 1 ) == 0 ) { g_MultiplayerMode |= 1u ; MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass ( & g_MultiplayerModeConfig , 0 , 0 ) ; g_MultiplayerModeConfig = ( int ) & DynamicVectorClass<MultiplayerGameMode *>::vftable' ; dword_ABFDB4 = 10 ; g_MultiplayerGameList = 0 ; atexit ( MultiplayerConfig::Cleanup ) ; } v5 = * ( ( _DWORD * ) Src + v3 ) ; if ( ! v8 || ( * ( unsigned __int8 (__thiscall **)(LPARAM) ) ( * ( _DWORD * ) v5 + 64 ) ) ( v5 ) ) { v6 = WideString::GetOrEmpty_Alt ( ( wchar_t ** ) ( v5 + 32 ) ) ; v7 = "SendMessageA " ( hWnd , 0x143u , 0 , ( LPARAM ) v6 ) ; if ( * ( _DWORD * ) ( v5 + 40 ) == a2 ) "SendMessageA " ( hWnd , 0x14Eu , v7 , 0 ) ; "SendMessageA " ( hWnd , 0x151u , v7 , v5 ) ; } ++ i ; } return result ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_5D6000(int a1, int a2)
+{
+  int v3; // esi
+  char result; // al
+  int v5; // esi
+  #72 *v6; // eax
+  int v7; // edi
+  bool v8; // [esp+13h] [ebp-9h]
+  int i; // [esp+14h] [ebp-8h]
+
+  ListBox::Clear(a1);
+  v8 = MEMORY[0x87F7E8][536212] == 5;
+  v3 = 0;
+  for ( i = 0; ; v3 = i )
+  {
+    result = dword_A8ED54[50183];
+    if ( (dword_A8ED54[50183] & 1) == 0 )
+    {
+      LOBYTE(dword_A8ED54[50183]) |= 1u;
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&dword_A8ED54[50195], 0, 0);
+      dword_A8ED54[50195] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable';
+      dword_A8ED54[50200] = 10;
+      dword_A8ED54[50199] = 0;
+      result = atexit(MultiplayerConfig::Cleanup);
+    }
+    if ( v3 >= dword_A8ED54[50199] )
+      break;
+    if ( (dword_A8ED54[50183] & 1) == 0 )
+    {
+      LOBYTE(dword_A8ED54[50183]) |= 1u;
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&dword_A8ED54[50195], 0, 0);
+      dword_A8ED54[50195] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable';
+      dword_A8ED54[50200] = 10;
+      dword_A8ED54[50199] = 0;
+      atexit(MultiplayerConfig::Cleanup);
+    }
+    v5 = *(_DWORD *)(dword_A8ED54[50196] + 4 * v3);
+    if ( !v8 || (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v5 + 64))(v5) )
+    {
+      v6 = WideString::GetOrEmpty_Alt((#72 **)(v5 + 32));
+      v7 = ((int (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(a1, 323, 0, v6);
+      if ( *(_DWORD *)(v5 + 40) == a2 )
+        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(a1, 334, v7, 0);
+      ((void (__stdcall *)(int, int, int, int))SendMessageA)(a1, 337, v7, v5);
+    }
+    ++i;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     [esp+1Ch+var_4], edx
+mov     ebp, ecx
+call    ListBox__Clear
+mov     eax, ds:0A8B238h
+mov     ebx, ds:__imp_SendMessageA
+cmp     eax, 5
+setz    [esp+1Ch+var_9]
+xor     edi, edi
+xor     esi, esi
+mov     [esp+1Ch+var_8], esi
+
+loc_5D602D:                             ; CODE XREF: sub_5D6000+123↓j
+mov     al, byte ptr dword_A8ED54+3101Ch
+test    al, 1
+jnz     short loc_5D6074
+mov     cl, al
+push    edi
+or      cl, 1
+push    edi
+mov     byte ptr dword_A8ED54+3101Ch, cl
+mov     ecx, (offset dword_A8ED54+3104Ch)
+call    MultiplayerGameMode__ConstructMultiplayerGameModeVectorClass
+mov     dword_A8ED54+3104Ch, offset ??_7?$DynamicVectorClass@PAVMultiplayerGameMode@@@@6B@ ; const DynamicVectorClass<MultiplayerGameMode *>::`vftable'
+mov     dword_A8ED54+31060h, 0Ah
+push    offset MultiplayerConfig__Cleanup ; void (__cdecl *)()
+mov     dword_A8ED54+3105Ch, edi
+call    _atexit
+add     esp, 4
+
+loc_5D6074:                             ; CODE XREF: sub_5D6000+34↑j
+cmp     esi, dword_A8ED54+3105Ch
+jge     loc_5D6128
+mov     al, byte ptr dword_A8ED54+3101Ch
+test    al, 1
+jnz     short loc_5D60C7
+mov     cl, al
+push    edi
+or      cl, 1
+push    edi
+mov     byte ptr dword_A8ED54+3101Ch, cl
+mov     ecx, (offset dword_A8ED54+3104Ch)
+call    MultiplayerGameMode__ConstructMultiplayerGameModeVectorClass
+mov     dword_A8ED54+3104Ch, offset ??_7?$DynamicVectorClass@PAVMultiplayerGameMode@@@@6B@ ; const DynamicVectorClass<MultiplayerGameMode *>::`vftable'
+mov     dword_A8ED54+31060h, 0Ah
+push    offset MultiplayerConfig__Cleanup ; void (__cdecl *)()
+mov     dword_A8ED54+3105Ch, edi
+call    _atexit
+add     esp, 4
+
+loc_5D60C7:                             ; CODE XREF: sub_5D6000+87↑j
+mov     eax, dword_A8ED54+31050h
+mov     esi, [eax+esi*4]
+mov     al, [esp+1Ch+var_9]
+test    al, al
+jz      short loc_5D60E2
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+40h]
+test    al, al
+jz      short loc_5D6118
+
+loc_5D60E2:                             ; CODE XREF: sub_5D6000+D5↑j
+lea     ecx, [esi+20h]
+call    WideString__GetOrEmpty_Alt
+push    eax             ; lParam
+push    edi             ; wParam
+push    143h            ; Msg
+push    ebp             ; hWnd
+call    ebx ; __imp_SendMessageA
+mov     ecx, [esi+28h]
+mov     edi, eax
+mov     eax, [esp+1Ch+var_4]
+cmp     ecx, eax
+jnz     short loc_5D610C
+push    0               ; lParam
+push    edi             ; wParam
+push    14Eh            ; Msg
+push    ebp             ; hWnd
+call    ebx ; __imp_SendMessageA
+
+loc_5D610C:                             ; CODE XREF: sub_5D6000+FF↑j
+push    esi             ; lParam
+push    edi             ; wParam
+push    151h            ; Msg
+push    ebp             ; hWnd
+call    ebx ; __imp_SendMessageA
+xor     edi, edi
+
+loc_5D6118:                             ; CODE XREF: sub_5D6000+E0↑j
+mov     eax, [esp+1Ch+var_8]
+inc     eax
+mov     [esp+1Ch+var_8], eax
+mov     esi, eax
+jmp     loc_5D602D
+; ---------------------------------------------------------------------------
+
+loc_5D6128:                             ; CODE XREF: sub_5D6000+7A↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn
+*/
 }
 
 } // namespace gamemd

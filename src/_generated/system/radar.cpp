@@ -8,11 +8,85 @@ namespace gamemd {
 
 // 0x004D2F00 (68 bytes)
 int DestructFoggedObjectClassHelper_4D2F00() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004D2F00.json)
-    // Size: 68 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_4D2F00 ( int a1, int a2, int *a3 ) { !int v3 ! ; // esi int v4 ; // ebx int v5 ; // edi v3 = a2 ; if ( a2 <= 0 ) return 0 ; v4 = * a3 ; while ( 1 ) { v5 = * ( _DWORD * ) ( a1 + 8 * ( v3 / 2 ) ) ; if ( v5 <= v4 ) break ; v3 /= 2 ; LABEL_7 : if ( v3 <= 0 ) return 0 ; } if ( v5 != v4 ) { a1 += 8 * ( v3 / 2 ) + 8 ; v3 += -1 - v3 / 2 ; goto LABEL_7 ; } return a1 + 8 * ( v3 / 2 ) ; }
+// [IDA decompile]
+int __fastcall sub_4D2F00(int a1, int a2, int *a3)
+{
+  int v3; // esi
+  int v4; // ebx
+  int v5; // edi
+
+  v3 = a2;
+  if ( a2 <= 0 )
     return 0;
+  v4 = *a3;
+  while ( 1 )
+  {
+    v5 = *(_DWORD *)(a1 + 8 * (v3 / 2));
+    if ( v5 <= v4 )
+      break;
+    v3 /= 2;
+LABEL_7:
+    if ( v3 <= 0 )
+      return 0;
+  }
+  if ( v5 != v4 )
+  {
+    a1 += 8 * (v3 / 2) + 8;
+    v3 += -1 - v3 / 2;
+    goto LABEL_7;
+  }
+  return a1 + 8 * (v3 / 2);
+}
+
+/* ASM:
+push    ebx
+push    esi
+test    edx, edx
+push    edi
+mov     esi, edx
+jle     short loc_4D2F34
+mov     eax, [esp+0Ch+arg_0]
+mov     ebx, [eax]
+
+loc_4D2F0F:                             ; CODE XREF: sub_4D2F00+32↓j
+mov     eax, esi
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     edi, [ecx+eax*8]
+lea     edx, [ecx+eax*8]
+cmp     edi, ebx
+jle     short loc_4D2F24
+mov     esi, eax
+jmp     short loc_4D2F30
+; ---------------------------------------------------------------------------
+
+loc_4D2F24:                             ; CODE XREF: sub_4D2F00+1E↑j
+jz      short loc_4D2F3C
+lea     ecx, [edx+8]
+or      edx, 0FFFFFFFFh
+sub     edx, eax
+add     esi, edx
+
+loc_4D2F30:                             ; CODE XREF: sub_4D2F00+22↑j
+test    esi, esi
+jg      short loc_4D2F0F
+
+loc_4D2F34:                             ; CODE XREF: sub_4D2F00+7↑j
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4D2F3C:                             ; CODE XREF: sub_4D2F00:loc_4D2F24↑j
+pop     edi
+pop     esi
+mov     eax, edx
+pop     ebx
+retn    4
+*/
 }
 
 } // namespace gamemd

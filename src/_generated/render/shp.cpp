@@ -8,11 +8,118 @@ namespace gamemd {
 
 // 0x004B4E10 (206 bytes)
 int ShapeButtonClass_GetList_4B4E10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B4E10.json)
-    // Size: 206 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4B4E10 ( int this, int a2, wchar_t *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11 ) { !int Instance ! ; // eax int v13 ; // edx sub_4C2FC0 ( ( int * ) this , a2 , String , a4 , a5 , a6 , a7 , a8 , 18 , 7 ) ; * ( _BYTE * ) ( this + 72 ) = 0 ; * ( _DWORD * ) ( this + 76 ) = a9 ; ShapeButtonClass::Constructor ( ( _BYTE * ) ( this + 80 ) , 0 , a11 , a8 + a6 , a7 , 0 , 0 , 0 ) ; ListClass::Construct ( this + 176 , 0 , a6 , a7 + * ( __int16 * ) ( a11 + 4 ) , a8 + * ( __int16 * ) ( a11 + 2 ) , a9 , a5 , a10 , a11 ) ; * ( _DWORD * ) this = & DropListClass::vftable' ; Instance = TextRenderer::GetInstance ( ) ; v13 = * ( _DWORD * ) ( this + 176 ) ; * ( _DWORD * ) ( this + 24 ) = * ( _DWORD * ) ( Instance + 28 ) + 1 ; ( * ( void (__thiscall **)(int, int) ) ( v13 + 132 ) ) ( this + 176 , this ) ; ( * ( void (__thiscall **)(int, int) ) ( * ( _DWORD * ) ( this + 80 ) + 132 ) ) ( this + 80 , this ) ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4B4E10(
+{
+  int Instance; // eax
+  int v13; // edx
+
+  sub_4C2FC0((int *)this, a2, String, a4, a5, a6, a7, a8, 18, 7);
+  *(_BYTE *)(this + 72) = 0;
+  *(_DWORD *)(this + 76) = a9;
+  ShapeButtonClass::Constructor((_BYTE *)(this + 80), 0, a11, a8 + a6, a7, 0, 0, 0);
+  ListClass::Construct(this + 176, 0, a6, a7 + *(__int16 *)(a11 + 4), a8 + *(__int16 *)(a11 + 2), a9, a5, a10, a11);
+  *(_DWORD *)this = &DropListClass::`vftable';
+  Instance = TextRenderer::GetInstance();
+  v13 = *(_DWORD *)(this + 176);
+  *(_DWORD *)(this + 24) = *(_DWORD *)(Instance + 28) + 1;
+  (*(void (__thiscall **)(int, int))(v13 + 132))(this + 176, this);
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this);
+  return this;
+}
+
+/* ASM:
+String          = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+arg_10          = dword ptr  14h
+arg_14          = dword ptr  18h
+arg_18          = dword ptr  1Ch
+arg_1C          = dword ptr  20h
+arg_20          = dword ptr  24h
+arg_24          = dword ptr  28h
+
+mov     eax, [esp+arg_10]
+push    ebx
+mov     ebx, [esp+4+arg_18]
+mov     edx, [esp+4+arg_8]
+push    ebp
+mov     ebp, [esp+8+arg_14]
+push    esi
+push    edi
+push    7               ; int
+mov     esi, ecx
+mov     ecx, [esp+14h+arg_C]
+push    12h             ; int
+push    ebx             ; int
+push    ebp             ; int
+push    eax             ; int
+mov     eax, [esp+24h+String]
+push    ecx             ; int
+mov     ecx, [esp+28h+arg_0]
+push    edx             ; int
+push    eax             ; String
+push    ecx             ; int
+mov     ecx, esi
+call    sub_4C2FC0
+mov     eax, [esp+10h+arg_10]
+mov     edx, [esp+10h+arg_1C]
+push    0
+push    0
+push    0
+add     eax, ebx
+mov     ebx, [esp+1Ch+arg_24]
+push    ebp
+lea     edi, [esi+50h]
+push    eax
+push    ebx
+push    0
+mov     ecx, edi
+mov     byte ptr [esi+48h], 0
+mov     [esi+4Ch], edx
+call    ShapeButtonClass__Constructor
+mov     ecx, [esp+10h+arg_20]
+mov     edx, [esp+10h+arg_C]
+mov     eax, [esp+10h+arg_1C]
+push    ebx
+push    ecx
+push    edx
+movsx   ecx, word ptr [ebx+2]
+movsx   edx, word ptr [ebx+4]
+push    eax
+mov     eax, [esp+20h+arg_18]
+add     ecx, eax
+mov     eax, [esp+20h+arg_14]
+add     edx, eax
+mov     eax, [esp+20h+arg_10]
+push    ecx
+lea     ebp, [esi+0B0h]
+push    edx
+push    eax
+push    0
+mov     ecx, ebp
+call    ListClass__Construct
+mov     ecx, [esp+10h+arg_C]
+mov     dword ptr [esi], offset ??_7DropListClass@@6B@ ; const DropListClass::`vftable'
+call    TextRenderer__GetInstance
+mov     ecx, [eax+1Ch]
+mov     edx, [ebp+0]
+inc     ecx
+push    esi
+mov     [esi+18h], ecx
+mov     ecx, ebp
+call    dword ptr [edx+84h]
+mov     eax, [edi]
+push    esi
+mov     ecx, edi
+call    dword ptr [eax+84h]
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    28h ; '('
+*/
 }
 
 } // namespace gamemd

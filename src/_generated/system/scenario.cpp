@@ -8,56 +8,825 @@ namespace gamemd {
 
 // 0x005E66F0 (419 bytes)
 char DispatchScenario_5E66F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005E66F0.json)
-    // Size: 419 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char sub_5E66F0 ( ) { !LRESULT v0 ! ; // eax !LRESULT v1 ! ; // eax !int v2 ! ; // esi _DWORD *v3 ; // edx void *v4 ; // ebx void *v5 ; // eax void *v6 ; // eax !HWND v7 ! ; // esi !LRESULT v8 ! ; // eax !const wchar_t *v9 ! ; // eax v0 = "SendDlgItemMessageA " ( hDlg , 1363 , 0x188u , 0 , 0 ) ; if ( v0 != -1 ) { v1 = "SendDlgItemMessageA " ( hDlg , 1363 , 0x199u , v0 , 0 ) ; v2 = 0 ; if ( g_MultiplayerOptions > 0 ) { v3 = ( _DWORD * ) g_MultiplayerGameState ; while ( v1 != * v3 ) { ++ v2 ; ++ v3 ; if ( v2 >= g_MultiplayerOptions ) goto LABEL_20 ; } if ( v2 != -1 && v2 != dword_AC0D30 ) { LoadScenarioClassByIndex ( v2 ) ; if ( IsRandMap::Sed ( * ( _DWORD * ) ( g_MultiplayerGameState + 4 * v2 ) ) ) { v4 = g_UIControlState ; if ( g_UIControlState ) { ComPtr::Dtor ( g_UIControlState ) ; __3_YAXPAX_Z ( v4 ) ; } v5 = __2_YAPAXI_Z ( 4u ) ; if ( v5 ) v6 = ( void * ) unknown_libname_27 ( v5 ) ; else v6 = 0 ; g_UIControlState = v6 ; Surface::LoadToSurfaceSHP ( ( char ** ) v6 , ExistingFileName ) ; if ( ! * ( _DWORD * ) g_UIControlState ) Session::PrepareGame ( hDlg ) ; "InvalidateRect " ( hDlg , 0 , 0 ) ; ScenarioClass::CopyStartPositions ( ) ; } else { Session::PrepareGame ( hDlg ) ; } dword_AC0D30 = v2 ; g_GameRulesOptions = dword_AC10E0 ; LoadScenarioClassByIndex ( dword_AC10E0 ) ; } } } LABEL_20 : v7 = hDlg ; v8 = "SendDlgItemMessageA " ( hDlg , 1363 , 0x188u , 0 , 0 ) ; if ( v8 == -1 || ( v9 = ( const wchar_t * ) "SendDlgItemMessageA " ( v7 , 1363 , 0x199u , v8 , 0 ) ) == 0 ) word_AC0EC8 = 0 ; else wcscpy ( & word_AC0EC8 , v9 ) ; if ( GameMode_Current [ 0 ] == 3 ) { Event::Dispatch ( ) ; NetworkLobby::MessageHandler ( ) ; return 0 ; } else if ( GameMode_Current [ 0 ] == 4 ) { return Game::ProcessIdle ( ) ; } else { if ( GameMode_Current [ 0 ] == 1 || GameMode_Current [ 0 ] == 2 ) { if ( dword_ABF10C ) { CellClass::SetOccupancy ( dword_ABF10C , 0 ) ; ModemGuest::ProcessPacket ( dword_ABF10C , 1 ) ; } } Event::Dispatch ( ) ; return 0 ; } }
+// [IDA decompile]
+char sub_5E66F0()
+{
+  int v0; // eax
+  int v1; // eax
+  int v2; // esi
+  _DWORD *v3; // edx
+  void *v4; // ebx
+  int v5; // eax
+  char **v6; // eax
+  int v7; // esi
+  int v8; // eax
+  const #72 *v9; // eax
+
+  v0 = ((int (__stdcall *)(int, int, int, _DWORD, _DWORD))SendDlgItemMessageA)(dword_A8ED54[51195], 1363, 392, 0, 0);
+  if ( v0 != -1 )
+  {
+    v1 = ((int (__stdcall *)(int, int, int, int, _DWORD))SendDlgItemMessageA)(dword_A8ED54[51195], 1363, 409, v0, 0);
+    v2 = 0;
+    if ( MEMORY[0x87F7E8][536636] > 0 )
+    {
+      v3 = (_DWORD *)MEMORY[0x87F7E8][536633];
+      while ( v1 != *v3 )
+      {
+        ++v2;
+        ++v3;
+        if ( v2 >= MEMORY[0x87F7E8][536636] )
+          goto LABEL_20;
+      }
+      if ( v2 != -1 && v2 != dword_A8ED54[51191] )
+      {
+        LoadScenarioClassByIndex(v2);
+        if ( (unsigned __int8)IsRandMap::Sed(*(_DWORD *)(MEMORY[0x87F7E8][536633] + 4 * v2)) )
+        {
+          v4 = (void *)dword_A8ED54[51456];
+          if ( dword_A8ED54[51456] )
+          {
+            ComPtr::Dtor((_DWORD *)dword_A8ED54[51456]);
+            __3_YAXPAX_Z(v4);
+          }
+          v5 = __2_YAPAXI_Z(4);
+          if ( v5 )
+            v6 = (char **)unknown_libname_27(v5);
+          else
+            v6 = 0;
+          dword_A8ED54[51456] = (int)v6;
+          Surface::LoadToSurfaceSHP(v6, ExistingFileName);
+          if ( !*(_DWORD *)dword_A8ED54[51456] )
+            Session::PrepareGame(dword_A8ED54[51195]);
+          ((void (__stdcall *)(int, _DWORD, _DWORD))InvalidateRect)(dword_A8ED54[51195], 0, 0);
+          ScenarioClass::CopyStartPositions();
+        }
+        else
+        {
+          Session::PrepareGame(dword_A8ED54[51195]);
+        }
+        dword_A8ED54[51191] = v2;
+        MEMORY[0x87F7E8][536219] = dword_A8ED54[51427];
+        LoadScenarioClassByIndex(dword_A8ED54[51427]);
+      }
+    }
+  }
+LABEL_20:
+  v7 = dword_A8ED54[51195];
+  v8 = ((int (__stdcall *)(int, int, int, _DWORD, _DWORD))SendDlgItemMessageA)(dword_A8ED54[51195], 1363, 392, 0, 0);
+  if ( v8 == -1
+    || (v9 = (const #72 *)((int (__stdcall *)(int, int, int, int, _DWORD))SendDlgItemMessageA)(v7, 1363, 409, v8, 0)) == 0 )
+  {
+    LOWORD(dword_A8ED54[51293]) = 0;
+  }
+  else
+  {
+    wcscpy((#72 *)&dword_A8ED54[51293], v9);
+  }
+  if ( MEMORY[0x87F7E8][536212] == 3 )
+  {
+    Event::Dispatch();
+    NetworkLobby::MessageHandler();
     return 0;
+  }
+  else if ( MEMORY[0x87F7E8][536212] == 4 )
+  {
+    return Game::ProcessIdle();
+  }
+  else
+  {
+    if ( MEMORY[0x87F7E8][536212] == 1 || MEMORY[0x87F7E8][536212] == 2 )
+    {
+      if ( dword_A8ED54[49390] )
+      {
+        CellClass::SetOccupancy(dword_A8ED54[49390], 0);
+        ModemGuest::ProcessPacket((char *)dword_A8ED54[49390], 1);
+      }
+    }
+    Event::Dispatch();
+    return 0;
+  }
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+31FECh
+push    ebx
+push    esi
+push    edi
+mov     edi, ds:__imp_SendDlgItemMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    188h            ; Msg
+push    553h            ; nIDDlgItem
+push    eax             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+cmp     eax, 0FFFFFFFFh
+jz      loc_5E6816
+mov     ecx, dword_A8ED54+31FECh
+push    0               ; lParam
+push    eax             ; wParam
+push    199h            ; Msg
+push    553h            ; nIDDlgItem
+push    ecx             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+mov     ecx, ds:0A8B8D8h
+xor     esi, esi
+test    ecx, ecx
+jle     loc_5E6816
+mov     edx, ds:0A8B8CCh
+
+loc_5E6744:                             ; CODE XREF: sub_5E66F0+5E↓j
+cmp     eax, [edx]
+jz      short loc_5E6755
+inc     esi
+add     edx, 4
+cmp     esi, ecx
+jl      short loc_5E6744
+jmp     loc_5E6816
+; ---------------------------------------------------------------------------
+
+loc_5E6755:                             ; CODE XREF: sub_5E66F0+56↑j
+cmp     esi, 0FFFFFFFFh
+jz      loc_5E6816
+cmp     esi, dword_A8ED54+31FDCh
+jz      loc_5E6816
+mov     ecx, esi
+call    LoadScenarioClassByIndex
+mov     edx, ds:0A8B8CCh
+mov     ecx, [edx+esi*4]
+call    IsRandMap__Sed
+test    al, al
+jz      short loc_5E67F4
+mov     ebx, dword_A8ED54+32400h
+test    ebx, ebx
+jz      short loc_5E679D
+mov     ecx, ebx
+call    ComPtr__Dtor
+push    ebx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5E679D:                             ; CODE XREF: sub_5E66F0+9B↑j
+push    4               ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_5E67B4
+mov     ecx, eax
+call    unknown_libname_27 ; Microsoft VisualC 2-14/net runtime
+jmp     short loc_5E67B6
+; ---------------------------------------------------------------------------
+
+loc_5E67B4:                             ; CODE XREF: sub_5E66F0+B9↑j
+xor     eax, eax
+
+loc_5E67B6:                             ; CODE XREF: sub_5E66F0+C2↑j
+push    offset ExistingFileName ; "RandMap.img"
+mov     ecx, eax
+mov     dword_A8ED54+32400h, eax
+call    Surface__LoadToSurfaceSHP
+mov     eax, dword_A8ED54+32400h
+cmp     dword ptr [eax], 0
+jnz     short loc_5E67DC
+mov     ecx, dword_A8ED54+31FECh ; hWnd
+call    Session__PrepareGame
+
+loc_5E67DC:                             ; CODE XREF: sub_5E66F0+DF↑j
+mov     ecx, dword_A8ED54+31FECh
+push    0               ; bErase
+push    0               ; lpRect
+push    ecx             ; hWnd
+call    ds:__imp_InvalidateRect
+call    ScenarioClass__CopyStartPositions
+jmp     short loc_5E67FF
+; ---------------------------------------------------------------------------
+
+loc_5E67F4:                             ; CODE XREF: sub_5E66F0+91↑j
+mov     ecx, dword_A8ED54+31FECh ; hWnd
+call    Session__PrepareGame
+
+loc_5E67FF:                             ; CODE XREF: sub_5E66F0+102↑j
+mov     ecx, dword_A8ED54+3238Ch
+mov     dword_A8ED54+31FDCh, esi
+mov     ds:0A8B254h, ecx
+call    LoadScenarioClassByIndex
+
+loc_5E6816:                             ; CODE XREF: sub_5E66F0+22↑j
+; sub_5E66F0+48↑j ...
+mov     eax, dword_A8ED54+31FECh
+push    0               ; lParam
+push    0               ; wParam
+push    188h            ; Msg
+push    553h            ; nIDDlgItem
+push    eax             ; hDlg
+mov     esi, eax
+call    edi ; __imp_SendDlgItemMessageA
+cmp     eax, 0FFFFFFFFh
+jz      short loc_5E6857
+push    0               ; lParam
+push    eax             ; wParam
+push    199h            ; Msg
+push    553h            ; nIDDlgItem
+push    esi             ; hDlg
+call    edi ; __imp_SendDlgItemMessageA
+test    eax, eax
+jz      short loc_5E6857
+push    eax             ; Source
+push    (offset dword_A8ED54+32174h) ; Destination
+call    _wcscpy
+add     esp, 8
+jmp     short loc_5E6860
+; ---------------------------------------------------------------------------
+
+loc_5E6857:                             ; CODE XREF: sub_5E66F0+141↑j
+; sub_5E66F0+155↑j
+mov     word ptr dword_A8ED54+32174h, 0
+
+loc_5E6860:                             ; CODE XREF: sub_5E66F0+165↑j
+mov     eax, ds:0A8B238h
+pop     edi
+pop     esi
+cmp     eax, 3
+pop     ebx
+jnz     short loc_5E6872
+jmp     loc_5DAF20
+; ---------------------------------------------------------------------------
+
+loc_5E6872:                             ; CODE XREF: sub_5E66F0+17B↑j
+cmp     eax, 4
+jnz     short loc_5E687C
+jmp     Game__ProcessIdle
+; ---------------------------------------------------------------------------
+
+loc_5E687C:                             ; CODE XREF: sub_5E66F0+185↑j
+cmp     eax, 1
+jz      short loc_5E688E
+cmp     eax, 2
+jz      short loc_5E688E
+call    Event__Dispatch
+xor     al, al
+retn
+; ---------------------------------------------------------------------------
+
+loc_5E688E:                             ; CODE XREF: sub_5E66F0+18F↑j
+; sub_5E66F0+194↑j
+jmp     loc_5BB260
+*/
 }
 
 // 0x006D0F10 (85 bytes)
 void LoadFile_6D0F10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D0F10.json)
-    // Size: 85 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void *sub_6D0F10 ( ) { !int v0 ! ; // esi !int *v1 ! ; // edi void *result ; // eax !bool v3 ! ; // cl bool v4 ; // [esp+Bh] [ebp-101h] BYREF !char Buffer[256] ! ; // [esp+Ch] [ebp-100h] BYREF v4 = 0 ; v0 = 0 ; v1 = dword_B0C148 ; do { sprintf ( Buffer , "Button%02d.SHP" , v0 ) ; result = LoadFileSHP ( Buffer , & v4 ) ; v3 = v4 ; * v1 = ( int ) result ; byte_B0CBDC [ v0 ] = v3 ; ++ v1 ; ++ v0 ; } while ( ( int ) v1 < ( int ) & byte_B0C1AC ) ; return result ; }
-    
+// [IDA decompile]
+void *sub_6D0F10()
+{
+  int v0; // esi
+  int *v1; // edi
+  void *result; // eax
+  bool v3; // cl
+  bool v4; // [esp+Bh] [ebp-101h] BYREF
+  char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
+
+  v4 = 0;
+  v0 = 0;
+  v1 = MEMORY[0xB0C148];
+  do
+  {
+    sprintf(Buffer, "Button%02d.SHP", v0);
+    result = LoadFileSHP(Buffer, &v4);
+    v3 = v4;
+    *v1 = (int)result;
+    MEMORY[0xB0CBDC][v0] = v3;
+    ++v1;
+    ++v0;
+  }
+  while ( (int)v1 < (int)&MEMORY[0xB0C1AC] );
+  return result;
+}
+
+/* ASM:
+Buffer          = byte ptr -100h
+
+sub     esp, 104h
+push    esi
+push    edi
+mov     [esp+10Ch+var_101], 0
+xor     esi, esi
+mov     edi, (offset dword_A8ED54+7D3F4h)
+
+loc_6D0F24:                             ; CODE XREF: sub_6D0F10+4A↓j
+push    esi
+lea     eax, [esp+110h+Buffer]
+push    offset aButton02dShp ; "Button%02d.SHP"
+push    eax             ; Buffer
+call    _sprintf
+add     esp, 0Ch
+lea     edx, [esp+10Ch+var_101]
+lea     ecx, [esp+10Ch+Buffer] ; Source
+call    LoadFileSHP
+mov     cl, [esp+10Ch+var_101]
+mov     [edi], eax
+mov     byte ptr (dword_A8ED54+7DE88h)[esi], cl
+add     edi, 4
+inc     esi
+cmp     edi, (offset dword_A8ED54+7D458h)
+jl      short loc_6D0F24
+pop     edi
+pop     esi
+add     esp, 104h
+retn
+*/
 }
 
 // 0x007011A0 (276 bytes)
 int ScenarioClass_CalcMath_7011A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007011A0.json)
-    // Size: 276 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_7011A0 ( int *this ) { !int v3 ! ; // edi !int v4 ! ; // edx int v5 ; // eax _DWORD *v6 ; // eax char *v7 ; // esi !int v8 ! ; // eax double v9 ; // st7 !int v10 ! ; // esi int v11 ; // eax int v12 ; // [esp+14h] [ebp-1Ch] int v13 ; // [esp+18h] [ebp-18h] BYREF double v14 ; // [esp+1Ch] [ebp-14h] _BYTE v15[12] ; // [esp+24h] [ebp-Ch] BYREF if ( ( * ( unsigned __int8 (__thiscall **)(int *) ) ( * this + 84 ) ) ( this ) ) return 0 ; v3 = RulesClass_Instance [ 1 ] . V3Rocket [ 11 ] ; if ( ! v3 ) return 0 ; v4 = RulesClass_Instance [ 1 ] . DMisl [ 0 ] ; v5 = * this ; LODWORD ( v14 ) = RulesClass_Instance [ 1 ] . V3Rocket [ 13 ] ; HIDWORD ( v14 ) = v4 ; v6 = ( _DWORD * ) ( * ( int (__thiscall **)(int *, _BYTE *) ) ( v5 + 72 ) ) ( this , v15 ) ; LOWORD ( v12 ) = * v6 / 256 ; HIWORD ( v12 ) = v6 [ 1 ] / 256 ; v13 = v12 ; v7 = ( char * ) CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v13 ) ; v8 = ScenarioClass::CalcMinShroudLevel ( & MapClass_Instance ) ; v9 = ( double ) ( ( v7 [ 283 ] - v8 ) / v3 ) * v14 ; if ( v9 >= * ( double * ) & RulesClass_Instance [ 1 ] . DMisl [ 1 ] ) v9 = * ( double * ) & RulesClass_Instance [ 1 ] . DMisl [ 1 ] ; v10 = dword_B0EB34 * v7 [ 283 ] ; v11 = Math::RoundToInt ( v9 ) ; Math::Sqrt ( ( double ) ( v10 * v10 + ( v11 << 8 ) * ( v11 << 8 ) ) ) ; return Math::RoundToInt ( v9 ) ; }
+// [IDA decompile]
+int __thiscall sub_7011A0(int *this)
+{
+  int v3; // edi
+  int v4; // edx
+  int v5; // eax
+  _DWORD *v6; // eax
+  char *v7; // esi
+  int v8; // eax
+  double v9; // st7
+  int v10; // esi
+  int v11; // eax
+  int v12; // [esp+14h] [ebp-1Ch]
+  int v13; // [esp+18h] [ebp-18h] BYREF
+  double v14; // [esp+1Ch] [ebp-14h]
+  _BYTE v15[12]; // [esp+24h] [ebp-Ch] BYREF
+
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 84))(this) )
     return 0;
+  v3 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6200);
+  if ( !v3 )
+    return 0;
+  v4 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6212);
+  v5 = *this;
+  LODWORD(v14) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6208);
+  HIDWORD(v14) = v4;
+  v6 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(v5 + 72))(this, v15);
+  LOWORD(v12) = *v6 / 256;
+  HIWORD(v12) = v6[1] / 256;
+  v13 = v12;
+  v7 = (char *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v13);
+  v8 = ScenarioClass::CalcMinShroudLevel(MEMORY[0x87F7E8]);
+  v9 = (double)((v7[283] - v8) / v3) * v14;
+  if ( v9 >= *(double *)(MEMORY[0x87F7E8][7806] + 6216) )
+    v9 = *(double *)(MEMORY[0x87F7E8][7806] + 6216);
+  v10 = dword_A8ED54[130936] * v7[283];
+  v11 = Math::RoundToInt(v9);
+  Math::Sqrt((double)(v10 * v10 + (v11 << 8) * (v11 << 8)));
+  return Math::RoundToInt(v9);
+}
+
+/* ASM:
+sub     esp, 1Ch
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+54h]
+test    al, al
+jz      short loc_7011B8
+pop     edi
+xor     eax, eax
+pop     esi
+add     esp, 1Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_7011B8:                             ; CODE XREF: sub_7011A0+E↑j
+mov     eax, ds:8871E0h
+mov     edi, [eax+1838h]
+test    edi, edi
+jnz     short loc_7011CF
+pop     edi
+xor     eax, eax
+pop     esi
+add     esp, 1Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_7011CF:                             ; CODE XREF: sub_7011A0+25↑j
+mov     ecx, [eax+1840h]
+mov     edx, [eax+1844h]
+mov     eax, [esi]
+mov     dword ptr [esp+24h+var_14], ecx
+lea     ecx, [esp+24h+var_C]
+mov     dword ptr [esp+24h+var_14+4], edx
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+24h+var_1C], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+mov     ecx, 87F7E8h
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+24h+var_1C+2], ax
+mov     edx, [esp+24h+var_1C]
+lea     eax, [esp+24h+var_18]
+mov     [esp+24h+var_18], edx
+push    eax
+call    CellCoord__To_CellObj
+mov     ecx, 87F7E8h
+mov     esi, eax
+call    ScenarioClass__CalcMinShroudLevel
+movsx   ecx, byte ptr [esi+11Bh]
+mov     edx, eax
+mov     eax, ecx
+sub     eax, edx
+cdq
+idiv    edi
+mov     edx, ds:8871E0h
+mov     [esp+24h+var_1C], eax
+fild    [esp+24h+var_1C]
+fmul    [esp+24h+var_14]
+fld     qword ptr [edx+1848h]
+fld     st(1)
+fcompp
+fnstsw  ax
+test    ah, 1
+jnz     short loc_701276
+fstp    st
+fld     qword ptr [edx+1848h]
+
+loc_701276:                             ; CODE XREF: sub_7011A0+CC↑j
+imul    ecx, dword_A8ED54+7FDE0h
+mov     esi, ecx
+call    Math__RoundToInt
+shl     eax, 8
+mov     ecx, eax
+mov     edx, esi
+imul    ecx, eax
+imul    edx, esi
+add     ecx, edx
+sub     esp, 8
+mov     [esp+2Ch+var_1C], ecx
+fild    [esp+2Ch+var_1C]
+fstp    [esp+2Ch+var_30+4] ; double
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+pop     edi
+pop     esi
+add     esp, 1Ch
+retn
+*/
 }
 
 // 0x006E0080 (130 bytes)
 char ScenarioClass_GetScenario_6E0080() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E0080.json)
-    // Size: 130 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E0080 ( int *this, int a2, int a3, int a4, int a5 ) { int v5 ; // ebx !int v6 ! ; // edi __int16 v7 ; // bp _BYTE *v8 ; // esi _WORD *v9 ; // eax int v11 ; // [esp+8h] [ebp-4h] BYREF v5 = * ScenarioClass::Get_Waypoint_Location ( ( char * ) ScenarioClass_Instance , & v11 , * ( this + 17 ) ) ; v6 = 0 ; v11 = v5 ; if ( g_GameCleanupState <= 0 ) return 1 ; v7 = HIWORD ( v11 ) ; do { v8 = ( _BYTE * ) * ( ( _DWORD * ) dword_A8020C + v6 ) ; if ( v8 [ 144 ] ) { v9 = ( _WORD * ) ( * ( int (__thiscall **)(_BYTE *, int *) ) ( * ( _DWORD * ) v8 + 440 ) ) ( v8 , & v11 ) ; if ( * v9 == ( _WORD ) v5 && v9 [ 1 ] == v7 ) ( * ( void (__thiscall **)(_BYTE *) ) ( * ( _DWORD * ) v8 + 248 ) ) ( v8 ) ; } ++ v6 ; } while ( v6 < g_GameCleanupState ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E0080(int *this, int a2, int a3, int a4, int a5)
+{
+  int v5; // ebx
+  int v6; // edi
+  __int16 v7; // bp
+  _BYTE *v8; // esi
+  _WORD *v9; // eax
+  int v11; // [esp+8h] [ebp-4h] BYREF
+
+  v5 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v11, *(this + 17));
+  v6 = 0;
+  v11 = v5;
+  if ( MEMORY[0xA80218] <= 0 )
+    return 1;
+  v7 = HIWORD(v11);
+  do
+  {
+    v8 = (_BYTE *)*((_DWORD *)MEMORY[0xA8020C] + v6);
+    if ( v8[144] )
+    {
+      v9 = (_WORD *)(*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v8 + 440))(v8, &v11);
+      if ( *v9 == (_WORD)v5 && v9[1] == v7 )
+        (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v8 + 248))(v8);
+    }
+    ++v6;
+  }
+  while ( v6 < MEMORY[0xA80218] );
+  return 1;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [ecx+44h]
+push    ebx
+push    edi
+lea     ecx, [esp+0Ch+var_4]
+push    eax
+push    ecx
+mov     ecx, ds:0A8B230h
+call    ScenarioClass__Get_Waypoint_Location
+mov     ebx, [eax]
+mov     eax, ds:0A80218h
+xor     edi, edi
+mov     [esp+0Ch+var_4], ebx
+test    eax, eax
+jle     short loc_6E00FA
+push    ebp
+mov     bp, word ptr [esp+10h+var_4+2]
+push    esi
+
+loc_6E00AF:                             ; CODE XREF: sub_6E0080+6E↓j
+mov     edx, ds:0A8020Ch
+mov     esi, [edx+edi*4]
+mov     al, [esi+90h]
+test    al, al
+jz      short loc_6E00E6
+mov     eax, [esi]
+lea     ecx, [esp+14h+var_4]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+1B8h]
+cmp     [eax], bx
+jnz     short loc_6E00E6
+cmp     [eax+2], bp
+jnz     short loc_6E00E6
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0F8h]
+
+loc_6E00E6:                             ; CODE XREF: sub_6E0080+40↑j
+; sub_6E0080+54↑j ...
+mov     eax, ds:0A80218h
+inc     edi
+cmp     edi, eax
+jl      short loc_6E00AF
+pop     esi
+pop     ebp
+pop     edi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_6E00FA:                             ; CODE XREF: sub_6E0080+26↑j
+pop     edi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    10h
+*/
 }
 
 // 0x006394E0 (193 bytes)
 char SetScenario_6394E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006394E0.json)
-    // Size: 193 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_6394E0 ( _DWORD *a1, int a2 ) { _BYTE *v3 ; // esi _BYTE *v4 ; // ecx _DWORD *v5 ; // eax _BYTE *WaypointCoords ; // eax int v7 ; // edx _BYTE *v8 ; // eax _BYTE v10[108] ; // [esp-70h] [ebp-16Ch] BYREF int v11 ; // [esp-4h] [ebp-100h] _BYTE v12[8] ; // [esp+Ch] [ebp-F0h] BYREF _BYTE v13[8] ; // [esp+14h] [ebp-E8h] BYREF _BYTE v14[108] ; // [esp+1Ch] [ebp-E0h] BYREF __int16 v15 ; // [esp+88h] [ebp-74h] char v16 ; // [esp+8Ah] [ebp-72h] char v17[108] ; // [esp+8Ch] [ebp-70h] BYREF __int16 v18 ; // [esp+F8h] [ebp-4h] char v19 ; // [esp+FAh] [ebp-2h] v3 = * ( _BYTE ** ) ( * * ( _DWORD ** ) ( a2 + 4 ) + 4 ) ; qmemcpy ( v14 , v3 , sizeof ( v14 ) ) ; v3 += 108 ; v15 = * ( _WORD * ) v3 ; v16 = v3 [ 2 ] ; if ( v14 [ 18 ] ) { v4 = & v14 [ 14 ] ; } else if ( v14 [ 28 ] ) { v4 = & v14 [ 24 ] ; } else { LOBYTE ( v5 ) = v14 [ 23 ] ; if ( ! v14 [ 23 ] ) return ( char ) v5 ; v4 = & v14 [ 19 ] ; } v5 = BuildingLoadQueue::GetNext ( v4 ) ; if ( v5 ) { WaypointCoords = ScriptAction::GetWaypointCoords ( v13 , v5 ) ; v7 = * ( _DWORD * ) WaypointCoords ; LOBYTE ( WaypointCoords ) = WaypointCoords [ 4 ] ; * ( _DWORD * ) & v10 [ 104 ] = v7 ; LOBYTE ( v11 ) = ( _BYTE ) WaypointCoords ; v8 = ScriptAction::GetWaypointCoords ( v12 , a1 ) ; ScenarioClass::SetEvent ( v17 , * ( ( _DWORD * ) HouseClass_Player + 12 ) , 42 , * ( _DWORD * ) v8 , v8 [ 4 ] , * ( int * ) & v10 [ 104 ] , v11 ) ; qmemcpy ( v10 , v17 , sizeof ( v10 ) ) ; LOWORD ( v11 ) = v18 ; BYTE2 ( v11 ) = v19 ; LOBYTE ( v5 ) = Network::RecordEvent ( * ( __int64 * ) v10 , * ( int * ) & v10 [ 8 ] , * ( int * ) & v10 [ 12 ] , * ( int * ) & v10 [ 16 ] , * ( int * ) & v10 [ 20 ] , * ( int * ) & v10 [ 24 ] , * ( int * ) & v10 [ 28 ] , * ( int * ) & v10 [ 32 ] , * ( int * ) & v10 [ 36 ] , * ( int * ) & v10 [ 40 ] , * ( int * ) & v10 [ 44 ] , * ( int * ) & v10 [ 48 ] , * ( int * ) & v10 [ 52 ] , * ( int * ) & v10 [ 56 ] , * ( int * ) & v10 [ 60 ] , * ( int * ) & v10 [ 64 ] , * ( int * ) & v10 [ 68 ] , * ( int * ) & v10 [ 72 ] , * ( int * ) & v10 [ 76 ] , * ( int * ) & v10 [ 80 ] , * ( int * ) & v10 [ 84 ] , * ( int * ) & v10 [ 88 ] , * ( int * ) & v10 [ 92 ] , * ( int * ) & v10 [ 96 ] , * ( int * ) & v10 [ 100 ] , * ( int * ) & v10 [ 104 ] , v11 ) ; } return ( char ) v5 ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_6394E0(_DWORD *a1, int a2)
+{
+  _BYTE *v3; // esi
+  _BYTE *v4; // ecx
+  _DWORD *v5; // eax
+  _BYTE *WaypointCoords; // eax
+  int v7; // edx
+  _BYTE *v8; // eax
+  _BYTE v10[108]; // [esp-70h] [ebp-16Ch] BYREF
+  int v11; // [esp-4h] [ebp-100h]
+  _BYTE v12[8]; // [esp+Ch] [ebp-F0h] BYREF
+  _BYTE v13[8]; // [esp+14h] [ebp-E8h] BYREF
+  _BYTE v14[108]; // [esp+1Ch] [ebp-E0h] BYREF
+  __int16 v15; // [esp+88h] [ebp-74h]
+  char v16; // [esp+8Ah] [ebp-72h]
+  char v17[108]; // [esp+8Ch] [ebp-70h] BYREF
+  __int16 v18; // [esp+F8h] [ebp-4h]
+  char v19; // [esp+FAh] [ebp-2h]
+
+  v3 = *(_BYTE **)(**(_DWORD **)(a2 + 4) + 4);
+  qmemcpy(v14, v3, sizeof(v14));
+  v3 += 108;
+  v15 = *(_WORD *)v3;
+  v16 = v3[2];
+  if ( v14[18] )
+  {
+    v4 = &v14[14];
+  }
+  else if ( v14[28] )
+  {
+    v4 = &v14[24];
+  }
+  else
+  {
+    LOBYTE(v5) = v14[23];
+    if ( !v14[23] )
+      return (char)v5;
+    v4 = &v14[19];
+  }
+  v5 = BuildingLoadQueue::GetNext(v4);
+  if ( v5 )
+  {
+    WaypointCoords = ScriptAction::GetWaypointCoords(v13, v5);
+    v7 = *(_DWORD *)WaypointCoords;
+    LOBYTE(WaypointCoords) = WaypointCoords[4];
+    *(_DWORD *)&v10[104] = v7;
+    LOBYTE(v11) = (_BYTE)WaypointCoords;
+    v8 = ScriptAction::GetWaypointCoords(v12, a1);
+    ScenarioClass::SetEvent(v17, *((_DWORD *)MEMORY[0xA83D4C] + 12), 42, *(_DWORD *)v8, v8[4], *(int *)&v10[104], v11);
+    qmemcpy(v10, v17, sizeof(v10));
+    LOWORD(v11) = v18;
+    BYTE2(v11) = v19;
+    LOBYTE(v5) = Network::RecordEvent(
+                   *(__int64 *)v10,
+                   *(int *)&v10[8],
+                   *(int *)&v10[12],
+                   *(int *)&v10[16],
+                   *(int *)&v10[20],
+                   *(int *)&v10[24],
+                   *(int *)&v10[28],
+                   *(int *)&v10[32],
+                   *(int *)&v10[36],
+                   *(int *)&v10[40],
+                   *(int *)&v10[44],
+                   *(int *)&v10[48],
+                   *(int *)&v10[52],
+                   *(int *)&v10[56],
+                   *(int *)&v10[60],
+                   *(int *)&v10[64],
+                   *(int *)&v10[68],
+                   *(int *)&v10[72],
+                   *(int *)&v10[76],
+                   *(int *)&v10[80],
+                   *(int *)&v10[84],
+                   *(int *)&v10[88],
+                   *(int *)&v10[92],
+                   *(int *)&v10[96],
+                   *(int *)&v10[100],
+                   *(int *)&v10[104],
+                   v11);
+  }
+  return (char)v5;
+}
+
+/* ASM:
+mov     eax, [edx+4]
+sub     esp, 0F0h
+mov     edx, [eax]
+push    ebx
+push    esi
+mov     ebx, ecx
+mov     esi, [edx+4]
+push    edi
+mov     ecx, 1Bh
+lea     edi, [esp+0FCh+var_E0]
+rep movsd
+movsw
+movsb
+mov     al, [esp+0FCh+var_CE]
+test    al, al
+jz      short loc_63950F
+lea     ecx, [esp+0FCh+var_D2]
+jmp     short loc_639529
+; ---------------------------------------------------------------------------
+
+loc_63950F:                             ; CODE XREF: sub_6394E0+27↑j
+mov     al, [esp+0FCh+var_C4]
+test    al, al
+jz      short loc_63951D
+lea     ecx, [esp+0FCh+var_C8]
+jmp     short loc_639529
+; ---------------------------------------------------------------------------
+
+loc_63951D:                             ; CODE XREF: sub_6394E0+35↑j
+mov     al, [esp+0FCh+var_C9]
+test    al, al
+jz      short loc_639597
+lea     ecx, [esp+0FCh+var_CD]
+
+loc_639529:                             ; CODE XREF: sub_6394E0+2D↑j
+; sub_6394E0+3B↑j
+call    BuildingLoadQueue__GetNext
+test    eax, eax
+jz      short loc_639597
+push    eax
+lea     ecx, [esp+100h+var_E8]
+call    ScriptAction__GetWaypointCoords
+mov     edx, [eax]
+sub     esp, 8
+mov     ecx, esp
+mov     al, [eax+4]
+push    ebx
+mov     [ecx], edx
+mov     [ecx+4], al
+lea     ecx, [esp+108h+var_F0]
+call    ScriptAction__GetWaypointCoords
+mov     edx, [eax]
+sub     esp, 8
+mov     ecx, esp
+mov     al, [eax+4]
+push    2Ah ; '*'
+mov     [ecx], edx
+mov     [ecx+4], al
+mov     ecx, ds:0A83D4Ch
+mov     edx, [ecx+30h]
+lea     ecx, [esp+110h+var_70]
+push    edx
+call    ScenarioClass__SetEvent
+sub     esp, 70h
+mov     ecx, 1Bh
+lea     esi, [esp+16Ch+var_70]
+mov     edi, esp
+rep movsd
+movsw
+movsb
+call    Network__RecordEvent
+
+loc_639597:                             ; CODE XREF: sub_6394E0+43↑j
+; sub_6394E0+50↑j
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 0F0h
+retn
+*/
 }
 
 // 0x006E2790 (179 bytes)
 char Tactical_GetScenario_6E2790() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E2790.json)
-    // Size: 179 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E2790 ( int *this, int a2, int a3, int a4, int a5 ) { int v6 ; // [esp+0h] [ebp-14h] BYREF int v7 ; // [esp+4h] [ebp-10h] BYREF int v8[2] ; // [esp+8h] [ebp-Ch] BYREF !int GroundHeight ! ; // [esp+10h] [ebp-4h] v6 = * ScenarioClass::Get_Waypoint_Location ( ( char * ) ScenarioClass_Instance , & v7 , * ( this + 17 ) ) ; GroundHeight = 0 ; v8 [ 1 ] = ( SHIWORD ( v6 ) << 8 ) + 128 ; v8 [ 0 ] = ( ( __int16 ) v6 << 8 ) + 128 ; GroundHeight = Cell::GetGroundHeight ( v8 ) ; if ( ( * ( ( _DWORD * ) CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v6 ) + 80 ) & 0x100 ) != 0 || ( * ( ( _DWORD * ) CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v6 ) + 80 ) & 0x400 ) != 0 ) { GroundHeight += dword_B0E6D4 ; } Tactical::SetTacticalPosition ( ( int ) TacticalClass_Instance , v8 ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
+{
+  int v6; // [esp+0h] [ebp-14h] BYREF
+  int v7; // [esp+4h] [ebp-10h] BYREF
+  int v8[2]; // [esp+8h] [ebp-Ch] BYREF
+  int GroundHeight; // [esp+10h] [ebp-4h]
+
+  v6 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0x87F7E8][536210], &v7, *(this + 17));
+  GroundHeight = 0;
+  v8[1] = (SHIWORD(v6) << 8) + 128;
+  v8[0] = ((__int16)v6 << 8) + 128;
+  GroundHeight = Cell::GetGroundHeight(v8);
+  if ( (*((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x100) != 0
+    || (*((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x400) != 0 )
+  {
+    GroundHeight += dword_A8ED54[130656];
+  }
+  Tactical::SetTacticalPosition(MEMORY[0x87F7E8][7887], v8);
+  return 1;
+}
+
+/* ASM:
+sub     esp, 14h
+mov     eax, [ecx+44h]
+lea     ecx, [esp+14h+var_10]
+push    eax
+push    ecx
+mov     ecx, ds:0A8B230h
+call    ScenarioClass__Get_Waypoint_Location
+mov     eax, [eax]
+xor     edx, edx
+mov     [esp+14h+var_14], eax
+mov     [esp+14h+var_4], edx
+movsx   ecx, word ptr [esp+14h+var_14+2]
+movsx   eax, ax
+shl     ecx, 8
+shl     eax, 8
+add     ecx, 80h
+lea     edx, [esp+14h+var_C]
+add     eax, 80h
+mov     [esp+14h+var_8], ecx
+push    edx
+mov     ecx, 87F7E8h
+mov     [esp+18h+var_C], eax
+call    Cell__GetGroundHeight
+mov     [esp+14h+var_4], eax
+lea     eax, [esp+14h+var_14]
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    ch, 1
+jnz     short loc_6E281B
+lea     ecx, [esp+14h+var_14]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    ch, 4
+jz      short loc_6E282B
+
+loc_6E281B:                             ; CODE XREF: sub_6E2790+6F↑j
+mov     edx, dword_A8ED54+7F980h
+mov     eax, [esp+14h+var_4]
+add     eax, edx
+mov     [esp+14h+var_4], eax
+
+loc_6E282B:                             ; CODE XREF: sub_6E2790+89↑j
+mov     ecx, ds:887324h
+lea     eax, [esp+14h+var_C]
+push    eax
+call    Tactical__SetTacticalPosition
+mov     al, 1
+add     esp, 14h
+retn    10h
+*/
 }
 
 } // namespace gamemd

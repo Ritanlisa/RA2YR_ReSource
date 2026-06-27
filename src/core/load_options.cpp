@@ -95,22 +95,79 @@ LoadOptions::~LoadOptions() {
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
 void LoadOptions::Cleanup() {
-    // Free all entries
-    for (uint32_t i = 0; i < count; ++i) {
-        if (entries && entries[i]) {
-            delete entries[i];
-            entries[i] = nullptr;
-        }
-    }
-    // Free the array if we own it
-    if (entries && owns_memory) {
-        delete[] entries;
-        entries = nullptr;
-    }
-    owns_memory = 0;
-    count       = 0;
-    capacity    = 0;
-    is_active   = 0;
+// [IDA decompile]
+void __thiscall LoadOptions_Cleanup(_DWORD *this)
+{
+  int v2; // edi
+  int v3; // edx
+  _DWORD *v4; // esi
+  void *v5; // eax
+
+  v2 = 0;
+  for ( *this = &LoadOptionsClass::`vftable'; v2 < *(this + 12); ++v2 )
+    __3_YAXPAX_Z(*(void **)(*(this + 9) + 4 * v2));
+  v3 = *(this + 8);
+  v4 = this + 8;
+  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4);
+  v5 = (void *)v4[1];
+  *v4 = &VectorClass<FileEntryClass *>::`vftable';
+  if ( v5 && *((_BYTE *)v4 + 13) )
+  {
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
+  }
+  *((_BYTE *)v4 + 13) = 0;
+  v4[2] = 0;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+xor     ebx, ebx
+xor     edi, edi
+mov     dword ptr [esi], offset ??_7LoadOptionsClass@@6B@ ; const LoadOptionsClass::`vftable'
+mov     eax, [esi+30h]
+cmp     eax, ebx
+jle     short loc_5587BD
+
+loc_5587A6:                             ; CODE XREF: LoadOptions__Cleanup+2B↓j
+mov     eax, [esi+24h]
+mov     ecx, [eax+edi*4]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, [esi+30h]
+add     esp, 4
+inc     edi
+cmp     edi, eax
+jl      short loc_5587A6
+
+loc_5587BD:                             ; CODE XREF: LoadOptions__Cleanup+14↑j
+mov     edx, [esi+20h]
+add     esi, 20h ; ' '
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+mov     eax, [esi+4]
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAVFileEntryClass@@@@6B@ ; const VectorClass<FileEntryClass *>::`vftable'
+cmp     eax, ebx
+jz      short loc_5587E6
+cmp     [esi+0Dh], bl
+jz      short loc_5587E6
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_5587E6:                             ; CODE XREF: LoadOptions__Cleanup+43↑j
+; LoadOptions__Cleanup+48↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
@@ -129,38 +186,171 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-    mode     = 1;
-    field_0C = 0;
-    // Calls SaveLoadDialog::DlgProc(this) — stub for now
-    return 0;
+// [IDA decompile]
+bool __thiscall LoadOptions::Run(const char **this)
+{
+  *(this + 1) = (const char *)1;
+  *(this + 3) = 0;
+  return SaveLoadDialog::DlgProc(this);
+}
+
+/* ASM:
+mov     dword ptr [ecx+4], 1
+mov     dword ptr [ecx+0Ch], 0
+jmp     SaveLoadDialog__DlgProc
+*/
 }
 
 // IDA 0x559C20: Check — scan for save files matching extension
 // 0x559c20
 bool LoadOptions::Check() {
-    char pattern[64];
-    snprintf(pattern, sizeof(pattern), "*.%s", extension ? extension : "SAV");
+// [IDA decompile]
+char __thiscall LoadOptions::Check(const char **this)
+{
+  char v2; // bl
+  const char *v3; // eax
+  int v4; // edi
+  char FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
+  _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
+  char v8; // [esp+14Ch] [ebp-1FCh]
+  int v9; // [esp+16Ch] [ebp-1DCh]
+  int v10; // [esp+170h] [ebp-1D8h]
+  __int16 v11; // [esp+174h] [ebp-1D4h]
+  int v12; // [esp+1F4h] [ebp-154h]
+  int v13; // [esp+1F8h] [ebp-150h]
+  int v14; // [esp+1FCh] [ebp-14Ch]
+  char v15; // [esp+200h] [ebp-148h]
+  char v16; // [esp+201h] [ebp-147h]
+  int v17; // [esp+204h] [ebp-144h]
+  _WORD FindFileData[160]; // [esp+208h] [ebp-140h] BYREF
 
-    WIN32_FIND_DATAA fd;
-    HANDLE hFind = FindFirstFileA(pattern, &fd);
-    if (hFind == INVALID_HANDLE_VALUE)
-        return false;
+  v2 = 0;
+  v3 = *(this + 2);
+  v9 = 0;
+  v10 = -1;
+  v12 = -1;
+  v15 = 1;
+  v16 = 0;
+  v17 = 0;
+  v7[0] = 0;
+  v8 = 0;
+  v11 = 0;
+  v14 = 0;
+  v13 = 0;
+  sprintf(FileName, "*.%3s", v3);
+  v4 = ((int (__stdcall *)(char *, _WORD *))FindFirstFileA)(FileName, FindFileData);
+  if ( v4 != -1 )
+  {
+    while ( (FindFileData[0] & 0x116) != 0
+         || !_strcmpi(&FindFileData[22], MultiByteStr)
+         || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, _WORD *))*this + 4))(this, v7, FindFileData) != 1
+         || v16 )
+    {
+      if ( !((int (__stdcall *)(int, _WORD *))FindNextFileA)(v4, FindFileData) )
+        goto LABEL_9;
+    }
+    v2 = 1;
+  }
+LABEL_9:
+  ((void (__stdcall *)(int))FindClose)(v4);
+  return v2;
+}
 
-    bool found = false;
-    do {
-        // Skip directories/system files
-        if (fd.dwFileAttributes & (FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM |
-                                    FILE_ATTRIBUTE_TEMPORARY | FILE_ATTRIBUTE_OFFLINE))
-            continue;
-        // Skip "SAVEGAME.NET"
-        if (_stricmp(fd.cFileName, "SAVEGAME.NET") == 0)
-            continue;
-        found = true;
-        break;
-    } while (FindNextFileA(hFind, &fd));
+/* ASM:
+FileName        = OMOTestDerived ptr -33Ch
+var_2FC         = word ptr -2FCh
+var_1FC         = byte ptr -1FCh
+var_1DC         = dword ptr -1DCh
+var_1D8         = dword ptr -1D8h
+var_1D4         = word ptr -1D4h
+var_154         = dword ptr -154h
+var_150         = dword ptr -150h
+var_14C         = dword ptr -14Ch
+var_148         = byte ptr -148h
+var_147         = byte ptr -147h
+var_144         = dword ptr -144h
+FindFileData    = byte ptr -140h
 
-    FindClose(hFind);
-    return found;
+sub     esp, 33Ch
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+348h+FileName]
+xor     ebx, ebx
+mov     eax, [esi+8]
+mov     [esp+348h+var_1DC], ebx
+push    eax
+push    offset a3s      ; "*.%3s"
+push    ecx             ; Buffer
+mov     [esp+354h+var_1D8], 0FFFFFFFFh
+mov     [esp+354h+var_154], 0FFFFFFFFh
+mov     [esp+354h+var_148], 1
+mov     [esp+354h+var_147], bl
+mov     [esp+354h+var_144], ebx
+mov     [esp+354h+var_2FC], bx
+mov     [esp+354h+var_1FC], bl
+mov     [esp+354h+var_1D4], bx
+mov     [esp+354h+var_14C], ebx
+mov     [esp+354h+var_150], ebx
+call    _sprintf
+add     esp, 0Ch
+lea     edx, [esp+348h+FindFileData]
+lea     eax, [esp+348h+FileName]
+push    edx             ; lpFindFileData
+push    eax             ; lpFileName
+call    ds:__imp_FindFirstFileA
+mov     edi, eax
+cmp     edi, 0FFFFFFFFh
+jz      short loc_559D10
+
+loc_559CB2:                             ; CODE XREF: LoadOptions__Check+EC↓j
+test    dword ptr [esp+348h+FindFileData], 116h
+jnz     short loc_559CF9
+lea     ecx, [esp+348h+FindFileData+2Ch]
+push    offset MultiByteStr ; "SAVEGAME.NET"
+push    ecx             ; void *
+call    __strcmpi
+add     esp, 8
+test    eax, eax
+jz      short loc_559CF9
+mov     edx, [esi]
+lea     eax, [esp+348h+FindFileData]
+lea     ecx, [esp+348h+var_2FC]
+push    eax
+push    ecx
+mov     ecx, esi
+call    dword ptr [edx+10h]
+cmp     al, 1
+jnz     short loc_559CF9
+cmp     [esp+348h+var_147], bl
+jz      short loc_559D0E
+
+loc_559CF9:                             ; CODE XREF: LoadOptions__Check+9D↑j
+; LoadOptions__Check+B6↑j ...
+lea     edx, [esp+348h+FindFileData]
+push    edx             ; lpFindFileData
+push    edi             ; hFindFile
+call    ds:__imp_FindNextFileA
+test    eax, eax
+jz      short loc_559D10
+jmp     short loc_559CB2
+; ---------------------------------------------------------------------------
+
+loc_559D0E:                             ; CODE XREF: LoadOptions__Check+D7↑j
+mov     bl, 1
+
+loc_559D10:                             ; CODE XREF: LoadOptions__Check+90↑j
+; LoadOptions__Check+EA↑j
+push    edi             ; hFindFile
+call    ds:__imp_FindClose
+pop     edi
+mov     al, bl
+pop     esi
+pop     ebx
+add     esp, 33Ch
+retn
+*/
 }
 
 // IDA 0x559D60: LoadGame (AddRef/vt01)
@@ -194,61 +384,248 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
-    if (new_size == 0) {
-        Cleanup();
-        return true;
+// [IDA decompile]
+char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 )
+  {
+    *((_BYTE *)this + 12) = 0;
+    if ( a3 )
+      v4 = a3;
+    else
+      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
+    *((_BYTE *)this + 12) = 1;
+    if ( v4 )
+    {
+      if ( *((_DWORD *)this + 1) )
+      {
+        v6 = *((_DWORD *)this + 2);
+        if ( a2 < v6 )
+          v6 = a2;
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+          ++i;
+        if ( *((_BYTE *)this + 13) )
+        {
+          __3_YAXPAX_Z(*((void **)this + 1));
+          *((_DWORD *)this + 1) = 0;
+        }
+      }
+      *((_DWORD *)this + 1) = v4;
+      *((_DWORD *)this + 2) = a2;
+      *((_BYTE *)this + 13) = a3 == 0;
+      return 1;
     }
-
-    is_active = 0;
-    FileEntryClass** new_buf = (out_buffer) ? out_buffer : new FileEntryClass*[new_size];
-    is_active = 1;
-    if (!new_buf) return false;
-
-    // Copy existing entries (min of old count and new size)
-    uint32_t copy_count = (count < new_size) ? count : new_size;
-    for (uint32_t i = 0; i < copy_count; ++i) {
-        new_buf[i] = entries[i];
+    else
+    {
+      return 0;
     }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    return 1;
+  }
+}
 
-    // Null out remaining slots
-    for (uint32_t i = copy_count; i < new_size; ++i) {
-        new_buf[i] = nullptr;
-    }
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0xae)
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+test    ebp, ebp
+push    edi
+mov     esi, ecx
+jz      loc_55A28E
+mov     ebx, [esp+10h+arg_4]
+mov     byte ptr [esi+0Ch], 0
+test    ebx, ebx
+jnz     short loc_55A222
+lea     eax, ds:0[ebp*4]
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     edi, eax
+jmp     short loc_55A224
+; ---------------------------------------------------------------------------
 
-    // Free old buffer if we own it
-    if (entries && owns_memory) {
-        delete[] entries;
-    }
+loc_55A222:                             ; CODE XREF: LoadOptions__CopyItems+1C↑j
+mov     edi, ebx
 
-    entries     = new_buf;
-    count       = new_size;
-    owns_memory = (out_buffer == nullptr);
-    return true;
+loc_55A224:                             ; CODE XREF: LoadOptions__CopyItems+30↑j
+test    edi, edi
+mov     byte ptr [esi+0Ch], 1
+jnz     short loc_55A235
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_55A235:                             ; CODE XREF: LoadOptions__CopyItems+3A↑j
+mov     eax, [esi+4]
+test    eax, eax
+jz      short loc_55A275
+mov     ecx, [esi+8]
+cmp     ebp, ecx
+jge     short loc_55A245
+mov     ecx, ebp
+
+loc_55A245:                             ; CODE XREF: LoadOptions__CopyItems+51↑j
+xor     eax, eax
+test    ecx, ecx
+jle     short loc_55A25B
+
+loc_55A24B:                             ; CODE XREF: LoadOptions__CopyItems+69↓j
+mov     edx, [esi+4]
+inc     eax
+cmp     eax, ecx
+mov     edx, [edx+eax*4-4]
+mov     [edi+eax*4-4], edx
+jl      short loc_55A24B
+
+loc_55A25B:                             ; CODE XREF: LoadOptions__CopyItems+59↑j
+mov     al, [esi+0Dh]
+test    al, al
+jz      short loc_55A275
+mov     eax, [esi+4]
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     dword ptr [esi+4], 0
+
+loc_55A275:                             ; CODE XREF: LoadOptions__CopyItems+4A↑j
+; LoadOptions__CopyItems+70↑j
+xor     eax, eax
+mov     [esi+4], edi
+test    ebx, ebx
+setz    al
+mov     [esi+8], ebp
+mov     [esi+0Dh], al
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_55A28E:                             ; CODE XREF: LoadOptions__CopyItems+C↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    8
+*/
 }
 
 // IDA 0x55A2A0: ClearBuffer
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-    if (entries && owns_memory) {
-        delete[] entries;
-        entries = nullptr;
-    }
-    owns_memory = 0;
-    count       = 0;
+// [IDA decompile]
+void __thiscall LoadOptions::sub_55A2A0(int this)
+{
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    *(_DWORD *)(this + 4) = 0;
+  }
+  *(_BYTE *)(this + 13) = 0;
+  *(_DWORD *)(this + 8) = 0;
+}
+
+/* ASM:
+push    ebx             ; TODO: classify (grp=blit, sz=0x27)
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+jz      short loc_55A2BE
+cmp     [esi+0Dh], bl
+jz      short loc_55A2BE
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_55A2BE:                             ; CODE XREF: LoadOptions__ClearBuffer+B↑j
+; LoadOptions__ClearBuffer+10↑j
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
 int LoadOptions::FindItem(const uint32_t* key) {
-    if (!is_active) return 0;
-    if (count == 0) return -1;
+// [IDA decompile]
+int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
 
-    for (uint32_t i = 0; i < count; ++i) {
-        if (entries[i] && *(const uint32_t*)(entries[i]) == *key) {
-            return (int)(i);
-        }
-    }
+  if ( !*(_BYTE *)(this + 12) )
+    return 0;
+  v3 = *(_DWORD *)(this + 8);
+  result = 0;
+  if ( v3 <= 0 )
     return -1;
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+      return -1;
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x33)
+push    esi
+test    al, al
+jnz     short loc_55A2DE
+xor     eax, eax
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_55A2DE:                             ; CODE XREF: LoadOptions__FindItem+6↑j
+mov     edx, [ecx+8]
+xor     eax, eax
+test    edx, edx
+jle     short loc_55A2FC
+mov     esi, [esp+4+arg_0]
+mov     ecx, [ecx+4]
+mov     esi, [esi]
+
+loc_55A2F0:                             ; CODE XREF: LoadOptions__FindItem+2A↓j
+cmp     [ecx], esi
+jz      short loc_55A2FF
+inc     eax
+add     ecx, 4
+cmp     eax, edx
+jl      short loc_55A2F0
+
+loc_55A2FC:                             ; CODE XREF: LoadOptions__FindItem+15↑j
+or      eax, 0FFFFFFFFh
+
+loc_55A2FF:                             ; CODE XREF: LoadOptions__FindItem+22↑j
+pop     esi
+retn    4
+*/
 }
 
 // IDA 0x55A310: PointerToIndex

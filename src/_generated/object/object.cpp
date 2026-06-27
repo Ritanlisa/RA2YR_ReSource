@@ -8,47 +8,1014 @@ namespace gamemd {
 
 // 0x004C29E0 (115 bytes)
 void GameDestroyAllObjectsHelper_4C29E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C29E0.json)
-    // Size: 115 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void sub_4C29E0 ( ) { !int i ! ; // esi _DWORD *v1 ; // eax int v2 ; // ecx for ( i = 0 ; i < dword_8A0E98 ; ++ i ) { v1 = ( _DWORD * ) * ( ( _DWORD * ) dword_8A0E8C + i ) ; if ( v1 ) { v2 = v1 [ 8 ] ; if ( v2 ) { * ( _DWORD * ) ( v2 + 1756 ) = 0 ; v1 [ 8 ] = 0 ; } __3_YAXPAX_Z ( v1 ) ; } } dword_8A0E98 = 0 ; if ( dword_8A0E8C && byte_8A0E95 ) { __3_YAXPAX_Z ( dword_8A0E8C ) ; dword_8A0E8C = 0 ; } byte_8A0E95 = 0 ; dword_8A0E90 = 0 ; }
-    
+// [IDA decompile]
+void sub_4C29E0()
+{
+  int i; // esi
+  _DWORD *v1; // eax
+  int v2; // ecx
+
+  for ( i = 0; i < MEMORY[0x8A0E98]; ++i )
+  {
+    v1 = (_DWORD *)*((_DWORD *)MEMORY[0x8A0E8C] + i);
+    if ( v1 )
+    {
+      v2 = v1[8];
+      if ( v2 )
+      {
+        *(_DWORD *)(v2 + 1756) = 0;
+        v1[8] = 0;
+      }
+      __3_YAXPAX_Z(v1);
+    }
+  }
+  MEMORY[0x8A0E98] = 0;
+  if ( MEMORY[0x8A0E8C] && MEMORY[0x8A0E95] )
+  {
+    __3_YAXPAX_Z(MEMORY[0x8A0E8C]);
+    MEMORY[0x8A0E8C] = 0;
+  }
+  MEMORY[0x8A0E95] = 0;
+  MEMORY[0x8A0E90] = 0;
+}
+
+/* ASM:
+mov     eax, ds:8A0E98h
+push    ebx
+push    esi
+xor     ebx, ebx
+xor     esi, esi
+cmp     eax, ebx
+jle     short loc_4C2A1E
+
+loc_4C29EF:                             ; CODE XREF: sub_4C29E0+3C↓j
+mov     eax, ds:8A0E8Ch
+mov     eax, [eax+esi*4]
+cmp     eax, ebx
+jz      short loc_4C2A14
+mov     ecx, [eax+20h]
+cmp     ecx, ebx
+jz      short loc_4C2A0B
+mov     [ecx+6DCh], ebx
+mov     [eax+20h], ebx
+
+loc_4C2A0B:                             ; CODE XREF: sub_4C29E0+20↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4C2A14:                             ; CODE XREF: sub_4C29E0+19↑j
+mov     eax, ds:8A0E98h
+inc     esi
+cmp     esi, eax
+jl      short loc_4C29EF
+
+loc_4C2A1E:                             ; CODE XREF: sub_4C29E0+D↑j
+mov     eax, ds:8A0E8Ch
+mov     ds:8A0E98h, ebx
+cmp     eax, ebx
+jz      short loc_4C2A44
+cmp     ds:8A0E95h, bl
+jz      short loc_4C2A44
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     ds:8A0E8Ch, ebx
+
+loc_4C2A44:                             ; CODE XREF: sub_4C29E0+4B↑j
+; sub_4C29E0+53↑j
+mov     ds:8A0E95h, bl
+mov     ds:8A0E90h, ebx
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x0077F520 (481 bytes)
 char RequestDebug_77F520() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0077F520.json)
-    // Size: 481 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_77F520 ( char a1 ) { !char result ! ; // al !HANDLE *v2 ! ; // esi !int v3 ! ; // eax !int v4 ! ; // esi !int v5 ! ; // ebx void *v6 ; // ebp void *v7 ; // eax !int v8 ! ; // ebx void *v9 ; // ebp void *v10 ; // eax _DWORD *v11 ; // ecx !int v13 ! ; // [esp+Eh] [ebp-4h] if ( ! g_WOL_RequestState || ( result = RequestChannelListWOL ( ) ) != 0 ) { v2 = & Handles ; do "ResetEvent " ( * v2 ++ ) ; while ( ( int ) v2 < ( int ) g_WOL_RequestObject ) ; Debug::Log ( ) ; if ( ( * ( int (__stdcall **)(LPVOID, _DWORD, _DWORD) ) ( * ( _DWORD * ) ppv + 24 ) ) ( ppv , 0 , 0 ) ) { "SetEvent " ( Handles ) ; return 0 ; } else { v3 = g_WOL_RequestState ; v4 = g_WOL_RequestState ; v13 = g_WOL_RequestState ; v5 = g_WOL_RequestToken ; if ( g_WOL_RequestState >= g_WOL_RequestToken ) { v5 = 2 * g_WOL_RequestState ; if ( 2 * g_WOL_RequestState < 10 ) v5 = 10 ; v6 = __2_YAPAXI_Z ( 4 * v5 ) ; memset ( v6 , 0 , 4 * ( ( unsigned int ) ( 4 * v5 ) >> 2 ) ) ; v7 = g_WOL_RequestFlags ; if ( g_WOL_RequestFlags ) { qmemcpy ( v6 , g_WOL_RequestFlags , 4 * g_WOL_RequestState ) ; v7 = g_WOL_RequestFlags ; v4 = v13 ; } __3_YAXPAX_Z ( v7 ) ; v3 = g_WOL_RequestState ; g_WOL_RequestFlags = v6 ; g_WOL_RequestToken = v5 ; } if ( v3 >= v5 ) { v8 = 2 * v3 ; if ( 2 * v3 < 10 ) v8 = 10 ; v9 = __2_YAPAXI_Z ( 4 * v8 ) ; memset ( v9 , 0 , 4 * ( ( unsigned int ) ( 4 * v8 ) >> 2 ) ) ; v10 = g_WOL_RequestFlags ; if ( g_WOL_RequestFlags ) { qmemcpy ( v9 , g_WOL_RequestFlags , 4 * g_WOL_RequestState ) ; v10 = g_WOL_RequestFlags ; v4 = v13 ; } __3_YAXPAX_Z ( v10 ) ; v3 = g_WOL_RequestState ; g_WOL_RequestFlags = v9 ; g_WOL_RequestToken = v8 ; } if ( v4 < v3 ) { memcpy ( ( char * ) g_WOL_RequestFlags + 4 * v4 + 4 , ( char * ) g_WOL_RequestFlags + 4 * v4 , 4 * ( v3 + 0x3FFFFFFF * v4 ) ) ; v3 = g_WOL_RequestState ; } v11 = ( char * ) g_WOL_RequestFlags + 4 * v4 ; if ( v11 ) { * v11 = 0 ; v3 = g_WOL_RequestState ; } g_WOL_RequestState = v3 + 1 ; if ( a1 ) return RequestChannelListWOL ( ) ; else return 1 ; } } return result ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_77F520(char a1)
+{
+  char result; // al
+  int *v2; // esi
+  int v3; // eax
+  int v4; // esi
+  int v5; // ebx
+  void *v6; // ebp
+  void *v7; // eax
+  int v8; // ebx
+  void *v9; // ebp
+  void *v10; // eax
+  _DWORD *v11; // ecx
+  int v13; // [esp+Eh] [ebp-4h]
+
+  if ( !dword_A8ED54[237043] || (result = RequestChannelListWOL()) != 0 )
+  {
+    v2 = &dword_A8ED54[234060];
+    do
+      ((void (__stdcall *)(_DWORD))ResetEvent)(*v2++);
+    while ( (int)v2 < (int)&dword_A8ED54[234078] );
+    Debug::Log();
+    if ( (*(int (__stdcall **)(int, _DWORD, _DWORD))(*(_DWORD *)dword_A8ED54[51462] + 24))(dword_A8ED54[51462], 0, 0) )
+    {
+      ((void (__stdcall *)(int))SetEvent)(dword_A8ED54[234060]);
+      return 0;
+    }
+    else
+    {
+      v3 = dword_A8ED54[237043];
+      v4 = dword_A8ED54[237043];
+      v13 = dword_A8ED54[237043];
+      v5 = dword_A8ED54[237044];
+      if ( dword_A8ED54[237043] >= dword_A8ED54[237044] )
+      {
+        v5 = 2 * dword_A8ED54[237043];
+        if ( 2 * dword_A8ED54[237043] < 10 )
+          v5 = 10;
+        v6 = (void *)__2_YAPAXI_Z(4 * v5);
+        memset(v6, 0, 4 * ((unsigned int)(4 * v5) >> 2));
+        v7 = (void *)dword_A8ED54[237045];
+        if ( dword_A8ED54[237045] )
+        {
+          qmemcpy(v6, (const void *)dword_A8ED54[237045], 4 * dword_A8ED54[237043]);
+          v7 = (void *)dword_A8ED54[237045];
+          v4 = v13;
+        }
+        __3_YAXPAX_Z(v7);
+        v3 = dword_A8ED54[237043];
+        dword_A8ED54[237045] = (int)v6;
+        dword_A8ED54[237044] = v5;
+      }
+      if ( v3 >= v5 )
+      {
+        v8 = 2 * v3;
+        if ( 2 * v3 < 10 )
+          v8 = 10;
+        v9 = (void *)__2_YAPAXI_Z(4 * v8);
+        memset(v9, 0, 4 * ((unsigned int)(4 * v8) >> 2));
+        v10 = (void *)dword_A8ED54[237045];
+        if ( dword_A8ED54[237045] )
+        {
+          qmemcpy(v9, (const void *)dword_A8ED54[237045], 4 * dword_A8ED54[237043]);
+          v10 = (void *)dword_A8ED54[237045];
+          v4 = v13;
+        }
+        __3_YAXPAX_Z(v10);
+        v3 = dword_A8ED54[237043];
+        dword_A8ED54[237045] = (int)v9;
+        dword_A8ED54[237044] = v8;
+      }
+      if ( v4 < v3 )
+      {
+        memcpy(
+          (void *)(dword_A8ED54[237045] + 4 * v4 + 4),
+          (const void *)(dword_A8ED54[237045] + 4 * v4),
+          4 * (v3 + 0x3FFFFFFF * v4));
+        v3 = dword_A8ED54[237043];
+      }
+      v11 = (_DWORD *)(dword_A8ED54[237045] + 4 * v4);
+      if ( v11 )
+      {
+        *v11 = 0;
+        v3 = dword_A8ED54[237043];
+      }
+      dword_A8ED54[237043] = v3 + 1;
+      if ( a1 )
+        return RequestChannelListWOL();
+      else
+        return 1;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, dword_A8ED54+0E77CCh
+push    esi
+test    eax, eax
+push    edi
+mov     [esp+10h+var_5], cl
+jz      short loc_77F541
+call    RequestChannelListWOL
+test    al, al
+jnz     short loc_77F541
+pop     edi
+pop     esi
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F541:                             ; CODE XREF: sub_77F520+10↑j
+; sub_77F520+19↑j
+mov     edi, ds:__imp_ResetEvent
+mov     esi, (offset dword_A8ED54+0E4930h)
+
+loc_77F54C:                             ; CODE XREF: sub_77F520+3A↓j
+mov     eax, [esi]
+push    eax             ; hEvent
+call    edi ; __imp_ResetEvent
+add     esi, 4
+cmp     esi, (offset dword_A8ED54+0E4978h)
+jl      short loc_77F54C
+push    0
+push    0
+push    offset g_Str_Trace_Requesting_channel_list_type____d__ping_ ; "Requesting channel list type = %d, ping"...
+call    Debug__Log
+mov     eax, dword_A8ED54+32418h
+add     esp, 0Ch
+mov     ecx, [eax]
+push    0
+push    0
+push    eax
+call    dword ptr [ecx+18h]
+test    eax, eax
+jnz     loc_77F6E4
+mov     eax, dword_A8ED54+0E77CCh
+mov     esi, eax
+cmp     esi, eax
+mov     [esp+10h+var_4], esi
+jle     short loc_77F597
+mov     [esp+10h+var_4], eax
+
+loc_77F597:                             ; CODE XREF: sub_77F520+71↑j
+push    ebx
+mov     ebx, dword_A8ED54+0E77D0h
+cmp     esi, ebx
+push    ebp
+jl      short loc_77F616
+cmp     eax, ebx
+jl      loc_77F685
+lea     ebx, [eax+eax]
+cmp     ebx, 0Ah
+jge     short loc_77F5B8
+mov     ebx, 0Ah
+
+loc_77F5B8:                             ; CODE XREF: sub_77F520+91↑j
+lea     edi, ds:0[ebx*4]
+push    edi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, edi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     eax, dword_A8ED54+0E77D4h
+test    eax, eax
+jz      short loc_77F5FC
+mov     ecx, dword_A8ED54+0E77CCh
+mov     esi, eax
+mov     edi, ebp
+rep movsd
+mov     eax, dword_A8ED54+0E77D4h
+mov     esi, [esp+18h+var_4]
+
+loc_77F5FC:                             ; CODE XREF: sub_77F520+C5↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 4
+mov     dword_A8ED54+0E77D4h, ebp
+mov     dword_A8ED54+0E77D0h, ebx
+
+loc_77F616:                             ; CODE XREF: sub_77F520+81↑j
+cmp     eax, ebx
+jl      short loc_77F685
+lea     ebx, [eax+eax]
+cmp     ebx, 0Ah
+jge     short loc_77F627
+mov     ebx, 0Ah
+
+loc_77F627:                             ; CODE XREF: sub_77F520+100↑j
+lea     edi, ds:0[ebx*4]
+push    edi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, edi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     eax, dword_A8ED54+0E77D4h
+test    eax, eax
+jz      short loc_77F66B
+mov     ecx, dword_A8ED54+0E77CCh
+mov     esi, eax
+mov     edi, ebp
+rep movsd
+mov     eax, dword_A8ED54+0E77D4h
+mov     esi, [esp+18h+var_4]
+
+loc_77F66B:                             ; CODE XREF: sub_77F520+134↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 4
+mov     dword_A8ED54+0E77D4h, ebp
+mov     dword_A8ED54+0E77D0h, ebx
+
+loc_77F685:                             ; CODE XREF: sub_77F520+85↑j
+; sub_77F520+F8↑j
+pop     ebp
+cmp     esi, eax
+pop     ebx
+jge     short loc_77F6B3
+mov     ecx, esi
+shl     ecx, 1Eh
+sub     ecx, esi
+add     ecx, eax
+mov     eax, dword_A8ED54+0E77D4h
+shl     ecx, 2
+lea     edx, [eax+esi*4]
+push    ecx             ; Size
+lea     eax, [eax+esi*4+4]
+push    edx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 0Ch
+
+loc_77F6B3:                             ; CODE XREF: sub_77F520+169↑j
+mov     ecx, dword_A8ED54+0E77D4h
+lea     ecx, [ecx+esi*4]
+test    ecx, ecx
+jz      short loc_77F6CB
+mov     dword ptr [ecx], 0
+mov     eax, dword_A8ED54+0E77CCh
+
+loc_77F6CB:                             ; CODE XREF: sub_77F520+19E↑j
+inc     eax
+mov     dword_A8ED54+0E77CCh, eax
+mov     al, [esp+10h+var_5]
+test    al, al
+jz      short loc_77F6F9
+call    RequestChannelListWOL
+pop     edi
+pop     esi
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F6E4:                             ; CODE XREF: sub_77F520+5E↑j
+mov     edx, dword_A8ED54+0E4930h
+push    edx             ; hEvent
+call    ds:__imp_SetEvent
+xor     al, al
+pop     edi
+pop     esi
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F6F9:                             ; CODE XREF: sub_77F520+1B7↑j
+pop     edi
+mov     al, 1
+pop     esi
+add     esp, 8
+retn
+*/
 }
 
 // 0x0077F710 (492 bytes)
 char RequestDebug_77F710() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0077F710.json)
-    // Size: 492 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_77F710 ( unsigned __int8 a1, char a2 ) { !char result ! ; // al !HANDLE *v4 ! ; // esi !int v5 ! ; // eax !int v6 ! ; // esi !int v7 ! ; // ebx void *v8 ; // ebp void *v9 ; // eax !int v10 ! ; // ebx void *v11 ; // ebp void *v12 ; // eax _DWORD *v13 ; // ecx !int v15 ! ; // [esp+10h] [ebp-4h] if ( ! g_WOL_RequestState || ( result = RequestChannelListWOL ( ) ) != 0 ) { v4 = & Handles ; do "ResetEvent " ( * v4 ++ ) ; while ( ( int ) v4 < ( int ) g_WOL_RequestObject ) ; Debug::Log ( ) ; if ( ( * ( int (__stdcall **)(LPVOID, int, _DWORD) ) ( * ( _DWORD * ) ppv + 24 ) ) ( ppv , 41 , a1 ) ) { "SetEvent " ( Handles ) ; return 0 ; } else { v5 = g_WOL_RequestState ; v6 = g_WOL_RequestState ; v15 = g_WOL_RequestState ; v7 = g_WOL_RequestToken ; if ( g_WOL_RequestState >= g_WOL_RequestToken ) { v7 = 2 * g_WOL_RequestState ; if ( 2 * g_WOL_RequestState < 10 ) v7 = 10 ; v8 = __2_YAPAXI_Z ( 4 * v7 ) ; memset ( v8 , 0 , 4 * ( ( unsigned int ) ( 4 * v7 ) >> 2 ) ) ; v9 = g_WOL_RequestFlags ; if ( g_WOL_RequestFlags ) { qmemcpy ( v8 , g_WOL_RequestFlags , 4 * g_WOL_RequestState ) ; v9 = g_WOL_RequestFlags ; v6 = v15 ; } __3_YAXPAX_Z ( v9 ) ; v5 = g_WOL_RequestState ; g_WOL_RequestFlags = v8 ; g_WOL_RequestToken = v7 ; } if ( v5 >= v7 ) { v10 = 2 * v5 ; if ( 2 * v5 < 10 ) v10 = 10 ; v11 = __2_YAPAXI_Z ( 4 * v10 ) ; memset ( v11 , 0 , 4 * ( ( unsigned int ) ( 4 * v10 ) >> 2 ) ) ; v12 = g_WOL_RequestFlags ; if ( g_WOL_RequestFlags ) { qmemcpy ( v11 , g_WOL_RequestFlags , 4 * g_WOL_RequestState ) ; v12 = g_WOL_RequestFlags ; v6 = v15 ; } __3_YAXPAX_Z ( v12 ) ; v5 = g_WOL_RequestState ; g_WOL_RequestFlags = v11 ; g_WOL_RequestToken = v10 ; } if ( v6 < v5 ) { memcpy ( ( char * ) g_WOL_RequestFlags + 4 * v6 + 4 , ( char * ) g_WOL_RequestFlags + 4 * v6 , 4 * ( v5 + 0x3FFFFFFF * v6 ) ) ; v5 = g_WOL_RequestState ; } v13 = ( char * ) g_WOL_RequestFlags + 4 * v6 ; if ( v13 ) { * v13 = 41 ; v5 = g_WOL_RequestState ; } g_WOL_RequestState = v5 + 1 ; if ( a2 ) return RequestChannelListWOL ( ) ; else return 1 ; } } return result ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_77F710(unsigned __int8 a1, char a2)
+{
+  char result; // al
+  int *v4; // esi
+  int v5; // eax
+  int v6; // esi
+  int v7; // ebx
+  void *v8; // ebp
+  void *v9; // eax
+  int v10; // ebx
+  void *v11; // ebp
+  void *v12; // eax
+  _DWORD *v13; // ecx
+  int v15; // [esp+10h] [ebp-4h]
+
+  if ( !dword_A8ED54[237043] || (result = RequestChannelListWOL()) != 0 )
+  {
+    v4 = &dword_A8ED54[234060];
+    do
+      ((void (__stdcall *)(_DWORD))ResetEvent)(*v4++);
+    while ( (int)v4 < (int)&dword_A8ED54[234078] );
+    Debug::Log();
+    if ( (*(int (__stdcall **)(int, int, _DWORD))(*(_DWORD *)dword_A8ED54[51462] + 24))(dword_A8ED54[51462], 41, a1) )
+    {
+      ((void (__stdcall *)(int))SetEvent)(dword_A8ED54[234060]);
+      return 0;
+    }
+    else
+    {
+      v5 = dword_A8ED54[237043];
+      v6 = dword_A8ED54[237043];
+      v15 = dword_A8ED54[237043];
+      v7 = dword_A8ED54[237044];
+      if ( dword_A8ED54[237043] >= dword_A8ED54[237044] )
+      {
+        v7 = 2 * dword_A8ED54[237043];
+        if ( 2 * dword_A8ED54[237043] < 10 )
+          v7 = 10;
+        v8 = (void *)__2_YAPAXI_Z(4 * v7);
+        memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2));
+        v9 = (void *)dword_A8ED54[237045];
+        if ( dword_A8ED54[237045] )
+        {
+          qmemcpy(v8, (const void *)dword_A8ED54[237045], 4 * dword_A8ED54[237043]);
+          v9 = (void *)dword_A8ED54[237045];
+          v6 = v15;
+        }
+        __3_YAXPAX_Z(v9);
+        v5 = dword_A8ED54[237043];
+        dword_A8ED54[237045] = (int)v8;
+        dword_A8ED54[237044] = v7;
+      }
+      if ( v5 >= v7 )
+      {
+        v10 = 2 * v5;
+        if ( 2 * v5 < 10 )
+          v10 = 10;
+        v11 = (void *)__2_YAPAXI_Z(4 * v10);
+        memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2));
+        v12 = (void *)dword_A8ED54[237045];
+        if ( dword_A8ED54[237045] )
+        {
+          qmemcpy(v11, (const void *)dword_A8ED54[237045], 4 * dword_A8ED54[237043]);
+          v12 = (void *)dword_A8ED54[237045];
+          v6 = v15;
+        }
+        __3_YAXPAX_Z(v12);
+        v5 = dword_A8ED54[237043];
+        dword_A8ED54[237045] = (int)v11;
+        dword_A8ED54[237044] = v10;
+      }
+      if ( v6 < v5 )
+      {
+        memcpy(
+          (void *)(dword_A8ED54[237045] + 4 * v6 + 4),
+          (const void *)(dword_A8ED54[237045] + 4 * v6),
+          4 * (v5 + 0x3FFFFFFF * v6));
+        v5 = dword_A8ED54[237043];
+      }
+      v13 = (_DWORD *)(dword_A8ED54[237045] + 4 * v6);
+      if ( v13 )
+      {
+        *v13 = 41;
+        v5 = dword_A8ED54[237043];
+      }
+      dword_A8ED54[237043] = v5 + 1;
+      if ( a2 )
+        return RequestChannelListWOL();
+      else
+        return 1;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, dword_A8ED54+0E77CCh
+push    ebx
+push    esi
+push    edi
+test    eax, eax
+mov     [esp+14h+var_5], dl
+mov     ebx, ecx
+jz      short loc_77F735
+call    RequestChannelListWOL
+test    al, al
+jnz     short loc_77F735
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F735:                             ; CODE XREF: sub_77F710+13↑j
+; sub_77F710+1C↑j
+mov     edi, ds:__imp_ResetEvent
+mov     esi, (offset dword_A8ED54+0E4930h)
+
+loc_77F740:                             ; CODE XREF: sub_77F710+3E↓j
+mov     eax, [esi]
+push    eax             ; hEvent
+call    edi ; __imp_ResetEvent
+add     esi, 4
+cmp     esi, (offset dword_A8ED54+0E4978h)
+jl      short loc_77F740
+mov     esi, ebx
+and     esi, 0FFh
+push    esi
+push    29h ; ')'
+push    offset g_Str_Trace_Requesting_channel_list_type____d__ping_ ; "Requesting channel list type = %d, ping"...
+call    Debug__Log
+mov     eax, dword_A8ED54+32418h
+add     esp, 0Ch
+mov     ecx, [eax]
+push    esi
+push    29h ; ')'
+push    eax
+call    dword ptr [ecx+18h]
+test    eax, eax
+jnz     loc_77F8DD
+mov     eax, dword_A8ED54+0E77CCh
+mov     esi, eax
+cmp     esi, eax
+mov     [esp+14h+var_4], esi
+jle     short loc_77F791
+mov     [esp+14h+var_4], eax
+
+loc_77F791:                             ; CODE XREF: sub_77F710+7B↑j
+mov     ebx, dword_A8ED54+0E77D0h
+push    ebp
+cmp     esi, ebx
+jl      short loc_77F80F
+cmp     eax, ebx
+jl      loc_77F87E
+lea     ebx, [eax+eax]
+cmp     ebx, 0Ah
+jge     short loc_77F7B1
+mov     ebx, 0Ah
+
+loc_77F7B1:                             ; CODE XREF: sub_77F710+9A↑j
+lea     edi, ds:0[ebx*4]
+push    edi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, edi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     eax, dword_A8ED54+0E77D4h
+test    eax, eax
+jz      short loc_77F7F5
+mov     ecx, dword_A8ED54+0E77CCh
+mov     esi, eax
+mov     edi, ebp
+rep movsd
+mov     eax, dword_A8ED54+0E77D4h
+mov     esi, [esp+18h+var_4]
+
+loc_77F7F5:                             ; CODE XREF: sub_77F710+CE↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 4
+mov     dword_A8ED54+0E77D4h, ebp
+mov     dword_A8ED54+0E77D0h, ebx
+
+loc_77F80F:                             ; CODE XREF: sub_77F710+8A↑j
+cmp     eax, ebx
+jl      short loc_77F87E
+lea     ebx, [eax+eax]
+cmp     ebx, 0Ah
+jge     short loc_77F820
+mov     ebx, 0Ah
+
+loc_77F820:                             ; CODE XREF: sub_77F710+109↑j
+lea     edi, ds:0[ebx*4]
+push    edi             ; Size
+call    ??2_YAPAXI_Z
+mov     ecx, edi
+mov     ebp, eax
+mov     edx, ecx
+xor     eax, eax
+mov     edi, ebp
+add     esp, 4
+shr     ecx, 2
+rep stosd
+mov     ecx, edx
+and     ecx, 3
+rep stosb
+mov     eax, dword_A8ED54+0E77D4h
+test    eax, eax
+jz      short loc_77F864
+mov     ecx, dword_A8ED54+0E77CCh
+mov     esi, eax
+mov     edi, ebp
+rep movsd
+mov     eax, dword_A8ED54+0E77D4h
+mov     esi, [esp+18h+var_4]
+
+loc_77F864:                             ; CODE XREF: sub_77F710+13D↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 4
+mov     dword_A8ED54+0E77D4h, ebp
+mov     dword_A8ED54+0E77D0h, ebx
+
+loc_77F87E:                             ; CODE XREF: sub_77F710+8E↑j
+; sub_77F710+101↑j
+cmp     esi, eax
+pop     ebp
+jge     short loc_77F8AB
+mov     ecx, esi
+shl     ecx, 1Eh
+sub     ecx, esi
+add     ecx, eax
+mov     eax, dword_A8ED54+0E77D4h
+shl     ecx, 2
+lea     edx, [eax+esi*4]
+push    ecx             ; Size
+lea     eax, [eax+esi*4+4]
+push    edx             ; Src
+push    eax             ; void *
+call    _memcpy
+mov     eax, dword_A8ED54+0E77CCh
+add     esp, 0Ch
+
+loc_77F8AB:                             ; CODE XREF: sub_77F710+171↑j
+mov     ecx, dword_A8ED54+0E77D4h
+lea     ecx, [ecx+esi*4]
+test    ecx, ecx
+jz      short loc_77F8C3
+mov     dword ptr [ecx], 29h ; ')'
+mov     eax, dword_A8ED54+0E77CCh
+
+loc_77F8C3:                             ; CODE XREF: sub_77F710+1A6↑j
+inc     eax
+mov     dword_A8ED54+0E77CCh, eax
+mov     al, [esp+14h+var_5]
+test    al, al
+jz      short loc_77F8F3
+call    RequestChannelListWOL
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F8DD:                             ; CODE XREF: sub_77F710+68↑j
+mov     edx, dword_A8ED54+0E4930h
+push    edx             ; hEvent
+call    ds:__imp_SetEvent
+xor     al, al
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_77F8F3:                             ; CODE XREF: sub_77F710+1BF↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x004B5830 (108 bytes)
 int TechnoClass_SetMember2_4B5830() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B5830.json)
-    // Size: 108 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4B5830 ( _DWORD *this, _DWORD *a2 ) { int v3 ; // eax void *v4 ; // eax !int v5 ! ; // ecx int v6 ; // eax if ( this == a2 ) return this ; ( * ( void (__thiscall **)(_DWORD *) ) ( * this + 12 ) ) ( this ) ; v3 = a2 [ 2 ] ; * ( this + 2 ) = v3 ; if ( ! v3 ) { * ( this + 1 ) = 0 ; * ( ( _BYTE * ) this + 13 ) = 0 ; return this ; } v4 = __2_YAPAXI_Z ( 4 * v3 ) ; * ( this + 1 ) = v4 ; if ( ! v4 ) return this ; v5 = * ( this + 2 ) ; v6 = 0 ; * ( ( _BYTE * ) this + 13 ) = 1 ; if ( v5 <= 0 ) return this ; do { * ( _DWORD * ) ( * ( this + 1 ) + 4 * v6 ) = * ( _DWORD * ) ( a2 [ 1 ] + 4 * v6 ) ; ++ v6 ; } while ( v6 < * ( this + 2 ) ) ; return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
+{
+  int v3; // eax
+  int v4; // eax
+  int v5; // ecx
+  int v6; // eax
+
+  if ( this == a2 )
+    return this;
+  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this);
+  v3 = a2[2];
+  *(this + 2) = v3;
+  if ( !v3 )
+  {
+    *(this + 1) = 0;
+    *((_BYTE *)this + 13) = 0;
+    return this;
+  }
+  v4 = __2_YAPAXI_Z(4 * v3);
+  *(this + 1) = v4;
+  if ( !v4 )
+    return this;
+  v5 = *(this + 2);
+  v6 = 0;
+  *((_BYTE *)this + 13) = 1;
+  if ( v5 <= 0 )
+    return this;
+  do
+  {
+    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6);
+    ++v6;
+  }
+  while ( v6 < *(this + 2) );
+  return this;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+cmp     esi, edi
+jz      short loc_4B5895
+mov     eax, [esi]
+call    dword ptr [eax+0Ch]
+mov     eax, [edi+8]
+test    eax, eax
+mov     [esi+8], eax
+jz      short loc_4B588A
+lea     ecx, ds:0[eax*4]
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esi+4], eax
+test    eax, eax
+jz      short loc_4B5895
+mov     ecx, [esi+8]
+xor     eax, eax
+test    ecx, ecx
+mov     byte ptr [esi+0Dh], 1
+jle     short loc_4B5895
+
+loc_4B586F:                             ; CODE XREF: sub_4B5830+51↓j
+mov     edx, [edi+4]
+mov     ecx, [esi+4]
+mov     edx, [edx+eax*4]
+mov     [ecx+eax*4], edx
+mov     ecx, [esi+8]
+inc     eax
+cmp     eax, ecx
+jl      short loc_4B586F
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4B588A:                             ; CODE XREF: sub_4B5830+19↑j
+mov     dword ptr [esi+4], 0
+mov     byte ptr [esi+0Dh], 0
+
+loc_4B5895:                             ; CODE XREF: sub_4B5830+A↑j
+; sub_4B5830+30↑j ...
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x00452000 (357 bytes)
 int Techno_Start_452000() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00452000.json)
-    // Size: 357 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __fastcall sub_452000 ( _DWORD *a1 ) { !int v2 ! ; // eax !int v3 ! ; // edi _DWORD *v4 ; // eax _DWORD *v5 ; // eax int v6 ; // ecx int v7 ; // ebx _DWORD *v8 ; // ecx !int v9 ! ; // ebp !bool v10 ! ; // zf int v11 ; // ebx !int *v12 ! ; // ecx !int v13 ! ; // esi int result ; // eax _DWORD *v15 ; // [esp+10h] [ebp-10h] !int v16 ! ; // [esp+14h] [ebp-Ch] !int v17 ! ; // [esp+18h] [ebp-8h] v17 = ( * ( int (__thiscall **)(_DWORD *) ) ( * a1 + 484 ) ) ( a1 ) ; v2 = ( * ( int (__thiscall **)(_DWORD *) ) ( * a1 + 444 ) ) ( a1 ) ; v3 = ( * ( int (__thiscall **)(_DWORD *, _DWORD) ) ( * a1 + 1124 ) ) ( a1 , * ( __int16 * ) ( v2 + 266 ) ) ; if ( ( * ( unsigned __int8 (__thiscall **)(_DWORD *) ) ( * a1 + 352 ) ) ( a1 ) || a1 [ 165 ] && ( a1 ? ( v4 = ( * ( int (__thiscall **)(_DWORD *) ) ( * a1 + 44 ) ) ( a1 ) == 6 ? a1 : 0 ) : ( v4 = 0 ) , * ( _DWORD ** ) ( a1 [ 165 ] + 80 ) == v4 ) ) { LOWORD ( v3 ) = Techno::StartInvulnerability ( v3 ) ; } * ( ( _WORD * ) a1 + 896 ) = v3 ; v15 = a1 + 343 ; v16 = 21 ; do { v5 = ( _DWORD * ) * v15 ; if ( * v15 ) { v6 = v5 [ 50 ] ; if ( v6 && * ( _BYTE * ) ( v6 + 860 ) ) { v5 [ 53 ] = v17 ; v5 [ 63 ] = ( unsigned __int16 ) v3 ; } v7 = * ( ( char * ) a1 + 1773 ) ; if ( v7 == 15 && ( * ( int (__thiscall **)(_DWORD *, _DWORD, _DWORD) ) ( * a1 + 104 ) ) ( a1 , 0 , 0 ) == 5 ) LOBYTE ( v7 ) = 16 ; v8 = a1 + 343 ; v9 = 21 ; do { if ( * v8 ) * ( _BYTE * ) ( * v8 + 376 ) = v7 ; ++ v8 ; -- v9 ; } while ( v9 ) ; } v10 = v16 == 1 ; ++ v15 ; -- v16 ; } while ( ! v10 ) ; v11 = * ( ( char * ) a1 + 1773 ) ; if ( v11 == 15 && ( * ( int (__thiscall **)(_DWORD *, _DWORD, _DWORD) ) ( * a1 + 104 ) ) ( a1 , 0 , 0 ) == 5 ) LOBYTE ( v11 ) = 16 ; v12 = a1 + 343 ; v13 = 21 ; do { result = * v12 ; if ( * v12 ) * ( _BYTE * ) ( result + 376 ) = v11 ; ++ v12 ; -- v13 ; } while ( v13 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_452000(_DWORD *a1)
+{
+  int v2; // eax
+  int v3; // edi
+  _DWORD *v4; // eax
+  _DWORD *v5; // eax
+  int v6; // ecx
+  int v7; // ebx
+  _DWORD *v8; // ecx
+  int v9; // ebp
+  bool v10; // zf
+  int v11; // ebx
+  int *v12; // ecx
+  int v13; // esi
+  int result; // eax
+  _DWORD *v15; // [esp+10h] [ebp-10h]
+  int v16; // [esp+14h] [ebp-Ch]
+  int v17; // [esp+18h] [ebp-8h]
+
+  v17 = (*(int (__thiscall **)(_DWORD *))(*a1 + 484))(a1);
+  v2 = (*(int (__thiscall **)(_DWORD *))(*a1 + 444))(a1);
+  v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*a1 + 1124))(a1, *(__int16 *)(v2 + 266));
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1)
+    || a1[165]
+    && (a1 ? (v4 = (*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
+        *(_DWORD **)(a1[165] + 80) == v4) )
+  {
+    LOWORD(v3) = Techno::StartInvulnerability(v3);
+  }
+  *((_WORD *)a1 + 896) = v3;
+  v15 = a1 + 343;
+  v16 = 21;
+  do
+  {
+    v5 = (_DWORD *)*v15;
+    if ( *v15 )
+    {
+      v6 = v5[50];
+      if ( v6 && *(_BYTE *)(v6 + 860) )
+      {
+        v5[53] = v17;
+        v5[63] = (unsigned __int16)v3;
+      }
+      v7 = *((char *)a1 + 1773);
+      if ( v7 == 15 && (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*a1 + 104))(a1, 0, 0) == 5 )
+        LOBYTE(v7) = 16;
+      v8 = a1 + 343;
+      v9 = 21;
+      do
+      {
+        if ( *v8 )
+          *(_BYTE *)(*v8 + 376) = v7;
+        ++v8;
+        --v9;
+      }
+      while ( v9 );
+    }
+    v10 = v16 == 1;
+    ++v15;
+    --v16;
+  }
+  while ( !v10 );
+  v11 = *((char *)a1 + 1773);
+  if ( v11 == 15 && (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*a1 + 104))(a1, 0, 0) == 5 )
+    LOBYTE(v11) = 16;
+  v12 = a1 + 343;
+  v13 = 21;
+  do
+  {
+    result = *v12;
+    if ( *v12 )
+      *(_BYTE *)(result + 376) = v11;
+    ++v12;
+    --v13;
+  }
+  while ( v13 );
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi]
+call    dword ptr [eax+1E4h]
+mov     edx, [esi]
+mov     ecx, esi
+mov     [esp+20h+var_8], eax
+call    dword ptr [edx+1BCh]
+movsx   eax, word ptr [eax+10Ah]
+mov     edx, [esi]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+464h]
+mov     edi, eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+160h]
+test    al, al
+jnz     short loc_452070
+mov     eax, [esi+294h]
+test    eax, eax
+jz      short loc_45207A
+test    esi, esi
+jnz     short loc_452053
+xor     eax, eax
+jmp     short loc_452065
+; ---------------------------------------------------------------------------
+
+loc_452053:                             ; CODE XREF: sub_452000+4D↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+2Ch]
+sub     eax, 6
+neg     eax
+sbb     eax, eax
+not     eax
+and     eax, esi
+
+loc_452065:                             ; CODE XREF: sub_452000+51↑j
+mov     ecx, [esi+294h]
+cmp     [ecx+50h], eax
+jnz     short loc_45207A
+
+loc_452070:                             ; CODE XREF: sub_452000+3F↑j
+push    edi
+mov     ecx, esi
+call    Techno__StartInvulnerability
+mov     edi, eax
+
+loc_45207A:                             ; CODE XREF: sub_452000+49↑j
+; sub_452000+6E↑j
+mov     [esi+700h], di
+and     edi, 0FFFFh
+mov     [esp+20h+var_4], edi
+lea     edi, [esi+55Ch]
+mov     [esp+20h+var_10], edi
+mov     [esp+20h+var_C], 15h
+
+loc_45209D:                             ; CODE XREF: sub_452000+11D↓j
+mov     edx, [esp+20h+var_10]
+mov     eax, [edx]
+test    eax, eax
+jz      short loc_452109
+mov     ecx, [eax+0C8h]
+test    ecx, ecx
+jz      short loc_4520CF
+mov     dl, [ecx+35Ch]
+test    dl, dl
+jz      short loc_4520CF
+mov     ecx, [esp+20h+var_8]
+mov     edx, [esp+20h+var_4]
+mov     [eax+0D4h], ecx
+mov     [eax+0FCh], edx
+
+loc_4520CF:                             ; CODE XREF: sub_452000+AF↑j
+; sub_452000+B9↑j
+movsx   ebx, byte ptr [esi+6EDh]
+cmp     ebx, 0Fh
+jnz     short loc_4520F0
+mov     eax, [esi]
+push    0
+push    0
+mov     ecx, esi
+call    dword ptr [eax+68h]
+cmp     eax, 5
+jnz     short loc_4520F0
+mov     ebx, 10h
+
+loc_4520F0:                             ; CODE XREF: sub_452000+D9↑j
+; sub_452000+E9↑j
+mov     ecx, edi
+mov     ebp, 15h
+
+loc_4520F7:                             ; CODE XREF: sub_452000+107↓j
+mov     eax, [ecx]
+test    eax, eax
+jz      short loc_452103
+mov     [eax+178h], bl
+
+loc_452103:                             ; CODE XREF: sub_452000+FB↑j
+add     ecx, 4
+dec     ebp
+jnz     short loc_4520F7
+
+loc_452109:                             ; CODE XREF: sub_452000+A5↑j
+mov     ecx, [esp+20h+var_10]
+mov     eax, [esp+20h+var_C]
+add     ecx, 4
+dec     eax
+mov     [esp+20h+var_10], ecx
+mov     [esp+20h+var_C], eax
+jnz     loc_45209D
+movsx   ebx, byte ptr [esi+6EDh]
+cmp     ebx, 0Fh
+jnz     short loc_452144
+mov     edx, [esi]
+push    0
+push    0
+mov     ecx, esi
+call    dword ptr [edx+68h]
+cmp     eax, 5
+jnz     short loc_452144
+mov     ebx, 10h
+
+loc_452144:                             ; CODE XREF: sub_452000+12D↑j
+; sub_452000+13D↑j
+mov     ecx, edi
+mov     esi, 15h
+
+loc_45214B:                             ; CODE XREF: sub_452000+15B↓j
+mov     eax, [ecx]
+test    eax, eax
+jz      short loc_452157
+mov     [eax+178h], bl
+
+loc_452157:                             ; CODE XREF: sub_452000+14F↑j
+add     ecx, 4
+dec     esi
+jnz     short loc_45214B
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn
+*/
 }
 
 } // namespace gamemd

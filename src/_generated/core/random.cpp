@@ -8,92 +8,1344 @@ namespace gamemd {
 
 // 0x005A5AE0 (107 bytes)
 double RandomProcess_5A5AE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A5AE0.json)
-    // Size: 107 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   double __stdcall sub_5A5AE0 ( __int16 *a1, __int16 *a2 ) { !signed int v2 ! ; // ecx __int64 v3 ; // rax !int v5 ! ; // [esp+10h] [ebp+4h] v2 = abs32 ( a1 [ 1 ] - a2 [ 1 ] ) ; v3 = * a1 - * a2 ; v5 = ( HIDWORD ( v3 ) ^ v3 ) - HIDWORD ( v3 ) ; if ( v5 <= v2 ) v5 = v2 ; return ( double ) ( unsigned int ) Random::State ( & g_Randomizer ) * 3.0 * 2.328306437080797e-10 + ( double ) v5 ; }
-    return 0.0;
+// [IDA decompile]
+double __stdcall sub_5A5AE0(__int16 *a1, __int16 *a2)
+{
+  signed int v2; // ecx
+  __int64 v3; // rax
+  int v5; // [esp+10h] [ebp+4h]
+
+  v2 = abs32(a1[1] - a2[1]);
+  v3 = *a1 - *a2;
+  v5 = (HIDWORD(v3) ^ v3) - HIDWORD(v3);
+  if ( v5 <= v2 )
+    v5 = v2;
+  return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 3.0 * 2.328306437080797e-10 + (double)v5;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [esp+8+arg_0]
+mov     ecx, [esp+8+arg_4]
+push    esi
+movsx   esi, word ptr [eax]
+movsx   edx, word ptr [ecx]
+movsx   eax, word ptr [eax+2]
+movsx   ecx, word ptr [ecx+2]
+sub     eax, ecx
+sub     esi, edx
+cdq
+mov     ecx, eax
+mov     eax, esi
+xor     ecx, edx
+pop     esi
+sub     ecx, edx
+cdq
+xor     eax, edx
+sub     eax, edx
+cmp     eax, ecx
+mov     [esp+8+arg_0], eax
+jg      short loc_5A5B19
+mov     [esp+8+arg_0], ecx
+
+loc_5A5B19:                             ; CODE XREF: sub_5A5AE0+33↑j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+8+var_8], eax
+mov     dword ptr [esp+8+var_8+4], 0
+fild    [esp+8+var_8]
+fmul    ds:dbl_7ED818
+fmul    ds:dbl_7ED898
+fild    [esp+8+arg_0]
+faddp   st(1), st
+add     esp, 8
+retn    8
+*/
 }
 
 // 0x0069B690 (111 bytes)
 int Random_Rang_69B690() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0069B690.json)
-    // Size: 111 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_69B690 ( _DWORD *this ) { !int result ! ; // eax !int v3 ! ; // edi !int v4 ! ; // edx int *v5 ; // esi int v6 ; // ecx !int v7 ! ; // ecx int v8 ; // ecx _DWORD *i ; // edx while ( 1 ) { result = Random::Range ( ( _DWORD * ) ScenarioClass_Instance + 134 , 0 , 7 ) ; if ( result == -2 ) return result ; v3 = * ( this + 2579 ) ; v4 = 0 ; if ( v3 <= 0 ) { LABEL_10 : v8 = 0 ; for ( i = this + 33 ; * i != result ; ++ i ) { if ( ++ v8 >= 8 ) return result ; } } else { v5 = ( int * ) * ( this + 2576 ) ; while ( 1 ) { v6 = * v5 ; if ( * ( _DWORD * ) ( * v5 + 87 ) == -2 && * ( _DWORD * ) ( v6 + 83 ) == -1 ) v7 = -2 ; else v7 = * ( _DWORD * ) ( v6 + 83 ) ; if ( v7 == result ) break ; ++ v4 ; ++ v5 ; if ( v4 >= v3 ) goto LABEL_10 ; } } } }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_69B690(_DWORD *this)
+{
+  int result; // eax
+  int v3; // edi
+  int v4; // edx
+  int *v5; // esi
+  int v6; // ecx
+  int v7; // ecx
+  int v8; // ecx
+  _DWORD *i; // edx
+
+  while ( 1 )
+  {
+    result = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7);
+    if ( result == -2 )
+      return result;
+    v3 = *(this + 2579);
+    v4 = 0;
+    if ( v3 <= 0 )
+    {
+LABEL_10:
+      v8 = 0;
+      for ( i = this + 33; *i != result; ++i )
+      {
+        if ( ++v8 >= 8 )
+          return result;
+      }
+    }
+    else
+    {
+      v5 = (int *)*(this + 2576);
+      while ( 1 )
+      {
+        v6 = *v5;
+        if ( *(_DWORD *)(*v5 + 87) == -2 && *(_DWORD *)(v6 + 83) == -1 )
+          v7 = -2;
+        else
+          v7 = *(_DWORD *)(v6 + 83);
+        if ( v7 == result )
+          break;
+        ++v4;
+        ++v5;
+        if ( v4 >= v3 )
+          goto LABEL_10;
+      }
+    }
+  }
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+mov     ebp, 0FFFFFFFEh
+
+loc_69B69B:                             ; CODE XREF: sub_69B690+4B↓j
+; sub_69B690+5F↓j
+mov     eax, ds:0A8B230h
+push    7
+push    0
+lea     ecx, [eax+218h]
+call    Random__Range
+cmp     eax, ebp
+jz      short loc_69B6FA
+mov     edi, [ebx+284Ch]
+xor     edx, edx
+test    edi, edi
+jle     short loc_69B6E5
+mov     esi, [ebx+2840h]
+
+loc_69B6C5:                             ; CODE XREF: sub_69B690+53↓j
+mov     ecx, [esi]
+cmp     [ecx+57h], ebp
+jnz     short loc_69B6D6
+cmp     dword ptr [ecx+53h], 0FFFFFFFFh
+jnz     short loc_69B6D6
+mov     ecx, ebp
+jmp     short loc_69B6D9
+; ---------------------------------------------------------------------------
+
+loc_69B6D6:                             ; CODE XREF: sub_69B690+3A↑j
+; sub_69B690+40↑j
+mov     ecx, [ecx+53h]
+
+loc_69B6D9:                             ; CODE XREF: sub_69B690+44↑j
+cmp     ecx, eax
+jz      short loc_69B69B
+inc     edx
+add     esi, 4
+cmp     edx, edi
+jl      short loc_69B6C5
+
+loc_69B6E5:                             ; CODE XREF: sub_69B690+2D↑j
+xor     ecx, ecx
+lea     edx, [ebx+84h]
+
+loc_69B6ED:                             ; CODE XREF: sub_69B690+68↓j
+cmp     [edx], eax
+jz      short loc_69B69B
+inc     ecx
+add     edx, 4
+cmp     ecx, 8
+jl      short loc_69B6ED
+
+loc_69B6FA:                             ; CODE XREF: sub_69B690+21↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x00404BB0 (456 bytes)
 int Random_Range_404BB0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00404BB0.json)
-    // Size: 456 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_404BB0 ( int this ) { _DWORD *v2 ; // edi int v3 ; // eax char v4 ; // bl !int v5 ! ; // ebp !int v6 ! ; // eax int v7 ; // eax int v9 ; // eax int v10 ; // eax !int v11 ! ; // eax !int *v12 ! ; // ecx !int v13 ! ; // eax int v14 ; // eax !int v15 ! ; // ecx !int v16 ! ; // eax int v17 ; // edi !int v18 ! ; // ecx _DWORD *v19 ; // eax int v20 ; // eax int v21 ; // edi v2 = * ( _DWORD ** ) ( this + 36 ) ; v3 = v2 [ 4 ] ; v4 = v3 ; if ( * ( _DWORD * ) ( this + 616 ) == * ( _DWORD * ) ( this + 624 ) ) { v5 = 0 ; v6 = v3 & 1 ; if ( ! v6 && * ( _DWORD * ) ( this + 620 ) == 1 ) return -1 ; if ( v6 ) { v7 = v2 [ 19 ] ; if ( v7 ) { if ( * ( _DWORD * ) ( this + 620 ) >= v7 ) return -1 ; } } v9 = v2 [ 78 ] ; if ( v9 && ( * ( _BYTE * ) ( this + 24 ) & 8 ) == 0 ) { * ( _DWORD * ) ( this + 488 ) = Random::Range ( Randomizer_Global , 0 , v9 - 1 ) ; v5 = 1 ; } v10 = v2 [ 4 ] ; if ( ( v10 & 4 ) != 0 ) { v11 = v2 [ 78 ] ; if ( v11 < v2 [ 77 ] - v2 [ 79 ] ) { v12 = ( int * ) ( this + 4 * v5 + 488 ) ; do { * v12 = v11 ; ++ v5 ; ++ v12 ; ++ v11 ; } while ( v11 < v2 [ 77 ] - v2 [ 79 ] ) ; } } else { if ( ( v10 & 2 ) != 0 ) { if ( * ( _DWORD * ) ( this + 620 ) ) { v13 = * ( _DWORD * ) ( this + 628 ) ; } else { v13 = Random::Range ( Randomizer_Global , v2 [ 78 ] , v2 [ 77 ] - v2 [ 79 ] - 1 ) ; * ( _DWORD * ) ( this + 628 ) = v13 ; } } else { v13 = v2 [ 78 ] ; } * ( _DWORD * ) ( this + 4 * v5 ++ + 488 ) = v13 ; } v14 = * ( _DWORD * ) ( this + 620 ) ; * ( _DWORD * ) ( this + 616 ) = v5 ; * ( _DWORD * ) ( this + 624 ) = 0 ; * ( _DWORD * ) ( this + 620 ) = v14 + 1 ; } if ( ( v4 & 2 ) == 0 ) goto LABEL_34 ; if ( ! v2 [ 78 ] ) { LABEL_29 : v15 = 0 ; goto LABEL_30 ; } if ( ( * ( _BYTE * ) ( this + 24 ) & 8 ) == 0 && * ( int * ) ( this + 624 ) <= 0 ) { LABEL_34 : v20 = * ( _DWORD * ) ( this + 624 ) ; v21 = * ( _DWORD * ) ( this + 4 * v20 + 488 ) ; * ( _DWORD * ) ( this + 624 ) = v20 + 1 ; return v21 ; } if ( ( * ( _BYTE * ) ( this + 24 ) & 8 ) != 0 ) goto LABEL_29 ; v15 = 1 ; LABEL_30 : v16 = Random::Range ( Randomizer_Global , v15 , * ( _DWORD * ) ( this + 616 ) - 1 ) ; v17 = * ( _DWORD * ) ( this + 4 * v16 + 488 ) ; v18 = v16 ; if ( v16 < * ( _DWORD * ) ( this + 616 ) - 1 ) { v19 = ( _DWORD * ) ( this + 4 * v16 + 488 ) ; do { ++ v18 ; * v19 = v19 [ 1 ] ; ++ v19 ; } while ( v18 < * ( _DWORD * ) ( this + 616 ) - 1 ) ; } -- * ( _DWORD * ) ( this + 616 ) ; return v17 ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_404BB0(int this)
+{
+  _DWORD *v2; // edi
+  int v3; // eax
+  char v4; // bl
+  int v5; // ebp
+  int v6; // eax
+  int v7; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  int *v12; // ecx
+  int v13; // eax
+  int v14; // eax
+  int v15; // ecx
+  int v16; // eax
+  int v17; // edi
+  int v18; // ecx
+  _DWORD *v19; // eax
+  int v20; // eax
+  int v21; // edi
+
+  v2 = *(_DWORD **)(this + 36);
+  v3 = v2[4];
+  v4 = v3;
+  if ( *(_DWORD *)(this + 616) == *(_DWORD *)(this + 624) )
+  {
+    v5 = 0;
+    v6 = v3 & 1;
+    if ( !v6 && *(_DWORD *)(this + 620) == 1 )
+      return -1;
+    if ( v6 )
+    {
+      v7 = v2[19];
+      if ( v7 )
+      {
+        if ( *(_DWORD *)(this + 620) >= v7 )
+          return -1;
+      }
+    }
+    v9 = v2[78];
+    if ( v9 && (*(_BYTE *)(this + 24) & 8) == 0 )
+    {
+      *(_DWORD *)(this + 488) = Random::Range(MEMORY[0x886B88], 0, v9 - 1);
+      v5 = 1;
+    }
+    v10 = v2[4];
+    if ( (v10 & 4) != 0 )
+    {
+      v11 = v2[78];
+      if ( v11 < v2[77] - v2[79] )
+      {
+        v12 = (int *)(this + 4 * v5 + 488);
+        do
+        {
+          *v12 = v11;
+          ++v5;
+          ++v12;
+          ++v11;
+        }
+        while ( v11 < v2[77] - v2[79] );
+      }
+    }
+    else
+    {
+      if ( (v10 & 2) != 0 )
+      {
+        if ( *(_DWORD *)(this + 620) )
+        {
+          v13 = *(_DWORD *)(this + 628);
+        }
+        else
+        {
+          v13 = Random::Range(MEMORY[0x886B88], v2[78], v2[77] - v2[79] - 1);
+          *(_DWORD *)(this + 628) = v13;
+        }
+      }
+      else
+      {
+        v13 = v2[78];
+      }
+      *(_DWORD *)(this + 4 * v5++ + 488) = v13;
+    }
+    v14 = *(_DWORD *)(this + 620);
+    *(_DWORD *)(this + 616) = v5;
+    *(_DWORD *)(this + 624) = 0;
+    *(_DWORD *)(this + 620) = v14 + 1;
+  }
+  if ( (v4 & 2) == 0 )
+    goto LABEL_34;
+  if ( !v2[78] )
+  {
+LABEL_29:
+    v15 = 0;
+    goto LABEL_30;
+  }
+  if ( (*(_BYTE *)(this + 24) & 8) == 0 && *(int *)(this + 624) <= 0 )
+  {
+LABEL_34:
+    v20 = *(_DWORD *)(this + 624);
+    v21 = *(_DWORD *)(this + 4 * v20 + 488);
+    *(_DWORD *)(this + 624) = v20 + 1;
+    return v21;
+  }
+  if ( (*(_BYTE *)(this + 24) & 8) != 0 )
+    goto LABEL_29;
+  v15 = 1;
+LABEL_30:
+  v16 = Random::Range(MEMORY[0x886B88], v15, *(_DWORD *)(this + 616) - 1);
+  v17 = *(_DWORD *)(this + 4 * v16 + 488);
+  v18 = v16;
+  if ( v16 < *(_DWORD *)(this + 616) - 1 )
+  {
+    v19 = (_DWORD *)(this + 4 * v16 + 488);
+    do
+    {
+      ++v18;
+      *v19 = v19[1];
+      ++v19;
+    }
+    while ( v18 < *(_DWORD *)(this + 616) - 1 );
+  }
+  --*(_DWORD *)(this + 616);
+  return v17;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esi+24h]
+mov     ecx, [esi+268h]
+mov     edx, [esi+270h]
+mov     eax, [edi+10h]
+cmp     ecx, edx
+mov     ebx, eax
+jnz     loc_404CCF
+xor     ebp, ebp
+and     eax, 1
+jnz     short loc_404BE2
+cmp     dword ptr [esi+26Ch], 1
+jz      short loc_404BF5
+
+loc_404BE2:                             ; CODE XREF: sub_404BB0+27↑j
+test    eax, eax
+jz      short loc_404BFD
+mov     eax, [edi+4Ch]
+test    eax, eax
+jz      short loc_404BFD
+cmp     [esi+26Ch], eax
+jl      short loc_404BFD
+
+loc_404BF5:                             ; CODE XREF: sub_404BB0+30↑j
+pop     edi
+pop     esi
+pop     ebp
+or      eax, 0FFFFFFFFh
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_404BFD:                             ; CODE XREF: sub_404BB0+34↑j
+; sub_404BB0+3B↑j ...
+mov     eax, [edi+138h]
+test    eax, eax
+jz      short loc_404C26
+test    byte ptr [esi+18h], 8
+jnz     short loc_404C26
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+mov     [esi+1E8h], eax
+mov     ebp, 1
+
+loc_404C26:                             ; CODE XREF: sub_404BB0+55↑j
+; sub_404BB0+5B↑j
+mov     eax, [edi+10h]
+test    al, 4
+jz      short loc_404C65
+mov     edx, [edi+134h]
+mov     ecx, [edi+13Ch]
+mov     eax, [edi+138h]
+sub     edx, ecx
+cmp     eax, edx
+jge     short loc_404CB2
+lea     ecx, [esi+ebp*4+1E8h]
+
+loc_404C4C:                             ; CODE XREF: sub_404BB0+B1↓j
+mov     [ecx], eax
+mov     edx, [edi+134h]
+sub     edx, [edi+13Ch]
+inc     ebp
+add     ecx, 4
+inc     eax
+cmp     eax, edx
+jl      short loc_404C4C
+jmp     short loc_404CB2
+; ---------------------------------------------------------------------------
+
+loc_404C65:                             ; CODE XREF: sub_404BB0+7B↑j
+test    al, 2
+jz      short loc_404CA4
+mov     eax, [esi+26Ch]
+test    eax, eax
+jnz     short loc_404C9C
+mov     eax, [edi+134h]
+mov     edx, [edi+13Ch]
+mov     ecx, [edi+138h]
+sub     eax, edx
+dec     eax
+push    eax
+push    ecx
+mov     ecx, 886B88h
+call    Random__Range
+mov     [esi+274h], eax
+jmp     short loc_404CAA
+; ---------------------------------------------------------------------------
+
+loc_404C9C:                             ; CODE XREF: sub_404BB0+C1↑j
+mov     eax, [esi+274h]
+jmp     short loc_404CAA
+; ---------------------------------------------------------------------------
+
+loc_404CA4:                             ; CODE XREF: sub_404BB0+B7↑j
+mov     eax, [edi+138h]
+
+loc_404CAA:                             ; CODE XREF: sub_404BB0+EA↑j
+; sub_404BB0+F2↑j
+mov     [esi+ebp*4+1E8h], eax
+inc     ebp
+
+loc_404CB2:                             ; CODE XREF: sub_404BB0+93↑j
+; sub_404BB0+B3↑j
+mov     eax, [esi+26Ch]
+mov     [esi+268h], ebp
+inc     eax
+mov     dword ptr [esi+270h], 0
+mov     [esi+26Ch], eax
+
+loc_404CCF:                             ; CODE XREF: sub_404BB0+1C↑j
+test    bl, 2
+jz      loc_404D5D
+mov     edi, [edi+138h]
+test    edi, edi
+jz      short loc_404D03
+test    byte ptr [esi+18h], 8
+jnz     short loc_404CF2
+mov     eax, [esi+270h]
+test    eax, eax
+jle     short loc_404D5D
+
+loc_404CF2:                             ; CODE XREF: sub_404BB0+136↑j
+test    edi, edi
+jz      short loc_404D03
+test    byte ptr [esi+18h], 8
+jnz     short loc_404D03
+mov     ecx, 1
+jmp     short loc_404D05
+; ---------------------------------------------------------------------------
+
+loc_404D03:                             ; CODE XREF: sub_404BB0+130↑j
+; sub_404BB0+144↑j ...
+xor     ecx, ecx
+
+loc_404D05:                             ; CODE XREF: sub_404BB0+151↑j
+mov     eax, [esi+268h]
+dec     eax
+push    eax
+push    ecx
+mov     ecx, 886B88h
+call    Random__Range
+mov     ebx, [esi+268h]
+mov     edi, [esi+eax*4+1E8h]
+lea     edx, [esi+eax*4+1E8h]
+dec     ebx
+cmp     eax, ebx
+mov     ecx, eax
+jge     short loc_404D49
+mov     eax, edx
+
+loc_404D35:                             ; CODE XREF: sub_404BB0+197↓j
+mov     edx, [eax+4]
+inc     ecx
+mov     [eax], edx
+mov     edx, [esi+268h]
+add     eax, 4
+dec     edx
+cmp     ecx, edx
+jl      short loc_404D35
+
+loc_404D49:                             ; CODE XREF: sub_404BB0+181↑j
+mov     eax, [esi+268h]
+dec     eax
+mov     [esi+268h], eax
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_404D5D:                             ; CODE XREF: sub_404BB0+122↑j
+; sub_404BB0+140↑j
+mov     eax, [esi+270h]
+mov     edi, [esi+eax*4+1E8h]
+inc     eax
+mov     [esi+270h], eax
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x0058C320 (142 bytes)
 int Random_Stat_58C320() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058C320.json)
-    // Size: 142 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_58C320 ( _DWORD *this, _DWORD *a2 ) { !int v2 ! ; // ebx !unsigned int v4 ! ; // eax char *v5 ; // ecx int v6 ; // ecx !__int64 v8 ! ; // [esp+18h] [ebp-10h] v2 = g_MapCellWidth * g_MapCellWidth ; do { do { v8 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v4 = Math::RoundToInt ( ( double ) v8 * ( double ) ( unsigned int ) v2 * 2.328306437080797e-10 ) ; } while ( v4 > v2 - 1 ) ; v5 = ( char * ) g_MapTileArray + 80 * v4 ; } while ( * ( ( _DWORD * ) v5 + 14 ) != * ( this + 2 ) || ! * ( _WORD * ) v5 && ! * ( ( _WORD * ) v5 + 1 ) ) ; v6 = * ( ( _DWORD * ) g_MapTileArray + 20 * v4 ) ; * a2 = v6 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
+{
+  int v2; // ebx
+  unsigned int v4; // eax
+  char *v5; // ecx
+  int v6; // ecx
+  __int64 v8; // [esp+18h] [ebp-10h]
+
+  v2 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+  do
+  {
+    do
+    {
+      v8 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+      v4 = Math::RoundToInt((double)v8 * (double)(unsigned int)v2 * 2.328306437080797e-10);
+    }
+    while ( v4 > v2 - 1 );
+    v5 = (char *)MEMORY[0xABED10] + 80 * v4;
+  }
+  while ( *((_DWORD *)v5 + 14) != *(this + 2) || !*(_WORD *)v5 && !*((_WORD *)v5 + 1) );
+  v6 = *((_DWORD *)MEMORY[0xABED10] + 20 * v4);
+  *a2 = v6;
+  return a2;
+}
+
+/* ASM:
+mov     eax, ds:89C2DCh
+sub     esp, 18h
+push    ebx
+push    ebp
+mov     ebx, eax
+push    esi
+push    edi
+imul    ebx, eax
+mov     ebp, ecx
+xor     edi, edi
+
+loc_58C335:                             ; CODE XREF: sub_58C320+68↓j
+; sub_58C320+73↓j
+lea     esi, [ebx-1]
+mov     dword ptr [esp+28h+var_18+4], edi
+lea     eax, [esi+1]
+mov     dword ptr [esp+28h+var_18], eax
+fild    [esp+28h+var_18]
+fstp    [esp+28h+var_8]
+
+loc_58C34B:                             ; CODE XREF: sub_58C320+52↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+28h+var_10], eax
+mov     dword ptr [esp+28h+var_10+4], edi
+fild    [esp+28h+var_10]
+fmul    [esp+28h+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58C34B
+mov     edx, dword_A8ED54+2FFBCh
+lea     ecx, [eax+eax*4]
+shl     ecx, 4
+add     ecx, edx
+mov     esi, [ecx+38h]
+cmp     esi, [ebp+8]
+jnz     short loc_58C335
+cmp     [ecx], di
+jnz     short loc_58C395
+cmp     [ecx+2], di
+jz      short loc_58C335
+
+loc_58C395:                             ; CODE XREF: sub_58C320+6D↑j
+lea     eax, [eax+eax*4]
+pop     edi
+shl     eax, 4
+pop     esi
+pop     ebp
+mov     ecx, [eax+edx]
+mov     eax, [esp+1Ch+arg_0]
+pop     ebx
+mov     [eax], ecx
+add     esp, 18h
+retn    4
+*/
 }
 
 // 0x0058BE20 (126 bytes)
 int Random_State_58BE20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058BE20.json)
-    // Size: 126 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_58BE20 ( _DWORD *this ) { !unsigned int v2 ! ; // esi !unsigned int v3 ! ; // eax _WORD *v4 ; // ecx !int v5 ! ; // ecx !__int64 v7 ! ; // [esp+14h] [ebp-10h] v2 = g_MapCellWidth * g_MapCellWidth - 1 ; do { do { v7 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v3 = Math::RoundToInt ( ( double ) v7 * ( double ) ( v2 + 1 ) * 2.328306437080797e-10 ) ; } while ( v3 > v2 ) ; v4 = ( char * ) g_MapTileArray + 80 * v3 ; } while ( ! * v4 && ! v4 [ 1 ] ) ; v5 = 80 * v3 ; * this = * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 ) ; return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_58BE20(_DWORD *this)
+{
+  unsigned int v2; // esi
+  unsigned int v3; // eax
+  _WORD *v4; // ecx
+  int v5; // ecx
+  __int64 v7; // [esp+14h] [ebp-10h]
+
+  v2 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC] - 1;
+  do
+  {
+    do
+    {
+      v7 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+      v3 = Math::RoundToInt((double)v7 * (double)(v2 + 1) * 2.328306437080797e-10);
+    }
+    while ( v3 > v2 );
+    v4 = (char *)MEMORY[0xABED10] + 80 * v3;
+  }
+  while ( !*v4 && !v4[1] );
+  v5 = 80 * v3;
+  *this = *(_DWORD *)((char *)MEMORY[0xABED10] + v5);
+  return this;
+}
+
+/* ASM:
+mov     eax, ds:89C2DCh
+sub     esp, 18h
+imul    eax, eax
+push    ebx
+push    esi
+push    edi
+mov     ebx, ecx
+lea     esi, [eax-1]
+xor     edi, edi
+
+loc_58BE35:                             ; CODE XREF: sub_58BE20+68↓j
+lea     eax, [esi+1]
+mov     dword ptr [esp+24h+var_18+4], edi
+mov     dword ptr [esp+24h+var_18], eax
+fild    [esp+24h+var_18]
+fstp    [esp+24h+var_8]
+
+loc_58BE48:                             ; CODE XREF: sub_58BE20+4F↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+24h+var_10], eax
+mov     dword ptr [esp+24h+var_10+4], edi
+fild    [esp+24h+var_10]
+fmul    [esp+24h+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58BE48
+mov     edx, dword_A8ED54+2FFBCh
+lea     ecx, [eax+eax*4]
+shl     ecx, 4
+add     ecx, edx
+cmp     [ecx], di
+jnz     short loc_58BE8A
+cmp     [ecx+2], di
+jz      short loc_58BE35
+
+loc_58BE8A:                             ; CODE XREF: sub_58BE20+62↑j
+lea     ecx, [eax+eax*4]
+pop     edi
+shl     ecx, 4
+mov     eax, ebx
+pop     esi
+mov     edx, [ecx+edx]
+mov     [ebx], edx
+pop     ebx
+add     esp, 18h
+retn
+*/
 }
 
 // 0x00770970 (213 bytes)
 void String_DeleteRandom_770970() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770970.json)
-    // Size: 213 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_770970 ( int *this, int a2, int a3, void **a4 ) { !char **v4 ! ; // ebx int v5 ; // edi !int v6 ! ; // esi !int v7 ! ; // eax !int v9 ! ; // eax !int v10 ! ; // edx !char **v11 ! ; // eax !char **v12 ! ; // eax !char **v13 ! ; // eax !char **v14 ! ; // eax void *v15 ; // [esp+Ch] [ebp-4h] BYREF v4 = ( char ** ) a4 ; v5 = * this ; v6 = ( int ) ( this + 37 * a2 + 12 * a3 + 2 ) ; DeleteAndZero::Alt2 ( a4 ) ; v7 = * ( _DWORD * ) ( v6 + 16 ) ; if ( v7 <= 0 ) return 0 ; if ( v7 == 1 ) v9 = 0 ; else v9 = Random::Range ( Randomizer_Global , 0 , v7 - 1 ) ; v10 = * ( _DWORD * ) ( * ( _DWORD * ) ( v6 + 4 ) + 4 * v9 ) ; if ( v5 == 3 ) { v11 = FormatStringInt ( ( char ** ) & a3 , v10 , 2 ) ; v12 = ProcessStringAndCopy ( ( char ** ) & a2 , g_Str_WWD_Soviet , v11 ) ; String::Reassign ( v4 , ( const char ** ) v12 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( ( void ** ) & a3 ) ; } else { v13 = FormatStringInt ( ( char ** ) & v15 , v10 , 2 ) ; v14 = ProcessStringAndCopy ( ( char ** ) & a4 , g_Str_WWD_Allied , v13 ) ; String::Reassign ( v4 , ( const char ** ) v14 ) ; DeleteAndZero ( ( void ** ) & a4 ) ; DeleteAndZero ( & v15 ) ; } return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_770970(int *this, int a2, int a3, void **a4)
+{
+  char **v4; // ebx
+  int v5; // edi
+  int v6; // esi
+  int v7; // eax
+  int v9; // eax
+  int v10; // edx
+  char **v11; // eax
+  char **v12; // eax
+  char **v13; // eax
+  char **v14; // eax
+  void *v15; // [esp+Ch] [ebp-4h] BYREF
+
+  v4 = (char **)a4;
+  v5 = *this;
+  v6 = (int)(this + 37 * a2 + 12 * a3 + 2);
+  DeleteAndZero::Alt2(a4);
+  v7 = *(_DWORD *)(v6 + 16);
+  if ( v7 <= 0 )
+    return 0;
+  if ( v7 == 1 )
+    v9 = 0;
+  else
+    v9 = Random::Range(MEMORY[0x886B88], 0, v7 - 1);
+  v10 = *(_DWORD *)(*(_DWORD *)(v6 + 4) + 4 * v9);
+  if ( v5 == 3 )
+  {
+    v11 = FormatStringInt((char **)&a3, v10, 2);
+    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
+    String::Reassign(v4, (const char **)v12);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+  else
+  {
+    v13 = FormatStringInt((char **)&v15, v10, 2);
+    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
+    String::Reassign(v4, (const char **)v14);
+    DeleteAndZero((void **)&a4);
+    DeleteAndZero(&v15);
+  }
+  return 1;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_0]
+push    ebx
+mov     ebx, [esp+8+arg_8]
+push    esi
+lea     edx, [eax+eax*8]
+push    edi
+mov     edi, [ecx]
+lea     edx, [eax+edx*4]
+mov     eax, [esp+10h+arg_4]
+lea     eax, [eax+eax*2]
+shl     eax, 4
+add     ecx, eax
+lea     esi, [ecx+edx*4+8]
+mov     ecx, ebx
+call    DeleteAndZero__Alt2
+mov     eax, [esi+10h]
+test    eax, eax
+jg      short loc_7709AB
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_7709AB:                             ; CODE XREF: sub_770970+30↑j
+cmp     eax, 1
+jnz     short loc_7709B4
+xor     eax, eax
+jmp     short loc_7709C2
+; ---------------------------------------------------------------------------
+
+loc_7709B4:                             ; CODE XREF: sub_770970+3E↑j
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+
+loc_7709C2:                             ; CODE XREF: sub_770970+42↑j
+mov     ecx, [esi+4]
+cmp     edi, 3
+push    2
+mov     edx, [ecx+eax*4]
+jnz     short loc_770A0A
+lea     ecx, [esp+14h+arg_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Soviet ; "WWD-Soviet"
+lea     ecx, [esp+14h+arg_0]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+10h+arg_0]
+call    DeleteAndZero
+lea     ecx, [esp+10h+arg_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_770A0A:                             ; CODE XREF: sub_770970+5D↑j
+lea     ecx, [esp+14h+var_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Allied ; "WWD_Allied"
+lea     ecx, [esp+14h+arg_8]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+10h+arg_8]
+call    DeleteAndZero
+lea     ecx, [esp+10h+var_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    0Ch
+*/
 }
 
 // 0x00770A50 (213 bytes)
 void String_DeleteRandom_770A50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770A50.json)
-    // Size: 213 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_770A50 ( int *this, int a2, int a3, void **a4 ) { !char **v4 ! ; // ebx int v5 ; // edi !int v6 ! ; // esi !int v7 ! ; // eax !int v9 ! ; // eax !int v10 ! ; // edx !char **v11 ! ; // eax !char **v12 ! ; // eax !char **v13 ! ; // eax !char **v14 ! ; // eax void *v15 ; // [esp+Ch] [ebp-4h] BYREF v4 = ( char ** ) a4 ; v5 = * this ; v6 = ( int ) ( this + 37 * a2 + 12 * a3 + 8 ) ; DeleteAndZero::Alt2 ( a4 ) ; v7 = * ( _DWORD * ) ( v6 + 16 ) ; if ( v7 <= 0 ) return 0 ; if ( v7 == 1 ) v9 = 0 ; else v9 = Random::Range ( Randomizer_Global , 0 , v7 - 1 ) ; v10 = * ( _DWORD * ) ( * ( _DWORD * ) ( v6 + 4 ) + 4 * v9 ) ; if ( v5 == 3 ) { v11 = FormatStringInt ( ( char ** ) & a3 , v10 , 2 ) ; v12 = ProcessStringAndCopy ( ( char ** ) & a2 , g_Str_WWD_Soviet , v11 ) ; String::Reassign ( v4 , ( const char ** ) v12 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( ( void ** ) & a3 ) ; } else { v13 = FormatStringInt ( ( char ** ) & v15 , v10 , 2 ) ; v14 = ProcessStringAndCopy ( ( char ** ) & a4 , g_Str_WWD_Allied , v13 ) ; String::Reassign ( v4 , ( const char ** ) v14 ) ; DeleteAndZero ( ( void ** ) & a4 ) ; DeleteAndZero ( & v15 ) ; } return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_770A50(int *this, int a2, int a3, void **a4)
+{
+  char **v4; // ebx
+  int v5; // edi
+  int v6; // esi
+  int v7; // eax
+  int v9; // eax
+  int v10; // edx
+  char **v11; // eax
+  char **v12; // eax
+  char **v13; // eax
+  char **v14; // eax
+  void *v15; // [esp+Ch] [ebp-4h] BYREF
+
+  v4 = (char **)a4;
+  v5 = *this;
+  v6 = (int)(this + 37 * a2 + 12 * a3 + 8);
+  DeleteAndZero::Alt2(a4);
+  v7 = *(_DWORD *)(v6 + 16);
+  if ( v7 <= 0 )
+    return 0;
+  if ( v7 == 1 )
+    v9 = 0;
+  else
+    v9 = Random::Range(MEMORY[0x886B88], 0, v7 - 1);
+  v10 = *(_DWORD *)(*(_DWORD *)(v6 + 4) + 4 * v9);
+  if ( v5 == 3 )
+  {
+    v11 = FormatStringInt((char **)&a3, v10, 2);
+    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
+    String::Reassign(v4, (const char **)v12);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+  else
+  {
+    v13 = FormatStringInt((char **)&v15, v10, 2);
+    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
+    String::Reassign(v4, (const char **)v14);
+    DeleteAndZero((void **)&a4);
+    DeleteAndZero(&v15);
+  }
+  return 1;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_0]
+push    ebx
+mov     ebx, [esp+8+arg_8]
+push    esi
+lea     edx, [eax+eax*8]
+push    edi
+mov     edi, [ecx]
+lea     edx, [eax+edx*4]
+mov     eax, [esp+10h+arg_4]
+lea     eax, [eax+eax*2]
+shl     eax, 4
+add     ecx, eax
+lea     esi, [ecx+edx*4+20h]
+mov     ecx, ebx
+call    DeleteAndZero__Alt2
+mov     eax, [esi+10h]
+test    eax, eax
+jg      short loc_770A8B
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_770A8B:                             ; CODE XREF: sub_770A50+30↑j
+cmp     eax, 1
+jnz     short loc_770A94
+xor     eax, eax
+jmp     short loc_770AA2
+; ---------------------------------------------------------------------------
+
+loc_770A94:                             ; CODE XREF: sub_770A50+3E↑j
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+
+loc_770AA2:                             ; CODE XREF: sub_770A50+42↑j
+mov     ecx, [esi+4]
+cmp     edi, 3
+push    2
+mov     edx, [ecx+eax*4]
+jnz     short loc_770AEA
+lea     ecx, [esp+14h+arg_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Soviet ; "WWD-Soviet"
+lea     ecx, [esp+14h+arg_0]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+10h+arg_0]
+call    DeleteAndZero
+lea     ecx, [esp+10h+arg_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_770AEA:                             ; CODE XREF: sub_770A50+5D↑j
+lea     ecx, [esp+14h+var_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Allied ; "WWD_Allied"
+lea     ecx, [esp+14h+arg_8]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+10h+arg_8]
+call    DeleteAndZero
+lea     ecx, [esp+10h+var_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+pop     ecx
+retn    0Ch
+*/
 }
 
 // 0x00770B30 (209 bytes)
 void String_DeleteRandom_770B30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770B30.json)
-    // Size: 209 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_770B30 ( int *this, int a2, void **a3 ) { !char **v3 ! ; // ebx int v4 ; // edi !int v5 ! ; // esi !int v6 ! ; // eax !int v8 ! ; // eax !int v9 ! ; // edx !char **v10 ! ; // eax !char **v11 ! ; // eax !char **v12 ! ; // eax !char **v13 ! ; // eax void *v14 ; // [esp+Ch] [ebp-8h] BYREF void *v15 ; // [esp+10h] [ebp-4h] BYREF v3 = ( char ** ) a3 ; v4 = * this ; v5 = ( int ) ( this + 6 * a2 + 223 ) ; DeleteAndZero::Alt2 ( a3 ) ; v6 = * ( _DWORD * ) ( v5 + 16 ) ; if ( v6 <= 0 ) return 0 ; if ( v6 == 1 ) v8 = 0 ; else v8 = Random::Range ( Randomizer_Global , 0 , v6 - 1 ) ; v9 = * ( _DWORD * ) ( * ( _DWORD * ) ( v5 + 4 ) + 4 * v8 ) ; if ( v4 == 3 ) { v10 = FormatStringInt ( ( char ** ) & a3 , v9 , 2 ) ; v11 = ProcessStringAndCopy ( ( char ** ) & a2 , g_Str_WWD_Soviet , v10 ) ; String::Reassign ( v3 , ( const char ** ) v11 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( ( void ** ) & a3 ) ; } else { v12 = FormatStringInt ( ( char ** ) & v15 , v9 , 2 ) ; v13 = ProcessStringAndCopy ( ( char ** ) & v14 , g_Str_WWD_Allied , v12 ) ; String::Reassign ( v3 , ( const char ** ) v13 ) ; DeleteAndZero ( & v14 ) ; DeleteAndZero ( & v15 ) ; } return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_770B30(int *this, int a2, void **a3)
+{
+  char **v3; // ebx
+  int v4; // edi
+  int v5; // esi
+  int v6; // eax
+  int v8; // eax
+  int v9; // edx
+  char **v10; // eax
+  char **v11; // eax
+  char **v12; // eax
+  char **v13; // eax
+  void *v14; // [esp+Ch] [ebp-8h] BYREF
+  void *v15; // [esp+10h] [ebp-4h] BYREF
+
+  v3 = (char **)a3;
+  v4 = *this;
+  v5 = (int)(this + 6 * a2 + 223);
+  DeleteAndZero::Alt2(a3);
+  v6 = *(_DWORD *)(v5 + 16);
+  if ( v6 <= 0 )
+    return 0;
+  if ( v6 == 1 )
+    v8 = 0;
+  else
+    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1);
+  v9 = *(_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v8);
+  if ( v4 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a3, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10);
+    String::Reassign(v3, (const char **)v11);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+  else
+  {
+    v12 = FormatStringInt((char **)&v15, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&v14, g_Str_WWD_Allied, v12);
+    String::Reassign(v3, (const char **)v13);
+    DeleteAndZero(&v14);
+    DeleteAndZero(&v15);
+  }
+  return 1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 8
+push    ebx
+mov     ebx, [esp+0Ch+arg_4]
+lea     eax, [eax+eax*2]
+push    esi
+push    edi
+mov     edi, [ecx]
+lea     esi, [ecx+eax*8+37Ch]
+mov     ecx, ebx
+call    DeleteAndZero__Alt2
+mov     eax, [esi+10h]
+test    eax, eax
+jg      short loc_770B63
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 8
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_770B63:                             ; CODE XREF: sub_770B30+26↑j
+cmp     eax, 1
+jnz     short loc_770B6C
+xor     eax, eax
+jmp     short loc_770B7A
+; ---------------------------------------------------------------------------
+
+loc_770B6C:                             ; CODE XREF: sub_770B30+36↑j
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+
+loc_770B7A:                             ; CODE XREF: sub_770B30+3A↑j
+mov     ecx, [esi+4]
+cmp     edi, 3
+push    2
+mov     edx, [ecx+eax*4]
+jnz     short loc_770BC4
+lea     ecx, [esp+18h+arg_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Soviet ; "WWD-Soviet"
+lea     ecx, [esp+18h+arg_0]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+14h+arg_0]
+call    DeleteAndZero
+lea     ecx, [esp+14h+arg_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_770BC4:                             ; CODE XREF: sub_770B30+55↑j
+lea     ecx, [esp+18h+var_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Allied ; "WWD_Allied"
+lea     ecx, [esp+18h+var_8]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, ebx
+call    String__Reassign
+lea     ecx, [esp+14h+var_8]
+call    DeleteAndZero
+lea     ecx, [esp+14h+var_4]
+call    DeleteAndZero
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn    8
+*/
 }
 
 // 0x00770F10 (199 bytes)
 void String_DeleteRandom_770F10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770F10.json)
-    // Size: 199 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_770F10 ( void *this, int a2, int a3, void **a4 ) { !char **v4 ! ; // edi !int v5 ! ; // esi !int v6 ! ; // eax !int v8 ! ; // eax !int v9 ! ; // edx !char **v10 ! ; // eax !char **v11 ! ; // eax !char **v12 ! ; // eax !char **v13 ! ; // eax void *v14 ; // [esp+8h] [ebp-4h] BYREF v4 = ( char ** ) a4 ; v5 = ( int ) this + 48 * a3 + 4 ; DeleteAndZero::Alt2 ( a4 ) ; v6 = * ( _DWORD * ) ( v5 + 16 ) ; if ( v6 <= 0 ) return 0 ; if ( v6 == 1 ) v8 = 0 ; else v8 = Random::Range ( Randomizer_Global , 0 , v6 - 1 ) ; v9 = * ( _DWORD * ) ( * ( _DWORD * ) ( v5 + 4 ) + 4 * v8 ) ; if ( a2 == 3 ) { v10 = FormatStringInt ( ( char ** ) & a4 , v9 , 2 ) ; v11 = ProcessStringAndCopy ( ( char ** ) & a3 , g_Str_WWD_Soviet , v10 ) ; String::Reassign ( v4 , ( const char ** ) v11 ) ; DeleteAndZero ( ( void ** ) & a3 ) ; DeleteAndZero ( ( void ** ) & a4 ) ; } else { v12 = FormatStringInt ( ( char ** ) & v14 , v9 , 2 ) ; v13 = ProcessStringAndCopy ( ( char ** ) & a2 , g_Str_WWD_Allied , v12 ) ; String::Reassign ( v4 , ( const char ** ) v13 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( & v14 ) ; } return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_770F10(void *this, int a2, int a3, void **a4)
+{
+  char **v4; // edi
+  int v5; // esi
+  int v6; // eax
+  int v8; // eax
+  int v9; // edx
+  char **v10; // eax
+  char **v11; // eax
+  char **v12; // eax
+  char **v13; // eax
+  void *v14; // [esp+8h] [ebp-4h] BYREF
+
+  v4 = (char **)a4;
+  v5 = (int)this + 48 * a3 + 4;
+  DeleteAndZero::Alt2(a4);
+  v6 = *(_DWORD *)(v5 + 16);
+  if ( v6 <= 0 )
+    return 0;
+  if ( v6 == 1 )
+    v8 = 0;
+  else
+    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1);
+  v9 = *(_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v8);
+  if ( a2 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a4, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
+    String::Reassign(v4, (const char **)v11);
+    DeleteAndZero((void **)&a3);
+    DeleteAndZero((void **)&a4);
+  }
+  else
+  {
+    v12 = FormatStringInt((char **)&v14, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
+    String::Reassign(v4, (const char **)v13);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero(&v14);
+  }
+  return 1;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_4]
+push    esi
+push    edi
+mov     edi, [esp+0Ch+arg_8]
+lea     eax, [eax+eax*2]
+shl     eax, 4
+lea     esi, [eax+ecx+4]
+mov     ecx, edi
+call    DeleteAndZero__Alt2
+mov     eax, [esi+10h]
+test    eax, eax
+jg      short loc_770F3B
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_770F3B:                             ; CODE XREF: sub_770F10+21↑j
+cmp     eax, 1
+jnz     short loc_770F44
+xor     eax, eax
+jmp     short loc_770F52
+; ---------------------------------------------------------------------------
+
+loc_770F44:                             ; CODE XREF: sub_770F10+2E↑j
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+
+loc_770F52:                             ; CODE XREF: sub_770F10+32↑j
+mov     ecx, [esi+4]
+push    2
+mov     edx, [ecx+eax*4]
+mov     eax, [esp+10h+arg_0]
+cmp     eax, 3
+jnz     short loc_770F9D
+lea     ecx, [esp+10h+arg_8]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Soviet ; "WWD-Soviet"
+lea     ecx, [esp+10h+arg_4]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, edi
+call    String__Reassign
+lea     ecx, [esp+0Ch+arg_4]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+arg_8]
+call    DeleteAndZero
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_770F9D:                             ; CODE XREF: sub_770F10+51↑j
+lea     ecx, [esp+10h+var_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Allied ; "WWD_Allied"
+lea     ecx, [esp+10h+arg_0]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, edi
+call    String__Reassign
+lea     ecx, [esp+0Ch+arg_0]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn    0Ch
+*/
 }
 
 // 0x00770FE0 (199 bytes)
 void String_DeleteRandom_770FE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00770FE0.json)
-    // Size: 199 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_770FE0 ( void *this, int a2, int a3, void **a4 ) { !char **v4 ! ; // edi !int v5 ! ; // esi !int v6 ! ; // eax !int v8 ! ; // eax !int v9 ! ; // edx !char **v10 ! ; // eax !char **v11 ! ; // eax !char **v12 ! ; // eax !char **v13 ! ; // eax void *v14 ; // [esp+8h] [ebp-4h] BYREF v4 = ( char ** ) a4 ; v5 = ( int ) this + 48 * a3 + 28 ; DeleteAndZero::Alt2 ( a4 ) ; v6 = * ( _DWORD * ) ( v5 + 16 ) ; if ( v6 <= 0 ) return 0 ; if ( v6 == 1 ) v8 = 0 ; else v8 = Random::Range ( Randomizer_Global , 0 , v6 - 1 ) ; v9 = * ( _DWORD * ) ( * ( _DWORD * ) ( v5 + 4 ) + 4 * v8 ) ; if ( a2 == 3 ) { v10 = FormatStringInt ( ( char ** ) & a4 , v9 , 2 ) ; v11 = ProcessStringAndCopy ( ( char ** ) & a3 , g_Str_WWD_Soviet , v10 ) ; String::Reassign ( v4 , ( const char ** ) v11 ) ; DeleteAndZero ( ( void ** ) & a3 ) ; DeleteAndZero ( ( void ** ) & a4 ) ; } else { v12 = FormatStringInt ( ( char ** ) & v14 , v9 , 2 ) ; v13 = ProcessStringAndCopy ( ( char ** ) & a2 , g_Str_WWD_Allied , v12 ) ; String::Reassign ( v4 , ( const char ** ) v13 ) ; DeleteAndZero ( ( void ** ) & a2 ) ; DeleteAndZero ( & v14 ) ; } return 1 ; }
-    
+// [IDA decompile]
+char __thiscall sub_770FE0(void *this, int a2, int a3, void **a4)
+{
+  char **v4; // edi
+  int v5; // esi
+  int v6; // eax
+  int v8; // eax
+  int v9; // edx
+  char **v10; // eax
+  char **v11; // eax
+  char **v12; // eax
+  char **v13; // eax
+  void *v14; // [esp+8h] [ebp-4h] BYREF
+
+  v4 = (char **)a4;
+  v5 = (int)this + 48 * a3 + 28;
+  DeleteAndZero::Alt2(a4);
+  v6 = *(_DWORD *)(v5 + 16);
+  if ( v6 <= 0 )
+    return 0;
+  if ( v6 == 1 )
+    v8 = 0;
+  else
+    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1);
+  v9 = *(_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v8);
+  if ( a2 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a4, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
+    String::Reassign(v4, (const char **)v11);
+    DeleteAndZero((void **)&a3);
+    DeleteAndZero((void **)&a4);
+  }
+  else
+  {
+    v12 = FormatStringInt((char **)&v14, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
+    String::Reassign(v4, (const char **)v13);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero(&v14);
+  }
+  return 1;
+}
+
+/* ASM:
+push    ecx
+mov     eax, [esp+4+arg_4]
+push    esi
+push    edi
+mov     edi, [esp+0Ch+arg_8]
+lea     eax, [eax+eax*2]
+shl     eax, 4
+lea     esi, [eax+ecx+1Ch]
+mov     ecx, edi
+call    DeleteAndZero__Alt2
+mov     eax, [esi+10h]
+test    eax, eax
+jg      short loc_77100B
+pop     edi
+xor     al, al
+pop     esi
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_77100B:                             ; CODE XREF: sub_770FE0+21↑j
+cmp     eax, 1
+jnz     short loc_771014
+xor     eax, eax
+jmp     short loc_771022
+; ---------------------------------------------------------------------------
+
+loc_771014:                             ; CODE XREF: sub_770FE0+2E↑j
+dec     eax
+mov     ecx, 886B88h
+push    eax
+push    0
+call    Random__Range
+
+loc_771022:                             ; CODE XREF: sub_770FE0+32↑j
+mov     ecx, [esi+4]
+push    2
+mov     edx, [ecx+eax*4]
+mov     eax, [esp+10h+arg_0]
+cmp     eax, 3
+jnz     short loc_77106D
+lea     ecx, [esp+10h+arg_8]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Soviet ; "WWD-Soviet"
+lea     ecx, [esp+10h+arg_4]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, edi
+call    String__Reassign
+lea     ecx, [esp+0Ch+arg_4]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+arg_8]
+call    DeleteAndZero
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_77106D:                             ; CODE XREF: sub_770FE0+51↑j
+lea     ecx, [esp+10h+var_4]
+call    FormatStringInt
+push    eax
+mov     edx, offset g_Str_WWD_Allied ; "WWD_Allied"
+lea     ecx, [esp+10h+arg_0]
+call    ProcessStringAndCopy
+push    eax
+mov     ecx, edi
+call    String__Reassign
+lea     ecx, [esp+0Ch+arg_0]
+call    DeleteAndZero
+lea     ecx, [esp+0Ch+var_4]
+call    DeleteAndZero
+pop     edi
+mov     al, 1
+pop     esi
+pop     ecx
+retn    0Ch
+*/
 }
 
 } // namespace gamemd

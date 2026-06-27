@@ -8,110 +8,1919 @@ namespace gamemd {
 
 // 0x00557380 (494 bytes)
 int ControlClass_CtorFromDat_557380() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00557380.json)
-    // Size: 494 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_557380 ( int this, int a2 ) { int v3 ; // eax ControlClass::CtorFromData ( ( _DWORD * ) this , a2 ) ; * ( _DWORD * ) ( this + 44 ) = * ( _DWORD * ) ( a2 + 44 ) ; * ( _DWORD * ) ( this + 48 ) = * ( _DWORD * ) ( a2 + 48 ) ; * ( _DWORD * ) ( this + 56 ) = 0 ; * ( _DWORD * ) ( this + 60 ) = 0 ; * ( _BYTE * ) ( this + 64 ) = 1 ; * ( _BYTE * ) ( this + 65 ) = 0 ; * ( _DWORD * ) ( this + 52 ) = & VectorClass<unsigned short const *>::vftable' ; sub_4B5830 ( ( _DWORD * ) ( this + 52 ) , ( _DWORD * ) ( a2 + 52 ) ) ; * ( _DWORD * ) ( this + 68 ) = * ( _DWORD * ) ( a2 + 68 ) ; * ( _DWORD * ) ( this + 72 ) = * ( _DWORD * ) ( a2 + 72 ) ; * ( _DWORD * ) ( this + 52 ) = & DynamicVectorClass<unsigned short const *>::vftable' ; * ( _DWORD * ) ( this + 76 ) = * ( _DWORD * ) ( a2 + 76 ) ; * ( _DWORD * ) ( this + 80 ) = * ( _DWORD * ) ( a2 + 80 ) ; * ( _BYTE * ) ( this + 84 ) = * ( _BYTE * ) ( a2 + 84 ) ; ControlClass::CtorFromData ( ( _DWORD * ) ( this + 88 ) , a2 + 88 ) ; * ( _BYTE * ) ( this + 132 ) = * ( _BYTE * ) ( a2 + 132 ) ; * ( _BYTE * ) ( this + 133 ) = * ( _BYTE * ) ( a2 + 133 ) ; * ( _DWORD * ) ( this + 136 ) = * ( _DWORD * ) ( a2 + 136 ) ; * ( _DWORD * ) ( this + 88 ) = & ToggleClass::vftable' ; * ( _BYTE * ) ( this + 140 ) = * ( _BYTE * ) ( a2 + 140 ) ; * ( _DWORD * ) ( this + 144 ) = * ( _DWORD * ) ( a2 + 144 ) ; * ( _DWORD * ) ( this + 148 ) = * ( _DWORD * ) ( a2 + 148 ) ; * ( _BYTE * ) ( this + 152 ) = * ( _BYTE * ) ( a2 + 152 ) ; * ( _DWORD * ) ( this + 156 ) = * ( _DWORD * ) ( a2 + 156 ) ; * ( _DWORD * ) ( this + 160 ) = * ( _DWORD * ) ( a2 + 160 ) ; * ( _BYTE * ) ( this + 164 ) = * ( _BYTE * ) ( a2 + 164 ) ; * ( _DWORD * ) ( this + 168 ) = * ( _DWORD * ) ( a2 + 168 ) ; * ( _BYTE * ) ( this + 172 ) = * ( _BYTE * ) ( a2 + 172 ) ; * ( _BYTE * ) ( this + 173 ) = * ( _BYTE * ) ( a2 + 173 ) ; * ( _DWORD * ) ( this + 176 ) = * ( _DWORD * ) ( a2 + 176 ) ; * ( _BYTE * ) ( this + 180 ) = * ( _BYTE * ) ( a2 + 180 ) ; * ( _DWORD * ) ( this + 88 ) = & ShapeButtonClass::vftable' ; ControlClass::CtorFromData ( ( _DWORD * ) ( this + 184 ) , a2 + 184 ) ; * ( _BYTE * ) ( this + 228 ) = * ( _BYTE * ) ( a2 + 228 ) ; * ( _BYTE * ) ( this + 229 ) = * ( _BYTE * ) ( a2 + 229 ) ; * ( _DWORD * ) ( this + 232 ) = * ( _DWORD * ) ( a2 + 232 ) ; * ( _DWORD * ) ( this + 184 ) = & ToggleClass::vftable' ; * ( _BYTE * ) ( this + 236 ) = * ( _BYTE * ) ( a2 + 236 ) ; * ( _DWORD * ) ( this + 240 ) = * ( _DWORD * ) ( a2 + 240 ) ; * ( _DWORD * ) ( this + 244 ) = * ( _DWORD * ) ( a2 + 244 ) ; * ( _BYTE * ) ( this + 248 ) = * ( _BYTE * ) ( a2 + 248 ) ; * ( _DWORD * ) ( this + 252 ) = * ( _DWORD * ) ( a2 + 252 ) ; * ( _DWORD * ) ( this + 256 ) = * ( _DWORD * ) ( a2 + 256 ) ; * ( _BYTE * ) ( this + 260 ) = * ( _BYTE * ) ( a2 + 260 ) ; * ( _DWORD * ) ( this + 264 ) = * ( _DWORD * ) ( a2 + 264 ) ; * ( _BYTE * ) ( this + 268 ) = * ( _BYTE * ) ( a2 + 268 ) ; * ( _BYTE * ) ( this + 269 ) = * ( _BYTE * ) ( a2 + 269 ) ; * ( _DWORD * ) ( this + 272 ) = * ( _DWORD * ) ( a2 + 272 ) ; * ( _BYTE * ) ( this + 276 ) = * ( _BYTE * ) ( a2 + 276 ) ; * ( _DWORD * ) ( this + 184 ) = & ShapeButtonClass::vftable' ; sub_5581A0 ( this + 280 , a2 + 280 ) ; * ( _DWORD * ) ( this + 340 ) = * ( _DWORD * ) ( a2 + 340 ) ; * ( _DWORD * ) ( this + 344 ) = * ( _DWORD * ) ( a2 + 344 ) ; * ( _BYTE * ) ( this + 348 ) = * ( _BYTE * ) ( a2 + 348 ) ; * ( _DWORD * ) ( this + 352 ) = * ( _DWORD * ) ( a2 + 352 ) ; * ( _DWORD * ) ( this + 356 ) = * ( _DWORD * ) ( a2 + 356 ) ; * ( _DWORD * ) ( this + 360 ) = * ( _DWORD * ) ( a2 + 360 ) ; * ( _DWORD * ) ( this + 280 ) = & SliderClass::vftable' ; * ( _DWORD * ) ( this + 364 ) = * ( _DWORD * ) ( a2 + 364 ) ; v3 = * ( _DWORD * ) ( this + 88 ) ; * ( _DWORD * ) ( this + 368 ) = * ( _DWORD * ) ( a2 + 368 ) ; * ( _DWORD * ) this = & ListClass::vftable' ; ( * ( void (__thiscall **)(int, int) ) ( v3 + 132 ) ) ( this + 88 , this ) ; ( * ( void (__thiscall **)(int, int) ) ( * ( _DWORD * ) ( this + 184 ) + 132 ) ) ( this + 184 , this ) ; ( * ( void (__thiscall **)(int, int) ) ( * ( _DWORD * ) ( this + 280 ) + 132 ) ) ( this + 280 , this ) ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_557380(int this, int a2)
+{
+  int v3; // eax
+
+  ControlClass::CtorFromData((_DWORD *)this, a2);
+  *(_DWORD *)(this + 44) = *(_DWORD *)(a2 + 44);
+  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48);
+  *(_DWORD *)(this + 56) = 0;
+  *(_DWORD *)(this + 60) = 0;
+  *(_BYTE *)(this + 64) = 1;
+  *(_BYTE *)(this + 65) = 0;
+  *(_DWORD *)(this + 52) = &VectorClass<unsigned short const *>::`vftable';
+  sub_4B5830((_DWORD *)(this + 52), (_DWORD *)(a2 + 52));
+  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68);
+  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72);
+  *(_DWORD *)(this + 52) = &DynamicVectorClass<unsigned short const *>::`vftable';
+  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76);
+  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80);
+  *(_BYTE *)(this + 84) = *(_BYTE *)(a2 + 84);
+  ControlClass::CtorFromData((_DWORD *)(this + 88), a2 + 88);
+  *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132);
+  *(_BYTE *)(this + 133) = *(_BYTE *)(a2 + 133);
+  *(_DWORD *)(this + 136) = *(_DWORD *)(a2 + 136);
+  *(_DWORD *)(this + 88) = &ToggleClass::`vftable';
+  *(_BYTE *)(this + 140) = *(_BYTE *)(a2 + 140);
+  *(_DWORD *)(this + 144) = *(_DWORD *)(a2 + 144);
+  *(_DWORD *)(this + 148) = *(_DWORD *)(a2 + 148);
+  *(_BYTE *)(this + 152) = *(_BYTE *)(a2 + 152);
+  *(_DWORD *)(this + 156) = *(_DWORD *)(a2 + 156);
+  *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160);
+  *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164);
+  *(_DWORD *)(this + 168) = *(_DWORD *)(a2 + 168);
+  *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172);
+  *(_BYTE *)(this + 173) = *(_BYTE *)(a2 + 173);
+  *(_DWORD *)(this + 176) = *(_DWORD *)(a2 + 176);
+  *(_BYTE *)(this + 180) = *(_BYTE *)(a2 + 180);
+  *(_DWORD *)(this + 88) = &ShapeButtonClass::`vftable';
+  ControlClass::CtorFromData((_DWORD *)(this + 184), a2 + 184);
+  *(_BYTE *)(this + 228) = *(_BYTE *)(a2 + 228);
+  *(_BYTE *)(this + 229) = *(_BYTE *)(a2 + 229);
+  *(_DWORD *)(this + 232) = *(_DWORD *)(a2 + 232);
+  *(_DWORD *)(this + 184) = &ToggleClass::`vftable';
+  *(_BYTE *)(this + 236) = *(_BYTE *)(a2 + 236);
+  *(_DWORD *)(this + 240) = *(_DWORD *)(a2 + 240);
+  *(_DWORD *)(this + 244) = *(_DWORD *)(a2 + 244);
+  *(_BYTE *)(this + 248) = *(_BYTE *)(a2 + 248);
+  *(_DWORD *)(this + 252) = *(_DWORD *)(a2 + 252);
+  *(_DWORD *)(this + 256) = *(_DWORD *)(a2 + 256);
+  *(_BYTE *)(this + 260) = *(_BYTE *)(a2 + 260);
+  *(_DWORD *)(this + 264) = *(_DWORD *)(a2 + 264);
+  *(_BYTE *)(this + 268) = *(_BYTE *)(a2 + 268);
+  *(_BYTE *)(this + 269) = *(_BYTE *)(a2 + 269);
+  *(_DWORD *)(this + 272) = *(_DWORD *)(a2 + 272);
+  *(_BYTE *)(this + 276) = *(_BYTE *)(a2 + 276);
+  *(_DWORD *)(this + 184) = &ShapeButtonClass::`vftable';
+  sub_5581A0(this + 280, a2 + 280);
+  *(_DWORD *)(this + 340) = *(_DWORD *)(a2 + 340);
+  *(_DWORD *)(this + 344) = *(_DWORD *)(a2 + 344);
+  *(_BYTE *)(this + 348) = *(_BYTE *)(a2 + 348);
+  *(_DWORD *)(this + 352) = *(_DWORD *)(a2 + 352);
+  *(_DWORD *)(this + 356) = *(_DWORD *)(a2 + 356);
+  *(_DWORD *)(this + 360) = *(_DWORD *)(a2 + 360);
+  *(_DWORD *)(this + 280) = &SliderClass::`vftable';
+  *(_DWORD *)(this + 364) = *(_DWORD *)(a2 + 364);
+  v3 = *(_DWORD *)(this + 88);
+  *(_DWORD *)(this + 368) = *(_DWORD *)(a2 + 368);
+  *(_DWORD *)this = &ListClass::`vftable';
+  (*(void (__thiscall **)(int, int))(v3 + 132))(this + 88, this);
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 132))(this + 184, this);
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 132))(this + 280, this);
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+mov     ebx, ecx
+push    ebp
+call    ControlClass__CtorFromData
+mov     eax, [ebp+2Ch]
+lea     edi, [ebp+34h]
+mov     [ebx+2Ch], eax
+mov     ecx, [ebp+30h]
+lea     esi, [ebx+34h]
+mov     [ebx+30h], ecx
+xor     eax, eax
+push    edi
+mov     ecx, esi
+mov     [esi+4], eax
+mov     [esi+8], eax
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], al
+mov     dword ptr [esi], offset ??_7?$VectorClass@PBG@@6B@ ; const VectorClass<ushort const *>::`vftable'
+call    sub_4B5830
+mov     edx, [edi+10h]
+mov     [esi+10h], edx
+mov     eax, [edi+14h]
+mov     [esi+14h], eax
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PBG@@6B@ ; const DynamicVectorClass<ushort const *>::`vftable'
+mov     ecx, [ebp+4Ch]
+lea     edi, [ebp+58h]
+mov     [ebx+4Ch], ecx
+mov     edx, [ebp+50h]
+mov     [ebx+50h], edx
+mov     al, [ebp+54h]
+lea     esi, [ebx+58h]
+push    edi
+mov     ecx, esi
+mov     [ebx+54h], al
+call    ControlClass__CtorFromData
+mov     cl, [edi+2Ch]
+add     ebp, 0B8h
+mov     [esi+2Ch], cl
+mov     dl, [edi+2Dh]
+mov     [esi+2Dh], dl
+mov     eax, [edi+30h]
+mov     [esi+30h], eax
+mov     dword ptr [esi], offset ??_7ToggleClass@@6B@ ; const ToggleClass::`vftable'
+mov     cl, [edi+34h]
+push    ebp
+mov     [esi+34h], cl
+mov     edx, [edi+38h]
+mov     [esi+38h], edx
+mov     eax, [edi+3Ch]
+mov     [esi+3Ch], eax
+mov     cl, [edi+40h]
+mov     [esi+40h], cl
+mov     edx, [edi+44h]
+mov     [esi+44h], edx
+mov     eax, [edi+48h]
+mov     [esi+48h], eax
+mov     cl, [edi+4Ch]
+mov     [esi+4Ch], cl
+mov     edx, [edi+50h]
+mov     [esi+50h], edx
+mov     al, [edi+54h]
+mov     [esi+54h], al
+mov     cl, [edi+55h]
+mov     [esi+55h], cl
+mov     edx, [edi+58h]
+mov     [esi+58h], edx
+mov     al, [edi+5Ch]
+lea     edi, [ebx+0B8h]
+mov     [esi+5Ch], al
+mov     ecx, edi
+mov     dword ptr [esi], offset ??_7ShapeButtonClass@@6B@ ; const ShapeButtonClass::`vftable'
+call    ControlClass__CtorFromData
+mov     cl, [ebp+2Ch]
+mov     [edi+2Ch], cl
+mov     dl, [ebp+2Dh]
+mov     [edi+2Dh], dl
+mov     eax, [ebp+30h]
+mov     [edi+30h], eax
+mov     dword ptr [edi], offset ??_7ToggleClass@@6B@ ; const ToggleClass::`vftable'
+mov     cl, [ebp+34h]
+mov     [edi+34h], cl
+mov     edx, [ebp+38h]
+mov     [edi+38h], edx
+mov     eax, [ebp+3Ch]
+mov     [edi+3Ch], eax
+mov     cl, [ebp+40h]
+mov     [edi+40h], cl
+mov     edx, [ebp+44h]
+mov     [edi+44h], edx
+mov     eax, [ebp+48h]
+mov     [edi+48h], eax
+mov     cl, [ebp+4Ch]
+mov     [edi+4Ch], cl
+mov     edx, [ebp+50h]
+mov     [edi+50h], edx
+mov     al, [ebp+54h]
+mov     [edi+54h], al
+mov     cl, [ebp+55h]
+mov     [edi+55h], cl
+mov     edx, [ebp+58h]
+mov     ecx, [esp+10h+arg_0]
+mov     [edi+58h], edx
+mov     al, [ebp+5Ch]
+lea     ebp, [ebx+118h]
+mov     [edi+5Ch], al
+lea     eax, [ecx+118h]
+push    eax
+mov     ecx, ebp
+mov     dword ptr [edi], offset ??_7ShapeButtonClass@@6B@ ; const ShapeButtonClass::`vftable'
+call    sub_5581A0
+mov     edx, [esp+10h+arg_0]
+push    ebx
+mov     ecx, [edx+154h]
+lea     eax, [edx+118h]
+mov     [ebp+3Ch], ecx
+mov     edx, [eax+40h]
+mov     [ebp+40h], edx
+mov     cl, [eax+44h]
+mov     [ebp+44h], cl
+mov     edx, [eax+48h]
+mov     [ebp+48h], edx
+mov     ecx, [eax+4Ch]
+mov     [ebp+4Ch], ecx
+mov     edx, [eax+50h]
+mov     eax, [esp+14h+arg_0]
+mov     [ebp+50h], edx
+mov     dword ptr [ebp+0], offset ??_7SliderClass@@6B@ ; const SliderClass::`vftable'
+mov     ecx, [eax+16Ch]
+mov     [ebx+16Ch], ecx
+mov     edx, [eax+170h]
+mov     eax, [esi]
+mov     ecx, esi
+mov     [ebx+170h], edx
+mov     dword ptr [ebx], offset ??_7ListClass@@6B@ ; const ListClass::`vftable'
+call    dword ptr [eax+84h]
+mov     edx, [edi]
+push    ebx
+mov     ecx, edi
+call    dword ptr [edx+84h]
+mov     eax, [ebp+0]
+push    ebx
+mov     ecx, ebp
+call    dword ptr [eax+84h]
+pop     edi
+pop     esi
+mov     eax, ebx
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x005581A0 (63 bytes)
 int ControlClass_CtorFromDat_5581A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005581A0.json)
-    // Size: 63 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5581A0 ( int this, int a2 ) { ControlClass::CtorFromData ( ( _DWORD * ) this , a2 ) ; * ( _BYTE * ) ( this + 44 ) = * ( _BYTE * ) ( a2 + 44 ) ; * ( _BYTE * ) ( this + 45 ) = * ( _BYTE * ) ( a2 + 45 ) ; * ( _BYTE * ) ( this + 46 ) = * ( _BYTE * ) ( a2 + 46 ) ; * ( _DWORD * ) ( this + 48 ) = * ( _DWORD * ) ( a2 + 48 ) ; * ( _DWORD * ) ( this + 52 ) = * ( _DWORD * ) ( a2 + 52 ) ; * ( _DWORD * ) ( this + 56 ) = * ( _DWORD * ) ( a2 + 56 ) ; * ( _DWORD * ) this = & GaugeClass::vftable' ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5581A0(int this, int a2)
+{
+  ControlClass::CtorFromData((_DWORD *)this, a2);
+  *(_BYTE *)(this + 44) = *(_BYTE *)(a2 + 44);
+  *(_BYTE *)(this + 45) = *(_BYTE *)(a2 + 45);
+  *(_BYTE *)(this + 46) = *(_BYTE *)(a2 + 46);
+  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48);
+  *(_DWORD *)(this + 52) = *(_DWORD *)(a2 + 52);
+  *(_DWORD *)(this + 56) = *(_DWORD *)(a2 + 56);
+  *(_DWORD *)this = &GaugeClass::`vftable';
+  return this;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    edi
+call    ControlClass__CtorFromData
+mov     al, [edi+2Ch]
+mov     [esi+2Ch], al
+mov     cl, [edi+2Dh]
+mov     [esi+2Dh], cl
+mov     dl, [edi+2Eh]
+mov     [esi+2Eh], dl
+mov     eax, [edi+30h]
+mov     [esi+30h], eax
+mov     ecx, [edi+34h]
+mov     [esi+34h], ecx
+mov     edx, [edi+38h]
+mov     [esi+38h], edx
+mov     dword ptr [esi], offset ??_7GaugeClass@@6B@ ; const GaugeClass::`vftable'
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x004B53E0 (249 bytes)
 int ControlClass_CtorFromData_4B53E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B53E0.json)
-    // Size: 249 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4B53E0 ( int this, int a2 ) { int v3 ; // eax ControlClass::CtorFromData ( ( _DWORD * ) this , a2 ) ; * ( _DWORD * ) ( this + 44 ) = * ( _DWORD * ) ( a2 + 44 ) ; * ( _DWORD * ) ( this + 48 ) = * ( _DWORD * ) ( a2 + 48 ) ; * ( _DWORD * ) ( this + 52 ) = * ( _DWORD * ) ( a2 + 52 ) ; * ( _DWORD * ) ( this + 56 ) = * ( _DWORD * ) ( a2 + 56 ) ; * ( _DWORD * ) ( this + 60 ) = * ( _DWORD * ) ( a2 + 60 ) ; * ( _DWORD * ) ( this + 64 ) = * ( _DWORD * ) ( a2 + 64 ) ; * ( _DWORD * ) ( this + 68 ) = * ( _DWORD * ) ( a2 + 68 ) ; * ( _DWORD * ) this = & EditClass::vftable' ; * ( _BYTE * ) ( this + 72 ) = * ( _BYTE * ) ( a2 + 72 ) ; * ( _DWORD * ) ( this + 76 ) = * ( _DWORD * ) ( a2 + 76 ) ; ControlClass::CtorFromData ( ( _DWORD * ) ( this + 80 ) , a2 + 80 ) ; * ( _BYTE * ) ( this + 124 ) = * ( _BYTE * ) ( a2 + 124 ) ; * ( _BYTE * ) ( this + 125 ) = * ( _BYTE * ) ( a2 + 125 ) ; * ( _DWORD * ) ( this + 128 ) = * ( _DWORD * ) ( a2 + 128 ) ; * ( _DWORD * ) ( this + 80 ) = & ToggleClass::vftable' ; * ( _BYTE * ) ( this + 132 ) = * ( _BYTE * ) ( a2 + 132 ) ; * ( _DWORD * ) ( this + 136 ) = * ( _DWORD * ) ( a2 + 136 ) ; * ( _DWORD * ) ( this + 140 ) = * ( _DWORD * ) ( a2 + 140 ) ; * ( _BYTE * ) ( this + 144 ) = * ( _BYTE * ) ( a2 + 144 ) ; * ( _DWORD * ) ( this + 148 ) = * ( _DWORD * ) ( a2 + 148 ) ; * ( _DWORD * ) ( this + 152 ) = * ( _DWORD * ) ( a2 + 152 ) ; * ( _BYTE * ) ( this + 156 ) = * ( _BYTE * ) ( a2 + 156 ) ; * ( _DWORD * ) ( this + 160 ) = * ( _DWORD * ) ( a2 + 160 ) ; * ( _BYTE * ) ( this + 164 ) = * ( _BYTE * ) ( a2 + 164 ) ; * ( _BYTE * ) ( this + 165 ) = * ( _BYTE * ) ( a2 + 165 ) ; * ( _DWORD * ) ( this + 168 ) = * ( _DWORD * ) ( a2 + 168 ) ; * ( _BYTE * ) ( this + 172 ) = * ( _BYTE * ) ( a2 + 172 ) ; * ( _DWORD * ) ( this + 80 ) = & ShapeButtonClass::vftable' ; sub_557380 ( this + 176 , a2 + 176 ) ; v3 = * ( _DWORD * ) ( this + 176 ) ; * ( _DWORD * ) this = & DropListClass::vftable' ; ( * ( void (__thiscall **)(int, int) ) ( v3 + 132 ) ) ( this + 176 , this ) ; ( * ( void (__thiscall **)(int, int) ) ( * ( _DWORD * ) ( this + 80 ) + 132 ) ) ( this + 80 , this ) ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4B53E0(int this, int a2)
+{
+  int v3; // eax
+
+  ControlClass::CtorFromData((_DWORD *)this, a2);
+  *(_DWORD *)(this + 44) = *(_DWORD *)(a2 + 44);
+  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48);
+  *(_DWORD *)(this + 52) = *(_DWORD *)(a2 + 52);
+  *(_DWORD *)(this + 56) = *(_DWORD *)(a2 + 56);
+  *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60);
+  *(_DWORD *)(this + 64) = *(_DWORD *)(a2 + 64);
+  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68);
+  *(_DWORD *)this = &EditClass::`vftable';
+  *(_BYTE *)(this + 72) = *(_BYTE *)(a2 + 72);
+  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76);
+  ControlClass::CtorFromData((_DWORD *)(this + 80), a2 + 80);
+  *(_BYTE *)(this + 124) = *(_BYTE *)(a2 + 124);
+  *(_BYTE *)(this + 125) = *(_BYTE *)(a2 + 125);
+  *(_DWORD *)(this + 128) = *(_DWORD *)(a2 + 128);
+  *(_DWORD *)(this + 80) = &ToggleClass::`vftable';
+  *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132);
+  *(_DWORD *)(this + 136) = *(_DWORD *)(a2 + 136);
+  *(_DWORD *)(this + 140) = *(_DWORD *)(a2 + 140);
+  *(_BYTE *)(this + 144) = *(_BYTE *)(a2 + 144);
+  *(_DWORD *)(this + 148) = *(_DWORD *)(a2 + 148);
+  *(_DWORD *)(this + 152) = *(_DWORD *)(a2 + 152);
+  *(_BYTE *)(this + 156) = *(_BYTE *)(a2 + 156);
+  *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160);
+  *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164);
+  *(_BYTE *)(this + 165) = *(_BYTE *)(a2 + 165);
+  *(_DWORD *)(this + 168) = *(_DWORD *)(a2 + 168);
+  *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172);
+  *(_DWORD *)(this + 80) = &ShapeButtonClass::`vftable';
+  sub_557380(this + 176, a2 + 176);
+  v3 = *(_DWORD *)(this + 176);
+  *(_DWORD *)this = &DropListClass::`vftable';
+  (*(void (__thiscall **)(int, int))(v3 + 132))(this + 176, this);
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this);
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+mov     edi, ecx
+push    ebp
+call    ControlClass__CtorFromData
+mov     eax, [ebp+2Ch]
+lea     ebx, [ebp+50h]
+mov     [edi+2Ch], eax
+mov     ecx, [ebp+30h]
+mov     [edi+30h], ecx
+mov     edx, [ebp+34h]
+mov     [edi+34h], edx
+mov     eax, [ebp+38h]
+mov     [edi+38h], eax
+mov     ecx, [ebp+3Ch]
+mov     [edi+3Ch], ecx
+mov     edx, [ebp+40h]
+mov     [edi+40h], edx
+mov     eax, [ebp+44h]
+mov     [edi+44h], eax
+mov     dword ptr [edi], offset ??_7EditClass@@6B@ ; const EditClass::`vftable'
+mov     cl, [ebp+48h]
+lea     esi, [edi+50h]
+mov     [edi+48h], cl
+mov     edx, [ebp+4Ch]
+push    ebx
+mov     ecx, esi
+mov     [edi+4Ch], edx
+call    ControlClass__CtorFromData
+mov     al, [ebx+2Ch]
+add     ebp, 0B0h
+mov     [esi+2Ch], al
+mov     cl, [ebx+2Dh]
+mov     [esi+2Dh], cl
+mov     edx, [ebx+30h]
+mov     [esi+30h], edx
+mov     dword ptr [esi], offset ??_7ToggleClass@@6B@ ; const ToggleClass::`vftable'
+mov     al, [ebx+34h]
+push    ebp
+mov     [esi+34h], al
+mov     ecx, [ebx+38h]
+mov     [esi+38h], ecx
+mov     edx, [ebx+3Ch]
+mov     [esi+3Ch], edx
+mov     al, [ebx+40h]
+mov     [esi+40h], al
+mov     ecx, [ebx+44h]
+mov     [esi+44h], ecx
+mov     edx, [ebx+48h]
+mov     [esi+48h], edx
+mov     al, [ebx+4Ch]
+mov     [esi+4Ch], al
+mov     ecx, [ebx+50h]
+mov     [esi+50h], ecx
+mov     dl, [ebx+54h]
+mov     [esi+54h], dl
+mov     al, [ebx+55h]
+mov     [esi+55h], al
+mov     ecx, [ebx+58h]
+mov     [esi+58h], ecx
+mov     dl, [ebx+5Ch]
+lea     ebx, [edi+0B0h]
+mov     [esi+5Ch], dl
+mov     ecx, ebx
+mov     dword ptr [esi], offset ??_7ShapeButtonClass@@6B@ ; const ShapeButtonClass::`vftable'
+call    sub_557380
+mov     eax, [ebx]
+push    edi
+mov     ecx, ebx
+mov     dword ptr [edi], offset ??_7DropListClass@@6B@ ; const DropListClass::`vftable'
+call    dword ptr [eax+84h]
+mov     edx, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x00732FF0 (365 bytes)
 void DynamicVector_AddEvent_732FF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00732FF0.json)
-    // Size: 365 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_732FF0 ( void *a1, int ( __fastcall *a2 ) ( _DWORD, int ) , int a3 ) { !int HeightMap ! ; // eax _DWORD *v4 ; // esi !int v5 ! ; // ebx !int v6 ! ; // ebp !int v7 ! ; // edi int v8 ; // ecx int v9 ; // edx _DWORD *v10 ; // eax !int v11 ! ; // ebx !int i ! ; // edi int v13 ; // ebp int j ; // edi !int v17 ! ; // [esp+18h] [ebp-8h] BYREF int (__fastcall *v18)(_DWORD, int) ; // [esp+1Ch] [ebp-4h] v18 = a2 ; if ( byte_B0FE64 ) { HeightMap = ( int ) __2_YAPAXI_Z ( 0x18u ) ; v4 = ( _DWORD * ) HeightMap ; v5 = 0 ; if ( HeightMap ) { LOBYTE ( HeightMap ) = ( unsigned __int8 ) EventClass::resetEvent ( ( _DWORD * ) HeightMap , 0 , 0 ) ; * v4 = & DynamicVectorClass<TechnoClass *>::vftable' ; v4 [ 5 ] = 10 ; v4 [ 4 ] = 0 ; } else { v4 = 0 ; } v6 = g_SidebarState ; if ( g_SidebarState > 0 ) { do { v7 = * ( ( _DWORD * ) g_TechnoClass_Count + v5 ) ; LOBYTE ( HeightMap ) = StepTechnoClassCleanupIfHuman ( v7 , a1 ) ; if ( ( _BYTE ) HeightMap ) { v8 = v4 [ 2 ] ; if ( v4 [ 4 ] < v8 || ( ( LOBYTE ( HeightMap ) = * ( ( _BYTE * ) v4 + 13 ) , ( _BYTE ) HeightMap ) || ! v8 ) && ( HeightMap = v4 [ 5 ] , HeightMap > 0 ) && ( LOBYTE ( HeightMap ) = ( * ( int (__thiscall **)(_DWORD *, int, _DWORD) ) ( * v4 + 8 ) ) ( v4 , v8 + HeightMap , 0 ) , ( _BYTE ) HeightMap ) ) { HeightMap = v4 [ 4 ] ; v9 = v4 [ 1 ] ; v4 [ 4 ] = HeightMap + 1 ; * ( _DWORD * ) ( v9 + 4 * HeightMap ) = v7 ; } } ++ v5 ; } while ( v5 < v6 ) ; } } else { v10 = __2_YAPAXI_Z ( 0x18u ) ; v4 = v10 ; if ( v10 ) { EventClass::resetEvent ( v10 , 0 , 0 ) ; * v4 = & DynamicVectorClass<TechnoClass *>::vftable' ; v4 [ 5 ] = 10 ; v4 [ 4 ] = 0 ; } else { v4 = 0 ; } HeightMap = GetHeightMap ( TacticalClass_Instance ) ; v11 = HeightMap ; for ( i = 0 ; i < v11 ; ++ i ) { HeightMap = GetCoordDataMap ( i ) ; if ( HeightMap ) { if ( ( * ( _BYTE * ) ( HeightMap + 20 ) & 1 ) != 0 ) { v17 = HeightMap ; LOBYTE ( HeightMap ) = StepTechnoClassCleanupIfHuman ( HeightMap , a1 ) ; if ( ( _BYTE ) HeightMap ) LOBYTE ( HeightMap ) = DynamicVector::Add_Float ( v4 , & v17 ) ; } } } } v13 = v4 [ 4 ] ; for ( j = 0 ; j < v13 ; ++ j ) LOBYTE ( HeightMap ) = v18 ( * ( _DWORD * ) ( v4 [ 1 ] + 4 * j ) , a3 ) ; if ( v4 ) LOBYTE ( HeightMap ) = ( * ( int (__thiscall **)(_DWORD *, int) ) * v4 ) ( v4 , 1 ) ; return HeightMap ; }
-    
+// [IDA decompile]
+char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
+{
+  int HeightMap; // eax
+  _DWORD *v4; // esi
+  int v5; // ebx
+  int v6; // ebp
+  int v7; // edi
+  int v8; // ecx
+  int v9; // edx
+  _DWORD *v10; // eax
+  int v11; // ebx
+  int i; // edi
+  int v13; // ebp
+  int j; // edi
+  int v17; // [esp+18h] [ebp-8h] BYREF
+  int (__fastcall *v18)(_DWORD, int); // [esp+1Ch] [ebp-4h]
+
+  v18 = a2;
+  if ( LOBYTE(dword_A8ED54[132164]) )
+  {
+    HeightMap = __2_YAPAXI_Z(24);
+    v4 = (_DWORD *)HeightMap;
+    v5 = 0;
+    if ( HeightMap )
+    {
+      LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((_DWORD *)HeightMap, 0, 0);
+      *v4 = &DynamicVectorClass<TechnoClass *>::`vftable';
+      v4[5] = 10;
+      v4[4] = 0;
+    }
+    else
+    {
+      v4 = 0;
+    }
+    v6 = MEMORY[0x87F7E8][539944];
+    if ( MEMORY[0x87F7E8][539944] > 0 )
+    {
+      do
+      {
+        v7 = *(_DWORD *)(MEMORY[0x87F7E8][539941] + 4 * v5);
+        LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v7, a1);
+        if ( (_BYTE)HeightMap )
+        {
+          v8 = v4[2];
+          if ( v4[4] < v8
+            || ((LOBYTE(HeightMap) = *((_BYTE *)v4 + 13), (_BYTE)HeightMap) || !v8)
+            && (HeightMap = v4[5], HeightMap > 0)
+            && (LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v8 + HeightMap, 0),
+                (_BYTE)HeightMap) )
+          {
+            HeightMap = v4[4];
+            v9 = v4[1];
+            v4[4] = HeightMap + 1;
+            *(_DWORD *)(v9 + 4 * HeightMap) = v7;
+          }
+        }
+        ++v5;
+      }
+      while ( v5 < v6 );
+    }
+  }
+  else
+  {
+    v10 = (_DWORD *)__2_YAPAXI_Z(24);
+    v4 = v10;
+    if ( v10 )
+    {
+      EventClass::resetEvent(v10, 0, 0);
+      *v4 = &DynamicVectorClass<TechnoClass *>::`vftable';
+      v4[5] = 10;
+      v4[4] = 0;
+    }
+    else
+    {
+      v4 = 0;
+    }
+    HeightMap = GetHeightMap((_DWORD *)MEMORY[0x87F7E8][7887]);
+    v11 = HeightMap;
+    for ( i = 0; i < v11; ++i )
+    {
+      HeightMap = GetCoordDataMap(i);
+      if ( HeightMap )
+      {
+        if ( (*(_BYTE *)(HeightMap + 20) & 1) != 0 )
+        {
+          v17 = HeightMap;
+          LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, a1);
+          if ( (_BYTE)HeightMap )
+            LOBYTE(HeightMap) = DynamicVector::AddItem(v4, &v17);
+        }
+      }
+    }
+  }
+  v13 = v4[4];
+  for ( j = 0; j < v13; ++j )
+    LOBYTE(HeightMap) = v18(*(_DWORD *)(v4[1] + 4 * j), a3);
+  if ( v4 )
+    LOBYTE(HeightMap) = (*(char (__thiscall **)(_DWORD *, int))*v4)(v4, 1);
+  return HeightMap;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     al, byte ptr dword_A8ED54+81110h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     [esp+20h+var_4], edx
+test    al, al
+mov     [esp+20h+var_C], ecx
+push    18h             ; Size
+jz      loc_7330A5
+call    ??2_YAPAXI_Z
+mov     esi, eax
+xor     ebx, ebx
+add     esp, 4
+cmp     esi, ebx
+jz      short loc_733039
+push    ebx
+push    ebx
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     [esi+10h], ebx
+jmp     short loc_73303B
+; ---------------------------------------------------------------------------
+
+loc_733039:                             ; CODE XREF: sub_732FF0+2C↑j
+xor     esi, esi
+
+loc_73303B:                             ; CODE XREF: sub_732FF0+47↑j
+mov     ebp, ds:0A8EC88h
+cmp     ebp, ebx
+jle     loc_733129
+
+loc_733049:                             ; CODE XREF: sub_732FF0+AE↓j
+mov     eax, ds:0A8EC7Ch
+mov     edx, [esp+20h+var_C]
+mov     edi, [eax+ebx*4]
+mov     ecx, edi
+call    StepTechnoClassCleanupIfHuman
+test    al, al
+jz      short loc_73309B
+mov     ecx, [esi+8]
+mov     eax, [esi+10h]
+cmp     eax, ecx
+jl      short loc_73308C
+mov     al, [esi+0Dh]
+test    al, al
+jnz     short loc_733075
+test    ecx, ecx
+jnz     short loc_73309B
+
+loc_733075:                             ; CODE XREF: sub_732FF0+7F↑j
+mov     eax, [esi+14h]
+test    eax, eax
+jle     short loc_73309B
+mov     edx, [esi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_73309B
+
+loc_73308C:                             ; CODE XREF: sub_732FF0+78↑j
+mov     eax, [esi+10h]
+mov     edx, [esi+4]
+lea     ecx, [eax+1]
+mov     [esi+10h], ecx
+mov     [edx+eax*4], edi
+
+loc_73309B:                             ; CODE XREF: sub_732FF0+6E↑j
+; sub_732FF0+83↑j ...
+inc     ebx
+cmp     ebx, ebp
+jl      short loc_733049
+jmp     loc_733129
+; ---------------------------------------------------------------------------
+
+loc_7330A5:                             ; CODE XREF: sub_732FF0+18↑j
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+test    esi, esi
+jz      short loc_7330D4
+push    0
+push    0
+mov     ecx, esi
+call    EventClass__resetEvent
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAVTechnoClass@@@@6B@ ; const DynamicVectorClass<TechnoClass *>::`vftable'
+mov     dword ptr [esi+14h], 0Ah
+mov     dword ptr [esi+10h], 0
+jmp     short loc_7330D6
+; ---------------------------------------------------------------------------
+
+loc_7330D4:                             ; CODE XREF: sub_732FF0+C1↑j
+xor     esi, esi
+
+loc_7330D6:                             ; CODE XREF: sub_732FF0+E2↑j
+mov     ecx, ds:887324h
+call    GetHeightMap
+mov     ebx, eax
+xor     edi, edi
+test    ebx, ebx
+jle     short loc_733129
+
+loc_7330E9:                             ; CODE XREF: sub_732FF0+137↓j
+mov     ecx, ds:887324h
+push    edi
+call    GetCoordDataMap
+test    eax, eax
+jz      short loc_733124
+mov     cl, [eax+14h]
+and     cl, 1
+mov     [esp+20h+var_D], cl
+jz      short loc_733124
+mov     edx, [esp+20h+var_C]
+mov     ecx, eax
+mov     [esp+20h+var_8], eax
+call    StepTechnoClassCleanupIfHuman
+test    al, al
+jz      short loc_733124
+lea     edx, [esp+20h+var_8]
+mov     ecx, esi
+push    edx
+call    DynamicVector__AddItem
+
+loc_733124:                             ; CODE XREF: sub_732FF0+107↑j
+; sub_732FF0+113↑j ...
+inc     edi
+cmp     edi, ebx
+jl      short loc_7330E9
+
+loc_733129:                             ; CODE XREF: sub_732FF0+53↑j
+; sub_732FF0+B0↑j ...
+mov     ebp, [esi+10h]
+xor     edi, edi
+test    ebp, ebp
+jle     short loc_733147
+mov     ebx, [esp+20h+arg_0]
+
+loc_733136:                             ; CODE XREF: sub_732FF0+155↓j
+mov     eax, [esi+4]
+mov     edx, ebx
+mov     ecx, [eax+edi*4]
+call    [esp+20h+var_4]
+inc     edi
+cmp     edi, ebp
+jl      short loc_733136
+
+loc_733147:                             ; CODE XREF: sub_732FF0+140↑j
+test    esi, esi
+jz      short loc_733153
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [edx]
+
+loc_733153:                             ; CODE XREF: sub_732FF0+159↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    4
+*/
 }
 
 // 0x004FBD00 (113 bytes)
 char DynamicVector_Get_4FBD00() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004FBD00.json)
-    // Size: 113 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_4FBD00 ( _DWORD *this, int a2 ) { int v2 ; // edi _DWORD *v4 ; // eax int v5 ; // ecx v2 = 0 ; if ( HouseClass_Count <= 0 ) return 0 ; while ( 1 ) { v4 = * ( _DWORD ** ) & HouseClass_Array -> gap0 [ 4 * v2 ] ; if ( v4 ) { if ( v4 != this ) { v5 = v4 [ 12 ] ; if ( v5 != * ( this + 12 ) && ( v5 == -1 || ( ( 1 << v5 ) & * ( this + 5602 ) ) == 0 ) && DynamicVector::GetOrGrow ( v4 + 5460 , a2 ) > 0 ) { break ; } } } if ( ++ v2 >= HouseClass_Count ) return 0 ; } return 1 ; }
+// [IDA decompile]
+char __thiscall sub_4FBD00(_DWORD *this, int a2)
+{
+  int v2; // edi
+  _DWORD *v4; // eax
+  int v5; // ecx
+
+  v2 = 0;
+  if ( MEMORY[0x87F7E8][524948] <= 0 )
     return 0;
+  while ( 1 )
+  {
+    v4 = *(_DWORD **)(MEMORY[0x87F7E8][524945] + 4 * v2);
+    if ( v4 )
+    {
+      if ( v4 != this )
+      {
+        v5 = v4[12];
+        if ( v5 != *(this + 12)
+          && (v5 == -1 || ((1 << v5) & *(this + 5602)) == 0)
+          && DynamicVector::GetOrGrow(v4 + 5460, a2) > 0 )
+        {
+          break;
+        }
+      }
+    }
+    if ( ++v2 >= MEMORY[0x87F7E8][524948] )
+      return 0;
+  }
+  return 1;
+}
+
+/* ASM:
+mov     eax, ds:0A80238h
+push    ebx
+push    esi
+push    edi
+xor     edi, edi
+mov     esi, ecx
+test    eax, eax
+jle     short loc_4FBD61
+mov     ebx, [esp+0Ch+arg_0]
+
+loc_4FBD14:                             ; CODE XREF: sub_4FBD00+5F↓j
+mov     eax, ds:0A8022Ch
+mov     eax, [eax+edi*4]
+test    eax, eax
+jz      short loc_4FBD57
+cmp     eax, esi
+jz      short loc_4FBD57
+mov     ecx, [eax+30h]
+mov     edx, [esi+30h]
+cmp     ecx, edx
+jz      short loc_4FBD57
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_4FBD47
+mov     edx, 1
+shl     edx, cl
+test    [esi+5788h], edx
+setnz   cl
+test    cl, cl
+jnz     short loc_4FBD57
+
+loc_4FBD47:                             ; CODE XREF: sub_4FBD00+31↑j
+push    ebx
+lea     ecx, [eax+5550h]
+call    DynamicVector__GetOrGrow
+test    eax, eax
+jg      short loc_4FBD69
+
+loc_4FBD57:                             ; CODE XREF: sub_4FBD00+1E↑j
+; sub_4FBD00+22↑j ...
+mov     eax, ds:0A80238h
+inc     edi
+cmp     edi, eax
+jl      short loc_4FBD14
+
+loc_4FBD61:                             ; CODE XREF: sub_4FBD00+E↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4FBD69:                             ; CODE XREF: sub_4FBD00+55↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0046DA70 (465 bytes)
 void GetVector_46DA70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0046DA70.json)
-    // Size: 465 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void sub_46DA70 ( ) { !int v0 ! ; // ebx !int v1 ! ; // esi int v2 ; // edi !size_t v3 ! ; // ebp !int v4 ! ; // esi !int v5 ! ; // eax !int *v6 ! ; // ecx !int v7 ! ; // edx int v8 ; // ebp !int *v9 ! ; // ecx !int v10 ! ; // edx int v11 ; // ebp !int Count ! ; // ebp !int v13 ! ; // ebp !int v14 ! ; // ebp !int v15 ! ; // edi !int i ! ; // [esp+8h] [ebp-8h] !int v17 ! ; // [esp+Ch] [ebp-4h] v0 = HouseClass_Count ; v1 = 0 ; g_CampaignScoreFlags = 0 ; v17 = HouseClass_Count ; for ( i = 0 ; v1 < v0 ; i = v1 ) { v2 = * ( _DWORD * ) & HouseClass_Array -> gap0 [ 4 * v1 ] ; if ( v2 && * ( _BYTE * ) ( * ( _DWORD * ) ( v2 + 52 ) + 422 ) != 1 && ( unsigned __int8 ) House::IsCurrentPlayer ( * ( #375 ** ) & HouseClass_Array -> gap0 [ 4 * v1 ] ) ) { v3 = g_CampaignScoreFlags ++ ; v4 = 28 * v3 ; dword_A8D228 [ 28 * v3 ] = 0 ; wcscpy ( ( wchar_t * ) & unk_A8D1FC + 56 * v3 , ( const wchar_t * ) ( v2 + 90154 ) ) ; v5 = 0 ; dword_A8D22C [ 28 * v3 ] = 0 ; dword_A8D23C [ 28 * v3 ] = 0 ; dword_A8D24C [ 28 * v3 ] = 0 ; dword_A8D25C [ 28 * v3 ] = 0 ; dword_A8D224 [ 28 * v3 ] = * ( _DWORD * ) ( v2 + 90196 ) ; if ( ! * ( _BYTE * ) ( v2 + 501 ) ) { ++ dword_A8D228 [ 28 * v3 ] ; dword_A8D584 = v3 ; } v6 = ( int * ) ( v2 + 21476 ) ; v7 = 20 ; do { v8 = * v6 ++ ; v5 += v8 ; -- v7 ; } while ( v7 ) ; v9 = ( int * ) ( v2 + 21560 ) ; v10 = 20 ; do { v11 = * v9 ++ ; v5 += v11 ; -- v10 ; } while ( v10 ) ; dword_A8D23C [ v4 ] = v5 ; dword_A8D22C [ v4 ] = * ( _DWORD * ) ( v2 + 21640 ) + * ( _DWORD * ) ( v2 + 21556 ) ; Count = VectorClass::GetCount ( ( _DWORD * ) ( v2 + 21840 ) ) ; v13 = VectorClass::GetCount ( ( _DWORD * ) ( v2 + 21860 ) ) + Count ; v14 = VectorClass::GetCount ( ( _DWORD * ) ( v2 + 21880 ) ) + v13 ; dword_A8D24C [ v4 ] = * ( _DWORD * ) ( v2 + 21640 ) + VectorClass::GetCount ( ( _DWORD * ) ( v2 + 21900 ) ) + v14 + * ( _DWORD * ) ( v2 + 21556 ) ; v15 = * ( _DWORD * ) ( v2 + 21736 ) ; if ( v15 > 0 ) dword_A8D25C [ v4 ] += v15 ; Debug::Log ( ) ; v1 = i ; v0 = v17 ; } ++ v1 ; } }
-    
+// [IDA decompile]
+void sub_46DA70()
+{
+  int v0; // ebx
+  int v1; // esi
+  int v2; // edi
+  int v3; // ebp
+  int v4; // esi
+  int v5; // eax
+  int *v6; // ecx
+  int v7; // edx
+  int v8; // ebp
+  int *v9; // ecx
+  int v10; // edx
+  int v11; // ebp
+  int Count; // ebp
+  int v13; // ebp
+  int v14; // ebp
+  int v15; // edi
+  int i; // [esp+8h] [ebp-8h]
+  int v17; // [esp+Ch] [ebp-4h]
+
+  v0 = MEMORY[0x87F7E8][524948];
+  v1 = 0;
+  MEMORY[0x87F7E8][538470] = 0;
+  v17 = MEMORY[0x87F7E8][524948];
+  for ( i = 0; v1 < v0; i = v1 )
+  {
+    v2 = *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v1);
+    if ( v2
+      && *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1
+      && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(MEMORY[0x87F7E8][524945] + 4 * v1)) )
+    {
+      v3 = MEMORY[0x87F7E8][538470]++;
+      v4 = 28 * v3;
+      MEMORY[0x87F7E8][28 * v3 + 538256] = 0;
+      wcscpy((#72 *)&MEMORY[0x87F7E8][28 * v3 + 538245], (const #72 *)(v2 + 90154));
+      v5 = 0;
+      MEMORY[0x87F7E8][28 * v3 + 538257] = 0;
+      MEMORY[0x87F7E8][28 * v3 + 538261] = 0;
+      MEMORY[0x87F7E8][28 * v3 + 538265] = 0;
+      MEMORY[0x87F7E8][28 * v3 + 538269] = 0;
+      MEMORY[0x87F7E8][28 * v3 + 538255] = *(_DWORD *)(v2 + 90196);
+      if ( !*(_BYTE *)(v2 + 501) )
+      {
+        ++MEMORY[0x87F7E8][28 * v3 + 538256];
+        MEMORY[0x87F7E8][538471] = v3;
+      }
+      v6 = (int *)(v2 + 21476);
+      v7 = 20;
+      do
+      {
+        v8 = *v6++;
+        v5 += v8;
+        --v7;
+      }
+      while ( v7 );
+      v9 = (int *)(v2 + 21560);
+      v10 = 20;
+      do
+      {
+        v11 = *v9++;
+        v5 += v11;
+        --v10;
+      }
+      while ( v10 );
+      MEMORY[0x87F7E8][v4 + 538261] = v5;
+      MEMORY[0x87F7E8][v4 + 538257] = *(_DWORD *)(v2 + 21640) + *(_DWORD *)(v2 + 21556);
+      Count = VectorClass::GetCount((_DWORD *)(v2 + 21840));
+      v13 = VectorClass::GetCount((_DWORD *)(v2 + 21860)) + Count;
+      v14 = VectorClass::GetCount((_DWORD *)(v2 + 21880)) + v13;
+      MEMORY[0x87F7E8][v4 + 538265] = *(_DWORD *)(v2 + 21640)
+                                    + VectorClass::GetCount((_DWORD *)(v2 + 21900))
+                                    + v14
+                                    + *(_DWORD *)(v2 + 21556);
+      v15 = *(_DWORD *)(v2 + 21736);
+      if ( v15 > 0 )
+        MEMORY[0x87F7E8][v4 + 538269] += v15;
+      Debug::Log();
+      v1 = i;
+      v0 = v17;
+    }
+    ++v1;
+  }
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+mov     ebx, ds:0A80238h
+push    esi
+xor     esi, esi
+cmp     ebx, esi
+mov     ds:0A8D580h, esi
+mov     [esp+10h+var_4], ebx
+mov     [esp+10h+var_8], esi
+jle     loc_46DC3B
+push    ebp
+push    edi
+
+loc_46DA95:                             ; CODE XREF: sub_46DA70+1C3↓j
+mov     eax, ds:0A8022Ch
+mov     edi, [eax+esi*4]
+test    edi, edi
+jz      loc_46DC2C
+mov     ecx, [edi+34h]
+cmp     byte ptr [ecx+1A6h], 1
+jz      loc_46DC2C
+mov     ecx, edi        ; this
+call    House__IsCurrentPlayer
+test    al, al
+jz      loc_46DC2C
+mov     eax, ds:0A8D580h
+lea     edx, [edi+1602Ah]
+mov     ebp, eax
+inc     eax
+push    edx             ; Source
+mov     ds:0A8D580h, eax
+lea     esi, ds:0[ebp*8]
+sub     esi, ebp
+shl     esi, 4
+lea     ebx, [esi+0A8D1FCh]
+mov     dword ptr [esi+0A8D228h], 0
+push    ebx             ; Destination
+call    _wcscpy
+xor     eax, eax
+add     esp, 8
+mov     [esi+0A8D22Ch], eax
+mov     [esi+0A8D23Ch], eax
+mov     [esi+0A8D24Ch], eax
+mov     [esi+0A8D25Ch], eax
+mov     ecx, [edi+16054h]
+mov     [esi+0A8D224h], ecx
+mov     cl, [edi+1F5h]
+test    cl, cl
+jnz     short loc_46DB40
+mov     ecx, [esi+0A8D228h]
+inc     ecx
+mov     [esi+0A8D228h], ecx
+mov     ds:0A8D584h, ebp
+
+loc_46DB40:                             ; CODE XREF: sub_46DA70+BB↑j
+lea     ecx, [edi+53E4h]
+mov     edx, 14h
+
+loc_46DB4B:                             ; CODE XREF: sub_46DA70+E3↓j
+mov     ebp, [ecx]
+add     ecx, 4
+add     eax, ebp
+dec     edx
+jnz     short loc_46DB4B
+lea     ecx, [edi+5438h]
+mov     edx, 14h
+
+loc_46DB60:                             ; CODE XREF: sub_46DA70+F8↓j
+mov     ebp, [ecx]
+add     ecx, 4
+add     eax, ebp
+dec     edx
+jnz     short loc_46DB60
+mov     [esi+0A8D23Ch], eax
+mov     edx, [edi+5434h]
+mov     ebp, [edi+5488h]
+lea     ecx, [edi+5550h]
+add     edx, ebp
+mov     [esi+0A8D22Ch], edx
+call    VectorClass__GetCount
+lea     ecx, [edi+5564h]
+mov     ebp, eax
+call    VectorClass__GetCount
+lea     ecx, [edi+5578h]
+add     ebp, eax
+call    VectorClass__GetCount
+lea     ecx, [edi+558Ch]
+add     ebp, eax
+call    VectorClass__GetCount
+mov     ecx, [edi+5488h]
+add     ebp, eax
+mov     eax, [edi+5434h]
+add     eax, ebp
+add     eax, ecx
+mov     [esi+0A8D24Ch], eax
+mov     edi, [edi+54E8h]
+test    edi, edi
+jle     short loc_46DBDE
+add     [esi+0A8D25Ch], edi
+
+loc_46DBDE:                             ; CODE XREF: sub_46DA70+166↑j
+mov     eax, [esi+0A8D228h]
+test    eax, eax
+mov     eax, offset g_INI_Key_Winner ; "Winner"
+jg      short loc_46DBF2
+mov     eax, offset g_INI_Key_Loser ; "Loser"
+
+loc_46DBF2:                             ; CODE XREF: sub_46DA70+17B↑j
+mov     ecx, [esi+0A8D25Ch]
+mov     edx, [esi+0A8D24Ch]
+push    ecx
+mov     ecx, [esi+0A8D23Ch]
+push    edx
+mov     edx, [esi+0A8D22Ch]
+push    ecx
+mov     ecx, [esi+0A8D224h]
+push    edx
+push    ecx
+push    eax
+push    ebx
+push    offset aSSSchemeDLostD ; "%s: %s\n Scheme: %d\n Lost = %d\n Kills"...
+call    Debug__Log
+mov     esi, [esp+38h+var_8]
+mov     ebx, [esp+38h+var_4]
+add     esp, 20h
+
+loc_46DC2C:                             ; CODE XREF: sub_46DA70+2F↑j
+; sub_46DA70+3F↑j ...
+inc     esi
+cmp     esi, ebx
+mov     [esp+18h+var_8], esi
+jl      loc_46DA95
+pop     edi
+pop     ebp
+
+loc_46DC3B:                             ; CODE XREF: sub_46DA70+1D↑j
+pop     esi
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x007B2E50 (305 bytes)
 void UDPInterfaceClass_Destructor_7B2E50() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007B2E50.json)
-    // Size: 305 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_7B2E50 ( int this ) { !int v2 ! ; // eax !int v3 ! ; // ecx int v4 ; // eax !int v5 ! ; // eax !int v6 ! ; // ecx int v7 ; // eax void *v8 ; // eax void *v9 ; // eax * ( _DWORD * ) this = & UDPInterfaceClass::vftable' ; while ( * ( _DWORD * ) ( this + 258888 ) ) { __3_YAXPAX_Z ( * * ( void *** ) ( this + 258876 ) ) ; v2 = * ( _DWORD * ) ( this + 258888 ) ; if ( v2 > 0 ) { v3 = v2 - 1 ; v4 = 0 ; for ( * ( _DWORD * ) ( this + 258888 ) = v3 ; v4 < * ( _DWORD * ) ( this + 258888 ) ; * ( _DWORD * ) ( * ( _DWORD * ) ( this + 258876 ) + 4 * v4 - 4 ) = * ( _DWORD * ) ( * ( _DWORD * ) ( this + 258876 ) + 4 * v4 ) ) { ++ v4 ; } } } while ( * ( _DWORD * ) ( this + 259424 ) ) { __3_YAXPAX_Z ( * * ( void *** ) ( this + 259412 ) ) ; v5 = * ( _DWORD * ) ( this + 259424 ) ; if ( v5 > 0 ) { v6 = v5 - 1 ; v7 = 0 ; for ( * ( _DWORD * ) ( this + 259424 ) = v6 ; v7 < * ( _DWORD * ) ( this + 259424 ) ; * ( _DWORD * ) ( * ( _DWORD * ) ( this + 259412 ) + 4 * v7 - 4 ) = * ( _DWORD * ) ( * ( _DWORD * ) ( this + 259412 ) + 4 * v7 ) ) { ++ v7 ; } } } UDPInterfaceClass::connect ( ( _BYTE * ) this ) ; v8 = * ( void ** ) ( this + 259412 ) ; * ( _DWORD * ) ( this + 259408 ) = & VectorClass<unsigned char *>::vftable' ; if ( v8 && * ( _BYTE * ) ( this + 259421 ) ) { __3_YAXPAX_Z ( v8 ) ; * ( _DWORD * ) ( this + 259412 ) = 0 ; } * ( _BYTE * ) ( this + 259421 ) = 0 ; * ( _DWORD * ) ( this + 259416 ) = 0 ; v9 = * ( void ** ) ( this + 258876 ) ; * ( _DWORD * ) ( this + 258872 ) = & VectorClass<unsigned char *>::vftable' ; if ( v9 && * ( _BYTE * ) ( this + 258885 ) ) { __3_YAXPAX_Z ( v9 ) ; * ( _DWORD * ) ( this + 258876 ) = 0 ; } * ( _BYTE * ) ( this + 258885 ) = 0 ; * ( _DWORD * ) ( this + 258880 ) = 0 ; WinsockInterfaceClass::Destructor ( this ) ; }
-    
+// [IDA decompile]
+void __thiscall sub_7B2E50(int this)
+{
+  int v2; // eax
+  int v3; // ecx
+  int v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  void *v8; // eax
+  void *v9; // eax
+
+  *(_DWORD *)this = &UDPInterfaceClass::`vftable';
+  while ( *(_DWORD *)(this + 258888) )
+  {
+    __3_YAXPAX_Z(**(void ***)(this + 258876));
+    v2 = *(_DWORD *)(this + 258888);
+    if ( v2 > 0 )
+    {
+      v3 = v2 - 1;
+      v4 = 0;
+      for ( *(_DWORD *)(this + 258888) = v3;
+            v4 < *(_DWORD *)(this + 258888);
+            *(_DWORD *)(*(_DWORD *)(this + 258876) + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)(this + 258876) + 4 * v4) )
+      {
+        ++v4;
+      }
+    }
+  }
+  while ( *(_DWORD *)(this + 259424) )
+  {
+    __3_YAXPAX_Z(**(void ***)(this + 259412));
+    v5 = *(_DWORD *)(this + 259424);
+    if ( v5 > 0 )
+    {
+      v6 = v5 - 1;
+      v7 = 0;
+      for ( *(_DWORD *)(this + 259424) = v6;
+            v7 < *(_DWORD *)(this + 259424);
+            *(_DWORD *)(*(_DWORD *)(this + 259412) + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)(this + 259412) + 4 * v7) )
+      {
+        ++v7;
+      }
+    }
+  }
+  UDPInterfaceClass::connect((_BYTE *)this);
+  v8 = *(void **)(this + 259412);
+  *(_DWORD *)(this + 259408) = &VectorClass<unsigned char *>::`vftable';
+  if ( v8 && *(_BYTE *)(this + 259421) )
+  {
+    __3_YAXPAX_Z(v8);
+    *(_DWORD *)(this + 259412) = 0;
+  }
+  *(_BYTE *)(this + 259421) = 0;
+  *(_DWORD *)(this + 259416) = 0;
+  v9 = *(void **)(this + 258876);
+  *(_DWORD *)(this + 258872) = &VectorClass<unsigned char *>::`vftable';
+  if ( v9 && *(_BYTE *)(this + 258885) )
+  {
+    __3_YAXPAX_Z(v9);
+    *(_DWORD *)(this + 258876) = 0;
+  }
+  *(_BYTE *)(this + 258885) = 0;
+  *(_DWORD *)(this + 258880) = 0;
+  WinsockInterfaceClass::WinsockInterfaceClass(this);
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+xor     ebx, ebx
+mov     dword ptr [esi], offset ??_7UDPInterfaceClass@@6B@ ; const UDPInterfaceClass::`vftable'
+mov     eax, [esi+3F348h]
+cmp     eax, ebx
+jz      short loc_7B2EB0
+
+loc_7B2E66:                             ; CODE XREF: sub_7B2E50+5E↓j
+mov     eax, [esi+3F33Ch]
+mov     ecx, [eax]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, [esi+3F348h]
+add     esp, 4
+cmp     eax, ebx
+jle     short loc_7B2EA8
+lea     ecx, [eax-1]
+xor     eax, eax
+cmp     ecx, ebx
+mov     [esi+3F348h], ecx
+jle     short loc_7B2EA8
+
+loc_7B2E90:                             ; CODE XREF: sub_7B2E50+56↓j
+mov     ecx, [esi+3F33Ch]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+3F348h]
+cmp     eax, ecx
+jl      short loc_7B2E90
+
+loc_7B2EA8:                             ; CODE XREF: sub_7B2E50+2F↑j
+; sub_7B2E50+3E↑j
+cmp     [esi+3F348h], ebx
+jnz     short loc_7B2E66
+
+loc_7B2EB0:                             ; CODE XREF: sub_7B2E50+14↑j
+cmp     [esi+3F560h], ebx
+jz      short loc_7B2F02
+
+loc_7B2EB8:                             ; CODE XREF: sub_7B2E50+B0↓j
+mov     eax, [esi+3F554h]
+mov     ecx, [eax]
+push    ecx             ; Block
+call    ??3_YAXPAX_Z
+mov     eax, [esi+3F560h]
+add     esp, 4
+cmp     eax, ebx
+jle     short loc_7B2EFA
+lea     ecx, [eax-1]
+xor     eax, eax
+cmp     ecx, ebx
+mov     [esi+3F560h], ecx
+jle     short loc_7B2EFA
+
+loc_7B2EE2:                             ; CODE XREF: sub_7B2E50+A8↓j
+mov     ecx, [esi+3F554h]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [esi+3F560h]
+cmp     eax, ecx
+jl      short loc_7B2EE2
+
+loc_7B2EFA:                             ; CODE XREF: sub_7B2E50+81↑j
+; sub_7B2E50+90↑j
+cmp     [esi+3F560h], ebx
+jnz     short loc_7B2EB8
+
+loc_7B2F02:                             ; CODE XREF: sub_7B2E50+66↑j
+mov     ecx, esi
+call    UDPInterfaceClass__connect
+mov     eax, [esi+3F554h]
+mov     dword ptr [esi+3F550h], offset ??_7?$VectorClass@PAE@@6B@ ; const VectorClass<uchar *>::`vftable'
+cmp     eax, ebx
+jz      short loc_7B2F34
+cmp     [esi+3F55Dh], bl
+jz      short loc_7B2F34
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+3F554h], ebx
+
+loc_7B2F34:                             ; CODE XREF: sub_7B2E50+CB↑j
+; sub_7B2E50+D3↑j
+mov     [esi+3F55Dh], bl
+mov     [esi+3F558h], ebx
+mov     eax, [esi+3F33Ch]
+mov     dword ptr [esi+3F338h], offset ??_7?$VectorClass@PAE@@6B@ ; const VectorClass<uchar *>::`vftable'
+cmp     eax, ebx
+jz      short loc_7B2F6B
+cmp     [esi+3F345h], bl
+jz      short loc_7B2F6B
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+3F33Ch], ebx
+
+loc_7B2F6B:                             ; CODE XREF: sub_7B2E50+102↑j
+; sub_7B2E50+10A↑j
+mov     ecx, esi
+mov     [esi+3F345h], bl
+mov     [esi+3F340h], ebx
+call    WinsockInterfaceClass__WinsockInterfaceClass
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x004FA210 (199 bytes)
 void VectorClass_ClearVector_4FA210() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004FA210.json)
-    // Size: 199 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4FA210 ( void *this, int a2, int a3 ) { int v3 ; // eax !bool v4 ! ; // zf void *v5 ; // eax !int v6 ! ; // ecx int v7 ; // eax int v8 ; // ecx void *v9 ; // eax void **v11 ; // [esp+8h] [ebp-1Ch] BYREF !void *Block ! ; // [esp+Ch] [ebp-18h] int v13 ; // [esp+10h] [ebp-14h] char v14 ; // [esp+15h] [ebp-Fh] int v15 ; // [esp+18h] [ebp-Ch] int v16 ; // [esp+1Ch] [ebp-8h] AISelectTeamHouseClass ( & v11 , ( int ) this , a3 ) ; * ( _DWORD * ) ( a2 + 4 ) = 0 ; * ( _DWORD * ) ( a2 + 8 ) = 0 ; * ( _BYTE * ) ( a2 + 12 ) = 1 ; * ( _BYTE * ) ( a2 + 13 ) = 0 ; * ( _DWORD * ) a2 = & VectorClass<TeamTypeClass const *>::vftable' ; if ( ( void *** ) a2 != & v11 ) { VectorClass::ClearAndFree3 ( a2 ) ; v3 = v13 ; v4 = v13 == 0 ; * ( _DWORD * ) ( a2 + 8 ) = v13 ; if ( v4 ) { * ( _DWORD * ) ( a2 + 4 ) = 0 ; * ( _BYTE * ) ( a2 + 13 ) = 0 ; } else { v5 = __2_YAPAXI_Z ( 4 * v3 ) ; * ( _DWORD * ) ( a2 + 4 ) = v5 ; if ( v5 ) { v6 = * ( _DWORD * ) ( a2 + 8 ) ; v7 = 0 ; * ( _BYTE * ) ( a2 + 13 ) = 1 ; if ( v6 > 0 ) { do { * ( _DWORD * ) ( * ( _DWORD * ) ( a2 + 4 ) + 4 * v7 ) = * ( ( _DWORD * ) Block + v7 ) ; ++ v7 ; } while ( v7 < * ( _DWORD * ) ( a2 + 8 ) ) ; } } } } v8 = v16 ; * ( _DWORD * ) ( a2 + 16 ) = v15 ; v9 = Block ; v4 = Block == 0 ; * ( _DWORD * ) ( a2 + 20 ) = v8 ; * ( _DWORD * ) a2 = & TypeList<TeamTypeClass const *>::vftable' ; v11 = & VectorClass<TeamTypeClass const *>::vftable' ; if ( ! v4 && v14 ) __3_YAXPAX_Z ( v9 ) ; return a2 ; }
-    
+// [IDA decompile]
+int __thiscall sub_4FA210(void *this, int a2, int a3)
+{
+  int v3; // eax
+  bool v4; // zf
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // ecx
+  void *v9; // eax
+  void **v11; // [esp+8h] [ebp-1Ch] BYREF
+  void *Block; // [esp+Ch] [ebp-18h]
+  int v13; // [esp+10h] [ebp-14h]
+  char v14; // [esp+15h] [ebp-Fh]
+  int v15; // [esp+18h] [ebp-Ch]
+  int v16; // [esp+1Ch] [ebp-8h]
+
+  AISelectTeamHouseClass(&v11, (int)this, a3);
+  *(_DWORD *)(a2 + 4) = 0;
+  *(_DWORD *)(a2 + 8) = 0;
+  *(_BYTE *)(a2 + 12) = 1;
+  *(_BYTE *)(a2 + 13) = 0;
+  *(_DWORD *)a2 = &VectorClass<TeamTypeClass const *>::`vftable';
+  if ( (void ***)a2 != &v11 )
+  {
+    VectorClass::ClearAndFree3(a2);
+    v3 = v13;
+    v4 = v13 == 0;
+    *(_DWORD *)(a2 + 8) = v13;
+    if ( v4 )
+    {
+      *(_DWORD *)(a2 + 4) = 0;
+      *(_BYTE *)(a2 + 13) = 0;
+    }
+    else
+    {
+      v5 = __2_YAPAXI_Z(4 * v3);
+      *(_DWORD *)(a2 + 4) = v5;
+      if ( v5 )
+      {
+        v6 = *(_DWORD *)(a2 + 8);
+        v7 = 0;
+        *(_BYTE *)(a2 + 13) = 1;
+        if ( v6 > 0 )
+        {
+          do
+          {
+            *(_DWORD *)(*(_DWORD *)(a2 + 4) + 4 * v7) = *((_DWORD *)Block + v7);
+            ++v7;
+          }
+          while ( v7 < *(_DWORD *)(a2 + 8) );
+        }
+      }
+    }
+  }
+  v8 = v16;
+  *(_DWORD *)(a2 + 16) = v15;
+  v9 = Block;
+  v4 = Block == 0;
+  *(_DWORD *)(a2 + 20) = v8;
+  *(_DWORD *)a2 = &TypeList<TeamTypeClass const *>::`vftable';
+  v11 = &VectorClass<TeamTypeClass const *>::`vftable';
+  if ( !v4 && v14 )
+    __3_YAXPAX_Z(v9);
+  return a2;
+}
+
+/* ASM:
+Block           = dword ptr -18h
+var_14          = dword ptr -14h
+var_F           = byte ptr -0Fh
+var_C           = dword ptr -0Ch
+var_8           = dword ptr -8
+arg_0           = dword ptr  4
+arg_4           = dword ptr  8
+
+mov     eax, [esp+arg_4]
+sub     esp, 1Ch
+mov     edx, ecx
+lea     ecx, [esp+1Ch+var_1C]
+push    ebx
+push    esi
+push    eax
+call    AISelectTeamHouseClass
+mov     esi, [esp+24h+arg_0]
+lea     ecx, [esp+24h+var_1C]
+xor     ebx, ebx
+cmp     esi, ecx
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], bl
+mov     dword ptr [esi], offset ??_7?$VectorClass@PBVTeamTypeClass@@@@6B@ ; const VectorClass<TeamTypeClass const *>::`vftable'
+jz      short loc_4FA29A
+mov     ecx, esi
+call    ds:off_7EA9F0
+mov     eax, [esp+24h+var_14]
+cmp     eax, ebx
+mov     [esi+8], eax
+jz      short loc_4FA294
+lea     edx, ds:0[eax*4]
+push    edx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+mov     [esi+4], eax
+jz      short loc_4FA29A
+mov     ecx, [esi+8]
+xor     eax, eax
+cmp     ecx, ebx
+mov     byte ptr [esi+0Dh], 1
+jle     short loc_4FA29A
+
+loc_4FA27D:                             ; CODE XREF: sub_4FA210+80↓j
+mov     edx, [esp+24h+Block]
+mov     ecx, [esi+4]
+mov     edx, [edx+eax*4]
+mov     [ecx+eax*4], edx
+mov     ecx, [esi+8]
+inc     eax
+cmp     eax, ecx
+jl      short loc_4FA27D
+jmp     short loc_4FA29A
+; ---------------------------------------------------------------------------
+
+loc_4FA294:                             ; CODE XREF: sub_4FA210+47↑j
+mov     [esi+4], ebx
+mov     [esi+0Dh], bl
+
+loc_4FA29A:                             ; CODE XREF: sub_4FA210+34↑j
+; sub_4FA210+5E↑j ...
+mov     eax, [esp+24h+var_C]
+mov     ecx, [esp+24h+var_8]
+mov     [esi+10h], eax
+mov     eax, [esp+24h+Block]
+cmp     eax, ebx
+mov     [esi+14h], ecx
+mov     dword ptr [esi], offset ??_7?$TypeList@PBVTeamTypeClass@@@@6B@ ; const TypeList<TeamTypeClass const *>::`vftable'
+mov     [esp+24h+var_1C], offset ??_7?$VectorClass@PBVTeamTypeClass@@@@6B@ ; const VectorClass<TeamTypeClass const *>::`vftable'
+jz      short loc_4FA2CD
+cmp     [esp+24h+var_F], bl
+jz      short loc_4FA2CD
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4FA2CD:                             ; CODE XREF: sub_4FA210+AC↑j
+; sub_4FA210+B2↑j
+mov     eax, esi
+pop     esi
+pop     ebx
+add     esp, 1Ch
+retn    8
+*/
 }
 
 // 0x004A0CE0 (194 bytes)
 int VectorClass_SetMember1_4A0CE0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A0CE0.json)
-    // Size: 194 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4A0CE0 ( _DWORD *this, _DWORD *a2 ) { _DWORD *v3 ; // esi int v4 ; // eax void *v5 ; // eax !int v6 ! ; // ecx int v7 ; // eax int i ; // esi int v10 ; // [esp-4h] [ebp-14h] v3 = this + 3 ; * ( this + 1 ) = a2 [ 1 ] ; * ( this + 2 ) = 0 ; * ( this + 4 ) = 0 ; * ( this + 5 ) = 0 ; * ( ( _BYTE * ) this + 24 ) = 1 ; * ( ( _BYTE * ) this + 25 ) = 0 ; * ( this + 3 ) = & VectorClass<IConnectionPoint *>::vftable' ; if ( this + 3 != a2 + 3 ) { VectorClass::CleanupTyped ( ( int ) ( this + 3 ) ) ; v4 = a2 [ 5 ] ; * ( this + 5 ) = v4 ; if ( v4 ) { v5 = __2_YAPAXI_Z ( 4 * v4 ) ; * ( this + 4 ) = v5 ; if ( v5 ) { v6 = * ( this + 5 ) ; v7 = 0 ; * ( ( _BYTE * ) this + 25 ) = 1 ; if ( v6 > 0 ) { do { * ( _DWORD * ) ( * ( this + 4 ) + 4 * v7 ) = * ( _DWORD * ) ( a2 [ 4 ] + 4 * v7 ) ; ++ v7 ; } while ( v7 < * ( this + 5 ) ) ; } } } else { * ( this + 4 ) = 0 ; * ( ( _BYTE * ) this + 25 ) = 0 ; } } * ( this + 7 ) = a2 [ 7 ] ; * ( this + 8 ) = a2 [ 8 ] ; * v3 = & DynamicVectorClass<IConnectionPoint *>::vftable' ; * this = & EnumConnectionPointsClass::vftable' ; for ( i = 0 ; i < * ( this + 7 ) ; ++ i ) { v10 = * ( _DWORD * ) ( * ( this + 4 ) + 4 * i ) ; ( * ( void (__stdcall **)(int) ) ( * ( _DWORD * ) v10 + 4 ) ) ( v10 ) ; } return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_4A0CE0(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v3; // esi
+  int v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int i; // esi
+  int v10; // [esp-4h] [ebp-14h]
+
+  v3 = this + 3;
+  *(this + 1) = a2[1];
+  *(this + 2) = 0;
+  *(this + 4) = 0;
+  *(this + 5) = 0;
+  *((_BYTE *)this + 24) = 1;
+  *((_BYTE *)this + 25) = 0;
+  *(this + 3) = &VectorClass<IConnectionPoint *>::`vftable';
+  if ( this + 3 != a2 + 3 )
+  {
+    VectorClass::CleanupTyped((int)(this + 3));
+    v4 = a2[5];
+    *(this + 5) = v4;
+    if ( v4 )
+    {
+      v5 = __2_YAPAXI_Z(4 * v4);
+      *(this + 4) = v5;
+      if ( v5 )
+      {
+        v6 = *(this + 5);
+        v7 = 0;
+        *((_BYTE *)this + 25) = 1;
+        if ( v6 > 0 )
+        {
+          do
+          {
+            *(_DWORD *)(*(this + 4) + 4 * v7) = *(_DWORD *)(a2[4] + 4 * v7);
+            ++v7;
+          }
+          while ( v7 < *(this + 5) );
+        }
+      }
+    }
+    else
+    {
+      *(this + 4) = 0;
+      *((_BYTE *)this + 25) = 0;
+    }
+  }
+  *(this + 7) = a2[7];
+  *(this + 8) = a2[8];
+  *v3 = &DynamicVectorClass<IConnectionPoint *>::`vftable';
+  *this = &EnumConnectionPointsClass::`vftable';
+  for ( i = 0; i < *(this + 7); ++i )
+  {
+    v10 = *(_DWORD *)(*(this + 4) + 4 * i);
+    (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 4))(v10);
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+mov     ecx, [eax+4]
+xor     ebx, ebx
+lea     ebp, [eax+0Ch]
+lea     esi, [edi+0Ch]
+mov     [edi+4], ecx
+mov     [edi+8], ebx
+cmp     esi, ebp
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], bl
+mov     dword ptr [esi], offset ??_7?$VectorClass@PAUIConnectionPoint@@@@6B@ ; const VectorClass<IConnectionPoint *>::`vftable'
+jz      short loc_4A0D64
+mov     ecx, esi
+call    ds:off_7E5D14
+mov     eax, [ebp+8]
+cmp     eax, ebx
+mov     [esi+8], eax
+jz      short loc_4A0D5E
+lea     edx, ds:0[eax*4]
+push    edx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+mov     [esi+4], eax
+jz      short loc_4A0D64
+mov     ecx, [esi+8]
+xor     eax, eax
+cmp     ecx, ebx
+mov     byte ptr [esi+0Dh], 1
+jle     short loc_4A0D64
+
+loc_4A0D48:                             ; CODE XREF: sub_4A0CE0+7A↓j
+mov     ecx, [ebp+4]
+mov     edx, [esi+4]
+mov     ecx, [ecx+eax*4]
+mov     [edx+eax*4], ecx
+mov     ecx, [esi+8]
+inc     eax
+cmp     eax, ecx
+jl      short loc_4A0D48
+jmp     short loc_4A0D64
+; ---------------------------------------------------------------------------
+
+loc_4A0D5E:                             ; CODE XREF: sub_4A0CE0+42↑j
+mov     [esi+4], ebx
+mov     [esi+0Dh], bl
+
+loc_4A0D64:                             ; CODE XREF: sub_4A0CE0+30↑j
+; sub_4A0CE0+59↑j ...
+mov     edx, [ebp+10h]
+mov     [esi+10h], edx
+mov     eax, [ebp+14h]
+mov     [esi+14h], eax
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAUIConnectionPoint@@@@6B@ ; const DynamicVectorClass<IConnectionPoint *>::`vftable'
+mov     dword ptr [edi], offset ??_7EnumConnectionPointsClass@@6B@ ; const EnumConnectionPointsClass::`vftable'
+mov     eax, [edi+1Ch]
+xor     esi, esi
+cmp     eax, ebx
+jle     short loc_4A0D99
+
+loc_4A0D85:                             ; CODE XREF: sub_4A0CE0+B7↓j
+mov     ecx, [edi+10h]
+mov     eax, [ecx+esi*4]
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+4]
+mov     eax, [edi+1Ch]
+inc     esi
+cmp     esi, eax
+jl      short loc_4A0D85
+
+loc_4A0D99:                             ; CODE XREF: sub_4A0CE0+A3↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x004A02B0 (194 bytes)
 const char* VectorClass_SetMember2_4A02B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A02B0.json)
-    // Size: 194 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4A02B0 ( _DWORD *this, _DWORD *a2 ) { char *v3 ; // esi int v4 ; // eax void *v5 ; // eax !int v6 ! ; // ecx int v7 ; // eax int v8 ; // ecx int v9 ; // edx int i ; // esi int v12 ; // [esp-4h] [ebp-14h] v3 = ( char * ) ( this + 1 ) ; * ( this + 2 ) = 0 ; * ( this + 3 ) = 0 ; * ( ( _BYTE * ) this + 16 ) = 1 ; * ( ( _BYTE * ) this + 17 ) = 0 ; * ( this + 1 ) = & VectorClass<tagCONNECTDATA>::vftable' ; if ( this + 1 != a2 ) { VectorClass::ClearAndFree2 ( ( int ) ( this + 1 ) ) ; v4 = a2 [ 2 ] ; * ( ( _DWORD * ) v3 + 2 ) = v4 ; if ( v4 ) { v5 = __2_YAPAXI_Z ( 8 * v4 ) ; * ( ( _DWORD * ) v3 + 1 ) = v5 ; if ( v5 ) { v6 = * ( ( _DWORD * ) v3 + 2 ) ; v7 = 0 ; v3 [ 13 ] = 1 ; if ( v6 > 0 ) { do { v8 = a2 [ 1 ] ; v9 = * ( ( _DWORD * ) v3 + 1 ) ; * ( _DWORD * ) ( v9 + 8 * v7 ) = * ( _DWORD * ) ( v8 + 8 * v7 ) ; * ( _DWORD * ) ( v9 + 8 * v7 + 4 ) = * ( _DWORD * ) ( v8 + 8 * v7 + 4 ) ; ++ v7 ; } while ( v7 < * ( ( _DWORD * ) v3 + 2 ) ) ; } } } else { * ( ( _DWORD * ) v3 + 1 ) = 0 ; v3 [ 13 ] = 0 ; } } * ( ( _DWORD * ) v3 + 4 ) = a2 [ 4 ] ; * ( ( _DWORD * ) v3 + 5 ) = a2 [ 5 ] ; * ( _DWORD * ) v3 = & DynamicVectorClass<tagCONNECTDATA>::vftable' ; * ( this + 7 ) = 0 ; * ( this + 8 ) = 0 ; * this = & EnumConnectionsClass::vftable' ; for ( i = 0 ; i < * ( this + 5 ) ; ++ i ) { v12 = * ( _DWORD * ) ( * ( this + 2 ) + 8 * i ) ; ( * ( void (__stdcall **)(int) ) ( * ( _DWORD * ) v12 + 4 ) ) ( v12 ) ; } return this ; }
-    return nullptr;
+// [IDA decompile]
+_DWORD *__thiscall sub_4A02B0(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v3; // esi
+  int v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  int i; // esi
+  int v12; // [esp-4h] [ebp-14h]
+
+  v3 = this + 1;
+  *(this + 2) = 0;
+  *(this + 3) = 0;
+  *((_BYTE *)this + 16) = 1;
+  *((_BYTE *)this + 17) = 0;
+  *(this + 1) = &VectorClass<tagCONNECTDATA>::`vftable';
+  if ( this + 1 != a2 )
+  {
+    VectorClass::ClearAndFree2((int)(this + 1));
+    v4 = a2[2];
+    v3[2] = v4;
+    if ( v4 )
+    {
+      v5 = __2_YAPAXI_Z(8 * v4);
+      v3[1] = v5;
+      if ( v5 )
+      {
+        v6 = v3[2];
+        v7 = 0;
+        *((_BYTE *)v3 + 13) = 1;
+        if ( v6 > 0 )
+        {
+          do
+          {
+            v8 = a2[1];
+            v9 = v3[1];
+            *(_DWORD *)(v9 + 8 * v7) = *(_DWORD *)(v8 + 8 * v7);
+            *(_DWORD *)(v9 + 8 * v7 + 4) = *(_DWORD *)(v8 + 8 * v7 + 4);
+            ++v7;
+          }
+          while ( v7 < v3[2] );
+        }
+      }
+    }
+    else
+    {
+      v3[1] = 0;
+      *((_BYTE *)v3 + 13) = 0;
+    }
+  }
+  v3[4] = a2[4];
+  v3[5] = a2[5];
+  *v3 = &DynamicVectorClass<tagCONNECTDATA>::`vftable';
+  *(this + 7) = 0;
+  *(this + 8) = 0;
+  *this = &EnumConnectionsClass::`vftable';
+  for ( i = 0; i < *(this + 5); ++i )
+  {
+    v12 = *(_DWORD *)(*(this + 2) + 8 * i);
+    (*(void (__stdcall **)(int))(*(_DWORD *)v12 + 4))(v12);
+  }
+  return this;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+push    edi
+mov     edi, ecx
+xor     ebx, ebx
+lea     esi, [edi+4]
+cmp     esi, ebp
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], bl
+mov     dword ptr [esi], offset ??_7?$VectorClass@UtagCONNECTDATA@@@@6B@ ; const VectorClass<tagCONNECTDATA>::`vftable'
+jz      short loc_4A032E
+mov     ecx, esi
+call    ds:off_7E5C90
+mov     eax, [ebp+8]
+cmp     eax, ebx
+mov     [esi+8], eax
+jz      short loc_4A0328
+shl     eax, 3
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+mov     [esi+4], eax
+jz      short loc_4A032E
+mov     ecx, [esi+8]
+xor     eax, eax
+cmp     ecx, ebx
+mov     byte ptr [esi+0Dh], 1
+jle     short loc_4A032E
+
+loc_4A0308:                             ; CODE XREF: sub_4A02B0+72↓j
+mov     ecx, [ebp+4]
+mov     edx, [esi+4]
+mov     ebx, [ecx+eax*8]
+mov     [edx+eax*8], ebx
+mov     ecx, [ecx+eax*8+4]
+mov     [edx+eax*8+4], ecx
+mov     ecx, [esi+8]
+inc     eax
+cmp     eax, ecx
+jl      short loc_4A0308
+xor     ebx, ebx
+jmp     short loc_4A032E
+; ---------------------------------------------------------------------------
+
+loc_4A0328:                             ; CODE XREF: sub_4A02B0+36↑j
+mov     [esi+4], ebx
+mov     [esi+0Dh], bl
+
+loc_4A032E:                             ; CODE XREF: sub_4A02B0+24↑j
+; sub_4A02B0+49↑j ...
+mov     edx, [ebp+10h]
+mov     [esi+10h], edx
+mov     eax, [ebp+14h]
+mov     [esi+14h], eax
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@UtagCONNECTDATA@@@@6B@ ; const DynamicVectorClass<tagCONNECTDATA>::`vftable'
+mov     [edi+1Ch], ebx
+mov     [edi+20h], ebx
+mov     dword ptr [edi], offset ??_7EnumConnectionsClass@@6B@ ; const EnumConnectionsClass::`vftable'
+mov     eax, [edi+14h]
+xor     esi, esi
+cmp     eax, ebx
+jle     short loc_4A0369
+
+loc_4A0355:                             ; CODE XREF: sub_4A02B0+B7↓j
+mov     ecx, [edi+8]
+mov     eax, [ecx+esi*8]
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+4]
+mov     eax, [edi+14h]
+inc     esi
+cmp     esi, eax
+jl      short loc_4A0355
+
+loc_4A0369:                             ; CODE XREF: sub_4A02B0+A3↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x004A0380 (208 bytes)
 const char* VectorClass_SetMember_4A0380() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A0380.json)
-    // Size: 208 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4A0380 ( _DWORD *this, _DWORD *a2 ) { char *v3 ; // esi int v4 ; // eax void *v5 ; // eax !int v6 ! ; // ecx int v7 ; // eax int v8 ; // edx int v9 ; // ecx int v10 ; // eax int i ; // esi int v13 ; // [esp-4h] [ebp-14h] v3 = ( char * ) ( this + 1 ) ; * ( this + 2 ) = 0 ; * ( this + 3 ) = 0 ; * ( ( _BYTE * ) this + 16 ) = 1 ; * ( ( _BYTE * ) this + 17 ) = 0 ; * ( this + 1 ) = & VectorClass<tagCONNECTDATA>::vftable' ; if ( this + 1 != a2 + 1 ) { VectorClass::ClearAndFree2 ( ( int ) ( this + 1 ) ) ; v4 = a2 [ 3 ] ; * ( ( _DWORD * ) v3 + 2 ) = v4 ; if ( v4 ) { v5 = __2_YAPAXI_Z ( 8 * v4 ) ; * ( ( _DWORD * ) v3 + 1 ) = v5 ; if ( v5 ) { v6 = * ( ( _DWORD * ) v3 + 2 ) ; v7 = 0 ; v3 [ 13 ] = 1 ; if ( v6 > 0 ) { do { v8 = a2 [ 2 ] ; v9 = * ( ( _DWORD * ) v3 + 1 ) ; * ( _DWORD * ) ( v9 + 8 * v7 ) = * ( _DWORD * ) ( v8 + 8 * v7 ) ; * ( _DWORD * ) ( v9 + 8 * v7 + 4 ) = * ( _DWORD * ) ( v8 + 8 * v7 + 4 ) ; ++ v7 ; } while ( v7 < * ( ( _DWORD * ) v3 + 2 ) ) ; } } } else { * ( ( _DWORD * ) v3 + 1 ) = 0 ; v3 [ 13 ] = 0 ; } } * ( ( _DWORD * ) v3 + 4 ) = a2 [ 5 ] ; * ( ( _DWORD * ) v3 + 5 ) = a2 [ 6 ] ; * ( _DWORD * ) v3 = & DynamicVectorClass<tagCONNECTDATA>::vftable' ; v10 = a2 [ 7 ] ; * ( this + 8 ) = 0 ; * ( this + 7 ) = v10 ; * this = & EnumConnectionsClass::vftable' ; for ( i = 0 ; i < * ( this + 5 ) ; ++ i ) { v13 = * ( _DWORD * ) ( * ( this + 2 ) + 8 * i ) ; ( * ( void (__stdcall **)(int) ) ( * ( _DWORD * ) v13 + 4 ) ) ( v13 ) ; } return this ; }
-    return nullptr;
+// [IDA decompile]
+_DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v3; // esi
+  int v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // edx
+  int v9; // ecx
+  int v10; // eax
+  int i; // esi
+  int v13; // [esp-4h] [ebp-14h]
+
+  v3 = this + 1;
+  *(this + 2) = 0;
+  *(this + 3) = 0;
+  *((_BYTE *)this + 16) = 1;
+  *((_BYTE *)this + 17) = 0;
+  *(this + 1) = &VectorClass<tagCONNECTDATA>::`vftable';
+  if ( this + 1 != a2 + 1 )
+  {
+    VectorClass::ClearAndFree2((int)(this + 1));
+    v4 = a2[3];
+    v3[2] = v4;
+    if ( v4 )
+    {
+      v5 = __2_YAPAXI_Z(8 * v4);
+      v3[1] = v5;
+      if ( v5 )
+      {
+        v6 = v3[2];
+        v7 = 0;
+        *((_BYTE *)v3 + 13) = 1;
+        if ( v6 > 0 )
+        {
+          do
+          {
+            v8 = a2[2];
+            v9 = v3[1];
+            *(_DWORD *)(v9 + 8 * v7) = *(_DWORD *)(v8 + 8 * v7);
+            *(_DWORD *)(v9 + 8 * v7 + 4) = *(_DWORD *)(v8 + 8 * v7 + 4);
+            ++v7;
+          }
+          while ( v7 < v3[2] );
+        }
+      }
+    }
+    else
+    {
+      v3[1] = 0;
+      *((_BYTE *)v3 + 13) = 0;
+    }
+  }
+  v3[4] = a2[5];
+  v3[5] = a2[6];
+  *v3 = &DynamicVectorClass<tagCONNECTDATA>::`vftable';
+  v10 = a2[7];
+  *(this + 8) = 0;
+  *(this + 7) = v10;
+  *this = &EnumConnectionsClass::`vftable';
+  for ( i = 0; i < *(this + 5); ++i )
+  {
+    v13 = *(_DWORD *)(*(this + 2) + 8 * i);
+    (*(void (__stdcall **)(int))(*(_DWORD *)v13 + 4))(v13);
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+lea     ebp, [eax+4]
+xor     ebx, ebx
+lea     esi, [edi+4]
+cmp     esi, ebp
+mov     [esi+4], ebx
+mov     [esi+8], ebx
+mov     byte ptr [esi+0Ch], 1
+mov     [esi+0Dh], bl
+mov     dword ptr [esi], offset ??_7?$VectorClass@UtagCONNECTDATA@@@@6B@ ; const VectorClass<tagCONNECTDATA>::`vftable'
+jz      short loc_4A0405
+mov     ecx, esi
+call    ds:off_7E5C90
+mov     eax, [ebp+8]
+cmp     eax, ebx
+mov     [esi+8], eax
+jz      short loc_4A03FF
+lea     ecx, ds:0[eax*8]
+push    ecx             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+cmp     eax, ebx
+mov     [esi+4], eax
+jz      short loc_4A0405
+mov     ecx, [esi+8]
+xor     eax, eax
+cmp     ecx, ebx
+mov     byte ptr [esi+0Dh], 1
+jle     short loc_4A0405
+
+loc_4A03DF:                             ; CODE XREF: sub_4A0380+79↓j
+mov     edx, [ebp+4]
+mov     ecx, [esi+4]
+mov     ebx, [edx+eax*8]
+mov     [ecx+eax*8], ebx
+mov     edx, [edx+eax*8+4]
+mov     [ecx+eax*8+4], edx
+mov     ecx, [esi+8]
+inc     eax
+cmp     eax, ecx
+jl      short loc_4A03DF
+xor     ebx, ebx
+jmp     short loc_4A0405
+; ---------------------------------------------------------------------------
+
+loc_4A03FF:                             ; CODE XREF: sub_4A0380+39↑j
+mov     [esi+4], ebx
+mov     [esi+0Dh], bl
+
+loc_4A0405:                             ; CODE XREF: sub_4A0380+27↑j
+; sub_4A0380+50↑j ...
+mov     eax, [ebp+10h]
+mov     edx, [esp+10h+arg_0]
+mov     [esi+10h], eax
+mov     ecx, [ebp+14h]
+mov     [esi+14h], ecx
+mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@UtagCONNECTDATA@@@@6B@ ; const DynamicVectorClass<tagCONNECTDATA>::`vftable'
+mov     eax, [edx+1Ch]
+mov     [edi+20h], ebx
+mov     [edi+1Ch], eax
+mov     dword ptr [edi], offset ??_7EnumConnectionsClass@@6B@ ; const EnumConnectionsClass::`vftable'
+mov     eax, [edi+14h]
+xor     esi, esi
+cmp     eax, ebx
+jle     short loc_4A0447
+
+loc_4A0433:                             ; CODE XREF: sub_4A0380+C5↓j
+mov     ecx, [edi+8]
+mov     eax, [ecx+esi*8]
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+4]
+mov     eax, [edi+14h]
+inc     esi
+cmp     esi, eax
+jl      short loc_4A0433
+
+loc_4A0447:                             ; CODE XREF: sub_4A0380+B1↑j
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x00429360 (123 bytes)
 void VectorClassptrBuildChoiceClassintouseClassGetItemIndex0Helper_429360() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00429360.json)
-    // Size: 123 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_429360 ( int a1, const void *a2, _DWORD *a3 ) { !int result ! ; // eax if ( ! a3 ) return -2147467261 ; if ( ! memcmp ( a2 , & unk_7E36C0 , 0x10u ) || ! memcmp ( a2 , & IID_IUnknown , 0x10u ) ) { * a3 = a1 ; ( * ( void (__stdcall **)(int) ) ( * ( _DWORD * ) a1 + 4 ) ) ( a1 ) ; return 0 ; } else { result = 0 ; if ( ! memcmp ( a2 , & unk_7EA6E8 , 0x10u ) ) * a3 = & MapClass_Instance ; else return -2147467262 ; } return result ; }
-    
+// [IDA decompile]
+int __stdcall sub_429360(int a1, const void *a2, _DWORD *a3)
+{
+  int result; // eax
+
+  if ( !a3 )
+    return -2147467261;
+  if ( !memcmp(a2, &unk_7E36C0, 0x10u) || !memcmp(a2, &IID_IUnknown, 0x10u) )
+  {
+    *a3 = a1;
+    (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1);
+    return 0;
+  }
+  else
+  {
+    result = 0;
+    if ( !memcmp(a2, &unk_7EA6E8, 0x10u) )
+      *a3 = &MEMORY[0x87F7E8];
+    else
+      return -2147467262;
+  }
+  return result;
+}
+
+/* ASM:
+mov     edx, [esp+arg_8]
+push    ebx
+push    esi
+push    edi
+test    edx, edx
+jnz     short loc_429376
+pop     edi
+pop     esi
+mov     eax, 80004003h
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_429376:                             ; CODE XREF: sub_429360+9↑j
+mov     eax, [esp+0Ch+arg_4]
+mov     ecx, 4
+mov     edi, offset unk_7E36C0
+mov     esi, eax
+xor     ebx, ebx
+repe cmpsd
+jz      short loc_4293C7
+mov     ecx, 4
+mov     edi, offset IID_IUnknown
+mov     esi, eax
+xor     ebx, ebx
+repe cmpsd
+jz      short loc_4293C7
+mov     esi, eax
+mov     ecx, 4
+mov     edi, offset unk_7EA6E8
+xor     eax, eax
+repe cmpsd
+jnz     short loc_4293BC
+pop     edi
+pop     esi
+mov     dword ptr [edx], 87F7E8h
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_4293BC:                             ; CODE XREF: sub_429360+4E↑j
+pop     edi
+pop     esi
+mov     eax, 80004002h
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_4293C7:                             ; CODE XREF: sub_429360+2A↑j
+; sub_429360+3C↑j
+mov     eax, [esp+0Ch+arg_0]
+mov     [edx], eax
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+4]
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    0Ch
+*/
 }
 
 } // namespace gamemd

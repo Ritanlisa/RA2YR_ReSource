@@ -8,326 +8,4495 @@ namespace gamemd {
 
 // 0x00538F20 (487 bytes)
 const char* DDraw_ClearCCFile_538F20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00538F20.json)
-    // Size: 487 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_538F20 ( int a1, int a2, char *Source ) { !int *v5 ! ; // ebx !char *v6 ! ; // ebp !int v7 ! ; // edi !int v8 ! ; // eax !int v9 ! ; // eax !int v10 ! ; // eax !int v11 ! ; // eax !char result ! ; // al !unsigned int v13 ! ; // [esp-4h] [ebp-88h] !unsigned int v14 ! ; // [esp-4h] [ebp-88h] !int v15 ! ; // [esp-4h] [ebp-88h] !char v16 ! ; // [esp+12h] [ebp-72h] !char v17 ! ; // [esp+13h] [ebp-71h] int v19[22] ; // [esp+18h] [ebp-6Ch] BYREF _BYTE v20[12] ; // [esp+70h] [ebp-14h] BYREF int v21 ; // [esp+7Ch] [ebp-8h] v16 = 0 ; v17 = 0 ; if ( byte_A9F91C ) { if ( Source ) { CCFileClass::Construct ( v19 , Source ) ; if ( CCFileClass::Open ( v19 , 0 ) ) { FileClass::Load ( v19 , 1 ) ; CCFileClass::Read ( v19 , byte_A8F91C , 0x10000 ) ; CCFileClass::Reset ( v19 ) ; byte_A9F91C = 0 ; } v19 [ 0 ] = ( int ) & CCFileClass::vftable' ; v21 = 0 ; Vector::Clear ( ( int ) v20 ) ; v19 [ 0 ] = ( int ) & off_7E1668 ; BufferIOFileClass::Dtor ( v19 ) ; } if ( byte_A9F91C ) sub_538D40 ( ) ; } if ( Source ) { CCFileClass::Construct ( v19 , Source ) ; if ( ! CCFileClass::Open ( v19 , 0 ) ) { FileClass::Load ( v19 , 2 ) ; FileClass::Write ( v19 , byte_A8F91C , 0x10000u ) ; CCFileClass::Reset ( v19 ) ; } v19 [ 0 ] = ( int ) & CCFileClass::vftable' ; v21 = 0 ; Vector::Clear ( ( int ) v20 ) ; v19 [ 0 ] = ( int ) & off_7E1668 ; BufferIOFileClass::Dtor ( v19 ) ; } DDraw::WaitForIdle ( ) ; v5 = ( int * ) ( * ( int (__thiscall **)(int, _DWORD, _DWORD) ) ( * ( _DWORD * ) a1 + 92 ) ) ( a1 , 0 , 0 ) ; if ( v5 ) v16 = 1 ; v6 = ( char * ) ( * ( int (__thiscall **)(int, _DWORD, _DWORD) ) ( * ( _DWORD * ) a2 + 92 ) ) ( a2 , 0 , 0 ) ; if ( v6 ) { v17 = 1 ; if ( ! v16 ) return ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a2 + 96 ) ) ( a2 ) ; v7 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 124 ) ) ( a1 ) ; v8 = 2 * ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a2 + 116 ) ) ( a2 ) ; if ( dword_A9F920 ) { if ( dword_A9F920 == 1 ) { v14 = v8 ; v10 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 128 ) ) ( a1 ) ; sub_7E00A6 ( v5 , v6 , v10 , v7 , v14 ) ; } else if ( dword_A9F920 == 2 ) { v13 = v8 ; v9 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 128 ) ) ( a1 ) ; sub_7E01FB ( v5 , v6 , v9 , v7 , v13 ) ; } } else { v15 = v8 ; v11 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 128 ) ) ( a1 ) ; sub_7E0001 ( v5 , v6 , v11 , v7 , v15 ) ; } } if ( v16 ) ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 96 ) ) ( a1 ) ; result = v17 ; if ( v17 ) return ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a2 + 96 ) ) ( a2 ) ; return result ; }
-    return nullptr;
+// [IDA decompile]
+char __fastcall sub_538F20(int a1, int a2, char *Source)
+{
+  int *v5; // ebx
+  char *v6; // ebp
+  int v7; // edi
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  char result; // al
+  unsigned int v13; // [esp-4h] [ebp-88h]
+  unsigned int v14; // [esp-4h] [ebp-88h]
+  int v15; // [esp-4h] [ebp-88h]
+  char v16; // [esp+12h] [ebp-72h]
+  char v17; // [esp+13h] [ebp-71h]
+  int v19[22]; // [esp+18h] [ebp-6Ch] BYREF
+  _BYTE v20[12]; // [esp+70h] [ebp-14h] BYREF
+  int v21; // [esp+7Ch] [ebp-8h]
+
+  v16 = 0;
+  v17 = 0;
+  if ( LOBYTE(dword_A8ED54[17138]) )
+  {
+    if ( Source )
+    {
+      CCFileClass::Construct(v19, Source);
+      if ( CCFileClass::Open(v19, 0) )
+      {
+        FileClass::Load(v19, 1);
+        CCFileClass::Read(v19, &dword_A8ED54[754], 0x10000);
+        CCFileClass::Reset(v19);
+        LOBYTE(dword_A8ED54[17138]) = 0;
+      }
+      v19[0] = (int)&CCFileClass::`vftable';
+      v21 = 0;
+      Vector::Clear((int)v20);
+      v19[0] = (int)&off_7E1668;
+      BufferIOFileClass::Dtor(v19);
+    }
+    if ( LOBYTE(dword_A8ED54[17138]) )
+      sub_538D40();
+  }
+  if ( Source )
+  {
+    CCFileClass::Construct(v19, Source);
+    if ( !CCFileClass::Open(v19, 0) )
+    {
+      FileClass::Load(v19, 2);
+      FileClass::Write(v19, (int)&dword_A8ED54[754], 0x10000);
+      CCFileClass::Reset(v19);
+    }
+    v19[0] = (int)&CCFileClass::`vftable';
+    v21 = 0;
+    Vector::Clear((int)v20);
+    v19[0] = (int)&off_7E1668;
+    BufferIOFileClass::Dtor(v19);
+  }
+  DDraw::WaitForIdle();
+  v5 = (int *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a1 + 92))(a1, 0, 0);
+  if ( v5 )
+    v16 = 1;
+  v6 = (char *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 92))(a2, 0, 0);
+  if ( v6 )
+  {
+    v17 = 1;
+    if ( !v16 )
+      return (*(char (__thiscall **)(int))(*(_DWORD *)a2 + 96))(a2);
+    v7 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1);
+    v8 = 2 * (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 116))(a2);
+    if ( dword_A8ED54[17139] )
+    {
+      if ( dword_A8ED54[17139] == 1 )
+      {
+        v14 = v8;
+        v10 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1);
+        sub_7E00A6(v5, v6, v10, v7, v14);
+      }
+      else if ( dword_A8ED54[17139] == 2 )
+      {
+        v13 = v8;
+        v9 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1);
+        sub_7E01FB(v5, v6, v9, v7, v13);
+      }
+    }
+    else
+    {
+      v15 = v8;
+      v11 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1);
+      sub_7E0001(v5, v6, v11, v7, v15);
+    }
+  }
+  if ( v16 )
+    (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 96))(a1);
+  result = v17;
+  if ( v17 )
+    return (*(char (__thiscall **)(int))(*(_DWORD *)a2 + 96))(a2);
+  return result;
+}
+
+/* ASM:
+Source          = dword ptr  4
+
+sub     esp, 74h
+mov     al, byte ptr dword_A8ED54+10BC8h
+push    ebx
+push    ebp
+push    esi
+mov     ebp, edx
+push    edi
+mov     edi, [esp+84h+Source]
+mov     [esp+84h+var_70], ebp
+test    al, al
+mov     esi, ecx
+mov     [esp+84h+var_72], 0
+mov     [esp+84h+var_71], 0
+mov     ebx, offset off_7E1668
+jz      short loc_538FCD
+test    edi, edi
+jz      short loc_538FBF
+push    edi             ; Source
+lea     ecx, [esp+88h+var_6C]
+call    CCFileClass__Construct
+lea     ecx, [esp+84h+var_6C]
+push    0
+call    CCFileClass__Open
+test    al, al
+jz      short loc_538F99
+push    1
+lea     ecx, [esp+88h+var_6C]
+call    FileClass__Load
+lea     ecx, [esp+84h+var_6C]
+push    10000h          ; Size
+push    (offset dword_A8ED54+0BC8h) ; lpBuffer
+call    CCFileClass__Read
+lea     ecx, [esp+84h+var_6C]
+call    CCFileClass__Reset
+mov     byte ptr dword_A8ED54+10BC8h, 0
+
+loc_538F99:                             ; CODE XREF: sub_538F20+49↑j
+lea     ecx, [esp+84h+var_14]
+mov     [esp+84h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+84h+var_8], 0
+call    Vector__Clear
+lea     ecx, [esp+84h+var_6C]
+mov     [esp+84h+var_6C], ebx
+call    BufferIOFileClass__Dtor
+
+loc_538FBF:                             ; CODE XREF: sub_538F20+30↑j
+mov     al, byte ptr dword_A8ED54+10BC8h
+test    al, al
+jz      short loc_538FCD
+call    sub_538D40
+
+loc_538FCD:                             ; CODE XREF: sub_538F20+2C↑j
+; sub_538F20+A6↑j
+test    edi, edi
+jz      short loc_539037
+push    edi             ; Source
+lea     ecx, [esp+88h+var_6C]
+call    CCFileClass__Construct
+lea     ecx, [esp+84h+var_6C]
+push    0
+call    CCFileClass__Open
+test    al, al
+jnz     short loc_539011
+push    2
+lea     ecx, [esp+88h+var_6C]
+call    FileClass__Load
+lea     ecx, [esp+84h+var_6C]
+push    10000h          ; nNumberOfBytesToWrite
+push    (offset dword_A8ED54+0BC8h) ; lpBuffer
+call    FileClass__Write
+lea     ecx, [esp+84h+var_6C]
+call    CCFileClass__Reset
+
+loc_539011:                             ; CODE XREF: sub_538F20+C8↑j
+lea     ecx, [esp+84h+var_14]
+mov     [esp+84h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
+mov     [esp+84h+var_8], 0
+call    Vector__Clear
+lea     ecx, [esp+84h+var_6C]
+mov     [esp+84h+var_6C], ebx
+call    BufferIOFileClass__Dtor
+
+loc_539037:                             ; CODE XREF: sub_538F20+AF↑j
+call    DDraw__WaitForIdle
+mov     edx, [esi]
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+5Ch]
+mov     ebx, eax
+test    ebx, ebx
+jz      short loc_539054
+mov     [esp+84h+var_72], 1
+
+loc_539054:                             ; CODE XREF: sub_538F20+12D↑j
+mov     edx, [ebp+0]
+xor     ecx, ecx
+xor     eax, eax
+push    ecx
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+5Ch]
+mov     ebp, eax
+test    ebp, ebp
+jz      short loc_5390DD
+mov     al, [esp+84h+var_72]
+mov     [esp+84h+var_71], 1
+test    al, al
+jz      short loc_5390F4
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+7Ch]
+mov     ecx, [esp+84h+var_70]
+mov     edi, eax
+mov     edx, [ecx]
+call    dword ptr [edx+74h]
+mov     ecx, dword_A8ED54+10BCCh
+shl     eax, 1
+sub     ecx, 0
+jz      short loc_5390C6
+dec     ecx
+jz      short loc_5390B0
+dec     ecx
+jnz     short loc_5390DD
+push    eax
+mov     eax, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+80h]
+push    eax
+push    ebp
+push    ebx
+call    sub_7E01FB
+jmp     short loc_5390DA
+; ---------------------------------------------------------------------------
+
+loc_5390B0:                             ; CODE XREF: sub_538F20+175↑j
+mov     edx, [esi]
+push    eax
+push    edi
+mov     ecx, esi
+call    dword ptr [edx+80h]
+push    eax
+push    ebp
+push    ebx
+call    sub_7E00A6
+jmp     short loc_5390DA
+; ---------------------------------------------------------------------------
+
+loc_5390C6:                             ; CODE XREF: sub_538F20+172↑j
+push    eax
+mov     eax, [esi]
+push    edi
+mov     ecx, esi
+call    dword ptr [eax+80h]
+push    eax
+push    ebp
+push    ebx
+call    sub_7E0001
+
+loc_5390DA:                             ; CODE XREF: sub_538F20+18E↑j
+; sub_538F20+1A4↑j
+add     esp, 14h
+
+loc_5390DD:                             ; CODE XREF: sub_538F20+146↑j
+; sub_538F20+178↑j
+mov     al, [esp+84h+var_72]
+test    al, al
+jz      short loc_5390EC
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+60h]
+
+loc_5390EC:                             ; CODE XREF: sub_538F20+1C3↑j
+mov     al, [esp+84h+var_71]
+test    al, al
+jz      short loc_5390FD
+
+loc_5390F4:                             ; CODE XREF: sub_538F20+153↑j
+mov     ecx, [esp+84h+var_70]
+mov     eax, [ecx]
+call    dword ptr [eax+60h]
+
+loc_5390FD:                             ; CODE XREF: sub_538F20+1D2↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 74h
+retn    4
+*/
 }
 
 // 0x00635560 (281 bytes)
 int Display_GetPixel_635560() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00635560.json)
-    // Size: 281 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_635560 ( _DWORD *this, int a2 ) { !int *Viewport ! ; // eax !int v4 ! ; // edx int v5 ; // eax _DWORD *ScenarioClassActionCoords ; // eax !int *v7 ! ; // eax _DWORD *v8 ; // eax !int v9 ! ; // edi !int v10 ! ; // ecx !int v11 ! ; // edx int v12 ; // esi !int result ! ; // eax int v14 ; // [esp+10h] [ebp-54h] BYREF _DWORD v15[3] ; // [esp+18h] [ebp-4Ch] BYREF int v16[4] ; // [esp+24h] [ebp-40h] BYREF !int v17 ! ; // [esp+34h] [ebp-30h] BYREF !int v18 ! ; // [esp+38h] [ebp-2Ch] !int v19 ! ; // [esp+3Ch] [ebp-28h] !int v20 ! ; // [esp+40h] [ebp-24h] _DWORD v21[4] ; // [esp+44h] [ebp-20h] BYREF _DWORD v22[4] ; // [esp+54h] [ebp-10h] BYREF Viewport = Display::GetViewport ( v16 ) ; v21 [ 0 ] = * Viewport ; v21 [ 1 ] = Viewport [ 1 ] ; v21 [ 2 ] = Viewport [ 2 ] ; v4 = Viewport [ 3 ] ; v5 = * ( this + 1 ) ; v21 [ 3 ] = v4 ; ScenarioClassActionCoords = GetScenarioClassActionCoords ( v16 , * ( _BYTE ** ) ( * ( _DWORD * ) v5 + 4 ) ) ; v15 [ 0 ] = * ScenarioClassActionCoords ; v15 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v15 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; v7 = ToCoordPixel ( & v14 , v15 ) ; v8 = ComputeBounds ( v22 , 8 , * v7 , v7 [ 1 ] ) ; v9 = 3 ; v10 = v8 [ 1 ] - 4 ; v11 = v8 [ 2 ] + 8 ; v12 = v8 [ 3 ] ; v17 = * v8 - 4 ; v18 = v10 ; v20 = v12 + 8 ; v19 = v11 ; do { result = ( * ( int (__thiscall **)(int, _DWORD *, int *, int) ) ( * ( _DWORD * ) DSurface_Composite + 84 ) ) ( DSurface_Composite , v21 , & v17 , a2 ) ; if ( v19 > -2 && v20 > -2 ) { ++ v17 ; ++ v18 ; result = 2 ; v19 -= 2 ; v20 -= 2 ; } else { v17 = 0 ; v18 = 0 ; v19 = 0 ; v20 = 0 ; } -- v9 ; } while ( v9 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_635560(_DWORD *this, int a2)
+{
+  int *Viewport; // eax
+  int v4; // edx
+  int v5; // eax
+  _DWORD *ScenarioClassActionCoords; // eax
+  int *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // edi
+  int v10; // ecx
+  int v11; // edx
+  int v12; // esi
+  int result; // eax
+  int v14; // [esp+10h] [ebp-54h] BYREF
+  _DWORD v15[3]; // [esp+18h] [ebp-4Ch] BYREF
+  int v16[4]; // [esp+24h] [ebp-40h] BYREF
+  int v17; // [esp+34h] [ebp-30h] BYREF
+  int v18; // [esp+38h] [ebp-2Ch]
+  int v19; // [esp+3Ch] [ebp-28h]
+  int v20; // [esp+40h] [ebp-24h]
+  _DWORD v21[4]; // [esp+44h] [ebp-20h] BYREF
+  _DWORD v22[4]; // [esp+54h] [ebp-10h] BYREF
+
+  Viewport = Display::GetViewport(v16);
+  v21[0] = *Viewport;
+  v21[1] = Viewport[1];
+  v21[2] = Viewport[2];
+  v4 = Viewport[3];
+  v5 = *(this + 1);
+  v21[3] = v4;
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(_BYTE **)(*(_DWORD *)v5 + 4));
+  v15[0] = *ScenarioClassActionCoords;
+  v15[1] = ScenarioClassActionCoords[1];
+  v15[2] = ScenarioClassActionCoords[2];
+  v7 = ToCoordPixel(&v14, v15);
+  v8 = ComputeBounds(v22, 8, *v7, v7[1]);
+  v9 = 3;
+  v10 = v8[1] - 4;
+  v11 = v8[2] + 8;
+  v12 = v8[3];
+  v17 = *v8 - 4;
+  v18 = v10;
+  v20 = v12 + 8;
+  v19 = v11;
+  do
+  {
+    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))(
+               MEMORY[0x88731C],
+               v21,
+               &v17,
+               a2);
+    if ( v19 > -2 && v20 > -2 )
+    {
+      ++v17;
+      ++v18;
+      result = 2;
+      v19 -= 2;
+      v20 -= 2;
+    }
+    else
+    {
+      v17 = 0;
+      v18 = 0;
+      v19 = 0;
+      v20 = 0;
+    }
+    --v9;
+  }
+  while ( v9 );
+  return result;
+}
+
+/* ASM:
+sub     esp, 54h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+64h+var_40]
+call    Display__GetViewport
+mov     ecx, [eax]
+mov     [esp+64h+var_20], ecx
+mov     edx, [eax+4]
+mov     [esp+64h+var_1C], edx
+mov     ecx, [eax+8]
+mov     [esp+64h+var_18], ecx
+mov     edx, [eax+0Ch]
+mov     eax, [esi+4]
+mov     [esp+64h+var_14], edx
+mov     ecx, [eax]
+mov     edx, [ecx+4]
+lea     ecx, [esp+64h+var_40]
+call    GetScenarioClassActionCoords
+mov     edx, [eax]
+mov     [esp+64h+var_4C], edx
+mov     ecx, [eax+4]
+mov     [esp+64h+var_48], ecx
+lea     ecx, [esp+64h+var_54]
+mov     edx, [eax+8]
+mov     [esp+64h+var_44], edx
+lea     edx, [esp+64h+var_4C]
+call    ToCoordPixel
+mov     ecx, [eax+4]
+push    ecx
+lea     ecx, [esp+68h+var_10]
+mov     edx, [eax]
+push    edx
+mov     edx, 8
+call    ComputeBounds
+mov     esi, eax
+mov     edi, 3
+mov     ebp, 0FFFFFFFEh
+mov     eax, [esi]
+sub     eax, 4
+mov     ecx, [esi+4]
+sub     ecx, 4
+mov     edx, [esi+8]
+add     edx, 8
+mov     esi, [esi+0Ch]
+mov     [esp+64h+var_30], eax
+add     esi, 8
+mov     [esp+64h+var_2C], ecx
+mov     [esp+64h+var_24], esi
+mov     esi, [esp+64h+arg_0]
+mov     [esp+64h+var_28], edx
+xor     ebx, ebx
+
+loc_63560D:                             ; CODE XREF: sub_635560+10D↓j
+mov     ecx, ds:88731Ch
+lea     edx, [esp+64h+var_30]
+push    esi
+push    edx
+mov     eax, [ecx]
+lea     edx, [esp+6Ch+var_20]
+push    edx
+call    dword ptr [eax+54h]
+cmp     [esp+64h+var_28], ebp
+jle     short loc_63562F
+cmp     [esp+64h+var_24], ebp
+jg      short loc_635641
+
+loc_63562F:                             ; CODE XREF: sub_635560+C7↑j
+mov     [esp+64h+var_30], ebx
+mov     [esp+64h+var_2C], ebx
+mov     [esp+64h+var_28], ebx
+mov     [esp+64h+var_24], ebx
+jmp     short loc_63566C
+; ---------------------------------------------------------------------------
+
+loc_635641:                             ; CODE XREF: sub_635560+CD↑j
+mov     ecx, [esp+64h+var_30]
+mov     eax, [esp+64h+var_2C]
+mov     edx, [esp+64h+var_28]
+inc     ecx
+inc     eax
+mov     [esp+64h+var_30], ecx
+mov     ecx, [esp+64h+var_24]
+mov     [esp+64h+var_2C], eax
+mov     eax, 2
+sub     edx, eax
+sub     ecx, eax
+mov     [esp+64h+var_28], edx
+mov     [esp+64h+var_24], ecx
+
+loc_63566C:                             ; CODE XREF: sub_635560+DF↑j
+dec     edi
+jnz     short loc_63560D
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 54h
+retn    4
+*/
 }
 
 // 0x00635680 (324 bytes)
 int Display_GetPixel_635680() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00635680.json)
-    // Size: 324 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_635680 ( _DWORD **this, int a2 ) { !int *Viewport ! ; // eax _DWORD *Coords ; // eax !int *v5 ! ; // eax !int *v6 ! ; // eax !int v7 ! ; // edi !int result ! ; // eax int v9 ; // [esp+10h] [ebp-60h] BYREF _DWORD v10[3] ; // [esp+18h] [ebp-58h] BYREF int v11[3] ; // [esp+24h] [ebp-4Ch] BYREF int v12 ; // [esp+30h] [ebp-40h] BYREF !int v13 ! ; // [esp+34h] [ebp-3Ch] !int v14 ! ; // [esp+38h] [ebp-38h] !int v15 ! ; // [esp+3Ch] [ebp-34h] int v16 ; // [esp+40h] [ebp-30h] BYREF !int v17 ! ; // [esp+44h] [ebp-2Ch] !int v18 ! ; // [esp+48h] [ebp-28h] !int v19 ! ; // [esp+4Ch] [ebp-24h] _DWORD v20[4] ; // [esp+50h] [ebp-20h] BYREF int v21[4] ; // [esp+60h] [ebp-10h] BYREF Viewport = Display::GetViewport ( & v16 ) ; v20 [ 0 ] = * Viewport ; v20 [ 1 ] = Viewport [ 1 ] ; v20 [ 2 ] = Viewport [ 2 ] ; v20 [ 3 ] = Viewport [ 3 ] ; Coords = ScriptAction::GetCoords ( this , v11 ) ; v10 [ 0 ] = * Coords ; v10 [ 1 ] = Coords [ 1 ] ; v10 [ 2 ] = Coords [ 2 ] ; v5 = ToCoordPixel ( & v9 , v10 ) ; v6 = ComputeBounds ( v21 , 8 , * v5 , v5 [ 1 ] ) ; v16 = * v6 ; v17 = v6 [ 1 ] ; v18 = v6 [ 2 ] ; v19 = v6 [ 3 ] ; ShrinkRect ( & v16 , 4 ) ; v21 [ 0 ] = v16 ; v12 = v16 - 4 ; v13 = v17 - 4 ; v14 = v18 + 8 ; v15 = v19 + 8 ; v7 = 3 ; do { result = ( * ( int (__thiscall **)(int, _DWORD *, int *, int) ) ( * ( _DWORD * ) DSurface_Composite + 84 ) ) ( DSurface_Composite , v20 , & v12 , a2 ) ; if ( v14 > -2 && v15 > -2 ) { ++ v12 ; ++ v13 ; result = 2 ; v14 -= 2 ; v15 -= 2 ; } else { v12 = 0 ; v13 = 0 ; v14 = 0 ; v15 = 0 ; } -- v7 ; } while ( v7 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_635680(_DWORD **this, int a2)
+{
+  int *Viewport; // eax
+  _DWORD *Coords; // eax
+  int *v5; // eax
+  int *v6; // eax
+  int v7; // edi
+  int result; // eax
+  int v9; // [esp+10h] [ebp-60h] BYREF
+  _DWORD v10[3]; // [esp+18h] [ebp-58h] BYREF
+  int v11[3]; // [esp+24h] [ebp-4Ch] BYREF
+  int v12; // [esp+30h] [ebp-40h] BYREF
+  int v13; // [esp+34h] [ebp-3Ch]
+  int v14; // [esp+38h] [ebp-38h]
+  int v15; // [esp+3Ch] [ebp-34h]
+  int v16; // [esp+40h] [ebp-30h] BYREF
+  int v17; // [esp+44h] [ebp-2Ch]
+  int v18; // [esp+48h] [ebp-28h]
+  int v19; // [esp+4Ch] [ebp-24h]
+  _DWORD v20[4]; // [esp+50h] [ebp-20h] BYREF
+  int v21[4]; // [esp+60h] [ebp-10h] BYREF
+
+  Viewport = Display::GetViewport(&v16);
+  v20[0] = *Viewport;
+  v20[1] = Viewport[1];
+  v20[2] = Viewport[2];
+  v20[3] = Viewport[3];
+  Coords = ScriptAction::GetCoords(this, v11);
+  v10[0] = *Coords;
+  v10[1] = Coords[1];
+  v10[2] = Coords[2];
+  v5 = ToCoordPixel(&v9, v10);
+  v6 = ComputeBounds(v21, 8, *v5, v5[1]);
+  v16 = *v6;
+  v17 = v6[1];
+  v18 = v6[2];
+  v19 = v6[3];
+  ShrinkRect(&v16, 4);
+  v21[0] = v16;
+  v12 = v16 - 4;
+  v13 = v17 - 4;
+  v14 = v18 + 8;
+  v15 = v19 + 8;
+  v7 = 3;
+  do
+  {
+    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))(
+               MEMORY[0x88731C],
+               v20,
+               &v12,
+               a2);
+    if ( v14 > -2 && v15 > -2 )
+    {
+      ++v12;
+      ++v13;
+      result = 2;
+      v14 -= 2;
+      v15 -= 2;
+    }
+    else
+    {
+      v12 = 0;
+      v13 = 0;
+      v14 = 0;
+      v15 = 0;
+    }
+    --v7;
+  }
+  while ( v7 );
+  return result;
+}
+
+/* ASM:
+sub     esp, 60h
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+70h+var_30]
+call    Display__GetViewport
+mov     ecx, [eax]
+mov     [esp+70h+var_20], ecx
+mov     edx, [eax+4]
+mov     [esp+70h+var_1C], edx
+mov     ecx, [eax+8]
+mov     [esp+70h+var_18], ecx
+mov     ecx, esi
+mov     edx, [eax+0Ch]
+lea     eax, [esp+70h+var_4C]
+push    eax
+mov     [esp+74h+var_14], edx
+call    ScriptAction__GetCoords
+mov     ecx, [eax]
+mov     [esp+70h+var_58], ecx
+lea     ecx, [esp+70h+var_60]
+mov     edx, [eax+4]
+mov     [esp+70h+var_54], edx
+lea     edx, [esp+70h+var_58]
+mov     eax, [eax+8]
+mov     [esp+70h+var_50], eax
+call    ToCoordPixel
+mov     ecx, [eax+4]
+push    ecx
+lea     ecx, [esp+74h+var_10]
+mov     edx, [eax]
+push    edx
+mov     edx, 8
+call    ComputeBounds
+mov     ecx, [eax]
+mov     [esp+70h+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+70h+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+70h+var_28], ecx
+lea     ecx, [esp+70h+var_30]
+mov     edx, [eax+0Ch]
+mov     [esp+70h+var_24], edx
+mov     edx, 4
+call    ShrinkRect
+mov     esi, [esp+70h+var_30]
+mov     eax, [esp+70h+var_2C]
+mov     ecx, [esp+70h+var_28]
+mov     edx, [esp+70h+var_24]
+mov     [esp+70h+var_10], esi
+add     esi, 0FFFFFFFCh
+sub     eax, 4
+add     ecx, 8
+add     edx, 8
+mov     [esp+70h+var_40], esi
+mov     esi, [esp+70h+arg_0]
+mov     [esp+70h+var_3C], eax
+mov     [esp+70h+var_38], ecx
+mov     [esp+70h+var_34], edx
+mov     edi, 3
+mov     ebp, 0FFFFFFFEh
+xor     ebx, ebx
+
+loc_635758:                             ; CODE XREF: sub_635680+138↓j
+mov     ecx, ds:88731Ch
+lea     edx, [esp+70h+var_40]
+push    esi
+push    edx
+mov     eax, [ecx]
+lea     edx, [esp+78h+var_20]
+push    edx
+call    dword ptr [eax+54h]
+cmp     [esp+70h+var_38], ebp
+jle     short loc_63577A
+cmp     [esp+70h+var_34], ebp
+jg      short loc_63578C
+
+loc_63577A:                             ; CODE XREF: sub_635680+F2↑j
+mov     [esp+70h+var_40], ebx
+mov     [esp+70h+var_3C], ebx
+mov     [esp+70h+var_38], ebx
+mov     [esp+70h+var_34], ebx
+jmp     short loc_6357B7
+; ---------------------------------------------------------------------------
+
+loc_63578C:                             ; CODE XREF: sub_635680+F8↑j
+mov     ecx, [esp+70h+var_40]
+mov     eax, [esp+70h+var_3C]
+mov     edx, [esp+70h+var_38]
+inc     ecx
+inc     eax
+mov     [esp+70h+var_40], ecx
+mov     ecx, [esp+70h+var_34]
+mov     [esp+70h+var_3C], eax
+mov     eax, 2
+sub     edx, eax
+sub     ecx, eax
+mov     [esp+70h+var_38], edx
+mov     [esp+70h+var_34], ecx
+
+loc_6357B7:                             ; CODE XREF: sub_635680+10A↑j
+dec     edi
+jnz     short loc_635758
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 60h
+retn    4
+*/
 }
 
 // 0x00793280 (428 bytes)
 const char* DrawDialog_793280() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00793280.json)
-    // Size: 428 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_793280 ( HWND hWnd, UINT a2, WPARAM a3, char *a4 ) { int result ; // eax !int v5 ! ; // edi !int *v6 ! ; // esi !HWND DlgItem ! ; // eax !int i ! ; // esi !HWND v9 ! ; // edi if ( a2 > 0x111 ) { if ( a2 < 0x132 ) return 0 ; if ( a2 <= 0x138 ) return ( int ) "GetStockObject " ( 4 ) ; if ( a2 != 1175 ) return 0 ; v5 = 0 ; v6 = dword_84A1F0 ; do { DlgItem = "GetDlgItem " ( hWnd , * v6 ) ; dword_B75F54 = 0 ; dword_B75F58 = 0 ; if ( v5 > Game_PlayerCount - 1 ) "DestroyWindow " ( DlgItem ) ; ++ v6 ; ++ v5 ; } while ( ( int ) v6 < ( int ) & byte_84A210 ) ; for ( i = 0 ; i < Game_PlayerCount ; ++ i ) { v9 = "GetDlgItem " ( hWnd , dword_84A1F0 [ i ] ) ; "SendMessageA " ( v9 , 0x4B2u , 0 , * ( _DWORD * ) ( Game_PlayerInfoArray + 4 * i ) ) ; "SendMessageA " ( v9 , 0xF1u , 0 , 0 ) ; } "SendMessageA " ( hWnd , 0x4A9u , 0 , 1 ) ; HashTable::LookupAndMark ( hWnd ) ; "ShowWindow " ( hWnd , 5 ) ; return 0 ; } else { if ( a2 != 273 ) { switch ( a2 ) { case 0xFu : Dialog::DrawBackground ( hWnd ) ; "ValidateRect " ( hWnd , 0 ) ; return 0 ; case 0x14u : return 1 ; case 0x2Bu : Dialog::Resize ( a4 ) ; return 1 ; } return 0 ; } switch ( ( __int16 ) a3 ) { case 1889 : case 1890 : case 1892 : case 1893 : case 1894 : case 1895 : case 1896 : case 1897 : if ( byte_B757EB [ ( unsigned __int16 ) a3 ] ) { if ( ! "SendDlgItemMessageA " ( hWnd , ( unsigned __int16 ) a3 , 0xF0u , 0 , 0 ) ) "SendDlgItemMessageA " ( hWnd , ( unsigned __int16 ) a3 , 0xF1u , 1u , 0 ) ; return 0 ; } if ( "SendDlgItemMessageA " ( hWnd , ( unsigned __int16 ) a3 , 0xF0u , 0 , 0 ) != 1 ) return 0 ; "SendDlgItemMessageA " ( hWnd , ( unsigned __int16 ) a3 , 0xF1u , 0 , 0 ) ; result = 0 ; break ; default : return 0 ; } } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __stdcall sub_793280(void *hWnd, unsigned int a2, unsigned __int16 a3, _DWORD *a4)
+{
+  int result; // eax
+  int v5; // edi
+  int *v6; // esi
+  int v7; // eax
+  int i; // esi
+  int v9; // edi
+
+  if ( a2 > 0x111 )
+  {
+    if ( a2 < 0x132 )
+      return 0;
+    if ( a2 <= 0x138 )
+      return ((int (__stdcall *)(int))GetStockObject)(4);
+    if ( a2 != 1175 )
+      return 0;
+    v5 = 0;
+    v6 = dword_84A1F0;
+    do
+    {
+      v7 = ((int (__stdcall *)(void *, int))GetDlgItem)(hWnd, *v6);
+      dword_A8ED54[236672] = 0;
+      dword_A8ED54[236673] = 0;
+      if ( v5 > MEMORY[0x87F7E8][538791] - 1 )
+        ((void (__stdcall *)(int))DestroyWindow)(v7);
+      ++v6;
+      ++v5;
+    }
+    while ( (int)v6 < (int)&byte_84A210 );
+    for ( i = 0; i < MEMORY[0x87F7E8][538791]; ++i )
+    {
+      v9 = ((int (__stdcall *)(void *, int))GetDlgItem)(hWnd, dword_84A1F0[i]);
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(
+        v9,
+        1202,
+        0,
+        *(_DWORD *)(MEMORY[0x87F7E8][538788] + 4 * i));
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v9, 241, 0, 0);
+    }
+    ((void (__stdcall *)(void *, int, _DWORD, int))SendMessageA)(hWnd, 1193, 0, 1);
+    HashTable::LookupAndMark(hWnd);
+    ((void (__stdcall *)(void *, int))ShowWindow)(hWnd, 5);
+    return 0;
+  }
+  else
+  {
+    if ( a2 != 273 )
+    {
+      switch ( a2 )
+      {
+        case 0xFu:
+          Dialog::DrawBackground(hWnd);
+          ((void (__stdcall *)(void *, _DWORD))ValidateRect)(hWnd, 0);
+          return 0;
+        case 0x14u:
+          return 1;
+        case 0x2Bu:
+          Dialog::Resize(a4);
+          return 1;
+      }
+      return 0;
+    }
+    switch ( a3 )
+    {
+      case 0x761u:
+      case 0x762u:
+      case 0x764u:
+      case 0x765u:
+      case 0x766u:
+      case 0x767u:
+      case 0x768u:
+      case 0x769u:
+        if ( *((_BYTE *)&dword_A8ED54[236197] + a3 + 3) )
+        {
+          if ( !((int (__stdcall *)(void *, _DWORD, int, _DWORD, _DWORD))SendDlgItemMessageA)(hWnd, a3, 240, 0, 0) )
+            ((void (__stdcall *)(void *, _DWORD, int, int, _DWORD))SendDlgItemMessageA)(hWnd, a3, 241, 1, 0);
+          return 0;
+        }
+        if ( ((int (__stdcall *)(void *, _DWORD, int, _DWORD, _DWORD))SendDlgItemMessageA)(hWnd, a3, 240, 0, 0) != 1 )
+          return 0;
+        ((void (__stdcall *)(void *, _DWORD, int, _DWORD, _DWORD))SendDlgItemMessageA)(hWnd, a3, 241, 0, 0);
+        result = 0;
+        break;
+      default:
+        return 0;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+hWnd            = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+
+mov     eax, [esp+arg_4]
+push    ebx
+push    esi
+cmp     eax, 111h
+push    edi
+ja      loc_793350
+jz      short loc_7932D7
+cmp     eax, 0Fh
+jz      short loc_7932BB
+cmp     eax, 14h
+jz      short loc_7932B0
+cmp     eax, 2Bh ; '+'
+jnz     def_7932F4      ; jumptable 007932F4 default case, case 1891
+mov     ecx, [esp+0Ch+arg_C]
+call    Dialog__Resize
+
+loc_7932B0:                             ; CODE XREF: sub_793280+1C↑j
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7932BB:                             ; CODE XREF: sub_793280+17↑j
+mov     esi, [esp+0Ch+hWnd]
+mov     ecx, esi        ; hWnd
+call    Dialog__DrawBackground
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_ValidateRect
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_7932D7:                             ; CODE XREF: sub_793280+12↑j
+mov     esi, [esp+0Ch+arg_8]
+and     esi, 0FFFFh
+lea     eax, [esi-761h] ; switch 9 cases
+cmp     eax, 8
+ja      short def_7932F4 ; jumptable 007932F4 default case, case 1891
+xor     ecx, ecx
+mov     cl, ds:byte_793434[eax]
+jmp     ds:jpt_7932F4[ecx*4] ; switch jump
+; ---------------------------------------------------------------------------
+
+loc_7932FB:                             ; CODE XREF: sub_793280+74↑j
+; DATA XREF: .text:jpt_7932F4↓o
+mov     al, byte ptr (dword_A8ED54+0E6A97h)[esi] ; jumptable 007932F4 cases 1889,1890,1892-1897
+mov     edi, [esp+0Ch+hWnd]
+mov     ebx, ds:__imp_SendDlgItemMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    0F0h            ; Msg
+test    al, al
+push    esi             ; nIDDlgItem
+push    edi             ; hDlg
+jz      short loc_793334
+call    ebx ; __imp_SendDlgItemMessageA
+test    eax, eax
+jnz     short def_7932F4 ; jumptable 007932F4 default case, case 1891
+push    eax             ; lParam
+push    1               ; wParam
+push    0F1h            ; Msg
+push    esi             ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_SendDlgItemMessageA
+
+def_7932F4:                             ; CODE XREF: sub_793280+21↑j
+; sub_793280+6A↑j ...
+pop     edi             ; jumptable 007932F4 default case, case 1891
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_793334:                             ; CODE XREF: sub_793280+98↑j
+call    ebx ; __imp_SendDlgItemMessageA
+cmp     eax, 1
+jnz     short def_7932F4 ; jumptable 007932F4 default case, case 1891
+push    0               ; lParam
+push    0               ; wParam
+push    0F1h            ; Msg
+push    esi             ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_SendDlgItemMessageA
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_793350:                             ; CODE XREF: sub_793280+C↑j
+cmp     eax, 132h
+jb      short def_7932F4 ; jumptable 007932F4 default case, case 1891
+cmp     eax, 138h
+jbe     loc_79341E
+cmp     eax, 497h
+jnz     short def_7932F4 ; jumptable 007932F4 default case, case 1891
+mov     ebx, ds:__imp_DestroyWindow
+push    ebp
+mov     ebp, [esp+10h+hWnd]
+xor     edi, edi
+mov     esi, offset dword_84A1F0
+
+loc_79337B:                             ; CODE XREF: sub_793280+12B↓j
+mov     edx, [esi]
+push    edx             ; nIDDlgItem
+push    ebp             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     edx, ds:0A8DA84h
+xor     ecx, ecx
+dec     edx
+mov     dword_A8ED54+0E7200h, ecx
+cmp     edi, edx
+mov     dword_A8ED54+0E7204h, ecx
+jle     short loc_7933A1
+push    eax             ; hWnd
+call    ebx ; __imp_DestroyWindow
+
+loc_7933A1:                             ; CODE XREF: sub_793280+11C↑j
+add     esi, 4
+inc     edi
+cmp     esi, offset byte_84A210
+jl      short loc_79337B
+mov     eax, ds:0A8DA84h
+mov     ebx, ds:__imp_SendMessageA
+xor     esi, esi
+test    eax, eax
+jle     short loc_7933F9
+
+loc_7933BE:                             ; CODE XREF: sub_793280+177↓j
+mov     eax, dword_84A1F0[esi*4]
+push    eax             ; nIDDlgItem
+push    ebp             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     ecx, ds:0A8DA78h
+mov     edi, eax
+mov     edx, [ecx+esi*4]
+push    edx             ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    edi             ; hWnd
+call    ebx ; __imp_SendMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    0F1h            ; Msg
+push    edi             ; hWnd
+call    ebx ; __imp_SendMessageA
+mov     eax, ds:0A8DA84h
+inc     esi
+cmp     esi, eax
+jl      short loc_7933BE
+
+loc_7933F9:                             ; CODE XREF: sub_793280+13C↑j
+push    1               ; lParam
+push    0               ; wParam
+push    4A9h            ; Msg
+push    ebp             ; hWnd
+call    ebx ; __imp_SendMessageA
+mov     ecx, ebp
+call    HashTable__LookupAndMark
+push    5               ; nCmdShow
+push    ebp             ; hWnd
+call    ds:__imp_ShowWindow
+pop     ebp
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_79341E:                             ; CODE XREF: sub_793280+DC↑j
+push    4               ; i
+call    ds:__imp_GetStockObject
+pop     edi
+pop     esi
+pop     ebx
+retn    10h
+*/
 }
 
 // 0x0072EA70 (83 bytes)
 void DrawSur_72EA70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0072EA70.json)
-    // Size: 83 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   void __fastcall sub_72EA70 ( int a1, int *a2 ) { int v2 ; // [esp+8h] [ebp-8h] BYREF int v3 ; // [esp+Ch] [ebp-4h] v2 = 0 ; v3 = 0 ; v2 = * ( _DWORD * ) g_GadgetAnimState ; v3 = * ( ( _DWORD * ) g_GadgetAnimState + 1 ) ; DrawToSurfaceSHP ( a1 , dword_B0FBB4 , ( int ) dword_B0FB1C , 0 , & v2 , a2 , 1024 , 0 , 0 , 0 , 1000 , 0 , 0 , 0 , 0 , 0 ) ; }
-    
+// [IDA decompile]
+void __fastcall sub_72EA70(int a1, int *a2)
+{
+  int v2; // [esp+8h] [ebp-8h] BYREF
+  int v3; // [esp+Ch] [ebp-4h]
+
+  v2 = 0;
+  v3 = 0;
+  v2 = *(_DWORD *)MEMORY[0xB0FC1C];
+  v3 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
+  DrawToSurfaceSHP(a1, MEMORY[0xB0FBB4], (int)MEMORY[0xB0FB1C], 0, &v2, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, dword_A8ED54+80EC8h
+push    esi
+xor     esi, esi
+push    edi
+mov     [esp+10h+var_8], esi
+mov     [esp+10h+var_4], esi
+mov     edi, [eax]
+push    esi
+mov     [esp+14h+var_8], edi
+mov     eax, [eax+4]
+mov     [esp+14h+var_4], eax
+xor     eax, eax
+push    eax
+push    esi
+push    esi
+push    esi
+push    3E8h
+mov     eax, dword_A8ED54+80DC8h
+push    esi
+push    esi
+push    esi
+push    400h
+push    edx
+lea     edx, [esp+3Ch+var_8]
+push    edx
+mov     edx, dword_A8ED54+80E60h
+push    esi
+push    eax
+call    DrawToSurfaceSHP
+pop     edi
+pop     esi
+add     esp, 8
+retn
+*/
 }
 
 // 0x0072E990 (83 bytes)
 void DrawSurface_72E990() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0072E990.json)
-    // Size: 83 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   void __fastcall sub_72E990 ( int a1, int *a2 ) { int v2 ; // [esp+8h] [ebp-8h] BYREF int v3 ; // [esp+Ch] [ebp-4h] v2 = 0 ; v3 = 0 ; v2 = * ( _DWORD * ) g_GadgetAnimState ; v3 = * ( ( _DWORD * ) g_GadgetAnimState + 1 ) ; DrawToSurfaceSHP ( a1 , dword_B0FBA8 , ( int ) dword_B0FB34 , 0 , & v2 , a2 , 1024 , 0 , 0 , 0 , 1000 , 0 , 0 , 0 , 0 , 0 ) ; }
-    
+// [IDA decompile]
+void __fastcall sub_72E990(int a1, int *a2)
+{
+  int v2; // [esp+8h] [ebp-8h] BYREF
+  int v3; // [esp+Ch] [ebp-4h]
+
+  v2 = 0;
+  v3 = 0;
+  v2 = *(_DWORD *)MEMORY[0xB0FC1C];
+  v3 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
+  DrawToSurfaceSHP(a1, MEMORY[0xB0FBA8], (int)MEMORY[0xB0FB34], 0, &v2, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, dword_A8ED54+80EC8h
+push    esi
+xor     esi, esi
+push    edi
+mov     [esp+10h+var_8], esi
+mov     [esp+10h+var_4], esi
+mov     edi, [eax]
+push    esi
+mov     [esp+14h+var_8], edi
+mov     eax, [eax+4]
+mov     [esp+14h+var_4], eax
+xor     eax, eax
+push    eax
+push    esi
+push    esi
+push    esi
+push    3E8h
+mov     eax, dword_A8ED54+80DE0h
+push    esi
+push    esi
+push    esi
+push    400h
+push    edx
+lea     edx, [esp+3Ch+var_8]
+push    edx
+mov     edx, dword_A8ED54+80E54h
+push    esi
+push    eax
+call    DrawToSurfaceSHP
+pop     edi
+pop     esi
+add     esp, 8
+retn
+*/
 }
 
 // 0x005BC460 (104 bytes)
 char DrawText_5BC460() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BC460.json)
-    // Size: 104 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_5BC460 ( int a1 ) { _BYTE *v1 ; // ecx !int v2 ! ; // edi _DWORD *v3 ; // ebx _BYTE *v4 ; // edx _DWORD *v5 ; // eax !int v6 ! ; // esi v1 = ( _BYTE * ) dword_ABF168 [ a1 ] ; dword_ABF23C = ( int ) v1 ; v2 = 0 ; v3 = v1 + 2000 ; do { v4 = & v1 [ v2 ] ; v5 = v3 ; v6 = 80 ; do { * v4 = 32 ; * v5 = 0 ; v5 += 25 ; v4 += 25 ; -- v6 ; } while ( v6 ) ; ++ v2 ; ++ v3 ; } while ( v2 < 25 ) ; v1 [ 10036 ] = 1 ; Text::DrawRepeated ( v1 , 0 , 0 , 80 , 25 ) ; return Text::DrawRepeated ( ( void * ) dword_ABF23C , 0 , 0 , 80 , 25 ) ; }
-    return 0;
+// [IDA decompile]
+char __fastcall sub_5BC460(int a1)
+{
+  _BYTE *v1; // ecx
+  int v2; // edi
+  _DWORD *v3; // ebx
+  _BYTE *v4; // edx
+  _DWORD *v5; // eax
+  int v6; // esi
+
+  v1 = (_BYTE *)MEMORY[0xABF168][a1];
+  MEMORY[0xABF23C] = (int)v1;
+  v2 = 0;
+  v3 = v1 + 2000;
+  do
+  {
+    v4 = &v1[v2];
+    v5 = v3;
+    v6 = 80;
+    do
+    {
+      *v4 = 32;
+      *v5 = 0;
+      v5 += 25;
+      v4 += 25;
+      --v6;
+    }
+    while ( v6 );
+    ++v2;
+    ++v3;
+  }
+  while ( v2 < 25 );
+  v1[10036] = 1;
+  Text::DrawRepeated(v1, 0, 0, 80, 25);
+  return Text::DrawRepeated((void *)MEMORY[0xABF23C], 0, 0, 80, 25);
+}
+
+/* ASM:
+mov     ecx, dword_A8ED54+30414h[ecx*4]
+push    ebx
+push    esi
+push    edi
+mov     dword_A8ED54+304E8h, ecx
+xor     edi, edi
+lea     ebx, [ecx+7D0h]
+
+loc_5BC478:                             ; CODE XREF: sub_5BC460+3B↓j
+lea     edx, [edi+ecx]
+mov     eax, ebx
+mov     esi, 50h ; 'P'
+
+loc_5BC482:                             ; CODE XREF: sub_5BC460+32↓j
+mov     byte ptr [edx], 20h ; ' '
+mov     dword ptr [eax], 0
+add     eax, 64h ; 'd'
+add     edx, 19h
+dec     esi
+jnz     short loc_5BC482
+inc     edi
+add     ebx, 4
+cmp     edi, 19h
+jl      short loc_5BC478
+push    19h             ; int
+push    50h ; 'P'       ; int
+push    0               ; int
+push    0               ; String
+mov     byte ptr [ecx+2734h], 1
+call    Text__DrawRepeated
+mov     ecx, dword_A8ED54+304E8h
+push    19h             ; int
+push    50h ; 'P'       ; int
+push    0               ; int
+push    0               ; String
+call    Text__DrawRepeated
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x005BC4D0 (92 bytes)
 char DrawText_5BC4D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BC4D0.json)
-    // Size: 92 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   char sub_5BC4D0 ( ) { !int *v0 ! ; // ebx _BYTE *v1 ; // ecx !int v2 ! ; // edi !int v3 ! ; // ebp _BYTE *v4 ; // edx _DWORD *v5 ; // eax !int v6 ! ; // esi !char result ! ; // al v0 = dword_ABF168 ; do { v1 = ( _BYTE * ) * v0 ; v2 = 0 ; v3 = * v0 + 2000 ; do { v4 = & v1 [ v2 ] ; v5 = ( _DWORD * ) v3 ; v6 = 80 ; do { * v4 = 32 ; * v5 = 0 ; v5 += 25 ; v4 += 25 ; -- v6 ; } while ( v6 ) ; ++ v2 ; v3 += 4 ; } while ( v2 < 25 ) ; v1 [ 10036 ] = 1 ; result = Text::DrawRepeated ( v1 , 0 , 0 , 80 , 25 ) ; ++ v0 ; } while ( ( int ) v0 < ( int ) & dword_ABF188 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+char sub_5BC4D0()
+{
+  int *v0; // ebx
+  _BYTE *v1; // ecx
+  int v2; // edi
+  int v3; // ebp
+  _BYTE *v4; // edx
+  _DWORD *v5; // eax
+  int v6; // esi
+  char result; // al
+
+  v0 = MEMORY[0xABF168];
+  do
+  {
+    v1 = (_BYTE *)*v0;
+    v2 = 0;
+    v3 = *v0 + 2000;
+    do
+    {
+      v4 = &v1[v2];
+      v5 = (_DWORD *)v3;
+      v6 = 80;
+      do
+      {
+        *v4 = 32;
+        *v5 = 0;
+        v5 += 25;
+        v4 += 25;
+        --v6;
+      }
+      while ( v6 );
+      ++v2;
+      v3 += 4;
+    }
+    while ( v2 < 25 );
+    v1[10036] = 1;
+    result = Text::DrawRepeated(v1, 0, 0, 80, 25);
+    ++v0;
+  }
+  while ( (int)v0 < (int)&MEMORY[0xABF188] );
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, (offset dword_A8ED54+30414h)
+
+loc_5BC4D9:                             ; CODE XREF: sub_5BC4D0+55↓j
+mov     ecx, [ebx]
+xor     edi, edi
+lea     ebp, [ecx+7D0h]
+
+loc_5BC4E3:                             ; CODE XREF: sub_5BC4D0+36↓j
+lea     edx, [edi+ecx]
+mov     eax, ebp
+mov     esi, 50h ; 'P'
+
+loc_5BC4ED:                             ; CODE XREF: sub_5BC4D0+2D↓j
+mov     byte ptr [edx], 20h ; ' '
+mov     dword ptr [eax], 0
+add     eax, 64h ; 'd'
+add     edx, 19h
+dec     esi
+jnz     short loc_5BC4ED
+inc     edi
+add     ebp, 4
+cmp     edi, 19h
+jl      short loc_5BC4E3
+push    19h             ; int
+push    50h ; 'P'       ; int
+push    0               ; int
+push    0               ; String
+mov     byte ptr [ecx+2734h], 1
+call    Text__DrawRepeated
+add     ebx, 4
+cmp     ebx, (offset dword_A8ED54+30434h)
+jl      short loc_5BC4D9
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x005E2AC0 (224 bytes)
 void DrawWideString_5E2AC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005E2AC0.json)
-    // Size: 224 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void sub_5E2AC0 ( ) { !HWND Current ! ; // edi !HWND DlgItem ! ; // esi !HWND v2 ! ; // eax !LRESULT v3 ! ; // edi !wchar_t *v4 ! ; // eax !int v5 ! ; // [esp+Ch] [ebp-4h] BYREF if ( Dialog::GetCurrent ( ) ) { Current = Dialog::GetCurrent ( ) ; DlgItem = "GetDlgItem " ( Current , 1343 ) ; if ( DlgItem ) { LABEL_5 : v3 = "SendMessageA " ( DlgItem , 0x18Bu , 0 , 0 ) ; unknown_libname_74 ( & v5 ) ; if ( v3 > 0 ) UI_Assign_623F60 ( DlgItem , v3 - 1 , ( void ** ) & v5 ) ; if ( ( unsigned int ) WideString::Length ( ( const wchar_t ** ) & v5 ) >= 0x24 ) { WideString::Assign_Alt ( ( void ** ) & v5 , asc_831774 ) ; } else { "SendMessageA " ( DlgItem , 0x182u , v3 - 1 , 0 ) ; WideString::Append2 ( ( wchar_t ** ) & v5 , asc_831774 ) ; } v4 = WideString::GetOrEmpty ( ( wchar_t ** ) & v5 ) ; DrawDialogText ( -1 , v4 , DlgItem ) ; "InvalidateRect " ( DlgItem , 0 , 0 ) ; DeleteAndZero::Alt ( ( void ** ) & v5 ) ; } else { while ( 1 ) { v2 = ( HWND ) Dialog::FindByPtr ( Current ) ; Current = v2 ; if ( ! v2 ) break ; DlgItem = "GetDlgItem " ( v2 , 1343 ) ; if ( DlgItem ) goto LABEL_5 ; } } } }
-    
+// [IDA decompile]
+void sub_5E2AC0()
+{
+  void *Current; // edi
+  int v1; // esi
+  int v2; // eax
+  int v3; // edi
+  #72 *v4; // eax
+  int v5; // [esp+Ch] [ebp-4h] BYREF
+
+  if ( Dialog::GetCurrent() )
+  {
+    Current = (void *)Dialog::GetCurrent();
+    v1 = ((int (__stdcall *)(void *, int))GetDlgItem)(Current, 1343);
+    if ( v1 )
+    {
+LABEL_5:
+      v3 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v1, 395, 0, 0);
+      unknown_libname_74(&v5);
+      if ( v3 > 0 )
+        UI_Assign_623F60(v1, v3 - 1, &v5);
+      if ( (unsigned int)WideString::Length((const #72 **)&v5) >= 0x24 )
+      {
+        WideString::Assign_Alt((void **)&v5, (#72 *)&asc_831774);
+      }
+      else
+      {
+        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v1, 386, v3 - 1, 0);
+        WideString::Append2((#72 **)&v5, (#72 *)&asc_831774);
+      }
+      v4 = WideString::GetOrEmpty((#72 **)&v5);
+      DrawDialogText(-1, v4, v1);
+      ((void (__stdcall *)(int, _DWORD, _DWORD))InvalidateRect)(v1, 0, 0);
+      DeleteAndZero::Alt((void **)&v5);
+    }
+    else
+    {
+      while ( 1 )
+      {
+        v2 = Dialog::FindByPtr(Current);
+        Current = (void *)v2;
+        if ( !v2 )
+          break;
+        v1 = ((int (__stdcall *)(int, int))GetDlgItem)(v2, 1343);
+        if ( v1 )
+          goto LABEL_5;
+      }
+    }
+  }
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    esi
+push    edi
+call    Dialog__GetCurrent
+test    eax, eax
+jz      loc_5E2B9B
+call    Dialog__GetCurrent
+mov     ebx, ds:__imp_GetDlgItem
+mov     edi, eax
+push    53Fh            ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jnz     short loc_5E2B0B
+
+loc_5E2AEC:                             ; CODE XREF: sub_5E2AC0+49↓j
+mov     ecx, edi
+call    Dialog__FindByPtr
+mov     edi, eax
+test    edi, edi
+jz      loc_5E2B9B
+push    53Fh            ; nIDDlgItem
+push    edi             ; hDlg
+call    ebx ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      short loc_5E2AEC
+
+loc_5E2B0B:                             ; CODE XREF: sub_5E2AC0+2A↑j
+mov     ebx, ds:__imp_SendMessageA
+push    0               ; lParam
+push    0               ; wParam
+push    18Bh            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+lea     ecx, [esp+10h+var_4]
+mov     edi, eax
+call    unknown_libname_74 ; Microsoft VisualC 2-14/net runtime
+test    edi, edi
+jle     short loc_5E2B3B
+lea     eax, [esp+10h+var_4]
+lea     edx, [edi-1]    ; wParam
+push    eax             ; int
+mov     ecx, esi        ; hWnd
+call    UI_Assign_623F60
+
+loc_5E2B3B:                             ; CODE XREF: sub_5E2AC0+6A↑j
+lea     ecx, [esp+10h+var_4]
+call    WideString__Length
+cmp     eax, 24h ; '$'
+jnb     short loc_5E2B65
+dec     edi
+push    0               ; lParam
+push    edi             ; wParam
+push    182h            ; Msg
+push    esi             ; hWnd
+call    ebx ; __imp_SendMessageA
+lea     ecx, [esp+10h+var_4]
+push    offset asc_831774 ; "."
+call    WideString__Append2
+jmp     short loc_5E2B73
+; ---------------------------------------------------------------------------
+
+loc_5E2B65:                             ; CODE XREF: sub_5E2AC0+87↑j
+push    offset asc_831774 ; "."
+lea     ecx, [esp+14h+var_4]
+call    WideString__Assign_Alt
+
+loc_5E2B73:                             ; CODE XREF: sub_5E2AC0+A3↑j
+push    esi
+lea     ecx, [esp+14h+var_4]
+call    WideString__GetOrEmpty
+mov     edx, eax
+or      ecx, 0FFFFFFFFh
+call    DrawDialogText
+push    0               ; bErase
+push    0               ; lpRect
+push    esi             ; hWnd
+call    ds:__imp_InvalidateRect
+lea     ecx, [esp+10h+var_4]
+call    DeleteAndZero__Alt
+
+loc_5E2B9B:                             ; CODE XREF: sub_5E2AC0+B↑j
+; sub_5E2AC0+37↑j
+pop     edi
+pop     esi
+pop     ebx
+pop     ecx
+retn
+*/
 }
 
 // 0x004C38E0 (320 bytes)
 const char* FindPalette_4C38E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C38E0.json)
-    // Size: 320 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char *__fastcall sub_4C38E0 ( char *a1, int a2, int a3, char *a4 ) { char *v5 ; // edx !char *v6 ! ; // eax _BYTE *v7 ; // ebp unsigned __int8 *v8 ; // edi int v9 ; // eax !int v10 ! ; // esi !char *v11 ! ; // eax !int v12 ! ; // eax __int16 v14 ; // [esp+10h] [ebp-10h] BYREF char v15 ; // [esp+12h] [ebp-Eh] int v16 ; // [esp+14h] [ebp-Ch] BYREF int v17 ; // [esp+18h] [ebp-8h] int v18 ; // [esp+1Ch] [ebp-4h] v16 = a2 ; if ( ! a3 || ! a2 ) return a4 ; v5 = a4 ; if ( a4 ) goto LABEL_6 ; v6 = ( char * ) __2_YAPAXI_Z ( ( a3 + 1 ) << 8 ) ; a4 = v6 ; if ( ! v6 ) return a4 ; v5 = v6 ; LABEL_6 : v7 = v5 + 256 ; memset ( v5 , 0xFFu , 0x100u ) ; v17 = 0 ; if ( a3 > 0 ) { v8 = ( unsigned __int8 * ) ( v16 + 1 ) ; while ( 1 ) { v5 [ * ( v8 - 1 ) ] = v17 ; v9 = * v8 ; v18 = v8 [ 1 ] ; v10 = 1 ; v11 = & a1 [ 2 * v9 + v9 ] ; v14 = * ( _WORD * ) v11 ; LOBYTE ( v11 ) = v11 [ 2 ] ; * v7 = 0 ; v15 = ( char ) v11 ; do { v12 = ( int ) & a1 [ 2 * ( v10 % 256 ) + v10 % 256 ] ; LOWORD ( v16 ) = * ( _WORD * ) v12 ; BYTE2 ( v16 ) = * ( _BYTE * ) ( v12 + 2 ) ; Color::Lerp ( ( unsigned __int8 * ) & v16 , v18 , ( unsigned __int8 * ) & v14 ) ; v7 [ v10 ++ ] = Palette::FindClosestColor ( a1 , ( int ) & v16 ) ; } while ( v10 < 256 ) ; v7 += 256 ; v8 += 4 ; if ( ++ v17 >= a3 ) break ; v5 = a4 ; } return a4 ; } return v5 ; }
-    return nullptr;
+// [IDA decompile]
+char *__fastcall sub_4C38E0(char *a1, int a2, int a3, char *a4)
+{
+  char *v5; // edx
+  char *v6; // eax
+  _BYTE *v7; // ebp
+  unsigned __int8 *v8; // edi
+  int v9; // eax
+  int v10; // esi
+  char *v11; // eax
+  char *v12; // eax
+  __int16 v14; // [esp+10h] [ebp-10h] BYREF
+  char v15; // [esp+12h] [ebp-Eh]
+  int v16; // [esp+14h] [ebp-Ch] BYREF
+  int v17; // [esp+18h] [ebp-8h]
+  int v18; // [esp+1Ch] [ebp-4h]
+
+  v16 = a2;
+  if ( !a3 || !a2 )
+    return a4;
+  v5 = a4;
+  if ( a4 )
+    goto LABEL_6;
+  v6 = (char *)__2_YAPAXI_Z((a3 + 1) << 8);
+  a4 = v6;
+  if ( !v6 )
+    return a4;
+  v5 = v6;
+LABEL_6:
+  v7 = v5 + 256;
+  memset(v5, 0xFFu, 0x100u);
+  v17 = 0;
+  if ( a3 > 0 )
+  {
+    v8 = (unsigned __int8 *)(v16 + 1);
+    while ( 1 )
+    {
+      v5[*(v8 - 1)] = v17;
+      v9 = *v8;
+      v18 = v8[1];
+      v10 = 1;
+      v11 = &a1[2 * v9 + v9];
+      v14 = *(_WORD *)v11;
+      LOBYTE(v11) = v11[2];
+      *v7 = 0;
+      v15 = (char)v11;
+      do
+      {
+        v12 = &a1[2 * (v10 % 256) + v10 % 256];
+        LOWORD(v16) = *(_WORD *)v12;
+        BYTE2(v16) = v12[2];
+        Color::Lerp((unsigned __int8 *)&v16, v18, (unsigned __int8 *)&v14);
+        v7[v10++] = Palette::FindClosestColor(a1, (int)&v16);
+      }
+      while ( v10 < 256 );
+      v7 += 256;
+      v8 += 4;
+      if ( ++v17 >= a3 )
+        break;
+      v5 = a4;
+    }
+    return a4;
+  }
+  return v5;
+}
+
+/* ASM:
+sub     esp, 10h
+push    ebx
+push    ebp
+push    esi
+mov     esi, [esp+1Ch+arg_0]
+test    esi, esi
+push    edi
+mov     [esp+20h+var_C], edx
+mov     ebx, ecx
+jz      loc_4C3A06
+test    edx, edx
+jz      loc_4C3A06
+mov     edx, [esp+20h+arg_4]
+test    edx, edx
+jnz     short loc_4C3926
+lea     eax, [esi+1]
+shl     eax, 8
+push    eax             ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+mov     [esp+20h+arg_4], eax
+test    eax, eax
+jz      loc_4C3A06
+mov     edx, eax
+
+loc_4C3926:                             ; CODE XREF: sub_4C38E0+27↑j
+mov     ecx, 40h ; '@'
+or      eax, 0FFFFFFFFh
+mov     edi, edx
+lea     ebp, [edx+100h]
+test    esi, esi
+rep stosd
+mov     [esp+20h+var_8], 0
+jle     loc_4C3A14
+mov     ecx, [esp+20h+var_C]
+lea     edi, [ecx+1]
+jmp     short loc_4C3955
+; ---------------------------------------------------------------------------
+
+loc_4C3951:                             ; CODE XREF: sub_4C38E0+120↓j
+mov     edx, [esp+20h+arg_4]
+
+loc_4C3955:                             ; CODE XREF: sub_4C38E0+6F↑j
+mov     cl, byte ptr [esp+20h+var_8]
+xor     eax, eax
+mov     al, [edi-1]
+mov     [eax+edx], cl
+xor     eax, eax
+mov     al, [edi]
+xor     edx, edx
+mov     dl, [edi+1]
+and     eax, 800000FFh
+mov     [esp+20h+var_4], edx
+jns     short loc_4C397C
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_4C397C:                             ; CODE XREF: sub_4C38E0+93↑j
+lea     ecx, [ebx+eax*2]
+mov     esi, 1
+add     eax, ecx
+mov     dx, [eax]
+mov     [esp+20h+var_10], dx
+mov     al, [eax+2]
+mov     byte ptr [ebp+0], 0
+mov     [esp+20h+var_E], al
+
+loc_4C3999:                             ; CODE XREF: sub_4C38E0+106↓j
+mov     eax, esi
+and     eax, 800000FFh
+jns     short loc_4C39A9
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_4C39A9:                             ; CODE XREF: sub_4C38E0+C0↑j
+lea     ecx, [ebx+eax*2]
+add     eax, ecx
+lea     ecx, [esp+20h+var_10]
+push    ecx
+lea     ecx, [esp+24h+var_C]
+mov     dx, [eax]
+mov     word ptr [esp+24h+var_C], dx
+mov     edx, [esp+24h+var_4]
+mov     al, [eax+2]
+push    edx
+mov     byte ptr [esp+28h+var_C+2], al
+call    Color__Lerp
+lea     eax, [esp+20h+var_C]
+mov     ecx, ebx
+push    eax
+call    Palette__FindClosestColor
+mov     [esi+ebp], al
+inc     esi
+cmp     esi, 100h
+jl      short loc_4C3999
+mov     eax, [esp+20h+var_8]
+mov     ecx, [esp+20h+arg_0]
+add     ebp, 100h
+inc     eax
+add     edi, 4
+cmp     eax, ecx
+mov     [esp+20h+var_8], eax
+jl      loc_4C3951
+
+loc_4C3A06:                             ; CODE XREF: sub_4C38E0+13↑j
+; sub_4C38E0+1B↑j ...
+mov     eax, [esp+20h+arg_4]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4C3A14:                             ; CODE XREF: sub_4C38E0+62↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     eax, edx
+pop     ebx
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x00434840 (162 bytes)
 char FontClassRenderGlyphHelper_434840() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00434840.json)
-    // Size: 162 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   char __stdcall sub_434840 ( _DWORD *a1, _DWORD *a2, _DWORD *a3 ) { int v3 ; // ecx int v4 ; // ecx int v5 ; // edx if ( a2 [ 1 ] > a3 [ 3 ] || a3 [ 1 ] > a2 [ 3 ] || * a2 > a3 [ 2 ] || * a3 > a2 [ 2 ] ) { * a1 = 0 ; a1 [ 1 ] = 0 ; a1 [ 2 ] = -1 ; a1 [ 3 ] = -1 ; return 0 ; } else { * a1 = * a2 ; a1 [ 1 ] = a2 [ 1 ] ; a1 [ 2 ] = a2 [ 2 ] ; a1 [ 3 ] = a2 [ 3 ] ; v3 = a3 [ 1 ] ; if ( a1 [ 1 ] < v3 ) a1 [ 1 ] = v3 ; if ( * a1 < * a3 ) * a1 = * a3 ; v4 = a3 [ 3 ] ; if ( a1 [ 3 ] > v4 ) a1 [ 3 ] = v4 ; v5 = a3 [ 2 ] ; if ( a1 [ 2 ] > v5 ) a1 [ 2 ] = v5 ; return 1 ; } }
+// [IDA decompile]
+char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
+{
+  int v3; // ecx
+  int v4; // ecx
+  int v5; // edx
+
+  if ( a2[1] > a3[3] || a3[1] > a2[3] || *a2 > a3[2] || *a3 > a2[2] )
+  {
+    *a1 = 0;
+    a1[1] = 0;
+    a1[2] = -1;
+    a1[3] = -1;
     return 0;
+  }
+  else
+  {
+    *a1 = *a2;
+    a1[1] = a2[1];
+    a1[2] = a2[2];
+    a1[3] = a2[3];
+    v3 = a3[1];
+    if ( a1[1] < v3 )
+      a1[1] = v3;
+    if ( *a1 < *a3 )
+      *a1 = *a3;
+    v4 = a3[3];
+    if ( a1[3] > v4 )
+      a1[3] = v4;
+    v5 = a3[2];
+    if ( a1[2] > v5 )
+      a1[2] = v5;
+    return 1;
+  }
+}
+
+/* ASM:
+mov     edx, [esp+arg_8]
+mov     ecx, [esp+arg_4]
+push    esi
+mov     eax, [ecx+4]
+mov     esi, [edx+0Ch]
+cmp     eax, esi
+jg      short loc_4348C2
+mov     eax, [edx+4]
+mov     esi, [ecx+0Ch]
+cmp     eax, esi
+jg      short loc_4348C2
+mov     eax, [ecx]
+mov     esi, [edx+8]
+cmp     eax, esi
+jg      short loc_4348C2
+mov     eax, [edx]
+mov     esi, [ecx+8]
+cmp     eax, esi
+jg      short loc_4348C2
+mov     eax, [esp+4+arg_0]
+push    edi
+mov     edi, [ecx]
+mov     esi, eax
+mov     [esi], edi
+mov     edi, [ecx+4]
+mov     [esi+4], edi
+mov     edi, [ecx+8]
+mov     [esi+8], edi
+mov     ecx, [ecx+0Ch]
+pop     edi
+mov     [esi+0Ch], ecx
+mov     ecx, [edx+4]
+cmp     [eax+4], ecx
+jge     short loc_434898
+mov     [eax+4], ecx
+
+loc_434898:                             ; CODE XREF: sub_434840+53↑j
+mov     ecx, [edx]
+mov     esi, [eax]
+cmp     esi, ecx
+jge     short loc_4348A2
+mov     [eax], ecx
+
+loc_4348A2:                             ; CODE XREF: sub_434840+5E↑j
+mov     ecx, [edx+0Ch]
+mov     esi, [eax+0Ch]
+cmp     esi, ecx
+jle     short loc_4348AF
+mov     [eax+0Ch], ecx
+
+loc_4348AF:                             ; CODE XREF: sub_434840+6A↑j
+mov     edx, [edx+8]
+mov     ecx, [eax+8]
+cmp     ecx, edx
+jle     short loc_4348BC
+mov     [eax+8], edx
+
+loc_4348BC:                             ; CODE XREF: sub_434840+77↑j
+mov     al, 1
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_4348C2:                             ; CODE XREF: sub_434840+11↑j
+; sub_434840+1B↑j ...
+mov     eax, [esp+4+arg_0]
+or      ecx, 0FFFFFFFFh
+pop     esi
+mov     dword ptr [eax], 0
+mov     dword ptr [eax+4], 0
+mov     [eax+8], ecx
+mov     [eax+0Ch], ecx
+xor     al, al
+retn    0Ch
+*/
 }
 
 // 0x004C2790 (155 bytes)
 int Lightning_Draw_4C2790() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C2790.json)
-    // Size: 155 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4C2790 ( int this ) { !int result ! ; // eax int v3[2] ; // [esp+8h] [ebp-10h] BYREF int v4[2] ; // [esp+10h] [ebp-8h] BYREF if ( * ( _DWORD * ) ( this + 40 ) ) { Coord::To_Screen ( TacticalClass_Instance , ( _DWORD * ) this , v4 ) ; Coord::To_Screen ( TacticalClass_Instance , ( _DWORD * ) ( this + 12 ) , v3 ) ; if ( ClipLine ( v4 , v3 , & DSurface_ViewBounds ) ) Lightning::Draw ( ( _DWORD * ) this , * ( _DWORD * ) this , * ( _DWORD * ) ( this + 4 ) , * ( _DWORD * ) ( this + 8 ) , * ( _DWORD * ) ( this + 12 ) , * ( _DWORD * ) ( this + 16 ) , * ( _DWORD * ) ( this + 20 ) , * ( _BYTE * ) ( this + 44 ) != 0 ? 5 : 10 ) ; ++ * ( _DWORD * ) ( this + 28 ) ; } result = * ( int * ) ( this + 40 ) >> 1 ; * ( _DWORD * ) ( this + 40 ) = result ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4C2790(int this)
+{
+  int result; // eax
+  int v3[2]; // [esp+8h] [ebp-10h] BYREF
+  int v4[2]; // [esp+10h] [ebp-8h] BYREF
+
+  if ( *(_DWORD *)(this + 40) )
+  {
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], (_DWORD *)this, v4);
+    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], (_DWORD *)(this + 12), v3);
+    if ( ClipLine(v4, v3, &MEMORY[0x87F7E8][7662]) )
+      Lightning::Draw(
+        (_DWORD *)this,
+        *(_DWORD *)this,
+        *(_DWORD *)(this + 4),
+        *(_DWORD *)(this + 8),
+        *(_DWORD *)(this + 12),
+        *(_DWORD *)(this + 16),
+        *(_DWORD *)(this + 20),
+        *(_BYTE *)(this + 44) != 0 ? 5 : 10);
+    ++*(_DWORD *)(this + 28);
+  }
+  result = *(int *)(this + 40) >> 1;
+  *(_DWORD *)(this + 40) = result;
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+push    edi
+mov     eax, [esi+28h]
+test    eax, eax
+jz      short loc_4C281D
+mov     ecx, ds:887324h
+lea     eax, [esp+18h+var_8]
+push    eax
+push    esi
+call    Coord__To_Screen
+lea     ecx, [esp+18h+var_10]
+lea     edi, [esi+0Ch]
+push    ecx
+mov     ecx, ds:887324h
+push    edi
+call    Coord__To_Screen
+push    886FA0h
+lea     edx, [esp+1Ch+var_10]
+lea     ecx, [esp+1Ch+var_8]
+call    ClipLine
+test    al, al
+jz      short loc_4C281A
+mov     dl, [esi+2Ch]
+mov     ecx, [edi]
+neg     dl
+sbb     edx, edx
+and     edx, 0FFFFFFFBh
+add     edx, 0Ah
+push    edx
+mov     edx, [edi+4]
+sub     esp, 0Ch
+mov     eax, esp
+sub     esp, 0Ch
+mov     [eax], ecx
+mov     ecx, [edi+8]
+mov     [eax+4], edx
+mov     edx, esi
+mov     [eax+8], ecx
+mov     ecx, [edx]
+mov     eax, esp
+mov     [eax], ecx
+mov     ecx, [edx+4]
+mov     edx, [edx+8]
+mov     [eax+4], ecx
+mov     ecx, esi
+mov     [eax+8], edx
+call    Lightning__Draw
+
+loc_4C281A:                             ; CODE XREF: sub_4C2790+47↑j
+inc     dword ptr [esi+1Ch]
+
+loc_4C281D:                             ; CODE XREF: sub_4C2790+C↑j
+mov     eax, [esi+28h]
+pop     edi
+sar     eax, 1
+mov     [esi+28h], eax
+pop     esi
+add     esp, 10h
+retn
+*/
 }
 
 // 0x004C2830 (425 bytes)
 int Lightning_Draw_4C2830() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C2830.json)
-    // Size: 425 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int sub_4C2830 ( ) { !int result ! ; // eax !int *v1 ! ; // eax !int v2 ! ; // ecx !int *v3 ! ; // edx int v4 ; // eax int v5 ; // ecx int v6 ; // edx _DWORD *v7 ; // esi !int *v8 ! ; // ebx !int *v9 ! ; // esi !int v10 ! ; // eax !int v11 ! ; // eax void *v12 ; // edx int v13 ; // ecx _DWORD *v14 ; // eax !void *Block ! ; // [esp+18h] [ebp-24h] BYREF !int i ! ; // [esp+1Ch] [ebp-20h] int v17[2] ; // [esp+20h] [ebp-1Ch] BYREF int v18[2] ; // [esp+28h] [ebp-14h] BYREF char v19[12] ; // [esp+30h] [ebp-Ch] BYREF result = dword_8A0E98 - 1 ; for ( i = dword_8A0E98 - 1 ; i >= 0 ; -- i ) { v1 = ( int * ) * ( ( _DWORD * ) dword_8A0E8C + result ) ; Block = v1 ; v2 = v1 [ 8 ] ; if ( v2 ) { v3 = ( int * ) ( * ( int (__thiscall **)(int, char *, int, _DWORD, _DWORD, _DWORD) ) ( * ( _DWORD * ) v2 + 176 ) ) ( v2 , v19 , v1 [ 9 ] , 0 , 0 , 0 ) ; v4 = * v3 ; v5 = v3 [ 1 ] ; v6 = v3 [ 2 ] ; if ( v4 != dword_8A0E50 || v5 != dword_8A0E54 || v6 != dword_8A0E58 ) { v7 = Block ; * ( _DWORD * ) Block = v4 ; v7 [ 1 ] = v5 ; v7 [ 2 ] = v6 ; } v1 = ( int * ) Block ; } v8 = v1 + 10 ; v9 = v1 ; if ( v1 [ 10 ] ) { Coord::To_Screen ( TacticalClass_Instance , v1 , v18 ) ; Coord::To_Screen ( TacticalClass_Instance , v9 + 3 , v17 ) ; if ( ClipLine ( v18 , v17 , & DSurface_ViewBounds ) ) { v10 = - ( * ( ( _BYTE * ) v9 + 44 ) != 0 ) ; LOBYTE ( v10 ) = v10 & 0xFB ; Lightning::Draw ( v9 , * v9 , v9 [ 1 ] , v9 [ 2 ] , v9 [ 3 ] , v9 [ 4 ] , v9 [ 5 ] , v10 + 10 ) ; } ++ v9 [ 7 ] ; } * v8 >>= 1 ; if ( ! * ( ( _DWORD * ) Block + 10 ) ) { v11 = ( * ( int (__thiscall **)(int *, void **) ) ( dword_8A0E88 + 16 ) ) ( & dword_8A0E88 , & Block ) ; if ( v11 != -1 && v11 < dword_8A0E98 && v11 < -- dword_8A0E98 ) { do { ++ v11 ; * ( ( _DWORD * ) dword_8A0E8C + v11 - 1 ) = * ( ( _DWORD * ) dword_8A0E8C + v11 ) ; } while ( v11 < dword_8A0E98 ) ; } v12 = Block ; if ( Block ) { v13 = * ( ( _DWORD * ) Block + 8 ) ; v14 = ( char * ) Block + 32 ; if ( v13 ) { * ( _DWORD * ) ( v13 + 1756 ) = 0 ; * v14 = 0 ; } __3_YAXPAX_Z ( v12 ) ; } } result = i - 1 ; } return result ; }
-    return 0;
+// [IDA decompile]
+int sub_4C2830()
+{
+  int result; // eax
+  int *v1; // eax
+  int v2; // ecx
+  int *v3; // edx
+  int v4; // eax
+  int v5; // ecx
+  int v6; // edx
+  _DWORD *v7; // esi
+  int *v8; // ebx
+  int *v9; // esi
+  int v10; // eax
+  int v11; // eax
+  void *v12; // edx
+  int v13; // ecx
+  _DWORD *v14; // eax
+  void *Block; // [esp+18h] [ebp-24h] BYREF
+  int i; // [esp+1Ch] [ebp-20h]
+  int v17[2]; // [esp+20h] [ebp-1Ch] BYREF
+  int v18[2]; // [esp+28h] [ebp-14h] BYREF
+  char v19[12]; // [esp+30h] [ebp-Ch] BYREF
+
+  result = MEMORY[0x87F7E8][34220] - 1;
+  for ( i = MEMORY[0x87F7E8][34220] - 1; i >= 0; --i )
+  {
+    v1 = *(int **)(MEMORY[0x87F7E8][34217] + 4 * result);
+    Block = v1;
+    v2 = v1[8];
+    if ( v2 )
+    {
+      v3 = (int *)(*(int (__thiscall **)(int, char *, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v2 + 176))(
+                    v2,
+                    v19,
+                    v1[9],
+                    0,
+                    0,
+                    0);
+      v4 = *v3;
+      v5 = v3[1];
+      v6 = v3[2];
+      if ( v4 != MEMORY[0x87F7E8][34202] || v5 != MEMORY[0x87F7E8][34203] || v6 != MEMORY[0x87F7E8][34204] )
+      {
+        v7 = Block;
+        *(_DWORD *)Block = v4;
+        v7[1] = v5;
+        v7[2] = v6;
+      }
+      v1 = (int *)Block;
+    }
+    v8 = v1 + 10;
+    v9 = v1;
+    if ( v1[10] )
+    {
+      Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v1, v18);
+      Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v9 + 3, v17);
+      if ( ClipLine(v18, v17, &MEMORY[0x87F7E8][7662]) )
+      {
+        v10 = -(*((_BYTE *)v9 + 44) != 0);
+        LOBYTE(v10) = v10 & 0xFB;
+        Lightning::Draw(v9, *v9, v9[1], v9[2], v9[3], v9[4], v9[5], v10 + 10);
+      }
+      ++v9[7];
+    }
+    *v8 >>= 1;
+    if ( !*((_DWORD *)Block + 10) )
+    {
+      v11 = (*(int (__thiscall **)(_DWORD *, void **))(MEMORY[0x87F7E8][34216] + 16))(&MEMORY[0x87F7E8][34216], &Block);
+      if ( v11 != -1 && v11 < MEMORY[0x87F7E8][34220] )
+      {
+        --MEMORY[0x87F7E8][34220];
+        for ( ;
+              v11 < MEMORY[0x87F7E8][34220];
+              *(_DWORD *)(MEMORY[0x87F7E8][34217] + 4 * v11 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][34217] + 4 * v11) )
+        {
+          ++v11;
+        }
+      }
+      v12 = Block;
+      if ( Block )
+      {
+        v13 = *((_DWORD *)Block + 8);
+        v14 = (char *)Block + 32;
+        if ( v13 )
+        {
+          *(_DWORD *)(v13 + 1756) = 0;
+          *v14 = 0;
+        }
+        __3_YAXPAX_Z(v12);
+      }
+    }
+    result = i - 1;
+  }
+  return result;
+}
+
+/* ASM:
+Block           = dword ptr -24h
+var_20          = dword ptr -20h
+var_1C          = byte ptr -1Ch
+var_14          = byte ptr -14h
+var_C           = byte ptr -0Ch
+
+sub     esp, 24h
+mov     eax, ds:8A0E98h
+push    ebx
+dec     eax
+push    ebp
+push    esi
+push    edi
+test    eax, eax
+mov     [esp+34h+var_20], eax
+jl      loc_4C29D1
+
+loc_4C2849:                             ; CODE XREF: sub_4C2830+19B↓j
+mov     ecx, ds:8A0E8Ch
+mov     eax, [ecx+eax*4]
+mov     [esp+34h+Block], eax
+mov     ecx, [eax+20h]
+test    ecx, ecx
+jz      short loc_4C28B6
+sub     esp, 0Ch
+mov     ebx, [ecx]
+mov     ebp, esp
+xor     edx, edx
+xor     esi, esi
+xor     edi, edi
+mov     [ebp+0], edx
+mov     edx, [eax+24h]
+lea     eax, [esp+40h+var_C]
+push    edx
+mov     [ebp+4], esi
+push    eax
+mov     [ebp+8], edi
+call    dword ptr [ebx+0B0h]
+mov     esi, ds:8A0E50h
+mov     edx, eax
+mov     eax, [edx]
+cmp     eax, esi
+mov     ecx, [edx+4]
+mov     edx, [edx+8]
+jnz     short loc_4C28A6
+cmp     ecx, ds:8A0E54h
+jnz     short loc_4C28A6
+cmp     edx, ds:8A0E58h
+jz      short loc_4C28B2
+
+loc_4C28A6:                             ; CODE XREF: sub_4C2830+64↑j
+; sub_4C2830+6C↑j
+mov     esi, [esp+34h+Block]
+mov     [esi], eax
+mov     [esi+4], ecx
+mov     [esi+8], edx
+
+loc_4C28B2:                             ; CODE XREF: sub_4C2830+74↑j
+mov     eax, [esp+34h+Block]
+
+loc_4C28B6:                             ; CODE XREF: sub_4C2830+2B↑j
+mov     ecx, [eax+28h]
+lea     ebx, [eax+28h]
+test    ecx, ecx
+mov     esi, eax
+jz      short loc_4C2940
+lea     ecx, [esp+34h+var_14]
+push    ecx
+mov     ecx, ds:887324h
+push    eax
+call    Coord__To_Screen
+mov     ecx, ds:887324h
+lea     edx, [esp+34h+var_1C]
+lea     edi, [esi+0Ch]
+push    edx
+push    edi
+call    Coord__To_Screen
+lea     edx, [esp+34h+var_1C]
+lea     ecx, [esp+34h+var_14]
+push    886FA0h
+call    ClipLine
+test    al, al
+jz      short loc_4C293D
+mov     al, [esi+2Ch]
+mov     edx, [edi]
+neg     al
+sbb     eax, eax
+and     al, 0FBh
+add     eax, 0Ah
+push    eax
+mov     eax, [edi+4]
+sub     esp, 0Ch
+mov     ecx, esp
+sub     esp, 0Ch
+mov     [ecx], edx
+mov     edx, [edi+8]
+mov     [ecx+4], eax
+mov     eax, esi
+mov     [ecx+8], edx
+mov     edx, [eax]
+mov     ecx, esp
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [ecx+4], edx
+mov     [ecx+8], eax
+mov     ecx, esi
+call    Lightning__Draw
+
+loc_4C293D:                             ; CODE XREF: sub_4C2830+CB↑j
+inc     dword ptr [esi+1Ch]
+
+loc_4C2940:                             ; CODE XREF: sub_4C2830+90↑j
+mov     ecx, [ebx]
+sar     ecx, 1
+mov     [ebx], ecx
+mov     ecx, [esp+34h+Block]
+mov     eax, [ecx+28h]
+test    eax, eax
+jnz     short loc_4C29C2
+mov     eax, ds:8A0E88h
+lea     edx, [esp+34h+Block]
+push    edx
+mov     ecx, 8A0E88h
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4C2995
+mov     ecx, ds:8A0E98h
+cmp     eax, ecx
+jge     short loc_4C2995
+dec     ecx
+cmp     eax, ecx
+mov     ds:8A0E98h, ecx
+jge     short loc_4C2995
+
+loc_4C297D:                             ; CODE XREF: sub_4C2830+163↓j
+mov     ecx, ds:8A0E8Ch
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, ds:8A0E98h
+cmp     eax, ecx
+jl      short loc_4C297D
+
+loc_4C2995:                             ; CODE XREF: sub_4C2830+136↑j
+; sub_4C2830+140↑j ...
+mov     eax, [esp+34h+Block]
+test    eax, eax
+mov     edx, eax
+jz      short loc_4C29C2
+mov     ecx, [eax+20h]
+add     eax, 20h ; ' '
+test    ecx, ecx
+jz      short loc_4C29B9
+mov     dword ptr [ecx+6DCh], 0
+mov     dword ptr [eax], 0
+
+loc_4C29B9:                             ; CODE XREF: sub_4C2830+177↑j
+push    edx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_4C29C2:                             ; CODE XREF: sub_4C2830+11F↑j
+; sub_4C2830+16D↑j
+mov     eax, [esp+34h+var_20]
+dec     eax
+mov     [esp+34h+var_20], eax
+jns     loc_4C2849
+
+loc_4C29D1:                             ; CODE XREF: sub_4C2830+13↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 24h
+retn
+*/
 }
 
 // 0x005092F0 (193 bytes)
 int MapClass_MarkForRedraw_5092F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005092F0.json)
-    // Size: 193 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5092F0 ( int this, int a2 ) { !int result ! ; // eax !int i ! ; // edi !int *v5 ! ; // ecx int v6 ; // eax !int v7 ! ; // eax int v8[3] ; // [esp+8h] [ebp-Ch] BYREF result = a2 ; * ( _DWORD * ) ( this + 21732 ) |= 1 << * ( _DWORD * ) ( * ( _DWORD * ) ( a2 + 52 ) + 184 ) ; if ( ( #375 * ) a2 == HouseClass_Player ) { for ( i = 0 ; i < g_SidebarState ; ++ i ) { v5 = ( int * ) * ( ( _DWORD * ) g_TechnoClass_Count + i ) ; if ( v5 && ! * ( ( _BYTE * ) v5 + 129 ) && v5 [ 135 ] == this ) { v8 [ 0 ] = v5 [ 39 ] ; v8 [ 1 ] = v5 [ 40 ] ; v6 = * v5 ; v8 [ 2 ] = v5 [ 41 ] ; v7 = ( * ( int (__thiscall **)(int *) ) ( v6 + 132 ) ) ( v5 ) ; MapClass::RevealArea0 ( ( int * ) & MapClass_Instance , v8 , * ( _DWORD * ) ( v7 + 1512 ) , ( #375 * ) this , 0 , 0 , 0 , 1 , 1 ) ; } } return MapClass::MarkForRedraw ( & MapClass_Instance , 2 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5092F0(int this, int a2)
+{
+  int result; // eax
+  int i; // edi
+  int *v5; // ecx
+  int v6; // eax
+  int v7; // eax
+  int v8[3]; // [esp+8h] [ebp-Ch] BYREF
+
+  result = a2;
+  *(_DWORD *)(this + 21732) |= 1 << *(_DWORD *)(*(_DWORD *)(a2 + 52) + 184);
+  if ( (#375 *)a2 == MEMORY[0xA83D4C] )
+  {
+    for ( i = 0; i < MEMORY[0xA8EC88]; ++i )
+    {
+      v5 = (int *)*((_DWORD *)MEMORY[0xA8EC7C] + i);
+      if ( v5 && !*((_BYTE *)v5 + 129) && v5[135] == this )
+      {
+        v8[0] = v5[39];
+        v8[1] = v5[40];
+        v6 = *v5;
+        v8[2] = v5[41];
+        v7 = (*(int (__thiscall **)(int *))(v6 + 132))(v5);
+        MapClass::RevealArea0((int *)&MEMORY[0x87F7E8], v8, *(_DWORD *)(v7 + 1512), (#375 *)this, 0, 0, 0, 1, 1);
+      }
+    }
+    return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2);
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 0Ch
+mov     edx, 1
+push    esi
+mov     esi, ecx
+mov     ecx, [eax+34h]
+push    edi
+mov     edi, [esi+54E4h]
+mov     ecx, [ecx+0B8h]
+shl     edx, cl
+or      edi, edx
+mov     [esi+54E4h], edi
+mov     ecx, ds:0A83D4Ch
+cmp     eax, ecx
+jnz     loc_5093A9
+mov     eax, ds:0A8EC88h
+xor     edi, edi
+test    eax, eax
+jle     short loc_50939D
+
+loc_509332:                             ; CODE XREF: sub_5092F0+AB↓j
+mov     eax, ds:0A8EC7Ch
+mov     ecx, [eax+edi*4]
+test    ecx, ecx
+jz      short loc_509393
+mov     al, [ecx+81h]
+test    al, al
+jnz     short loc_509393
+cmp     [ecx+21Ch], esi
+jnz     short loc_509393
+lea     edx, [ecx+9Ch]
+push    1
+push    1
+push    0
+mov     eax, [edx]
+push    0
+mov     [esp+24h+var_C], eax
+push    0
+mov     eax, [edx+4]
+push    esi
+mov     [esp+2Ch+var_8], eax
+mov     eax, [ecx]
+mov     edx, [edx+8]
+mov     [esp+2Ch+var_4], edx
+call    dword ptr [eax+84h]
+mov     ecx, [eax+5E8h]
+lea     edx, [esp+2Ch+var_C]
+push    ecx
+push    edx
+mov     ecx, 87F7E8h
+call    MapClass__RevealArea0
+
+loc_509393:                             ; CODE XREF: sub_5092F0+4C↑j
+; sub_5092F0+56↑j ...
+mov     eax, ds:0A8EC88h
+inc     edi
+cmp     edi, eax
+jl      short loc_509332
+
+loc_50939D:                             ; CODE XREF: sub_5092F0+40↑j
+push    2
+mov     ecx, 87F7E8h
+call    MapClass__MarkForRedraw
+
+loc_5093A9:                             ; CODE XREF: sub_5092F0+31↑j
+pop     edi
+pop     esi
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x006ABA60 (90 bytes)
 char MapClass_MarkForRedraw_6ABA60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006ABA60.json)
-    // Size: 90 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6ABA60 ( int this, int a2, int a3, int a4 ) { !int v4 ! ; // esi int v5 ; // eax _DWORD *i ; // edx v4 = * ( _DWORD * ) ( this + 84 ) ; v5 = 0 ; if ( v4 <= 0 ) return 0 ; for ( i = ( _DWORD * ) ( this + 88 ) ; i [ 1 ] != a3 || * i != a4 ; i += 13 ) { if ( ++ v5 >= v4 ) return 0 ; } * ( _DWORD * ) ( this + 52 * v5 + 100 ) = a2 ; * ( _BYTE * ) ( this + 61 ) = 1 ; * ( _BYTE * ) ( this + 60 ) = 1 ; MapClass::MarkForRedraw ( & MapClass_Instance , 0 ) ; return 1 ; }
+// [IDA decompile]
+char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
+{
+  int v4; // esi
+  int v5; // eax
+  _DWORD *i; // edx
+
+  v4 = *(_DWORD *)(this + 84);
+  v5 = 0;
+  if ( v4 <= 0 )
     return 0;
+  for ( i = (_DWORD *)(this + 88); i[1] != a3 || *i != a4; i += 13 )
+  {
+    if ( ++v5 >= v4 )
+      return 0;
+  }
+  *(_DWORD *)(this + 52 * v5 + 100) = a2;
+  *(_BYTE *)(this + 61) = 1;
+  *(_BYTE *)(this + 60) = 1;
+  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
+  return 1;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [ecx+54h]
+xor     eax, eax
+push    edi
+test    esi, esi
+jle     short loc_6ABA88
+mov     edi, [esp+0Ch+arg_8]
+mov     ebx, [esp+0Ch+arg_4]
+lea     edx, [ecx+58h]
+
+loc_6ABA77:                             ; CODE XREF: sub_6ABA60+26↓j
+cmp     [edx+4], ebx
+jnz     short loc_6ABA80
+cmp     [edx], edi
+jz      short loc_6ABA90
+
+loc_6ABA80:                             ; CODE XREF: sub_6ABA60+1A↑j
+inc     eax
+add     edx, 34h ; '4'
+cmp     eax, esi
+jl      short loc_6ABA77
+
+loc_6ABA88:                             ; CODE XREF: sub_6ABA60+A↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_6ABA90:                             ; CODE XREF: sub_6ABA60+1E↑j
+lea     edx, [eax+eax*2]
+mov     bl, 1
+push    0
+lea     eax, [eax+edx*4]
+mov     edx, [esp+10h+arg_0]
+mov     [ecx+eax*4+64h], edx
+mov     [ecx+3Dh], bl
+mov     [ecx+3Ch], bl
+mov     ecx, 87F7E8h
+call    MapClass__MarkForRedraw
+pop     edi
+pop     esi
+mov     al, bl
+pop     ebx
+retn    0Ch
+*/
 }
 
 // 0x004379A0 (97 bytes)
 bool MethodBlit_4379A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004379A0.json)
-    // Size: 97 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   bool __fastcall sub_4379A0 ( int a1, int a2, _DWORD *a3, int a4, int *a5, int a6, int a7, int a8, int a9 ) { _DWORD *v11 ; // eax !int *v13 ! ; // [esp-28h] [ebp-54h] _BYTE v14[20] ; // [esp+Ch] [ebp-20h] BYREF int v15[3] ; // [esp+20h] [ebp-Ch] BYREF v13 = ( int * ) ( * ( int (__thiscall **)(_DWORD *, _BYTE *, int) ) ( * a3 + 120 ) ) ( a3 , v14 , a4 ) ; v11 = ( _DWORD * ) ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a1 + 120 ) ) ( a1 ) ; return BlitterRLEBlitSHP ( a1 , v11 , v15 , a2 , a3 , v13 , a5 , a6 , a7 , a8 , a9 , 0 , 0 , 0 , 0 ) ; }
-    return false;
+// [IDA decompile]
+bool __fastcall sub_4379A0(int a1, int a2, _DWORD *a3, int a4, int *a5, int a6, int a7, int a8, int a9)
+{
+  _DWORD *v11; // eax
+  int *v13; // [esp-28h] [ebp-54h]
+  _BYTE v14[20]; // [esp+Ch] [ebp-20h] BYREF
+  int v15[3]; // [esp+20h] [ebp-Ch] BYREF
+
+  v13 = (int *)(*(int (__thiscall **)(_DWORD *, _BYTE *, int))(*a3 + 120))(a3, v14, a4);
+  v11 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 120))(a1);
+  return BlitterRLEBlitSHP(a1, v11, v15, a2, a3, v13, a5, a6, a7, a8, a9, 0, 0, 0, 0);
+}
+
+/* ASM:
+sub     esp, 20h
+xor     eax, eax
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+xor     ecx, ecx
+mov     edi, [esp+2Ch+arg_0]
+push    ecx
+push    ecx
+push    eax
+mov     eax, [esp+38h+arg_18]
+mov     ebx, edx
+push    ecx
+mov     ecx, [esp+3Ch+arg_14]
+mov     edx, [esp+3Ch+arg_10]
+push    eax
+mov     eax, [esp+40h+arg_C]
+push    ecx
+mov     ecx, [esp+44h+arg_8]
+push    edx
+mov     edx, [esp+48h+arg_4]
+push    eax
+mov     eax, [edi]
+push    ecx
+lea     ecx, [esp+50h+var_20]
+push    edx
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+78h]
+mov     edx, [esi]
+mov     ecx, esi
+push    eax
+push    edi
+lea     eax, [esp+58h+var_C]
+push    ebx
+push    eax
+call    dword ptr [edx+78h]
+mov     edx, eax
+mov     ecx, esi
+call    BlitterRLEBlitSHP
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 20h
+retn    1Ch
+*/
 }
 
 // 0x007BC1F0 (91 bytes)
 void MethodBlit_7BC1F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007BC1F0.json)
-    // Size: 91 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_7BC1F0 ( int *a1, int *a2, int a3, int a4 ) { !void **v7 ! ; // [esp+8h] [ebp-4h] BYREF if ( ( * ( int (__thiscall **)(int *) ) ( * a1 + 112 ) ) ( a1 ) == 1 ) { v7 = & BlitPlain<unsigned char>::vftable' ; return BlitterCopySimpleSHP ( a1 , a2 , a3 , a4 , ( int * ) & v7 , 0 , 3 , 1000 , 0 ) ; } else { v7 = & BlitPlain<unsigned short>::vftable' ; return BlitterCopySimpleSHP ( a1 , a2 , a3 , a4 , ( int * ) & v7 , 0 , 3 , 1000 , 0 ) ; } }
-    
+// [IDA decompile]
+char __fastcall sub_7BC1F0(int *a1, int *a2, int a3, int a4)
+{
+  void **v7; // [esp+8h] [ebp-4h] BYREF
+
+  if ( (*(int (__thiscall **)(int *))(*a1 + 112))(a1) == 1 )
+  {
+    v7 = &BlitPlain<unsigned char>::`vftable';
+    return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
+  }
+  else
+  {
+    v7 = &BlitPlain<unsigned short>::`vftable';
+    return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
+  }
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, edx
+mov     eax, [esi]
+call    dword ptr [eax+70h]
+cmp     eax, 1
+jnz     short loc_7BC21A
+push    0
+push    3E8h
+push    3
+mov     [esp+18h+var_4], offset ??_7?$BlitPlain@E@@6B@ ; const BlitPlain<uchar>::`vftable'
+push    0
+lea     ecx, [esp+1Ch+var_4]
+jmp     short loc_7BC231
+; ---------------------------------------------------------------------------
+
+loc_7BC21A:                             ; CODE XREF: sub_7BC1F0+F↑j
+push    0
+push    3E8h
+push    3
+mov     [esp+18h+var_4], offset ??_7?$BlitPlain@G@@6B@ ; const BlitPlain<ushort>::`vftable'
+push    0
+lea     ecx, [esp+1Ch+var_4]
+
+loc_7BC231:                             ; CODE XREF: sub_7BC1F0+28↑j
+mov     edx, [esp+1Ch+arg_4]
+mov     eax, [esp+1Ch+arg_0]
+push    ecx
+push    edx
+push    eax
+mov     edx, edi
+mov     ecx, esi
+call    BlitterCopySimpleSHP
+pop     edi
+pop     esi
+pop     ecx
+retn    8
+*/
 }
 
 // 0x007BC250 (91 bytes)
 void MethodBlit_7BC250() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/007BC250.json)
-    // Size: 91 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __fastcall sub_7BC250 ( int *a1, int *a2, int a3, int a4 ) { !void **v7 ! ; // [esp+8h] [ebp-4h] BYREF if ( ( * ( int (__thiscall **)(int *) ) ( * a1 + 112 ) ) ( a1 ) == 1 ) { v7 = & BlitTrans<unsigned char>::vftable' ; return BlitterCopySimpleSHP ( a1 , a2 , a3 , a4 , ( int * ) & v7 , 0 , 3 , 1000 , 0 ) ; } else { v7 = & BlitTrans<unsigned short>::vftable' ; return BlitterCopySimpleSHP ( a1 , a2 , a3 , a4 , ( int * ) & v7 , 0 , 3 , 1000 , 0 ) ; } }
-    
+// [IDA decompile]
+char __fastcall sub_7BC250(int *a1, int *a2, int a3, int a4)
+{
+  void **v7; // [esp+8h] [ebp-4h] BYREF
+
+  if ( (*(int (__thiscall **)(int *))(*a1 + 112))(a1) == 1 )
+  {
+    v7 = &BlitTrans<unsigned char>::`vftable';
+    return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
+  }
+  else
+  {
+    v7 = &BlitTrans<unsigned short>::`vftable';
+    return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
+  }
+}
+
+/* ASM:
+push    ecx
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, edx
+mov     eax, [esi]
+call    dword ptr [eax+70h]
+cmp     eax, 1
+jnz     short loc_7BC27A
+push    0
+push    3E8h
+push    3
+mov     [esp+18h+var_4], offset ??_7?$BlitTrans@E@@6B@ ; const BlitTrans<uchar>::`vftable'
+push    0
+lea     ecx, [esp+1Ch+var_4]
+jmp     short loc_7BC291
+; ---------------------------------------------------------------------------
+
+loc_7BC27A:                             ; CODE XREF: sub_7BC250+F↑j
+push    0
+push    3E8h
+push    3
+mov     [esp+18h+var_4], offset ??_7?$BlitTrans@G@@6B@ ; const BlitTrans<ushort>::`vftable'
+push    0
+lea     ecx, [esp+1Ch+var_4]
+
+loc_7BC291:                             ; CODE XREF: sub_7BC250+28↑j
+mov     edx, [esp+1Ch+arg_4]
+mov     eax, [esp+1Ch+arg_0]
+push    ecx
+push    edx
+push    eax
+mov     edx, edi
+mov     ecx, esi
+call    BlitterCopySimpleSHP
+pop     edi
+pop     esi
+pop     ecx
+retn    8
+*/
 }
 
 // 0x005BAA80 (122 bytes)
 void MethodDraw_5BAA80() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BAA80.json)
-    // Size: 122 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_5BAA80 ( HWND *this, wchar_t *Format, unsigned int a3, int a4 ) { !HWND DlgItem ! ; // edi !int (__usercall *v5)(char, char) ! ; // esi !wchar_t Buffer[256] ! ; // [esp+8h] [ebp-200h] BYREF if ( a4 ) { DlgItem = "GetDlgItem " ( * this , 1343 ) ; if ( DlgItem ) { if ( a3 >= 8 ) v5 = Math::InitDegToRad ; else v5 = ( int (__usercall *)(char, char) ) dword_8316A8 [ a3 ] ; swprintf ( Buffer , ( const size_t ) g_Str_Trace___s_ , Format , a4 ) ; DrawDialogText ( ( LPARAM ) v5 , Buffer , DlgItem ) ; } } }
-    
+// [IDA decompile]
+void __thiscall sub_5BAA80(#44 *this, #72 *Format, unsigned int a3, int a4)
+{
+  int v4; // edi
+  int (__usercall *v5)@<eax>(char@<cf>, char@<zf>); // esi
+  _BYTE Buffer[512]; // [esp+8h] [ebp-200h] BYREF
+
+  if ( a4 )
+  {
+    v4 = ((int (__stdcall *)(_DWORD, int))GetDlgItem)(*(_DWORD *)this, 1343);
+    if ( v4 )
+    {
+      if ( a3 >= 8 )
+        v5 = Math::InitDegToRad;
+      else
+        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[a3];
+      swprintf((#72 *const)Buffer, g_Str_Trace___s_);
+      DrawDialogText(v5, Buffer, v4);
+    }
+  }
+}
+
+/* ASM:
+Buffer          = byte ptr -200h
+Format          = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+sub     esp, 200h
+push    ebx
+mov     ebx, [esp+204h+arg_8]
+test    ebx, ebx
+push    edi
+jz      short loc_5BAAEF
+mov     eax, [ecx]
+push    53Fh            ; nIDDlgItem
+push    eax             ; hDlg
+call    ds:__imp_GetDlgItem
+mov     edi, eax
+test    edi, edi
+jz      short loc_5BAAEF
+mov     eax, [esp+208h+arg_4]
+push    esi
+test    eax, eax
+jl      short loc_5BAAC1
+cmp     eax, 8
+jge     short loc_5BAAC1
+mov     esi, dword_8316A8[eax*4]
+jmp     short loc_5BAAC7
+; ---------------------------------------------------------------------------
+
+loc_5BAAC1:                             ; CODE XREF: sub_5BAA80+31↑j
+; sub_5BAA80+36↑j
+mov     esi, ds:off_7EEF44
+
+loc_5BAAC7:                             ; CODE XREF: sub_5BAA80+3F↑j
+mov     ecx, [esp+20Ch+Format]
+push    ebx
+push    ecx             ; Format
+lea     edx, [esp+214h+Buffer]
+push    offset g_Str_Trace___s___s ; "[%s] %s"
+push    edx             ; Buffer
+call    _swprintf
+add     esp, 10h
+lea     edx, [esp+20Ch+Buffer]
+mov     ecx, esi
+push    edi
+call    DrawDialogText
+pop     esi
+
+loc_5BAAEF:                             ; CODE XREF: sub_5BAA80+11↑j
+; sub_5BAA80+25↑j
+pop     edi
+pop     ebx
+add     esp, 200h
+retn    0Ch
+*/
 }
 
 // 0x005BF850 (93 bytes)
 int MethodRender_5BF850() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BF850.json)
-    // Size: 93 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int sub_5BF850 ( ) { int v0 ; // esi !int v1 ! ; // edi !int *v2 ! ; // ebx !int v3 ! ; // eax !int v4 ! ; // ebp !int v5 ! ; // eax !unsigned int v7 ! ; // [esp-Ch] [ebp-1Ch] !int v8 ! ; // [esp-8h] [ebp-18h] v0 = * ( _DWORD * ) ( g_BigIntPool + 8 ) ; v1 = ( * ( int (__thiscall **)(int, _DWORD) ) ( * ( _DWORD * ) v0 + 92 ) ) ( v0 , 0 ) ; v2 = * ( int ** ) g_BigIntPool ; v8 = * ( _DWORD * ) ( g_BigIntPool + 40 ) ; v7 = * ( _DWORD * ) ( g_BigIntPool + 36 ) ; v3 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v0 + 128 ) ) ( v0 ) ; v4 = ( * ( int (__thiscall **)(int, int) ) ( * ( _DWORD * ) v0 + 116 ) ) ( v0 , v3 ) ; v5 = ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) v0 + 112 ) ) ( v0 ) ; Render_Load_759EB0 ( v2 , 0 , v4 / v5 , v7 , v8 , 0 ) ; return v1 ; }
-    return 0;
+// [IDA decompile]
+int sub_5BF850()
+{
+  int v0; // esi
+  int v1; // edi
+  int *v2; // ebx
+  int v3; // eax
+  int v4; // ebp
+  int v5; // eax
+  unsigned int v7; // [esp-Ch] [ebp-1Ch]
+  int v8; // [esp-8h] [ebp-18h]
+
+  v0 = *(_DWORD *)(MEMORY[0xABF3F4] + 8);
+  v1 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v0 + 92))(v0, 0);
+  v2 = *(int **)MEMORY[0xABF3F4];
+  v8 = *(_DWORD *)(MEMORY[0xABF3F4] + 40);
+  v7 = *(_DWORD *)(MEMORY[0xABF3F4] + 36);
+  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v0 + 128))(v0);
+  v4 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v0 + 116))(v0, v3);
+  v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v0 + 112))(v0);
+  Render_Load_759EB0(v2, 0, v4 / v5, v7, v8, 0);
+  return v1;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+306A0h
+push    ebx
+push    ebp
+push    esi
+mov     esi, [eax+8]
+xor     ecx, ecx
+push    edi
+xor     eax, eax
+mov     edx, [esi]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+5Ch]
+mov     edi, eax
+mov     eax, dword_A8ED54+306A0h
+mov     ecx, [eax+28h]
+mov     ebx, [eax]
+mov     edx, [eax+24h]
+mov     eax, [esi]
+push    ecx
+push    edx
+mov     ecx, esi
+call    dword ptr [eax+80h]
+mov     edx, [esi]
+mov     ecx, esi
+push    eax
+call    dword ptr [edx+74h]
+mov     ebp, eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+70h]
+mov     ecx, eax
+mov     eax, ebp
+cdq
+idiv    ecx
+mov     ecx, ebx
+push    eax
+push    0
+call    Render_Load_759EB0
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn
+*/
 }
 
 // 0x00634470 (152 bytes)
 bool MethodToCoordPixel_634470() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00634470.json)
-    // Size: 152 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   BOOL __thiscall sub_634470 ( _DWORD **this, int a2, int a3 ) { _DWORD *ScenarioClassActionCoords ; // eax !int *v4 ! ; // eax _DWORD *v5 ; // esi !int v6 ! ; // eax !int v7 ! ; // ecx !int v8 ! ; // edx !int v9 ! ; // esi int v11 ; // [esp+8h] [ebp-30h] BYREF _DWORD v12[3] ; // [esp+10h] [ebp-28h] BYREF _DWORD v13[3] ; // [esp+1Ch] [ebp-1Ch] BYREF _DWORD v14[4] ; // [esp+28h] [ebp-10h] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v13 , * ( _BYTE ** ) ( * * ( this + 1 ) + 4 ) ) ; v12 [ 0 ] = * ScenarioClassActionCoords ; v12 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v12 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; v4 = ToCoordPixel ( & v11 , v12 ) ; v5 = ComputeBounds ( v14 , 8 , * v4 , v4 [ 1 ] ) ; v6 = * v5 - 4 ; v7 = v5 [ 1 ] - 4 ; v8 = v5 [ 2 ] + 8 ; v9 = v5 [ 3 ] + 8 ; return a2 >= v6 && a2 < v8 + v6 && a3 >= v7 && a3 < v9 + v7 ; }
-    return false;
+// [IDA decompile]
+BOOL __thiscall sub_634470(_DWORD **this, int a2, int a3)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int *v4; // eax
+  _DWORD *v5; // esi
+  int v6; // eax
+  int v7; // ecx
+  int v8; // edx
+  int v9; // esi
+  int v11; // [esp+8h] [ebp-30h] BYREF
+  _DWORD v12[3]; // [esp+10h] [ebp-28h] BYREF
+  _DWORD v13[3]; // [esp+1Ch] [ebp-1Ch] BYREF
+  _DWORD v14[4]; // [esp+28h] [ebp-10h] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(_BYTE **)(**(this + 1) + 4));
+  v12[0] = *ScenarioClassActionCoords;
+  v12[1] = ScenarioClassActionCoords[1];
+  v12[2] = ScenarioClassActionCoords[2];
+  v4 = ToCoordPixel(&v11, v12);
+  v5 = ComputeBounds(v14, 8, *v4, v4[1]);
+  v6 = *v5 - 4;
+  v7 = v5[1] - 4;
+  v8 = v5[2] + 8;
+  v9 = v5[3] + 8;
+  return a2 >= v6 && a2 < v8 + v6 && a3 >= v7 && a3 < v9 + v7;
+}
+
+/* ASM:
+sub     esp, 30h
+mov     eax, [ecx+4]
+push    esi
+push    edi
+mov     ecx, [eax]
+mov     edx, [ecx+4]
+lea     ecx, [esp+38h+var_1C]
+call    GetScenarioClassActionCoords
+mov     edx, [eax]
+mov     [esp+38h+var_28], edx
+mov     ecx, [eax+4]
+mov     [esp+38h+var_24], ecx
+lea     ecx, [esp+38h+var_30]
+mov     edx, [eax+8]
+mov     [esp+38h+var_20], edx
+lea     edx, [esp+38h+var_28]
+call    ToCoordPixel
+mov     ecx, [eax+4]
+push    ecx
+lea     ecx, [esp+3Ch+var_10]
+mov     edx, [eax]
+push    edx
+mov     edx, 8
+call    ComputeBounds
+mov     esi, eax
+mov     edi, [esp+38h+arg_0]
+mov     eax, [esi]
+sub     eax, 4
+mov     ecx, [esi+4]
+sub     ecx, 4
+mov     edx, [esi+8]
+add     edx, 8
+mov     esi, [esi+0Ch]
+add     esi, 8
+cmp     edi, eax
+jl      short loc_6344FE
+add     eax, edx
+cmp     edi, eax
+jge     short loc_6344FE
+mov     eax, [esp+38h+arg_4]
+cmp     eax, ecx
+jl      short loc_6344FE
+add     ecx, esi
+cmp     eax, ecx
+jge     short loc_6344FE
+pop     edi
+mov     eax, 1
+pop     esi
+add     esp, 30h
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6344FE:                             ; CODE XREF: sub_634470+6B↑j
+; sub_634470+71↑j ...
+pop     edi
+xor     eax, eax
+pop     esi
+add     esp, 30h
+retn    8
+*/
 }
 
 // 0x00635E90 (144 bytes)
 int MethodToCoordPixel_635E90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00635E90.json)
-    // Size: 144 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int *__thiscall sub_635E90 ( _DWORD **this, int *a2 ) { _DWORD *ScenarioClassActionCoords ; // eax !int *v3 ! ; // eax _DWORD *v4 ; // esi !int v5 ! ; // edi !int v6 ! ; // ecx !int v7 ! ; // edx int v8 ; // esi int v10 ; // [esp+Ch] [ebp-30h] BYREF _DWORD v11[3] ; // [esp+14h] [ebp-28h] BYREF _DWORD v12[3] ; // [esp+20h] [ebp-1Ch] BYREF _DWORD v13[4] ; // [esp+2Ch] [ebp-10h] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v12 , * ( _BYTE ** ) ( * * ( this + 1 ) + 4 ) ) ; v11 [ 0 ] = * ScenarioClassActionCoords ; v11 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v11 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; v3 = ToCoordPixel ( & v10 , v11 ) ; v4 = ComputeBounds ( v13 , 8 , * v3 , v3 [ 1 ] ) ; v5 = * v4 - 8 ; v6 = v4 [ 1 ] - 8 ; v7 = v4 [ 2 ] + 8 ; v8 = v4 [ 3 ] ; * a2 = v5 ; a2 [ 1 ] = v6 ; a2 [ 2 ] = v7 + 8 ; a2 [ 3 ] = v8 + 16 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+int *__thiscall sub_635E90(_DWORD **this, int *a2)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int *v3; // eax
+  _DWORD *v4; // esi
+  int v5; // edi
+  int v6; // ecx
+  int v7; // edx
+  int v8; // esi
+  int v10; // [esp+Ch] [ebp-30h] BYREF
+  _DWORD v11[3]; // [esp+14h] [ebp-28h] BYREF
+  _DWORD v12[3]; // [esp+20h] [ebp-1Ch] BYREF
+  _DWORD v13[4]; // [esp+2Ch] [ebp-10h] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(_BYTE **)(**(this + 1) + 4));
+  v11[0] = *ScenarioClassActionCoords;
+  v11[1] = ScenarioClassActionCoords[1];
+  v11[2] = ScenarioClassActionCoords[2];
+  v3 = ToCoordPixel(&v10, v11);
+  v4 = ComputeBounds(v13, 8, *v3, v3[1]);
+  v5 = *v4 - 8;
+  v6 = v4[1] - 8;
+  v7 = v4[2] + 8;
+  v8 = v4[3];
+  *a2 = v5;
+  a2[1] = v6;
+  a2[2] = v7 + 8;
+  a2[3] = v8 + 16;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 30h
+mov     eax, [ecx+4]
+push    ebx
+push    esi
+push    edi
+mov     ecx, [eax]
+mov     edx, [ecx+4]
+lea     ecx, [esp+3Ch+var_1C]
+call    GetScenarioClassActionCoords
+mov     edx, [eax]
+mov     [esp+3Ch+var_28], edx
+mov     ecx, [eax+4]
+mov     [esp+3Ch+var_24], ecx
+lea     ecx, [esp+3Ch+var_30]
+mov     edx, [eax+8]
+mov     [esp+3Ch+var_20], edx
+lea     edx, [esp+3Ch+var_28]
+call    ToCoordPixel
+mov     ecx, [eax+4]
+push    ecx
+lea     ecx, [esp+40h+var_10]
+mov     edx, [eax]
+push    edx
+mov     edx, 8
+call    ComputeBounds
+mov     esi, eax
+mov     eax, [esi]
+sub     eax, 4
+mov     ecx, [esi+4]
+lea     edi, [eax-4]
+sub     ecx, 4
+mov     edx, [esi+8]
+sub     ecx, 4
+add     edx, 8
+mov     esi, [esi+0Ch]
+mov     [esp+3Ch+var_10], eax
+mov     eax, [esp+3Ch+arg_0]
+add     edx, 8
+mov     ebx, eax
+add     esi, 8
+add     esi, 8
+mov     [ebx], edi
+pop     edi
+mov     [ebx+4], ecx
+mov     [ebx+8], edx
+mov     [ebx+0Ch], esi
+pop     esi
+pop     ebx
+add     esp, 30h
+retn    4
+*/
 }
 
 // 0x00759BC0 (101 bytes)
 int MovieClass_RenderMovie_759BC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00759BC0.json)
-    // Size: 101 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   unsigned int __thiscall sub_759BC0 ( int this, signed int a2 ) { !signed int v2 ! ; // edi !unsigned int result ! ; // eax v2 = a2 ; if ( a2 == -1 ) v2 = * ( _DWORD * ) ( this + 1288 ) - 1 ; if ( * ( _DWORD * ) ( this + 1284 ) != v2 ) { if ( ProcessAudioStreamBuffer ( * ( _DWORD * ) ( this + 512 ) , v2 , 0 ) != -6 ) * ( _DWORD * ) ( this + 1284 ) = v2 ; * ( _DWORD * ) ( this + 1284 ) = v2 ; } MovieClass::RenderLoop ( ( char * ) this , v2 , 0 ) ; result = * ( _DWORD * ) ( this + 1284 ) ; if ( result >= * ( _DWORD * ) ( this + 1288 ) ) * ( _DWORD * ) ( this + 1284 ) = 0 ; return result ; }
-    return 0;
+// [IDA decompile]
+unsigned int __thiscall sub_759BC0(int this, signed int a2)
+{
+  signed int v2; // edi
+  unsigned int result; // eax
+
+  v2 = a2;
+  if ( a2 == -1 )
+    v2 = *(_DWORD *)(this + 1288) - 1;
+  if ( *(_DWORD *)(this + 1284) != v2 )
+  {
+    if ( ProcessAudioStreamBuffer(*(_DWORD *)(this + 512), v2, 0) != -6 )
+      *(_DWORD *)(this + 1284) = v2;
+    *(_DWORD *)(this + 1284) = v2;
+  }
+  MovieClass::RenderLoop((_DWORD **)this, v2, 0);
+  result = *(_DWORD *)(this + 1284);
+  if ( result >= *(_DWORD *)(this + 1288) )
+    *(_DWORD *)(this + 1284) = 0;
+  return result;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_759BD4
+mov     edi, [esi+508h]
+dec     edi
+
+loc_759BD4:                             ; CODE XREF: sub_759BC0+B↑j
+cmp     [esi+504h], edi
+jz      short loc_759BFC
+mov     ecx, [esi+200h]
+push    0
+mov     edx, edi
+call    ProcessAudioStreamBuffer
+cmp     eax, 0FFFFFFFAh
+jz      short loc_759BF6
+mov     [esi+504h], edi
+
+loc_759BF6:                             ; CODE XREF: sub_759BC0+2E↑j
+mov     [esi+504h], edi
+
+loc_759BFC:                             ; CODE XREF: sub_759BC0+1A↑j
+push    0
+push    edi
+mov     ecx, esi
+call    MovieClass__RenderLoop
+mov     eax, [esi+504h]
+mov     ecx, [esi+508h]
+cmp     eax, ecx
+jb      short loc_759C20
+mov     dword ptr [esi+504h], 0
+
+loc_759C20:                             ; CODE XREF: sub_759BC0+54↑j
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x004251F0 (109 bytes)
 int PlayPalette_4251F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004251F0.json)
-    // Size: 109 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_4251F0 ( int a1, __int16 *a2 ) { int v2 ; // ecx !int v3 ! ; // eax !int result ! ; // eax _DWORD v5[3] ; // [esp+0h] [ebp-Ch] BYREF v2 = a2 [ 1 ] ; v3 = ( * a2 << 8 ) + 128 ; v5 [ 2 ] = 0 ; v5 [ 0 ] = v3 ; v5 [ 1 ] = ( v2 << 8 ) + 128 ; PlaySoundEffectAt ( v5 , RulesClass_Instance [ 1 ] . DeadBodies [ 1 ] , 0 , RulesClass_Instance -> SellBack , 0 , 0 ) ; result = GameMode_Current [ 0 ] ; if ( ! GameMode_Current [ 0 ] ) return FadePalette ( & FileSystem_TEMPERAT_PAL , 30 , ( void (*)(void) ) Event::Dispatch ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_4251F0(int a1, __int16 *a2)
+{
+  int v2; // ecx
+  int v3; // eax
+  int result; // eax
+  _DWORD v5[3]; // [esp+0h] [ebp-Ch] BYREF
+
+  v2 = a2[1];
+  v3 = (*a2 << 8) + 128;
+  v5[2] = 0;
+  v5[0] = v3;
+  v5[1] = (v2 << 8) + 128;
+  PlaySoundEffectAt(v5, *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5424), 0, *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3980), 0, 0);
+  result = MEMORY[0x87F7E8][536212];
+  if ( !MEMORY[0x87F7E8][536212] )
+    return FadePalette(&MEMORY[0x87F7E8][6118], 30, (void (*)(void))Event::Dispatch);
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+movsx   eax, word ptr [edx]
+movsx   ecx, word ptr [edx+2]
+shl     eax, 8
+add     eax, 80h
+mov     [esp+0Ch+var_4], 0
+shl     ecx, 8
+mov     [esp+0Ch+var_C], eax
+mov     eax, ds:8871E0h
+add     ecx, 80h
+push    0
+mov     [esp+10h+var_8], ecx
+mov     edx, [eax+0F8Ch]
+push    0
+push    edx
+mov     edx, [eax+1530h]
+push    0
+lea     ecx, [esp+1Ch+var_C]
+call    PlaySoundEffectAt
+mov     eax, ds:0A8B238h
+test    eax, eax
+jnz     short loc_425259
+push    offset Event__Dispatch
+mov     edx, 1Eh
+mov     ecx, 885780h
+call    FadePalette
+
+loc_425259:                             ; CODE XREF: sub_4251F0+53↑j
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x00434B40 (80 bytes)
 int RenderFont_434B40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00434B40.json)
-    // Size: 80 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_434B40 ( _DWORD *a1, int *a2, unsigned __int16 a3, int xLeft, int yTop ) { !int v5 ! ; // edi if ( ! a1 ) return xLeft ; FontRenderer::InitContext ( a1 , a2 ) ; Field::Int_Set ( a1 , xLeft ) ; v5 = FontClass::RenderGlyph ( ( int ) a1 , a3 , xLeft , yTop , -1 ) ; BufferIO::Cleanup ( a1 , ( int ) a2 ) ; return v5 ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_434B40(_DWORD *a1, int *a2, unsigned __int16 a3, int xLeft, int yTop)
+{
+  int v5; // edi
+
+  if ( !a1 )
+    return xLeft;
+  FontRenderer::InitContext(a1, a2);
+  Field::Int_Set(a1, xLeft);
+  v5 = FontClass::RenderGlyph((int)a1, a3, xLeft, yTop, -1);
+  BufferIO::Cleanup(a1, (int)a2);
+  return v5;
+}
+
+/* ASM:
+xLeft           = dword ptr  10h
+yTop            = dword ptr  14h
+
+push    esi
+mov     esi, [esp+4+arg_0]
+push    edi
+mov     edi, [esp+8+xLeft]
+test    esi, esi
+jz      short loc_434B89
+push    ebx
+mov     ebx, [esp+0Ch+arg_4]
+push    ebx
+mov     ecx, esi
+call    FontRenderer__InitContext
+push    edi
+mov     ecx, esi
+call    Field__Int_Set
+mov     eax, [esp+0Ch+yTop]
+mov     ecx, [esp+0Ch+arg_8]
+push    0FFFFFFFFh      ; int
+push    eax             ; yTop
+push    edi             ; xLeft
+push    ecx             ; int
+mov     ecx, esi
+call    FontClass__RenderGlyph
+push    ebx
+mov     ecx, esi
+mov     edi, eax
+call    BufferIO__Cleanup
+mov     eax, edi
+pop     ebx
+pop     edi
+pop     esi
+retn    14h
+; ---------------------------------------------------------------------------
+
+loc_434B89:                             ; CODE XREF: sub_434B40+C↑j
+mov     eax, edi
+pop     edi
+pop     esi
+retn    14h
+*/
 }
 
 // 0x00434BF0 (224 bytes)
 int RenderFont_434BF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00434BF0.json)
-    // Size: 224 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_434BF0 ( int a1, int *a2, unsigned __int16 *a3, int xLeft, int yTop, int a6 ) { int result ; // eax !int v7 ! ; // ebx result = 0 ; if ( a1 ) { if ( * ( _BYTE * ) ( a1 + 64 ) ) { * ( _DWORD * ) ( a1 + 44 ) = 2 ; FontRenderer::InitContext ( ( _DWORD * ) a1 , a2 ) ; Field::Int_Set ( ( _DWORD * ) a1 , xLeft ) ; FontClass::RenderText ( a1 , a3 , xLeft , yTop , a6 , 0 ) ; BufferIO::Cleanup ( ( _DWORD * ) a1 , ( int ) a2 ) ; FontRenderer::InitContext ( ( _DWORD * ) a1 , a2 ) ; Field::Int_Set ( ( _DWORD * ) a1 , xLeft + 1 ) ; v7 = FontClass::RenderText ( a1 , a3 , xLeft + 1 , yTop , a6 , 0 ) ; BufferIO::Cleanup ( ( _DWORD * ) a1 , ( int ) a2 ) ; * ( _DWORD * ) ( a1 + 44 ) = 1 ; } else { FontRenderer::InitContext ( ( _DWORD * ) a1 , a2 ) ; Field::Int_Set ( ( _DWORD * ) a1 , xLeft ) ; v7 = FontClass::RenderText ( a1 , a3 , xLeft , yTop , a6 , 0 ) ; BufferIO::Cleanup ( ( _DWORD * ) a1 , ( int ) a2 ) ; } return v7 ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int yTop, int a6)
+{
+  int result; // eax
+  int v7; // ebx
+
+  result = 0;
+  if ( a1 )
+  {
+    if ( *(_BYTE *)(a1 + 64) )
+    {
+      *(_DWORD *)(a1 + 44) = 2;
+      FontRenderer::InitContext((_DWORD *)a1, a2);
+      Field::Int_Set((_DWORD *)a1, xLeft);
+      FontClass::RenderText(a1, a3, xLeft, yTop, a6, 0);
+      BufferIO::Cleanup((_DWORD *)a1, (int)a2);
+      FontRenderer::InitContext((_DWORD *)a1, a2);
+      Field::Int_Set((_DWORD *)a1, xLeft + 1);
+      v7 = FontClass::RenderText(a1, a3, xLeft + 1, yTop, a6, 0);
+      BufferIO::Cleanup((_DWORD *)a1, (int)a2);
+      *(_DWORD *)(a1 + 44) = 1;
+    }
+    else
+    {
+      FontRenderer::InitContext((_DWORD *)a1, a2);
+      Field::Int_Set((_DWORD *)a1, xLeft);
+      v7 = FontClass::RenderText(a1, a3, xLeft, yTop, a6, 0);
+      BufferIO::Cleanup((_DWORD *)a1, (int)a2);
+    }
+    return v7;
+  }
+  return result;
+}
+
+/* ASM:
+xLeft           = dword ptr  10h
+yTop            = dword ptr  14h
+arg_14          = dword ptr  18h
+
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+xor     eax, eax
+test    esi, esi
+push    edi
+jz      loc_434CCA
+mov     al, [esi+40h]
+test    al, al
+jz      loc_434C8D
+mov     edi, [esp+0Ch+arg_4]
+push    ebp
+push    edi
+mov     ecx, esi
+mov     dword ptr [esi+2Ch], 2
+call    FontRenderer__InitContext
+mov     ebx, [esp+10h+xLeft]
+mov     ecx, esi
+push    ebx
+call    Field__Int_Set
+mov     ebp, [esp+10h+arg_14]
+mov     eax, [esp+10h+yTop]
+mov     ecx, [esp+10h+arg_8]
+push    0               ; int
+push    ebp             ; int
+push    eax             ; yTop
+push    ebx             ; xLeft
+push    ecx             ; int
+mov     ecx, esi
+call    FontClass__RenderText
+push    edi
+mov     ecx, esi
+call    BufferIO__Cleanup
+push    edi
+mov     ecx, esi
+inc     ebx
+call    FontRenderer__InitContext
+push    ebx
+mov     ecx, esi
+call    Field__Int_Set
+mov     edx, [esp+10h+yTop]
+mov     eax, [esp+10h+arg_8]
+push    0               ; int
+push    ebp             ; int
+push    edx             ; yTop
+push    ebx             ; xLeft
+push    eax             ; int
+mov     ecx, esi
+call    FontClass__RenderText
+push    edi
+mov     ecx, esi
+mov     ebx, eax
+call    BufferIO__Cleanup
+pop     ebp
+mov     dword ptr [esi+2Ch], 1
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    18h
+; ---------------------------------------------------------------------------
+
+loc_434C8D:                             ; CODE XREF: sub_434BF0+16↑j
+mov     edi, [esp+0Ch+arg_4]
+mov     ecx, esi
+push    edi
+call    FontRenderer__InitContext
+mov     ebx, [esp+0Ch+xLeft]
+mov     ecx, esi
+push    ebx
+call    Field__Int_Set
+mov     ecx, [esp+0Ch+arg_14]
+mov     edx, [esp+0Ch+yTop]
+mov     eax, [esp+0Ch+arg_8]
+push    0               ; int
+push    ecx             ; int
+push    edx             ; yTop
+push    ebx             ; xLeft
+push    eax             ; int
+mov     ecx, esi
+call    FontClass__RenderText
+push    edi
+mov     ecx, esi
+mov     ebx, eax
+call    BufferIO__Cleanup
+mov     eax, ebx
+
+loc_434CCA:                             ; CODE XREF: sub_434BF0+B↑j
+pop     edi
+pop     esi
+pop     ebx
+retn    18h
+*/
 }
 
 // 0x004AEA20 (169 bytes)
 int RenderRallyPointLinesHelper_4AEA20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004AEA20.json)
-    // Size: 169 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   int __userpurge sub_4AEA20 ( int a1, int a2 ) { !int v2 ! ; // edx !int v3 ! ; // esi !int v4 ! ; // edi !int v5 ! ; // eax !char *v6 ! ; // ecx !int v7 ! ; // ebx !int v8 ! ; // eax !int result ! ; // eax if ( a2 == -1 ) v2 = 0 ; else v2 = 8 * ( a2 % 12 ) ; v3 = 0 ; v4 = * ( _DWORD * ) ( FileSystem_MOUSE_PAL + 372 ) + 2 ; do { v5 = ( v3 + v2 ) % 256 ; v6 = & byte_885180 [ 3 * v5 ] ; v4 += 2 ; LOWORD ( v5 ) = ( unsigned __int8 ) ( ( unsigned __int8 ) v6 [ 2 ] >> g_BitMask_Red ) ; LOWORD ( a1 ) = ( unsigned __int8 ) ( ( unsigned __int8 ) HIBYTE ( * ( _WORD * ) v6 ) >> g_BitMask_Blue ) ; v7 = a1 << g_BitMask_Green ; v8 = v7 | ( v5 << g_BitShift_Blue ) ; LOWORD ( v7 ) = ( unsigned __int8 ) ( ( unsigned __int8 ) * ( _WORD * ) v6 >> g_BitShift_Green_0 ) ; a1 = v7 << g_BitShift_Red ; result = a1 | v8 ; ++ v3 ; * ( _WORD * ) ( v4 - 2 ) = result ; } while ( v3 < 8 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __userpurge sub_4AEA20@<eax>(int a1@<ebx>, int a2)
+{
+  int v2; // edx
+  int v3; // esi
+  int v4; // edi
+  int v5; // eax
+  char *v6; // ecx
+  int v7; // ebx
+  int v8; // eax
+  int result; // eax
+
+  if ( a2 == -1 )
+    v2 = 0;
+  else
+    v2 = 8 * (a2 % 12);
+  v3 = 0;
+  v4 = *(_DWORD *)(MEMORY[0x87F6C8] + 372) + 2;
+  do
+  {
+    v5 = (v3 + v2) % 256;
+    v6 = &MEMORY[0x885180][3 * v5];
+    v4 += 2;
+    LOWORD(v5) = (unsigned __int8)((unsigned __int8)v6[2] >> MEMORY[0x8A0DDC]);
+    LOWORD(a1) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v6) >> MEMORY[0x8A0DE4]);
+    v7 = a1 << MEMORY[0x8A0DE0];
+    v8 = v7 | (v5 << MEMORY[0x8A0DD8]);
+    LOWORD(v7) = (unsigned __int8)((unsigned __int8)*(_WORD *)v6 >> MEMORY[0x8A0DD4]);
+    a1 = v7 << MEMORY[0x8A0DD0];
+    result = a1 | v8;
+    ++v3;
+    *(_WORD *)(v4 - 2) = result;
+  }
+  while ( v3 < 8 );
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+cmp     eax, 0FFFFFFFFh
+jnz     short loc_4AEA2D
+xor     edx, edx
+jmp     short loc_4AEA38
+; ---------------------------------------------------------------------------
+
+loc_4AEA2D:                             ; CODE XREF: sub_4AEA20+7↑j
+cdq
+mov     ecx, 0Ch
+idiv    ecx
+shl     edx, 3
+
+loc_4AEA38:                             ; CODE XREF: sub_4AEA20+B↑j
+mov     eax, ds:87F6C8h
+push    ebx
+push    esi
+push    edi
+mov     eax, [eax+174h]
+xor     esi, esi
+lea     edi, [eax+2]
+
+loc_4AEA4B:                             ; CODE XREF: sub_4AEA20+A1↓j
+lea     eax, [esi+edx]
+and     eax, 800000FFh
+jns     short loc_4AEA5C
+dec     eax
+or      eax, 0FFFFFF00h
+inc     eax
+
+loc_4AEA5C:                             ; CODE XREF: sub_4AEA20+33↑j
+lea     ecx, [eax+eax*2+885180h]
+add     edi, 2
+mov     ax, [ecx]
+mov     word ptr [esp+0Ch+arg_0], ax
+mov     bl, byte ptr [esp+0Ch+arg_0+1]
+mov     al, [ecx+2]
+mov     cl, ds:8A0DDCh
+shr     al, cl
+mov     ecx, ds:8A0DD8h
+movzx   ax, al
+shl     eax, cl
+mov     cl, ds:8A0DE4h
+shr     bl, cl
+mov     ecx, ds:8A0DE0h
+movzx   bx, bl
+shl     ebx, cl
+mov     cl, ds:8A0DD4h
+or      eax, ebx
+mov     bl, byte ptr [esp+0Ch+arg_0]
+shr     bl, cl
+mov     ecx, ds:8A0DD0h
+movzx   bx, bl
+shl     ebx, cl
+or      eax, ebx
+inc     esi
+mov     [edi-2], ax
+cmp     esi, 8
+jl      short loc_4AEA4B
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+*/
 }
 
 // 0x004A65C0 (267 bytes)
 int RenderRender_4A65C0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004A65C0.json)
-    // Size: 267 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int *__fastcall sub_4A65C0 ( int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9, int a10 ) { !int *v12 ! ; // eax !int v14 ! ; // eax int v15[2] ; // [esp+8h] [ebp-8h] BYREF if ( a9 == -1 ) { v12 = RenderTextLabel ( v15 , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a10 ) ; } else { v14 = Color::ConvertToRGB ( ( unsigned __int8 * ) ( * ( ( _DWORD * ) BuildingTypeClass_AnimTable + a9 ) + 776 ) , ( int ) & a9 ) ; LOWORD ( v15 [ 0 ] ) = * ( _WORD * ) v14 ; BYTE2 ( v15 [ 0 ] ) = * ( _BYTE * ) ( v14 + 2 ) ; v12 = RenderTextLabel ( v15 , a2 , a3 , a4 , a5 , ( BYTE1 ( v15 [ 0 ] ) >> g_BitMask_Blue << g_BitMask_Green ) | ( BYTE2 ( v15 [ 0 ] ) >> g_BitMask_Red << g_BitShift_Blue ) | ( LOBYTE ( v15 [ 0 ] ) >> g_BitShift_Green_0 << g_BitShift_Red ) , a7 , a8 , a10 ) ; } * a1 = * v12 ; a1 [ 1 ] = v12 [ 1 ] ; return a1 ; }
-    return 0;
+// [IDA decompile]
+int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9, int a10)
+{
+  int *v12; // eax
+  int v14; // eax
+  int v15[2]; // [esp+8h] [ebp-8h] BYREF
+
+  if ( a9 == -1 )
+  {
+    v12 = RenderTextLabel(v15, a2, a3, a4, a5, a6, a7, a8, a10);
+  }
+  else
+  {
+    v14 = Color::ConvertToRGB((unsigned __int8 *)(*((_DWORD *)MEMORY[0xB054D4] + a9) + 776), (int)&a9);
+    LOWORD(v15[0]) = *(_WORD *)v14;
+    BYTE2(v15[0]) = *(_BYTE *)(v14 + 2);
+    v12 = RenderTextLabel(
+            v15,
+            a2,
+            a3,
+            a4,
+            a5,
+            (BYTE1(v15[0]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+          | (BYTE2(v15[0]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8])
+          | (LOBYTE(v15[0]) >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]),
+            a7,
+            a8,
+            a10);
+  }
+  *a1 = *v12;
+  a1[1] = v12[1];
+  return a1;
+}
+
+/* ASM:
+mov     eax, [esp+arg_18]
+sub     esp, 8
+cmp     eax, 0FFFFFFFFh
+push    esi
+push    edi
+mov     edi, edx
+mov     esi, ecx
+jnz     short loc_4A6614
+mov     eax, [esp+10h+arg_1C]
+mov     ecx, [esp+10h+arg_14]
+mov     edx, [esp+10h+arg_10]
+push    eax
+mov     eax, [esp+14h+arg_C]
+push    ecx
+mov     ecx, [esp+18h+arg_8]
+push    edx
+mov     edx, [esp+1Ch+arg_4]
+push    eax
+mov     eax, [esp+20h+arg_0]
+push    ecx
+push    edx
+push    eax
+mov     edx, edi
+lea     ecx, [esp+2Ch+var_8]
+call    RenderTextLabel
+mov     ecx, [eax]
+mov     [esi], ecx
+pop     edi
+mov     edx, [eax+4]
+mov     eax, esi
+mov     [esi+4], edx
+pop     esi
+add     esp, 8
+retn    20h ; ' '
+; ---------------------------------------------------------------------------
+
+loc_4A6614:                             ; CODE XREF: sub_4A65C0+10↑j
+mov     ecx, dword_A8ED54+76780h
+lea     edx, [esp+10h+arg_18]
+push    edx
+mov     eax, [ecx+eax*4]
+lea     ecx, [eax+308h]
+call    Color__ConvertToRGB
+mov     cx, [eax]
+mov     word ptr [esp+10h+var_8], cx
+mov     cl, ds:8A0DD4h
+mov     dl, [eax+2]
+mov     byte ptr [esp+10h+var_8+2], dl
+mov     eax, [esp+10h+var_8]
+mov     edx, [esp+10h+var_8+2]
+and     eax, 0FFh
+shr     eax, cl
+mov     ecx, ds:8A0DD0h
+and     edx, 0FFh
+shl     eax, cl
+mov     cl, ds:8A0DDCh
+shr     edx, cl
+mov     ecx, ds:8A0DD8h
+shl     edx, cl
+mov     cl, ds:8A0DE4h
+or      eax, edx
+mov     edx, [esp+10h+var_8+1]
+and     edx, 0FFh
+shr     edx, cl
+mov     ecx, ds:8A0DE0h
+shl     edx, cl
+mov     ecx, [esp+10h+arg_1C]
+push    ecx
+mov     ecx, [esp+14h+arg_10]
+or      eax, edx
+mov     edx, [esp+14h+arg_14]
+push    edx
+mov     edx, [esp+18h+arg_8]
+push    ecx
+mov     ecx, [esp+1Ch+arg_0]
+push    eax
+mov     eax, [esp+20h+arg_4]
+push    edx
+push    eax
+push    ecx
+mov     edx, edi
+lea     ecx, [esp+2Ch+var_8]
+call    RenderTextLabel
+mov     edx, [eax]
+mov     [esi], edx
+pop     edi
+mov     eax, [eax+4]
+mov     [esi+4], eax
+mov     eax, esi
+pop     esi
+add     esp, 8
+retn    20h ; ' '
+*/
 }
 
 // 0x005B57D0 (390 bytes)
 int String_Draw_5B57D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B57D0.json)
-    // Size: 390 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   HWND __thiscall sub_5B57D0 ( HWND *this ) { !HWND result ! ; // eax !HWND v3 ! ; // esi !char *v4 ! ; // eax !unsigned int v5 ! ; // edi !HWND v6 ! ; // esi !int (__usercall *v7)(char, char) ! ; // edi !HWND v8 ! ; // [esp-8h] [ebp-518h] int v9 ; // [esp+0h] [ebp-510h] BYREF !wchar_t *Format ! ; // [esp+10h] [ebp-500h] _DWORD v11[62] ; // [esp+14h] [ebp-4FCh] BYREF __int16 v12 ; // [esp+10Ch] [ebp-404h] wchar_t lParam[256] ; // [esp+110h] [ebp-400h] BYREF !wchar_t Buffer[256] ! ; // [esp+310h] [ebp-200h] BYREF result = "GetDlgItem " ( * this , 1344 ) ; v3 = result ; if ( result ) { "SendMessageA " ( result , 0x4B3u , 0x100u , ( LPARAM ) lParam ) ; "SendMessageA " ( v3 , 0x4B2u , 0 , ( LPARAM ) & g_TypeClass_DefaultString ) ; result = ( HWND ) wcslen ( lParam ) ; if ( result ) { if ( lParam [ 0 ] != 13 ) { WideString::Trim ( lParam ) ; result = ( HWND ) lParam ; if ( & v9 != ( int * ) -272 ) { memset ( v11 , 0 , sizeof ( v11 ) ) ; v12 = 0 ; v11 [ 0 ] = 104 ; strcpy ( ( char * ) & v11 [ 1 ] , g_GameSetupBuffer ) ; LOBYTE ( v11 [ 6 ] ) = g_TauntCommandState ; wcscpy ( ( wchar_t * ) ( ( char * ) & v11 [ 6 ] + 1 ) , lParam ) ; Stream::WriteBlock ( ( int ) & g_EventManager , ( int ) v11 , 250 , 1 ) ; Stream::ReadPacket ( ( int ) & g_EventManager ) ; v4 = CharToWideString ( g_GameSetupBuffer ) ; v5 = g_TauntCommandState ; v8 = * this ; Format = ( wchar_t * ) v4 ; result = "GetDlgItem " ( v8 , 1343 ) ; v6 = result ; if ( result ) { if ( v5 >= 8 ) v7 = Math::InitDegToRad ; else v7 = ( int (__usercall *)(char, char) ) dword_8316A8 [ v5 ] ; swprintf ( Buffer , ( const size_t ) g_Str_Trace___s_ , Format , lParam ) ; return ( HWND ) DrawDialogText ( ( LPARAM ) v7 , Buffer , v6 ) ; } } } } } return result ; }
-    return 0;
+// [IDA decompile]
+_WORD *__thiscall sub_5B57D0(_DWORD *this)
+{
+  _WORD *result; // eax
+  _WORD *v3; // esi
+  char *v4; // eax
+  unsigned int v5; // edi
+  _WORD *v6; // esi
+  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int v8; // [esp-8h] [ebp-518h]
+  int v9; // [esp+0h] [ebp-510h] BYREF
+  #72 *Format; // [esp+10h] [ebp-500h]
+  _DWORD v11[62]; // [esp+14h] [ebp-4FCh] BYREF
+  __int16 v12; // [esp+10Ch] [ebp-404h]
+  _WORD lParam[256]; // [esp+110h] [ebp-400h] BYREF
+  _BYTE Buffer[512]; // [esp+310h] [ebp-200h] BYREF
+
+  result = (_WORD *)((int (__stdcall *)(_DWORD, int))GetDlgItem)(*this, 1344);
+  v3 = result;
+  if ( result )
+  {
+    ((void (__stdcall *)(_WORD *, int, int, _WORD *))SendMessageA)(result, 1203, 256, lParam);
+    ((void (__stdcall *)(_WORD *, int, _DWORD, _DWORD *))SendMessageA)(v3, 1202, 0, &MEMORY[0x87F7E8][8147]);
+    result = (_WORD *)wcslen((const #72 *)lParam);
+    if ( result )
+    {
+      if ( lParam[0] != 13 )
+      {
+        WideString::Trim((#72 *)lParam);
+        result = lParam;
+        if ( &v9 != (int *)-272 )
+        {
+          memset(v11, 0, sizeof(v11));
+          v12 = 0;
+          v11[0] = 104;
+          strcpy((char *)&v11[1], (const char *)&MEMORY[0x87F7E8][536294]);
+          LOBYTE(v11[6]) = MEMORY[0x87F7E8][536299];
+          wcscpy((#72 *)((char *)&v11[6] + 1), (const #72 *)lParam);
+          Stream::WriteBlock((int)&MEMORY[0x87F7E8][539810], (int)v11, 250, 1);
+          Stream::ReadPacket((int)&MEMORY[0x87F7E8][539810]);
+          v4 = CharToWideString(&MEMORY[0x87F7E8][536294]);
+          v5 = MEMORY[0x87F7E8][536299];
+          v8 = *this;
+          Format = (#72 *)v4;
+          result = (_WORD *)((int (__stdcall *)(int, int))GetDlgItem)(v8, 1343);
+          v6 = result;
+          if ( result )
+          {
+            if ( v5 >= 8 )
+              v7 = Math::InitDegToRad;
+            else
+              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v5];
+            swprintf((#72 *const)Buffer, g_Str_Trace___s_);
+            return (_WORD *)DrawDialogText(v7, Buffer, v6);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+Format          = dword ptr -500h
+var_4FC         = dword ptr -4FCh
+var_4F8         = byte ptr -4F8h
+var_4E4         = byte ptr -4E4h
+Destination     = byte ptr -4E3h
+var_404         = word ptr -404h
+lParam          = byte ptr -400h
+Buffer          = byte ptr -200h
+
+sub     esp, 500h
+push    ebx
+mov     ebx, ecx
+push    ebp
+mov     ebp, ds:__imp_GetDlgItem
+mov     eax, [ebx]
+push    esi
+push    edi
+push    540h            ; nIDDlgItem
+push    eax             ; hDlg
+call    ebp ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      loc_5B594B
+mov     edi, ds:__imp_SendMessageA
+lea     ecx, [esp+510h+lParam]
+push    ecx             ; lParam
+push    100h            ; wParam
+push    4B3h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+push    887734h         ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+lea     edx, [esp+510h+lParam]
+push    edx             ; String
+call    _wcslen
+add     esp, 4
+test    eax, eax
+jz      loc_5B594B
+cmp     word ptr [esp+510h+lParam], 0Dh
+jz      loc_5B594B
+lea     ecx, [esp+510h+lParam] ; Source
+call    WideString__Trim
+lea     eax, [esp+510h+lParam]
+test    eax, eax
+jz      loc_5B594B
+mov     ecx, 3Eh ; '>'
+xor     eax, eax
+lea     edi, [esp+510h+var_4FC]
+lea     edx, [esp+510h+var_4F8]
+rep stosd
+stosw
+mov     edi, 0A8B380h
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     [esp+510h+var_4FC], 68h ; 'h'
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, edx
+lea     edx, [esp+510h+lParam]
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+lea     eax, [esp+510h+Destination]
+and     ecx, 3
+push    edx             ; Source
+rep movsb
+mov     cl, ds:0A8B394h
+push    eax             ; Destination
+mov     [esp+518h+var_4E4], cl
+call    _wcscpy
+add     esp, 8
+lea     ecx, [esp+510h+var_4FC]
+push    1
+push    0FAh
+push    ecx
+mov     ecx, 0A8EA70h
+call    Stream__WriteBlock
+mov     ecx, 0A8EA70h
+call    Stream__ReadPacket
+mov     ecx, 0A8B380h
+call    CharToWideString
+mov     edx, [ebx]
+mov     edi, ds:0A8B394h
+push    53Fh            ; nIDDlgItem
+push    edx             ; hDlg
+mov     [esp+518h+Format], eax
+call    ebp ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      short loc_5B594B
+test    edi, edi
+jl      short loc_5B5914
+cmp     edi, 8
+jge     short loc_5B5914
+mov     edi, dword_8316A8[edi*4]
+jmp     short loc_5B591A
+; ---------------------------------------------------------------------------
+
+loc_5B5914:                             ; CODE XREF: sub_5B57D0+134↑j
+; sub_5B57D0+139↑j
+mov     edi, ds:off_7EEF44
+
+loc_5B591A:                             ; CODE XREF: sub_5B57D0+142↑j
+mov     ecx, [esp+510h+Format]
+lea     eax, [esp+510h+lParam]
+push    eax
+push    ecx             ; Format
+lea     edx, [esp+518h+Buffer]
+push    offset g_Str_Trace___s___s ; "[%s] %s"
+push    edx             ; Buffer
+call    _swprintf
+add     esp, 10h
+lea     edx, [esp+510h+Buffer]
+mov     ecx, edi
+push    esi
+call    DrawDialogText
+
+loc_5B594B:                             ; CODE XREF: sub_5B57D0+20↑j
+; sub_5B57D0+62↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 500h
+retn
+*/
 }
 
 // 0x005B9250 (406 bytes)
 int String_Draw_5B9250() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005B9250.json)
-    // Size: 406 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   HWND __thiscall sub_5B9250 ( HWND *this ) { !HWND result ! ; // eax !HWND v3 ! ; // esi !char *v4 ! ; // eax !unsigned int v5 ! ; // edi !HWND v6 ! ; // esi !int (__usercall *v7)(char, char) ! ; // edi !HWND v8 ! ; // [esp-8h] [ebp-518h] int v9 ; // [esp+0h] [ebp-510h] BYREF !wchar_t *Format ! ; // [esp+10h] [ebp-500h] _DWORD v11[62] ; // [esp+14h] [ebp-4FCh] BYREF __int16 v12 ; // [esp+10Ch] [ebp-404h] wchar_t lParam[256] ; // [esp+110h] [ebp-400h] BYREF !wchar_t Buffer[256] ! ; // [esp+310h] [ebp-200h] BYREF memset ( lParam , 0 , sizeof ( lParam ) ) ; result = "GetDlgItem " ( * this , 1344 ) ; v3 = result ; if ( result ) { "SendMessageA " ( result , 0x4B3u , 0x100u , ( LPARAM ) lParam ) ; "SendMessageA " ( v3 , 0x4B2u , 0 , ( LPARAM ) & g_TypeClass_DefaultString ) ; result = ( HWND ) wcslen ( lParam ) ; if ( result ) { if ( lParam [ 0 ] != 13 ) { WideString::Trim ( lParam ) ; result = ( HWND ) lParam ; if ( & v9 != ( int * ) -272 ) { memset ( v11 , 0 , sizeof ( v11 ) ) ; v12 = 0 ; v11 [ 0 ] = 104 ; strcpy ( ( char * ) & v11 [ 1 ] , g_GameSetupBuffer ) ; LOBYTE ( v11 [ 6 ] ) = g_TauntCommandState ; wcscpy ( ( wchar_t * ) ( ( char * ) & v11 [ 6 ] + 1 ) , lParam ) ; Stream::WriteBlock ( ( int ) & g_EventManager , ( int ) v11 , 250 , 1 ) ; Stream::ReadPacket ( ( int ) & g_EventManager ) ; v4 = CharToWideString ( g_GameSetupBuffer ) ; v5 = g_TauntCommandState ; v8 = * this ; Format = ( wchar_t * ) v4 ; result = "GetDlgItem " ( v8 , 1343 ) ; v6 = result ; if ( result ) { if ( v5 >= 8 ) v7 = Math::InitDegToRad ; else v7 = ( int (__usercall *)(char, char) ) dword_8316A8 [ v5 ] ; swprintf ( Buffer , ( const size_t ) g_Str_Trace___s_ , Format , lParam ) ; return ( HWND ) DrawDialogText ( ( LPARAM ) v7 , Buffer , v6 ) ; } } } } } return result ; }
-    return 0;
+// [IDA decompile]
+_WORD *__thiscall sub_5B9250(_DWORD *this)
+{
+  _WORD *result; // eax
+  _WORD *v3; // esi
+  char *v4; // eax
+  unsigned int v5; // edi
+  _WORD *v6; // esi
+  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int v8; // [esp-8h] [ebp-518h]
+  int v9; // [esp+0h] [ebp-510h] BYREF
+  #72 *Format; // [esp+10h] [ebp-500h]
+  _DWORD v11[62]; // [esp+14h] [ebp-4FCh] BYREF
+  __int16 v12; // [esp+10Ch] [ebp-404h]
+  _WORD lParam[256]; // [esp+110h] [ebp-400h] BYREF
+  _BYTE Buffer[512]; // [esp+310h] [ebp-200h] BYREF
+
+  memset(lParam, 0, sizeof(lParam));
+  result = (_WORD *)((int (__stdcall *)(_DWORD, int))GetDlgItem)(*this, 1344);
+  v3 = result;
+  if ( result )
+  {
+    ((void (__stdcall *)(_WORD *, int, int, _WORD *))SendMessageA)(result, 1203, 256, lParam);
+    ((void (__stdcall *)(_WORD *, int, _DWORD, _DWORD *))SendMessageA)(v3, 1202, 0, &MEMORY[0x87F7E8][8147]);
+    result = (_WORD *)wcslen((const #72 *)lParam);
+    if ( result )
+    {
+      if ( lParam[0] != 13 )
+      {
+        WideString::Trim((#72 *)lParam);
+        result = lParam;
+        if ( &v9 != (int *)-272 )
+        {
+          memset(v11, 0, sizeof(v11));
+          v12 = 0;
+          v11[0] = 104;
+          strcpy((char *)&v11[1], (const char *)&MEMORY[0x87F7E8][536294]);
+          LOBYTE(v11[6]) = MEMORY[0x87F7E8][536299];
+          wcscpy((#72 *)((char *)&v11[6] + 1), (const #72 *)lParam);
+          Stream::WriteBlock((int)&MEMORY[0x87F7E8][539810], (int)v11, 250, 1);
+          Stream::ReadPacket((int)&MEMORY[0x87F7E8][539810]);
+          v4 = CharToWideString(&MEMORY[0x87F7E8][536294]);
+          v5 = MEMORY[0x87F7E8][536299];
+          v8 = *this;
+          Format = (#72 *)v4;
+          result = (_WORD *)((int (__stdcall *)(int, int))GetDlgItem)(v8, 1343);
+          v6 = result;
+          if ( result )
+          {
+            if ( v5 >= 8 )
+              v7 = Math::InitDegToRad;
+            else
+              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v5];
+            swprintf((#72 *const)Buffer, g_Str_Trace___s_);
+            return (_WORD *)DrawDialogText(v7, Buffer, v6);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/* ASM:
+Format          = dword ptr -500h
+var_4FC         = dword ptr -4FCh
+var_4F8         = byte ptr -4F8h
+var_4E4         = byte ptr -4E4h
+Destination     = byte ptr -4E3h
+var_404         = word ptr -404h
+lParam          = byte ptr -400h
+Buffer          = byte ptr -200h
+
+sub     esp, 500h
+xor     eax, eax
+push    ebx
+push    ebp
+mov     ebp, ds:__imp_GetDlgItem
+push    esi
+mov     ebx, ecx
+push    edi
+mov     ecx, 80h
+lea     edi, [esp+510h+lParam]
+rep stosd
+mov     eax, [ebx]
+push    540h            ; nIDDlgItem
+push    eax             ; hDlg
+call    ebp ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      loc_5B93DB
+mov     edi, ds:__imp_SendMessageA
+lea     ecx, [esp+510h+lParam]
+push    ecx             ; lParam
+push    100h            ; wParam
+push    4B3h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+push    887734h         ; lParam
+push    0               ; wParam
+push    4B2h            ; Msg
+push    esi             ; hWnd
+call    edi ; __imp_SendMessageA
+lea     edx, [esp+510h+lParam]
+push    edx             ; String
+call    _wcslen
+add     esp, 4
+test    eax, eax
+jz      loc_5B93DB
+cmp     word ptr [esp+510h+lParam], 0Dh
+jz      loc_5B93DB
+lea     ecx, [esp+510h+lParam] ; Source
+call    WideString__Trim
+lea     eax, [esp+510h+lParam]
+test    eax, eax
+jz      loc_5B93DB
+mov     ecx, 3Eh ; '>'
+xor     eax, eax
+lea     edi, [esp+510h+var_4FC]
+lea     edx, [esp+510h+var_4F8]
+rep stosd
+stosw
+mov     edi, 0A8B380h
+or      ecx, 0FFFFFFFFh
+xor     eax, eax
+mov     [esp+510h+var_4FC], 68h ; 'h'
+repne scasb
+not     ecx
+sub     edi, ecx
+mov     eax, ecx
+mov     esi, edi
+mov     edi, edx
+lea     edx, [esp+510h+lParam]
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+lea     eax, [esp+510h+Destination]
+and     ecx, 3
+push    edx             ; Source
+rep movsb
+mov     cl, ds:0A8B394h
+push    eax             ; Destination
+mov     [esp+518h+var_4E4], cl
+call    _wcscpy
+add     esp, 8
+lea     ecx, [esp+510h+var_4FC]
+push    1
+push    0FAh
+push    ecx
+mov     ecx, 0A8EA70h
+call    Stream__WriteBlock
+mov     ecx, 0A8EA70h
+call    Stream__ReadPacket
+mov     ecx, 0A8B380h
+call    CharToWideString
+mov     edx, [ebx]
+mov     edi, ds:0A8B394h
+push    53Fh            ; nIDDlgItem
+push    edx             ; hDlg
+mov     [esp+518h+Format], eax
+call    ebp ; __imp_GetDlgItem
+mov     esi, eax
+test    esi, esi
+jz      short loc_5B93DB
+test    edi, edi
+jl      short loc_5B93A4
+cmp     edi, 8
+jge     short loc_5B93A4
+mov     edi, dword_8316A8[edi*4]
+jmp     short loc_5B93AA
+; ---------------------------------------------------------------------------
+
+loc_5B93A4:                             ; CODE XREF: sub_5B9250+144↑j
+; sub_5B9250+149↑j
+mov     edi, ds:off_7EEF44
+
+loc_5B93AA:                             ; CODE XREF: sub_5B9250+152↑j
+mov     ecx, [esp+510h+Format]
+lea     eax, [esp+510h+lParam]
+push    eax
+push    ecx             ; Format
+lea     edx, [esp+518h+Buffer]
+push    offset g_Str_Trace___s___s ; "[%s] %s"
+push    edx             ; Buffer
+call    _swprintf
+add     esp, 10h
+lea     edx, [esp+510h+Buffer]
+mov     ecx, edi
+push    esi
+call    DrawDialogText
+
+loc_5B93DB:                             ; CODE XREF: sub_5B9250+30↑j
+; sub_5B9250+72↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 500h
+retn
+*/
 }
 
 // 0x004C3DD0 (95 bytes)
 int TextRenderer_GetText_4C3DD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C3DD0.json)
-    // Size: 95 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4C3DD0 ( int *this, int a2 ) { int v3 ; // edx _DWORD v5[4] ; // [esp+4h] [ebp-10h] BYREF TextRenderer::GetInstance ( ) ; Text::MeasureWidth ( * this , 0 ) ; v3 = * ( this + 2 ) ; v5 [ 2 ] = g_DisplayWidth ; v5 [ 0 ] = 0 ; v5 [ 1 ] = v3 ; v5 [ 3 ] = 18 ; return ( * ( int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int) ) ( * ( _DWORD * ) DSurface_Hidden_2 + 8 ) ) ( DSurface_Hidden_2 , v5 , a2 , v5 , 0 , 1 ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4C3DD0(int *this, int a2)
+{
+  int v3; // edx
+  _DWORD v5[4]; // [esp+4h] [ebp-10h] BYREF
+
+  TextRenderer::GetInstance();
+  Text::MeasureWidth(*this, 0);
+  v3 = *(this + 2);
+  v5[2] = MEMORY[0x8A00A4];
+  v5[0] = 0;
+  v5[1] = v3;
+  v5[3] = 18;
+  return (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887314] + 8))(
+           MEMORY[0x887314],
+           v5,
+           a2,
+           v5,
+           0,
+           1);
+}
+
+/* ASM:
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+0Ch]
+call    TextRenderer__GetInstance
+mov     ecx, [esi]
+push    0
+push    ecx
+mov     ecx, eax
+call    Text__MeasureWidth
+mov     eax, ds:8A00A4h
+mov     edx, [esi+8]
+mov     ecx, ds:887314h
+mov     [esp+14h+var_8], eax
+push    1
+lea     eax, [esp+18h+var_10]
+push    0
+push    eax
+mov     eax, [esp+20h+arg_0]
+mov     [esp+20h+var_10], 0
+push    eax
+mov     [esp+24h+var_C], edx
+mov     [esp+24h+var_4], 12h
+mov     edx, [ecx]
+lea     eax, [esp+24h+var_10]
+push    eax
+call    dword ptr [edx+8]
+pop     esi
+add     esp, 10h
+retn    4
+*/
 }
 
 // 0x0071FF20 (136 bytes)
 int TextRenderer_GetToggle_71FF20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0071FF20.json)
-    // Size: 136 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_71FF20 ( int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, char a9, char a10 ) { !int Instance ! ; // ebx ToggleClass::Construct ( this , a2 , a5 , a6 , a7 , a8 ) ; * ( _BYTE * ) ( this + 53 ) = a10 ; * ( _BYTE * ) ( this + 52 ) = a9 ; * ( _DWORD * ) ( this + 56 ) = a3 ; * ( _DWORD * ) ( this + 60 ) = a4 ; * ( _DWORD * ) this = & TextButtonClass::vftable' ; if ( a7 == -1 || a8 == -1 ) { Instance = TextRenderer::GetInstance ( ) ; if ( a7 == -1 ) * ( _DWORD * ) ( this + 20 ) = Text::MeasureWidth ( * ( _DWORD * ) ( this + 56 ) , 0 ) + 8 ; if ( a8 == -1 ) * ( _DWORD * ) ( this + 24 ) = * ( _DWORD * ) ( Instance + 28 ) + 2 ; } return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_71FF20(int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, char a9, char a10)
+{
+  int Instance; // ebx
+
+  ToggleClass::Construct(this, a2, a5, a6, a7, a8);
+  *(_BYTE *)(this + 53) = a10;
+  *(_BYTE *)(this + 52) = a9;
+  *(_DWORD *)(this + 56) = a3;
+  *(_DWORD *)(this + 60) = a4;
+  *(_DWORD *)this = &TextButtonClass::`vftable';
+  if ( a7 == -1 || a8 == -1 )
+  {
+    Instance = TextRenderer::GetInstance();
+    if ( a7 == -1 )
+      *(_DWORD *)(this + 20) = Text::MeasureWidth(*(_DWORD *)(this + 56), 0) + 8;
+    if ( a8 == -1 )
+      *(_DWORD *)(this + 24) = *(_DWORD *)(Instance + 28) + 2;
+  }
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_10]
+mov     edx, [esp+arg_0]
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_18]
+push    esi
+push    edi
+mov     edi, [esp+10h+arg_14]
+mov     esi, ecx
+push    ebp
+mov     ecx, [esp+14h+arg_C]
+push    edi
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    ToggleClass__Construct
+mov     cl, [esp+10h+arg_20]
+mov     al, [esp+10h+arg_1C]
+mov     edx, [esp+10h+arg_4]
+mov     [esi+35h], cl
+mov     ecx, [esp+10h+arg_8]
+cmp     edi, 0FFFFFFFFh
+mov     [esi+34h], al
+mov     [esi+38h], edx
+mov     [esi+3Ch], ecx
+mov     dword ptr [esi], offset ??_7TextButtonClass@@6B@ ; const TextButtonClass::`vftable'
+jz      short loc_71FF72
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_71FF9F
+
+loc_71FF72:                             ; CODE XREF: sub_71FF20+4B↑j
+call    TextRenderer__GetInstance
+cmp     edi, 0FFFFFFFFh
+mov     ebx, eax
+jnz     short loc_71FF91
+mov     eax, [esi+38h]
+push    0
+push    eax
+mov     ecx, ebx
+call    Text__MeasureWidth
+add     eax, 8
+mov     [esi+14h], eax
+
+loc_71FF91:                             ; CODE XREF: sub_71FF20+5C↑j
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_71FF9F
+mov     ecx, [ebx+1Ch]
+add     ecx, 2
+mov     [esi+18h], ecx
+
+loc_71FF9F:                             ; CODE XREF: sub_71FF20+50↑j
+; sub_71FF20+74↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    24h ; '$'
+*/
 }
 
 // 0x004C2FC0 (237 bytes)
 int TextRenderer_SetMember11_4C2FC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C2FC0.json)
-    // Size: 237 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int *__thiscall sub_4C2FC0 ( int *this, int a2, wchar_t *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10 ) { !int v11 ! ; // eax !int Instance ! ; // eax !int v13 ! ; // eax ControlClass::Construct ( this , a2 , a6 , a7 , a8 , a9 , 1 , 0 ) ; v11 = a5 ; BYTE1 ( v11 ) = BYTE1 ( a5 ) & 0xFE ; * ( this + 11 ) = v11 ; * this = ( int ) & EditClass::vftable' ; * ( this + 12 ) = a10 ; * ( this + 13 ) = ( int ) String ; * ( this + 14 ) = a4 - 1 ; * ( this + 15 ) = wcslen ( String ) ; ( * ( void (__thiscall **)(int *) ) ( * this + 72 ) ) ( this ) ; * ( this + 16 ) = BuildingAnim::GetType ( ) ; if ( a8 == -1 || a9 == -1 ) { Instance = TextRenderer::GetInstance ( ) ; if ( a9 == -1 ) * ( this + 6 ) = * ( _DWORD * ) ( Instance + 28 ) + 1 ; if ( a8 == -1 ) { if ( wcslen ( ( const wchar_t * ) * ( this + 13 ) ) ) { v13 = Text::MeasureWidth ( * ( this + 13 ) , 0 ) ; * ( this + 17 ) = 0 ; * ( this + 5 ) = v13 + 6 ; return this ; } * ( this + 5 ) = ( * ( this + 14 ) + 1 ) * Text::MeasureWidth ( ( int ) asc_820768 , 0 ) + 2 ; } } * ( this + 17 ) = 0 ; return this ; }
-    return 0;
+// [IDA decompile]
+int *__thiscall sub_4C2FC0(int *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+  int v11; // eax
+  int Instance; // eax
+  int v13; // eax
+
+  ControlClass::Construct(this, a2, a6, a7, a8, a9, 1, 0);
+  v11 = a5;
+  BYTE1(v11) = BYTE1(a5) & 0xFE;
+  *(this + 11) = v11;
+  *this = (int)&EditClass::`vftable';
+  *(this + 12) = a10;
+  *(this + 13) = (int)String;
+  *(this + 14) = a4 - 1;
+  *(this + 15) = wcslen(String);
+  (*(void (__thiscall **)(int *))(*this + 72))(this);
+  *(this + 16) = BuildingAnim::GetType();
+  if ( a8 == -1 || a9 == -1 )
+  {
+    Instance = TextRenderer::GetInstance();
+    if ( a9 == -1 )
+      *(this + 6) = *(_DWORD *)(Instance + 28) + 1;
+    if ( a8 == -1 )
+    {
+      if ( wcslen((const #72 *)*(this + 13)) )
+      {
+        v13 = Text::MeasureWidth(*(this + 13), 0);
+        *(this + 17) = 0;
+        *(this + 5) = v13 + 6;
+        return this;
+      }
+      *(this + 5) = (*(this + 14) + 1) * Text::MeasureWidth((int)asc_820768, 0) + 2;
+    }
+  }
+  *(this + 17) = 0;
+  return this;
+}
+
+/* ASM:
+String          = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+arg_10          = dword ptr  14h
+arg_14          = dword ptr  18h
+arg_18          = dword ptr  1Ch
+arg_1C          = dword ptr  20h
+arg_20          = dword ptr  24h
+
+mov     eax, [esp+arg_14]
+push    ebx
+mov     ebx, [esp+4+arg_18]
+mov     edx, [esp+4+arg_0]
+push    ebp
+push    esi
+push    edi
+mov     edi, [esp+10h+arg_1C]
+push    0
+mov     esi, ecx
+mov     ecx, [esp+14h+arg_10]
+push    1
+push    edi
+push    ebx
+push    eax
+push    ecx
+push    edx
+mov     ecx, esi
+call    ControlClass__Construct
+mov     ebp, [esp+10h+arg_C]
+mov     edx, [esp+10h+arg_8]
+mov     ecx, [esp+10h+arg_20]
+mov     eax, ebp
+and     ah, 0FEh
+dec     edx
+mov     [esi+2Ch], eax
+mov     eax, [esp+10h+String]
+push    eax             ; String
+mov     dword ptr [esi], offset ??_7EditClass@@6B@ ; const EditClass::`vftable'
+mov     [esi+30h], ecx
+mov     [esi+34h], eax
+mov     [esi+38h], edx
+call    _wcslen
+mov     [esi+3Ch], eax
+mov     eax, [esi]
+add     esp, 4
+mov     ecx, esi
+call    dword ptr [eax+48h]
+call    BuildingAnim__GetType
+cmp     ebx, 0FFFFFFFFh
+mov     [esi+40h], eax
+jz      short loc_4C3037
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_4C309D
+
+loc_4C3037:                             ; CODE XREF: sub_4C2FC0+70↑j
+mov     ecx, ebp
+call    TextRenderer__GetInstance
+cmp     edi, 0FFFFFFFFh
+mov     ebp, eax
+jnz     short loc_4C304C
+mov     ecx, [ebp+1Ch]
+inc     ecx
+mov     [esi+18h], ecx
+
+loc_4C304C:                             ; CODE XREF: sub_4C2FC0+83↑j
+cmp     ebx, 0FFFFFFFFh
+jnz     short loc_4C309D
+mov     edx, [esi+34h]
+push    edx             ; String
+call    _wcslen
+add     esp, 4
+test    eax, eax
+push    0
+jbe     short loc_4C3084
+mov     eax, [esi+34h]
+mov     ecx, ebp
+push    eax
+call    Text__MeasureWidth
+add     eax, 6
+mov     dword ptr [esi+44h], 0
+mov     [esi+14h], eax
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    24h ; '$'
+; ---------------------------------------------------------------------------
+
+loc_4C3084:                             ; CODE XREF: sub_4C2FC0+A1↑j
+push    offset asc_820768 ; "X"
+mov     ecx, ebp
+call    Text__MeasureWidth
+mov     ecx, [esi+38h]
+inc     ecx
+imul    eax, ecx
+add     eax, 2
+mov     [esi+14h], eax
+
+loc_4C309D:                             ; CODE XREF: sub_4C2FC0+75↑j
+; sub_4C2FC0+8F↑j
+mov     dword ptr [esi+44h], 0
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    24h ; '$'
+*/
 }
 
 // 0x006C6540 (144 bytes)
 int TextRenderer_SetMember12_6C6540() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006C6540.json)
-    // Size: 144 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_6C6540 ( _DWORD *this, int a2, wchar_t *String, int a4, int a5, int a6, int a7, int a8 ) { !int Instance ! ; // ebx GadgetClass::Construct ( this , a5 , a6 , a7 , a8 , 0 , 0 ) ; Buffer::Init ( this + 9 , 0 , 0 ) ; * ( this + 12 ) = 0 ; * ( this + 13 ) = a4 ; * this = & StaticButtonClass::vftable' ; StaticButtonClass::Draw ( ( void ** ) this , String , 0 ) ; if ( a7 == -1 || a8 == -1 ) { Instance = TextRenderer::GetInstance ( ) ; if ( a7 == -1 ) * ( this + 5 ) = Text::MeasureWidth ( * ( this + 12 ) , 0 ) ; if ( a8 == -1 ) * ( this + 6 ) = * ( _DWORD * ) ( Instance + 28 ) ; } return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_6C6540(_DWORD *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8)
+{
+  int Instance; // ebx
+
+  GadgetClass::Construct(this, a5, a6, a7, a8, 0, 0);
+  Buffer::Init(this + 9, 0, 0);
+  *(this + 12) = 0;
+  *(this + 13) = a4;
+  *this = &StaticButtonClass::`vftable';
+  StaticButtonClass::Draw((void **)this, String, 0);
+  if ( a7 == -1 || a8 == -1 )
+  {
+    Instance = TextRenderer::GetInstance();
+    if ( a7 == -1 )
+      *(this + 5) = Text::MeasureWidth(*(this + 12), 0);
+    if ( a8 == -1 )
+      *(this + 6) = *(_DWORD *)(Instance + 28);
+  }
+  return this;
+}
+
+/* ASM:
+String          = dword ptr  8
+arg_8           = dword ptr  0Ch
+arg_C           = dword ptr  10h
+arg_10          = dword ptr  14h
+arg_14          = dword ptr  18h
+arg_18          = dword ptr  1Ch
+
+mov     eax, [esp+arg_10]
+push    ebx
+push    ebp
+mov     ebp, [esp+8+arg_18]
+push    esi
+push    edi
+mov     edi, [esp+10h+arg_14]
+push    0
+mov     esi, ecx
+push    0
+mov     ecx, [esp+18h+arg_C]
+push    ebp
+push    edi
+push    eax
+push    ecx
+mov     ecx, esi
+call    GadgetClass__Construct
+push    0               ; Size
+push    0               ; int
+lea     ecx, [esi+24h]
+call    Buffer__Init
+mov     eax, [esp+10h+String]
+mov     edx, [esp+10h+arg_8]
+push    0               ; char
+push    eax             ; String
+mov     ecx, esi
+mov     dword ptr [esi+30h], 0
+mov     [esi+34h], edx
+mov     dword ptr [esi], offset ??_7StaticButtonClass@@6B@ ; const StaticButtonClass::`vftable'
+call    StaticButtonClass__Draw
+cmp     edi, 0FFFFFFFFh
+jz      short loc_6C659D
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_6C65C7
+
+loc_6C659D:                             ; CODE XREF: sub_6C6540+56↑j
+mov     ecx, [esi+34h]
+call    TextRenderer__GetInstance
+cmp     edi, 0FFFFFFFFh
+mov     ebx, eax
+jnz     short loc_6C65BC
+mov     ecx, [esi+30h]
+push    0
+push    ecx
+mov     ecx, ebx
+call    Text__MeasureWidth
+mov     [esi+14h], eax
+
+loc_6C65BC:                             ; CODE XREF: sub_6C6540+6A↑j
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_6C65C7
+mov     edx, [ebx+1Ch]
+mov     [esi+18h], edx
+
+loc_6C65C7:                             ; CODE XREF: sub_6C6540+5B↑j
+; sub_6C6540+7F↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    1Ch
+*/
 }
 
 // 0x005BCB90 (132 bytes)
 int Text_Draw_5BCB90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BCB90.json)
-    // Size: 132 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5BCB90 ( int this, int a2 ) { !int v3 ! ; // edi _DWORD *v4 ; // ebx _BYTE *v5 ; // ecx _DWORD *v6 ; // eax !int v7 ! ; // edx v3 = 0 ; * ( _DWORD * ) ( this + 10008 ) = a2 ; * ( _DWORD * ) ( this + 10012 ) = 0 ; * ( _DWORD * ) ( this + 10016 ) = 0 ; * ( _DWORD * ) ( this + 10020 ) = 0 ; * ( _DWORD * ) ( this + 10024 ) = 0 ; * ( _DWORD * ) ( this + 10028 ) = 80 ; * ( _DWORD * ) ( this + 10032 ) = 25 ; v4 = ( _DWORD * ) ( this + 2000 ) ; do { v5 = ( _BYTE * ) ( v3 + this ) ; v6 = v4 ; v7 = 80 ; do { * v5 = 32 ; * v6 = 0 ; v6 += 25 ; v5 += 25 ; -- v7 ; } while ( v7 ) ; ++ v3 ; ++ v4 ; } while ( v3 < 25 ) ; * ( _BYTE * ) ( this + 10036 ) = 1 ; Text::DrawRepeated ( ( void * ) this , 0 , 0 , 80 , 25 ) ; return this ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5BCB90(int this, int a2)
+{
+  int v3; // edi
+  _DWORD *v4; // ebx
+  _BYTE *v5; // ecx
+  _DWORD *v6; // eax
+  int v7; // edx
+
+  v3 = 0;
+  *(_DWORD *)(this + 10008) = a2;
+  *(_DWORD *)(this + 10012) = 0;
+  *(_DWORD *)(this + 10016) = 0;
+  *(_DWORD *)(this + 10020) = 0;
+  *(_DWORD *)(this + 10024) = 0;
+  *(_DWORD *)(this + 10028) = 80;
+  *(_DWORD *)(this + 10032) = 25;
+  v4 = (_DWORD *)(this + 2000);
+  do
+  {
+    v5 = (_BYTE *)(v3 + this);
+    v6 = v4;
+    v7 = 80;
+    do
+    {
+      *v5 = 32;
+      *v6 = 0;
+      v6 += 25;
+      v5 += 25;
+      --v7;
+    }
+    while ( v7 );
+    ++v3;
+    ++v4;
+  }
+  while ( v3 < 25 );
+  *(_BYTE *)(this + 10036) = 1;
+  Text::DrawRepeated((void *)this, 0, 0, 80, 25);
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    ebp
+push    esi
+mov     esi, ecx
+xor     ebp, ebp
+push    edi
+xor     edi, edi
+mov     [esi+2718h], eax
+mov     [esi+271Ch], ebp
+mov     [esi+2720h], ebp
+mov     [esi+2724h], ebp
+mov     [esi+2728h], ebp
+mov     dword ptr [esi+272Ch], 50h ; 'P'
+mov     dword ptr [esi+2730h], 19h
+lea     ebx, [esi+7D0h]
+
+loc_5BCBD6:                             ; CODE XREF: sub_5BCB90+65↓j
+lea     ecx, [edi+esi]
+mov     eax, ebx
+mov     edx, 50h ; 'P'
+
+loc_5BCBE0:                             ; CODE XREF: sub_5BCB90+5C↓j
+mov     byte ptr [ecx], 20h ; ' '
+mov     [eax], ebp
+add     eax, 64h ; 'd'
+add     ecx, 19h
+dec     edx
+jnz     short loc_5BCBE0
+inc     edi
+add     ebx, 4
+cmp     edi, 19h
+jl      short loc_5BCBD6
+push    19h             ; int
+push    50h ; 'P'       ; int
+push    ebp             ; int
+push    ebp             ; String
+mov     ecx, esi
+mov     byte ptr [esi+2734h], 1
+call    Text__DrawRepeated
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
 }
 
 // 0x005BCE10 (378 bytes)
 char Text_Draw_5BCE10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005BCE10.json)
-    // Size: 378 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5BCE10 ( int *this, int a2 ) { !char result ! ; // al int v4 ; // eax !int v5 ! ; // edx int v6 ; // ebx int v7 ; // ebp char *v8 ; // edi !int v9 ! ; // ecx !int v10 ! ; // ebx !int v11 ! ; // ecx !int v12 ! ; // ebx !int v13 ! ; // eax !int *v14 ! ; // ebp int v15 ; // ebp !int v16 ! ; // edi !int v17 ! ; // ebx !int *v18 ! ; // ecx !int v19 ! ; // eax !int *v20 ! ; // ebp !int *v21 ! ; // [esp+4h] [ebp-Ch] _BYTE *v22 ; // [esp+8h] [ebp-8h] int v23 ; // [esp+Ch] [ebp-4h] int v24 ; // [esp+Ch] [ebp-4h] !int v25 ! ; // [esp+14h] [ebp+4h] !int v26 ! ; // [esp+14h] [ebp+4h] result = g_MiscFlag ; if ( g_MiscFlag ) { v4 = * ( this + 2505 ) ; v5 = * ( this + 2506 ) ; v6 = * ( this + 2508 ) ; v7 = * ( this + 2507 ) ; if ( a2 <= 0 ) { if ( a2 < 0 ) { v15 = v4 + v7 ; if ( v4 < v15 ) { v26 = v6 + v5 - 1 ; v16 = ( int ) this + 20 * v4 + 5 * v4 ; v17 = 500 - ( _DWORD ) this ; v18 = this + 20 * v4 + 5 * v4 + v5 + 500 ; v24 = v15 - v4 ; do { v19 = v26 ; if ( v26 > v5 ) { v20 = this + v26 + v16 + v17 ; do { -- v20 ; * ( _BYTE * ) ( v16 + v19 ) = * ( _BYTE * ) ( v16 + v19 - 1 ) ; v20 [ 1 ] = * v20 ; -- v19 ; } while ( v19 > v5 ) ; v17 = 500 - ( _DWORD ) this ; } * ( _BYTE * ) ( v16 + v5 ) = 32 ; * v18 = 0 ; v18 += 25 ; v16 += 25 ; -- v24 ; } while ( v24 ) ; } } } else if ( v4 < v4 + v7 ) { v25 = v6 + v5 - 1 ; v8 = ( char * ) this + 25 * v4 ; v9 = v5 + v6 + 25 * v4 ; v10 = ( int ) this + v9 - 1 ; v11 = ( int ) ( this + v9 + 499 ) ; v22 = ( _BYTE * ) v10 ; v23 = * ( this + 2507 ) ; v21 = this + 20 * v4 + 5 * v4 + v5 + 500 ; v12 = v25 ; do { v13 = v5 ; if ( v5 < v12 ) { v14 = v21 ; do { ++ v14 ; v8 [ v13 ] = v8 [ v13 + 1 ] ; * ( v14 - 1 ) = * v14 ; v12 = v25 ; ++ v13 ; } while ( v13 < v25 ) ; } v11 += 100 ; * v22 = 32 ; v22 += 25 ; * ( _DWORD * ) ( v11 - 100 ) = 0 ; v8 += 25 ; v21 += 25 ; -- v23 ; } while ( v23 ) ; } return Text::DrawRepeated ( this , 0 , 0 , 80 , 25 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_5BCE10(int *this, int a2)
+{
+  char result; // al
+  int v4; // eax
+  int v5; // edx
+  int v6; // ebx
+  int v7; // ebp
+  char *v8; // edi
+  int v9; // ecx
+  int v10; // ebx
+  int v11; // ecx
+  int v12; // ebx
+  int v13; // eax
+  int *v14; // ebp
+  int v15; // ebp
+  int v16; // edi
+  int v17; // ebx
+  int *v18; // ecx
+  int v19; // eax
+  int *v20; // ebp
+  int *v21; // [esp+4h] [ebp-Ch]
+  _BYTE *v22; // [esp+8h] [ebp-8h]
+  int v23; // [esp+Ch] [ebp-4h]
+  int v24; // [esp+Ch] [ebp-4h]
+  int v25; // [esp+14h] [ebp+4h]
+  int v26; // [esp+14h] [ebp+4h]
+
+  result = MEMORY[0xABF23A];
+  if ( MEMORY[0xABF23A] )
+  {
+    v4 = *(this + 2505);
+    v5 = *(this + 2506);
+    v6 = *(this + 2508);
+    v7 = *(this + 2507);
+    if ( a2 <= 0 )
+    {
+      if ( a2 < 0 )
+      {
+        v15 = v4 + v7;
+        if ( v4 < v15 )
+        {
+          v26 = v6 + v5 - 1;
+          v16 = (int)this + 20 * v4 + 5 * v4;
+          v17 = 500 - (_DWORD)this;
+          v18 = this + 20 * v4 + 5 * v4 + v5 + 500;
+          v24 = v15 - v4;
+          do
+          {
+            v19 = v26;
+            if ( v26 > v5 )
+            {
+              v20 = this + v26 + v16 + v17;
+              do
+              {
+                --v20;
+                *(_BYTE *)(v16 + v19) = *(_BYTE *)(v16 + v19 - 1);
+                v20[1] = *v20;
+                --v19;
+              }
+              while ( v19 > v5 );
+              v17 = 500 - (_DWORD)this;
+            }
+            *(_BYTE *)(v16 + v5) = 32;
+            *v18 = 0;
+            v18 += 25;
+            v16 += 25;
+            --v24;
+          }
+          while ( v24 );
+        }
+      }
+    }
+    else if ( v4 < v4 + v7 )
+    {
+      v25 = v6 + v5 - 1;
+      v8 = (char *)this + 25 * v4;
+      v9 = v5 + v6 + 25 * v4;
+      v10 = (int)this + v9 - 1;
+      v11 = (int)(this + v9 + 499);
+      v22 = (_BYTE *)v10;
+      v23 = *(this + 2507);
+      v21 = this + 20 * v4 + 5 * v4 + v5 + 500;
+      v12 = v25;
+      do
+      {
+        v13 = v5;
+        if ( v5 < v12 )
+        {
+          v14 = v21;
+          do
+          {
+            ++v14;
+            v8[v13] = v8[v13 + 1];
+            *(v14 - 1) = *v14;
+            v12 = v25;
+            ++v13;
+          }
+          while ( v13 < v25 );
+        }
+        v11 += 100;
+        *v22 = 32;
+        v22 += 25;
+        *(_DWORD *)(v11 - 100) = 0;
+        v8 += 25;
+        v21 += 25;
+        --v23;
+      }
+      while ( v23 );
+    }
+    return Text::DrawRepeated(this, 0, 0, 80, 25);
+  }
+  return result;
+}
+
+/* ASM:
+mov     al, byte ptr dword_A8ED54+304E6h
+sub     esp, 0Ch
+test    al, al
+push    esi
+mov     esi, ecx
+jz      loc_5BCF83
+mov     ecx, [esp+10h+arg_0]
+mov     eax, [esi+2724h]
+mov     edx, [esi+2728h]
+push    ebx
+mov     ebx, [esi+2730h]
+push    ebp
+mov     ebp, [esi+272Ch]
+push    edi
+test    ecx, ecx
+jle     loc_5BCEF9
+lea     ecx, [eax+ebp]
+cmp     eax, ecx
+mov     [esp+1Ch+var_4], ecx
+jge     loc_5BCF71
+lea     ecx, [ebx+edx-1]
+mov     [esp+1Ch+arg_0], ecx
+lea     ecx, [eax+eax*4]
+lea     ecx, [ecx+ecx*4]
+lea     edi, [ecx+esi]
+add     ecx, ebx
+add     ecx, edx
+mov     [esp+1Ch+var_8], ecx
+lea     ebx, [ecx+esi-1]
+lea     ecx, [esi+ecx*4+7CCh]
+mov     [esp+1Ch+var_8], ebx
+lea     ebx, [eax+eax*4+64h]
+lea     ebp, [edx+ebx*4]
+add     ebx, ebp
+mov     ebp, [esp+1Ch+var_4]
+mov     [esp+1Ch+var_C], ebx
+sub     ebp, eax
+lea     ebx, [esi+ebx*4]
+mov     [esp+1Ch+var_4], ebp
+mov     [esp+1Ch+var_C], ebx
+mov     ebx, [esp+1Ch+arg_0]
+
+loc_5BCEA3:                             ; CODE XREF: sub_5BCE10+E5↓j
+cmp     edx, ebx
+mov     eax, edx
+jge     short loc_5BCEC6
+mov     ebp, [esp+1Ch+var_C]
+
+loc_5BCEAD:                             ; CODE XREF: sub_5BCE10+B4↓j
+mov     bl, [edi+eax+1]
+add     ebp, 4
+mov     [edi+eax], bl
+mov     ebx, [ebp+0]
+mov     [ebp-4], ebx
+mov     ebx, [esp+1Ch+arg_0]
+inc     eax
+cmp     eax, ebx
+jl      short loc_5BCEAD
+
+loc_5BCEC6:                             ; CODE XREF: sub_5BCE10+97↑j
+mov     eax, [esp+1Ch+var_8]
+mov     ebp, [esp+1Ch+var_C]
+add     ebp, 64h ; 'd'
+add     ecx, 64h ; 'd'
+mov     byte ptr [eax], 20h ; ' '
+add     eax, 19h
+mov     [esp+1Ch+var_8], eax
+mov     eax, [esp+1Ch+var_4]
+mov     dword ptr [ecx-64h], 0
+add     edi, 19h
+dec     eax
+mov     [esp+1Ch+var_C], ebp
+mov     [esp+1Ch+var_4], eax
+jnz     short loc_5BCEA3
+jmp     short loc_5BCF71
+; ---------------------------------------------------------------------------
+
+loc_5BCEF9:                             ; CODE XREF: sub_5BCE10+34↑j
+jge     short loc_5BCF71
+add     ebp, eax
+cmp     eax, ebp
+jge     short loc_5BCF71
+lea     ecx, [ebx+edx-1]
+lea     edi, [eax+eax*4]
+mov     [esp+1Ch+arg_0], ecx
+lea     ecx, [esi+edi*4]
+add     edi, ecx
+lea     ecx, [eax+eax*4+64h]
+lea     ebx, [edx+ecx*4]
+add     ecx, ebx
+mov     ebx, 1F4h
+sub     ebx, esi
+sub     ebp, eax
+lea     ecx, [esi+ecx*4]
+mov     [esp+1Ch+var_8], ebx
+mov     [esp+1Ch+var_4], ebp
+
+loc_5BCF2E:                             ; CODE XREF: sub_5BCE10+15F↓j
+mov     eax, [esp+1Ch+arg_0]
+cmp     eax, edx
+jle     short loc_5BCF56
+add     ebx, edi
+add     ebx, eax
+lea     ebp, [esi+ebx*4]
+
+loc_5BCF3D:                             ; CODE XREF: sub_5BCE10+140↓j
+mov     bl, [edi+eax-1]
+sub     ebp, 4
+mov     [edi+eax], bl
+mov     ebx, [ebp+0]
+mov     [ebp+4], ebx
+dec     eax
+cmp     eax, edx
+jg      short loc_5BCF3D
+mov     ebx, [esp+1Ch+var_8]
+
+loc_5BCF56:                             ; CODE XREF: sub_5BCE10+124↑j
+mov     eax, [esp+1Ch+var_4]
+mov     byte ptr [edi+edx], 20h ; ' '
+mov     dword ptr [ecx], 0
+add     ecx, 64h ; 'd'
+add     edi, 19h
+dec     eax
+mov     [esp+1Ch+var_4], eax
+jnz     short loc_5BCF2E
+
+loc_5BCF71:                             ; CODE XREF: sub_5BCE10+43↑j
+; sub_5BCE10+E7↑j ...
+push    19h             ; int
+push    50h ; 'P'       ; int
+push    0               ; int
+push    0               ; String
+mov     ecx, esi
+call    Text__DrawRepeated
+pop     edi
+pop     ebp
+pop     ebx
+
+loc_5BCF83:                             ; CODE XREF: sub_5BCE10+D↑j
+pop     esi
+add     esp, 0Ch
+retn    4
+*/
 }
 
 } // namespace gamemd

@@ -8,11 +8,326 @@ namespace gamemd {
 
 // 0x004270D0 (408 bytes)
 char AnimFileddtorHelper_4270D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004270D0.json)
-    // Size: 408 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   char __fastcall sub_4270D0 ( int a1, unsigned int a2, __int16 *a3, int a4, char *a5, int a6 ) { !signed int v7 ! ; // ecx void *v8 ; // ebx int v9 ; // ebp !char *v10 ! ; // esi !char *i ! ; // ebp !char v12 ! ; // al !unsigned int v13 ! ; // ecx char *v14 ; // edi !unsigned int v15 ! ; // esi !int v16 ! ; // eax char v17 ; // al char *v18 ; // edi !int v19 ! ; // eax char *v20 ; // edi void *v21 ; // [esp+14h] [ebp+4h] if ( ! a4 ) return 1 ; v7 = a4 - 2 ; v8 = a5 ; v9 = * a3 ; v10 = ( char * ) ( a3 + 1 ) ; v21 = a5 ; if ( a4 == 2 ) return 1 ; if ( v9 ) { if ( v9 == 1 && v7 >= 3 && v10 [ v7 - 3 ] == ( char ) 0x80 && ! v10 [ v7 - 2 ] && ! v10 [ v7 - 1 ] ) { for ( i = v10 ; ; i += a2 ) { while ( 1 ) { while ( 1 ) { while ( 1 ) { while ( 1 ) { v12 = * i ++ ; if ( v12 <= 0 ) break ; a2 = v12 ; v13 = ( unsigned int ) v12 >> 2 ; qmemcpy ( v8 , i , 4 * v13 ) ; v14 = ( char * ) v8 + 4 * v13 ; v8 = ( char * ) v8 + v12 ; v21 = v8 ; qmemcpy ( v14 , & i [ 4 * v13 ] , v12 & 3 ) ; i += v12 ; } if ( v12 ) break ; LOBYTE ( a2 ) = i [ 1 ] ; BYTE1 ( a2 ) = a2 ; v15 = ( unsigned __int8 ) * i ; v16 = a2 << 16 ; LOWORD ( v16 ) = a2 ; memset32 ( v8 , v16 , v15 >> 2 ) ; i += 2 ; memset ( ( char * ) v8 + 4 * ( v15 >> 2 ) , a2 , v15 & 3 ) ; v8 = ( char * ) v8 + v15 ; v21 = v8 ; } v17 = v12 + 0x80 ; if ( ! v17 ) break ; v8 = ( char * ) v8 + v17 ; v21 = v8 ; } a2 = * ( unsigned __int16 * ) i ; i += 2 ; if ( ( __int16 ) a2 <= 0 ) break ; LABEL_22 : v8 = ( char * ) v8 + a2 ; v21 = v8 ; } if ( ! a2 ) return 1 ; a2 -= 0x8000 ; if ( ( int ) a2 >= 0x4000 ) { v18 = ( char * ) v8 ; a2 -= 0x4000 ; LOBYTE ( v8 ) = * i ; BYTE1 ( v8 ) = * i ++ ; v19 = ( _DWORD ) v8 << 16 ; LOWORD ( v19 ) = ( _WORD ) v8 ; v8 = v21 ; memset32 ( v18 , v19 , a2 >> 2 ) ; memset ( & v18 [ 4 * ( a2 >> 2 ) ] , v19 , a2 & 3 ) ; goto LABEL_22 ; } qmemcpy ( v8 , i , 4 * ( a2 >> 2 ) ) ; v20 = ( char * ) v8 + 4 * ( a2 >> 2 ) ; v8 = ( char * ) v8 + a2 ; v21 = v8 ; qmemcpy ( v20 , & i [ 4 * ( a2 >> 2 ) ] , a2 & 3 ) ; } } return 0 ; } else if ( v7 == a6 ) { qmemcpy ( a5 , v10 , v7 ) ; return 1 ; } else { return 0 ; } }
+// [IDA decompile]
+char __fastcall sub_4270D0(int a1, unsigned int a2, __int16 *a3, int a4, char *a5, int a6)
+{
+  signed int v7; // ecx
+  void *v8; // ebx
+  int v9; // ebp
+  char *v10; // esi
+  char *i; // ebp
+  char v12; // al
+  unsigned int v13; // ecx
+  char *v14; // edi
+  unsigned int v15; // esi
+  int v16; // eax
+  char v17; // al
+  char *v18; // edi
+  int v19; // eax
+  char *v20; // edi
+  void *v21; // [esp+14h] [ebp+4h]
+
+  if ( !a4 )
+    return 1;
+  v7 = a4 - 2;
+  v8 = a5;
+  v9 = *a3;
+  v10 = (char *)(a3 + 1);
+  v21 = a5;
+  if ( a4 == 2 )
+    return 1;
+  if ( v9 )
+  {
+    if ( v9 == 1 && v7 >= 3 && v10[v7 - 3] == (char)0x80 && !v10[v7 - 2] && !v10[v7 - 1] )
+    {
+      for ( i = v10; ; i += a2 )
+      {
+        while ( 1 )
+        {
+          while ( 1 )
+          {
+            while ( 1 )
+            {
+              while ( 1 )
+              {
+                v12 = *i++;
+                if ( v12 <= 0 )
+                  break;
+                a2 = v12;
+                v13 = (unsigned int)v12 >> 2;
+                qmemcpy(v8, i, 4 * v13);
+                v14 = (char *)v8 + 4 * v13;
+                v8 = (char *)v8 + v12;
+                v21 = v8;
+                qmemcpy(v14, &i[4 * v13], v12 & 3);
+                i += v12;
+              }
+              if ( v12 )
+                break;
+              LOBYTE(a2) = i[1];
+              BYTE1(a2) = a2;
+              v15 = (unsigned __int8)*i;
+              v16 = a2 << 16;
+              LOWORD(v16) = a2;
+              memset32(v8, v16, v15 >> 2);
+              i += 2;
+              memset((char *)v8 + 4 * (v15 >> 2), a2, v15 & 3);
+              v8 = (char *)v8 + v15;
+              v21 = v8;
+            }
+            v17 = v12 + 0x80;
+            if ( !v17 )
+              break;
+            v8 = (char *)v8 + v17;
+            v21 = v8;
+          }
+          a2 = *(unsigned __int16 *)i;
+          i += 2;
+          if ( (__int16)a2 <= 0 )
+            break;
+LABEL_22:
+          v8 = (char *)v8 + a2;
+          v21 = v8;
+        }
+        if ( !a2 )
+          return 1;
+        a2 -= 0x8000;
+        if ( (int)a2 >= 0x4000 )
+        {
+          v18 = (char *)v8;
+          a2 -= 0x4000;
+          LOBYTE(v8) = *i;
+          BYTE1(v8) = *i++;
+          v19 = (_DWORD)v8 << 16;
+          LOWORD(v19) = (_WORD)v8;
+          v8 = v21;
+          memset32(v18, v19, a2 >> 2);
+          memset(&v18[4 * (a2 >> 2)], v19, a2 & 3);
+          goto LABEL_22;
+        }
+        qmemcpy(v8, i, 4 * (a2 >> 2));
+        v20 = (char *)v8 + 4 * (a2 >> 2);
+        v8 = (char *)v8 + a2;
+        v21 = v8;
+        qmemcpy(v20, &i[4 * (a2 >> 2)], a2 & 3);
+      }
+    }
     return 0;
+  }
+  else if ( v7 == a6 )
+  {
+    qmemcpy(a5, v10, v7);
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
+
+/* ASM:
+mov     ecx, [esp+arg_4]
+push    ebx
+push    ebp
+push    esi
+test    ecx, ecx
+push    edi
+jnz     short loc_4270E5
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_4270E5:                             ; CODE XREF: sub_4270D0+A↑j
+mov     esi, [esp+10h+arg_0]
+mov     edi, [esp+10h+arg_8]
+sub     ecx, 2
+mov     ebx, edi
+movsx   ebp, word ptr [esi]
+add     esi, 2
+mov     [esp+10h+arg_0], ebx
+test    ecx, ecx
+jnz     short loc_427109
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_427109:                             ; CODE XREF: sub_4270D0+2E↑j
+sub     ebp, 0
+mov     byte ptr [esp+10h+arg_4], 1
+jz      loc_427239
+dec     ebp
+jz      short loc_42712A
+
+loc_42711A:                             ; CODE XREF: sub_4270D0+5D↓j
+; sub_4270D0+64↓j ...
+pop     edi
+mov     byte ptr [esp+0Ch+arg_4], 0
+mov     al, byte ptr [esp+0Ch+arg_4]
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_42712A:                             ; CODE XREF: sub_4270D0+48↑j
+cmp     ecx, 3
+jl      short loc_42711A
+cmp     byte ptr [esi+ecx-3], 80h
+jnz     short loc_42711A
+mov     al, [esi+ecx-2]
+test    al, al
+jnz     short loc_42711A
+mov     al, [esi+ecx-1]
+test    al, al
+jnz     short loc_42711A
+mov     ebp, esi
+
+loc_427148:                             ; CODE XREF: sub_4270D0+9F↓j
+; sub_4270D0+D7↓j ...
+mov     al, [ebp+0]
+inc     ebp
+test    al, al
+jle     short loc_427171
+movsx   eax, al
+mov     ecx, eax
+mov     esi, ebp
+mov     edx, ecx
+mov     edi, ebx
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+add     ebx, eax
+and     ecx, 3
+mov     [esp+10h+arg_0], ebx
+rep movsb
+add     ebp, eax
+jmp     short loc_427148
+; ---------------------------------------------------------------------------
+
+loc_427171:                             ; CODE XREF: sub_4270D0+7E↑j
+jnz     short loc_4271A9
+xor     ecx, ecx
+xor     eax, eax
+mov     cl, [ebp+0]
+mov     al, [ebp+1]
+inc     ebp
+mov     dl, al
+mov     dh, dl
+mov     [esp+10h+arg_0], ecx
+mov     eax, edx
+mov     esi, ecx
+shl     eax, 10h
+mov     edi, ebx
+mov     ax, dx
+shr     ecx, 2
+rep stosd
+mov     ecx, esi
+inc     ebp
+and     ecx, 3
+rep stosb
+mov     eax, esi
+add     ebx, eax
+mov     [esp+10h+arg_0], ebx
+jmp     short loc_427148
+; ---------------------------------------------------------------------------
+
+loc_4271A9:                             ; CODE XREF: sub_4270D0:loc_427171↑j
+add     al, 80h
+jnz     short loc_42722B
+xor     edx, edx
+mov     dx, [ebp+0]
+add     ebp, 2
+test    dx, dx
+jg      short loc_4271FF
+test    edx, edx
+jz      loc_42725D
+sub     edx, 8000h
+cmp     edx, 4000h
+jl      short loc_42720A
+xor     eax, eax
+mov     edi, ebx
+mov     al, [ebp+0]
+sub     edx, 4000h
+mov     bl, al
+mov     ecx, edx
+mov     bh, bl
+mov     esi, ecx
+mov     eax, ebx
+inc     ebp
+shl     eax, 10h
+mov     ax, bx
+mov     ebx, [esp+10h+arg_0]
+shr     ecx, 2
+rep stosd
+mov     ecx, esi
+and     ecx, 3
+rep stosb
+
+loc_4271FF:                             ; CODE XREF: sub_4270D0+E9↑j
+add     ebx, edx
+mov     [esp+10h+arg_0], ebx
+jmp     loc_427148
+; ---------------------------------------------------------------------------
+
+loc_42720A:                             ; CODE XREF: sub_4270D0+FF↑j
+mov     ecx, edx
+mov     esi, ebp
+mov     eax, ecx
+mov     edi, ebx
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+add     ebx, edx
+and     ecx, 3
+mov     [esp+10h+arg_0], ebx
+rep movsb
+add     ebp, edx
+jmp     loc_427148
+; ---------------------------------------------------------------------------
+
+loc_42722B:                             ; CODE XREF: sub_4270D0+DB↑j
+movsx   ecx, al
+add     ebx, ecx
+mov     [esp+10h+arg_0], ebx
+jmp     loc_427148
+; ---------------------------------------------------------------------------
+
+loc_427239:                             ; CODE XREF: sub_4270D0+41↑j
+cmp     ecx, [esp+10h+arg_C]
+jz      short loc_42724F
+pop     edi
+mov     byte ptr [esp+0Ch+arg_4], 0
+mov     al, byte ptr [esp+0Ch+arg_4]
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_42724F:                             ; CODE XREF: sub_4270D0+16D↑j
+mov     edx, ecx
+shr     ecx, 2
+rep movsd
+mov     ecx, edx
+and     ecx, 3
+rep movsb
+
+loc_42725D:                             ; CODE XREF: sub_4270D0+ED↑j
+mov     al, byte ptr [esp+10h+arg_4]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+retn    10h
+*/
 }
 
 } // namespace gamemd

@@ -293,8 +293,22 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // 0x4c1a90
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-    RectangleStruct zero = {};
-    return Blit(zero, zero, src, zero, zero, option1, option2);
+// [IDA decompile]
+int __stdcall DSurface_BlitWhole(int a1, int a2, int a3)
+{
+  return XSurface::BlitWhole(a1, a2, a3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_8]
+mov     edx, [esp+arg_4]
+push    eax
+mov     eax, [esp+4+arg_0]
+push    edx
+push    eax
+call    XSurface__BlitWhole
+retn    0Ch
+*/
 }
 
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
@@ -774,9 +788,36 @@ REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 // 0x4bb5f0
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-    RectangleStruct clip;
-    GetRect(&clip);
-    return FillRectEx(clip, fill_rect, color);
+// [IDA decompile]
+char __thiscall DSurface_FillRect(int *this, int a2, int a3)
+{
+  int v4; // eax
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+
+  v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6);
+  return DSurface::FillRectEx(this, v4, a2, a3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+14h+arg_0]
+push    eax
+mov     edx, [esi]
+lea     eax, [esp+18h+var_10]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+78h]
+push    eax
+mov     ecx, esi
+call    DSurface__FillRectEx
+pop     esi
+add     esp, 10h
+retn    8
+*/
 }
 
 // IDA: 0x4BB830 — DSurface::FillRectWithFlags (711B)
@@ -969,45 +1010,130 @@ REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 // 0x4baf40
 bool DSurface::Unlock()
 {
-    // IDA: check DDraw state (OR: proceed if either initialized or active)
-    if (g_DDraw_Initialized || g_DDraw_Active)
+// [IDA decompile]
+char __thiscall DSurface_Unlock(int *this)
+{
+  int v2; // eax
+  int v3; // edi
+  int v4; // edx
+  int v5; // eax
+  int v6; // eax
+
+  if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] )
+  {
+    v2 = *(this + 7);
+    if ( v2 )
     {
-        // IDA: Lost surface detection on unlock
-        if (Surface && Surface->IsLost() == DDERR_SURFACELOST)
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(*(this + 7)) == -2005532222
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7))
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+      {
+        v3 = *(this + 3);
+        if ( v3 > 0 )
         {
-            // IDA: if Restore succeeds AND surface no longer lost
-            if (SUCCEEDED(Surface->Restore()) && Surface->IsLost() == DD_OK)
-            {
-                // IDA: save LockCount, set 0, cycle Lock(0,0)+Unlock(), restore
-                int saved = LockCount;
-                if (saved > 0)
-                {
-                    LockCount = 0;
-                    Lock(0, 0);          // vtable[23]: re-acquire DDraw after Restore
-                    ++LockCount;
-                    Unlock();            // vtable[24]: recursive — decrements, doesn't release DDraw
-                    LockCount = saved;
-                }
-            }
+          v4 = *this;
+          *(this + 3) = 0;
+          (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v4 + 92))(this, 0, 0);
+          ++*(this + 3);
+          (*(void (__thiscall **)(int *))(*this + 96))(this);
+          *(this + 3) = v3;
         }
+      }
     }
+  }
+  v5 = *(this + 3);
+  if ( v5 <= 0 )
+    return 0;
+  v6 = v5 - 1;
+  *(this + 3) = v6;
+  if ( !v6 )
+  {
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 7) + 128))(*(this + 7), *(this + 5));
+    *(this + 5) = 0;
+  }
+  return 1;
+}
 
-    // IDA: decrement lock count
-    if (LockCount <= 0)
-        return false;
+/* ASM:
+mov     al, ds:89F978h
+push    esi
+test    al, al
+push    edi
+mov     esi, ecx
+jnz     short loc_4BAF56
+mov     al, byte ptr dword_A8ED54+2Ch
+test    al, al
+jz      short loc_4BAFAA
 
-    int new_count = LockCount - 1;
-    LockCount = new_count;
+loc_4BAF56:                             ; CODE XREF: DSurface__Unlock+B↑j
+mov     eax, [esi+1Ch]
+test    eax, eax
+jz      short loc_4BAFAA
+mov     ecx, [eax]
+push    eax
+call    dword ptr [ecx+60h]
+cmp     eax, 887601C2h
+jnz     short loc_4BAFAA
+mov     eax, [esi+1Ch]
+push    eax
+mov     edx, [eax]
+call    dword ptr [edx+6Ch]
+test    eax, eax
+jnz     short loc_4BAFAA
+mov     eax, [esi+1Ch]
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+60h]
+test    eax, eax
+jnz     short loc_4BAFAA
+mov     edi, [esi+0Ch]
+test    edi, edi
+jle     short loc_4BAFAA
+mov     edx, [esi]
+xor     ecx, ecx
+push    ecx
+push    eax
+mov     ecx, esi
+mov     [esi+0Ch], eax
+call    dword ptr [edx+5Ch]
+mov     eax, [esi+0Ch]
+mov     ecx, esi
+inc     eax
+mov     [esi+0Ch], eax
+mov     eax, [esi]
+call    dword ptr [eax+60h]
+mov     [esi+0Ch], edi
 
-    // IDA: last unlock → release DDraw surface via IDDS7::Unlock(vtable[32]=0x80)
-    if (new_count == 0)
-    {
-        if (Surface)
-            Surface->Unlock(nullptr);
-        LockedSurface = nullptr;
-    }
+loc_4BAFAA:                             ; CODE XREF: DSurface__Unlock+14↑j
+; DSurface__Unlock+1B↑j ...
+mov     eax, [esi+0Ch]
+test    eax, eax
+jle     short loc_4BAFD5
+dec     eax
+test    eax, eax
+mov     [esi+0Ch], eax
+jnz     short loc_4BAFD0
+mov     eax, [esi+1Ch]
+mov     edx, [esi+14h]
+push    edx
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+80h]
+mov     dword ptr [esi+14h], 0
 
-    return true;
+loc_4BAFD0:                             ; CODE XREF: DSurface__Unlock+77↑j
+pop     edi
+mov     al, 1
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4BAFD5:                             ; CODE XREF: DSurface__Unlock+6F↑j
+pop     edi
+xor     al, al
+pop     esi
+retn
+*/
 }
 
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
@@ -1016,25 +1142,69 @@ REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 // 0x4baec0
 bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
-    // IDA: already locked — can always lock again (nested)
-    if (LockCount > 0)
-        return true;
+// [IDA decompile]
+char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
+{
+  int v4; // eax
+  _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
 
-    if (!Surface)
-        return false;
+  if ( !*(this + 3) )
+  {
+    memset(v6, 0, sizeof(v6));
+    v4 = *(this + 7);
+    v6[0] = 108;
+    if ( (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v4 + 100))(v4, 0, v6, 0, 0) )
+      return 0;
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 7) + 128))(*(this + 7), v6[9]);
+  }
+  return 1;
+}
 
-    DDSURFACEDESC2 desc = {};
-    desc.dwSize = sizeof(desc);
+/* ASM:
+sub     esp, 6Ch
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0Ch]
+test    eax, eax
+jnz     short loc_4BAF16
+push    edi
+mov     ecx, 1Bh
+xor     eax, eax
+lea     edi, [esp+74h+var_6C]
+rep stosd
+mov     eax, [esi+1Ch]
+push    0
+lea     edx, [esp+78h+var_6C]
+push    0
+mov     [esp+7Ch+var_6C], 6Ch ; 'l'
+mov     ecx, [eax]
+push    edx
+push    0
+push    eax
+call    dword ptr [ecx+64h]
+test    eax, eax
+pop     edi
+jz      short loc_4BAF05
+xor     al, al
+pop     esi
+add     esp, 6Ch
+retn    8
+; ---------------------------------------------------------------------------
 
-    // IDA: Lock with flags=0 (no DDLOCK_WAIT) — non-blocking test probe
-    HRESULT hr = Surface->Lock(nullptr, &desc, 0, nullptr);
-    if (FAILED(hr))
-        return false;
+loc_4BAF05:                             ; CODE XREF: DSurface__CanLock+3A↑j
+mov     esi, [esi+1Ch]
+mov     ecx, [esp+70h+var_48]
+push    ecx
+push    esi
+mov     eax, [esi]
+call    dword ptr [eax+80h]
 
-    // IDA: immediately unlock after successful probe
-    // vtable[32]=0x80: IDirectDrawSurface7::Unlock
-    Surface->Unlock(nullptr);
-    return true;
+loc_4BAF16:                             ; CODE XREF: DSurface__CanLock+B↑j
+mov     al, 1
+pop     esi
+add     esp, 6Ch
+retn    8
+*/
 }
 
 int DSurface::GetPitch() const
@@ -1055,11 +1225,23 @@ int DSurface::GetPitch() const
 // 0x4baf20
 bool DSurface::CheckBltStatus()
 {
-    // IDA: (*(*(this+7) + 52))(*(this+7), 1) == 0
-    // vtable offset 52/4 = 13 = GetBltStatus
-    if (!Surface)
-        return true;
-    return SUCCEEDED(Surface->GetBltStatus(DDGBS_ISBLTDONE));
+// [IDA decompile]
+BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
+{
+  return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0;
+}
+
+/* ASM:
+mov     eax, [ecx+1Ch]
+push    1
+push    eax
+mov     ecx, [eax]
+call    dword ptr [ecx+34h]
+neg     eax
+sbb     eax, eax
+inc     eax
+retn
+*/
 }
 
 void* BSurface::Lock(int x, int y)
@@ -1186,17 +1368,71 @@ REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 // 0x7baeb0
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
-    void* buf = Lock(point.X, point.Y);
-    if (!buf)
-        return false;
+// [IDA decompile]
+char __thiscall XSurface_SetPixel(void *this, _DWORD *a2, __int16 a3)
+{
+  _WORD *v4; // edi
 
-    if (GetBytesPerPixel() == 2)
-        *(uint16_t*)(buf) = (uint16_t)(color);
-    else
-        *(uint8_t*)(buf) = (uint8_t)(color);
+  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  if ( !v4 )
+    return 0;
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+    *v4 = a3;
+  else
+    *(_BYTE *)v4 = a3;
+  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+  return 1;
+}
 
-    Unlock();
-    return true;
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, [eax+4]
+mov     eax, [eax]
+mov     edx, [esi]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+5Ch]
+mov     edi, eax
+test    edi, edi
+jz      short loc_7BAF02
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+70h]
+cmp     eax, 2
+jnz     short loc_7BAEEE
+mov     ax, [esp+8+arg_4]
+mov     ecx, esi
+mov     [edi], ax
+mov     edx, [esi]
+call    dword ptr [edx+60h]
+pop     edi
+mov     al, 1
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_7BAEEE:                             ; CODE XREF: XSurface__SetPixel+26↑j
+mov     cl, byte ptr [esp+8+arg_4]
+mov     [edi], cl
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+60h]
+pop     edi
+mov     al, 1
+pop     esi
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_7BAF02:                             ; CODE XREF: XSurface__SetPixel+1A↑j
+pop     edi
+xor     al, al
+pop     esi
+retn    8
+*/
 }
 
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
@@ -1205,19 +1441,75 @@ REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 // 0x7bae60
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
-    uint32_t result = 0;
+// [IDA decompile]
+int __thiscall XSurface_GetPixel(void *this, _DWORD *a2)
+{
+  int v3; // ebx
+  _WORD *v4; // edi
 
-    void* buf = Lock(point.X, point.Y);
-    if (!buf)
-        return result;
+  v3 = 0;
+  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  if ( v4 )
+  {
+    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+    {
+      LOWORD(v3) = *v4;
+      (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+      return v3;
+    }
+    v3 = *(unsigned __int8 *)v4;
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+  }
+  return v3;
+}
 
-    if (GetBytesPerPixel() == 2)
-        result = *(uint16_t*)(buf);
-    else
-        result = *(uint8_t*)(buf);
+/* ASM:
+mov     eax, [esp+arg_0]
+push    ebx
+push    esi
+mov     esi, ecx
+mov     ecx, [eax+4]
+mov     eax, [eax]
+mov     edx, [esi]
+push    edi
+push    ecx
+push    eax
+mov     ecx, esi
+xor     ebx, ebx
+call    dword ptr [edx+5Ch]
+mov     edi, eax
+test    edi, edi
+jz      short loc_7BAEA8
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+70h]
+cmp     eax, 2
+jnz     short loc_7BAE9D
+mov     eax, [esi]
+mov     bx, [edi]
+mov     ecx, esi
+call    dword ptr [eax+60h]
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
 
-    Unlock();
-    return result;
+loc_7BAE9D:                             ; CODE XREF: XSurface__GetPixel+29↑j
+mov     eax, [esi]
+xor     ebx, ebx
+mov     bl, [edi]
+mov     ecx, esi
+call    dword ptr [eax+60h]
+
+loc_7BAEA8:                             ; CODE XREF: XSurface__GetPixel+1D↑j
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    4
+*/
 }
 
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
@@ -1226,26 +1518,103 @@ REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
 // 0x7baf90
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
-    if (point.X < clip_rect.X)
-        return false;
-    if (point.X >= clip_rect.X + clip_rect.Width)
-        return false;
-    if (point.Y < clip_rect.Y)
-        return false;
-    if (point.Y >= clip_rect.Y + clip_rect.Height)
-        return false;
+// [IDA decompile]
+char __thiscall XSurface_PutPixel(void *this, _DWORD *a2, __int16 a3, _DWORD *a4)
+{
+  int v5; // ecx
+  int v6; // edx
+  _WORD *v7; // esi
 
-    void* buf = Lock(point.X, point.Y);
-    if (!buf)
-        return false;
+  if ( *a2 < *a4 )
+    return 0;
+  if ( *a2 >= *a4 + a4[2] )
+    return 0;
+  v5 = a2[1];
+  v6 = a4[1];
+  if ( v5 < v6 )
+    return 0;
+  if ( v5 >= v6 + a4[3] )
+    return 0;
+  v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  if ( !v7 )
+    return 0;
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+    *v7 = a3;
+  else
+    *(_BYTE *)v7 = a3;
+  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+  return 1;
+}
 
-    if (GetBytesPerPixel() == 2)
-        *(uint16_t*)(buf) = color;
-    else
-        *(uint8_t*)(buf) = (uint8_t)(color);
+/* ASM:
+mov     eax, [esp+arg_8]
+push    esi
+mov     esi, [esp+4+arg_0]
+push    edi
+mov     edx, [eax]
+mov     edi, ecx
+mov     ecx, [esi]
+cmp     ecx, edx
+jl      short loc_7BB00B
+push    ebx
+mov     ebx, [eax+8]
+add     ebx, edx
+cmp     ecx, ebx
+pop     ebx
+jge     short loc_7BB00B
+mov     ecx, [esi+4]
+mov     edx, [eax+4]
+cmp     ecx, edx
+jl      short loc_7BB00B
+mov     eax, [eax+0Ch]
+add     eax, edx
+cmp     ecx, eax
+jge     short loc_7BB00B
+mov     edx, [edi]
+mov     eax, ecx
+mov     ecx, [esi]
+push    eax
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+5Ch]
+mov     esi, eax
+test    esi, esi
+jz      short loc_7BB00B
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+70h]
+cmp     eax, 2
+jnz     short loc_7BAFF7
+mov     ax, [esp+8+arg_4]
+mov     ecx, edi
+mov     [esi], ax
+mov     edx, [edi]
+call    dword ptr [edx+60h]
+pop     edi
+mov     al, 1
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
 
-    Unlock();
-    return true;
+loc_7BAFF7:                             ; CODE XREF: XSurface__PutPixel+4F↑j
+mov     cl, byte ptr [esp+8+arg_4]
+mov     [esi], cl
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+60h]
+pop     edi
+mov     al, 1
+pop     esi
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_7BB00B:                             ; CODE XREF: XSurface__PutPixel+12↑j
+; XSurface__PutPixel+1D↑j ...
+pop     edi
+xor     al, al
+pop     esi
+retn    0Ch
+*/
 }
 
 // IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
@@ -1254,28 +1623,104 @@ REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
 // 0x7baf10
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
-    uint16_t result = 0;
+// [IDA decompile]
+int __thiscall XSurface_GetPixelAtCoords(void *this, _DWORD *a2, _DWORD *a3)
+{
+  int v4; // ebx
+  int v5; // eax
+  int v6; // edx
+  _WORD *v7; // esi
 
-    if (point.X < clip_rect.X)
-        return result;
-    if (point.X >= clip_rect.X + clip_rect.Width)
-        return result;
-    if (point.Y < clip_rect.Y)
-        return result;
-    if (point.Y >= clip_rect.Y + clip_rect.Height)
-        return result;
+  v4 = 0;
+  if ( *a2 >= *a3 && *a2 < *a3 + a3[2] )
+  {
+    v5 = a2[1];
+    v6 = a3[1];
+    if ( v5 >= v6 && v5 < v6 + a3[3] )
+    {
+      v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+      if ( v7 )
+      {
+        if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+        {
+          LOWORD(v4) = *v7;
+          (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+          return v4;
+        }
+        v4 = *(unsigned __int8 *)v7;
+        (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+      }
+    }
+  }
+  return v4;
+}
 
-    void* buf = Lock(point.X, point.Y);
-    if (!buf)
-        return result;
+/* ASM:
+push    ebx
+push    esi
+mov     esi, [esp+8+arg_0]
+push    edi
+mov     edi, ecx
+xor     ebx, ebx
+mov     ecx, [esp+0Ch+arg_4]
+mov     eax, [esi]
+mov     edx, [ecx]
+cmp     eax, edx
+jl      short loc_7BAF7F
+push    ebp
+mov     ebp, [ecx+8]
+add     ebp, edx
+cmp     eax, ebp
+pop     ebp
+jge     short loc_7BAF7F
+mov     eax, [esi+4]
+mov     edx, [ecx+4]
+cmp     eax, edx
+jl      short loc_7BAF7F
+mov     ecx, [ecx+0Ch]
+add     ecx, edx
+cmp     eax, ecx
+jge     short loc_7BAF7F
+mov     ecx, [esi]
+mov     edx, [edi]
+push    eax
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+5Ch]
+mov     esi, eax
+test    esi, esi
+jz      short loc_7BAF7F
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+70h]
+cmp     eax, 2
+jnz     short loc_7BAF74
+mov     eax, [edi]
+mov     bx, [esi]
+mov     ecx, edi
+call    dword ptr [eax+60h]
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    8
+; ---------------------------------------------------------------------------
 
-    if (GetBytesPerPixel() == 2)
-        result = *(uint16_t*)(buf);
-    else
-        result = *(uint8_t*)(buf);
+loc_7BAF74:                             ; CODE XREF: XSurface__GetPixelAtCoords+50↑j
+mov     eax, [edi]
+xor     ebx, ebx
+mov     bl, [esi]
+mov     ecx, edi
+call    dword ptr [eax+60h]
 
-    Unlock();
-    return result;
+loc_7BAF7F:                             ; CODE XREF: XSurface__GetPixelAtCoords+15↑j
+; XSurface__GetPixelAtCoords+20↑j ...
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn    8
+*/
 }
 
 // --- XSurface line drawing (Batch B) ---
@@ -1533,9 +1978,38 @@ bool XSurface::DrawLineEx(
 // 0x7ba5e0
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
-    RectangleStruct clip;
-    GetRect(&clip);
-    return DrawLineEx(clip, start, end, color);
+// [IDA decompile]
+char __thiscall XSurface_DrawLine(void *this, _DWORD *a2, _DWORD *a3, __int16 a4)
+{
+  int v5; // eax
+  _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
+
+  v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7);
+  return XSurface::DrawLineEx(this, v5, a2, a3, a4);
+}
+
+/* ASM:
+mov     eax, [esp+arg_8]
+sub     esp, 10h
+mov     edx, [esp+10h+arg_0]
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+14h+arg_4]
+push    eax
+mov     eax, [esi]
+push    ecx
+lea     ecx, [esp+1Ch+var_10]
+push    edx
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+78h]
+push    eax
+mov     ecx, esi
+call    XSurface__DrawLineEx
+pop     esi
+add     esp, 10h
+retn    0Ch
+*/
 }
 
 // IDA: 0x7BA8C0 -- XSurface::DrawDashedLine (621B)
@@ -1725,9 +2199,47 @@ REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 // 0x7bbab0
 bool XSurface::Fill(uint32_t color)
 {
-    RectangleStruct rect;
-    GetRect(&rect);
-    return FillRectEx(rect, rect, color);
+// [IDA decompile]
+int __thiscall XSurface_Fill(int *this, int a2)
+{
+  int v3; // edi
+  int v4; // eax
+  int v5; // eax
+  _BYTE v7[20]; // [esp+8h] [ebp-20h] BYREF
+  _BYTE v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
+
+  v3 = *this;
+  v4 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v7, a2);
+  v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4);
+  return (*(int (__thiscall **)(int *, int))(v3 + 16))(this, v5);
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+sub     esp, 20h
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+28h+var_20]
+mov     edi, [esi]
+push    eax
+push    ecx
+mov     ecx, esi
+call    dword ptr [edi+78h]
+mov     edx, [esi]
+push    eax
+lea     eax, [esp+2Ch+var_C]
+mov     ecx, esi
+push    eax
+call    dword ptr [edx+78h]
+push    eax
+mov     ecx, esi
+call    dword ptr [edi+10h]
+pop     edi
+pop     esi
+add     esp, 20h
+retn    4
+*/
 }
 
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
@@ -1755,9 +2267,36 @@ bool XSurface::DrawRectEx(
 // 0x7bad90
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
-    RectangleStruct clip;
-    GetRect(&clip);
-    return DrawRectEx(clip, draw_rect, color);
+// [IDA decompile]
+char __thiscall XSurface_DrawRect(void *this, _DWORD *a2, int a3)
+{
+  int v4; // eax
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+
+  v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  return XSurface::DrawRectEx(this, v4, a2, a3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+14h+arg_0]
+push    eax
+mov     edx, [esi]
+lea     eax, [esp+18h+var_10]
+push    ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+78h]
+push    eax
+mov     ecx, esi
+call    XSurface__DrawRectEx
+pop     esi
+add     esp, 10h
+retn    8
+*/
 }
 
 // IDA: 0x7BB350 -- XSurface::DrawEllipseOutline (1478B)
@@ -1841,9 +2380,35 @@ REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
 // 0x7bb020
 bool XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-    RectangleStruct clip;
-    GetRect(&clip);
-    return FillRectEx(clip, fill_rect, color);
+// [IDA decompile]
+char __thiscall XSurface_FillRect(void *this, _DWORD *a2, int a3)
+{
+  int *v4; // eax
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+
+  v4 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  return XSurface::FillRectEx(this, a2, v4, a3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+sub     esp, 10h
+push    esi
+mov     esi, ecx
+push    eax
+lea     eax, [esp+18h+var_10]
+mov     edx, [esi]
+push    eax
+call    dword ptr [edx+78h]
+mov     ecx, [esp+18h+arg_0]
+push    eax
+push    ecx
+mov     ecx, esi
+call    XSurface__FillRectEx
+pop     esi
+add     esp, 10h
+retn    8
+*/
 }
 
 // IDA: 0x7BB050 -- XSurface::FillRectEx (748B)
@@ -1984,18 +2549,102 @@ REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
 // 0x7bbaf0
 bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
-    RectangleStruct dst_r;
-    GetRect(&dst_r);
-    // Set origin to (0,0) — blit covers entire surface
-    int dst_clip[4] = { 0, 0, dst_r.Width, dst_r.Height };
+// [IDA decompile]
+int __thiscall XSurface_BlitWhole(int *this, int *a2, int a3, int a4)
+{
+  int *v5; // eax
+  int v6; // edx
+  int v7; // eax
+  int *v8; // eax
+  int v9; // edx
+  int v10; // eax
+  int v12; // [esp+Ch] [ebp-30h] BYREF
+  int v13; // [esp+10h] [ebp-2Ch]
+  int v14; // [esp+14h] [ebp-28h]
+  int v15; // [esp+18h] [ebp-24h]
+  int v16; // [esp+1Ch] [ebp-20h] BYREF
+  int v17; // [esp+20h] [ebp-1Ch]
+  int v18; // [esp+24h] [ebp-18h]
+  int v19; // [esp+28h] [ebp-14h]
+  _BYTE v20[16]; // [esp+2Ch] [ebp-10h] BYREF
 
-    RectangleStruct src_r;
-    src->GetRect(&src_r);
-    int src_clip[4] = { 0, 0, src_r.Width, src_r.Height };
+  v5 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v20);
+  v16 = *v5;
+  v17 = v5[1];
+  v18 = v5[2];
+  v6 = *a2;
+  v7 = v5[3];
+  v16 = 0;
+  v19 = v7;
+  v17 = 0;
+  v8 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(v6 + 120))(a2, v20);
+  v12 = *v8;
+  v13 = v8[1];
+  v14 = v8[2];
+  v9 = v8[3];
+  v10 = *this;
+  v15 = v9;
+  v12 = 0;
+  v13 = 0;
+  return (*(int (__thiscall **)(int *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, a2, &v12, a3, a4);
+}
 
-    RectangleStruct dr = { dst_clip[0], dst_clip[1], dst_clip[2], dst_clip[3] };
-    RectangleStruct sr = { src_clip[0], src_clip[1], src_clip[2], src_clip[3] };
-    return Blit(dr, sr, src, dr, sr, option1, option2);
+/* ASM:
+sub     esp, 30h
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+3Ch+var_10]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+78h]
+mov     edx, [eax]
+mov     edi, [esp+3Ch+arg_0]
+mov     [esp+3Ch+var_20], edx
+xor     ebx, ebx
+mov     ecx, [eax+4]
+mov     [esp+3Ch+var_1C], ecx
+mov     ecx, edi
+mov     edx, [eax+8]
+mov     [esp+3Ch+var_18], edx
+mov     edx, [edi]
+mov     eax, [eax+0Ch]
+mov     [esp+3Ch+var_20], ebx
+mov     [esp+3Ch+var_14], eax
+lea     eax, [esp+3Ch+var_10]
+push    eax
+mov     [esp+40h+var_1C], ebx
+call    dword ptr [edx+78h]
+mov     ecx, [eax]
+mov     [esp+3Ch+var_30], ecx
+mov     edx, [eax+4]
+mov     [esp+3Ch+var_2C], edx
+mov     ecx, [eax+8]
+mov     [esp+3Ch+var_28], ecx
+mov     ecx, [esp+3Ch+arg_8]
+mov     edx, [eax+0Ch]
+mov     eax, [esi]
+mov     [esp+3Ch+var_24], edx
+mov     edx, [esp+3Ch+arg_4]
+push    ecx
+lea     ecx, [esp+40h+var_30]
+push    edx
+push    ecx
+lea     edx, [esp+48h+var_20]
+push    edi
+push    edx
+mov     ecx, esi
+mov     [esp+50h+var_30], ebx
+mov     [esp+50h+var_2C], ebx
+call    dword ptr [eax+8]
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 30h
+retn    0Ch
+*/
 }
 
 // IDA: 0x7BBB90 -- XSurface::BlitPart (339B)

@@ -8,362 +8,4808 @@ namespace gamemd {
 
 // 0x00568140 (446 bytes)
 int CallZCoordToScreenY_568140() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00568140.json)
-    // Size: 446 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_568140 ( int *a1, int a2 ) { int v2 ; // esi int v3 ; // edi !int v4 ! ; // ebx int v5 ; // eax int v6 ; // esi int v7 ; // eax int v8 ; // ecx int v9 ; // edx int v10 ; // edi int result ; // eax !int v12 ! ; // esi !int v13 ! ; // ebp !unsigned int v14 ! ; // eax _DWORD *v15 ; // ecx _DWORD *v16 ; // ecx _DWORD *v17 ; // ecx _DWORD *v18 ; // eax __int16 v19 ; // [esp+14h] [ebp-8h] __int16 v20 ; // [esp+16h] [ebp-6h] !int v21 ! ; // [esp+20h] [ebp+4h] v2 = * a1 ; v3 = a1 [ 1 ] ; v4 = a1 [ 2 ] ; v5 = ZCoordToScreenY ( v4 ) ; v6 = ( ( ( ( unsigned int ) ( ( ( unsigned __int64 ) ( 2004318071LL * v5 ) >> 32 ) - v5 ) >> 31 ) + ( ( int ) ( ( ( unsigned __int64 ) ( 2004318071LL * v5 ) >> 32 ) - v5 ) >> 4 ) ) << 8 ) + v2 ; v7 = ZCoordToScreenY ( v4 ) ; v8 = a2 ; v19 = v6 / 256 ; v9 = -2 - a2 ; v20 = ( int ) ( ( ( ( ( unsigned int ) ( ( ( unsigned __int64 ) ( 2004318071LL * v7 ) >> 32 ) - v7 ) >> 31 ) + ( ( int ) ( ( ( unsigned __int64 ) ( 2004318071LL * v7 ) >> 32 ) - v7 ) >> 4 ) ) << 8 ) + v3 ) / 256 ; v10 = -2 - a2 ; for ( result = a2 + 2 ; v10 < result ; ++ v10 ) { if ( v9 < result ) { v12 = v10 * v10 ; v13 = ( v8 + 1 ) * ( v8 + 1 ) ; do { if ( v12 + v9 * v9 < v13 ) { LOWORD ( v21 ) = v10 + v19 ; HIWORD ( v21 ) = v9 + v20 ; v14 = ( ( __int16 ) ( v9 + v20 ) << 9 ) + ( __int16 ) ( v10 + v19 ) ; if ( v14 >= 0x40000 || ( v15 = * ( _DWORD ** ) ( g_Shroud_CellArray + 4 * v14 ) ) == 0 ) { g_Map_GlobalCellIndex = v21 ; v15 = g_CellClassArray ; } v15 [ 76 ] = 0 ; if ( v14 >= 0x40000 || ( v16 = * ( _DWORD ** ) ( g_Shroud_CellArray + 4 * v14 ) ) == 0 ) { g_Map_GlobalCellIndex = v21 ; v16 = g_CellClassArray ; } v16 [ 77 ] = 0 ; if ( v14 >= 0x40000 || ( v17 = * ( _DWORD ** ) ( g_Shroud_CellArray + 4 * v14 ) ) == 0 ) { g_Map_GlobalCellIndex = v21 ; v17 = g_CellClassArray ; } v17 [ 75 ] |= 0x10u ; if ( v14 >= 0x40000 || ( v18 = * ( _DWORD ** ) ( g_Shroud_CellArray + 4 * v14 ) ) == 0 ) { g_Map_GlobalCellIndex = v21 ; v18 = g_CellClassArray ; } v12 = v10 * v10 ; v18 [ 75 ] |= 8u ; v8 = a2 ; } ++ v9 ; result = v8 + 2 ; } while ( v9 < v8 + 2 ) ; v9 = -2 - a2 ; } } return result ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_568140(int *a1, int a2)
+{
+  int v2; // esi
+  int v3; // edi
+  int v4; // ebx
+  int v5; // eax
+  int v6; // esi
+  int v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  int v10; // edi
+  int result; // eax
+  int v12; // esi
+  int v13; // ebp
+  unsigned int v14; // eax
+  _DWORD *v15; // ecx
+  _DWORD *v16; // ecx
+  _DWORD *v17; // ecx
+  _DWORD *v18; // eax
+  __int16 v19; // [esp+14h] [ebp-8h]
+  __int16 v20; // [esp+16h] [ebp-6h]
+  int v21; // [esp+20h] [ebp+4h]
+
+  v2 = *a1;
+  v3 = a1[1];
+  v4 = a1[2];
+  v5 = ZCoordToScreenY(v4);
+  v6 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 31)
+       + ((int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 4)) << 8)
+     + v2;
+  v7 = ZCoordToScreenY(v4);
+  v8 = a2;
+  v19 = v6 / 256;
+  v9 = -2 - a2;
+  v20 = (int)(((((unsigned int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 31)
+              + ((int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 4)) << 8)
+            + v3)
+      / 256;
+  v10 = -2 - a2;
+  for ( result = a2 + 2; v10 < result; ++v10 )
+  {
+    if ( v9 < result )
+    {
+      v12 = v10 * v10;
+      v13 = (v8 + 1) * (v8 + 1);
+      do
+      {
+        if ( v12 + v9 * v9 < v13 )
+        {
+          LOWORD(v21) = v10 + v19;
+          HIWORD(v21) = v9 + v20;
+          v14 = ((__int16)(v9 + v20) << 9) + (__int16)(v10 + v19);
+          if ( v14 >= 0x40000 || (v15 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 )
+          {
+            MEMORY[0xABDC74] = v21;
+            v15 = MEMORY[0xABDC50];
+          }
+          v15[76] = 0;
+          if ( v14 >= 0x40000 || (v16 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 )
+          {
+            MEMORY[0xABDC74] = v21;
+            v16 = MEMORY[0xABDC50];
+          }
+          v16[77] = 0;
+          if ( v14 >= 0x40000 || (v17 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 )
+          {
+            MEMORY[0xABDC74] = v21;
+            v17 = MEMORY[0xABDC50];
+          }
+          v17[75] |= 0x10u;
+          if ( v14 >= 0x40000 || (v18 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 )
+          {
+            MEMORY[0xABDC74] = v21;
+            v18 = MEMORY[0xABDC50];
+          }
+          v12 = v10 * v10;
+          v18[75] |= 8u;
+          v8 = a2;
+        }
+        ++v9;
+        result = v8 + 2;
+      }
+      while ( v9 < v8 + 2 );
+      v9 = -2 - a2;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 10h
+mov     eax, [esp+10h+arg_0]
+push    ebx
+push    esi
+push    edi
+mov     esi, [eax]
+mov     edi, [eax+4]
+mov     ebx, [eax+8]
+mov     ecx, ebx
+call    ZCoordToScreenY
+mov     ecx, eax
+mov     eax, 77777777h
+imul    ecx
+sub     edx, ecx
+sar     edx, 4
+mov     ecx, edx
+shr     ecx, 1Fh
+add     edx, ecx
+mov     ecx, ebx
+shl     edx, 8
+add     esi, edx
+call    ZCoordToScreenY
+mov     ecx, eax
+mov     eax, 77777777h
+imul    ecx
+sub     edx, ecx
+mov     ecx, [esp+1Ch+arg_4]
+sar     edx, 4
+mov     eax, edx
+shr     eax, 1Fh
+add     edx, eax
+mov     eax, esi
+shl     edx, 8
+add     edi, edx
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1Ch+var_8], ax
+mov     eax, edi
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     edx, 0FFFFFFFEh
+sar     eax, 8
+sub     edx, ecx
+mov     word ptr [esp+1Ch+var_8+2], ax
+mov     edi, edx
+lea     eax, [ecx+2]
+cmp     edi, eax
+mov     [esp+1Ch+var_C], edx
+jge     loc_5682F5
+push    ebp
+xor     ebx, ebx
+
+loc_5681D9:                             ; CODE XREF: sub_568140+1AE↓j
+cmp     edx, eax
+jge     loc_5682EB
+mov     esi, edi
+lea     ebp, [ecx+1]
+imul    esi, edi
+imul    ebp, ebp
+mov     [esp+20h+var_10], esi
+
+loc_5681F0:                             ; CODE XREF: sub_568140+1A1↓j
+mov     eax, edx
+imul    eax, edx
+add     eax, esi
+cmp     eax, ebp
+jge     loc_5682DB
+mov     ecx, [esp+20h+var_8]
+lea     eax, [edi+ecx]
+mov     ecx, [esp+20h+var_8+2]
+add     ecx, edx
+mov     word ptr [esp+20h+arg_0], ax
+mov     word ptr [esp+20h+arg_0+2], cx
+mov     esi, [esp+20h+arg_0]
+movsx   ecx, cx
+movsx   eax, ax
+shl     ecx, 9
+add     eax, ecx
+cmp     eax, ebx
+jl      short loc_56823D
+cmp     eax, 40000h
+jge     short loc_56823D
+mov     ecx, ds:87F924h
+mov     ecx, [ecx+eax*4]
+cmp     ecx, ebx
+jnz     short loc_568248
+
+loc_56823D:                             ; CODE XREF: sub_568140+E7↑j
+; sub_568140+EE↑j
+mov     dword_A8ED54+2EF20h, esi
+mov     ecx, (offset dword_A8ED54+2EEFCh)
+
+loc_568248:                             ; CODE XREF: sub_568140+FB↑j
+cmp     eax, ebx
+mov     [ecx+130h], ebx
+jl      short loc_568266
+cmp     eax, 40000h
+jge     short loc_568266
+mov     ecx, ds:87F924h
+mov     ecx, [ecx+eax*4]
+cmp     ecx, ebx
+jnz     short loc_568271
+
+loc_568266:                             ; CODE XREF: sub_568140+110↑j
+; sub_568140+117↑j
+mov     dword_A8ED54+2EF20h, esi
+mov     ecx, (offset dword_A8ED54+2EEFCh)
+
+loc_568271:                             ; CODE XREF: sub_568140+124↑j
+cmp     eax, ebx
+mov     [ecx+134h], ebx
+jl      short loc_56828F
+cmp     eax, 40000h
+jge     short loc_56828F
+mov     ecx, ds:87F924h
+mov     ecx, [ecx+eax*4]
+cmp     ecx, ebx
+jnz     short loc_56829A
+
+loc_56828F:                             ; CODE XREF: sub_568140+139↑j
+; sub_568140+140↑j
+mov     dword_A8ED54+2EF20h, esi
+mov     ecx, (offset dword_A8ED54+2EEFCh)
+
+loc_56829A:                             ; CODE XREF: sub_568140+14D↑j
+or      dword ptr [ecx+12Ch], 10h
+cmp     eax, ebx
+jl      short loc_5682B9
+cmp     eax, 40000h
+jge     short loc_5682B9
+mov     ecx, ds:87F924h
+mov     eax, [ecx+eax*4]
+cmp     eax, ebx
+jnz     short loc_5682C4
+
+loc_5682B9:                             ; CODE XREF: sub_568140+163↑j
+; sub_568140+16A↑j
+mov     dword_A8ED54+2EF20h, esi
+mov     eax, (offset dword_A8ED54+2EEFCh)
+
+loc_5682C4:                             ; CODE XREF: sub_568140+177↑j
+mov     ecx, [eax+12Ch]
+mov     esi, [esp+20h+var_10]
+or      ecx, 8
+mov     [eax+12Ch], ecx
+mov     ecx, [esp+20h+arg_4]
+
+loc_5682DB:                             ; CODE XREF: sub_568140+B9↑j
+inc     edx
+lea     eax, [ecx+2]
+cmp     edx, eax
+jl      loc_5681F0
+mov     edx, [esp+20h+var_C]
+
+loc_5682EB:                             ; CODE XREF: sub_568140+9B↑j
+inc     edi
+cmp     edi, eax
+jl      loc_5681D9
+pop     ebp
+
+loc_5682F5:                             ; CODE XREF: sub_568140+90↑j
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 10h
+retn    8
+*/
 }
 
 // 0x00457A10 (144 bytes)
 char CellClass_ToCellObj_457A10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00457A10.json)
-    // Size: 144 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_457A10 ( _DWORD **this ) { int v2 ; // edi _WORD *i ; // esi int v5 ; // [esp+Ch] [ebp-8h] int v6 ; // [esp+10h] [ebp-4h] BYREF v2 = * ( _DWORD * ) ( ( int (__thiscall *)(_DWORD **, int *) ) ( * this ) [ 110 ] ) ( this , & v6 ) ; for ( i = ( _WORD * ) ( * ( int (__thiscall **)(_DWORD, _DWORD) ) ( * * ( this + 328 ) + 144 ) ) ( * ( this + 328 ) , 0 ) ; * i != 0x7FFF || i [ 1 ] != 0x7FFF ; i += 2 ) { LOWORD ( v5 ) = v2 + * i ; HIWORD ( v5 ) = HIWORD ( v2 ) + i [ 1 ] ; v6 = v5 ; if ( ( * ( ( _DWORD * ) CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v6 ) + 80 ) & 0x400000 ) == 0 ) return 0 ; } return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_457A10(_DWORD **this)
+{
+  int v2; // edi
+  _WORD *i; // esi
+  int v5; // [esp+Ch] [ebp-8h]
+  int v6; // [esp+10h] [ebp-4h] BYREF
+
+  v2 = *(_DWORD *)((int (__thiscall *)(_DWORD **, int *))(*this)[110])(this, &v6);
+  for ( i = (_WORD *)(*(int (__thiscall **)(_DWORD, _DWORD))(**(this + 328) + 144))(*(this + 328), 0);
+        *i != 0x7FFF || i[1] != 0x7FFF;
+        i += 2 )
+  {
+    LOWORD(v5) = v2 + *i;
+    HIWORD(v5) = HIWORD(v2) + i[1];
+    v6 = v5;
+    if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x400000) == 0 )
+      return 0;
+  }
+  return 1;
+}
+
+/* ASM:
+sub     esp, 8
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+lea     ecx, [esp+14h+var_4]
+mov     eax, [esi]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+1B8h]
+mov     ecx, [esi+520h]
+mov     edi, [eax]
+push    0
+mov     [esp+18h+var_8], edi
+mov     edx, [ecx]
+call    dword ptr [edx+90h]
+mov     bx, word ptr [esp+14h+var_8+2]
+mov     esi, eax
+
+loc_457A44:                             ; CODE XREF: sub_457A10+7C↓j
+mov     ax, [esi]
+cmp     ax, 7FFFh
+jnz     short loc_457A53
+cmp     [esi+2], ax
+jz      short loc_457A97
+
+loc_457A53:                             ; CODE XREF: sub_457A10+3B↑j
+add     eax, edi
+lea     edx, [esp+14h+var_4]
+mov     word ptr [esp+14h+var_8], ax
+mov     ax, [esi+2]
+add     ax, bx
+push    edx
+mov     word ptr [esp+18h+var_8+2], ax
+mov     ecx, [esp+18h+var_8]
+mov     [esp+18h+var_4], ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+test    dword ptr [eax+140h], 400000h
+jz      short loc_457A8E
+add     esi, 4
+jmp     short loc_457A44
+; ---------------------------------------------------------------------------
+
+loc_457A8E:                             ; CODE XREF: sub_457A10+77↑j
+pop     edi
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_457A97:                             ; CODE XREF: sub_457A10+41↑j
+pop     edi
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x00594190 (343 bytes)
 int CellCoordProcess_594190() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00594190.json)
-    // Size: 343 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int __stdcall sub_594190 ( int *a1, int a2 ) { !int *v2 ! ; // ebp !int v3 ! ; // esi !int result ! ; // eax !int v5 ! ; // edx !int v6 ! ; // ebx int v7 ; // edi !int v8 ! ; // eax int v9 ; // ebp _BYTE *v10 ; // eax !int v11 ! ; // ecx char *v12 ; // esi !int v13 ! ; // [esp+8h] [ebp-Ch] !int v14 ! ; // [esp+Ch] [ebp-8h] __int16 v15[2] ; // [esp+10h] [ebp-4h] BYREF v2 = a1 ; v3 = a1 [ 1 ] ; result = v3 + a1 [ 3 ] ; v14 = v3 ; if ( v3 < result ) { v5 = g_MapCellHeight_Value ; do { v6 = * v2 ; v13 = * v2 ; if ( * v2 < * v2 + v2 [ 2 ] ) { v7 = ( __int16 ) v3 ; do { v15 [ 0 ] = v6 ; v15 [ 1 ] = v3 ; v8 = v7 + ( __int16 ) v6 ; if ( v8 > v5 ) { if ( ( __int16 ) v6 - v7 >= v5 || v7 - ( __int16 ) v6 >= v5 || v8 > g_MapCellCount ) { v2 = a1 ; } else { if ( g_MapTileArray ) { v7 = ( __int16 ) v3 ; v9 = a2 ; * ( ( _DWORD * ) g_MapTileArray + 20 * ( __int16 ) v6 + 20 * g_MapCellWidth * ( __int16 ) v3 + 14 ) = a2 ; } else { v9 = a2 ; } v10 = CellCoord::To_CellObj ( & MapClass_Instance , v15 ) ; v11 = 0 ; if ( g_RandomMap_TileData <= 0 ) { v2 = a1 ; LABEL_19 : v10 [ 283 ] = MEMORY[0x10] ; v5 = g_MapCellHeight_Value ; } else { v12 = ( char * ) g_RandomMap_TerrainState ; while ( * ( _DWORD * ) ( * ( _DWORD * ) v12 + 8 ) != v9 ) { ++ v11 ; v12 += 4 ; if ( v11 >= g_RandomMap_TileData ) { v3 = v14 ; v2 = a1 ; v6 = v13 ; goto LABEL_19 ; } } v3 = v14 ; v2 = a1 ; v6 = v13 ; v10 [ 283 ] = * ( _BYTE * ) ( * ( ( _DWORD * ) g_RandomMap_TerrainState + v11 ) + 16 ) ; v5 = g_MapCellHeight_Value ; } } } ++ v6 ; result = * v2 + v2 [ 2 ] ; v13 = v6 ; } while ( v6 < result ) ; } v14 = ++ v3 ; } while ( v3 < v2 [ 1 ] + v2 [ 3 ] ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_594190(int *a1, int a2)
+{
+  int *v2; // ebp
+  int v3; // esi
+  int result; // eax
+  int v5; // edx
+  int v6; // ebx
+  int v7; // edi
+  int v8; // eax
+  int v9; // ebp
+  _BYTE *v10; // eax
+  int v11; // ecx
+  char *v12; // esi
+  int v13; // [esp+8h] [ebp-Ch]
+  int v14; // [esp+Ch] [ebp-8h]
+  __int16 v15[2]; // [esp+10h] [ebp-4h] BYREF
+
+  v2 = a1;
+  v3 = a1[1];
+  result = v3 + a1[3];
+  v14 = v3;
+  if ( v3 < result )
+  {
+    v5 = MEMORY[0xABED04];
+    do
+    {
+      v6 = *v2;
+      v13 = *v2;
+      if ( *v2 < *v2 + v2[2] )
+      {
+        v7 = (__int16)v3;
+        do
+        {
+          v15[0] = v6;
+          v15[1] = v3;
+          v8 = v7 + (__int16)v6;
+          if ( v8 > v5 )
+          {
+            if ( (__int16)v6 - v7 >= v5 || v7 - (__int16)v6 >= v5 || v8 > MEMORY[0xABED08] )
+            {
+              v2 = a1;
+            }
+            else
+            {
+              if ( MEMORY[0xABED10] )
+              {
+                v7 = (__int16)v3;
+                v9 = a2;
+                *((_DWORD *)MEMORY[0xABED10] + 20 * (__int16)v6 + 20 * MEMORY[0x89C2DC] * (__int16)v3 + 14) = a2;
+              }
+              else
+              {
+                v9 = a2;
+              }
+              v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v15);
+              v11 = 0;
+              if ( MEMORY[0xABDFA0] <= 0 )
+              {
+                v2 = a1;
+LABEL_19:
+                v10[283] = MEMORY[0x10];
+                v5 = MEMORY[0xABED04];
+              }
+              else
+              {
+                v12 = (char *)MEMORY[0xABDF94];
+                while ( *(_DWORD *)(*(_DWORD *)v12 + 8) != v9 )
+                {
+                  ++v11;
+                  v12 += 4;
+                  if ( v11 >= MEMORY[0xABDFA0] )
+                  {
+                    v3 = v14;
+                    v2 = a1;
+                    v6 = v13;
+                    goto LABEL_19;
+                  }
+                }
+                v3 = v14;
+                v2 = a1;
+                v6 = v13;
+                v10[283] = *(_BYTE *)(*((_DWORD *)MEMORY[0xABDF94] + v11) + 16);
+                v5 = MEMORY[0xABED04];
+              }
+            }
+          }
+          ++v6;
+          result = *v2 + v2[2];
+          v13 = v6;
+        }
+        while ( v6 < result );
+      }
+      v14 = ++v3;
+    }
+    while ( v3 < v2[1] + v2[3] );
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebp
+mov     ebp, [esp+10h+arg_0]
+push    esi
+mov     esi, [ebp+4]
+mov     eax, [ebp+0Ch]
+add     eax, esi
+mov     [esp+14h+var_8], esi
+cmp     esi, eax
+jge     loc_5942DF
+mov     edx, dword_A8ED54+2FFB0h
+push    ebx
+push    edi
+
+loc_5941B5:                             ; CODE XREF: sub_594190+147↓j
+mov     ebx, [ebp+0]
+mov     ecx, [ebp+8]
+add     ecx, ebx
+mov     [esp+1Ch+var_C], ebx
+cmp     ebx, ecx
+jge     loc_5942C8
+movsx   edi, si
+
+loc_5941CC:                             ; CODE XREF: sub_594190+132↓j
+movsx   ecx, bx
+mov     [esp+1Ch+var_4], bx
+mov     [esp+1Ch+var_2], si
+lea     eax, [edi+ecx]
+cmp     eax, edx
+jle     loc_5942B3
+mov     ebp, ecx
+sub     ebp, edi
+cmp     ebp, edx
+jge     loc_5942AF
+mov     ebp, edi
+sub     ebp, ecx
+cmp     ebp, edx
+jge     loc_5942AF
+cmp     eax, dword_A8ED54+2FFB4h
+jg      loc_5942AF
+mov     edx, dword_A8ED54+2FFBCh
+test    edx, edx
+jz      short loc_594230
+movsx   eax, si
+mov     edi, eax
+imul    eax, ds:89C2DCh
+mov     ebp, [esp+1Ch+arg_4]
+add     eax, ecx
+lea     eax, [eax+eax*4]
+shl     eax, 4
+mov     [eax+edx+38h], ebp
+jmp     short loc_594234
+; ---------------------------------------------------------------------------
+
+loc_594230:                             ; CODE XREF: sub_594190+80↑j
+mov     ebp, [esp+1Ch+arg_4]
+
+loc_594234:                             ; CODE XREF: sub_594190+9E↑j
+lea     ecx, [esp+1Ch+var_4]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     edx, dword_A8ED54+2F24Ch
+xor     ecx, ecx
+test    edx, edx
+jle     short loc_594298
+mov     esi, dword_A8ED54+2F240h
+
+loc_594255:                             ; CODE XREF: sub_594190+D2↓j
+mov     ebx, [esi]
+cmp     [ebx+8], ebp
+jz      short loc_594272
+inc     ecx
+add     esi, 4
+cmp     ecx, edx
+jl      short loc_594255
+mov     esi, [esp+1Ch+var_8]
+mov     ebp, [esp+1Ch+arg_0]
+mov     ebx, [esp+1Ch+var_C]
+jmp     short loc_59429C
+; ---------------------------------------------------------------------------
+
+loc_594272:                             ; CODE XREF: sub_594190+CA↑j
+mov     edx, dword_A8ED54+2F240h
+mov     esi, [esp+1Ch+var_8]
+mov     ebp, [esp+1Ch+arg_0]
+mov     ebx, [esp+1Ch+var_C]
+mov     ecx, [edx+ecx*4]
+mov     cl, [ecx+10h]
+mov     [eax+11Bh], cl
+mov     edx, dword_A8ED54+2FFB0h
+jmp     short loc_5942B3
+; ---------------------------------------------------------------------------
+
+loc_594298:                             ; CODE XREF: sub_594190+BD↑j
+mov     ebp, [esp+1Ch+arg_0]
+
+loc_59429C:                             ; CODE XREF: sub_594190+E0↑j
+xor     ecx, ecx
+mov     cl, [ecx+10h]
+mov     [eax+11Bh], cl
+mov     edx, dword_A8ED54+2FFB0h
+jmp     short loc_5942B3
+; ---------------------------------------------------------------------------
+
+loc_5942AF:                             ; CODE XREF: sub_594190+5A↑j
+; sub_594190+66↑j ...
+mov     ebp, [esp+1Ch+arg_0]
+
+loc_5942B3:                             ; CODE XREF: sub_594190+4E↑j
+; sub_594190+106↑j ...
+mov     eax, [ebp+8]
+mov     ecx, [ebp+0]
+inc     ebx
+add     eax, ecx
+cmp     ebx, eax
+mov     [esp+1Ch+var_C], ebx
+jl      loc_5941CC
+
+loc_5942C8:                             ; CODE XREF: sub_594190+33↑j
+mov     ecx, [ebp+0Ch]
+mov     edi, [ebp+4]
+inc     esi
+add     ecx, edi
+cmp     esi, ecx
+mov     [esp+1Ch+var_8], esi
+jl      loc_5941B5
+pop     edi
+pop     ebx
+
+loc_5942DF:                             ; CODE XREF: sub_594190+17↑j
+pop     esi
+pop     ebp
+add     esp, 0Ch
+retn    8
+*/
 }
 
 // 0x006D6BB0 (337 bytes)
 int CellCoordProcess_6D6BB0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D6BB0.json)
-    // Size: 337 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   _DWORD *__stdcall sub_6D6BB0 ( _WORD *a1 ) { _WORD *v1 ; // edi __int16 v2 ; // ax int v3 ; // esi _DWORD *result ; // eax int v5 ; // ecx __int16 v6 ; // cx int v7 ; // esi int v8 ; // ecx __int16 v9 ; // ax int v10 ; // esi int v11 ; // ecx __int16 v12 ; // cx int v13 ; // esi int v14 ; // ecx v1 = a1 ; v2 = * a1 + 2 ; HIWORD ( a1 ) = a1 [ 1 ] ; LOWORD ( a1 ) = v2 ; v3 = 0 ; while ( 1 ) { result = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & a1 ) ; v5 = result [ 80 ] ; if ( ( v5 & 0x80u ) != 0 && result [ 17 ] && ( v5 & 0x800 ) != 0 ) break ; ++ HIWORD ( a1 ) ; if ( ++ v3 >= 5 ) { v6 = * v1 + 1 ; HIWORD ( a1 ) = v1 [ 1 ] ; LOWORD ( a1 ) = v6 ; v7 = 0 ; while ( 1 ) { result = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & a1 ) ; v8 = result [ 80 ] ; if ( ( v8 & 0x80u ) != 0 && result [ 17 ] && ( v8 & 0x800 ) != 0 ) break ; ++ HIWORD ( a1 ) ; if ( ++ v7 >= 5 ) { v9 = v1 [ 1 ] + 2 ; LOWORD ( a1 ) = * v1 ; HIWORD ( a1 ) = v9 ; v10 = 0 ; while ( 1 ) { result = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & a1 ) ; v11 = result [ 80 ] ; if ( ( v11 & 0x80u ) != 0 && result [ 17 ] && ( v11 & 0x800 ) == 0 ) break ; LOWORD ( a1 ) = ( _WORD ) a1 + 1 ; if ( ++ v10 >= 5 ) { v12 = v1 [ 1 ] + 1 ; LOWORD ( a1 ) = * v1 ; HIWORD ( a1 ) = v12 ; v13 = 0 ; while ( 1 ) { result = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & a1 ) ; v14 = result [ 80 ] ; if ( ( v14 & 0x80u ) != 0 && result [ 17 ] && ( v14 & 0x800 ) == 0 ) break ; LOWORD ( a1 ) = ( _WORD ) a1 + 1 ; if ( ++ v13 >= 5 ) return 0 ; } return result ; } } return result ; } } return result ; } } return result ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__stdcall sub_6D6BB0(_WORD *a1)
+{
+  _WORD *v1; // edi
+  __int16 v2; // ax
+  int v3; // esi
+  _DWORD *result; // eax
+  int v5; // ecx
+  __int16 v6; // cx
+  int v7; // esi
+  int v8; // ecx
+  __int16 v9; // ax
+  int v10; // esi
+  int v11; // ecx
+  __int16 v12; // cx
+  int v13; // esi
+  int v14; // ecx
+
+  v1 = a1;
+  v2 = *a1 + 2;
+  HIWORD(a1) = a1[1];
+  LOWORD(a1) = v2;
+  v3 = 0;
+  while ( 1 )
+  {
+    result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1);
+    v5 = result[80];
+    if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 )
+      break;
+    ++HIWORD(a1);
+    if ( ++v3 >= 5 )
+    {
+      v6 = *v1 + 1;
+      HIWORD(a1) = v1[1];
+      LOWORD(a1) = v6;
+      v7 = 0;
+      while ( 1 )
+      {
+        result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1);
+        v8 = result[80];
+        if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 )
+          break;
+        ++HIWORD(a1);
+        if ( ++v7 >= 5 )
+        {
+          v9 = v1[1] + 2;
+          LOWORD(a1) = *v1;
+          HIWORD(a1) = v9;
+          v10 = 0;
+          while ( 1 )
+          {
+            result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1);
+            v11 = result[80];
+            if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 )
+              break;
+            LOWORD(a1) = (_WORD)a1 + 1;
+            if ( ++v10 >= 5 )
+            {
+              v12 = v1[1] + 1;
+              LOWORD(a1) = *v1;
+              HIWORD(a1) = v12;
+              v13 = 0;
+              while ( 1 )
+              {
+                result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1);
+                v14 = result[80];
+                if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 )
+                  break;
+                LOWORD(a1) = (_WORD)a1 + 1;
+                if ( ++v13 >= 5 )
+                  return 0;
+              }
+              return result;
+            }
+          }
+          return result;
+        }
+      }
+      return result;
+    }
+  }
+  return result;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     ax, [edi]
+mov     cx, [edi+2]
+add     ax, 2
+mov     word ptr [esp+8+arg_0+2], cx
+mov     word ptr [esp+8+arg_0], ax
+mov     edx, [esp+8+arg_0]
+mov     [esp+8+arg_0], edx
+xor     esi, esi
+
+loc_6D6BD5:                             ; CODE XREF: sub_6D6BB0+58↓j
+lea     eax, [esp+8+arg_0]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    cl, 80h
+jz      short loc_6D6BFF
+mov     edx, [eax+44h]
+test    edx, edx
+jz      short loc_6D6BFF
+test    ch, 8
+jnz     loc_6D6CFC
+
+loc_6D6BFF:                             ; CODE XREF: sub_6D6BB0+3D↑j
+; sub_6D6BB0+44↑j
+inc     word ptr [esp+8+arg_0+2]
+inc     esi
+cmp     esi, 5
+jl      short loc_6D6BD5
+mov     cx, [edi]
+mov     dx, [edi+2]
+inc     cx
+mov     word ptr [esp+8+arg_0+2], dx
+mov     word ptr [esp+8+arg_0], cx
+mov     eax, [esp+8+arg_0]
+mov     [esp+8+arg_0], eax
+xor     esi, esi
+
+loc_6D6C27:                             ; CODE XREF: sub_6D6BB0+AA↓j
+lea     ecx, [esp+8+arg_0]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    cl, 80h
+jz      short loc_6D6C51
+mov     edx, [eax+44h]
+test    edx, edx
+jz      short loc_6D6C51
+test    ch, 8
+jnz     loc_6D6CFC
+
+loc_6D6C51:                             ; CODE XREF: sub_6D6BB0+8F↑j
+; sub_6D6BB0+96↑j
+inc     word ptr [esp+8+arg_0+2]
+inc     esi
+cmp     esi, 5
+jl      short loc_6D6C27
+mov     ax, [edi+2]
+mov     dx, [edi]
+add     ax, 2
+mov     word ptr [esp+8+arg_0], dx
+mov     word ptr [esp+8+arg_0+2], ax
+mov     ecx, [esp+8+arg_0]
+mov     [esp+8+arg_0], ecx
+xor     esi, esi
+
+loc_6D6C7B:                             ; CODE XREF: sub_6D6BB0+FA↓j
+lea     edx, [esp+8+arg_0]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    cl, 80h
+jz      short loc_6D6CA1
+mov     edx, [eax+44h]
+test    edx, edx
+jz      short loc_6D6CA1
+test    ch, 8
+jz      short loc_6D6CFC
+
+loc_6D6CA1:                             ; CODE XREF: sub_6D6BB0+E3↑j
+; sub_6D6BB0+EA↑j
+inc     word ptr [esp+8+arg_0]
+inc     esi
+cmp     esi, 5
+jl      short loc_6D6C7B
+mov     cx, [edi+2]
+mov     ax, [edi]
+inc     cx
+mov     word ptr [esp+8+arg_0], ax
+mov     word ptr [esp+8+arg_0+2], cx
+mov     edx, [esp+8+arg_0]
+mov     [esp+8+arg_0], edx
+xor     esi, esi
+
+loc_6D6CC9:                             ; CODE XREF: sub_6D6BB0+148↓j
+lea     eax, [esp+8+arg_0]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+mov     ecx, [eax+140h]
+test    cl, 80h
+jz      short loc_6D6CEF
+mov     edx, [eax+44h]
+test    edx, edx
+jz      short loc_6D6CEF
+test    ch, 8
+jz      short loc_6D6CFC
+
+loc_6D6CEF:                             ; CODE XREF: sub_6D6BB0+131↑j
+; sub_6D6BB0+138↑j
+inc     word ptr [esp+8+arg_0]
+inc     esi
+cmp     esi, 5
+jl      short loc_6D6CC9
+xor     eax, eax
+
+loc_6D6CFC:                             ; CODE XREF: sub_6D6BB0+49↑j
+; sub_6D6BB0+9B↑j ...
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x005A6BA0 (110 bytes)
 char CellCoord_IsCellLand_5A6BA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A6BA0.json)
-    // Size: 110 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_5A6BA0 ( __int16 *this ) { int v1 ; // eax int v2 ; // ecx !int v3 ! ; // edx int v4 ; // edi int v5 ; // ebp !int v6 ! ; // ebx int v7 ; // esi void *v8 ; // eax __int16 v10[2] ; // [esp+10h] [ebp-8h] BYREF int v11 ; // [esp+14h] [ebp-4h] v1 = * ( this + 1 ) ; v2 = * this ; v3 = v2 + 7 ; v4 = v2 - 7 ; v5 = v1 - 7 ; v11 = v2 + 7 ; v6 = v1 + 7 ; if ( __OFSUB__ ( v2 - 7 , v2 + 7 ) ) return 1 ; while ( 1 ) { v7 = v5 ; if ( v5 < v6 ) break ; LABEL_6 : if ( ++ v4 >= v3 ) return 1 ; } while ( 1 ) { v10 [ 0 ] = v4 ; v10 [ 1 ] = v7 ; v8 = CellCoord::To_CellObj ( & MapClass_Instance , v10 ) ; if ( CellLand::IsBuildable ( ( int ) v8 ) ) return 0 ; if ( ++ v7 >= v6 ) { v3 = v11 ; goto LABEL_6 ; } } }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_5A6BA0(__int16 *this)
+{
+  int v1; // eax
+  int v2; // ecx
+  int v3; // edx
+  int v4; // edi
+  int v5; // ebp
+  int v6; // ebx
+  int v7; // esi
+  void *v8; // eax
+  __int16 v10[2]; // [esp+10h] [ebp-8h] BYREF
+  int v11; // [esp+14h] [ebp-4h]
+
+  v1 = *(this + 1);
+  v2 = *this;
+  v3 = v2 + 7;
+  v4 = v2 - 7;
+  v5 = v1 - 7;
+  v11 = v2 + 7;
+  v6 = v1 + 7;
+  if ( __OFSUB__(v2 - 7, v2 + 7) )
+    return 1;
+  while ( 1 )
+  {
+    v7 = v5;
+    if ( v5 < v6 )
+      break;
+LABEL_6:
+    if ( ++v4 >= v3 )
+      return 1;
+  }
+  while ( 1 )
+  {
+    v10[0] = v4;
+    v10[1] = v7;
+    v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v10);
+    if ( CellLand::IsBuildable((int)v8) )
+      return 0;
+    if ( ++v7 >= v6 )
+    {
+      v3 = v11;
+      goto LABEL_6;
+    }
+  }
+}
+
+/* ASM:
+sub     esp, 8
+movsx   eax, word ptr [ecx+2]
+movsx   ecx, word ptr [ecx]
+push    ebx
+push    ebp
+push    esi
+push    edi
+lea     edx, [ecx+7]
+lea     edi, [ecx-7]
+cmp     edi, edx
+lea     ebp, [eax-7]
+mov     [esp+18h+var_4], edx
+lea     ebx, [eax+7]
+jge     short loc_5A6BFA
+
+loc_5A6BC2:                             ; CODE XREF: sub_5A6BA0+58↓j
+cmp     ebp, ebx
+mov     esi, ebp
+jge     short loc_5A6BF5
+
+loc_5A6BC8:                             ; CODE XREF: sub_5A6BA0+4F↓j
+lea     eax, [esp+18h+var_8]
+mov     ecx, 87F7E8h
+push    eax
+mov     [esp+1Ch+var_8], di
+mov     [esp+1Ch+var_6], si
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    CellLand__IsBuildable
+test    al, al
+jnz     short loc_5A6C04
+inc     esi
+cmp     esi, ebx
+jl      short loc_5A6BC8
+mov     edx, [esp+18h+var_4]
+
+loc_5A6BF5:                             ; CODE XREF: sub_5A6BA0+26↑j
+inc     edi
+cmp     edi, edx
+jl      short loc_5A6BC2
+
+loc_5A6BFA:                             ; CODE XREF: sub_5A6BA0+20↑j
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+add     esp, 8
+retn
+; ---------------------------------------------------------------------------
+
+loc_5A6C04:                             ; CODE XREF: sub_5A6BA0+4A↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x004D4FC0 (164 bytes)
 void CellCoord_IsCell_4D4FC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004D4FC0.json)
-    // Size: 164 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_4D4FC0 ( void *this ) { int v2 ; // ebx _WORD *v3 ; // eax _DWORD *v4 ; // eax _DWORD *v5 ; // eax _DWORD *v6 ; // esi !int v7 ! ; // ebp int v9 ; // [esp+10h] [ebp-Ch] int v10 ; // [esp+14h] [ebp-8h] BYREF char v11[4] ; // [esp+18h] [ebp-4h] BYREF v2 = 0 ; while ( 1 ) { v3 = ( _WORD * ) ( * ( int (__thiscall **)(void *, char *) ) ( * ( _DWORD * ) this + 440 ) ) ( this , v11 ) ; LOWORD ( v9 ) = LOWORD ( Direction_X_Offsets [ v2 & 7 ] ) + * v3 ; HIWORD ( v9 ) = v3 [ 1 ] + HIWORD ( Direction_X_Offsets [ v2 & 7 ] ) ; v10 = v9 ; v4 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v10 ) ; v5 = Cell::IsBridge ( v4 ) ; v6 = v5 ; if ( v5 ) { if ( * ( _BYTE * ) ( v5 [ 328 ] + 5493 ) ) { v7 = ( * ( int (__thiscall **)(_DWORD *) ) ( * v5 + 60 ) ) ( v5 ) ; if ( v7 == ( * ( int (__thiscall **)(void *) ) ( * ( _DWORD * ) this + 60 ) ) ( this ) ) break ; } } if ( ++ v2 >= 8 ) return 0 ; } return v6 ; }
-    
+// [IDA decompile]
+_DWORD *__thiscall sub_4D4FC0(void *this)
+{
+  int v2; // ebx
+  _WORD *v3; // eax
+  _DWORD *v4; // eax
+  _DWORD *v5; // eax
+  _DWORD *v6; // esi
+  int v7; // ebp
+  int v9; // [esp+10h] [ebp-Ch]
+  int v10; // [esp+14h] [ebp-8h] BYREF
+  char v11[4]; // [esp+18h] [ebp-4h] BYREF
+
+  v2 = 0;
+  while ( 1 )
+  {
+    v3 = (_WORD *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)this + 440))(this, v11);
+    LOWORD(v9) = LOWORD(MEMORY[0x89F688][v2 & 7]) + *v3;
+    HIWORD(v9) = v3[1] + HIWORD(MEMORY[0x89F688][v2 & 7]);
+    v10 = v9;
+    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10);
+    v5 = Cell::IsBridge(v4);
+    v6 = v5;
+    if ( v5 )
+    {
+      if ( *(_BYTE *)(v5[328] + 5493) )
+      {
+        v7 = (*(int (__thiscall **)(_DWORD *))(*v5 + 60))(v5);
+        if ( v7 == (*(int (__thiscall **)(void *))(*(_DWORD *)this + 60))(this) )
+          break;
+      }
+    }
+    if ( ++v2 >= 8 )
+      return 0;
+  }
+  return v6;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+xor     ebx, ebx
+
+loc_4D4FCB:                             ; CODE XREF: sub_4D4FC0+8A↓j
+mov     eax, [edi]
+lea     ecx, [esp+1Ch+var_4]
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+1B8h]
+mov     edx, ebx
+and     edx, 7
+lea     ecx, ds:89F688h[edx*4]
+mov     dx, [eax]
+add     dx, [ecx]
+mov     cx, [ecx+2]
+add     cx, [eax+2]
+lea     eax, [esp+1Ch+var_8]
+mov     word ptr [esp+1Ch+var_C], dx
+push    eax
+mov     word ptr [esp+20h+var_C+2], cx
+mov     edx, [esp+20h+var_C]
+mov     ecx, 87F7E8h
+mov     [esp+20h+var_8], edx
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Cell__IsBridge
+mov     esi, eax
+test    esi, esi
+jz      short loc_4D5046
+mov     ecx, [esi+520h]
+mov     al, [ecx+1575h]
+test    al, al
+jz      short loc_4D5046
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+3Ch]
+mov     ebp, eax
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+3Ch]
+cmp     ebp, eax
+jz      short loc_4D505A
+
+loc_4D5046:                             ; CODE XREF: sub_4D4FC0+60↑j
+; sub_4D4FC0+70↑j
+inc     ebx
+cmp     ebx, 8
+jl      loc_4D4FCB
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 0Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_4D505A:                             ; CODE XREF: sub_4D4FC0+84↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn
+*/
 }
 
 // 0x0058BEA0 (206 bytes)
 int CellCoord_IsCell_58BEA0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058BEA0.json)
-    // Size: 206 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_58BEA0 ( _DWORD *this ) { !int v2 ! ; // ebx !unsigned int v3 ! ; // esi !unsigned int v4 ! ; // eax _WORD *v5 ; // ecx _DWORD *v6 ; // eax int v8 ; // [esp+10h] [ebp-1Ch] BYREF !__int64 v9 ! ; // [esp+14h] [ebp-18h] !__int64 v10 ! ; // [esp+1Ch] [ebp-10h] double v11 ; // [esp+24h] [ebp-8h] v2 = 0 ; do { v3 = g_MapCellWidth * g_MapCellWidth - 1 ; do { v9 = v3 + 1 ; v11 = ( double ) v9 ; do { v10 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v4 = Math::RoundToInt ( ( double ) v10 * v11 * 2.328306437080797e-10 ) ; } while ( v4 > v3 ) ; v5 = ( char * ) g_MapTileArray + 80 * v4 ; } while ( ! * v5 && ! v5 [ 1 ] ) ; ++ v2 ; v8 = * ( ( _DWORD * ) g_MapTileArray + 20 * v4 ) ; if ( v2 > 200 ) { v8 = 0 ; * this = 0 ; return this ; } v6 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v8 ) ; } while ( ! Cell::IsEmpty ( v6 ) ) ; * this = v8 ; return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_58BEA0(_DWORD *this)
+{
+  int v2; // ebx
+  unsigned int v3; // esi
+  unsigned int v4; // eax
+  _WORD *v5; // ecx
+  _DWORD *v6; // eax
+  int v8; // [esp+10h] [ebp-1Ch] BYREF
+  __int64 v9; // [esp+14h] [ebp-18h]
+  __int64 v10; // [esp+1Ch] [ebp-10h]
+  double v11; // [esp+24h] [ebp-8h]
+
+  v2 = 0;
+  do
+  {
+    v3 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC] - 1;
+    do
+    {
+      v9 = v3 + 1;
+      v11 = (double)v9;
+      do
+      {
+        v10 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+        v4 = Math::RoundToInt((double)v10 * v11 * 2.328306437080797e-10);
+      }
+      while ( v4 > v3 );
+      v5 = (char *)MEMORY[0xABED10] + 80 * v4;
+    }
+    while ( !*v5 && !v5[1] );
+    ++v2;
+    v8 = *((_DWORD *)MEMORY[0xABED10] + 20 * v4);
+    if ( v2 > 200 )
+    {
+      v8 = 0;
+      *this = 0;
+      return this;
+    }
+    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8);
+  }
+  while ( !Cell::IsEmpty(v6) );
+  *this = v8;
+  return this;
+}
+
+/* ASM:
+sub     esp, 1Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+xor     edi, edi
+mov     ebp, ecx
+xor     ebx, ebx
+
+loc_58BEAD:                             ; CODE XREF: sub_58BEA0+9D↓j
+mov     eax, ds:89C2DCh
+imul    eax, eax
+lea     esi, [eax-1]
+
+loc_58BEB8:                             ; CODE XREF: sub_58BEA0+6B↓j
+lea     eax, [esi+1]
+mov     dword ptr [esp+2Ch+var_18+4], edi
+mov     dword ptr [esp+2Ch+var_18], eax
+fild    [esp+2Ch+var_18]
+fstp    [esp+2Ch+var_8]
+
+loc_58BECB:                             ; CODE XREF: sub_58BEA0+52↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+2Ch+var_10], eax
+mov     dword ptr [esp+2Ch+var_10+4], edi
+fild    [esp+2Ch+var_10]
+fmul    [esp+2Ch+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58BECB
+mov     edx, dword_A8ED54+2FFBCh
+lea     ecx, [eax+eax*4]
+shl     ecx, 4
+add     ecx, edx
+cmp     [ecx], di
+jnz     short loc_58BF0D
+cmp     [ecx+2], di
+jz      short loc_58BEB8
+
+loc_58BF0D:                             ; CODE XREF: sub_58BEA0+65↑j
+lea     ecx, [eax+eax*4]
+shl     ecx, 4
+inc     ebx
+mov     edx, [ecx+edx]
+cmp     ebx, 0C8h
+mov     [esp+2Ch+var_1C], edx
+jg      short loc_58BF42
+lea     edx, [esp+2Ch+var_1C]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Cell__IsEmpty
+test    al, al
+jnz     short loc_58BF5D
+jmp     loc_58BEAD
+; ---------------------------------------------------------------------------
+
+loc_58BF42:                             ; CODE XREF: sub_58BEA0+81↑j
+mov     word ptr [esp+2Ch+var_1C], di
+mov     word ptr [esp+2Ch+var_1C+2], di
+mov     eax, [esp+2Ch+var_1C]
+pop     edi
+mov     [ebp+0], eax
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 1Ch
+retn
+; ---------------------------------------------------------------------------
+
+loc_58BF5D:                             ; CODE XREF: sub_58BEA0+9B↑j
+mov     ecx, [esp+2Ch+var_1C]
+pop     edi
+mov     [ebp+0], ecx
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 1Ch
+retn
+*/
 }
 
 // 0x0058C3B0 (231 bytes)
 int CellCoord_IsCell_58C3B0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058C3B0.json)
-    // Size: 231 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_58C3B0 ( _DWORD *this, _DWORD *a2 ) { !int v3 ! ; // ebx !unsigned int v4 ! ; // eax char *v5 ; // ecx _DWORD *v6 ; // eax int v8 ; // [esp+10h] [ebp-20h] int v9 ; // [esp+14h] [ebp-1Ch] BYREF __int64 v10 ; // [esp+18h] [ebp-18h] !__int64 v11 ! ; // [esp+20h] [ebp-10h] double v12 ; // [esp+28h] [ebp-8h] v8 = 0 ; do { v3 = g_MapCellWidth * g_MapCellWidth ; do { v10 = ( unsigned int ) v3 ; v12 = ( double ) ( unsigned int ) v3 ; do { v11 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v4 = Math::RoundToInt ( ( double ) v11 * v12 * 2.328306437080797e-10 ) ; } while ( v4 > v3 - 1 ) ; v5 = ( char * ) g_MapTileArray + 80 * v4 ; } while ( * ( ( _DWORD * ) v5 + 14 ) != * ( this + 2 ) || ! * ( _WORD * ) v5 && ! * ( ( _WORD * ) v5 + 1 ) ) ; v9 = * ( ( _DWORD * ) g_MapTileArray + 20 * v4 ) ; if ( ++ v8 > 200 ) { * a2 = 0 ; return a2 ; } v6 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v9 ) ; } while ( ! Cell::IsEmpty ( v6 ) ) ; * a2 = v9 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
+{
+  int v3; // ebx
+  unsigned int v4; // eax
+  char *v5; // ecx
+  _DWORD *v6; // eax
+  int v8; // [esp+10h] [ebp-20h]
+  int v9; // [esp+14h] [ebp-1Ch] BYREF
+  __int64 v10; // [esp+18h] [ebp-18h]
+  __int64 v11; // [esp+20h] [ebp-10h]
+  double v12; // [esp+28h] [ebp-8h]
+
+  v8 = 0;
+  do
+  {
+    v3 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+    do
+    {
+      v10 = (unsigned int)v3;
+      v12 = (double)(unsigned int)v3;
+      do
+      {
+        v11 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+        v4 = Math::RoundToInt((double)v11 * v12 * 2.328306437080797e-10);
+      }
+      while ( v4 > v3 - 1 );
+      v5 = (char *)MEMORY[0xABED10] + 80 * v4;
+    }
+    while ( *((_DWORD *)v5 + 14) != *(this + 2) || !*(_WORD *)v5 && !*((_WORD *)v5 + 1) );
+    v9 = *((_DWORD *)MEMORY[0xABED10] + 20 * v4);
+    if ( ++v8 > 200 )
+    {
+      *a2 = 0;
+      return a2;
+    }
+    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v9);
+  }
+  while ( !Cell::IsEmpty(v6) );
+  *a2 = v9;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 20h
+push    ebx
+push    ebp
+push    esi
+push    edi
+xor     edi, edi
+mov     ebp, ecx
+mov     [esp+30h+var_20], edi
+
+loc_58C3BF:                             ; CODE XREF: sub_58C3B0+B0↓j
+mov     eax, ds:89C2DCh
+mov     ebx, eax
+imul    ebx, eax
+
+loc_58C3C9:                             ; CODE XREF: sub_58C3B0+6C↓j
+; sub_58C3B0+77↓j
+lea     esi, [ebx-1]
+mov     dword ptr [esp+30h+var_18+4], edi
+lea     eax, [esi+1]
+mov     dword ptr [esp+30h+var_18], eax
+fild    [esp+30h+var_18]
+fstp    [esp+30h+var_8]
+
+loc_58C3DF:                             ; CODE XREF: sub_58C3B0+56↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+30h+var_10], eax
+mov     dword ptr [esp+30h+var_10+4], edi
+fild    [esp+30h+var_10]
+fmul    [esp+30h+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58C3DF
+mov     edx, dword_A8ED54+2FFBCh
+lea     ecx, [eax+eax*4]
+shl     ecx, 4
+add     ecx, edx
+mov     esi, [ecx+38h]
+cmp     esi, [ebp+8]
+jnz     short loc_58C3C9
+cmp     [ecx], di
+jnz     short loc_58C429
+cmp     [ecx+2], di
+jz      short loc_58C3C9
+
+loc_58C429:                             ; CODE XREF: sub_58C3B0+71↑j
+lea     eax, [eax+eax*4]
+shl     eax, 4
+mov     eax, [eax+edx]
+mov     [esp+30h+var_1C], eax
+mov     eax, [esp+30h+var_20]
+inc     eax
+cmp     eax, 0C8h
+mov     [esp+30h+var_20], eax
+jg      short loc_58C465
+lea     ecx, [esp+30h+var_1C]
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Cell__IsEmpty
+test    al, al
+jnz     short loc_58C483
+jmp     loc_58C3BF
+; ---------------------------------------------------------------------------
+
+loc_58C465:                             ; CODE XREF: sub_58C3B0+94↑j
+mov     eax, [esp+30h+arg_0]
+mov     word ptr [esp+30h+var_20], di
+mov     word ptr [esp+30h+var_20+2], di
+mov     edx, [esp+30h+var_20]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], edx
+pop     ebx
+add     esp, 20h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_58C483:                             ; CODE XREF: sub_58C3B0+AE↑j
+mov     eax, [esp+30h+arg_0]
+mov     ecx, [esp+30h+var_1C]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], ecx
+pop     ebx
+add     esp, 20h
+retn    4
+*/
 }
 
 // 0x0058C4A0 (250 bytes)
 int CellCoord_IsCell_58C4A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058C4A0.json)
-    // Size: 250 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_58C4A0 ( _DWORD *this, _DWORD *a2 ) { _WORD *v2 ; // ebp !int v3 ! ; // ebx !unsigned int v4 ! ; // eax _DWORD *v5 ; // eax !int v7 ! ; // [esp+10h] [ebp-20h] !__int64 v9 ! ; // [esp+20h] [ebp-10h] v2 = g_MapTileArray ; v7 = g_MapCellWidth * g_MapCellWidth ; v3 = 0 ; while ( 1 ) { do { v9 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v4 = Math::RoundToInt ( ( double ) v9 * ( double ) ( unsigned int ) v7 * 2.328306437080797e-10 ) ; } while ( v4 > v7 - 1 ) ; ++ v3 ; qmemcpy ( v2 , ( char * ) g_MapTileArray + 80 * v4 , 0x50u ) ; if ( v3 >= 100 ) { * a2 = 0 ; return a2 ; } if ( * ( ( _DWORD * ) v2 + 14 ) == * ( this + 2 ) && ( * v2 || v2 [ 1 ] ) ) { if ( * ( ( _BYTE * ) v2 + 68 ) ) { v5 = CellCoord::To_CellObj ( & MapClass_Instance , v2 ) ; if ( Cell::IsEmpty ( v5 ) ) break ; } } } * a2 = * ( _DWORD * ) v2 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_58C4A0(_DWORD *this, _DWORD *a2)
+{
+  _WORD *v2; // ebp
+  int v3; // ebx
+  unsigned int v4; // eax
+  _DWORD *v5; // eax
+  int v7; // [esp+10h] [ebp-20h]
+  __int64 v9; // [esp+20h] [ebp-10h]
+
+  v2 = MEMORY[0xABED10];
+  v7 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+  v3 = 0;
+  while ( 1 )
+  {
+    do
+    {
+      v9 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+      v4 = Math::RoundToInt((double)v9 * (double)(unsigned int)v7 * 2.328306437080797e-10);
+    }
+    while ( v4 > v7 - 1 );
+    ++v3;
+    qmemcpy(v2, (char *)MEMORY[0xABED10] + 80 * v4, 0x50u);
+    if ( v3 >= 100 )
+    {
+      *a2 = 0;
+      return a2;
+    }
+    if ( *((_DWORD *)v2 + 14) == *(this + 2) && (*v2 || v2[1]) )
+    {
+      if ( *((_BYTE *)v2 + 68) )
+      {
+        v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v2);
+        if ( Cell::IsEmpty(v5) )
+          break;
+      }
+    }
+  }
+  *a2 = *(_DWORD *)v2;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 20h
+mov     eax, ds:89C2DCh
+mov     [esp+20h+var_1C], ecx
+mov     ecx, eax
+push    ebx
+imul    ecx, eax
+push    ebp
+mov     ebp, dword_A8ED54+2FFBCh
+push    esi
+push    edi
+xor     edi, edi
+mov     [esp+30h+var_20], ecx
+xor     ebx, ebx
+jmp     short loc_58C4C7
+; ---------------------------------------------------------------------------
+
+loc_58C4C5:                             ; CODE XREF: sub_58C4A0+91↓j
+; sub_58C4A0+9F↓j ...
+xor     edi, edi
+
+loc_58C4C7:                             ; CODE XREF: sub_58C4A0+23↑j
+mov     eax, [esp+30h+var_20]
+mov     dword ptr [esp+30h+var_18+4], edi
+lea     esi, [eax-1]
+lea     ecx, [esi+1]
+mov     dword ptr [esp+30h+var_18], ecx
+fild    [esp+30h+var_18]
+fstp    [esp+30h+var_8]
+
+loc_58C4E1:                             ; CODE XREF: sub_58C4A0+68↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+30h+var_10], eax
+mov     dword ptr [esp+30h+var_10+4], edi
+fild    [esp+30h+var_10]
+fmul    [esp+30h+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58C4E1
+mov     edx, dword_A8ED54+2FFBCh
+lea     esi, [eax+eax*4]
+shl     esi, 4
+add     esi, edx
+inc     ebx
+mov     ecx, 14h
+mov     edi, ebp
+cmp     ebx, 64h ; 'd'
+rep movsd
+jge     short loc_58C567
+mov     eax, [esp+30h+var_1C]
+mov     edx, [ebp+38h]
+cmp     edx, [eax+8]
+jnz     short loc_58C4C5
+cmp     word ptr [ebp+0], 0
+jnz     short loc_58C541
+cmp     word ptr [ebp+2], 0
+jz      short loc_58C4C5
+
+loc_58C541:                             ; CODE XREF: sub_58C4A0+98↑j
+mov     al, [ebp+44h]
+test    al, al
+jz      loc_58C4C5
+push    ebp
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    Cell__IsEmpty
+test    al, al
+jnz     short loc_58C587
+jmp     loc_58C4C5
+; ---------------------------------------------------------------------------
+
+loc_58C567:                             ; CODE XREF: sub_58C4A0+85↑j
+xor     eax, eax
+pop     edi
+mov     word ptr [esp+2Ch+var_20], ax
+mov     word ptr [esp+2Ch+var_20+2], ax
+mov     eax, [esp+2Ch+arg_0]
+mov     ecx, [esp+2Ch+var_20]
+pop     esi
+pop     ebp
+mov     [eax], ecx
+pop     ebx
+add     esp, 20h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_58C587:                             ; CODE XREF: sub_58C4A0+C0↑j
+mov     eax, [esp+30h+arg_0]
+mov     edx, [ebp+0]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], edx
+pop     ebx
+add     esp, 20h
+retn    4
+*/
 }
 
 // 0x004DF280 (136 bytes)
 void CellCoord_SetMember370_4DF280() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004DF280.json)
-    // Size: 136 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_4DF280 ( _DWORD *this ) { int v2 ; // ecx _DWORD *v3 ; // eax int v4 ; // [esp+4h] [ebp-14h] int v5 ; // [esp+8h] [ebp-10h] BYREF _BYTE v6[12] ; // [esp+Ch] [ebp-Ch] BYREF v2 = * ( this + 371 ) ; if ( v2 ) { v3 = ( _DWORD * ) ( * ( int (__thiscall **)(int, _BYTE *) ) ( * ( _DWORD * ) v2 + 72 ) ) ( v2 , v6 ) ; LOWORD ( v4 ) = * v3 / 256 ; HIWORD ( v4 ) = v3 [ 1 ] / 256 ; v5 = v4 ; * ( this + 370 ) = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v5 ) ; } else { * ( this + 370 ) = 0 ; } * ( this + 371 ) = 0 ; }
-    
+// [IDA decompile]
+void __thiscall sub_4DF280(_DWORD *this)
+{
+  int v2; // ecx
+  _DWORD *v3; // eax
+  int v4; // [esp+4h] [ebp-14h]
+  int v5; // [esp+8h] [ebp-10h] BYREF
+  _BYTE v6[12]; // [esp+Ch] [ebp-Ch] BYREF
+
+  v2 = *(this + 371);
+  if ( v2 )
+  {
+    v3 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v2 + 72))(v2, v6);
+    LOWORD(v4) = *v3 / 256;
+    HIWORD(v4) = v3[1] / 256;
+    v5 = v4;
+    *(this + 370) = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5);
+  }
+  else
+  {
+    *(this + 370) = 0;
+  }
+  *(this + 371) = 0;
+}
+
+/* ASM:
+sub     esp, 14h
+push    esi
+mov     esi, ecx
+mov     ecx, [esi+5CCh]
+test    ecx, ecx
+jz      short loc_4DF2EF
+mov     eax, [ecx]
+lea     edx, [esp+18h+var_C]
+push    edx
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+18h+var_14], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+lea     ecx, [esp+18h+var_10]
+add     eax, edx
+push    ecx
+sar     eax, 8
+mov     word ptr [esp+1Ch+var_14+2], ax
+mov     eax, [esp+1Ch+var_14]
+mov     ecx, 87F7E8h
+mov     [esp+1Ch+var_10], eax
+call    CellCoord__To_CellObj
+mov     [esi+5C8h], eax
+mov     dword ptr [esi+5CCh], 0
+pop     esi
+add     esp, 14h
+retn
+; ---------------------------------------------------------------------------
+
+loc_4DF2EF:                             ; CODE XREF: sub_4DF280+E↑j
+mov     dword ptr [esi+5C8h], 0
+mov     dword ptr [esi+5CCh], 0
+pop     esi
+add     esp, 14h
+retn
+*/
 }
 
 // 0x0058D120 (157 bytes)
 int CellCoord_SetMember3_58D120() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058D120.json)
-    // Size: 157 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_58D120 ( _DWORD *this, int a2, int a3 ) { !int result ! ; // eax int v4 ; // ebx int v5 ; // esi _DWORD *v6 ; // eax _DWORD *v7 ; // [esp+4h] [ebp-8h] !int v8 ! ; // [esp+8h] [ebp-4h] result = g_MapCellWidth * g_MapCellWidth ; v7 = this ; if ( g_MapCellWidth * g_MapCellWidth <= 0 ) { * ( this + 3 ) = 0 ; } else { v4 = a3 ; v5 = 0 ; v8 = g_MapCellWidth * g_MapCellWidth ; do { if ( * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 + 56 ) == * ( this + 2 ) ) { * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 + 56 ) = a2 ; * ( ( _BYTE * ) g_MapTileArray + v5 + 75 ) = 0 ; a3 = * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 ) ; v6 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & a3 ) ; v6 [ 14 ] = 0 ; * ( ( _BYTE * ) v6 + 282 ) = 0 ; if ( v4 != -1 ) * ( ( _BYTE * ) v6 + 283 ) = v4 ; this = v7 ; } v5 += 80 ; result = -- v8 ; } while ( v8 ) ; * ( this + 3 ) = 0 ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_58D120(_DWORD *this, int a2, int a3)
+{
+  int result; // eax
+  int v4; // ebx
+  int v5; // esi
+  _DWORD *v6; // eax
+  _DWORD *v7; // [esp+4h] [ebp-8h]
+  int v8; // [esp+8h] [ebp-4h]
+
+  result = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+  v7 = this;
+  if ( MEMORY[0x89C2DC] * MEMORY[0x89C2DC] <= 0 )
+  {
+    *(this + 3) = 0;
+  }
+  else
+  {
+    v4 = a3;
+    v5 = 0;
+    v8 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+    do
+    {
+      if ( *(_DWORD *)((char *)MEMORY[0xABED10] + v5 + 56) == *(this + 2) )
+      {
+        *(_DWORD *)((char *)MEMORY[0xABED10] + v5 + 56) = a2;
+        *((_BYTE *)MEMORY[0xABED10] + v5 + 75) = 0;
+        a3 = *(_DWORD *)((char *)MEMORY[0xABED10] + v5);
+        v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a3);
+        v6[14] = 0;
+        *((_BYTE *)v6 + 282) = 0;
+        if ( v4 != -1 )
+          *((_BYTE *)v6 + 283) = v4;
+        this = v7;
+      }
+      v5 += 80;
+      result = --v8;
+    }
+    while ( v8 );
+    *(this + 3) = 0;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, ds:89C2DCh
+push    ebp
+imul    eax, eax
+xor     ebp, ebp
+mov     [esp+0Ch+var_8], ecx
+cmp     eax, ebp
+jle     short loc_58D1B3
+push    ebx
+mov     ebx, [esp+10h+arg_4]
+push    esi
+push    edi
+mov     edi, [esp+18h+arg_0]
+xor     esi, esi
+mov     [esp+18h+var_4], eax
+
+loc_58D147:                             ; CODE XREF: sub_58D120+84↓j
+mov     eax, dword_A8ED54+2FFBCh
+mov     edx, [esi+eax+38h]
+cmp     edx, [ecx+8]
+jnz     short loc_58D198
+mov     [esi+eax+38h], edi
+mov     eax, dword_A8ED54+2FFBCh
+mov     byte ptr [esi+eax+4Bh], 0
+mov     ecx, dword_A8ED54+2FFBCh
+lea     eax, [esp+18h+arg_4]
+mov     edx, [esi+ecx]
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+1Ch+arg_4], edx
+call    CellCoord__To_CellObj
+cmp     ebx, 0FFFFFFFFh
+mov     [eax+38h], ebp
+mov     byte ptr [eax+11Ah], 0
+jz      short loc_58D194
+mov     [eax+11Bh], bl
+
+loc_58D194:                             ; CODE XREF: sub_58D120+6C↑j
+mov     ecx, [esp+18h+var_8]
+
+loc_58D198:                             ; CODE XREF: sub_58D120+33↑j
+mov     eax, [esp+18h+var_4]
+add     esi, 50h ; 'P'
+dec     eax
+mov     [esp+18h+var_4], eax
+jnz     short loc_58D147
+pop     edi
+pop     esi
+mov     [ecx+0Ch], ebp
+pop     ebx
+pop     ebp
+add     esp, 8
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_58D1B3:                             ; CODE XREF: sub_58D120+14↑j
+mov     [ecx+0Ch], ebp
+pop     ebp
+add     esp, 8
+retn    8
+*/
 }
 
 // 0x00486D90 (158 bytes)
 char CellCoord_ToCellObj_486D90() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00486D90.json)
-    // Size: 158 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_486D90 ( _DWORD *this, char a2 ) { !int v3 ! ; // ebx !int v5 ! ; // esi int v6 ; // ebp !bool v7 ! ; // cf _DWORD *v8 ; // eax !int v9 ! ; // ecx int v10 ; // [esp+8h] [ebp-4h] BYREF int v11 ; // [esp+10h] [ebp+4h] v3 = 1 << a2 ; if ( ( * ( this + 55 ) & ( 1 << a2 ) ) == 0 ) return -1 ; v5 = 0 ; v6 = 0 ; v7 = 1 ; do { if ( v7 ) { v9 = v5 & 7 ; v10 = * ( this + 9 ) ; LOWORD ( v11 ) = LOWORD ( Direction_X_Offsets [ v9 ] ) + v10 ; HIWORD ( v11 ) = HIWORD ( v10 ) + HIWORD ( Direction_X_Offsets [ v9 ] ) ; v10 = v11 ; v8 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v10 ) ; } else { v8 = this ; } if ( ( v3 & v8 [ 55 ] ) != 0 ) v6 |= 1 << v5 ; v7 = ( unsigned int ) ++ v5 < 8 ; } while ( v5 < 8 ) ; return v6 ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_486D90(_DWORD *this, char a2)
+{
+  int v3; // ebx
+  int v5; // esi
+  int v6; // ebp
+  bool v7; // cf
+  _DWORD *v8; // eax
+  int v9; // ecx
+  int v10; // [esp+8h] [ebp-4h] BYREF
+  int v11; // [esp+10h] [ebp+4h]
+
+  v3 = 1 << a2;
+  if ( (*(this + 55) & (1 << a2)) == 0 )
+    return -1;
+  v5 = 0;
+  v6 = 0;
+  v7 = 1;
+  do
+  {
+    if ( v7 )
+    {
+      v9 = v5 & 7;
+      v10 = *(this + 9);
+      LOWORD(v11) = LOWORD(MEMORY[0x89F688][v9]) + v10;
+      HIWORD(v11) = HIWORD(v10) + HIWORD(MEMORY[0x89F688][v9]);
+      v10 = v11;
+      v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10);
+    }
+    else
+    {
+      v8 = this;
+    }
+    if ( (v3 & v8[55]) != 0 )
+      v6 |= 1 << v5;
+    v7 = (unsigned int)++v5 < 8;
+  }
+  while ( v5 < 8 );
+  return v6;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    edi
+mov     edi, ecx
+mov     ebx, 1
+mov     ecx, [esp+0Ch+arg_0]
+mov     eax, [edi+0DCh]
+shl     ebx, cl
+test    ebx, eax
+jnz     short loc_486DB3
+pop     edi
+or      eax, 0FFFFFFFFh
+pop     ebx
+pop     ecx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_486DB3:                             ; CODE XREF: sub_486D90+18↑j
+push    ebp
+push    esi
+xor     esi, esi
+xor     ebp, ebp
+cmp     esi, 8
+
+loc_486DBC:                             ; CODE XREF: sub_486D90+92↓j
+jb      short loc_486DC2
+mov     eax, edi
+jmp     short loc_486E0B
+; ---------------------------------------------------------------------------
+
+loc_486DC2:                             ; CODE XREF: sub_486D90:loc_486DBC↑j
+mov     eax, [edi+24h]
+mov     ecx, esi
+and     ecx, 7
+mov     [esp+14h+var_4], eax
+mov     dx, ds:89F68Ah[ecx*4]
+add     ax, ds:89F688h[ecx*4]
+add     dx, word ptr [esp+14h+var_4+2]
+lea     ecx, ds:89F688h[ecx*4]
+lea     ecx, [esp+14h+var_4]
+mov     word ptr [esp+14h+arg_0], ax
+mov     word ptr [esp+14h+arg_0+2], dx
+mov     eax, [esp+14h+arg_0]
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+18h+var_4], eax
+call    CellCoord__To_CellObj
+
+loc_486E0B:                             ; CODE XREF: sub_486D90+30↑j
+test    [eax+0DCh], ebx
+jz      short loc_486E1E
+mov     edx, 1
+mov     ecx, esi
+shl     edx, cl
+or      ebp, edx
+
+loc_486E1E:                             ; CODE XREF: sub_486D90+81↑j
+inc     esi
+cmp     esi, 8
+jl      short loc_486DBC
+mov     eax, ebp
+pop     esi
+pop     ebp
+pop     edi
+pop     ebx
+pop     ecx
+retn    4
+*/
 }
 
 // 0x005942F0 (232 bytes)
 int CellCoord_ToCellObj_5942F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005942F0.json)
-    // Size: 232 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5942F0 ( _DWORD *this, int *a2 ) { !int *v2 ! ; // ebp !int v3 ! ; // ebx !int result ! ; // eax !int v5 ! ; // edx !int v6 ! ; // edi int v7 ; // esi !int v8 ! ; // eax _BYTE *v9 ; // eax !int v10 ! ; // [esp+8h] [ebp-Ch] __int16 v11[2] ; // [esp+Ch] [ebp-8h] BYREF _DWORD *v12 ; // [esp+10h] [ebp-4h] v2 = a2 ; v12 = this ; v3 = a2 [ 1 ] ; result = v3 + a2 [ 3 ] ; v10 = v3 ; if ( v3 < result ) { v5 = g_MapCellHeight_Value ; do { v6 = * v2 ; if ( * v2 < * v2 + v2 [ 2 ] ) { v7 = ( __int16 ) v3 ; do { v11 [ 0 ] = v6 ; v11 [ 1 ] = v3 ; v8 = v7 + ( __int16 ) v6 ; if ( v8 > v5 ) { if ( ( __int16 ) v6 - v7 < v5 && v7 - ( __int16 ) v6 < v5 && v8 <= g_MapCellCount ) { if ( g_MapTileArray ) * ( ( _DWORD * ) g_MapTileArray + 20 * ( __int16 ) v6 + 20 * g_MapCellWidth * v7 + 14 ) = v12 [ 2 ] ; v9 = CellCoord::To_CellObj ( & MapClass_Instance , v11 ) ; v9 [ 283 ] = * ( ( _BYTE * ) v12 + 16 ) ; v5 = g_MapCellHeight_Value ; } v3 = v10 ; v2 = a2 ; } ++ v6 ; result = * v2 + v2 [ 2 ] ; } while ( v6 < result ) ; } v10 = ++ v3 ; } while ( v3 < v2 [ 1 ] + v2 [ 3 ] ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5942F0(_DWORD *this, int *a2)
+{
+  int *v2; // ebp
+  int v3; // ebx
+  int result; // eax
+  int v5; // edx
+  int v6; // edi
+  int v7; // esi
+  int v8; // eax
+  _BYTE *v9; // eax
+  int v10; // [esp+8h] [ebp-Ch]
+  __int16 v11[2]; // [esp+Ch] [ebp-8h] BYREF
+  _DWORD *v12; // [esp+10h] [ebp-4h]
+
+  v2 = a2;
+  v12 = this;
+  v3 = a2[1];
+  result = v3 + a2[3];
+  v10 = v3;
+  if ( v3 < result )
+  {
+    v5 = MEMORY[0xABED04];
+    do
+    {
+      v6 = *v2;
+      if ( *v2 < *v2 + v2[2] )
+      {
+        v7 = (__int16)v3;
+        do
+        {
+          v11[0] = v6;
+          v11[1] = v3;
+          v8 = v7 + (__int16)v6;
+          if ( v8 > v5 )
+          {
+            if ( (__int16)v6 - v7 < v5 && v7 - (__int16)v6 < v5 && v8 <= MEMORY[0xABED08] )
+            {
+              if ( MEMORY[0xABED10] )
+                *((_DWORD *)MEMORY[0xABED10] + 20 * (__int16)v6 + 20 * MEMORY[0x89C2DC] * v7 + 14) = v12[2];
+              v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v11);
+              v9[283] = *((_BYTE *)v12 + 16);
+              v5 = MEMORY[0xABED04];
+            }
+            v3 = v10;
+            v2 = a2;
+          }
+          ++v6;
+          result = *v2 + v2[2];
+        }
+        while ( v6 < result );
+      }
+      v10 = ++v3;
+    }
+    while ( v3 < v2[1] + v2[3] );
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+mov     ebp, [esp+14h+arg_0]
+mov     [esp+14h+var_4], ecx
+mov     ebx, [ebp+4]
+mov     eax, [ebp+0Ch]
+add     eax, ebx
+mov     [esp+14h+var_C], ebx
+cmp     ebx, eax
+jge     loc_5943D0
+mov     edx, dword_A8ED54+2FFB0h
+push    esi
+push    edi
+
+loc_594319:                             ; CODE XREF: sub_5942F0+D8↓j
+mov     edi, [ebp+0]
+mov     ecx, [ebp+8]
+add     ecx, edi
+cmp     edi, ecx
+jge     loc_5943B9
+movsx   esi, bx
+
+loc_59432C:                             ; CODE XREF: sub_5942F0+C3↓j
+movsx   ecx, di
+mov     [esp+1Ch+var_8], di
+mov     [esp+1Ch+var_6], bx
+lea     eax, [esi+ecx]
+cmp     eax, edx
+jle     short loc_5943A8
+mov     ebx, ecx
+sub     ebx, esi
+cmp     ebx, edx
+jge     short loc_5943A0
+mov     ebx, esi
+sub     ebx, ecx
+cmp     ebx, edx
+jge     short loc_5943A0
+cmp     eax, dword_A8ED54+2FFB4h
+jg      short loc_5943A0
+mov     edx, dword_A8ED54+2FFBCh
+test    edx, edx
+jz      short loc_59437E
+mov     eax, esi
+imul    eax, ds:89C2DCh
+add     eax, ecx
+mov     ecx, [esp+1Ch+var_4]
+mov     ecx, [ecx+8]
+lea     eax, [eax+eax*4]
+shl     eax, 4
+mov     [eax+edx+38h], ecx
+
+loc_59437E:                             ; CODE XREF: sub_5942F0+70↑j
+lea     edx, [esp+1Ch+var_8]
+mov     ecx, 87F7E8h
+push    edx
+call    CellCoord__To_CellObj
+mov     ecx, [esp+1Ch+var_4]
+mov     dl, [ecx+10h]
+mov     [eax+11Bh], dl
+mov     edx, dword_A8ED54+2FFB0h
+
+loc_5943A0:                             ; CODE XREF: sub_5942F0+56↑j
+; sub_5942F0+5E↑j ...
+mov     ebx, [esp+1Ch+var_C]
+mov     ebp, [esp+1Ch+arg_0]
+
+loc_5943A8:                             ; CODE XREF: sub_5942F0+4E↑j
+mov     eax, [ebp+8]
+mov     ecx, [ebp+0]
+inc     edi
+add     eax, ecx
+cmp     edi, eax
+jl      loc_59432C
+
+loc_5943B9:                             ; CODE XREF: sub_5942F0+33↑j
+mov     ecx, [ebp+0Ch]
+mov     esi, [ebp+4]
+inc     ebx
+add     ecx, esi
+cmp     ebx, ecx
+mov     [esp+1Ch+var_C], ebx
+jl      loc_594319
+pop     edi
+pop     esi
+
+loc_5943D0:                             ; CODE XREF: sub_5942F0+1B↑j
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x006C8B10 (304 bytes)
 int CellStruct_SetMember2_6C8B10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006C8B10.json)
-    // Size: 304 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_6C8B10 ( _DWORD *this, int a2, int a3, __int16 a4, __int16 a5 ) { int v6 ; // edi _DWORD *v8 ; // eax int v9 ; // esi !unsigned int v10 ! ; // eax char *v11 ; // edi int v12 ; // [esp+10h] [ebp-10h] int v13 ; // [esp+18h] [ebp-8h] BYREF _BYTE *v14 ; // [esp+2Ch] [ebp+Ch] int v15 ; // [esp+30h] [ebp+10h] v6 = * ( this + 2 ) ; if ( v6 + 12 > ( unsigned int ) ( * ( this + 1 ) + * this ) ) return 0 ; v12 = * ( this + 2 ) ; * ( this + 2 ) = v6 + 12 ; if ( ! v6 ) return 0 ; * ( _WORD * ) v6 = a4 ; * ( _WORD * ) ( v6 + 2 ) = a5 ; * ( _WORD * ) ( v6 + 4 ) = * ( _WORD * ) ( a3 + 8 ) ; * ( _WORD * ) ( v6 + 6 ) = * ( _WORD * ) ( a3 + 12 ) ; * ( _DWORD * ) ( v6 + 8 ) = * ( this + 2 ) ; v8 = CellStruct::Copy ( ( int * ) a3 , & v13 ) ; v9 = a2 ; v14 = ( _BYTE * ) ( * ( int (__thiscall **)(int, _DWORD, _DWORD) ) ( * ( _DWORD * ) a2 + 92 ) ) ( a2 , * v8 , v8 [ 1 ] ) ; v15 = 0 ; if ( * ( int * ) ( a3 + 12 ) > 0 ) { while ( 1 ) { v10 = Map_Append ( v14 , ( int ) & unk_B0BDD0 , * ( _DWORD * ) ( a3 + 8 ) ) ; v11 = ( char * ) * ( this + 2 ) ; if ( ( unsigned int ) & v11 [ v10 ] > * ( this + 1 ) + * this || ( * ( this + 2 ) = & v11 [ v10 ] , ! v11 ) ) { ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) v9 + 96 ) ) ( v9 ) ; return 0 ; } qmemcpy ( v11 , & unk_B0BDD0 , v10 ) ; ++ v15 ; v14 += ( * ( int (__thiscall **)(int) ) ( * ( _DWORD * ) a2 + 116 ) ) ( a2 ) ; if ( v15 >= * ( _DWORD * ) ( a3 + 12 ) ) break ; v9 = a2 ; } v6 = v12 ; v9 = a2 ; } ( * ( void (__thiscall **)(int) ) ( * ( _DWORD * ) v9 + 96 ) ) ( v9 ) ; return v6 ; }
+// [IDA decompile]
+int __thiscall sub_6C8B10(_DWORD *this, int a2, int a3, __int16 a4, __int16 a5)
+{
+  int v6; // edi
+  _DWORD *v8; // eax
+  int v9; // esi
+  unsigned int v10; // eax
+  char *v11; // edi
+  int v12; // [esp+10h] [ebp-10h]
+  int v13; // [esp+18h] [ebp-8h] BYREF
+  _BYTE *v14; // [esp+2Ch] [ebp+Ch]
+  int v15; // [esp+30h] [ebp+10h]
+
+  v6 = *(this + 2);
+  if ( v6 + 12 > (unsigned int)(*(this + 1) + *this) )
     return 0;
+  v12 = *(this + 2);
+  *(this + 2) = v6 + 12;
+  if ( !v6 )
+    return 0;
+  *(_WORD *)v6 = a4;
+  *(_WORD *)(v6 + 2) = a5;
+  *(_WORD *)(v6 + 4) = *(_WORD *)(a3 + 8);
+  *(_WORD *)(v6 + 6) = *(_WORD *)(a3 + 12);
+  *(_DWORD *)(v6 + 8) = *(this + 2);
+  v8 = CellStruct::Copy((int *)a3, &v13);
+  v9 = a2;
+  v14 = (_BYTE *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 92))(a2, *v8, v8[1]);
+  v15 = 0;
+  if ( *(int *)(a3 + 12) > 0 )
+  {
+    while ( 1 )
+    {
+      v10 = Map_Append(v14, (int)&MEMORY[0xB0BDD0], *(_DWORD *)(a3 + 8));
+      v11 = (char *)*(this + 2);
+      if ( (unsigned int)&v11[v10] > *(this + 1) + *this || (*(this + 2) = &v11[v10], !v11) )
+      {
+        (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 96))(v9);
+        return 0;
+      }
+      qmemcpy(v11, &MEMORY[0xB0BDD0], v10);
+      ++v15;
+      v14 += (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 116))(a2);
+      if ( v15 >= *(_DWORD *)(a3 + 12) )
+        break;
+      v9 = a2;
+    }
+    v6 = v12;
+    v9 = a2;
+  }
+  (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 96))(v9);
+  return v6;
+}
+
+/* ASM:
+sub     esp, 10h
+push    ebx
+push    ebp
+mov     ebx, ecx
+push    esi
+push    edi
+mov     edi, [ebx+8]
+mov     ecx, [ebx]
+mov     esi, [ebx+4]
+lea     eax, [edi+0Ch]
+add     ecx, esi
+cmp     eax, ecx
+ja      short loc_6C8B35
+test    edi, edi
+mov     [esp+20h+var_10], edi
+mov     [ebx+8], eax
+jnz     short loc_6C8B41
+
+loc_6C8B35:                             ; CODE XREF: sub_6C8B10+18↑j
+xor     eax, eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_6C8B41:                             ; CODE XREF: sub_6C8B10+23↑j
+mov     dx, [esp+20h+arg_8]
+mov     ax, [esp+20h+arg_C]
+mov     ebp, [esp+20h+arg_4]
+mov     [edi], dx
+mov     [edi+2], ax
+mov     cx, [ebp+8]
+mov     [edi+4], cx
+mov     dx, [ebp+0Ch]
+lea     ecx, [esp+20h+var_8]
+mov     [edi+6], dx
+mov     eax, [ebx+8]
+push    ecx
+mov     ecx, ebp
+mov     [edi+8], eax
+call    CellStruct__Copy
+mov     edx, [eax]
+mov     esi, [esp+20h+arg_0]
+sub     esp, 8
+mov     ecx, esp
+mov     [ecx], edx
+mov     eax, [eax+4]
+mov     [ecx+4], eax
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+5Ch]
+mov     dword ptr [esp+20h+arg_8], eax
+mov     eax, [ebp+0Ch]
+test    eax, eax
+mov     dword ptr [esp+20h+arg_C], 0
+jle     loc_6C8C2D
+
+loc_6C8BA9:                             ; CODE XREF: sub_6C8B10+100↓j
+mov     eax, [ebp+8]
+mov     ecx, dword ptr [esp+20h+arg_8]
+push    eax
+push    (offset dword_A8ED54+7D07Ch)
+push    ecx
+lea     ecx, [esp+2Ch+var_C]
+call    Map_Append
+mov     edi, [ebx+8]
+mov     edx, [ebx]
+add     edx, [ebx+4]
+lea     ecx, [edi+eax]
+cmp     ecx, edx
+ja      short loc_6C8C12
+test    edi, edi
+mov     [ebx+8], ecx
+jz      short loc_6C8C12
+mov     ecx, eax
+mov     esi, (offset dword_A8ED54+7D07Ch)
+shr     ecx, 2
+rep movsd
+mov     ecx, eax
+and     ecx, 3
+rep movsb
+mov     ecx, [esp+20h+arg_0]
+mov     esi, dword ptr [esp+20h+arg_C]
+inc     esi
+mov     edx, [ecx]
+mov     dword ptr [esp+20h+arg_C], esi
+call    dword ptr [edx+74h]
+mov     ecx, dword ptr [esp+20h+arg_8]
+add     ecx, eax
+mov     eax, [ebp+0Ch]
+cmp     esi, eax
+mov     dword ptr [esp+20h+arg_8], ecx
+jge     short loc_6C8C25
+mov     esi, [esp+20h+arg_0]
+jmp     short loc_6C8BA9
+; ---------------------------------------------------------------------------
+
+loc_6C8C12:                             ; CODE XREF: sub_6C8B10+BD↑j
+; sub_6C8B10+C4↑j
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+60h]
+xor     eax, eax
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    10h
+; ---------------------------------------------------------------------------
+
+loc_6C8C25:                             ; CODE XREF: sub_6C8B10+FA↑j
+mov     edi, [esp+20h+var_10]
+mov     esi, [esp+20h+arg_0]
+
+loc_6C8C2D:                             ; CODE XREF: sub_6C8B10+93↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+60h]
+mov     eax, edi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 10h
+retn    10h
+*/
 }
 
 // 0x006E07F0 (84 bytes)
 char Cell_Creat_6E07F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E07F0.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E07F0 ( int *this, int a2, int a3, int a4, int a5 ) { !int v5 ! ; // esi !int *WorldCoords ! ; // eax _DWORD v8[3] ; // [esp+4h] [ebp-Ch] BYREF v5 = RulesClass_Instance -> SilverCrate [ 5 ] ; WorldCoords = Cell::GetWorldCoords ( ( __int16 * ) ScenarioClass_Instance , v8 , * ( this + 36 ) ) ; CreateSmokeEffectAt ( 100 , v5 , * WorldCoords , WorldCoords [ 1 ] , WorldCoords [ 2 ] , 0 , 0 ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E07F0(int *this, int a2, int a3, int a4, int a5)
+{
+  int v5; // esi
+  int *WorldCoords; // eax
+  _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4008);
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0x87F7E8][536210], v8, *(this + 36));
+  CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
+  return 1;
+}
+
+/* ASM:
+mov     ecx, [ecx+90h]
+mov     eax, ds:8871E0h
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+mov     esi, [eax+0FA8h]
+push    0
+push    0
+push    ecx
+mov     ecx, ds:0A8B230h
+push    edx
+call    Cell__GetWorldCoords
+mov     edx, [eax]
+sub     esp, 0Ch
+mov     ecx, esp
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [ecx+4], edx
+mov     edx, esi
+mov     [ecx+8], eax
+mov     ecx, 64h ; 'd'
+call    CreateSmokeEffectAt
+mov     al, 1
+pop     esi
+add     esp, 0Ch
+retn    10h
+*/
 }
 
 // 0x006E0850 (84 bytes)
 char Cell_Creat_6E0850() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E0850.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E0850 ( int *this, int a2, int a3, int a4, int a5 ) { !int v5 ! ; // esi !int *WorldCoords ! ; // eax _DWORD v8[3] ; // [esp+4h] [ebp-Ch] BYREF v5 = RulesClass_Instance -> SilverCrate [ 5 ] ; WorldCoords = Cell::GetWorldCoords ( ( __int16 * ) ScenarioClass_Instance , v8 , * ( this + 36 ) ) ; CreateSmokeEffectAt ( 300 , v5 , * WorldCoords , WorldCoords [ 1 ] , WorldCoords [ 2 ] , 0 , 0 ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E0850(int *this, int a2, int a3, int a4, int a5)
+{
+  int v5; // esi
+  int *WorldCoords; // eax
+  _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4008);
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0x87F7E8][536210], v8, *(this + 36));
+  CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
+  return 1;
+}
+
+/* ASM:
+mov     ecx, [ecx+90h]
+mov     eax, ds:8871E0h
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+mov     esi, [eax+0FA8h]
+push    0
+push    0
+push    ecx
+mov     ecx, ds:0A8B230h
+push    edx
+call    Cell__GetWorldCoords
+mov     edx, [eax]
+sub     esp, 0Ch
+mov     ecx, esp
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [ecx+4], edx
+mov     edx, esi
+mov     [ecx+8], eax
+mov     ecx, 12Ch
+call    CreateSmokeEffectAt
+mov     al, 1
+pop     esi
+add     esp, 0Ch
+retn    10h
+*/
 }
 
 // 0x006E0790 (84 bytes)
 char Cell_Create_6E0790() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E0790.json)
-    // Size: 84 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E0790 ( int *this, int a2, int a3, int a4, int a5 ) { !int v5 ! ; // esi !int *WorldCoords ! ; // eax _DWORD v8[3] ; // [esp+4h] [ebp-Ch] BYREF v5 = RulesClass_Instance -> SilverCrate [ 5 ] ; WorldCoords = Cell::GetWorldCoords ( ( __int16 * ) ScenarioClass_Instance , v8 , * ( this + 36 ) ) ; CreateSmokeEffectAt ( 50 , v5 , * WorldCoords , WorldCoords [ 1 ] , WorldCoords [ 2 ] , 0 , 0 ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E0790(int *this, int a2, int a3, int a4, int a5)
+{
+  int v5; // esi
+  int *WorldCoords; // eax
+  _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4008);
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0x87F7E8][536210], v8, *(this + 36));
+  CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
+  return 1;
+}
+
+/* ASM:
+mov     ecx, [ecx+90h]
+mov     eax, ds:8871E0h
+sub     esp, 0Ch
+lea     edx, [esp+0Ch+var_C]
+push    esi
+mov     esi, [eax+0FA8h]
+push    0
+push    0
+push    ecx
+mov     ecx, ds:0A8B230h
+push    edx
+call    Cell__GetWorldCoords
+mov     edx, [eax]
+sub     esp, 0Ch
+mov     ecx, esp
+mov     [ecx], edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+mov     [ecx+4], edx
+mov     edx, esi
+mov     [ecx+8], eax
+mov     ecx, 32h ; '2'
+call    CreateSmokeEffectAt
+mov     al, 1
+pop     esi
+add     esp, 0Ch
+retn    10h
+*/
 }
 
 // 0x0062D510 (206 bytes)
 const char* Cell_Get_62D510() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0062D510.json)
-    // Size: 206 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_62D510 ( float *this ) { double v2 ; // st7 char *v3 ; // edi int v4 ; // ebx int v5 ; // eax int v6 ; // ecx int v7 ; // edx int v8 ; // edi int v9 ; // eax !int GroundHeight ! ; // edi int v12 ; // [esp+Ch] [ebp-18h] BYREF int v13 ; // [esp+10h] [ebp-14h] int v14 ; // [esp+14h] [ebp-10h] _DWORD v15[3] ; // [esp+18h] [ebp-Ch] BYREF v2 = * ( this + 57 ) ; v3 = ( char * ) ( this + 39 ) ; * ( float * ) v15 = * ( this + 39 ) ; v4 = * ( ( _DWORD * ) this + 40 ) ; v5 = * ( ( _DWORD * ) this + 41 ) ; v6 = * ( ( _DWORD * ) this + 39 ) ; v15 [ 2 ] = v5 ; v7 = * ( ( _DWORD * ) v3 + 1 ) ; v12 = v6 ; v8 = * ( ( _DWORD * ) v3 + 2 ) ; v13 = v7 ; v14 = v8 ; v15 [ 1 ] = v4 ; if ( v2 > 0.0 ) { v9 = * ( ( _DWORD * ) this + 66 ) ; v12 = * ( ( _DWORD * ) this + 64 ) + v6 ; v13 = * ( ( _DWORD * ) this + 65 ) + v7 ; v14 = v9 + v8 ; } if ( * ( this + 57 ) > 0.0 ) { GroundHeight = Cell::GetGroundHeight ( v15 ) ; if ( Cell::GetGroundHeight ( & v12 ) > GroundHeight ) { * ( ( _BYTE * ) this + 301 ) = 1 ; * ( ( _BYTE * ) this + 305 ) = 1 ; } } return ( * ( int (__thiscall **)(float *, int *) ) ( * ( _DWORD * ) this + 436 ) ) ( this , & v12 ) ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_62D510(float *this)
+{
+  double v2; // st7
+  char *v3; // edi
+  int v4; // ebx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // edx
+  int v8; // edi
+  int v9; // eax
+  int GroundHeight; // edi
+  int v12; // [esp+Ch] [ebp-18h] BYREF
+  int v13; // [esp+10h] [ebp-14h]
+  int v14; // [esp+14h] [ebp-10h]
+  _DWORD v15[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  v2 = *(this + 57);
+  v3 = (char *)(this + 39);
+  *(float *)v15 = *(this + 39);
+  v4 = *((_DWORD *)this + 40);
+  v5 = *((_DWORD *)this + 41);
+  v6 = *((_DWORD *)this + 39);
+  v15[2] = v5;
+  v7 = *((_DWORD *)v3 + 1);
+  v12 = v6;
+  v8 = *((_DWORD *)v3 + 2);
+  v13 = v7;
+  v14 = v8;
+  v15[1] = v4;
+  if ( v2 > 0.0 )
+  {
+    v9 = *((_DWORD *)this + 66);
+    v12 = *((_DWORD *)this + 64) + v6;
+    v13 = *((_DWORD *)this + 65) + v7;
+    v14 = v9 + v8;
+  }
+  if ( *(this + 57) > 0.0 )
+  {
+    GroundHeight = Cell::GetGroundHeight(v15);
+    if ( Cell::GetGroundHeight(&v12) > GroundHeight )
+    {
+      *((_BYTE *)this + 301) = 1;
+      *((_BYTE *)this + 305) = 1;
+    }
+  }
+  return (*(int (__thiscall **)(float *, int *))(*(_DWORD *)this + 436))(this, &v12);
+}
+
+/* ASM:
+sub     esp, 18h
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     ebx, [esi+9Ch]
+lea     eax, [esi+9Ch]
+fld     dword ptr [esi+0E4h]
+fcomp   ds:dbl_7E2800
+mov     edi, eax
+mov     [esp+24h+var_C], ebx
+mov     ebx, [eax+4]
+mov     eax, [eax+8]
+mov     ecx, [edi]
+mov     [esp+24h+var_4], eax
+fnstsw  ax
+mov     edx, [edi+4]
+mov     [esp+24h+var_18], ecx
+test    ah, 41h
+mov     edi, [edi+8]
+mov     [esp+24h+var_14], edx
+mov     [esp+24h+var_10], edi
+mov     [esp+24h+var_8], ebx
+jnz     short loc_62D583
+mov     ebx, [esi+100h]
+mov     eax, [esi+108h]
+add     ecx, ebx
+mov     [esp+24h+var_18], ecx
+mov     ecx, [esi+104h]
+add     edx, ecx
+add     edi, eax
+mov     [esp+24h+var_14], edx
+mov     [esp+24h+var_10], edi
+
+loc_62D583:                             ; CODE XREF: sub_62D510+4D↑j
+fld     dword ptr [esi+0E4h]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 41h
+jnz     short loc_62D5C8
+lea     ecx, [esp+24h+var_C]
+push    ecx
+mov     ecx, 87F7E8h
+call    Cell__GetGroundHeight
+lea     edx, [esp+24h+var_18]
+mov     ecx, 87F7E8h
+push    edx
+mov     edi, eax
+call    Cell__GetGroundHeight
+cmp     eax, edi
+jle     short loc_62D5C8
+mov     al, 1
+mov     [esi+12Dh], al
+mov     [esi+131h], al
+
+loc_62D5C8:                             ; CODE XREF: sub_62D510+84↑j
+; sub_62D510+A8↑j
+mov     eax, [esi]
+lea     ecx, [esp+24h+var_18]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+1B4h]
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 18h
+retn
+*/
 }
 
 // 0x006E3F70 (58 bytes)
 int Cell_Get_6E3F70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E3F70.json)
-    // Size: 58 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_6E3F70 ( int *this, _DWORD *a2 ) { _DWORD *WorldCoords ; // edx _DWORD v4[3] ; // [esp+4h] [ebp-Ch] BYREF WorldCoords = Cell::GetWorldCoords ( ( __int16 * ) ScenarioClass_Instance , v4 , * ( this + 36 ) ) ; * a2 = * WorldCoords ; a2 [ 1 ] = WorldCoords [ 1 ] ; a2 [ 2 ] = WorldCoords [ 2 ] ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_6E3F70(int *this, _DWORD *a2)
+{
+  _DWORD *WorldCoords; // edx
+  _DWORD v4[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v4, *(this + 36));
+  *a2 = *WorldCoords;
+  a2[1] = WorldCoords[1];
+  a2[2] = WorldCoords[2];
+  return a2;
+}
+
+/* ASM:
+mov     eax, [ecx+90h]
+sub     esp, 0Ch
+lea     ecx, [esp+0Ch+var_C]
+push    esi
+push    eax
+push    ecx
+mov     ecx, ds:0A8B230h
+call    Cell__GetWorldCoords
+mov     edx, eax
+mov     eax, [esp+10h+arg_0]
+mov     ecx, eax
+mov     esi, [edx]
+mov     [ecx], esi
+mov     esi, [edx+4]
+mov     [ecx+4], esi
+pop     esi
+mov     edx, [edx+8]
+mov     [ecx+8], edx
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x00633C60 (93 bytes)
 int Coord_Get_633C60() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00633C60.json)
-    // Size: 93 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_633C60 ( _BYTE *this, _DWORD *a2 ) { _DWORD *ScenarioClassActionCoords ; // eax !int v3 ! ; // edx int v5[3] ; // [esp+0h] [ebp-18h] BYREF _DWORD v6[3] ; // [esp+Ch] [ebp-Ch] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v5 , this ) ; v6 [ 0 ] = * ScenarioClassActionCoords ; v6 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v6 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; Coord::To_Screen ( TacticalClass_Instance , v6 , v5 ) ; v3 = Map_VisibleRect + v5 [ 1 ] ; * a2 = DSurface_ViewBounds + v5 [ 0 ] ; a2 [ 1 ] = v3 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_633C60(_BYTE *this, _DWORD *a2)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int v3; // edx
+  int v5[3]; // [esp+0h] [ebp-18h] BYREF
+  _DWORD v6[3]; // [esp+Ch] [ebp-Ch] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v5, this);
+  v6[0] = *ScenarioClassActionCoords;
+  v6[1] = ScenarioClassActionCoords[1];
+  v6[2] = ScenarioClassActionCoords[2];
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5);
+  v3 = MEMORY[0x87F7E8][7663] + v5[1];
+  *a2 = MEMORY[0x87F7E8][7662] + v5[0];
+  a2[1] = v3;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 18h
+mov     edx, ecx
+lea     ecx, [esp+18h+var_18]
+call    GetScenarioClassActionCoords
+mov     ecx, [eax]
+mov     [esp+18h+var_C], ecx
+lea     ecx, [esp+18h+var_18]
+mov     edx, [eax+4]
+push    ecx
+mov     ecx, ds:887324h
+mov     [esp+1Ch+var_8], edx
+mov     eax, [eax+8]
+lea     edx, [esp+1Ch+var_C]
+push    edx
+mov     [esp+20h+var_4], eax
+call    Coord__To_Screen
+mov     ecx, [esp+18h+var_18]
+mov     edx, ds:886FA0h
+mov     eax, ds:886FA4h
+add     ecx, edx
+mov     edx, [esp+18h+var_14]
+add     edx, eax
+mov     eax, [esp+18h+arg_0]
+mov     [eax], ecx
+mov     [eax+4], edx
+add     esp, 18h
+retn    4
+*/
 }
 
 // 0x00634880 (101 bytes)
 int Coord_Get_634880() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00634880.json)
-    // Size: 101 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_634880 ( _DWORD *this, _DWORD *a2, int a3 ) { _DWORD *ScenarioClassActionCoords ; // eax !int v4 ! ; // edx int v6[2] ; // [esp+0h] [ebp-20h] BYREF _DWORD v7[3] ; // [esp+8h] [ebp-18h] BYREF _DWORD v8[3] ; // [esp+14h] [ebp-Ch] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v8 , * ( _BYTE ** ) ( * ( this + 9 ) + 4 * a3 ) ) ; v7 [ 0 ] = * ScenarioClassActionCoords ; v7 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v7 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; Coord::To_Screen ( TacticalClass_Instance , v7 , v6 ) ; v4 = Map_VisibleRect + v6 [ 1 ] ; * a2 = DSurface_ViewBounds + v6 [ 0 ] ; a2 [ 1 ] = v4 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_634880(_DWORD *this, _DWORD *a2, int a3)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int v4; // edx
+  int v6[2]; // [esp+0h] [ebp-20h] BYREF
+  _DWORD v7[3]; // [esp+8h] [ebp-18h] BYREF
+  _DWORD v8[3]; // [esp+14h] [ebp-Ch] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v8, *(_BYTE **)(*(this + 9) + 4 * a3));
+  v7[0] = *ScenarioClassActionCoords;
+  v7[1] = ScenarioClassActionCoords[1];
+  v7[2] = ScenarioClassActionCoords[2];
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v7, v6);
+  v4 = MEMORY[0x87F7E8][7663] + v6[1];
+  *a2 = MEMORY[0x87F7E8][7662] + v6[0];
+  a2[1] = v4;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 20h
+mov     eax, [ecx+24h]
+mov     ecx, [esp+20h+arg_4]
+mov     edx, [eax+ecx*4]
+lea     ecx, [esp+20h+var_C]
+call    GetScenarioClassActionCoords
+mov     edx, [eax]
+mov     [esp+20h+var_18], edx
+mov     ecx, [eax+4]
+mov     [esp+20h+var_14], ecx
+lea     ecx, [esp+20h+var_18]
+mov     edx, [eax+8]
+lea     eax, [esp+20h+var_20]
+push    eax
+push    ecx
+mov     ecx, ds:887324h
+mov     [esp+28h+var_10], edx
+call    Coord__To_Screen
+mov     ecx, [esp+20h+var_20]
+mov     edx, ds:886FA0h
+mov     eax, ds:886FA4h
+add     ecx, edx
+mov     edx, [esp+20h+var_1C]
+add     edx, eax
+mov     eax, [esp+20h+arg_0]
+mov     [eax], ecx
+mov     [eax+4], edx
+add     esp, 20h
+retn    8
+*/
 }
 
 // 0x006348F0 (94 bytes)
 int Coord_Get_6348F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006348F0.json)
-    // Size: 94 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_6348F0 ( _BYTE *this, _DWORD *a2 ) { _DWORD *ScenarioClassActionCoords ; // eax !int v3 ! ; // edx int v5[2] ; // [esp+0h] [ebp-20h] BYREF _DWORD v6[3] ; // [esp+8h] [ebp-18h] BYREF _DWORD v7[3] ; // [esp+14h] [ebp-Ch] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v7 , this + 56 ) ; v6 [ 0 ] = * ScenarioClassActionCoords ; v6 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v6 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; Coord::To_Screen ( TacticalClass_Instance , v6 , v5 ) ; v3 = Map_VisibleRect + v5 [ 1 ] ; * a2 = DSurface_ViewBounds + v5 [ 0 ] ; a2 [ 1 ] = v3 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_6348F0(_BYTE *this, _DWORD *a2)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int v3; // edx
+  int v5[2]; // [esp+0h] [ebp-20h] BYREF
+  _DWORD v6[3]; // [esp+8h] [ebp-18h] BYREF
+  _DWORD v7[3]; // [esp+14h] [ebp-Ch] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, this + 56);
+  v6[0] = *ScenarioClassActionCoords;
+  v6[1] = ScenarioClassActionCoords[1];
+  v6[2] = ScenarioClassActionCoords[2];
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5);
+  v3 = MEMORY[0x87F7E8][7663] + v5[1];
+  *a2 = MEMORY[0x87F7E8][7662] + v5[0];
+  a2[1] = v3;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 20h
+lea     edx, [ecx+38h]
+lea     ecx, [esp+20h+var_C]
+call    GetScenarioClassActionCoords
+mov     ecx, [eax]
+mov     [esp+20h+var_18], ecx
+lea     ecx, [esp+20h+var_20]
+mov     edx, [eax+4]
+push    ecx
+mov     ecx, ds:887324h
+mov     [esp+24h+var_14], edx
+mov     eax, [eax+8]
+lea     edx, [esp+24h+var_18]
+push    edx
+mov     [esp+28h+var_10], eax
+call    Coord__To_Screen
+mov     ecx, [esp+20h+var_20]
+mov     edx, ds:886FA0h
+mov     eax, ds:886FA4h
+add     ecx, edx
+mov     edx, [esp+20h+var_1C]
+add     edx, eax
+mov     eax, [esp+20h+arg_0]
+mov     [eax], ecx
+mov     [eax+4], edx
+add     esp, 20h
+retn    4
+*/
 }
 
 // 0x00635DF0 (145 bytes)
 int Coord_Get_635DF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00635DF0.json)
-    // Size: 145 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_635DF0 ( _DWORD **this, _DWORD *a2 ) { _DWORD *ScenarioClassActionCoords ; // eax !int v4 ! ; // ecx int v5[2] ; // [esp+Ch] [ebp-24h] BYREF _DWORD v6[3] ; // [esp+14h] [ebp-1Ch] BYREF _DWORD v7[4] ; // [esp+20h] [ebp-10h] BYREF ScenarioClassActionCoords = GetScenarioClassActionCoords ( v7 , * ( _BYTE ** ) ( * * ( this + 1 ) + 4 ) ) ; v6 [ 0 ] = * ScenarioClassActionCoords ; v6 [ 1 ] = ScenarioClassActionCoords [ 1 ] ; v6 [ 2 ] = ScenarioClassActionCoords [ 2 ] ; Coord::To_Screen ( TacticalClass_Instance , v6 , v5 ) ; v5 [ 0 ] += DSurface_ViewBounds ; v4 = Map_VisibleRect + v5 [ 1 ] - 8 ; * a2 = v5 [ 0 ] - 8 ; a2 [ 1 ] = v4 ; a2 [ 2 ] = 16 ; a2 [ 3 ] = 16 ; return a2 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_635DF0(_DWORD **this, _DWORD *a2)
+{
+  _DWORD *ScenarioClassActionCoords; // eax
+  int v4; // ecx
+  int v5[2]; // [esp+Ch] [ebp-24h] BYREF
+  _DWORD v6[3]; // [esp+14h] [ebp-1Ch] BYREF
+  _DWORD v7[4]; // [esp+20h] [ebp-10h] BYREF
+
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(_BYTE **)(**(this + 1) + 4));
+  v6[0] = *ScenarioClassActionCoords;
+  v6[1] = ScenarioClassActionCoords[1];
+  v6[2] = ScenarioClassActionCoords[2];
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5);
+  v5[0] += MEMORY[0x87F7E8][7662];
+  v4 = MEMORY[0x87F7E8][7663] + v5[1] - 8;
+  *a2 = v5[0] - 8;
+  a2[1] = v4;
+  a2[2] = 16;
+  a2[3] = 16;
+  return a2;
+}
+
+/* ASM:
+sub     esp, 24h
+mov     eax, [ecx+4]
+push    ebx
+push    esi
+push    edi
+mov     ecx, [eax]
+mov     edx, [ecx+4]
+lea     ecx, [esp+30h+var_10]
+call    GetScenarioClassActionCoords
+mov     edx, [eax]
+mov     [esp+30h+var_1C], edx
+mov     ecx, [eax+4]
+mov     [esp+30h+var_18], ecx
+lea     ecx, [esp+30h+var_1C]
+mov     edx, [eax+8]
+lea     eax, [esp+30h+var_24]
+push    eax
+push    ecx
+mov     ecx, ds:887324h
+mov     [esp+38h+var_14], edx
+call    Coord__To_Screen
+mov     eax, [esp+30h+var_24]
+mov     edi, ds:886FA0h
+mov     ecx, [esp+30h+var_20]
+mov     esi, ds:886FA4h
+add     eax, edi
+add     ecx, esi
+mov     [esp+30h+var_24], eax
+add     eax, 0FFFFFFFCh
+mov     [esp+30h+var_10], eax
+sub     ecx, 4
+lea     edi, [eax-4]
+mov     eax, [esp+30h+arg_0]
+mov     ebx, eax
+mov     edx, 8
+sub     ecx, 4
+mov     esi, edx
+mov     [ebx], edi
+add     edx, edx
+add     esi, esi
+pop     edi
+mov     [ebx+4], ecx
+mov     [ebx+8], edx
+mov     [ebx+0Ch], esi
+pop     esi
+pop     ebx
+add     esp, 24h
+retn    4
+*/
 }
 
 // 0x004C1E70 (171 bytes)
 int Coord_ToScreen_4C1E70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004C1E70.json)
-    // Size: 171 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __stdcall sub_4C1E70 ( int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9 ) { int v9 ; // eax !int v10 ! ; // esi int v11 ; // eax !int v12 ! ; // eax int v13 ; // edx int v15[2] ; // [esp+8h] [ebp-10h] BYREF int v16[2] ; // [esp+10h] [ebp-8h] BYREF Coord::To_Screen ( TacticalClass_Instance , & a1 , v16 ) ; Coord::To_Screen ( TacticalClass_Instance , & a4 , v15 ) ; v9 = ZCoordToScreenY ( a3 ) ; v10 = a8 - v9 - 2 ; v11 = ZCoordToScreenY ( a6 ) ; v12 = a9 - v11 - 2 ; if ( * ( _DWORD * ) ( FileSystem_THEATER_PAL + 4 ) == 1 ) v13 = * ( unsigned __int8 * ) ( * ( _DWORD * ) ( FileSystem_THEATER_PAL + 372 ) + a7 ) ; else v13 = * ( unsigned __int16 * ) ( * ( _DWORD * ) ( FileSystem_THEATER_PAL + 372 ) + 2 * a7 ) ; return ( * ( int (__thiscall **)(int, int *, int *, int *, int, int, int, _DWORD) ) ( * ( _DWORD * ) DSurface_Composite + 52 ) ) ( DSurface_Composite , & DSurface_ViewBounds , v16 , v15 , v13 , v10 , v12 , 0 ) ; }
-    return 0;
+// [IDA decompile]
+int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+  int v9; // eax
+  int v10; // esi
+  int v11; // eax
+  int v12; // eax
+  int v13; // edx
+  int v15[2]; // [esp+8h] [ebp-10h] BYREF
+  int v16[2]; // [esp+10h] [ebp-8h] BYREF
+
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], &a1, v16);
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], &a4, v15);
+  v9 = ZCoordToScreenY(a3);
+  v10 = a8 - v9 - 2;
+  v11 = ZCoordToScreenY(a6);
+  v12 = a9 - v11 - 2;
+  if ( *(_DWORD *)(MEMORY[0x87F6C0][1] + 4) == 1 )
+    v13 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + a7);
+  else
+    v13 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C0][1] + 372) + 2 * a7);
+  return (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7885]
+                                                                                      + 52))(
+           MEMORY[0x87F7E8][7885],
+           &MEMORY[0x87F7E8][7662],
+           v16,
+           v15,
+           v13,
+           v10,
+           v12,
+           0);
+}
+
+/* ASM:
+sub     esp, 10h
+lea     eax, [esp+10h+var_8]
+lea     ecx, [esp+10h+arg_0]
+push    esi
+push    edi
+push    eax
+push    ecx
+mov     ecx, ds:887324h
+call    Coord__To_Screen
+mov     ecx, ds:887324h
+lea     edx, [esp+18h+var_10]
+lea     eax, [esp+18h+arg_C]
+push    edx
+push    eax
+call    Coord__To_Screen
+mov     ecx, [esp+18h+arg_8]
+call    ZCoordToScreenY
+mov     esi, [esp+18h+arg_1C]
+mov     ecx, [esp+18h+arg_14]
+sub     esi, eax
+sub     esi, 2
+call    ZCoordToScreenY
+mov     ecx, eax
+mov     eax, [esp+18h+arg_20]
+sub     eax, ecx
+mov     ecx, ds:87F6C4h
+sub     eax, 2
+cmp     dword ptr [ecx+4], 1
+jnz     short loc_4C1EE4
+mov     edx, [ecx+174h]
+mov     edi, [esp+18h+arg_18]
+xor     ecx, ecx
+mov     cl, [edx+edi]
+mov     edx, ecx
+jmp     short loc_4C1EF4
+; ---------------------------------------------------------------------------
+
+loc_4C1EE4:                             ; CODE XREF: sub_4C1E70+5F↑j
+mov     ecx, [ecx+174h]
+mov     edi, [esp+18h+arg_18]
+xor     edx, edx
+mov     dx, [ecx+edi*2]
+
+loc_4C1EF4:                             ; CODE XREF: sub_4C1E70+72↑j
+mov     ecx, ds:88731Ch
+push    0
+push    eax
+push    esi
+mov     edi, [ecx]
+push    edx
+lea     edx, [esp+28h+var_10]
+lea     eax, [esp+28h+var_8]
+push    edx
+push    eax
+push    886FA0h
+call    dword ptr [edi+34h]
+pop     edi
+pop     esi
+add     esp, 10h
+retn    24h ; '$'
+*/
 }
 
 // 0x00659590 (187 bytes)
 char Coord_ToScreen_659590() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00659590.json)
-    // Size: 187 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_659590 ( _DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4 ) { !char result ! ; // al int v6 ; // esi int v7 ; // eax int v8[2] ; // [esp+Ch] [ebp-20h] BYREF int v9[2] ; // [esp+14h] [ebp-18h] BYREF int v10[4] ; // [esp+1Ch] [ebp-10h] BYREF Coord::To_Screen ( TacticalClass_Instance , a2 , v9 ) ; Coord::To_Screen ( TacticalClass_Instance , a3 , v8 ) ; v10 [ 0 ] = DSurface_ViewBounds ; v10 [ 1 ] = Map_VisibleRect ; v10 [ 2 ] = g_Map_VisibleRectOffset ; v10 [ 3 ] = g_DSurface_WindowOffset ; result = ClipLine ( v9 , v8 , v10 ) ; if ( result ) { v6 = * ( this + 3 ) - ZCoordToScreenY ( a2 [ 2 ] ) - 2 ; v7 = ZCoordToScreenY ( a3 [ 2 ] ) ; return ( * ( int (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD) ) ( * ( _DWORD * ) DSurface_Hidden_2 + 52 ) ) ( DSurface_Hidden_2 , & DSurface_ViewBounds , v9 , v8 , a4 , v6 , -2 - v7 , 0 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
+{
+  char result; // al
+  int v6; // esi
+  int v7; // eax
+  int v8[2]; // [esp+Ch] [ebp-20h] BYREF
+  int v9[2]; // [esp+14h] [ebp-18h] BYREF
+  int v10[4]; // [esp+1Ch] [ebp-10h] BYREF
+
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], a2, v9);
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], a3, v8);
+  v10[0] = MEMORY[0x87F7E8][7662];
+  v10[1] = MEMORY[0x87F7E8][7663];
+  v10[2] = MEMORY[0x87F7E8][7664];
+  v10[3] = MEMORY[0x87F7E8][7665];
+  result = ClipLine(v9, v8, v10);
+  if ( result )
+  {
+    v6 = *(this + 3) - ZCoordToScreenY(a2[2]) - 2;
+    v7 = ZCoordToScreenY(a3[2]);
+    return (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883]
+                                                                                           + 52))(
+             MEMORY[0x87F7E8][7883],
+             &MEMORY[0x87F7E8][7662],
+             v9,
+             v8,
+             a4,
+             v6,
+             -2 - v7,
+             0);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 20h
+push    ebx
+push    esi
+push    edi
+mov     edi, [esp+2Ch+arg_0]
+lea     eax, [esp+2Ch+var_18]
+mov     esi, ecx
+mov     ecx, ds:887324h
+push    eax
+push    edi
+call    Coord__To_Screen
+mov     ebx, [esp+2Ch+arg_4]
+lea     ecx, [esp+2Ch+var_20]
+push    ecx
+mov     ecx, ds:887324h
+push    ebx
+call    Coord__To_Screen
+mov     edx, ds:886FA0h
+mov     eax, ds:886FA4h
+mov     ecx, ds:886FA8h
+mov     [esp+2Ch+var_10], edx
+mov     edx, ds:886FACh
+mov     [esp+2Ch+var_C], eax
+lea     eax, [esp+2Ch+var_10]
+mov     [esp+2Ch+var_8], ecx
+mov     [esp+2Ch+var_4], edx
+push    eax
+lea     edx, [esp+30h+var_20]
+lea     ecx, [esp+30h+var_18]
+call    ClipLine
+test    al, al
+jz      short loc_659642
+mov     ecx, [edi+8]
+call    ZCoordToScreenY
+mov     esi, [esi+0Ch]
+mov     ecx, [ebx+8]
+sub     esi, eax
+sub     esi, 2
+call    ZCoordToScreenY
+mov     edx, 0FFFFFFFEh
+push    0
+sub     edx, eax
+mov     ecx, ds:887314h
+push    edx
+push    esi
+movsx   edx, [esp+38h+arg_8]
+mov     eax, [ecx]
+push    edx
+lea     edx, [esp+3Ch+var_20]
+push    edx
+lea     edx, [esp+40h+var_18]
+push    edx
+push    886FA0h
+call    dword ptr [eax+34h]
+
+loc_659642:                             ; CODE XREF: sub_659590+6D↑j
+pop     edi
+pop     esi
+pop     ebx
+add     esp, 20h
+retn    0Ch
+*/
 }
 
 // 0x004CC680 (73 bytes)
 bool GetCell_4CC680() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004CC680.json)
-    // Size: 73 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   BOOL __fastcall sub_4CC680 ( int a1, int a2, int a3 ) { !int SlopeIndex ! ; // ebx !int v5 ! ; // esi !BOOL result ! ; // eax SlopeIndex = Cell::GetSlopeIndex ( a2 ) ; result = 0 ; if ( Cell::GetSlopeIndex ( a3 ) - SlopeIndex >= 4 ) { v5 = Cell::GetSlopeIndex ( a1 ) ; if ( Cell::GetSlopeIndex ( a3 ) - v5 > 0 ) return 1 ; } return result ; }
-    return false;
+// [IDA decompile]
+BOOL __fastcall sub_4CC680(int a1, int a2, int a3)
+{
+  int SlopeIndex; // ebx
+  int v5; // esi
+  BOOL result; // eax
+
+  SlopeIndex = Cell::GetSlopeIndex(a2);
+  result = 0;
+  if ( Cell::GetSlopeIndex(a3) - SlopeIndex >= 4 )
+  {
+    v5 = Cell::GetSlopeIndex(a1);
+    if ( Cell::GetSlopeIndex(a3) - v5 > 0 )
+      return 1;
+  }
+  return result;
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+mov     ecx, edx
+call    Cell__GetSlopeIndex
+mov     edi, [esp+0Ch+arg_0]
+mov     ebx, eax
+mov     ecx, edi
+call    Cell__GetSlopeIndex
+sub     eax, ebx
+cmp     eax, 4
+jl      short loc_4CC6C1
+mov     ecx, esi
+call    Cell__GetSlopeIndex
+mov     ecx, edi
+mov     esi, eax
+call    Cell__GetSlopeIndex
+sub     eax, esi
+test    eax, eax
+jle     short loc_4CC6C1
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4CC6C1:                             ; CODE XREF: sub_4CC680+1E↑j
+; sub_4CC680+34↑j
+pop     edi
+pop     esi
+xor     eax, eax
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0057A900 (178 bytes)
 int GetCell_57A900() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0057A900.json)
-    // Size: 178 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   int __fastcall sub_57A900 ( _DWORD *a1, signed int a2 ) { !int v3 ! ; // ebx !unsigned int v4 ! ; // ebp !int *NeighbourContent ! ; // esi !int *v6 ! ; // edi !bool IsValidHeight ! ; // al !bool v8 ! ; // bl !bool v10 ! ; // [esp+13h] [ebp-15h] !int v11 ! ; // [esp+14h] [ebp-14h] _DWORD v12[4] ; // [esp+18h] [ebp-10h] v12 [ 1 ] = 4 ; v12 [ 3 ] = 4 ; v12 [ 0 ] = 2 ; v12 [ 2 ] = 2 ; v3 = 1 ; v4 = v12 [ a2 / 2 ] ; NeighbourContent = ( int * ) Cell::GetNeighbourContent ( a1 , v4 ) ; v6 = ( int * ) Cell::GetNeighbourContent ( NeighbourContent , a2 ) ; v10 = ! Cell::IsValidHeight ( NeighbourContent ) ; IsValidHeight = Cell::IsValidHeight ( v6 ) ; if ( v10 ) { while ( IsValidHeight ) { v11 = v3 + 1 ; NeighbourContent = ( int * ) Cell::GetNeighbourContent ( NeighbourContent , v4 ) ; v6 = ( int * ) Cell::GetNeighbourContent ( v6 , v4 ) ; v8 = ! Cell::IsValidHeight ( NeighbourContent ) ; IsValidHeight = Cell::IsValidHeight ( v6 ) ; if ( ! v8 ) return v11 ; v3 = v11 ; } } return v3 ; }
-    return 0;
+// [IDA decompile]
+int __fastcall sub_57A900(_DWORD *a1, signed int a2)
+{
+  int v3; // ebx
+  unsigned int v4; // ebp
+  int *NeighbourContent; // esi
+  int *v6; // edi
+  bool IsValidHeight; // al
+  bool v8; // bl
+  bool v10; // [esp+13h] [ebp-15h]
+  int v11; // [esp+14h] [ebp-14h]
+  _DWORD v12[4]; // [esp+18h] [ebp-10h]
+
+  v12[1] = 4;
+  v12[3] = 4;
+  v12[0] = 2;
+  v12[2] = 2;
+  v3 = 1;
+  v4 = v12[a2 / 2];
+  NeighbourContent = (int *)Cell::GetNeighbourContent(a1, v4);
+  v6 = (int *)Cell::GetNeighbourContent(NeighbourContent, a2);
+  v10 = !Cell::IsValidHeight(NeighbourContent);
+  IsValidHeight = Cell::IsValidHeight(v6);
+  if ( v10 )
+  {
+    while ( IsValidHeight )
+    {
+      v11 = v3 + 1;
+      NeighbourContent = (int *)Cell::GetNeighbourContent(NeighbourContent, v4);
+      v6 = (int *)Cell::GetNeighbourContent(v6, v4);
+      v8 = !Cell::IsValidHeight(NeighbourContent);
+      IsValidHeight = Cell::IsValidHeight(v6);
+      if ( !v8 )
+        return v11;
+      v3 = v11;
+    }
+  }
+  return v3;
+}
+
+/* ASM:
+sub     esp, 18h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, edx
+mov     eax, 4
+mov     edx, 2
+mov     [esp+28h+var_C], eax
+mov     [esp+28h+var_4], eax
+mov     eax, edi
+mov     [esp+28h+var_10], edx
+mov     [esp+28h+var_8], edx
+cdq
+sub     eax, edx
+mov     ebx, 1
+sar     eax, 1
+mov     ebp, [esp+eax*4+28h+var_10]
+push    ebp
+call    Cell__GetNeighbourContent
+mov     esi, eax
+push    edi
+mov     ecx, esi
+call    Cell__GetNeighbourContent
+mov     ecx, esi
+mov     edi, eax
+call    Cell__IsValidHeight
+test    al, al
+mov     ecx, edi
+setz    [esp+28h+var_15]
+call    Cell__IsValidHeight
+mov     cl, [esp+28h+var_15]
+test    cl, cl
+jz      short loc_57A9A8
+jmp     short loc_57A968
+; ---------------------------------------------------------------------------
+
+loc_57A964:                             ; CODE XREF: sub_57A900+9A↓j
+mov     ebx, [esp+28h+var_14]
+
+loc_57A968:                             ; CODE XREF: sub_57A900+62↑j
+test    al, al
+jz      short loc_57A9A8
+inc     ebx
+push    ebp
+mov     ecx, esi
+mov     [esp+2Ch+var_14], ebx
+call    Cell__GetNeighbourContent
+mov     ecx, edi
+mov     esi, eax
+push    ebp
+call    Cell__GetNeighbourContent
+mov     ecx, esi
+mov     edi, eax
+call    Cell__IsValidHeight
+test    al, al
+mov     ecx, edi
+setz    bl
+call    Cell__IsValidHeight
+test    bl, bl
+jnz     short loc_57A964
+mov     eax, [esp+28h+var_14]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 18h
+retn
+; ---------------------------------------------------------------------------
+
+loc_57A9A8:                             ; CODE XREF: sub_57A900+60↑j
+; sub_57A900+6A↑j
+pop     edi
+pop     esi
+mov     eax, ebx
+pop     ebp
+pop     ebx
+add     esp, 18h
+retn
+*/
 }
 
 // 0x0058C5A0 (277 bytes)
 int IsMap_58C5A0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0058C5A0.json)
-    // Size: 277 bytes, calling convention: fastcall
-    // IDA pseudocode:
-//   _DWORD *__fastcall sub_58C5A0 ( _DWORD *a1, int a2, int a3 ) { _WORD *v3 ; // ebx !unsigned int v4 ! ; // eax !bool v5 ! ; // cc void *v6 ; // eax _DWORD *v7 ; // esi int v9 ; // [esp+10h] [ebp-28h] !int v11 ! ; // [esp+18h] [ebp-20h] !__int64 v13 ! ; // [esp+28h] [ebp-10h] v3 = g_MapTileArray ; v11 = g_MapCellWidth * g_MapCellWidth ; v9 = 0 ; do { do { v13 = ( unsigned int ) Random::State ( & g_Randomizer ) ; v4 = Math::RoundToInt ( ( double ) v13 * ( double ) ( unsigned int ) v11 * 2.328306437080797e-10 ) ; } while ( v4 > v11 - 1 ) ; v5 = v9 + 1 < 100 ; qmemcpy ( v3 , ( char * ) g_MapTileArray + 80 * v4 , 0x50u ) ; ++ v9 ; if ( ! v5 ) { * a1 = 0 ; return a1 ; } v6 = CellCoord::To_CellObj ( & MapClass_Instance , v3 ) ; v7 = v6 ; } while ( ! * v3 && ! v3 [ 1 ] || MapClass::GetTileIndex ( & MapClass_Instance , ( __int16 * ) v6 + 18 , 0 , 0 ) != a2 || ! Cell::IsEmpty ( v7 ) || a3 != -1 && * ( ( _DWORD * ) v3 + 14 ) != a3 ) ; * a1 = * ( _DWORD * ) v3 ; return a1 ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__fastcall sub_58C5A0(_DWORD *a1, int a2, int a3)
+{
+  _WORD *v3; // ebx
+  unsigned int v4; // eax
+  bool v5; // cc
+  void *v6; // eax
+  _DWORD *v7; // esi
+  int v9; // [esp+10h] [ebp-28h]
+  int v11; // [esp+18h] [ebp-20h]
+  __int64 v13; // [esp+28h] [ebp-10h]
+
+  v3 = MEMORY[0xABED10];
+  v11 = MEMORY[0x89C2DC] * MEMORY[0x89C2DC];
+  v9 = 0;
+  do
+  {
+    do
+    {
+      v13 = (unsigned int)Random::State(&MEMORY[0xABE890]);
+      v4 = Math::RoundToInt((double)v13 * (double)(unsigned int)v11 * 2.328306437080797e-10);
+    }
+    while ( v4 > v11 - 1 );
+    v5 = v9 + 1 < 100;
+    qmemcpy(v3, (char *)MEMORY[0xABED10] + 80 * v4, 0x50u);
+    ++v9;
+    if ( !v5 )
+    {
+      *a1 = 0;
+      return a1;
+    }
+    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v3);
+    v7 = v6;
+  }
+  while ( !*v3 && !v3[1]
+       || MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)v6 + 18, 0, 0) != a2
+       || !Cell::IsEmpty(v7)
+       || a3 != -1 && *((_DWORD *)v3 + 14) != a3 );
+  *a1 = *(_DWORD *)v3;
+  return a1;
+}
+
+/* ASM:
+sub     esp, 28h
+mov     eax, ds:89C2DCh
+mov     [esp+28h+var_24], ecx
+mov     ecx, eax
+push    ebx
+imul    ecx, eax
+mov     ebx, dword_A8ED54+2FFBCh
+push    ebp
+xor     ebp, ebp
+push    esi
+push    edi
+mov     [esp+38h+var_1C], edx
+mov     [esp+38h+var_20], ecx
+mov     [esp+38h+var_28], ebp
+
+loc_58C5C9:                             ; CODE XREF: sub_58C5A0+A7↓j
+; sub_58C5A0+BD↓j ...
+mov     eax, [esp+38h+var_20]
+mov     dword ptr [esp+38h+var_18+4], ebp
+lea     esi, [eax-1]
+lea     ecx, [esi+1]
+mov     dword ptr [esp+38h+var_18], ecx
+fild    [esp+38h+var_18]
+fstp    [esp+38h+var_8]
+
+loc_58C5E3:                             ; CODE XREF: sub_58C5A0+6A↓j
+mov     ecx, (offset dword_A8ED54+2FB3Ch)
+call    Random__State
+mov     dword ptr [esp+38h+var_10], eax
+mov     dword ptr [esp+38h+var_10+4], ebp
+fild    [esp+38h+var_10]
+fmul    [esp+38h+var_8]
+fmul    ds:dbl_7ED898
+call    Math__RoundToInt
+cmp     eax, esi
+ja      short loc_58C5E3
+mov     edi, dword_A8ED54+2FFBCh
+lea     esi, [eax+eax*4]
+mov     eax, [esp+38h+var_28]
+mov     ecx, 14h
+shl     esi, 4
+add     esi, edi
+inc     eax
+mov     edi, ebx
+cmp     eax, 64h ; 'd'
+rep movsd
+mov     [esp+38h+var_28], eax
+jge     short loc_58C685
+push    ebx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+cmp     [ebx], bp
+mov     esi, eax
+jnz     short loc_58C649
+cmp     [ebx+2], bp
+jz      short loc_58C5C9
+
+loc_58C649:                             ; CODE XREF: sub_58C5A0+A1↑j
+push    ebp
+lea     edx, [esi+24h]
+push    ebp
+push    edx
+mov     ecx, 87F7E8h
+call    MapClass__GetTileIndex
+cmp     eax, [esp+38h+var_1C]
+jnz     loc_58C5C9
+mov     ecx, esi
+call    Cell__IsEmpty
+test    al, al
+jz      loc_58C5C9
+mov     eax, [esp+38h+arg_0]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_58C6A3
+cmp     [ebx+38h], eax
+jz      short loc_58C6A3
+jmp     loc_58C5C9
+; ---------------------------------------------------------------------------
+
+loc_58C685:                             ; CODE XREF: sub_58C5A0+8F↑j
+mov     eax, [esp+38h+var_24]
+mov     word ptr [esp+38h+arg_0], bp
+mov     word ptr [esp+38h+arg_0+2], bp
+mov     ecx, [esp+38h+arg_0]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], ecx
+pop     ebx
+add     esp, 28h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_58C6A3:                             ; CODE XREF: sub_58C5A0+D9↑j
+; sub_58C5A0+DE↑j
+mov     eax, [esp+38h+var_24]
+mov     edx, [ebx]
+pop     edi
+pop     esi
+pop     ebp
+mov     [eax], edx
+pop     ebx
+add     esp, 28h
+retn    4
+*/
 }
 
 // 0x006E1180 (55 bytes)
 char MapClass_GetMap_6E1180() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006E1180.json)
-    // Size: 55 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   char __thiscall sub_6E1180 ( int *this, int a2, int a3, int a4, int a5 ) { int v6 ; // [esp+0h] [ebp-8h] BYREF int v7 ; // [esp+4h] [ebp-4h] BYREF v6 = * ScenarioClass::Get_Waypoint_Location ( ( char * ) ScenarioClass_Instance , & v7 , * ( this + 36 ) ) ; MapClass::TriggerEVA ( ( __int16 * ) & v6 ) ; return 1 ; }
-    return 0;
+// [IDA decompile]
+char __thiscall sub_6E1180(int *this, int a2, int a3, int a4, int a5)
+{
+  int v6; // [esp+0h] [ebp-8h] BYREF
+  int v7; // [esp+4h] [ebp-4h] BYREF
+
+  v6 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, *(this + 36));
+  MapClass::TriggerEVA((__int16 *)&v6);
+  return 1;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, [ecx+90h]
+lea     ecx, [esp+8+var_4]
+push    eax
+push    ecx
+mov     ecx, ds:0A8B230h
+call    ScenarioClass__Get_Waypoint_Location
+mov     edx, [eax]
+lea     eax, [esp+8+var_8]
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+0Ch+var_8], edx
+call    MapClass__TriggerEVA
+mov     al, 1
+add     esp, 8
+retn    10h
+*/
 }
 
 // 0x006EDF10 (115 bytes)
 void MapClass_TriggerEVA_6EDF10() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006EDF10.json)
-    // Size: 115 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_6EDF10 ( int this, int a2, int a3 ) { _DWORD *i ; // esi _DWORD *v5 ; // eax int v6 ; // [esp+8h] [ebp-14h] int v7 ; // [esp+Ch] [ebp-10h] BYREF _BYTE v8[12] ; // [esp+10h] [ebp-Ch] BYREF for ( i = * ( _DWORD ** ) ( this + 84 ) ; i ; i = ( _DWORD * ) i [ 374 ] ) { v5 = ( _DWORD * ) ( * ( int (__thiscall **)(_DWORD *, _BYTE *) ) ( * i + 72 ) ) ( i , v8 ) ; LOWORD ( v6 ) = * v5 / 256 ; HIWORD ( v6 ) = v5 [ 1 ] / 256 ; v7 = v6 ; MapClass::TriggerEVA ( ( __int16 * ) & v7 ) ; } * ( _BYTE * ) ( this + 128 ) = 1 ; }
-    
+// [IDA decompile]
+void __thiscall sub_6EDF10(int this, int a2, int a3)
+{
+  _DWORD *i; // esi
+  _DWORD *v5; // eax
+  int v6; // [esp+8h] [ebp-14h]
+  int v7; // [esp+Ch] [ebp-10h] BYREF
+  _BYTE v8[12]; // [esp+10h] [ebp-Ch] BYREF
+
+  for ( i = *(_DWORD **)(this + 84); i; i = (_DWORD *)i[374] )
+  {
+    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*i + 72))(i, v8);
+    LOWORD(v6) = *v5 / 256;
+    HIWORD(v6) = v5[1] / 256;
+    v7 = v6;
+    MapClass::TriggerEVA((__int16 *)&v7);
+  }
+  *(_BYTE *)(this + 128) = 1;
+}
+
+/* ASM:
+sub     esp, 14h
+push    esi
+push    edi
+mov     edi, ecx
+mov     esi, [edi+54h]
+test    esi, esi
+jz      short loc_6EDF74
+
+loc_6EDF1E:                             ; CODE XREF: sub_6EDF10+62↓j
+mov     eax, [esi]
+lea     ecx, [esp+1Ch+var_C]
+push    ecx
+mov     ecx, esi
+call    dword ptr [eax+48h]
+mov     ecx, eax
+mov     eax, [ecx]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1Ch+var_14], ax
+mov     eax, [ecx+4]
+cdq
+and     edx, 0FFh
+mov     ecx, 87F7E8h
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1Ch+var_14+2], ax
+mov     edx, [esp+1Ch+var_14]
+lea     eax, [esp+1Ch+var_10]
+mov     [esp+1Ch+var_10], edx
+push    eax
+call    MapClass__TriggerEVA
+mov     esi, [esi+5D8h]
+test    esi, esi
+jnz     short loc_6EDF1E
+
+loc_6EDF74:                             ; CODE XREF: sub_6EDF10+C↑j
+mov     byte ptr [edi+80h], 1
+pop     edi
+pop     esi
+add     esp, 14h
+retn    8
+*/
 }
 
 // 0x006D84D0 (89 bytes)
 int MapProcess_6D84D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/006D84D0.json)
-    // Size: 89 bytes, calling convention: stdcall
-    // IDA pseudocode:
-//   int *__stdcall sub_6D84D0 ( int *a1, int *a2 ) { !int v2 ! ; // edx !int v4 ! ; // edx int v5 ; // [esp+4h] [ebp-8h] BYREF !int v6 ! ; // [esp+8h] [ebp-4h] v2 = a2 [ 1 ] ; v5 = * a2 ; v6 = v2 ; if ( ! ClampCoordMap ( & v5 ) || ArmageddonMode ) { * a1 = * a2 ; a1 [ 1 ] = a2 [ 1 ] ; return a1 ; } else { v4 = v6 ; * a1 = v5 ; a1 [ 1 ] = v4 ; return a1 ; } }
-    return 0;
+// [IDA decompile]
+int *__stdcall sub_6D84D0(int *a1, int *a2)
+{
+  int v2; // edx
+  int v4; // edx
+  int v5; // [esp+4h] [ebp-8h] BYREF
+  int v6; // [esp+8h] [ebp-4h]
+
+  v2 = a2[1];
+  v5 = *a2;
+  v6 = v2;
+  if ( !ClampCoordMap(&v5) || MEMORY[0xA8ED6B] )
+  {
+    *a1 = *a2;
+    a1[1] = a2[1];
+    return a1;
+  }
+  else
+  {
+    v4 = v6;
+    *a1 = v5;
+    a1[1] = v4;
+    return a1;
+  }
+}
+
+/* ASM:
+sub     esp, 8
+push    esi
+mov     esi, [esp+0Ch+arg_4]
+mov     eax, [esi]
+mov     edx, [esi+4]
+mov     [esp+0Ch+var_8], eax
+lea     eax, [esp+0Ch+var_8]
+push    eax
+mov     [esp+10h+var_4], edx
+call    ClampCoordMap
+test    al, al
+jz      short loc_6D8514
+mov     al, byte ptr dword_A8ED54+17h
+test    al, al
+jnz     short loc_6D8514
+mov     eax, [esp+0Ch+arg_0]
+mov     ecx, [esp+0Ch+var_8]
+mov     edx, [esp+0Ch+var_4]
+pop     esi
+mov     [eax], ecx
+mov     [eax+4], edx
+add     esp, 8
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_6D8514:                             ; CODE XREF: sub_6D84D0+21↑j
+; sub_6D84D0+2A↑j
+mov     eax, [esp+0Ch+arg_0]
+mov     ecx, [esi]
+mov     [eax], ecx
+mov     edx, [esi+4]
+mov     [eax+4], edx
+pop     esi
+add     esp, 8
+retn    8
+*/
 }
 
 // 0x004F2280 (115 bytes)
 const char* Map_Can_4F2280() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F2280.json)
-    // Size: 115 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4F2280 ( char *this, int a2, int a3 ) { !int result ! ; // eax !void **v4 ! ; // [esp+0h] [ebp-Ch] BYREF char *v5 ; // [esp+4h] [ebp-8h] int v6 ; // [esp+8h] [ebp-4h] v6 = 0 ; v5 = this + 88 ; v4 = & VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::vftable' ; for ( result = Map::CanScroll ( & v4 ) ; ( _BYTE ) result ; result = ( ( int (__thiscall *)(void ***) ) v4 [ 1 ] ) ( & v4 ) ) { if ( * ( _DWORD * ) ( * ( _DWORD * ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) + 4 ) == a2 ) sub_4F3AB0 ( * ( _BYTE ** ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) , a3 ) ; ( ( void (__thiscall *)(void ***) ) v4 [ 2 ] ) ( & v4 ) ; } return result ; }
-    return nullptr;
+// [IDA decompile]
+int __thiscall sub_4F2280(char *this, int a2, int a3)
+{
+  int result; // eax
+  void **v4; // [esp+0h] [ebp-Ch] BYREF
+  char *v5; // [esp+4h] [ebp-8h]
+  int v6; // [esp+8h] [ebp-4h]
+
+  v6 = 0;
+  v5 = this + 88;
+  v4 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable';
+  for ( result = Map::CanScroll(&v4); (_BYTE)result; result = ((int (__thiscall *)(void ***))v4[1])(&v4) )
+  {
+    if ( *(_DWORD *)(*(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6) + 4) == a2 )
+      sub_4F3AB0(*(_BYTE **)(*((_DWORD *)v5 + 1) + 4 * v6), a3);
+    ((void (__thiscall *)(void ***))v4[2])(&v4);
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 0Ch
+add     ecx, 58h ; 'X'
+mov     [esp+0Ch+var_4], 0
+mov     [esp+0Ch+var_8], ecx
+lea     ecx, [esp+0Ch+var_C]
+mov     [esp+0Ch+var_C], offset ??_7?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@@@6B@ ; const VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'
+call    ds:off_7EA648
+test    al, al
+jz      short loc_4F22ED
+push    esi
+mov     esi, [esp+10h+arg_0]
+push    edi
+mov     edi, [esp+14h+arg_4]
+
+loc_4F22B2:                             ; CODE XREF: sub_4F2280+69↓j
+mov     eax, [esp+14h+var_8]
+mov     ecx, [esp+14h+var_4]
+mov     edx, [eax+4]
+mov     edx, [edx+ecx*4]
+cmp     [edx+4], esi
+jnz     short loc_4F22D1
+mov     eax, [eax+4]
+push    edi
+mov     ecx, [eax+ecx*4]
+call    sub_4F3AB0
+
+loc_4F22D1:                             ; CODE XREF: sub_4F2280+43↑j
+mov     edx, [esp+14h+var_C]
+lea     ecx, [esp+14h+var_C]
+call    dword ptr [edx+8]
+mov     eax, [esp+14h+var_C]
+lea     ecx, [esp+14h+var_C]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_4F22B2
+pop     edi
+pop     esi
+
+loc_4F22ED:                             ; CODE XREF: sub_4F2280+26↑j
+add     esp, 0Ch
+retn    8
+*/
 }
 
 // 0x004F26E0 (139 bytes)
 void Map_Can_4F26E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F26E0.json)
-    // Size: 139 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4F26E0 ( char *this, int a2 ) { int v2 ; // ecx !void **v4 ! ; // [esp+4h] [ebp-Ch] BYREF char *v5 ; // [esp+8h] [ebp-8h] int v6 ; // [esp+Ch] [ebp-4h] v5 = this + 88 ; v6 = 0 ; v4 = & VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::vftable' ; if ( Map::CanScroll ( & v4 ) ) { do { v2 = * ( _DWORD * ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) ; if ( ( * ( unsigned __int8 (__thiscall **)(int, int) ) ( * ( _DWORD * ) v2 + 8 ) ) ( v2 , a2 ) ) break ; ( ( void (__thiscall *)(void ***) ) v4 [ 2 ] ) ( & v4 ) ; } while ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v4 [ 1 ] ) ( & v4 ) ) ; } if ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v4 [ 1 ] ) ( & v4 ) ) return * ( _DWORD * ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) ; else return 0 ; }
-    
+// [IDA decompile]
+int __thiscall sub_4F26E0(char *this, int a2)
+{
+  int v2; // ecx
+  void **v4; // [esp+4h] [ebp-Ch] BYREF
+  char *v5; // [esp+8h] [ebp-8h]
+  int v6; // [esp+Ch] [ebp-4h]
+
+  v5 = this + 88;
+  v6 = 0;
+  v4 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable';
+  if ( (unsigned __int8)Map::CanScroll(&v4) )
+  {
+    do
+    {
+      v2 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6);
+      if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v2 + 8))(v2, a2) )
+        break;
+      ((void (__thiscall *)(void ***))v4[2])(&v4);
+    }
+    while ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) );
+  }
+  if ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) )
+    return *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6);
+  else
+    return 0;
+}
+
+/* ASM:
+sub     esp, 0Ch
+add     ecx, 58h ; 'X'
+push    esi
+mov     [esp+10h+var_8], ecx
+lea     ecx, [esp+10h+var_C]
+mov     [esp+10h+var_4], 0
+mov     [esp+10h+var_C], offset ??_7?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@@@6B@ ; const VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'
+call    ds:off_7EA648
+test    al, al
+jz      short loc_4F273F
+mov     esi, [esp+10h+arg_0]
+
+loc_4F270D:                             ; CODE XREF: sub_4F26E0+5D↓j
+mov     eax, [esp+10h+var_8]
+mov     edx, [esp+10h+var_4]
+push    esi
+mov     ecx, [eax+4]
+mov     ecx, [ecx+edx*4]
+mov     eax, [ecx]
+call    dword ptr [eax+8]
+test    al, al
+jnz     short loc_4F273F
+mov     edx, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [edx+8]
+mov     eax, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_4F270D
+
+loc_4F273F:                             ; CODE XREF: sub_4F26E0+27↑j
+; sub_4F26E0+43↑j
+mov     edx, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [edx+4]
+test    al, al
+pop     esi
+jz      short loc_4F2763
+mov     eax, [esp+0Ch+var_8]
+mov     edx, [esp+0Ch+var_4]
+mov     ecx, [eax+4]
+mov     eax, [ecx+edx*4]
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4F2763:                             ; CODE XREF: sub_4F26E0+6D↑j
+xor     eax, eax
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x004F2770 (139 bytes)
 void Map_Can_4F2770() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004F2770.json)
-    // Size: 139 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4F2770 ( char *this, int a2 ) { int v2 ; // ecx !void **v4 ! ; // [esp+4h] [ebp-Ch] BYREF char *v5 ; // [esp+8h] [ebp-8h] int v6 ; // [esp+Ch] [ebp-4h] v5 = this + 88 ; v6 = 0 ; v4 = & VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::vftable' ; if ( Map::CanScroll ( & v4 ) ) { do { v2 = * ( _DWORD * ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) ; if ( ( * ( unsigned __int8 (__thiscall **)(int, int) ) ( * ( _DWORD * ) v2 + 4 ) ) ( v2 , a2 ) ) break ; ( ( void (__thiscall *)(void ***) ) v4 [ 2 ] ) ( & v4 ) ; } while ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v4 [ 1 ] ) ( & v4 ) ) ; } if ( ( ( unsigned __int8 (__thiscall *)(void ***) ) v4 [ 1 ] ) ( & v4 ) ) return * ( _DWORD * ) ( * ( ( _DWORD * ) v5 + 1 ) + 4 * v6 ) ; else return 0 ; }
-    
+// [IDA decompile]
+int __thiscall sub_4F2770(char *this, int a2)
+{
+  int v2; // ecx
+  void **v4; // [esp+4h] [ebp-Ch] BYREF
+  char *v5; // [esp+8h] [ebp-8h]
+  int v6; // [esp+Ch] [ebp-4h]
+
+  v5 = this + 88;
+  v6 = 0;
+  v4 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable';
+  if ( (unsigned __int8)Map::CanScroll(&v4) )
+  {
+    do
+    {
+      v2 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6);
+      if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v2 + 4))(v2, a2) )
+        break;
+      ((void (__thiscall *)(void ***))v4[2])(&v4);
+    }
+    while ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) );
+  }
+  if ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) )
+    return *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6);
+  else
+    return 0;
+}
+
+/* ASM:
+sub     esp, 0Ch
+add     ecx, 58h ; 'X'
+push    esi
+mov     [esp+10h+var_8], ecx
+lea     ecx, [esp+10h+var_C]
+mov     [esp+10h+var_4], 0
+mov     [esp+10h+var_C], offset ??_7?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@@@6B@ ; const VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'
+call    ds:off_7EA648
+test    al, al
+jz      short loc_4F27CF
+mov     esi, [esp+10h+arg_0]
+
+loc_4F279D:                             ; CODE XREF: sub_4F2770+5D↓j
+mov     eax, [esp+10h+var_8]
+mov     edx, [esp+10h+var_4]
+push    esi
+mov     ecx, [eax+4]
+mov     ecx, [ecx+edx*4]
+mov     eax, [ecx]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_4F27CF
+mov     edx, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [edx+8]
+mov     eax, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [eax+4]
+test    al, al
+jnz     short loc_4F279D
+
+loc_4F27CF:                             ; CODE XREF: sub_4F2770+27↑j
+; sub_4F2770+43↑j
+mov     edx, [esp+10h+var_C]
+lea     ecx, [esp+10h+var_C]
+call    dword ptr [edx+4]
+test    al, al
+pop     esi
+jz      short loc_4F27F3
+mov     eax, [esp+0Ch+var_8]
+mov     edx, [esp+0Ch+var_4]
+mov     ecx, [eax+4]
+mov     eax, [ecx+edx*4]
+add     esp, 0Ch
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_4F27F3:                             ; CODE XREF: sub_4F2770+6D↑j
+xor     eax, eax
+add     esp, 0Ch
+retn    4
+*/
 }
 
 // 0x004517D0 (179 bytes)
 int Matrix3x4_TransformCell_4517D0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004517D0.json)
-    // Size: 179 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4517D0 ( int **this ) { !int *v2 ! ; // eax !int v3 ! ; // edi int v4 ; // edx !int result ! ; // eax !int *v6 ! ; // esi _DWORD *v7 ; // eax int v8 ; // ecx int v9 ; // edx int v10 ; // eax int v11 ; // edx !int **v12 ! ; // [esp+10h] [ebp-28h] int v13 ; // [esp+14h] [ebp-24h] int v14 ; // [esp+18h] [ebp-20h] int v15 ; // [esp+1Ch] [ebp-1Ch] _DWORD v16[3] ; // [esp+20h] [ebp-18h] BYREF _DWORD v17[3] ; // [esp+2Ch] [ebp-Ch] BYREF v2 = ( int * ) ( ( int (__thiscall *)(int **, _DWORD *) ) ( * this ) [ 43 ] ) ( this , v16 ) ; v3 = 0 ; v13 = * v2 ; v14 = v2 [ 1 ] ; v4 = v2 [ 2 ] ; result = ( int ) ( this + 343 ) ; v15 = v4 ; v12 = this + 343 ; do { v6 = * v12 ; if ( * v12 ) { v7 = Matrix3x4::TransformCell ( ( float * ) TacticalClass_Instance , v17 , & ( * ( this + 328 ) ) [ v3 + 991 ] ) ; v8 = v13 + * v7 ; v9 = v7 [ 1 ] ; v10 = v7 [ 2 ] ; v16 [ 1 ] = v14 + v9 ; v11 = * v6 ; v16 [ 2 ] = v15 + v10 ; v16 [ 0 ] = v8 ; result = ( * ( int (__thiscall **)(int *, _DWORD *) ) ( v11 + 436 ) ) ( v6 , v16 ) ; } v3 += 17 ; ++ v12 ; } while ( v3 < 357 ) ; return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4517D0(int **this)
+{
+  int *v2; // eax
+  int v3; // edi
+  int v4; // edx
+  int result; // eax
+  int *v6; // esi
+  _DWORD *v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  int v10; // eax
+  int v11; // edx
+  int **v12; // [esp+10h] [ebp-28h]
+  int v13; // [esp+14h] [ebp-24h]
+  int v14; // [esp+18h] [ebp-20h]
+  int v15; // [esp+1Ch] [ebp-1Ch]
+  _DWORD v16[3]; // [esp+20h] [ebp-18h] BYREF
+  _DWORD v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
+
+  v2 = (int *)((int (__thiscall *)(int **, _DWORD *))(*this)[43])(this, v16);
+  v3 = 0;
+  v13 = *v2;
+  v14 = v2[1];
+  v4 = v2[2];
+  result = (int)(this + 343);
+  v15 = v4;
+  v12 = this + 343;
+  do
+  {
+    v6 = *v12;
+    if ( *v12 )
+    {
+      v7 = Matrix3x4::TransformCell((float *)MEMORY[0x87F7E8][7887], v17, &(*(this + 328))[v3 + 991]);
+      v8 = v13 + *v7;
+      v9 = v7[1];
+      v10 = v7[2];
+      v16[1] = v14 + v9;
+      v11 = *v6;
+      v16[2] = v15 + v10;
+      v16[0] = v8;
+      result = (*(int (__thiscall **)(int *, _DWORD *))(v11 + 436))(v6, v16);
+    }
+    v3 += 17;
+    ++v12;
+  }
+  while ( v3 < 357 );
+  return result;
+}
+
+/* ASM:
+sub     esp, 28h
+push    ebx
+mov     ebx, ecx
+push    ebp
+push    esi
+mov     eax, [ebx]
+lea     ecx, [esp+34h+var_18]
+push    edi
+push    ecx
+mov     ecx, ebx
+call    dword ptr [eax+0ACh]
+mov     edx, [eax]
+xor     edi, edi
+mov     [esp+38h+var_24], edx
+mov     ecx, [eax+4]
+mov     [esp+38h+var_20], ecx
+mov     edx, [eax+8]
+lea     eax, [ebx+55Ch]
+mov     [esp+38h+var_1C], edx
+mov     [esp+38h+var_28], eax
+
+loc_451808:                             ; CODE XREF: sub_4517D0+A9↓j
+mov     ecx, [esp+38h+var_28]
+mov     esi, [ecx]
+test    esi, esi
+jz      short loc_451865
+mov     edx, [ebx+520h]
+lea     ecx, [esp+38h+var_C]
+lea     eax, [edx+edi+0F7Ch]
+push    eax
+push    ecx
+mov     ecx, ds:887324h
+call    Matrix3x4__TransformCell
+mov     ecx, [eax]
+mov     edx, [esp+38h+var_24]
+mov     ebp, [esp+38h+var_20]
+add     ecx, edx
+mov     edx, [eax+4]
+mov     eax, [eax+8]
+add     edx, ebp
+mov     ebp, [esp+38h+var_1C]
+add     eax, ebp
+mov     [esp+38h+var_14], edx
+mov     edx, [esi]
+mov     dword ptr [esp+38h+var_10], eax
+lea     eax, [esp+38h+var_18]
+mov     [esp+38h+var_18], ecx
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B4h]
+
+loc_451865:                             ; CODE XREF: sub_4517D0+40↑j
+mov     edx, [esp+38h+var_28]
+add     edi, 44h ; 'D'
+add     edx, 4
+cmp     edi, 594h
+mov     [esp+38h+var_28], edx
+jl      short loc_451808
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn
+*/
 }
 
 // 0x005A1C70 (415 bytes)
 int RandomMap_Is_5A1C70() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005A1C70.json)
-    // Size: 415 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5A1C70 ( _DWORD *this ) { !int v1 ! ; // ecx int v2 ; // eax !int i ! ; // edi void *v4 ; // esi int v5 ; // esi !int v6 ! ; // ebp !int *v7 ! ; // edi !int j ! ; // edi int v9 ; // esi int v10 ; // eax !bool v11 ! ; // al !int result ! ; // eax int v13 ; // esi !int v14 ! ; // edi void *v15 ; // eax int v16 ; // [esp+8h] [ebp-8h] BYREF _DWORD *v17 ; // [esp+Ch] [ebp-4h] v17 = this ; if ( g_MapTileArray ) { v1 = g_MapCellWidth * g_MapCellWidth ; if ( g_MapCellWidth * g_MapCellWidth > 0 ) { v2 = 0 ; do { * ( _DWORD * ) ( ( char * ) g_MapTileArray + v2 + 56 ) = -1 ; * ( _DWORD * ) ( ( char * ) g_MapTileArray + v2 + 60 ) = -1 ; v2 += 80 ; -- v1 ; } while ( v1 ) ; } } for ( i = g_RandomMap_TileData - 1 ; i >= 0 ; -- i ) { v4 = ( void * ) * ( ( _DWORD * ) g_RandomMap_TerrainState + i ) ; if ( v4 ) { TileNode::Cleanup ( * ( ( _DWORD ** ) g_RandomMap_TerrainState + i ) ) ; __3_YAXPAX_Z ( v4 ) ; } } g_MapTileArrayEnd = 0 ; if ( g_MapCellWidth * g_MapCellWidth > 0 ) { v5 = 0 ; v6 = g_MapCellWidth * g_MapCellWidth ; do { v16 = * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 ) ; v7 = ( int * ) CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) & v16 ) ; if ( * ( _DWORD * ) ( ( char * ) g_MapTileArray + v5 + 56 ) == -1 && ( * ( _WORD * ) ( ( char * ) g_MapTileArray + v5 ) || * ( _WORD * ) ( ( char * ) g_MapTileArray + v5 + 2 ) ) && ( Cell::IsGroundTypeRange ( v7 ) || Cell::IsShore ( v7 ) ) ) { RandomMap::GenerateTerrain ( ( int ) v7 ) ; } v5 += 80 ; -- v6 ; } while ( v6 ) ; } for ( j = 0 ; j < g_RandomMap_TileData ; ++ j ) { v9 = * ( ( _DWORD * ) g_RandomMap_TerrainState + j ) ; if ( * ( _BYTE * ) ( v9 + 20 ) ) { v10 = v17 [ 15 ] ; v11 = v10 == 3 || v10 == 4 ; RandomMap::CollectTerrainCells ( * ( ( _DWORD ** ) g_RandomMap_TerrainState + j ) , ( * ( _DWORD * ) ( v9 + 12 ) > 8000 ) + ! v11 + 4 ) ; RandomMap::PlaceRandomMapTerrain ( ( _DWORD * ) v9 ) ; } } result = g_MapCellWidth * g_MapCellWidth ; if ( g_MapCellWidth * g_MapCellWidth > 0 ) { v13 = 0 ; v14 = g_MapCellWidth * g_MapCellWidth ; do { result = ( int ) g_MapTileArray + v13 ; if ( * ( _DWORD * ) ( ( char * ) g_MapTileArray + v13 + 56 ) == -1 && ( * ( _WORD * ) result || * ( _WORD * ) ( result + 2 ) ) ) { v15 = CellCoord::To_CellObj ( & MapClass_Instance , ( __int16 * ) ( ( char * ) g_MapTileArray + v13 ) ) ; result = RandomMap::GenerateTerrain ( ( int ) v15 ) ; if ( result ) * ( _BYTE * ) ( result + 26 ) = 0 ; } v13 += 80 ; -- v14 ; } while ( v14 ) ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_5A1C70(_DWORD *this)
+{
+  int v1; // ecx
+  int v2; // eax
+  int i; // edi
+  void *v4; // esi
+  int v5; // esi
+  int v6; // ebp
+  int *v7; // edi
+  int j; // edi
+  int v9; // esi
+  int v10; // eax
+  bool v11; // al
+  int result; // eax
+  int v13; // esi
+  int v14; // edi
+  void *v15; // eax
+  int v16; // [esp+8h] [ebp-8h] BYREF
+  _DWORD *v17; // [esp+Ch] [ebp-4h]
+
+  v17 = this;
+  if ( dword_A8ED54[49135] )
+  {
+    v1 = MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373];
+    if ( MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373] > 0 )
+    {
+      v2 = 0;
+      do
+      {
+        *(_DWORD *)(v2 + dword_A8ED54[49135] + 56) = -1;
+        *(_DWORD *)(v2 + dword_A8ED54[49135] + 60) = -1;
+        v2 += 80;
+        --v1;
+      }
+      while ( v1 );
+    }
+  }
+  for ( i = dword_A8ED54[48275] - 1; i >= 0; --i )
+  {
+    v4 = *(void **)(dword_A8ED54[48272] + 4 * i);
+    if ( v4 )
+    {
+      TileNode::Cleanup(*(_DWORD **)(dword_A8ED54[48272] + 4 * i));
+      __3_YAXPAX_Z(v4);
+    }
+  }
+  dword_A8ED54[49136] = 0;
+  if ( MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373] > 0 )
+  {
+    v5 = 0;
+    v6 = MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373];
+    do
+    {
+      v16 = *(_DWORD *)(v5 + dword_A8ED54[49135]);
+      v7 = (int *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v16);
+      if ( *(_DWORD *)(v5 + dword_A8ED54[49135] + 56) == -1
+        && (*(_WORD *)(v5 + dword_A8ED54[49135]) || *(_WORD *)(v5 + dword_A8ED54[49135] + 2))
+        && (Cell::IsGroundTypeRange(v7) || Cell::IsShore(v7)) )
+      {
+        RandomMap::GenerateTerrain((int)v7);
+      }
+      v5 += 80;
+      --v6;
+    }
+    while ( v6 );
+  }
+  for ( j = 0; j < dword_A8ED54[48275]; ++j )
+  {
+    v9 = *(_DWORD *)(dword_A8ED54[48272] + 4 * j);
+    if ( *(_BYTE *)(v9 + 20) )
+    {
+      v10 = v17[15];
+      v11 = v10 == 3 || v10 == 4;
+      RandomMap::CollectTerrainCells(
+        *(_DWORD **)(dword_A8ED54[48272] + 4 * j),
+        (*(_DWORD *)(v9 + 12) > 8000) + !v11 + 4);
+      RandomMap::PlaceRandomMapTerrain((_DWORD *)v9);
+    }
+  }
+  result = MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373];
+  if ( MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373] > 0 )
+  {
+    v13 = 0;
+    v14 = MEMORY[0x87F7E8][29373] * MEMORY[0x87F7E8][29373];
+    do
+    {
+      result = v13 + dword_A8ED54[49135];
+      if ( *(_DWORD *)(v13 + dword_A8ED54[49135] + 56) == -1 && (*(_WORD *)result || *(_WORD *)(result + 2)) )
+      {
+        v15 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)(v13 + dword_A8ED54[49135]));
+        result = (int)RandomMap::GenerateTerrain((int)v15);
+        if ( result )
+          *(_BYTE *)(result + 26) = 0;
+      }
+      v13 += 80;
+      --v14;
+    }
+    while ( v14 );
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     eax, dword_A8ED54+2FFBCh
+push    esi
+test    eax, eax
+push    edi
+mov     [esp+10h+var_4], ecx
+jz      short loc_5A1CAE
+mov     ecx, ds:89C2DCh
+imul    ecx, ecx
+test    ecx, ecx
+jle     short loc_5A1CAE
+xor     eax, eax
+
+loc_5A1C91:                             ; CODE XREF: sub_5A1C70+3C↓j
+mov     esi, dword_A8ED54+2FFBCh
+or      edx, 0FFFFFFFFh
+mov     [eax+esi+38h], edx
+mov     esi, dword_A8ED54+2FFBCh
+mov     [eax+esi+3Ch], edx
+add     eax, 50h ; 'P'
+dec     ecx
+jnz     short loc_5A1C91
+
+loc_5A1CAE:                             ; CODE XREF: sub_5A1C70+10↑j
+; sub_5A1C70+1D↑j
+mov     eax, dword_A8ED54+2F24Ch
+lea     edi, [eax-1]
+test    edi, edi
+jl      short loc_5A1CDA
+
+loc_5A1CBA:                             ; CODE XREF: sub_5A1C70+68↓j
+mov     ecx, dword_A8ED54+2F240h
+mov     esi, [ecx+edi*4]
+test    esi, esi
+jz      short loc_5A1CD7
+mov     ecx, esi
+call    TileNode__Cleanup
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_5A1CD7:                             ; CODE XREF: sub_5A1C70+55↑j
+dec     edi
+jns     short loc_5A1CBA
+
+loc_5A1CDA:                             ; CODE XREF: sub_5A1C70+48↑j
+mov     eax, ds:89C2DCh
+push    ebp
+imul    eax, eax
+test    eax, eax
+mov     dword_A8ED54+2FFC0h, 0
+jle     short loc_5A1D51
+xor     esi, esi
+mov     ebp, eax
+
+loc_5A1CF5:                             ; CODE XREF: sub_5A1C70+DF↓j
+mov     edx, dword_A8ED54+2FFBCh
+lea     ecx, [esp+14h+var_8]
+push    ecx
+mov     ecx, 87F7E8h
+mov     eax, [esi+edx]
+mov     [esp+18h+var_8], eax
+call    CellCoord__To_CellObj
+mov     edi, eax
+mov     eax, dword_A8ED54+2FFBCh
+cmp     dword ptr [esi+eax+38h], 0FFFFFFFFh
+jnz     short loc_5A1D4B
+cmp     word ptr [esi+eax], 0
+jnz     short loc_5A1D2E
+cmp     word ptr [esi+eax+2], 0
+jz      short loc_5A1D4B
+
+loc_5A1D2E:                             ; CODE XREF: sub_5A1C70+B4↑j
+mov     ecx, edi
+call    Cell__IsGroundTypeRange
+test    al, al
+jnz     short loc_5A1D44
+mov     ecx, edi
+call    Cell__IsShore
+test    al, al
+jz      short loc_5A1D4B
+
+loc_5A1D44:                             ; CODE XREF: sub_5A1C70+C7↑j
+mov     ecx, edi
+call    RandomMap__GenerateTerrain
+
+loc_5A1D4B:                             ; CODE XREF: sub_5A1C70+AD↑j
+; sub_5A1C70+BC↑j ...
+add     esi, 50h ; 'P'
+dec     ebp
+jnz     short loc_5A1CF5
+
+loc_5A1D51:                             ; CODE XREF: sub_5A1C70+7F↑j
+mov     eax, dword_A8ED54+2F24Ch
+xor     edi, edi
+test    eax, eax
+jle     short loc_5A1DB9
+mov     ebp, 1F40h
+
+loc_5A1D61:                             ; CODE XREF: sub_5A1C70+147↓j
+mov     edx, dword_A8ED54+2F240h
+mov     esi, [edx+edi*4]
+mov     al, [esi+14h]
+test    al, al
+jz      short loc_5A1DAF
+mov     eax, [esp+14h+var_4]
+mov     eax, [eax+3Ch]
+cmp     eax, 3
+jz      short loc_5A1D86
+cmp     eax, 4
+jz      short loc_5A1D86
+xor     eax, eax
+jmp     short loc_5A1D8B
+; ---------------------------------------------------------------------------
+
+loc_5A1D86:                             ; CODE XREF: sub_5A1C70+10B↑j
+; sub_5A1C70+110↑j
+mov     eax, 1
+
+loc_5A1D8B:                             ; CODE XREF: sub_5A1C70+114↑j
+mov     edx, [esi+0Ch]
+xor     ecx, ecx
+cmp     edx, ebp
+setnle  cl
+xor     edx, edx
+test    al, al
+setz    dl
+lea     eax, [ecx+edx+4]
+mov     ecx, esi
+push    eax
+call    RandomMap__CollectTerrainCells
+mov     ecx, esi
+call    RandomMap__PlaceRandomMapTerrain
+
+loc_5A1DAF:                             ; CODE XREF: sub_5A1C70+FF↑j
+mov     eax, dword_A8ED54+2F24Ch
+inc     edi
+cmp     edi, eax
+jl      short loc_5A1D61
+
+loc_5A1DB9:                             ; CODE XREF: sub_5A1C70+EA↑j
+mov     eax, ds:89C2DCh
+pop     ebp
+imul    eax, eax
+test    eax, eax
+jle     short loc_5A1E09
+xor     esi, esi
+mov     edi, eax
+
+loc_5A1DCA:                             ; CODE XREF: sub_5A1C70+197↓j
+mov     ecx, dword_A8ED54+2FFBCh
+lea     eax, [esi+ecx]
+mov     ecx, [esi+ecx+38h]
+cmp     ecx, 0FFFFFFFFh
+jnz     short loc_5A1E03
+cmp     word ptr [eax], 0
+jnz     short loc_5A1DE9
+cmp     word ptr [eax+2], 0
+jz      short loc_5A1E03
+
+loc_5A1DE9:                             ; CODE XREF: sub_5A1C70+170↑j
+push    eax
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, eax
+call    RandomMap__GenerateTerrain
+test    eax, eax
+jz      short loc_5A1E03
+mov     byte ptr [eax+1Ah], 0
+
+loc_5A1E03:                             ; CODE XREF: sub_5A1C70+16A↑j
+; sub_5A1C70+177↑j ...
+add     esi, 50h ; 'P'
+dec     edi
+jnz     short loc_5A1DCA
+
+loc_5A1E09:                             ; CODE XREF: sub_5A1C70+154↑j
+pop     edi
+pop     esi
+add     esp, 8
+retn
+*/
 }
 
 // 0x00542F30 (129 bytes)
 int Terrain_Get_542F30() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00542F30.json)
-    // Size: 129 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_542F30 ( _DWORD *this ) { !unsigned int v1 ! ; // ebx int result ; // eax int v3 ; // ebp _DWORD *i ; // edi !int v5 ! ; // esi _DWORD *v6 ; // ecx !int TileIndex ! ; // eax int v8 ; // [esp+8h] [ebp-8h] v1 = -1 ; result = 0 ; v3 = 0 ; v8 = 0 ; if ( ( int ) * ( this + 17 ) > 0 ) { for ( i = this + 10 ; ; ++ i ) { v5 = 0 ; v6 = * ( _DWORD ** ) ( * i + 4 ) ; if ( ( int ) v6 [ 10 ] <= 0 ) goto LABEL_12 ; while ( 1 ) { TileIndex = Terrain::GetTileIndex ( v6 , v5 ) ; if ( TileIndex ) break ; LABEL_8 : ++ v5 ; v6 = * ( _DWORD ** ) ( * i + 4 ) ; if ( v5 >= v6 [ 10 ] ) goto LABEL_9 ; } if ( * ( _BYTE * ) ( * ( _DWORD * ) ( TileIndex + 20 ) + 2 ) || ( * ( _BYTE * ) TileIndex & 2 ) != 0 ) break ; LABEL_9 : if ( TileIndex ) { if ( * ( _DWORD * ) ( TileIndex + 4 ) < v1 ) { v1 = * ( _DWORD * ) ( TileIndex + 4 ) ; v8 = * ( _DWORD * ) ( TileIndex + 20 ) ; } } LABEL_12 : if ( ++ v3 >= * ( this + 17 ) ) return v8 ; } TileIndex = 0 ; goto LABEL_8 ; } return result ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_542F30(_DWORD *this)
+{
+  unsigned int v1; // ebx
+  int result; // eax
+  int v3; // ebp
+  _DWORD *i; // edi
+  int v5; // esi
+  _DWORD *v6; // ecx
+  int TileIndex; // eax
+  int v8; // [esp+8h] [ebp-8h]
+
+  v1 = -1;
+  result = 0;
+  v3 = 0;
+  v8 = 0;
+  if ( (int)*(this + 17) > 0 )
+  {
+    for ( i = this + 10; ; ++i )
+    {
+      v5 = 0;
+      v6 = *(_DWORD **)(*i + 4);
+      if ( (int)v6[10] <= 0 )
+        goto LABEL_12;
+      while ( 1 )
+      {
+        TileIndex = Terrain::GetTileIndex(v6, v5);
+        if ( TileIndex )
+          break;
+LABEL_8:
+        ++v5;
+        v6 = *(_DWORD **)(*i + 4);
+        if ( v5 >= v6[10] )
+          goto LABEL_9;
+      }
+      if ( *(_BYTE *)(*(_DWORD *)(TileIndex + 20) + 2) || (*(_BYTE *)TileIndex & 2) != 0 )
+        break;
+LABEL_9:
+      if ( TileIndex )
+      {
+        if ( *(_DWORD *)(TileIndex + 4) < v1 )
+        {
+          v1 = *(_DWORD *)(TileIndex + 4);
+          v8 = *(_DWORD *)(TileIndex + 20);
+        }
+      }
+LABEL_12:
+      if ( ++v3 >= *(this + 17) )
+        return v8;
+    }
+    TileIndex = 0;
+    goto LABEL_8;
+  }
+  return result;
+}
+
+/* ASM:
+sub     esp, 8
+mov     edx, [ecx+44h]
+push    ebx
+push    ebp
+or      ebx, 0FFFFFFFFh
+xor     eax, eax
+xor     ebp, ebp
+test    edx, edx
+mov     [esp+10h+var_4], ecx
+mov     [esp+10h+var_8], eax
+jle     short loc_542FAB
+push    esi
+push    edi
+lea     edi, [ecx+28h]
+
+loc_542F50:                             ; CODE XREF: sub_542F30+73↓j
+mov     eax, [edi]
+xor     esi, esi
+mov     ecx, [eax+4]
+mov     eax, [ecx+28h]
+test    eax, eax
+jle     short loc_542F98
+
+loc_542F5E:                             ; CODE XREF: sub_542F30+52↓j
+push    esi
+call    Terrain__GetTileIndex
+test    eax, eax
+jz      short loc_542F79
+mov     ecx, [eax+14h]
+mov     dl, [ecx+2]
+test    dl, dl
+jnz     short loc_542F77
+test    byte ptr [eax], 2
+jz      short loc_542F84
+
+loc_542F77:                             ; CODE XREF: sub_542F30+40↑j
+xor     eax, eax
+
+loc_542F79:                             ; CODE XREF: sub_542F30+36↑j
+mov     edx, [edi]
+inc     esi
+mov     ecx, [edx+4]
+cmp     esi, [ecx+28h]
+jl      short loc_542F5E
+
+loc_542F84:                             ; CODE XREF: sub_542F30+45↑j
+test    eax, eax
+jz      short loc_542F98
+mov     ecx, [eax+4]
+cmp     ecx, ebx
+jnb     short loc_542F98
+mov     eax, [eax+14h]
+mov     ebx, ecx
+mov     [esp+18h+var_8], eax
+
+loc_542F98:                             ; CODE XREF: sub_542F30+2C↑j
+; sub_542F30+56↑j ...
+mov     ecx, [esp+18h+var_4]
+inc     ebp
+add     edi, 4
+cmp     ebp, [ecx+44h]
+jl      short loc_542F50
+mov     eax, [esp+18h+var_8]
+pop     edi
+pop     esi
+
+loc_542FAB:                             ; CODE XREF: sub_542F30+19↑j
+pop     ebp
+pop     ebx
+add     esp, 8
+retn
+*/
 }
 
 // 0x005F1F20 (72 bytes)
 int Terrain_Get_5F1F20() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/005F1F20.json)
-    // Size: 72 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_5F1F20 ( _DWORD *this ) { !int v2 ! ; // esi _DWORD *v3 ; // ecx !int TileIndex ! ; // eax v2 = 0 ; v3 = * ( _DWORD ** ) ( * ( this + 14 ) + 4 ) ; if ( ( int ) v3 [ 10 ] <= 0 ) return 0 ; while ( 1 ) { TileIndex = Terrain::GetTileIndex ( v3 , v2 ) ; if ( TileIndex ) { if ( ! * ( _BYTE * ) ( * ( _DWORD * ) ( TileIndex + 20 ) + 2 ) && ( * ( _BYTE * ) TileIndex & 2 ) == 0 ) break ; } ++ v2 ; v3 = * ( _DWORD ** ) ( * ( this + 14 ) + 4 ) ; if ( v2 >= v3 [ 10 ] ) return 0 ; } return * ( _DWORD * ) ( TileIndex + 20 ) ; }
+// [IDA decompile]
+int __thiscall sub_5F1F20(_DWORD *this)
+{
+  int v2; // esi
+  _DWORD *v3; // ecx
+  int TileIndex; // eax
+
+  v2 = 0;
+  v3 = *(_DWORD **)(*(this + 14) + 4);
+  if ( (int)v3[10] <= 0 )
     return 0;
+  while ( 1 )
+  {
+    TileIndex = Terrain::GetTileIndex(v3, v2);
+    if ( TileIndex )
+    {
+      if ( !*(_BYTE *)(*(_DWORD *)(TileIndex + 20) + 2) && (*(_BYTE *)TileIndex & 2) == 0 )
+        break;
+    }
+    ++v2;
+    v3 = *(_DWORD **)(*(this + 14) + 4);
+    if ( v2 >= v3[10] )
+      return 0;
+  }
+  return *(_DWORD *)(TileIndex + 20);
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     edi, ecx
+xor     ebx, ebx
+xor     esi, esi
+mov     eax, [edi+38h]
+mov     ecx, [eax+4]
+mov     eax, [ecx+28h]
+test    eax, eax
+jle     short loc_5F1F5B
+
+loc_5F1F36:                             ; CODE XREF: sub_5F1F20+39↓j
+push    esi
+call    Terrain__GetTileIndex
+test    eax, eax
+jz      short loc_5F1F4F
+mov     ecx, [eax+14h]
+mov     dl, [ecx+2]
+test    dl, dl
+jnz     short loc_5F1F4F
+test    byte ptr [eax], 2
+jz      short loc_5F1F61
+
+loc_5F1F4F:                             ; CODE XREF: sub_5F1F20+1E↑j
+; sub_5F1F20+28↑j
+mov     edx, [edi+38h]
+inc     esi
+mov     ecx, [edx+4]
+cmp     esi, [ecx+28h]
+jl      short loc_5F1F36
+
+loc_5F1F5B:                             ; CODE XREF: sub_5F1F20+14↑j
+pop     edi
+mov     eax, ebx
+pop     esi
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_5F1F61:                             ; CODE XREF: sub_5F1F20+2D↑j
+mov     eax, [eax+14h]
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x00583AD0 (392 bytes)
 int VectorClass_GetMap_583AD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00583AD0.json)
-    // Size: 392 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_583AD0 ( _DWORD *this, int *a2 ) { !__int16 *i ! ; // eax !int TileIndex ! ; // eax !int v5 ! ; // esi !int v6 ! ; // ecx !int v7 ! ; // eax !int v8 ! ; // edi !int v9 ! ; // eax !int v10 ! ; // eax void *v11 ; // ebp !int v12 ! ; // esi int v13 ; // edx !int v14 ! ; // eax !int *v15 ! ; // edi int v16 ; // esi !void **v18 ! ; // [esp+10h] [ebp-18h] BYREF !void *Block ! ; // [esp+14h] [ebp-14h] !int v20 ! ; // [esp+18h] [ebp-10h] char v21 ; // [esp+1Dh] [ebp-Bh] !int v22 ! ; // [esp+20h] [ebp-8h] !int v23 ! ; // [esp+24h] [ebp-4h] VectorClass::Construct ( & v18 , 0 , 0 ) ; v18 = & DynamicVectorClass<int>::vftable' ; v23 = 10 ; v22 = 0 ; dword_87F904 = dword_87F8E4 + dword_87F8E8 + 1 ; dword_87F908 = dword_87F8E8 + g_Cell_PositionLUT - dword_87F8E4 ; for ( i = ( __int16 * ) MapClass::SpiralSearch ( & MapClass_Instance ) ; i ; i = ( __int16 * ) MapClass::SpiralSearch ( & MapClass_Instance ) ) { if ( * ( ( _DWORD * ) i + 19 ) == 4 ) { TileIndex = MapClass::GetTileIndex ( this , i + 18 , 10 , 0 ) ; v5 = TileIndex ; if ( TileIndex >= 0 ) { v6 = v22 ; if ( TileIndex >= v22 ) { v7 = TileIndex - v22 + 1 ; if ( v7 > 0 ) { v8 = v7 ; v9 = v20 ; while ( 1 ) { if ( v6 < v9 ) goto LABEL_13 ; if ( ( v21 || ! v9 ) && v23 > 0 ) break ; LABEL_15 : if ( ! -- v8 ) goto LABEL_16 ; v6 = v22 ; } if ( ( ( unsigned __int8 (__thiscall *)(void ***, int, _DWORD) ) v18 [ 2 ] ) ( & v18 , v23 + v9 , 0 ) ) { LABEL_13 : v10 = v22 ++ ; * ( ( _DWORD * ) Block + v10 ) = 0 ; } v9 = v20 ; goto LABEL_15 ; } } LABEL_16 : ++ * ( ( _DWORD * ) Block + v5 ) ; } } } v11 = Block ; v12 = -1 ; v13 = 0 ; v14 = 0 ; if ( v22 > 0 ) { v15 = ( int * ) Block ; do { if ( * v15 > v13 ) { v12 = v14 ; v13 = * v15 ; } ++ v14 ; ++ v15 ; } while ( v14 < v22 ) ; } * a2 = v12 ; if ( v12 < 0 ) { v18 = & VectorClass<int>::vftable' ; if ( v11 && v21 ) __3_YAXPAX_Z ( v11 ) ; return 0 ; } else { v16 = * ( ( _DWORD * ) v11 + v12 ) ; v18 = & VectorClass<int>::vftable' ; if ( v11 ) { if ( v21 ) __3_YAXPAX_Z ( v11 ) ; } return v16 ; } }
+// [IDA decompile]
+int __thiscall sub_583AD0(_DWORD *this, int *a2)
+{
+  __int16 *i; // eax
+  int TileIndex; // eax
+  int v5; // esi
+  int v6; // ecx
+  int v7; // eax
+  int v8; // edi
+  int v9; // eax
+  int v10; // eax
+  void *v11; // ebp
+  int v12; // esi
+  int v13; // edx
+  int v14; // eax
+  int *v15; // edi
+  int v16; // esi
+  void **v18; // [esp+10h] [ebp-18h] BYREF
+  void *Block; // [esp+14h] [ebp-14h]
+  int v20; // [esp+18h] [ebp-10h]
+  char v21; // [esp+1Dh] [ebp-Bh]
+  int v22; // [esp+20h] [ebp-8h]
+  int v23; // [esp+24h] [ebp-4h]
+
+  VectorClass::Construct(&v18, 0, 0);
+  v18 = &DynamicVectorClass<int>::`vftable';
+  v23 = 10;
+  v22 = 0;
+  MEMORY[0x87F904] = MEMORY[0x87F8E4] + MEMORY[0x87F8E8] + 1;
+  MEMORY[0x87F908] = MEMORY[0x87F8E8] + MEMORY[0x87F8DC] - MEMORY[0x87F8E4];
+  for ( i = (__int16 *)MapClass::SpiralSearch(&MEMORY[0x87F7E8]);
+        i;
+        i = (__int16 *)MapClass::SpiralSearch(&MEMORY[0x87F7E8]) )
+  {
+    if ( *((_DWORD *)i + 19) == 4 )
+    {
+      TileIndex = MapClass::GetTileIndex(this, i + 18, 10, 0);
+      v5 = TileIndex;
+      if ( TileIndex >= 0 )
+      {
+        v6 = v22;
+        if ( TileIndex >= v22 )
+        {
+          v7 = TileIndex - v22 + 1;
+          if ( v7 > 0 )
+          {
+            v8 = v7;
+            v9 = v20;
+            while ( 1 )
+            {
+              if ( v6 < v9 )
+                goto LABEL_13;
+              if ( (v21 || !v9) && v23 > 0 )
+                break;
+LABEL_15:
+              if ( !--v8 )
+                goto LABEL_16;
+              v6 = v22;
+            }
+            if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v18[2])(&v18, v23 + v9, 0) )
+            {
+LABEL_13:
+              v10 = v22++;
+              *((_DWORD *)Block + v10) = 0;
+            }
+            v9 = v20;
+            goto LABEL_15;
+          }
+        }
+LABEL_16:
+        ++*((_DWORD *)Block + v5);
+      }
+    }
+  }
+  v11 = Block;
+  v12 = -1;
+  v13 = 0;
+  v14 = 0;
+  if ( v22 > 0 )
+  {
+    v15 = (int *)Block;
+    do
+    {
+      if ( *v15 > v13 )
+      {
+        v12 = v14;
+        v13 = *v15;
+      }
+      ++v14;
+      ++v15;
+    }
+    while ( v14 < v22 );
+  }
+  *a2 = v12;
+  if ( v12 < 0 )
+  {
+    v18 = &VectorClass<int>::`vftable';
+    if ( v11 && v21 )
+      __3_YAXPAX_Z(v11);
     return 0;
+  }
+  else
+  {
+    v16 = *((_DWORD *)v11 + v12);
+    v18 = &VectorClass<int>::`vftable';
+    if ( v11 )
+    {
+      if ( v21 )
+        __3_YAXPAX_Z(v11);
+    }
+    return v16;
+  }
+}
+
+/* ASM:
+Block           = dword ptr -14h
+var_10          = dword ptr -10h
+var_B           = byte ptr -0Bh
+var_8           = dword ptr -8
+var_4           = dword ptr -4
+arg_0           = dword ptr  4
+
+sub     esp, 18h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebx, ecx
+push    0
+push    0
+lea     ecx, [esp+30h+var_18]
+call    VectorClass__Construct
+mov     eax, ds:87F8E4h
+mov     ecx, ds:87F8E8h
+mov     [esp+28h+var_18], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     [esp+28h+var_4], 0Ah
+lea     edx, [eax+ecx+1]
+mov     [esp+28h+var_8], 0
+mov     ds:87F904h, edx
+mov     edx, ds:87F8DCh
+sub     edx, eax
+add     edx, ecx
+mov     ecx, 87F7E8h
+mov     ds:87F908h, edx
+call    MapClass__SpiralSearch
+test    eax, eax
+jz      loc_583BD1
+
+loc_583B35:                             ; CODE XREF: sub_583AD0+FB↓j
+cmp     dword ptr [eax+4Ch], 4
+jnz     loc_583BBF
+push    0
+add     eax, 24h ; '$'
+push    0Ah
+push    eax
+mov     ecx, ebx
+call    MapClass__GetTileIndex
+mov     esi, eax
+test    esi, esi
+jl      short loc_583BBF
+mov     ecx, [esp+28h+var_8]
+cmp     esi, ecx
+jl      short loc_583BB8
+sub     eax, ecx
+inc     eax
+test    eax, eax
+jle     short loc_583BB8
+mov     edi, eax
+mov     eax, [esp+28h+var_10]
+jmp     short loc_583B6F
+; ---------------------------------------------------------------------------
+
+loc_583B6B:                             ; CODE XREF: sub_583AD0+E6↓j
+mov     ecx, [esp+28h+var_8]
+
+loc_583B6F:                             ; CODE XREF: sub_583AD0+99↑j
+cmp     ecx, eax
+jl      short loc_583B9B
+mov     cl, [esp+28h+var_B]
+test    cl, cl
+jnz     short loc_583B7F
+test    eax, eax
+jnz     short loc_583BB5
+
+loc_583B7F:                             ; CODE XREF: sub_583AD0+A9↑j
+mov     ecx, [esp+28h+var_4]
+test    ecx, ecx
+jle     short loc_583BB5
+add     eax, ecx
+push    0
+push    eax
+mov     eax, [esp+30h+var_18]
+lea     ecx, [esp+30h+var_18]
+call    dword ptr [eax+8]
+test    al, al
+jz      short loc_583BB1
+
+loc_583B9B:                             ; CODE XREF: sub_583AD0+A1↑j
+mov     ecx, [esp+28h+var_8]
+mov     eax, ecx
+inc     ecx
+mov     [esp+28h+var_8], ecx
+mov     ecx, [esp+28h+Block]
+mov     dword ptr [ecx+eax*4], 0
+
+loc_583BB1:                             ; CODE XREF: sub_583AD0+C9↑j
+mov     eax, [esp+28h+var_10]
+
+loc_583BB5:                             ; CODE XREF: sub_583AD0+AD↑j
+; sub_583AD0+B5↑j
+dec     edi
+jnz     short loc_583B6B
+
+loc_583BB8:                             ; CODE XREF: sub_583AD0+8A↑j
+; sub_583AD0+91↑j
+mov     eax, [esp+28h+Block]
+inc     dword ptr [eax+esi*4]
+
+loc_583BBF:                             ; CODE XREF: sub_583AD0+69↑j
+; sub_583AD0+82↑j
+mov     ecx, 87F7E8h
+call    MapClass__SpiralSearch
+test    eax, eax
+jnz     loc_583B35
+
+loc_583BD1:                             ; CODE XREF: sub_583AD0+5F↑j
+mov     ebx, [esp+28h+var_8]
+mov     ebp, [esp+28h+Block]
+or      esi, 0FFFFFFFFh
+xor     edx, edx
+xor     eax, eax
+test    ebx, ebx
+jle     short loc_583BF8
+mov     edi, ebp
+
+loc_583BE6:                             ; CODE XREF: sub_583AD0+126↓j
+mov     ecx, [edi]
+cmp     ecx, edx
+jle     short loc_583BF0
+mov     esi, eax
+mov     edx, ecx
+
+loc_583BF0:                             ; CODE XREF: sub_583AD0+11A↑j
+inc     eax
+add     edi, 4
+cmp     eax, ebx
+jl      short loc_583BE6
+
+loc_583BF8:                             ; CODE XREF: sub_583AD0+112↑j
+mov     edx, [esp+28h+arg_0]
+test    esi, esi
+mov     [edx], esi
+jl      short loc_583C2F
+mov     esi, [ebp+esi*4+0]
+mov     [esp+28h+var_18], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+test    ebp, ebp
+jz      short loc_583C23
+mov     al, [esp+28h+var_B]
+test    al, al
+jz      short loc_583C23
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_583C23:                             ; CODE XREF: sub_583AD0+140↑j
+; sub_583AD0+148↑j
+mov     eax, esi
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 18h
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_583C2F:                             ; CODE XREF: sub_583AD0+130↑j
+test    ebp, ebp
+mov     [esp+28h+var_18], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_583C4C
+mov     al, [esp+28h+var_B]
+test    al, al
+jz      short loc_583C4C
+push    ebp             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_583C4C:                             ; CODE XREF: sub_583AD0+169↑j
+; sub_583AD0+171↑j
+pop     edi
+pop     esi
+pop     ebp
+xor     eax, eax
+pop     ebx
+add     esp, 18h
+retn    4
+*/
 }
 
 // 0x0042CCD0 (467 bytes)
 void WordVector_CheckMap_42CCD0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0042CCD0.json)
-    // Size: 467 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_42CCD0 ( int this, int a2 ) { int v2 ; // ebx !int v3 ! ; // ebp int *v4 ; // esi !unsigned __int16 v5 ! ; // di !__int16 *v6 ! ; // ebx void *v7 ; // eax !int v8 ! ; // eax void *v9 ; // eax !int v10 ! ; // edx !unsigned int v11 ! ; // eax !unsigned int v12 ! ; // ecx !int v13 ! ; // edi int v14 ; // eax !int v15 ! ; // edx int v16 ; // eax int v17 ; // edx !int v19 ! ; // [esp+14h] [ebp-24h] !int v20 ! ; // [esp+18h] [ebp-20h] !unsigned int i ! ; // [esp+1Ch] [ebp-1Ch] !void **v22 ! ; // [esp+20h] [ebp-18h] BYREF !void *Block ! ; // [esp+24h] [ebp-14h] int v24 ; // [esp+28h] [ebp-10h] char v25 ; // [esp+2Dh] [ebp-Bh] int v26 ; // [esp+30h] [ebp-8h] !int v27 ! ; // [esp+34h] [ebp-4h] v2 = this ; v3 = 0 ; v4 = ( int * ) ( this + 124 ) ; v20 = dword_87F858 + 10 * CellToTileIndexMap ( ( int * ) & MapClass_Instance , ( __int16 * ) ( this + 112 ) ) ; while ( 1 ) { v5 = * ( _WORD * ) ( v20 + 2 * v3 ) ; WordVector::Constructor ( & v22 , 0 , 0 ) ; v22 = & DynamicVectorClass<unsigned short>::vftable' ; v27 = 10 ; v26 = 0 ; if ( Block && v25 ) { __3_YAXPAX_Z ( Block ) ; Block = 0 ; } v6 = ( __int16 * ) ( v2 + 112 ) ; v25 = 0 ; v24 = 0 ; v7 = CellCoord::To_CellObj ( & MapClass_Instance , v6 ) ; if ( CheckMapReachability ( & MapClass_Instance , ( int ) v7 , v3 , ( int ) & v22 , a2 ) ) { v8 = CellToTileIndexMap ( ( int * ) & MapClass_Instance , v6 ) ; sub_42CF80 ( ( _BYTE * ) this , * ( unsigned __int16 * ) ( dword_87F858 + 10 * v8 + 2 * v3 ) , v3 ) ; v9 = Block ; v22 = & VectorClass<unsigned short>::vftable' ; if ( Block && v25 ) goto LABEL_25 ; } else { v10 = v26 - 1 ; v19 = v26 - 1 ; if ( v26 - 1 >= 0 ) { v11 = v5 ; for ( i = v5 ; ; v11 = i ) { v12 = * ( ( unsigned __int16 * ) Block + v10 ) ; if ( ( unsigned __int16 ) v12 != v11 ) { if ( ( unsigned __int16 ) v12 < v11 ) { v12 = v11 ; v11 = * ( ( unsigned __int16 * ) Block + v10 ) ; } v13 = v12 | ( v11 << 16 ) ; v14 = * v4 ; if ( v4 [ 2 ] < * v4 || ( * ( ( _BYTE * ) v4 + 5 ) || ! v14 ) && ( v15 = v4 [ 3 ] , v15 > 0 ) && ( * ( unsigned __int8 (__thiscall **)(int *, int, _DWORD) ) ( * ( v4 - 2 ) + 8 ) ) ( v4 - 2 , v14 + v15 , 0 ) ) { v16 = v4 [ 2 ] ; v17 = * ( v4 - 1 ) ; v4 [ 2 ] = v16 + 1 ; * ( _DWORD * ) ( v17 + 4 * v16 ) = v13 ; } } v10 = -- v19 ; if ( v19 < 0 ) break ; } } v9 = Block ; v22 = & VectorClass<unsigned short>::vftable' ; if ( Block && v25 ) { LABEL_25 : __3_YAXPAX_Z ( v9 ) ; Block = 0 ; } } ++ v3 ; v4 += 6 ; v25 = 0 ; v24 = 0 ; if ( v3 >= 3 ) break ; v2 = this ; } }
-    
+// [IDA decompile]
+void __thiscall sub_42CCD0(int this, int a2)
+{
+  int v2; // ebx
+  int v3; // ebp
+  int *v4; // esi
+  unsigned __int16 v5; // di
+  __int16 *v6; // ebx
+  void *v7; // eax
+  int v8; // eax
+  void *v9; // eax
+  int v10; // edx
+  unsigned int v11; // eax
+  unsigned int v12; // ecx
+  int v13; // edi
+  int v14; // eax
+  int v15; // edx
+  int v16; // eax
+  int v17; // edx
+  int v19; // [esp+14h] [ebp-24h]
+  int v20; // [esp+18h] [ebp-20h]
+  unsigned int i; // [esp+1Ch] [ebp-1Ch]
+  void **v22; // [esp+20h] [ebp-18h] BYREF
+  void *Block; // [esp+24h] [ebp-14h]
+  int v24; // [esp+28h] [ebp-10h]
+  char v25; // [esp+2Dh] [ebp-Bh]
+  int v26; // [esp+30h] [ebp-8h]
+  int v27; // [esp+34h] [ebp-4h]
+
+  v2 = this;
+  v3 = 0;
+  v4 = (int *)(this + 124);
+  v20 = MEMORY[0x87F858] + 10 * CellToTileIndexMap((int *)&MEMORY[0x87F7E8], (__int16 *)(this + 112));
+  while ( 1 )
+  {
+    v5 = *(_WORD *)(v20 + 2 * v3);
+    WordVector::Constructor(&v22, 0, 0);
+    v22 = &DynamicVectorClass<unsigned short>::`vftable';
+    v27 = 10;
+    v26 = 0;
+    if ( Block && v25 )
+    {
+      __3_YAXPAX_Z(Block);
+      Block = 0;
+    }
+    v6 = (__int16 *)(v2 + 112);
+    v25 = 0;
+    v24 = 0;
+    v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v6);
+    if ( CheckMapReachability(&MEMORY[0x87F7E8], (int)v7, v3, (int)&v22, a2) )
+    {
+      v8 = CellToTileIndexMap((int *)&MEMORY[0x87F7E8], v6);
+      sub_42CF80((_BYTE *)this, *(unsigned __int16 *)(MEMORY[0x87F858] + 10 * v8 + 2 * v3), v3);
+      v9 = Block;
+      v22 = &VectorClass<unsigned short>::`vftable';
+      if ( Block && v25 )
+        goto LABEL_25;
+    }
+    else
+    {
+      v10 = v26 - 1;
+      v19 = v26 - 1;
+      if ( v26 - 1 >= 0 )
+      {
+        v11 = v5;
+        for ( i = v5; ; v11 = i )
+        {
+          v12 = *((unsigned __int16 *)Block + v10);
+          if ( (unsigned __int16)v12 != v11 )
+          {
+            if ( (unsigned __int16)v12 < v11 )
+            {
+              v12 = v11;
+              v11 = *((unsigned __int16 *)Block + v10);
+            }
+            v13 = v12 | (v11 << 16);
+            v14 = *v4;
+            if ( v4[2] < *v4
+              || (*((_BYTE *)v4 + 5) || !v14)
+              && (v15 = v4[3], v15 > 0)
+              && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(v4 - 2) + 8))(v4 - 2, v14 + v15, 0) )
+            {
+              v16 = v4[2];
+              v17 = *(v4 - 1);
+              v4[2] = v16 + 1;
+              *(_DWORD *)(v17 + 4 * v16) = v13;
+            }
+          }
+          v10 = --v19;
+          if ( v19 < 0 )
+            break;
+        }
+      }
+      v9 = Block;
+      v22 = &VectorClass<unsigned short>::`vftable';
+      if ( Block && v25 )
+      {
+LABEL_25:
+        __3_YAXPAX_Z(v9);
+        Block = 0;
+      }
+    }
+    ++v3;
+    v4 += 6;
+    v25 = 0;
+    v24 = 0;
+    if ( v3 >= 3 )
+      break;
+    v2 = this;
+  }
+}
+
+/* ASM:
+Block           = dword ptr -14h
+var_10          = dword ptr -10h
+var_B           = byte ptr -0Bh
+var_8           = dword ptr -8
+var_4           = dword ptr -4
+arg_0           = dword ptr  4
+
+sub     esp, 28h
+push    ebx
+mov     ebx, ecx
+push    ebp
+push    esi
+lea     eax, [ebx+70h]
+push    edi
+push    eax
+mov     ecx, 87F7E8h
+mov     [esp+3Ch+var_28], ebx
+call    CellToTileIndexMap
+mov     ecx, ds:87F858h
+lea     eax, [eax+eax*4]
+xor     ebp, ebp
+lea     esi, [ebx+7Ch]
+lea     edx, [ecx+eax*2]
+mov     [esp+38h+var_20], edx
+jmp     short loc_42CD06
+; ---------------------------------------------------------------------------
+
+loc_42CD02:                             ; CODE XREF: sub_42CCD0+1C3↓j
+mov     ebx, [esp+38h+var_28]
+
+loc_42CD06:                             ; CODE XREF: sub_42CCD0+30↑j
+mov     eax, [esp+38h+var_20]
+push    0
+push    0
+lea     ecx, [esp+40h+var_18]
+mov     di, [eax+ebp*2]
+call    WordVector__Constructor
+mov     eax, [esp+38h+Block]
+mov     [esp+38h+var_18], offset ??_7?$DynamicVectorClass@G@@6B@ ; const DynamicVectorClass<ushort>::`vftable'
+test    eax, eax
+mov     [esp+38h+var_4], 0Ah
+mov     [esp+38h+var_8], 0
+jz      short loc_42CD54
+mov     cl, [esp+38h+var_B]
+test    cl, cl
+jz      short loc_42CD54
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esp+38h+Block], 0
+
+loc_42CD54:                             ; CODE XREF: sub_42CCD0+69↑j
+; sub_42CCD0+71↑j
+mov     ecx, [esp+38h+arg_0]
+lea     edx, [esp+38h+var_18]
+push    ecx
+push    edx
+add     ebx, 70h ; 'p'
+push    ebp
+push    ebx
+mov     ecx, 87F7E8h
+mov     [esp+48h+var_B], 0
+mov     [esp+48h+var_10], 0
+call    CellCoord__To_CellObj
+push    eax
+mov     ecx, 87F7E8h
+call    CheckMapReachability
+test    al, al
+jz      short loc_42CDD8
+push    ebx
+mov     ecx, 87F7E8h
+call    CellToTileIndexMap
+mov     ecx, ds:87F858h
+lea     eax, [eax+eax*4]
+xor     edx, edx
+push    ebp
+lea     eax, [ecx+eax*2]
+mov     ecx, [esp+3Ch+var_28]
+mov     dx, [eax+ebp*2]
+push    edx
+call    sub_42CF80
+mov     eax, [esp+38h+Block]
+xor     edi, edi
+cmp     eax, edi
+mov     [esp+38h+var_18], offset ??_7?$VectorClass@G@@6B@ ; const VectorClass<ushort>::`vftable'
+jz      loc_42CE83
+mov     cl, [esp+38h+var_B]
+test    cl, cl
+jz      loc_42CE83
+jmp     loc_42CE76
+; ---------------------------------------------------------------------------
+
+loc_42CDD8:                             ; CODE XREF: sub_42CCD0+B7↑j
+mov     eax, [esp+38h+var_8]
+lea     edx, [eax-1]
+test    edx, edx
+mov     [esp+38h+var_24], edx
+jl      short loc_42CE5C
+mov     eax, edi
+and     eax, 0FFFFh
+mov     [esp+38h+var_1C], eax
+jmp     short loc_42CDF8
+; ---------------------------------------------------------------------------
+
+loc_42CDF4:                             ; CODE XREF: sub_42CCD0+18A↓j
+mov     eax, [esp+38h+var_1C]
+
+loc_42CDF8:                             ; CODE XREF: sub_42CCD0+122↑j
+mov     edi, [esp+38h+Block]
+xor     ecx, ecx
+mov     cx, [edi+edx*2]
+cmp     ecx, eax
+jz      short loc_42CE51
+jnb     short loc_42CE0E
+mov     edx, ecx
+mov     ecx, eax
+mov     eax, edx
+
+loc_42CE0E:                             ; CODE XREF: sub_42CCD0+136↑j
+shl     eax, 10h
+or      eax, ecx
+mov     ecx, [esi+8]
+mov     edi, eax
+mov     eax, [esi]
+cmp     ecx, eax
+jl      short loc_42CE42
+mov     cl, [esi+5]
+test    cl, cl
+jnz     short loc_42CE29
+test    eax, eax
+jnz     short loc_42CE51
+
+loc_42CE29:                             ; CODE XREF: sub_42CCD0+153↑j
+mov     edx, [esi+0Ch]
+test    edx, edx
+jle     short loc_42CE51
+mov     ebx, [esi-8]
+lea     ecx, [esi-8]
+add     edx, eax
+push    0
+push    edx
+call    dword ptr [ebx+8]
+test    al, al
+jz      short loc_42CE51
+
+loc_42CE42:                             ; CODE XREF: sub_42CCD0+14C↑j
+mov     eax, [esi+8]
+mov     edx, [esi-4]
+lea     ecx, [eax+1]
+mov     [esi+8], ecx
+mov     [edx+eax*4], edi
+
+loc_42CE51:                             ; CODE XREF: sub_42CCD0+134↑j
+; sub_42CCD0+157↑j ...
+mov     edx, [esp+38h+var_24]
+dec     edx
+mov     [esp+38h+var_24], edx
+jns     short loc_42CDF4
+
+loc_42CE5C:                             ; CODE XREF: sub_42CCD0+115↑j
+mov     eax, [esp+38h+Block]
+xor     edi, edi
+cmp     eax, edi
+mov     [esp+38h+var_18], offset ??_7?$VectorClass@G@@6B@ ; const VectorClass<ushort>::`vftable'
+jz      short loc_42CE83
+mov     cl, [esp+38h+var_B]
+test    cl, cl
+jz      short loc_42CE83
+
+loc_42CE76:                             ; CODE XREF: sub_42CCD0+103↑j
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esp+38h+Block], edi
+
+loc_42CE83:                             ; CODE XREF: sub_42CCD0+F1↑j
+; sub_42CCD0+FD↑j ...
+inc     ebp
+add     esi, 18h
+cmp     ebp, 3
+mov     [esp+38h+var_B], 0
+mov     [esp+38h+var_10], edi
+jl      loc_42CD02
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 28h
+retn    4
+*/
 }
 
 } // namespace gamemd

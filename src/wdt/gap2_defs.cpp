@@ -12,12 +12,336 @@
 #include "wdt/wdt.hpp"
 
 // 0x4104C0
-namespace gamemd { namespace wdt { int Map::GetInvalidCoord() { return 0; } } }
+namespace gamemd { namespace wdt { int Map::GetInvalidCoord() {
+// [IDA decompile]
+int __thiscall Map::GetInvalidCoord(#376 *this)
+{
+  _DWORD *v2; // [esp+4h] [ebp+4h]
+
+  *v2 = MEMORY[0x887680];
+  v2[1] = MEMORY[0x887684];
+  v2[2] = MEMORY[0x887688];
+  return (int)v2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     edx, ds:887680h
+mov     ecx, eax
+
+AbstractClass__sub_4104CC:
+mov     [ecx], edx
+mov     edx, ds:887684h
+mov     [ecx+4], edx
+mov     edx, ds:887688h
+mov     [ecx+8], edx
+retn    4
+*/
+} } }
 // 0x4F28B0
-namespace gamemd { namespace wdt { bool Map::CanScroll() { return false; } } }
+namespace gamemd { namespace wdt { bool Map::CanScroll() {
+// [IDA decompile]
+BOOL __thiscall Map::CanScroll(_DWORD *this)
+{
+  return *(this + 2) < *(_DWORD *)(*(this + 1) + 16);
+}
+
+/* ASM:
+mov     eax, [ecx+4]
+mov     ecx, [ecx+8]
+cmp     ecx, [eax+10h]
+sbb     eax, eax
+neg     eax
+retn
+*/
+} } }
 // 0x4F3A90
-namespace gamemd { namespace wdt { int State::SetIfChanged(int a1) { return 0; } } }
+namespace gamemd { namespace wdt { int State::SetIfChanged(int a1) {
+// [IDA decompile]
+int __thiscall State_SetIfChanged(_BYTE *this, int a2)
+{
+  int result; // eax
+  int v3; // edx
+
+  result = a2;
+  if ( (_BYTE)a2 != *(this + 8) )
+  {
+    v3 = *(_DWORD *)this;
+    *(this + 8) = a2;
+    return (*(int (__stdcall **)(int))(v3 + 16))(a2);
+  }
+  return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+mov     dl, [ecx+8]
+cmp     al, dl
+jz      short locret_4F3AA4
+mov     edx, [ecx]
+push    eax
+mov     [ecx+8], al
+call    dword ptr [edx+10h]
+
+locret_4F3AA4:                          ; CODE XREF: State__SetIfChanged+9↑j
+retn    4
+*/
+} } }
 // 0x5C2500
-namespace gamemd { namespace wdt { void Campaign::SetupMovie() { } } }
+namespace gamemd { namespace wdt { void Campaign::SetupMovie() {
+// [IDA decompile]
+void __thiscall Campaign::SetupMovie(int *this, int hDlg)
+{
+  int v2; // ebx
+  char *v3; // edi
+  int *v4; // ebp
+  int v5; // ecx
+  int v6; // esi
+  int v7; // edx
+  int v8; // ecx
+  int v9; // eax
+  int *v10; // ebp
+  int ResourceID2CSF; // esi
+  int v12; // ebx
+  int GameUI; // eax
+  int v14; // [esp+10h] [ebp-14h] BYREF
+  int v15; // [esp+14h] [ebp-10h] BYREF
+  int v16; // [esp+18h] [ebp-Ch]
+  int *v17; // [esp+1Ch] [ebp-8h]
+  int v18; // [esp+20h] [ebp-4h]
+
+  v2 = hDlg;
+  v3 = 0;
+  v4 = this;
+  v17 = this;
+  if ( hDlg )
+  {
+    v5 = *(this + 207);
+    v6 = MEMORY[0x87F7E8][536777];
+    v16 = MEMORY[0x87F7E8][536777];
+    v14 = 0;
+    Movie::GetSection((int)&MEMORY[0x87F7E8][32588], v5, &v15);
+    v7 = v15;
+    if ( v15 )
+    {
+      if ( *(_DWORD *)(v15 + 32) )
+      {
+        v8 = v4[16];
+        if ( v8 )
+        {
+          if ( Movie::GetState(v8, &v14) )
+          {
+            v9 = v14;
+          }
+          else
+          {
+            v9 = 0;
+            v14 = 0;
+          }
+          v7 = v15;
+        }
+        else
+        {
+          v9 = 0;
+          v14 = 0;
+        }
+        if ( v9 < *(_DWORD *)(v7 + 32) )
+        {
+          v18 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(v7 + 20) + 4 * v9) + 16);
+          if ( v6 > 0 )
+          {
+            v10 = &MEMORY[0x87F7E8][538794];
+            do
+            {
+              ResourceID2CSF = GetResourceID2CSF(v3);
+              MovieClass::ReadConfig(v17, v2, ResourceID2CSF);
+              if ( v18 <= 1 )
+              {
+                v12 = SideClass::FindByName(**(void ***)(*(_DWORD *)(*(_DWORD *)(v15 + 20) + 4 * v14) + 4));
+                SetupLobbyCountryCombo(hDlg, ResourceID2CSF, v12);
+                SessionClass::SetPlayerOption(*v10, v12);
+                v2 = hDlg;
+              }
+              else
+              {
+                SetupLobbyCountryCombo(v2, ResourceID2CSF, -2);
+                SessionClass::SetPlayerOption(*v10, -2);
+              }
+              ++v3;
+              ++v10;
+            }
+            while ( (int)v3 < v16 );
+            v4 = v17;
+            v6 = v16;
+          }
+          DisableCampaignSlots(v2, v6);
+          GameUI = Dialog::FindGameUI();
+          if ( GameUI )
+            CampaignCoop::Setup(v4, GameUI, 1);
+        }
+      }
+    }
+  }
+}
+
+/* ASM:
+hDlg            = dword ptr  4
+
+sub     esp, 14h
+push    ebx
+mov     ebx, [esp+18h+hDlg]
+push    ebp
+push    esi
+push    edi
+xor     edi, edi
+mov     ebp, ecx
+cmp     ebx, edi
+mov     [esp+24h+var_8], ebp
+jz      loc_5C2633
+mov     ecx, [ebp+33Ch]
+mov     esi, ds:0A8BB0Ch
+lea     eax, [esp+24h+var_10]
+mov     [esp+24h+var_C], esi
+push    eax
+push    ecx
+mov     ecx, 89F518h
+mov     [esp+2Ch+var_14], edi
+call    Movie__GetSection
+mov     edx, [esp+24h+var_10]
+cmp     edx, edi
+jz      loc_5C2633
+cmp     [edx+20h], edi
+jz      loc_5C2633
+mov     ecx, [ebp+40h]
+cmp     ecx, edi
+jz      short loc_5C2571
+lea     edx, [esp+24h+var_14]
+push    edx
+call    Movie__GetState
+test    al, al
+jnz     short loc_5C2579
+xor     eax, eax
+mov     [esp+24h+var_14], eax
+jmp     short loc_5C257D
+; ---------------------------------------------------------------------------
+
+loc_5C2571:                             ; CODE XREF: Campaign__SetupMovie+59↑j
+xor     eax, eax
+mov     [esp+24h+var_14], eax
+jmp     short loc_5C2581
+; ---------------------------------------------------------------------------
+
+loc_5C2579:                             ; CODE XREF: Campaign__SetupMovie+67↑j
+mov     eax, [esp+24h+var_14]
+
+loc_5C257D:                             ; CODE XREF: Campaign__SetupMovie+6F↑j
+mov     edx, [esp+24h+var_10]
+
+loc_5C2581:                             ; CODE XREF: Campaign__SetupMovie+77↑j
+cmp     eax, [edx+20h]
+jge     loc_5C2633
+mov     ecx, [edx+14h]
+cmp     esi, edi
+mov     edx, [ecx+eax*4]
+mov     eax, [edx+10h]
+mov     [esp+24h+var_4], eax
+jle     short loc_5C2617
+mov     ebp, 0A8DA90h
+
+loc_5C25A0:                             ; CODE XREF: Campaign__SetupMovie+10F↓j
+mov     ecx, edi
+call    GetResourceID2CSF
+mov     ecx, [esp+24h+var_8]
+mov     esi, eax
+push    esi             ; nIDDlgItem
+push    ebx             ; hDlg
+call    MovieClass__ReadConfig
+cmp     [esp+24h+var_4], 1
+jle     short loc_5C25D2
+push    0FFFFFFFEh      ; int
+mov     edx, esi        ; nIDDlgItem
+mov     ecx, ebx        ; hDlg
+call    SetupLobbyCountryCombo
+mov     ecx, [ebp+0]
+push    0FFFFFFFEh
+call    SessionClass__SetPlayerOption
+jmp     short loc_5C2605
+; ---------------------------------------------------------------------------
+
+loc_5C25D2:                             ; CODE XREF: Campaign__SetupMovie+B9↑j
+mov     ecx, [esp+24h+var_10]
+mov     eax, [esp+24h+var_14]
+mov     edx, [ecx+14h]
+mov     ecx, [edx+eax*4]
+mov     edx, [ecx+4]
+mov     ecx, [edx]      ; void *
+call    SideClass__FindByName
+mov     ecx, [esp+24h+hDlg] ; hDlg
+mov     ebx, eax
+push    ebx             ; int
+mov     edx, esi        ; nIDDlgItem
+call    SetupLobbyCountryCombo
+mov     ecx, [ebp+0]
+push    ebx
+call    SessionClass__SetPlayerOption
+mov     ebx, [esp+24h+hDlg]
+
+loc_5C2605:                             ; CODE XREF: Campaign__SetupMovie+D0↑j
+mov     eax, [esp+24h+var_C]
+inc     edi
+add     ebp, 4
+cmp     edi, eax
+jl      short loc_5C25A0
+mov     ebp, [esp+24h+var_8]
+mov     esi, eax
+
+loc_5C2617:                             ; CODE XREF: Campaign__SetupMovie+99↑j
+mov     edx, esi
+mov     ecx, ebx        ; hDlg
+call    DisableCampaignSlots
+call    Dialog__FindGameUI
+test    eax, eax
+jz      short loc_5C2633
+push    1               ; char
+push    eax             ; hDlg
+mov     ecx, ebp
+call    CampaignCoop__Setup
+
+loc_5C2633:                             ; CODE XREF: Campaign__SetupMovie+15↑j
+; Campaign__SetupMovie+45↑j ...
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 14h
+retn    4
+*/
+} } }
 // 0x76BFE0
-namespace gamemd { namespace wdt { int Conflict::GetOwnerHouse() { return 0; } } }
+namespace gamemd { namespace wdt { int Conflict::GetOwnerHouse() {
+// [IDA decompile]
+int __thiscall Conflict_GetOwnerHouse(_DWORD *this)
+{
+  int v1; // eax
+
+  v1 = *(this + 3);
+  if ( v1 )
+    return *(_DWORD *)(v1 + 36) - 1;
+  else
+    return 0;
+}
+
+/* ASM:
+mov     eax, [ecx+0Ch]
+test    eax, eax
+jz      short loc_76BFEC
+mov     eax, [eax+24h]
+dec     eax
+retn
+; ---------------------------------------------------------------------------
+
+loc_76BFEC:                             ; CODE XREF: Conflict__GetOwnerHouse+5↑j
+xor     eax, eax
+retn
+*/
+} } }

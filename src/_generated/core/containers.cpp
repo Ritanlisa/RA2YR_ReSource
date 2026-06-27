@@ -8,83 +8,716 @@ namespace gamemd {
 
 // 0x0074BDC0 (210 bytes)
 int BitArray_SetMember2_74BDC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0074BDC0.json)
-    // Size: 210 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_74BDC0 ( unsigned int *this, unsigned int a2 ) { !int v3 ! ; // edx !unsigned int v5 ! ; // edi !unsigned __int8 v6 ! ; // al !int v7 ! ; // edx !int v8 ! ; // ebp !int v10 ! ; // edx int v11 ; // edx int v12 ; // [esp+10h] [ebp+4h] v3 = * ( this + 2 ) ; if ( v3 != -1 ) { SetBitfieldBit ( * ( this + 4 ) , v3 , * ( ( unsigned __int8 * ) this + 4 ) ) ; * ( this + 2 ) = -1 ; } if ( a2 ) { v5 = * this ; v6 = ( * ( int (__thiscall **)(unsigned int *, unsigned int, _DWORD) ) ( * ( this + 3 ) + 8 ) ) ( this + 3 , ( a2 + 7 ) >> 3 , 0 ) ; * this = a2 ; v12 = v6 ; if ( v6 && v5 < a2 ) { do { v7 = * ( this + 2 ) ; if ( v7 != v5 ) { v8 = v5 ; if ( v5 >= * this ) v8 = -1 ; if ( v8 != v7 ) { if ( v7 != -1 ) SetBitfieldBit ( * ( this + 4 ) , v7 , * ( ( unsigned __int8 * ) this + 4 ) ) ; if ( v8 != -1 ) * ( ( _BYTE * ) this + 4 ) = BitArray::TestBit ( * ( this + 4 ) , v8 ) ; * ( this + 2 ) = v8 ; } } ++ v5 ; * ( ( _BYTE * ) this + 4 ) = 0 ; } while ( v5 < a2 ) ; } return v12 ; } else { v10 = * ( this + 2 ) ; if ( v10 != -1 ) { SetBitfieldBit ( * ( this + 4 ) , v10 , * ( ( unsigned __int8 * ) this + 4 ) ) ; * ( this + 2 ) = -1 ; } v11 = * ( this + 3 ) ; * this = 0 ; ( * ( void (__thiscall **)(unsigned int *) ) ( v11 + 12 ) ) ( this + 3 ) ; return 1 ; } }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_74BDC0(unsigned int *this, unsigned int a2)
+{
+  int v3; // edx
+  unsigned int v5; // edi
+  unsigned __int8 v6; // al
+  int v7; // edx
+  int v8; // ebp
+  int v10; // edx
+  int v11; // edx
+  int v12; // [esp+10h] [ebp+4h]
+
+  v3 = *(this + 2);
+  if ( v3 != -1 )
+  {
+    SetBitfieldBit(*(this + 4), v3, *((unsigned __int8 *)this + 4));
+    *(this + 2) = -1;
+  }
+  if ( a2 )
+  {
+    v5 = *this;
+    v6 = (*(int (__thiscall **)(unsigned int *, unsigned int, _DWORD))(*(this + 3) + 8))(this + 3, (a2 + 7) >> 3, 0);
+    *this = a2;
+    v12 = v6;
+    if ( v6 && v5 < a2 )
+    {
+      do
+      {
+        v7 = *(this + 2);
+        if ( v7 != v5 )
+        {
+          v8 = v5;
+          if ( v5 >= *this )
+            v8 = -1;
+          if ( v8 != v7 )
+          {
+            if ( v7 != -1 )
+              SetBitfieldBit(*(this + 4), v7, *((unsigned __int8 *)this + 4));
+            if ( v8 != -1 )
+              *((_BYTE *)this + 4) = BitArray::TestBit(*(this + 4), v8);
+            *(this + 2) = v8;
+          }
+        }
+        ++v5;
+        *((_BYTE *)this + 4) = 0;
+      }
+      while ( v5 < a2 );
+    }
+    return v12;
+  }
+  else
+  {
+    v10 = *(this + 2);
+    if ( v10 != -1 )
+    {
+      SetBitfieldBit(*(this + 4), v10, *((unsigned __int8 *)this + 4));
+      *(this + 2) = -1;
+    }
+    v11 = *(this + 3);
+    *this = 0;
+    (*(void (__thiscall **)(unsigned int *))(v11 + 12))(this + 3);
+    return 1;
+  }
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+push    edi
+or      edi, 0FFFFFFFFh
+mov     edx, [esi+8]
+cmp     edx, edi
+jz      short loc_74BDE0
+mov     ecx, [esi+10h]
+xor     eax, eax
+mov     al, [esi+4]
+push    eax
+call    SetBitfieldBit
+mov     [esi+8], edi
+
+loc_74BDE0:                             ; CODE XREF: sub_74BDC0+D↑j
+mov     ebx, [esp+0Ch+arg_0]
+test    ebx, ebx
+jbe     short loc_74BE60
+mov     edx, [esi+0Ch]
+mov     edi, [esi]
+lea     ecx, [esi+0Ch]
+lea     eax, [ebx+7]
+shr     eax, 3
+push    0
+push    eax
+call    dword ptr [edx+8]
+and     eax, 0FFh
+mov     [esi], ebx
+mov     [esp+0Ch+arg_0], eax
+jz      short loc_74BE56
+cmp     edi, ebx
+jnb     short loc_74BE56
+push    ebp
+
+loc_74BE0E:                             ; CODE XREF: sub_74BDC0+93↓j
+mov     edx, [esi+8]
+cmp     edx, edi
+jz      short loc_74BE4C
+mov     eax, [esi]
+mov     ebp, edi
+cmp     edi, eax
+jb      short loc_74BE20
+or      ebp, 0FFFFFFFFh
+
+loc_74BE20:                             ; CODE XREF: sub_74BDC0+5B↑j
+cmp     ebp, edx
+jz      short loc_74BE4C
+cmp     edx, 0FFFFFFFFh
+jz      short loc_74BE37
+xor     ecx, ecx
+mov     cl, [esi+4]
+push    ecx
+mov     ecx, [esi+10h]
+call    SetBitfieldBit
+
+loc_74BE37:                             ; CODE XREF: sub_74BDC0+67↑j
+cmp     ebp, 0FFFFFFFFh
+jz      short loc_74BE49
+mov     ecx, [esi+10h]
+mov     edx, ebp
+call    BitArray__TestBit
+mov     [esi+4], al
+
+loc_74BE49:                             ; CODE XREF: sub_74BDC0+7A↑j
+mov     [esi+8], ebp
+
+loc_74BE4C:                             ; CODE XREF: sub_74BDC0+53↑j
+; sub_74BDC0+62↑j
+inc     edi
+mov     byte ptr [esi+4], 0
+cmp     edi, ebx
+jb      short loc_74BE0E
+pop     ebp
+
+loc_74BE56:                             ; CODE XREF: sub_74BDC0+47↑j
+; sub_74BDC0+4B↑j
+mov     eax, [esp+0Ch+arg_0]
+pop     edi
+pop     esi
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_74BE60:                             ; CODE XREF: sub_74BDC0+26↑j
+mov     edx, [esi+8]
+cmp     edx, edi
+jz      short loc_74BE78
+mov     ecx, [esi+10h]
+xor     eax, eax
+mov     al, [esi+4]
+push    eax
+call    SetBitfieldBit
+mov     [esi+8], edi
+
+loc_74BE78:                             ; CODE XREF: sub_74BDC0+A5↑j
+mov     edx, [esi+0Ch]
+lea     ecx, [esi+0Ch]
+mov     dword ptr [esi], 0
+call    dword ptr [edx+0Ch]
+pop     edi
+pop     esi
+mov     eax, 1
+pop     ebx
+retn    4
+*/
 }
 
 // 0x0074BF40 (67 bytes)
 void BitArray_SetMember_74BF40() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0074BF40.json)
-    // Size: 67 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_74BF40 ( unsigned int *this, unsigned int a2 ) { !int v3 ! ; // edi !int v4 ! ; // edx v3 = a2 ; if ( a2 >= * this ) v3 = -1 ; v4 = * ( this + 2 ) ; if ( v3 != v4 ) { if ( v4 != -1 ) SetBitfieldBit ( * ( this + 4 ) , v4 , * ( ( unsigned __int8 * ) this + 4 ) ) ; if ( v3 != -1 ) * ( ( _BYTE * ) this + 4 ) = BitArray::TestBit ( * ( this + 4 ) , v3 ) ; * ( this + 2 ) = v3 ; } }
-    
+// [IDA decompile]
+void __thiscall sub_74BF40(unsigned int *this, unsigned int a2)
+{
+  int v3; // edi
+  int v4; // edx
+
+  v3 = a2;
+  if ( a2 >= *this )
+    v3 = -1;
+  v4 = *(this + 2);
+  if ( v3 != v4 )
+  {
+    if ( v4 != -1 )
+      SetBitfieldBit(*(this + 4), v4, *((unsigned __int8 *)this + 4));
+    if ( v3 != -1 )
+      *((_BYTE *)this + 4) = BitArray::TestBit(*(this + 4), v3);
+    *(this + 2) = v3;
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+push    edi
+mov     edi, [esp+8+arg_0]
+cmp     edi, [esi]
+jb      short loc_74BF4F
+or      edi, 0FFFFFFFFh
+
+loc_74BF4F:                             ; CODE XREF: sub_74BF40+A↑j
+mov     edx, [esi+8]
+cmp     edi, edx
+jz      short loc_74BF7E
+cmp     edx, 0FFFFFFFFh
+jz      short loc_74BF69
+mov     ecx, [esi+10h]
+xor     eax, eax
+mov     al, [esi+4]
+push    eax
+call    SetBitfieldBit
+
+loc_74BF69:                             ; CODE XREF: sub_74BF40+19↑j
+cmp     edi, 0FFFFFFFFh
+jz      short loc_74BF7B
+mov     ecx, [esi+10h]
+mov     edx, edi
+call    BitArray__TestBit
+mov     [esi+4], al
+
+loc_74BF7B:                             ; CODE XREF: sub_74BF40+2C↑j
+mov     [esi+8], edi
+
+loc_74BF7E:                             ; CODE XREF: sub_74BF40+14↑j
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x0047ADC0 (66 bytes)
 void Callfree_47ADC0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0047ADC0.json)
-    // Size: 66 bytes, calling convention: unknown
-    // IDA pseudocode:
-//   void sub_47ADC0 ( ) { !void **v0 ! ; // esi !void **v1 ! ; // edi v0 = ( void ** ) CmdLine_NoCD ; if ( CmdLine_NoCD ) { do { v1 = ( void ** ) * v0 ; if ( v0 [ 1 ] ) free ( v0 [ 1 ] ) ; __3_YAXPAX_Z ( v0 ) ; v0 = v1 ; } while ( v1 ) ; CmdLine_NoCD = 0 ; } else { CmdLine_NoCD = 0 ; } }
-    
+// [IDA decompile]
+void sub_47ADC0()
+{
+  void **v0; // esi
+  void **v1; // edi
+
+  v0 = (void **)MEMORY[0x89E410];
+  if ( MEMORY[0x89E410] )
+  {
+    do
+    {
+      v1 = (void **)*v0;
+      if ( v0[1] )
+        free(v0[1]);
+      __3_YAXPAX_Z(v0);
+      v0 = v1;
+    }
+    while ( v1 );
+    MEMORY[0x89E410] = 0;
+  }
+  else
+  {
+    MEMORY[0x89E410] = 0;
+  }
+}
+
+/* ASM:
+push    esi
+mov     esi, ds:89E410h
+test    esi, esi
+jz      short loc_47ADF6
+push    edi
+
+loc_47ADCC:                             ; CODE XREF: sub_47ADC0+2B↓j
+mov     eax, [esi+4]
+mov     edi, [esi]
+test    eax, eax
+jz      short loc_47ADDE
+push    eax             ; Block
+call    _free
+add     esp, 4
+
+loc_47ADDE:                             ; CODE XREF: sub_47ADC0+13↑j
+push    esi             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     esi, edi
+test    edi, edi
+jnz     short loc_47ADCC
+mov     ds:89E410h, edi
+pop     edi
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_47ADF6:                             ; CODE XREF: sub_47ADC0+9↑j
+mov     dword ptr ds:89E410h, 0
+pop     esi
+retn
+*/
 }
 
 // 0x004B5780 (69 bytes)
 void LinkedList_MoveLink_4B5780() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B5780.json)
-    // Size: 69 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4B5780 ( int this, int a2 ) { LinkedList::MoveNode ( ( void * ) this , ( void * ) a2 ) ; * ( _DWORD * ) ( this + 12 ) = * ( _DWORD * ) ( a2 + 12 ) ; * ( _DWORD * ) ( this + 16 ) = * ( _DWORD * ) ( a2 + 16 ) ; * ( _DWORD * ) ( this + 20 ) = * ( _DWORD * ) ( a2 + 20 ) ; * ( _DWORD * ) ( this + 24 ) = * ( _DWORD * ) ( a2 + 24 ) ; * ( _BYTE * ) ( this + 28 ) = * ( _BYTE * ) ( a2 + 28 ) ; * ( _BYTE * ) ( this + 29 ) = * ( _BYTE * ) ( a2 + 29 ) ; * ( _BYTE * ) ( this + 30 ) = * ( _BYTE * ) ( a2 + 30 ) ; * ( _DWORD * ) ( this + 32 ) = * ( _DWORD * ) ( a2 + 32 ) ; return this ; }
-    
+// [IDA decompile]
+int __thiscall sub_4B5780(int this, int a2)
+{
+  LinkedList::MoveNode((void *)this, (void *)a2);
+  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12);
+  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16);
+  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20);
+  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24);
+  *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28);
+  *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29);
+  *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30);
+  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32);
+  return this;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    edi
+call    LinkedList__MoveNode
+mov     eax, [edi+0Ch]
+mov     [esi+0Ch], eax
+mov     ecx, [edi+10h]
+mov     [esi+10h], ecx
+mov     edx, [edi+14h]
+mov     [esi+14h], edx
+mov     eax, [edi+18h]
+mov     [esi+18h], eax
+mov     cl, [edi+1Ch]
+mov     [esi+1Ch], cl
+mov     dl, [edi+1Dh]
+mov     [esi+1Dh], dl
+mov     al, [edi+1Eh]
+mov     [esi+1Eh], al
+mov     ecx, [edi+20h]
+mov     [esi+20h], ecx
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x004B56E0 (153 bytes)
 void LinkedList_MoveLinked_4B56E0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004B56E0.json)
-    // Size: 153 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4B56E0 ( int this, int a2 ) { LinkedList::MoveNode ( ( void * ) this , ( void * ) a2 ) ; * ( _DWORD * ) ( this + 12 ) = * ( _DWORD * ) ( a2 + 12 ) ; * ( _DWORD * ) ( this + 16 ) = * ( _DWORD * ) ( a2 + 16 ) ; * ( _DWORD * ) ( this + 20 ) = * ( _DWORD * ) ( a2 + 20 ) ; * ( _DWORD * ) ( this + 24 ) = * ( _DWORD * ) ( a2 + 24 ) ; * ( _BYTE * ) ( this + 28 ) = * ( _BYTE * ) ( a2 + 28 ) ; * ( _BYTE * ) ( this + 29 ) = * ( _BYTE * ) ( a2 + 29 ) ; * ( _BYTE * ) ( this + 30 ) = * ( _BYTE * ) ( a2 + 30 ) ; * ( _DWORD * ) ( this + 32 ) = * ( _DWORD * ) ( a2 + 32 ) ; * ( _DWORD * ) ( this + 36 ) = * ( _DWORD * ) ( a2 + 36 ) ; * ( _DWORD * ) ( this + 40 ) = * ( _DWORD * ) ( a2 + 40 ) ; * ( _BYTE * ) ( this + 44 ) = * ( _BYTE * ) ( a2 + 44 ) ; * ( _BYTE * ) ( this + 45 ) = * ( _BYTE * ) ( a2 + 45 ) ; * ( _BYTE * ) ( this + 46 ) = * ( _BYTE * ) ( a2 + 46 ) ; * ( _DWORD * ) ( this + 48 ) = * ( _DWORD * ) ( a2 + 48 ) ; * ( _DWORD * ) ( this + 52 ) = * ( _DWORD * ) ( a2 + 52 ) ; * ( _DWORD * ) ( this + 56 ) = * ( _DWORD * ) ( a2 + 56 ) ; * ( _DWORD * ) ( this + 60 ) = * ( _DWORD * ) ( a2 + 60 ) ; * ( _DWORD * ) ( this + 64 ) = * ( _DWORD * ) ( a2 + 64 ) ; * ( _BYTE * ) ( this + 68 ) = * ( _BYTE * ) ( a2 + 68 ) ; * ( _DWORD * ) ( this + 72 ) = * ( _DWORD * ) ( a2 + 72 ) ; * ( _DWORD * ) ( this + 76 ) = * ( _DWORD * ) ( a2 + 76 ) ; * ( _DWORD * ) ( this + 80 ) = * ( _DWORD * ) ( a2 + 80 ) ; return this ; }
-    
+// [IDA decompile]
+int __thiscall sub_4B56E0(int this, int a2)
+{
+  LinkedList::MoveNode((void *)this, (void *)a2);
+  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12);
+  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16);
+  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20);
+  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24);
+  *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28);
+  *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29);
+  *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30);
+  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32);
+  *(_DWORD *)(this + 36) = *(_DWORD *)(a2 + 36);
+  *(_DWORD *)(this + 40) = *(_DWORD *)(a2 + 40);
+  *(_BYTE *)(this + 44) = *(_BYTE *)(a2 + 44);
+  *(_BYTE *)(this + 45) = *(_BYTE *)(a2 + 45);
+  *(_BYTE *)(this + 46) = *(_BYTE *)(a2 + 46);
+  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48);
+  *(_DWORD *)(this + 52) = *(_DWORD *)(a2 + 52);
+  *(_DWORD *)(this + 56) = *(_DWORD *)(a2 + 56);
+  *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60);
+  *(_DWORD *)(this + 64) = *(_DWORD *)(a2 + 64);
+  *(_BYTE *)(this + 68) = *(_BYTE *)(a2 + 68);
+  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72);
+  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76);
+  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80);
+  return this;
+}
+
+/* ASM:
+push    esi
+push    edi
+mov     edi, [esp+8+arg_0]
+mov     esi, ecx
+push    edi
+call    LinkedList__MoveNode
+mov     eax, [edi+0Ch]
+mov     [esi+0Ch], eax
+mov     ecx, [edi+10h]
+mov     [esi+10h], ecx
+mov     edx, [edi+14h]
+mov     [esi+14h], edx
+mov     eax, [edi+18h]
+mov     [esi+18h], eax
+mov     cl, [edi+1Ch]
+mov     [esi+1Ch], cl
+mov     dl, [edi+1Dh]
+mov     [esi+1Dh], dl
+mov     al, [edi+1Eh]
+mov     [esi+1Eh], al
+mov     ecx, [edi+20h]
+mov     [esi+20h], ecx
+mov     edx, [edi+24h]
+mov     [esi+24h], edx
+mov     eax, [edi+28h]
+mov     [esi+28h], eax
+mov     cl, [edi+2Ch]
+mov     [esi+2Ch], cl
+mov     dl, [edi+2Dh]
+mov     [esi+2Dh], dl
+mov     al, [edi+2Eh]
+mov     [esi+2Eh], al
+mov     ecx, [edi+30h]
+mov     [esi+30h], ecx
+mov     edx, [edi+34h]
+mov     [esi+34h], edx
+mov     eax, [edi+38h]
+mov     [esi+38h], eax
+mov     ecx, [edi+3Ch]
+mov     [esi+3Ch], ecx
+mov     edx, [edi+40h]
+mov     [esi+40h], edx
+mov     al, [edi+44h]
+mov     [esi+44h], al
+mov     ecx, [edi+48h]
+mov     [esi+48h], ecx
+mov     edx, [edi+4Ch]
+mov     [esi+4Ch], edx
+mov     eax, [edi+50h]
+mov     [esi+50h], eax
+mov     eax, esi
+pop     edi
+pop     esi
+retn    4
+*/
 }
 
 // 0x004887F0 (83 bytes)
 int ListClass_SetMember100_4887F0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/004887F0.json)
-    // Size: 83 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   int __thiscall sub_4887F0 ( _DWORD *this ) { int v2 ; // eax _DWORD *v3 ; // esi void *v4 ; // eax v2 = * ( this + 93 ) ; v3 = this + 93 ; * this = & ColorListClass::vftable' ; ( * ( void (__thiscall **)(_DWORD *) ) ( v2 + 12 ) ) ( this + 93 ) ; * ( this + 100 ) = 0 ; v4 = ( void * ) v3 [ 1 ] ; * v3 = & VectorClass<int>::vftable' ; if ( v4 && * ( ( _BYTE * ) v3 + 13 ) ) { __3_YAXPAX_Z ( v4 ) ; v3 [ 1 ] = 0 ; } * ( ( _BYTE * ) v3 + 13 ) = 0 ; v3 [ 2 ] = 0 ; return ListClass::Destruct ( this ) ; }
-    return 0;
+// [IDA decompile]
+int __thiscall sub_4887F0(_DWORD *this)
+{
+  int v2; // eax
+  _DWORD *v3; // esi
+  void *v4; // eax
+
+  v2 = *(this + 93);
+  v3 = this + 93;
+  *this = &ColorListClass::`vftable';
+  (*(void (__thiscall **)(_DWORD *))(v2 + 12))(this + 93);
+  *(this + 100) = 0;
+  v4 = (void *)v3[1];
+  *v3 = &VectorClass<int>::`vftable';
+  if ( v4 && *((_BYTE *)v3 + 13) )
+  {
+    __3_YAXPAX_Z(v4);
+    v3[1] = 0;
+  }
+  *((_BYTE *)v3 + 13) = 0;
+  v3[2] = 0;
+  return ListClass::Destruct(this);
+}
+
+/* ASM:
+push    ebx
+push    esi
+push    edi
+mov     edi, ecx
+mov     eax, [edi+174h]
+lea     esi, [edi+174h]
+mov     ecx, esi
+mov     dword ptr [edi], offset ??_7ColorListClass@@6B@ ; const ColorListClass::`vftable'
+call    dword ptr [eax+0Ch]
+xor     ebx, ebx
+mov     [edi+190h], ebx
+mov     eax, [esi+4]
+cmp     eax, ebx
+mov     dword ptr [esi], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
+jz      short loc_488832
+cmp     [esi+0Dh], bl
+jz      short loc_488832
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+mov     [esi+4], ebx
+
+loc_488832:                             ; CODE XREF: sub_4887F0+2F↑j
+; sub_4887F0+34↑j
+mov     ecx, edi
+mov     [esi+0Dh], bl
+mov     [esi+8], ebx
+call    ListClass__Destruct
+pop     edi
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 // 0x00488280 (69 bytes)
 int ListClass_SetMember372_488280() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00488280.json)
-    // Size: 69 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _BYTE *__thiscall sub_488280 ( _BYTE *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9 ) { ListClass::Construct ( ( int ) this , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a9 ) ; * ( this + 372 ) = 0 ; * ( _DWORD * ) this = & CheckListClass::vftable' ; return this ; }
-    return 0;
+// [IDA decompile]
+_BYTE *__thiscall sub_488280(_BYTE *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+  ListClass::Construct((int)this, a2, a3, a4, a5, a6, a7, a8, a9);
+  *(this + 372) = 0;
+  *(_DWORD *)this = &CheckListClass::`vftable';
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_1C]
+mov     edx, [esp+arg_14]
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+4+arg_18]
+push    eax
+mov     eax, [esp+8+arg_10]
+push    ecx
+mov     ecx, [esp+0Ch+arg_C]
+push    edx
+mov     edx, [esp+10h+arg_8]
+push    eax
+mov     eax, [esp+14h+arg_4]
+push    ecx
+mov     ecx, [esp+18h+arg_0]
+push    edx
+push    eax
+push    ecx
+mov     ecx, esi
+call    ListClass__Construct
+mov     byte ptr [esi+174h], 0
+mov     dword ptr [esi], offset ??_7CheckListClass@@6B@ ; const CheckListClass::`vftable'
+mov     eax, esi
+pop     esi
+retn    20h ; ' '
+*/
 }
 
 // 0x00488760 (131 bytes)
 int ListClass_SetMember94_488760() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/00488760.json)
-    // Size: 131 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   _DWORD *__thiscall sub_488760 ( _DWORD *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9 ) { ListClass::Construct ( ( int ) this , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a9 ) ; * ( this + 94 ) = 0 ; * ( this + 95 ) = 0 ; * ( ( _BYTE * ) this + 384 ) = 1 ; * ( ( _BYTE * ) this + 385 ) = 0 ; * ( this + 93 ) = & DynamicVectorClass<int>::vftable' ; * ( this + 98 ) = 10 ; * ( this + 97 ) = 0 ; * ( this + 100 ) = 0 ; * ( this + 99 ) = 1 ; * this = & ColorListClass::vftable' ; return this ; }
-    return 0;
+// [IDA decompile]
+_DWORD *__thiscall sub_488760(_DWORD *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+  ListClass::Construct((int)this, a2, a3, a4, a5, a6, a7, a8, a9);
+  *(this + 94) = 0;
+  *(this + 95) = 0;
+  *((_BYTE *)this + 384) = 1;
+  *((_BYTE *)this + 385) = 0;
+  *(this + 93) = &DynamicVectorClass<int>::`vftable';
+  *(this + 98) = 10;
+  *(this + 97) = 0;
+  *(this + 100) = 0;
+  *(this + 99) = 1;
+  *this = &ColorListClass::`vftable';
+  return this;
+}
+
+/* ASM:
+mov     eax, [esp+arg_1C]
+mov     edx, [esp+arg_14]
+push    esi
+mov     esi, ecx
+mov     ecx, [esp+4+arg_18]
+push    eax
+mov     eax, [esp+8+arg_10]
+push    ecx
+mov     ecx, [esp+0Ch+arg_C]
+push    edx
+mov     edx, [esp+10h+arg_8]
+push    eax
+mov     eax, [esp+14h+arg_4]
+push    ecx
+mov     ecx, [esp+18h+arg_0]
+push    edx
+push    eax
+push    ecx
+mov     ecx, esi
+call    ListClass__Construct
+xor     eax, eax
+mov     ecx, 1
+mov     [esi+178h], eax
+mov     [esi+17Ch], eax
+mov     [esi+180h], cl
+mov     [esi+181h], al
+mov     dword ptr [esi+174h], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
+mov     dword ptr [esi+188h], 0Ah
+mov     [esi+184h], eax
+mov     [esi+190h], eax
+mov     [esi+18Ch], ecx
+mov     dword ptr [esi], offset ??_7ColorListClass@@6B@ ; const ColorListClass::`vftable'
+mov     eax, esi
+pop     esi
+retn    20h ; ' '
+*/
 }
 
 // 0x0052AAF0 (143 bytes)
 void MethodFree_52AAF0() {
-    // TODO: Translate from IDA decompile (tools/sub_decompiles/0052AAF0.json)
-    // Size: 143 bytes, calling convention: thiscall
-    // IDA pseudocode:
-//   void __thiscall sub_52AAF0 ( void *this ) { void *v2 ; // eax int v3 ; // eax int v4 ; // edi int v5 ; // ecx int v6 ; // eax void *v7 ; // [esp-8h] [ebp-10h] v2 = ( void * ) * ( ( _DWORD * ) this + 3 ) ; * ( _DWORD * ) this = & INIClass::INIEntry::vftable' ; free ( v2 ) ; v7 = ( void * ) * ( ( _DWORD * ) this + 4 ) ; * ( ( _DWORD * ) this + 3 ) = 0 ; free ( v7 ) ; v3 = * ( ( _DWORD * ) this + 5 ) ; * ( ( _DWORD * ) this + 4 ) = 0 ; if ( v3 ) { do { free ( * * ( ( void *** ) this + 5 ) ) ; v4 = * ( _DWORD * ) ( * ( ( _DWORD * ) this + 5 ) + 4 ) ; __3_YAXPAX_Z ( * ( ( void ** ) this + 5 ) ) ; * ( ( _DWORD * ) this + 5 ) = v4 ; } while ( v4 ) ; } free ( * ( ( void ** ) this + 6 ) ) ; * ( ( _DWORD * ) this + 6 ) = 0 ; * ( _DWORD * ) this = & GenericNode::vftable' ; if ( this ) { v5 = * ( ( _DWORD * ) this + 1 ) ; if ( v5 ) { v6 = * ( ( _DWORD * ) this + 2 ) ; if ( v6 ) { * ( _DWORD * ) ( v6 + 4 ) = v5 ; * ( _DWORD * ) ( * ( ( _DWORD * ) this + 1 ) + 8 ) = * ( ( _DWORD * ) this + 2 ) ; * ( ( _DWORD * ) this + 2 ) = 0 ; * ( ( _DWORD * ) this + 1 ) = 0 ; } } } }
-    
+// [IDA decompile]
+void __thiscall sub_52AAF0(void *this)
+{
+  void *v2; // eax
+  int v3; // eax
+  int v4; // edi
+  int v5; // ecx
+  int v6; // eax
+  void *v7; // [esp-8h] [ebp-10h]
+
+  v2 = (void *)*((_DWORD *)this + 3);
+  *(_DWORD *)this = &INIClass::INIEntry::`vftable';
+  free(v2);
+  v7 = (void *)*((_DWORD *)this + 4);
+  *((_DWORD *)this + 3) = 0;
+  free(v7);
+  v3 = *((_DWORD *)this + 5);
+  *((_DWORD *)this + 4) = 0;
+  if ( v3 )
+  {
+    do
+    {
+      free(**((void ***)this + 5));
+      v4 = *(_DWORD *)(*((_DWORD *)this + 5) + 4);
+      __3_YAXPAX_Z(*((void **)this + 5));
+      *((_DWORD *)this + 5) = v4;
+    }
+    while ( v4 );
+  }
+  free(*((void **)this + 6));
+  *((_DWORD *)this + 6) = 0;
+  *(_DWORD *)this = &GenericNode::`vftable';
+  if ( this )
+  {
+    v5 = *((_DWORD *)this + 1);
+    if ( v5 )
+    {
+      v6 = *((_DWORD *)this + 2);
+      if ( v6 )
+      {
+        *(_DWORD *)(v6 + 4) = v5;
+        *(_DWORD *)(*((_DWORD *)this + 1) + 8) = *((_DWORD *)this + 2);
+        *((_DWORD *)this + 2) = 0;
+        *((_DWORD *)this + 1) = 0;
+      }
+    }
+  }
+}
+
+/* ASM:
+push    ebx
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0Ch]
+mov     dword ptr [esi], offset ??_7INIEntry@INIClass@@6B@ ; const INIClass::INIEntry::`vftable'
+push    eax             ; Block
+call    _free
+mov     ecx, [esi+10h]
+xor     ebx, ebx
+push    ecx             ; Block
+mov     [esi+0Ch], ebx
+call    _free
+mov     eax, [esi+14h]
+add     esp, 8
+cmp     eax, ebx
+mov     [esi+10h], ebx
+jz      short loc_52AB43
+push    edi
+
+loc_52AB1F:                             ; CODE XREF: sub_52AAF0+50↓j
+mov     edx, [esi+14h]
+mov     eax, [edx]
+push    eax             ; Block
+call    _free
+mov     ecx, [esi+14h]
+mov     edx, ecx
+mov     edi, [ecx+4]
+push    edx             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 8
+cmp     edi, ebx
+mov     [esi+14h], edi
+jnz     short loc_52AB1F
+pop     edi
+
+loc_52AB43:                             ; CODE XREF: sub_52AAF0+2C↑j
+mov     eax, [esi+18h]
+push    eax             ; Block
+call    _free
+add     esp, 4
+cmp     esi, ebx
+mov     [esi+18h], ebx
+mov     dword ptr [esi], offset ??_7GenericNode@@6B@ ; const GenericNode::`vftable'
+jz      short loc_52AB7C
+mov     ecx, [esi+4]
+cmp     ecx, ebx
+jz      short loc_52AB7C
+mov     eax, [esi+8]
+cmp     eax, ebx
+jz      short loc_52AB7C
+mov     [eax+4], ecx
+mov     ecx, [esi+4]
+mov     edx, [esi+8]
+mov     [ecx+8], edx
+mov     [esi+8], ebx
+mov     [esi+4], ebx
+
+loc_52AB7C:                             ; CODE XREF: sub_52AAF0+6A↑j
+; sub_52AAF0+71↑j ...
+pop     esi
+pop     ebx
+retn
+*/
 }
 
 } // namespace gamemd
