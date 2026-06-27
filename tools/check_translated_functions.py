@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-check_translated_functions.py — Check only functions modified by git diff.
+check_translated_functions.py — Check only functions modified since auto-fill-baseline.
 
 Workflow:
-  1. git diff HEAD --unified=0 -- src/ app/ → find changed line ranges
+  1. git diff auto-fill-baseline --unified=0 -- src/ app/ → find changed line ranges
   2. Parse .cpp files to find which functions contain those changed lines
   3. For each modified function, check all coding-standard violations
   4. Output: src/file.cpp:NNN: function_name: PASS/FAIL (reason)
@@ -88,7 +88,7 @@ def _parse_git_diff():
     """
     try:
         result = subprocess.run(
-            ['git', 'diff', 'HEAD', '--unified=0', '--', 'src/', 'app/'],
+            ['git', 'diff', 'auto-fill-baseline', '--unified=0', '--', 'src/', 'app/'],
             capture_output=True, text=True, encoding='utf-8', errors='replace',
             cwd=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         )

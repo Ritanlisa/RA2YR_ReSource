@@ -2,9 +2,9 @@
 """
 check_pointer_arithmetic.py — Fast regex enforcement for coding standards (B.5 gate).
 
-SCOPE (changed 2026-06-24):
-  This gate now checks ONLY function implementations modified by `git diff HEAD`,
-  matching how B.2 (check_translated_functions.py) scopes its checks. It no longer
+SCOPE (changed 2026-06-27):
+  This gate now checks ONLY function implementations modified since `auto-fill-baseline`
+  tag, matching how B.2 (check_translated_functions.py) scopes its checks. It no longer
   walks the whole tree via os.walk. Rationale: untranslated stub files
   (subs_*.cpp / sub_stubs.cpp, Task 17/18) contain ~10,000 IDA artifacts
   (dword_N/sub_N) that are translation-phase placeholders, NOT bugs. Scanning them
@@ -12,7 +12,7 @@ SCOPE (changed 2026-06-24):
   is narrowed to git-diff-tracked .cpp function bodies.
 
 What gets checked:
-  - Only .cpp files that appear in `git diff HEAD -- src/ app/`
+  - Only .cpp files that appear in `git diff auto-fill-baseline -- src/ app/`
   - Only functions whose line range intersects the changed lines (brace-balanced)
   - Stub / generated files are skipped: subs_*.cpp, sub_stubs.cpp, _generated/, menu_globals_gen
   - .hpp files are NEVER checked (cpp implementations only)
@@ -160,7 +160,7 @@ def _parse_git_diff():
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     try:
         result = subprocess.run(
-            ['git', 'diff', 'HEAD', '--unified=0', '--', 'src/', 'app/'],
+            ['git', 'diff', 'auto-fill-baseline', '--unified=0', '--', 'src/', 'app/'],
             capture_output=True, text=True, encoding='utf-8', errors='replace',
             cwd=repo_root
         )
