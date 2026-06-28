@@ -60,6 +60,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = PROJECT_ROOT / "src"
 MEMBER_LOOKUP_JSON = PROJECT_ROOT / "tools" / "member_lookup.json"
+VTABLE_OFFSETS_JSON = PROJECT_ROOT / "tools" / "vtable_offsets.json"
 SIGNALS_JSON = PROJECT_ROOT / "signals.json"
 IDA_MCP_URL = "http://127.0.0.1:13337/mcp"
 IDA_CACHE_DIR = PROJECT_ROOT / ".omo" / "ida_cache"
@@ -192,6 +193,7 @@ class Maps:
         self.class_vtable = {}
         self.class_parent = {}
         self.class_file = {}
+        self.vtable_offsets = {}
 
 
 # ===================================================================
@@ -360,6 +362,15 @@ def parse_vtable_indices_from_headers(M):
 
 
 def get_vtable_byte_offset(method_name, class_name, M):
+    # 1. Check vtable_offsets ground truth (binary vtable from IDA)
+    if M.vtable_offsets:
+        chain = [class_name] + _inheritance_chain(class_name, M)
+        for cls in chain:
+            off = M.vtable_offsets.get(cls, {}).get(method_name)
+            if off is not None:
+                return off
+
+    # 2. Fallback: declaration-order computation from parse_vtable_indices_from_headers
     chain = [class_name] + _inheritance_chain(class_name, M)
     chain = list(reversed(chain))
     total = 0
@@ -1345,6 +1356,10 @@ def load_all_maps():
     load_member_lookup(M)
     parse_vtable_indices_from_headers(M)
     build_member_name_index(M)
+    # Load binary vtable offsets (ground truth from IDA)
+    if VTABLE_OFFSETS_JSON.exists():
+        with open(VTABLE_OFFSETS_JSON, "r", encoding="utf-8") as f:
+            M.vtable_offsets = json.load(f)
     return M
 
 

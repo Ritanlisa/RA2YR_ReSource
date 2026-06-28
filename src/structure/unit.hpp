@@ -45,7 +45,7 @@ public:
     int Mission_Harvest() override;
     int ProcessResourceHarvesting();  // 0x73D450
     UnitClass* updateHarvesting();  // 0x4C2C10
-    int UnloadPassengers();  // 0x6B4BE0
+    int UnloadPassengers(int placementType);  // 0x6B4BE0
     int ProcessExitQueue();  // 0x6B7230
     int CreateUnloadPlacementCraters(CellStruct* cell);  // 0x6B6080
     int GetExitCell();  // 0x54E3B0

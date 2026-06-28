@@ -851,91 +851,28 @@ UnitClass* UnitClass::updateHarvesting()
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)
 // 0x6b4be0
-int UnitClass::UnloadPassengers()
+int UnitClass::UnloadPassengers(int placementType)
 {
-// [IDA decompile]
-char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
-{
-  int v2; // edi
-  int v4; // edx
-  _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
+    // 0x5F5850: UpdateProductionDisplay takes only this
+    if (!ObjectClass::UpdateProductionDisplay(this) || (placementType != 1 && placementType != 3))
+        return 0;
 
-  v2 = a2;
-  if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) || v2 != 1 && v2 != 3 )
-    return 0;
-  a2 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v6);
-  if ( MEMORY[0xA8E7AC] > 0 || MEMORY[0xA8ED6B] || Cell::IsWalkable((int *)*(this + 43), &a2, 1) )
-    UnitClass::CreateUnloadPlacementCraters(&a2);
-  v4 = *this;
-  *((_BYTE *)this + 116) = 0;
-  (*(void (__thiscall **)(int *))(v4 + 248))(this);
-  return 1;
-}
+    // 0x6b4c06: vtable[110] — GetCellCoords_Alt: cell.X = location.X/256, cell.Y = location.Y/256
+    CellStruct cellCoord;
+    cellCoord.X = (int16_t)(this->location.X / 256);
+    cellCoord.Y = (int16_t)(this->location.Y / 256);
 
-/* ASM:
-push    ecx
-push    esi
-push    edi
-mov     edi, [esp+0Ch+arg_0]
-mov     esi, ecx
-push    edi
-call    ObjectClass__UpdateProductionDisplay
-test    al, al
-jz      short loc_6B4C60
-cmp     edi, 1
-jz      short loc_6B4BFD
-cmp     edi, 3
-jnz     short loc_6B4C60
+    // 0x6b4c12-0x6b4c38: IKnowWhatImDoing > 0, ArmageddonMode, IsWalkable
+    if (IKnowWhatImDoing > 0 || ArmageddonMode
+        || Cell::IsWalkable((CellClass*)this->currentMission, (int)&cellCoord, 1))
+    {
+        CreateUnloadPlacementCraters(&cellCoord);
+    }
 
-loc_6B4BFD:                             ; CODE XREF: UnitClass__UnloadPassengers+16↑j
-mov     eax, [esi]
-lea     ecx, [esp+0Ch+var_4]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+1B8h]
-mov     eax, [eax]
-mov     [esp+0Ch+arg_0], eax
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jg      short loc_6B4C3A
-mov     al, byte ptr dword_A8ED54+17h
-test    al, al
-jnz     short loc_6B4C3A
-mov     ecx, [esi+0ACh]
-lea     edx, [esp+0Ch+arg_0]
-push    1
-push    edx
-call    Cell__IsWalkable
-test    al, al
-jz      short loc_6B4C4A
-
-loc_6B4C3A:                             ; CODE XREF: UnitClass__UnloadPassengers+39↑j
-; UnitClass__UnloadPassengers+42↑j
-mov     ecx, [esi+0ACh]
-lea     eax, [esp+0Ch+arg_0]
-push    eax
-call    UnitClass__CreateUnloadPlacementCraters
-
-loc_6B4C4A:                             ; CODE XREF: UnitClass__UnloadPassengers+58↑j
-mov     edx, [esi]
-mov     ecx, esi
-mov     byte ptr [esi+74h], 0
-call    dword ptr [edx+0F8h]
-pop     edi
-mov     al, 1
-pop     esi
-pop     ecx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B4C60:                             ; CODE XREF: UnitClass__UnloadPassengers+11↑j
-; UnitClass__UnloadPassengers+1B↑j
-pop     edi
-xor     al, al
-pop     esi
-pop     ecx
-retn    4
-*/
+    // 0x6b4c4e: isOnMap = 0, 0x6b4c52: UnInit
+    this->isOnMap = 0;
+    this->UnInit();
+    return 1;
 }
 
 // IDA: 0x6B7230 (ProcessExitQueue, 2363B)
