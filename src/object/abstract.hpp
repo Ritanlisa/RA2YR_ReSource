@@ -11,6 +11,9 @@
 static const GUID IID_IRTTITypeInfo = 
 { 0x170DAC82, 0x12E4, 0x11D2, { 0x81, 0x75, 0x00, 0x60, 0x08, 0x05, 0x5B, 0xB5 } };
 
+// forward-declare for NeedsSaveOrLink field at +0x20 (also used as bool in IsDirty)
+namespace gamemd { class UnitClass; }
+
 namespace ra2 {
 namespace game {
 
@@ -177,8 +180,7 @@ public:
     uint32_t    abstractFlags;    // +0x14, init = preserve bits 7-3 (& 0xF8)
     uint32_t    nextArrayIndex;        // +0x18, init = 0
     int32_t     referenceCount;         // +0x1C, init = 0
-    bool        needsSave;             // +0x20, init = 0
-    uint8_t     alignmentPadding[3];     // +0x21, alignment
+    gamemd::UnitClass* NeedsSaveOrLink;     // +0x20, init = nullptr (used as bool in IsDirty, as UnitClass* in updateHarvesting)
 
 protected:
     AbstractClass() noexcept;

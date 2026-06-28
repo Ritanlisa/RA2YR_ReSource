@@ -24,7 +24,7 @@ LightSourceClass::LightSourceClass(const CoordStruct& location,
     abstractFlags = 0;
     nextArrayIndex     = 0;
     referenceCount      = 0;
-    needsSave          = false;
+    NeedsSaveOrLink    = nullptr;
 }
 
 void LightSourceClass::Activate(uint32_t zero)

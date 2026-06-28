@@ -44,7 +44,7 @@ public:
     // 0x4151e0 — merged harvest+unload state machine (case 3 = unload logic)
     int Mission_Harvest() override;
     int ProcessResourceHarvesting();  // 0x73D450
-    int updateHarvesting();  // 0x4C2C10
+    UnitClass* updateHarvesting();  // 0x4C2C10
     int UnloadPassengers();  // 0x6B4BE0
     int ProcessExitQueue();  // 0x6B7230
     int CreateUnloadPlacementCraters(CellStruct* cell);  // 0x6B6080

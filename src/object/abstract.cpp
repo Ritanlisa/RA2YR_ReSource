@@ -16,7 +16,7 @@ AbstractClass::AbstractClass() noexcept
     , abstractFlags(0)                      // 0x4101B3: mov [eax+0x14], cl (preserved & 0xF8 from caller)
     , nextArrayIndex(0)                          // 0x410182: mov [eax+0x18], 0
     , referenceCount(0)                           // 0x410185: mov [eax+0x1C], 0
-    , needsSave(false)                           // 0x410188: mov [eax+0x20], 0
+    , NeedsSaveOrLink(nullptr)                   // 0x410188: mov [eax+0x20], 0
 {
     // IDA preserves bits 7-3 of pre-existing abstractFlags (& 0xF8).
     // In practice heap memory is zeroed, so result is abstractFlags = 0.
@@ -179,7 +179,7 @@ HRESULT AbstractClass::GetClassID(CLSID* class_id) {
 // NOTE: the previous 0x410450 annotation was wrong -- that address is the separate
 //       AbstractClass::IsClean getter (returns *(this+0x20)==0), not this method.
 HRESULT AbstractClass::IsDirty() {
-    return needsSave ? S_OK : S_FALSE;
+    return NeedsSaveOrLink ? S_OK : S_FALSE;
 }
 
 // IDA: vtable[0][5] -- Load (stub = XSurface::vt_entry_68)

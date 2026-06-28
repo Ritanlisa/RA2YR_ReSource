@@ -834,33 +834,19 @@ retn
 
 // IDA: 0x4C2C10 (updateHarvesting, 19B)
 // 0x4c2c10
-int UnitClass::updateHarvesting()
+UnitClass* UnitClass::updateHarvesting()
 {
-// [IDA decompile]
-int __thiscall sub_4C2C10(_DWORD *this)
-{
-  int result; // eax
-
-  result = *(this + 8);
-  if ( result )
-  {
-    *(_DWORD *)(result + 1756) = 0;
-    *(this + 8) = 0;
-  }
-  return result;
-}
-
-/* ASM:
-mov     eax, [ecx+20h]
-xor     edx, edx
-cmp     eax, edx
-jz      short locret_4C2C22
-mov     [eax+6DCh], edx
-mov     [ecx+20h], edx
-
-locret_4C2C22:                          ; CODE XREF: UnitClass__updateHarvesting+7↑j
-retn
-*/
+    // 0x4c2c10: mov eax, [ecx+20h] — read NeedsSaveOrLink pointer
+    UnitClass* result = this->NeedsSaveOrLink;
+    if (result)
+    {
+        // 0x4c2c19: mov [eax+6DCh], edx — clear target's ElectricBolt
+        result->ElectricBolt = nullptr;
+        // 0x4c2c1f: mov [ecx+20h], edx — clear the link pointer
+        this->NeedsSaveOrLink = nullptr;
+    }
+    // 0x4c2c22: retn — return original pointer in eax
+    return result;
 }
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)

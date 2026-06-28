@@ -414,7 +414,7 @@ public:
 
     // AbstractClass fields inherited: +0x00 vtable ptrs (4), +0x10 uniqueId,
     //   +0x14 abstractFlags, +0x18 nextArrayIndex, +0x1C referenceCount,
-    //   +0x20 needsSave, +0x21 padding[3]
+    //   +0x20 NeedsSaveOrLink (gamemd::UnitClass*), reused as bool in IsDirty, as UnitClass* in updateHarvesting
     //
     // ObjectClass fields start at +0x24:
 

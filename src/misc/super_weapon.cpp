@@ -88,7 +88,7 @@ SuperClass::SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexce
     abstractFlags = 0;
     nextArrayIndex     = 0;
     referenceCount      = 0;
-    needsSave          = false;
+    NeedsSaveOrLink    = nullptr;
 
     if (Array)
     {
