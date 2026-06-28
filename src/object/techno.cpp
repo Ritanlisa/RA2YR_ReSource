@@ -37,7 +37,7 @@ TechnoClass::TechnoClass() noexcept
     , isTargetedByChrono(false)
     , currentBurstCount(0)
     , currentBarrelIndex(0)
-    , group(-1)
+    , Owner(nullptr)
     , focus(nullptr)
     , owner(nullptr)
     , cloakState(0)

@@ -20,7 +20,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(const char* pID) noexcept
     , ImpatientVoice(0)
     , SuspendVoice(0)
     , RechargeTime(0)
-    , Type(SuperWeaponType{})
+    , Type(nullptr)
     , SidebarImage(nullptr)
     , ActionValue(Action::None)
     , SpecialSound(0)
