@@ -1438,7 +1438,10 @@ def main():
                 pass  # PASS suppressed
             else:
                 all_passed = False
-                cpp_loc = find_cpp_function_by_addr(addr) or '?'
+                cpp_loc = find_cpp_function_by_addr(addr)
+                if isinstance(cpp_loc, dict):
+                    cpp_loc = f"{cpp_loc.get('file','?')}:{cpp_loc.get('start_line','?')}"
+                cpp_loc = cpp_loc or '?'
                 print(f"FAIL: {cpp_loc}: {disp} -- translation incomplete")
                 if info.get("reject") and info.get("reason"):
                     print(f"  {info['reason']}")
@@ -1502,7 +1505,10 @@ def main():
                         pass  # PASS suppressed
                     else:
                         all_passed = False
-                        cpp_loc = find_cpp_function_by_addr(addr) or '?'
+                        cpp_loc = find_cpp_function_by_addr(addr)
+                        if isinstance(cpp_loc, dict):
+                            cpp_loc = f"{cpp_loc.get('file','?')}:{cpp_loc.get('start_line','?')}"
+                        cpp_loc = cpp_loc or '?'
                         print(f"FAIL: {cpp_loc}: {disp} -- translation incomplete (modified function)")
                         if info.get("reject") and info.get("reason"):
                             print(f"  {info['reason']}")
@@ -1597,7 +1603,10 @@ def main():
     if passed:
         pass  # PASS suppressed
         sys.exit(0)
-    cpp_loc = find_cpp_function_by_addr(ida_addr) or '?'
+    cpp_loc = find_cpp_function_by_addr(ida_addr)
+    if isinstance(cpp_loc, dict):
+        cpp_loc = f"{cpp_loc.get('file','?')}:{cpp_loc.get('start_line','?')}"
+    cpp_loc = cpp_loc or '?'
     print(f"FAIL: {cpp_loc}: {display_name} -- translation incomplete")
     if info.get("reject") and info.get("reason"):
         print(f"  {info['reason']}")
