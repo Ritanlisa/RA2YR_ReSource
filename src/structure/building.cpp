@@ -24140,56 +24140,15 @@ void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
     cell->occupationFlags |= 0x80;
 }
 
-// IDA 0x453dc0: clear cell occupation
 // 0x453dc0
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
-// [IDA decompile]
-int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
-{
-  _DWORD *v1; // ecx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int result; // eax
-  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-
-  v1 = v5;
-  LOWORD(v5) = *v5 / 256;
-  HIWORD(v5) = v1[1] / 256;
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5);
-  v3 = v2[73];
-  result = (int)(v2 + 73);
-  LOBYTE(v3) = v3 & 0x7F;
-  *(_DWORD *)result = v3;
-  return result;
-}
-
-/* ASM:
-mov     ecx, [esp+arg_0]
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+arg_0], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-lea     ecx, [esp+arg_0]
-add     eax, edx
-push    ecx
-sar     eax, 8
-mov     word ptr [esp+4+arg_0+2], ax
-mov     eax, [esp+4+arg_0]
-mov     ecx, 87F7E8h
-mov     [esp+4+arg_0], eax
-call    CellCoord__To_CellObj
-mov     ecx, [eax+124h]
-add     eax, 124h
-and     cl, 7Fh
-mov     [eax], ecx
-retn    4
-*/
+    CellStruct cellCoord = {
+        (int16_t)(cell_x / 256),
+        (int16_t)(cell_y / 256)
+    };
+    CellClass* cell = CellCoord::To_CellObj(ScenarioClass::Instance, &cellCoord);
+    cell->occupationFlags &= ~0x80;
 }
 
 void BuildingClass::ScanCircleForTiberium() {}
