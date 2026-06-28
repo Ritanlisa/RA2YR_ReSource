@@ -833,21 +833,42 @@ retn
 }
 
 // IDA: 0x4C2C10 (updateHarvesting, 19B)
+// Semantically EBolt::ClearOwner() -- clears the harvester follower's
+// ElectricBolt visual effect and nulls the Owner link.
+// At runtime 'this' is EBolt* (called via UnitClass::ElectricBolt).
+// EBolt::Owner (TechnoClass*) at +0x20, UnitClass::ElectricBolt (EBolt*) at +0x6DC.
 // 0x4c2c10
 int UnitClass::updateHarvesting()
 {
-// [IDA decompile]
-int __thiscall sub_4C2C10(_DWORD *this)
-{
-  int result; // eax
+    // Read the 4-byte Owner pointer at offset 0x20
+    union {
+        struct { bool ns; uint8_t b1; uint8_t b2; uint8_t b3; } parts;
+        uint32_t raw;
+    } ownerVal;
 
-  result = *(this + 8);
-  if ( result )
-  {
-    *(_DWORD *)(result + 1756) = 0;
-    *(this + 8) = 0;
-  }
-  return result;
+    ownerVal.parts.ns = this->needsSave;
+    int bi = 0;
+    for (uint8_t byte : this->alignmentPadding) {
+        if (bi == 0) ownerVal.parts.b1 = byte;
+        if (bi == 1) ownerVal.parts.b2 = byte;
+        if (bi == 2) ownerVal.parts.b3 = byte;
+        bi++;
+    }
+
+    if (ownerVal.raw) {
+        // Clear the target Unit's ElectricBolt at offset 0x6DC
+        union { uint32_t raw; UnitClass* ptr; } result;
+        result.raw = ownerVal.raw;
+        result.ptr->ElectricBolt = nullptr;
+
+        // Clear the Owner link at offset 0x20
+        this->needsSave = false;
+        for (uint8_t& byte : this->alignmentPadding) {
+            byte = 0;
+        }
+    }
+
+    return (int)ownerVal.raw;
 }
 
 /* ASM:
@@ -858,10 +879,9 @@ jz      short locret_4C2C22
 mov     [eax+6DCh], edx
 mov     [ecx+20h], edx
 
-locret_4C2C22:                          ; CODE XREF: UnitClass__updateHarvesting+7↑j
+locret_4C2C22:
 retn
 */
-}
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)
 // 0x6b4be0

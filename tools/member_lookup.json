@@ -37,7 +37,7 @@
       "type": "unsigned __int8"
     },
     "33": {
-      "name": "_pad21",
+      "name": "alignmentPadding",
       "type": "unsigned __int8[3]"
     }
   },
