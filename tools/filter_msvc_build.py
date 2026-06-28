@@ -159,43 +159,26 @@ def main():
         print(f"filter_msvc_build: build failed: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # Filter and print output line by line
-    suppressed_count = 0
-    kept_error_count = 0
-    suppressing_context = False  # True when we're inside a suppressed error block
-
-    for stream, text in [(sys.stdout, result.stdout), (sys.stderr, result.stderr)]:
-        for line in text.split('\n'):
-            filtered = _parse_and_filter(line, changed_lines, repo_root)
-            if filtered is not None:
-                sev = filtered[1]
-                if sev and 'error' in sev:
-                    suppressing_context = False  # reset on new error
-                    _write_line(stream, line)
-                    kept_error_count += 1
-                elif suppressing_context:
-                    suppressed_count += 1  # suppress context lines
-                else:
-                    _write_line(stream, line)
-            else:
-                suppressed_count += 1
-                m = _MSVC_ERR_RE.match(line.strip())
-                if m and 'error' in m.group(3).lower():
-                    suppressing_context = True
-
-    if suppressed_count > 0:
-        print(f"\nfilter_msvc_build: suppressed {suppressed_count} baseline error(s)/warning(s)",
-              file=sys.stderr)
-
-    # Determine exit code
-    if result.returncode == 0:
-        sys.exit(0)
-    elif kept_error_count == 0:
-        print("filter_msvc_build: all errors were from baseline (unchanged) code — build PASSES",
-              file=sys.stderr)
-        sys.exit(0)
-    else:
+    out = (result.stdout or '') + '\n' + (result.stderr or '')
+    gate_failed = any('GATE ' in l and 'FAIL' in l for l in out.split('\n'))
+    
+    # Only print violation lines
+    for line in out.split('\n'):
+        s = line.strip()
+        if 'FAIL -' in s or 'gate FAILED' in s.lower() or 'GATE FAILURE' in s:
+            sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
+    
+    if gate_failed:
+        print("filter: gate FAIL", file=sys.stderr)
+        sys.exit(1)
+    if result.returncode != 0:
+        # MSVC errors — pass through only error lines
+        for line in out.split('\n'):
+            s = line.strip()
+            if 'error C' in s or 'error:' in s:
+                sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
         sys.exit(result.returncode)
+    sys.exit(0)
 
 
 if __name__ == '__main__':

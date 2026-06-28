@@ -127,11 +127,10 @@ if(WIN32)
         # Runs cmake --build through a filter that parses MSVC error output and suppresses
         # errors from code unchanged since auto-fill-baseline tag. Only errors in MODIFIED
         # code are shown. Use this instead of direct `cmake --build` for clean output.
-        add_custom_target(build_filtered
+        add_custom_target(build_filtered ALL
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/filter_msvc_build.py"
                 ${CMAKE_COMMAND} --build "${CMAKE_BINARY_DIR}" --target gamemd --config $<CONFIG>
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Building gamemd with baseline error filtering..."
         )
         # signals.json is the canonical, git-tracked symbol file — always present, so
         # it needs no per-build generation step. `build_signals` is intentionally NOT a
