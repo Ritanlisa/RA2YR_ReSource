@@ -17747,36 +17747,15 @@ void BuildingClass::ProductionDisplayUpdate() {}
 void BuildingClass::DisplayProductionFrame() {}
 
 // IDA 0x4513d0: check if production is active
+// ASM: test [ecx+534h] (ProductionTimer), test [ecx+6E4h] (ActuallyPlacedOnMap)
+//       if both set → call Type->vtable[39] (LoadTypeFile), else vtable[48] (LoadTheaterSHP)
 // 0x4513d0
 bool BuildingClass::ProductionCheck()
 {
-// [IDA decompile]
-int __thiscall BuildingClass::ProductionCheck(#377 *this)
-{
-  if ( *((_DWORD *)this + 333) && *((_BYTE *)this + 1764) )
-    return (*(int (__thiscall **)(_DWORD))(**((_DWORD **)this + 328) + 156))(*((_DWORD *)this + 328));
-  else
-    return (*(int (__thiscall **)(_DWORD))(**((_DWORD **)this + 328) + 192))(*((_DWORD *)this + 328));
-}
-
-/* ASM:
-mov     eax, [ecx+534h]
-test    eax, eax
-jz      short loc_4513F2
-mov     al, [ecx+6E4h]
-test    al, al
-jz      short loc_4513F2
-mov     ecx, [ecx+520h]
-mov     eax, [ecx]
-jmp     dword ptr [eax+9Ch]
-; ---------------------------------------------------------------------------
-
-loc_4513F2:                             ; CODE XREF: BuildingClass__ProductionCheck+8↑j
-; BuildingClass__ProductionCheck+12↑j
-mov     ecx, [ecx+520h]
-mov     edx, [ecx]
-jmp     dword ptr [edx+0C0h]
-*/
+    if (ProductionTimer && ActuallyPlacedOnMap)
+        return Type->LoadTypeFile();
+    else
+        return Type->LoadTheaterSHP();
 }
 
 // IDA 0x4478b0: abandon current production
