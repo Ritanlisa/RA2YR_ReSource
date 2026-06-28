@@ -473,7 +473,7 @@ public:
     bool                                  RequiresDamageFires;
     BuildingTypeClass*                    Upgrades[0x3];
     int32_t                               FiringSWType;
-    uint32_t                              BuildingClass_field_5FC;
+    uint32_t                              SuperWeaponToken;
     BuildingLightClass*                   Spotlight;
     RepeatableTimerStruct                 GateTimer;
     LightSourceClass*                     LightSource;

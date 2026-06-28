@@ -936,7 +936,7 @@ public:
     uint32_t                currentBurstCount;
     uint32_t                currentBarrelIndex;
     IndexBitfield<HouseClass*> displayProductionTo;
-    int32_t                 group;
+    HouseClass*             Owner;
     AbstractClass*          focus;
     HouseClass*             owner;
     uint32_t                cloakState;              // CloakState enum

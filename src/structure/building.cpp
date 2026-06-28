@@ -7,8 +7,15 @@
 #include "house/house.hpp"
 #include "structure/infantry.hpp"
 #include "type/infantry_type.hpp"
+#include "misc/super_weapon.hpp"
 
 #include <cstring>
+
+extern SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
+
+namespace DynamicVector {
+    int GetOrGrow(DynamicVectorClass<SuperClass*>* vec, int index);
+}
 
 namespace gamemd {
 
@@ -30,7 +37,7 @@ BuildingClass::BuildingClass() noexcept
     , BuildingClass_field_timer_550{}
     , RequiresDamageFires(false)
     , FiringSWType(-1)
-    , BuildingClass_field_5FC(0)
+    , SuperWeaponToken(0)
     , Spotlight(nullptr)
     , GateTimer{}
     , LightSource(nullptr)
@@ -14340,54 +14347,19 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
 // IDA 0x457630/0x457690: check SuperWeaponType availability from Type
 // 0x457630
 bool BuildingClass::SWAvailable() {
-// [IDA decompile]
-int __thiscall BuildingClass::SWAvailable(_DWORD *this)
-{
-  int v2; // eax
-  int v3; // eax
+    int sw_index = this->Type->SuperWeapon;
+    if (sw_index == -1)
+        return false;
 
-  v2 = *(_DWORD *)(*(this + 328) + 5872);
-  if ( v2 == -1 )
-    return *(_DWORD *)(*(this + 328) + 5872);
-  v3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)MEMORY[0xA83CBC] + v2) + 40) + 200);
-  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(*(this + 135) + 21840), *(_DWORD *)(v3 + 3576)) )
-    return *(_DWORD *)(*(this + 328) + 5872);
-  else
-    return -1;
-}
+    SuperWeaponTypeClass* sw_type = g_SuperWeaponTypeItems[sw_index];
+    BuildingTypeClass* bld_type = sw_type->Type;
+    BuildingTypeClass* actual_bld = bld_type->SecretBuilding;
 
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+520h]
-mov     eax, [eax+16F0h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_45767B
-mov     ecx, ds:0A83CBCh
-mov     edx, [ecx+eax*4]
-mov     eax, [edx+28h]
-mov     eax, [eax+0C8h]
-test    eax, eax
-jz      short loc_45767B
-mov     ecx, [eax+0DF8h]
-push    ecx
-mov     ecx, [esi+21Ch]
-add     ecx, 5550h
-call    DynamicVector__GetOrGrow
-test    eax, eax
-jnz     short loc_45767B
-or      eax, 0FFFFFFFFh
-pop     esi
-retn
-; ---------------------------------------------------------------------------
+    if (!actual_bld
+        || DynamicVector::GetOrGrow(&this->Owner->SuperWeaponsAvailable, actual_bld->ArrayIndex))
+        return true;
 
-loc_45767B:                             ; CODE XREF: BuildingClass__SWAvailable+12↑j
-; BuildingClass__SWAvailable+28↑j ...
-mov     edx, [esi+520h]
-pop     esi
-mov     eax, [edx+16F0h]
-retn
-*/
+    return false;
 }
 bool BuildingClass::SW2Available() {
     if (!Type) return false;
@@ -14421,23 +14393,29 @@ char BuildingClass::ClearSuperWeaponAnim()
 
     int count = result;                                // v3 = result
     bool didGrantSW = false;                           // v4 = 0
-    BuildingTypeClass* upgrade = Upgrades[count - 1];  // v5 = *(this + 4*result + 1512) = Upgrades[result-1]
+    BuildingTypeClass** upg_base = Upgrades;
+    upg_base += (count - 1);
+    BuildingTypeClass* upgrade = *upg_base;             // v5 = *(this + 4*result + 1512) = Upgrades[result-1]
     if (upgrade && (didGrantSW = (upgrade->SuperWeapon != -1), upgrade->Powered)) {
         this->ClearAnims();                            // ClearAnims(this, 9)
-        Upgrades[this->UpgradeLevel - 1] = nullptr;    // *(this + 4*UpgradeLevel + 1512) = 0 -> Upgrades[UpgradeLevel-1]
+        BuildingTypeClass** upg2 = Upgrades;
+        upg2 += (this->UpgradeLevel - 1);
+        *upg2 = nullptr;    // *(this + 4*UpgradeLevel + 1512) = 0 -> Upgrades[UpgradeLevel-1]
         this->UpgradeLevel = 0;                        // *(_BYTE*)(this+1794) = 0
-        this->BuildingClass_field_5FC = (uint32_t)-1;  // *(this+1532) = -1
+        this->SuperWeaponToken = (uint32_t)-1;  // *(this+1532) = -1
         if (didGrantSW) {
-            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->group);  // arg = *(this+540)
+            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->Owner);  // arg = *(this+540)
             return 1;
         }
     } else {
         this->ClearAnims();                            // ClearAnims(this, v3 - 1)
         int dec = this->UpgradeLevel - 1;              // v6 = *(_BYTE*)(this+1794) - 1
         this->UpgradeLevel = (uint8_t)dec;             // *(_BYTE*)(this+1794) = v6
-        Upgrades[dec] = nullptr;                       // *(this + 4*v6 + 1516) = 0 -> Upgrades[v6]
+        BuildingTypeClass** upg3 = Upgrades;
+        upg3 += dec;
+        *upg3 = nullptr;                       // *(this + 4*v6 + 1516) = 0 -> Upgrades[v6]
         if (didGrantSW)
-            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->group);
+            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->Owner);
     }
     return 1;
 }

@@ -3,6 +3,7 @@
 #include "object/abstract.hpp"
 #include "house/base.hpp"
 #include "house/score.hpp"
+#include "core/vector.hpp"
 
 #include <cstdint>
 
@@ -499,6 +500,7 @@ public:
     CounterClass                ownedUnitTypes2;
     CounterClass                ownedInfantryTypes2;
     CounterClass                ownedAircraftTypes2;
+    DynamicVectorClass<SuperClass*> SuperWeaponsAvailable;
     uint32_t                    HouseClass_field_55F0;
     uint32_t                    HouseClass_field_55F4;
     int32_t                     attackDelayA;

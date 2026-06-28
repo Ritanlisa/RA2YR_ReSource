@@ -67,7 +67,7 @@ public:
     int32_t             ImpatientVoice;
     int32_t             SuspendVoice;
     int32_t             RechargeTime;
-    SuperWeaponType     Type;
+    BuildingTypeClass*  Type;
     SHPStruct*          SidebarImage;
     Action              ActionValue;
     int32_t             SpecialSound;
