@@ -7803,10 +7803,11 @@ retn    0Ch
 */
 }
 
-int InfantryClass::AssignTarget_SyncLog()
+int InfantryClass::AssignTarget_SyncLog(int syncFlag)
 {
-    // IDA: 0x51B1F0 — assign target with sync logging
-    return 0;
+    (void)syncFlag;
+    int result = 0;
+    return result;
 }
 
 int InfantryClass::AssignDestination_SyncLog()

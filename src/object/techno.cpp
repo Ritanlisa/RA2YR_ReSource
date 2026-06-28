@@ -5206,7 +5206,12 @@ int TechnoClass::CreateFireBeamEffect() { return 0; }
 int TechnoClass::CreateFiringRadarBlip() { return 0; }
 int TechnoClass::CreateRadarBlip() { return 0; }
 int TechnoClass::GetFiringAngle() const { return 0; }
-int TechnoClass::AssignTarget_SyncLog() { return 0; }
+int TechnoClass::AssignTarget_SyncLog(int syncFlag)
+{
+    (void)syncFlag;
+    int result = 0;
+    return result;
+}
 int TechnoClass::ProcessDeploymentState() { return 0; }
 int TechnoClass::ComputeAudioFalloffDamage() { return 0; }
 int TechnoClass::ComputeCombatDamage() { return 0; }

@@ -564,7 +564,7 @@ public:
     virtual int CreateFiringRadarBlip();  // 0x6FD570
     virtual int CreateRadarBlip();  // 0x6FD460
     virtual int GetFiringAngle() const;  // 0x6FDA00
-    virtual int AssignTarget_SyncLog(); // 0x6FCDB0
+    virtual int AssignTarget_SyncLog(int syncFlag); // 0x6FCDB0
     virtual int ProcessDeploymentState();  // 0x6FCD40
     virtual int ComputeAudioFalloffDamage();  // 0x6FDB80
     virtual int ComputeCombatDamage();  // 0x70D690

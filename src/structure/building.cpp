@@ -20109,44 +20109,14 @@ void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
 // 0x7013e0
 bool BuildingClass::CheckOccupantState()
 {
-// [IDA decompile]
-int __thiscall BuildingClass::_vt126(#377 *this)
-{
-  int result; // eax
-
-  if ( AbstractClass::COMStub_126((int)this) )
-  {
-    result = (*(int (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 968))(this, *((_DWORD *)this + 174));
-    LOBYTE(result) = 1;
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    AbstractClass__COMStub_126
-test    al, al
-jz      short loc_701401
-mov     ecx, [esi+2B8h]
-mov     eax, [esi]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+3C8h]
-mov     al, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_701401:                             ; CODE XREF: BuildingClass__CheckOccupantState+A↑j
-xor     al, al
-pop     esi
-retn
-*/
+    // 0x7013E0: check if building has occupants via COM stub dispatch
+    bool result = false;
+    if (COMStub_126())
+    {
+        AssignTarget_SyncLog(isUncrushable);
+        result = true;
+    }
+    return result;
 }
 
 // ============================================================
@@ -24732,6 +24702,11 @@ retn    4
 */
 }
 ra2::game::LightConvertClass* BuildingClass::GetRemapColour() const { return nullptr; }
-int BuildingClass::AssignTarget_SyncLog() { return 0; }
+int BuildingClass::AssignTarget_SyncLog(int syncFlag)
+{
+    (void)syncFlag;
+    int result = 0;
+    return result;
+}
 
 } // namespace gamemd

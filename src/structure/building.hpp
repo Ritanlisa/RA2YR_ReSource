@@ -359,7 +359,7 @@ public:
     void AnimateUnloadUnits();  // 0x4585C0
     void SpawnParticles();  // 0x459900
     void ApplyFoundationDamage();  // 0x45EE70
-    int AssignTarget_SyncLog() override;  // 0x443B90
+    int AssignTarget_SyncLog(int syncFlag) override;  // 0x443B90
     void AssignDestination_SyncLog();  // 0x455D50
     void DecrementTypeCounter();  // 0x4FF980
     void IncrementOccupantTypeCounter();  // 0x4FFA50
