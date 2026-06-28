@@ -16495,7 +16495,7 @@ bool BuildingClass::IsPoweredActive()
         if (this->Overpowerers.Count < 2)
             return false;
 
-    if (this->isDeactivated)
+    if (this->empLockRemaining)
         return false;
 
     if (this->health == 0)
