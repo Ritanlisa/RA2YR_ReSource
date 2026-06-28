@@ -334,7 +334,7 @@ def parse_vtable_indices_from_headers(M):
                         pending_class = cls_name
                         pending_parent = parent
                     continue
-                if pending_class and stripped == "{":
+                if pending_class and ("{" in stripped):
                     current_class = pending_class
                     brace_depth = 1
                     M.class_vtable.setdefault(pending_class, [])
