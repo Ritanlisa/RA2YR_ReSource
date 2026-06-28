@@ -8,6 +8,8 @@
 #include "structure/infantry.hpp"
 #include "type/infantry_type.hpp"
 #include "misc/super_weapon.hpp"
+#include "misc/rules.hpp"
+#include "system/game_systems.hpp"
 
 #include <cstring>
 
@@ -18954,50 +18956,9 @@ bool BuildingClass::IsIdleWithNoCaptives()
 // 0x44eb10
 int BuildingClass::GetCrew()
 {
-// [IDA decompile]
-int __thiscall BuildingClass::GetCrew(#377 *this)
-{
-  if ( *((_BYTE *)this + 1763)
-    || Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 99) >= 25
-    || *(_DWORD *)(*((_DWORD *)this + 328) + 3768) != 7 )
-  {
-    return TechnoClass::GetCrew(this);
-  }
-  else
-  {
-    return *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3952);
-  }
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+6E3h]
-test    al, al
-jnz     short loc_44EB53
-mov     eax, ds:0A8B230h
-push    63h ; 'c'
-push    0
-lea     ecx, [eax+218h]
-call    Random__Range
-cmp     eax, 19h
-jge     short loc_44EB53
-mov     ecx, [esi+520h]
-cmp     dword ptr [ecx+0EB8h], 7
-jnz     short loc_44EB53
-mov     edx, ds:8871E0h
-pop     esi
-mov     eax, [edx+0F70h]
-retn
-; ---------------------------------------------------------------------------
-
-loc_44EB53:                             ; CODE XREF: BuildingClass__GetCrew+B↑j
-; BuildingClass__GetCrew+24↑j ...
-mov     ecx, esi
-call    TechnoClass__GetCrew
-pop     esi
-retn
-*/
+    if (HasBeenCaptured || Random::Range(0, 99) >= 25 || Type->Factory != AbstractType::BuildingType)
+        return TechnoClass::GetCrew(this);
+    return RulesClass_Instance->CrewCount;
 }
 
 // IDA 0x451330: get crew count

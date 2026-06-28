@@ -621,6 +621,7 @@ public:
     int32_t              ForceShieldColor;
     float                DirectRockingCoefficient;
     float                FallBackCoefficient;
+    int32_t              CrewCount;       // offset ~0xF70 area, used by BuildingClass::GetCrew
 
     // TODO: complete RulesClass members (many TypeList<> arrays, building lists, etc.)
 
