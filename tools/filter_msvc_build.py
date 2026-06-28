@@ -193,8 +193,11 @@ def main():
         sys.exit(1)
     if real_error:
         for line in out.split('\n'):
-            if 'error C' in line.strip():
-                sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
+            s = line.strip()
+            if 'error C' in s:
+                parsed = _parse_and_filter(line, changed_lines, repo_root)
+                if parsed is not None:
+                    sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
         sys.exit(1)
     sys.exit(0)
 
