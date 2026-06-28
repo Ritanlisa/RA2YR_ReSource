@@ -292,12 +292,34 @@ class ClangChecker:
         """
         results = []
 
+        def _is_array_typ(typ):
+            """Check if a clang type is a declared array (not decayed pointer)."""
+            return typ.kind in (
+                clang.cindex.TypeKind.CONSTANTARRAY,
+                clang.cindex.TypeKind.INCOMPLETEARRAY,
+                clang.cindex.TypeKind.VARIABLEARRAY,
+            )
+
         def _is_pointer_typ(typ):
             """Check if a clang type is a pointer (not array) using type system."""
             if typ.kind == clang.cindex.TypeKind.POINTER:
                 return True
             try:
                 if typ.get_pointee().kind != clang.cindex.TypeKind.INVALID:
+                    return True
+            except Exception:
+                pass
+            return False
+
+        def _base_is_declared_array(base_node):
+            """Check if base expression references a declared array variable/field.
+            When a declared array is used as subscript base, Clang decays the type
+            to a pointer in the AST, but the underlying declaration retains the
+            array type. We detect this to avoid false positives on legitimate
+            fixed-size member arrays like `this->Upgrades[slot]`."""
+            try:
+                ref = base_node.referenced
+                if ref and _is_array_typ(ref.type):
                     return True
             except Exception:
                 pass
@@ -324,6 +346,11 @@ class ClangChecker:
                 return False
             base_type = children[0].type.spelling
             base_type_obj = children[0].type
+            # If the base expression references a declared array, it's a
+            # legitimate subscript (e.g. this->Upgrades[slot]), not pointer
+            # arithmetic disguised as array access.
+            if _base_is_declared_array(children[0]):
+                return False
             # Only flag if base is a pointer type (not a declared array)
             # Use string matching AND type-system fallback
             if "*" not in base_type:

@@ -16411,7 +16411,7 @@ retn    4
 int BuildingClass::GetPowerOutput()
 {
     int power = this->Type->PowerOutput;               // v2 = *(this->Type + 3808)
-    if (this->Mission_Harvest())                       // (*(*this + 468))(this) -> bool
+    if (this->MissionDispatch())                       // (*(*this + 468))(this) -> bool
         return 0;
     if (this->HasExtraPowerBonus)                      // *(_BYTE*)(this + 1640)
         power += this->Type->PowerBonus;               // v2 += *(this->Type + 3816)
