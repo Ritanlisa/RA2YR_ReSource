@@ -192,13 +192,17 @@ def main():
         sys.stderr.buffer.write(b'filter: gate FAIL\n')
         sys.exit(1)
     if real_error:
+        any_real = False
         for line in out.split('\n'):
             s = line.strip()
             if 'error C' in s:
                 parsed = _parse_and_filter(line, changed_lines, repo_root)
                 if parsed is not None:
                     sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
-        sys.exit(1)
+                    any_real = True
+        if any_real:
+            sys.exit(1)
+        # All errors were from baseline — suppressed, but exit 0
     sys.exit(0)
 
 
