@@ -127,7 +127,7 @@ if(WIN32)
         # Runs cmake --build through a filter that parses MSVC error output and suppresses
         # errors from code unchanged since auto-fill-baseline tag. Only errors in MODIFIED
         # code are shown. Use this instead of direct `cmake --build` for clean output.
-        add_custom_target(build_filtered ALL
+        add_custom_target(build_filtered
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/filter_msvc_build.py"
                 ${CMAKE_COMMAND} --build "${CMAKE_BINARY_DIR}" --target gamemd --config $<CONFIG>
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -141,7 +141,7 @@ if(WIN32)
         # NOTE: hook_dll is defined in injectFunctionTest/ subdirectory, so PRE_BUILD
         # cannot be attached from root CMakeLists.txt (CMake restriction). Instead we use
         # a custom target with add_dependencies — custom target failure still blocks dependents.
-        add_custom_target(code_quality_gate ALL
+        add_custom_target(code_quality_gate
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Running all build gates independently (B.2 + B.5 + exec-flow)"
