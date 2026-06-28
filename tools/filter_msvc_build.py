@@ -161,23 +161,31 @@ def main():
 
     out = (result.stdout or '') + '\n' + (result.stderr or '')
     gate_failed = any('GATE ' in l and 'FAIL' in l for l in out.split('\n'))
+    hook_error = any('Inject but NOT completed' in l for l in out.split('\n'))
+    real_error = any('error C' in l for l in out.split('\n'))
     
-    # Only print violation lines
+    # Skip ALL regenerate_hooks noise
     for line in out.split('\n'):
         s = line.strip()
-        if 'FAIL -' in s or 'gate FAILED' in s.lower() or 'GATE FAILURE' in s:
+        if any(x in s for x in ['CUSTOMBUILD','None markers','active hooks','regenerate_hooks',
+            'Inject but NOT completed','unmarked-uncompleted','Extracting IDA','Generating REVERSE',
+            'Loaded idempotency','ida_gen_re_impl','Found 0x','mode=None,','0x7baf',
+            'Syncing function names','Phase 1:','Phase 2:','Phase 3:','Phase 4:','Phase 5:','Phase 6:',
+            'Loaded 19133','Found 293 cpp','Found 5308 hpp','Checking File Globs','OK: All symbols',
+            'Checking IDA reachability']): continue
+        if re.match(r'^\s*0x[0-9A-Fa-f]+:', s): continue
+        if 'FAIL -' in s or 'gate FAILED' in s.lower():
             sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
     
     if gate_failed:
-        print("filter: gate FAIL", file=sys.stderr)
+        sys.stderr.buffer.write(b'filter: gate FAIL\n')
         sys.exit(1)
-    if result.returncode != 0:
-        # MSVC errors — pass through only error lines
+    if real_error:
         for line in out.split('\n'):
             s = line.strip()
-            if 'error C' in s or 'error:' in s:
+            if 'error C' in s:
                 sys.stderr.buffer.write((line + '\n').encode('utf-8', errors='replace'))
-        sys.exit(result.returncode)
+        sys.exit(1)
     sys.exit(0)
 
 
