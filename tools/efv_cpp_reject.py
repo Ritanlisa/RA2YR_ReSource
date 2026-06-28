@@ -98,7 +98,7 @@ class RejectReason(object):
         pos        0-based char offset in the C++ source where it was found
                    (the offending token's `.pos`; -1 if unknown).
         value      the offending token's source text (e.g. "[]", "goto", "__asm").
-        message    bilingual (中文 / English), ACTIONABLE "rewrite without X" hint.
+        message    English, ACTIONABLE "rewrite without X" hint.
 
     Truthy by default (it is a non-None object), so callers may write either
     `if check_rejectable(x) is not None:` or `if check_rejectable(x):`.
@@ -122,27 +122,23 @@ class RejectReason(object):
 
 
 # ============================================================
-# Construct descriptors (label + actionable rewrite hint, 中文 / English)
+# Construct descriptors (label + actionable rewrite hint, English)
 # ============================================================
 #
-# Each descriptor: (construct_key, label_cn, label_en, hint_cn, hint_en)
-# The construct_key is the stable ASCII identity used by RejectReason.construct.
+# Each descriptor: (construct_key, label, hint)
 
 _DESC_LAMBDA = (
-    "lambda", "lambda", "lambda",
-    "改用具名辅助函数，或将其逻辑内联展开",
+    "lambda", "lambda",
     "use a named helper function, or inline its logic",
 )
 
 _DESC_GOTO = (
-    "goto", "goto", "goto",
-    "用循环 / 条件分支 / 提前返回重构控制流",
+    "goto", "goto",
     "restructure the control flow with loops / conditionals / early returns",
 )
 
 _DESC_ASM = (
-    "inline asm", "内联汇编 (__asm)", "inline asm (__asm)",
-    "用等价的 C++ 表达式或函数调用替换 __asm 块",
+    "inline asm", "inline asm (__asm)",
     "replace the __asm block with equivalent C++ expressions or function calls",
 )
 
@@ -154,17 +150,14 @@ _INLINE_ASM_KEYWORDS = frozenset({"__asm", "_asm"})
 def _make_reason(desc, pos, value):
     """Build a RejectReason from a construct descriptor.
 
-    The message keeps the canonical DEC-2 phrasing
-    (`检查器无法验证构造 'X'（可用不依赖该语法的写法实现相同逻辑），请改写`)
-    and appends the construct-specific actionable rewrite hint, bilingually.
+    The message uses the canonical phrasing and appends the
+    construct-specific actionable rewrite hint.
     """
-    construct_key, label_cn, label_en, hint_cn, hint_en = desc
+    construct_key, label, hint = desc
     message = (
-        "检查器无法验证构造 '{cn}'（可用不依赖该语法的写法实现相同逻辑），"
-        "请改写：{hcn}。"
-        " / Verifier cannot verify construct '{en}' (the same logic can be "
-        "written without it); please rewrite: {hen}."
-    ).format(cn=label_cn, hcn=hint_cn, en=label_en, hen=hint_en)
+        "Verifier cannot verify construct '{label}' (the same logic can be "
+        "written without it); please rewrite: {hint}."
+    ).format(label=label, hint=hint)
     return RejectReason(construct_key, pos, value, message)
 
 
@@ -295,9 +288,7 @@ def _selftest():
     check("lambda: construct == 'lambda'", r_lambda and r_lambda.construct == "lambda")
     check("lambda: pos points into source", r_lambda and r_lambda.pos >= 0
           and lambda_body[r_lambda.pos] == "[")
-    check("lambda: message has CN rewrite hint '请改写'",
-          r_lambda and "请改写" in r_lambda.message)
-    check("lambda: message has EN rewrite hint 'please rewrite'",
+    check("lambda: message has rewrite hint 'please rewrite'",
           r_lambda and "please rewrite" in r_lambda.message)
     check("lambda: message names the construct 'lambda'",
           r_lambda and "lambda" in r_lambda.message)
@@ -315,9 +306,7 @@ def _selftest():
     check("goto: value == 'goto'", r_goto and r_goto.value == "goto")
     check("goto: pos maps back to 'goto' in source",
           r_goto and goto_body[r_goto.pos:r_goto.pos + 4] == "goto")
-    check("goto: message has CN rewrite hint '请改写'",
-          r_goto and "请改写" in r_goto.message)
-    check("goto: message has EN rewrite hint 'please rewrite'",
+    check("goto: message has rewrite hint 'please rewrite'",
           r_goto and "please rewrite" in r_goto.message)
 
     # ---- T15.3 inline asm (__asm) -> reject + hint ---------------------
@@ -331,9 +320,7 @@ def _selftest():
     check("asm: rejected (not None)", r_asm is not None)
     check("asm: construct == 'inline asm'", r_asm and r_asm.construct == "inline asm")
     check("asm: value == '__asm'", r_asm and r_asm.value == "__asm")
-    check("asm: message has CN rewrite hint '请改写'",
-          r_asm and "请改写" in r_asm.message)
-    check("asm: message has EN rewrite hint 'please rewrite'",
+    check("asm: message has rewrite hint 'please rewrite'",
           r_asm and "please rewrite" in r_asm.message)
 
     # ---- T15.4 inline asm (_asm spelling) -> reject --------------------

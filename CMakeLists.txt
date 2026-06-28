@@ -122,6 +122,17 @@ if(WIN32)
     # ── Code quality hard-gating (PRE_BUILD: blocks target on failure) ──
     # Gates run before EACH target compilation. If ANY gate fails, target FAILS and produces NO binary.
     if(Python3_FOUND)
+
+        # ── Baseline-filtered build (suppress MSVC errors from unchanged code) ──
+        # Runs cmake --build through a filter that parses MSVC error output and suppresses
+        # errors from code unchanged since auto-fill-baseline tag. Only errors in MODIFIED
+        # code are shown. Use this instead of direct `cmake --build` for clean output.
+        add_custom_target(build_filtered
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/filter_msvc_build.py"
+                ${CMAKE_COMMAND} --build "${CMAKE_BINARY_DIR}" --target gamemd --config $<CONFIG>
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Building gamemd with baseline error filtering..."
+        )
         # signals.json is the canonical, git-tracked symbol file — always present, so
         # it needs no per-build generation step. `build_signals` is intentionally NOT a
         # dependency of gamemd/hook_dll (it would rewrite the git-tracked file every
