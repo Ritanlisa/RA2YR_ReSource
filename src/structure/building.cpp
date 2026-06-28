@@ -22799,46 +22799,12 @@ void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
 // 0x43e900
 int BuildingClass::GetZDrawOffset() const
 {
-// [IDA decompile]
-int __thiscall BuildingClass::GetZDrawOffset(#377 *this)
-{
-  int v2; // eax
-  int v3; // eax
-  int v4; // esi
-
-  v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 464))(this);
-  v3 = ZCoordToScreenY(v2);
-  v4 = *((_DWORD *)this + 328);
-  if ( *(_BYTE *)(v4 + 5829) )
-    return *(_DWORD *)(v4 + 4584) - v3;
-  else
-    return -v3;
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi]
-call    dword ptr [eax+1D0h]
-mov     ecx, eax
-call    ZCoordToScreenY
-mov     esi, [esi+520h]
-mov     ecx, eax
-neg     ecx
-mov     al, [esi+16C5h]
-test    al, al
-jz      short loc_43E930
-mov     eax, [esi+11E8h]
-pop     esi
-add     eax, ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_43E930:                             ; CODE XREF: BuildingClass__GetZDrawOffset+24↑j
-mov     eax, ecx
-pop     esi
-retn
-*/
+    int z = this->GetBuildAnim();
+    int screenY = ZCoordToScreenY(z);
+    if (this->Type->TurretAnimIsVoxel)
+        return this->Type->BuildingAnim[9].ZAdjust - screenY;
+    else
+        return -screenY;
 }
 
 // IDA 0x449410: get bounding size extension
