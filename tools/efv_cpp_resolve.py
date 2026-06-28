@@ -178,6 +178,11 @@ class Resolver:
             iaddr = _coerce_addr(entry.get("address"))
             if iaddr is not None:
                 return ("global", iaddr)
+        # 3b. GLOBAL fallback via globals section (handles non-g_ prefixed names
+        #     that appear in the `globals` name→addr map but not in `_symbols`).
+        iaddr = self._sig.global_addr(ident)
+        if iaddr is not None:
+            return ("global", iaddr)
 
         # 4. Unknown -> not a data location (callee name / type / macro / ...).
         return (None, None)

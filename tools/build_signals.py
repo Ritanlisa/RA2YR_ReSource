@@ -225,7 +225,7 @@ def parse_globals():
     """Scan globals_*.hpp files for extern declarations with data: addresses."""
     globals_list = []
 
-    for hpp_file in PROJECT_ROOT.glob("src/**/globals_*.hpp"):
+    for hpp_file in PROJECT_ROOT.glob("src/**/*.hpp"):
         with open(hpp_file, encoding="utf-8", errors="replace") as f:
             for line in f:
                 line = line.strip()

@@ -37,7 +37,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 extern int  g_IntroMovieObject;
 
 // data: 0xA8ED6B: ArmageddonMode
-extern bool ArmageddonMode;
+extern bool ArmageddonMode; // data: 0xA8ED6B
 
 // data: 0x840A70: g_Audio_MixerEnabled
 extern uint32_t g_Audio_MixerEnabled;

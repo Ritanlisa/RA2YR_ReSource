@@ -581,7 +581,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 // External globals
 extern RulesClass* RulesClass_Instance;
-extern bool IKnowWhatImDoing;
+extern bool IKnowWhatImDoing; // data: 0xA8E7AC
 extern bool MCVRedeploy;
 
 // ------------------------------------------------------------

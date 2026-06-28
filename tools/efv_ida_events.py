@@ -107,6 +107,7 @@ from verify_execution_flow import (
     _IDA_SIMPLE,
     # vtable dispatch
     _IDA_VTABLE,
+    _IDA_VTABLE_LOCAL,
     # named calls
     _IDA_QUAL_CALL,
     _IDA_SIMPLE_CALL,
@@ -209,6 +210,9 @@ def make_ida_leaf(this_type, M):
         # --- vtable dispatch `(*(*this + N))(...)` -> CALL(vfptr+N) ---
         for m in _IDA_VTABLE.finditer(text):
             hits.append((m.start(), m.end(), call_virtual(int(m.group(1)))))
+        # --- vtable dispatch via local var `(vN + N))(this)` -> CALL(vfptr+N) ---
+        for m in _IDA_VTABLE_LOCAL.finditer(text):
+            hits.append((m.start(), m.end(), call_virtual(int(m.group(2)))))
 
         # --- named calls (qualified Class::Method first, then PascalCase) ---
         for m in _IDA_QUAL_CALL.finditer(text):

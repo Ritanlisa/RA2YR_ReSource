@@ -236,7 +236,7 @@ def load_globals_map(M):
         r'extern\s+[\w\s*&<>:\[\]]+?\s+(\w+)\s*(?:\[[^\]]*\])?\s*;'
         r'\s*//\s*data:\s*(0x[0-9A-Fa-f]+)'
     )
-    for gf in SRC_DIR.glob("**/globals*.hpp"):
+    for gf in SRC_DIR.glob("**/*.hpp"):
         try:
             with open(gf, "r", encoding="utf-8", errors="replace") as f:
                 for line in f:
@@ -602,6 +602,7 @@ _IDA_CAST_PAREN = re.compile(
     r'\s*\*\s*\)\s*\(\s*(?:\(\s*(char|uint8_t|_BYTE)\s*\*\s*\)\s*)?this\s*\+\s*(\d+)\s*\)')
 _IDA_SIMPLE = re.compile(r'\*\(\s*this\s*\+\s*(\d+)\s*\)')
 _IDA_VTABLE = re.compile(r'\*this\s*\+\s*(\d+)')
+_IDA_VTABLE_LOCAL = re.compile(r'\((\w{1,3})\s*\+\s*(\d+)\)\s*\)\s*\(\s*this\s*\)')
 _IDA_QUAL_CALL = re.compile(r'(?<![\w:>.])([A-Z][A-Za-z0-9_]*(?:::~?[A-Za-z0-9_]+)+)\s*\(')
 _IDA_SIMPLE_CALL = re.compile(r'(?<![\w:>.])([A-Z][A-Za-z0-9_]*)\s*\(')
 _IDA_G_GLOBAL = re.compile(r'&?\b(g_[A-Za-z0-9_]+)\b')
@@ -667,6 +668,8 @@ def make_ida_leaf(this_type, M):
             hits.append((m.start(), m.end(), f"{kind}(member,{off})"))
         for m in _IDA_VTABLE.finditer(text):
             hits.append((m.start(), m.end(), f"CALL(vfptr+{int(m.group(1))})"))
+        for m in _IDA_VTABLE_LOCAL.finditer(text):
+            hits.append((m.start(), m.end(), f"CALL(vfptr+{int(m.group(2))})"))
         for m in _IDA_QUAL_CALL.finditer(text):
             addr = _resolve_call(m.group(1), M)
             if addr:
@@ -748,6 +751,12 @@ def make_cpp_leaf(class_name, M):
                 hits.append((m.start(), m.end(), f"{kind}(global,0x{addr:X})"))
             else:
                 hits.append((m.start(), m.end(), f"{kind}(global,?{m.group(1)})"))
+        for name, addr in M.global_to_addr.items():
+            if name.startswith('g_'):
+                continue
+            for m in re.finditer(r'(?<![\w>.:])\b(' + re.escape(name) + r')\b', text):
+                kind = "WRITE" if _is_write(text, m.end()) else "READ"
+                hits.append((m.start(), m.end(), f"{kind}(global,0x{addr:X})"))
         for m in _RETURN_RE.finditer(text):
             hits.append((m.start(), m.end(), "RET"))
         return _order_hits(hits)
