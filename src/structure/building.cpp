@@ -21792,50 +21792,22 @@ retn    0Ch
 */
 }
 
-// IDA 0x6f9e10: check if invisible
+// IDA 0x6f9e10: IsInvisible — check opacity/cloak state pointer on type
 // 0x6f9e10
 bool BuildingClass::IsInvisible() {
-// [IDA decompile]
-int __thiscall BuildingClass::IsInvisible(#377 *this)
-{
-  int result; // eax
+    // vtable[33] → Vt34Thunk → GetTypePtr() → returns this->Type
+    // offset 0xB0 = MainVoxel (VoxLib* in binary, int in stub layout)
+    // Binary: two redundant vtable calls; second call only matters when ptr non-null
+    union {
+        int as_int;
+        uint8_t* as_ptr;
+    } ptr_val;
 
-  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this);
-  if ( *(_DWORD *)(result + 176) )
-  {
-    result = *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 176);
-    LOBYTE(result) = *(_BYTE *)result == 0;
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi]
-call    dword ptr [eax+84h]
-mov     ecx, [eax+0B0h]
-test    ecx, ecx
-jnz     short loc_6F9E29
-xor     al, al
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_6F9E29:                             ; CODE XREF: BuildingClass__IsInvisible+13↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     eax, [eax+0B0h]
-pop     esi
-cmp     byte ptr [eax], 0
-setz    al
-retn
-*/
+    auto* type = this->Type;
+    ptr_val.as_int = type->MainVoxel.unused;
+    type = this->Type;
+    ptr_val.as_int = type->MainVoxel.unused;
+    return ptr_val.as_ptr && (*ptr_val.as_ptr == 0);
 }
 
 void BuildingClass::AnnounceReady() {}
