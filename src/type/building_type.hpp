@@ -303,6 +303,7 @@ public:
     int  InstanceCount; // 0x452540 area
     int  TriggerTag;    // 0x452dc0 area
     int  BuildingTypeClass_field_60; // 0x60
+    bool HasTiberiumAmmo; // +0x16BC (5820): when PipScale==Tiberium, true → use global ammo count, false → use per-type count at +0x800
 
     // design: inline accessor, inlined at all call sites
     int  GetArrayIndex() const { return ArrayIndex; }

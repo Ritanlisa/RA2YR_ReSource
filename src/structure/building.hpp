@@ -559,7 +559,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int processGarrison(int a1);  // 0x487170
     int evaulateDefense(int a1);  // 0x487180
     int updateSellBack(void* a1, void* a2);  // 0x4AA290
-    double checkRepairEligibility();  // 0x4F9750
+    static double checkRepairEligibility(HouseClass* pHouse);  // 0x4F9750
     void processBaseExpansion(float a1);  // 0x5AEAD0
     void updateFoundation(float a1);  // 0x5AEAF0
     void recalcAdjacency(float a1);  // 0x5AEB20

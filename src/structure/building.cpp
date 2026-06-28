@@ -20286,65 +20286,27 @@ retn    4
 }
 void BuildingClass::FireLaser() {}
 
-// IDA 0x44d700: get ammo count scaled
 // 0x44d700
 int BuildingClass::GetAmmoCountScaled()
 {
-// [IDA decompile]
-int __thiscall BuildingClass::GetAmmoCountScaled(#377 *this)
-{
-  int v1; // esi
-  int v3; // [esp+4h] [ebp-Ch]
-  double v4; // [esp+8h] [ebp-8h]
+    // this->Type at +0x520
+    BuildingTypeClass* pType = this->Type;
 
-  v1 = *((_DWORD *)this + 328);
-  if ( *(_DWORD *)(v1 + 980) != 2 )
-    return TechnoClass::GetAmmoCount(this);
-  if ( !*(_BYTE *)(v1 + 5820) )
-    return 0;
-  v4 = BuildingClass::checkRepairEligibility(*((_DWORD *)this + 135));
-  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 116))(v1);
-  return Math::RoundToInt((double)v3 * v4);
-}
+    // PipScale at +0x3D4 (980): if not Tiberium (2), delegate to base class
+    if (pType->PipScale != PipScale::Tiberium)
+        return TechnoClass::GetAmmoCount(this);
 
-/* ASM:
-sub     esp, 0Ch
-push    esi
-mov     esi, [ecx+520h]
-mov     eax, [esi+3D4h]
-sub     eax, 2
-jz      short loc_44D71F
-call    TechnoClass__GetAmmoCount
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
+    // HasTiberiumAmmo at +0x16BC (5820): if false, return 0 (no ammo pips)
+    if (!pType->HasTiberiumAmmo)
+        return 0;
 
-loc_44D71F:                             ; CODE XREF: BuildingClass__GetAmmoCountScaled+13↑j
-mov     al, [esi+16BCh]
-test    al, al
-jz      short loc_44D755
-mov     ecx, [ecx+21Ch]
-call    BuildingClass__checkRepairEligibility
-mov     eax, [esi]
-mov     ecx, esi
-fstp    [esp+10h+var_8]
-call    dword ptr [eax+74h]
-mov     [esp+10h+var_C], eax
-fild    [esp+10h+var_C]
-fmul    [esp+10h+var_8]
-call    Math__RoundToInt
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
+    // this->Owner at +0x21C (135 dwords)
+    double ratio = BuildingClass::checkRepairEligibility(this->Owner);
 
-loc_44D755:                             ; CODE XREF: BuildingClass__GetAmmoCountScaled+27↑j
-xor     eax, eax
-pop     esi
-add     esp, 0Ch
-retn
-*/
+    // vtable[29] = BuildingTypeClass::GetMaxPips
+    int maxPips = pType->GetMaxPips();
+
+    return Math::RoundToInt((double)maxPips * ratio);
 }
 
 // IDA 0x44d780: get fire error

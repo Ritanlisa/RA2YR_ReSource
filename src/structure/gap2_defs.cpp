@@ -6502,7 +6502,7 @@ retn
 */
 } }
 // 0x4F9750
-namespace gamemd { double BuildingClass::checkRepairEligibility() {
+namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
 // [IDA decompile]
 double __thiscall sub_4F9750(float *this)
 {
