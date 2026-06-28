@@ -144,10 +144,12 @@ if(WIN32)
         endif()
 
         # Hard gate: gamemd.exe (PRE_BUILD — fails BEFORE any object compilation)
-        add_custom_command(TARGET gamemd PRE_BUILD
-            COMMAND ${CMAKE_COMMAND} -E env PYTHONIOENCODING=utf-8 ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
+        # Gate runs before gamemd via dependency. Cleaner error than PRE_BUILD.
+        add_custom_target(gate_check ALL
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/gate_prebuild.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         )
+        add_dependencies(gamemd gate_check)
 
         # Name consistency audit (optional, not build-gating)
         add_custom_target(audit_names
