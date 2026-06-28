@@ -1,0 +1,50 @@
+閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
+
+  Checking File Globs
+  Running all build gates independently (B.2 + B.5 + exec-flow)
+  GATE code-standards: FAIL (exit 1)
+   ... 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/structure/building.cpp:26579: CheckC4Active: FAIL - ptr-arithmetic: this + ... 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/structure/building.cpp:26579: CheckC4Active: FAIL - ptr-arithmetic: this + ... 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/structure/building.cpp:26579: CheckC4Active: FAIL - ptr-arithmetic: v3 + ... 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/structure/building.cpp:26579: CheckC4Active: FAIL - ptr-arithmetic: v3[...] 鈥?pointer indexing (not an array)
+  D:\RA2YR_ReSource\src/structure/building.cpp:26579: CheckC4Active: FAIL - ptr-arithmetic: this + ... 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/structure/building.cpp:26795: SetSlot: PASS - 53 real lines, 0 violations
+  D:\RA2YR_ReSource\src/structure/building.cpp:26987: AssignTarget_SyncLog: PASS - 4 real lines, 0 violations
+  D:\RA2YR_ReSource\src/structure/infantry.cpp:10390: Draw: PASS - 6 real lines, 0 violations
+  D:\RA2YR_ReSource\src/system/cc_file.cpp:187: Reset: PASS - 3 real lines, 0 violations
+  D:\RA2YR_ReSource\src/system/cell.cpp:102: CastTo: PASS - 3 real lines, 0 violations
+  D:\RA2YR_ReSource\src/system/cell.cpp:1182: QuickPassable: PASS - 151 real lines, 0 violations
+  D:\RA2YR_ReSource\src/system/ini_class.cpp:384: Load: FAIL - ptr-arithmetic: buf[...] 鈥?pointer indexing (not an array)
+  D:\RA2YR_ReSource\src/system/mix_file.cpp:833: Bootstrap: FAIL - ptr-arithmetic: filename[...] 鈥?pointer indexing (not an array)
+  D:\RA2YR_ReSource\src/system/tactical.cpp:8224: ProcessMouseClick: FAIL - ptr-arithmetic: ... + inv 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/system/tactical.cpp:8224: ProcessMouseClick: FAIL - ptr-arithmetic: ... + inv 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/system/tactical.cpp:8224: ProcessMouseClick: FAIL - ptr-arithmetic: ... + inv 鈥?pointer arithmetic
+  D:\RA2YR_ReSource\src/system/tactical.cpp:8224: ProcessMouseClick: FAIL - ptr-arithmetic: ... + inv 鈥?pointer arithmetic
+  
+  FAIL: Some modified functions have violations (see above).
+  
+  GATE ida-artifact: FAIL (exit 1)
+  /structure/building.cpp:26849: error: IDA artifact: sub_N: sub_459FF0 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26850: error: IDA artifact: sub_N: sub_45A020 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26851: error: IDA artifact: sub_N: sub_5487110 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26852: error: IDA artifact: sub_N: sub_5487130 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26853: error: IDA artifact: sub_N: sub_5487170 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26854: error: IDA artifact: sub_N: sub_5487180 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26855: error: IDA artifact: sub_N: sub_54AA290 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26856: error: IDA artifact: sub_N: sub_54F9750 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26857: error: IDA artifact: sub_N: sub_55AEAD0 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26858: error: IDA artifact: sub_N: sub_55AEAF0 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26859: error: IDA artifact: sub_N: sub_55AEB20 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26860: error: IDA artifact: sub_N: sub_563D540 鈫?use named function if implemented, or declare proper stub
+  D:\RA2YR_ReSource\src/structure/building.cpp:26861: error: IDA artifact: sub_N: sub_5712130 鈫?use named function if implemented, or declare proper stub
+  
+  1207 error(s) in 18 modified file(s) scanned.
+  
+  GATE exec-flow: FAIL (exit 1)
+  PASS: AbstractClass::GetCoords 鈥?matched
+  FAIL: BuildingClass::GetPowerOutput 鈥?鏈畬鎴愮炕璇?
+    妫€鏌ュ櫒鏃犳硶楠岃瘉鏋勯€?'goto'锛堝彲鐢ㄤ笉渚濊禆璇ヨ娉曠殑鍐欐硶瀹炵幇鐩稿悓閫昏緫锛夛紝璇锋敼鍐欙細鐢ㄥ惊鐜?/ 鏉′欢鍒嗘敮 / 鎻愬墠杩斿洖閲嶆瀯鎺у埗娴併€?/ Verifier cannot verify construct 'goto' (the same logic can be written without it); please rewrite: restructure the control flow with loops / conditionals / early returns.
+  FAIL: BuildingClass::GetPowerFrame 鈥?鏈畬鎴愮炕璇?
+  FAIL: BuildingClass::HasActiveParam 鈥?鏈畬鎴愮炕璇?
+  PASS: BuildingClass::CheckFlag24 鈥?matched

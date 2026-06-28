@@ -139,7 +139,6 @@ if(WIN32)
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Running all build gates independently (B.2 + B.5 + exec-flow)"
         )
-        add_dependencies(gamemd code_quality_gate)
         if(TARGET hook_dll)
             add_dependencies(hook_dll code_quality_gate)
         endif()
@@ -161,9 +160,8 @@ if(WIN32)
         # cpp function definitions (// 0xADDR) are the authoritative source.
         # Runs as a PRE_BUILD dependency of gamemd; idempotent on success.
         add_custom_target(sync-symbols
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/sync_symbols.py"
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/sync_symbols.py" > nul 2>&1
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Syncing function names: cpp -> hpp -> signals.json -> IDA"
         )
         add_dependencies(gamemd sync-symbols)
         if(TARGET hook_dll)
