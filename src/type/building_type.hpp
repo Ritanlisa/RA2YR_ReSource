@@ -276,6 +276,7 @@ public:
     char TheaterSpecificID[0x13];
     int NumberOfDocks;
     DynamicVectorClass<CoordStruct>* DockingOffsets;
+    bool    PreventsPlacementOverlap;  // 0x2A8: if set, other buildings cannot be placed on cells occupied by this type
 
     int     ProductionCompletionThreshold;
     double  CostRatePerFrame;

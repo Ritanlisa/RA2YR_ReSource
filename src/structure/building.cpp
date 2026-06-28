@@ -11,9 +11,12 @@
 #include "misc/rules.hpp"
 #include "system/game_systems.hpp"
 
+#include "system/cell.hpp"
 #include <cstring>
 
 extern SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
+extern uint32_t Map_CellHeight;      // data: 0x89A1C0
+extern void* MapClass_Instance;      // data: 0x87F7E8
 
 namespace DynamicVector {
     int GetOrGrow(DynamicVectorClass<SuperClass*>* vec, int index);
@@ -2157,123 +2160,56 @@ retn    0Ch
 // 0x4260f0
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
-// [IDA decompile]
-char __thiscall BuildingClass_IsCellPlaceable(_DWORD *this, __int16 *a2)
-{
-  _BYTE *v3; // eax
-  int v5; // ecx
-  int v6; // ecx
+    // 0x426101: obtain cell object from (x,y) coordinates
+    CellStruct cellCoord = { (int16_t)(cell_x), (int16_t)(cell_y) };
+    CellClass* cell = CellCoord::To_CellObj(MapClass_Instance, &cellCoord);
 
-  v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a2);
-  if ( (*((_DWORD *)v3 + 80) & 0x100) != 0 && *(this + 41) - MEMORY[0x89A1C0] * (char)v3[283] > 2 * MEMORY[0x89A1C0] )
-  {
-    if ( (v3[296] & 0xE0) != 0 )
-      return 0;
-  }
-  else
-  {
-    v5 = *((_DWORD *)v3 + 59);
-    switch ( v5 )
+    // cell height in game units (leptons)
+    int cellHeight = (int)(int8_t)(cell->height);
+    int cellHeightScaled = cellHeight * Map_CellHeight;
+
+    // 0x42610e: Branch A — cell has flag_100 AND building is significantly above cell
+    //   flag_100 indicates the cell is part of a building-occupied footprint;
+    //   the height check ensures building Z is not too far above the cell surface
+    if ((cell->flags & CellFlags::CellFlags_field_100) != 0
+        && (this->location.Z - cellHeightScaled > 2 * Map_CellHeight))
     {
-      case 3:
-        return 0;
-      case 10:
-        return 0;
-      case 4:
-        return 0;
+        // 0x42614b: check alt-terrain byte for non-flat slope; bits 5-7 = slope category
+        if ((cell->slopeIndex & 0xE0u) != 0)
+            return false;
     }
-    v6 = *((_DWORD *)v3 + 17);
-    if ( v6 != -1 )
+    else
     {
-      if ( *(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84] + v6) + 680) )
-        return 0;
+        // 0x426157: Branch B — standard placement checks
+        //   Reject if land type is Water (3), Tunnel/Beach (10), or Rock (4)
+        switch (cell->landType)
+        {
+        case 3:
+        case 10:
+        case 4:
+            return false;
+        }
+
+        // 0x42616c: check if cell already has a building type that prohibits overwriting
+        int typeIndex = cell->isoTileTypeIndex;
+        if (typeIndex != -1)
+        {
+            // g_BuildingTypeArray[typeIndex]->PreventsPlacementOverlap — per-type placement-prohibit flag
+            BuildingTypeClass* existingType = (*BuildingTypeClass::Array)[typeIndex];
+            if (existingType->PreventsPlacementOverlap)
+                return false;
+        }
+
+        // 0x426189: check terrain byte for non-flat slope at offset 0x124
+        if ((cell->unknown118 & 0xE0) != 0)
+            return false;
+
+        // 0x4261ad: building is significantly below cell surface
+        if (cellHeightScaled - this->location.Z > 2 * Map_CellHeight)
+            return false;
     }
-    if ( (v3[292] & 0xE0) != 0 || MEMORY[0x89A1C0] * (char)v3[283] - *(this + 41) > 2 * MEMORY[0x89A1C0] )
-      return 0;
-  }
-  return 1;
-}
 
-/* ASM:
-mov     eax, [esp+arg_0]
-sub     esp, 0Ch
-push    esi
-mov     esi, ecx
-push    edi
-push    eax
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-mov     ecx, [eax+140h]
-mov     edx, ds:89A1C0h
-test    ch, 1
-jz      short loc_426157
-lea     ecx, [esi+9Ch]
-mov     edi, [esi+9Ch]
-mov     [esp+14h+var_C], edi
-mov     edi, [ecx+4]
-mov     [esp+14h+var_8], edi
-movsx   edi, byte ptr [eax+11Bh]
-imul    edi, edx
-mov     ecx, [ecx+8]
-sub     ecx, edi
-lea     edi, [edx+edx]
-cmp     ecx, edi
-jle     short loc_426157
-test    byte ptr [eax+128h], 0E0h
-jz      short loc_4261BB
-
-loc_42614D:                             ; CODE XREF: BuildingClass__IsCellPlaceable+70↓j
-; BuildingClass__IsCellPlaceable+75↓j ...
-pop     edi
-xor     al, al
-pop     esi
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_426157:                             ; CODE XREF: BuildingClass__IsCellPlaceable+25↑j
-; BuildingClass__IsCellPlaceable+52↑j
-mov     ecx, [eax+0ECh]
-cmp     ecx, 3
-jz      short loc_42614D
-cmp     ecx, 0Ah
-jz      short loc_42614D
-cmp     ecx, 4
-jz      short loc_42614D
-mov     ecx, [eax+44h]
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_426189
-mov     edi, ds:0A83D84h
-push    ebx
-mov     ecx, [edi+ecx*4]
-mov     bl, [ecx+2A8h]
-test    bl, bl
-pop     ebx
-jnz     short loc_42614D
-
-loc_426189:                             ; CODE XREF: BuildingClass__IsCellPlaceable+82↑j
-test    byte ptr [eax+124h], 0E0h
-jnz     short loc_42614D
-movsx   eax, byte ptr [eax+11Bh]
-add     esi, 9Ch
-imul    eax, edx
-mov     ecx, [esi]
-mov     [esp+14h+var_C], ecx
-mov     ecx, [esi+4]
-mov     [esp+14h+var_8], ecx
-mov     ecx, [esi+8]
-sub     eax, ecx
-lea     ecx, [edx+edx]
-cmp     eax, ecx
-jg      short loc_42614D
-
-loc_4261BB:                             ; CODE XREF: BuildingClass__IsCellPlaceable+5B↑j
-pop     edi
-mov     al, 1
-pop     esi
-add     esp, 0Ch
-retn    4
-*/
+    return true;
 }
 
 // IDA 0x44d310: validate placement passes all checks
