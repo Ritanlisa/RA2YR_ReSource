@@ -339,7 +339,8 @@ public:
     virtual void SetLocation(const CoordStruct& coords) = 0;
 
     // --- Cell / Coordinate queries ---
-    // [110] 0x41BEA0 ObjectClass::GetCellCoords_Alt
+    // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
+    virtual int GetCellCoords_Alt(CellStruct* out) const = 0;
     virtual CellStruct* GetMapCoords(CellStruct* out) const = 0;  // 0x426A80
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
@@ -465,7 +466,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int vt_entry_140(int a1, void* a2, void* a3, void* a4);  // 0x417C80
     int GetCoordsThunk1();  // 0x41BDD0
     int GetCoordsThunk3();  // 0x41BE30
-    int GetCellCoords_Alt();  // 0x41BEA0
     int GetMember41_2();  // 0x41CFA0
     int CleanupAirstrikeTarget(int a1);  // 0x41D540
     int GetDrawPosition();  // 0x4263D0

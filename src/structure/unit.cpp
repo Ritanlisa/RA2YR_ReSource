@@ -857,10 +857,9 @@ int UnitClass::UnloadPassengers(int placementType)
     if (!ObjectClass::UpdateProductionDisplay(this) || (placementType != 1 && placementType != 3))
         return 0;
 
-    // 0x6b4c06: vtable[110] — GetCellCoords_Alt: cell.X = location.X/256, cell.Y = location.Y/256
+    // 0x6b4c06: vtable[110] — GetCellCoords_Alt
     CellStruct cellCoord;
-    cellCoord.X = (int16_t)(this->location.X / 256);
-    cellCoord.Y = (int16_t)(this->location.Y / 256);
+    this->GetCellCoords_Alt(&cellCoord);
 
     // 0x6b4c12-0x6b4c38: IKnowWhatImDoing > 0, ArmageddonMode, IsWalkable
     if (IKnowWhatImDoing > 0 || ArmageddonMode
@@ -869,9 +868,9 @@ int UnitClass::UnloadPassengers(int placementType)
         CreateUnloadPlacementCraters(&cellCoord);
     }
 
-    // 0x6b4c4e: isOnMap = 0, 0x6b4c52: UnInit
+    // 0x6b4c4e: isOnMap = 0, 0x6b4c52: PreDestroy (vtable[62], offset 0xF8)
     this->isOnMap = 0;
-    this->UnInit();
+    this->PreDestroy();
     return 1;
 }
 
