@@ -1434,12 +1434,12 @@ def main():
             passed, info = verify_single_function(addr, name or cached, disp, M,
                                                   ida_decomp, verbose=args.verbose,
                                                   signals=signals)
-             if passed:
-                 pass  # PASS suppressed
-             else:
-                 all_passed = False
-                 cpp_loc = find_cpp_function_by_addr(addr) or '?'
-                 print(f"FAIL: {cpp_loc}: {disp} -- translation incomplete")
+            if passed:
+                pass  # PASS suppressed
+            else:
+                all_passed = False
+                cpp_loc = find_cpp_function_by_addr(addr) or '?'
+                print(f"FAIL: {cpp_loc}: {disp} -- translation incomplete")
                 if info.get("reject") and info.get("reason"):
                     print(f"  {info['reason']}")
         if fetched:
