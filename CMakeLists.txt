@@ -91,18 +91,11 @@ if(WIN32)
         )
     endif()
 
-    # hook_dll — shadow execution framework (subdirectory build)
-    # Built only when Python3 + Ares submodule are available.
-    # Not a dependency of gamemd.exe (separate dev tool).
+    # hook_dll — DISABLED during translation phase
     find_package(Python3 COMPONENTS Interpreter QUIET)
-    if(Python3_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/YRpp/Syringe.h")
-        if(NOT Python3_FOUND)
-            message(WARNING "Python3 not found — hook DLL will use committed gen/*.cpp (may be stale)")
-        endif()
-        add_subdirectory(injectFunctionTest)
-    else()
-        message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
-    endif()
+    # if(Python3_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/YRpp/Syringe.h")
+    #     add_subdirectory(injectFunctionTest)
+    # endif()
 
     # ── signals.json INCREMENTAL refresh (on-demand; preserves flags) ──
     # signals.json is the single canonical symbol file and is checked into git — it is
@@ -155,7 +148,6 @@ if(WIN32)
         add_custom_command(TARGET gamemd PRE_BUILD
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Running all build gates before gamemd (hard gate: failure blocks this target)"
         )
 
         # Name consistency audit (optional, not build-gating)
