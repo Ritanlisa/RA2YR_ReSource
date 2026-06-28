@@ -16472,52 +16472,14 @@ retn
 void BuildingClass::PowerUpdate() {}
 int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(0); return 0; }
 
-// IDA 0x4525f0: check if powered on
 // 0x4525f0
 bool BuildingClass::IsPoweredOn()
 {
-// [IDA decompile]
-bool __thiscall BuildingClass_IsPoweredOn(_DWORD *this)
-{
-  if ( !*(_BYTE *)(*(this + 328) + 5815) )
-    return 1;
-  return (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 24
-      && BuildingClass::CheckPowerFlags((_BYTE *)this + 848);
-}
+    if (!Type->Recoilless)
+        return true;
 
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+520h]
-mov     cl, [eax+16B7h]
-test    cl, cl
-jnz     short loc_452607
-mov     al, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_452607:                             ; CODE XREF: BuildingClass__IsPoweredOn+11↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 18h
-jnz     short loc_452629
-lea     ecx, [esi+350h]
-call    BuildingClass__CheckPowerFlags
-test    al, al
-jz      short loc_452629
-mov     al, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_452629:                             ; CODE XREF: BuildingClass__IsPoweredOn+24↑j
-; BuildingClass__IsPoweredOn+33↑j
-xor     al, al
-pop     esi
-retn
-*/
+    return this->GetCurrentMission() == Mission::Open
+        && CheckPowerFlags();
 }
 
 // IDA 0x452600: check if powered and active
