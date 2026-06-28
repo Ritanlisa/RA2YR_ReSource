@@ -1264,8 +1264,8 @@
       "type": "IndexBitfield<HouseClass*>"
     },
     "540": {
-      "name": "group",
-      "type": "int32_t"
+      "name": "Owner",
+      "type": "HouseClass*"
     },
     "544": {
       "name": "focus",
@@ -7291,8 +7291,8 @@
       "type": "IndexBitfield<HouseClass*>"
     },
     "540": {
-      "name": "group",
-      "type": "int32_t"
+      "name": "Owner",
+      "type": "HouseClass*"
     },
     "544": {
       "name": "focus",
@@ -14577,6 +14577,10 @@
       "name": "alignmentPadding[3]",
       "type": "uint8_t",
       "inherited_from": "TechnoTypeClass"
+    },
+    "5872": {
+      "name": "SuperWeapon",
+      "type": "int"
     }
   },
   "InfantryTypeClass": {
@@ -22456,6 +22460,12 @@
       "name": "alignmentPadding[3]",
       "type": "uint8_t",
       "inherited_from": "AbstractTypeClass"
+    }
+  },
+  "HouseClass": {
+    "21840": {
+      "name": "SuperWeaponsAvailable",
+      "type": "DynamicVector"
     }
   }
 }

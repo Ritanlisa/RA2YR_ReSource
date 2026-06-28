@@ -7,8 +7,11 @@
 #include "house/house.hpp"
 #include "structure/infantry.hpp"
 #include "type/infantry_type.hpp"
+#include "misc/super_weapon.hpp"
 
 #include <cstring>
+
+extern SuperWeaponTypeClass* g_SuperWeaponTypeItems[]; // data: 0xA83CBC
 
 namespace gamemd {
 
@@ -14337,52 +14340,54 @@ int BuildingClass::Mission_Missile()
 
 void BuildingClass::ProcessSuperWeaponEffects() {}
 
-// IDA 0x457630/0x457690: check SuperWeaponType availability from Type
+// IDA 0x457630: check if this building's SuperWeapon is available to fire.
+// Reads Type->SuperWeapon index, checks if the corresponding SW type object
+// has progressed far enough (via House's SW-tracking array).
 // 0x457630
-bool BuildingClass::SWAvailable() {
-// [IDA decompile]
-int __thiscall BuildingClass::SWAvailable(_DWORD *this)
+bool BuildingClass::SWAvailable()
 {
-  int v2; // eax
-  int v3; // eax
+    int swType = this->Type->SuperWeapon;
+    if (swType == -1)
+        return false;
 
-  v2 = *(_DWORD *)(*(this + 328) + 5872);
-  if ( v2 == -1 )
-    return *(_DWORD *)(*(this + 328) + 5872);
-  v3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)MEMORY[0xA83CBC] + v2) + 40) + 200);
-  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(*(this + 135) + 21840), *(_DWORD *)(v3 + 3576)) )
-    return *(_DWORD *)(*(this + 328) + 5872);
-  else
-    return -1;
+    SuperWeaponTypeClass* swObj = g_SuperWeaponTypeItems[swType];
+    int swChargeState = swObj->Type;
+    if (!swChargeState)
+        return true;
+
+    int swIndex = swObj->ArrayIndex;
+    HouseClass* owner = this->owningHouse();
+    if (DynamicVector::GetOrGrow(&owner->SuperWeaponsAvailable, swIndex))
+        return true;
+
+    return false;
 }
 
 /* ASM:
 push    esi
 mov     esi, ecx
-mov     eax, [esi+520h]
-mov     eax, [eax+16F0h]
+mov     eax, [esi+520h]         ; eax = this->Type
+mov     eax, [eax+16F0h]        ; eax = Type->SuperWeapon
 cmp     eax, 0FFFFFFFFh
 jz      short loc_45767B
-mov     ecx, ds:0A83CBCh
-mov     edx, [ecx+eax*4]
-mov     eax, [edx+28h]
-mov     eax, [eax+0C8h]
+mov     ecx, ds:0A83CBCh        ; ecx = g_SuperWeaponTypeItems
+mov     edx, [ecx+eax*4]        ; edx = items[swType]
+mov     eax, [edx+28h]          ; eax = swObj->Type
+mov     eax, [eax+0C8h]         ; eax = swObj->chargeProgress
 test    eax, eax
 jz      short loc_45767B
-mov     ecx, [eax+0DF8h]
+mov     ecx, [eax+0DF8h]        ; ecx = chargeProg->index
 push    ecx
-mov     ecx, [esi+21Ch]
-add     ecx, 5550h
+mov     ecx, [esi+21Ch]         ; ecx = this->Owner (HouseClass*)
+add     ecx, 5550h              ; ecx = &House->SuperWeaponsAvailable
 call    DynamicVector__GetOrGrow
 test    eax, eax
 jnz     short loc_45767B
 or      eax, 0FFFFFFFFh
 pop     esi
 retn
-; ---------------------------------------------------------------------------
 
-loc_45767B:                             ; CODE XREF: BuildingClass__SWAvailable+12↑j
-; BuildingClass__SWAvailable+28↑j ...
+loc_45767B:
 mov     edx, [esi+520h]
 pop     esi
 mov     eax, [edx+16F0h]
