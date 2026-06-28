@@ -18,6 +18,16 @@ extern SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
 extern uint32_t Map_CellHeight;      // data: 0x89A1C0
 extern void* MapClass_Instance;      // data: 0x87F7E8
 
+// TacticalMap globals from render/globals_render.hpp
+extern void*    g_TacticalClass_Instance;   // data: 0x887324 (TacticalMap ptr via memcpy)
+extern uint32_t DSurface_ViewBounds;        // data: 0x886FA0 (RectangleStruct X, followed by Y at +4)
+
+// 0x6d2140 — TacticalMap::Coord_To_Screen (thiscall: ecx=this, CoordStruct&, Point2D*)
+extern CoordStruct* __thiscall Coord_To_Screen(void* pThis, const CoordStruct& world, Point2D* out);
+
+// 0x6d2790 — Cell::CreateCrater (__stdcall: int x, int y, int w, int h, char flags)
+namespace Cell { extern char __stdcall CreateCrater(int x, int y, int w, int h, char flags); }
+
 namespace DynamicVector {
     int GetOrGrow(DynamicVectorClass<SuperClass*>* vec, int index);
 }
@@ -23947,88 +23957,45 @@ retn    4
 */
 }
 
-// IDA 0x4852d0: create destruction crater
 // 0x4852d0
 void BuildingClass::CreateDestructionCrater()
 {
-// [IDA decompile]
-char __thiscall sub_4852D0(int this)
-{
-  int v2; // kr04_4
-  int v3; // kr00_4
-  int v5[2]; // [esp+8h] [ebp-14h] BYREF
-  _DWORD v6[3]; // [esp+10h] [ebp-Ch] BYREF
+    // objectTypeFlags at offset +0x24 doubles as cell coordinates:
+    // low 16 bits = cell X, high 16 bits = cell Y
+    int16_t cellX = (int16_t)(this->objectTypeFlags & 0xFFFF);
+    int16_t cellY = (int16_t)(this->objectTypeFlags >> 16);
 
-  v2 = (*(__int16 *)(this + 36) << 8) + 128;
-  v3 = (*(__int16 *)(this + 38) << 8) + 128;
-  v6[2] = 0;
-  v6[1] = (v3 / 256) << 8;
-  v6[0] = (v2 / 256) << 8;
-  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5);
-  return Cell::CreateCrater(v5[0] - 30, MEMORY[0x87F7E8][7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0);
-}
+    // Convert cell coordinates to leptons with rounding: (coord << 8) + 128, then signed-div by 256
+    int32_t leptonX = ((int32_t)(cellX << 8) + 128) / 256;
+    int32_t leptonY = ((int32_t)(cellY << 8) + 128) / 256;
 
-/* ASM:
-sub     esp, 14h
-push    esi
-push    edi
-mov     edi, ecx
-movsx   eax, word ptr [edi+24h]
-movsx   ecx, word ptr [edi+26h]
-shl     eax, 8
-add     eax, 80h
-cdq
-and     edx, 0FFh
-shl     ecx, 8
-add     eax, edx
-add     ecx, 80h
-mov     esi, eax
-mov     eax, ecx
-cdq
-and     edx, 0FFh
-xor     ecx, ecx
-add     eax, edx
-mov     [esp+1Ch+var_4], ecx
-sar     eax, 8
-shl     eax, 8
-mov     [esp+1Ch+var_8], eax
-lea     eax, [esp+1Ch+var_14]
-sar     esi, 8
-lea     ecx, [esp+1Ch+var_C]
-push    eax
-shl     esi, 8
-push    ecx
-mov     ecx, ds:887324h
-mov     [esp+24h+var_C], esi
-call    Coord__To_Screen
-movsx   eax, byte ptr [edi+11Bh]
-mov     ecx, ds:886FA4h
-push    0
-lea     eax, [eax+eax*2]
-sub     esp, 10h
-mov     edi, esp
-mov     esi, 1Eh
-lea     edx, [eax+eax*4]
-mov     eax, [esp+30h+var_10]
-sub     ecx, edx
-mov     edx, 3Ch ; '<'
-add     eax, ecx
-mov     ecx, [esp+30h+var_14]
-sub     ecx, 1Eh
-sub     eax, 0Fh
-mov     [edi], ecx
-mov     [esp+30h+var_14], ecx
-mov     ecx, ds:887324h
-mov     [esp+30h+var_10], eax
-mov     [edi+4], eax
-mov     [edi+8], edx
-mov     [edi+0Ch], esi
-call    Cell__CreateCrater
-pop     edi
-pop     esi
-add     esp, 14h
-retn
-*/
+    // Build CoordStruct in leptons (Z = 0)
+    CoordStruct worldLeptons;
+    worldLeptons.X = leptonX << 8;
+    worldLeptons.Y = leptonY << 8;
+    worldLeptons.Z = 0;
+
+    // Convert world leptons to screen coordinates
+    // g_TacticalClass_Instance at 0x887324 holds a TacticalMap pointer (declared void*)
+    Point2D screenCoord;
+    Coord_To_Screen(g_TacticalClass_Instance, worldLeptons, &screenCoord);
+
+    // Height byte at offset +0x11B is the high byte of the behindAnim dword at +0x118
+    int32_t behindAnimVal;
+    memcpy(&behindAnimVal, &this->behindAnim, sizeof(behindAnimVal));
+    int8_t height = (int8_t)(behindAnimVal >> 24);
+
+    // DSurface_ViewBounds at 0x886FA0 is a RectangleStruct { X, Y, W, H }
+    // Copy X,Y as a pair and use Y directly
+    uint32_t viewBoundsXY[2];
+    memcpy(viewBoundsXY, &DSurface_ViewBounds, sizeof(viewBoundsXY));
+    int32_t viewportY = (int32_t)viewBoundsXY[1];
+
+    // Crater position: centered on building's screen position, adjusted for building height
+    int32_t craterX = screenCoord.X - 30;
+    int32_t craterY = viewportY - 15 * (int32_t)height + screenCoord.Y - 15;
+
+    Cell::CreateCrater(craterX, craterY, 60, 30, 0);
 }
 
 void BuildingClass::CreatePlacementCrater() {}
