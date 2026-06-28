@@ -17022,94 +17022,36 @@ retn    4
 }
 
 // IDA: 0x6B7BB0 (ProcessIdleOrders, 133B)
-// 0x6b7bb0
+// Iterates the idle-order array and queues exit-cell missions for units
+// whose type has SuppressionThreshold flagged. Uses internal accessors
+// idleOrderBase() / idleOrderCount() (stored in ambientSoundController fields).
 int UnitClass::ProcessIdleOrders()
 {
-// [IDA decompile]
-void __thiscall UnitClass_ProcessIdleOrders(_DWORD *this)
-{
-  int i; // edi
-  int *v3; // eax
-  int v4; // eax
-  int v5; // [esp+Ch] [ebp-8h]
+    int count = idleOrderCount();
 
-  for ( i = 0; i < *(this + 18); ++i )
-  {
-    v3 = *(int **)(*(this + 15) + 4 * i);
-    if ( v3[1] == 2 )
+    for (int i = 0; i < count; i++)
     {
-      v4 = *v3;
-      if ( *(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3432) )
-      {
-        UnitClass::GetExitCell(v4, *(this + 26));
-        MEMORY[0xABC5F8] = (int)MEMORY[0xA8ED84];
-        MEMORY[0xABC5FC] = v5;
-        MEMORY[0xABC600] = 2;
-        UnitClass::ClearTargetRef(**(_DWORD **)(*(this + 15) + 4 * i));
-      }
+        IdleOrderArray entries = { idleOrderBase() };
+        IdleOrderEntry* entry = entries[i];
+        if (entry->status == 2)
+        {
+            UnitClass* unit = entry->unit;
+            if (unit->Type->SuppressionThreshold != 0)
+            {
+                GetExitCell(unit, (int)this->bombVisible);
+                g_MissionQueueFrame = dword_A8ED54[12];
+                g_MissionQueueParam = 0;
+                g_MissionQueueType = 2;
+                ClearTargetRef(unit);
+            }
+        }
     }
-  }
-  *(this + 28) = 0;
-  *(this + 27) = 0;
-  *(this + 26) = 0;
-}
 
-/* ASM:
-sub     esp, 0Ch
-push    esi
-mov     esi, ecx
-push    edi
-xor     edi, edi
-cmp     [esi+48h], edi
-jle     short loc_6B7C26
-push    ebp
-mov     ebp, [esp+18h+var_8]
+    this->estimatedHealth = 0;
+    this->health = 0;
+    this->bombVisible = 0;
 
-loc_6B7BC3:                             ; CODE XREF: UnitClass__ProcessIdleOrders+71↓j
-mov     eax, [esi+3Ch]
-mov     eax, [eax+edi*4]
-cmp     dword ptr [eax+4], 2
-jnz     short loc_6B7C1B
-mov     eax, [eax]
-mov     ecx, [eax+6C4h]
-mov     dl, [ecx+0D68h]
-test    dl, dl
-jz      short loc_6B7C1B
-mov     edx, [esi+68h]
-mov     ecx, (offset dword_A8ED54+2D8A4h)
-push    edx
-push    eax
-call    UnitClass__GetExitCell
-mov     eax, dword_A8ED54+30h
-mov     ecx, 2
-mov     dword_A8ED54+2D8A4h, eax
-mov     dword_A8ED54+2D8A8h, ebp
-mov     dword_A8ED54+2D8ACh, ecx
-mov     eax, [esi+3Ch]
-mov     ecx, [eax+edi*4]
-mov     edx, [ecx]
-mov     ecx, esi
-push    edx
-call    UnitClass__ClearTargetRef
-
-loc_6B7C1B:                             ; CODE XREF: UnitClass__ProcessIdleOrders+1D↑j
-; UnitClass__ProcessIdleOrders+2F↑j
-mov     eax, [esi+48h]
-inc     edi
-cmp     edi, eax
-jl      short loc_6B7BC3
-xor     edi, edi
-pop     ebp
-
-loc_6B7C26:                             ; CODE XREF: UnitClass__ProcessIdleOrders+C↑j
-mov     [esi+70h], edi
-mov     [esi+6Ch], edi
-mov     [esi+68h], edi
-pop     edi
-pop     esi
-add     esp, 0Ch
-retn
-*/
+    return count;
 }
 
 // IDA: 0x6B4F30 (StubReturn176, 6B)

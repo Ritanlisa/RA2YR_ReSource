@@ -91,4 +91,11 @@ extern uint32_t g_GameActive; // data: 0xA8ED9C
 
 extern uint32_t g_CommandLineFlags; // data: 0xA8EB84
 
+extern int32_t dword_A8ED54[]; // data: 0xA8ED54 — scenario state block (CurrentFrame at [12], mission queue at [46633..46635])
+
+// Mission queue globals (idle-order exit cell tracking)
+extern int32_t g_MissionQueueFrame; // data: 0xABC5F8
+extern int32_t g_MissionQueueParam; // data: 0xABC5FC
+extern int32_t g_MissionQueueType;  // data: 0xABC600
+
 } // namespace gamemd

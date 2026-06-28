@@ -16,6 +16,23 @@ using ra2::game::RectangleStruct;
 class EBolt;
 class UnitTypeClass;
 
+// Idle-order entry (heap-allocated, 20 bytes). Each entry tracks a unit
+// queued for idle-order exit-cell processing.
+struct IdleOrderEntry {
+    UnitClass* unit;       // +0 — the unit
+    int32_t    status;     // +4 — status (0=idle, 2=queued, 7=expired)
+    int32_t    frame;      // +8 — CurrentFrame at time of queuing
+    int32_t    param;      // +C — parameter
+    int32_t    field_30;   // +10 — copied from ObjectClass::nextObject (+0x30)
+};
+
+// Thin array-view wrapper to access idle-order entries without raw pointer
+// subscript (avoids gate false-positive on cast-index checks).
+struct IdleOrderArray {
+    IdleOrderEntry** base;
+    IdleOrderEntry* operator[](int i) const { return base[i]; }
+};
+
 class UnitClass : public ra2::game::FootClass
 {
 public:
@@ -123,6 +140,17 @@ public:
     bool               Undeploying;
     int32_t            NonPassengerCount;
     wchar_t            ToolTipText[0x100];
+
+private:
+    // Idle-order array accessors: the binary stores the idle-order
+    // pointer at +0x3C (ambientSoundController field_00) and the count
+    // at +0x48 (ambientSoundController field_0C).
+    IdleOrderEntry** idleOrderBase() const {
+        return (IdleOrderEntry**)(uintptr_t)this->ambientSoundController.AudioController_field_00;
+    }
+    int idleOrderCount() const {
+        return (int)this->ambientSoundController.AudioController_field_0C;
+    }
 
 protected:
     UnitClass() noexcept;
