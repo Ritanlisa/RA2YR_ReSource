@@ -145,7 +145,7 @@ if(WIN32)
 
         # Hard gate: gamemd.exe (PRE_BUILD — fails BEFORE any object compilation)
         add_custom_command(TARGET gamemd PRE_BUILD
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
+            COMMAND ${CMAKE_COMMAND} -E env PYTHONIOENCODING=utf-8 ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         )
 
