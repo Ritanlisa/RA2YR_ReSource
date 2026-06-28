@@ -16482,179 +16482,55 @@ bool BuildingClass::IsPoweredOn()
         && CheckPowerFlags();
 }
 
-// IDA 0x452600: check if powered and active
+// GOLDEN: 0x4555D0 — BuildingClass::IsPoweredActive.  Faithful 1:1 with IDA.
+// Determines whether a building is "powered and active" — operational in the
+// game world.  Returns false for: unpowered buildings without enough overpowerers,
+// deactivated buildings, dead buildings, buildings whose type requires special
+// power during low-power conditions, buildings in a power-outage grace period,
+// buildings under construction or being sold (unless they have an engineer).
 // 0x4555d0
-bool BuildingClass::IsPoweredActive() {
-// [IDA decompile]
-int __thiscall BuildingClass::IsPoweredActive(#377 *this)
+bool BuildingClass::IsPoweredActive()
 {
-  int result; // eax
-  double PowerRatio; // st7
-  bool v4; // c0
-  char v5; // c2
-  bool v6; // c3
-  char v7; // fps^1
-  int v8; // ebx
-  int v9; // edi
-  int v10; // edx
+    if (!this->HasPower)
+        if (this->Overpowerers.Count < 2)
+            return false;
 
-  if ( !*((_BYTE *)this + 1632) && *((int *)this + 415) < 2 )
-    goto LABEL_20;
-  result = *((_DWORD *)this + 321);
-  if ( result > 0 )
-    goto LABEL_20;
-  result = *((_DWORD *)this + 27);
-  if ( !result )
-    goto LABEL_20;
-  result = *((_DWORD *)this + 328);
-  if ( *(_BYTE *)(result + 5491) )
-  {
-    if ( *(int *)(result + 3812) > 0 )
+    if (this->isDeactivated)
+        return false;
+
+    if (this->health == 0)
+        return false;
+
+    if (this->Type->PoweredSpecial)
+        if (this->Type->PowerBonus > 0)
+            if (HouseClass::GetPowerRatio(this->Owner) < 1.0)
+                if (this->Overpowerers.Count < 2)
+                    return false;
+
+    if (this->Type->Overpowerable)
     {
-      PowerRatio = HouseClass::GetPowerRatio((int *)*((_DWORD *)this + 135));
-      v4 = PowerRatio < 1.0;
-      v5 = 0;
-      v6 = PowerRatio == 1.0;
-      BYTE1(result) = v7;
-      if ( PowerRatio < 1.0 && *((int *)this + 415) < 2 )
-        goto LABEL_20;
+        int st = this->Owner->powerBlackoutTimer.StartTime;
+        int tl = this->Owner->powerBlackoutTimer.TimeLeft;
+        if (st != -1)
+        {
+            int el = (int)(intptr_t)CurrentFrame - st;
+            if (el >= tl) tl = 0;
+            else          tl -= el;
+        }
+        if (tl)
+            return false;
+        if (this->Owner->recheckPower)
+            return false;
     }
-  }
-  v8 = *((_DWORD *)this + 328);
-  if ( *(_BYTE *)(v8 + 5492) )
-  {
-    v9 = *((_DWORD *)this + 135);
-    v10 = *(_DWORD *)(v9 + 676);
-    result = *(_DWORD *)(v9 + 684);
-    if ( v10 != -1 )
+
+    if (!this->Type->NeedsEngineer || this->HasEngineer)
     {
-      if ( (int)MEMORY[0xA8ED84] - v10 >= result )
-      {
-LABEL_14:
-        if ( *(_BYTE *)(v9 + 22395) )
-          goto LABEL_20;
-        goto LABEL_15;
-      }
-      result -= (int)MEMORY[0xA8ED84] - v10;
+        if (this->GetCurrentMission() != Mission::Construction)
+            if (this->GetCurrentMission() != Mission::Selling)
+                return true;
     }
-    if ( result )
-      goto LABEL_20;
-    goto LABEL_14;
-  }
-LABEL_15:
-  if ( !*(_BYTE *)(v8 + 5458) || *((_BYTE *)this + 1740) )
-  {
-    result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this);
-    if ( result != 18 )
-    {
-      result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this);
-      if ( result != 19 )
-      {
-        LOBYTE(result) = 1;
-        return result;
-      }
-    }
-  }
-LABEL_20:
-  LOBYTE(result) = 0;
-  return result;
-}
 
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-mov     edi, 2
-mov     al, [esi+660h]
-test    al, al
-jnz     short loc_4555F0
-cmp     [esi+67Ch], edi
-jl      loc_4556BE
-
-loc_4555F0:                             ; CODE XREF: BuildingClass__IsPoweredActive+12↑j
-mov     eax, [esi+504h]
-test    eax, eax
-jg      loc_4556BE
-mov     eax, [esi+6Ch]
-test    eax, eax
-jz      loc_4556BE
-mov     eax, [esi+520h]
-mov     cl, [eax+1573h]
-test    cl, cl
-jz      short loc_455643
-mov     ecx, [eax+0EE4h]
-test    ecx, ecx
-jle     short loc_455643
-mov     ecx, [esi+21Ch]
-call    HouseClass__GetPowerRatio
-fcomp   ds:dbl_7E1718
-fnstsw  ax
-test    ah, 1
-jz      short loc_455643
-cmp     [esi+67Ch], edi
-jl      short loc_4556BE
-
-loc_455643:                             ; CODE XREF: BuildingClass__IsPoweredActive+47↑j
-; BuildingClass__IsPoweredActive+51↑j ...
-mov     ebx, [esi+520h]
-mov     al, [ebx+1574h]
-test    al, al
-jz      short loc_455686
-mov     edi, [esi+21Ch]
-mov     edx, [edi+2A4h]
-mov     eax, [edi+2ACh]
-cmp     edx, 0FFFFFFFFh
-jz      short loc_455678
-mov     ecx, dword_A8ED54+30h
-sub     ecx, edx
-cmp     ecx, eax
-jge     short loc_45567C
-sub     eax, ecx
-
-loc_455678:                             ; CODE XREF: BuildingClass__IsPoweredActive+98↑j
-test    eax, eax
-jnz     short loc_4556BE
-
-loc_45567C:                             ; CODE XREF: BuildingClass__IsPoweredActive+A4↑j
-mov     al, [edi+577Bh]
-test    al, al
-jnz     short loc_4556BE
-
-loc_455686:                             ; CODE XREF: BuildingClass__IsPoweredActive+81↑j
-mov     al, [ebx+1552h]
-test    al, al
-jz      short loc_45569A
-mov     al, [esi+6CCh]
-test    al, al
-jz      short loc_4556BE
-
-loc_45569A:                             ; CODE XREF: BuildingClass__IsPoweredActive+BE↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+184h]
-cmp     eax, 12h
-jz      short loc_4556BE
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 13h
-jz      short loc_4556BE
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_4556BE:                             ; CODE XREF: BuildingClass__IsPoweredActive+1A↑j
-; BuildingClass__IsPoweredActive+28↑j ...
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-retn
-*/
+    return false;
 }
 
 // IDA 0x4a51b0: check power flags
