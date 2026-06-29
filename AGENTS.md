@@ -564,9 +564,21 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 
 #### ida-naming（IDA 产物命名）
 **问题**：变量名或成员名包含 `field_`、`dword_`、`sub_`、`unk_` 前缀。
+**禁止行为**：手动重命名符号。**所有符号重命名必须通过 `tools/rename_symbol.py` 脚本执行。**
 **修复步骤**：
-1. 查找对应偏移在 member_lookup.json 或 pre_translate.py 中的正确名称
-2. 如果确无正确名称，使用描述性名称（如 `audioState` 而非 `AudioController_field_08`）
+1. 无法通过 "查找" 来解决——IDA 里的名字和代码里的名字一样，都是 `field_*` 格式
+2. 使用脚本批量重命名：`python tools/rename_symbol.py OldName NewName`
+3. 脚本自动同步：所有源文件 + signals.json + member_lookup.json + IDA
+4. 先 dry-run：`python tools/rename_symbol.py OldName NewName --dry-run`
+5. 确认后执行：`python tools/rename_symbol.py OldName NewName`
+
+**重命名脚本功能**（`tools/rename_symbol.py`）：
+- 全 `.hpp` / `.cpp` 文件 word-boundary 精确替换
+- `signals.json` 中符号名同步
+- `member_lookup.json` 中成员名同步
+- IDA Pro 中符号重命名（需要 IDA MCP 运行中）
+- 支持 `--dry-run` 预览模式
+- 支持 `--no-ida` 跳过 IDA 同步
 
 #### cxx-cast（C++ 风格转换）
 **问题**：使用了 `static_cast`、`reinterpret_cast`。

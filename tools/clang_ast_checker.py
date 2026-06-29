@@ -800,7 +800,11 @@ class ClangChecker:
                 continue
             name = node.displayname
             results.append((line, "ida-naming",
-                           f"variable '{name}' -- unnamed IDA artifact, use proper name"))
+                           f"variable '{name}' contains IDA artifact prefix "
+                           f"('field_', 'dword_', 'sub_', or 'unk_'). "
+                           f"FIX: use python tools/rename_symbol.py {name} NewDescriptiveName "
+                           f"to batch-rename across all files + signals.json + IDA. "
+                           f"Manual renames are blocked by the gate."))
 
         # Check member access expressions (MEMBER_REF_EXPR)
         for node, line in self._collect(
@@ -812,7 +816,11 @@ class ClangChecker:
                 continue
             name = node.displayname
             results.append((line, "ida-naming",
-                           f"member '{name}' -- unnamed IDA artifact, use proper name"))
+                           f"member '{name}' contains IDA artifact prefix "
+                           f"('field_', 'dword_', 'sub_', or 'unk_'). "
+                           f"FIX: use python tools/rename_symbol.py {name} NewDescriptiveName "
+                           f"to batch-rename across all files + signals.json + IDA. "
+                           f"Manual renames are blocked by the gate."))
 
         # Regex fallback: when MEMBER_REF_EXPR displayname is empty (unresolved member),
         # scan the source line for ida artifact names via regex
@@ -828,7 +836,8 @@ class ClangChecker:
                         # Check if we already have a result for this line
                         if not any(r[0] == i for r in results):
                             results.append((i, "ida-naming",
-                                          f"member '{name}' -- unnamed IDA artifact, use proper name"))
+                                          f"member '{name}' contains IDA artifact prefix. "
+                                          f"FIX: use python tools/rename_symbol.py {name} NewDescriptiveName"))
         except Exception:
             pass
 
