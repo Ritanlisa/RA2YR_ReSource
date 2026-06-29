@@ -43,79 +43,22 @@ class rc_ptr
 public:
     rc_ptr() noexcept = default;
 
-    explicit rc_ptr(T* ptr) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : ptr(ptr)
-    {
-        if (ptr) { ptr->AddRef(); }
-    }
+    explicit rc_ptr(T* ptr) noexcept;
+    rc_ptr(const rc_ptr& other) noexcept;
+    rc_ptr(rc_ptr&& other) noexcept;
+    ~rc_ptr();
 
-    rc_ptr(const rc_ptr& other) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : ptr(other.ptr)
-    {
-        if (ptr) { ptr->AddRef(); }
-    }
+    rc_ptr& operator=(const rc_ptr& other) noexcept;
+    rc_ptr& operator=(rc_ptr&& other) noexcept;
 
-    rc_ptr(rc_ptr&& other) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : ptr(other.ptr)
-    {
-        other.ptr = nullptr;
-    }
+    T* get() const noexcept;
+    T* operator->() const noexcept;
+    T& operator*() const noexcept;
+    explicit operator bool() const noexcept;
 
-    ~rc_ptr()
-    {
-        if (ptr) { ptr->Release(); }
-    }
+    void reset(T* ptr = nullptr) noexcept;
 
-    // unmatched: no callgraph reference and no git history record
-    rc_ptr& operator=(const rc_ptr& other) noexcept
-    {
-        if (this != &other)
-        {
-            if (ptr) { ptr->Release(); }
-            ptr = other.ptr;
-            if (ptr) { ptr->AddRef(); }
-        }
-        return *this;
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    rc_ptr& operator=(rc_ptr&& other) noexcept
-    {
-        if (this != &other)
-        {
-            if (ptr) { ptr->Release(); }
-            ptr = other.ptr;
-            other.ptr = nullptr;
-        }
-        return *this;
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    T* get() const noexcept { return ptr; }
-    // unmatched: no callgraph reference and no git history record
-    T* operator->() const noexcept { return ptr; }
-    // unmatched: no callgraph reference and no git history record
-    T& operator*() const noexcept { return *ptr; }
-    // unmatched: no callgraph reference and no git history record
-    explicit operator bool() const noexcept { return ptr != nullptr; }
-
-    void reset(T* ptr = nullptr) noexcept
-    {
-        if (ptr) { ptr->Release(); }
-        ptr = ptr;
-        if (ptr) { ptr->AddRef(); }
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    T* release() noexcept
-    {
-        T* tmp = ptr;
-        ptr = nullptr;
-        return tmp;
-    }
+    T* release() noexcept;
 
 private:
     T* ptr = nullptr;
@@ -129,9 +72,9 @@ public:
     virtual ~State();
 
     // design: inline accessor, inlined at all call sites
-    void AddRef() noexcept {}
+    void AddRef() noexcept;
     // design: inline accessor, inlined at all call sites
-    void Release() noexcept {}
+    void Release() noexcept;
 
     virtual WDTError LoadConfig();
     // wrapper: delegates to RandomMap::LoadConfig at 0x5981F0
@@ -174,9 +117,9 @@ public:
     virtual void    updateLogic();
 
     // design: inline accessor, inlined at all call sites
-    void AddRef() noexcept { ++refcount; }
+    void AddRef();
     // design: inline accessor, inlined at all call sites
-    void Release() noexcept { if (--refcount == 0) delete this; }
+    void Release();
 
     int         Width;
     int         Height;
@@ -216,8 +159,8 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual int      Income() const;
 
-    void AddRef() { ++referenceCount; }
-    void Release() { if (--referenceCount == 0) delete this; }
+    void AddRef();
+    void Release();
 
     char        Name[64];
     int         OwnerIndex;
@@ -241,9 +184,9 @@ public:
     virtual void     updateLogic();
 
     // design: inline accessor, inlined at all call sites
-    void AddRef() { ++referenceCount; }
+    void AddRef();
     // design: inline accessor, inlined at all call sites
-    void Release() { if (--referenceCount == 0) delete this; }
+    void Release();
 
     Territory*    Attacker;
     Territory*    Defender;
@@ -300,6 +243,8 @@ public:
 
     std::vector<Entry> entries;
 };
+
+#include "wdt.inl"
 
 } // namespace wdt
 } // namespace gamemd

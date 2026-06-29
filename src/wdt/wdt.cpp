@@ -32,6 +32,9 @@ State::~State()
 {
 }
 
+void State::AddRef() noexcept {}
+void State::Release() noexcept {}
+
 WDTError State::LoadConfig()
 {
     // TODO: read game settings from config file
@@ -76,6 +79,9 @@ void Map::updateLogic()
 {
 }
 
+void Map::AddRef() noexcept { ++refcount; }
+void Map::Release() noexcept { if (--refcount == 0) delete this; }
+
 // --- Territory ---
 
 Territory::Territory()
@@ -112,6 +118,9 @@ int Territory::Income() const
     return IncomePerTurn;
 }
 
+void Territory::AddRef() { ++referenceCount; }
+void Territory::Release() { if (--referenceCount == 0) delete this; }
+
 // --- Conflict ---
 
 Conflict::Conflict()
@@ -134,6 +143,9 @@ WDTError Conflict::Resolve()
 void Conflict::updateLogic()
 {
 }
+
+void Conflict::AddRef() { ++referenceCount; }
+void Conflict::Release() { if (--referenceCount == 0) delete this; }
 
 // --- Campaign ---
 
