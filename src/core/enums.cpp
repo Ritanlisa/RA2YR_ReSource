@@ -6,19 +6,19 @@ namespace gamemd
 // AbstractFlags
 constexpr AbstractFlags operator|(AbstractFlags a, AbstractFlags b) noexcept
 {
-    return static_cast<AbstractFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (AbstractFlags)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr AbstractFlags operator&(AbstractFlags a, AbstractFlags b) noexcept
 {
-    return static_cast<AbstractFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (AbstractFlags)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr AbstractFlags operator~(AbstractFlags a) noexcept
 {
-    return static_cast<AbstractFlags>(~static_cast<unsigned>(a));
+    return (AbstractFlags)(~(unsigned)(a));
 }
 
 constexpr AbstractFlags& operator|=(AbstractFlags& a, AbstractFlags b) noexcept
@@ -36,19 +36,19 @@ constexpr AbstractFlags& operator&=(AbstractFlags& a, AbstractFlags b) noexcept
 // SpotlightFlags
 constexpr SpotlightFlags operator|(SpotlightFlags a, SpotlightFlags b) noexcept
 {
-    return static_cast<SpotlightFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (SpotlightFlags)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr SpotlightFlags operator&(SpotlightFlags a, SpotlightFlags b) noexcept
 {
-    return static_cast<SpotlightFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (SpotlightFlags)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr SpotlightFlags operator~(SpotlightFlags a) noexcept
 {
-    return static_cast<SpotlightFlags>(~static_cast<unsigned>(a));
+    return (SpotlightFlags)(~(unsigned)(a));
 }
 
 constexpr SpotlightFlags& operator|=(SpotlightFlags& a, SpotlightFlags b) noexcept
@@ -66,19 +66,19 @@ constexpr SpotlightFlags& operator&=(SpotlightFlags& a, SpotlightFlags b) noexce
 // SoundType
 constexpr SoundType operator|(SoundType a, SoundType b) noexcept
 {
-    return static_cast<SoundType>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (SoundType)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr SoundType operator&(SoundType a, SoundType b) noexcept
 {
-    return static_cast<SoundType>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (SoundType)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr SoundType operator~(SoundType a) noexcept
 {
-    return static_cast<SoundType>(~static_cast<unsigned>(a));
+    return (SoundType)(~(unsigned)(a));
 }
 
 constexpr SoundType& operator|=(SoundType& a, SoundType b) noexcept
@@ -96,19 +96,19 @@ constexpr SoundType& operator&=(SoundType& a, SoundType b) noexcept
 // SoundControl
 constexpr SoundControl operator|(SoundControl a, SoundControl b) noexcept
 {
-    return static_cast<SoundControl>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (SoundControl)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr SoundControl operator&(SoundControl a, SoundControl b) noexcept
 {
-    return static_cast<SoundControl>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (SoundControl)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr SoundControl operator~(SoundControl a) noexcept
 {
-    return static_cast<SoundControl>(~static_cast<unsigned>(a));
+    return (SoundControl)(~(unsigned)(a));
 }
 
 constexpr SoundControl& operator|=(SoundControl& a, SoundControl b) noexcept
@@ -126,19 +126,19 @@ constexpr SoundControl& operator&=(SoundControl& a, SoundControl b) noexcept
 // TargetFlags
 constexpr TargetFlags operator|(TargetFlags a, TargetFlags b) noexcept
 {
-    return static_cast<TargetFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (TargetFlags)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr TargetFlags operator&(TargetFlags a, TargetFlags b) noexcept
 {
-    return static_cast<TargetFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (TargetFlags)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr TargetFlags operator~(TargetFlags a) noexcept
 {
-    return static_cast<TargetFlags>(~static_cast<unsigned>(a));
+    return (TargetFlags)(~(unsigned)(a));
 }
 
 constexpr TargetFlags& operator|=(TargetFlags& a, TargetFlags b) noexcept
@@ -156,19 +156,19 @@ constexpr TargetFlags& operator&=(TargetFlags& a, TargetFlags b) noexcept
 // BlitterFlags
 constexpr BlitterFlags operator|(BlitterFlags a, BlitterFlags b) noexcept
 {
-    return static_cast<BlitterFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
+    return (BlitterFlags)(
+        (unsigned)(a) | (unsigned)(b));
 }
 
 constexpr BlitterFlags operator&(BlitterFlags a, BlitterFlags b) noexcept
 {
-    return static_cast<BlitterFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
+    return (BlitterFlags)(
+        (unsigned)(a) & (unsigned)(b));
 }
 
 constexpr BlitterFlags operator~(BlitterFlags a) noexcept
 {
-    return static_cast<BlitterFlags>(~static_cast<unsigned>(a));
+    return (BlitterFlags)(~(unsigned)(a));
 }
 
 constexpr BlitterFlags& operator|=(BlitterFlags& a, BlitterFlags b) noexcept
@@ -186,19 +186,19 @@ constexpr BlitterFlags& operator&=(BlitterFlags& a, BlitterFlags b) noexcept
 // MouseEvent
 constexpr MouseEvent operator|(MouseEvent a, MouseEvent b) noexcept
 {
-    return static_cast<MouseEvent>(
-        static_cast<unsigned char>(a) | static_cast<unsigned char>(b));
+    return (MouseEvent)(
+        (unsigned char)(a) | (unsigned char)(b));
 }
 
 constexpr MouseEvent operator&(MouseEvent a, MouseEvent b) noexcept
 {
-    return static_cast<MouseEvent>(
-        static_cast<unsigned char>(a) & static_cast<unsigned char>(b));
+    return (MouseEvent)(
+        (unsigned char)(a) & (unsigned char)(b));
 }
 
 constexpr MouseEvent operator~(MouseEvent a) noexcept
 {
-    return static_cast<MouseEvent>(~static_cast<unsigned char>(a));
+    return (MouseEvent)(~(unsigned char)(a));
 }
 
 constexpr MouseEvent& operator|=(MouseEvent& a, MouseEvent b) noexcept
