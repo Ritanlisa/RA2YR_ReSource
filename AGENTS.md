@@ -459,6 +459,17 @@ python tools/pre_translate.py --class UnitClass 0x743A50
 
 ### 代码质量门控系统（Clang AST）
 
+**目的：** 门控系统强制执行翻译阶段的质量红线——禁止裸指针算术、禁止类型越狱、禁止添加新符号、禁止头文件实现、禁止 IDA 产物命名。这不是建议，是硬性阻塞。通过门控是编译的前提条件。
+
+**⚠️ 严禁绕过门控：** 以下行为属于蓄意欺诈，一经发现全部驳回：
+- 把裸偏移放到 `.hpp` 的 inline 函数里（门控查不到 .hpp）
+- 用 `union { int; Type*; }` 绕类型系统
+- 用 `std::bit_cast` / `memcpy` 做越狱转换
+- 用 `#if 0` 把原始反编译藏起来假装翻译了
+- 在函数体内定义新 struct/class 绕开类型检查
+- 用 `goto` 跳转、`__asm` 内联汇编、函数指针强转
+**门控检查所有修改过的文件（.cpp + .hpp），不是只查 .cpp。绕过门控的代码会在下一轮检查中被发现。**
+
 **概述：** `cmake --build build_win` 在每次编译前自动运行代码质量门控检查。检查器使用 Clang AST（非正则）分析所有从 `auto-fill-baseline` 修改过的 .cpp 函数和 .hpp 文件。
 
 **运行方式：**
@@ -588,14 +599,23 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 2. `reinterpret_cast<Type*>(val)` → 禁止。先检查为什么需要重新解释内存——应该用成员访问。
 
 #### translation-incomplete（翻译不完整）
-**问题**：函数被标记为“翻译不完整”。来自 `verify_execution_flow.py` 的 exec-flow 门控。
+**问题**：函数被标记为"翻译不完整"。来自 `verify_execution_flow.py` 的 exec-flow 门控。
 **原因**：C++ 实现的控制流图（CFG）与 IDA 二进制伪代码不匹配——缺少虚调用、全局读取、或控制流分支。
-**修复步骤**：
-1. 运行 `python tools/verify_execution_flow.py 0xADDR --verbose` 查看缺失的操作
-2. `CALL(vfptr+NNN)` 缺失 → 需要添加虚函数调用。运行 `python -c "import json; d=json.load(open('tools/vtable_offsets.json')); bc=d.get('ClassName',{}); print([k for k,v in bc.items() if v==NNN])"` 查找该偏移对应的方法名
-3. `READ(global,0xADDR)` 缺失 → 添加全局变量读取。检查 `src/structure/globals_*.hpp` 或 `src/app/cmdline.hpp` 中的 `extern` 声明
-4. `CALL(0xADDR)` 缺失 → 添加直接函数调用。用 IDA MCP 查函数名
-5. 控制流分支不匹配 → 确保 C++ 的 `if/else` 结构与二进制一致
+
+**⚠️ 门控不会告诉你具体缺什么。** 门控只报"翻译不完整"这一句话。Agent 必须自己对比 C++ 代码和 IDA 反编译来发现缺失。
+
+**手动对比流程**：
+1. 从 IDA 获取反编译：`ida-pro-mcp_decompile 0xADDR`
+2. 仔细阅读 C++ 实现和 IDA 伪代码，逐行对比
+3. 检查每一个 CALL、READ、WRITE 操作是否都出现在了 C++ 代码中
+4. 常见的缺失类型：
+   - IDA 有 `CALL(vfptr+NNN)` 但 C++ 没有 → 虚函数调用丢失。查 vtable_offsets.json 找到方法名
+   - IDA 有 `READ(global,0xADDR)` 但 C++ 没有 → 全局变量读取丢失。查 globals_*.hpp 或 cmdline.hpp
+   - IDA 有 `CALL(0xADDR)` 但 C++ 没有 → 直接函数调用丢失。用 IDA MCP 查函数名
+   - IDA 有 5 个分支但 C++ 只有 3 个 → 缺少 `else if` 或条件判断
+5. 修复后验证：`python tools/verify_execution_flow.py 0xADDR`
+
+**注意**：`--verbose` 仅用于调试门控本身，不能用来修复翻译。Agent 必须自己对 IDA 做手动对照。**忽略门控报错直接提交的代码会被用户驳回重做。**
 
 ### 从原始偏移定位类成员（详细流程）
 1. **运行 pre_translate.py**：`python tools/pre_translate.py ClassName::FuncName`
