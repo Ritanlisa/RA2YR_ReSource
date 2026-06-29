@@ -463,22 +463,6 @@ class TypeInferenceEngine:
                 self.adjacency[fid].add(tid)
                 self.adjacency[tid].add(fid)
 
-        # ── Also connect function return edges from call_graph ──
-        # For each caller→callee, connect RET site of caller ← RET site of callee
-        for caller_addr_str, callees in self.call_graph.items():
-            caller_ret_var = caller_addr_str + "_RET"
-            caller_ret_id = self.var_to_id.get(caller_ret_var)
-            if caller_ret_id is None:
-                continue
-            for callee_info in callees:
-                callee_addr_str = callee_info.get("to", "")
-                callee_ret_var = callee_addr_str + "_RET"
-                callee_ret_id = self.var_to_id.get(callee_ret_var)
-                if callee_ret_id is None:
-                    continue
-                self.adjacency[caller_ret_id].add(callee_ret_id)
-                self.adjacency[callee_ret_id].add(caller_ret_id)
-
         # ── Set anchor labels on equivalence classes ──
         for anchor in self.anchors:
             root = self.uf.find(anchor.var_id)

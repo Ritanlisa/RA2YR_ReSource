@@ -280,7 +280,7 @@ def extract_instruction_constraints(func_ea, func_name):
                         callee_name = ida_funcs.get_func_name(target_ea)
                         if callee_name:
                             constraint = {
-                                "from": f"0x{func_ea:08X}",
+                                "from": f"0x{ea:08X}_call",
                                 "to": f"0x{target_ea:08X}",
                                 "type": "CALL",
                                 "addr": f"0x{ea:08X}",
@@ -289,7 +289,7 @@ def extract_instruction_constraints(func_ea, func_name):
                             }
                         else:
                             constraint = {
-                                "from": f"0x{func_ea:08X}",
+                                "from": f"0x{ea:08X}_call",
                                 "to": f"0x{target_ea:08X}",
                                 "type": "CALL",
                                 "addr": f"0x{ea:08X}",
@@ -307,7 +307,7 @@ def extract_instruction_constraints(func_ea, func_name):
                         offset = int(m.group(2), 16)
                         slot = offset // 4
                         constraint = {
-                            "from": f"0x{func_ea:08X}",
+                            "from": f"0x{ea:08X}_call",
                             "to": f"vtable_slot_{slot:#x}",
                             "type": "CALL_VTABLE",
                             "addr": f"0x{ea:08X}",
