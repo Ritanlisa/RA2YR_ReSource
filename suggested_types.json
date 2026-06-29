@@ -1,0 +1,2951 @@
+{
+  "_summary": {
+    "confidence_distribution": {
+      "ANCHORED": 323
+    },
+    "generated_by": "tools/type_infer/generate_suggested.py (T12)",
+    "source_file": "type_map.json",
+    "total_suggestions": 323,
+    "type_distribution": {
+      "AircraftTypeClass*": 2,
+      "AnimTypeClass*": 2,
+      "BuildingClass*": 9,
+      "BuildingTypeClass*": 40,
+      "CDTimerClass*": 2,
+      "CellClass*": 25,
+      "FactoryClass*": 7,
+      "FootClass*": 10,
+      "GenericNode*": 17,
+      "HouseClass*": 48,
+      "HouseTypeClass*": 5,
+      "INILinkNode*": 12,
+      "InfantryTypeClass*": 20,
+      "LightSourceClass*": 4,
+      "MPGameModeClass*": 13,
+      "ObjectClass*": 10,
+      "RadSiteClass*": 2,
+      "SHPStruct*": 6,
+      "ScoreStruct*": 2,
+      "ScriptTypeClass*": 3,
+      "SpawnManagerClass*": 8,
+      "State*": 16,
+      "TagClass*": 12,
+      "TagTypeClass*": 8,
+      "TeamTypeClass*": 9,
+      "TechnoClass*": 7,
+      "TechnoTypeClass*": 2,
+      "TintStruct*": 4,
+      "TriggerClass*": 4,
+      "UnitTypeClass*": 12
+    }
+  },
+  "suggestions": {
+    "0x004071C0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "evidence": [
+        "0x004071C0: fastcall arg via EDX"
+      ],
+      "source_key": "0x004071C0::edx",
+      "type": "GenericNode*"
+    },
+    "0x004071C0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "evidence": [
+        "0x004071C0: return/assignment via EAX"
+      ],
+      "source_key": "0x004071C0::eax",
+      "type": "GenericNode*"
+    },
+    "0x0040E270.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27862,
+      "evidence": [
+        "0x0040E270: fastcall arg via EDX"
+      ],
+      "source_key": "0x0040E270::edx",
+      "type": "GenericNode*"
+    },
+    "0x0041A160.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "evidence": [
+        "0x0041A160: fastcall arg via EDX"
+      ],
+      "source_key": "0x0041A160::edx",
+      "type": "TechnoClass*"
+    },
+    "0x00423AC0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "0x00423AC0: fastcall arg via EDX"
+      ],
+      "source_key": "0x00423AC0::edx",
+      "type": "SpawnManagerClass*"
+    },
+    "0x00423AC0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "evidence": [
+        "0x00423AC0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00423AC0::ecx",
+      "type": "TechnoClass*"
+    },
+    "0x00428B80.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24295,
+      "evidence": [
+        "0x00428B80: return/assignment via EAX"
+      ],
+      "source_key": "0x00428B80::eax",
+      "type": "AnimTypeClass*"
+    },
+    "0x00447E90.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24968,
+      "evidence": [
+        "0x00447E90: return/assignment via EAX"
+      ],
+      "source_key": "0x00447E90::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00449440.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24788,
+      "evidence": [
+        "0x00449440: return/assignment via EAX"
+      ],
+      "source_key": "0x00449440::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x0044D700.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 24781,
+      "evidence": [
+        "0x0044D700: propagation via ESI"
+      ],
+      "source_key": "0x0044D700::esi",
+      "type": "BuildingTypeClass*"
+    },
+    "0x0044F640.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24796,
+      "evidence": [
+        "0x0044F640: return/assignment via EAX"
+      ],
+      "source_key": "0x0044F640::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00451330.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 24928,
+      "evidence": [
+        "0x00451330: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00451330::ecx",
+      "type": "BuildingTypeClass*"
+    },
+    "0x004526F0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24833,
+      "evidence": [
+        "0x004526F0: return/assignment via EAX"
+      ],
+      "source_key": "0x004526F0::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00455980.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "evidence": [
+        "0x00455980: return/assignment via EAX"
+      ],
+      "source_key": "0x00455980::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00455D50.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24713,
+      "evidence": [
+        "0x00455D50: return/assignment via EAX"
+      ],
+      "source_key": "0x00455D50::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x004575B0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 24854,
+      "evidence": [
+        "0x004575B0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x004575B0::ecx",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00458DD0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24710,
+      "evidence": [
+        "0x00458DD0: return/assignment via EAX"
+      ],
+      "source_key": "0x00458DD0::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x004595C0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "0x004595C0: return/assignment via EAX"
+      ],
+      "source_key": "0x004595C0::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x00459CA0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "evidence": [
+        "0x00459CA0: return/assignment via EAX"
+      ],
+      "source_key": "0x00459CA0::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x0045EC20.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "evidence": [
+        "0x0045EC20: return/assignment via EAX"
+      ],
+      "source_key": "0x0045EC20::eax",
+      "type": "SHPStruct*"
+    },
+    "0x00464AC0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25125,
+      "evidence": [
+        "0x00464AC0: return/assignment via EAX"
+      ],
+      "source_key": "0x00464AC0::eax",
+      "type": "SHPStruct*"
+    },
+    "0x00472160.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "evidence": [
+        "0x00472160: return/assignment via EAX"
+      ],
+      "source_key": "0x00472160::eax",
+      "type": "HouseClass*"
+    },
+    "0x004723B0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25412,
+      "evidence": [
+        "0x004723B0: propagation via ESI"
+      ],
+      "source_key": "0x004723B0::esi",
+      "type": "HouseClass*"
+    },
+    "0x004723B0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "0x004723B0: return/assignment via EAX"
+      ],
+      "source_key": "0x004723B0::eax",
+      "type": "HouseClass*"
+    },
+    "0x004733A0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "evidence": [
+        "0x004733A0: return/assignment via EAX"
+      ],
+      "source_key": "0x004733A0::eax",
+      "type": "GenericNode*"
+    },
+    "0x00476020.cl": {
+      "confidence": "ANCHORED",
+      "eq_root": 27239,
+      "evidence": [
+        "0x00476020: propagation via CL"
+      ],
+      "source_key": "0x00476020::cl",
+      "type": "INILinkNode*"
+    },
+    "0x0047C550.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "evidence": [
+        "0x0047C550: propagation via ESI"
+      ],
+      "source_key": "0x0047C550::esi",
+      "type": "ObjectClass*"
+    },
+    "0x0047EBA0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "evidence": [
+        "0x0047EBA0: propagation via ESI"
+      ],
+      "source_key": "0x0047EBA0::esi",
+      "type": "ObjectClass*"
+    },
+    "0x0047FF80.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25539,
+      "evidence": [
+        "0x0047FF80: fastcall arg via EDX"
+      ],
+      "source_key": "0x0047FF80::edx",
+      "type": "TagClass*"
+    },
+    "0x00483480.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25507,
+      "evidence": [
+        "0x00483480: propagation via ESI"
+      ],
+      "source_key": "0x00483480::esi",
+      "type": "ObjectClass*"
+    },
+    "0x00485590.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "evidence": [
+        "0x00485590: fastcall arg via EDX"
+      ],
+      "source_key": "0x00485590::edx",
+      "type": "CellClass*"
+    },
+    "0x00486890.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 25490,
+      "evidence": [
+        "0x00486890: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00486890::ecx",
+      "type": "CellClass*"
+    },
+    "0x0048B750.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "0x0048B750: propagation via ESI"
+      ],
+      "source_key": "0x0048B750::esi",
+      "type": "BuildingTypeClass*"
+    },
+    "0x0048B750.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "0x0048B750: return/assignment via EAX"
+      ],
+      "source_key": "0x0048B750::eax",
+      "type": "BuildingTypeClass*"
+    },
+    "0x004AF610.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27666,
+      "evidence": [
+        "0x004AF610: fastcall arg via EDX"
+      ],
+      "source_key": "0x004AF610::edx",
+      "type": "State*"
+    },
+    "0x004AF8E0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27732,
+      "evidence": [
+        "0x004AF8E0: fastcall arg via EDX"
+      ],
+      "source_key": "0x004AF8E0::edx",
+      "type": "State*"
+    },
+    "0x004AF8E0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27734,
+      "evidence": [
+        "0x004AF8E0: return/assignment via EAX"
+      ],
+      "source_key": "0x004AF8E0::eax",
+      "type": "State*"
+    },
+    "0x004B4CC0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27656,
+      "evidence": [
+        "0x004B4CC0: fastcall arg via EDX"
+      ],
+      "source_key": "0x004B4CC0::edx",
+      "type": "State*"
+    },
+    "0x004C9160.edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 26406,
+      "evidence": [
+        "0x004C9160: propagation via EDI"
+      ],
+      "source_key": "0x004C9160::edi",
+      "type": "CDTimerClass*"
+    },
+    "0x004F7870.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "evidence": [
+        "0x004F7870: fastcall arg via EDX"
+      ],
+      "source_key": "0x004F7870::edx",
+      "type": "HouseTypeClass*"
+    },
+    "0x004FEA60.ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 26915,
+      "evidence": [
+        "0x004FEA60: propagation via EBX"
+      ],
+      "source_key": "0x004FEA60::ebx",
+      "type": "BuildingClass*"
+    },
+    "0x005004E0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "0x005004E0: return/assignment via EAX"
+      ],
+      "source_key": "0x005004E0::eax",
+      "type": "FactoryClass*"
+    },
+    "0x00508F60.al": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "evidence": [
+        "0x00508F60: propagation via AL"
+      ],
+      "source_key": "0x00508F60::al",
+      "type": "BuildingClass*"
+    },
+    "0x00509F60.al": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "evidence": [
+        "0x00509F60: propagation via AL"
+      ],
+      "source_key": "0x00509F60::al",
+      "type": "BuildingClass*"
+    },
+    "0x00512680.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27191,
+      "evidence": [
+        "0x00512680: return/assignment via EAX"
+      ],
+      "source_key": "0x00512680::eax",
+      "type": "AircraftTypeClass*"
+    },
+    "0x0051F800.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "evidence": [
+        "0x0051F800: return/assignment via EAX"
+      ],
+      "source_key": "0x0051F800::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x0051F800.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "evidence": [
+        "0x0051F800: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x0051F800::ecx",
+      "type": "InfantryTypeClass*"
+    },
+    "0x00521C10.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27475,
+      "evidence": [
+        "0x00521C10: return/assignment via EAX"
+      ],
+      "source_key": "0x00521C10::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x00522340.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "evidence": [
+        "0x00522340: return/assignment via EAX"
+      ],
+      "source_key": "0x00522340::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x00522600.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27380,
+      "evidence": [
+        "0x00522600: return/assignment via EAX"
+      ],
+      "source_key": "0x00522600::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x00522700.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "evidence": [
+        "0x00522700: return/assignment via EAX"
+      ],
+      "source_key": "0x00522700::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x005227F0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "evidence": [
+        "0x005227F0: return/assignment via EAX"
+      ],
+      "source_key": "0x005227F0::eax",
+      "type": "InfantryTypeClass*"
+    },
+    "0x005257C0.edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27227,
+      "evidence": [
+        "0x005257C0: propagation via EDI"
+      ],
+      "source_key": "0x005257C0::edi",
+      "type": "INILinkNode*"
+    },
+    "0x00529880.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 27241,
+      "evidence": [
+        "0x00529880: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00529880::ecx",
+      "type": "INILinkNode*"
+    },
+    "0x00529CA0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27242,
+      "evidence": [
+        "0x00529CA0: propagation via ESI"
+      ],
+      "source_key": "0x00529CA0::esi",
+      "type": "INILinkNode*"
+    },
+    "0x0052B430.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27246,
+      "evidence": [
+        "0x0052B430: return/assignment via EAX"
+      ],
+      "source_key": "0x0052B430::eax",
+      "type": "INILinkNode*"
+    },
+    "0x00535A70.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27232,
+      "evidence": [
+        "0x00535A70: propagation via ESI"
+      ],
+      "source_key": "0x00535A70::esi",
+      "type": "INILinkNode*"
+    },
+    "0x00556600.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "evidence": [
+        "0x00556600: return/assignment via EAX"
+      ],
+      "source_key": "0x00556600::eax",
+      "type": "GenericNode*"
+    },
+    "0x005566A0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27859,
+      "evidence": [
+        "0x005566A0: return/assignment via EAX"
+      ],
+      "source_key": "0x005566A0::eax",
+      "type": "GenericNode*"
+    },
+    "0x00565C10.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 25581,
+      "evidence": [
+        "0x00565C10: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00565C10::ecx",
+      "type": "CellClass*"
+    },
+    "0x0056D5A0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "evidence": [
+        "0x0056D5A0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0056D5A0::edx",
+      "type": "TagClass*"
+    },
+    "0x0056D5A0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 25512,
+      "evidence": [
+        "0x0056D5A0: return/assignment via EAX"
+      ],
+      "source_key": "0x0056D5A0::eax",
+      "type": "RadSiteClass*"
+    },
+    "0x0057BCF0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "evidence": [
+        "0x0057BCF0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0057BCF0::edx",
+      "type": "CellClass*"
+    },
+    "0x0057C2B0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "evidence": [
+        "0x0057C2B0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0057C2B0::edx",
+      "type": "CellClass*"
+    },
+    "0x0057CF60.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "evidence": [
+        "0x0057CF60: fastcall arg via EDX"
+      ],
+      "source_key": "0x0057CF60::edx",
+      "type": "CellClass*"
+    },
+    "0x0057D530.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "evidence": [
+        "0x0057D530: fastcall arg via EDX"
+      ],
+      "source_key": "0x0057D530::edx",
+      "type": "CellClass*"
+    },
+    "0x0057F6A0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "evidence": [
+        "0x0057F6A0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0057F6A0::edx",
+      "type": "CellClass*"
+    },
+    "0x005800D0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "evidence": [
+        "0x005800D0: fastcall arg via EDX"
+      ],
+      "source_key": "0x005800D0::edx",
+      "type": "CellClass*"
+    },
+    "0x005D70F0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 26910,
+      "evidence": [
+        "0x005D70F0: fastcall arg via EDX"
+      ],
+      "source_key": "0x005D70F0::edx",
+      "type": "ScoreStruct*"
+    },
+    "0x005F5940.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 28840,
+      "evidence": [
+        "0x005F5940: return/assignment via EAX"
+      ],
+      "source_key": "0x005F5940::eax",
+      "type": "TagClass*"
+    },
+    "0x00625AB0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27864,
+      "evidence": [
+        "0x00625AB0: fastcall arg via EDX"
+      ],
+      "source_key": "0x00625AB0::edx",
+      "type": "GenericNode*"
+    },
+    "0x006339B0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30550,
+      "evidence": [
+        "0x006339B0: propagation via ESI"
+      ],
+      "source_key": "0x006339B0::esi",
+      "type": "HouseClass*"
+    },
+    "0x00635A40.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30541,
+      "evidence": [
+        "0x00635A40: propagation via ESI"
+      ],
+      "source_key": "0x00635A40::esi",
+      "type": "HouseClass*"
+    },
+    "0x00635C10.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30570,
+      "evidence": [
+        "0x00635C10: fastcall arg via EDX"
+      ],
+      "source_key": "0x00635C10::edx",
+      "type": "HouseClass*"
+    },
+    "0x00635C10.edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30569,
+      "evidence": [
+        "0x00635C10: propagation via EDI"
+      ],
+      "source_key": "0x00635C10::edi",
+      "type": "TeamTypeClass*"
+    },
+    "0x00635C10.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30552,
+      "evidence": [
+        "0x00635C10: propagation via ESI"
+      ],
+      "source_key": "0x00635C10::esi",
+      "type": "HouseClass*"
+    },
+    "0x00635F80.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 26417,
+      "evidence": [
+        "0x00635F80: propagation via ESI"
+      ],
+      "source_key": "0x00635F80::esi",
+      "type": "TechnoTypeClass*"
+    },
+    "0x00636120.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30568,
+      "evidence": [
+        "0x00636120: propagation via ESI"
+      ],
+      "source_key": "0x00636120::esi",
+      "type": "HouseClass*"
+    },
+    "0x0065B800.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29231,
+      "evidence": [
+        "0x0065B800: return/assignment via EAX"
+      ],
+      "source_key": "0x0065B800::eax",
+      "type": "LightSourceClass*"
+    },
+    "0x0065BE90.ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29210,
+      "evidence": [
+        "0x0065BE90: propagation via EBX"
+      ],
+      "source_key": "0x0065BE90::ebx",
+      "type": "LightSourceClass*"
+    },
+    "0x0065BE90.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "evidence": [
+        "0x0065BE90: return/assignment via EAX"
+      ],
+      "source_key": "0x0065BE90::eax",
+      "type": "TintStruct*"
+    },
+    "0x0067A6E0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29426,
+      "evidence": [
+        "0x0067A6E0: return/assignment via EAX"
+      ],
+      "source_key": "0x0067A6E0::eax",
+      "type": "UnitTypeClass*"
+    },
+    "0x0067A770.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29423,
+      "evidence": [
+        "0x0067A770: return/assignment via EAX"
+      ],
+      "source_key": "0x0067A770::eax",
+      "type": "UnitTypeClass*"
+    },
+    "0x0067A850.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29428,
+      "evidence": [
+        "0x0067A850: return/assignment via EAX"
+      ],
+      "source_key": "0x0067A850::eax",
+      "type": "UnitTypeClass*"
+    },
+    "0x006914E0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "evidence": [
+        "0x006914E0: fastcall arg via EDX"
+      ],
+      "source_key": "0x006914E0::edx",
+      "type": "ScriptTypeClass*"
+    },
+    "0x006914E0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "evidence": [
+        "0x006914E0: return/assignment via EAX"
+      ],
+      "source_key": "0x006914E0::eax",
+      "type": "HouseClass*"
+    },
+    "0x006914E0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "evidence": [
+        "0x006914E0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006914E0::ecx",
+      "type": "TeamTypeClass*"
+    },
+    "0x0069C4A0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 29653,
+      "evidence": [
+        "0x0069C4A0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0069C4A0::edx",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069C4A0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29648,
+      "evidence": [
+        "0x0069C4A0: return/assignment via EAX"
+      ],
+      "source_key": "0x0069C4A0::eax",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069C6C0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 29622,
+      "evidence": [
+        "0x0069C6C0: return/assignment via EAX"
+      ],
+      "source_key": "0x0069C6C0::eax",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069C800.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "evidence": [
+        "0x0069C800: fastcall arg via EDX"
+      ],
+      "source_key": "0x0069C800::edx",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069C800.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 29655,
+      "evidence": [
+        "0x0069C800: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x0069C800::ecx",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069C890.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 29646,
+      "evidence": [
+        "0x0069C890: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x0069C890::ecx",
+      "type": "MPGameModeClass*"
+    },
+    "0x0069ED20.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27672,
+      "evidence": [
+        "0x0069ED20: fastcall arg via EDX"
+      ],
+      "source_key": "0x0069ED20::edx",
+      "type": "State*"
+    },
+    "0x0069EFF0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27739,
+      "evidence": [
+        "0x0069EFF0: fastcall arg via EDX"
+      ],
+      "source_key": "0x0069EFF0::edx",
+      "type": "State*"
+    },
+    "0x0069EFF0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 27741,
+      "evidence": [
+        "0x0069EFF0: return/assignment via EAX"
+      ],
+      "source_key": "0x0069EFF0::eax",
+      "type": "State*"
+    },
+    "0x006A4270.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27657,
+      "evidence": [
+        "0x006A4270: fastcall arg via EDX"
+      ],
+      "source_key": "0x006A4270::edx",
+      "type": "State*"
+    },
+    "0x006B7230.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "0x006B7230: fastcall arg via EDX"
+      ],
+      "source_key": "0x006B7230::edx",
+      "type": "UnitTypeClass*"
+    },
+    "0x006B7230.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "0x006B7230: return/assignment via EAX"
+      ],
+      "source_key": "0x006B7230::eax",
+      "type": "UnitTypeClass*"
+    },
+    "0x006E5300.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30477,
+      "evidence": [
+        "0x006E5300: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006E5300::ecx",
+      "type": "TagTypeClass*"
+    },
+    "0x006E5320.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30475,
+      "evidence": [
+        "0x006E5320: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006E5320::ecx",
+      "type": "TagTypeClass*"
+    },
+    "0x006E5340.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30480,
+      "evidence": [
+        "0x006E5340: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006E5340::ecx",
+      "type": "TagTypeClass*"
+    },
+    "0x006E5570.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30470,
+      "evidence": [
+        "0x006E5570: fastcall arg via EDX"
+      ],
+      "source_key": "0x006E5570::edx",
+      "type": "TriggerClass*"
+    },
+    "0x006E57F0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 27129,
+      "evidence": [
+        "0x006E57F0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006E57F0::ecx",
+      "type": "HouseTypeClass*"
+    },
+    "0x006E5820.ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30481,
+      "evidence": [
+        "0x006E5820: propagation via EBX"
+      ],
+      "source_key": "0x006E5820::ebx",
+      "type": "TagTypeClass*"
+    },
+    "0x006E8DE0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30536,
+      "evidence": [
+        "0x006E8DE0: return/assignment via EAX"
+      ],
+      "source_key": "0x006E8DE0::eax",
+      "type": "HouseClass*"
+    },
+    "0x006EAA90.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30566,
+      "evidence": [
+        "0x006EAA90: return/assignment via EAX"
+      ],
+      "source_key": "0x006EAA90::eax",
+      "type": "TeamTypeClass*"
+    },
+    "0x006EAEE0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "evidence": [
+        "0x006EAEE0: fastcall arg via EDX"
+      ],
+      "source_key": "0x006EAEE0::edx",
+      "type": "FootClass*"
+    },
+    "0x006EDCA0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30584,
+      "evidence": [
+        "0x006EDCA0: propagation via ESI"
+      ],
+      "source_key": "0x006EDCA0::esi",
+      "type": "FootClass*"
+    },
+    "0x006EFA10.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30579,
+      "evidence": [
+        "0x006EFA10: propagation via ESI"
+      ],
+      "source_key": "0x006EFA10::esi",
+      "type": "FootClass*"
+    },
+    "0x006F0130.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30527,
+      "evidence": [
+        "0x006F0130: propagation via ESI"
+      ],
+      "source_key": "0x006F0130::esi",
+      "type": "FootClass*"
+    },
+    "0x006F79A0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30792,
+      "evidence": [
+        "0x006F79A0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006F79A0::ecx",
+      "type": "HouseClass*"
+    },
+    "0x006F8DF0.edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "0x006F8DF0: propagation via EDI"
+      ],
+      "source_key": "0x006F8DF0::edi",
+      "type": "HouseClass*"
+    },
+    "0x006F8DF0.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "0x006F8DF0: return/assignment via EAX"
+      ],
+      "source_key": "0x006F8DF0::eax",
+      "type": "HouseClass*"
+    },
+    "0x006F8DF0.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "0x006F8DF0: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x006F8DF0::ecx",
+      "type": "HouseClass*"
+    },
+    "0x00701900.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "evidence": [
+        "0x00701900: fastcall arg via EDX"
+      ],
+      "source_key": "0x00701900::edx",
+      "type": "HouseClass*"
+    },
+    "0x00701900.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "evidence": [
+        "0x00701900: return/assignment via EAX"
+      ],
+      "source_key": "0x00701900::eax",
+      "type": "HouseClass*"
+    },
+    "0x007077C0.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 28824,
+      "evidence": [
+        "0x007077C0: fastcall arg via EDX"
+      ],
+      "source_key": "0x007077C0::edx",
+      "type": "ObjectClass*"
+    },
+    "0x0070B1D0.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30928,
+      "evidence": [
+        "0x0070B1D0: propagation via ESI"
+      ],
+      "source_key": "0x0070B1D0::esi",
+      "type": "HouseClass*"
+    },
+    "0x0070FD70.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 30891,
+      "evidence": [
+        "0x0070FD70: fastcall arg via EDX"
+      ],
+      "source_key": "0x0070FD70::edx",
+      "type": "ParticleSystemClass*"
+    },
+    "0x00726E00.arg0": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "evidence": [
+        "0x00726E00: fastcall arg via EDX"
+      ],
+      "source_key": "0x00726E00::edx",
+      "type": "TagClass*"
+    },
+    "0x00726E00.esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 31212,
+      "evidence": [
+        "0x00726E00: propagation via ESI"
+      ],
+      "source_key": "0x00726E00::esi",
+      "type": "TriggerClass*"
+    },
+    "0x00732580.ret": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "evidence": [
+        "0x00732580: return/assignment via EAX"
+      ],
+      "source_key": "0x00732580::eax",
+      "type": "HouseClass*"
+    },
+    "0x00732580.this": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "evidence": [
+        "0x00732580: thiscall ECX (this pointer)"
+      ],
+      "source_key": "0x00732580::ecx",
+      "type": "HouseClass*"
+    },
+    "AnimTypeClass::GetAnimData.this.member(0x2c8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24295,
+      "evidence": [
+        "AnimTypeClass::GetAnimData: member at +0x2c8"
+      ],
+      "source_key": "AnimTypeClass::GetAnimData.this.member(0x2c8)",
+      "type": "AnimTypeClass*"
+    },
+    "BuildingClass::CheckMissionGuard.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24710,
+      "evidence": [
+        "BuildingClass::CheckMissionGuard: member at +0x520"
+      ],
+      "source_key": "BuildingClass::CheckMissionGuard.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::CheckSpecialUpdateFlags.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24713,
+      "evidence": [
+        "BuildingClass::CheckSpecialUpdateFlags: member at +0x520"
+      ],
+      "source_key": "BuildingClass::CheckSpecialUpdateFlags.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::GetAmmoCountScaled.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24781,
+      "evidence": [
+        "BuildingClass::GetAmmoCountScaled: member at +0x520"
+      ],
+      "source_key": "BuildingClass::GetAmmoCountScaled.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::GetCursorAction.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24788,
+      "evidence": [
+        "BuildingClass::GetCursorAction: member at +0x520"
+      ],
+      "source_key": "BuildingClass::GetCursorAction.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::GetFactoryPosition.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24796,
+      "evidence": [
+        "BuildingClass::GetFactoryPosition: member at +0x520"
+      ],
+      "source_key": "BuildingClass::GetFactoryPosition.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::GetTypeField60.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "evidence": [
+        "BuildingClass::GetTypeField60: member at +0x520"
+      ],
+      "source_key": "BuildingClass::GetTypeField60.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::GetTypePtr.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "evidence": [
+        "BuildingClass::GetTypePtr: member at +0x520"
+      ],
+      "source_key": "BuildingClass::GetTypePtr.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::HasOccupantAudio.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24833,
+      "evidence": [
+        "BuildingClass::HasOccupantAudio: member at +0x520"
+      ],
+      "source_key": "BuildingClass::HasOccupantAudio.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::IsFactorySelectable.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24854,
+      "evidence": [
+        "BuildingClass::IsFactorySelectable: member at +0x520"
+      ],
+      "source_key": "BuildingClass::IsFactorySelectable.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::MissionStubReturnZero.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "BuildingClass::MissionStubReturnZero: member at +0x520"
+      ],
+      "source_key": "BuildingClass::MissionStubReturnZero.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::MissionStubReturnZero2.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "BuildingClass::MissionStubReturnZero2: member at +0x520"
+      ],
+      "source_key": "BuildingClass::MissionStubReturnZero2.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::MissionStubReturnZero3.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "BuildingClass::MissionStubReturnZero3: member at +0x520"
+      ],
+      "source_key": "BuildingClass::MissionStubReturnZero3.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::ProductionCheck.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24928,
+      "evidence": [
+        "BuildingClass::ProductionCheck: member at +0x520"
+      ],
+      "source_key": "BuildingClass::ProductionCheck.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::ScanCircleForTiberium.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "evidence": [
+        "BuildingClass::ScanCircleForTiberium: member at +0x4"
+      ],
+      "source_key": "BuildingClass::ScanCircleForTiberium.this.member(0x4)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::ScanCircleForTiberium.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "evidence": [
+        "BuildingClass::ScanCircleForTiberium: member at +0x520"
+      ],
+      "source_key": "BuildingClass::ScanCircleForTiberium.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingClass::TogglePrimaryFactory.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24968,
+      "evidence": [
+        "BuildingClass::TogglePrimaryFactory: member at +0x520"
+      ],
+      "source_key": "BuildingClass::TogglePrimaryFactory.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "BuildingTypeClass::GetFoundationHeight.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "evidence": [
+        "BuildingTypeClass::GetFoundationHeight: member at +0xef0"
+      ],
+      "source_key": "BuildingTypeClass::GetFoundationHeight.this.member(0xef0)",
+      "type": "SHPStruct*"
+    },
+    "BuildingTypeClass::GetFoundationWidth.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "evidence": [
+        "BuildingTypeClass::GetFoundationWidth: member at +0xef0"
+      ],
+      "source_key": "BuildingTypeClass::GetFoundationWidth.this.member(0xef0)",
+      "type": "SHPStruct*"
+    },
+    "BuildingTypeClass::GetMaxPips.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "evidence": [
+        "BuildingTypeClass::GetMaxPips: member at +0xef0"
+      ],
+      "source_key": "BuildingTypeClass::GetMaxPips.this.member(0xef0)",
+      "type": "SHPStruct*"
+    },
+    "BuildingTypeClass::GetSizeInLeptons.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25125,
+      "evidence": [
+        "BuildingTypeClass::GetSizeInLeptons: member at +0xef0"
+      ],
+      "source_key": "BuildingTypeClass::GetSizeInLeptons.this.member(0xef0)",
+      "type": "SHPStruct*"
+    },
+    "CCINIClass::GetDB.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "evidence": [
+        "CCINIClass::GetDB: member at +0x4"
+      ],
+      "source_key": "CCINIClass::GetDB.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "CaptureManagerClass::CannotControlAnyMore.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "evidence": [
+        "CaptureManagerClass::CannotControlAnyMore: member at +0x34"
+      ],
+      "source_key": "CaptureManagerClass::CannotControlAnyMore.this.member(0x34)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::DecideUnitFate.this.member(0xc0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "CaptureManagerClass::DecideUnitFate: member at +0xc0"
+      ],
+      "source_key": "CaptureManagerClass::DecideUnitFate.this.member(0xc0)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::DrawLinks.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "evidence": [
+        "CaptureManagerClass::DrawLinks: member at +0x21c"
+      ],
+      "source_key": "CaptureManagerClass::DrawLinks.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::GetOriginalOwner.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "evidence": [
+        "CaptureManagerClass::GetOriginalOwner: member at +0x34"
+      ],
+      "source_key": "CaptureManagerClass::GetOriginalOwner.this.member(0x34)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::IsOverloading.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "CaptureManagerClass::IsOverloading: member at +0x34"
+      ],
+      "source_key": "CaptureManagerClass::IsOverloading.this.member(0x34)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::IsOverloading.this.member(0x44)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "CaptureManagerClass::IsOverloading: member at +0x44"
+      ],
+      "source_key": "CaptureManagerClass::IsOverloading.this.member(0x44)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "CaptureManagerClass::NeedsToDrawLinks: member at +0x28"
+      ],
+      "source_key": "CaptureManagerClass::NeedsToDrawLinks.this.member(0x28)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25412,
+      "evidence": [
+        "CaptureManagerClass::NeedsToDrawLinks: member at +0x34"
+      ],
+      "source_key": "CaptureManagerClass::NeedsToDrawLinks.this.member(0x34)",
+      "type": "HouseClass*"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x48)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "evidence": [
+        "CaptureManagerClass::NeedsToDrawLinks: member at +0x48"
+      ],
+      "source_key": "CaptureManagerClass::NeedsToDrawLinks.this.member(0x48)",
+      "type": "HouseClass*"
+    },
+    "CellClass::ApplyTileModification.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "evidence": [
+        "CellClass::ApplyTileModification: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "evidence": [
+        "CellClass::ApplyTileModification: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification2.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "evidence": [
+        "CellClass::ApplyTileModification2: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification2.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification2.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "evidence": [
+        "CellClass::ApplyTileModification2: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification2.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification3.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "evidence": [
+        "CellClass::ApplyTileModification3: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification3.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification3.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "evidence": [
+        "CellClass::ApplyTileModification3: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification3.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification4.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "evidence": [
+        "CellClass::ApplyTileModification4: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification4.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification4.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "evidence": [
+        "CellClass::ApplyTileModification4: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification4.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification5.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "evidence": [
+        "CellClass::ApplyTileModification5: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification5.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification5.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "evidence": [
+        "CellClass::ApplyTileModification5: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification5.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification6.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "evidence": [
+        "CellClass::ApplyTileModification6: member at +0x4"
+      ],
+      "source_key": "CellClass::ApplyTileModification6.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ApplyTileModification6.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "evidence": [
+        "CellClass::ApplyTileModification6: member at +0x8"
+      ],
+      "source_key": "CellClass::ApplyTileModification6.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::CheckProperty.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25490,
+      "evidence": [
+        "CellClass::CheckProperty: member at +0x8"
+      ],
+      "source_key": "CellClass::CheckProperty.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::DamageAllObjects.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25507,
+      "evidence": [
+        "CellClass::DamageAllObjects: member at +0xe4"
+      ],
+      "source_key": "CellClass::DamageAllObjects.this.member(0xe4)",
+      "type": "ObjectClass*"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "evidence": [
+        "CellClass::DetermineTileConnectivity: member at +0x18"
+      ],
+      "source_key": "CellClass::DetermineTileConnectivity.this.member(0x18)",
+      "type": "TagClass*"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x68)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "evidence": [
+        "CellClass::DetermineTileConnectivity: member at +0x68"
+      ],
+      "source_key": "CellClass::DetermineTileConnectivity.this.member(0x68)",
+      "type": "TagClass*"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x6c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "evidence": [
+        "CellClass::DetermineTileConnectivity: member at +0x6c"
+      ],
+      "source_key": "CellClass::DetermineTileConnectivity.this.member(0x6c)",
+      "type": "TagClass*"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0xf4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "evidence": [
+        "CellClass::DetermineTileConnectivity: member at +0xf4"
+      ],
+      "source_key": "CellClass::DetermineTileConnectivity.this.member(0xf4)",
+      "type": "TagClass*"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0xf8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25512,
+      "evidence": [
+        "CellClass::DetermineTileConnectivity: member at +0xf8"
+      ],
+      "source_key": "CellClass::DetermineTileConnectivity.this.member(0xf8)",
+      "type": "RadSiteClass*"
+    },
+    "CellClass::FindBuilding.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "evidence": [
+        "CellClass::FindBuilding: member at +0xe4"
+      ],
+      "source_key": "CellClass::FindBuilding.this.member(0xe4)",
+      "type": "ObjectClass*"
+    },
+    "CellClass::FindBuilding.this.member(0xe8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "evidence": [
+        "CellClass::FindBuilding: member at +0xe8"
+      ],
+      "source_key": "CellClass::FindBuilding.this.member(0xe8)",
+      "type": "ObjectClass*"
+    },
+    "CellClass::FindInfantry.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "evidence": [
+        "CellClass::FindInfantry: member at +0xe4"
+      ],
+      "source_key": "CellClass::FindInfantry.this.member(0xe4)",
+      "type": "ObjectClass*"
+    },
+    "CellClass::FindInfantry.this.member(0xe8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "evidence": [
+        "CellClass::FindInfantry: member at +0xe8"
+      ],
+      "source_key": "CellClass::FindInfantry.this.member(0xe8)",
+      "type": "ObjectClass*"
+    },
+    "CellClass::GetBridgeIndex.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "CellClass::GetBridgeIndex: member at +0x1c"
+      ],
+      "source_key": "CellClass::GetBridgeIndex.this.member(0x1c)",
+      "type": "BuildingTypeClass*"
+    },
+    "CellClass::GetScreenRect.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25539,
+      "evidence": [
+        "CellClass::GetScreenRect: member at +0x18"
+      ],
+      "source_key": "CellClass::GetScreenRect.this.member(0x18)",
+      "type": "TagClass*"
+    },
+    "CellClass::ProcessBridgeRepair.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "evidence": [
+        "CellClass::ProcessBridgeRepair: member at +0x4"
+      ],
+      "source_key": "CellClass::ProcessBridgeRepair.this.member(0x4)",
+      "type": "CellClass*"
+    },
+    "CellClass::ProcessBridgeRepair.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "evidence": [
+        "CellClass::ProcessBridgeRepair: member at +0x8"
+      ],
+      "source_key": "CellClass::ProcessBridgeRepair.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "CellClass::UpdateTerrainAndWaypoints.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25581,
+      "evidence": [
+        "CellClass::UpdateTerrainAndWaypoints: member at +0x8"
+      ],
+      "source_key": "CellClass::UpdateTerrainAndWaypoints.this.member(0x8)",
+      "type": "CellClass*"
+    },
+    "ConnectionClass::initQueue.this.member(0x14)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "ConnectionClass::initQueue: member at +0x14"
+      ],
+      "source_key": "ConnectionClass::initQueue.this.member(0x14)",
+      "type": "BuildingTypeClass*"
+    },
+    "ConnectionClass::initQueue.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "ConnectionClass::initQueue: member at +0x18"
+      ],
+      "source_key": "ConnectionClass::initQueue.this.member(0x18)",
+      "type": "BuildingTypeClass*"
+    },
+    "ConnectionClass::initQueue.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "ConnectionClass::initQueue: member at +0x1c"
+      ],
+      "source_key": "ConnectionClass::initQueue.this.member(0x1c)",
+      "type": "BuildingTypeClass*"
+    },
+    "ConnectionClass::initQueue.this.member(0x20)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "ConnectionClass::initQueue: member at +0x20"
+      ],
+      "source_key": "ConnectionClass::initQueue.this.member(0x20)",
+      "type": "BuildingTypeClass*"
+    },
+    "FacingClass::Update.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26406,
+      "evidence": [
+        "FacingClass::Update: member at +0x8"
+      ],
+      "source_key": "FacingClass::Update.this.member(0x8)",
+      "type": "CDTimerClass*"
+    },
+    "FactoryClass::FindAvailable.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26417,
+      "evidence": [
+        "FactoryClass::FindAvailable: member at +0x30"
+      ],
+      "source_key": "FactoryClass::FindAvailable.this.member(0x30)",
+      "type": "TechnoTypeClass*"
+    },
+    "HouseClass::AIDecision.this.member(0xb30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26910,
+      "evidence": [
+        "HouseClass::AIDecision: member at +0xb30"
+      ],
+      "source_key": "HouseClass::AIDecision.this.member(0xb30)",
+      "type": "ScoreStruct*"
+    },
+    "HouseClass::AIUnitProduction.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26915,
+      "evidence": [
+        "HouseClass::AIUnitProduction: member at +0x50"
+      ],
+      "source_key": "HouseClass::AIUnitProduction.this.member(0x50)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::CanBuild.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "evidence": [
+        "HouseClass::CanBuild: member at +0x28"
+      ],
+      "source_key": "HouseClass::CanBuild.this.member(0x28)",
+      "type": "HouseTypeClass*"
+    },
+    "HouseClass::CanBuild.this.member(0xdf8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "evidence": [
+        "HouseClass::CanBuild: member at +0xdf8"
+      ],
+      "source_key": "HouseClass::CanBuild.this.member(0xdf8)",
+      "type": "HouseTypeClass*"
+    },
+    "HouseClass::FindType2728.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "evidence": [
+        "HouseClass::FindType2728: member at +0x2c"
+      ],
+      "source_key": "HouseClass::FindType2728.this.member(0x2c)",
+      "type": "TagClass*"
+    },
+    "HouseClass::Fire_GenMutator.this.member(0x81)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "evidence": [
+        "HouseClass::Fire_GenMutator: member at +0x81"
+      ],
+      "source_key": "HouseClass::Fire_GenMutator.this.member(0x81)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::Fire_GenMutator.this.member(0x8c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "evidence": [
+        "HouseClass::Fire_GenMutator: member at +0x8c"
+      ],
+      "source_key": "HouseClass::Fire_GenMutator.this.member(0x8c)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53ac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53ac"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53ac)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53b0"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53b0)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53b4"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53b4)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53b8"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53b8)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53bc)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53bc"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53bc)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53cc)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "evidence": [
+        "HouseClass::GetBuildLimit: member at +0x53cc"
+      ],
+      "source_key": "HouseClass::GetBuildLimit.this.member(0x53cc)",
+      "type": "FactoryClass*"
+    },
+    "HouseClass::GetRepairStepAmount.this.member(0x6f4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "HouseClass::GetRepairStepAmount: member at +0x6f4"
+      ],
+      "source_key": "HouseClass::GetRepairStepAmount.this.member(0x6f4)",
+      "type": "BuildingTypeClass*"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x41b)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "evidence": [
+        "HouseClass::ToggleGapGeneratorReveal: member at +0x41b"
+      ],
+      "source_key": "HouseClass::ToggleGapGeneratorReveal.this.member(0x41b)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x74)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "evidence": [
+        "HouseClass::ToggleGapGeneratorReveal: member at +0x74"
+      ],
+      "source_key": "HouseClass::ToggleGapGeneratorReveal.this.member(0x74)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x81)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "evidence": [
+        "HouseClass::ToggleGapGeneratorReveal: member at +0x81"
+      ],
+      "source_key": "HouseClass::ToggleGapGeneratorReveal.this.member(0x81)",
+      "type": "BuildingClass*"
+    },
+    "HouseClass::UpdateAllTypes.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27129,
+      "evidence": [
+        "HouseClass::UpdateAllTypes: member at +0x28"
+      ],
+      "source_key": "HouseClass::UpdateAllTypes.this.member(0x28)",
+      "type": "HouseTypeClass*"
+    },
+    "HouseTypeClass::loadBuildLimits.this.member(0xb4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27191,
+      "evidence": [
+        "HouseTypeClass::loadBuildLimits: member at +0xb4"
+      ],
+      "source_key": "HouseTypeClass::loadBuildLimits.this.member(0xb4)",
+      "type": "AircraftTypeClass*"
+    },
+    "INIClass::ClearSection.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27227,
+      "evidence": [
+        "INIClass::ClearSection: member at +0x4"
+      ],
+      "source_key": "INIClass::ClearSection.this.member(0x4)",
+      "type": "INILinkNode*"
+    },
+    "INIClass::INIClass.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27232,
+      "evidence": [
+        "INIClass::INIClass: member at +0x4"
+      ],
+      "source_key": "INIClass::INIClass.this.member(0x4)",
+      "type": "INILinkNode*"
+    },
+    "INIClass::ReadExitCellList.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27239,
+      "evidence": [
+        "INIClass::ReadExitCellList: member at +0x4"
+      ],
+      "source_key": "INIClass::ReadExitCellList.this.member(0x4)",
+      "type": "INILinkNode*"
+    },
+    "INIClass::ReadPoint2D_Overwrite.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27241,
+      "evidence": [
+        "INIClass::ReadPoint2D_Overwrite: member at +0x4"
+      ],
+      "source_key": "INIClass::ReadPoint2D_Overwrite.this.member(0x4)",
+      "type": "INILinkNode*"
+    },
+    "INIClass::ReadPoint3D_Overwrite.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27242,
+      "evidence": [
+        "INIClass::ReadPoint3D_Overwrite: member at +0x4"
+      ],
+      "source_key": "INIClass::ReadPoint3D_Overwrite.this.member(0x4)",
+      "type": "INILinkNode*"
+    },
+    "INIClass::deleteKey.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27246,
+      "evidence": [
+        "INIClass::deleteKey: member at +0x10"
+      ],
+      "source_key": "INIClass::deleteKey.this.member(0x10)",
+      "type": "INILinkNode*"
+    },
+    "IPXManagerClass::init.this.member(0x20)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "IPXManagerClass::init: member at +0x20"
+      ],
+      "source_key": "IPXManagerClass::init.this.member(0x20)",
+      "type": "BuildingTypeClass*"
+    },
+    "InfantryClass::CanAttackTarget.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "evidence": [
+        "InfantryClass::CanAttackTarget: member at +0x4"
+      ],
+      "source_key": "InfantryClass::CanAttackTarget.this.member(0x4)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::FireAtTargetPos.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27380,
+      "evidence": [
+        "InfantryClass::FireAtTargetPos: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::FireAtTargetPos.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::GetTypePtr.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "evidence": [
+        "InfantryClass::GetTypePtr: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::GetTypePtr.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::HandleCursorOverCell.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "evidence": [
+        "InfantryClass::HandleCursorOverCell: member at +0x4"
+      ],
+      "source_key": "InfantryClass::HandleCursorOverCell.this.member(0x4)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::InitProductionLimits.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "evidence": [
+        "InfantryClass::InitProductionLimits: member at +0x21c"
+      ],
+      "source_key": "InfantryClass::InitProductionLimits.this.member(0x21c)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::InitProductionLimits.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "evidence": [
+        "InfantryClass::InitProductionLimits: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::InitProductionLimits.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::IsBombDeployMission.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "evidence": [
+        "InfantryClass::IsBombDeployMission: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::IsBombDeployMission.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::IsBombDeployMission.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "evidence": [
+        "InfantryClass::IsBombDeployMission: member at +0x6c4"
+      ],
+      "source_key": "InfantryClass::IsBombDeployMission.this.member(0x6c4)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::IsBridgeRepairEnabled.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "evidence": [
+        "InfantryClass::IsBridgeRepairEnabled: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::IsBridgeRepairEnabled.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::ResetReloadIfNeeded.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27475,
+      "evidence": [
+        "InfantryClass::ResetReloadIfNeeded: member at +0x6c0"
+      ],
+      "source_key": "InfantryClass::ResetReloadIfNeeded.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "InfantryClass::updateDeployAnimation.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "evidence": [
+        "InfantryClass::updateDeployAnimation: member at +0x520"
+      ],
+      "source_key": "InfantryClass::updateDeployAnimation.this.member(0x520)",
+      "type": "BuildingTypeClass*"
+    },
+    "JumpjetLocomotionClass::GetLinkedLocomotorPointer.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27656,
+      "evidence": [
+        "JumpjetLocomotionClass::GetLinkedLocomotorPointer: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::GetLinkedLocomotorPointer.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27657,
+      "evidence": [
+        "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::LoadLocomotionFromStream.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27666,
+      "evidence": [
+        "JumpjetLocomotionClass::LoadLocomotionFromStream: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::LoadLocomotionFromStream.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::LoadLocomotionFromStream_2.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27672,
+      "evidence": [
+        "JumpjetLocomotionClass::LoadLocomotionFromStream_2: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::LoadLocomotionFromStream_2.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::StubReturnZero.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27732,
+      "evidence": [
+        "JumpjetLocomotionClass::StubReturnZero: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::StubReturnZero.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_0.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27734,
+      "evidence": [
+        "JumpjetLocomotionClass::StubReturnZero_0: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::StubReturnZero_0.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_12.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27739,
+      "evidence": [
+        "JumpjetLocomotionClass::StubReturnZero_12: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::StubReturnZero_12.this.member(0x50)",
+      "type": "State*"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_13.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27741,
+      "evidence": [
+        "JumpjetLocomotionClass::StubReturnZero_13: member at +0x50"
+      ],
+      "source_key": "JumpjetLocomotionClass::StubReturnZero_13.this.member(0x50)",
+      "type": "State*"
+    },
+    "LinkedList::FindNext.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "evidence": [
+        "LinkedList::FindNext: member at +0x4"
+      ],
+      "source_key": "LinkedList::FindNext.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::FindPrev.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "evidence": [
+        "LinkedList::FindPrev: member at +0x8"
+      ],
+      "source_key": "LinkedList::FindPrev.this.member(0x8)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::Init.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "evidence": [
+        "LinkedList::Init: member at +0x4"
+      ],
+      "source_key": "LinkedList::Init.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::InsertAfter.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27859,
+      "evidence": [
+        "LinkedList::InsertAfter: member at +0x4"
+      ],
+      "source_key": "LinkedList::InsertAfter.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::Pop.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "evidence": [
+        "LinkedList::Pop: member at +0x4"
+      ],
+      "source_key": "LinkedList::Pop.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::Prepend.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27862,
+      "evidence": [
+        "LinkedList::Prepend: member at +0x4"
+      ],
+      "source_key": "LinkedList::Prepend.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "LinkedList::PushFront.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27864,
+      "evidence": [
+        "LinkedList::PushFront: member at +0x4"
+      ],
+      "source_key": "LinkedList::PushFront.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "ObjectClass::GetHeight.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "evidence": [
+        "ObjectClass::GetHeight: member at +0x8"
+      ],
+      "source_key": "ObjectClass::GetHeight.this.member(0x8)",
+      "type": "GenericNode*"
+    },
+    "ObjectClass::GetWidth.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "evidence": [
+        "ObjectClass::GetWidth: member at +0x4"
+      ],
+      "source_key": "ObjectClass::GetWidth.this.member(0x4)",
+      "type": "GenericNode*"
+    },
+    "ObjectClass::NotifyExpired.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28824,
+      "evidence": [
+        "ObjectClass::NotifyExpired: member at +0x30"
+      ],
+      "source_key": "ObjectClass::NotifyExpired.this.member(0x30)",
+      "type": "ObjectClass*"
+    },
+    "ObjectClass::SetReference.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28840,
+      "evidence": [
+        "ObjectClass::SetReference: member at +0x34"
+      ],
+      "source_key": "ObjectClass::SetReference.this.member(0x34)",
+      "type": "TagClass*"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29210,
+      "evidence": [
+        "RadSiteClass::DecreaseLight: member at +0x24"
+      ],
+      "source_key": "RadSiteClass::DecreaseLight.this.member(0x24)",
+      "type": "LightSourceClass*"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x58)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "evidence": [
+        "RadSiteClass::DecreaseLight: member at +0x58"
+      ],
+      "source_key": "RadSiteClass::DecreaseLight.this.member(0x58)",
+      "type": "TintStruct*"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x5c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "evidence": [
+        "RadSiteClass::DecreaseLight: member at +0x5c"
+      ],
+      "source_key": "RadSiteClass::DecreaseLight.this.member(0x5c)",
+      "type": "TintStruct*"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x60)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "evidence": [
+        "RadSiteClass::DecreaseLight: member at +0x60"
+      ],
+      "source_key": "RadSiteClass::DecreaseLight.this.member(0x60)",
+      "type": "TintStruct*"
+    },
+    "RadSiteClass::Tick.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29231,
+      "evidence": [
+        "RadSiteClass::Tick: member at +0x24"
+      ],
+      "source_key": "RadSiteClass::Tick.this.member(0x24)",
+      "type": "LightSourceClass*"
+    },
+    "Rect::SetRedraw.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "Rect::SetRedraw: member at +0x1c"
+      ],
+      "source_key": "Rect::SetRedraw.this.member(0x1c)",
+      "type": "BuildingTypeClass*"
+    },
+    "RulesClass::readOverlayTypes.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29423,
+      "evidence": [
+        "RulesClass::readOverlayTypes: member at +0x10"
+      ],
+      "source_key": "RulesClass::readOverlayTypes.this.member(0x10)",
+      "type": "UnitTypeClass*"
+    },
+    "RulesClass::readSmudgeTypes.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29426,
+      "evidence": [
+        "RulesClass::readSmudgeTypes: member at +0x10"
+      ],
+      "source_key": "RulesClass::readSmudgeTypes.this.member(0x10)",
+      "type": "UnitTypeClass*"
+    },
+    "RulesClass::readWarheads.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29428,
+      "evidence": [
+        "RulesClass::readWarheads: member at +0x10"
+      ],
+      "source_key": "RulesClass::readWarheads.this.member(0x10)",
+      "type": "UnitTypeClass*"
+    },
+    "ScriptClass::GetNextAction.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "evidence": [
+        "ScriptClass::GetNextAction: member at +0x24"
+      ],
+      "source_key": "ScriptClass::GetNextAction.this.member(0x24)",
+      "type": "ScriptTypeClass*"
+    },
+    "ScriptClass::GetNextAction.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "evidence": [
+        "ScriptClass::GetNextAction: member at +0x2c"
+      ],
+      "source_key": "ScriptClass::GetNextAction.this.member(0x2c)",
+      "type": "TeamTypeClass*"
+    },
+    "SessionClass::AddRef.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29622,
+      "evidence": [
+        "SessionClass::AddRef: member at +0x4"
+      ],
+      "source_key": "SessionClass::AddRef.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::GetEntry.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "evidence": [
+        "SessionClass::GetEntry: member at +0x24"
+      ],
+      "source_key": "SessionClass::GetEntry.this.member(0x24)",
+      "type": "TeamTypeClass*"
+    },
+    "SessionClass::GetEntry.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "evidence": [
+        "SessionClass::GetEntry: member at +0x2c"
+      ],
+      "source_key": "SessionClass::GetEntry.this.member(0x2c)",
+      "type": "ScriptTypeClass*"
+    },
+    "SessionClass::Read.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29646,
+      "evidence": [
+        "SessionClass::Read: member at +0x4"
+      ],
+      "source_key": "SessionClass::Read.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::Seek.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29648,
+      "evidence": [
+        "SessionClass::Seek: member at +0x4"
+      ],
+      "source_key": "SessionClass::Seek.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::SetField.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "evidence": [
+        "SessionClass::SetField: member at +0x24"
+      ],
+      "source_key": "SessionClass::SetField.this.member(0x24)",
+      "type": "HouseClass*"
+    },
+    "SessionClass::SetField.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "evidence": [
+        "SessionClass::SetField: member at +0x2c"
+      ],
+      "source_key": "SessionClass::SetField.this.member(0x2c)",
+      "type": "TeamTypeClass*"
+    },
+    "SessionClass::Write.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29653,
+      "evidence": [
+        "SessionClass::Write: member at +0x4"
+      ],
+      "source_key": "SessionClass::Write.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::findPlayer.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29655,
+      "evidence": [
+        "SessionClass::findPlayer: member at +0x4"
+      ],
+      "source_key": "SessionClass::findPlayer.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::findPlayer.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "evidence": [
+        "SessionClass::findPlayer: member at +0x8"
+      ],
+      "source_key": "SessionClass::findPlayer.this.member(0x8)",
+      "type": "MPGameModeClass*"
+    },
+    "SessionClass::updatePlayer.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "evidence": [
+        "SessionClass::updatePlayer: member at +0x4"
+      ],
+      "source_key": "SessionClass::updatePlayer.this.member(0x4)",
+      "type": "MPGameModeClass*"
+    },
+    "SpawnManagerClass::SetTarget.this.member(0x68)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "SpawnManagerClass::SetTarget: member at +0x68"
+      ],
+      "source_key": "SpawnManagerClass::SetTarget.this.member(0x68)",
+      "type": "UnitTypeClass*"
+    },
+    "TagClass::AddTrigger.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30470,
+      "evidence": [
+        "TagClass::AddTrigger: member at +0x28"
+      ],
+      "source_key": "TagClass::AddTrigger.this.member(0x28)",
+      "type": "TriggerClass*"
+    },
+    "TagClass::HasCrossesHorizontalLineEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30475,
+      "evidence": [
+        "TagClass::HasCrossesHorizontalLineEvent: member at +0x24"
+      ],
+      "source_key": "TagClass::HasCrossesHorizontalLineEvent.this.member(0x24)",
+      "type": "TagTypeClass*"
+    },
+    "TagClass::HasCrossesVerticalLineEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30477,
+      "evidence": [
+        "TagClass::HasCrossesVerticalLineEvent: member at +0x24"
+      ],
+      "source_key": "TagClass::HasCrossesVerticalLineEvent.this.member(0x24)",
+      "type": "TagTypeClass*"
+    },
+    "TagClass::HasZoneEntryByEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30480,
+      "evidence": [
+        "TagClass::HasZoneEntryByEvent: member at +0x24"
+      ],
+      "source_key": "TagClass::HasZoneEntryByEvent.this.member(0x24)",
+      "type": "TagTypeClass*"
+    },
+    "TagClass::IsOnlyInstanceOfType.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30481,
+      "evidence": [
+        "TagClass::IsOnlyInstanceOfType: member at +0x24"
+      ],
+      "source_key": "TagClass::IsOnlyInstanceOfType.this.member(0x24)",
+      "type": "TagTypeClass*"
+    },
+    "TeamClass::Check.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "evidence": [
+        "TeamClass::Check: member at +0x24"
+      ],
+      "source_key": "TeamClass::Check.this.member(0x24)",
+      "type": "TeamTypeClass*"
+    },
+    "TeamClass::Check.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "evidence": [
+        "TeamClass::Check: member at +0x2c"
+      ],
+      "source_key": "TeamClass::Check.this.member(0x2c)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30527,
+      "evidence": [
+        "TeamClass::CheckMemberSuperWeapon: member at +0x54"
+      ],
+      "source_key": "TeamClass::CheckMemberSuperWeapon.this.member(0x54)",
+      "type": "FootClass*"
+    },
+    "TeamClass::Destructor.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30536,
+      "evidence": [
+        "TeamClass::Destructor: member at +0x2c"
+      ],
+      "source_key": "TeamClass::Destructor.this.member(0x2c)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::FindByMemberType.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30541,
+      "evidence": [
+        "TeamClass::FindByMemberType: member at +0x30"
+      ],
+      "source_key": "TeamClass::FindByMemberType.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "evidence": [
+        "TeamClass::FindClosestEnemy: member at +0x4"
+      ],
+      "source_key": "TeamClass::FindClosestEnemy.this.member(0x4)",
+      "type": "FootClass*"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x40)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "evidence": [
+        "TeamClass::FindClosestEnemy: member at +0x40"
+      ],
+      "source_key": "TeamClass::FindClosestEnemy.this.member(0x40)",
+      "type": "FootClass*"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "evidence": [
+        "TeamClass::FindClosestEnemy: member at +0x54"
+      ],
+      "source_key": "TeamClass::FindClosestEnemy.this.member(0x54)",
+      "type": "FootClass*"
+    },
+    "TeamClass::GetLeaderIndex.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30550,
+      "evidence": [
+        "TeamClass::GetLeaderIndex: member at +0x30"
+      ],
+      "source_key": "TeamClass::GetLeaderIndex.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::GetMember.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30552,
+      "evidence": [
+        "TeamClass::GetMember: member at +0x30"
+      ],
+      "source_key": "TeamClass::GetMember.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::RecruitMember.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30566,
+      "evidence": [
+        "TeamClass::RecruitMember: member at +0x24"
+      ],
+      "source_key": "TeamClass::RecruitMember.this.member(0x24)",
+      "type": "TeamTypeClass*"
+    },
+    "TeamClass::RemoveAllMembers.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30568,
+      "evidence": [
+        "TeamClass::RemoveAllMembers: member at +0x30"
+      ],
+      "source_key": "TeamClass::RemoveAllMembers.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::Reset.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30569,
+      "evidence": [
+        "TeamClass::Reset: member at +0x24"
+      ],
+      "source_key": "TeamClass::Reset.this.member(0x24)",
+      "type": "TeamTypeClass*"
+    },
+    "TeamClass::Reset.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30570,
+      "evidence": [
+        "TeamClass::Reset: member at +0x30"
+      ],
+      "source_key": "TeamClass::Reset.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TeamClass::SelectDeploymentTarget.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30579,
+      "evidence": [
+        "TeamClass::SelectDeploymentTarget: member at +0x54"
+      ],
+      "source_key": "TeamClass::SelectDeploymentTarget.this.member(0x54)",
+      "type": "FootClass*"
+    },
+    "TeamClass::SyncMemberFacing.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30584,
+      "evidence": [
+        "TeamClass::SyncMemberFacing: member at +0x54"
+      ],
+      "source_key": "TeamClass::SyncMemberFacing.this.member(0x54)",
+      "type": "FootClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x294)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x294"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x294)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2e4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x2e4"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x2e4)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2e8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x2e8"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x2e8)",
+      "type": "TechnoClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x308)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x308"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x308)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x33c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x33c"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x33c)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x34c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x34c"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x34c)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0x8"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0x8)",
+      "type": "TechnoClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0xbc4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0xbc4"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0xbc4)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0xce8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0xce8"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0xce8)",
+      "type": "TechnoClass*"
+    },
+    "TechnoClass::CreateUnit.this.member(0xf88)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "evidence": [
+        "TechnoClass::CreateUnit: member at +0xf88"
+      ],
+      "source_key": "TechnoClass::CreateUnit.this.member(0xf88)",
+      "type": "SpawnManagerClass*"
+    },
+    "TechnoClass::FindClosestPlacementCell.this.member(0x3ec)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "evidence": [
+        "TechnoClass::FindClosestPlacementCell: member at +0x3ec"
+      ],
+      "source_key": "TechnoClass::FindClosestPlacementCell.this.member(0x3ec)",
+      "type": "TechnoClass*"
+    },
+    "TechnoClass::FindClosestPlacementCell.this.member(0x6c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "evidence": [
+        "TechnoClass::FindClosestPlacementCell: member at +0x6c"
+      ],
+      "source_key": "TechnoClass::FindClosestPlacementCell.this.member(0x6c)",
+      "type": "TechnoClass*"
+    },
+    "TechnoClass::GetBridgeDamageMult.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30792,
+      "evidence": [
+        "TechnoClass::GetBridgeDamageMult: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::GetBridgeDamageMult.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::GetID.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "TechnoClass::GetID: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::GetID.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::GetTarget.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "TechnoClass::GetTarget: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::GetTarget.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::GetTypeFlag.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "evidence": [
+        "TechnoClass::GetTypeFlag: member at +0x6c0"
+      ],
+      "source_key": "TechnoClass::GetTypeFlag.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "TechnoClass::IsMission27to30.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "evidence": [
+        "TechnoClass::IsMission27to30: member at +0x6c4"
+      ],
+      "source_key": "TechnoClass::IsMission27to30.this.member(0x6c4)",
+      "type": "InfantryTypeClass*"
+    },
+    "TechnoClass::IsOwnedByHuman.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "evidence": [
+        "TechnoClass::IsOwnedByHuman: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::IsOwnedByHuman.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::LinkToBridge.this.member(0x31c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30891,
+      "evidence": [
+        "TechnoClass::LinkToBridge: member at +0x31c"
+      ],
+      "source_key": "TechnoClass::LinkToBridge.this.member(0x31c)",
+      "type": "ParticleSystemClass*"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "evidence": [
+        "TechnoClass::ReceiveDamage_Shield: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::ReceiveDamage_Shield.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x2b4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "evidence": [
+        "TechnoClass::ReceiveDamage_Shield: member at +0x2b4"
+      ],
+      "source_key": "TechnoClass::ReceiveDamage_Shield.this.member(0x2b4)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "evidence": [
+        "TechnoClass::ReceiveDamage_Shield: member at +0x4"
+      ],
+      "source_key": "TechnoClass::ReceiveDamage_Shield.this.member(0x4)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::RevealAreaConditional.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30928,
+      "evidence": [
+        "TechnoClass::RevealAreaConditional: member at +0x21c"
+      ],
+      "source_key": "TechnoClass::RevealAreaConditional.this.member(0x21c)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "TechnoClass::SelectAutoTarget_Start_AU: member at +0x30"
+      ],
+      "source_key": "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x30)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "TechnoClass::SelectAutoTarget_Start_AU: member at +0x4"
+      ],
+      "source_key": "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x4)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x5600)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "evidence": [
+        "TechnoClass::SelectAutoTarget_Start_AU: member at +0x5600"
+      ],
+      "source_key": "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x5600)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::processPowerDrain.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "evidence": [
+        "TechnoClass::processPowerDrain: member at +0x34"
+      ],
+      "source_key": "TechnoClass::processPowerDrain.this.member(0x34)",
+      "type": "HouseClass*"
+    },
+    "TechnoClass::updateTurretRotation.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "evidence": [
+        "TechnoClass::updateTurretRotation: member at +0x6c0"
+      ],
+      "source_key": "TechnoClass::updateTurretRotation.this.member(0x6c0)",
+      "type": "InfantryTypeClass*"
+    },
+    "Terrain::GetTileType.this.member(0x40)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "evidence": [
+        "Terrain::GetTileType: member at +0x40"
+      ],
+      "source_key": "Terrain::GetTileType.this.member(0x40)",
+      "type": "BuildingTypeClass*"
+    },
+    "TriggerClass::ProcessEvents.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31212,
+      "evidence": [
+        "TriggerClass::ProcessEvents: member at +0x28"
+      ],
+      "source_key": "TriggerClass::ProcessEvents.this.member(0x28)",
+      "type": "TriggerClass*"
+    },
+    "TriggerTypeClass::HasLocalSetOrClearedEvent.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "evidence": [
+        "TriggerTypeClass::HasLocalSetOrClearedEvent: member at +0x2c"
+      ],
+      "source_key": "TriggerTypeClass::HasLocalSetOrClearedEvent.this.member(0x2c)",
+      "type": "TagClass*"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x3b8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "UnitClass::ProcessExitQueue: member at +0x3b8"
+      ],
+      "source_key": "UnitClass::ProcessExitQueue.this.member(0x3b8)",
+      "type": "UnitTypeClass*"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "UnitClass::ProcessExitQueue: member at +0x4"
+      ],
+      "source_key": "UnitClass::ProcessExitQueue.this.member(0x4)",
+      "type": "UnitTypeClass*"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "evidence": [
+        "UnitClass::ProcessExitQueue: member at +0x6c4"
+      ],
+      "source_key": "UnitClass::ProcessExitQueue.this.member(0x6c4)",
+      "type": "UnitTypeClass*"
+    }
+  }
+}
