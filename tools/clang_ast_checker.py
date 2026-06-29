@@ -157,17 +157,20 @@ class ClangChecker:
         results.sort(key=lambda x: x[1])
         return results
 
-    # -- Check: C++ casts (static_cast, dynamic_cast, reinterpret_cast) --
+    # -- Check: C++ casts (static_cast, reinterpret_cast banned; dynamic_cast allowed --
+    #          parent-to-child via dynamic_cast only)
 
     _CXX_CAST_KINDS = {
         clang.cindex.CursorKind.CXX_STATIC_CAST_EXPR: "static_cast",
-        clang.cindex.CursorKind.CXX_DYNAMIC_CAST_EXPR: "dynamic_cast",
         clang.cindex.CursorKind.CXX_REINTERPRET_CAST_EXPR: "reinterpret_cast",
     }
 
     def check_cxx_casts(self):
-        """Detect C++-style casts (static_cast, dynamic_cast, reinterpret_cast).
-
+        """Detect forbidden C++-style casts (static_cast, reinterpret_cast).
+        
+        dynamic_cast is ALLOWED for parent-to-child conversions.
+        static_cast and reinterpret_cast are always banned — use C-style casts instead.
+        
         Returns list of (line_no, category, detail) tuples.
         """
         results = []
@@ -179,7 +182,12 @@ class ClangChecker:
                 continue
             cast_name = self._CXX_CAST_KINDS[node.kind]
             target_type = node.type.spelling
-            results.append((line, cast_name, f"cast to {target_type}"))
+            results.append((
+                line, cast_name, 
+                f"cast to {target_type}. "
+                f"FIX: dynamic_cast is allowed for parent-to-child. "
+                f"For all other casts, use C-style cast (Type)expr instead."
+            ))
         return results
 
     # -- Check: Goto statements --
@@ -716,6 +724,42 @@ class ClangChecker:
                 code = code[:117] + "..."
             results.append((line, "ptr-nonptr-conv",
                            f"memcpy({arg0_type}, {arg1_type}, ...) -- pointer<->non-pointer conversion via {callee_name} code={code}"))
+        return results
+
+    def check_bit_cast_bypass(self):
+        """Detect std::bit_cast used to bypass ptr<->non-ptr conversion rules.
+        
+        bit_cast is a circumvention of the pointer-cast restrictions.
+        Any use of bit_cast to convert between pointer and integer types is banned.
+        
+        Returns list of (line_no, category, detail) tuples.
+        """
+        results = []
+        for node, line in self._collect(
+            lambda n: n.kind == clang.cindex.CursorKind.CALL_EXPR,
+            skip_system=True,
+        ):
+            if not self._is_target_file_loc(node.location):
+                continue
+            children = list(node.get_children())
+            if not children:
+                continue
+            callee = children[0]
+            callee_name = callee.displayname or callee.spelling
+            if 'bit_cast' not in callee_name:
+                continue
+            # Collect the code snippet
+            tokens = list(node.get_tokens())
+            code = ''.join(t.spelling for t in tokens)
+            if len(code) > 120:
+                code = code[:117] + '...'
+            results.append((
+                line, 'bit-cast-bypass',
+                f'std::bit_cast used to convert between incompatible types — '
+                f'this is a circumvention of the pointer-cast rules. '
+                f'FIX: use proper member access (ptr->memberName) instead of '
+                f'reading raw bytes. Code: {code}'
+            ))
         return results
 
     # -- Check: IDA artifact names (field_*, dword_*, sub_*, unk_*) --
@@ -1347,15 +1391,44 @@ class ClangChecker:
             if node.kind in decl_kinds:
                 line = node.location.line
                 if line in added_lines:
-                    # Skip if this is a definition-only change (body changed, sig intact)
-                    # For FunctionDecl: check if the NAME line is what changed
+                    # For VarDecl: skip local variables inside function bodies.
+                    # Only flag file-scope or class-scope declarations.
+                    if node.kind == clang.cindex.CursorKind.VAR_DECL:
+                        parent = node.semantic_parent
+                        if parent and parent.kind in (clang.cindex.CursorKind.FUNCTION_DECL,
+                                                       clang.cindex.CursorKind.CXX_METHOD,
+                                                       clang.cindex.CursorKind.CONSTRUCTOR,
+                                                       clang.cindex.CursorKind.DESTRUCTOR,
+                                                       clang.cindex.CursorKind.COMPOUND_STMT):
+                            return  # local variable, skip
                     name = node.displayname or node.spelling
                     kind_name = node.kind.name.replace('CURSOR_KIND.', '').replace('_', '-').lower()
+                    # Build detailed fix suggestion based on declaration kind
+                    if 'field' in kind_name:
+                        fix = (f'FIX: Adding new class member \"{name}\" is forbidden during translation. '
+                               f'All members must be declared in the class header via the IDA→header pipeline. '
+                               f'To resolve this offset: (1) check member_lookup.json for an existing member '
+                               f'at the same offset, (2) if none, run tools/pre_translate.py to identify '
+                               f'the correct member name, (3) add the member to the class header with its '
+                               f'correct IDA-verified offset. Never add members ad-hoc in .cpp files.')
+                    elif 'class' in kind_name or 'struct' in kind_name:
+                        fix = (f'FIX: Declaring new class/struct \"{name}\" is forbidden. '
+                               f'All type definitions must exist in headers before translation begins.')
+                    elif 'function' in kind_name or 'method' in kind_name or 'constructor' in kind_name or 'destructor' in kind_name:
+                        fix = (f'FIX: Adding new function \"{name}\" is forbidden. '
+                               f'Only modify function bodies of existing functions. '
+                               f'New functions must be declared in headers before implementation.')
+                    elif 'var' in kind_name:
+                        fix = (f'FIX: New global/file-scope variable \"{name}\" is forbidden. '
+                               f'All global variables must have extern declarations with // data: 0xADDR annotations.')
+                    else:
+                        fix = (f'FIX: New symbol \"{name}\" of kind {kind_name} is forbidden. '
+                               f'During translation, only modify existing symbols—never add new ones.')
                     results.append((
                         line,
                         'new-symbol',
-                        f'{kind_name} \"{name}\" — new symbol on git-diff-added line {line}. '
-                        f'FIX: do not add new symbols; only modify existing symbols via IDA-verified offsets.'
+                        f'{kind_name} \"{name}\" — adding new symbols is forbidden during translation. '
+                        f'Only modify existing symbols (rename, change signature, change body). {fix}'
                     ))
         
         self._walk(visitor)
@@ -1365,18 +1438,14 @@ class ClangChecker:
     def check_hpp_implementations(self):
         """Detect function implementations in .hpp header files.
         
-        Walks the Clang AST looking for FunctionDecl nodes where is_definition()
-        is True AND the file is a .hpp header. All function bodies must be
-        in .cpp files — headers may only contain declarations.
-        
-        Skips: template functions (must be in headers), =default/=delete
-        declarations (not real implementations).
+        ALL function bodies in headers are forbidden — no exceptions.
+        Templates must also go in .cpp. =default/=delete are declarations,
+        not implementations, so they are fine.
         
         Returns list of (line_no, category, detail) tuples.
         """
         results = []
         
-        # Only run on .hpp files
         fpath = self.filepath.replace('\\', '/')
         if not fpath.endswith('.hpp'):
             return results
@@ -1388,23 +1457,26 @@ class ClangChecker:
                              clang.cindex.CursorKind.DESTRUCTOR):
                 if not node.is_definition():
                     return
-                # Skip =default/=delete
+                # Only skip pure =default/=delete declarations (these have no real body)
                 tokens = list(node.get_tokens())
                 token_strs = [t.spelling for t in tokens]
-                if any('= default' in ''.join(token_strs[i:i+3]) for i in range(len(token_strs)-2)):
-                    return
-                if any('= delete' in ''.join(token_strs[i:i+3]) for i in range(len(token_strs)-2)):
-                    return
-                # Skip templates (must be in headers)
-                if any('template' in t.lower() for t in token_strs[:3]):
+                body_text = ''.join(token_strs)
+                # Check if this is = default or = delete (these are declarations, not implementations)
+                if 'default' in body_text.split('{')[0] if '{' in body_text else 'default' in body_text:
+                    if '= default' in body_text:
+                        return
+                if '= delete' in body_text:
                     return
                 name = node.displayname or node.spelling
                 line = node.location.line
                 results.append((
                     line,
                     'hpp-impl',
-                    f'function \"{name}\" has body in header. '
-                    f'FIX: move implementation to .cpp file; headers only contain declarations.'
+                    f'function "{name}" has function body in header at line {line}. '
+                    f'ALL function implementations (including templates and inline) MUST be in .cpp files. '
+                    f'FIX: move the entire function body from {fpath}:{line} to the corresponding .cpp file. '
+                    f'In the header, replace the body with a semicolon (declaration only). '
+                    f'Example: "int foo() {{ return 1; }}" in header → "int foo();" in header + "int foo() {{ return 1; }}" in .cpp'
                 ))
         
         self._walk(visitor)
@@ -1428,6 +1500,7 @@ class ClangChecker:
         all_results.extend(self.check_vn_variables())
         all_results.extend(self.check_func_ptr_cast_calls())
         all_results.extend(self.check_memcpy_bypass())
+        all_results.extend(self.check_bit_cast_bypass())
         all_results.extend(self.check_ida_artifact_names())
         all_results.extend(self.check_ptr_nonptr_conversions())
         all_results.extend(self.check_ptr_cast_rules())

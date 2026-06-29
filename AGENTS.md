@@ -496,19 +496,118 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 | **goto** | .cpp | 使用 `goto` 语句 | 改用结构化控制流 `if/else/for/while` |
 | **func-ptr-cast-calls** | .cpp | 调用经过 C 风格转换的函数指针 | 使用正确的函数声明 |
 
-**报错格式：**
+### 违规详细修复指南
+
+#### new-symbol（新增符号）
+**问题**：翻译时在函数体内或类定义中新增了变量、成员、函数、类。
+**禁止行为**：
+- 添加局部变量 `int result;`（把逻辑合并到现有变量）
+- 添加类成员 `bool HasTiberiumAmmo;`（必须通过 IDA→header pipeline，验证二进制偏移）
+- 添加辅助函数（所有函数必须预先在 header 中声明）
+- 添加 union / struct 来绕开类型转换（门控禁止在翻译文件中定义任何新类型）
+**允许行为**：
+- 修改现有函数的函数体
+- 修改现有成员的名称（重命名）
+- 修改函数签名（参数类型、返回类型）
+**修复步骤**：
+1. 删除新增的符号
+2. 如果需要新增成员来映射二进制偏移：先运行 `python tools/pre_translate.py FuncName`
+3. 确认偏移对应的成员是否已在 header 中存在（可能用不同名称）
+4. 如确实缺失，向用户报告，由用户通过 IDA pipeline 添加
+
+#### hpp-impl（头文件实现）
+**问题**：在 .hpp 文件中有函数体实现（包括 `{ return ...; }`）。
+**禁止行为**：
+- 在 .hpp 中写 inline 辅助函数来隐藏原始偏移
+- 在 .hpp 中写模板函数体（模板也必须在 .cpp 中实现）
+**允许行为**：
+- 函数声明（仅签名 + 分号）
+- `= default` / `= delete` 声明
+- `= 0` 纯虚函数
+**修复步骤**：
+1. 将函数体从 .hpp 移到对应的 .cpp 文件
+2. .hpp 中只保留声明：`ReturnType FuncName(Params);`
+
+#### ptr-arithmetic（指针算术） / cast-index（指针下标）
+**问题**：用 `(uint8_t*)ptr + offset` 或 `((int*)this)[N]` 直接计算偏移。
+**修复步骤**：
+1. 运行 `python tools/pre_translate.py FuncName` 获取偏移→成员映射
+2. 将原始偏移替换为 `this->memberName` 或 `ptr->memberName`
+3. 如果偏移映射返回 UNKNOWN：检查 member_lookup.json 中该 class 的成员列表
+4. 如果确实没有对应成员：向用户报告缺失
+
+#### ptr-nonptr-conv / non-ptr-to-ptr / illegal-ptr-cast（类型转换违规）
+**问题**：指针和整数之间互转，或用 `(uint8_t*)` 在无关类型间强转。
+**禁止行为**：
+- `(int)ptr` / `(Type*)(int)val` — 指针↔整数
+- `(uint8_t*)classPtr + offset` — 强转为无关指针类型后做偏移
+- `std::bit_cast<Type*, uint32_t>(val)` — bit_cast 越狱
+- `(void*)ptr` / `(Type*)(void*)val` — void* 中转
+- `memcpy(&ptrVar, &intVar, 4)` — memcpy 越狱
+**允许行为**：
+- 父子类指针互转：`(ParentClass*)childPtr`（向上转型，C 风格），`dynamic_cast<ChildClass*>(parentPtr)`（向下转型）
+- 成员访问：`this->Type`、`ptr->Member`
+**修复步骤**：
+1. 识别偏移对应的成员名（使用 pre_translate.py）
+2. 直接使用成员访问替代裸指针操作
+3. 如果确实需要类型转换（如多态转换），使用 `dynamic_cast` 或父类 C 风格转型
+
+#### bit-cast-bypass / memcpy-bypass（越狱操作）
+**问题**：用 `std::bit_cast` 或 `memcpy` 绕过类型系统读取原始字节。
+**禁止行为**：
+- `std::bit_cast<Type*>(rawInt)` — 整数→指针的越狱转换
+- `memcpy(&ptrVar, &intVar, sizeof(ptrVar))` — 通过 memcpy 绕开类型检查
+**修复步骤**：
+1. 删除 bit_cast/memcpy 调用
+2. 使用 `ptr->memberName` 直接访问成员
+3. 检查是否已有合适的成员名映射到该偏移
+
+#### ida-naming（IDA 产物命名）
+**问题**：变量名或成员名包含 `field_`、`dword_`、`sub_`、`unk_` 前缀。
+**修复步骤**：
+1. 查找对应偏移在 member_lookup.json 或 pre_translate.py 中的正确名称
+2. 如果确无正确名称，使用描述性名称（如 `audioState` 而非 `AudioController_field_08`）
+
+#### cxx-cast（C++ 风格转换）
+**问题**：使用了 `static_cast`、`reinterpret_cast`。
+**允许**：`dynamic_cast<ChildClass*>(parentPtr)` 用于父→子安全转换。
+**修复步骤**：
+1. `static_cast<Type>(val)` → `(Type)val`
+2. `reinterpret_cast<Type*>(val)` → 禁止。先检查为什么需要重新解释内存——应该用成员访问。
+
+#### translation-incomplete（翻译不完整）
+**问题**：函数被标记为“翻译不完整”。来自 `verify_execution_flow.py` 的 exec-flow 门控。
+**原因**：C++ 实现的控制流图（CFG）与 IDA 二进制伪代码不匹配——缺少虚调用、全局读取、或控制流分支。
+**修复步骤**：
+1. 运行 `python tools/verify_execution_flow.py 0xADDR --verbose` 查看缺失的操作
+2. `CALL(vfptr+NNN)` 缺失 → 需要添加虚函数调用。运行 `python -c "import json; d=json.load(open('tools/vtable_offsets.json')); bc=d.get('ClassName',{}); print([k for k,v in bc.items() if v==NNN])"` 查找该偏移对应的方法名
+3. `READ(global,0xADDR)` 缺失 → 添加全局变量读取。检查 `src/structure/globals_*.hpp` 或 `src/app/cmdline.hpp` 中的 `extern` 声明
+4. `CALL(0xADDR)` 缺失 → 添加直接函数调用。用 IDA MCP 查函数名
+5. 控制流分支不匹配 → 确保 C++ 的 `if/else` 结构与二进制一致
+
+### 从原始偏移定位类成员（详细流程）
+1. **运行 pre_translate.py**：`python tools/pre_translate.py ClassName::FuncName`
+2. **查看输出**：`.omo/translation_maps/pre_translate_*.md`
+   - Resolved 部分：已解析的偏移→成员映射
+   - UNKNOWN 部分：无法解析的偏移，显示最近的已知邻居
+3. **查 member_lookup.json**：如果 pre_translate 返回 UNKNOWN，运行：
+   ```python
+   import json
+   d = json.load(open('tools/member_lookup.json'))
+   cls = d['BuildingClass']  # 替换为目标类
+   items = sorted(cls.items(), key=lambda x: int(x[0]))
+   nearby = [(k, v['name']) for k, v in items if abs(int(k) - TARGET_OFFSET) < 20]
+   print(nearby)
+   ```
+4. **查 IDA 结构体**（最后手段）：调用 `ida-pro-mcp_py_eval` 检查 struct 成员
+5. **如果所有方法都找不到**：向用户报告缺失的成员偏移，不要自行在 header 中临时添加
+
+### 门控报错格式
 ```
 FAIL: file.cpp:行号: 函数名 -- 类别: 具体问题描述。FIX: 修复建议。
 ```
 
-**示例：**
-```
-FAIL: src/structure/building.cpp:23682 -- ptr-arithmetic: offset=176 lhs=uint8_t* rhs=int code=(uint8_t*)this->Type+0xB0。FIX: use member access via header-defined member name.
-FAIL: src/structure/building.hpp:12 -- hpp-impl: function "IsActive()" has body in header。FIX: move implementation to .cpp file; headers only contain declarations.
-FAIL: src/structure/building.hpp:584 -- new-symbol: field-decl "HasTiberiumAmmo" — new symbol on git-diff-added line 584。FIX: do not add new symbols; only modify existing symbols via IDA-verified offsets.
-```
-
-**加速 cmake 构建：**
+### 加速 cmake 构建
 ```bash
 # 使用 MSBuild 并行（自动检测 CPU 核心数）
 cmake --build build_win -- /m
