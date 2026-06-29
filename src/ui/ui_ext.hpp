@@ -853,7 +853,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Main() = default;
 
-    virtual void CreateDialog(); // 0x4E1D00
+    virtual void CreateDialogMain();  // 0x4E1D00
 
 };
 // 1 methods in IDA

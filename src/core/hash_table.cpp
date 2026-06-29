@@ -7,22 +7,6 @@ namespace gamemd {
 // Hash implementation
 // ============================================================================
 
-// IDA 0x5dac00: Hash::Hash
-Hash::Hash()
-{
-    hash_state_0 = 0;
-    ;
-    hash_state_4 = 0;
-}
-
-// IDA 0x69D8C0 area: Hash::Reset
-void Hash::Reset()
-{
-    hash_state_0 = 0;
-    ;
-    hash_state_4 = 0;
-}
-
 // IDA 0x476D80: Hash::ComputeHashSHA1 (stub) -- full-hash compute (SHA1::ComputeThunk + Checksummer).
 // NOTE: 0x69D8C0 (the previous annotation) is SHA1::ProcessBlock, a different function.
 uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)

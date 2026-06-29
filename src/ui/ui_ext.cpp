@@ -143,7 +143,7 @@ void ListClass::RemoveItem() {} // 0x557730
 void ListNode::Alloc() {} // 0x5A9A20
 
 // --- Main ---
-void Main::CreateDialog() {} // 0x4E1D00
+void Main::CreateDialogMain() {} // 0x4E1D00
 
 // --- ProgressAnim ---
 void ProgressAnim::Init() {} // 0x642A60
