@@ -576,6 +576,26 @@ def main():
     ida_rejected = 0
 
     try:
+        # Phase A: Check .hpp files for forbidden implementations
+        for rel_path in sorted(changed_files.keys()):
+            if not rel_path.endswith('.hpp'):
+                continue
+            abs_path = os.path.join(repo_root, rel_path)
+            if not os.path.isfile(abs_path):
+                continue
+            try:
+                checker = ClangChecker(abs_path)
+                checker.parse()
+                hpp_vios = checker.check_hpp_implementations()
+                for line_no, category, detail in hpp_vios:
+                    full_msg = f"FAIL: {rel_path}:{line_no}: {category} -- {detail}"
+                    print(full_msg)
+                    all_pass = False
+                    total_checked += 1
+            except Exception as e:
+                print(f"WARNING: hpp check failed for {rel_path}: {e}", file=sys.stderr)
+
+        # Phase B: Check .cpp files for function-level violations
         for rel_path, changed_line_set in sorted(changed_files.items()):
             if not rel_path.endswith('.cpp'):
                 continue

@@ -1276,6 +1276,141 @@ class ClangChecker:
         results.sort(key=lambda x: x[1])
         return results
 
+    def _relative_path(self):
+        """Return the file path relative to the project root."""
+        repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        abs_path = os.path.abspath(self.filepath)
+        try:
+            return os.path.relpath(abs_path, repo).replace('\\', '/')
+        except ValueError:
+            return self.filepath.replace('\\', '/')
+
+    def check_new_symbols(self):
+        """Detect NEW symbol declarations on lines changed from auto-fill-baseline.
+        
+        Uses git diff data to find lines that were ADDED since baseline.
+        Walks the Clang AST to find any declaration (VarDecl, FunctionDecl,
+        CXXRecordDecl, FieldDecl, EnumDecl, TypedefDecl) at those lines.
+        
+        Returns list of (line_no, category, detail) tuples.
+        """
+        import subprocess
+        results = []
+        
+        rel_path = self._relative_path()
+        if not rel_path:
+            return results
+        
+        repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        try:
+            proc = subprocess.run(
+                ['git', 'diff', 'auto-fill-baseline', '--unified=0', '--', rel_path],
+                capture_output=True, text=True, cwd=repo,
+                encoding='utf-8', errors='replace'
+            )
+        except Exception:
+            return results
+        
+        if proc.returncode != 0 or not proc.stdout.strip():
+            return results
+        
+        # Parse git diff to find added lines
+        added_lines = set()
+        import re as _re
+        for line in proc.stdout.split('\n'):
+            m = _re.match(r'^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@', line)
+            if m:
+                start = int(m.group(1))
+                count = int(m.group(2)) if m.group(2) else 1
+                for i in range(start, start + count):
+                    added_lines.add(i)
+        
+        if not added_lines:
+            return results
+        
+        # Walk AST for declarations on added lines
+        decl_kinds = {
+            clang.cindex.CursorKind.VAR_DECL,
+            clang.cindex.CursorKind.FUNCTION_DECL,
+            clang.cindex.CursorKind.CXX_METHOD,
+            clang.cindex.CursorKind.CONSTRUCTOR,
+            clang.cindex.CursorKind.DESTRUCTOR,
+            clang.cindex.CursorKind.CLASS_DECL,
+            clang.cindex.CursorKind.STRUCT_DECL,
+            clang.cindex.CursorKind.FIELD_DECL,
+            clang.cindex.CursorKind.ENUM_DECL,
+            clang.cindex.CursorKind.TYPEDEF_DECL,
+            clang.cindex.CursorKind.USING_DECLARATION,
+        }
+        
+        def visitor(node):
+            if node.kind in decl_kinds:
+                line = node.location.line
+                if line in added_lines:
+                    # Skip if this is a definition-only change (body changed, sig intact)
+                    # For FunctionDecl: check if the NAME line is what changed
+                    name = node.displayname or node.spelling
+                    kind_name = node.kind.name.replace('CURSOR_KIND.', '').replace('_', '-').lower()
+                    results.append((
+                        line,
+                        'new-symbol',
+                        f'{kind_name} \"{name}\" — new symbol on git-diff-added line {line}. '
+                        f'FIX: do not add new symbols; only modify existing symbols via IDA-verified offsets.'
+                    ))
+        
+        self._walk(visitor)
+        results.sort(key=lambda x: x[0])
+        return results
+
+    def check_hpp_implementations(self):
+        """Detect function implementations in .hpp header files.
+        
+        Walks the Clang AST looking for FunctionDecl nodes where is_definition()
+        is True AND the file is a .hpp header. All function bodies must be
+        in .cpp files — headers may only contain declarations.
+        
+        Skips: template functions (must be in headers), =default/=delete
+        declarations (not real implementations).
+        
+        Returns list of (line_no, category, detail) tuples.
+        """
+        results = []
+        
+        # Only run on .hpp files
+        fpath = self.filepath.replace('\\', '/')
+        if not fpath.endswith('.hpp'):
+            return results
+        
+        def visitor(node):
+            if node.kind in (clang.cindex.CursorKind.FUNCTION_DECL,
+                             clang.cindex.CursorKind.CXX_METHOD,
+                             clang.cindex.CursorKind.CONSTRUCTOR,
+                             clang.cindex.CursorKind.DESTRUCTOR):
+                if not node.is_definition():
+                    return
+                # Skip =default/=delete
+                tokens = list(node.get_tokens())
+                token_strs = [t.spelling for t in tokens]
+                if any('= default' in ''.join(token_strs[i:i+3]) for i in range(len(token_strs)-2)):
+                    return
+                if any('= delete' in ''.join(token_strs[i:i+3]) for i in range(len(token_strs)-2)):
+                    return
+                # Skip templates (must be in headers)
+                if any('template' in t.lower() for t in token_strs[:3]):
+                    return
+                name = node.displayname or node.spelling
+                line = node.location.line
+                results.append((
+                    line,
+                    'hpp-impl',
+                    f'function \"{name}\" has body in header. '
+                    f'FIX: move implementation to .cpp file; headers only contain declarations.'
+                ))
+        
+        self._walk(visitor)
+        results.sort(key=lambda x: x[0])
+        return results
+
     # -- Run all checks --
 
     def run_all_checks(self):
@@ -1296,6 +1431,9 @@ class ClangChecker:
         all_results.extend(self.check_ida_artifact_names())
         all_results.extend(self.check_ptr_nonptr_conversions())
         all_results.extend(self.check_ptr_cast_rules())
+        # New: ban ad-hoc symbol declarations and hpp implementations
+        all_results.extend(self.check_new_symbols())
+        all_results.extend(self.check_hpp_implementations())
         # Sort by line number
         all_results.sort(key=lambda x: x[0])
         return all_results

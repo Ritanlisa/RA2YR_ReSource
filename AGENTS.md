@@ -457,6 +457,69 @@ python tools/pre_translate.py --class UnitClass 0x743A50
 
 **关键：** 不要在门控未通过的情况下开始翻译。先补全 header/全局变量/被调用函数，再重新运行。
 
+### 代码质量门控系统（Clang AST）
+
+**概述：** `cmake --build build_win` 在每次编译前自动运行代码质量门控检查。检查器使用 Clang AST（非正则）分析所有从 `auto-fill-baseline` 修改过的 .cpp 函数和 .hpp 文件。
+
+**运行方式：**
+```bash
+# 完整构建（含门控）：
+cmake --build build_win
+
+# 单独运行门控：
+python tools/check_translated_functions.py src/structure/building.cpp
+
+# 单独检查 hpp 实现：
+python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import ClangChecker; c=ClangChecker('src/structure/building.hpp'); c.parse(); print(c.check_hpp_implementations())"
+```
+
+**⚠️ 输出禁止截断：** 门控/cmake 输出**严禁**使用管道截断或筛选。包括但不限于：
+- 禁止 `| Select-Object -Last N`
+- 禁止 `| Select-Object -First N`  
+- 禁止 `2>&1 | ... ` 任何截断操作
+- 禁止 `| tail`、`| head`
+完整输出对于诊断至关重要——差这一点上下文就是差全部。
+
+**检查项目：**
+
+| 检查 | 类别 | 触发条件 | 修复方案 |
+|------|------|----------|----------|
+| **new-symbol** | .cpp/.hpp | 在 git-diff 新增行上声明任何新符号（VarDecl/FunctionDecl/FieldDecl/ClassDecl/EnumDecl/TypedefDecl） | 禁止添加新符号。只能修改已有符号的名称、签名或函数体。新成员须通过 IDA→header pipeline 添加，不能临时添加 |
+| **hpp-impl** | .hpp | 头文件中存在函数体实现（FunctionDecl.isDefinition()），排除 template 和 =default/=delete | 将实现移到 .cpp 文件。hpp 只允许声明和模板 |
+| **ptr-arithmetic** | .cpp | 指针对整数偏移的加减法 `(uint8_t*)ptr + N` | 改用 `ptr->memberName` 成员访问 |
+| **cast-index** | .cpp | 指针下标 `((Type*)ptr)[N]` | 改用 `ptr->memberName` 成员访问 |
+| **ptr-nonptr-conv** | .cpp | 指针↔非指针之间的双向转换 | 禁止 `(int)ptr` / `(Type*)intVal`。用 `std::bit_cast` 或成员访问 |
+| **illegal-ptr-cast** | .cpp | 无关指针类型间的 C 风格转换（如 `TypeA* → uint8_t*`）；void* 转换 | 只允许父子类指针转换。void* 禁止 |
+| **non-ptr-to-ptr** | .cpp | 非指针类型转换为指针类型 `(Type*)intVal` | 禁止。用已有成员访问 |
+| **ida-naming** | .cpp | 成员/变量名包含 `field_`/`dword_`/`sub_`/`unk_` | 重命名为有意义的名字 |
+| **cxx-cast** | .cpp | 使用 `static_cast`/`dynamic_cast`/`reinterpret_cast` | 改用 C 风格转换 `(Type)expr` |
+| **goto** | .cpp | 使用 `goto` 语句 | 改用结构化控制流 `if/else/for/while` |
+| **func-ptr-cast-calls** | .cpp | 调用经过 C 风格转换的函数指针 | 使用正确的函数声明 |
+
+**报错格式：**
+```
+FAIL: file.cpp:行号: 函数名 -- 类别: 具体问题描述。FIX: 修复建议。
+```
+
+**示例：**
+```
+FAIL: src/structure/building.cpp:23682 -- ptr-arithmetic: offset=176 lhs=uint8_t* rhs=int code=(uint8_t*)this->Type+0xB0。FIX: use member access via header-defined member name.
+FAIL: src/structure/building.hpp:12 -- hpp-impl: function "IsActive()" has body in header。FIX: move implementation to .cpp file; headers only contain declarations.
+FAIL: src/structure/building.hpp:584 -- new-symbol: field-decl "HasTiberiumAmmo" — new symbol on git-diff-added line 584。FIX: do not add new symbols; only modify existing symbols via IDA-verified offsets.
+```
+
+**加速 cmake 构建：**
+```bash
+# 使用 MSBuild 并行（自动检测 CPU 核心数）
+cmake --build build_win -- /m
+
+# 或设置具体并行数
+cmake --build build_win -- /m:8
+
+# Debug 构建（增量编译，仅重编译修改过的文件）
+cmake --build build_win --config Debug
+```
+
 ### INI Key → 成员变量映射验证
 
 反编译类的 READ_INI/ReadINI 函数，查找 `INIClass::GetString(ini, section, "KeyName", ..., this+OFFSET, ...)` 模式：
