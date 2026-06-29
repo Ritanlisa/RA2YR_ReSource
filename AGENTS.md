@@ -496,7 +496,7 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 | 检查 | 类别 | 触发条件 | 修复方案 |
 |------|------|----------|----------|
 | **new-symbol** | .cpp/.hpp | 在 git-diff 新增行上声明任何新符号（VarDecl/FunctionDecl/FieldDecl/ClassDecl/EnumDecl/TypedefDecl） | 禁止添加新符号。只能修改已有符号的名称、签名或函数体。新成员须通过 IDA→header pipeline 添加，不能临时添加 |
-| **hpp-impl** | .hpp | 头文件中存在函数体实现（FunctionDecl.isDefinition()），不排除 template 和 =default/=delete —— 所有函数体均在禁止之列 | 将实现移到 .cpp 文件。hpp 只允许声明（纯虚函数 `=0` 除外） |
+| **hpp-impl** | .hpp | 头文件中存在函数体实现（FunctionDecl.isDefinition()） | 将实现移到 .cpp 文件。hpp 只允许声明（纯虚函数 `=0` 除外） |
 | **ptr-arithmetic** | .cpp | 指针对整数偏移的加减法 `(uint8_t*)ptr + N` | 改用 `ptr->memberName` 成员访问 |
 | **cast-index** | .cpp | 指针下标 `((Type*)ptr)[N]` | 改用 `ptr->memberName` 成员访问 |
 | **ptr-nonptr-conv** | .cpp | 指针↔非指针之间的双向转换 | 禁止 `(int)ptr` / `(Type*)intVal`。用 `std::bit_cast` 或成员访问 |
