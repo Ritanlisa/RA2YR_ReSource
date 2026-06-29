@@ -1466,6 +1466,13 @@ class ClangChecker:
                              clang.cindex.CursorKind.DESTRUCTOR):
                 if not node.is_definition():
                     return
+                # Skip function bodies defined in INCLUDED files, not this file.
+                # Clang AST sees all #included content; we must only flag bodies
+                # whose source location is actually in this .hpp file.
+                if node.location.file:
+                    node_file = node.location.file.name.replace('\\', '/')
+                    if node_file != fpath:
+                        return
                 # Only skip pure =default/=delete declarations (these have no real body)
                 tokens = list(node.get_tokens())
                 token_strs = [t.spelling for t in tokens]
@@ -1478,12 +1485,14 @@ class ClangChecker:
                     return
                 name = node.displayname or node.spelling
                 line = node.location.line
+                # Use ACTUAL file where the body lives, not the including file
+                actual_file = node.location.file.name.replace('\\', '/') if node.location.file else fpath
                 results.append((
                     line,
                     'hpp-impl',
                     f'function "{name}" has function body in header at line {line}. '
                     f'ALL function implementations (including templates and inline) MUST be in .cpp files. '
-                    f'FIX: move the entire function body from {fpath}:{line} to the corresponding .cpp file. '
+                    f'FIX: move the entire function body from {actual_file}:{line} to the corresponding .cpp file. '
                     f'In the header, replace the body with a semicolon (declaration only). '
                     f'Example: "int foo() {{ return 1; }}" in header → "int foo();" in header + "int foo() {{ return 1; }}" in .cpp'
                 ))

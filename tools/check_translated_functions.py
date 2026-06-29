@@ -576,10 +576,14 @@ def main():
     ida_rejected = 0
 
     try:
-        # Phase A: Check .hpp files for forbidden implementations
-        for rel_path in sorted(changed_files.keys()):
-            if not rel_path.endswith('.hpp'):
-                continue
+        # Phase A: Check ALL .hpp files for forbidden implementations
+        # (not just git-diff changed — violations in core/ headers must be caught
+        #  even if those files haven't been recently modified)
+        import glob as _glob
+        all_hpp = []
+        for pattern in ['src/**/*.hpp', 'app/**/*.hpp']:
+            all_hpp.extend(_glob.glob(pattern, root_dir=repo_root, recursive=True))
+        for rel_path in sorted(set(all_hpp)):
             abs_path = os.path.join(repo_root, rel_path)
             if not os.path.isfile(abs_path):
                 continue
