@@ -600,22 +600,22 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 
 #### translation-incomplete（翻译不完整）
 **问题**：函数被标记为"翻译不完整"。来自 `verify_execution_flow.py` 的 exec-flow 门控。
-**原因**：C++ 实现的控制流图（CFG）与 IDA 二进制伪代码不匹配——缺少虚调用、全局读取、或控制流分支。
+**原因**：C++ 实现的逻辑与 IDA 二进制伪代码不完全匹配。
 
 **⚠️ 门控不会告诉你具体缺什么。** 门控只报"翻译不完整"这一句话。Agent 必须自己对比 C++ 代码和 IDA 反编译来发现缺失。
 
 **手动对比流程**：
 1. 从 IDA 获取反编译：`ida-pro-mcp_decompile 0xADDR`
 2. 仔细阅读 C++ 实现和 IDA 伪代码，逐行对比
-3. 检查每一个 CALL、READ、WRITE 操作是否都出现在了 C++ 代码中
-4. 常见的缺失类型：
-   - IDA 有 `CALL(vfptr+NNN)` 但 C++ 没有 → 虚函数调用丢失。查 vtable_offsets.json 找到方法名
-   - IDA 有 `READ(global,0xADDR)` 但 C++ 没有 → 全局变量读取丢失。查 globals_*.hpp 或 cmdline.hpp
-   - IDA 有 `CALL(0xADDR)` 但 C++ 没有 → 直接函数调用丢失。用 IDA MCP 查函数名
-   - IDA 有 5 个分支但 C++ 只有 3 个 → 缺少 `else if` 或条件判断
-5. 修复后验证：`python tools/verify_execution_flow.py 0xADDR`
+3. 常见的缺失类型：
+   - IDA 有虚函数调用但 C++ 没有 → 虚调用丢失。查 vtable_offsets.json 或 header 找到正确方法名，添加 `this->Method()` 调用
+   - IDA 有全局变量访问但 C++ 没有 → 全局变量读取丢失。查 globals_*.hpp 或 cmdline.hpp 中的 `extern` 声明，添加对应的全局变量引用
+   - IDA 有某个函数调用但 C++ 没有 → 直接调用丢失。用 IDA MCP 查函数地址对应的函数名，添加调用
+   - IDA 有 5 个条件分支但 C++ 只有 3 个 → 缺少 `else if` 或条件判断。对比 IDA 的 `if/else` 链，补全分支
+   - IDA 有循环体但 C++ 用内联替代 → 内联展开不被门控识别。使用正确的 vtable 调用或循环结构
+4. 修复后验证：`python tools/verify_execution_flow.py 0xADDR`
 
-**注意**：`--verbose` 仅用于调试门控本身，不能用来修复翻译。Agent 必须自己对 IDA 做手动对照。**忽略门控报错直接提交的代码会被用户驳回重做。**
+**注意**：忽略门控报错直接提交的代码会被驳回重做。Agent 必须自己对 IDA 做手动对照——门控不会提供差异详情。
 
 ### 从原始偏移定位类成员（详细流程）
 1. **运行 pre_translate.py**：`python tools/pre_translate.py ClassName::FuncName`
