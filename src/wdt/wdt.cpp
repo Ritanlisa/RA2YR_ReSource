@@ -32,8 +32,13 @@ State::~State()
 {
 }
 
-void State::AddRef() noexcept {}
-void State::Release() noexcept {}
+void State::AddRef() noexcept
+{
+}
+
+void State::Release() noexcept
+{
+}
 
 WDTError State::LoadConfig()
 {
@@ -65,6 +70,17 @@ Map::~Map()
 {
 }
 
+void Map::AddRef() noexcept
+{
+    ++refcount;
+}
+
+void Map::Release() noexcept
+{
+    if (--refcount == 0)
+        delete this;
+}
+
 WDTError Map::Load()
 {
     return { 0, "" };
@@ -79,9 +95,6 @@ void Map::updateLogic()
 {
 }
 
-void Map::AddRef() noexcept { ++refcount; }
-void Map::Release() noexcept { if (--refcount == 0) delete this; }
-
 // --- Territory ---
 
 Territory::Territory()
@@ -95,6 +108,17 @@ Territory::Territory()
 
 Territory::~Territory()
 {
+}
+
+void Territory::AddRef()
+{
+    ++referenceCount;
+}
+
+void Territory::Release()
+{
+    if (--referenceCount == 0)
+        delete this;
 }
 
 WDTError Territory::Attach(int player)
@@ -118,9 +142,6 @@ int Territory::Income() const
     return IncomePerTurn;
 }
 
-void Territory::AddRef() { ++referenceCount; }
-void Territory::Release() { if (--referenceCount == 0) delete this; }
-
 // --- Conflict ---
 
 Conflict::Conflict()
@@ -135,6 +156,17 @@ Conflict::~Conflict()
 {
 }
 
+void Conflict::AddRef()
+{
+    ++referenceCount;
+}
+
+void Conflict::Release()
+{
+    if (--referenceCount == 0)
+        delete this;
+}
+
 WDTError Conflict::Resolve()
 {
     return { 0, "" };
@@ -143,9 +175,6 @@ WDTError Conflict::Resolve()
 void Conflict::updateLogic()
 {
 }
-
-void Conflict::AddRef() { ++referenceCount; }
-void Conflict::Release() { if (--referenceCount == 0) delete this; }
 
 // --- Campaign ---
 

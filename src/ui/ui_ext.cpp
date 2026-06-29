@@ -3,179 +3,302 @@
 namespace gamemd
 {
 
-// --- BitArray ---
+// ============================================================================
+// BitArray
+// ============================================================================
+
 void BitArray::TestBit() {} // 0x54A950
 
-// --- Bitmap ---
+// ============================================================================
+// Bitmap
+// ============================================================================
+
 void Bitmap::GetNumberBitmapWOL() {} // 0x783A90
 
-// --- BitmapClass ---
+// ============================================================================
+// BitmapClass
+// ============================================================================
+
 void BitmapClass::ProcessFrame() {} // 0x42DF90
 
-// --- ButtonClass ---
+// ============================================================================
+// ButtonClass
+// ============================================================================
+
 void ButtonClass::SetState() {} // 0x69DEA0
 
-// --- ButtonOwnerDraw ---
+// ============================================================================
+// ButtonOwnerDraw
+// ============================================================================
+
 void ButtonOwnerDraw::DlgProc() {} // 0x616980
 
-// --- CampaignCoop ---
-void CampaignCoop::Setup() {} // 0x5c21d0 -- CampaignCoop::Setup
+// ============================================================================
+// CampaignCoop
+// ============================================================================
 
-// --- CampaignMenu ---
+void CampaignCoop::Setup() {} // 0x5c21d0
+
+// ============================================================================
+// CampaignMenu
+// ============================================================================
+
 void CampaignMenu::DlgProc() {} // 0x52D640
 
-// --- CampaignProperties_WorldDominationTour ---
+// ============================================================================
+// CampaignProperties_WorldDominationTour
+// ============================================================================
+
 void CampaignProperties_WorldDominationTour::QueryInterface() {} // 0x76C030
 
-// --- CampaignScore ---
+// ============================================================================
+// CampaignScore
+// ============================================================================
+
 void CampaignScore::DialogProc() {} // 0x46DFD0
 void CampaignScore::ProcessScreen() {} // 0x46FC00
 void CampaignScore::sub_471420() {} // 0x471420
 void CampaignScore::Constructor_CampaignScoreClass() {} // 0x471500
 void CampaignScore::Constructor_CampaignEndScoreClass() {} // 0x471520
 
-// --- CampaignSelect ---
+// ============================================================================
+// CampaignSelect
+// ============================================================================
+
 void CampaignSelect::LookupByName() {} // 0x46CC90
 void CampaignSelect::DlgProc() {} // 0x52EC00
 
-// --- Campaign_WorldDominationTour ---
+// ============================================================================
+// Campaign_WorldDominationTour
+// ============================================================================
+
 void Campaign_WorldDominationTour::QueryInterface() {} // 0x765600
 
-// --- CheckListClass ---
+// ============================================================================
+// CheckListClass
+// ============================================================================
+
 void CheckListClass::vt_method_488310() {} // 0x488310
 void CheckListClass::Clear() {} // 0x488350
 void CheckListClass::ScrollUp() {} // 0x488360
 void CheckListClass::GetSelected() {} // 0x488380
 void CheckListClass::SetItemData() {} // 0x4883F0
 
-// --- CheckSum ---
+// ============================================================================
+// CheckSum
+// ============================================================================
+
 void CheckSum::AccumulateModulo() {} // 0x632C40
 
-// --- Checkbox ---
+// ============================================================================
+// Checkbox
+// ============================================================================
+
 void Checkbox::WndProc() {} // 0x6163A0
 
-// --- Checksum ---
+// ============================================================================
+// Checksum
+// ============================================================================
+
 void Checksum::AddString() {} // 0x4A1DB0
 
-// --- ComboBoxDropDown ---
+// ============================================================================
+// ComboBoxDropDown
+// ============================================================================
+
 void ComboBoxDropDown::WndProc() {} // 0x617250
 
-// --- ComboBoxOwnerDraw ---
+// ============================================================================
+// ComboBoxOwnerDraw
+// ============================================================================
+
 void ComboBoxOwnerDraw::GetWidthHeight() {} // 0x600670
 void ComboBoxOwnerDraw::MatchDimensions() {} // 0x600680
 void ComboBoxOwnerDraw::DlgProc() {} // 0x610CA0
 void ComboBoxOwnerDraw::SortItems() {} // 0x6252F0
 void ComboBoxOwnerDraw::ComputeMask() {} // 0x625390
 
-// --- ControlClass ---
+// ============================================================================
+// ControlClass
+// ============================================================================
+
 void ControlClass::Construct() {} // 0x48E520
 void ControlClass::CtorFromData() {} // 0x48E570
 void ControlClass::QueryInterface() {} // 0x48E660
 void ControlClass::Constructor() {} // 0x4E1340
 
-// --- CreditsPower ---
+// ============================================================================
+// CreditsPower
+// ============================================================================
+
 void CreditsPower::sub_4C3D00() {} // 0x4C3D00
 void CreditsPower::Display() {} // 0x4C3E30
 
-// --- DropListClass ---
+// ============================================================================
+// DropListClass
+// ============================================================================
+
 void DropListClass::OnClick() {} // 0x4B4EE0
 void DropListClass::vt_method_4B4F20() {} // 0x4B4F20
 void DropListClass::Draw() {} // 0x4B4F40
 void DropListClass::HitTest() {} // 0x4B4F60
 void DropListClass::OnDblClick() {} // 0x4B4F80
 
-// --- DropPod ---
+// ============================================================================
+// DropPod
+// ============================================================================
+
 void DropPod::ProcessLanding() {} // 0x4CE840
 
-// --- EditClass ---
+// ============================================================================
+// EditClass
+// ============================================================================
+
 void EditClass::QueryInterface() {} // 0x4B57D0
 
-// --- EditControl ---
+// ============================================================================
+// EditControl
+// ============================================================================
+
 void EditControl::WndProc() {} // 0x614B30
 void EditControl::GrowBuffer() {} // 0x7B72F0
 
-// --- FontClass ---
+// ============================================================================
+// FontClass
+// ============================================================================
+
 void FontClass::RenderGlyph() {} // 0x434120
 void FontClass::RenderText() {} // 0x434500
 void FontClass::GetPixelData() {} // 0x4349B0
 void FontClass::LoadFontResources() {} // 0x5D2E90
 void FontClass::CreateGlyphColor() {} // 0x68C3B0
 
-// --- FontRenderer ---
+// ============================================================================
+// FontRenderer
+// ============================================================================
+
 void FontRenderer::InitContext() {} // 0x4348F0
 void FontRenderer::DrawText() {} // 0x434B90
 
-// --- InputManager ---
+// ============================================================================
+// InputManager
+// ============================================================================
+
 void InputManager::sub_4E15A0() {} // 0x4E15A0
 void InputManager::ProcessEvents() {} // 0x4E1640
 void InputManager::sub_54F2F0() {} // 0x54F2F0
 void InputManager::PushInputEvent() {} // 0x54F670
 void InputManager::WndProc() {} // 0x54F790
 
-// --- InputManager_ProcessEvents ---
+// ============================================================================
+// InputManager_ProcessEvents
+// ============================================================================
+
 void InputManager_ProcessEvents::AddRef() {} // 0x40D230
 void InputManager_ProcessEvents::Release() {} // 0x40D240
 void InputManager_ProcessEvents::StubReturnFalse() {} // 0x4AEBD0
 void InputManager_ProcessEvents::Stub() {} // 0x4AEBE0
 void InputManager_ProcessEvents::Vtable() {} // 0x4F4320
 
-// --- Keyboard ---
+// ============================================================================
+// Keyboard
+// ============================================================================
+
 void Keyboard::MapKey() {} // 0x54F450
 
-// --- List ---
+// ============================================================================
+// List
+// ============================================================================
+
 void List::FindByValue() {} // 0x5943E0
 
-// --- ListBox ---
+// ============================================================================
+// ListBox
+// ============================================================================
+
 void ListBox::Constructor() {} // 0x5C1030
 void ListBox::FillEntries() {} // 0x5D6450
 void ListBox::Refresh() {} // 0x5D64C0
 void ListBox::FillPlayers() {} // 0x5D6540
 void ListBox::AddEntries() {} // 0x5D6690
 
-// --- ListClass ---
+// ============================================================================
+// ListClass
+// ============================================================================
+
 void ListClass::Constructor() {} // 0x4E2500
 void ListClass::Construct() {} // 0x557230
 void ListClass::Destruct() {} // 0x557600
 void ListClass::AddItem() {} // 0x5576A0
 void ListClass::RemoveItem() {} // 0x557730
 
-// --- ListNode ---
+// ============================================================================
+// ListNode
+// ============================================================================
+
 void ListNode::Alloc() {} // 0x5A9A20
 
-// --- Main ---
+// ============================================================================
+// Main
+// ============================================================================
+
 void Main::CreateDialogMain() {} // 0x4E1D00
 
-// --- ProgressAnim ---
+// ============================================================================
+// ProgressAnim
+// ============================================================================
+
 void ProgressAnim::Init() {} // 0x642A60
 
-// --- Slider ---
+// ============================================================================
+// Slider
+// ============================================================================
+
 void Slider::CalcPosition() {} // 0x412A40
 
-// --- SliderClass ---
+// ============================================================================
+// SliderClass
+// ============================================================================
+
 void SliderClass::vt_method_558120() {} // 0x558120
 void SliderClass::QueryInterface() {} // 0x558180
 void SliderClass::Constructor() {} // 0x6B1B20
 void SliderClass::Destructor() {} // 0x6B1D00
 void SliderClass::GetValue() {} // 0x6B1D40
 
-// --- TabCameoListClass ---
+// ============================================================================
+// TabCameoListClass
+// ============================================================================
+
 void TabCameoListClass::AddCameo_ReplaceItAll() {} // 0x6A8710
 
-// --- TabControl ---
+// ============================================================================
+// TabControl
+// ============================================================================
+
 void TabControl::WndProc() {} // 0x612B70
 void TabControl::DlgProc() {} // 0x61D950
 
-// --- ToolTipClass ---
+// ============================================================================
+// ToolTipClass
+// ============================================================================
+
 void ToolTipClass::updateString() {} // 0x7240B0
 void ToolTipClass::initString() {} // 0x724AD0
 void ToolTipClass::Destructor() {} // 0x724C10
 void ToolTipClass::ddtor() {} // 0x724C30
 void ToolTipClass::write() {} // 0x724C60
 
-// --- Tooltip ---
+// ============================================================================
+// Tooltip
+// ============================================================================
+
 void Tooltip::Enable() {}
 
-// --- TooltipClass ---
+// ============================================================================
+// TooltipClass
+// ============================================================================
+
 void TooltipClass::GetText() {} // 0x7248C0
 
 } // namespace gamemd
