@@ -7,6 +7,22 @@ namespace gamemd {
 // Hash implementation
 // ============================================================================
 
+// IDA 0x5dac00: Hash::Hash
+Hash::Hash()
+{
+    hash_state_0 = 0;
+    ;
+    hash_state_4 = 0;
+}
+
+// IDA 0x69D8C0 area: Hash::Reset
+void Hash::Reset()
+{
+    hash_state_0 = 0;
+    ;
+    hash_state_4 = 0;
+}
+
 // IDA 0x476D80: Hash::ComputeHashSHA1 (stub) -- full-hash compute (SHA1::ComputeThunk + Checksummer).
 // NOTE: 0x69D8C0 (the previous annotation) is SHA1::ProcessBlock, a different function.
 uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
@@ -89,6 +105,15 @@ static const uint32_t K[4] = {
 
 static inline uint32_t RotL(uint32_t x, int n) {
     return (x << n) | (x >> (32 - n));
+}
+
+// SHA1::SHA1 -- constructor, calls Init()
+// unmatched: no callgraph reference and no git history record
+SHA1::SHA1()
+{
+    Init();
+    ;
+    ;
 }
 
 // SHA1::Init -- initialize SHA1 state (simplified reimpl; cf. IDA SHA1::Reset @ 0x69DFF0).
@@ -462,6 +487,15 @@ void SHA1::DigestToHex(const uint8_t digest[20], char hex[41])
 // ============================================================================
 // CRC32 implementation
 // ============================================================================
+
+// CRC32::CRC32 -- constructor
+// unmatched: no callgraph reference and no git history record
+CRC32::CRC32()
+{
+    m_CRC = 0xFFFFFFFF;
+    ;
+    m_Count = 0;
+}
 
 // Standard CRC-32 lookup table
 static const uint32_t crc32_table[256] = {

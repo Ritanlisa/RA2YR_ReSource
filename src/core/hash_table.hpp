@@ -26,389 +26,123 @@ public:
         uint32_t    hash;       // 0x0C
 
         // unmatched: no callgraph reference and no git history record
-        Entry() : next(nullptr), hash(0) {}
-        Entry(const K& k, const V& v, uint32_t h)
-            // unmatched: no callgraph reference and no git history record
-            : key(k), value(v), next(nullptr), hash(h) {}
+        Entry();
+        // unmatched: no callgraph reference and no git history record
+        Entry(const K& k, const V& v, uint32_t h);
     };
 
-    HashTable()
-        : m_Buckets(nullptr), m_Count(0), m_Capacity(0),
-          // unmatched: no callgraph reference and no git history record
-          m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr)
-    {
-        Grow(); // initial allocation
-    }
+    // unmatched: no callgraph reference and no git history record
+    HashTable();
 
-    ~HashTable() { DestroyHashTableINIClass(); }
+    ~HashTable();
 
     // IDA 0x7ADCD0: Insert
-    bool Insert(const K& key, const V& value)
-    {
-        uint32_t h = ComputeHash(key);
-        uint32_t index = h % m_Capacity;
-
-        // Check for duplicate
-        for (Entry* e = m_Buckets[index]; e; e = e->next) {
-            if (e->hash == h && e->key == key) {
-                e->value = value;
-                return false; // updated existing
-            }
-        }
-
-        // unmatched: no callgraph reference and no git history record
-        Entry* entry = new Entry(key, value, h);
-        entry->next = m_Buckets[index];
-        m_Buckets[index] = entry;
-        ++m_Count;
-
-        if (m_Count > m_GrowThreshold)
-            Grow();
-        return true;
-    }
+    bool Insert(const K& key, const V& value);
 
     // IDA 0x7AE1F0: Lookup — find value pointer by key
-    V* Lookup(const K& key)
-    {
-        Entry* e = Find(key);
-        return e ? &e->value : nullptr;
-    }
+    V* Lookup(const K& key);
 
-    V* LookupString(const char* key)
-    {
-        for (uint32_t i = 0; i < m_Capacity; ++i) {
-            for (Entry* e = m_Buckets[i]; e; e = e->next) {
-                if (CompareStringKey(e->key, key))
-                    return &e->value;
-            }
-        }
-        return nullptr;
-    }
+    V* LookupString(const char* key);
 
     // IDA 0x625F60: FindString — search by string key
-    V* FindString(const char* key)
-    {
-        return LookupString(key);
-    }
+    V* FindString(const char* key);
 
     // IDA 0x625FB0: FindChunk — find entry by key
-    Entry* FindChunk(const K& key)
-    {
-        return Find(key);
-    }
+    Entry* FindChunk(const K& key);
 
     // IDA 0x6BA140: Find — find entry by key
-    Entry* Find(const K& key)
-    {
-        if (m_Capacity == 0) return nullptr;
-        uint32_t h = ComputeHash(key);
-        uint32_t index = h % m_Capacity;
+    Entry* Find(const K& key);
 
-        for (Entry* e = m_Buckets[index]; e; e = e->next) {
-            if (e->hash == h && e->key == key) {
-                m_LastFound = e;
-                return e;
-            }
-        }
-        return nullptr;
-    }
-
-    Entry* FindAndMark(const K& key)
-    {
-        Entry* e = Find(key);
-        if (e) m_LastFound = e;
-        return e;
-    }
+    Entry* FindAndMark(const K& key);
 
     // IDA 0x608440: LookupAndMark
-    Entry* LookupAndMark(const K& key)
-    {
-        return FindAndMark(key);
-    }
+    Entry* LookupAndMark(const K& key);
 
     // IDA 0x624760: Get — return value copy
-    V Get(const K& key)
-    {
-        Entry* e = Find(key);
-        if (e) return e->value;
-        return V{};
-    }
+    V Get(const K& key);
 
     // IDA 0x52B390: BinarySearch — sorted array search (specialized for int* key)
-    bool BinarySearch(int* key)
-    {
-        if (!m_Sorted || m_Count == 0 || !key) return false;
-        // Binary search over sorted entry array
-        int lo = 0, hi = static_cast<int>(m_Count) - 1;
-        while (lo <= hi) {
-            int mid = (lo + hi) / 2;
-            int cmp = CompareSorted(m_Buckets[mid]->key, *key);
-            if (cmp == 0) {
-                m_LastFound = m_Buckets[mid];
-                return true;
-            }
-            if (cmp < 0) lo = mid + 1;
-            else hi = mid - 1;
-        }
-        return false;
-    }
+    bool BinarySearch(int* key);
 
     // IDA 0x52B4F0: BinarySearchAlt
-    Entry* BinarySearchAlt(int* key)
-    {
-        if (BinarySearch(key))
-            return m_LastFound;
-        return nullptr;
-    }
+    Entry* BinarySearchAlt(int* key);
 
     // IDA 0x625070: ComputeHash
-    uint32_t ComputeHash(const K& key)
-    {
-        return GetHash(key);
-    }
+    uint32_t ComputeHash(const K& key);
 
     // IDA 0x6B9530: Clear
-    void Clear()
-    {
-        for (uint32_t i = 0; i < m_Capacity; ++i) {
-            Entry* e = m_Buckets[i];
-            while (e) {
-                Entry* next = e->next;
-                delete e;
-                e = next;
-            }
-            m_Buckets[i] = nullptr;
-        }
-        m_Count = 0;
-        m_LastFound = nullptr;
-    }
+    void Clear();
 
     // IDA 0x724730: Remove
-    bool Remove(const K& key)
-    {
-        if (m_Capacity == 0) return false;
-        uint32_t h = ComputeHash(key);
-        uint32_t index = h % m_Capacity;
-
-        Entry* prev = nullptr;
-        for (Entry* e = m_Buckets[index]; e; e = e->next) {
-            if (e->hash == h && e->key == key) {
-                if (prev)
-                    prev->next = e->next;
-                else
-                    m_Buckets[index] = e->next;
-                delete e;
-                --m_Count;
-                return true;
-            }
-            prev = e;
-        }
-        return false;
-    }
+    bool Remove(const K& key);
 
     // IDA 0x6BA230: RemoveEntry
-    Entry* RemoveEntry(const K& key)
-    {
-        if (m_Capacity == 0) return nullptr;
-        uint32_t h = ComputeHash(key);
-        uint32_t index = h % m_Capacity;
-
-        Entry* prev = nullptr;
-        for (Entry* e = m_Buckets[index]; e; e = e->next) {
-            if (e->hash == h && e->key == key) {
-                if (prev)
-                    prev->next = e->next;
-                else
-                    m_Buckets[index] = e->next;
-                --m_Count;
-                e->next = nullptr;
-                return e; // caller must delete
-            }
-            prev = e;
-        }
-        return nullptr;
-    }
+    Entry* RemoveEntry(const K& key);
 
     // IDA 0x6BAC40: RemoveHashTableEntry
-    Entry* RemoveHashTableEntry(const K& key)
-    {
-        return RemoveEntry(key);
-    }
+    Entry* RemoveHashTableEntry(const K& key);
 
     // IDA 0x625090: RemoveAndResize
-    void RemoveAndResize()
-    {
-        if (m_Count < m_Capacity / 4)
-            Shrink();
-    }
+    void RemoveAndResize();
 
     // IDA 0x7AE510: Grow — double capacity
-    void Grow()
-    {
-        uint32_t new_cap = (m_Capacity == 0) ? 16 : m_Capacity * 2;
-        RebuildTo(new_cap);
-    }
+    void Grow();
 
     // IDA 0x624FC0: Grow2
-    void Grow2()
-    {
-        Grow();
-    }
+    void Grow2();
 
     // IDA 0x7AEC00: Shrink — halve capacity
-    void Shrink()
-    {
-        uint32_t new_cap = m_Capacity / 2;
-        if (new_cap < 4) new_cap = 4;
-        RebuildTo(new_cap);
-    }
+    void Shrink();
 
     // IDA 0x625780: Shrink2
-    void Shrink2()
-    {
-        Shrink();
-    }
+    void Shrink2();
 
     // IDA 0x7ACF70: Rebuild
-    void Rebuild()
-    {
-        RebuildTo(m_Capacity);
-    }
+    void Rebuild();
 
     // IDA 0x625830: Rebuild2
-    void Rebuild2()
-    {
-        Rebuild();
-    }
+    void Rebuild2();
 
     // IDA 0x6BAEF0: RebuildEx
-    void RebuildEx()
-    {
-        Rebuild();
-    }
+    void RebuildEx();
 
     // IDA 0x7ACE60: CleanupAndResize
-    void CleanupAndResize()
-    {
-        Clear();
-        Shrink();
-    }
+    void CleanupAndResize();
 
     // IDA 0x5256F0: DestroyHashTableINIClass
-    void DestroyHashTableINIClass()
-    {
-        Clear();
-        delete[] m_Buckets;
-        m_Buckets = nullptr;
-        m_Capacity = 0;
-        m_GrowThreshold = 0;
-    }
+    void DestroyHashTableINIClass();
 
     // IDA 0x7AE950: FindWOLHashTableEntry
-    Entry* FindWOLHashTableEntry(const K& key)
-    {
-        return Find(key);
-    }
+    Entry* FindWOLHashTableEntry(const K& key);
 
     // --- Accessors ---
     // design: inline accessor, inlined at all call sites
-    uint32_t GetCount() const { return m_Count; }
+    uint32_t GetCount() const;
     // design: inline accessor, inlined at all call sites
-    uint32_t GetCapacity() const { return m_Capacity; }
+    uint32_t GetCapacity() const;
     // unmatched: no callgraph reference and no git history record
-    Entry** GetBuckets() { return m_Buckets; }
+    Entry** GetBuckets();
     // design: inline accessor, inlined at all call sites
-    Entry* GetLastFound() const { return m_LastFound; }
+    Entry* GetLastFound() const;
 
 private:
     // Rebuild hash table to new capacity
     // unmatched: no callgraph reference and no git history record
-    void RebuildTo(uint32_t new_capacity)
-    {
-        Entry** old_buckets = m_Buckets;
-        uint32_t old_cap = m_Capacity;
-
-        m_Buckets = new Entry*[new_capacity]();
-        m_Capacity = new_capacity;
-        m_GrowThreshold = new_capacity * 3 / 4; // 75% load factor
-        m_Count = 0;
-
-        for (uint32_t i = 0; i < old_cap; ++i) {
-            Entry* e = old_buckets[i];
-            while (e) {
-                Entry* next = e->next;
-                uint32_t idx = e->hash % new_capacity;
-                e->next = m_Buckets[idx];
-                m_Buckets[idx] = e;
-                ++m_Count;
-                e = next;
-            }
-        }
-        delete[] old_buckets;
-    }
+    void RebuildTo(uint32_t new_capacity);
 
     // String hash: FNV-1a (matches original RA2 implementation)
-    static uint32_t HashString(const char* str)
-    {
-        uint32_t hash = 2166136261u; // FNV offset basis
-        while (*str) {
-            hash ^= static_cast<uint8_t>(*str++);
-            hash *= 16777619u; // FNV prime
-        }
-        return hash;
-    }
+    static uint32_t HashString(const char* str);
 
-    // Hash dispatch: use std::hash for standard types
-    static uint32_t GetHash(const K& key)
-    {
-        return HashHelper<K>::Do(key);
-    }
-
-    // Default hash helper
-    template <typename T, typename = void>
-    struct HashHelper
-    {
-        static uint32_t Do(const T& val)
-        {
-            return static_cast<uint32_t>(std::hash<T>{}(val));
-        }
-    };
-
-    // Specialization for const char*
-    template <typename T>
-    struct HashHelper<T, std::enable_if_t<std::is_same_v<T, const char*>>>
-    {
-        static uint32_t Do(const T& val)
-        {
-            return HashString(val);
-        }
-    };
-
-    // Specialization for std::string
-    template <typename T>
-    struct HashHelper<T, std::enable_if_t<std::is_same_v<T, std::string>>>
-    {
-        static uint32_t Do(const T& val)
-        {
-            return HashString(val.c_str());  // 0x5F9E80
-        }
-    };
+    // Hash dispatch: uses if constexpr for K=const char* / K=std::string / default
+    static uint32_t GetHash(const K& key);
 
     // Compare string key (for string-based tables like INI)
     // unmatched: no callgraph reference and no git history record
-    static bool CompareStringKey(const K& key, const char* str)
-    {
-        return false; // default: no string comparison
-    }
+    static bool CompareStringKey(const K& key, const char* str);
 
     // Compare for binary search (int specialization)
     // unmatched: no callgraph reference and no git history record
-    static int CompareSorted(const K& a, int b)
-    {
-        if (static_cast<int>(a) < b) return -1;
-        if (static_cast<int>(a) > b) return 1;
-        return 0;
-    }
+    static int CompareSorted(const K& a, int b);
 
     Entry**     m_Buckets;          // 0x00
     uint32_t    m_Count;            // 0x04
@@ -419,20 +153,13 @@ private:
     Entry*      m_LastFound;        // 0x14
 };
 
-// Specialization: CompareStringKey for const char* keys
-template <>
-inline bool HashTable<const char*, int>::CompareStringKey(const char* const& key, const char* str)
-{
-    return strcmp(key, str) == 0;
-}
-
 // ============================================================================
 // Hash — hashing utility (3 methods)
 // ============================================================================
 class Hash
 {
 public:
-    Hash() : Hash_field_00(0), Hash_field_04(0) {} // 0x5dac00
+    Hash(); // 0x5dac00
 
     // IDA 0x69D8C0
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80
@@ -441,14 +168,10 @@ public:
     static void InsertOrdered(void* table, const void* entry);  // 0x4F4410
 
     // IDA 0x69D8C0 area
-    void Reset()
-    {
-        Hash_field_00 = 0;
-        Hash_field_04 = 0;
-    }
+    void Reset();
 
-    uint32_t    Hash_field_00;       // 0x00
-    uint32_t    Hash_field_04;       // 0x04
+    uint32_t    hash_state_0;       // 0x00
+    uint32_t    hash_state_4;       // 0x04
 };
 
 // ============================================================================
@@ -458,7 +181,7 @@ class SHA1
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    SHA1() { Init(); }
+    SHA1();
 
     // IDA 0x69D8C0
     // wrapper: delegates to SHA1::ProcessBlock at 0x69D8C0
@@ -499,7 +222,7 @@ class CRC32
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {}
+    CRC32();
 
     // IDA 0x69E000
     static uint32_t Compute(const void* data, uint32_t size);  // 0x4A1FB0
@@ -507,5 +230,7 @@ public:
     uint32_t    m_CRC;          // 0x00
     uint32_t    m_Count;        // 0x04
 };
+
+#include "hash_table.inl"
 
 } // namespace gamemd
