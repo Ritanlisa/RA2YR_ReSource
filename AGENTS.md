@@ -693,6 +693,102 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ---
 
+### 类型推断引擎 (Type Inference Engine)
+
+基于约束传播的类型推断系统, 为 19,067 个函数自动推断变量类型。
+
+**核心架构**: T7 Steensgaard union-find → T9 工作列表类型传播 → T10 置信度 BFS → T11 矛盾检测。
+
+| 阶段 | 描述 | 输入 | 输出 |
+|------|------|------|------|
+| T7 | Steensgaard 等价类合并 (ASSIGN/RETURN/CALL 边) | `raw_constraints.json` (97K 约束) | union-find 等价类 + anchor 标签 |
+| T9 | 工作列表 lattice.meet 类型传播 | 等价类邻接图 | `type_map.json` (1,241 条目) |
+| T10 | BFS 距离置信度评分 | anchoring 节点 | 四级置信度标注 |
+| T11 | 矛盾检测 (TOP 节点) | 冲突 anchor 对 | `contradictions.md` 可读报告 |
+| T12 | 建议类型生成 | `type_map.json` + anchor cross-ref | `suggested_types.json` (323 ANCHORED) |
+| T14 | IDA 类型应用 | `suggested_types.json` | IDA `SetType`/`SetCmt` |
+| T15 | 增量重传播 | 单函数修改 + 已有 type_map | 局部类型更新 (< 10s) |
+| T20 | 偏移→成员重写 | `suggested_types.json` + `member_lookup.json` | `.omo/rewrite_offsets.patch` |
+| T21 | 自动局部变量命名 | `type_map.json` + 源文件扫描 | `renaming_suggestions.json` |
+
+#### 运行方式
+
+```bash
+# 完整管线 (T7→T9→T10→T11)
+python -m tools.type_infer.engine
+
+# 增量更新 (单函数, 修改后快速重传播)
+python -m tools.type_infer.incremental 0xADDR [--annotation var=Type]
+
+# 生成建议类型
+python tools/type_infer/generate_suggested.py
+
+# IDA 类型标注 (预览模式)
+python ida_apply_types.py --dry-run
+
+# IDA 类型标注 (实际应用)
+python ida_apply_types.py              # 通过 MCP 连接 IDA
+
+# 偏移→成员批量重写 (生成 .patch)
+python tools/type_infer/rewrite_offsets.py [--dry-run] [--verbose]
+
+# 自动局部变量命名建议
+python tools/type_infer/auto_name.py
+```
+
+#### 置信度体系
+
+| 级别 | 含义 | 距离 | 使用场景 |
+|------|------|------|---------|
+| **ANCHORED** | 直接 anchor 确定 | 0 hops | `member_types`/`global_types`/`vtable` 直接命中 |
+| **DIRECT_PROP** | 相邻节点传播 | 1 hop | anchor 的直接邻居 |
+| **CHAIN_PROP** | 短链传播 | 2-3 hops | 通过 1-2 层邻接传播 |
+| **INFERRED** | 长距离推断 | >3 hops | 通过 ≥3 层邻接到达 |
+
+- `ANCHORED` + `DIRECT_PROP` → IDA `SetType` (高置信度, 直接设置类型)
+- `CHAIN_PROP` + `INFERRED` → IDA `SetCmt` (低置信度, 仅注释)
+- `ida_apply_types.py --dry-run` 预览所有建议 (不实际修改 IDB)
+
+#### 输入数据源
+
+| 文件 | 内容 | 大小 |
+|------|------|------|
+| `tools/type_infer/constraints/raw_constraints.json` | 约束边 (ASSIGN/RETURN/CALL/CALL_VTABLE/STACK_VAR) | ~97K |
+| `tools/type_infer/constraints/call_graph.json` | 调用图边 (caller→callee) | ~46K |
+| `tools/type_infer/anchors/vtable_signatures.json` | vtable 条目 (函数存在性 anchor) | ~13K |
+| `anchors/member_types.json` | 成员偏移→类型映射 | ~5K |
+| `anchors/global_types.json` | 全局变量→类型映射 | ~1.3K |
+| `tools/class_layouts.json` | 类继承层次 (lattice 的 `is_subtype` 依据) | ~1,120 类 |
+
+#### 输出产物
+
+| 文件 | 格式 | 用途 |
+|------|------|------|
+| `type_map.json` | `{var_name: {type, confidence, eq_root}}` | 1,241 个变量类型, 含置信度 |
+| `suggested_types.json` | `{addr.label: {type, confidence, evidence}}` | 323 个 ANCHORED 建议, 含证据链 |
+| `contradictions.md` | Markdown 表格 | TOP 节点 + 冲突类型对报告 |
+| `renaming_suggestions.json` | `{func_addr: {old: new}}` | 局部变量重命名建议 |
+| `.omo/rewrite_offsets.patch` | `git apply` 格式 diff | 偏移→成员访问重写 (需审查) |
+
+#### 工作原理简述
+
+1. **约束提取**: 从 IDA 反编译伪代码提取 ~97K 条类型约束 (赋值/返回/调用/栈变量)
+2. **Steensgaard 合并**: ASSIGN/RETURN 边合并为等价类; 调用图连接 caller 和 callee 的返回站点
+3. **Anchor 注入**: 从 `member_types.json` (成员变量), `global_types.json` (全局变量), `vtable_signatures.json` (函数存在性) 加载已知类型
+4. **Lattice 传播**: 从 anchor 节点 BFS 传播类型, 使用 `lattice.meet()` (最大下界) 合并多路径信息
+5. **Lattice 层次**: `BOTTOM` (未知) → `VOID_PTR` (void*, meet 单位元) → `ConcreteType` (如 `BuildingClass`) → `TOP` (矛盾)
+6. **矛盾检测**: 不可兼容的 anchor 类型在 meet 时产生 TOP (如 `BuildingClass meet FootClass → TOP`)
+7. **置信度**: BFS 距离标注 — 0 hop = ANCHORED, 1 = DIRECT_PROP, 2-3 = CHAIN_PROP, >3 = INFERRED
+
+#### 当前局限
+
+- 仅建议类指针类型 (如 `BuildingClass*`), 不推断 `int`/`float`/`BOOL` 等基础类型
+- ~~TOP~~ 矛盾条目占 `type_map.json` 的 74% (918/1241), 说明当前约束数据冲突率较高
+- 增量模式依赖完整运行一次 engine 后缓存 UF 状态
+- `rewrite_offsets.py` 生成的 patch 必须人工审查后才能 `git apply`
+
+---
+
 ## 项目环境信息
 
 - IDA 连接：`127.0.0.1:13337`（gamemd.exe.i64）
