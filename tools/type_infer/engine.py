@@ -433,9 +433,20 @@ class TypeInferenceEngine:
 
             ctype = c["type"]
             if ctype == "ASSIGN":
-                self.uf.union(fid, tid)
-                self.adjacency[fid].add(tid)
-                self.adjacency[tid].add(fid)
+                f_is_reg = _is_register(c.get("from", ""))
+                t_is_reg = _is_register(c.get("to", ""))
+                if f_is_reg or t_is_reg:
+                    # member->register or register->register:
+                    # adjacency only — prevents Steensgaard from unioning
+                    # all members that write to the same register,
+                    # which caused 74% TOP rate via mega-equivalence-class.
+                    self.adjacency[fid].add(tid)
+                    self.adjacency[tid].add(fid)
+                else:
+                    # member->member: keep full union + adjacency
+                    self.uf.union(fid, tid)
+                    self.adjacency[fid].add(tid)
+                    self.adjacency[tid].add(fid)
 
             elif ctype == "RETURN":
                 self.uf.union(fid, tid)
