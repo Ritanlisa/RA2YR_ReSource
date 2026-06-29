@@ -1,0 +1,6252 @@
+{
+  "_summary": {
+    "confidence_distribution": {
+      "ANCHORED": 389,
+      "CHAIN_PROP": 257,
+      "DIRECT_PROP": 4,
+      "INFERRED": 591
+    },
+    "total_entries": 1241,
+    "type_distribution": {
+      "AircraftTypeClass": 2,
+      "AnimTypeClass": 2,
+      "BuildingClass": 9,
+      "BuildingTypeClass": 40,
+      "CDTimerClass": 2,
+      "CellClass": 25,
+      "FactoryClass": 7,
+      "FootClass": 10,
+      "GenericNode": 17,
+      "HouseClass": 48,
+      "HouseTypeClass": 5,
+      "INILinkNode": 12,
+      "InfantryTypeClass": 20,
+      "LightSourceClass": 4,
+      "MPGameModeClass": 13,
+      "ObjectClass": 10,
+      "ParticleSystemClass": 2,
+      "RadSiteClass": 2,
+      "SHPStruct": 6,
+      "ScoreStruct": 2,
+      "ScriptTypeClass": 3,
+      "SpawnManagerClass": 8,
+      "State": 16,
+      "TOP": 918,
+      "TagClass": 12,
+      "TagTypeClass": 8,
+      "TeamTypeClass": 9,
+      "TechnoClass": 7,
+      "TechnoTypeClass": 2,
+      "TintStruct": 4,
+      "TriggerClass": 4,
+      "UnitTypeClass": 12
+    }
+  },
+  "type_map": {
+    "0x004011C0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 10,
+      "type": "TOP"
+    },
+    "0x00401C00::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 29357,
+      "type": "TOP"
+    },
+    "0x00401C00::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 32,
+      "type": "TOP"
+    },
+    "0x00401C00::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 34,
+      "type": "TOP"
+    },
+    "0x00402220::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 42,
+      "type": "TOP"
+    },
+    "0x004041D0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 109,
+      "type": "TOP"
+    },
+    "0x004041D0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24418,
+      "type": "TOP"
+    },
+    "0x004071C0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "type": "GenericNode"
+    },
+    "0x004071C0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "type": "GenericNode"
+    },
+    "0x0040B180::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 391,
+      "type": "TOP"
+    },
+    "0x0040B180::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 392,
+      "type": "TOP"
+    },
+    "0x0040E270::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27862,
+      "type": "GenericNode"
+    },
+    "0x00412B40::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 849,
+      "type": "TOP"
+    },
+    "0x004144B0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24174,
+      "type": "TOP"
+    },
+    "0x004144B0::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 885,
+      "type": "TOP"
+    },
+    "0x0041A160::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "type": "TechnoClass"
+    },
+    "0x00423930::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24266,
+      "type": "TOP"
+    },
+    "0x00423930::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 1285,
+      "type": "TOP"
+    },
+    "0x00423AC0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30711,
+      "type": "TOP"
+    },
+    "0x00423AC0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "type": "TechnoClass"
+    },
+    "0x00423AC0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "0x00428B80::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24295,
+      "type": "AnimTypeClass"
+    },
+    "0x0042A460::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25491,
+      "type": "TOP"
+    },
+    "0x0042EE30::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 1551,
+      "type": "TOP"
+    },
+    "0x0042EE30::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 1552,
+      "type": "TOP"
+    },
+    "0x0042F6F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 1580,
+      "type": "TOP"
+    },
+    "0x0042F6F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 1581,
+      "type": "TOP"
+    },
+    "0x0042F860::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29325,
+      "type": "TOP"
+    },
+    "0x0042F860::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 29323,
+      "type": "TOP"
+    },
+    "0x0043A7E0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 1900,
+      "type": "TOP"
+    },
+    "0x0043DA80::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "0x0043DA80::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 1954,
+      "type": "TOP"
+    },
+    "0x0043DA80::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "0x0043DA80::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "0x0043DA80::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "0x0043DA80::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 26613,
+      "type": "TOP"
+    },
+    "0x0043F180::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 24931,
+      "type": "TOP"
+    },
+    "0x00440580::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24979,
+      "type": "TOP"
+    },
+    "0x00443860::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2014,
+      "type": "TOP"
+    },
+    "0x00445F80::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 29970,
+      "type": "TOP"
+    },
+    "0x00445F80::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2042,
+      "type": "TOP"
+    },
+    "0x00447E90::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24968,
+      "type": "BuildingTypeClass"
+    },
+    "0x00448260::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 24282,
+      "type": "TOP"
+    },
+    "0x00449440::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24788,
+      "type": "BuildingTypeClass"
+    },
+    "0x00449C30::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24286,
+      "type": "TOP"
+    },
+    "0x00449C30::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24287,
+      "type": "TOP"
+    },
+    "0x00449C30::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 2098,
+      "type": "TOP"
+    },
+    "0x00449C30::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2099,
+      "type": "TOP"
+    },
+    "0x00449C30::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2100,
+      "type": "TOP"
+    },
+    "0x0044B780::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24903,
+      "type": "TOP"
+    },
+    "0x0044B780::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24904,
+      "type": "TOP"
+    },
+    "0x0044D700::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 24781,
+      "type": "BuildingTypeClass"
+    },
+    "0x0044D880::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 2126,
+      "type": "TOP"
+    },
+    "0x0044D880::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 24721,
+      "type": "TOP"
+    },
+    "0x0044E8F0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2135,
+      "type": "TOP"
+    },
+    "0x0044EFB0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 25039,
+      "type": "TOP"
+    },
+    "0x0044EFB0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 2143,
+      "type": "TOP"
+    },
+    "0x0044F640::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24796,
+      "type": "BuildingTypeClass"
+    },
+    "0x00451330::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 24928,
+      "type": "BuildingTypeClass"
+    },
+    "0x004526F0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24833,
+      "type": "BuildingTypeClass"
+    },
+    "0x00453240::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 2218,
+      "type": "TOP"
+    },
+    "0x00455980::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "type": "BuildingTypeClass"
+    },
+    "0x00455D50::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24713,
+      "type": "BuildingTypeClass"
+    },
+    "0x00455F10::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 2284,
+      "type": "TOP"
+    },
+    "0x004575B0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 24854,
+      "type": "BuildingTypeClass"
+    },
+    "0x00458DD0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24710,
+      "type": "BuildingTypeClass"
+    },
+    "0x00458E50::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 2351,
+      "type": "TOP"
+    },
+    "0x00458E50::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 2352,
+      "type": "TOP"
+    },
+    "0x004595C0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "0x00459CA0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "type": "BuildingTypeClass"
+    },
+    "0x0045EC20::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "type": "SHPStruct"
+    },
+    "0x0045F230::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 2549,
+      "type": "TOP"
+    },
+    "0x0045F230::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 2550,
+      "type": "TOP"
+    },
+    "0x0045F230::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 2551,
+      "type": "TOP"
+    },
+    "0x00464AC0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25125,
+      "type": "SHPStruct"
+    },
+    "0x004666E0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "0x004666E0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 25169,
+      "type": "TOP"
+    },
+    "0x004666E0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "0x00472160::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "type": "HouseClass"
+    },
+    "0x004723B0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "0x004723B0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25412,
+      "type": "HouseClass"
+    },
+    "0x004733A0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "type": "GenericNode"
+    },
+    "0x00476020::cl": {
+      "confidence": "ANCHORED",
+      "eq_root": 27239,
+      "type": "INILinkNode"
+    },
+    "0x00478340::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 3109,
+      "type": "TOP"
+    },
+    "0x00478340::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 3110,
+      "type": "TOP"
+    },
+    "0x004784F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29068,
+      "type": "TOP"
+    },
+    "0x004784F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 3122,
+      "type": "TOP"
+    },
+    "0x0047C550::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "type": "ObjectClass"
+    },
+    "0x0047E8A0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25463,
+      "type": "TOP"
+    },
+    "0x0047EBA0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "type": "ObjectClass"
+    },
+    "0x0047FF80::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25539,
+      "type": "TagClass"
+    },
+    "0x00483480::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25507,
+      "type": "ObjectClass"
+    },
+    "0x00485590::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "type": "CellClass"
+    },
+    "0x00486890::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25490,
+      "type": "CellClass"
+    },
+    "0x0048B750::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "0x0048B750::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "0x0049B660::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 4284,
+      "type": "TOP"
+    },
+    "0x0049C0D0::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 4298,
+      "type": "TOP"
+    },
+    "0x0049C5A0::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 4300,
+      "type": "TOP"
+    },
+    "0x0049CCF0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24327,
+      "type": "TOP"
+    },
+    "0x004A5EB0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 4678,
+      "type": "TOP"
+    },
+    "0x004ACE70::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 4821,
+      "type": "TOP"
+    },
+    "0x004AE290::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 4832,
+      "type": "TOP"
+    },
+    "0x004AF610::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27666,
+      "type": "State"
+    },
+    "0x004AF8E0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27734,
+      "type": "State"
+    },
+    "0x004AF8E0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27732,
+      "type": "State"
+    },
+    "0x004B0F20::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B0F20::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B0F20::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B0F20::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B0F20::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B0F20::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "0x004B2630::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B2630::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B2630::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B2630::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B2630::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B2630::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "0x004B4CC0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27656,
+      "type": "State"
+    },
+    "0x004B5210::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 4977,
+      "type": "TOP"
+    },
+    "0x004B53E0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 4979,
+      "type": "TOP"
+    },
+    "0x004BA770::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 5120,
+      "type": "TOP"
+    },
+    "0x004C3A20::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 5272,
+      "type": "TOP"
+    },
+    "0x004C9160::edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 26406,
+      "type": "CDTimerClass"
+    },
+    "0x004CEFB0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 5599,
+      "type": "TOP"
+    },
+    "0x004D2A10::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 5692,
+      "type": "TOP"
+    },
+    "0x004D2A10::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 5693,
+      "type": "TOP"
+    },
+    "0x004D2BC0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 26532,
+      "type": "TOP"
+    },
+    "0x004D2BC0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26532,
+      "type": "TOP"
+    },
+    "0x004D2BC0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 26531,
+      "type": "TOP"
+    },
+    "0x004D3920::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 5729,
+      "type": "TOP"
+    },
+    "0x004D74E0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 26708,
+      "type": "TOP"
+    },
+    "0x004D7D50::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 5776,
+      "type": "TOP"
+    },
+    "0x004D94B0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 5795,
+      "type": "TOP"
+    },
+    "0x004E0840::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 6009,
+      "type": "TOP"
+    },
+    "0x004E0B10::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 6022,
+      "type": "TOP"
+    },
+    "0x004F1CA0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7289,
+      "type": "TOP"
+    },
+    "0x004F1CA0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 7290,
+      "type": "TOP"
+    },
+    "0x004F1CA0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7291,
+      "type": "TOP"
+    },
+    "0x004F2300::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 7296,
+      "type": "TOP"
+    },
+    "0x004F2300::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7297,
+      "type": "TOP"
+    },
+    "0x004F2300::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7298,
+      "type": "TOP"
+    },
+    "0x004F3C40::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 7370,
+      "type": "TOP"
+    },
+    "0x004F54A0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7430,
+      "type": "TOP"
+    },
+    "0x004F54A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7431,
+      "type": "TOP"
+    },
+    "0x004F54A0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 7432,
+      "type": "TOP"
+    },
+    "0x004F54A0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 7434,
+      "type": "TOP"
+    },
+    "0x004F7870::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26951,
+      "type": "TOP"
+    },
+    "0x004F7870::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 26949,
+      "type": "TOP"
+    },
+    "0x004F7870::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "type": "HouseTypeClass"
+    },
+    "0x004F9B70::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7495,
+      "type": "TOP"
+    },
+    "0x004FAA10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 7505,
+      "type": "TOP"
+    },
+    "0x004FDD10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 7570,
+      "type": "TOP"
+    },
+    "0x004FDD10::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 7571,
+      "type": "TOP"
+    },
+    "0x004FE3E0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26932,
+      "type": "TOP"
+    },
+    "0x004FEA60::ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 26915,
+      "type": "BuildingClass"
+    },
+    "0x005004E0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "0x005054B0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 7671,
+      "type": "TOP"
+    },
+    "0x005082C0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 26986,
+      "type": "TOP"
+    },
+    "0x00508F60::al": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "type": "BuildingClass"
+    },
+    "0x00509F60::al": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "type": "BuildingClass"
+    },
+    "0x0050A350::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "0x0050A350::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7736,
+      "type": "TOP"
+    },
+    "0x0050A350::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "0x0050A350::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "0x0050A5C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26905,
+      "type": "TOP"
+    },
+    "0x0050A5C0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 7745,
+      "type": "TOP"
+    },
+    "0x0050A5C0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 26906,
+      "type": "TOP"
+    },
+    "0x0050AF10::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 7751,
+      "type": "TOP"
+    },
+    "0x0050B370::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7757,
+      "type": "TOP"
+    },
+    "0x0050D610::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 7807,
+      "type": "TOP"
+    },
+    "0x0050EEE0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7953,
+      "type": "TOP"
+    },
+    "0x0050EEE0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 7954,
+      "type": "TOP"
+    },
+    "0x0050F070::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 31795,
+      "type": "TOP"
+    },
+    "0x0050F070::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 31795,
+      "type": "TOP"
+    },
+    "0x0050F070::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31794,
+      "type": "TOP"
+    },
+    "0x0050F210::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 7968,
+      "type": "TOP"
+    },
+    "0x0050F210::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 7969,
+      "type": "TOP"
+    },
+    "0x0050F3A0::dl": {
+      "confidence": "INFERRED",
+      "eq_root": 24095,
+      "type": "TOP"
+    },
+    "0x0050F3A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 24095,
+      "type": "TOP"
+    },
+    "0x0050F3A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 7981,
+      "type": "TOP"
+    },
+    "0x0050FC60::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 8019,
+      "type": "TOP"
+    },
+    "0x0050FE20::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8027,
+      "type": "TOP"
+    },
+    "0x00512680::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27191,
+      "type": "AircraftTypeClass"
+    },
+    "0x00518D80::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 8340,
+      "type": "TOP"
+    },
+    "0x00518D80::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 8341,
+      "type": "TOP"
+    },
+    "0x00518F90::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 27358,
+      "type": "TOP"
+    },
+    "0x00518F90::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27360,
+      "type": "TOP"
+    },
+    "0x00518F90::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27360,
+      "type": "TOP"
+    },
+    "0x00518F90::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8348,
+      "type": "TOP"
+    },
+    "0x0051AA40::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 27331,
+      "type": "TOP"
+    },
+    "0x0051AA40::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 8359,
+      "type": "TOP"
+    },
+    "0x0051F800::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "type": "InfantryTypeClass"
+    },
+    "0x0051F800::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "type": "InfantryTypeClass"
+    },
+    "0x005206B0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 8443,
+      "type": "TOP"
+    },
+    "0x005206B0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8444,
+      "type": "TOP"
+    },
+    "0x00521C10::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27475,
+      "type": "InfantryTypeClass"
+    },
+    "0x00522340::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "type": "InfantryTypeClass"
+    },
+    "0x00522600::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27380,
+      "type": "InfantryTypeClass"
+    },
+    "0x00522700::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "type": "InfantryTypeClass"
+    },
+    "0x005227F0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "type": "InfantryTypeClass"
+    },
+    "0x005257C0::edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27227,
+      "type": "INILinkNode"
+    },
+    "0x00526B10::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8635,
+      "type": "TOP"
+    },
+    "0x00526FB0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8640,
+      "type": "TOP"
+    },
+    "0x00527920::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8648,
+      "type": "TOP"
+    },
+    "0x00527CC0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "0x00527CC0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "0x00527CC0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "0x00527CC0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "0x00527F20::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8658,
+      "type": "TOP"
+    },
+    "0x00528A10::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8669,
+      "type": "TOP"
+    },
+    "0x00528C00::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8671,
+      "type": "TOP"
+    },
+    "0x00528F00::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8674,
+      "type": "TOP"
+    },
+    "0x00529160::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8676,
+      "type": "TOP"
+    },
+    "0x00529350::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8678,
+      "type": "TOP"
+    },
+    "0x00529880::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27241,
+      "type": "INILinkNode"
+    },
+    "0x00529880::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8686,
+      "type": "TOP"
+    },
+    "0x00529CA0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8694,
+      "type": "TOP"
+    },
+    "0x00529CA0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27242,
+      "type": "INILinkNode"
+    },
+    "0x0052A110::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8700,
+      "type": "TOP"
+    },
+    "0x0052A760::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 8706,
+      "type": "TOP"
+    },
+    "0x0052B430::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27246,
+      "type": "INILinkNode"
+    },
+    "0x00535A70::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 27232,
+      "type": "INILinkNode"
+    },
+    "0x0053F650::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 9426,
+      "type": "TOP"
+    },
+    "0x0053F650::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 9427,
+      "type": "TOP"
+    },
+    "0x00541820::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 9539,
+      "type": "TOP"
+    },
+    "0x00542520::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 9576,
+      "type": "TOP"
+    },
+    "0x0054AD30::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 9753,
+      "type": "TOP"
+    },
+    "0x0054AD30::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 9754,
+      "type": "TOP"
+    },
+    "0x0054E3B0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 9831,
+      "type": "TOP"
+    },
+    "0x00552D60::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 27918,
+      "type": "TOP"
+    },
+    "0x00552D60::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27925,
+      "type": "TOP"
+    },
+    "0x00552D60::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 9968,
+      "type": "TOP"
+    },
+    "0x00556600::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "type": "GenericNode"
+    },
+    "0x005566A0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27859,
+      "type": "GenericNode"
+    },
+    "0x00557380::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 25640,
+      "type": "TOP"
+    },
+    "0x005596A0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10205,
+      "type": "TOP"
+    },
+    "0x005596A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 27902,
+      "type": "TOP"
+    },
+    "0x00559ED0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10213,
+      "type": "TOP"
+    },
+    "0x00559ED0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 10214,
+      "type": "TOP"
+    },
+    "0x0055BB90::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 10303,
+      "type": "TOP"
+    },
+    "0x00565800::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10380,
+      "type": "TOP"
+    },
+    "0x00565800::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 10381,
+      "type": "TOP"
+    },
+    "0x00565800::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 10382,
+      "type": "TOP"
+    },
+    "0x00565C10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 25583,
+      "type": "TOP"
+    },
+    "0x00565C10::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25581,
+      "type": "CellClass"
+    },
+    "0x00568E40::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10418,
+      "type": "TOP"
+    },
+    "0x00568E40::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31053,
+      "type": "TOP"
+    },
+    "0x00568E40::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31055,
+      "type": "TOP"
+    },
+    "0x00569760::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10423,
+      "type": "TOP"
+    },
+    "0x00569760::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 10424,
+      "type": "TOP"
+    },
+    "0x00569760::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 10425,
+      "type": "TOP"
+    },
+    "0x0056C510::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10454,
+      "type": "TOP"
+    },
+    "0x0056C510::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 10455,
+      "type": "TOP"
+    },
+    "0x0056D5A0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 25512,
+      "type": "RadSiteClass"
+    },
+    "0x0056D5A0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "type": "TagClass"
+    },
+    "0x0056DC20::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 27829,
+      "type": "TOP"
+    },
+    "0x00579B70::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10593,
+      "type": "TOP"
+    },
+    "0x00579B70::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 25435,
+      "type": "TOP"
+    },
+    "0x0057BCF0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "type": "CellClass"
+    },
+    "0x0057C2B0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "type": "CellClass"
+    },
+    "0x0057CF60::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "type": "CellClass"
+    },
+    "0x0057D530::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "type": "CellClass"
+    },
+    "0x0057F6A0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "type": "CellClass"
+    },
+    "0x005800D0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "type": "CellClass"
+    },
+    "0x00580BC0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 10654,
+      "type": "TOP"
+    },
+    "0x00581140::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 10662,
+      "type": "TOP"
+    },
+    "0x00581F90::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 10665,
+      "type": "TOP"
+    },
+    "0x005840C0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10696,
+      "type": "TOP"
+    },
+    "0x005840C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 10697,
+      "type": "TOP"
+    },
+    "0x00584550::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 10699,
+      "type": "TOP"
+    },
+    "0x00584550::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 10700,
+      "type": "TOP"
+    },
+    "0x00587180::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 25569,
+      "type": "TOP"
+    },
+    "0x00587180::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 25569,
+      "type": "TOP"
+    },
+    "0x00588BF0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 25499,
+      "type": "TOP"
+    },
+    "0x00589190::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 26297,
+      "type": "TOP"
+    },
+    "0x00589190::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31523,
+      "type": "TOP"
+    },
+    "0x00589370::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 28200,
+      "type": "TOP"
+    },
+    "0x00589370::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 10819,
+      "type": "TOP"
+    },
+    "0x0058A150::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 31948,
+      "type": "TOP"
+    },
+    "0x0058A150::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31947,
+      "type": "TOP"
+    },
+    "0x0058A2A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 31950,
+      "type": "TOP"
+    },
+    "0x0058A2A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31949,
+      "type": "TOP"
+    },
+    "0x0058A6E0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 10887,
+      "type": "TOP"
+    },
+    "0x0058A6E0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 10888,
+      "type": "TOP"
+    },
+    "0x0058A8F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 10896,
+      "type": "TOP"
+    },
+    "0x0058A8F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 10897,
+      "type": "TOP"
+    },
+    "0x0058F2C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 11001,
+      "type": "TOP"
+    },
+    "0x0059E740::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "0x0059E740::ebp": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "0x0059E740::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 11107,
+      "type": "TOP"
+    },
+    "0x0059E740::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 11108,
+      "type": "TOP"
+    },
+    "0x0059E740::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "0x0059E740::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "0x0059E740::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 11111,
+      "type": "TOP"
+    },
+    "0x005A23A0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "0x005A23A0::ebp": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "0x005A23A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "0x005A23A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "0x005A35F0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 11146,
+      "type": "TOP"
+    },
+    "0x005A89D0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 11177,
+      "type": "TOP"
+    },
+    "0x005A89D0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 11178,
+      "type": "TOP"
+    },
+    "0x005A8F00::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 11180,
+      "type": "TOP"
+    },
+    "0x005AE100::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 11350,
+      "type": "TOP"
+    },
+    "0x005BDF70::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 28424,
+      "type": "TOP"
+    },
+    "0x005BDF70::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 11662,
+      "type": "TOP"
+    },
+    "0x005BDF70::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 11664,
+      "type": "TOP"
+    },
+    "0x005C3220::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 11814,
+      "type": "TOP"
+    },
+    "0x005C3220::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 27956,
+      "type": "TOP"
+    },
+    "0x005C3B10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 11822,
+      "type": "TOP"
+    },
+    "0x005C9B10::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 12004,
+      "type": "TOP"
+    },
+    "0x005CEEF0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 12161,
+      "type": "TOP"
+    },
+    "0x005CEEF0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 12162,
+      "type": "TOP"
+    },
+    "0x005CF8E0::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 12174,
+      "type": "TOP"
+    },
+    "0x005CF8E0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 12175,
+      "type": "TOP"
+    },
+    "0x005CF8E0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 12177,
+      "type": "TOP"
+    },
+    "0x005D0070::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 12179,
+      "type": "TOP"
+    },
+    "0x005D0850::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 12224,
+      "type": "TOP"
+    },
+    "0x005D0850::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 12225,
+      "type": "TOP"
+    },
+    "0x005D09C0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 28157,
+      "type": "TOP"
+    },
+    "0x005D09C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 28157,
+      "type": "TOP"
+    },
+    "0x005D09C0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 28156,
+      "type": "TOP"
+    },
+    "0x005D5410::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 12447,
+      "type": "TOP"
+    },
+    "0x005D5410::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 12448,
+      "type": "TOP"
+    },
+    "0x005D55A0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 28078,
+      "type": "TOP"
+    },
+    "0x005D55A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 28078,
+      "type": "TOP"
+    },
+    "0x005D55A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 28077,
+      "type": "TOP"
+    },
+    "0x005D70F0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 26910,
+      "type": "ScoreStruct"
+    },
+    "0x005DC350::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28625,
+      "type": "TOP"
+    },
+    "0x005DC350::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 12674,
+      "type": "TOP"
+    },
+    "0x005E00B0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 12685,
+      "type": "TOP"
+    },
+    "0x005E00B0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28628,
+      "type": "TOP"
+    },
+    "0x005E00B0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 12687,
+      "type": "TOP"
+    },
+    "0x005E3D10::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 12730,
+      "type": "TOP"
+    },
+    "0x005EF4E0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 12922,
+      "type": "TOP"
+    },
+    "0x005F5940::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 28840,
+      "type": "TagClass"
+    },
+    "0x005F7090::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 13151,
+      "type": "TOP"
+    },
+    "0x005F7090::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 13152,
+      "type": "TOP"
+    },
+    "0x005F9070::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 28866,
+      "type": "TOP"
+    },
+    "0x005F9070::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 13175,
+      "type": "TOP"
+    },
+    "0x005F9070::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 28866,
+      "type": "TOP"
+    },
+    "0x006071E0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 13391,
+      "type": "TOP"
+    },
+    "0x006071E0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 13392,
+      "type": "TOP"
+    },
+    "0x0060D540::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 13463,
+      "type": "TOP"
+    },
+    "0x00618D40::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x00618D40::ebp": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x00618D40::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x00618D40::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x00618D40::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x00618D40::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "0x0061C690::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 13506,
+      "type": "TOP"
+    },
+    "0x0061D950::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 13509,
+      "type": "TOP"
+    },
+    "0x00625AB0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27864,
+      "type": "GenericNode"
+    },
+    "0x006282E0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 13690,
+      "type": "TOP"
+    },
+    "0x006282E0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 13691,
+      "type": "TOP"
+    },
+    "0x006284A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 13699,
+      "type": "TOP"
+    },
+    "0x006284A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 13700,
+      "type": "TOP"
+    },
+    "0x0062A980::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28948,
+      "type": "TOP"
+    },
+    "0x0062A980::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28948,
+      "type": "TOP"
+    },
+    "0x0062BD50::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 13806,
+      "type": "TOP"
+    },
+    "0x0062BD50::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 13808,
+      "type": "TOP"
+    },
+    "0x0062C6E0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 13813,
+      "type": "TOP"
+    },
+    "0x006319C0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 13921,
+      "type": "TOP"
+    },
+    "0x006319C0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 13922,
+      "type": "TOP"
+    },
+    "0x006339B0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30550,
+      "type": "HouseClass"
+    },
+    "0x006349B0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 14067,
+      "type": "TOP"
+    },
+    "0x006349B0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 14068,
+      "type": "TOP"
+    },
+    "0x00635A40::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30541,
+      "type": "HouseClass"
+    },
+    "0x00635C10::edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30569,
+      "type": "TeamTypeClass"
+    },
+    "0x00635C10::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30570,
+      "type": "HouseClass"
+    },
+    "0x00635C10::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30552,
+      "type": "HouseClass"
+    },
+    "0x00635F80::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 26417,
+      "type": "TechnoTypeClass"
+    },
+    "0x00636120::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30568,
+      "type": "HouseClass"
+    },
+    "0x00636590::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 26414,
+      "type": "TOP"
+    },
+    "0x0063C690::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 14223,
+      "type": "TOP"
+    },
+    "0x0063CAE0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 14226,
+      "type": "TOP"
+    },
+    "0x0063D630::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 14240,
+      "type": "TOP"
+    },
+    "0x00641140::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 14417,
+      "type": "TOP"
+    },
+    "0x00642130::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 14423,
+      "type": "TOP"
+    },
+    "0x0064B240::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 14589,
+      "type": "TOP"
+    },
+    "0x0064B660::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 14593,
+      "type": "TOP"
+    },
+    "0x0064BDD0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 14595,
+      "type": "TOP"
+    },
+    "0x0064C380::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 14597,
+      "type": "TOP"
+    },
+    "0x00650A90::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 14608,
+      "type": "TOP"
+    },
+    "0x00658970::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 14727,
+      "type": "TOP"
+    },
+    "0x00658970::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 14728,
+      "type": "TOP"
+    },
+    "0x00658B10::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 29271,
+      "type": "TOP"
+    },
+    "0x00658B10::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29271,
+      "type": "TOP"
+    },
+    "0x00658B10::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 29270,
+      "type": "TOP"
+    },
+    "0x0065AB80::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 14824,
+      "type": "TOP"
+    },
+    "0x0065B800::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29231,
+      "type": "LightSourceClass"
+    },
+    "0x0065B8F0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 14877,
+      "type": "TOP"
+    },
+    "0x0065BE90::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "type": "TintStruct"
+    },
+    "0x0065BE90::ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29210,
+      "type": "LightSourceClass"
+    },
+    "0x0065E010::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 14999,
+      "type": "TOP"
+    },
+    "0x0065E660::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 15001,
+      "type": "TOP"
+    },
+    "0x00672440::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 15195,
+      "type": "TOP"
+    },
+    "0x0067A6E0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29426,
+      "type": "UnitTypeClass"
+    },
+    "0x0067A770::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29423,
+      "type": "UnitTypeClass"
+    },
+    "0x0067A850::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29428,
+      "type": "UnitTypeClass"
+    },
+    "0x00687F10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 15553,
+      "type": "TOP"
+    },
+    "0x00687F10::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 15554,
+      "type": "TOP"
+    },
+    "0x00687F10::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 15555,
+      "type": "TOP"
+    },
+    "0x0068CD20::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15620,
+      "type": "TOP"
+    },
+    "0x0068CD20::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 15621,
+      "type": "TOP"
+    },
+    "0x0068CD20::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 29545,
+      "type": "TOP"
+    },
+    "0x0068F060::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 29550,
+      "type": "TOP"
+    },
+    "0x0068F060::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 29550,
+      "type": "TOP"
+    },
+    "0x0068F060::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 29550,
+      "type": "TOP"
+    },
+    "0x0068F8A0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15635,
+      "type": "TOP"
+    },
+    "0x0068F9B0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15637,
+      "type": "TOP"
+    },
+    "0x006914E0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "type": "HouseClass"
+    },
+    "0x006914E0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "type": "TeamTypeClass"
+    },
+    "0x006914E0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "type": "ScriptTypeClass"
+    },
+    "0x006941A0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15749,
+      "type": "TOP"
+    },
+    "0x006941A0::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15750,
+      "type": "TOP"
+    },
+    "0x006956D0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 15759,
+      "type": "TOP"
+    },
+    "0x00695BC0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 15762,
+      "type": "TOP"
+    },
+    "0x00695BC0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 15764,
+      "type": "TOP"
+    },
+    "0x00695BC0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 15765,
+      "type": "TOP"
+    },
+    "0x00696200::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 15768,
+      "type": "TOP"
+    },
+    "0x006970A0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 15801,
+      "type": "TOP"
+    },
+    "0x0069C4A0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29648,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C4A0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29653,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C6C0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 29622,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C800::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29655,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C800::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C890::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 29646,
+      "type": "MPGameModeClass"
+    },
+    "0x0069C9C0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 15925,
+      "type": "TOP"
+    },
+    "0x0069CBC0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 15932,
+      "type": "TOP"
+    },
+    "0x0069D9E0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 29436,
+      "type": "TOP"
+    },
+    "0x0069D9E0::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 15998,
+      "type": "TOP"
+    },
+    "0x0069ED20::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27672,
+      "type": "State"
+    },
+    "0x0069EFF0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 27741,
+      "type": "State"
+    },
+    "0x0069EFF0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27739,
+      "type": "State"
+    },
+    "0x006A05F0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "0x006A05F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "0x006A05F0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "0x006A05F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "0x006A05F0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "0x006A1C80::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A1C80::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A1C80::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A1C80::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A1C80::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A1C80::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "0x006A4270::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27657,
+      "type": "State"
+    },
+    "0x006A9540::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29705,
+      "type": "TOP"
+    },
+    "0x006AA600::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29729,
+      "type": "TOP"
+    },
+    "0x006AA600::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 16226,
+      "type": "TOP"
+    },
+    "0x006AF1A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 16303,
+      "type": "TOP"
+    },
+    "0x006B44A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 16443,
+      "type": "TOP"
+    },
+    "0x006B44A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 16444,
+      "type": "TOP"
+    },
+    "0x006B4650::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 31911,
+      "type": "TOP"
+    },
+    "0x006B4650::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 31911,
+      "type": "TOP"
+    },
+    "0x006B4650::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 31910,
+      "type": "TOP"
+    },
+    "0x006B7230::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "0x006B7230::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "0x006B9D00::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 16617,
+      "type": "TOP"
+    },
+    "0x006C6F50::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 17613,
+      "type": "TOP"
+    },
+    "0x006C6F50::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 17614,
+      "type": "TOP"
+    },
+    "0x006C9F10::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 17682,
+      "type": "TOP"
+    },
+    "0x006C9F10::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 17683,
+      "type": "TOP"
+    },
+    "0x006CC390::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "0x006CC390::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "0x006CE5B0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 17810,
+      "type": "TOP"
+    },
+    "0x006CF5A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 17866,
+      "type": "TOP"
+    },
+    "0x006CF5A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 17867,
+      "type": "TOP"
+    },
+    "0x006CF720::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 30046,
+      "type": "TOP"
+    },
+    "0x006CF720::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 30045,
+      "type": "TOP"
+    },
+    "0x006D6D10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 30336,
+      "type": "TOP"
+    },
+    "0x006D6D10::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 30336,
+      "type": "TOP"
+    },
+    "0x006D7F20::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 18029,
+      "type": "TOP"
+    },
+    "0x006DD5B0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 18176,
+      "type": "TOP"
+    },
+    "0x006E5300::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30477,
+      "type": "TagTypeClass"
+    },
+    "0x006E5320::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30475,
+      "type": "TagTypeClass"
+    },
+    "0x006E5340::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30480,
+      "type": "TagTypeClass"
+    },
+    "0x006E5570::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30470,
+      "type": "TriggerClass"
+    },
+    "0x006E57F0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27129,
+      "type": "HouseTypeClass"
+    },
+    "0x006E5820::ebx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30481,
+      "type": "TagTypeClass"
+    },
+    "0x006E8DE0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30536,
+      "type": "HouseClass"
+    },
+    "0x006EAA90::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30566,
+      "type": "TeamTypeClass"
+    },
+    "0x006EAA90::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30567,
+      "type": "TOP"
+    },
+    "0x006EAEE0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "type": "FootClass"
+    },
+    "0x006EDCA0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30584,
+      "type": "FootClass"
+    },
+    "0x006EFA10::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30579,
+      "type": "FootClass"
+    },
+    "0x006F0130::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "0x006F0130::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "0x006F0130::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "0x006F0130::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30527,
+      "type": "FootClass"
+    },
+    "0x006F22F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 18735,
+      "type": "TOP"
+    },
+    "0x006F24B0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 18743,
+      "type": "TOP"
+    },
+    "0x006F79A0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30792,
+      "type": "HouseClass"
+    },
+    "0x006F8DF0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "0x006F8DF0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "0x006F8DF0::edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "0x00701900::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "type": "HouseClass"
+    },
+    "0x00701900::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "type": "HouseClass"
+    },
+    "0x00706ED0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 18981,
+      "type": "TOP"
+    },
+    "0x007077C0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 28824,
+      "type": "ObjectClass"
+    },
+    "0x00709A90::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 30731,
+      "type": "TOP"
+    },
+    "0x00709A90::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 19043,
+      "type": "TOP"
+    },
+    "0x0070B1D0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 30928,
+      "type": "HouseClass"
+    },
+    "0x0070D590::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 19103,
+      "type": "TOP"
+    },
+    "0x0070FD70::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30891,
+      "type": "ParticleSystemClass"
+    },
+    "0x00712170::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 28868,
+      "type": "TOP"
+    },
+    "0x00712170::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 28870,
+      "type": "TOP"
+    },
+    "0x00712170::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 19274,
+      "type": "TOP"
+    },
+    "0x00712170::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 28867,
+      "type": "TOP"
+    },
+    "0x00712170::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 19276,
+      "type": "TOP"
+    },
+    "0x00718260::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28749,
+      "type": "TOP"
+    },
+    "0x00718260::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 19361,
+      "type": "TOP"
+    },
+    "0x0071A760::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 19422,
+      "type": "TOP"
+    },
+    "0x0071CDA0::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 19500,
+      "type": "TOP"
+    },
+    "0x0071E940::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 30267,
+      "type": "TOP"
+    },
+    "0x00724580::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 19761,
+      "type": "TOP"
+    },
+    "0x00724730::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 19763,
+      "type": "TOP"
+    },
+    "0x00726630::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 31206,
+      "type": "TOP"
+    },
+    "0x00726E00::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "0x00726E00::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "type": "TagClass"
+    },
+    "0x00726E00::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 31212,
+      "type": "TriggerClass"
+    },
+    "0x0072ADE0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 20006,
+      "type": "TOP"
+    },
+    "0x00730990::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 20201,
+      "type": "TOP"
+    },
+    "0x00731060::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 20213,
+      "type": "TOP"
+    },
+    "0x007310D0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 20215,
+      "type": "TOP"
+    },
+    "0x007313A0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 20220,
+      "type": "TOP"
+    },
+    "0x007313A0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 20221,
+      "type": "TOP"
+    },
+    "0x007314C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 20223,
+      "type": "TOP"
+    },
+    "0x00732580::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "type": "HouseClass"
+    },
+    "0x00732580::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "type": "HouseClass"
+    },
+    "0x007393C0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 30721,
+      "type": "TOP"
+    },
+    "0x007393C0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30722,
+      "type": "TOP"
+    },
+    "0x007393C0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30722,
+      "type": "TOP"
+    },
+    "0x00739EC0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24909,
+      "type": "TOP"
+    },
+    "0x00739EC0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24913,
+      "type": "TOP"
+    },
+    "0x00739EC0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 20385,
+      "type": "TOP"
+    },
+    "0x0073B470::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30738,
+      "type": "TOP"
+    },
+    "0x0073B470::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30739,
+      "type": "TOP"
+    },
+    "0x0073B470::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 20397,
+      "type": "TOP"
+    },
+    "0x0073C5F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 20402,
+      "type": "TOP"
+    },
+    "0x0073C5F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 33751,
+      "type": "TOP"
+    },
+    "0x0073C5F0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 33751,
+      "type": "TOP"
+    },
+    "0x0073E5E0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "0x0073E5E0::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "0x00741970::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "0x00741970::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "0x00741970::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31414,
+      "type": "TOP"
+    },
+    "0x00741970::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "0x00741970::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 20475,
+      "type": "TOP"
+    },
+    "0x00743A50::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 20484,
+      "type": "TOP"
+    },
+    "0x00743A50::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31482,
+      "type": "TOP"
+    },
+    "0x00743A50::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 20486,
+      "type": "TOP"
+    },
+    "0x00748360::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27074,
+      "type": "TOP"
+    },
+    "0x00748360::esi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27074,
+      "type": "TOP"
+    },
+    "0x00752760::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 20866,
+      "type": "TOP"
+    },
+    "0x007542F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 20929,
+      "type": "TOP"
+    },
+    "0x00754510::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 20931,
+      "type": "TOP"
+    },
+    "0x00755DB0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 20955,
+      "type": "TOP"
+    },
+    "0x00755DB0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 33806,
+      "type": "TOP"
+    },
+    "0x00759260::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 20996,
+      "type": "TOP"
+    },
+    "0x0075AEC0::eax": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "0x0075AEC0::ebx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 21089,
+      "type": "TOP"
+    },
+    "0x0075AEC0::ecx": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "0x0075AEC0::edi": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "0x0075AEC0::edx": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "0x0075AEC0::esi": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "0x0075CEC0::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 21138,
+      "type": "TOP"
+    },
+    "0x00764110::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 21277,
+      "type": "TOP"
+    },
+    "0x007642E0::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 21290,
+      "type": "TOP"
+    },
+    "0x00765840::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21347,
+      "type": "TOP"
+    },
+    "0x007659F0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21352,
+      "type": "TOP"
+    },
+    "0x00766C10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21411,
+      "type": "TOP"
+    },
+    "0x00766DC0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21417,
+      "type": "TOP"
+    },
+    "0x00769550::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 21502,
+      "type": "TOP"
+    },
+    "0x00769E30::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21532,
+      "type": "TOP"
+    },
+    "0x00769FE0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 28335,
+      "type": "TOP"
+    },
+    "0x0076A3F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 21553,
+      "type": "TOP"
+    },
+    "0x0076A3F0::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 21554,
+      "type": "TOP"
+    },
+    "0x0076B180::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 21596,
+      "type": "TOP"
+    },
+    "0x0076B7B0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21607,
+      "type": "TOP"
+    },
+    "0x0076B8C0::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21612,
+      "type": "TOP"
+    },
+    "0x0076BA70::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 21617,
+      "type": "TOP"
+    },
+    "0x00775110::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 28675,
+      "type": "TOP"
+    },
+    "0x0077A4D0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 21995,
+      "type": "TOP"
+    },
+    "0x0077A4D0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 21997,
+      "type": "TOP"
+    },
+    "0x00781D20::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22152,
+      "type": "TOP"
+    },
+    "0x00783800::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22165,
+      "type": "TOP"
+    },
+    "0x00788800::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 22190,
+      "type": "TOP"
+    },
+    "0x00789B60::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22199,
+      "type": "TOP"
+    },
+    "0x00791B10::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 22226,
+      "type": "TOP"
+    },
+    "0x007937B0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 22243,
+      "type": "TOP"
+    },
+    "0x00793BB0::ecx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22249,
+      "type": "TOP"
+    },
+    "0x0079BA60::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 22292,
+      "type": "TOP"
+    },
+    "0x007A3100::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22360,
+      "type": "TOP"
+    },
+    "0x007A3B30::eax": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22362,
+      "type": "TOP"
+    },
+    "0x007A5690::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 22382,
+      "type": "TOP"
+    },
+    "0x007A5890::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 22384,
+      "type": "TOP"
+    },
+    "0x007A9970::edi": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 22404,
+      "type": "TOP"
+    },
+    "0x007AA870::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 22409,
+      "type": "TOP"
+    },
+    "0x007AF6C0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 22561,
+      "type": "TOP"
+    },
+    "0x007B23B0::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 22637,
+      "type": "TOP"
+    },
+    "0x007B24E0::esi": {
+      "confidence": "INFERRED",
+      "eq_root": 22639,
+      "type": "TOP"
+    },
+    "0x007B3720::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 22690,
+      "type": "TOP"
+    },
+    "0x007B69F0::ebx": {
+      "confidence": "INFERRED",
+      "eq_root": 22789,
+      "type": "TOP"
+    },
+    "0x007B73F0::ecx": {
+      "confidence": "INFERRED",
+      "eq_root": 22811,
+      "type": "TOP"
+    },
+    "0x007BD690::eax": {
+      "confidence": "INFERRED",
+      "eq_root": 22957,
+      "type": "TOP"
+    },
+    "0x007BD690::edi": {
+      "confidence": "INFERRED",
+      "eq_root": 22958,
+      "type": "TOP"
+    },
+    "0x007C1F30::edx": {
+      "confidence": "INFERRED",
+      "eq_root": 23009,
+      "type": "TOP"
+    },
+    "0x007C3990::edx": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 23045,
+      "type": "TOP"
+    },
+    "AbstractClass::selectBestTarget.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 24095,
+      "type": "TOP"
+    },
+    "AircraftClass::Draw.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 24174,
+      "type": "TOP"
+    },
+    "AnimClass::UpdateProjectileTrajectory.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 24266,
+      "type": "TOP"
+    },
+    "AnimClass::drawFrame.this.member(0x78)": {
+      "confidence": "INFERRED",
+      "eq_root": 24282,
+      "type": "TOP"
+    },
+    "AnimClass::finalizeAnimation.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24286,
+      "type": "TOP"
+    },
+    "AnimClass::finalizeAnimation.this.member(0x408)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24286,
+      "type": "TOP"
+    },
+    "AnimClass::finalizeAnimation.this.member(0x6a4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24287,
+      "type": "TOP"
+    },
+    "AnimClass::finalizeAnimation.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24287,
+      "type": "TOP"
+    },
+    "AnimTypeClass::GetAnimData.this.member(0x2c8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24295,
+      "type": "AnimTypeClass"
+    },
+    "Array::GetElementAt.this.member(0x38)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24327,
+      "type": "TOP"
+    },
+    "Array::Zero.this.member(0x800)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27074,
+      "type": "TOP"
+    },
+    "AudioStream::SetupPlayback.this.member(0x28)": {
+      "confidence": "INFERRED",
+      "eq_root": 24418,
+      "type": "TOP"
+    },
+    "BuildingClass::CheckMissionGuard.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24710,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::CheckSpecialUpdateFlags.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24713,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::ClearFactoryBib.this.member(0x28)": {
+      "confidence": "INFERRED",
+      "eq_root": 24721,
+      "type": "TOP"
+    },
+    "BuildingClass::GetAmmoCountScaled.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24781,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::GetCursorAction.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24788,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::GetFactoryPosition.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24796,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::GetTypeField60.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::GetTypePtr.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24823,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::HasOccupantAudio.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24833,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::IsFactorySelectable.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24854,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::MissionStubReturnZero.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::MissionStubReturnZero2.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::MissionStubReturnZero3.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::ProcessRepair.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24903,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessRepair.this.member(0x718)": {
+      "confidence": "INFERRED",
+      "eq_root": 24904,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessSell.this.member(0x268)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24913,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessSell.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24909,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessSell.this.member(0x69c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24913,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessSell.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24913,
+      "type": "TOP"
+    },
+    "BuildingClass::ProcessSell.this.member(0xee8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 24909,
+      "type": "TOP"
+    },
+    "BuildingClass::ProductionCheck.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24928,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::ProductionDisplayUpdate.this.member(0x34)": {
+      "confidence": "INFERRED",
+      "eq_root": 24931,
+      "type": "TOP"
+    },
+    "BuildingClass::ProductionDisplayUpdate.this.member(0xe54)": {
+      "confidence": "INFERRED",
+      "eq_root": 24931,
+      "type": "TOP"
+    },
+    "BuildingClass::ScanCircleForTiberium.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::ScanCircleForTiberium.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24952,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::TogglePrimaryFactory.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 24968,
+      "type": "BuildingTypeClass"
+    },
+    "BuildingClass::Unlimbo_UnitDeliveryFix.this.member(0x8b0)": {
+      "confidence": "INFERRED",
+      "eq_root": 24979,
+      "type": "TOP"
+    },
+    "BuildingClass::ValidateFoundation.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 25039,
+      "type": "TOP"
+    },
+    "BuildingTypeClass::GetFoundationHeight.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "type": "SHPStruct"
+    },
+    "BuildingTypeClass::GetFoundationWidth.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "type": "SHPStruct"
+    },
+    "BuildingTypeClass::GetMaxPips.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25117,
+      "type": "SHPStruct"
+    },
+    "BuildingTypeClass::GetSizeInLeptons.this.member(0xef0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25125,
+      "type": "SHPStruct"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x2bc)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x2d0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x2d8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x2e0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 25162,
+      "type": "TOP"
+    },
+    "BulletClass::ProcessNukeExplosion.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 25169,
+      "type": "TOP"
+    },
+    "CCINIClass::GetDB.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "type": "GenericNode"
+    },
+    "CaptureManagerClass::CannotControlAnyMore.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::DecideUnitFate.this.member(0xc0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::DrawLinks.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::GetOriginalOwner.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::IsOverloading.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::IsOverloading.this.member(0x44)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25412,
+      "type": "HouseClass"
+    },
+    "CaptureManagerClass::NeedsToDrawLinks.this.member(0x48)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25386,
+      "type": "HouseClass"
+    },
+    "Cell::GetAdjacencyFlags.this.member(0x11b)": {
+      "confidence": "INFERRED",
+      "eq_root": 25435,
+      "type": "TOP"
+    },
+    "CellClass::AddContent.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25463,
+      "type": "TOP"
+    },
+    "CellClass::ApplyTileModification.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25469,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification2.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification2.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25472,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification3.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification3.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25475,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification4.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification4.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25478,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification5.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification5.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25481,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification6.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "type": "CellClass"
+    },
+    "CellClass::ApplyTileModification6.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25484,
+      "type": "CellClass"
+    },
+    "CellClass::CheckProperty.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25490,
+      "type": "CellClass"
+    },
+    "CellClass::ClearOccupancyGrid.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25491,
+      "type": "TOP"
+    },
+    "CellClass::ClearOccupancyGrid.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25491,
+      "type": "TOP"
+    },
+    "CellClass::ClearOccupancyGrid.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25491,
+      "type": "TOP"
+    },
+    "CellClass::CopyNeighborData.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25499,
+      "type": "TOP"
+    },
+    "CellClass::CopyNeighborData.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25499,
+      "type": "TOP"
+    },
+    "CellClass::CopyNeighborData.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25499,
+      "type": "TOP"
+    },
+    "CellClass::DamageAllObjects.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25507,
+      "type": "ObjectClass"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "type": "TagClass"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x68)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "type": "TagClass"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0x6c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "type": "TagClass"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0xf4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25511,
+      "type": "TagClass"
+    },
+    "CellClass::DetermineTileConnectivity.this.member(0xf8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25512,
+      "type": "RadSiteClass"
+    },
+    "CellClass::FindBuilding.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "type": "ObjectClass"
+    },
+    "CellClass::FindBuilding.this.member(0xe8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25517,
+      "type": "ObjectClass"
+    },
+    "CellClass::FindInfantry.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "type": "ObjectClass"
+    },
+    "CellClass::FindInfantry.this.member(0xe8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25520,
+      "type": "ObjectClass"
+    },
+    "CellClass::GetBridgeIndex.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "CellClass::GetScreenRect.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25539,
+      "type": "TagClass"
+    },
+    "CellClass::ProcessBridgeRepair.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "type": "CellClass"
+    },
+    "CellClass::ProcessBridgeRepair.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25554,
+      "type": "CellClass"
+    },
+    "CellClass::SetTerrainType.this.member(0x24)": {
+      "confidence": "INFERRED",
+      "eq_root": 25569,
+      "type": "TOP"
+    },
+    "CellClass::SetTerrainType.this.member(0x44)": {
+      "confidence": "INFERRED",
+      "eq_root": 25569,
+      "type": "TOP"
+    },
+    "CellClass::UpdateTerrainAndWaypoints.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25581,
+      "type": "CellClass"
+    },
+    "CellClass::UpdateTerrainAndWaypoints.this.member(0xc)": {
+      "confidence": "INFERRED",
+      "eq_root": 25583,
+      "type": "TOP"
+    },
+    "CheckListClass::RemoveItem.this.member(0xcc)": {
+      "confidence": "INFERRED",
+      "eq_root": 25640,
+      "type": "TOP"
+    },
+    "ConnectionClass::initQueue.this.member(0x14)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "ConnectionClass::initQueue.this.member(0x18)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "ConnectionClass::initQueue.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "ConnectionClass::initQueue.this.member(0x20)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "DynamicVectorClass_SubzoneConn::GetSize.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31523,
+      "type": "TOP"
+    },
+    "DynamicVectorClass_SubzoneConn::GetSize.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26297,
+      "type": "TOP"
+    },
+    "FacingClass::Update.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26406,
+      "type": "CDTimerClass"
+    },
+    "FactoryClass::CompleteCurrentItem.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26414,
+      "type": "TOP"
+    },
+    "FactoryClass::FindAvailable.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26417,
+      "type": "TechnoTypeClass"
+    },
+    "FoggedObjectClass::Read.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 26531,
+      "type": "TOP"
+    },
+    "FoggedObjectClass::Read.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26532,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x11e0)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x11e4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x150c)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x18a4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x18b0)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0xf04)": {
+      "confidence": "INFERRED",
+      "eq_root": 26610,
+      "type": "TOP"
+    },
+    "FootClass::DrawPlacementPreview.this.member(0xf08)": {
+      "confidence": "INFERRED",
+      "eq_root": 26613,
+      "type": "TOP"
+    },
+    "FootClass::ValidateMove.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26708,
+      "type": "TOP"
+    },
+    "HouseClass::AIBuildBase.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26905,
+      "type": "TOP"
+    },
+    "HouseClass::AIBuildBase.this.member(0x8b0)": {
+      "confidence": "INFERRED",
+      "eq_root": 26905,
+      "type": "TOP"
+    },
+    "HouseClass::AIBuildBase.this.member(0xdf8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26906,
+      "type": "TOP"
+    },
+    "HouseClass::AIBuildBase.this.member(0xee0)": {
+      "confidence": "INFERRED",
+      "eq_root": 26906,
+      "type": "TOP"
+    },
+    "HouseClass::AIDecision.this.member(0xb30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26910,
+      "type": "ScoreStruct"
+    },
+    "HouseClass::AIUnitProduction.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26915,
+      "type": "BuildingClass"
+    },
+    "HouseClass::AutoBuild.this.member(0xc)": {
+      "confidence": "INFERRED",
+      "eq_root": 26932,
+      "type": "TOP"
+    },
+    "HouseClass::AutoBuild.this.member(0xdd8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26932,
+      "type": "TOP"
+    },
+    "HouseClass::CanBuild.this.member(0x16f0)": {
+      "confidence": "INFERRED",
+      "eq_root": 26949,
+      "type": "TOP"
+    },
+    "HouseClass::CanBuild.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "type": "HouseTypeClass"
+    },
+    "HouseClass::CanBuild.this.member(0xb8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26951,
+      "type": "TOP"
+    },
+    "HouseClass::CanBuild.this.member(0xdf8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 26950,
+      "type": "HouseTypeClass"
+    },
+    "HouseClass::FindAutoBuildLocation.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 26986,
+      "type": "TOP"
+    },
+    "HouseClass::FindAutoBuildLocation.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 26986,
+      "type": "TOP"
+    },
+    "HouseClass::FindType15.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FindType15.this.member(0xb0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FindType24.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FindType24.this.member(0xac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FindType2728.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FindType2728.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "type": "TagClass"
+    },
+    "HouseClass::FindType2728.this.member(0xac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::FireSuperWeaponAtBestTarget.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "HouseClass::Fire_GenMutator.this.member(0x81)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "type": "BuildingClass"
+    },
+    "HouseClass::Fire_GenMutator.this.member(0x8c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27021,
+      "type": "BuildingClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53ac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53b8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53bc)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetBuildLimit.this.member(0x53cc)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27038,
+      "type": "FactoryClass"
+    },
+    "HouseClass::GetRepairStepAmount.this.member(0x6f4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "HouseClass::HasType25Building.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::HasType25Building.this.member(0xac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::HasType26Building.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::HasType26Building.this.member(0xac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "HouseClass::IncrementStat.this.member(0x800)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27074,
+      "type": "TOP"
+    },
+    "HouseClass::InitStatArray.this.member(0x800)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27074,
+      "type": "TOP"
+    },
+    "HouseClass::RecordCratePlacement.this.member(0x5708)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "HouseClass::RecordCratePlacement.this.member(0x5714)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27099,
+      "type": "TOP"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x41b)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "type": "BuildingClass"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x74)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "type": "BuildingClass"
+    },
+    "HouseClass::ToggleGapGeneratorReveal.this.member(0x81)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27125,
+      "type": "BuildingClass"
+    },
+    "HouseClass::UpdateAllTypes.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27129,
+      "type": "HouseTypeClass"
+    },
+    "HouseTypeClass::loadBuildLimits.this.member(0xb4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27191,
+      "type": "AircraftTypeClass"
+    },
+    "INIClass::ClearSection.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27227,
+      "type": "INILinkNode"
+    },
+    "INIClass::INIClass.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27232,
+      "type": "INILinkNode"
+    },
+    "INIClass::ParseValue.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "INIClass::ParseValue.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "INIClass::ParseValue.this.member(0xc)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27236,
+      "type": "TOP"
+    },
+    "INIClass::ReadExitCellList.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27239,
+      "type": "INILinkNode"
+    },
+    "INIClass::ReadPoint2D_Overwrite.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27241,
+      "type": "INILinkNode"
+    },
+    "INIClass::ReadPoint3D_Overwrite.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27242,
+      "type": "INILinkNode"
+    },
+    "INIClass::deleteKey.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27246,
+      "type": "INILinkNode"
+    },
+    "IPXManagerClass::init.this.member(0x20)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "InfantryClass::AssignDestination_SyncLog.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 27331,
+      "type": "TOP"
+    },
+    "InfantryClass::CanAttackTarget.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::Draw.this.member(0x3544)": {
+      "confidence": "INFERRED",
+      "eq_root": 27358,
+      "type": "TOP"
+    },
+    "InfantryClass::Draw.this.member(0x355c)": {
+      "confidence": "INFERRED",
+      "eq_root": 27358,
+      "type": "TOP"
+    },
+    "InfantryClass::Draw.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27360,
+      "type": "TOP"
+    },
+    "InfantryClass::FireAtTargetPos.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27380,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::GetTypePtr.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::HandleCursorOverCell.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27413,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::InitProductionLimits.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::InitProductionLimits.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27421,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::IsBombDeployMission.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::IsBombDeployMission.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27338,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::IsBridgeRepairEnabled.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::ResetReloadIfNeeded.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27475,
+      "type": "InfantryTypeClass"
+    },
+    "InfantryClass::updateDeployAnimation.this.member(0x520)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27058,
+      "type": "BuildingTypeClass"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x11b)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x578)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x57c)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x5e0)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::ProcessCollision.this.member(0x9c)": {
+      "confidence": "INFERRED",
+      "eq_root": 27573,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::TransformCoords.this.member(0x40)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::TransformCoords.this.member(0x44)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::TransformCoords.this.member(0x58)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x11b)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x140)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x1768)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x2b4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x2d0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x598)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x5a4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x5d4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x5e0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x5e4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x640)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x648)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x64c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x668)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x670)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotion::Update.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27605,
+      "type": "TOP"
+    },
+    "JumpjetLocomotionClass::GetLinkedLocomotorPointer.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27656,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27657,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::LoadLocomotionFromStream.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27666,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::LoadLocomotionFromStream_2.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27672,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::StubReturnZero.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27732,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_0.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27734,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_12.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27739,
+      "type": "State"
+    },
+    "JumpjetLocomotionClass::StubReturnZero_13.this.member(0x50)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27741,
+      "type": "State"
+    },
+    "LayerClass::Pathfinding_Find.this.member(0x2)": {
+      "confidence": "INFERRED",
+      "eq_root": 27829,
+      "type": "TOP"
+    },
+    "LinkedList::FindNext.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "type": "GenericNode"
+    },
+    "LinkedList::FindPrev.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "type": "GenericNode"
+    },
+    "LinkedList::Init.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27858,
+      "type": "GenericNode"
+    },
+    "LinkedList::InsertAfter.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27859,
+      "type": "GenericNode"
+    },
+    "LinkedList::Pop.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27861,
+      "type": "GenericNode"
+    },
+    "LinkedList::Prepend.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27862,
+      "type": "GenericNode"
+    },
+    "LinkedList::PushFront.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27864,
+      "type": "GenericNode"
+    },
+    "LoadSaveDialog::FillList.this.member(0x1ac)": {
+      "confidence": "INFERRED",
+      "eq_root": 27902,
+      "type": "TOP"
+    },
+    "LoadSaveDialog::FillList.this.member(0x34cc)": {
+      "confidence": "INFERRED",
+      "eq_root": 27902,
+      "type": "TOP"
+    },
+    "LoadSaveDialog::FillList.this.member(0x60)": {
+      "confidence": "INFERRED",
+      "eq_root": 27902,
+      "type": "TOP"
+    },
+    "LoadingScreen::AdjustForResolution.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 27918,
+      "type": "TOP"
+    },
+    "LoadingScreen::Render.this.member(0x366c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27925,
+      "type": "TOP"
+    },
+    "LoadingScreen::Render.this.member(0x3674)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 27925,
+      "type": "TOP"
+    },
+    "MPCooperative::GetMapData.this.member(0xb8)": {
+      "confidence": "INFERRED",
+      "eq_root": 27956,
+      "type": "TOP"
+    },
+    "MSFont[18]::FindPair8.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 28077,
+      "type": "TOP"
+    },
+    "MSFont[18]::FindPair8.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 28078,
+      "type": "TOP"
+    },
+    "MSPCXAnim[42]::FindIndex_Pair.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 28156,
+      "type": "TOP"
+    },
+    "MSPCXAnim[42]::FindIndex_Pair.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 28157,
+      "type": "TOP"
+    },
+    "MapClass::AllocateCellDataBuffer.this.member(0xc)": {
+      "confidence": "INFERRED",
+      "eq_root": 28200,
+      "type": "TOP"
+    },
+    "MapClass::GetTileDataField14.this.member(0x2)": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "MapClass::SetObstruction.this.member(0x2)": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "Map_WorldDominationTour[28]::AddRef.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 28335,
+      "type": "TOP"
+    },
+    "MouseClass::LoadGameAssets.this.member(0x1258)": {
+      "confidence": "INFERRED",
+      "eq_root": 28424,
+      "type": "TOP"
+    },
+    "NetworkLobby::CreateGame.this.member(0x6b0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28625,
+      "type": "TOP"
+    },
+    "NetworkLobby::MessageHandler.this.member(0x6ac)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28628,
+      "type": "TOP"
+    },
+    "NetworkLobby::MessageHandler.this.member(0x6b0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28628,
+      "type": "TOP"
+    },
+    "NullModemClass::GetMember23.this.member(0x5c)": {
+      "confidence": "INFERRED",
+      "eq_root": 28675,
+      "type": "TOP"
+    },
+    "ObjectClass::FindPlacementPosition.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28749,
+      "type": "TOP"
+    },
+    "ObjectClass::FindPlacementPosition.this.member(0x9c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28749,
+      "type": "TOP"
+    },
+    "ObjectClass::GetHeight.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "type": "GenericNode"
+    },
+    "ObjectClass::GetWidth.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28806,
+      "type": "GenericNode"
+    },
+    "ObjectClass::NotifyExpired.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28824,
+      "type": "ObjectClass"
+    },
+    "ObjectClass::SetReference.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 28840,
+      "type": "TagClass"
+    },
+    "ObjectTypeClass::Load2DArt.this.member(0x1258)": {
+      "confidence": "INFERRED",
+      "eq_root": 28866,
+      "type": "TOP"
+    },
+    "ObjectTypeClass::LoadExtras.this.member(0x1050)": {
+      "confidence": "INFERRED",
+      "eq_root": 28867,
+      "type": "TOP"
+    },
+    "ObjectTypeClass::LoadExtras.this.member(0x1054)": {
+      "confidence": "INFERRED",
+      "eq_root": 28868,
+      "type": "TOP"
+    },
+    "ObjectTypeClass::LoadExtras.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 28867,
+      "type": "TOP"
+    },
+    "ObjectTypeClass::LoadExtras.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 28870,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0x70c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0xc)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0xe8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0xec)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0xf0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "Options::DialogProc.this.member(0xf8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28909,
+      "type": "TOP"
+    },
+    "ParasiteClass::TryInfect.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 28948,
+      "type": "TOP"
+    },
+    "ParticleTypeClass::Init.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 29068,
+      "type": "TOP"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29210,
+      "type": "LightSourceClass"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x58)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "type": "TintStruct"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x5c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "type": "TintStruct"
+    },
+    "RadSiteClass::DecreaseLight.this.member(0x60)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29213,
+      "type": "TintStruct"
+    },
+    "RadSiteClass::Tick.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29231,
+      "type": "LightSourceClass"
+    },
+    "RadarHashVector::FindItemIndex.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 29270,
+      "type": "TOP"
+    },
+    "RadarHashVector::FindItemIndex.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 29271,
+      "type": "TOP"
+    },
+    "RadarHashVector::FindItemIndex.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 29271,
+      "type": "TOP"
+    },
+    "RandomMap::PlaceRandomMapTiberium.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "RandomMap::PlaceRandomMapTiberium.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 29319,
+      "type": "TOP"
+    },
+    "RandomMap::Read.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 29323,
+      "type": "TOP"
+    },
+    "RandomMap::Read.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 29325,
+      "type": "TOP"
+    },
+    "Rect::SetRedraw.this.member(0x1c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "RefCount::Decrement.this.member(0xc)": {
+      "confidence": "INFERRED",
+      "eq_root": 29357,
+      "type": "TOP"
+    },
+    "RulesClass::readOverlayTypes.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29423,
+      "type": "UnitTypeClass"
+    },
+    "RulesClass::readSmudgeTypes.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29426,
+      "type": "UnitTypeClass"
+    },
+    "RulesClass::readWarheads.this.member(0x10)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29428,
+      "type": "UnitTypeClass"
+    },
+    "SHA1::Transform.this.member(0xc)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 29436,
+      "type": "TOP"
+    },
+    "ScoreScreen::Display.this.member(0x61c)": {
+      "confidence": "INFERRED",
+      "eq_root": 29545,
+      "type": "TOP"
+    },
+    "Screen::TransitionRender.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 29550,
+      "type": "TOP"
+    },
+    "ScriptClass::GetNextAction.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "type": "ScriptTypeClass"
+    },
+    "ScriptClass::GetNextAction.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "type": "TeamTypeClass"
+    },
+    "SessionClass::AddRef.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29622,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::GetEntry.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "type": "TeamTypeClass"
+    },
+    "SessionClass::GetEntry.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29628,
+      "type": "ScriptTypeClass"
+    },
+    "SessionClass::Read.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29646,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::Seek.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29648,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::SetField.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "type": "HouseClass"
+    },
+    "SessionClass::SetField.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "type": "TeamTypeClass"
+    },
+    "SessionClass::Write.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29653,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::findPlayer.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29655,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::findPlayer.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "type": "MPGameModeClass"
+    },
+    "SessionClass::updatePlayer.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29656,
+      "type": "MPGameModeClass"
+    },
+    "Sidebar::UpdateProductionDisplay.this.member(0x58)": {
+      "confidence": "INFERRED",
+      "eq_root": 29705,
+      "type": "TOP"
+    },
+    "Sidebar::UpdateProductionDisplay.this.member(0x64)": {
+      "confidence": "INFERRED",
+      "eq_root": 29705,
+      "type": "TOP"
+    },
+    "Sidebar::UpdateProductionDisplay.this.member(0x6c)": {
+      "confidence": "INFERRED",
+      "eq_root": 29705,
+      "type": "TOP"
+    },
+    "SidebarClass::UpdateProduction.this.member(0x258)": {
+      "confidence": "INFERRED",
+      "eq_root": 29729,
+      "type": "TOP"
+    },
+    "SpawnManagerClass::SetTarget.this.member(0x68)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "SuperClass::Launch.this.member(0x174)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x298)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x2c)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x328)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x348)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x34c)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0x69c)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0xc4)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperClass::Launch.this.member(0xc68)": {
+      "confidence": "INFERRED",
+      "eq_root": 29928,
+      "type": "TOP"
+    },
+    "SuperWeapon::CreateUnits.this.member(0x1568)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 29970,
+      "type": "TOP"
+    },
+    "SuperWeapon::CreateUnits.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 29970,
+      "type": "TOP"
+    },
+    "SwizzleManagerClass[19]::FindItem.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 30045,
+      "type": "TOP"
+    },
+    "SwizzleManagerClass[19]::FindItem.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 30046,
+      "type": "TOP"
+    },
+    "TEventClass::Execute.this.member(0x11e8)": {
+      "confidence": "INFERRED",
+      "eq_root": 30267,
+      "type": "TOP"
+    },
+    "TEventClass::PrepareSaveToINI.this.member(0x2c)": {
+      "confidence": "INFERRED",
+      "eq_root": 30267,
+      "type": "TOP"
+    },
+    "TacticalClass::DrawBuildingsInView.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 30336,
+      "type": "TOP"
+    },
+    "TacticalClass::DrawBuildingsInView.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 30336,
+      "type": "TOP"
+    },
+    "TacticalClass::DrawBuildingsInView.this.member(0xc)": {
+      "confidence": "INFERRED",
+      "eq_root": 30336,
+      "type": "TOP"
+    },
+    "TagClass::AddTrigger.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30470,
+      "type": "TriggerClass"
+    },
+    "TagClass::HasCrossesHorizontalLineEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30475,
+      "type": "TagTypeClass"
+    },
+    "TagClass::HasCrossesVerticalLineEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30477,
+      "type": "TagTypeClass"
+    },
+    "TagClass::HasZoneEntryByEvent.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30480,
+      "type": "TagTypeClass"
+    },
+    "TagClass::IsOnlyInstanceOfType.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30481,
+      "type": "TagTypeClass"
+    },
+    "TeamClass::Check.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 29627,
+      "type": "TeamTypeClass"
+    },
+    "TeamClass::Check.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30524,
+      "type": "HouseClass"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30527,
+      "type": "FootClass"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "TeamClass::CheckMemberSuperWeapon.this.member(0xb4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30529,
+      "type": "TOP"
+    },
+    "TeamClass::Destructor.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30536,
+      "type": "HouseClass"
+    },
+    "TeamClass::ExecuteAction.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30567,
+      "type": "TOP"
+    },
+    "TeamClass::ExecuteAction.this.member(0x70)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30567,
+      "type": "TOP"
+    },
+    "TeamClass::FindByMemberType.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30541,
+      "type": "HouseClass"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "type": "FootClass"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x40)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "type": "FootClass"
+    },
+    "TeamClass::FindClosestEnemy.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30542,
+      "type": "FootClass"
+    },
+    "TeamClass::GetLeaderIndex.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30550,
+      "type": "HouseClass"
+    },
+    "TeamClass::GetMember.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30552,
+      "type": "HouseClass"
+    },
+    "TeamClass::RecruitMember.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30566,
+      "type": "TeamTypeClass"
+    },
+    "TeamClass::RecruitMember.this.member(0xe4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30567,
+      "type": "TOP"
+    },
+    "TeamClass::RemoveAllMembers.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30568,
+      "type": "HouseClass"
+    },
+    "TeamClass::Reset.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30569,
+      "type": "TeamTypeClass"
+    },
+    "TeamClass::Reset.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30570,
+      "type": "HouseClass"
+    },
+    "TeamClass::SelectDeploymentTarget.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30579,
+      "type": "FootClass"
+    },
+    "TeamClass::SyncMemberFacing.this.member(0x54)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30584,
+      "type": "FootClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x294)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2b0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30711,
+      "type": "TOP"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30711,
+      "type": "TOP"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2e4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x2e8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "type": "TechnoClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x308)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x338)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30711,
+      "type": "TOP"
+    },
+    "TechnoClass::CreateUnit.this.member(0x33c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x34c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30711,
+      "type": "TOP"
+    },
+    "TechnoClass::CreateUnit.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "type": "TechnoClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0xbc4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0xce8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30712,
+      "type": "TechnoClass"
+    },
+    "TechnoClass::CreateUnit.this.member(0xf88)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30713,
+      "type": "SpawnManagerClass"
+    },
+    "TechnoClass::Deploy.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 30721,
+      "type": "TOP"
+    },
+    "TechnoClass::Deploy.this.member(0x404)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30722,
+      "type": "TOP"
+    },
+    "TechnoClass::Deploy.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30722,
+      "type": "TOP"
+    },
+    "TechnoClass::DrawPips.this.member(0x1580)": {
+      "confidence": "INFERRED",
+      "eq_root": 30731,
+      "type": "TOP"
+    },
+    "TechnoClass::DrawVoxel.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30738,
+      "type": "TOP"
+    },
+    "TechnoClass::DrawVoxel.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 30739,
+      "type": "TOP"
+    },
+    "TechnoClass::FindClosestPlacementCell.this.member(0x3ec)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "type": "TechnoClass"
+    },
+    "TechnoClass::FindClosestPlacementCell.this.member(0x6c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30767,
+      "type": "TechnoClass"
+    },
+    "TechnoClass::GetBridgeDamageMult.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30792,
+      "type": "HouseClass"
+    },
+    "TechnoClass::GetID.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "TechnoClass::GetTarget.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "TechnoClass::GetTypeFlag.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "type": "InfantryTypeClass"
+    },
+    "TechnoClass::IsMission27to30.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "type": "InfantryTypeClass"
+    },
+    "TechnoClass::IsOwnedByHuman.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30884,
+      "type": "HouseClass"
+    },
+    "TechnoClass::LinkToBridge.this.member(0x31c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30891,
+      "type": "ParticleSystemClass"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "type": "HouseClass"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x2b4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "type": "HouseClass"
+    },
+    "TechnoClass::ReceiveDamage_Shield.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30916,
+      "type": "HouseClass"
+    },
+    "TechnoClass::RevealAreaConditional.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30928,
+      "type": "HouseClass"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x30)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "TechnoClass::SelectAutoTarget_Start_AU.this.member(0x5600)": {
+      "confidence": "ANCHORED",
+      "eq_root": 30941,
+      "type": "HouseClass"
+    },
+    "TechnoClass::processPowerDrain.this.member(0x34)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25387,
+      "type": "HouseClass"
+    },
+    "TechnoClass::updateTurretRotation.this.member(0x6c0)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27426,
+      "type": "InfantryTypeClass"
+    },
+    "Terrain::GetTileType.this.member(0x40)": {
+      "confidence": "ANCHORED",
+      "eq_root": 25748,
+      "type": "BuildingTypeClass"
+    },
+    "Terrain::PlaceCliffs.this.member(0x24)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31053,
+      "type": "TOP"
+    },
+    "Terrain::PlaceCliffs.this.member(0x60)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31055,
+      "type": "TOP"
+    },
+    "Terrain::PlaceCliffs.this.member(0x64)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31055,
+      "type": "TOP"
+    },
+    "Tiberium::CalculateSpread.this.member(0x2)": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "Tiberium::CalculateSpread.this.member(0x308)": {
+      "confidence": "INFERRED",
+      "eq_root": 31138,
+      "type": "TOP"
+    },
+    "TriggerClass::FireAction.this.member(0x24)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31206,
+      "type": "TOP"
+    },
+    "TriggerClass::FireAction.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31206,
+      "type": "TOP"
+    },
+    "TriggerClass::ProcessEvents.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31212,
+      "type": "TriggerClass"
+    },
+    "TriggerTypeClass::HasLocalSetOrClearedEvent.this.member(0x28)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "TriggerTypeClass::HasLocalSetOrClearedEvent.this.member(0x2c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27018,
+      "type": "TagClass"
+    },
+    "TriggerTypeClass::HasLocalSetOrClearedEvent.this.member(0xac)": {
+      "confidence": "ANCHORED",
+      "eq_root": 27073,
+      "type": "TOP"
+    },
+    "UnitClass::AssignDestination_SyncLog.this.member(0x3ec)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31414,
+      "type": "TOP"
+    },
+    "UnitClass::AssignDestination_SyncLog.this.member(0x3f8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "UnitClass::AssignDestination_SyncLog.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "UnitClass::AssignDestination_SyncLog.this.member(0x5e0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31413,
+      "type": "TOP"
+    },
+    "UnitClass::AssignDestination_SyncLog.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31414,
+      "type": "TOP"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x3b8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "UnitClass::ProcessExitQueue.this.member(0x6c4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 31474,
+      "type": "UnitTypeClass"
+    },
+    "UnitClass::Scatter.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 31482,
+      "type": "TOP"
+    },
+    "Vector8::EraseAt.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31523,
+      "type": "TOP"
+    },
+    "Vector8::EraseAt.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 31523,
+      "type": "TOP"
+    },
+    "VectorClass_UAngerStruct::FindItemIndex_0.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31794,
+      "type": "TOP"
+    },
+    "VectorClass_UAngerStruct::FindItemIndex_0.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 31795,
+      "type": "TOP"
+    },
+    "VectorClass_UUndoInfoStruct::FindItemIndex.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31910,
+      "type": "TOP"
+    },
+    "VectorClass_UUndoInfoStruct::FindItemIndex.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 31911,
+      "type": "TOP"
+    },
+    "VectorClass_UUndoInfoStruct::FindItemIndex.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 31911,
+      "type": "TOP"
+    },
+    "VectorClass_W4PassabilityType::FindItemIndex_0.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31947,
+      "type": "TOP"
+    },
+    "VectorClass_W4PassabilityType::FindItemIndex_0.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 31948,
+      "type": "TOP"
+    },
+    "VectorClass_W4PassabilityType::FindItemIndex_1.this.member(0x10)": {
+      "confidence": "INFERRED",
+      "eq_root": 31949,
+      "type": "TOP"
+    },
+    "VectorClass_W4PassabilityType::FindItemIndex_1.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 31950,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x1768)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x21c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x2b4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x4)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x640)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x648)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x668)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x670)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x8)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelAnim::Draw.this.member(0x9c)": {
+      "confidence": "ANCHORED",
+      "eq_root": 33705,
+      "type": "TOP"
+    },
+    "VoxelClass::RenderObject.this.member(0xe20)": {
+      "confidence": "INFERRED",
+      "eq_root": 33751,
+      "type": "TOP"
+    },
+    "VoxelClass::RenderObject.this.member(0xe5c)": {
+      "confidence": "INFERRED",
+      "eq_root": 33751,
+      "type": "TOP"
+    },
+    "VoxelClass::RenderObject.this.member(0xe5d)": {
+      "confidence": "INFERRED",
+      "eq_root": 33751,
+      "type": "TOP"
+    },
+    "VoxelSection::GetInfo.this.member(0x14)": {
+      "confidence": "INFERRED",
+      "eq_root": 33806,
+      "type": "TOP"
+    },
+    "VoxelTypeClass::ReadINI.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "VoxelTypeClass::ReadINI.this.member(0xd78)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "VoxelTypeClass::ReadINI.this.member(0xd7c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "VoxelTypeClass::ReadINI.this.member(0xdf8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33815,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x11b)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x4)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x578)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x57c)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x5e0)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x6c4)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x8)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::ProcessCollision.this.member(0x9c)": {
+      "confidence": "INFERRED",
+      "eq_root": 33893,
+      "type": "TOP"
+    },
+    "WalkLocomotion::TransformCoords.this.member(0x40)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::TransformCoords.this.member(0x44)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::TransformCoords.this.member(0x58)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x11b)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x140)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x1768)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x2b4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x598)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x5d4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x5e0)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x5e4)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x640)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x648)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x64c)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x668)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x670)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "WalkLocomotion::Update.this.member(0x8)": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 33924,
+      "type": "TOP"
+    },
+    "[ebp+0A8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34144,
+      "type": "TOP"
+    },
+    "[ebp+0A94h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34145,
+      "type": "TOP"
+    },
+    "[ebp+0A98h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34146,
+      "type": "TOP"
+    },
+    "[ebp+0AB4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34147,
+      "type": "TOP"
+    },
+    "[ebp+0B0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34149,
+      "type": "TOP"
+    },
+    "[ebp+0B30h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34150,
+      "type": "TOP"
+    },
+    "[ebp+0B8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34151,
+      "type": "TOP"
+    },
+    "[ebp+0C8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34153,
+      "type": "TOP"
+    },
+    "[ebp+0CA4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34154,
+      "type": "TOP"
+    },
+    "[ebp+0CB8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34155,
+      "type": "TOP"
+    },
+    "[ebp+0CF4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34158,
+      "type": "TOP"
+    },
+    "[ebp+0Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34159,
+      "type": "TOP"
+    },
+    "[ebp+0D4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34160,
+      "type": "TOP"
+    },
+    "[ebp+0DB0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34162,
+      "type": "TOP"
+    },
+    "[ebp+0DD0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34163,
+      "type": "TOP"
+    },
+    "[ebp+0E0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34164,
+      "type": "TOP"
+    },
+    "[ebp+0E5Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34166,
+      "type": "TOP"
+    },
+    "[ebp+0ECh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34168,
+      "type": "TOP"
+    },
+    "[ebp+0F8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34171,
+      "type": "TOP"
+    },
+    "[ebp+100h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34172,
+      "type": "TOP"
+    },
+    "[ebp+10h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34175,
+      "type": "TOP"
+    },
+    "[ebp+110h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34176,
+      "type": "TOP"
+    },
+    "[ebp+114h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34177,
+      "type": "TOP"
+    },
+    "[ebp+115Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34178,
+      "type": "TOP"
+    },
+    "[ebp+118h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34179,
+      "type": "TOP"
+    },
+    "[ebp+11A8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34182,
+      "type": "TOP"
+    },
+    "[ebp+128h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34195,
+      "type": "TOP"
+    },
+    "[ebp+1338h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34196,
+      "type": "TOP"
+    },
+    "[ebp+138h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34198,
+      "type": "TOP"
+    },
+    "[ebp+140h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34201,
+      "type": "TOP"
+    },
+    "[ebp+14E8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34206,
+      "type": "TOP"
+    },
+    "[ebp+14F0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34207,
+      "type": "TOP"
+    },
+    "[ebp+14F8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34208,
+      "type": "TOP"
+    },
+    "[ebp+1500h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34210,
+      "type": "TOP"
+    },
+    "[ebp+1508h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34211,
+      "type": "TOP"
+    },
+    "[ebp+151Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34213,
+      "type": "TOP"
+    },
+    "[ebp+158h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34215,
+      "type": "TOP"
+    },
+    "[ebp+15FF4h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34218,
+      "type": "TOP"
+    },
+    "[ebp+16009h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34220,
+      "type": "TOP"
+    },
+    "[ebp+1602Ah]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34221,
+      "type": "TOP"
+    },
+    "[ebp+16064h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34222,
+      "type": "TOP"
+    },
+    "[ebp+16Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34224,
+      "type": "TOP"
+    },
+    "[ebp+176Ah]": {
+      "confidence": "INFERRED",
+      "eq_root": 34226,
+      "type": "TOP"
+    },
+    "[ebp+178h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34227,
+      "type": "TOP"
+    },
+    "[ebp+18h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34229,
+      "type": "TOP"
+    },
+    "[ebp+1B40h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34234,
+      "type": "TOP"
+    },
+    "[ebp+1Ch]": {
+      "confidence": "DIRECT_PROP",
+      "eq_root": 34238,
+      "type": "TOP"
+    },
+    "[ebp+1F8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34243,
+      "type": "TOP"
+    },
+    "[ebp+1]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34244,
+      "type": "TOP"
+    },
+    "[ebp+20h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34246,
+      "type": "TOP"
+    },
+    "[ebp+210h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34247,
+      "type": "TOP"
+    },
+    "[ebp+213h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34248,
+      "type": "TOP"
+    },
+    "[ebp+2348h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34251,
+      "type": "TOP"
+    },
+    "[ebp+254h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34258,
+      "type": "TOP"
+    },
+    "[ebp+28h]": {
+      "confidence": "DIRECT_PROP",
+      "eq_root": 34266,
+      "type": "TOP"
+    },
+    "[ebp+29Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34273,
+      "type": "TOP"
+    },
+    "[ebp+2AEh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34275,
+      "type": "TOP"
+    },
+    "[ebp+2B50h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34276,
+      "type": "TOP"
+    },
+    "[ebp+2Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34277,
+      "type": "TOP"
+    },
+    "[ebp+2FCh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34283,
+      "type": "TOP"
+    },
+    "[ebp+2]": {
+      "confidence": "INFERRED",
+      "eq_root": 34284,
+      "type": "TOP"
+    },
+    "[ebp+3020h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34285,
+      "type": "TOP"
+    },
+    "[ebp+314h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34289,
+      "type": "TOP"
+    },
+    "[ebp+328h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34290,
+      "type": "TOP"
+    },
+    "[ebp+330h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34291,
+      "type": "TOP"
+    },
+    "[ebp+3358h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34292,
+      "type": "TOP"
+    },
+    "[ebp+33Ch]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34293,
+      "type": "TOP"
+    },
+    "[ebp+34Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34295,
+      "type": "TOP"
+    },
+    "[ebp+34h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34298,
+      "type": "TOP"
+    },
+    "[ebp+350h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34300,
+      "type": "TOP"
+    },
+    "[ebp+35h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34301,
+      "type": "TOP"
+    },
+    "[ebp+370h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34302,
+      "type": "TOP"
+    },
+    "[ebp+388h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34303,
+      "type": "TOP"
+    },
+    "[ebp+38h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34304,
+      "type": "TOP"
+    },
+    "[ebp+398h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34305,
+      "type": "TOP"
+    },
+    "[ebp+3A0h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34306,
+      "type": "TOP"
+    },
+    "[ebp+3B60h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34307,
+      "type": "TOP"
+    },
+    "[ebp+3Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34308,
+      "type": "TOP"
+    },
+    "[ebp+3E8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34309,
+      "type": "TOP"
+    },
+    "[ebp+3Eh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34310,
+      "type": "TOP"
+    },
+    "[ebp+3]": {
+      "confidence": "INFERRED",
+      "eq_root": 34318,
+      "type": "TOP"
+    },
+    "[ebp+40h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34319,
+      "type": "TOP"
+    },
+    "[ebp+414h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34320,
+      "type": "TOP"
+    },
+    "[ebp+430h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34321,
+      "type": "TOP"
+    },
+    "[ebp+4368h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34322,
+      "type": "TOP"
+    },
+    "[ebp+44Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34323,
+      "type": "TOP"
+    },
+    "[ebp+44h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34324,
+      "type": "TOP"
+    },
+    "[ebp+468h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34325,
+      "type": "TOP"
+    },
+    "[ebp+484h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34326,
+      "type": "TOP"
+    },
+    "[ebp+4A0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34328,
+      "type": "TOP"
+    },
+    "[ebp+4B70h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34329,
+      "type": "TOP"
+    },
+    "[ebp+4BCh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34330,
+      "type": "TOP"
+    },
+    "[ebp+4D8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34332,
+      "type": "TOP"
+    },
+    "[ebp+4DCh]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34333,
+      "type": "TOP"
+    },
+    "[ebp+4F4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34334,
+      "type": "TOP"
+    },
+    "[ebp+4]": {
+      "confidence": "DIRECT_PROP",
+      "eq_root": 34335,
+      "type": "TOP"
+    },
+    "[ebp+50h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34336,
+      "type": "TOP"
+    },
+    "[ebp+510h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34337,
+      "type": "TOP"
+    },
+    "[ebp+51h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34338,
+      "type": "TOP"
+    },
+    "[ebp+52h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34339,
+      "type": "TOP"
+    },
+    "[ebp+53E4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34340,
+      "type": "TOP"
+    },
+    "[ebp+5438h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34341,
+      "type": "TOP"
+    },
+    "[ebp+54h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34343,
+      "type": "TOP"
+    },
+    "[ebp+5500h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34344,
+      "type": "TOP"
+    },
+    "[ebp+5514h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34345,
+      "type": "TOP"
+    },
+    "[ebp+5528h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34346,
+      "type": "TOP"
+    },
+    "[ebp+553Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34347,
+      "type": "TOP"
+    },
+    "[ebp+5550h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34348,
+      "type": "TOP"
+    },
+    "[ebp+5564h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34349,
+      "type": "TOP"
+    },
+    "[ebp+5578h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34350,
+      "type": "TOP"
+    },
+    "[ebp+558Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34351,
+      "type": "TOP"
+    },
+    "[ebp+55A0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34352,
+      "type": "TOP"
+    },
+    "[ebp+55B4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34353,
+      "type": "TOP"
+    },
+    "[ebp+55C8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34354,
+      "type": "TOP"
+    },
+    "[ebp+55DCh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34356,
+      "type": "TOP"
+    },
+    "[ebp+5604h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34357,
+      "type": "TOP"
+    },
+    "[ebp+561Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34358,
+      "type": "TOP"
+    },
+    "[ebp+5670h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34359,
+      "type": "TOP"
+    },
+    "[ebp+5700h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34361,
+      "type": "TOP"
+    },
+    "[ebp+57E4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34365,
+      "type": "TOP"
+    },
+    "[ebp+588h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34367,
+      "type": "TOP"
+    },
+    "[ebp+58h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34368,
+      "type": "TOP"
+    },
+    "[ebp+5ACh]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34369,
+      "type": "TOP"
+    },
+    "[ebp+5C4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34370,
+      "type": "TOP"
+    },
+    "[ebp+5C8h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34371,
+      "type": "TOP"
+    },
+    "[ebp+5]": {
+      "confidence": "INFERRED",
+      "eq_root": 34374,
+      "type": "TOP"
+    },
+    "[ebp+638h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34381,
+      "type": "TOP"
+    },
+    "[ebp+654h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34384,
+      "type": "TOP"
+    },
+    "[ebp+674h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34386,
+      "type": "TOP"
+    },
+    "[ebp+68h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34388,
+      "type": "TOP"
+    },
+    "[ebp+6A0h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34389,
+      "type": "TOP"
+    },
+    "[ebp+6D6h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34391,
+      "type": "TOP"
+    },
+    "[ebp+6Dh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34392,
+      "type": "TOP"
+    },
+    "[ebp+6F5h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34393,
+      "type": "TOP"
+    },
+    "[ebp+72Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34397,
+      "type": "TOP"
+    },
+    "[ebp+748h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34398,
+      "type": "TOP"
+    },
+    "[ebp+768h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34400,
+      "type": "TOP"
+    },
+    "[ebp+778h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34401,
+      "type": "TOP"
+    },
+    "[ebp+794h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34402,
+      "type": "TOP"
+    },
+    "[ebp+7B0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34403,
+      "type": "TOP"
+    },
+    "[ebp+7C0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34404,
+      "type": "TOP"
+    },
+    "[ebp+7CCh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34405,
+      "type": "TOP"
+    },
+    "[ebp+7D8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34406,
+      "type": "TOP"
+    },
+    "[ebp+7E4h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34407,
+      "type": "TOP"
+    },
+    "[ebp+7F0h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34408,
+      "type": "TOP"
+    },
+    "[ebp+80h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34410,
+      "type": "TOP"
+    },
+    "[ebp+85Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34412,
+      "type": "TOP"
+    },
+    "[ebp+88h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34413,
+      "type": "TOP"
+    },
+    "[ebp+89Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34414,
+      "type": "TOP"
+    },
+    "[ebp+8B8h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34415,
+      "type": "TOP"
+    },
+    "[ebp+8Ch]": {
+      "confidence": "INFERRED",
+      "eq_root": 34416,
+      "type": "TOP"
+    },
+    "[ebp+8]": {
+      "confidence": "INFERRED",
+      "eq_root": 34418,
+      "type": "TOP"
+    },
+    "[ebp+908h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34419,
+      "type": "TOP"
+    },
+    "[ebp+928h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34421,
+      "type": "TOP"
+    },
+    "[ebp+98h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34422,
+      "type": "TOP"
+    },
+    "[ebp+9Ch]": {
+      "confidence": "DIRECT_PROP",
+      "eq_root": 34424,
+      "type": "TOP"
+    },
+    "[ebp-1]": {
+      "confidence": "INFERRED",
+      "eq_root": 34429,
+      "type": "TOP"
+    },
+    "[ebp-2]": {
+      "confidence": "INFERRED",
+      "eq_root": 34432,
+      "type": "TOP"
+    },
+    "[ebp-513h]": {
+      "confidence": "INFERRED",
+      "eq_root": 34441,
+      "type": "TOP"
+    },
+    "[ebp-6AAh]": {
+      "confidence": "INFERRED",
+      "eq_root": 34443,
+      "type": "TOP"
+    },
+    "[esp+30h]": {
+      "confidence": "CHAIN_PROP",
+      "eq_root": 34451,
+      "type": "TOP"
+    }
+  }
+}
