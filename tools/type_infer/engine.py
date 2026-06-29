@@ -462,7 +462,8 @@ class TypeInferenceEngine:
                         self.var_to_id, callee_name
                     )
                     if callee_ret_id is not None:
-                        self.uf.union(fid, callee_ret_id)
+                        # adjacency-only: callee return type propagates to call site
+                        # without union pollution across different call sites
                         self.adjacency[fid].add(callee_ret_id)
                         self.adjacency[callee_ret_id].add(fid)
 
