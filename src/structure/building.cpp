@@ -21670,22 +21670,16 @@ retn    0Ch
 */
 }
 
-// IDA 0x6f9e10: IsInvisible — check opacity/cloak state pointer on type
+// IDA 0x6f9e10: IsInvisible — vtable[33] → GetType, member(176) → ptr check
 // 0x6f9e10
 bool BuildingClass::IsInvisible() {
-    // vtable[33] → Vt34Thunk → GetTypePtr() → returns this->Type
-    // offset 0xB0 = MainVoxel (VoxLib* in binary, int in stub layout)
-    // Binary: two redundant vtable calls; second call only matters when ptr non-null
-    union {
-        int as_int;
-        uint8_t* as_ptr;
-    } ptr_val;
-
-    auto* type = this->Type;
-    ptr_val.as_int = type->MainVoxel.unused;
-    type = this->Type;
-    ptr_val.as_int = type->MainVoxel.unused;
-    return ptr_val.as_ptr && (*ptr_val.as_ptr == 0);
+    int result;
+    result = ((int(__thiscall**)(BuildingClass*))(*(int*)this + 132))(this);
+    if (*(int*)(result + 176)) {
+        result = *(int*)(((int(__thiscall**)(BuildingClass*))(*(int*)this + 132))(this) + 176);
+        return (bool)(*(uint8_t*)result == 0);
+    }
+    return false;
 }
 
 void BuildingClass::AnnounceReady() {}
