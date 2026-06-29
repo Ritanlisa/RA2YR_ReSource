@@ -1400,6 +1400,13 @@ class ClangChecker:
             if node.kind in decl_kinds:
                 line = node.location.line
                 if line in added_lines:
+                    # Filter by file: only flag declarations in the file being checked,
+                    # not declarations pulled in from #include'd .inl or other headers.
+                    if node.location.file:
+                        loc_file = str(node.location.file).replace('\\', '/')
+                        target = self.filepath.replace('\\', '/')
+                        if loc_file != target:
+                            return
                     # For VarDecl: skip local variables inside function bodies.
                     # Only flag file-scope or class-scope declarations.
                     if node.kind == clang.cindex.CursorKind.VAR_DECL:
@@ -1410,6 +1417,17 @@ class ClangChecker:
                                                        clang.cindex.CursorKind.DESTRUCTOR,
                                                        clang.cindex.CursorKind.COMPOUND_STMT):
                             return  # local variable, skip
+                    # For function/method/constructor/destructor: skip definitions
+                    # that have a separate prior declaration (header declaration exists).
+                    # Only flag truly new functions with no prior declaration.
+                    if node.kind in (clang.cindex.CursorKind.FUNCTION_DECL,
+                                     clang.cindex.CursorKind.CXX_METHOD,
+                                     clang.cindex.CursorKind.CONSTRUCTOR,
+                                     clang.cindex.CursorKind.DESTRUCTOR):
+                        if node.is_definition():
+                            canonical = node.canonical
+                            if canonical and canonical != node:
+                                return  # definition of previously-declared function, not a new symbol
                     name = node.displayname or node.spelling
                     kind_name = node.kind.name.replace('CURSOR_KIND.', '').replace('_', '-').lower()
                     # Build detailed fix suggestion based on declaration kind
