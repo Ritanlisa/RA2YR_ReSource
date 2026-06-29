@@ -496,7 +496,7 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 | 检查 | 类别 | 触发条件 | 修复方案 |
 |------|------|----------|----------|
 | **new-symbol** | .cpp/.hpp | 在 git-diff 新增行上声明任何新符号（VarDecl/FunctionDecl/FieldDecl/ClassDecl/EnumDecl/TypedefDecl） | 禁止添加新符号。只能修改已有符号的名称、签名或函数体。新成员须通过 IDA→header pipeline 添加，不能临时添加 |
-| **hpp-impl** | .hpp | 头文件中存在函数体实现（FunctionDecl.isDefinition()），排除 template 和 =default/=delete | 将实现移到 .cpp 文件。hpp 只允许声明和模板 |
+| **hpp-impl** | .hpp | 头文件中存在函数体实现（FunctionDecl.isDefinition()），不排除 template 和 =default/=delete —— 所有函数体均在禁止之列 | 将实现移到 .cpp 文件。hpp 只允许声明（纯虚函数 `=0` 除外） |
 | **ptr-arithmetic** | .cpp | 指针对整数偏移的加减法 `(uint8_t*)ptr + N` | 改用 `ptr->memberName` 成员访问 |
 | **cast-index** | .cpp | 指针下标 `((Type*)ptr)[N]` | 改用 `ptr->memberName` 成员访问 |
 | **ptr-nonptr-conv** | .cpp | 指针↔非指针之间的双向转换 | 禁止 `(int)ptr` / `(Type*)intVal`。用 `std::bit_cast` 或成员访问 |
@@ -528,16 +528,18 @@ python -c "import sys; sys.path.insert(0,'tools'); from clang_ast_checker import
 
 #### hpp-impl（头文件实现）
 **问题**：在 .hpp 文件中有函数体实现（包括 `{ return ...; }`）。
+**注意：门控不排除任何实现形式。** 模板函数体、`=default`、`=delete` 均在禁止之列。仅 `= 0` 纯虚函数不受此限制。
 **禁止行为**：
-- 在 .hpp 中写 inline 辅助函数来隐藏原始偏移
-- 在 .hpp 中写模板函数体（模板也必须在 .cpp 中实现）
+- 在 .hpp 中写任何函数体——包括普通函数、模板函数、inline 函数、`=default`、`=delete`
+- 在 .hpp 中写辅助函数来隐藏原始偏移
 **允许行为**：
 - 函数声明（仅签名 + 分号）
-- `= default` / `= delete` 声明
 - `= 0` 纯虚函数
+- `#include` 实现文件（使用非 `.hpp` 扩展名如 `.inl`、`.ipp`、`.tpp`）
 **修复步骤**：
 1. 将函数体从 .hpp 移到对应的 .cpp 文件
-2. .hpp 中只保留声明：`ReturnType FuncName(Params);`
+2. 对于模板：将实现移到 `.inl` 文件，在 .hpp 末尾 `#include "xxx.inl"`（门控不检查非 `.hpp` 扩展名）
+3. .hpp 中只保留声明：`ReturnType FuncName(Params);`
 
 #### ptr-arithmetic（指针算术） / cast-index（指针下标）
 **问题**：用 `(uint8_t*)ptr + offset` 或 `((int*)this)[N]` 直接计算偏移。
