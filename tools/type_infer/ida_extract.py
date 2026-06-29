@@ -210,6 +210,12 @@ RE_MEMBER_LOAD = re.compile(r'\[ecx\+([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
 RE_VTABLE_CALL = re.compile(r'\[(\w{2,3})\+([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
 RE_STACK_ACCESS = re.compile(r'\[(?:esp|ebp)[+\-]([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
 
+_X86_REG_NAMES = frozenset({
+    'eax', 'ebx', 'ecx', 'edx', 'esi', 'edi', 'ebp', 'esp',
+    'al', 'ah', 'bl', 'bh', 'cl', 'ch', 'dl', 'dh',
+    'ax', 'bx', 'cx', 'dx', 'si', 'di', 'bp', 'sp',
+})
+
 def extract_instruction_constraints(func_ea, func_name):
     """Extract type-relevant constraints from instructions in a function."""
     constraints = []
@@ -250,6 +256,19 @@ def extract_instruction_constraints(func_ea, func_name):
                     "type": "ASSIGN",
                     "addr": f"0x{ea:08X}",
                     "details": f"mov {op0}, [ecx+{offset:#x}]"
+                }
+        
+        # --- register → register (propagation chain) ---
+        elif mnem == 'mov' and op0 and op1:
+            from_reg = op1.strip().lower()
+            to_reg = op0.strip().lower()
+            if from_reg in _X86_REG_NAMES and to_reg in _X86_REG_NAMES:
+                constraint = {
+                    "from": from_reg,
+                    "to": to_reg,
+                    "type": "ASSIGN",
+                    "addr": f"0x{ea:08X}",
+                    "details": f"mov {to_reg}, {from_reg}"
                 }
         
         # --- register → this.member(OFFSET) ---
