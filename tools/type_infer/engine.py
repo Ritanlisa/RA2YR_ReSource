@@ -229,20 +229,24 @@ class TypeInferenceEngine:
         return 0
 
     def _scope_name(self, name: str, addr: str) -> str:
-        """Scope a register variable name by the containing function address.
+        """Scope a register variable name by the instruction address.
+
+        Each constraint's register variable is unique to the instruction that
+        wrote it. This prevents adjacency collisions where incompatible member
+        types written to the same register at different instructions within
+        the same function all route to a single node, causing TOP on meet.
 
         Non-register names are returned unchanged (they already carry context).
         """
         if _is_register(name):
-            func_addr = self._find_containing_func(addr)
-            return f"0x{func_addr:08X}::{name}"
+            return f"{addr}::{name}"
         return name
 
     def _build_variable_index(self) -> None:
         """Assign integer IDs to all unique variable names in constraints.
 
-        Register names (eax, edx, etc.) are scoped by their containing function
-        to prevent global merging across unrelated functions.
+        Register names (eax, edx, etc.) are scoped by instruction address
+        to prevent adjacency collisions within the same function.
         """
         seen: dict[str, str] = {}  # scoped_name → original_name
         for c in self.constraints:
@@ -443,8 +447,7 @@ class TypeInferenceEngine:
                     self.adjacency[fid].add(tid)
                     self.adjacency[tid].add(fid)
                 else:
-                    # member->member: keep full union + adjacency
-                    self.uf.union(fid, tid)
+                    # member->member: adjacency only (0 such constraints exist)
                     self.adjacency[fid].add(tid)
                     self.adjacency[tid].add(fid)
 
