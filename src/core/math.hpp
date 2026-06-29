@@ -18,105 +18,51 @@ struct Vector2D
     // design: default constructor (compiler-generated), no callgraph reference
     constexpr Vector2D() noexcept = default;
     // design: constexpr only (no runtime address), no callgraph/git history reference
-    constexpr Vector2D(T x, T y) noexcept : X(x), Y(y) {}
+    constexpr Vector2D(T x, T y) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D operator+(const Vector2D& rhs) const
-    {
-        return { static_cast<T>(X + rhs.X), static_cast<T>(Y + rhs.Y) };
-    }
+    Vector2D operator+(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D& operator+=(const Vector2D& rhs)
-    {
-        X += rhs.X;
-        Y += rhs.Y;
-        return *this;
-    }
+    Vector2D& operator+=(const Vector2D& rhs);
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D operator-(const Vector2D& rhs) const
-    {
-        return { static_cast<T>(X - rhs.X), static_cast<T>(Y - rhs.Y) };
-    }
+    Vector2D operator-(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D& operator-=(const Vector2D& rhs)
-    {
-        X -= rhs.X;
-        Y -= rhs.Y;
-        return *this;
-    }
+    Vector2D& operator-=(const Vector2D& rhs);
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D operator-() const
-    {
-        return { static_cast<T>(-X), static_cast<T>(-Y) };
-    }
+    Vector2D operator-() const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator==(const Vector2D& rhs) const
-    {
-        return X == rhs.X && Y == rhs.Y;
-    }
+    bool operator==(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator!=(const Vector2D& rhs) const
-    {
-        return !(*this == rhs);
-    }
+    bool operator!=(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D operator*(double scalar) const
-    {
-        return { static_cast<T>(X * scalar), static_cast<T>(Y * scalar) };
-    }
+    Vector2D operator*(double scalar) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector2D& operator*=(double scalar)
-    {
-        X = static_cast<T>(X * scalar);
-        Y = static_cast<T>(Y * scalar);
-        return *this;
-    }
+    Vector2D& operator*=(double scalar);
 
     // unmatched: no callgraph reference and no git history record
-    double operator*(const Vector2D& rhs) const
-    {
-        return static_cast<double>(X) * rhs.X + static_cast<double>(Y) * rhs.Y;
-    }
+    double operator*(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    double MagnitudeSquared() const
-    {
-        return static_cast<double>(X) * X + static_cast<double>(Y) * Y;
-    }
+    double MagnitudeSquared() const;
 
-    double Magnitude() const
-    {
-        return std::sqrt(MagnitudeSquared());
-    }
+    double Magnitude() const;
 
     // unmatched: no callgraph reference and no git history record
-    double DistanceFrom(const Vector2D& rhs) const
-    {
-        return (*this - rhs).Magnitude();
-    }
+    double DistanceFrom(const Vector2D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    double DistanceFromSquared(const Vector2D& rhs) const
-    {
-        return (*this - rhs).MagnitudeSquared();
-    }
+    double DistanceFromSquared(const Vector2D& rhs) const;
 
-    bool IsCollinearTo(const Vector2D& rhs) const
-    {
-        return static_cast<double>(X) * rhs.Y == static_cast<double>(Y) * rhs.X;
-    }
+    bool IsCollinearTo(const Vector2D& rhs) const;
 };
-
-template <typename T>
-const Vector2D<T> Vector2D<T>::Empty = Vector2D<T>();
 
 template <typename T>
 struct Vector3D
@@ -130,120 +76,54 @@ struct Vector3D
     // design: default constructor (compiler-generated), no callgraph reference
     constexpr Vector3D() noexcept = default;
     // design: constexpr only (no runtime address), no callgraph/git history reference
-    constexpr Vector3D(T x, T y, T z) noexcept : X(x), Y(y), Z(z) {}
+    constexpr Vector3D(T x, T y, T z) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D operator+(const Vector3D& rhs) const
-    {
-        return { static_cast<T>(X + rhs.X), static_cast<T>(Y + rhs.Y), static_cast<T>(Z + rhs.Z) };
-    }
+    Vector3D operator+(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D& operator+=(const Vector3D& rhs)
-    {
-        X += rhs.X;
-        Y += rhs.Y;
-        Z += rhs.Z;
-        return *this;
-    }
+    Vector3D& operator+=(const Vector3D& rhs);
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D operator-(const Vector3D& rhs) const
-    {
-        return { static_cast<T>(X - rhs.X), static_cast<T>(Y - rhs.Y), static_cast<T>(Z - rhs.Z) };
-    }
+    Vector3D operator-(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D& operator-=(const Vector3D& rhs)
-    {
-        X -= rhs.X;
-        Y -= rhs.Y;
-        Z -= rhs.Z;
-        return *this;
-    }
+    Vector3D& operator-=(const Vector3D& rhs);
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D operator-() const
-    {
-        return { static_cast<T>(-X), static_cast<T>(-Y), static_cast<T>(-Z) };
-    }
+    Vector3D operator-() const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator==(const Vector3D& rhs) const
-    {
-        return X == rhs.X && Y == rhs.Y && Z == rhs.Z;
-    }
+    bool operator==(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator!=(const Vector3D& rhs) const
-    {
-        return !(*this == rhs);
-    }
+    bool operator!=(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D operator*(double scalar) const
-    {
-        return { static_cast<T>(X * scalar), static_cast<T>(Y * scalar), static_cast<T>(Z * scalar) };
-    }
+    Vector3D operator*(double scalar) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D& operator*=(double scalar)
-    {
-        X = static_cast<T>(X * scalar);
-        Y = static_cast<T>(Y * scalar);
-        Z = static_cast<T>(Z * scalar);
-        return *this;
-    }
+    Vector3D& operator*=(double scalar);
 
     // unmatched: no callgraph reference and no git history record
-    double operator*(const Vector3D& rhs) const
-    {
-        return static_cast<double>(X) * rhs.X
-             + static_cast<double>(Y) * rhs.Y
-             + static_cast<double>(Z) * rhs.Z;
-    }
+    double operator*(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    double MagnitudeSquared() const
-    {
-        return static_cast<double>(X) * X + static_cast<double>(Y) * Y + static_cast<double>(Z) * Z;
-    }
+    double MagnitudeSquared() const;
 
-    double Magnitude() const
-    {
-        return std::sqrt(MagnitudeSquared());
-    }
+    double Magnitude() const;
 
     // unmatched: no callgraph reference and no git history record
-    double DistanceFrom(const Vector3D& rhs) const
-    {
-        return (*this - rhs).Magnitude();
-    }
+    double DistanceFrom(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    double DistanceFromSquared(const Vector3D& rhs) const
-    {
-        return (*this - rhs).MagnitudeSquared();
-    }
+    double DistanceFromSquared(const Vector3D& rhs) const;
 
-    bool IsCollinearTo(const Vector3D& rhs) const
-    {
-        return CrossProduct(rhs).MagnitudeSquared() == 0;
-    }
+    bool IsCollinearTo(const Vector3D& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    Vector3D CrossProduct(const Vector3D& rhs) const
-    {
-        return {
-            static_cast<T>(Y * rhs.Z - Z * rhs.Y),
-            static_cast<T>(Z * rhs.X - X * rhs.Z),
-            static_cast<T>(X * rhs.Y - Y * rhs.X)
-        };
-    }
+    Vector3D CrossProduct(const Vector3D& rhs) const;
 };
-
-template <typename T>
-const Vector3D<T> Vector3D<T>::Empty = Vector3D<T>();
 
 using CellStruct   = Vector2D<short>;
 using Point2D      = Vector2D<int>;
@@ -253,9 +133,7 @@ using RGBClass     = Vector3D<std::uint8_t>;
 // ostream output for hook DLL comparison logs
 template <typename T>
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v) {
-    return os << "<Vector2D,X=" << std::dec << v.X << ",Y=" << v.Y << ">";
-}
+std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v);
 
 struct Matrix3D
 {
@@ -275,10 +153,7 @@ struct RectangleStruct
 };
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline std::ostream& operator<<(std::ostream& os, const RectangleStruct& r) {
-    return os << "<RectangleStruct,X=" << std::dec << r.X << ",Y=" << r.Y
-              << ",W=" << r.Width << ",H=" << r.Height << ">";
-}
+std::ostream& operator<<(std::ostream& os, const RectangleStruct& r);
 
 struct ColorStruct
 {
@@ -287,20 +162,13 @@ struct ColorStruct
     std::uint8_t B = 0;
 
     constexpr ColorStruct() noexcept = default;  // 0x4A35A0
-    constexpr ColorStruct(std::uint8_t r, std::uint8_t g, std::uint8_t b) noexcept
-        : R(r), G(g), B(b) {}   // 0x4A35A0
+    ColorStruct(std::uint8_t r, std::uint8_t g, std::uint8_t b) noexcept;   // 0x4A35A0
 
     // unmatched: no callgraph reference and no git history record
-    bool operator==(const ColorStruct& rhs) const
-    {
-        return R == rhs.R && G == rhs.G && B == rhs.B;
-    }
+    bool operator==(const ColorStruct& rhs) const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator!=(const ColorStruct& rhs) const
-    {
-        return !(*this == rhs);
-    }
+    bool operator!=(const ColorStruct& rhs) const;
 };
 
 struct TimerStruct
@@ -310,11 +178,13 @@ struct TimerStruct
     int32_t TimeLeft = 0;
 
     constexpr TimerStruct() noexcept = default;
-    explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {}
+    TimerStruct(int duration) noexcept;
 
-    bool IsActive() const { return TimeLeft > 0; }
-    void Update() { if (TimeLeft > 0) --TimeLeft; }
+    bool IsActive() const;
+    void Update();
 };
+
+#include "math.inl"
 
 } // namespace gamemd
 
@@ -326,14 +196,8 @@ constexpr double TwoPi  = 6.28318530717958647692;
 constexpr double HalfPi = 1.57079632679489661923;
 constexpr double Sqrt2  = 1.41421356237309504880;
 
-constexpr double Deg2Rad(double deg) noexcept
-{
-    return deg * Pi / 180.0;
-}
+double Deg2Rad(double deg) noexcept;
 
-constexpr double Rad2Deg(double rad) noexcept
-{
-    return rad * 180.0 / Pi;
-}
+double Rad2Deg(double rad) noexcept;
 
 } // namespace gamemd::math
