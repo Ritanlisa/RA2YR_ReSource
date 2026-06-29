@@ -449,7 +449,8 @@ class TypeInferenceEngine:
                     self.adjacency[tid].add(fid)
 
             elif ctype == "RETURN":
-                self.uf.union(fid, tid)
+                # adjacency-only: multiple RET sites in one function can have
+                # different types (different code paths), don't union them
                 self.adjacency[fid].add(tid)
                 self.adjacency[tid].add(fid)
 
