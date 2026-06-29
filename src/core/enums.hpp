@@ -92,38 +92,19 @@ enum class AbstractFlags : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr AbstractFlags operator|(AbstractFlags a, AbstractFlags b) noexcept
-{
-    return static_cast<AbstractFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr AbstractFlags operator|(AbstractFlags a, AbstractFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr AbstractFlags operator&(AbstractFlags a, AbstractFlags b) noexcept
-{
-    return static_cast<AbstractFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr AbstractFlags operator&(AbstractFlags a, AbstractFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr AbstractFlags operator~(AbstractFlags a) noexcept
-{
-    return static_cast<AbstractFlags>(~static_cast<unsigned>(a));
-}
+constexpr AbstractFlags operator~(AbstractFlags a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr AbstractFlags& operator|=(AbstractFlags& a, AbstractFlags b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr AbstractFlags& operator|=(AbstractFlags& a, AbstractFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr AbstractFlags& operator&=(AbstractFlags& a, AbstractFlags b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr AbstractFlags& operator&=(AbstractFlags& a, AbstractFlags b) noexcept;
 
 enum class Action : unsigned
 {
@@ -515,38 +496,19 @@ enum class SpotlightFlags : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SpotlightFlags operator|(SpotlightFlags a, SpotlightFlags b) noexcept
-{
-    return static_cast<SpotlightFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr SpotlightFlags operator|(SpotlightFlags a, SpotlightFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SpotlightFlags operator&(SpotlightFlags a, SpotlightFlags b) noexcept
-{
-    return static_cast<SpotlightFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr SpotlightFlags operator&(SpotlightFlags a, SpotlightFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SpotlightFlags operator~(SpotlightFlags a) noexcept
-{
-    return static_cast<SpotlightFlags>(~static_cast<unsigned>(a));
-}
+constexpr SpotlightFlags operator~(SpotlightFlags a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SpotlightFlags& operator|=(SpotlightFlags& a, SpotlightFlags b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr SpotlightFlags& operator|=(SpotlightFlags& a, SpotlightFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SpotlightFlags& operator&=(SpotlightFlags& a, SpotlightFlags b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr SpotlightFlags& operator&=(SpotlightFlags& a, SpotlightFlags b) noexcept;
 
 enum class BehavesLike : int
 {
@@ -1240,38 +1202,19 @@ enum class SoundType : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundType operator|(SoundType a, SoundType b) noexcept
-{
-    return static_cast<SoundType>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr SoundType operator|(SoundType a, SoundType b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundType operator&(SoundType a, SoundType b) noexcept
-{
-    return static_cast<SoundType>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr SoundType operator&(SoundType a, SoundType b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundType operator~(SoundType a) noexcept
-{
-    return static_cast<SoundType>(~static_cast<unsigned>(a));
-}
+constexpr SoundType operator~(SoundType a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundType& operator|=(SoundType& a, SoundType b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr SoundType& operator|=(SoundType& a, SoundType b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundType& operator&=(SoundType& a, SoundType b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr SoundType& operator&=(SoundType& a, SoundType b) noexcept;
 
 enum class SoundControl : unsigned
 {
@@ -1287,38 +1230,19 @@ enum class SoundControl : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundControl operator|(SoundControl a, SoundControl b) noexcept
-{
-    return static_cast<SoundControl>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr SoundControl operator|(SoundControl a, SoundControl b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundControl operator&(SoundControl a, SoundControl b) noexcept
-{
-    return static_cast<SoundControl>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr SoundControl operator&(SoundControl a, SoundControl b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundControl operator~(SoundControl a) noexcept
-{
-    return static_cast<SoundControl>(~static_cast<unsigned>(a));
-}
+constexpr SoundControl operator~(SoundControl a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundControl& operator|=(SoundControl& a, SoundControl b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr SoundControl& operator|=(SoundControl& a, SoundControl b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr SoundControl& operator&=(SoundControl& a, SoundControl b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr SoundControl& operator&=(SoundControl& a, SoundControl b) noexcept;
 
 enum class VoxType : int
 {
@@ -1382,38 +1306,19 @@ enum class TargetFlags : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr TargetFlags operator|(TargetFlags a, TargetFlags b) noexcept
-{
-    return static_cast<TargetFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr TargetFlags operator|(TargetFlags a, TargetFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr TargetFlags operator&(TargetFlags a, TargetFlags b) noexcept
-{
-    return static_cast<TargetFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr TargetFlags operator&(TargetFlags a, TargetFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr TargetFlags operator~(TargetFlags a) noexcept
-{
-    return static_cast<TargetFlags>(~static_cast<unsigned>(a));
-}
+constexpr TargetFlags operator~(TargetFlags a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr TargetFlags& operator|=(TargetFlags& a, TargetFlags b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr TargetFlags& operator|=(TargetFlags& a, TargetFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr TargetFlags& operator&=(TargetFlags& a, TargetFlags b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr TargetFlags& operator&=(TargetFlags& a, TargetFlags b) noexcept;
 
 enum class BlitterFlags : unsigned
 {
@@ -1441,38 +1346,19 @@ enum class BlitterFlags : unsigned
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr BlitterFlags operator|(BlitterFlags a, BlitterFlags b) noexcept
-{
-    return static_cast<BlitterFlags>(
-        static_cast<unsigned>(a) | static_cast<unsigned>(b));
-}
+constexpr BlitterFlags operator|(BlitterFlags a, BlitterFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr BlitterFlags operator&(BlitterFlags a, BlitterFlags b) noexcept
-{
-    return static_cast<BlitterFlags>(
-        static_cast<unsigned>(a) & static_cast<unsigned>(b));
-}
+constexpr BlitterFlags operator&(BlitterFlags a, BlitterFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr BlitterFlags operator~(BlitterFlags a) noexcept
-{
-    return static_cast<BlitterFlags>(~static_cast<unsigned>(a));
-}
+constexpr BlitterFlags operator~(BlitterFlags a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr BlitterFlags& operator|=(BlitterFlags& a, BlitterFlags b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr BlitterFlags& operator|=(BlitterFlags& a, BlitterFlags b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr BlitterFlags& operator&=(BlitterFlags& a, BlitterFlags b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr BlitterFlags& operator&=(BlitterFlags& a, BlitterFlags b) noexcept;
 
 enum class MouseEvent : unsigned char
 {
@@ -1487,38 +1373,19 @@ enum class MouseEvent : unsigned char
 };
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr MouseEvent operator|(MouseEvent a, MouseEvent b) noexcept
-{
-    return static_cast<MouseEvent>(
-        static_cast<unsigned char>(a) | static_cast<unsigned char>(b));
-}
+constexpr MouseEvent operator|(MouseEvent a, MouseEvent b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr MouseEvent operator&(MouseEvent a, MouseEvent b) noexcept
-{
-    return static_cast<MouseEvent>(
-        static_cast<unsigned char>(a) & static_cast<unsigned char>(b));
-}
+constexpr MouseEvent operator&(MouseEvent a, MouseEvent b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr MouseEvent operator~(MouseEvent a) noexcept
-{
-    return static_cast<MouseEvent>(~static_cast<unsigned char>(a));
-}
+constexpr MouseEvent operator~(MouseEvent a) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr MouseEvent& operator|=(MouseEvent& a, MouseEvent b) noexcept
-{
-    a = a | b;
-    return a;
-}
+constexpr MouseEvent& operator|=(MouseEvent& a, MouseEvent b) noexcept;
 
 // design: constexpr only (no runtime address), no callgraph/git history reference
-constexpr MouseEvent& operator&=(MouseEvent& a, MouseEvent b) noexcept
-{
-    a = a & b;
-    return a;
-}
+constexpr MouseEvent& operator&=(MouseEvent& a, MouseEvent b) noexcept;
 
 enum class Edge : int
 {
