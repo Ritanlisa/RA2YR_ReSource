@@ -1,0 +1,93 @@
+{
+  "_summary": {
+    "generated_by": "tools/type_infer/auto_name.py (T21)",
+    "top_suggestions": {
+      "byteVal": 1,
+      "n": 11,
+      "pHouseType": 1,
+      "pObject": 1
+    },
+    "total_functions": 8,
+    "total_renames": 14
+  },
+  "suggestions": {
+    "0x45ec20": {
+      "call_convention": "thiscall",
+      "function_name": "AbstractClass::validatePointer",
+      "renames": {
+        "a1": "n"
+      },
+      "ret_type": "SHPStruct*"
+    },
+    "0x4f7870": {
+      "arg_types": {
+        "0": "HouseTypeClass*"
+      },
+      "call_convention": "thiscall",
+      "function_name": "HouseClass::CanBuild",
+      "renames": {
+        "a1": "n",
+        "a2": "pHouseType",
+        "a3": "n"
+      }
+    },
+    "0x522340": {
+      "call_convention": "thiscall",
+      "function_name": "InfantryClass::CalculateApproachPath",
+      "renames": {
+        "a2": "byteVal"
+      },
+      "ret_type": "InfantryTypeClass*"
+    },
+    "0x522600": {
+      "call_convention": "thiscall",
+      "function_name": "InfantryClass::FireAtTargetPos",
+      "renames": {
+        "a2": "n",
+        "a3": "n",
+        "a4": "n"
+      },
+      "ret_type": "InfantryTypeClass*"
+    },
+    "0x529880": {
+      "call_convention": "thiscall",
+      "function_name": "INIClass::ReadPoint2D_Overwrite",
+      "renames": {
+        "a3": "n"
+      },
+      "this_type": "INILinkNode*"
+    },
+    "0x565c10": {
+      "call_convention": "thiscall",
+      "function_name": "CellClass::UpdateTerrainAndWaypoints",
+      "renames": {
+        "a2": "n",
+        "a3": "n",
+        "a4": "n"
+      },
+      "this_type": "CellClass*"
+    },
+    "0x6914e0": {
+      "arg_types": {
+        "0": "ScriptTypeClass*"
+      },
+      "call_convention": "thiscall",
+      "function_name": "ScriptClass::PowerDrainUpdate",
+      "renames": {
+        "a1": "n"
+      },
+      "ret_type": "HouseClass*",
+      "this_type": "TeamTypeClass*"
+    },
+    "0x7077c0": {
+      "arg_types": {
+        "0": "ObjectClass*"
+      },
+      "call_convention": "thiscall",
+      "function_name": "ObjectClass::NotifyExpired",
+      "renames": {
+        "a2": "pObject"
+      }
+    }
+  }
+}
