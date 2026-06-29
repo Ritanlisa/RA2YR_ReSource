@@ -7,7 +7,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # 32-bit build (gamemd.exe is 32-bit)
 if(WIN32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:IA32")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:IA32 /MP")
+# /MP: enable multi-process MSVC compilation (parallel translation units)
 endif()
 
 # Collect all source files (exclude src/app/ — duplicates of app/ files; exclude _generated/ — stub placeholders)
