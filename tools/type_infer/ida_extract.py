@@ -259,7 +259,9 @@ def extract_instruction_constraints(func_ea, func_name):
                 }
         
         # --- register → register (propagation chain) ---
-        elif mnem == 'mov' and op0 and op1:
+        # NOTE: uses 'if' (not 'elif') so reg→reg is captured in all functions,
+        # including thiscall where the previous 'if' catches mov for member access.
+        if mnem == 'mov' and op0 and op1:
             from_reg = op1.strip().lower()
             to_reg = op0.strip().lower()
             if from_reg in _X86_REG_NAMES and to_reg in _X86_REG_NAMES:
@@ -272,7 +274,7 @@ def extract_instruction_constraints(func_ea, func_name):
                 }
         
         # --- register → this.member(OFFSET) ---
-        elif mnem == 'mov' and op0 and is_thiscall:
+        if mnem == 'mov' and op0 and is_thiscall:
             m = RE_MEMBER_LOAD.search(op0)
             if m:
                 offset = int(m.group(1), 16)

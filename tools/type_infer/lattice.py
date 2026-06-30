@@ -39,6 +39,15 @@ def _is_concrete(t: LatticeElement) -> bool:
     return t not in _SENTINELS
 
 
+def _is_constant(name: str) -> bool:
+    """True if name is a numeric constant (no type information)."""
+    try:
+        int(str(name), 0)
+        return True
+    except (ValueError, TypeError):
+        return False
+
+
 def _name(t: LatticeElement) -> str:
     if t in _SENTINEL_NAMES:
         return _SENTINEL_NAMES[t]
@@ -165,6 +174,12 @@ class TypeLattice:
         Incompatible concretes → TOP
         """
         if a == b:
+            return a
+
+        # Numeric constants are meet identity (like void*)
+        if _is_constant(a):
+            return b
+        if _is_constant(b):
             return a
 
         # VOID_PTR is identity for meet
