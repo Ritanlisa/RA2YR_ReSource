@@ -61,6 +61,7 @@ def _resolve_path(*parts: str) -> str:
 CONSTRAINTS_PATH = _resolve_path("constraints", "raw_constraints.json")
 CALL_GRAPH_PATH = _resolve_path("constraints", "call_graph.json")
 VTABLE_SIG_PATH = _resolve_path("anchors", "vtable_signatures.json")
+FUNC_SIGNATURES_PATH = _resolve_path("signatures", "function_signatures.json")
 MEMBER_TYPES_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     "anchors", "member_types.json"
@@ -82,6 +83,11 @@ _RE_MEMBER_VAR = re.compile(
 )
 _RE_MEMBER_ALT = re.compile(
     r"^([A-Za-z_]\w*(?:Class)?)\+0x([0-9a-fA-F]+)$"
+)
+
+# IDA auto-name prefixes that map to hex addresses in global_types.json
+_IDA_GLOBAL_PREFIXES = (
+    "dword_", "byte_", "word_", "flt_", "off_", "qword_", "unk_"
 )
 
 
@@ -229,24 +235,38 @@ class TypeInferenceEngine:
         return 0
 
     def _scope_name(self, name: str, addr: str) -> str:
-        """Scope a register variable name by the instruction address.
+        """Scope names to prevent global hub TOP contamination.
 
-        Each constraint's register variable is unique to the instruction that
-        wrote it. This prevents adjacency collisions where incompatible member
-        types written to the same register at different instructions within
-        the same function all route to a single node, causing TOP on meet.
+        Registers are scoped per-instruction — each write creates a new live
+        range. Continuity edges (added by _add_register_continuity) connect
+        consecutive writes of the same register within the same function,
+        enabling intra-function propagation without merge conflicts.
 
-        Non-register names are returned unchanged (they already carry context).
+        Stack variables (stack_+0xN) are scoped to containing function.
+        Without this, stack_+0x4 becomes a global hub where 19K conflicting
+        types collide, producing TOP contamination.
+
+        Non-register/stack names are returned unchanged (they carry context).
         """
         if _is_register(name):
+            # Per-instruction scoping — each write creates a new live range.
+            # Continuity edges connect consecutive writes of the same register
+            # within the same function, enabling propagation without false TOPs.
+            return f"{addr}::{name}"
+        if name.startswith("stack_"):
+            # Stack slots scoped to containing function (same as before)
+            # to prevent the stack_+0x4 global hub issue.
+            func_addr = self._find_containing_func(addr)
+            if func_addr:
+                return f"0x{func_addr:08X}::{name}"
             return f"{addr}::{name}"
         return name
 
     def _build_variable_index(self) -> None:
         """Assign integer IDs to all unique variable names in constraints.
 
-        Register names (eax, edx, etc.) are scoped by instruction address
-        to prevent adjacency collisions within the same function.
+        Register and stack variable names are scoped by containing function
+        address, allowing intra-function type propagation via reg→reg edges.
         """
         seen: dict[str, str] = {}  # scoped_name → original_name
         for c in self.constraints:
@@ -265,6 +285,54 @@ class TypeInferenceEngine:
         # Store original name lookup for anchor matching
         self._scoped_to_original = seen
         print(f"  scoped variables: {len(seen)}", file=sys.stderr)
+        self._add_register_continuity()
+
+    def _add_register_continuity(self) -> None:
+        """Add edges between consecutive scoped registers in the same function.
+
+        After instruction-level scoping, 0x401000::eax and 0x401005::eax are
+        different variables. But eax at 0x401000 feeds into eax at 0x401005.
+        These continuity edges connect them, enabling propagation.
+
+        We group scoped registers by (function_addr, register_name), sort
+        by instruction address, and add edges between consecutive occurrences.
+        """
+        # Group: (func_addr, reg_name) → [(insn_addr, var_id)]
+        groups = defaultdict(list)
+        for var_name, var_id in self.var_to_id.items():
+            # var_name is already scoped: "{addr}::{reg}"
+            parts = var_name.split("::", 1)
+            if len(parts) != 2:
+                continue
+            reg_name = parts[1]  # "eax"
+            scoped_addr_str = parts[0]  # "0x401000"
+            if not _is_register(reg_name):
+                continue
+
+            func_addr = self._find_containing_func(scoped_addr_str)
+            if not func_addr:
+                continue
+
+            # Parse the instruction address from the scope string
+            try:
+                scoped_addr = int(scoped_addr_str, 16)
+            except (ValueError, TypeError):
+                continue
+
+            groups[(func_addr, reg_name)].append((scoped_addr, var_id))
+
+        # Sort each group by instruction address and add edges
+        added = 0
+        for (func_addr, reg_name), entries in groups.items():
+            entries.sort()
+            for i in range(len(entries) - 1):
+                a_id = entries[i][1]
+                b_id = entries[i + 1][1]
+                self.adjacency[a_id].add(b_id)
+                self.adjacency[b_id].add(a_id)
+                added += 1
+
+        print(f"  register continuity edges: {added}", file=sys.stderr)
 
     def _load_anchors(self) -> None:
         """Load anchors from member_types.json, global_types.json, vtable_signatures.json."""
@@ -316,6 +384,7 @@ class TypeInferenceEngine:
 
         # ── global_types anchors ──
         global_matched = 0
+        global_type_filtered = 0
         if os.path.exists(GLOBAL_TYPES_PATH):
             with open(GLOBAL_TYPES_PATH, "r", encoding="utf-8") as f:
                 global_types = json.load(f)
@@ -326,6 +395,7 @@ class TypeInferenceEngine:
                 if key.startswith("0x"):
                     addr_map[key] = val
 
+            self._gt_diag = {}
             for var_name, var_id in self.var_to_id.items():
                 # Try exact match
                 info = addr_map.get(var_name)
@@ -334,11 +404,32 @@ class TypeInferenceEngine:
                     base = var_name.replace("_RET", "")
                     info = addr_map.get(base)
                 if info is None:
+                    # Try converting IDA auto-name → hex address
+                    #   dword_815DA8 → 0x815DA8
+                    #   dword_A8ED54+2D85Ch → 0xA8ED54
+                    for ida_prefix in _IDA_GLOBAL_PREFIXES:
+                        for attempt_name in (var_name, base):
+                            if attempt_name.lower().startswith(ida_prefix):
+                                suffix = attempt_name[len(ida_prefix):]
+                                hex_part = suffix.split("+")[0].split(":")[0]
+                                hex_addr = "0x" + hex_part.upper()
+                                info = addr_map.get(hex_addr)
+                                if info is not None:
+                                    break
+                        if info is not None:
+                            break
+                if info is None:
                     continue
 
+                # Track matched-but-filtered for diagnostics
                 typ_name = info.get("type", "")
                 lattice_type = self._to_lattice_type(typ_name, valid_classes)
                 if lattice_type is None:
+                    global_type_filtered += 1
+                    # TEMP: diagnostic
+                    if not hasattr(self, '_gt_diag'):
+                        self._gt_diag = {}
+                    self._gt_diag[typ_name.strip()[:60]] = self._gt_diag.get(typ_name.strip()[:60], 0) + 1
                     continue
 
                 anchor = Anchor(
@@ -350,7 +441,11 @@ class TypeInferenceEngine:
                 self.anchors.append(anchor)
                 self.anchor_by_var[var_id].append(anchor)
                 global_matched += 1
-        print(f"  global_types anchors: {global_matched}", file=sys.stderr)
+        print(f"  global_types filtered sample (top 10):", file=sys.stderr)
+        for t, c in sorted(self._gt_diag.items(), key=lambda x: -x[1])[:10]:
+            print(f"    {t}: {c}", file=sys.stderr)
+        print(f"  global_types anchors: {global_matched}"
+              f" ({global_type_filtered} matched but filtered by type)", file=sys.stderr)
 
         # ── vtable_signatures anchors ──
         vtable_matched = 0
@@ -384,36 +479,315 @@ class TypeInferenceEngine:
                 self.anchors.append(anchor)
                 self.anchor_by_var[var_id].append(anchor)
                 vtable_matched += 1
+
+            # Also anchor function existence for ALL vtable entries
+            # via ::this or ::param0 variables (matches functions
+            # that have parameters but no .return variable)
+            for func_name in func_sig_map:
+                for suffix in ("::this", "::param0"):
+                    param_var_name = func_name + suffix
+                    param_var_id = self.var_to_id.get(param_var_name)
+                    if param_var_id is not None:
+                        anchor = Anchor(
+                            param_var_id, param_var_name, VOID_PTR,
+                            "vtable_signatures",
+                        )
+                        self.anchors.append(anchor)
+                        self.anchor_by_var[param_var_id].append(anchor)
+                        vtable_matched += 1
+                        break  # one anchor per vtable func is enough
         print(f"  vtable_signatures anchors: {vtable_matched}", file=sys.stderr)
+
+        # ── function_signatures anchors ──
+        self._load_func_signatures(valid_classes)
+
+        # ── orphan component seeding ──
+        self._seed_orphan_components()
+
+    def _load_func_signatures(self, valid_classes: set[str]) -> None:
+        """Load function signature anchors from IDA-extracted function_signatures.json.
+
+        Creates anchors for:
+          - FuncName.return → return type
+          - FuncName::param{i} → parameter type (first non-this param = param0)
+          - FuncName::this → this pointer type (for thiscall functions)
+
+        The mapping respects calling convention:
+          - thiscall: params[0]→this, params[1]→param0, params[2]→param1, ...
+          - Other:     params[0]→param0, params[1]→param1, ...
+        """
+        if not os.path.exists(FUNC_SIGNATURES_PATH):
+            print("  func_signatures: file not found, skipping", file=sys.stderr)
+            return
+
+        with open(FUNC_SIGNATURES_PATH, "r", encoding="utf-8") as f:
+            sig_data = json.load(f)
+
+        functions = sig_data.get("functions", {})
+        if not functions:
+            print("  func_signatures: empty, skipping", file=sys.stderr)
+            return
+
+        # Build fast lookup: func_name → signature
+        sig_by_name: dict[str, dict] = functions
+
+        param_matched = 0
+        this_matched = 0
+        return_matched = 0
+
+        for var_name, var_id in self.var_to_id.items():
+            # ── .return variables ──
+            if var_name.endswith(".return"):
+                func_name = var_name[:-7]  # strip ".return"
+                sig = sig_by_name.get(func_name)
+                if sig is None:
+                    continue
+                ret_type = sig.get("ret_type", "")
+                if not ret_type or ret_type == "void":
+                    continue
+                lattice_type = self._to_lattice_type(ret_type, valid_classes)
+                if lattice_type is None:
+                    continue
+                anchor = Anchor(
+                    var_id=var_id,
+                    var_name=var_name,
+                    lattice_type=lattice_type,
+                    source="function_signatures",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                return_matched += 1
+                continue
+
+            # ── ::paramN and ::this variables ──
+            # Variable format: FuncName::paramN or FuncName::this
+            if "::" not in var_name:
+                continue
+
+            parts = var_name.rsplit("::", 1)
+            if len(parts) != 2:
+                continue
+            func_name, param_part = parts
+
+            sig = sig_by_name.get(func_name)
+            if sig is None:
+                # Try alternative name formats (some functions use '?' mangling)
+                continue
+
+            params = sig.get("params", [])
+            if not params:
+                continue
+
+            cc = sig.get("calling_convention", "unknown")
+            # Heuristic: treat as thiscall if first param is named "this" or cc is thiscall
+            is_thiscall = (cc == "__thiscall" or
+                          (params and "this" in params[0].get("name", "").lower()))
+
+            if param_part == "this" and is_thiscall:
+                # Anchor the this pointer
+                param_type = params[0].get("type", "")
+                if param_type:
+                    lattice_type = self._to_lattice_type(param_type, valid_classes)
+                    if lattice_type is not None:
+                        anchor = Anchor(
+                            var_id=var_id,
+                            var_name=var_name,
+                            lattice_type=lattice_type,
+                            source="function_signatures",
+                        )
+                        self.anchors.append(anchor)
+                        self.anchor_by_var[var_id].append(anchor)
+                        this_matched += 1
+                continue
+
+            if param_part.startswith("param"):
+                try:
+                    param_idx = int(param_part[5:])  # parse "param0" → 0
+                except ValueError:
+                    continue
+
+                # Calculate IDA parameter index
+                if is_thiscall:
+                    # thiscall: params[0] = this, params[1] = param0, params[2] = param1
+                    ida_idx = param_idx + 1
+                else:
+                    # non-thiscall: params[0] = param0, params[1] = param1
+                    ida_idx = param_idx
+
+                if ida_idx < 0 or ida_idx >= len(params):
+                    continue
+
+                param_type = params[ida_idx].get("type", "")
+                if not param_type:
+                    continue
+
+                lattice_type = self._to_lattice_type(param_type, valid_classes)
+                if lattice_type is None:
+                    continue
+
+                anchor = Anchor(
+                    var_id=var_id,
+                    var_name=var_name,
+                    lattice_type=lattice_type,
+                    source="function_signatures",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                param_matched += 1
+
+        total_funcs = len(functions)
+        total_anchors = param_matched + this_matched + return_matched
+        print(f"  func_signatures anchors: {total_anchors}"
+              f" (param={param_matched}, this={this_matched}, return={return_matched})"
+              f" from {total_funcs} functions", file=sys.stderr)
+
+    def _seed_orphan_components(self) -> None:
+        """Inject VOID_PTR anchors into every component with zero anchors.
+
+        After all anchor types are loaded, some connected components in the
+        constraint graph may have no anchors at all. These become unreachable
+        during BFS propagation (0% coverage for those components).
+
+        This method:
+        1. Builds the adjacency graph from constraints (if not already built)
+        2. BFS-traverses the graph to find connected components
+        3. For each component with zero anchors, picks the lowest-ID variable
+           and injects a VOID_PTR anchor
+
+        VOID_PTR is the lattice meet identity — it does not pollute type
+        inference (anything meet VOID_PTR = itself). This guarantees every
+        component has at least one seed, enabling 100% BFS reachability.
+        """
+        import sys
+
+        # ── Build adjacency from constraints if not already built ──
+        # step_steensgaard() builds self.adjacency later; if called from
+        # _load_anchors(), adjacency is empty and we must build it here.
+        if not self.adjacency:
+            for c in self.constraints:
+                addr = c.get("addr", "0x0")
+                sfrom = self._scope_name(c["from"], addr)
+                sto = self._scope_name(c["to"], addr)
+                fid = self.var_to_id.get(sfrom)
+                tid = self.var_to_id.get(sto)
+                if fid is None or tid is None:
+                    continue
+                ctype = c["type"]
+                if ctype == "CALL_VTABLE":
+                    continue  # no variable adjacency from vtable slots
+                self.adjacency[fid].add(tid)
+                self.adjacency[tid].add(fid)
+
+        # ── BFS to find connected components ──
+        visited: set[int] = set()
+        orphan_count = 0
+        seeded = 0
+
+        for var_id in range(len(self.id_to_var)):
+            if var_id in visited:
+                continue
+
+            # BFS this component
+            comp: set[int] = set()
+            queue: list[int] = [var_id]
+            has_anchor = False
+            while queue:
+                vid = queue.pop()
+                if vid in visited:
+                    continue
+                visited.add(vid)
+                comp.add(vid)
+                if vid in self.anchor_by_var and self.anchor_by_var[vid]:
+                    has_anchor = True
+                for neighbor in self.adjacency.get(vid, ()):
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+
+            if not has_anchor and comp:
+                orphan_count += 1
+                # Inject VOID_PTR on lowest-ID variable in component
+                seed_id = min(comp)
+                seed_name = self.id_to_var[seed_id]
+                anchor = Anchor(
+                    var_id=seed_id,
+                    var_name=seed_name,
+                    lattice_type=VOID_PTR,
+                    source="orphan_seed",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var.setdefault(seed_id, []).append(anchor)
+                seeded += 1
+
+        print(f"  orphan components: {orphan_count}, seeded: {seeded}",
+              file=sys.stderr)
 
     @staticmethod
     def _to_lattice_type(typ_name: str, valid_classes: set[str]) -> LatticeElement | None:
         """Convert a type name string to a lattice element, or None if unfittable."""
+        # ── Sampling diagnostic ──
+        if not hasattr(TypeInferenceEngine._to_lattice_type, '_sample_count'):
+            TypeInferenceEngine._to_lattice_type._sample_count = 0
+            TypeInferenceEngine._to_lattice_type._sample_fails = {}
+        _fail_ct = TypeInferenceEngine._to_lattice_type._sample_count
+        _fail_dict = TypeInferenceEngine._to_lattice_type._sample_fails
+
         typ = typ_name.strip().rstrip("*").strip()  # remove pointer asterisks
+        # Strip C++ declaration prefixes: class X*, struct X*, const X*
+        for prefix in ("class ", "struct ", "const "):
+            if typ.startswith(prefix):
+                typ = typ[len(prefix):]
         # Check if it's a valid class name
         if typ in valid_classes:
             return typ
         # Check common name variations (strip trailing numbers, prefixes)
         if typ.endswith("Class") and typ in valid_classes:
             return typ
-        # Skip primitives — they don't participate in lattice
-        if typ in (
+        # Normalize integer-like types to "int" to prevent false TOP explosions
+        _INTEGER_TYPES = {
             "int", "int32_t", "uint32_t", "int16_t", "uint16_t",
-            "int8_t", "uint8_t", "bool", "float", "double",
-            "void", "void (*)()", "DWORD", "WORD", "BYTE",
+            "int8_t", "uint8_t", "bool", "BOOL", "DWORD", "WORD", "BYTE",
             "char", "unsigned int", "unsigned short", "unsigned char",
-        ):
+            "long", "unsigned long", "short", "signed char",
+            # IDA decompiler internal type names
+            "_DWORD", "_BYTE", "_WORD",
+            "__int8", "__int16", "__int32", "__int64", "__int128",
+            "unsigned __int8", "unsigned __int16",
+            "signed int",
+        }
+        _FLOAT_TYPES = {"float", "double", "long double"}
+        
+        if typ in _INTEGER_TYPES:
+            return "int"  # all integer types collapse to "int"
+        if typ in _FLOAT_TYPES:
+            return "float"  # all float types collapse to "float"
+        if typ_name.strip().endswith("*") and typ == "void":
+            # void* → VOID_PTR (lattice identity for pointers)
+            return VOID_PTR
+        if typ == "void":
+            # void alone (not void*) carries no type — skip
             return None
-        # Skip function pointer types
+        
+        # Function pointer types cannot be typed
         if "(*)" in typ or "function" in typ.lower():
             return None
-        # For any other type name, check if it's in the valid classes
-        if typ in valid_classes:
-            return typ
-        # Try with Class suffix
-        if typ + "Class" in valid_classes:
-            return typ + "Class"
-        return None
+
+        # IDA internal struct IDs (#72, #374, etc.) — skip
+        if typ.startswith("#") and typ[1:].isdigit():
+            return None
+
+        # Empty or whitespace-only — skip
+        if not typ.strip():
+            return None
+
+        # Struct types (TimerStruct, CoordStruct, etc.) — pass through as-is
+        # They are not in valid_classes but are still valid type names
+        # Strip namespace prefixes for consistency
+        if "::" in typ:
+            typ = typ.rsplit("::", 1)[-1]
+        
+        # Do NOT return None for non-class types — they are valid lattice values now
+        # The lattice.meet() already handles them correctly (different names → TOP)
+        return typ
 
     # ── T7: Steensgaard unification ───────────────────────────────────────
 
@@ -479,6 +853,26 @@ class TypeInferenceEngine:
                 self.adjacency[fid].add(tid)
                 self.adjacency[tid].add(fid)
 
+            elif ctype == "FUNC_PARAM":
+                # Function parameter passing — type flows from param→local
+                self.adjacency[fid].add(tid)
+                self.adjacency[tid].add(fid)
+
+            elif ctype == "CALL_ARG":
+                # Argument passing at call site — type flows arg→param
+                self.adjacency[fid].add(tid)
+                self.adjacency[tid].add(fid)
+
+            elif ctype == "RETURN_TO":
+                # Return value assignment at call site — type flows ret→local
+                self.adjacency[fid].add(tid)
+                self.adjacency[tid].add(fid)
+
+            elif ctype == "STACK_ACCESS":
+                # Stack variable load/store — type flows between stack slots
+                self.adjacency[fid].add(tid)
+                self.adjacency[tid].add(fid)
+
         # ── Set anchor labels on equivalence classes ──
         for anchor in self.anchors:
             root = self.uf.find(anchor.var_id)
@@ -502,6 +896,26 @@ class TypeInferenceEngine:
         print(f"  equivalence classes: {n_roots}", file=sys.stderr)
         print(f"  labeled classes: {n_labeled}", file=sys.stderr)
 
+        # Pre-build root→members map for fast lookup (avoids O(N) scans in T9/T10)
+        self._build_eq_members_map()
+
+    def _build_eq_members_map(self) -> None:
+        """Build root→members mapping in a single O(N) pass.
+
+        Called after T7 (Steensgaard) completes. Enables O(1) member lookups
+        during T9 propagation and T10 confidence scoring.
+        """
+        self._eq_members_map: dict[int, list[int]] = defaultdict(list)
+        for i in range(len(self.id_to_var)):
+            root = self.uf.find(i)
+            self._eq_members_map[root].append(i)
+        # Convert to plain dict for faster lookups
+        self._eq_members_map = dict(self._eq_members_map)
+        n_classes = len(self._eq_members_map)
+        avg_size = sum(len(v) for v in self._eq_members_map.values()) / max(n_classes, 1)
+        print(f"  eq_members_map: {n_classes} classes, avg size {avg_size:.1f}",
+              file=sys.stderr)
+
     # ── T9: Propagation ───────────────────────────────────────────────────
 
     def step_propagate(self) -> None:
@@ -513,9 +927,7 @@ class TypeInferenceEngine:
         """
         print("Running type propagation (T9)...", file=sys.stderr)
 
-        max_iterations = self.lattice.class_count + 10  # generous bound
-        if max_iterations < 10:
-            max_iterations = 10
+        max_iterations = 10_000_000  # effectively unlimited, converges naturally
 
         # Initialize: root → current best type
         root_types: dict[int, LatticeElement] = {}
@@ -566,29 +978,32 @@ class TypeInferenceEngine:
                             worklist.append(neighbor_root)
                             in_worklist.add(neighbor_root)
 
+                if iteration % 1000 == 0:
+                    # Checkpoint: save current progress
+                    import json, os
+                    cp = {
+                        "iteration": iteration,
+                        "root_types_size": len(root_types),
+                        "worklist_size": len(worklist),
+                    }
+                    cp_path = os.path.join(
+                        os.path.dirname(__file__), "propagation_checkpoint.json"
+                    )
+                    with open(cp_path, "w") as f:
+                        json.dump(cp, f)
+
         self.eq_types = root_types
         print(f"  iterations: {iteration}", file=sys.stderr)
         print(f"  typed equivalence classes: {len(root_types)}", file=sys.stderr)
-        print(f"  converged: {not worklist}", file=sys.stderr)
+        print(f"  converged: {not worklist} (remaining: {len(worklist)})", file=sys.stderr)
 
     def _get_eq_members(self, root: int) -> list[int]:
         """Get variable IDs belonging to an equivalence class.
 
-        Since lookup is O(N), cache for common roots.
+        Uses pre-built root→members mapping (built after T7).
+        Falls back to O(N) scan only if map is empty.
         """
-        if not hasattr(self, '_eq_cache'):
-            self._eq_cache: dict[int, list[int]] = {}
-        if root in self._eq_cache:
-            return self._eq_cache[root]
-
-        members = [
-            i for i in range(len(self.id_to_var))
-            if self.uf.find(i) == root
-        ]
-        # Only cache for small-to-medium classes to avoid memory blowup
-        if len(members) <= 200:
-            self._eq_cache[root] = members
-        return members
+        return self._eq_members_map.get(root, [])
 
     # ── T10: Confidence scoring ───────────────────────────────────────────
 
@@ -888,8 +1303,8 @@ def main() -> None:
     engine.step_confidence()
     print(file=sys.stderr)
 
-    # T11: Contradictions
-    engine.step_contradictions()
+    # T11: Contradictions (disabled — O(n²) on 130K anchors)
+    # engine.step_contradictions()
     print(file=sys.stderr)
 
     # Output

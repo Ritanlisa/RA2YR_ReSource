@@ -439,26 +439,52 @@ def compute_layout(name, registry, enums, sizes, cache, stack):
             off += 4
         cls_align = max(cls_align, 4)
     else:
-        # single inheritance: embed first non-COM base
+        # MI / single inheritance: handle COM + non-COM base mix
+        # Step 1: count COM bases that come before the first non-COM base
+        com_vt_count = 0
         base_name = None
         for b in info["bases"]:
-            if b not in COM_BASES:
-                base_name = b
-                break
+            if b in COM_BASES:
+                com_vt_count += 1
+            else:
+                if base_name is None:
+                    base_name = b  # first non-COM base (primary base)
+                break  # only count COM bases before the primary base
+        
+        # Step 2: add vtable pointers for preceding COM bases
+        for k in range(com_vt_count):
+            fields.append({"off": off, "name": "__vftable_com_%d" % k, "size": 4,
+                           "align": 4, "ida": "void *", "cpp": "void *", "kind": "vtbl"})
+            off += 4
+        if com_vt_count > 0:
+            cls_align = max(cls_align, 4)
+        
+        # Step 3: embed the primary non-COM base
         if base_name:
             bsz, _bf, bw, bok = compute_layout(base_name, registry, enums, sizes, cache, stack)
             warnings += ["base:" + w for w in bw]
             if bsz is None:
                 return (None, [], warnings + ["base-unresolved:%s" % base_name], False)
-            fields.append({"off": 0, "name": "__base", "size": bsz, "align": 4,
+            base_start = off  # base starts after COM vtables
+            fields.append({"off": base_start, "name": "__base", "size": bsz, "align": 4,
                            "ida": base_name, "cpp": base_name, "kind": "base"})
-            off = bsz
+            off = base_start + bsz
             cls_align = max(cls_align, 4)
         elif info["polymorphic"]:
             # standalone polymorphic class (e.g. gamemd VectorClass) -> 1 vtable ptr
             fields.append({"off": 0, "name": "__vftable", "size": 4, "align": 4,
                            "ida": "void *", "cpp": "void *", "kind": "vtbl"})
             off = 4
+            cls_align = max(cls_align, 4)
+        
+        # Step 4: add vtable pointers for ALL remaining bases after the primary base
+        # (both COM interfaces and secondary non-COM MI bases like IPiggyback)
+        skip_count = com_vt_count + (1 if base_name else 0)
+        bases_after = info["bases"][skip_count:]
+        for bi, b in enumerate(bases_after):
+            fields.append({"off": off, "name": "__vftable_mi_%d" % bi, "size": 4,
+                           "align": 4, "ida": "void *", "cpp": "void *", "kind": "vtbl"})
+            off += 4
             cls_align = max(cls_align, 4)
 
     # --- own members (anchor-pinned, forward-only) ---

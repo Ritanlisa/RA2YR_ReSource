@@ -209,12 +209,227 @@ def match_vtables_to_classes(vtables):
 RE_MEMBER_LOAD = re.compile(r'\[ecx\+([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
 RE_VTABLE_CALL = re.compile(r'\[(\w{2,3})\+([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
 RE_STACK_ACCESS = re.compile(r'\[(?:esp|ebp)[+\-]([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
+RE_STACK_FULL = re.compile(r'\[(esp|ebp)([+\-])([0-9A-Fa-f]+)h?\]', re.IGNORECASE)
+RE_GLOBAL_PATTERN = re.compile(r'^(dword_|byte_|word_|unk_|flt_|off_|qword_)', re.IGNORECASE)
+RE_HEX_IMMEDIATE = re.compile(r'^-?[0-9A-Fa-f]+h$', re.IGNORECASE)
+RE_DECIMAL = re.compile(r'^-?\d+$')
+RE_FLOAT_IMMEDIATE = re.compile(r'^-?\d+\.\d+(?:f|e[+-]?\d+)?$', re.IGNORECASE)
+
+# Heuristic: max instructions to scan backward for call argument setup
+MAX_CALL_ARG_SCAN = 8
+# Heuristic: max FUNC_PARAM edges per function
+MAX_FUNC_PARAMS = 8
+MAX_THISCALL_PARAMS = 6
 
 _X86_REG_NAMES = frozenset({
     'eax', 'ebx', 'ecx', 'edx', 'esi', 'edi', 'ebp', 'esp',
     'al', 'ah', 'bl', 'bh', 'cl', 'ch', 'dl', 'dh',
     'ax', 'bx', 'cx', 'dx', 'si', 'di', 'bp', 'sp',
 })
+
+def _strip_segment_prefix(operand_text):
+    """Strip ds:/es:/fs:/gs:/cs:/ss: prefix from an operand."""
+    if not operand_text:
+        return operand_text
+    text = operand_text.strip()
+    for prefix in ('ds:', 'es:', 'fs:', 'gs:', 'cs:', 'ss:'):
+        if text.lower().startswith(prefix):
+            return text[len(prefix):]
+    return text
+
+def _is_global_ref(operand_text):
+    """Check if operand references a named global variable (not register/stack/immediate)."""
+    if not operand_text:
+        return False
+    text = operand_text.strip()
+    if not text:
+        return False
+    # Skip registers
+    if text.lower() in _X86_REG_NAMES:
+        return False
+    # Skip stack references
+    if '[' in text:
+        return False
+    # Skip immediates
+    if text.startswith('0x') or text.lstrip('-').isdigit():
+        return False
+    # Skip hex immediates with 'h' suffix (e.g., 4000h, 0FFh)
+    if RE_HEX_IMMEDIATE.match(text):
+        return False
+    # Skip decimal numbers
+    if RE_DECIMAL.match(text):
+        return False
+    # Skip float immediates
+    if RE_FLOAT_IMMEDIATE.match(text):
+        return False
+    # Skip offset/immediate keywords
+    if text.lower() in ('offset',):
+        return False
+    # Skip segment-only refs
+    if text.lower() in ('cs', 'ds', 'es', 'fs', 'gs', 'ss'):
+        return False
+    # Strip segment prefix and re-check
+    stripped = _strip_segment_prefix(text)
+    if stripped != text:
+        return _is_global_ref(stripped)
+    # Check for common global naming patterns
+    if RE_GLOBAL_PATTERN.match(text):
+        return True
+    # Also consider any non-register, non-stack, non-immediate name as potential global
+    # But skip if it looks like a function call target (contains '::')
+    if '::' in text:
+        return False
+    return True
+
+def _scan_call_args(call_ea, func_start, callee_name, callee_is_thiscall, call_ea_hex):
+    """Scan backward from a call instruction to extract argument setup.
+    Returns list of constraint dicts (CALL_ARG + optional RETURN_TO).
+    """
+    constraints = []
+    
+    arg_setup_ea = idc.prev_head(call_ea, func_start)
+    params = []       # list of (source_var, param_idx) — ordered closest-to-call first
+    this_source = None
+    scanned = 0
+    
+    while arg_setup_ea != idaapi.BADADDR and scanned < MAX_CALL_ARG_SCAN:
+        arg_mnem = idc.print_insn_mnem(arg_setup_ea)
+        arg_op0 = idc.print_operand(arg_setup_ea, 0)
+        arg_op1 = ""
+        try:
+            arg_op1 = idc.print_operand(arg_setup_ea, 1)
+        except:
+            pass
+        
+        # Barrier: stop at call, ret, or any jump (different basic block)
+        if arg_mnem in ('call', 'ret', 'retn') or arg_mnem.startswith('j'):
+            break
+        
+        if arg_mnem == 'push':
+            reg = arg_op0.strip().lower()
+            if reg in _X86_REG_NAMES:
+                params.append((reg, len(params)))
+            elif _is_global_ref(arg_op0):
+                # Push of a global variable value
+                stripped = _strip_segment_prefix(arg_op0.strip())
+                params.append((stripped, len(params)))
+        
+        elif arg_mnem == 'mov' and callee_is_thiscall and arg_op0.strip().lower() == 'ecx':
+            # thiscall: mov ecx, <this_value>
+            arg_op1_val = arg_op1.strip().lower()
+            if arg_op1_val in _X86_REG_NAMES:
+                this_source = arg_op1_val
+            elif arg_op1_val and '[' in arg_op1_val:
+                # mov ecx, [reg+offset] — capture the register
+                m = re.search(r'\[(\w{2,3})', arg_op1_val)
+                if m:
+                    this_source = f"*{m.group(1)}"
+            elif arg_op1_val:
+                # mov ecx, <immediate> — skip
+                pass
+        
+        arg_setup_ea = idc.prev_head(arg_setup_ea, func_start)
+        scanned += 1
+    
+    # Create CALL_ARG edge for 'this' (thiscall)
+    if callee_is_thiscall and this_source:
+        constraints.append({
+            "from": this_source,
+            "to": f"{callee_name}::this",
+            "type": "CALL_ARG",
+            "addr": call_ea_hex,
+            "details": f"this=ecx via {this_source} → {callee_name}"
+        })
+    
+    # Create CALL_ARG edges for stack parameters
+    # params[0] is closest to call (= last push = param0)
+    for src, param_idx in params:
+        constraints.append({
+            "from": src,
+            "to": f"{callee_name}::param{param_idx}",
+            "type": "CALL_ARG",
+            "addr": call_ea_hex,
+            "details": f"arg setup: {src} → {callee_name}::param{param_idx}"
+        })
+    
+    # Add RETURN_TO edge: callee's return value → eax after call
+    if callee_name:
+        constraints.append({
+            "from": f"{callee_name}.return",
+            "to": "eax",
+            "type": "RETURN_TO",
+            "addr": call_ea_hex,
+            "details": f"after call {callee_name}, eax = return value"
+        })
+    
+    return constraints
+
+def _emit_func_param_edges(func_ea_str, func_name, is_thiscall):
+    """Create FUNC_PARAM edges at function entry linking parameter slots to registers/stack."""
+    constraints = []
+    
+    if is_thiscall:
+        constraints.append({
+            "from": f"{func_name}::this",
+            "to": "ecx",
+            "type": "FUNC_PARAM",
+            "addr": func_ea_str,
+            "details": f"function entry: this in ecx"
+        })
+        for i in range(MAX_THISCALL_PARAMS):
+            constraints.append({
+                "from": f"{func_name}::param{i}",
+                "to": f"stack_+{4 + i*4:#x}",
+                "type": "FUNC_PARAM",
+                "addr": func_ea_str,
+                "details": f"function entry: param{i} at esp+{4+i*4:#x}"
+            })
+    else:
+        # stdcall/cdecl — all params on stack
+        for i in range(MAX_FUNC_PARAMS):
+            constraints.append({
+                "from": f"{func_name}::param{i}",
+                "to": f"stack_+{4 + i*4:#x}",
+                "type": "FUNC_PARAM",
+                "addr": func_ea_str,
+                "details": f"function entry: param{i} at esp+{4+i*4:#x}"
+            })
+    
+    return constraints
+
+def _make_stack_access(op_from, op_to, ea_hex, op_text, direction):
+    """Create STACK_ACCESS edge for esp/ebp offset access.
+    direction: 'read' (stack→reg) or 'write' (reg→stack)
+    """
+    m = RE_STACK_FULL.search(op_text)
+    if not m:
+        return None
+    base_reg = m.group(1).lower()
+    sign = m.group(2)
+    offset_val = int(m.group(3), 16)
+    if sign == '-':
+        offset_val = -offset_val
+    # Normalize: if ebp-based, convert to esp-relative
+    # After push ebp; mov ebp,esp: ebp+8 = esp+4+4 (ret+ebp) 
+    # For simplicity, keep raw offset — engine will chain via same offset name
+    stack_name = f"stack_{offset_val:+#x}"
+    
+    if direction == 'read':
+        return {
+            "from": stack_name,
+            "to": op_to,
+            "type": "STACK_ACCESS",
+            "addr": ea_hex,
+            "details": f"read {op_text} → {op_to}"
+        }
+    else:
+        return {
+            "from": op_from,
+            "to": stack_name,
+            "type": "STACK_ACCESS",
+            "addr": ea_hex,
+            "details": f"write {op_from} → {op_text}"
+        }
 
 def extract_instruction_constraints(func_ea, func_name):
     """Extract type-relevant constraints from instructions in a function."""
@@ -228,6 +443,10 @@ def extract_instruction_constraints(func_ea, func_name):
     end = func.end_ea
     fstart = func.start_ea
     is_thiscall = '::' in func_name
+    
+    # --- 4c: FUNC_PARAM edges at function entry ---
+    func_ea_str = f"0x{func_ea:08X}"
+    constraints.extend(_emit_func_param_edges(func_ea_str, func_name, is_thiscall))
     
     # Track last instruction for return value analysis
     prev_ea = idaapi.BADADDR
@@ -286,12 +505,40 @@ def extract_instruction_constraints(func_ea, func_name):
                     "details": f"mov [ecx+{offset:#x}], {op1}"
                 }
         
+        # --- 4a: global variable read (mov reg, global_var) ---
+        if mnem == 'mov' and op0 and op1:
+            op0_lower = op0.strip().lower()
+            # Check op1 for global reference (skip if already handled above)
+            if not constraint and _is_global_ref(op1):
+                global_name = _strip_segment_prefix(op1.strip())
+                constraint = {
+                    "from": global_name,
+                    "to": op0,
+                    "type": "ASSIGN",
+                    "addr": f"0x{ea:08X}",
+                    "details": f"read from global {global_name}"
+                }
+        
+        # --- 4d: stack access (mov reg, [esp+XX] or mov [esp+XX], reg) ---
+        if mnem == 'mov' and op0 and op1:
+            ea_hex = f"0x{ea:08X}"
+            # Stack → register (read)
+            stack_edge = _make_stack_access("", op0, ea_hex, op1, 'read')
+            if stack_edge and not constraint:
+                constraint = stack_edge
+            # Register → stack (write)
+            if not constraint:
+                stack_edge = _make_stack_access(op1, "", ea_hex, op0, 'write')
+                if stack_edge:
+                    constraint = stack_edge
+        
         # --- CALL (direct + vtable dispatch) ---
         elif mnem == 'call':
             # Use instruction decoder to get exact target from operand
             insn = ida_ua.insn_t()
             if ida_ua.decode_insn(insn, ea) and insn.ops[0].type != ida_ua.o_void:
                 call_op = insn.ops[0]
+                call_ea_hex = f"0x{ea:08X}"
                 
                 # Direct call: o_near (7) or o_far (6)
                 if call_op.type in (ida_ua.o_near, ida_ua.o_far):
@@ -299,24 +546,37 @@ def extract_instruction_constraints(func_ea, func_name):
                     func_at_target = ida_funcs.get_func(target_ea)
                     if func_at_target and func_at_target.start_ea == target_ea:
                         callee_name = ida_funcs.get_func_name(target_ea)
-                        if callee_name:
-                            constraint = {
-                                "from": f"0x{ea:08X}_call",
-                                "to": f"0x{target_ea:08X}",
-                                "type": "CALL",
-                                "addr": f"0x{ea:08X}",
-                                "callee_name": callee_name,
-                                "details": f"call {callee_name}"
-                            }
-                        else:
-                            constraint = {
-                                "from": f"0x{ea:08X}_call",
-                                "to": f"0x{target_ea:08X}",
-                                "type": "CALL",
-                                "addr": f"0x{ea:08X}",
-                                "callee_name": f"sub_{target_ea:X}",
-                                "details": f"call sub_{target_ea:X}"
-                            }
+                        if not callee_name:
+                            callee_name = f"sub_{target_ea:X}"
+                        
+                        # Core CALL edge (site → callee)
+                        constraint = {
+                            "from": f"0x{ea:08X}_call",
+                            "to": f"0x{target_ea:08X}",
+                            "type": "CALL",
+                            "addr": call_ea_hex,
+                            "callee_name": callee_name,
+                            "details": f"call {callee_name}"
+                        }
+                        constraints.append(constraint)
+                        constraint = None  # already appended
+                        
+                        # --- 4b: CALL_ARG edges ---
+                        callee_is_thiscall = '::' in callee_name
+                        call_arg_edges = _scan_call_args(
+                            ea, fstart, callee_name, callee_is_thiscall, call_ea_hex
+                        )
+                        constraints.extend(call_arg_edges)
+                    else:
+                        # Target not a recognized function start
+                        constraint = {
+                            "from": f"0x{ea:08X}_call",
+                            "to": f"0x{target_ea:08X}",
+                            "type": "CALL",
+                            "addr": call_ea_hex,
+                            "callee_name": f"sub_{target_ea:X}",
+                            "details": f"call sub_{target_ea:X}"
+                        }
                 
                 # Indirect/vtable dispatch: o_displ(4), o_mem(2), o_phrase(3)
                 elif call_op.type in (ida_ua.o_displ, ida_ua.o_mem, ida_ua.o_phrase):
