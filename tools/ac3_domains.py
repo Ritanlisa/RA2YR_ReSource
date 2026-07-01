@@ -1,6 +1,17 @@
 """AC-3 arc consistency on constraint graph with anchors as hard constraints."""
-import json, re, sys
+import json, os, re, sys
 from collections import defaultdict, deque
+
+# Ensure project root is on sys.path for tools.type_infer imports
+_proj = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+if _proj not in sys.path:
+    sys.path.insert(0, _proj)
+
+from tools.type_infer.scope_vars import (
+    build_scoped_index, build_adjacency,
+    _scope_one_var, X86_REGISTERS,
+    load_function_addresses, find_containing_func,
+)
 
 print("Loading...")
 ct = json.load(open('tools/type_infer/constraints/raw_constraints.json'))['constraints']
@@ -31,46 +42,14 @@ for i in range(K):
                 compat_with[i].add(j)
 print(f"  Compat pairs: {sum(len(c) for c in compat_with)}")
 
-# Build adjacency
-adj = defaultdict(set)
-# Use SCOPED variable names like the engine does
-_X86_REGS = {'eax','ebx','ecx','edx','esi','edi','ebp','esp','al','ah','bl','bh','cl','ch','dl','dh','ax','bx','cx','dx','si','di','bp','sp'}
-_HEAP_PREFIXES = ('dword_','byte_','word_','flt_','off_','qword_','unk_')
-
-# Load function addresses for stack scoping
-cg = json.load(open('tools/type_infer/constraints/call_graph.json'))
-func_addrs = set()
-for edges in cg.get('graph',{}).values():
-    for e in edges:
-        try: func_addrs.add(int(e['to'],16))
-        except: pass
-func_addrs_sorted = sorted(func_addrs)
-
-import bisect
-def find_func(addr_str):
-    try: a = int(addr_str,16)
-    except: return None
-    idx = bisect.bisect_right(func_addrs_sorted, a) - 1
-    return func_addrs_sorted[idx] if idx >= 0 else None
-
-def scope_name(name, addr):
-    # Strip IDA pointer prefix (*) from register names
-    clean = name.lstrip('*')
-    if clean.lower() in _X86_REGS:
-        return f"{addr}::{clean}"
-    if clean.startswith('stack_'):
-        func = find_func(addr)
-        return f"0x{func:08X}::{clean}" if func else f"{addr}::{clean}"
-    if any(clean.startswith(p) for p in _HEAP_PREFIXES):
-        return f"{addr}::{clean}"
-    return name
-
-for x in ct:
-    f = x['from']; t = x['to']
-    addr = x.get('addr','0x0')
-    sf = scope_name(f, addr)
-    st = scope_name(t, addr)
-    adj[sf].add(st); adj[st].add(sf)
+# Build adjacency using SSA-based scoping (replaces manual scope_name)
+print("Building SSA-scoped adjacency...")
+cg = json.load(open('tools/type_infer/constraints/call_graph.json'))['graph']
+ssa = build_scoped_index(ct, cg)
+adj = build_adjacency(ct, ssa)
+_func_addrs = ssa["func_addrs"]
+_writes = ssa["writes"]
+scoped_to_name = ssa["scoped_to_name"]
 print(f"  Variables: {len(adj)}, Edges: {sum(len(v) for v in adj.values())//2}")
 
 # Initialize domains
@@ -160,7 +139,7 @@ print(f"  CRT signature anchors: {fa}")
 # the source register (at that instruction) is the 'this' pointer.
 # It must be compatible with ClassName.
 thiscall_constrained = 0
-for x in ct:
+for ci_idx, x in enumerate(ct):
     if x.get('type') != 'CALL_ARG':
         continue
     to_name = x.get('to', '')
@@ -171,9 +150,8 @@ for x in ct:
         continue
     cls_idx = t2i[cls_name]
     
-    addr = x.get('addr', '0x0')
-    from_name = x.get('from', '')
-    sf = scope_name(from_name, addr)
+    # Use pre-computed SSA-scoped from name
+    sf = scoped_to_name[ci_idx][0]
     if sf not in domains:
         continue
     
@@ -203,7 +181,7 @@ for k, s in sigs.items():
 print(f"  Vtable slots with class data: {len(slot_classes)}")
 
 vtable_constrained = 0
-for x in ct:
+for vi_idx, x in enumerate(ct):
     if x.get('type') != 'CALL_VTABLE':
         continue
     slot = x.get('vtable_slot')
@@ -214,19 +192,20 @@ for x in ct:
     classes = slot_classes.get(slot, set())
     if not classes:
         continue
-    # Try unscoped reg first (registers like edx/eax appear unscoped in the graph),
-    # then scoped as fallback, then the from field as last resort
+    # SSA-scope the vtable_reg at this constraint's address
+    try:
+        addr_int = int(addr, 16)
+    except (ValueError, TypeError):
+        addr_int = 0
+    scoped_reg = _scope_one_var(reg, addr_int, _func_addrs, _writes)
     sf = None
-    if reg in domains:
-        sf = reg
+    if scoped_reg in domains:
+        sf = scoped_reg
     else:
-        scoped = scope_name(reg, addr)
-        if scoped in domains:
-            sf = scoped
-        else:
-            from_var = x.get('from', '')
-            if from_var in domains:
-                sf = from_var
+        # Fallback: try from field (already scoped in adjacency)
+        sfrom = scoped_to_name[vi_idx][0]
+        if sfrom in domains:
+            sf = sfrom
     if sf is None:
         continue
     compat_set = set()

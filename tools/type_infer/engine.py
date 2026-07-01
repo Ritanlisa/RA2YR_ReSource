@@ -30,26 +30,16 @@ from collections import defaultdict, deque
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-import bisect
-
 from tools.type_infer.union_find import UnionFind
 from tools.type_infer.lattice import (
     TypeLattice, BOTTOM, VOID_PTR, TOP, LatticeElement, _is_concrete, _name
 )
+from tools.type_infer.scope_vars import (
+    X86_REGISTERS, is_register as _is_register,
+    build_scoped_index as _build_scoped_index,
+)
 
-# ── register names (x86, must be scoped by function) ───────────────────────
-
-_X86_REGISTERS = frozenset({
-    "eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp",
-    "al",  "ah",  "bl",  "bh",  "cl",  "ch",  "dl",  "dh",
-    "ax",  "bx",  "cx",  "dx",  "si",  "di",  "bp",  "sp",
-})
-
-
-def _is_register(name: str) -> bool:
-    """Check if a variable name is an x86 register (needs function scoping)."""
-    return name.lower() in _X86_REGISTERS
-
+# ── _X86_REGISTERS and _is_register now in scope_vars.py ───────────────────
 
 # ── paths ──────────────────────────────────────────────────────────────────
 
@@ -205,76 +195,20 @@ class TypeInferenceEngine:
             data = json.load(f)
         self.call_graph = data.get("graph", {})
 
-        # Build sorted function address list for binary-search lookup
-        addrs: set[int] = set()
-        for key in self.call_graph:
-            try:
-                addrs.add(int(key, 16))
-            except ValueError:
-                pass
-        # Also collect function addresses from constraint callee_names
-        # (these might not be in call_graph keys)
-        self._func_addrs = sorted(addrs)
-        print(f"  function start addresses: {len(self._func_addrs)}", file=sys.stderr)
-
-    def _find_containing_func(self, addr_str: str) -> int:
-        """Find the function start address that contains the given instruction address.
-
-        Uses binary search on sorted function start addresses.
-        Returns the function address (as int) or 0 if not found.
-        """
-        try:
-            addr = int(addr_str, 16)
-        except ValueError:
-            return 0
-        if not self._func_addrs:
-            return 0
-        idx = bisect.bisect_right(self._func_addrs, addr) - 1
-        if idx >= 0:
-            return self._func_addrs[idx]
-        return 0
-
-    def _scope_name(self, name: str, addr: str) -> str:
-        """Scope names to prevent global hub TOP contamination.
-
-        Registers are scoped per-instruction — each write creates a new live
-        range. Continuity edges (added by _add_register_continuity) connect
-        consecutive writes of the same register within the same function,
-        enabling intra-function propagation without merge conflicts.
-
-        Stack variables (stack_+0xN) are scoped to containing function.
-        Without this, stack_+0x4 becomes a global hub where 19K conflicting
-        types collide, producing TOP contamination.
-
-        Non-register/stack names are returned unchanged (they carry context).
-        """
-        if _is_register(name):
-            # Per-instruction scoping — each write creates a new live range.
-            # Continuity edges connect consecutive writes of the same register
-            # within the same function, enabling propagation without false TOPs.
-            return f"{addr}::{name}"
-        if name.startswith("stack_"):
-            # Stack slots scoped to containing function (same as before)
-            # to prevent the stack_+0x4 global hub issue.
-            func_addr = self._find_containing_func(addr)
-            if func_addr:
-                return f"0x{func_addr:08X}::{name}"
-            return f"{addr}::{name}"
-        return name
-
     def _build_variable_index(self) -> None:
-        """Assign integer IDs to all unique variable names in constraints.
+        """Assign integer IDs to all unique SSA-scoped variable names.
 
-        Register and stack variable names are scoped by containing function
-        address, allowing intra-function type propagation via reg→reg edges.
+        Uses scope_vars.build_scoped_index() for SSA-based register scoping.
+        Each register write creates a new SSA version, eliminating false
+        cross-live-range hub contamination. No continuity edges needed.
         """
-        seen: dict[str, str] = {}  # scoped_name → original_name
-        for c in self.constraints:
-            addr = c.get("addr", "0x0")
-            sfrom = self._scope_name(c["from"], addr)
-            sto = self._scope_name(c["to"], addr)
-            seen[sfrom] = c["from"]
-            seen[sto] = c["to"]
+        result = _build_scoped_index(self.constraints, self.call_graph)
+
+        # Pre-computed scoped names per constraint (for step_steensgaard)
+        self._scoped_to_name = result["scoped_to_name"]
+
+        # Build variable index from SSA-scoped names
+        seen = result["scoped_to_original"]
 
         # Sort for deterministic IDs
         sorted_names = sorted(seen.keys())
@@ -285,54 +219,9 @@ class TypeInferenceEngine:
         # Store original name lookup for anchor matching
         self._scoped_to_original = seen
         print(f"  scoped variables: {len(seen)}", file=sys.stderr)
-        self._add_register_continuity()
 
-    def _add_register_continuity(self) -> None:
-        """Add edges between consecutive scoped registers in the same function.
-
-        After instruction-level scoping, 0x401000::eax and 0x401005::eax are
-        different variables. But eax at 0x401000 feeds into eax at 0x401005.
-        These continuity edges connect them, enabling propagation.
-
-        We group scoped registers by (function_addr, register_name), sort
-        by instruction address, and add edges between consecutive occurrences.
-        """
-        # Group: (func_addr, reg_name) → [(insn_addr, var_id)]
-        groups = defaultdict(list)
-        for var_name, var_id in self.var_to_id.items():
-            # var_name is already scoped: "{addr}::{reg}"
-            parts = var_name.split("::", 1)
-            if len(parts) != 2:
-                continue
-            reg_name = parts[1]  # "eax"
-            scoped_addr_str = parts[0]  # "0x401000"
-            if not _is_register(reg_name):
-                continue
-
-            func_addr = self._find_containing_func(scoped_addr_str)
-            if not func_addr:
-                continue
-
-            # Parse the instruction address from the scope string
-            try:
-                scoped_addr = int(scoped_addr_str, 16)
-            except (ValueError, TypeError):
-                continue
-
-            groups[(func_addr, reg_name)].append((scoped_addr, var_id))
-
-        # Sort each group by instruction address and add edges
-        added = 0
-        for (func_addr, reg_name), entries in groups.items():
-            entries.sort()
-            for i in range(len(entries) - 1):
-                a_id = entries[i][1]
-                b_id = entries[i + 1][1]
-                self.adjacency[a_id].add(b_id)
-                self.adjacency[b_id].add(a_id)
-                added += 1
-
-        print(f"  register continuity edges: {added}", file=sys.stderr)
+    # _add_register_continuity removed: SSA scoping in scope_vars.py
+    # handles live-range isolation natively (each write → new SSA version).
 
     def _load_anchors(self) -> None:
         """Load anchors from member_types.json, global_types.json, vtable_signatures.json."""
@@ -664,10 +553,9 @@ class TypeInferenceEngine:
         # step_steensgaard() builds self.adjacency later; if called from
         # _load_anchors(), adjacency is empty and we must build it here.
         if not self.adjacency:
-            for c in self.constraints:
-                addr = c.get("addr", "0x0")
-                sfrom = self._scope_name(c["from"], addr)
-                sto = self._scope_name(c["to"], addr)
+            ssa = self._scoped_to_name
+            for i, c in enumerate(self.constraints):
+                sfrom, sto = ssa[i]
                 fid = self.var_to_id.get(sfrom)
                 tid = self.var_to_id.get(sto)
                 if fid is None or tid is None:
@@ -799,10 +687,9 @@ class TypeInferenceEngine:
         print("Running Steensgaard unification (T7)...", file=sys.stderr)
 
         # ── Build adjacency while processing ──
-        for c in self.constraints:
-            addr = c.get("addr", "0x0")
-            sfrom = self._scope_name(c["from"], addr)
-            sto = self._scope_name(c["to"], addr)
+        ssa = self._scoped_to_name
+        for i, c in enumerate(self.constraints):
+            sfrom, sto = ssa[i]
 
             fid = self.var_to_id.get(sfrom)
             tid = self.var_to_id.get(sto)
