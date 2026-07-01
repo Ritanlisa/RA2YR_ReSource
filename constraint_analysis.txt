@@ -1,0 +1,110 @@
+================================================================================
+1. OFFSET FREQUENCY DISTRIBUTION — Constraint Graph Analysis
+================================================================================
+Total unique offsets in constraint graph: 864
+Total classes with >=1 member access: 630
+Total functions with member accesses: 3334
+
+Frequency buckets:
+     Range |  Offsets |       Pct | Bucket | Description
+-------------------------------------------------------------------------------------
+ [  1,  1] |      450 |    52.08% |    450 | Leaf-specific
+ [  2,  3] |      240 |    27.78% |    240 | Narrow-derived
+ [  4, 10] |      124 |    14.35% |    124 | Derived-level
+ [ 11, 50] |       41 |     4.75% |     41 | Mid-hierarchy
+ [ 51,200] |        6 |     0.69% |      6 | Base-level
+ [201,500] |        3 |     0.35% |      3 | Abstract-level
+ [501,630] |        0 |     0.00% |      0 | Nearly-universal
+
+  BASE-LEVEL (>50 classes):     9 offsets
+  DERIVED-LEVEL (<=10 classes):   814 offsets
+  MID-LEVEL (11-50 classes):    41 offsets
+
+================================================================================
+2. OFFSET ACCESS TOP-15 (most widely shared offsets)
+================================================================================
+Offset        Hex  Classes    Pct  Implication
+--------------------------------------------------------------------------------
+     4     0x0004      435  69.0%  base-member
+     8     0x0008      369  58.6%  base-member
+    12     0x000C      304  48.3%  base-member
+    16     0x0010      198  31.4%  base-member
+    20     0x0014       80  12.7%  base-member
+     2     0x0002       70  11.1%  base-member
+    36     0x0024       56   8.9%  base-member
+    48     0x0030       56   8.9%  base-member
+    24     0x0018       53   8.4%  base-member
+    28     0x001C       50   7.9%  mid-member
+    40     0x0028       50   7.9%  mid-member
+    56     0x0038       41   6.5%  mid-member
+    52     0x0034       38   6.0%  mid-member
+    44     0x002C       37   5.9%  mid-member
+    32     0x0020       35   5.6%  mid-member
+
+================================================================================
+3. STRICT SUPERSET RELATIONSHIPS (filtered, Jaccard>=0.25, >=5 offsets)
+================================================================================
+Classes with >=5 offsets (template-free): 170
+
+Total strict supersets: 110
+Filtered (rare>=2 or common>=8): 19
+
+                          Base -> Derived                         | Jaccard | Common | Extra | Rare_sh
+----------------------------------------------------------------------------------------------------
+                    VoxelModel -> VoxelRenderer                   |    0.94 |     16 |     1 |       4
+                   AudioThread -> Struct                          |    0.70 |     14 |     6 |       0
+                        Struct -> AudioStream                     |    0.65 |     20 |    11 |       0
+                     Matrix3x4 -> Struct                          |    0.55 |     11 |     9 |       0
+                  WWMouseClass -> Struct                          |    0.50 |     10 |    10 |       0
+                       Surface -> DSurface                        |    0.47 |      8 |     9 |       0
+                   AudioThread -> AudioStream                     |    0.45 |     14 |    17 |       0
+                          SHA1 -> Struct                          |    0.45 |      9 |    11 |       0
+                     Matrix3x4 -> AudioStream                     |    0.35 |     11 |    20 |       0
+                     Matrix3x4 -> RandomMap                       |    0.35 |     11 |    20 |       0
+                  WWMouseClass -> AudioStream                     |    0.32 |     10 |    21 |       0
+                  WWMouseClass -> RandomMap                       |    0.32 |     10 |    21 |       0
+               ConnectionClass -> RandomMap                       |    0.29 |      9 |    22 |       0
+                          SHA1 -> AudioStream                     |    0.29 |      9 |    22 |       0
+                          SHA1 -> RandomMap                       |    0.29 |      9 |    22 |       0
+                     Matrix3x4 -> Scenario                        |    0.29 |     11 |    27 |       0
+                       Surface -> TerrainClass                    |    0.27 |      8 |    22 |       0
+                  WWMouseClass -> Scenario                        |    0.26 |     10 |    28 |       0
+                       Surface -> RandomMap                       |    0.26 |      8 |    23 |       0
+
+================================================================================
+4. INHERITANCE CHAINS (transitive parent assignment)
+================================================================================
+Classes with parent assigned: 42
+Root classes (no parent): 128
+Total chains: 170
+
+5 LONGEST CHAINS:
+  Chain 1 (depth 4):
+  BinkMovie                           (  5 offsets)
+      AudioSample                         (  7 offsets)
+          Matrix3x4                           ( 11 offsets)
+              AbstractClass                       ( 50 offsets)
+
+  Chain 2 (depth 4):
+  AudioMixer                          (  5 offsets)
+      AudioThread                         ( 14 offsets)
+          Struct                              ( 20 offsets)
+              AudioStream                         ( 31 offsets)
+
+  Chain 3 (depth 4):
+  BinkMovie                           (  5 offsets)
+      AudioSample                         (  7 offsets)
+          Matrix3x4                           ( 11 offsets)
+              RandomMap                           ( 31 offsets)
+
+  Chain 4 (depth 4):
+  BinkMovie                           (  5 offsets)
+      AudioSample                         (  7 offsets)
+          Matrix3x4                           ( 11 offsets)
+              Scenario                            ( 38 offsets)
+
+  Chain 5 (depth 4):
+  BinkMovie                           (  5 offsets)
+      CStreamClass                        (  6 offsets)
+          VoxelModel                          ( 16 offsets)
+              VoxelRenderer                       ( 17 offsets)

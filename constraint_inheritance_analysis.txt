@@ -1,0 +1,162 @@
+================================================================================
+COMPREHENSIVE CONSTRAINT GRAPH INHERITANCE ANALYSIS
+================================================================================
+
+================================================================================
+SECTION 1: OFFSET FREQUENCY DISTRIBUTION
+================================================================================
+Total unique offsets: 864
+Total classes: 630
+Total functions with member access: 3334
+
+Top 20 most shared offsets:
+    1.  0x0004 (   4)    435 classes ( 69.0%)  [BASE]
+    2.  0x0008 (   8)    369 classes ( 58.6%)  [BASE]
+    3.  0x000C (  12)    304 classes ( 48.3%)  [BASE]
+    4.  0x0010 (  16)    198 classes ( 31.4%)  [BASE]
+    5.  0x0014 (  20)     80 classes ( 12.7%)  [MID]
+    6.  0x0002 (   2)     70 classes ( 11.1%)  [MID]
+    7.  0x0024 (  36)     56 classes (  8.9%)  [DERIVED]
+    8.  0x0030 (  48)     56 classes (  8.9%)  [DERIVED]
+    9.  0x0018 (  24)     53 classes (  8.4%)  [DERIVED]
+   10.  0x001C (  28)     50 classes (  7.9%)  [DERIVED]
+   11.  0x0028 (  40)     50 classes (  7.9%)  [DERIVED]
+   12.  0x0038 (  56)     41 classes (  6.5%)  [DERIVED]
+   13.  0x0034 (  52)     38 classes (  6.0%)  [DERIVED]
+   14.  0x002C (  44)     37 classes (  5.9%)  [DERIVED]
+   15.  0x0020 (  32)     35 classes (  5.6%)  [DERIVED]
+   16.  0x00AC ( 172)     27 classes (  4.3%)  [DERIVED]
+   17.  0x0044 (  68)     27 classes (  4.3%)  [DERIVED]
+   18.  0x006C ( 108)     27 classes (  4.3%)  [DERIVED]
+   19.  0x0090 ( 144)     24 classes (  3.8%)  [DERIVED]
+   20.  0x0048 (  72)     24 classes (  3.8%)  [DERIVED]
+
+BASE-LEVEL offsets (51+ classes):        9 (  1.0%)
+MID-LEVEL offsets (11-50 classes):      41 (  4.7%)
+DERIVED-LEVEL offsets (4-10 classes):  124 ( 14.4%)
+LEAF-specific offsets (1-3 classes):   690 ( 79.9%)
+
+Key base offsets (root class candidates): ['0x0004', '0x0008', '0x000C', '0x0010', '0x0014', '0x0002', '0x0024', '0x0030', '0x0018']
+
+================================================================================
+SECTION 2: KEY GAME HIERARCHY CROSS-COMPARISON
+================================================================================
+
+Classes found: 15/15
+
+Hierarchy overlap:
+  AbstractClass             -> ObjectClass               | base= 50 | overlap= 21 ( 42%) | rare= 2 | strict_subset=NO | STRONG
+  ObjectClass               -> FootClass                 | base= 74 | overlap= 19 ( 26%) | rare= 1 | strict_subset=NO | MODERATE
+  FootClass                 -> TechnoClass               | base= 72 | overlap= 31 ( 43%) | rare= 7 | strict_subset=NO | STRONG
+  TechnoClass               -> BuildingClass             | base=193 | overlap= 53 ( 27%) | rare=20 | strict_subset=NO | MODERATE
+  TechnoClass               -> UnitClass                 | base=193 | overlap= 29 ( 15%) | rare=10 | strict_subset=NO | WEAK
+  TechnoClass               -> InfantryClass             | base=193 | overlap= 42 ( 22%) | rare=13 | strict_subset=NO | WEAK
+  TechnoClass               -> AircraftClass             | base=193 | overlap= 11 (  6%) | rare= 3 | strict_subset=NO | NONE
+  TechnoClass               -> BulletClass               | base=193 | overlap= 11 (  6%) | rare= 3 | strict_subset=NO | NONE
+  TechnoClass               -> AnimClass                 | base=193 | overlap= 21 ( 11%) | rare= 4 | strict_subset=NO | NONE
+  ObjectClass               -> HouseClass                | base= 74 | overlap= 23 ( 31%) | rare= 0 | strict_subset=NO | MODERATE
+
+================================================================================
+SECTION 3: STRICT SUPERSET RELATIONSHIPS
+================================================================================
+
+Total classes >=5 offsets: 170
+Strict supersets found: 110
+Filtered (rare>=2 or common>=8): 19
+
+              Candidate_Parent -> Candidate_Child                 Jaccard  Common  Extra  Total  Rare  Confidence
+-------------------------------------------------------------------------------------------------------------------
+                    VoxelModel -> VoxelRenderer                      0.94     16      1     17     4  VERY STRONG
+                   AudioThread -> Struct                             0.70     14      6     20     0  VERY STRONG
+                        Struct -> AudioStream                        0.65     20     11     31     0  STRONG
+                     Matrix3x4 -> Struct                             0.55     11      9     20     0  STRONG
+                  WWMouseClass -> Struct                             0.50     10     10     20     0  STRONG
+                       Surface -> DSurface                           0.47      8      9     17     0  MODERATE
+                   AudioThread -> AudioStream                        0.45     14     17     31     0  MODERATE
+                          SHA1 -> Struct                             0.45      9     11     20     0  MODERATE
+                     Matrix3x4 -> AudioStream                        0.35     11     20     31     0  MODERATE
+                     Matrix3x4 -> RandomMap                          0.35     11     20     31     0  MODERATE
+                  WWMouseClass -> AudioStream                        0.32     10     21     31     0  WEAK
+                  WWMouseClass -> RandomMap                          0.32     10     21     31     0  WEAK
+               ConnectionClass -> RandomMap                          0.29      9     22     31     0  WEAK
+                          SHA1 -> AudioStream                        0.29      9     22     31     0  WEAK
+                          SHA1 -> RandomMap                          0.29      9     22     31     0  WEAK
+                     Matrix3x4 -> Scenario                           0.29     11     27     38     0  WEAK
+                       Surface -> TerrainClass                       0.27      8     22     30     0  WEAK
+                  WWMouseClass -> Scenario                           0.26     10     28     38     0  WEAK
+                       Surface -> RandomMap                          0.26      8     23     31     0  WEAK
+
+================================================================================
+SECTION 4: INHERITANCE CHAINS
+================================================================================
+
+Classes with parent: 42
+Root classes: 128
+Total chains: 170
+
+5 LONGEST CHAINS:
+  Chain 1 (depth 4):
+  BinkMovie                           (  5 offsets)
+    AudioSample                         (  7 offsets)
+      Matrix3x4                           ( 11 offsets)
+        AbstractClass                       ( 50 offsets)
+
+  Chain 2 (depth 4):
+  AudioMixer                          (  5 offsets)
+    AudioThread                         ( 14 offsets)
+      Struct                              ( 20 offsets)
+        AudioStream                         ( 31 offsets)
+
+  Chain 3 (depth 4):
+  BinkMovie                           (  5 offsets)
+    AudioSample                         (  7 offsets)
+      Matrix3x4                           ( 11 offsets)
+        RandomMap                           ( 31 offsets)
+
+  Chain 4 (depth 4):
+  BinkMovie                           (  5 offsets)
+    AudioSample                         (  7 offsets)
+      Matrix3x4                           ( 11 offsets)
+        Scenario                            ( 38 offsets)
+
+  Chain 5 (depth 4):
+  BinkMovie                           (  5 offsets)
+    CStreamClass                        (  6 offsets)
+      VoxelModel                          ( 16 offsets)
+        VoxelRenderer                       ( 17 offsets)
+
+Plausible chains (based on rare-offset sharing >=4):
+  Chain (rare-sum=4):
+    BinkMovie                           (  5 offsets)
+    CStreamClass                        (  6 offsets)
+    VoxelModel                          ( 16 offsets)
+    VoxelRenderer                       ( 17 offsets)
+
+  Chain (rare-sum=4):
+    Buffer                              (  7 offsets)
+    TechnoClass                         (193 offsets)
+
+================================================================================
+SECTION 5: DEEPEST CHAIN VIA DAG
+================================================================================
+Deepest chain (via DAG): 3 classes
+  AudioStream                         ( 31 offsets)
+  Struct                              ( 20 offsets)
+  AudioThread                         ( 14 offsets)
+
+================================================================================
+SUMMARY
+================================================================================
+  Constraint edges: 492482
+  Unique offsets: 864
+  Unique classes: 630
+  Functions with member access: 3334
+  Strict supersets (Jaccard>=0.25): 110
+  Filtered meaningful: 19
+  Classes in chains: 42
+  Longest chain: 4 classes
+  Deepest via DAG: 3 classes
+  Base offsets (>50 classes): 9
+  Mid offsets (11-50): 41
+  Derived offsets (4-10): 124
+  Leaf offsets (1-3): 690
