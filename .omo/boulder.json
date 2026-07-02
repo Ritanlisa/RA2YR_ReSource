@@ -1,17 +1,89 @@
 {
-  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\two-layer-class-inference.md",
-  "started_at": "2026-06-30T15:34:23.834Z",
-  "ended_at": "2026-07-01T03:30:00.000Z",
-  "session_ids": ["opencode:ses_111291a7affeRbNIECe3lv5wXM"],
-  "plan_name": "two-layer-class-inference",
+  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\fix-ac3-root-causes.md",
+  "started_at": "2026-07-02T14:00:00Z",
+  "session_ids": [
+    "opencode:ses_0e286a2abffe1lVZx2PRtGJZfR",
+    "opencode:ses_0dfda2a45ffeU7TOa8OYnBkZBP",
+    "opencode:ses_0dfda0897ffekFPdysUjV24HqH",
+    "opencode:ses_0dfb4592fffexcEiwXFPmaaGtv",
+    "opencode:ses_0df8d3fd4ffeBxYuphJTQyKlZ0",
+    "opencode:ses_0df70ff67ffeGL3sMU5utmGUtX",
+    "opencode:ses_0de8090efffeJQ9HgJjC2T83os"
+  ],
+  "plan_name": "fix-ac3-root-causes",
+  "session_origins": {
+    "opencode:ses_0e286a2abffe1lVZx2PRtGJZfR": "direct",
+    "opencode:ses_0dfda2a45ffeU7TOa8OYnBkZBP": "appended",
+    "opencode:ses_0dfda0897ffekFPdysUjV24HqH": "appended",
+    "opencode:ses_0dfb4592fffexcEiwXFPmaaGtv": "appended",
+    "opencode:ses_0df8d3fd4ffeBxYuphJTQyKlZ0": "appended",
+    "opencode:ses_0df70ff67ffeGL3sMU5utmGUtX": "appended",
+    "opencode:ses_0de8090efffeJQ9HgJjC2T83os": "appended"
+  },
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "Fix Bug A: Resolve `*esp`/`*ebp` thiscall sources to stack slots",
+      "session_id": "opencode:ses_0dfda0897ffekFPdysUjV24HqH",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-07-02T00:06:50.598Z",
+      "status": "completed",
+      "updated_at": "2026-07-02T00:39:38.641Z",
+      "ended_at": "2026-07-02T00:39:38.640Z",
+      "elapsed_ms": 1968042
+    }
+  },
+  "schema_version": 2,
+  "works": {
+    "fix-ac3-root-causes-legacy": {
+      "work_id": "fix-ac3-root-causes-legacy",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\fix-ac3-root-causes.md",
+      "plan_name": "fix-ac3-root-causes",
+      "started_at": "2026-07-02T14:00:00Z",
+      "updated_at": "2026-07-02T06:23:47.621Z",
+      "session_ids": [
+        "opencode:ses_0e286a2abffe1lVZx2PRtGJZfR",
+        "opencode:ses_0dfda2a45ffeU7TOa8OYnBkZBP",
+        "opencode:ses_0dfda0897ffekFPdysUjV24HqH",
+        "opencode:ses_0dfb4592fffexcEiwXFPmaaGtv",
+        "opencode:ses_0df8d3fd4ffeBxYuphJTQyKlZ0",
+        "opencode:ses_0df70ff67ffeGL3sMU5utmGUtX",
+        "opencode:ses_0de8090efffeJQ9HgJjC2T83os"
+      ],
+      "session_origins": {
+        "opencode:ses_0e286a2abffe1lVZx2PRtGJZfR": "direct",
+        "opencode:ses_0dfda2a45ffeU7TOa8OYnBkZBP": "appended",
+        "opencode:ses_0dfda0897ffekFPdysUjV24HqH": "appended",
+        "opencode:ses_0dfb4592fffexcEiwXFPmaaGtv": "appended",
+        "opencode:ses_0df8d3fd4ffeBxYuphJTQyKlZ0": "appended",
+        "opencode:ses_0df70ff67ffeGL3sMU5utmGUtX": "appended",
+        "opencode:ses_0de8090efffeJQ9HgJjC2T83os": "appended"
+      },
+      "task_sessions": {
+        "todo:1": {
+          "task_key": "todo:1",
+          "task_label": "1",
+          "task_title": "Fix Bug A: Resolve `*esp`/`*ebp` thiscall sources to stack slots",
+          "session_id": "opencode:ses_0dfda0897ffekFPdysUjV24HqH",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-07-02T00:06:50.598Z",
+          "status": "completed",
+          "updated_at": "2026-07-02T00:39:38.641Z",
+          "ended_at": "2026-07-02T00:39:38.640Z",
+          "elapsed_ms": 1968042
+        }
+      },
+      "ended_at": "2026-07-02T00:40:41.020Z",
+      "elapsed_ms": -47958980,
+      "status": "completed"
+    }
+  },
+  "active_work_id": "fix-ac3-root-causes-legacy",
+  "updated_at": "2026-07-02T06:23:47.621Z",
   "status": "completed",
-  "final_metrics": {
-    "function_profiles": 10421,
-    "candidate_classes": 1019,
-    "minimal_classes": 144,
-    "merges": 875,
-    "com_28_slot_verified": true,
-    "walk_jumpjet_verified": true,
-    "voxel_chain_verified": true
-  }
+  "ended_at": "2026-07-02T00:40:41.020Z",
+  "elapsed_ms": -47958980
 }
