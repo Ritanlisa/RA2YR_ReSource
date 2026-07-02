@@ -76,6 +76,7 @@ public:
 // BitTextClass — bitmap text rendering (2 methods)
 // IDA: ParseFontData 0x434AD0, LoadFont
 // ============================================================================
+// CSP: BitTextClass matched via T1
 class BitTextClass
 {
 public:
@@ -237,6 +238,7 @@ public:
 // LinkClass — linked list node (3 methods)
 // IDA: Destroy, Destru_vt00, Destruct
 // ============================================================================
+// CSP: LinkClass matched via T1
 class LinkClass
 {
 public:
@@ -270,6 +272,7 @@ public:
 // === Batch-generated MISSING class stubs ===
 
 // 1 methods in IDA
+// CSP: BitArray matched via T1
 class BitArray
 {
 public:
@@ -280,6 +283,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: Bitmap matched via T1
 class Bitmap
 {
 public:
@@ -300,6 +304,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ButtonClass matched via T1
 class ButtonClass
 {
 public:
@@ -349,6 +354,7 @@ public:
 
 };
 // 9 methods in IDA
+// CSP: CampaignScore matched via T1
 class CampaignScore
 {
 public:
@@ -506,6 +512,7 @@ public:
 
 };
 // 7 methods in IDA
+// CSP: ComboBoxOwnerDraw matched via T1
 class ComboBoxOwnerDraw
 {
 public:
@@ -531,6 +538,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 };
 // 4 methods in IDA
+// CSP: ControlClass matched via T1
 class ControlClass
 {
 public:
@@ -547,6 +555,7 @@ public:
     uint8_t ControlClass_field_0x0C[4];
 };
 // 2 methods in IDA
+// CSP: CreditsPower matched via T1
 class CreditsPower
 {
 public:
@@ -575,6 +584,7 @@ public:
     uint8_t DialogControl_field_0x0C[4];
 };
 // 2 methods in IDA
+// CSP: DialogQueue matched via T1
 class DialogQueue
 {
 public:
@@ -587,6 +597,7 @@ public:
     uint8_t DialogQueue_field_0x04[4];
 };
 // 25 methods in IDA
+// CSP: DropListClass matched via T1
 class DropListClass
 {
 public:
@@ -678,6 +689,7 @@ public:
     uint8_t EditControl_field_0x04[4];
 };
 // 6 methods in IDA
+// CSP: FontClass matched via T1
 class FontClass
 {
 public:
@@ -725,6 +737,7 @@ public:
     uint8_t GadgetGrid_field_0x04[4];
 };
 // 5 methods in IDA
+// CSP: InputManager matched via T1
 class InputManager
 {
 public:
@@ -781,6 +794,7 @@ public:
 
 };
 // 8 methods in IDA
+// CSP: ListBox matched via T1
 class ListBox
 {
 public:
@@ -811,6 +825,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
 };
 // 8 methods in IDA
+// CSP: ListClass matched via T1
 class ListClass
 {
 public:
@@ -837,6 +852,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
+// CSP: ListNode matched via T1
 class ListNode
 {
 public:
@@ -913,6 +929,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
+// CSP: TabCameoListClass matched via T1
 class TabCameoListClass
 {
 public:
@@ -935,6 +952,7 @@ public:
     uint8_t TabControl_field_0x04[4];
 };
 // 14 methods in IDA
+// CSP: ToolTipClass matched via T1
 class ToolTipClass
 {
 public:

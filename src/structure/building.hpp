@@ -22,7 +22,9 @@ using ra2::game::TimerStruct;
 
 class AnimClass;
 struct ColorStruct;
+// CSP: BuildingLightClass matched via T1+T3
 class BuildingLightClass;
+// CSP: BuildingTypeClass matched via T1
 class BuildingTypeClass;
 class FactoryClass;
 class HouseClass;
@@ -31,6 +33,7 @@ class LightSourceClass;
 class TechnoTypeClass;
 class RulesClass;
 
+// CSP: BuildingClass matched via T1+T3
 class BuildingClass : public ra2::game::TechnoClass
 {
 public:

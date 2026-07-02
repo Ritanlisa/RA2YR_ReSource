@@ -24,6 +24,7 @@ using ra2::game::ObjectClass;
 #endif
 
 // sizeof=0x98 (ctor 0x6DD000, dtor 0x6E4660)
+// CSP: TActionClass matched via T1+T3
 struct TActionClass : public AbstractClass
 {
 public:

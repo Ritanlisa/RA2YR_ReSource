@@ -9,6 +9,7 @@ namespace gamemd
 // COM GUID structure (16 bytes)
 // IAID: IID compares two GUIDs for equality (0x53EE70)
 // Used extensively in network code for game/player identification
+// CSP: GUID matched via T1+T3
 class GUID
 {
 public:

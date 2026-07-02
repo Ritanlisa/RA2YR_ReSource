@@ -113,6 +113,7 @@ public:
 // SkirmishSetup — skirmish setup dialog (2 methods)
 // IDA: DlgProc, sub_608260
 // ============================================================================
+// CSP: SkirmishSetup matched via T1
 class SkirmishSetup
 {
 public:
@@ -245,6 +246,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: GameOption_WorldDominationTour matched via T1
 class GameOption_WorldDominationTour
 {
 public:
@@ -257,6 +259,7 @@ public:
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
 };
 // 4 methods in IDA
+// CSP: GameOptions matched via T1
 class GameOptions
 {
 public:
@@ -305,6 +308,7 @@ public:
 
 };
 // 7 methods in IDA
+// CSP: GameSetup matched via T1
 class GameSetup
 {
 public:
@@ -367,6 +371,7 @@ public:
     uint8_t LoadGame_field_0x2C[4];
 };
 // 3 methods in IDA
+// CSP: LoadProgressMgr matched via T1
 class LoadProgressMgr
 {
 public:
@@ -380,6 +385,7 @@ public:
     uint8_t LoadProgressMgr_field_0x08[4];
 };
 // 1 methods in IDA
+// CSP: LoadSaveDialog matched via T1
 class LoadSaveDialog
 {
 public:
@@ -414,6 +420,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 16 methods in IDA
+// CSP: LoadingScreen matched via T1
 class LoadingScreen
 {
 public:
@@ -460,6 +467,7 @@ public:
     // === FUNCS-MOVE (END) ===
 };
 // 7 methods in IDA
+// CSP: MultiplayerGameMode matched via T1
 class MultiplayerGameMode
 {
 public:
@@ -495,6 +503,7 @@ public:
 
 };
 // 3 methods in IDA
+// CSP: SaveLoadDialog matched via T1
 class SaveLoadDialog
 {
 public:
@@ -523,6 +532,7 @@ public:
     uint8_t SkirmishDialog_field_0x08[4];
 };
 // 2 methods in IDA
+// CSP: SkirmishMapGen matched via T1
 class SkirmishMapGen
 {
 public:

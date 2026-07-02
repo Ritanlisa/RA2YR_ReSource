@@ -120,6 +120,7 @@ public:
 // ThemeClass — theme music management (7 methods)
 // IDA: RequestBuffer, GetValue, ReadThemeEntry
 // ============================================================================
+// CSP: ThemeClass matched via T1+T3
 class ThemeClass
 {
 public:
@@ -206,6 +207,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AudioBuffer matched via T1
 class AudioBuffer
 {
 public:
@@ -216,6 +218,7 @@ public:
 
 };
 // 3 methods in IDA
+// CSP: AudioChannel matched via T1
 class AudioChannel
 {
 public:
@@ -230,6 +233,7 @@ public:
     uint8_t AudioChannel_field_0x08[4];
 };
 // 1 methods in IDA
+// CSP: AudioCodec matched via T1
 class AudioCodec
 {
 public:
@@ -240,6 +244,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AudioConfig matched via T1
 class AudioConfig
 {
 public:
@@ -250,6 +255,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AudioEvent matched via T1
 class AudioEvent
 {
 public:
@@ -260,6 +266,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: AudioFile matched via T1
 class AudioFile
 {
 public:
@@ -304,6 +311,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AudioList matched via T1
 class AudioList
 {
 public:

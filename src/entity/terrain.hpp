@@ -15,6 +15,7 @@ namespace gamemd {
 using ra2::game::ObjectClass;
 #endif
 
+// CSP: TerrainTypeClass matched via T1
 class TerrainTypeClass;
 
 class TerrainClass : public ObjectClass

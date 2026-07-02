@@ -13,6 +13,7 @@ using ra2::game::ObjectClass;
 
 // IDA: inline struct in map.hpp
 // Dynamically-resized array of ObjectClass* pointers
+// CSP: LayerClass matched via T1
 struct LayerClass
 {
     ObjectClass**  items;    // +0x00

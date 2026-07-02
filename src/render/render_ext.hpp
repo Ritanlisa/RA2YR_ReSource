@@ -19,6 +19,7 @@ class ObjectClass;
 // TacticalMap — tactical map rendering (10 methods)
 // IDA: ComputeScreenTint, Redraw, MultiplyByScalar
 // ============================================================================
+// CSP: TacticalMap matched via T1
 class TacticalMap
 {
 public:
@@ -290,6 +291,7 @@ public:
 // ScrollClass — viewport scrolling (2 methods)
 // IDA: Scroll, Read
 // ============================================================================
+// CSP: ScrollClass matched via T1
 class ScrollClass
 {
 public:
@@ -308,6 +310,7 @@ public:
 // Bounds — bounding box utilities (1 method)
 // IDA: Subtract
 // ============================================================================
+// CSP: Bounds matched via T1
 class Bounds
 {
 public:
@@ -779,6 +782,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: BuildingLightQueue matched via T1
 class BuildingLightQueue
 {
 public:
@@ -789,6 +793,7 @@ public:
 
 };
 // 4 methods in IDA
+// CSP: BuildingLoadQueue matched via T1
 class BuildingLoadQueue
 {
 public:
@@ -805,6 +810,7 @@ public:
     uint8_t BuildingLoadQueue_field_0x0C[4];
 };
 // 9 methods in IDA
+// CSP: BuildingPlacement matched via T1
 class BuildingPlacement
 {
 public:
@@ -848,6 +854,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: BuildingPrerequisiteClass matched via T1
 class BuildingPrerequisiteClass
 {
 public:
@@ -937,6 +944,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
+// CSP: FrameSnapshot matched via T1
 class FrameSnapshot
 {
 public:
@@ -961,6 +969,7 @@ public:
     uint8_t FrameTimer_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: PaletteClass matched via T1
 class PaletteClass
 {
 public:
@@ -971,6 +980,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: PaletteManager matched via T1
 class PaletteManager
 {
 public:
@@ -1299,6 +1309,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: TacticalMapClass matched via T1
 class TacticalMapClass
 {
 public:
@@ -1353,6 +1364,7 @@ public:
     uint8_t VoxelModel_field_0x08[4];
 };
 // 2 methods in IDA
+// CSP: VoxelPalette matched via T1
 class VoxelPalette
 {
 public:
@@ -1365,6 +1377,7 @@ public:
     uint8_t VoxelPalette_field_0x04[4];
 };
 // 7 methods in IDA
+// CSP: VoxelRenderer matched via T1
 class VoxelRenderer
 {
 public:
@@ -1390,6 +1403,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: VoxelSection matched via T1
 class VoxelSection
 {
 public:

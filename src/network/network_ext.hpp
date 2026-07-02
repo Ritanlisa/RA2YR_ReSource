@@ -188,6 +188,7 @@ public:
     uint8_t Modem_field_0x0C[4];
 };
 // 5 methods in IDA
+// CSP: ModemGame matched via T1
 class ModemGame
 {
 public:
@@ -206,6 +207,7 @@ public:
     uint8_t ModemGame_field_0x10[4];
 };
 // 4 methods in IDA
+// CSP: ModemGuest matched via T1
 class ModemGuest
 {
 public:
@@ -322,6 +324,7 @@ public:
     uint8_t MultiplayerSiegeDefenderTeam_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: MultiplayerTeam matched via T1
 class MultiplayerTeam
 {
 public:
@@ -369,6 +372,7 @@ public:
     uint8_t NetworkBuffer_field_0x0C[4];
 };
 // 3 methods in IDA
+// CSP: NetworkDialog matched via T1
 class NetworkDialog
 {
 public:
@@ -431,6 +435,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
+// CSP: NetworkID matched via T1
 class NetworkID
 {
 public:
@@ -443,6 +448,7 @@ public:
     uint8_t NetworkID_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: NetworkManager matched via T1
 class NetworkManager
 {
 public:
@@ -455,6 +461,7 @@ public:
     uint8_t NetworkManager_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: NetworkOptions matched via T1
 class NetworkOptions
 {
 public:
@@ -559,6 +566,7 @@ public:
 
 };
 // 5 methods in IDA
+// CSP: WOLGameList matched via T1
 class WOLGameList
 {
 public:
@@ -587,6 +595,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: WOLOption matched via T1
 class WOLOption
 {
 public:
@@ -607,6 +616,7 @@ public:
 
 };
 // 7 methods in IDA
+// CSP: WOLobby matched via T1
 class WOLobby
 {
 public:

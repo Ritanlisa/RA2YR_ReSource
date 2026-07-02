@@ -21,6 +21,7 @@ struct SpawnControl {
 };
 
 // sizeof ~0x78 (ctor 0x6B6C90, ddtor 0x6B7ED0)
+// CSP: SpawnManagerClass matched via T1+T3
 class SpawnManagerClass : public AbstractClass
 {
 public:

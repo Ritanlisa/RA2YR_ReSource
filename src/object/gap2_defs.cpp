@@ -15071,7 +15071,7 @@ int __thiscall ObjectClass::GetCoords(#374 *this)
   v2 = (int *)((char *)this + 156);
   *(_DWORD *)out = *v2;
   *((_DWORD *)out + 1) = v2[1];
-  *((_DWORD *)out + 2) = v2[2];
+  out->vtable2 = v2[2];
   return (int)out;
 }
 

@@ -17,6 +17,7 @@ using ra2::game::ObjectClass;
 using ra2::game::HouseClass;
 #endif
 
+// CSP: OverlayTypeClass matched via T1+T3
 class OverlayTypeClass;
 
 class OverlayClass : public ObjectClass

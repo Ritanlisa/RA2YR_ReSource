@@ -21,6 +21,7 @@ using ra2::game::AbstractType;
 
 class CCINIClass;
 
+// CSP: CampaignClass matched via T3
 class CampaignClass : public AbstractClass
 {
 public:

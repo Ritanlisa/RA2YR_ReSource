@@ -21628,9 +21628,9 @@ int __thiscall BuildingClass::ApplyIronCurtain(#377 *this)
   int v5; // [esp+14h] [ebp+8h]
   char v6; // [esp+18h] [ebp+Ch]
 
-  if ( *((_BYTE *)this + 1759) )
+  if ( this->C4Applied )
   {
-    *((_BYTE *)this + 1759) = 0;
+    this->C4Applied = 0;
     v1 = MEMORY[0xA8ED84];
     *((_DWORD *)this + 336) = 0;
     *((_DWORD *)this + 330) = v1;

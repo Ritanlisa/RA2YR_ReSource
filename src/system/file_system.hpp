@@ -24,6 +24,7 @@ struct BytePalette
     BytePaletteEntry Entries[256];
 };
 
+// CSP: FileSystem matched via T1
 class FileSystem
 {
 public:

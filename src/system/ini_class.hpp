@@ -46,6 +46,7 @@ struct INILinkNode {
 };
 
 // Generic list base
+// CSP: GenericList matched via T1
 struct GenericList {
     void* vtable;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
@@ -55,6 +56,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 // IDA: INIClass @ 0x535AA0 -- size ~0x40 (64 bytes)
 // vtable at 0x7EA5F4
+// CSP: INIClass matched via T1
 class INIClass {
 public:
     static constexpr size_t kSize = 0x40;

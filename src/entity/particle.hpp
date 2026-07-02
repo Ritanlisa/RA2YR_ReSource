@@ -15,6 +15,7 @@ using ra2::game::ObjectClass;
 #endif
 
 
+// CSP: ParticleSystemClass matched via T1
 class ParticleSystemClass;
 class ParticleTypeClass;
 

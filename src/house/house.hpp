@@ -37,6 +37,7 @@ using ra2::game::TimerStruct;
 
 
 
+// CSP: HouseClass matched via T1+T3
 class HouseClass;
 class HouseTypeClass;
 class BuildingClass;
@@ -86,6 +87,7 @@ struct BuildChoiceClass
     // TODO: complete from YRpp
 };
 
+// CSP: DropshipStruct matched via T3
 struct DropshipStruct
 {
     TimerStruct      timer;

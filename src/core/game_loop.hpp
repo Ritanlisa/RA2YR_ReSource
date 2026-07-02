@@ -22,6 +22,7 @@ bool TranslateMessageDispatch(MSG* msg);
 void AudioVideoUpdate();
 
 // IDA 0x69BAB0 -- WTFMode (Westwood Technology Framework debug mode)
+// CSP: WTFMode matched via T1
 class WTFMode {
 public:
     static bool Init(int* mode);  // 0x69BAB0

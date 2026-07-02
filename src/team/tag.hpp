@@ -35,6 +35,7 @@ using ra2::game::ObjectClass;
 using ra2::game::TechnoClass;
 #endif
 
+// CSP: TagClass matched via T1
 class TagClass : public AbstractClass
 {
 public:

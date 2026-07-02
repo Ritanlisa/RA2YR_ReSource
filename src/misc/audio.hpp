@@ -46,6 +46,7 @@ struct VolumeStruct
     int32_t  MaxVolume;       // 0x1C: default 16384 — maximum volume
 };
 
+// CSP: VocClass matched via T1
 class VocClass
 {
 public:

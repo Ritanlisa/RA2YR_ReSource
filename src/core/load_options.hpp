@@ -35,6 +35,7 @@ struct FileEntryClass {
 // vtable: 0x7ED2E4
 // Used by: Options::DlgProc, CampaignMenu::DlgProc, MenuSelect, SkirmishMapGen
 // ============================================================================
+// CSP: LoadOptions matched via T1+T3
 class LoadOptions {
 public:
     LoadOptions(); // 0x558740

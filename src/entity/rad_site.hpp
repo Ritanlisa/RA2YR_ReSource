@@ -28,6 +28,7 @@ using ra2::game::TimerStruct;
 
 // IDA: RadSiteClass (4 vtables @ 0x7F07E4+, sizeof ~0xBA)
 // Inherits AbstractClass (0x24 base) + members
+// CSP: RadSiteClass matched via T1
 class RadSiteClass : public AbstractClass
 {
 public:

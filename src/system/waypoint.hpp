@@ -11,6 +11,7 @@ namespace gamemd {
 using ra2::game::CellStruct;
 #endif
 
+// CSP: WaypointPathClass matched via T1
 class WaypointPathClass;
 
 // IDA: WaypointClass::FindOrAddPath 0x502160, FindOrCreate 0x502460

@@ -14,6 +14,7 @@ using ra2::game::CellStruct;
 class HouseClass;
 
 // IDA: inline struct in house.hpp — base building planner node
+// CSP: BaseNodeClass matched via T1
 struct BaseNodeClass
 {
     int32_t     buildingTypeIndex;  // +0x00

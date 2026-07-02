@@ -34,6 +34,7 @@ class FlasherClass : public StageClass
 {
 };
 
+// CSP: AircraftClass matched via T3
 class AircraftClass : public ra2::game::FootClass, public FlasherClass
 {
 public:

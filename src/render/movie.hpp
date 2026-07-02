@@ -39,6 +39,7 @@ enum class MovieType : uint8_t
 // BINK Movie (binkw32.dll wrapper)
 // Imports: _BinkOpen, _BinkDoFrame, _BinkCopyToBuffer, _BinkNextFrame, _BinkClose
 //
+// CSP: BinkMovieHandle matched via T1
 class BinkMovieHandle : public MovieHandle
 {
 public:

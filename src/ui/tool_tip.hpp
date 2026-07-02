@@ -22,6 +22,7 @@ class HouseClass;
 //              Process @ 0x724AD0, Hide @ 0x724BE0,
 //              IsToolTipShowing @ 0x724C00
 // ============================================================================
+// CSP: ToolTipManager matched via T1
 class ToolTipManager
 {
 public:

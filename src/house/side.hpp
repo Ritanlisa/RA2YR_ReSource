@@ -22,6 +22,7 @@ using ra2::game::AbstractType;
 class HouseTypeClass;
 class CCINIClass;
 
+// CSP: SideClass matched via T1+T3
 class SideClass : public AbstractClass
 {
 public:

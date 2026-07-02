@@ -32,6 +32,7 @@ class WarheadTypeClass;
 class HouseClass;
 struct SHPStruct;
 
+// CSP: SuperWeaponTypeClass matched via T1
 class SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:

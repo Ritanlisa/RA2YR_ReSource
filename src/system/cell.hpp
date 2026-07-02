@@ -99,6 +99,7 @@ enum class CellFlags : uint32_t
     CellFlags_field_80000000            = 0x80000000,
 };
 
+// CSP: CellClass matched via T1
 class CellClass
 {
 public:

@@ -41,6 +41,7 @@ class ObjectClass;
 class FootClass;
 class Checksummer;
 
+// CSP: IPersistStream matched via T1
 class IPersistStream : IUnknown {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;

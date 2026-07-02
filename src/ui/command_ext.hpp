@@ -23,6 +23,7 @@ using ra2::game::TechnoClass;
 // SelectTeamCommand — team selection command (6 methods)
 // IDA: Construct, AddRef, Release
 // ============================================================================
+// CSP: SelectTeamCommand matched via T1
 class SelectTeamCommand : public CommandClass
 {
 public:
@@ -51,6 +52,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // AddTeamCommand — add unit to team command (6 methods)
 // IDA: Construct, AddRef, Release
 // ============================================================================
+// CSP: AddTeamCommand matched via T1
 class AddTeamCommand : public CommandClass
 {
 public:
@@ -78,6 +80,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // ============================================================================
 // TauntCommandClass — taunt command (6 methods)
 // ============================================================================
+// CSP: TauntCommandClass matched via T1
 class TauntCommandClass : public CommandClass
 {
 public:
@@ -104,6 +107,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // ============================================================================
 // PageUserCommandClass — page user command (6 methods)
 // ============================================================================
+// CSP: PageUserCommandClass matched via T1
 class PageUserCommandClass : public CommandClass
 {
 public:
@@ -131,6 +135,7 @@ public:
 // ============================================================================
 // DeleteCommandClass — delete command (6 methods)
 // ============================================================================
+// CSP: DeleteCommandClass matched via T1
 class DeleteCommandClass : public CommandClass
 {
 public:
@@ -159,6 +164,7 @@ public:
 // ============================================================================
 // CenterTeamCommand — center on team command (5 methods)
 // ============================================================================
+// CSP: CenterTeamCommand matched via T1
 class CenterTeamCommand : public CommandClass
 {
 public:
@@ -184,6 +190,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // ============================================================================
 // ScreenCaptureCommandClass — screenshot command (5 methods)
 // ============================================================================
+// CSP: ScreenCaptureCommandClass matched via T1
 class ScreenCaptureCommandClass : public CommandClass
 {
 public:
@@ -246,6 +253,7 @@ public:
 // === Batch-generated MISSING class stubs ===
 
 // 1 methods in IDA
+// CSP: CursorAnim matched via T1
 class CursorAnim
 {
 public:
@@ -256,6 +264,7 @@ public:
 
 };
 // 3 methods in IDA
+// CSP: DeleteAndZero matched via T1
 class DeleteAndZero
 {
 public:

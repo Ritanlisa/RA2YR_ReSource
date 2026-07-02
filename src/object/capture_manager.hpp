@@ -11,6 +11,7 @@ class HouseClass;
 class TechnoClass;
 
 // sizeof ~0x58 (ctor 0x4717D0, ddtor 0x4729C0)
+// CSP: CaptureManagerClass matched via T1
 class CaptureManagerClass : public AbstractClass
 {
 public:

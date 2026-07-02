@@ -38,6 +38,7 @@ using ra2::game::AudioController;
 
 class HouseClass;
 class ParticleSystemClass;
+// CSP: VoxelAnimTypeClass matched via T3
 class VoxelAnimTypeClass;
 
 struct BounceClass

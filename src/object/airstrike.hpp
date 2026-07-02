@@ -9,6 +9,7 @@ class TechnoClass;
 class HouseClass;
 
 // sizeof ~0x64 (ctor 0x41D380, ddtor 0x41D7A0)
+// CSP: AirstrikeClass matched via T1
 class AirstrikeClass : public AbstractClass
 {
 public:

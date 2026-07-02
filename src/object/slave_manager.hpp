@@ -19,6 +19,7 @@ struct SlaveControl {
 };
 
 // sizeof ~0x68 (ctor 0x6AF1A0, ddtor 0x6B1130)
+// CSP: SlaveManagerClass matched via T1
 class SlaveManagerClass : public AbstractClass
 {
 public:

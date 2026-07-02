@@ -29,6 +29,7 @@ class WarheadTypeClass;
 class WeaponTypeClass;
 struct SHPStruct;
 
+// CSP: DifficultyStruct matched via T3
 struct DifficultyStruct
 {
     double Firepower;
@@ -68,6 +69,7 @@ struct RocketStruct
     explicit RocketStruct(noinit_t) noexcept;
 };
 
+// CSP: RulesClass matched via T1
 class RulesClass
 {
 public:

@@ -23,6 +23,7 @@ struct PendingCellClass
     TintStruct  TintMovement;
 };
 
+// CSP: LightSourceClass matched via T1
 class LightSourceClass : public AbstractClass
 {
 public:

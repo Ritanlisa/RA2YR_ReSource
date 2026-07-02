@@ -470,6 +470,7 @@ static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 //============================================================================
 // FlyLocomotionClass — fixed-wing aircraft locomotion
 //============================================================================
+// CSP: FlyLocomotionClass matched via T1+T3
 class FlyLocomotionClass : public LocomotionClass
 {
 public:
@@ -536,6 +537,7 @@ protected:
 //============================================================================
 // RocketLocomotionClass — V3/Dreadnought rocket locomotion
 //============================================================================
+// CSP: RocketLocomotionClass matched via T1
 class RocketLocomotionClass : public LocomotionClass
 {
 public:

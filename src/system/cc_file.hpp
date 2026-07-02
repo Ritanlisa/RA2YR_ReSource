@@ -89,6 +89,7 @@ public:
     bool Allocated = false;
 };
 
+// CSP: CCFileClass matched via T3
 class CCFileClass : public CDFileClass
 {
 public:

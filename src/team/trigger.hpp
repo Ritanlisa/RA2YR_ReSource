@@ -29,6 +29,7 @@ using ra2::game::CellStruct;
 
 
 
+// CSP: TriggerTypeClass matched via T1
 class TriggerTypeClass;
 class HouseClass;
 class HouseTypeClass;

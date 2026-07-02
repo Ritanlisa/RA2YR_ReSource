@@ -47,6 +47,7 @@ protected:
     // === SYMBOL-ANCHOR (END) ===
 };
 
+// CSP: IPXInterfaceClass matched via T1
 class IPXInterfaceClass
 {
 public:

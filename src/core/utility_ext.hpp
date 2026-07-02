@@ -324,6 +324,7 @@ public:
 // RefCount — shared reference counting (2 methods)
 // IDA: Decrement, Increment
 // ============================================================================
+// CSP: RefCount matched via T1
 class RefCount
 {
 public:
@@ -674,6 +675,7 @@ public:
 
 };
 // 22 methods in IDA
+// CSP: COMClass matched via T1
 class COMClass
 {
 public:
@@ -726,6 +728,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 };
 // 2 methods in IDA
+// CSP: COMClassFactory matched via T1
 class COMClassFactory
 {
 public:
@@ -738,6 +741,7 @@ public:
     uint8_t COMClassFactory_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_10 matched via T1
 class COMClassFactory_10
 {
 public:
@@ -748,6 +752,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_3 matched via T1
 class COMClassFactory_3
 {
 public:
@@ -758,6 +763,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_4 matched via T1
 class COMClassFactory_4
 {
 public:
@@ -768,6 +774,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_5 matched via T1
 class COMClassFactory_5
 {
 public:
@@ -778,6 +785,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_6 matched via T1
 class COMClassFactory_6
 {
 public:
@@ -788,6 +796,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_7 matched via T1
 class COMClassFactory_7
 {
 public:
@@ -798,6 +807,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_8 matched via T1
 class COMClassFactory_8
 {
 public:
@@ -808,6 +818,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: COMClassFactory_9 matched via T1
 class COMClassFactory_9
 {
 public:
@@ -818,6 +829,7 @@ public:
 
 };
 // 27 methods in IDA
+// CSP: COMObject matched via T1
 class COMObject
 {
 public:
@@ -933,6 +945,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: CountryCombo matched via T1
 class CountryCombo
 {
 public:
@@ -1035,6 +1048,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: Float4 matched via T1
 class Float4
 {
 public:
@@ -1047,6 +1061,7 @@ public:
     uint8_t Float4_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: FloatArray matched via T1
 class FloatArray
 {
 public:
@@ -1093,6 +1108,7 @@ public:
     uint8_t GraphicMenuImageItem_field_0x10[4];
 };
 // 2 methods in IDA
+// CSP: GraphicMenuItem matched via T1
 class GraphicMenuItem
 {
 public:
@@ -1142,6 +1158,7 @@ public:
     uint8_t Hash_field_0x08[4];
 };
 // 4 methods in IDA
+// CSP: HashMap matched via T1
 class HashMap
 {
 public:
@@ -1193,6 +1210,7 @@ public:
     uint8_t HashTable_field_0x50[4];
 };
 // 1 methods in IDA
+// CSP: HashTableSection matched via T1
 class HashTableSection
 {
 public:
@@ -1213,6 +1231,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: HashVector_UInt matched via T1
 class HashVector_UInt
 {
 public:
@@ -1233,6 +1252,7 @@ public:
 
 };
 // 12 methods in IDA
+// CSP: PlayerClass matched via T1
 class PlayerClass
 {
 public:
@@ -1284,6 +1304,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: PlayerSlot matched via T1
 class PlayerSlot
 {
 public:
@@ -1306,6 +1327,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: PtrVector matched via T1
 class PtrVector
 {
 public:
@@ -1356,6 +1378,7 @@ public:
     uint8_t RandomStraw_field_0x08[4];
 };
 // 1 methods in IDA
+// CSP: Rect_Point matched via T1
 class Rect_Point
 {
 public:
@@ -1366,6 +1389,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ReferenceCounted matched via T1
 class ReferenceCounted
 {
 public:
@@ -1482,6 +1506,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: TimerPool matched via T1
 class TimerPool
 {
 public:
@@ -1524,6 +1549,7 @@ public:
     uint8_t Vector2_field_0x04[4];
 };
 // 3 methods in IDA
+// CSP: Vector3 matched via T1
 class Vector3
 {
 public:
@@ -1550,6 +1576,7 @@ public:
     uint8_t Vector4_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: Vector8 matched via T1
 class Vector8
 {
 public:
@@ -1560,6 +1587,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: VectorClassUInt matched via T1
 class VectorClassUInt
 {
 public:

@@ -170,6 +170,7 @@ public:
     uint32_t    align_58;
 };
 
+// CSP: Conflict matched via T1
 class Conflict
 {
 public:

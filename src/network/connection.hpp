@@ -61,6 +61,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 
+// CSP: IPXConnClass matched via T1+T3
 class IPXConnClass : public ConnectionClass
 {
 public:
@@ -81,6 +82,7 @@ public:
     uint8_t   padding[2];
 };
 
+// CSP: IPXManagerClass matched via T1
 class IPXManagerClass
 {
 public:

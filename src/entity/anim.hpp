@@ -9,6 +9,7 @@
 
 namespace gamemd {
 
+// CSP: AnimTypeClass matched via T1
 class AnimTypeClass;
 class BulletClass;
 class LightConvertClass;

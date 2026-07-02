@@ -19,6 +19,7 @@ using ra2::game::AbstractClass;
 using ra2::game::HouseClass;
 #endif
 
+// CSP: FoggedObjectClass matched via T1
 class FoggedObjectClass : public AbstractClass
 {
 public:

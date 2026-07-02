@@ -15,6 +15,7 @@
 namespace gamemd {
 
 // Legacy config struct for game_loop.cpp compatibility
+// CSP: GameConfig matched via T1+T3
 struct GameConfig {
     bool no_cd = false;
     bool spawn_mode = false;

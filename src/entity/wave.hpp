@@ -26,6 +26,7 @@ using ra2::game::FacingStruct;
 
 class CellClass;
 
+// CSP: WaveClass matched via T1
 class WaveClass : public ra2::game::ObjectClass
 {
 public:

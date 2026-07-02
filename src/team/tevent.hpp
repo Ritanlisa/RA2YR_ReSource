@@ -17,6 +17,7 @@ class ObjectClass;
 class TechnoClass;
 
 // sizeof ~0x70 (Execute 0x71E940, ddtor 0x71F880)
+// CSP: TEventClass matched via T1
 struct TEventClass : public AbstractClass
 {
 public:

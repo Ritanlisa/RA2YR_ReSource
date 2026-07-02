@@ -97,6 +97,7 @@ protected:
     MPGameModeClass() noexcept; // 0x5D8170 (MPBattleClass ctor area)
 };
 
+// CSP: MPBattleClass matched via T1
 class MPBattleClass : public MPGameModeClass
 {
 public:

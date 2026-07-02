@@ -16,6 +16,7 @@ class HouseClass;
 struct NodeNameType;
 struct GameTypePreferencesStruct;
 
+// CSP: PlayerData matched via T3
 struct PlayerData
 {
     uint8_t  Data[10];
@@ -80,6 +81,7 @@ struct GameModeOptionsClass
     uint32_t  PlayerCount;
 };
 
+// CSP: SessionClass matched via T1
 class SessionClass
 {
 public:

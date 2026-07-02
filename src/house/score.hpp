@@ -5,6 +5,7 @@
 namespace gamemd {
 
 // IDA: inline struct in house.hpp — killed/built unit type counts
+// CSP: ScoreStruct matched via T3
 struct ScoreStruct
 {
     int32_t counts[512];   // +0x000

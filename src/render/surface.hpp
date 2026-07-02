@@ -466,6 +466,7 @@ protected:
     }
 };
 
+// CSP: BSurface matched via T3
 class BSurface : public XSurface
 {
 public:

@@ -48,6 +48,7 @@ using ra2::game::ObjectClass;
 #endif
 struct ColorScheme;
 
+// CSP: TacticalClass matched via T3
 class TacticalClass : public AbstractClass
 {
 public:

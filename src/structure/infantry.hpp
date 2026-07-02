@@ -12,8 +12,10 @@ using ra2::game::AbstractClass;
 using ra2::game::AbstractType;
 using ra2::game::TimerStruct;
 
+// CSP: InfantryTypeClass matched via T1
 class InfantryTypeClass;
 
+// CSP: InfantryClass matched via T1
 class InfantryClass : public ra2::game::FootClass
 {
 public:

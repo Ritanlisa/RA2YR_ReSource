@@ -10,6 +10,7 @@ namespace gamemd
 // StreamClass — generic I/O stream base (10 methods)
 // IDA: WriteBytes, ReadAndSeek, Set2
 // ============================================================================
+// CSP: StreamClass matched via T1
 class StreamClass
 {
 public:
@@ -225,6 +226,7 @@ public:
 
 };
 // 3 methods in IDA
+// CSP: BufferIO matched via T1
 class BufferIO
 {
 public:
@@ -305,6 +307,7 @@ public:
 
 };
 // 6 methods in IDA
+// CSP: StreamWrapper matched via T1
 class StreamWrapper
 {
 public:

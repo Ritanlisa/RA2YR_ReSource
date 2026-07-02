@@ -115,6 +115,7 @@ struct SubzoneTrackingStruct
     uint32_t                 SubzoneTrackingStruct_field_dword_20;
 };
 
+// CSP: TrajectoryHelper matched via T1
 struct TrajectoryHelper
 {
     // unmatched: no callgraph reference and no git history record

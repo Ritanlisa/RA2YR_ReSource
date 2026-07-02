@@ -47,6 +47,7 @@ using ra2::game::TechnoClass;
 
 
 
+// CSP: BulletTypeClass matched via T1
 class BulletTypeClass;
 class WarheadTypeClass;
 class WeaponTypeClass;

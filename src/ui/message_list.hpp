@@ -13,6 +13,7 @@ namespace gamemd
 // IDA vtbl @ 0x7E3CE8, Constructor @ 0x5D39D0, Dtor @ 0x5D3A40
 // sizeof(MessageListClass) == 0x149C
 // ============================================================================
+// CSP: MessageListClass matched via T1
 class MessageListClass
 {
 public:

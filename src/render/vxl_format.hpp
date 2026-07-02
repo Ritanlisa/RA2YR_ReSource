@@ -21,6 +21,7 @@ namespace gamemd
 
 #pragma pack(push, 1)
 
+// CSP: VXLHeader matched via T3
 struct VXLHeader
 {
     char     magic[16];     // Usually "Voxel Section" followed by NULLs
@@ -30,6 +31,7 @@ struct VXLHeader
 };
 
 // Section entry -- defines a range within the body data
+// CSP: VXLSection matched via T3
 struct VXLSection
 {
     uint32_t start_offset;  // Byte offset into body data
@@ -117,6 +119,7 @@ struct VoxelAnim
 };
 
 // Voxel section info -- runtime query results (VoxelSection_GetInfo @ 0x7564B0)
+// CSP: VoxelSectionInfo matched via T3
 struct VoxelSectionInfo
 {
     uint8_t byte_160;    // Span size X

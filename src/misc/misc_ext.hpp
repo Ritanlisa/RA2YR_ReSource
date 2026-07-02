@@ -179,6 +179,7 @@ public:
 // BINK — BINK video utilities (1 method)
 // IDA: Background_Setup
 // ============================================================================
+// CSP: BINK matched via T1
 class BINK
 {
 public:
@@ -275,6 +276,7 @@ public:
 // TriggerActionQueue — trigger action queue (1 method)
 // IDA: ProcessAll
 // ============================================================================
+// CSP: TriggerActionQueue matched via T1
 class TriggerActionQueue
 {
 public:
@@ -352,6 +354,7 @@ public:
 // Matrix3x4 — 3x4 transformation matrix (3 methods)
 // IDA: Identity 0x5AE860, Translate, TransformCell
 // ============================================================================
+// CSP: Matrix3x4 matched via T1
 class Matrix3x4
 {
 public:
@@ -435,6 +438,7 @@ public:
     // === FUNCS-MOVE (END) ===
 };
 // 7 methods in IDA
+// CSP: AnimFile matched via T1
 class AnimFile
 {
 public:
@@ -469,6 +473,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AnimTypeList matched via T1
 class AnimTypeList
 {
 public:
@@ -549,6 +554,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
+// CSP: Coord2D matched via T1
 class Coord2D
 {
 public:
@@ -561,6 +567,7 @@ public:
     uint8_t Coord2D_field_0x04[4];
 };
 // 3 methods in IDA
+// CSP: Coord3D matched via T1
 class Coord3D
 {
 public:
@@ -575,6 +582,7 @@ public:
     uint8_t Coord3D_field_0x08[4];
 };
 // 1 methods in IDA
+// CSP: CoordBounds matched via T1
 class CoordBounds
 {
 public:
@@ -585,6 +593,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: CoordList matched via T1
 class CoordList
 {
 public:
@@ -605,6 +614,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: DamageAnimClass matched via T1
 class DamageAnimClass
 {
 public:
@@ -640,6 +650,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: ExplosionClass matched via T1
 class ExplosionClass
 {
 public:
@@ -650,6 +661,7 @@ public:
 
 };
 // 4 methods in IDA
+// CSP: FileExtension matched via T1
 class FileExtension
 {
 public:
@@ -666,6 +678,7 @@ public:
     uint8_t FileExtension_field_0x0C[4];
 };
 // 4 methods in IDA
+// CSP: FileFind matched via T1
 class FileFind
 {
 public:
@@ -698,6 +711,7 @@ public:
     uint8_t FilePipe_field_0x0C[4];
 };
 // 2 methods in IDA
+// CSP: FileStraw matched via T1
 class FileStraw
 {
 public:
@@ -732,6 +746,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: FileTreeNode matched via T1
 class FileTreeNode
 {
 public:
@@ -770,6 +785,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
+// CSP: IsoCoord matched via T1
 class IsoCoord
 {
 public:
@@ -798,6 +814,7 @@ public:
     uint8_t IsoTile_field_0x0C[4];
 };
 // 1 methods in IDA
+// CSP: IsometricTileClass matched via T1
 class IsometricTileClass
 {
 public:
@@ -808,6 +825,7 @@ public:
 
 };
 // 20 methods in IDA
+// CSP: IsometricTileTypeClass matched via T1
 class IsometricTileTypeClass
 {
 public:
@@ -963,6 +981,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 12 methods in IDA
+// CSP: MapSeedClass matched via T1
 class MapSeedClass
 {
 public:
@@ -1046,6 +1065,7 @@ public:
 
 };
 // 5 methods in IDA
+// CSP: Matrix3x3 matched via T1
 class Matrix3x3
 {
 public:
@@ -1064,6 +1084,7 @@ public:
     uint8_t Matrix3x3_field_0x10[4];
 };
 // 2 methods in IDA
+// CSP: PlacementList matched via T1
 class PlacementList
 {
 public:
@@ -1087,6 +1108,7 @@ public:
     uint8_t PlanningNodeClass_field_0x04[4];
 };
 // 13 methods in IDA
+// CSP: RadarHashVector matched via T1
 class RadarHashVector
 {
 public:
@@ -1157,6 +1179,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ScoreClass matched via T1
 class ScoreClass
 {
 public:
@@ -1223,6 +1246,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: ScoreText matched via T1
 class ScoreText
 {
 public:
@@ -1235,6 +1259,7 @@ public:
     uint8_t ScoreText_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: ShroudClass matched via T1
 class ShroudClass
 {
 public:
@@ -1247,6 +1272,7 @@ public:
     uint8_t ShroudClass_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: SpawnControlVector matched via T1
 class SpawnControlVector
 {
 public:
@@ -1267,6 +1293,7 @@ public:
 
 };
 // 5 methods in IDA
+// CSP: SuperWeaponClass matched via T1
 class SuperWeaponClass
 {
 public:
@@ -1384,6 +1411,7 @@ public:
 // === Batch-generated MISSING class stubs ===
 
 // 8 methods in IDA
+// CSP: AbstractClassVector matched via T1
 class AbstractClassVector
 {
 public:
@@ -1410,6 +1438,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: ActionQueue matched via T1
 class ActionQueue
 {
 public:
@@ -1430,6 +1459,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: AircraftTrackerClass matched via T1
 class AircraftTrackerClass
 {
 public:
@@ -1450,6 +1480,7 @@ public:
 
 };
 // 10 methods in IDA
+// CSP: AlphaShapeClass matched via T1
 class AlphaShapeClass
 {
 public:
@@ -1515,6 +1546,7 @@ public:
     uint8_t ArmorType_field_0x04[4];
 };
 // 6 methods in IDA
+// CSP: ArtConfig matched via T1
 class ArtConfig
 {
 public:
@@ -1548,6 +1580,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: BTree matched via T1
 class BTree
 {
 public:
@@ -1591,6 +1624,7 @@ public:
     uint8_t BigInt_field_0x0C[4];
 };
 // 5 methods in IDA
+// CSP: BinkMovieClass matched via T1
 class BinkMovieClass
 {
 public:
@@ -1671,6 +1705,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: BridgeClass matched via T1
 class BridgeClass
 {
 public:
@@ -1681,6 +1716,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: BuildLocation matched via T1
 class BuildLocation
 {
 public:
@@ -1760,6 +1796,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 13 methods in IDA
+// CSP: CChatEventSink matched via T1
 class CChatEventSink
 {
 public:
@@ -1800,6 +1837,7 @@ public:
     // === FUNCS-MOVE (END) ===
 };
 // 2 methods in IDA
+// CSP: CDROM matched via T1
 class CDROM
 {
 public:
@@ -1841,6 +1879,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: CellLand matched via T1
 class CellLand
 {
 public:
@@ -1903,6 +1942,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ClassFactory_CStream matched via T1
 class ClassFactory_CStream
 {
 public:
@@ -1913,6 +1953,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ClassFactory_Wave matched via T1
 class ClassFactory_Wave
 {
 public:
@@ -1923,6 +1964,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: Cliff matched via T1
 class Cliff
 {
 public:
@@ -1933,6 +1975,7 @@ public:
 
 };
 // 16 methods in IDA
+// CSP: ComStreamClass matched via T1
 class ComStreamClass
 {
 public:
@@ -1978,6 +2021,7 @@ public:
     // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
+// CSP: Compression matched via T1
 class Compression
 {
 public:
@@ -2010,6 +2054,7 @@ public:
 
 };
 // 9 methods in IDA
+// CSP: ConnectionPointClass matched via T1
 class ConnectionPointClass
 {
 public:
@@ -2047,6 +2092,7 @@ public:
 
 };
 // 3 methods in IDA
+// CSP: CrateClass matched via T1
 class CrateClass
 {
 public:
@@ -2080,6 +2126,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: DListNode matched via T1
 class DListNode
 {
 public:
@@ -2108,6 +2155,7 @@ public:
     uint8_t Dial8Class_field_0x0C[4];
 };
 // 11 methods in IDA
+// CSP: DiskLaserClass matched via T1
 class DiskLaserClass
 {
 public:
@@ -2180,6 +2228,7 @@ public:
     uint8_t DynamicArray_field_0x10[4];
 };
 // 1 methods in IDA
+// CSP: DynamicClass matched via T1
 class DynamicClass
 {
 public:
@@ -2200,6 +2249,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: DynamicVectorArray matched via T1
 class DynamicVectorArray
 {
 public:
@@ -2210,6 +2260,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ErrorCode matched via T1
 class ErrorCode
 {
 public:
@@ -2250,6 +2301,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: FractalNoise matched via T1
 class FractalNoise
 {
 public:
@@ -2290,6 +2342,7 @@ public:
 
 };
 // 8 methods in IDA
+// CSP: GaugeClass matched via T1
 class GaugeClass
 {
 public:
@@ -2357,6 +2410,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: GlobalArray matched via T1
 class GlobalArray
 {
 public:
@@ -2470,6 +2524,7 @@ public:
     uint8_t ImageList_field_0x14[4];
 };
 // 2 methods in IDA
+// CSP: Int4 matched via T1
 class Int4
 {
 public:
@@ -2508,6 +2563,7 @@ public:
     uint8_t IntDynamicVector_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: IntVector matched via T1
 class IntVector
 {
 public:
@@ -2519,6 +2575,7 @@ public:
     uint8_t IntVector_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: IsRandMap matched via T1
 class IsRandMap
 {
 public:
@@ -2541,6 +2598,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: KeywordClass matched via T1
 class KeywordClass
 {
 public:
@@ -2551,6 +2609,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: KeywordType matched via T1
 class KeywordType
 {
 public:
@@ -2706,6 +2765,7 @@ public:
 
 };
 // 4 methods in IDA
+// CSP: MPCombatTeam matched via T1
 class MPCombatTeam
 {
 public:
@@ -2764,6 +2824,7 @@ public:
     uint8_t MSBinkAnim_field_0x10[4];
 };
 // 6 methods in IDA
+// CSP: MSBitPrintAnim matched via T1
 class MSBitPrintAnim
 {
 public:
@@ -2788,6 +2849,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
+// CSP: MSChoiceClass matched via T1
 class MSChoiceClass
 {
 public:
@@ -2841,6 +2903,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
+// CSP: MSOverlayAnim matched via T1
 class MSOverlayAnim
 {
 public:
@@ -2866,6 +2929,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
+// CSP: MSPCXAnim matched via T1
 class MSPCXAnim
 {
 public:
@@ -2892,6 +2956,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 6 methods in IDA
+// CSP: MSPrintAnim matched via T1
 class MSPrintAnim
 {
 public:
@@ -2926,6 +2991,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: MSShapeAnim matched via T1
 class MSShapeAnim
 {
 public:
@@ -2937,6 +3003,7 @@ public:
     uint8_t MSShapeAnim_field_0x04[4];
 };
 // 8 methods in IDA
+// CSP: MSVQAnim matched via T1
 class MSVQAnim
 {
 public:
@@ -2976,6 +3043,7 @@ public:
     uint8_t Megawealth_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: Miles matched via T1
 class Miles
 {
 public:
@@ -3057,6 +3125,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: NetMessage matched via T1
 class NetMessage
 {
 public:
@@ -3069,6 +3138,7 @@ public:
     uint8_t NetMessage_field_0x04[4];
 };
 // 6 methods in IDA
+// CSP: NeuronClass matched via T1
 class NeuronClass
 {
 public:
@@ -3114,6 +3184,7 @@ public:
     uint8_t ObjectManager_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: ObjectPlacement matched via T1
 class ObjectPlacement
 {
 public:
@@ -3136,6 +3207,7 @@ public:
 
 };
 // 6 methods in IDA
+// CSP: ObjectVector matched via T1
 class ObjectVector
 {
 public:
@@ -3194,6 +3266,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: OwnerDrawControl matched via T1
 class OwnerDrawControl
 {
 public:
@@ -3218,6 +3291,7 @@ public:
     uint8_t PKStrawClass_field_0x08[4];
 };
 // 2 methods in IDA
+// CSP: PacketQueue matched via T1
 class PacketQueue
 {
 public:
@@ -3242,6 +3316,7 @@ public:
     uint8_t Performance_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: PhoneEditor matched via T1
 class PhoneEditor
 {
 public:
@@ -3287,6 +3362,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: PowerBar matched via T1
 class PowerBar
 {
 public:
@@ -3299,6 +3375,7 @@ public:
     uint8_t PowerBar_field_0x04[4];
 };
 // 2 methods in IDA
+// CSP: PreviewClass matched via T1
 class PreviewClass
 {
 public:
@@ -3321,6 +3398,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: PrintTimerOnTactical matched via T1
 class PrintTimerOnTactical
 {
 public:
@@ -3343,6 +3421,7 @@ public:
     uint8_t PriorityQueue_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: ProductionClass matched via T1
 class ProductionClass
 {
 public:
@@ -3363,6 +3442,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ProjectileTrail matched via T1
 class ProjectileTrail
 {
 public:
@@ -3385,6 +3465,7 @@ public:
     uint8_t Property_field_0x04[4];
 };
 // 1 methods in IDA
+// CSP: PushCommandClass matched via T1
 class PushCommandClass
 {
 public:
@@ -3395,6 +3476,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: RateScaler matched via T1
 class RateScaler
 {
 public:
@@ -3415,6 +3497,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: ResultNode matched via T1
 class ResultNode
 {
 public:
@@ -3461,6 +3544,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: ScalarDtor matched via T1
 class ScalarDtor
 {
 public:
@@ -3521,6 +3605,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: ShapeButton matched via T1
 class ShapeButton
 {
 public:
@@ -3533,6 +3618,7 @@ public:
     uint8_t ShapeButton_field_0x04[4];
 };
 // 3 methods in IDA
+// CSP: ShapeButtonClass matched via T1
 class ShapeButtonClass
 {
 public:
@@ -3577,6 +3663,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: SlaveControlVector matched via T1
 class SlaveControlVector
 {
 public:
@@ -3651,6 +3738,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: SortedStateVector matched via T1
 class SortedStateVector
 {
 public:
@@ -3671,6 +3759,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: SquadClass matched via T1
 class SquadClass
 {
 public:
@@ -3785,6 +3874,7 @@ public:
     uint8_t SubzoneConnectionVector_field_0x08[4];
 };
 // 1 methods in IDA
+// CSP: SubzoneHashVector matched via T1
 class SubzoneHashVector
 {
 public:
@@ -3816,6 +3906,7 @@ public:
     uint8_t SwizzleManager_field_0x04[4];
 };
 // 10 methods in IDA
+// CSP: SwizzleManagerClass matched via T1
 class SwizzleManagerClass
 {
 public:
@@ -3848,6 +3939,7 @@ public:
     // === FUNCS-MOVE (END) ===
 };
 // 2 methods in IDA
+// CSP: SymbolTable matched via T1
 class SymbolTable
 {
 public:
@@ -4863,6 +4955,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: TechnoTypeVector matched via T1
 class TechnoTypeVector
 {
 public:
@@ -4915,6 +5008,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: TileData matched via T1
 class TileData
 {
 public:
@@ -4925,6 +5019,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: TileNode matched via T1
 class TileNode
 {
 public:
@@ -4934,6 +5029,7 @@ public:
 
 };
 // 4 methods in IDA
+// CSP: TileSystem matched via T1
 class TileSystem
 {
 public:
@@ -4950,6 +5046,7 @@ public:
     uint8_t TileSystem_field_0x0C[4];
 };
 // 1 methods in IDA
+// CSP: TileVector matched via T1
 class TileVector
 {
 public:
@@ -4960,6 +5057,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: ToggleClass matched via T1
 class ToggleClass
 {
 public:
@@ -4982,6 +5080,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: Triple matched via T1
 class Triple
 {
 public:
@@ -5028,6 +5127,7 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
+// CSP: VQAClass matched via T1
 class VQAClass
 {
 public:
@@ -5050,6 +5150,7 @@ public:
     uint8_t VeinholeClass_field_0x04[4];
 };
 // 11 methods in IDA
+// CSP: VeinholeMonsterClass matched via T1
 class VeinholeMonsterClass
 {
 public:
@@ -5093,6 +5194,7 @@ public:
 
 };
 // 2 methods in IDA
+// CSP: Viewport matched via T1
 class Viewport
 {
 public:
@@ -5105,6 +5207,7 @@ public:
     uint8_t Viewport_field_0x04[4];
 };
 // 9 methods in IDA
+// CSP: VtableStub matched via T1
 class VtableStub
 {
 public:
@@ -5128,6 +5231,7 @@ public:
     uint8_t VtableStub_field_0x20[4];
 };
 // 2 methods in IDA
+// CSP: WDTClass matched via T1
 class WDTClass
 {
 public:
@@ -5140,6 +5244,7 @@ public:
     uint8_t WDTClass_field_0x04[4];
 };
 // 4 methods in IDA
+// CSP: WDTGame matched via T1
 class WDTGame
 {
 public:
@@ -5233,6 +5338,7 @@ public:
 
 };
 // 15 methods in IDA
+// CSP: WinModemClass matched via T1
 class WinModemClass
 {
 public:
@@ -5323,6 +5429,7 @@ public:
 
 };
 // 1 methods in IDA
+// CSP: ZBuffer matched via T1
 class ZBuffer
 {
 public:

@@ -67,6 +67,7 @@ struct MixHeaderData
 class MixFileClass : public Node<MixFileClass*>
 {
 public:
+// CSP: GenericMixFiles matched via T3
     struct GenericMixFiles
     {
         MixFileClass* RA2MD              = nullptr;

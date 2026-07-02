@@ -31,6 +31,7 @@ class TechnoTypeClass;
 class TagClass;
 class CellClass;
 
+// CSP: TeamClass matched via T1
 class TeamClass : public AbstractClass
 {
 public:

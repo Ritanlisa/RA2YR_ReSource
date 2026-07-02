@@ -14,6 +14,7 @@ using ra2::game::Point2D;
 using ra2::game::RectangleStruct;
 
 class EBolt;
+// CSP: UnitTypeClass matched via T1
 class UnitTypeClass;
 
 // Idle-order entry (heap-allocated, 20 bytes). Each entry tracks a unit
@@ -33,6 +34,7 @@ struct IdleOrderArray {
     IdleOrderEntry* operator[](int i) const { return base[i]; }
 };
 
+// CSP: UnitClass matched via T1
 class UnitClass : public ra2::game::FootClass
 {
 public:

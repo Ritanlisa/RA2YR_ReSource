@@ -9,6 +9,7 @@ class FootClass;
 class TechnoClass;
 
 // sizeof ~0x44 (ctor 0x629210, ddtor 0x6296D0)
+// CSP: ParasiteClass matched via T1+T3
 class ParasiteClass : public AbstractClass
 {
 public:

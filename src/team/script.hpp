@@ -19,6 +19,7 @@ using ra2::game::AbstractType;
 
 
 
+// CSP: ScriptTypeClass matched via T1+T3
 class ScriptTypeClass;
 struct ScriptActionNode;
 
@@ -28,6 +29,7 @@ struct ScriptActionNode
     int32_t Argument;
 };
 
+// CSP: ScriptClass matched via T1
 class ScriptClass : public AbstractClass
 {
 public:

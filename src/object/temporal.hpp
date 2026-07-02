@@ -8,6 +8,7 @@ namespace game {
 class TechnoClass;
 
 // sizeof ~0x38 (ctor 0x71A450, ddtor 0x71A720)
+// CSP: TemporalClass matched via T1
 class TemporalClass : public AbstractClass
 {
 public:

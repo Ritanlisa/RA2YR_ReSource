@@ -14,6 +14,7 @@ class TechnoClass;
 // MovementAI — Movement AI state machine (7 methods)
 // IDA: sub_487E00, sub_4A5150, Check
 // ============================================================================
+// CSP: MovementAI matched via T1
 class MovementAI
 {
 public:
@@ -94,6 +95,7 @@ public:
 
 };
 // 14 methods in IDA
+// CSP: MoveFeedback matched via T1
 class MoveFeedback
 {
 public:
@@ -134,6 +136,7 @@ public:
     uint8_t MovementClass_field_0x04[4];
 };
 // 7 methods in IDA
+// CSP: Pathfinding matched via T1
 class Pathfinding
 {
 public:
@@ -162,6 +165,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
+// CSP: PathfindingClass matched via T1
 class PathfindingClass
 {
 public:
