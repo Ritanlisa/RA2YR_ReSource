@@ -324,8 +324,12 @@ def _scan_call_args(call_ea, func_start, callee_name, callee_is_thiscall, call_e
                 m = re.search(r'\[(\w{2,3})(?:\+0x([0-9a-fA-F]+))?', arg_op1_val)
                 if m:
                     base_reg = m.group(1)
-                    if base_reg in ('esp', 'ebp') and m.group(2):
-                        this_source = f"stack_+0x{m.group(2)}"
+                    if base_reg in ('esp', 'ebp'):
+                        if m.group(2):
+                            this_source = f"stack_+0x{m.group(2)}"
+                        else:
+                            # bare [esp] — per-instruction scoped to avoid hub
+                            this_source = f"stack_at_0x{call_ea:X}"
                     else:
                         this_source = f"*{base_reg}"
             elif arg_op1_val:
