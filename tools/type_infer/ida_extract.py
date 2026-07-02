@@ -321,9 +321,13 @@ def _scan_call_args(call_ea, func_start, callee_name, callee_is_thiscall, call_e
                 this_source = arg_op1_val
             elif arg_op1_val and '[' in arg_op1_val:
                 # mov ecx, [reg+offset] — capture the register
-                m = re.search(r'\[(\w{2,3})', arg_op1_val)
+                m = re.search(r'\[(\w{2,3})(?:\+0x([0-9a-fA-F]+))?', arg_op1_val)
                 if m:
-                    this_source = f"*{m.group(1)}"
+                    base_reg = m.group(1)
+                    if base_reg in ('esp', 'ebp') and m.group(2):
+                        this_source = f"stack_+0x{m.group(2)}"
+                    else:
+                        this_source = f"*{base_reg}"
             elif arg_op1_val:
                 # mov ecx, <immediate> — skip
                 pass

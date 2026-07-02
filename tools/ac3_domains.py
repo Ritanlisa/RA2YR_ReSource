@@ -40,6 +40,15 @@ for i in range(K):
             b = type_names[j]
             if b in anc.get(a, set()) or a in anc.get(b, set()):
                 compat_with[i].add(j)
+
+# int and float are compatible with all class types — at x86 binary level,
+# registers/stack slots can hold both raw values and pointers sequentially.
+# Without this, CRT-int returns poison class-typed neighbors via adjacency.
+for i in (0, 1):  # int, float
+    for j in range(2, K):  # all class types
+        compat_with[i].add(j)
+        compat_with[j].add(i)
+
 print(f"  Compat pairs: {sum(len(c) for c in compat_with)}")
 
 # Build adjacency using SSA-based scoping (replaces manual scope_name)
