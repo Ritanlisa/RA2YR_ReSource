@@ -25,6 +25,10 @@ Architecture:
 运行方式:
   IDA 内: File → Script File (或 ida-pro-mcp py_exec_file)
   副本验证: 复制 .i64 后用 idat -A -S 运行；离线回归: verify_extract_output.py
+  dry-run: IDA 内执行时传 `--dry-run`；headless 下 `-S"script --dry-run"` 的
+          参数进 idc.ARGV 而非 sys.argv（IDA 9.2），故 headless 推荐环境变量
+          方式: `set RA2YR_DRY_RUN=1 && idat -A -S"script" replica.i64`。
+          三种途径（sys.argv / idc.ARGV / RA2YR_DRY_RUN=1）任一命中即启用。
 """
 
 
@@ -54,7 +58,16 @@ if PROJ_ROOT not in sys.path:
 from tools.type_infer.scope_vars import build_scoped_index, build_adjacency
 
 # --dry-run 模式: 不注入/不改名/导出到临时目录（T2）
-DRY_RUN = "--dry-run" in sys.argv
+# D2: headless `idat -A -S"script --dry-run"` 时参数进 idc.ARGV 而非 sys.argv
+# （IDA 9.2 语义），因此三种触发途径任一命中即启用:
+#   1) CLI/脚本参数 `--dry-run`（IDA 内执行 / 普通 Python）
+#   2) idc.ARGV（headless -S 传参；idc 离线时为 None → getattr 返回 []）
+#   3) 环境变量 RA2YR_DRY_RUN=1（headless 下最可靠，推荐）
+DRY_RUN = (
+    "--dry-run" in sys.argv
+    or "--dry-run" in getattr(idc, "ARGV", [])
+    or os.environ.get("RA2YR_DRY_RUN") == "1"
+)
 
 # signals.json 提前加载（Step 2 CC 判定 / Step 6 命名 / Step 8 改名保护共用）
 SIG_SYMBOLS = {}
@@ -92,6 +105,29 @@ def _assign_push_params(pushes):
     pairs = [(src, n - 1 - i) for i, src in enumerate(exec_order)]
     return list(reversed(pairs))  # 输出保持扫描序（call 邻近 push 在前 = param0）
 
+
+def _sanitize_struct_name(name):
+    """D1: 类名 → 合法 C 标识符（Step 7 结构体注入前校验）。
+
+    非法字符（`[`、`]`、`?`、`@`、`$`、`:` 等非标识符字符）替换为 `_`
+    （连续非法字符折叠为单个 `_`，尾部 `_` 去除，如 `FactoryClass[33]` →
+    `FactoryClass_33`）；数字开头的名字加 `_` 前缀（C 标识符不能以数字开头）；
+    合法名原样返回（**不改变**——折叠/去尾只在名字确实包含非法字符时发生）。
+    sanitize 后为空或不含任何字母数字（纯标点垃圾名，如 `??$@`）→ 返回 None，
+    调用方跳过注入并在 manifest 记录。返回 None 表示"不可注入"。
+    """
+    if not name:
+        return None
+    sanitized = name
+    if re.search(r"[^0-9A-Za-z_]", name):
+        # 仅当名字含非法字符时折叠连续非法字符并去尾部 `_`
+        sanitized = re.sub(r"[^0-9A-Za-z_]+", "_", name).rstrip("_")
+    if not sanitized or not any(c.isalnum() for c in sanitized):
+        return None
+    if sanitized[0].isdigit():
+        sanitized = "_" + sanitized
+    return sanitized
+
 TEXT_START, TEXT_END = 0x401000, 0x7E1000
 RDATA_START, RDATA_END = 0x7E1608, 0x812000
 MIN_VTABLE_ENTRIES = 3
@@ -111,6 +147,11 @@ RUN_MANIFEST = {
     "types_skipped_existing": [],
     "names_renamed": [],
     "names_skipped_protected": [],
+    # D1: 结构体注入防御性过滤记录（非法偏移 / 非法类名）
+    "offsets_filtered_illegal": [],
+    "structs_skipped_no_valid_offsets": [],
+    "names_sanitized": [],
+    "structs_skipped_invalid_name": [],
     "errors": [],
 }
 
@@ -1642,8 +1683,47 @@ def _run_main():
                     {"csp_class": cls, "existing": rename_map.get(cls, "")}
                 )
 
-            offs = sorted(info["offsets"])
+            # D1: 类名合法性校验——非法 C 标识符 → 转义（保留注入能力）。
+            # 转义后名字若仍与 IDB 已有类型冲突 → 同样 _csp 隔离（F7 纪律）。
+            safe_name = _sanitize_struct_name(real_name)
+            if safe_name is None:
+                RUN_MANIFEST["structs_skipped_invalid_name"].append(
+                    {"class": cls, "real_name": real_name, "reason": "sanitized name empty"}
+                )
+                continue
+            if safe_name != real_name:
+                RUN_MANIFEST["names_sanitized"].append(
+                    {"class": cls, "original": real_name, "sanitized": safe_name}
+                )
+                real_name = safe_name
+                rename_map[cls] = real_name
+                if _type_exists(real_name):
+                    real_name = real_name + "_csp"
+                    rename_map[cls] = real_name
+                    RUN_MANIFEST["types_skipped_existing"].append(
+                        {"csp_class": cls, "existing": rename_map.get(cls, "")}
+                    )
+
+            # D1: 过滤非法偏移（约束求解 BADADDR 泄漏: -1/-4 等；>=0x80000000
+            # 为非 32 位偏移垃圾）。off=0 合法（`[ecx]` 无偏移访问）。过滤后
+            # 剩余合法偏移仍正常注入；全部非法 → 跳过该类 + manifest 记录。
+            # 注意: 过滤在 pad 生成前，last_off/max_off 推进基于合法偏移序列。
+            offs_raw = sorted(info["offsets"])
+            bad_offsets = [o for o in offs_raw if o < 0 or o >= 0x80000000]
+            if bad_offsets:
+                RUN_MANIFEST["offsets_filtered_illegal"].append(
+                    {
+                        "class": cls,
+                        "real_name": real_name,
+                        "count": len(bad_offsets),
+                        "offsets": bad_offsets[:10],
+                    }
+                )
+            offs = [o for o in offs_raw if 0 <= o < 0x80000000]
             if not offs:
+                RUN_MANIFEST["structs_skipped_no_valid_offsets"].append(
+                    {"class": cls, "real_name": real_name}
+                )
                 continue
 
             m_types = member_class_types.get(cls, {})
