@@ -4,7 +4,7 @@ Searches for class references in source files using Python grep.
 import os, re, json
 from pathlib import Path
 
-root = Path(r'D:\RA2YR_ReSource')
+root = Path(r'H:\RA2YR_ReSource')
 
 # Load existing cross-reference data
 with open(root / 'scripts' / 'ida_class_coverage.json', 'r') as f:

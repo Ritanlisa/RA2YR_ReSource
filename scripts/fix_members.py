@@ -238,7 +238,7 @@ RENAMES = [
 ]
 
 def main():
-    base = r"D:\RA2YR_ReSource"
+    base = r"H:\RA2YR_ReSource"
     changed = 0
     for sub in ["include\\gamemd", "src"]:
         for root, dirs, files in os.walk(os.path.join(base, sub)):

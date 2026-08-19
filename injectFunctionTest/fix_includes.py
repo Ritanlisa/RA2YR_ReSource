@@ -1,7 +1,7 @@
 import os
 
 INCLUDE = '#include "gamemd/core/reverse_marker.hpp"'
-ROOT = r"D:\RA2YR_ReSource"
+ROOT = r"H:\RA2YR_ReSource"
 FILES = [
     "src/core/copy_protection.cpp",
     "src/core/menu_select.cpp",

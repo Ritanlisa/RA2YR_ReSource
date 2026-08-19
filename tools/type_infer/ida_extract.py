@@ -58,7 +58,7 @@ _PROJ_ROOT = os.path.dirname(
 )
 PROJ_ROOT = os.environ.get("RA2YR_ROOT", _PROJ_ROOT)
 if not os.path.isdir(PROJ_ROOT):
-    PROJ_ROOT = r"D:\RA2YR_ReSource"  # 最后 fallback
+    PROJ_ROOT = r"H:\RA2YR_ReSource"  # 最后 fallback
 if PROJ_ROOT not in sys.path:
     sys.path.insert(0, PROJ_ROOT)
 from tools.type_infer.scope_vars import (

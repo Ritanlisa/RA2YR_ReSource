@@ -2,7 +2,7 @@
 import json, re, os, glob
 from collections import Counter
 
-ROOT = r'D:\RA2YR_ReSource'
+ROOT = r'H:\RA2YR_ReSource'
 
 with open(os.path.join(ROOT, 'injectFunctionTest/functions.json'), 'r') as f:
     funcs_list = json.load(f)['functions']

@@ -1,7 +1,7 @@
 import os, re
 from pathlib import Path
 
-ROOT = Path('D:/RA2YR_ReSource')
+ROOT = Path('H:/RA2YR_ReSource')
 
 count = 0
 for dirpath, dirnames, filenames in os.walk(ROOT / 'src'):

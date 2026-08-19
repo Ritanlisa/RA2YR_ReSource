@@ -10,8 +10,8 @@ import os
 from collections import defaultdict, Counter
 from pathlib import Path
 
-SRC = Path("D:/RA2YR_ReSource/src")
-OUT = Path("D:/RA2YR_ReSource/.omo/annotation_formats.json")
+SRC = Path("H:/RA2YR_ReSource/src")
+OUT = Path("H:/RA2YR_ReSource/.omo/annotation_formats.json")
 
 # ── Pattern definitions ──────────────────────────────────────────────────
 # Order matters: more specific patterns must be checked first

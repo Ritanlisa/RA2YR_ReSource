@@ -10,15 +10,15 @@ from collections import defaultdict, Counter
 
 print("Loading data...")
 
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
     classes_data = json.load(f)
 cls = classes_data['classes']
 
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
     funcs_data = json.load(f)
 funcs = funcs_data['functions']
 
-with open(r'D:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
     existing_map = json.load(f)
 
 # ─── Build reverse maps ──────────────────────────────────────────────────────
@@ -271,7 +271,7 @@ for cid in unmapped_classes:
             'var_prefixes': r.get('var_prefixes', []),
         }
 
-with open(r'D:\RA2YR_ReSource\tools\phase_abc_results.json', 'w') as f:
+with open(r'H:\RA2YR_ReSource\tools\phase_abc_results.json', 'w') as f:
     json.dump(output, f, indent=2)
 
 print(f"\nPhase A+B+C results saved to tools/phase_abc_results.json")

@@ -3,8 +3,8 @@
 import re, os, pickle, sys
 from collections import defaultdict
 
-C_FILE = r'D:\RA2YR_ReSource\decompile-results\gamemd.exe.c'
-PKL = r'D:\RA2YR_ReSource\decompile-results\func_blocks.pkl'
+C_FILE = r'H:\RA2YR_ReSource\decompile-results\gamemd.exe.c'
+PKL = r'H:\RA2YR_ReSource\decompile-results\func_blocks.pkl'
 
 print(f"Reading {C_FILE}...")
 with open(C_FILE, encoding='utf-8') as f:

@@ -1,5 +1,5 @@
 # Bulk rename script — mechanical conversions only
-# Run from D:\RA2YR_ReSource
+# Run from H:\RA2YR_ReSource
 
 $targetDirs = @("include\gamemd", "src")
 $extensions = @("*.hpp", "*.cpp", "*.h")

@@ -19,8 +19,8 @@ except ImportError:
     HEXRAYS_AVAILABLE = False
     print("[!] Hex-Rays not available, type info will be limited")
 
-OUTPUT_DIR = r"D:\RA2YR_ReSource\tools"
-FUNCTIONS_JSON = r"D:\RA2YR_ReSource\injectFunctionTest\functions.json"
+OUTPUT_DIR = r"H:\RA2YR_ReSource\tools"
+FUNCTIONS_JSON = r"H:\RA2YR_ReSource\injectFunctionTest\functions.json"
 CRT_EXCLUSIONS_PATH = os.path.join(OUTPUT_DIR, "fr_crt_exclusions.json")
 MEMBERS_OUTPUT = os.path.join(OUTPUT_DIR, "ida_class_members.json")
 GLOBALS_OUTPUT = os.path.join(OUTPUT_DIR, "ida_globals.json")

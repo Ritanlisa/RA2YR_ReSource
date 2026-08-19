@@ -14,7 +14,7 @@ Checkpoint: tools/sub_decompiles/_checkpoint.json — resumes from last saved po
 import json, os, sys, time, traceback
 
 # === Configuration ===
-OUTPUT_DIR = r"D:\RA2YR_ReSource\tools\sub_decompiles"
+OUTPUT_DIR = r"H:\RA2YR_ReSource\tools\sub_decompiles"
 CHECKPOINT_FILE = os.path.join(OUTPUT_DIR, "_checkpoint.json")
 SUMMARY_FILE = os.path.join(OUTPUT_DIR, "_summary.json")
 PROGRESS_INTERVAL = 100  # Report every N functions

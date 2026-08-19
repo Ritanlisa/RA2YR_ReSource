@@ -1,6 +1,6 @@
 import json, os, re
 
-YRPP_DIR = r"D:\RA2YR_ReSource\YRpp"
+YRPP_DIR = r"H:\RA2YR_ReSource\YRpp"
 
 # Computed from YRpp declaration order + known parent sizes
 PARENT_OFFSETS = {
@@ -228,7 +228,7 @@ def main():
             'named_vts': named_vts,
         }
     
-    with open(r'D:\RA2YR_ReSource\tools\yrpp_data.json', 'w') as f:
+    with open(r'H:\RA2YR_ReSource\tools\yrpp_data.json', 'w') as f:
         json.dump(all_data, f, indent=2)
     
     print("Wrote %d classes to yrpp_data.json" % len(all_data))

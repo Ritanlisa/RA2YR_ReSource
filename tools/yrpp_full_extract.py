@@ -1,7 +1,7 @@
 """Extract all YRpp data: JMP_THIS, members, vt_entries with multi-line support."""
 import re, os, json
 
-YRPP = r"D:\RA2YR_ReSource\YRpp"
+YRPP = r"H:\RA2YR_ReSource\YRpp"
 
 def typename_size(t):
     t = t.strip()
@@ -131,7 +131,7 @@ def main():
             'total_size': off,
         }
     
-    with open(r"D:\RA2YR_ReSource\tools\yrpp_full.json", 'w') as f:
+    with open(r"H:\RA2YR_ReSource\tools\yrpp_full.json", 'w') as f:
         json.dump(data, f, indent=2)
     
     total_jmp = sum(len(d['jmp_this']) for d in data.values())

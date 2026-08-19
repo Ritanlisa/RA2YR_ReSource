@@ -5,7 +5,7 @@ for IDA type library.
 """
 import os, re
 
-YRPP_DIR = r"D:\RA2YR_ReSource\YRpp"
+YRPP_DIR = r"H:\RA2YR_ReSource\YRpp"
 
 # Known class sizes from IDA-verified measurements (bytes, hex)
 KNOWN_CLASS_SIZES = {

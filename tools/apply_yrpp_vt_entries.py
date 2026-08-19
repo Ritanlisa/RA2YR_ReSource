@@ -8,7 +8,7 @@ vtable[0] at 0x7E3EBC. MSVC creates one cumulative vtable for the hierarchy.
 """
 import json, idc, idaapi
 
-with open(r'D:\RA2YR_ReSource\tools\yrpp_full.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\yrpp_full.json') as f:
     data = json.load(f)
 
 # All game MI classes share the same vtable[0] (cumulative MSVC hierarchy)

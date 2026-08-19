@@ -23,7 +23,7 @@ import json, re, sys
 from pathlib import Path
 from collections import defaultdict
 
-ROOT = Path(r"D:\RA2YR_ReSource")
+ROOT = Path(r"H:\RA2YR_ReSource")
 SRC = ROOT / "src"
 
 BEGIN = "// === SYMBOL-ANCHOR (BEGIN) ==="

@@ -1,8 +1,8 @@
 import os, re
 
 DIRS = [
-    r"D:\RA2YR_ReSource\src",
-    r"D:\RA2YR_ReSource\include\gamemd",
+    r"H:\RA2YR_ReSource\src",
+    r"H:\RA2YR_ReSource\include\gamemd",
 ]
 
 changed = 0

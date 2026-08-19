@@ -1,6 +1,6 @@
 import os, re
 
-ROOT = r"D:\RA2YR_ReSource"
+ROOT = r"H:\RA2YR_ReSource"
 count = 0
 for root, dirs, files in os.walk(ROOT):
     if '.git' in root or 'build_' in root or 'gen' in root: continue

@@ -1,7 +1,7 @@
 """Parse YRpp class with NOVTABLE, multiple inheritance, and mixed func/data."""
 import re, idc
 
-YRPP_DIR = r"D:\RA2YR_ReSource\YRpp"
+YRPP_DIR = r"H:\RA2YR_ReSource\YRpp"
 
 BASE_SIZES = {
     "AbstractClass": 0x24, "AbstractTypeClass": 0x60,

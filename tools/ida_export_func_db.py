@@ -2,7 +2,7 @@
 """
 IDA Python script: Export comprehensive function database for all named functions.
 Runs inside IDA Pro via py_exec_file.
-Outputs to D:/RA2YR_ReSource/tools/
+Outputs to H:/RA2YR_ReSource/tools/
 """
 import json
 import os
@@ -20,7 +20,7 @@ import ida_name
 import ida_idp
 import ida_bytes
 
-OUTPUT_DIR = r"D:\RA2YR_ReSource\tools"
+OUTPUT_DIR = r"H:\RA2YR_ReSource\tools"
 MAX_CALLERS = 30
 MAX_CALLEES = 30
 BATCH_SIZE = 500  # Progress reporting interval

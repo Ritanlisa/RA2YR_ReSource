@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 
-PROJECT_ROOT = Path(r'D:\RA2YR_ReSource')
+PROJECT_ROOT = Path(r'H:\RA2YR_ReSource')
 
 # IDA lookup results for all 131 code-section orphan addresses
 # Format: annotation_addr → (containing_func_addr, containing_func_name, is_exact)

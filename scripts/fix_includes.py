@@ -1,6 +1,6 @@
 import os, re
 
-base = r"D:\RA2YR_ReSource\src"
+base = r"H:\RA2YR_ReSource\src"
 changed = 0
 
 for root, dirs, files in os.walk(base):

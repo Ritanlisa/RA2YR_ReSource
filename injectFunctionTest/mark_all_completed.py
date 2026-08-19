@@ -5,7 +5,7 @@ Inserts REVERSE line before each function definition.
 """
 import json, os, re
 
-ROOT = r"D:\RA2YR_ReSource"
+ROOT = r"H:\RA2YR_ReSource"
 
 with open(os.path.join(ROOT, "injectFunctionTest", "functions.json")) as f:
     data = json.load(f)

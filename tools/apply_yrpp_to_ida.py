@@ -5,7 +5,7 @@ Also finds and renames vtable function entries.
 """
 import json, idc, idaapi, ida_bytes
 
-JSON_PATH = r"D:\RA2YR_ReSource\tools\yrpp_data.json"
+JSON_PATH = r"H:\RA2YR_ReSource\tools\yrpp_data.json"
 
 def rebuild_struct(cls_name, cls_data):
     """Delete all members and rebuild with YRpp offsets."""

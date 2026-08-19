@@ -31,7 +31,7 @@ import idaapi
 # Configuration
 # ============================================================
 
-OUTPUT_PATH = r"D:\RA2YR_ReSource\injectFunctionTest\purity_effects.json"
+OUTPUT_PATH = r"H:\RA2YR_ReSource\injectFunctionTest\purity_effects.json"
 CHECKPOINT_EVERY = 1000   # Save progress every N functions
 DRY_RUN_COUNT = 0         # Set to N to test only first N functions (0 = all)         # Set to N to test only first N functions (0 = all)
 

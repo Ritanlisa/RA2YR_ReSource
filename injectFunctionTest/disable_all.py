@@ -1,6 +1,6 @@
 import re, os
 
-ROOT = r"D:\RA2YR_ReSource"
+ROOT = r"H:\RA2YR_ReSource"
 PAT = re.compile(r'(REVERSE\(\s*0x[0-9A-Fa-f]+\s*,\s*"[^"]*"\s*,\s*)true(\s*\))')
 
 for root, dirs, files in os.walk(ROOT):

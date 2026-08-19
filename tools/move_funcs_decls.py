@@ -29,7 +29,7 @@ import json, re, sys, shutil
 from pathlib import Path
 from collections import defaultdict
 
-ROOT = Path(r"D:\RA2YR_ReSource")
+ROOT = Path(r"H:\RA2YR_ReSource")
 SRC = ROOT / "src"
 MODULES = ["core", "entity", "misc", "object", "render", "structure", "system"]
 FUNCS_FILES = {m: SRC / m / "_funcs.hpp" for m in MODULES}

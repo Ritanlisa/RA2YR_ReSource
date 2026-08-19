@@ -85,7 +85,7 @@ except Exception as e:
         # Execute via IDA's idat64.exe with -S flag (run script)
         # This starts IDA headless and runs our script
         ida_exe = os.environ.get("IDA_EXE", r"C:\Program Files\IDA Pro 9\idat.exe")
-        db_path = os.environ.get("IDA_DB", r"D:\RA2MD\gamemd.exe.i64")
+        db_path = os.environ.get("IDA_DB", r"H:\RA2MD\gamemd.exe.i64")
 
         result = subprocess.run(
             [ida_exe, "-A", "-S" + path, db_path],

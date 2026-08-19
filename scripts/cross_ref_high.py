@@ -1,6 +1,6 @@
 import json
 
-with open('D:/RA2YR_ReSource/scripts/ida_class_coverage.json') as f:
+with open('H:/RA2YR_ReSource/scripts/ida_class_coverage.json') as f:
     data = json.load(f)
 
 defined_names = {d['ida_name'] for d in data['DEFINED']}

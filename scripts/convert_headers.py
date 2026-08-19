@@ -5,7 +5,7 @@ Reads original headers, applies rename mapping, writes to src/ mirror structure.
 
 import os, re
 
-BASE = r"D:\RA2YR_ReSource"
+BASE = r"H:\RA2YR_ReSource"
 SRC = os.path.join(BASE, "include", "gamemd")
 DST = os.path.join(BASE, "src")
 
