@@ -1,0 +1,14 @@
+{
+  "total_functions": 19067,
+  "named_count": 19067,
+  "unnamed_count": 0,
+  "class_member_count": 10370,
+  "sub_count": 1407,
+  "class_count": 1178,
+  "struct_type_count": 491,
+  "nullsub_count": 171,
+  "snapshot_timestamp": "2026-06-17T03:52:58Z",
+  "idb_saved": true,
+  "idb_path": "D:\\RA2YR_ReSource\\decompile-results\\gamemd.exe.i64",
+  "notes": "sub_count counts ::sub_HEX patterns only (unnamed class members). nullsub_count counts nullsub_N style functions."
+}

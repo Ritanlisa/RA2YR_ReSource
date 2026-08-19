@@ -1,0 +1,109 @@
+#pragma once
+
+#include "object_type.hpp"
+#include "core/enums.hpp"
+#include "core/vector.hpp"
+
+namespace gamemd {
+
+#ifndef GAMEMD_USING_AbstractType
+#define GAMEMD_USING_AbstractType
+using ra2::game::AbstractType;
+#endif
+
+
+
+
+class ParticleSystemClass;
+
+class ParticleTypeClass : public ObjectTypeClass
+{
+public:
+    static constexpr AbstractType AbsID = AbstractType::ParticleType;
+    static DynamicVectorClass<ParticleTypeClass*>* Array;
+    // design: static function, no direct binary match in IDA
+    static ParticleTypeClass* Find(const char* pID);
+    // unmatched: no callgraph reference and no git history record
+    static ParticleTypeClass* FindOrCreate(const char* pID);
+
+    virtual ~ParticleTypeClass() = default;  // 0x645950 (as ddtor)
+
+    virtual AbstractType __stdcall whatAmI() const override; // 0x645920 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x645910 (as GetObjectSize)
+
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x645940 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
+
+    ParticleTypeClass(const char* pID) noexcept;
+
+protected:
+    struct noinit_t {};
+    // unmatched: no callgraph reference and no git history record
+    ParticleTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
+
+public:
+    int ArrayIndex;
+    int ParticleTypeClass_field_28C;
+    BehavesLike BehavesLike;
+    int ParticleTypeClass_field_294;
+    int ImpactParticle;
+    int Damage;
+    int StartScale;
+    int ParticleTypeClass_field_2A4;
+    int StartStateAI;
+    int EndStateAI;
+    int StateAIAdvance;
+    int ParticleTypeClass_field_2B4;
+    int Translucency;
+    int ParticleTypeClass_field_2BC;
+    int Velocity;
+    int ParticleTypeClass_field_2C4;
+    int DeleteOnStateLimit;
+    int ParticleTypeClass_field_2CC;
+    int WindEffect;
+    int Elasticity;
+    int MaxDC;
+    int MaxEC;
+    int ParticleTypeClass_field_2E0;
+    int ParticleTypeClass_field_2E4;
+    uint32_t VelocityRandom;
+    uint32_t Regenerate;
+    uint32_t SpiralDeltaPerStep;
+    bool Flamer;
+    bool SpawnsFromOwnerCoords;
+    bool OneFrame;
+    bool ParticleTypeClass_field_bool_2F4;
+    bool Gas;
+    bool Spark;
+    bool Railgun;
+    bool Fire;
+    bool Smoke;
+    bool SpawnFrames;
+    bool UpdateUI;
+    bool ParticleTypeClass_field_bool_300;
+    bool ParticleTypeClass_field_bool_301;
+    bool Translucent;
+    bool ShowShadow;
+    bool AltPal;
+    bool StateAIAdvanceFudgeCalc;
+    uint8_t padding_306[2];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void GetClassIdentifier();  // 0x477900 -- ParticleTypeClass::GetClassIdentifier
+    int LoadTypeData(int a1);  // 0x477930 -- ParticleTypeClass::LoadTypeData
+    void* QueryInterface(int a1);  // 0x477ac0 -- ParticleTypeClass::QueryInterface
+    int Release(int a1, int a2);  // 0x4784f0 -- ParticleTypeClass::Release
+    void* EnsureCapacity(int a1);  // 0x4788e0 -- ParticleTypeClass::EnsureCapacity
+    int LoadFromINI(int a1);  // 0x644f50 -- ParticleTypeClass::LoadFromINI
+    int ProcessPower(int a1);  // 0x6454e0 -- ParticleTypeClass::ProcessPower
+    int GetType(int a1, int a2);  // 0x6458b0 -- ParticleTypeClass::GetType
+    // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2);  // 0x645660
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6457a0
+    // === FUNCS-MOVE (END) ===
+};
+
+} // namespace gamemd
+

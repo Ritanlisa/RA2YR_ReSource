@@ -1,0 +1,805 @@
+================================================================================
+IDA CLASS HEADER COVERAGE REPORT
+================================================================================
+
+## Summary
+
+  Total IDA classes (ClassName::Method format):   1120
+  Total IDA methods:                              9852
+  Total header class definitions:                 337
+  Total header forward-declarations:              23
+
+  Category                   Classes       %   Methods       %
+  ------------------------------------------------------------
+  DEFINED                        193   17.2%     4703   47.7%
+  TEMPLATE                       150   13.4%     1586   16.1%
+  FORWARD_ONLY                    14    1.2%      234    2.4%
+  LIKELY_MODULE                   34    3.0%      937    9.5%
+  MISSING                        729   65.1%     2392   24.3%
+
+  Missing priority: HIGH=133, MEDIUM=30, LOW=566
+
+================================================================================
+## 1. DEFINED CLASSES (193)
+================================================================================
+
+These IDA classes have a matching class/struct definition in our headers.
+
+   365 methods  TechnoClass                                   -> class   TechnoClass::ra2::game  (src\object\techno.hpp)
+   301 methods  BuildingClass                                 -> class   BuildingClass::gamemd  (src\structure\building.hpp)
+   279 methods  JumpjetLocomotionClass                        -> class   JumpjetLocomotionClass  (src\misc\locomotion.hpp)
+   249 methods  AbstractClass                                 -> class   AbstractClass::ra2::game  (src\object\abstract.hpp)
+   212 methods  HouseClass                                    -> class   HouseClass::gamemd  (src\house\house.hpp)
+   159 methods  ObjectClass                                   -> class   ObjectClass::ra2::game  (src\object\object.hpp)
+   135 methods  FootClass                                     -> class   FootClass::ra2::game  (src\object\foot.hpp)
+   127 methods  CellClass                                     -> class   CellClass::gamemd  (src\system\cell.hpp)
+   120 methods  ScenarioClass                                 -> class   ScenarioClass::gamemd  (src\system\scenario.hpp)
+   102 methods  InfantryClass                                 -> class   InfantryClass::gamemd  (src\structure\infantry.hpp)
+   100 methods  TacticalClass                                 -> class   TacticalClass::gamemd  (src\system\tactical.hpp)
+    82 methods  MapClass                                      -> class   MapClass::gamemd  (src\render\display.hpp)
+    82 methods  INIClass                                      -> class   INIClass::gamemd  (src\system\ini_class.hpp)
+    64 methods  VectorClass                                   -> class   VectorClass::ra2::game  (src\core\vector.hpp)
+    60 methods  TeamClass                                     -> class   TeamClass::gamemd  (src\team\team.hpp)
+    56 methods  AircraftClass                                 -> class   AircraftClass::gamemd  (src\structure\aircraft.hpp)
+    51 methods  ObjectTypeClass                               -> class   ObjectTypeClass::ra2  (src\type\object_type.hpp)
+    50 methods  RulesClass                                    -> class   RulesClass  (src\misc\rules.hpp)
+    47 methods  SidebarClass                                  -> class   SidebarClass  (src\ui\sidebar.hpp)
+    46 methods  Dialog                                        -> class   DialogClass::gamemd  (src\ui\gadget.hpp)
+    44 methods  SessionClass                                  -> class   SessionClass::gamemd  (src\network\session.hpp)
+    43 methods  UnitClass                                     -> class   UnitClass::gamemd  (src\structure\unit.hpp)
+    43 methods  MPBattleClass                                 -> class   MPBattleClass  (src\network\multiplayer.hpp)
+    39 methods  Cell                                          -> class   CellClass::gamemd  (src\system\cell.hpp)
+    37 methods  BuildingTypeClass                             -> class   BuildingTypeClass::ra2  (src\type\building_type.hpp)
+    36 methods  DSurface                                      -> class   DSurface  (src\render\surface.hpp)
+    35 methods  AnimClass                                     -> class   AnimClass::gamemd  (src\entity\anim.hpp)
+    35 methods  FactoryClass                                  -> class   FactoryClass::gamemd  (src\system\factory.hpp)
+    35 methods  ParticleSystemClass                           -> class   ParticleSystemClass::gamemd  (src\entity\particle_system.hpp)
+    34 methods  SuperClass                                    -> class   SuperClass::gamemd  (src\misc\super_weapon.hpp)
+    33 methods  RadarClass                                    -> class   RadarClass::gamemd  (src\system\radar.hpp)
+    32 methods  BulletClass                                   -> class   BulletClass::gamemd  (src\entity\bullet.hpp)
+    31 methods  XSurface                                      -> class   XSurface  (src\render\surface.hpp)
+    30 methods  TerrainClass                                  -> class   TerrainClass::gamemd  (src\entity\terrain.hpp)
+    29 methods  DisplayClass                                  -> class   DisplayClass  (src\render\display.hpp)
+    29 methods  HouseTypeClass                                -> class   HouseTypeClass::ra2  (src\house\house_type.hpp)
+    27 methods  MissionClass                                  -> class   MissionClass::ra2::game  (src\object\mission.hpp)
+    27 methods  WarheadTypeClass                              -> class   WarheadTypeClass::ra2  (src\type\type_classes.hpp)
+    26 methods  Tactical                                      -> class   TacticalClass::gamemd  (src\system\tactical.hpp)
+    26 methods  IPXInterfaceClass                             -> class   IPXInterfaceClass  (src\network\winsock.hpp)
+    26 methods  WWMouseClass                                  -> class   WWMouseClass::gamemd  (src\core\init_stubs.hpp)
+    24 methods  CCFileClass                                   -> class   CCFileClass::gamemd  (src\core\init_stubs.hpp)
+    24 methods  TechnoTypeClass                               -> class   TechnoTypeClass::ra2  (src\type\techno_type.hpp)
+    24 methods  FileClass                                     -> class   FileClass  (src\system\file_class.hpp)
+    24 methods  TypeList                                      -> struct  TypeList::gamemd  (src\entity\tiberium.hpp)
+    23 methods  TriggerClass                                  -> class   TriggerClass::gamemd  (src\team\trigger.hpp)
+    22 methods  MouseClass                                    -> class   MouseClass  (src\ui\mouse.hpp)
+    22 methods  AnimTypeClass                                 -> class   AnimTypeClass::ra2  (src\type\anim_type.hpp)
+    22 methods  NullModemClass                                -> class   NullModemClass  (src\network\connection.hpp)
+    21 methods  CampaignClass                                 -> class   CampaignClass::gamemd  (src\team\campaign.hpp)
+    21 methods  InfantryTypeClass                             -> class   InfantryTypeClass::ra2  (src\type\infantry_type.hpp)
+    20 methods  Object                                        -> class   ObjectClass::ra2::game  (src\object\object.hpp)
+    20 methods  OverlayTypeClass                              -> class   OverlayTypeClass::ra2  (src\type\overlay_type.hpp)
+    20 methods  IPXManagerClass                               -> class   IPXManagerClass  (src\network\connection.hpp)
+    20 methods  BlitTransXlatAlpha_ushort                     -> class   BlitTransXlatAlpha  (src\render\blitter.hpp)
+    20 methods  ParticleClass                                 -> class   ParticleClass::gamemd  (src\entity\particle.hpp)
+    20 methods  RadSiteClass                                  -> class   RadSiteClass::gamemd  (src\entity\rad_site.hpp)
+    19 methods  DynamicVector                                 -> class   DynamicVectorClass::gamemd  (src\core\vector.hpp)
+    19 methods  BuildingLightClass                            -> class   BuildingLightClass::gamemd  (src\structure\building_light.hpp)
+    19 methods  VoxelAnimClass                                -> class   VoxelAnimClass::gamemd  (src\entity\voxel_anim.hpp)
+    19 methods  UnitTypeClass                                 -> class   UnitTypeClass::ra2  (src\type\type_classes.hpp)
+    18 methods  TriggerTypeClass                              -> class   TriggerTypeClass::gamemd  (src\team\trigger.hpp)
+    18 methods  BulletTypeClass                               -> class   BulletTypeClass::ra2  (src\type\bullet_type.hpp)
+    18 methods  TagTypeClass                                  -> class   TagTypeClass::gamemd  (src\team\tag.hpp)
+    18 methods  WaveClass                                     -> class   WaveClass::gamemd  (src\entity\wave.hpp)
+    17 methods  Surface                                       -> class   Surface  (src\render\surface.hpp)
+    17 methods  Scenario                                      -> class   ScenarioClass::gamemd  (src\system\scenario.hpp)
+    17 methods  SuperWeaponTypeClass                          -> class   SuperWeaponTypeClass::ra2  (src\misc\super_weapon.hpp)
+    17 methods  ParticleTypeClass                             -> class   ParticleTypeClass::ra2  (src\type\particle_type.hpp)
+    17 methods  TagClass                                      -> class   TagClass::gamemd  (src\team\tag.hpp)
+    16 methods  LinkedList                                    -> class   LinkedList  (src\system\mix_file.hpp)
+    16 methods  FoggedObjectClass                             -> class   FoggedObjectClass  (src\render\fog.hpp)
+    16 methods  TerrainTypeClass                              -> class   TerrainTypeClass::ra2  (src\type\terrain_type.hpp)
+    15 methods  AircraftTypeClass                             -> class   AircraftTypeClass::ra2  (src\type\aircraft_type.hpp)
+    15 methods  WeaponTypeClass                               -> class   WeaponTypeClass::ra2  (src\type\type_classes.hpp)
+    15 methods  TiberiumClass                                 -> class   TiberiumClass::gamemd  (src\entity\tiberium.hpp)
+    15 methods  ScriptTypeClass                               -> class   ScriptTypeClass::gamemd  (src\team\script.hpp)
+    14 methods  CCINIClass                                    -> class   CCINIClass::gamemd  (src\core\init_stubs.hpp)
+    14 methods  BinkMovieHandle                               -> class   BinkMovieHandle  (src\render\movie.hpp)
+    13 methods  AbstractTypeClass                             -> class   AbstractTypeClass::ra2  (src\type\abstract_type.hpp)
+    13 methods  BufferIOFileClass                             -> class   BufferIOFileClass  (src\system\buffer_io_file.hpp)
+    13 methods  SmudgeTypeClass                               -> class   SmudgeTypeClass::ra2  (src\type\smudge_type.hpp)
+    13 methods  UDPInterfaceClass                             -> class   UDPInterfaceClass  (src\network\winsock.hpp)
+    12 methods  Vector                                        -> class   VectorClass::ra2::game  (src\core\vector.hpp)
+    12 methods  BaseClass                                     -> struct  BaseClass::gamemd  (src\house\base.hpp)
+    12 methods  File                                          -> class   FileClass  (src\system\file_class.hpp)
+    12 methods  Terrain                                       -> class   TerrainClass::gamemd  (src\entity\terrain.hpp)
+    12 methods  GadgetClass                                   -> class   GadgetClass::gamemd  (src\ui\gadget.hpp)
+    12 methods  LayerClass                                    -> struct  LayerClass::gamemd  (src\system\layer.hpp)
+    12 methods  VoxelAnimTypeClass                            -> class   VoxelAnimTypeClass::gamemd  (src\render\voxel.hpp)
+    11 methods  ParticleSystemTypeClass                       -> class   ParticleSystemTypeClass::ra2  (src\type\particle_system_type.hpp)
+    11 methods  House                                         -> class   HouseClass::gamemd  (src\house\house.hpp)
+    11 methods  ConnectionClass                               -> class   ConnectionClass  (src\network\connection.hpp)
+    11 methods  SideClass                                     -> class   SideClass::ra2  (src\house\side.hpp)
+    11 methods  LocomotionClass                               -> class   LocomotionClass  (src\misc\locomotion.hpp)
+    11 methods  RadioClass                                    -> class   RadioClass::ra2::game  (src\object\radio.hpp)
+    11 methods  FileSystem                                    -> class   FileSystem  (src\system\file_system.hpp)
+    10 methods  Sidebar                                       -> class   SidebarClass  (src\ui\sidebar.hpp)
+    10 methods  MixFileClass                                  -> class   MixFileClass  (src\system\mix_file.hpp)
+    10 methods  WalkLocomotionClass                           -> class   WalkLocomotionClass  (src\misc\locomotion.hpp)
+     9 methods  AudioController                               -> class   AudioController::ra2::game  (src\object\object.hpp)
+     9 methods  Radar                                         -> class   RadarClass::gamemd  (src\system\radar.hpp)
+     9 methods  LightSourceClass                              -> class   LightSourceClass  (src\render\light_source.hpp)
+     9 methods  ScriptClass                                   -> class   ScriptClass::gamemd  (src\team\script.hpp)
+     8 methods  BSurface                                      -> class   BSurface  (src\render\surface.hpp)
+     8 methods  DriveLocomotionClass                          -> class   DriveLocomotionClass  (src\misc\locomotion.hpp)
+     8 methods  DropPodLocomotionClass                        -> class   DropPodLocomotionClass  (src\misc\locomotion.hpp)
+     8 methods  PowerClass                                    -> class   PowerClass  (src\ui\power.hpp)
+     8 methods  ShipLocomotionClass                           -> class   ShipLocomotionClass  (src\misc\locomotion.hpp)
+     8 methods  TubeClass                                     -> class   TubeClass::gamemd  (src\entity\tube.hpp)
+     7 methods  Power                                         -> class   PowerClass  (src\ui\power.hpp)
+     7 methods  INIEntry                                      -> struct  INIEntry::gamemd  (src\system\ini_class.hpp)
+     7 methods  TabClass                                      -> class   TabClass  (src\ui\tab.hpp)
+     7 methods  TextRenderer                                  -> class   TextRenderer::gamemd  (src\render\text_render.hpp)
+     7 methods  Mouse                                         -> class   MouseClass  (src\ui\mouse.hpp)
+     7 methods  IPersistStream                                -> class   IPersistStream::ra2::game  (src\object\abstract.hpp)
+     6 methods  VocClass                                      -> class   VocClass  (src\misc\audio.hpp)
+     6 methods  IRTTITypeInfo                                 -> class   IRTTITypeInfo::ra2::game  (src\object\abstract.hpp)
+     6 methods  DynamicVectorClass                            -> class   DynamicVectorClass::gamemd  (src\core\vector.hpp)
+     6 methods  IPXConnClass                                  -> class   IPXConnClass  (src\network\connection.hpp)
+     6 methods  ConvertClass                                  -> class   ConvertClass::gamemd  (src\core\init_stubs.hpp)
+     6 methods  JumpjetLocomotion                             -> class   JumpjetLocomotionClass  (src\misc\locomotion.hpp)
+     6 methods  FlyLocomotionClass                            -> class   FlyLocomotionClass  (src\misc\locomotion.hpp)
+     6 methods  Trigger                                       -> class   TriggerClass::gamemd  (src\team\trigger.hpp)
+     6 methods  WinsockInterfaceClass                         -> class   WinsockInterfaceClass  (src\network\winsock.hpp)
+     5 methods  CD                                            -> class   CD  (src\system\cd_drive.hpp)
+     5 methods  CounterClass                                  -> struct  CounterClass::gamemd  (src\house\house.hpp)
+     5 methods  Checksummer                                   -> class   Checksummer::gamemd  (src\core\checksummer.hpp)
+     5 methods  Mission                                       -> class   MissionClass::ra2::game  (src\object\mission.hpp)
+     5 methods  LightningStorm                                -> class   LightningStorm::gamemd  (src\misc\super_weapon.hpp)
+     5 methods  Session                                       -> class   SessionClass::gamemd  (src\network\session.hpp)
+     5 methods  RawFileClass                                  -> class   RawFileClass  (src\system\file_class.hpp)
+     5 methods  RocketLocomotionClass                         -> class   RocketLocomotionClass  (src\misc\locomotion.hpp)
+     5 methods  ToolTipManager                                -> class   ToolTipManager  (src\ui\tool_tip.hpp)
+     5 methods  TunnelLocomotionClass                         -> class   TunnelLocomotionClass  (src\misc\locomotion.hpp)
+     4 methods  WTFMode                                       -> class   WTFMode::gamemd  (src\core\game_loop.hpp)
+     4 methods  Building                                      -> class   BuildingClass::gamemd  (src\structure\building.hpp)
+     4 methods  MessageListClass                              -> class   MessageListClass  (src\ui\message_list.hpp)
+     4 methods  Crate                                         -> struct  Crate::gamemd  (src\system\map.hpp)
+     4 methods  BuildingType                                  -> class   BuildingTypeClass::ra2  (src\type\building_type.hpp)
+     4 methods  Waypoint                                      -> class   WaypointClass::gamemd  (src\system\waypoint.hpp)
+     4 methods  HoverLocomotionClass                          -> class   HoverLocomotionClass  (src\misc\locomotion.hpp)
+     4 methods  Factory                                       -> class   FactoryClass::gamemd  (src\system\factory.hpp)
+     4 methods  MechLocomotionClass                           -> class   MechLocomotionClass  (src\misc\locomotion.hpp)
+     4 methods  DialogClass                                   -> class   DialogClass::gamemd  (src\ui\gadget.hpp)
+     4 methods  GameConfig                                    -> struct  GameConfig::gamemd  (src\app\cmdline.hpp)
+     4 methods  Rules                                         -> class   RulesClass  (src\misc\rules.hpp)
+     4 methods  WalkLocomotion                                -> class   WalkLocomotionClass  (src\misc\locomotion.hpp)
+     4 methods  CommandClass                                  -> class   CommandClass  (src\ui\command_class.hpp)
+     3 methods  Map                                           -> class   Map  (src\wdt\wdt.hpp)
+     3 methods  LightConvertClass                             -> class   LightConvertClass::gamemd  (src\system\convert_class.hpp)
+     3 methods  TrajectoryHelper                              -> struct  TrajectoryHelper::gamemd  (src\system\map.hpp)
+     3 methods  WaypointClass                                 -> class   WaypointClass::gamemd  (src\system\waypoint.hpp)
+     3 methods  Memory                                        -> class   Memory  (src\core\memory.hpp)
+     3 methods  Team                                          -> class   TeamClass::gamemd  (src\team\team.hpp)
+     3 methods  VoxelAnimType                                 -> class   VoxelAnimTypeClass::gamemd  (src\render\voxel.hpp)
+     2 methods  BufferIOFile                                  -> class   BufferIOFileClass  (src\system\buffer_io_file.hpp)
+     2 methods  FacingClass                                   -> struct  FacingClass  (src\misc\locomotion.hpp)
+     2 methods  BuildingLight                                 -> class   BuildingLightClass::gamemd  (src\structure\building_light.hpp)
+     2 methods  MixFile                                       -> class   MixFileClass  (src\system\mix_file.hpp)
+     2 methods  NukeFlash                                     -> class   NukeFlash::gamemd  (src\misc\super_weapon.hpp)
+     2 methods  PsyDom                                        -> class   PsyDom::gamemd  (src\misc\super_weapon.hpp)
+     2 methods  Connection                                    -> class   ConnectionClass  (src\network\connection.hpp)
+     2 methods  Tiberium                                      -> class   TiberiumClass::gamemd  (src\entity\tiberium.hpp)
+     2 methods  Matrix3D                                      -> struct  Matrix3D  (src\core\math.hpp)
+     2 methods  Campaign                                      -> class   Campaign  (src\wdt\wdt.hpp)
+     2 methods  Display                                       -> class   DisplayClass  (src\render\display.hpp)
+     2 methods  OverlayClass                                  -> class   OverlayClass::gamemd  (src\entity\overlay.hpp)
+     2 methods  Techno                                        -> class   TechnoClass::ra2::game  (src\object\techno.hpp)
+     2 methods  VoxClass                                      -> class   VoxClass  (src\misc\audio.hpp)
+     2 methods  VoxelAnim                                     -> struct  VoxelAnim  (src\render\vxl_format.hpp)
+     2 methods  WinsockInterface                              -> class   WinsockInterfaceClass  (src\network\winsock.hpp)
+     1 methods  AbstractType                                  -> class   AbstractTypeClass::ra2  (src\type\abstract_type.hpp)
+     1 methods  GenericNode                                   -> class   GenericNode  (src\system\mix_file.hpp)
+     1 methods  INoticeSink                                   -> class   INoticeSink::ra2::game  (src\core\interfaces.hpp)
+     1 methods  INoticeSource                                 -> class   INoticeSource::ra2::game  (src\core\interfaces.hpp)
+     1 methods  BaseNodeClass                                 -> struct  BaseNodeClass::gamemd  (src\house\base.hpp)
+     1 methods  Particle                                      -> class   ParticleClass::gamemd  (src\entity\particle.hpp)
+     1 methods  Node                                          -> class   Node  (src\system\mix_file.hpp)
+     1 methods  ColorStruct                                   -> struct  ColorStruct  (src\core\math.hpp)
+     1 methods  DroppodLocomotionClass                        -> class   DropPodLocomotionClass  (src\misc\locomotion.hpp)
+     1 methods  ProgressTimer                                 -> struct  ProgressTimer  (src\fundamentals.hpp)
+     1 methods  FoggedObject                                  -> class   FoggedObjectClass  (src\render\fog.hpp)
+     1 methods  State                                         -> class   State  (src\wdt\wdt.hpp)
+     1 methods  GenericList                                   -> struct  GenericList::gamemd  (src\system\ini_class.hpp)
+     1 methods  ScreenSaver                                   -> class   ScreenSaver::gamemd  (src\core\game_loop.hpp)
+     1 methods  NullModem                                     -> class   NullModemClass  (src\network\connection.hpp)
+     1 methods  Gadget                                        -> class   GadgetClass::gamemd  (src\ui\gadget.hpp)
+     1 methods  MIXFile                                       -> class   MixFileClass  (src\system\mix_file.hpp)
+     1 methods  Super                                         -> class   SuperClass::gamemd  (src\misc\super_weapon.hpp)
+     1 methods  TeleportLocomotionClass                       -> class   TeleportLocomotionClass  (src\misc\locomotion.hpp)
+     1 methods  ChronoScreenEffect                            -> class   ChronoScreenEffect::gamemd  (src\misc\super_weapon.hpp)
+     1 methods  Conflict                                      -> class   Conflict  (src\wdt\wdt.hpp)
+
+================================================================================
+## 2. TEMPLATE INSTANTIATIONS (150)
+================================================================================
+
+These IDA classes are template instantiations (VectorClass_ptr_XXX, etc).
+Base template exists in headers - COUNTS AS DEFINED.
+
+    44 methods  CComObject_CChatEventSink___ATL                    -> VectorClass  (src\core\vector.hpp)
+    41 methods  VectorClass_ptr_BuildChoiceClass_int_ouseClass     -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_AITriggerTypeClass                 -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_TeamClass                          -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_TubeClass                          -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_HouseTypeClass                     -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_SmudgeTypeClass                    -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_AnimTypeClass                      -> VectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_ptr_ParticleTypeClass                  -> VectorClass  (src\core\vector.hpp)
+    22 methods  DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode -> DynamicVectorClass  (src\core\vector.hpp)
+    22 methods  VectorClass_W4PassabilityType                      -> VectorClass  (src\core\vector.hpp)
+    21 methods  VectorClass_ptr_GlobalPacketType                   -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_IsometricTileClass                 -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_BuildingLightClass                 -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_UnitClass                          -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_CampaignClass                      -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_ScriptTypeClass                    -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_AircraftTypeClass                  -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_VoxelAnimTypeClass                 -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_BuildingType                           -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_UAngerStruct                           -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_LightSourceClass                   -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_ColorScheme                        -> VectorClass  (src\core\vector.hpp)
+    17 methods  VectorClass_ptr_PlanningMemberClass                -> VectorClass  (src\core\vector.hpp)
+    17 methods  TypeList_VoxelAnim                                 -> TypeList  (src\entity\tiberium.hpp)
+    16 methods  VectorClass_ptr_SuperClass                         -> VectorClass  (src\core\vector.hpp)
+    16 methods  VectorClass_UDirtyAreaStruct                       -> VectorClass  (src\core\vector.hpp)
+    15 methods  VectorClass_ptr_MSSfx                              -> VectorClass  (src\core\vector.hpp)
+    14 methods  VectorClass_ptr_ConvertClass                       -> VectorClass  (src\core\vector.hpp)
+    13 methods  VectorClass_ptr_Reestablish                        -> VectorClass  (src\core\vector.hpp)
+    13 methods  VectorClass_ptr_BulletClass                        -> VectorClass  (src\core\vector.hpp)
+    13 methods  VectorClass_ptr_CrossDissolveEffect                -> VectorClass  (src\core\vector.hpp)
+    13 methods  VectorClass_cptr_MultiMission                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_ScriptClass                        -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_VoxelAnimClass                     -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_WarheadTypeClass                   -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_WeaponTypeClass                    -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_AirstrikeClass                     -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ushort                                 -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_FoggedObjectClass                  -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_CaptureManagerClass                -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_DamageGroup                        -> VectorClass  (src\core\vector.hpp)
+    12 methods  DynamicVectorClass_PAD                             -> DynamicVectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_EBolt                              -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_EgoClass                           -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_EMPulseClass                       -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_ThemeControl                       -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass__N                                     -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_IonBlastClass                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_LaserDrawClass                     -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_N                                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_Point2D                                -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_ObjectTypeClass                    -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_ParasiteClass                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_RadBeam                            -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_RadSiteClass                       -> VectorClass  (src\core\vector.hpp)
+    12 methods  TypeList_cptr_TerrainTypeClass                     -> TypeList  (src\entity\tiberium.hpp)
+    12 methods  VectorClass_ptr_SlaveManagerClass                  -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_UUndoInfoStruct                        -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_SpawnManagerClass                  -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_K                                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_SubTitle                           -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_TagTypeClass                       -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_TemporalClass                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_TEventClass                        -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_TiberiumClass                      -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_VocClass                           -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_MovieHandle                        -> VectorClass  (src\core\vector.hpp)
+    12 methods  VectorClass_ptr_WaypointPathClass                  -> VectorClass  (src\core\vector.hpp)
+    11 methods  VectorClass_ptr_AlphaShapeClass                    -> VectorClass  (src\core\vector.hpp)
+    11 methods  DynamicVectorClass_uint                            -> DynamicVectorClass  (src\core\vector.hpp)
+    11 methods  VectorClass_UtagCONNECTDATA                        -> VectorClass  (src\core\vector.hpp)
+    11 methods  VectorClass_ptr_MapRegionClass                     -> VectorClass  (src\core\vector.hpp)
+    11 methods  VectorClass_ptr_SpotLightClass                     -> VectorClass  (src\core\vector.hpp)
+    11 methods  VectorClass_ptr_RadarEventClass                    -> VectorClass  (src\core\vector.hpp)
+    10 methods  VectorClass_ptr_LightConvertClass                  -> VectorClass  (src\core\vector.hpp)
+    10 methods  TypeList_Infantry                                  -> TypeList  (src\entity\tiberium.hpp)
+     8 methods  VectorClass_USubzoneTrackingStruct                 -> VectorClass  (src\core\vector.hpp)
+     8 methods  VectorClass_Wstring                                -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MixFileClass                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_TPoint3D_int                           -> VectorClass  (src\core\vector.hpp)
+     7 methods  TypeList_TechnoType                                -> TypeList  (src\entity\tiberium.hpp)
+     7 methods  VectorClass_Building                               -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_TriggerClass                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_TriggerTypeClass                   -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_ParticleSystemClass                -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_WaveClass                          -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_OverlayClass                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_AircraftClass                      -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_HouseClass                         -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_FactoryClass                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_SideClass                          -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_TaskForceClass                     -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_TeamTypeClass                      -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_OverlayTypeClass                   -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_TerrainTypeClass                   -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_UnitTypeClass                      -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_InfantryTypeClass                  -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_BulletTypeClass                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_IsometricTileTypeClass             -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_ParticleSystemTypeClass            -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_SuperWeaponTypeClass               -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_AbstractTypeClass                  -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_UScoutStruct                           -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_CCINIClass                         -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_PAG                                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_PendingCellClass_LightSourceClass  -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_LineTrail                          -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_PBG                                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_UHashObject_uint_uint                  -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_UHashObject_uint_SubzoneConn           -> VectorClass  (src\core\vector.hpp)
+     7 methods  DynamicVectorClass_ptr_NodeNameType                -> DynamicVectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MSTextEntry                        -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MapSelection                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MSSfxEntry                         -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_UAcceleratorTracker                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MultiplayerTeam                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_PlanningTokenClass                 -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_MultiMission                       -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_PhoneEntryClass                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_E                                      -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_VoxClass                           -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_rc_ptr_WDTTerritory                    -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass -> VectorClass  (src\core\vector.hpp)
+     7 methods  VectorClass_PAE                                    -> VectorClass  (src\core\vector.hpp)
+     6 methods  VectorClass_ptr_BombClass                          -> VectorClass  (src\core\vector.hpp)
+     6 methods  VectorClass_cptr_CommandClass                      -> VectorClass  (src\core\vector.hpp)
+     6 methods  TypeList_Particle                                  -> TypeList  (src\entity\tiberium.hpp)
+     6 methods  VectorClass_ptr_AnimClass                          -> VectorClass  (src\core\vector.hpp)
+     6 methods  VectorClass_ptr_BuildingTypeClass                  -> VectorClass  (src\core\vector.hpp)
+     6 methods  VectorClass_ptr_PlanningBranchClass                -> VectorClass  (src\core\vector.hpp)
+     5 methods  TypeList_cptr_ParticleSystemTypeClass              -> TypeList  (src\entity\tiberium.hpp)
+     4 methods  VectorClass_Cell                                   -> VectorClass  (src\core\vector.hpp)
+     4 methods  DynamicVectorClass_AnimType                        -> DynamicVectorClass  (src\core\vector.hpp)
+     4 methods  DynamicVectorClass_SubzoneConn                     -> DynamicVectorClass  (src\core\vector.hpp)
+     3 methods  VectorClass_Techno                                 -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_BombClass                              -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_ptr_InfantryClass                      -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_InfantryPtr                            -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_ReestablishPtr                         -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_SuperPtr                               -> VectorClass  (src\core\vector.hpp)
+     1 methods  DynamicVectorClass_cptr_AnimTypeClass              -> DynamicVectorClass  (src\core\vector.hpp)
+     1 methods  TypeList_BuildingType                              -> TypeList  (src\entity\tiberium.hpp)
+     1 methods  VectorClass_Ptr                                    -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_Scenario                               -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_Scenario3                              -> VectorClass  (src\core\vector.hpp)
+     1 methods  VectorClass_Scenario2                              -> VectorClass  (src\core\vector.hpp)
+     1 methods  DynamicVectorClass_cptr_VoxelAnimTypeClass         -> DynamicVectorClass  (src\core\vector.hpp)
+
+================================================================================
+## 3. FORWARD-ONLY DECLARATIONS (14)
+================================================================================
+
+These IDA classes have forward declarations in headers but no full definition.
+
+    60 methods  TActionClass                                   in: ['src\\team\\trigger.hpp']
+    32 methods  CaptureManagerClass                            in: ['src\\object\\techno.hpp']
+    23 methods  TeamTypeClass                                  in: ['src\\team\\team.hpp']
+    21 methods  SlaveManagerClass                              in: ['src\\object\\techno.hpp']
+    15 methods  ParasiteClass                                  in: ['src\\object\\foot.hpp']
+    14 methods  AirstrikeClass                                 in: ['src\\object\\techno.hpp']
+    14 methods  SpawnManagerClass                              in: ['src\\object\\techno.hpp']
+    13 methods  TEventClass                                    in: ['src\\team\\trigger.hpp']
+    12 methods  BombClass                                      in: ['src\\object\\object.hpp']
+    12 methods  TemporalClass                                  in: ['src\\object\\techno.hpp']
+    10 methods  WaypointPathClass                              in: ['src\\system\\waypoint.hpp']
+     5 methods  CellStruct                                     in: ['src\\network\\multiplayer.hpp']
+     2 methods  RadBeam                                        in: ['src\\object\\techno.hpp']
+     1 methods  ColorScheme                                    in: ['src\\system\\tactical.hpp', 'src\\type\\bullet_type.hpp', 'src\\ui\\sidebar.hpp']
+
+================================================================================
+## 4. LIKELY MODULE/NAMESPACE GROUPINGS (34)
+================================================================================
+
+These are likely organizational modules (Audio, Network, Voxel) using :: notation,
+not actual C++ class names. Functions grouped under a module namespace in IDA.
+
+   256 methods  CreateTeamCommand                              Module/namespace grouping, not a class
+    74 methods  MPCooperative                                  Module/namespace grouping, not a class
+    71 methods  Network                                        Module/namespace grouping, not a class
+    46 methods  RandomMap                                      Module/namespace grouping, not a class
+    40 methods  String                                         Module/namespace grouping, not a class
+    30 methods  Audio                                          Module/namespace grouping, not a class
+    30 methods  Game                                           Module/namespace grouping, not a class
+    30 methods  ScriptAction                                   Module/namespace grouping, not a class
+    29 methods  LoadOptions                                    Module/namespace grouping, not a class
+    28 methods  AudioStream                                    Module/namespace grouping, not a class
+    26 methods  EventClass                                     Module/namespace grouping, not a class
+    24 methods  GameClass                                      Module/namespace grouping, not a class
+    22 methods  Voxel                                          Module/namespace grouping, not a class
+    21 methods  WebBrowser                                     Module/namespace grouping, not a class
+    20 methods  AudioQueue                                     Module/namespace grouping, not a class
+    20 methods  NetworkLobby                                   Module/namespace grouping, not a class
+    20 methods  WideString                                     Module/namespace grouping, not a class
+    17 methods  MSEngine                                       Module/namespace grouping, not a class
+    16 methods  Array                                          Module/namespace grouping, not a class
+    16 methods  Math                                           Module/namespace grouping, not a class
+    16 methods  MSFrameAnim                                    Module/namespace grouping, not a class
+    14 methods  SaveGame                                       Module/namespace grouping, not a class
+    14 methods  Options                                        Module/namespace grouping, not a class
+    13 methods  Coord                                          Module/namespace grouping, not a class
+    13 methods  Timer                                          Module/namespace grouping, not a class
+    13 methods  TaskForceClass                                 Module/namespace grouping, not a class
+     5 methods  Debug                                          Module/namespace grouping, not a class
+     4 methods  TimerClass                                     Module/namespace grouping, not a class
+     3 methods  NetworkClass                                   Module/namespace grouping, not a class
+     2 methods  Event                                          Module/namespace grouping, not a class
+     1 methods  ArrayClass                                     Module/namespace grouping, not a class
+     1 methods  AudioClass                                     Module/namespace grouping, not a class
+     1 methods  VoxelClass                                     Module/namespace grouping, not a class
+     1 methods  Winsock                                        Module/namespace grouping, not a class
+
+================================================================================
+## 5. MISSING CLASSES (729)
+================================================================================
+
+These IDA classes have NO corresponding header definition anywhere in the project.
+
+--- HIGH PRIORITY (referenced in existing code): 133 classes ---
+
+    27 methods  HashTable                                 refs: src\core\init_stubs.hpp, src\system\radar.hpp
+       methods: DestroyHashTableINIClass, BinarySearch, BinarySearchAlt, LookupAndMark, FindAndMark, Get, Grow2, ComputeHash
+    22 methods  BinkMovie                                 refs: src\render\movie.cpp
+       methods: Close, Open, Stop, InitFromFile, Pause, IsAtEnd, Play, RenderLoop
+    14 methods  MoveFeedback                              refs: src\core\globals.cpp
+       methods: ClearBuffer, PointerToIndex, Update, Show, FindItem, AddRef, Draw, QueryInterface
+    12 methods  LoadGame                                  refs: src\core\menu_select.cpp
+       methods: LoadIteratedData, ClearAllSlots, DeserializePointerArrays, LoadBlock68, CleanupArray, LoadPointArray, LoadTriggerEvents, RemoveItem
+    12 methods  SuperWeapon                               refs: src\type\building_type.hpp
+       methods: CreateUnits, CreateNukePayload, SelectSuperWeaponTarget, FireSuperWeaponHouseClass, EvaluateAITarget, UpdateSuperWeaponsOwnedHouseClass, UpdateSuperWeaponsUnavailableHouseClass, SerializeSuperWeaponState
+    11 methods  Buffer                                    refs: src\render\surface.hpp, src\system\cc_file.hpp, src\core\init_game.cpp
+       methods: CreateDirectSound, sub_40A6D0, CompareEqual, FillCircularBufferScroll, Cleanup, Init, Constructor_VectorClass_ObjectClass___, RotateBufferCrypto
+    11 methods  Delegate                                  refs: src\structure\unit.cpp
+       methods: ProcessBitmapStream, sub_42DF40, sub_4A2780, Constructor_GenericNode, ClearVectorAndStraw, DestroyStraw, DestroyPipe, Dispatch
+    10 methods  Struct                                    refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: ZeroInit32, sub_48B2A0, ZeroInitAndSetup, Zero3, Copy6Bytes, ZeroInitAndSetup_0, ZeroInitAndSetup_0_0, InitTriple256
+    10 methods  StreamClass                               refs: src\render\surface.cpp
+       methods: WriteBytes, ReadAndSeek, Set2, Set, IsInactive, Vt32Thunk, ResetPosition, SetDirty
+    10 methods  Stream                                    refs: src\core\init_game.cpp
+       methods: FlushAndReset, GetChecked, ReadIntArray, WriteBlock, ReadPacket, WriteIntArray, ReadOLEObjects, InitializeBinkAudio
+    10 methods  TacticalMap                               refs: src\core\enums.hpp, src\core\init_stubs.hpp, src\system\tactical.hpp
+       methods: ComputeScreenTint, Redraw, MultiplyByScalar, DrawCursor, Construct, RenderCell, Render, RenderAllObjects
+     9 methods  AudioMixer                                refs: src\misc\audio.hpp, src\core\init_game.cpp
+       methods: Init, PlayBuffer, RequestOrEndBuffer, SetVolume, Shutdown, PlaySample, ProcessAudioFrame, SetupChannels
+     9 methods  DDraw                                     refs: src\core\ddraw_init.hpp, src\app\ddraw_init.cpp, src\core\init_game.cpp
+       methods: ReleaseSurfaces, Init, LogError, CapabilityCheck, CheckCapabilities, WaitForIdle, GetStatus, CleanupSurfaces
+     8 methods  Skirmish                                  refs: src\core\enums.hpp, src\network\session.hpp, src\ui\menu_screen.hpp
+       methods: FillPlayerNames, SetupAllSpawnLocations, ReadSettings, RandomizeSettings, RenderPreview, EnableSpawnButtons, Setup_DlgProc, SetupGame
+     8 methods  Movie                                     refs: src\core\init_stubs.hpp, src\render\bink_control.hpp, src\render\movie.hpp
+       methods: GetSectionID, GetState, SetupScreen, GetSection, Play, PlayWrapper, Update, sub_720A80
+     8 methods  unknown                                   refs: src\core\ddraw_init.hpp, src\object\object.hpp, src\object\techno.hpp
+       methods: ddtor, Write, Seek, AddRef, Release, Init, Read, QueryInterface
+     7 methods  ThemeClass                                refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: RequestBuffer, GetValue, ReadThemeEntry, InitializeThemes, Play, ClearQueues, GetField
+     7 methods  MovementAI                                refs: src\object\foot.hpp, src\object\foot.cpp, src\object\object.cpp
+       methods: sub_487E00, sub_4A5150, Check, MainFootClass, sub_5163B0, StepFootClass, Begin
+     7 methods  MultiplayerSiege                          refs: src\misc\rules.cpp
+       methods: Read, Write, StubReturnFalse, ProcessTurn, CheckStatus, GetResult, QueryInterface
+     6 methods  Count                                     refs: src\core\enums.hpp, src\core\vector.hpp, src\entity\tiberium.hpp
+       methods: DecrementRefCountsAudio, SetupAllCountriesLobby, GetCountQueue, Get, Release, ddtor
+     6 methods  Rect                                      refs: src\render\surface.cpp
+       methods: Set, Construct, Union, SetRedraw, Set4, Inflate
+     6 methods  Palette                                   refs: src\core\init_stubs.hpp, src\type\techno_type.hpp, src\ui\gadget.hpp
+       methods: 6BitTo16Bit, FindClosestColor, ConvertIndices, Preview_Generate, sub_661350, LoadFile
+     6 methods  SelectTeamCommand                         refs: src\core\init_game.cpp
+       methods: Construct, AddRef, Release, ddtor, Read, Do
+     6 methods  AddTeamCommand                            refs: src\core\init_game.cpp
+       methods: Construct, AddRef, Release, ddtor, Read, Do
+     6 methods  TauntCommandClass                         refs: src\core\init_game.cpp
+       methods: Construct, AddRef, Release, ddtor, Read, Do
+     6 methods  PageUserCommandClass                      refs: src\core\init_game.cpp
+       methods: Constructor, AddRef, Release, ddtor, Read, Do
+     6 methods  DeleteCommandClass                        refs: src\core\init_game.cpp
+       methods: Constructor, AddRef, Release, ddtor, Read, Undo
+     6 methods  SHA1                                      refs: src\system\mix_file.cpp
+       methods: sub_69D8C0, Process, Compute, Transform, Reset, ComputeThunk
+     5 methods  InputManager_ProcessEvents                refs: src\core\menu_select.cpp
+       methods: AddRef, Release, StubReturnFalse, Stub, Vtable
+     5 methods  Warhead                                   refs: src\render\voxel.hpp, src\type\anim_type.hpp, src\type\weapon_type.hpp
+       methods: GetWarheadSound, sub_452820, ApplyDamage, ApplyPostDamageEffects, ProcessDamageArea
+     5 methods  Color                                     refs: src\entity\tiberium.hpp, src\network\session.hpp, src\render\shp_struct.hpp
+       methods: ConvertToRGB, Lerp2, ScaleRGB, Lerp, RGBFromFloat
+     5 methods  CenterTeamCommand                         refs: src\core\init_game.cpp
+       methods: Construct, AddRef, Release, Read, Do
+     5 methods  Commands                                  refs: src\ui\command_class.hpp
+       methods: AddRef, ddtor, Release, StubReturn8550640, Execute
+     5 methods  ScreenCaptureCommandClass                 refs: src\core\init_game.cpp
+       methods: Constructor, AddRef, ddtor, Release, Execute
+     5 methods  Movement                                  refs: src\core\enums.hpp, src\object\object.hpp, src\object\foot.cpp
+       methods: CalcVelocity, Check, sub_5B2970, CompareAbsCoords, UpdateLocomotion
+     5 methods  UnholyAlliance                            refs: src\misc\rules.cpp
+       methods: Read, Write, Seek, GetResult, QueryInterface
+     5 methods  AudioSettings                             refs: src\core\menu_select.cpp
+       methods: SetFlag70, SetFlag68, DlgProc, Check, ComputeTransform
+     4 methods  Text                                      refs: src\ui\gadget.hpp, src\wdt\wdt.hpp, src\core\menu_select.cpp
+       methods: Layout, MeasureWidth, sub_5BD3D0, DrawRepeated
+     4 methods  Animation                                 refs: src\core\enums.hpp, src\entity\anim.hpp, src\entity\terrain.hpp
+       methods: UpdateBuildingAnimations, GetProgress, UpdateBobOffset, LoadSidebarAnimations
+     4 methods  Control                                   refs: src\misc\audio.hpp
+       methods: DispatchClick, RepositionControlsDialog, CheckControlTypeDialog, CreateControlDialog
+     4 methods  Screen                                    refs: src\core\enums.hpp, src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Capture, TransitionRender, TransitionLoop, sub_690360
+     4 methods  Multiplayer                               refs: src\core\menu_select.cpp
+       methods: Screen, FindStartPositions, sub_68C2B0, ShowProgress
+     4 methods  EventQueue                                refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Process, Read, Check, CheckPosition
+     4 methods  Camera                                    refs: src\type\weapon_type.hpp
+       methods: UpdateTilt, StubReturnFalse, StubReturnVoid, StubReturn
+     4 methods  Random                                    refs: src\core\enums.hpp, src\entity\ebolt.hpp, src\system\scenario.hpp
+       methods: Gaussian, State, Range, sub_661850
+     4 methods  Player                                    refs: src\core\enums.hpp, src\core\spawn_mode.cpp
+       methods: FindByName, BuildListString, IsObserver, RandomAssign
+     4 methods  GameOption                                refs: src\wdt\wdt.hpp
+       methods: CheckDuplicate, GetField, SetDescriptionWStr, SetDigest
+     4 methods  FogOfWar                                  refs: src\misc\rules.hpp, src\network\session.hpp, src\wdt\wdt.hpp
+       methods: RevealArea, RenderCell, RevealCell, Render
+     4 methods  TClassFactory_MechLocomotionClass         refs: src\misc\locomotion.hpp
+       methods: AddRef, GetClassName, ddtor, GetSize
+     4 methods  BuildingLoadQueue                         refs: src\structure\building.cpp, src\structure\infantry.cpp
+       methods: GetNext, Find, FindObject, FindBuilding
+     3 methods  COM                                       refs: src\core\com_defs.hpp, src\entity\ebolt.hpp, src\misc\locomotion.hpp
+       methods: GetClassID, AddRef, ReleaseRef
+     3 methods  Hash                                      refs: src\system\ini_class.hpp
+       methods: ComputeHashSHA1, InsertOrdered, Reset
+     3 methods  CopyProtection                            refs: src\core\init_stubs.hpp, src\core\copy_protection.cpp, src\ui\dialog_win32.cpp
+       methods: CheckLauncher, NotifyLauncher, CheckProtectedData
+     3 methods  WinMain                                   refs: src\core\com_defs.hpp, src\app\main.cpp, src\core\com_register.cpp
+       methods: CleanupResource, Constructor_VectorClass_Wstring_, ShutdownCleanup
+     3 methods  DamageArea                                refs: src\system\map.hpp, src\system\map.cpp
+       methods: ApplyScatter, sub_4D0180, sub_565660
+     3 methods  LinkClass                                 refs: src\ui\gadget.hpp
+       methods: Destroy, Destru_vt00, Destruct
+     3 methods  Matrix3x4                                 refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Identity, Translate, TransformCell
+     3 methods  AsyncIO                                   refs: src\core\init_game.cpp
+       methods: Shutdown, Read, WaitCompletion
+     3 methods  GameSettings                              refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Read, sub_5FB050, FindFlagged
+     3 methods  Theme                                     refs: src\core\init_game.cpp, src\core\menu_select.cpp
+       methods: QueueSong, Stop, IsPlaying
+     3 methods  Selection                                 refs: src\object\object.hpp
+       methods: SetCurrent, GetFlag, ClearGlobals
+     2 methods  RefCount                                  refs: src\misc\locomotion.hpp, src\ui\mouse.hpp
+       methods: Decrement, Increment
+     2 methods  Voice                                     refs: src\misc\audio.hpp, src\core\init_game.cpp
+       methods: Stop, DetachChannel
+     2 methods  Mixer                                     refs: src\system\radar.hpp, src\system\xcc_names.hpp
+       methods: ReleaseChannel, RequestAllBuffers
+     2 methods  ThemeManager                              refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: ProcessCallback, Cleanup
+     2 methods  FrameTimer                                refs: src\misc\locomotion.hpp, src\ui\sidebar.hpp
+       methods: HasRemaining, Init25
+     2 methods  BitTextClass                              refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: ParseFontData, LoadFont
+     2 methods  Font                                      refs: src\core\init_game.cpp
+       methods: sub_4346C0, Print
+     2 methods  CreditsScreen                             refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Init, DlgProc
+     2 methods  Window                                    refs: src\app\game_loop.cpp
+       methods: IsVisible, ClampToScreen
+     2 methods  Time                                      refs: src\network\session.hpp
+       methods: GetElapsedMS, FormatDate
+     2 methods  Frame                                     refs: src\render\vxl_format.hpp, src\ui\mouse.hpp, src\wdt\wdt.hpp
+       methods: Present, Init
+     2 methods  MainMenu                                  refs: src\core\menu_select.cpp
+       methods: Screen, DlgProc
+     2 methods  KeyboardConfig                            refs: src\core\init_game.cpp, src\misc\rules.cpp
+       methods: LoadINI, ReleaseBuffer
+     2 methods  Turret                                    refs: src\core\enums.hpp, src\object\techno.hpp, src\type\techno_type.hpp
+       methods: GetTransform, LoadVoxelTurretAndBarrel
+     2 methods  SyncDelay                                 refs: src\core\menu_select.cpp
+       methods: Start, Check
+     2 methods  GameMode                                  refs: src\core\enums.hpp, src\network\multiplayer.hpp, src\network\session.hpp
+       methods: IsValid, ReadFlagsFromINI
+     2 methods  SkirmishSetup                             refs: src\core\enums.hpp
+       methods: DlgProc, sub_608260
+     2 methods  Progress                                  refs: src\ui\sidebar.hpp
+       methods: GetAverage, GetWeighted
+     2 methods  Diplomacy                                 refs: src\core\menu_select.cpp
+       methods: GetField, DlgProc
+     2 methods  ScrollClass                               refs: src\ui\mouse.hpp
+       methods: Scroll, Read
+     2 methods  Float                                     refs: src\core\enums.hpp
+       methods: Accumulate, SubtractClamped
+     2 methods  Render                                    refs: src\ui\g_screen.hpp, src\core\menu_select.cpp
+       methods: DrawLine, DrawTileBitmap
+     2 methods  VoxelPaletteClass                         refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: LoadFromFile, ConvertFromFile
+     1 methods  Queue                                     refs: src\core\enums.hpp
+       methods: GetNext
+     1 methods  Carryall                                  refs: src\type\aircraft_type.hpp
+       methods: MissionStateMachine
+     1 methods  Locomotor                                 refs: src\core\com_defs.hpp, src\type\techno_type.hpp, src\type\warhead_type.hpp
+       methods: GetSpeed
+     1 methods  Helper                                    refs: src\system\ini_class.cpp
+       methods: ProcessData
+     1 methods  Compare                                   refs: src\object\techno.cpp
+       methods: Field96
+     1 methods  CampaignScreen                            refs: src\core\menu_select.cpp
+       methods: Init
+     1 methods  CaptureManager                            refs: src\core\enums.hpp
+       methods: FreeAll
+     1 methods  Isometric                                 refs: src\system\cell.cpp
+       methods: InitTables
+     1 methods  Input                                     refs: src\ui\message_list.hpp, src\entity\voxel.cpp
+       methods: OffsetToDirection
+     1 methods  Value                                     refs: src\fundamentals.hpp, src\core\target.hpp, src\entity\tiberium.hpp
+       methods: InRange
+     1 methods  Bounds                                    refs: src\entity\voxel.hpp, src\object\object.hpp, src\ui\sidebar.hpp
+       methods: Subtract
+     1 methods  Return                                    refs: src\core\enums.hpp, src\core\globals.cpp, src\structure\aircraft.cpp
+       methods: HRESULT_Fail
+     1 methods  Event_Dispatch                            refs: src\core\menu_select.cpp
+       methods: Return0
+     1 methods  CRC32                                     refs: src\core\checksummer.hpp, src\system\xcc_names.hpp, src\system\cc_file.cpp
+       methods: Compute
+     1 methods  IStream                                   refs: src\core\interfaces.hpp, src\entity\anim.hpp, src\entity\bullet.hpp
+       methods: Read
+     1 methods  Menu                                      refs: src\core\enums.hpp, src\core\menu_select.cpp, src\ui\menu_screen.cpp
+       methods: Reset
+     1 methods  DropPod                                   refs: src\misc\locomotion.hpp
+       methods: ProcessLanding
+     1 methods  BuildingAnim                              refs: src\type\building_type.hpp
+       methods: GetType
+     1 methods  Main                                      refs: src\render\display.cpp, src\render\movie.cpp
+       methods: CreateDialog
+     1 methods  Byte                                      refs: src\render\vxl_format.hpp
+       methods: Zero
+     1 methods  Stub                                      refs: src\core\globals.cpp, src\render\surface.cpp
+       methods: InfiniteLoop
+     1 methods  BINK                                      refs: src\render\movie.hpp, src\core\init_game.cpp, src\core\menu_select.cpp
+       methods: Background_Setup
+     1 methods  Credits                                   refs: src\core\init_stubs.hpp, src\network\session.hpp, src\core\init_game.cpp
+       methods: Screen
+     1 methods  CSF                                       refs: src\core\globals.cpp, src\core\init_game.cpp, src\core\menu_select.cpp
+       methods: GetTeamString
+     1 methods  CursorPositionCommandClass                refs: src\core\init_game.cpp
+       methods: Constructor
+     1 methods  Explosion                                 refs: src\core\enums.hpp, src\type\techno_type.hpp
+       methods: RemoveItem
+     1 methods  NetworkAddress                            refs: src\app\cmdline.hpp, src\core\globals.cpp
+       methods: Assign
+     1 methods  GUID                                      refs: src\core\com_defs.hpp, src\core\interfaces.hpp, src\misc\locomotion.hpp
+       methods: Compare
+     1 methods  Type                                      refs: src\entity\anim.hpp, src\entity\bullet.hpp, src\entity\overlay.hpp
+       methods: CheckAmbiguity
+     1 methods  Transform                                 refs: src\render\vxl_format.hpp
+       methods: Copy
+     1 methods  TextBuffer                                refs: src\core\init_stubs.hpp, src\ui\tool_tip.hpp, src\core\init_game.cpp
+       methods: Init
+     1 methods  MultiplayerManBattle                      refs: src\misc\rules.cpp
+       methods: QueryInterface
+     1 methods  AI                                        refs: src\house\base.hpp, src\object\foot.cpp
+       methods: CreateMCV
+     1 methods  Settings                                  refs: src\core\init_game.cpp, src\core\spawn_config.cpp
+       methods: CheckString
+     1 methods  Config                                    refs: src\network\session.hpp, src\network\session.cpp
+       methods: SaveObserverMode
+     1 methods  HotkeyOptions                             refs: src\core\menu_select.cpp
+       methods: DlgProc
+     1 methods  Init                                      refs: src\core\game_loop.hpp, src\core\init_stubs.hpp, src\misc\rules.hpp
+       methods: StubPlaceholder
+     1 methods  Block                                     refs: src\core\init_game.cpp
+       methods: Copy
+     1 methods  CoordStruct                               refs: src\core\coordinate.hpp, src\core\interfaces.hpp, src\core\math.hpp
+       methods: Set2
+     1 methods  Shroud                                    refs: src\core\enums.hpp, src\misc\rules.hpp
+       methods: ProcessCellVisibility
+     1 methods  Process                                   refs: src\core\game_loop.hpp, src\core\init_stubs.hpp, src\core\interfaces.hpp
+       methods: WaitForExit
+     1 methods  BulkData                                  refs: src\misc\rules.cpp
+       methods: InitMissionHashing
+     1 methods  TriggerActionQueue                        refs: src\system\scenario.cpp
+       methods: ProcessAll
+     1 methods  Weapon                                    refs: src\type\techno_type.hpp
+       methods: DestroyTerrain
+     1 methods  AnimSystem                                refs: src\core\init_stubs.hpp, src\core\init_game.cpp
+       methods: Init
+     1 methods  WOL                                       refs: src\core\enums.hpp
+       methods: QueryInterface
+     1 methods  GameLoop                                  refs: src\core\menu_select.cpp
+       methods: Thunk
+     1 methods  Socket                                    refs: src\network\connection.hpp, src\network\winsock.hpp, src\network\connection.cpp
+       methods: ConfigureBuffers
+     1 methods  Draw                                      refs: src\object\object.hpp, src\type\overlay_type.hpp, src\ui\gadget.hpp
+       methods: Ellipse
+
+--- MEDIUM PRIORITY (10+ methods, no direct refs): 30 classes ---
+
+    39 methods  CheckListClass                          
+       methods: ?, Clear, ScrollUp, GetSelected, SetItemData, GetItem, OnClick, COMStub
+    27 methods  COMObject                               
+       methods: Release, DetachPrimary, IsValid, SetMember10, GetMember09, ActivateThunk, FindInList, TrackCurrent
+    26 methods  CStreamClass                            
+       methods: AddRef, Release, QueryInterface, StubReturnNullPointer, StreamRead, ?, CopyStreamToBuffer, Read
+    25 methods  BlitTransXlatAlphaZRead_ushort          
+       methods: Blit_ZRead_AlphaBlend, CallBlit0, CallBlit0_0, CallBlit0_1, BlitAlpha, CallBlit0_2, CallBlit0_3, CallBlit0_4
+    25 methods  DropListClass                           
+       methods: OnClick, ?, Draw, HitTest, OnDblClick, SetFocus, KillFocus, GetItemData
+    22 methods  COMClass                                
+       methods: RegisterAll, ReleaseRef, initInterface, queryProperty, setProperty, invokeMethod, getTypeInfo, registerObject
+    20 methods  IsometricTileTypeClass                  
+       methods: CleanupMembers, LoadTileFileData, GetTerrainType, GetHeight, vt_entry_6C, ProcessPower, LoadTypeData, SaveToINI
+    16 methods  AITriggerTypeClass                      
+       methods: GetClassIdentifier, LoadTypeData, SaveToINI, ProcessPower, EnemyHouseOwns, CivilianHouseOwns, OwnerHouseOwns, IronCurtainCharged
+    16 methods  LoadingScreen                           
+       methods: Render, AdjustForResolution, sub_554150, GetValue, FindLoadScreenAnim, GetColorScheme, GetBackgroundImage, GetOverlayImage
+    16 methods  ComStreamClass                          
+       methods: initStream, closeStream, SetSize, Read, Commit, Write, Seek, ddtor
+    15 methods  WinModemClass                           
+       methods: Construct, AddRef, Release, GetClassIdentifier, Init, ReadSerial, ReadBytes, WriteSerial
+    14 methods  BlitTransLucent25AlphaZReadWrite_ushort 
+       methods: AddRef, ddtor, BlitRect, GetSize, Blit_RLE_Xlat, CallBlit0, Blit_RLE_Remap, CallBlit0_0
+    14 methods  IPXGlobalConnClass                      
+       methods: Flush, GetQueueSize, ConnectToHost, Disconnect, GetAddress, CheckStatus, ReceivePacket, Send
+    14 methods  ToolTipClass                            
+       methods: updateString, initString, Destructor, ddtor, write, seek, addRef, readString
+    14 methods  UDPInterfaceClass_Destru                
+       methods: GetQueueSize, Flush, Send, SetAddress, GetAddress, Bind, ddtor, Connect
+    13 methods  SliderClass                             
+       methods: ?, QueryInterface, Constructor, Destructor, GetValue, OnClick, Draw, SetValue
+    13 methods  ScreenEffect                            
+       methods: StubReturnFalse, StubReturnVoid, StubReturn, Stub, Stub1, Stub2, Stub3, Stub4
+    13 methods  RadarHashVector                         
+       methods: Clear, GetCount, Seek, AddRef, Release, ddtor, Read, Write
+    13 methods  CChatEventSink                          
+       methods: HandleServerList, HandleChatEvent, HandleChannelJoin, HandleLobbyPlayerUpdate, HandleUserSearch, HandleChatChannelList, DeleteAndZero, GrowBuffer
+    12 methods  PlayerClass                             
+       methods: sub_430F70, ExecuteCommand, CheckHumanPlayer, SetTargetOrClear, AssignPlayerIndex_0, AssignPlayerIndex, IsValidIndex, SetHouse
+    12 methods  RLEBlitTransZRemapXlatAlpha_ushort      
+       methods: Blit_Alpha_ZReadWrite_Lucent25, CallBlit0, Blit_Alpha_ZReadWrite_Lucent50, CallBlit0_0, Blit_Alpha_ZReadWrite, CallBlit0_1, AddRef, Release
+    12 methods  MapSeedClass                            
+       methods: Constructor, Release, AddRef, ddtor, Generate, GetCell, SetCell, Validate
+    11 methods  EnumConnectionPointsClass               
+       methods: QueryInterface, AddRef, Release, ddtor, Next, Skip, Constructor_VectorClass_IConnectionPoint___, ClearBuffer
+    11 methods  DiskLaserClass                          
+       methods: Fire, Update, PointerGotInvalid, DiskLaserClass, Stat, Write, Seek, ddtor
+    11 methods  VeinholeMonsterClass                    
+       methods: Construct, Constructor, UpdateGrowth, ProcessExpansion, PlaceGrowth, Update, CheckStatus, ddtor
+    10 methods  AlphaShapeClass                         
+       methods: CTOR, Constructor, SD_vt03, SD_vt11, SD_vt12, SD_vt13, SD_vt05, SD_vt06
+    10 methods  ColorListClass                          
+       methods: GetIndex, AddColor, GetCount, SetIndex, DrawColorRect, GetColor, QueryInterface, SetColor
+    10 methods  BlitTransLucent25Alpha_ushort           
+       methods: AddRef, ddtor, BlitRect, GetSize, Blit_ZRead_AlphaBlend, CallBlit0, CallBlit0_0, CallBlit0_1
+    10 methods  ScoreScreen                             
+       methods: Display, Check, sub_68EF20, DisplayTimeText, LoadAudio, LoadScoreFont, LoadCountryFlags, Constructor
+    10 methods  SwizzleManagerClass                     
+       methods: Register, Here_I_Am, ConvertNodes, Clear, Process, Add, AddRef, Release
+
+--- LOW PRIORITY (<10 methods, no direct refs): 566 classes ---
+
+  These 566 classes have <10 IDA methods each and no direct references in existing code.
+  Most are minor utility classes, COM stubs, or single-function groupings.
+     9 methods  VtableStub
+     9 methods  SortedArray
+     9 methods  BuildingPlacement
+     9 methods  CampaignScore
+     9 methods  Lobby
+     9 methods  ConnectionPointClass
+     9 methods  ComPtr
+     9 methods  MapSeed
+     8 methods  EMPulseClass
+     8 methods  AbstractClassVector
+     8 methods  ListClass
+     8 methods  GaugeClass
+     8 methods  InfantryTypeVector
+     8 methods  NetworkGameSetup
+     8 methods  ListBox
+     8 methods  CoopCampaignVector
+     8 methods  MSVQAnim
+     8 methods  ScoreAnimClass
+     8 methods  TClassFactory_CampaignClass
+     7 methods  Function
+  ... and 546 more LOW priority classes

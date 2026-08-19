@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "source": "ida-pro-mcp type_inspect(name=ClassName, include_members=true)",
+    "idb": "decompile-results/gamemd.exe.i64",
+    "scope": "BuildingClass inheritance chain (T1 bounded starter set)",
+    "note": "Authoritative IDA type-system layout (declared as __cppobj structs in the IDB). Offsets are absolute byte offsets within each struct. A base class appears as ONE member with empty name whose 'type' is another class here; build_signals.py flattens these recursively. Bodies are opaque char[] pads sized to each class's exact sizeof (Abstract=36, Object=172, Mission=212, Radio=240, Techno=1312, Building=1824) derived from IDA constructors/operator-new (NOT member_lookup.json). Full per-member naming is a separate follow-up batch.",
+    "regenerate": "Declare the __cppobj chain via ida-pro-mcp declare_type (deps-first), then call type_inspect(include_members=true) for each class and store the raw result under 'classes'."
+  },
+  "classes": {
+    "AbstractClass": {
+      "name": "AbstractClass",
+      "exists": true,
+      "size": 36,
+      "is_udt": true,
+      "members": [
+        {"name": "vtable0", "offset": "0x0", "size": 4, "type": "void *"},
+        {"name": "vtable1", "offset": "0x4", "size": 4, "type": "void *"},
+        {"name": "vtable2", "offset": "0x8", "size": 4, "type": "void *"},
+        {"name": "vtable3", "offset": "0xc", "size": 4, "type": "void *"},
+        {"name": "uniqueId", "offset": "0x10", "size": 4, "type": "unsigned int"},
+        {"name": "abstractFlags", "offset": "0x14", "size": 4, "type": "unsigned int"},
+        {"name": "nextArrayIndex", "offset": "0x18", "size": 4, "type": "unsigned int"},
+        {"name": "referenceCount", "offset": "0x1c", "size": 4, "type": "int"},
+        {"name": "needsSave", "offset": "0x20", "size": 1, "type": "unsigned __int8"},
+        {"name": "_pad21", "offset": "0x21", "size": 3, "type": "unsigned __int8[3]"}
+      ]
+    },
+    "ObjectClass": {
+      "name": "ObjectClass",
+      "exists": true,
+      "size": 172,
+      "is_udt": true,
+      "members": [
+        {"name": "", "offset": "0x0", "size": 36, "type": "AbstractClass"},
+        {"name": "_objectClassBody", "offset": "0x24", "size": 136, "type": "char[136]"}
+      ]
+    },
+    "MissionClass": {
+      "name": "MissionClass",
+      "exists": true,
+      "size": 212,
+      "is_udt": true,
+      "members": [
+        {"name": "", "offset": "0x0", "size": 172, "type": "ObjectClass"},
+        {"name": "_missionClassBody", "offset": "0xac", "size": 40, "type": "char[40]"}
+      ]
+    },
+    "RadioClass": {
+      "name": "RadioClass",
+      "exists": true,
+      "size": 240,
+      "is_udt": true,
+      "members": [
+        {"name": "", "offset": "0x0", "size": 212, "type": "MissionClass"},
+        {"name": "_radioClassBody", "offset": "0xd4", "size": 28, "type": "char[28]"}
+      ]
+    },
+    "TechnoClass": {
+      "name": "TechnoClass",
+      "exists": true,
+      "size": 1312,
+      "is_udt": true,
+      "members": [
+        {"name": "", "offset": "0x0", "size": 240, "type": "RadioClass"},
+        {"name": "_technoClassBody", "offset": "0xf0", "size": 1072, "type": "char[1072]"}
+      ]
+    },
+    "BuildingClass": {
+      "name": "BuildingClass",
+      "exists": true,
+      "size": 1824,
+      "is_udt": true,
+      "members": [
+        {"name": "", "offset": "0x0", "size": 1312, "type": "TechnoClass"},
+        {"name": "Type", "offset": "0x520", "size": 4, "type": "void *"},
+        {"name": "Factory", "offset": "0x524", "size": 4, "type": "void *"},
+        {"name": "_buildingClassBody", "offset": "0x528", "size": 504, "type": "char[504]"}
+      ]
+    }
+  }
+}
