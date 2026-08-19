@@ -20,7 +20,7 @@ import json, re, sys
 from pathlib import Path
 from collections import defaultdict
 
-ROOT = Path(r"D:\RA2YR_ReSource")
+ROOT = Path(r"H:\RA2YR_ReSource")
 OUT = ROOT / "src" / "_generated" / "symbol_anchors.hpp"
 
 def norm(a): return "0X" + str(a).upper().replace("0X", "").zfill(8)

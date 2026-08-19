@@ -3,15 +3,15 @@
 import json, re
 from collections import defaultdict
 
-with open(r'D:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
     existing_map = json.load(f)
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
     classes_data = json.load(f)
 cls = classes_data['classes']
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
     funcs_data = json.load(f)
 funcs = funcs_data['functions']
-with open(r'D:\RA2YR_ReSource\decompile-results\gamemd.exe.h', encoding='utf-8', errors='ignore') as f:
+with open(r'H:\RA2YR_ReSource\decompile-results\gamemd.exe.h', encoding='utf-8', errors='ignore') as f:
     h_content = f.read()
 
 # Parse .h

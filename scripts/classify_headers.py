@@ -6,8 +6,8 @@ import re
 import json
 from pathlib import Path
 
-SRC_DIR = Path(r"D:\RA2YR_ReSource\src")
-OUTPUT = Path(r"D:\RA2YR_ReSource\scripts\header_classification.json")
+SRC_DIR = Path(r"H:\RA2YR_ReSource\src")
+OUTPUT = Path(r"H:\RA2YR_ReSource\scripts\header_classification.json")
 
 # Files excluded as UTILITY (no class definitions)
 UTILITY_EXCLUDE = {

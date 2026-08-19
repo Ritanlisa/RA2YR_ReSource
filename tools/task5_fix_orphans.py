@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 
-PROJECT_ROOT = Path(r'D:\RA2YR_ReSource')
+PROJECT_ROOT = Path(r'H:\RA2YR_ReSource')
 SRC_DIR = PROJECT_ROOT / 'src'
 
 def addr_int(addr_str):

@@ -11,8 +11,8 @@ Uses brace-depth tracking to skip function bodies (code inside { } after declara
 import re, json
 from pathlib import Path
 
-SRC_DIR = Path(r"D:\RA2YR_ReSource\src")
-OUTPUT_DIR = Path(r"D:\RA2YR_ReSource\tools")
+SRC_DIR = Path(r"H:\RA2YR_ReSource\src")
+OUTPUT_DIR = Path(r"H:\RA2YR_ReSource\tools")
 SKIP_FILES = {"_funcs.hpp", "menu_globals_gen.cpp"}
 SKIP_DIRS = {"_generated", "gen"}
 

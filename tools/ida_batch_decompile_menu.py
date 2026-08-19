@@ -9,7 +9,7 @@ import ida_funcs
 import ida_typeinf
 
 # Load function list
-funcs_json_path = r"D:\RA2YR_ReSource\injectFunctionTest\functions.json"
+funcs_json_path = r"H:\RA2YR_ReSource\injectFunctionTest\functions.json"
 with open(funcs_json_path, 'r', encoding='utf-8') as f:
     all_funcs = json.load(f)
 
@@ -66,7 +66,7 @@ for addr, name, size in menu_addrs:
         print(f"  Decompiled: {decompiled}, Errors: {errors}")
 
 # Write output
-output_path = r"D:\RA2YR_ReSource\.omo\evidence\menu_decompilations.json"
+output_path = r"H:\RA2YR_ReSource\.omo\evidence\menu_decompilations.json"
 with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 

@@ -1,7 +1,7 @@
 import json, idc, idaapi
 
 # Cross-reference YRpp member names with IDA struct names
-with open('D:/RA2YR_ReSource/tools/yrpp_full.json') as f:
+with open('H:/RA2YR_ReSource/tools/yrpp_full.json') as f:
     yrpp = json.load(f)
 
 # Check key classes

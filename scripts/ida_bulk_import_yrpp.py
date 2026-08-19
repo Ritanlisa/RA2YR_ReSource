@@ -2,7 +2,7 @@
 import re
 import idc
 
-YRPP_DIR = r"D:\RA2YR_ReSource\YRpp"
+YRPP_DIR = r"H:\RA2YR_ReSource\YRpp"
 
 # Base class sizes (measured from IDA / known from compiled binary)
 # These are the sizes of full base class instances (including vtable ptrs)

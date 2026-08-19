@@ -1,5 +1,5 @@
 import os
-BASE = r"D:\RA2YR_ReSource\src"
+BASE = r"H:\RA2YR_ReSource\src"
 c = 0
 for root, _, files in os.walk(BASE):
     for fn in files:

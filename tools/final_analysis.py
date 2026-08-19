@@ -6,7 +6,7 @@ import os
 import re
 from collections import defaultdict, Counter
 
-PROJECT_ROOT = r"D:\RA2YR_ReSource"
+PROJECT_ROOT = r"H:\RA2YR_ReSource"
 TYPE_MAP_PATH = os.path.join(PROJECT_ROOT, "type_map.json")
 RAW_CONSTRAINTS_PATH = os.path.join(PROJECT_ROOT, "tools", "type_infer", "constraints", "raw_constraints.json")
 MEMBER_TYPES_PATH = os.path.join(PROJECT_ROOT, "anchors", "member_types.json")

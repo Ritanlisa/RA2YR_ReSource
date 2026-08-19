@@ -1,7 +1,7 @@
 """Show clean pseudocode for specified functions."""
 import json, re, os, sys
 
-d = r'D:\RA2YR_ReSource\tools\sub_decompiles'
+d = r'H:\RA2YR_ReSource\tools\sub_decompiles'
 targets = sys.argv[1:] if len(sys.argv) > 1 else ['00401190']
 
 for bn in targets:

@@ -10,7 +10,7 @@ Handles:
 """
 import os, re, json
 
-root = r'D:\RA2YR_ReSource'
+root = r'H:\RA2YR_ReSource'
 
 # --- Load data ---
 with open(os.path.join(root, 'scripts', 'ida_classes_raw.json'), 'r') as f:

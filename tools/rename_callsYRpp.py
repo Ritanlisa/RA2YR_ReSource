@@ -207,6 +207,6 @@ for r in with_class[:30]:
     print(f"{r['addr']} {r['old']:25s} {r['size']:4d}B → {r['new'] or 'none'} | {r['class']}")
 
 # Save to JSON
-with open('D:/RA2YR_ReSource/tools/rename_batch.json', 'w') as f:
+with open('H:/RA2YR_ReSource/tools/rename_batch.json', 'w') as f:
     json.dump(results, f, indent=2)
 print(f"\nSaved {len(results)} entries to rename_batch.json")

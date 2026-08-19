@@ -5,8 +5,8 @@ Matches OpenRA's PackageEntry.HashFilename with TS-style padding.
 """
 import binascii, os, sys
 
-DB_PATH = "D:/RA2YR_ReSource/xcc/data/ra2 mix description.txt"
-OUT_PATH = "D:/RA2YR_ReSource/include/gamemd/system/xcc_names.hpp"
+DB_PATH = "H:/RA2YR_ReSource/xcc/data/ra2 mix description.txt"
+OUT_PATH = "H:/RA2YR_ReSource/include/gamemd/system/xcc_names.hpp"
 
 def crc32_ts(name):
     """CRC32 with TS-style padding (matching OpenRA PackageEntry.HashFilename)"""

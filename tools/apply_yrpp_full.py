@@ -6,7 +6,7 @@ YRpp to IDA Full Sync - V3
 """
 import json, idc, idaapi, ida_bytes
 
-JSON_PATH = r"D:\RA2YR_ReSource\tools\yrpp_full.json"
+JSON_PATH = r"H:\RA2YR_ReSource\tools\yrpp_full.json"
 
 # Known parent class sizes for gap0
 PARENT_SIZES = {

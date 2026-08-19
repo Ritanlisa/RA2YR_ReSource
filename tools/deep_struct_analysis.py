@@ -6,15 +6,15 @@ Uses member pattern matching, size comparison, and inheritance.
 import json, re
 from collections import defaultdict
 
-with open(r'D:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\class_rename_map.json') as f:
     existing_map = json.load(f)
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_classes.json') as f:
     classes_data = json.load(f)
 cls = classes_data['classes']
-with open(r'D:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\full_report\csp_functions.json') as f:
     funcs_data = json.load(f)
 funcs = funcs_data['functions']
-with open(r'D:\RA2YR_ReSource\decompile-results\gamemd.exe.h', encoding='utf-8', errors='ignore') as f:
+with open(r'H:\RA2YR_ReSource\decompile-results\gamemd.exe.h', encoding='utf-8', errors='ignore') as f:
     h_content = f.read()
 
 # Parse .h
@@ -174,11 +174,11 @@ print(f"Newly mapped: {len(new_map) - len(existing_map)}")
 print(f"Total: {len(new_map)} / {len(cls)}")
 
 # Save
-with open(r'D:\RA2YR_ReSource\tools\csp\class_rename_map.json', 'w') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\class_rename_map.json', 'w') as f:
     json.dump(new_map, f, indent=2, sort_keys=True)
 
 new_only = {k: v for k, v in new_map.items() if k not in existing_map}
-with open(r'D:\RA2YR_ReSource\tools\csp\new_mappings.json', 'w') as f:
+with open(r'H:\RA2YR_ReSource\tools\csp\new_mappings.json', 'w') as f:
     json.dump(new_only, f, indent=2, sort_keys=True)
 
 # Build comprehensive analysis for remaining unmapped
@@ -228,7 +228,7 @@ for cid in remaining:
     
     lines.append("\n")
 
-with open(r'D:\RA2YR_ReSource\tools\class_name_analysis.md', 'w') as f:
+with open(r'H:\RA2YR_ReSource\tools\class_name_analysis.md', 'w') as f:
     f.writelines(lines)
 
 print(f"\nUpdated: class_rename_map.json, class_name_analysis.md, new_mappings.json")

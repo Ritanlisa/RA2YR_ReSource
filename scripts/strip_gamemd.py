@@ -1,6 +1,6 @@
 import os
 
-BASE = r"D:\RA2YR_ReSource\src"
+BASE = r"H:\RA2YR_ReSource\src"
 TARGET = '#include "gamemd/'
 REPLACEMENT = '#include "'
 

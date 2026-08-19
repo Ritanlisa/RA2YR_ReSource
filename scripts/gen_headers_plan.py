@@ -4,7 +4,7 @@ Creates full class definitions with IDA-extracted member layouts.
 """
 import json, os, sys
 
-with open('D:/RA2YR_ReSource/scripts/ida_class_coverage.json') as f:
+with open('H:/RA2YR_ReSource/scripts/ida_class_coverage.json') as f:
     data = json.load(f)
 
 high = [m for m in data['MISSING'] if m.get('priority') == 'HIGH']

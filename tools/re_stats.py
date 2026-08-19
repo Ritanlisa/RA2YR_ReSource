@@ -123,4 +123,4 @@ print("\nAll: %d/%d (%.1f%%)  Member: %d/%d (%.1f%%)  Global: %d/%d (%.1f%%)" % 
     gn, gt, 100*gn/gt if gt else 0))
 
 json.dump({'member':mem, 'global':glo, 'all':all_counts, 'skipped':skipped},
-          open(r'D:\RA2YR_ReSource\tools\re_stats.json','w'))
+          open(r'H:\RA2YR_ReSource\tools\re_stats.json','w'))

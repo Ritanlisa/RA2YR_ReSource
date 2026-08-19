@@ -19,11 +19,11 @@ import sys
 from pathlib import Path
 from collections import Counter
 
-SRC = Path("D:/RA2YR_ReSource/src")
-FUNCTIONS_JSON = Path("D:/RA2YR_ReSource/injectFunctionTest/functions.json")
-IDA_ADDR_INDEX = Path("D:/RA2YR_ReSource/.omo/ida_addr_index.json")
-IDA_FULL_INDEX = Path("D:/RA2YR_ReSource/.omo/ida_full_index.json")
-OUT = Path("D:/RA2YR_ReSource/.omo/notfound_map.json")
+SRC = Path("H:/RA2YR_ReSource/src")
+FUNCTIONS_JSON = Path("H:/RA2YR_ReSource/injectFunctionTest/functions.json")
+IDA_ADDR_INDEX = Path("H:/RA2YR_ReSource/.omo/ida_addr_index.json")
+IDA_FULL_INDEX = Path("H:/RA2YR_ReSource/.omo/ida_full_index.json")
+OUT = Path("H:/RA2YR_ReSource/.omo/notfound_map.json")
 
 DATA_START = 0x812000
 DATA_END = 0xB7A000

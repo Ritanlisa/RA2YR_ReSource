@@ -4,7 +4,7 @@ import os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from convert_headers import RENAMES, convert_file
 
-BASE = r"D:\RA2YR_ReSource"
+BASE = r"H:\RA2YR_ReSource"
 SRC = os.path.join(BASE, "src")
 
 def convert_cpp(src_path):

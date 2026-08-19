@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 
-PROJECT_ROOT = Path(r'D:\RA2YR_ReSource')
+PROJECT_ROOT = Path(r'H:\RA2YR_ReSource')
 
 # Full IDA results: orphan_addr → (containing_func_addr, name) or None (not a function)
 IDA_RESULTS = {

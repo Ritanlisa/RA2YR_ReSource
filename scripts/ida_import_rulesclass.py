@@ -3,7 +3,7 @@ import re
 import idc
 import idaapi
 
-YRPP_HEADER = r"D:\RA2YR_ReSource\YRpp\RulesClass.h"
+YRPP_HEADER = r"H:\RA2YR_ReSource\YRpp\RulesClass.h"
 STRUCT_NAME = "RulesClass"
 INSTANCE_ADDR = 0x8871E0
 

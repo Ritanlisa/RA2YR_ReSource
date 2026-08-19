@@ -1,5 +1,5 @@
 import json
-with open('D:/RA2YR_ReSource/tools/yrpp_full.json') as f:
+with open('H:/RA2YR_ReSource/tools/yrpp_full.json') as f:
     d = json.load(f)
 
 classes = {

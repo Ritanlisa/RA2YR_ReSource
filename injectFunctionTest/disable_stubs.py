@@ -3,9 +3,9 @@ import re
 stubs_addrs = {0x52CB50, 0x52FC20, 0x532150, 0x49F5C0, 0x49F620, 0x49F7A0, 0x410230}
 
 PATHS = [
-    r"D:\RA2YR_ReSource\src\core\init_game.cpp",
-    r"D:\RA2YR_ReSource\src\core\copy_protection.cpp",
-    r"D:\RA2YR_ReSource\src\object\abstract.cpp",
+    r"H:\RA2YR_ReSource\src\core\init_game.cpp",
+    r"H:\RA2YR_ReSource\src\core\copy_protection.cpp",
+    r"H:\RA2YR_ReSource\src\object\abstract.cpp",
 ]
 
 for fp in PATHS:

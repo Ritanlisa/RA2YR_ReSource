@@ -19,7 +19,7 @@ MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
 RES  = os.path.join(SCRIPT, "idempotent_results.json")
-EXE  = "D:\\RA2MD\\gamemd.exe"
+EXE  = "H:\\RA2MD\\gamemd.exe"
 BASE = 0x400000  # image base
 
 def validate_hook_size(addr_str, declared_size):

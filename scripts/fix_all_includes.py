@@ -1,6 +1,6 @@
 import os
 
-BASE = r"D:\RA2YR_ReSource\src"
+BASE = r"H:\RA2YR_ReSource\src"
 
 # Unconverted files (still in include/gamemd/) — need gamemd/ prefix
 UNCONVERTED = {

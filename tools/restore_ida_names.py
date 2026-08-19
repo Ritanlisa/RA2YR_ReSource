@@ -9,7 +9,7 @@ try:
     ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 except NameError:
     # exec() mode — set explicitly
-    ROOT = r'D:\RA2YR_ReSource'
+    ROOT = r'H:\RA2YR_ReSource'
 
 def main():
     import idc, ida_funcs, ida_segment, ida_typeinf, idaapi, ida_name, ida_nalt

@@ -1,6 +1,6 @@
 import os
 
-BASE = r"D:\RA2YR_ReSource\include\gamemd"
+BASE = r"H:\RA2YR_ReSource\include\gamemd"
 
 changed = 0
 for root, dirs, files in os.walk(BASE):

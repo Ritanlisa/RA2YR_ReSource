@@ -1,6 +1,6 @@
 import json, idc
 
-with open('D:/RA2YR_ReSource/tools/rename_final.json') as f:
+with open('H:/RA2YR_ReSource/tools/rename_final.json') as f:
     renames = json.load(f)
 
 batch = renames[120:180]

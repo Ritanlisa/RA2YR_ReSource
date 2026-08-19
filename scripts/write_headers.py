@@ -3,7 +3,7 @@
 
 import os
 
-BASE = r"D:\RA2YR_ReSource"
+BASE = r"H:\RA2YR_ReSource"
 
 def write_file(rel_path, content):
     fp = os.path.join(BASE, rel_path)

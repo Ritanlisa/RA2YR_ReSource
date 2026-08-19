@@ -24,7 +24,7 @@ import ida_typeinf
 import ida_nalt
 import idaapi
 
-PURITY_PATH = r"D:\RA2YR_ReSource\injectFunctionTest\purity_effects.json"
+PURITY_PATH = r"H:\RA2YR_ReSource\injectFunctionTest\purity_effects.json"
 DRY_RUN = 0  # 0 = all, N = first N functions
 
 # ============================================================
