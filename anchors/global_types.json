@@ -1,0 +1,6692 @@
+{
+  "0x815DA8": {
+    "type": "void (*)()",
+    "name": "First",
+    "confidence": "ANCHORED"
+  },
+  "0x815DBC": {
+    "type": "void (*)()",
+    "name": "Last",
+    "confidence": "ANCHORED"
+  },
+  "0x8161D4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_NORMAL",
+    "confidence": "ANCHORED"
+  },
+  "0x816210": {
+    "type": "uint64_t",
+    "name": "g_Str_unknown",
+    "confidence": "ANCHORED"
+  },
+  "0x816E00": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Stop",
+    "confidence": "ANCHORED"
+  },
+  "0x816E44": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Guard",
+    "confidence": "ANCHORED"
+  },
+  "0x816E64": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Attack",
+    "confidence": "ANCHORED"
+  },
+  "0x817270": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Action",
+    "confidence": "ANCHORED"
+  },
+  "0x817278": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Tiberium",
+    "confidence": "ANCHORED"
+  },
+  "0x817318": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Special",
+    "confidence": "ANCHORED"
+  },
+  "0x817334": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Side",
+    "confidence": "ANCHORED"
+  },
+  "0x8173D0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Infantry",
+    "confidence": "ANCHORED"
+  },
+  "0x817474": {
+    "type": "uint8_t",
+    "name": "g_Str__none_",
+    "confidence": "ANCHORED"
+  },
+  "0x8175B0": {
+    "type": "bool",
+    "name": "g_Is16BitMode",
+    "confidence": "ANCHORED"
+  },
+  "0x817694": {
+    "type": "uint8_t",
+    "name": "g_Str_none",
+    "confidence": "ANCHORED"
+  },
+  "0x817828": {
+    "type": "uint8_t",
+    "name": "Format",
+    "confidence": "ANCHORED"
+  },
+  "0x81784C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_UIName",
+    "confidence": "ANCHORED"
+  },
+  "0x817854": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Name",
+    "confidence": "ANCHORED"
+  },
+  "0x8178C0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Ahandle__PauseAdjust__ld",
+    "confidence": "ANCHORED"
+  },
+  "0x817BC0": {
+    "type": "GUID",
+    "name": "riid",
+    "confidence": "ANCHORED"
+  },
+  "0x817F64": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_None",
+    "confidence": "ANCHORED"
+  },
+  "0x817F6C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__d",
+    "confidence": "ANCHORED"
+  },
+  "0x817F70": {
+    "type": "uint8_t",
+    "name": "Delimiter",
+    "confidence": "ANCHORED"
+  },
+  "0x818134": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Easy",
+    "confidence": "ANCHORED"
+  },
+  "0x818164": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Civilian",
+    "confidence": "ANCHORED"
+  },
+  "0x81834C": {
+    "type": "uint8_t",
+    "name": "Ext",
+    "confidence": "ANCHORED"
+  },
+  "0x8183B4": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Warhead",
+    "confidence": "ANCHORED"
+  },
+  "0x818404": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_StopSound",
+    "confidence": "ANCHORED"
+  },
+  "0x818418": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_StartSound",
+    "confidence": "ANCHORED"
+  },
+  "0x8184C8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Spawns",
+    "confidence": "ANCHORED"
+  },
+  "0x8184F4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Elasticity",
+    "confidence": "ANCHORED"
+  },
+  "0x81855C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_DetailLevel",
+    "confidence": "ANCHORED"
+  },
+  "0x81859C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Damage",
+    "confidence": "ANCHORED"
+  },
+  "0x8185A4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Rate",
+    "confidence": "ANCHORED"
+  },
+  "0x818610": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Normalized",
+    "confidence": "ANCHORED"
+  },
+  "0x818624": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Flat",
+    "confidence": "ANCHORED"
+  },
+  "0x818658": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Theater",
+    "confidence": "ANCHORED"
+  },
+  "0x8186E8": {
+    "type": "uint16_t",
+    "name": "psz",
+    "confidence": "ANCHORED"
+  },
+  "0x8189B0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__d__d__d",
+    "confidence": "ANCHORED"
+  },
+  "0x8190DC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace___d",
+    "confidence": "ANCHORED"
+  },
+  "0x819198": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_BuildingInfiltrated",
+    "confidence": "ANCHORED"
+  },
+  "0x819420": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Image",
+    "confidence": "ANCHORED"
+  },
+  "0x8194A0": {
+    "type": "uint8_t",
+    "name": "g_Str_File__HVA",
+    "confidence": "ANCHORED"
+  },
+  "0x8194AC": {
+    "type": "uint8_t",
+    "name": "g_Str_File__VXL",
+    "confidence": "ANCHORED"
+  },
+  "0x81A734": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Foundation",
+    "confidence": "ANCHORED"
+  },
+  "0x81A7A8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Height",
+    "confidence": "ANCHORED"
+  },
+  "0x81A7EC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IsBaseDefense",
+    "confidence": "ANCHORED"
+  },
+  "0x81AC58": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Wall",
+    "confidence": "ANCHORED"
+  },
+  "0x81AFA0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_NukePayload",
+    "confidence": "ANCHORED"
+  },
+  "0x81B0D4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Level",
+    "confidence": "ANCHORED"
+  },
+  "0x81B138": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Color",
+    "confidence": "ANCHORED"
+  },
+  "0x81B1A4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Description",
+    "confidence": "ANCHORED"
+  },
+  "0x81B1BC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Scenario",
+    "confidence": "ANCHORED"
+  },
+  "0x81B1D8": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Battles",
+    "confidence": "ANCHORED"
+  },
+  "0x81B2AC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolacpt_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x81B2B8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolhost_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x81B2EC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_TIME_FORMAT_HOURS",
+    "confidence": "ANCHORED"
+  },
+  "0x81B304": {
+    "type": "uint8_t",
+    "name": "g_Str_File_CampScor_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x81B3D0": {
+    "type": "const uint16_t",
+    "name": "g_Str_Fmt_PctD",
+    "confidence": "ANCHORED"
+  },
+  "0x81B41C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Loser",
+    "confidence": "ANCHORED"
+  },
+  "0x81B424": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Winner",
+    "confidence": "ANCHORED"
+  },
+  "0x81B448": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_WAITING",
+    "confidence": "ANCHORED"
+  },
+  "0x81B454": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_READY",
+    "confidence": "ANCHORED"
+  },
+  "0x81B460": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace___s___s",
+    "confidence": "ANCHORED"
+  },
+  "0x81B4E8": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_DifficultyString",
+    "confidence": "ANCHORED"
+  },
+  "0x81B9DC": {
+    "type": "int32_t",
+    "name": "_ZTI2x1",
+    "confidence": "ANCHORED"
+  },
+  "0x81BAE8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Water",
+    "confidence": "ANCHORED"
+  },
+  "0x81BB18": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Amphibious",
+    "confidence": "ANCHORED"
+  },
+  "0x81BB60": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Normal",
+    "confidence": "ANCHORED"
+  },
+  "0x81BBC0": {
+    "type": "const char",
+    "name": "_ZTS2x1",
+    "confidence": "ANCHORED"
+  },
+  "0x81BFE0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Digest",
+    "confidence": "ANCHORED"
+  },
+  "0x81C000": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__d__d",
+    "confidence": "ANCHORED"
+  },
+  "0x81C008": {
+    "type": "uint8_t",
+    "name": "g_Str__random_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C220": {
+    "type": "uint8_t",
+    "name": "g_Str_File_THEME_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x81C24C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_THEMEMD_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x81C284": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MULTIMD_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x81C2B4": {
+    "type": "uint8_t",
+    "name": "g_Str_FAILED_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C2D4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Initializing__s",
+    "confidence": "ANCHORED"
+  },
+  "0x81C320": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Releasing__s",
+    "confidence": "ANCHORED"
+  },
+  "0x81C358": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_eject_media__E",
+    "confidence": "ANCHORED"
+  },
+  "0x81C390": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_prevent_media_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C3D0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_dismount_volum",
+    "confidence": "ANCHORED"
+  },
+  "0x81C40C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E",
+    "confidence": "ANCHORED"
+  },
+  "0x81C444": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Unable_to_open_drive__c__for_ejection",
+    "confidence": "ANCHORED"
+  },
+  "0x81C46C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace______c_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C474": {
+    "type": "uint8_t",
+    "name": "g_Str_Attempt_to_open_non_removable_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C4B4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__c__",
+    "confidence": "ANCHORED"
+  },
+  "0x81C4BC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C51C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO",
+    "confidence": "ANCHORED"
+  },
+  "0x81C590": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Unable_to_lock_volume__c_",
+    "confidence": "ANCHORED"
+  },
+  "0x81C5AC": {
+    "type": "uint8_t",
+    "name": "g_Str_____vwin32",
+    "confidence": "ANCHORED"
+  },
+  "0x81C5E8": {
+    "type": "uint8_t",
+    "name": "g_Str_false",
+    "confidence": "ANCHORED"
+  },
+  "0x81C5F0": {
+    "type": "uint8_t",
+    "name": "g_Str_true",
+    "confidence": "ANCHORED"
+  },
+  "0x81C8EC": {
+    "type": "void*",
+    "name": "hFindFile",
+    "confidence": "ANCHORED"
+  },
+  "0x81C8F8": {
+    "type": "uint8_t",
+    "name": "Str2",
+    "confidence": "ANCHORED"
+  },
+  "0x81D4F8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Conquer_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x81D57C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SHORT_TITLE",
+    "confidence": "ANCHORED"
+  },
+  "0x81D80C": {
+    "type": "uint8_t",
+    "name": "ProcName",
+    "confidence": "ANCHORED"
+  },
+  "0x81D820": {
+    "type": "uint8_t",
+    "name": "ModuleName",
+    "confidence": "ANCHORED"
+  },
+  "0x81D850": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Percent_lost___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D864": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Lost___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D870": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Command_cound_stalls___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D88C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Frame_sync_stalls___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D8A4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Resends___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D8B4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Max_round_trip___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D8C8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Max_avg_round_trip___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D8F0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Name___s",
+    "confidence": "ANCHORED"
+  },
+  "0x81D8FC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Local_address___d__d__d__d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D918": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Game_speed_setting___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D930": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Latency_setting___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D948": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Max_MaxAhead___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D95C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Average_FPS___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D970": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Frames___d",
+    "confidence": "ANCHORED"
+  },
+  "0x81D988": {
+    "type": "uint8_t",
+    "name": "Mode",
+    "confidence": "ANCHORED"
+  },
+  "0x81D9CC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Speed",
+    "confidence": "ANCHORED"
+  },
+  "0x81D9D4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Armor",
+    "confidence": "ANCHORED"
+  },
+  "0x81DB84": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Ground",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBA0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_FloatBeach",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBAC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Float",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBBC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Hover",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBC4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Wheel",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBCC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Track",
+    "confidence": "ANCHORED"
+  },
+  "0x81DBD4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Foot",
+    "confidence": "ANCHORED"
+  },
+  "0x81DC1C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Clear",
+    "confidence": "ANCHORED"
+  },
+  "0x81F0F8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_coopsave_ini",
+    "confidence": "ANCHORED"
+  },
+  "0x81F108": {
+    "type": "uint8_t",
+    "name": "g_Str_undefined",
+    "confidence": "ANCHORED"
+  },
+  "0x81F114": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Map_d",
+    "confidence": "ANCHORED"
+  },
+  "0x81F11C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Time",
+    "confidence": "ANCHORED"
+  },
+  "0x81F19C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_CurrentMap",
+    "confidence": "ANCHORED"
+  },
+  "0x81F31C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__s_d",
+    "confidence": "ANCHORED"
+  },
+  "0x81F3B4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Campaigns",
+    "confidence": "ANCHORED"
+  },
+  "0x81F3C0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_CoopCampMD_ini",
+    "confidence": "ANCHORED"
+  },
+  "0x81F550": {
+    "type": "uint8_t",
+    "name": "ValueName",
+    "confidence": "ANCHORED"
+  },
+  "0x81F554": {
+    "type": "uint8_t",
+    "name": "SubKey",
+    "confidence": "ANCHORED"
+  },
+  "0x81F7B4": {
+    "type": "int32_t",
+    "name": "CRC32_Table",
+    "confidence": "ANCHORED"
+  },
+  "0x81FC70": {
+    "type": "uint8_t",
+    "name": "g_Str_Direct_X",
+    "confidence": "ANCHORED"
+  },
+  "0x81FC7C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_DDRAW_DLL_Error_code____08X",
+    "confidence": "ANCHORED"
+  },
+  "0x81FC98": {
+    "type": "uint8_t",
+    "name": "Text",
+    "confidence": "ANCHORED"
+  },
+  "0x81FCC8": {
+    "type": "uint8_t",
+    "name": "Caption",
+    "confidence": "ANCHORED"
+  },
+  "0x81FD08": {
+    "type": "const char",
+    "name": "g_Str_Trace__s",
+    "confidence": "ANCHORED"
+  },
+  "0x81FD14": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_OK",
+    "confidence": "ANCHORED"
+  },
+  "0x81FD44": {
+    "type": "uint8_t",
+    "name": "g_Str_DirectDrawCreate_failed_",
+    "confidence": "ANCHORED"
+  },
+  "0x81FFE4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_CellTags",
+    "confidence": "ANCHORED"
+  },
+  "0x82012C": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_CannotDeployHere",
+    "confidence": "ANCHORED"
+  },
+  "0x820164": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LocalSize",
+    "confidence": "ANCHORED"
+  },
+  "0x820178": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Size",
+    "confidence": "ANCHORED"
+  },
+  "0x8204FC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_XXICON_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x82053C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Green",
+    "confidence": "ANCHORED"
+  },
+  "0x8205D5": {
+    "type": "uint8_t",
+    "name": "g_DDraw_AllowOverlayBlit",
+    "confidence": "ANCHORED"
+  },
+  "0x82061C": {
+    "type": "uint8_t",
+    "name": "g_Str_DSurface__Create_Primary_done",
+    "confidence": "ANCHORED"
+  },
+  "0x8207DC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Blue",
+    "confidence": "ANCHORED"
+  },
+  "0x820BF0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Adding_event__s",
+    "confidence": "ANCHORED"
+  },
+  "0x820C54": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_LatencyFudge_is__d",
+    "confidence": "ANCHORED"
+  },
+  "0x820DAC": {
+    "type": "uint8_t",
+    "name": "MultiByteStr",
+    "confidence": "ANCHORED"
+  },
+  "0x820E44": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Event_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x820E8C": {
+    "type": "const char*",
+    "name": "lpString2",
+    "confidence": "ANCHORED"
+  },
+  "0x821EE4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_CPU__s__MMX__s__Vendor___s",
+    "confidence": "ANCHORED"
+  },
+  "0x821F04": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_No",
+    "confidence": "ANCHORED"
+  },
+  "0x821F0C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Release_Build___s_by__s____s",
+    "confidence": "ANCHORED"
+  },
+  "0x822024": {
+    "type": "uint8_t",
+    "name": "String",
+    "confidence": "ANCHORED"
+  },
+  "0x822050": {
+    "type": "uint8_t",
+    "name": "String2",
+    "confidence": "ANCHORED"
+  },
+  "0x822174": {
+    "type": "uint8_t",
+    "name": "LibFileName",
+    "confidence": "ANCHORED"
+  },
+  "0x8221F8": {
+    "type": "uint8_t",
+    "name": "FileName",
+    "confidence": "ANCHORED"
+  },
+  "0x822728": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Grey",
+    "confidence": "ANCHORED"
+  },
+  "0x8227B8": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_FASTEST",
+    "confidence": "ANCHORED"
+  },
+  "0x8227C4": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_FASTER",
+    "confidence": "ANCHORED"
+  },
+  "0x8227D0": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_FAST",
+    "confidence": "ANCHORED"
+  },
+  "0x8227DC": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_MEDIUM",
+    "confidence": "ANCHORED"
+  },
+  "0x8227E8": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_SLOW",
+    "confidence": "ANCHORED"
+  },
+  "0x8227F4": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_SLOWER",
+    "confidence": "ANCHORED"
+  },
+  "0x822800": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_SLOWEST",
+    "confidence": "ANCHORED"
+  },
+  "0x8229C0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_GDlgSupp_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x822B7C": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_RandomAsSymbols",
+    "confidence": "ANCHORED"
+  },
+  "0x822CF2": {
+    "type": "uint32_t",
+    "name": "g_MoveFeedback",
+    "confidence": "ANCHORED"
+  },
+  "0x822CF4": {
+    "type": "int32_t",
+    "name": "g_RulesInitConfig",
+    "confidence": "ANCHORED"
+  },
+  "0x822D20": {
+    "type": "uint8_t",
+    "name": "g_Str_gsmallwoo",
+    "confidence": "ANCHORED"
+  },
+  "0x822D5C": {
+    "type": "uint64_t",
+    "name": "FileTime",
+    "confidence": "ANCHORED"
+  },
+  "0x8240BC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_GOptions_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x8240D8": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_Observe",
+    "confidence": "ANCHORED"
+  },
+  "0x824194": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Theme",
+    "confidence": "ANCHORED"
+  },
+  "0x8241AC": {
+    "type": "uint8_t",
+    "name": "g_Str_File__PCX",
+    "confidence": "ANCHORED"
+  },
+  "0x8241C0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Intro",
+    "confidence": "ANCHORED"
+  },
+  "0x824254": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Palette",
+    "confidence": "ANCHORED"
+  },
+  "0x824314": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Type",
+    "confidence": "ANCHORED"
+  },
+  "0x824724": {
+    "type": "uint8_t",
+    "name": "g_Str_File_House_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x824784": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_OreMinerUnderAttack",
+    "confidence": "ANCHORED"
+  },
+  "0x824D4C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Country",
+    "confidence": "ANCHORED"
+  },
+  "0x824D54": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Houses",
+    "confidence": "ANCHORED"
+  },
+  "0x824DD8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IQ",
+    "confidence": "ANCHORED"
+  },
+  "0x824E38": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Credits",
+    "confidence": "ANCHORED"
+  },
+  "0x824E40": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TechLevel",
+    "confidence": "ANCHORED"
+  },
+  "0x824E4C": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_RobotTanksOffline",
+    "confidence": "ANCHORED"
+  },
+  "0x824FC8": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_COMPUTER",
+    "confidence": "ANCHORED"
+  },
+  "0x824FD8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Computer",
+    "confidence": "ANCHORED"
+  },
+  "0x825000": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___H_",
+    "confidence": "ANCHORED"
+  },
+  "0x825010": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___G_",
+    "confidence": "ANCHORED"
+  },
+  "0x825020": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___F_",
+    "confidence": "ANCHORED"
+  },
+  "0x825030": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___E_",
+    "confidence": "ANCHORED"
+  },
+  "0x825040": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___D_",
+    "confidence": "ANCHORED"
+  },
+  "0x825050": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___C_",
+    "confidence": "ANCHORED"
+  },
+  "0x825060": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___B_",
+    "confidence": "ANCHORED"
+  },
+  "0x825070": {
+    "type": "uint8_t",
+    "name": "g_Str__Player___A_",
+    "confidence": "ANCHORED"
+  },
+  "0x825470": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Cost",
+    "confidence": "ANCHORED"
+  },
+  "0x8254DC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Options",
+    "confidence": "ANCHORED"
+  },
+  "0x8254E4": {
+    "type": "uint8_t",
+    "name": "g_Str_SOFTWARE_Westwood_WOLAPI_",
+    "confidence": "ANCHORED"
+  },
+  "0x825670": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SecondaryProne",
+    "confidence": "ANCHORED"
+  },
+  "0x8256E4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Cheer",
+    "confidence": "ANCHORED"
+  },
+  "0x825724": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Deploy",
+    "confidence": "ANCHORED"
+  },
+  "0x8258C0": {
+    "type": "uint16_t",
+    "name": "g_Str_W",
+    "confidence": "ANCHORED"
+  },
+  "0x825BBC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__d__d__d__d",
+    "confidence": "ANCHORED"
+  },
+  "0x825BDC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Ini_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x825BF4": {
+    "type": "uint8_t",
+    "name": "g_Str_no",
+    "confidence": "ANCHORED"
+  },
+  "0x825BFC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__f__f__f",
+    "confidence": "ANCHORED"
+  },
+  "0x825C20": {
+    "type": "uint32_t",
+    "name": "g_ScenarioLoadEvent",
+    "confidence": "ANCHORED"
+  },
+  "0x825C28": {
+    "type": "uint32_t",
+    "name": "g_PlayerHouseFlags",
+    "confidence": "ANCHORED"
+  },
+  "0x825C68": {
+    "type": "const uint32_t",
+    "name": "g_PlayerHouseFlags_End",
+    "confidence": "ANCHORED"
+  },
+  "0x825C84": {
+    "type": "uint32_t",
+    "name": "g_WOLReturnCode",
+    "confidence": "ANCHORED"
+  },
+  "0x825FB0": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_OK",
+    "confidence": "ANCHORED"
+  },
+  "0x825FB8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Init_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x825FD0": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CANCEL",
+    "confidence": "ANCHORED"
+  },
+  "0x82604C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MOUSE_SHA",
+    "confidence": "ANCHORED"
+  },
+  "0x826278": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_General",
+    "confidence": "ANCHORED"
+  },
+  "0x82637C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Loaded_recording_values_for_scenario____",
+    "confidence": "ANCHORED"
+  },
+  "0x8263A8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_INTRO",
+    "confidence": "ANCHORED"
+  },
+  "0x82642C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_MultiPlayer",
+    "confidence": "ANCHORED"
+  },
+  "0x826444": {
+    "type": "uint8_t",
+    "name": "g_Str_File_RA2MD_INI",
+    "confidence": "ANCHORED"
+  },
+  "0x8265A8": {
+    "type": "uint8_t",
+    "name": "SubStr",
+    "confidence": "ANCHORED"
+  },
+  "0x826668": {
+    "type": "uint8_t",
+    "name": "g_Str_File_CACHE_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x826748": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MOVMD__MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x826FA4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_TEAM",
+    "confidence": "ANCHORED"
+  },
+  "0x826FEC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_INTERFACE",
+    "confidence": "ANCHORED"
+  },
+  "0x827250": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SELECTION",
+    "confidence": "ANCHORED"
+  },
+  "0x827278": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_PlanningMode",
+    "confidence": "ANCHORED"
+  },
+  "0x82729C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CONTROL",
+    "confidence": "ANCHORED"
+  },
+  "0x827304": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TypeSelect",
+    "confidence": "ANCHORED"
+  },
+  "0x8278B4": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_De",
+    "confidence": "ANCHORED"
+  },
+  "0x827B80": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Hotkey",
+    "confidence": "ANCHORED"
+  },
+  "0x827C78": {
+    "type": "uint8_t",
+    "name": "g_Str_SYSTEM_MEMORY",
+    "confidence": "ANCHORED"
+  },
+  "0x827C88": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_VRAM",
+    "confidence": "ANCHORED"
+  },
+  "0x827D64": {
+    "type": "uint8_t",
+    "name": "g_Str_File__s_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x827DF4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Initilizing__s",
+    "confidence": "ANCHORED"
+  },
+  "0x827FC0": {
+    "type": "uint32_t",
+    "name": "LightningStorm_StartTime",
+    "confidence": "ANCHORED"
+  },
+  "0x827FC4": {
+    "type": "uint32_t",
+    "name": "LightningStorm_Duration",
+    "confidence": "ANCHORED"
+  },
+  "0x827FC8": {
+    "type": "uint32_t",
+    "name": "NukeFlash_StartTime",
+    "confidence": "ANCHORED"
+  },
+  "0x827FCC": {
+    "type": "uint32_t",
+    "name": "NukeFlash_Duration",
+    "confidence": "ANCHORED"
+  },
+  "0x828034": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Ion_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x8283D4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Send_overflow__d",
+    "confidence": "ANCHORED"
+  },
+  "0x829284": {
+    "type": "uint8_t",
+    "name": "g_Str_No_Name",
+    "confidence": "ANCHORED"
+  },
+  "0x829774": {
+    "type": "uint8_t",
+    "name": "PrefixString",
+    "confidence": "ANCHORED"
+  },
+  "0x829ABC": {
+    "type": "uint8_t",
+    "name": "ExistingFileName",
+    "confidence": "ANCHORED"
+  },
+  "0x829AC8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_LdPrgMgr_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x829F14": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_YES",
+    "confidence": "ANCHORED"
+  },
+  "0x829F1C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NO",
+    "confidence": "ANCHORED"
+  },
+  "0x829F5C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_LoadDlg_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x82A0BC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_REPLY_COMMAND_SHORT",
+    "confidence": "ANCHORED"
+  },
+  "0x82A0D4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_REPLY_COMMAND",
+    "confidence": "ANCHORED"
+  },
+  "0x82A108": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CANT_SEND_BLANK_PAGE",
+    "confidence": "ANCHORED"
+  },
+  "0x82A124": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NO_NAME_SPECIFIED",
+    "confidence": "ANCHORED"
+  },
+  "0x82A13C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_PAGE_COMMAND",
+    "confidence": "ANCHORED"
+  },
+  "0x82A150": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_FROM",
+    "confidence": "ANCHORED"
+  },
+  "0x82A170": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MainLoop_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x82A2A8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MainOpt_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82AD48": {
+    "type": "uint8_t",
+    "name": "g_Str_We_tried_to_reset_the_shroud_w",
+    "confidence": "ANCHORED"
+  },
+  "0x82BA08": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Neutral",
+    "confidence": "ANCHORED"
+  },
+  "0x82BA2C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_RANDOM_MAP_DESCRIPTION",
+    "confidence": "ANCHORED"
+  },
+  "0x82BA48": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MapGen_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82BB1C": {
+    "type": "uint8_t",
+    "name": "PathName",
+    "confidence": "ANCHORED"
+  },
+  "0x82BB24": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_RandomMap",
+    "confidence": "ANCHORED"
+  },
+  "0x82BBD8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_NumPlayers",
+    "confidence": "ANCHORED"
+  },
+  "0x82BBE4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Width",
+    "confidence": "ANCHORED"
+  },
+  "0x82BC30": {
+    "type": "uint8_t",
+    "name": "g_Str_File_RandMap_Sed",
+    "confidence": "ANCHORED"
+  },
+  "0x82BE9C": {
+    "type": "uint8_t",
+    "name": "g_Str_RMG__Recalculating_cell_attrib",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF28": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonLevel",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF34": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonGround",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF40": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonBlue",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF48": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonGreen",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF54": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonRed",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF5C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_IonAmbient",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF88": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Lighting",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF94": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Ambient",
+    "confidence": "ANCHORED"
+  },
+  "0x82BF9C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Basic",
+    "confidence": "ANCHORED"
+  },
+  "0x82BFA4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Player",
+    "confidence": "ANCHORED"
+  },
+  "0x82C11C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MapSel_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x82C3A8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Harvester_Truce___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C3C0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_BridgeDestroy___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C3D4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_FogOfWar___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C3E4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Crates___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C3F0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Crap_Engineers___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C42C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Short_Game___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C43C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Bases___s",
+    "confidence": "ANCHORED"
+  },
+  "0x82C464": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_AIDifficulty___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C478": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Game_Speed___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C488": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_AIPlayers___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C498": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Credits___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C4A8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_TechLevel___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C4B8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_UnitCount___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C4C8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Color___d",
+    "confidence": "ANCHORED"
+  },
+  "0x82C534": {
+    "type": "uint8_t",
+    "name": "g_Str_File_ModemGst_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82C550": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Name___ls",
+    "confidence": "ANCHORED"
+  },
+  "0x82C6D4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_MISMATCH",
+    "confidence": "ANCHORED"
+  },
+  "0x82C6E4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_YOURGAME_OUTDATED",
+    "confidence": "ANCHORED"
+  },
+  "0x82C6FC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_DESTGAME_OUTDATED",
+    "confidence": "ANCHORED"
+  },
+  "0x82C754": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SYSTEM_NOT_RESPONDING",
+    "confidence": "ANCHORED"
+  },
+  "0x82C9A4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_ModemHst_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82C9FC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SCENARIO_TOO_SMALL",
+    "confidence": "ANCHORED"
+  },
+  "0x82CC50": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Preview_bin",
+    "confidence": "ANCHORED"
+  },
+  "0x82D028": {
+    "type": "int32_t",
+    "name": "MouseClass_Cursors",
+    "confidence": "ANCHORED"
+  },
+  "0x82DB0C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Waypoints",
+    "confidence": "ANCHORED"
+  },
+  "0x82DC4C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MPCoop_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82DD2C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Assigning_Starting_Points_for_house__d__",
+    "confidence": "ANCHORED"
+  },
+  "0x82DEA0": {
+    "type": "uint8_t",
+    "name": "g_Str_File__s_MAP",
+    "confidence": "ANCHORED"
+  },
+  "0x82DF18": {
+    "type": "uint8_t",
+    "name": "g_Str_File__MAP",
+    "confidence": "ANCHORED"
+  },
+  "0x82E0D0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Max_ping_is__d_ms",
+    "confidence": "ANCHORED"
+  },
+  "0x82FE24": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MPScore_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x82FEBC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SCORE",
+    "confidence": "ANCHORED"
+  },
+  "0x82FF2C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_MPSiege_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x830664": {
+    "type": "uint8_t",
+    "name": "g_Str_File_FULLFNT3_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x830CB0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_FirewallDelta",
+    "confidence": "ANCHORED"
+  },
+  "0x830CC0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_FirewallSettings",
+    "confidence": "ANCHORED"
+  },
+  "0x830E28": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_gethostbyname_failed__Error_code__d",
+    "confidence": "ANCHORED"
+  },
+  "0x831278": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NOD",
+    "confidence": "ANCHORED"
+  },
+  "0x831280": {
+    "type": "uint64_t",
+    "name": "g_Str_TXT_GDI",
+    "confidence": "ANCHORED"
+  },
+  "0x831288": {
+    "type": "uint8_t",
+    "name": "g_Str_File_netdlg2_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x8313B0": {
+    "type": "uint8_t",
+    "name": "g_Str_SOFTWARE_Westwood_Yuri_s_Reven",
+    "confidence": "ANCHORED"
+  },
+  "0x831450": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CANNOT_ALLY",
+    "confidence": "ANCHORED"
+  },
+  "0x831460": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_HostNoMap",
+    "confidence": "ANCHORED"
+  },
+  "0x8315B0": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_NAME_ERROR",
+    "confidence": "ANCHORED"
+  },
+  "0x8315FC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_OBSERVER_FULL",
+    "confidence": "ANCHORED"
+  },
+  "0x831688": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_A1",
+    "confidence": "ANCHORED"
+  },
+  "0x8316A4": {
+    "type": "uint32_t",
+    "name": "g_MPCooperativeState",
+    "confidence": "ANCHORED"
+  },
+  "0x8317D8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_netshare_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x831B60": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Sending_public_options_string__s",
+    "confidence": "ANCHORED"
+  },
+  "0x831C2C": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_OpenObserver",
+    "confidence": "ANCHORED"
+  },
+  "0x831C4C": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_AIHard",
+    "confidence": "ANCHORED"
+  },
+  "0x831C58": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_AINormal",
+    "confidence": "ANCHORED"
+  },
+  "0x831C68": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_AIEasy",
+    "confidence": "ANCHORED"
+  },
+  "0x831C74": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_Closed",
+    "confidence": "ANCHORED"
+  },
+  "0x831C80": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_Open",
+    "confidence": "ANCHORED"
+  },
+  "0x831CE4": {
+    "type": "uint16_t",
+    "name": "g_Str_STT_PlayerGeniusAI",
+    "confidence": "ANCHORED"
+  },
+  "0x831CF8": {
+    "type": "uint16_t",
+    "name": "g_Str_STT_PlayerSmartAI",
+    "confidence": "ANCHORED"
+  },
+  "0x831D0C": {
+    "type": "uint16_t",
+    "name": "g_Str_STT_PlayerDumbAI",
+    "confidence": "ANCHORED"
+  },
+  "0x831D44": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__d_",
+    "confidence": "ANCHORED"
+  },
+  "0x831DDC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolob_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x831E70": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SELECT_SETTINGS",
+    "confidence": "ANCHORED"
+  },
+  "0x831E84": {
+    "type": "uint8_t",
+    "name": "g_Str_File_NullDlg_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x831F54": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_ERROR_TIMEOUT",
+    "confidence": "ANCHORED"
+  },
+  "0x8320F0": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_UNABLE_FIND_MODEM",
+    "confidence": "ANCHORED"
+  },
+  "0x832174": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_CLEAR",
+    "confidence": "ANCHORED"
+  },
+  "0x832618": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_IGNORE",
+    "confidence": "ANCHORED"
+  },
+  "0x8326D8": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Command_response_was__s",
+    "confidence": "ANCHORED"
+  },
+  "0x832730": {
+    "type": "uint8_t",
+    "name": "g_Str_File_NullMgr_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x8327C4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Dial_result_is__s",
+    "confidence": "ANCHORED"
+  },
+  "0x832904": {
+    "type": "uint8_t",
+    "name": "g_Str_Fmt_PctS",
+    "confidence": "ANCHORED"
+  },
+  "0x832924": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Result_is__s",
+    "confidence": "ANCHORED"
+  },
+  "0x832ABC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__sTUR",
+    "confidence": "ANCHORED"
+  },
+  "0x832AD0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__sBARL",
+    "confidence": "ANCHORED"
+  },
+  "0x832F74": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_ScoreShuffle_is__s",
+    "confidence": "ANCHORED"
+  },
+  "0x832F88": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_ScoreRepeat_is__s",
+    "confidence": "ANCHORED"
+  },
+  "0x832F9C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_ScoreVolume____f",
+    "confidence": "ANCHORED"
+  },
+  "0x832FB0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_SoundVolume____f",
+    "confidence": "ANCHORED"
+  },
+  "0x832FC4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_VoiceVolume____f",
+    "confidence": "ANCHORED"
+  },
+  "0x83300C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_DestNet",
+    "confidence": "ANCHORED"
+  },
+  "0x83301C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Socket",
+    "confidence": "ANCHORED"
+  },
+  "0x833060": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Network",
+    "confidence": "ANCHORED"
+  },
+  "0x8330B4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Audio",
+    "confidence": "ANCHORED"
+  },
+  "0x833150": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ScreenHeight",
+    "confidence": "ANCHORED"
+  },
+  "0x833160": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Video",
+    "confidence": "ANCHORED"
+  },
+  "0x833168": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ScreenWidth",
+    "confidence": "ANCHORED"
+  },
+  "0x8332E8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_GameSpeed",
+    "confidence": "ANCHORED"
+  },
+  "0x833370": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Options_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x833474": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_OverlayDataPack",
+    "confidence": "ANCHORED"
+  },
+  "0x833484": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_OverlayPack",
+    "confidence": "ANCHORED"
+  },
+  "0x83370C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ComboBox",
+    "confidence": "ANCHORED"
+  },
+  "0x833718": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ListBox",
+    "confidence": "ANCHORED"
+  },
+  "0x833720": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_NewEdit",
+    "confidence": "ANCHORED"
+  },
+  "0x833728": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Edit",
+    "confidence": "ANCHORED"
+  },
+  "0x833730": {
+    "type": "uint8_t",
+    "name": "g_Str_File_ownrdraw_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x833768": {
+    "type": "uint16_t",
+    "name": "g_Str_STT_HostComboPlayer",
+    "confidence": "ANCHORED"
+  },
+  "0x8338D4": {
+    "type": "uint16_t",
+    "name": "g_Str_STT_GuestComboPlayer",
+    "confidence": "ANCHORED"
+  },
+  "0x833FF0": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLNewGameCancel",
+    "confidence": "ANCHORED"
+  },
+  "0x834228": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLManageAccount",
+    "confidence": "ANCHORED"
+  },
+  "0x834268": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLNewAccount",
+    "confidence": "ANCHORED"
+  },
+  "0x8342FC": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLMyInformationLocale",
+    "confidence": "ANCHORED"
+  },
+  "0x834318": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLPageButton",
+    "confidence": "ANCHORED"
+  },
+  "0x83443C": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_WOLBuddy",
+    "confidence": "ANCHORED"
+  },
+  "0x835354": {
+    "type": "uint8_t",
+    "name": "g_Str_STT_ObserverToggle",
+    "confidence": "ANCHORED"
+  },
+  "0x8357B0": {
+    "type": "uint8_t",
+    "name": "ClassName",
+    "confidence": "ANCHORED"
+  },
+  "0x835874": {
+    "type": "uint64_t",
+    "name": "g_Str_Trace__hs",
+    "confidence": "ANCHORED"
+  },
+  "0x835944": {
+    "type": "uint8_t",
+    "name": "g_Str_File_tab_tlu_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835C90": {
+    "type": "uint8_t",
+    "name": "g_Str_File_pingr_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835C9C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_pingy_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835CA8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_pingg_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835D14": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolreslk_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835FBC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_number1_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835FC8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_number0_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835FD4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_cooperat_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x835FE4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_comchief_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836070": {
+    "type": "uint8_t",
+    "name": "g_Str_File_gt18_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83608C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolrslkob_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83609C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolclan_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x8360A8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolpriv_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x8360D0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_woltrny_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836134": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wodref_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836140": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wouref_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83614C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wodact_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836158": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wouact_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836340": {
+    "type": "uint8_t",
+    "name": "g_Str_File_rusi_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83634C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_lati_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836358": {
+    "type": "uint8_t",
+    "name": "g_Str_File_arbi_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836364": {
+    "type": "uint8_t",
+    "name": "g_Str_File_djbi_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836370": {
+    "type": "uint8_t",
+    "name": "g_Str_File_gbri_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83637C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_geri_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836388": {
+    "type": "uint8_t",
+    "name": "g_Str_File_frai_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x836394": {
+    "type": "uint8_t",
+    "name": "g_Str_File_japi_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x8363A0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_usai_pcx",
+    "confidence": "ANCHORED"
+  },
+  "0x83676C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NONAME",
+    "confidence": "ANCHORED"
+  },
+  "0x836778": {
+    "type": "uint8_t",
+    "name": "g_Str_File_PhoneEd_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x836B8C": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_NodeMaximum",
+    "confidence": "ANCHORED"
+  },
+  "0x836B9C": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_PostContinualCommand",
+    "confidence": "ANCHORED"
+  },
+  "0x836BB8": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_PostTerminatingCommand",
+    "confidence": "ANCHORED"
+  },
+  "0x836BD4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_PlanMgr_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x836C00": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_PlanningModeNoScatter",
+    "confidence": "ANCHORED"
+  },
+  "0x836C1C": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_PlanningModeNoStop",
+    "confidence": "ANCHORED"
+  },
+  "0x836C34": {
+    "type": "uint8_t",
+    "name": "g_Str_MSG_PlanningModeNoDeploy",
+    "confidence": "ANCHORED"
+  },
+  "0x836EB4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SovietLoad",
+    "confidence": "ANCHORED"
+  },
+  "0x836EC0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_AlliedLoad",
+    "confidence": "ANCHORED"
+  },
+  "0x836ECC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LightGrey",
+    "confidence": "ANCHORED"
+  },
+  "0x836EF4": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Railgun",
+    "confidence": "ANCHORED"
+  },
+  "0x836F04": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Fire",
+    "confidence": "ANCHORED"
+  },
+  "0x836F0C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Smoke",
+    "confidence": "ANCHORED"
+  },
+  "0x8373A4": {
+    "type": "uint8_t",
+    "name": "g_Str_None",
+    "confidence": "ANCHORED"
+  },
+  "0x837474": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_QUEUE_FULL",
+    "confidence": "ANCHORED"
+  },
+  "0x837484": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SCENARIOS_DO_NOT_MATCH",
+    "confidence": "ANCHORED"
+  },
+  "0x8374A0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Queue_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x838828": {
+    "type": "uint8_t",
+    "name": "g_Str_Index_____CRC",
+    "confidence": "ANCHORED"
+  },
+  "0x83894C": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Owner___s",
+    "confidence": "ANCHORED"
+  },
+  "0x838AA0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__s__Type__d_",
+    "confidence": "ANCHORED"
+  },
+  "0x838AB0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__s__Type__d__s__",
+    "confidence": "ANCHORED"
+  },
+  "0x838AC4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Object__d___x",
+    "confidence": "ANCHORED"
+  },
+  "0x83927C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_OPTBTN_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x839708": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_PDPLANE",
+    "confidence": "ANCHORED"
+  },
+  "0x839718": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Briefing",
+    "confidence": "ANCHORED"
+  },
+  "0x8399EC": {
+    "type": "uint8_t",
+    "name": "ApplicationName",
+    "confidence": "ANCHORED"
+  },
+  "0x839B84": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_mphmd_exe__d__d__d__d",
+    "confidence": "ANCHORED"
+  },
+  "0x83A0D0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Warheads",
+    "confidence": "ANCHORED"
+  },
+  "0x83AD2C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TiberiumExplosive",
+    "confidence": "ANCHORED"
+  },
+  "0x83CF78": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_FogOfWar",
+    "confidence": "ANCHORED"
+  },
+  "0x83CF84": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_BuildOffAlly",
+    "confidence": "ANCHORED"
+  },
+  "0x83CF94": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SuperWeaponsAllowed",
+    "confidence": "ANCHORED"
+  },
+  "0x83CFA8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ShortGame",
+    "confidence": "ANCHORED"
+  },
+  "0x83D000": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TiberiumGrows",
+    "confidence": "ANCHORED"
+  },
+  "0x83D06C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_UnitCount",
+    "confidence": "ANCHORED"
+  },
+  "0x83D0DC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Animations",
+    "confidence": "ANCHORED"
+  },
+  "0x83D0E8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_VoxelAnims",
+    "confidence": "ANCHORED"
+  },
+  "0x83D0F4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Particles",
+    "confidence": "ANCHORED"
+  },
+  "0x83D100": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ParticleSystems",
+    "confidence": "ANCHORED"
+  },
+  "0x83D584": {
+    "type": "uint8_t",
+    "name": "g_Str_______FAILED_",
+    "confidence": "ANCHORED"
+  },
+  "0x83D6C0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_GameType",
+    "confidence": "ANCHORED"
+  },
+  "0x83D824": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_VariableNames",
+    "confidence": "ANCHORED"
+  },
+  "0x83D838": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Scenario_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x83D8A8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Brief",
+    "confidence": "ANCHORED"
+  },
+  "0x83D924": {
+    "type": "uint8_t",
+    "name": "g_Str_Toggle_display_mode_back_to_sh",
+    "confidence": "ANCHORED"
+  },
+  "0x83DA30": {
+    "type": "uint8_t",
+    "name": "g_Str_File_PROGBARM_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBA8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS800BkgdPal",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBB8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS800BkgdName",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBC8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS640BkgdName",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBD8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS800BriefLocY",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBE8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS800BriefLocX",
+    "confidence": "ANCHORED"
+  },
+  "0x83DBF8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS640BriefLocY",
+    "confidence": "ANCHORED"
+  },
+  "0x83DC08": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LS640BriefLocX",
+    "confidence": "ANCHORED"
+  },
+  "0x83DC18": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LSLoadBriefing",
+    "confidence": "ANCHORED"
+  },
+  "0x83DC28": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_LSLoadMessage",
+    "confidence": "ANCHORED"
+  },
+  "0x83DC5C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Official",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE24": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Waypoint_d",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE30": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_NumCoopHumanStartSpots",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE48": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_NumberStartingPoints",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE60": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_StartY",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE68": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Header",
+    "confidence": "ANCHORED"
+  },
+  "0x83DE70": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_StartX",
+    "confidence": "ANCHORED"
+  },
+  "0x83DFC4": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_Ranking",
+    "confidence": "ANCHORED"
+  },
+  "0x83E180": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Lose",
+    "confidence": "ANCHORED"
+  },
+  "0x83E3C4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Score_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x83E3E8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Back",
+    "confidence": "ANCHORED"
+  },
+  "0x83E3F0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_BarGraph",
+    "confidence": "ANCHORED"
+  },
+  "0x83E3FC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Efficiency",
+    "confidence": "ANCHORED"
+  },
+  "0x83E408": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_BestBox",
+    "confidence": "ANCHORED"
+  },
+  "0x83E410": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Emblem",
+    "confidence": "ANCHORED"
+  },
+  "0x83E418": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Wipe",
+    "confidence": "ANCHORED"
+  },
+  "0x83E728": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_ScriptTypes",
+    "confidence": "ANCHORED"
+  },
+  "0x83EBBC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CUSTOM",
+    "confidence": "ANCHORED"
+  },
+  "0x83EC28": {
+    "type": "uint8_t",
+    "name": "g_Str_File_SerialEd_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x83ED5C": {
+    "type": "uint8_t",
+    "name": "g_Str_T",
+    "confidence": "ANCHORED"
+  },
+  "0x83EEB8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Session_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x83EFD0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_GameMode",
+    "confidence": "ANCHORED"
+  },
+  "0x83F040": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_SyncBug",
+    "confidence": "ANCHORED"
+  },
+  "0x83F050": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_PhoneBook",
+    "confidence": "ANCHORED"
+  },
+  "0x83F05C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_InitStrings",
+    "confidence": "ANCHORED"
+  },
+  "0x83F0D8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SerialDefaults",
+    "confidence": "ANCHORED"
+  },
+  "0x83F3E4": {
+    "type": "uint8_t",
+    "name": "g_Str_No_Digest",
+    "confidence": "ANCHORED"
+  },
+  "0x83F4B8": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_NoDescription",
+    "confidence": "ANCHORED"
+  },
+  "0x83F514": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_MultiMaps",
+    "confidence": "ANCHORED"
+  },
+  "0x83F648": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_DescriptionText",
+    "confidence": "ANCHORED"
+  },
+  "0x83FAC4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Sidebar_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x83FB1C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_UNRANKED",
+    "confidence": "ANCHORED"
+  },
+  "0x83FC4C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Skirmish_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x840A6C": {
+    "type": "uint8_t",
+    "name": "Game_bVideoBackBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0x840A70": {
+    "type": "uint32_t",
+    "name": "g_Audio_MixerEnabled",
+    "confidence": "ANCHORED"
+  },
+  "0x840A74": {
+    "type": "uint32_t",
+    "name": "dwRegister",
+    "confidence": "ANCHORED"
+  },
+  "0x840AD0": {
+    "type": "uint16_t",
+    "name": "szFile",
+    "confidence": "ANCHORED"
+  },
+  "0x840B34": {
+    "type": "uint8_t",
+    "name": "g_Str_WW_TiberianSun",
+    "confidence": "ANCHORED"
+  },
+  "0x840B44": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_CLSID",
+    "confidence": "ANCHORED"
+  },
+  "0x840B4C": {
+    "type": "uint8_t",
+    "name": "Data",
+    "confidence": "ANCHORED"
+  },
+  "0x840B5C": {
+    "type": "uint8_t",
+    "name": "g_Str_WW_TiberianSun_1",
+    "confidence": "ANCHORED"
+  },
+  "0x840B78": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__s__s",
+    "confidence": "ANCHORED"
+  },
+  "0x840C48": {
+    "type": "uint16_t",
+    "name": "g_Str_File_comctl32_dll",
+    "confidence": "ANCHORED"
+  },
+  "0x840E0C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Startup_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x840F5C": {
+    "type": "uint8_t",
+    "name": "g_Str_Fmt_D_D",
+    "confidence": "ANCHORED"
+  },
+  "0x841F30": {
+    "type": "uint16_t",
+    "name": "hostshort",
+    "confidence": "ANCHORED"
+  },
+  "0x842058": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_BROK",
+    "confidence": "ANCHORED"
+  },
+  "0x842354": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_BeginMovie",
+    "confidence": "ANCHORED"
+  },
+  "0x8423D8": {
+    "type": "const uint16_t",
+    "name": "Control",
+    "confidence": "ANCHORED"
+  },
+  "0x8423FC": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_PsychicRevealReady",
+    "confidence": "ANCHORED"
+  },
+  "0x842414": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_GeneticMutatorReady",
+    "confidence": "ANCHORED"
+  },
+  "0x84242C": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_SpyPlaneReady",
+    "confidence": "ANCHORED"
+  },
+  "0x842440": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_ReinforcementsReady",
+    "confidence": "ANCHORED"
+  },
+  "0x842458": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_ChronosphereReady",
+    "confidence": "ANCHORED"
+  },
+  "0x842470": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_PsychicDominatorReady",
+    "confidence": "ANCHORED"
+  },
+  "0x84248C": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_LightningStormReady",
+    "confidence": "ANCHORED"
+  },
+  "0x8424A4": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_ForceShieldReady",
+    "confidence": "ANCHORED"
+  },
+  "0x8424BC": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_IronCurtainReady",
+    "confidence": "ANCHORED"
+  },
+  "0x8424D4": {
+    "type": "uint8_t",
+    "name": "g_Str_EVA_NuclearMissileReady",
+    "confidence": "ANCHORED"
+  },
+  "0x842510": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Super_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x8425F0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_MultiMissile",
+    "confidence": "ANCHORED"
+  },
+  "0x842690": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Range",
+    "confidence": "ANCHORED"
+  },
+  "0x8427FC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Beacon",
+    "confidence": "ANCHORED"
+  },
+  "0x842838": {
+    "type": "uint8_t",
+    "name": "g_Str_Tip_ThumbClosed",
+    "confidence": "ANCHORED"
+  },
+  "0x842BF8": {
+    "type": "uint8_t",
+    "name": "g_Str_File_TAction_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x842DB8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TaskForces",
+    "confidence": "ANCHORED"
+  },
+  "0x842DC4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Group",
+    "confidence": "ANCHORED"
+  },
+  "0x842DCC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TRUCKA",
+    "confidence": "ANCHORED"
+  },
+  "0x842DD4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TRUCKB",
+    "confidence": "ANCHORED"
+  },
+  "0x84301C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Priority",
+    "confidence": "ANCHORED"
+  },
+  "0x843050": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Suicide",
+    "confidence": "ANCHORED"
+  },
+  "0x8430FC": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_TeamTypes",
+    "confidence": "ANCHORED"
+  },
+  "0x843178": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Techno_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x843350": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Cameo",
+    "confidence": "ANCHORED"
+  },
+  "0x8439A8": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Points",
+    "confidence": "ANCHORED"
+  },
+  "0x844530": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_XXICON",
+    "confidence": "ANCHORED"
+  },
+  "0x844760": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Themes",
+    "confidence": "ANCHORED"
+  },
+  "0x844768": {
+    "type": "uint8_t",
+    "name": "g_Str_File__WAV",
+    "confidence": "ANCHORED"
+  },
+  "0x8447D4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Theme__QueueSong__d_",
+    "confidence": "ANCHORED"
+  },
+  "0x84492C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Tiberiums",
+    "confidence": "ANCHORED"
+  },
+  "0x845584": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_NothingSelected",
+    "confidence": "ANCHORED"
+  },
+  "0x845598": {
+    "type": "uint8_t",
+    "name": "g_Str_File_UICmnds_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x8455B4": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_SelAcrossScreen",
+    "confidence": "ANCHORED"
+  },
+  "0x8455C8": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_SelAcrossMap",
+    "confidence": "ANCHORED"
+  },
+  "0x84560C": {
+    "type": "uint16_t",
+    "name": "g_Str_MSG_Mixed",
+    "confidence": "ANCHORED"
+  },
+  "0x845728": {
+    "type": "uint32_t",
+    "name": "CSF_Language",
+    "confidence": "ANCHORED"
+  },
+  "0x845964": {
+    "type": "uint8_t",
+    "name": "g_Str_File_Unit_CPP",
+    "confidence": "ANCHORED"
+  },
+  "0x84635C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_VERSION_TXT",
+    "confidence": "ANCHORED"
+  },
+  "0x84639C": {
+    "type": "uint8_t",
+    "name": "SubBlock",
+    "confidence": "ANCHORED"
+  },
+  "0x8464AC": {
+    "type": "uint8_t",
+    "name": "VocClass_VoicesEnabled",
+    "confidence": "ANCHORED"
+  },
+  "0x846568": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Volume",
+    "confidence": "ANCHORED"
+  },
+  "0x846574": {
+    "type": "uint8_t",
+    "name": "g_Str_Invalid_Voc",
+    "confidence": "ANCHORED"
+  },
+  "0x846580": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_SoundList",
+    "confidence": "ANCHORED"
+  },
+  "0x84658C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Defaults",
+    "confidence": "ANCHORED"
+  },
+  "0x8467D4": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_DialogList",
+    "confidence": "ANCHORED"
+  },
+  "0x846840": {
+    "type": "uint8_t",
+    "name": "funcs_756843",
+    "confidence": "ANCHORED"
+  },
+  "0x847FD0": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_CampaignID",
+    "confidence": "ANCHORED"
+  },
+  "0x8481AC": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_LastDay",
+    "confidence": "ANCHORED"
+  },
+  "0x8481F0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WDTHist_ini",
+    "confidence": "ANCHORED"
+  },
+  "0x8486AC": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WDTGameOptions_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x848DE4": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WDTSel_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x848F24": {
+    "type": "uint16_t",
+    "name": "g_Str_WDT_TerritorySelectToolTip",
+    "confidence": "ANCHORED"
+  },
+  "0x8491F0": {
+    "type": "uint8_t",
+    "name": "g_Str_WWD_Allied",
+    "confidence": "ANCHORED"
+  },
+  "0x8491FC": {
+    "type": "uint8_t",
+    "name": "g_Str_WWD_Soviet",
+    "confidence": "ANCHORED"
+  },
+  "0x849594": {
+    "type": "uint8_t",
+    "name": "g_Str_Starting_up_WOLBrowser",
+    "confidence": "ANCHORED"
+  },
+  "0x8495AC": {
+    "type": "uint8_t",
+    "name": "g_Str_Creating_WOLBrowser_component_",
+    "confidence": "ANCHORED"
+  },
+  "0x8495CC": {
+    "type": "uint8_t",
+    "name": "g_Str_Instantiating_embedded_WebBrow",
+    "confidence": "ANCHORED"
+  },
+  "0x849640": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_HTMLPath",
+    "confidence": "ANCHORED"
+  },
+  "0x84964C": {
+    "type": "uint8_t",
+    "name": "g_Str_Software_Westwood_Yuri_s_Reven",
+    "confidence": "ANCHORED"
+  },
+  "0x849690": {
+    "type": "uint8_t",
+    "name": "g_Str_WOL_URL_RegKey",
+    "confidence": "ANCHORED"
+  },
+  "0x8497A4": {
+    "type": "uint8_t",
+    "name": "g_Str_Closing_serial_port",
+    "confidence": "ANCHORED"
+  },
+  "0x849830": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_SetCommState_returned_error__s_",
+    "confidence": "ANCHORED"
+  },
+  "0x849AA4": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Writing_to_port_handle_failed_with_error",
+    "confidence": "ANCHORED"
+  },
+  "0x849E2C": {
+    "type": "uint8_t",
+    "name": "szHelp",
+    "confidence": "ANCHORED"
+  },
+  "0x849F48": {
+    "type": "uint8_t",
+    "name": "WindowName",
+    "confidence": "ANCHORED"
+  },
+  "0x849F64": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_UpdateDate",
+    "confidence": "ANCHORED"
+  },
+  "0x849F70": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_UpdateTime",
+    "confidence": "ANCHORED"
+  },
+  "0x849F7C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Locale",
+    "confidence": "ANCHORED"
+  },
+  "0x849F84": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Server",
+    "confidence": "ANCHORED"
+  },
+  "0x849F8C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wolinfoMD_ini",
+    "confidence": "ANCHORED"
+  },
+  "0x849FDC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_DECEMBER",
+    "confidence": "ANCHORED"
+  },
+  "0x849FEC": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Dec",
+    "confidence": "ANCHORED"
+  },
+  "0x849FF4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NOVEMBER",
+    "confidence": "ANCHORED"
+  },
+  "0x84A004": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Nov",
+    "confidence": "ANCHORED"
+  },
+  "0x84A00C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_OCTOBER",
+    "confidence": "ANCHORED"
+  },
+  "0x84A018": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Oct",
+    "confidence": "ANCHORED"
+  },
+  "0x84A020": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_SEPTEMBER",
+    "confidence": "ANCHORED"
+  },
+  "0x84A030": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Sep",
+    "confidence": "ANCHORED"
+  },
+  "0x84A038": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_AUGUST",
+    "confidence": "ANCHORED"
+  },
+  "0x84A044": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Aug",
+    "confidence": "ANCHORED"
+  },
+  "0x84A04C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_JULY",
+    "confidence": "ANCHORED"
+  },
+  "0x84A058": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Jul",
+    "confidence": "ANCHORED"
+  },
+  "0x84A060": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_JUNE",
+    "confidence": "ANCHORED"
+  },
+  "0x84A06C": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Jun",
+    "confidence": "ANCHORED"
+  },
+  "0x84A074": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_MAY",
+    "confidence": "ANCHORED"
+  },
+  "0x84A07C": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_May",
+    "confidence": "ANCHORED"
+  },
+  "0x84A084": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_APRIL",
+    "confidence": "ANCHORED"
+  },
+  "0x84A090": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Apr",
+    "confidence": "ANCHORED"
+  },
+  "0x84A098": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_MARCH",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0A4": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Mar",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0AC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_FEBRUARY",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0BC": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Feb",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0C4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_JANUARY",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0D0": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WOLPersonaInformation_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x84A0F8": {
+    "type": "const uint16_t",
+    "name": "g_INI_Key_Jan",
+    "confidence": "ANCHORED"
+  },
+  "0x84A120": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_AutoLogin",
+    "confidence": "ANCHORED"
+  },
+  "0x84A13C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_DefaultPersona",
+    "confidence": "ANCHORED"
+  },
+  "0x84A16C": {
+    "type": "uint16_t",
+    "name": "g_Str_GUI_UnknownStats",
+    "confidence": "ANCHORED"
+  },
+  "0x84A214": {
+    "type": "uint8_t",
+    "name": "g_Str_Lob_41_",
+    "confidence": "ANCHORED"
+  },
+  "0x84A21C": {
+    "type": "uint8_t",
+    "name": "g_Str_Lob_40_",
+    "confidence": "ANCHORED"
+  },
+  "0x84A234": {
+    "type": "uint32_t",
+    "name": "g_NetworkRematchState",
+    "confidence": "ANCHORED"
+  },
+  "0x84A248": {
+    "type": "uint32_t",
+    "name": "uElapse",
+    "confidence": "ANCHORED"
+  },
+  "0x84A430": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wonline_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x84A45C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Battleclans",
+    "confidence": "ANCHORED"
+  },
+  "0x84A468": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Ladder",
+    "confidence": "ANCHORED"
+  },
+  "0x84A478": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Manage",
+    "confidence": "ANCHORED"
+  },
+  "0x84A52C": {
+    "type": "uint64_t",
+    "name": "g_INI_Key_WOnline",
+    "confidence": "ANCHORED"
+  },
+  "0x84A554": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Requesting_channel_list_type____d__ping_",
+    "confidence": "ANCHORED"
+  },
+  "0x84A5BC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CANT_CONNECT",
+    "confidence": "ANCHORED"
+  },
+  "0x84A690": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_RANK",
+    "confidence": "ANCHORED"
+  },
+  "0x84A6AC": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_UNKNOWN_PING",
+    "confidence": "ANCHORED"
+  },
+  "0x84A770": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_OPER",
+    "confidence": "ANCHORED"
+  },
+  "0x84A788": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__s__d",
+    "confidence": "ANCHORED"
+  },
+  "0x84AC84": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_BADPASS",
+    "confidence": "ANCHORED"
+  },
+  "0x84ACE0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Requesting_ping_for__s_at__s",
+    "confidence": "ANCHORED"
+  },
+  "0x84AD60": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CHANNEL_FULL",
+    "confidence": "ANCHORED"
+  },
+  "0x84B020": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace___hs___s",
+    "confidence": "ANCHORED"
+  },
+  "0x84B224": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace__hs__s",
+    "confidence": "ANCHORED"
+  },
+  "0x84B420": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_WDT_NET_ERR",
+    "confidence": "ANCHORED"
+  },
+  "0x84B5D0": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_FETCHING_SERVLIST",
+    "confidence": "ANCHORED"
+  },
+  "0x84B5E8": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_JOINLOB",
+    "confidence": "ANCHORED"
+  },
+  "0x84B63C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WDT_MIX",
+    "confidence": "ANCHORED"
+  },
+  "0x84B644": {
+    "type": "uint16_t",
+    "name": "g_Str_WOL_LeavingChannel",
+    "confidence": "ANCHORED"
+  },
+  "0x84B658": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Leave_Channel__channel__s_type__d",
+    "confidence": "ANCHORED"
+  },
+  "0x84B90C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_OBSERVER_CANT_PAGE",
+    "confidence": "ANCHORED"
+  },
+  "0x84B94C": {
+    "type": "uint8_t",
+    "name": "g_Str_Fmt_Hs_S_Bracket",
+    "confidence": "ANCHORED"
+  },
+  "0x84B9B0": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace___hs____s___s",
+    "confidence": "ANCHORED"
+  },
+  "0x84B9CC": {
+    "type": "uint8_t",
+    "name": "g_Str_TXT_NAME_TOO_LONG",
+    "confidence": "ANCHORED"
+  },
+  "0x84B9E0": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_ENTER_MESSAGE",
+    "confidence": "ANCHORED"
+  },
+  "0x84B9F4": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_NOT_IN_CHAN",
+    "confidence": "ANCHORED"
+  },
+  "0x84BB6C": {
+    "type": "uint16_t",
+    "name": "g_Str_TXT_CLAN_NOSTART",
+    "confidence": "ANCHORED"
+  },
+  "0x84CD6C": {
+    "type": "uint8_t",
+    "name": "g_INI_Key_Community",
+    "confidence": "ANCHORED"
+  },
+  "0x84D060": {
+    "type": "uint16_t",
+    "name": "g_Str_WOL_MatchFailExit",
+    "confidence": "ANCHORED"
+  },
+  "0x84D818": {
+    "type": "uint8_t",
+    "name": "g_Str_File_WorldDom_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x84DD90": {
+    "type": "int32_t",
+    "name": "iProtocols",
+    "confidence": "ANCHORED"
+  },
+  "0x84DDA0": {
+    "type": "uint8_t",
+    "name": "optval",
+    "confidence": "ANCHORED"
+  },
+  "0x84E5DC": {
+    "type": "uint8_t",
+    "name": "g_Str_Trace_Warning__Probable_deadlock_occurred_on_M",
+    "confidence": "ANCHORED"
+  },
+  "0x84E61C": {
+    "type": "uint8_t",
+    "name": "g_Str_File_wwmous_cpp",
+    "confidence": "ANCHORED"
+  },
+  "0x84E865": {
+    "type": "uint8_t",
+    "name": "Source",
+    "confidence": "ANCHORED"
+  },
+  "0x879B30": {
+    "type": "const uint32_t",
+    "name": "g_ScreenRenderLUT1",
+    "confidence": "ANCHORED"
+  },
+  "0x87B170": {
+    "type": "uint16_t",
+    "name": "g_ScreenRenderLUT2",
+    "confidence": "ANCHORED"
+  },
+  "0x87BC90": {
+    "type": "char",
+    "name": "g_ScreenRenderMask",
+    "confidence": "ANCHORED"
+  },
+  "0x87BD90": {
+    "type": "uint8_t",
+    "name": "g_ScreenRenderFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x87BF70": {
+    "type": "FILE",
+    "name": "File",
+    "confidence": "ANCHORED"
+  },
+  "0x87C2EC": {
+    "type": "LPCRITICAL_SECTION",
+    "name": "lpCriticalSection",
+    "confidence": "ANCHORED"
+  },
+  "0x87C3F8": {
+    "type": "char",
+    "name": "Str1",
+    "confidence": "ANCHORED"
+  },
+  "0x87C484": {
+    "type": "char*",
+    "name": "Block",
+    "confidence": "ANCHORED"
+  },
+  "0x87C488": {
+    "type": "const uint32_t",
+    "name": "funcs_7CDE2B",
+    "confidence": "ANCHORED"
+  },
+  "0x87C598": {
+    "type": "uint16_t",
+    "name": "__ctype",
+    "confidence": "ANCHORED"
+  },
+  "0x87C79C": {
+    "type": "size_t",
+    "name": "SrcSizeInBytes",
+    "confidence": "ANCHORED"
+  },
+  "0x87C7A0": {
+    "type": "char",
+    "name": "SrcCh",
+    "confidence": "ANCHORED"
+  },
+  "0x87C7A8": {
+    "type": "DWORD",
+    "name": "dwTlsIndex",
+    "confidence": "ANCHORED"
+  },
+  "0x87CAEC": {
+    "type": "LPSTR",
+    "name": "lpMultiByteStr",
+    "confidence": "ANCHORED"
+  },
+  "0x87CBA0": {
+    "type": "size_t",
+    "name": "Size",
+    "confidence": "ANCHORED"
+  },
+  "0x87DD80": {
+    "type": "HANDLE",
+    "name": "hConsoleInput",
+    "confidence": "ANCHORED"
+  },
+  "0x87DD84": {
+    "type": "HANDLE",
+    "name": "hConsoleOutput",
+    "confidence": "ANCHORED"
+  },
+  "0x87E180": {
+    "type": "void*",
+    "name": "g_AudioStreamObject",
+    "confidence": "ANCHORED"
+  },
+  "0x87E2A0": {
+    "type": "uint32_t",
+    "name": "g_AudioConfigState",
+    "confidence": "ANCHORED"
+  },
+  "0x87E2C0": {
+    "type": "int",
+    "name": "g_MixerBuffer1",
+    "confidence": "ANCHORED"
+  },
+  "0x87E340": {
+    "type": "int",
+    "name": "g_MixerBuffer5",
+    "confidence": "ANCHORED"
+  },
+  "0x87E3C0": {
+    "type": "int",
+    "name": "g_MixerBuffer8",
+    "confidence": "ANCHORED"
+  },
+  "0x87E450": {
+    "type": "int",
+    "name": "g_MixerBuffer4",
+    "confidence": "ANCHORED"
+  },
+  "0x87E4E0": {
+    "type": "int",
+    "name": "g_MixerBuffer2",
+    "confidence": "ANCHORED"
+  },
+  "0x87E578": {
+    "type": "int",
+    "name": "g_MixerBuffer3",
+    "confidence": "ANCHORED"
+  },
+  "0x87E5F8": {
+    "type": "int",
+    "name": "g_MixerBuffer7",
+    "confidence": "ANCHORED"
+  },
+  "0x87E6A0": {
+    "type": "int",
+    "name": "g_MixerBuffer6",
+    "confidence": "ANCHORED"
+  },
+  "0x87E724": {
+    "type": "void*",
+    "name": "g_AudioFileData",
+    "confidence": "ANCHORED"
+  },
+  "0x87E72C": {
+    "type": "uint32_t",
+    "name": "g_AudioInitialized",
+    "confidence": "ANCHORED"
+  },
+  "0x87E734": {
+    "type": "uint32_t",
+    "name": "g_MixFile_AUDIO",
+    "confidence": "ANCHORED"
+  },
+  "0x87E738": {
+    "type": "uint32_t",
+    "name": "g_MixFile_THEME",
+    "confidence": "ANCHORED"
+  },
+  "0x87E73C": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_SFX",
+    "confidence": "ANCHORED"
+  },
+  "0x87E740": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Voice",
+    "confidence": "ANCHORED"
+  },
+  "0x87E744": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Theme",
+    "confidence": "ANCHORED"
+  },
+  "0x87E748": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Score",
+    "confidence": "ANCHORED"
+  },
+  "0x87E74C": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Misc",
+    "confidence": "ANCHORED"
+  },
+  "0x87E750": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Ambient",
+    "confidence": "ANCHORED"
+  },
+  "0x87E754": {
+    "type": "uint32_t",
+    "name": "g_MixerChannel_Stream",
+    "confidence": "ANCHORED"
+  },
+  "0x87E758": {
+    "type": "uint32_t",
+    "name": "g_MixerState",
+    "confidence": "ANCHORED"
+  },
+  "0x87E7F0": {
+    "type": "HANDLE",
+    "name": "hObject",
+    "confidence": "ANCHORED"
+  },
+  "0x87E7F4": {
+    "type": "DWORD",
+    "name": "ThreadId",
+    "confidence": "ANCHORED"
+  },
+  "0x87E7F8": {
+    "type": "CRITICAL_SECTION",
+    "name": "CriticalSection",
+    "confidence": "ANCHORED"
+  },
+  "0x87E8A4": {
+    "type": "uint32_t",
+    "name": "g_VisibleSurfaceDescriptor",
+    "confidence": "ANCHORED"
+  },
+  "0x87E8B8": {
+    "type": "char",
+    "name": "g_AudioInitFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x87F658": {
+    "type": "uint32_t",
+    "name": "g_CommandClassVector",
+    "confidence": "ANCHORED"
+  },
+  "0x87F65C": {
+    "type": "void*",
+    "name": "g_CommandClass_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0x87F660": {
+    "type": "uint32_t",
+    "name": "g_CommandClass_Size",
+    "confidence": "ANCHORED"
+  },
+  "0x87F665": {
+    "type": "uint8_t",
+    "name": "g_CommandClass_HasInit",
+    "confidence": "ANCHORED"
+  },
+  "0x87F668": {
+    "type": "uint32_t",
+    "name": "g_CommandClassVector_State",
+    "confidence": "ANCHORED"
+  },
+  "0x87F66C": {
+    "type": "uint32_t",
+    "name": "g_CommandClass_Extra",
+    "confidence": "ANCHORED"
+  },
+  "0x87F680": {
+    "type": "void*",
+    "name": "Base",
+    "confidence": "ANCHORED"
+  },
+  "0x87F684": {
+    "type": "size_t",
+    "name": "NumOfElements",
+    "confidence": "ANCHORED"
+  },
+  "0x87F68C": {
+    "type": "uint8_t",
+    "name": "g_FileSystemInitFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x87F690": {
+    "type": "uint32_t",
+    "name": "g_FileSystemPool",
+    "confidence": "ANCHORED"
+  },
+  "0x87F6A8": {
+    "type": "uint32_t",
+    "name": "g_SurfaceAnimState",
+    "confidence": "ANCHORED"
+  },
+  "0x87F6BC": {
+    "type": "uint32_t",
+    "name": "FileSystem_GRFTXT_TIBERIUM_PAL",
+    "confidence": "ANCHORED"
+  },
+  "0x87F6C4": {
+    "type": "void*",
+    "name": "g_FileSystem_THEATER_PAL",
+    "confidence": "ANCHORED"
+  },
+  "0x87F6CC": {
+    "type": "uint32_t",
+    "name": "g_SidebarConfig",
+    "confidence": "ANCHORED"
+  },
+  "0x87F770": {
+    "type": "uint32_t",
+    "name": "g_BinkMoviePlayer",
+    "confidence": "ANCHORED"
+  },
+  "0x87F778": {
+    "type": "uint32_t",
+    "name": "g_GameConfigManager",
+    "confidence": "ANCHORED"
+  },
+  "0x87F8DC": {
+    "type": "uint32_t",
+    "name": "g_Cell_PositionLUT",
+    "confidence": "ANCHORED"
+  },
+  "0x87F8E0": {
+    "type": "uint32_t",
+    "name": "g_CellPositionOffset",
+    "confidence": "ANCHORED"
+  },
+  "0x87F914": {
+    "type": "const uint32_t",
+    "name": "g_AircraftTrackerPool",
+    "confidence": "ANCHORED"
+  },
+  "0x87F918": {
+    "type": "const uint32_t",
+    "name": "g_AircraftTrackerState",
+    "confidence": "ANCHORED"
+  },
+  "0x87F924": {
+    "type": "uint32_t",
+    "name": "g_Shroud_CellArray",
+    "confidence": "ANCHORED"
+  },
+  "0x88098C": {
+    "type": "uint32_t",
+    "name": "g_RadarBlipPool",
+    "confidence": "ANCHORED"
+  },
+  "0x880990": {
+    "type": "uint32_t",
+    "name": "g_RadarBlipManager",
+    "confidence": "ANCHORED"
+  },
+  "0x8809A0": {
+    "type": "uint32_t",
+    "name": "g_BuildingPlacementState",
+    "confidence": "ANCHORED"
+  },
+  "0x884B8F": {
+    "type": "uint8_t",
+    "name": "g_CameoRenderFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x884D90": {
+    "type": "uint32_t",
+    "name": "g_MixFileArray",
+    "confidence": "ANCHORED"
+  },
+  "0x884D94": {
+    "type": "void*",
+    "name": "g_MixFilePool",
+    "confidence": "ANCHORED"
+  },
+  "0x884D98": {
+    "type": "uint32_t",
+    "name": "g_MixFilePool_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0x884D9D": {
+    "type": "uint8_t",
+    "name": "g_MixFilePool_Flag",
+    "confidence": "ANCHORED"
+  },
+  "0x884DA0": {
+    "type": "uint32_t",
+    "name": "g_MixFilePool_Count",
+    "confidence": "ANCHORED"
+  },
+  "0x884DA4": {
+    "type": "uint32_t",
+    "name": "g_MixFilePool_GrowSize",
+    "confidence": "ANCHORED"
+  },
+  "0x884DA8": {
+    "type": "uint32_t",
+    "name": "g_MixFileArray_Maps",
+    "confidence": "ANCHORED"
+  },
+  "0x884DD8": {
+    "type": "uint32_t",
+    "name": "g_MixFile_MULTIMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884DDC": {
+    "type": "uint32_t",
+    "name": "MixFileClass_MULTI",
+    "confidence": "ANCHORED"
+  },
+  "0x884DE0": {
+    "type": "uint32_t",
+    "name": "g_MixFileArray_Movies",
+    "confidence": "ANCHORED"
+  },
+  "0x884DF8": {
+    "type": "uint32_t",
+    "name": "g_MixFile_RA2MD",
+    "confidence": "ANCHORED"
+  },
+  "0x884DFC": {
+    "type": "uint32_t",
+    "name": "g_MixFile_RA2",
+    "confidence": "ANCHORED"
+  },
+  "0x884E14": {
+    "type": "uint32_t",
+    "name": "g_MixFile_GENERIC",
+    "confidence": "ANCHORED"
+  },
+  "0x884E18": {
+    "type": "uint32_t",
+    "name": "g_MixFile_GENERMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E24": {
+    "type": "uint32_t",
+    "name": "g_MixFile_ISOGEN",
+    "confidence": "ANCHORED"
+  },
+  "0x884E28": {
+    "type": "uint32_t",
+    "name": "g_MixFile_ISOGENMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E2C": {
+    "type": "uint32_t",
+    "name": "g_MixFile_MOVIES",
+    "confidence": "ANCHORED"
+  },
+  "0x884E38": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CONQMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E3C": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CONQUER",
+    "confidence": "ANCHORED"
+  },
+  "0x884E40": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CAMEOMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E44": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CAMEO",
+    "confidence": "ANCHORED"
+  },
+  "0x884E48": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CACHEMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E4C": {
+    "type": "uint32_t",
+    "name": "g_MixFile_CACHE",
+    "confidence": "ANCHORED"
+  },
+  "0x884E50": {
+    "type": "uint32_t",
+    "name": "g_MixFile_LOCALMD",
+    "confidence": "ANCHORED"
+  },
+  "0x884E54": {
+    "type": "uint32_t",
+    "name": "g_MixFile_LOCAL",
+    "confidence": "ANCHORED"
+  },
+  "0x884E60": {
+    "type": "uint32_t",
+    "name": "g_MixFile_MAPSMDFirst",
+    "confidence": "ANCHORED"
+  },
+  "0x884E64": {
+    "type": "uint32_t",
+    "name": "g_MixFile_MAPSFirst",
+    "confidence": "ANCHORED"
+  },
+  "0x885780": {
+    "type": "uint8_t",
+    "name": "FileSystem_TEMPERAT_PAL",
+    "confidence": "ANCHORED"
+  },
+  "0x886B88": {
+    "type": "uint32_t",
+    "name": "Randomizer_Global",
+    "confidence": "ANCHORED"
+  },
+  "0x886F90": {
+    "type": "uint32_t",
+    "name": "DSurface_SidebarBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886F94": {
+    "type": "uint32_t",
+    "name": "g_DSurface_SidebarBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886F9C": {
+    "type": "uint32_t",
+    "name": "g_DSurface_ViewBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886FA0": {
+    "type": "uint32_t",
+    "name": "DSurface_ViewBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886FA4": {
+    "type": "bool",
+    "name": "g_Map_VisibleRect",
+    "confidence": "ANCHORED"
+  },
+  "0x886FA8": {
+    "type": "uint32_t",
+    "name": "g_Map_VisibleRectOffset",
+    "confidence": "ANCHORED"
+  },
+  "0x886FAC": {
+    "type": "uint32_t",
+    "name": "g_DSurface_WindowOffset",
+    "confidence": "ANCHORED"
+  },
+  "0x886FB0": {
+    "type": "uint32_t",
+    "name": "DSurface_WindowBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886FB8": {
+    "type": "uint32_t",
+    "name": "g_CreditsScreenBounds",
+    "confidence": "ANCHORED"
+  },
+  "0x886FBC": {
+    "type": "uint32_t",
+    "name": "g_CreditsScreenConfig",
+    "confidence": "ANCHORED"
+  },
+  "0x8870C0": {
+    "type": "uint32_t",
+    "name": "CCINIClass_INI_RA2MD",
+    "confidence": "ANCHORED"
+  },
+  "0x887128": {
+    "type": "uint32_t",
+    "name": "CCINIClass_INI_AI",
+    "confidence": "ANCHORED"
+  },
+  "0x8871E0": {
+    "type": "void*",
+    "name": "g_RulesClass_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0x887208": {
+    "type": "uint32_t",
+    "name": "CCINIClass_INI_UIMD",
+    "confidence": "ANCHORED"
+  },
+  "0x8872FC": {
+    "type": "uint32_t",
+    "name": "DSurface_Tile",
+    "confidence": "ANCHORED"
+  },
+  "0x887300": {
+    "type": "void*",
+    "name": "DSurface_Sidebar",
+    "confidence": "ANCHORED"
+  },
+  "0x887308": {
+    "type": "void*",
+    "name": "g_DSurface_Primary",
+    "confidence": "ANCHORED"
+  },
+  "0x88730C": {
+    "type": "void*",
+    "name": "g_DSurface_Hidden",
+    "confidence": "ANCHORED"
+  },
+  "0x887310": {
+    "type": "int32_t",
+    "name": "DSurface_Alternate",
+    "confidence": "ANCHORED"
+  },
+  "0x887314": {
+    "type": "void*",
+    "name": "g_DSurface_Hidden_2",
+    "confidence": "ANCHORED"
+  },
+  "0x88731C": {
+    "type": "int32_t",
+    "name": "DSurface_Composite",
+    "confidence": "ANCHORED"
+  },
+  "0x887324": {
+    "type": "uint32_t",
+    "name": "g_TacticalClass_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0x887338": {
+    "type": "uint32_t",
+    "name": "g_LastPerformanceTick",
+    "confidence": "ANCHORED"
+  },
+  "0x887340": {
+    "type": "uint32_t",
+    "name": "g_PerformanceTickOffset",
+    "confidence": "ANCHORED"
+  },
+  "0x887368": {
+    "type": "uint32_t",
+    "name": "g_TacticalRender",
+    "confidence": "ANCHORED"
+  },
+  "0x887388": {
+    "type": "uint32_t",
+    "name": "VoxelAnimClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8874C0": {
+    "type": "class WarheadTypeClass*",
+    "name": "WarheadTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8874D0": {
+    "type": "uint32_t",
+    "name": "g_WarheadTypePool",
+    "confidence": "ANCHORED"
+  },
+  "0x887568": {
+    "type": "class WeaponTypeClass*",
+    "name": "WeaponTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x88756C": {
+    "type": "void*",
+    "name": "g_WeaponTypeConfig",
+    "confidence": "ANCHORED"
+  },
+  "0x887578": {
+    "type": "uint32_t",
+    "name": "g_WeaponTypePool",
+    "confidence": "ANCHORED"
+  },
+  "0x887628": {
+    "type": "uint32_t",
+    "name": "g_NetworkInterface",
+    "confidence": "ANCHORED"
+  },
+  "0x887640": {
+    "type": "void*",
+    "name": "g_WWMouseClass_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0x887644": {
+    "type": "uint32_t",
+    "name": "g_ZBufferDescriptor",
+    "confidence": "ANCHORED"
+  },
+  "0x887734": {
+    "type": "uint16_t",
+    "name": "g_TypeClass_DefaultString",
+    "confidence": "ANCHORED"
+  },
+  "0x887888": {
+    "type": "uint32_t",
+    "name": "g_CellClassManager",
+    "confidence": "ANCHORED"
+  },
+  "0x889E68": {
+    "type": "uint32_t",
+    "name": "g_AircraftStatusFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x889F64": {
+    "type": "uint8_t",
+    "name": "g_INI_DefaultBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0x88A100": {
+    "type": "uint32_t",
+    "name": "g_AlphaShapeLimit",
+    "confidence": "ANCHORED"
+  },
+  "0x89A178": {
+    "type": "uint32_t",
+    "name": "Map_InvalidCoord_X",
+    "confidence": "ANCHORED"
+  },
+  "0x89A17C": {
+    "type": "uint32_t",
+    "name": "Map_InvalidCoord_Y",
+    "confidence": "ANCHORED"
+  },
+  "0x89A180": {
+    "type": "uint32_t",
+    "name": "Map_InvalidCoord_Z",
+    "confidence": "ANCHORED"
+  },
+  "0x89A1B4": {
+    "type": "uint32_t",
+    "name": "Map_MaxHeight",
+    "confidence": "ANCHORED"
+  },
+  "0x89A1C0": {
+    "type": "uint32_t",
+    "name": "Map_CellHeight",
+    "confidence": "ANCHORED"
+  },
+  "0x89A29C": {
+    "type": "void*",
+    "name": "punk",
+    "confidence": "ANCHORED"
+  },
+  "0x89C2DC": {
+    "type": "uint32_t",
+    "name": "g_MapCellWidth",
+    "confidence": "ANCHORED"
+  },
+  "0x89C3B0": {
+    "type": "int32_t",
+    "name": "g_VisibilitySystem",
+    "confidence": "ANCHORED"
+  },
+  "0x89C4D0": {
+    "type": "int32_t",
+    "name": "g_FogOfWarState",
+    "confidence": "ANCHORED"
+  },
+  "0x89C818": {
+    "type": "uint32_t",
+    "name": "g_TerrainTypeTable",
+    "confidence": "ANCHORED"
+  },
+  "0x89C848": {
+    "type": "uint32_t",
+    "name": "g_BuildingClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0x89DDC4": {
+    "type": "uint32_t",
+    "name": "FileSystem_POWEROFF_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x89DDC8": {
+    "type": "uint32_t",
+    "name": "FileSystem_WRENCH_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0x89E000": {
+    "type": "uint32_t",
+    "name": "g_GameModeOptionState",
+    "confidence": "ANCHORED"
+  },
+  "0x89E3A0": {
+    "type": "bool",
+    "name": "byte_89E3A0",
+    "confidence": "ANCHORED"
+  },
+  "0x89ED18": {
+    "type": "uint8_t",
+    "name": "g_IsWindowed",
+    "confidence": "ANCHORED"
+  },
+  "0x89F518": {
+    "type": "uint32_t",
+    "name": "g_DDrawSurfaceManager",
+    "confidence": "ANCHORED"
+  },
+  "0x89F688": {
+    "type": "int32_t",
+    "name": "Direction_X_Offsets",
+    "confidence": "ANCHORED"
+  },
+  "0x89F690": {
+    "type": "uint32_t",
+    "name": "g_CellDirectionOffsets",
+    "confidence": "ANCHORED"
+  },
+  "0x89F698": {
+    "type": "uint32_t",
+    "name": "g_DirectionOffsetPool",
+    "confidence": "ANCHORED"
+  },
+  "0x89F6A0": {
+    "type": "uint32_t",
+    "name": "Direction_Y_Offsets",
+    "confidence": "ANCHORED"
+  },
+  "0x89F75C": {
+    "type": "void*",
+    "name": "lpBaseAddress",
+    "confidence": "ANCHORED"
+  },
+  "0x89F974": {
+    "type": "void*",
+    "name": "hLibModule",
+    "confidence": "ANCHORED"
+  },
+  "0x89F978": {
+    "type": "int",
+    "name": "g_DDraw_Initialized",
+    "confidence": "ANCHORED"
+  },
+  "0x89FC94": {
+    "type": "uint8_t",
+    "name": "g_DDraw_PaletteEntries",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0094": {
+    "type": "void*",
+    "name": "g_lpDirectDraw7",
+    "confidence": "ANCHORED"
+  },
+  "0x8A00A0": {
+    "type": "uint32_t",
+    "name": "g_LoadScreenFlag",
+    "confidence": "ANCHORED"
+  },
+  "0x8A00A4": {
+    "type": "uint32_t",
+    "name": "g_DisplayWidth",
+    "confidence": "ANCHORED"
+  },
+  "0x8A00B0": {
+    "type": "void (*)()",
+    "name": "g_DDraw_ErrorCallback",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0790": {
+    "type": "uint32_t",
+    "name": "g_DDraw_ClipRect",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0948": {
+    "type": "uint8_t",
+    "name": "g_DDraw_PixelFormatDesc",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DD0": {
+    "type": "uint32_t",
+    "name": "g_BitShift_Red",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DD4": {
+    "type": "uint32_t",
+    "name": "g_BitShift_Green_0",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DD8": {
+    "type": "uint32_t",
+    "name": "g_BitShift_Blue",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DDC": {
+    "type": "uint32_t",
+    "name": "g_BitMask_Red",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DE0": {
+    "type": "uint32_t",
+    "name": "g_BitMask_Green",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DE4": {
+    "type": "uint32_t",
+    "name": "g_BitMask_Blue",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DEF": {
+    "type": "uint8_t",
+    "name": "g_DDraw_Force3D",
+    "confidence": "ANCHORED"
+  },
+  "0x8A0DF8": {
+    "type": "uint64_t",
+    "name": "g_DrawColorState",
+    "confidence": "ANCHORED"
+  },
+  "0x8A3A08": {
+    "type": "uint8_t",
+    "name": "Buffer",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3A7C": {
+    "type": "uint32_t",
+    "name": "g_ExceptionReturnStack",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3A80": {
+    "type": "uint32_t",
+    "name": "g_ExceptionReturnAddr",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3A84": {
+    "type": "uint32_t",
+    "name": "g_ExceptionReturnFrame",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3CC0": {
+    "type": "void*",
+    "name": "g_MissionPool",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3CC4": {
+    "type": "uint32_t",
+    "name": "g_MissionState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3D20": {
+    "type": "uint32_t",
+    "name": "g_FootClassConfig",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3D88": {
+    "type": "uint32_t",
+    "name": "g_FootClass_Pool",
+    "confidence": "ANCHORED"
+  },
+  "0x8B3DC0": {
+    "type": "uint32_t",
+    "name": "FootClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8B40D8": {
+    "type": "uint32_t",
+    "name": "g_ScenarioUpdateState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B40E8": {
+    "type": "uint32_t",
+    "name": "TeamClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8B40EC": {
+    "type": "void*",
+    "name": "g_TeamClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0x8B40F8": {
+    "type": "uint32_t",
+    "name": "g_HouseClass_AIProductionState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4108": {
+    "type": "uint32_t",
+    "name": "UnitClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8B410C": {
+    "type": "void*",
+    "name": "g_UnitClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4118": {
+    "type": "uint32_t",
+    "name": "g_HouseClass_BuildState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4130": {
+    "type": "uint32_t",
+    "name": "g_ObjectTypeList",
+    "confidence": "ANCHORED"
+  },
+  "0x8B413C": {
+    "type": "void*",
+    "name": "g_PathClass_State",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4148": {
+    "type": "uint32_t",
+    "name": "g_UnitTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4150": {
+    "type": "uint32_t",
+    "name": "AnimTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4154": {
+    "type": "uint32_t",
+    "name": "g_AnimTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4180": {
+    "type": "uint32_t",
+    "name": "LightConvertClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4188": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerLogBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0x8B41CC": {
+    "type": "void*",
+    "name": "g_MultiplayerSyncState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B41D8": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerDebugState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B41F8": {
+    "type": "uint32_t",
+    "name": "g_GameInitState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B41FC": {
+    "type": "uint32_t",
+    "name": "g_MenuInitFlags",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4200": {
+    "type": "uint32_t",
+    "name": "g_MenuInitState",
+    "confidence": "ANCHORED"
+  },
+  "0x8B4204": {
+    "type": "uint8_t",
+    "name": "g_MenuInitComplete",
+    "confidence": "ANCHORED"
+  },
+  "0xA80218": {
+    "type": "uint32_t",
+    "name": "g_GameCleanupState",
+    "confidence": "ANCHORED"
+  },
+  "0xA80228": {
+    "type": "uint32_t",
+    "name": "HouseClass_Array_0",
+    "confidence": "ANCHORED"
+  },
+  "0xA8022C": {
+    "type": "HouseClass*",
+    "name": "HouseClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA80238": {
+    "type": "uint32_t",
+    "name": "HouseClass_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xA802C8": {
+    "type": "uint32_t",
+    "name": "Networking_LastEventIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xA802CC": {
+    "type": "uint32_t",
+    "name": "g_NetworkEventIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xA802D0": {
+    "type": "uint32_t",
+    "name": "Networking_NextPacketIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xA802D4": {
+    "type": "uint8_t",
+    "name": "g_NetworkPacketIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xA83A54": {
+    "type": "uint32_t",
+    "name": "g_CrateSystemState",
+    "confidence": "ANCHORED"
+  },
+  "0xA83C6C": {
+    "type": "uint32_t",
+    "name": "g_TriggerTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA83C78": {
+    "type": "uint32_t",
+    "name": "g_TriggerClassCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA83C80": {
+    "type": "uint32_t",
+    "name": "BulletTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA83C90": {
+    "type": "uint32_t",
+    "name": "g_BulletTypeInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA83C9C": {
+    "type": "void*",
+    "name": "g_SuperWeaponTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA83CA8": {
+    "type": "uint32_t",
+    "name": "g_SuperWeaponTypeArray",
+    "confidence": "ANCHORED"
+  },
+  "0xA83CE0": {
+    "type": "uint32_t",
+    "name": "UnitTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA83CE4": {
+    "type": "void*",
+    "name": "g_UnitTypeCount2",
+    "confidence": "ANCHORED"
+  },
+  "0xA83CF0": {
+    "type": "uint32_t",
+    "name": "g_CrateCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA83CFC": {
+    "type": "void*",
+    "name": "g_CampaignTypeArray",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D08": {
+    "type": "uint32_t",
+    "name": "g_UnitTypeInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D4C": {
+    "type": "void*",
+    "name": "HouseClass_Player",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D50": {
+    "type": "uint32_t",
+    "name": "SuperClass_ShowTimers",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D78": {
+    "type": "uint32_t",
+    "name": "g_InfantryTypeInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D84": {
+    "type": "void*",
+    "name": "g_BuildingTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D90": {
+    "type": "uint32_t",
+    "name": "g_ObjectTypeConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xA83D9C": {
+    "type": "void*",
+    "name": "g_BuildingProductionQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xA83DA8": {
+    "type": "uint32_t",
+    "name": "g_BuildingTypeInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA83DE8": {
+    "type": "uint32_t",
+    "name": "InfantryClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA83DEC": {
+    "type": "uint32_t",
+    "name": "g_InfantryClassLimit",
+    "confidence": "ANCHORED"
+  },
+  "0xA83DF8": {
+    "type": "uint32_t",
+    "name": "g_BuildingClass_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xA83E34": {
+    "type": "void*",
+    "name": "g_TeamTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA83E40": {
+    "type": "uint32_t",
+    "name": "g_TeamTypeCapacity",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B1E0": {
+    "type": "uint32_t",
+    "name": "SmudgeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B200": {
+    "type": "uint32_t",
+    "name": "AITriggerTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B210": {
+    "type": "uint32_t",
+    "name": "g_AnimTypeInitQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B218": {
+    "type": "uint32_t",
+    "name": "AircraftTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B21C": {
+    "type": "uint32_t",
+    "name": "g_AircraftTypeCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B228": {
+    "type": "uint32_t",
+    "name": "g_TypeClass_FindCache",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B230": {
+    "type": "void*",
+    "name": "g_ScenarioClass_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B238": {
+    "type": "uint32_t",
+    "name": "g_GameMode_Current",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B23C": {
+    "type": "uint32_t",
+    "name": "g_GameStateFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B240": {
+    "type": "uint8_t",
+    "name": "g_GameDifficulty",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B244": {
+    "type": "uint32_t",
+    "name": "g_GameOptionsFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B24C": {
+    "type": "uint32_t",
+    "name": "g_GameTypeFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B250": {
+    "type": "uint8_t",
+    "name": "g_ScenarioFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B254": {
+    "type": "int32_t",
+    "name": "g_GameRulesOptions",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B258": {
+    "type": "uint32_t",
+    "name": "Bases",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B25C": {
+    "type": "void*",
+    "name": "g_Rules_Bases",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B260": {
+    "type": "uint32_t",
+    "name": "BridgeDestruction",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B261": {
+    "type": "uint8_t",
+    "name": "Crates",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B262": {
+    "type": "uint32_t",
+    "name": "ShortGame",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B263": {
+    "type": "uint8_t",
+    "name": "SWAllowed",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B264": {
+    "type": "uint32_t",
+    "name": "g_Rules_ShortGame",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B268": {
+    "type": "uint32_t",
+    "name": "g_Rules_EngineerCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B26C": {
+    "type": "uint8_t",
+    "name": "MultiEngineer",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B270": {
+    "type": "int32_t",
+    "name": "g_Rules_MultiEngineer",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B274": {
+    "type": "void*",
+    "name": "g_Rules_AlliesAllowed",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B29C": {
+    "type": "int32_t",
+    "name": "g_CampaignPlayerArray",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B2BC": {
+    "type": "int32_t",
+    "name": "g_CampaignConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B2DC": {
+    "type": "int32_t",
+    "name": "g_CampaignSideIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B2FC": {
+    "type": "int32_t",
+    "name": "g_CampaignFactionSlot",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B31C": {
+    "type": "uint8_t",
+    "name": "AlliesAllowed",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B31D": {
+    "type": "uint32_t",
+    "name": "HarvesterTruce",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B31E": {
+    "type": "uint8_t",
+    "name": "CTF",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B31F": {
+    "type": "uint8_t",
+    "name": "FOW",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B320": {
+    "type": "uint32_t",
+    "name": "MCVRedeploy",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B380": {
+    "type": "uint8_t",
+    "name": "g_GameSetupBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B394": {
+    "type": "int32_t",
+    "name": "g_TauntCommandState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B3AC": {
+    "type": "void*",
+    "name": "g_CommandExecState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B538": {
+    "type": "uint32_t",
+    "name": "MuteSWLaunches",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B54C": {
+    "type": "uint32_t",
+    "name": "g_ScenarioLoadFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B550": {
+    "type": "uint32_t",
+    "name": "g_ScenarioState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B554": {
+    "type": "uint32_t",
+    "name": "g_ScenarioLoadState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B56C": {
+    "type": "uint32_t",
+    "name": "g_GameSessionPool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B570": {
+    "type": "uint32_t",
+    "name": "g_GameSessionFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B8CC": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerGameState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B8D8": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerOptions",
+    "confidence": "ANCHORED"
+  },
+  "0xA8B8E0": {
+    "type": "uint8_t",
+    "name": "Destination",
+    "confidence": "ANCHORED"
+  },
+  "0xA8BAE2": {
+    "type": "uint8_t",
+    "name": "g_MultiplayerFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8BB04": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerConfigState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8BB08": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerSetupState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8BB1C": {
+    "type": "uint32_t",
+    "name": "g_NetworkRematchObject",
+    "confidence": "ANCHORED"
+  },
+  "0xA8BC60": {
+    "type": "MessageListClass",
+    "name": "g_GameNetworkObject",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D580": {
+    "type": "uint32_t",
+    "name": "g_CampaignScoreFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D58C": {
+    "type": "int32_t",
+    "name": "g_MainLoopObject",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D5F8": {
+    "type": "int",
+    "name": "g_NetworkEventPending",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D60C": {
+    "type": "bool",
+    "name": "byte_A8D60C",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D60D": {
+    "type": "bool",
+    "name": "byte_A8D60D",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D60E": {
+    "type": "uint8_t",
+    "name": "g_NetworkQuitFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D610": {
+    "type": "uint16_t",
+    "name": "g_CurrentPlayerName",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D638": {
+    "type": "uint32_t",
+    "name": "Network_EventType",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D63C": {
+    "type": "uint8_t",
+    "name": "g_NetworkPlayerBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D804": {
+    "type": "uint32_t",
+    "name": "Network_EventValue",
+    "confidence": "ANCHORED"
+  },
+  "0xA8D810": {
+    "type": "const uint16_t",
+    "name": "Network_EventHeader",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA48": {
+    "type": "const uint32_t",
+    "name": "g_GameSetupFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA54": {
+    "type": "uint32_t",
+    "name": "g_GameSetupConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA60": {
+    "type": "const uint32_t",
+    "name": "g_NetworkPlayerConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA6C": {
+    "type": "uint32_t",
+    "name": "g_NetworkPlayerList",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA74": {
+    "type": "const uint32_t",
+    "name": "g_PlayerInfoCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA78": {
+    "type": "const uint32_t",
+    "name": "Game_PlayerInfoArray",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA84": {
+    "type": "uint32_t",
+    "name": "Game_PlayerCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA8C": {
+    "type": "uint32_t",
+    "name": "g_NetworkPlayerCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DA90": {
+    "type": "int32_t",
+    "name": "g_NetworkPlayerName",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DAB0": {
+    "type": "uint8_t",
+    "name": "g_PlayerNameListEnd",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DAB4": {
+    "type": "uint32_t",
+    "name": "g_GameFlags_Campaign",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DAB8": {
+    "type": "uint32_t",
+    "name": "GameFlags_Campaign",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DABC": {
+    "type": "uint32_t",
+    "name": "g_GameFlagsMisc",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DB30": {
+    "type": "uint32_t",
+    "name": "g_EventDispatchState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DB38": {
+    "type": "void*",
+    "name": "g_EventProcessState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DB9C": {
+    "type": "uint16_t*",
+    "name": "g_NetworkHostState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8DBA0": {
+    "type": "uint32_t",
+    "name": "g_Network_IsHosting",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E284": {
+    "type": "int32_t",
+    "name": "Network_LastPacketTime",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E2B2": {
+    "type": "uint32_t",
+    "name": "Network_PlayerPorts",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E2C8": {
+    "type": "bool",
+    "name": "byte_A8E2C8",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E328": {
+    "type": "uint32_t",
+    "name": "g_RulesClassInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E334": {
+    "type": "void*",
+    "name": "g_SuperWeaponPool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E340": {
+    "type": "uint32_t",
+    "name": "g_HouseClassInitState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E348": {
+    "type": "uint32_t",
+    "name": "InfantryTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E34C": {
+    "type": "void*",
+    "name": "Factory_ExitCellTable",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E358": {
+    "type": "uint32_t",
+    "name": "g_LoadScreenProgress",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E390": {
+    "type": "uint32_t",
+    "name": "AircraftClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E3A0": {
+    "type": "uint32_t",
+    "name": "g_AircraftClassCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E7AC": {
+    "type": "uint32_t",
+    "name": "g_IKnowWhatImDoing",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E7B0": {
+    "type": "uint32_t",
+    "name": "g_MixFile_LoadCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E828": {
+    "type": "uint8_t",
+    "name": "BombClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E8C8": {
+    "type": "void*",
+    "name": "pUnk",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E8D4": {
+    "type": "void*",
+    "name": "g_MultiplayerLogEntry",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E8E0": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerLogFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E960": {
+    "type": "int",
+    "name": "g_IntroMovieObject",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E978": {
+    "type": "uint32_t",
+    "name": "g_AbstractTypePool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E9A0": {
+    "type": "uint32_t",
+    "name": "g_WTFMode",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E9A8": {
+    "type": "uint32_t",
+    "name": "AnimClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E9AC": {
+    "type": "void*",
+    "name": "g_AnimClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E9B8": {
+    "type": "uint32_t",
+    "name": "g_AnimClassCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8E9C0": {
+    "type": "int32_t",
+    "name": "g_NetworkManager",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EA70": {
+    "type": "uint32_t",
+    "name": "g_EventManager",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EAE8": {
+    "type": "uint32_t",
+    "name": "TriggerClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EAEC": {
+    "type": "void*",
+    "name": "g_TriggerClassCapacity",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EAF8": {
+    "type": "uint32_t",
+    "name": "g_ProductionQueueState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB28": {
+    "type": "uint32_t",
+    "name": "VoxelAnimTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB38": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerPool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB40": {
+    "type": "uint32_t",
+    "name": "BuildingClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB44": {
+    "type": "void*",
+    "name": "g_BuildingClass_InstanceCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB50": {
+    "type": "uint32_t",
+    "name": "g_BuildingProductionState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB60": {
+    "type": "uint32_t",
+    "name": "g_GameModeOptions",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB78": {
+    "type": "uint32_t",
+    "name": "g_lParam",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB7F": {
+    "type": "uint8_t",
+    "name": "MCV_DeployModeEnabled",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB84": {
+    "type": "uint32_t",
+    "name": "g_CommandLineFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB8C": {
+    "type": "int32_t",
+    "name": "xRight",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB90": {
+    "type": "int32_t",
+    "name": "yBottom",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EB96": {
+    "type": "const uint8_t",
+    "name": "Game_bAllowVRAMSidebar",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC1C": {
+    "type": "void*",
+    "name": "FactoryClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC28": {
+    "type": "uint32_t",
+    "name": "FactoryClass_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC44": {
+    "type": "uint8_t",
+    "name": "g_GameObjectManager",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC50": {
+    "type": "uint32_t",
+    "name": "OverlayClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC54": {
+    "type": "void*",
+    "name": "g_ObjectClass_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC74": {
+    "type": "uint8_t",
+    "name": "g_ThemeMIXLoaded",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC78": {
+    "type": "TechnoClass*",
+    "name": "TechnoClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC7C": {
+    "type": "void*",
+    "name": "g_TechnoClass_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EC88": {
+    "type": "uint32_t",
+    "name": "g_SidebarState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECA0": {
+    "type": "uint32_t",
+    "name": "TeamTypeClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECA4": {
+    "type": "void*",
+    "name": "g_TeamTypePool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECB0": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerLogState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECBC": {
+    "type": "uint32_t",
+    "name": "g_ObjectClass_CurrentCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECC8": {
+    "type": "uint32_t",
+    "name": "g_SelectionManager",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ECE0": {
+    "type": "uint32_t",
+    "name": "g_CoordScatterManager",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED2C": {
+    "type": "void*",
+    "name": "g_FrameCounter",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED38": {
+    "type": "uint32_t",
+    "name": "g_TechnoClassCount",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED40": {
+    "type": "uint32_t",
+    "name": "BulletClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED54": {
+    "type": "int32_t",
+    "name": "dword_A8ED54",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED58": {
+    "type": "uint32_t",
+    "name": "BounceClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED5C": {
+    "type": "uint32_t",
+    "name": "g_BounceClassInit",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED5D": {
+    "type": "const uint8_t",
+    "name": "g_SpawnModeActive",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED64": {
+    "type": "bool",
+    "name": "byte_A8ED64",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED6B": {
+    "type": "bool",
+    "name": "ArmageddonMode",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED80": {
+    "type": "uint32_t",
+    "name": "g_DDraw_Active",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED84": {
+    "type": "void*",
+    "name": "g_CurrentFrame",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED94": {
+    "type": "uint32_t",
+    "name": "g_MenuRandomSeed",
+    "confidence": "ANCHORED"
+  },
+  "0xA8ED9C": {
+    "type": "uint32_t",
+    "name": "g_GameActive",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EDDC": {
+    "type": "bool",
+    "name": "byte_A8EDDC",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EF98": {
+    "type": "int32_t",
+    "name": "g_ControlGroupState",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EFF8": {
+    "type": "uint32_t",
+    "name": "g_ControlGroupPool",
+    "confidence": "ANCHORED"
+  },
+  "0xA8EFFC": {
+    "type": "uint32_t",
+    "name": "g_ControlGroupConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F000": {
+    "type": "uint32_t",
+    "name": "g_ControlGroupLimit",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F180": {
+    "type": "uint32_t",
+    "name": "g_ScoreDisplayState1",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F184": {
+    "type": "uint32_t",
+    "name": "g_ScoreDisplayState2",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F188": {
+    "type": "uint32_t",
+    "name": "g_ScoreDisplayState3",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F654": {
+    "type": "uint16_t",
+    "name": "g_TeamCommandBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F784": {
+    "type": "int",
+    "name": "dword_A8F784",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F7A8": {
+    "type": "int32_t",
+    "name": "nIDDlgItem",
+    "confidence": "ANCHORED"
+  },
+  "0xA8F7B8": {
+    "type": "uint8_t",
+    "name": "Str",
+    "confidence": "ANCHORED"
+  },
+  "0xA9F9CC": {
+    "type": "uint32_t",
+    "name": "LightningStorm_Coords",
+    "confidence": "ANCHORED"
+  },
+  "0xA9F9D0": {
+    "type": "uint32_t",
+    "name": "LightningStorm_CloudsPresent",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FA18": {
+    "type": "uint32_t",
+    "name": "LightningStorm_BoltsPresent",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FA48": {
+    "type": "uint32_t",
+    "name": "PsyDom_Coords",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FA60": {
+    "type": "uint32_t",
+    "name": "LightningStorm_CloudsManifesting",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FA98": {
+    "type": "uint32_t",
+    "name": "ChronoScreenEffect_Duration",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FA9C": {
+    "type": "uint32_t",
+    "name": "g_ChronoEffectState",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAB0": {
+    "type": "uint32_t",
+    "name": "ChronoScreenEffect_Status",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAB4": {
+    "type": "uint8_t",
+    "name": "LightningStorm_Active",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAB8": {
+    "type": "uint32_t",
+    "name": "LightningStorm_Deferment",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FABC": {
+    "type": "uint32_t",
+    "name": "NukeFlash_Status",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAC0": {
+    "type": "uint32_t",
+    "name": "PsyDom_Status",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAC4": {
+    "type": "uint32_t",
+    "name": "PsyDom_Anim",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAC8": {
+    "type": "void*",
+    "name": "PsyDom_Owner",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FACC": {
+    "type": "void*",
+    "name": "LightningStorm_Owner",
+    "confidence": "ANCHORED"
+  },
+  "0xA9FAD0": {
+    "type": "uint8_t",
+    "name": "LightningStorm_TimeToEnd",
+    "confidence": "ANCHORED"
+  },
+  "0xAA03F8": {
+    "type": "void*",
+    "name": "hHandle",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0444": {
+    "type": "uint32_t",
+    "name": "g_StreamBufferState",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0448": {
+    "type": "uint32_t",
+    "name": "g_StreamPool",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0464": {
+    "type": "uint32_t",
+    "name": "g_StreamConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0468": {
+    "type": "void*",
+    "name": "Stream",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0738": {
+    "type": "uint32_t",
+    "name": "g_CellPassabilityLUT",
+    "confidence": "ANCHORED"
+  },
+  "0xAA0E28": {
+    "type": "uint32_t",
+    "name": "g_Cell_BuildabilityLUT",
+    "confidence": "ANCHORED"
+  },
+  "0xAA1020": {
+    "type": "uint32_t",
+    "name": "g_TerrainBuildConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xAA1028": {
+    "type": "uint32_t",
+    "name": "g_TerrainSoundConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10B8": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseAmplitude",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10BC": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoisePhase",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10C4": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseSeed1",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10C8": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseParam",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10CC": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseSeed2",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10D8": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseDataPtr1",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10DC": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseDataPtr2",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10E8": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoisePhaseX",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10EC": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoisePhaseY",
+    "confidence": "ANCHORED"
+  },
+  "0xAA10F8": {
+    "type": "uint32_t",
+    "name": "g_TerrainNoiseFrequency",
+    "confidence": "ANCHORED"
+  },
+  "0xABAD1C": {
+    "type": "uint32_t",
+    "name": "g_TerrainBridgeIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xABAD30": {
+    "type": "uint32_t",
+    "name": "g_TerrainSoundTable2",
+    "confidence": "ANCHORED"
+  },
+  "0xABBEC8": {
+    "type": "uint32_t",
+    "name": "g_CellTileTypeCache",
+    "confidence": "ANCHORED"
+  },
+  "0xABC1D8": {
+    "type": "uint32_t",
+    "name": "g_CellTileLookup",
+    "confidence": "ANCHORED"
+  },
+  "0xABC1F8": {
+    "type": "uint32_t",
+    "name": "g_TerrainTypeTable2",
+    "confidence": "ANCHORED"
+  },
+  "0xABC554": {
+    "type": "void*",
+    "name": "lpBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xABC5F8": {
+    "type": "int32_t",
+    "name": "g_MissionQueueFrame",
+    "confidence": "ANCHORED"
+  },
+  "0xABC5FC": {
+    "type": "int32_t",
+    "name": "g_MissionQueueParam",
+    "confidence": "ANCHORED"
+  },
+  "0xABC600": {
+    "type": "int32_t",
+    "name": "g_MissionQueueType",
+    "confidence": "ANCHORED"
+  },
+  "0xABC888": {
+    "type": "uint32_t",
+    "name": "g_TimerPool",
+    "confidence": "ANCHORED"
+  },
+  "0xABCA20": {
+    "type": "uint32_t",
+    "name": "g_BridgeCellPool",
+    "confidence": "ANCHORED"
+  },
+  "0xABCD3C": {
+    "type": "uint32_t",
+    "name": "g_BulletClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0xABCD48": {
+    "type": "uint32_t",
+    "name": "g_FrameCounter_Total",
+    "confidence": "ANCHORED"
+  },
+  "0xABCD4C": {
+    "type": "uint32_t",
+    "name": "g_FrameCounter_Samples",
+    "confidence": "ANCHORED"
+  },
+  "0xABD480": {
+    "type": "uint32_t",
+    "name": "g_MapSeedState",
+    "confidence": "ANCHORED"
+  },
+  "0xABDC50": {
+    "type": "uint32_t",
+    "name": "g_CellClassArray",
+    "confidence": "ANCHORED"
+  },
+  "0xABDC74": {
+    "type": "uint32_t",
+    "name": "g_Map_GlobalCellIndex",
+    "confidence": "ANCHORED"
+  },
+  "0xABDE88": {
+    "type": "uint32_t",
+    "name": "g_MapRenderState",
+    "confidence": "ANCHORED"
+  },
+  "0xABDF90": {
+    "type": "uint32_t",
+    "name": "g_RandomMap_BuildObject",
+    "confidence": "ANCHORED"
+  },
+  "0xABDF94": {
+    "type": "uint32_t",
+    "name": "g_RandomMap_TerrainState",
+    "confidence": "ANCHORED"
+  },
+  "0xABDFA0": {
+    "type": "uint32_t",
+    "name": "g_RandomMap_TileData",
+    "confidence": "ANCHORED"
+  },
+  "0xABDFB8": {
+    "type": "uint8_t",
+    "name": "g_TileSystemInit",
+    "confidence": "ANCHORED"
+  },
+  "0xABE154": {
+    "type": "void*",
+    "name": "g_Map_TiberiumConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xABE890": {
+    "type": "uint32_t",
+    "name": "g_Randomizer",
+    "confidence": "ANCHORED"
+  },
+  "0xABED04": {
+    "type": "uint32_t",
+    "name": "g_MapCellHeight_Value",
+    "confidence": "ANCHORED"
+  },
+  "0xABED08": {
+    "type": "uint32_t",
+    "name": "g_MapCellCount",
+    "confidence": "ANCHORED"
+  },
+  "0xABED10": {
+    "type": "void*",
+    "name": "g_MapTileArray",
+    "confidence": "ANCHORED"
+  },
+  "0xABED14": {
+    "type": "uint32_t",
+    "name": "g_MapTileArrayEnd",
+    "confidence": "ANCHORED"
+  },
+  "0xABEE10": {
+    "type": "uint32_t",
+    "name": "g_MatrixTransformState",
+    "confidence": "ANCHORED"
+  },
+  "0xABEFF0": {
+    "type": "uint32_t",
+    "name": "g_MixFilePool_Root",
+    "confidence": "ANCHORED"
+  },
+  "0xABF00C": {
+    "type": "void*",
+    "name": "g_FileCacheHashRoot",
+    "confidence": "ANCHORED"
+  },
+  "0xABF234": {
+    "type": "void*",
+    "name": "hWndParent",
+    "confidence": "ANCHORED"
+  },
+  "0xABF23A": {
+    "type": "uint8_t",
+    "name": "g_MiscFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xABF390": {
+    "type": "uint32_t",
+    "name": "MovieInfo_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xABF3F4": {
+    "type": "uint32_t",
+    "name": "g_BigIntPool",
+    "confidence": "ANCHORED"
+  },
+  "0xABF6BC": {
+    "type": "uint32_t",
+    "name": "g_BigIntModExpObject",
+    "confidence": "ANCHORED"
+  },
+  "0xABFD70": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerMode",
+    "confidence": "ANCHORED"
+  },
+  "0xABFDA0": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerModeConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xABFDA4": {
+    "type": "void*",
+    "name": "Src",
+    "confidence": "ANCHORED"
+  },
+  "0xABFDB0": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerGameList",
+    "confidence": "ANCHORED"
+  },
+  "0xAC025C": {
+    "type": "uint32_t",
+    "name": "g_NetworkOptionsState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC0260": {
+    "type": "uint32_t",
+    "name": "g_NetworkSetupConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xAC0264": {
+    "type": "uint32_t",
+    "name": "g_NetworkSettingsState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC0D40": {
+    "type": "void*",
+    "name": "hDlg",
+    "confidence": "ANCHORED"
+  },
+  "0xAC10C8": {
+    "type": "uint32_t",
+    "name": "g_MenuStateFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1154": {
+    "type": "void*",
+    "name": "g_UIControlState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC116C": {
+    "type": "void*",
+    "name": "ppv",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1170": {
+    "type": "void*",
+    "name": "g_UIPointerTable",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1198": {
+    "type": "uint32_t",
+    "name": "HouseClass_Observer",
+    "confidence": "ANCHORED"
+  },
+  "0xAC119C": {
+    "type": "int32_t",
+    "name": "g_HouseClass_ObserverFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11A0": {
+    "type": "int32_t",
+    "name": "g_Lobby_PlayerCount",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11A4": {
+    "type": "int32_t",
+    "name": "g_Lobby_PlayerTeam",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11A8": {
+    "type": "int32_t",
+    "name": "g_Lobby_PlayerSide",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11AC": {
+    "type": "int32_t",
+    "name": "g_Lobby_PlayerColor",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11B0": {
+    "type": "uint16_t*",
+    "name": "g_Lobby_PlayerReady",
+    "confidence": "ANCHORED"
+  },
+  "0xAC11B4": {
+    "type": "int32_t",
+    "name": "g_Lobby_MaxPlayers",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1344": {
+    "type": "uint8_t",
+    "name": "g_NetworkTestFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1478": {
+    "type": "uint32_t",
+    "name": "FileSystem_PIPBRD_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0xAC147C": {
+    "type": "uint32_t",
+    "name": "FileSystem_PIPS_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1480": {
+    "type": "uint32_t",
+    "name": "FileSystem_PIPS2_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1484": {
+    "type": "uint32_t",
+    "name": "FileSystem_TALKBUBL_SHP",
+    "confidence": "ANCHORED"
+  },
+  "0xAC18A4": {
+    "type": "uint32_t",
+    "name": "yTop",
+    "confidence": "ANCHORED"
+  },
+  "0xAC18C0": {
+    "type": "void*",
+    "name": "g_DialogPool",
+    "confidence": "ANCHORED"
+  },
+  "0xAC18C4": {
+    "type": "uint32_t",
+    "name": "g_DialogPoolCount",
+    "confidence": "ANCHORED"
+  },
+  "0xAC18C8": {
+    "type": "uint32_t",
+    "name": "g_DialogBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B00": {
+    "type": "void*",
+    "name": "g_DialogHashMap_Base",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B04": {
+    "type": "uint32_t",
+    "name": "g_DialogHashMap_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B0C": {
+    "type": "uint32_t",
+    "name": "g_DialogHashMap_Buckets",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B18": {
+    "type": "void (*)()",
+    "name": "g_DialogHashMap_Hasher",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B48": {
+    "type": "void*",
+    "name": "g_DialogHashMap_Entries",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B4C": {
+    "type": "uint32_t",
+    "name": "g_DialogHashMap_Grow",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B54": {
+    "type": "uint32_t",
+    "name": "g_DialogHashMap_Insert",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1B60": {
+    "type": "void (*)()",
+    "name": "g_DialogHashMap_Callback",
+    "confidence": "ANCHORED"
+  },
+  "0xAC1DE0": {
+    "type": "uint32_t",
+    "name": "g_ComboBoxState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4848": {
+    "type": "int32_t",
+    "name": "g_DialogHashTable",
+    "confidence": "ANCHORED"
+  },
+  "0xAC48B4": {
+    "type": "uint32_t",
+    "name": "g_GameScreenState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC48B8": {
+    "type": "uint32_t",
+    "name": "g_ScreenSaverState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC48BC": {
+    "type": "uint32_t",
+    "name": "g_CreditsScreenState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC48D0": {
+    "type": "void*",
+    "name": "g_GameScreenManager",
+    "confidence": "ANCHORED"
+  },
+  "0xAC48F0": {
+    "type": "uint32_t",
+    "name": "g_FileExtensionState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4BF0": {
+    "type": "uint32_t",
+    "name": "g_ScriptActionPool",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4C08": {
+    "type": "uint8_t",
+    "name": "g_PlanningModeActive",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4C38": {
+    "type": "uint32_t",
+    "name": "g_ScriptState",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4C98": {
+    "type": "uint32_t",
+    "name": "g_ScriptConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4CCC": {
+    "type": "uint32_t",
+    "name": "g_ScriptPool",
+    "confidence": "ANCHORED"
+  },
+  "0xAC4F58": {
+    "type": "int32_t",
+    "name": "g_UIManager",
+    "confidence": "ANCHORED"
+  },
+  "0xAC51FC": {
+    "type": "uint8_t",
+    "name": "Networking_CurrentFrameCRC",
+    "confidence": "ANCHORED"
+  },
+  "0xB04A60": {
+    "type": "uint32_t",
+    "name": "RadBeam_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB04BD0": {
+    "type": "uint32_t",
+    "name": "RadSiteClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB04DAC": {
+    "type": "void*",
+    "name": "g_TriggerPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB04DB8": {
+    "type": "uint32_t",
+    "name": "g_TriggerEventState",
+    "confidence": "ANCHORED"
+  },
+  "0xB052D0": {
+    "type": "uint32_t",
+    "name": "g_NetworkEventQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xB054D0": {
+    "type": "uint32_t",
+    "name": "ColorScheme_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB054D4": {
+    "type": "void*",
+    "name": "BuildingTypeClass_AnimTable",
+    "confidence": "ANCHORED"
+  },
+  "0xB054E0": {
+    "type": "uint32_t",
+    "name": "g_AnimClass_SaveState",
+    "confidence": "ANCHORED"
+  },
+  "0xB077F8": {
+    "type": "uint32_t",
+    "name": "g_OverlayTypeConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB07BC4": {
+    "type": "uint16_t",
+    "name": "SidebarClass_TooltipBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B408": {
+    "type": "uint8_t",
+    "name": "g_SidebarFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B4F8": {
+    "type": "uint32_t",
+    "name": "g_SidebarBounds",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B518": {
+    "type": "uint8_t",
+    "name": "g_TooltipActive",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B5F0": {
+    "type": "uint32_t",
+    "name": "SlaveManagerClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B660": {
+    "type": "uint32_t",
+    "name": "g_SlaveMgrPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B6EC": {
+    "type": "void*",
+    "name": "g_SlaveManagerPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B788": {
+    "type": "uint32_t",
+    "name": "Map_BottomRightCell",
+    "confidence": "ANCHORED"
+  },
+  "0xB0B880": {
+    "type": "uint32_t",
+    "name": "SpawnManagerClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0BC88": {
+    "type": "uint32_t",
+    "name": "g_AnimationManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB0BC90": {
+    "type": "uint32_t",
+    "name": "g_AnimClass_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0xB0BCEC": {
+    "type": "uint32_t",
+    "name": "pdwRegister",
+    "confidence": "ANCHORED"
+  },
+  "0xB0BD50": {
+    "type": "uint32_t",
+    "name": "g_SidebarButtonState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0BD58": {
+    "type": "void*",
+    "name": "g_SidebarPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0C110": {
+    "type": "uint32_t",
+    "name": "SwizzleManagerClass_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0xB0CB78": {
+    "type": "int32_t",
+    "name": "g_ObjectTrackingPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0CDD8": {
+    "type": "uint64_t",
+    "name": "LightningStorm_CloudHeightFactor",
+    "confidence": "ANCHORED"
+  },
+  "0xB0CE7C": {
+    "type": "void*",
+    "name": "g_CraterPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0CE88": {
+    "type": "uint32_t",
+    "name": "g_CraterCreationState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E720": {
+    "type": "uint32_t",
+    "name": "TagClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E724": {
+    "type": "void*",
+    "name": "g_TagClassCount",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E730": {
+    "type": "uint32_t",
+    "name": "g_GameObjectCleanup",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E790": {
+    "type": "uint32_t",
+    "name": "g_MultiplayerCleanup",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E840": {
+    "type": "void*",
+    "name": "g_BuildingLoadQueue_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E844": {
+    "type": "uint32_t",
+    "name": "g_BuildingLoadQueue_Count",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E848": {
+    "type": "uint32_t",
+    "name": "g_BuildingLoadQueue_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E84C": {
+    "type": "uint32_t",
+    "name": "g_BuildingLoadQueue_Dirty",
+    "confidence": "ANCHORED"
+  },
+  "0xB0E850": {
+    "type": "uint32_t",
+    "name": "g_BuildingLoadQueue_Active",
+    "confidence": "ANCHORED"
+  },
+  "0xB0EA50": {
+    "type": "int32_t",
+    "name": "g_TechnoHouseState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0EA90": {
+    "type": "uint32_t",
+    "name": "g_TechnoClassPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F4EC": {
+    "type": "class BuildingClass*",
+    "name": "BuildingClass_InstanceArray",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F4F8": {
+    "type": "uint32_t",
+    "name": "g_CrateProcessState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F540": {
+    "type": "uint64_t",
+    "name": "g_BuildingClass_Capacity",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F5B8": {
+    "type": "uint32_t",
+    "name": "g_BuildingInstanceCount",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F5BC": {
+    "type": "void*",
+    "name": "g_BuildingClassPoolManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F5C8": {
+    "type": "uint32_t",
+    "name": "g_BuildingTypeInstanceCount",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F658": {
+    "type": "uint32_t",
+    "name": "TActionClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F668": {
+    "type": "uint32_t",
+    "name": "g_TActionClassState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F670": {
+    "type": "uint32_t",
+    "name": "g_AnimPoolManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F674": {
+    "type": "void*",
+    "name": "g_AnimPoolCount",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F678": {
+    "type": "uint32_t",
+    "name": "g_AnimTypePool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F67D": {
+    "type": "uint8_t",
+    "name": "g_AnimPoolLocked",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F680": {
+    "type": "uint32_t",
+    "name": "g_AnimManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F684": {
+    "type": "uint32_t",
+    "name": "g_AnimManagerConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F688": {
+    "type": "uint64_t",
+    "name": "g_AnimFrameCounter",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F720": {
+    "type": "uint32_t",
+    "name": "AbstractClass_Array",
+    "confidence": "ANCHORED"
+  },
+  "0xB0F730": {
+    "type": "uint32_t",
+    "name": "g_AlphaShapePool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0FB50": {
+    "type": "void*",
+    "name": "g_DialogControlPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0FB98": {
+    "type": "uint32_t",
+    "name": "g_PaletteManagerPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB0FC1C": {
+    "type": "void*",
+    "name": "g_GadgetAnimState",
+    "confidence": "ANCHORED"
+  },
+  "0xB0FE6C": {
+    "type": "uint32_t",
+    "name": "g_UnitTooltipState",
+    "confidence": "ANCHORED"
+  },
+  "0xB1CFB8": {
+    "type": "int32_t",
+    "name": "g_UnitSelectionState",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D294": {
+    "type": "void*",
+    "name": "g_VoxelDrawState",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D2A0": {
+    "type": "uint32_t",
+    "name": "g_VeinholePool",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D2F0": {
+    "type": "void*",
+    "name": "g_VeinholeMonsterPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D37C": {
+    "type": "void*",
+    "name": "g_VocAudioConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D388": {
+    "type": "uint32_t",
+    "name": "g_VocPlayState",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D4A4": {
+    "type": "void*",
+    "name": "g_InfantryRenderPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D4B0": {
+    "type": "uint32_t",
+    "name": "g_InfantrySelectState",
+    "confidence": "ANCHORED"
+  },
+  "0xB1D4CC": {
+    "type": "void*",
+    "name": "g_InfantryDrawState",
+    "confidence": "ANCHORED"
+  },
+  "0xB2FF78": {
+    "type": "uint8_t",
+    "name": "g_VoxelRenderBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xB2FF79": {
+    "type": "uint8_t",
+    "name": "g_VoxelDepthBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xB41178": {
+    "type": "uint8_t",
+    "name": "g_VoxelColorPalette",
+    "confidence": "ANCHORED"
+  },
+  "0xB45590": {
+    "type": "uint32_t",
+    "name": "g_VoxelOffsetTable",
+    "confidence": "ANCHORED"
+  },
+  "0xB45990": {
+    "type": "uint8_t",
+    "name": "g_VoxelShadeTable",
+    "confidence": "ANCHORED"
+  },
+  "0xB45B5C": {
+    "type": "void*",
+    "name": "AsyncIO_Instance",
+    "confidence": "ANCHORED"
+  },
+  "0xB45B68": {
+    "type": "uint32_t",
+    "name": "g_AsyncIOState",
+    "confidence": "ANCHORED"
+  },
+  "0xB45BE8": {
+    "type": "uint32_t",
+    "name": "g_AsyncMovieState",
+    "confidence": "ANCHORED"
+  },
+  "0xB45BEC": {
+    "type": "uint32_t",
+    "name": "g_MovieFrameState1",
+    "confidence": "ANCHORED"
+  },
+  "0xB45BF0": {
+    "type": "uint32_t",
+    "name": "g_MovieFrameState2",
+    "confidence": "ANCHORED"
+  },
+  "0xB72D20": {
+    "type": "void*",
+    "name": "g_ClipboardBuffer",
+    "confidence": "ANCHORED"
+  },
+  "0xB72F50": {
+    "type": "uint32_t",
+    "name": "g_DialogTrackingList",
+    "confidence": "ANCHORED"
+  },
+  "0xB72F54": {
+    "type": "void*",
+    "name": "dwInitParam",
+    "confidence": "ANCHORED"
+  },
+  "0xB730A8": {
+    "type": "void*",
+    "name": "himl",
+    "confidence": "ANCHORED"
+  },
+  "0xB732F0": {
+    "type": "void*",
+    "name": "g_hInstance",
+    "confidence": "ANCHORED"
+  },
+  "0xB73318": {
+    "type": "uint16_t",
+    "name": "WideCharStr",
+    "confidence": "ANCHORED"
+  },
+  "0xB73550": {
+    "type": "void*",
+    "name": "g_hWnd",
+    "confidence": "ANCHORED"
+  },
+  "0xB73568": {
+    "type": "uint32_t",
+    "name": "MaxCount",
+    "confidence": "ANCHORED"
+  },
+  "0xB73684": {
+    "type": "void*",
+    "name": "Handles",
+    "confidence": "ANCHORED"
+  },
+  "0xB73698": {
+    "type": "void*",
+    "name": "hEvent",
+    "confidence": "ANCHORED"
+  },
+  "0xB736CC": {
+    "type": "void*",
+    "name": "g_WOL_RequestObject",
+    "confidence": "ANCHORED"
+  },
+  "0xB73A20": {
+    "type": "uint32_t",
+    "name": "g_WOL_IdleHandler",
+    "confidence": "ANCHORED"
+  },
+  "0xB73AA8": {
+    "type": "uint32_t",
+    "name": "g_WindowManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB73AB0": {
+    "type": "void*",
+    "name": "g_WOL_LoginQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xB73ACC": {
+    "type": "const char*",
+    "name": "g_WOL_AuthObject",
+    "confidence": "ANCHORED"
+  },
+  "0xB73E10": {
+    "type": "uint32_t",
+    "name": "g_WOL_AuthPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB73E40": {
+    "type": "const uint32_t",
+    "name": "g_WebBrowser",
+    "confidence": "ANCHORED"
+  },
+  "0xB761A8": {
+    "type": "uint8_t",
+    "name": "g_WOL_ConnectFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xB7649C": {
+    "type": "int32_t",
+    "name": "Addend",
+    "confidence": "ANCHORED"
+  },
+  "0xB76520": {
+    "type": "void*",
+    "name": "g_WOL_RequestState",
+    "confidence": "ANCHORED"
+  },
+  "0xB76524": {
+    "type": "uint32_t",
+    "name": "g_WOL_RequestToken",
+    "confidence": "ANCHORED"
+  },
+  "0xB76528": {
+    "type": "void*",
+    "name": "g_WOL_RequestFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xB76530": {
+    "type": "void*",
+    "name": "g_WOL_ConnectionPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB765F8": {
+    "type": "uint32_t",
+    "name": "g_WOL_LoginToken",
+    "confidence": "ANCHORED"
+  },
+  "0xB76608": {
+    "type": "void*",
+    "name": "g_WOL_EventQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xB76610": {
+    "type": "uint32_t",
+    "name": "g_WOL_PacketQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xB76680": {
+    "type": "void*",
+    "name": "g_WOL_MessageQueue",
+    "confidence": "ANCHORED"
+  },
+  "0xB76684": {
+    "type": "uint32_t",
+    "name": "g_WOL_MessageConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB76688": {
+    "type": "uint32_t",
+    "name": "g_WOL_MsgPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB768C0": {
+    "type": "void*",
+    "name": "g_WOL_ListParser",
+    "confidence": "ANCHORED"
+  },
+  "0xB76970": {
+    "type": "uint32_t",
+    "name": "g_WOL_LoginPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB76980": {
+    "type": "uint32_t",
+    "name": "g_WOL_RequestManager",
+    "confidence": "ANCHORED"
+  },
+  "0xB76988": {
+    "type": "void*",
+    "name": "g_WOL_SessionID",
+    "confidence": "ANCHORED"
+  },
+  "0xB76990": {
+    "type": "void*",
+    "name": "g_WOL_AccountInfo",
+    "confidence": "ANCHORED"
+  },
+  "0xB76AD0": {
+    "type": "uint32_t",
+    "name": "g_WOL_ConnectionToken",
+    "confidence": "ANCHORED"
+  },
+  "0xB76AD8": {
+    "type": "void*",
+    "name": "g_WOL_ObjectState",
+    "confidence": "ANCHORED"
+  },
+  "0xB76AE0": {
+    "type": "uint32_t",
+    "name": "g_WOL_ChatState",
+    "confidence": "ANCHORED"
+  },
+  "0xB76AE8": {
+    "type": "void*",
+    "name": "g_WOL_ConnectionHandler",
+    "confidence": "ANCHORED"
+  },
+  "0xB76B10": {
+    "type": "const uint32_t",
+    "name": "g_WOL_ProcessIdle",
+    "confidence": "ANCHORED"
+  },
+  "0xB76B44": {
+    "type": "uint8_t",
+    "name": "g_WOL_IdleFlag",
+    "confidence": "ANCHORED"
+  },
+  "0xB76E24": {
+    "type": "const char*",
+    "name": "g_WOL_LoginObject",
+    "confidence": "ANCHORED"
+  },
+  "0xB7778C": {
+    "type": "char*",
+    "name": "g_WebBrowserConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB777A0": {
+    "type": "uint32_t",
+    "name": "g_WOL_ChatPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB777B0": {
+    "type": "const uint8_t",
+    "name": "g_IsMultiplayerSession",
+    "confidence": "ANCHORED"
+  },
+  "0xB778D8": {
+    "type": "uint32_t",
+    "name": "g_WOL_UserList",
+    "confidence": "ANCHORED"
+  },
+  "0xB77900": {
+    "type": "uint32_t",
+    "name": "g_WOL_State",
+    "confidence": "ANCHORED"
+  },
+  "0xB77904": {
+    "type": "uint32_t",
+    "name": "g_WOL_StateFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xB77908": {
+    "type": "void*",
+    "name": "g_WOL_ConnectionFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xB779B0": {
+    "type": "uint32_t",
+    "name": "g_WOL_BuddyList",
+    "confidence": "ANCHORED"
+  },
+  "0xB779B8": {
+    "type": "void*",
+    "name": "g_WOL_ChannelMgr",
+    "confidence": "ANCHORED"
+  },
+  "0xB779D0": {
+    "type": "uint32_t",
+    "name": "g_WOL_ParseState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77A88": {
+    "type": "uint32_t",
+    "name": "g_WOL_GameListPool",
+    "confidence": "ANCHORED"
+  },
+  "0xB77A90": {
+    "type": "uint32_t",
+    "name": "g_WOL_GameConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB77D70": {
+    "type": "uint32_t",
+    "name": "g_WOL_GameProcessState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77DC1": {
+    "type": "uint8_t",
+    "name": "g_NetworkLobby_Init",
+    "confidence": "ANCHORED"
+  },
+  "0xB77DC8": {
+    "type": "uint32_t",
+    "name": "g_WOL_ChannelList",
+    "confidence": "ANCHORED"
+  },
+  "0xB77DD0": {
+    "type": "uint32_t",
+    "name": "g_WOL_ChannelState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77DD8": {
+    "type": "uint32_t",
+    "name": "g_WOL_ChannelLeaveState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E00": {
+    "type": "uint32_t",
+    "name": "CCINIClass_RulesHash",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E04": {
+    "type": "uint32_t",
+    "name": "CCINIClass_ArtHash",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E08": {
+    "type": "uint32_t",
+    "name": "CCINIClass_AIHash",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E0C": {
+    "type": "uint32_t",
+    "name": "g_WOL_HashTable",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E14": {
+    "type": "uint32_t",
+    "name": "g_WOL_GameListState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E18": {
+    "type": "int",
+    "name": "dword_B77E18",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E28": {
+    "type": "uint32_t",
+    "name": "g_NetworkLobbyState",
+    "confidence": "ANCHORED"
+  },
+  "0xB77E44": {
+    "type": "uint32_t",
+    "name": "g_WOL_GameListRender",
+    "confidence": "ANCHORED"
+  },
+  "0xB78168": {
+    "type": "void*",
+    "name": "hMutex",
+    "confidence": "ANCHORED"
+  },
+  "0xB78198": {
+    "type": "uint32_t",
+    "name": "g_AudioDSPState",
+    "confidence": "ANCHORED"
+  },
+  "0xB782B0": {
+    "type": "uint32_t",
+    "name": "CodePage",
+    "confidence": "ANCHORED"
+  },
+  "0xB782F8": {
+    "type": "TIME_ZONE_INFORMATION",
+    "name": "TimeZoneInformation",
+    "confidence": "ANCHORED"
+  },
+  "0xB783F8": {
+    "type": "uint8_t",
+    "name": "Filename",
+    "confidence": "ANCHORED"
+  },
+  "0xB78544": {
+    "type": "uint32_t",
+    "name": "Locale",
+    "confidence": "ANCHORED"
+  },
+  "0xB7856C": {
+    "type": "void*",
+    "name": "lpfn",
+    "confidence": "ANCHORED"
+  },
+  "0xB7858C": {
+    "type": "uint16_t",
+    "name": "LCData",
+    "confidence": "ANCHORED"
+  },
+  "0xB78834": {
+    "type": "uint32_t",
+    "name": "g_GameScreenFlags",
+    "confidence": "ANCHORED"
+  },
+  "0xB78838": {
+    "type": "uint32_t",
+    "name": "g_GameScreenConfig",
+    "confidence": "ANCHORED"
+  },
+  "0xB78B80": {
+    "type": "uint32_t",
+    "name": "uNumber",
+    "confidence": "ANCHORED"
+  },
+  "0xB78B98": {
+    "type": "void*",
+    "name": "lp",
+    "confidence": "ANCHORED"
+  },
+  "0xB78B9C": {
+    "type": "void*",
+    "name": "hHeap",
+    "confidence": "ANCHORED"
+  },
+  "0xB79BE0": {
+    "type": "uint32_t",
+    "name": "Count",
+    "confidence": "ANCHORED"
+  }
+}

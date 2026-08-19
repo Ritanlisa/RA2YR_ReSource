@@ -29,10 +29,16 @@ Architecture:
           参数进 idc.ARGV 而非 sys.argv（IDA 9.2），故 headless 推荐环境变量
           方式: `set RA2YR_DRY_RUN=1 && idat -A -S"script" replica.i64`。
           三种途径（sys.argv / idc.ARGV / RA2YR_DRY_RUN=1）任一命中即启用。
+  D2 (F3 确定性): 求解非确定源于 Python set/dict 迭代 hash 随机化——headless
+          复验固定种子以保证 dry/full 完全可复现:
+          `set PYTHONHASHSEED=0 && set RA2YR_DRY_RUN=1 && idat -A -S"script"
+          replica.i64`（同一种子下 dry/full 求解应逐位一致；manifest 的
+          python_hash_seed 字段记录本次运行实际种子，供复验核对）。
 """
 
 
 import json, os, sys, re, time, gc, traceback
+from bisect import bisect_right
 from collections import defaultdict, deque, Counter
 
 try:
@@ -55,7 +61,11 @@ if not os.path.isdir(PROJ_ROOT):
     PROJ_ROOT = r"D:\RA2YR_ReSource"  # 最后 fallback
 if PROJ_ROOT not in sys.path:
     sys.path.insert(0, PROJ_ROOT)
-from tools.type_infer.scope_vars import build_scoped_index, build_adjacency
+from tools.type_infer.scope_vars import (
+    build_scoped_index,
+    build_adjacency,
+    find_containing_func,
+)
 
 # --dry-run 模式: 不注入/不改名/导出到临时目录（T2）
 # D2: headless `idat -A -S"script --dry-run"` 时参数进 idc.ARGV 而非 sys.argv
@@ -81,6 +91,502 @@ if os.path.exists(sig_path):
         print(f"  Warning: Could not load signals.json: {e}")
 print(f"  Loaded {len(SIG_SYMBOLS)} entries from signals.json")
 
+# ============================================================
+# T5 (E1): MEMBER_ANCHOR —— 成员表强锚（1,120 类 header 进求解器）
+# 数据源（只读加载，不修改）:
+#   tools/member_lookup.json    {ClassName: {offset_str: {name, type}}}（核心类）
+#   anchors/member_types.json   {"Class+0xOFF": {type, confidence}}（ANCHORED 条目）
+# 结构: MEMBER_ANCHOR[(class_name, off)] = 归一化类型（域词汇: int/bool/float/
+#       double/char*/void*/类名）。值类型/模板/数组成员不可表达 → 跳过。
+# ============================================================
+
+# 成员类型归一化: 基础类型映射（C 风格类型字符串 → 域词汇）
+_MEMBER_PRIM_MAP = {
+    "int": "int",
+    "int32_t": "int",
+    "uint32_t": "int",
+    "unsigned int": "int",
+    "unsigned __int8": "int",
+    "unsigned __int16": "int",
+    "unsigned __int32": "int",
+    "int16_t": "int",
+    "uint16_t": "int",
+    "int8_t": "int",
+    "uint8_t": "int",
+    "BOOL": "int",
+    "DWORD": "int",
+    "LONG": "int",
+    "size_t": "int",
+    "bool": "bool",
+    "float": "float",
+    "double": "double",
+}
+_RE_STAR_SPACE = re.compile(r"\s*\*\s*")
+
+
+def _normalize_member_type(t):
+    """T5 (E1): 成员类型字符串 → 域词汇；不可表达 → None。
+
+    规则（保守，宁缺毋滥）:
+    - 数组/模板/函数签名（含 `[` `<` `>` `(`）→ None
+    - 已知基础类型 → int/bool/float/double
+    - `char*/wchar_t*/BYTE*` → char*；`void*` → void*
+    - `ClassName*` / `ClassName**` → ClassName（类指针 → 类名锚）
+    - 无 `*` 的裸标识符（值类型/枚举成员）→ None（读 dword 语义不可靠）
+    """
+    if not t:
+        return None
+    key = _RE_STAR_SPACE.sub("*", t.strip())
+    if any(ch in key for ch in "[<>()"):
+        return None
+    if key in _MEMBER_PRIM_MAP:
+        return _MEMBER_PRIM_MAP[key]
+    star = 0
+    base = key
+    while base.endswith("*"):
+        base = base[:-1]
+        star += 1
+    if not star:
+        return None  # 值类型/枚举: 保守跳过
+    if base in ("char", "wchar_t", "unsigned char", "BYTE", "_BYTE"):
+        return "char*"
+    if base == "void":
+        return "void*"
+    if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", base):
+        return base  # 类指针 → 类名锚
+    return None
+
+
+def _load_member_anchors():
+    """加载成员表 → {(class_name, off): normalized_type}。
+    member_lookup.json 优先（冲突不覆盖），member_types.json ANCHORED 补缺口。"""
+    anchors = {}
+    ml_path = os.path.join(PROJ_ROOT, "tools", "member_lookup.json")
+    if os.path.exists(ml_path):
+        try:
+            with open(ml_path, "r", encoding="utf-8") as f:
+                ml_data = json.load(f)
+            for _cls, _members in ml_data.items():
+                for _off_str, _info in _members.items():
+                    try:
+                        _off = int(_off_str, 0)
+                    except ValueError:
+                        continue
+                    _t = _normalize_member_type((_info or {}).get("type", ""))
+                    if _t:
+                        anchors.setdefault((_cls, _off), _t)
+        except Exception as e:
+            print(f"  Warning: Could not load member_lookup.json: {e}")
+    mt_path = os.path.join(PROJ_ROOT, "anchors", "member_types.json")
+    if os.path.exists(mt_path):
+        try:
+            with open(mt_path, "r", encoding="utf-8") as f:
+                mt_data = json.load(f)
+            for _k, _info in mt_data.items():
+                if (_info or {}).get("confidence") != "ANCHORED":
+                    continue
+                _m = re.match(r"^(.+?)\+(0x[0-9A-Fa-f]+)$", _k)
+                if not _m:
+                    continue
+                _t = _normalize_member_type((_info or {}).get("type", ""))
+                if _t:
+                    anchors.setdefault((_m.group(1), int(_m.group(2), 16)), _t)
+        except Exception as e:
+            print(f"  Warning: Could not load member_types.json: {e}")
+    return anchors
+
+
+MEMBER_ANCHOR = _load_member_anchors()
+print(f"  Loaded {len(MEMBER_ANCHOR)} member anchors (T5 E1 MEMBER_ANCHOR)")
+
+# T5 (E2): signals.json return_type 归一化（仅基础类型; 类名走 this 锚定）
+_SIG_RETURN_NORM = {
+    "int": "int",
+    "unsigned int": "int",
+    "char": "int",
+    "BOOL": "int",
+    "LONG": "int",
+    "DWORD": "int",
+    "HRESULT": "int",
+    "LRESULT": "int",
+    "size_t": "int",
+    "__int16": "int",
+    "bool": "bool",
+    "float": "float",
+    "double": "double",
+    "char*": "char*",
+    "wchar_t*": "char*",
+    "void*": "void*",
+}
+
+
+def _normalize_sig_return_type(rt):
+    """T5 (E2): signals return_type → 域词汇；非基础类型/void/unknown → None。"""
+    if not rt:
+        return None
+    key = _RE_STAR_SPACE.sub("*", rt.strip())
+    return _SIG_RETURN_NORM.get(key)
+
+
+def _sig_class_prefix(name):
+    """T5 (E2): `::` 前缀类名提取（'AudioMixer::Init' → 'AudioMixer'）。
+    `?` 开头（mangled）/ 无 `::` → None。"""
+    if not name or "::" not in name:
+        return None
+    prefix = name.split("::")[0]
+    if not prefix or prefix.startswith("?") or "`" in prefix:
+        return None
+    return prefix
+
+
+# ============================================================
+# T7 (B1/B2): 分域域模型 + 锚点分层
+#
+# B1 分域: 每个变量的域拆为 class_domain（{Class_X/真实类名}）+ type_domain
+#   （{int,float,double,char*,bool,void*,...}）。ASSIGN 同类域交集（现有语义
+#   保持）；跨域用兼容性矩阵（_compat_meet）: Class_X↔void* 兼容（类可单向
+#   降级 void*，不反向）、Class_X↔int/float/bool 不兼容 → 记录矛盾（不再静默
+#   跳过）、bool ⊂ int（bool 可并入 int 域）。解析汇合: 优先类域，类域空用
+#   类型域。开关 `CSP_DOMAIN_SPLIT`: =1 或未设 = 启用分域；=0 = 完全回退当前
+#   单域行为（修复后基线——回归对照）。
+#
+# B2 锚点分层: anchor_strength（3=vtable 锚 / 2=成员+签名+全局锚 / 1=传播 /
+#   0=开放）进 greedy 加权（候选排序）与矛盾仲裁（强度高者优先）。
+#
+# 所有域写入走 _domain_add/_domain_update（按类型路由到类/类型域）；读取
+# 联合视图走 _domain_union；跨域 meet 走 _compat_meet + _b1_edge_meet（纯
+# 函数，离线可测）。
+# ============================================================
+
+# B1: 分域开关（模块级，import 时读取——离线测试可用子进程验证回退）
+DOMAIN_SPLIT = os.environ.get("CSP_DOMAIN_SPLIT", "1") != "0"
+
+# 基础类型词汇（== 5.4 greedy class_ref_count 过滤集——单一来源）
+BASE_TYPE_VOCAB = frozenset(
+    {"int", "float", "double", "char*", "bool", "void*", "unknown", "Param_Seed"}
+)
+
+
+def _is_class_type(t):
+    """T7 (B1): t 是否为类候选类型（Class_X 占位 vtable 类 或 真实类名）。
+
+    判定与 5.4 greedy 的 class_ref_count 过滤集一致（同一语义单一来源）:
+      - `Class_*` 前缀 → 类
+      - 非基础类型词汇、非 mangled（`?` 前缀）→ 类
+    """
+    if not isinstance(t, str) or not t:
+        return False
+    if t.startswith("Class_"):
+        return True
+    return not t.startswith("?") and t not in BASE_TYPE_VOCAB
+
+
+def _domain_add(domain, type_domain, var, t):
+    """T7 (B1): 域写入路由——类候选进 class_domain，基础类型进 type_domain。
+
+    开关关闭（DOMAIN_SPLIT=False）时全部进 class_domain（单域，与基线完全
+    一致——type_domain 不参与任何消费）。
+    """
+    if DOMAIN_SPLIT and not _is_class_type(t):
+        type_domain[var].add(t)
+    else:
+        domain[var].add(t)
+
+
+def _domain_update(domain, type_domain, var, iterable):
+    """T7 (B1): 批量域写入路由（逐元素走 _domain_add）。"""
+    for t in iterable:
+        _domain_add(domain, type_domain, var, t)
+
+
+def _domain_union(domain, type_domain, var):
+    """T7 (B1): 联合视图——class_domain ∪ type_domain（只读，返回新 set）。
+
+    开关关闭时仅 class_domain（== 基线单域）。
+    """
+    out = set(domain.get(var, ()))
+    if DOMAIN_SPLIT:
+        out.update(type_domain.get(var, ()))
+    return out
+
+
+def _domain_replace(domain, type_domain, var, merged_set):
+    """T7 (B1): 整域替换（E5 合并结果等）——按元素路由到类/类型域。
+
+    开关关闭时退化为普通赋值（与基线一致）。
+    """
+    if DOMAIN_SPLIT:
+        domain[var] = set()
+        type_domain[var] = set()
+        _domain_update(domain, type_domain, var, merged_set)
+    else:
+        domain[var] = set(merged_set)
+
+
+def _b1_is_empty(domain, type_domain, var):
+    """T7 (B1): 分域下变量域是否全空（类域与类型域皆空）。"""
+    return not domain.get(var) and not type_domain.get(var)
+
+
+def _compat_meet(cls_set, type_set):
+    """T7 (B1): 跨域兼容性矩阵（纯函数，离线可测）。
+
+    输入: cls_set = 类域候选（{Class_X, ...}）; type_set = 基础类型域候选。
+    矩阵判定（逐对）:
+      - 类 ↔ void*   → 兼容（类可单向降级 void*：void* 是类指针超类型，
+        两侧信息保留，void* 不反向升级为类）
+      - 类 ↔ unknown → 兼容（unknown 是未知占位，不构成矛盾）
+      - 类 ↔ int/float/double/bool/char* → 不兼容（矛盾——不再静默跳过，
+        调用方记录）
+    返回 (new_cls, new_type, conflict):
+      - 兼容: (set(cls_set), set(type_set), False)（域不变）
+      - 不兼容: (set(cls_set), set(type_set), True)（域不变——矛盾记录是
+        唯一的副作用）
+    纯函数——不修改输入。
+    """
+    if not cls_set or not type_set:
+        return set(cls_set), set(type_set), False
+    for t in type_set:
+        if t in ("void*", "unknown"):
+            continue
+        return set(cls_set), set(type_set), True
+    return set(cls_set), set(type_set), False
+
+
+def _type_meet(a, b):
+    """T7 (B1): 同域（类型域）meet——普通交集 + bool ⊂ int（纯函数）。
+
+    规则:
+      - 普通交集非空 → 交集（现有语义保持）
+      - 空交集且两侧含 bool/int → {bool}（bool ⊂ int：bool 可并入 int 域，
+        meet 取更窄一侧——两侧收敛到 bool）
+      - 其他空交集 → None（int↔float 等互斥保持静默——非 B1 新增矛盾域）
+    返回 set 或 None（None = 无交集）。
+    """
+    joint = a & b
+    if joint:
+        return joint
+    if ("bool" in a and "int" in b) or ("int" in a and "bool" in b):
+        return {"bool"}
+    return None
+
+
+def _b1_edge_meet(cls_a, ty_a, cls_b, ty_b):
+    """T7 (B1): 双向边 meet（ASSIGN / RETURN_TO / STACK_ACCESS / STACK_VAR /
+    FUNC_PARAM 共用；纯函数，离线可测）。
+
+    输入: 两侧分域（可空 set）。返回:
+      (new_cls_a, new_ty_a, new_cls_b, new_ty_b, conflict, conflict_pairs)
+    - 同类域交集（现有语义保持）: cls_a∩cls_b / ty_a∩ty_b——空交集保持原域
+      （类类互斥 = 旧静默跳过语义，不记录）；一侧为空时该侧不被播种
+      （ASSIGN 空侧不播种语义保持——只有调用方的 seed 分支负责播种）
+    - 跨域兼容性矩阵: 类↔void*/unknown 兼容（两侧域不变）；类↔int/float/
+      double/bool/char* 不兼容 → conflict=True + pairs（域不变——调用方
+      记录矛盾，不再静默跳过）
+    - bool ⊂ int: {bool}∩{int} = {bool}（并入 int 域，meet 取更窄）
+    """
+    cj = (cls_a & cls_b) if (cls_a and cls_b) else None
+    tj = _type_meet(ty_a, ty_b)
+    conflict = False
+    pairs = []
+    for cset, tset in ((cls_a, ty_b), (cls_b, ty_a)):
+        if not cset or not tset:
+            continue
+        _, _, cf = _compat_meet(cset, tset)
+        if cf:
+            conflict = True
+            for c in cset:
+                for t in tset:
+                    if t in ("void*", "unknown"):
+                        continue
+                    if len(pairs) >= 3:
+                        break
+                    pairs.append((c, t))
+                if len(pairs) >= 3:
+                    break
+    return (
+        cj if cj else set(cls_a),
+        tj if tj is not None else set(ty_a),
+        cj if cj else set(cls_b),
+        tj if tj is not None else set(ty_b),
+        conflict,
+        pairs,
+    )
+
+
+def _b1_call_arg_step(frm_cls, frm_ty, to_cls, to_ty, role, anchor_str):
+    """T7 (B1) × T6 (A3): CALL_ARG 单向传播单步（纯函数，离线可测）。
+
+    A3 规则保持（from→to 单向；反向仅在 to 空且 from 有类锚时允许正向 seed）:
+      - role=0（from 侧）: from 非空 → to 全空则分域各自 seed；to 非空则 to
+        收窄为 B1 meet（同类域交集 + bool⊂int + 跨域兼容矩阵——冲突由调用方
+        记录）
+      - role=1（to 侧）: 反向默认禁止——仅 to 全空且 from 有锚时 from→to seed
+    from 侧永不被收窄/seed（A3 单向性）。返回:
+      (new_to_cls, new_to_ty, conflict, pairs, to_changed)
+    """
+    if role == 0:
+        if frm_cls or frm_ty:
+            if not to_cls and not to_ty:
+                return set(frm_cls), set(frm_ty), False, [], True
+            _, _, nc_b, nt_b, conflict, pairs = _b1_edge_meet(
+                frm_cls, frm_ty, to_cls, to_ty
+            )
+            return nc_b, nt_b, conflict, pairs, (nc_b != to_cls or nt_b != to_ty)
+    else:
+        if not to_cls and not to_ty and (frm_cls or frm_ty) and anchor_str > 0:
+            return set(frm_cls), set(frm_ty), False, [], True
+    return set(to_cls), set(to_ty), False, [], False
+
+
+# B1: 跨域矛盾记录 cap（防 manifest 爆炸——"矛盾记录有限"）
+_DOMAIN_CONFLICT_CAP = 500
+# T8 (C1): 变量级矛盾记录 cap（防 manifest 爆炸——"矛盾记录有限"；超限计数不膨胀）
+_C1_CONFLICT_CAP = 200
+
+
+def _record_domain_conflict(var_a, var_b, pairs, edge_id=None,
+                            domain=None, type_domain=None):
+    """T7 (B1) × T8 (C1): 跨域矛盾记录——两层记录，各自独立 cap。
+
+    T7 层（不变——边级记录，cap 500 去重）: RUN_MANIFEST['domain_conflicts']
+      键 = 边标识（两变量名排序连接）——同边重复不重复计数；cap 达上限后置
+      domain_conflicts_capped=True（防 manifest 爆炸）。
+
+    T8 C1 层（变量级结构化记录——greedy 消费）: RUN_MANIFEST['conflicts']
+      结构: conflicts[var] = {
+        "edges":   [edge_id...],          # 原因边标识（去重，cap 10）
+        "domains": {"cls": [...],         # 本变量域快照（矛盾时刻，首次记录）
+                    "type": [...],
+                    "other": {"cls": [...], "type": [...]}}   # 对侧域（双向）
+      }
+      矛盾两变量各记一条；cap 200 条记录，超限只置 conflicts_capped=True +
+      计数 conflicts_overflow（不膨胀）。edge_id/domain/type_domain 为可选
+      （旧调用/测试 3 参调用兼容——无快照时 domains 为空壳）。
+    运行期调用（RUN_MANIFEST 在 import 时创建，_run_main/测试均在之后执行——
+    安全）。
+    """
+    conflicts = RUN_MANIFEST.setdefault("domain_conflicts", {})
+    key = f"{var_a} <-> {var_b}"
+    if key in conflicts:
+        pass
+    elif len(conflicts) >= _DOMAIN_CONFLICT_CAP:
+        RUN_MANIFEST["domain_conflicts_capped"] = True
+    else:
+        conflicts[key] = {
+            "pairs": [list(p) for p in pairs[:3]],
+            "vars": [var_a, var_b],
+        }
+
+    # T8 (C1): 变量级结构化记录（含原因边 + 双向域快照）
+    _c1 = RUN_MANIFEST.setdefault("conflicts", {})
+    if RUN_MANIFEST.get("conflicts_capped"):
+        RUN_MANIFEST["conflicts_overflow"] = (
+            RUN_MANIFEST.get("conflicts_overflow", 0) + 1
+        )
+        return
+    for _v, _ov in ((var_a, var_b), (var_b, var_a)):
+        if _v not in _c1:
+            if len(_c1) >= _C1_CONFLICT_CAP:
+                RUN_MANIFEST["conflicts_capped"] = True
+                return
+            _c1[_v] = {
+                "edges": [],
+                "domains": {
+                    "cls": sorted(domain.get(_v, ())) if domain is not None else [],
+                    "type": sorted((type_domain or {}).get(_v, ())),
+                    "other": {
+                        "cls": sorted(domain.get(_ov, ())) if domain is not None else [],
+                        "type": sorted((type_domain or {}).get(_ov, ())),
+                    },
+                },
+            }
+        if edge_id and edge_id not in _c1[_v]["edges"]:
+            _c1[_v]["edges"].append(edge_id)
+            _c1[_v]["edges"] = _c1[_v]["edges"][:10]
+
+
+def _mark_propagated(anchor_strength, var):
+    """T7 (B2): 传播强度标记——域经传播 seed 的变量 anchor_strength >= 1。
+
+    （3=vtable 锚 / 2=成员+签名+全局锚 / 1=传播 / 0=开放——B2 分层）
+    仅分域模式生效（开关关闭时保持基线 anchor_strength 语义）。
+    """
+    if DOMAIN_SPLIT and anchor_strength.get(var, 0) < 1:
+        anchor_strength[var] = 1
+        RUN_MANIFEST["anchor_strength_propagation"] += 1
+
+
+def _apply_signature_anchors(domain, type_domain, sig_symbols, this_vars, all_vars,
+                             anchor_strength):
+    """T5 (E2): SIGNATURE_ANCHOR 求解期应用（Step 6 投票提前）。
+
+    - `{addr}:this`   ← `::` 前缀类名（union add，不覆盖 vtable 锚）
+    - `{addr}.return` ← return_type（限基础类型; 只锚已存在 var，不发明新变量）
+    T7 (B1): 写入走 _domain_add 路由（类进 class_domain，基础类型进
+    type_domain——开关关闭时全部进 class_domain，与基线一致）。
+    返回 (sig_this_anchored, sig_return_anchored)。
+    纯逻辑（模块级，离线可测）——域操作仅 union add。
+    """
+    sig_this_anchored = 0
+    sig_return_anchored = 0
+    for _addr_key, _sig in sig_symbols.items():
+        if not isinstance(_sig, dict) or _sig.get("kind") != "function":
+            continue
+        try:
+            _padded = f"0x{int(_addr_key, 16):08X}"
+        except (ValueError, TypeError):
+            continue  # 非 hex 键（名字变体）跳过
+        _cls_name = _sig_class_prefix(_sig.get("name", ""))
+        if _cls_name:
+            _this_var = f"{_padded}:this"
+            if _this_var in this_vars:
+                _domain_add(domain, type_domain, _this_var, _cls_name)
+                anchor_strength[_this_var] = max(anchor_strength.get(_this_var, 0), 2)
+                sig_this_anchored += 1
+        _rt = _normalize_sig_return_type(_sig.get("return_type", ""))
+        if _rt:
+            _ret_var = f"{_padded}.return"
+            if _ret_var in all_vars:
+                _domain_add(domain, type_domain, _ret_var, _rt)
+                anchor_strength[_ret_var] = max(anchor_strength.get(_ret_var, 0), 2)
+                sig_return_anchored += 1
+    return sig_this_anchored, sig_return_anchored
+
+
+_RE_MEMBER_VAR_T5 = re.compile(r"(0x[0-9a-fA-F]+):this\.member\((0x[0-9a-fA-F]+)\)")
+
+
+def _apply_member_anchors(domain, type_domain, all_vars, member_anchor, anchor_strength):
+    """T5 (E1): MEMBER_ANCHOR 应用——`{func}:this.member(0x{off})` 强锚。
+
+    若 this 域含 Class_X（真实类名）且 (Class_X, off) 在成员表有已知类型
+    → 成员变量域加入锚类型（union，不覆盖传播）。返回命中变量数。
+    T7 (B1): 写入走 _domain_add 路由（锚类型可能是基础类型）。
+    this 域读取仅类域（this 变量只含类候选——分域下语义不变）。
+    纯逻辑（模块级，离线可测）。
+    """
+    hits = 0
+    for _var in all_vars:
+        _m = _RE_MEMBER_VAR_T5.search(_var)
+        if not _m:
+            continue
+        _this_var = f"{_m.group(1)}:this"
+        _off = int(_m.group(2), 16)
+        _this_dom = domain.get(_this_var)
+        if not _this_dom:
+            continue
+        _anchored = False
+        for _cls in _this_dom:
+            _anchor_t = member_anchor.get((_cls, _off))
+            if _anchor_t:
+                _domain_add(domain, type_domain, _var, _anchor_t)
+                _anchored = True
+        if _anchored:
+            anchor_strength[_var] = max(anchor_strength.get(_var, 0), 2)
+            hits += 1
+    return hits
+
 # 调用约定常量映射（F5）
 _CC_NAME_TO_CM = {
     "thiscall": ida_typeinf.CM_CC_THISCALL if ida_typeinf else 128,
@@ -89,6 +595,726 @@ _CC_NAME_TO_CM = {
     "fastcall": ida_typeinf.CM_CC_FASTCALL if ida_typeinf else 112,
 }
 _CM_TO_CC_NAME = {v: k for k, v in _CC_NAME_TO_CM.items()}
+
+
+# ============================================================
+# A0-S2 (T1): 写检测补全——mov imm / lea 的约束判定（模块级，离线可测）
+# SSA 语义: scope_vars._detect_writes 只认 ASSIGN/FUNC_PARAM/RETURN_TO/
+# STACK_ACCESS 的 to=reg 边为写点 → 每条寄存器写必须产生约束，版本边界
+# 才完整。本层补两个缺口（当前检测链全落空的类别）:
+#   - mov reg, imm  → TYPE_SEED(reg, "int")（int 证据 + 约束产出）
+#   - lea reg, X    → ASSIGN(X → reg)（X = 成员/栈/全局；该边被 _detect_writes
+#                     识别为写点 → SSA 版本边界补全）
+# 不破坏现有判定优先级：调用点只在链上 `c 为空` 时触发（见 Step 3 循环）。
+# ============================================================
+
+X86_REGS = frozenset(
+    {
+        "eax",
+        "ebx",
+        "ecx",
+        "edx",
+        "esi",
+        "edi",
+        "ebp",
+        "esp",
+        "al",
+        "ah",
+        "bl",
+        "bh",
+        "cl",
+        "ch",
+        "dl",
+        "dh",
+        "ax",
+        "bx",
+        "cx",
+        "dx",
+        "si",
+        "di",
+        "bp",
+        "sp",
+    }
+)
+
+RE_HEX_IMM = re.compile(r"^-?[0-9A-Fa-f]+h$", re.IGNORECASE)
+RE_DEC = re.compile(r"^-?\d+$")
+
+
+def _is_imm_text(text):
+    """A0-S2 (T1): 立即数判定（IDA 显示格式：`0FFFFFFFFh` / `5` / `-1`）。
+
+    数字/hex 字面量 → True；寄存器/全局/成员/栈引用 → False。
+    复用 RE_HEX_IMM/RE_DEC（与 _is_global_ref 的数字排除一致），另兜底
+    `0x` 前缀（IDA 偶发显示变体）。
+    """
+    if not text:
+        return False
+    t = text.strip()
+    if RE_HEX_IMM.match(t) or RE_DEC.match(t):
+        return True
+    if t.startswith("-0x") or t.startswith("0x"):
+        try:
+            int(t, 16)
+            return True
+        except ValueError:
+            return False
+    return False
+
+
+def _a0s2_mov_imm_seed(mnem, op0, op1, ea_hex):
+    """A0-S2 (T1): `mov reg, imm` → TYPE_SEED(reg, "int")。
+
+    当前三路检测（成员/全局/栈）对立即数源全部落空 → 无约束 → SSA 写点缺失
+    且 int 证据丢失。此分支补 int 种子（type_seeds 进 domain/var_types）。
+    返回约束 dict 或 None（纯文本判定，无 IDA 依赖，离线可测）。
+    """
+    if mnem != "mov" or not op0 or not op1 or not ea_hex:
+        return None
+    dst = op0.strip().lower()
+    if dst not in X86_REGS:
+        return None
+    if not _is_imm_text(op1):
+        return None
+    return {"type": "TYPE_SEED", "var": dst, "itype": "int", "addr": ea_hex}
+
+
+def _a0s2_lea_assign(mnem, op0, src, ea_hex):
+    """A0-S2 (T1): `lea reg, X`（X = 成员/栈/全局）→ ASSIGN(X → reg)。
+
+    src 为 _parse_operand_src(ea, 1) 的 (kind, name)；kind ∈ member/stack/global
+    且 name 非空 → 生成 ASSIGN 边（该边被 scope_vars._detect_writes 识别为
+    寄存器写点 → SSA 版本边界补全）。寄存器源 lea（`lea eax,[eax+4]`）与
+    不可解析源（寄存器索引 `[esi+eax*4]`）不在本任务覆盖域 → None。
+    返回约束 dict 或 None。
+    """
+    if mnem != "lea" or not op0 or not ea_hex:
+        return None
+    dst = op0.strip().lower()
+    if dst not in X86_REGS:
+        return None
+    if src and src[0] in ("member", "stack", "global") and src[1]:
+        return {"from": src[1], "to": dst, "type": "ASSIGN", "addr": ea_hex}
+    return None
+
+
+def _a0s2_write_point(mnem, op0, op1, src_kind):
+    """A0-S2 (T1): 指令是否属于"必须产生约束"的寄存器写点覆盖域。
+
+    覆盖域 = T1 保证有约束的写类别（write_gap_count 指标的计数口径）:
+      - mov reg, imm                  → 必须 TYPE_SEED
+      - lea reg, (member|stack|global) → 必须 ASSIGN
+    其余写类别（movzx/movsx、算术、寄存器源 lea、不可解析源）不在本指标
+    覆盖域——T1 明确不改 movzx/movsx 现有处理，指标只断言 T1 关闭的缺口。
+    """
+    if not op0:
+        return False
+    dst = op0.strip().lower()
+    if dst not in X86_REGS:
+        return False
+    if mnem == "mov" and op1 and _is_imm_text(op1):
+        return True
+    if mnem == "lea" and src_kind in ("member", "stack", "global"):
+        return True
+    return False
+
+
+# ============================================================
+# T10 (E3-E8): 语义约束批——全部模块级纯逻辑，离线可导入断言
+#   E3 GLOBAL_ANCHOR   global_types.json（只读）→ 全局引用变量锚定
+#   E4 NULL_CONST      xor eax,eax / mov eax,0 返回 → return 域 +{int, void*}
+#   E5 CALL_SITE_CONTEXT 形参域多数投票加权（AC-3 CALL_ARG 叠加层）+ 冲突记录
+#   E6 ARRAY_INDEX     [reg+idx*4/8] 数组索引 → 基址成员约束 + 元素宽度
+#   E7 THIS_ADJUST     thunk this 偏移约束化（配合 T9 C3，通用路径）
+#   E8 EQ_CLASS        ASSIGN 传递闭包并查集 → greedy 共享 + 矛盾记录
+# 每个子项独立可测（mock 数据，见 .omo/evidence/csp-hardening/）
+# ============================================================
+
+# ---------- E3: GLOBAL_ANCHOR ----------
+# 数据源 anchors/global_types.json: {addr_hex: {type, name, confidence}}（全部
+# ANCHORED，实测 1,338 条）。构建两个查找表:
+#   GLOBAL_ANCHOR_BY_NAME[ida_name] = 域词汇（符号名直查——约束图全局变量名）
+#   GLOBAL_ANCHOR_BY_ADDR[int_addr] = 域词汇（dword_815DA8 式名字后缀解析兜底）
+# 归一化: 先剥 const/volatile 前缀，其余规则复用 _normalize_member_type
+# （数组/模板/函数指针/值类型 → None，宁缺毋滥）。
+
+
+def _normalize_global_type(t):
+    """T10 (E3): 全局类型字符串 → 域词汇；不可表达 → None。"""
+    if not t:
+        return None
+    key = t.strip()
+    while key.startswith("const ") or key.startswith("volatile "):
+        key = key[len(key.split()[0]) + 1 :].strip()
+    if key in ("LPSTR", "LPWSTR", "LPCSTR", "LPCWSTR", "PSTR", "PWSTR"):
+        return "char*"
+    return _normalize_member_type(key)
+
+
+def _load_global_anchors():
+    """T10 (E3): 加载 global_types.json（只读）→ (by_name, by_addr)。"""
+    by_name, by_addr = {}, {}
+    path = os.path.join(PROJ_ROOT, "anchors", "global_types.json")
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for addr_key, info in data.items():
+                if not isinstance(info, dict) or info.get("confidence") != "ANCHORED":
+                    continue
+                t = _normalize_global_type(info.get("type", ""))
+                if not t:
+                    continue
+                try:
+                    addr_int = int(addr_key, 16)
+                except (ValueError, TypeError):
+                    continue
+                by_addr[addr_int] = t
+                name = info.get("name", "")
+                if name:
+                    by_name.setdefault(name, t)
+        except Exception as e:
+            print(f"  Warning: Could not load global_types.json: {e}")
+    return by_name, by_addr
+
+
+GLOBAL_ANCHOR_BY_NAME, GLOBAL_ANCHOR_BY_ADDR = _load_global_anchors()
+print(
+    f"  Loaded {len(GLOBAL_ANCHOR_BY_NAME)} named + "
+    f"{len(GLOBAL_ANCHOR_BY_ADDR)} addr global anchors (T10 E3)"
+)
+
+_RE_GLOBAL_ADDR_SUFFIX = re.compile(
+    r"^(?:dword|byte|word|unk|flt|off|qword)_([0-9A-Fa-f]+)$"
+)
+
+
+def _global_anchor_type(var):
+    """T10 (E3): 约束图全局变量 → 锚定类型（无 → None）。
+
+    1) 符号名直查（g_XXX / 其他 IDA 符号名）
+    2) dword_815DA8 式 IDA 自动名 → 地址后缀 → 地址表
+    """
+    if not var:
+        return None
+    t = GLOBAL_ANCHOR_BY_NAME.get(var)
+    if t:
+        return t
+    m = _RE_GLOBAL_ADDR_SUFFIX.match(var)
+    if m:
+        return GLOBAL_ANCHOR_BY_ADDR.get(int(m.group(1), 16))
+    return None
+
+
+def _apply_global_anchors(domain, type_domain, all_vars, anchor_strength):
+    """T10 (E3): GLOBAL_ANCHOR 应用——全局引用变量域加入锚定类型（union）。
+
+    只锚能解析出类型的变量（符号名 / dword_XXX 后缀）；不可解析变量不产生
+    任何域变更。返回命中变量数。T7 (B1): 写入走 _domain_add 路由。
+    纯逻辑（离线可测）。
+    """
+    hits = 0
+    for var in all_vars:
+        t = _global_anchor_type(var)
+        if t:
+            _domain_add(domain, type_domain, var, t)
+            anchor_strength[var] = max(anchor_strength.get(var, 0), 2)
+            hits += 1
+    return hits
+
+
+# ---------- E4: NULL_CONST ----------
+
+def _e4_imm_is_zero(s):
+    """T10 (E4): 立即数文本是否为 0（`0` / `0h` / `0x0` / `-0` 变体）。"""
+    if not s:
+        return False
+    t = s.strip().lower()
+    try:
+        if t.startswith("0x") or t.startswith("-0x"):
+            return int(t, 16) == 0
+        if t.endswith("h"):
+            return int(t[:-1], 16) == 0
+        return int(t, 10) == 0
+    except ValueError:
+        return False
+
+
+# 基础类型域词汇（"return 域为空/仅基础类型时加入"的判定集）
+_BASE_TYPE_VOCAB = frozenset(
+    {"int", "bool", "float", "double", "char*", "void*", "unknown"}
+)
+
+
+def _e4_null_const_allowed(dom):
+    """T10 (E4): return 域为空或全为基础类型 → 允许加入 {int, void*}。
+
+    NULL 可能是 int 0 或 NULL 指针——收窄不固定；已有类域（推测比 NULL
+    语义更强）不覆盖。
+    """
+    return not dom or all(t in _BASE_TYPE_VOCAB for t in dom)
+
+
+# ---------- E5: CALL_SITE_CONTEXT ----------
+
+def _e5_majority_merge(current, arg_domains):
+    """T10 (E5): 多数调用者意见优先的形参域合并（纯逻辑，离线可测）。
+
+    current: 形参当前域（set）；arg_domains: 各调用点实参域（list of set，
+    实参域先各自独立——互不相交合并）。
+    规则（保守，只收窄不扩域）:
+      - 非空调用点 < 2 → None（维持现状，交 AC-3 双向交集处理）
+      - 多数候选 = 全部调用点实参域中出现次数最多的类型集合（并列取全部）
+      - 结果 = current ∩ 多数候选；空 → None（不改变，冲突由观测层记录）
+    """
+    non_empty = [set(d) for d in arg_domains if d]
+    if len(non_empty) < 2:
+        return None
+    freq = Counter()
+    for d in non_empty:
+        for t in d:
+            freq[t] += 1
+    max_f = max(freq.values())
+    majority = {t for t, n in freq.items() if n == max_f}
+    joint = set(current) & majority
+    return joint if joint else None
+
+
+def _e5_collect_call_site_conflicts(call_arg_sites, domain, type_domain=None):
+    """T10 (E5): 冲突调用点统计（观测层——AC-3 收敛后调用一次）。
+
+    call_arg_sites: {param_var: [(ci, addr, arg_var), ...]}（scoped 名）。
+    对每个形参: 各调用点实参域与多数候选无交集 → 该调用点为冲突调用点。
+    T7 (B1): type_domain 提供时实参域用联合视图（分域下基础类型域可见）。
+    返回 {param_var: {"conflicting_call_sites": [...], "majority_types": [...],
+    "call_site_count": N}}（无冲突形参不出现）。纯逻辑（离线可测）。
+    """
+    conflicts = {}
+    for sto, sites in call_arg_sites.items():
+        if type_domain is not None:
+            doms = [(a, _domain_union(domain, type_domain, v)) for (_, a, v) in sites if _domain_union(domain, type_domain, v)]
+        else:
+            doms = [(a, set(domain[v])) for (_, a, v) in sites if domain[v]]
+        if len(doms) < 2:
+            continue
+        freq = Counter()
+        for _, d in doms:
+            for t in d:
+                freq[t] += 1
+        max_f = max(freq.values())
+        majority = {t for t, n in freq.items() if n == max_f}
+        # 无共识: 每个类型同频（多数候选 == 全部类型）→ 全部调用点均为冲突
+        no_consensus = len(majority) == len(freq)
+        if no_consensus:
+            conf_sites = [a for a, _ in doms]
+        else:
+            conf_sites = [a for a, d in doms if not (d & majority)]
+        if conf_sites:
+            conflicts[sto] = {
+                "conflicting_call_sites": conf_sites[:10],
+                "majority_types": sorted(majority),
+                "call_site_count": len(doms),
+            }
+    return conflicts
+
+
+# ---------- T6 (A3): CALL_ARG 单向传播 ----------
+
+def _a3_call_arg_step(frm, to, role, anchor_str):
+    """T6 (A3): CALL_ARG 单向传播单步（纯逻辑，离线可测）。
+
+    frm/to: from（实参/接收者）与 to（形参/this）的域（可变 set，就地更新）。
+    role: 0 = 当前处理变量在 from 侧（from 域变化触发本边）；1 = 在 to 侧。
+    anchor_str: from 变量的锚定强度（int；0 = 无锚，>0 = 有类锚）。
+
+    A3 规则（from→to 单向；防实参域被形参域错误 seed 反向污染——形参域是
+    多调用点聚合，不应回写实参）:
+      - role=0（from 侧）: 只允许正向——空 to 被 seed；双非空时 to 收窄为
+        交集；from 自身绝不被 to 收窄/seed（反向禁止）。
+      - role=1（to 侧）: 反向传播默认禁止；唯一例外——to 域为空 且 from 有
+        类锚（anchor_str > 0）→ 允许 from→to 正向 seed（该 case 下 to 为
+        空，实际动作仍为正向；to 非空时 to→from 一律禁止）。
+
+    返回 (frm_changed, to_changed)（调用方决定 worklist 入队）。
+    """
+    f_chg = t_chg = False
+    if role == 0:
+        if frm:
+            if not to:
+                to.update(frm)
+                t_chg = True
+            else:
+                joint = frm & to
+                if joint and joint != to:
+                    to.intersection_update(joint)
+                    t_chg = True
+    else:
+        if not to and frm and anchor_str > 0:
+            to.update(frm)
+            t_chg = True
+    return f_chg, t_chg
+
+
+# ---------- T6 (I2): RETURN 边生成补全 ----------
+
+def _i2_ret_edge(prev_mnem, prev_ops, ea, func_addr_str):
+    """T6 (I2): RETURN 边生成（纯逻辑，离线可测）。
+
+    ret 的 prev 指令设置 eax 即产 RETURN 边——多返回点非末尾模式补全
+    （prev 指令含 eax 设置但 mnem 不是 mov/xor 的场景）:
+      `lea eax,[esi+14h]; ret` / `movzx eax,..; ret` / `add eax,1; ret` /
+      `sub eax,imm; ret`。
+    特例保持（T10 E4 NULL_CONST 语义）:
+      - `xor eax,eax` / `sub eax,eax` → null_const=True（优先判定——
+        扩展集含 "sub"，避免 `sub eax,eax` 被误标非空）
+      - `mov eax, 0` → null_const=True
+    prev_ops: [op0, (op1)] 操作数文本；不满足 → None。
+    """
+    if not prev_ops or not prev_ops[0]:
+        return None
+    dst = prev_ops[0].lower()
+    if "eax" not in dst:
+        return None
+    if (
+        prev_mnem in ("xor", "sub")
+        and len(prev_ops) >= 2
+        and prev_ops[0] == prev_ops[-1]
+    ):
+        return {
+            "from": f"0x{ea:X}_RET",
+            "to": f"{func_addr_str}.return",
+            "type": "RETURN",
+            "addr": f"0x{ea:X}",
+            "null_const": True,
+        }
+    if prev_mnem in ("mov", "movzx", "movsx", "lea", "add", "sub"):
+        _null = (
+            prev_mnem == "mov"
+            and dst == "eax"
+            and len(prev_ops) >= 2
+            and _e4_imm_is_zero(prev_ops[1])
+        )
+        return {
+            "from": f"0x{ea:X}_RET",
+            "to": f"{func_addr_str}.return",
+            "type": "RETURN",
+            "addr": f"0x{ea:X}",
+            "null_const": _null,
+        }
+    return None
+
+
+# ---------- E6: ARRAY_INDEX ----------
+_RE_ARRAY_INDEX = re.compile(
+    r"^\[([a-z]{2,3})\s*\+\s*([a-z]{2,3})\s*\*\s*([248])"
+    r"(?:\s*([+-](?:0[xX])?[0-9a-fA-F]+h?))?\]$"
+)
+
+
+def _e6_parse_array_index(txt, disp):
+    """T10 (E6): `[reg+idx*4]` 数组索引解析（纯逻辑，离线可测）。
+
+    `[esi+eax*4]` / `[esi+eax*4+14h]` / `[esi+eax*8-8]` →
+    (base_reg, idx_reg, scale, off)。scale 仅 4/8（任务范围）; disp 为
+    IDA get_operand_value（位移），非法/None 时用文本组兜底解析。
+    非数组索引格式 / 不可解析 → None。
+    """
+    if not txt:
+        return None
+    m = _RE_ARRAY_INDEX.match(txt.strip().lower())
+    if not m:
+        return None
+    base, idx, scale = m.group(1), m.group(2), int(m.group(3))
+    if base not in X86_REGS or idx not in X86_REGS:
+        return None
+    if scale not in (4, 8):
+        return None
+    off = 0
+    if disp is not None and -0x80000000 <= disp < 0x80000000:
+        off = int(disp)
+    elif m.group(4):
+        s = m.group(4).strip().rstrip("h")
+        try:
+            off = int(s, 16)
+        except ValueError:
+            return None
+    return (base, idx, scale, off)
+
+
+# ---------- E7: THIS_ADJUST ----------
+
+def _e7_apply_this_adjust(domain, type_domain, anchor_strength, thunk_adjustments,
+                          thunk_targets):
+    """T10 (E7): thunk this 偏移约束化（配合 T9 C3，纯逻辑，离线可测）。
+
+    对 this_adjustment 非 0 的 thunk 条目: `{thunk}:this` 域 = `{target}:this`
+    域（复制覆盖——thunk 自身不参与锚定，目标为 vtable/函数名锚定的真实
+    方法类，强度更高），adjustment 记录到返回边列表。thunk 变量未在域中
+    出现（非 thiscall / 无约束引用）或目标域为空 → 不发明/不破坏，仅记录边。
+    本二进制无 adjustor thunk（T9 实证）→ 命中 0 属正常。
+    T7 (B1): 类域与类型域分别复制（分域下 this 域只含类，但防御性全复制）。
+    返回 (applied_count, edges_list)。
+    """
+    applied = 0
+    edges = []
+    for entry, adjustment in sorted(thunk_adjustments.items()):
+        if not adjustment:
+            continue
+        thunk_var = f"0x{entry:08X}:this"
+        tgt = thunk_targets.get(entry)
+        if not tgt:
+            continue
+        target_var = f"0x{tgt:08X}:this"
+        tgt_dom = domain.get(target_var)
+        if tgt_dom and (thunk_var in domain or thunk_var in type_domain):
+            domain[thunk_var] = set(tgt_dom)
+            if DOMAIN_SPLIT:
+                type_domain[thunk_var] = set(type_domain.get(target_var, ()))
+            anchor_strength[thunk_var] = max(anchor_strength.get(thunk_var, 0), 3)
+            applied += 1
+        edges.append(
+            {
+                "thunk": f"0x{entry:08X}",
+                "target": f"0x{tgt:08X}",
+                "adjustment": adjustment,
+            }
+        )
+    return applied, edges
+
+
+# ---------- E8: EQ_CLASS ----------
+
+def _build_eq_classes(edge_constraints, st=None):
+    """T10 (E8): ASSIGN 传递闭包 → var→root 映射（并查集，纯逻辑，离线可测）。
+
+    edge_constraints: 约束列表；st: build_scoped_index 的 scoped 名（ci →
+    (sf, sto)），缺省时用原始 from/to（离线测试用）。只并 ASSIGN 边；缺端
+    变量跳过。返回 {var: root}（仅含参与 ASSIGN 的变量；未参与者由调用方
+    `.get(var, var)` 兜底为自身）。仅影响 greedy 共享，不改 AC-3 传播。
+    """
+    parent = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[rb] = ra
+
+    for ci, c in enumerate(edge_constraints):
+        if c.get("type") != "ASSIGN":
+            continue
+        if st is not None:
+            try:
+                sf, sto = st[ci]
+            except (IndexError, TypeError):
+                continue
+        else:
+            sf, sto = c.get("from"), c.get("to")
+        if sf and sto and sf != sto:
+            union(sf, sto)
+    return {v: find(v) for v in parent}
+
+
+def _e8_collect_eq_conflicts(eq_members, domain, type_domain=None):
+    """T10 (E8): 等价类矛盾统计（同 root 不同类候选冲突，纯逻辑，离线可测）。
+
+    eq_members: {root: [var, ...]}；domain: 求解期域。
+    矛盾定义: 同 root 内 ≥2 个成员有非空域，且全部非空域无公共候选
+    （AC-3 ASSIGN 空交集跳过正是静默矛盾点——这里显式记录）。
+    T7 (B1): type_domain 提供时用联合视图（分域下基础类型域可见）。
+    返回 {root: {"vars": [...], "domain_sets": [...], "member_count": N}}。
+    """
+    conflicts = {}
+    for root, members in eq_members.items():
+        if len(members) < 2:
+            continue
+        if type_domain is not None:
+            doms = [_domain_union(domain, type_domain, m) for m in members if _domain_union(domain, type_domain, m)]
+        else:
+            doms = [set(domain[m]) for m in members if domain[m]]
+        if len(doms) < 2:
+            continue
+        common = set.intersection(*doms)
+        if common:
+            continue
+        conflicts[root] = {
+            "vars": members[:10],
+            "domain_sets": [sorted(d) for d in doms][:5],
+            "member_count": len(members),
+        }
+    return conflicts
+
+
+# ============================================================
+# A1/A2 (T4): BADADDR 源头过滤 + 栈基准归一化（模块级纯逻辑，离线可测）
+# ============================================================
+
+# A1: 成员偏移合法性——非法偏移（<0 或 >= 0x80000000）在 Step 3 约束生成处
+# 过滤（"BADADDR 源头过滤"），Step 7 的 final_classes 侧同类过滤保留为双保险。
+# 0x80000000 以上为 32 位位移垃圾（如 BADADDR 0xFFFFFFFF 泄漏）；off=0 合法
+# （`[ecx]` 无偏移访问）。
+def _a1_valid_member_off(off):
+    return isinstance(off, int) and 0 <= off < 0x80000000
+
+
+# A2: 栈槽名数值解析（`stack_+0x4` / `stack_-0x3c` → int；非栈槽名 → None）。
+# `stack_{off:+#x}` 的 off 部分含符号（`+0x4` / `-0x3c`），int(s, 16) 直接可解。
+def _a2_parse_stack_off(name):
+    if not name or not name.startswith("stack_"):
+        return None
+    try:
+        return int(name[6:], 16)
+    except (ValueError, IndexError):
+        return None
+
+
+# A1(栈): 栈槽名量级校验——±0x80000000 之外的位移是 32 位位移垃圾
+# （BADADDR 泄漏等），不产生约束。注意：负偏移（局部变量 `stack_-0x4`）
+# 合法，只滤量级垃圾（与成员偏移的 `0 <= off` 语义不同）。
+def _a1_sane_stack_off(off):
+    return isinstance(off, int) and -0x80000000 <= off < 0x80000000
+
+
+# A2: esp 基位移 → ebp 基位移（仅 EBP 帧函数 + frsize 可得时换算）。
+# 标准序言 `push ebp; mov ebp, esp; sub esp, frsize` 后当前 esp = ebp - frsize，
+# 故 `[esp+X]` 的 ebp 基位移 = X - frsize；此时 spd = -(4+frsize)，等价于
+# (X + spd) + 4（ebp = entry-esp - 4）。用 spd 版本保证额外 push（调用参数）
+# 等场景下也精确（任务公式 off - frsize 是其标准序言特例）。
+# 无帧（esp-only /Oy 函数）或 frsize 不可得 → None（保守保持 esp 基，不换算）。
+def _a2_esp_off_to_ebp(val, spd, frsize, has_frame):
+    if not has_frame or frsize is None:
+        return None
+    return (val + spd) + 4
+
+
+# A2: 函数参数槽的统一基准命名——EBP 帧函数 param_i 位于 [ebp+8+4i]
+# （ebp 基 `stack_{8+4i}`）；无帧函数 param_i 位于 [esp+4+4i]@entry
+# （entry-ESP 基 `stack_{4+4i}`，现状保持）。FUNC_PARAM 生成与 param0 别名
+# 检测共用——A2 换算后两侧槽名必须一致（[ebp+8] = 第一个参数）。
+def _a2_param_slot_name(frsize, has_frame, i):
+    if has_frame and frsize is not None:
+        return f"stack_{8 + i*4:+#x}"
+    return f"stack_{4 + i*4:+#x}"
+
+
+# ============================================================
+# A0-S1 (T2): 栈槽写驱动版本化（约束后处理，模块级纯逻辑，离线可测）
+# scope_vars 明确推迟栈槽复用检测（"Stack-slot reuse detection is deferred"），
+# 本层在 ida_extract 侧补上该推迟部分（不改 scope_vars——engine.py 共用
+# 保护；engine.py 路径零触碰）：
+#   1. 收集函数内栈槽写点（to 以 `stack_` 开头的边：STACK_ACCESS 写方向 +
+#      FUNC_PARAM 入口 store + STACK_VAR 初始化——对齐
+#      scope_vars._detect_writes 的栈写判定），按函数分组 + 写地址排序
+#   2. 每条边引用栈槽时用 bisect 归最近写版本：
+#      `0x{func}::stack_{off:+#x}` → `0x{func}::stack_{off:+#x}_v0x{write_ea:X}`
+#   3. 同槽复用（int 与 Class_X 交替写）→ 不同版本 → 域不合并（消除污染）；
+#      FUNC_PARAM 入口 store（addr = func_start）即第一个写；
+#      未写过的栈槽读取 → 保留原名（无版本）
+# 版本化基于 T4 (A2) 归一化后的栈槽名（esp 基 → ebp 基）——同一槽统一名后
+# 版本化才有意义。调用点：build_scoped_index 之后、AC-3 之前（见 5.0）。
+# ============================================================
+
+# 栈槽写类别（与 scope_vars._detect_writes 栈写判定一致；STACK_VAR 当前
+# 提取器不产出，保留以对齐语义）
+_STACK_WRITE_TYPES = frozenset({"STACK_ACCESS", "FUNC_PARAM", "STACK_VAR"})
+
+# 作用域化栈槽名: `0x{func:08X}::stack_{off:+#x}`（scope_vars 对栈槽统一
+# 归函数作用域后产生的名字；`off` 含符号：`stack_+0x4` / `stack_-0x3c`）
+_RE_SCOPED_STACK = re.compile(r"^(0x[0-9A-Fa-f]+)::(stack_.+)$")
+
+
+def _parse_constraint_addr(c):
+    """约束 addr 字段（`0x401000`）→ int；缺失/非法 → None。"""
+    addr_str = c.get("addr", "")
+    if not addr_str:
+        return None
+    try:
+        return int(addr_str, 16)
+    except (ValueError, TypeError):
+        return None
+
+
+def _stack_write_points(constraints, func_addrs):
+    """A0-S1 (T2): 收集 (func_addr, raw_stack_name) → 排序去重的写地址列表。
+
+    写点 = to 以 `stack_` 开头的边（STACK_ACCESS 写方向 / FUNC_PARAM 入口
+    store / STACK_VAR 初始化），所属函数用 find_containing_func(写地址) 判定
+    （与 scope_vars._detect_writes 的栈写判定同源）。无函数归属的写点
+    （func_addrs 未覆盖）不参与版本化。
+    """
+    writes = defaultdict(list)
+    for c in constraints:
+        if c.get("type", "") not in _STACK_WRITE_TYPES:
+            continue
+        c_to = c.get("to", "")
+        if not c_to.startswith("stack_"):
+            continue
+        addr = _parse_constraint_addr(c)
+        if addr is None:
+            continue
+        func = find_containing_func(addr, func_addrs)
+        if func:
+            writes[(func, c_to)].append(addr)
+    return {key: sorted(set(v)) for key, v in writes.items()}
+
+
+def _version_stack_name(scoped_name, writes, addr):
+    """A0-S1 (T2): 单个作用域化栈槽名的版本化（bisect 归最近写 ≤ addr）。
+
+    写边自身（addr == 某写点）→ 归该写版本；两次写之间的读取 → 归最近写
+    版本（bisect_right 语义，与 scope_vars 寄存器 SSA 一致）；未写过的槽 /
+    非栈槽名 / 写列表缺失 → 原样返回（无版本）。
+    """
+    m = _RE_SCOPED_STACK.match(scoped_name)
+    if not m:
+        return scoped_name
+    func = int(m.group(1), 16)
+    raw = m.group(2)
+    write_addrs = writes.get((func, raw))
+    if not write_addrs:
+        return scoped_name
+    idx = bisect_right(write_addrs, addr) - 1
+    if idx < 0:
+        return scoped_name
+    return f"0x{func:08X}::{raw}_v0x{write_addrs[idx]:X}"
+
+
+def _scope_stack_versions(constraints, scoped_names, func_addrs):
+    """A0-S1 (T2): 栈槽写驱动版本化（约束后处理）。
+
+    scope_vars 的 SSA 只覆盖寄存器，栈槽只归函数作用域（复用检测推迟）。
+    本函数在约束后处理层补上：对 scoped_to_name 中所有 `stack_*` 变量按
+    写地址加版本，消除同槽复用的域污染。不改 scope_vars 默认行为。
+
+    Args:
+        constraints: edge_constraints（TYPE_SEED 已排除，均为带 from/to 的边）。
+        scoped_names: build_scoped_index 返回的 scoped_to_name 列表。
+        func_addrs: 排序函数起始地址（ssa["func_addrs"]）。
+
+    Returns:
+        新 scoped_to_name 列表（长度与输入一致；栈槽名版本化，其余原名）。
+    """
+    writes = _stack_write_points(constraints, func_addrs)
+
+    out = []
+    for c, (sf, st) in zip(constraints, scoped_names):
+        addr = _parse_constraint_addr(c)
+        if addr is None:
+            out.append((sf, st))  # addr 缺失的边不参与版本化（保守原名）
+            continue
+        out.append(
+            (
+                _version_stack_name(sf, writes, addr),
+                _version_stack_name(st, writes, addr),
+            )
+        )
+    return out
 
 
 def _assign_push_params(pushes):
@@ -104,6 +1330,43 @@ def _assign_push_params(pushes):
     n = len(exec_order)
     pairs = [(src, n - 1 - i) for i, src in enumerate(exec_order)]
     return list(reversed(pairs))  # 输出保持扫描序（call 邻近 push 在前 = param0）
+
+
+def _this_src_member_name(txt, off):
+    """A0-S3 (T3): `[reg+off]` 成员接收者命名（纯逻辑，离线可测）。
+
+    txt: IDA 操作数文本（`[esi+14h]` / `[esi]`）；off: get_operand_value 位移。
+    `[reg+off]`(off>0) → `reg.member(0x{off:X})`——保留偏移（参与 MEMBER_ANCHOR
+    与 var_features offsets 聚合），替代旧 `*reg`（偏移丢弃 + 被 scope_vars
+    当作寄存器 SSA 化，断链 1 根因）；`[reg]`(off=0)/偏移不可解析/负偏移
+    （`[esi-8]`）→ `*reg` 保持旧行为（最小回归面）。非 `[reg...]` 形式 → None。
+    寄存器索引操作数（`[esi+ecx*4]`）由调用方 _reg_index_guard 先行排除。
+    """
+    m = re.match(r"^\[([a-z]{2,3})\b", (txt or "").strip().lower())
+    if not m or m.group(1) not in X86_REGS:
+        return None
+    base = m.group(1)
+    if off is not None and off > 0:
+        return f"{base}.member(0x{off:X})"
+    return f"*{base}"
+
+
+def _vtable_slot_anchors(vtables, vt_entries_mapped):
+    """A0-S3 (T3): vtable 槽位 → 候选类锚变量表（纯逻辑，离线可测）。
+
+    vtable 调用点静态只知槽位（`call [eax+10h]` → slot 4），不知 vt_start；
+    类锚 = 5.1 vtable anchor 变量 `0x{func:08X}:this`（该变量域含
+    Class_{vt_start:X}——单冒号 `:this` 体系，与 5.1 anchor 格式一致）。
+    对每个含该槽位的 vtable 条目函数登记 `0x{func:08X}:this`；全局按
+    (slot, func) 去重（规模 ≤ 总 vtable 条目数，与调用点数量无关）。
+    返回 {slot_idx: [anchor_var, ...]}（槽位升序）。
+    """
+    anchors = defaultdict(list)
+    for vt in vtables:
+        entries = vt_entries_mapped.get(vt.get("start")) or ()
+        for i, func_addr in enumerate(entries):
+            anchors[i].append(f"0x{func_addr:08X}:this")
+    return {k: list(dict.fromkeys(v)) for k, v in sorted(anchors.items())}
 
 
 def _sanitize_struct_name(name):
@@ -128,6 +1391,128 @@ def _sanitize_struct_name(name):
         sanitized = "_" + sanitized
     return sanitized
 
+
+# ============================================================
+# T9 (C3/C4): adjustor thunk 检测 + DAG 环检测
+# 纯逻辑函数模块级定义，离线可导入（verify_extract_output.py / 合成测试复用）
+# ============================================================
+
+def _match_adjustor_thunk(insns):
+    """C3: adjustor thunk 三重匹配（纯逻辑，离线可测）。
+
+    insns: 3 条顺序指令，每条 = {"mnem": str, "ops": [(kind, *args), ...]}：
+      指令 1: `mov eax, [esp+4]`  → ops: [("reg","eax"), ("displ","esp",4)]
+      指令 2: `add eax, imm`      → ops: [("reg","eax"), ("imm", adjustment)]
+      指令 3: `jmp <target>`      → ops: [("near", target_addr)]
+    命中返回 (target, this_adjustment)；否则 None。
+    误判防线（设计 §C3）：必须三指令连读——`mov eax,[esp+4]` 单独出现也可能是
+    普通函数开头（取参数），mov+add+jmp 连读才算 thunk。
+    """
+    if not insns or len(insns) < 3:
+        return None
+    m1, o1 = insns[0].get("mnem"), insns[0].get("ops") or ()
+    if m1 != "mov" or len(o1) < 2:
+        return None
+    if o1[0][0] != "reg" or o1[0][1] != "eax":
+        return None
+    if o1[1][0] != "displ" or o1[1][1] != "esp" or o1[1][2] != 4:
+        return None
+    m2, o2 = insns[1].get("mnem"), insns[1].get("ops") or ()
+    if m2 != "add" or len(o2) < 2:
+        return None
+    if o2[0][0] != "reg" or o2[0][1] != "eax":
+        return None
+    if o2[1][0] != "imm":
+        return None
+    adjustment = o2[1][1]
+    m3, o3 = insns[2].get("mnem"), insns[2].get("ops") or ()
+    if m3 != "jmp" or not o3:
+        return None
+    if o3[0][0] != "near":
+        return None
+    return o3[0][1], adjustment
+
+
+def _decode_insn_lite(ea):
+    """C3: IDA 单指令解码 → 归一化 {"mnem","ops","size"}（供 _match_adjustor_thunk）。"""
+    if ida_ua is None or idc is None:
+        return None
+    insn = ida_ua.insn_t()  # T9 修正: IDA 9.2 decode_insn 需 2 参 (out, ea)
+    if not ida_ua.decode_insn(insn, ea):
+        return None
+    ops = []
+    for i in range(2):  # mov/add/jmp 至多 2 操作数
+        op = insn.ops[i]
+        t = op.type
+        if t == idaapi.o_reg:
+            ops.append(("reg", idc.print_operand(ea, i)))
+        elif t == idaapi.o_displ:
+            regname = ""
+            if ida_idp is not None:
+                try:
+                    regname = ida_idp.get_reg_name(op.reg, op.dtyp) or ""
+                except Exception:
+                    regname = ""
+            ops.append(("displ", regname, op.addr))
+        elif t == idaapi.o_imm:
+            ops.append(("imm", op.value))
+        elif t == idaapi.o_near:
+            ops.append(("near", idc.get_operand_value(ea, i)))
+        else:
+            ops.append((str(t),))
+    return {"mnem": idc.print_insn_mnem(ea), "ops": ops, "size": insn.size}
+
+
+def _decode_insns3(ea):
+    """C3: 顺序解码 3 条指令（按指令边界对齐，第 N+1 条从第 N 条尾部开始）。"""
+    insns, cur = [], ea
+    for _ in range(3):
+        d = _decode_insn_lite(cur)
+        if d is None or d["size"] <= 0:
+            return None
+        insns.append(d)
+        cur += d["size"]
+    return insns
+
+
+def _reachable(src, dst, adj):
+    """C4: adj 中是否存在 src →* dst 路径（DFS，visited 防环）。"""
+    seen = set()
+    stack = [src]
+    while stack:
+        cur = stack.pop()
+        if cur == dst:
+            return True
+        if cur in seen:
+            continue
+        seen.add(cur)
+        stack.extend(adj.get(cur, ()))
+    return False
+
+
+def _build_acyclic_dag(edges):
+    """C4: 增量构建无环 DAG——添加 (child, base) 边前检查 base 是否已是 child 的
+    祖先（存在 base →* child 路径，即新增边会成环）→ 是则丢弃并记录。
+
+    edges: iterable of (child_cls, base_cls)。
+    返回 (dag_adj, children_of, dropped)；dropped 为被丢弃的成环边列表
+    （长度写入 manifest `cycles_detected`）。
+    """
+    dag_adj = defaultdict(set)
+    children_of = defaultdict(set)
+    dropped = []
+    for child_cls, base_cls in edges:
+        if child_cls == base_cls:
+            dropped.append((child_cls, base_cls))
+            continue
+        if _reachable(base_cls, child_cls, dag_adj):
+            dropped.append((child_cls, base_cls))
+            continue
+        dag_adj[child_cls].add(base_cls)
+        children_of[base_cls].add(child_cls)
+    return dag_adj, children_of, dropped
+
+
 TEXT_START, TEXT_END = 0x401000, 0x7E1000
 RDATA_START, RDATA_END = 0x7E1608, 0x812000
 MIN_VTABLE_ENTRIES = 3
@@ -142,6 +1527,10 @@ start_time = time.time()
 RUN_MANIFEST = {
     "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
     "dry_run": DRY_RUN,
+    # D2 (F3 确定性): 记录实际 PYTHONHASHSEED——headless 复验固定种子
+    # （set PYTHONHASHSEED=0）后同种子 dry/full 求解应逐位一致；unset 时
+    # 记录 "unset"（运行间 set/dict 迭代顺序随机化 → 非确定求解的信号）。
+    "python_hash_seed": os.environ.get("PYTHONHASHSEED", "unset"),
     "types_created": [],
     "types_deleted": [],
     "types_skipped_existing": [],
@@ -149,11 +1538,80 @@ RUN_MANIFEST = {
     "names_skipped_protected": [],
     # D1: 结构体注入防御性过滤记录（非法偏移 / 非法类名）
     "offsets_filtered_illegal": [],
+    # T4 (A1): BADADDR 源头过滤记录（Step 3 约束生成处——成员偏移非法 +
+    # 栈槽量级垃圾）。与 offsets_filtered_illegal（Step 7 final_classes 侧
+    # 双保险）同结构；本层滤净后 Step 7 侧应恒为空。
+    "offsets_filtered_source": [],
     "structs_skipped_no_valid_offsets": [],
     "names_sanitized": [],
     "structs_skipped_invalid_name": [],
+    # T9 (C3/C4): adjustor thunk 检测记录 + subtype DAG 成环边丢弃计数
+    "thunks_detected": [],
+    "cycles_detected": 0,
+    # A0-S2 (T1): 写检测覆盖指标（Step 3 结束后填充；=0 表示覆盖域内
+    # 每条寄存器写都产生了约束——SSA 版本边界完整的可观测断言）
+    "write_gap_count": 0,
+    "write_gap_detail": {},
+    # T5 (E1/E2): 锚定指标——成员锚条目/命中数 + 签名锚定数 + 强度分布
+    "member_anchor_entries": 0,
+    "member_anchor_hits": 0,
+    "sig_this_anchors": 0,
+    "sig_return_anchors": 0,
+    "anchor_strength_dist": {},
+    # T7 (B1/B2): 分域域模型——跨域矛盾记录（有限 cap 防爆炸）+ 锚点分层指标
+    "b1_split_enabled": DOMAIN_SPLIT,
+    "domain_conflicts": {},
+    "domain_conflicts_capped": False,
+    "anchor_strength_propagation": 0,
+    # T8 (C1/C2): 矛盾检测隔离 + top-K 候选
+    # C1: conflicts[var] = {edges: 原因边列表, domains: {cls, type, other}}——
+    # 变量级（greedy 消费，cap 200，超限计数不膨胀）；conflicted_skipped =
+    # greedy 因矛盾跳过的变量数（保持 unresolved 语义）
+    "conflicts": {},
+    "conflicts_capped": False,
+    "conflicts_overflow": 0,
+    "conflicted_skipped": 0,
+    # D1 (F3 fix): unresolved 兜底归因计数——矛盾 this 变量凭 C2 候选集
+    # candidates[0] 归因（C1 矛盾记录保留、语义不变），消除 Class_unresolved_*
+    # 单例；无候选的才生成 Class_unresolved_N。观测量，不改输出结构。
+    "unresolved_fallback_count": 0,
+    # C2: candidates_built = 构建 top-3 候选的变量数；candidates_vote_edges =
+    # Step 6 候选集投票投出的票数（观测）
+    "candidates_built": 0,
+    "candidates_vote_edges": 0,
+    # T10 (E3-E8): 语义约束批指标（每子项独立可观测）
+    "global_anchor_entries": len(GLOBAL_ANCHOR_BY_ADDR),
+    "global_anchor_hits": 0,
+    "null_const_returns": 0,
+    "null_const_anchored": 0,
+    "call_site_conflicts": {},
+    # T6 (I2): 扩展 mnemonics（lea/add/sub 非空）产生的 RETURN 边增量计数
+    "return_edges_extended_i2": 0,
+    "array_index_constraints": 0,
+    "array_index_widths": {},
+    "array_index_edges": [],
+    "this_adjust_edges": [],
+    "eq_class_count": 0,
+    "eq_class_shared": 0,
+    "eq_class_conflicts": {},
+    # T11 (D1/D2/E9): CSP 质量指标 + MEMBERSHIP 验证器（纯可观测/验证输出）
+    # csp_quality: {unresolved_count, conflict_count, avg_domain_size,
+    #               class_mapped_count, write_gap_count}——Step 9 导出前聚合
+    "csp_quality": {},
+    # E9 MEMBERSHIP: CSP 推断 offsets ⊆ member_lookup 成员偏移 一致性检查
+    # （验证用途，不改求解）。membership_conflicts 列表防膨胀（cap 200）。
+    "membership_conflicts": [],
+    "membership_conflict_count": 0,
+    "membership_checked_classes": 0,
+    "membership_offsets_checked": 0,
     "errors": [],
 }
+
+
+print(
+    f"  [D2] PYTHONHASHSEED={RUN_MANIFEST['python_hash_seed']!r} "
+    f"(复验固定种子: set PYTHONHASHSEED=0)"
+)
 
 
 def _write_manifest():
@@ -163,6 +1621,157 @@ def _write_manifest():
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(RUN_MANIFEST, f, indent=2)
     return manifest_path
+
+# ============================================================
+# T11 (D1/D2/E9): CSP 质量指标 + MEMBERSHIP 验证器
+# 纯可观测/验证输出——只读 final_classes / domain / anchor_strength /
+# rename_map / MEMBER_ANCHOR，不改任何求解逻辑（模块级纯函数，离线可测）。
+# ============================================================
+
+def _t11_avg_domain_size(domain, type_domain=None):
+    """D1: AC-3 收敛后、greedy(5.4) 前的平均域大小（全部变量，含空域）。
+
+    口径: sum(len(dom)) / len(domain)——空域变量（无约束/未解析）计入平均，
+    如实反映约束紧致度。域为空 → 0.0。
+    T7 (B1): type_domain 提供时按联合视图统计（分域下键 = 类域∪类型域）。
+    """
+    if type_domain is not None:
+        keys = set(domain.keys()) | set(type_domain.keys())
+        if not keys:
+            return 0.0
+        return sum(len(_domain_union(domain, type_domain, v)) for v in keys) / float(len(keys))
+    if not domain:
+        return 0.0
+    return sum(len(d) for d in domain.values()) / float(len(domain))
+
+
+def _t11_class_confidence(vars_list, anchor_strength):
+    """D2: 类级置信度 = vtable=3 级锚变量计数 / 类变量数。
+
+    anchor_strength 分级（B2）: 3=vtable 锚（最高），2=成员/签名/全局锚，
+    1=传播，0=开放。聚合口径: 强度 == 3 的变量占比 ∈ [0.0, 1.0]。
+    """
+    if not vars_list:
+        return 0.0
+    strong = sum(1 for v in vars_list if anchor_strength.get(v, 0) == 3)
+    return strong / float(len(vars_list))
+
+
+def _t11_class_candidates(vars_list, domain, anchor_strength, type_domain=None,
+                          var_candidates=None):
+    """D2: 类级候选 top-3（T8 C2 候选聚合；无 C2 候选时域兜底）。
+
+    T8 (C2) 协调: var_candidates（变量级 top-3 候选 dict）提供时按候选聚合
+    ——每候选类得分 = Σ(所在变量的排名权重 (3 - rank))，降序取前 3（平局按
+    类名字典序，稳定）。这是"真"候选（greedy 权重函数产出）；var_candidates
+    为 None 时回退到域兜底（旧逻辑——域并集 + anchor_strength 加权，观测用）。
+    纯函数——只读观测字段，不改任何求解逻辑。
+    """
+    if var_candidates:
+        scores = {}
+        for v in vars_list:
+            for rank, c in enumerate(var_candidates.get(v, ())[:3]):
+                scores[c] = scores.get(c, 0) + (3 - rank)
+        if scores:
+            return [t for t, _ in sorted(scores.items(), key=lambda kv: (-kv[1], kv[0]))[:3]]
+    scores = {}
+    for v in vars_list:
+        w = anchor_strength.get(v, 0) + 1
+        if type_domain is not None:
+            dom = _domain_union(domain, type_domain, v)
+        else:
+            dom = domain.get(v, ())
+        for t in dom:
+            scores[t] = scores.get(t, 0) + w
+    return [t for t, _ in sorted(scores.items(), key=lambda kv: (-kv[1], kv[0]))[:3]]
+
+
+def _t8_candidate_vote(vt_name_votes, candidates, var_to_cls, final_keys,
+                       this_var, sig_class):
+    """T8 (C2): Step 6 signals 投票——候选集加权（纯函数，离线可测）。
+
+    投票来源从单类 var_to_cls 扩展为变量级 top-K 候选（无锚点/未解析变量
+    凭候选集获得命名机会——C1 矛盾保持 unresolved 的变量不再错失命名）:
+      - this_var 有候选 → 对 candidates 中每个候选类投票，权重按排名递减:
+        排名权重 (3 - rank) × signals 置信度 2 = 6/4/2（signals 高置信度保持）
+      - 仅投 final_classes 存在的候选类（rename_map 只被 final class 消费——
+        防死键 + used_names 抢占真实类名）
+      - 无候选但 this_var 已解析 → 单类投票权重 2（原语义）
+      - 两者皆无 → 不投票
+    返回投出的票数（观测——RUN_MANIFEST['candidates_vote_edges']）。
+    """
+    _cands = candidates.get(this_var)
+    if _cands:
+        _voted = 0
+        for _rank, _ccls in enumerate(_cands[:3]):
+            if _ccls not in final_keys:
+                continue
+            vt_name_votes[_ccls][sig_class] += (3 - _rank) * 2
+            _voted += 1
+        return _voted
+    if this_var in var_to_cls:
+        vt_name_votes[var_to_cls[this_var]][sig_class] += 2
+        return 1
+    return 0
+
+
+def _t11_build_csp_quality(final_classes, avg_domain_size, rename_map,
+                           write_gap_count, conflicts):
+    """D1: csp_quality 聚合——各值从求解后的实际数据计算，不硬编码。
+
+    - unresolved_count  = Class_unresolved_* 类数（5.5 未解析单例类）
+    - conflict_count    = T8 C1 conflicts 记录数（T8 未实现 → 0）
+    - avg_domain_size   = 5.4 前平均域大小（_t11_avg_domain_size 捕获）
+    - class_mapped_count= rename_map 条目数（Step 6 最终映射）
+    - write_gap_count   = T1 A0-S2 写检测缺口指标（RUN_MANIFEST 直接读取）
+    """
+    return {
+        "unresolved_count": sum(
+            1 for cls in final_classes if cls.startswith("Class_unresolved_")
+        ),
+        "conflict_count": len(conflicts or {}),
+        "avg_domain_size": round(float(avg_domain_size), 3),
+        "class_mapped_count": len(rename_map),
+        "write_gap_count": int(write_gap_count or 0),
+    }
+
+
+def _t11_check_membership(final_classes, rename_map, member_anchor):
+    """E9: MEMBERSHIP 验证器——CSP 推断 offsets ⊆ 成员表偏移。
+
+    对 final_classes 中已映射到 real_name 的类，用 member_lookup 的成员偏移
+    （T5 MEMBER_ANCHOR[(class, off)]）验证 CSP 推断的 offsets 不矛盾:
+    推断了成员表没有的偏移 → 冲突记录（验证用途，不改求解）。
+    非法偏移（<0 或 >=0x80000000，Step 7 D1 过滤口径）不算推断 → 跳过。
+
+    返回 (conflicts, checked_classes, checked_offsets):
+    - conflicts: [{csp_class, real_name, conflict_offsets, offsets_checked}]
+    - checked_classes / checked_offsets: 参与检查的类数 / 偏移总数
+    """
+    conflicts = []
+    checked_classes = 0
+    checked_offsets = 0
+    for cls in sorted(final_classes):
+        real_name = rename_map.get(cls)
+        if not real_name:
+            continue  # 未映射到 real_name 的类无对照表，不参与
+        info = final_classes[cls]
+        offs = sorted(o for o in info.get("offsets", ()) if 0 <= o < 0x80000000)
+        if not offs:
+            continue
+        checked_classes += 1
+        checked_offsets += len(offs)
+        missing = sorted(o for o in offs if (real_name, o) not in member_anchor)
+        if missing:
+            conflicts.append(
+                {
+                    "csp_class": cls,
+                    "real_name": real_name,
+                    "conflict_offsets": missing,
+                    "offsets_checked": len(offs),
+                }
+            )
+    return conflicts, checked_classes, checked_offsets
 
 def _run_main():
     for seg_name in [".idata", ".rdata", ".text"]:
@@ -199,6 +1808,42 @@ def _run_main():
                 vtables.append({"start": vt_start, "entries": entries})
         else:
             ea += 4
+
+    # --- C3: adjustor thunk 检测（T9）---
+    # 模式: `mov eax,[esp+4]` → `add eax,imm` → `jmp <target>` 三重连读。
+    # 命中后该 vtable 条目锚定真实目标函数（jmp 目标），this_adjustment 记录；
+    # thunk 自身地址不参与 this 锚定（锚定路径用 thunk_targets 映射）。
+    thunk_targets = {}       # entry_addr → 真实目标函数地址
+    thunk_adjustments = {}   # entry_addr → this_adjustment
+    thunks_detected = []     # manifest 记录: [{entry, target, adjustment}]
+    for vt in vtables:
+        for entry in vt["entries"]:
+            if entry in thunk_targets:
+                continue
+            insns = _decode_insns3(entry)
+            hit = _match_adjustor_thunk(insns) if insns else None
+            if hit:
+                target, adjustment = hit
+                thunk_targets[entry] = target
+                thunk_adjustments[entry] = adjustment
+                thunks_detected.append(
+                    {"entry": hex(entry), "target": hex(target),
+                     "adjustment": adjustment}
+                )
+    RUN_MANIFEST["thunks_detected"] = thunks_detected
+    print(f"  [C3] Adjustor thunks detected: {len(thunks_detected)}")
+    if len(thunks_detected) > 1000:
+        print(
+            f"  [C3][WARNING] thunk 数量 {len(thunks_detected)} > 1000，"
+            f"需怀疑误判（19K 函数 MI 场景预期数十~数百）"
+        )
+
+    # C3: 各 vtable 的锚定条目（thunk → 真实目标）——5.1 / vt_groups /
+    # _anchor_bonus / slot_to_funcs 共用（thunk 自身地址不参与 this 锚定）
+    vt_entries_mapped = {
+        vt["start"]: [thunk_targets.get(e, e) for e in vt["entries"]]
+        for vt in vtables
+    }
 
     def demangle_vtable_name(name_ea, raw_name):
         try:
@@ -259,34 +1904,6 @@ def _run_main():
     # ============================================================
     print("\n[2/9] Locking skeletons (Alias Tracking & Stack Depth)...")
 
-    X86_REGS = frozenset(
-        {
-            "eax",
-            "ebx",
-            "ecx",
-            "edx",
-            "esi",
-            "edi",
-            "ebp",
-            "esp",
-            "al",
-            "ah",
-            "bl",
-            "bh",
-            "cl",
-            "ch",
-            "dl",
-            "dh",
-            "ax",
-            "bx",
-            "cx",
-            "dx",
-            "si",
-            "di",
-            "bp",
-            "sp",
-        }
-    )
     func_real_arg_count = {}
     func_real_cc = {}
     func_stack_args = {}
@@ -493,8 +2110,6 @@ def _run_main():
     RE_GLOBAL_PATTERN = re.compile(
         r"^(dword_|byte_|word_|unk_|flt_|off_|qword_)", re.IGNORECASE
     )
-    RE_HEX_IMM = re.compile(r"^-?[0-9A-Fa-f]+h$", re.IGNORECASE)
-    RE_DEC = re.compile(r"^-?\d+$")
     RE_FLOAT = re.compile(r"^-?\d+\.\d+(?:f|e[+-]?\d+)?$", re.IGNORECASE)
 
     def _strip_seg(text):
@@ -544,8 +2159,11 @@ def _run_main():
         """F6/F14: 栈操作数数值解析（IDA 9.2 显示格式无关）。
 
         get_operand_value 返回相对当前基址寄存器的位移；get_sp_delta 给出
-        prologue 的 SP 调整。两者之和归一化到 entry-ESP 基准，与 FUNC_PARAM
-        约定一致（param0 = stack_+0x4 = [esp+4]@entry）。
+        prologue 的 SP 调整。两者之和归一化到 entry-ESP 基准（esp 基）。
+        A2: EBP 帧函数（FUNC_FRAME 标志）统一 ebp 基——`[esp+X]` 用 frsize
+        换算（ebp_off = X - frsize，见 _a2_esp_off_to_ebp），`[ebp+Y]` 的 Y
+        已相对 ebp 直接使用；无帧 / frsize 不可得 → 保守保持 esp 基（不换算）。
+        A2 后参数槽命名随之统一（FUNC_PARAM param0 = [ebp+8] = stack_+8）。
         非栈操作数 / 寄存器索引操作数 → None。
         """
         txt = (idc.print_operand(ea, op_n) or "").strip().lower()
@@ -563,6 +2181,24 @@ def _run_main():
             spd = 0
         if spd is None:
             spd = 0
+        base = m.group(1)
+        func = idaapi.get_func(ea)
+        has_frame = False
+        frsize = None
+        if func is not None:
+            has_frame = bool(func.flags & getattr(ida_funcs, "FUNC_FRAME", 0x100))
+            frsize = getattr(func, "frsize", None)
+        if base == "ebp":
+            # A2: [ebp+Y] 的 Y 已相对 ebp（帧基）→ 直接统一 ebp 基；
+            # 无帧（理论上 ebp 操作数不应出现）→ 保守保持旧行为
+            if has_frame:
+                return f"stack_{val:+#x}"
+            return f"stack_{val + spd:+#x}"
+        # [esp+X]: esp 基 → A2 换算 ebp 基；换算不可得（无帧/frsize 缺失）
+        # → 保守保持 esp 基（不换算，任务指定）
+        ebp_off = _a2_esp_off_to_ebp(val, spd, frsize, has_frame)
+        if ebp_off is not None:
+            return f"stack_{ebp_off:+#x}"
         return f"stack_{val + spd:+#x}"
 
 
@@ -586,7 +2222,10 @@ def _run_main():
             if m and m.group(1) in X86_REGS:
                 if _reg_index_guard(low, m.end()):
                     return None
-                return ("member", f"*{m.group(1)}")
+                # A0-S3 (T3): 保留成员偏移——`mov ecx,[esi+14h]` →
+                # `esi.member(0x14)`（旧 `*esi` 丢弃偏移且被 scope_vars
+                # 当作寄存器 SSA 化；断链 1 修复，偏移可参与 MEMBER_ANCHOR）
+                return ("member", _this_src_member_name(low, idc.get_operand_value(ea, op_n)))
             return None
         if _is_global_ref(txt):
             return ("global", _strip_seg(txt))
@@ -647,9 +2286,20 @@ def _run_main():
 
 
     def _make_stack_access(op_from, op_to, ea_hex, ea, op_n, direction):
-        """F6/F14: 数值化栈访问边（替代失配的文本正则 RE_STACK_FULL）。"""
+        """F6/F14: 数值化栈访问边（替代失配的文本正则 RE_STACK_FULL）。
+
+        A1: 栈槽名量级校验——±0x80000000 之外的位移是 32 位位移垃圾
+        （BADADDR 0xFFFFFFFF 泄漏等），不产生约束（计数进 manifest；
+        Step 7 final_classes 侧双保险保留）。负偏移（局部变量）合法。
+        """
         sn = _stack_operand_name(ea, op_n)
         if sn is None:
+            return None
+        raw_off = _a2_parse_stack_off(sn)
+        if raw_off is not None and not _a1_sane_stack_off(raw_off):
+            f = idaapi.get_func(ea)
+            fkey = f"0x{f.start_ea:08X}" if f else ea_hex
+            func_bad_offsets[fkey].add(raw_off)
             return None
         if direction == "read":
             return {"from": sn, "to": op_to, "type": "STACK_ACCESS", "addr": ea_hex}
@@ -664,6 +2314,37 @@ def _run_main():
     constraints = []
     func_addr_to_name = {}
     func_internal_offsets = defaultdict(set)
+    # A0-S2 (T1): 每函数寄存器写点 vs 产生约束的写点（write_gap_count 指标源）
+    func_write_seen = defaultdict(int)
+    func_write_produced = defaultdict(int)
+    # A1 (T4): BADADDR 源头过滤计数（成员偏移非法 + 栈槽量级垃圾）——
+    # 复用 RUN_MANIFEST["offsets_filtered_illegal"] 的结构（Step 7 双保险保留）
+    func_bad_offsets = defaultdict(set)
+    # T10 (E6): 数组索引约束记录（manifest 采样 + 计数）
+    array_index_edges = []
+
+    # A0-S3 (T3): vtable 槽位 → 候选类锚边（接收者链第二跳，断链 2 修复）。
+    # 链: receiver → vtable_slot_{idx}:this（_scan_call_args 既有 CALL_ARG 边）
+    #      → 0x{func:08X}:this（5.1 vtable anchor 变量，域含 Class_{vt_start}），
+    # AC-3 沿链传播收敛选类。全局按 (slot, func) 去重、与调用点数量无关
+    # （规模 ≤ 总 vtable 条目数）；两端均非寄存器 → addr 不参与 SSA 化。
+    slot_anchors = _vtable_slot_anchors(vtables, vt_entries_mapped)
+    for _slot, _anchors in slot_anchors.items():
+        _slot_var = f"vtable_slot_{_slot:#x}:this"
+        for _a in _anchors:
+            constraints.append(
+                {
+                    "from": _slot_var,
+                    "to": _a,
+                    "type": "CALL_ARG",
+                    "addr": "0x0",
+                    "callee_name": f"vtable_slot_{_slot:#x}",
+                }
+            )
+    print(
+        f"  [A0-S3] vtable slot→class-anchor edges: {len(slot_anchors)} slots, "
+        f"{sum(len(v) for v in slot_anchors.values())} edges"
+    )
 
     for func_ea in idautils.Functions():
         seg = ida_segment.getseg(func_ea)
@@ -675,6 +2356,13 @@ def _run_main():
         func_addr_to_name[func_addr_str] = func_name
 
         func = idaapi.get_func(func_ea)
+        # A2 (T4): 帧信息（FUNC_FRAME + frsize）——栈槽基准统一（_stack_operand_name）
+        # 与参数槽命名（_a2_param_slot_name）共用同一判定：EBP 帧函数统一 ebp 基
+        has_frame = False
+        frsize = None
+        if func is not None:
+            has_frame = bool(func.flags & getattr(ida_funcs, "FUNC_FRAME", 0x100))
+            frsize = getattr(func, "frsize", None)
         ea, end, fstart = func_ea, func.end_ea, func_ea
         is_thiscall = func_real_cc.get(func_addr_str) == ida_typeinf.CM_CC_THISCALL
         is_fastcall = func_real_cc.get(func_addr_str) == ida_typeinf.CM_CC_FASTCALL
@@ -697,10 +2385,14 @@ def _run_main():
             stack_count = func_stack_args.get(func_addr_str, 0)
 
         for i in range(stack_count):
+            # A2: EBP 帧函数参数槽统一 ebp 基（param0 = [ebp+8] = stack_+8）；
+            # 无帧函数保持 entry-ESP 基（param0 = [esp+4]@entry = stack_+0x4）。
+            # 槽名与 _stack_operand_name 的 A2 换算共用 _a2_param_slot_name
+            # （[ebp+8] 与入口 [esp+4] 指向同一参数槽——基准统一后命名一致）。
             constraints.append(
                 {
                     "from": f"{func_addr_str}::param{i}",
-                    "to": f"stack_+{4 + i*4:#x}",  # entry-ESP 基准（F6 数值归一化一致）
+                    "to": _a2_param_slot_name(frsize, has_frame, i),
                     "type": "FUNC_PARAM",
                     "addr": func_addr_str,
                 }
@@ -717,15 +2409,22 @@ def _run_main():
                 idc.print_operand(ea, 0),
                 idc.print_operand(ea, 1),
             )
+            nc_pre = len(constraints)  # A0-S2: 本指令产生约束数基线（指标用）
             c = None
+            # A0-S2 (T1): lea 源解析提前（分支 + write_gap 指标共用，避免重复解析）
+            lea_src = None
+            if mnem == "lea" and op0:
+                lea_src = _parse_operand_src(ea, 1)
 
             if mnem == "mov" and op0 and op1:
                 src = op1.strip().lower()
                 dst = op0.strip().lower()
                 if dst in X86_REGS:
                     # F6: 数值化 param0 别名检测（`mov reg, [esp+4]`@entry）
+                    # A2: 槽名随帧基准统一（EBP 帧 → [esp+4]@entry = stack_+8，
+                    # 与 FUNC_PARAM param0 槽一致）——与 _a2_param_slot_name 对齐
                     sn = _stack_operand_name(ea, 1)
-                    if sn == "stack_+0x4":
+                    if sn == _a2_param_slot_name(frsize, has_frame, 0):
                         param0_regs.add(dst)
                         c = {
                             "from": f"{func_addr_str}::param0",
@@ -755,6 +2454,13 @@ def _run_main():
                         if val is None or val < 0:
                             continue
                         off = val
+                    # A1 (T4): BADADDR 源头过滤——非法成员偏移（<0 或
+                    # >= 0x80000000，如 BADADDR 0xFFFFFFFF 泄漏）在约束生成处
+                    # 跳过：不产生 ASSIGN 约束、不进入 func_internal_offsets。
+                    # Step 7 final_classes 侧过滤保留为双保险。
+                    if not _a1_valid_member_off(off):
+                        func_bad_offsets[func_addr_str].add(off)
+                        continue
                     if reg in this_regs:
                         if role == "src":
                             c = {
@@ -789,6 +2495,55 @@ def _run_main():
                         func_internal_offsets[func_addr_str].add(off)
                     if c:
                         break
+
+            # T10 (E6): ARRAY_INDEX —— `[reg+idx*4]` / `[reg+idx*8]` 数组索引访问。
+            # 现有检测链对寄存器索引操作数（_reg_index_guard）全部跳过 → 数组成员
+            # 推断空白。此处前置检测（在 reg↔reg ASSIGN 前，索引操作数不被其他
+            # 分支处理，不会双产约束）:
+            #   - 基址 reg 为 this/param0 别名 → `{func}:this.member(off)` 成员
+            #     约束（TYPE_SEED: 宽度 4 → int，宽度 8 → double——保守，宁缺毋滥）
+            #   - 基址不可解析（非别名 reg）→ 跳过（计数仅记录可解析部分）
+            #   - 元素宽度（4/8）记录进 RUN_MANIFEST["array_index_widths"]
+            if not c and mnem in (
+                "mov", "lea", "movzx", "movsx", "cmp", "test", "add", "sub", "imul"
+            ):
+                for _op_n in (0, 1):
+                    _txt = (idc.print_operand(ea, _op_n) or "").strip().lower()
+                    _arr = _e6_parse_array_index(_txt, idc.get_operand_value(ea, _op_n))
+                    if not _arr:
+                        continue
+                    _base, _idx, _scale, _off = _arr
+                    if not _a1_valid_member_off(_off):
+                        func_bad_offsets[func_addr_str].add(_off)
+                        break
+                    _mem_var = None
+                    if _base in this_regs:
+                        _mem_var = f"{func_addr_str}:this.member({_off:#x})"
+                    elif _base in param0_regs:
+                        _mem_var = f"{func_addr_str}::param0.member({_off:#x})"
+                    if _mem_var:
+                        c = {
+                            "type": "TYPE_SEED",
+                            "var": _mem_var,
+                            "itype": "int" if _scale == 4 else "double",
+                            "addr": f"0x{ea:X}",
+                        }
+                        func_internal_offsets[func_addr_str].add(_off)
+                        array_index_edges.append(
+                            {
+                                "addr": f"0x{ea:X}",
+                                "base": _base,
+                                "idx": _idx,
+                                "scale": _scale,
+                                "off": _off,
+                                "member": _mem_var,
+                            }
+                        )
+                        _wkey = str(_scale)
+                        RUN_MANIFEST["array_index_widths"][_wkey] = (
+                            RUN_MANIFEST["array_index_widths"].get(_wkey, 0) + 1
+                        )
+                    break
 
             if not c and mnem in ("mov", "movzx", "movsx") and op0 and op1:
                 f_reg, t_reg = op1.strip().lower(), op0.strip().lower()
@@ -826,6 +2581,22 @@ def _run_main():
                     s_write = _make_stack_access(op1, "", ea_hex, ea, 0, "write")
                     if s_write:
                         c = s_write
+
+            # A0-S2 (T1): mov reg, imm → TYPE_SEED(reg, "int")（写检测补全——
+            # 成员/全局/栈三路检测对立即数源全落空，int 证据 + SSA 写点双缺失）
+            if not c and mnem == "mov" and op0 and op1:
+                _imm_seed = _a0s2_mov_imm_seed(mnem, op0, op1, f"0x{ea:X}")
+                if _imm_seed:
+                    constraints.append(_imm_seed)
+
+            # A0-S2 (T1): lea reg, X（X = 成员/栈/全局）→ ASSIGN(X → reg)。
+            # 链上 this/param0 成员分支（上方 F5 段）已处理的 lea 优先短路；
+            # 此处兜底其余成员 + 栈槽 + 全局引用（ASSIGN to=reg 被
+            # scope_vars._detect_writes 识别 → 版本边界补全）
+            if not c and mnem == "lea" and op0:
+                _lea_c = _a0s2_lea_assign(mnem, op0, lea_src, f"0x{ea:X}")
+                if _lea_c:
+                    c = _lea_c
 
             if mnem == "call":
                 insn = ida_ua.insn_t()
@@ -928,25 +2699,22 @@ def _run_main():
                             constraints.extend(vtable_edges)
 
             elif mnem in ("ret", "retn"):
-                if prev_mnem in ("mov", "movzx", "movsx") and "eax" in prev_ops[0].lower():
-                    c = {
-                        "from": f"0x{ea:X}_RET",
-                        "to": f"{func_addr_str}.return",
-                        "type": "RETURN",
-                        "addr": f"0x{ea:X}",
-                    }
-                elif (
-                    prev_mnem in ("xor", "sub")
-                    and len(prev_ops) >= 2
-                    and "eax" in prev_ops[0].lower()
-                    and prev_ops[0] == prev_ops[-1]
-                ):
-                    c = {
-                        "from": f"0x{ea:X}_RET",
-                        "to": f"{func_addr_str}.return",
-                        "type": "RETURN",
-                        "addr": f"0x{ea:X}",
-                    }
+                # T10 (E4): NULL_CONST 标记——返回 0 的 RETURN 边打标，5.1 初始化
+                # 时 return 域加入 {int, void*}（NULL 可能是 int 0 或 NULL 指针）。
+                # T6 (I2): RETURN 边生成补全——lea/movzx/movsx/add/sub 设置 eax
+                # 后返回（多返回点非末尾模式）；xor/sub eax,eax NULL_CONST 特例
+                # 保持。判定逻辑在 _i2_ret_edge（纯函数，离线可测）。
+                _c_ret = _i2_ret_edge(prev_mnem, prev_ops, ea, func_addr_str)
+                if _c_ret:
+                    if (
+                        _c_ret.get("null_const") is False
+                        and prev_mnem in ("lea", "add", "sub")
+                    ):
+                        # I2 增量可观测: 扩展 mnemonics 产生的非空 RETURN 边数
+                        RUN_MANIFEST["return_edges_extended_i2"] = (
+                            RUN_MANIFEST.get("return_edges_extended_i2", 0) + 1
+                        )
+                    c = _c_ret
 
             if (
                 mnem == "test"
@@ -987,6 +2755,12 @@ def _run_main():
 
             if c:
                 constraints.append(c)
+            # A0-S2 (T1): 每函数寄存器写点 vs 产生约束的写点（可观测断言——
+            # 覆盖域内写点必须产生约束，否则 SSA 版本边界再次丢失）
+            if _a0s2_write_point(mnem, op0, op1, lea_src[0] if lea_src else None):
+                func_write_seen[func_addr_str] += 1
+                if c is not None or len(constraints) > nc_pre:
+                    func_write_produced[func_addr_str] += 1
             if mnem not in ("nop", "int3"):
                 prev_ea, prev_mnem, prev_ops = ea, mnem, [op0] + ([op1] if op1 else [])
             ea = idc.next_head(ea, end)
@@ -994,6 +2768,52 @@ def _run_main():
                 break
 
     print(f"  Extracted {len(constraints)} fine-grained constraints.")
+
+    # A0-S2 (T1): write_gap_count 指标——每函数寄存器写点 vs 产生约束的写点
+    # 差值总和。=0 ⇔ 覆盖域内（mov imm / lea 成员·栈·全局）每条写都产约束。
+    write_gap_per_func = {
+        f: func_write_seen.get(f, 0) - func_write_produced.get(f, 0)
+        for f in func_write_seen
+    }
+    write_gap_total = sum(write_gap_per_func.values())
+    RUN_MANIFEST["write_gap_count"] = write_gap_total
+    RUN_MANIFEST["write_gap_detail"] = {
+        "covered_write_points": sum(func_write_seen.values()),
+        "constraint_producing_writes": sum(func_write_produced.values()),
+        "funcs_with_gap": sorted(
+            (f for f, g in write_gap_per_func.items() if g),
+            key=lambda f: -write_gap_per_func[f],
+        )[:100],
+    }
+    print(
+        f"  A0-S2: {sum(func_write_seen.values())} covered register write points -> "
+        f"{sum(func_write_produced.values())} constraints, write_gap_count={write_gap_total}"
+    )
+
+    # A1 (T4): 源头过滤记录（成员偏移非法 / 栈槽量级垃圾）写入 manifest。
+    # 结构复用 offsets_filtered_illegal（{class→func, count, offsets}）；
+    # Step 7 的 offsets_filtered_illegal 保留为双保险——本层滤净后其应恒为空。
+    RUN_MANIFEST["offsets_filtered_source"] = [
+        {
+            "func": f,
+            "count": len(offs),
+            "offsets": sorted(offs)[:10],
+        }
+        for f, offs in sorted(func_bad_offsets.items())
+    ]
+    print(
+        f"  A1: source-filtered illegal offsets: "
+        f"{sum(len(v) for v in func_bad_offsets.values())} across "
+        f"{len(func_bad_offsets)} funcs"
+    )
+
+    # T10 (E6): 数组索引约束计数 + 元素宽度分布 + 采样记录写入 manifest
+    RUN_MANIFEST["array_index_constraints"] = len(array_index_edges)
+    RUN_MANIFEST["array_index_edges"] = array_index_edges[:50]
+    print(
+        f"  T10-E6: array-index constraints: {len(array_index_edges)} "
+        f"(widths: {dict(RUN_MANIFEST['array_index_widths'])})"
+    )
 
     # ============================================================
     # 4. T5: 调用图
@@ -1034,7 +2854,24 @@ def _run_main():
 
     ssa = build_scoped_index(edge_constraints, call_graph)
     st = ssa["scoped_to_name"]
+
+    # A0-S1 (T2): 栈槽写驱动版本化（约束后处理——scope_vars 推迟的栈槽复用
+    # 检测；对 scoped (sf, st) 应用版本映射，同槽复用 → 不同版本 → 域不
+    # 合并）。build_adjacency / dfg / AC-3 / var_types 等下游共用版本化名
+    # （ssa 就地更新，build_adjacency 读同一对象）。
+    st = _scope_stack_versions(edge_constraints, st, ssa["func_addrs"])
+    ssa["scoped_to_name"] = st
+
     adj = build_adjacency(edge_constraints, ssa)
+
+    # T10 (E5): CALL_SITE_CONTEXT —— 调用点分组（形参 → 各调用点实参变量）。
+    # AC-3 CALL_ARG 分支的多数投票加权层数据源；冲突调用点在 AC-3 后统计。
+    # 只叠加，不改 CALL_ARG 基本传播结构（T6 A3 单向传播后续做）。
+    call_arg_sites = defaultdict(list)   # param_var(scoped) → [(ci, addr, arg_var)]
+    for ci, c in enumerate(edge_constraints):
+        if c.get("type") == "CALL_ARG":
+            sf, sto = st[ci]
+            call_arg_sites[sto].append((ci, c.get("addr", ""), sf))
 
     var_features = defaultdict(dict)
     dfg, op_eax = defaultdict(set), {}
@@ -1104,22 +2941,32 @@ def _run_main():
             if not cls_name.startswith("?") and "`" not in cls_name:
                 all_classes.add(cls_name)
 
+    # T7 (B1): 分域域模型 —— domain = 类域（Class_X/真实类名），
+    # type_domain = 基础类型域（int/float/double/char*/bool/void*/...）。
+    # 开关关闭时 type_domain 不参与任何消费（单域 = 修复后基线）。
     domain = defaultdict(set)
+    type_domain = defaultdict(set)
+
+    # T5 (B2 前置): 锚定强度记录 —— 3=vtable anchor, 2=成员/签名锚,
+    # 1=传播（T7 负责）, 0=开放/默认。本任务只建立结构 + 给锚定变量赋值。
+    anchor_strength = defaultdict(int)
 
     # TYPE_SEED: fixed types
     for c in type_seeds:
         var = c.get("var")
         t = c.get("itype")
         if var and t:
-            domain[var].add(t)
+            _domain_add(domain, type_domain, var, t)
 
     # Vtable anchors: each vtable entry's this_var -> {Class_vtaddr}
+    # C3: thunk 条目锚定真实目标函数（thunk 自身地址不参与 this 锚定）
     for vt in vtables:
         cls_id = vt_to_class_id[vt['start']]
-        for func_addr in vt["entries"]:
+        for func_addr in vt_entries_mapped[vt['start']]:
             this_var = f"0x{func_addr:08X}:this"
             if this_var in this_vars:
                 domain[this_var].add(cls_id)
+                anchor_strength[this_var] = max(anchor_strength.get(this_var, 0), 3)  # vtable anchor: 最高强度
 
     # Function-name anchors: if func name has "::", use the class prefix
     for this_var in this_vars:
@@ -1130,6 +2977,34 @@ def _run_main():
                 cls_name = func_name.split("::")[0]
                 if not cls_name.startswith("?") and "`" not in cls_name:
                     domain[this_var].add(cls_name)
+                    anchor_strength[this_var] = max(
+                        anchor_strength.get(this_var, 0), 2
+                    )  # 函数名类锚
+
+    # T10 (E7): THIS_ADJUST —— thunk this 偏移约束化（配合 T9 C3）。
+    # `{thunk}:this` 域 = `{target}:this` 域（this_adjustment 非 0 的条目），
+    # adjustment 记录 manifest。本二进制无 adjustor thunk（T9 实证）→
+    # 通用路径命中 0 属正常；未来目标二进制（有 thunk）自动生效。
+    _e7_applied, this_adjust_edges = _e7_apply_this_adjust(
+        domain, type_domain, anchor_strength, thunk_adjustments, thunk_targets
+    )
+    RUN_MANIFEST["this_adjust_edges"] = this_adjust_edges
+    print(
+        f"  [T10-E7] this-adjust edges: {len(this_adjust_edges)} "
+        f"(applied {_e7_applied}; thunk this = target this)"
+    )
+
+    # T5 (E2): SIGNATURE_ANCHOR —— signals.json 求解期锚定（Step 6 投票提前）。
+    #   - `{addr}:this`   ← `::` 前缀类名（union add，不覆盖 vtable 锚）
+    #   - `{addr}.return` ← return_type（限基础类型; var 必须已存在于约束图）
+    # 锚定是"并集"（域.add）——AC-3 交集自然仲裁，不覆盖传播。
+    sig_this_anchored, sig_return_anchored = _apply_signature_anchors(
+        domain, type_domain, SIG_SYMBOLS, this_vars, all_vars, anchor_strength
+    )
+    print(
+        f"  [T5-E2] signature anchors: this={sig_this_anchored}, "
+        f"return={sig_return_anchored}"
+    )
 
     # Open domains for unanchored this_vars -> all possible classes
     for this_var in this_vars:
@@ -1140,6 +3015,52 @@ def _run_main():
     for var in all_vars:
         if var not in domain:
             domain[var] = set()
+
+    # T5 (E1): MEMBER_ANCHOR —— `{func}:this.member(0x{off})` 强锚。
+    # 若 this 域含 Class_X（真实类名，非 Class_XXXX 占位）且 (Class_X, off)
+    # 在成员表有已知类型 → 成员变量域加入锚类型（union，不覆盖）。
+    member_anchor_hits = _apply_member_anchors(
+        domain, type_domain, all_vars, MEMBER_ANCHOR, anchor_strength
+    )
+    print(f"  [T5-E1] member anchors applied to {member_anchor_hits} member vars")
+
+    # T10 (E3): GLOBAL_ANCHOR —— 全局引用变量（dword_XXX / 符号名）锚定已知
+    # 全局类型（global_types.json 只读加载，模块级查找表）。
+    global_anchor_hits = _apply_global_anchors(domain, type_domain, all_vars, anchor_strength)
+    RUN_MANIFEST["global_anchor_hits"] = global_anchor_hits
+    print(f"  [T10-E3] global anchors applied to {global_anchor_hits} vars")
+
+    # T10 (E4): NULL_CONST —— RETURN 边标记 null_const 的 return 域加入
+    # {int, void*}（NULL 可能是 int 0 或 NULL 指针；仅当 return 域为空或
+    # 仅基础类型时加入——不覆盖已有类域）。T7 (B1): 判定与写入均走分域
+    # 联合视图/路由（{int, void*} 是基础类型 → type_domain）。
+    _null_ret_vars = set()
+    for _ci, _c in enumerate(edge_constraints):
+        if _c.get("type") == "RETURN" and _c.get("null_const"):
+            _null_ret_vars.add(st[_ci][1])
+    _null_anchored = 0
+    for _v in _null_ret_vars:
+        _dom = _domain_union(domain, type_domain, _v) if DOMAIN_SPLIT else domain.get(_v)
+        if _dom is None:
+            continue
+        if _e4_null_const_allowed(_dom):
+            _domain_update(domain, type_domain, _v, {"int", "void*"})
+            _null_anchored += 1
+    RUN_MANIFEST["null_const_returns"] = len(_null_ret_vars)
+    RUN_MANIFEST["null_const_anchored"] = _null_anchored
+    print(
+        f"  [T10-E4] null-const returns: {len(_null_ret_vars)} funcs "
+        f"({_null_anchored} anchored +{{int, void*}})"
+    )
+
+    # T5: 锚定强度分布（B2 消费侧观测; 1=传播在 AC-3 内标记）
+    _as_dist = Counter(anchor_strength.values())
+    print(f"  [T5] anchor_strength dist: {dict(sorted(_as_dist.items()))}")
+    RUN_MANIFEST["member_anchor_entries"] = len(MEMBER_ANCHOR)
+    RUN_MANIFEST["member_anchor_hits"] = member_anchor_hits
+    RUN_MANIFEST["sig_this_anchors"] = sig_this_anchored
+    RUN_MANIFEST["sig_return_anchors"] = sig_return_anchored
+    RUN_MANIFEST["anchor_strength_dist"] = dict(sorted(_as_dist.items()))
 
     print(f"  Domain init: {len(domain)} vars, {len(all_classes)} candidate classes")
 
@@ -1174,41 +3095,170 @@ def _run_main():
 
                 if ctype == "ASSIGN":
                     other = sto if role == 0 else sf
-                    if not domain[var] or not domain[other]:
-                        continue
-                    # Intersection: both sides must agree on type
-                    joint = domain[var] & domain[other]
-                    if not joint:
-                        # Disjoint domains (e.g., class set vs int/float) — skip
-                        continue
-                    if joint != domain[var]:
-                        domain[var] = joint
-                        worklist.append(var)
-                    if joint != domain[other]:
-                        domain[other] = joint
-                        worklist.append(other)
-
-                elif ctype in ("CALL_ARG", "RETURN_TO", "STACK_ACCESS",
-                               "STACK_VAR", "FUNC_PARAM"):
-                    other = sto if role == 0 else sf
-                    if not domain[var] or not domain[other]:
-                        # Seed from whichever side has types
-                        if domain[var] and not domain[other]:
-                            domain[other] = set(domain[var])
-                            worklist.append(other)
-                        elif domain[other] and not domain[var]:
-                            domain[var] = set(domain[other])
+                    if DOMAIN_SPLIT:
+                        # T7 (B1): 分域 ASSIGN meet——同类域交集（现有语义
+                        # 保持）+ 跨域兼容矩阵（类↔void* 兼容；类↔int/float/
+                        # bool 矛盾记录，不再静默跳过）+ bool⊂int。
+                        if _b1_is_empty(domain, type_domain, var) or _b1_is_empty(
+                            domain, type_domain, other
+                        ):
+                            continue
+                        _nc_a, _nt_a, _nc_b, _nt_b, _b1_cf, _b1_pairs = _b1_edge_meet(
+                            domain[var], type_domain.get(var, set()),
+                            domain[other], type_domain.get(other, set()),
+                        )
+                        if _b1_cf:
+                            # T8 (C1): 记录原因边 + 双向域快照（变量级）
+                            _record_domain_conflict(
+                                var, other, _b1_pairs,
+                                edge_id=f"{ctype}#{ci}",
+                                domain=domain, type_domain=type_domain,
+                            )
+                        if _nc_a != domain[var] or _nt_a != type_domain.get(var, set()):
+                            domain[var], type_domain[var] = _nc_a, _nt_a
                             worklist.append(var)
+                        if _nc_b != domain[other] or _nt_b != type_domain.get(other, set()):
+                            domain[other], type_domain[other] = _nc_b, _nt_b
+                            worklist.append(other)
                     else:
-                        # Both non-empty: bidirectional intersection
+                        if not domain[var] or not domain[other]:
+                            continue
+                        # Intersection: both sides must agree on type
                         joint = domain[var] & domain[other]
-                        if joint:
-                            if joint != domain[var]:
-                                domain[var] = joint
+                        if not joint:
+                            # Disjoint domains (e.g., class set vs int/float) — skip
+                            continue
+                        if joint != domain[var]:
+                            domain[var] = joint
+                            worklist.append(var)
+                        if joint != domain[other]:
+                            domain[other] = joint
+                            worklist.append(other)
+
+                elif ctype in ("RETURN_TO", "STACK_ACCESS", "STACK_VAR",
+                               "FUNC_PARAM"):
+                    other = sto if role == 0 else sf
+                    if DOMAIN_SPLIT:
+                        # T7 (B1): 分域 seed/meet——空侧分域各自拷贝（类域 +
+                        # 类型域），双非空走 B1 双向 meet；传播 seed 侧打
+                        # B2 传播强度标记（strength=1）。
+                        _v_empty = _b1_is_empty(domain, type_domain, var)
+                        _o_empty = _b1_is_empty(domain, type_domain, other)
+                        if _v_empty and _o_empty:
+                            continue
+                        if not _v_empty and _o_empty:
+                            # Seed from whichever side has types（分域各自拷贝）
+                            domain[other] = set(domain.get(var, ()))
+                            type_domain[other] = set(type_domain.get(var, ()))
+                            _mark_propagated(anchor_strength, other)
+                            worklist.append(other)
+                        elif _v_empty and not _o_empty:
+                            domain[var] = set(domain.get(other, ()))
+                            type_domain[var] = set(type_domain.get(other, ()))
+                            _mark_propagated(anchor_strength, var)
+                            worklist.append(var)
+                        else:
+                            # Both non-empty: bidirectional intersection（分域版）
+                            _nc_a, _nt_a, _nc_b, _nt_b, _b1_cf, _b1_pairs = _b1_edge_meet(
+                                domain[var], type_domain.get(var, set()),
+                                domain[other], type_domain.get(other, set()),
+                            )
+                            if _b1_cf:
+                                # T8 (C1): 记录原因边 + 双向域快照（变量级）
+                                _record_domain_conflict(
+                                    var, other, _b1_pairs,
+                                    edge_id=f"{ctype}#{ci}",
+                                    domain=domain, type_domain=type_domain,
+                                )
+                            if _nc_a != domain[var] or _nt_a != type_domain.get(var, set()):
+                                domain[var], type_domain[var] = _nc_a, _nt_a
                                 worklist.append(var)
-                            if joint != domain[other]:
-                                domain[other] = joint
+                            if _nc_b != domain[other] or _nt_b != type_domain.get(other, set()):
+                                domain[other], type_domain[other] = _nc_b, _nt_b
                                 worklist.append(other)
+                    else:
+                        if not domain[var] or not domain[other]:
+                            # Seed from whichever side has types
+                            if domain[var] and not domain[other]:
+                                domain[other] = set(domain[var])
+                                worklist.append(other)
+                            elif domain[other] and not domain[var]:
+                                domain[var] = set(domain[other])
+                                worklist.append(var)
+                        else:
+                            # Both non-empty: bidirectional intersection
+                            joint = domain[var] & domain[other]
+                            if joint:
+                                if joint != domain[var]:
+                                    domain[var] = joint
+                                    worklist.append(var)
+                                if joint != domain[other]:
+                                    domain[other] = joint
+                                    worklist.append(other)
+
+                elif ctype == "CALL_ARG":
+                    # T10 (E5): CALL_SITE_CONTEXT —— 形参侧多数投票加权层。
+                    # 多数调用者意见优先（各调用点实参域独立统计，取出现次数
+                    # 最多的候选）；只收窄（current ∩ 多数候选），空结果不改
+                    # 变——不破坏 AC-3 单调收敛（F9）。与 T6 A3 正交：E5 只
+                    # 收窄形参（to）域本身，A3 控制跨侧传播方向。
+                    if role == 1:
+                        if DOMAIN_SPLIT:
+                            # T7 (B1): 实参域取联合视图，合并结果路由回写
+                            _e5_args = [
+                                _domain_union(domain, type_domain, _a)
+                                for _, _, _a in call_arg_sites.get(var, ())
+                                if _domain_union(domain, type_domain, _a)
+                            ]
+                            if len(_e5_args) >= 2:
+                                _e5_cur = _domain_union(domain, type_domain, var)
+                                _e5_merged = _e5_majority_merge(_e5_cur, _e5_args)
+                                if _e5_merged is not None and _e5_merged != _e5_cur:
+                                    _domain_replace(domain, type_domain, var, _e5_merged)
+                                    worklist.append(var)
+                        else:
+                            _e5_args = [
+                                domain[_a] for _, _, _a in call_arg_sites.get(var, ())
+                                if domain[_a]
+                            ]
+                            if len(_e5_args) >= 2:
+                                _e5_merged = _e5_majority_merge(domain[var], _e5_args)
+                                if _e5_merged is not None and _e5_merged != domain[var]:
+                                    domain[var] = _e5_merged
+                                    worklist.append(var)
+                    # T6 (A3): CALL_ARG 单向传播 —— from（实参/接收者）→ to
+                    # （形参/this）单向；反向（to→from）仅在 to 域为空且 from
+                    # 有类锚（anchor_strength>0）时允许——防实参域被形参域
+                    # 错误 seed 反向污染（形参域是多调用点聚合，不应回写实参）。
+                    # 纯逻辑在 _a3_call_arg_step（离线可测）。
+                    _a3_anchor = anchor_strength.get(sf, 0)
+                    if DOMAIN_SPLIT:
+                        # T7 (B1): A3 单向传播分域版——to 分域 seed/收窄，
+                        # 跨域矛盾记录；seed 侧打传播强度标记。
+                        _nt_c, _nt_t, _b1_cf, _b1_pairs, _nt_chg = _b1_call_arg_step(
+                            set(domain.get(sf, ())), set(type_domain.get(sf, ())),
+                            set(domain.get(sto, ())), set(type_domain.get(sto, ())),
+                            role, _a3_anchor,
+                        )
+                        if _b1_cf:
+                            # T8 (C1): 记录原因边 + 双向域快照（变量级）
+                            _record_domain_conflict(
+                                sf, sto, _b1_pairs,
+                                edge_id=f"{ctype}#{ci}",
+                                domain=domain, type_domain=type_domain,
+                            )
+                        if _nt_chg:
+                            domain[sto], type_domain[sto] = _nt_c, _nt_t
+                            _mark_propagated(anchor_strength, sto)
+                            worklist.append(sto)
+                    else:
+                        _a3_cf, _a3_ct = _a3_call_arg_step(
+                            domain[sf], domain[sto], role, _a3_anchor
+                        )
+                        if _a3_cf:
+                            worklist.append(sf)
+                        if _a3_ct:
+                            worklist.append(sto)
 
         round_delta = processed - round_start
         if round_delta > 0:
@@ -1219,10 +3269,41 @@ def _run_main():
     else:
         print(f"  [AC-3] terminated by safety cap after {ac3_round} rounds, {processed} total iters")
 
+    # T10 (E5): 冲突调用点记录（观测层——AC-3 收敛后一次性统计，不参与求解）。
+    _cs_conflicts = _e5_collect_call_site_conflicts(
+        call_arg_sites, domain, type_domain if DOMAIN_SPLIT else None
+    )
+    RUN_MANIFEST["call_site_conflicts"] = dict(
+        list(_cs_conflicts.items())[:200]
+    )
+    print(
+        f"  [T10-E5] call-site conflicts recorded: "
+        f"{len(RUN_MANIFEST['call_site_conflicts'])} params"
+    )
+
+    # T7 (B1): 跨域矛盾摘要（有限记录——cap 防爆炸；重复边去重）
+    _dc = RUN_MANIFEST["domain_conflicts"]
+    print(
+        f"  [T7-B1] domain conflicts recorded: {len(_dc)} "
+        f"(capped={RUN_MANIFEST['domain_conflicts_capped']})"
+    )
+    # T8 (C1): 变量级矛盾摘要（结构化——原因边 + 双向域快照；cap 200）
+    _c1c = RUN_MANIFEST["conflicts"]
+    print(
+        f"  [T8-C1] var-level conflicts recorded: {len(_c1c)} vars "
+        f"(capped={RUN_MANIFEST['conflicts_capped']}, "
+        f"overflow={RUN_MANIFEST['conflicts_overflow']})"
+    )
+    if DOMAIN_SPLIT and RUN_MANIFEST["anchor_strength_propagation"]:
+        print(
+            f"  [T7-B2] propagation-strength marks: "
+            f"{RUN_MANIFEST['anchor_strength_propagation']}"
+        )
+
     # Vtable-group equality: same-vtable entries share the same this type
     vt_groups = defaultdict(list)
     for vt in vtables:
-        for func_addr in vt["entries"]:
+        for func_addr in vt_entries_mapped[vt['start']]:  # C3: thunk → 真实目标
             this_var = f"0x{func_addr:08X}:this"
             if this_var in this_vars:
                 vt_groups[vt['start']].append(this_var)
@@ -1253,7 +3334,8 @@ def _run_main():
 
     slot_to_funcs = defaultdict(list)
     for vt in vtables:
-        for slot_idx, func_addr in enumerate(vt["entries"]):
+        # C3: thunk 槽位调用解析到真实目标函数（callee_this 用 target 的 this）
+        for slot_idx, func_addr in enumerate(vt_entries_mapped[vt['start']]):
             slot_to_funcs[slot_idx].append(func_addr)
 
     for c in edge_constraints:
@@ -1311,8 +3393,18 @@ def _run_main():
 
     print(f"  Subtype edges: {len(subtype_edges)}")
 
+    # T11 (D1): avg_domain_size —— AC-3 收敛后、greedy(5.4) 前的平均域大小。
+    # 此时 domain 已收敛（greedy 只读不写），捕获值在 Step 9 聚合进 csp_quality。
+    # T7 (B1): 分域下按联合视图统计。
+    _t11_avg_domain = _t11_avg_domain_size(
+        domain, type_domain if DOMAIN_SPLIT else None
+    )
+    print(f"  [T11-D1] avg domain size before greedy: {_t11_avg_domain:.3f}")
+
     # --- 5.4: Greedy Assignment (weighted: vtable anchor > func-name class > propagation) ---
     # Count how many vars reference each class
+    # T7 (B1): 分域下 domain 只含类候选（基础类型已路由 type_domain）——
+    # class_ref_count 语义不变。
     class_ref_count = defaultdict(int)
     for var, dom in domain.items():
         for t in dom:
@@ -1342,7 +3434,8 @@ def _run_main():
         except ValueError:
             return bonus
         for vt in vtables:
-            if fint in vt["entries"]:
+            # C3: thunk 槽位锚定权重归属真实目标函数
+            if fint in vt_entries_mapped[vt["start"]]:
                 cid = vt_to_class_id[vt["start"]]
                 bonus[cid] = bonus.get(cid, 0) + 100  # vtable anchor: 最高权重
         func_name = func_addr_to_name.get(func_addr, "")
@@ -1353,20 +3446,121 @@ def _run_main():
         return bonus
 
 
+    # T10 (E8): EQ_CLASS —— ASSIGN 传递闭包等价类（并查集）。等价类内变量在
+    # greedy 解析时共享结果（空域成员继承同 root 非空成员的解析——AC-3
+    # ASSIGN 对空侧不播种，这是补空域的最后机会）；同 root 不同类候选冲突
+    # 记录 manifest。只影响 greedy，不改 AC-3 传播本身。
+    eq_root = _build_eq_classes(edge_constraints, st)
+    eq_members = defaultdict(list)
+    for _v, _r in eq_root.items():
+        eq_members[_r].append(_v)
+    _eq_conflicts = _e8_collect_eq_conflicts(
+        eq_members, domain, type_domain if DOMAIN_SPLIT else None
+    )
+    RUN_MANIFEST["eq_class_count"] = len(eq_members)
+    RUN_MANIFEST["eq_class_conflicts"] = dict(
+        list(_eq_conflicts.items())[:200]
+    )
+    print(
+        f"  [T10-E8] eq classes: {len(eq_members)} "
+        f"(conflicts: {len(_eq_conflicts)})"
+    )
+
     # Resolve each var to a single class (greedy: weighted pick + stable tie-break)
+    # T7 (B1): 分域下迭代键 = 类域 ∪ 类型域（基础类型变量在 type_domain），
+    # 排序主键 = 类域大小（与基线一致的相对顺序），次键 = 类型域大小（稳定）。
+    # 解析汇合: 类域非空 → 从类域选；类域空 → 用类型域。
     resolved = {}
-    for var in sorted(domain.keys(), key=lambda v: len(domain[v])):
-        dom = domain[var]
+    root_pick = {}   # T10 (E8): root → 已解析非空成员选定的类（共享源）
+    # T8 (C2): 变量级 top-K 候选——candidates[var] = [c0, c1, c2]（按
+    # anchor_strength 加权 + 引用次数降序，排名 0 最优）。构建在 greedy 解析
+    # 时一并产出（同一权重函数 → candidates[0] == resolved[var]）；矛盾变量
+    # （C1）虽跳过解析仍获得候选——Step 6 候选投票给无锚点类命名机会。
+    candidates = {}
+    # T8 (C1): 矛盾变量集合（AC-3 收敛后固定——greedy 只读）
+    _c1_conflicts = RUN_MANIFEST.get("conflicts", {})
+    if DOMAIN_SPLIT:
+        _greedy_vars = set(domain.keys()) | set(type_domain.keys())
+        _sorted_vars = sorted(
+            _greedy_vars,
+            key=lambda v: (len(domain[v]), len(type_domain.get(v, ()))),
+        )
+    else:
+        _sorted_vars = sorted(domain.keys(), key=lambda v: len(domain[v]))
+    for var in _sorted_vars:
+        if DOMAIN_SPLIT:
+            # 解析汇合: 优先类域，类域空用类型域（B1）
+            dom = domain[var] if domain[var] else type_domain.get(var, set())
+        else:
+            dom = domain[var]
+        # T8 (C2): top-K 候选构建（解析前——矛盾变量也获得候选集）
+        if dom:
+            _cls_cands = [t for t in dom if _is_class_type(t)]
+            if _cls_cands:
+                _cand_bonus = _anchor_bonus(var)
+                if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 2:
+                    for _c in _cls_cands:
+                        _cand_bonus[_c] = _cand_bonus.get(_c, 0) + 10
+                candidates[var] = sorted(
+                    _cls_cands,
+                    key=lambda t: (class_ref_count.get(t, 0) + _cand_bonus.get(t, 0), t),
+                    reverse=True,
+                )[:3]
+                RUN_MANIFEST["candidates_built"] += 1
+        # T8 (C1): 矛盾变量不强制选类——保持 unresolved 语义（不错误归因）。
+        # conflicted 标记只影响该变量本身：同 root 等价类（E8）其他成员不受
+        # 影响（各自独立解析；E8 共享仅补空域成员，矛盾变量域非空不参与）。
+        if var in _c1_conflicts:
+            RUN_MANIFEST["conflicted_skipped"] += 1
+            continue
         if len(dom) == 1:
             resolved[var] = next(iter(dom))
         elif len(dom) > 1:
             bonus = _anchor_bonus(var)
+            # T7 (B2): 锚点分层加权——anchor_strength 直读进候选排序
+            # （3=vtable/2=锚定 → 分层加分；1=传播/0=开放 不加分）。
+            # F11 vtable/函数名 bonus 保持（统一 +10 不改变相对序）；
+            # 强度 2 层扩展覆盖签名锚 this 变量。仅分域模式生效。
+            if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 2:
+                for _c in dom:
+                    bonus[_c] = bonus.get(_c, 0) + 10
             # F11: 权重 = 传播引用数 + 锚定奖励；tie-break 用类名字典序（稳定）
             best = max(dom, key=lambda t: (class_ref_count.get(t, 0) + bonus.get(t, 0), t))
             resolved[var] = best
         # empty domain -> stays unresolved
+        _r_ = eq_root.get(var)
+        if _r_ and var in resolved:
+            root_pick.setdefault(_r_, resolved[var])
 
-    print(f"  Greedy: {len(resolved)} vars resolved, {sum(1 for d in domain.values() if len(d)>1)} multi-domain skipped")
+    # T10 (E8): 等价类共享——空域成员继承同 root 非空成员的解析结果
+    # T7 (B1): 空域判定 = 类域与类型域皆空（分域下）
+    _eq_shared = 0
+    for _r, _members in eq_members.items():
+        _pick = root_pick.get(_r)
+        if not _pick:
+            continue
+        for _m in _members:
+            if _m not in resolved and _b1_is_empty(domain, type_domain, _m):
+                resolved[_m] = _pick
+                _eq_shared += 1
+    RUN_MANIFEST["eq_class_shared"] = _eq_shared
+    if _eq_shared:
+        print(f"  [T10-E8] shared {_eq_shared} empty-domain vars via eq-class resolution")
+
+    print(
+        f"  Greedy: {len(resolved)} vars resolved, "
+        f"{sum(1 for d in domain.values() if len(d)>1)} multi-domain skipped"
+    )
+    # T8 (C1/C2): 矛盾跳过 + 候选集摘要
+    if DOMAIN_SPLIT:
+        print(
+            f"  [T8-C1] conflicted vars skipped: {RUN_MANIFEST['conflicted_skipped']} "
+            f"(保持 unresolved——不错误归因)"
+        )
+    if RUN_MANIFEST["candidates_built"]:
+        print(
+            f"  [T8-C2] top-3 candidates built for {RUN_MANIFEST['candidates_built']} vars"
+        )
 
     # --- 5.5: Build final_classes ---
     final_classes = {}
@@ -1375,9 +3569,24 @@ def _run_main():
     for this_var in this_vars:
         cls = resolved.get(this_var)
         if cls is None:
-            # Unresolved: create singleton unique class
-            cls = f"Class_unresolved_{len(class_to_vars)}"
+            # D1 (F3 fix): unresolved 兜底——先查 T8 C2 候选集（矛盾变量跳过
+            # greedy 解析但仍构建候选集）。有候选 → candidates[0] 归因
+            # （C1 矛盾记录 conflicts/conflicted_skipped 保留，语义不变）；
+            # 无候选 → 保持原语义生成单例 Class_unresolved_N。
+            _cand = candidates.get(this_var)
+            if _cand:
+                cls = _cand[0]
+                RUN_MANIFEST["unresolved_fallback_count"] += 1
+            else:
+                # Unresolved: create singleton unique class
+                cls = f"Class_unresolved_{len(class_to_vars)}"
         class_to_vars[cls].append(this_var)
+
+    if RUN_MANIFEST["unresolved_fallback_count"]:
+        print(
+            f"  [D1] unresolved fallback (candidates[0] 兜底归因): "
+            f"{RUN_MANIFEST['unresolved_fallback_count']} vars"
+        )
 
     # Map subtype_edges to class-level edges
     cls_subtype_edges = set()
@@ -1387,18 +3596,18 @@ def _run_main():
         if child_cls and base_cls and child_cls != base_cls:
             cls_subtype_edges.add((child_cls, base_cls))
 
-    # Build class-level DAG
-    dag_adj = defaultdict(set)
-    children_of = defaultdict(set)
-    for child_cls, base_cls in cls_subtype_edges:
-        dag_adj[child_cls].add(base_cls)
-        children_of[base_cls].add(child_cls)
+    # Build class-level DAG (C4: 边添加前环检测——成环边丢弃 + 计数记录 manifest)
+    dag_adj, children_of, cycle_edges_dropped = _build_acyclic_dag(
+        sorted(cls_subtype_edges)
+    )
+    RUN_MANIFEST["cycles_detected"] = len(cycle_edges_dropped)
+    print(f"  [C4] Subtype cycle edges dropped: {len(cycle_edges_dropped)}")
 
-    # Depth via Kahn topological sort
-    all_class_nodes = set(class_to_vars.keys()) | {c for e in cls_subtype_edges for c in e}
+    # Depth via Kahn topological sort (in_deg 基于无环 dag_adj，与 children_of 一致)
+    all_class_nodes = set(class_to_vars.keys()) | set(dag_adj.keys()) | set(children_of.keys())
     in_deg = {c: 0 for c in all_class_nodes}
-    for child_cls, base_cls in cls_subtype_edges:
-        in_deg[child_cls] = in_deg.get(child_cls, 0) + 1
+    for child_cls, bases in dag_adj.items():
+        in_deg[child_cls] = in_deg.get(child_cls, 0) + len(bases)
 
     depth = {}
     q_depth = deque([c for c in all_class_nodes if in_deg.get(c, 0) == 0])
@@ -1433,6 +3642,16 @@ def _run_main():
             "root": cls,
             "depth": depth.get(cls, 0),
             "bases": list(dag_adj.get(cls, set())),
+            # T11 (D2): 注入置信度标注——类级 confidence（anchor_strength 聚合:
+            # vtable=3 锚变量占比）+ candidates（T8 C2 变量级候选聚合 top-3，
+            # 无 C2 候选时域兜底）。只读观测字段：下游（Step 7 注入 / Step 9
+            # 导出）仅增量读取，无行为变更。
+            "confidence": _t11_class_confidence(vars_list, anchor_strength),
+            "candidates": _t11_class_candidates(
+                vars_list, domain, anchor_strength,
+                type_domain if DOMAIN_SPLIT else None,
+                candidates,
+            ),
         }
 
     print(f"  Solved: {len(final_classes)} classes (AC-3 + Greedy)")
@@ -1619,21 +3838,30 @@ def _run_main():
                     vt_name_votes[cls_name][prefix] += 1
 
     # 6B: signals.json alignment (higher weight)
+    # T8 (C2): 投票来源从单类 var_to_cls 扩展为候选集——candidates 中每个
+    # 候选类投票（权重按排名递减 3/2/1 × signals 权重 2 = 6/4/2）；无锚点/
+    # 未解析变量（C1 矛盾保持 unresolved）凭候选集获得命名机会。仅对
+    # final_classes 的类投票（rename_map 只被 final class 消费——防死键 +
+    # used_names 抢占真实类名）。无候选时回退单类（原语义）。
+    _final_keys = set(final_classes.keys())
     for addr_str, sig in func_sigs.items():
         this_var = f"{addr_str}:this"
-        if this_var not in var_to_cls:
-            continue
-        cls_n = var_to_cls[this_var]
 
         sig_entry = _signals_entry(addr_str)
 
         sig_name = sig_entry.get("name", "") if sig_entry else ""
         if not sig_name or sig_name.startswith(("sub_", "dword_", "byte_", "loc_", "unknown")):
             continue
-        if "::" in sig_name:
-            sig_class = sig_name.split("::")[0]
-            if sig_class and not sig_class.startswith("?") and "`" not in sig_class:
-                vt_name_votes[cls_n][sig_class] += 2  # signals = higher confidence
+        if "::" not in sig_name:
+            continue
+        sig_class = sig_name.split("::")[0]
+        if not sig_class or sig_class.startswith("?") or "`" in sig_class:
+            continue
+        # T8 (C2): 候选集投票（优先）；无候选回退单类（原语义）
+        RUN_MANIFEST["candidates_vote_edges"] += _t8_candidate_vote(
+            vt_name_votes, candidates, var_to_cls, _final_keys,
+            this_var, sig_class,
+        )
 
     # Resolve votes → rename_map (one-to-one: no two Class_N map to same name)
     rename_map = {}
@@ -2150,6 +4378,36 @@ def _run_main():
             return csp_type
         return rename_map.get(csp_type, csp_type) + "*"
 
+    # T11 (E9): MEMBERSHIP 验证器——CSP 推断 offsets ⊆ member_lookup 成员偏移。
+    # 对已映射到 real_name 的类（rename_map 在此已最终——Step 6 命名 + Step 7
+    # _csp 隔离后缀都已落定），推断了成员表没有的偏移 → membership_conflicts
+    # （验证用途，不改求解；列表 cap 200 防 manifest 膨胀）。
+    _mc_list, _mc_classes, _mc_offsets = _t11_check_membership(
+        final_classes, rename_map, MEMBER_ANCHOR
+    )
+    RUN_MANIFEST["membership_conflicts"] = _mc_list[:200]
+    RUN_MANIFEST["membership_conflict_count"] = len(_mc_list)
+    RUN_MANIFEST["membership_checked_classes"] = _mc_classes
+    RUN_MANIFEST["membership_offsets_checked"] = _mc_offsets
+    print(
+        f"  [T11-E9] membership check: {_mc_classes} classes / {_mc_offsets} offsets, "
+        f"{len(_mc_list)} conflicts (validation only)"
+    )
+
+    # T11 (D1): csp_quality —— Step 9 导出前聚合（各值来自求解后的实际数据）。
+    # conflict_count 取 T8 C1 conflicts 记录数（T8 未实现 → 0；eq/call-site
+    # 冲突已在各自 manifest 键下单独记录，不混入此字段）。
+    RUN_MANIFEST["csp_quality"] = _t11_build_csp_quality(
+        final_classes,
+        _t11_avg_domain,
+        rename_map,
+        RUN_MANIFEST.get("write_gap_count", 0),
+        RUN_MANIFEST.get("conflicts", {}),
+    )
+    print(
+        f"  [T11-D1] csp_quality: {RUN_MANIFEST['csp_quality']}"
+    )
+
     print("  [*] Exporting classes & inheritance...")
     classes_export = {}
     for cls, info in final_classes.items():
@@ -2193,6 +4451,9 @@ def _run_main():
             "depth": info.get("depth", 0),
             "inherited_from": sorted(list(set(inherited_from))),
             "typed_members": typed_members,
+            # T11 (D2): 注入置信度标注（只读观测字段，下游不依赖）
+            "confidence": info.get("confidence", 0.0),
+            "candidates": info.get("candidates", []),
         }
     with open(os.path.join(report_dir, "csp_classes.json"), "w", encoding="utf-8") as f:
         json.dump(

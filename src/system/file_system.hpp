@@ -1,0 +1,117 @@
+#pragma once
+
+#include "fundamentals.hpp"
+#include "cc_file.hpp"
+
+namespace gamemd
+{
+
+struct ColorStruct;
+struct BytePalette;
+struct SHPStruct;
+class ConvertClass;
+class DSurface;
+
+struct BytePaletteEntry
+{
+    uint8_t R;
+    uint8_t G;
+    uint8_t B;
+};
+
+struct BytePalette
+{
+    BytePaletteEntry Entries[256];
+};
+
+// CSP: FileSystem matched via T1
+class FileSystem
+{
+public:
+    // design: static function, no direct binary match in IDA
+    static void* LoadFile(const char* pFileName, bool bLoadAsSHP);
+
+    // Load file and return size via outSize parameter
+    // unmatched: no callgraph reference and no git history record
+    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);
+
+    static void* LoadFile(const char* pFileName)
+    {
+        return LoadFile(pFileName, false);
+    }
+
+    static void* LoadSHPFile(const char* pFileName)
+    {
+        return LoadFile(pFileName, true);
+    }
+
+    // design: static function, no direct binary match in IDA
+    static void* LoadWholeFileEx(const char* pFilename, bool& outAllocated);
+
+    template <typename T>
+    static T* LoadWholeFileEx(const char* pFilename, bool& outAllocated)
+    {
+        return static_cast<T*>(LoadWholeFileEx(pFilename, outAllocated));
+    }
+
+    template <typename T = void>
+    // unmatched: no callgraph reference and no git history record
+    static T* AllocateFile(const char* pFilename)
+    {
+        // design: no binary equivalent found in IDA
+        CCFileClass file(pFilename);
+        return static_cast<T*>(file.ReadWholeFile());
+    }
+
+    // unmatched: no callgraph reference and no git history record
+    static BytePalette* AllocatePalette(const char* pFilename);
+
+    // design: static function, no direct binary match in IDA
+    static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface);
+
+    // Content-based search: find any 768-byte palette file in MIX pool
+    // design: static function, no direct binary match in IDA
+    static void* LoadFirstPalette();
+    // design: static function, no direct binary match in IDA
+    static void* LoadFirstSHP();
+    // design: static function, no direct binary match in IDA
+    static void* LoadByHash(uint32_t hash);  // XCC hash-based lookup
+
+    static SHPStruct* PIPBRD_SHP;
+    static SHPStruct* PIPS_SHP;
+    static SHPStruct* PIPS2_SHP;
+    static SHPStruct* TALKBUBL_SHP;
+    static SHPStruct* WRENCH_SHP;
+    static SHPStruct* POWEROFF_SHP;
+    static SHPStruct* GRFXTXT_SHP;
+
+    static BytePalette& TEMPERAT_PAL;
+    static BytePalette* GRFXTXT_PAL;
+
+    static ConvertClass* CAMEO_PAL;
+    static ConvertClass* UNITx_PAL;
+    static ConvertClass* x_PAL;
+    static ConvertClass* GRFTXT_TIBERIUM_PAL;
+    static ConvertClass* ANIM_PAL;
+    static ConvertClass* THEATER_PAL;
+    static ConvertClass* MOUSE_PAL;
+    static ConvertClass* GRFXTXT_Convert;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void mountDrive();  // 0x626370
+    void InitExtensionState();  // 0x6267A0
+    void* findFile();  // 0x627170
+    void FlushTempFiles();  // 0x6272A0
+    void* openFile(void* a1);  // 0x628110
+    void* closeFile(void* a1);  // 0x628170
+    int readFile();  // 0x628740
+    void* writeFile(int a1, void* a2);  // 0x628ED0
+    // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void CleanupTrees();  // 0x72d350
+    void InitPipShapes();  // 0x5f76b0
+    int ProcessNextFileExtension();  // 0x626da0
+    // === FUNCS-MOVE (END) ===
+};
+
+} // namespace gamemd
