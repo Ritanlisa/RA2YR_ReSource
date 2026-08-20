@@ -1,0 +1,6079 @@
+{
+ "meta": {
+  "exe": "H:/RA2MD/gamemd.exe",
+  "generated_by": "tools/rtti_truth_extract.py",
+  "note": "vtable[-1] -> COL; col_offset!=0 means MI secondary vtable"
+ },
+ "vtables": {
+  "0x7e1668": {
+   "class": "CDFileClass",
+   "col_offset": 0,
+   "col_va": "0x7fa4d8"
+  },
+  "0x7e16b0": {
+   "class": "CCFileClass",
+   "col_offset": 0,
+   "col_va": "0x7fa590"
+  },
+  "0x7e177c": {
+   "class": "?$VectorClass@USubzoneConnectionStruct@@",
+   "col_offset": 0,
+   "col_va": "0x7fa5d8"
+  },
+  "0x7e17ac": {
+   "class": "?$DynamicVectorClass@PAVTechnoClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa640"
+  },
+  "0x7e17cc": {
+   "class": "?$DynamicVectorClass@PAVBombClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa6a8"
+  },
+  "0x7e17ec": {
+   "class": "?$VectorClass@PAVBombClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa708"
+  },
+  "0x7e180c": {
+   "class": "?$VectorClass@PAVTechnoClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa6d8"
+  },
+  "0x7e182c": {
+   "class": "?$DynamicVectorClass@PBVCommandClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa770"
+  },
+  "0x7e184c": {
+   "class": "?$VectorClass@PBVCommandClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa7a0"
+  },
+  "0x7e186c": {
+   "class": "?$DynamicVectorClass@PAVLightConvertClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa808"
+  },
+  "0x7e188c": {
+   "class": "?$VectorClass@PAVLightConvertClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa838"
+  },
+  "0x7e18bc": {
+   "class": "?$DynamicVectorClass@PAVIsometricTileClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa8a0"
+  },
+  "0x7e18dc": {
+   "class": "?$VectorClass@PAVIsometricTileClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa8d0"
+  },
+  "0x7e18fc": {
+   "class": "LogicClass",
+   "col_offset": 0,
+   "col_va": "0x7fa970"
+  },
+  "0x7e192c": {
+   "class": "?$VectorClass@PAVObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fa9a0"
+  },
+  "0x7e195c": {
+   "class": "MouseClass",
+   "col_offset": 21784,
+   "col_va": "0x7fa9b8"
+  },
+  "0x7e1964": {
+   "class": "MouseClass",
+   "col_offset": 0,
+   "col_va": "0x7fab38"
+  },
+  "0x7e1a44": {
+   "class": "?$DynamicVectorClass@PAVMixFileClass@@",
+   "col_offset": 0,
+   "col_va": "0x7faba0"
+  },
+  "0x7e1a64": {
+   "class": "?$VectorClass@PAVMixFileClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fabd0"
+  },
+  "0x7e1af4": {
+   "class": "CCINIClass",
+   "col_offset": 0,
+   "col_va": "0x7fac88"
+  },
+  "0x7e1afc": {
+   "class": "?$List@PAUINISection@INIClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fac20"
+  },
+  "0x7e1b04": {
+   "class": "GenericList",
+   "col_offset": 0,
+   "col_va": "0x7fad18"
+  },
+  "0x7e1b0c": {
+   "class": "GenericNode",
+   "col_offset": 0,
+   "col_va": "0x7facd0"
+  },
+  "0x7e1b24": {
+   "class": "?$DynamicVectorClass@PAVScriptClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fad80"
+  },
+  "0x7e1b44": {
+   "class": "?$VectorClass@PAVScriptClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fadb0"
+  },
+  "0x7e1e2c": {
+   "class": "?$DynamicVectorClass@PAVVoxelAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fae18"
+  },
+  "0x7e1e4c": {
+   "class": "?$VectorClass@PAVVoxelAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fae48"
+  },
+  "0x7e1e84": {
+   "class": "?$DynamicVectorClass@PAVWarheadTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7faeb0"
+  },
+  "0x7e1ea4": {
+   "class": "?$VectorClass@PAVWarheadTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7faee0"
+  },
+  "0x7e1ed4": {
+   "class": "?$DynamicVectorClass@PAVWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7faf48"
+  },
+  "0x7e1ef4": {
+   "class": "?$VectorClass@PAVWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7faf78"
+  },
+  "0x7e1f24": {
+   "class": "AbstractClass",
+   "col_offset": 12,
+   "col_va": "0x7fafd8"
+  },
+  "0x7e1f2c": {
+   "class": "AbstractClass",
+   "col_offset": 8,
+   "col_va": "0x7faff0"
+  },
+  "0x7e1f34": {
+   "class": "AbstractClass",
+   "col_offset": 4,
+   "col_va": "0x7fb008"
+  },
+  "0x7e1f50": {
+   "class": "AbstractClass",
+   "col_offset": 0,
+   "col_va": "0x7fb118"
+  },
+  "0x7e1fb4": {
+   "class": "INoticeSource",
+   "col_offset": 0,
+   "col_va": "0x7fb160"
+  },
+  "0x7e1fbc": {
+   "class": "INoticeSink",
+   "col_offset": 0,
+   "col_va": "0x7fafc0"
+  },
+  "0x7e1fd4": {
+   "class": "AbstractTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fb178"
+  },
+  "0x7e1fdc": {
+   "class": "AbstractTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fb190"
+  },
+  "0x7e1fe4": {
+   "class": "AbstractTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fb1a8"
+  },
+  "0x7e2000": {
+   "class": "AbstractTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fb210"
+  },
+  "0x7e2070": {
+   "class": "BSurface",
+   "col_offset": 0,
+   "col_va": "0x7fb260"
+  },
+  "0x7e2104": {
+   "class": "XSurface",
+   "col_offset": 0,
+   "col_va": "0x7fb2c8"
+  },
+  "0x7e2198": {
+   "class": "Surface",
+   "col_offset": 0,
+   "col_va": "0x7fb2f8"
+  },
+  "0x7e2250": {
+   "class": "AircraftClass",
+   "col_offset": 1728,
+   "col_va": "0x7fb310"
+  },
+  "0x7e2278": {
+   "class": "AircraftClass",
+   "col_offset": 12,
+   "col_va": "0x7fb328"
+  },
+  "0x7e2280": {
+   "class": "AircraftClass",
+   "col_offset": 8,
+   "col_va": "0x7fb340"
+  },
+  "0x7e2288": {
+   "class": "AircraftClass",
+   "col_offset": 4,
+   "col_va": "0x7fb358"
+  },
+  "0x7e22a4": {
+   "class": "AircraftClass",
+   "col_offset": 0,
+   "col_va": "0x7fb4c0"
+  },
+  "0x7e283c": {
+   "class": "AircraftTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fb4d8"
+  },
+  "0x7e2844": {
+   "class": "AircraftTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fb4f0"
+  },
+  "0x7e284c": {
+   "class": "AircraftTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fb508"
+  },
+  "0x7e2868": {
+   "class": "AircraftTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fb5b0"
+  },
+  "0x7e293c": {
+   "class": "?$DynamicVectorClass@PAVAirstrikeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb618"
+  },
+  "0x7e295c": {
+   "class": "?$VectorClass@PAVAirstrikeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb648"
+  },
+  "0x7e297c": {
+   "class": "AirstrikeClass",
+   "col_offset": 12,
+   "col_va": "0x7fb660"
+  },
+  "0x7e2984": {
+   "class": "AirstrikeClass",
+   "col_offset": 8,
+   "col_va": "0x7fb678"
+  },
+  "0x7e298c": {
+   "class": "AirstrikeClass",
+   "col_offset": 4,
+   "col_va": "0x7fb690"
+  },
+  "0x7e29a8": {
+   "class": "AirstrikeClass",
+   "col_offset": 0,
+   "col_va": "0x7fb6f8"
+  },
+  "0x7e2a24": {
+   "class": "AITriggerTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fb710"
+  },
+  "0x7e2a2c": {
+   "class": "AITriggerTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fb728"
+  },
+  "0x7e2a34": {
+   "class": "AITriggerTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fb740"
+  },
+  "0x7e2a50": {
+   "class": "AITriggerTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fb7b0"
+  },
+  "0x7e2ad0": {
+   "class": "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb818"
+  },
+  "0x7e2af0": {
+   "class": "?$VectorClass@PAVAlphaLightingRemapClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb848"
+  },
+  "0x7e3238": {
+   "class": "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb8b0"
+  },
+  "0x7e3258": {
+   "class": "?$VectorClass@PAVAlphaShapeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fb8e0"
+  },
+  "0x7e3278": {
+   "class": "AlphaShapeClass",
+   "col_offset": 12,
+   "col_va": "0x7fb8f8"
+  },
+  "0x7e3280": {
+   "class": "AlphaShapeClass",
+   "col_offset": 8,
+   "col_va": "0x7fb910"
+  },
+  "0x7e3288": {
+   "class": "AlphaShapeClass",
+   "col_offset": 4,
+   "col_va": "0x7fb928"
+  },
+  "0x7e32a4": {
+   "class": "AlphaShapeClass",
+   "col_offset": 0,
+   "col_va": "0x7fb990"
+  },
+  "0x7e3328": {
+   "class": "AnimClass",
+   "col_offset": 12,
+   "col_va": "0x7fb9a8"
+  },
+  "0x7e3330": {
+   "class": "AnimClass",
+   "col_offset": 8,
+   "col_va": "0x7fb9c0"
+  },
+  "0x7e3338": {
+   "class": "AnimClass",
+   "col_offset": 4,
+   "col_va": "0x7fb9d8"
+  },
+  "0x7e3354": {
+   "class": "AnimClass",
+   "col_offset": 0,
+   "col_va": "0x7fba60"
+  },
+  "0x7e3584": {
+   "class": "AnimFile",
+   "col_offset": 0,
+   "col_va": "0x7fbaf8"
+  },
+  "0x7e35a8": {
+   "class": "Animate",
+   "col_offset": 0,
+   "col_va": "0x7fba90"
+  },
+  "0x7e35dc": {
+   "class": "AnimTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fbb10"
+  },
+  "0x7e35e4": {
+   "class": "AnimTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fbb28"
+  },
+  "0x7e35ec": {
+   "class": "AnimTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fbb40"
+  },
+  "0x7e3608": {
+   "class": "AnimTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fbbb0"
+  },
+  "0x7e36d4": {
+   "class": "ApplicationClass",
+   "col_offset": 0,
+   "col_va": "0x7fbc18"
+  },
+  "0x7e37cc": {
+   "class": "?$DynamicVectorClass@I",
+   "col_offset": 0,
+   "col_va": "0x7fbc80"
+  },
+  "0x7e37ec": {
+   "class": "?$VectorClass@I",
+   "col_offset": 0,
+   "col_va": "0x7fbcb0"
+  },
+  "0x7e3824": {
+   "class": "?$VectorClass@G",
+   "col_offset": 0,
+   "col_va": "0x7fbce0"
+  },
+  "0x7e3844": {
+   "class": "?$DynamicVectorClass@G",
+   "col_offset": 0,
+   "col_va": "0x7fbd48"
+  },
+  "0x7e3880": {
+   "class": "BaseClass",
+   "col_offset": 0,
+   "col_va": "0x7fbd90"
+  },
+  "0x7e3890": {
+   "class": "?$DynamicVectorClass@VCell@@",
+   "col_offset": 0,
+   "col_va": "0x7fbe60"
+  },
+  "0x7e38b0": {
+   "class": "?$DynamicVectorClass@VBaseNodeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fbdf8"
+  },
+  "0x7e38d0": {
+   "class": "?$VectorClass@VCell@@",
+   "col_offset": 0,
+   "col_va": "0x7fbe90"
+  },
+  "0x7e38f0": {
+   "class": "?$VectorClass@VBaseNodeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fbec0"
+  },
+  "0x7e3a2c": {
+   "class": "BufferIOFileClass",
+   "col_offset": 0,
+   "col_va": "0x7fbef8"
+  },
+  "0x7e3a78": {
+   "class": "BitFont",
+   "col_offset": 0,
+   "col_va": "0x7fbf40"
+  },
+  "0x7e3a80": {
+   "class": "BitText",
+   "col_offset": 0,
+   "col_va": "0x7fbf88"
+  },
+  "0x7e3aa4": {
+   "class": "BuildingLightClass",
+   "col_offset": 12,
+   "col_va": "0x7fbfa0"
+  },
+  "0x7e3aac": {
+   "class": "BuildingLightClass",
+   "col_offset": 8,
+   "col_va": "0x7fbfb8"
+  },
+  "0x7e3ab4": {
+   "class": "BuildingLightClass",
+   "col_offset": 4,
+   "col_va": "0x7fbfd0"
+  },
+  "0x7e3ad0": {
+   "class": "BuildingLightClass",
+   "col_offset": 0,
+   "col_va": "0x7fc040"
+  },
+  "0x7e3ce4": {
+   "class": "BombClass",
+   "col_offset": 12,
+   "col_va": "0x7fc058"
+  },
+  "0x7e3cec": {
+   "class": "BombClass",
+   "col_offset": 8,
+   "col_va": "0x7fc070"
+  },
+  "0x7e3cf4": {
+   "class": "BombClass",
+   "col_offset": 4,
+   "col_va": "0x7fc088"
+  },
+  "0x7e3d10": {
+   "class": "BombClass",
+   "col_offset": 0,
+   "col_va": "0x7fc0f0"
+  },
+  "0x7e3dc4": {
+   "class": "NeuronClass",
+   "col_offset": 12,
+   "col_va": "0x7fc108"
+  },
+  "0x7e3dcc": {
+   "class": "NeuronClass",
+   "col_offset": 8,
+   "col_va": "0x7fc120"
+  },
+  "0x7e3dd4": {
+   "class": "NeuronClass",
+   "col_offset": 4,
+   "col_va": "0x7fc138"
+  },
+  "0x7e3df0": {
+   "class": "NeuronClass",
+   "col_offset": 0,
+   "col_va": "0x7fc1a0"
+  },
+  "0x7e3e54": {
+   "class": "?$VectorClass@PAVNeuronClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc230"
+  },
+  "0x7e3e74": {
+   "class": "BrainClass",
+   "col_offset": 0,
+   "col_va": "0x7fc1e8"
+  },
+  "0x7e3e90": {
+   "class": "BuildingClass",
+   "col_offset": 12,
+   "col_va": "0x7fc2b0"
+  },
+  "0x7e3e98": {
+   "class": "BuildingClass",
+   "col_offset": 8,
+   "col_va": "0x7fc2c8"
+  },
+  "0x7e3ea0": {
+   "class": "BuildingClass",
+   "col_offset": 4,
+   "col_va": "0x7fc2e0"
+  },
+  "0x7e3ebc": {
+   "class": "BuildingClass",
+   "col_offset": 0,
+   "col_va": "0x7fc360"
+  },
+  "0x7e43c8": {
+   "class": "?$DynamicVectorClass@PAVInfantryClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc298"
+  },
+  "0x7e43e8": {
+   "class": "?$VectorClass@PAVInfantryClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc390"
+  },
+  "0x7e4424": {
+   "class": "?$VectorClass@PBVParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc3c0"
+  },
+  "0x7e4444": {
+   "class": "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc428"
+  },
+  "0x7e4468": {
+   "class": "?$VectorClass@PAVReestablish@@",
+   "col_offset": 0,
+   "col_va": "0x7fc458"
+  },
+  "0x7e4488": {
+   "class": "?$DynamicVectorClass@PAVReestablish@@",
+   "col_offset": 0,
+   "col_va": "0x7fc4c0"
+  },
+  "0x7e44f4": {
+   "class": "?$DynamicVectorClass@PAVFoggedObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc528"
+  },
+  "0x7e4514": {
+   "class": "?$VectorClass@PAVFoggedObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc558"
+  },
+  "0x7e4544": {
+   "class": "BuildingTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fc570"
+  },
+  "0x7e454c": {
+   "class": "BuildingTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fc588"
+  },
+  "0x7e4554": {
+   "class": "BuildingTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fc5a0"
+  },
+  "0x7e4570": {
+   "class": "BuildingTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fc618"
+  },
+  "0x7e4638": {
+   "class": "?$VectorClass@V?$TPoint3D@H@@",
+   "col_offset": 0,
+   "col_va": "0x7fc660"
+  },
+  "0x7e4678": {
+   "class": "?$DynamicVectorClass@PAVBulletClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc6c8"
+  },
+  "0x7e4698": {
+   "class": "?$VectorClass@PAVBulletClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fc6f8"
+  },
+  "0x7e46b8": {
+   "class": "BulletClass",
+   "col_offset": 12,
+   "col_va": "0x7fc710"
+  },
+  "0x7e46c0": {
+   "class": "BulletClass",
+   "col_offset": 8,
+   "col_va": "0x7fc728"
+  },
+  "0x7e46c8": {
+   "class": "BulletClass",
+   "col_offset": 4,
+   "col_va": "0x7fc740"
+  },
+  "0x7e46e4": {
+   "class": "BulletClass",
+   "col_offset": 0,
+   "col_va": "0x7fc7b0"
+  },
+  "0x7e491c": {
+   "class": "BulletTypeClass",
+   "col_offset": 12,
+   "col_va": "0x7fc7c8"
+  },
+  "0x7e4924": {
+   "class": "BulletTypeClass",
+   "col_offset": 8,
+   "col_va": "0x7fc7e0"
+  },
+  "0x7e492c": {
+   "class": "BulletTypeClass",
+   "col_offset": 4,
+   "col_va": "0x7fc7f8"
+  },
+  "0x7e4948": {
+   "class": "BulletTypeClass",
+   "col_offset": 0,
+   "col_va": "0x7fc868"
+  },
+  "0x7e49fc": {
+   "class": "CampaignClass",
+   "col_offset": 12,
+   "col_va": "0x7fc880"
+  },
+  "0x7e4a04": {
+   "class": "CampaignClass",
+   "col_offset": 8,
+   "col_va": "0x7fc898"
+  },
+  "0x7e4a0c": {
+   "class": "CampaignClass",
+   "col_offset": 4,
+   "col_va": "0x7fc8b0"
+  },
+  "0x7e4a28": {
+   "class": "CampaignClass",
+   "col_offset": 0,
+   "col_va": "0x7fc920"
+  },
+  "0x7e4aac": {
+   "class": "CampaignScoreClass",
+   "col_offset": 0,
+   "col_va": "0x7fc968"
+  },
+  "0x7e4ab8": {
+   "class": "CampaignEndScoreClass",
+   "col_offset": 0,
+   "col_va": "0x7fc9b0"
+  },
+  "0x7e4ad4": {
+   "class": "?$DynamicVectorClass@PAVCaptureManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fca18"
+  },
+  "0x7e4af4": {
+   "class": "?$VectorClass@PAVCaptureManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fca48"
+  },
+  "0x7e4b14": {
+   "class": "CaptureManagerClass",
+   "col_offset": 12,
+   "col_va": "0x7fcac8"
+  },
+  "0x7e4b1c": {
+   "class": "CaptureManagerClass",
+   "col_offset": 8,
+   "col_va": "0x7fcae0"
+  },
+  "0x7e4b24": {
+   "class": "CaptureManagerClass",
+   "col_offset": 4,
+   "col_va": "0x7fcaf8"
+  },
+  "0x7e4b40": {
+   "class": "CaptureManagerClass",
+   "col_offset": 0,
+   "col_va": "0x7fcb60"
+  },
+  "0x7e4ba4": {
+   "class": "?$DynamicVectorClass@PAUControlNode@@",
+   "col_offset": 0,
+   "col_va": "0x7fcab0"
+  },
+  "0x7e4bc4": {
+   "class": "?$VectorClass@PAUControlNode@@",
+   "col_offset": 0,
+   "col_va": "0x7fcb90"
+  },
+  "0x7e4c04": {
+   "class": "CarryoverClass",
+   "col_offset": 0,
+   "col_va": "0x7fcbf8"
+  },
+  "0x7e4c30": {
+   "class": "CD",
+   "col_offset": 0,
+   "col_va": "0x7fcc60"
+  },
+  "0x7e4d78": {
+   "class": "SHAPipe",
+   "col_offset": 0,
+   "col_va": "0x7fccc8"
+  },
+  "0x7e4d90": {
+   "class": "FileStraw",
+   "col_offset": 0,
+   "col_va": "0x7fcd30"
+  },
+  "0x7e4da0": {
+   "class": "FilePipe",
+   "col_offset": 0,
+   "col_va": "0x7fcd80"
+  },
+  "0x7e4db8": {
+   "class": "?$VectorClass@H",
+   "col_offset": 0,
+   "col_va": "0x7fcdb0"
+  },
+  "0x7e4dd8": {
+   "class": "?$TypeList@H",
+   "col_offset": 0,
+   "col_va": "0x7fce30"
+  },
+  "0x7e4df8": {
+   "class": "?$VectorClass@PAVTechnoTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fce60"
+  },
+  "0x7e4e18": {
+   "class": "?$TypeList@PAVTechnoTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fcee0"
+  },
+  "0x7e4e38": {
+   "class": "?$VectorClass@VRGBClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fcf90"
+  },
+  "0x7e4e58": {
+   "class": "?$TypeList@VRGBClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fcf48"
+  },
+  "0x7e4e78": {
+   "class": "?$DynamicVectorClass@H",
+   "col_offset": 0,
+   "col_va": "0x7fcfc8"
+  },
+  "0x7e4ec0": {
+   "class": "CellClass",
+   "col_offset": 12,
+   "col_va": "0x7fcfe0"
+  },
+  "0x7e4ec8": {
+   "class": "CellClass",
+   "col_offset": 8,
+   "col_va": "0x7fcff8"
+  },
+  "0x7e4ed0": {
+   "class": "CellClass",
+   "col_offset": 4,
+   "col_va": "0x7fd010"
+  },
+  "0x7e4eec": {
+   "class": "CellClass",
+   "col_offset": 0,
+   "col_va": "0x7fd078"
+  },
+  "0x7e4f64": {
+   "class": "?$DynamicVectorClass@PAVObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fd0b0"
+  },
+  "0x7e4f84": {
+   "class": "CheckListClass",
+   "col_offset": 0,
+   "col_va": "0x7fd150"
+  },
+  "0x7e5054": {
+   "class": "ColorListClass",
+   "col_offset": 0,
+   "col_va": "0x7fd1a8"
+  },
+  "0x7e5144": {
+   "class": "?$VectorClass@PAUDamageGroup@@",
+   "col_offset": 0,
+   "col_va": "0x7fd1d8"
+  },
+  "0x7e5170": {
+   "class": "?$DynamicVectorClass@PAUDamageGroup@@",
+   "col_offset": 0,
+   "col_va": "0x7fd240"
+  },
+  "0x7e519c": {
+   "class": "CommBufferClass",
+   "col_offset": 0,
+   "col_va": "0x7fd288"
+  },
+  "0x7e51b4": {
+   "class": "ConnectionClass",
+   "col_offset": 0,
+   "col_va": "0x7fd2d0"
+  },
+  "0x7e528c": {
+   "class": "ControlClass",
+   "col_offset": 0,
+   "col_va": "0x7fd308"
+  },
+  "0x7e5318": {
+   "class": "?$DynamicVectorClass@PAVConvertClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fd370"
+  },
+  "0x7e5338": {
+   "class": "?$VectorClass@PAVConvertClass@@",
+   "col_offset": 0,
+   "col_va": "0x7fd3a0"
+  },
+  "0x7e5358": {
+   "class": "ConvertClass",
+   "col_offset": 0,
+   "col_va": "0x7fd3e8"
+  },
+  "0x7e5360": {
+   "class": "?$RLEBlitTransLucent25AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe568"
+  },
+  "0x7e5370": {
+   "class": "?$RLEBlitTransLucent50AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe658"
+  },
+  "0x7e5380": {
+   "class": "?$RLEBlitTransLucent75AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fdc08"
+  },
+  "0x7e5390": {
+   "class": "?$RLEBlitTransZRemapXlatAlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7ff008"
+  },
+  "0x7e53a0": {
+   "class": "?$RLEBlitTransXlatAlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fd438"
+  },
+  "0x7e53b0": {
+   "class": "?$RLEBlitTransLucent25AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7feab8"
+  },
+  "0x7e53c0": {
+   "class": "?$RLEBlitTransLucent50AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fdf78"
+  },
+  "0x7e53d0": {
+   "class": "?$RLEBlitTransLucent75AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fec48"
+  },
+  "0x7e53e0": {
+   "class": "?$RLEBlitTransLucent25AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe428"
+  },
+  "0x7e53f0": {
+   "class": "?$RLEBlitTransLucent50AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fd848"
+  },
+  "0x7e5400": {
+   "class": "?$RLEBlitTransLucent75AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fdca8"
+  },
+  "0x7e5410": {
+   "class": "?$RLEBlitTransZRemapXlatAlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7ff0a8"
+  },
+  "0x7e5420": {
+   "class": "?$RLEBlitTransXlatAlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe888"
+  },
+  "0x7e5430": {
+   "class": "?$RLEBlitTransLucent25Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fe6f8"
+  },
+  "0x7e5440": {
+   "class": "?$RLEBlitTransLucent50Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fdac8"
+  },
+  "0x7e5450": {
+   "class": "?$RLEBlitTransLucent75Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fd988"
+  },
+  "0x7e5460": {
+   "class": "?$RLEBlitTransZRemapXlatAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fda28"
+  },
+  "0x7e5470": {
+   "class": "?$RLEBlitTransXlatAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fd4d8"
+  },
+  "0x7e5480": {
+   "class": "?$RLEBlitTransLucent25ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fea18"
+  },
+  "0x7e5490": {
+   "class": "?$RLEBlitTransLucent50ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe798"
+  },
+  "0x7e54a0": {
+   "class": "?$RLEBlitTransLucent75ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fdc58"
+  },
+  "0x7e54b0": {
+   "class": "?$RLEBlitTransDarkenZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fed88"
+  },
+  "0x7e54c0": {
+   "class": "?$RLEBlitTransZRemapXlatZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe4c8"
+  },
+  "0x7e54d0": {
+   "class": "?$RLEBlitTransXlatZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe5b8"
+  },
+  "0x7e54e0": {
+   "class": "?$RLEBlitTransLucent25ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fd9d8"
+  },
+  "0x7e54f0": {
+   "class": "?$RLEBlitTransLucent50ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fd6b8"
+  },
+  "0x7e5500": {
+   "class": "?$RLEBlitTransLucent75ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7feb08"
+  },
+  "0x7e5510": {
+   "class": "?$RLEBlitTransLucent25ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe9c8"
+  },
+  "0x7e5520": {
+   "class": "?$RLEBlitTransLucent50ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe748"
+  },
+  "0x7e5530": {
+   "class": "?$RLEBlitTransLucent75ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fdbb8"
+  },
+  "0x7e5540": {
+   "class": "?$RLEBlitTransDarkenZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fded8"
+  },
+  "0x7e5550": {
+   "class": "?$RLEBlitTransZRemapXlatZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7ff2d8"
+  },
+  "0x7e5560": {
+   "class": "?$RLEBlitTransXlatZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fee78"
+  },
+  "0x7e5570": {
+   "class": "?$RLEBlitTransLucent25@G",
+   "col_offset": 0,
+   "col_va": "0x7fe3d8"
+  },
+  "0x7e5580": {
+   "class": "?$RLEBlitTransLucent50@G",
+   "col_offset": 0,
+   "col_va": "0x7fdd98"
+  },
+  "0x7e5590": {
+   "class": "?$RLEBlitTransLucent75@G",
+   "col_offset": 0,
+   "col_va": "0x7feec8"
+  },
+  "0x7e55a0": {
+   "class": "?$RLEBlitTransDarken@G",
+   "col_offset": 0,
+   "col_va": "0x7fe388"
+  },
+  "0x7e55b0": {
+   "class": "?$RLEBlitTransZRemapXlat@G",
+   "col_offset": 0,
+   "col_va": "0x7fde88"
+  },
+  "0x7e55c0": {
+   "class": "?$RLEBlitTransXlat@G",
+   "col_offset": 0,
+   "col_va": "0x7fef68"
+  },
+  "0x7e55d0": {
+   "class": "?$BlitTransLucent25AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7ff3e0"
+  },
+  "0x7e55e8": {
+   "class": "?$BlitTransLucent50AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fd5c8"
+  },
+  "0x7e5600": {
+   "class": "?$BlitTransLucent75AlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fedd8"
+  },
+  "0x7e5618": {
+   "class": "?$BlitTransZRemapXlatAlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe978"
+  },
+  "0x7e5630": {
+   "class": "?$BlitTransXlatAlphaZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fef18"
+  },
+  "0x7e5648": {
+   "class": "?$BlitTransLucent25AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fea68"
+  },
+  "0x7e5660": {
+   "class": "?$BlitTransLucent50AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fdcf8"
+  },
+  "0x7e5678": {
+   "class": "?$BlitTransLucent75AlphaZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fd578"
+  },
+  "0x7e5690": {
+   "class": "?$BlitTransLucent25AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fd8e8"
+  },
+  "0x7e56a8": {
+   "class": "?$BlitTransLucent50AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7ff198"
+  },
+  "0x7e56c0": {
+   "class": "?$BlitTransLucent75AlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7ff430"
+  },
+  "0x7e56d8": {
+   "class": "?$BlitTransZRemapXlatAlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fd898"
+  },
+  "0x7e56f0": {
+   "class": "?$BlitTransXlatAlphaZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7ff328"
+  },
+  "0x7e5708": {
+   "class": "?$BlitTranslucent50ZeroAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fd488"
+  },
+  "0x7e5720": {
+   "class": "?$BlitTranslucent50NonzeroAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7feba8"
+  },
+  "0x7e5738": {
+   "class": "?$BlitTranslucentWriteAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7ff0f8"
+  },
+  "0x7e5750": {
+   "class": "?$BlitTransXlatMultWriteAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fe928"
+  },
+  "0x7e5768": {
+   "class": "?$BlitTransXlatWriteAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fe108"
+  },
+  "0x7e5780": {
+   "class": "?$BlitTransLucent25Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fe7e8"
+  },
+  "0x7e5798": {
+   "class": "?$BlitTransLucent50Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fe1a8"
+  },
+  "0x7e57b0": {
+   "class": "?$BlitTransLucent75Alpha@G",
+   "col_offset": 0,
+   "col_va": "0x7ff498"
+  },
+  "0x7e57c8": {
+   "class": "?$BlitTransZRemapXlatAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fd618"
+  },
+  "0x7e57e0": {
+   "class": "?$BlitTransXlatAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7fec98"
+  },
+  "0x7e57f8": {
+   "class": "?$BlitPlainXlatAlpha@G",
+   "col_offset": 0,
+   "col_va": "0x7ff1e8"
+  },
+  "0x7e5810": {
+   "class": "?$BlitTransLucent25ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fd758"
+  },
+  "0x7e5828": {
+   "class": "?$BlitTransLucent50ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fee28"
+  },
+  "0x7e5840": {
+   "class": "?$BlitTransLucent75ZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fd528"
+  },
+  "0x7e5858": {
+   "class": "?$BlitTransDarkenZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7febf8"
+  },
+  "0x7e5870": {
+   "class": "?$BlitTransZRemapXlatZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7ff288"
+  },
+  "0x7e5888": {
+   "class": "?$BlitTransXlatZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7feb58"
+  },
+  "0x7e58a0": {
+   "class": "?$BlitPlainXlatZReadWrite@G",
+   "col_offset": 0,
+   "col_va": "0x7fe2e8"
+  },
+  "0x7e58b8": {
+   "class": "?$BlitTransLucent25ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fe8d8"
+  },
+  "0x7e58d0": {
+   "class": "?$BlitTransLucent50ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fe1f8"
+  },
+  "0x7e58e8": {
+   "class": "?$BlitTransLucent75ZReadWarp@G",
+   "col_offset": 0,
+   "col_va": "0x7fe518"
+  },
+  "0x7e5900": {
+   "class": "?$BlitTransLucent25ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe608"
+  },
+  "0x7e5918": {
+   "class": "?$BlitTransLucent50ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fde38"
+  },
+  "0x7e5930": {
+   "class": "?$BlitTransLucent75ZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe158"
+  },
+  "0x7e5948": {
+   "class": "?$BlitTransDarkenZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fd7f8"
+  },
+  "0x7e5960": {
+   "class": "?$BlitTransZRemapXlatZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fdb68"
+  },
+  "0x7e5978": {
+   "class": "?$BlitTransXlatZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fe338"
+  },
+  "0x7e5990": {
+   "class": "?$BlitPlainXlatZRead@G",
+   "col_offset": 0,
+   "col_va": "0x7fda78"
+  },
+  "0x7e59a8": {
+   "class": "?$BlitTransLucent25@G",
+   "col_offset": 0,
+   "col_va": "0x7fdd48"
+  },
+  "0x7e59c0": {
+   "class": "?$BlitTransLucent50@G",
+   "col_offset": 0,
+   "col_va": "0x7fe838"
+  },
+  "0x7e59d8": {
+   "class": "?$BlitTransLucent75@G",
+   "col_offset": 0,
+   "col_va": "0x7fe068"
+  },
+  "0x7e59f0": {
+   "class": "?$BlitTransDarken@G",
+   "col_offset": 0,
+   "col_va": "0x7fe018"
+  },
+  "0x7e5a08": {
+   "class": "?$BlitTransZRemapXlat@G",
+   "col_offset": 0,
+   "col_va": "0x7fd708"
+  },
+  "0x7e5a20": {
+   "class": "?$BlitTransXlat@G",
+   "col_offset": 0,
+   "col_va": "0x7fdfc8"
+  },
+  "0x7e5a38": {
+   "class": "?$BlitPlainXlat@G",
+   "col_offset": 0,
+   "col_va": "0x7fdb18"
+  },
+  "0x7e5a50": {
+   "class": "?$RLEBlitTransRemapXlatZReadWrite@E",
+   "col_offset": 0,
+   "col_va": "0x7fece8"
+  },
+  "0x7e5a60": {
+   "class": "?$RLEBlitTransRemapDestZReadWrite@E",
+   "col_offset": 0,
+   "col_va": "0x7fe248"
+  },
+  "0x7e5a70": {
+   "class": "?$RLEBlitTransZRemapXlatZReadWrite@E",
+   "col_offset": 0,
+   "col_va": "0x7fe298"
+  },
+  "0x7e5a80": {
+   "class": "?$RLEBlitTransXlatZReadWrite@E",
+   "col_offset": 0,
+   "col_va": "0x7fdde8"
+  },
+  "0x7e5a90": {
+   "class": "?$RLEBlitTransRemapXlatZRead@E",
+   "col_offset": 0,
+   "col_va": "0x7ff148"
+  },
+  "0x7e5aa0": {
+   "class": "?$RLEBlitTransRemapDestZRead@E",
+   "col_offset": 0,
+   "col_va": "0x7fed38"
+  },
+  "0x7e5ab0": {
+   "class": "?$RLEBlitTransZRemapXlatZRead@E",
+   "col_offset": 0,
+   "col_va": "0x7fe478"
+  },
+  "0x7e5ac0": {
+   "class": "?$RLEBlitTransXlatZRead@E",
+   "col_offset": 0,
+   "col_va": "0x7fe0b8"
+  },
+  "0x7e5ad0": {
+   "class": "?$RLEBlitTransRemapXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7ff238"
+  },
+  "0x7e5ae0": {
+   "class": "?$RLEBlitTransRemapDest@E",
+   "col_offset": 0,
+   "col_va": "0x7ff390"
+  },
+  "0x7e5af0": {
+   "class": "?$RLEBlitTransZRemapXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7fe6a8"
+  },
+  "0x7e5b00": {
+   "class": "?$RLEBlitTransXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7fd7a8"
+  },
+  "0x7e5b10": {
+   "class": "?$BlitTransRemapXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7fdf28"
+  },
+  "0x7e5b28": {
+   "class": "?$BlitTransRemapDest@E",
+   "col_offset": 0,
+   "col_va": "0x7fd668"
+  },
+  "0x7e5b40": {
+   "class": "?$BlitTransZRemapXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7fd938"
+  },
+  "0x7e5b58": {
+   "class": "?$BlitTransXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7ff058"
+  },
+  "0x7e5b70": {
+   "class": "?$BlitPlainXlat@E",
+   "col_offset": 0,
+   "col_va": "0x7fefb8"
+  },
+  "0x7e5b88": {
+   "class": "Blitter",
+   "col_offset": 0,
+   "col_va": "0x7ff4c8"
+  },
+  "0x7e5ba0": {
+   "class": "RLEBlitter",
+   "col_offset": 0,
+   "col_va": "0x7ff4f8"
+  },
+  "0x7e5bc4": {
+   "class": "?$DynamicVectorClass@PAD",
+   "col_offset": 0,
+   "col_va": "0x7ff560"
+  },
+  "0x7e5be4": {
+   "class": "?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "col_offset": 0,
+   "col_va": "0x7ff5c8"
+  },
+  "0x7e5c04": {
+   "class": "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "col_offset": 0,
+   "col_va": "0x7ff5f8"
+  },
+  "0x7e5c24": {
+   "class": "?$VectorClass@PAD",
+   "col_offset": 0,
+   "col_va": "0x7ff628"
+  },
+  "0x7e5c54": {
+   "class": "CounterClass",
+   "col_offset": 0,
+   "col_va": "0x7ff690"
+  },
+  "0x7e5c84": {
+   "class": "?$VectorClass@UtagCONNECTDATA@@",
+   "col_offset": 0,
+   "col_va": "0x7ff6d8"
+  },
+  "0x7e5ca4": {
+   "class": "EnumConnectionsClass",
+   "col_offset": 0,
+   "col_va": "0x7ff740"
+  },
+  "0x7e5cc4": {
+   "class": "?$DynamicVectorClass@UtagCONNECTDATA@@",
+   "col_offset": 0,
+   "col_va": "0x7ff790"
+  },
+  "0x7e5ce4": {
+   "class": "ConnectionPointClass",
+   "col_offset": 0,
+   "col_va": "0x7ff7f8"
+  },
+  "0x7e5d08": {
+   "class": "?$VectorClass@PAUIConnectionPoint@@",
+   "col_offset": 0,
+   "col_va": "0x7ff840"
+  },
+  "0x7e5d28": {
+   "class": "EnumConnectionPointsClass",
+   "col_offset": 0,
+   "col_va": "0x7ff8a8"
+  },
+  "0x7e5d48": {
+   "class": "?$DynamicVectorClass@PAUIConnectionPoint@@",
+   "col_offset": 0,
+   "col_va": "0x7ff8f8"
+  },
+  "0x7e5d94": {
+   "class": "CStreamClass",
+   "col_offset": 4,
+   "col_va": "0x7ff910"
+  },
+  "0x7e5dac": {
+   "class": "CStreamClass",
+   "col_offset": 0,
+   "col_va": "0x7ff9b8"
+  },
+  "0x7e5dec": {
+   "class": "?$VectorClass@PAU_DDSURFACEDESC@@",
+   "col_offset": 0,
+   "col_va": "0x7ff9e8"
+  },
+  "0x7e5e0c": {
+   "class": "?$DynamicVectorClass@PAU_DDSURFACEDESC@@",
+   "col_offset": 0,
+   "col_va": "0x7ffa50"
+  },
+  "0x7e5e3c": {
+   "class": "Dial8Class",
+   "col_offset": 0,
+   "col_va": "0x7ffaa8"
+  },
+  "0x7e5edc": {
+   "class": "?$DynamicVectorClass@PAVDiskLaserClass@@",
+   "col_offset": 0,
+   "col_va": "0x7ffb10"
+  },
+  "0x7e5efc": {
+   "class": "?$VectorClass@PAVDiskLaserClass@@",
+   "col_offset": 0,
+   "col_va": "0x7ffb40"
+  },
+  "0x7e5f8c": {
+   "class": "DiskLaserClass",
+   "col_offset": 12,
+   "col_va": "0x7ffb58"
+  },
+  "0x7e5f94": {
+   "class": "DiskLaserClass",
+   "col_offset": 8,
+   "col_va": "0x7ffb70"
+  },
+  "0x7e5f9c": {
+   "class": "DiskLaserClass",
+   "col_offset": 4,
+   "col_va": "0x7ffb88"
+  },
+  "0x7e5fb8": {
+   "class": "DiskLaserClass",
+   "col_offset": 0,
+   "col_va": "0x7ffbf0"
+  },
+  "0x7e6060": {
+   "class": "LayerClass",
+   "col_offset": 0,
+   "col_va": "0x7ffc28"
+  },
+  "0x7e608c": {
+   "class": "TacticalClass@DisplayClass",
+   "col_offset": 0,
+   "col_va": "0x7ffc78"
+  },
+  "0x7e6114": {
+   "class": "DisplayClass",
+   "col_offset": 0,
+   "col_va": "0x7ffcb8"
+  },
+  "0x7e61e0": {
+   "class": "BufferStraw",
+   "col_offset": 0,
+   "col_va": "0x7ffd08"
+  },
+  "0x7e61f0": {
+   "class": "Straw",
+   "col_offset": 0,
+   "col_va": "0x7ffd38"
+  },
+  "0x7e6200": {
+   "class": "BufferPipe",
+   "col_offset": 0,
+   "col_va": "0x7ffd88"
+  },
+  "0x7e6218": {
+   "class": "Pipe",
+   "col_offset": 0,
+   "col_va": "0x7ffdb8"
+  },
+  "0x7e7e8c": {
+   "class": "DriveLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x7ffdd0"
+  },
+  "0x7e7eb0": {
+   "class": "DriveLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x7ffde8"
+  },
+  "0x7e7f7c": {
+   "class": "DriveLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x7ffeb0"
+  },
+  "0x7e7fcc": {
+   "class": "DropListClass",
+   "col_offset": 0,
+   "col_va": "0x7fff20"
+  },
+  "0x7e8088": {
+   "class": "ShapeButtonClass",
+   "col_offset": 0,
+   "col_va": "0x7fffb8"
+  },
+  "0x7e8118": {
+   "class": "ToggleClass",
+   "col_offset": 0,
+   "col_va": "0x800010"
+  },
+  "0x7e81a4": {
+   "class": "EditClass",
+   "col_offset": 0,
+   "col_va": "0x7fff60"
+  },
+  "0x7e8254": {
+   "class": "DropPodLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x800028"
+  },
+  "0x7e8278": {
+   "class": "DropPodLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x800040"
+  },
+  "0x7e8344": {
+   "class": "DropPodLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x8000a8"
+  },
+  "0x7e8500": {
+   "class": "?$VectorClass@PAUButtonFadeEffect@@",
+   "col_offset": 0,
+   "col_va": "0x8001a8"
+  },
+  "0x7e8520": {
+   "class": "?$VectorClass@PAUCrossDissolveEffect@@",
+   "col_offset": 0,
+   "col_va": "0x800110"
+  },
+  "0x7e854c": {
+   "class": "?$DynamicVectorClass@PAUCrossDissolveEffect@@",
+   "col_offset": 0,
+   "col_va": "0x800178"
+  },
+  "0x7e856c": {
+   "class": "?$DynamicVectorClass@PAUButtonFadeEffect@@",
+   "col_offset": 0,
+   "col_va": "0x800210"
+  },
+  "0x7e858c": {
+   "class": "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8000e0"
+  },
+  "0x7e85d4": {
+   "class": "DSurface",
+   "col_offset": 0,
+   "col_va": "0x800260"
+  },
+  "0x7e868c": {
+   "class": "?$DynamicVectorClass@PAVEBolt@@",
+   "col_offset": 0,
+   "col_va": "0x8002c8"
+  },
+  "0x7e86ac": {
+   "class": "?$VectorClass@PAVEBolt@@",
+   "col_offset": 0,
+   "col_va": "0x8002f8"
+  },
+  "0x7e86dc": {
+   "class": "?$DynamicVectorClass@PAVEgoClass@@",
+   "col_offset": 0,
+   "col_va": "0x800360"
+  },
+  "0x7e86fc": {
+   "class": "?$VectorClass@PAVEgoClass@@",
+   "col_offset": 0,
+   "col_va": "0x800390"
+  },
+  "0x7e873c": {
+   "class": "?$DynamicVectorClass@PAVEMPulseClass@@",
+   "col_offset": 0,
+   "col_va": "0x8003f8"
+  },
+  "0x7e875c": {
+   "class": "?$VectorClass@PAVEMPulseClass@@",
+   "col_offset": 0,
+   "col_va": "0x800428"
+  },
+  "0x7e877c": {
+   "class": "EMPulseClass",
+   "col_offset": 12,
+   "col_va": "0x800440"
+  },
+  "0x7e8784": {
+   "class": "EMPulseClass",
+   "col_offset": 8,
+   "col_va": "0x800458"
+  },
+  "0x7e878c": {
+   "class": "EMPulseClass",
+   "col_offset": 4,
+   "col_va": "0x800470"
+  },
+  "0x7e87a8": {
+   "class": "EMPulseClass",
+   "col_offset": 0,
+   "col_va": "0x8004d8"
+  },
+  "0x7e88a4": {
+   "class": "FactoryClass",
+   "col_offset": 12,
+   "col_va": "0x800558"
+  },
+  "0x7e88ac": {
+   "class": "FactoryClass",
+   "col_offset": 8,
+   "col_va": "0x800570"
+  },
+  "0x7e88b4": {
+   "class": "FactoryClass",
+   "col_offset": 4,
+   "col_va": "0x800588"
+  },
+  "0x7e88d0": {
+   "class": "FactoryClass",
+   "col_offset": 0,
+   "col_va": "0x800610"
+  },
+  "0x7e8934": {
+   "class": "?$DynamicVectorClass@PBVTechnoTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800540"
+  },
+  "0x7e8954": {
+   "class": "?$VectorClass@PBVTechnoTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800640"
+  },
+  "0x7e89f4": {
+   "class": "FlyLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x800658"
+  },
+  "0x7e8ac0": {
+   "class": "FlyLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x8006b8"
+  },
+  "0x7e8b0c": {
+   "class": "FoggedObjectClass",
+   "col_offset": 12,
+   "col_va": "0x8006d0"
+  },
+  "0x7e8b14": {
+   "class": "FoggedObjectClass",
+   "col_offset": 8,
+   "col_va": "0x8006e8"
+  },
+  "0x7e8b1c": {
+   "class": "FoggedObjectClass",
+   "col_offset": 4,
+   "col_va": "0x800700"
+  },
+  "0x7e8b38": {
+   "class": "FoggedObjectClass",
+   "col_offset": 0,
+   "col_va": "0x800768"
+  },
+  "0x7e8ba0": {
+   "class": "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x8007d0"
+  },
+  "0x7e8bc0": {
+   "class": "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x800800"
+  },
+  "0x7e8c28": {
+   "class": "?$DynamicVectorClass@PAVFootClass@@",
+   "col_offset": 0,
+   "col_va": "0x800868"
+  },
+  "0x7e8c48": {
+   "class": "?$VectorClass@PAVFootClass@@",
+   "col_offset": 0,
+   "col_va": "0x800898"
+  },
+  "0x7e8c68": {
+   "class": "FootClass",
+   "col_offset": 12,
+   "col_va": "0x8008b0"
+  },
+  "0x7e8c70": {
+   "class": "FootClass",
+   "col_offset": 8,
+   "col_va": "0x8008c8"
+  },
+  "0x7e8c78": {
+   "class": "FootClass",
+   "col_offset": 4,
+   "col_va": "0x8008e0"
+  },
+  "0x7e8c94": {
+   "class": "FootClass",
+   "col_offset": 0,
+   "col_va": "0x800948"
+  },
+  "0x7e91ec": {
+   "class": "?$DynamicVectorClass@PAVAbstractClass@@",
+   "col_offset": 0,
+   "col_va": "0x8009b0"
+  },
+  "0x7e920c": {
+   "class": "?$VectorClass@PAVAbstractClass@@",
+   "col_offset": 0,
+   "col_va": "0x8009e0"
+  },
+  "0x7e9264": {
+   "class": "?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x800a28"
+  },
+  "0x7e928c": {
+   "class": "?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x800a78"
+  },
+  "0x7e92bc": {
+   "class": "GadgetClass",
+   "col_offset": 0,
+   "col_va": "0x800ab0"
+  },
+  "0x7e9344": {
+   "class": "LinkClass",
+   "col_offset": 0,
+   "col_va": "0x800ae0"
+  },
+  "0x7e9384": {
+   "class": "GaugeClass",
+   "col_offset": 0,
+   "col_va": "0x800b38"
+  },
+  "0x7e9430": {
+   "class": "TriColorGaugeClass",
+   "col_offset": 0,
+   "col_va": "0x800b90"
+  },
+  "0x7e9b64": {
+   "class": "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800bf8"
+  },
+  "0x7e9b84": {
+   "class": "?$VectorClass@PAVAITriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800c28"
+  },
+  "0x7e9ba4": {
+   "class": "?$DynamicVectorClass@PAVTriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800c90"
+  },
+  "0x7e9bc4": {
+   "class": "?$VectorClass@PAVTriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800cc0"
+  },
+  "0x7e9be4": {
+   "class": "?$DynamicVectorClass@PAVTriggerClass@@",
+   "col_offset": 0,
+   "col_va": "0x800d28"
+  },
+  "0x7e9c04": {
+   "class": "?$VectorClass@PAVTriggerClass@@",
+   "col_offset": 0,
+   "col_va": "0x800d58"
+  },
+  "0x7e9c24": {
+   "class": "?$DynamicVectorClass@PAVBuildingLightClass@@",
+   "col_offset": 0,
+   "col_va": "0x800dc0"
+  },
+  "0x7e9c44": {
+   "class": "?$VectorClass@PAVBuildingLightClass@@",
+   "col_offset": 0,
+   "col_va": "0x800df0"
+  },
+  "0x7e9c64": {
+   "class": "?$DynamicVectorClass@PAVParticleSystemClass@@",
+   "col_offset": 0,
+   "col_va": "0x800e58"
+  },
+  "0x7e9c84": {
+   "class": "?$VectorClass@PAVParticleSystemClass@@",
+   "col_offset": 0,
+   "col_va": "0x800e88"
+  },
+  "0x7e9ca4": {
+   "class": "?$DynamicVectorClass@PAVTubeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800ef0"
+  },
+  "0x7e9cc4": {
+   "class": "?$VectorClass@PAVTubeClass@@",
+   "col_offset": 0,
+   "col_va": "0x800f20"
+  },
+  "0x7e9ce4": {
+   "class": "?$DynamicVectorClass@PAVWaveClass@@",
+   "col_offset": 0,
+   "col_va": "0x800f88"
+  },
+  "0x7e9d04": {
+   "class": "?$VectorClass@PAVWaveClass@@",
+   "col_offset": 0,
+   "col_va": "0x800fb8"
+  },
+  "0x7e9d24": {
+   "class": "?$DynamicVectorClass@PAVOverlayClass@@",
+   "col_offset": 0,
+   "col_va": "0x801020"
+  },
+  "0x7e9d44": {
+   "class": "?$VectorClass@PAVOverlayClass@@",
+   "col_offset": 0,
+   "col_va": "0x801050"
+  },
+  "0x7e9d64": {
+   "class": "?$DynamicVectorClass@PAVParticleClass@@",
+   "col_offset": 0,
+   "col_va": "0x8010b8"
+  },
+  "0x7e9d84": {
+   "class": "?$VectorClass@PAVParticleClass@@",
+   "col_offset": 0,
+   "col_va": "0x8010e8"
+  },
+  "0x7e9da4": {
+   "class": "?$DynamicVectorClass@PAVSmudgeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801150"
+  },
+  "0x7e9dc4": {
+   "class": "?$VectorClass@PAVSmudgeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801180"
+  },
+  "0x7e9de4": {
+   "class": "?$DynamicVectorClass@PAVTerrainClass@@",
+   "col_offset": 0,
+   "col_va": "0x8011e8"
+  },
+  "0x7e9e04": {
+   "class": "?$VectorClass@PAVTerrainClass@@",
+   "col_offset": 0,
+   "col_va": "0x801218"
+  },
+  "0x7e9e24": {
+   "class": "?$DynamicVectorClass@PAVBuildingClass@@",
+   "col_offset": 0,
+   "col_va": "0x801280"
+  },
+  "0x7e9e44": {
+   "class": "?$VectorClass@PAVBuildingClass@@",
+   "col_offset": 0,
+   "col_va": "0x8012b0"
+  },
+  "0x7e9e64": {
+   "class": "?$DynamicVectorClass@PAVAircraftClass@@",
+   "col_offset": 0,
+   "col_va": "0x801318"
+  },
+  "0x7e9e84": {
+   "class": "?$VectorClass@PAVAircraftClass@@",
+   "col_offset": 0,
+   "col_va": "0x801348"
+  },
+  "0x7e9ea4": {
+   "class": "?$DynamicVectorClass@PAVUnitClass@@",
+   "col_offset": 0,
+   "col_va": "0x8013b0"
+  },
+  "0x7e9ec4": {
+   "class": "?$VectorClass@PAVUnitClass@@",
+   "col_offset": 0,
+   "col_va": "0x8013e0"
+  },
+  "0x7e9ee4": {
+   "class": "?$DynamicVectorClass@PAVHouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x801448"
+  },
+  "0x7e9f04": {
+   "class": "?$VectorClass@PAVHouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x801478"
+  },
+  "0x7e9f24": {
+   "class": "?$DynamicVectorClass@PAVAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x8014e0"
+  },
+  "0x7e9f44": {
+   "class": "?$VectorClass@PAVAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x801510"
+  },
+  "0x7e9f64": {
+   "class": "?$DynamicVectorClass@PAVTeamClass@@",
+   "col_offset": 0,
+   "col_va": "0x801578"
+  },
+  "0x7e9f84": {
+   "class": "?$VectorClass@PAVTeamClass@@",
+   "col_offset": 0,
+   "col_va": "0x8015a8"
+  },
+  "0x7e9fa4": {
+   "class": "?$DynamicVectorClass@PAVFactoryClass@@",
+   "col_offset": 0,
+   "col_va": "0x801610"
+  },
+  "0x7e9fc4": {
+   "class": "?$VectorClass@PAVFactoryClass@@",
+   "col_offset": 0,
+   "col_va": "0x801640"
+  },
+  "0x7e9fe4": {
+   "class": "?$DynamicVectorClass@PAVCampaignClass@@",
+   "col_offset": 0,
+   "col_va": "0x8016a8"
+  },
+  "0x7ea004": {
+   "class": "?$VectorClass@PAVCampaignClass@@",
+   "col_offset": 0,
+   "col_va": "0x8016d8"
+  },
+  "0x7ea024": {
+   "class": "?$DynamicVectorClass@PAVSideClass@@",
+   "col_offset": 0,
+   "col_va": "0x801740"
+  },
+  "0x7ea044": {
+   "class": "?$VectorClass@PAVSideClass@@",
+   "col_offset": 0,
+   "col_va": "0x801770"
+  },
+  "0x7ea064": {
+   "class": "?$DynamicVectorClass@PAVHouseTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8017d8"
+  },
+  "0x7ea084": {
+   "class": "?$VectorClass@PAVHouseTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801808"
+  },
+  "0x7ea0a4": {
+   "class": "?$DynamicVectorClass@PAVTaskForceClass@@",
+   "col_offset": 0,
+   "col_va": "0x801870"
+  },
+  "0x7ea0c4": {
+   "class": "?$VectorClass@PAVTaskForceClass@@",
+   "col_offset": 0,
+   "col_va": "0x8018a0"
+  },
+  "0x7ea0e4": {
+   "class": "?$DynamicVectorClass@PAVTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801908"
+  },
+  "0x7ea104": {
+   "class": "?$VectorClass@PAVTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801938"
+  },
+  "0x7ea124": {
+   "class": "?$DynamicVectorClass@PAVScriptTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8019a0"
+  },
+  "0x7ea144": {
+   "class": "?$VectorClass@PAVScriptTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8019d0"
+  },
+  "0x7ea164": {
+   "class": "?$DynamicVectorClass@PAVOverlayTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801a38"
+  },
+  "0x7ea184": {
+   "class": "?$VectorClass@PAVOverlayTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801a68"
+  },
+  "0x7ea1a4": {
+   "class": "?$DynamicVectorClass@PAVSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801ad0"
+  },
+  "0x7ea1c4": {
+   "class": "?$VectorClass@PAVSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801b00"
+  },
+  "0x7ea1e4": {
+   "class": "?$DynamicVectorClass@PAVTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801b68"
+  },
+  "0x7ea204": {
+   "class": "?$VectorClass@PAVTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801b98"
+  },
+  "0x7ea224": {
+   "class": "?$DynamicVectorClass@PAVBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801c00"
+  },
+  "0x7ea244": {
+   "class": "?$VectorClass@PAVBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801c30"
+  },
+  "0x7ea264": {
+   "class": "?$DynamicVectorClass@PAVAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801c98"
+  },
+  "0x7ea284": {
+   "class": "?$VectorClass@PAVAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801cc8"
+  },
+  "0x7ea2a4": {
+   "class": "?$DynamicVectorClass@PAVUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801d30"
+  },
+  "0x7ea2c4": {
+   "class": "?$VectorClass@PAVUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801d60"
+  },
+  "0x7ea2e4": {
+   "class": "?$DynamicVectorClass@PAVAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801dc8"
+  },
+  "0x7ea304": {
+   "class": "?$VectorClass@PAVAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801df8"
+  },
+  "0x7ea324": {
+   "class": "?$DynamicVectorClass@PAVInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801e60"
+  },
+  "0x7ea344": {
+   "class": "?$VectorClass@PAVInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801e90"
+  },
+  "0x7ea364": {
+   "class": "?$DynamicVectorClass@PAVBulletTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801ef8"
+  },
+  "0x7ea384": {
+   "class": "?$VectorClass@PAVBulletTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801f28"
+  },
+  "0x7ea3a4": {
+   "class": "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801f90"
+  },
+  "0x7ea3c4": {
+   "class": "?$VectorClass@PAVVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x801fc0"
+  },
+  "0x7ea3e4": {
+   "class": "?$DynamicVectorClass@PAVIsometricTileTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802028"
+  },
+  "0x7ea404": {
+   "class": "?$VectorClass@PAVIsometricTileTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802058"
+  },
+  "0x7ea424": {
+   "class": "?$DynamicVectorClass@PAVParticleTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8020c0"
+  },
+  "0x7ea444": {
+   "class": "?$VectorClass@PAVParticleTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8020f0"
+  },
+  "0x7ea464": {
+   "class": "?$DynamicVectorClass@PAVParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802158"
+  },
+  "0x7ea484": {
+   "class": "?$VectorClass@PAVParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802188"
+  },
+  "0x7ea4a4": {
+   "class": "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8021f0"
+  },
+  "0x7ea4c4": {
+   "class": "?$VectorClass@PAVSuperWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802220"
+  },
+  "0x7ea4e4": {
+   "class": "?$DynamicVectorClass@PAVSuperClass@@",
+   "col_offset": 0,
+   "col_va": "0x802288"
+  },
+  "0x7ea504": {
+   "class": "?$VectorClass@PAVSuperClass@@",
+   "col_offset": 0,
+   "col_va": "0x8022b8"
+  },
+  "0x7ea524": {
+   "class": "?$DynamicVectorClass@PAVAbstractTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802320"
+  },
+  "0x7ea544": {
+   "class": "?$VectorClass@PAVAbstractTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802350"
+  },
+  "0x7ea564": {
+   "class": "TiberianSunClassFactory",
+   "col_offset": 0,
+   "col_va": "0x8023b8"
+  },
+  "0x7ea57c": {
+   "class": "VersionClass",
+   "col_offset": 0,
+   "col_va": "0x802400"
+  },
+  "0x7ea584": {
+   "class": "?$VectorClass@PAUThemeControl@@",
+   "col_offset": 0,
+   "col_va": "0x802448"
+  },
+  "0x7ea5a4": {
+   "class": "?$DynamicVectorClass@PAVTagClass@@",
+   "col_offset": 0,
+   "col_va": "0x8024b0"
+  },
+  "0x7ea5c4": {
+   "class": "?$VectorClass@PAVTagClass@@",
+   "col_offset": 0,
+   "col_va": "0x8024e0"
+  },
+  "0x7ea5f4": {
+   "class": "INIClass",
+   "col_offset": 0,
+   "col_va": "0x802510"
+  },
+  "0x7ea5fc": {
+   "class": "GraphicMenu",
+   "col_offset": 0,
+   "col_va": "0x8025c0"
+  },
+  "0x7ea604": {
+   "class": "?$DynamicVectorClass@PAVGraphicMenuItem@@",
+   "col_offset": 0,
+   "col_va": "0x802578"
+  },
+  "0x7ea624": {
+   "class": "?$VectorClass@PAVGraphicMenuItem@@",
+   "col_offset": 0,
+   "col_va": "0x802638"
+  },
+  "0x7ea644": {
+   "class": "?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@",
+   "col_offset": 0,
+   "col_va": "0x802608"
+  },
+  "0x7ea658": {
+   "class": "GraphicMenuAnimItem",
+   "col_offset": 0,
+   "col_va": "0x8026a0"
+  },
+  "0x7ea674": {
+   "class": "GraphicMenuImageItem",
+   "col_offset": 0,
+   "col_va": "0x8026f0"
+  },
+  "0x7ea690": {
+   "class": "GraphicMenuItem",
+   "col_offset": 0,
+   "col_va": "0x802720"
+  },
+  "0x7ea6ac": {
+   "class": "GraphicMenuShortcutItem",
+   "col_offset": 0,
+   "col_va": "0x802770"
+  },
+  "0x7ea6c8": {
+   "class": "?$VectorCursor@IV?$DynamicVectorClass@I@@",
+   "col_offset": 0,
+   "col_va": "0x8027b8"
+  },
+  "0x7ea6fc": {
+   "class": "GScreenClass",
+   "col_offset": 0,
+   "col_va": "0x8027f0"
+  },
+  "0x7ea7b4": {
+   "class": "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x802858"
+  },
+  "0x7ea7d4": {
+   "class": "?$VectorClass@PAUBuildChoiceClass@HouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x802888"
+  },
+  "0x7ea7f4": {
+   "class": "HouseClass",
+   "col_offset": 44,
+   "col_va": "0x8028a0"
+  },
+  "0x7ea80c": {
+   "class": "HouseClass",
+   "col_offset": 40,
+   "col_va": "0x8028b8"
+  },
+  "0x7ea834": {
+   "class": "HouseClass",
+   "col_offset": 36,
+   "col_va": "0x8028d0"
+  },
+  "0x7ea874": {
+   "class": "HouseClass",
+   "col_offset": 12,
+   "col_va": "0x8028e8"
+  },
+  "0x7ea87c": {
+   "class": "HouseClass",
+   "col_offset": 8,
+   "col_va": "0x802900"
+  },
+  "0x7ea884": {
+   "class": "HouseClass",
+   "col_offset": 4,
+   "col_va": "0x802918"
+  },
+  "0x7ea8a0": {
+   "class": "HouseClass",
+   "col_offset": 0,
+   "col_va": "0x802a28"
+  },
+  "0x7ea904": {
+   "class": "?$DynamicVectorClass@UScoutStruct@@",
+   "col_offset": 0,
+   "col_va": "0x802a90"
+  },
+  "0x7ea924": {
+   "class": "?$DynamicVectorClass@UAngerStruct@@",
+   "col_offset": 0,
+   "col_va": "0x802af8"
+  },
+  "0x7ea944": {
+   "class": "?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x802b60"
+  },
+  "0x7ea964": {
+   "class": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x802bf0"
+  },
+  "0x7ea984": {
+   "class": "?$VectorClass@UAngerStruct@@",
+   "col_offset": 0,
+   "col_va": "0x802bc0"
+  },
+  "0x7ea9a4": {
+   "class": "?$VectorClass@UScoutStruct@@",
+   "col_offset": 0,
+   "col_va": "0x802b90"
+  },
+  "0x7ea9c4": {
+   "class": "?$TypeList@PBVTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802ca0"
+  },
+  "0x7ea9e4": {
+   "class": "?$VectorClass@PBVTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802c20"
+  },
+  "0x7eaa08": {
+   "class": "?$VectorClass@PBVBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802cd0"
+  },
+  "0x7eaa28": {
+   "class": "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802d38"
+  },
+  "0x7eaa5c": {
+   "class": "?$VectorClass@_N",
+   "col_offset": 0,
+   "col_va": "0x802d68"
+  },
+  "0x7eaa7c": {
+   "class": "?$DynamicVectorClass@_N",
+   "col_offset": 0,
+   "col_va": "0x802dd0"
+  },
+  "0x7eaaa4": {
+   "class": "?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x802e00"
+  },
+  "0x7eaac4": {
+   "class": "?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x802e68"
+  },
+  "0x7eaae8": {
+   "class": "?$DynamicVectorClass@PBVTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802ea0"
+  },
+  "0x7eab2c": {
+   "class": "HouseTypeClass",
+   "col_offset": 12,
+   "col_va": "0x803038"
+  },
+  "0x7eab34": {
+   "class": "HouseTypeClass",
+   "col_offset": 8,
+   "col_va": "0x803050"
+  },
+  "0x7eab3c": {
+   "class": "HouseTypeClass",
+   "col_offset": 4,
+   "col_va": "0x803068"
+  },
+  "0x7eab58": {
+   "class": "HouseTypeClass",
+   "col_offset": 0,
+   "col_va": "0x8030d8"
+  },
+  "0x7eabc8": {
+   "class": "?$TypeList@PBVAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802f20"
+  },
+  "0x7eabe8": {
+   "class": "?$TypeList@PBVUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x802fa0"
+  },
+  "0x7eac08": {
+   "class": "?$TypeList@PBVInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803020"
+  },
+  "0x7eac28": {
+   "class": "?$VectorClass@PBVInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803168"
+  },
+  "0x7eac48": {
+   "class": "?$VectorClass@PBVUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803108"
+  },
+  "0x7eac68": {
+   "class": "?$VectorClass@PBVAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803138"
+  },
+  "0x7eac88": {
+   "class": "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8031a0"
+  },
+  "0x7eaca8": {
+   "class": "?$DynamicVectorClass@PBVUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8031d8"
+  },
+  "0x7eacc8": {
+   "class": "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803210"
+  },
+  "0x7eacfc": {
+   "class": "HoverLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x803228"
+  },
+  "0x7eadc8": {
+   "class": "HoverLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x803288"
+  },
+  "0x7eadf4": {
+   "class": "LocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x8032a0"
+  },
+  "0x7eaec0": {
+   "class": "LocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x8032e8"
+  },
+  "0x7eb02c": {
+   "class": "InfantryClass",
+   "col_offset": 12,
+   "col_va": "0x803300"
+  },
+  "0x7eb034": {
+   "class": "InfantryClass",
+   "col_offset": 8,
+   "col_va": "0x803318"
+  },
+  "0x7eb03c": {
+   "class": "InfantryClass",
+   "col_offset": 4,
+   "col_va": "0x803330"
+  },
+  "0x7eb058": {
+   "class": "InfantryClass",
+   "col_offset": 0,
+   "col_va": "0x8033b8"
+  },
+  "0x7eb5e4": {
+   "class": "InfantryTypeClass",
+   "col_offset": 12,
+   "col_va": "0x8033d0"
+  },
+  "0x7eb5ec": {
+   "class": "InfantryTypeClass",
+   "col_offset": 8,
+   "col_va": "0x8033e8"
+  },
+  "0x7eb5f4": {
+   "class": "InfantryTypeClass",
+   "col_offset": 4,
+   "col_va": "0x803400"
+  },
+  "0x7eb610": {
+   "class": "InfantryTypeClass",
+   "col_offset": 0,
+   "col_va": "0x803478"
+  },
+  "0x7eb6d4": {
+   "class": "?$TypeList@PBVAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8034f8"
+  },
+  "0x7eb6f4": {
+   "class": "?$VectorClass@PBVAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803528"
+  },
+  "0x7eb714": {
+   "class": "?$DynamicVectorClass@PBVAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x803560"
+  },
+  "0x7eb734": {
+   "class": "INIEntry@INIClass",
+   "col_offset": 0,
+   "col_va": "0x803668"
+  },
+  "0x7eb73c": {
+   "class": "INISection@INIClass",
+   "col_offset": 0,
+   "col_va": "0x803708"
+  },
+  "0x7eb744": {
+   "class": "?$List@PAUINIEntry@INIClass@@",
+   "col_offset": 0,
+   "col_va": "0x803600"
+  },
+  "0x7eb74c": {
+   "class": "?$Node@PAUINISection@INIClass@@",
+   "col_offset": 0,
+   "col_va": "0x8036a0"
+  },
+  "0x7eb754": {
+   "class": "CacheStraw",
+   "col_offset": 0,
+   "col_va": "0x8035b0"
+  },
+  "0x7eb764": {
+   "class": "Base64Straw",
+   "col_offset": 0,
+   "col_va": "0x803758"
+  },
+  "0x7eb774": {
+   "class": "Base64Pipe",
+   "col_offset": 0,
+   "col_va": "0x8037a8"
+  },
+  "0x7eb80c": {
+   "class": "?$VectorClass@PAVCCINIClass@@",
+   "col_offset": 0,
+   "col_va": "0x8037d8"
+  },
+  "0x7eb82c": {
+   "class": "?$DynamicVectorClass@PAVCCINIClass@@",
+   "col_offset": 0,
+   "col_va": "0x803840"
+  },
+  "0x7eb84c": {
+   "class": "CreateTeamCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8040b0"
+  },
+  "0x7eb874": {
+   "class": "SetInfantryTabCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803cf0"
+  },
+  "0x7eb89c": {
+   "class": "SetUnitTabCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803b10"
+  },
+  "0x7eb8c4": {
+   "class": "SetDefenseTabCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803e30"
+  },
+  "0x7eb8ec": {
+   "class": "SetStructureTabCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803f70"
+  },
+  "0x7eb914": {
+   "class": "VeterancyNavCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803e80"
+  },
+  "0x7eb93c": {
+   "class": "HealthNavCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803fc0"
+  },
+  "0x7eb964": {
+   "class": "TypeSelectCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804100"
+  },
+  "0x7eb98c": {
+   "class": "CombatantSelectCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803980"
+  },
+  "0x7eb9b4": {
+   "class": "PlanningModeCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803bb0"
+  },
+  "0x7eb9dc": {
+   "class": "NextObjectCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804240"
+  },
+  "0x7eba04": {
+   "class": "PrevObjectCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803d40"
+  },
+  "0x7eba2c": {
+   "class": "DeployCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803930"
+  },
+  "0x7eba54": {
+   "class": "AllToCheerCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803a20"
+  },
+  "0x7eba7c": {
+   "class": "StopCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803b60"
+  },
+  "0x7ebaa4": {
+   "class": "GuardCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8043d0"
+  },
+  "0x7ebacc": {
+   "class": "ScatterCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804290"
+  },
+  "0x7ebaf4": {
+   "class": "CenterViewCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803de0"
+  },
+  "0x7ebb1c": {
+   "class": "CenterBaseCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803c50"
+  },
+  "0x7ebb44": {
+   "class": "AllianceCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803a70"
+  },
+  "0x7ebb6c": {
+   "class": "ToggleRepairCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803890"
+  },
+  "0x7ebb94": {
+   "class": "ToggleSellCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804330"
+  },
+  "0x7ebbbc": {
+   "class": "BeaconPlacementCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803ac0"
+  },
+  "0x7ebbe4": {
+   "class": "CenterREventCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8039d0"
+  },
+  "0x7ebc0c": {
+   "class": "SidebarDownCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804380"
+  },
+  "0x7ebc34": {
+   "class": "SidebarUpCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8038e0"
+  },
+  "0x7ebc5c": {
+   "class": "OptionsCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803ca0"
+  },
+  "0x7ebc84": {
+   "class": "SetView4CommandClass",
+   "col_offset": 0,
+   "col_va": "0x804060"
+  },
+  "0x7ebcac": {
+   "class": "SetView3CommandClass",
+   "col_offset": 0,
+   "col_va": "0x8041a0"
+  },
+  "0x7ebcd4": {
+   "class": "SetView2CommandClass",
+   "col_offset": 0,
+   "col_va": "0x803c00"
+  },
+  "0x7ebcfc": {
+   "class": "SetView1CommandClass",
+   "col_offset": 0,
+   "col_va": "0x803d90"
+  },
+  "0x7ebd24": {
+   "class": "View4CommandClass",
+   "col_offset": 0,
+   "col_va": "0x803ed0"
+  },
+  "0x7ebd4c": {
+   "class": "View3CommandClass",
+   "col_offset": 0,
+   "col_va": "0x804010"
+  },
+  "0x7ebd74": {
+   "class": "View2CommandClass",
+   "col_offset": 0,
+   "col_va": "0x804150"
+  },
+  "0x7ebd9c": {
+   "class": "View1CommandClass",
+   "col_offset": 0,
+   "col_va": "0x8041f0"
+  },
+  "0x7ebdc4": {
+   "class": "FollowCommandClass",
+   "col_offset": 0,
+   "col_va": "0x803f20"
+  },
+  "0x7ebdec": {
+   "class": "MultiplayerSyncCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8042e0"
+  },
+  "0x7ebe14": {
+   "class": "MultiplayerDebugCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804438"
+  },
+  "0x7ebe3c": {
+   "class": "CommandClass",
+   "col_offset": 0,
+   "col_va": "0x804468"
+  },
+  "0x7ebe64": {
+   "class": "SelectTeamCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8044b8"
+  },
+  "0x7ebe8c": {
+   "class": "AddTeamCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804508"
+  },
+  "0x7ebeb4": {
+   "class": "CenterTeamCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804558"
+  },
+  "0x7ebedc": {
+   "class": "TauntCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8045a8"
+  },
+  "0x7ebf04": {
+   "class": "ScreenCaptureCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8045f8"
+  },
+  "0x7ebf2c": {
+   "class": "PageUserCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804648"
+  },
+  "0x7ebf54": {
+   "class": "CursorPositionCommandClass",
+   "col_offset": 0,
+   "col_va": "0x804698"
+  },
+  "0x7ebf7c": {
+   "class": "DeleteCommandClass",
+   "col_offset": 0,
+   "col_va": "0x8046e8"
+  },
+  "0x7ebfa4": {
+   "class": "?$rc_ptr@VWDTTerritory@@",
+   "col_offset": 0,
+   "col_va": "0x804750"
+  },
+  "0x7ebfcc": {
+   "class": "?$DynamicVectorClass@PBVAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x8047b8"
+  },
+  "0x7ebfec": {
+   "class": "?$VectorClass@PBVAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x8047e8"
+  },
+  "0x7ec05c": {
+   "class": "?$DynamicVectorClass@PAVIonBlastClass@@",
+   "col_offset": 0,
+   "col_va": "0x804850"
+  },
+  "0x7ec07c": {
+   "class": "?$VectorClass@PAVIonBlastClass@@",
+   "col_offset": 0,
+   "col_va": "0x804880"
+  },
+  "0x7ec0cc": {
+   "class": "IPXConnClass",
+   "col_offset": 0,
+   "col_va": "0x8048d0"
+  },
+  "0x7ec10c": {
+   "class": "IPXGlobalConnClass",
+   "col_offset": 0,
+   "col_va": "0x804920"
+  },
+  "0x7ec16c": {
+   "class": "IPXManagerClass",
+   "col_offset": 0,
+   "col_va": "0x804988"
+  },
+  "0x7ec1d4": {
+   "class": "ConnManClass",
+   "col_offset": 0,
+   "col_va": "0x8049b8"
+  },
+  "0x7ec22c": {
+   "class": "IsometricTileClass",
+   "col_offset": 12,
+   "col_va": "0x8049d0"
+  },
+  "0x7ec234": {
+   "class": "IsometricTileClass",
+   "col_offset": 8,
+   "col_va": "0x8049e8"
+  },
+  "0x7ec23c": {
+   "class": "IsometricTileClass",
+   "col_offset": 4,
+   "col_va": "0x804a00"
+  },
+  "0x7ec258": {
+   "class": "IsometricTileClass",
+   "col_offset": 0,
+   "col_va": "0x804a70"
+  },
+  "0x7ecbdc": {
+   "class": "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x804ad8"
+  },
+  "0x7ecbfc": {
+   "class": "?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x804b08"
+  },
+  "0x7ecc1c": {
+   "class": "IsometricTileTypeClass",
+   "col_offset": 12,
+   "col_va": "0x804b20"
+  },
+  "0x7ecc24": {
+   "class": "IsometricTileTypeClass",
+   "col_offset": 8,
+   "col_va": "0x804b38"
+  },
+  "0x7ecc2c": {
+   "class": "IsometricTileTypeClass",
+   "col_offset": 4,
+   "col_va": "0x804b50"
+  },
+  "0x7ecc48": {
+   "class": "IsometricTileTypeClass",
+   "col_offset": 0,
+   "col_va": "0x804bc0"
+  },
+  "0x7eccec": {
+   "class": "?$DynamicVectorClass@PAG",
+   "col_offset": 0,
+   "col_va": "0x804c28"
+  },
+  "0x7ecd0c": {
+   "class": "?$VectorClass@PAG",
+   "col_offset": 0,
+   "col_va": "0x804c58"
+  },
+  "0x7ecd44": {
+   "class": "JumpjetLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x804c70"
+  },
+  "0x7ecd68": {
+   "class": "JumpjetLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x804c88"
+  },
+  "0x7ece34": {
+   "class": "JumpjetLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x804cf0"
+  },
+  "0x7ece7c": {
+   "class": "?$DynamicVectorClass@PAUKamikazeControl@@",
+   "col_offset": 0,
+   "col_va": "0x804d58"
+  },
+  "0x7ece9c": {
+   "class": "?$VectorClass@PAUKamikazeControl@@",
+   "col_offset": 0,
+   "col_va": "0x804d88"
+  },
+  "0x7ecedc": {
+   "class": "?$DynamicVectorClass@PAVLaserDrawClass@@",
+   "col_offset": 0,
+   "col_va": "0x804df0"
+  },
+  "0x7ecefc": {
+   "class": "?$VectorClass@PAVLaserDrawClass@@",
+   "col_offset": 0,
+   "col_va": "0x804e20"
+  },
+  "0x7ecf2c": {
+   "class": "LCWPipe",
+   "col_offset": 0,
+   "col_va": "0x804e70"
+  },
+  "0x7ecf44": {
+   "class": "LCWStraw",
+   "col_offset": 0,
+   "col_va": "0x804ec0"
+  },
+  "0x7ecf64": {
+   "class": "LoadProgressMgr",
+   "col_offset": 0,
+   "col_va": "0x804f10"
+  },
+  "0x7ecf7c": {
+   "class": "?$DynamicVectorClass@PAVLightSourceClass@@",
+   "col_offset": 0,
+   "col_va": "0x804f78"
+  },
+  "0x7ecf9c": {
+   "class": "?$VectorClass@PAVLightSourceClass@@",
+   "col_offset": 0,
+   "col_va": "0x804fa8"
+  },
+  "0x7ecfbc": {
+   "class": "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@",
+   "col_offset": 0,
+   "col_va": "0x805010"
+  },
+  "0x7ecfdc": {
+   "class": "?$VectorClass@PAVPendingCellClass@LightSourceClass@@",
+   "col_offset": 0,
+   "col_va": "0x805040"
+  },
+  "0x7ecffc": {
+   "class": "LightSourceClass",
+   "col_offset": 12,
+   "col_va": "0x805058"
+  },
+  "0x7ed004": {
+   "class": "LightSourceClass",
+   "col_offset": 8,
+   "col_va": "0x805070"
+  },
+  "0x7ed00c": {
+   "class": "LightSourceClass",
+   "col_offset": 4,
+   "col_va": "0x805088"
+  },
+  "0x7ed028": {
+   "class": "LightSourceClass",
+   "col_offset": 0,
+   "col_va": "0x8050f0"
+  },
+  "0x7ed0a4": {
+   "class": "LightConvertClass",
+   "col_offset": 0,
+   "col_va": "0x805140"
+  },
+  "0x7ed0cc": {
+   "class": "?$DynamicVectorClass@PAVLineTrail@@",
+   "col_offset": 0,
+   "col_va": "0x8051a8"
+  },
+  "0x7ed0ec": {
+   "class": "?$VectorClass@PAVLineTrail@@",
+   "col_offset": 0,
+   "col_va": "0x8051d8"
+  },
+  "0x7ed10c": {
+   "class": "ListClass",
+   "col_offset": 0,
+   "col_va": "0x805218"
+  },
+  "0x7ed1dc": {
+   "class": "?$DynamicVectorClass@PBG",
+   "col_offset": 0,
+   "col_va": "0x805280"
+  },
+  "0x7ed1fc": {
+   "class": "?$VectorClass@PBG",
+   "col_offset": 0,
+   "col_va": "0x8052b0"
+  },
+  "0x7ed21c": {
+   "class": "SliderClass",
+   "col_offset": 0,
+   "col_va": "0x805308"
+  },
+  "0x7ed2e4": {
+   "class": "LoadOptionsClass",
+   "col_offset": 0,
+   "col_va": "0x8053b8"
+  },
+  "0x7ed30c": {
+   "class": "?$DynamicVectorClass@PAVFileEntryClass@@",
+   "col_offset": 0,
+   "col_va": "0x805370"
+  },
+  "0x7ed32c": {
+   "class": "?$VectorClass@PAVFileEntryClass@@",
+   "col_offset": 0,
+   "col_va": "0x8053e8"
+  },
+  "0x7ed37c": {
+   "class": "LZOPipe",
+   "col_offset": 0,
+   "col_va": "0x805438"
+  },
+  "0x7ed394": {
+   "class": "LZOStraw",
+   "col_offset": 0,
+   "col_va": "0x805488"
+  },
+  "0x7ed404": {
+   "class": "MapClass",
+   "col_offset": 0,
+   "col_va": "0x8054c8"
+  },
+  "0x7ed480": {
+   "class": "?$VectorClass@PAVCellClass@@",
+   "col_offset": 0,
+   "col_va": "0x8055e0"
+  },
+  "0x7ed4a0": {
+   "class": "?$DynamicVectorClass@USubzoneTrackingStruct@@",
+   "col_offset": 0,
+   "col_va": "0x805598"
+  },
+  "0x7ed4c0": {
+   "class": "?$DynamicVectorClass@UZoneConnectionClass@@",
+   "col_offset": 0,
+   "col_va": "0x805530"
+  },
+  "0x7ed4e0": {
+   "class": "?$VectorClass@UZoneConnectionClass@@",
+   "col_offset": 0,
+   "col_va": "0x805610"
+  },
+  "0x7ed500": {
+   "class": "?$VectorClass@USubzoneTrackingStruct@@",
+   "col_offset": 0,
+   "col_va": "0x805640"
+  },
+  "0x7ed520": {
+   "class": "?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+   "col_offset": 0,
+   "col_va": "0x805710"
+  },
+  "0x7ed540": {
+   "class": "?$DynamicVectorClass@U?$HashObject@II@@",
+   "col_offset": 0,
+   "col_va": "0x8056a8"
+  },
+  "0x7ed560": {
+   "class": "?$VectorClass@W4PassabilityType@@",
+   "col_offset": 0,
+   "col_va": "0x805740"
+  },
+  "0x7ed580": {
+   "class": "?$DynamicVectorClass@W4PassabilityType@@",
+   "col_offset": 0,
+   "col_va": "0x8057a8"
+  },
+  "0x7ed5a0": {
+   "class": "?$DynamicVectorClass@USubzoneConnectionStruct@@",
+   "col_offset": 0,
+   "col_va": "0x8057f8"
+  },
+  "0x7ed5c0": {
+   "class": "?$VectorClass@U?$HashObject@II@@",
+   "col_offset": 0,
+   "col_va": "0x805828"
+  },
+  "0x7ed5e0": {
+   "class": "?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+   "col_offset": 0,
+   "col_va": "0x805858"
+  },
+  "0x7ed858": {
+   "class": "?$DynamicVectorClass@PAVMapRegionClass@@",
+   "col_offset": 0,
+   "col_va": "0x8058c0"
+  },
+  "0x7ed878": {
+   "class": "?$VectorClass@PAVMapRegionClass@@",
+   "col_offset": 0,
+   "col_va": "0x8058f0"
+  },
+  "0x7ed8e4": {
+   "class": "MapSeedClass",
+   "col_offset": 0,
+   "col_va": "0x805940"
+  },
+  "0x7ed90c": {
+   "class": "?$TypeList@PBVBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x805990"
+  },
+  "0x7ed92c": {
+   "class": "?$VectorClass@PAU_WIN32_FIND_DATAA@@",
+   "col_offset": 0,
+   "col_va": "0x8059c0"
+  },
+  "0x7ed94c": {
+   "class": "?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@",
+   "col_offset": 0,
+   "col_va": "0x805a28"
+  },
+  "0x7ed970": {
+   "class": "?$VectorClass@V?$TRect@H@@",
+   "col_offset": 0,
+   "col_va": "0x805ac0"
+  },
+  "0x7ed99c": {
+   "class": "?$DynamicVectorClass@V?$TRect@H@@",
+   "col_offset": 0,
+   "col_va": "0x805a78"
+  },
+  "0x7ed9bc": {
+   "class": "?$DynamicVectorClass@PAVCellClass@@",
+   "col_offset": 0,
+   "col_va": "0x805b10"
+  },
+  "0x7eda4c": {
+   "class": "?$VectorClass@N",
+   "col_offset": 0,
+   "col_va": "0x805b40"
+  },
+  "0x7eda6c": {
+   "class": "?$DynamicVectorClass@N",
+   "col_offset": 0,
+   "col_va": "0x805ba8"
+  },
+  "0x7edb4c": {
+   "class": "MapSelect",
+   "col_offset": 0,
+   "col_va": "0x805c10"
+  },
+  "0x7edb6c": {
+   "class": "MechLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x805c28"
+  },
+  "0x7edc38": {
+   "class": "MechLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x805c88"
+  },
+  "0x7edc94": {
+   "class": "MissionClass",
+   "col_offset": 12,
+   "col_va": "0x805ca0"
+  },
+  "0x7edc9c": {
+   "class": "MissionClass",
+   "col_offset": 8,
+   "col_va": "0x805cb8"
+  },
+  "0x7edca4": {
+   "class": "MissionClass",
+   "col_offset": 4,
+   "col_va": "0x805cd0"
+  },
+  "0x7edcc0": {
+   "class": "MissionClass",
+   "col_offset": 0,
+   "col_va": "0x805d28"
+  },
+  "0x7edf38": {
+   "class": "?$List@PAVMixFileClass@@",
+   "col_offset": 0,
+   "col_va": "0x805d78"
+  },
+  "0x7edf40": {
+   "class": "BlowStraw",
+   "col_offset": 0,
+   "col_va": "0x805e30"
+  },
+  "0x7edf50": {
+   "class": "MixFileClass",
+   "col_offset": 0,
+   "col_va": "0x805de0"
+  },
+  "0x7edfac": {
+   "class": "TabClass",
+   "col_offset": 21784,
+   "col_va": "0x805e48"
+  },
+  "0x7edfb4": {
+   "class": "TabClass",
+   "col_offset": 0,
+   "col_va": "0x805ea0"
+  },
+  "0x7ee0b4": {
+   "class": "?$DynamicVectorClass@PBD",
+   "col_offset": 0,
+   "col_va": "0x805f08"
+  },
+  "0x7ee0d4": {
+   "class": "?$VectorClass@PBD",
+   "col_offset": 0,
+   "col_va": "0x805f38"
+  },
+  "0x7ee0f4": {
+   "class": "VQMovieHandle",
+   "col_offset": 0,
+   "col_va": "0x805fa0"
+  },
+  "0x7ee124": {
+   "class": "MovieHandle",
+   "col_offset": 0,
+   "col_va": "0x805fd0"
+  },
+  "0x7ee154": {
+   "class": "BinkMovieHandle",
+   "col_offset": 0,
+   "col_va": "0x806020"
+  },
+  "0x7ee184": {
+   "class": "MultiplayerBattle",
+   "col_offset": 0,
+   "col_va": "0x806088"
+  },
+  "0x7ee258": {
+   "class": "MultiplayerBattleTeam",
+   "col_offset": 0,
+   "col_va": "0x8060f0"
+  },
+  "0x7ee27c": {
+   "class": "MPCooperative",
+   "col_offset": 0,
+   "col_va": "0x806140"
+  },
+  "0x7ee350": {
+   "class": "?$DynamicVectorClass@PAVCoopCampaignClass@@",
+   "col_offset": 0,
+   "col_va": "0x8061a8"
+  },
+  "0x7ee370": {
+   "class": "?$DynamicVectorClass@PAUNodeNameType@@",
+   "col_offset": 0,
+   "col_va": "0x806210"
+  },
+  "0x7ee390": {
+   "class": "?$VectorClass@PAUNodeNameType@@",
+   "col_offset": 0,
+   "col_va": "0x806270"
+  },
+  "0x7ee3b0": {
+   "class": "?$VectorClass@PAVCoopCampaignClass@@",
+   "col_offset": 0,
+   "col_va": "0x806240"
+  },
+  "0x7ee3d0": {
+   "class": "?$VectorClass@PAUMPlayerScoreType@@",
+   "col_offset": 0,
+   "col_va": "0x8062a0"
+  },
+  "0x7ee3f0": {
+   "class": "?$DynamicVectorClass@PAUMPlayerScoreType@@",
+   "col_offset": 0,
+   "col_va": "0x806308"
+  },
+  "0x7ee424": {
+   "class": "FreeForAll",
+   "col_offset": 0,
+   "col_va": "0x806358"
+  },
+  "0x7ee50c": {
+   "class": "MultiplayerManBattle",
+   "col_offset": 0,
+   "col_va": "0x8063a8"
+  },
+  "0x7ee5f4": {
+   "class": "Megawealth",
+   "col_offset": 0,
+   "col_va": "0x8063f8"
+  },
+  "0x7ee6c8": {
+   "class": "MultiplayerObserverTeam",
+   "col_offset": 0,
+   "col_va": "0x806448"
+  },
+  "0x7ee6fc": {
+   "class": "MultiplayerSiege",
+   "col_offset": 0,
+   "col_va": "0x806498"
+  },
+  "0x7ee7e4": {
+   "class": "MultiplayerSiegeDefenderTeam",
+   "col_offset": 0,
+   "col_va": "0x8064e8"
+  },
+  "0x7ee7f4": {
+   "class": "MultiplayerSiegeAttackerTeam",
+   "col_offset": 0,
+   "col_va": "0x806538"
+  },
+  "0x7ee814": {
+   "class": "UnholyAlliance",
+   "col_offset": 0,
+   "col_va": "0x806588"
+  },
+  "0x7ee8e8": {
+   "class": "MSAnim",
+   "col_offset": 0,
+   "col_va": "0x8065d0"
+  },
+  "0x7ee910": {
+   "class": "MSShapeAnim",
+   "col_offset": 0,
+   "col_va": "0x806620"
+  },
+  "0x7ee938": {
+   "class": "MSFadeAnim",
+   "col_offset": 0,
+   "col_va": "0x806670"
+  },
+  "0x7ee960": {
+   "class": "MSOverlayAnim",
+   "col_offset": 0,
+   "col_va": "0x8066c8"
+  },
+  "0x7ee988": {
+   "class": "MSBinkAnim",
+   "col_offset": 0,
+   "col_va": "0x806718"
+  },
+  "0x7ee9b0": {
+   "class": "MSVQAnim",
+   "col_offset": 0,
+   "col_va": "0x806768"
+  },
+  "0x7ee9d8": {
+   "class": "MSBitPrintAnim",
+   "col_offset": 0,
+   "col_va": "0x8067b8"
+  },
+  "0x7eea00": {
+   "class": "MSPrintAnim",
+   "col_offset": 0,
+   "col_va": "0x806808"
+  },
+  "0x7eea2c": {
+   "class": "MSPCXAnim",
+   "col_offset": 0,
+   "col_va": "0x806858"
+  },
+  "0x7eea54": {
+   "class": "?$DynamicVectorClass@PAVMSSfxEntry@@",
+   "col_offset": 0,
+   "col_va": "0x806990"
+  },
+  "0x7eea74": {
+   "class": "?$DynamicVectorClass@PAVMSAnimEntry@@",
+   "col_offset": 0,
+   "col_va": "0x8068c0"
+  },
+  "0x7eea94": {
+   "class": "?$DynamicVectorClass@PAVMapStage@@",
+   "col_offset": 0,
+   "col_va": "0x806928"
+  },
+  "0x7eeab4": {
+   "class": "?$VectorClass@PAVMapStage@@",
+   "col_offset": 0,
+   "col_va": "0x8069f0"
+  },
+  "0x7eead4": {
+   "class": "?$VectorClass@PAVMSAnimEntry@@",
+   "col_offset": 0,
+   "col_va": "0x8069c0"
+  },
+  "0x7eeaf4": {
+   "class": "?$VectorClass@PAVMSSfxEntry@@",
+   "col_offset": 0,
+   "col_va": "0x806a20"
+  },
+  "0x7eeb14": {
+   "class": "?$DynamicVectorClass@PAVMapSelection@@",
+   "col_offset": 0,
+   "col_va": "0x806af0"
+  },
+  "0x7eeb34": {
+   "class": "?$DynamicVectorClass@PAVMSTextEntry@@",
+   "col_offset": 0,
+   "col_va": "0x806b58"
+  },
+  "0x7eeb54": {
+   "class": "?$DynamicVectorClass@VPoint2D@@",
+   "col_offset": 0,
+   "col_va": "0x806a88"
+  },
+  "0x7eeb74": {
+   "class": "?$VectorClass@VPoint2D@@",
+   "col_offset": 0,
+   "col_va": "0x806b88"
+  },
+  "0x7eeb94": {
+   "class": "?$VectorClass@PAVMSTextEntry@@",
+   "col_offset": 0,
+   "col_va": "0x806be8"
+  },
+  "0x7eebb4": {
+   "class": "?$VectorClass@PAVMapSelection@@",
+   "col_offset": 0,
+   "col_va": "0x806bb8"
+  },
+  "0x7eebd4": {
+   "class": "MSEngine",
+   "col_offset": 0,
+   "col_va": "0x806ce8"
+  },
+  "0x7eebe4": {
+   "class": "?$DynamicVectorClass@PAVMSSfx@@",
+   "col_offset": 0,
+   "col_va": "0x806c50"
+  },
+  "0x7eec04": {
+   "class": "?$DynamicVectorClass@PAVMSAnim@@",
+   "col_offset": 0,
+   "col_va": "0x806cb8"
+  },
+  "0x7eec24": {
+   "class": "?$VectorClass@PAVMSAnim@@",
+   "col_offset": 0,
+   "col_va": "0x806d48"
+  },
+  "0x7eec44": {
+   "class": "?$VectorClass@PAVMSSfx@@",
+   "col_offset": 0,
+   "col_va": "0x806d18"
+  },
+  "0x7eec64": {
+   "class": "MSFont",
+   "col_offset": 0,
+   "col_va": "0x806d90"
+  },
+  "0x7eec8c": {
+   "class": "?$DynamicVectorClass@PAUHWND__@@",
+   "col_offset": 0,
+   "col_va": "0x806df8"
+  },
+  "0x7eecac": {
+   "class": "?$VectorClass@PAUHWND__@@",
+   "col_offset": 0,
+   "col_va": "0x806e28"
+  },
+  "0x7eeccc": {
+   "class": "?$DynamicVectorClass@UAcceleratorTracker@@",
+   "col_offset": 0,
+   "col_va": "0x806e90"
+  },
+  "0x7eecec": {
+   "class": "?$VectorClass@UAcceleratorTracker@@",
+   "col_offset": 0,
+   "col_va": "0x806ec0"
+  },
+  "0x7eed20": {
+   "class": "?$DynamicVectorClass@PAVMultiplayerGameMode@@",
+   "col_offset": 0,
+   "col_va": "0x806f28"
+  },
+  "0x7eed40": {
+   "class": "?$VectorClass@PAVMultiplayerGameMode@@",
+   "col_offset": 0,
+   "col_va": "0x806f58"
+  },
+  "0x7eed60": {
+   "class": "MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x806f88"
+  },
+  "0x7eee34": {
+   "class": "?$DynamicVectorClass@PAVMultiplayerTeam@@",
+   "col_offset": 0,
+   "col_va": "0x806ff0"
+  },
+  "0x7eee54": {
+   "class": "?$VectorClass@PAVMultiplayerTeam@@",
+   "col_offset": 0,
+   "col_va": "0x807020"
+  },
+  "0x7eee74": {
+   "class": "InitializerBase@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x807068"
+  },
+  "0x7eee80": {
+   "class": "?$Initializer@VMPCooperative@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x807248"
+  },
+  "0x7eee8c": {
+   "class": "?$Initializer@VFreeForAll@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x8070b8"
+  },
+  "0x7eee98": {
+   "class": "?$Initializer@VUnholyAlliance@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x807108"
+  },
+  "0x7eeea4": {
+   "class": "?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x807158"
+  },
+  "0x7eeeb0": {
+   "class": "?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x8071a8"
+  },
+  "0x7eeebc": {
+   "class": "?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode",
+   "col_offset": 0,
+   "col_va": "0x8071f8"
+  },
+  "0x7eeedc": {
+   "class": "MultiplayerTeam",
+   "col_offset": 0,
+   "col_va": "0x807278"
+  },
+  "0x7eef50": {
+   "class": "?$VectorClass@PBVMultiMission@@",
+   "col_offset": 0,
+   "col_va": "0x807310"
+  },
+  "0x7eef70": {
+   "class": "?$DynamicVectorClass@PBVMultiMission@@",
+   "col_offset": 0,
+   "col_va": "0x8072c8"
+  },
+  "0x7eef90": {
+   "class": "NullModemConnClass",
+   "col_offset": 0,
+   "col_va": "0x807360"
+  },
+  "0x7eefdc": {
+   "class": "NullModemClass",
+   "col_offset": 0,
+   "col_va": "0x8073b0"
+  },
+  "0x7ef034": {
+   "class": "ObjectClass",
+   "col_offset": 12,
+   "col_va": "0x8073c8"
+  },
+  "0x7ef03c": {
+   "class": "ObjectClass",
+   "col_offset": 8,
+   "col_va": "0x8073e0"
+  },
+  "0x7ef044": {
+   "class": "ObjectClass",
+   "col_offset": 4,
+   "col_va": "0x8073f8"
+  },
+  "0x7ef060": {
+   "class": "ObjectClass",
+   "col_offset": 0,
+   "col_va": "0x807448"
+  },
+  "0x7ef26c": {
+   "class": "?$DynamicVectorClass@PAVObjectTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8074b0"
+  },
+  "0x7ef28c": {
+   "class": "?$VectorClass@PAVObjectTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x8074e0"
+  },
+  "0x7ef2ac": {
+   "class": "ObjectTypeClass",
+   "col_offset": 12,
+   "col_va": "0x8074f8"
+  },
+  "0x7ef2b4": {
+   "class": "ObjectTypeClass",
+   "col_offset": 8,
+   "col_va": "0x807510"
+  },
+  "0x7ef2bc": {
+   "class": "ObjectTypeClass",
+   "col_offset": 4,
+   "col_va": "0x807528"
+  },
+  "0x7ef2d8": {
+   "class": "ObjectTypeClass",
+   "col_offset": 0,
+   "col_va": "0x807580"
+  },
+  "0x7ef3a8": {
+   "class": "OverlayClass",
+   "col_offset": 12,
+   "col_va": "0x807598"
+  },
+  "0x7ef3b0": {
+   "class": "OverlayClass",
+   "col_offset": 4,
+   "col_va": "0x8075c8"
+  },
+  "0x7ef3cc": {
+   "class": "OverlayClass",
+   "col_offset": 8,
+   "col_va": "0x8075b0"
+  },
+  "0x7ef3d4": {
+   "class": "OverlayClass",
+   "col_offset": 0,
+   "col_va": "0x807638"
+  },
+  "0x7ef5d4": {
+   "class": "OverlayTypeClass",
+   "col_offset": 12,
+   "col_va": "0x807650"
+  },
+  "0x7ef5dc": {
+   "class": "OverlayTypeClass",
+   "col_offset": 8,
+   "col_va": "0x807668"
+  },
+  "0x7ef5e4": {
+   "class": "OverlayTypeClass",
+   "col_offset": 4,
+   "col_va": "0x807680"
+  },
+  "0x7ef600": {
+   "class": "OverlayTypeClass",
+   "col_offset": 0,
+   "col_va": "0x8076f0"
+  },
+  "0x7ef6bc": {
+   "class": "?$DynamicVectorClass@PAVSpotLightClass@@",
+   "col_offset": 0,
+   "col_va": "0x807758"
+  },
+  "0x7ef6dc": {
+   "class": "?$VectorClass@PAVSpotLightClass@@",
+   "col_offset": 0,
+   "col_va": "0x807788"
+  },
+  "0x7ef720": {
+   "class": "DialogControl@OwnerDraw",
+   "col_offset": 0,
+   "col_va": "0x8077d0"
+  },
+  "0x7ef738": {
+   "class": "SimpleDialogControl@OwnerDraw",
+   "col_offset": 0,
+   "col_va": "0x807820"
+  },
+  "0x7ef750": {
+   "class": "?$DynamicVectorClass@VHSVClass@@",
+   "col_offset": 0,
+   "col_va": "0x807888"
+  },
+  "0x7ef770": {
+   "class": "?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+   "col_offset": 0,
+   "col_va": "0x8078f0"
+  },
+  "0x7ef790": {
+   "class": "?$DynamicVectorClass@PAVColorScheme@@",
+   "col_offset": 0,
+   "col_va": "0x807988"
+  },
+  "0x7ef7b0": {
+   "class": "?$VectorClass@PAVColorScheme@@",
+   "col_offset": 0,
+   "col_va": "0x807920"
+  },
+  "0x7ef7d0": {
+   "class": "?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+   "col_offset": 0,
+   "col_va": "0x8079b8"
+  },
+  "0x7ef7f0": {
+   "class": "?$VectorClass@VHSVClass@@",
+   "col_offset": 0,
+   "col_va": "0x8079e8"
+  },
+  "0x7ef824": {
+   "class": "?$DynamicVectorClass@PAVParasiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x807a50"
+  },
+  "0x7ef844": {
+   "class": "?$VectorClass@PAVParasiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x807a80"
+  },
+  "0x7ef864": {
+   "class": "ParasiteClass",
+   "col_offset": 12,
+   "col_va": "0x807a98"
+  },
+  "0x7ef86c": {
+   "class": "ParasiteClass",
+   "col_offset": 8,
+   "col_va": "0x807ab0"
+  },
+  "0x7ef874": {
+   "class": "ParasiteClass",
+   "col_offset": 4,
+   "col_va": "0x807ac8"
+  },
+  "0x7ef890": {
+   "class": "ParasiteClass",
+   "col_offset": 0,
+   "col_va": "0x807b30"
+  },
+  "0x7ef928": {
+   "class": "ParticleClass",
+   "col_offset": 12,
+   "col_va": "0x807b48"
+  },
+  "0x7ef930": {
+   "class": "ParticleClass",
+   "col_offset": 8,
+   "col_va": "0x807b60"
+  },
+  "0x7ef938": {
+   "class": "ParticleClass",
+   "col_offset": 4,
+   "col_va": "0x807b78"
+  },
+  "0x7ef954": {
+   "class": "ParticleClass",
+   "col_offset": 0,
+   "col_va": "0x807be8"
+  },
+  "0x7efb70": {
+   "class": "ParticleSystemClass",
+   "col_offset": 12,
+   "col_va": "0x807c00"
+  },
+  "0x7efb78": {
+   "class": "ParticleSystemClass",
+   "col_offset": 8,
+   "col_va": "0x807c18"
+  },
+  "0x7efb80": {
+   "class": "ParticleSystemClass",
+   "col_offset": 4,
+   "col_va": "0x807c30"
+  },
+  "0x7efb9c": {
+   "class": "ParticleSystemClass",
+   "col_offset": 0,
+   "col_va": "0x807ca0"
+  },
+  "0x7efda4": {
+   "class": "PixelFXClass",
+   "col_offset": 0,
+   "col_va": "0x807ce8"
+  },
+  "0x7efdac": {
+   "class": "PKPipe",
+   "col_offset": 0,
+   "col_va": "0x807d38"
+  },
+  "0x7efdc8": {
+   "class": "BlowPipe",
+   "col_offset": 0,
+   "col_va": "0x807d88"
+  },
+  "0x7efde0": {
+   "class": "PKStraw",
+   "col_offset": 0,
+   "col_va": "0x807dd8"
+  },
+  "0x7efe04": {
+   "class": "?$DynamicVectorClass@PAVEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x807e40"
+  },
+  "0x7efe24": {
+   "class": "?$VectorClass@PAVEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x807e70"
+  },
+  "0x7efe44": {
+   "class": "?$DynamicVectorClass@PAVPlanningNodeClass@@",
+   "col_offset": 0,
+   "col_va": "0x807ed8"
+  },
+  "0x7efe64": {
+   "class": "?$VectorClass@PAVPlanningNodeClass@@",
+   "col_offset": 0,
+   "col_va": "0x807f08"
+  },
+  "0x7efe84": {
+   "class": "?$DynamicVectorClass@PAVPlanningTokenClass@@",
+   "col_offset": 0,
+   "col_va": "0x807f70"
+  },
+  "0x7efea4": {
+   "class": "?$VectorClass@PAVPlanningTokenClass@@",
+   "col_offset": 0,
+   "col_va": "0x807fa0"
+  },
+  "0x7efec4": {
+   "class": "?$DynamicVectorClass@PAVPlanningBranchClass@@",
+   "col_offset": 0,
+   "col_va": "0x808008"
+  },
+  "0x7efee4": {
+   "class": "?$DynamicVectorClass@PAVPlanningMemberClass@@",
+   "col_offset": 0,
+   "col_va": "0x808070"
+  },
+  "0x7eff04": {
+   "class": "?$VectorClass@PAVPlanningMemberClass@@",
+   "col_offset": 0,
+   "col_va": "0x8080a0"
+  },
+  "0x7eff24": {
+   "class": "?$VectorClass@PAVPlanningBranchClass@@",
+   "col_offset": 0,
+   "col_va": "0x8080d0"
+  },
+  "0x7eff54": {
+   "class": "PowerClass",
+   "col_offset": 0,
+   "col_va": "0x808118"
+  },
+  "0x7f0064": {
+   "class": "ProgressScreenClass",
+   "col_offset": 0,
+   "col_va": "0x808180"
+  },
+  "0x7f007c": {
+   "class": "ParticleSystemTypeClass",
+   "col_offset": 12,
+   "col_va": "0x808198"
+  },
+  "0x7f0084": {
+   "class": "ParticleSystemTypeClass",
+   "col_offset": 8,
+   "col_va": "0x8081b0"
+  },
+  "0x7f008c": {
+   "class": "ParticleSystemTypeClass",
+   "col_offset": 4,
+   "col_va": "0x8081c8"
+  },
+  "0x7f00a8": {
+   "class": "ParticleSystemTypeClass",
+   "col_offset": 0,
+   "col_va": "0x808238"
+  },
+  "0x7f015c": {
+   "class": "ParticleTypeClass",
+   "col_offset": 12,
+   "col_va": "0x808250"
+  },
+  "0x7f0164": {
+   "class": "ParticleTypeClass",
+   "col_offset": 8,
+   "col_va": "0x808268"
+  },
+  "0x7f016c": {
+   "class": "ParticleTypeClass",
+   "col_offset": 4,
+   "col_va": "0x808280"
+  },
+  "0x7f0188": {
+   "class": "ParticleTypeClass",
+   "col_offset": 0,
+   "col_va": "0x8082f0"
+  },
+  "0x7f022c": {
+   "class": "?$DynamicVectorClass@VRGBClass@@",
+   "col_offset": 0,
+   "col_va": "0x808328"
+  },
+  "0x7f02bc": {
+   "class": "RTacticalClass@RadarClass",
+   "col_offset": 0,
+   "col_va": "0x808378"
+  },
+  "0x7f0344": {
+   "class": "RadarClass",
+   "col_offset": 0,
+   "col_va": "0x8083c0"
+  },
+  "0x7f042c": {
+   "class": "?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x808458"
+  },
+  "0x7f044c": {
+   "class": "?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x8083f0"
+  },
+  "0x7f0484": {
+   "class": "?$DynamicVectorClass@PAVRadBeam@@",
+   "col_offset": 0,
+   "col_va": "0x8084c0"
+  },
+  "0x7f04a4": {
+   "class": "?$VectorClass@PAVRadBeam@@",
+   "col_offset": 0,
+   "col_va": "0x8084f0"
+  },
+  "0x7f04dc": {
+   "class": "RadioClass",
+   "col_offset": 12,
+   "col_va": "0x808508"
+  },
+  "0x7f04e4": {
+   "class": "RadioClass",
+   "col_offset": 8,
+   "col_va": "0x808520"
+  },
+  "0x7f04ec": {
+   "class": "RadioClass",
+   "col_offset": 4,
+   "col_va": "0x808538"
+  },
+  "0x7f0508": {
+   "class": "RadioClass",
+   "col_offset": 0,
+   "col_va": "0x808590"
+  },
+  "0x7f07a4": {
+   "class": "?$DynamicVectorClass@PAVRadSiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x8085f8"
+  },
+  "0x7f07c4": {
+   "class": "?$VectorClass@PAVRadSiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x808628"
+  },
+  "0x7f07e4": {
+   "class": "RadSiteClass",
+   "col_offset": 12,
+   "col_va": "0x808640"
+  },
+  "0x7f07ec": {
+   "class": "RadSiteClass",
+   "col_offset": 8,
+   "col_va": "0x808658"
+  },
+  "0x7f07f4": {
+   "class": "RadSiteClass",
+   "col_offset": 4,
+   "col_va": "0x808670"
+  },
+  "0x7f0810": {
+   "class": "RadSiteClass",
+   "col_offset": 0,
+   "col_va": "0x8086d8"
+  },
+  "0x7f0874": {
+   "class": "RAMFileClass",
+   "col_offset": 0,
+   "col_va": "0x808728"
+  },
+  "0x7f08bc": {
+   "class": "FileClass",
+   "col_offset": 0,
+   "col_va": "0x808758"
+  },
+  "0x7f0904": {
+   "class": "RawFileClass",
+   "col_offset": 0,
+   "col_va": "0x808790"
+  },
+  "0x7f094c": {
+   "class": "rc_ptr_base",
+   "col_offset": 0,
+   "col_va": "0x8087c0"
+  },
+  "0x7f0954": {
+   "class": "ReferenceCounted",
+   "col_offset": 0,
+   "col_va": "0x808808"
+  },
+  "0x7f0aac": {
+   "class": "?$DynamicVectorClass@PAVRadarEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x808870"
+  },
+  "0x7f0acc": {
+   "class": "?$VectorClass@PAVRadarEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x8088a0"
+  },
+  "0x7f0afc": {
+   "class": "RandomStraw",
+   "col_offset": 0,
+   "col_va": "0x8088f0"
+  },
+  "0x7f0b1c": {
+   "class": "RocketLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x808908"
+  },
+  "0x7f0be8": {
+   "class": "RocketLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x808968"
+  },
+  "0x7f0c2c": {
+   "class": "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+   "col_offset": 0,
+   "col_va": "0x8089d0"
+  },
+  "0x7f0c4c": {
+   "class": "?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+   "col_offset": 0,
+   "col_va": "0x808a00"
+  },
+  "0x7f0cfc": {
+   "class": "?$TypeList@PBVTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808a80"
+  },
+  "0x7f0d1c": {
+   "class": "?$TypeList@PBVSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808b00"
+  },
+  "0x7f0d3c": {
+   "class": "?$TypeList@PBVVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808b80"
+  },
+  "0x7f0d5c": {
+   "class": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808be0"
+  },
+  "0x7f0d7c": {
+   "class": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808bb0"
+  },
+  "0x7f0d9c": {
+   "class": "?$VectorClass@PBVTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808c10"
+  },
+  "0x7f0dcc": {
+   "class": "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808c48"
+  },
+  "0x7f0dec": {
+   "class": "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808c80"
+  },
+  "0x7f0e0c": {
+   "class": "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x808cb8"
+  },
+  "0x7f0eb4": {
+   "class": "ScorePrintClass",
+   "col_offset": 0,
+   "col_va": "0x808d08"
+  },
+  "0x7f0ec8": {
+   "class": "ScoreTimeClass",
+   "col_offset": 0,
+   "col_va": "0x808d70"
+  },
+  "0x7f0edc": {
+   "class": "ScoreAnimClass",
+   "col_offset": 0,
+   "col_va": "0x808da0"
+  },
+  "0x7f0ef0": {
+   "class": "ScoreFontClass",
+   "col_offset": 0,
+   "col_va": "0x808de8"
+  },
+  "0x7f0f08": {
+   "class": "ScoreFullFontClass",
+   "col_offset": 0,
+   "col_va": "0x808e38"
+  },
+  "0x7f0f20": {
+   "class": "ScoreBigFontClass",
+   "col_offset": 0,
+   "col_va": "0x808e88"
+  },
+  "0x7f0f4c": {
+   "class": "ScriptClass",
+   "col_offset": 12,
+   "col_va": "0x808ea0"
+  },
+  "0x7f0f54": {
+   "class": "ScriptClass",
+   "col_offset": 8,
+   "col_va": "0x808eb8"
+  },
+  "0x7f0f5c": {
+   "class": "ScriptClass",
+   "col_offset": 4,
+   "col_va": "0x808ed0"
+  },
+  "0x7f0f78": {
+   "class": "ScriptClass",
+   "col_offset": 0,
+   "col_va": "0x808f38"
+  },
+  "0x7f0fdc": {
+   "class": "ScriptTypeClass",
+   "col_offset": 12,
+   "col_va": "0x808f50"
+  },
+  "0x7f0fe4": {
+   "class": "ScriptTypeClass",
+   "col_offset": 8,
+   "col_va": "0x808f68"
+  },
+  "0x7f0fec": {
+   "class": "ScriptTypeClass",
+   "col_offset": 4,
+   "col_va": "0x808f80"
+  },
+  "0x7f1008": {
+   "class": "ScriptTypeClass",
+   "col_offset": 0,
+   "col_va": "0x808ff0"
+  },
+  "0x7f108c": {
+   "class": "ScrollClass",
+   "col_offset": 21784,
+   "col_va": "0x809008"
+  },
+  "0x7f1094": {
+   "class": "ScrollClass",
+   "col_offset": 0,
+   "col_va": "0x809060"
+  },
+  "0x7f11b4": {
+   "class": "?$DynamicVectorClass@PAVPhoneEntryClass@@",
+   "col_offset": 0,
+   "col_va": "0x8090c8"
+  },
+  "0x7f11d4": {
+   "class": "?$DynamicVectorClass@PAUGlobalPacketType@@",
+   "col_offset": 0,
+   "col_va": "0x809198"
+  },
+  "0x7f11f4": {
+   "class": "?$DynamicVectorClass@PAVMultiMission@@",
+   "col_offset": 0,
+   "col_va": "0x809130"
+  },
+  "0x7f1214": {
+   "class": "?$VectorClass@PAVMultiMission@@",
+   "col_offset": 0,
+   "col_va": "0x8091f8"
+  },
+  "0x7f1234": {
+   "class": "?$VectorClass@PAUGlobalPacketType@@",
+   "col_offset": 0,
+   "col_va": "0x809228"
+  },
+  "0x7f1254": {
+   "class": "?$VectorClass@PAVPhoneEntryClass@@",
+   "col_offset": 0,
+   "col_va": "0x8091c8"
+  },
+  "0x7f1274": {
+   "class": "?$VectorClass@W4DiskID@@",
+   "col_offset": 0,
+   "col_va": "0x809270"
+  },
+  "0x7f1294": {
+   "class": "?$VectorClass@VWstring@@",
+   "col_offset": 0,
+   "col_va": "0x8092b8"
+  },
+  "0x7f12b4": {
+   "class": "?$DynamicVectorClass@VWstring@@",
+   "col_offset": 0,
+   "col_va": "0x809370"
+  },
+  "0x7f12d4": {
+   "class": "?$TypeList@W4DiskID@@",
+   "col_offset": 0,
+   "col_va": "0x809320"
+  },
+  "0x7f2d68": {
+   "class": "ShipLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x809388"
+  },
+  "0x7f2d8c": {
+   "class": "ShipLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x8093a0"
+  },
+  "0x7f2e58": {
+   "class": "ShipLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x809408"
+  },
+  "0x7f2e94": {
+   "class": "SideClass",
+   "col_offset": 12,
+   "col_va": "0x809420"
+  },
+  "0x7f2e9c": {
+   "class": "SideClass",
+   "col_offset": 8,
+   "col_va": "0x809438"
+  },
+  "0x7f2ea4": {
+   "class": "SideClass",
+   "col_offset": 4,
+   "col_va": "0x809450"
+  },
+  "0x7f2ec0": {
+   "class": "SideClass",
+   "col_offset": 0,
+   "col_va": "0x8094c0"
+  },
+  "0x7f2f44": {
+   "class": "SBGadgetClass@SidebarClass",
+   "col_offset": 0,
+   "col_va": "0x809510"
+  },
+  "0x7f2fcc": {
+   "class": "SelectClass@StripClass@SidebarClass",
+   "col_offset": 0,
+   "col_va": "0x809568"
+  },
+  "0x7f3058": {
+   "class": "SidebarClass",
+   "col_offset": 0,
+   "col_va": "0x8095b8"
+  },
+  "0x7f315c": {
+   "class": "?$DynamicVectorClass@PAVSlaveManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809620"
+  },
+  "0x7f317c": {
+   "class": "?$VectorClass@PAVSlaveManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809650"
+  },
+  "0x7f319c": {
+   "class": "SlaveManagerClass",
+   "col_offset": 12,
+   "col_va": "0x809668"
+  },
+  "0x7f31a4": {
+   "class": "SlaveManagerClass",
+   "col_offset": 8,
+   "col_va": "0x809680"
+  },
+  "0x7f31ac": {
+   "class": "SlaveManagerClass",
+   "col_offset": 4,
+   "col_va": "0x809698"
+  },
+  "0x7f31c8": {
+   "class": "SlaveManagerClass",
+   "col_offset": 0,
+   "col_va": "0x809700"
+  },
+  "0x7f322c": {
+   "class": "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809768"
+  },
+  "0x7f324c": {
+   "class": "?$VectorClass@PAUSlaveControl@SlaveManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809798"
+  },
+  "0x7f327c": {
+   "class": "?$DynamicVectorClass@UUndoInfoStruct@@",
+   "col_offset": 0,
+   "col_va": "0x809800"
+  },
+  "0x7f329c": {
+   "class": "?$VectorClass@UUndoInfoStruct@@",
+   "col_offset": 0,
+   "col_va": "0x809830"
+  },
+  "0x7f32d0": {
+   "class": "SmudgeClass",
+   "col_offset": 12,
+   "col_va": "0x809848"
+  },
+  "0x7f32d8": {
+   "class": "SmudgeClass",
+   "col_offset": 4,
+   "col_va": "0x809878"
+  },
+  "0x7f32f4": {
+   "class": "SmudgeClass",
+   "col_offset": 8,
+   "col_va": "0x809860"
+  },
+  "0x7f32fc": {
+   "class": "SmudgeClass",
+   "col_offset": 0,
+   "col_va": "0x8098e8"
+  },
+  "0x7f34fc": {
+   "class": "SmudgeTypeClass",
+   "col_offset": 12,
+   "col_va": "0x809900"
+  },
+  "0x7f3504": {
+   "class": "SmudgeTypeClass",
+   "col_offset": 8,
+   "col_va": "0x809918"
+  },
+  "0x7f350c": {
+   "class": "SmudgeTypeClass",
+   "col_offset": 4,
+   "col_va": "0x809930"
+  },
+  "0x7f3528": {
+   "class": "SmudgeTypeClass",
+   "col_offset": 0,
+   "col_va": "0x8099a0"
+  },
+  "0x7f35e4": {
+   "class": "?$DynamicVectorClass@PAVSpawnManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809a08"
+  },
+  "0x7f3604": {
+   "class": "?$VectorClass@PAVSpawnManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809a38"
+  },
+  "0x7f3624": {
+   "class": "SpawnManagerClass",
+   "col_offset": 12,
+   "col_va": "0x809a50"
+  },
+  "0x7f362c": {
+   "class": "SpawnManagerClass",
+   "col_offset": 8,
+   "col_va": "0x809a68"
+  },
+  "0x7f3634": {
+   "class": "SpawnManagerClass",
+   "col_offset": 4,
+   "col_va": "0x809a80"
+  },
+  "0x7f3650": {
+   "class": "SpawnManagerClass",
+   "col_offset": 0,
+   "col_va": "0x809ae8"
+  },
+  "0x7f36b4": {
+   "class": "?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809b50"
+  },
+  "0x7f36d4": {
+   "class": "?$VectorClass@PAUSpawnControl@SpawnManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x809b80"
+  },
+  "0x7f3728": {
+   "class": "?$DynamicVectorClass@K",
+   "col_offset": 0,
+   "col_va": "0x809be8"
+  },
+  "0x7f3748": {
+   "class": "?$VectorClass@K",
+   "col_offset": 0,
+   "col_va": "0x809c18"
+  },
+  "0x7f3768": {
+   "class": "?$TClassFactory@VCStreamClass@@",
+   "col_offset": 0,
+   "col_va": "0x809c68"
+  },
+  "0x7f3780": {
+   "class": "?$TClassFactory@VWaveClass@@",
+   "col_offset": 0,
+   "col_va": "0x809cb8"
+  },
+  "0x7f3798": {
+   "class": "?$TClassFactory@VTerrainTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x809d08"
+  },
+  "0x7f37b0": {
+   "class": "?$TClassFactory@VTerrainClass@@",
+   "col_offset": 0,
+   "col_va": "0x809d58"
+  },
+  "0x7f37c8": {
+   "class": "?$TClassFactory@VSuperWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x809da8"
+  },
+  "0x7f37e0": {
+   "class": "?$TClassFactory@VSuperClass@@",
+   "col_offset": 0,
+   "col_va": "0x809df8"
+  },
+  "0x7f37f8": {
+   "class": "?$TClassFactory@VTactical@@",
+   "col_offset": 0,
+   "col_va": "0x809e48"
+  },
+  "0x7f3810": {
+   "class": "?$TClassFactory@VCellClass@@",
+   "col_offset": 0,
+   "col_va": "0x809e98"
+  },
+  "0x7f3828": {
+   "class": "?$TClassFactory@VEMPulseClass@@",
+   "col_offset": 0,
+   "col_va": "0x809ee8"
+  },
+  "0x7f3840": {
+   "class": "?$TClassFactory@VLightSourceClass@@",
+   "col_offset": 0,
+   "col_va": "0x809f38"
+  },
+  "0x7f3858": {
+   "class": "?$TClassFactory@VSideClass@@",
+   "col_offset": 0,
+   "col_va": "0x809f88"
+  },
+  "0x7f3870": {
+   "class": "?$TClassFactory@VTiberiumClass@@",
+   "col_offset": 0,
+   "col_va": "0x809fd8"
+  },
+  "0x7f3888": {
+   "class": "?$TClassFactory@VTubeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a028"
+  },
+  "0x7f38a0": {
+   "class": "?$TClassFactory@VCampaignClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a078"
+  },
+  "0x7f38b8": {
+   "class": "?$TClassFactory@VBuildingLightClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a0c8"
+  },
+  "0x7f38d0": {
+   "class": "?$TClassFactory@VWaypointPathClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a118"
+  },
+  "0x7f38e8": {
+   "class": "?$TClassFactory@VTemporalClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a168"
+  },
+  "0x7f3900": {
+   "class": "?$TClassFactory@VAirstrikeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a1b8"
+  },
+  "0x7f3918": {
+   "class": "?$TClassFactory@VSpawnManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a208"
+  },
+  "0x7f3930": {
+   "class": "?$TClassFactory@VSlaveManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a258"
+  },
+  "0x7f3948": {
+   "class": "?$TClassFactory@VCaptureManagerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a2a8"
+  },
+  "0x7f3960": {
+   "class": "?$TClassFactory@VDiskLaserClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a2f8"
+  },
+  "0x7f3978": {
+   "class": "?$TClassFactory@VParasiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a348"
+  },
+  "0x7f3990": {
+   "class": "?$TClassFactory@VBombClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a398"
+  },
+  "0x7f39a8": {
+   "class": "?$TClassFactory@VRadSiteClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a3e8"
+  },
+  "0x7f39c0": {
+   "class": "?$TClassFactory@VTEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a438"
+  },
+  "0x7f39d8": {
+   "class": "?$TClassFactory@VVoxelAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a488"
+  },
+  "0x7f39f0": {
+   "class": "?$TClassFactory@VVoxelAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a4d8"
+  },
+  "0x7f3a08": {
+   "class": "?$TClassFactory@VTActionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a528"
+  },
+  "0x7f3a20": {
+   "class": "?$TClassFactory@VTriggerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a578"
+  },
+  "0x7f3a38": {
+   "class": "?$TClassFactory@VTriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a5c8"
+  },
+  "0x7f3a50": {
+   "class": "?$TClassFactory@VScriptClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a618"
+  },
+  "0x7f3a68": {
+   "class": "?$TClassFactory@VScriptTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a668"
+  },
+  "0x7f3a80": {
+   "class": "?$TClassFactory@VTagClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a6b8"
+  },
+  "0x7f3a98": {
+   "class": "?$TClassFactory@VTagTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a708"
+  },
+  "0x7f3ab0": {
+   "class": "?$TClassFactory@VTeamClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a758"
+  },
+  "0x7f3ac8": {
+   "class": "?$TClassFactory@VTeamTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a7a8"
+  },
+  "0x7f3ae0": {
+   "class": "?$TClassFactory@VTaskForceClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a7f8"
+  },
+  "0x7f3af8": {
+   "class": "?$TClassFactory@VUnitTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a848"
+  },
+  "0x7f3b10": {
+   "class": "?$TClassFactory@VBuildingTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a898"
+  },
+  "0x7f3b28": {
+   "class": "?$TClassFactory@VAircraftTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a8e8"
+  },
+  "0x7f3b40": {
+   "class": "?$TClassFactory@VInfantryTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a938"
+  },
+  "0x7f3b58": {
+   "class": "?$TClassFactory@VBulletTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a988"
+  },
+  "0x7f3b70": {
+   "class": "?$TClassFactory@VIsometricTileTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80a9d8"
+  },
+  "0x7f3b88": {
+   "class": "?$TClassFactory@VOverlayTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80aa28"
+  },
+  "0x7f3ba0": {
+   "class": "?$TClassFactory@VSmudgeTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80aa78"
+  },
+  "0x7f3bb8": {
+   "class": "?$TClassFactory@VUnitClass@@",
+   "col_offset": 0,
+   "col_va": "0x80aac8"
+  },
+  "0x7f3bd0": {
+   "class": "?$TClassFactory@VBuildingClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ab18"
+  },
+  "0x7f3be8": {
+   "class": "?$TClassFactory@VAircraftClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ab68"
+  },
+  "0x7f3c00": {
+   "class": "?$TClassFactory@VInfantryClass@@",
+   "col_offset": 0,
+   "col_va": "0x80abb8"
+  },
+  "0x7f3c18": {
+   "class": "?$TClassFactory@VAnimClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ac08"
+  },
+  "0x7f3c30": {
+   "class": "?$TClassFactory@VAnimTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ac58"
+  },
+  "0x7f3c48": {
+   "class": "?$TClassFactory@VHouseTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80aca8"
+  },
+  "0x7f3c60": {
+   "class": "?$TClassFactory@VHouseClass@@",
+   "col_offset": 0,
+   "col_va": "0x80acf8"
+  },
+  "0x7f3c78": {
+   "class": "?$TClassFactory@VDriveLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ad48"
+  },
+  "0x7f3c90": {
+   "class": "?$TClassFactory@VJumpjetLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ad98"
+  },
+  "0x7f3ca8": {
+   "class": "?$TClassFactory@VHoverLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ade8"
+  },
+  "0x7f3cc0": {
+   "class": "?$TClassFactory@VRocketLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ae38"
+  },
+  "0x7f3cd8": {
+   "class": "?$TClassFactory@VTunnelLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ae88"
+  },
+  "0x7f3cf0": {
+   "class": "?$TClassFactory@VWalkLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80aed8"
+  },
+  "0x7f3d08": {
+   "class": "?$TClassFactory@VDropPodLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80af28"
+  },
+  "0x7f3d20": {
+   "class": "?$TClassFactory@VFlyLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80af78"
+  },
+  "0x7f3d38": {
+   "class": "?$TClassFactory@VTeleportLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80afc8"
+  },
+  "0x7f3d50": {
+   "class": "?$TClassFactory@VMechLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b018"
+  },
+  "0x7f3d68": {
+   "class": "?$TClassFactory@VShipLocomotionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b068"
+  },
+  "0x7f3d80": {
+   "class": "?$TClassFactory@VBulletClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b0b8"
+  },
+  "0x7f3d98": {
+   "class": "?$TClassFactory@VFactoryClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b108"
+  },
+  "0x7f3db0": {
+   "class": "?$TClassFactory@VWarheadTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b158"
+  },
+  "0x7f3dc8": {
+   "class": "?$TClassFactory@VWeaponTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b1a8"
+  },
+  "0x7f3de0": {
+   "class": "?$TClassFactory@VParticleClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b1f8"
+  },
+  "0x7f3df8": {
+   "class": "?$TClassFactory@VParticleTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b248"
+  },
+  "0x7f3e10": {
+   "class": "?$TClassFactory@VParticleSystemClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b298"
+  },
+  "0x7f3e28": {
+   "class": "?$TClassFactory@VParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b2e8"
+  },
+  "0x7f3e40": {
+   "class": "?$TClassFactory@VAITriggerTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b338"
+  },
+  "0x7f3e58": {
+   "class": "?$TClassFactory@VNeuronClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b388"
+  },
+  "0x7f3e70": {
+   "class": "?$TClassFactory@VFoggedObjectClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b3d8"
+  },
+  "0x7f3e88": {
+   "class": "?$TClassFactory@VAlphaShapeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b428"
+  },
+  "0x7f3ea0": {
+   "class": "StaticButtonClass",
+   "col_offset": 0,
+   "col_va": "0x80b478"
+  },
+  "0x7f3f44": {
+   "class": "?$rc_ptr@VPlayerProfile@@",
+   "col_offset": 0,
+   "col_va": "0x80b4c8"
+  },
+  "0x7f3f6c": {
+   "class": "?$DynamicVectorClass@PAVSubTitle@@",
+   "col_offset": 0,
+   "col_va": "0x80b530"
+  },
+  "0x7f3f8c": {
+   "class": "?$VectorClass@PAVSubTitle@@",
+   "col_offset": 0,
+   "col_va": "0x80b560"
+  },
+  "0x7f3fbc": {
+   "class": "SuperClass",
+   "col_offset": 12,
+   "col_va": "0x80b578"
+  },
+  "0x7f3fc4": {
+   "class": "SuperClass",
+   "col_offset": 8,
+   "col_va": "0x80b590"
+  },
+  "0x7f3fcc": {
+   "class": "SuperClass",
+   "col_offset": 4,
+   "col_va": "0x80b5a8"
+  },
+  "0x7f3fe8": {
+   "class": "SuperClass",
+   "col_offset": 0,
+   "col_va": "0x80b610"
+  },
+  "0x7f4064": {
+   "class": "SuperWeaponTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80b628"
+  },
+  "0x7f406c": {
+   "class": "SuperWeaponTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80b640"
+  },
+  "0x7f4074": {
+   "class": "SuperWeaponTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80b658"
+  },
+  "0x7f4090": {
+   "class": "SuperWeaponTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80b6c8"
+  },
+  "0x7f4108": {
+   "class": "SwizzleManagerClass",
+   "col_offset": 0,
+   "col_va": "0x80b730"
+  },
+  "0x7f4134": {
+   "class": "?$DynamicVectorClass@VSwizzlePointerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b798"
+  },
+  "0x7f4154": {
+   "class": "?$VectorClass@VSwizzlePointerClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b7c8"
+  },
+  "0x7f429c": {
+   "class": "?$DynamicVectorClass@UDirtyAreaStruct@@",
+   "col_offset": 0,
+   "col_va": "0x80b830"
+  },
+  "0x7f42bc": {
+   "class": "?$VectorClass@UDirtyAreaStruct@@",
+   "col_offset": 0,
+   "col_va": "0x80b860"
+  },
+  "0x7f42dc": {
+   "class": "?$DynamicVectorClass@PAVShadowControlClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b8c8"
+  },
+  "0x7f42fc": {
+   "class": "?$VectorClass@PAVShadowControlClass@@",
+   "col_offset": 0,
+   "col_va": "0x80b8f8"
+  },
+  "0x7f431c": {
+   "class": "Tactical",
+   "col_offset": 12,
+   "col_va": "0x80b910"
+  },
+  "0x7f4324": {
+   "class": "Tactical",
+   "col_offset": 8,
+   "col_va": "0x80b928"
+  },
+  "0x7f432c": {
+   "class": "Tactical",
+   "col_offset": 4,
+   "col_va": "0x80b940"
+  },
+  "0x7f4348": {
+   "class": "Tactical",
+   "col_offset": 0,
+   "col_va": "0x80b9a8"
+  },
+  "0x7f43d0": {
+   "class": "?$DynamicVectorClass@PAVTActionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ba10"
+  },
+  "0x7f43f0": {
+   "class": "?$VectorClass@PAVTActionClass@@",
+   "col_offset": 0,
+   "col_va": "0x80ba40"
+  },
+  "0x7f4410": {
+   "class": "TActionClass",
+   "col_offset": 12,
+   "col_va": "0x80ba58"
+  },
+  "0x7f4418": {
+   "class": "TActionClass",
+   "col_offset": 8,
+   "col_va": "0x80ba70"
+  },
+  "0x7f4420": {
+   "class": "TActionClass",
+   "col_offset": 4,
+   "col_va": "0x80ba88"
+  },
+  "0x7f443c": {
+   "class": "TActionClass",
+   "col_offset": 0,
+   "col_va": "0x80baf0"
+  },
+  "0x7f44b4": {
+   "class": "TagClass",
+   "col_offset": 12,
+   "col_va": "0x80bb08"
+  },
+  "0x7f44bc": {
+   "class": "TagClass",
+   "col_offset": 8,
+   "col_va": "0x80bb20"
+  },
+  "0x7f44c4": {
+   "class": "TagClass",
+   "col_offset": 4,
+   "col_va": "0x80bb38"
+  },
+  "0x7f44e0": {
+   "class": "TagClass",
+   "col_offset": 0,
+   "col_va": "0x80bba0"
+  },
+  "0x7f4558": {
+   "class": "?$DynamicVectorClass@PAVTagTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80bc08"
+  },
+  "0x7f4578": {
+   "class": "?$VectorClass@PAVTagTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80bc38"
+  },
+  "0x7f4598": {
+   "class": "TagTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80bc50"
+  },
+  "0x7f45a0": {
+   "class": "TagTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80bc68"
+  },
+  "0x7f45a8": {
+   "class": "TagTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80bc80"
+  },
+  "0x7f45c4": {
+   "class": "TagTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80bcf0"
+  },
+  "0x7f4654": {
+   "class": "TaskForceClass",
+   "col_offset": 12,
+   "col_va": "0x80bd08"
+  },
+  "0x7f465c": {
+   "class": "TaskForceClass",
+   "col_offset": 8,
+   "col_va": "0x80bd20"
+  },
+  "0x7f4664": {
+   "class": "TaskForceClass",
+   "col_offset": 4,
+   "col_va": "0x80bd38"
+  },
+  "0x7f4680": {
+   "class": "TaskForceClass",
+   "col_offset": 0,
+   "col_va": "0x80bda8"
+  },
+  "0x7f4704": {
+   "class": "TeamClass",
+   "col_offset": 12,
+   "col_va": "0x80bdc0"
+  },
+  "0x7f470c": {
+   "class": "TeamClass",
+   "col_offset": 8,
+   "col_va": "0x80bdd8"
+  },
+  "0x7f4714": {
+   "class": "TeamClass",
+   "col_offset": 4,
+   "col_va": "0x80bdf0"
+  },
+  "0x7f4730": {
+   "class": "TeamClass",
+   "col_offset": 0,
+   "col_va": "0x80be58"
+  },
+  "0x7f47a4": {
+   "class": "TeamTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80be70"
+  },
+  "0x7f47ac": {
+   "class": "TeamTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80be88"
+  },
+  "0x7f47b4": {
+   "class": "TeamTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80bea0"
+  },
+  "0x7f47d0": {
+   "class": "TeamTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80bf10"
+  },
+  "0x7f4840": {
+   "class": "?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x80bf40"
+  },
+  "0x7f4860": {
+   "class": "?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+   "col_offset": 0,
+   "col_va": "0x80bfa8"
+  },
+  "0x7f4934": {
+   "class": "TechnoClass",
+   "col_offset": 12,
+   "col_va": "0x80bfc0"
+  },
+  "0x7f493c": {
+   "class": "TechnoClass",
+   "col_offset": 8,
+   "col_va": "0x80bfd8"
+  },
+  "0x7f4944": {
+   "class": "TechnoClass",
+   "col_offset": 4,
+   "col_va": "0x80bff0"
+  },
+  "0x7f4960": {
+   "class": "TechnoClass",
+   "col_offset": 0,
+   "col_va": "0x80c058"
+  },
+  "0x7f4eac": {
+   "class": "TechnoTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80c0c0"
+  },
+  "0x7f4eb4": {
+   "class": "TechnoTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80c0d8"
+  },
+  "0x7f4ebc": {
+   "class": "TechnoTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80c0f0"
+  },
+  "0x7f4ed8": {
+   "class": "TechnoTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80c148"
+  },
+  "0x7f4f9c": {
+   "class": "?$TypeList@PBVParticleSystemTypeClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c0a8"
+  },
+  "0x7f4fdc": {
+   "class": "TeleportLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x80c160"
+  },
+  "0x7f5000": {
+   "class": "TeleportLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x80c178"
+  },
+  "0x7f50cc": {
+   "class": "TeleportLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x80c1e0"
+  },
+  "0x7f5114": {
+   "class": "?$DynamicVectorClass@PAVTemporalClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c248"
+  },
+  "0x7f5134": {
+   "class": "?$VectorClass@PAVTemporalClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c278"
+  },
+  "0x7f5154": {
+   "class": "TemporalClass",
+   "col_offset": 12,
+   "col_va": "0x80c290"
+  },
+  "0x7f515c": {
+   "class": "TemporalClass",
+   "col_offset": 8,
+   "col_va": "0x80c2a8"
+  },
+  "0x7f5164": {
+   "class": "TemporalClass",
+   "col_offset": 4,
+   "col_va": "0x80c2c0"
+  },
+  "0x7f5180": {
+   "class": "TemporalClass",
+   "col_offset": 0,
+   "col_va": "0x80c328"
+  },
+  "0x7f5200": {
+   "class": "TerrainClass",
+   "col_offset": 4,
+   "col_va": "0x80c370"
+  },
+  "0x7f521c": {
+   "class": "TerrainClass",
+   "col_offset": 12,
+   "col_va": "0x80c340"
+  },
+  "0x7f5224": {
+   "class": "TerrainClass",
+   "col_offset": 8,
+   "col_va": "0x80c358"
+  },
+  "0x7f522c": {
+   "class": "TerrainClass",
+   "col_offset": 0,
+   "col_va": "0x80c3e0"
+  },
+  "0x7f542c": {
+   "class": "TerrainTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80c3f8"
+  },
+  "0x7f5434": {
+   "class": "TerrainTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80c410"
+  },
+  "0x7f543c": {
+   "class": "TerrainTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80c428"
+  },
+  "0x7f5458": {
+   "class": "TerrainTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80c498"
+  },
+  "0x7f550c": {
+   "class": "?$DynamicVectorClass@PAVTEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c500"
+  },
+  "0x7f552c": {
+   "class": "?$VectorClass@PAVTEventClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c530"
+  },
+  "0x7f554c": {
+   "class": "TEventClass",
+   "col_offset": 12,
+   "col_va": "0x80c548"
+  },
+  "0x7f5554": {
+   "class": "TEventClass",
+   "col_offset": 8,
+   "col_va": "0x80c560"
+  },
+  "0x7f555c": {
+   "class": "TEventClass",
+   "col_offset": 4,
+   "col_va": "0x80c578"
+  },
+  "0x7f5578": {
+   "class": "TEventClass",
+   "col_offset": 0,
+   "col_va": "0x80c5e0"
+  },
+  "0x7f55dc": {
+   "class": "TextButtonClass",
+   "col_offset": 0,
+   "col_va": "0x80c638"
+  },
+  "0x7f568c": {
+   "class": "?$DynamicVectorClass@PAUThemeControl@@",
+   "col_offset": 0,
+   "col_va": "0x80c688"
+  },
+  "0x7f56bc": {
+   "class": "?$DynamicVectorClass@PAVTiberiumClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c6f0"
+  },
+  "0x7f56dc": {
+   "class": "?$VectorClass@PAVTiberiumClass@@",
+   "col_offset": 0,
+   "col_va": "0x80c720"
+  },
+  "0x7f56fc": {
+   "class": "TiberiumClass",
+   "col_offset": 12,
+   "col_va": "0x80c738"
+  },
+  "0x7f5704": {
+   "class": "TiberiumClass",
+   "col_offset": 8,
+   "col_va": "0x80c750"
+  },
+  "0x7f570c": {
+   "class": "TiberiumClass",
+   "col_offset": 4,
+   "col_va": "0x80c768"
+  },
+  "0x7f5728": {
+   "class": "TiberiumClass",
+   "col_offset": 0,
+   "col_va": "0x80c7d8"
+  },
+  "0x7f57ac": {
+   "class": "ToolTipManager",
+   "col_offset": 0,
+   "col_va": "0x80c888"
+  },
+  "0x7f57c8": {
+   "class": "?$DynamicVectorClass@PBVToolTip@@",
+   "col_offset": 0,
+   "col_va": "0x80c840"
+  },
+  "0x7f57e8": {
+   "class": "?$VectorClass@PBVToolTip@@",
+   "col_offset": 0,
+   "col_va": "0x80c8b8"
+  },
+  "0x7f582c": {
+   "class": "TriggerClass",
+   "col_offset": 12,
+   "col_va": "0x80c8d0"
+  },
+  "0x7f5834": {
+   "class": "TriggerClass",
+   "col_offset": 8,
+   "col_va": "0x80c8e8"
+  },
+  "0x7f583c": {
+   "class": "TriggerClass",
+   "col_offset": 4,
+   "col_va": "0x80c900"
+  },
+  "0x7f5858": {
+   "class": "TriggerClass",
+   "col_offset": 0,
+   "col_va": "0x80c968"
+  },
+  "0x7f58d8": {
+   "class": "TriggerTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80c980"
+  },
+  "0x7f58e0": {
+   "class": "TriggerTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80c998"
+  },
+  "0x7f58e8": {
+   "class": "TriggerTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80c9b0"
+  },
+  "0x7f5904": {
+   "class": "TriggerTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80ca20"
+  },
+  "0x7f5984": {
+   "class": "TubeClass",
+   "col_offset": 12,
+   "col_va": "0x80ca38"
+  },
+  "0x7f598c": {
+   "class": "TubeClass",
+   "col_offset": 8,
+   "col_va": "0x80ca50"
+  },
+  "0x7f5994": {
+   "class": "TubeClass",
+   "col_offset": 4,
+   "col_va": "0x80ca68"
+  },
+  "0x7f59b0": {
+   "class": "TubeClass",
+   "col_offset": 0,
+   "col_va": "0x80cad0"
+  },
+  "0x7f5a24": {
+   "class": "TunnelLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x80cae8"
+  },
+  "0x7f5af0": {
+   "class": "TunnelLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x80cb48"
+  },
+  "0x7f5b44": {
+   "class": "TextLabelClass",
+   "col_offset": 0,
+   "col_va": "0x80cb98"
+  },
+  "0x7f5c44": {
+   "class": "UnitClass",
+   "col_offset": 12,
+   "col_va": "0x80cbb0"
+  },
+  "0x7f5c4c": {
+   "class": "UnitClass",
+   "col_offset": 8,
+   "col_va": "0x80cbc8"
+  },
+  "0x7f5c54": {
+   "class": "UnitClass",
+   "col_offset": 4,
+   "col_va": "0x80cbe0"
+  },
+  "0x7f5c70": {
+   "class": "UnitClass",
+   "col_offset": 0,
+   "col_va": "0x80cc68"
+  },
+  "0x7f61ec": {
+   "class": "UnitTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80cc80"
+  },
+  "0x7f61f4": {
+   "class": "UnitTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80cc98"
+  },
+  "0x7f61fc": {
+   "class": "UnitTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80ccb0"
+  },
+  "0x7f6218": {
+   "class": "UnitTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80cd28"
+  },
+  "0x7f62ec": {
+   "class": "VoxelAnimClass",
+   "col_offset": 12,
+   "col_va": "0x80cd40"
+  },
+  "0x7f62f4": {
+   "class": "VoxelAnimClass",
+   "col_offset": 8,
+   "col_va": "0x80cd58"
+  },
+  "0x7f62fc": {
+   "class": "VoxelAnimClass",
+   "col_offset": 4,
+   "col_va": "0x80cd70"
+  },
+  "0x7f6318": {
+   "class": "VoxelAnimClass",
+   "col_offset": 0,
+   "col_va": "0x80cdf8"
+  },
+  "0x7f651c": {
+   "class": "VoxelAnimTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80ce10"
+  },
+  "0x7f6524": {
+   "class": "VoxelAnimTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80ce28"
+  },
+  "0x7f652c": {
+   "class": "VoxelAnimTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80ce40"
+  },
+  "0x7f6548": {
+   "class": "VoxelAnimTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80ceb0"
+  },
+  "0x7f65f4": {
+   "class": "?$VectorClass@E",
+   "col_offset": 0,
+   "col_va": "0x80cef8"
+  },
+  "0x7f663c": {
+   "class": "?$DynamicVectorClass@PAVVeinholeMonsterClass@@",
+   "col_offset": 0,
+   "col_va": "0x80cf60"
+  },
+  "0x7f665c": {
+   "class": "?$VectorClass@PAVVeinholeMonsterClass@@",
+   "col_offset": 0,
+   "col_va": "0x80cf90"
+  },
+  "0x7f667c": {
+   "class": "VeinholeMonsterClass",
+   "col_offset": 12,
+   "col_va": "0x80cfa8"
+  },
+  "0x7f6684": {
+   "class": "VeinholeMonsterClass",
+   "col_offset": 8,
+   "col_va": "0x80cfc0"
+  },
+  "0x7f668c": {
+   "class": "VeinholeMonsterClass",
+   "col_offset": 4,
+   "col_va": "0x80cfd8"
+  },
+  "0x7f66a8": {
+   "class": "VeinholeMonsterClass",
+   "col_offset": 0,
+   "col_va": "0x80d048"
+  },
+  "0x7f68ac": {
+   "class": "?$DynamicVectorClass@PAVVocClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d0b0"
+  },
+  "0x7f68cc": {
+   "class": "?$VectorClass@PAVVocClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d0e0"
+  },
+  "0x7f6904": {
+   "class": "?$DynamicVectorClass@PAVVoxClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d148"
+  },
+  "0x7f6924": {
+   "class": "?$VectorClass@PAVVoxClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d178"
+  },
+  "0x7f6984": {
+   "class": "?$DynamicVectorClass@PAVMovieHandle@@",
+   "col_offset": 0,
+   "col_va": "0x80d1e0"
+  },
+  "0x7f69a4": {
+   "class": "?$VectorClass@PAVMovieHandle@@",
+   "col_offset": 0,
+   "col_va": "0x80d210"
+  },
+  "0x7f69d4": {
+   "class": "WalkLocomotionClass",
+   "col_offset": 24,
+   "col_va": "0x80d228"
+  },
+  "0x7f69f8": {
+   "class": "WalkLocomotionClass",
+   "col_offset": 4,
+   "col_va": "0x80d240"
+  },
+  "0x7f6ac4": {
+   "class": "WalkLocomotionClass",
+   "col_offset": 0,
+   "col_va": "0x80d2a8"
+  },
+  "0x7f6b04": {
+   "class": "WarheadTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80d2c0"
+  },
+  "0x7f6b0c": {
+   "class": "WarheadTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80d2d8"
+  },
+  "0x7f6b14": {
+   "class": "WarheadTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80d2f0"
+  },
+  "0x7f6b30": {
+   "class": "WarheadTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80d360"
+  },
+  "0x7f6bc8": {
+   "class": "WaveClass",
+   "col_offset": 12,
+   "col_va": "0x80d378"
+  },
+  "0x7f6bd0": {
+   "class": "WaveClass",
+   "col_offset": 8,
+   "col_va": "0x80d390"
+  },
+  "0x7f6bd8": {
+   "class": "WaveClass",
+   "col_offset": 4,
+   "col_va": "0x80d3a8"
+  },
+  "0x7f6bf4": {
+   "class": "WaveClass",
+   "col_offset": 0,
+   "col_va": "0x80d418"
+  },
+  "0x7f6e04": {
+   "class": "?$DynamicVectorClass@PAVWaypointPathClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d480"
+  },
+  "0x7f6e24": {
+   "class": "?$VectorClass@PAVWaypointPathClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d4b0"
+  },
+  "0x7f6e44": {
+   "class": "WaypointPathClass",
+   "col_offset": 12,
+   "col_va": "0x80d530"
+  },
+  "0x7f6e4c": {
+   "class": "WaypointPathClass",
+   "col_offset": 8,
+   "col_va": "0x80d548"
+  },
+  "0x7f6e54": {
+   "class": "WaypointPathClass",
+   "col_offset": 4,
+   "col_va": "0x80d560"
+  },
+  "0x7f6e70": {
+   "class": "WaypointPathClass",
+   "col_offset": 0,
+   "col_va": "0x80d5c8"
+  },
+  "0x7f6ed4": {
+   "class": "?$DynamicVectorClass@VWaypointClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d518"
+  },
+  "0x7f6ef4": {
+   "class": "?$VectorClass@VWaypointClass@@",
+   "col_offset": 0,
+   "col_va": "0x80d5f8"
+  },
+  "0x7f6f24": {
+   "class": "?$rc_ptr@VCampaign@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d648"
+  },
+  "0x7f6f2c": {
+   "class": "?$rc_ptr@VState@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d7f0"
+  },
+  "0x7f6f34": {
+   "class": "?$rc_ptr@VConflict@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d700"
+  },
+  "0x7f6f3c": {
+   "class": "Campaign@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80d750"
+  },
+  "0x7f6f4c": {
+   "class": "?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80d6b0"
+  },
+  "0x7f6f6c": {
+   "class": "?$rc_ptr@VCampaignProperties@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d7a0"
+  },
+  "0x7f6f74": {
+   "class": "?$rc_ptr@VHistory@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d870"
+  },
+  "0x7f6f7c": {
+   "class": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80d820"
+  },
+  "0x7f6f9c": {
+   "class": "?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@",
+   "col_offset": 0,
+   "col_va": "0x80d8b8"
+  },
+  "0x7f6fc4": {
+   "class": "Conflict@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80d908"
+  },
+  "0x7f6fd4": {
+   "class": "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80d970"
+  },
+  "0x7f6ff4": {
+   "class": "?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80d9a0"
+  },
+  "0x7f7014": {
+   "class": "?$rc_ptr@VFlagGameOption@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80d9f0"
+  },
+  "0x7f701c": {
+   "class": "?$rc_ptr@V?$ValueGameOption@E@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80da90"
+  },
+  "0x7f7024": {
+   "class": "?$rc_ptr@VGameOption@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80da40"
+  },
+  "0x7f702c": {
+   "class": "?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@",
+   "col_offset": 0,
+   "col_va": "0x80dad8"
+  },
+  "0x7f7040": {
+   "class": "?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80db28"
+  },
+  "0x7f7048": {
+   "class": "?$ValueGameOption@E@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80dbc8"
+  },
+  "0x7f7060": {
+   "class": "GameOption@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80db60"
+  },
+  "0x7f709c": {
+   "class": "FlagGameOption@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80dc18"
+  },
+  "0x7f70b4": {
+   "class": "MapSizeGameOption@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80dc68"
+  },
+  "0x7f70dc": {
+   "class": "History@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80dcb8"
+  },
+  "0x7f70ec": {
+   "class": "?$rc_ptr@VWDTState@@",
+   "col_offset": 0,
+   "col_va": "0x80dd08"
+  },
+  "0x7f7104": {
+   "class": "MSFrameAnim",
+   "col_offset": 0,
+   "col_va": "0x80dd58"
+  },
+  "0x7f712c": {
+   "class": "?$rc_ptr@VMap@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80dda8"
+  },
+  "0x7f7134": {
+   "class": "Map@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80de60"
+  },
+  "0x7f7144": {
+   "class": "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80dec8"
+  },
+  "0x7f7164": {
+   "class": "?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80de10"
+  },
+  "0x7f7184": {
+   "class": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "col_offset": 0,
+   "col_va": "0x80def8"
+  },
+  "0x7f71a4": {
+   "class": "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80df28"
+  },
+  "0x7f71c4": {
+   "class": "?$rc_ptr@VTerritory@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80df78"
+  },
+  "0x7f71cc": {
+   "class": "?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@",
+   "col_offset": 0,
+   "col_va": "0x80dfc0"
+  },
+  "0x7f71e0": {
+   "class": "?$VectorClass@VCentroid@WorldDominationTour@@",
+   "col_offset": 0,
+   "col_va": "0x80e008"
+  },
+  "0x7f7220": {
+   "class": "WDTTerritory",
+   "col_offset": 0,
+   "col_va": "0x80e058"
+  },
+  "0x7f7230": {
+   "class": "?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+   "col_offset": 0,
+   "col_va": "0x80e088"
+  },
+  "0x7f7250": {
+   "class": "WDTState",
+   "col_offset": 0,
+   "col_va": "0x80e140"
+  },
+  "0x7f7260": {
+   "class": "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+   "col_offset": 0,
+   "col_va": "0x80e0f0"
+  },
+  "0x7f7294": {
+   "class": "CampaignProperties@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e190"
+  },
+  "0x7f72b4": {
+   "class": "Selection@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e1e0"
+  },
+  "0x7f72c4": {
+   "class": "?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@",
+   "col_offset": 0,
+   "col_va": "0x80e228"
+  },
+  "0x7f72d8": {
+   "class": "?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@",
+   "col_offset": 0,
+   "col_va": "0x80e2b8"
+  },
+  "0x7f72ec": {
+   "class": "?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@",
+   "col_offset": 0,
+   "col_va": "0x80e270"
+  },
+  "0x7f7314": {
+   "class": "State@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e308"
+  },
+  "0x7f7334": {
+   "class": "Territory@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e358"
+  },
+  "0x7f7354": {
+   "class": "Anim@Voices@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e3a8"
+  },
+  "0x7f738c": {
+   "class": "WeaponTypeClass",
+   "col_offset": 12,
+   "col_va": "0x80e3c0"
+  },
+  "0x7f7394": {
+   "class": "WeaponTypeClass",
+   "col_offset": 8,
+   "col_va": "0x80e3d8"
+  },
+  "0x7f739c": {
+   "class": "WeaponTypeClass",
+   "col_offset": 4,
+   "col_va": "0x80e3f0"
+  },
+  "0x7f73b8": {
+   "class": "WeaponTypeClass",
+   "col_offset": 0,
+   "col_va": "0x80e460"
+  },
+  "0x7f743c": {
+   "class": "WebBrowser",
+   "col_offset": 0,
+   "col_va": "0x80e4c8"
+  },
+  "0x7f7488": {
+   "class": "WinModemClass",
+   "col_offset": 0,
+   "col_va": "0x80e510"
+  },
+  "0x7f74c4": {
+   "class": "CCToolTip",
+   "col_offset": 0,
+   "col_va": "0x80e560"
+  },
+  "0x7f74f4": {
+   "class": "PlayerProfile",
+   "col_offset": 0,
+   "col_va": "0x80e5b0"
+  },
+  "0x7f7624": {
+   "class": "SimpleWonlineDialogControl",
+   "col_offset": 0,
+   "col_va": "0x80e600"
+  },
+  "0x7f766c": {
+   "class": "?$CComObject@VCNetUtilEventSink@@@ATL",
+   "col_offset": 0,
+   "col_va": "0x80e690"
+  },
+  "0x7f76b4": {
+   "class": "?$CComObject@VCChatEventSink@@@ATL",
+   "col_offset": 0,
+   "col_va": "0x80e750"
+  },
+  "0x7f7778": {
+   "class": "CNetUtilEventSink",
+   "col_offset": 0,
+   "col_va": "0x80e790"
+  },
+  "0x7f77a4": {
+   "class": "CChatEventSink",
+   "col_offset": 0,
+   "col_va": "0x80e7d0"
+  },
+  "0x7f7874": {
+   "class": "WonlineStringDialogControl",
+   "col_offset": 0,
+   "col_va": "0x80e828"
+  },
+  "0x7f788c": {
+   "class": "CreateGameDialogControl",
+   "col_offset": 0,
+   "col_va": "0x80e880"
+  },
+  "0x7f78a4": {
+   "class": "?$VectorClass@PAUtConnInfoStruct@@",
+   "col_offset": 0,
+   "col_va": "0x80e8b0"
+  },
+  "0x7f78c4": {
+   "class": "?$DynamicVectorClass@PAUtConnInfoStruct@@",
+   "col_offset": 0,
+   "col_va": "0x80e918"
+  },
+  "0x7f78e4": {
+   "class": "?$CComObject@VCDownloadEventSink@@@ATL",
+   "col_offset": 0,
+   "col_va": "0x80e9a8"
+  },
+  "0x7f791c": {
+   "class": "FactionSelectDialogControl@WorldDominationTour",
+   "col_offset": 0,
+   "col_va": "0x80e9f8"
+  },
+  "0x7f794c": {
+   "class": "IPXInterfaceClass",
+   "col_offset": 0,
+   "col_va": "0x80ea60"
+  },
+  "0x7f79bc": {
+   "class": "WinsockInterfaceClass",
+   "col_offset": 0,
+   "col_va": "0x80eaf8"
+  },
+  "0x7f7a1c": {
+   "class": "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "col_offset": 0,
+   "col_va": "0x80eac8"
+  },
+  "0x7f7a3c": {
+   "class": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "col_offset": 0,
+   "col_va": "0x80eb28"
+  },
+  "0x7f7a6c": {
+   "class": "UDPInterfaceClass",
+   "col_offset": 0,
+   "col_va": "0x80ebe0"
+  },
+  "0x7f7aec": {
+   "class": "?$DynamicVectorClass@PAE",
+   "col_offset": 0,
+   "col_va": "0x80eb90"
+  },
+  "0x7f7b0c": {
+   "class": "?$VectorClass@PAE",
+   "col_offset": 0,
+   "col_va": "0x80ec10"
+  },
+  "0x7f7b2c": {
+   "class": "WWMouseClass",
+   "col_offset": 0,
+   "col_va": "0x80ec60"
+  },
+  "0x7f7b78": {
+   "class": "Mouse",
+   "col_offset": 0,
+   "col_va": "0x80eca8"
+  },
+  "0x7f7bc4": {
+   "class": "?$BlitPlain@G",
+   "col_offset": 0,
+   "col_va": "0x80ed98"
+  },
+  "0x7f7bdc": {
+   "class": "?$BlitPlain@E",
+   "col_offset": 0,
+   "col_va": "0x80ede8"
+  },
+  "0x7f7bf4": {
+   "class": "?$BlitTrans@G",
+   "col_offset": 0,
+   "col_va": "0x80ecf8"
+  },
+  "0x7f7c0c": {
+   "class": "?$BlitTrans@E",
+   "col_offset": 0,
+   "col_va": "0x80ed48"
+  },
+  "0x7f9594": {
+   "class": "type_info",
+   "col_offset": 0,
+   "col_va": "0x80ee30"
+  },
+  "0x7f95d0": {
+   "class": "__non_rtti_object",
+   "col_offset": 0,
+   "col_va": "0x80eeb0"
+  },
+  "0x7f95dc": {
+   "class": "bad_typeid",
+   "col_offset": 0,
+   "col_va": "0x80eee8"
+  },
+  "0x7f9660": {
+   "class": "bad_cast",
+   "col_offset": 0,
+   "col_va": "0x80ef38"
+  },
+  "0x7f990c": {
+   "class": "exception",
+   "col_offset": 0,
+   "col_va": "0x80ef68"
+  },
+  "0x7fa498": {
+   "class": "_com_error",
+   "col_offset": 0,
+   "col_va": "0x80efb0"
+  }
+ }
+}
