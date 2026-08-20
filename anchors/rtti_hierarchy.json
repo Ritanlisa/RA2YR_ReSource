@@ -2126,6 +2126,9 @@
   "?$CComObject@VCNetUtilEventSink@@@ATL": [
    "CNetUtilEventSink"
   ],
+  "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL": [
+   "CComObjectRootBase@ATL"
+  ],
   "?$DynamicVectorClass@G": [
    "?$VectorClass@G"
   ],
@@ -2705,6 +2708,9 @@
   "?$DynamicVectorClass@VWstring@@": [
    "?$VectorClass@VWstring@@"
   ],
+  "?$DynamicVectorClass@W4DiskID@@": [
+   "?$VectorClass@W4DiskID@@"
+  ],
   "?$DynamicVectorClass@W4PassabilityType@@": [
    "?$VectorClass@W4PassabilityType@@"
   ],
@@ -2738,7 +2744,13 @@
   "?$List@PAVMixFileClass@@": [
    "GenericList"
   ],
+  "?$Node@PAUINIEntry@INIClass@@": [
+   "GenericNode"
+  ],
   "?$Node@PAUINISection@INIClass@@": [
+   "GenericNode"
+  ],
+  "?$Node@PAVMixFileClass@@": [
    "GenericNode"
   ],
   "?$RLEBlitTransDarken@G": [
@@ -3329,6 +3341,10 @@
   "CDFileClass": [
    "BufferIOFileClass"
   ],
+  "CDownloadEventSink": [
+   "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+   "IDownloadEvent@WOL"
+  ],
   "CNetUtilEventSink": [
    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
    "INetUtilEvent@WOL"
@@ -3514,11 +3530,53 @@
   "HoverLocomotionClass": [
    "LocomotionClass"
   ],
+  "IApplication": [
+   "IUnknown"
+  ],
+  "IChatEvent@WOL": [
+   "IUnknown"
+  ],
+  "IClassFactory": [
+   "IUnknown"
+  ],
+  "IConnectionPoint": [
+   "IUnknown"
+  ],
+  "IConnectionPointContainer": [
+   "IUnknown"
+  ],
+  "IDownloadEvent@WOL": [
+   "IUnknown"
+  ],
+  "IEnumConnectionPoints": [
+   "IUnknown"
+  ],
+  "IEnumConnections": [
+   "IUnknown"
+  ],
+  "IFlyControl": [
+   "IUnknown"
+  ],
+  "IGameMap": [
+   "IUnknown"
+  ],
+  "IHouse": [
+   "IUnknown"
+  ],
+  "ILinkStream": [
+   "IUnknown"
+  ],
+  "ILocomotion": [
+   "IUnknown"
+  ],
   "INIEntry@INIClass": [
    "?$Node@PAUINIEntry@INIClass@@"
   ],
   "INISection@INIClass": [
    "?$Node@PAUINISection@INIClass@@"
+  ],
+  "INetUtilEvent@WOL": [
+   "IUnknown"
   ],
   "IPXConnClass": [
    "ConnectionClass"
@@ -3531,6 +3589,33 @@
   ],
   "IPXManagerClass": [
    "ConnManClass"
+  ],
+  "IPersist": [
+   "IUnknown"
+  ],
+  "IPersistStream": [
+   "IPersist"
+  ],
+  "IPiggyback": [
+   "IUnknown"
+  ],
+  "IPublicHouse": [
+   "IUnknown"
+  ],
+  "IRTTITypeInfo": [
+   "IUnknown"
+  ],
+  "ISequentialStream": [
+   "IUnknown"
+  ],
+  "IStream": [
+   "ISequentialStream"
+  ],
+  "ISwizzle": [
+   "IUnknown"
+  ],
+  "IWOLBrowserEvent": [
+   "IUnknown"
   ],
   "InfantryClass": [
    "FootClass"
