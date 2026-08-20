@@ -256,6 +256,30 @@ def direct_bases_from_parsed(parsed):
     return roots
 
 
+def collect_tree_edges(parsed):
+    """Walk the whole BCD DFS tree collecting (parent, child) direct edges.
+
+    Interior nodes matter: a base class without its own COL (e.g. a pure
+    interface like INoticeSink) still gets its direct bases recorded from
+    any composite class's tree that contains it (INoticeSink -> IUnknown).
+    """
+    edges = set()
+
+    def walk(idx, parent_name):
+        node = parsed[idx]
+        end = idx + node["numContained"] + 1
+        if parent_name is not None:
+            edges.add((parent_name, node["name"]))
+        child = idx + 1
+        while child < end:
+            child = walk(child, node["name"])
+        return end
+
+    if parsed:
+        walk(0, None)
+    return edges
+
+
 def build_hierarchy(bin_: Binary, cols, tds):
     classes = set(tds.values())
     direct = defaultdict(set)  # class -> direct base names
@@ -292,6 +316,9 @@ def build_hierarchy(bin_: Binary, cols, tds):
         bases = [p["name"] for p in parsed[1:]]
         for b in direct_bases_from_parsed(parsed):
             direct[cls].add(b["name"])
+        # 整树内部边：无独立 COL 的基类（纯接口）也能获得直接基类记录
+        for parent, child in collect_tree_edges(parsed):
+            direct[parent].add(child)
         full[cls].update(bases)
         for p in parsed[1:]:
             key = f"{cls}->{p['name']}"

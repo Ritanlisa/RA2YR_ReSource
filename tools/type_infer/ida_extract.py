@@ -199,6 +199,71 @@ def _load_member_anchors():
 MEMBER_ANCHOR = _load_member_anchors()
 print(f"  Loaded {len(MEMBER_ANCHOR)} member anchors (T5 E1 MEMBER_ANCHOR)")
 
+
+# ============================================================
+# Phase 1a: RTTI 真值层 —— anchors/rtti_vtable_class.json +
+# rtti_hierarchy.json（tools/rtti_truth_extract.py 直接解析二进制
+# 产出，与活 IDB 1214/1214 一致，见 tools/rtti_ida_xcheck.py）。
+# 数据源为二进制 MSVC6 RTTI 结构本身，不经过 hpp 派生链——
+# 与 MEMBER_ANCHOR（hpp 循环派生）互为独立来源。
+# ============================================================
+
+def _load_rtti_truth():
+    """加载 RTTI 真值 → (vtable_map, direct, this_adjust, secondary_base)。
+
+    vtable_map: {hex_va: {"class","col_offset","col_va"}}
+    direct:     {class: [direct bases]}（MI 完整直接基类列表）
+    this_adjust:{\"Derived->Base\": [mdisp, pdisp, vdisp]}
+    secondary_base: {hex_va: base_class}——col_offset!=0 的次级 vtable，
+                该偏移处唯一非虚直接基类（多候选时放弃，保守不解析）。
+    """
+    vtable_map, direct, this_adjust, secondary_base = {}, {}, {}, {}
+    vt_path = os.path.join(PROJ_ROOT, "anchors", "rtti_vtable_class.json")
+    if os.path.exists(vt_path):
+        try:
+            with open(vt_path, "r", encoding="utf-8") as f:
+                vtable_map = json.load(f).get("vtables", {})
+        except Exception as e:
+            print(f"  Warning: Could not load rtti_vtable_class.json: {e}")
+    hier_path = os.path.join(PROJ_ROOT, "anchors", "rtti_hierarchy.json")
+    if os.path.exists(hier_path):
+        try:
+            with open(hier_path, "r", encoding="utf-8") as f:
+                hier = json.load(f)
+            direct = hier.get("direct", {})
+            this_adjust = hier.get("this_adjust", {})
+        except Exception as e:
+            print(f"  Warning: Could not load rtti_hierarchy.json: {e}")
+    _direct_of = direct
+    for _va, _info in vtable_map.items():
+        _off = (_info or {}).get("col_offset") or 0
+        _cls = (_info or {}).get("class", "")
+        if not _off or _cls not in _direct_of:
+            continue
+        _cands = sorted(
+            _b for _b in _direct_of[_cls]
+            if RTTI_THIS_ADJUST_GET(this_adjust, _cls, _b, _off)
+        )
+        if len(_cands) == 1:
+            secondary_base[_va] = _cands[0]
+    return vtable_map, direct, this_adjust, secondary_base
+
+
+def RTTI_THIS_ADJUST_GET(this_adjust, cls, base, off):
+    """(cls->base) 的 mdisp==off 且非虚基类（pdisp==-1）。"""
+    v = this_adjust.get(f"{cls}->{base}")
+    return bool(v) and v[0] == off and v[1] == 0xFFFFFFFF
+
+
+RTTI_VTABLE_MAP, RTTI_DIRECT, RTTI_THIS_ADJUST, RTTI_SECONDARY_BASE = (
+    _load_rtti_truth()
+)
+print(
+    f"  Loaded RTTI truth: {len(RTTI_VTABLE_MAP)} vtables, "
+    f"{len(RTTI_DIRECT)} classes w/ hierarchy, "
+    f"{len(RTTI_SECONDARY_BASE)} resolvable secondary bases"
+)
+
 # T5 (E2): signals.json return_type 归一化（仅基础类型; 类名走 this 锚定）
 _SIG_RETURN_NORM = {
     "int": "int",
@@ -576,6 +641,12 @@ def _apply_member_anchors(domain, type_domain, all_vars, member_anchor, anchor_s
         _this_dom = domain.get(_this_var)
         if not _this_dom:
             continue
+        # Phase 1b: 弱先验——member_lookup/member_types 是 hpp 循环派生
+        # （import_hpp_layouts 同源），只兜底无独立证据的成员变量，
+        # 不与 vtable/signature/type-seed 锚竞争（域已非空 → 跳过，
+        # AC-3 交集自然仲裁传播证据）。
+        if _domain_union(domain, type_domain, _var):
+            continue
         _anchored = False
         for _cls in _this_dom:
             _anchor_t = member_anchor.get((_cls, _off))
@@ -583,7 +654,7 @@ def _apply_member_anchors(domain, type_domain, all_vars, member_anchor, anchor_s
                 _domain_add(domain, type_domain, _var, _anchor_t)
                 _anchored = True
         if _anchored:
-            anchor_strength[_var] = max(anchor_strength.get(_var, 0), 2)
+            anchor_strength[_var] = max(anchor_strength.get(_var, 0), 1)
             hits += 1
     return hits
 
@@ -1398,39 +1469,61 @@ def _sanitize_struct_name(name):
 # ============================================================
 
 def _match_adjustor_thunk(insns):
-    """C3: adjustor thunk 三重匹配（纯逻辑，离线可测）。
+    """C3: adjustor thunk 匹配（纯逻辑，离线可测）——Phase 1c 修正。
 
-    insns: 3 条顺序指令，每条 = {"mnem": str, "ops": [(kind, *args), ...]}：
-      指令 1: `mov eax, [esp+4]`  → ops: [("reg","eax"), ("displ","esp",4)]
-      指令 2: `add eax, imm`      → ops: [("reg","eax"), ("imm", adjustment)]
-      指令 3: `jmp <target>`      → ops: [("near", target_addr)]
-    命中返回 (target, this_adjustment)；否则 None。
-    误判防线（设计 §C3）：必须三指令连读——`mov eax,[esp+4]` 单独出现也可能是
-    普通函数开头（取参数），mov+add+jmp 连读才算 thunk。
+    本二进制（MSVC 6.0 x86）实测模式（二进制取证 + RTTI this_adjust 互证，
+    106 个真实 thunk 样本）:
+      A. stdcall this 调整器: `sub dword ptr [esp+4], imm` + `jmp target`
+         （this 在栈上；imm == 次级 vtable 的 RTTI col_offset，
+          如 AircraftClass col_off=0x6C0 → `81 6C 24 04 C0 06 00 00`）
+      B. 成员子对象调整器:   `mov ecx, [ecx+off]` + `jmp target`
+         （this 解引用为成员对象指针，off 为成员偏移）
+      C. 纯转发桩:           `jmp target`（无调整——导入/共享别名）
+
+    旧模式 `mov eax,[esp+4]; add eax,imm; jmp` 在本二进制 0 命中
+    （已证伪：MSVC6 stdcall thunk 用 sub [esp+4] 直接改栈参数）。
+
+    insns: _decode_insns3 的顺序指令列表，每条 = {"mnem", "ops"}。
+    返回 (target, adjustment, kind)；adjustment = 加到 this 上的有符号
+    增量（sub imm → -imm；deref → None）；未命中返回 None。
     """
-    if not insns or len(insns) < 3:
+    if not insns:
         return None
-    m1, o1 = insns[0].get("mnem"), insns[0].get("ops") or ()
-    if m1 != "mov" or len(o1) < 2:
+    i0 = insns[0]
+    m1, o1 = i0.get("mnem"), i0.get("ops") or ()
+
+    def _is_jmp(insn):
+        o = insn.get("ops") or ()
+        return insn.get("mnem") == "jmp" and o and o[0][0] == "near"
+
+    # C. 纯转发桩
+    if _is_jmp(i0):
+        return o1[0][1], 0, "forwarder"
+
+    if len(insns) < 2 or not _is_jmp(insns[1]):
         return None
-    if o1[0][0] != "reg" or o1[0][1] != "eax":
-        return None
-    if o1[1][0] != "displ" or o1[1][1] != "esp" or o1[1][2] != 4:
-        return None
-    m2, o2 = insns[1].get("mnem"), insns[1].get("ops") or ()
-    if m2 != "add" or len(o2) < 2:
-        return None
-    if o2[0][0] != "reg" or o2[0][1] != "eax":
-        return None
-    if o2[1][0] != "imm":
-        return None
-    adjustment = o2[1][1]
-    m3, o3 = insns[2].get("mnem"), insns[2].get("ops") or ()
-    if m3 != "jmp" or not o3:
-        return None
-    if o3[0][0] != "near":
-        return None
-    return o3[0][1], adjustment
+    target = (insns[1]["ops"] or [])[0][1]
+
+    # A. sub [esp+4], imm —— stdcall this 调整器
+    if (m1 == "sub" and len(o1) >= 2
+            and o1[0][0] == "displ" and o1[0][1] == "esp" and o1[0][2] == 4
+            and o1[1][0] == "imm"):
+        imm = o1[1][1]
+        if imm > 0x7FFFFFFF:
+            imm -= 0x100000000
+        return target, -imm, "stack_sub"
+
+    # B. mov ecx, [ecx+off] —— 成员子对象调整器
+    if (m1 == "mov" and len(o1) >= 2
+            and o1[0][0] == "reg" and o1[0][1] == "ecx"
+            and o1[1][0] == "displ" and o1[1][1] == "ecx"):
+        return target, None, "deref"
+
+    return None
+
+
+# C3: x86-32 通用寄存器号 → 名（IDA 9.2 get_reg_name 空返回时的静态兜底）
+_X86_REG32 = ("eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi")
 
 
 def _decode_insn_lite(ea):
@@ -1453,6 +1546,20 @@ def _decode_insn_lite(ea):
                     regname = ida_idp.get_reg_name(op.reg, op.dtyp) or ""
                 except Exception:
                     regname = ""
+            if not regname:
+                # IDA 9.2: get_reg_name 在部分上下文返回空（probe 实证
+                # 0x4105E0 `sub [esp+4],4` 解出 displ reg=""；print_operand
+                # 同样为空）——退回 x86 寄存器号静态映射（本提取器仅面向
+                # gamemd.exe x86-32，reg 0-7 = eax..edi）。
+                try:
+                    txt = idc.print_operand(ea, i) or ""
+                    _m = re.search(r"\[([A-Za-z_]\w*)", txt)
+                    if _m:
+                        regname = _m.group(1).lower()
+                except Exception:
+                    pass
+            if not regname and 0 <= op.reg < 8:
+                regname = _X86_REG32[op.reg]
             ops.append(("displ", regname, op.addr))
         elif t == idaapi.o_imm:
             ops.append(("imm", op.value))
@@ -1809,29 +1916,76 @@ def _run_main():
         else:
             ea += 4
 
+    # Phase 1a+: RTTI vtable 反截断。启发式扫描要求条目是 IDA 函数起点，
+    # 但 MSVC6 adjustor thunk（`sub [esp+4],imm; jmp`）通常未被定义为
+    # 函数 → 次级 vtable 在首个 thunk 条目处被截断，C3 因此看不到 thunk。
+    # 对 RTTI 真值 vtable 放宽为仅校验 .text 范围重读条目，并以相邻
+    # 真值 vtable 起址为界（连续 vtable 间以 COL 指针分隔，天然断链）。
+    _rtti_vt_starts = sorted(
+        int(_k, 16) for _k in RTTI_VTABLE_MAP
+        if RDATA_START <= int(_k, 16) < RDATA_END
+    )
+    _untruncated = 0
+    for vt in vtables:
+        if f"0x{vt['start']:x}" not in RTTI_VTABLE_MAP:
+            continue
+        _bound = vt["start"] + 0x800
+        for _s in _rtti_vt_starts:
+            if _s > vt["start"]:
+                _bound = min(_bound, _s - 4)
+                break
+        _entries, _ea = [], vt["start"]
+        while _ea < _bound - 4:
+            _val = ida_bytes.get_dword(_ea)
+            if _val < TEXT_START or _val >= TEXT_END:
+                break
+            _entries.append(_val)
+            _ea += 4
+        if len(_entries) > len(vt["entries"]):
+            vt["entries"] = _entries
+            _untruncated += 1
+    RUN_MANIFEST["rtti_vtable_untruncated"] = _untruncated
+    if _untruncated:
+        print(f"  [RTTI] vtables un-truncated (thunk entries recovered): {_untruncated}")
+
     # --- C3: adjustor thunk 检测（T9）---
     # 模式: `mov eax,[esp+4]` → `add eax,imm` → `jmp <target>` 三重连读。
     # 命中后该 vtable 条目锚定真实目标函数（jmp 目标），this_adjustment 记录；
     # thunk 自身地址不参与 this 锚定（锚定路径用 thunk_targets 映射）。
     thunk_targets = {}       # entry_addr → 真实目标函数地址
     thunk_adjustments = {}   # entry_addr → this_adjustment
-    thunks_detected = []     # manifest 记录: [{entry, target, adjustment}]
+    thunks_detected = []     # manifest 记录: [{entry, target, adjustment, kind}]
+    _rtti_confirm = _rtti_conflict = 0  # Phase 1c: adjustment 与 RTTI col_offset 互证
     for vt in vtables:
+        _vt_info = RTTI_VTABLE_MAP.get(f"0x{vt['start']:x}") or {}
         for entry in vt["entries"]:
             if entry in thunk_targets:
                 continue
             insns = _decode_insns3(entry)
             hit = _match_adjustor_thunk(insns) if insns else None
             if hit:
-                target, adjustment = hit
+                target, adjustment, thunk_kind = hit
                 thunk_targets[entry] = target
                 thunk_adjustments[entry] = adjustment
                 thunks_detected.append(
                     {"entry": hex(entry), "target": hex(target),
-                     "adjustment": adjustment}
+                     "adjustment": adjustment, "kind": thunk_kind}
                 )
+                # RTTI 互证: stdcall thunk 的 -imm 应等于该次级 vtable 的
+                # col_offset（this 从 subobject 还原到 complete object）
+                _col = _vt_info.get("col_offset") or 0
+                if _col and adjustment is not None:
+                    if adjustment == -_col:
+                        _rtti_confirm += 1
+                    else:
+                        _rtti_conflict += 1
     RUN_MANIFEST["thunks_detected"] = thunks_detected
-    print(f"  [C3] Adjustor thunks detected: {len(thunks_detected)}")
+    RUN_MANIFEST["rtti_thunk_confirm"] = _rtti_confirm
+    RUN_MANIFEST["rtti_thunk_conflict"] = _rtti_conflict
+    print(
+        f"  [C3] Adjustor thunks detected: {len(thunks_detected)} "
+        f"(RTTI xcheck: confirm={_rtti_confirm}, conflict={_rtti_conflict})"
+    )
     if len(thunks_detected) > 1000:
         print(
             f"  [C3][WARNING] thunk 数量 {len(thunks_detected)} > 1000，"
@@ -1895,8 +2049,24 @@ def _run_main():
         if class_name:
             vtable_to_real_name[start_addr] = class_name
 
+    # Phase 1a: RTTI 真值覆盖——二进制 RTTI（100% IDB 一致）优先于
+    # IDA 名称/邻近猜测；启发式仅兜底非 RTTI vtable（CRT 等）。
+    _rtti_overrides = 0
+    vt_rtti_secondary = {}  # vt_start -> col_offset（次级 subobject vtable）
+    for vt in vtables:
+        _info = RTTI_VTABLE_MAP.get(f"0x{vt['start']:x}")
+        if not _info:
+            continue
+        vtable_to_real_name[vt["start"]] = _info["class"]
+        _rtti_overrides += 1
+        if _info.get("col_offset"):
+            vt_rtti_secondary[vt["start"]] = _info["col_offset"]
+    RUN_MANIFEST["rtti_name_overrides"] = _rtti_overrides
+    RUN_MANIFEST["rtti_secondary_vtables"] = len(vt_rtti_secondary)
+
     print(
-        f"  Found {len(vtables)} vtables, mapped {len(vtable_to_real_name)} to RTTI names."
+        f"  Found {len(vtables)} vtables, mapped {len(vtable_to_real_name)} to RTTI names "
+        f"(RTTI truth override: {_rtti_overrides}, secondary: {len(vt_rtti_secondary)})."
     )
 
     # ============================================================
@@ -3596,9 +3766,21 @@ def _run_main():
         if child_cls and base_cls and child_cls != base_cls:
             cls_subtype_edges.add((child_cls, base_cls))
 
+    # Phase 1d: RTTI 真值继承边优先注入——二进制 RTTI 的直接基类关系
+    # 是 ground truth（97% 头文件派生边已被证伪/未验证），必须先于
+    # CALL 用法启发式边加入（_build_acyclic_dag 先加者保留，冲突时
+    # 丢弃的是启发式边而非真值边）。
+    rtti_subtype_edges = set()
+    for _child, _bases in RTTI_DIRECT.items():
+        for _b in _bases:
+            rtti_subtype_edges.add((_child, _b))
+    RUN_MANIFEST["rtti_subtype_edges"] = len(rtti_subtype_edges)
+
     # Build class-level DAG (C4: 边添加前环检测——成环边丢弃 + 计数记录 manifest)
+    # 真值边在前（不可丢），启发式边在后（sorted 保证可复现）
     dag_adj, children_of, cycle_edges_dropped = _build_acyclic_dag(
-        sorted(cls_subtype_edges)
+        sorted(rtti_subtype_edges)
+        + sorted(cls_subtype_edges - rtti_subtype_edges)
     )
     RUN_MANIFEST["cycles_detected"] = len(cycle_edges_dropped)
     print(f"  [C4] Subtype cycle edges dropped: {len(cycle_edges_dropped)}")
@@ -3803,14 +3985,31 @@ def _run_main():
     print(f"  Using {len(sig_symbols)} entries from signals.json")
 
     # Build index: func_addr_int → list of vtable real names
+    # Phase 1a: 次级 vtable（col_offset!=0）语义修正——
+    #   - thunk 条目已被映射到真实目标（override，接收 complete-object
+    #     this）→ 投最派生类 ✓
+    #   - 非 thunk 条目 = 基类继承实现（接收 subobject this）→ 投
+    #     RTTI 解析出的 subobject 基类，而非最派生类
     func_to_vtable_real = defaultdict(list)
+    _sec_base_votes = 0
     for vt in vtables:
         vt_start = vt.get("start", 0)
         vt_real = vtable_to_real_name.get(vt_start, "")
         if not vt_real:
             continue
-        for entry in vt.get("entries", []):
+        _info = RTTI_VTABLE_MAP.get(f"0x{vt_start:x}") or {}
+        _sec_base = (
+            RTTI_SECONDARY_BASE.get(f"0x{vt_start:x}")
+            if _info.get("col_offset") else None
+        )
+        for _i, entry in enumerate(vt.get("entries", [])):
+            if (_sec_base
+                    and vt_entries_mapped.get(vt_start, [])[_i] == entry):
+                func_to_vtable_real[entry].append(_sec_base)
+                _sec_base_votes += 1
+                continue
             func_to_vtable_real[entry].append(vt_real)
+    RUN_MANIFEST["rtti_secondary_base_votes"] = _sec_base_votes
 
     # Vote map: Class_N → {real_name → vote_count}
     vt_name_votes = defaultdict(lambda: defaultdict(int))
