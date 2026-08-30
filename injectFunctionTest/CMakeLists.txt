@@ -15,7 +15,7 @@ if(NOT DEFINED HOOK_OUTPUT_DIR)
     if(DEFINED ENV{HOOK_OUTPUT_DIR})
         set(HOOK_OUTPUT_DIR "$ENV{HOOK_OUTPUT_DIR}")
     else()
-        set(HOOK_OUTPUT_DIR "H:/RA2MD")
+        set(HOOK_OUTPUT_DIR "D:/RA2MD")
     endif()
 endif()
 
