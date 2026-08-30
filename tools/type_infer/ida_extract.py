@@ -1101,14 +1101,16 @@ def _e6_parse_array_index(txt, disp):
     if scale not in (4, 8):
         return None
     off = 0
-    if disp is not None and -0x80000000 <= disp < 0x80000000:
-        off = int(disp)
-    elif m.group(4):
+    if m.group(4):
+        # 文本带显式位移组——优先文本解析（B2: get_operand_value 对无位移
+        # 形式可能返回寄存器索引垃圾值）
         s = m.group(4).strip().rstrip("h")
         try:
             off = int(s, 16)
         except ValueError:
             return None
+    elif disp is not None and -0x80000000 <= disp < 0x80000000:
+        off = int(disp)
     return (base, idx, scale, off)
 
 
@@ -1420,6 +1422,64 @@ def _this_src_member_name(txt, off):
     if off is not None and off > 0:
         return f"{base}.member(0x{off:X})"
     return f"*{base}"
+
+
+_RE_BARE_INDIRECT = re.compile(r"^\[([a-z]{2,3})]$")
+
+# B4: 写目标操作数0的常见指令（SSA 版本边界标记范围）
+_B4_WRITES_OP0 = frozenset({
+    "mov", "movzx", "movsx", "lea", "pop", "xchg", "inc", "dec",
+    "add", "sub", "adc", "sbb", "and", "or", "xor", "not", "neg",
+    "shl", "shr", "sar", "rol", "ror", "imul",
+    "sete", "setne", "setg", "setl", "setge", "setle",
+    "seta", "setb", "setae", "setbe", "sets",
+})
+
+_REG32_NAMES = frozenset({
+    "eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp",
+})
+
+
+def _reg32(op_txt):
+    """B4: 操作数文本是否为 32 位通用寄存器名（类型流载体）。"""
+    return (op_txt or "").strip().lower() in _REG32_NAMES
+
+
+# B6: 整数语义助记——内存操作数参与这些运算/比较，或被 fild/fistp 当整数
+# 加载/存储，证明该槽位持有 int（参数/成员/栈槽/全局的 int 证据源）。
+_B6_INT_ARITH = frozenset({
+    "add", "sub", "adc", "sbb", "imul", "idiv", "div",
+    "and", "or", "xor", "cmp", "test",
+    "shl", "shr", "sar", "sal", "rol", "ror",
+    "neg", "not", "inc", "dec",
+    "fild", "fildl", "fildq", "fistp", "fistpl", "fisttp",
+})
+
+# B6: 操作数文本统一化（去尺寸前缀，兼容 GUI/headless 两种显示形态）
+_RE_SIZE_PREFIX = re.compile(r"^(dword|word|byte|qword) ptr\s+")
+
+# B6b: 强整数助记——寄存器参与这些运算在指针上极罕见（区别于 add/cmp 等
+# 指针常见运算），可安全给寄存器 SSA 版本播 int 种（int 对类让位，
+# 过播无害——与既有 mov reg,imm 种子同语义）。
+_B6_REG_STRONG = frozenset({
+    "imul", "idiv", "div", "and", "or", "xor",
+    "shl", "shr", "sar", "sal", "rol", "ror",
+})
+
+
+def _operand_member_disp(txt, val):
+    """B2: 操作数真实位移提取（纯逻辑，离线可测）。
+
+    IDA get_operand_value 对**无位移** `[reg]`（o_displ，displ=0）返回的是
+    寄存器索引（eax=0, ecx=1, edx=2...）而非位移——裸 `[ecx]` 被当成
+    `member(0x1)`、`[edx]` 被当成 `member(0x2)`，所有首字段（vtable 槽）
+    访问的偏移全错 +1，且不同寄存器的裸间接访问被合并到错误偏移域。
+    修复：操作数文本恰为 `[reg]`（无 +/- 修饰）时位移恒为 0；其余形式
+    交回调用方传入的 get_operand_value 结果。
+    """
+    if txt and _RE_BARE_INDIRECT.match(txt.strip().lower()):
+        return 0
+    return val
 
 
 def _vtable_slot_anchors(vtables, vt_entries_mapped):
@@ -2342,7 +2402,9 @@ def _run_main():
             return None
         if _reg_index_guard(txt, m.end()):
             return None
-        val = idc.get_operand_value(ea, op_n)
+        # B2: 裸 `[esp]`/`[ebp]`（无位移）get_operand_value 返回寄存器索引
+        # 而非 0——文本精确判定（见 _operand_member_disp）
+        val = _operand_member_disp(txt, idc.get_operand_value(ea, op_n))
         if val is None:
             return None
         try:
@@ -2372,11 +2434,12 @@ def _run_main():
         return f"stack_{val + spd:+#x}"
 
 
-    def _parse_operand_src(ea, op_n):
+    def _parse_operand_src(ea, op_n, scope=None):
         """F3/F6/F14: 操作数 → ('kind', name) 类型化来源。
 
         ('reg', name) / ('stack', stack_name) / ('global', name) /
         ('member', '*base_reg') / ('imm', None) / None（不可解析）。
+        scope: 调用方函数起始地址——member 名加 `0xADDR::` 前缀（B3）。
         """
         txt = (idc.print_operand(ea, op_n) or "").strip()
         if not txt:
@@ -2395,7 +2458,22 @@ def _run_main():
                 # A0-S3 (T3): 保留成员偏移——`mov ecx,[esi+14h]` →
                 # `esi.member(0x14)`（旧 `*esi` 丢弃偏移且被 scope_vars
                 # 当作寄存器 SSA 化；断链 1 修复，偏移可参与 MEMBER_ANCHOR）
-                return ("member", _this_src_member_name(low, idc.get_operand_value(ea, op_n)))
+                # B2: 裸 `[reg]` 的 get_operand_value 返回寄存器索引而非
+                # 位移 0——文本精确判定强制 off=0（见 _operand_member_disp）
+                # A1: 位移有效性（BADADDR -1 以 64 位泄漏成
+                # member(0xFFFFFFFFFFFFFFFF)，无类型价值）
+                _disp = _operand_member_disp(txt, idc.get_operand_value(ea, op_n))
+                if _disp is None or not _a1_valid_member_off(_disp):
+                    return None
+                name = _this_src_member_name(low, _disp)
+                if name is None:
+                    return None
+                # B3: member 名必须函数作用域化——`esi.member(0x14)` 在
+                # 不同函数中同名，会形成跨函数汇流枢纽（度 370 实证），
+                # 与 vtable_slot_* 同性质的污染源
+                if scope is not None and "." in name:
+                    name = f"0x{scope:08X}::{name}"
+                return ("member", name)
             return None
         if _is_global_ref(txt):
             return ("global", _strip_seg(txt))
@@ -2412,12 +2490,19 @@ def _run_main():
                 break
             if mnem == "push":
                 # F3: 立即数也占参数槽位（跳过会导致后续参数编号漂移）
-                pushes.append(_parse_operand_src(ea, 0))
+                pushes.append(_parse_operand_src(ea, 0, scope=fstart))
             elif mnem == "mov" and idc.print_operand(ea, 0).strip().lower() == "ecx":
-                # F6: this 来源数值解析（寄存器别名 / 栈槽 / 成员 / 全局）
-                src = _parse_operand_src(ea, 1)
-                if src:
-                    this_src = src
+                # F6: this 来源数值解析（寄存器别名 / 栈槽 / 成员 / 全局）。
+                # B2 (thiscall nearest-def): 逆序扫描由近及远，离 call 最近
+                # 的 `mov ecx, X` 才是为本次调用装载 this 的 def——首次
+                # 命中即锁定，禁止更远处的 mov ecx（属更早调用的遗留值）
+                # 覆盖。实测案例：call 前序列 [mov ecx,offset Map], mov,
+                # push, lea, mov, [mov ecx,[eax+4]]（前者真 this）——旧行
+                # 为取最远者，把 this 错绑到无关成员上。
+                if this_src is None:
+                    src = _parse_operand_src(ea, 1, scope=fstart)
+                    if src:
+                        this_src = src
             ea = idc.prev_head(ea, fstart)
             scanned += 1
 
@@ -2584,7 +2669,7 @@ def _run_main():
             # A0-S2 (T1): lea 源解析提前（分支 + write_gap 指标共用，避免重复解析）
             lea_src = None
             if mnem == "lea" and op0:
-                lea_src = _parse_operand_src(ea, 1)
+                lea_src = _parse_operand_src(ea, 1, scope=fstart)
 
             if mnem == "mov" and op0 and op1:
                 src = op1.strip().lower()
@@ -2620,7 +2705,10 @@ def _run_main():
                         reg = m2.group(1)
                         if reg not in X86_REGS or _reg_index_guard(txt, m2.end()):
                             continue
-                        val = idc.get_operand_value(ea, op_n)
+                        # B2: 裸 `[reg]` get_operand_value 返回寄存器索引
+                        # 而非位移——文本精确判定强制 off=0
+                        val = _operand_member_disp(
+                            txt, idc.get_operand_value(ea, op_n))
                         if val is None or val < 0:
                             continue
                         off = val
@@ -2728,19 +2816,40 @@ def _run_main():
 
             if not c and mnem == "mov" and op0 and op1:
                 if _is_global_ref(op1):
-                    c = {
-                        "from": _strip_seg(op1.strip()),
-                        "to": op0,
-                        "type": "ASSIGN",
-                        "addr": f"0x{ea:X}",
-                    }
+                    # B5: 对侧若是内存操作数，禁止把 print_operand 原文
+                    # （`dword ptr [esi]`——跨函数同名共享枢纽，实测复用
+                    # 1693 次）直接作变量名——用 _parse_operand_src 解析
+                    # （member/stack/reg，B3 已作用域化）；不可解析则断链
+                    # （该值流动信息宁可丢失，不可共享假名）。
+                    _dst = op0.strip().lower()
+                    if _dst not in X86_REGS:
+                        _dsrc = _parse_operand_src(ea, 0, scope=fstart)
+                        if not _dsrc or _dsrc[0] not in ("member", "stack", "reg"):
+                            _dst = None
+                        else:
+                            _dst = _dsrc[1]
+                    if _dst:
+                        c = {
+                            "from": _strip_seg(op1.strip()),
+                            "to": _dst,
+                            "type": "ASSIGN",
+                            "addr": f"0x{ea:X}",
+                        }
                 elif _is_global_ref(op0):
-                    c = {
-                        "from": op1,
-                        "to": _strip_seg(op0.strip()),
-                        "type": "ASSIGN",
-                        "addr": f"0x{ea:X}",
-                    }
+                    _srcname = op1.strip().lower()
+                    if _srcname not in X86_REGS:
+                        _ssrc = _parse_operand_src(ea, 1, scope=fstart)
+                        if not _ssrc or _ssrc[0] not in ("member", "stack", "reg"):
+                            _srcname = None
+                        else:
+                            _srcname = _ssrc[1]
+                    if _srcname:
+                        c = {
+                            "from": _srcname,
+                            "to": _strip_seg(op0.strip()),
+                            "type": "ASSIGN",
+                            "addr": f"0x{ea:X}",
+                        }
 
             if not c and mnem == "mov" and op0 and op1:
                 ea_hex = f"0x{ea:X}"
@@ -2862,6 +2971,50 @@ def _run_main():
                                 "addr": f"0x{ea:X}",
                                 "vtable_slot": slot_idx,
                             }
+                            # B7 (接收者捕获): `call [reg+disp]` 的 reg 持有
+                            # vtable 指针；向后 ≤6 条找 `mov reg, [obj]`（裸
+                            # 间接，B2b 位移语义已修正）→ obj 来源即接收者
+                            # （对象指针）。只记 member/stack/global 来源（含
+                            # 作用域，精确存储位）；寄存器源无法定位版本，跳过。
+                            try:
+                                _ct = _RE_SIZE_PREFIX.sub(
+                                    "", (idc.print_operand(ea, 0) or "").strip().lower())
+                                _mm = re.match(r"^\[([a-z]{2,3})\+", _ct)
+                                if _mm:
+                                    _vtreg = _mm.group(1)
+                                    _pea = idc.prev_head(ea, fstart)
+                                    for _ in range(6):
+                                        if _pea == idaapi.BADADDR or _pea < fstart:
+                                            break
+                                        if idc.print_insn_mnem(_pea) == "call":
+                                            break
+                                        if idc.print_insn_mnem(_pea) == "mov":
+                                            _d0 = _RE_SIZE_PREFIX.sub(
+                                                "", (idc.print_operand(_pea, 0) or "").strip().lower())
+                                            _d1 = _RE_SIZE_PREFIX.sub(
+                                                "", (idc.print_operand(_pea, 1) or "").strip().lower())
+                                            if _d0 == _vtreg and _d1.startswith("["):
+                                                # base 寄存器即接收者载体：
+                                                # this/param0 别名 → 直接路由到
+                                                # 函数作用域变量（this/param0 是
+                                                # 精确存储位，引擎槽位路由消费）
+                                                _bm = re.match(r"^\[([a-z]{2,3})\]$", _d1)
+                                                if _bm and _bm.group(1) in this_regs:
+                                                    c["receiver"] = f"{func_addr_str}:this"
+                                                    break
+                                                if _bm and _bm.group(1) in param0_regs:
+                                                    c["receiver"] = f"{func_addr_str}::param0"
+                                                    break
+                                                _rsrc = _parse_operand_src(_pea, 1, scope=fstart)
+                                                if _rsrc and _rsrc[0] == "global" and _rsrc[1]:
+                                                    c["receiver"] = _rsrc[1]
+                                                elif _rsrc and _rsrc[0] in ("member", "stack") \
+                                                        and "::" in _rsrc[1]:
+                                                    c["receiver"] = _rsrc[1]
+                                                break
+                                        _pea = idc.prev_head(_pea, fstart)
+                            except Exception:
+                                pass
                             constraints.append(c)
                             vtable_edges = _scan_call_args(
                                 ea, fstart, vtable_var, "vtable_call", f"0x{ea:X}"
@@ -2912,7 +3065,7 @@ def _run_main():
             if mnem in ("fld", "fstp", "fadd", "fsub", "fmul", "fdiv", "fcomp", "fcompp"):
                 # F4: 浮点种子标到栈槽/全局/成员——禁止标到寄存器（esp/ebp）
                 for op_n in (0, 1):
-                    src = _parse_operand_src(ea, op_n)
+                    src = _parse_operand_src(ea, op_n, scope=fstart)
                     if src and src[0] in ("stack", "global", "member") and src[1]:
                         constraints.append(
                             {
@@ -2923,8 +3076,124 @@ def _run_main():
                             }
                         )
 
+            # B6 (arith-use int seeds): 内存操作数参与整数运算/比较（add/cmp/
+            # imul/...）、被 fild/fistp 当整数装载、或被立即数存储
+            # （`mov [ebp+8], 0`）→ 该槽位持有 int。这是 paramN 桶的主证据源
+            # （表驱动调度帧的参数只经算术使用体现 int 语义，0x49CC50 实证：
+            # a2<0 比较 / a20+v59 加法），也是成员 int 证据的补充（喂 T9c 聚合
+            # 与 T9d 参数回填）。直接 append（与 F4 同风格），不动 c。
+            if mnem in _B6_INT_ARITH or (
+                mnem == "mov" and op1 and _is_imm_text(op1)
+            ):
+                _b6_is_store = mnem == "mov" and op1 and _is_imm_text(op1)
+                for op_n in ((0,) if _b6_is_store else (0, 1)):
+                    _t = idc.print_operand(ea, op_n) or ""
+                    _low = _RE_SIZE_PREFIX.sub("", _t.strip().lower())
+                    if not _low or _low in X86_REGS or _low.startswith("offset "):
+                        continue
+                    if _is_imm_text(_low):
+                        continue
+                    # 1) 栈槽（含参数槽 stack_+0x8..）
+                    _sn = _stack_operand_name(ea, op_n)
+                    if _sn is not None:
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _sn,
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+                        continue
+                    # 2) this/param0 成员 [reg+off]
+                    _m2 = re.match(r"^\[([a-z]{2,3})\b", _low)
+                    if _m2 and _m2.group(1) in X86_REGS \
+                            and not _reg_index_guard(_low, _m2.end()):
+                        _disp = _operand_member_disp(_t, idc.get_operand_value(ea, op_n))
+                        if _disp is not None and _a1_valid_member_off(_disp):
+                            _mv = None
+                            if _m2.group(1) in this_regs:
+                                _mv = f"{func_addr_str}:this.member({_disp:#x})"
+                            elif _m2.group(1) in param0_regs:
+                                _mv = f"{func_addr_str}::param0.member({_disp:#x})"
+                            if _mv:
+                                constraints.append(
+                                    {"type": "TYPE_SEED", "var": _mv,
+                                     "itype": "int", "addr": f"0x{ea:X}"}
+                                )
+                        continue
+                    # 3) 全局
+                    if _is_global_ref(_t):
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _strip_seg(_t.strip()),
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+
+            # B6b (强整数寄存器算术): imul/and/xor/shl 族运算的寄存器操作数
+            # → raw reg int 种子（engine 经 prefix_index 覆盖该函数全部版本；
+            # int 对类让位，过播无害）。指针极少参与这些运算。
+            if mnem in _B6_REG_STRONG:
+                for op_n in (0, 1):
+                    _r = (idc.print_operand(ea, op_n) or "").strip().lower()
+                    _r = _RE_SIZE_PREFIX.sub("", _r)
+                    if _r in X86_REGS and _r not in ("esp", "ebp"):
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _r,
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+
+            # B6c (movsx/movzx 内存装载): 符号/零扩展装载证明源槽位是窄整数
+            # （byte/word）——给栈槽/成员/全局播 int 种（内存操作数，精确）。
+            if mnem in ("movsx", "movzx"):
+                _t = idc.print_operand(ea, 1) or ""
+                _low = _RE_SIZE_PREFIX.sub("", _t.strip().lower())
+                _m2 = re.match(r"^\[([a-z]{2,3})\b", _low)
+                if _m2 and _m2.group(1) in X86_REGS \
+                        and not _reg_index_guard(_low, _m2.end()):
+                    _disp = _operand_member_disp(_t, idc.get_operand_value(ea, 1))
+                    _mv = None
+                    if _disp is not None and _a1_valid_member_off(_disp):
+                        if _m2.group(1) in this_regs:
+                            _mv = f"{func_addr_str}:this.member({_disp:#x})"
+                        elif _m2.group(1) in param0_regs:
+                            _mv = f"{func_addr_str}::param0.member({_disp:#x})"
+                    if _mv:
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _mv,
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+                else:
+                    _sn = _stack_operand_name(ea, 1)
+                    if _sn is not None:
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _sn,
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+                    elif _is_global_ref(_t) and not _low.startswith("["):
+                        constraints.append(
+                            {"type": "TYPE_SEED", "var": _strip_seg(_t.strip()),
+                             "itype": "int", "addr": f"0x{ea:X}"}
+                        )
+
             if c:
                 constraints.append(c)
+            # B4 (SSA 版本边界补全): 凡是"写目标寄存器"的指令，若本指令没有
+            # 产生 to=该寄存器 的约束（寄存器索引加载 `mov reg,[base+idx*4]`、
+            # 算术 add/sub/shl/imul 等），SSA 写点就会漏检——旧版本类型跨过
+            # 重定义泄漏到后续用点（实证：CalculateSpread 0x59EF3D
+            # `mov ecx,[edx+eax*4]` 无约束 → 0x59EF4B 用点仍归 v0x59EF1A，
+            # &Map 类型经垃圾 ecx 汇入 g_RadarBlipManager）。
+            # 发版本标记边：from=指令唯一伪源（无类型、无共享），engine 侧
+            # 邻接构建跳过（_edge_skips_adjacency），仅用于写点登记。
+            if _reg32(op0) and mnem in _B4_WRITES_OP0:
+                _op0n = op0.strip().lower()
+                _has_to = any(
+                    cc.get("to", "").lstrip("*").lower() == _op0n
+                    for cc in constraints[nc_pre:]
+                )
+                if not _has_to:
+                    constraints.append({
+                        "from": f"*def@0x{ea:X}",
+                        "to": _op0n,
+                        "type": "ASSIGN",
+                        "addr": f"0x{ea:X}",
+                    })
             # A0-S2 (T1): 每函数寄存器写点 vs 产生约束的写点（可观测断言——
             # 覆盖域内写点必须产生约束，否则 SSA 版本边界再次丢失）
             if _a0s2_write_point(mnem, op0, op1, lea_src[0] if lea_src else None):

@@ -304,13 +304,19 @@ def build_scoped_index(
             # TYPE_SEED 等无向条目：占位保持与 constraints 的索引对齐，
             # engine 侧 var_to_id.get(None) → None → skip，不会产生变量
             scoped_names.append((None, None))
-            continue
-        sf, st = _scope_edge_vars(c_from, c_to, c_addr, func_addrs, writes)
-        scoped_names.append((sf, st))
-        name_to_addrs[sf].add(c_addr)
-        name_to_addrs[st].add(c_addr)
-        scoped_to_original[sf] = c_from
-        scoped_to_original[st] = c_to
+        else:
+            sf, st = _scope_edge_vars(c_from, c_to, c_addr, func_addrs, writes)
+            scoped_names.append((sf, st))
+            name_to_addrs[sf].add(c_addr)
+            name_to_addrs[st].add(c_addr)
+            scoped_to_original[sf] = c_from
+            scoped_to_original[st] = c_to
+        # B7: CALL_VTABLE 接收者（提取器已作用域化的成员名/全局名）——
+        # 不在 from/to 中，单独注册进变量索引供 engine 路由
+        recv = c.get("receiver")
+        if recv and recv not in scoped_to_original:
+            name_to_addrs[recv].add(c_addr)
+            scoped_to_original[recv] = recv
 
     unique_vars = len(name_to_addrs)
     total_writes = sum(len(v) for v in writes.values())

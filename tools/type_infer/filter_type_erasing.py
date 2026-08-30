@@ -49,6 +49,15 @@ ERASING_PARAM_TYPES = {
 ERASING_RET_DECLARED = {"char*", "void*", "const char*"}
 RET_FANOUT_CAP = 64
 
+# 库字符串函数例外（CRT/Win32，用户许可的库函数特例）：其 char* 参数/
+# 返回值承载字符串证据（引擎 libc_string 锚 + char* 一等伪类型消费），
+# 不按"类型擦除"剪除。与 engine._LIB_STRING_FUNCS 保持同源。
+_LIB_EXCEPTION = {
+    "0X007C9CC2", "0X007CDA90", "0X007C8D20", "0X007CD680", "0X007CE049",
+    "0X007CA4B0", "0X007CAF30", "0X007D15A0", "0X007C8470", "0X007C8542",
+    "0X007C846A", "0X007C85EA", "0X007C8EF4", "0X007CB7BA",
+}
+
 
 def _norm(t):
     t = str(t or "").strip()
@@ -104,6 +113,10 @@ def param_is_erasing(target, sig):
     if p is None:
         return False
     callee, kind, idx = p
+    # 库字符串函数例外（用户许可）：char* 参数承载字符串证据，且引擎已
+    # 有 libc_string 锚 + char* 一等伪类型——这些边是证据不是噪声
+    if callee in _LIB_EXCEPTION:
+        return False
     s = sig.get(callee)
     if s is None:
         return True  # 无签名（含 vtable_slot_* 伪 callee）
@@ -125,6 +138,8 @@ def param_is_erasing(target, sig):
 
 
 def return_is_erasing(callee_upper, sig, fanout):
+    if callee_upper in _LIB_EXCEPTION:
+        return False  # 库字符串函数返回 char* 是证据（strtok/strcpy 等）
     s = sig.get(callee_upper)
     if s is None:
         return True
