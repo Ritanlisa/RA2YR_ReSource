@@ -58,7 +58,7 @@ _PROJ_ROOT = os.path.dirname(
 )
 PROJ_ROOT = os.environ.get("RA2YR_ROOT", _PROJ_ROOT)
 if not os.path.isdir(PROJ_ROOT):
-    PROJ_ROOT = r"H:\RA2YR_ReSource"  # 最后 fallback
+    PROJ_ROOT = r"D:\RA2YR_ReSource"  # 最后 fallback（2026-08 修机结束，盘符回归 D:）
 if PROJ_ROOT not in sys.path:
     sys.path.insert(0, PROJ_ROOT)
 from tools.type_infer.scope_vars import (
@@ -4739,7 +4739,48 @@ def _run_main():
         )
     del globals_export
 
-    print("  [*] Skipping massive var_mapping and constraints export to prevent OOM...")
+    print("  [*] Exporting constraints & call graph (streaming)...")
+
+    # Phase 1+: 恢复 constraints/call_graph 导出。旧版整树 json.dump 曾 OOM
+    # 而被移除；改为逐条 json.dumps 流式写（内存 O(1)）。写到 *.rtti.json
+    # 新名，不覆盖 7 月旧基线（engine 换入前人工校验后重命名）。
+    _cdir = os.path.join(PROJ_ROOT, "tools", "type_infer", "constraints")
+    os.makedirs(_cdir, exist_ok=True)
+    _cpath = os.path.join(_cdir, "raw_constraints.rtti.json")
+    _total_c = len(type_seeds) + len(edge_constraints)
+    with open(_cpath, "w", encoding="utf-8") as f:
+        f.write(
+            '{"description": "Type constraints (RTTI re-anchored extractor)", '
+            '"binary": "gamemd.exe", "total_constraints": %d, "constraints": ['
+            % _total_c
+        )
+        _first = True
+        for c in type_seeds:
+            if not _first:
+                f.write(",")
+            _first = False
+            f.write(json.dumps(c, ensure_ascii=False))
+        for c in edge_constraints:
+            if not _first:
+                f.write(",")
+            _first = False
+            f.write(json.dumps(c, ensure_ascii=False))
+        f.write("]}")
+    print(f"  [*] raw_constraints.rtti.json written ({_total_c} constraints)")
+
+    _gpath = os.path.join(_cdir, "call_graph.rtti.json")
+    with open(_gpath, "w", encoding="utf-8") as f:
+        f.write('{"graph": {')
+        _first = True
+        for k in sorted(call_graph):
+            if not _first:
+                f.write(",")
+            _first = False
+            f.write(
+                '%s: %s' % (json.dumps(k), json.dumps(call_graph[k], ensure_ascii=False))
+            )
+        f.write("}}")
+    print(f"  [*] call_graph.rtti.json written ({len(call_graph)} callers)")
     gc.collect()
 
     # T7 验证产物：CC 提取结果（离线 verify_extract_output.py 对比 signals.json 用）
