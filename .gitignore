@@ -130,6 +130,8 @@ src_csp/
 
 # 类型推断引擎输出（engine.py 写入 cwd，可再生）
 type_map.json
+suggested_types.json
+top_causes.json
 contradictions.md
 
 # CTest 运行输出

@@ -31,6 +31,18 @@ _SENTINEL_NAMES = {BOTTOM: "BOTTOM", VOID_PTR: "VOID_PTR", TOP: "TOP"}
 # Type alias: a lattice element is either a sentinel int or a class name string.
 LatticeElement = Union[int, str]
 
+# 标量伪类型（引擎自身归一化的 int/float 证据 + char* 字符串域，不是类）。
+# 二进制中 UI/网络代码大量存在 int↔指针 punning（`g_GameStateFlags =
+# (int)objPtr` 实证）——伪标量与类指针在同一数据域混合是常态而非矛盾，
+# meet 中标量让位（类指针信息更稀有、对下游更有价值），不产生 TOP。
+# 具体度序（meet 取最具体 / 让位优先级）：char* > float > int。
+_SCALAR_PSEUDO = frozenset({"int", "float", "char*"})
+_PSEUDO_SPECIFICITY = {"int": 0, "float": 1, "char*": 2}
+
+
+def _most_specific_pseudo(a: str, b: str) -> str:
+    return a if _PSEUDO_SPECIFICITY[a] >= _PSEUDO_SPECIFICITY[b] else b
+
 
 # ── helpers ───────────────────────────────────────────────────────────── ─
 
@@ -40,7 +52,16 @@ def _is_concrete(t: LatticeElement) -> bool:
 
 
 def _is_constant(name: str) -> bool:
-    """True if name is a numeric constant (no type information)."""
+    """True if name is a numeric constant (no type information).
+
+    Lattice sentinels are Python ints (BOTTOM=0, VOID_PTR=1, TOP=2); they must
+    never be treated as numeric constants — otherwise meet(TOP, X) returns X
+    at the _is_constant short-circuit and TOP stops absorbing (non-monotone,
+    order-dependent fixpoint). Numeric constants always arrive as strings
+    ("0x4A8B0E", "123"), so exclude every non-str input outright.
+    """
+    if isinstance(name, int):
+        return False
     try:
         int(str(name), 0)
         return True
@@ -170,6 +191,12 @@ class TypeLattice:
 
     def __init__(self, class_layouts_path: Optional[str] = None):
         self._ancestors, self._parents = _load_hierarchy(class_layouts_path)
+        # RTTI ground-truth class set (binary-derived). Non-RTTI names
+        # (legacy class_layouts aliases like BaseNodeClass_Vector ≡
+        # ?$VectorClass@VBaseNodeClass@@) are second-class: they yield to
+        # RTTI types in meets so the same object typed by both naming
+        # systems resolves to the RTTI truth instead of TOP.
+        _, self._rtti_classes = _load_rtti_truth()
 
     # ── subtype check ───────────────────────────────────────────────────
 
@@ -229,24 +256,45 @@ class TypeLattice:
         if _is_constant(b):
             return a
 
-        # VOID_PTR is identity for meet
-        if a == VOID_PTR:
-            return b
-        if b == VOID_PTR:
-            return a
-
-        # BOTTOM provides no info, the other side wins
+        # BOTTOM (no info at all) must be checked BEFORE VOID_PTR: BOTTOM ⊒
+        # everything, so meet(BOTTOM, X) = X for every X — including
+        # meet(BOTTOM, VOID_PTR) = VOID_PTR, not BOTTOM.
         if a == BOTTOM:
             return b
         if b == BOTTOM:
+            return a
+
+        # VOID_PTR is identity for meet (except vs BOTTOM, handled above)
+        if a == VOID_PTR:
+            return b
+        if b == VOID_PTR:
             return a
 
         # TOP absorbs
         if a == TOP or b == TOP:
             return TOP
 
+        # Scalar pseudo-types yield to concrete types: int/char*↔pointer
+        # punning is a normal binary idiom (not a contradiction) — see
+        # _SCALAR_PSEUDO. Among pseudos, meet keeps the most specific.
+        a_scalar = a in _SCALAR_PSEUDO
+        b_scalar = b in _SCALAR_PSEUDO
+        if a_scalar and b_scalar:
+            return _most_specific_pseudo(a, b)
+        if a_scalar:
+            return b
+        if b_scalar:
+            return a
+
         # Both concrete
         if _is_concrete(a) and _is_concrete(b):
+            # RTTI provenance precedence: an RTTI-truth type beats a legacy
+            # alias for the same object (alias systems describe identical
+            # classes under different names — not a contradiction).
+            a_rtti = a in self._rtti_classes
+            b_rtti = b in self._rtti_classes
+            if a_rtti != b_rtti:
+                return a if a_rtti else b
             if self.is_subtype(a, b):
                 return a  # a is more specific
             if self.is_subtype(b, a):
@@ -287,6 +335,21 @@ class TypeLattice:
             # VOID_PTR or concrete. If the other is BOTTOM it's already handled.
             if _is_concrete(a) or _is_concrete(b):
                 return VOID_PTR
+
+        # Scalar pseudo-types yield to concrete types in joins too
+        # (int/char*↔pointer punning domains — see _SCALAR_PSEUDO). Two
+        # different pseudos join to the MOST SPECIFIC (char* > float > int):
+        # returning VOID_PTR here would erode char* domains when int evidence
+        # joins in (T9c/T9d aggregate joins mix both freely).
+        if _is_concrete(a) and _is_concrete(b):
+            a_scalar = a in _SCALAR_PSEUDO
+            b_scalar = b in _SCALAR_PSEUDO
+            if a_scalar and b_scalar:
+                return _most_specific_pseudo(a, b)
+            if a_scalar and not b_scalar:
+                return b
+            if b_scalar and not a_scalar:
+                return a
 
         # Both concrete: find least common ancestor
         if _is_concrete(a) and _is_concrete(b):

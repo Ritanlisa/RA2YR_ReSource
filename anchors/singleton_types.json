@@ -1,0 +1,706 @@
+{
+ "0x87f5d8": {
+  "name": "dword_87F5D8",
+  "type": "?$DynamicVectorClass@PAVBombClass@@"
+ },
+ "0x87f5f0": {
+  "name": "dword_87F5F0",
+  "type": "?$DynamicVectorClass@PAVTechnoClass@@"
+ },
+ "0x87f658": {
+  "name": "g_CommandClassVector",
+  "type": "?$DynamicVectorClass@PBVCommandClass@@"
+ },
+ "0x87f698": {
+  "name": "dword_87F698",
+  "type": "?$DynamicVectorClass@PAVLightConvertClass@@"
+ },
+ "0x87f750": {
+  "name": "dword_87F750",
+  "type": "?$DynamicVectorClass@PAVIsometricTileClass@@"
+ },
+ "0x87f778": {
+  "name": "g_GameConfigManager",
+  "type": "LogicClass"
+ },
+ "0x87f7e8": {
+  "name": "MapClass_Instance",
+  "type": "MouseClass"
+ },
+ "0x884d90": {
+  "name": "g_MixFileArray",
+  "type": "?$DynamicVectorClass@PAVMixFileClass@@"
+ },
+ "0x884da8": {
+  "name": "g_MixFileArray_Maps",
+  "type": "?$DynamicVectorClass@PAVMixFileClass@@"
+ },
+ "0x884dc0": {
+  "name": "MixFileClass_Array_Alt",
+  "type": "?$DynamicVectorClass@PAVMixFileClass@@"
+ },
+ "0x884de0": {
+  "name": "g_MixFileArray_Movies",
+  "type": "?$DynamicVectorClass@PAVMixFileClass@@"
+ },
+ "0x887058": {
+  "name": "dword_887058",
+  "type": "CCINIClass"
+ },
+ "0x887064": {
+  "name": "dword_887064",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x887068": {
+  "name": "dword_887068",
+  "type": "GenericNode"
+ },
+ "0x8870c0": {
+  "name": "CCINIClass_INI_RA2MD",
+  "type": "CCINIClass"
+ },
+ "0x8870cc": {
+  "name": "dword_8870CC",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x8870d0": {
+  "name": "dword_8870D0",
+  "type": "GenericNode"
+ },
+ "0x887128": {
+  "name": "CCINIClass_INI_AI",
+  "type": "CCINIClass"
+ },
+ "0x887134": {
+  "name": "dword_887134",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x887138": {
+  "name": "dword_887138",
+  "type": "GenericNode"
+ },
+ "0x887180": {
+  "name": "CCINIClass_INI_Art",
+  "type": "CCINIClass"
+ },
+ "0x88718c": {
+  "name": "dword_88718C",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x887190": {
+  "name": "dword_887190",
+  "type": "GenericNode"
+ },
+ "0x887208": {
+  "name": "CCINIClass_INI_UIMD",
+  "type": "CCINIClass"
+ },
+ "0x887214": {
+  "name": "dword_887214",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x887218": {
+  "name": "dword_887218",
+  "type": "GenericNode"
+ },
+ "0x8872b0": {
+  "name": "dword_8872B0",
+  "type": "?$DynamicVectorClass@PAVScriptClass@@"
+ },
+ "0x887388": {
+  "name": "VoxelAnimClass_Array",
+  "type": "?$DynamicVectorClass@PAVVoxelAnimClass@@"
+ },
+ "0x8874c0": {
+  "name": "WarheadTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVWarheadTypeClass@@"
+ },
+ "0x887568": {
+  "name": "WeaponTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVWeaponTypeClass@@"
+ },
+ "0x889e08": {
+  "name": "dword_889E08",
+  "type": "?$DynamicVectorClass@PAVTechnoClass@@"
+ },
+ "0x889fb8": {
+  "name": "dword_889FB8",
+  "type": "?$DynamicVectorClass@PAVAirstrikeClass@@"
+ },
+ "0x88a080": {
+  "name": "dword_88A080",
+  "type": "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@"
+ },
+ "0x88a0f0": {
+  "name": "dword_88A0F0",
+  "type": "?$DynamicVectorClass@PAVAlphaShapeClass@@"
+ },
+ "0x89a29c": {
+  "name": "punk",
+  "type": "ApplicationClass"
+ },
+ "0x89c668": {
+  "name": "dword_89C668",
+  "type": "?$DynamicVectorClass@PAVBombClass@@"
+ },
+ "0x89de18": {
+  "name": "dword_89DE18",
+  "type": "?$DynamicVectorClass@PAVBulletClass@@"
+ },
+ "0x89e0f0": {
+  "name": "dword_89E0F0",
+  "type": "?$DynamicVectorClass@PAVCaptureManagerClass@@"
+ },
+ "0x89ecf8": {
+  "name": "dword_89ECF8",
+  "type": "?$DynamicVectorClass@PAVConvertClass@@"
+ },
+ "0x89f518": {
+  "name": "g_DDrawSurfaceManager",
+  "type": "CCINIClass"
+ },
+ "0x89f524": {
+  "name": "dword_89F524",
+  "type": "?$List@PAUINISection@INIClass@@"
+ },
+ "0x8a0208": {
+  "name": "dword_8A0208",
+  "type": "?$DynamicVectorClass@PAVDiskLaserClass@@"
+ },
+ "0x8a06f8": {
+  "name": "dword_8A06F8",
+  "type": "TacticalClass@DisplayClass"
+ },
+ "0x8a0e88": {
+  "name": "dword_8A0E88",
+  "type": "?$DynamicVectorClass@PAVEBolt@@"
+ },
+ "0x8a3770": {
+  "name": "dword_8A3770",
+  "type": "?$DynamicVectorClass@PAVEgoClass@@"
+ },
+ "0x8a3870": {
+  "name": "dword_8A3870",
+  "type": "?$DynamicVectorClass@PAVEMPulseClass@@"
+ },
+ "0x8b3d10": {
+  "name": "dword_8B3D10",
+  "type": "?$DynamicVectorClass@PAVFoggedObjectClass@@"
+ },
+ "0x8b3dc0": {
+  "name": "FootClass_Array",
+  "type": "?$DynamicVectorClass@PAVFootClass@@"
+ },
+ "0x8b40c8": {
+  "name": "dword_8B40C8",
+  "type": "?$DynamicVectorClass@PAVTagClass@@"
+ },
+ "0x8b40e8": {
+  "name": "TeamClass_Array",
+  "type": "?$DynamicVectorClass@PAVTeamClass@@"
+ },
+ "0x8b4108": {
+  "name": "UnitClass_Array",
+  "type": "?$DynamicVectorClass@PAVUnitClass@@"
+ },
+ "0x8b4120": {
+  "name": "dword_8B4120",
+  "type": "?$DynamicVectorClass@PAVSideClass@@"
+ },
+ "0x8b4138": {
+  "name": "dword_8B4138",
+  "type": "?$DynamicVectorClass@PAVTubeClass@@"
+ },
+ "0x8b4150": {
+  "name": "AnimTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVAnimTypeClass@@"
+ },
+ "0x8b4178": {
+  "name": "dword_8B4178",
+  "type": "?$DynamicVectorClass@PAVTriggerTypeClass@@"
+ },
+ "0x8b4190": {
+  "name": "dword_8B4190",
+  "type": "?$DynamicVectorClass@PAVBuildingLightClass@@"
+ },
+ "0x8b41a8": {
+  "name": "dword_8B41A8",
+  "type": "?$DynamicVectorClass@PAVTagClass@@"
+ },
+ "0x8b41c8": {
+  "name": "dword_8B41C8",
+  "type": "?$DynamicVectorClass@PAVScriptTypeClass@@"
+ },
+ "0x8b41e0": {
+  "name": "dword_8B41E0",
+  "type": "?$DynamicVectorClass@PAVBuildingClass@@"
+ },
+ "0xa80208": {
+  "name": "dword_A80208",
+  "type": "?$DynamicVectorClass@PAVParticleSystemClass@@"
+ },
+ "0xa80228": {
+  "name": "HouseClass_Array_0",
+  "type": "?$DynamicVectorClass@PAVHouseClass@@"
+ },
+ "0xa83c68": {
+  "name": "dword_A83C68",
+  "type": "?$DynamicVectorClass@PAVBuildingTypeClass@@"
+ },
+ "0xa83c80": {
+  "name": "BulletTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVBulletTypeClass@@"
+ },
+ "0xa83c98": {
+  "name": "dword_A83C98",
+  "type": "?$DynamicVectorClass@PAVHouseTypeClass@@"
+ },
+ "0xa83cb8": {
+  "name": "dword_A83CB8",
+  "type": "?$DynamicVectorClass@PAVSuperClass@@"
+ },
+ "0xa83ce0": {
+  "name": "UnitTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVUnitTypeClass@@"
+ },
+ "0xa83cf8": {
+  "name": "dword_A83CF8",
+  "type": "?$DynamicVectorClass@PAVCampaignClass@@"
+ },
+ "0xa83d24": {
+  "name": "dword_A83D24",
+  "type": "?$VectorClass@PAUThemeControl@@"
+ },
+ "0xa83d50": {
+  "name": "SuperClass_ShowTimers",
+  "type": "?$DynamicVectorClass@PAVSuperClass@@"
+ },
+ "0xa83d68": {
+  "name": "dword_A83D68",
+  "type": "?$DynamicVectorClass@PAVParticleSystemTypeClass@@"
+ },
+ "0xa83d80": {
+  "name": "dword_A83D80",
+  "type": "?$DynamicVectorClass@PAVOverlayTypeClass@@"
+ },
+ "0xa83d98": {
+  "name": "dword_A83D98",
+  "type": "?$DynamicVectorClass@PAVParticleTypeClass@@"
+ },
+ "0xa83dc8": {
+  "name": "dword_A83DC8",
+  "type": "?$DynamicVectorClass@PAVParticleClass@@"
+ },
+ "0xa83de8": {
+  "name": "InfantryClass_Array",
+  "type": "?$DynamicVectorClass@PAVInfantryClass@@"
+ },
+ "0xa83e00": {
+  "name": "dword_A83E00",
+  "type": "?$DynamicVectorClass@PAVAnimClass@@"
+ },
+ "0xa83e30": {
+  "name": "dword_A83E30",
+  "type": "?$DynamicVectorClass@PAVFactoryClass@@"
+ },
+ "0xa8b1e0": {
+  "name": "SmudgeClass_Array",
+  "type": "?$DynamicVectorClass@PAVSmudgeClass@@"
+ },
+ "0xa8b200": {
+  "name": "AITriggerTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVAITriggerTypeClass@@"
+ },
+ "0xa8b218": {
+  "name": "AircraftTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVAircraftTypeClass@@"
+ },
+ "0xa8e318": {
+  "name": "dword_A8E318",
+  "type": "?$DynamicVectorClass@PAVTerrainTypeClass@@"
+ },
+ "0xa8e330": {
+  "name": "dword_A8E330",
+  "type": "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@"
+ },
+ "0xa8e348": {
+  "name": "InfantryTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVInfantryTypeClass@@"
+ },
+ "0xa8e360": {
+  "name": "dword_A8E360",
+  "type": "?$DynamicVectorClass@PAVObjectClass@@"
+ },
+ "0xa8e390": {
+  "name": "AircraftClass_Array",
+  "type": "?$DynamicVectorClass@PAVAircraftClass@@"
+ },
+ "0xa8e8c8": {
+  "name": "pUnk",
+  "type": "TiberianSunClassFactory"
+ },
+ "0xa8e8d0": {
+  "name": "dword_A8E8D0",
+  "type": "?$DynamicVectorClass@PAVTaskForceClass@@"
+ },
+ "0xa8e968": {
+  "name": "dword_A8E968",
+  "type": "?$DynamicVectorClass@PAVAbstractTypeClass@@"
+ },
+ "0xa8e988": {
+  "name": "dword_A8E988",
+  "type": "?$DynamicVectorClass@PAVTerrainClass@@"
+ },
+ "0xa8e9a8": {
+  "name": "AnimClass_Array",
+  "type": "?$DynamicVectorClass@PAVAnimClass@@"
+ },
+ "0xa8eae8": {
+  "name": "TriggerClass_Array",
+  "type": "?$DynamicVectorClass@PAVTriggerClass@@"
+ },
+ "0xa8eb00": {
+  "name": "dword_A8EB00",
+  "type": "?$DynamicVectorClass@PAVTechnoTypeClass@@"
+ },
+ "0xa8eb28": {
+  "name": "VoxelAnimTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@"
+ },
+ "0xa8eb40": {
+  "name": "BuildingClass_Array",
+  "type": "?$DynamicVectorClass@PAVBuildingClass@@"
+ },
+ "0xa8ec18": {
+  "name": "dword_A8EC18",
+  "type": "?$DynamicVectorClass@PAVSmudgeTypeClass@@"
+ },
+ "0xa8ec38": {
+  "name": "dword_A8EC38",
+  "type": "?$DynamicVectorClass@PAVWaveClass@@"
+ },
+ "0xa8ec50": {
+  "name": "OverlayClass_Array",
+  "type": "?$DynamicVectorClass@PAVOverlayClass@@"
+ },
+ "0xa8ec78": {
+  "name": "TechnoClass_Array",
+  "type": "?$DynamicVectorClass@PAVTechnoClass@@"
+ },
+ "0xa8eca0": {
+  "name": "TeamTypeClass_Array",
+  "type": "?$DynamicVectorClass@PAVTeamTypeClass@@"
+ },
+ "0xa8ecb8": {
+  "name": "ObjectClass_CurrentObjects",
+  "type": "?$DynamicVectorClass@PAVObjectClass@@"
+ },
+ "0xa8ece0": {
+  "name": "g_CoordScatterManager",
+  "type": "VersionClass"
+ },
+ "0xa8ed28": {
+  "name": "dword_A8ED28",
+  "type": "?$DynamicVectorClass@PAVIsometricTileTypeClass@@"
+ },
+ "0xa8ed40": {
+  "name": "BulletClass_Array",
+  "type": "?$DynamicVectorClass@PAVBulletClass@@"
+ },
+ "0xa8efc8": {
+  "name": "dword_A8EFC8",
+  "type": "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@"
+ },
+ "0xa9f9d0": {
+  "name": "LightningStorm_CloudsPresent",
+  "type": "?$DynamicVectorClass@PBVAnimClass@@"
+ },
+ "0xa9fa18": {
+  "name": "LightningStorm_BoltsPresent",
+  "type": "?$DynamicVectorClass@PBVAnimClass@@"
+ },
+ "0xa9fa60": {
+  "name": "LightningStorm_CloudsManifesting",
+  "type": "?$DynamicVectorClass@PBVAnimClass@@"
+ },
+ "0xaa0118": {
+  "name": "dword_AA0118",
+  "type": "?$DynamicVectorClass@PAVIonBlastClass@@"
+ },
+ "0xaa1078": {
+  "name": "dword_AA1078",
+  "type": "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@"
+ },
+ "0xabc604": {
+  "name": "dword_ABC604",
+  "type": "?$DynamicVectorClass@PAUKamikazeControl@@"
+ },
+ "0xabc878": {
+  "name": "dword_ABC878",
+  "type": "?$DynamicVectorClass@PAVLaserDrawClass@@"
+ },
+ "0xabca10": {
+  "name": "dword_ABCA10",
+  "type": "?$DynamicVectorClass@PAVLightSourceClass@@"
+ },
+ "0xabca40": {
+  "name": "dword_ABCA40",
+  "type": "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@"
+ },
+ "0xabcb78": {
+  "name": "dword_ABCB78",
+  "type": "?$DynamicVectorClass@PAVLineTrail@@"
+ },
+ "0xabdf90": {
+  "name": "g_RandomMap_BuildObject",
+  "type": "?$DynamicVectorClass@PAVMapRegionClass@@"
+ },
+ "0xabefd8": {
+  "name": "MixFileClass_MIXes",
+  "type": "?$List@PAVMixFileClass@@"
+ },
+ "0xabf390": {
+  "name": "MovieInfo_Array",
+  "type": "?$DynamicVectorClass@PBD"
+ },
+ "0xabfc90": {
+  "name": "dword_ABFC90",
+  "type": "?$DynamicVectorClass@PAUHWND__@@"
+ },
+ "0xabfcb8": {
+  "name": "dword_ABFCB8",
+  "type": "?$DynamicVectorClass@UAcceleratorTracker@@"
+ },
+ "0xabfda0": {
+  "name": "g_MultiplayerModeConfig",
+  "type": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+ },
+ "0xac1418": {
+  "name": "dword_AC1418",
+  "type": "?$DynamicVectorClass@PAVObjectTypeClass@@"
+ },
+ "0xac1678": {
+  "name": "dword_AC1678",
+  "type": "?$DynamicVectorClass@PAVSpotLightClass@@"
+ },
+ "0xac4910": {
+  "name": "dword_AC4910",
+  "type": "?$DynamicVectorClass@PAVParasiteClass@@"
+ },
+ "0xac4b30": {
+  "name": "dword_AC4B30",
+  "type": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+ },
+ "0xac4b48": {
+  "name": "dword_AC4B48",
+  "type": "?$DynamicVectorClass@PAVEventClass@@"
+ },
+ "0xac4c18": {
+  "name": "dword_AC4C18",
+  "type": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+ },
+ "0xac4c40": {
+  "name": "dword_AC4C40",
+  "type": "?$DynamicVectorClass@PAVTechnoClass@@"
+ },
+ "0xac4c78": {
+  "name": "dword_AC4C78",
+  "type": "?$DynamicVectorClass@PAVPlanningTokenClass@@"
+ },
+ "0xac4c98": {
+  "name": "g_ScriptConfig",
+  "type": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+ },
+ "0xac4f58": {
+  "name": "g_UIManager",
+  "type": "ProgressScreenClass"
+ },
+ "0xb04a10": {
+  "name": "dword_B04A10",
+  "type": "RTacticalClass@RadarClass"
+ },
+ "0xb04a60": {
+  "name": "RadBeam_Array",
+  "type": "?$DynamicVectorClass@PAVRadBeam@@"
+ },
+ "0xb04bd0": {
+  "name": "RadSiteClass_Array",
+  "type": "?$DynamicVectorClass@PAVRadSiteClass@@"
+ },
+ "0xb04da8": {
+  "name": "dword_B04DA8",
+  "type": "?$DynamicVectorClass@PAVRadarEventClass@@"
+ },
+ "0xb052d0": {
+  "name": "g_NetworkEventQueue",
+  "type": "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@"
+ },
+ "0xb054d0": {
+  "name": "ColorScheme_Array",
+  "type": "?$DynamicVectorClass@PAVColorScheme@@"
+ },
+ "0xb07e58": {
+  "name": "dword_B07E58",
+  "type": "SBGadgetClass@SidebarClass"
+ },
+ "0xb0b5f0": {
+  "name": "SlaveManagerClass_Array",
+  "type": "?$DynamicVectorClass@PAVSlaveManagerClass@@"
+ },
+ "0xb0b650": {
+  "name": "dword_B0B650",
+  "type": "?$DynamicVectorClass@UUndoInfoStruct@@"
+ },
+ "0xb0b880": {
+  "name": "SpawnManagerClass_Array",
+  "type": "?$DynamicVectorClass@PAVSpawnManagerClass@@"
+ },
+ "0xb0bc88": {
+  "name": "g_AnimationManager",
+  "type": "?$DynamicVectorClass@K"
+ },
+ "0xb0c110": {
+  "name": "SwizzleManagerClass_Instance",
+  "type": "SwizzleManagerClass"
+ },
+ "0xb0c114": {
+  "name": "dword_B0C114",
+  "type": "?$DynamicVectorClass@VSwizzlePointerClass@@"
+ },
+ "0xb0c12c": {
+  "name": "dword_B0C12C",
+  "type": "?$DynamicVectorClass@VSwizzlePointerClass@@"
+ },
+ "0xb0cde8": {
+  "name": "dword_B0CDE8",
+  "type": "?$DynamicVectorClass@PAVShadowControlClass@@"
+ },
+ "0xb0ce78": {
+  "name": "dword_B0CE78",
+  "type": "?$DynamicVectorClass@UDirtyAreaStruct@@"
+ },
+ "0xb0e658": {
+  "name": "dword_B0E658",
+  "type": "?$DynamicVectorClass@PAVTActionClass@@"
+ },
+ "0xb0e720": {
+  "name": "TagClass_Array",
+  "type": "?$DynamicVectorClass@PAVTagClass@@"
+ },
+ "0xb0e780": {
+  "name": "dword_B0E780",
+  "type": "?$DynamicVectorClass@PAVTagTypeClass@@"
+ },
+ "0xb0ec60": {
+  "name": "dword_B0EC60",
+  "type": "?$DynamicVectorClass@PAVTemporalClass@@"
+ },
+ "0xb0f1a0": {
+  "name": "dword_B0F1A0",
+  "type": "?$DynamicVectorClass@PAVTEventClass@@"
+ },
+ "0xb0f4e8": {
+  "name": "dword_B0F4E8",
+  "type": "?$DynamicVectorClass@PAVTiberiumClass@@"
+ },
+ "0xb0f5b8": {
+  "name": "g_BuildingInstanceCount",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f5d8": {
+  "name": "dword_B0F5D8",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f5f0": {
+  "name": "dword_B0F5F0",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f618": {
+  "name": "dword_B0F618",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f640": {
+  "name": "dword_B0F640",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f658": {
+  "name": "TActionClass_Array",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f670": {
+  "name": "g_AnimPoolManager",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f698": {
+  "name": "g_DiskLaserManager",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f6c8": {
+  "name": "dword_B0F6C8",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f6f0": {
+  "name": "dword_B0F6F0",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f708": {
+  "name": "dword_B0F708",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb0f720": {
+  "name": "AbstractClass_Array",
+  "type": "?$DynamicVectorClass@PAVAbstractClass@@"
+ },
+ "0xb1d290": {
+  "name": "dword_B1D290",
+  "type": "?$DynamicVectorClass@PAVVeinholeMonsterClass@@"
+ },
+ "0xb1d378": {
+  "name": "dword_B1D378",
+  "type": "?$DynamicVectorClass@PAVVocClass@@"
+ },
+ "0xb1d4a0": {
+  "name": "dword_B1D4A0",
+  "type": "?$DynamicVectorClass@PAVVoxClass@@"
+ },
+ "0xb2d7f0": {
+  "name": "dword_B2D7F0",
+  "type": "BSurface"
+ },
+ "0xb2d928": {
+  "name": "dword_B2D928",
+  "type": "BSurface"
+ },
+ "0xb45b58": {
+  "name": "dword_B45B58",
+  "type": "?$DynamicVectorClass@PAVMovieHandle@@"
+ },
+ "0xb72608": {
+  "name": "dword_B72608",
+  "type": "?$DynamicVectorClass@PAVWaypointPathClass@@"
+ },
+ "0xb72760": {
+  "name": "dword_B72760",
+  "type": "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@"
+ },
+ "0xb75e48": {
+  "name": "dword_B75E48",
+  "type": "?$rc_ptr@VPlayerProfile@@"
+ },
+ "0xb77f58": {
+  "name": "dword_B77F58",
+  "type": "?$rc_ptr@VWDTState@@"
+ },
+ "0xb77f68": {
+  "name": "dword_B77F68",
+  "type": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+ },
+ "0xb77f70": {
+  "name": "dword_B77F70",
+  "type": "?$rc_ptr@VWDTState@@"
+ },
+ "0xb77f78": {
+  "name": "dword_B77F78",
+  "type": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+ }
+}
