@@ -108,6 +108,40 @@ def _find_function_return_var(variables: dict[str, int], func_name: str) -> int 
     return variables.get(key)
 
 
+def _load_all_function_addrs() -> list[int]:
+    """完整函数起始地址表（signals.json kind=='function'）。
+
+    call_graph 只含 caller/callee（~10K），叶子函数缺失会导致 scope_vars
+    把其指令错误归属到上一个函数（模板簇 637 假 TOP 根因），此处补全。
+    """
+    global _ALL_FUNC_ADDR_CACHE
+    if _ALL_FUNC_ADDR_CACHE is not None:
+        return _ALL_FUNC_ADDR_CACHE
+    path = os.path.normpath(os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "signals.json",
+    ))
+    addrs: list[int] = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for key, sym in data.get("symbols", {}).items():
+            if sym.get("kind") != "function":
+                continue
+            try:
+                addrs.append(int(sym.get("address", key), 16))
+            except (ValueError, TypeError):
+                pass
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"  signals.json load failed ({e}); scoping falls back to call_graph only",
+              file=sys.stderr)
+    _ALL_FUNC_ADDR_CACHE = addrs
+    return addrs
+
+
+_ALL_FUNC_ADDR_CACHE = None
+
+
 # ── confidence tier ────────────────────────────────────────────────────────
 
 @dataclass
@@ -208,7 +242,10 @@ class TypeInferenceEngine:
         Each register write creates a new SSA version, eliminating false
         cross-live-range hub contamination. No continuity edges needed.
         """
-        result = _build_scoped_index(self.constraints, self.call_graph)
+        result = _build_scoped_index(
+            self.constraints, self.call_graph,
+            extra_func_addrs=_load_all_function_addrs(),
+        )
 
         # Pre-computed scoped names per constraint (for step_steensgaard)
         self._scoped_to_name = result["scoped_to_name"]
@@ -445,7 +482,7 @@ class TypeInferenceEngine:
                 base = str(params[0].get("real_type", "")).rstrip("*").strip()
                 if base.endswith("_csp"):
                     base = base[: -len("_csp")]
-                if base in valid_classes:
+                if base not in ("unknown", "?", "") and base in valid_classes:
                     this_class_by_addr[addr] = base
         self._csp_sym_to_addr = sym_to_addr
 
@@ -457,6 +494,10 @@ class TypeInferenceEngine:
             if base.endswith("_csp"):
                 # 提取器对 IDA 已有类型名的冲突隔离后缀，剥掉还原真实类名
                 base = base[: -len("_csp")]
+            if base in ("unknown", "?", ""):
+                # CSP 投票失败的兜底值，不是类——锚它会与真实类 meet 出 TOP
+                # （实证：TacticalClass::ProcessScroll this 被投票成 unknown）
+                return None
             if base in valid_classes:
                 return base
             return None

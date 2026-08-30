@@ -113,6 +113,11 @@ def param_is_erasing(target, sig):
         # 非 thiscall callee 的 ':this' 是提取器把 cdecl/fastcall 的
         # ecx 复用误判成的 this（CellCoord::To_CellObj 1,415 扇入枢纽）。
         return s["cc"] != "thiscall"
+    # 签名不可靠（任一参数 unknown/空，即 varargs 或 CSP 投票失败）时，
+    # 声明类型本身不可信——Debug::Log 的 a2 被投票成 IPXGlobalConnClass*
+    # 即此例，保留边会让 1,631 个调用方的实参经它汇流。
+    if not s["reliable"]:
+        return True
     real = idx + 1 if s["cc"] == "thiscall" else idx
     if real >= len(s["params"]):
         return True  # varargs 溢出槽
