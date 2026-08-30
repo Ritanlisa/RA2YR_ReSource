@@ -338,7 +338,7 @@ def build_hierarchy(bin_: Binary, cols, tds):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--exe", default=r"H:/RA2MD/gamemd.exe")
+    ap.add_argument("--exe", default=r"D:/RA2MD/gamemd.exe")
     ap.add_argument("--out-dir", default=None, help="default: <repo>/anchors")
     ap.add_argument("--compare", default=None, help="old .omo/rtti_ground_truth.json")
     args = ap.parse_args()
