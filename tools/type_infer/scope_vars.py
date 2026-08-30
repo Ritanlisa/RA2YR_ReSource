@@ -230,12 +230,16 @@ def _scope_one_var(
 
 # ── public API ─────────────────────────────────────────────────────────────
 
-def build_scoped_index(constraints: list[dict], call_graph: dict) -> dict:
+def build_scoped_index(
+    constraints: list[dict], call_graph: dict, extra_func_addrs=None
+) -> dict:
     """Pass 1+2: Build SSA scoped-name mapping from constraints.
 
-    Detects all register/stack writes, then assigns SSA versions to every
-    variable reference in every constraint. Returns a result dict containing
-    multiple lookup tables for different access patterns.
+    extra_func_addrs: 可选的额外已知函数起始地址。call_graph 只覆盖
+    caller/callee（~13K），既不调用也不被调用的叶子函数（纯 vtable/jump
+    引用的模板实例，如 0x494080）会缺失，其指令被 bisect 归到上一个
+    已知函数——不同函数的 stack_N/paramN 合并成同一变量产生假 TOP。
+    调用方应传入完整函数表（signals.json kind=='function'，~19K）。
 
     Constraints format:
         ``{"from": str, "to": str, "type": str, "addr": str}``
@@ -270,6 +274,14 @@ def build_scoped_index(constraints: list[dict], call_graph: dict) -> dict:
     """
     # ── Load function addresses ──
     func_addrs = load_function_addresses(call_graph)
+    if extra_func_addrs:
+        merged = set(func_addrs)
+        for a in extra_func_addrs:
+            try:
+                merged.add(int(a))
+            except (ValueError, TypeError):
+                pass
+        func_addrs = sorted(merged)
 
     # ── Pass 1: Detect writes ──
     writes = _detect_writes(constraints, func_addrs)
