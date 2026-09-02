@@ -63,9 +63,11 @@ def fetch_prototypes(ida_prefix: str) -> list[dict]:
     return protos
 
 
-# `char __thiscall(char *this, int a2)` → 首参类型替换
+# `char __thiscall(char *this, int a2)` → 首参类型替换。
+# this 允许非指针形态（`int this`——提取器/IDA 的退化标注），统一替换为
+# `Class *this`。
 _RE_PROTO = re.compile(
-    r"^(?P<ret>.+?)\s*__thiscall\(\s*(?P<thisty>[^,()]+?)\s*\*\s*this(?P<rest>.*)\)$",
+    r"^(?P<ret>.+?)\s*__thiscall\(\s*(?P<thisty>[^,()]+?)\s*\*?\s*this(?P<rest>.*)\)$",
     re.S)
 
 
