@@ -870,6 +870,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-02**: T14 试点 — TechnoClass 家族 this 类型回写 IDA（路线图 ③）
+  - `tools/type_infer/ida_apply_t14.py`: 类级 this 签名回写器（直连 IDA MCP HTTP 127.0.0.1:13337，无需会话 MCP 工具；仅改 this 类型、保留返回/其余参数；幂等 dry-run）
+  - TechnoClass:: 365 函数: 284 已应用（283 批量 + 1 手动）、81 形状不合/内部 ID 跳过、0 失败, IDB 已保存
+  - 质量验证 (SmokeUpdate 0x414BB0): before 28 处裸指针算术/0 成员访问 → after **83 处 this-> 成员访问/0 裸算术** (64 命中命名成员, 72 落在继承 gap)
+  - **发现口径分歧**: IDB struct = 全对象扁平布局 (TechnoClass.Flashing@0x4B8), class_layouts/member_types = 类增量布局 (flashing@0xE4)——成员级 gap 补全需先建增量→绝对偏移映射 (沿继承链 sizeof 累加, 注意 MI/col_offset), 是下一工作包
 - **2026-09-02**: 类型推断 OO 重建路线图 — 缺口①② + 类数据库 + CSP 收尾（4 commit: 8ee28205/8721073b/3f63d63a/1efe6f4b + 收尾 commit）
   - **缺口① 类名对齐**: `class_name_align.json` (975/988, 98.7%) — RTTI 修饰名经通用规则 (exact/template_base/arg_suffix/suffix/self_vtable) 归一到 canon 命名空间; 引擎 `_to_lattice_type` 单钩点 + lattice 层次图 canon 化
   - **⚠️ 规则 D 证伪**: 审计 668 别名表 = vtable 槽位 IDA 命名多数投票 (命名桥接, 非恒等), 177/177 折叠键全自有 vtable → 曾把 31 个独立命令类并进 CreateTeamCommand (279 幻影槽位), 已移除
