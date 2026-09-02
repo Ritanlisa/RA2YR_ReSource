@@ -630,6 +630,20 @@ class TypeInferenceEngine:
                 lib_matched += 1
         print(f"  libc_string anchors: {lib_matched}", file=sys.stderr)
 
+        # ── VOID_PTR 锚统一滤除 ──
+        # void*（"未知指针"）锚不携带类型信息，但作为 rank≥2 锚会冻结 root、
+        # 且作为传播源经 join(X, VOID_PTR)=VOID_PTR 擦除邻居的具体类型
+        # （member_types 42% void* 经 csp_member 通道成锚的实测回归链：
+        # member(VOID_PTR 锚)→传播→al_v 的 int 种子被 join 成 VOID_PTR）。
+        _before = len(self.anchors)
+        self.anchors = [a for a in self.anchors if a.lattice_type != VOID_PTR]
+        self.anchor_by_var = defaultdict(list)
+        for a in self.anchors:
+            self.anchor_by_var[a.var_id].append(a)
+        _dropped = _before - len(self.anchors)
+        if _dropped:
+            print(f"  VOID_PTR anchors dropped (info-free): {_dropped}", file=sys.stderr)
+
         # ── RTTI vtable this 锚（槽位函数的 this = vtable RTTI 类）──
         # 对每个主 vtable（col_offset==0）的每个槽位函数 F 收集其 vtable
         # 类，按函数 JOIN 聚合为单一锚：一个虚方法可出现在家族多个
@@ -1562,7 +1576,9 @@ class TypeInferenceEngine:
             in_worklist.discard(root)
 
             root_type = root_types.get(root, BOTTOM)
-            if root_type == BOTTOM:
+            # VOID_PTR = 无信息：惰性（不外传）。join(X, VOID_PTR)=VOID_PTR
+            # 会擦除邻居具体类型——VOID_PTR 源传播纯属信息破坏。
+            if root_type == BOTTOM or root_type == VOID_PTR:
                 continue
 
             # Find all variable IDs in this equivalence class
@@ -1664,8 +1680,8 @@ class TypeInferenceEngine:
                     root = worklist.popleft()
                     in_worklist.discard(root)
                     root_type = root_types.get(root, BOTTOM)
-                    if root_type == BOTTOM:
-                        continue
+                    if root_type in (BOTTOM, VOID_PTR):
+                        continue  # VOID_PTR 惰性（见主循环注释）
                     eq_members = self._get_eq_members(root)
 
                     def push_join2(dst_id: int) -> None:
@@ -1708,8 +1724,8 @@ class TypeInferenceEngine:
                 root = worklist.popleft()
                 in_worklist.discard(root)
                 root_type = root_types.get(root, BOTTOM)
-                if root_type == BOTTOM:
-                    continue
+                if root_type in (BOTTOM, VOID_PTR):
+                    continue  # VOID_PTR 惰性（见主循环注释）
                 eq_members = self._get_eq_members(root)
                 for member_id in eq_members:
                     for dst_id in self.adjacency.get(member_id, ()):

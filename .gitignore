@@ -134,6 +134,9 @@ suggested_types.json
 top_causes.json
 contradictions.md
 
+# RTTI 重锚定前的过时快照（仅本地留档，禁止误当现役数据）
+*.pre_rtti.bak.json
+
 # CTest 运行输出
 Testing/
 

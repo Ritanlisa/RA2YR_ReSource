@@ -1,0 +1,506 @@
+{
+ "description": "Class-typed globals from live IDB (idc.get_type), data/bss/rdata segments",
+ "count": 100,
+ "globals": {
+  "rguid": {
+   "type": "GUID",
+   "addr": "0x7e9520",
+   "seg": ".rdata"
+  },
+  "rclsid": {
+   "type": "IID",
+   "addr": "0x7e96e0",
+   "seg": ".rdata"
+  },
+  "g_CLSID_WalkLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9a60",
+   "seg": ".rdata"
+  },
+  "g_CLSID_DriveLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9a70",
+   "seg": ".rdata"
+  },
+  "g_CLSID_FlyLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9a80",
+   "seg": ".rdata"
+  },
+  "g_CLSID_HoverLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9a90",
+   "seg": ".rdata"
+  },
+  "g_CLSID_TunnelLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9aa0",
+   "seg": ".rdata"
+  },
+  "g_CLSID_DriveLocomotion2": {
+   "type": "IID",
+   "addr": "0x7e9ab0",
+   "seg": ".rdata"
+  },
+  "g_CLSID_JumpjetLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9ac0",
+   "seg": ".rdata"
+  },
+  "g_CLSID_ShipLocomotion": {
+   "type": "IID",
+   "addr": "0x7e9ad0",
+   "seg": ".rdata"
+  },
+  "IID_ILocomotion": {
+   "type": "IID",
+   "addr": "0x7ed358",
+   "seg": ".rdata"
+  },
+  "IID_IUnknown": {
+   "type": "IID",
+   "addr": "0x7f7c90",
+   "seg": ".rdata"
+  },
+  "String1": {
+   "type": "WCHAR",
+   "addr": "0x7f98e8",
+   "seg": ".rdata"
+  },
+  "__TI3?AV__non_rtti_object@@": {
+   "type": "_ThrowInfo",
+   "addr": "0x80f038",
+   "seg": ".rdata"
+  },
+  "__TI2?AVbad_typeid@@": {
+   "type": "_ThrowInfo",
+   "addr": "0x80f058",
+   "seg": ".rdata"
+  },
+  "__TI2?AVbad_cast@@": {
+   "type": "_ThrowInfo",
+   "addr": "0x80f098",
+   "seg": ".rdata"
+  },
+  "__TI1?AV_com_error@@": {
+   "type": "_ThrowInfo",
+   "addr": "0x80f0d0",
+   "seg": ".rdata"
+  },
+  "First": {
+   "type": "_PVFV",
+   "addr": "0x815da8",
+   "seg": ".data"
+  },
+  "Last": {
+   "type": "_PVFV",
+   "addr": "0x815dbc",
+   "seg": ".data"
+  },
+  "??_R0?AVAbstractClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x8177c8",
+   "seg": ".data"
+  },
+  "??_R0?AVAbstractTypeClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x817808",
+   "seg": ".data"
+  },
+  "??_R0?AVObjectClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x817af8",
+   "seg": ".data"
+  },
+  "??_R0?AVTechnoClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x817b58",
+   "seg": ".data"
+  },
+  "riid": {
+   "type": "IID",
+   "addr": "0x817bc0",
+   "seg": ".data"
+  },
+  "??_R0?AVObjectTypeClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x817f78",
+   "seg": ".data"
+  },
+  "??_R0?AVTechnoTypeClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x817f98",
+   "seg": ".data"
+  },
+  "psz": {
+   "type": "OLECHAR",
+   "addr": "0x8186e8",
+   "seg": ".data"
+  },
+  "aSun": {
+   "type": "OLECHAR",
+   "addr": "0x818704",
+   "seg": ".data"
+  },
+  "??_R0?AVBuildingClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x818d60",
+   "seg": ".data"
+  },
+  "lpString2": {
+   "type": "LPCSTR",
+   "addr": "0x820e8c",
+   "seg": ".data"
+  },
+  "g_RulesInitConfig": {
+   "type": "LPARAM",
+   "addr": "0x822cf4",
+   "seg": ".data"
+  },
+  "FileTime": {
+   "type": "FILETIME",
+   "addr": "0x822d5c",
+   "seg": ".data"
+  },
+  "??_R0?AVTagClass@@@8": {
+   "type": "TypeDescriptor",
+   "addr": "0x8249e8",
+   "seg": ".data"
+  },
+  "wParam": {
+   "type": "WPARAM",
+   "addr": "0x825c80",
+   "seg": ".data"
+  },
+  "dwRegister": {
+   "type": "DWORD",
+   "addr": "0x840a74",
+   "seg": ".data"
+  },
+  "szFile": {
+   "type": "OLECHAR",
+   "addr": "0x840ad0",
+   "seg": ".data"
+  },
+  "Data": {
+   "type": "BYTE",
+   "addr": "0x840b4c",
+   "seg": ".data"
+  },
+  "g_Str_WW_TiberianSun_1": {
+   "type": "BYTE",
+   "addr": "0x840b5c",
+   "seg": ".data"
+  },
+  "hostshort": {
+   "type": "u_short",
+   "addr": "0x841f30",
+   "seg": ".data"
+  },
+  "uElapse": {
+   "type": "UINT",
+   "addr": "0x84a248",
+   "seg": ".data"
+  },
+  "File": {
+   "type": "FILE",
+   "addr": "0x87bf70",
+   "seg": ".data"
+  },
+  "lpCriticalSection": {
+   "type": "LPCRITICAL_SECTION",
+   "addr": "0x87c2ec",
+   "seg": ".data"
+  },
+  "SrcSizeInBytes": {
+   "type": "size_t",
+   "addr": "0x87c79c",
+   "seg": ".data"
+  },
+  "dwTlsIndex": {
+   "type": "DWORD",
+   "addr": "0x87c7a8",
+   "seg": ".data"
+  },
+  "lpMultiByteStr": {
+   "type": "LPSTR",
+   "addr": "0x87caec",
+   "seg": ".data"
+  },
+  "Size": {
+   "type": "size_t",
+   "addr": "0x87cba0",
+   "seg": ".data"
+  },
+  "ThreadId": {
+   "type": "DWORD",
+   "addr": "0x87e7f4",
+   "seg": ".data"
+  },
+  "CriticalSection": {
+   "type": "_RTL_CRITICAL_SECTION",
+   "addr": "0x87e7f8",
+   "seg": ".data"
+  },
+  "g_pDirectSound": {
+   "type": "LPDIRECTSOUND",
+   "addr": "0x87e89c",
+   "seg": ".data"
+  },
+  "NumOfElements": {
+   "type": "size_t",
+   "addr": "0x87f684",
+   "seg": ".data"
+  },
+  "MapClass_Instance": {
+   "type": "IUnknown",
+   "addr": "0x87f7e8",
+   "seg": ".data"
+  },
+  "g_RulesClass_Instance": {
+   "type": "RulesClass",
+   "addr": "0x8871e0",
+   "seg": ".data"
+  },
+  "g_TacticalClass_Instance": {
+   "type": "LPPERSISTSTREAM",
+   "addr": "0x887324",
+   "seg": ".data"
+  },
+  "dwMilliseconds": {
+   "type": "DWORD",
+   "addr": "0x887350",
+   "seg": ".data"
+  },
+  "WarheadTypeClass_Array": {
+   "type": "WarheadTypeClass",
+   "addr": "0x8874c0",
+   "seg": ".data"
+  },
+  "WeaponTypeClass_Array": {
+   "type": "WeaponTypeClass",
+   "addr": "0x887568",
+   "seg": ".data"
+  },
+  "punk": {
+   "type": "IUnknown",
+   "addr": "0x89a29c",
+   "seg": ".data"
+  },
+  "lpBaseAddress": {
+   "type": "LPCVOID",
+   "addr": "0x89f75c",
+   "seg": ".data"
+  },
+  "g_lpDirectDraw7": {
+   "type": "LPDIRECTDRAW",
+   "addr": "0x8a0094",
+   "seg": ".data"
+  },
+  "g_MissionState": {
+   "type": "size_t",
+   "addr": "0x8b3cc4",
+   "seg": ".data"
+  },
+  "HouseClass_Array": {
+   "type": "HouseClass",
+   "addr": "0xa8022c",
+   "seg": ".data"
+  },
+  "g_BuildingTypeClass_Array": {
+   "type": "BuildingTypeClass",
+   "addr": "0xa83d84",
+   "seg": ".data"
+  },
+  "g_Rules_Bases": {
+   "type": "LPARAM",
+   "addr": "0xa8b25c",
+   "seg": ".data"
+  },
+  "g_Rules_MultiEngineer": {
+   "type": "LPARAM",
+   "addr": "0xa8b270",
+   "seg": ".data"
+  },
+  "g_Rules_AlliesAllowed": {
+   "type": "LPARAM",
+   "addr": "0xa8b274",
+   "seg": ".data"
+  },
+  "g_CampaignScoreFlags": {
+   "type": "size_t",
+   "addr": "0xa8d580",
+   "seg": ".data"
+  },
+  "g_NetworkPlayerName": {
+   "type": "LPARAM",
+   "addr": "0xa8da90",
+   "seg": ".data"
+  },
+  "g_GameFlagsMisc": {
+   "type": "WPARAM",
+   "addr": "0xa8dabc",
+   "seg": ".data"
+  },
+  "pUnk": {
+   "type": "IUnknown",
+   "addr": "0xa8e8c8",
+   "seg": ".data"
+  },
+  "g_lParam": {
+   "type": "LPARAM",
+   "addr": "0xa8eb78",
+   "seg": ".data"
+  },
+  "TechnoClass_Array": {
+   "type": "TechnoClass",
+   "addr": "0xa8ec78",
+   "seg": ".data"
+  },
+  "ObjectClass_CurrentObjects": {
+   "type": "ObjectClass",
+   "addr": "0xa8ecb8",
+   "seg": ".data"
+  },
+  "Stream": {
+   "type": "FILE",
+   "addr": "0xaa0468",
+   "seg": ".data"
+  },
+  "g_MapTileArrayEnd": {
+   "type": "size_t",
+   "addr": "0xabed14",
+   "seg": ".data"
+  },
+  "color": {
+   "type": "COLORREF",
+   "addr": "0xabf110",
+   "seg": ".data"
+  },
+  "tm": {
+   "type": "tagTEXTMETRICA",
+   "addr": "0xabf1c8",
+   "seg": ".data"
+  },
+  "h": {
+   "type": "HGDIOBJ",
+   "addr": "0xabf244",
+   "seg": ".data"
+  },
+  "g_NetworkSetupConfig": {
+   "type": "WPARAM",
+   "addr": "0xac0260",
+   "seg": ".data"
+  },
+  "g_HouseClass_ObserverFlags": {
+   "type": "LPARAM",
+   "addr": "0xac119c",
+   "seg": ".data"
+  },
+  "g_Lobby_PlayerCount": {
+   "type": "LPARAM",
+   "addr": "0xac11a0",
+   "seg": ".data"
+  },
+  "g_Lobby_PlayerTeam": {
+   "type": "LPARAM",
+   "addr": "0xac11a4",
+   "seg": ".data"
+  },
+  "g_Lobby_PlayerSide": {
+   "type": "LPARAM",
+   "addr": "0xac11a8",
+   "seg": ".data"
+  },
+  "g_Lobby_PlayerColor": {
+   "type": "LPARAM",
+   "addr": "0xac11ac",
+   "seg": ".data"
+  },
+  "g_Lobby_MaxPlayers": {
+   "type": "LPARAM",
+   "addr": "0xac11b4",
+   "seg": ".data"
+  },
+  "yTop": {
+   "type": "COLORREF",
+   "addr": "0xac18a4",
+   "seg": ".data"
+  },
+  "pdwRegister": {
+   "type": "DWORD",
+   "addr": "0xb0bcec",
+   "seg": ".data"
+  },
+  "g_BuildingLoadQueue_Count": {
+   "type": "size_t",
+   "addr": "0xb0e844",
+   "seg": ".data"
+  },
+  "BuildingClass_InstanceArray": {
+   "type": "BuildingClass",
+   "addr": "0xb0f4ec",
+   "seg": ".data"
+  },
+  "himl": {
+   "type": "HIMAGELIST",
+   "addr": "0xb730a8",
+   "seg": ".data"
+  },
+  "MaxCount": {
+   "type": "size_t",
+   "addr": "0xb73568",
+   "seg": ".data"
+  },
+  "Addend": {
+   "type": "LONG",
+   "addr": "0xb7649c",
+   "seg": ".data"
+  },
+  "g_WOL_ChatState": {
+   "type": "size_t",
+   "addr": "0xb76ae0",
+   "seg": ".data"
+  },
+  "g_WOL_State": {
+   "type": "size_t",
+   "addr": "0xb77900",
+   "seg": ".data"
+  },
+  "CodePage": {
+   "type": "UINT",
+   "addr": "0xb782b0",
+   "seg": ".data"
+  },
+  "TimeZoneInformation": {
+   "type": "_TIME_ZONE_INFORMATION",
+   "addr": "0xb782f8",
+   "seg": ".data"
+  },
+  "Locale": {
+   "type": "LCID",
+   "addr": "0xb78544",
+   "seg": ".data"
+  },
+  "lpfn": {
+   "type": "LPTOP_LEVEL_EXCEPTION_FILTER",
+   "addr": "0xb7856c",
+   "seg": ".data"
+  },
+  "LCData": {
+   "type": "WCHAR",
+   "addr": "0xb7858c",
+   "seg": ".data"
+  },
+  "uNumber": {
+   "type": "UINT",
+   "addr": "0xb78b80",
+   "seg": ".data"
+  },
+  "Count": {
+   "type": "size_t",
+   "addr": "0xb79be0",
+   "seg": ".data"
+  }
+ }
+}
