@@ -2620,10 +2620,16 @@ def _run_main():
                     "callee_name": callee_name,
                 }
             )
+        # B10b (RETURN_TO 作用域化): 目标此前是全程序共享的裸 'eax' 巨枢纽
+        # （25K 入边 join 塌缩成最泛类型，filter_type_erasing 还得靠
+        # ret_fanout_cap 截边续命）。改为调用点作用域名 {caller}::eax_v{addr}
+        # ——与 B6 寄存器种子的命名/地址约定完全一致，调用结果不再跨函数
+        # 汇流。消费侧 `mov L, eax` 仍是裸枢纽（寄存器全面作用域化属后续
+        # 提取器重构），本改动先止血源侧。
         edges.append(
             {
                 "from": f"{callee_addr_str}.return",
-                "to": "eax",
+                "to": f"0x{fstart:08X}::eax_v{call_ea_hex}",
                 "type": "RETURN_TO",
                 "addr": call_ea_hex,
                 "callee_name": callee_name,
@@ -3164,6 +3170,34 @@ def _run_main():
                             RUN_MANIFEST.get("return_edges_extended_i2", 0) + 1
                         )
                     c = _c_ret
+                    # B10 (return 通道源接通): `mov/lea eax,<src>; ret` 的操作数
+                    # 身份此前被丢弃——RETURN 边的 0xADDR_RET 源是无入边的死
+                    # 节点,.return 结构性饥饿（7515 有类型 .return 仅 36 类类
+                    # 型）。补 ASSIGN(src → _RET) 让返回表达式真实入流。只接
+                    # global/member（可锚定身份）；reg/stack 裸名是跨函数汇流
+                    # 枢纽，接入等于污染。add/sub 是算术加工值，源不代返回语
+                    # 义，不接。
+                    if (
+                        not _c_ret.get("null_const")
+                        and prev_mnem in ("mov", "lea")
+                        and prev_ea != idaapi.BADADDR
+                    ):
+                        try:
+                            _rsrc = _parse_operand_src(prev_ea, 1, scope=fstart)
+                        except Exception:
+                            _rsrc = None
+                        if _rsrc and _rsrc[0] in ("global", "member") and _rsrc[1]:
+                            constraints.append(
+                                {
+                                    "from": _rsrc[1],
+                                    "to": f"0x{ea:X}_RET",
+                                    "type": "ASSIGN",
+                                    "addr": f"0x{ea:X}",
+                                }
+                            )
+                            RUN_MANIFEST["return_src_edges_b10"] = (
+                                RUN_MANIFEST.get("return_src_edges_b10", 0) + 1
+                            )
 
             if (
                 mnem == "test"
