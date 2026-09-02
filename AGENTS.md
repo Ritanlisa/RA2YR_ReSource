@@ -870,10 +870,15 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: IDB struct 系统性纠偏 — 69 类从 class_layouts 扁平重建（T14 配套工作包）
+  - **裁决**: IDB 存量 struct 是错误模型——TechnoClass(2172B) 比子类 FootClass(2132B) 还大（父大于子不可能）、成员整体 +0x3D4 平移。二进制铁证：GetTarget 读 `[ecx+21Ch]`（旧 struct 此处是 gap）、ctor 写 0xE0..0x514 连续区——**class_layouts 模型正确**（链自洽：子类 own 起点==父 size；1312/0x6C0/0x6F0 严格递增）
+  - `tools/type_infer/t14_structs.py`: 沿父链扁平化生成 C 声明（偏移即全对象绝对坐标）。三条 IDA C 解析器对齐规则（实测）：非 this 参数须命名；`short` 的 2 对齐导致 19 类 +2 漂移（→ char[2]）；非 4 对齐偏移处 int/指针成员强插 padding（→ char[N]）
+  - **69 类重建 0 失败**（14 类链断待补父 layout）；`--retype` 全量重解析 1,062 函数（declare_type 替换不迁移存量签名引用，须重 set 才指向新 til）
+  - 终验: GetTarget→`this->focus`@0x21C ✓、SmokeUpdate 71 处成员访问全用新名 ✓、旧名(gapD4/parent_gap)清零 ✓、6 类抽查尺寸全对 ✓
 - **2026-09-02**: T14 试点 — TechnoClass 家族 this 类型回写 IDA（路线图 ③）
   - `tools/type_infer/ida_apply_t14.py`: 类级 this 签名回写器（直连 IDA MCP HTTP 127.0.0.1:13337；仅改 this 类型、保留返回/其余参数）
   - 质量验证 (SmokeUpdate 0x414BB0): before 28 处裸指针算术/0 成员访问 → after **83 处 this-> 成员访问/0 裸算术**
-  - **发现口径分歧**: IDB struct = 全对象扁平布局 (Flashing@0x4B8), class_layouts/member_types = 类增量布局 (flashing@0xE4)——gap 补全需增量→绝对偏移映射, 是下一工作包
+  - ~~发现口径分歧~~ → 次日裁决为 **IDB struct 整体错误**（见 2026-09-03 条目）：当时渲染的成员名挂在错误偏移上，struct 重建后已全部修正
 - **2026-09-02**: T14 批量铺开 — 82 类 1,060 函数 this 类型回写 IDA（路线图 ③ 续）
   - `tools/type_infer/t14_rollout.py`: 批量驱动（vtable 双门控 + struct 预过滤 + 断点续跑 + **应用后回验**——解析 ok ≠ 持久化）
   - 终态: **82 个 struct-backed 核心类, 1,060 函数** this 类型经新鲜导出验证落盘（含 TechnoClass 284 试点 + `::` 风格 + 下划线风格补拉 + `int this` 非指针形态）, IDB 已保存, 备份 `decompile-results/gamemd.exe.i64.pre_t14_rollout.bak`

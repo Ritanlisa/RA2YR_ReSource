@@ -137,6 +137,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-classes", type=int, default=0)
     ap.add_argument("--only-class", default="")
+    ap.add_argument("--retype", action="store_true",
+                    help="强制重 set 已定型函数（struct 重建后旧 ordinal 引用"
+                         "需重解析——declare_type 替换不迁移存量签名引用）")
     args = ap.parse_args()
 
     health = call("server_health", {})
@@ -247,7 +250,7 @@ def main():
             if not proto:
                 state["skip_shape"] += 1
                 continue
-            if f"{cls} *this" in proto:
+            if f"{cls} *this" in proto and not args.retype:
                 state["skip_done"] += 1
                 continue
             new_proto = rewrite_this(proto, cls)
