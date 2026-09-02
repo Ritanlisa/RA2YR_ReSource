@@ -191,6 +191,7 @@ class TypeLattice:
 
     def __init__(self, class_layouts_path: Optional[str] = None):
         self._ancestors, self._parents = _load_hierarchy(class_layouts_path)
+        self._subclass_count_cache: Optional[dict[str, int]] = None
         # RTTI ground-truth class set (binary-derived). Non-RTTI names
         # (legacy class_layouts aliases like BaseNodeClass_Vector ≡
         # ?$VectorClass@VBaseNodeClass@@) are second-class: they yield to
@@ -369,17 +370,31 @@ class TypeLattice:
                 # Strategy: pick one and check if any other is a subtype of it
                 candidates = list(common)
                 # Sort by depth of inheritance chain (higher depth = more specific)
-                # Use length of ancestor set as proxy for depth
+                # Use length of ancestor set as proxy for depth.
+                # 决胜键补类名字典序：深度平票（MI 菱形中 IUnknown 与
+                # INoticeSink 同深度且均合格）时，稳定排序保留 set 哈希序
+                # → join 结果随 PYTHONHASHSEED 翻转（429 变量实测）。
+                # 字典序决胜使 join 与种子无关。
                 candidates.sort(
-                    key=lambda c: len(self._ancestors.get(c, {c})),
-                    reverse=True,
+                    key=lambda c: (-len(self._ancestors.get(c, {c})), c),
                 )
                 for c in candidates:
                     # Check if c is a subtype of all others in common
                     if all(self.is_subtype(c, other) for other in common):
                         return c
-                # Fallback: return any common ancestor
-                return candidates[0] if candidates else VOID_PTR
+                # 不可比平行分支（无候选 ⊑ 其余全部）= LUB 不存在。
+                # 盲取 candidates[0] 会随机选平行根之一（IUnknown∥
+                # INoticeSink 双根实测：字典序选中 INoticeSink，但它不是
+                # Map/GScreen 分支的祖先——394 变量非法标签）。原则性
+                # 兜底：取子类数最多的"最泛化"候选——它对最少数的真类
+                # 撒谎（IUnknown ~900 后代对两分支均合法 ⊃ INoticeSink
+                # 仅单分支合法）。子类数再平票则字典序。
+                if candidates:
+                    return max(
+                        candidates,
+                        key=lambda c: (self.subclass_count(c), c),
+                    )
+                return VOID_PTR
             return VOID_PTR
 
         # Mixed sentinel+concrete or unknown combination
@@ -399,6 +414,20 @@ class TypeLattice:
     def ancestors_of(self, cls: str) -> set[str]:
         """Return all ancestor class names (including self) for a given class."""
         return self._ancestors.get(cls, {cls})
+
+    def subclass_count(self, cls: str) -> int:
+        """Number of classes having `cls` as an ancestor (incl. self).
+
+        Lazily built reverse count of _ancestors; used as the generality
+        measure for the incomparable-branch join fallback.
+        """
+        if self._subclass_count_cache is None:
+            cnt: dict[str, int] = {}
+            for _anc_set in self._ancestors.values():
+                for a in _anc_set:
+                    cnt[a] = cnt.get(a, 0) + 1
+            self._subclass_count_cache = cnt
+        return self._subclass_count_cache.get(cls, 1)
 
     def parent_of(self, cls: str) -> Optional[str]:
         """Return the direct parent of a class, or None."""

@@ -607,7 +607,9 @@ def _apply_signature_anchors(domain, type_domain, sig_symbols, this_vars, all_va
             _this_var = f"{_padded}:this"
             if _this_var in this_vars:
                 _domain_add(domain, type_domain, _this_var, _cls_name)
-                anchor_strength[_this_var] = max(anchor_strength.get(_this_var, 0), 2)
+                # S7: 名字派生锚（signals 镜像 IDA 命名，746 项已证错）
+                # 降为强度 1——与 S3 的求解器内名字锚一致，低于约束传播
+                anchor_strength[_this_var] = max(anchor_strength.get(_this_var, 0), 1)
                 sig_this_anchored += 1
         _rt = _normalize_sig_return_type(_sig.get("return_type", ""))
         if _rt:
@@ -1445,6 +1447,45 @@ def _reg32(op_txt):
     return (op_txt or "").strip().lower() in _REG32_NAMES
 
 
+# B8: 索引全局数组访问 `mov reg,[G+idx*S]` / `mov [G+idx*S],reg` /
+# `lea reg,[G+idx*S]`——元素级伪变量 arr_G（全局存储语义，不版本化）。
+# 背景（案例1 0x47B3A0 实证）：g_CellClassArray 的 457 处索引访问全被
+# reg_index_guard 排除——CellClass ctor(0x47BB60) 就地构造
+# `lea ecx,[G+idx*S]; call ctor` 与元素加载均无变量无约束，Cell 证据
+# 无法进入图，this 沉到接口级双根平票。arr_G 把全部索引位会聚为单一
+# 存储槽：任一证据（ctor this 路由 / vtable 真值 / 参数回填）点亮后
+# 所有元素访问继承。
+_RE_IDX_GLOBAL = re.compile(
+    r"^[\[]?([A-Za-z_][A-Za-z0-9_]*)\+.*\*"
+)
+
+
+def _parse_indexed_global(op_text):
+    """`[g_Arr+eax*4]` → ('arr_g_Arr', element-indexed)；非索引全局返回 None。
+
+    仅匹配"全局名 + 索引寄存器乘子"形态（`*` 必在）——`[G+4]` 常量偏移是
+    结构体成员访问（不是数组元素），交由既有成员通道。名字须解析为真实
+    全局（防局部变量误匹配）。
+    """
+    t = (op_text or "").strip()
+    m = _RE_IDX_GLOBAL.match(t.rstrip("]"))
+    if not m:
+        return None
+    gname = m.group(1)
+    if idc is None:
+        return "arr_" + gname
+    try:
+        ea = idc.get_name_ea(idaapi.BADADDR, gname)
+        if ea == idc.BADADDR:
+            return None
+        seg = idc.get_segm_name(ea)
+        if seg not in (".data", ".bss", ".rdata"):
+            return None
+    except Exception:
+        return None
+    return "arr_" + gname
+
+
 # B6: 整数语义助记——内存操作数参与这些运算/比较，或被 fild/fistp 当整数
 # 加载/存储，证明该槽位持有 int（参数/成员/栈槽/全局的 int 证据源）。
 _B6_INT_ARITH = frozenset({
@@ -2270,7 +2311,16 @@ def _run_main():
         func = idaapi.get_func(func_ea)
         argsize = func.argsize if func else 0
 
-        cc = _cc_from_signals(func_addr_str) or _cc_from_tinfo(func_ea)
+        # S6 (Priority 0): RTTI 实证 vtable 的成员函数必为 thiscall——
+        # vtable 槽位即 this 调度表，成员资格是二进制证明。三优先级全落空
+        # 的主群体是从不解引用 this 的桩函数（xor eax,eax; ret 型 vt 桩），
+        # 旧退化路径把它们标成 stdcall/cdecl → this_var 缺失 → vtable 锚/
+        # FUNC_PARAM this 边/成员提取全链失效（1,200 实测）。仅 RTTI 实证
+        # vtable（启发式 vtable 组不加权）。
+        if func_ea in _vt_proven_thiscall:
+            cc = ida_typeinf.CM_CC_THISCALL
+        else:
+            cc = _cc_from_signals(func_addr_str) or _cc_from_tinfo(func_ea)
         if cc is None and func:
             cc = _cc_from_heuristic(func, _collect_this_regs(func))
         if cc is None:
@@ -2284,6 +2334,48 @@ def _run_main():
             stack_arg_count = _caller_push_mode(func_addr_str)
         return cc, stack_arg_count
 
+
+    # S6: RTTI 实证 vtable 成员集（CC Priority 0 的真值来源）
+    _vt_proven_thiscall = set()
+    for _vt in vtables:
+        if f"0x{_vt['start']:x}" not in RTTI_VTABLE_MAP:
+            # S10: 启发式 vtable 类前缀一致性守卫——≥50% 成员函数名共享
+            # 同一 `Class::` 前缀才认定为类 vtable（分发表/消息表无一致
+            # 前缀，不加权）。Jumpjet COM 接口（RTTI 未覆盖）由此纳入。
+            _pref = Counter()
+            for _fe in vt_entries_mapped.get(_vt["start"], ()):
+                _nm = idc.get_func_name(_fe) or ""
+                if "::" in _nm:
+                    _pref[_nm.split("::", 1)[0]] += 1
+            if not _pref:
+                continue
+            _best, _cnt = _pref.most_common(1)[0]
+            _total = len(vt_entries_mapped.get(_vt["start"], ()))
+            if _cnt * 2 < _total:
+                continue  # 前缀一致性 <50% → 不认定
+            for _fa in vt_entries_mapped.get(_vt["start"], ()):
+                _vt_proven_thiscall.add(_fa)
+            continue
+        for _fa in vt_entries_mapped.get(_vt["start"], ()):
+            _vt_proven_thiscall.add(_fa)
+    # S9: vtable 安装者（ctor/dtor/Construct）同为 thiscall 真值
+    _ctor_types = {}
+    _ctor_path = os.path.join(PROJ_ROOT, "anchors", "ctor_types.json")
+    if os.path.exists(_ctor_path):
+        try:
+            with open(_ctor_path, encoding="utf-8") as _cf:
+                _ctor_types = json.load(_cf)
+            for _ca in _ctor_types:
+                try:
+                    _vt_proven_thiscall.add(int(_ca, 16))
+                except ValueError:
+                    pass
+        except (OSError, json.JSONDecodeError):
+            pass
+    print(
+        f"  [S6+S9+S10] proven thiscall: {len(_vt_proven_thiscall)} funcs "
+        f"(+{len(_ctor_types)} ctors)"
+    )
 
     for func_ea in idautils.Functions():
         seg = ida_segment.getseg(func_ea)
@@ -2619,6 +2711,10 @@ def _run_main():
             has_frame = bool(func.flags & getattr(ida_funcs, "FUNC_FRAME", 0x100))
             frsize = getattr(func, "frsize", None)
         ea, end, fstart = func_ea, func.end_ea, func_ea
+        # B8b: 数组基址寄存器表 R → 全局名（`mov R, offset G` 登记；
+        # call 清 caller-saved；其它写清除——线性扫描近似，边=join 证据
+        # 容忍有限不精确）
+        array_base_regs = {}
         is_thiscall = func_real_cc.get(func_addr_str) == ida_typeinf.CM_CC_THISCALL
         is_fastcall = func_real_cc.get(func_addr_str) == ida_typeinf.CM_CC_FASTCALL
 
@@ -2910,6 +3006,36 @@ def _run_main():
                                             "addr": f"0x{ea:X}",
                                         }
                                     )
+                        # B8c: 数组基址经 this 传入被调函数——回看 ≤6 条
+                        # `mov ecx, R`（R 已登记为 G 的基址）→ CALL_ARG
+                        # (arr_G → callee:this)。RA2 模式实证：411 处基址
+                        # 载入仅 5 处就地索引——基址主要作为 this/参数传给
+                        # 辅助函数在其内部索引。桥接后：任一调用方传真实
+                        # 元素指针给同一辅助函数 → arr_G 点亮 → 全体继承。
+                        if array_base_regs and func_addr_str:
+                            _p8 = idc.prev_head(ea, fstart)
+                            for _ in range(6):
+                                if _p8 == idaapi.BADADDR or _p8 < fstart:
+                                    break
+                                _m8c = idc.print_insn_mnem(_p8)
+                                if _m8c == "call":
+                                    break
+                                if (_m8c == "mov"
+                                        and (idc.print_operand(_p8, 0) or "").strip().lower() == "ecx"):
+                                    _src8 = (idc.print_operand(_p8, 1) or "").strip().lower()
+                                    _g8c = array_base_regs.get(_src8)
+                                    if _g8c:
+                                        constraints.append(
+                                            {
+                                                "from": "arr_" + _g8c,
+                                                "to": f"0x{tgt:08X}:this",
+                                                "type": "CALL_ARG",
+                                                "addr": call_ea_hex,
+                                                "callee_name": cname,
+                                            }
+                                        )
+                                    break
+                                _p8 = idc.prev_head(_p8, fstart)
                         if cname in (
                             "strlen",
                             "strcpy",
@@ -3171,6 +3297,69 @@ def _run_main():
                              "itype": "int", "addr": f"0x{ea:X}"}
                         )
 
+            # B8/B8b (数组元素伪变量): 索引全局 `[G+idx*S]` 直接形式 +
+            # 寄存器基址形式 `[R+idx*S]`（R 经 `mov R,offset G` 登记——
+            # g_CellClassArray 457 引用全是两步形态：mov eax,offset G 在前，
+            # [eax+idx*4] 在后，直接形式一条不存在）→ arr_G 伪变量边。
+            # 就地构造 `lea ecx,[R+idx*S]; call ctor` 使 ctor this 通道
+            # 点亮 arr_G，全部元素访问继承（案例1 0x47B3A0 实证）。
+            if mnem == "call":
+                for _cr in ("eax", "ecx", "edx"):
+                    array_base_regs.pop(_cr, None)
+            elif mnem in ("mov", "lea", "movsx", "movzx", "cmp", "add", "sub"):
+                _lo0 = (op0 or "").strip().lower()
+                _lo1 = (op1 or "").strip().lower()
+                # 基址登记/清除（mov R, offset G / mov R, [G] 为登记变体）
+                if mnem == "mov" and _lo0 in X86_REGS:
+                    if _lo1.startswith("offset ") and not _lo1.endswith("]"):
+                        _g8 = _lo1[len("offset "):].strip()
+                        if _g8 and idc.get_name_ea(idaapi.BADADDR, _g8) != idc.BADADDR:
+                            array_base_regs[_lo0] = _g8
+                        else:
+                            array_base_regs.pop(_lo0, None)
+                    elif _lo1 in array_base_regs and _lo0 != _lo1:
+                        # 复制传播：mov R2, R（R 为已登记基址）→ R2 继承
+                        array_base_regs[_lo0] = array_base_regs[_lo1]
+                    else:
+                        array_base_regs.pop(_lo0, None)
+                elif _lo0 in X86_REGS:
+                    array_base_regs.pop(_lo0, None)
+                # 索引访问发边：任一操作数 `[R+..*..]` 且 R 已登记
+                for _op8, _dir8 in ((op1, "src"), (op0, "dst")):
+                    if not _op8:
+                        continue
+                    # 尺寸前缀剥离（dword ptr [eax+ebx*4] → [eax+ebx*4]）
+                    _t8 = _RE_SIZE_PREFIX.sub(
+                        "", _op8.strip().rstrip("]")).strip()
+                    if "*" not in _t8 or not _t8.startswith("["):
+                        continue
+                    _m8 = re.match(r"^\[([a-z]{2,3})(?![a-z])", _t8.lower())
+                    if not _m8:
+                        continue
+                    _b8 = _m8.group(1)
+                    _gname8 = array_base_regs.get(_b8)
+                    if not _gname8:
+                        continue
+                    _a8 = "arr_" + _gname8
+                    _other8 = _lo1 if _dir8 == "src" else _lo0
+                    _self8 = _lo0 if _dir8 == "src" else _lo1
+                    if _other8 in X86_REGS and mnem != "cmp":
+                        if _dir8 == "src":
+                            constraints.append({
+                                "from": _a8, "to": _other8,
+                                "type": "ASSIGN", "addr": f"0x{ea:X}",
+                            })
+                        else:
+                            constraints.append({
+                                "from": _other8, "to": _a8,
+                                "type": "ASSIGN", "addr": f"0x{ea:X}",
+                            })
+                    elif mnem == "lea" and _self8 in X86_REGS:
+                        constraints.append({
+                            "from": _a8, "to": _self8,
+                            "type": "ASSIGN", "addr": f"0x{ea:X}",
+                        })
+
             if c:
                 constraints.append(c)
             # B4 (SSA 版本边界补全): 凡是"写目标寄存器"的指令，若本指令没有
@@ -3407,6 +3596,17 @@ def _run_main():
                 domain[this_var].add(cls_id)
                 anchor_strength[this_var] = max(anchor_strength.get(this_var, 0), 3)  # vtable anchor: 最高强度
 
+    # S9b: ctor/vtable 安装者 this 锚（强度 3——安装 vtable 即接收该类 this）
+    for _ca, _ccls in (_ctor_types or {}).items():
+        try:
+            _cfa = int(_ca, 16)
+        except ValueError:
+            continue
+        _tv = f"0x{_cfa:08X}:this"
+        if _tv in this_vars:
+            domain[_tv].add(_ccls)  # 真实类名（非 Class_ 占位）
+            anchor_strength[_tv] = max(anchor_strength.get(_tv, 0), 3)
+
     # Function-name anchors: if func name has "::", use the class prefix
     for this_var in this_vars:
         if not domain[this_var]:
@@ -3416,9 +3616,11 @@ def _run_main():
                 cls_name = func_name.split("::")[0]
                 if not cls_name.startswith("?") and "`" not in cls_name:
                     domain[this_var].add(cls_name)
+                    # S3 (L3): 名字锚降为强度 1（与传播同级）——IDA 命名是
+                    # 派生元数据，746 项已证错；不得高于约束传播证据
                     anchor_strength[this_var] = max(
-                        anchor_strength.get(this_var, 0), 2
-                    )  # 函数名类锚
+                        anchor_strength.get(this_var, 0), 1
+                    )
 
     # T10 (E7): THIS_ADJUST —— thunk this 偏移约束化（配合 T9 C3）。
     # `{thunk}:this` 域 = `{target}:this` 域（this_adjustment 非 0 的条目），
@@ -3813,7 +4015,10 @@ def _run_main():
         if not vt_child:
             continue
         for vt_base_start, base_this in vt_to_first.items():
-            if child_this == base_this:
+            # L13 修复：旧条件 `child_this == base_this` 会排除共享 slot-0
+            # 析构函数的家族 vtable 对（真实基类关系的典型形态）——共享首
+            # 条目恰是继承证据而非同一 vtable。仅排除自身（不同 start）。
+            if vt_child_start == vt_base_start:
                 continue
             vt_base = next((vt for vt in vtables if vt["start"] == vt_base_start), None)
             if not vt_base:
@@ -3859,10 +4064,60 @@ def _run_main():
             class_ref_count[_base_cls_id] += _matches
 
 
+    # S2v2 (L4 修复): 定义层解析——RTTI_DIRECT 真值祖先闭包（v2：初版用
+    # F12 前缀闭包，实证对 MI 家族无效——GScreen 作为 Mouse 基类的前缀
+    # 匹配仅 3/22=14%，派生 vtable 重排条目而非前缀扩展；RTTI 直接基类
+    # 关系才是 ground truth）。
+    # _rtti_anc[cls_real] = 全部祖先真实类名（含自身）
+    _rtti_anc = {}
+    def _rtti_ancestors(cls_real, _stack=frozenset()):
+        if cls_real in _rtti_anc:
+            return _rtti_anc[cls_real]
+        out = {cls_real}
+        if cls_real not in _stack:
+            for _b in RTTI_DIRECT.get(cls_real, ()):
+                out |= _rtti_ancestors(_b, _stack | {cls_real})
+        _rtti_anc[cls_real] = out
+        return out
+    _func_containing_vts = defaultdict(set)
+    for _vt in vtables:
+        for _fa in vt_entries_mapped[_vt["start"]]:
+            _func_containing_vts[_fa].add(_vt["start"])
+    # v3: 类名直读 RTTI 真值表（与 RTTI_DIRECT 同源同名空间，不经
+    # IDA 标签 demangle——避免 GScreen/GScreenClass 等命名变体失配）
+    _vt_realname = {}
+    for _vt in vtables:
+        _rn = (RTTI_VTABLE_MAP.get(f"0x{_vt['start']:x}", {}) or {}).get("class")
+        if _rn:
+            _vt_realname[_vt["start"]] = _rn
+    def _definition_level_bonus(fint):
+        """返回 {cls_id: bonus}——包含集中为其余包含类 RTTI 公共祖先的
+        定义层类 +1000（压制全部流行度/单簇平票）。"""
+        vt_set = _func_containing_vts.get(fint)
+        if not vt_set or len(vt_set) < 2:
+            return {}
+        out = {}
+        for _cand in vt_set:
+            _cn = _vt_realname.get(_cand)
+            if not _cn:
+                continue
+            # 方向修正（v3 的根因）：cand 是定义层 ⇔ cand ∈ 每个其余包含类
+            # 的祖先集（cand 是它们的祖先）。初版写成 `other ∈ ancestors(cand)`
+            # ——选出的是最派生类（Mouse 的祖先集在 MI 家族恰含其余全部），
+            # RenderFrame→MouseClass 的真正机制。
+            if all(_o == _cand
+                   or _cn in _rtti_ancestors(_vt_realname.get(_o, ""))
+                   for _o in vt_set):
+                cid = vt_to_class_id.get(_cand)
+                if cid:
+                    out[cid] = 1000  # 定义层：压制流行度平票与单簇
+        return out
+
     def _anchor_bonus(var):
         """F11: this 变量的锚定加权——vtable 成员类 >> 函数名 `::` 前缀类。
 
         传播类（class_ref_count）为基准权重；锚定命中时大幅提升对应类。
+        S2: 多 vtable 平票时定义层公共祖先 +1000 绝对优先。
         """
         if not var.endswith(":this"):
             return {}
@@ -3877,11 +4132,15 @@ def _run_main():
             if fint in vt_entries_mapped[vt["start"]]:
                 cid = vt_to_class_id[vt["start"]]
                 bonus[cid] = bonus.get(cid, 0) + 100  # vtable anchor: 最高权重
-        func_name = func_addr_to_name.get(func_addr, "")
-        if "::" in func_name:
-            cls_name = func_name.split("::")[0]
-            if cls_name and not cls_name.startswith("?") and "`" not in cls_name:
-                bonus[cls_name] = bonus.get(cls_name, 0) + 10  # 函数名类: 次高
+        if not bonus:
+            # S3 (L3 压制): 函数名前缀仅在无任何 vtable 证据时参与加权
+            #（IDA 错名与 CSP 循环共导的通道切断；有 vtable 时 +100 已压制）
+            func_name = func_addr_to_name.get(func_addr, "")
+            if "::" in func_name:
+                cls_name = func_name.split("::")[0]
+                if cls_name and not cls_name.startswith("?") and "`" not in cls_name:
+                    bonus[cls_name] = bonus.get(cls_name, 0) + 10  # 函数名类: 次高
+        bonus.update(_definition_level_bonus(fint))
         return bonus
 
 
@@ -3932,12 +4191,26 @@ def _run_main():
             dom = domain[var] if domain[var] else type_domain.get(var, set())
         else:
             dom = domain[var]
+        # S2v3b: this 变量的定义层类重注入——多 vtable 函数的定义层类
+        # 可能被 AC-3 交集窄化剔除（调用方实参全为派生实例时），但
+        # vtable 成员资格保证它合法在场；+1000 bonus 让 greedy 必选它
+        if var.endswith(":this") and len(dom) > 1:
+            try:
+                _fint_dlv3 = int(var.split(":")[0], 16)
+                _dl_keys = set(_definition_level_bonus(_fint_dlv3))
+                if _dl_keys:
+                    _dom2 = set(dom) | _dl_keys
+                    if DOMAIN_SPLIT:
+                        domain[var] = _dom2
+                    dom = _dom2
+            except ValueError:
+                pass
         # T8 (C2): top-K 候选构建（解析前——矛盾变量也获得候选集）
         if dom:
             _cls_cands = [t for t in dom if _is_class_type(t)]
             if _cls_cands:
                 _cand_bonus = _anchor_bonus(var)
-                if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 2:
+                if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 3:
                     for _c in _cls_cands:
                         _cand_bonus[_c] = _cand_bonus.get(_c, 0) + 10
                 candidates[var] = sorted(
@@ -3960,7 +4233,7 @@ def _run_main():
             # （3=vtable/2=锚定 → 分层加分；1=传播/0=开放 不加分）。
             # F11 vtable/函数名 bonus 保持（统一 +10 不改变相对序）；
             # 强度 2 层扩展覆盖签名锚 this 变量。仅分域模式生效。
-            if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 2:
+            if DOMAIN_SPLIT and var.endswith(":this") and anchor_strength.get(var, 0) >= 3:
                 for _c in dom:
                     bonus[_c] = bonus.get(_c, 0) + 10
             # F11: 权重 = 传播引用数 + 锚定奖励；tie-break 用类名字典序（稳定）
@@ -4008,17 +4281,30 @@ def _run_main():
     for this_var in this_vars:
         cls = resolved.get(this_var)
         if cls is None:
-            # D1 (F3 fix): unresolved 兜底——先查 T8 C2 候选集（矛盾变量跳过
-            # greedy 解析但仍构建候选集）。有候选 → candidates[0] 归因
-            # （C1 矛盾记录 conflicts/conflicted_skipped 保留，语义不变）；
-            # 无候选 → 保持原语义生成单例 Class_unresolved_N。
-            _cand = candidates.get(this_var)
-            if _cand:
-                cls = _cand[0]
-                RUN_MANIFEST["unresolved_fallback_count"] += 1
+            # S8: 定义层优先——多 vtable this 变量有二进制真值（S2 机器），
+            # 高于流行度候选（HouseClass::Update_TogglePower 类 110 实测
+            # 曾被 candidates[0] 流行度错归或漏归）
+            try:
+                _dl8 = _definition_level_bonus(int(this_var.split(":")[0], 16))
+            except ValueError:
+                _dl8 = {}
+            if _dl8:
+                cls = sorted(_dl8)[0]
+                RUN_MANIFEST["unresolved_deflevel_count"] = (
+                    RUN_MANIFEST.get("unresolved_deflevel_count", 0) + 1
+                )
             else:
-                # Unresolved: create singleton unique class
-                cls = f"Class_unresolved_{len(class_to_vars)}"
+                # D1 (F3 fix): unresolved 兜底——先查 T8 C2 候选集（矛盾变量跳过
+                # greedy 解析但仍构建候选集）。有候选 → candidates[0] 归因
+                # （C1 矛盾记录 conflicts/conflicted_skipped 保留，语义不变）；
+                # 无候选 → 保持原语义生成单例 Class_unresolved_N。
+                _cand = candidates.get(this_var)
+                if _cand:
+                    cls = _cand[0]
+                    RUN_MANIFEST["unresolved_fallback_count"] += 1
+                else:
+                    # Unresolved: create singleton unique class
+                    cls = f"Class_unresolved_{len(class_to_vars)}"
         class_to_vars[cls].append(this_var)
 
     if RUN_MANIFEST["unresolved_fallback_count"]:
@@ -4182,19 +4468,29 @@ def _run_main():
                 param_part = parts[1].split("_")[0]
                 if param_part.startswith("param") and param_part[5:].isdigit():
                     clean_types = {t for t in types_set if t != "Param_Seed"}
-                    final_type = (
-                        "unknown"
-                        if not clean_types
-                        else next(
-                            (
-                                t
-                                for t in clean_types
-                                if t.startswith("Class_")
-                                or t in ("float", "double", "char*", "bool", "void*")
-                            ),
-                            "int",
+                    # S4 (L6 修复): 加权序优先（resolved/candidates），基础
+                    # 类型回退次之，int 兜底最后
+                    _pr = resolved.get(var)
+                    if _pr and (_pr.startswith("Class_") or _pr in (
+                            "float", "double", "char*", "bool", "void*")):
+                        final_type = _pr
+                    else:
+                        _pc = candidates.get(var) or []
+                        _pc2 = next((c for c in _pc if c.startswith("Class_") or c in (
+                            "float", "double", "char*", "bool", "void*")), None)
+                        final_type = (
+                            "unknown"
+                            if not clean_types
+                            else _pc2 or next(
+                                (
+                                    t
+                                    for t in clean_types
+                                    if t.startswith("Class_")
+                                    or t in ("float", "double", "char*", "bool", "void*")
+                                ),
+                                "int",
+                            )
                         )
-                    )
                     func_sigs[func_addr]["params"][param_part] = final_type
                     func_sigs[func_addr]["param_types"][param_part] = (
                         clean_types if clean_types else {"int"}
@@ -4202,28 +4498,56 @@ def _run_main():
         elif var.endswith(":this") or ":this_" in var:
             func_addr = var.split(":")[0]  # F10: 单冒号解析
             clean_types = {t for t in types_set if t != "Param_Seed"}
-            found_class = next((t for t in clean_types if t.startswith("Class_")), None)
+            # S4 (L7 修复): 加权序优先——greedy resolved > candidates[0] >
+            # 任意 next() 兜底（与 this 变量的 greedy 权重一致）
+            _r = resolved.get(var)
+            # Fix C: 接受真实类名（S9b ctor 锚以真名入域）与 Class_ 占位
+            if _r and _is_class_type(_r):
+                found_class = _r
+            else:
+                _cand_first = next(
+                    (c for c in candidates.get(var, ())
+                     if _is_class_type(c)), None)
+                if _cand_first:
+                    found_class = _cand_first
+                else:
+                    found_class = next(
+                        (t for t in clean_types if _is_class_type(t)), None)
             if found_class:
-                func_sigs[func_addr]["params"]["param0"] = found_class
-                func_sigs[func_addr]["owner"] = found_class
+                # Fix A: SSA this 变体（':this_v...'）不再最后写入者胜——
+                # exact ':this'（入口形参，锚强度最高）优先；变体仅在
+                # 尚无 owner 时写入
+                _is_exact = var.endswith(":this")
+                _cur = func_sigs[func_addr].get("owner")
+                if _is_exact or _cur in (None, "", "unknown"):
+                    func_sigs[func_addr]["params"]["param0"] = found_class
+                    func_sigs[func_addr]["owner"] = found_class
         elif "::return" in var:
             parts = var.split("::")
             if len(parts) >= 2:
                 func_addr = parts[0]
                 clean_types = {t for t in types_set if t != "Param_Seed"}
-                final_type = (
-                    "unknown"
-                    if not clean_types
-                    else next(
-                        (
-                            t
-                            for t in clean_types
-                            if t.startswith("Class_")
-                            or t in ("float", "double", "char*", "bool", "void*")
-                        ),
-                        "void",
+                # S4 (L6 修复): 同参数——加权序优先
+                _rr = resolved.get(var)
+                if _rr and (_rr.startswith("Class_") or _rr in (
+                        "float", "double", "char*", "bool", "void*")):
+                    final_type = _rr
+                else:
+                    _rc = next((c for c in (candidates.get(var) or []) if c.startswith(
+                        "Class_") or c in ("float", "double", "char*", "bool", "void*")), None)
+                    final_type = (
+                        "unknown"
+                        if not clean_types
+                        else _rc or next(
+                            (
+                                t
+                                for t in clean_types
+                                if t.startswith("Class_")
+                                or t in ("float", "double", "char*", "bool", "void*")
+                            ),
+                            "void",
+                        )
                     )
-                )
                 func_sigs[func_addr]["return"] = final_type
 
     for ci, c in enumerate(edge_constraints):
@@ -4332,17 +4656,49 @@ def _run_main():
         )
 
     # Resolve votes → rename_map (one-to-one: no two Class_N map to same name)
+    # Fix B: vtable 簇的 RTTI 真值名优先——Class_<vtaddr> 簇的身份由其二进制
+    # vtable 决定，强制映射 RTTI 类名（先占名），投票仅在无真值时参与。
+    # （实证：GScreen vtable 簇 Class_7EA6FC 曾被投票改名为
+    # VectorCursor_uint___13 垃圾名——L16/L17 噪声）
     rename_map = {}
     used_names = set()
+    _vt_real_by_id = {}
+    for _vt in vtables:
+        _rn = (RTTI_VTABLE_MAP.get(f"0x{_vt['start']:x}", {}) or {}).get("class")
+        if _rn:
+            _cid = vt_to_class_id.get(_vt["start"])
+            if _cid:
+                _vt_real_by_id[_cid] = _rn
+    for _cid, _rn in sorted(_vt_real_by_id.items()):
+        if _rn not in used_names:
+            rename_map[_cid] = _rn
+            used_names.add(_rn)
+    RUN_MANIFEST["rtti_forced_renames"] = len(rename_map)
     for cls, votes in vt_name_votes.items():
         if not votes:
             continue
         best = max(votes, key=votes.get)
-        if best not in used_names:
+        # Fix B2: 真值预置（vtable 簇 → RTTI 类名）不可被投票覆盖
+        if cls not in rename_map and best not in used_names:
             rename_map[cls] = best
             used_names.add(best)
 
     print(f"  Mapped {len(rename_map)} classes to real names.")
+
+    # S2 诊断清单：定义层机制在旗舰案例上的实况（resolved/bonus/rename）
+    _diag = {}
+    for _pv in (0x4F45B0, 0x6ABD30, 0x41BEF0, 0x652CF0):
+        _tv = f"0x{_pv:08X}:this"
+        _diag[hex(_pv)] = {
+            "definition_bonus": _definition_level_bonus(_pv),
+            "resolved": resolved.get(_tv),
+            "domain_size": len(domain.get(_tv, ())),
+            "rename": rename_map.get(resolved.get(_tv, ""), "?"),
+            "in_domain": sorted(c for c in domain.get(_tv, ())
+                                if _definition_level_bonus(_pv).get(c))[:1],
+        }
+    RUN_MANIFEST["s2_diagnostics"] = _diag
+    print(f"  [S2-diag] {json.dumps(_diag, ensure_ascii=False)[:400]}")
 
     # ============================================================
     # 7. 注入结构体 (带具体成员变量类型)
@@ -4931,18 +5287,31 @@ def _run_main():
 
     print("  [*] Exporting functions...")
     funcs_export = {}
+    # Fix D: 真名类（S9b ctor 锚/域中已是真实类名者）恒等映射——
+    # rename_map 只覆盖 Class_ 占位簇；真名 owner 直接透传
+    _real_class_ids = {
+        c for c in final_classes
+        if _is_class_type(c) and not c.startswith("Class_")
+    }
     for faddr, sig in func_sigs.items():
         owner_csp = sig["owner"]
-        owner_real = rename_map.get(owner_csp, "unknown")
+        if owner_csp in _real_class_ids:
+            owner_real = owner_csp
+        else:
+            owner_real = rename_map.get(owner_csp, "unknown")
         orig_name = func_addr_to_name.get(faddr, "unknown")
         if owner_real != "unknown":
             clean = orig_name.split("::")[-1] if "::" in orig_name else orig_name
             if clean.startswith("sub_"):
                 clean = "method_" + clean[4:]
             inferred_name = f"{owner_real}::{clean}"
-            cc = "thiscall"
         else:
             inferred_name = orig_name
+        # S1 (L8 修复): CC 由提取期 thiscall 检测决定（this_var 存在），
+        # 不随 owner 解析成败漂移——owner 未解仍正确导出 thiscall
+        try:
+            cc = "thiscall" if f"0x{int(faddr, 16):08X}:this" in this_vars else "cdecl"
+        except ValueError:
             cc = "cdecl"
         params_export = []
         pc = 0
