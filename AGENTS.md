@@ -870,6 +870,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: 可携带 IDB 快照导出 — `decompile-results/full_export/`（73MB, 本地不入 git）
+  - `tools/type_infer/ida_full_export.py`: 三阶段断点续跑导出器（globals/classes/functions/index）
+  - **19,067 函数 100% 导出**（地址头 + IDA 原型 + 汇编含 label/调用目标引用 + Hex-Rays 伪代码行内地址锚点; 10 个反编译失败有纯汇编兜底）, 14 分钟跑完
+  - **1,343 类头文件**（链式扁平布局 1,032 + 回退 311: sizeof/基类/vtable/ctor 地址 + 成员偏移语义名 + 方法地址清单）; **globals.hpp 15,797 条数据段条目**; index.json 26,478 条地址索引
+  - 用途: 后续 LLM 命名轮/函数翻译**不再需要 IDA**——快照自包含; 参考源非可编译（真实翻译仍在 src/ 树 + 门控）
 - **2026-09-03**: IDB struct 系统性纠偏 — 69 类从 class_layouts 扁平重建（T14 配套工作包）
   - **裁决**: IDB 存量 struct 是错误模型——TechnoClass(2172B) 比子类 FootClass(2132B) 还大（父大于子不可能）、成员整体 +0x3D4 平移。二进制铁证：GetTarget 读 `[ecx+21Ch]`（旧 struct 此处是 gap）、ctor 写 0xE0..0x514 连续区——**class_layouts 模型正确**（链自洽：子类 own 起点==父 size；1312/0x6C0/0x6F0 严格递增）
   - `tools/type_infer/t14_structs.py`: 沿父链扁平化生成 C 声明（偏移即全对象绝对坐标）。三条 IDA C 解析器对齐规则（实测）：非 this 参数须命名；`short` 的 2 对齐导致 19 类 +2 漂移（→ char[2]）；非 4 对齐偏移处 int/指针成员强插 padding（→ char[N]）
