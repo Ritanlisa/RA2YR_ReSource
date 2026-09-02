@@ -1900,6 +1900,42 @@ class TypeInferenceEngine:
             print(f"  B7 vtable-slot routed receivers: {routed}", file=sys.stderr)
             _propagate_round()
 
+        # ── B10c: int 软升级——完成被求值顺序拒绝的单调 join ──
+        # B6 int 种子（rank-1，不冻结）先于传播占位；T9d 只处理 BOTTOM/
+        # VOID_PTR 变量，导致"值流入类指针槽位"的 int 种子变量永远停在
+        # int。lattice.join(int, C) = C（标量让位）本就是单调合并的正确
+        # 结果——此处对【仅弱种子证据】的 int 变量补做：前向目的地（值
+        # 边/CALL_ARG/返回通道）中全部具体类证据的 join 若为类类型，升
+        # 级之。frozen_roots（rank≥2 真锚）不动；anchored_roots 里 rank-1
+        # 的纯种子根正是升级目标，不得误挡。
+        _SCALARS = ("int", "float", "char*")
+        upgraded = 0
+        for var_id in range(len(self.id_to_var)):
+            r = self.uf.find(var_id)
+            if r in frozen_roots:
+                continue
+            if root_types.get(r, BOTTOM) != "int":
+                continue
+            joined = BOTTOM
+            for chan in (self.adjacency, self.param_in, self.return_out):
+                for dst in chan.get(var_id, ()):
+                    dr = self.uf.find(dst)
+                    if dr == r:
+                        continue
+                    dt = root_types.get(dr, BOTTOM)
+                    if not _is_concrete(dt) or dt in _SCALARS:
+                        continue
+                    joined = dt if joined == BOTTOM else self.lattice.join(joined, dt)
+            if _is_concrete(joined) and joined not in _SCALARS:
+                root_types[r] = joined
+                if r not in in_worklist:
+                    worklist.append(r)
+                    in_worklist.add(r)
+                upgraded += 1
+        if upgraded:
+            print(f"  B10c int-soft-upgraded vars: {upgraded}", file=sys.stderr)
+            _propagate_round()
+
         print(f"  T9c member-aggregated: {t9c_total}, T9d back-inferred: {t9d_total}",
               file=sys.stderr)
 
