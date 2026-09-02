@@ -12,13 +12,23 @@
 
 本脚本用**通用规则**（无硬编码地址/类名）推导恒等映射：
   A exact        : RTTI 名本身 ∈ canon 命名空间
-  B template_base: ?$Base@Args@@ 的 Base ∈ canon（Args 保留为证据）
+  B template_base: ?$Base@Args 的 Base ∈ canon（Args 保留为证据）
+  B+ arg_suffix  : 模板参数修饰码 → header 像素类型后缀（@G=unsigned
+                   short → _ushort 等，MSVC 修饰码表驱动，命中即恒等）
   C suffix       : X ≡ XClass 双向后缀变体（含模板基名）
-  D alias_audit  : 符号审计的 668 别名对（二进制证据：vtable 成员
-                   资格 + IDA 名交叉），目标经 A/B/C 归一到 canon
-  E transitive   : D 目标本身是 RTTI 名时接力解析
+  S self_vtable  : 自有 vtable 的 RTTI 类是独立二进制身份——canon =
+                   自身（无 header 对应也入库，绝不折叠到他类）
 
-canon 命名空间 = class_layouts ∪ member_types 的类名全集（header 知识）。
+**已证伪并移除的规则 D（alias_audit，2026-09-02 复核）**：符号审计的
+668 别名表是"vtable 槽位 IDA 命名多数投票"的产物——命名体系桥接，
+不是恒等映射。全量核验：177 条 alias_audit 折叠的键 100% 拥有自己的
+vtable（如 AllToCheerCommandClass/BeaconPlacementCommandClass 等 31 个
+独立命令类被并进 CreateTeamCommand；Base64Pipe/Base64Straw/CacheStraw
+被并进 Delegate）。vtable 是类的二进制身份，键自有 vtable 而目标不
+共享 → 必为不同类。
+
+canon 命名空间 = class_layouts ∪ member_types 的类名全集（header 知识）
+∪ self_vtable 独立类。
 
 输出 anchors/class_name_align.json：
   rtti_to_canon   : 恒等映射 + 规则 provenance（引擎 _to_lattice_type
@@ -45,11 +55,23 @@ PROJ = os.path.dirname(os.path.dirname(_HERE))
 CLASS_LAYOUTS = os.path.join(PROJ, "tools", "class_layouts.json")
 MEMBER_TYPES = os.path.join(PROJ, "anchors", "member_types.json")
 RTTI_HIER = os.path.join(PROJ, "anchors", "rtti_hierarchy.json")
-ALIAS_AUDIT = os.path.join(PROJ, ".omo", "evidence", "alias-map-668.json")
+VT_CLASS = os.path.join(PROJ, "anchors", "rtti_vtable_class.json")
 OUT_PATH = os.path.join(PROJ, "anchors", "class_name_align.json")
 
 # ?$Base@MangledArgs@@ → Base（MSVC 模板实例修饰）
 _RE_TPL = re.compile(r"^\?\$(\w+)@")
+
+# B+: 模板参数修饰码 → header 侧像素/整数类型后缀候选
+# （MSVC 修饰码：E=unsigned char, G=unsigned short, I=unsigned int,
+#   H=int, J=long；header 命名约定 _ushort/_u8 等小写缩写）
+_TPL_ARG_SUFFIX = {
+    "G": ("_ushort", "_word", "_u16"),
+    "E": ("_uchar", "_byte", "_u8"),
+    "I": ("_uint", "_dword", "_u32"),
+    "H": ("_int", "_i32"),
+    "J": ("_long", "_i64"),
+}
+_RE_TPL_SCALAR_ARG = re.compile(r"^\?\$(\w+)@([EGHIJ])$")
 
 
 def _load(path, what):
@@ -69,7 +91,7 @@ def build():
     layouts = _load(CLASS_LAYOUTS, "class_layouts") or {}
     member_types = _load(MEMBER_TYPES, "member_types") or {}
     rtti_hier = _load(RTTI_HIER, "rtti_hierarchy") or {}
-    alias_audit = _load(ALIAS_AUDIT, "alias audit") or {}
+    vt_class_raw = _load(VT_CLASS, "rtti_vtable_class") or {}
 
     legacy_layouts = set(layouts)
     legacy_mt = set()
@@ -82,11 +104,14 @@ def build():
     rtti_classes = list(rtti_hier.get("classes", ()))
     rtti_direct = rtti_hier.get("direct", {})
 
+    # vtable 所有权：RTTI 类名 → 是否拥有自己的 vtable（S 规则判据）
+    vtable_owners = {info.get("class", "") for info in vt_class_raw.get("vtables", {}).values()}
+
     rtti_to_canon = {}   # rtti -> {canon, rule, tpl_base}
     rule_counts = defaultdict(int)
 
     def resolve(rtti_name: str):
-        """规则 A→B→C 逐级解析（不含审计别名 D——其目标需先经 A/B/C）。"""
+        """规则 A→B→B+→C 逐级解析。"""
         if rtti_name in canon_ns:
             return rtti_name, "exact"
         base = _template_base(rtti_name)
@@ -95,6 +120,12 @@ def build():
                 continue
             if cand in canon_ns:
                 return cand, rule
+            # B+: 模板标量参数修饰码 → header 后缀（?$X@G → X_ushort）
+            m = _RE_TPL_SCALAR_ARG.match(rtti_name)
+            if m and m.group(2) in _TPL_ARG_SUFFIX:
+                for suf in _TPL_ARG_SUFFIX[m.group(2)]:
+                    if m.group(1) + suf in canon_ns:
+                        return m.group(1) + suf, "arg_suffix"
             # C: 后缀变体（双向；只对非模板基名做加后缀，避免 ?$X@Y+Class 噪声）
             if not cand.startswith("?$"):
                 if cand + "Class" in canon_ns:
@@ -103,7 +134,7 @@ def build():
                 return cand[: -len("Class")], rule + "+suffix"
         return None, None
 
-    # ── A/B/C: 全量 RTTI 类 ──
+    # ── A/B/B+/C: 全量 RTTI 类 ──
     for r in sorted(rtti_classes):
         canon, rule = resolve(r)
         if canon is not None:
@@ -113,28 +144,15 @@ def build():
             }
             rule_counts[rule] += 1
 
-    # ── D/E: 审计别名（目标递归归一）──
-    def resolve_via_audit(rtti_name: str, depth: int = 0):
-        if rtti_name in rtti_to_canon or depth > 4:
-            return False
-        for target in alias_audit.get(rtti_name, ()):
-            canon, rule = resolve(target)
-            if canon is None and target not in canon_ns:
-                # E: 目标本身是 RTTI 名 → 接力
-                if resolve_via_audit(target, depth + 1):
-                    canon = rtti_to_canon[target]["canon"]
-                    rule = "transitive"
-            if canon is not None:
-                rtti_to_canon[rtti_name] = {
-                    "canon": canon, "rule": "alias_audit" if depth == 0 else rule,
-                    "tpl_base": _template_base(rtti_name),
-                }
-                rule_counts["alias_audit"] += 1
-                return True
-        return False
-
+    # ── S: 自有 vtable 的未解析 RTTI 类 = 独立二进制身份 ──
+    # （规则 D 证伪后接住原先被错误折叠的 177 类；vtable 所有权是
+    #   rtti_vtable_class 的二进制真值——每个 vtable 唯一属一类）
     for r in sorted(rtti_classes):
-        resolve_via_audit(r)
+        if r in rtti_to_canon:
+            continue
+        if r in vtable_owners:
+            rtti_to_canon[r] = {"canon": r, "rule": "self_vtable", "tpl_base": None}
+            rule_counts["self_vtable"] += 1
 
     # ── 反向索引 ──
     canon_to_rtti = defaultdict(list)
@@ -170,8 +188,8 @@ def build():
         "meta": {
             "generated_by": "tools/type_infer/gen_class_align.py",
             "canonical_namespace": "class_layouts ∪ member_types classes",
-            "rules": ["A exact", "B template_base", "C suffix", "D alias_audit",
-                      "E transitive"],
+            "rules": ["A exact", "B template_base", "B+ arg_suffix",
+                      "C suffix", "S self_vtable"],
             "counts": {
                 "canon_namespace": len(canon_ns),
                 "rtti_classes": len(rtti_classes),
