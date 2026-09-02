@@ -84,6 +84,21 @@ cmake --build build --config Debug
 4. **统一处理编译错误**（先修 object.hpp 前向声明→消除~1900连锁错误→逐一清完）
 5. **动态执行调试**（编译为 EXE，搭配 cnc-ddraw 兼容层运行，与原版对比验证）
 
+## 类型推断与类数据库管线
+
+约束传播式类型推断引擎（`tools/type_infer/`）为全部 1.9 万函数恢复变量类型，支撑 OO 重建路线图（类数据库 → IDA 回写 → LLM 命名）：
+
+- **引擎**：Steensgaard 合并 → 有向 JOIN lattice 传播（T9 v3）→ 置信度评分。确定性（sha256 双跑一致）、0 矛盾、65.6 万变量定型（有意义 77.3%、类类型 7.6 万）。
+- **锚通道**（二进制真值，provenance 分级）：RTTI vtable 类、构造函数 vtable 安装、单例存储、CSP 求解器投票（经 `fix_csp_votes.py` 修正、`verify_csp.py` 七通道验证全绿）。
+- **类名对齐**（`anchors/class_name_align.json`）：RTTI 修饰名 ↔ header 名统一到 canon 命名空间（975/988，纯通用规则）。
+- **类数据库**（`anchors/class_db.json`）：1,557 类的层次真值、vtable 槽位、成员布局、运行时观测成员类型、方法归属、单例。
+
+```bash
+python -m tools.type_infer.engine        # 完整管线
+python tools/type_infer/verify_csp.py    # CSP 七通道验证
+python tools/type_infer/gen_class_db.py  # 类数据库再生成
+```
+
 ## 许可证
 
 继承自 CnC_Red_Alert——GNU General Public License v3.0，含 Electronic Arts 附加条款（第 7 条）。

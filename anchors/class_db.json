@@ -18,13 +18,13 @@
    "with_rtti": 552,
    "with_vtable": 521,
    "with_layout": 1014,
-   "with_methods": 645,
+   "with_methods": 646,
    "with_observed_member_types": 131,
    "with_singletons": 17,
    "with_type_stats": 634,
    "observed_member_entries": 947,
-   "methods_total": 8029,
-   "csp_owned_methods": 4808,
+   "methods_total": 8070,
+   "csp_owned_methods": 4849,
    "checks": {
     "vtable_no_rtti": 0,
     "rtti_no_header_layout": 243,
@@ -2671,6 +2671,7 @@
    "ctors": [
     "0x7ad410"
    ],
+   "csp_methods": 1,
    "methods": {
     "0x007AD690": {
      "vtable_slots": [
@@ -2751,6 +2752,11 @@
      ],
      "cc": "thiscall",
      "name": "HouseClass::Draw_2"
+    },
+    "0x007AD410": {
+     "csp_owner": "?$CComObject@VCDownloadEventSink@@@ATL",
+     "cc": "thiscall",
+     "name": "?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410"
     }
    },
    "type_stats": {
@@ -54636,12 +54642,12 @@
     "0x00771890": {
      "csp_owner": "Anim@Voices@WorldDominationTour",
      "cc": "thiscall",
-     "name": "Anim@Voices@WorldDominationTour::method_771890"
+     "name": "Anim@Voices@WorldDominationTour::method"
     },
     "0x00771850": {
      "csp_owner": "Anim@Voices@WorldDominationTour",
      "cc": "thiscall",
-     "name": "Anim@Voices@WorldDominationTour::method_771850"
+     "name": "Anim@Voices@WorldDominationTour::method"
     }
    },
    "type_stats": {
@@ -149254,7 +149260,7 @@
     "0x00471890": {
      "csp_owner": "CaptureManagerClass",
      "cc": "thiscall",
-     "name": "CaptureManagerClass::SmallFunc_471890"
+     "name": "CaptureManagerClass::SmallFunc"
     }
    },
    "type_stats": {
@@ -149909,7 +149915,7 @@
     "0x00473750": {
      "csp_owner": "CarryoverClass",
      "cc": "thiscall",
-     "name": "CarryoverClass::method_473750"
+     "name": "CarryoverClass::method"
     }
    },
    "type_stats": {
@@ -160854,7 +160860,7 @@
     "0x00488280": {
      "csp_owner": "CheckListClass",
      "cc": "thiscall",
-     "name": "CheckListClass::method_488280"
+     "name": "CheckListClass::method"
     }
    },
    "type_stats": {
@@ -163721,7 +163727,7 @@
     "0x00488760": {
      "csp_owner": "ColorListClass",
      "cc": "thiscall",
-     "name": "ColorListClass::method_488760"
+     "name": "ColorListClass::method"
     }
    },
    "type_stats": {
@@ -179520,7 +179526,7 @@
     "0x00624090": {
      "csp_owner": "DialogControl@OwnerDraw",
      "cc": "thiscall",
-     "name": "DialogControl@OwnerDraw::method_624090"
+     "name": "DialogControl@OwnerDraw::method"
     }
    },
    "type_stats": {
@@ -194864,7 +194870,7 @@
      ]
     }
    },
-   "csp_methods": 74,
+   "csp_methods": 75,
    "methods": {
     "0x0040BCB0": {
      "vtable_slots": [
@@ -209629,6 +209635,11 @@
      ],
      "cc": "thiscall",
      "name": "VectorClass_PAE::Count"
+    },
+    "0x005CEDD0": {
+     "csp_owner": "DynamicVector",
+     "cc": "thiscall",
+     "name": "DynamicVector::Map_Delete_5CEDD0"
     }
    },
    "type_stats": {
@@ -209900,6 +209911,7 @@
      ]
     }
    },
+   "csp_methods": 1,
    "methods": {
     "0x0042DB60": {
      "vtable_slots": [
@@ -209978,6 +209990,11 @@
      ],
      "cc": "thiscall",
      "name": "DynamicVectorClass_uint::Clear"
+    },
+    "0x007719E0": {
+     "csp_owner": "DynamicVectorClass_uint",
+     "cc": "thiscall",
+     "name": "DynamicVectorClass_uint::sub_7719E0"
     }
    },
    "type_stats": {
@@ -312502,7 +312519,7 @@
     "0x00718080": {
      "csp_owner": "JumpjetLocomotionClass",
      "cc": "thiscall",
-     "name": "JumpjetLocomotionClass::ShortFunc_718080"
+     "name": "JumpjetLocomotionClass::ShortFunc"
     },
     "0x0054DB50": {
      "csp_owner": "JumpjetLocomotionClass",
@@ -313829,12 +313846,12 @@
     "0x00556520": {
      "csp_owner": "LightConvertClass",
      "cc": "thiscall",
-     "name": "LightConvertClass::method_556520"
+     "name": "LightConvertClass::method"
     },
     "0x00556510": {
      "csp_owner": "LightConvertClass",
      "cc": "thiscall",
-     "name": "LightConvertClass::method_556510"
+     "name": "LightConvertClass::method"
     }
    },
    "type_stats": {
@@ -385996,7 +386013,7 @@
     "0x00776320": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_776320"
+     "name": "ObjectClass::method"
     },
     "0x00594B50": {
      "csp_owner": "ObjectClass",
@@ -386061,7 +386078,7 @@
     "0x00634360": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634360"
+     "name": "ObjectClass::method"
     },
     "0x007D2E7F": {
      "csp_owner": "ObjectClass",
@@ -386106,7 +386123,7 @@
     "0x00517110": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_517110"
+     "name": "ObjectClass::method"
     },
     "0x0040A940": {
      "csp_owner": "ObjectClass",
@@ -386141,7 +386158,7 @@
     "0x00426990": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_426990"
+     "name": "ObjectClass::method"
     },
     "0x00769C40": {
      "csp_owner": "ObjectClass",
@@ -386151,7 +386168,7 @@
     "0x00405430": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_405430"
+     "name": "ObjectClass::method"
     },
     "0x007CFE1C": {
      "csp_owner": "ObjectClass",
@@ -386261,7 +386278,7 @@
     "0x00724510": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_724510"
+     "name": "ObjectClass::method"
     },
     "0x005B9250": {
      "csp_owner": "ObjectClass",
@@ -386291,7 +386308,7 @@
     "0x00681260": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_681260"
+     "name": "ObjectClass::method"
     },
     "0x0077A870": {
      "csp_owner": "ObjectClass",
@@ -386326,7 +386343,7 @@
     "0x00634960": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634960"
+     "name": "ObjectClass::method"
     },
     "0x006E5570": {
      "csp_owner": "ObjectClass",
@@ -386341,7 +386358,7 @@
     "0x00756570": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_756570"
+     "name": "ObjectClass::method"
     },
     "0x005549A0": {
      "csp_owner": "ObjectClass",
@@ -386371,7 +386388,7 @@
     "0x00659570": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_659570"
+     "name": "ObjectClass::method"
     },
     "0x0047A2D0": {
      "csp_owner": "ObjectClass",
@@ -386411,7 +386428,7 @@
     "0x00636530": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_636530"
+     "name": "ObjectClass::method"
     },
     "0x006E2A50": {
      "csp_owner": "ObjectClass",
@@ -386421,7 +386438,7 @@
     "0x00728540": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_728540"
+     "name": "ObjectClass::method"
     },
     "0x007BC580": {
      "csp_owner": "ObjectClass",
@@ -386456,7 +386473,7 @@
     "0x00674500": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_674500"
+     "name": "ObjectClass::method"
     },
     "0x00637550": {
      "csp_owner": "ObjectClass",
@@ -386531,12 +386548,12 @@
     "0x00759790": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_759790"
+     "name": "ObjectClass::method"
     },
     "0x00517360": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_517360"
+     "name": "ObjectClass::method"
     },
     "0x0051FEF0": {
      "csp_owner": "ObjectClass",
@@ -386661,7 +386678,7 @@
     "0x00626070": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_626070"
+     "name": "ObjectClass::method"
     },
     "0x006235B0": {
      "csp_owner": "ObjectClass",
@@ -386696,7 +386713,7 @@
     "0x00520260": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_520260"
+     "name": "ObjectClass::method"
     },
     "0x0049DA60": {
      "csp_owner": "ObjectClass",
@@ -386731,7 +386748,7 @@
     "0x00661960": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_661960"
+     "name": "ObjectClass::method"
     },
     "0x00777F90": {
      "csp_owner": "ObjectClass",
@@ -386751,7 +386768,7 @@
     "0x00659590": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_659590"
+     "name": "ObjectClass::method"
     },
     "0x006EF450": {
      "csp_owner": "ObjectClass",
@@ -386811,7 +386828,7 @@
     "0x00686570": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::GameFrameCheck_Check_686570"
+     "name": "ObjectClass::GameFrameCheck_Check"
     },
     "0x007767F0": {
      "csp_owner": "ObjectClass",
@@ -386821,7 +386838,7 @@
     "0x00689820": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_689820"
+     "name": "ObjectClass::method"
     },
     "0x00770F10": {
      "csp_owner": "ObjectClass",
@@ -386836,7 +386853,7 @@
     "0x00402020": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402020"
+     "name": "ObjectClass::method"
     },
     "0x005F1F20": {
      "csp_owner": "ObjectClass",
@@ -386901,7 +386918,7 @@
     "0x00635310": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_635310"
+     "name": "ObjectClass::method"
     },
     "0x0056B0F0": {
      "csp_owner": "ObjectClass",
@@ -386946,7 +386963,7 @@
     "0x00483710": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_483710"
+     "name": "ObjectClass::method"
     },
     "0x007DB207": {
      "csp_owner": "ObjectClass",
@@ -386961,7 +386978,7 @@
     "0x00554400": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_554400"
+     "name": "ObjectClass::method"
     },
     "0x00796960": {
      "csp_owner": "ObjectClass",
@@ -386971,7 +386988,7 @@
     "0x00664750": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_664750"
+     "name": "ObjectClass::method"
     },
     "0x0040AA70": {
      "csp_owner": "ObjectClass",
@@ -386986,7 +387003,7 @@
     "0x00479740": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_479740"
+     "name": "ObjectClass::method"
     },
     "0x0044F6E0": {
      "csp_owner": "ObjectClass",
@@ -387001,7 +387018,7 @@
     "0x00501750": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_501750"
+     "name": "ObjectClass::method"
     },
     "0x0076E090": {
      "csp_owner": "ObjectClass",
@@ -387011,7 +387028,7 @@
     "0x00402990": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402990"
+     "name": "ObjectClass::method"
     },
     "0x0072CF90": {
      "csp_owner": "ObjectClass",
@@ -387101,7 +387118,7 @@
     "0x00634880": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634880"
+     "name": "ObjectClass::method"
     },
     "0x005D9060": {
      "csp_owner": "ObjectClass",
@@ -387126,7 +387143,7 @@
     "0x00726780": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_726780"
+     "name": "ObjectClass::method"
     },
     "0x0054A9E0": {
      "csp_owner": "ObjectClass",
@@ -387226,7 +387243,7 @@
     "0x00634700": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634700"
+     "name": "ObjectClass::method"
     },
     "0x007BF0B0": {
      "csp_owner": "ObjectClass",
@@ -387311,7 +387328,7 @@
     "0x00526950": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_526950"
+     "name": "ObjectClass::method"
     },
     "0x00798DE0": {
      "csp_owner": "ObjectClass",
@@ -387361,7 +387378,7 @@
     "0x00405490": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_405490"
+     "name": "ObjectClass::method"
     },
     "0x004C95D0": {
      "csp_owner": "ObjectClass",
@@ -387381,7 +387398,7 @@
     "0x00681220": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_681220"
+     "name": "ObjectClass::method"
     },
     "0x006EE050": {
      "csp_owner": "ObjectClass",
@@ -387461,12 +387478,12 @@
     "0x00635680": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_635680"
+     "name": "ObjectClass::method"
     },
     "0x00488210": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_488210"
+     "name": "ObjectClass::method"
     },
     "0x007CAC13": {
      "csp_owner": "ObjectClass",
@@ -387481,7 +387498,7 @@
     "0x00635560": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_635560"
+     "name": "ObjectClass::method"
     },
     "0x005595F0": {
      "csp_owner": "ObjectClass",
@@ -387511,17 +387528,17 @@
     "0x00776570": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_776570"
+     "name": "ObjectClass::method"
     },
     "0x00659560": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_659560"
+     "name": "ObjectClass::method"
     },
     "0x00786270": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::Event_Process_786270"
+     "name": "ObjectClass::Event_Process"
     },
     "0x0077D3F0": {
      "csp_owner": "ObjectClass",
@@ -387546,7 +387563,7 @@
     "0x00720440": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_720440"
+     "name": "ObjectClass::method"
     },
     "0x006812A0": {
      "csp_owner": "ObjectClass",
@@ -387571,7 +387588,7 @@
     "0x00690530": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_690530"
+     "name": "ObjectClass::method"
     },
     "0x00408530": {
      "csp_owner": "ObjectClass",
@@ -387606,7 +387623,7 @@
     "0x00767320": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_767320"
+     "name": "ObjectClass::method"
     },
     "0x00426ED0": {
      "csp_owner": "ObjectClass",
@@ -387626,7 +387643,7 @@
     "0x00770430": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::System_Init_770430"
+     "name": "ObjectClass::System_Init"
     },
     "0x00633B80": {
      "csp_owner": "ObjectClass",
@@ -387636,7 +387653,7 @@
     "0x00655890": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_655890"
+     "name": "ObjectClass::method"
     },
     "0x0062D510": {
      "csp_owner": "ObjectClass",
@@ -387656,7 +387673,7 @@
     "0x00402850": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402850"
+     "name": "ObjectClass::method"
     },
     "0x004F2280": {
      "csp_owner": "ObjectClass",
@@ -387691,7 +387708,7 @@
     "0x00681070": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_681070"
+     "name": "ObjectClass::method"
     },
     "0x007D6AA2": {
      "csp_owner": "ObjectClass",
@@ -387736,7 +387753,7 @@
     "0x00626250": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_626250"
+     "name": "ObjectClass::method"
     },
     "0x004A5E50": {
      "csp_owner": "ObjectClass",
@@ -387776,7 +387793,7 @@
     "0x00403810": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_403810"
+     "name": "ObjectClass::method"
     },
     "0x004E43C0": {
      "csp_owner": "ObjectClass",
@@ -387896,7 +387913,7 @@
     "0x00769490": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_769490"
+     "name": "ObjectClass::method"
     },
     "0x00732950": {
      "csp_owner": "ObjectClass",
@@ -387916,7 +387933,7 @@
     "0x00637030": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_637030"
+     "name": "ObjectClass::method"
     },
     "0x007597A0": {
      "csp_owner": "ObjectClass",
@@ -387981,7 +387998,7 @@
     "0x00634470": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634470"
+     "name": "ObjectClass::method"
     },
     "0x00730F30": {
      "csp_owner": "ObjectClass",
@@ -387996,7 +388013,7 @@
     "0x00629530": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_629530"
+     "name": "ObjectClass::method"
     },
     "0x004034A0": {
      "csp_owner": "ObjectClass",
@@ -388006,7 +388023,7 @@
     "0x00402440": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402440"
+     "name": "ObjectClass::method"
     },
     "0x004F26E0": {
      "csp_owner": "ObjectClass",
@@ -388031,7 +388048,7 @@
     "0x00408410": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_408410"
+     "name": "ObjectClass::method"
     },
     "0x005CE3A0": {
      "csp_owner": "ObjectClass",
@@ -388211,7 +388228,7 @@
     "0x00631300": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_631300"
+     "name": "ObjectClass::method"
     },
     "0x0069F1B0": {
      "csp_owner": "ObjectClass",
@@ -388236,7 +388253,7 @@
     "0x00763700": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_763700"
+     "name": "ObjectClass::method"
     },
     "0x004E6070": {
      "csp_owner": "ObjectClass",
@@ -388286,7 +388303,7 @@
     "0x00408460": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_408460"
+     "name": "ObjectClass::method"
     },
     "0x007C8FD2": {
      "csp_owner": "ObjectClass",
@@ -388301,7 +388318,7 @@
     "0x00660540": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::Map_Helper_660540"
+     "name": "ObjectClass::Map_Helper"
     },
     "0x00532150": {
      "csp_owner": "ObjectClass",
@@ -388346,7 +388363,7 @@
     "0x00626290": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_626290"
+     "name": "ObjectClass::method"
     },
     "0x004C6BE0": {
      "csp_owner": "ObjectClass",
@@ -388386,12 +388403,12 @@
     "0x00770850": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_770850"
+     "name": "ObjectClass::method"
     },
     "0x00776670": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_776670"
+     "name": "ObjectClass::method"
     },
     "0x0077A890": {
      "csp_owner": "ObjectClass",
@@ -388446,7 +388463,7 @@
     "0x00565610": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_565610"
+     "name": "ObjectClass::method"
     },
     "0x006B0A90": {
      "csp_owner": "ObjectClass",
@@ -388471,7 +388488,7 @@
     "0x00631500": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::UI_Pop_631500"
+     "name": "ObjectClass::UI_Pop"
     },
     "0x005AF550": {
      "csp_owner": "ObjectClass",
@@ -388496,7 +388513,7 @@
     "0x00409330": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_409330"
+     "name": "ObjectClass::method"
     },
     "0x005CE330": {
      "csp_owner": "ObjectClass",
@@ -388506,7 +388523,7 @@
     "0x00474540": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_474540"
+     "name": "ObjectClass::method"
     },
     "0x00696C40": {
      "csp_owner": "ObjectClass",
@@ -388516,12 +388533,12 @@
     "0x00662240": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_662240"
+     "name": "ObjectClass::method"
     },
     "0x00689960": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_689960"
+     "name": "ObjectClass::method"
     },
     "0x005B5960": {
      "csp_owner": "ObjectClass",
@@ -388596,7 +388613,7 @@
     "0x00634810": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634810"
+     "name": "ObjectClass::method"
     },
     "0x007D3164": {
      "csp_owner": "ObjectClass",
@@ -388616,7 +388633,7 @@
     "0x00403210": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_403210"
+     "name": "ObjectClass::method"
     },
     "0x007CA9E4": {
      "csp_owner": "ObjectClass",
@@ -388646,7 +388663,7 @@
     "0x00541170": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_541170"
+     "name": "ObjectClass::method"
     },
     "0x004C91B0": {
      "csp_owner": "ObjectClass",
@@ -388676,7 +388693,7 @@
     "0x00771710": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_771710"
+     "name": "ObjectClass::method"
     },
     "0x0052FC20": {
      "csp_owner": "ObjectClass",
@@ -388731,7 +388748,7 @@
     "0x00634800": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634800"
+     "name": "ObjectClass::method"
     },
     "0x00660AF0": {
      "csp_owner": "ObjectClass",
@@ -388761,7 +388778,7 @@
     "0x00724570": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_724570"
+     "name": "ObjectClass::method"
     },
     "0x00489270": {
      "csp_owner": "ObjectClass",
@@ -388841,7 +388858,7 @@
     "0x00660000": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::Render_Render_660000"
+     "name": "ObjectClass::Render_Render"
     },
     "0x0074BCA0": {
      "csp_owner": "ObjectClass",
@@ -388871,7 +388888,7 @@
     "0x00634970": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::Helper_634970"
+     "name": "ObjectClass::Helper"
     },
     "0x005206B0": {
      "csp_owner": "ObjectClass",
@@ -388906,7 +388923,7 @@
     "0x00522540": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_522540"
+     "name": "ObjectClass::method"
     },
     "0x00633AE0": {
      "csp_owner": "ObjectClass",
@@ -388946,7 +388963,7 @@
     "0x00624080": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_624080"
+     "name": "ObjectClass::method"
     },
     "0x007D2F22": {
      "csp_owner": "ObjectClass",
@@ -388961,7 +388978,7 @@
     "0x00634850": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634850"
+     "name": "ObjectClass::method"
     },
     "0x00724A30": {
      "csp_owner": "ObjectClass",
@@ -389006,7 +389023,7 @@
     "0x00406760": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_406760"
+     "name": "ObjectClass::method"
     },
     "0x005BECC0": {
      "csp_owner": "ObjectClass",
@@ -389016,7 +389033,7 @@
     "0x00474660": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_474660"
+     "name": "ObjectClass::method"
     },
     "0x00636D90": {
      "csp_owner": "ObjectClass",
@@ -389031,7 +389048,7 @@
     "0x00431930": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_431930"
+     "name": "ObjectClass::method"
     },
     "0x00726FCE": {
      "csp_owner": "ObjectClass",
@@ -389066,7 +389083,7 @@
     "0x00696950": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_696950"
+     "name": "ObjectClass::method"
     },
     "0x006C9F00": {
      "csp_owner": "ObjectClass",
@@ -389076,7 +389093,7 @@
     "0x00407160": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_407160"
+     "name": "ObjectClass::method"
     },
     "0x00410DC0": {
      "csp_owner": "ObjectClass",
@@ -389131,12 +389148,12 @@
     "0x00409470": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_409470"
+     "name": "ObjectClass::method"
     },
     "0x00644850": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_644850"
+     "name": "ObjectClass::method"
     },
     "0x007011A0": {
      "csp_owner": "ObjectClass",
@@ -389151,7 +389168,7 @@
     "0x00431920": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_431920"
+     "name": "ObjectClass::method"
     },
     "0x00407F80": {
      "csp_owner": "ObjectClass",
@@ -389196,7 +389213,7 @@
     "0x00430610": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_430610"
+     "name": "ObjectClass::method"
     },
     "0x0074BF40": {
      "csp_owner": "ObjectClass",
@@ -389216,7 +389233,7 @@
     "0x00623730": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_623730"
+     "name": "ObjectClass::method"
     },
     "0x007318F0": {
      "csp_owner": "ObjectClass",
@@ -389231,7 +389248,7 @@
     "0x00730970": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::WinMainSetup_Setup_730970"
+     "name": "ObjectClass::WinMainSetup_Setup"
     },
     "0x006A6AF0": {
      "csp_owner": "ObjectClass",
@@ -389291,7 +389308,7 @@
     "0x00402940": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402940"
+     "name": "ObjectClass::method"
     },
     "0x004DB8A0": {
      "csp_owner": "ObjectClass",
@@ -389326,7 +389343,7 @@
     "0x00689790": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_689790"
+     "name": "ObjectClass::method"
     },
     "0x00770B30": {
      "csp_owner": "ObjectClass",
@@ -389361,7 +389378,7 @@
     "0x00522100": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_522100"
+     "name": "ObjectClass::method"
     },
     "0x007B4AC0": {
      "csp_owner": "ObjectClass",
@@ -389386,7 +389403,7 @@
     "0x00731130": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_731130"
+     "name": "ObjectClass::method"
     },
     "0x0076EEB0": {
      "csp_owner": "ObjectClass",
@@ -389416,12 +389433,12 @@
     "0x00635210": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_635210"
+     "name": "ObjectClass::method"
     },
     "0x00636520": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_636520"
+     "name": "ObjectClass::method"
     },
     "0x007B60E0": {
      "csp_owner": "ObjectClass",
@@ -389491,7 +389508,7 @@
     "0x00402430": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_402430"
+     "name": "ObjectClass::method"
     },
     "0x0077A8B0": {
      "csp_owner": "ObjectClass",
@@ -389556,17 +389573,17 @@
     "0x00550080": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_550080"
+     "name": "ObjectClass::method"
     },
     "0x00631640": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_631640"
+     "name": "ObjectClass::method"
     },
     "0x00629710": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_629710"
+     "name": "ObjectClass::method"
     },
     "0x00659A30": {
      "csp_owner": "ObjectClass",
@@ -389671,7 +389688,7 @@
     "0x00655050": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_655050"
+     "name": "ObjectClass::method"
     },
     "0x0052A4D0": {
      "csp_owner": "ObjectClass",
@@ -389686,7 +389703,7 @@
     "0x00690400": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_690400"
+     "name": "ObjectClass::method"
     },
     "0x0072B230": {
      "csp_owner": "ObjectClass",
@@ -389761,7 +389778,7 @@
     "0x00626170": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_626170"
+     "name": "ObjectClass::method"
     },
     "0x0063FDC0": {
      "csp_owner": "ObjectClass",
@@ -389851,7 +389868,7 @@
     "0x00636540": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_636540"
+     "name": "ObjectClass::method"
     },
     "0x005BCCE0": {
      "csp_owner": "ObjectClass",
@@ -389921,7 +389938,7 @@
     "0x00550240": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::Helper_550240"
+     "name": "ObjectClass::Helper"
     },
     "0x0046DA70": {
      "csp_owner": "ObjectClass",
@@ -389946,7 +389963,7 @@
     "0x00407060": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_407060"
+     "name": "ObjectClass::method"
     },
     "0x00556C00": {
      "csp_owner": "ObjectClass",
@@ -389961,7 +389978,7 @@
     "0x00793120": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_793120"
+     "name": "ObjectClass::method"
     },
     "0x006C6DE0": {
      "csp_owner": "ObjectClass",
@@ -389971,7 +389988,7 @@
     "0x00727190": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_727190"
+     "name": "ObjectClass::method"
     },
     "0x007636F0": {
      "csp_owner": "ObjectClass",
@@ -390021,7 +390038,7 @@
     "0x00634950": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_634950"
+     "name": "ObjectClass::method"
     },
     "0x0065FD50": {
      "csp_owner": "ObjectClass",
@@ -390076,7 +390093,7 @@
     "0x00681180": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_681180"
+     "name": "ObjectClass::method"
     },
     "0x006599C0": {
      "csp_owner": "ObjectClass",
@@ -390131,7 +390148,7 @@
     "0x00549830": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_549830"
+     "name": "ObjectClass::method"
     },
     "0x00647260": {
      "csp_owner": "ObjectClass",
@@ -390251,7 +390268,7 @@
     "0x00759760": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_759760"
+     "name": "ObjectClass::method"
     },
     "0x007C35B0": {
      "csp_owner": "ObjectClass",
@@ -390291,7 +390308,7 @@
     "0x00724550": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_724550"
+     "name": "ObjectClass::method"
     },
     "0x00731AA0": {
      "csp_owner": "ObjectClass",
@@ -390326,12 +390343,12 @@
     "0x00723510": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_723510"
+     "name": "ObjectClass::method"
     },
     "0x00528220": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_528220"
+     "name": "ObjectClass::method"
     },
     "0x00729580": {
      "csp_owner": "ObjectClass",
@@ -390341,12 +390358,12 @@
     "0x00646464": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_646464"
+     "name": "ObjectClass::method"
     },
     "0x00770970": {
      "csp_owner": "ObjectClass",
      "cc": "thiscall",
-     "name": "ObjectClass::method_770970"
+     "name": "ObjectClass::method"
     }
    },
    "type_stats": {
@@ -397060,7 +397077,7 @@
     "0x00717820": {
      "csp_owner": "ObjectTypeClass",
      "cc": "thiscall",
-     "name": "ObjectTypeClass::loadTypeMember_5717820"
+     "name": "ObjectTypeClass::loadTypeMember"
     },
     "0x00474FA0": {
      "csp_owner": "ObjectTypeClass",
@@ -728155,7 +728172,7 @@
      ]
     }
    },
-   "csp_methods": 73,
+   "csp_methods": 94,
    "methods": {
     "0x0040B300": {
      "vtable_slots": [
@@ -743697,6 +743714,111 @@
      "csp_owner": "VectorClass",
      "cc": "thiscall",
      "name": "VectorClass::RemoveObjectById"
+    },
+    "0x0048B070": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_48B070"
+    },
+    "0x004A4E30": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_4A4E30"
+    },
+    "0x004F2C00": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_4F2C00"
+    },
+    "0x0054EBF0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_54EBF0"
+    },
+    "0x005AD9F0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::Map_Cleanup"
+    },
+    "0x00628B00": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_628B00"
+    },
+    "0x0063DEC0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::ExecuteActionPlanManager_Helper_63DEC0"
+    },
+    "0x0063E1D0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::ExecuteActionPlanManager_Helper_63E1D0"
+    },
+    "0x0063EFB0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::Object_Set"
+    },
+    "0x0069D870": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::ParseAndApplyAlliances_Parse"
+    },
+    "0x006AC8D0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::System_Init_6AC8D0"
+    },
+    "0x006CABA0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::Render_Parse_6CABA0"
+    },
+    "0x006CF8F0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_6CF8F0"
+    },
+    "0x006F2230": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::Team_Helper_6F2230"
+    },
+    "0x006F27F0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::Team_Helper_6F27F0"
+    },
+    "0x00734330": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::SelectFactionThemeMusic_Helper"
+    },
+    "0x0076F210": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::ConstructWDTSelection_Create_76F210"
+    },
+    "0x007AECD0": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::QueryNATPortWOL_Helper"
+    },
+    "0x004E0A00": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_4E0A00"
+    },
+    "0x00663960": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub"
+    },
+    "0x00771A00": {
+     "csp_owner": "VectorClass",
+     "cc": "thiscall",
+     "name": "VectorClass::sub_771A00"
     }
    },
    "type_stats": {
@@ -813990,6 +814112,94 @@
      "evidence": [
       "type_map_observed"
      ]
+    }
+   },
+   "csp_methods": 17,
+   "methods": {
+    "0x007B0390": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::FindWDTTerritoryClass"
+    },
+    "0x00766880": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init"
+    },
+    "0x00767460": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::ConstructorWDTFlagOption"
+    },
+    "0x00766900": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init"
+    },
+    "0x007676F0": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init_7676F0"
+    },
+    "0x00766F70": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init_766F70"
+    },
+    "0x007668F0": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init_7668F0"
+    },
+    "0x00766910": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::System_Init"
+    },
+    "0x0076F910": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::ArtConfig_Read"
+    },
+    "0x0076B790": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::ParseWDTTerritories_Parse_76B790"
+    },
+    "0x00767FB0": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::ConstructWDTSelection_Create_767FB0"
+    },
+    "0x0076F500": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::ConstructWDTSelection_Create_76F500"
+    },
+    "0x0076FF40": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::FindTerritoryWOL"
+    },
+    "0x0076ABA0": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::Audio_Set"
+    },
+    "0x0076BE90": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::Audio_Create_76BE90"
+    },
+    "0x00764B30": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::Audio_Create"
+    },
+    "0x006C8840": {
+     "csp_owner": "rc_ptr",
+     "cc": "thiscall",
+     "name": "rc_ptr::sub_6C8840"
     }
    },
    "type_stats": {

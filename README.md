@@ -176,6 +176,21 @@ All 19,067 functions named. 1,120 classes have complete header definitions with 
 | Classes with headers | 1,120 | 100% |
 | Total functions | 19,067 | — |
 
+## Type Inference & Class Database Pipeline
+
+A constraint-propagation type inference engine (`tools/type_infer/`) recovers variable types across all 19K functions, feeding the OO-rebuild roadmap (class database → IDA write-back → LLM naming):
+
+- **Engine**: Steensgaard unification → directed-JOIN lattice propagation (T9 v3) → confidence scoring. Deterministic (sha256-identical reruns), 0 contradictions, 656K typed variables (77.3% meaningful, 76K class-typed).
+- **Anchor channels** (binary ground truth, provenance-ranked): RTTI vtable classes, constructor vtable installs, singleton stores, CSP solver votes (post-processed by `fix_csp_votes.py`, verified by `verify_csp.py` — 7-channel all-green).
+- **Name alignment** (`anchors/class_name_align.json`): RTTI mangled names ↔ header names unified into a canonical namespace (975/988, generic rules only).
+- **Class database** (`anchors/class_db.json`): 1,557 classes with hierarchy truth, vtable slots, member layouts, runtime-observed member types, method ownership, singletons.
+
+```bash
+python -m tools.type_infer.engine        # full pipeline
+python tools/type_infer/verify_csp.py    # CSP 7-channel verification
+python tools/type_infer/gen_class_db.py  # class database regeneration
+```
+
 ## License
 
 GNU General Public License v3.0 with Electronic Arts additional terms (Clause 7). Inherited from CnC_Red_Alert. All contributions must respect this license.

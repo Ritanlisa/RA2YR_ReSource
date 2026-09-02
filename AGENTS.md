@@ -697,19 +697,25 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 基于约束传播的类型推断系统, 为 19,067 个函数自动推断变量类型。
 
-**核心架构**: T7 Steensgaard union-find → T9 工作列表类型传播 → T10 置信度 BFS → T11 矛盾检测。
+**核心架构**: T7 Steensgaard union-find → T9 v3 有向 JOIN 传播 → T10 置信度 BFS → CSP 求解器 + 二进制真值修正 → 类名对齐 (canon 命名空间) → 类数据库。
+
+**终态 (2026-09-02)**: TOP=0、确定性 (sha256 双跑一致)、meaningful 507,436/656,306 (77.32%)、class-typed 76,048、CSP 七通道验证全绿 (`verify_csp.py`)。
 
 | 阶段 | 描述 | 输入 | 输出 |
 |------|------|------|------|
-| T7 | Steensgaard 等价类合并 (ASSIGN/RETURN/CALL 边) | `raw_constraints.json` (97K 约束) | union-find 等价类 + anchor 标签 |
-| T9 | 工作列表 lattice.meet 类型传播 | 等价类邻接图 | `type_map.json` (1,241 条目) |
-| T10 | BFS 距离置信度评分 | anchoring 节点 | 四级置信度标注 |
-| T11 | 矛盾检测 (TOP 节点) | 冲突 anchor 对 | `contradictions.md` 可读报告 |
-| T12 | 建议类型生成 | `type_map.json` + anchor cross-ref | `suggested_types.json` (323 ANCHORED) |
-| T14 | IDA 类型应用 | `suggested_types.json` | IDA `SetType`/`SetCmt` |
+| T7 | Steensgaard 等价类合并 (ASSIGN/RETURN/CALL 边) | `raw_constraints.json` (~978K 约束) | union-find 等价类 + anchor 标签 |
+| T9 | **v3 有向 JOIN** 工作列表传播 + T9b 成员锚 + T9c 跨函数聚合 + T9d 反向 join + B7 槽位路由 + B10c int 软升级 | 等价类邻接图 + `param_in`/`return_out` 通道 | `type_map.json` (656,306 条目) |
+| T10 | BFS 距离置信度评分 | anchoring 节点 | 五级置信度 (含 ORPHAN) |
+| T11 | 矛盾检测 (TOP 节点) | 冲突 anchor 对 | `contradictions.md` (当前 0 冲突) |
+| T12 | 建议类型生成 | `type_map.json` + anchor cross-ref | `suggested_types.json` |
+| T14 | IDA 类型应用 | `suggested_types.json` + `class_db.json` | IDA `SetType`/`SetCmt` |
 | T15 | 增量重传播 | 单函数修改 + 已有 type_map | 局部类型更新 (< 10s) |
 | T20 | 偏移→成员重写 | `suggested_types.json` + `member_lookup.json` | `.omo/rewrite_offsets.patch` |
 | T21 | 自动局部变量命名 | `type_map.json` + 源文件扫描 | `renaming_suggestions.json` |
+| CSP-fix | CSP 投票二进制真值修正 (R0-R3 幂等后处理) | `csp_functions.json` + vtable/ctor 真值 | 修正后的 `csp_functions.json` |
+| CSP-verify | CSP 七通道只读验证 (幂等/CC/投票/装饰/owner/命名空间/return) | 同上 | ALL PASS 判定 (退出码 0/1) |
+| Align | legacy↔RTTI 类名对齐 (canon 命名空间) | class_layouts + member_types + RTTI 层次 | `class_name_align.json` (975/988) |
+| ClassDB | 类数据库 (OO 重建 Step 2) | 7 个数据源 + type_map | `class_db.json` (1,557 类) |
 
 #### 运行方式
 
@@ -722,6 +728,18 @@ python -m tools.type_infer.incremental 0xADDR [--annotation var=Type]
 
 # 生成建议类型
 python tools/type_infer/generate_suggested.py
+
+# CSP 投票修正 (幂等; 先 --dry-run 预览)
+python tools/type_infer/fix_csp_votes.py [--dry-run]
+
+# CSP 阶段全通道验证 (只读, 退出码 0=全过)
+python tools/type_infer/verify_csp.py
+
+# 类名对齐表再生成
+python tools/type_infer/gen_class_align.py [--report]
+
+# 类数据库再生成 (type_map 变化后)
+python tools/type_infer/gen_class_db.py [--report]
 
 # IDA 类型标注 (预览模式)
 python ida_apply_types.py --dry-run
@@ -740,10 +758,11 @@ python tools/type_infer/auto_name.py
 
 | 级别 | 含义 | 距离 | 使用场景 |
 |------|------|------|---------|
-| **ANCHORED** | 直接 anchor 确定 | 0 hops | `member_types`/`global_types`/`vtable` 直接命中 |
+| **ANCHORED** | 直接 anchor 确定 | 0 hops | `member_types`/`global_types`/`vtable`/ctor 直接命中 |
 | **DIRECT_PROP** | 相邻节点传播 | 1 hop | anchor 的直接邻居 |
 | **CHAIN_PROP** | 短链传播 | 2-3 hops | 通过 1-2 层邻接传播 |
 | **INFERRED** | 长距离推断 | >3 hops | 通过 ≥3 层邻接到达 |
+| **ORPHAN** | 无 anchor 路径 | ∞ | 常量/寄存器临时值 (25.1%) |
 
 - `ANCHORED` + `DIRECT_PROP` → IDA `SetType` (高置信度, 直接设置类型)
 - `CHAIN_PROP` + `INFERRED` → IDA `SetCmt` (低置信度, 仅注释)
@@ -753,37 +772,55 @@ python tools/type_infer/auto_name.py
 
 | 文件 | 内容 | 大小 |
 |------|------|------|
-| `tools/type_infer/constraints/raw_constraints.json` | 约束边 (ASSIGN/RETURN/CALL/CALL_VTABLE/STACK_VAR) | ~97K |
+| `tools/type_infer/constraints/raw_constraints.json` | 约束边 (ASSIGN/RETURN/CALL/CALL_VTABLE/CALL_ARG/FUNC_PARAM/STACK_ACCESS/RETURN_TO) | ~978K |
 | `tools/type_infer/constraints/call_graph.json` | 调用图边 (caller→callee) | ~46K |
-| `tools/type_infer/anchors/vtable_signatures.json` | vtable 条目 (函数存在性 anchor) | ~13K |
-| `anchors/member_types.json` | 成员偏移→类型映射 | ~5K |
-| `anchors/global_types.json` | 全局变量→类型映射 | ~1.3K |
-| `tools/class_layouts.json` | 类继承层次 (lattice 的 `is_subtype` 依据) | ~1,120 类 |
+| `tools/type_infer/anchors/vtable_signatures.json` | vtable 条目 (13,279 槽位, CC/归属 anchor) | ~13K |
+| `anchors/member_types.json` | 成员偏移→类型映射 (1,002 类) | ~8.8K |
+| `anchors/global_types.json` + `anchors/ida_global_types.json` | 全局变量→类型映射 | ~1.3K+ |
+| `anchors/rtti_hierarchy.json` | RTTI 继承真值 (988 类, MI 直接基类) | 726 边 |
+| `anchors/rtti_vtable_class.json` | vtable 地址→类 (二进制身份) | 1,214 表 |
+| `anchors/ctor_types.json` | vtable 安装者 (构造函数真值) | 1,254 |
+| `anchors/singleton_types.json` | 构造存储锚定的全局单例 | 176 |
+| `anchors/string_literals.json` | IDA 字符串标签 | 7,904 |
+| `anchors/class_name_align.json` | legacy↔RTTI 对齐 (canon 归一) | 975/988 |
+| `tools/csp/full_report/csp_functions.json` | CSP 求解器函数签名/投票 (修正后) | 13,949 函数 |
+| `tools/class_layouts.json` | 类布局 (sizeof/偏移/单亲回退) | ~1,033 类 |
 
 #### 输出产物
 
 | 文件 | 格式 | 用途 |
 |------|------|------|
-| `type_map.json` | `{var_name: {type, confidence, eq_root}}` | 1,241 个变量类型, 含置信度 |
-| `suggested_types.json` | `{addr.label: {type, confidence, evidence}}` | 323 个 ANCHORED 建议, 含证据链 |
-| `contradictions.md` | Markdown 表格 | TOP 节点 + 冲突类型对报告 |
+| `type_map.json` | `{var_name: {type, confidence, eq_root}}` | 656,306 变量类型, 含置信度 |
+| `suggested_types.json` | `{addr.label: {type, confidence, evidence}}` | 建议类型, 含证据链 |
+| `anchors/class_name_align.json` | rtti_to_canon + canon_to_rtti + canon 空间继承边 | 引擎/lattice/类数据库共用的命名归一 |
+| `anchors/class_db.json` | 1,557 类单记录 (rtti/布局/观测成员/方法/单例/统计) | OO 重建 + T14 回写 + LLM 命名的消费端 |
+| `contradictions.md` | Markdown 表格 | TOP 节点报告 (当前 0) |
 | `renaming_suggestions.json` | `{func_addr: {old: new}}` | 局部变量重命名建议 |
 | `.omo/rewrite_offsets.patch` | `git apply` 格式 diff | 偏移→成员访问重写 (需审查) |
 
 #### 工作原理简述
 
-1. **约束提取**: 从 IDA 反编译伪代码提取 ~97K 条类型约束 (赋值/返回/调用/栈变量)
-2. **Steensgaard 合并**: ASSIGN/RETURN 边合并为等价类; 调用图连接 caller 和 callee 的返回站点
-3. **Anchor 注入**: 从 `member_types.json` (成员变量), `global_types.json` (全局变量), `vtable_signatures.json` (函数存在性) 加载已知类型
-4. **Lattice 传播**: 从 anchor 节点 BFS 传播类型, 使用 `lattice.meet()` (最大下界) 合并多路径信息
-5. **Lattice 层次**: `BOTTOM` (未知) → `VOID_PTR` (void*, meet 单位元) → `ConcreteType` (如 `BuildingClass`) → `TOP` (矛盾)
-6. **矛盾检测**: 不可兼容的 anchor 类型在 meet 时产生 TOP (如 `BuildingClass meet FootClass → TOP`)
-7. **置信度**: BFS 距离标注 — 0 hop = ANCHORED, 1 = DIRECT_PROP, 2-3 = CHAIN_PROP, >3 = INFERRED
+1. **约束提取**: IDA 内汇编级提取 ~978K 条约束 (赋值/返回/调用/栈访问/参数绑定)
+2. **Steensgaard 合并**: ASSIGN/RETURN 边合并为等价类; 调用图连接返回站点
+3. **Anchor 注入** (provenance 分级): rtti_vtable_class/singleton_ctor_store/ctor_vtable_install (rank 3, 冻结) > csp_* (rank 2) > type_seed (rank 1, 不冻结)
+4. **canon 归一**: 所有锚值经 `class_name_align` 单钩点归一 (RTTI 修饰名 → header 名), lattice 层次图与 member_types 键同体系
+5. **T9 v3 有向 JOIN**: 值边/CALL_ARG/RETURN_TO 全部 source→destination, 目的地 JOIN (may-hold = 最小公共祖先)——消除兄弟类幻影 TOP
+6. **T9b-d + B7 + B10c**: 成员锚推导 / 跨函数聚合 / 反向 join / vtable 槽位路由 / int 软升级 (完成被求值顺序拒绝的单调 join)
+7. **矛盾检测**: 不可兼容 anchor 在 meet 产生 TOP; 当前 0 (directed-join 语义下按设计不产生兄弟幻影)
+
+#### 关键教训 (逆向方法论)
+
+- **别名/投票数据不得当恒等映射用**: 符号审计 668 别名表实为 vtable 槽位 IDA 命名多数投票 (命名体系桥接), 当恒等用导致 31 个独立命令类被并进 CreateTeamCommand。**vtable 所有权才是类的二进制身份**。
+- **地址字符串查找必须 int 归一**: CSP 8 位补零 vs ctor_types 6 位无补零, 字符串键永 miss (41 函数从未被修正)。
+- **IDA 自动名 (`sub_XXXXXX`) 的数字后缀是名字本体**, 求解器装饰剥离必须豁免。
+- **求值顺序会拒绝单调 join**: int 种子先占位 + T9d 跳过非 BOTTOM → 需 B10c 软升级补完 join(int, C) = C。
 
 #### 当前局限
 
-- 仅建议类指针类型 (如 `BuildingClass*`), 不推断 `int`/`float`/`BOOL` 等基础类型
-- ~~TOP~~ 矛盾条目占 `type_map.json` 的 74% (918/1241), 说明当前约束数据冲突率较高
+- `csp_functions.json` 的 `return_type` 全 void (求解器从未投票); return 通道由引擎 B10c (已生效, .return 类类型 159) + 提取器 B10/B10b (**待 IDA 重提取激活**) 覆盖
+- 提取器 B10 (RETURN 边源接通) / B10b (RETURN_TO 作用域化) 已实现未激活——下次 IDA 会话重跑提取管线
+- ORPHAN 变量 25.1% (164,744): 常量/寄存器临时值, 无 anchor 路径, 属天花板
+- 求解器扁平化模板名 (2,432) 与 unknown 投票 (2,519) 经 valid_classes 门控自动跳过, 不产错误锚
 - 增量模式依赖完整运行一次 engine 后缓存 UF 状态
 - `rewrite_offsets.py` 生成的 patch 必须人工审查后才能 `git apply`
 
@@ -833,6 +870,13 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-02**: 类型推断 OO 重建路线图 — 缺口①② + 类数据库 + CSP 收尾（4 commit: 8ee28205/8721073b/3f63d63a/1efe6f4b + 收尾 commit）
+  - **缺口① 类名对齐**: `class_name_align.json` (975/988, 98.7%) — RTTI 修饰名经通用规则 (exact/template_base/arg_suffix/suffix/self_vtable) 归一到 canon 命名空间; 引擎 `_to_lattice_type` 单钩点 + lattice 层次图 canon 化
+  - **⚠️ 规则 D 证伪**: 审计 668 别名表 = vtable 槽位 IDA 命名多数投票 (命名桥接, 非恒等), 177/177 折叠键全自有 vtable → 曾把 31 个独立命令类并进 CreateTeamCommand (279 幻影槽位), 已移除
+  - **缺口② return 通道**: 诊断出 `.return` 结构性饥饿 (死 `_RET` 源 + 裸 eax 巨枢纽); B10/B10b 提取器修复 (待 IDA 重提取激活) + B10c 引擎 int 软升级 (class-typed +44% 至 76,048)
+  - **类数据库**: `anchors/class_db.json` (1,557 类) — rtti 真值/vtable 槽位/MI 基类/布局/观测成员类型/方法归属/单例/统计
+  - **CSP 收尾**: `verify_csp.py` 七通道全绿; 修复 fixer ctor 地址 int 归一 bug (41 函数)、R1e 地址碎片剥离 (283 条, IDA 自动名豁免后 24 条误伤已手术恢复)、668 别名表移出兼容判定; 引擎重跑 hash 不变 (零回归)
+  - 证据: `.omo/evidence/csp-stage-closure-2026-09-02.md`
 - **2026-06-21**: Name mismatch fix (Phase 4) — 343 → 215 剩余命名不一致 (-37.3%)
   - **audit_consistency.py 增强**:
     - `addr_pattern` 现在也匹配 `// IDA 0xADDR` 格式（不仅 `// 0xADDR`）

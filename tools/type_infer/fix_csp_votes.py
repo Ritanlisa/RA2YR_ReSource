@@ -8,14 +8,24 @@ CSP 求解器的 this 投票存在两类问题，本脚本按 vtable 成员资�
 R1 装饰归一（数据卫生，不改语义）：簇名后缀 `_csp`、`_Destru`、`_<N>`
    （数字索引）、`[N]` 剥离后再判兼容。engine 锚加载时已剥 `_csp`，
    此处把数据文件本身也清干净。
+R1b/R1d 参数/返回/非 vtable 函数的同型装饰归一。
+R1e 方法名自引用地址碎片剥离（`Foo_724000`@0x724000，307 项实测；
+   小数字重载索引 `_0`..`_4` 保留）。
 R0 CC 真值 + owner 补全（L8/L9 修复）：vtable/ctor 成员必为 thiscall；
-   owner unknown → vtable join 覆写。
+   owner unknown → vtable join 覆写。**ctor 查找 2026-09-02 修复**：
+   此前字符串键 "0X0048B070"(CSP 8 位补零) vs "0X40B300"(ctor_types
+   6 位) 永不匹配，41 个 ctor 函数从未被处理——现改为 int 键归一，
+   且填充值经 class_name_align 归一到 canon 命名空间（引擎
+   valid_classes 只认 canon）。
 R3 定义层 join 精化（L4 修复）：多 vtable 投票从单簇流行度改为包含类
    最小公共祖先（仅当前票 ∈ 包含集时）。
 R2 真错误覆写：thiscall 函数的 this 投票与**全部**包含 vtable 的类
-   （等价/继承/668 别名表/Class 后缀变体均不匹配）不兼容 →
+   （等价/继承/Class 后缀变体均不匹配）不兼容 →
    inferred_real_class / inferred_name / params[0].real_type 覆写为
    vtable 真值 join（定义层，与引擎 rtti_vtable_class 通道同法）。
+   **668 别名表通道已移除（2026-09-02）**：该表经规则 D 证伪为命名
+   体系桥接而非恒等（见 gen_class_align.py 头注）；verify_csp.py C3
+   双口径实测 alias-only 通过 = 0，移除无行为差异。
 
 已证实的真错误模式（全量扫描发现，34 项中 13 项）：
   - 模板同形混淆：Vector<IsometricTile*> 投给 DynamicVector<Object*> 方法（6 项）
@@ -24,6 +34,7 @@ R2 真错误覆写：thiscall 函数的 this 投票与**全部**包含 vtable �
   - 同时发现 0x0042DDB0 的 IDA 名（Delegate::ProcessBitmapStream）也错——
     真值 Base64Pipe（已并入 symbol-audit-ida-wrong 清单备注）
 
+验证: python tools/type_infer/verify_csp.py（七通道只读验证器）
 用法: python tools/type_infer/fix_csp_votes.py [--dry-run]
 """
 import argparse
@@ -41,13 +52,30 @@ CSP_PATH = os.path.join(PROJ, "tools", "csp", "full_report", "csp_functions.json
 VT_CLASS_PATH = os.path.join(PROJ, "anchors", "rtti_vtable_class.json")
 VT_SIG_PATH = os.path.join(_HERE, "anchors", "vtable_signatures.json")
 ALIAS_PATH = os.path.join(PROJ, ".omo", "evidence", "alias-map-668.json")
+ALIGN_PATH = os.path.join(PROJ, "anchors", "class_name_align.json")
 
 # R1: 簇名装饰后缀（求解器内部标记 / 析构簇 / 实例索引）
 _RE_DECOR = re.compile(r"(_csp|_Destru|_\d+|\[\d+\])+$")
+# R1e: 求解器自引用地址碎片后缀（`MainWindowProc_Helper_724000`@0x724000）
+_RE_ADDR_FRAG = re.compile(r"_(\d{5,})+$")
+# IDA 自动名——`_XXXXXX` 是名字本体（sub_767600），绝不能剥
+_RE_IDA_AUTO = re.compile(
+    r"^(sub_|nullsub_|j_|loc_|locret_|byte_|word_|dword_|qword_|off_|unk_|asc_|stru_|flt_)",
+    re.IGNORECASE)
 
 
 def norm_cluster(name):
     return _RE_DECOR.sub("", name or "").strip()
+
+
+def load_align_canon():
+    """RTTI 修饰名 → canon（缺口 1 对齐表）。owner 填充值经此归一，
+    引擎 _class_lattice 的 valid_classes 只认 canon 命名空间。"""
+    try:
+        with open(ALIGN_PATH, encoding="utf-8") as f:
+            return {k: v["canon"] for k, v in json.load(f)["rtti_to_canon"].items()}
+    except Exception:
+        return {}
 
 
 def load_truth():
@@ -78,25 +106,20 @@ def main():
     from type_infer.lattice import TypeLattice
     lat = TypeLattice()
     func_vt, func_vt_addr = load_truth()
-
-    aliases = {}
-    if os.path.exists(ALIAS_PATH):
-        aliases = json.load(open(ALIAS_PATH, encoding="utf-8"))
-    rtti_to_ida = {k: set(v) for k, v in aliases.items()}
-    ida_to_rtti = defaultdict(set)
-    for r, ids in rtti_to_ida.items():
-        for i in ids:
-            ida_to_rtti[i].add(r)
+    align_canon = load_align_canon()
 
     def compatible(vote, truth):
-        """装饰归一后的投票类 vs 真值类的兼容判定（等价/继承/别名/Class 变体）"""
+        """装饰归一后的投票类 vs 真值类的兼容判定（等价/继承/Class 变体）。
+
+        2026-09-02 收尾验证移除 668 别名通道：该表是 vtable 槽位 IDA 命名
+        多数投票（命名体系桥接，非恒等——规则 D 证伪，见 gen_class_align.py
+        头注）。verify_csp.py C3 双口径实测当前数据 alias-only 通过 = 0，
+        移除无行为差异，仅切断对已证伪数据的依赖。"""
         v = norm_cluster(vote)
         for t in {norm_cluster(x) for x in truth}:
             if v == t or v == t + "Class" or t == v + "Class":
                 return True
             if t in lat.ancestors_of(v) or v in lat.ancestors_of(t):
-                return True
-            if t in rtti_to_ida.get(v, ()) or v in ida_to_rtti.get(t, ()):
                 return True
         return False
 
@@ -136,16 +159,25 @@ def main():
     # R3: 定义层 join 精化——多 vtable 函数的投票从"单簇流行度"改为包含类
     #     的最小公共祖先（L4 修复：RenderFrame→MouseClass 类不精确）。
     #     仅当 join 严格更泛化（当前票 ∈ 包含集但 != join）时覆写。
-    ctor_by_upper = {k.upper(): v for k, v in json.load(
-        open(os.path.join(PROJ, "anchors", "ctor_types.json"), encoding="utf-8")
-    ).items()} if os.path.exists(os.path.join(PROJ, "anchors", "ctor_types.json")) else {}
+    # ctor 真值查找：int 键归一（收尾 bug 修复——此前字符串匹配
+    # "0X0048B070"(CSP 8 位补零) vs "0X40B300"(ctor_types 6 位) 永 miss，
+    # 41 个 ctor 函数的 R0/R0b/R3 从未生效）。填充值经对齐表归一到
+    # canon，否则引擎 _class_lattice 的 valid_classes 不认。
+    ctor_by_addr = {}
+    if os.path.exists(os.path.join(PROJ, "anchors", "ctor_types.json")):
+        with open(os.path.join(PROJ, "anchors", "ctor_types.json"), encoding="utf-8") as f:
+            for k, v in json.load(f).items():
+                try:
+                    ctor_by_addr[int(k, 16)] = align_canon.get(v, v)
+                except ValueError:
+                    continue
     for addr, e in funcs.items():
         try:
             fa = int(addr, 16)
         except ValueError:
             continue
         truth = func_vt.get(fa)
-        ctor_cls = ctor_by_upper.get(addr.upper())
+        ctor_cls = ctor_by_addr.get(fa)
         # R0a: CC 修正
         if (truth or ctor_cls) and e.get("calling_convention") != "thiscall":
             stats["cc_truth_fixed"] += 1
@@ -214,6 +246,25 @@ def main():
                     for p_ in e.get("params", []):
                         if p_.get("name") == "this":
                             p_["real_type"] = f"{nv0}*"
+
+    # R1e: 方法名自引用地址碎片——求解器给推断名追加函数自身地址尾
+    # （`MainWindowProc_Helper_724000`@0x724000、`SmallStub_517100`），
+    # 307 项实测。剥离后方法名可与 IDA 命名对齐。小数字后缀
+    # （`_0`..`_4`，974 项）是重载消歧索引，保留。
+    # IDA 自动名（sub_767600 等）的 `_XXXXXX` 是名字本体，跳过——
+    # 首版误剥 24 条 sub_* 已从 original_name 手术恢复。
+    for addr, e in funcs.items():
+        nm = str(e.get("inferred_name") or "")
+        m = _RE_ADDR_FRAG.search(nm)
+        if not m or _RE_IDA_AUTO.match(nm):
+            continue
+        stripped = nm[: m.start()]
+        if not stripped:
+            continue
+        stats["addr_fragment_stripped"] += 1
+        if not args.dry_run:
+            fixes.append((addr, nm, stripped, "addr-fragment-strip"))
+            e["inferred_name"] = stripped
 
     for addr, e in funcs.items():
         if e.get("calling_convention") != "thiscall":
