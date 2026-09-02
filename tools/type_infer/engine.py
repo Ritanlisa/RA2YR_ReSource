@@ -124,6 +124,30 @@ CLASS_LAYOUTS_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "class_layouts.json"
 ))
+CLASS_ALIGN_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "class_name_align.json"
+))
+
+# 缺口 1（OO 路线图）: RTTI 修饰名 → canon（header）名对齐表。惰性单次
+# 加载；_to_lattice_type 是所有锚值进 lattice 的唯一漏斗，在这里归一化
+# 即可让 vtable/ctor/CSP/member 各通道与层次图、member_types 键同一体系。
+_ALIGN_TO_CANON: dict[str, str] | None = None
+
+
+def _align_canon(name: str) -> str:
+    global _ALIGN_TO_CANON
+    if _ALIGN_TO_CANON is None:
+        m: dict[str, str] = {}
+        try:
+            with open(CLASS_ALIGN_PATH, "r", encoding="utf-8") as f:
+                for k, v in json.load(f).get("rtti_to_canon", {}).items():
+                    if isinstance(v, dict) and v.get("canon"):
+                        m[k] = v["canon"]
+        except Exception:
+            pass
+        _ALIGN_TO_CANON = m
+    return _ALIGN_TO_CANON.get(name, name)
 
 
 # ── regex patterns for variable name parsing ───────────────────────────────
@@ -1295,6 +1319,9 @@ class TypeInferenceEngine:
         for prefix in ("class ", "struct ", "const "):
             if typ.startswith(prefix):
                 typ = typ[len(prefix):]
+        # 缺口 1: RTTI 修饰名（?$VectorClass@PAVTechnoClass@@ 等）归一到
+        # canon 命名空间——lattice 层次图与 member_types 键均为该体系
+        typ = _align_canon(typ)
         # char* is a first-class pseudo-domain (string evidence) — check
         # before the integer map collapses 'char' into 'int'
         if typ_name.strip() in ("char*", "const char*", "char *", "const char *"):

@@ -113,6 +113,27 @@ def _load_rtti_truth() -> tuple[dict[str, list[str]], set[str]]:
         return {}, set()
 
 
+def _load_alignment() -> dict:
+    """OO 路线图缺口 1: 加载 anchors/class_name_align.json。
+
+    legacy（header）↔ RTTI 恒等对齐表，由 tools/type_infer/gen_class_align.py
+    用通用规则（exact / template_base / suffix / 审计别名）生成。引擎两处
+    消费：层次图边映射到 canon 命名空间；meet 的 RTTI 让位判定把
+    canon 名按其 RTTI 支撑对待。缺失时返回空 dict（行为退回 Phase 1d）。
+    """
+    path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "anchors", "class_name_align.json",
+    )
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
 def _load_hierarchy(class_layouts_path: Optional[str] = None) -> tuple[
     dict[str, set[str]], dict[str, str | None]
 ]:
@@ -132,6 +153,21 @@ def _load_hierarchy(class_layouts_path: Optional[str] = None) -> tuple[
                    informational only (MI 完整列表在 RTTI direct 中)
     """
     rtti_direct, rtti_class_names = _load_rtti_truth()
+
+    # 缺口 1: RTTI 边经对齐表映射到 canon（header）命名空间——两套命名
+    # 从"不相交的图节点"变为同一节点（模板实例折叠到族、自环删除、
+    # 多实例父列表并集，均由生成器保证）。legacy 类名与 canon 同体系，
+    # class_layouts 回退逻辑不受影响。
+    _align = _load_alignment()
+    if _align.get("rtti_direct_canon"):
+        rtti_direct = _align["rtti_direct_canon"]
+        # 未解析 RTTI 名（GScreen 等无 header 对应者）保持原名充当边端点，
+        # 否则闭包的 known_classes 判定会静默丢弃以它们为基类的边
+        rtti_class_names = (
+            set(rtti_direct)
+            | set(_align.get("canon_to_rtti", {}))
+            | {u["name"] for u in _align.get("unresolved_rtti", ())}
+        )
 
     parents: dict[str, str | None] = {}
     for cls_name, bases in rtti_direct.items():
@@ -198,6 +234,14 @@ class TypeLattice:
         # RTTI types in meets so the same object typed by both naming
         # systems resolves to the RTTI truth instead of TOP.
         _, self._rtti_classes = _load_rtti_truth()
+        # 缺口 1: canon 名若有 RTTI 实例支撑（canon_to_rtti 值非空），
+        # meet 让位判定按 RTTI 对待——避免 canon(False) vs 未解析修饰名
+        # (True) 之间的盲让吞掉真实矛盾
+        _align = _load_alignment()
+        if _align:
+            self._rtti_classes |= {
+                c for c, insts in _align.get("canon_to_rtti", {}).items() if insts
+            }
 
     # ── subtype check ───────────────────────────────────────────────────
 
