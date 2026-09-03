@@ -298,8 +298,16 @@ def phase_functions(limit=0):
             block.append("// (no decompilation / no disasm)")
         bucket = bucket_for(name, fa)
         path = os.path.join(src_dir, f"{bucket}.cpp")
-        with open(path, "a", encoding="utf-8") as fh:
-            fh.write("\n".join(block) + "\n\n")
+        payload = "\n".join(block) + "\n\n"
+        for attempt in range(5):  # Windows 杀毒/索引短暂锁文件
+            try:
+                with open(path, "a", encoding="utf-8") as fh:
+                    fh.write(payload)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(1.0 + attempt)
         done.add(addr)
         cnt += 1
         if cnt % 50 == 0:
