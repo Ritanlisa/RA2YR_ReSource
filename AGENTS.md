@@ -870,6 +870,9 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: 残余清障 — thiscall 定型率 74% → **78%**（8,400/19,067, 全体 44%）
+  - **517 个非法名函数合法化**: `[N]`→`_N`（`AITriggerTypeClass[40]::X` 类 IDA 数据数组污染名）, 一次 set_type 同时改名+定型, **signals.json 四方同步**（symbols+_by_name+src/ 27 处）——`t14_fix_illegal_names.py`; 剩 52 个 `?$CComObject@...` 修饰类名（struct 未声明的 COM 模板内部件）合规跳过
+  - 通道③ 委托构造挖掘（this 溢出+ctor 调用两行窗口）: 仅 3 个——模式罕见, 确认 ~2,100 池外 thiscall 是**离线天花板**, 扩池需下次 IDA 提取
 - **2026-09-03**: 剩余 70% 攻坚 — thiscall 定型率 56% → **74%**（7,934/19,067）
   - 构成裁决: "70%" 里 9,456 个是非 thiscall（全局/CRT/stdcall, **无 this 可定型**）, 真实目标 = thiscall 家族 10,661
   - 新真值通道 `t14_pool_extender.py`（纯离线, 挖掘快照汇编）: **vtable 安装自证**（`mov [esi], offset ??_7Class@@6B@` → ctor/dtor 身份, 1,656 个）+ vtable 槽位归属（含类最深公共祖先, 117 个）
