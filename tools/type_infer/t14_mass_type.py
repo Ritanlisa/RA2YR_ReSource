@@ -36,7 +36,11 @@ _CONF_RANK = {"ANCHORED": 3, "DIRECT_PROP": 2, "CHAIN_PROP": 1, "INFERRED": 1,
 
 
 def load_truth(min_conf_rank: int):
-    """函数地址 → (canon 类名, 来源)。ctor rank3 最高。"""
+    """函数地址 → (canon 类名, 来源)。
+
+    优先级: ctor_types (rank3) > 扩展池 vtable_install/vtable_slot
+    (汇编自证/槽位归属, 覆盖传播级) > type_map 按置信度。
+    """
     truth = {}
     tm = json.load(open(os.path.join(PROJ, "type_map.json"),
                         encoding="utf-8"))["type_map"]
@@ -51,6 +55,13 @@ def load_truth(min_conf_rank: int):
             continue
         addr = var[:-5]  # strip ':this'
         truth[_norm_addr(addr)] = (t, f"type_map:{conf}")
+    # 扩展池（t14_pool_extender 离线产出）——汇编自证优先于传播
+    extra_path = os.path.join(PROJ, ".omo", "t14_extra_pool.json")
+    if os.path.exists(extra_path):
+        for a, e in json.load(open(extra_path, encoding="utf-8")).items():
+            na = _norm_addr(a)
+            if na:
+                truth[na] = (e["class"], f"extra:{e['source']}")
     ct = json.load(open(os.path.join(PROJ, "anchors", "ctor_types.json"),
                         encoding="utf-8"))
     align = json.load(open(os.path.join(PROJ, "anchors", "class_name_align.json"),
@@ -66,6 +77,7 @@ def load_truth(min_conf_rank: int):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--min-conf", default="CHAIN_PROP",
                     choices=list(_CONF_RANK))
     args = ap.parse_args()
@@ -104,10 +116,13 @@ def main():
 
     targets = sorted(
         (a for a, (c, _) in truth.items() if a and c in struct_ok and a not in done))
+    if args.limit:
+        targets = targets[: args.limit]
     print(f"待处理: {len(targets)}")
 
     t0 = time.time()
     B = 60
+    fail_samples = []
     for base in range(0, len(targets), B):
         chunk = targets[base:base + B]
         protos = export_protos(chunk)
@@ -120,7 +135,7 @@ def main():
                 done.add(a)
                 continue
             proto = (p.get("prototype") or "").strip()
-            if not proto or "__thiscall(" not in proto:
+            if not proto:
                 st["skip_shape"] += 1
                 done.add(a)
                 continue
@@ -128,15 +143,44 @@ def main():
                 st["skip_done"] += 1
                 done.add(a)
                 continue
-            new_proto = rewrite_this(proto, cls)
-            if new_proto is None or re.search(r"#\d+", new_proto):
+            if "__thiscall(" not in proto:
+                # thiscall 无 this 参形态（`char()`）: 真值在池（vtable/ctor
+                # 自证）, 按真值构造全签名——返回类型沿用原型的
+                ret = re.sub(r"__\w+call|__pascal", "",
+                             proto.split("(")[0]).strip() or "int"
+                new_proto = f"{ret} __thiscall({cls} *this)"
+            else:
+                new_proto = rewrite_this(proto, cls)
+                if new_proto is None:
+                    st["skip_shape"] += 1
+                    done.add(a)
+                    continue
+            if new_proto is None:
                 st["skip_shape"] += 1
                 done.add(a)
                 continue
+            # 返回段清洗: 双调用约定（`__stdcall __thiscall`）与 IDA 寄存器
+            # 注解（`__userpurge@<al>`/`@<eax>`）都会让解析器拒绝
+            new_proto = re.sub(
+                r"^(.*?)\s+__(?:std|cd|fast|this|userpurge|user)call\s+__thiscall",
+                r"\1 __thiscall", new_proto)
+            new_proto = re.sub(r"@<\w+>\s*", "", new_proto)
+            # #NNN 内部 ID 擦洗（内部 ID 无法在导出物中呈现, 无信息损失）:
+            # 指针形 `#375 *` → `void *`, 裸形 `#376` → `int`
+            new_proto = re.sub(r"#[\d]+ \*?(?=[,)])", "void *", new_proto)
+            new_proto = re.sub(r"(?<![\w])#[\d]+(?=[,)])", "int", new_proto)
+            # 函数名保持原样——改名会破坏 symbols-locked 的 signals.json
+            # 1:1:1 同步（AGENTS.md 管道保护）, 类前缀留给 rename_symbol.py
             nm = name_by_addr.get(a) or p.get("name") or f"sub_{a}"
-            named = new_proto.replace("__thiscall(", f"__thiscall {nm}(", 1)
-            edits.append({"addr": p["addr"], "ty": name_anon_params(named),
-                          "expect": a})
+            if re.search(r"[\[\]<>@]", nm):
+                # 名字含非法声明字符（`AITriggerTypeClass[40]::X`）→ 无名
+                # 声明（只设类型, 不触碰名字）
+                edits.append({"addr": p["addr"], "ty": name_anon_params(new_proto),
+                              "expect": a})
+            else:
+                named = new_proto.replace("__thiscall(", f"__thiscall {nm}(", 1)
+                edits.append({"addr": p["addr"], "ty": name_anon_params(named),
+                              "expect": a})
         if edits and not args.dry_run:
             for i in range(0, len(edits), 50):
                 sub = edits[i:i + 50]
@@ -150,6 +194,10 @@ def main():
                             st["applied"] += 1
                         else:
                             st["fail"] += 1
+                            if len(fail_samples) < 10:
+                                fail_samples.append((
+                                    str(it.get("edit", {}).get("ty", ""))[:90],
+                                    str(it.get("error", ""))[:90]))
                 except RuntimeError:
                     st["fail"] += len(sub)
         elif edits:
@@ -170,6 +218,8 @@ def main():
     print(f"终态: applied={st['applied']} fail={st['fail']} "
           f"skip(noproto/shape/done/nostruct)={st['skip_noproto']}/"
           f"{st['skip_shape']}/{st['skip_done']}/{st['skip_nostruct']}")
+    for ty, err in fail_samples:
+        print(f"  FAIL ty={ty}\n       err={err}")
 
 
 if __name__ == "__main__":
