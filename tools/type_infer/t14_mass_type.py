@@ -159,19 +159,38 @@ def main():
                 st["skip_shape"] += 1
                 done.add(a)
                 continue
-            # 返回段清洗: 双调用约定（`__stdcall __thiscall`）与 IDA 寄存器
-            # 注解（`__userpurge@<al>`/`@<eax>`）都会让解析器拒绝
+            # 返回段清洗: 双调用约定/寄存器注解（`__userpurge@<al>`、
+            # `@<edx:eax>`、紧贴形 `__userpurge__thiscall`）都会被拒绝
+            new_proto = re.sub(r"\s*__(?:userpurge|usercall)\b", "", new_proto)
             new_proto = re.sub(
-                r"^(.*?)\s+__(?:std|cd|fast|this|userpurge|user)call\s+__thiscall",
-                r"\1 __thiscall", new_proto)
-            new_proto = re.sub(r"@<\w+>\s*", "", new_proto)
+                r"^(.*?)\s+__\w*call\s+__thiscall", r"\1 __thiscall",
+                new_proto)
+            new_proto = re.sub(r"@<[\w:]+>\s*", "", new_proto)
+            new_proto = re.sub(r"(?<![\s(])__thiscall", " __thiscall",
+                               new_proto)
             # #NNN 内部 ID 擦洗（内部 ID 无法在导出物中呈现, 无信息损失）:
-            # 指针形 `#375 *` → `void *`, 裸形 `#376` → `int`
-            new_proto = re.sub(r"#[\d]+ \*?(?=[,)])", "void *", new_proto)
+            # 指针形 `#375 *` → `void *`, 裸形 `#376` → `int`（参数位与返回位）
+            new_proto = re.sub(r"#[\d]+(?:\s*\*)+", "void *", new_proto)
             new_proto = re.sub(r"(?<![\w])#[\d]+(?=[,)])", "int", new_proto)
+            new_proto = re.sub(r"^#\d+ \*", "void *", new_proto)
+            new_proto = re.sub(r"^#\d+(?=\s)", "int", new_proto)
+            # CRT/库类防御（调用方投票可能漏入）
+            if re.match(r"^(std::|ATL::|Concurrency|VirtualProcessor|facet)",
+                        new_proto):
+                st["skip_shape"] += 1
+                done.add(a)
+                continue
             # 函数名保持原样——改名会破坏 symbols-locked 的 signals.json
             # 1:1:1 同步（AGENTS.md 管道保护）, 类前缀留给 rename_symbol.py
             nm = name_by_addr.get(a) or p.get("name") or f"sub_{a}"
+            if nm.startswith("?") or re.match(
+                    r"^(std_|_STD|__|_Crt|_Init|Iostream|ios_|Winmain)", nm) \
+                    or not all(re.match(r"^[A-Za-z_]\w*$", seg)
+                               for seg in nm.split("::")):
+                # CRT/库内部件与非法声明名（`VtableStub::477740` 数字段）
+                st["skip_shape"] += 1
+                done.add(a)
+                continue
             if re.search(r"[\[\]<>@]", nm):
                 # 名字含非法声明字符（`AITriggerTypeClass[40]::X`）→ 无名
                 # 声明（只设类型, 不触碰名字）

@@ -18,7 +18,7 @@ import json
 import os
 import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 PROJ = os.path.dirname(os.path.dirname(_HERE))
@@ -121,6 +121,57 @@ def main():
                         last_ecx_load = None
     print(f"通道3 委托构造候选: {len(deleg)} (入池在 existing 就绪后)")
 
+    # ── 通道 4: 调用方投票 —— IDA 的 `; this` 注释标记 this 传递。
+    # 仅计寄存器形 `mov ecx, R; this`（R 非内存操作数——`mov ecx,[esi+off]`
+    # 传的是成员对象的 this, 类属不同）, 后随 ≤2 行 `call G` → G 得
+    # 调用方类的票。一致性门: 票数≥2 且主导类占比≥80%, 或唯一票但
+    # 调用方为 ANCHORED 已定型类。
+    votes = defaultdict(Counter)  # callee addr -> {class: n}
+    for fn in os.listdir(SNAP):
+        if not fn.endswith(".cpp"):
+            continue
+        prev_was_this = False
+        cur_addr4 = None
+        cur_cls = None
+        with open(os.path.join(SNAP, fn), encoding="utf-8") as f:
+            for ln in f:
+                m = _RE_ADDR_LINE.match(ln)
+                if m:
+                    cur_addr4 = m.group(1).upper()
+                    cur_cls = None
+                    prev_was_this = False
+                    continue
+                if cur_addr4 is None:
+                    continue
+                if cur_cls is None:
+                    pm = re.match(r"// proto: \S+ __thiscall\((\w+) \*this", ln)
+                    if pm:
+                        t = pm.group(1)
+                        if t not in ("_DWORD", "char", "int", "void",
+                                     "_BYTE", "_WORD", "unsigned", "std"):
+                            cur_cls = t
+                    prev_was_this = False
+                    continue
+                # 纯寄存器 this 传递（非内存操作数——成员 this 类属不同）
+                if re.search(r":\s+mov ecx, ([a-z]{2,3})\s*;", ln) \
+                        and "; this" in ln and "[" not in ln.split(";", 1)[0]:
+                    prev_was_this = True
+                    continue
+                mc = re.search(r":\s+call (?:ds:)?([\w:$?@<>]+)", ln)
+                if mc and prev_was_this:
+                    tgt = name_to_addr.get(mc.group(1))
+                    if tgt is None:
+                        mr = re.search(r"; -> ([\w:$?@<>]+)", ln)
+                        tgt = name_to_addr.get(mr.group(1)) if mr else None
+                    if tgt is not None and cur_cls:
+                        votes[tgt][cur_cls] += 1
+                    prev_was_this = False
+                    continue
+                if "call" in ln:
+                    prev_was_this = False
+
+    print(f"通道4 投票目标: {len(votes)}")
+
     # ── 通道 1: 离线扫汇编 ──
     installs = defaultdict(lambda: defaultdict(int))  # addr -> class -> count
     n_files = 0
@@ -209,11 +260,25 @@ def main():
                       "evidence": sorted(classes)[:6]}
         n_slot += 1
 
+    # 通道 4 入池: 一致性门——票数≥2 且主导类占比≥80%（单票噪声大, 弃）
+    n_vote = 0
+    for addr, cnt in votes.items():
+        if addr in existing or addr in pool or not cnt:
+            continue
+        total = sum(cnt.values())
+        if total < 2:
+            continue
+        cls, n = cnt.most_common(1)[0]
+        if n / total < 0.8:
+            continue
+        pool[addr] = {"class": cls, "source": "caller_vote",
+                      "evidence": dict(cnt)}
+        n_vote += 1
+
     json.dump(pool, open(OUT_POOL, "w", encoding="utf-8"),
               ensure_ascii=False, indent=0)
-    from collections import Counter
-    src_cnt = Counter(v["source"] for v in pool.values())
-    print(f"扩展池: {len(pool)} (vtable_install={n_vt}, vtable_slot={n_slot})")
+    print(f"扩展池: {len(pool)} (install={n_vt}, slot={n_slot}, "
+          f"deleg={n_deleg}, vote={n_vote})")
     print(f"  通道1 类分布 top: "
           f"{Counter(v['class'] for v in pool.values() if v['source']=='vtable_install').most_common(6)}")
 

@@ -870,6 +870,10 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: thiscall 残余优化 — 通道④调用方投票 + 解析器清零
+  - **通道④ 调用方投票**（`t14_pool_extender.py`）: IDA 的 `; this` 注释标记 this 传递——纯寄存器形 `mov ecx, R; this` + `call G`（排除 `[reg+off]` 成员 this）→ G 得调用方类票; 一致性门 ≥2 票且主导类 ≥80%。202 个新真值
+  - **解析器残余清零**（fail 1,325→0 的打地鼠实录）: 返回位/双指针 `#NNN` 擦洗、CRT 函数名守卫（`??`/`?` 前缀 + std/__ 模式）、数字段非法名（`VtableStub::477740`）、寄存器对注解（`@<edx:eax>`）、紧贴形（`__userpurge__thiscall`/`char__thiscall` 空格规范化）
+  - 终态: **8,481/10,813 = 78.4% thiscall 定型, fail=0**; 剩余 2,332 = ~263 CRT/非法名 + ~2,070 离线天花板（B10 前无证据）
 - **2026-09-03**: 类型补充三件套 — 快照语义质量再上一档
   - **struct 成员指针解析**（`t14_structs.py --resolve` 二次声明）: 指向已声明 struct 的成员从 `void*` 占位升级为真类指针（TechnoClass 47 个: ObjectClass* nextObject/TagClass* attachedTag/AnimClass* parachute...）——反编译点亮链式访问 `this->Owner->Power`; 布局不变（指针恒 4B/4 对齐）
   - **92 个全局变量类型回写**（type_map 460 个类类型全局中, 类型门=已声明 struct 且名字可寻址者）; 名址缓存 `.omo/t14_globals_cache.json`
