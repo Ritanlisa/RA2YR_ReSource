@@ -877,6 +877,10 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: 离线确定性上限达成 — thiscall **79.3%**（8,588/10,830）
+  - **引擎修复（重要）**: engine.py 内嵌重复模块残部裁剪（曾致编辑打在死代码上）; 锚变量物化（真值在手但提取器未物化 :this 的函数, 创建孤立节点 + `UnionFind.grow()` 扩域, +48）; sha256 双跑一致
+  - **修饰类别名 struct**: `anchors/mangled_alias.json`（51 类, `[40]`→`_40` 规则, 声明带 `/* original */` 溯源）; t14_structs 别名声明/回验 + mass_type 门/ty 双侧解析; 1,253 struct 总量
+  - **理论上限量化**: 剩余 2,242 未定型 thiscall = ~1,175 无真值（B10 重提取前不存在证据）+ ~94 修饰类无布局 + 27 无数据类 + CRT/非法名/折叠 TOP——全部有精确归因, 无可机械推进项
 - **2026-09-04**: CSP 回喂扩容 — 结构真值作为引擎锚, 覆盖 78.5% → **79.2%**（确定性路径）
   - 新锚文件 `anchors/structural_truth.json`: vtable_install 1,625（离线扫描的二进制自证, rank 3, 补齐 IDA 侧扫描漏掉的模板实例化）+ slot_this 7,010（vtable 槽位 LCA, rank 2; **排除 1,048 个 COMDAT 折叠候选**——同时是安装者+槽位成员的函数是链接器折叠的同码多身份, 唯一性不可判）
   - 引擎 `_load_structural_anchors` + `_SRC_RANK` 扩展; 重跑: this 定型 9,634→9,911 (+277), **确定性 sha256 双跑一致**, 39 对 TOP 冲突被 T11 暴露（折叠/误归函数的诚实判定, 每对波及 2-8 变量有界, TOP 已排除出回写）

@@ -74,7 +74,8 @@ def _layout_members(cls, layouts, member_types):
     return sorted(out)
 
 
-def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None):
+def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None,
+               alias_out=None):
     """全链扁平化 C 声明。返回 (decl, expected_size) 或 (None, 原因)。
 
     链断类（父不在 layouts, 如 COM 的 IEnumConnections）回退:
@@ -164,7 +165,10 @@ def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None):
         lines.append(f"  char __tail_{cursor:X}[{total - cursor}];")
     elif cursor > total:
         return None, f"members overrun size ({cursor:X} > {total:X})"
-    return f"struct {cls} {{\n" + "\n".join(lines) + "\n};", total
+    out_name = alias_out.get(cls, cls) if alias_out else cls
+    orig_note = f"  /* original: {cls} */\n" if out_name != cls else ""
+    return (f"struct {out_name} {{\n" + orig_note + "\n".join(lines)
+            + "\n};"), total
 
 
 def main():
@@ -181,6 +185,10 @@ def main():
     class_db = json.load(open(os.path.join(
         PROJ, "anchors", "class_db.json"), encoding="utf-8"))["classes"]
     classes = json.load(open(STRUCT_CLASSES, encoding="utf-8"))
+    # 修饰类名经 anchors/mangled_alias.json 映射为合法别名 struct
+    alias_path = os.path.join(PROJ, "anchors", "mangled_alias.json")
+    alias = json.load(open(alias_path, encoding="utf-8"))         if os.path.exists(alias_path) else {}
+    classes = classes + [c for c in alias if c not in set(classes)]
     if args.only:
         classes = [args.only]
 
@@ -188,7 +196,8 @@ def main():
     skipped = {}
     struct_ns = set(classes) if args.resolve else None
     for c in classes:
-        decl, info = build_decl(c, layouts, member_types, class_db, struct_ns)
+        decl, info = build_decl(c, layouts, member_types, class_db,
+                                 struct_ns, alias)
         if decl is None:
             skipped[c] = info
         else:
@@ -212,8 +221,8 @@ def main():
             fail += 1
             failures.append((c, str(e)[:100]))
             continue
-        # 回验
-        r = call("type_inspect", {"queries": [{"name": c}]})
+        # 回验（别名 struct 按别名查）
+        r = call("type_inspect", {"queries": [{"name": alias.get(c, c)}]})
         item = (r[0] if isinstance(r, list) else r)
         if item.get("exists") and item.get("size") == expect_sz:
             ok += 1

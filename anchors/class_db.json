@@ -21,8 +21,8 @@
    "with_methods": 646,
    "with_observed_member_types": 137,
    "with_singletons": 17,
-   "with_type_stats": 653,
-   "observed_member_entries": 1243,
+   "with_type_stats": 654,
+   "observed_member_entries": 1266,
    "methods_total": 8070,
    "csp_owned_methods": 4849,
    "checks": {
@@ -23523,10 +23523,10 @@
     }
    },
    "type_stats": {
-    "var_count": 3510,
+    "var_count": 3513,
     "confidence": {
      "CHAIN_PROP": 731,
-     "ANCHORED": 2097,
+     "ANCHORED": 2100,
      "DIRECT_PROP": 626,
      "INFERRED": 23,
      "ORPHAN": 33
@@ -74881,9 +74881,9 @@
     }
    },
    "type_stats": {
-    "var_count": 40,
+    "var_count": 41,
     "confidence": {
-     "ANCHORED": 22,
+     "ANCHORED": 23,
      "DIRECT_PROP": 16,
      "CHAIN_PROP": 2
     }
@@ -136175,11 +136175,11 @@
     }
    },
    "type_stats": {
-    "var_count": 36,
+    "var_count": 37,
     "confidence": {
+     "ANCHORED": 14,
      "CHAIN_PROP": 11,
-     "DIRECT_PROP": 12,
-     "ANCHORED": 13
+     "DIRECT_PROP": 12
     }
    }
   },
@@ -138318,9 +138318,9 @@
     }
    },
    "type_stats": {
-    "var_count": 45,
+    "var_count": 48,
     "confidence": {
-     "ANCHORED": 22,
+     "ANCHORED": 25,
      "DIRECT_PROP": 20,
      "CHAIN_PROP": 3
     }
@@ -167420,11 +167420,11 @@
     }
    },
    "type_stats": {
-    "var_count": 4,
+    "var_count": 5,
     "confidence": {
+     "ANCHORED": 2,
      "CHAIN_PROP": 2,
-     "DIRECT_PROP": 1,
-     "ANCHORED": 1
+     "DIRECT_PROP": 1
     }
    }
   },
@@ -194992,6 +194992,15 @@
       "type_map_observed"
      ]
     },
+    "40": {
+     "observed_types": [
+      "ObjectClass",
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "776": {
      "observed_types": [
       "Random"
@@ -195027,14 +195036,6 @@
     "88": {
      "observed_types": [
       "VectorClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "40": {
-     "observed_types": [
-      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -209894,11 +209895,11 @@
     }
    },
    "type_stats": {
-    "var_count": 6553,
+    "var_count": 6562,
     "confidence": {
      "DIRECT_PROP": 2457,
      "CHAIN_PROP": 1700,
-     "ANCHORED": 2302,
+     "ANCHORED": 2311,
      "INFERRED": 65,
      "ORPHAN": 29
     }
@@ -246160,9 +246161,9 @@
     }
    },
    "type_stats": {
-    "var_count": 1088,
+    "var_count": 1089,
     "confidence": {
-     "ANCHORED": 500,
+     "ANCHORED": 501,
      "DIRECT_PROP": 279,
      "CHAIN_PROP": 264,
      "INFERRED": 15,
@@ -247953,11 +247954,11 @@
     }
    },
    "type_stats": {
-    "var_count": 27,
+    "var_count": 28,
     "confidence": {
      "CHAIN_PROP": 7,
      "DIRECT_PROP": 10,
-     "ANCHORED": 10
+     "ANCHORED": 11
     }
    }
   },
@@ -264654,10 +264655,10 @@
     }
    },
    "type_stats": {
-    "var_count": 1162,
+    "var_count": 1163,
     "confidence": {
      "CHAIN_PROP": 263,
-     "ANCHORED": 540,
+     "ANCHORED": 541,
      "DIRECT_PROP": 260,
      "ORPHAN": 80,
      "INFERRED": 19
@@ -270860,9 +270861,9 @@
     }
    },
    "type_stats": {
-    "var_count": 47,
+    "var_count": 48,
     "confidence": {
-     "ANCHORED": 16,
+     "ANCHORED": 17,
      "DIRECT_PROP": 21,
      "CHAIN_PROP": 10
     }
@@ -271030,10 +271031,10 @@
     }
    },
    "type_stats": {
-    "var_count": 30,
+    "var_count": 33,
     "confidence": {
      "DIRECT_PROP": 6,
-     "ANCHORED": 5,
+     "ANCHORED": 8,
      "ORPHAN": 14,
      "CHAIN_PROP": 5
     }
@@ -293913,9 +293914,9 @@
     }
    },
    "type_stats": {
-    "var_count": 211,
+    "var_count": 212,
     "confidence": {
-     "ANCHORED": 140,
+     "ANCHORED": 141,
      "DIRECT_PROP": 55,
      "CHAIN_PROP": 16
     }
@@ -319610,7 +319611,13 @@
     }
    ],
    "size": 4,
-   "members": {}
+   "members": {},
+   "type_stats": {
+    "var_count": 1,
+    "confidence": {
+     "ANCHORED": 1
+    }
+   }
   },
   "ListBox": {
    "size": 32,
@@ -322751,11 +322758,11 @@
     }
    },
    "type_stats": {
-    "var_count": 7,
+    "var_count": 8,
     "confidence": {
+     "ANCHORED": 5,
      "DIRECT_PROP": 2,
-     "CHAIN_PROP": 1,
-     "ANCHORED": 4
+     "CHAIN_PROP": 1
     }
    }
   },
@@ -365006,11 +365013,11 @@
     }
    },
    "type_stats": {
-    "var_count": 29,
+    "var_count": 30,
     "confidence": {
      "CHAIN_PROP": 7,
      "DIRECT_PROP": 10,
-     "ANCHORED": 12
+     "ANCHORED": 13
     }
    }
   },
@@ -458987,9 +458994,9 @@
     }
    },
    "type_stats": {
-    "var_count": 45,
+    "var_count": 46,
     "confidence": {
-     "ANCHORED": 29,
+     "ANCHORED": 30,
      "DIRECT_PROP": 12,
      "CHAIN_PROP": 4
     }
@@ -487193,10 +487200,10 @@
     }
    },
    "type_stats": {
-    "var_count": 39,
+    "var_count": 40,
     "confidence": {
      "CHAIN_PROP": 3,
-     "ANCHORED": 28,
+     "ANCHORED": 29,
      "DIRECT_PROP": 8
     }
    }
@@ -514264,10 +514271,10 @@
     }
    },
    "type_stats": {
-    "var_count": 54,
+    "var_count": 55,
     "confidence": {
      "CHAIN_PROP": 14,
-     "ANCHORED": 18,
+     "ANCHORED": 19,
      "ORPHAN": 3,
      "DIRECT_PROP": 19
     }
@@ -519190,9 +519197,9 @@
     }
    },
    "type_stats": {
-    "var_count": 35,
+    "var_count": 36,
     "confidence": {
-     "ANCHORED": 21,
+     "ANCHORED": 22,
      "CHAIN_PROP": 8,
      "DIRECT_PROP": 6
     }
@@ -539984,10 +539991,10 @@
     }
    },
    "type_stats": {
-    "var_count": 2,
+    "var_count": 4,
     "confidence": {
      "DIRECT_PROP": 1,
-     "ANCHORED": 1
+     "ANCHORED": 3
     }
    }
   },
@@ -712969,7 +712976,8 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "INILinkNode"
+      "INILinkNode",
+      "VectorClass"
      ]
     },
     "8": {
@@ -712977,7 +712985,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "VectorClass"
      ]
     },
     "12": {
@@ -712985,7 +712997,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "TypeList"
      ]
     },
     "0": {
@@ -713037,6 +713053,14 @@
      ]
     },
     "3720": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "20": {
      "observed_types": [
       "VectorClass"
      ],
@@ -714010,9 +714034,33 @@
       "type_map_observed"
      ]
     },
+    "5424": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "5824": {
      "observed_types": [
       "WarheadTypeClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "5828": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "5832": {
+     "observed_types": [
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -714037,6 +714085,96 @@
     "5940": {
      "observed_types": [
       "DynamicVector"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "788": {
+     "observed_types": [
+      "DynamicVector",
+      "TypeList",
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "792": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1172": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1384": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3924": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3932": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4048": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4056": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4064": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4068": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4076": {
+     "observed_types": [
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -714405,15 +714543,6 @@
     "13580": {
      "observed_types": [
       "DynamicVector"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "788": {
-     "observed_types": [
-      "DynamicVector",
-      "VectorClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -716038,13 +716167,13 @@
     }
    },
    "type_stats": {
-    "var_count": 3824,
+    "var_count": 4260,
     "confidence": {
-     "ANCHORED": 2353,
-     "CHAIN_PROP": 1087,
-     "DIRECT_PROP": 343,
-     "INFERRED": 27,
-     "ORPHAN": 14
+     "ANCHORED": 2446,
+     "CHAIN_PROP": 1205,
+     "DIRECT_PROP": 385,
+     "INFERRED": 207,
+     "ORPHAN": 17
     }
    }
   },
@@ -727952,10 +728081,10 @@
     }
    },
    "type_stats": {
-    "var_count": 200,
+    "var_count": 201,
     "confidence": {
      "DIRECT_PROP": 43,
-     "ANCHORED": 52,
+     "ANCHORED": 53,
      "CHAIN_PROP": 105
     }
    }
@@ -729942,6 +730071,7 @@
     },
     "0": {
      "observed_types": [
+      "TypeList",
       "VectorClass"
      ],
      "evidence": [
@@ -729950,7 +730080,7 @@
     },
     "392": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729958,7 +730088,7 @@
     },
     "420": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729966,7 +730096,7 @@
     },
     "448": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729974,7 +730104,7 @@
     },
     "476": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729982,7 +730112,7 @@
     },
     "504": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729990,7 +730120,7 @@
     },
     "532": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -729998,7 +730128,7 @@
     },
     "560": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730006,7 +730136,7 @@
     },
     "588": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730014,7 +730144,7 @@
     },
     "616": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730104,7 +730234,7 @@
     },
     "856": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730112,7 +730242,7 @@
     },
     "884": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730120,7 +730250,7 @@
     },
     "912": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730128,7 +730258,7 @@
     },
     "940": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730136,7 +730266,7 @@
     },
     "968": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730144,7 +730274,7 @@
     },
     "996": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730152,7 +730282,7 @@
     },
     "1084": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730160,7 +730290,7 @@
     },
     "1112": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730168,7 +730298,7 @@
     },
     "1140": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730192,7 +730322,7 @@
     },
     "1608": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730200,7 +730330,7 @@
     },
     "1740": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730208,7 +730338,47 @@
     },
     "1844": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1988": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "2016": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "2044": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "2072": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "2100": {
+     "observed_types": [
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -730304,7 +730474,7 @@
     },
     "2472": {
      "observed_types": [
-      "VectorClass"
+      "TypeList"
      ],
      "evidence": [
       "type_map_observed"
@@ -746033,12 +746203,12 @@
     }
    },
    "type_stats": {
-    "var_count": 6472,
+    "var_count": 6371,
     "confidence": {
-     "ANCHORED": 2678,
-     "DIRECT_PROP": 2079,
-     "CHAIN_PROP": 1574,
-     "INFERRED": 127,
+     "ANCHORED": 2664,
+     "DIRECT_PROP": 2071,
+     "CHAIN_PROP": 1500,
+     "INFERRED": 122,
      "ORPHAN": 14
     }
    }
@@ -751007,10 +751177,10 @@
     }
    },
    "type_stats": {
-    "var_count": 107,
+    "var_count": 108,
     "confidence": {
      "DIRECT_PROP": 36,
-     "ANCHORED": 36,
+     "ANCHORED": 37,
      "CHAIN_PROP": 35
     }
    }
@@ -807847,9 +808017,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "TypeList"
+     ]
     },
     "192": {
      "name": "Anim",
@@ -808382,6 +808556,14 @@
       "member_types"
      ],
      "confidence": "ANCHORED"
+    },
+    "216": {
+     "observed_types": [
+      "TypeList"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 11,
@@ -813414,9 +813596,9 @@
     }
    },
    "type_stats": {
-    "var_count": 45,
+    "var_count": 46,
     "confidence": {
-     "ANCHORED": 23,
+     "ANCHORED": 24,
      "DIRECT_PROP": 17,
      "CHAIN_PROP": 5
     }
@@ -816314,11 +816496,11 @@
     }
    },
    "type_stats": {
-    "var_count": 272,
+    "var_count": 276,
     "confidence": {
      "CHAIN_PROP": 104,
      "DIRECT_PROP": 92,
-     "ANCHORED": 73,
+     "ANCHORED": 77,
      "INFERRED": 3
     }
    }

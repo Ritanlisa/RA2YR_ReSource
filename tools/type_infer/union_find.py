@@ -23,6 +23,19 @@ class UnionFind:
         self._labels: dict[int, dict] = {}
         self._size = n
 
+    def grow(self, n: int) -> None:
+        """Extend the domain to size n (no-op if already >= n).
+
+        Used when anchors materialize variables after initial index
+        build (e.g. structural-truth :this vars with no constraints).
+        New elements are disjoint singletons; safe before any union.
+        """
+        if n <= self._size:
+            return
+        self._parent.extend(range(self._size, n))
+        self._rank.extend([0] * (n - self._size))
+        self._size = n
+
     def find(self, x: int) -> int:
         """Find root of element x with full path compression.
 
