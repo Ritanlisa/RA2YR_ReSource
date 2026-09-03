@@ -92,6 +92,11 @@ CTOR_TYPES_PATH = os.path.normpath(os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     "anchors", "ctor_types.json"
 ))
+# 结构真值（离线快照汇编扫描: vtable 安装自证 + 槽位 LCA）。
+STRUCTURAL_TRUTH_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "structural_truth.json"
+))
 
 # 外部库字符串函数锚（CRT/Win32 —— 用户许可的库函数例外）：
 # 地址 → {paramN: 'char*'}，'ret' 键为返回 char*。均为 cdecl 栈参数。
@@ -632,6 +637,687 @@ class TypeInferenceEngine:
                 self.anchor_by_var[var_id].append(anchor)
                 ctor_matched += 1
             print(f"  ctor/installer this anchors: {ctor_matched}", file=sys.stderr)
+
+        # ── 结构真值 this 锚（离线快照汇编扫描, t14_pool_extender）──
+        # vtable_install: 函数向 this 安装 vtable 的二进制自证（rank 3,
+        #   与 ctor_vtable_install 同级——快照扫描覆盖了 IDA 侧扫描漏掉的
+        #   模板实例化, 且取最深安装类）
+        # slot_this: vtable 槽位成员资格 → 包含类最深公共祖先（rank 2
+        #   结构事实; 与更精确锚 meet 时精确者存活, 无关冲突交 T11 暴露）
+"""
+Type Inference Engine — Steensgaard + Propagation + Confidence + Contradictions.
+
+Pipeline:
+  T7  — Steensgaard union-find merging, anchor labeling
+  T9  — Worklist type propagation via lattice.meet()
+  T10 — Confidence scoring (BFS distance from nearest anchor)
+  T11 — Contradiction detection (TOP nodes, dual-path evidence)
+
+Inputs:
+  tools/type_infer/constraints/raw_constraints.json  — ~97K type constraints
+  tools/type_infer/constraints/call_graph.json       — ~46K call-graph edges
+  tools/type_infer/anchors/vtable_signatures.json    — ~13K vtable entries
+  anchors/member_types.json                          — ~5K member→type anchors
+  anchors/global_types.json                          — ~1.3K global→type anchors
+
+Outputs:
+  type_map.json        — variable→type mapping with confidence
+  contradictions.md    — human-readable contradiction report
+
+Usage:
+  python -m tools.type_infer.engine
+"""
+
+import json
+import os
+import re
+import sys
+from collections import Counter, defaultdict, deque
+from dataclasses import dataclass, field
+from typing import Any, Optional
+
+from tools.type_infer.union_find import UnionFind
+from tools.type_infer.lattice import (
+    TypeLattice, BOTTOM, VOID_PTR, TOP, LatticeElement, _is_concrete, _name
+)
+from tools.type_infer.scope_vars import (
+    X86_REGISTERS, is_register as _is_register,
+    build_scoped_index as _build_scoped_index,
+)
+
+# ── _X86_REGISTERS and _is_register now in scope_vars.py ───────────────────
+
+# ── paths ──────────────────────────────────────────────────────────────────
+
+def _resolve_path(*parts: str) -> str:
+    """Resolve path relative to the tools/type_infer directory."""
+    base = os.path.dirname(os.path.abspath(__file__))
+    return os.path.normpath(os.path.join(base, *parts))
+
+CONSTRAINTS_PATH = _resolve_path("constraints", "raw_constraints.json")
+CALL_GRAPH_PATH = _resolve_path("constraints", "call_graph.json")
+VTABLE_SIG_PATH = _resolve_path("anchors", "vtable_signatures.json")
+FUNC_SIGNATURES_PATH = _resolve_path("signatures", "function_signatures.json")
+# RTTI 重锚定提取器 (ida_extract.py 实模式) 的 CSP 签名产物：地址式变量
+# （`0xADDR:this` / `0xADDR::paramN` / `0xADDR.return`）的锚点数据源
+CSP_FUNCS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "csp", "full_report", "csp_functions.json"
+))
+MEMBER_TYPES_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "member_types.json"
+))
+GLOBAL_TYPES_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "global_types.json"
+))
+
+# 构造存储推导的全局实例锚（mov [G], vtable → G 是 vtable 类实例；
+# 由 gen_singleton_anchors.py 从 RTTI vtable xref 扫描生成）
+SINGLETON_TYPES_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "singleton_types.json"
+))
+
+# RTTI vtable → 类 真值（col_offset==0 主 vtable）
+RTTI_VTABLE_CLASS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "rtti_vtable_class.json"
+))
+
+# IDA 字符串字面量表（a* 标签 → 地址）
+STRING_LITERALS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "string_literals.json"
+))
+
+# vtable 安装者（ctor/dtor/Construct：入口附近向 this-链寄存器安装 vtable
+# 的函数——三者都接收正确类型的 this）。IDA 侧扫描生成。
+CTOR_TYPES_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "ctor_types.json"
+))
+# 结构真值（离线快照汇编扫描: vtable 安装自证 + 槽位 LCA）。
+STRUCTURAL_TRUTH_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "structural_truth.json"
+))
+
+# 外部库字符串函数锚（CRT/Win32 —— 用户许可的库函数例外）：
+# 地址 → {paramN: 'char*'}，'ret' 键为返回 char*。均为 cdecl 栈参数。
+_LIB_STRING_FUNCS = {
+    0x7C9CC2: {0: "char*", 1: "char*", "ret": "char*"},  # strtok
+    0x7CDA90: {0: "char*", 1: "char*"},                  # strcmp
+    0x7C8D20: {0: "char*", 1: "char*"},                  # _strcmpi
+    0x7CD680: {0: "char*", 1: "char*"},                  # _strnicmp
+    0x7CE049: {0: "char*", 1: "char*", "ret": "char*"},  # strcat
+    0x7CA4B0: {0: "char*", 1: "char*", "ret": "char*"},  # strstr
+    0x7CAF30: {0: "char*", "ret": "char*"},              # strchr
+    0x7D15A0: {0: "char*"},                              # strlen
+    0x7C8470: {0: "char*"},                              # lstrlenA
+    0x7C8542: {0: "char*", 1: "char*", "ret": "char*"},  # lstrcpyA
+    0x7C846A: {0: "char*", 1: "char*", "ret": "char*"},  # lstrcatA
+    0x7C85EA: {0: "char*"},                              # wsprintfA (fmt)
+    0x7C8EF4: {0: "char*", 1: "char*"},                  # sprintf (dest, fmt)
+    0x7CB7BA: {0: "char*", 1: "char*"},                  # vsprintf
+    # 宽字符族 + 补充（round 8；宽字符串指针与窄串共用 char* 伪域）
+    0x7DCFC4: {0: "char*", "ret": "char*"},              # _strupr
+    0x7DD0F8: {0: "char*", 1: "char*"},                  # _wcsicmp
+    0x7C91D0: {0: "char*", 1: "char*"},                  # strncpy
+    0x7CA45F: {0: "char*", 1: "char*", "ret": "char*"},  # wcscat
+    0x7CA5D3: {0: "char*", 1: "char*"},                  # wcscmp
+    0x7CA489: {0: "char*", 1: "char*", "ret": "char*"},  # wcscpy
+    0x7CA405: {0: "char*"},                              # wcslen
+    0x7DCF94: {0: "char*"},                              # lstrlenW
+}
+CLASS_LAYOUTS_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "class_layouts.json"
+))
+CLASS_ALIGN_PATH = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "anchors", "class_name_align.json"
+))
+
+# 缺口 1（OO 路线图）: RTTI 修饰名 → canon（header）名对齐表。惰性单次
+# 加载；_to_lattice_type 是所有锚值进 lattice 的唯一漏斗，在这里归一化
+# 即可让 vtable/ctor/CSP/member 各通道与层次图、member_types 键同一体系。
+_ALIGN_TO_CANON: dict[str, str] | None = None
+
+
+def _align_canon(name: str) -> str:
+    global _ALIGN_TO_CANON
+    if _ALIGN_TO_CANON is None:
+        m: dict[str, str] = {}
+        try:
+            with open(CLASS_ALIGN_PATH, "r", encoding="utf-8") as f:
+                for k, v in json.load(f).get("rtti_to_canon", {}).items():
+                    if isinstance(v, dict) and v.get("canon"):
+                        m[k] = v["canon"]
+        except Exception:
+            pass
+        _ALIGN_TO_CANON = m
+    return _ALIGN_TO_CANON.get(name, name)
+
+
+# ── regex patterns for variable name parsing ───────────────────────────────
+
+_RE_MEMBER_VAR = re.compile(
+    r"^(.+?)(?:::.*?)?\.this\.member\((0x[0-9a-fA-F]+)\)$"
+)
+_RE_MEMBER_ALT = re.compile(
+    r"^([A-Za-z_]\w*(?:Class)?)\+0x([0-9a-fA-F]+)$"
+)
+
+# IDA auto-name prefixes that map to hex addresses in global_types.json
+_IDA_GLOBAL_PREFIXES = (
+    "dword_", "byte_", "word_", "flt_", "off_", "qword_", "unk_"
+)
+
+# IDA 风格十六进制字面量：纯 hex 数字 + 尾缀 h（'0FFFFFFFFh'、'0Ch'）
+_RE_IDA_HEX_LITERAL = re.compile(r"^[0-9A-Fa-f]+h$")
+_RE_FRAME_PTR = re.compile(r"^0x[0-9A-Fa-f]{8}::(esp|ebp|sp|bp)_v0x")
+
+
+def _is_var_literal(name: str) -> bool:
+    """True if the variable name is a numeric literal ('0', '0Ch', '-1',
+    '0FFFFFFFFh').
+
+    Literals are meet-identity values: an edge into a literal carries no
+    type information, but the literal NODE bridges the typed domains on its
+    other edges (e.g. `mov [esp+0x48], 0` and `mov byte_G, 0` both reference
+    literal 0, merging a pointer stack slot with an int global). Edges with
+    a literal endpoint must not create adjacency.
+    """
+    if not name:
+        return False
+    n = name.strip()
+    try:
+        int(n, 0)
+        return True
+    except ValueError:
+        pass
+    return bool(_RE_IDA_HEX_LITERAL.match(n))
+
+
+
+def _is_output_noise(name: str) -> bool:
+    """True for graph pseudo-nodes with no type semantics (excluded from
+    type_map/suggested_types output — honest coverage accounting):
+    - `*def@0xADDR` B4 SSA version markers
+    - `0xF::(esp|ebp)_v*` frame-pointer SSA slices
+    - `0xADDR_call` call-site plumbing pseudos
+    - `vtable_slot_*` shared slot pseudos
+    - numeric literals ('0', '0A0h', '0BF800000h', ...)
+    """
+    if name.startswith("*def@") or name.startswith("vtable_slot_"):
+        return True
+    if name.endswith("_call"):
+        return True
+    if _RE_FRAME_PTR.match(name):
+        return True
+    return _is_var_literal(name)
+
+def _edge_skips_adjacency(sfrom: str, sto: str) -> bool:
+    """Shared guard for constraint edges that must not build adjacency.
+
+    - vtable_slot_* pseudo-vars: shared slot hubs would bridge every class.
+    - numeric literals: meet-identity bridges (see _is_var_literal).
+    - `*def@0xADDR` SSA version markers (extractor B4): instruction-unique
+      pseudo sources emitted only to register SSA write points — they carry
+      no type and must stay isolated.
+    """
+    if sfrom.startswith("vtable_slot_") or sto.startswith("vtable_slot_"):
+        return True
+    if sfrom.startswith("*def@"):
+        return True
+    # Raw operand-text names (`dword ptr [esi]`) are cross-function shared
+    # hubs — extractor B5 removes them at the source; guard here too.
+    if " ptr [" in sfrom or " ptr [" in sto:
+        return True
+    return _is_var_literal(sfrom) or _is_var_literal(sto)
+
+
+def _parse_member_var(name: str) -> tuple[str, int] | None:
+    """Extract (class_name, offset) from a member variable name.
+
+    Examples:
+      'ObjectClass::ClearFlags2.this.member(0x50)' → ('ObjectClass', 0x50)
+      'BuildingClass::GetType.this.member(0x70c)' → ('BuildingClass', 0x70c)
+    """
+    m = _RE_MEMBER_VAR.match(name)
+    if m:
+        cls = m.group(1)
+        offset = int(m.group(2), 16)
+        return (cls, offset)
+    return None
+
+
+def _find_function_return_var(variables: dict[str, int], func_name: str) -> int | None:
+    """Find the variable ID for a function's .return variable."""
+    key = func_name + ".return"
+    return variables.get(key)
+
+
+def _load_all_function_addrs() -> list[int]:
+    """完整函数起始地址表（signals.json kind=='function'）。
+
+    call_graph 只含 caller/callee（~10K），叶子函数缺失会导致 scope_vars
+    把其指令错误归属到上一个函数（模板簇 637 假 TOP 根因），此处补全。
+    """
+    global _ALL_FUNC_ADDR_CACHE
+    if _ALL_FUNC_ADDR_CACHE is not None:
+        return _ALL_FUNC_ADDR_CACHE
+    path = os.path.normpath(os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "signals.json",
+    ))
+    addrs: list[int] = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for key, sym in data.get("symbols", {}).items():
+            if sym.get("kind") != "function":
+                continue
+            try:
+                addrs.append(int(sym.get("address", key), 16))
+            except (ValueError, TypeError):
+                pass
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"  signals.json load failed ({e}); scoping falls back to call_graph only",
+              file=sys.stderr)
+    _ALL_FUNC_ADDR_CACHE = addrs
+    return addrs
+
+
+_ALL_FUNC_ADDR_CACHE = None
+
+
+# ── confidence tier ────────────────────────────────────────────────────────
+
+@dataclass
+class Confidence:
+    """Confidence tier for type assignments."""
+    ANCHORED = 0       # direct anchor (member_types, global_types, vtable)
+    DIRECT_PROP = 1     # 1 hop from anchor
+    CHAIN_PROP = 2       # 2 hops from anchor
+    FAR_PROP = 3         # 3 hops from anchor
+    INFERRED = 4         # >3 hops from anchor, or no anchor path
+
+    _NAMES = {
+        0: "ANCHORED",
+        1: "DIRECT_PROP",
+        2: "CHAIN_PROP",
+        3: "CHAIN_PROP",
+        4: "INFERRED",
+    }
+
+    @classmethod
+    def name(cls, tier: int) -> str:
+        if tier < 0:
+            return "ORPHAN"  # no anchor path (anchor-less component)
+        if tier == 0:
+            return cls._NAMES[0]
+        if tier == 1:
+            return cls._NAMES[1]
+        if tier <= 3:
+            return cls._NAMES[2]
+        return cls._NAMES[4]
+
+
+# ── anchor data ────────────────────────────────────────────────────────────
+
+@dataclass
+class Anchor:
+    """A known type assignment from pre-extracted data."""
+    var_id: int
+    var_name: str
+    lattice_type: LatticeElement
+    source: str  # 'member_types', 'global_types', 'vtable_signatures'
+
+
+# ── engine ─────────────────────────────────────────────────────────────────
+
+class TypeInferenceEngine:
+    """Core type inference engine."""
+
+    def __init__(self):
+        self.uf: UnionFind | None = None
+        self.lattice = TypeLattice(CLASS_LAYOUTS_PATH)
+        self.var_to_id: dict[str, int] = {}
+        self.id_to_var: list[str] = []
+        self.constraints: list[dict] = []
+        self.call_graph: dict[str, list] = {}
+        self.anchors: list[Anchor] = []
+        self.anchor_by_var: dict[int, list[Anchor]] = defaultdict(list)
+
+        # Function address ranges for register scoping
+        self._func_addrs: list[int] = []  # sorted start addresses
+
+        # Adjacency graph for propagation (var_id → set of neighbor var_ids)
+        self.adjacency: dict[int, set[int]] = defaultdict(set)
+
+        # Directed channels (T9 v2 semantics):
+        # param_in[arg_id] → {param_id}: CALL_ARG bindings. A parameter receives
+        #   values from MANY call sites; its true type is a SUPERTYPE of every
+        #   argument (polymorphic this/param), so the accumulation operator at
+        #   the param end is JOIN (least common ancestor), and nothing flows
+        #   BACK from the param to the call-site expressions.
+        # return_out[ret_id] → {receiver_id}: return channel (CALL + RETURN_TO).
+        #   The callee's .return has ONE type (meet of its RET sites); it flows
+        #   OUT to every receiver (meet at each receiver); receivers never flow
+        #   back into .return (which would pollute the callee for all callers).
+        self.param_in: dict[int, set[int]] = defaultdict(set)
+        self.return_out: dict[int, set[int]] = defaultdict(set)
+
+        # B7: (receiver_var_id, slot_idx) pairs captured from CALL_VTABLE
+        self._vtcall_routes: list[tuple[int, int]] = []
+
+        # Results
+        self.eq_types: dict[int, LatticeElement] = {}  # root → type
+        self.confidences: dict[int, int] = {}           # root → confidence tier
+        self.contradictions: list[dict] = []             # contradiction reports
+
+    # ── T7: Data loading ──────────────────────────────────────────────────
+
+    def load_all(self) -> None:
+        """Load all input data files."""
+        print("Loading constraints...", file=sys.stderr)
+        self._load_constraints()
+
+        print("Loading call graph...", file=sys.stderr)
+        self._load_call_graph()
+
+        print("Building variable name index...", file=sys.stderr)
+        self._build_variable_index()
+
+        print("Loading anchors...", file=sys.stderr)
+        self._load_anchors()
+
+    def _load_constraints(self) -> None:
+        with open(CONSTRAINTS_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        self.constraints = data["constraints"]
+
+    def _load_call_graph(self) -> None:
+        with open(CALL_GRAPH_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        self.call_graph = data.get("graph", {})
+
+    def _build_variable_index(self) -> None:
+        """Assign integer IDs to all unique SSA-scoped variable names.
+
+        Uses scope_vars.build_scoped_index() for SSA-based register scoping.
+        Each register write creates a new SSA version, eliminating false
+        cross-live-range hub contamination. No continuity edges needed.
+        """
+        result = _build_scoped_index(
+            self.constraints, self.call_graph,
+            extra_func_addrs=_load_all_function_addrs(),
+        )
+
+        # Pre-computed scoped names per constraint (for step_steensgaard)
+        self._scoped_to_name = result["scoped_to_name"]
+
+        # Build variable index from SSA-scoped names
+        seen = result["scoped_to_original"]
+
+        # Sort for deterministic IDs
+        sorted_names = sorted(seen.keys())
+        self.var_to_id = {name: i for i, name in enumerate(sorted_names)}
+        self.id_to_var = sorted_names
+        self.uf = UnionFind(len(self.id_to_var))
+
+        # Store original name lookup for anchor matching
+        self._scoped_to_original = seen
+        # Sorted function start addresses (signals.json-complete) for
+        # instruction→function containment (TYPE_SEED scoping)
+        self._func_addrs = sorted(set(_load_all_function_addrs()))
+        print(f"  scoped variables: {len(seen)}", file=sys.stderr)
+
+    # _add_register_continuity removed: SSA scoping in scope_vars.py
+    # handles live-range isolation natively (each write → new SSA version).
+
+    def _load_anchors(self) -> None:
+        """Load anchors from member_types.json, global_types.json, vtable_signatures.json."""
+        valid_classes = set(self.lattice._ancestors.keys())
+
+        # ── member_types anchors ──
+        member_types = {}
+        if os.path.exists(MEMBER_TYPES_PATH):
+            with open(MEMBER_TYPES_PATH, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+            # Filter to only entries where key matches ClassName+Offset pattern
+            for key, val in raw.items():
+                m = _RE_MEMBER_ALT.match(key)
+                if m:
+                    cls_name = m.group(1)
+                    offset = int(m.group(2), 16)
+                    typ = val.get("type", "")
+                    member_types[(cls_name, offset)] = val
+                else:
+                    member_types[(key, 0)] = val  # fallback
+        # T9b lookup: 'Class+0xOff' → entry (legacy class names)
+        self._member_types_by_class = {
+            k: v for k, v in raw.items() if _RE_MEMBER_ALT.match(k)
+        } if os.path.exists(MEMBER_TYPES_PATH) else {}
+        self._member_types_by_class_classes = set(self.lattice._ancestors)
+
+        matched = 0
+        for var_name, var_id in self.var_to_id.items():
+            parsed = _parse_member_var(var_name)
+            if parsed is None:
+                continue
+            cls_name, offset = parsed
+            anchor_info = member_types.get((cls_name, offset))
+            if anchor_info is None:
+                continue
+            typ_name = anchor_info.get("type", "")
+            if not typ_name:
+                continue
+
+            lattice_type = self._to_lattice_type(typ_name, valid_classes)
+            if lattice_type is None:
+                continue
+
+            anchor = Anchor(
+                var_id=var_id,
+                var_name=var_name,
+                lattice_type=lattice_type,
+                source="member_types",
+            )
+            self.anchors.append(anchor)
+            self.anchor_by_var[var_id].append(anchor)
+            matched += 1
+        print(f"  member_types anchors: {matched}", file=sys.stderr)
+
+        # ── csp_functions 签名锚点（RTTI 重锚定提取器的地址式变量）──
+        self._load_csp_signature_anchors(valid_classes, member_types)
+
+        # ── global_types anchors ──
+        global_matched = 0
+        global_type_filtered = 0
+        if os.path.exists(GLOBAL_TYPES_PATH):
+            with open(GLOBAL_TYPES_PATH, "r", encoding="utf-8") as f:
+                global_types = json.load(f)
+
+            # Build address→type map
+            addr_map: dict[str, dict] = {}
+            for key, val in global_types.items():
+                if key.startswith("0x"):
+                    addr_map[key] = val
+
+            self._gt_diag = {}
+            for var_name, var_id in self.var_to_id.items():
+                # Try exact match; normalize `offset NAME` (lea-style global
+                # reference) and _RET suffix before matching
+                norm = var_name
+                if norm.startswith("offset "):
+                    norm = norm[len("offset "):]
+                info = addr_map.get(norm)
+                if info is None:
+                    # Try stripping _RET suffix
+                    base = norm.replace("_RET", "")
+                    info = addr_map.get(base)
+                if info is None:
+                    # Try converting IDA auto-name → hex address
+                    #   dword_815DA8 → 0x815DA8
+                    #   dword_A8ED54+2D85Ch → 0xA8ED54
+                    for ida_prefix in _IDA_GLOBAL_PREFIXES:
+                        for attempt_name in (var_name, base):
+                            if attempt_name.lower().startswith(ida_prefix):
+                                suffix = attempt_name[len(ida_prefix):]
+                                hex_part = suffix.split("+")[0].split(":")[0]
+                                hex_addr = "0x" + hex_part.upper()
+                                info = addr_map.get(hex_addr)
+                                if info is not None:
+                                    break
+                        if info is not None:
+                            break
+                if info is None:
+                    continue
+
+                # Track matched-but-filtered for diagnostics
+                typ_name = info.get("type", "")
+                lattice_type = self._to_lattice_type(typ_name, valid_classes)
+                if lattice_type is None:
+                    global_type_filtered += 1
+                    # TEMP: diagnostic
+                    if not hasattr(self, '_gt_diag'):
+                        self._gt_diag = {}
+                    self._gt_diag[typ_name.strip()[:60]] = self._gt_diag.get(typ_name.strip()[:60], 0) + 1
+                    continue
+
+                anchor = Anchor(
+                    var_id=var_id,
+                    var_name=var_name,
+                    lattice_type=lattice_type,
+                    source="global_types",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                global_matched += 1
+        print(f"  global_types filtered sample (top 10):", file=sys.stderr)
+        for t, c in sorted(self._gt_diag.items(), key=lambda x: -x[1])[:10]:
+            print(f"    {t}: {c}", file=sys.stderr)
+        print(f"  global_types anchors: {global_matched}"
+              f" ({global_type_filtered} matched but filtered by type)", file=sys.stderr)
+
+        # ── singleton_types anchors（构造存储推导：mov [G], vtable）──
+        singleton_matched = 0
+        if os.path.exists(SINGLETON_TYPES_PATH):
+            with open(SINGLETON_TYPES_PATH, "r", encoding="utf-8") as f:
+                singleton_types = json.load(f)
+
+            by_name = {v["name"]: v for v in singleton_types.values()
+                       if isinstance(v, dict) and v.get("name")}
+            by_addr = {k.upper(): v for k, v in singleton_types.items()}
+            singleton_unfit = 0
+            for var_name, var_id in self.var_to_id.items():
+                norm = var_name[len("offset "):] if var_name.startswith("offset ") else var_name
+                info = by_name.get(norm)
+                if info is None:
+                    for ida_prefix in _IDA_GLOBAL_PREFIXES:
+                        if norm.lower().startswith(ida_prefix):
+                            hex_part = norm[len(ida_prefix):].split("+")[0].split(":")[0]
+                            info = by_addr.get("0x" + hex_part.upper())
+                            if info is not None:
+                                break
+                if info is None:
+                    continue
+                lattice_type = self._to_lattice_type(info.get("type", ""), valid_classes)
+                if lattice_type is None:
+                    singleton_unfit += 1
+                    continue
+                anchor = Anchor(
+                    var_id=var_id,
+                    var_name=var_name,
+                    lattice_type=lattice_type,
+                    source="singleton_ctor_store",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                singleton_matched += 1
+            print(f"  singleton_types anchors: {singleton_matched}"
+                  f" ({singleton_unfit} filtered, {len(singleton_types)} globals)",
+                  file=sys.stderr)
+
+        # ── 字符串字面量锚（IDA a* 标签 → char*）──
+        string_matched = 0
+        if os.path.exists(STRING_LITERALS_PATH):
+            with open(STRING_LITERALS_PATH, "r", encoding="utf-8") as f:
+                str_lits = json.load(f)
+            for var_name, var_id in self.var_to_id.items():
+                norm = var_name[len("offset "):] if var_name.startswith("offset ") else var_name
+                if norm not in str_lits:
+                    continue
+                anchor = Anchor(
+                    var_id=var_id, var_name=var_name,
+                    lattice_type="char*", source="string_literal",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                string_matched += 1
+            print(f"  string_literal anchors: {string_matched}"
+                  f" ({len(str_lits)} literals)", file=sys.stderr)
+
+        # ── vtable 安装者 this 锚（ctor/dtor/Construct，rank 3 二进制直证）──
+        ctor_matched = 0
+        if os.path.exists(CTOR_TYPES_PATH):
+            with open(CTOR_TYPES_PATH, "r", encoding="utf-8") as f:
+                ctor_types = json.load(f)
+            for addr_str, cls in ctor_types.items():
+                lattice_type = self._to_lattice_type(cls, valid_classes)
+                if lattice_type is None or lattice_type in (VOID_PTR, TOP):
+                    continue
+                var_name = f"0x{int(addr_str, 16):08X}:this"
+                var_id = self.var_to_id.get(var_name)
+                if var_id is None:
+                    continue
+                anchor = Anchor(
+                    var_id=var_id, var_name=var_name,
+                    lattice_type=lattice_type, source="ctor_vtable_install",
+                )
+                self.anchors.append(anchor)
+                self.anchor_by_var[var_id].append(anchor)
+                ctor_matched += 1
+            print(f"  ctor/installer this anchors: {ctor_matched}", file=sys.stderr)
+
+        # ── 结构真值 this 锚（离线快照汇编扫描, t14_pool_extender）──
+        # vtable_install: 函数向 this 安装 vtable 的二进制自证（rank 3,
+        #   与 ctor_vtable_install 同级——快照扫描覆盖了 IDA 侧扫描漏掉的
+        #   模板实例化, 且取最深安装类）
+        # slot_this: vtable 槽位成员资格 → 包含类最深公共祖先（rank 2
+        #   结构事实; 与更精确锚 meet 时精确者存活, 无关冲突交 T11 暴露）
+        st_path = STRUCTURAL_TRUTH_PATH
+        n_inst = n_slot = 0
+        if os.path.exists(st_path):
+            with open(st_path, "r", encoding="utf-8") as f:
+                st = json.load(f)
+            for section, src_name in (("vtable_install",
+                                       "structural_vtable_install"),
+                                      ("slot_this", "structural_slot")):
+                for addr_str, cls in (st.get(section) or {}).items():
+                    lattice_type = self._to_lattice_type(cls, valid_classes)
+                    if lattice_type is None or lattice_type in (VOID_PTR, TOP):
+                        continue
+                    var_name = f"0x{int(addr_str, 16):08X}:this"
+                    var_id = self.var_to_id.get(var_name)
+                    if var_id is None:
+                        continue
+                    anchor = Anchor(
+                        var_id=var_id, var_name=var_name,
+                        lattice_type=lattice_type, source=src_name,
+                    )
+                    self.anchors.append(anchor)
+                    self.anchor_by_var[var_id].append(anchor)
+                    if section == "vtable_install":
+                        n_inst += 1
+                    else:
+                        n_slot += 1
+            print(f"  structural truth anchors: install={n_inst} "
+                  f"slot={n_slot}", file=sys.stderr)
 
         # ── 库字符串函数参数/返回锚（CRT/Win32 例外）──
         lib_matched = 0
@@ -1564,6 +2250,8 @@ class TypeInferenceEngine:
             "rtti_vtable_class": 3,
             "singleton_ctor_store": 3,
             "ctor_vtable_install": 3,
+            "structural_vtable_install": 3,
+            "structural_slot": 2,
             "csp_this": 2,
             "csp_member": 2,
             "csp_param": 2,
@@ -2314,3 +3002,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

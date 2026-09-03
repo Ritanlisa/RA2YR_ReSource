@@ -162,7 +162,7 @@ def main():
     for var, info in tm.items():
         if var.endswith(":this"):
             t = info.get("type", "")
-            if t and t not in ("int", "float", "char*", "VOID_PTR", ""):
+            if t and t not in ("int", "float", "char*", "VOID_PTR", "TOP", ""):
                 existing[var[:-5].upper().replace("0X", "0x")] = t
     ct = json.load(open(os.path.join(PROJ, "anchors", "ctor_types.json"),
                         encoding="utf-8"))
