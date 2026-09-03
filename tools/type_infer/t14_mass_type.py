@@ -74,6 +74,16 @@ def load_truth(min_conf_rank: int):
     return truth
 
 
+def _load_ancestor_map():
+    """canon 类 → 全祖先集（含自身）。用于投票精确化升级判定。"""
+    db = json.load(open(os.path.join(PROJ, "anchors", "class_db.json"),
+                        encoding="utf-8"))["classes"]
+    anc = {}
+    for c, rec in db.items():
+        anc[c] = set(rec.get("full_ancestors") or [c]) | {c}
+    return anc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -109,8 +119,11 @@ def main():
 
     st = {"done": [], "applied": 0, "fail": 0, "skip_noproto": 0,
           "skip_shape": 0, "skip_nostruct": 0, "skip_done": 0}
+    ancestor_map = _load_ancestor_map()
     if os.path.exists(STATE):
         st = json.load(open(STATE, encoding="utf-8"))
+        # 清理越界错位键（通道④键规范化修复前的产物, 202 个）
+        st["done"] = [d for d in st["done"] if int(d, 16) <= 0x7E1000]
         print(f"断点续跑: {len(st['done'])} 已处理")
     done = set(st["done"])
 
@@ -143,6 +156,15 @@ def main():
                 st["skip_done"] += 1
                 done.add(a)
                 continue
+            # 已定型为其他类: 仅当现类是池类的祖先时允许"精确化升级"
+            # （调用方投票常比早期传播定型更精确: FootClass→AircraftClass）;
+            # 无关/降级方向一律跳过
+            cur_m = re.search(r"\((\w+) \*this", proto)
+            if cur_m and cur_m.group(1) != cls:
+                if cur_m.group(1) not in ancestor_map.get(cls, {cls}):
+                    st["skip_shape"] += 1
+                    done.add(a)
+                    continue
             if "__thiscall(" not in proto:
                 # thiscall 无 this 参形态（`char()`）: 真值在池（vtable/ctor
                 # 自证）, 按真值构造全签名——返回类型沿用原型的
