@@ -84,10 +84,13 @@ def main():
 
     min_rank = _CONF_RANK[args.min_conf]
     truth = load_truth(min_rank)
-    print(f"真值池: {len(truth)} 函数 (min_conf={args.min_conf})")
+    alias_path = os.path.join(PROJ, "anchors", "mangled_alias.json")
+    alias = json.load(open(alias_path, encoding="utf-8"))         if os.path.exists(alias_path) else {}
+    print(f"真值池: {len(truth)} 函数 (min_conf={args.min_conf}, "
+          f"alias {len(alias)})")
 
-    # struct 门（无 struct 不落盘）——探测全部涉及的类
-    involved = sorted({c for c, _ in truth.values()})
+    # struct 门（无 struct 不落盘）——探测全部涉及的类（修饰名先别名化）
+    involved = sorted({alias.get(c, c) for c, _ in truth.values()})
     struct_ok = set()
     for i in range(0, len(involved), 50):
         r = call("type_inspect", {"queries": [{"name": c} for c in
@@ -116,6 +119,7 @@ def main():
         print(f"断点续跑: {len(st['done'])} 已处理")
     done = set(st["done"])
 
+    truth = {a: (alias.get(c, c), s) for a, (c, s) in truth.items()}
     targets = sorted(
         (a for a, (c, _) in truth.items() if a and c in struct_ok and a not in done))
     if args.limit:
