@@ -870,6 +870,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: 剩余 70% 攻坚 — thiscall 定型率 56% → **74%**（7,934/19,067）
+  - 构成裁决: "70%" 里 9,456 个是非 thiscall（全局/CRT/stdcall, **无 this 可定型**）, 真实目标 = thiscall 家族 10,661
+  - 新真值通道 `t14_pool_extender.py`（纯离线, 挖掘快照汇编）: **vtable 安装自证**（`mov [esi], offset ??_7Class@@6B@` → ctor/dtor 身份, 1,656 个）+ vtable 槽位归属（含类最深公共祖先, 117 个）
+  - 原型擦洗五连修: `#NNN` 内部 ID → void*/int; 无 this 参形态（`char()`）全签名构造; 首参通用改写（`_DWORD *Block` 这类 IDA 随便命名的 this）; 双调用约定（`__stdcall __thiscall`）; 返回寄存器注解（`__userpurge@<al>`）
+  - 残余: 576 个硬失败（函数名含 `[40]` 数组后缀等非法声明字符——改名须走 rename_symbol.py 四方同步, 列为后续任务）; ~2,100 个 thiscall 真值池无覆盖（待下次 IDA 提取扩池）
 - **2026-09-03**: 全量 this 定型扩容 + 快照重导出（用户驳回 1,062 版后）
   - 诊断: 真值池 ~10K（ctor_types 1,254 + type_map this 类定型 9,634 其中 8,294 ANCHORED）但只回写了 1,062——sub_4A0380（EnumConnectionsClass ctor, vtable 安装自证）漏网实证
   - `t14_mass_type.py`: 真值合并（ctor rank3 > type_map 置信度分级）→ struct 门 → 批量回写 + 断点。**~5,500 函数定型, 快照定型覆盖 30% (5,835/19,144)**（原 5.5%）
