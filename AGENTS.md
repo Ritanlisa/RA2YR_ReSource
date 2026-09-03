@@ -870,6 +870,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: 类型补充三件套 — 快照语义质量再上一档
+  - **struct 成员指针解析**（`t14_structs.py --resolve` 二次声明）: 指向已声明 struct 的成员从 `void*` 占位升级为真类指针（TechnoClass 47 个: ObjectClass* nextObject/TagClass* attachedTag/AnimClass* parachute...）——反编译点亮链式访问 `this->Owner->Power`; 布局不变（指针恒 4B/4 对齐）
+  - **92 个全局变量类型回写**（type_map 460 个类类型全局中, 类型门=已声明 struct 且名字可寻址者）; 名址缓存 `.omo/t14_globals_cache.json`
+  - **参数/返回通道数据盘点**: type_map 仅 222 函数参数位/159 返回值有类类型（多为 CHAIN_PROP 弱证据）——**确认非 thiscall 的 9,450 函数的类型补充必须等 B10 重提取**, 本地无更多可榨
+  - 教训: **idb_save 条件别设在 fail==0 上**（空类 60 个恒 fail 会挡住真实改动的落盘）
 - **2026-09-03**: 残余清障 — thiscall 定型率 74% → **78%**（8,400/19,067, 全体 44%）
   - **517 个非法名函数合法化**: `[N]`→`_N`（`AITriggerTypeClass[40]::X` 类 IDA 数据数组污染名）, 一次 set_type 同时改名+定型, **signals.json 四方同步**（symbols+_by_name+src/ 27 处）——`t14_fix_illegal_names.py`; 剩 52 个 `?$CComObject@...` 修饰类名（struct 未声明的 COM 模板内部件）合规跳过
   - 通道③ 委托构造挖掘（this 溢出+ctor 调用两行窗口）: 仅 3 个——模式罕见, 确认 ~2,100 池外 thiscall 是**离线天花板**, 扩池需下次 IDA 提取

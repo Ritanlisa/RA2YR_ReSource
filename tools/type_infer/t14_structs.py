@@ -74,7 +74,7 @@ def _layout_members(cls, layouts, member_types):
     return sorted(out)
 
 
-def build_decl(cls, layouts, member_types, class_db=None):
+def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None):
     """全链扁平化 C 声明。返回 (decl, expected_size) 或 (None, 原因)。
 
     链断类（父不在 layouts, 如 COM 的 IEnumConnections）回退:
@@ -136,7 +136,13 @@ def build_decl(cls, layouts, member_types, class_db=None):
         # 内联值（"Vector" 子串误判会吞掉 20 字节, 0x440 实证）
         is_ptr = sz == 4 and re.match(r"^[A-Za-z_][\w:<>,\s]*\*$", ctype_s) is not None
         aligned4 = (off % 4) == 0
-        if is_ptr and aligned4:
+        # --resolve 二次声明: 指向已声明 struct 的成员用真类型（点亮链式
+        # 成员访问 this->Owner->Power）; 一遍 void* 保证全部 struct 先存在
+        ptr_target = re.match(r"^([A-Za-z_]\w*)\s*\*$", ctype_s)
+        if is_ptr and aligned4 and struct_ns and ptr_target \
+                and ptr_target.group(1) in struct_ns:
+            lines.append(f"  {ptr_target.group(1)} *{nm};")
+        elif is_ptr and aligned4:
             lines.append(f"  void *{nm}; /* {ctype_s} */")
         elif sz == 4 and aligned4 and ctype_s == "float":
             lines.append(f"  float {nm};")
@@ -164,6 +170,9 @@ def build_decl(cls, layouts, member_types, class_db=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
+    ap.add_argument("--resolve", action="store_true",
+                    help="二次声明: 成员指针解析为已声明 struct 类型"
+                         "（一遍 void* 全量声明后再跑）")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
@@ -177,8 +186,9 @@ def main():
 
     decls = {}
     skipped = {}
+    struct_ns = set(classes) if args.resolve else None
     for c in classes:
-        decl, info = build_decl(c, layouts, member_types, class_db)
+        decl, info = build_decl(c, layouts, member_types, class_db, struct_ns)
         if decl is None:
             skipped[c] = info
         else:
