@@ -164,7 +164,10 @@ def main():
                         mr = re.search(r"; -> ([\w:$?@<>]+)", ln)
                         tgt = name_to_addr.get(mr.group(1)) if mr else None
                     if tgt is not None and cur_cls:
-                        votes[tgt][cur_cls] += 1
+                        # 键规范化为十六进制字符串——json.dump 的 int 键会变
+                        # 十进制字符串, 下游 _norm_addr 按十六进制解析产生
+                        # 87M 级错位地址（202 票全数静默丢失的实证）
+                        votes[f"0x{tgt:08X}"][cur_cls] += 1
                     prev_was_this = False
                     continue
                 if "call" in ln:
