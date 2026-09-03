@@ -59,6 +59,68 @@ def main():
     db = json.load(open(os.path.join(PROJ, "anchors", "class_db.json"),
                         encoding="utf-8"))["classes"]
 
+    # ── 通道 3: 委托构造/析构 —— 函数把入口 ecx(this) 溢出到 R, 后续
+    # `mov ecx, R` + `call <ctor/dtor>` → this = 该类。两行窗口验证
+    # 调用点的 ecx 确实是溢出别名（区别于工厂: 工厂以 new 返回值 eax
+    # 为 ecx 调 ctor）。调用目标经 name→addr 解析（refs 名或 sub_ 操作数）。
+    ct_class = {}  # ctor addr -> canon
+    for k, cls in json.load(open(os.path.join(
+            PROJ, "anchors", "ctor_types.json"), encoding="utf-8")).items():
+        try:
+            ct_class[int(k, 16)] = r2c.get(cls, cls)
+        except ValueError:
+            continue
+    name_to_addr = {}
+    fcache = os.path.join(PROJ, ".omo", "full_export_funcs.json")
+    if os.path.exists(fcache):
+        for f in json.load(open(fcache, encoding="utf-8")):
+            try:
+                name_to_addr[f.get("name", "")] = int(f["addr"], 16)
+            except (ValueError, KeyError):
+                pass
+
+    deleg = defaultdict(set)
+    n_files3 = 0
+    for fn in os.listdir(SNAP):
+        if not fn.endswith(".cpp"):
+            continue
+        n_files3 += 1
+        cur = None
+        ln_count = 0
+        spilled = None      # this 别名寄存器
+        last_ecx_load = None  # 最近一条 `mov ecx, R` 的 R
+        with open(os.path.join(SNAP, fn), encoding="utf-8") as f:
+            for ln in f:
+                m = _RE_ADDR_LINE.match(ln)
+                if m:
+                    cur = m.group(1).upper()
+                    ln_count = 0
+                    spilled = None
+                    last_ecx_load = None
+                    continue
+                if cur is None:
+                    continue
+                ln_count += 1
+                ms = re.search(r":\s+mov ([a-z]{2,3}), ecx\b", ln)
+                if ms and ln_count <= 30 and spilled is None:
+                    spilled = ms.group(1)
+                    continue
+                me = re.search(r":\s+mov ecx, ([a-z]{2,3})\b", ln)
+                if me:
+                    last_ecx_load = me.group(1)
+                    continue
+                mc = re.search(r":\s+call (?:ds:)?([\w:]+)", ln)
+                if mc and spilled and last_ecx_load == spilled:
+                    tgt_name = mc.group(1)
+                    tgt = name_to_addr.get(tgt_name)
+                    if tgt is None:
+                        mr = re.search(r"; -> (sub_[0-9A-Fa-f]+)", ln)
+                        tgt = name_to_addr.get(mr.group(1)) if mr else None
+                    if tgt is not None and tgt in ct_class:
+                        deleg[cur].add(ct_class[tgt])
+                        last_ecx_load = None
+    print(f"通道3 委托构造候选: {len(deleg)} (入池在 existing 就绪后)")
+
     # ── 通道 1: 离线扫汇编 ──
     installs = defaultdict(lambda: defaultdict(int))  # addr -> class -> count
     n_files = 0
@@ -112,7 +174,15 @@ def main():
         return set(rec.get("full_ancestors") or [c]) | {c}
 
     pool = {}
-    n_vt = n_slot = 0
+    n_vt = n_slot = n_deleg = 0
+    # 通道 3 入池（existing 已就绪）
+    for addr, classes in deleg.items():
+        if addr in existing or len(classes) != 1:
+            continue
+        pool[addr] = {"class": next(iter(classes)),
+                      "source": "delegating_ctor",
+                      "evidence": sorted(classes)}
+        n_deleg += 1
     # 通道 1 入池
     for addr, cls_counts in installs.items():
         if addr in existing:
