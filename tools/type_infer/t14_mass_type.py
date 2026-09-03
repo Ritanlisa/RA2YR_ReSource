@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""t14_mass_type.py — 全量 this 类型批量回写（真值池全覆盖）。
+
+背景（2026-09-03 用户驳回 1,062 函数版导出）:
+  T14 rollout 只覆盖 IDA 命名 + vtable 双门控的 1,062 函数, 但真值池实际有
+  ~10K: ctor_types.json 1,254 个 vtable 安装者（sub_4A0380 → EnumConnections
+  Class 实证漏网）+ type_map 9,634 个 this 类定型（8,294 ANCHORED）。
+
+真值合并优先级: ctor_types (rank3, 二进制) > type_map ANCHORED >
+DIRECT_PROP > CHAIN_PROP/INFERRED。全部经 canon 命名空间（struct 已按
+同空间声明——t14_structs 972 类, 无 struct 的类回写不落盘, 跳过并计数）。
+
+用法:
+  python tools/type_infer/t14_mass_type.py [--dry-run] [--min-conf ANCHORED]
+"""
+import argparse
+import json
+import os
+import re
+import sys
+import time
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+PROJ = os.path.dirname(os.path.dirname(_HERE))
+sys.path.insert(0, _HERE)
+
+from ida_apply_t14 import call, rewrite_this  # noqa: E402
+from t14_rollout import _norm_addr, export_protos, name_anon_params  # noqa: E402
+
+STATE = os.path.join(PROJ, ".omo", "t14_mass_type_state.json")
+_RE_IDA_AUTO = re.compile(
+    r"^(sub_|nullsub_|j_|loc_|locret_|byte_|word_|dword_|qword_|off_|unk_|asc_|stru_|flt_)",
+    re.IGNORECASE)
+_CONF_RANK = {"ANCHORED": 3, "DIRECT_PROP": 2, "CHAIN_PROP": 1, "INFERRED": 1,
+              "ORPHAN": 0}
+
+
+def load_truth(min_conf_rank: int):
+    """函数地址 → (canon 类名, 来源)。ctor rank3 最高。"""
+    truth = {}
+    tm = json.load(open(os.path.join(PROJ, "type_map.json"),
+                        encoding="utf-8"))["type_map"]
+    for var, info in tm.items():
+        if not (var.endswith(":this")):
+            continue
+        t = info.get("type", "")
+        if not t or t in ("int", "float", "char*", "VOID_PTR", ""):
+            continue
+        conf = info.get("confidence", "")
+        if _CONF_RANK.get(conf, 0) < min_conf_rank:
+            continue
+        addr = var[:-5]  # strip ':this'
+        truth[_norm_addr(addr)] = (t, f"type_map:{conf}")
+    ct = json.load(open(os.path.join(PROJ, "anchors", "ctor_types.json"),
+                        encoding="utf-8"))
+    align = json.load(open(os.path.join(PROJ, "anchors", "class_name_align.json"),
+                           encoding="utf-8"))
+    r2c = {k: v["canon"] for k, v in align["rtti_to_canon"].items()}
+    for k, cls in ct.items():
+        a = _norm_addr(k)
+        canon = r2c.get(cls, cls)
+        truth[a] = (canon, "ctor_vtable_install")  # rank3 覆盖
+    return truth
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--min-conf", default="CHAIN_PROP",
+                    choices=list(_CONF_RANK))
+    args = ap.parse_args()
+
+    min_rank = _CONF_RANK[args.min_conf]
+    truth = load_truth(min_rank)
+    print(f"真值池: {len(truth)} 函数 (min_conf={args.min_conf})")
+
+    # struct 门（无 struct 不落盘）——探测全部涉及的类
+    involved = sorted({c for c, _ in truth.values()})
+    struct_ok = set()
+    for i in range(0, len(involved), 50):
+        r = call("type_inspect", {"queries": [{"name": c} for c in
+                                              involved[i:i + 50]]})
+        for item in (r if isinstance(r, list) else []):
+            if item.get("exists") and item.get("is_udt") \
+                    and (item.get("size") or 0) > 8:
+                struct_ok.add(item["name"])
+    print(f"struct 门: {len(struct_ok)}/{len(involved)} 类可落盘")
+
+    # 函数名缓存（回写的 ty 需要函数名）
+    fns_cache = os.path.join(PROJ, ".omo", "full_export_funcs.json")
+    name_by_addr = {}
+    if os.path.exists(fns_cache):
+        for f in json.load(open(fns_cache, encoding="utf-8")):
+            na = _norm_addr(f["addr"])
+            if na:
+                name_by_addr[na] = f.get("name", "")
+
+    st = {"done": [], "applied": 0, "fail": 0, "skip_noproto": 0,
+          "skip_shape": 0, "skip_nostruct": 0, "skip_done": 0}
+    if os.path.exists(STATE):
+        st = json.load(open(STATE, encoding="utf-8"))
+        print(f"断点续跑: {len(st['done'])} 已处理")
+    done = set(st["done"])
+
+    targets = sorted(
+        (a for a, (c, _) in truth.items() if a and c in struct_ok and a not in done))
+    print(f"待处理: {len(targets)}")
+
+    t0 = time.time()
+    B = 60
+    for base in range(0, len(targets), B):
+        chunk = targets[base:base + B]
+        protos = export_protos(chunk)
+        edits = []
+        for a in chunk:
+            cls, src = truth[a]
+            p = protos.get(a)
+            if not p:
+                st["skip_noproto"] += 1
+                done.add(a)
+                continue
+            proto = (p.get("prototype") or "").strip()
+            if not proto or "__thiscall(" not in proto:
+                st["skip_shape"] += 1
+                done.add(a)
+                continue
+            if f"{cls} *this" in proto:
+                st["skip_done"] += 1
+                done.add(a)
+                continue
+            new_proto = rewrite_this(proto, cls)
+            if new_proto is None or re.search(r"#\d+", new_proto):
+                st["skip_shape"] += 1
+                done.add(a)
+                continue
+            nm = name_by_addr.get(a) or p.get("name") or f"sub_{a}"
+            named = new_proto.replace("__thiscall(", f"__thiscall {nm}(", 1)
+            edits.append({"addr": p["addr"], "ty": name_anon_params(named),
+                          "expect": a})
+        if edits and not args.dry_run:
+            for i in range(0, len(edits), 50):
+                sub = edits[i:i + 50]
+                try:
+                    res = call("type_apply_batch", {"batch": {
+                        "edits": [{k: v for k, v in e.items() if k != "expect"}
+                                  for e in sub]}})
+                    items = res.get("results", []) if isinstance(res, dict) else res
+                    for it in (items if isinstance(items, list) else []):
+                        if it.get("ok"):
+                            st["applied"] += 1
+                        else:
+                            st["fail"] += 1
+                except RuntimeError:
+                    st["fail"] += len(sub)
+        elif edits:
+            st["applied"] += 0
+        for a in chunk:
+            done.add(a)
+        st["done"] = sorted(done)
+        json.dump(st, open(STATE, "w", encoding="utf-8"))
+        n = base + len(chunk)
+        if n % 600 < B:
+            el = time.time() - t0
+            print(f"  {n}/{len(targets)} applied={st['applied']} "
+                  f"fail={st['fail']} ({el:.0f}s)", flush=True)
+
+    if not args.dry_run:
+        call("idb_save", {})
+        print("idb_save 完成")
+    print(f"终态: applied={st['applied']} fail={st['fail']} "
+          f"skip(noproto/shape/done/nostruct)={st['skip_noproto']}/"
+          f"{st['skip_shape']}/{st['skip_done']}/{st['skip_nostruct']}")
+
+
+if __name__ == "__main__":
+    main()

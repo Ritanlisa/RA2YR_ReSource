@@ -870,6 +870,12 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-03**: 全量 this 定型扩容 + 快照重导出（用户驳回 1,062 版后）
+  - 诊断: 真值池 ~10K（ctor_types 1,254 + type_map this 类定型 9,634 其中 8,294 ANCHORED）但只回写了 1,062——sub_4A0380（EnumConnectionsClass ctor, vtable 安装自证）漏网实证
+  - `t14_mass_type.py`: 真值合并（ctor rank3 > type_map 置信度分级）→ struct 门 → 批量回写 + 断点。**~5,500 函数定型, 快照定型覆盖 30% (5,835/19,144)**（原 5.5%）
+  - struct 扩容: 1,204 类声明（链完整 973 + 链断回退 231——class_db members 直建, 无尺寸者按成员末尾对齐推）
+  - 用户例子验证: sub_4A0380 → `EnumConnectionsClass *this` + 12 处 this-> 成员访问（成员名为 field_0xNN 占位——COM 类语义名属 LLM 命名轮）
+  - 快照重导出（写盘加杀毒锁重试）; 教训: **dry-run 不得写断点状态**（污染导致 2,400 函数被跳过）
 - **2026-09-03**: 可携带 IDB 快照导出 — `decompile-results/full_export/`（73MB, 本地不入 git）
   - `tools/type_infer/ida_full_export.py`: 三阶段断点续跑导出器（globals/classes/functions/index）
   - **19,067 函数 100% 导出**（地址头 + IDA 原型 + 汇编含 label/调用目标引用 + Hex-Rays 伪代码行内地址锚点; 10 个反编译失败有纯汇编兜底）, 14 分钟跑完

@@ -74,8 +74,13 @@ def _layout_members(cls, layouts, member_types):
     return sorted(out)
 
 
-def build_decl(cls, layouts, member_types):
-    """全链扁平化 C 声明。返回 (decl, expected_size) 或 (None, 原因)。"""
+def build_decl(cls, layouts, member_types, class_db=None):
+    """全链扁平化 C 声明。返回 (decl, expected_size) 或 (None, 原因)。
+
+    链断类（父不在 layouts, 如 COM 的 IEnumConnections）回退:
+    class_db.members 直建（偏移按原样, 尺寸以 class_db.size 为准）——
+    无链可验证但优于无 struct（无 struct 则 this 回写不落盘）。
+    """
     chain = []
     c = cls
     seen = set()
@@ -83,14 +88,32 @@ def build_decl(cls, layouts, member_types):
         seen.add(c)
         chain.append(c)
         c = layouts[c].get("parent")
-    if not chain or layouts[chain[-1]].get("parent") is not None:
-        return None, "chain-broken"
-    chain.reverse()  # 根 → 叶
-    members = []
-    for ancestor in chain:
-        members.extend(_layout_members(ancestor, layouts, member_types))
-    members.sort(key=lambda x: x[0])
-    total = layouts[cls]["size"]
+    if chain and layouts[chain[-1]].get("parent") is None:
+        chain.reverse()  # 根 → 叶
+        members = []
+        for ancestor in chain:
+            members.extend(_layout_members(ancestor, layouts, member_types))
+        members.sort(key=lambda x: x[0])
+        total = layouts[cls]["size"]
+    else:
+        # 回退: class_db members（member_types/layouts 合并产物）
+        rec = (class_db or {}).get(cls) or {}
+        mem = rec.get("members") or {}
+        if not mem:
+            return None, "chain-broken-no-members"
+        members = []
+        for off_s, m in sorted(mem.items(), key=lambda x: int(x[0])):
+            sz = m.get("size")
+            members.append((int(off_s), m.get("name") or f"field_{int(off_s):X}",
+                            int(sz) if isinstance(sz, int) and sz > 0 else 4,
+                            m.get("type") or ""))
+        members.sort(key=lambda x: x[0])
+        total = rec.get("size") or layouts.get(cls, {}).get("size")
+        if not total:
+            # 无声明尺寸: 成员末尾对齐 4 推
+            end = max(o + (s if isinstance(s, int) and s > 0 else 4)
+                      for o, _, s, _ in members)
+            total = (end + 3) & ~3
     lines, cursor, used_names = [], 0, set()
 
     def uniq(n):
@@ -146,6 +169,8 @@ def main():
 
     layouts = json.load(open(CLASS_LAYOUTS, encoding="utf-8"))
     member_types = json.load(open(MEMBER_TYPES, encoding="utf-8"))
+    class_db = json.load(open(os.path.join(
+        PROJ, "anchors", "class_db.json"), encoding="utf-8"))["classes"]
     classes = json.load(open(STRUCT_CLASSES, encoding="utf-8"))
     if args.only:
         classes = [args.only]
@@ -153,7 +178,7 @@ def main():
     decls = {}
     skipped = {}
     for c in classes:
-        decl, info = build_decl(c, layouts, member_types)
+        decl, info = build_decl(c, layouts, member_types, class_db)
         if decl is None:
             skipped[c] = info
         else:
