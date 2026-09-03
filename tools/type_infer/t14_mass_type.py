@@ -48,7 +48,7 @@ def load_truth(min_conf_rank: int):
         if not (var.endswith(":this")):
             continue
         t = info.get("type", "")
-        if not t or t in ("int", "float", "char*", "VOID_PTR", ""):
+        if not t or t in ("int", "float", "char*", "VOID_PTR", "TOP", ""):
             continue
         conf = info.get("confidence", "")
         if _CONF_RANK.get(conf, 0) < min_conf_rank:

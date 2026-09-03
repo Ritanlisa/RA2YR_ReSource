@@ -877,6 +877,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: CSP 回喂扩容 — 结构真值作为引擎锚, 覆盖 78.5% → **79.2%**（确定性路径）
+  - 新锚文件 `anchors/structural_truth.json`: vtable_install 1,625（离线扫描的二进制自证, rank 3, 补齐 IDA 侧扫描漏掉的模板实例化）+ slot_this 7,010（vtable 槽位 LCA, rank 2; **排除 1,048 个 COMDAT 折叠候选**——同时是安装者+槽位成员的函数是链接器折叠的同码多身份, 唯一性不可判）
+  - 引擎 `_load_structural_anchors` + `_SRC_RANK` 扩展; 重跑: this 定型 9,634→9,911 (+277), **确定性 sha256 双跑一致**, 39 对 TOP 冲突被 T11 暴露（折叠/误归函数的诚实判定, 每对波及 2-8 变量有界, TOP 已排除出回写）
+  - 下游全链重建: class_db → mass_type（applied 262, fail=0）→ 快照 8,579/10,828
+  - 教训: `load_truth`/`existing` 排除表必须含 'TOP'（否则矛盾判定会作为类型名流入回写）
 - **2026-09-03**: 投票通道撤除 + 槽位通道解锁（架构合规化）
   - 通道④整体删除; `t14_mass_type` 冲突规则改为 truth-wins（CSP+二进制为唯一权威）
   - **根因 bug**: `existing` 映射键 `0X`（大写X）vs 查询 `0x`——existing 检查从未生效, 这是已定型函数被投票改写的真正入口; 修复后 vtable 槽位通道解锁（117→8,058 结构真值, this=包含类 LCA）
