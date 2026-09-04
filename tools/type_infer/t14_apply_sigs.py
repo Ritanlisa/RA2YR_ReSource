@@ -115,10 +115,14 @@ def main():
                      for k, v in (params.get(a) or {}).items()
                      if alias.get(v, v) in struct_ok}
             new_proto = proto
-            # 返回段: truth-wins（CSP 权威, 同 mass_type 的 this 通道）
+            # 返回段: truth-wins（CSP 权威）——保留 CC, 带名声明
+            # （无名函数声明不可解析; `__thiscall (` 带空格亦不可）
             if ret_t:
                 ret_cur = new_proto.split("(")[0].strip()
-                new_proto = f"{ret_t} * " + new_proto[len(ret_cur):].lstrip()
+                cc_m = re.search(r"(__\w*call|__userpurge|__usercall)", ret_cur)
+                cc_s = cc_m.group(1) if cc_m else ""
+                head = f"{ret_t} * {cc_s} {nm}" if cc_s else f"{ret_t} * {nm}"
+                new_proto = head + new_proto[len(ret_cur):].lstrip()
             # 参数段: truth-wins
             if par_t:
                 m = re.match(r"^(.*?\()(.*)\)$", new_proto, re.S)
