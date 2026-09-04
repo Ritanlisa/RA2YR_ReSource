@@ -29,15 +29,20 @@ void RegisterAllClasses()
 {
     LOG_INFO("RegisterAllClasses: registering 30+ COM game classes");
 
-    // Locomotor CLSIDs (8 movement types)
-    RegisterClassCOM(CLSID_WalkLocomotion);
-    RegisterClassCOM(CLSID_DriveLocomotion);
-    RegisterClassCOM(CLSID_FlyLocomotion);
-    RegisterClassCOM(CLSID_HoverLocomotion);
-    RegisterClassCOM(CLSID_TunnelLocomotion);
-    RegisterClassCOM(CLSID_DriveLocomotion2);
-    RegisterClassCOM(CLSID_JumpjetLocomotion);
-    RegisterClassCOM(CLSID_ShipLocomotion);
+    // Locomotor CLSIDs (11 movement types), in WinMain's own registration
+    // order -- WinMain builds one TClassFactory per locomotor and passes it
+    // the CLSID at 0x7E9A30..0x7E9AD0.
+    RegisterClassCOM(CLSID_DriveLocomotion);     // WinMain+0x17BC
+    RegisterClassCOM(CLSID_JumpjetLocomotion);   // WinMain+0x17F9
+    RegisterClassCOM(CLSID_HoverLocomotion);     // WinMain+0x1836
+    RegisterClassCOM(CLSID_RocketLocomotion);    // WinMain+0x1873
+    RegisterClassCOM(CLSID_TunnelLocomotion);    // WinMain+0x18B0
+    RegisterClassCOM(CLSID_WalkLocomotion);      // WinMain+0x18ED
+    RegisterClassCOM(CLSID_DropPodLocomotion);   // WinMain+0x192A
+    RegisterClassCOM(CLSID_FlyLocomotion);       // WinMain+0x1967
+    RegisterClassCOM(CLSID_TeleportLocomotion);  // WinMain+0x19A4
+    RegisterClassCOM(CLSID_MechLocomotion);      // WinMain+0x19E1
+    RegisterClassCOM(CLSID_ShipLocomotion);      // WinMain+0x1A1E
 
     // Core object classes
     RegisterClassCOM(CLSID_AbstractClass);
