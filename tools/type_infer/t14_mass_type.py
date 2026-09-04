@@ -97,7 +97,7 @@ def main():
                                               involved[i:i + 50]]})
         for item in (r if isinstance(r, list) else []):
             if item.get("exists") and item.get("is_udt") \
-                    and (item.get("size") or 0) > 8:
+                    and (item.get("size") or 0) >= 4:
                 struct_ok.add(item["name"])
     print(f"struct 门: {len(struct_ok)}/{len(involved)} 类可落盘")
 
