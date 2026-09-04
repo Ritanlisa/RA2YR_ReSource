@@ -31,11 +31,10 @@ STATE = os.path.join(PROJ, ".omo", "t14_mass_type_state.json")
 _RE_IDA_AUTO = re.compile(
     r"^(sub_|nullsub_|j_|loc_|locret_|byte_|word_|dword_|qword_|off_|unk_|asc_|stru_|flt_)",
     re.IGNORECASE)
-_CONF_RANK = {"ANCHORED": 3, "DIRECT_PROP": 2, "CHAIN_PROP": 1, "INFERRED": 1,
-              "ORPHAN": 0}
 
 
-def load_truth(min_conf_rank: int):
+
+def load_truth():
     """函数地址 → (canon 类名, 来源)。
 
     优先级: ctor_types (rank3) > 扩展池 vtable_install/vtable_slot
@@ -50,9 +49,7 @@ def load_truth(min_conf_rank: int):
         t = info.get("type", "")
         if not t or t in ("int", "float", "char*", "VOID_PTR", "TOP", ""):
             continue
-        conf = info.get("confidence", "")
-        if _CONF_RANK.get(conf, 0) < min_conf_rank:
-            continue
+        conf = info.get("confidence", "")  # 仅作报告注记, 不参与判定
         addr = var[:-5]  # strip ':this'
         truth[_norm_addr(addr)] = (t, f"type_map:{conf}")
     # 扩展池（t14_pool_extender 离线产出）——汇编自证优先于传播
@@ -78,16 +75,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--min-conf", default="CHAIN_PROP",
-                    choices=list(_CONF_RANK))
     args = ap.parse_args()
 
-    min_rank = _CONF_RANK[args.min_conf]
-    truth = load_truth(min_rank)
+    truth = load_truth()
     alias_path = os.path.join(PROJ, "anchors", "mangled_alias.json")
     alias = json.load(open(alias_path, encoding="utf-8"))         if os.path.exists(alias_path) else {}
-    print(f"真值池: {len(truth)} 函数 (min_conf={args.min_conf}, "
-          f"alias {len(alias)})")
+    print(f"真值池: {len(truth)} 函数 (alias {len(alias)})")
 
     # struct 门（无 struct 不落盘）——探测全部涉及的类（修饰名先别名化）
     involved = sorted({alias.get(c, c) for c, _ in truth.values()})

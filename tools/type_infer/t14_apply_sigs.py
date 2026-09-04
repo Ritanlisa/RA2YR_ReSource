@@ -27,7 +27,9 @@ from ida_apply_t14 import call  # noqa: E402
 from t14_rollout import export_protos, name_anon_params, _norm_addr  # noqa: E402
 
 STATE = os.path.join(PROJ, ".omo", "t14_apply_sigs_state.json")
-_RE_CRT = re.compile(r"^(\?|__|std_|_STD|_Crt|_Init|Iostream|ios_|Winmain)", re.I)
+# 仅事实性识别: ? 前缀 = 编译器修饰名（CRT/内部件的确定性标识）;
+# 模糊前缀猜测已撤除（会误拦真游戏函数, 同架构裁决）
+_RE_CRT = re.compile(r"^\?")
 
 
 def load_csp_sigs():
