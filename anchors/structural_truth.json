@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_by": "t14_pool_extender v4",
-  "note": "install=寄存器验证主表(rank3); slot=唯一最小LCA(rank2); this_pass=寄存器验证this-传递约束重建(rank2)"
+  "generated_by": "t14_pool_extender v5 (name-normalized indirect calls)",
+  "note": "fixpoint-accumulated (只增不减)"
  },
  "vtable_install": {
   "0x0041FFF0": "AITriggerTypeClass",
@@ -1404,6 +1404,8 @@
   "0x007DCE3B": "_com_error"
  },
  "slot_this": {
+  "0x0058D1C0": "RandomMap",
+  "0x005958E0": "RandomMap",
   "0x004105E0": "AbstractClass",
   "0x004105F0": "AbstractClass",
   "0x00410600": "AbstractClass",
@@ -1421,6 +1423,7 @@
   "0x00771620": "AudioQueue",
   "0x004079C0": "AudioStream",
   "0x00404E70": "AudioStream",
+  "0x004028B0": "AudioStream",
   "0x007BD2D0": "AudioStream",
   "0x00407A30": "AudioStream",
   "0x00407A60": "AudioStream",
@@ -1517,6 +1520,15 @@
   "0x00763A50": "Waypoint"
  },
  "this_pass": {
+  "0x00733160": "AbstractClass",
+  "0x00407450": "ObjectClass",
+  "0x006E6280": "TagTypeClass",
+  "0x006E62B0": "TagTypeClass",
+  "0x00631060": "ObjectClass",
+  "0x0075F4C0": "ObjectClass",
+  "0x004373B0": "XSurface",
+  "0x0057B210": "MapClass",
+  "0x007BF740": "DSurface",
   "0x007258D0": "AbstractClass",
   "0x005B3A00": "TechnoClass",
   "0x00554A60": "LightSourceClass",
@@ -1550,6 +1562,8 @@
   "0x0045AF20": "ILocomotion",
   "0x007049C0": "FootClass",
   "0x00504790": "HouseClass",
+  "0x004F9970": "HouseClass",
+  "0x005018C0": "HouseClass",
   "0x00505360": "VectorClass",
   "0x004FAE50": "HouseClass",
   "0x00691500": "AbstractClass",
@@ -1580,6 +1594,7 @@
   "0x00679A10": "AbstractClass",
   "0x0067BFA0": "VectorClass",
   "0x005D1D80": "ObjectClass",
+  "0x005007A0": "HouseClass",
   "0x006A5130": "SidebarClass",
   "0x006A8420": "ObjectClass",
   "0x00692300": "MouseClass",
