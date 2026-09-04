@@ -878,6 +878,13 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: 局部变量类型回写 IDA（T14-locals）— 10,460 个 lvar 类型落盘 + til 灾后重建
+  - **新工具**: `tools/type_infer/t14_locals.py`（prep: type_map → 工作文件, struct 门 + 冲突标记）+ `t14_locals_ida.py`（驱动: py_exec_file, 断点续跑, 文件追踪 `.omo/t14_trace.log`）
+  - **桥接（确定性）**: 引擎 SSA 节点 `reg_v0xADDR` ↔ Hex-Rays `lvar.defea` 按指令头对齐 + `get_mreg_name` 寄存器匹配; `stack_+N` ↔ `lvar.get_stkoff()` 直接相等。实测桥接率 ~20%（类类型 SSA 值大多是调用前 this 装载, 被 Hex-Rays 折叠进实参不成 lvar——这是结构性上限）
+  - **终态**: 10,562 函数全处理, **10,460 个局部变量类型应用**（5,929 函数）, 0 冲突 / 0 解析失败 / 6 反编译失败; 抽查: this:RulesClass*、DiskLaserClass*/TechnoClass* 局部变量真实渲染, 0x66D530 成员访问 859 处
+  - **三连崩根因（运维教训, 详见 memory）**: ① `vec.lvvec[i]` 是内部存储引用, 持引用跨 clear() 再 push_back = UAF; ② SWIG director (modify_user_lvars 子类) 批处理下崩溃——弃用, 改纯数据 API `restore/push_back/save_user_lvar_settings`; ③ MCP 工具默认 60s 超时, 进程内 `os.environ['IDA_MCP_TOOL_TIMEOUT_SEC']='600'` 解除
+  - **til 灾后重建**: 硬崩溃丢失 335/439 个未落盘 struct 声明 → `t14_structs.py --apply` 全量重声明 1,252 个（幂等, class_layouts 唯一权威）; **idb_save 的 fail==0 门已移除**（60 空类恒 fail 会挡住落盘——这次 til 丢失的放大器）
+  - **协议**: 每批成功后立即 idb_save; 批 2000 函数 ~3s; 验证必须 mark_cfunc_dirty + 重 decompile
 - **2026-09-04**: 深度覆盖分析 + rc_ptr 修复 — 全景图与最大未开发金矿
   - **type_map 全景**: 81,756 个类类型变量——**局部变量 65,167 (79%) 是最大未开发金矿**（ObjectClass 10.9K / VectorClass 5.9K / MouseClass 4.3K…）全部在 CSP 中已定型但未回写 IDA; 成员偏移 5,085 / 全局 512 / return 248 / param 263 也未回写
   - **rc_ptr struct size=1 修复**: 智能指针模板别名声明为空壳→重声明 4B, 16 个函数解锁

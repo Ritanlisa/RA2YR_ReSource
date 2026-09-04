@@ -232,9 +232,10 @@ def main():
     print(f"declare: ok={ok} fail={fail}")
     for c, e in failures[:8]:
         print(f"  FAIL {c}: {e}")
-    if fail == 0:
-        call("idb_save", {})
-        print("idb_save 完成")
+    # 无条件落盘：fail 含 ~60 个空类恒定失败（历史教训——gate 在 fail==0
+    # 上会挡住真实声明的落盘，硬崩溃后 til 声明即丢失）
+    call("idb_save", {})
+    print("idb_save 完成")
 
 
 if __name__ == "__main__":
