@@ -878,6 +878,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: this-传递约束挖掘 + 审计② — thiscall **82%**（9,090/11,054）
+  - **审计②结论**（无新违规）: `filter_type_erasing` 的 `ret_fanout_cap=64` 是对类型擦除 return 的**已知正确约束修剪**（有 IDA 签名真值佐证, `_LIB_EXCEPTION` 白名单仅覆盖库函数, 非统计推断）; 引擎 `sig_reliable` 门（仅 csp_param 通道, 对含 unknown 参数的签名不产生锚）是防 varargs 污染的**输入消毒**, 非认识论门; 两者均保留
+  - **通道③ this-传递约束重建**（非投票）: 已定型函数内经保守寄存器追踪确认 `mov ecx, R`(R∈this别名) + `call T` → T 收到调用方 this → 事实集; `mov ecx, [R+off]` → 查 memberType。类 = 事实集 LCA。无计数/无阈值/无多数决——与被否决投票的区别: 寄存器血缘验证 + 精确集合代数。+123 新真值
+  - 修复 int 键→hex 字符串 bug（json int 键变十进制字符串被 _norm_addr 按十六进制解析到 87M 级错位, 0 受害但 527 事实全丢）
+  - 未定型 thiscall 1,964 终归因: **真无真值 1,446**（B10 前天花板）+ **CSP 有型但应用层丢失 517**（修饰类无 struct ~350 + 原型异形 ~167, 下轮可推）
 - **2026-09-04**: TOP 19 对详查 → 根因全数定位并清零（**TOP=0**）
   - 汇编实证: 19 对冲突全部是离线安装扫描的**假阳性**——`mov [reg], offset vt` 的 reg 不是 this: 0x772080 装表进新分配成员([eax])、0x7656D0 装进栈出参([esi]=arg)、0x43BCF0 BuildingClass ctor 给 passengers 成员装表; 连带此前 101 个"多主表互不相关折叠"也全是误判
   - 修复: 通道①加**保守线性寄存器追踪**（别名集={ecx} 入口; mov R,ecx 传播; 任何其它写/call 后 caller-saved 失效; 分支路径的写按地址序同样视为失效——宁弃证据不纳假证）, 安装 1,532→1,398
