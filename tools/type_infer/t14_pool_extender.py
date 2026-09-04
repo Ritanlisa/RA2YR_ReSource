@@ -73,29 +73,68 @@ def main():
         rec = db.get(c) or {}
         return set(rec.get("full_ancestors") or [c]) | {c}
 
-    # ── 通道 1: 主表安装扫描 ──
+    # ── 通道 1: 主表安装扫描 + 保守寄存器追踪 ──
+    # 仅当安装目标寄存器可证明别名入口 this(ecx) 时才算自证:
+    #   mov R, ecx → R 加入别名集; R 的任何其它写（mov R,X / lea / xor…
+    #   以及 call 后的 caller-saved eax/ecx/edx 失效）→ R 移出。
+    # 分支路径上的写在地址序下同样视为失效（保守: 宁弃证据不纳假证）。
+    # 19 个 TOP 冲突的汇编实证: 安装目标多为新分配成员([eax])、栈出参
+    # ([esi]=arg) 等, 与 this 无关。
+    CALLER_SAVED = {"eax", "ecx", "edx"}
+    _RE_MOV_R = re.compile(
+        r"\w+:\s+(mov|lea|xor|or|and|add|sub|imul|cdq|pop)\s+(\w+),")
+    _RE_CALL = re.compile(r"\w+:\s+call\b")
     primaries = defaultdict(set)  # addr -> {canon classes}
-    for fn in os.listdir(SNAP):
+    cur = None
+    aliases = set()
+    for fn in sorted(os.listdir(SNAP)):
         if not fn.endswith(".cpp"):
             continue
-        cur = None
         with open(os.path.join(SNAP, fn), encoding="utf-8") as f:
             for ln in f:
                 m = _RE_ADDR_LINE.match(ln)
                 if m:
                     cur = m.group(1).upper()
+                    aliases = {"ecx"}  # 入口 this
                     continue
-                if cur is None or "offset " not in ln:
+                if cur is None:
                     continue
+                # vtable 安装: [R] 且 R ∈ 别名集 → this 自证
                 dm = _RE_VT_PRIMARY.search(ln)
-                if not dm:
+                if dm and dm.group(1) in aliases:
+                    canon = demangle_to_canon(dm.group(2).rstrip(";,"),
+                                              r2c, canon_ns)
+                    if canon:
+                        primaries[cur].add(canon)
                     continue
-                # 排除次表: 操作数显式带位移在正则里已不匹配
-                canon = demangle_to_canon(dm.group(2).rstrip(";,"), r2c,
-                                          canon_ns)
-                if canon:
-                    primaries[cur].add(canon)
-    print(f"通道1 主表安装: {len(primaries)} 函数")
+                # call: caller-saved 失效
+                if _RE_CALL.search(ln):
+                    aliases -= CALLER_SAVED
+                    continue
+                # 寄存器写: mov R, ecx → 获得别名; 其它写 → 失去
+                wm = _RE_MOV_R.search(ln)
+                if wm:
+                    op, dst = wm.group(1), wm.group(2).lower()
+                    if dst not in ("esp", "ebp"):
+                        if op == "mov" and dst in aliases:
+                            pass  # mov R, ecx 保留
+                        elif op == "mov":
+                            # 判定源: 纯 ecx → 别名传递; 否则失效
+                            src_m = re.search(r",\s*(\w+)\s*$",
+                                              ln.split(";", 1)[0])
+                            if src_m and src_m.group(1).lower() in aliases:
+                                aliases.add(dst)
+                            else:
+                                aliases.discard(dst)
+                        else:
+                            aliases.discard(dst)
+                        if op == "mov":
+                            src_m = re.search(r",\s*(\w+)\s*$",
+                                              ln.split(";", 1)[0])
+                            if src_m and src_m.group(1).lower() == "ecx" \
+                                    and dst not in ("esp", "ebp"):
+                                aliases.add(dst)
+    print(f"通道1 主表安装(寄存器验证): {len(primaries)} 函数")
 
     # ── 通道 2: vtable 槽位归属数据 ──
     slot_classes = defaultdict(set)
