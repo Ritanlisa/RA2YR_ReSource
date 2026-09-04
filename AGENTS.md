@@ -878,6 +878,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: 深度覆盖分析 + rc_ptr 修复 — 全景图与最大未开发金矿
+  - **type_map 全景**: 81,756 个类类型变量——**局部变量 65,167 (79%) 是最大未开发金矿**（ObjectClass 10.9K / VectorClass 5.9K / MouseClass 4.3K…）全部在 CSP 中已定型但未回写 IDA; 成员偏移 5,085 / 全局 512 / return 248 / param 263 也未回写
+  - **rc_ptr struct size=1 修复**: 智能指针模板别名声明为空壳→重声明 4B, 16 个函数解锁
+  - **thiscall 未覆盖精归因**: 1,336 csp_owner 无类信息(多为 void) + 294 修饰类无布局(50 有 members 可建) + 130 合法名无布局 + 91 应用层丢失(rc_ptr 16 + Function::NNN 名字 ~25 + ProgressScreen 等无 struct ~50) + 101 真天花板
+  - **结论**: CSP 求解层面已定型 81,756 个变量; 回写层面只落了 this(10,061); **下一步最大收益 = 局部变量类型回写 IDA**（65K × LLM 命名轮输入质量飞跃）
 - **2026-09-04**: 间接调用纳入 CSP + fixpoint 迭代 — thiscall **82%**（9,105/11,057）, this 定型 10,061
   - **间接调用模式普查**: call reg 2,196 / push offset func 4,962 / call ds:off 78 / call [reg] 已有 CALL_VTABLE
   - **名称规范化修复（关键 bug）**: IDA 反汇编显示 `Class__Method`(双下划线) 但函数名是 `Class::Method`(双冒号)——name_to_addr 匹配率从 21%→66%, +1,257 新命中; 通道③间接调用目标大幅扩充
