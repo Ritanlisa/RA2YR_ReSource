@@ -136,6 +136,107 @@ def main():
                                 aliases.add(dst)
     print(f"通道1 主表安装(寄存器验证): {len(primaries)} 函数")
 
+    # ── 通道 3: this-传递约束重建（CALL_ARG 缺失边挖掘, 非投票）──
+    # 已定型函数内, 经保守寄存器追踪确认的 `mov ecx, R`(R∈this别名集)
+    # + `call T` → T 收到调用方 this → 事实(T ← callerClass)。
+    # `mov ecx, [R+off]` → T 收到成员对象 → 事实(T ← memberType)。
+    # T 的类 = 全部事实的 LCA; 事实不一致（无 LCA）→ 弃（约束冲突, 交引擎 T11）。
+    # 无计数/无阈值/无多数决——与被否决的投票通道的区别: 寄存器血缘
+    # 验证 + 精确集合代数。
+    name_to_addr = {}
+    fcache = os.path.join(PROJ, ".omo", "full_export_funcs.json")
+    if os.path.exists(fcache):
+        for f in json.load(open(fcache, encoding="utf-8")):
+            try:
+                name_to_addr[f.get("name", "")] = int(f["addr"], 16)
+            except (ValueError, KeyError):
+                pass
+    # 成员类型表: (class, off) -> type
+    member_ty = {}
+    for cname, rec in db.items():
+        for off_s, mm in (rec.get("members") or {}).items():
+            t = (mm.get("type") or "").rstrip("*").strip()
+            if t and t in canon_ns:
+                try:
+                    member_ty[(cname, int(off_s))] = t
+                except ValueError:
+                    pass
+
+    pass_facts = defaultdict(set)   # target addr -> {canon classes}
+    _RE_CALL_ANY = re.compile(
+        r"\w+:\s+call (?:ds:)?([\w:$?@<>]+)")
+    _RE_WR = re.compile(
+        r"\w+:\s+(mov|lea|xor|or|and|add|sub|imul|pop)\s+(\w+),")
+    _RE_MOV_ECX = re.compile(r"\w+:\s+mov ecx, (.+?)(?:\s*;|$)")
+    cur_cls = None
+    aliases = set()
+    pending_ecx = None  # (src_form, off|None)——下一条 call 消费
+    for fn in sorted(os.listdir(SNAP)):
+        if not fn.endswith(".cpp"):
+            continue
+        cur_cls = None
+        aliases = set()
+        pending_ecx = None
+        with open(os.path.join(SNAP, fn), encoding="utf-8") as f:
+            for ln in f:
+                m = _RE_ADDR_LINE.match(ln)
+                if m:
+                    cur_cls = None
+                    aliases = {"ecx"}
+                    pending_ecx = None
+                    continue
+                code = ln.split(";", 1)[0] if ln.startswith("//") and "//   " in ln else None
+                if code is None:
+                    pm2 = re.match(r"// proto: \S+ __thiscall\((\w+) \*this", ln)
+                    if pm2:
+                        t = pm2.group(1)
+                        cur_cls = t if t in canon_ns else None
+                    # 非代码行也检查 proto
+                    continue
+                if cur_cls is None:
+                    continue
+                cm = _RE_CALL_ANY.search(code)
+                if cm:
+                    if pending_ecx is not None:
+                        tgt = name_to_addr.get(cm.group(1))
+                        if tgt is None:
+                            rm = re.search(r"; -> (\S+)", ln)
+                            tgt = name_to_addr.get(rm.group(1).rstrip(";,")) if rm else None
+                        if tgt is not None:
+                            form, off = pending_ecx
+                            if form == "reg":
+                                pass_facts[tgt].add(cur_cls)
+                            elif off is not None:
+                                mt = member_ty.get((cur_cls, off))
+                                if mt:
+                                    pass_facts[tgt].add(mt)
+                    pending_ecx = None
+                    aliases -= CALLER_SAVED
+                    continue
+                em = _RE_MOV_ECX.search(code)
+                if em:
+                    src = em.group(1).strip()
+                    sm = re.match(r"^([a-z]{2,3})$", src)
+                    if sm and sm.group(1) in aliases:
+                        pending_ecx = ("reg", None)
+                    else:
+                        mm2 = re.match(r"^\[([a-z]{2,3})\+([0-9A-Fa-f]+)h?\]$", src)
+                        if mm2 and mm2.group(1) in aliases:
+                            pending_ecx = ("mem", int(mm2.group(2), 16))
+                        else:
+                            pending_ecx = None
+                    continue
+                wm = _RE_WR.search(code)
+                if wm:
+                    op, dst = wm.group(1), wm.group(2).lower()
+                    if dst in ("esp", "ebp"):
+                        continue
+                    src_m = re.search(r",\s*(\w+)\s*$", code)
+                    if op == "mov" and src_m and src_m.group(1).lower() in aliases:
+                        aliases.add(dst)
+                    else:
+                        aliases.discard(dst)
+
     # ── 通道 2: vtable 槽位归属数据 ──
     slot_classes = defaultdict(set)
     for cls, rec in db.items():
@@ -156,6 +257,23 @@ def main():
         existing.add(f"0x{int(k, 16):08X}")
 
     pool = {}
+
+    n_pass = 0
+    for addr_int, facts in pass_facts.items():
+        addr = f"0x{addr_int:08X}"  # int 键 → 统一 "0xXXXXXXXX"
+        if addr in existing or addr in pool or not facts:
+            continue
+        if len(facts) == 1:
+            pool[addr] = {"class": next(iter(facts)),
+                          "source": "this_pass", "evidence": sorted(facts)}
+            n_pass += 1
+        else:
+            lca = unique_lca(facts, ancestors_of)
+            if lca:
+                pool[addr] = {"class": lca, "source": "this_pass",
+                              "evidence": sorted(facts)}
+                n_pass += 1
+    print(f"通道3 this-传递: {n_pass} (事实集目标 {len(pass_facts)})")
     n_vt = n_fold = n_slot = n_amb = 0
     # 通道 1 入池: 主表类集合的 LCA
     for addr, classes in primaries.items():

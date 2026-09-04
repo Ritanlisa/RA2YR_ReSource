@@ -652,7 +652,8 @@ class TypeInferenceEngine:
                 st = json.load(f)
             for section, src_name in (("vtable_install",
                                        "structural_vtable_install"),
-                                      ("slot_this", "structural_slot")):
+                                      ("slot_this", "structural_slot"),
+                                      ("this_pass", "structural_slot")):
                 for addr_str, cls in (st.get(section) or {}).items():
                     lattice_type = self._to_lattice_type(cls, valid_classes)
                     if lattice_type is None or lattice_type in (VOID_PTR, TOP):
