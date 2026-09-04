@@ -878,6 +878,12 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-04**: 间接调用纳入 CSP + fixpoint 迭代 — thiscall **82%**（9,105/11,057）, this 定型 10,061
+  - **间接调用模式普查**: call reg 2,196 / push offset func 4,962 / call ds:off 78 / call [reg] 已有 CALL_VTABLE
+  - **名称规范化修复（关键 bug）**: IDA 反汇编显示 `Class__Method`(双下划线) 但函数名是 `Class::Method`(双冒号)——name_to_addr 匹配率从 21%→66%, +1,257 新命中; 通道③间接调用目标大幅扩充
+  - **通道③扩展**: call reg 经保守寄存器追踪解析目标后走 this-传递; call ds:off 读全局值解析; 46% 命中率提升使 fact 集从 674 增至更大覆盖
+  - **Fixpoint 迭代器**: pool→truth→engine→class_db 循环至收敛（只增不减累积 truth; 3 轮即稳）; 防 truth 覆盖导致的锚丢失振荡
+  - 终态: thiscall **82%**, this 定型 10,061, TOP=0, 快照重导
 - **2026-09-04**: this-传递约束挖掘 + 审计② — thiscall **82%**（9,090/11,054）
   - **审计②结论**（无新违规）: `filter_type_erasing` 的 `ret_fanout_cap=64` 是对类型擦除 return 的**已知正确约束修剪**（有 IDA 签名真值佐证, `_LIB_EXCEPTION` 白名单仅覆盖库函数, 非统计推断）; 引擎 `sig_reliable` 门（仅 csp_param 通道, 对含 unknown 参数的签名不产生锚）是防 varargs 污染的**输入消毒**, 非认识论门; 两者均保留
   - **通道③ this-传递约束重建**（非投票）: 已定型函数内经保守寄存器追踪确认 `mov ecx, R`(R∈this别名) + `call T` → T 收到调用方 this → 事实集; `mov ecx, [R+off]` → 查 memberType。类 = 事实集 LCA。无计数/无阈值/无多数决——与被否决投票的区别: 寄存器血缘验证 + 精确集合代数。+123 新真值

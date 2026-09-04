@@ -19,16 +19,16 @@
    "with_vtable": 521,
    "with_layout": 1013,
    "with_methods": 646,
-   "with_observed_member_types": 136,
+   "with_observed_member_types": 139,
    "with_singletons": 17,
    "with_type_stats": 657,
-   "observed_member_entries": 1292,
+   "observed_member_entries": 1312,
    "methods_total": 8070,
    "csp_owned_methods": 4849,
    "checks": {
     "vtable_no_rtti": 0,
     "rtti_no_header_layout": 244,
-    "member_overrun_size": 287
+    "member_overrun_size": 288
    }
   }
  },
@@ -24588,12 +24588,12 @@
     }
    },
    "type_stats": {
-    "var_count": 4542,
+    "var_count": 4567,
     "confidence": {
-     "ANCHORED": 2733,
-     "CHAIN_PROP": 1082,
-     "DIRECT_PROP": 581,
-     "INFERRED": 45,
+     "ANCHORED": 2747,
+     "CHAIN_PROP": 1086,
+     "DIRECT_PROP": 586,
+     "INFERRED": 47,
      "ORPHAN": 101
     }
    }
@@ -72553,6 +72553,14 @@
      "evidence": [
       "member_types"
      ]
+    },
+    "364": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 4,
@@ -73461,7 +73469,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "ObjectClass"
      ]
     },
     "212": {
@@ -73522,11 +73534,11 @@
     }
    },
    "type_stats": {
-    "var_count": 26,
+    "var_count": 36,
     "confidence": {
-     "ANCHORED": 21,
-     "DIRECT_PROP": 4,
-     "CHAIN_PROP": 1
+     "CHAIN_PROP": 7,
+     "DIRECT_PROP": 7,
+     "ANCHORED": 22
     }
    }
   },
@@ -134978,6 +134990,14 @@
      "evidence": [
       "type_map_observed"
      ]
+    },
+    "1548": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 1,
@@ -134989,12 +135009,12 @@
     }
    },
    "type_stats": {
-    "var_count": 3481,
+    "var_count": 3479,
     "confidence": {
      "DIRECT_PROP": 361,
      "ANCHORED": 1633,
-     "CHAIN_PROP": 1460,
-     "INFERRED": 27
+     "CHAIN_PROP": 1459,
+     "INFERRED": 26
     }
    }
   },
@@ -156373,11 +156393,11 @@
     }
    },
    "type_stats": {
-    "var_count": 128,
+    "var_count": 124,
     "confidence": {
      "DIRECT_PROP": 36,
      "ANCHORED": 54,
-     "ORPHAN": 27,
+     "ORPHAN": 23,
      "CHAIN_PROP": 11
     }
    }
@@ -175202,9 +175222,9 @@
     }
    },
    "type_stats": {
-    "var_count": 367,
+    "var_count": 368,
     "confidence": {
-     "ANCHORED": 238,
+     "ANCHORED": 239,
      "DIRECT_PROP": 58,
      "CHAIN_PROP": 58,
      "INFERRED": 13
@@ -265703,13 +265723,13 @@
     }
    },
    "type_stats": {
-    "var_count": 1275,
+    "var_count": 1258,
     "confidence": {
-     "CHAIN_PROP": 289,
-     "ANCHORED": 577,
-     "DIRECT_PROP": 302,
+     "CHAIN_PROP": 284,
+     "ANCHORED": 570,
+     "DIRECT_PROP": 301,
      "ORPHAN": 87,
-     "INFERRED": 20
+     "INFERRED": 16
     }
    }
   },
@@ -274038,6 +274058,16 @@
     "IUnknown"
    ],
    "members": {
+    "0": {
+     "observed_types": [
+      "AnimClass",
+      "IUnknown",
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "56": {
      "observed_types": [
       "BombClass"
@@ -274064,16 +274094,6 @@
     },
     "36": {
      "observed_types": [
-      "ObjectClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "0": {
-     "observed_types": [
-      "AnimClass",
-      "IUnknown",
       "ObjectClass"
      ],
      "evidence": [
@@ -323874,10 +323894,10 @@
     }
    },
    "type_stats": {
-    "var_count": 28,
+    "var_count": 26,
     "confidence": {
-     "ANCHORED": 14,
-     "DIRECT_PROP": 11,
+     "ANCHORED": 13,
+     "DIRECT_PROP": 10,
      "CHAIN_PROP": 3
     }
    }
@@ -327942,6 +327962,30 @@
     "804": {
      "observed_types": [
       "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "112": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "160": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "164": {
+     "observed_types": [
+      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -335509,11 +335553,11 @@
     }
    },
    "type_stats": {
-    "var_count": 158,
+    "var_count": 241,
     "confidence": {
-     "ANCHORED": 85,
-     "DIRECT_PROP": 30,
-     "CHAIN_PROP": 31,
+     "ANCHORED": 152,
+     "DIRECT_PROP": 41,
+     "CHAIN_PROP": 36,
      "INFERRED": 12
     }
    }
@@ -374823,7 +374867,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "ObjectClass"
      ]
     },
     "32": {
@@ -375068,6 +375116,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "ObjectClass",
       "ScoreScreen"
      ]
     },
@@ -375286,6 +375335,19 @@
       "type_map_observed"
      ]
     },
+    "0": {
+     "observed_types": [
+      "AbstractClass",
+      "BuildingTypeClass",
+      "CCINIClass",
+      "CoordStruct",
+      "ObjectClass",
+      "ScenarioClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "472": {
      "observed_types": [
       "INIClass"
@@ -375314,19 +375376,6 @@
      "observed_types": [
       "CoordStruct",
       "Voice"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "0": {
-     "observed_types": [
-      "AbstractClass",
-      "BuildingTypeClass",
-      "CCINIClass",
-      "CoordStruct",
-      "ObjectClass",
-      "ScenarioClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -375366,6 +375415,15 @@
       "type_map_observed"
      ]
     },
+    "72": {
+     "observed_types": [
+      "AudioController",
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "64": {
      "observed_types": [
       "TagClass"
@@ -375391,15 +375449,15 @@
       "type_map_observed"
      ]
     },
-    "72": {
+    "92": {
      "observed_types": [
-      "AudioController"
+      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
-    "92": {
+    "1": {
      "observed_types": [
       "ObjectClass"
      ],
@@ -375553,6 +375611,14 @@
      ]
     },
     "1168": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "960": {
      "observed_types": [
       "ObjectClass"
      ],
@@ -391891,13 +391957,13 @@
     }
    },
    "type_stats": {
-    "var_count": 11267,
+    "var_count": 13190,
     "confidence": {
-     "CHAIN_PROP": 2422,
-     "INFERRED": 225,
-     "ANCHORED": 6029,
-     "DIRECT_PROP": 2384,
-     "ORPHAN": 207
+     "CHAIN_PROP": 2709,
+     "INFERRED": 257,
+     "ANCHORED": 6799,
+     "DIRECT_PROP": 2701,
+     "ORPHAN": 724
     }
    }
   },
@@ -472708,6 +472774,14 @@
       "type_map_observed"
      ]
     },
+    "0": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "5312": {
      "observed_types": [
       "AudioController"
@@ -488228,14 +488302,94 @@
       "member_types"
      ],
      "confidence": "ANCHORED"
+    },
+    "0": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "392": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "420": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "448": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "476": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "504": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "532": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "560": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "588": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "616": {
+     "observed_types": [
+      "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "type_stats": {
-    "var_count": 325,
+    "var_count": 332,
     "confidence": {
-     "ANCHORED": 244,
+     "ANCHORED": 249,
      "CHAIN_PROP": 31,
-     "DIRECT_PROP": 49,
+     "DIRECT_PROP": 51,
      "INFERRED": 1
     }
    }
@@ -504428,13 +504582,12 @@
     }
    },
    "type_stats": {
-    "var_count": 62,
+    "var_count": 60,
     "confidence": {
      "ANCHORED": 31,
      "CHAIN_PROP": 20,
      "DIRECT_PROP": 8,
-     "INFERRED": 1,
-     "ORPHAN": 2
+     "INFERRED": 1
     }
    }
   },
@@ -522186,11 +522339,11 @@
     }
    },
    "type_stats": {
-    "var_count": 912,
+    "var_count": 859,
     "confidence": {
-     "CHAIN_PROP": 175,
-     "ANCHORED": 612,
-     "DIRECT_PROP": 121,
+     "CHAIN_PROP": 172,
+     "ANCHORED": 568,
+     "DIRECT_PROP": 115,
      "INFERRED": 4
     }
    }
@@ -614150,10 +614303,10 @@
    "type_stats": {
     "var_count": 190,
     "confidence": {
-     "ANCHORED": 103,
+     "ANCHORED": 101,
      "DIRECT_PROP": 64,
      "CHAIN_PROP": 21,
-     "ORPHAN": 2
+     "ORPHAN": 4
     }
    }
   },
@@ -619131,11 +619284,11 @@
     }
    },
    "type_stats": {
-    "var_count": 70,
+    "var_count": 74,
     "confidence": {
-     "ANCHORED": 29,
+     "ANCHORED": 31,
      "ORPHAN": 10,
-     "DIRECT_PROP": 21,
+     "DIRECT_PROP": 23,
      "INFERRED": 2,
      "CHAIN_PROP": 8
     }
@@ -765496,12 +765649,12 @@
     }
    },
    "type_stats": {
-    "var_count": 232,
+    "var_count": 62,
     "confidence": {
-     "CHAIN_PROP": 105,
-     "INFERRED": 18,
-     "DIRECT_PROP": 53,
-     "ANCHORED": 56
+     "DIRECT_PROP": 20,
+     "CHAIN_PROP": 17,
+     "ANCHORED": 18,
+     "INFERRED": 7
     }
    }
   },
@@ -815848,10 +816001,10 @@
     }
    },
    "type_stats": {
-    "var_count": 334,
+    "var_count": 335,
     "confidence": {
      "DIRECT_PROP": 37,
-     "ANCHORED": 220,
+     "ANCHORED": 221,
      "CHAIN_PROP": 77
     }
    }
