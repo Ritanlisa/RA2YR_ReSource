@@ -878,6 +878,14 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-05**: 6 个反编译失败根因修复 + B10/B10b 提取器激活 — 反编译质量飞跃
+  - **6 失败函数归因（全部修复, 6/6 可反编译）**: ① 5 个因被调方挂着 `__userpurge` 垃圾签名（`int@<ebx>`/`int@<ebp>` 寄存器参数注解）——调用方按普通约定压栈, Hex-Rays 调用分析调和失败报 "call analysis failed"(hf -12)。修复: 删垃圾类型 + 按 CSP 类归属 + frame argsize 挂正确 thiscall 签名（TechnoTypeClass::SaveLoad_Prefix_0 / BuildingClass::ValidateFoundation_0 / Frame::Present）; ② CIpow_Helper(0x7C8FD2) 因 CRT 错误蹦床 `__startTwoArgErrorHandling` 读 `[ebp+arg_10]`（深栈访问）且无 FUNC_NORET——补 noreturn 旗标 + `void __noreturn()` 类型
+  - **EXTRACT_ONLY 模式**（ida_extract.py）: 阶段 1-4（只读提取）+ 三导出后即返回, 跳过阶段 5-8 旧 AC-3 求解器与 IDB 变异（防止旧类型污染 CSP 化的 IDB）; 环境变量 `T14X_EXTRACT_ONLY=1` 触发
+  - **MCP 长任务新通道**: 客户端 30s fetch 超时会触发服务端 cancel_event 从 profiler 抛 CancelledError 杀掉执行——**长提取改用 idat.exe 无头副本方案**（复制 .i64 → `T14X_EXTRACT_ONLY=1 idat -A -S<script> copy.i64`, 只读等价, ~100s 完成）
+  - **B10/B10b 终态**: 约束 978K→**1,195K**; RETURN_TO 25,366 条裸 eax 枢纽 → **83,473 条全调用点作用域化** (`{caller}::eax_v{addr}`); B10 返回源边 563 条 (ASSIGN src→_RET, 旧 0)
+  - **引擎重跑**: type_map 656K→**729,681** 条; SSA 类类型 67,837→**101,627 (+50%)**; 栈槽类类型 2,113→**8,966 (4.2×)**; this 真值 10,061→10,742; **TOP=0 保持**
+  - **下游全链**: verify_csp 七通道 ALL PASS; class_db 1,557 类; mass_type +32 this 落盘; t14_locals 全量重刷 12,061 函数 **+7,904 新 lvar 类型**（累计 ~18.4K）
+  - **质量抽查**: 0x532150 类指针局部变量 0→**120**/176; 0x712170 7→46; 0x66D530 5→105, 成员访问 878 处——return 通道打通后调用结果定义点（lvar defea 主力）被类型化
 - **2026-09-04**: 局部变量类型回写 IDA（T14-locals）— 10,460 个 lvar 类型落盘 + til 灾后重建
   - **新工具**: `tools/type_infer/t14_locals.py`（prep: type_map → 工作文件, struct 门 + 冲突标记）+ `t14_locals_ida.py`（驱动: py_exec_file, 断点续跑, 文件追踪 `.omo/t14_trace.log`）
   - **桥接（确定性）**: 引擎 SSA 节点 `reg_v0xADDR` ↔ Hex-Rays `lvar.defea` 按指令头对齐 + `get_mreg_name` 寄存器匹配; `stack_+N` ↔ `lvar.get_stkoff()` 直接相等。实测桥接率 ~20%（类类型 SSA 值大多是调用前 this 装载, 被 Hex-Rays 折叠进实参不成 lvar——这是结构性上限）
