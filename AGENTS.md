@@ -878,6 +878,11 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-05 (晚)**: struct 门终局 — 最小 struct 解锁 202 个 vtable 类（215→13）
+  - **归因修正**: 前报"204 空壳"探测用错字段名——实测 **202/215 携带 vtable**（`?$Blit*` 无状态仿函数族 + Command 命令类族, RTTI 验证表地址）; 多态对象偏移 0 必有 vptr = 与 ctor 安装锚同级的 rank-3 二进制自证
+  - **t14_minimal_structs.py**: `struct X { void *vfptr; };`（4B 下界声明, 零发明——无数据成员类即完整布局, 有未观测成员类为合法下界）; 202 声明 0 失败; `?$BlitXlat@G → BlitXlat_G` 别名 +146
+  - **struct 门 459→661 类**（覆盖 119,106 变量）, 缺口 215→**13**; locals +467（累计 ~19.7K）
+  - **终局 13 类归因**: 5 枚举名（Action/Armor/CellFlags/LandType/Layer——类别错误, 应走 enum 声明非 struct）+ 1 数组伪类型（bool[14]）+ 7 零观测小结构（OwnedTiberiumStruct/LineTrail 等——需 IDA 字段级 xref 考古或 YRpp 源对照, 离线证据范畴外）
 - **2026-09-05 (傍晚)**: mass_type 双 CC bug 修复 + struct 门归因与补建
   - **双 CC 根因**: `__cdecl`/`__pascal` 不以 "call" 结尾——原清洗正则 `__\w*call` 从未匹配到它们（`wchar_t *__cdecl __thiscall` 紧贴形 + 无空格双杀）; CC 集显式枚举 `__(?:\w*call|cdecl|pascal)` 修复, fail=3→0
   - **CRT 折叠体防线**: 127 个 COMDAT 折叠 CRT 符号携带类 `:this`（折叠体的 vtable 安装属原始类, CRT 名下应用即错）——mass_type 名字门扩展到单下划线前缀（`_wcscat` 家族漏网入口）
