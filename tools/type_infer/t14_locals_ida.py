@@ -62,7 +62,18 @@ def is_class_ptr_str(s):
 _TIF_CACHE = {}
 
 
+_ALIAS_MAP = {}
+try:
+    with open(ROOT + r'\anchors\mangled_alias.json', 'r', encoding='utf-8') as _af:
+        _ALIAS_MAP = json.load(_af)
+except OSError:
+    pass
+
+
 def tif_for(cls_name):
+    # `@` 嵌套类名（Selection@WorldDominationTour）在 C 语法里非法——
+    # 经 anchors/mangled_alias.json 映射为合法别名 struct
+    cls_name = _ALIAS_MAP.get(cls_name, cls_name)
     key = cls_name + ' *'
     tif = _TIF_CACHE.get(key)
     if tif is None:
