@@ -1060,7 +1060,7 @@ def _i2_ret_edge(prev_mnem, prev_ops, ea, func_addr_str):
             "addr": f"0x{ea:X}",
             "null_const": True,
         }
-    if prev_mnem in ("mov", "movzx", "movsx", "lea", "add", "sub"):
+    if prev_mnem in ("mov", "movzx", "movsx", "lea", "add", "sub", "pop"):
         _null = (
             prev_mnem == "mov"
             and dst == "eax"
@@ -3160,6 +3160,131 @@ def _run_main():
                 # 后返回（多返回点非末尾模式）；xor/sub eax,eax NULL_CONST 特例
                 # 保持。判定逻辑在 _i2_ret_edge（纯函数，离线可测）。
                 _c_ret = _i2_ret_edge(prev_mnem, prev_ops, ea, func_addr_str)
+                # B11a (call 转发): `call X; ret` 包装模式——eax 即 X 的返回值，
+                # RETURN 边 + {X}.return → _RET 转发链。包装函数（每个虚方法
+                # 的非虚外壳、CRT 包装）的主要返回形态。
+                if (
+                    _c_ret is None
+                    and prev_mnem == "call"
+                    and prev_ea != idaapi.BADADDR
+                ):
+                    try:
+                        _ins11 = ida_ua.insn_t()
+                        if ida_ua.decode_insn(_ins11, prev_ea) and _ins11.ops[0].type in (
+                            ida_ua.o_near,
+                            ida_ua.o_far,
+                        ):
+                            _tgt11 = _ins11.ops[0].addr
+                            _pf11 = ida_funcs.get_func(_tgt11)
+                            if _pf11 and _pf11.start_ea == _tgt11 and _tgt11 != fstart:
+                                _c_ret = {
+                                    "from": f"0x{ea:X}_RET",
+                                    "to": f"{func_addr_str}.return",
+                                    "type": "RETURN",
+                                    "addr": f"0x{ea:X}",
+                                    "null_const": False,
+                                }
+                                constraints.append(
+                                    {
+                                        "from": f"0x{_tgt11:08X}.return",
+                                        "to": f"0x{ea:X}_RET",
+                                        "type": "ASSIGN",
+                                        "addr": f"0x{prev_ea:X}",
+                                    }
+                                )
+                                RUN_MANIFEST["b11_call_forward"] = (
+                                    RUN_MANIFEST.get("b11_call_forward", 0) + 1
+                                )
+                    except Exception:
+                        pass
+                # B11c (有界回走): prev 不是 eax 写点时向后找最近定义。
+                # 跳过不写 eax 的指令（test/cmp/mov other-reg/...），
+                # xref 守卫：任何被代码引用的地址（分支目标）处停止——
+                # 分支落入窗口会使 eax 溯源歧义。命中写点 → RETURN + 源边；
+                # 命中 call → B11a 转发。窗口 8 条指令。
+                if (
+                    _c_ret is None
+                    and prev_mnem != "call"
+                    and prev_ea != idaapi.BADADDR
+                ):
+                    try:
+                        _wa = prev_ea
+                        for _ in range(8):
+                            if _wa < fstart:
+                                break
+                            _wm = idc.print_insn_mnem(_wa)
+                            if _wm in ("nop", "int3"):
+                                _wa = idc.prev_head(_wa, fstart)
+                                continue
+                            # 分支目标守卫（含 call 目标落在窗口内的情形）
+                            if ida_xref.get_first_cref_to(_wa) != idaapi.BADADDR:
+                                break
+                            if _wm == "call":
+                                _ins11c = ida_ua.insn_t()
+                                if ida_ua.decode_insn(_ins11c, _wa) and _ins11c.ops[0].type in (
+                                    ida_ua.o_near,
+                                    ida_ua.o_far,
+                                ):
+                                    _t11c = _ins11c.ops[0].addr
+                                    _pf11c = ida_funcs.get_func(_t11c)
+                                    if _pf11c and _pf11c.start_ea == _t11c and _t11c != fstart:
+                                        _c_ret = {
+                                            "from": f"0x{ea:X}_RET",
+                                            "to": f"{func_addr_str}.return",
+                                            "type": "RETURN",
+                                            "addr": f"0x{ea:X}",
+                                            "null_const": False,
+                                        }
+                                        constraints.append(
+                                            {
+                                                "from": f"0x{_t11c:08X}.return",
+                                                "to": f"0x{ea:X}_RET",
+                                                "type": "ASSIGN",
+                                                "addr": f"0x{_wa:X}",
+                                            }
+                                        )
+                                        RUN_MANIFEST["b11_walkback_call"] = (
+                                            RUN_MANIFEST.get("b11_walkback_call", 0) + 1
+                                        )
+                                break
+                            _w0 = (idc.print_operand(_wa, 0) or "").strip().lower()
+                            _w1 = (idc.print_operand(_wa, 1) or "").strip()
+                            if _w0 == "eax":
+                                _c_ret = _i2_ret_edge(
+                                    _wm, [_w0, _w1] if _w1 else [_w0], ea, func_addr_str
+                                )
+                                if _c_ret:
+                                    if (
+                                        not _c_ret.get("null_const")
+                                        and _wm in ("mov", "lea", "movzx", "movsx")
+                                    ):
+                                        _rsrc = None
+                                        try:
+                                            _rsrc = _parse_operand_src(_wa, 1, scope=fstart)
+                                        except Exception:
+                                            _rsrc = None
+                                        if (
+                                            _rsrc
+                                            and _rsrc[0] in ("global", "member", "stack", "reg")
+                                            and _rsrc[1]
+                                        ):
+                                            constraints.append(
+                                                {
+                                                    "from": _rsrc[1],
+                                                    "to": f"0x{ea:X}_RET",
+                                                    "type": "ASSIGN",
+                                                    "addr": f"0x{_wa:X}",
+                                                }
+                                            )
+                                    RUN_MANIFEST["b11_walkback_def"] = (
+                                        RUN_MANIFEST.get("b11_walkback_def", 0) + 1
+                                    )
+                                break
+                            if _wm in ("ret", "retn", "jmp", "leave", "push") or _wm.startswith("j"):
+                                break
+                            _wa = idc.prev_head(_wa, fstart)
+                    except Exception:
+                        pass
                 if _c_ret:
                     if (
                         _c_ret.get("null_const") is False
@@ -3170,34 +3295,42 @@ def _run_main():
                             RUN_MANIFEST.get("return_edges_extended_i2", 0) + 1
                         )
                     c = _c_ret
-                    # B10 (return 通道源接通): `mov/lea eax,<src>; ret` 的操作数
-                    # 身份此前被丢弃——RETURN 边的 0xADDR_RET 源是无入边的死
-                    # 节点,.return 结构性饥饿（7515 有类型 .return 仅 36 类类
-                    # 型）。补 ASSIGN(src → _RET) 让返回表达式真实入流。只接
-                    # global/member（可锚定身份）；reg/stack 裸名是跨函数汇流
-                    # 枢纽，接入等于污染。add/sub 是算术加工值，源不代返回语
-                    # 义，不接。
+                    # B11b (return 源全接通): reg/stack 裸名不再是禁区——
+                    # 引擎 scope_vars 对全部边端点按 addr 做 SSA 化
+                    # （bisect 最近写点/函数作用域栈名），B10 时代排除
+                    # reg/stack 是引擎 SSA 机制确认前的保守。add/sub 算术
+                    # 加工值源不代返回语义，仍不接；pop 的源是弹栈动作，
+                    # 无操作数可解析，仅产 RETURN 边。
                     if (
                         not _c_ret.get("null_const")
-                        and prev_mnem in ("mov", "lea")
+                        and prev_mnem in ("mov", "lea", "movzx", "movsx")
                         and prev_ea != idaapi.BADADDR
                     ):
                         try:
                             _rsrc = _parse_operand_src(prev_ea, 1, scope=fstart)
                         except Exception:
                             _rsrc = None
-                        if _rsrc and _rsrc[0] in ("global", "member") and _rsrc[1]:
+                        if (
+                            _rsrc
+                            and _rsrc[0] in ("global", "member", "stack", "reg")
+                            and _rsrc[1]
+                        ):
                             constraints.append(
                                 {
                                     "from": _rsrc[1],
                                     "to": f"0x{ea:X}_RET",
                                     "type": "ASSIGN",
-                                    "addr": f"0x{ea:X}",
+                                    "addr": f"0x{prev_ea:X}",
                                 }
                             )
-                            RUN_MANIFEST["return_src_edges_b10"] = (
-                                RUN_MANIFEST.get("return_src_edges_b10", 0) + 1
-                            )
+                            if _rsrc[0] in ("global", "member"):
+                                RUN_MANIFEST["return_src_edges_b10"] = (
+                                    RUN_MANIFEST.get("return_src_edges_b10", 0) + 1
+                                )
+                            else:
+                                RUN_MANIFEST["b11_src_edges_regstack"] = (
+                                    RUN_MANIFEST.get("b11_src_edges_regstack", 0) + 1
+                                )
 
             if (
                 mnem == "test"
@@ -3428,6 +3561,60 @@ def _run_main():
             ea = idc.next_head(ea, end)
             if ea == idaapi.BADADDR:
                 break
+
+    # B12 (param 入口绑定补全, 后置遍历): 调用方 CALL_ARG 证据 (paramN) 与
+    # 被调方 FUNC_PARAM 绑定不对称（调用方推 param1 20K 次 vs 被调方绑定 4K
+    # 函数）——被调方帧分析系统性少计参数（varargs/未读参数无帧痕迹）。
+    # 对 max(caller param idx) > 已绑定数的函数补发 paramN → 参数槽 边，
+    # 让调用方类型证据流入被调方局部读。fastcall 跳过（寄存器参数不计
+    # 槽位，推参编号与槽位错位）。
+    try:
+        _re_cp = re.compile(r"^(0x[0-9A-Fa-f]+)::param(\d+)$")
+        _caller_max = {}
+        _bound = {}
+        for c in constraints:
+            if c.get("type") == "CALL_ARG":
+                m = _re_cp.match(c.get("to", ""))
+                if m:
+                    f, i = m.group(1), int(m.group(2))
+                    if i > _caller_max.get(f, -1):
+                        _caller_max[f] = i
+            elif c.get("type") == "FUNC_PARAM":
+                m = _re_cp.match(c.get("from", ""))
+                if m:
+                    f, i = m.group(1), int(m.group(2))
+                    if i > _bound.get(f, -1):
+                        _bound[f] = i
+        _b12_added = 0
+        for f, mx in sorted(_caller_max.items()):
+            if mx <= _bound.get(f, -1):
+                continue
+            try:
+                fea = int(f, 16)
+            except ValueError:
+                continue
+            if func_real_cc.get(f) == ida_typeinf.CM_CC_FASTCALL:
+                continue
+            fn12 = ida_funcs.get_func(fea)
+            if not fn12 or fn12.start_ea != fea:
+                continue
+            _hf12 = bool(fn12.flags & 0x100)
+            _frs12 = fn12.frsize
+            for pi in range(_bound.get(f, -1) + 1, mx + 1):
+                constraints.append(
+                    {
+                        "from": f"{f}::param{pi}",
+                        "to": _a2_param_slot_name(_frs12, _hf12, pi),
+                        "type": "FUNC_PARAM",
+                        "addr": f,
+                    }
+                )
+                _b12_added += 1
+        RUN_MANIFEST["b12_param_bindings_added"] = _b12_added
+        if _b12_added:
+            print(f"  B12: param entry bindings added: {_b12_added}")
+    except Exception:
+        traceback.print_exc()
 
     print(f"  Extracted {len(constraints)} fine-grained constraints.")
 

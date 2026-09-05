@@ -19,16 +19,16 @@
    "with_vtable": 521,
    "with_layout": 1035,
    "with_methods": 646,
-   "with_observed_member_types": 274,
+   "with_observed_member_types": 281,
    "with_singletons": 17,
    "with_type_stats": 657,
-   "observed_member_entries": 2863,
+   "observed_member_entries": 2989,
    "methods_total": 8070,
    "csp_owned_methods": 4849,
    "checks": {
     "vtable_no_rtti": 0,
     "rtti_no_header_layout": 225,
-    "member_overrun_size": 320
+    "member_overrun_size": 323
    }
   }
  },
@@ -10990,11 +10990,12 @@
     }
    },
    "type_stats": {
-    "var_count": 12,
+    "var_count": 13,
     "confidence": {
      "DIRECT_PROP": 4,
      "CHAIN_PROP": 5,
-     "ANCHORED": 3
+     "ANCHORED": 3,
+     "INFERRED": 1
     }
    }
   },
@@ -11287,11 +11288,25 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "152": {
      "observed_types": [
+      "BaseClass",
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "160": {
+     "observed_types": [
+      "BaseClass",
       "ObjectClass"
      ],
      "evidence": [
@@ -11300,6 +11315,7 @@
     },
     "168": {
      "observed_types": [
+      "BaseClass",
       "ObjectClass"
      ],
      "evidence": [
@@ -11308,15 +11324,32 @@
     },
     "172": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
-    "100": {
+    "176": {
      "observed_types": [
-      "INIClass"
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "220": {
+     "observed_types": [
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "224": {
+     "observed_types": [
+      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -17341,6 +17374,7 @@
       "AbstractClass",
       "BuildingClass",
       "BuildingTypeClass",
+      "CCINIClass",
       "IUnknown",
       "MapClass",
       "ObjectClass",
@@ -18097,6 +18131,22 @@
      "observed_types": [
       "ObjectClass",
       "TechnoClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1728": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3980": {
+     "observed_types": [
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -26293,12 +26343,12 @@
     }
    },
    "type_stats": {
-    "var_count": 9305,
+    "var_count": 9594,
     "confidence": {
-     "ANCHORED": 5085,
-     "DIRECT_PROP": 2052,
-     "CHAIN_PROP": 1879,
-     "INFERRED": 254,
+     "ANCHORED": 4989,
+     "DIRECT_PROP": 2070,
+     "CHAIN_PROP": 2158,
+     "INFERRED": 342,
      "ORPHAN": 35
     }
    }
@@ -32045,12 +32095,12 @@
     }
    },
    "type_stats": {
-    "var_count": 239,
+    "var_count": 274,
     "confidence": {
-     "CHAIN_PROP": 96,
-     "DIRECT_PROP": 83,
-     "ANCHORED": 58,
-     "INFERRED": 2
+     "CHAIN_PROP": 118,
+     "INFERRED": 4,
+     "DIRECT_PROP": 87,
+     "ANCHORED": 65
     }
    }
   },
@@ -39793,11 +39843,12 @@
     }
    },
    "type_stats": {
-    "var_count": 195,
+    "var_count": 202,
     "confidence": {
      "ANCHORED": 95,
      "DIRECT_PROP": 57,
-     "CHAIN_PROP": 43
+     "CHAIN_PROP": 47,
+     "INFERRED": 3
     }
    }
   },
@@ -39951,7 +40002,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "504": {
@@ -45369,11 +45424,11 @@
     }
    },
    "type_stats": {
-    "var_count": 177,
+    "var_count": 178,
     "confidence": {
      "DIRECT_PROP": 58,
      "ANCHORED": 93,
-     "CHAIN_PROP": 26
+     "CHAIN_PROP": 27
     }
    }
   },
@@ -51976,6 +52031,30 @@
      "evidence": [
       "member_types"
      ]
+    },
+    "40": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "48": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "52": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 9,
@@ -56454,9 +56533,33 @@
     "0x771a30"
    ],
    "members": {
+    "24": {
+     "observed_types": [
+      "MSVQAnim"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "28": {
      "observed_types": [
       "Anim@Voices@WorldDominationTour"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4": {
+     "observed_types": [
+      "MSVQAnim"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "8": {
+     "observed_types": [
+      "MSVQAnim"
      ],
      "evidence": [
       "type_map_observed"
@@ -56850,7 +56953,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "ProgressScreenClass"
      ]
     },
     "1032": {
@@ -56914,7 +57021,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AbstractClass"
      ]
     },
     "184": {
@@ -56978,6 +57089,7 @@
     },
     "260": {
      "observed_types": [
+      "BaseClass",
       "IUnknown"
      ],
      "evidence": [
@@ -57020,6 +57132,7 @@
     },
     "392": {
      "observed_types": [
+      "AbstractClass",
       "IUnknown"
      ],
      "evidence": [
@@ -57028,6 +57141,7 @@
     },
     "400": {
      "observed_types": [
+      "BaseClass",
       "CoordStruct"
      ],
      "evidence": [
@@ -57122,6 +57236,22 @@
       "type_map_observed"
      ]
     },
+    "208": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "252": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "264": {
      "observed_types": [
       "IUnknown"
@@ -57130,9 +57260,73 @@
       "type_map_observed"
      ]
     },
+    "100": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "164": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "540": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "20": {
+     "observed_types": [
+      "WinModemClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "48": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "56": {
+     "observed_types": [
+      "WinModemClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "64": {
+     "observed_types": [
+      "NullModemConnClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "88": {
+     "observed_types": [
+      "WinModemClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -67175,13 +67369,13 @@
     }
    },
    "type_stats": {
-    "var_count": 641,
+    "var_count": 1380,
     "confidence": {
-     "DIRECT_PROP": 151,
-     "ANCHORED": 356,
-     "INFERRED": 36,
-     "CHAIN_PROP": 86,
-     "ORPHAN": 12
+     "DIRECT_PROP": 251,
+     "CHAIN_PROP": 399,
+     "ANCHORED": 585,
+     "INFERRED": 86,
+     "ORPHAN": 59
     }
    }
   },
@@ -68319,7 +68513,8 @@
     },
     "736": {
      "observed_types": [
-      "AbstractTypeClass"
+      "AbstractTypeClass",
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -68354,6 +68549,14 @@
     "788": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "100": {
+     "observed_types": [
+      "AnimClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -74329,11 +74532,7 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types",
-      "type_map_observed"
-     ],
-     "observed_types": [
-      "MixFileClass"
+      "member_types"
      ]
     }
    },
@@ -74453,12 +74652,12 @@
     }
    },
    "type_stats": {
-    "var_count": 138,
+    "var_count": 113,
     "confidence": {
-     "CHAIN_PROP": 64,
-     "DIRECT_PROP": 19,
-     "ANCHORED": 50,
-     "INFERRED": 5
+     "CHAIN_PROP": 50,
+     "DIRECT_PROP": 17,
+     "ANCHORED": 42,
+     "INFERRED": 4
     }
    }
   },
@@ -74591,13 +74790,13 @@
     }
    },
    "type_stats": {
-    "var_count": 452,
+    "var_count": 459,
     "confidence": {
      "DIRECT_PROP": 94,
-     "CHAIN_PROP": 112,
+     "CHAIN_PROP": 115,
      "ANCHORED": 182,
-     "ORPHAN": 35,
-     "INFERRED": 29
+     "INFERRED": 33,
+     "ORPHAN": 35
     }
    }
   },
@@ -75534,10 +75733,10 @@
     }
    },
    "type_stats": {
-    "var_count": 70,
+    "var_count": 72,
     "confidence": {
      "DIRECT_PROP": 8,
-     "CHAIN_PROP": 17,
+     "CHAIN_PROP": 19,
      "ANCHORED": 32,
      "INFERRED": 13
     }
@@ -76327,7 +76526,7 @@
    "members": {
     "16": {
      "observed_types": [
-      "BombClass"
+      "ModemGame"
      ],
      "evidence": [
       "type_map_observed"
@@ -76771,12 +76970,13 @@
     }
    },
    "type_stats": {
-    "var_count": 28,
+    "var_count": 710,
     "confidence": {
-     "CHAIN_PROP": 15,
-     "DIRECT_PROP": 6,
-     "ANCHORED": 6,
-     "INFERRED": 1
+     "DIRECT_PROP": 159,
+     "CHAIN_PROP": 406,
+     "INFERRED": 16,
+     "ANCHORED": 110,
+     "ORPHAN": 19
     }
    }
   },
@@ -77697,10 +77897,10 @@
     }
    },
    "type_stats": {
-    "var_count": 8,
+    "var_count": 9,
     "confidence": {
      "ANCHORED": 5,
-     "DIRECT_PROP": 2,
+     "DIRECT_PROP": 3,
      "CHAIN_PROP": 1
     }
    }
@@ -78036,9 +78236,9 @@
     }
    },
    "type_stats": {
-    "var_count": 17,
+    "var_count": 18,
     "confidence": {
-     "CHAIN_PROP": 9,
+     "CHAIN_PROP": 10,
      "DIRECT_PROP": 5,
      "ANCHORED": 3
     }
@@ -82879,7 +83079,7 @@
     },
     "24": {
      "observed_types": [
-      "BombClass"
+      "ModemGame"
      ],
      "evidence": [
       "type_map_observed"
@@ -83124,7 +83324,7 @@
     },
     "24": {
      "observed_types": [
-      "BombClass"
+      "ModemGame"
      ],
      "evidence": [
       "type_map_observed"
@@ -83207,12 +83407,12 @@
     }
    },
    "type_stats": {
-    "var_count": 495,
+    "var_count": 507,
     "confidence": {
-     "CHAIN_PROP": 100,
-     "ANCHORED": 290,
-     "DIRECT_PROP": 95,
-     "INFERRED": 10
+     "CHAIN_PROP": 97,
+     "ANCHORED": 299,
+     "DIRECT_PROP": 99,
+     "INFERRED": 12
     }
    }
   },
@@ -87936,12 +88136,12 @@
     }
    },
    "type_stats": {
-    "var_count": 463,
+    "var_count": 286,
     "confidence": {
-     "DIRECT_PROP": 104,
-     "CHAIN_PROP": 137,
+     "DIRECT_PROP": 60,
      "INFERRED": 11,
-     "ANCHORED": 206,
+     "CHAIN_PROP": 115,
+     "ANCHORED": 95,
      "ORPHAN": 5
     }
    }
@@ -90884,7 +91084,6 @@
      "observed_types": [
       "AbstractClass",
       "BuildingClass",
-      "HouseClass",
       "IUnknown",
       "ObjectClass",
       "VectorClass"
@@ -90907,7 +91106,7 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "RadarClass",
+      "IUnknown",
       "TechnoClass"
      ]
     },
@@ -100040,6 +100239,8 @@
      ],
      "cc": "thiscall",
      "name": "BuildingClass::ClearLimpetCheck",
+     "return_type": "TechnoClass",
+     "return_confidence": "INFERRED",
      "csp_owner": "TechnoClass"
     },
     "0x00459DC0": {
@@ -102509,12 +102710,12 @@
     }
    },
    "type_stats": {
-    "var_count": 1830,
+    "var_count": 1824,
     "confidence": {
-     "ANCHORED": 1091,
-     "DIRECT_PROP": 329,
-     "CHAIN_PROP": 341,
-     "INFERRED": 69
+     "ANCHORED": 1094,
+     "DIRECT_PROP": 331,
+     "CHAIN_PROP": 338,
+     "INFERRED": 61
     }
    }
   },
@@ -102700,6 +102901,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "ParticleSystemTypeClass"
      ]
     },
@@ -102754,6 +102956,14 @@
     "204": {
      "observed_types": [
       "BuildingLightClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "188": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -121007,12 +121217,12 @@
     }
    },
    "type_stats": {
-    "var_count": 3172,
+    "var_count": 3190,
     "confidence": {
-     "ANCHORED": 1994,
-     "DIRECT_PROP": 490,
-     "INFERRED": 62,
-     "CHAIN_PROP": 421,
+     "ANCHORED": 1996,
+     "DIRECT_PROP": 495,
+     "INFERRED": 65,
+     "CHAIN_PROP": 429,
      "ORPHAN": 205
     }
    }
@@ -131263,11 +131473,12 @@
     }
    },
    "type_stats": {
-    "var_count": 138,
+    "var_count": 146,
     "confidence": {
-     "CHAIN_PROP": 44,
+     "CHAIN_PROP": 47,
      "ANCHORED": 63,
-     "DIRECT_PROP": 31
+     "DIRECT_PROP": 31,
+     "INFERRED": 5
     }
    }
   },
@@ -137263,12 +137474,12 @@
     }
    },
    "type_stats": {
-    "var_count": 202,
+    "var_count": 207,
     "confidence": {
-     "ANCHORED": 114,
+     "ANCHORED": 115,
      "DIRECT_PROP": 43,
-     "CHAIN_PROP": 44,
-     "INFERRED": 1
+     "CHAIN_PROP": 45,
+     "INFERRED": 4
     }
    }
   },
@@ -137322,13 +137533,9 @@
      "size": 1,
      "evidence": [
       "class_layouts",
-      "member_types",
-      "type_map_observed"
+      "member_types"
      ],
-     "confidence": "ANCHORED",
-     "observed_types": [
-      "CCINIClass"
-     ]
+     "confidence": "ANCHORED"
     },
     "69": {
      "name": "padding45",
@@ -137392,7 +137599,7 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "RandomStruct"
+      "CCINIClass"
      ]
     },
     "540": {
@@ -137427,16 +137634,6 @@
       "type_map_observed"
      ]
     },
-    "40": {
-     "observed_types": [
-      "CCINIClass",
-      "ObjectClass",
-      "wchar_t"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "0": {
      "observed_types": [
       "CCINIClass",
@@ -137445,6 +137642,16 @@
       "ObjectClass",
       "Tactical",
       "VectorClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "40": {
+     "observed_types": [
+      "CCINIClass",
+      "ObjectClass",
+      "wchar_t"
      ],
      "evidence": [
       "type_map_observed"
@@ -137461,38 +137668,13 @@
     "12": {
      "observed_types": [
       "AnimClass",
-      "CCINIClass",
-      "RandomStruct"
+      "CCINIClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
     "44": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "4412": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "32": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "96": {
      "observed_types": [
       "CCINIClass"
      ],
@@ -138148,6 +138330,14 @@
       "type_map_observed"
      ]
     },
+    "7280": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "4696": {
      "observed_types": [
       "Tactical"
@@ -138206,7 +138396,7 @@
     },
     "1548": {
      "observed_types": [
-      "ObjectClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -138246,13 +138436,13 @@
     }
    },
    "type_stats": {
-    "var_count": 17363,
+    "var_count": 16858,
     "confidence": {
-     "ANCHORED": 8479,
-     "DIRECT_PROP": 3494,
-     "CHAIN_PROP": 4874,
-     "INFERRED": 512,
-     "ORPHAN": 4
+     "ANCHORED": 8108,
+     "DIRECT_PROP": 3433,
+     "CHAIN_PROP": 4815,
+     "INFERRED": 500,
+     "ORPHAN": 2
     }
    }
   },
@@ -140128,7 +140318,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "IUnknown"
      ]
     },
     "0": {
@@ -140517,12 +140711,12 @@
     }
    },
    "type_stats": {
-    "var_count": 50,
+    "var_count": 58,
     "confidence": {
+     "CHAIN_PROP": 21,
+     "DIRECT_PROP": 13,
      "ANCHORED": 14,
-     "CHAIN_PROP": 15,
-     "INFERRED": 9,
-     "DIRECT_PROP": 12
+     "INFERRED": 10
     }
    }
   },
@@ -143316,6 +143510,7 @@
     },
     "668": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -143324,6 +143519,7 @@
     },
     "152": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -148167,11 +148363,11 @@
     }
    },
    "type_stats": {
-    "var_count": 34,
+    "var_count": 56,
     "confidence": {
-     "ANCHORED": 18,
-     "DIRECT_PROP": 13,
-     "CHAIN_PROP": 3
+     "CHAIN_PROP": 22,
+     "ANCHORED": 19,
+     "DIRECT_PROP": 15
     }
    }
   },
@@ -148579,12 +148775,12 @@
     }
    },
    "type_stats": {
-    "var_count": 1662,
+    "var_count": 1888,
     "confidence": {
-     "DIRECT_PROP": 328,
-     "ANCHORED": 808,
-     "CHAIN_PROP": 501,
-     "INFERRED": 23,
+     "DIRECT_PROP": 371,
+     "ANCHORED": 934,
+     "CHAIN_PROP": 557,
+     "INFERRED": 24,
      "ORPHAN": 2
     }
    }
@@ -148604,7 +148800,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "CampaignScore"
      ]
     },
     "64": {
@@ -148612,7 +148812,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "CampaignScore"
      ]
     },
     "80": {
@@ -148620,7 +148824,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "CampaignScore"
      ]
     },
     "96": {
@@ -148628,7 +148836,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "CampaignScore"
      ]
     }
    },
@@ -149019,7 +149231,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "8": {
@@ -154492,12 +154708,12 @@
     }
    },
    "type_stats": {
-    "var_count": 44,
+    "var_count": 45,
     "confidence": {
      "DIRECT_PROP": 4,
      "CHAIN_PROP": 4,
      "ANCHORED": 35,
-     "INFERRED": 1
+     "INFERRED": 2
     }
    }
   },
@@ -159665,12 +159881,12 @@
     }
    },
    "type_stats": {
-    "var_count": 199,
+    "var_count": 202,
     "confidence": {
      "ANCHORED": 115,
      "DIRECT_PROP": 58,
-     "CHAIN_PROP": 22,
-     "INFERRED": 4
+     "CHAIN_PROP": 23,
+     "INFERRED": 6
     }
    }
   },
@@ -159780,6 +159996,14 @@
       "type_map_observed"
      ]
     },
+    "0": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "364": {
      "observed_types": [
       "wchar_t"
@@ -159804,9 +160028,17 @@
       "type_map_observed"
      ]
     },
+    "708": {
+     "observed_types": [
+      "AnimClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "688": {
      "observed_types": [
-      "AbstractClass",
       "TextLabelClass"
      ],
      "evidence": [
@@ -159816,14 +160048,6 @@
     "692": {
      "observed_types": [
       "TextLabelClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "36": {
-     "observed_types": [
-      "AbstractClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -159839,13 +160063,13 @@
     }
    },
    "type_stats": {
-    "var_count": 1611,
+    "var_count": 1558,
     "confidence": {
-     "CHAIN_PROP": 262,
-     "DIRECT_PROP": 199,
-     "ANCHORED": 1114,
-     "ORPHAN": 20,
-     "INFERRED": 16
+     "CHAIN_PROP": 236,
+     "DIRECT_PROP": 185,
+     "ANCHORED": 1102,
+     "ORPHAN": 17,
+     "INFERRED": 18
     }
    }
   },
@@ -165521,12 +165745,12 @@
     }
    },
    "type_stats": {
-    "var_count": 172,
+    "var_count": 256,
     "confidence": {
-     "CHAIN_PROP": 66,
-     "ANCHORED": 47,
-     "DIRECT_PROP": 40,
-     "INFERRED": 1,
+     "CHAIN_PROP": 94,
+     "ANCHORED": 83,
+     "DIRECT_PROP": 59,
+     "INFERRED": 2,
      "ORPHAN": 18
     }
    }
@@ -172129,7 +172353,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "IUnknown"
      ]
     },
     "2": {
@@ -172179,6 +172407,14 @@
     "48": {
      "observed_types": [
       "CampaignScore"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "64": {
+     "observed_types": [
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -173559,6 +173795,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "36": {
+     "observed_types": [
+      "ControlClass"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     }
    },
@@ -176154,13 +176398,13 @@
     }
    },
    "type_stats": {
-    "var_count": 331,
+    "var_count": 351,
     "confidence": {
-     "CHAIN_PROP": 104,
+     "CHAIN_PROP": 115,
      "DIRECT_PROP": 74,
-     "INFERRED": 22,
+     "INFERRED": 25,
      "ANCHORED": 63,
-     "ORPHAN": 68
+     "ORPHAN": 74
     }
    }
   },
@@ -176216,12 +176460,12 @@
     }
    },
    "type_stats": {
-    "var_count": 815,
+    "var_count": 806,
     "confidence": {
-     "ANCHORED": 497,
-     "DIRECT_PROP": 181,
-     "INFERRED": 3,
-     "CHAIN_PROP": 134
+     "ANCHORED": 485,
+     "DIRECT_PROP": 180,
+     "INFERRED": 5,
+     "CHAIN_PROP": 136
     }
    }
   },
@@ -178653,7 +178897,7 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "ObjectClass"
+      "IUnknown"
      ]
     },
     "1300": {
@@ -178817,11 +179061,11 @@
     }
    },
    "type_stats": {
-    "var_count": 279,
+    "var_count": 290,
     "confidence": {
-     "ANCHORED": 152,
-     "DIRECT_PROP": 71,
-     "CHAIN_PROP": 43,
+     "ANCHORED": 156,
+     "DIRECT_PROP": 73,
+     "CHAIN_PROP": 48,
      "INFERRED": 13
     }
    }
@@ -183227,6 +183471,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "12": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     },
     "40": {
@@ -191881,12 +192133,12 @@
     }
    },
    "type_stats": {
-    "var_count": 142,
+    "var_count": 147,
     "confidence": {
      "DIRECT_PROP": 31,
      "ANCHORED": 62,
-     "CHAIN_PROP": 44,
-     "INFERRED": 5
+     "CHAIN_PROP": 46,
+     "INFERRED": 8
     }
    }
   },
@@ -196031,12 +196283,13 @@
     }
    },
    "type_stats": {
-    "var_count": 107,
+    "var_count": 129,
     "confidence": {
-     "CHAIN_PROP": 41,
-     "DIRECT_PROP": 32,
-     "ANCHORED": 31,
-     "INFERRED": 3
+     "CHAIN_PROP": 50,
+     "DIRECT_PROP": 35,
+     "ANCHORED": 34,
+     "INFERRED": 6,
+     "ORPHAN": 4
     }
    }
   },
@@ -199713,6 +199966,23 @@
     "8": {
      "observed_types": [
       "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "28": {
+     "observed_types": [
+      "AnimClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1": {
+     "observed_types": [
+      "SessionClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -214492,12 +214762,12 @@
     }
    },
    "type_stats": {
-    "var_count": 5669,
+    "var_count": 5710,
     "confidence": {
-     "DIRECT_PROP": 2013,
-     "CHAIN_PROP": 1495,
-     "ANCHORED": 2037,
-     "INFERRED": 64,
+     "DIRECT_PROP": 2014,
+     "CHAIN_PROP": 1515,
+     "ANCHORED": 2054,
+     "INFERRED": 67,
      "ORPHAN": 60
     }
    }
@@ -214859,11 +215129,11 @@
     }
    },
    "type_stats": {
-    "var_count": 102,
+    "var_count": 105,
     "confidence": {
-     "DIRECT_PROP": 30,
+     "DIRECT_PROP": 31,
      "CHAIN_PROP": 15,
-     "ANCHORED": 57
+     "ANCHORED": 59
     }
    }
   },
@@ -215059,6 +215329,22 @@
       "member_types"
      ],
      "confidence": "ANCHORED"
+    },
+    "40": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "44": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 9,
@@ -222287,12 +222573,12 @@
     }
    },
    "type_stats": {
-    "var_count": 67,
+    "var_count": 96,
     "confidence": {
-     "INFERRED": 13,
-     "CHAIN_PROP": 21,
-     "DIRECT_PROP": 14,
-     "ANCHORED": 19
+     "CHAIN_PROP": 43,
+     "INFERRED": 16,
+     "DIRECT_PROP": 15,
+     "ANCHORED": 22
     }
    }
   },
@@ -222912,6 +223198,14 @@
       "type_map_observed"
      ]
     },
+    "90154": {
+     "observed_types": [
+      "CampaignScore"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "1312": {
      "observed_types": [
       "IUnknown"
@@ -223285,9 +223579,10 @@
     }
    },
    "type_stats": {
-    "var_count": 14,
+    "var_count": 15,
     "confidence": {
      "CHAIN_PROP": 6,
+     "INFERRED": 1,
      "DIRECT_PROP": 5,
      "ANCHORED": 3
     }
@@ -223620,7 +223915,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "IUnknown"
      ]
     },
     "88": {
@@ -223681,6 +223980,7 @@
     },
     "0": {
      "observed_types": [
+      "AnimClass",
       "IUnknown"
      ],
      "evidence": [
@@ -227929,11 +228229,11 @@
     }
    },
    "type_stats": {
-    "var_count": 113,
+    "var_count": 114,
     "confidence": {
      "ANCHORED": 55,
      "DIRECT_PROP": 33,
-     "CHAIN_PROP": 24,
+     "CHAIN_PROP": 25,
      "INFERRED": 1
     }
    }
@@ -229343,11 +229643,12 @@
     }
    },
    "type_stats": {
-    "var_count": 15,
+    "var_count": 16,
     "confidence": {
      "CHAIN_PROP": 6,
      "DIRECT_PROP": 5,
-     "ANCHORED": 4
+     "ANCHORED": 4,
+     "INFERRED": 1
     }
    }
   },
@@ -229532,11 +229833,12 @@
     }
    },
    "type_stats": {
-    "var_count": 14,
+    "var_count": 15,
     "confidence": {
      "CHAIN_PROP": 5,
      "DIRECT_PROP": 5,
-     "ANCHORED": 4
+     "ANCHORED": 4,
+     "INFERRED": 1
     }
    }
   },
@@ -231986,6 +232288,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ]
     },
@@ -232047,6 +232350,7 @@
     },
     "48": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232055,6 +232359,7 @@
     },
     "60": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232063,6 +232368,7 @@
     },
     "64": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232079,6 +232385,7 @@
     },
     "72": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232087,6 +232394,7 @@
     },
     "76": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232103,6 +232411,7 @@
     },
     "88": {
      "observed_types": [
+      "BaseClass",
       "HouseClass"
      ],
      "evidence": [
@@ -232145,6 +232454,14 @@
     "0": {
      "observed_types": [
       "BuildingClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "84": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -236729,11 +237046,12 @@
     }
    },
    "type_stats": {
-    "var_count": 68,
+    "var_count": 69,
     "confidence": {
      "ANCHORED": 32,
      "DIRECT_PROP": 23,
-     "CHAIN_PROP": 13
+     "CHAIN_PROP": 13,
+     "INFERRED": 1
     }
    }
   },
@@ -239316,6 +239634,14 @@
     "680": {
      "observed_types": [
       "ILocomotion"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1412": {
+     "observed_types": [
+      "AbstractClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -251218,13 +251544,13 @@
     }
    },
    "type_stats": {
-    "var_count": 1379,
+    "var_count": 1405,
     "confidence": {
-     "ANCHORED": 609,
-     "DIRECT_PROP": 360,
-     "CHAIN_PROP": 343,
-     "INFERRED": 43,
-     "ORPHAN": 24
+     "ANCHORED": 610,
+     "DIRECT_PROP": 361,
+     "CHAIN_PROP": 352,
+     "INFERRED": 57,
+     "ORPHAN": 25
     }
    }
   },
@@ -253011,9 +253337,9 @@
     }
    },
    "type_stats": {
-    "var_count": 41,
+    "var_count": 42,
     "confidence": {
-     "INFERRED": 8,
+     "INFERRED": 9,
      "CHAIN_PROP": 12,
      "DIRECT_PROP": 11,
      "ANCHORED": 10
@@ -254641,7 +254967,8 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "ControlClass"
+      "ControlClass",
+      "DropListClass"
      ]
     },
     "21": {
@@ -254686,6 +255013,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "DropListClass",
       "GadgetClass"
      ]
     },
@@ -254727,6 +255055,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "29": {
+     "observed_types": [
+      "GadgetClass"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     },
     "36": {
@@ -257247,12 +257583,12 @@
     }
    },
    "type_stats": {
-    "var_count": 280,
+    "var_count": 289,
     "confidence": {
-     "DIRECT_PROP": 88,
-     "ANCHORED": 110,
-     "CHAIN_PROP": 69,
-     "INFERRED": 10,
+     "DIRECT_PROP": 89,
+     "ANCHORED": 111,
+     "CHAIN_PROP": 74,
+     "INFERRED": 12,
      "ORPHAN": 3
     }
    }
@@ -258760,11 +259096,12 @@
     }
    },
    "type_stats": {
-    "var_count": 19,
+    "var_count": 20,
     "confidence": {
      "DIRECT_PROP": 6,
      "ANCHORED": 6,
-     "CHAIN_PROP": 7
+     "CHAIN_PROP": 7,
+     "INFERRED": 1
     }
    }
   },
@@ -258867,10 +259204,10 @@
     }
    },
    "type_stats": {
-    "var_count": 24,
+    "var_count": 26,
     "confidence": {
      "CHAIN_PROP": 11,
-     "INFERRED": 2,
+     "INFERRED": 4,
      "ANCHORED": 7,
      "DIRECT_PROP": 4
     }
@@ -259044,9 +259381,9 @@
     }
    },
    "type_stats": {
-    "var_count": 154,
+    "var_count": 157,
     "confidence": {
-     "CHAIN_PROP": 84,
+     "CHAIN_PROP": 87,
      "INFERRED": 8,
      "ANCHORED": 49,
      "DIRECT_PROP": 13
@@ -262031,10 +262368,10 @@
     }
    },
    "type_stats": {
-    "var_count": 108,
+    "var_count": 109,
     "confidence": {
      "CHAIN_PROP": 24,
-     "INFERRED": 2,
+     "INFERRED": 3,
      "ANCHORED": 17,
      "DIRECT_PROP": 20,
      "ORPHAN": 45
@@ -262510,10 +262847,10 @@
     }
    },
    "type_stats": {
-    "var_count": 190,
+    "var_count": 191,
     "confidence": {
      "ANCHORED": 40,
-     "CHAIN_PROP": 47,
+     "CHAIN_PROP": 48,
      "DIRECT_PROP": 101,
      "INFERRED": 2
     }
@@ -262824,11 +263161,12 @@
     }
    },
    "type_stats": {
-    "var_count": 11,
+    "var_count": 34,
     "confidence": {
-     "CHAIN_PROP": 4,
-     "DIRECT_PROP": 4,
-     "ANCHORED": 3
+     "ANCHORED": 6,
+     "DIRECT_PROP": 8,
+     "CHAIN_PROP": 16,
+     "INFERRED": 4
     }
    }
   },
@@ -263055,12 +263393,12 @@
     }
    },
    "type_stats": {
-    "var_count": 27,
+    "var_count": 30,
     "confidence": {
      "ANCHORED": 7,
      "DIRECT_PROP": 9,
-     "CHAIN_PROP": 8,
-     "INFERRED": 3
+     "CHAIN_PROP": 9,
+     "INFERRED": 5
     }
    }
   },
@@ -263086,9 +263424,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "GraphicMenuAnimItem"
+     ]
     },
     "12": {
      "name": "",
@@ -263210,11 +263552,11 @@
     }
    },
    "type_stats": {
-    "var_count": 22,
+    "var_count": 23,
     "confidence": {
      "DIRECT_PROP": 8,
      "ANCHORED": 9,
-     "CHAIN_PROP": 5
+     "CHAIN_PROP": 6
     }
    }
   },
@@ -264476,7 +264818,6 @@
     },
     "0": {
      "observed_types": [
-      "AbstractClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -264498,11 +264839,11 @@
     }
    },
    "type_stats": {
-    "var_count": 148,
+    "var_count": 143,
     "confidence": {
      "ORPHAN": 7,
-     "CHAIN_PROP": 46,
-     "INFERRED": 18,
+     "CHAIN_PROP": 47,
+     "INFERRED": 12,
      "DIRECT_PROP": 34,
      "ANCHORED": 43
     }
@@ -268341,7 +268682,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "BuildingClass"
+      "AbstractClass"
      ]
     },
     "90216": {
@@ -268766,7 +269107,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "392": {
@@ -268782,7 +269127,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AbstractClass"
      ]
     },
     "416": {
@@ -268798,7 +269147,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AbstractClass"
      ]
     },
     "422": {
@@ -268814,7 +269167,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AbstractClass"
      ]
     },
     "428": {
@@ -268846,7 +269203,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AbstractClass"
      ]
     },
     "452": {
@@ -269479,7 +269840,24 @@
     },
     "0": {
      "observed_types": [
-      "HouseClass"
+      "HouseClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "400": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "444": {
+     "observed_types": [
+      "AbstractClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -270143,13 +270521,13 @@
     }
    },
    "type_stats": {
-    "var_count": 1421,
+    "var_count": 1342,
     "confidence": {
-     "CHAIN_PROP": 286,
-     "ANCHORED": 672,
-     "DIRECT_PROP": 327,
-     "ORPHAN": 116,
-     "INFERRED": 20
+     "CHAIN_PROP": 278,
+     "INFERRED": 22,
+     "ANCHORED": 610,
+     "DIRECT_PROP": 313,
+     "ORPHAN": 119
     }
    }
   },
@@ -270835,6 +271213,30 @@
     "244": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "204": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "228": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "252": {
+     "observed_types": [
+      "AbstractClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -276194,9 +276596,9 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "Color",
       "INIClass",
-      "INILinkNode"
+      "INILinkNode",
+      "MouseClass"
      ]
     },
     "16": {
@@ -276239,8 +276641,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "INILinkNode",
-      "ObjectClass"
+      "INILinkNode"
      ]
     },
     "48": {
@@ -276278,8 +276679,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "INILinkNode",
-      "ObjectClass"
+      "INILinkNode"
      ]
     },
     "60": {
@@ -276375,14 +276775,6 @@
      "evidence": [
       "type_map_observed"
      ]
-    },
-    "256": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
     }
    },
    "csp_methods": 14,
@@ -276459,12 +276851,12 @@
     }
    },
    "type_stats": {
-    "var_count": 2594,
+    "var_count": 2441,
     "confidence": {
-     "ANCHORED": 1020,
-     "DIRECT_PROP": 592,
-     "CHAIN_PROP": 940,
-     "INFERRED": 40,
+     "ANCHORED": 1077,
+     "DIRECT_PROP": 514,
+     "CHAIN_PROP": 820,
+     "INFERRED": 28,
      "ORPHAN": 2
     }
    }
@@ -276867,6 +277259,14 @@
       "type_map_observed"
      ]
     },
+    "100": {
+     "observed_types": [
+      "IPXGlobalConnClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "104": {
      "observed_types": [
       "wchar_t"
@@ -277066,11 +277466,11 @@
     }
    },
    "type_stats": {
-    "var_count": 71,
+    "var_count": 74,
     "confidence": {
-     "CHAIN_PROP": 31,
-     "INFERRED": 6,
-     "DIRECT_PROP": 12,
+     "CHAIN_PROP": 32,
+     "INFERRED": 7,
+     "DIRECT_PROP": 13,
      "ANCHORED": 22
     }
    }
@@ -277250,7 +277650,20 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AnimClass",
+      "IUnknown"
+     ]
+    },
+    "196": {
+     "observed_types": [
+      "CampaignScore"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     },
     "204": {
@@ -277499,12 +277912,13 @@
     }
    },
    "type_stats": {
-    "var_count": 75,
+    "var_count": 82,
     "confidence": {
      "DIRECT_PROP": 24,
-     "CHAIN_PROP": 21,
-     "ANCHORED": 28,
-     "INFERRED": 2
+     "CHAIN_PROP": 24,
+     "INFERRED": 4,
+     "ORPHAN": 2,
+     "ANCHORED": 28
     }
    }
   },
@@ -277618,6 +278032,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "258156": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     },
     "258828": {
@@ -277998,11 +278420,12 @@
     }
    },
    "type_stats": {
-    "var_count": 68,
+    "var_count": 70,
     "confidence": {
      "ANCHORED": 53,
-     "CHAIN_PROP": 5,
-     "DIRECT_PROP": 10
+     "CHAIN_PROP": 6,
+     "DIRECT_PROP": 10,
+     "INFERRED": 1
     }
    }
   },
@@ -278239,7 +278662,7 @@
     },
     "88": {
      "observed_types": [
-      "CellStruct"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -278264,6 +278687,22 @@
     "111": {
      "observed_types": [
       "DynamicVector"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "164": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "168": {
+     "observed_types": [
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -278537,13 +278976,13 @@
     }
    },
    "type_stats": {
-    "var_count": 292,
+    "var_count": 332,
     "confidence": {
-     "ANCHORED": 139,
-     "ORPHAN": 14,
-     "CHAIN_PROP": 69,
-     "DIRECT_PROP": 69,
-     "INFERRED": 1
+     "ANCHORED": 170,
+     "DIRECT_PROP": 64,
+     "CHAIN_PROP": 83,
+     "INFERRED": 12,
+     "ORPHAN": 3
     }
    }
   },
@@ -278755,6 +279194,7 @@
       "AbstractClass",
       "AnimClass",
       "BuildingTypeClass",
+      "CCINIClass",
       "CoordStruct",
       "DynamicVector",
       "IUnknown",
@@ -278782,7 +279222,8 @@
       "DynamicVector",
       "IUnknown",
       "RandomStruct",
-      "Tactical"
+      "Tactical",
+      "rc_ptr_base"
      ],
      "evidence": [
       "type_map_observed"
@@ -278836,7 +279277,6 @@
       "IUnknown",
       "MouseClass",
       "ObjectClass",
-      "RadarClass",
       "Tactical"
      ],
      "evidence": [
@@ -278944,6 +279384,14 @@
       "type_map_observed"
      ]
     },
+    "248": {
+     "observed_types": [
+      "OverlayTypeClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "3": {
      "observed_types": [
       "IUnknown"
@@ -278984,6 +279432,14 @@
       "type_map_observed"
      ]
     },
+    "90100": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "90121": {
      "observed_types": [
       "CCINIClass"
@@ -279000,23 +279456,7 @@
       "type_map_observed"
      ]
     },
-    "90196": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "468": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "480": {
      "observed_types": [
       "INIClass"
      ],
@@ -279114,9 +279554,42 @@
       "type_map_observed"
      ]
     },
+    "96": {
+     "observed_types": [
+      "CCINIClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "348": {
      "observed_types": [
       "CoordStruct"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4412": {
+     "observed_types": [
+      "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "32": {
+     "observed_types": [
+      "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "64": {
+     "observed_types": [
+      "CCINIClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -279173,6 +279646,7 @@
     },
     "540": {
      "observed_types": [
+      "AbstractClass",
       "HouseClass"
      ],
      "evidence": [
@@ -283397,13 +283871,13 @@
     }
    },
    "type_stats": {
-    "var_count": 15819,
+    "var_count": 18509,
     "confidence": {
-     "CHAIN_PROP": 2951,
-     "ANCHORED": 9484,
-     "DIRECT_PROP": 2996,
-     "ORPHAN": 69,
-     "INFERRED": 319
+     "CHAIN_PROP": 3412,
+     "ANCHORED": 11267,
+     "DIRECT_PROP": 3414,
+     "ORPHAN": 71,
+     "INFERRED": 345
     }
    }
   },
@@ -295141,12 +295615,12 @@
     }
    },
    "type_stats": {
-    "var_count": 569,
+    "var_count": 578,
     "confidence": {
-     "DIRECT_PROP": 137,
-     "CHAIN_PROP": 181,
+     "DIRECT_PROP": 138,
+     "CHAIN_PROP": 183,
      "ANCHORED": 230,
-     "INFERRED": 21
+     "INFERRED": 27
     }
    }
   },
@@ -295647,8 +296121,25 @@
       "type_map_observed"
      ]
     },
+    "3580": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3584": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "3648": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -295657,6 +296148,7 @@
     },
     "3652": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -295690,6 +296182,22 @@
     "3768": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3680": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "3708": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -311791,7 +312299,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "700": {
@@ -311821,6 +312333,62 @@
     "164": {
      "observed_types": [
       "IsometricTileClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "668": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "672": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "704": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "724": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "728": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "744": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "748": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -316351,10 +316919,11 @@
     }
    },
    "type_stats": {
-    "var_count": 37,
+    "var_count": 38,
     "confidence": {
      "DIRECT_PROP": 14,
      "CHAIN_PROP": 10,
+     "INFERRED": 1,
      "ANCHORED": 13
     }
    }
@@ -319688,12 +320257,12 @@
     }
    },
    "type_stats": {
-    "var_count": 188,
+    "var_count": 190,
     "confidence": {
      "DIRECT_PROP": 79,
-     "CHAIN_PROP": 10,
+     "CHAIN_PROP": 11,
      "ANCHORED": 98,
-     "INFERRED": 1
+     "INFERRED": 2
     }
    }
   },
@@ -319848,7 +320417,7 @@
     },
     "16": {
      "observed_types": [
-      "BombClass"
+      "ModemGame"
      ],
      "evidence": [
       "type_map_observed"
@@ -320251,7 +320820,7 @@
     },
     "16": {
      "observed_types": [
-      "BombClass"
+      "ModemGame"
      ],
      "evidence": [
       "type_map_observed"
@@ -320764,10 +321333,10 @@
     }
    },
    "type_stats": {
-    "var_count": 5,
+    "var_count": 7,
     "confidence": {
+     "CHAIN_PROP": 5,
      "DIRECT_PROP": 1,
-     "CHAIN_PROP": 3,
      "ANCHORED": 1
     }
    }
@@ -320873,11 +321442,12 @@
     }
    },
    "type_stats": {
-    "var_count": 43,
+    "var_count": 34,
     "confidence": {
-     "CHAIN_PROP": 18,
-     "ANCHORED": 15,
-     "DIRECT_PROP": 10
+     "CHAIN_PROP": 9,
+     "INFERRED": 2,
+     "ANCHORED": 14,
+     "DIRECT_PROP": 9
     }
    }
   },
@@ -325562,11 +326132,11 @@
     }
    },
    "type_stats": {
-    "var_count": 98,
+    "var_count": 99,
     "confidence": {
      "ANCHORED": 46,
      "DIRECT_PROP": 41,
-     "CHAIN_PROP": 11
+     "CHAIN_PROP": 12
     }
    }
   },
@@ -326286,13 +326856,13 @@
     }
    },
    "type_stats": {
-    "var_count": 89,
+    "var_count": 90,
     "confidence": {
      "DIRECT_PROP": 26,
      "ANCHORED": 27,
      "CHAIN_PROP": 20,
-     "ORPHAN": 15,
-     "INFERRED": 1
+     "INFERRED": 2,
+     "ORPHAN": 15
     }
    }
   },
@@ -329093,12 +329663,12 @@
     }
    },
    "type_stats": {
-    "var_count": 183,
+    "var_count": 188,
     "confidence": {
-     "CHAIN_PROP": 56,
+     "CHAIN_PROP": 59,
      "DIRECT_PROP": 44,
      "ANCHORED": 38,
-     "INFERRED": 2,
+     "INFERRED": 4,
      "ORPHAN": 43
     }
    }
@@ -333032,12 +333602,12 @@
     }
    },
    "type_stats": {
-    "var_count": 92,
+    "var_count": 95,
     "confidence": {
      "DIRECT_PROP": 33,
      "CHAIN_PROP": 13,
      "ANCHORED": 37,
-     "INFERRED": 9
+     "INFERRED": 12
     }
    }
   },
@@ -333268,12 +333838,12 @@
     }
    },
    "type_stats": {
-    "var_count": 56,
+    "var_count": 60,
     "confidence": {
-     "DIRECT_PROP": 22,
-     "ANCHORED": 17,
-     "CHAIN_PROP": 16,
-     "INFERRED": 1
+     "DIRECT_PROP": 23,
+     "ANCHORED": 18,
+     "CHAIN_PROP": 17,
+     "INFERRED": 2
     }
    }
   },
@@ -333636,6 +334206,8 @@
     "0": {
      "observed_types": [
       "AbstractClass",
+      "AnimClass",
+      "IUnknown",
       "ObjectClass"
      ],
      "evidence": [
@@ -333693,7 +334265,7 @@
     },
     "156": {
      "observed_types": [
-      "MouseClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -334426,12 +334998,12 @@
     }
    },
    "type_stats": {
-    "var_count": 418,
+    "var_count": 489,
     "confidence": {
-     "DIRECT_PROP": 66,
-     "ANCHORED": 154,
-     "CHAIN_PROP": 156,
-     "INFERRED": 38,
+     "DIRECT_PROP": 73,
+     "CHAIN_PROP": 195,
+     "ANCHORED": 168,
+     "INFERRED": 49,
      "ORPHAN": 4
     }
    }
@@ -334767,6 +335339,14 @@
     "32": {
      "observed_types": [
       "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "52": {
+     "observed_types": [
+      "MPCooperative"
      ],
      "evidence": [
       "type_map_observed"
@@ -335826,11 +336406,12 @@
     }
    },
    "type_stats": {
-    "var_count": 77,
+    "var_count": 78,
     "confidence": {
      "ANCHORED": 29,
      "DIRECT_PROP": 31,
-     "CHAIN_PROP": 17
+     "CHAIN_PROP": 17,
+     "INFERRED": 1
     }
    }
   },
@@ -336587,11 +337168,12 @@
     }
    },
    "type_stats": {
-    "var_count": 17,
+    "var_count": 18,
     "confidence": {
      "DIRECT_PROP": 6,
      "ANCHORED": 6,
-     "CHAIN_PROP": 5
+     "CHAIN_PROP": 5,
+     "INFERRED": 1
     }
    }
   },
@@ -337073,11 +337655,12 @@
     }
    },
    "type_stats": {
-    "var_count": 39,
+    "var_count": 43,
     "confidence": {
-     "ANCHORED": 14,
-     "DIRECT_PROP": 11,
-     "CHAIN_PROP": 14
+     "ANCHORED": 15,
+     "DIRECT_PROP": 12,
+     "CHAIN_PROP": 15,
+     "INFERRED": 1
     }
    }
   },
@@ -337153,7 +337736,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "MSVQAnim"
      ]
     },
     "8": {
@@ -337161,7 +337748,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "MSVQAnim"
      ]
     },
     "12": {
@@ -337170,6 +337761,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "24": {
+     "observed_types": [
+      "MSVQAnim"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     }
    },
@@ -338821,10 +339420,10 @@
     }
    },
    "type_stats": {
-    "var_count": 137,
+    "var_count": 149,
     "confidence": {
-     "CHAIN_PROP": 44,
-     "DIRECT_PROP": 34,
+     "CHAIN_PROP": 58,
+     "DIRECT_PROP": 32,
      "ORPHAN": 2,
      "ANCHORED": 40,
      "INFERRED": 17
@@ -339182,11 +339781,11 @@
     }
    },
    "type_stats": {
-    "var_count": 57,
+    "var_count": 102,
     "confidence": {
-     "ANCHORED": 18,
-     "DIRECT_PROP": 19,
-     "CHAIN_PROP": 19,
+     "CHAIN_PROP": 35,
+     "DIRECT_PROP": 31,
+     "ANCHORED": 35,
      "INFERRED": 1
     }
    }
@@ -339474,10 +340073,11 @@
     }
    },
    "type_stats": {
-    "var_count": 9,
+    "var_count": 10,
     "confidence": {
      "DIRECT_PROP": 3,
      "CHAIN_PROP": 4,
+     "INFERRED": 1,
      "ANCHORED": 2
     }
    }
@@ -339579,7 +340179,6 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "CCINIClass",
       "CellClass",
       "MapClass"
      ]
@@ -339593,7 +340192,6 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "CCINIClass",
       "MapClass"
      ]
     },
@@ -339757,17 +340355,8 @@
       "type_map_observed"
      ]
     },
-    "757": {
-     "observed_types": [
-      "RandomStruct"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "4448": {
      "observed_types": [
-      "CCINIClass",
       "MapClass"
      ],
      "evidence": [
@@ -339823,33 +340412,17 @@
       "type_map_observed"
      ]
     },
-    "84": {
+    "88": {
      "observed_types": [
-      "CCINIClass"
+      "MapClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
-    "104": {
+    "220": {
      "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "112": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "216": {
-     "observed_types": [
-      "CCINIClass"
+      "MapClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -341580,13 +342153,13 @@
     }
    },
    "type_stats": {
-    "var_count": 568,
+    "var_count": 566,
     "confidence": {
-     "DIRECT_PROP": 132,
+     "DIRECT_PROP": 136,
+     "CHAIN_PROP": 126,
      "ORPHAN": 10,
-     "CHAIN_PROP": 117,
-     "ANCHORED": 301,
-     "INFERRED": 8
+     "INFERRED": 11,
+     "ANCHORED": 283
     }
    }
   },
@@ -341855,8 +342428,7 @@
     },
     "116": {
      "observed_types": [
-      "IUnknown",
-      "MouseClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -341953,12 +342525,12 @@
     }
    },
    "type_stats": {
-    "var_count": 340,
+    "var_count": 351,
     "confidence": {
-     "DIRECT_PROP": 75,
-     "CHAIN_PROP": 59,
-     "ANCHORED": 204,
-     "INFERRED": 2
+     "DIRECT_PROP": 76,
+     "CHAIN_PROP": 65,
+     "ANCHORED": 207,
+     "INFERRED": 3
     }
    }
   },
@@ -342451,12 +343023,12 @@
     }
    },
    "type_stats": {
-    "var_count": 72,
+    "var_count": 74,
     "confidence": {
-     "CHAIN_PROP": 19,
+     "CHAIN_PROP": 20,
+     "INFERRED": 6,
      "ANCHORED": 27,
-     "DIRECT_PROP": 21,
-     "INFERRED": 5
+     "DIRECT_PROP": 21
     }
    }
   },
@@ -342558,12 +343130,12 @@
     }
    },
    "type_stats": {
-    "var_count": 35,
+    "var_count": 38,
     "confidence": {
      "DIRECT_PROP": 3,
      "CHAIN_PROP": 20,
      "ANCHORED": 2,
-     "INFERRED": 10
+     "INFERRED": 13
     }
    }
   },
@@ -342747,9 +343319,10 @@
     }
    },
    "type_stats": {
-    "var_count": 9,
+    "var_count": 14,
     "confidence": {
-     "CHAIN_PROP": 3,
+     "CHAIN_PROP": 6,
+     "INFERRED": 2,
      "ANCHORED": 5,
      "DIRECT_PROP": 1
     }
@@ -347243,9 +347816,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "176": {
      "name": "suspendedMission",
@@ -347263,9 +347840,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "184": {
      "name": "missionQueued",
@@ -347293,9 +347874,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "192": {
      "name": "missionStartTime",
@@ -359740,9 +360325,9 @@
     }
    },
    "type_stats": {
-    "var_count": 93,
+    "var_count": 94,
     "confidence": {
-     "INFERRED": 2,
+     "INFERRED": 3,
      "DIRECT_PROP": 41,
      "ANCHORED": 41,
      "CHAIN_PROP": 9
@@ -359899,11 +360484,11 @@
     }
    },
    "type_stats": {
-    "var_count": 273,
+    "var_count": 199,
     "confidence": {
-     "ANCHORED": 122,
-     "CHAIN_PROP": 70,
-     "DIRECT_PROP": 80,
+     "ANCHORED": 99,
+     "DIRECT_PROP": 44,
+     "CHAIN_PROP": 55,
      "INFERRED": 1
     }
    }
@@ -360142,11 +360727,12 @@
     }
    },
    "type_stats": {
-    "var_count": 24,
+    "var_count": 228,
     "confidence": {
-     "CHAIN_PROP": 9,
-     "ANCHORED": 8,
-     "DIRECT_PROP": 7
+     "CHAIN_PROP": 41,
+     "DIRECT_PROP": 55,
+     "ANCHORED": 128,
+     "INFERRED": 4
     }
    }
   },
@@ -360286,11 +360872,11 @@
     }
    },
    "type_stats": {
-    "var_count": 41,
+    "var_count": 42,
     "confidence": {
      "ANCHORED": 20,
      "DIRECT_PROP": 16,
-     "CHAIN_PROP": 5
+     "CHAIN_PROP": 6
     }
    }
   },
@@ -360578,6 +361164,16 @@
       "member_types"
      ]
     },
+    "0": {
+     "observed_types": [
+      "AnimClass",
+      "IUnknown",
+      "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "4472": {
      "observed_types": [
       "Tactical"
@@ -360637,15 +361233,6 @@
     "56": {
      "observed_types": [
       "BombClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "0": {
-     "observed_types": [
-      "IUnknown",
-      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -363108,12 +363695,12 @@
     }
    },
    "type_stats": {
-    "var_count": 8753,
+    "var_count": 8770,
     "confidence": {
-     "DIRECT_PROP": 2096,
-     "ANCHORED": 4970,
-     "CHAIN_PROP": 1521,
-     "INFERRED": 166
+     "DIRECT_PROP": 2105,
+     "ANCHORED": 4964,
+     "CHAIN_PROP": 1528,
+     "INFERRED": 173
     }
    }
   },
@@ -363890,7 +364477,12 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AnimClass",
+      "IUnknown"
      ]
     },
     "68": {
@@ -363914,7 +364506,12 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AnimClass",
+      "IUnknown"
      ]
     },
     "12": {
@@ -363927,7 +364524,16 @@
     },
     "0": {
      "observed_types": [
-      "CCINIClass"
+      "CCINIClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "36": {
+     "observed_types": [
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -363943,9 +364549,9 @@
     }
    },
    "type_stats": {
-    "var_count": 79,
+    "var_count": 80,
     "confidence": {
-     "CHAIN_PROP": 22,
+     "CHAIN_PROP": 23,
      "ANCHORED": 38,
      "DIRECT_PROP": 16,
      "INFERRED": 3
@@ -367550,9 +368156,9 @@
       "type_map_observed"
      ]
     },
-    "56": {
+    "0": {
      "observed_types": [
-      "CCINIClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -369311,12 +369917,12 @@
     }
    },
    "type_stats": {
-    "var_count": 289,
+    "var_count": 293,
     "confidence": {
-     "CHAIN_PROP": 51,
+     "CHAIN_PROP": 52,
      "DIRECT_PROP": 91,
      "ANCHORED": 100,
-     "INFERRED": 47
+     "INFERRED": 50
     }
    }
   },
@@ -372940,9 +373546,9 @@
     }
    },
    "type_stats": {
-    "var_count": 39,
+    "var_count": 40,
     "confidence": {
-     "INFERRED": 4,
+     "INFERRED": 5,
      "CHAIN_PROP": 12,
      "DIRECT_PROP": 11,
      "ANCHORED": 12
@@ -373856,10 +374462,10 @@
     }
    },
    "type_stats": {
-    "var_count": 20,
+    "var_count": 23,
     "confidence": {
-     "INFERRED": 3,
-     "CHAIN_PROP": 7,
+     "INFERRED": 4,
+     "CHAIN_PROP": 9,
      "DIRECT_PROP": 5,
      "ANCHORED": 5
     }
@@ -379974,9 +380580,9 @@
    "size": 8,
    "members": {},
    "type_stats": {
-    "var_count": 4,
+    "var_count": 5,
     "confidence": {
-     "INFERRED": 3,
+     "INFERRED": 4,
      "CHAIN_PROP": 1
     }
    }
@@ -380303,6 +380909,7 @@
     },
     "0": {
      "observed_types": [
+      "AnimClass",
       "BlowStraw"
      ],
      "evidence": [
@@ -380320,6 +380927,14 @@
     "88": {
      "observed_types": [
       "BlowStraw"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "8300": {
+     "observed_types": [
+      "AnimClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -380733,10 +381348,10 @@
     }
    },
    "type_stats": {
-    "var_count": 28,
+    "var_count": 30,
     "confidence": {
-     "CHAIN_PROP": 9,
-     "INFERRED": 4,
+     "INFERRED": 5,
+     "CHAIN_PROP": 10,
      "DIRECT_PROP": 8,
      "ANCHORED": 7
     }
@@ -381375,7 +381990,8 @@
       "AbstractClass",
       "AudioController",
       "BlowStraw",
-      "CCINIClass"
+      "CCINIClass",
+      "IUnknown"
      ]
     },
     "320": {
@@ -381667,8 +382283,8 @@
       "CCINIClass",
       "CampaignScore",
       "Color",
-      "INIClass",
       "IUnknown",
+      "MouseClass",
       "ObjectClass",
       "ScenarioClass",
       "TechnoClass"
@@ -381813,6 +382429,8 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "AnimClass",
+      "BaseClass",
       "ObjectClass"
      ]
     },
@@ -381825,6 +382443,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "ObjectClass"
      ]
     },
@@ -381838,7 +382457,6 @@
      ],
      "observed_types": [
       "AbstractClass",
-      "MapClass",
       "RadSiteClass"
      ]
     },
@@ -381901,6 +382519,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "AbstractClass",
       "CCINIClass",
       "IUnknown",
       "MPCooperative",
@@ -382004,6 +382623,14 @@
       "type_map_observed"
      ]
     },
+    "476": {
+     "observed_types": [
+      "INIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "488": {
      "observed_types": [
       "TechnoTypeClass"
@@ -382066,7 +382693,8 @@
     },
     "184": {
      "observed_types": [
-      "CoordStruct"
+      "CoordStruct",
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -382101,15 +382729,6 @@
       "GameSetup",
       "IUnknown",
       "TagClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "780": {
-     "observed_types": [
-      "CCINIClass",
-      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -382250,6 +382869,14 @@
       "type_map_observed"
      ]
     },
+    "115": {
+     "observed_types": [
+      "CampaignScore"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "256": {
      "observed_types": [
       "ObjectClass"
@@ -382258,9 +382885,26 @@
       "type_map_observed"
      ]
     },
+    "4700": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "1728": {
      "observed_types": [
       "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "780": {
+     "observed_types": [
+      "CCINIClass",
+      "ObjectClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -382338,6 +382982,14 @@
       "type_map_observed"
      ]
     },
+    "2052": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "1188": {
      "observed_types": [
       "AudioController"
@@ -382406,14 +383058,6 @@
     "1732": {
      "observed_types": [
       "AnimClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "260": {
-     "observed_types": [
-      "MapClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -398879,12 +399523,12 @@
     }
    },
    "type_stats": {
-    "var_count": 15477,
+    "var_count": 15611,
     "confidence": {
-     "DIRECT_PROP": 3117,
-     "CHAIN_PROP": 4126,
-     "ANCHORED": 7051,
-     "INFERRED": 513,
+     "DIRECT_PROP": 3079,
+     "CHAIN_PROP": 4238,
+     "ANCHORED": 7041,
+     "INFERRED": 583,
      "ORPHAN": 670
     }
    }
@@ -399562,6 +400206,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "INIClass",
       "SomeVoxelCache"
      ]
     },
@@ -399592,6 +400237,14 @@
     "5392": {
      "observed_types": [
       "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "5994": {
+     "observed_types": [
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -405718,12 +406371,12 @@
     }
    },
    "type_stats": {
-    "var_count": 495,
+    "var_count": 511,
     "confidence": {
-     "CHAIN_PROP": 266,
-     "INFERRED": 22,
-     "DIRECT_PROP": 88,
-     "ANCHORED": 117,
+     "CHAIN_PROP": 271,
+     "INFERRED": 31,
+     "DIRECT_PROP": 89,
+     "ANCHORED": 118,
      "ORPHAN": 2
     }
    }
@@ -418170,6 +418823,14 @@
      "evidence": [
       "type_map_observed"
      ]
+    },
+    "100": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 15,
@@ -423541,11 +424202,12 @@
     }
    },
    "type_stats": {
-    "var_count": 89,
+    "var_count": 92,
     "confidence": {
      "ANCHORED": 44,
      "CHAIN_PROP": 22,
-     "DIRECT_PROP": 23
+     "DIRECT_PROP": 23,
+     "ORPHAN": 3
     }
    }
   },
@@ -424865,6 +425527,24 @@
       "type_map_observed"
      ]
     },
+    "72": {
+     "observed_types": [
+      "AnimClass",
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "76": {
+     "observed_types": [
+      "BaseClass",
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "0": {
      "observed_types": [
       "IUnknown",
@@ -424885,22 +425565,6 @@
     "68": {
      "observed_types": [
       "AnimClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "72": {
-     "observed_types": [
-      "AnimClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "76": {
-     "observed_types": [
-      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -441561,6 +442225,7 @@
     },
     "236": {
      "observed_types": [
+      "BaseClass",
       "ParticleSystemClass",
       "ParticleSystemTypeClass"
      ],
@@ -452607,12 +453272,12 @@
     }
    },
    "type_stats": {
-    "var_count": 725,
+    "var_count": 610,
     "confidence": {
-     "ANCHORED": 313,
-     "DIRECT_PROP": 154,
-     "CHAIN_PROP": 172,
-     "INFERRED": 84,
+     "ANCHORED": 308,
+     "DIRECT_PROP": 147,
+     "CHAIN_PROP": 148,
+     "INFERRED": 5,
      "ORPHAN": 2
     }
    }
@@ -452782,6 +453447,7 @@
     },
     "660": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -452790,6 +453456,7 @@
     },
     "668": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -452806,6 +453473,7 @@
     },
     "680": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -452814,6 +453482,7 @@
     },
     "696": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -452879,6 +453548,14 @@
     "684": {
      "observed_types": [
       "ParticleSystemClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "692": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -458575,10 +459252,10 @@
     }
    },
    "type_stats": {
-    "var_count": 121,
+    "var_count": 118,
     "confidence": {
-     "ANCHORED": 52,
-     "DIRECT_PROP": 48,
+     "ANCHORED": 50,
+     "DIRECT_PROP": 47,
      "CHAIN_PROP": 17,
      "ORPHAN": 4
     }
@@ -458721,6 +459398,7 @@
     },
     "688": {
      "observed_types": [
+      "AbstractClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -458777,6 +459455,7 @@
     },
     "744": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -458785,6 +459464,7 @@
     },
     "748": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -458801,6 +459481,7 @@
     },
     "756": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -458809,6 +459490,7 @@
     },
     "760": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -458817,7 +459499,16 @@
     },
     "772": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "732": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -458826,6 +459517,22 @@
     "768": {
      "observed_types": [
       "ParticleSystemClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "784": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "788": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -464394,9 +465101,9 @@
     }
    },
    "type_stats": {
-    "var_count": 59,
+    "var_count": 60,
     "confidence": {
-     "CHAIN_PROP": 13,
+     "CHAIN_PROP": 14,
      "ANCHORED": 27,
      "DIRECT_PROP": 19
     }
@@ -464810,16 +465517,18 @@
       }
      ],
      "cc": "thiscall",
-     "name": "Class_2::Dispatch"
+     "name": "Class_2::Dispatch",
+     "return_type": "Pipe",
+     "return_confidence": "DIRECT_PROP"
     }
    },
    "type_stats": {
-    "var_count": 191,
+    "var_count": 257,
     "confidence": {
-     "INFERRED": 11,
-     "CHAIN_PROP": 74,
-     "DIRECT_PROP": 55,
-     "ANCHORED": 51
+     "INFERRED": 13,
+     "CHAIN_PROP": 114,
+     "DIRECT_PROP": 65,
+     "ANCHORED": 65
     }
    }
   },
@@ -464846,9 +465555,10 @@
     }
    },
    "type_stats": {
-    "var_count": 15,
+    "var_count": 16,
     "confidence": {
      "CHAIN_PROP": 6,
+     "INFERRED": 1,
      "DIRECT_PROP": 4,
      "ANCHORED": 5
     }
@@ -465594,6 +466304,14 @@
      "evidence": [
       "member_types"
      ]
+    },
+    "0": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 1,
@@ -465605,11 +466323,12 @@
     }
    },
    "type_stats": {
-    "var_count": 6,
+    "var_count": 7,
     "confidence": {
      "CHAIN_PROP": 4,
      "DIRECT_PROP": 1,
-     "ANCHORED": 1
+     "ANCHORED": 1,
+     "INFERRED": 1
     }
    }
   },
@@ -468014,10 +468733,10 @@
     }
    },
    "type_stats": {
-    "var_count": 59,
+    "var_count": 62,
     "confidence": {
-     "INFERRED": 4,
-     "CHAIN_PROP": 11,
+     "INFERRED": 5,
+     "CHAIN_PROP": 13,
      "ANCHORED": 31,
      "DIRECT_PROP": 13
     }
@@ -468943,14 +469662,6 @@
       "type_map_observed"
      ]
     },
-    "76": {
-     "observed_types": [
-      "ProgressScreenClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "84": {
      "observed_types": [
       "CCINIClass",
@@ -468962,10 +469673,10 @@
     }
    },
    "type_stats": {
-    "var_count": 217,
+    "var_count": 213,
     "confidence": {
-     "ANCHORED": 119,
-     "DIRECT_PROP": 53,
+     "ANCHORED": 118,
+     "DIRECT_PROP": 50,
      "CHAIN_PROP": 45
     }
    }
@@ -480130,10 +480841,11 @@
     }
    },
    "type_stats": {
-    "var_count": 59,
+    "var_count": 61,
     "confidence": {
      "ANCHORED": 32,
      "DIRECT_PROP": 20,
+     "INFERRED": 2,
      "CHAIN_PROP": 7
     }
    }
@@ -480436,14 +481148,6 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
-     ]
-    },
-    "248": {
-     "observed_types": [
-      "OverlayTypeClass"
-     ],
-     "evidence": [
-      "type_map_observed"
      ]
     },
     "4584": {
@@ -483052,12 +483756,12 @@
     }
    },
    "type_stats": {
-    "var_count": 287,
+    "var_count": 182,
     "confidence": {
-     "CHAIN_PROP": 81,
-     "ANCHORED": 127,
-     "DIRECT_PROP": 69,
-     "INFERRED": 10
+     "INFERRED": 13,
+     "CHAIN_PROP": 43,
+     "ANCHORED": 78,
+     "DIRECT_PROP": 48
     }
    }
   },
@@ -483256,6 +483960,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -483264,7 +483969,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     }
    },
@@ -496204,13 +496913,13 @@
     }
    },
    "type_stats": {
-    "var_count": 58,
+    "var_count": 60,
     "confidence": {
      "ORPHAN": 2,
-     "CHAIN_PROP": 16,
+     "CHAIN_PROP": 17,
+     "INFERRED": 2,
      "ANCHORED": 21,
-     "DIRECT_PROP": 18,
-     "INFERRED": 1
+     "DIRECT_PROP": 18
     }
    }
   },
@@ -496417,11 +497126,11 @@
     }
    },
    "type_stats": {
-    "var_count": 296,
+    "var_count": 302,
     "confidence": {
      "ANCHORED": 212,
-     "CHAIN_PROP": 35,
-     "DIRECT_PROP": 45,
+     "CHAIN_PROP": 40,
+     "DIRECT_PROP": 46,
      "INFERRED": 4
     }
    }
@@ -496835,11 +497544,11 @@
     }
    },
    "type_stats": {
-    "var_count": 10,
+    "var_count": 11,
     "confidence": {
      "ANCHORED": 6,
      "DIRECT_PROP": 2,
-     "CHAIN_PROP": 2
+     "CHAIN_PROP": 3
     }
    }
   },
@@ -496868,12 +497577,11 @@
     }
    },
    "type_stats": {
-    "var_count": 301,
+    "var_count": 177,
     "confidence": {
-     "ANCHORED": 144,
-     "DIRECT_PROP": 68,
-     "CHAIN_PROP": 87,
-     "ORPHAN": 2
+     "DIRECT_PROP": 42,
+     "CHAIN_PROP": 76,
+     "ANCHORED": 59
     }
    }
   },
@@ -497049,7 +497757,8 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "CCINIClass"
+      "CCINIClass",
+      "RawFileClass"
      ]
     }
    },
@@ -497292,11 +498001,11 @@
     }
    },
    "type_stats": {
-    "var_count": 153,
+    "var_count": 157,
     "confidence": {
-     "ANCHORED": 62,
-     "DIRECT_PROP": 32,
-     "CHAIN_PROP": 59
+     "ANCHORED": 63,
+     "DIRECT_PROP": 34,
+     "CHAIN_PROP": 60
     }
    }
   },
@@ -497788,11 +498497,11 @@
     }
    },
    "type_stats": {
-    "var_count": 407,
+    "var_count": 417,
     "confidence": {
      "ANCHORED": 118,
-     "DIRECT_PROP": 71,
-     "CHAIN_PROP": 168,
+     "DIRECT_PROP": 72,
+     "CHAIN_PROP": 177,
      "INFERRED": 50
     }
    }
@@ -497809,10 +498518,11 @@
     }
    },
    "type_stats": {
-    "var_count": 3,
+    "var_count": 5,
     "confidence": {
      "ANCHORED": 2,
-     "DIRECT_PROP": 1
+     "DIRECT_PROP": 1,
+     "CHAIN_PROP": 2
     }
    }
   },
@@ -507811,10 +508521,10 @@
     }
    },
    "type_stats": {
-    "var_count": 24,
+    "var_count": 25,
     "confidence": {
      "CHAIN_PROP": 10,
-     "INFERRED": 1,
+     "INFERRED": 2,
      "DIRECT_PROP": 5,
      "ANCHORED": 8
     }
@@ -508061,9 +508771,9 @@
     }
    },
    "type_stats": {
-    "var_count": 13,
+    "var_count": 14,
     "confidence": {
-     "CHAIN_PROP": 6,
+     "CHAIN_PROP": 7,
      "DIRECT_PROP": 4,
      "ANCHORED": 3
     }
@@ -508269,11 +508979,11 @@
     }
    },
    "type_stats": {
-    "var_count": 88,
+    "var_count": 89,
     "confidence": {
      "DIRECT_PROP": 72,
      "ANCHORED": 14,
-     "CHAIN_PROP": 2
+     "CHAIN_PROP": 3
     }
    }
   },
@@ -509425,9 +510135,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "1552": {
      "name": "elapsedTimer",
@@ -509739,9 +510453,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "4700": {
      "name": "fileName",
@@ -509749,9 +510467,13 @@
      "size": 260,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "ObjectClass"
+     ]
     },
     "4960": {
      "name": "name",
@@ -509811,9 +510533,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "5180": {
      "name": "win",
@@ -509821,9 +510547,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "5184": {
      "name": "lose",
@@ -509841,9 +510571,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "5192": {
      "name": "postScore",
@@ -509851,9 +510585,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "5196": {
      "name": "preMapSelect",
@@ -509905,9 +510643,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "7288": {
      "name": "carryOverMoney",
@@ -509920,6 +510662,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "AbstractClass",
       "CCINIClass"
      ]
     },
@@ -509948,6 +510691,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510285,9 +511029,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "BaseClass"
+     ]
     },
     "13520": {
      "name": "startingDropships",
@@ -510300,6 +511048,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510537,6 +511286,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510565,6 +511315,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510621,6 +511372,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510649,6 +511401,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510677,6 +511430,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510691,6 +511445,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -510719,6 +511474,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -511270,6 +512026,14 @@
       "type_map_observed"
      ]
     },
+    "7292": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
     "372": {
      "observed_types": [
       "CCINIClass"
@@ -511456,12 +512220,12 @@
     }
    },
    "type_stats": {
-    "var_count": 1664,
+    "var_count": 1635,
     "confidence": {
-     "ANCHORED": 1139,
-     "CHAIN_PROP": 381,
-     "DIRECT_PROP": 122,
-     "INFERRED": 22
+     "ANCHORED": 1133,
+     "CHAIN_PROP": 373,
+     "DIRECT_PROP": 113,
+     "INFERRED": 16
     }
    }
   },
@@ -513018,9 +513782,13 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "MPCooperative"
+     ]
     },
     "20": {
      "name": "ScoreScreen_field_0x14",
@@ -513127,10 +513895,10 @@
     }
    },
    "type_stats": {
-    "var_count": 103,
+    "var_count": 104,
     "confidence": {
      "DIRECT_PROP": 16,
-     "CHAIN_PROP": 42,
+     "CHAIN_PROP": 43,
      "INFERRED": 12,
      "ANCHORED": 33
     }
@@ -514286,9 +515054,10 @@
     }
    },
    "type_stats": {
-    "var_count": 4,
+    "var_count": 5,
     "confidence": {
      "CHAIN_PROP": 2,
+     "INFERRED": 1,
      "DIRECT_PROP": 1,
      "ANCHORED": 1
     }
@@ -519629,6 +520398,7 @@
     },
     "160": {
      "observed_types": [
+      "BaseClass",
       "INIClass"
      ],
      "evidence": [
@@ -526949,11 +527719,12 @@
     }
    },
    "type_stats": {
-    "var_count": 33,
+    "var_count": 36,
     "confidence": {
      "DIRECT_PROP": 12,
      "ANCHORED": 10,
-     "CHAIN_PROP": 11
+     "CHAIN_PROP": 13,
+     "INFERRED": 1
     }
    }
   },
@@ -529461,11 +530232,12 @@
     }
    },
    "type_stats": {
-    "var_count": 69,
+    "var_count": 71,
     "confidence": {
      "ANCHORED": 41,
      "CHAIN_PROP": 14,
-     "DIRECT_PROP": 14
+     "DIRECT_PROP": 14,
+     "INFERRED": 2
     }
    }
   },
@@ -530355,12 +531127,12 @@
     }
    },
    "type_stats": {
-    "var_count": 70,
+    "var_count": 187,
     "confidence": {
-     "CHAIN_PROP": 33,
-     "DIRECT_PROP": 17,
-     "ANCHORED": 18,
-     "INFERRED": 2
+     "CHAIN_PROP": 109,
+     "INFERRED": 9,
+     "ANCHORED": 40,
+     "DIRECT_PROP": 29
     }
    }
   },
@@ -530970,9 +531742,9 @@
       "type_map_observed"
      ]
     },
-    "10304": {
+    "12316": {
      "observed_types": [
-      "IPXManagerClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -531013,12 +531785,12 @@
     }
    },
    "type_stats": {
-    "var_count": 648,
+    "var_count": 666,
     "confidence": {
-     "CHAIN_PROP": 179,
-     "DIRECT_PROP": 110,
-     "ANCHORED": 354,
-     "INFERRED": 5
+     "CHAIN_PROP": 198,
+     "DIRECT_PROP": 108,
+     "ANCHORED": 352,
+     "INFERRED": 8
     }
    }
   },
@@ -536461,6 +537233,7 @@
     },
     "20": {
      "observed_types": [
+      "ShapeButtonClass",
       "ToggleClass"
      ],
      "evidence": [
@@ -536469,6 +537242,7 @@
     },
     "24": {
      "observed_types": [
+      "ShapeButtonClass",
       "ToggleClass"
      ],
      "evidence": [
@@ -539088,11 +539862,11 @@
     }
    },
    "type_stats": {
-    "var_count": 100,
+    "var_count": 110,
     "confidence": {
-     "CHAIN_PROP": 32,
-     "DIRECT_PROP": 25,
-     "ANCHORED": 26,
+     "CHAIN_PROP": 39,
+     "DIRECT_PROP": 27,
+     "ANCHORED": 27,
      "ORPHAN": 16,
      "INFERRED": 1
     }
@@ -541199,6 +541973,14 @@
       "member_types"
      ],
      "confidence": "ANCHORED"
+    },
+    "168": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 7,
@@ -548958,12 +549740,12 @@
     }
    },
    "type_stats": {
-    "var_count": 121,
+    "var_count": 136,
     "confidence": {
-     "CHAIN_PROP": 29,
-     "INFERRED": 4,
-     "DIRECT_PROP": 28,
-     "ANCHORED": 60
+     "CHAIN_PROP": 35,
+     "INFERRED": 6,
+     "DIRECT_PROP": 31,
+     "ANCHORED": 64
     }
    }
   },
@@ -550529,9 +551311,11 @@
     }
    },
    "type_stats": {
-    "var_count": 4,
+    "var_count": 9,
     "confidence": {
-     "DIRECT_PROP": 1,
+     "CHAIN_PROP": 3,
+     "INFERRED": 1,
+     "DIRECT_PROP": 2,
      "ANCHORED": 3
     }
    }
@@ -550621,12 +551405,12 @@
     }
    },
    "type_stats": {
-    "var_count": 864,
+    "var_count": 874,
     "confidence": {
-     "CHAIN_PROP": 187,
+     "CHAIN_PROP": 192,
      "ANCHORED": 534,
      "DIRECT_PROP": 109,
-     "INFERRED": 32,
+     "INFERRED": 37,
      "ORPHAN": 2
     }
    }
@@ -555377,11 +556161,11 @@
     }
    },
    "type_stats": {
-    "var_count": 127,
+    "var_count": 128,
     "confidence": {
      "ANCHORED": 56,
      "DIRECT_PROP": 43,
-     "INFERRED": 2,
+     "INFERRED": 3,
      "CHAIN_PROP": 23,
      "ORPHAN": 3
     }
@@ -558296,9 +559080,10 @@
     }
    },
    "type_stats": {
-    "var_count": 56,
+    "var_count": 59,
     "confidence": {
-     "CHAIN_PROP": 23,
+     "CHAIN_PROP": 24,
+     "INFERRED": 2,
      "ANCHORED": 15,
      "DIRECT_PROP": 18
     }
@@ -569574,9 +570359,9 @@
     }
    },
    "type_stats": {
-    "var_count": 45,
+    "var_count": 46,
     "confidence": {
-     "CHAIN_PROP": 16,
+     "CHAIN_PROP": 17,
      "DIRECT_PROP": 16,
      "ANCHORED": 13
     }
@@ -574745,11 +575530,11 @@
     }
    },
    "type_stats": {
-    "var_count": 88,
+    "var_count": 89,
     "confidence": {
      "ANCHORED": 30,
      "DIRECT_PROP": 51,
-     "CHAIN_PROP": 7
+     "CHAIN_PROP": 8
     }
    }
   },
@@ -575676,7 +576461,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "72": {
@@ -575684,7 +576473,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "80": {
@@ -580061,12 +580854,12 @@
     }
    },
    "type_stats": {
-    "var_count": 74,
+    "var_count": 75,
     "confidence": {
      "CHAIN_PROP": 15,
      "ANCHORED": 31,
      "DIRECT_PROP": 23,
-     "INFERRED": 3,
+     "INFERRED": 4,
      "ORPHAN": 2
     }
    }
@@ -583161,10 +583954,10 @@
     }
    },
    "type_stats": {
-    "var_count": 29,
+    "var_count": 30,
     "confidence": {
      "CHAIN_PROP": 14,
-     "INFERRED": 1,
+     "INFERRED": 2,
      "DIRECT_PROP": 8,
      "ANCHORED": 6
     }
@@ -583928,11 +584721,11 @@
     }
    },
    "type_stats": {
-    "var_count": 132,
+    "var_count": 134,
     "confidence": {
-     "CHAIN_PROP": 37,
+     "CHAIN_PROP": 38,
      "DIRECT_PROP": 29,
-     "INFERRED": 9,
+     "INFERRED": 10,
      "ANCHORED": 55,
      "ORPHAN": 2
     }
@@ -584911,7 +585704,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "BaseClass"
      ]
     },
     "96": {
@@ -584931,7 +585728,7 @@
       "type_map_observed"
      ],
      "observed_types": [
-      "IUnknown"
+      "AbstractClass"
      ]
     },
     "1692": {
@@ -585052,6 +585849,14 @@
      "confidence": "UNKNOWN",
      "evidence": [
       "member_types"
+     ]
+    },
+    "120": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     },
     "0": {
@@ -589499,13 +590304,13 @@
     }
    },
    "type_stats": {
-    "var_count": 99,
+    "var_count": 106,
     "confidence": {
-     "CHAIN_PROP": 16,
+     "CHAIN_PROP": 19,
      "ANCHORED": 40,
      "ORPHAN": 3,
      "DIRECT_PROP": 37,
-     "INFERRED": 3
+     "INFERRED": 7
     }
    }
   },
@@ -595972,12 +596777,12 @@
     }
    },
    "type_stats": {
-    "var_count": 80,
+    "var_count": 81,
     "confidence": {
      "ANCHORED": 21,
      "CHAIN_PROP": 14,
      "DIRECT_PROP": 44,
-     "INFERRED": 1
+     "INFERRED": 2
     }
    }
   },
@@ -596175,6 +596980,7 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
+      "BaseClass",
       "INIClass"
      ]
     },
@@ -596203,7 +597009,8 @@
      ],
      "confidence": "ANCHORED",
      "observed_types": [
-      "CCINIClass"
+      "CCINIClass",
+      "INIClass"
      ]
     },
     "56": {
@@ -596282,13 +597089,9 @@
      "size": 4,
      "evidence": [
       "class_layouts",
-      "member_types",
-      "type_map_observed"
+      "member_types"
      ],
-     "confidence": "ANCHORED",
-     "observed_types": [
-      "CCINIClass"
-     ]
+     "confidence": "ANCHORED"
     },
     "80": {
      "name": "TActionClass_field_50",
@@ -596330,9 +597133,13 @@
      "size": 1,
      "evidence": [
       "class_layouts",
-      "member_types"
+      "member_types",
+      "type_map_observed"
      ],
-     "confidence": "ANCHORED"
+     "confidence": "ANCHORED",
+     "observed_types": [
+      "IUnknown"
+     ]
     },
     "110": {
      "name": "pad_6E",
@@ -596519,6 +597326,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -600739,11 +601547,11 @@
     }
    },
    "type_stats": {
-    "var_count": 59,
+    "var_count": 62,
     "confidence": {
      "DIRECT_PROP": 23,
      "ANCHORED": 27,
-     "CHAIN_PROP": 7,
+     "CHAIN_PROP": 10,
      "ORPHAN": 2
     }
    }
@@ -607642,7 +608450,7 @@
     },
     "0": {
      "observed_types": [
-      "AbstractClass"
+      "IUnknown"
      ],
      "evidence": [
       "type_map_observed"
@@ -610058,12 +610866,12 @@
     }
    },
    "type_stats": {
-    "var_count": 67,
+    "var_count": 74,
     "confidence": {
-     "CHAIN_PROP": 27,
-     "DIRECT_PROP": 17,
-     "ANCHORED": 20,
-     "INFERRED": 3
+     "CHAIN_PROP": 29,
+     "DIRECT_PROP": 18,
+     "ANCHORED": 21,
+     "INFERRED": 6
     }
    }
   },
@@ -614823,13 +615631,13 @@
     }
    },
    "type_stats": {
-    "var_count": 640,
+    "var_count": 636,
     "confidence": {
      "ORPHAN": 13,
-     "CHAIN_PROP": 136,
-     "ANCHORED": 325,
-     "DIRECT_PROP": 156,
-     "INFERRED": 10
+     "CHAIN_PROP": 135,
+     "INFERRED": 12,
+     "ANCHORED": 323,
+     "DIRECT_PROP": 153
     }
    }
   },
@@ -618728,11 +619536,11 @@
     }
    },
    "type_stats": {
-    "var_count": 12,
+    "var_count": 14,
     "confidence": {
      "ANCHORED": 7,
      "DIRECT_PROP": 3,
-     "CHAIN_PROP": 2
+     "CHAIN_PROP": 4
     }
    }
   },
@@ -623354,13 +624162,13 @@
     }
    },
    "type_stats": {
-    "var_count": 407,
+    "var_count": 409,
     "confidence": {
      "ANCHORED": 219,
      "DIRECT_PROP": 108,
-     "CHAIN_PROP": 73,
+     "CHAIN_PROP": 74,
      "ORPHAN": 4,
-     "INFERRED": 3
+     "INFERRED": 4
     }
    }
   },
@@ -623456,6 +624264,7 @@
     },
     "156": {
      "observed_types": [
+      "BaseClass",
       "RandomStruct"
      ],
      "evidence": [
@@ -628346,12 +629155,12 @@
     }
    },
    "type_stats": {
-    "var_count": 72,
+    "var_count": 73,
     "confidence": {
      "ANCHORED": 30,
      "ORPHAN": 10,
      "DIRECT_PROP": 21,
-     "INFERRED": 2,
+     "INFERRED": 3,
      "CHAIN_PROP": 9
     }
    }
@@ -628436,6 +629245,7 @@
     },
     "152": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -633116,12 +633926,11 @@
     }
    },
    "type_stats": {
-    "var_count": 57,
+    "var_count": 32,
     "confidence": {
-     "ANCHORED": 20,
-     "CHAIN_PROP": 18,
-     "DIRECT_PROP": 18,
-     "INFERRED": 1
+     "ANCHORED": 12,
+     "DIRECT_PROP": 14,
+     "CHAIN_PROP": 6
     }
    }
   },
@@ -638771,10 +639580,10 @@
    "type_stats": {
     "var_count": 199,
     "confidence": {
-     "CHAIN_PROP": 62,
-     "ANCHORED": 51,
-     "DIRECT_PROP": 48,
-     "INFERRED": 38
+     "CHAIN_PROP": 63,
+     "ANCHORED": 50,
+     "DIRECT_PROP": 46,
+     "INFERRED": 40
     }
    }
   },
@@ -639062,6 +639871,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -639098,6 +639908,7 @@
       "type_map_observed"
      ],
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ]
     },
@@ -639127,6 +639938,7 @@
     },
     "180": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -639135,6 +639947,7 @@
     },
     "184": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -639159,6 +639972,7 @@
     },
     "204": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -639167,7 +639981,16 @@
     },
     "212": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -647293,11 +648116,11 @@
       "AbstractClass",
       "BuildingTypeClass",
       "CoordStruct",
+      "FootClass",
       "HouseClass",
       "IUnknown",
       "MouseClass",
       "ObjectTypeClass",
-      "RadarClass",
       "VectorClass"
      ],
      "evidence": [
@@ -647761,6 +648584,22 @@
     "280": {
      "observed_types": [
       "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1128": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1152": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -658087,6 +658926,8 @@
      ],
      "cc": "thiscall",
      "name": "BuildingClass::ClearLimpetCheck",
+     "return_type": "TechnoClass",
+     "return_confidence": "INFERRED",
      "csp_owner": "TechnoClass"
     },
     "0x00459DC0": {
@@ -661186,13 +662027,13 @@
     }
    },
    "type_stats": {
-    "var_count": 4736,
+    "var_count": 4843,
     "confidence": {
-     "CHAIN_PROP": 1105,
-     "ANCHORED": 2513,
-     "INFERRED": 108,
-     "DIRECT_PROP": 854,
-     "ORPHAN": 156
+     "CHAIN_PROP": 1142,
+     "INFERRED": 126,
+     "ANCHORED": 2552,
+     "DIRECT_PROP": 866,
+     "ORPHAN": 157
     }
    }
   },
@@ -661584,7 +662425,8 @@
     "8": {
      "observed_types": [
       "INIClass",
-      "IUnknown"
+      "IUnknown",
+      "rc_ptr_base"
      ],
      "evidence": [
       "type_map_observed"
@@ -661676,15 +662518,6 @@
     "76": {
      "observed_types": [
       "IUnknown"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "504": {
-     "observed_types": [
-      "CCINIClass",
-      "INIClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -661998,6 +662831,7 @@
     },
     "760": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662102,15 +662936,16 @@
     },
     "956": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
-    "976": {
+    "968": {
      "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662158,6 +662993,7 @@
     },
     "1460": {
      "observed_types": [
+      "BaseClass",
       "INIClass"
      ],
      "evidence": [
@@ -662174,6 +663010,7 @@
     },
     "1468": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662182,6 +663019,7 @@
     },
     "1472": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662190,7 +663028,7 @@
     },
     "1504": {
      "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662198,6 +663036,7 @@
     },
     "1512": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662318,6 +663157,7 @@
     },
     "1588": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662326,6 +663166,7 @@
     },
     "1648": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662334,6 +663175,7 @@
     },
     "1652": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662342,6 +663184,7 @@
     },
     "1660": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass",
       "IUnknown"
      ],
@@ -662359,6 +663202,7 @@
     },
     "1668": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662421,54 +663265,6 @@
       "type_map_observed"
      ]
     },
-    "1732": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "1740": {
-     "observed_types": [
-      "CCINIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "1744": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "1816": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "1820": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "1824": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "1832": {
      "observed_types": [
       "CCINIClass"
@@ -662477,16 +663273,9 @@
       "type_map_observed"
      ]
     },
-    "2044": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "2048": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -662525,14 +663314,6 @@
       "type_map_observed"
      ]
     },
-    "2220": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "2228": {
      "observed_types": [
       "CCINIClass"
@@ -662541,25 +663322,9 @@
       "type_map_observed"
      ]
     },
-    "2232": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "2244": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
     "2248": {
      "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662663,23 +663428,7 @@
     },
     "3392": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3396": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3400": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662687,15 +663436,7 @@
     },
     "3404": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3408": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662703,23 +663444,7 @@
     },
     "3416": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3420": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3424": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662727,31 +663452,7 @@
     },
     "3428": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3436": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3440": {
-     "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3444": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662759,15 +663460,7 @@
     },
     "3456": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3472": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662797,17 +663490,9 @@
       "type_map_observed"
      ]
     },
-    "3520": {
+    "3504": {
      "observed_types": [
-      "INIClass"
-     ],
-     "evidence": [
-      "type_map_observed"
-     ]
-    },
-    "3524": {
-     "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -662815,15 +663500,183 @@
     },
     "3528": {
      "observed_types": [
-      "INIClass"
+      "WeaponTypeClass"
      ],
      "evidence": [
       "type_map_observed"
      ]
     },
-    "3532": {
+    "804": {
      "observed_types": [
-      "INIClass"
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "832": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "920": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "976": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "980": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1088": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1144": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1200": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1228": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1284": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1312": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1492": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1552": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1560": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1608": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1740": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1744": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1820": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1824": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1852": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1880": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1956": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -668712,12 +669565,12 @@
     }
    },
    "type_stats": {
-    "var_count": 1142,
+    "var_count": 1315,
     "confidence": {
-     "ANCHORED": 522,
-     "DIRECT_PROP": 210,
-     "CHAIN_PROP": 181,
-     "INFERRED": 227,
+     "ANCHORED": 526,
+     "DIRECT_PROP": 356,
+     "CHAIN_PROP": 197,
+     "INFERRED": 234,
      "ORPHAN": 2
     }
    }
@@ -675804,7 +676657,8 @@
     },
     "212": {
      "observed_types": [
-      "AbstractClass"
+      "AbstractClass",
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -675813,6 +676667,14 @@
     "156": {
      "observed_types": [
       "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "0": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -686334,11 +687196,12 @@
     }
    },
    "type_stats": {
-    "var_count": 127,
+    "var_count": 129,
     "confidence": {
      "DIRECT_PROP": 35,
      "ANCHORED": 70,
-     "CHAIN_PROP": 22
+     "CHAIN_PROP": 23,
+     "INFERRED": 1
     }
    }
   },
@@ -697787,6 +698650,7 @@
     },
     "156": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -697803,7 +698667,24 @@
     },
     "184": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "228": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "232": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -701963,11 +702844,12 @@
     }
    },
    "type_stats": {
-    "var_count": 45,
+    "var_count": 46,
     "confidence": {
      "CHAIN_PROP": 8,
      "ANCHORED": 20,
-     "DIRECT_PROP": 17
+     "DIRECT_PROP": 17,
+     "INFERRED": 1
     }
    }
   },
@@ -706458,12 +707340,12 @@
     }
    },
    "type_stats": {
-    "var_count": 116,
+    "var_count": 117,
     "confidence": {
      "ANCHORED": 49,
      "CHAIN_PROP": 51,
      "DIRECT_PROP": 13,
-     "INFERRED": 3
+     "INFERRED": 4
     }
    }
   },
@@ -709313,9 +710195,9 @@
     }
    },
    "type_stats": {
-    "var_count": 16,
+    "var_count": 17,
     "confidence": {
-     "CHAIN_PROP": 3,
+     "CHAIN_PROP": 4,
      "DIRECT_PROP": 4,
      "ANCHORED": 9
     }
@@ -714157,6 +715039,30 @@
      ],
      "observed_types": [
       "TriggerTypeClass"
+     ]
+    },
+    "48": {
+     "observed_types": [
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "100": {
+     "observed_types": [
+      "AbstractClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "4": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
      ]
     }
    },
@@ -719048,12 +719954,13 @@
     }
    },
    "type_stats": {
-    "var_count": 103,
+    "var_count": 107,
     "confidence": {
-     "ORPHAN": 14,
+     "ORPHAN": 15,
      "ANCHORED": 41,
      "CHAIN_PROP": 20,
-     "DIRECT_PROP": 28
+     "DIRECT_PROP": 28,
+     "INFERRED": 3
     }
    }
   },
@@ -719168,6 +720075,14 @@
       "member_types"
      ],
      "confidence": "ANCHORED"
+    },
+    "448": {
+     "observed_types": [
+      "BaseClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
     }
    },
    "csp_methods": 7,
@@ -727678,7 +728593,15 @@
     },
     "258156": {
      "observed_types": [
-      "ObjectClass"
+      "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "258160": {
+     "observed_types": [
+      "AnimClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -728131,11 +729054,11 @@
     }
    },
    "type_stats": {
-    "var_count": 90,
+    "var_count": 93,
     "confidence": {
      "ANCHORED": 36,
      "CHAIN_PROP": 27,
-     "INFERRED": 3,
+     "INFERRED": 6,
      "DIRECT_PROP": 24
     }
    }
@@ -730829,6 +731752,14 @@
     "928": {
      "observed_types": [
       "ObjectClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "0": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -733981,11 +734912,12 @@
     }
    },
    "type_stats": {
-    "var_count": 128,
+    "var_count": 129,
     "confidence": {
      "ANCHORED": 56,
      "DIRECT_PROP": 31,
-     "CHAIN_PROP": 41
+     "CHAIN_PROP": 41,
+     "INFERRED": 1
     }
    }
   },
@@ -734486,7 +735418,8 @@
     },
     "3580": {
      "observed_types": [
-      "AircraftTypeClass"
+      "AircraftTypeClass",
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -739293,11 +740226,11 @@
     }
    },
    "type_stats": {
-    "var_count": 220,
+    "var_count": 214,
     "confidence": {
      "DIRECT_PROP": 45,
      "ANCHORED": 53,
-     "CHAIN_PROP": 116,
+     "CHAIN_PROP": 110,
      "INFERRED": 6
     }
    }
@@ -739570,11 +740503,12 @@
     }
    },
    "type_stats": {
-    "var_count": 25,
+    "var_count": 26,
     "confidence": {
      "DIRECT_PROP": 10,
      "ANCHORED": 12,
-     "CHAIN_PROP": 3
+     "CHAIN_PROP": 3,
+     "INFERRED": 1
     }
    }
   },
@@ -741262,7 +742196,10 @@
      ],
      "observed_types": [
       "AbstractClass",
+      "BaseClass",
       "CCINIClass",
+      "IUnknown",
+      "ObjectClass",
       "VectorClass"
      ]
     },
@@ -741281,6 +742218,7 @@
       "MapClass",
       "MultiplayerGameMode",
       "ObjectClass",
+      "TechnoTypeClass",
       "VectorClass"
      ]
     },
@@ -741319,6 +742257,14 @@
     "20": {
      "observed_types": [
       "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "1": {
+     "observed_types": [
+      "SessionClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -756975,13 +757921,13 @@
     }
    },
    "type_stats": {
-    "var_count": 8633,
+    "var_count": 7003,
     "confidence": {
-     "ORPHAN": 1660,
-     "DIRECT_PROP": 2429,
-     "ANCHORED": 2345,
-     "CHAIN_PROP": 1924,
-     "INFERRED": 275
+     "DIRECT_PROP": 2416,
+     "ANCHORED": 2325,
+     "CHAIN_PROP": 1945,
+     "INFERRED": 279,
+     "ORPHAN": 38
     }
    }
   },
@@ -772987,11 +773933,12 @@
     }
    },
    "type_stats": {
-    "var_count": 65,
+    "var_count": 67,
     "confidence": {
-     "CHAIN_PROP": 10,
+     "CHAIN_PROP": 11,
      "DIRECT_PROP": 22,
-     "ANCHORED": 33
+     "ANCHORED": 33,
+     "INFERRED": 1
     }
    }
   },
@@ -776617,12 +777564,12 @@
     }
    },
    "type_stats": {
-    "var_count": 54,
+    "var_count": 55,
     "confidence": {
      "DIRECT_PROP": 19,
      "CHAIN_PROP": 15,
      "ANCHORED": 18,
-     "INFERRED": 2
+     "INFERRED": 3
     }
    }
   },
@@ -777735,6 +778682,14 @@
      "observed_types": [
       "CoordStruct",
       "IUnknown"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "256": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -788230,11 +789185,12 @@
     }
    },
    "type_stats": {
-    "var_count": 83,
+    "var_count": 86,
     "confidence": {
-     "CHAIN_PROP": 15,
+     "CHAIN_PROP": 16,
      "ANCHORED": 43,
-     "DIRECT_PROP": 25
+     "DIRECT_PROP": 25,
+     "INFERRED": 2
     }
    }
   },
@@ -794852,11 +795808,12 @@
     }
    },
    "type_stats": {
-    "var_count": 30,
+    "var_count": 32,
     "confidence": {
      "DIRECT_PROP": 11,
-     "CHAIN_PROP": 7,
-     "ANCHORED": 12
+     "CHAIN_PROP": 8,
+     "ANCHORED": 12,
+     "INFERRED": 1
     }
    }
   },
@@ -795103,9 +796060,9 @@
     }
    },
    "type_stats": {
-    "var_count": 16,
+    "var_count": 18,
     "confidence": {
-     "CHAIN_PROP": 2,
+     "CHAIN_PROP": 4,
      "ANCHORED": 9,
      "DIRECT_PROP": 5
     }
@@ -795641,12 +796598,12 @@
     }
    },
    "type_stats": {
-    "var_count": 83,
+    "var_count": 84,
     "confidence": {
      "DIRECT_PROP": 23,
      "CHAIN_PROP": 36,
-     "ANCHORED": 22,
-     "INFERRED": 2
+     "INFERRED": 3,
+     "ANCHORED": 22
     }
    }
   },
@@ -798107,6 +799064,7 @@
     },
     "380": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -798115,6 +799073,7 @@
     },
     "384": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -798131,6 +799090,7 @@
     },
     "392": {
      "observed_types": [
+      "BaseClass",
       "CCINIClass"
      ],
      "evidence": [
@@ -798172,6 +799132,14 @@
     "248": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "276": {
+     "observed_types": [
+      "BaseClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -802819,10 +803787,11 @@
     }
    },
    "type_stats": {
-    "var_count": 46,
+    "var_count": 48,
     "confidence": {
-     "CHAIN_PROP": 9,
+     "CHAIN_PROP": 10,
      "ANCHORED": 19,
+     "INFERRED": 1,
      "DIRECT_PROP": 18
     }
    }
@@ -814234,11 +815203,11 @@
     }
    },
    "type_stats": {
-    "var_count": 165,
+    "var_count": 160,
     "confidence": {
-     "ANCHORED": 72,
+     "ANCHORED": 68,
      "ORPHAN": 10,
-     "DIRECT_PROP": 46,
+     "DIRECT_PROP": 45,
      "CHAIN_PROP": 34,
      "INFERRED": 3
     }
@@ -824702,11 +825671,11 @@
     }
    },
    "type_stats": {
-    "var_count": 102,
+    "var_count": 185,
     "confidence": {
-     "ANCHORED": 39,
-     "DIRECT_PROP": 30,
-     "CHAIN_PROP": 32,
+     "CHAIN_PROP": 66,
+     "ANCHORED": 74,
+     "DIRECT_PROP": 44,
      "INFERRED": 1
     }
    }
@@ -825155,7 +826124,11 @@
      "type": "void*",
      "confidence": "UNKNOWN",
      "evidence": [
-      "member_types"
+      "member_types",
+      "type_map_observed"
+     ],
+     "observed_types": [
+      "AnimClass"
      ]
     },
     "96": {
@@ -825305,12 +826278,12 @@
     }
    },
    "type_stats": {
-    "var_count": 531,
+    "var_count": 388,
     "confidence": {
-     "DIRECT_PROP": 116,
-     "ANCHORED": 308,
-     "CHAIN_PROP": 91,
-     "INFERRED": 16
+     "ANCHORED": 209,
+     "DIRECT_PROP": 90,
+     "CHAIN_PROP": 68,
+     "INFERRED": 21
     }
    }
   },
@@ -825421,6 +826394,22 @@
     "12": {
      "observed_types": [
       "CCINIClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "258156": {
+     "observed_types": [
+      "AnimClass"
+     ],
+     "evidence": [
+      "type_map_observed"
+     ]
+    },
+    "258160": {
+     "observed_types": [
+      "AnimClass"
      ],
      "evidence": [
       "type_map_observed"
@@ -825796,9 +826785,9 @@
     }
    },
    "type_stats": {
-    "var_count": 94,
+    "var_count": 98,
     "confidence": {
-     "CHAIN_PROP": 25,
+     "CHAIN_PROP": 29,
      "ANCHORED": 39,
      "DIRECT_PROP": 28,
      "INFERRED": 2
@@ -825943,10 +826932,10 @@
     }
    },
    "type_stats": {
-    "var_count": 12,
+    "var_count": 13,
     "confidence": {
      "CHAIN_PROP": 5,
-     "INFERRED": 2,
+     "INFERRED": 3,
      "DIRECT_PROP": 3,
      "ANCHORED": 2
     }
@@ -827519,11 +828508,12 @@
     }
    },
    "type_stats": {
-    "var_count": 8,
+    "var_count": 42,
     "confidence": {
-     "CHAIN_PROP": 4,
-     "DIRECT_PROP": 2,
-     "ANCHORED": 2
+     "CHAIN_PROP": 23,
+     "DIRECT_PROP": 6,
+     "ANCHORED": 3,
+     "INFERRED": 10
     }
    }
   },
@@ -827587,11 +828577,11 @@
     }
    },
    "type_stats": {
-    "var_count": 8,
+    "var_count": 4,
     "confidence": {
-     "CHAIN_PROP": 4,
-     "DIRECT_PROP": 2,
-     "ANCHORED": 2
+     "CHAIN_PROP": 2,
+     "DIRECT_PROP": 1,
+     "ANCHORED": 1
     }
    }
   },
@@ -827624,11 +828614,11 @@
     }
    },
    "type_stats": {
-    "var_count": 8,
+    "var_count": 4,
     "confidence": {
-     "CHAIN_PROP": 4,
-     "DIRECT_PROP": 2,
-     "ANCHORED": 2
+     "CHAIN_PROP": 2,
+     "DIRECT_PROP": 1,
+     "ANCHORED": 1
     }
    }
   },
@@ -827657,10 +828647,10 @@
     }
    },
    "type_stats": {
-    "var_count": 21,
+    "var_count": 23,
     "confidence": {
-     "INFERRED": 3,
-     "CHAIN_PROP": 10,
+     "INFERRED": 6,
+     "CHAIN_PROP": 9,
      "DIRECT_PROP": 4,
      "ANCHORED": 4
     }
@@ -827897,12 +828887,12 @@
     }
    },
    "type_stats": {
-    "var_count": 536,
+    "var_count": 539,
     "confidence": {
      "ANCHORED": 207,
-     "CHAIN_PROP": 198,
+     "CHAIN_PROP": 199,
      "DIRECT_PROP": 104,
-     "INFERRED": 27
+     "INFERRED": 29
     }
    }
   },
@@ -827919,11 +828909,12 @@
     "0x65d4d0"
    ],
    "type_stats": {
-    "var_count": 185,
+    "var_count": 497,
     "confidence": {
-     "CHAIN_PROP": 59,
-     "DIRECT_PROP": 67,
-     "ANCHORED": 59
+     "ANCHORED": 175,
+     "CHAIN_PROP": 167,
+     "DIRECT_PROP": 153,
+     "INFERRED": 2
     }
    }
   },
@@ -827950,11 +828941,11 @@
     }
    },
    "type_stats": {
-    "var_count": 20,
+    "var_count": 36,
     "confidence": {
-     "DIRECT_PROP": 2,
-     "CHAIN_PROP": 13,
-     "ANCHORED": 5
+     "DIRECT_PROP": 8,
+     "CHAIN_PROP": 20,
+     "ANCHORED": 8
     }
    }
   },
