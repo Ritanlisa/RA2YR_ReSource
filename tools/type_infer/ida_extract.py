@@ -3506,6 +3506,81 @@ def _run_main():
     print(f"  Built graph: {len(call_graph)} callers.")
 
     # ============================================================
+    # EXTRACT_ONLY (B10/B10b 激活模式, 2026-09-05):
+    #   只做只读提取（阶段 1-4）+ 三个数据导出，随即退出。
+    #   跳过阶段 5-8（旧 AC-3 求解器 + struct 注入/签名/改名——会以
+    #   CSP 架构裁决前的旧类型污染已 CSP 化的 IDB）与阶段 9 的
+    #   solver 依赖型报告导出。
+    #   触发: 环境变量 T14X_EXTRACT_ONLY=1（py_exec_file 前经 py_eval 设置）。
+    # ============================================================
+    if os.environ.get("T14X_EXTRACT_ONLY") == "1":
+        _x_trace = os.path.join(PROJ_ROOT, ".omo", "t14x_extract_trace.log")
+
+        def _xlog(msg):
+            with open(_x_trace, "a", encoding="utf-8") as _f:
+                _f.write("%.1f %s\n" % (time.time(), msg))
+
+        _xlog("phases 1-4 complete: constraints=%d call_graph=%d cc=%d" % (
+            len(constraints), len(call_graph), len(func_real_cc)))
+        _cdir_x = os.path.join(PROJ_ROOT, "tools", "type_infer", "constraints")
+        os.makedirs(_cdir_x, exist_ok=True)
+
+        _seeds_x = [c for c in constraints if c.get("type") == "TYPE_SEED"]
+        _edges_x = [c for c in constraints if c.get("type") != "TYPE_SEED"]
+        _cpath_x = os.path.join(_cdir_x, "raw_constraints.rtti.json")
+        _total_x = len(_seeds_x) + len(_edges_x)
+        _xlog("streaming raw_constraints.rtti.json total=%d" % _total_x)
+        with open(_cpath_x, "w", encoding="utf-8") as _f:
+            _f.write(
+                '{"description": "Type constraints (RTTI re-anchored extractor, '
+                'EXTRACT_ONLY B10/B10b)", "binary": "gamemd.exe", '
+                '"total_constraints": %d, "constraints": [' % _total_x
+            )
+            _first_x = True
+            for _c in _seeds_x:
+                if not _first_x:
+                    _f.write(",")
+                _first_x = False
+                _f.write(json.dumps(_c, ensure_ascii=False))
+            for _c in _edges_x:
+                if not _first_x:
+                    _f.write(",")
+                _first_x = False
+                _f.write(json.dumps(_c, ensure_ascii=False))
+            _f.write("]}")
+        _xlog("raw_constraints.rtti.json written size=%d" % os.path.getsize(_cpath_x))
+
+        _gpath_x = os.path.join(_cdir_x, "call_graph.rtti.json")
+        with open(_gpath_x, "w", encoding="utf-8") as _f:
+            _f.write('{"graph": {')
+            _first_x = True
+            for _k in sorted(call_graph):
+                if not _first_x:
+                    _f.write(",")
+                _first_x = False
+                _f.write('%s: %s' % (json.dumps(_k), json.dumps(call_graph[_k], ensure_ascii=False)))
+            _f.write("}}")
+        _xlog("call_graph.rtti.json written size=%d" % os.path.getsize(_gpath_x))
+
+        _cc_x = {
+            "func_real_cc": {k: _CM_TO_CC_NAME.get(v, str(v)) for k, v in func_real_cc.items()},
+            "func_stack_args": {k: v for k, v in func_stack_args.items()},
+            "func_real_arg_count": {k: v for k, v in func_real_arg_count.items()},
+        }
+        _ccpath_x = os.path.join(PROJ_ROOT, ".omo", "extracted_cc.json")
+        with open(_ccpath_x, "w", encoding="utf-8") as _f:
+            json.dump(_cc_x, _f, indent=1)
+        _xlog("extracted_cc.json written funcs=%d" % len(_cc_x["func_real_cc"]))
+
+        RUN_MANIFEST["extract_only_mode"] = True
+        RUN_MANIFEST["b10_return_src_edges"] = RUN_MANIFEST.get("return_src_edges_b10", 0)
+        _mp_x = _write_manifest()
+        _xlog("manifest written: " + _mp_x)
+        _xlog("EXTRACT_ONLY COMPLETE")
+        print("[EXTRACT_ONLY] complete — constraints/call_graph/CC exported, solver+IDB-mutation phases skipped")
+        return
+
+    # ============================================================
     # 5. CSP 求解引擎 (AC-3 + Weighted Greedy)
     # ============================================================
     print("\n[5/9] Running CSP Solver (AC-3 + Weighted Greedy)...")

@@ -761,19 +761,19 @@ int CampaignClass_sub_55CF810(void* /*CampaignClass*/ self) {
     return 0;
 }
 
-// CampaignProperties_WorldDominationTour[22]::Seek @ 0x5D2770 (13B)
+// CampaignProperties_WorldDominationTour_22::Seek @ 0x5D2770 (13B)
 REVERSE(0x5D2770, "IDA decompilation", "None")
 int CampaignProperties_WorldDominationTour_22_Seek(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return 0;
 }
 
-// CampaignProperties_WorldDominationTour[22]::Read @ 0x5D2900 (51B)
+// CampaignProperties_WorldDominationTour_22::Read @ 0x5D2900 (51B)
 REVERSE(0x5D2900, "IDA decompilation", "None")
 int CampaignProperties_WorldDominationTour_22_Read(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return 0;
 }
 
-// CampaignProperties_WorldDominationTour[22]::Write @ 0x5D2940 (27B)
+// CampaignProperties_WorldDominationTour_22::Write @ 0x5D2940 (27B)
 REVERSE(0x5D2940, "IDA decompilation", "None")
 int CampaignProperties_WorldDominationTour_22_Write(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return 0;
@@ -1562,13 +1562,13 @@ int CampaignConstructorWDT(void) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::Seek @ 0x7656D0 (47B)
+// Campaign_WorldDominationTour_16::Seek @ 0x7656D0 (47B)
 REVERSE(0x7656D0, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_Seek(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[24]::AddRef @ 0x765700 (14B)
+// Campaign_WorldDominationTour_24::AddRef @ 0x765700 (14B)
 REVERSE(0x765700, "IDA decompilation", "None")
 bool Campaign_WorldDominationTour_24_AddRef(void* /*Campaign_WorldDominationTour[24]*/ self) {
     return false;
@@ -1592,61 +1592,61 @@ int Campaign_WorldDominationTour_16_sub_765770(void* /*Campaign_WorldDominationT
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::AddRef @ 0x7657F0 (70B)
+// Campaign_WorldDominationTour_16::AddRef @ 0x7657F0 (70B)
 REVERSE(0x7657F0, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_AddRef(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::Release @ 0x765840 (282B)
+// Campaign_WorldDominationTour_16::Release @ 0x765840 (282B)
 REVERSE(0x765840, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_Release(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::ddtor @ 0x765960 (40B)
+// Campaign_WorldDominationTour_16::ddtor @ 0x765960 (40B)
 REVERSE(0x765960, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_ddtor(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::Read @ 0x765990 (55B)
+// Campaign_WorldDominationTour_16::Read @ 0x765990 (55B)
 REVERSE(0x765990, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_Read(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[16]::Write @ 0x7659D0 (27B)
+// Campaign_WorldDominationTour_16::Write @ 0x7659D0 (27B)
 REVERSE(0x7659D0, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_16_Write(void* /*Campaign_WorldDominationTour[16]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[24]::Release @ 0x765B40 (6B)
+// Campaign_WorldDominationTour_24::Release @ 0x765B40 (6B)
 REVERSE(0x765B40, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_24_Release(void* /*Campaign_WorldDominationTour[24]*/ self) {
     return 0;
 }
 
-// Campaign_WorldDominationTour[24]::ddtor @ 0x765B50 (6B)
+// Campaign_WorldDominationTour_24::ddtor @ 0x765B50 (6B)
 REVERSE(0x765B50, "IDA decompilation", "None")
 int Campaign_WorldDominationTour_24_ddtor(void* /*Campaign_WorldDominationTour[24]*/ self) {
     return 0;
 }
 
-// CampaignProperties_WorldDominationTour[22]::AddRef @ 0x76F0F0 (14B)
+// CampaignProperties_WorldDominationTour_22::AddRef @ 0x76F0F0 (14B)
 REVERSE(0x76F0F0, "IDA decompilation", "None")
 bool CampaignProperties_WorldDominationTour_22_AddRef(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return false;
 }
 
-// CampaignProperties_WorldDominationTour[22]::Release @ 0x76F1A0 (6B)
+// CampaignProperties_WorldDominationTour_22::Release @ 0x76F1A0 (6B)
 REVERSE(0x76F1A0, "IDA decompilation", "None")
 int CampaignProperties_WorldDominationTour_22_Release(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return 0;
 }
 
-// CampaignProperties_WorldDominationTour[22]::ddtor @ 0x76F1B0 (6B)
+// CampaignProperties_WorldDominationTour_22::ddtor @ 0x76F1B0 (6B)
 REVERSE(0x76F1B0, "IDA decompilation", "None")
 int CampaignProperties_WorldDominationTour_22_ddtor(void* /*CampaignProperties_WorldDominationTour[22]*/ self) {
     return 0;
@@ -1814,37 +1814,37 @@ int WonlineStringDialogControl_12_sub_7AC9A0(void* /*WonlineStringDialogControl[
     return 0;
 }
 
-// WonlineStringDialogControl[12]::Seek @ 0x7AC9C0 (13B)
+// WonlineStringDialogControl_12::Seek @ 0x7AC9C0 (13B)
 REVERSE(0x7AC9C0, "IDA decompilation", "None")
 int WonlineStringDialogControl_12_Seek(void* /*WonlineStringDialogControl[12]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[12]::AddRef @ 0x7AD090 (62B)
+// WonlineStringDialogControl_12::AddRef @ 0x7AD090 (62B)
 REVERSE(0x7AD090, "IDA decompilation", "None")
 int WonlineStringDialogControl_12_AddRef(void* /*WonlineStringDialogControl[12]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[12]::Release @ 0x7AD0D0 (174B)
+// WonlineStringDialogControl_12::Release @ 0x7AD0D0 (174B)
 REVERSE(0x7AD0D0, "IDA decompilation", "None")
 int WonlineStringDialogControl_12_Release(void* /*WonlineStringDialogControl[12]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[12]::ddtor @ 0x7AD180 (39B)
+// WonlineStringDialogControl_12::ddtor @ 0x7AD180 (39B)
 REVERSE(0x7AD180, "IDA decompilation", "None")
 void WonlineStringDialogControl_12_ddtor(void* /*WonlineStringDialogControl[12]*/ self) {
     (void)self;
 }
 
-// WonlineStringDialogControl[12]::Read @ 0x7AD1B0 (51B)
+// WonlineStringDialogControl_12::Read @ 0x7AD1B0 (51B)
 REVERSE(0x7AD1B0, "IDA decompilation", "None")
 int WonlineStringDialogControl_12_Read(void* /*WonlineStringDialogControl[12]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[12]::Write @ 0x7AD1F0 (27B)
+// WonlineStringDialogControl_12::Write @ 0x7AD1F0 (27B)
 REVERSE(0x7AD1F0, "IDA decompilation", "None")
 int WonlineStringDialogControl_12_Write(void* /*WonlineStringDialogControl[12]*/ self) {
     return 0;
@@ -1868,37 +1868,37 @@ int WonlineStringDialogControl_12_sub_7AD3C0(void* /*WonlineStringDialogControl[
     return 0;
 }
 
-// WonlineStringDialogControl[28]::ddtor @ 0x7AD440 (26B)
+// WonlineStringDialogControl_28::ddtor @ 0x7AD440 (26B)
 REVERSE(0x7AD440, "IDA decompilation", "None")
 int WonlineStringDialogControl_28_ddtor(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[28]::Read @ 0x7AD460 (29B)
+// WonlineStringDialogControl_28::Read @ 0x7AD460 (29B)
 REVERSE(0x7AD460, "IDA decompilation", "None")
 int WonlineStringDialogControl_28_Read(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[28]::Write @ 0x7AD480 (241B)
+// WonlineStringDialogControl_28::Write @ 0x7AD480 (241B)
 REVERSE(0x7AD480, "IDA decompilation", "None")
 int WonlineStringDialogControl_28_Write(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[28]::StubReturnFalse @ 0x7AD610 (5B)
+// WonlineStringDialogControl_28::StubReturnFalse @ 0x7AD610 (5B)
 REVERSE(0x7AD610, "IDA decompilation", "None")
 int WonlineStringDialogControl_28_StubReturnFalse(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0;
 }
 
-// WonlineStringDialogControl[28]::AddRef @ 0x7AD620 (17B)
+// WonlineStringDialogControl_28::AddRef @ 0x7AD620 (17B)
 REVERSE(0x7AD620, "IDA decompilation", "None")
 LONG WonlineStringDialogControl_28_AddRef(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0L;
 }
 
-// WonlineStringDialogControl[28]::Release @ 0x7AD640 (77B)
+// WonlineStringDialogControl_28::Release @ 0x7AD640 (77B)
 REVERSE(0x7AD640, "IDA decompilation", "None")
 LONG WonlineStringDialogControl_28_Release(void* /*WonlineStringDialogControl[28]*/ self) {
     return 0L;
