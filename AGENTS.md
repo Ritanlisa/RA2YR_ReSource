@@ -878,6 +878,12 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-05 (下午)**: 天花板攻坚 — return/ORPHAN 根因定位 + B11/B12 补全
+  - **ORPHAN 根因直方图**（随机 400 样本沿约束图回追值链）: ~30% B4 边界写（算术/数组索引计算值——身份被计算消灭, 恒正确无型）; ~50% 栈链终于计算写; ~7% 被调 .return 无型; 其余小项。**结论: ORPHAN 20.7% 属结构性天花板**（身份型格的语义边界, 非数据缺口）
+  - **return 通道根因**: `.return` 类型经 RETURN_TO 等价类并集从调用方用法回流（非 ret 站点边）; ret 站点提取已达证据上限——B11c 有界回走被 xref 守卫拦下 78%（MSVC6 共享尾声 = 错误路径统一 jmp 清理块, eax 溯源真歧义, 守卫按设计工作, 实测 3000 ret 站点 0 可命中）
+  - **B11a (call 转发)**: `call X; ret` 包装 → RETURN + {X}.return→_RET 链, +442; **B11b (源全接通)**: reg/stack 源不再排除（引擎 scope_vars 对全边端点做 SSA 化——B10 时代的排除是引擎 SSA 机制确认前的过度保守）, +218; **B12 (param 入口绑定补全)**: 调用方 CALL_ARG 推 param1 20K 次 vs 被调方仅绑 4K 函数——被调方帧分析系统性少计（varargs/未读参数）, 按调用方最大 param 索引补发 2,461 条（fastcall 跳过, 槽位错位）
+  - **净效果**: type_map 729,681→732,742; SSA 类类型 101,627→**103,821**; 栈槽 8,966→**10,193**; this +79 落盘; 局部变量 +743（累计 ~19.1K）; **TOP=0 全程保持**; verify_csp ALL PASS
+  - **遗留**: mass_type 3 失败 = return 通道新 wchar_t* 返回类型与双 CC 拼接解析失败（待修）; no-struct 类型 237 类/3,035 变量
 - **2026-09-05**: 6 个反编译失败根因修复 + B10/B10b 提取器激活 — 反编译质量飞跃
   - **6 失败函数归因（全部修复, 6/6 可反编译）**: ① 5 个因被调方挂着 `__userpurge` 垃圾签名（`int@<ebx>`/`int@<ebp>` 寄存器参数注解）——调用方按普通约定压栈, Hex-Rays 调用分析调和失败报 "call analysis failed"(hf -12)。修复: 删垃圾类型 + 按 CSP 类归属 + frame argsize 挂正确 thiscall 签名（TechnoTypeClass::SaveLoad_Prefix_0 / BuildingClass::ValidateFoundation_0 / Frame::Present）; ② CIpow_Helper(0x7C8FD2) 因 CRT 错误蹦床 `__startTwoArgErrorHandling` 读 `[ebp+arg_10]`（深栈访问）且无 FUNC_NORET——补 noreturn 旗标 + `void __noreturn()` 类型
   - **EXTRACT_ONLY 模式**（ida_extract.py）: 阶段 1-4（只读提取）+ 三导出后即返回, 跳过阶段 5-8 旧 AC-3 求解器与 IDB 变异（防止旧类型污染 CSP 化的 IDB）; 环境变量 `T14X_EXTRACT_ONLY=1` 触发
