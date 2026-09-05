@@ -167,8 +167,16 @@ def main():
             # 返回段清洗: 双调用约定/寄存器注解（`__userpurge@<al>`、
             # `@<edx:eax>`、紧贴形 `__userpurge__thiscall`）都会被拒绝
             new_proto = re.sub(r"\s*__(?:userpurge|usercall)\b", "", new_proto)
+            # 双 CC 前缀删除（lookahead 保 __thiscall 本体）; `\s*` 兼容
+            # `wchar_t *__cdecl __thiscall` 这种 `*` 后无空格的紧贴形。
+            # `__w*call` 匹配不到 `__cdecl`/`__pascal`（不以 call 结尾）——
+            # CC 集 must 显式枚举三者
             new_proto = re.sub(
-                r"^(.*?)\s+__\w*call\s+__thiscall", r"\1 __thiscall",
+                r"\s*__(?:\w*call|cdecl|pascal)\s*(?=__thiscall\b)", " ",
+                new_proto)
+            new_proto = re.sub(
+                r"^(.*?)\s+__(?:\w*call|cdecl|pascal)\s+__thiscall",
+                r"\1 __thiscall",
                 new_proto)
             new_proto = re.sub(r"@<[\w:]+>\s*", "", new_proto)
             new_proto = re.sub(r"(?<![\s(])__thiscall", " __thiscall",
@@ -188,7 +196,10 @@ def main():
             # 函数名保持原样——改名会破坏 symbols-locked 的 signals.json
             # 1:1:1 同步（AGENTS.md 管道保护）, 类前缀留给 rename_symbol.py
             nm = name_by_addr.get(a) or p.get("name") or f"sub_{a}"
-            if nm.startswith("?") or re.match(
+            # 单下划线 `_` 前缀 = CRT/编译器辅助（_wcscat/_CIpow/...）——
+            # 127 个 COMDAT 折叠 CRT 符号携带类 :this（折叠体安装的 vtable
+            # 属原始类, CRT 名下应用即错），一律跳过
+            if nm.startswith("?") or nm.startswith("_") or re.match(
                     r"^(std_|_STD|__|_Crt|_Init|Iostream|ios_|Winmain)", nm) \
                     or not all(re.match(r"^[A-Za-z_]\w*$", seg)
                                for seg in nm.split("::")):

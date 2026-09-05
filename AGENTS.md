@@ -878,6 +878,12 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-05 (傍晚)**: mass_type 双 CC bug 修复 + struct 门归因与补建
+  - **双 CC 根因**: `__cdecl`/`__pascal` 不以 "call" 结尾——原清洗正则 `__\w*call` 从未匹配到它们（`wchar_t *__cdecl __thiscall` 紧贴形 + 无空格双杀）; CC 集显式枚举 `__(?:\w*call|cdecl|pascal)` 修复, fail=3→0
+  - **CRT 折叠体防线**: 127 个 COMDAT 折叠 CRT 符号携带类 `:this`（折叠体的 vtable 安装属原始类, CRT 名下应用即错）——mass_type 名字门扩展到单下划线前缀（`_wcscat` 家族漏网入口）
+  - **struct 门归因（237 缺失类）**: 204 类 class_db 无成员（空壳, 离线无解）+ 20 类有 observed members 可建 + 13 类完全无数据。20 类已补建（`@` 嵌套名 6 个新别名, STRUCT_CLASSES +20）——Selection_WorldDominationTour 1,200B/19 成员、ProgressScreenClass 88B 等; 门从 437→459 类, 解锁 650 变量, locals +121 落盘（累计 ~19.2K）
+  - **别名贯通**: struct 门探测与 t14_locals 驱动的 tif_for 都过 anchors/mangled_alias.json（`@` 名 C 语法非法, 此前驱动侧直查原名必 miss）
+  - **剩余 215 类/2,385 变量 = 真天花板**（无布局无成员证据, 需 IDA 字段级 xref 考古才可突破）
 - **2026-09-05 (下午)**: 天花板攻坚 — return/ORPHAN 根因定位 + B11/B12 补全
   - **ORPHAN 根因直方图**（随机 400 样本沿约束图回追值链）: ~30% B4 边界写（算术/数组索引计算值——身份被计算消灭, 恒正确无型）; ~50% 栈链终于计算写; ~7% 被调 .return 无型; 其余小项。**结论: ORPHAN 20.7% 属结构性天花板**（身份型格的语义边界, 非数据缺口）
   - **return 通道根因**: `.return` 类型经 RETURN_TO 等价类并集从调用方用法回流（非 ret 站点边）; ret 站点提取已达证据上限——B11c 有界回走被 xref 守卫拦下 78%（MSVC6 共享尾声 = 错误路径统一 jmp 清理块, eax 溯源真歧义, 守卫按设计工作, 实测 3000 ret 站点 0 可命中）

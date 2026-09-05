@@ -49,5 +49,11 @@
  "VectorClass__N[18]": "VectorClass_N_18",
  "VectorCursor_uint_DynamicVectorClass_uint___[13]": "VectorCursor_uint_DynamicVectorClass_uint_13",
  "WDTState[4]": "WDTState_4",
- "WonlineStringDialogControl[12]": "WonlineStringDialogControl_12"
+ "WonlineStringDialogControl[12]": "WonlineStringDialogControl_12",
+ "Selection@WorldDominationTour": "Selection_WorldDominationTour",
+ "GameOption@WorldDominationTour": "GameOption_WorldDominationTour",
+ "INIEntry@INIClass": "INIEntry_INIClass",
+ "INISection@INIClass": "INISection_INIClass",
+ "Map@WorldDominationTour": "Map_WorldDominationTour",
+ "FlagGameOption@WorldDominationTour": "FlagGameOption_WorldDominationTour"
 }
