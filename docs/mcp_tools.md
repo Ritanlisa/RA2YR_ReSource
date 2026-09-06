@@ -13,6 +13,8 @@
 
 ## 注册（ZCode / 任意 MCP 客户端）
 
+**方式 A：stdio（标准，客户端自动拉起）**
+
 ```json
 {
   "mcpServers": {
@@ -23,6 +25,30 @@
   }
 }
 ```
+
+**方式 B：HTTP 常驻服务（已启动于 127.0.0.1:13399）**
+
+启动命令（本会话已在后台运行）：
+
+```bash
+python tools/mcp_translate_server.py --http 13399
+```
+
+客户端配置（支持 url 型 MCP 的客户端）：
+
+```json
+{
+  "mcpServers": {
+    "ra2-translate": {
+      "url": "http://127.0.0.1:13399/mcp"
+    }
+  }
+}
+```
+
+- 健康检查：`GET http://127.0.0.1:13399/`
+- 端点：`POST http://127.0.0.1:13399/mcp`（JSON-RPC 2.0，与 stdio 同一分发）
+- ZCode 添加路径：设置 → MCP 服务器 → 添加（粘贴上述 JSON 之一）
 
 服务器从自身路径推导项目根，无需 cwd。IDA 在线（127.0.0.1:13337）
 时自动增强成员映射（til 权威布局）；离线时快照 + member_lookup 回退。

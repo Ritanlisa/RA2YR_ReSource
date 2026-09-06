@@ -1121,12 +1121,61 @@ def dispatch_tool(name, a):
     raise ValueError(f"unknown tool: {name}")
 
 
-SERVER_INFO = {"name": "ra2-translate", "version": "1.0.0"}
+SERVER_INFO = {"name": "ra2-translate", "version": "1.1.0"}
 NEWLINE = chr(10)
 
 
-def main():
-    """Minimal MCP stdio loop: newline-delimited JSON-RPC 2.0."""
+def handle_message(msg):
+    """Process one JSON-RPC message dict -> response dict (or None)."""
+    method = msg.get("method")
+    mid = msg.get("id")
+    if method is None or mid is None:
+        return None  # notification -> ignore
+    try:
+        if method == "initialize":
+            result = {"protocolVersion":
+                      msg["params"].get("protocolVersion", "2024-11-05"),
+                      "capabilities": {"tools": {"listChanged": False}},
+                      "serverInfo": SERVER_INFO}
+        elif method == "ping":
+            result = {}
+        elif method == "tools/list":
+            result = {"tools": TOOLS}
+        elif method == "tools/call":
+            params = msg.get("params") or {}
+            try:
+                payload = dispatch_tool(params.get("name"),
+                                         params.get("arguments") or {})
+                result = {"content": [{"type": "text",
+                                       "text": json.dumps(
+                                           payload, ensure_ascii=False,
+                                           indent=1)}],
+                          "isError": False}
+            except KeyError as e:
+                result = {"content": [{"type": "text",
+                                       "text": json.dumps(
+                                           {"ok": False,
+                                            "error": "missing argument "
+                                            + str(e)})}],
+                          "isError": True}
+            except Exception as e:
+                result = {"content": [{"type": "text",
+                                       "text": json.dumps(
+                                           {"ok": False,
+                                            "error": str(e)[:300]})}],
+                          "isError": True}
+        else:
+            return {"jsonrpc": "2.0", "id": mid,
+                    "error": {"code": -32601,
+                              "message": "method not found"}}
+        return {"jsonrpc": "2.0", "id": mid, "result": result}
+    except Exception as e:
+        return {"jsonrpc": "2.0", "id": mid,
+                "error": {"code": -32603, "message": str(e)[:200]}}
+
+
+def serve_stdio():
+    """MCP stdio transport: newline-delimited JSON-RPC 2.0."""
     out = sys.stdout
     for raw in sys.stdin:
         raw = raw.strip()
@@ -1136,61 +1185,67 @@ def main():
             msg = json.loads(raw)
         except Exception:
             continue
-        method = msg.get("method")
-        mid = msg.get("id")
-        if method is None or mid is None:
-            continue  # notification -> ignore
-        try:
-            if method == "initialize":
-                result = {"protocolVersion":
-                          msg["params"].get("protocolVersion",
-                                            "2024-11-05"),
-                          "capabilities": {"tools": {"listChanged": False}},
-                          "serverInfo": SERVER_INFO}
-            elif method == "ping":
-                result = {}
-            elif method == "tools/list":
-                result = {"tools": TOOLS}
-            elif method == "tools/call":
-                params = msg.get("params") or {}
-                try:
-                    payload = dispatch_tool(params.get("name"),
-                                             params.get("arguments") or {})
-                    result = {"content": [{"type": "text",
-                                           "text": json.dumps(
-                                               payload,
-                                               ensure_ascii=False,
-                                               indent=1)}],
-                              "isError": False}
-                except KeyError as e:
-                    result = {"content": [{"type": "text",
-                                           "text": json.dumps(
-                                               {"ok": False,
-                                                "error": "missing argument "
-                                                + str(e)})}],
-                              "isError": True}
-                except Exception as e:
-                    result = {"content": [{"type": "text",
-                                           "text": json.dumps(
-                                               {"ok": False,
-                                                "error": str(e)[:300]})}],
-                              "isError": True}
-            else:
-                resp = {"jsonrpc": "2.0", "id": mid,
-                        "error": {"code": -32601,
-                                  "message": "method not found"}}
-                out.write(json.dumps(resp) + NEWLINE)
-                out.flush()
-                continue
-            resp = {"jsonrpc": "2.0", "id": mid, "result": result}
+        resp = handle_message(msg)
+        if resp is not None:
             out.write(json.dumps(resp) + NEWLINE)
             out.flush()
-        except Exception as e:
-            resp = {"jsonrpc": "2.0", "id": mid,
-                    "error": {"code": -32603,
-                              "message": str(e)[:200]}}
-            out.write(json.dumps(resp) + NEWLINE)
-            out.flush()
+
+
+def serve_http(port):
+    """Persistent HTTP JSON-RPC endpoint (single-shot POST per request,
+    same dispatch as stdio). Health: GET / -> service info."""
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, fmt, *args):
+            pass  # keep stdout clean
+
+        def do_GET(self):
+            body = json.dumps({"service": SERVER_INFO,
+                               "endpoint": "/mcp",
+                               "transport": "http-jsonrpc"}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_POST(self):
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+                msg = json.loads(self.rfile.read(length) or b"{}")
+                resp = handle_message(msg)
+                if resp is None:
+                    resp = {"jsonrpc": "2.0", "id": None,
+                            "error": {"code": -32700,
+                                      "message": "notification ignored"}}
+                body = json.dumps(resp).encode()
+                code = 200
+            except Exception as e:
+                body = json.dumps({"error": str(e)[:200]}).encode()
+                code = 400
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+    httpd = HTTPServer(("127.0.0.1", port), Handler)
+    print(f"ra2-translate MCP HTTP service on http://127.0.0.1:{port}/mcp",
+          flush=True)
+    httpd.serve_forever()
+
+
+def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--http", type=int, metavar="PORT", default=None,
+                    help="run as persistent HTTP JSON-RPC service instead of stdio")
+    args = ap.parse_args()
+    if args.http:
+        serve_http(args.http)
+    else:
+        serve_stdio()
 
 
 if __name__ == "__main__":

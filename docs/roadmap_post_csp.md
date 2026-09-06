@@ -16,11 +16,12 @@
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
 > | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决：未完成翻译以 **IDA 原始反编译 `#if 0` 块**占位（3,437 个）→ 提交 → baseline 重锚该提交暂避门控。**⚠ ida-artifact 门控脚本为空文件（存量空转）——见执行日志** |
 > | **最终目标债（翻译积压）** | 🔴 **核心主线** | **3,437 个 `#if 0` IDA 块** + 69 个 CFG 不忠实翻译 + 682 链接未解析符号 + 20 triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
+> | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`） |
 > | A1 成员语义命名 | ⬜ 未开始 | |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
 > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
-> | C1-C4 批量翻译 | 🔶 **就绪** | 输入（#if 0 IDA 原码 + 类型化快照）已就位；债清单即工作队列 |
+> | C1-C4 批量翻译 | 🔶 **就绪（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；输入（3,434 原码块 + 类型化快照 + 成员映射）齐备 |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -462,4 +463,58 @@ AST 检查（diff-scoped）覆盖，全量扫描缺失。
 `tools/dedup_bodies.py`（bodies 去重）、`tools/gen_link_stubs.py`
 （链接 stub 生成）、`.omo/check_ns.py`（hpp namespace/brace 平衡检查）、
 `.omo/fill_isolated_ida.py`（快照回填 IDA 原码）、
-`.omo/fix_double_prefix.py`（双重隔离前缀修正）。
+`.omo/fix_double_prefix.py`（双重隔离前缀修正）、
+`tools/unwrap_if0_blocks.py`（裁决 v2：撤 #if 0 原码活代码化）、
+`tools/audit_member_access.py`（成员访问全量审计）。
+
+---
+
+## 执行日志 — ra2-translate MCP 工具集上线（2026-09-06 深夜续）
+
+**用户指令**：编写专用 MCP 工具集，使翻译/重命名/追踪错误等机械性
+复杂操作全部经 MCP 完成；函数/变量与 IDA 地址一一对应、注释由 MCP
+维护；随后启动服务并提供配置 JSON。
+
+### 交付
+
+- **`tools/mcp_translate_server.py`**（22 工具，自包含无第三方依赖）：
+  - 翻译流水线 7：list_pending / next_batch / get_context /
+    replace_body / verify_function / mark_completed / function_state
+  - 重命名 2：rename_symbol（四方同步）/ rename_local（函数域）
+  - 编译验证 4：build（单 TU 秒级 / 全项目）、get_build_errors、
+    run_gates、audit_access
+  - **地址一一对应 5**（用户要求）：annotations_audit / annotations_fix /
+    globals_annotations_audit / annotate_function / addr_lookup——
+    replace_body 翻译后**自动维护 `// 0xADDR`**
+  - 错误追踪 4：issues_add / issues_list / issues_resolve / stats
+- **双传输**：stdio（客户端自动拉起）+ HTTP 常驻
+  （`--http 13399`，本会话已后台启动，GET / 健康检查 + initialize +
+  stats 三项探针验证通过）
+- **冒烟**：`tools/mcp_translate_smoke.py` 用官方 MCP SDK 客户端跑通
+  全部 22 工具（--heavy 附带 build/verify）
+- 文档：`docs/mcp_tools.md`（注册 JSON ×2 + 纯 MCP 标准工作流）
+
+### 地址注解初始化（annotations_fix 全量执行）
+
+补齐 **2,689** 条函数 `// 0xADDR` 注解 → 终态
+**matched 3,313 / missing 0 / mismatch 7（真实差异待审）/
+unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因）。
+全局变量注解：annotated 1,034 / missing 22。
+
+### 关键实现决策
+
+- **协议自实现**：官方 mcp SDK 2.0 的 `add_request_handler` dual-era
+  分发以 -32602（ValidationError→"Invalid request parameters"）拒绝
+  经典 tools/call 信封（实测多轮定位）——改为直接实现 stdio
+  JSON-RPC 循环（~80 行）；官方 SDK **客户端**连接验证正常。
+- member_lookup 已知坏区（BuildingTypeClass 3800 段）在 get_context
+  中自动警告；IDA til 在线（:13337）优先提供权威成员名。
+
+### C 线工作方式（自此变更）
+
+翻译全部经 MCP 工作流执行：
+`next_batch` → `get_context` → `replace_body(dry_run)` →
+`replace_body` → `build(scope=file)` → `audit_access(file)` →
+`verify_function` → `mark_completed`；失败路径 `issues_add` +
+`get_build_errors(file)` 定位。地址注解由 replace_body 自动维护，
+人工翻译时不再手写 `// 0xADDR`。
