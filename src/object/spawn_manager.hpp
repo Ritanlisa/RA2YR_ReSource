@@ -8,7 +8,6 @@ namespace game {
 using ::gamemd::DynamicVectorClass;
 
 class TechnoClass;
-class HouseClass;
 class FootClass;
 
 struct SpawnControl {

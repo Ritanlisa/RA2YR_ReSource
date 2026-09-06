@@ -22,10 +22,6 @@ using ra2::game::TechnoClass;
 #define GAMEMD_USING_AbstractClass
 using ra2::game::AbstractClass;
 #endif
-#ifndef GAMEMD_USING_HouseClass
-#define GAMEMD_USING_HouseClass
-using ra2::game::HouseClass;
-#endif
 
 
 class ParticleSystemTypeClass;
@@ -60,7 +56,7 @@ public:
     int32_t                             SpotlightRadius;
     bool                                TimeToDie;
     bool                                ParticleSystemClass_field_bool_F9;
-    ra2::game::HouseClass*              OwnerHouse;
+    HouseClass*              OwnerHouse;
 
 public:
     ParticleSystemClass(ParticleSystemTypeClass* pType) noexcept; // 0x4E8780

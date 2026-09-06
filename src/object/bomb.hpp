@@ -6,7 +6,6 @@ namespace ra2 {
 namespace game {
 
 class TechnoClass;
-class HouseClass;
 
 // sizeof ~0x5C (ctor 0x4385D0, ddtor 0x438B00)
 class BombClass : public AbstractClass

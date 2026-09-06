@@ -8,7 +8,6 @@ namespace game {
 using ::gamemd::DynamicVectorClass;
 
 class FootClass;
-class HouseClass;
 class TechnoClass;
 
 // sizeof ~0x58 (ctor 0x4717D0, ddtor 0x4729C0)

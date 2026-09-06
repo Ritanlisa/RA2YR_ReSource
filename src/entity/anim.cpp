@@ -18,7 +18,7 @@ constexpr uint32_t kAnimFlag = 0x4u;
 
 AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
                      int z_adjust, int loop_delay, double damage,
-                     ra2::game::HouseClass* owner) noexcept
+                     HouseClass* owner) noexcept
 {
     std::memset(&Animation, 0, sizeof(Animation));
 

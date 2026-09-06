@@ -26,7 +26,6 @@ class BuildingClass;
 class CaptureManagerClass;
 class CellClass;
 class FootClass;
-class HouseClass;
 class InfantryTypeClass;
 class LaserDrawClass;
 class ObjectTypeClass;

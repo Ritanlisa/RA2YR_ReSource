@@ -14,10 +14,6 @@ namespace gamemd
 #define GAMEMD_USING_AbstractClass
 using ra2::game::AbstractClass;
 #endif
-#ifndef GAMEMD_USING_HouseClass
-#define GAMEMD_USING_HouseClass
-using ra2::game::HouseClass;
-#endif
 
 // CSP: FoggedObjectClass matched via T1
 class FoggedObjectClass : public AbstractClass

@@ -39,6 +39,19 @@
 4. **gate 语义保持**：今后修改任何含 `#if 0` IDA 块的函数会重新触发
    `stub-with-disabled-implementation` FAIL——**设计使然**，强制该函数
    完成真翻译后才能过 gate。存量债只能通过真翻译清偿，不能绕过。
+5. **completed 虚标纠正**（本次执行附带）：`BuildingClass::GetPowerOutput`
+   真翻译已恢复（语义完整），但其 CFG 缺 1 个 `vfptr+468` 事件——根因是
+   src 侧继承链 vtable 槽位与二进制系统错位（实测槽 124 vs 二进制 117；
+   object.hpp 虚区存在错位插入：`GetCellCoords_Alt` 标注 [165] 却排在
+   [110] 位、`GetMapCoords` 无槽位标注）。`signals.json` 该函数
+   completed=true→**false**（附 note）——存在未对齐事件即不满足
+   completed 语义；真翻译代码保留。**新增工作项：vtable 槽位审计**
+   （ObjectClass 虚区 124+ 槽对齐二进制注释，波及全继承链 vfptr 校验）。
+6. **已完成真翻译（本执行）**：GetAmmoCountScaled（0x44D700）与
+   SWAvailable（0x457630）exec-flow CFG 校验**通过**；GetPowerOutput
+   见上条。三函数均以 IDA til 权威布局翻译（发现并绕开 member_lookup
+   的 BuildingTypeClass 3800 区段错位：3808 实为 PowerBonus 而非
+   DoorStages——**member_lookup 数据修正列入债清单**）。
 
 ## 最终目标债清单（C 线工作队列，重锚不清账）
 
@@ -49,6 +62,8 @@
 | triage 未定位 | **20** | 行号漂移致甄别失败，需重扫 |
 | 链接未解析符号 | **682** | 有声明从未有定义；`/FORCE:UNRESOLVED` 容忍链接。`tools/gen_link_stubs.py` 已生成 101 个近似签名 stub（`src/_generated/link_stubs.cpp`），**未入构建**——需按 hpp 原声明精确签名后接入，最终全部真翻译 |
 | 无二进制对应函数 | 1 | `LocomotionClass::ChangeLocomotorTo`（历史手工编造，IDA 无此函数）——保留注释体，翻译时按调用语义重建或删除 |
+| **vtable 槽位审计** | 1 项 | src 继承链虚函数声明槽位与二进制 vtable 系统错位（object.hpp 虚区至少 2 处错位插入 + 编译器实测 124 vs 二进制 117）——波及所有含虚调用函数的 exec-flow vfptr 校验。GetPowerOutput(0x44E7B0) 真翻译已就位但被此阻塞（completed 已纠正为 false） |
+| **member_lookup 错位** | 1 区段 | BuildingTypeClass 3800 区段（3808=PowerBonus 被标 DoorStages、3816=ExtraPowerBonus 被标 BuildingAnim…整段偏移错位）——以 IDA til 为准修正数据文件 |
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
@@ -359,9 +374,11 @@ ida_function_db.json 大写键同步（52+450）；hpp 侧 4 处语义名 + 2 �
   债转入「最终目标债清单」节跟踪。object.cpp 双重前缀修正 68 行
   （单文件试验 + 全量两次隔离所致，`.omo/fix_double_prefix.py`）。
 
-**69 个 CFG 不忠实真翻译清单**（C 线修复对象，按文件分组）：
+**69 个 CFG 不忠实真翻译清单**（C 线修复对象，按文件分组；
+✅=本执行已真翻译并通过 exec-flow，🔶=已真翻译待 vtable 审计解锁）：
 
-- building.cpp（32）：GetAmmoCountScaled / GetPowerOutput / SWAvailable /
+- building.cpp（32）：✅GetAmmoCountScaled / 🔶GetPowerOutput /
+  ✅SWAvailable /
   Construct / Dtor / IsCellPlaceable / ValidatePlacement /
   FindPlacementCells2 / SearchPlacement / CheckBuildability / SetRallyPoint /
   CheckExitPath / SellEffects / PowerDrainUpdate / IsPoweredOn /

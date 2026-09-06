@@ -67,7 +67,7 @@ public:
     uint8_t             TranslucencyLevel;
     bool                TimeToDie;
     BulletClass*        AttachedBullet;
-    ra2::game::HouseClass*  Owner;
+    HouseClass*  Owner;
     int32_t             LoopDelay;
     double              Damage;
     BlitterFlags        AnimFlags;
@@ -91,7 +91,7 @@ protected:
 public:
     AnimClass(AnimTypeClass* pType, const ra2::game::CoordStruct& coords,
               int z_adjust, int loop_delay, double damage,
-              ra2::game::HouseClass* owner) noexcept;
+              HouseClass* owner) noexcept;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7);  // 0x421EA0
     int SimpleCtor();  // 0x422720

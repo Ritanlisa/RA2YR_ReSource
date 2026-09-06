@@ -14,6 +14,11 @@ static const GUID IID_IRTTITypeInfo =
 // forward-declare for NeedsSaveOrLink field at +0x20 (also used as bool in IsDirty)
 namespace gamemd { class UnitClass; }
 
+// HouseClass namespace bridge: ra2::game::HouseClass == gamemd::HouseClass
+// (single global alias; ra2::game code uses the unqualified name and resolves here)
+namespace gamemd { class HouseClass; }
+using ::gamemd::HouseClass;
+
 namespace ra2 {
 namespace game {
 
@@ -35,7 +40,6 @@ struct DirStruct {
 
 using FacingStruct = DirStruct;
 
-class HouseClass;
 class TechnoClass;
 class ObjectClass;
 class FootClass;

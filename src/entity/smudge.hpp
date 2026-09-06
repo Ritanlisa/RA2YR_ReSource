@@ -12,10 +12,6 @@ namespace gamemd {
 #define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;
 #endif
-#ifndef GAMEMD_USING_HouseClass
-#define GAMEMD_USING_HouseClass
-using ra2::game::HouseClass;
-#endif
 
 // CSP: SmudgeTypeClass matched via T1+T3
 class SmudgeTypeClass;

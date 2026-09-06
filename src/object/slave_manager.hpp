@@ -7,7 +7,6 @@ namespace ra2 {
 namespace game {
 using ::gamemd::DynamicVectorClass;
 
-class HouseClass;
 class TechnoClass;
 class FootClass;
 

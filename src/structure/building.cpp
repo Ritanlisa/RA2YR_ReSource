@@ -32,9 +32,9 @@ extern gamemd::CoordStruct* Coord_To_Screen(void* pThis, const gamemd::CoordStru
 // 0x6d2790 — Cell::CreateCrater (__stdcall: int x, int y, int w, int h, char flags)
 namespace Cell { extern char __stdcall CreateCrater(int x, int y, int w, int h, char flags); }
 
-class SuperClass;  // super-weapon slot element (see house.hpp SuperWeaponsAvailable)
 namespace DynamicVector {
-    int GetOrGrow(gamemd::DynamicVectorClass<SuperClass*>* vec, int index);
+    // SuperClass = gamemd::SuperClass (house.hpp fwd; unifies with Owner->SuperWeaponsAvailable)
+    int GetOrGrow(gamemd::DynamicVectorClass<gamemd::SuperClass*>* vec, int index);
 }
 
 namespace gamemd {
@@ -14418,24 +14418,25 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
 // 0x457630
 bool BuildingClass::SWAvailable()
 {
-#if 0
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::SWAvailable(_DWORD *this)
-{
-  int v2; // eax
-  int v3; // eax
+    // IDA 0x457630. SuperWeapon@Type+0x16F0, SWTypes array @0xA83CBC,
+    // chain [SWType+0x28] -> [+0xC8] -> [+0xDF8] hands a pointer to
+    // DynamicVector::GetOrGrow over Owner->SuperWeaponsAvailable (+0x5550).
+    // Member identity of the two mid-hops sits in til gap regions; the
+    // Type/SecretBuilding/ArrayIndex chain below is the semantic reading
+    // (YR secret-building unlock rule) - verify in the A1 pass.
+    int sw_index = this->Type->SuperWeapon;
+    if (sw_index == -1)
+        return false;
 
-  v2 = *(_DWORD *)(*(this + 328) + 5872); /*0x457639*/
-  if ( v2 == -1 ) /*0x457642*/
-    return *(_DWORD *)(*(this + 328) + 5872); /*0x457642*/
-  v3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)dword_A83CBC + v2) + 40) + 200); /*0x457650*/
-  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(*(this + 135) + 21840), *(_DWORD *)(v3 + 3576)) ) /*0x45766d*/
-    return *(_DWORD *)(*(this + 328) + 5872); /*0x457682*/
-  else
-    return -1; /*0x457676*/
-}
-#endif
-    return false; // TODO stub - retranslate via C-line pipeline
+    SuperWeaponTypeClass* sw_type = g_SuperWeaponTypeItems[sw_index];
+    BuildingTypeClass* bld_type = sw_type->Type;
+    BuildingTypeClass* actual_bld = bld_type->SecretBuilding;
+
+    if (!actual_bld
+        || DynamicVector::GetOrGrow(&this->Owner->SuperWeaponsAvailable, actual_bld->ArrayIndex))
+        return true;
+
+    return false;
 }
 bool BuildingClass::SW2Available() {
     if (!Type) return false;
@@ -16489,63 +16490,44 @@ retn    4
 // 0x44e7b0
 int BuildingClass::GetPowerOutput()
 {
-#if 0
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::GetPowerOutput(int *this)
-{
-  int v2; // edi
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int *v6; // ecx
-  int v7; // edx
-  double HealthRatio; // st7
-  int v10; // [esp+8h] [ebp-4h]
-
-  v2 = *(_DWORD *)(*(this + 328) + 3808); /*0x44e7bd*/
-  v10 = v2; /*0x44e7c3*/
-  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 468))(this) ) /*0x44e7c7*/
-    return 0; /*0x44e7c7*/
-  if ( *((_BYTE *)this + 1640) ) /*0x44e7d5*/
-  {
-    v2 += *(_DWORD *)(*(this + 328) + 3816); /*0x44e7e5*/
-    v10 = v2; /*0x44e7eb*/
-  }
-  v3 = *(this + 328); /*0x44e7ef*/
-  if ( *(_BYTE *)(v3 + 5806) || *(_BYTE *)(v3 + 5807) ) /*0x44e7ff*/
-  {
-    v4 = *(_DWORD *)(v3 + 3816); /*0x44e809*/
-    if ( v4 > 0 ) /*0x44e811*/
+    // IDA 0x44E7B0. PowerBonus@Type+0xEE0, ExtraPowerBonus@Type+0xEE8,
+    // UnitAbsorb/InfantryAbsorb@Type+0x16AE/0x16AF (absorber buildings),
+    // absorbed-count read at this+0x114 (secondaryTurretIndex in current
+    // headers - name pending A1 semantic pass), vtable[117]=IsBeingWarpedOut
+    // (slot-117 override at 0x70C5B0 is til-named GetShroudByte; the bool
+    // consumer + slot identity confirm the warp-out check),
+    // Upgrades[3]@+0x5EC, HasPower@+0x660, UpgradeLevel@+0x702.
+    int power = this->Type->PowerBonus;
+    if (this->IsBeingWarpedOut())
+        return 0;
+    if (this->HasExtraPowerBonus)
+        power += this->Type->ExtraPowerBonus;
+    BuildingTypeClass* type = this->Type;
+    if (type->UnitAbsorb || type->InfantryAbsorb)
     {
-      v5 = *(this + 69); /*0x44e813*/
-      if ( v5 > 0 ) /*0x44e81b*/
-      {
-        v2 += v5 * v4; /*0x44e820*/
-        v10 = v2; /*0x44e822*/
-      }
+        int bonus = type->ExtraPowerBonus;
+        if (bonus > 0)
+        {
+            int absorbed = this->secondaryTurretIndex;
+            if (absorbed > 0)
+                power += absorbed * bonus;
+        }
     }
-  }
-  if ( *((_BYTE *)this + 1794) ) /*0x44e826*/
-  {
-    v6 = this + 379; /*0x44e830*/
-    v7 = 3; /*0x44e836*/
-    do /*0x44e84b*/
+    if (this->UpgradeLevel)
     {
-      if ( *v6 ) /*0x44e83b*/
-        v2 += *(_DWORD *)(*v6 + 3808); /*0x44e841*/
-      ++v6; /*0x44e847*/
-      --v7; /*0x44e84a*/
+        int slot = 0;
+        do
+        {
+            if (Upgrades[slot])
+                power += Upgrades[slot]->PowerBonus;
+            ++slot;
+        }
+        while (slot < 3);
     }
-    while ( v7 ); /*0x44e84b*/
-    v10 = v2; /*0x44e84d*/
-  }
-  if ( v2 <= 0 || !*((_BYTE *)this + 1632) ) /*0x44e855*/
-    return 0; /*0x44e874*/
-  HealthRatio = BuildingClass::GetHealthRatio(this); /*0x44e861*/
-  return Math::RoundToInt(HealthRatio * (double)v10); /*0x44e86f*/
-}
-#endif
-    return {}; // TODO stub - retranslate via C-line pipeline
+    if (power <= 0 || !this->HasPower)
+        return 0;
+    double healthRatio = this->GetHealthRatio();
+    return Math::RoundToInt(healthRatio * (double)power);
 }
 
 // IDA 0x44e880: base drain + overpower drain
@@ -20551,25 +20533,16 @@ void BuildingClass::FireLaser() {}
 // 0x44d700
 int BuildingClass::GetAmmoCountScaled()
 {
-#if 0
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::GetAmmoCountScaled(#377 *this)
-{
-  int v1; // esi
-  int v3; // [esp+4h] [ebp-Ch]
-  double v4; // [esp+8h] [ebp-8h]
-
-  v1 = *((_DWORD *)this + 328); /*0x44d704*/
-  if ( *(_DWORD *)(v1 + 980) != 2 ) /*0x44d713*/
-    return TechnoClass::GetAmmoCount(this); /*0x44d715*/
-  if ( !*(_BYTE *)(v1 + 5820) ) /*0x44d71f*/
-    return 0; /*0x44d755*/
-  v4 = BuildingClass::checkRepairEligibility(*((_DWORD *)this + 135)); /*0x44d738*/
-  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 116))(v1); /*0x44d73f*/
-  return Math::RoundToInt((double)v3 * v4); /*0x44d71a*/
-}
-#endif
-    return {}; // TODO stub - retranslate via C-line pipeline
+    // IDA 0x44D700. Type@+0x520, PipScale@+0x3D4, HasTiberiumAmmo@+0x16BC,
+    // Owner@+0x21C, vtable[29]=GetPipMax(+0x74), RoundToInt@0x7C5F00.
+    BuildingTypeClass* pType = this->Type;
+    if (pType->PipScale != PipScale::Tiberium)
+        return TechnoClass::GetAmmoCount();
+    if (!pType->HasTiberiumAmmo)
+        return 0;
+    double ratio = BuildingClass::checkRepairEligibility(this->Owner);
+    int maxPips = pType->GetPipMax();
+    return Math::RoundToInt((double)maxPips * ratio);
 }
 
 // IDA 0x44d780: get fire error
