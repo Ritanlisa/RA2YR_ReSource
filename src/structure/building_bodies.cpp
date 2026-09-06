@@ -11,6 +11,7 @@ int RoundToInt(double value) {
 }
 
 namespace gamemd {
+// 0x50af10
 void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
         (void)ownerHouse;  // refresh owning house's super-weapon collection (callee body out of scope)
     }

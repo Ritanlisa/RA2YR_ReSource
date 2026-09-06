@@ -457,6 +457,7 @@ retn    8
 // 0x435820
 namespace gamemd { void* BuildingLightClass::CTOR(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x435820
 int *__thiscall BuildingLightClass::CTOR(int *this, int a2)
 {
   int v3; // edx
@@ -863,6 +864,7 @@ retn    4
 // 0x435BE0
 namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x435be0
 char __thiscall BuildingLightClass::Draw_Start(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -1656,6 +1658,7 @@ retn    8
 // 0x4361D0
 namespace gamemd { int BuildingLightClass::SD_vt23() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4361d0
 char __thiscall BuildingLightClass::SD_vt23(int **this)
 {
   int *v2; // ecx
@@ -2597,6 +2600,7 @@ retn
 // 0x436950
 namespace gamemd { int BuildingLightClass::SD_vt05(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x436950
 int __thiscall BuildingLightClass::SD_vt05(#374 *this, _DWORD *a2, int a3)
 {
   int Register; // edi
@@ -2660,6 +2664,7 @@ retn    8
 // 0x436A00
 namespace gamemd { int BuildingLightClass::SD_vt10(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x436a00
 int __thiscall BuildingLightClass::SD_vt10(int this, int a2, int a3)
 {
   int result; // eax
@@ -2810,6 +2815,7 @@ retn
 // 0x436F40
 namespace gamemd { int BuildingLightClass::SD_vt13(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x436f40
 int __thiscall BuildingLightClass::SD_vt13(int this, unsigned int *a2)
 {
   int v3; // ecx
@@ -2928,6 +2934,7 @@ retn    4
 // 0x437030
 namespace gamemd { int BuildingLightClass::SD_vt53() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x437030
 char __thiscall BuildingLightClass::SD_vt53(#374 *this)
 {
   if ( !(unsigned __int8)ObjectClass::Undeploy(this) )
@@ -2959,6 +2966,7 @@ retn
 // 0x437050
 namespace gamemd { int BuildingLightClass::SD_vt54(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x437050
 char __thiscall BuildingLightClass::SD_vt54(#374 *this, int a2, int a3)
 {
   if ( !(unsigned __int8)ObjectClass::Deploy(this) )
@@ -3071,6 +3079,7 @@ retn    4
 // 0x443410
 namespace gamemd { int BuildingClass::HandleFactoryCommand() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x443410
 int __thiscall BuildingClass::HandleFactoryCommand(#377 *this)
 {
   int result; // eax
@@ -3450,6 +3459,7 @@ retn    0Ch
 // 0x445F80
 namespace gamemd { int SuperWeapon::CreateUnits() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x445f80
 int __thiscall SuperWeapon::CreateUnits(#377 *this)
 {
   int result; // eax
@@ -5644,6 +5654,7 @@ retn    4
 // 0x44D760
 namespace gamemd { int BuildingClass::PushScriptAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x44d760
 int __thiscall BuildingClass::PushScriptAction(#377 *this)
 {
   int result; // eax
@@ -5797,6 +5808,7 @@ retn
 // 0x46B310
 namespace gamemd { int SuperWeapon::CreateNukePayload() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x46b310
 int __thiscall SuperWeapon::CreateNukePayload(int *this)
 {
   int v2; // ebx
@@ -6846,6 +6858,7 @@ retn    8
 // 0x4FAF00
 namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4faf00
 char __thiscall SuperWeapon::EvaluateAITarget(int this, int a2, __int16 *a3)
 {
   int v4; // eax
@@ -7098,6 +7111,7 @@ retn    8
 // 0x50B1D0
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50b1d0
 char __thiscall SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass(#375 *this)
 {
   int v2; // eax
@@ -7360,6 +7374,7 @@ retn
 // 0x5176A0
 namespace gamemd { bool InfantryClass::SetField6() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5176a0
 bool __thiscall InfantryClass::SetField6(_DWORD *this)
 {
   return (*this & 1) == 0;
@@ -7689,6 +7704,7 @@ retn    8
 // 0x517FA0
 namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x517fa0
 int __thiscall InfantryClass::ProcessDeployment(_BYTE *this, int *a2, int a3, int a4, int *a5, int a6, int a7, int a8)
 {
   int v9; // eax
@@ -9431,6 +9447,7 @@ retn    1Ch
 // 0x51BAB0
 namespace gamemd { int InfantryClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51bab0
 char __thiscall InfantryClass::Update(int this)
 {
   int v2; // eax
@@ -12041,6 +12058,7 @@ retn
 // 0x7353C0
 namespace gamemd { int UnitClass::Construct() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7353c0
 int __thiscall UnitClass::Construct(int this, int a2, int ppv)
 {
   int v4; // eax

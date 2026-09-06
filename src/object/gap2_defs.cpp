@@ -41,6 +41,7 @@ namespace ra2 { namespace game { void FootClass::SetSpeedPercentage(double) { } 
 // 0x401170
 namespace ra2 { namespace game { int ObjectClass::ClearFlags2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x401170
 int __thiscall ObjectClass::ClearFlags2(_DWORD *this)
 {
   *this &= ~2u;
@@ -67,6 +68,7 @@ retn
 // 0x402040
 namespace ra2 { namespace game { void* AudioController::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x402040
 int *__thiscall AudioController::Constructor(_DWORD *this)
 {
   int *v2; // ebx
@@ -397,6 +399,7 @@ retn
 // 0x402330
 namespace ra2 { namespace game { int AudioController::UpdatePlayback() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x402330
 int __thiscall AudioController::UpdatePlayback(int this)
 {
   _DWORD *v2; // edi
@@ -695,6 +698,7 @@ retn    4
 // 0x4103E0
 namespace ra2 { namespace game { int ObjectClass::GetSizeMax() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4103e0
 int __thiscall ObjectClass::GetSizeMax(#374 *this)
 {
   int v2; // [esp+8h] [ebp+4h]
@@ -732,6 +736,7 @@ retn    8
 // 0x410410
 namespace ra2 { namespace game { int AbstractClass::ProcessPower() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x410410
 int __thiscall AbstractClass::ProcessPower(#378 *this)
 {
   int v2; // ecx
@@ -765,6 +770,7 @@ retn    4
 // 0x410450
 namespace ra2 { namespace game { int AbstractClass::IsClean() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x410450
 int __thiscall AbstractClass::IsClean(#374 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -784,6 +790,7 @@ retn    4
 // 0x4104F0
 namespace ra2 { namespace game { int AbstractClass::GetCoordsEx() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4104f0
 int __thiscall AbstractClass::GetCoordsEx(#374 *this)
 {
   _DWORD *v1; // ecx
@@ -859,6 +866,7 @@ retn    4
 // 0x414BB0
 namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x414bb0
 char __thiscall TechnoClass::SmokeUpdate(char *this)
 {
   int v2; // ecx
@@ -1642,6 +1650,7 @@ retn
 // 0x417C80
 namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x417c80
 char __thiscall ObjectClass::vt_entry_140(_BYTE *this, int a2, __int16 *a3, __int16 *a4, void **a5)
 {
   return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5);
@@ -1663,6 +1672,7 @@ retn    10h
 // 0x41B5E0
 namespace ra2 { namespace game { bool MissionClass::vt_entry_200() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41b5e0
 bool __thiscall MissionClass::vt_entry_200(int this)
 {
   int v1; // eax
@@ -1712,6 +1722,7 @@ retn
 // 0x41BDD0
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41bdd0
 int __thiscall ObjectClass::GetCoordsThunk1(#374 *this)
 {
   _DWORD *v1; // ecx
@@ -1749,6 +1760,7 @@ retn    4
 // 0x41BE30
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk3() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41be30
 int __thiscall ObjectClass::GetCoordsThunk3(#374 *this)
 {
   _DWORD *v1; // ecx
@@ -1786,6 +1798,7 @@ retn    8
 // 0x41BEA0
 namespace ra2 { namespace game { int ObjectClass::GetCellCoords_Alt(CellStruct* out) const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41bea0
 int __thiscall ObjectClass::GetCellCoords_Alt(#374 *this)
 {
   int v2; // [esp+0h] [ebp-4h]
@@ -2351,6 +2364,7 @@ retn    4
 // 0x4263D0
 namespace ra2 { namespace game { int ObjectClass::GetDrawPosition() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4263d0
 int __thiscall ObjectClass::GetDrawPosition(#374 *this)
 {
   int *v1; // eax
@@ -2766,6 +2780,7 @@ retn    4
 // 0x43A7E0
 namespace ra2 { namespace game { int AbstractClass::Construct(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x43a7e0
 int __thiscall AbstractClass::Construct(int this, _DWORD *a2)
 {
   _DWORD *v2; // edi
@@ -4716,6 +4731,7 @@ retn    8
 // 0x4436F0
 namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4436f0
 int __thiscall ObjectClass::HandleRallyPointCommand(#377 *this)
 {
   int result; // eax
@@ -5208,6 +5224,7 @@ retn    4
 // 0x45A420
 namespace ra2 { namespace game { int FootClass::Release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x45a420
 char __thiscall FootClass::Release(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -5464,6 +5481,7 @@ retn    4
 // 0x45E800
 namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x45e800
 char __thiscall AbstractClass::clearRefCount(void *this, __int16 *a2, int a3)
 {
   int v4; // eax
@@ -5532,6 +5550,7 @@ retn    8
 // 0x45E880
 namespace ra2 { namespace game { int AbstractClass::addRefCount(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x45e880
 int __thiscall AbstractClass::addRefCount(void *this, int a2)
 {
   int v3; // eax
@@ -5867,6 +5886,7 @@ retn    4
 // 0x45F040
 namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x45f040
 int __thiscall AbstractClass::LoadTypeFile(int this)
 {
   int result; // eax
@@ -6556,6 +6576,7 @@ retn    4
 // 0x485250
 namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x485250
 int __thiscall ObjectClass::SetTriggerTarget(_DWORD *this, int a2)
 {
   int v3; // eax
@@ -7087,6 +7108,7 @@ retn
 // 0x4C9470
 namespace ra2 { namespace game { void* TechnoClass::GetWeaponType(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4c9470
 _DWORD *__thiscall TechnoClass::GetWeaponType(_DWORD *this, _DWORD *a2)
 {
   *a2 = *this;
@@ -7210,6 +7232,7 @@ retn    4
 // 0x4CAA70
 namespace ra2 { namespace game { int AbstractClass::executeScriptAction(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4caa70
 char __thiscall AbstractClass::executeScriptAction(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -8010,6 +8033,7 @@ retn    4
 // 0x4DB0D0
 namespace ra2 { namespace game { int TechnoClass::QueueDrawVoiceResponse(void* a1, int a2, int a3, int a4, int a5, void* a6, int a7, int a8, int a9, int a10, int a11) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4db0d0
 int __thiscall TechnoClass::QueueDrawVoiceResponse(
 {
   int result; // eax
@@ -8230,6 +8254,7 @@ retn    4
 // 0x4E04A0
 namespace ra2 { namespace game { int AbstractClass::completeMission(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4e04a0
 char __thiscall AbstractClass::completeMission(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -8649,6 +8674,7 @@ retn
 // 0x50D9C0
 namespace ra2 { namespace game { bool TechnoClass::processExperienceGain() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50d9c0
 BOOL __thiscall TechnoClass::processExperienceGain(_DWORD *this)
 {
   return *(this + 89) > 0;
@@ -8665,6 +8691,7 @@ retn
 // 0x50D9D0
 namespace ra2 { namespace game { bool TechnoClass::updateVeterancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50d9d0
 BOOL __thiscall TechnoClass::updateVeterancy(_DWORD *this)
 {
   return *(this + 90) > 0;
@@ -9067,6 +9094,7 @@ retn    4
 // 0x50F3A0
 namespace ra2 { namespace game { int AbstractClass::evaluateTarget(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50f3a0
 char __thiscall AbstractClass::evaluateTarget(void *this, int a2, char *a3)
 {
   int v3; // ebp
@@ -9441,6 +9469,7 @@ retn
 // 0x543330
 namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x543330
 char __thiscall AbstractClass::ModifyCellTiles(#374 *this, int a2)
 {
   #374 *v2; // edi
@@ -10514,6 +10543,7 @@ retn
 // 0x5B2FD0
 namespace ra2 { namespace game { int MissionClass::SetState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b2fd0
 int __thiscall MissionClass::SetState(#377 *this)
 {
   int result; // eax
@@ -10572,6 +10602,7 @@ retn    4
 // 0x5B3040
 namespace ra2 { namespace game { int MissionClass::GetPrimaryOrFallback() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b3040
 int __thiscall MissionClass::GetPrimaryOrFallback(#377 *this)
 {
   int result; // eax
@@ -11335,6 +11366,7 @@ retn
 // 0x5B3570
 namespace ra2 { namespace game { int MissionClass::AdvanceState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b3570
 int __thiscall MissionClass::AdvanceState(#377 *this)
 {
   int result; // eax
@@ -11491,6 +11523,7 @@ retn
 // 0x5B3700
 namespace ra2 { namespace game { void* MissionClass::FindName() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b3700
 _BYTE *__thiscall MissionClass::FindName(_BYTE *this)
 {
   *(this + 4) = 0;
@@ -12084,6 +12117,7 @@ retn    4
 // 0x5C0B10
 namespace ra2 { namespace game { int AbstractClass::checkCombatFlags(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c0b10
 char __thiscall AbstractClass::checkCombatFlags(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -12405,6 +12439,7 @@ retn    4
 // 0x5C5A30
 namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c5a30
 _DWORD *__thiscall AbstractClass::updateAnimationState(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -12684,6 +12719,7 @@ retn    8
 // 0x5F3E30
 namespace ra2 { namespace game { int ObjectClass::HasC4() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f3e30
 int __thiscall ObjectClass::HasC4(#374 *this)
 {
   int v1; // eax
@@ -12722,6 +12758,7 @@ retn    4
 // 0x5F3E70
 namespace ra2 { namespace game { int ObjectClass::DetectCloaked() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f3e70
 int __thiscall ObjectClass::DetectCloaked(#374 *this)
 {
   int result; // eax
@@ -13154,6 +13191,7 @@ retn
 // 0x5F4260
 namespace ra2 { namespace game { int ObjectClass::GetThreatLevel() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f4260
 int __thiscall ObjectClass::GetThreatLevel(#374 *this)
 {
   if ( (*(unsigned __int8 (__thiscall **)(#374 *))(*(_DWORD *)this + 84))(this) )
@@ -13193,6 +13231,7 @@ retn
 // 0x5F4410
 namespace ra2 { namespace game { int ObjectClass::MoveToDirection() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f4410
 int __thiscall ObjectClass::MoveToDirection(#374 *this)
 {
   int v2; // edx
@@ -13280,6 +13319,7 @@ retn    4
 // 0x5F4520
 namespace ra2 { namespace game { int ObjectClass::HandleSelection() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f4520
 int __thiscall ObjectClass::HandleSelection(#374 *this)
 {
   int result; // eax
@@ -13803,6 +13843,7 @@ retn    4
 // 0x5F4B10
 namespace ra2 { namespace game { int ObjectClass::CalcDrawRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f4b10
 int __thiscall ObjectClass::CalcDrawRect(#374 *this)
 {
   int result; // eax
@@ -14121,6 +14162,7 @@ retn    0Ch
 // 0x5F5320
 namespace ra2 { namespace game { int ObjectClass::ProcessInputKey() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5320
 int __thiscall ObjectClass::ProcessInputKey(#374 *this)
 {
   double v2; // [esp+0h] [ebp-8h]
@@ -14184,6 +14226,7 @@ retn    0Ch
 // 0x5F5930
 namespace ra2 { namespace game { int AbstractClass::IsNotNull() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5930
 int __thiscall AbstractClass::IsNotNull(#374 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -14202,6 +14245,7 @@ retn    4
 // 0x5F5940
 namespace ra2 { namespace game { int ObjectClass::ParachuteDrop() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5940
 int __thiscall ObjectClass::ParachuteDrop(#374 *this)
 {
   int *v1; // edi
@@ -14555,6 +14599,7 @@ retn    4
 // 0x5F5B90
 namespace ra2 { namespace game { int ObjectClass::GetOrCreateResHandle() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5b90
 int __thiscall ObjectClass::GetOrCreateResHandle(#374 *this)
 {
   int v3; // eax
@@ -14621,6 +14666,7 @@ retn    4
 // 0x5F5C20
 namespace ra2 { namespace game { int ObjectClass::Fire() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5c20
 int __thiscall ObjectClass::Fire(#374 *this)
 {
   int *v2; // edi
@@ -14664,6 +14710,7 @@ retn    8
 // 0x5F5D20
 namespace ra2 { namespace game { bool ObjectClass::IsYellowHP() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5d20
 BOOL __thiscall ObjectClass::IsYellowHP(int *this)
 {
   BOOL result; // eax
@@ -14725,6 +14772,7 @@ retn
 // 0x5F5D90
 namespace ra2 { namespace game { bool ObjectClass::IsGreenHP() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5d90
 BOOL __thiscall ObjectClass::IsGreenHP(int *this)
 {
   double v2; // [esp+0h] [ebp-8h]
@@ -14784,6 +14832,7 @@ retn
 // 0x5F5F30
 namespace ra2 { namespace game { int ObjectClass::GetMember41() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5f30
 int __thiscall ObjectClass::GetMember41(#374 *this)
 {
   return *((_DWORD *)this + 41);
@@ -14797,6 +14846,7 @@ retn
 // 0x5F5FA0
 namespace ra2 { namespace game { int ObjectClass::SetZ() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5fa0
 int __thiscall ObjectClass::SetZ(#374 *this)
 {
   int v2; // edi
@@ -15063,6 +15113,7 @@ retn    4
 // 0x5F65A0
 namespace ra2 { namespace game { int ObjectClass::GetCoords() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f65a0
 int __thiscall ObjectClass::GetCoords(#374 *this)
 {
   int *v2; // ecx
@@ -15095,6 +15146,7 @@ retn    4
 // 0x5F65D0
 namespace ra2 { namespace game { int ObjectClass::DelegateVt69() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f65d0
 int __thiscall ObjectClass::DelegateVt69(#374 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -15116,6 +15168,7 @@ retn    8
 // 0x5F6940
 namespace ra2 { namespace game { int ObjectClass::SetPosition() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6940
 int __thiscall ObjectClass::SetPosition(#374 *this)
 {
   _DWORD *v1; // ecx
@@ -15145,6 +15198,7 @@ retn    4
 // 0x5F6960
 namespace ra2 { namespace game { int ObjectClass::GetCellCoords() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6960
 int __thiscall ObjectClass::GetCellCoords(#374 *this)
 {
   int *v1; // esi
@@ -15200,6 +15254,7 @@ retn
 // 0x5F69C0
 namespace ra2 { namespace game { int ObjectClass::CoordToCell() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f69c0
 int __thiscall ObjectClass::CoordToCell(#374 *this)
 {
   _DWORD *v1; // eax
@@ -15244,6 +15299,7 @@ retn    4
 // 0x5F6A70
 namespace ra2 { namespace game { int ObjectClass::CheckGroundHeightDiff() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6a70
 int __thiscall ObjectClass::CheckGroundHeightDiff(#374 *this)
 {
   char v2; // bl
@@ -15388,6 +15444,7 @@ retn    4
 // 0x5F6B60
 namespace ra2 { namespace game { int ObjectClass::IsBelowScreen() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6b60
 int __thiscall ObjectClass::IsBelowScreen(#374 *this)
 {
   int result; // eax
@@ -15420,6 +15477,7 @@ retn
 // 0x5F6B90
 namespace ra2 { namespace game { int ObjectClass::IsHeightAboveThreshold() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6b90
 int __thiscall ObjectClass::IsHeightAboveThreshold(#374 *this)
 {
   int result; // eax
@@ -15453,6 +15511,7 @@ retn
 // 0x5F6C30
 namespace ra2 { namespace game { int ObjectClass::IsPlayerOwnedAndCheck() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6c30
 int __thiscall ObjectClass::IsPlayerOwnedAndCheck(#374 *this)
 {
   int result; // eax
@@ -15517,6 +15576,7 @@ jmp     dword ptr [eax+138h]
 // 0x5F6C80
 namespace ra2 { namespace game { int ObjectClass::GetCoords_Alt() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6c80
 int __thiscall ObjectClass::GetCoords_Alt(#374 *this)
 {
   _DWORD *v1; // ecx
@@ -15554,6 +15614,7 @@ retn    8
 // 0x5F6CB0
 namespace ra2 { namespace game { int ObjectClass::CheckFlagD0(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6cb0
 int __thiscall ObjectClass::CheckFlagD0(_DWORD *this, int a2)
 {
   int result; // eax
@@ -15687,6 +15748,7 @@ retn    4
 // 0x5F6DA0
 namespace ra2 { namespace game { int ObjectClass::ResetPointerIfMatch() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6da0
 int __thiscall ObjectClass::ResetPointerIfMatch(#374 *this)
 {
   int result; // eax
@@ -15712,6 +15774,7 @@ retn    4
 // 0x5FC570
 namespace ra2 { namespace game { int ObjectClass::FinalizeCellPlacement(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5fc570
 char __thiscall ObjectClass::FinalizeCellPlacement(#374 *this, int a2)
 {
   int v2; // esi
@@ -17852,6 +17915,7 @@ retn    8
 // 0x65A820
 namespace ra2 { namespace game { int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65a820
 int __thiscall ObjectClass::ProcessGroupInput(int this, int a2, int a3, int a4)
 {
   int v5; // eax
@@ -18094,6 +18158,7 @@ retn    0Ch
 // 0x65AAA0
 namespace ra2 { namespace game { int ObjectClass::ThunkTo636() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65aaa0
 int __thiscall ObjectClass::ThunkTo636(#377 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -18116,6 +18181,7 @@ retn    8
 // 0x65ACB0
 namespace ra2 { namespace game { int ObjectClass::ThunkTo159x4() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65acb0
 int __thiscall ObjectClass::ThunkTo159x4(#377 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -18269,6 +18335,7 @@ retn    8
 // 0x65C4B0
 namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65c4b0
 int __thiscall AbstractClass::validateTeamConfig(_DWORD *this, void *Src, int Size)
 {
   int v4; // edi
@@ -18749,6 +18816,7 @@ retn    4
 // 0x6B14B0
 namespace ra2 { namespace game { int AbstractClass::getAIPriority(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b14b0
 char __thiscall AbstractClass::getAIPriority(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -19070,6 +19138,7 @@ retn    4
 // 0x6B8260
 namespace ra2 { namespace game { int AbstractClass::allocatePathMemory(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b8260
 char __thiscall AbstractClass::allocatePathMemory(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -19391,6 +19460,7 @@ retn    4
 // 0x6C9600
 namespace ra2 { namespace game { int AbstractClass::GetTotalValue() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6c9600
 int __thiscall AbstractClass::GetTotalValue(float *this)
 {
   int v1; // edx
@@ -19603,6 +19673,7 @@ jmp     short loc_6E146D
 // 0x6E15F0
 namespace ra2 { namespace game { int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e15f0
 char __thiscall ObjectClass::ReadINIEntry(const char *this, int a2, int a3, int a4, int a5)
 {
   #72 *v5; // esi
@@ -19797,6 +19868,7 @@ retn
 // 0x6E8A90
 namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e8a90
 int __thiscall MissionClass::Construct(int this, int a2, int a3, int a4)
 {
   int v5; // ecx
@@ -20382,6 +20454,7 @@ retn    4
 // 0x6F3270
 namespace ra2 { namespace game { int ObjectClass::Vt34Thunk() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f3270
 int __thiscall ObjectClass::Vt34Thunk(#377 *this)
 {
   return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 136))(this);
@@ -20857,6 +20930,7 @@ retn    4
 // 0x6FBFA0
 namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6fbfa0
 int __thiscall TechnoClass::ExecuteMoveCommand(#377 *this)
 {
   int result; // eax
@@ -20955,6 +21029,7 @@ retn
 // 0x6FC090
 namespace ra2 { namespace game { int TechnoClass::Vt240Thunk() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6fc090
 int __thiscall TechnoClass::Vt240Thunk(#377 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -21294,6 +21369,7 @@ retn
 // 0x7010D0
 namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7010d0
 int __thiscall TechnoClass::HasValidWeapon(#377 *this)
 {
   int result; // eax
@@ -21380,6 +21456,7 @@ retn    0Ch
 // 0x704350
 namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x704350
 int __thiscall TechnoClass::GetDrawHeight(int *this)
 {
   int v2; // eax
@@ -23003,6 +23080,7 @@ retn    4
 // 0x708B30
 namespace ra2 { namespace game { int ObjectClass::GetTypeVt28() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x708b30
 int __thiscall ObjectClass::GetTypeVt28(#377 *this)
 {
   int v1; // eax
@@ -23133,6 +23211,7 @@ retn
 // 0x709A90
 namespace ra2 { namespace game { int TechnoClass::DrawPips() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x709a90
 int __thiscall TechnoClass::DrawPips(#377 *this)
 {
   int v2; // esi
@@ -23765,6 +23844,7 @@ LABEL_87:
     if ( ((*(int (__thiscall **)(#377 *))(v64 + 44))(this) == 15
        || (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 1
        && *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3479))
+// 0x50d9c0
       && TechnoClass::processExperienceGain(*((_DWORD **)this + 135)) )
     {
       v85 = 1;
@@ -23777,6 +23857,7 @@ LABEL_87:
     }
     if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 1
       && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3479)
+// 0x50d9d0
       && TechnoClass::updateVeterancy(*((_DWORD **)this + 135)) )
     {
       v85 = 1;
@@ -25302,6 +25383,7 @@ retn    0Ch
 // 0x70A990
 namespace ra2 { namespace game { int TechnoClass::DrawVeterancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70a990
 int __thiscall TechnoClass::DrawVeterancy(#377 *this)
 {
   int v2; // ebp
@@ -25452,6 +25534,7 @@ retn    8
 // 0x70AA60
 namespace ra2 { namespace game { int TechnoClass::DrawPowerIndicator() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70aa60
 int __thiscall TechnoClass::DrawPowerIndicator(#377 *this)
 {
   int result; // eax
@@ -25526,6 +25609,7 @@ LABEL_6:
   v12 = *(_DWORD *)this;
   v21 = v11;
   if ( (*(int (__thiscall **)(#377 *))(v12 + 44))(this) == 6
+// 0x45ec90
     && BuildingTypeClass::GetFoundationWidth(*((_DWORD **)this + 328)) == 1 )
   {
     v21 = GetStringCSF((#72 *)aTxtPri, 0, g_Str_File_Techno_CPP, 15504);
@@ -25802,6 +25886,7 @@ retn    0Ch
 // 0x70C5B0
 namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70c5b0
 int __thiscall ObjectClass::GetShroudByte(#377 *this)
 {
   int result; // eax
@@ -25818,6 +25903,7 @@ retn
 // 0x70C5C0
 namespace ra2 { namespace game { int ObjectClass::GetFogByte() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70c5c0
 int __thiscall ObjectClass::GetFogByte(#377 *this)
 {
   int result; // eax
@@ -25834,6 +25920,7 @@ retn
 // 0x70C5D0
 namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70c5d0
 int __thiscall ObjectClass::HasSubObject(#377 *this)
 {
   int result; // eax
@@ -25863,6 +25950,7 @@ retn
 // 0x70C5F0
 namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70c5f0
 int __thiscall ObjectClass::IsNotShrouded(#377 *this)
 {
   int result; // eax
@@ -25906,6 +25994,7 @@ retn
 // 0x70DCE0
 namespace ra2 { namespace game { bool TechnoClass::checkEMPState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70dce0
 BOOL __thiscall TechnoClass::checkEMPState(_DWORD *this)
 {
   return *(this + 73) != -1;
@@ -25935,6 +26024,7 @@ retn
 // 0x70DD70
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70dd70
 int __thiscall ObjectClass::CheckTypeFlag1681(#377 *this)
 {
   return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0;
@@ -25954,6 +26044,7 @@ retn
 // 0x70DDA0
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681_2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70dda0
 int __thiscall ObjectClass::CheckTypeFlag1681_2(#377 *this)
 {
   return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0;
@@ -25986,6 +26077,7 @@ retn
 // 0x70E120
 namespace ra2 { namespace game { int TechnoClass::Vt249to254() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70e120
 int __thiscall TechnoClass::Vt249to254(#377 *this)
 {
   int v2; // edi
@@ -26013,6 +26105,7 @@ retn
 // 0x70E340
 namespace ra2 { namespace game { int ObjectClass::ResetTimer2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70e340
 int __thiscall ObjectClass::ResetTimer2(#377 *this)
 {
   _DWORD *v1; // ecx
@@ -26217,6 +26310,7 @@ retn    4
 // 0x70F090
 namespace ra2 { namespace game { int ObjectClass::GetTypeVt41() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70f090
 int __thiscall ObjectClass::GetTypeVt41(#377 *this)
 {
   int v1; // eax
@@ -26271,6 +26365,7 @@ retn
 // 0x70FEB0
 namespace ra2 { namespace game { bool FootClass::checkPassability() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70feb0
 BOOL __thiscall FootClass::checkPassability(_DWORD *this)
 {
   return *(this + 115) != 0;
@@ -26287,6 +26382,7 @@ retn
 // 0x70FEC0
 namespace ra2 { namespace game { bool ObjectClass::HasLocation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70fec0
 BOOL __thiscall ObjectClass::HasLocation(_DWORD *this)
 {
   return *(this + 116) != 0;
@@ -26303,6 +26399,7 @@ retn
 // 0x710410
 namespace ra2 { namespace game { int ObjectClass::ClearPointerRefs() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x710410
 int __thiscall ObjectClass::ClearPointerRefs(#377 *this)
 {
   int v2; // [esp+4h] [ebp+4h]
@@ -26353,6 +26450,7 @@ retn    4
 // 0x710460
 namespace ra2 { namespace game { int ObjectClass::FreeCaptureManager() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x710460
 int __thiscall ObjectClass::FreeCaptureManager(#377 *this)
 {
   _DWORD *v1; // ecx
@@ -26596,6 +26694,7 @@ retn    4
 // 0x71BDF0
 namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71bdf0
 int __thiscall ObjectClass::ProcessFoggedState(int this)
 {
   int v2; // eax
@@ -27338,6 +27437,7 @@ retn
 // 0x72A4A0
 namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x72a4a0
 int __thiscall ObjectClass::DrawTypewriterText(int this, int a2)
 {
   int v3; // eax
@@ -27779,6 +27879,7 @@ retn    0Ch
 // 0x73CEC0
 namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x73cec0
 char __thiscall TechnoClass::Draw(int *this, int *a2, int *a3)
 {
   int v4; // ebx
@@ -28660,6 +28761,7 @@ retn    4
 // 0x746C90
 namespace ra2 { namespace game { bool TechnoClass::checkSpawnState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x746c90
 BOOL __thiscall TechnoClass::checkSpawnState(int this)
 {
   return *(_DWORD *)(this + 1752) != -1 || (unsigned __int8)TechnoClass::HasPassengers((#377 *)this);
@@ -29172,6 +29274,7 @@ retn    4
 // 0x74F540
 namespace ra2 { namespace game { int IRTTITypeInfo::SetCapacity(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x74f540
 char __thiscall IRTTITypeInfo::SetCapacity(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -29966,6 +30069,7 @@ retn    4
 // 0x764110
 namespace ra2 { namespace game { int AbstractClass::resetSWCharge(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x764110
 char __thiscall AbstractClass::resetSWCharge(_BYTE *this, int a2, int *a3)
 {
   int v3; // ebp
@@ -30388,6 +30492,7 @@ retn    4
 // 0x7642E0
 namespace ra2 { namespace game { int AbstractClass::AllocateCoordArray(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7642e0
 char __thiscall AbstractClass::AllocateCoordArray(_BYTE *this, int a2, int *a3)
 {
   int v3; // ebx

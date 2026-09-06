@@ -558,6 +558,7 @@ retn    4
 // 0x42F4F0
 namespace gamemd { int BaseClass::Release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x42f4f0
 char __thiscall BaseClass::Release(void *this, int a2, char *a3)
 {
   int v3; // ebx
@@ -879,6 +880,7 @@ retn    4
 // 0x42FC40
 namespace gamemd { void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x42fc40
 _DWORD *__thiscall BaseNodeClass::Vector_Constructor(_DWORD *this, int a2, int a3)
 {
   int v5; // eax
@@ -1053,6 +1055,7 @@ int __thiscall sub_431700(int *this, int a2, int a3, int a4, int a5, int a6)
           v8 = *v7;
           if ( *v7
             && (*(_BYTE *)(v8 + 12) & 1) != 0
+// 0x4f9a10
             && HouseClass::IsAllied((_DWORD *)MEMORY[0x87F7E8][528729], *(_DWORD *)(v8 + 272))
             && (unsigned __int8)HouseClass::IsAlliedWith(
                                   *(#375 **)(MEMORY[0x87F7E8][524945] + 4 * *(_DWORD *)(v8 + 272)),
@@ -1189,6 +1192,7 @@ bool __thiscall sub_431800(int *this)
       if ( *v3 )
       {
         if ( (*(_BYTE *)(v4 + 12) & 1) != 0
+// 0x4f9a10
           && HouseClass::IsAllied((_DWORD *)MEMORY[0x87F7E8][528729], *(_DWORD *)(v4 + 272))
           && (unsigned __int8)HouseClass::IsAlliedWith(
                                 *(#375 **)(MEMORY[0x87F7E8][524945] + 4 * *(_DWORD *)(v4 + 272)),
@@ -2012,6 +2016,7 @@ retn
 // 0x4870F0
 namespace gamemd { bool HouseClass::HasType() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4870f0
 BOOL __thiscall HouseClass::HasType(_WORD *this, int a2)
 {
   return *(this + a2 + 86) > 0;
@@ -2760,6 +2765,7 @@ retn    4
 // 0x4E9380
 namespace gamemd { int HouseClass::COMStub_2(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4e9380
 char __thiscall HouseClass::COMStub_2(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -3007,6 +3013,7 @@ retn    4
 // 0x4F21A0
 namespace gamemd { void HouseClass::processTargetSelection() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f21a0
 void __thiscall HouseClass::processTargetSelection(char *this)
 {
   char *v2; // esi
@@ -3262,6 +3269,7 @@ retn    4
 // 0x4F2A60
 namespace gamemd { int HouseClass::processWaypointPlanning(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f2a60
 char __thiscall HouseClass::processWaypointPlanning(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -3509,6 +3517,7 @@ retn    4
 // 0x4F5190
 namespace gamemd { int HouseClass::Constructor(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f5190
 int __thiscall HouseClass::Constructor(int this, int a2)
 {
   int v3; // ebp
@@ -3828,6 +3837,7 @@ retn    4
 // 0x4F54A0
 namespace gamemd { int HouseClass::Construct(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f54a0
 int __thiscall HouseClass::Construct(int this, int a2)
 {
   int v3; // edx
@@ -8481,6 +8491,7 @@ retn    0Ch
 // 0x4F83C0
 namespace gamemd { int HouseClass::GetFactoryProducing(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f83c0
 int __thiscall HouseClass::GetFactoryProducing(void *this, int a2)
 {
   int v2; // esi
@@ -8572,6 +8583,7 @@ retn    4
 // 0x4F8440
 namespace gamemd { void HouseClass::Update_TogglePower() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f8440
 void __thiscall HouseClass::Update_TogglePower(#375 *this)
 {
   int v2; // ecx
@@ -11532,6 +11544,7 @@ retn    4
 // 0x4F9B70
 namespace gamemd { int HouseClass::HandleAlliance(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f9b70
 void __thiscall HouseClass::HandleAlliance(unsigned int this, int a2, char a3)
 {
   int v4; // ecx
@@ -12116,6 +12129,7 @@ retn    8
 // 0x4F9F90
 namespace gamemd { int HouseClass::SetAlliance(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f9f90
 void __thiscall HouseClass::SetAlliance(unsigned int this, unsigned int a2, char a3)
 {
   char v3; // bl
@@ -12425,6 +12439,7 @@ jmp     short loc_4FA1CB
 // 0x4FA2E0
 namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fa2e0
 int __thiscall HouseClass::SetThreat_Bounds(char *this, int a2, int a3)
 {
   int v3; // esi
@@ -14121,6 +14136,7 @@ retn    4
 // 0x4FC0B0
 namespace gamemd { int HouseClass::DefeatPlayer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fc0b0
 char __thiscall HouseClass::DefeatPlayer(int this)
 {
   int v2; // eax
@@ -15784,6 +15800,7 @@ retn
 // 0x4FD060
 namespace gamemd { int HouseClass::FindBuildingOfType(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fd060
 int __thiscall HouseClass::FindBuildingOfType(int *this, int a2, int a3)
 {
   int v4; // ebp
@@ -15933,6 +15950,7 @@ retn    8
 // 0x4FDD10
 namespace gamemd { int HouseClass::ManageProduction(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fdd10
 char __thiscall HouseClass::ManageProduction(int this, int a2)
 {
   int v3; // edi
@@ -17058,6 +17076,7 @@ retn    4
 // 0x4FE3E0
 namespace gamemd { int HouseClass::AutoBuild() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fe3e0
 int __thiscall HouseClass::AutoBuild(int this)
 {
   int *v2; // eax
@@ -17236,6 +17255,7 @@ int __thiscall HouseClass::AutoBuild(int this)
     if ( Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 99) < *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][7806]
                                                                                                   + 3544)
                                                                                       + 4 * *(_DWORD *)(this + 388))
+// 0x50c340
       && HouseClass::FindBuildLocation(this, v25) )
     {
       v26 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(this + 22276) + 16))(this + 22276, v81);
@@ -18140,6 +18160,7 @@ retn
 // 0x4FEA60
 namespace gamemd { int HouseClass::AIUnitProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4fea60
 int __thiscall HouseClass::AIUnitProduction(_DWORD *this)
 {
   int v1; // ebp
@@ -18766,6 +18787,7 @@ retn
 // 0x4FEEE0
 namespace gamemd { int HouseClass::AIInfantryProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4feee0
 int __thiscall HouseClass::AIInfantryProduction(_DWORD *this)
 {
   int v1; // ebp
@@ -19211,6 +19233,7 @@ retn
 // 0x4FF210
 namespace gamemd { int HouseClass::AIAircraftProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4ff210
 int __thiscall HouseClass::AIAircraftProduction(_DWORD *this)
 {
   int v1; // ebp
@@ -19976,6 +19999,7 @@ retn    0Ch
 // 0x500910
 namespace gamemd { int HouseClass::GetFactoryCount(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x500910
 int __thiscall HouseClass::GetFactoryCount(int *this, int a2, char a3)
 {
   int *v3; // eax
@@ -20071,6 +20095,7 @@ retn    8
 // 0x5009B0
 namespace gamemd { int HouseClass::LoadTypeList() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5009b0
 int __thiscall HouseClass::LoadTypeList(char *this)
 {
   int v2; // ebx
@@ -20358,6 +20383,7 @@ retn
 // 0x500B40
 namespace gamemd { int HouseClass::ReadFromINI(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x500b40
 int __thiscall HouseClass::ReadFromINI(unsigned int this, unsigned __int8 ***a2)
 {
   unsigned __int8 ***v3; // esi
@@ -20407,6 +20433,7 @@ int __thiscall HouseClass::ReadFromINI(unsigned int this, unsigned __int8 ***a2)
                               (unsigned __int8 *)g_INI_Key_TechLevel,
                               *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4692));
   *(_DWORD *)(this + 476) = 100
+// 0x5276d0
                           * INIClass::ReadInt_Overwrite(
                               (int)a2,
                               (unsigned __int8 *)v38,
@@ -21487,6 +21514,7 @@ retn    4
 // 0x501AC0
 namespace gamemd { void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x501ac0
 _DWORD *__thiscall HouseClass::GenerateAttackCoords(int *this, _DWORD *a2, int a3)
 {
   int v4; // eax
@@ -22249,6 +22277,7 @@ retn    8
 // 0x5025F0
 namespace gamemd { void* HouseClass::RegisterGain(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5025f0
 _DWORD *__thiscall HouseClass::RegisterGain(int this, int a2, char a3)
 {
   int v5; // eax
@@ -22830,6 +22859,7 @@ retn    8
 // 0x502A80
 namespace gamemd { int HouseClass::RegisterGain_0(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x502a80
 char __thiscall HouseClass::RegisterGain_0(int this, _DWORD *a2, int a3)
 {
   int v4; // eax
@@ -23228,6 +23258,7 @@ retn
 // 0x502D60
 namespace gamemd { int HouseClass::UpdatePowerTimers(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x502d60
 int __thiscall HouseClass::UpdatePowerTimers(int this, int *a2)
 {
   int v3; // eax
@@ -23561,6 +23592,7 @@ retn    4
 // 0x504740
 namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x504740
 int __thiscall HouseClass::EnsurePlanningPathExists(_DWORD *this, unsigned int a2)
 {
   int result; // eax
@@ -23619,6 +23651,7 @@ retn    4
 // 0x5051E0
 namespace gamemd { void* HouseClass::FirstBuildableFromArray(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5051e0
 _DWORD *__thiscall HouseClass::FirstBuildableFromArray(_DWORD *this, int a2)
 {
   char v3; // cl
@@ -23806,6 +23839,7 @@ retn    4
 // 0x5054B0
 namespace gamemd { void HouseClass::GenerateAIBuildListEnsureSanity() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5054b0
 void __thiscall HouseClass::GenerateAIBuildListEnsureSanity(_DWORD *this)
 {
   int v2; // eax
@@ -25523,6 +25557,7 @@ retn
 // 0x5060B0
 namespace gamemd { void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5060b0
 unsigned int *__thiscall HouseClass::ScanBuildLocation(
 {
   _DWORD *BuildableFromArray; // eax
@@ -27109,6 +27144,7 @@ retn    8
 // 0x506EF0
 namespace gamemd { int HouseClass::AutoBuildScanAndSort(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x506ef0
 char __thiscall HouseClass::AutoBuildScanAndSort(int this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -28967,6 +29003,7 @@ jmp     loc_507520
 // 0x507D70
 namespace gamemd { int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x507d70
 int __thiscall HouseClass::CollectInfantryBuildCandidates(_DWORD *this, int a2, int a3)
 {
   char v4; // cl
@@ -29025,6 +29062,7 @@ int __thiscall HouseClass::CollectInfantryBuildCandidates(_DWORD *this, int a2, 
       if ( (v6 & v10[435]) != 0
         && v10[397] <= *(this + 117)
         && (int)v10[1354] > 0
+// 0x505360
         && HouseClass::PrerequisitesForTechnoTypeAreListed((int)v10, a3, *(_DWORD *)(a3 + 16))
         && (v26 < v24
          || (BYTE1(v25) || !v24)
@@ -29290,6 +29328,7 @@ retn    8
 // 0x507F60
 namespace gamemd { int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x507f60
 int __thiscall HouseClass::CollectAircraftBuildCandidates(_DWORD *this, int a2, int a3)
 {
   char v4; // cl
@@ -29348,6 +29387,7 @@ int __thiscall HouseClass::CollectAircraftBuildCandidates(_DWORD *this, int a2, 
       if ( (v6 & v10[435]) != 0
         && v10[397] <= *(this + 117)
         && (int)v10[1355] > 0
+// 0x505360
         && HouseClass::PrerequisitesForTechnoTypeAreListed((int)v10, a3, *(_DWORD *)(a3 + 16))
         && (v26 < v24
          || (BYTE1(v25) || !v24)
@@ -32361,6 +32401,7 @@ retn    4
 // 0x509CD0
 namespace gamemd { int HouseClass::Fire_ParaDrop(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x509cd0
 char __thiscall HouseClass::Fire_ParaDrop(_DWORD *this, char a2)
 {
   _DWORD *v2; // esi
@@ -32554,6 +32595,7 @@ retn    4
 // 0x509E00
 namespace gamemd { int HouseClass::Fire_LightningStorm(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x509e00
 char __thiscall HouseClass::Fire_LightningStorm(int this, char a2)
 {
   char result; // al
@@ -32665,6 +32707,7 @@ retn    4
 // 0x509F60
 namespace gamemd { int HouseClass::Fire_GenMutator(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x509f60
 char __thiscall HouseClass::Fire_GenMutator(int this, char a2)
 {
   __int16 v2; // ax
@@ -32963,6 +33006,7 @@ retn    4
 // 0x50A150
 namespace gamemd { int HouseClass::Fire_PsyDom(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50a150
 char __thiscall HouseClass::Fire_PsyDom(int this, char a2)
 {
   __int16 v3; // ax
@@ -33611,6 +33655,7 @@ retn    4
 // 0x50A5C0
 namespace gamemd { int HouseClass::AIBuildBase() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50a5c0
 char __thiscall HouseClass::AIBuildBase(#375 *this)
 {
   int v2; // eax
@@ -34949,6 +34994,7 @@ retn
 // 0x50B370
 namespace gamemd { int HouseClass::ShouldDisableCameo(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50b370
 char __thiscall HouseClass::ShouldDisableCameo(_DWORD *this, int a2)
 {
   _DWORD *v3; // ebp
@@ -35570,6 +35616,7 @@ retn
 // 0x50BF60
 namespace gamemd { int HouseClass::CalculateCostMultipliers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50bf60
 int __thiscall HouseClass::CalculateCostMultipliers(float *this)
 {
   int result; // eax
@@ -36055,6 +36102,7 @@ retn
 // 0x50C340
 namespace gamemd { int HouseClass::FindBuildLocation(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50c340
 char __thiscall HouseClass::FindBuildLocation(int this, int a2)
 {
   int v3; // eax
@@ -36879,6 +36927,7 @@ retn    4
 // 0x50C8C0
 namespace gamemd { int HouseClass::NotifyImpactWater() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x50c8c0
 int __thiscall HouseClass::NotifyImpactWater(void *this)
 {
   int v1; // edi
@@ -38698,6 +38747,7 @@ retn    8
 // 0x5F6250
 namespace gamemd { int HouseClass::ProcessPower() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f6250
 int __thiscall HouseClass::ProcessPower(#374 *this)
 {
   int v2; // eax
@@ -41577,6 +41627,7 @@ retn
 // 0x717880
 namespace gamemd { bool HouseClass::HasPower() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x717880
 BOOL __thiscall HouseClass::HasPower(_DWORD *this)
 {
   return *(this + 514) > 0;
@@ -41593,6 +41644,7 @@ retn
 // 0x726F50
 namespace gamemd { int HouseClass::HasType26Building() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x726f50
 char __thiscall HouseClass::HasType26Building(_DWORD *this)
 {
   int v1; // ecx
@@ -41639,6 +41691,7 @@ retn
 // 0x726F80
 namespace gamemd { int HouseClass::HasType25Building() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x726f80
 char __thiscall HouseClass::HasType25Building(_DWORD *this)
 {
   int v1; // ecx
@@ -41970,6 +42023,7 @@ retn    4
 // 0x749100
 namespace gamemd { int HouseClass::NetworkConvert() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x749100
 int __thiscall HouseClass::NetworkConvert(_DWORD *this)
 {
   int result; // eax

@@ -11,7 +11,9 @@ void BombClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall BombClass::whatAmI() const { return kObjectDeriveId; }
 int BombClass::objectSize() const { return 0; }
 void BombClass::calculateChecksum(void* checksum) const {}
+// 0x4393e0
 int BombClass::StubReturn68() const { return 68; }
+// 0x4393d0
 int BombClass::StubReturn92() const { return 92; }
 
 } // namespace game

@@ -23,6 +23,7 @@ ScriptActionNode* ScriptClass::GetCurrentAction(
     return buffer;
 }
 
+// 0x691540
 ScriptActionNode* ScriptClass::GetNextAction(
     ScriptActionNode* buffer) const
 {

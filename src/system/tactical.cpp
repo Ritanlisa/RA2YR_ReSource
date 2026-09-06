@@ -787,6 +787,7 @@ retn    0Ch
 void TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d7840
 unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
 {
   unsigned int result; // eax
@@ -1699,6 +1700,7 @@ void TacticalClass::DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* boun
 void TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d3040
 signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, int *a3, char a4)
 {
   _DWORD *v5; // ebx
@@ -2057,6 +2059,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
 void TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4d1890
 int __thiscall TacticalClass::DrawBuildings(int *this)
 {
   int result; // eax
@@ -5164,6 +5167,7 @@ retn    18h
 void TacticalClass::SetViewDimensions(int width, int height)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a8960
 void __stdcall TacticalClass::SetViewDimensions(int *a1)
 {
   void *v1; // esi
@@ -5623,6 +5627,7 @@ retn    4
 void TacticalClass::ScrollViewport(int dx, int dy)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d2540
 char __thiscall TacticalClass::ScrollViewport(int this)
 {
   int v1; // eax
@@ -5954,6 +5959,7 @@ retn
 void TacticalClass::updateVisibility()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5090a0
 int __thiscall TacticalClass::updateVisibility(int *this)
 {
   int v1; // esi
@@ -6805,6 +6811,7 @@ retn    8
 void TacticalClass::ProcessMouseClick(int x, int y)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6539d0
 int __thiscall TacticalClass::ProcessMouseClick(_BYTE *this, char a2, int a3, int a4)
 {
   int v4; // esi

@@ -14,6 +14,7 @@ void SidebarClass::SidebarNeedsRepaint(int mode)
     SidebarNeedsRedraw = true;
 }
 
+// 0x6a6300
 bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
 {
     // Find available cameo slot on the active tab

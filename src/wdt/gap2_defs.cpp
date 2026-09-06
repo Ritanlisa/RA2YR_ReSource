@@ -14,6 +14,7 @@
 // 0x4104C0
 namespace gamemd { namespace wdt { int Map::GetInvalidCoord() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4104c0
 int __thiscall Map::GetInvalidCoord(#376 *this)
 {
   _DWORD *v2; // [esp+4h] [ebp+4h]
@@ -41,6 +42,7 @@ retn    4
 // 0x4F28B0
 namespace gamemd { namespace wdt { bool Map::CanScroll() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4f28b0
 BOOL __thiscall Map::CanScroll(_DWORD *this)
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16);
@@ -90,6 +92,7 @@ retn    4
 // 0x5C2500
 namespace gamemd { namespace wdt { void Campaign::SetupMovie() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c2500
 void __thiscall Campaign::SetupMovie(int *this, int hDlg)
 {
   int v2; // ebx

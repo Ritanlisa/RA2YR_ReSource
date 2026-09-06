@@ -195,6 +195,7 @@ REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
 bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4741f0
 int __thiscall CCINIClass::Load(char *this, int a2, char a3, char a4)
 {
   int File; // ebp
@@ -417,8 +418,11 @@ namespace gamemd {
 // --- INIClass ---
 
 bool INIClass::Load(CCFileClass* file, bool unk1, bool unk2) { return true; }
+// 0x528a10
 const char* INIClass::GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) { return def; }
+// 0x529820
 int INIClass::GetInt(const char* section, const char* key, int def) { return def; }
+// 0x4757d0
 bool INIClass::GetBool(const char* section, const char* key, bool def) { return def; }
 double INIClass::GetDouble(const char* section, const char* key, double def) { return def; }
 const char* INIClass::GetGUID(const char* section, const char* key, const char* def) { return def; }

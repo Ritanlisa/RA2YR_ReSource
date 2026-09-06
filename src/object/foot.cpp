@@ -1639,126 +1639,241 @@ uint32_t FootClass::getWaypointData(uint32_t a) { return 0; }
 void FootClass::onWaypointReached(uint32_t a) {}
 void FootClass::onPathComplete() {}
 void FootClass::onMovementDone() {}
+// 0x709290
 bool FootClass::CanEnterCell(uint32_t a) { return false; }
+// 0x416af0
 int FootClass::MissionMoveCarryallLand() { return 0; }
+// 0x41c080
 void FootClass::vt_entry_4F8() {}
+// 0x41c090
 int FootClass::Destru_vt323() { return 0; }
+// 0x41c0f0
 void FootClass::vt_entry_514() {}
+// 0x41c100
 bool FootClass::StubReturnFalse() { return false; }
+// 0x41c110
 void FootClass::StubReturnVoid() {}
+// 0x41c130
 void FootClass::vt_entry_534() {}
+// 0x41c140
 void FootClass::vt_entry_540() {}
+// 0x43ed40
 int FootClass::GetTurretAngle() const { return 0; }
+// 0x4415f0
 void FootClass::ProcessDemolish() {}
+// 0x4456d0
 void FootClass::UpdateSidebar() {}
+// 0x448160
 void FootClass::ProcessPrimarySelect() {}
+// 0x452250
 int FootClass::StubReturn0() { return 0; }
+// 0x4556d0
 void FootClass::ScanCircleForUnits() {}
+// 0x455820
 void FootClass::ScanCircleForUnits2() {}
+// 0x45a540
 int FootClass::GetCapacity() const { return 0; }
+// 0x45a560
 int FootClass::ResizeOccupiedCellList() { return 0; }
 int FootClass::sub_4734B0() { return 0; }
+// 0x487150
 int FootClass::checkTerrainSpeed() { return 0; }
+// 0x487160
 int FootClass::updateLocomotion() { return 0; }
+// 0x4cbba0
 int FootClass::FindPathWithRetry() { return -1; }
+// 0x4cd2a0
 void FootClass::ProcessDeployMission() {}
+// 0x4ce680
 void FootClass::UpdateDeployMovement() {}
+// 0x4d3540
 int FootClass::PostLoadInit() { return 0; }
+// 0x4d3710
 int FootClass::Destru_vt337() { return 0; }
+// 0x4d3780
 void FootClass::UpdateReveal() {}
+// 0x4d3810
 bool FootClass::CheckTileSeed() const { return false; }
+// 0x4d3920
 int FootClass::MovementStep() { return 0; }
+// 0x4d4200
 int FootClass::Destru_vt139() { return 0; }
+// 0x4d4b20
 bool FootClass::CheckVoiceResponse() const { return false; }
+// 0x4d4cb0
 void FootClass::ProcessMissionVoice() {}
+// 0x4d5070
 int FootClass::FindMovePosition() { return -1; }
+// 0x4d55c0
 int FootClass::PlayCOM_audio() { return 0; }
+// 0x4d55f0
 int FootClass::Destru_vt319() { return 0; }
+// 0x4d5660
 int FootClass::EnterAttackState() { return 0; }
+// 0x4d5690
 void FootClass::CalculateApproachPath() {}
+// 0x4d6aa0
 int FootClass::FindAITarget() { return -1; }
+// 0x4d7170
 int FootClass::DispatchInput() { return 0; }
+// 0x4d7330
 void FootClass::ProcessDeploy() {}
+// 0x4d74e0
 int FootClass::ValidateMove() { return 0; }
+// 0x4d82b0
 int FootClass::ValidatePlacement() { return 0; }
+// 0x4d8560
 int FootClass::GetCoords() const { return 0; }
+// 0x4d85d0
 void FootClass::UpdateAI() {}
+// 0x4d8f40
 int FootClass::OverrideMission_SyncLog() { return 0; }
+// 0x4d8f80
 int FootClass::ConditionalAction() { return 0; }
+// 0x4d8fb0
 int FootClass::MissionDispatch() { return 0; }
+// 0x4d9290
 void FootClass::ProcessTeamAction() {}
+// 0x4d94b0
 int FootClass::AssignDestination() { return 0; }
+// 0x4d9720
 int FootClass::DispatchSell() { return 0; }
+// 0x4d9920
 int FootClass::SelectAutoTarget_Cloaked() { return 0; }
+// 0x4d9960
 int FootClass::HandleTargetDestroyed() { return 0; }
+// 0x4d9c00
 void FootClass::vt_entry_524() {}
+// 0x4d9c10
 int FootClass::Destru_vt107() { return 0; }
+// 0x4d9ff0
 int FootClass::vt_entry_4F0() { return 0; }
+// 0x4da1c0
 void FootClass::ClearSomeVector() {}
+// 0x4da1d0
 bool FootClass::CanBeControlled() const { return false; }
+// 0x4da230
 bool FootClass::CanBeRecruited() const { return false; }
+// 0x4da2a0
 void FootClass::ClearSomeVector2() {}
+// 0x4da2c0
 void FootClass::ProcessMovement() {}
+// 0x4da4e0
 bool FootClass::CheckTargetValidity() const { return false; }
+// 0x4daf10
 int FootClass::UpdateState() { return 0; }
+// 0x4db0a0
 int FootClass::GetAttackSpeed() const { return 0; }
+// 0x4db7e0
 int FootClass::Destru_vt30() { return 0; }
+// 0x4dba30
 void FootClass::vt_entry_548() {}
+// 0x4dba40
 void FootClass::vt_entry_54C() {}
+// 0x4dbad0
 int FootClass::BeginPowerUpdate() { return 0; }
+// 0x4dbda0
 bool FootClass::CanBeHunted() const { return false; }
+// 0x4dbed0
 int FootClass::LiberateMember() { return 0; }
+// 0x4dbfd0
 int FootClass::vt_entry_4E0() { return 0; }
+// 0x4dc030
 int FootClass::vt_entry_4F4() { return 0; }
+// 0x4dc060
 int FootClass::CheckTargetCell() const { return 0; }
+// 0x4dc790
 int FootClass::Destru_vt311() { return 0; }
+// 0x4dc810
 void FootClass::SetBuildingType() {}
+// 0x4dcfe0
 int FootClass::MoveToTiberium() { return 0; }
+// 0x4dd0a0
 int FootClass::FindMoveTarget() { return -1; }
+// 0x4ddb90
 int FootClass::MoveToWeed() { return 0; }
+// 0x4ddc40
 bool FootClass::CheckHeightDiff() const { return false; }
+// 0x4ddc60
 int FootClass::ValidateTargetCell() { return 0; }
+// 0x4ddde0
 int FootClass::HandleCursorWithCheck() { return 0; }
+// 0x4ddf90
 void FootClass::ProcessMissionState() {}
+// 0x4de580
 int FootClass::ValidateFoundation() { return 0; }
+// 0x4de5d0
 int FootClass::PreDestroy() { return 0; }
+// 0x4de630
 int FootClass::OnCompleteAction() { return 0; }
+// 0x4de670
 int FootClass::RemovePassenger() { return 0; }
+// 0x4de710
 int FootClass::PopAndProcess() { return 0; }
+// 0x4de770
 bool FootClass::IsTimerActive() const { return false; }
+// 0x4de7b0
 bool FootClass::IsTargetInRange() const { return false; }
+// 0x4de940
 int FootClass::CheckCellPassable() const { return 0; }
+// 0x4deae0
 bool FootClass::DeployAction() { return false; }
+// 0x4debb0
 void FootClass::UpdateTeamAI() {}
+// 0x4dee50
 int FootClass::vt_entry_530() { return 0; }
+// 0x4df0d0
 void FootClass::ClearPathIndex() {}
+// 0x4df0e0
 int FootClass::MissionSell_Dispatch() { return 0; }
+// 0x4df3a0
 void FootClass::UpdateAttackMove_SelectNewTarget() {}
+// 0x4df510
 void FootClass::ScanAdjacentCells() {}
+// 0x4df7f0
 int FootClass::Destru_vt322() { return 0; }
+// 0x4dfa50
 bool FootClass::IsNotAttackAndPlayer() const { return false; }
+// 0x4e00b0
 int FootClass::Jumpjet_OccupyCell() { return 0; }
+// 0x4e0170
 int FootClass::Destru_vt08() { return 0; }
+// 0x4e0ed0
 int FootClass::RemoveFromPointerArray() { return 0; }
 int FootClass::sub_550DAA0() { return 0; }
+// 0x586fc0
 int FootClass::FindNearestApproachableCell() { return -1; }
+// 0x629e90
 bool FootClass::CreateWakes() { return false; }
 int FootClass::sub_56E52F0() { return 0; }
+// 0x6eb380
 int FootClass::LinkToTransporter() { return 0; }
+// 0x6f03b0
 int FootClass::GetGameSpeedFromSession() const { return 0; }
+// 0x6f5090
 int FootClass::CompleteProduction() { return 0; }
+// 0x6fb740
 void FootClass::UpdateLocomotion() {}
+// 0x70d7e0
 int FootClass::ProcessEnterTransport() { return 0; }
+// 0x70f670
 void FootClass::SetThreatBounds() {}
+// 0x70f6a0
 int FootClass::ApplyThreatBounds() { return 0; }
 int FootClass::sub_570F7E0() { return 0; }
 int FootClass::sub_70FEB0() { return 0; }
+// 0x7104f0
 void FootClass::UpdatePassengerCoords() {}
+// 0x729480
 void FootClass::Cleanup() {}
+// 0x738970
 int FootClass::RespondToDestruction() { return 0; }
 int FootClass::sub_5746D80() { return 0; }
+// 0x750030
 bool FootClass::CheckAccelLimit() const { return false; }
+// 0x7500d0
 int FootClass::GetField() const { return 0; }
+// 0x7500e0
 void FootClass::SetField() {}
 
 } // namespace game

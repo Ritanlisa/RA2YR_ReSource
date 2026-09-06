@@ -68,6 +68,7 @@ void InfantryClass::ProcessDeploy()
 int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51d6f0
 char __thiscall InfantryClass::ProcessDeployAction(_DWORD *this, int a2, char a3, char a4)
 {
   int v4; // edi
@@ -875,6 +876,7 @@ retn
 */
 }
 
+// 0x521b60
 bool InfantryClass::CanInitiateDeploy()
 {
     // IDA: 0x521B60 — check deploy preconditions
@@ -882,30 +884,35 @@ bool InfantryClass::CanInitiateDeploy()
     return !Crawling && Type != nullptr;
 }
 
+// 0x5221d0
 bool InfantryClass::CanDeployAtCell()
 {
     // IDA: 0x5221D0 — check cell for deploy
     return true;
 }
 
+// 0x521eb0
 bool InfantryClass::CheckDeployPath()
 {
     // IDA: 0x521EB0 — path check for deploy
     return true;
 }
 
+// 0x522fe0
 int InfantryClass::CreateDeployLocomotor()
 {
     // IDA: 0x522FE0 — create deploy locomotor COM object
     return 0;
 }
 
+// 0x522c00
 bool InfantryClass::StartBombDeploy()
 {
     // IDA: 0x522C00 — start Ivan bomb deploy sequence
     return false;
 }
 
+// 0x5228d0
 bool InfantryClass::IsBombDeployMission()
 {
     // IDA: 0x5228D0 — check if current mission is bomb deploy
@@ -916,6 +923,7 @@ bool InfantryClass::IsBombDeployMission()
 int InfantryClass::DeployAnimation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x514310
 char __stdcall InfantryClass::DeployAnimation(int a1)
 {
   _DWORD *v1; // edi
@@ -2065,6 +2073,7 @@ retn    4
 int InfantryClass::ComputeDeploySpeedFactor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x521d80
 int __thiscall InfantryClass::ComputeDeploySpeedFactor(int this)
 {
   int v2; // ecx
@@ -2124,6 +2133,7 @@ retn
 int InfantryClass::GetDeployWeaponIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5218e0
 int __thiscall InfantryClass::GetDeployWeaponIndex(#377 *this, int a2)
 {
   int v3; // ecx
@@ -2205,6 +2215,7 @@ retn    4
 bool InfantryClass::updateDeployAnimation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4598a0
 BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
 {
   int v1; // eax
@@ -2240,6 +2251,7 @@ retn
 int InfantryClass::FireAtTargetPos()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522600
 int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
 {
   int v4; // eax
@@ -2285,6 +2297,7 @@ retn    0Ch
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51df60
 int __thiscall InfantryClass::FireWeaponWithCleanup(#377 *this, int a2, int a3)
 {
   int v4; // edi
@@ -2370,6 +2383,7 @@ retn    8
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51c8b0
 int __fastcall InfantryClass::GetFireError(int a1, int a2, int *a3, int a4, int a5)
 {
   int v6; // eax
@@ -2810,6 +2824,7 @@ retn    0Ch
 bool InfantryClass::CanAttackTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5227f0
 bool __thiscall InfantryClass::CanAttackTarget(#375 **this, #375 *other)
 {
   _DWORD *v3; // eax
@@ -2920,6 +2935,7 @@ retn    4
 */
 }
 
+// 0x51daf0
 void InfantryClass::PlayIdleAnim(int idle_anim_number)
 {
     // IDA: vtable override — play idle animation sequence
@@ -2927,6 +2943,7 @@ void InfantryClass::PlayIdleAnim(int idle_anim_number)
     // PlayAnim with idle sequence
 }
 
+// 0x51cdb0
 int InfantryClass::ProcessIdleAction()
 {
     // IDA: 0x51CDB0 (760B)
@@ -3553,6 +3570,7 @@ retn
 bool InfantryClass::CanMoveFreely()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5216d0
 char __thiscall InfantryClass::CanMoveFreely(int this)
 {
   char result; // al
@@ -3670,6 +3688,7 @@ retn
 */
 }
 
+// 0x484d60
 bool InfantryClass::CanMoveThroughCell()
 {
     // IDA: 0x484D60 — check cell passability for infantry
@@ -3680,6 +3699,7 @@ bool InfantryClass::CanMoveThroughCell()
 int InfantryClass::MoveToCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51dff0
 char __thiscall InfantryClass::MoveToCell(int this, int *a2, int a3)
 {
   int *v3; // esi
@@ -3863,6 +3883,7 @@ retn    8
 int InfantryClass::CancelMovement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51df10
 int __thiscall InfantryClass::CancelMovement(int this)
 {
   if ( !*(_DWORD *)(this + 1652) )
@@ -3899,6 +3920,7 @@ retn
 */
 }
 
+// 0x51b350
 int InfantryClass::CalcMoveTarget()
 {
     // IDA: 0x51B350 (1881B)
@@ -3906,6 +3928,7 @@ int InfantryClass::CalcMoveTarget()
     return 0;
 }
 
+// 0x51d0d0
 int InfantryClass::FindMoveTarget()
 {
     // IDA: 0x51D0D0 (1568B)
@@ -4248,6 +4271,7 @@ retn    4
 int InfantryClass::FindPathToBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f330
 int __thiscall InfantryClass::FindPathToBuilding(int *this)
 {
   int v2; // eax
@@ -4358,6 +4382,7 @@ retn
 int InfantryClass::EnterBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f3e0
 int __thiscall InfantryClass::EnterBuilding(float *this)
 {
   int v2; // ecx
@@ -4544,6 +4569,7 @@ retn
 int InfantryClass::ProcessEnterOrRepair()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f540
 int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
 {
   int v2; // ecx
@@ -4665,6 +4691,7 @@ retn
 bool InfantryClass::CanEnterBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522bc0
 bool __thiscall InfantryClass::CanEnterBuilding(_DWORD *this)
 {
   int v2; // eax
@@ -4719,6 +4746,7 @@ retn
 */
 }
 
+// 0x51f620
 int InfantryClass::FindIdleMovePosition()
 {
     // IDA: 0x51F620 — find idle movement position
@@ -4729,6 +4757,7 @@ int InfantryClass::FindIdleMovePosition()
 int InfantryClass::FindIdleAITarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f640
 int __thiscall InfantryClass::FindIdleAITarget(int *this)
 {
   int result; // eax
@@ -4762,6 +4791,7 @@ retn
 int InfantryClass::ParachuteTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x521760
 char __thiscall InfantryClass::ParachuteTo(int this, int a2)
 {
   if ( !(unsigned __int8)ObjectClass::ParachuteDrop((#374 *)this) )
@@ -4828,6 +4858,7 @@ retn    4
 int InfantryClass::ProcessIvanBomb()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f6e0
 int __thiscall InfantryClass::ProcessIvanBomb(_DWORD *this)
 {
   int v2; // ecx
@@ -4999,12 +5030,14 @@ retn
 */
 }
 
+// 0x51f660
 int InfantryClass::ProcessIvanBombResult()
 {
     // IDA: 0x51F660 — process bomb explosion result
     return 0;
 }
 
+// 0x521dd0
 int InfantryClass::CheckAndApplyBomb()
 {
     // IDA: 0x521DD0 — check and apply C4/bomb damage
@@ -5119,6 +5152,7 @@ retn    4
 int InfantryClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51aa10
 int __thiscall InfantryClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
 {
   int result; // eax
@@ -5234,6 +5268,7 @@ retn    10h
 int InfantryClass::ValidateTargetAndMove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51f190
 char __thiscall InfantryClass::ValidateTargetAndMove(int *this, int a2, int *a3, int a4)
 {
   int v5; // eax
@@ -5327,18 +5362,21 @@ retn    0Ch
 */
 }
 
+// 0x728280
 int InfantryClass::SetMission()
 {
     // IDA: 0x728280 — set mission for infantry
     return 0;
 }
 
+// 0x728e30
 int InfantryClass::IdleStateMachine()
 {
     // IDA: 0x728E30 — idle state machine logic
     return 0;
 }
 
+// 0x7291f0
 int InfantryClass::ProcessTunnelMovement()
 {
     // IDA: 0x7291F0 — process tunnel/teleport movement
@@ -5852,6 +5890,7 @@ retn
 int InfantryClass::CalcFacingToTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51dbd0
 char __thiscall InfantryClass::CalcFacingToTarget(_BYTE *this, int *a2)
 {
   int v3; // edx
@@ -6229,6 +6268,7 @@ retn    4
 int InfantryClass::EvaluateTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51bf90
 int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, int a5, int a6)
 {
   __int64 v7; // rax
@@ -7469,6 +7509,7 @@ retn    14h
 int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x51e140
 int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int64 a3)
 {
   int v4; // ecx
@@ -7516,6 +7557,7 @@ int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int6
         && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 128))(v10)
         && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1444) + 132))(*(_DWORD *)(this + 1444))
                      + 3220)
+// 0x5f6360
         && ObjectClass::DistanceTo((void *)this, *(_DWORD *)(this + 1444)) < 3840 )
       {
         return *(_DWORD *)(this + 1444);
@@ -7803,6 +7845,7 @@ retn    0Ch
 */
 }
 
+// 0x51b1f0
 int InfantryClass::AssignTarget_SyncLog(int syncFlag)
 {
     (void)syncFlag;
@@ -7810,24 +7853,28 @@ int InfantryClass::AssignTarget_SyncLog(int syncFlag)
     return result;
 }
 
+// 0x51aa40
 int InfantryClass::AssignDestination_SyncLog()
 {
     // IDA: 0x51AA40 — assign destination with sync logging
     return 0;
 }
 
+// 0x51cba0
 int InfantryClass::ValidatePlacement()
 {
     // IDA: 0x51CBA0 — validate building placement
     return 0;
 }
 
+// 0x484ae0
 int InfantryClass::ValidateAttackPosition()
 {
     // IDA: 0x484AE0 — validate attack position
     return 0;
 }
 
+// 0x484ab0
 int InfantryClass::IsInBounds()
 {
     // IDA: 0x484AB0 — check if position is in map bounds
@@ -7838,18 +7885,21 @@ int InfantryClass::IsInBounds()
 // Phase 3: Stream & Save
 // ============================================================
 
+// 0x521960
 int InfantryClass::LoadFromStream()
 {
     // IDA: 0x521960 (402B) — COM deserialization
     return 0;
 }
 
+// 0x521b00
 int InfantryClass::SaveLoad_Prefix()
 {
     // IDA: 0x521B00 (23B) — save/load prefix handler
     return 0;
 }
 
+// 0x523350
 int InfantryClass::ScalarDtor()
 {
     // IDA: 0x523350 (30B) — scalar destructor
@@ -7860,48 +7910,56 @@ int InfantryClass::ScalarDtor()
 // Phase 3: Cursor & UI
 // ============================================================
 
+// 0x51f800
 int InfantryClass::HandleCursorOverCell()
 {
     // IDA: 0x51F800 — handle cursor over occupied cell
     return 0;
 }
 
+// 0x51e3b0
 int InfantryClass::GetCursorOverObject_EMP()
 {
     // IDA: 0x51E3B0 — EMP cursor over object
     return 0;
 }
 
+// 0x4dded0
 int InfantryClass::GetCursorOverObject()
 {
     // IDA: 0x4DDED0 — get cursor type over this object
     return 0;
 }
 
+// 0x51faf0
 int InfantryClass::GetTypePtr()
 {
     // IDA: 0x51FAF0 — get type pointer
     return 0;
 }
 
+// 0x51f2c0
 int InfantryClass::GetTooltipName()
 {
     // IDA: 0x51F2C0 — get tooltip name string
     return 0;
 }
 
+// 0x521d30
 int InfantryClass::GetTransformMatrix()
 {
     // IDA: 0x521D30 — get transform matrix
     return 0;
 }
 
+// 0x523250
 int InfantryClass::ComputeTransform()
 {
     // IDA: 0x523250 — compute transform
     return 0;
 }
 
+// 0x701140
 int InfantryClass::CheckHealthDiff()
 {
     // IDA: 0x701140 — check health difference
@@ -7912,12 +7970,14 @@ int InfantryClass::CheckHealthDiff()
 // Phase 3: Marking & Passability
 // ============================================================
 
+// 0x5217c0
 int InfantryClass::MarkCellPassability()
 {
     // IDA: 0x5217C0 — mark cells as passable/unpassable
     return 0;
 }
 
+// 0x521850
 int InfantryClass::ClearCellPassability()
 {
     // IDA: 0x521850 — clear cell passability marks
@@ -7928,6 +7988,7 @@ int InfantryClass::ClearCellPassability()
 // Phase 3: Capture & Misc
 // ============================================================
 
+// 0x522700
 int InfantryClass::CaptureAttackerInfo()
 {
     // IDA: 0x522700 — capture attacker info for tracking
@@ -7938,6 +7999,7 @@ int InfantryClass::CaptureAttackerInfo()
 int InfantryClass::InitProductionLimits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522780
 int __thiscall InfantryClass::InitProductionLimits(int this)
 {
   int result; // eax
@@ -8014,6 +8076,7 @@ retn
 int InfantryClass::GetProductionLimit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522640
 int __thiscall InfantryClass::GetProductionLimit(int this, char a2)
 {
   int result; // eax
@@ -8091,36 +8154,42 @@ retn    4
 */
 }
 
+// 0x5226c0
 int InfantryClass::GetProductionHouse()
 {
     // IDA: 0x5226C0 — get production house
     return 0;
 }
 
+// 0x521b20
 int InfantryClass::ResetMissionIfDone()
 {
     // IDA: 0x521B20 — reset mission when complete
     return 0;
 }
 
+// 0x521b40
 int InfantryClass::ProcessMission16()
 {
     // IDA: 0x521B40 — process mission state 16
     return 0;
 }
 
+// 0x521c60
 int InfantryClass::SetMissionOnCondition()
 {
     // IDA: 0x521C60 — set mission based on condition
     return 0;
 }
 
+// 0x521c10
 int InfantryClass::InitVoiceResponseTimer()
 {
     // IDA: 0x521C10 — initialize voice response timer
     return 0;
 }
 
+// 0x521c40
 int InfantryClass::ResetReloadIfNeeded()
 {
     // IDA: 0x521C40 — reset reload timer if needed
@@ -8131,6 +8200,7 @@ int InfantryClass::ResetReloadIfNeeded()
 int InfantryClass::SetFlag1752()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5220f0
 void __thiscall InfantryClass::SetFlag1752(_BYTE *this)
 {
   *(this + 1752) = 1;
@@ -8142,42 +8212,49 @@ retn
 */
 }
 
+// 0x523340
 int InfantryClass::StubReturn15()
 {
     // IDA: 0x523340 — vtable[11] stub, returns 15
     return 15;
 }
 
+// 0x5232f0
 int InfantryClass::StubReturn1776()
 {
     // IDA: 0x5232F0 — vtable[12] stub, returns 1776
     return 1776;
 }
 
+// 0x70e1e0
 int InfantryClass::ProcessIdle()
 {
     // IDA: 0x70E1E0 — process idle state
     return 0;
 }
 
+// 0x703230
 int InfantryClass::RegisterKill()
 {
     // IDA: 0x703230 — register kill credit
     return 0;
 }
 
+// 0x70d7a0
 int InfantryClass::ReleaseInfiltrators()
 {
     // IDA: 0x70D7A0 — release infiltrators
     return 0;
 }
 
+// 0x522e70
 int InfantryClass::ProcessTiberiumHarvest()
 {
     // IDA: 0x522E70 — process tiberium/ore harvesting
     return 0;
 }
 
+// 0x519630
 int InfantryClass::RepairBridge()
 {
     // IDA: 0x519630 (5083B) — repair bridge as engineer
@@ -8188,6 +8265,7 @@ int InfantryClass::RepairBridge()
 void InfantryClass::CalculateApproachPath()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522340
 void *__thiscall InfantryClass::CalculateApproachPath(int this, char a2)
 {
   int v3; // eax
@@ -8407,6 +8485,7 @@ retn    4
 bool InfantryClass::IsBridgeRepairEnabled()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5224d0
 char __thiscall InfantryClass::IsBridgeRepairEnabled(_DWORD *this)
 {
   return *(_BYTE *)(*(this + 432) + 3779);
@@ -8423,6 +8502,7 @@ retn
 int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x522d50
 int __thiscall InfantryClass::SlaveGiveMoney_RecordBalanceBefore(float *this, _DWORD *a2)
 {
   float *v2; // ebp
@@ -9580,6 +9660,7 @@ namespace gamemd {
 
 // --- InfantryClass ---
 
+// 0x523300
 HRESULT __stdcall InfantryClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
 AbstractType __stdcall InfantryClass::whatAmI() const { return kObjectTypeId; }
 int InfantryClass::objectSize() const { return sizeof(InfantryClass); }

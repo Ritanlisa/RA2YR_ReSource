@@ -30,6 +30,7 @@ namespace gamemd { unsigned int Randomizer::Random() { return 0; } }
 // 0x401980
 namespace gamemd { int CCFileClass::Destru_vt08(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x401980
 int __thiscall CCFileClass::Destru_vt08(void *this, int a2, int a3)
 {
   (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 8))(this, a2);
@@ -56,6 +57,7 @@ retn    8
 // 0x4019A0
 namespace gamemd { void* CCFileClass::Destru_vt00(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4019a0
 _DWORD *__thiscall CCFileClass::Destru_vt00(_DWORD *Block, char a2)
 {
   *Block = &CCFileClass::`vftable';
@@ -431,6 +433,7 @@ retn
 // 0x41C050
 namespace gamemd { bool TacticalClass::ProcessTick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41c050
 BOOL __thiscall TacticalClass::ProcessTick(_DWORD *this)
 {
   return *(this + 373) != 0;
@@ -656,6 +659,7 @@ retn
 // 0x42AC00
 namespace gamemd { int CellClass::setOverlayType(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x42ac00
 int __thiscall CellClass::setOverlayType(void **this, int a2)
 {
   int v3; // edi
@@ -925,6 +929,7 @@ retn
 // 0x431B20
 namespace gamemd { void* BufferIOFileClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x431b20
 _BYTE *__thiscall BufferIOFileClass::Constructor(_BYTE *this)
 {
   *(this + 4) = 0;
@@ -1175,6 +1180,7 @@ retn
 // 0x431F50
 namespace gamemd { bool BufferIOFileClass::Write() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x431f50
 int __thiscall BufferIOFileClass::Write(void *this, int a2, int a3)
 {
   (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 8))(this, a2);
@@ -1200,6 +1206,7 @@ retn    8
 // 0x431F70
 namespace gamemd { bool BufferIOFileClass::Open() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x431f70
 int __thiscall BufferIOFileClass::Open(int this, int a2)
 {
   int v3; // eax
@@ -1393,6 +1400,7 @@ retn    4
 // 0x432050
 namespace gamemd { int FileClass::BufferedWriter() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x432050
 int __thiscall FileClass::BufferedWriter(_DWORD *this, int lpBuffer, int nNumberOfBytesToWrite)
 {
   int result; // eax
@@ -1837,6 +1845,7 @@ retn    8
 // 0x4322A0
 namespace gamemd { int FileClass::BufferedReader() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4322a0
 int __thiscall FileClass::BufferedReader(_DWORD *this, int lpBuffer, int nNumberOfBytesToRead)
 {
   int v4; // ebx
@@ -2215,6 +2224,7 @@ retn    8
 // 0x4324B0
 namespace gamemd { int BufferIOFileClass::SeekInternal() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4324b0
 int __thiscall BufferIOFileClass::SeekInternal(_BYTE *this, int lDistanceToMove, int dwMoveMethod)
 {
   int v4; // eax
@@ -2514,6 +2524,7 @@ retn    4
 // 0x43ADC0
 namespace gamemd { void* INIClass::loadFile(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x43adc0
 _DWORD *__thiscall INIClass::loadFile(_DWORD *this, int Size)
 {
   *this = 0;
@@ -2647,6 +2658,7 @@ retn    4
 // 0x45A170
 namespace gamemd { int CellClass::SetField2C() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x45a170
 int __thiscall CellClass::SetField2C(int *this)
 {
   int result; // eax
@@ -2753,6 +2765,7 @@ retn    8
 // 0x4722C0
 namespace gamemd { bool CellClass::HasContent() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4722c0
 BOOL __thiscall CellClass::HasContent(_DWORD *this)
 {
   return *(this + 13) > 0;
@@ -2891,6 +2904,7 @@ retn    4
 // 0x4739F0
 namespace gamemd { void* CCFileClass::Construct(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4739f0
 _DWORD *__thiscall CCFileClass::Construct(_DWORD *this, char *Source)
 {
   BufferIOFile::Init(this);
@@ -2996,6 +3010,7 @@ retn
 // 0x473AB0
 namespace gamemd { int CCFileClass::Destru_vt16(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473ab0
 char __thiscall CCFileClass::Destru_vt16(_BYTE *this, int a2, int a3, int a4)
 {
   char result; // al
@@ -3025,6 +3040,7 @@ retn    0Ch
 // 0x473B10
 namespace gamemd { int CCFileClass::Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473b10
 int __thiscall CCFileClass::Read(_DWORD *this, void *lpBuffer, int Size)
 {
   bool v4; // bl
@@ -3149,6 +3165,7 @@ retn    8
 // 0x473BA0
 namespace gamemd { int BufferIOFileClass::Seek() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473ba0
 int __thiscall BufferIOFileClass::Seek(int this, int lDistanceToMove, int dwMoveMethod)
 {
   int v3; // eax
@@ -3294,6 +3311,7 @@ retn
 // 0x473CD0
 namespace gamemd { bool CCFileClass::Destru_vt06() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473cd0
 bool __thiscall CCFileClass::Destru_vt06(int this)
 {
   return *(_DWORD *)(this + 88) || BufferIOFileClass::Read(this);
@@ -3314,6 +3332,7 @@ jmp     BufferIOFileClass__Read
 // 0x473D10
 namespace gamemd { int FileClass::Load(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473d10
 int __thiscall FileClass::Load(int *this, int a2)
 {
   int v3; // edx
@@ -3515,6 +3534,7 @@ retn    4
 // 0x473E50
 namespace gamemd { int CCFileClass::Destru_vt14() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473e50
 int __thiscall CCFileClass::Destru_vt14(BuildingClass *this)
 {
   int DosTimestamp; // ebx
@@ -3621,6 +3641,7 @@ retn
 // 0x473F00
 namespace gamemd { int CCFileClass::Destru_vt15(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x473f00
 char __thiscall CCFileClass::Destru_vt15(BuildingClass *this, int wFatTime)
 {
   char v3; // bl
@@ -3727,6 +3748,7 @@ retn    4
 // 0x474320
 namespace gamemd { int CCINIClass::LoadAndVerifyDigest(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x474320
 int __thiscall CCINIClass::LoadAndVerifyDigest(int this, int a2, char a3, char a4)
 {
   int File; // ebp
@@ -3861,6 +3883,7 @@ retn    0Ch
 // 0x474430
 namespace gamemd { int INIClass::WriteDigest(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x474430
 int __thiscall INIClass::WriteDigest(char *this, int a2, char a3)
 {
   int v4; // edi
@@ -3991,6 +4014,7 @@ retn    8
 // 0x4748A0
 namespace gamemd { int INIClass::GetPipIdx(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4748a0
 int __thiscall INIClass::GetPipIdx(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   int v4; // edi
@@ -4174,6 +4198,7 @@ retn    10h
 // 0x474C20
 namespace gamemd { int INIEntry::Write3Bytes(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x474c20
 char __thiscall INIEntry::Write3Bytes(char *this, unsigned __int8 *Block, char *a3, unsigned __int8 *a4)
 {
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
@@ -4222,6 +4247,7 @@ retn    0Ch
 // 0x474C70
 namespace gamemd { int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x474c70
 int __thiscall INIEntry::ReadColor(
 {
   char v7; // cl
@@ -4339,6 +4365,7 @@ retn    10h
 // 0x474DA0
 namespace gamemd { int INIClass::LookupEnum(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x474da0
 int __thiscall INIClass::LookupEnum(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   int v4; // edi
@@ -4727,6 +4754,7 @@ retn    0Ch
 // 0x4759F0
 namespace gamemd { int INIClass::ReadStringValue(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4759f0
 int __thiscall INIClass::ReadStringValue(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
@@ -5151,6 +5179,7 @@ retn    0Ch
 // 0x476020
 namespace gamemd { int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x476020
 int __thiscall INIClass::ReadExitCellList(
 {
   char *v11; // esi
@@ -5582,6 +5611,7 @@ retn    10h
 // 0x4764F0
 namespace gamemd { int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4764f0
 int __thiscall INIClass::ReadTechnoTypeList(
 {
   char *i; // edi
@@ -6853,6 +6883,7 @@ retn    28h ; '('
 // 0x477640
 namespace gamemd { int INIEntry::ReadAbilities(int a1, void* a2, void* a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x477640
 int __thiscall INIEntry::ReadAbilities(
 {
   __int16 v5; // si
@@ -6996,6 +7027,7 @@ namespace gamemd { void* INIClass::parseSection(void* a1) { return nullptr; } }
 // 0x478220
 namespace gamemd { void* INIClass::parseKeyValue(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x478220
 _DWORD *__thiscall INIClass::parseKeyValue(_DWORD *this, _DWORD *a2)
 {
   int v3; // edi
@@ -7165,6 +7197,7 @@ retn    4
 // 0x4787E0
 namespace gamemd { void* INIClass::writeSection(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4787e0
 _DWORD *__thiscall INIClass::writeSection(_DWORD *this, _DWORD *a2)
 {
   int v3; // eax
@@ -7257,6 +7290,7 @@ retn    4
 // 0x4790E0
 namespace gamemd { int CD::AlwaysAvailable(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4790e0
 char __thiscall CD::AlwaysAvailable(_DWORD *this, int a2)
 {
   if ( a2 == -2 )
@@ -7292,6 +7326,7 @@ retn    4
 // 0x479110
 namespace gamemd { bool CD::NeverAsk(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x479110
 bool __thiscall CD::NeverAsk(int *this, int a2)
 {
   int v3; // eax
@@ -7433,6 +7468,7 @@ retn    4
 // 0x47AAB0
 namespace gamemd { bool FileClass::OpenFileBufferIO() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47aab0
 int __thiscall FileClass::OpenFileBufferIO(void *this, int a2)
 {
   return BufferIOFileClass::Open((int)this, a2);
@@ -7681,6 +7717,7 @@ retn    8
 // 0x47AF70
 namespace gamemd { int FileClass::FindFirstWithCD() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47af70
 char __thiscall FileClass::FindFirstWithCD(char *this)
 {
   int v2; // edx
@@ -7866,6 +7903,7 @@ retn
 // 0x47BB60
 namespace gamemd { void CellClass::DTOR() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47bb60
 void __thiscall CellClass::DTOR(_DWORD *this)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -8914,6 +8952,7 @@ retn    0Ch
 // 0x47CA80
 namespace gamemd { bool CellClass::DetermineTileType() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47ca80
 BOOL __thiscall CellClass::DetermineTileType(int this)
 {
   int v2; // edx
@@ -9985,6 +10024,7 @@ retn
 // 0x47DD70
 namespace gamemd { void CellClass::UpdateAnimations() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47dd70
 void __thiscall CellClass::UpdateAnimations(int this)
 {
   _DWORD *v2; // ecx
@@ -10982,6 +11022,7 @@ retn    4
 // 0x4839F0
 namespace gamemd { int CellClass::SaveLoad_Prefix() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4839f0
 int __thiscall CellClass::SaveLoad_Prefix(#378 *this)
 {
   int v1; // ebp
@@ -11324,6 +11365,7 @@ retn    8
 // 0x483C10
 namespace gamemd { int CellClass::SaveLoad_Prefix_0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x483c10
 int __thiscall CellClass::SaveLoad_Prefix_0(#378 *this)
 {
   int result; // eax
@@ -11591,6 +11633,7 @@ retn
 // 0x485590
 namespace gamemd { void CellClass::ProcessBridgeRepair() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x485590
 void __thiscall CellClass::ProcessBridgeRepair(_DWORD *this)
 {
   _DWORD *v1; // ebp
@@ -12699,6 +12742,7 @@ retn
 // 0x486A70
 namespace gamemd { int CellClass::CreateFoggedObjects() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x486a70
 char __thiscall CellClass::CreateFoggedObjects(_DWORD *this)
 {
   int v1; // eax
@@ -13223,6 +13267,7 @@ retn
 // 0x487190
 namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x487190
 char __thiscall Crate::FindPlacement(int this, int a2, int a3)
 {
   _DWORD *v4; // edi
@@ -13899,6 +13944,7 @@ retn    8
 // 0x487CE0
 namespace gamemd { void CellClass::RadLevel_Increase(double a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x487ce0
 void __thiscall CellClass::RadLevel_Increase(double *this, double a2)
 {
   *(this + 30) = a2 + *(this + 30);
@@ -13914,6 +13960,7 @@ retn    8
 // 0x487D00
 namespace gamemd { void CellClass::RadLevel_Decrease(double a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x487d00
 void __thiscall CellClass::RadLevel_Decrease(int this, double a2)
 {
   double v2; // st7
@@ -14080,6 +14127,7 @@ retn    4
 // 0x488080
 namespace gamemd { void* CellClass::clearOccupationFlags(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x488080
 _DWORD *__thiscall CellClass::clearOccupationFlags(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -14253,6 +14301,7 @@ retn
 // 0x48EBF0
 namespace gamemd { void* ConvertClass::InitTables() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x48ebf0
 _DWORD *__thiscall ConvertClass::InitTables(int this)
 {
   _DWORD *v2; // eax
@@ -18456,6 +18505,7 @@ retn    20h ; ' '
 // 0x49E510
 namespace gamemd { void* INIClass::ClearContents() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x49e510
 char *__thiscall INIClass::ClearContents(int this)
 {
   int v2; // ebp
@@ -19178,6 +19228,7 @@ retn
 // 0x4A8270
 namespace gamemd { int CD::CheckDiscPresence(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a8270
 char __thiscall CD::CheckDiscPresence(void *this, int a2)
 {
   int v2; // edi
@@ -21050,6 +21101,7 @@ int __thiscall TacticalClass_HandlePlayerAction(char *this, __int16 *a2, char a3
   if ( *(this + 4531)
     && *((_DWORD *)this + 1135)
     && !Waypoint::FindByCell((char *)MEMORY[0xA83D4C], a2)
+// 0x578460
     && LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], a2, 1) )
   {
     v10 = (_DWORD *)*((_DWORD *)this + 1135);
@@ -22882,6 +22934,7 @@ retn    4
 // 0x4ACE70
 namespace gamemd { void ScenarioClass::LoadMapData(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4ace70
 void __thiscall ScenarioClass::LoadMapData(int *this, unsigned __int8 ***a2)
 {
   unsigned int *v3; // eax
@@ -25279,6 +25332,7 @@ retn    8
 // 0x525A60
 namespace gamemd { int INIClass::LoadFile(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x525a60
 int __thiscall INIClass::LoadFile(_DWORD *this, int a2, char a3)
 {
   char *v3; // ebp
@@ -27607,6 +27661,7 @@ retn    4
 // 0x526A30
 namespace gamemd { int INIClass::FindKey(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x526a30
 int __thiscall INIClass::FindKey(char *this, char **a2)
 {
   unsigned __int8 *v3; // eax
@@ -27777,6 +27832,7 @@ retn
 // 0x526D90
 namespace gamemd { void* INIClass::GetStringByIndexEx(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x526d90
 char **__thiscall INIClass::GetStringByIndexEx(char *this, char **a2, char **a3, int a4)
 {
   int v4; // ebp
@@ -27939,6 +27995,7 @@ retn    0Ch
 // 0x526E80
 namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x526e80
 char __thiscall INIClass::ReadBase64Data(char *this, unsigned __int8 *Block, int a3, signed int Size)
 {
   int v5; // esi
@@ -28090,6 +28147,7 @@ retn    0Ch
 // 0x526FB0
 namespace gamemd { int INIClass::GetBase64Data() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x526fb0
 int __thiscall INIClass::GetBase64Data(void *this, char *a2, int a3, int Size)
 {
   unsigned int v6; // kr04_4
@@ -28423,6 +28481,7 @@ jmp     loc_527124
 // 0x5271C0
 namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5271c0
 char __thiscall INIClass::ReadIntList2(char *this, unsigned __int8 *Block, char *Source)
 {
   char *v4; // ebp
@@ -28746,6 +28805,7 @@ retn    10h
 // 0x5276D0
 namespace gamemd { int INIClass::ReadInt_Overwrite(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5276d0
 int __thiscall INIClass::ReadInt_Overwrite(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   unsigned __int8 *v4; // ebp
@@ -29124,6 +29184,7 @@ retn    0Ch
 // 0x527920
 namespace gamemd { int INIClass::ReadGUID_Overwrite(int a1, void* a2, void* a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x527920
 int __thiscall INIClass::ReadGUID_Overwrite(
 {
   unsigned __int8 *v9; // edx
@@ -29505,6 +29566,7 @@ retn    1Ch
 // 0x527B90
 namespace gamemd { int INIClass::ReadDouble(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x527b90
 char __thiscall INIClass::ReadDouble(char *this, unsigned __int8 *Block, char *a3, #33 *rclsid)
 {
   int lpsz; // [esp+4h] [ebp-84h] BYREF
@@ -29683,6 +29745,7 @@ retn    0Ch
 // 0x527CC0
 namespace gamemd { void* INIClass::ParseValue(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x527cc0
 unsigned int *__thiscall INIClass::ParseValue(
 {
   unsigned __int8 *v6; // ebx
@@ -30070,6 +30133,7 @@ retn    10h
 // 0x527F20
 namespace gamemd { void* INIClass::GetRect(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x527f20
 _DWORD *__thiscall INIClass::GetRect(_DWORD *this, _DWORD *a2, char **a3, char **a4, int *a5)
 {
   unsigned __int8 *v6; // edi
@@ -30526,6 +30590,7 @@ retn    0Ch
 // 0x5283D0
 namespace gamemd { double INIClass::ReadDouble_Overwrite(void* a1, void* a2, double a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5283d0
 double __thiscall INIClass::ReadDouble_Overwrite(int this, unsigned __int8 *a2, unsigned __int8 *a3, double a4)
 {
   unsigned __int8 *v4; // ebp
@@ -30960,6 +31025,7 @@ retn    10h
 // 0x528660
 namespace gamemd { int INIClass::SetString(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x528660
 char __thiscall INIClass::SetString(char *this, unsigned __int8 *Block, char *a3, char *Source)
 {
   int v5; // esi
@@ -31564,6 +31630,7 @@ retn    0Ch
 // 0x528C00
 namespace gamemd { int INIClass::ReadString(void* a1, void* a2, void* a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x528c00
 unsigned int __thiscall INIClass::ReadString(int *this, char **a2, char **a3, char **a4, void **a5)
 {
   unsigned __int8 *v6; // edi
@@ -31902,6 +31969,7 @@ jmp     short loc_528DA0
 // 0x528E00
 namespace gamemd { int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x528e00
 char __thiscall INIClass::SetWideAsHex(char *this, unsigned __int8 *Block, char *a3, #72 *String)
 {
   char v4; // bl
@@ -32032,6 +32100,7 @@ retn    0Ch
 // 0x528F00
 namespace gamemd { int INIClass::ParseValue_Wide() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x528f00
 int __thiscall INIClass::ParseValue_Wide(int *this, unsigned __int8 *a2, int a3, #72 *Source, #72 *String, int Count)
 {
   unsigned __int8 *v7; // edx
@@ -32415,6 +32484,7 @@ retn    14h
 // 0x529160
 namespace gamemd { int INIClass::GetStringEx() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x529160
 int __thiscall INIClass::GetStringEx(int *this, unsigned __int8 *a2, int a3, #72 *String, int Count)
 {
   unsigned __int8 *v6; // edx
@@ -32744,6 +32814,7 @@ retn    10h
 // 0x529350
 namespace gamemd { int INIClass::GetCSFString() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x529350
 int __thiscall INIClass::GetCSFString(int *this, unsigned __int8 *a2, int a3, #72 *String, #72 *a5, int Count)
 {
   unsigned __int8 *v7; // edx
@@ -33165,6 +33236,7 @@ retn    0Ch
 // 0x5295F0
 namespace gamemd { int INIClass::ReadBool_Overwrite(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5295f0
 char __thiscall INIClass::ReadBool_Overwrite(_DWORD *this, unsigned __int8 *a2, unsigned __int8 *a3, char a4)
 {
   unsigned __int8 *v4; // ebp
@@ -33500,6 +33572,7 @@ retn    0Ch
 // 0x5297E0
 namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5297e0
 char __thiscall INIEntry::Write2Integers(char *this, unsigned __int8 *Block, char *a3, _DWORD *a4)
 {
   char Buffer[56]; // [esp+4h] [ebp-38h] BYREF
@@ -33543,6 +33616,7 @@ retn    0Ch
 // 0x529880
 namespace gamemd { void* INIClass::ReadPoint2D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x529880
 int *__thiscall INIClass::ReadPoint2D_Overwrite(_DWORD *this, int *a2, unsigned __int8 *a3, const char *a4, int *a5)
 {
   unsigned __int8 *v6; // ebx
@@ -33811,6 +33885,7 @@ retn    10h
 // 0x529A30
 namespace gamemd { void* INIClass::GetCoordPair(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x529a30
 _DWORD *__thiscall INIClass::GetCoordPair(_DWORD *this, _DWORD *a2, char *Source, char **a4, _DWORD *a5)
 {
   char **v6; // edi
@@ -34180,6 +34255,7 @@ retn    0Ch
 // 0x529CA0
 namespace gamemd { void* INIClass::ReadPoint3D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x529ca0
 int *__thiscall INIClass::ReadPoint3D_Overwrite(_DWORD *this, int *a2, unsigned __int8 *a3, const char *a4, int *a5)
 {
   unsigned __int8 *v6; // ebx
@@ -34568,6 +34644,7 @@ retn    0Ch
 // 0x52A760
 namespace gamemd { int INIClass::ReadTimeString(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x52a760
 int __thiscall INIClass::ReadTimeString(int *this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   unsigned __int8 *v5; // edx
@@ -35087,6 +35164,7 @@ retn
 // 0x52B0A0
 namespace gamemd { int INIClass::setValue(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x52b0a0
 char __thiscall INIClass::setValue(int this, _DWORD *a2, _DWORD *a3)
 {
   int v4; // eax
@@ -35240,6 +35318,7 @@ retn    8
 // 0x52B2B0
 namespace gamemd { int INIClass::deleteSection(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x52b2b0
 char __thiscall INIClass::deleteSection(int this, int *a2)
 {
   int v3; // eax
@@ -35450,6 +35529,7 @@ retn    4
 // 0x52B570
 namespace gamemd { int INIClass::mergeSection(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x52b570
 char __thiscall INIClass::mergeSection(int this, int a2)
 {
   int v3; // edi
@@ -35782,6 +35862,7 @@ retn
 // 0x551B20
 namespace gamemd { int LayerClass::Save(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x551b20
 int __thiscall LayerClass::Save(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // esi
@@ -35883,6 +35964,7 @@ retn    4
 // 0x551B90
 namespace gamemd { int LayerClass::Load(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x551b90
 int __thiscall LayerClass::Load(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // edi
@@ -36058,6 +36140,7 @@ retn    4
 // 0x554AA0
 namespace gamemd { int TacticalClass::UpdateScrollTarget(int a1, int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x554aa0
 char __thiscall TacticalClass::UpdateScrollTarget(int this, int a2, int a3, int a4, int a5, char a6)
 {
   int v6; // eax
@@ -36114,6 +36197,7 @@ retn    14h
 // 0x554AF0
 namespace gamemd { int TacticalClass::ScrollView(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x554af0
 char __thiscall TacticalClass::ScrollView(_DWORD *this, char a2)
 {
   char result; // al
@@ -36169,6 +36253,7 @@ char __thiscall TacticalClass::ScrollView(_DWORD *this, char a2)
               v16 = v17;
               if ( (unsigned __int16)(v23 + v5) < 0x200u
                 && v7 < 0x200u
+// 0x5657e0
                 && Cell::Exists(MEMORY[0x87F7E8], (__int16 *)&v16) )
               {
                 v8 = ((__int16)v16 << 8) + 128 - *(this + 14);
@@ -36455,6 +36540,7 @@ jmp     short loc_554CE4
 // 0x555DA0
 namespace gamemd { int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x555da0
 int __thiscall LightConvertClass::Constructor(
 {
   int v11; // ecx
@@ -36801,6 +36887,7 @@ retn    24h ; '$'
 // 0x556B30
 namespace gamemd { int TacticalClass::GetField() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x556b30
 int __thiscall TacticalClass::GetField(_DWORD *this)
 {
   int result; // eax
@@ -36842,6 +36929,7 @@ retn
 // 0x55BB40
 namespace gamemd { void* ScenarioClass::ProcessAmbientEffects(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x55bb40
 _DWORD *__thiscall ScenarioClass::ProcessAmbientEffects(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -37273,6 +37361,7 @@ retn    8
 // 0x565C10
 namespace gamemd { void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x565c10
 void __thiscall CellClass::UpdateTerrainAndWaypoints(int *this, int *a2, int jj, char a4, char a5)
 {
   int v6; // edi
@@ -39685,6 +39774,7 @@ retn    10h
 // 0x567110
 namespace gamemd { void* CellClass::BuildPathfindingGraph() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x567110
 _DWORD *__thiscall CellClass::BuildPathfindingGraph(int this)
 {
   int v2; // edi
@@ -44739,6 +44829,7 @@ retn    4
 // 0x5749C0
 namespace gamemd { int CellClass::ApplyTerrainModTile(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5749c0
 int __thiscall CellClass::ApplyTerrainModTile(_DWORD *this, int a2)
 {
   int v2; // esi
@@ -45064,6 +45155,7 @@ retn    4
 // 0x575220
 namespace gamemd { int CellClass::ApplyCliffMod2(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x575220
 int __thiscall CellClass::ApplyCliffMod2(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // ebp
@@ -45510,6 +45602,7 @@ retn    4
 // 0x575540
 namespace gamemd { int CellClass::ApplyCliffMod(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x575540
 int __thiscall CellClass::ApplyCliffMod(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // ebp
@@ -45955,6 +46048,7 @@ retn    4
 // 0x575870
 namespace gamemd { int CellClass::ApplyTerrainMod2(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x575870
 int __thiscall CellClass::ApplyTerrainMod2(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // ebp
@@ -46401,6 +46495,7 @@ retn    4
 // 0x575BA0
 namespace gamemd { int CellClass::ApplyTerrainMod(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x575ba0
 int __thiscall CellClass::ApplyTerrainMod(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // ebp
@@ -53111,6 +53206,7 @@ retn    4
 // 0x57F200
 namespace gamemd { void CellClass::ApplyCliffTileModifications(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x57f200
 void __thiscall CellClass::ApplyCliffTileModifications(int *this, int a2)
 {
   int v2; // esi
@@ -53435,6 +53531,7 @@ retn    4
 // 0x57F440
 namespace gamemd { void CellClass::ApplyTileMod58(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x57f440
 void __thiscall CellClass::ApplyTileMod58(int *this, int a2)
 {
   int v2; // esi
@@ -56823,6 +56920,7 @@ retn    4
 // 0x580B20
 namespace gamemd { bool CellClass::updateLighting() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x580b20
 BOOL __thiscall CellClass::updateLighting(__int16 *this)
 {
   unsigned int v1; // eax
@@ -56877,6 +56975,7 @@ retn
 // 0x580B70
 namespace gamemd { bool CellClass::applyTileDamage() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x580b70
 BOOL __thiscall CellClass::applyTileDamage(__int16 *this)
 {
   unsigned int v1; // eax
@@ -59922,6 +60021,7 @@ retn    8
 // 0x58ADB0
 namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x58adb0
 _DWORD *__thiscall RadarClass::drawRadarTerrain(_DWORD *this, int a2, int a3)
 {
   int v4; // ebx
@@ -60076,6 +60176,7 @@ retn    8
 // 0x58AE60
 namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x58ae60
 _DWORD *__thiscall RadarClass::RenderJammerRadius(_DWORD *this, int a2, _DWORD *a3)
 {
   _DWORD *v3; // ebp
@@ -60375,6 +60476,7 @@ retn    4
 // 0x595BC0
 namespace gamemd { int CCFileClass::Load() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x595bc0
 int __thiscall CCFileClass::Load(char (*this)())
 {
   int Dialog; // edi
@@ -61154,6 +61256,7 @@ retn    4
 // 0x5B3C20
 namespace gamemd { void* MixFileClass::FromFile(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b3c20
 _DWORD *__thiscall MixFileClass::FromFile(_DWORD *this, char *a2, int a3)
 {
   int *v4; // edi
@@ -61560,6 +61663,7 @@ retn    4
 // 0x5B5EF0
 namespace gamemd { int CellClass::LockSurface() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b5ef0
 int __thiscall CellClass::LockSurface(int this, char a2)
 {
   int v3; // edi
@@ -61716,6 +61820,7 @@ retn    4
 // 0x5B9F30
 namespace gamemd { int CellClass::SetOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5b9f30
 int __thiscall CellClass::SetOccupancy(int this, char a2)
 {
   int v3; // edi
@@ -61872,6 +61977,7 @@ retn    4
 // 0x5C0A70
 namespace gamemd { void TacticalClass::ClearVector() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c0a70
 void __thiscall TacticalClass::ClearVector(int this)
 {
   void *v2; // eax
@@ -61957,6 +62063,7 @@ retn    4
 // 0x5C0AD0
 namespace gamemd { int TacticalClass::CompareVector(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c0ad0
 char __thiscall TacticalClass::CompareVector(int *this, int a2)
 {
   int v2; // esi
@@ -62028,6 +62135,7 @@ retn    4
 // 0x5C0C50
 namespace gamemd { int TacticalClass::ReallocVector(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c0c50
 char __thiscall TacticalClass::ReallocVector(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -62175,6 +62283,7 @@ retn    8
 // 0x5C0D00
 namespace gamemd { int TacticalClass::FindInVector(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5c0d00
 int __thiscall TacticalClass::FindInVector(int *this, _DWORD *a2)
 {
   int v2; // edx
@@ -62282,6 +62391,7 @@ retn    4
 // 0x5CBDA0
 namespace gamemd { int ScenarioClass::AdvanceSHPAnimationFrame(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5cbda0
 char __thiscall ScenarioClass::AdvanceSHPAnimationFrame(int this, int *a2, _DWORD *a3)
 {
   int v4; // edi
@@ -63452,6 +63562,7 @@ retn    4
 // 0x5CC740
 namespace gamemd { bool ScenarioClass::updateTiberiumGrowth() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5cc740
 BOOL __thiscall ScenarioClass::updateTiberiumGrowth(int this)
 {
   return !*(_BYTE *)(this + 12) || *(_DWORD *)(this + 64) >= 4u;
@@ -64251,6 +64362,7 @@ retn
 // 0x5FAD10
 namespace gamemd { int ScenarioClass::SaveGameOptions() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5fad10
 int __thiscall ScenarioClass::SaveGameOptions(int this)
 {
   _WORD *i; // eax
@@ -64842,6 +64954,7 @@ retn
 // 0x6267A0
 namespace gamemd { void FileSystem::InitExtensionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6267a0
 void __thiscall FileSystem::InitExtensionState(void *this)
 {
   int v1; // edi
@@ -65226,6 +65339,7 @@ retn
 // 0x627170
 namespace gamemd { void* FileSystem::findFile() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x627170
 _DWORD *__thiscall FileSystem::findFile(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -65461,6 +65575,7 @@ retn
 // 0x6272A0
 namespace gamemd { void FileSystem::FlushTempFiles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6272a0
 void __thiscall FileSystem::FlushTempFiles(_DWORD *this)
 {
   _DWORD *v1; // ebp
@@ -66044,6 +66159,7 @@ retn    4
 // 0x628170
 namespace gamemd { void* FileSystem::closeFile(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x628170
 _BYTE *__thiscall FileSystem::closeFile(_DWORD *this, int *a2)
 {
   int v3; // eax
@@ -66189,6 +66305,7 @@ retn
 // 0x628ED0
 namespace gamemd { void* FileSystem::writeFile(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x628ed0
 _DWORD *__thiscall FileSystem::writeFile(_DWORD *this, int a2, _BYTE *a3)
 {
   int v3; // esi
@@ -67017,6 +67134,7 @@ retn
 // 0x636590
 namespace gamemd { int FactoryClass::CompleteCurrentItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x636590
 int __thiscall FactoryClass::CompleteCurrentItem(int this, int a2)
 {
   int v3; // ebx
@@ -67541,6 +67659,7 @@ retn    4
 // 0x63DFD0
 namespace gamemd { int FactoryClass::RemoveItemAt(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x63dfd0
 char __thiscall FactoryClass::RemoveItemAt(int *this, int a2)
 {
   int v3; // eax
@@ -67660,6 +67779,7 @@ retn    4
 // 0x63F6B0
 namespace gamemd { int RadarClass::Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x63f6b0
 int __thiscall RadarClass::Create(int this)
 {
   RadarClass::Construct((_DWORD *)this);
@@ -67712,6 +67832,7 @@ retn
 // 0x652960
 namespace gamemd { void* RadarClass::Construct() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x652960
 _DWORD *__thiscall RadarClass::Construct(_DWORD *this)
 {
   int v2; // ebx
@@ -68038,6 +68159,7 @@ retn
 // 0x652CF0
 namespace gamemd { int RadarClass::Destru_vt05() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x652cf0
 int __thiscall RadarClass::Destru_vt05(int *this)
 {
   int result; // eax
@@ -68096,6 +68218,7 @@ retn
 // 0x652DE0
 namespace gamemd { void RadarClass::Destru_vt07() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x652de0
 void __thiscall RadarClass::Destru_vt07(int this)
 {
   int v2; // eax
@@ -68146,6 +68269,7 @@ retn
 // 0x652E90
 namespace gamemd { int RadarClass::Destru_vt53() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x652e90
 int __thiscall RadarClass::Destru_vt53(_DWORD *this)
 {
   int v2; // eax
@@ -68293,6 +68417,7 @@ retn
 // 0x653100
 namespace gamemd { int RadarClass::Destru_vt16(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x653100
 char __thiscall RadarClass::Destru_vt16(int this, char a2)
 {
   int v2; // eax
@@ -69229,6 +69354,7 @@ retn    4
 // 0x654320
 namespace gamemd { int RadarClass::Destru_vt34() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x654320
 char __thiscall RadarClass::Destru_vt34(int this)
 {
   int v2; // esi
@@ -69625,6 +69751,7 @@ retn    8
 // 0x655990
 namespace gamemd { int RadarClass::Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x655990
 int __thiscall RadarClass::Process(_DWORD *this)
 {
   _DWORD *v1; // ebx
@@ -69932,6 +70059,7 @@ retn
 // 0x655B20
 namespace gamemd { void RadarClass::InitializeHashTable() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x655b20
 void __thiscall RadarClass::InitializeHashTable(int *this)
 {
   _DWORD *v2; // eax
@@ -70133,6 +70261,7 @@ retn
 // 0x6563B0
 namespace gamemd { int RadarClass::UpdateFoundationShapesCustom() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6563b0
 char __thiscall RadarClass::UpdateFoundationShapesCustom(float *this)
 {
   float *v1; // ebp
@@ -70999,6 +71128,7 @@ retn
 // 0x656E90
 namespace gamemd { bool RadarClass::SetFlag() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x656e90
 BOOL __thiscall RadarClass::SetFlag(_BYTE *this, char a2)
 {
   char v2; // dl
@@ -71177,6 +71307,7 @@ retn    4
 // 0x6587A0
 namespace gamemd { void* RadarClass::Destru_vt04(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6587a0
 _DWORD *__thiscall RadarClass::Destru_vt04(_DWORD *Block, char a2)
 {
   char *v3; // esi
@@ -71313,6 +71444,7 @@ retn    4
 // 0x65ACE0
 namespace gamemd { int TacticalClass::UpdateObjects() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65ace0
 int __thiscall TacticalClass::UpdateObjects(#377 *this)
 {
   int v2; // edi
@@ -71504,6 +71636,7 @@ retn    4
 // 0x65CB50
 namespace gamemd { bool FileClass::Open2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65cb50
 BOOL __thiscall FileClass::Open2(_DWORD *this, int a2)
 {
   int v3; // eax
@@ -71639,6 +71772,7 @@ retn    4
 // 0x65CCA0
 namespace gamemd { int FileClass::CloseHandle() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65cca0
 int __thiscall FileClass::CloseHandle(BuildingClass *this)
 {
   int result; // eax
@@ -71696,6 +71830,7 @@ retn
 // 0x65CDD0
 namespace gamemd { int FileClass::Write2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65cdd0
 int __thiscall FileClass::Write2(_DWORD *this, int lpBuffer, int nNumberOfBytesToWrite)
 {
   int result; // eax
@@ -71943,6 +72078,7 @@ retn    8
 // 0x65D1F0
 namespace gamemd { int FileClass::GetDosTimestamp() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65d1f0
 int __thiscall FileClass::GetDosTimestamp(BuildingClass *this)
 {
   int FatDate; // [esp+0h] [ebp-3Ch] BYREF
@@ -71994,6 +72130,7 @@ retn
 // 0x65D240
 namespace gamemd { bool FileClass::SetTime(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65d240
 bool __thiscall FileClass::SetTime(BuildingClass *this, unsigned int wFatTime)
 {
   int v3; // eax
@@ -72068,6 +72205,7 @@ retn    4
 // 0x65D2B0
 namespace gamemd { void FileClass::GetFileSizeOp(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65d2b0
 void __thiscall FileClass::GetFileSizeOp(int *this, int a2, int a3)
 {
   int FileSize; // eax
@@ -72156,6 +72294,7 @@ retn    8
 // 0x65D3A0
 namespace gamemd { void* RawFileClass::QueryInterface(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65d3a0
 _DWORD *__thiscall RawFileClass::QueryInterface(_DWORD *Block, char a2)
 {
   int v3; // edi
@@ -72244,6 +72383,7 @@ retn    4
 // 0x65D420
 namespace gamemd { bool RawFileClass::Write() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65d420
 BOOL __thiscall RawFileClass::Write(_DWORD *this)
 {
   return *(this + 5) != -1;
@@ -72260,6 +72400,7 @@ retn
 // 0x65F520
 namespace gamemd { int ScenarioClass::ShowMissionBriefing() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x65f520
 int __thiscall ScenarioClass::ShowMissionBriefing(unsigned __int8 *this)
 {
   unsigned __int8 *v2; // esi
@@ -72507,6 +72648,7 @@ retn
 // 0x66D270
 namespace gamemd { int INIClass::ReadDifficultyModifiers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x66d270
 int __thiscall INIClass::ReadDifficultyModifiers(#381 *this)
 {
   int v1; // edx
@@ -73050,6 +73192,7 @@ retn    4
 // 0x679F40
 namespace gamemd { bool INIEntry::Exists() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x679f40
 BOOL __thiscall INIEntry::Exists(void *this, unsigned __int8 *a2, unsigned __int8 *a3)
 {
   if ( a3 )
@@ -73125,6 +73268,7 @@ retn
 // 0x683560
 namespace gamemd { int ScenarioClass::ReadINIEntry(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x683560
 int __thiscall ScenarioClass::ReadINIEntry(int this, int a2)
 {
   SeedInitRNG((_DWORD *)(this + 536), 0);
@@ -73699,6 +73843,7 @@ retn
 // 0x686700
 namespace gamemd { void* ScenarioClass::SetFileName(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x686700
 char *__thiscall ScenarioClass::SetFileName(char *this, char *Source)
 {
   char *result; // eax
@@ -73736,6 +73881,7 @@ retn    4
 // 0x686890
 namespace gamemd { int ScenarioClass::SetupAlliances() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x686890
 int __thiscall ScenarioClass::SetupAlliances(void *this)
 {
   int i; // esi
@@ -74074,6 +74220,7 @@ retn
 // 0x689310
 namespace gamemd { int ScenarioClass::SaveLoad_Prefix(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689310
 char __thiscall ScenarioClass::SaveLoad_Prefix(__m128d *this, int *a2)
 {
   int *v3; // ebx
@@ -74283,6 +74430,7 @@ retn    4
 // 0x689470
 namespace gamemd { void ScenarioClass::SaveLoad_Prefix_0(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689470
 void __thiscall ScenarioClass::SaveLoad_Prefix_0(int this, int a2)
 {
   int v3; // eax
@@ -74579,6 +74727,7 @@ retn    4
 // 0x689670
 namespace gamemd { int ScenarioClass::SetGlobalToByID(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689670
 char __thiscall ScenarioClass::SetGlobalToByID(_BYTE *this, unsigned int a2, char a3)
 {
   char v3; // bl
@@ -74751,6 +74900,7 @@ retn    8
 // 0x689760
 namespace gamemd { int ScenarioClass::GetGlobalStateByID(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689760
 char __thiscall ScenarioClass::GetGlobalStateByID(_BYTE *this, unsigned int a2, _BYTE *a3)
 {
   if ( a2 > 0x31 )
@@ -74783,6 +74933,7 @@ retn    8
 // 0x689880
 namespace gamemd { int ScenarioClass::ReadGlobalVariables(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689880
 char __thiscall ScenarioClass::ReadGlobalVariables(char *this, char *a2)
 {
   int KeyCount; // ebp
@@ -74886,6 +75037,7 @@ retn    4
 // 0x689910
 namespace gamemd { int ScenarioClass::SetLocalToByID(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689910
 char __thiscall ScenarioClass::SetLocalToByID(_BYTE *this, unsigned int a2, char a3)
 {
   char v3; // bl
@@ -74939,6 +75091,7 @@ retn    8
 // 0x689A00
 namespace gamemd { int ScenarioClass::GetLocalStateByID(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689a00
 char __thiscall ScenarioClass::GetLocalStateByID(_BYTE *this, unsigned int a2, _BYTE *a3)
 {
   if ( a2 >= 0x64 )
@@ -74971,6 +75124,7 @@ retn    8
 // 0x689B20
 namespace gamemd { int ScenarioClass::ReadLocalVariables(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689b20
 char __thiscall ScenarioClass::ReadLocalVariables(char *this, char *a2)
 {
   char *v2; // ebx
@@ -75151,6 +75305,7 @@ retn    4
 // 0x689C60
 namespace gamemd { int ScenarioClass::ReadWaypoint(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x689c60
 char __thiscall ScenarioClass::ReadWaypoint(char *this, char *a2)
 {
   int v3; // edi
@@ -75241,6 +75396,7 @@ retn    4
 // 0x68AD70
 namespace gamemd { int ScenarioClass::SaveToINI(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68ad70
 char __thiscall ScenarioClass::SaveToINI(int this, char *a2, char a3)
 {
   int v4; // esi
@@ -76372,6 +76528,7 @@ retn    4
 // 0x68BD60
 namespace gamemd { void* ScenarioClass::ClearAllWaypoints() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68bd60
 _DWORD *__thiscall ScenarioClass::ClearAllWaypoints(char *this)
 {
   _DWORD *result; // eax
@@ -76404,6 +76561,7 @@ retn
 // 0x68BD80
 namespace gamemd { bool ScenarioClass::Is_Waypoint_Valid(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68bd80
 bool __thiscall ScenarioClass::Is_Waypoint_Valid(char *this, unsigned int a2)
 {
   return a2 <= 0x2BD && *(_DWORD *)(this + 4 * a2 + 1586) != MEMORY[0xB05458];
@@ -76436,6 +76594,7 @@ retn    4
 // 0x68BDC0
 namespace gamemd { int ScenarioClass::ReadWaypoints(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68bdc0
 __int16 __thiscall ScenarioClass::ReadWaypoints(__int16 *this, int a2)
 {
   int v3; // esi
@@ -76568,6 +76727,7 @@ retn    4
 // 0x68BE90
 namespace gamemd { int ScenarioClass::Write_Waypoints(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68be90
 char __thiscall ScenarioClass::Write_Waypoints(__int16 *this, char *a2)
 {
   char result; // al
@@ -76655,6 +76815,7 @@ retn    4
 // 0x68BF30
 namespace gamemd { int ScenarioClass::Set_Default_Waypoint(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68bf30
 int __thiscall ScenarioClass::Set_Default_Waypoint(char *this, int a2)
 {
   *(_DWORD *)(this + 4 * a2 + 1586) = MEMORY[0xB05458];
@@ -76671,6 +76832,7 @@ retn    4
 // 0x68BF50
 namespace gamemd { int ScenarioClass::Set_Waypoint(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68bf50
 int __thiscall ScenarioClass::Set_Waypoint(char *this, int a2, int a3)
 {
   *(_DWORD *)(this + 4 * a2 + 1586) = a3;
@@ -76687,6 +76849,7 @@ retn    8
 // 0x68EC20
 namespace gamemd { int CellClass::CreateInstance() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x68ec20
 int __thiscall CellClass::CreateInstance(int *this, int a2)
 {
   int v2; // esi
@@ -76858,6 +77021,7 @@ retn    4
 // 0x692F30
 namespace gamemd { void TacticalClass::ProcessView() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x692f30
 void __thiscall TacticalClass::ProcessView(_BYTE *this)
 {
   int v2; // esi
@@ -77027,6 +77191,7 @@ retn
 // 0x6980C0
 namespace gamemd { int ScenarioClass::LoadNetworkConfig() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6980c0
 int __thiscall ScenarioClass::LoadNetworkConfig(int this)
 {
   int i; // esi
@@ -78751,6 +78916,7 @@ retn
 // 0x69E580
 namespace gamemd { void* MixFileClass::LoadSubFile() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x69e580
 char **__thiscall MixFileClass::LoadSubFile(char **this)
 {
   char **v1; // edi
@@ -80000,6 +80166,7 @@ retn
 // 0x6B5910
 namespace gamemd { int FactoryClass::FindOrCreate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b5910
 char *__thiscall FactoryClass::FindOrCreate(char *Source)
 {
   int v2; // esi
@@ -80367,6 +80534,7 @@ retn    8
 // 0x6D3870
 namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d3870
 int __thiscall TacticalClass::ClickFindBuilding(_DWORD *this, int *a2, int *a3, char a4)
 {
   _DWORD *v5; // edi
@@ -80683,6 +80851,7 @@ retn    0Ch
 // 0x6D3AC0
 namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d3ac0
 int __thiscall TacticalClass::ClickFindOverlay(_DWORD *this, int *a2, int *a3, char a4)
 {
   _DWORD *v5; // edi
@@ -81844,6 +82013,7 @@ retn    4
 // 0x6D59D0
 namespace gamemd { int RadarClass::DrawBlip(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6d59d0
 int __thiscall RadarClass::DrawBlip(_DWORD *this, char a2, int a3)
 {
   char v3; // dl
@@ -82281,6 +82451,7 @@ retn
 // 0x6E0110
 namespace gamemd { int ScenarioClass::Create(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e0110
 char __thiscall ScenarioClass::Create(int *this, int a2, int a3, int a4, int a5)
 {
   int v6; // eax
@@ -82369,6 +82540,7 @@ retn    10h
 // 0x6E1530
 namespace gamemd { int ScenarioClass::PrepareTextDisplay(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e1530
 char __thiscall ScenarioClass::PrepareTextDisplay(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   int v5; // eax
@@ -82732,6 +82904,7 @@ retn    4
 // 0x6E5ED0
 namespace gamemd { int CCINIClass::ProcessSection() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e5ed0
 int __thiscall CCINIClass::ProcessSection(char *this)
 {
   int result; // eax
@@ -83229,6 +83402,7 @@ retn
 // 0x71CA70
 namespace gamemd { int CCINIClass::LoadTypeFromINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71ca70
 int __thiscall CCINIClass::LoadTypeFromINI(char *this)
 {
   int result; // eax
@@ -83477,6 +83651,7 @@ retn
 // 0x7283C0
 namespace gamemd { int ScenarioClass::LoadWaypoints() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7283c0
 int __thiscall ScenarioClass::LoadWaypoints(char *this)
 {
   char *v1; // esi
@@ -83698,6 +83873,7 @@ retn
 // 0x7311C0
 namespace gamemd { int TacticalClass::SetObserverView() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7311c0
 int __thiscall TacticalClass::SetObserverView(char *this)
 {
   char *v1; // esi
@@ -84106,6 +84282,7 @@ retn
 // 0x7343E0
 namespace gamemd { void* TacticalClass::updateScroll(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7343e0
 _DWORD *__thiscall TacticalClass::updateScroll(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -84164,6 +84341,7 @@ retn    8
 // 0x73D630
 namespace gamemd { int FactoryClass::CompleteProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x73d630
 int __thiscall FactoryClass::CompleteProduction(_DWORD *this)
 {
   _DWORD *v2; // eax
@@ -86294,6 +86472,7 @@ retn
 // 0x74FFC0
 namespace gamemd { bool Crate::initializeCrate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x74ffc0
 BOOL __thiscall Crate::initializeCrate(float *this)
 {
   return *this >= 0.0 && *this < 1.0;

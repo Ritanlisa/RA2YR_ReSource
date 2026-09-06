@@ -4,6 +4,7 @@
 
 namespace ra2 {
 namespace game {
+// 0x659470
 void TechnoClass::drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5,             
         uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
 }

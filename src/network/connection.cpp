@@ -22,6 +22,7 @@ ConnectionClass::ConnectionClass() noexcept
 void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x48b410
 void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, int a4)
 {
   int v5; // eax
@@ -361,23 +362,27 @@ IPXConnClass::IPXConnClass() noexcept
     std::memset(padding, 0, sizeof(padding));
 }
 
+// 0x48be60
 bool IPXConnClass::initConnection()
 {
     // IPX socket initialization
     return false;
 }
 
+// 0x69bc20
 bool IPXConnClass::closeConnection()
 {
     return false;
 }
 
+// 0x53f5d0
 bool IPXConnClass::send(const uint8_t* data, int32_t length)
 {
     (void)data; (void)length;
     return false;
 }
 
+// 0x53f650
 int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen)
 {
     (void)buffer; (void)maxLen;
@@ -397,26 +402,31 @@ IPXManagerClass::IPXManagerClass() noexcept
 {
 }
 
+// 0x542fe0
 void IPXManagerClass::Init()
 {
     Initialized = true;
     Active = true;
 }
 
+// 0x48ba90
 void IPXManagerClass::init()
 {
     Init();
 }
 
+// 0x5409f0
 void IPXManagerClass::processPacket()
 {
 }
 
+// 0x540d40
 IPXConnClass* IPXManagerClass::createConnection()
 {
     return new IPXConnClass();
 }
 
+// 0x540d60
 void IPXManagerClass::destroyConnection(IPXConnClass* conn)
 {
     if (conn) delete conn;
@@ -442,25 +452,34 @@ bool IPXManagerClass::IsIPXAvailable() const
     return false; // IPX not available on modern systems
 }
 
+// 0x5414c0
 void IPXManagerClass::release()
 {
     Active = false;
     Initialized = false;
 }
 
+// 0x542330
 int32_t IPXManagerClass::GetConnectionCount() { return 0; }
 
+// 0x542350
 const char* IPXManagerClass::GetAddress(char* buf)
 {
     (void)buf;
     return "";
 }
 
+// 0x5423c0
 void IPXManagerClass::SetAddress(const char* addr) { (void)addr; }
+// 0x542450
 uint32_t IPXManagerClass::GetQueueSize() { return 0; }
+// 0x5424a0
 int32_t IPXManagerClass::CheckStatus() { return 0; }
+// 0x542520
 void IPXManagerClass::ProcessQueue() {}
+// 0x542ec0
 void IPXManagerClass::Flush() {}
+// 0x543100
 int32_t IPXManagerClass::getPlayerName() { return -1; }
 
 // ============================================================================
@@ -489,13 +508,20 @@ NullModemClass::NullModemClass() noexcept
 {
 }
 
+// 0x5ef100
 bool NullModemClass::initConnection() { return false; }
+// 0x5ef170
 bool NullModemClass::closeConnection() { return false; }
+// 0x5f16e0
 bool NullModemClass::Init() { return false; }
+// 0x5f1bc0
 bool NullModemClass::Connect() { return false; }
 void NullModemClass::FlushCom() {}
+// 0x5f1f70
 bool NullModemClass::SendPacket(const uint8_t* data, int32_t length) { (void)data; (void)length; return false; }
+// 0x5f1fa0
 bool NullModemClass::DetectModem() { return false; }
+// 0x5f3170
 bool NullModemClass::Negotiate() { return false; }
 
 } // namespace gamemd
@@ -506,6 +532,7 @@ namespace gamemd {
 
 // --- ConnectionClass ---
 
+// 0x48c650
 HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**) { return E_NOINTERFACE; }
 ULONG   __stdcall ConnectionClass::AddRef() { return 1; }
 ULONG   __stdcall ConnectionClass::Release() { return 1; }
@@ -523,6 +550,7 @@ bool ConnectionClass::IsHost() const { return false; }
 // --- IPXConnClass ---
 
 bool IPXConnClass::Open() { return false; }
+// 0x53f850
 HRESULT __stdcall IPXConnClass::QueryInterface(const IID&, void**) { return E_NOINTERFACE; }
 
 // --- ModemConnectionClass ---

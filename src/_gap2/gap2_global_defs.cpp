@@ -5740,6 +5740,7 @@ int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a
         v8 = *v7;
         if ( *v7
           && (*(_BYTE *)(v8 + 12) & 1) != 0
+// 0x4f9a10
           && HouseClass::IsAllied((_DWORD *)MEMORY[0x87F7E8][528729], *(_DWORD *)(v8 + 272))
           && (unsigned __int8)HouseClass::IsAlliedWith(
                                 *(#375 **)(MEMORY[0x87F7E8][524945] + 4 * *(_DWORD *)(v8 + 272)),
@@ -15303,6 +15304,7 @@ int __thiscall CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, int a3)
       if ( (v6 & v10[435]) != 0
         && v10[397] <= *(this + 117)
         && (int)v10[1353] > 0
+// 0x505360
         && HouseClass::PrerequisitesForTechnoTypeAreListed((int)v10, a3, *(_DWORD *)(a3 + 16))
         && (v26 < v24
          || (BYTE1(v25) || !v24)
@@ -30493,7 +30495,9 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
                   }
                   if ( dword_82A594[8 * v29 + *((_DWORD *)v14 + 19)] == 1
                     && v27
+// 0x56d100
                     && MapSeed::CheckTileMatch(this, v15, (__int16 *)v14 + 18, v29, 0, 0, 0)
+// 0x42d170
                     && Pathfinding::CalcDistance((int)MEMORY[0x87E8B8], v15, (__int16 *)v14 + 18, 0, 0, 0, v29) == 0x7FFFFFFF )
                   {
                     Bit = i;
@@ -30514,7 +30518,9 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
                   if ( v26 )
                   {
                     if ( v25
+// 0x56d100
                       && MapSeed::CheckTileMatch(this, v15, (__int16 *)v14 + 18, v29, 1, 1, 0)
+// 0x42d170
                       && Pathfinding::CalcDistance((int)MEMORY[0x87E8B8], v15, (__int16 *)v14 + 18, 0, 1, 1, v29) == 0x7FFFFFFF )
                     {
                       v24 = 0;
@@ -30528,7 +30534,9 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
                         *v32);
                     }
                     if ( v27
+// 0x56d100
                       && MapSeed::CheckTileMatch(this, v15, (__int16 *)v14 + 18, v29, 0, 1, 0)
+// 0x42d170
                       && Pathfinding::CalcDistance((int)MEMORY[0x87E8B8], v15, (__int16 *)v14 + 18, 0, 0, 1, v29) == 0x7FFFFFFF )
                     {
                       v24 = 0;
@@ -30544,7 +30552,9 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
                   }
                   if ( v28
                     && v25
+// 0x56d100
                     && MapSeed::CheckTileMatch(this, v15, (__int16 *)v14 + 18, v29, 1, 0, 0)
+// 0x42d170
                     && Pathfinding::CalcDistance((int)MEMORY[0x87E8B8], v15, (__int16 *)v14 + 18, 0, 1, 0, v29) == 0x7FFFFFFF )
                   {
                     v24 = 0;
@@ -42055,6 +42065,7 @@ namespace gamemd { bool Network_Send() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Network_Send(const char **this)
 {
+// 0x7b4710
   return String::Equals_Alt(this, off_831704[0])
       || String::Equals_Alt(this, off_831708[0])
       || String::Equals_Alt(this, off_83170C[0])
@@ -42491,6 +42502,7 @@ int __thiscall ReadOverlayINI(_DWORD *this)
                                                 + 156))(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * (unsigned __int8)v21))
                || *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v21) + 668))
               && (!MEMORY[0x87F7E8][536212] || !*(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v21) + 682))
+// 0x568300
               && LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], &v22) )
             {
               v9 = *((_BYTE *)CellCoord::To_CellObj(MEMORY[0x87F7E8], &v22) + 286);
@@ -56907,6 +56919,7 @@ retn    4
 // 0x6686C0
 namespace gamemd { int ResetRules() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x74e6b0
 int __thiscall RulesClass::Reset(#381 *this)
 {
   void *v2; // edi
@@ -84640,6 +84653,7 @@ retn
 // 0x74D7C0
 namespace gamemd { void UpdateVeinholeMonster() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x74eee0
 void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
 {
   __int16 *v2; // ebp
@@ -85459,6 +85473,7 @@ void __thiscall VeinholeMonster_Process(int this)
       {
         v28 = NeighbourContent[286];
         if ( ((unsigned __int8)v28 < 0x30u || (unsigned __int8)v28 >= 0x35u)
+// 0x485460
           && BuildingClass::CheckAdjacentCells((int)NeighbourContent) )
         {
           v30 = *(_DWORD *)(this + 172);

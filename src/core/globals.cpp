@@ -144,6 +144,7 @@ retn
 // 0x47AB10: Game::FindGameDirectoryCD
 void FindGameDirectoryCD(const char* path) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x47ab10
 BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
 {
   char v1; // bl
@@ -527,6 +528,7 @@ retn    0Ch
 // 0x542430: Network::GetField
 void NetworkGetField(int port) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x542430
 int __thiscall Network::GetField(_WORD *this, __int16 a2)
 {
   int result; // eax
@@ -634,6 +636,7 @@ retn
 // 0x48E0B0: DumpNetworkStats
 void DumpNetworkStats() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x69bab0
 char __thiscall WTFMode::Init(_BYTE *this)
 {
   char result; // al
@@ -825,6 +828,7 @@ retn
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5da720
 int Network::ShutdownInterface()
 {
   int result; // eax
@@ -963,6 +967,7 @@ int dword_B07784 = 0;
 // 0x5F9E80: Checksummer::HashString
 int HashString(const char* str) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f9e80
 int __thiscall Checksummer::HashString(char *Source)
 {
   int v1; // ebp

@@ -421,6 +421,7 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 bool MixFileClass::Bootstrap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5301a0
 char MixFileClass::Bootstrap()
 {
   int i; // edi

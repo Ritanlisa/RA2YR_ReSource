@@ -39,6 +39,7 @@ AircraftClass::AircraftClass() noexcept
 int AircraftClass::Mission_Attack()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x417fe0
 int __thiscall AircraftClass::Mission_Attack(int *this)
 {
   int v2; // eax
@@ -3341,6 +3342,7 @@ retn
 int AircraftClass::MissionDispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4190b0
 int __thiscall AircraftClass::MissionDispatch(int this, _DWORD *a2, int a3, void **a4)
 {
   int result; // eax
@@ -4542,6 +4544,7 @@ int AircraftClass::CheckReloadTimer()
 // Phase 3: Per-Frame & AI
 // ============================================================
 
+// 0x41b610
 int AircraftClass::PowerDrainUpdate(int a2)
 {
     // Per-frame power for aircraft (vt13). a2 is the COM-stub context, unused.
@@ -4598,6 +4601,7 @@ retn    8
 int AircraftClass::ProcessMissionTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x414a80
 int __thiscall AircraftClass::ProcessMissionTimeout(_DWORD *this)
 {
   char *MissionControl; // eax
@@ -4776,6 +4780,7 @@ retn
 int AircraftClass::GetMissionTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x41a5c0
 int __thiscall AircraftClass::GetMissionTimer(int this)
 {
   int v2; // edi
@@ -5310,6 +5315,7 @@ int AircraftClass::LoadFromStream()
 void AircraftClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x414080
 int __thiscall AircraftClass::Destruct(void **this)
 {
   void **v2; // esi
@@ -5748,18 +5754,26 @@ int AircraftClass::CheckStateFlag2()
 // Phase 3: Stubs
 // ============================================================
 
+// 0x41be70
 bool AircraftClass::StubReturnFalse2() { return false; }
+// 0x5f43b0
 bool AircraftClass::StubReturnFalse3() { return false; }
+// 0x5f43f0
 bool AircraftClass::StubReturnFalse4() { return false; }
+// 0x5f43c0
 bool AircraftClass::StubReturnTrue()  { return true; }
+// 0x41b910
 int AircraftClass::MissionStubReturnZero()  { return 0; }
+// 0x41c170
 int AircraftClass::MissionStubReturnZero2() { return 0; }
+// 0x41c180
 int AircraftClass::MissionStubReturnZero3() { return 0; }
 
 // ============================================================
 // Phase 3: Drawing
 // ============================================================
 
+// 0x4144b0
 void AircraftClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     if (!screen_pos || !Type)
@@ -5802,8 +5816,11 @@ long __stdcall AircraftClass::Is_Loaded() { return 0; }
 long __stdcall AircraftClass::Is_Strafe() { return 0; }
 long __stdcall AircraftClass::Is_Fighter() { return 0; }
 long __stdcall AircraftClass::Is_Locked() { return 0; }
+// 0x414290
 HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject) { return E_NOINTERFACE; }
+// 0x4142f0
 ULONG __stdcall AircraftClass::AddRef() { return 0; }
+// 0x414300
 ULONG __stdcall AircraftClass::Release() { return 0; }
 HRESULT __stdcall AircraftClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
 HRESULT __stdcall AircraftClass::Load(IStream* pStm) { return S_OK; }

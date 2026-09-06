@@ -23,6 +23,7 @@
 // 0x415EE0
 namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x415ee0
 double *__thiscall BulletClass::FlightUpdate(#377 *this, int a2, int a3)
 {
   int v5; // ebx
@@ -887,6 +888,7 @@ retn
 // 0x421EA0
 namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x421ea0
 void **__thiscall AnimClass::ctor(void **this, void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8)
 {
   void *v9; // eax
@@ -2164,6 +2166,7 @@ retn
 // 0x422BE0
 namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x422be0
 int *__thiscall AnimClass::UpdateZAdjust(#374 *this, int *a2)
 {
   _DWORD *Coords; // esi
@@ -2311,6 +2314,7 @@ retn    4
 // 0x423930
 namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x423930
 int __thiscall AnimClass::UpdateProjectileTrajectory(char *this)
 {
   char *v2; // esi
@@ -2648,6 +2652,7 @@ retn    8
 // 0x425280
 namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x425280
 int __thiscall AnimClass::SaveLoad_Prefix(#374 *this, int a2, int a3)
 {
   int Register; // edi
@@ -2799,6 +2804,7 @@ retn    8
 // 0x425410
 namespace gamemd { int AnimClass::ProcessPower(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x425410
 int __thiscall AnimClass::ProcessPower(int this, int *a2)
 {
   int v3; // eax
@@ -3674,6 +3680,7 @@ retn    4
 // 0x448260
 namespace gamemd { int AnimClass::drawFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x448260
 int __thiscall AnimClass::drawFrame(#377 *this)
 {
   int result; // eax
@@ -6738,6 +6745,7 @@ retn
 // 0x449C30
 namespace gamemd { int AnimClass::finalizeAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x449c30
 int __thiscall AnimClass::finalizeAnimation(#377 *this)
 {
   int v2; // eax
@@ -8738,6 +8746,7 @@ retn    4
 // 0x4666E0
 namespace gamemd { int BulletClass::ProcessNukeExplosion() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4666e0
 char __thiscall BulletClass::ProcessNukeExplosion(int *this)
 {
   int v2; // eax
@@ -11770,6 +11779,7 @@ retn
 // 0x468090
 namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x468090
 void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
 {
   int v4; // eax
@@ -12212,6 +12222,7 @@ retn    8
 // 0x468430
 namespace gamemd { int BulletClass::LoseTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x468430
 __int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
 {
   _DWORD *v2; // eax
@@ -12527,6 +12538,7 @@ retn    8
 // 0x468670
 namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x468670
 char __thiscall BulletClass::ProcessObstacle(_DWORD *this, int *a2, const void *a3)
 {
   int *v4; // edx
@@ -13190,6 +13202,7 @@ bool __thiscall sub_468BB0(_DWORD *this, int *a2)
     if ( v14 )
     {
       if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v14 + 84))(v14)
+// 0x5f6360
         && ObjectClass::DistanceTo(this, *(this + 67)) < 128 )
       {
         return 1;
@@ -13832,6 +13845,7 @@ retn    4
 // 0x46AE70
 namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x46ae70
 int __thiscall BulletClass::SaveLoad_Prefix(#374 *this, int *a2, int a3)
 {
   int result; // eax
@@ -14193,6 +14207,7 @@ retn    1Ch
 // 0x46B280
 namespace gamemd { int BulletClass::InitScalable() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x46b280
 int __thiscall BulletClass::InitScalable(_DWORD **this)
 {
   int v2; // eax
@@ -14355,6 +14370,7 @@ retn    4
 // 0x487C70
 namespace gamemd { int TerrainClass::SetFieldF8(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x487c70
 int __thiscall TerrainClass::SetFieldF8(_DWORD *this, int a2)
 {
   *(this + 62) = a2;
@@ -14727,6 +14743,7 @@ retn    4
 // 0x4E9F60
 namespace gamemd { int ParticleSystemClass::Release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4e9f60
 char __thiscall ParticleSystemClass::Release(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -14921,6 +14938,7 @@ retn    4
 // 0x4EB3E0
 namespace gamemd { int ParticleSystemClass::ReallocateBuffer(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4eb3e0
 char __thiscall ParticleSystemClass::ReallocateBuffer(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -18704,6 +18722,7 @@ retn    44h ; 'D'
 // 0x549E90
 namespace gamemd { int TerrainClass::InitTheatre() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x549e90
 int __thiscall TerrainClass::InitTheatre(int *this)
 {
   int v2; // esi
@@ -19984,6 +20003,7 @@ retn    4
 // 0x59C920
 namespace gamemd { int TiberiumClass::Grow(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x59c920
 char __thiscall TiberiumClass::Grow(int *this, _WORD *a2)
 {
   int v3; // eax
@@ -21629,6 +21649,7 @@ retn    8
 // 0x5FD6A0
 namespace gamemd { int OverlayClass::WriteINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5fd6a0
 int __thiscall OverlayClass::WriteINI(char *this)
 {
   int v2; // edi
@@ -21949,6 +21970,7 @@ retn    8
 // 0x62B5E0
 namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62b5e0
 int __thiscall ParticleClass::Construct(int this, int a2, _DWORD *a3, float a4, int a5)
 {
   float v6; // eax
@@ -23162,6 +23184,7 @@ retn    4
 // 0x62D830
 namespace gamemd { int ParticleClass::vt_entry_1E8() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62d830
 int __thiscall ParticleClass::vt_entry_1E8(int this)
 {
   int v2; // eax
@@ -23393,6 +23416,7 @@ retn    4
 // 0x62DC50
 namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62dc50
 int __thiscall ParticleSystemClass::Constructor(int this, int a2, int *a3, int a4, void *a5, _DWORD *a6, int a7)
 {
   _DWORD *v8; // ebp
@@ -23918,6 +23942,7 @@ retn
 // 0x62E280
 namespace gamemd { void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62e280
 void __thiscall ParticleSystemClass::CreateBuildingLight(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -24063,6 +24088,7 @@ retn    8
 // 0x62E380
 namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62e380
 int __thiscall ParticleSystemClass::CreateParticle(_DWORD *this, _DWORD *a2, _DWORD *a3)
 {
   int v4; // eax
@@ -24180,6 +24206,7 @@ retn    8
 // 0x62E4C0
 namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62e4c0
 int __thiscall ParticleClass::CreateInstance(int this, _DWORD *a2, float a3, int a4)
 {
   int v5; // eax
@@ -24364,6 +24391,7 @@ retn    0Ch
 // 0x62E6D0
 namespace gamemd { void ParticleSystemClass::UpdateAllParticles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62e6d0
 void __thiscall ParticleSystemClass::UpdateAllParticles(int this)
 {
   int v1; // edi
@@ -24593,6 +24621,7 @@ retn
 // 0x62F230
 namespace gamemd { int ParticleSystemClass::SpawnParticle() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62f230
 char __thiscall ParticleSystemClass::SpawnParticle(int this)
 {
   int v2; // esi
@@ -25502,6 +25531,7 @@ retn
 // 0x62FD60
 namespace gamemd { int ParticleSystemClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x62fd60
 char __thiscall ParticleSystemClass::Update(_BYTE *this)
 {
   int v2; // eax
@@ -26129,6 +26159,7 @@ retn
 // 0x6302A0
 namespace gamemd { void* ParticleSystemClass::resetSystemState(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6302a0
 _DWORD *__thiscall ParticleSystemClass::resetSystemState(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -26685,6 +26716,7 @@ retn    4
 // 0x71B7B0
 namespace gamemd { int TerrainClass::CleanupMembers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71b7b0
 int __thiscall TerrainClass::CleanupMembers(int this)
 {
   int v2; // edi
@@ -26883,6 +26915,7 @@ retn
 // 0x71B920
 namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, void* a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71b920
 int __thiscall TerrainClass::UpdateAnims(int this, int a2, int a3, int a4, int a5, int a6, int a7, void **a8)
 {
   int result; // eax
@@ -27190,6 +27223,7 @@ retn    1Ch
 // 0x71BB90
 namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71bb90
 void **__thiscall TerrainClass::Construct(void **this, void *a2, __int16 *a3)
 {
   void *v4; // eax
@@ -27671,6 +27705,7 @@ retn    4
 // 0x71C110
 namespace gamemd { void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71c110
 _BYTE *__thiscall TerrainClass::SetOccupyBit_PassableTerrain(_DWORD *this, _DWORD *a2)
 {
   int v2; // ebx
@@ -27750,6 +27785,7 @@ retn    4
 // 0x71C1B0
 namespace gamemd { void TerrainClass::Draw(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71c1b0
 void __thiscall TerrainClass::Draw(unsigned int *this, int *a2, int *a3)
 {
   _DWORD *v4; // eax
@@ -28366,6 +28402,7 @@ retn    14h
 // 0x71C5B0
 namespace gamemd { int TerrainClass::PlayAmbientAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71c5b0
 char __thiscall TerrainClass::PlayAmbientAnimation(_BYTE *this)
 {
   int v2; // eax
@@ -28591,6 +28628,7 @@ retn
 // 0x71C730
 namespace gamemd { int TerrainClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71c730
 int __thiscall TerrainClass::Update(int this)
 {
   int v2; // eax
@@ -29262,6 +29300,7 @@ retn    8
 // 0x71D160
 namespace gamemd { void* TerrainClass::Export(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71d160
 _DWORD *__thiscall TerrainClass::Export(int this, _DWORD *a2)
 {
   __int16 *HasC4; // esi
@@ -30398,6 +30437,7 @@ retn    4
 // 0x729370
 namespace gamemd { void AnimClass::ProcessSequence() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x729370
 void __thiscall AnimClass::ProcessSequence(int this)
 {
   int v2; // edi
@@ -30604,6 +30644,7 @@ retn
 // 0x75E950
 namespace gamemd { void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x75e950
 void **__thiscall WaveClass::Constructor(void **this, int *a2, _DWORD *a3, void *a4, void *a5, void *a6)
 {
   int v7; // edx
@@ -31298,6 +31339,7 @@ retn    8
 // 0x760F50
 namespace gamemd { int WaveClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x760f50
 int __thiscall WaveClass::Update(#374 *this)
 {
   int result; // eax

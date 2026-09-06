@@ -347,6 +347,7 @@ retn    0Ch
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
 REVERSE(0x4BB080, "DSurface::BlitPart: HW/SW blit with coordinate clipping", "None")
+// 0x4bb080
 bool DSurface::BlitPart(
     const RectangleStruct& dest_rect, class Surface* src,
     const RectangleStruct& src_rect, bool option1, bool option2)
@@ -701,6 +702,7 @@ hw_fail_dst:
     return (hr == DD_OK) ? 1 : 0;
 }
 
+// 0x4bb0d0
 bool DSurface::Blit(
     const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
     class Surface* src, const RectangleStruct& dest_rect,
@@ -741,6 +743,7 @@ char DSurface::BlitTracker(
 // Hardware/software color fill with coordinate clipping.
 // ============================================================
 REVERSE(0x4BB620, "DSurface::FillRectEx: Hardware/software color fill with clipping", "None")
+// 0x4bb620
 bool DSurface::FillRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& fill_rect, uint32_t color)
@@ -860,6 +863,7 @@ retn    8
 //   result = (src_alpha * src_ch + dst_alpha * dst_ch) >> 8
 // Opacity 0-100 clamped to 100, scaled to 0-255.
 REVERSE(0x4BB830, "DSurface::FillRectWithFlags: CPU pixel fill with alpha blending", "None")
+// 0x4bb830
 bool DSurface::FillRectWithFlags(
     const RectangleStruct& clip_rect,
     const ColorStruct& color,
@@ -1239,6 +1243,7 @@ retn    8
 */
 }
 
+// 0x4bad70
 int DSurface::GetPitch() const
 {
     if (!Surface) return Width * BytesPerPixel;
@@ -1258,6 +1263,7 @@ int DSurface::GetPitch() const
 bool DSurface::CheckBltStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4baf20
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
   return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0;
@@ -1276,6 +1282,7 @@ retn
 */
 }
 
+// 0x4115f0
 void* BSurface::Lock(int x, int y)
 {
     (void)x;
@@ -2277,6 +2284,7 @@ retn    4
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
 REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "None")
+// 0x7badc0
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& draw_rect,
@@ -2446,6 +2454,7 @@ retn    8
 // IDA: 0x7BB050 -- XSurface::FillRectEx (748B)
 // vtable[4] 0x10 -- software pixel fill with BPP-aware memset
 REVERSE(0x7BB050, "XSurface::FillRectEx: software pixel fill", "None")
+// 0x7bb050
 bool XSurface::FillRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& fill_rect,
@@ -2682,6 +2691,7 @@ retn    0Ch
 // IDA: 0x7BBB90 -- XSurface::BlitPart (339B)
 // vtable[2] 0x08 -- IntersectSurfaceRects then BlitterCopySimpleSHP
 REVERSE(0x7BBB90, "XSurface::BlitPart: Software blit with intersection clipping", "None")
+// 0x7bbb90
 bool XSurface::BlitPart(
     const RectangleStruct& dest_rect,
     Surface* src,
@@ -2753,6 +2763,7 @@ bool XSurface::BlitPart(
 // IDA: 0x7BBCF0 -- XSurface::Blit (294B)
 // vtable[3] 0x0C -- IntersectSurfaceRects then BlitterCopySimpleSHP
 REVERSE(0x7BBCF0, "XSurface::Blit: Software blit with full clipping", "None")
+// 0x7bbcf0
 bool XSurface::Blit(
     const RectangleStruct& clip_rect,
     const RectangleStruct& clip_rect2,
@@ -2906,6 +2917,7 @@ static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
 // IDA: 0x4BF750 -- DSurface::DrawGradientLine (1499B)
 // vtable[36] 0x90 -- line with palette gradient interpolation
 REVERSE(0x4BF750, "DSurface::DrawGradientLine: Line with palette gradient interpolation", "None")
+// 0x4bf750
 bool DSurface::DrawGradientLine(
     const Point2D& start, const Point2D& end,
     int palette_idx, int fade_val,
@@ -3074,6 +3086,7 @@ bool DSurface::DrawGradientLine(
 // fill_interior=false → draw where zbuf!=0
 // ============================================================
 REVERSE(0x4C0E30, "DSurface::DrawStippledRect: Stippled rectangle with Z-buffer gating", "None")
+// 0x4c0e30
 bool DSurface::DrawStippledRect(
     const Point2D& top_left, const Point2D& bottom_right,
     uint16_t color, bool fill_interior)
@@ -3304,6 +3317,7 @@ bool DSurface::DrawStippledRect(
 // dash_offset in EAX but the C++ interface discards it.
 // ============================================================
 REVERSE(0x4C0750, "DSurface::DrawDashedLineStipple: Dashed line with Z-buffer stipple gating", "None")
+// 0x4c0750
 bool DSurface::DrawDashedLineStipple(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
@@ -3539,6 +3553,7 @@ bool DSurface::DrawDashedLineStipple(
 // For standalone build (no Z-buffer), delegates to DrawLineEx.
 // ============================================================
 REVERSE(0x4BFD30, "DSurface::DrawLineZBuf: Z-buffer line with depth test", "None")
+// 0x4bfd30
 bool DSurface::DrawLineZBuf(
     const Point2D& start, const Point2D& end,
     uint16_t color, int fade_start, int fade_end,
@@ -3584,6 +3599,7 @@ bool DSurface::DrawLineZBuf(
     // Z-buffer not available in standalone → fallback to DrawLineEx
     if (!g_ZBufferDescriptor)
     {
+// 0x7ba610
         return XSurface::DrawLineEx(
             RectangleStruct{0, 0, Width, Height},
             Point2D(x1, y1), Point2D(x2, y2), color);
@@ -3675,6 +3691,7 @@ bool DSurface::DrawLineZBuf(
 // For standalone build (no Z-buffer), delegates to DrawLineEx.
 // ============================================================
 REVERSE(0x4BBCA0, "DSurface::DrawLineModulated: Read-modify-write line with modulation", "None")
+// 0x4bbca0
 bool DSurface::DrawLineModulated(
     const Point2D& start, const Point2D& end,
     int mod_strength, int fade_start, int fade_end,
@@ -3715,6 +3732,7 @@ bool DSurface::DrawLineModulated(
     // Z-buffer not available → fallback
     if (!g_ZBufferDescriptor)
     {
+// 0x7ba610
         return XSurface::DrawLineEx(
             RectangleStruct{0, 0, Width, Height},
             Point2D(x1, y1), Point2D(x2, y2), 0);
@@ -3826,6 +3844,7 @@ bool DSurface::DrawLineModulated(
 // For standalone build (no Z-buffer), delegates to DrawLineEx.
 // ============================================================
 REVERSE(0x4BDF00, "DSurface::DrawLineZBufColored: Z-buffer line with RGB color + brightness", "None")
+// 0x4bdf00
 bool DSurface::DrawLineZBufColored(
     const Point2D& start, const Point2D& end,
     const uint8_t src_rgb[3], float brightness,
@@ -3875,6 +3894,7 @@ bool DSurface::DrawLineZBufColored(
     // Z-buffer not available → fallback
     if (!g_ZBufferDescriptor)
     {
+// 0x7ba610
         return XSurface::DrawLineEx(
             RectangleStruct{0, 0, Width, Height},
             Point2D(x1, y1), Point2D(x2, y2), 0);
@@ -3971,6 +3991,7 @@ bool DSurface::DrawLineZBufColored(
 // For standalone build (no Z-buffer), delegates to DrawLineEx.
 // ============================================================
 REVERSE(0x4BC750, "DSurface::DrawLineFaded: Complex gradient line with stipple/Z-buffer", "None")
+// 0x4bc750
 bool DSurface::DrawLineFaded(
     const Point2D& start, const Point2D& end,
     const uint8_t* stipple_pattern,
@@ -4021,6 +4042,7 @@ bool DSurface::DrawLineFaded(
     // Z-buffer not available → fallback
     if (!g_ZBufferDescriptor)
     {
+// 0x7ba610
         return XSurface::DrawLineEx(
             RectangleStruct{0, 0, Width, Height},
             Point2D(x1, y1), Point2D(x2, y2), 0);

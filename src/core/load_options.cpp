@@ -187,6 +187,7 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // 0x5587f0
 int LoadOptions::Run() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5587f0
 bool __thiscall LoadOptions::Run(const char **this)
 {
   *(this + 1) = (const char *)1;
@@ -205,6 +206,7 @@ jmp     SaveLoadDialog__DlgProc
 // 0x559c20
 bool LoadOptions::Check() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x559c20
 char __thiscall LoadOptions::Check(const char **this)
 {
   char v2; // bl
@@ -385,6 +387,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // 0x55a1f0
 bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x55a1f0
 char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -835,8 +838,11 @@ namespace gamemd {
 // --- LoadOptions ---
 
 char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
+// 0x681120
 uint32_t LoadOptions::GetFlag98() const { return *(const uint32_t*)((const char*)(this) + 0x188); }
+// 0x681140
 uint32_t LoadOptions::GetFlag99() const { return *(const uint32_t*)((const char*)(this) + 0x18C); }
+// 0x6812d0
 uint32_t LoadOptions::GetFlag252() const { return *(const uint32_t*)((const char*)(this) + 0x3F0); }
 uint32_t LoadOptions::GetMode() const { return mode; }
 void LoadOptions::SetMode(uint32_t m) { mode = m; }

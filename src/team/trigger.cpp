@@ -17,6 +17,7 @@ TriggerClass* TriggerClass::GetInstance(TriggerTypeClass* type)
     return nullptr; // Requires global trigger pool — external linkage
 }
 
+// 0x726250
 bool TriggerClass::HasCrossesHorizontalLineEvent() const
 {
     // Recurse through trigger chain: check if any trigger's type
@@ -29,6 +30,7 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
            || nextTrigger->HasCrossesHorizontalLineEvent();
 }
 
+// 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
 {
     if (!nextTrigger)
@@ -69,6 +71,7 @@ bool TriggerClass::HasGlobalSetOrClearedEvent(int idx_global) const
     return r;
 }
 
+// 0x7263a0
 void TriggerClass::NotifyGlobalChanged(int idx_global)
 {
     // Walk the trigger chain. For each trigger whose type has
@@ -84,6 +87,7 @@ void TriggerClass::NotifyGlobalChanged(int idx_global)
     }
 }
 
+// 0x7263d0
 void TriggerClass::NotifyLocalChanged(int idx_local)
 {
     for (TriggerClass* i = this; i; i = i->nextTrigger)
@@ -107,6 +111,7 @@ void TriggerClass::Destroy()
     destroyed = true;
 }
 
+// 0x7264c0
 bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
                                   bool force_fire, bool persistent,
                                   TechnoClass* source)
@@ -201,6 +206,7 @@ void TriggerTypeClass::SaveToINIList(CCINIClass* ini)
     (void)ini;
 }
 
+// 0x7271e0
 TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
 {
     uint32_t flags = 0;
@@ -250,6 +256,7 @@ bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
     return false;
 }
 
+// 0x727050
 bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 {
     for (TEventClass* evt = firstEvent; evt;

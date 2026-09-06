@@ -219,6 +219,7 @@ void ScenarioClass::UpdateCellLighting()
     // TODO: recalculate cell lighting across map
 }
 
+// 0x53c280
 void ScenarioClass::UpdateLighting()
 {
     // TODO: update global lighting interpolation

@@ -4,6 +4,7 @@
 #include "object/foot.hpp"  // full FootClass for locomotor member access
 
 namespace gamemd {
+// 0x55a9b0
 HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
         if (!ppv) return E_POINTER;
         if (iid == IID_IUnknown) { *ppv = static_cast<IUnknown*>(static_cast<ILocomotion*>(this)); AddRef(); return S_OK; }
@@ -82,6 +83,7 @@ int __stdcall LocomotionClass::Z_Adjust() { return 0; }
 
 ZGradient __stdcall LocomotionClass::Z_Gradient() { return ZGradient::Deg90; }
 
+// 0x69ec50
 bool __stdcall LocomotionClass::Process() { return true; }
 
 void __stdcall LocomotionClass::Move_To(CoordStruct to) {}
@@ -174,10 +176,13 @@ void LocomotionClass::ChangeLocomotorTo(FootClass* object, const CLSID& clsid) {
 
 LocomotionClass::LocomotionClass(noinit_t) noexcept {}
 
+// 0x4af720
 HRESULT __stdcall DriveLocomotionClass::QueryInterface(const IID&, void** ppv) { if (ppv) { *ppv = static_cast<ILocomotion*>(this); AddRef(); return S_OK; } return E_POINTER; }
 
+// 0x4b4cb0
 ULONG __stdcall DriveLocomotionClass::AddRef() { return ++RefCount; }
 
+// 0x4b4cc0
 ULONG __stdcall DriveLocomotionClass::Release() { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
 HRESULT __stdcall DriveLocomotionClass::GetClassID(CLSID* class_id) { return S_OK; }
@@ -244,10 +249,13 @@ int HoverLocomotionClass::Size() { return sizeof(*this); }
 
 HoverLocomotionClass::HoverLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t {}) {}
 
+// 0x75c7f0
 HRESULT __stdcall WalkLocomotionClass::QueryInterface(const IID&, void** ppv) { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
 
+// 0x75cb80
 ULONG __stdcall WalkLocomotionClass::AddRef() { return ++RefCount; }
 
+// 0x75cb90
 ULONG __stdcall WalkLocomotionClass::Release() { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
 HRESULT __stdcall WalkLocomotionClass::GetClassID(CLSID* class_id) { return S_OK; }
@@ -360,10 +368,13 @@ int RocketLocomotionClass::Size() { return sizeof(*this); }
 
 RocketLocomotionClass::RocketLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t {}) {}
 
+// 0x54dc60
 HRESULT __stdcall JumpjetLocomotionClass::QueryInterface(const IID&, void** ppv) { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
 
+// 0x54df50
 ULONG __stdcall JumpjetLocomotionClass::AddRef() { return ++RefCount; }
 
+// 0x54df60
 ULONG __stdcall JumpjetLocomotionClass::Release() { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
 HRESULT __stdcall JumpjetLocomotionClass::GetClassID(CLSID* class_id) { return S_OK; }
@@ -404,10 +415,13 @@ int JumpjetLocomotionClass::Size() { return sizeof(*this); }
 
 JumpjetLocomotionClass::JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t {}) {}
 
+// 0x69ee30
 HRESULT __stdcall ShipLocomotionClass::QueryInterface(const IID&, void** ppv) { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
 
+// 0x6a4260
 ULONG __stdcall ShipLocomotionClass::AddRef() { return ++RefCount; }
 
+// 0x6a4270
 ULONG __stdcall ShipLocomotionClass::Release() { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
 HRESULT __stdcall ShipLocomotionClass::GetClassID(CLSID* class_id) { return S_OK; }
@@ -542,10 +556,13 @@ int MechLocomotionClass::Size() { return sizeof(*this); }
 
 MechLocomotionClass::MechLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t {}) {}
 
+// 0x4b6470
 HRESULT __stdcall DropPodLocomotionClass::QueryInterface(const IID&, void** ppv) { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
 
+// 0x4b66a0
 ULONG __stdcall DropPodLocomotionClass::AddRef() { return ++RefCount; }
 
+// 0x4b66b0
 ULONG __stdcall DropPodLocomotionClass::Release() { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
 HRESULT __stdcall DropPodLocomotionClass::GetClassID(CLSID* class_id) { return S_OK; }

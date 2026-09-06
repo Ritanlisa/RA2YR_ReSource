@@ -297,6 +297,7 @@ retn    4
 // 0x4A31F0
 namespace gamemd { bool CStreamClass::IsEmpty() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a31f0
 BOOL __thiscall CStreamClass::IsEmpty(_DWORD *this, int a2)
 {
   if ( a2 )
@@ -396,6 +397,7 @@ retn    4
 // 0x4A4CB0
 namespace gamemd { int CStreamClass::CopyItems(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a4cb0
 char __thiscall CStreamClass::CopyItems(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -615,6 +617,7 @@ _DWORD *__thiscall CStreamClass::sub_4A4DE0(_DWORD *Block, char a2)
 // 0x55A150
 namespace gamemd { void LoadOptions::vt03() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x55a150
 void __thiscall LoadOptions::vt03(int this)
 {
   void *v2; // eax
@@ -868,6 +871,7 @@ retn    0Ch
 // 0x5F1C60
 namespace gamemd { int Stream::ReadPacket() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f1c60
 int __thiscall Stream::ReadPacket(int this)
 {
   unsigned int v3; // ecx
@@ -1263,6 +1267,7 @@ retn
 // 0x67C690
 namespace gamemd { int Stream::ReadOLEObjects() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x67c690
 int __thiscall Stream::ReadOLEObjects(void *this)
 {
   int result; // eax
@@ -1411,6 +1416,7 @@ retn    4
 // 0x7BCAE0
 namespace gamemd { int Stream::GetField() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7bcae0
 int __thiscall Stream::GetField(_DWORD *this)
 {
   int (__thiscall ***v1)(_DWORD, int); // ecx

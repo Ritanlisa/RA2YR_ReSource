@@ -379,6 +379,7 @@ void TechnoClass::Uncloak(bool play_sound)
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f3330
 int __thiscall TechnoClass::SelectWeapon(#377 *this)
 {
   int v2; // eax
@@ -446,6 +447,7 @@ int __thiscall TechnoClass::SelectWeapon(#377 *this)
       if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 6 && *((_BYTE *)this + 1633) )
         return 1;
       if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6
+// 0x4f9af0
         && Object::IsAlliedWithObjectSimpleHouse(*((_DWORD **)this + 135), v11)
         && *(_BYTE *)(*(_DWORD *)(v4 + 172) + 344)
         && *(_BYTE *)(v11[328] + 5493) )
@@ -1147,6 +1149,7 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 bool TechnoClass::CreateUnit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x423ac0
 bool __thiscall TechnoClass::CreateUnit(#361 *this)
 {
   int v2; // eax
@@ -3572,6 +3575,7 @@ CellStruct* TechnoClass::getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_
 CoordStruct* TechnoClass::getTurretCoords(CoordStruct* buffer, uint32_t a) const { return nullptr; }
 uint32_t TechnoClass::getWeaponRangeValue(uint32_t a, uint32_t b) const { return 0; }
 DirStruct* TechnoClass::GetRealFacing(DirStruct* buffer) const { return nullptr; }
+// 0x707d20
 InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
 bool TechnoClass::isInAirAlt() const { return false; }
 int TechnoClass::GetROF(int weapon) const { return 0; }
@@ -3591,6 +3595,7 @@ int TechnoClass::VoiceSelect() { return 0; }
 int TechnoClass::VoiceCapture() { return 0; }
 int TechnoClass::VoiceMove() { return 0; }
 int TechnoClass::VoiceDeploy() { return 0; }
+// 0x7090a0
 int TechnoClass::VoiceAttack(ObjectClass* target) { return 0; }
 bool TechnoClass::ClickedEvent(NetworkEvents event) { return false; }
 bool TechnoClass::ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell) { return false; }
@@ -3624,6 +3629,7 @@ void TechnoClass::OnFinishRepair() {}
 void TechnoClass::onBridgeRepair() {}
 void TechnoClass::Sensed() {}
 void TechnoClass::onReloadComplete() {}
+// 0x70bcb0
 CoordStruct* TechnoClass::GetTargetCoords(CoordStruct* pCrd) const { return nullptr; }
 bool TechnoClass::IsNotWarpingIn() const { return false; }
 bool TechnoClass::canChronoShift(uint32_t dwUnk) const { return false; }
@@ -3631,6 +3637,7 @@ void TechnoClass::DrawActionLines(bool force, uint32_t dwUnk2) {}
 uint32_t TechnoClass::GetDisguiseFlags(uint32_t existingFlags) const { return 0; }
 bool TechnoClass::isClearlyVisibleTo(HouseClass* house) const { return false; }
 void TechnoClass::onSelect(uint32_t a, uint32_t b) {}
+// 0x6f5190
 void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const {}
 void TechnoClass::DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const {}
 void TechnoClass::DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const {}
@@ -3653,28 +3660,44 @@ CoordStruct* TechnoClass::getSpawnCoords(CoordStruct* out) { return nullptr; }
 uint32_t TechnoClass::processSpawn() { return 0; }
 bool TechnoClass::canAttackOnTheMove() const { return false; }
 bool TechnoClass::canTarget() const { return false; }
+// 0x41bef0
 bool TechnoClass::selectTarget() { return false; }
 void TechnoClass::onTargetChange() {}
 bool TechnoClass::canFire() { return false; }
+// 0x4155f0
 int TechnoClass::ApplyIronCurtain() { return 0; }
+// 0x4157c0
 int TechnoClass::ReturnToBase() { return 0; }
+// 0x4158e0
 int TechnoClass::ReturnToBaseAndReload() { return 0; }
+// 0x415960
 int TechnoClass::ScatterFromThreat() { return 0; }
+// 0x417ca0
 int TechnoClass::ExecuteMissionCommand() { return 0; }
+// 0x4195a0
 int TechnoClass::FindNearbyBuildCell() { return -1; }
+// 0x41a160
 int TechnoClass::FindClosestPlacementCell() { return -1; }
+// 0x41a570
 int TechnoClass::GetTurretFacing() const { return 0; }
+// 0x41b6a0
 void TechnoClass::ComputeTeamAttackPriority() {}
+// 0x41b760
 int TechnoClass::GetAutoFireDirection() const { return 0; }
 int TechnoClass::sub_41B7D0() { return 0; }
+// 0x41b7f0
 bool TechnoClass::HasOnlyOneGarrisonSlot() const { return false; }
 int TechnoClass::sub_41B840() { return 0; }
 int TechnoClass::sub_41B860() { return 0; }
 int TechnoClass::sub_41B9E0() { return 0; }
+// 0x41bc30
 bool TechnoClass::CreateWarheadDamageEffect() { return false; }
 void TechnoClass::sub_41BEF0() {}
+// 0x41bfe0
 void TechnoClass::vt_entry_428() {}
+// 0x41bff0
 int TechnoClass::vt_entry_434() { return 0; }
+// 0x41c1e0
 int TechnoClass::GetBodyFacing() const { return 0; }
 int TechnoClass::sub_41C640() { return 0; }
 int TechnoClass::sub_41C650() { return 0; }
@@ -3682,64 +3705,110 @@ int TechnoClass::sub_41C660() { return 0; }
 int TechnoClass::sub_41C670() { return 0; }
 int TechnoClass::sub_41C680() { return 0; }
 int TechnoClass::sub_41C690() { return 0; }
+// 0x438720
 int TechnoClass::ApplyDamageEffects() { return 0; }
 int TechnoClass::sub_5439080() { return 0; }
+// 0x4390d0
 int TechnoClass::RemoveFromDynamicVector() { return 0; }
+// 0x43e940
 void TechnoClass::ComputeTargetAngle() {}
+// 0x44d6a0
 int TechnoClass::StartOrResumeProduction() { return 0; }
+// 0x453a70
 int TechnoClass::GetTurretScreenPos() const { return 0; }
+// 0x456f80
 void TechnoClass::ProcessMissionDeploy() {}
+// 0x458a80
 int TechnoClass::EvacuateFootprintCells() { return 0; }
+// 0x459d90
 int TechnoClass::MissionStubReturnZero4() { return 0; }
+// 0x459dd0
 bool TechnoClass::StubReturnFalse2() { return false; }
 int TechnoClass::sub_546B270() { return 0; }
 int TechnoClass::sub_54722D0() { return 0; }
+// 0x473500
 int TechnoClass::IndexOf() { return 0; }
+// 0x5af410
 int TechnoClass::CalcFacingFromMatrix() const { return 0; }
+// 0x4c2a60
 void TechnoClass::CreateTrailParticle() {}
 int TechnoClass::sub_4C2BD0() { return 0; }
+// 0x4cc770
 int TechnoClass::UpdateThunk() { return 0; }
+// 0x4cf950
 int TechnoClass::GetData() const { return 0; }
 int TechnoClass::sub_54A50F0() { return 0; }
+// 0x638a80
 int TechnoClass::CreatePlanningNode() { return 0; }
+// 0x711ec0
 int TechnoClass::GetBuildCost() const { return 0; }
+// 0x5b2e70
 int TechnoClass::CheckState1() const { return false; }
+// 0x5b2e80
 int TechnoClass::CheckState2() const { return false; }
+// 0x5b2e40
 int TechnoClass::StubReturn450() { return 0; }
+// 0x6f60c0
 void TechnoClass::vt_entry_448() {}
 int TechnoClass::sub_54D28C0() { return 0; }
+// 0x5224e0
 int TechnoClass::GetTypeFlag() const { return 0; }
 int TechnoClass::sub_5505180() { return 0; }
+// 0x4dff40
 int TechnoClass::FindClosestBuilding() { return -1; }
+// 0x4df040
 int TechnoClass::FindBestMatch() { return -1; }
+// 0x4dfa70
 int TechnoClass::FindClosestInfantry() { return -1; }
+// 0x4dfb70
 int TechnoClass::FindClosestUnit() { return -1; }
+// 0x740b60
 int TechnoClass::FindBestMovementDirection() { return -1; }
+// 0x4df1a0
 int TechnoClass::vt_entry_4A8() { return 0; }
+// 0x4df1c0
 int TechnoClass::vt_entry_4AC() { return 0; }
+// 0x4df1d0
 int TechnoClass::vt_entry_4B0() { return 0; }
+// 0x4df1e0
 int TechnoClass::vt_entry_4B4() { return 0; }
+// 0x4df1f0
 int TechnoClass::vt_entry_4B8() { return 0; }
+// 0x4df310
 int TechnoClass::vt_entry_4C4() { return 0; }
+// 0x4df320
 int TechnoClass::vt_entry_4C8() { return 0; }
+// 0x4df4b0
 int TechnoClass::vt_entry_4D0() { return 0; }
+// 0x4e0150
 int TechnoClass::GetAnimationValue() const { return 0; }
+// 0x50c920
 int TechnoClass::FindDeployDestination() { return -1; }
 int TechnoClass::sub_550D9C0() { return 0; }
 int TechnoClass::sub_550D9D0() { return 0; }
+// 0x50dac0
 int TechnoClass::MapHouseRelationIndex() { return 0; }
+// 0x50bd30
 int TechnoClass::GetDamageMultiplier() const { return 0; }
+// 0x50cad0
 int TechnoClass::ProcessTarget() { return 0; }
 int TechnoClass::sub_55224F0() { return 0; }
+// 0x4dbdf0
 int TechnoClass::GetDeployCoords() { return 0; }
+// 0x53c450
 int TechnoClass::CanBePermaMC() const { return false; }
+// 0x522910
 int TechnoClass::GarrisonBuilding() { return 0; }
+// 0x522510
 int TechnoClass::IsMission27to30() const { return false; }
+// 0x522a60
 int TechnoClass::HandleSpecialAction() { return 0; }
+// 0x522cb0
 int TechnoClass::IsEnteringOrCapturingStructure() const { return false; }
 // 0x5f5390
 void TechnoClass::CreateDestructionEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f5390
 int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
 {
   int v2; // ebp
@@ -4457,30 +4526,48 @@ add     esp, 14h
 retn    1Ch
 */
 }
+// 0x5f7900
 int TechnoClass::FindMatchingUnit() { return -1; }
+// 0x5f99e0
 int TechnoClass::ClearArrays() { return 0; }
+// 0x48ab90
 int TechnoClass::ComputeScanRange() const { return 0; }
+// 0x659470
 int TechnoClass::drawSelectionBox() { return 0; }
+// 0x659490
 int TechnoClass::drawHealthBar() { return 0; }
 int TechnoClass::sub_6594A0() { return 0; }
 int TechnoClass::sub_6594C0() { return 0; }
 int TechnoClass::sub_6594E0() { return 0; }
 int TechnoClass::sub_6594F0() { return 0; }
+// 0x659540
 int TechnoClass::drawMindControlPips() { return 0; }
+// 0x659550
 int TechnoClass::drawPassengerPips() { return 0; }
+// 0x633d30
 int TechnoClass::ClearScriptPlanningData() { return 0; }
+// 0x547150
 int TechnoClass::GetTileAnimationData() const { return 0; }
+// 0x6b0ae0
 int TechnoClass::MutateAll() { return 0; }
+// 0x6b0d10
 int TechnoClass::RefreshDeployOccupierState() { return 0; }
+// 0x6b7d80
 int TechnoClass::CountPassengers() const { return 0; }
+// 0x6f3970
 int TechnoClass::GetValue() const { return 0; }
+// 0x6f3ad0
 int TechnoClass::ComputeTransform() { return 0; }
+// 0x6fc030
 int TechnoClass::CanMoveToCell() const { return false; }
+// 0x6f32d0
 int TechnoClass::CanInitiateSell() const { return false; }
+// 0x6f3280
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
 int TechnoClass::SelectWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f3330
 int __thiscall TechnoClass::SelectWeapon(#377 *this)
 {
   int v2; // eax
@@ -4548,6 +4635,7 @@ int __thiscall TechnoClass::SelectWeapon(#377 *this)
       if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) == 6 && *((_BYTE *)this + 1633) )
         return 1;
       if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6
+// 0x4f9af0
         && Object::IsAlliedWithObjectSimpleHouse(*((_DWORD **)this + 135), v11)
         && *(_BYTE *)(*(_DWORD *)(v4 + 172) + 344)
         && *(_BYTE *)(v11[328] + 5493) )
@@ -5119,225 +5207,425 @@ add     esp, 8
 retn    4
 */
 }
+// 0x6f3820
 int TechnoClass::CanTargetHouse() const { return false; }
+// 0x70fb50
 int TechnoClass::CanSelfRepair() { return false; }
+// 0x6f4ab0
 int TechnoClass::Mission_RepairDispatch() { return 0; }
+// 0x6f4eb0
 int TechnoClass::PushNearbyUnits() { return 0; }
+// 0x70c610
 int TechnoClass::SetFocus() { return 0; }
+// 0x6f4960
 int TechnoClass::SetHouseFlag() { return 0; }
+// 0x740810
 int TechnoClass::ProcessAIDecision() { return 0; }
+// 0x6f4a40
 int TechnoClass::CheckPlayerOwned() const { return false; }
+// 0x6f4a70
 int TechnoClass::UpdateProdWithSound() { return 0; }
+// 0x701120
 int TechnoClass::HasActiveParam() const { return false; }
 int TechnoClass::HasOnlyOneGarrisonSlot2() const { return false; }
+// 0x7012c0
 int TechnoClass::FindLowestDamage() { return -1; }
+// 0x7014a0
 int TechnoClass::ProcessCapture() { return 0; }
+// 0x70d190
 int TechnoClass::GetRangeModifier() const { return 0; }
+// 0x70d1d0
 int TechnoClass::ShouldScanArea() const { return false; }
+// 0x70d590
 int TechnoClass::IsCloseEnoughToBuilding() const { return false; }
+// 0x70d460
 int TechnoClass::IsCellPassableFor() const { return false; }
+// 0x70d420
 int TechnoClass::IsPlayerCellPassable() const { return false; }
+// 0x708d90
 int TechnoClass::SetMoveDestination() { return 0; }
+// 0x708dc0
 int TechnoClass::GetPrimaryTargetOrFallback() const { return 0; }
+// 0x708e00
 int TechnoClass::PickAlternateTarget() { return 0; }
+// 0x708eb0
 int TechnoClass::SelectRandomTarget() { return 0; }
+// 0x709020
 int TechnoClass::GetSecondaryTargetOrFallback() const { return 0; }
+// 0x4db810
 int TechnoClass::SetPositionAnimated() { return 0; }
+// 0x4dba50
 int TechnoClass::GetTargetCellCenter() { return 0; }
+// 0x4dafc0
 int TechnoClass::ComputeSpeedFactor() { return 0; }
+// 0x4db1a0
 int TechnoClass::ComputeSpeedFactorEx() { return 0; }
+// 0x4db260
 int TechnoClass::CleanupDirection() { return 0; }
+// 0x740f80
 int TechnoClass::GetDeployProgressValue() const { return 0; }
+// 0x708bc0
 int TechnoClass::ComputeAverageValue() const { return 0; }
+// 0x708c10
 int TechnoClass::GetGlobalValue() const { return 0; }
+// 0x70f850
 int TechnoClass::SetIdleState() { return 0; }
+// 0x70b280
 int TechnoClass::ComputeAimVector() { return 0; }
+// 0x70b1d0
 int TechnoClass::RevealAreaConditional() { return 0; }
+// 0x70ad50
 int TechnoClass::GetCellCoordsV2() const { return 0; }
+// 0x70ada0
 int TechnoClass::Vt46Thunk() { return 0; }
+// 0x70adc0
 int TechnoClass::RevealAreaSmall() { return 0; }
+// 0x70af50
 int TechnoClass::ScanForEnemies() { return 0; }
+// 0x70bcb0
 int TechnoClass::GetTargetCoords() { return 0; }
+// 0x70be50
 int TechnoClass::CalcOffsetFacing() const { return 0; }
+// 0x70be80
 int TechnoClass::ShouldSelfHealOneStep() const { return false; }
+// 0x4d97a0
 int TechnoClass::ComputeThreatLevel() { return 0; }
+// 0x744270
 int TechnoClass::CanBeTargeted() const { return false; }
+// 0x746b20
 int TechnoClass::GetCommandTooltip() const { return 0; }
+// 0x6fbdc0
 int TechnoClass::ShouldBeCloaked() const { return false; }
+// 0x6fbc90
 int TechnoClass::ShouldNotBeCloaked() const { return false; }
+// 0x6f9dd0
 int TechnoClass::SetTargetIfAllowed() { return 0; }
+// 0x700c40
 int TechnoClass::CanReceivePassengers() const { return false; }
+// 0x6f9dc0
 int TechnoClass::GetTarget() const { return 0; }
+// 0x6f9db0
 int TechnoClass::GetID() const { return 0; }
+// 0x717800
 int TechnoClass::GetSightRange() const { return 0; }
+// 0x6f78d0
 int TechnoClass::CheckAndFireAtTarget() { return 0; }
+// 0x70de70
 int TechnoClass::GattlingRateUp_GattlingRateDownReset() { return 0; }
+// 0x70de40
 int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay() { return 0; }
+// 0x70de00
 int TechnoClass::SetMember81() { return 0; }
+// 0x70fc90
 int TechnoClass::Deactivate() { return 0; }
+// 0x70fbe0
 int TechnoClass::Activate() { return 0; }
+// 0x70e280
 int TechnoClass::ActivateEffect() { return 0; }
+// 0x70e2b0
 int TechnoClass::IronCurtain() { return 0; }
+// 0x70e380
 int TechnoClass::InvulnerabilityIntensity_SetContext() { return 0; }
+// 0x70e300
 int TechnoClass::ResetTimer() { return 0; }
+// 0x6fb080
 int TechnoClass::CalcAnimDelay() const { return 0; }
+// 0x6fb010
 int TechnoClass::StepAnimFrame() { return 0; }
+// 0x709820
 int TechnoClass::BeginFiringSequence() { return 0; }
+// 0x709a40
 int TechnoClass::CompleteFactoryProduction() { return 0; }
+// 0x7099e0
 int TechnoClass::IsTimerExpired() const { return false; }
+// 0x7177c0
 int TechnoClass::GetAudioEntry() const { return 0; }
+// 0x709060
 int TechnoClass::GetTertiaryTargetOrFallback() const { return 0; }
+// 0x7090a0
 int TechnoClass::VoiceAttack() { return 0; }
+// 0x708fc0
 int TechnoClass::ResponseMove_Pickup() { return 0; }
+// 0x708d70
 int TechnoClass::Vt170() { return 0; }
+// 0x700d50
 int TechnoClass::CanAttack() const { return false; }
+// 0x700d10
 int TechnoClass::IsDeadOrInactive() const { return false; }
+// 0x6fcfa0
 int TechnoClass::CalculateROF() { return 0; }
+// 0x708c30
 int TechnoClass::GetAmmoCount() const { return 0; }
+// 0x740e50
 int TechnoClass::GetAmmoCount_0() const { return 0; }
+// 0x746cd0
 int TechnoClass::SelectAttackWeapon() { return 0; }
+// 0x7414a0
 int TechnoClass::GetAverageDamageScore() const { return 0; }
+// 0x7416a0
 int TechnoClass::ProcessSpecialUnitDeployCrush() { return 0; }
+// 0x741340
 int TechnoClass::FireWeaponBurst() { return 0; }
+// 0x773070
 int TechnoClass::GetWeaponRange(int weapon_index) const { return 0; }
+// 0x6fdd50
 int TechnoClass::FireWeapon() { return 0; }
+// 0x6fd210
 int TechnoClass::CreateFireEffect() { return 0; }
+// 0x6fd620
 int TechnoClass::CreateFireBeamEffect() { return 0; }
+// 0x6fd570
 int TechnoClass::CreateFiringRadarBlip() { return 0; }
+// 0x6fd460
 int TechnoClass::CreateRadarBlip() { return 0; }
+// 0x6fda00
 int TechnoClass::GetFiringAngle() const { return 0; }
+// 0x6fcdb0
 int TechnoClass::AssignTarget_SyncLog(int syncFlag)
 {
     (void)syncFlag;
     int result = 0;
     return result;
 }
+// 0x6fcd40
 int TechnoClass::ProcessDeploymentState() { return 0; }
+// 0x6fdb80
 int TechnoClass::ComputeAudioFalloffDamage() { return 0; }
+// 0x70d690
 int TechnoClass::ComputeCombatDamage() { return 0; }
+// 0x70ee30
 int TechnoClass::CheckFireCooldown() const { return false; }
+// 0x70ef00
 int TechnoClass::CanDamageTarget() const { return false; }
+// 0x70f010
 int TechnoClass::COMStub_Return0_298() { return 0; }
+// 0x70efd0
 int TechnoClass::HasPassengers() const { return false; }
+// 0x70f100
 int TechnoClass::COMStub_Return0_307() { return 0; }
 int TechnoClass::sub_70F040() { return 0; }
+// 0x70f050
 int TechnoClass::ProcessCellClearance() { return 0; }
+// 0x70f070
 int TechnoClass::GetTypeVt40() const { return 0; }
+// 0x70efe0
 int TechnoClass::GetMaxSpeed() const { return 0; }
+// 0x70e000
 int TechnoClass::DrainAmmo() { return 0; }
+// 0x70fee0
 int TechnoClass::EjectPassengers() { return 0; }
+// 0x70cc90
 int TechnoClass::RadarUpdateOn() { return 0; }
+// 0x70ccc0
 int TechnoClass::RadarUpdateOff() { return 0; }
+// 0x70ccf0
 int TechnoClass::RevealOwnCell() { return 0; }
+// 0x70cd10
 int TechnoClass::ComputeDamage() { return 0; }
+// 0x708b40
 int TechnoClass::GetCostMultiplier() const { return 0; }
+// 0x6f7660
 int TechnoClass::IsInRange() const { return false; }
+// 0x707d20
 int TechnoClass::GetCrew() { return 0; }
+// 0x740ee0
 int TechnoClass::GetCrew_0() { return 0; }
+// 0x6f3950
 int TechnoClass::GetCrewCount() { return 0; }
+// 0x6f7930
 int TechnoClass::CheckCellPassable() const { return false; }
+// 0x6f7780
 int TechnoClass::CheckCellPassable2() const { return false; }
+// 0x6f7970
 int TechnoClass::CheckCellPassable3() const { return false; }
+// 0x6f77b0
 int TechnoClass::ValidateTarget() const { return false; }
+// 0x6f79a0
 int TechnoClass::GetBridgeDamageMult() const { return 0; }
 int TechnoClass::CheckAndFireAtTarget2() { return 0; }
+// 0x6f7ca0
 int TechnoClass::EvaluateTarget() { return 0; }
+// 0x6f8df0
 int TechnoClass::SelectAutoTarget_Start_AU() { return 0; }
+// 0x6f7220
 int TechnoClass::CheckTargetLOS() const { return false; }
+// 0x703b10
 int TechnoClass::CheckTargetCell() const { return false; }
+// 0x707f60
 int TechnoClass::CheckPlacementTileMatch() const { return false; }
+// 0x707e60
 int TechnoClass::ComputeScanDistance() const { return 0; }
+// 0x707dd0
 int TechnoClass::ComputeTotalPowerDrain() { return 0; }
+// 0x6f8c10
 int TechnoClass::EvaluateBuildingTarget() { return 0; }
+// 0x705d70
 int TechnoClass::GetBuildAnim() const { return 0; }
+// 0x705d50
 int TechnoClass::IsNotBusy() const { return false; }
+// 0x708080
 int TechnoClass::EvaluateMission() { return 0; }
+// 0x4ded70
 int TechnoClass::GetThreatValue() const { return 0; }
+// 0x5216c0
 int TechnoClass::GetThreatValue_0() const { return 0; }
+// 0x6ed4d0
 int TechnoClass::ProcessBorderTower() { return 0; }
+// 0x700600
 int TechnoClass::HandleCursor() { return 0; }
+// 0x6ffec0
 int TechnoClass::HandleCursorClick() { return 0; }
 int TechnoClass::ScanAdjacentCells2() { return 0; }
+// 0x703e70
 int TechnoClass::ScanNeighborCells() { return 0; }
+// 0x704000
 int TechnoClass::IsValidBuildingPlacement() { return false; }
+// 0x703770
 int TechnoClass::StartEffectAudio() { return 0; }
+// 0x7036c0
 int TechnoClass::TransitionEffectState() { return 0; }
+// 0x703850
 int TechnoClass::Vt279Thunk0() { return 0; }
+// 0x703860
 int TechnoClass::UpdatePowerDrain() { return 0; }
+// 0x70e1a0
 int TechnoClass::UpdatePowered() { return 0; }
+// 0x706640
 int TechnoClass::UpdateState() { return 0; }
+// 0x736ca0
 int TechnoClass::UpdateUnitAnimation() { return 0; }
+// 0x7404b0
 int TechnoClass::GetInfantryCursorAction() const { return 0; }
 int TechnoClass::GetThreatValueEx() const { return 0; }
+// 0x6f6f60
 int TechnoClass::ComputeSlopeDifference() { return 0; }
+// 0x6f70e0
 int TechnoClass::ComputeSlopePenalty() { return 0; }
+// 0x732580
 int TechnoClass::IsOwnedByHuman() const { return false; }
+// 0x7335f0
 int TechnoClass::IsCapturableByPlayer() const { return false; }
+// 0x736d50
 int TechnoClass::IsC4AnimationActive() const { return false; }
+// 0x738680
 int TechnoClass::CreateDeathAnim() { return 0; }
+// 0x737ba0
 int TechnoClass::DispatchPlayerInput() { return 0; }
+// 0x7393c0
 int TechnoClass::Deploy() { return 0; }
+// 0x73efc0
 int TechnoClass::DeployIntoBuilding() { return 0; }
+// 0x738910
 int TechnoClass::SpawnInfantryFromBuilding() { return 0; }
+// 0x6f6ac0
 int TechnoClass::CleanupDeploy() { return 0; }
+// 0x746720
 int TechnoClass::ClearAllTargets() { return 0; }
+// 0x744100
 int TechnoClass::SelectAITarget() { return 0; }
+// 0x7440b0
 int TechnoClass::ReturnCapturedFlag() { return 0; }
+// 0x744180
 int TechnoClass::AreBuildingFlagsClear() const { return false; }
+// 0x7441b0
 int TechnoClass::MarkCellImpassable() { return 0; }
+// 0x744210
 int TechnoClass::ClearCellImpassable() { return 0; }
+// 0x746420
 int TechnoClass::CaptureTurret() { return 0; }
+// 0x7463a0
 int TechnoClass::TransferSlavedUnit() { return 0; }
+// 0x7464e0
 int TechnoClass::TransferTurret() { return 0; }
+// 0x746670
 int TechnoClass::ApplyObjectEffect() { return 0; }
+// 0x746750
 int TechnoClass::IsGuardingTarget() const { return false; }
+// 0x746100
 int TechnoClass::ProcessUnitSelfDestruct() { return 0; }
+// 0x744720
 int TechnoClass::NotifyTeamOnDestruction() { return 0; }
 int TechnoClass::RespondToDestruction() { return 0; }
+// 0x6f18a0
 int TechnoClass::GetWaypointCoords() const { return 0; }
+// 0x6f1920
 int TechnoClass::Create() { return 0; }
+// 0x4b5210
 int TechnoClass::CopyStateFrom() { return 0; }
+// 0x7106e0
 int TechnoClass::ScalarDtor() { return 0; }
+// 0x710470
 int TechnoClass::EnteredOpenTopped() { return 0; }
+// 0x7104c0
 int TechnoClass::MarkPassengersAsExited() { return 0; }
+// 0x7104a0
 int TechnoClass::ExitedOpenTopped() { return 0; }
+// 0x711eb0
 int TechnoClass::GetMember388() const { return 0; }
 int TechnoClass::GetBuildCost2() const { return 0; }
 int TechnoClass::FindBestMatch2() { return -1; }
+// 0x6ec300
 int TechnoClass::IsWaypointHidden() const { return false; }
+// 0x70fd70
 int TechnoClass::LinkToBridge() { return 0; }
+// 0x4c1e10
 int TechnoClass::ResetDamageAccumulator() { return 0; }
+// 0x70b570
 int TechnoClass::UpdateBodyTilt() { return 0; }
+// 0x70c620
 int TechnoClass::CheckCliffTransition() const { return false; }
+// 0x70d990
 int TechnoClass::OnEnterCell() { return 0; }
 int TechnoClass::sub_570DC50() { return 0; }
+// 0x70dc60
 int TechnoClass::OwnerHasPower() const { return false; }
 int TechnoClass::sub_570DCE0() { return 0; }
 int TechnoClass::sub_570DCF0() { return 0; }
+// 0x70dd20
 int TechnoClass::GetPoweredWeaponIndex() const { return 0; }
+// 0x70dd50
 int TechnoClass::GetVt252Byte() const { return 0; }
+// 0x70dd90
 int TechnoClass::vt_entry_3E8() { return 0; }
+// 0x70ddd0
 int TechnoClass::SetSpread() { return 0; }
+// 0x70d670
 int TechnoClass::DecCounter() { return 0; }
+// 0x70d8f0
 int TechnoClass::PlaceAtCell() { return 0; }
+// 0x70e140
 int TechnoClass::SelectVocOrSfx() { return 0; }
+// 0x70ed10
 int TechnoClass::Update2() { return 0; }
+// 0x70ed80
 int TechnoClass::GetAnimationFlags() const { return 0; }
+// 0x50c050
 int TechnoClass::GetTargetSpeedMultiplier() const { return 0; }
 int TechnoClass::ProcessEnterTransport() { return 0; }
 int TechnoClass::IsCloseEnoughToBuilding2() const { return false; }
+// 0x6ef9e0
 int TechnoClass::IsDeployed() const { return false; }
+// 0x704240
 int TechnoClass::CheckAdjacencyFlags() const { return false; }
+// 0x637840
 int TechnoClass::IsProductionChainActive() const { return false; }
+// 0x746db0
 int TechnoClass::HasDeployFlags() const { return false; }
+// 0x638840
 int TechnoClass::RemoveBuildingFromScripts() { return 0; }
+// 0x6f6ca0
 int TechnoClass::FinishDeploy() { return 0; }
+// 0x738890
 int TechnoClass::ValidateMoveType() { return 0; }
 int TechnoClass::ComputeSlopePenalty2() { return 0; }
 int TechnoClass::sub_740B10() { return 0; }
+// 0x740a90
 int TechnoClass::CheckRepairNeeded() const { return false; }
+// 0x740ef0
 int TechnoClass::EnterRepairBuilding() { return 0; }
+// 0x740fd0
 int TechnoClass::CheckUnitFireConstraints() const { return false; }
+// 0x741490
 int TechnoClass::checkTargetValidity() { return 0; }
 int TechnoClass::sub_7441B0() { return 0; }
 int TechnoClass::sub_744180() { return 0; }
@@ -5346,7 +5634,9 @@ int TechnoClass::sub_744270() { return 0; }
 int TechnoClass::sub_744720() { return 0; }
 int TechnoClass::sub_7440B0() { return 0; }
 int TechnoClass::sub_744100() { return 0; }
+// 0x743190
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
+// 0x746400
 int TechnoClass::processParasiteAttachment() { return 0; }
 int TechnoClass::sub_746420() { return 0; }
 int TechnoClass::sub_7464E0() { return 0; }
@@ -5383,6 +5673,7 @@ int TechnoClass::sub_73EFC0() { return 0; }
 int TechnoClass::sub_7393C0() { return 0; }
 int TechnoClass::sub_737BA0() { return 0; }
 int TechnoClass::sub_738910() { return 0; }
+// 0x732050
 int TechnoClass::GatherAllBuildings() { return 0; }
 int TechnoClass::sub_732580() { return 0; }
 int TechnoClass::sub_731CF0() { return 0; }
@@ -5390,10 +5681,13 @@ int TechnoClass::sub_729AA0() { return 0; }
 int TechnoClass::sub_729480() { return 0; }
 int TechnoClass::sub_71F010() { return 0; }
 int TechnoClass::sub_71A130() { return 0; }
+// 0x663030
 int TechnoClass::CalculateDamage() { return 0; }
 int TechnoClass::UpdateBodyTilt2() { return 0; }
 int TechnoClass::GattlingRateUp_GattlingRateDownReset2() { return 0; }
+// 0x487720
 int TechnoClass::ApplySplashDamageToNeighbors() { return 0; }
+// 0x701900
 int TechnoClass::ReceiveDamage_Shield() { return 0; }
 int TechnoClass::sub_70B1D0() { return 0; }
 int TechnoClass::sub_70B280() { return 0; }

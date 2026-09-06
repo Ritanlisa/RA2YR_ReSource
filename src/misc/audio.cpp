@@ -24,6 +24,7 @@ VocClass* VocClass::Find(const char* pName)
     return nullptr;
 }
 
+// 0x7514d0
 int32_t VocClass::FindIndex(const char* pName)
 {
     // TODO: complete implementation

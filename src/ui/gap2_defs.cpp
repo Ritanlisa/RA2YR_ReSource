@@ -170,6 +170,7 @@ retn    4
 // 0x40D720
 namespace gamemd { int MouseClass::selectCursor(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x40d720
 char __thiscall MouseClass::selectCursor(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -856,6 +857,7 @@ retn    4
 // 0x4B4FB0
 namespace gamemd { int DropListClass::SetFocus(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4b4fb0
 int __thiscall DropListClass::SetFocus(#72 **this, #72 *Source)
 {
   wcsncpy(*(this + 13), Source, *(this + 14));
@@ -952,6 +954,7 @@ retn
 // 0x4B50C0
 namespace gamemd { int DropListClass::Open(int a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4b50c0
 __int16 __thiscall DropListClass::Open(char *this, char a2, _DWORD *a3, char *a4)
 {
   int v5; // eax
@@ -1279,6 +1282,7 @@ retn    4
 // 0x4C30B0
 namespace gamemd { int DropListClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4c30b0
 int __thiscall DropListClass::Constructor(_DWORD *this)
 {
   *this = &EditClass::`vftable';
@@ -1307,6 +1311,7 @@ retn
 // 0x4C30E0
 namespace gamemd { int DropListClass::SelectItem(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4c30e0
 int __thiscall DropListClass::SelectItem(int *this, #72 *String, int a3)
 {
   int v4; // eax
@@ -1635,6 +1640,7 @@ retn
 // 0x4C32E0
 namespace gamemd { void* DropListClass::GetItemText(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4c32e0
 _DWORD *__thiscall DropListClass::GetItemText(_DWORD *this, #72 *String)
 {
   char v3; // al
@@ -2051,6 +2057,7 @@ retn    4
 // 0x4C3570
 namespace gamemd { int DropListClass::Close() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4c3570
 __int16 __thiscall DropListClass::Close(const #72 **this)
 {
   const #72 *v2; // eax
@@ -2465,6 +2472,7 @@ retn
 // 0x536350
 namespace gamemd { int TauntCommandClass::Do(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x536350
 char __thiscall TauntCommandClass::Do(_BYTE *this, int a2)
 {
   int v2; // eax
@@ -2846,6 +2854,7 @@ retn    4
 // 0x557090
 namespace gamemd { int CheckListClass::removeItem(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x557090
 char __thiscall CheckListClass::removeItem(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -3184,6 +3193,7 @@ retn    8
 // 0x557800
 namespace gamemd { int ListClass::Destru_vt43(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x557800
 int __thiscall ListClass::Destru_vt43(int *this, int a2)
 {
   int result; // eax
@@ -3601,6 +3611,7 @@ retn    4
 // 0x557D20
 namespace gamemd { void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x557d20
 _DWORD *__thiscall ListClass::Destru_vt50(int *this, int a2, int a3, int a4, int a5, int a6)
 {
   int v7; // ebx
@@ -3935,6 +3946,7 @@ retn
 // 0x558060
 namespace gamemd { void* ListClass::Destru_vt00(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x558060
 _BYTE *__thiscall ListClass::Destru_vt00(_BYTE *Block, char a2)
 {
   char v3; // al
@@ -4161,6 +4173,7 @@ retn    4
 // 0x5583C0
 namespace gamemd { int CheckListClass::clearList(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5583c0
 char __thiscall CheckListClass::clearList(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -4550,6 +4563,7 @@ retn
 // 0x5BDF70
 namespace gamemd { int MouseClass::LoadGameAssets() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5bdf70
 int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
 {
   int v3; // esi
@@ -5803,6 +5817,7 @@ retn    4
 // 0x5BE6D0
 namespace gamemd { int MouseClass::DrawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5be6d0
 int __thiscall MouseClass::DrawCursor(int *this, int pStm)
 {
   int v2; // esi
@@ -6298,6 +6313,7 @@ retn    4
 // 0x5BEA30
 namespace gamemd { void* MouseClass::loadCursor(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5bea30
 _DWORD *__thiscall MouseClass::loadCursor(_DWORD *this, int a2, int a3)
 {
   int v4; // eax
@@ -6382,6 +6398,7 @@ retn    8
 // 0x5D3A60
 namespace gamemd { void MessageListClass::Init(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5d3a60
 void __thiscall MessageListClass::Init(
 {
   int i; // edi
@@ -6572,6 +6589,7 @@ retn    2Ch ; ','
 // 0x5D3BA0
 namespace gamemd { int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5d3ba0
 int __thiscall MessageListClass::AddMessage(int *this, #72 *Source, int a3, #72 *a4, int a5, int a6, int a7, char a8)
 {
   _DWORD *Instance; // edi
@@ -7337,6 +7355,7 @@ namespace gamemd { void* Control::CreateControlDialog() { return nullptr; } }
 // 0x623840
 namespace gamemd { int ListBox::Clear() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x623560
 void __thiscall GadgetClass::SetTooltip(void **this, #72 *String)
 {
   int v3; // eax
@@ -7400,6 +7419,7 @@ retn    4
 // 0x6258E0
 namespace gamemd { void ComboBoxOwnerDraw::SetCapacity() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6258e0
 void __thiscall ComboBoxOwnerDraw::SetCapacity(_DWORD *this)
 {
   unsigned int v2; // esi
@@ -7545,6 +7565,7 @@ retn
 // 0x625990
 namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x625990
 char __thiscall ComboBoxOwnerDraw::GrowBuffer(int *this)
 {
   int v2; // eax
@@ -7662,6 +7683,7 @@ retn
 // 0x637AB0
 namespace gamemd { int SidebarClass::ResetProductionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x637ab0
 int __thiscall SidebarClass::ResetProductionState(void *this)
 {
   int result; // eax
@@ -8195,6 +8217,7 @@ retn
 // 0x63F7C0
 namespace gamemd { void PowerClass::checkBlackout() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x63f7c0
 void __thiscall PowerClass::checkBlackout(#441 *this)
 {
   RadarClass::Destru_vt53(this);
@@ -8213,6 +8236,7 @@ retn
 // 0x63FEA0
 namespace gamemd { void PowerClass::updatePowerBarAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x63fea0
 void __thiscall PowerClass::updatePowerBarAnimation(#441 *this)
 {
   int v2; // edi
@@ -9684,6 +9708,7 @@ retn    4
 // 0x674650
 namespace gamemd { int SidebarClass::ReadButtonList() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x674650
 int __thiscall SidebarClass::ReadButtonList(#381 *this)
 {
   char *v1; // edi
@@ -10130,6 +10155,7 @@ retn    4
 // 0x6969C0
 namespace gamemd { int ListBox::SetCustomEntry() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6969c0
 char *__thiscall ListBox::SetCustomEntry(_DWORD *this, int nIDDlgItem, int a3, void *a4)
 {
   char *result; // eax
@@ -10499,6 +10525,7 @@ retn
 // 0x6A5310
 namespace gamemd { int SidebarClass::Init() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6a5310
 char __thiscall SidebarClass::Init(_DWORD *this)
 {
   int v2; // eax
@@ -11400,6 +11427,7 @@ retn    4
 // 0x6A7780
 namespace gamemd { void SidebarClass::UpdateStrips(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6a7780
 void __thiscall SidebarClass::UpdateStrips(char *this, int *a2, _DWORD *a3)
 {
   int v4; // ecx
@@ -12513,6 +12541,7 @@ retn
 // 0x6A8B30
 namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6a8b30
 char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 {
   int v4; // edi
@@ -13707,6 +13736,7 @@ retn    8
 // 0x6AA600
 namespace gamemd { int SidebarClass::UpdateProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6aa600
 char __thiscall SidebarClass::UpdateProduction(int this)
 {
   int v2; // eax
@@ -14692,6 +14722,7 @@ retn
 // 0x6AAD00
 namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6aad00
 int __thiscall SidebarClass::ProcessInput(_DWORD *this, int a2, _DWORD *a3, char a4)
 {
   int v5; // eax
@@ -19196,6 +19227,7 @@ retn    4
 // 0x724CD0
 namespace gamemd { int ToolTipClass::readString(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x724cd0
 char __thiscall ToolTipClass::readString(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -19464,6 +19496,7 @@ retn    4
 // 0x724E10
 namespace gamemd { int ToolTipClass::release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x724e10
 char __thiscall ToolTipClass::release(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -19740,6 +19773,7 @@ retn    4
 // 0x724FC0
 namespace gamemd { int CommandClass::BinarySearchAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x724fc0
 char *__thiscall CommandClass::BinarySearchAction(char **this, unsigned int *a2)
 {
   char *result; // eax
@@ -19972,6 +20006,7 @@ retn
 // 0x72D300
 namespace gamemd { int CampaignScore::LoadCampaignScoreAssetsGame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x72d300
 char __thiscall CampaignScore::LoadCampaignScoreAssetsGame(void *this)
 {
   char result; // al
@@ -20227,6 +20262,7 @@ retn
 // 0x77DA50
 namespace gamemd { void* SidebarClass::FindProductionData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x77da50
 void *__thiscall SidebarClass::FindProductionData(void *this)
 {
   char *v1; // eax
@@ -20432,6 +20468,7 @@ retn
 // 0x7B8730
 namespace gamemd { void* MouseClass::Construct(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b8730
 _DWORD *__thiscall MouseClass::Construct(_DWORD *this, int a2, int a3)
 {
   int *v4; // edi
@@ -20620,6 +20657,7 @@ retn    8
 // 0x7B88D0
 namespace gamemd { int WWMouseClass::loadCursorImages() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b88d0
 int __thiscall WWMouseClass::loadCursorImages(_DWORD *this)
 {
   int result; // eax
@@ -20719,6 +20757,7 @@ retn
 // 0x7B8960
 namespace gamemd { void MouseClass::CalcConfiningRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b8960
 void __thiscall MouseClass::CalcConfiningRect(#44 *this)
 {
   #44 *v1; // esi
@@ -20806,6 +20845,7 @@ retn
 // 0x7B8A00
 namespace gamemd { void WWMouseClass::AddRef(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b8a00
 void __thiscall WWMouseClass::AddRef(unsigned int *this, unsigned int *a2, unsigned int a3, unsigned int a4)
 {
   unsigned int v4; // ebx
@@ -21159,6 +21199,7 @@ retn    0Ch
 // 0x7B8E80
 namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b8e80
 _DWORD *__thiscall WWMouseClass::initCursorState(unsigned int *this, _DWORD *a2)
 {
   int v3; // edi
@@ -21271,6 +21312,7 @@ retn    4
 // 0x7B8F30
 namespace gamemd { int WWMouseClass::updateCursorRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b8f30
 char __thiscall WWMouseClass::updateCursorRect(unsigned int *this)
 {
   int v2; // eax
@@ -21448,6 +21490,7 @@ retn
 // 0x7B90C0
 namespace gamemd { int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b90c0
 int __thiscall WWMouseClass::DrawCursorBuffered(int *this, int *a2, char a3)
 {
   int result; // eax
@@ -21792,6 +21835,7 @@ retn    8
 // 0x7B92D0
 namespace gamemd { void WWMouseClass::updateCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b92d0
 void __thiscall WWMouseClass::updateCursor(#479 *this)
 {
   int v2; // edi
@@ -21950,6 +21994,7 @@ retn    8
 // 0x7B9690
 namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b9690
 int __thiscall WWMouseClass::renderDragSelectionRect(_DWORD *this)
 {
   int v2; // ecx
@@ -22064,6 +22109,7 @@ retn
 // 0x7B9750
 namespace gamemd { int WWMouseClass::showCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b9750
 int __thiscall WWMouseClass::showCursor(int this)
 {
   int result; // eax
@@ -22357,6 +22403,7 @@ retn    10h
 // 0x7B9D90
 namespace gamemd { void WWMouseClass::processFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b9d90
 void __thiscall WWMouseClass::processFrame(#479 *this)
 {
   int v1; // esi
@@ -22432,6 +22479,7 @@ retn    8
 // 0x7B9E30
 namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7b9e30
 int __thiscall WWMouseClass::FlipCursorBuffer(unsigned int *this, unsigned int a2, unsigned int a3, char a4)
 {
   DWORD (__stdcall *v4)(HANDLE, DWORD); // edi
@@ -22767,6 +22815,7 @@ retn    0Ch
 // 0x7BA090
 namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7ba090
 int __thiscall WWMouseClass::UpdateCursorMovement(TechnoClass *this)
 {
   int result; // eax
@@ -23061,6 +23110,7 @@ retn
 // 0x7BA320
 namespace gamemd { void WWMouseClass::drawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7ba320
 void __thiscall WWMouseClass::drawCursor(#479 *this)
 {
   ;

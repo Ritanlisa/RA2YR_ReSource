@@ -42,6 +42,7 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 bool ObjectClass::Remove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f44a0
 int __thiscall ObjectClass::Remove(#374 *this)
 {
   int result; // eax
@@ -127,6 +128,7 @@ retn
 void ObjectClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f65f0
 int __thiscall ObjectClass::Destroy(#374 *this)
 {
   int v2; // ecx
@@ -334,6 +336,7 @@ Move ObjectClass::IsCellOccupied(CellClass* dest_cell, int facing, int level, Ce
     return (Move)(1);
 }
 
+// 0x556630
 int ObjectClass::GetHeight() const
 {
     return location.Z;
@@ -349,6 +352,7 @@ int ObjectClass::GetZ() const
     return location.Z;
 }
 
+// 0x5f6690
 bool ObjectClass::IsActive() const
 {
     return isAliveFlag && isOnMap && !inLimbo;
@@ -420,6 +424,7 @@ void ObjectClass::Reveal()
 void ObjectClass::MarkForRedraw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5f4d10
 int __thiscall ObjectClass::MarkForRedraw(#374 *this)
 {
   int result; // eax
@@ -555,6 +560,7 @@ ObjectClass::ObjectClass() noexcept
 }
 
 // IDA: AudioController
+// 0x405d40
 void AudioController::Stop() { }
 void AudioController::Start(int32_t soundIndex) { (void)soundIndex; }
 void AudioController::Pause() { }

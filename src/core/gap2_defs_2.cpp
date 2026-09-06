@@ -156,6 +156,7 @@ retn    4
 // 0x4A13C0
 namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a13c0
 char __thiscall EnumConnectionPointsClass::SetCapacity(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
@@ -555,6 +556,7 @@ retn
 // 0x4E19F0
 namespace gamemd { bool COMObject::IsPrimaryInstance() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4e19f0
 BOOL __thiscall COMObject::IsPrimaryInstance(void *this)
 {
   return this == (void *)MEMORY[0x87F7E8][53674];
@@ -681,6 +683,7 @@ retn    4
 // 0x5233A0
 namespace gamemd { void* COMObject::SwapReference(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5233a0
 int *__thiscall COMObject::SwapReference(int *this, int a2)
 {
   int v3; // edi
@@ -890,6 +893,7 @@ retn    4
 // 0x589550
 namespace gamemd { int unknown::Release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x589550
 char __thiscall unknown::Release(void *this, int a2, _WORD *a3)
 {
   int v3; // ebx
@@ -1155,6 +1159,7 @@ namespace gamemd { void* unknown::QueryInterface(int a1) { return nullptr; } }
 // 0x5AD6F0
 namespace gamemd { void* StringVector::Construct(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5ad6f0
 _DWORD *__thiscall StringVector::Construct(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -1697,6 +1702,7 @@ retn
 // 0x6ABAC0
 namespace gamemd { bool PlayerClass::HasPlayers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6abac0
 BOOL __thiscall PlayerClass::HasPlayers(_DWORD *this)
 {
   return *(this + 21) > 0;
@@ -2000,6 +2006,7 @@ retn
 // 0x732600
 namespace gamemd { int PlayerClass::UpdateAIUnits() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x732600
 char __thiscall PlayerClass::UpdateAIUnits(void *this)
 {
   int HeightMap; // eax
@@ -2334,6 +2341,7 @@ retn    4
 // 0x7659F0
 namespace gamemd { int COMClass::registerObject(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7659f0
 char __thiscall COMClass::registerObject(_BYTE *this, int a2, _DWORD *a3)
 {
   int v3; // ebp
@@ -2941,6 +2949,7 @@ jmp     ComPtr__Release
 // 0x7AE5D0
 namespace gamemd { int StringVector::Insert(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7ae5d0
 char __thiscall StringVector::Insert(int *this, const char **a2, int a3)
 {
   int v4; // esi

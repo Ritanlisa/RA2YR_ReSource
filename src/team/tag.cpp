@@ -27,6 +27,7 @@ void TagClass::NotifyLocalChanged(int idx_local)
     (void)idx_local;
 }
 
+// 0x6e5320
 bool TagClass::HasCrossesHorizontalLineEvent() const
 {
     // Delegates to the tag's type (buildingType) for the check.
@@ -34,12 +35,14 @@ bool TagClass::HasCrossesHorizontalLineEvent() const
            && buildingType->HasCrossesHorizontalLineEvent();
 }
 
+// 0x6e5300
 bool TagClass::HasCrossesVerticalLineEvent() const
 {
     return buildingType
            && buildingType->HasCrossesVerticalLineEvent();
 }
 
+// 0x6e5340
 bool TagClass::HasZoneEntryByEvent() const
 {
     return buildingType
@@ -90,6 +93,7 @@ void TagClass::LocalChanged(int idx_local)
     }
 }
 
+// 0x6e5850
 bool TagClass::IsOnlyInstanceOfType() const
 {
     return instanceCount <= 1;
@@ -153,11 +157,13 @@ bool TagClass::ShouldReplace() const
     return buildingType->persistence != 0 && instanceCount > 0;
 }
 
+// 0x6e5230
 void TagClass::Destroy()
 {
     destroyed = true;
 }
 
+// 0x6e55c0
 void TagClass::AddTrigger(TriggerClass* trigger)
 {
     // Insert trigger at the head of the linked list.
@@ -227,6 +233,7 @@ bool TagTypeClass::HasAllowWinAction() const
     return false;
 }
 
+// 0x6e6250
 bool TagTypeClass::HasCrossesHorizontalLineEvent() const
 {
     for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)
@@ -237,6 +244,7 @@ bool TagTypeClass::HasCrossesHorizontalLineEvent() const
     return false;
 }
 
+// 0x6e6280
 bool TagTypeClass::HasCrossesVerticalLineEvent() const
 {
     for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)
@@ -247,6 +255,7 @@ bool TagTypeClass::HasCrossesVerticalLineEvent() const
     return false;
 }
 
+// 0x6e62b0
 bool TagTypeClass::HasZoneEntryByEvent() const
 {
     for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)

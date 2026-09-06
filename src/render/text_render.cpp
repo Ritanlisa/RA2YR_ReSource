@@ -68,6 +68,7 @@ void TextRenderer::Shutdown()
     m_bits = nullptr;
 }
 
+// 0x4a61c0
 void TextRenderer::DrawText(DSurface* target, int x, int y,
                              const wchar_t* text, uint8_t r, uint8_t g, uint8_t b)
 {
@@ -100,6 +101,7 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
     target->Surface->Unlock(nullptr);
 }
 
+// 0x4a61c0
 void TextRenderer::DrawText(DSurface* target, int x, int y,
                              const char* text, uint8_t r, uint8_t g, uint8_t b)
 {

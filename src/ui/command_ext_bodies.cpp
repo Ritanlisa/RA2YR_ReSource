@@ -3,14 +3,19 @@
 #include "command_ext.hpp"
 
 namespace gamemd {
+// 0x6d1800
 void CursorAnim::Load() {}
 
+// 0x624480
 void DeleteAndZero::OrFree() {}
 
+// 0x7b5340
 void DeleteAndZero::Alt2() {}
 
+// 0x7b6760
 void DeleteAndZero::Alt() {}
 
+// 0x55cc20
 void ScreenCapture::Frame() {}
 }
 

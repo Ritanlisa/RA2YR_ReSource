@@ -10,6 +10,7 @@ int BulletTypeClass::objectSize() const { return 0; }
 bool BulletTypeClass::SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) { return false; }
 ObjectClass* BulletTypeClass::CreateObject(HouseClass* pOwner) { return nullptr; }
 bool BulletTypeClass::Rotates() const { return !this->NoRotate; }
+// 0x46c840
 void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->ScaledSpawnDelay = delay; }
 
 } // namespace gamemd

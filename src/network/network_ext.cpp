@@ -4,126 +4,181 @@ namespace gamemd {
 
 // --- IPXGlobalConnClass ---
 
+// 0x53fbd0
 void IPXGlobalConnClass::Flush() {}
+// 0x53fcb0
 void IPXGlobalConnClass::GetQueueSize() {}
+// 0x53ff10
 void IPXGlobalConnClass::ConnectToHost() {}
+// 0x540030
 void IPXGlobalConnClass::Disconnect() {}
+// 0x540050
 void IPXGlobalConnClass::GetAddress() {}
 
 // --- Modem ---
 
+// 0x5bb6e0
 void Modem::EnumerateDevices() {}
+// 0x5f0690
 void Modem::CheckStatus() {}
+// 0x5f0d60
 void Modem::DetectAndConnect() {}
+// 0x5f19e0
 void Modem::OpenPort() {}
 
 // --- ModemGame ---
 
+// 0x5b59b0
 void ModemGame::AdvanceTauntCommand() {}
+// 0x5b5ad0
 void ModemGame::UpdatePlayerNameAndColor() {}
+// 0x5b6020
 void ModemGame::ProcessPacket() {}
+// 0x5b7360
 void ModemGame::ReceiveMapPreview() {}
+// 0x6425f0
 void ModemGame::RenderPaletteImage() {}
 
 // --- ModemGuest ---
 
+// 0x5b49b0
 void ModemGuest::Dialog() {}
+// 0x5b4ee0
 void ModemGuest::InitDialog() {}
+// 0x5b9550
 void ModemGuest::UpdateGuestPlayerInfo() {}
+// 0x5ba060
 void ModemGuest::ProcessPacket() {}
 
 // --- ModemHost ---
 
+// 0x5b77e0
 void ModemHost::Dialog() {}
+// 0x5b82f0
 void ModemHost::InitDialog() {}
+// 0x5bac60
 void ModemHost::StartGame() {}
 
 // --- MultiplayerBattleTeam ---
 
+// 0x5c1090
 void MultiplayerBattleTeam::AddRef() {}
+// 0x5c10b0
 void MultiplayerBattleTeam::Release() {}
+// 0x5c10d0
 void MultiplayerBattleTeam::QueryInterface() {}
 
 // --- MultiplayerConfig ---
 
+// 0x5d5b20
 void MultiplayerConfig::Cleanup() {}
 
 // --- MultiplayerLobby ---
 
+// 0x5ec030
 void MultiplayerLobby::FillSlots() {}
 
 // --- MultiplayerModeVector ---
 
+// 0x5d88b0
 void MultiplayerModeVector::Destruct() {}
 
 // --- MultiplayerModeVector2 ---
 
+// 0x5d8900
 void MultiplayerModeVector2::Destruct() {}
 
 // --- MultiplayerObserverTeam ---
 
+// 0x5c94c0
 void MultiplayerObserverTeam::AddRef() {}
+// 0x5c94d0
 void MultiplayerObserverTeam::QueryInterface() {}
 
 // --- MultiplayerSiegeAttackerTeam ---
 
+// 0x5caf40
 void MultiplayerSiegeAttackerTeam::QueryInterface() {}
 
 // --- MultiplayerSiegeDefenderTeam ---
 
+// 0x5cae70
 void MultiplayerSiegeDefenderTeam::AddRef() {}
+// 0x5caf10
 void MultiplayerSiegeDefenderTeam::QueryInterface() {}
 
 // --- MultiplayerTeam ---
 
+// 0x5d8c50
 void MultiplayerTeam::Constructor() {}
+// 0x5d8c80
 void MultiplayerTeam::Destructor() {}
 
 // --- MultiplayerTeamVector ---
 
+// 0x5d8860
 void MultiplayerTeamVector::Destruct() {}
 
 // --- MultiplayerTeam_Destru ---
 
+// 0x5d8d50
 void MultiplayerTeam_Destru::QueryInterface() {}
 
 // --- NetworkBuffer ---
 
+// 0x74fd50
 void NetworkBuffer::GetField() {}
+// 0x74fd60
 void NetworkBuffer::UpdateWindow() {}
+// 0x74fda0
 void NetworkBuffer::GetField2() {}
+// 0x74fdb0
 void NetworkBuffer::GetField3() {}
 
 // --- NetworkDialog ---
 
+// 0x695fd0
 void NetworkDialog::InitModemSettings() {}
+// 0x6964c0
 void NetworkDialog::Dispatch() {}
+// 0x696610
 void NetworkDialog::UpdateListBox() {}
 
 // --- NetworkEventClass ---
 
+// 0x645820
 void NetworkEventClass::Process() {}
 
 // --- NetworkEventQueueClass ---
 
+// 0x664530
 void NetworkEventQueueClass::WaitForResponse() {}
 
 // --- NetworkGameSetup ---
 
+// 0x5b7970
 void NetworkGameSetup::DlgProc() {}
+// 0x5b9680
 void NetworkGameSetup::ReadRulesInitConfig() {}
+// 0x5b96b0
 void NetworkGameSetup::ReadRulesBases() {}
+// 0x5b96e0
 void NetworkGameSetup::ReadRulesAlliesAllowed() {}
+// 0x5b9710
 void NetworkGameSetup::ReadRulesEngineerCount() {}
 
 // --- NetworkID ---
 
+// 0x53ed20
 void NetworkID::Assign() {}
+// 0x53ef30
 void NetworkID::Compare() {}
 
 // --- NetworkManager ---
 
+// 0x664240
 void NetworkManager::SetPlayerAddress() {}
+// 0x6646c0
 void NetworkManager::RemovePlayer() {}
 
 // --- NetworkOptions ---
@@ -131,6 +186,7 @@ void NetworkManager::RemovePlayer() {}
 // 0x560480
 void NetworkOptions::DlgProc() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x560480
 int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
 {
   int result; // eax
@@ -1081,63 +1137,88 @@ add     esp, 100h
 retn    10h
 */
 }
+// 0x7b0f50
 void NetworkOptions::ApplySettings() {}
 
 // --- NetworkScore ---
 
+// 0x64ae50
 void NetworkScore::DlgProc() {}
 
 // --- NetworkSession ---
 
+// 0x54ee60
 void NetworkSession::ResetState() {}
+// 0x69b600
 void NetworkSession::IsPlayerInGame() {}
 
 // --- NetworkSettings ---
 
+// 0x5ddbd0
 void NetworkSettings::DlgProc() {}
 
 // --- NetworkShare ---
 
+// 0x5e8da0
 void NetworkShare::GetField() {}
 
 // --- UDPInterfaceClass_Destru ---
 
+// 0x7b2f90
 void UDPInterfaceClass_Destru::GetQueueSize() {}
+// 0x7b2ff0
 void UDPInterfaceClass_Destru::Flush() {}
+// 0x7b30b0
 void UDPInterfaceClass_Destru::Send() {}
+// 0x7b31e0
 void UDPInterfaceClass_Destru::SetAddress() {}
+// 0x7b3430
 void UDPInterfaceClass_Destru::GetAddress() {}
 
 // --- WOLGameClass ---
 
+// 0x78e030
 void WOLGameClass::ParseChatMessage() {}
 
 // --- WOLGameList ---
 
+// 0x77a7c0
 void WOLGameList::UpdatePlayerStats() {}
+// 0x77a840
 void WOLGameList::Check() {}
+// 0x7a3100
 void WOLGameList::PopulateLobbyLists() {}
+// 0x7ada70
 void WOLGameList::EnsureCapacity() {}
+// 0x7ae020
 void WOLGameList::GrowBuffer() {}
 
 // --- WOLLogin ---
 
+// 0x78db70
 void WOLLogin::DlgProc() {}
 
 // --- WOLOption ---
 
+// 0x77a4a0
 void WOLOption::SetValue() {}
 
 // --- WOLPersona ---
 
+// 0x77a4d0
 void WOLPersona::FormatDateTime() {}
 
 // --- WOLobby ---
 
+// 0x5e8d00
 void WOLobby::FindPlayerIndex() {}
+// 0x781d20
 void WOLobby::BuildStateList() {}
+// 0x783800
 void WOLobby::BuildPlayerList() {}
+// 0x78ac10
 void WOLobby::DlgProc() {}
+// 0x78f5c0
 void WOLobby::FormatLatencyText() {}
 
 } // namespace gamemd

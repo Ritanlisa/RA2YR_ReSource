@@ -46,6 +46,7 @@ UnitClass::UnitClass() noexcept
 int UnitClass::Mission_Harvest()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4151e0
 int __thiscall UnitClass::Mission_Harvest(int *this)
 {
   int v2; // ecx
@@ -855,6 +856,7 @@ UnitClass* UnitClass::updateHarvesting()
 int UnitClass::UnloadPassengers(int placementType)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4be0
 char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
 {
   int v2; // edi
@@ -880,6 +882,7 @@ char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
 int UnitClass::ProcessExitQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b7230
 void __thiscall UnitClass::ProcessExitQueue(int *this)
 {
   int v2; // edx
@@ -2465,6 +2468,7 @@ retn    4
 int UnitClass::GetExitCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x54e3b0
 int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
 {
   _DWORD *v3; // esi
@@ -2651,6 +2655,7 @@ retn    8
 int UnitClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7192f0
 char __stdcall UnitClass::Deploy(_DWORD *a1)
 {
   _DWORD *v1; // esi
@@ -4547,6 +4552,7 @@ retn
 int UnitClass::SimpleDeployerDeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x739ac0
 char __thiscall UnitClass::SimpleDeployerDeploy(int *this)
 {
   int v2; // eax
@@ -4801,6 +4807,7 @@ retn
 int UnitClass::SimpleDeployerUndeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x739cd0
 char __thiscall UnitClass::SimpleDeployerUndeploy(int *this)
 {
   int v2; // eax
@@ -5053,6 +5060,7 @@ retn
 int UnitClass::MissionDispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x737430
 int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, _DWORD *a4)
 {
   int v4; // ebp
@@ -6927,6 +6935,7 @@ retn
 int UnitClass::AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x741970
 void __thiscall UnitClass::AssignDestination_SyncLog(_DWORD *this, __int64 a2)
 {
   __int16 *v3; // ebx
@@ -10318,6 +10327,7 @@ retn    8
 int UnitClass::ApproachTarget_DisallowMoving()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7414e0
 void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
 {
   int v3; // eax
@@ -10549,6 +10559,7 @@ retn    4
 int UnitClass::UpdateRotation_TurretFacing_EMP()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x736990
 char __thiscall UnitClass::UpdateRotation_TurretFacing_EMP(int this)
 {
   int v2; // eax
@@ -10892,6 +10903,7 @@ retn
 int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x743a50
 int __thiscall UnitClass::Scatter(_DWORD *this, int *a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
@@ -11848,6 +11860,7 @@ retn    4
 int UnitClass::CheckForNearbyEnemies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7468c0
 int __thiscall UnitClass::CheckForNearbyEnemies(int *this)
 {
   #72 *v2; // ecx
@@ -12306,6 +12319,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
         v52 = a1[433];
         if ( (*(_BYTE *)(v52 + 3598) || *(_BYTE *)(v52 + 3599))
           && (*(int (__thiscall **)(int *))(*a1 + 696))(a1) > 0
+// 0x5f5c60
           && BuildingClass::GetHealthRatio(a1) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
         {
           v53 = a1[433];
@@ -13563,6 +13577,7 @@ retn    4
 int UnitClass::EvaluateTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x73f0a0
 int __thiscall UnitClass::EvaluateTarget(int this, int a2, int a3, int a4, int a5, char a6)
 {
   __int64 v7; // rax
@@ -13885,6 +13900,7 @@ LABEL_105:
               goto LABEL_153;
             }
             if ( (v37[5801] || v37[5803])
+// 0x47c520
               && Cell::IsBridge((_DWORD *)v26) == (_DWORD *)v30
               && !UnitClass::IsCellBlockedByBridge(v30, (_DWORD *)v26) )
             {
@@ -14011,6 +14027,7 @@ LABEL_150:
             }
             else if ( (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368)
                     || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
+// 0x5f6cd0
                    && ObjectClass::IsCrushable(v30, (_DWORD **)this) )
             {
               if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), (int)v30) )
@@ -15311,6 +15328,7 @@ bool __thiscall sub_7438F0(int this, _BYTE *a2)
 
   result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
         && a2
+// 0x5f6cd0
         && ObjectClass::IsCrushable(a2, (_DWORD **)this)
         && (v3 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v10),
             v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 72))(this, v11),
@@ -15457,6 +15475,7 @@ retn    4
 int UnitClass::IsDeactivated()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x70fbd0
 char __thiscall UnitClass::IsDeactivated(_BYTE *this)
 {
   return *(this + 456);
@@ -15477,6 +15496,7 @@ retn
 int UnitClass::Create()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4a50
 void **__thiscall UnitClass::Create(void **this, void *a2, _DWORD *a3, int a4)
 {
   int v5; // eax
@@ -15604,6 +15624,7 @@ retn    0Ch
 int UnitClass::ReadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4c80
 int __thiscall UnitClass::ReadINI(char *this)
 {
   int result; // eax
@@ -15780,6 +15801,7 @@ retn
 int UnitClass::DestroySmudge()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4fa0
 void **__thiscall UnitClass::DestroySmudge(void **Block, char a2)
 {
   int v3; // eax
@@ -15876,6 +15898,7 @@ retn    4
 void UnitClass::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x735780
 int __thiscall UnitClass::Destructor(void **this)
 {
   _DWORD *v2; // ecx
@@ -16260,6 +16283,7 @@ retn
 int UnitClass::LoadFromStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x744470
 int __stdcall UnitClass::LoadFromStream(int a1, int pStm)
 {
   _DWORD *v2; // esi
@@ -16494,6 +16518,7 @@ retn    8
 int UnitClass::SaveLoadData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4ea0
 int __thiscall UnitClass::SaveLoadData(#374 *this, _DWORD *a2, int a3)
 {
   int Register; // edi
@@ -16810,6 +16835,7 @@ retn
 int UnitClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7446e0
 int __thiscall UnitClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
 {
   int result; // eax
@@ -17339,6 +17365,7 @@ LABEL_23:
         goto LABEL_38;
       if ( (*((int (__thiscall **)(#375 **))*v22 + 11))(v22) == 6
         && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)*(this + 135), v22[135])
+// 0x5f5c60
         && BuildingClass::GetHealthRatio((int *)v22) > *(double *)(MEMORY[0x87F7E8][7806] + 5896) )
       {
         (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 968))(this, 0);
@@ -18378,6 +18405,7 @@ namespace gamemd {
 // 0x6b4f50
 HRESULT __stdcall UnitClass::GetClassID(CLSID* pClassID) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6b4f50
 int __stdcall UnitClass::GetClassID(int a1, _DWORD *a2)
 {
   if ( !a2 )

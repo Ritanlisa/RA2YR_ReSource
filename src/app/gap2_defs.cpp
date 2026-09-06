@@ -14,6 +14,7 @@
 // 0x5D67B0
 namespace gamemd { void* GameConfig::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5d67b0
 char *__thiscall GameConfig::Constructor(char **this)
 {
   char **v1; // edi

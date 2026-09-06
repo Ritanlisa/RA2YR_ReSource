@@ -192,6 +192,7 @@ void IPXInterfaceClass::CloseSocket()
 {
 }
 
+// 0x7b10c0
 bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t sock)
 {
     (void)network; (void)node; (void)sock;

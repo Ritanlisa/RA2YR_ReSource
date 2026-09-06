@@ -1098,6 +1098,7 @@ bool Cell_IsBridge(const CellClass* cell)
 // Object management
 // ============================================================
 
+// 0x47e8a0
 void CellClass::AddContent(ObjectClass* content, bool on_bridge)
 {
     if (!content)
@@ -1115,6 +1116,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     }
 }
 
+// 0x47ea90
 void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
 {
     if (!content)
@@ -1198,6 +1200,7 @@ void CellClass::ReplaceTag(TagClass* tag)
     attachedTag = tag;
 }
 
+// 0x47d210
 void CellClass::SetWallOwner()
 {
     // Set wall ownership based on adjacent cells
@@ -1208,6 +1211,7 @@ bool CellClass::IsShrouded() const
     return shroudedness > 0;
 }
 
+// 0x4876f0
 void CellClass::Unshroud()
 {
     shroudedness = 0;
@@ -1298,6 +1302,7 @@ RectangleStruct* CellClass::GetContainingRect(RectangleStruct* dest) const
     return GetScreenRect(dest);
 }
 
+// 0x484ff0
 const wchar_t* CellClass::GetUIName() const
 {
     // Return cell type name
@@ -1321,6 +1326,7 @@ bool CellClass::IncreaseTiberium(int idx_tiberium, int amount)
     return false;
 }
 
+// 0x480a80
 void CellClass::ReduceTiberium(int amount)
 {
     (void)amount;

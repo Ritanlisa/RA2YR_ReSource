@@ -102,6 +102,7 @@ namespace gamemd {
 
 // --- LightConvertClass ---
 
+// 0x556090
 void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) {}
 
 } // namespace gamemd

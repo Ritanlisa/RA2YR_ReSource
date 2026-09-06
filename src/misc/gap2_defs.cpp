@@ -69,6 +69,7 @@ retn
 // 0x408000
 namespace gamemd { void AudioMixer::ProcessAudioFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x408000
 void __thiscall AudioMixer::ProcessAudioFrame(int this)
 {
   int v2; // eax
@@ -4425,6 +4426,7 @@ retn    4
 // 0x668FB0
 namespace gamemd { int RulesClass::LoadSpecialWeapons() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x668fb0
 int __thiscall RulesClass::LoadSpecialWeapons(#381 *this)
 {
   int result; // eax
@@ -14352,6 +14354,7 @@ retn    4
 // 0x6722F0
 namespace gamemd { int RulesClass::LoadCountries() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6722f0
 int __thiscall RulesClass::LoadCountries(#381 *this)
 {
   int KeyCount; // ebx
@@ -14435,6 +14438,7 @@ retn    4
 // 0x672440
 namespace gamemd { int RulesClass::ReadDataList() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x672440
 int __thiscall RulesClass::ReadDataList(#381 *this)
 {
   int KeyCount; // edi
@@ -17445,6 +17449,7 @@ retn    4
 // 0x674000
 namespace gamemd { int RulesClass::LoadSpeedTypes() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x674000
 int __thiscall RulesClass::LoadSpeedTypes(#381 *this)
 {
   double v1; // st7
@@ -17953,6 +17958,7 @@ retn    4
 // 0x674730
 namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x674730
 int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
 {
   int *v2; // esi
@@ -19325,6 +19331,7 @@ retn    4
 // 0x675210
 namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x675210
 int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
 {
   _DWORD *v3; // ebx
@@ -26519,6 +26526,7 @@ retn    10h
 // 0x6F9E50
 namespace gamemd { int MovementAI::Begin() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f9e50
 char __thiscall MovementAI::Begin(int *this)
 {
   int v2; // ecx
@@ -27012,6 +27020,7 @@ LABEL_148:
        && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3479))
       && !v48
       && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 48))
+// 0x50d9c0
       && TechnoClass::processExperienceGain((_DWORD *)*(this + 135)) )
     {
       v52 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
@@ -27023,6 +27032,7 @@ LABEL_148:
     }
   }
   else if ( !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56))
+// 0x50d9d0
          && TechnoClass::updateVeterancy((_DWORD *)*(this + 135)) )
   {
     v49 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
@@ -27062,6 +27072,7 @@ LABEL_148:
     && !(unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135))
     && *(this + 173)
     && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173))
+// 0x6f3970
     && TechnoClass::GetValue(this, -1) < 0 )
   {
     (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
@@ -27069,6 +27080,7 @@ LABEL_148:
   if ( *(this + 173)
     && MEMORY[0x87F7E8][536212]
     && *(_BYTE *)(*(this + 135) + 492)
+// 0x6f3970
     && TechnoClass::GetValue(this, -1) < 0
     && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173)) )
   {
@@ -27164,6 +27176,7 @@ LABEL_236:
   }
   v74 = (*(int (__thiscall **)(int *))(*this + 132))(this);
   if ( *(_BYTE *)(v74 + 3215)
+// 0x5f5c60
     && BuildingClass::GetHealthRatio(this) < *(double *)(MEMORY[0x87F7E8][7806] + 5888)
     && (*(int (__thiscall **)(int *))(*this + 456))(this) > -10 )
   {
@@ -28969,6 +28982,7 @@ retn    4
 // 0x720BB0
 namespace gamemd { int ThemeClass::Play(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x720bb0
 unsigned int __thiscall ThemeClass::Play(unsigned int *this, unsigned int a2)
 {
   int v3; // ecx
@@ -29661,6 +29675,7 @@ retn
 // 0x7534E0
 namespace gamemd { int VoxClass::SetEVAIndex() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7534e0
 int __thiscall VoxClass::SetEVAIndex(void *this)
 {
   int result; // eax

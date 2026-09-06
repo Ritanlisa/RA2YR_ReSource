@@ -232,12 +232,15 @@ const wchar_t* DisplayClass::GetToolTip(unsigned int dialog_id) { return nullptr
 void DisplayClass::CloseWindow() {}
 void DisplayClass::vt_entry_8C() {}
 bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
+// 0x4a9ca0
 bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
 bool DisplayClass::vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
 bool DisplayClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
 bool DisplayClass::vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3) { return false; }
 void DisplayClass::SetViewDimensions(const RectangleStruct& rect) {}
+// 0x40d250
 void DisplayClass::vt_entry_AC(uint32_t unk) {}
+// 0x4aad20
 void DisplayClass::vt_entry_B0(uint32_t unk) {}
 void DisplayClass::vt_entry_B4(Point2D* point) {}
 void DisplayClass::LeftMouseButtonDown(const Point2D& point) {}

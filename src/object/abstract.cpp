@@ -30,6 +30,7 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x410260
 int __thiscall AbstractClass::QueryInterface(#374 *this)
 {
   int *v2; // ecx

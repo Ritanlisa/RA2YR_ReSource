@@ -397,6 +397,7 @@ retn    4
 }
 
 // Transform: process one 64-byte block
+// 0x69db30
 void SHA1::Transform()
 {
     uint32_t w[80];
@@ -522,6 +523,7 @@ static const uint32_t crc32_table[256] = {
 uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4a1fb0
 int __fastcall CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
 {
   int v4; // edx

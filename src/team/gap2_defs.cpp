@@ -18,6 +18,7 @@
 // 0x71F950
 namespace gamemd { int TEventClass::GetStateA() const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71f950
 char __thiscall TEventClass::GetStateA(_DWORD *this)
 {
   char result; // al
@@ -92,6 +93,7 @@ retn
 // 0x71F9C0
 namespace gamemd { int TEventClass::GetStateB_SpyEvent() const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71f9c0
 char __thiscall TEventClass::GetStateB_SpyEvent(_DWORD *this)
 {
   char result; // al
@@ -138,6 +140,7 @@ retn
 // 0x6E4660
 namespace gamemd { void TActionClass::Destructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6e4660
 void **__thiscall TActionClass::Destructor(void **Block, char a2)
 {
   int v3; // eax
@@ -1239,6 +1242,7 @@ retn    4
 // 0x46CCD0
 namespace gamemd { int CampaignClass::GetMapData(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x46ccd0
 char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***a2)
 {
   int Int_Overwrite; // eax
@@ -1437,6 +1441,7 @@ retn    4
 // 0x49DB00
 namespace gamemd { int CampaignClass::LoadFromINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x49db00
 int __thiscall CampaignClass::LoadFromINI(int this)
 {
   int v2; // ebx
@@ -2673,6 +2678,7 @@ retn
 // 0x49E400
 namespace gamemd { int CampaignClass::FindMission(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x49e400
 char __thiscall CampaignClass::FindMission(int this, char *String1, _DWORD *a3)
 {
   int v4; // esi
@@ -2867,6 +2873,7 @@ retn    4
 // 0x49ECD0
 namespace gamemd { void* CampaignClass::Constructor(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x49ecd0
 _DWORD *__thiscall CampaignClass::Constructor(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -2931,6 +2938,7 @@ retn    8
 // 0x49F090
 namespace gamemd { void* CampaignClass::Constructor_0(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x49f090
 _DWORD *__thiscall CampaignClass::Constructor_0(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -3025,6 +3033,7 @@ char __thiscall sub_509610(void *this, int a2)
           v7 = (_DWORD *)*((_DWORD *)MEMORY[0x8B3DC4] + v6);
           if ( (void *)v7[135] == this
             && v5 == (*(int (__thiscall **)(_DWORD))(*v7 + 132))(*((_DWORD *)MEMORY[0x8B3DC4] + v6))
+// 0x6f1e20
             && TriggerClass::EvaluateObjectForTrigger(a2, (int)v7, (int)this) )
           {
             break;
@@ -3149,6 +3158,7 @@ retn    4
 // 0x5AE220
 namespace gamemd { int CampaignClass::LoadMovieDisplay(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x5ae220
 char __thiscall CampaignClass::LoadMovieDisplay(int this, int a2)
 {
   int v2; // ebp
@@ -5376,6 +5386,7 @@ retn    8
 // 0x6ECFB0
 namespace gamemd { int TeamClass::Create(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6ecfb0
 char __thiscall TeamClass::Create(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -6412,6 +6423,7 @@ retn    8
 // 0x6EE5C0
 namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6ee5c0
 void __thiscall TeamClass::SelectBestMember(_DWORD *this, int a2, int a3)
 {
   int v3; // ebp
@@ -6741,6 +6753,7 @@ retn    8
 // 0x6EEEA0
 namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6eeea0
 _DWORD *__thiscall TeamClass::ScoreMember(void *this, _DWORD *a2, int a3, int a4)
 {
   _DWORD *result; // eax
@@ -7103,6 +7116,7 @@ retn    0Ch
 // 0x6EF610
 namespace gamemd { void TeamClass::PlayMemberAnimation(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6ef610
 void __thiscall TeamClass::PlayMemberAnimation(int this, int a2, char a3)
 {
   int v3; // eax
@@ -7226,6 +7240,7 @@ retn    8
 // 0x6EFA10
 namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6efa10
 void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
 {
   int v3; // esi
@@ -7556,6 +7571,7 @@ retn    8
 // 0x6F0130
 namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f0130
 void __thiscall TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
 {
   int *v3; // esi
@@ -7953,6 +7969,7 @@ retn    4
 // 0x6F09C0
 namespace gamemd { int TeamClass::CreateOneOf(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x6f09c0
 int __thiscall TeamClass::CreateOneOf(int this, void *a2)
 {
   void *OwnerHouse; // edi
@@ -8299,6 +8316,7 @@ retn
 // 0x71F4E0
 namespace gamemd { void* TriggerTypeClass::ParseActionData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x71f4e0
 char *__thiscall TriggerTypeClass::ParseActionData(int this)
 {
   char *v2; // eax
@@ -8965,6 +8983,7 @@ retn    4
 // 0x726630
 namespace gamemd { int TriggerClass::Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x726630
 int __thiscall TriggerClass::Create(void *this)
 {
   int v2; // eax
@@ -9920,6 +9939,7 @@ retn    8
 // 0x727240
 namespace gamemd { int TriggerTypeClass::LoadFromINI(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x727240
 char __thiscall TriggerTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   char *v3; // esi
@@ -10458,6 +10478,7 @@ retn    4
 // 0x7275D0
 namespace gamemd { int TriggerClass::Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x7275d0
 int __thiscall TriggerClass::Process(char *this)
 {
   int result; // eax
