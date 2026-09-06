@@ -13,7 +13,6 @@
 
 // 0x5D67B0
 namespace gamemd { void* GameConfig::Constructor() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall GameConfig::Constructor(char **this)
 {
@@ -66,8 +65,6 @@ char *__thiscall GameConfig::Constructor(char **this)
   }
   return v1[14];
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 70h
@@ -154,7 +151,6 @@ retn
 } }
 // 0x77E7A0
 namespace gamemd { int GameConfig::BuildChecksum() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GameConfig_BuildChecksum(char *Buffer)
 {
@@ -187,8 +183,6 @@ int __thiscall GameConfig_BuildChecksum(char *Buffer)
   Entry = GameOptions::GetEntry();
   return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx

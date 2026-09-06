@@ -99,7 +99,6 @@ FootClass::FootClass() noexcept
 // 0x4da530
 bool FootClass::MovementAI()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall FootClass_MovementAI(int a1)
 {
@@ -479,8 +478,6 @@ LABEL_136:
   }
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h

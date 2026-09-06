@@ -29,7 +29,6 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 void Hash::InsertOrdered(void* table, const void* entry)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Hash_InsertOrdered(void *this, int a2)
 {
@@ -41,8 +40,6 @@ char __thiscall Hash_InsertOrdered(void *this, int a2)
     MEMORY[0xA8EF54] = a2;
   return 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -120,7 +117,6 @@ void SHA1::Init()
 // 0x69d960
 void SHA1::Process(const void* data, uint32_t size)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
 {
@@ -152,8 +148,6 @@ int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -219,7 +213,6 @@ retn    8
 // 0x69d9e0
 void SHA1::Compute(uint8_t digest[20])
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 {
@@ -272,8 +265,6 @@ int __thiscall SHA1_Compute(_DWORD *this, char *a2)
   qmemcpy(a2, this + 1, 0x14u);
   return 20;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 58h
@@ -530,7 +521,6 @@ static const uint32_t crc32_table[256] = {
 // 0x4a1fb0
 uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
 {
@@ -552,8 +542,6 @@ int __fastcall CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
   }
   return ~v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]

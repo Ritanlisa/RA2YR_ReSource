@@ -54,7 +54,6 @@ extern bool g_DDraw_Active;
 
 // 0x734F50: RestartNetworkSession
 void RestartNetworkSession(int mode) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_734F50(void *this)
 {
@@ -69,8 +68,6 @@ int __thiscall sub_734F50(void *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+8E230h
@@ -91,7 +88,6 @@ retn
 
 // 0x734F80: ToggleNetworkSession
 void ToggleNetworkSession(int enable) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_734F80(void *this)
 {
@@ -106,8 +102,6 @@ int __thiscall sub_734F80(void *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+8E20Ch
@@ -128,7 +122,6 @@ retn
 
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
 void ResetIntroFlags(int* obj) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_6B8AE0(unsigned int *this)
 {
@@ -138,8 +131,6 @@ unsigned int __thiscall sub_6B8AE0(unsigned int *this)
   *this = result;
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -152,7 +143,6 @@ retn
 
 // 0x47AB10: Game::FindGameDirectoryCD
 void FindGameDirectoryCD(const char* path) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
 {
@@ -243,8 +233,6 @@ LABEL_24:
   free(v3);
   return v1 == 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Str1            = byte ptr -104h
@@ -487,7 +475,6 @@ retn
 
 // 0x53ECE0: NetworkAddress::Assign
 void NetworkAssignAddress(void* addr, void* port, int arg) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall NetworkAddress_Assign(_DWORD *this, _DWORD *a2, int a3, __int16 a4)
 {
@@ -509,8 +496,6 @@ _DWORD *__thiscall NetworkAddress_Assign(_DWORD *this, _DWORD *a2, int a3, __int
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_4]
@@ -541,7 +526,6 @@ retn    0Ch
 
 // 0x542430: Network::GetField
 void NetworkGetField(int port) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network::GetField(_WORD *this, __int16 a2)
 {
@@ -554,8 +538,6 @@ int __thiscall Network::GetField(_WORD *this, __int16 a2)
   *(this + 17) = v3;
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ax, [esp+arg_0]
@@ -622,7 +604,6 @@ void FadePalette(int mode) {
 
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int InitSkirmishSettings()
 {
@@ -633,8 +614,6 @@ int InitSkirmishSettings()
   LOBYTE(dword_A8ED54[128024]) = 1;
   return v1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -654,7 +633,6 @@ retn
 
 // 0x48E0B0: DumpNetworkStats
 void DumpNetworkStats() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall WTFMode::Init(_BYTE *this)
 {
@@ -683,8 +661,6 @@ char __thiscall WTFMode::Init(_BYTE *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+30D8h]
@@ -741,7 +717,6 @@ retn
 
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char CleanupCampaignResources()
 {
@@ -781,8 +756,6 @@ char CleanupCampaignResources()
   }
   return v0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 70h
@@ -851,7 +824,6 @@ retn
 
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int Network::ShutdownInterface()
 {
@@ -863,8 +835,6 @@ int Network::ShutdownInterface()
   MEMORY[0x87F7E8][8080] = 0;
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, ds:887628h
@@ -992,7 +962,6 @@ int dword_B07784 = 0;
 
 // 0x5F9E80: Checksummer::HashString
 int HashString(const char* str) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Checksummer::HashString(char *Source)
 {
@@ -1100,8 +1069,6 @@ int __thiscall Checksummer::HashString(char *Source)
   v22 = 0;
   return Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -80h
@@ -1343,7 +1310,6 @@ retn
 
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__fastcall GetStringCSF(#72 *Format, _DWORD *a2, const char *a3, int a4)
 {
@@ -1371,8 +1337,6 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
     return (#72 *)(v7 + 4);
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx

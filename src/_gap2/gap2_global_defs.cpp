@@ -23,14 +23,11 @@ extern "C" int BlitterCopySimpleSHP() { return 0; }  // LNK2019 cdecl
 void * g_ZBufferDescriptor = nullptr;
 // 0x70E240
 namespace gamemd { int IsNonNullPtr(int) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __stdcall IsNonNullPtr(_DWORD *a1)
 {
   return a1 && *a1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -50,7 +47,6 @@ retn    4
 } }
 // 0x402F60
 namespace gamemd { int ProcessAudioMixerFrame() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ProcessAudioMixerFrame(int this)
 {
@@ -127,8 +123,6 @@ int __thiscall ProcessAudioMixerFrame(int this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -357,7 +351,6 @@ retn
 } }
 // 0x403A80
 namespace gamemd { int DumpAudioDeviceDebug(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DumpAudioDeviceDebug(_DWORD *a1, void (__thiscall *a2)(char *), int a3)
 {
@@ -451,8 +444,6 @@ int __fastcall DumpAudioDeviceDebug(_DWORD *a1, void (__thiscall *a2)(char *), i
   }
   return ((int (__thiscall *)(char *))v4)(asc_815ECC);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -2BCh
@@ -674,7 +665,6 @@ retn    4
 } }
 // 0x4048B0
 namespace gamemd { int PrefetchAudioSamples() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PrefetchAudioSamples(_DWORD *this)
 {
@@ -832,8 +822,6 @@ LABEL_25:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1081,7 +1069,6 @@ retn
 } }
 // 0x4055C0
 namespace gamemd { int UpdateVoicePlayback() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall VoiceClass_Update(int this)
 {
@@ -1314,8 +1301,6 @@ LABEL_41:
     return v2;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_816108
@@ -1682,7 +1667,6 @@ retn
 } }
 // 0x40AA70
 namespace gamemd { bool ProcessAudioChannelMovement() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall ProcessAudioChannelMovement(int *this)
 {
@@ -1817,8 +1801,6 @@ LABEL_11:
     }
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -2041,7 +2023,6 @@ retn
 } }
 // 0x415C60
 namespace gamemd { int ProcessTechnoMovementAction() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ProcessTechnoMovementAction(char *this)
 {
@@ -2129,8 +2110,6 @@ int __thiscall ProcessTechnoMovementAction(char *this)
   *((_DWORD *)this + 189) = 0;
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2343,7 +2322,6 @@ retn
 } }
 // 0x4197C0
 namespace gamemd { void* FindSpiralMoveTarget(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall FindSpiralMoveTarget(void **this, int a2)
 {
@@ -2499,8 +2477,6 @@ LABEL_27:
     return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30);
   return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v27);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -2799,7 +2775,6 @@ retn    4
 } }
 // 0x41AF80
 namespace gamemd { int SaveAircraftToINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SaveAircraftToINI(char *this)
 {
@@ -2869,8 +2844,6 @@ int __thiscall SaveAircraftToINI(char *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -8Ch
@@ -3011,7 +2984,6 @@ retn
 } }
 // 0x41C250
 namespace gamemd { int CreateInstanceCOM() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateInstanceCOM(#24 *ppv, #33 *rclsid, int pUnkOuter, int dwClsContext)
 {
@@ -3043,8 +3015,6 @@ int __thiscall CreateInstanceCOM(#24 *ppv, #33 *rclsid, int pUnkOuter, int dwCls
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 rclsid          = dword ptr  4
@@ -3120,7 +3090,6 @@ retn    0Ch
 } }
 // 0x421350
 namespace gamemd { int RenderAlphaShapes() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderAlphaShapes(int *this)
 {
@@ -3317,8 +3286,6 @@ int __thiscall RenderAlphaShapes(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 90h
@@ -3634,7 +3601,6 @@ retn
 } }
 // 0x429830
 namespace gamemd { double ComputeMovementWeight(void* a1, void* a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall ComputeMovementWeight(int this, int *a2, _DWORD *a3, char a4, int a5, int a6)
 {
@@ -3743,8 +3709,6 @@ LABEL_20:
     v17 = 2.0;
   return v17 * v28;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -3969,7 +3933,6 @@ retn    14h
 } }
 // 0x42B210
 namespace gamemd { int ParsePathDirections(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParsePathDirections(void *this, int a2, _DWORD *a3)
 {
@@ -4093,8 +4056,6 @@ LABEL_25:
     LOBYTE(v5) = GeneratePathWaypoints(a3, (int *)(v4 + 4 * v9), v27 + 4 * v9, v8, v19, &v20);
   return (char)v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -4298,7 +4259,6 @@ retn    8
 } }
 // 0x42B7F0
 namespace gamemd { void* SimplifyPathFilter(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Path_FilterSimplify(void *this, _DWORD *a2, int a3)
 {
@@ -4552,8 +4512,6 @@ _DWORD *__thiscall Path_FilterSimplify(void *this, _DWORD *a2, int a3)
   v3[2] = v7 + 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 80h
@@ -4962,7 +4920,6 @@ retn    8
 } }
 // 0x42E1C0
 namespace gamemd { int RenderTooltipBorder() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderTooltipBorder(int this)
 {
@@ -5115,8 +5072,6 @@ int __thiscall RenderTooltipBorder(int this)
   *(_BYTE *)(this + 48) = 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -5363,7 +5318,6 @@ retn
 } }
 // 0x430250
 namespace gamemd { int RenderBuildingTag(int a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RenderBuildingTag(int this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -5480,8 +5434,6 @@ LABEL_11:
   }
   return v7;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Str             = byte ptr -100h
@@ -5766,7 +5718,6 @@ retn    14h
 } }
 // 0x430AC0
 namespace gamemd { int RenderAlliedBuildingTags(int a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -5807,8 +5758,6 @@ int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+60h]
@@ -5889,7 +5838,6 @@ retn    14h
 } }
 // 0x430BA0
 namespace gamemd { void PlacePlayerBeacon(int a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -6032,8 +5980,6 @@ void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, 
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1D0h
@@ -6344,7 +6290,6 @@ retn    14h
 } }
 // 0x432C10
 namespace gamemd { int COMStub_432C10(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_432C10(_DWORD *this, int a2)
 {
@@ -6356,8 +6301,6 @@ int __thiscall sub_432C10(_DWORD *this, int a2)
     return AbstractClass::getTotalValue(v2, a2);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+20h]
@@ -6373,7 +6316,6 @@ retn    4
 } }
 // 0x438BF0
 namespace gamemd { int DispatchBuildingAudioEvents() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DispatchBuildingAudioEvents(int *this)
 {
@@ -6548,8 +6490,6 @@ LABEL_33:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -6826,7 +6766,6 @@ retn
 } }
 // 0x43B150
 namespace gamemd { bool DetectNearbyAlliedThreat() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall DetectNearbyAlliedThreat(#375 **this)
 {
@@ -6979,8 +6918,6 @@ LABEL_23:
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -7281,7 +7218,6 @@ retn
 } }
 // 0x43C0D0
 namespace gamemd { void* CreateDominatorDestructionEffects() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall CreateDominatorDestructionEffects(int *this)
 {
@@ -7366,8 +7302,6 @@ int *__thiscall CreateDominatorDestructionEffects(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -7520,7 +7454,6 @@ retn
 } }
 // 0x4500F0
 namespace gamemd { void ProcessAutoProduction() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ProcessAutoProduction(int *this)
 {
@@ -7673,8 +7606,6 @@ LABEL_31:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -7932,7 +7863,6 @@ retn
 } }
 // 0x455F10
 namespace gamemd { int MarkBuildingFoundationCells(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MarkBuildingFoundationCells(int *this, int a2)
 {
@@ -8116,8 +8046,6 @@ char __thiscall MarkBuildingFoundationCells(int *this, int a2)
   }
   return v20;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -8405,7 +8333,6 @@ retn    4
 } }
 // 0x4561F0
 namespace gamemd { int RecalculateBuildingFoundation() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RecalculateBuildingFoundation(_DWORD **this)
 {
@@ -8633,8 +8560,6 @@ LABEL_47:
   while ( v20 < v22 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -8974,7 +8899,6 @@ retn
 } }
 // 0x458330
 namespace gamemd { void* PlayHealthDependentBuildingAnim() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall PlayHealthDependentBuildingAnim(int *this)
 {
@@ -9105,8 +9029,6 @@ _BYTE *__thiscall PlayHealthDependentBuildingAnim(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -9415,7 +9337,6 @@ retn
 } }
 // 0x459CA0
 namespace gamemd { int ProcessDataCellClass() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_459CA0(_DWORD *this)
 {
@@ -9453,8 +9374,6 @@ char __thiscall sub_459CA0(_DWORD *this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -9539,7 +9458,6 @@ retn
 } }
 // 0x45A160
 namespace gamemd { int Release2COM() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COM_Release2(int *this)
 {
@@ -9550,8 +9468,6 @@ int __thiscall COM_Release2(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -9567,7 +9483,6 @@ retn
 } }
 // 0x465570
 namespace gamemd { void* CalculateBuildingFoundationBounds(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall CalculateBuildingFoundationBounds(int *this, int *a2)
 {
@@ -9789,8 +9704,6 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, int *a2)
     return a2;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 4Ch
@@ -10172,7 +10085,6 @@ retn    4
 } }
 // 0x471890
 namespace gamemd { int SmallFunc_471890() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_471890(int this)
 {
@@ -10209,8 +10121,6 @@ int __thiscall sub_471890(int this)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -10273,7 +10183,6 @@ retn
 } }
 // 0x47BDB0
 namespace gamemd { int GetBridgeCellColor(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GetBridgeCellColor(int this, _BYTE *a2, char a3)
 {
@@ -10379,8 +10288,6 @@ LABEL_27:
   }
   return v12 | (v12 << 16);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -10624,7 +10531,6 @@ retn    8
 } }
 // 0x47C060
 namespace gamemd { int GetCellRadarColors(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall GetCellRadarColors(int this, int a2, int a3)
 {
@@ -10772,8 +10678,6 @@ LABEL_18:
   }
   return RadarColorOverlayTypeClass;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -11097,7 +11001,6 @@ retn    8
 } }
 // 0x4838E0
 namespace gamemd { int IsCoordValidMap(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_IsCoordValid(int this, int a2)
 {
@@ -11154,8 +11057,6 @@ LABEL_17:
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11274,7 +11175,6 @@ retn    4
 } }
 // 0x486E30
 namespace gamemd { int Helper_486E30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_486E30(__int16 *this)
 {
@@ -11295,8 +11195,6 @@ int __thiscall sub_486E30(__int16 *this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11330,7 +11228,6 @@ retn
 } }
 // 0x48DEB0
 namespace gamemd { int COMStub_48DEB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_48DEB0(void *this)
 {
@@ -11342,8 +11239,6 @@ int __thiscall sub_48DEB0(void *this)
   else
     return 1 << v1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11366,7 +11261,6 @@ retn
 } }
 // 0x48DF30
 namespace gamemd { int LookupNameIndex() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LookupNameIndex(void *this)
 {
@@ -11386,8 +11280,6 @@ int __thiscall LookupNameIndex(void *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11437,7 +11329,6 @@ retn
 } }
 // 0x49B930
 namespace gamemd { int UpdateScoreScreenStatistics() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateScoreScreenStatistics(int this)
 {
@@ -11581,8 +11472,6 @@ char __thiscall UpdateScoreScreenStatistics(int this)
   ++*(_DWORD *)(this + 56);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -2E0h
@@ -11902,7 +11791,6 @@ retn
 } }
 // 0x49E740
 namespace gamemd { int SmallFunc_49E740(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SmallFunc_49E740(int this, _DWORD *a2)
 {
@@ -11934,8 +11822,6 @@ char __thiscall SmallFunc_49E740(int this, _DWORD *a2)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -12006,7 +11892,6 @@ retn    4
 } }
 // 0x4A3660
 namespace gamemd { int RenderTactical3DScene(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4A3660(_DWORD *this, int a2)
 {
@@ -12128,8 +12013,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -12336,7 +12219,6 @@ retn    4
 } }
 // 0x4A42F0
 namespace gamemd { int InitializeDDraw() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall InitializeDDraw(int a1, int a2, int a3, int a4)
 {
@@ -12425,8 +12307,6 @@ LABEL_7:
   Debug::Log();
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Text            = OMOTestDerived ptr -50h
@@ -12635,7 +12515,6 @@ retn    8
 } }
 // 0x4B5AB0
 namespace gamemd { int SmallFunc_4B5AB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B5AB0(int this)
 {
@@ -12650,8 +12529,6 @@ int __thiscall sub_4B5AB0(int this)
   *(_DWORD *)(this + 24) = &DropPodLocomotionClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -12677,7 +12554,6 @@ retn
 } }
 // 0x4C5370
 namespace gamemd { int Helper_4C5370() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4C5370(int this)
 {
@@ -12695,8 +12571,6 @@ int __thiscall sub_4C5370(int this)
   *(_DWORD *)(this + 12) = &EMPulseClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -12719,7 +12593,6 @@ retn
 } }
 // 0x4C54E0
 namespace gamemd { int ApplyEMPPulseEffect(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ApplyEMPPulseEffect(int this, int a2)
 {
@@ -12886,8 +12759,6 @@ int __thiscall ApplyEMPPulseEffect(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 38h
@@ -13230,7 +13101,6 @@ retn    4
 } }
 // 0x4CB760
 namespace gamemd { void* TerrainInitMap(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall TerrainInitMap(char *Destination, char *Source, int a3)
 {
@@ -13250,8 +13120,6 @@ char *__thiscall TerrainInitMap(char *Destination, char *Source, int a3)
   *((_DWORD *)Destination + 3) = 0;
   return Destination;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -13292,7 +13160,6 @@ retn    8
 } }
 // 0x4CB7C0
 namespace gamemd { void* BuildResultPacket(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall BuildResultPacket(char *Destination, char *Source, const char *a3)
 {
@@ -13318,8 +13185,6 @@ char *__thiscall BuildResultPacket(char *Destination, char *Source, const char *
   *((_DWORD *)Destination + 3) = 0;
   return Destination;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -13367,7 +13232,6 @@ retn    8
 } }
 // 0x4CBC40
 namespace gamemd { void* WalkPathfindingLine(void* a1, int a2, void* a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall WalkPathfindingLine(int *this, int *a2, int a3, int *a4, int a5, int a6)
 {
@@ -13517,8 +13381,6 @@ LABEL_23:
   *a2 = a3;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -13768,7 +13630,6 @@ retn    14h
 } }
 // 0x4CE4B0
 namespace gamemd { int ProcessDataHelper(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4CE4B0(_DWORD *this, int *a2, int a3)
 {
@@ -13802,8 +13663,6 @@ int __thiscall sub_4CE4B0(_DWORD *this, int *a2, int a3)
   HIWORD(a3) = a2[1] / 256;
   return 2 - LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a3);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -13888,7 +13747,6 @@ retn    8
 } }
 // 0x4D0430
 namespace gamemd { int Release3COM() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COM_Release3(int *this)
 {
@@ -13899,8 +13757,6 @@ int __thiscall COM_Release3(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -13916,7 +13772,6 @@ retn
 } }
 // 0x4DC340
 namespace gamemd { int DrawFootTargetLine() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DrawFootTargetLine(int *this)
 {
@@ -14076,8 +13931,6 @@ LABEL_12:
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 90h
@@ -14399,7 +14252,6 @@ retn
 } }
 // 0x4E3320
 namespace gamemd { int GetResourceIDHardcodedCSF() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E3320(void *this)
 {
@@ -14419,8 +14271,6 @@ int __thiscall sub_4E3320(void *this)
     return 1760;
   return this != (void *)7 ? -1 : 1761;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -14483,7 +14333,6 @@ retn
 } }
 // 0x4E37D0
 namespace gamemd { int GetResourceID2CSF() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E37D0(void *this)
 {
@@ -14503,8 +14352,6 @@ int __thiscall sub_4E37D0(void *this)
     return 1312;
   return this != (void *)7 ? -1 : 1313;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -14567,7 +14414,6 @@ retn
 } }
 // 0x4E41D0
 namespace gamemd { int GetResourceIDCSF() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID(void *this)
 {
@@ -14587,8 +14433,6 @@ int __thiscall CSF_GetResourceID(void *this)
     return 1319;
   return this != (void *)7 ? -1 : 1320;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -14651,7 +14495,6 @@ retn
 } }
 // 0x4E4E60
 namespace gamemd { int GetResourceID3CSF() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID3(void *this)
 {
@@ -14671,8 +14514,6 @@ int __thiscall CSF_GetResourceID3(void *this)
     return 1706;
   return this != (void *)7 ? -1 : 1707;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -14735,7 +14576,6 @@ retn
 } }
 // 0x4E5940
 namespace gamemd { int GetResourceID4CSF() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID4(void *this)
 {
@@ -14755,8 +14595,6 @@ int __thiscall CSF_GetResourceID4(void *this)
     return 1907;
   return this != (void *)7 ? -1 : 1908;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -14819,14 +14657,11 @@ retn
 } }
 // 0x4F9F70
 namespace gamemd { int COMStub_4F9F70(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4F9F70(void *this, int a2, char a3)
 {
   return HouseClass::SetAlliance((int)this, *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * a2), a3);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -14841,7 +14676,6 @@ retn    8
 } }
 // 0x4FD9A0
 namespace gamemd { int ValidateAIBuildAffordability() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ValidateAIBuildAffordability(int this)
 {
@@ -15013,8 +14847,6 @@ LABEL_34:
     return 1;
   return v30;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -15357,7 +15189,6 @@ retn
 } }
 // 0x504860
 namespace gamemd { int Team_Helper(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_504860(_DWORD *this, int a2)
 {
@@ -15381,8 +15212,6 @@ int __thiscall sub_504860(_DWORD *this, int a2)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+562Ch]
@@ -15415,7 +15244,6 @@ retn    4
 } }
 // 0x507B80
 namespace gamemd { int CollectSuperWeaponBuildingTypes(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, int a3)
 {
@@ -15537,8 +15365,6 @@ int __thiscall CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, int a3)
     __3_YAXPAX_Z(v19);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -15741,7 +15567,6 @@ retn    8
 } }
 // 0x50BA00
 namespace gamemd { int ComputeSessionColorVector() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
 {
@@ -15812,8 +15637,6 @@ __int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
   *(this + 22270) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -16011,7 +15834,6 @@ retn
 } }
 // 0x50D6D0
 namespace gamemd { int SelectSimilarBuildingTypes(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall SelectSimilarBuildingTypes(void *this, int a2)
 {
@@ -16155,8 +15977,6 @@ LABEL_23:
       goto LABEL_23;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -16407,7 +16227,6 @@ retn    4
 } }
 // 0x50DA10
 namespace gamemd { int GlobalHelper_0E4440_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DA10(_DWORD *this)
 {
@@ -16417,8 +16236,6 @@ int __thiscall sub_50DA10(_DWORD *this)
   *(this + 5436) = MEMORY[0xA8EF98];
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+244h
@@ -16428,7 +16245,6 @@ retn
 } }
 // 0x50DA50
 namespace gamemd { int GlobalHelper_0E44C0_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DA50(_DWORD *this)
 {
@@ -16440,8 +16256,6 @@ int __thiscall sub_50DA50(_DWORD *this)
   *(this + 5438) = MEMORY[0xA8EF98];
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+244h
@@ -16454,7 +16268,6 @@ retn
 } }
 // 0x50DFF0
 namespace gamemd { int GlobalHelper_0E4540_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DFF0(_DWORD *this)
 {
@@ -16464,8 +16277,6 @@ int __thiscall sub_50DFF0(_DWORD *this)
   *(this + 5413) = MEMORY[0xA8EF98];
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+244h
@@ -16475,7 +16286,6 @@ retn
 } }
 // 0x515ED0
 namespace gamemd { void UpdateFootFacing() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateFootFacing(int this)
 {
@@ -16675,8 +16485,6 @@ LABEL_19:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -17084,7 +16892,6 @@ retn
 } }
 // 0x5175F0
 namespace gamemd { int ReadRegistryOptionsWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ReadRegistryOptionsWOL(_BYTE *this)
 {
@@ -17118,8 +16925,6 @@ char __thiscall ReadRegistryOptionsWOL(_BYTE *this)
   }
   return *(this + 4);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Data            = dword ptr -90h
@@ -17197,14 +17002,11 @@ retn
 } }
 // 0x5176C0
 namespace gamemd { bool WinMain_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_5176C0(_DWORD *this)
 {
   return (~(unsigned __int8)*this & 4) != 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -17216,7 +17018,6 @@ retn
 } }
 // 0x518D80
 namespace gamemd { int CalculateLocomotionFrameIndex() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CalculateLocomotionFrameIndex(int *this)
 {
@@ -17298,8 +17099,6 @@ LABEL_25:
          + *(_DWORD *)(v6 + *(_DWORD *)(v10 + 3644));
   return v15 + *v11;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -17502,7 +17301,6 @@ retn
 } }
 // 0x51FB00
 namespace gamemd { int PlaceScenarioInfantry() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PlaceScenarioInfantry(char *this)
 {
@@ -17679,8 +17477,6 @@ int __thiscall PlaceScenarioInfantry(char *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -80h
@@ -18041,7 +17837,6 @@ retn
 } }
 // 0x5202F0
 namespace gamemd { int ProcessTechnoSquadResponse() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ProcessTechnoSquadResponse(int *this)
 {
@@ -18187,8 +17982,6 @@ char __thiscall ProcessTechnoSquadResponse(int *this)
   (*(void (__thiscall **)(int *))(*this + 248))(this);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -18552,7 +18345,6 @@ retn
 } }
 // 0x5206B0
 namespace gamemd { void FireTechnoAtTarget() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TechnoClass_FireAtTarget(int this)
 {
@@ -18738,8 +18530,6 @@ LABEL_46:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -19164,7 +18954,6 @@ retn
 } }
 // 0x5272B0
 namespace gamemd { void* LookupCSFString(void* a1, void* a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__thiscall LookupCSFString(_DWORD *this, unsigned __int8 *a2, char *Destination, int Count)
 {
@@ -19353,8 +19142,6 @@ LABEL_33:
   }
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr -34h
@@ -19710,7 +19497,6 @@ retn    0Ch
 } }
 // 0x52A670
 namespace gamemd { void* WinMain_Init(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall WinMain_Init(void *this, void *a2, char a3)
 {
@@ -19736,8 +19522,6 @@ void *__thiscall WinMain_Init(void *this, void *a2, char a3)
   qmemcpy(a2, v5, 0x204u);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 504h
@@ -19805,7 +19589,6 @@ retn    8
 } }
 // 0x53B780
 namespace gamemd { int ApplyChronoScreenColorShift() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ApplyChronoScreenColorShift(void *this)
 {
@@ -19961,8 +19744,6 @@ int __thiscall ApplyChronoScreenColorShift(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -20265,7 +20046,6 @@ retn
 } }
 // 0x53E4F0
 namespace gamemd { bool WinMain_Helper_53E4F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall WinMain_Helper_53E4F0(char *FileName)
 {
@@ -20278,8 +20058,6 @@ BOOL __thiscall WinMain_Helper_53E4F0(char *FileName)
   ((void (__stdcall *)(int *))LeaveCriticalSection)(&dword_A8ED54[17841]);
   return dword_A8ED54[17861] != 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+116F4h
@@ -20321,7 +20099,6 @@ retn
 } }
 // 0x53E550
 namespace gamemd { bool WinMain_Write() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall WinMain_Write(char *FileName)
 {
@@ -20342,8 +20119,6 @@ BOOL __thiscall WinMain_Write(char *FileName)
   ((void (__stdcall *)(int *))LeaveCriticalSection)(&dword_A8ED54[17841]);
   return dword_A8ED54[17861] != 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+116F4h
@@ -20397,7 +20172,6 @@ retn
 } }
 // 0x53FA90
 namespace gamemd { void* Network_Init_53FA90(int a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall Network_Init_53FA90(int *this, int a2, int a3, int a4, __int16 a5, __int16 a6)
 {
@@ -20451,8 +20225,6 @@ int *__thiscall Network_Init_53FA90(int *this, int a2, int a3, int a4, __int16 a
   *(this + 54) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_10]
@@ -20543,7 +20315,6 @@ retn    14h
 } }
 // 0x5402B0
 namespace gamemd { int Network_Init_5402B0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5402B0(_DWORD *this, int a2)
 {
@@ -20554,8 +20325,6 @@ int __thiscall sub_5402B0(_DWORD *this, int a2)
     *(this + 49) = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+11850h
@@ -20569,7 +20338,6 @@ retn    4
 } }
 // 0x540A80
 namespace gamemd { int Network_Init() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network_Init(int this)
 {
@@ -20690,8 +20458,6 @@ int __thiscall Network_Init(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -20922,7 +20688,6 @@ retn
 } }
 // 0x542FC0
 namespace gamemd { int Network_Init_542FC0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_542FC0(_DWORD *this, int a2)
 {
@@ -20934,8 +20699,6 @@ int __thiscall sub_542FC0(_DWORD *this, int a2)
     return Network_Init_5402B0(v2, a2);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+48h]
@@ -20951,7 +20714,6 @@ retn    4
 } }
 // 0x5430C0
 namespace gamemd { int StartGameWOL_Start(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5430C0(_DWORD *this, int a2)
 {
@@ -20963,8 +20725,6 @@ int __thiscall sub_5430C0(_DWORD *this, int a2)
     return (*(int (__thiscall **)(int, int))(*(_DWORD *)v2 + 68))(v2, a2);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+48h]
@@ -20981,7 +20741,6 @@ retn    4
 } }
 // 0x544CE0
 namespace gamemd { int Entity_Read() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_544CE0(void *this)
 {
@@ -20999,8 +20758,6 @@ int __thiscall sub_544CE0(void *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -21045,7 +20802,6 @@ retn
 } }
 // 0x544E00
 namespace gamemd { void* Map_Get(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_544E00(_DWORD *this, int a2)
 {
@@ -21061,8 +20817,6 @@ _DWORD *__thiscall sub_544E00(_DWORD *this, int a2)
     result = (_DWORD *)result[175];
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -21094,7 +20848,6 @@ retn    4
 } }
 // 0x549E50
 namespace gamemd { int Map_Get_549E50(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_549E50(int this, int a2, int a3)
 {
@@ -21102,8 +20855,6 @@ int __thiscall sub_549E50(int this, int a2, int a3)
     MapClass::LoadFileData(this);
   return *(_DWORD *)(*(_DWORD *)(this + 680) + 4 * a2) + 4 * a3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -21129,7 +20880,6 @@ retn    8
 } }
 // 0x54BD30
 namespace gamemd { int UpdateFootMoveToState() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateFootMoveToState(int this)
 {
@@ -21261,8 +21011,6 @@ LABEL_19:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -21506,7 +21254,6 @@ retn
 } }
 // 0x54F530
 namespace gamemd { int Event_Process(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_54F530(_BYTE *this, __int16 a2)
 {
@@ -21538,8 +21285,6 @@ char __thiscall sub_54F530(_BYTE *this, __int16 a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -21597,7 +21342,6 @@ retn    4
 } }
 // 0x551A30
 namespace gamemd { int ProcessAutoSave() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_551A30(_DWORD *this)
 {
@@ -21630,8 +21374,6 @@ int __thiscall sub_551A30(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -21682,7 +21424,6 @@ retn
 } }
 // 0x556B70
 namespace gamemd { int Render_Render_556B70() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_556B70(int *this)
 {
@@ -21736,8 +21477,6 @@ int __thiscall sub_556B70(int *this)
   while ( result != *(this + 3) );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+4]
@@ -21813,7 +21552,6 @@ retn
 } }
 // 0x556C00
 namespace gamemd { void* Render_Render_556C00() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_556C00(int this)
 {
@@ -21871,8 +21609,6 @@ _DWORD *__thiscall sub_556C00(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -21992,14 +21728,11 @@ retn
 } }
 // 0x55AF50
 namespace gamemd { void Map_Init() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_55AF50(void *this)
 {
   dword_829FF8 = (int)this;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword_829FF8, ecx
@@ -22008,7 +21741,6 @@ retn
 } }
 // 0x55F690
 namespace gamemd { int CheckNetworkSync(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_55F690(_BYTE *this, int a2, int a3)
 {
@@ -22018,8 +21750,6 @@ int __thiscall sub_55F690(_BYTE *this, int a2, int a3)
   *(_BYTE *)(a2 + 4) = *(this + 4);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -22041,7 +21771,6 @@ retn    8
 } }
 // 0x569760
 namespace gamemd { void DestroyCliffMap(int a1, int a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DestroyCliffMap(int *this, int a2, int a3, int *a4)
 {
@@ -22449,8 +22178,6 @@ LABEL_44:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -23308,7 +23035,6 @@ retn    0Ch
 } }
 // 0x56A080
 namespace gamemd { int PlaceTerrainCliffsRegion() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Terrain_PlaceCliffsRegion(int *this)
 {
@@ -23494,8 +23220,6 @@ int __thiscall Terrain_PlaceCliffsRegion(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -23874,7 +23598,6 @@ retn
 } }
 // 0x56A4C0
 namespace gamemd { void FlattenCliffMap(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_FlattenCliff(int *this, _WORD *a2)
 {
@@ -24081,8 +23804,6 @@ void __thiscall Map_FlattenCliff(int *this, _WORD *a2)
     v31 = v3;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -24522,7 +24243,6 @@ retn    4
 } }
 // 0x56A980
 namespace gamemd { void RepairMapCliff(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_RepairCliff(int *this, _WORD *a2)
 {
@@ -24729,8 +24449,6 @@ void __thiscall Map_RepairCliff(int *this, _WORD *a2)
     v31 = v3;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -25170,7 +24888,6 @@ retn    4
 } }
 // 0x56D3F0
 namespace gamemd { int CellToTileIndexMap(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_CellToTileIndex(int *this, __int16 *a2)
 {
@@ -25185,8 +24902,6 @@ int __thiscall Map_CellToTileIndex(int *this, __int16 *a2)
     return v3 - 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0F8h]
@@ -25216,7 +24931,6 @@ retn    4
 } }
 // 0x56DA10
 namespace gamemd { int GetRegionMap(void* a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_GetRegion(int *this, __int16 *a2, signed int a3, int a4)
 {
@@ -25253,8 +24967,6 @@ LABEL_12:
     goto LABEL_12;
   return a4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -25351,7 +25063,6 @@ retn    0Ch
 } }
 // 0x56DB70
 namespace gamemd { int InvalidateTileRegionMap(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_InvalidateTileRegion(int *this, __int16 *a2)
 {
@@ -25396,8 +25107,6 @@ char __thiscall Map_InvalidateTileRegion(int *this, __int16 *a2)
   while ( Region != -1 );
   return v10;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -25488,7 +25197,6 @@ retn    4
 } }
 // 0x56E890
 namespace gamemd { int ProcessDataHouseClass(void* a1, void* a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_56E890(_DWORD *this, __int16 *a2, _DWORD *a3, int *a4)
 {
@@ -25542,8 +25250,6 @@ char __thiscall sub_56E890(_DWORD *this, __int16 *a2, _DWORD *a3, int *a4)
   *a3 = *(_DWORD *)(*(_DWORD *)(v8 + 52) + 184);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -25651,7 +25357,6 @@ retn    0Ch
 } }
 // 0x5785F0
 namespace gamemd { bool IsCoordVisibleMap(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Map_IsCoordVisible(_DWORD *this, _DWORD *a2)
 {
@@ -25662,8 +25367,6 @@ bool __thiscall Map_IsCoordVisible(_DWORD *this, _DWORD *a2)
   HIWORD(a2) = v2[1] / 256;
   return LayerClass::IsWithinUsableArea(this, (__int16 *)&a2, 1);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -25692,7 +25395,6 @@ retn    4
 } }
 // 0x578640
 namespace gamemd { bool Math_Helper(void* a1, void* a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_578640(_DWORD *this, _DWORD *a2, __int16 *a3, char a4)
 {
@@ -25726,8 +25428,6 @@ bool __thiscall sub_578640(_DWORD *this, _DWORD *a2, __int16 *a3, char a4)
       && v6 - v4 < 2 * (*a2 + a2[2]) - v10
       && v4 - v6 < v10 - 2 * *a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_8]
@@ -25824,7 +25524,6 @@ retn    0Ch
 } }
 // 0x57B870
 namespace gamemd { int Map_Create() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_57B870(_WORD *this)
 {
@@ -25890,8 +25589,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -25999,7 +25696,6 @@ retn
 } }
 // 0x57B990
 namespace gamemd { int Map_Create_57B990() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_57B990(__int16 *this)
 {
@@ -26058,8 +25754,6 @@ char __thiscall sub_57B990(__int16 *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -26165,7 +25859,6 @@ retn
 } }
 // 0x57CAB0
 namespace gamemd { int Map_Create_57CAB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_57CAB0(_WORD *this)
 {
@@ -26231,8 +25924,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -26340,7 +26031,6 @@ retn
 } }
 // 0x57CBE0
 namespace gamemd { int Map_Create_57CBE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_57CBE0(__int16 *this)
 {
@@ -26399,8 +26089,6 @@ char __thiscall sub_57CBE0(__int16 *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -26506,7 +26194,6 @@ retn
 } }
 // 0x580BC0
 namespace gamemd { void* FindMapSpawnCell(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Map_FindSpawnCell(_DWORD *this, int a2)
 {
@@ -26748,8 +26435,6 @@ LABEL_37:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0E8h
@@ -27159,7 +26844,6 @@ retn    4
 } }
 // 0x581090
 namespace gamemd { int CleanupMapSystems() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_581090(_DWORD *this)
 {
@@ -27216,8 +26900,6 @@ int __thiscall sub_581090(_DWORD *this)
   BuildingClass::FreeUpgradeQueue();
   return BuildingClass::FreeUpgradeQueue2();
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -27299,7 +26981,6 @@ jmp     BuildingClass__FreeUpgradeQueue2
 } }
 // 0x582D30
 namespace gamemd { int SmallFunc_582D30(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_582D30(int *this, int a2)
 {
@@ -27326,8 +27007,6 @@ int __thiscall sub_582D30(int *this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -27371,7 +27050,6 @@ retn    4
 } }
 // 0x583C60
 namespace gamemd { int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CollectMatchingTileCells(
 {
@@ -27590,8 +27268,6 @@ LABEL_31:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 70h
@@ -27951,7 +27627,6 @@ retn    20h ; ' '
 } }
 // 0x5840C0
 namespace gamemd { int CheckMapReachability(int a1, int a2, int a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_CheckReachability(_DWORD *this, int a2, int a3, int a4, int j)
 {
@@ -28236,8 +27911,6 @@ char __thiscall Map_CheckReachability(_DWORD *this, int a2, int a3, int a4, int 
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -28712,7 +28385,6 @@ retn    10h
 } }
 // 0x584E50
 namespace gamemd { int UpdateCellConnectivityGraph(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateCellConnectivityGraph(int *this, int *a2)
 {
@@ -28924,8 +28596,6 @@ int __thiscall UpdateCellConnectivityGraph(int *this, int *a2)
   while ( v13 < 3 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 4Ch
@@ -29264,7 +28934,6 @@ retn    4
 } }
 // 0x5851B0
 namespace gamemd { int BuildTileAdjacencyTable(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildTileAdjacencyTable(int *this, int *a2)
 {
@@ -29475,8 +29144,6 @@ int __thiscall BuildTileAdjacencyTable(int *this, int *a2)
   while ( v13 < 6 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 50h
@@ -29882,7 +29549,6 @@ retn    4
 } }
 // 0x585930
 namespace gamemd { void FloodFillConnectedCells(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FloodFillConnectedCells(_DWORD *this, int a2, int a3)
 {
@@ -30092,8 +29758,6 @@ void __thiscall FloodFillConnectedCells(_DWORD *this, int a2, int a3)
   v45 = &VectorClass<Cell>::`vftable';
   Buffer::Cleanup((int)&v45);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 44h
@@ -30488,7 +30152,6 @@ retn    8
 } }
 // 0x5866C0
 namespace gamemd { int SmallFunc_5866C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5866C0(_DWORD *this)
 {
@@ -30507,8 +30170,6 @@ int __thiscall sub_5866C0(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -30546,7 +30207,6 @@ retn
 } }
 // 0x5868A0
 namespace gamemd { void UpdateAreaConnectivityMap(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_UpdateAreaConnectivity(int *this, int *a2)
 {
@@ -30616,8 +30276,6 @@ LABEL_13:
       __3_YAXPAX_Z(Block);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -30738,7 +30396,6 @@ retn    4
 } }
 // 0x587C50
 namespace gamemd { int DiagnoseMapCheck() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapCheck_Diagnostic(_DWORD *this)
 {
@@ -30924,8 +30581,6 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
   fclose(Stream);
   return v24;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Stream          = dword ptr -4
@@ -31346,7 +31001,6 @@ retn
 } }
 // 0x588960
 namespace gamemd { int Object_Create(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_588960(_DWORD *this, int a2)
 {
@@ -31361,8 +31015,6 @@ int __thiscall sub_588960(_DWORD *this, int a2)
   *(this + 82) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+148h]
@@ -31384,7 +31036,6 @@ retn    4
 } }
 // 0x591740
 namespace gamemd { int PlaceMapSeedCityArea(void* a1, void* a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlaceMapSeedCityArea(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -31769,8 +31420,6 @@ char __thiscall PlaceMapSeedCityArea(_DWORD *this, __int16 *a2, __int16 *a3, voi
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 5Ch
@@ -32345,7 +31994,6 @@ retn    0Ch
 } }
 // 0x592AF0
 namespace gamemd { int PlaceMapSeedCityBlockVariant(void* a1, void* a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockVariant(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -32642,8 +32290,6 @@ char __thiscall MapSeedClass::PlaceCityBlockVariant(_DWORD *this, __int16 *a2, _
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -33129,7 +32775,6 @@ retn    0Ch
 } }
 // 0x593030
 namespace gamemd { int PlaceMapSeedCityBlockDiagonal(void* a1, void* a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockDiagonal(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -33465,8 +33110,6 @@ char __thiscall MapSeedClass::PlaceCityBlockDiagonal(_DWORD *this, __int16 *a2, 
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -33938,7 +33581,6 @@ retn    0Ch
 } }
 // 0x593AF0
 namespace gamemd { int PlaceMapSeedCityBlockVariant2(void* a1, void* a2, void* a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockVariant2(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -34243,8 +33885,6 @@ char __thiscall MapSeedClass::PlaceCityBlockVariant2(_DWORD *this, __int16 *a2, 
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -34714,7 +34354,6 @@ retn    0Ch
 } }
 // 0x594870
 namespace gamemd { void PlaceRandomWaypoints(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PlaceRandomWaypoints(int *this, int a2)
 {
@@ -34844,8 +34483,6 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -35130,7 +34767,6 @@ retn    4
 } }
 // 0x595400
 namespace gamemd { int PlaceNeutralBuilding() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlaceNeutralBuilding(_DWORD *this)
 {
@@ -35238,8 +34874,6 @@ LABEL_24:
     return (*(char (__thiscall **)(int *, int))(*v18 + 32))(v18, 1);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 3Ch
@@ -35464,7 +35098,6 @@ retn
 } }
 // 0x597430
 namespace gamemd { void* Team_Start_597430() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_597430(_DWORD *this)
 {
@@ -35558,8 +35191,6 @@ _DWORD *__thiscall sub_597430(_DWORD *this)
   v6 = &rc_ptr<WDTTerritory>::`vftable';
   return ComPtr::Release(&v6);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -35755,7 +35386,6 @@ retn
 } }
 // 0x5A1FB0
 namespace gamemd { int SpreadMapSeedTerrainFromWaypoints() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SpreadMapSeedTerrainFromWaypoints(int *this)
 {
@@ -35990,8 +35620,6 @@ char __thiscall SpreadMapSeedTerrainFromWaypoints(int *this)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -36363,7 +35991,6 @@ retn
 } }
 // 0x5A2F50
 namespace gamemd { void SmoothTerrainMap() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_SmoothTerrain(int *this)
 {
@@ -36584,8 +36211,6 @@ LABEL_52:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -37008,7 +36633,6 @@ retn
 } }
 // 0x5A35F0
 namespace gamemd { int GenerateTerrainHeightMap() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GenerateTerrainHeightMap(int *this)
 {
@@ -37171,8 +36795,6 @@ LABEL_21:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 38h
@@ -37413,7 +37035,6 @@ retn
 } }
 // 0x5A82E0
 namespace gamemd { void ScatterMapSeedBuildings(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ScatterMapSeedBuildings(_DWORD *this, __int16 *a2)
 {
@@ -37634,8 +37255,6 @@ LABEL_47:
       __3_YAXPAX_Z(Block);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -78h
@@ -38030,7 +37649,6 @@ retn    4
 } }
 // 0x5A95B0
 namespace gamemd { void* PlaceRandomAIBuildings() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall PlaceRandomAIBuildings(_DWORD *this)
 {
@@ -38216,8 +37834,6 @@ LABEL_47:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+3Ch]
@@ -38547,7 +38163,6 @@ retn
 } }
 // 0x5A99B0
 namespace gamemd { void* Object_Helper_5A99B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5A99B0(_DWORD *this)
 {
@@ -38558,8 +38173,6 @@ _DWORD *__thiscall sub_5A99B0(_DWORD *this)
   *(this + 4) = -1;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -38582,7 +38195,6 @@ retn
 } }
 // 0x5AD930
 namespace gamemd { int Map_Helper_5AD930(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_Helper_5AD930(int this, int a2)
 {
@@ -38610,8 +38222,6 @@ char __thiscall Map_Helper_5AD930(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -38682,7 +38292,6 @@ retn    4
 } }
 // 0x5AD9F0
 namespace gamemd { void* Map_Cleanup(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Map_Cleanup(_DWORD *this, int a2, int a3)
 {
@@ -38703,8 +38312,6 @@ _DWORD *__thiscall Map_Cleanup(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -38743,7 +38350,6 @@ retn    8
 } }
 // 0x5B3910
 namespace gamemd { int LookupWaypointName() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LookupWaypointName(void *this)
 {
@@ -38763,8 +38369,6 @@ int __thiscall LookupWaypointName(void *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -38807,7 +38411,6 @@ retn
 } }
 // 0x5B6CD0
 namespace gamemd { int Surface_Lock() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5B6CD0(_DWORD *this)
 {
@@ -38837,8 +38440,6 @@ int __thiscall sub_5B6CD0(_DWORD *this)
   BYTE1(v7[7]) = v5;
   return Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v7, 250, 1);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0FCh
@@ -38900,7 +38501,6 @@ retn
 } }
 // 0x5B6EB0
 namespace gamemd { void UI_Setup(void* a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Setup(#44 *this, #72 *Format, unsigned int a3, int a4)
 {
@@ -38922,8 +38522,6 @@ void __thiscall UI_Setup(#44 *this, #72 *Format, unsigned int a3, int a4)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -200h
@@ -38981,7 +38579,6 @@ retn    0Ch
 } }
 // 0x5C1300
 namespace gamemd { int ReadMPMapsINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5C1300(char *Source)
 {
@@ -39046,8 +38643,6 @@ int __thiscall sub_5C1300(char *Source)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -20h
@@ -39164,7 +38759,6 @@ retn
 } }
 // 0x5C80A0
 namespace gamemd { int ComputeModularInverse(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ComputeModularInverse(int *this, _WORD *a2, int a3)
 {
@@ -39406,8 +39000,6 @@ LABEL_35:
   qmemcpy(this, &MEMORY[0xABF6BC], 4 * a3);
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -39738,7 +39330,6 @@ retn    8
 } }
 // 0x5CB790
 namespace gamemd { int TerritoryUpdateDisplayWOL(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
 {
@@ -39775,8 +39366,6 @@ unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
     *(this + 10) = --result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -39850,14 +39439,11 @@ retn    4
 } }
 // 0x5CC690
 namespace gamemd { void Map_Process_5CC690() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5CC690(_DWORD *this)
 {
   *(this + 16) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx+40h], 0
@@ -39866,7 +39452,6 @@ retn
 } }
 // 0x5CE4A0
 namespace gamemd { void* UI_Load(void* a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall UI_Load(_DWORD *this, const char **a2, int a3, char a4)
 {
@@ -39947,8 +39532,6 @@ _DWORD *__thiscall UI_Load(_DWORD *this, const char **a2, int a3, char a4)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 94h
@@ -40085,7 +39668,6 @@ retn    0Ch
 } }
 // 0x5CEDD0
 namespace gamemd { void* Map_Delete_5CEDD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_5CEDD0(char *this)
 {
@@ -40119,8 +39701,6 @@ char *__thiscall sub_5CEDD0(char *this)
   (*(void (__thiscall **)(char *))(*((_DWORD *)this + 11) + 12))(this + 44);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -40173,14 +39753,11 @@ retn
 } }
 // 0x5CF830
 namespace gamemd { int Network_Load(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CF830(void *this, char a2)
 {
   return (*(int (__thiscall **)(void *, char *))(*(_DWORD *)this + 16))(this, &a2);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -40192,7 +39769,6 @@ retn    4
 } }
 // 0x5D1C90
 namespace gamemd { int UI_Load_5D1C90(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Load_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int), int (__thiscall ***a3)(_DWORD, int))
 {
@@ -40243,8 +39819,6 @@ int __thiscall UI_Load_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int),
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+18h]
@@ -40364,7 +39938,6 @@ retn    8
 } }
 // 0x5D4430
 namespace gamemd { int SyncFrameCounter() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SyncFrameCounter(char *this)
 {
@@ -40440,8 +40013,6 @@ LABEL_13:
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -40559,7 +40130,6 @@ retn
 } }
 // 0x5D6D80
 namespace gamemd { int ComputeMultiEngineerAdjustment() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ComputeMultiEngineerAdjustment(int *this)
 {
@@ -40703,8 +40273,6 @@ LABEL_41:
       goto LABEL_42;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -40974,7 +40542,6 @@ retn
 } }
 // 0x5D9360
 namespace gamemd { void SmallFunc_5D9360() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5D9360(int *this)
 {
@@ -40996,8 +40563,6 @@ void __thiscall sub_5D9360(int *this)
   INIClass::WriteDigest(&MEMORY[0x8870C0], (int)v2, 0);
   RawFileClass::Dtor(v2);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -41034,7 +40599,6 @@ retn
 } }
 // 0x5DB600
 namespace gamemd { int PlayerSkirmishSlotHandler_Handle_5DB600() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DB600(void *this)
 {
@@ -41045,8 +40609,6 @@ int __thiscall sub_5DB600(void *this)
   wcscpy(&MEMORY[0xA8D667], (const #72 *)"\x04");
   return Network::SendMessage((int)MEMORY[0xA8E9C0], (int)&MEMORY[0xA8D638], 455, 1, (int)this + 40, 0, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, ecx
@@ -41074,7 +40636,6 @@ retn
 } }
 // 0x5DBEC0
 namespace gamemd { int SendMultiplayerStartSignal_Start() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DBEC0(char *this)
 {
@@ -41107,8 +40668,6 @@ int __thiscall sub_5DBEC0(char *this)
   else
     return *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v4) + 119);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -41181,7 +40740,6 @@ retn
 } }
 // 0x5E23D0
 namespace gamemd { int Network_Check(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5E23D0(_DWORD *this, int a2)
 {
@@ -41206,8 +40764,6 @@ char __thiscall sub_5E23D0(_DWORD *this, int a2)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+10h]
@@ -41242,7 +40798,6 @@ retn    4
 } }
 // 0x5E9340
 namespace gamemd { int Audio_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Audio_Helper(void *this)
 {
@@ -41296,8 +40851,6 @@ int __thiscall Audio_Helper(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B238h
@@ -41395,7 +40948,6 @@ retn
 } }
 // 0x5E93F0
 namespace gamemd { bool IsKnownPointer() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall IsKnownPointer(void *this)
 {
@@ -41408,8 +40960,6 @@ BOOL __thiscall IsKnownPointer(void *this)
       && this != (void *)dword_A8ED54[51477]
       && this != (void *)dword_A8ED54[51478];
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 test    ecx, ecx
@@ -41440,7 +40990,6 @@ retn
 } }
 // 0x5EAAD0
 namespace gamemd { int RefreshLobbyAll_Helper_5EAAD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAAD0(void *this)
 {
@@ -41460,8 +41009,6 @@ int __thiscall sub_5EAAD0(void *this)
     return 1752;
   return this != (void *)7 ? -1 : 1753;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -41524,7 +41071,6 @@ retn
 } }
 // 0x5EAB30
 namespace gamemd { int RefreshLobbyAll_Play_5EAB30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAB30(char *this)
 {
@@ -41570,8 +41116,6 @@ int __thiscall sub_5EAB30(char *this)
   while ( (int)v2 < (int)&MEMORY[0x87F7E8][536253] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -4
@@ -41670,7 +41214,6 @@ retn
 } }
 // 0x5EAC00
 namespace gamemd { int RefreshLobbyAll_Get_5EAC00() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAC00(char *this)
 {
@@ -41716,8 +41259,6 @@ int __thiscall sub_5EAC00(char *this)
   while ( (int)v2 < (int)&MEMORY[0x87F7E8][536261] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -4
@@ -41816,7 +41357,6 @@ retn
 } }
 // 0x5EACD0
 namespace gamemd { int RefreshLobbyAll_Get_5EACD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EACD0(char *this)
 {
@@ -41862,8 +41402,6 @@ int __thiscall sub_5EACD0(char *this)
   while ( (int)v2 < (int)&MEMORY[0x87F7E8][536269] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -4
@@ -41962,7 +41500,6 @@ retn
 } }
 // 0x5EADA0
 namespace gamemd { int RefreshLobbyAll_Get_5EADA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Get_5EADA0(void *this)
 {
@@ -42010,8 +41547,6 @@ char __thiscall RefreshLobbyAll_Get_5EADA0(void *this)
   while ( (int)v3 < (int)&MEMORY[0x87F7E8][536261] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -42090,7 +41625,6 @@ retn
 } }
 // 0x5EAE40
 namespace gamemd { bool RefreshLobbyAll_Setup() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Setup(void *this)
 {
@@ -42138,8 +41672,6 @@ char __thiscall RefreshLobbyAll_Setup(void *this)
   while ( (int)v3 < (int)&MEMORY[0x87F7E8][536269] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -42218,7 +41750,6 @@ retn
 } }
 // 0x5EAEE0
 namespace gamemd { void* RefreshLobbyAll_Play_5EAEE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Play_5EAEE0(void *this)
 {
@@ -42338,8 +41869,6 @@ LABEL_8:
   while ( (int)v12 < (int)&MEMORY[0x87F7E8][536253] );
   return (char)v1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr -4
@@ -42523,7 +42052,6 @@ retn
 } }
 // 0x5EE100
 namespace gamemd { bool Network_Send() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Network_Send(const char **this)
 {
@@ -42535,8 +42063,6 @@ BOOL __thiscall Network_Send(const char **this)
       || String::Equals_Alt(this, off_831718[0])
       || String::Equals_Alt(this, off_83171C);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, off_831704 ; "@Open@"
@@ -42596,7 +42122,6 @@ retn
 } }
 // 0x5EEF60
 namespace gamemd { void String_Process() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall String_Process(_DWORD *this)
 {
@@ -42654,8 +42179,6 @@ void __thiscall String_Process(_DWORD *this)
     __3_YAXPAX_Z(v3);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -42744,7 +42267,6 @@ retn
 } }
 // 0x5EF010
 namespace gamemd { void Map_Helper_5EF010() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_Helper_5EF010(_DWORD *this)
 {
@@ -42802,8 +42324,6 @@ void __thiscall Map_Helper_5EF010(_DWORD *this)
     __3_YAXPAX_Z(v3);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -42887,7 +42407,6 @@ retn
 } }
 // 0x5FD2E0
 namespace gamemd { int ReadOverlayINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadOverlayINI(_DWORD *this)
 {
@@ -43034,8 +42553,6 @@ int __thiscall ReadOverlayINI(_DWORD *this)
   }
   return ProcessExpiredPointers();
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 74h
@@ -43330,7 +42847,6 @@ retn
 } }
 // 0x60B350
 namespace gamemd { bool UI_Get_60B350() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B350(void *this)
 {
@@ -43371,8 +42887,6 @@ int __thiscall UI_Get_60B350(void *this)
   }
   return ((int (__stdcall *)(void *, int, int, int, int, _DWORD))MoveWindow)(v1, v6, v7, v4, v5, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr -24h
@@ -43464,7 +42978,6 @@ jmp     short loc_60B3E7
 } }
 // 0x60B420
 namespace gamemd { bool UI_Get_60B420() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B420(void *this)
 {
@@ -43526,8 +43039,6 @@ LABEL_9:
     v10 = *(_DWORD *)(dword_A8ED54[132021] + 4);
   return ((int (__stdcall *)(void *, int, int, int, int, _DWORD))MoveWindow)(this, v9, v10 - v6, v5, v6, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -20h
@@ -43662,7 +43173,6 @@ retn
 } }
 // 0x60B550
 namespace gamemd { bool UI_Get_60B550() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B550(void *this)
 {
@@ -43697,8 +43207,6 @@ int __thiscall UI_Get_60B550(void *this)
            v14 - v12,
            0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -20h
@@ -43784,7 +43292,6 @@ retn
 } }
 // 0x60B610
 namespace gamemd { bool UI_Get_60B610() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B610(void *this)
 {
@@ -43851,8 +43358,6 @@ LABEL_9:
            v6,
            0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -20h
@@ -43984,7 +43489,6 @@ jmp     short loc_60B6E1
 } }
 // 0x60B7A0
 namespace gamemd { int UI_Get_60B7A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Get_60B7A0(void *this)
 {
@@ -44052,8 +43556,6 @@ char __thiscall UI_Get_60B7A0(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -10h
@@ -44173,7 +43675,6 @@ retn
 } }
 // 0x60C7D0
 namespace gamemd { int UI_Helper_60C7D0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60C7D0(void *this)
 {
@@ -44223,8 +43724,6 @@ char __thiscall sub_60C7D0(void *this)
   v3[44] = 2;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -44325,7 +43824,6 @@ retn
 } }
 // 0x60C930
 namespace gamemd { int UI_Helper_60C930() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60C930(void *this)
 {
@@ -44361,8 +43859,6 @@ char __thiscall sub_60C930(void *this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -44438,7 +43934,6 @@ retn
 } }
 // 0x60CAF0
 namespace gamemd { int UI_Helper_60CAF0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CAF0(void *this)
 {
@@ -44482,8 +43977,6 @@ char __thiscall sub_60CAF0(void *this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -44565,7 +44058,6 @@ retn
 } }
 // 0x60CCC0
 namespace gamemd { int UI_Helper_60CCC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CCC0(void *this)
 {
@@ -44601,8 +44093,6 @@ char __thiscall sub_60CCC0(void *this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -44670,7 +44160,6 @@ retn
 } }
 // 0x60CDB0
 namespace gamemd { int UI_Helper_60CDB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CDB0(void *this)
 {
@@ -44706,8 +44195,6 @@ char __thiscall sub_60CDB0(void *this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -44775,7 +44262,6 @@ retn
 } }
 // 0x623E00
 namespace gamemd { int Memory_Pop() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Memory_Pop(void *this)
 {
@@ -44792,8 +44278,6 @@ int __thiscall Memory_Pop(void *this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -44832,7 +44316,6 @@ retn
 } }
 // 0x625C00
 namespace gamemd { void* Event_Process_625C00(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #122 *__thiscall Event_Process_625C00(int this, #247 *a2)
 {
@@ -44895,8 +44378,6 @@ namespace gamemd { void* Event_Process_625C00(void* a1) {
   while ( v9 );
   return (#122 *)v18;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -45018,7 +44499,6 @@ retn    4
 } }
 // 0x626120
 namespace gamemd { int Render_Helper(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_626120(unsigned __int8 *this, unsigned __int8 a2, int a3)
 {
@@ -45032,8 +44512,6 @@ unsigned __int8 __thiscall sub_626120(unsigned __int8 *this, unsigned __int8 a2,
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -45073,7 +44551,6 @@ retn    8
 } }
 // 0x62C6E0
 namespace gamemd { void UpdateParticleSystem() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParticleClass::Update(void *this)
 {
@@ -45262,8 +44739,6 @@ LABEL_31:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 124h
@@ -45619,7 +45094,6 @@ retn
 } }
 // 0x62CB10
 namespace gamemd { void UpdateAreaDamageEffect() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateAreaDamageEffect(unsigned __int16 *this)
 {
@@ -45759,8 +45233,6 @@ LABEL_16:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -46021,7 +45493,6 @@ retn
 } }
 // 0x62E430
 namespace gamemd { int CreateFireAtSW(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateFireAtSW(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -46055,8 +45526,6 @@ int __thiscall CreateFireAtSW(_DWORD *this, int a2, _DWORD *a3)
   }
   return v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -46127,7 +45596,6 @@ retn    8
 } }
 // 0x62E840
 namespace gamemd { int UpdateProductionParticleSystem() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateProductionParticleSystem(int this)
 {
@@ -46383,8 +45851,6 @@ LABEL_34:
   }
   return v38;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -46812,7 +46278,6 @@ retn
 } }
 // 0x62ED40
 namespace gamemd { void UpdateBuildingParticleSystem() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateBuildingParticleSystem(_DWORD *this)
 {
@@ -47048,8 +46513,6 @@ LABEL_30:
   if ( v44 > *(float *)(v43 + 684) )
     *((_BYTE *)this + 248) = 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 44h
@@ -47464,7 +46927,6 @@ retn
 } }
 // 0x62F9A0
 namespace gamemd { int UpdateBuildingDamageParticles() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateBuildingDamageParticles(char *this)
 {
@@ -47630,8 +47092,6 @@ LABEL_13:
   }
   return v22;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -47945,7 +47405,6 @@ retn
 } }
 // 0x630EA0
 namespace gamemd { int UI_Get_630EA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Get_630EA0(char *this)
 {
@@ -48014,8 +47473,6 @@ LABEL_17:
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -48217,7 +47674,6 @@ retn
 } }
 // 0x631380
 namespace gamemd { void* UI_Pop() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall UI_Pop(#44 *this)
 {
@@ -48303,8 +47759,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 dwNewLong       = byte ptr -7Ch
@@ -48464,7 +47918,6 @@ retn
 } }
 // 0x631500
 namespace gamemd { void UI_Pop_631500() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Pop_631500(#44 *this)
 {
@@ -48528,8 +47981,6 @@ LABEL_10:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -84h
@@ -48655,7 +48106,6 @@ retn
 } }
 // 0x6316E0
 namespace gamemd { bool UI_Pop_631500_Pop() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall UI_Pop_631500_Pop(int this, int a2)
 {
@@ -48684,8 +48134,6 @@ bool __thiscall UI_Pop_631500_Pop(int this, int a2)
   }
   return *(_DWORD *)(this + 4) == 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -48748,7 +48196,6 @@ retn    4
 } }
 // 0x6319C0
 namespace gamemd { void Network_Set() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Network_Set(_DWORD *this)
 {
@@ -48793,8 +48240,6 @@ void __thiscall Network_Set(_DWORD *this)
   }
   Debug::Log();
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -48930,7 +48375,6 @@ retn
 } }
 // 0x631B20
 namespace gamemd { int UI_Pop_631500_Pop_Pop() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Pop_631500_Pop_Pop(_DWORD *this)
 {
@@ -48964,8 +48408,6 @@ int __thiscall UI_Pop_631500_Pop_Pop(_DWORD *this)
     return ((int (__stdcall *)(int, int, bool, _DWORD))SendMessageA)(result, 241, v7 == 0, 0);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -49068,7 +48510,6 @@ retn
 } }
 // 0x632000
 namespace gamemd { int System_Init_632000(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_632000(_DWORD *this, _BYTE *a2)
 {
@@ -49079,8 +48520,6 @@ int __thiscall sub_632000(_DWORD *this, _BYTE *a2)
   *(this + 128) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -49099,14 +48538,11 @@ retn    4
 } }
 // 0x632030
 namespace gamemd { int System_Init_632030(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_632030(void *this, _BYTE *a2)
 {
   return DecodeLengthLCW((int)this + 256, a2, 64);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -49118,7 +48554,6 @@ retn    4
 } }
 // 0x633AC0
 namespace gamemd { void* ExecuteActionPlanManager_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_633AC0(_DWORD *this)
 {
@@ -49127,8 +48562,6 @@ _DWORD *__thiscall sub_633AC0(_DWORD *this)
   *(this + 29) = -1;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -49140,7 +48573,6 @@ retn
 } }
 // 0x6342E0
 namespace gamemd { int Team_Helper_6342E0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6342E0(_DWORD *this, int a2, int a3)
 {
@@ -49153,8 +48585,6 @@ int __thiscall sub_6342E0(_DWORD *this, int a2, int a3)
   *(_BYTE *)(a2 + 110) = v4[2];
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+4]
@@ -49176,7 +48606,6 @@ retn    8
 } }
 // 0x6345A0
 namespace gamemd { void* Render_Render_6345A0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6345A0(_DWORD **this, _DWORD *a2)
 {
@@ -49199,8 +48628,6 @@ _DWORD *__thiscall sub_6345A0(_DWORD **this, _DWORD *a2)
   a2[3] = 8;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -49250,7 +48677,6 @@ retn    4
 } }
 // 0x634770
 namespace gamemd { int Render_Render_634770() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634770(int *this)
 {
@@ -49269,8 +48695,6 @@ int __thiscall sub_634770(int *this)
   }
   return **(_DWORD **)i;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -49307,7 +48731,6 @@ retn
 } }
 // 0x634970
 namespace gamemd { int Helper_634970() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634970(int this)
 {
@@ -49323,8 +48746,6 @@ int __thiscall sub_634970(int this)
   *(_BYTE *)(this + 28) = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -49359,7 +48780,6 @@ retn
 } }
 // 0x635490
 namespace gamemd { int Render_Render_635490(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_635490(_DWORD *this, int a2)
 {
@@ -49396,8 +48816,6 @@ int __thiscall sub_635490(_DWORD *this, int a2)
            v11,
            a2);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 44h
@@ -49466,7 +48884,6 @@ retn    4
 } }
 // 0x636EB0
 namespace gamemd { int ExecuteActionPlanManager_Helper_636EB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_636EB0(_DWORD *this)
 {
@@ -49478,8 +48895,6 @@ int __thiscall sub_636EB0(_DWORD *this)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+14h]
@@ -49497,7 +48912,6 @@ retn
 } }
 // 0x637D00
 namespace gamemd { int UI_Delete_Delete() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_637D00(_DWORD **this)
 {
@@ -49574,8 +48988,6 @@ char __thiscall sub_637D00(_DWORD **this)
   }
   return (char)v3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+4]
@@ -49649,7 +49061,6 @@ retn
 } }
 // 0x638C40
 namespace gamemd { bool ExecuteActionPlanManager_Helper_638C40(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_638C40(void *this, int a2, char a3)
 {
@@ -49659,8 +49070,6 @@ bool __thiscall sub_638C40(void *this, int a2, char a3)
     return 1;
   return this == (void *)11 && !a3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 cmp     ecx, 1
@@ -49693,7 +49102,6 @@ retn    8
 } }
 // 0x63B050
 namespace gamemd { void* Team_Load_63B050() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_63B050(_BYTE *this)
 {
@@ -49708,8 +49116,6 @@ void *__thiscall sub_63B050(_BYTE *this)
     return BuildingLoadQueue::GetNext(this + 19);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dl, [ecx+12h]
@@ -49742,7 +49148,6 @@ retn
 } }
 // 0x63C690
 namespace gamemd { int RenderScenarioActionLines() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScenarioActionLines(int this)
 {
@@ -49944,8 +49349,6 @@ LABEL_17:
   }
   return ScenarioClass::RenderAction((_DWORD *)this, (int)v32);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 120h
@@ -50291,7 +49694,6 @@ jmp     loc_63C81C
 } }
 // 0x63CAE0
 namespace gamemd { int RenderScenarioActionLines2() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScenarioActionLines2(int this)
 {
@@ -50464,8 +49866,6 @@ LABEL_17:
   DrawColor = BuildingClass::GetDrawColor(this);
   return ((_DWORD (__stdcall *)(int))Render_Render_635490)(DrawColor);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0D8h
@@ -50786,7 +50186,6 @@ jmp     loc_63CC6A
 } }
 // 0x63D0F0
 namespace gamemd { int Render_Render_63D0F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63D0F0(_BYTE *this)
 {
@@ -50826,8 +50225,6 @@ int __thiscall sub_63D0F0(_BYTE *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -50952,7 +50349,6 @@ retn
 } }
 // 0x63D480
 namespace gamemd { int DrawActionLineSegment(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DrawActionLineSegment(void *this, int a2, int a3)
 {
@@ -50977,8 +50373,6 @@ int __thiscall DrawActionLineSegment(void *this, int a2, int a3)
            v7,
            this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -51027,7 +50421,6 @@ retn    8
 } }
 // 0x63DAD0
 namespace gamemd { int PackRGBFromBytes() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PackRGBFromBytes(unsigned __int8 *this)
 {
@@ -51035,8 +50428,6 @@ int __thiscall PackRGBFromBytes(unsigned __int8 *this)
        | (*(this + 1) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
        | (*(this + 2) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, ecx
@@ -51069,7 +50460,6 @@ retn
 } }
 // 0x63DB20
 namespace gamemd { bool HandlePlanningModeClick_Handle() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall HandlePlanningModeClick_Handle(_DWORD *this, _DWORD *a2)
 {
@@ -51087,8 +50477,6 @@ BOOL __thiscall HandlePlanningModeClick_Handle(_DWORD *this, _DWORD *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx]
@@ -51125,7 +50513,6 @@ retn    4
 } }
 // 0x63DEC0
 namespace gamemd { void* ExecuteActionPlanManager_Helper_63DEC0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ExecuteActionPlanManager_Helper_63DEC0(_DWORD *this, int a2, int a3)
 {
@@ -51151,8 +50538,6 @@ _DWORD *__thiscall ExecuteActionPlanManager_Helper_63DEC0(_DWORD *this, int a2, 
   *(this + 4) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -51192,7 +50577,6 @@ retn    8
 } }
 // 0x63E1D0
 namespace gamemd { void* ExecuteActionPlanManager_Helper_63E1D0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ExecuteActionPlanManager_Helper_63E1D0(_DWORD *this, int a2, int a3)
 {
@@ -51218,8 +50602,6 @@ _DWORD *__thiscall ExecuteActionPlanManager_Helper_63E1D0(_DWORD *this, int a2, 
   *(this + 4) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -51259,7 +50641,6 @@ retn    8
 } }
 // 0x63E5D0
 namespace gamemd { int Team_Destroy(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_63E5D0(int *this, int a2)
 {
@@ -51278,8 +50659,6 @@ char __thiscall sub_63E5D0(int *this, int a2)
     ++v3;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -51323,7 +50702,6 @@ retn    4
 } }
 // 0x63EFB0
 namespace gamemd { void* Object_Set(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Object_Set(_DWORD *this, int a2, int a3)
 {
@@ -51344,8 +50722,6 @@ _DWORD *__thiscall Object_Set(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -51384,7 +50760,6 @@ retn    8
 } }
 // 0x641B00
 namespace gamemd { int LoadMapPreviewImage(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadMapPreviewImage(char **this, int *a2)
 {
@@ -51508,8 +50883,6 @@ LABEL_12:
   Straw::Dtor(v22);
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 5Ch
@@ -51757,7 +51130,6 @@ retn    4
 } }
 // 0x643720
 namespace gamemd { int RenderBuildingProductionButton(int a1, int a2, void* a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderBuildingProductionButton(int this, int a2, int a3, int *a4, int a5, char a6)
 {
@@ -51930,8 +51302,6 @@ int __thiscall RenderBuildingProductionButton(int this, int a2, int a3, int *a4,
   }
   return UI_Render_643670(v35, v36, a3, a2, *a4 - v35 + v32 - 3);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 4Ch
@@ -52281,7 +51651,6 @@ retn    14h
 } }
 // 0x645BB0
 namespace gamemd { int GetSuperWeaponTypeFlag() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GetSuperWeaponTypeFlag(void *this)
 {
@@ -52322,8 +51691,6 @@ int __thiscall GetSuperWeaponTypeFlag(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lea     eax, [ecx-1]    ; switch 11 cases
@@ -52395,7 +51762,6 @@ retn
 } }
 // 0x64A7B0
 namespace gamemd { int RenderPlayerLatencyBars() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderPlayerLatencyBars(void *this)
 {
@@ -52503,8 +51869,6 @@ int __thiscall RenderPlayerLatencyBars(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr -64h
@@ -52767,7 +52131,6 @@ retn
 } }
 // 0x652540
 namespace gamemd { int Network_Process_652540() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_652540(_DWORD *this)
 {
@@ -52781,8 +52144,6 @@ int __thiscall sub_652540(_DWORD *this)
   }
   return *this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -52802,7 +52163,6 @@ retn
 } }
 // 0x652560
 namespace gamemd { int Network_Process_652560(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_652560(_DWORD *this, int a2)
 {
@@ -52827,8 +52187,6 @@ char __thiscall sub_652560(_DWORD *this, int a2)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+10h]
@@ -52863,7 +52221,6 @@ retn    4
 } }
 // 0x6525A0
 namespace gamemd { int Network_Process_6525A0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Network_Process_6525A0(int this, int a2)
 {
@@ -52891,8 +52248,6 @@ char __thiscall Network_Process_6525A0(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -52963,7 +52318,6 @@ retn    4
 } }
 // 0x6547C0
 namespace gamemd { void* GenerateImageThumbnail(void* a1, void* a2, void* a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
 {
@@ -53356,8 +52710,6 @@ int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, c
   a2[3] = v27 - v77;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -53969,7 +53321,6 @@ jmp     loc_654CFC
 } }
 // 0x6550C0
 namespace gamemd { void* Team_Load_6550C0(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6550C0(int this, _DWORD *a2, __int16 *a3)
 {
@@ -53992,8 +53343,6 @@ _DWORD *__thiscall sub_6550C0(int this, _DWORD *a2, __int16 *a3)
   a2[3] = 1;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -54050,7 +53399,6 @@ retn    8
 } }
 // 0x659510
 namespace gamemd { int SpreadRadiationAreaEffect_Helper(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659510(_DWORD *this, int a2, int a3)
 {
@@ -54058,8 +53406,6 @@ int __thiscall sub_659510(_DWORD *this, int a2, int a3)
   *(this + 19) = a3;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -54071,15 +53417,12 @@ retn    8
 } }
 // 0x659530
 namespace gamemd { int SpreadRadiationAreaEffect_Helper_659530(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659530(_DWORD *this, int a2)
 {
   *(this + 20) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -54089,7 +53432,6 @@ retn    4
 } }
 // 0x659650
 namespace gamemd { bool RenderProjectileTrail() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall RenderProjectileTrail(int this)
 {
@@ -54255,8 +53597,6 @@ bool __thiscall RenderProjectileTrail(int this)
     return v27 >= v26;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -54578,7 +53918,6 @@ retn
 } }
 // 0x659E30
 namespace gamemd { int Weapon_Update_Update() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659E30(int this)
 {
@@ -54624,8 +53963,6 @@ int __thiscall sub_659E30(int this)
   v12[2] = v10;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -54703,7 +54040,6 @@ retn
 } }
 // 0x659EE0
 namespace gamemd { int Weapon_Update_Update_659EE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659EE0(int this)
 {
@@ -54761,8 +54097,6 @@ int __thiscall sub_659EE0(int this)
   v15[2] = v13;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -54877,7 +54211,6 @@ retn
 } }
 // 0x659FF0
 namespace gamemd { int Weapon_Update_Update_659FF0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_659FF0(int this)
 {
@@ -54922,8 +54255,6 @@ __int64 __thiscall sub_659FF0(int this)
   *(_BYTE *)(this + 194) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -55050,7 +54381,6 @@ retn
 } }
 // 0x65A1B0
 namespace gamemd { void* Render_Render_65A1B0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_65A1B0(int *this, int a2)
 {
@@ -55062,8 +54392,6 @@ int *__thiscall sub_65A1B0(int *this, int a2)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -55091,7 +54419,6 @@ retn    4
 } }
 // 0x65A7E0
 namespace gamemd { void* Helper_65A7E0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_65A7E0(_DWORD *this, int a2)
 {
@@ -55103,8 +54430,6 @@ _DWORD *__thiscall sub_65A7E0(_DWORD *this, int a2)
   *(this + 3) = &RadioClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -55124,7 +54449,6 @@ retn    4
 } }
 // 0x65C250
 namespace gamemd { void* WinMain_Helper_65C250(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall WinMain_Helper_65C250(_BYTE *this, int a2, int Size)
 {
@@ -55144,8 +54468,6 @@ _BYTE *__thiscall WinMain_Helper_65C250(_BYTE *this, int a2, int Size)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Size            = dword ptr  8
@@ -55183,7 +54505,6 @@ retn    8
 } }
 // 0x65C2A0
 namespace gamemd { void WinMain_Helper_65C2A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_65C2A0(void *this)
 {
@@ -55200,8 +54521,6 @@ void __thiscall sub_65C2A0(void *this)
   }
   *(_DWORD *)this = &FileClass::`vftable';
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -55226,7 +54545,6 @@ retn
 } }
 // 0x65C6D0
 namespace gamemd { void* SeedInitRNG(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall RNG_SeedInit(_DWORD *this, int a2)
 {
@@ -55273,8 +54591,6 @@ _DWORD *__thiscall RNG_SeedInit(_DWORD *this, int a2)
   *(_BYTE *)this = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -55349,7 +54665,6 @@ retn    4
 } }
 // 0x65DD30
 namespace gamemd { void* ConstructTeamMembers() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructTeamMembers(int this)
 {
@@ -55537,8 +54852,6 @@ LABEL_50:
     (*(void (__thiscall **)(_DWORD *, int))(*v5 + 32))(v5, 1);
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -55842,7 +55155,6 @@ retn
 } }
 // 0x65FB80
 namespace gamemd { void* Team_Load_65FB80(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_65FB80(_DWORD *this, int a2, int a3)
 {
@@ -55943,8 +55255,6 @@ _DWORD *__thiscall sub_65FB80(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -56098,7 +55408,6 @@ retn    8
 } }
 // 0x65FE00
 namespace gamemd { void Map_Helper_65FE00() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_65FE00(_BYTE *this)
 {
@@ -56192,8 +55501,6 @@ LABEL_8:
     *((_DWORD *)this + 6) = 1065353216;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -56385,7 +55692,6 @@ retn
 } }
 // 0x660050
 namespace gamemd { int RenderGradientTrapezoid() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RenderGradientTrapezoid(float *this)
 {
@@ -56584,8 +55890,6 @@ LABEL_12:
   }
   return (char)v13;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 rcDst           = xmmword ptr -70h
@@ -56914,7 +56218,6 @@ retn
 } }
 // 0x660540
 namespace gamemd { int Map_Helper_660540() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660540(int this)
 {
@@ -57066,8 +56369,6 @@ int __thiscall sub_660540(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 68h
@@ -57265,7 +56566,6 @@ retn
 } }
 // 0x660730
 namespace gamemd { int Render_Render_660730(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660730(float *this, _DWORD *a2)
 {
@@ -57301,8 +56601,6 @@ int __thiscall sub_660730(float *this, _DWORD *a2)
   a2[5] = -result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 48h
@@ -57353,7 +56651,6 @@ retn    4
 } }
 // 0x660BB0
 namespace gamemd { void* UI_Create_734120_Create() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_660BB0(int *this)
 {
@@ -57373,8 +56670,6 @@ int *__thiscall sub_660BB0(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -57395,7 +56690,6 @@ retn
 } }
 // 0x660BE0
 namespace gamemd { void* UI_Create_734120_Create_660BE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_660BE0(int *this)
 {
@@ -57427,8 +56721,6 @@ int *__thiscall sub_660BE0(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, dword_A8ED54+76034h
@@ -57474,7 +56766,6 @@ retn
 } }
 // 0x661770
 namespace gamemd { void* SHA1TickRNG(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall SHA1TickRNG(_DWORD *this, char a2)
 {
@@ -57524,8 +56815,6 @@ void *__thiscall SHA1TickRNG(_DWORD *this, char a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = byte ptr -88h
@@ -57617,7 +56906,6 @@ retn    4
 } }
 // 0x6686C0
 namespace gamemd { int ResetRules() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RulesClass::Reset(#381 *this)
 {
@@ -57882,8 +57170,6 @@ LABEL_99:
   v25[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v25);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0D0h
@@ -58463,7 +57749,6 @@ retn    4
 } }
 // 0x66B900
 namespace gamemd { int ReadCrateRulesINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadCrateRulesINI(#381 *this)
 {
@@ -58619,8 +57904,6 @@ int __thiscall ReadCrateRulesINI(#381 *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -80h
@@ -58842,7 +58125,6 @@ retn    4
 } }
 // 0x672230
 namespace gamemd { int ReadMaximumPlayersINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadMaximumPlayersINI(#381 *this)
 {
@@ -58858,8 +58140,6 @@ int __thiscall ReadMaximumPlayersINI(#381 *this)
   LOBYTE(result) = 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:off_7F0CA4 ; "Maximums"
@@ -58892,7 +58172,6 @@ retn    4
 } }
 // 0x672840
 namespace gamemd { int ReadBuildingTypesBuildingTypeClass() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_672840(#381 *this)
 {
@@ -58919,8 +58198,6 @@ int __thiscall sub_672840(#381 *this)
   }
   return KeyCount > 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -20h
@@ -58978,7 +58255,6 @@ retn    4
 } }
 // 0x678850
 namespace gamemd { int InitInterfaceStubsCOM() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitInterfaceStubsCOM(#381 *this)
 {
@@ -60179,8 +59455,6 @@ int __thiscall InitInterfaceStubsCOM(#381 *this)
     LOBYTE(result) = DynamicVector::RemoveAt(p_DominatorFirstAnim, result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -62049,7 +61323,6 @@ retn    8
 } }
 // 0x67BFA0
 namespace gamemd { void* System_Load_67BFA0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall System_Load_67BFA0(_DWORD *this, _DWORD *a2)
 {
@@ -62086,8 +61359,6 @@ _DWORD *__thiscall System_Load_67BFA0(_DWORD *this, _DWORD *a2)
   while ( v6 < *(this + 2) );
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -62144,15 +61415,12 @@ retn    4
 } }
 // 0x681060
 namespace gamemd { int Map_Save(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681060(_DWORD *this, int a2)
 {
   *(this + 1) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62162,15 +61430,12 @@ retn    4
 } }
 // 0x681080
 namespace gamemd { int Map_Save_681080(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681080(_DWORD *this, int a2)
 {
   *this = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62180,15 +61445,12 @@ retn    4
 } }
 // 0x6810A0
 namespace gamemd { void* Map_Save_6810A0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall Map_Save_6810A0(#72 *this, #72 *Source)
 {
   *((_WORD *)this + 131) = 0;
   return (#72 *)wcsncpy((#72 *)((char *)this + 8), Source, 127);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -62206,15 +61468,12 @@ retn    4
 } }
 // 0x6810D0
 namespace gamemd { void* Map_Save_6810D0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall Map_Save_6810D0(#72 *this, #72 *Source)
 {
   *((_WORD *)this + 195) = 0;
   return (#72 *)wcsncpy((#72 *)((char *)this + 264), Source, 63);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -62232,15 +61491,12 @@ retn    4
 } }
 // 0x681110
 namespace gamemd { int Map_Save_681110(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681110(_DWORD *this, int a2)
 {
   *(this + 98) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62250,15 +61506,12 @@ retn    4
 } }
 // 0x681130
 namespace gamemd { int Map_Save_681130(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681130(_DWORD *this, int a2)
 {
   *(this + 99) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62268,15 +61521,12 @@ retn    4
 } }
 // 0x6811C0
 namespace gamemd { void* Map_Save_6811C0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall Map_Save_6811C0(char *this, char *Source)
 {
   *(this + 983) = 0;
   return (char *)strncpy(this + 724, Source, 259);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -62294,7 +61544,6 @@ retn    4
 } }
 // 0x681200
 namespace gamemd { int Map_Save_681200(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
@@ -62305,8 +61554,6 @@ int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
   *(this + 247) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62319,7 +61566,6 @@ retn    4
 } }
 // 0x681240
 namespace gamemd { int Map_Save_681240(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 {
@@ -62330,8 +61576,6 @@ int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
   *(this + 249) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62344,7 +61588,6 @@ retn    4
 } }
 // 0x681280
 namespace gamemd { int Map_Save_681280(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 {
@@ -62355,8 +61598,6 @@ int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
   *(this + 251) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62369,15 +61610,12 @@ retn    4
 } }
 // 0x6812C0
 namespace gamemd { int Map_Save_6812C0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6812C0(_DWORD *this, int a2)
 {
   *(this + 252) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -62387,7 +61625,6 @@ retn    4
 } }
 // 0x681840
 namespace gamemd { int ScenarioPropertyReadCOM(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScenarioPropertyReadCOM(int this, int (__stdcall ***a2)(int, void *, int *))
 {
@@ -62777,8 +62014,6 @@ LABEL_91:
     (*(void (__stdcall **)(int))(*(_DWORD *)v33 + 8))(v33);
   return v22;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 MultiByteStr    = OMOTestDerived ptr -300h
@@ -63770,7 +63005,6 @@ retn    4
 } }
 // 0x683050
 namespace gamemd { int Map_Read_683050() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_683050(int *this)
 {
@@ -63781,8 +63015,6 @@ int __thiscall sub_683050(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -63798,7 +63030,6 @@ retn
 } }
 // 0x683060
 namespace gamemd { int ReleaseCOM() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COM_Release(int *this)
 {
@@ -63809,8 +63040,6 @@ int __thiscall COM_Release(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -63826,7 +63055,6 @@ retn
 } }
 // 0x68C260
 namespace gamemd { int DynamicVector_PushBack(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_68C260(_DWORD *this, _DWORD *a2)
 {
@@ -63850,8 +63078,6 @@ char __thiscall sub_68C260(_DWORD *this, _DWORD *a2)
   *(_DWORD *)(v7 + 4 * v6) = *a2;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -63902,7 +63128,6 @@ retn    4
 } }
 // 0x68C860
 namespace gamemd { int LoadTheaterClassMIX_Load(void* a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_68C860(int this, const void *a2, int a3, int a4, int a5, int a6)
 {
@@ -63929,8 +63154,6 @@ int __thiscall sub_68C860(int this, const void *a2, int a3, int a4, int a5, int 
   *(_DWORD *)(this + 780) = result;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -63969,7 +63192,6 @@ retn    14h
 } }
 // 0x68FBB0
 namespace gamemd { int RenderScoreTypeText(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScoreTypeText(int this, int a2, int a3, int a4)
 {
@@ -64222,8 +63444,6 @@ LABEL_46:
   while ( v34 != 13 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 3Ch
@@ -64635,7 +63855,6 @@ retn    0Ch
 } }
 // 0x68FFE0
 namespace gamemd { int Render_Render_68FFE0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 signed int __thiscall Render_Render_68FFE0(_DWORD *this, int a2, int a3)
 {
@@ -64724,8 +63943,6 @@ LABEL_12:
   dword_A8ED54[121335] = 5;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, byte ptr dword_A8ED54+7679Ch
@@ -64852,15 +64069,12 @@ retn    8
 } }
 // 0x691590
 namespace gamemd { int SetLandTypeMap() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_SetLandType(_DWORD *this)
 {
   *(this + 11) = -1;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx+2Ch], 0FFFFFFFFh
@@ -64870,7 +64084,6 @@ retn
 } }
 // 0x692290
 namespace gamemd { int SmallFunc_692290() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_692290(int this)
 {
@@ -64886,8 +64099,6 @@ int __thiscall sub_692290(int this)
   *(_DWORD *)(this + 21784) = &ScrollClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -64910,7 +64121,6 @@ retn
 } }
 // 0x693440
 namespace gamemd { int ScrollMapEdge(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ScrollMapEdge(int *this, _DWORD *a2)
 {
@@ -65118,8 +64328,6 @@ LABEL_51:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Point           = qword ptr -14h
@@ -65556,7 +64764,6 @@ retn    4
 } }
 // 0x695BC0
 namespace gamemd { int ApplyModemConfigSettings() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ApplyModemConfigSettings(_DWORD *this)
 {
@@ -65713,8 +64920,6 @@ LABEL_10:
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -66107,7 +65312,6 @@ retn
 } }
 // 0x696200
 namespace gamemd { int InitializeModemPortSelect() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeModemPortSelect(char *this)
 {
@@ -66242,8 +65446,6 @@ LABEL_25:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lParam          = dword ptr -204h
@@ -66530,7 +65732,6 @@ retn
 } }
 // 0x6967B0
 namespace gamemd { int DlgProcLoadGame_Load() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load(_DWORD *this)
 {
@@ -66612,8 +65813,6 @@ LABEL_9:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -66796,7 +65995,6 @@ retn
 } }
 // 0x696AE0
 namespace gamemd { int DlgProcLoadGame_Load_696AE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load_696AE0(_DWORD *this)
 {
@@ -66853,8 +66051,6 @@ int __thiscall DlgProcLoadGame_Load_696AE0(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -66997,7 +66193,6 @@ retn
 } }
 // 0x696C40
 namespace gamemd { int DlgProcLoadGame_Load_696C40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load_696C40(_DWORD *this)
 {
@@ -67041,8 +66236,6 @@ int __thiscall DlgProcLoadGame_Load_696C40(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -67131,7 +66324,6 @@ retn
 } }
 // 0x697F10
 namespace gamemd { int ReadGameSettingsINI(void* a1, int a2, void* a3, void* a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GameSetup_ReadINI(_DWORD *this, _DWORD *a2, int a3, _DWORD *a4, _DWORD *a5)
 {
@@ -67181,8 +66373,6 @@ int __thiscall GameSetup_ReadINI(_DWORD *this, _DWORD *a2, int a3, _DWORD *a4, _
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -10h
@@ -67336,7 +66526,6 @@ retn    10h
 } }
 // 0x6990A0
 namespace gamemd { void SaveConfigWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SaveConfigWOL(int this)
 {
@@ -67502,8 +66691,6 @@ void __thiscall SaveConfigWOL(int this)
   INIClass::WriteDigest((char *)&MEMORY[0x87F7E8][7734], (int)v8, 0);
   RawFileClass::Dtor(v8);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = OMOTestDerived ptr -80h
@@ -67773,7 +66960,6 @@ retn
 } }
 // 0x69B170
 namespace gamemd { void ParseAndApplyAlliances() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParseAndApplyAlliances(_BYTE *this)
 {
@@ -67971,8 +67157,6 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -2Ch
@@ -68386,7 +67570,6 @@ retn
 } }
 // 0x69BBF0
 namespace gamemd { void Network_Disconnect_69BBF0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_69BBF0(char *this, int a2)
 {
@@ -68406,8 +67589,6 @@ void __thiscall sub_69BBF0(char *this, int a2)
     while ( v3 );
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -68430,7 +67611,6 @@ retn    4
 } }
 // 0x69D870
 namespace gamemd { void* ParseAndApplyAlliances_Parse(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ParseAndApplyAlliances_Parse(_DWORD *this, int a2, int a3)
 {
@@ -68451,8 +67631,6 @@ _DWORD *__thiscall ParseAndApplyAlliances_Parse(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -68491,7 +67669,6 @@ retn    8
 } }
 // 0x69E430
 namespace gamemd { void* LoadSHPFile(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LoadSHPFile(int lpBuffer, char *Source)
 {
@@ -68526,8 +67703,6 @@ int __thiscall LoadSHPFile(int lpBuffer, char *Source)
   BufferIOFileClass::Dtor(v5);
   return lpBuffer;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -68599,7 +67774,6 @@ retn    4
 } }
 // 0x69E900
 namespace gamemd { int Helper_69E900(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_69E900(char **this, unsigned int a2)
 {
@@ -68614,8 +67788,6 @@ char __thiscall sub_69E900(char **this, unsigned int a2)
     LOBYTE(v4) = 0;
   return v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 call    MixFileClass__LoadSubFile
@@ -68643,7 +67815,6 @@ retn    4
 } }
 // 0x6A4F20
 namespace gamemd { int UI_Init(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Init(int this, int a2)
 {
@@ -68688,8 +67859,6 @@ int __thiscall UI_Init(int this, int a2)
   *(_DWORD *)this = &SidebarClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -68762,7 +67931,6 @@ retn    4
 } }
 // 0x6A94F0
 namespace gamemd { int SmallFunc_6A94F0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6A94F0(_DWORD *this, int a2)
 {
@@ -68782,8 +67950,6 @@ int __thiscall sub_6A94F0(_DWORD *this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -68823,7 +67989,6 @@ retn    4
 } }
 // 0x6AC840
 namespace gamemd { void* System_Init_6AC840(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6AC840(char *this, int a2)
 {
@@ -68834,8 +67999,6 @@ char *__thiscall sub_6AC840(char *this, int a2)
   *(_DWORD *)this = &DisplayClass::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -68855,7 +68018,6 @@ retn    4
 } }
 // 0x6AC8D0
 namespace gamemd { void* System_Init_6AC8D0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall System_Init_6AC8D0(_DWORD *this, int a2, int a3)
 {
@@ -68886,8 +68048,6 @@ _DWORD *__thiscall System_Init_6AC8D0(_DWORD *this, int a2, int a3)
   *(this + 4) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -68942,7 +68102,6 @@ retn    8
 } }
 // 0x6B0490
 namespace gamemd { void* Event_Process_6B0490() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_6B0490(_DWORD *this)
 {
@@ -68962,8 +68121,6 @@ int *__thiscall sub_6B0490(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -68998,7 +68155,6 @@ retn
 } }
 // 0x6B2520
 namespace gamemd { int System_Init_6B2520() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6B2520(int *this)
 {
@@ -69031,8 +68187,6 @@ char __thiscall sub_6B2520(int *this)
   else
     return *(_BYTE *)(*((_DWORD *)MEMORY[0xA8ED2C] + v4) + 736);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -69109,7 +68263,6 @@ retn
 } }
 // 0x6B4100
 namespace gamemd { int Map_Get_6B4100() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B4100(int *this)
 {
@@ -69179,8 +68332,6 @@ int __thiscall sub_6B4100(int *this)
   }
   return *((char *)v13 + 283);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -69303,7 +68454,6 @@ retn
 } }
 // 0x6B5440
 namespace gamemd { int Object_Read_6B5440() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B5440(void *this)
 {
@@ -69321,8 +68471,6 @@ int __thiscall sub_6B5440(void *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -69367,7 +68515,6 @@ retn
 } }
 // 0x6B8AF0
 namespace gamemd { bool ApplyGameOptions_Helper(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_6B8AF0(_DWORD *this, _DWORD *a2)
 {
@@ -69376,8 +68523,6 @@ bool __thiscall sub_6B8AF0(_DWORD *this, _DWORD *a2)
   v2 = *this ^ *a2;
   return !(_BYTE)v2 && (v2 & 0x7FF00) == 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -69400,7 +68545,6 @@ retn    4
 } }
 // 0x6BAFA0
 namespace gamemd { void Render_Load_6BAFA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Render_Load_6BAFA0(_DWORD *this)
 {
@@ -69458,8 +68602,6 @@ void __thiscall Render_Load_6BAFA0(_DWORD *this)
     __3_YAXPAX_Z(v3);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -69543,7 +68685,6 @@ retn
 } }
 // 0x6BB990
 namespace gamemd { int TopLevelExceptionFilter() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TopLevelExceptionFilter(int **this, struct _EXCEPTION_POINTERS *ExceptionInfo, int a3, int a4, int a5)
 {
@@ -69609,8 +68750,6 @@ int __thiscall TopLevelExceptionFilter(int **this, struct _EXCEPTION_POINTERS *E
     Dialog::Destroy((void *)dword_A8ED54[233596]);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ExceptionInfo   = dword ptr  4
@@ -69625,7 +68764,6 @@ jmp     loc_4C8FE0
 } }
 // 0x6BFD40
 namespace gamemd { void* WinMain_Helper_6BFD40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6BFD40(_DWORD *this)
 {
@@ -69633,8 +68771,6 @@ _DWORD *__thiscall sub_6BFD40(_DWORD *this)
   *this = &TClassFactory<SideClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69645,7 +68781,6 @@ retn
 } }
 // 0x6BFEC0
 namespace gamemd { void* WinMain_Helper_6BFEC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6BFEC0(_DWORD *this)
 {
@@ -69653,8 +68788,6 @@ _DWORD *__thiscall sub_6BFEC0(_DWORD *this)
   *this = &TClassFactory<TiberiumClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69665,7 +68798,6 @@ retn
 } }
 // 0x6C0040
 namespace gamemd { void* WinMain_Helper_6C0040() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0040(_DWORD *this)
 {
@@ -69673,8 +68805,6 @@ _DWORD *__thiscall sub_6C0040(_DWORD *this)
   *this = &TClassFactory<TubeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69685,7 +68815,6 @@ retn
 } }
 // 0x6C01C0
 namespace gamemd { void* WinMain_Helper_6C01C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C01C0(_DWORD *this)
 {
@@ -69693,8 +68822,6 @@ _DWORD *__thiscall sub_6C01C0(_DWORD *this)
   *this = &TClassFactory<CampaignClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69705,7 +68832,6 @@ retn
 } }
 // 0x6C0340
 namespace gamemd { void* WinMain_Helper_6C0340() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0340(_DWORD *this)
 {
@@ -69713,8 +68839,6 @@ _DWORD *__thiscall sub_6C0340(_DWORD *this)
   *this = &TClassFactory<BuildingLightClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69725,7 +68849,6 @@ retn
 } }
 // 0x6C04C0
 namespace gamemd { void* WinMain_Helper_6C04C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C04C0(_DWORD *this)
 {
@@ -69733,8 +68856,6 @@ _DWORD *__thiscall sub_6C04C0(_DWORD *this)
   *this = &TClassFactory<WaypointPathClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69745,7 +68866,6 @@ retn
 } }
 // 0x6C0640
 namespace gamemd { void* WinMain_Helper_6C0640() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0640(_DWORD *this)
 {
@@ -69753,8 +68873,6 @@ _DWORD *__thiscall sub_6C0640(_DWORD *this)
   *this = &TClassFactory<TemporalClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69765,7 +68883,6 @@ retn
 } }
 // 0x6C07C0
 namespace gamemd { void* WinMain_Helper_6C07C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C07C0(_DWORD *this)
 {
@@ -69773,8 +68890,6 @@ _DWORD *__thiscall sub_6C07C0(_DWORD *this)
   *this = &TClassFactory<AirstrikeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69785,7 +68900,6 @@ retn
 } }
 // 0x6C0940
 namespace gamemd { void* WinMain_Helper_6C0940() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0940(_DWORD *this)
 {
@@ -69793,8 +68907,6 @@ _DWORD *__thiscall sub_6C0940(_DWORD *this)
   *this = &TClassFactory<SpawnManagerClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69805,7 +68917,6 @@ retn
 } }
 // 0x6C0C40
 namespace gamemd { void* WinMain_Helper_6C0C40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0C40(_DWORD *this)
 {
@@ -69813,8 +68924,6 @@ _DWORD *__thiscall sub_6C0C40(_DWORD *this)
   *this = &TClassFactory<CaptureManagerClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69825,7 +68934,6 @@ retn
 } }
 // 0x6C0DC0
 namespace gamemd { void* WinMain_Helper_6C0DC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0DC0(_DWORD *this)
 {
@@ -69833,8 +68941,6 @@ _DWORD *__thiscall sub_6C0DC0(_DWORD *this)
   *this = &TClassFactory<DiskLaserClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69845,7 +68951,6 @@ retn
 } }
 // 0x6C0F40
 namespace gamemd { void* WinMain_Helper_6C0F40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0F40(_DWORD *this)
 {
@@ -69853,8 +68958,6 @@ _DWORD *__thiscall sub_6C0F40(_DWORD *this)
   *this = &TClassFactory<ParasiteClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69865,7 +68968,6 @@ retn
 } }
 // 0x6C10C0
 namespace gamemd { void* WinMain_Helper_6C10C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C10C0(_DWORD *this)
 {
@@ -69873,8 +68975,6 @@ _DWORD *__thiscall sub_6C10C0(_DWORD *this)
   *this = &TClassFactory<BombClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69885,7 +68985,6 @@ retn
 } }
 // 0x6C1240
 namespace gamemd { void* WinMain_Helper_6C1240() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1240(_DWORD *this)
 {
@@ -69893,8 +68992,6 @@ _DWORD *__thiscall sub_6C1240(_DWORD *this)
   *this = &TClassFactory<RadSiteClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69905,7 +69002,6 @@ retn
 } }
 // 0x6C13C0
 namespace gamemd { void* WinMain_Helper_6C13C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C13C0(_DWORD *this)
 {
@@ -69913,8 +69009,6 @@ _DWORD *__thiscall sub_6C13C0(_DWORD *this)
   *this = &TClassFactory<TEventClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69925,7 +69019,6 @@ retn
 } }
 // 0x6C1540
 namespace gamemd { void* WinMain_Helper_6C1540() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1540(_DWORD *this)
 {
@@ -69933,8 +69026,6 @@ _DWORD *__thiscall sub_6C1540(_DWORD *this)
   *this = &TClassFactory<VoxelAnimTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69945,7 +69036,6 @@ retn
 } }
 // 0x6C16C0
 namespace gamemd { void* WinMain_Helper_6C16C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C16C0(_DWORD *this)
 {
@@ -69953,8 +69043,6 @@ _DWORD *__thiscall sub_6C16C0(_DWORD *this)
   *this = &TClassFactory<VoxelAnimClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69965,7 +69053,6 @@ retn
 } }
 // 0x6C1840
 namespace gamemd { void* WinMain_Helper_6C1840() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1840(_DWORD *this)
 {
@@ -69973,8 +69060,6 @@ _DWORD *__thiscall sub_6C1840(_DWORD *this)
   *this = &TClassFactory<TActionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -69985,7 +69070,6 @@ retn
 } }
 // 0x6C19C0
 namespace gamemd { void* WinMain_Helper_6C19C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C19C0(_DWORD *this)
 {
@@ -69993,8 +69077,6 @@ _DWORD *__thiscall sub_6C19C0(_DWORD *this)
   *this = &TClassFactory<TriggerClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70005,7 +69087,6 @@ retn
 } }
 // 0x6C1B40
 namespace gamemd { void* WinMain_Helper_6C1B40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1B40(_DWORD *this)
 {
@@ -70013,8 +69094,6 @@ _DWORD *__thiscall sub_6C1B40(_DWORD *this)
   *this = &TClassFactory<TriggerTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70025,7 +69104,6 @@ retn
 } }
 // 0x6C1CC0
 namespace gamemd { void* WinMain_Helper_6C1CC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1CC0(_DWORD *this)
 {
@@ -70033,8 +69111,6 @@ _DWORD *__thiscall sub_6C1CC0(_DWORD *this)
   *this = &TClassFactory<ScriptClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70045,7 +69121,6 @@ retn
 } }
 // 0x6C1E40
 namespace gamemd { void* WinMain_Helper_6C1E40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1E40(_DWORD *this)
 {
@@ -70053,8 +69128,6 @@ _DWORD *__thiscall sub_6C1E40(_DWORD *this)
   *this = &TClassFactory<ScriptTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70065,7 +69138,6 @@ retn
 } }
 // 0x6C1FC0
 namespace gamemd { void* WinMain_Helper_6C1FC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1FC0(_DWORD *this)
 {
@@ -70073,8 +69145,6 @@ _DWORD *__thiscall sub_6C1FC0(_DWORD *this)
   *this = &TClassFactory<TagClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70085,7 +69155,6 @@ retn
 } }
 // 0x6C2140
 namespace gamemd { void* WinMain_Helper_6C2140() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2140(_DWORD *this)
 {
@@ -70093,8 +69162,6 @@ _DWORD *__thiscall sub_6C2140(_DWORD *this)
   *this = &TClassFactory<TagTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70105,7 +69172,6 @@ retn
 } }
 // 0x6C22C0
 namespace gamemd { void* WinMain_Helper_6C22C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C22C0(_DWORD *this)
 {
@@ -70113,8 +69179,6 @@ _DWORD *__thiscall sub_6C22C0(_DWORD *this)
   *this = &TClassFactory<TeamClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70125,7 +69189,6 @@ retn
 } }
 // 0x6C2440
 namespace gamemd { void* WinMain_Helper_6C2440() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2440(_DWORD *this)
 {
@@ -70133,8 +69196,6 @@ _DWORD *__thiscall sub_6C2440(_DWORD *this)
   *this = &TClassFactory<TeamTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70145,7 +69206,6 @@ retn
 } }
 // 0x6C25C0
 namespace gamemd { void* WinMain_Helper_6C25C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C25C0(_DWORD *this)
 {
@@ -70153,8 +69213,6 @@ _DWORD *__thiscall sub_6C25C0(_DWORD *this)
   *this = &TClassFactory<TaskForceClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70165,7 +69223,6 @@ retn
 } }
 // 0x6C2740
 namespace gamemd { void* WinMain_Helper_6C2740() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2740(_DWORD *this)
 {
@@ -70173,8 +69230,6 @@ _DWORD *__thiscall sub_6C2740(_DWORD *this)
   *this = &TClassFactory<UnitTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70185,7 +69240,6 @@ retn
 } }
 // 0x6C28C0
 namespace gamemd { void* WinMain_Helper_6C28C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C28C0(_DWORD *this)
 {
@@ -70193,8 +69247,6 @@ _DWORD *__thiscall sub_6C28C0(_DWORD *this)
   *this = &TClassFactory<BuildingTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70205,7 +69257,6 @@ retn
 } }
 // 0x6C2A40
 namespace gamemd { void* WinMain_Helper_6C2A40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2A40(_DWORD *this)
 {
@@ -70213,8 +69264,6 @@ _DWORD *__thiscall sub_6C2A40(_DWORD *this)
   *this = &TClassFactory<AircraftTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70225,7 +69274,6 @@ retn
 } }
 // 0x6C2BC0
 namespace gamemd { void* WinMain_Helper_6C2BC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2BC0(_DWORD *this)
 {
@@ -70233,8 +69281,6 @@ _DWORD *__thiscall sub_6C2BC0(_DWORD *this)
   *this = &TClassFactory<InfantryTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70245,7 +69291,6 @@ retn
 } }
 // 0x6C2D40
 namespace gamemd { void* WinMain_Helper_6C2D40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2D40(_DWORD *this)
 {
@@ -70253,8 +69298,6 @@ _DWORD *__thiscall sub_6C2D40(_DWORD *this)
   *this = &TClassFactory<BulletTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70265,7 +69308,6 @@ retn
 } }
 // 0x6C2EC0
 namespace gamemd { void* WinMain_Helper_6C2EC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2EC0(_DWORD *this)
 {
@@ -70273,8 +69315,6 @@ _DWORD *__thiscall sub_6C2EC0(_DWORD *this)
   *this = &TClassFactory<IsometricTileTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70285,7 +69325,6 @@ retn
 } }
 // 0x6C3040
 namespace gamemd { void* WinMain_Helper_6C3040() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3040(_DWORD *this)
 {
@@ -70293,8 +69332,6 @@ _DWORD *__thiscall sub_6C3040(_DWORD *this)
   *this = &TClassFactory<OverlayTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70305,7 +69342,6 @@ retn
 } }
 // 0x6C31C0
 namespace gamemd { void* WinMain_Helper_6C31C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C31C0(_DWORD *this)
 {
@@ -70313,8 +69349,6 @@ _DWORD *__thiscall sub_6C31C0(_DWORD *this)
   *this = &TClassFactory<SmudgeTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70325,7 +69359,6 @@ retn
 } }
 // 0x6C3340
 namespace gamemd { void* WinMain_Helper_6C3340() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3340(_DWORD *this)
 {
@@ -70333,8 +69366,6 @@ _DWORD *__thiscall sub_6C3340(_DWORD *this)
   *this = &TClassFactory<UnitClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70345,7 +69376,6 @@ retn
 } }
 // 0x6C34C0
 namespace gamemd { void* WinMain_Helper_6C34C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C34C0(_DWORD *this)
 {
@@ -70353,8 +69383,6 @@ _DWORD *__thiscall sub_6C34C0(_DWORD *this)
   *this = &TClassFactory<BuildingClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70365,7 +69393,6 @@ retn
 } }
 // 0x6C3640
 namespace gamemd { void* WinMain_Helper_6C3640() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3640(_DWORD *this)
 {
@@ -70373,8 +69400,6 @@ _DWORD *__thiscall sub_6C3640(_DWORD *this)
   *this = &TClassFactory<AircraftClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70385,7 +69410,6 @@ retn
 } }
 // 0x6C37C0
 namespace gamemd { void* WinMain_Helper_6C37C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C37C0(_DWORD *this)
 {
@@ -70393,8 +69417,6 @@ _DWORD *__thiscall sub_6C37C0(_DWORD *this)
   *this = &TClassFactory<InfantryClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70405,7 +69427,6 @@ retn
 } }
 // 0x6C3940
 namespace gamemd { void* WinMain_Helper_6C3940() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3940(_DWORD *this)
 {
@@ -70413,8 +69434,6 @@ _DWORD *__thiscall sub_6C3940(_DWORD *this)
   *this = &TClassFactory<AnimClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70425,7 +69444,6 @@ retn
 } }
 // 0x6C3AC0
 namespace gamemd { void* WinMain_Helper_6C3AC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3AC0(_DWORD *this)
 {
@@ -70433,8 +69451,6 @@ _DWORD *__thiscall sub_6C3AC0(_DWORD *this)
   *this = &TClassFactory<AnimTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70445,7 +69461,6 @@ retn
 } }
 // 0x6C3C40
 namespace gamemd { void* WinMain_Helper_6C3C40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3C40(_DWORD *this)
 {
@@ -70453,8 +69468,6 @@ _DWORD *__thiscall sub_6C3C40(_DWORD *this)
   *this = &TClassFactory<HouseTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70465,7 +69478,6 @@ retn
 } }
 // 0x6C3DC0
 namespace gamemd { void* WinMain_Helper_6C3DC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3DC0(_DWORD *this)
 {
@@ -70473,8 +69485,6 @@ _DWORD *__thiscall sub_6C3DC0(_DWORD *this)
   *this = &TClassFactory<HouseClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70485,7 +69495,6 @@ retn
 } }
 // 0x6C3F40
 namespace gamemd { void* WinMain_Helper_6C3F40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3F40(_DWORD *this)
 {
@@ -70493,8 +69502,6 @@ _DWORD *__thiscall sub_6C3F40(_DWORD *this)
   *this = &TClassFactory<DriveLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70505,7 +69512,6 @@ retn
 } }
 // 0x6C40C0
 namespace gamemd { void* WinMain_Helper_6C40C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C40C0(_DWORD *this)
 {
@@ -70513,8 +69519,6 @@ _DWORD *__thiscall sub_6C40C0(_DWORD *this)
   *this = &TClassFactory<JumpjetLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70525,7 +69529,6 @@ retn
 } }
 // 0x6C4240
 namespace gamemd { void* WinMain_Helper_6C4240() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4240(_DWORD *this)
 {
@@ -70533,8 +69536,6 @@ _DWORD *__thiscall sub_6C4240(_DWORD *this)
   *this = &TClassFactory<HoverLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70545,7 +69546,6 @@ retn
 } }
 // 0x6C43C0
 namespace gamemd { void* WinMain_Helper_6C43C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C43C0(_DWORD *this)
 {
@@ -70553,8 +69553,6 @@ _DWORD *__thiscall sub_6C43C0(_DWORD *this)
   *this = &TClassFactory<RocketLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70565,7 +69563,6 @@ retn
 } }
 // 0x6C4540
 namespace gamemd { void* WinMain_Helper_6C4540() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4540(_DWORD *this)
 {
@@ -70573,8 +69570,6 @@ _DWORD *__thiscall sub_6C4540(_DWORD *this)
   *this = &TClassFactory<TunnelLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70585,7 +69580,6 @@ retn
 } }
 // 0x6C46C0
 namespace gamemd { void* WinMain_Helper_6C46C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C46C0(_DWORD *this)
 {
@@ -70593,8 +69587,6 @@ _DWORD *__thiscall sub_6C46C0(_DWORD *this)
   *this = &TClassFactory<WalkLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70605,7 +69597,6 @@ retn
 } }
 // 0x6C4840
 namespace gamemd { void* WinMain_Helper_6C4840() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4840(_DWORD *this)
 {
@@ -70613,8 +69604,6 @@ _DWORD *__thiscall sub_6C4840(_DWORD *this)
   *this = &TClassFactory<DropPodLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70625,7 +69614,6 @@ retn
 } }
 // 0x6C49C0
 namespace gamemd { void* WinMain_Helper_6C49C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C49C0(_DWORD *this)
 {
@@ -70633,8 +69621,6 @@ _DWORD *__thiscall sub_6C49C0(_DWORD *this)
   *this = &TClassFactory<FlyLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70645,7 +69631,6 @@ retn
 } }
 // 0x6C4B40
 namespace gamemd { void* WinMain_Helper_6C4B40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4B40(_DWORD *this)
 {
@@ -70653,8 +69638,6 @@ _DWORD *__thiscall sub_6C4B40(_DWORD *this)
   *this = &TClassFactory<TeleportLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70665,7 +69648,6 @@ retn
 } }
 // 0x6C4CC0
 namespace gamemd { void* WinMain_Helper_6C4CC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4CC0(_DWORD *this)
 {
@@ -70673,8 +69655,6 @@ _DWORD *__thiscall sub_6C4CC0(_DWORD *this)
   *this = &TClassFactory<MechLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70685,7 +69665,6 @@ retn
 } }
 // 0x6C4E40
 namespace gamemd { void* WinMain_Helper_6C4E40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4E40(_DWORD *this)
 {
@@ -70693,8 +69672,6 @@ _DWORD *__thiscall sub_6C4E40(_DWORD *this)
   *this = &TClassFactory<ShipLocomotionClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70705,7 +69682,6 @@ retn
 } }
 // 0x6C4FC0
 namespace gamemd { void* WinMain_Helper_6C4FC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4FC0(_DWORD *this)
 {
@@ -70713,8 +69689,6 @@ _DWORD *__thiscall sub_6C4FC0(_DWORD *this)
   *this = &TClassFactory<BulletClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70725,7 +69699,6 @@ retn
 } }
 // 0x6C5140
 namespace gamemd { void* WinMain_Helper_6C5140() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5140(_DWORD *this)
 {
@@ -70733,8 +69706,6 @@ _DWORD *__thiscall sub_6C5140(_DWORD *this)
   *this = &TClassFactory<FactoryClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70745,7 +69716,6 @@ retn
 } }
 // 0x6C52C0
 namespace gamemd { void* WinMain_Helper_6C52C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C52C0(_DWORD *this)
 {
@@ -70753,8 +69723,6 @@ _DWORD *__thiscall sub_6C52C0(_DWORD *this)
   *this = &TClassFactory<WarheadTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70765,7 +69733,6 @@ retn
 } }
 // 0x6C5440
 namespace gamemd { void* WinMain_Helper_6C5440() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5440(_DWORD *this)
 {
@@ -70773,8 +69740,6 @@ _DWORD *__thiscall sub_6C5440(_DWORD *this)
   *this = &TClassFactory<WeaponTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70785,7 +69750,6 @@ retn
 } }
 // 0x6C55C0
 namespace gamemd { void* WinMain_Helper_6C55C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C55C0(_DWORD *this)
 {
@@ -70793,8 +69757,6 @@ _DWORD *__thiscall sub_6C55C0(_DWORD *this)
   *this = &TClassFactory<ParticleClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70805,7 +69767,6 @@ retn
 } }
 // 0x6C5740
 namespace gamemd { void* WinMain_Helper_6C5740() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5740(_DWORD *this)
 {
@@ -70813,8 +69774,6 @@ _DWORD *__thiscall sub_6C5740(_DWORD *this)
   *this = &TClassFactory<ParticleTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70825,7 +69784,6 @@ retn
 } }
 // 0x6C58C0
 namespace gamemd { void* WinMain_Helper_6C58C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C58C0(_DWORD *this)
 {
@@ -70833,8 +69791,6 @@ _DWORD *__thiscall sub_6C58C0(_DWORD *this)
   *this = &TClassFactory<ParticleSystemClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70845,7 +69801,6 @@ retn
 } }
 // 0x6C5A40
 namespace gamemd { void* WinMain_Helper_6C5A40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5A40(_DWORD *this)
 {
@@ -70853,8 +69808,6 @@ _DWORD *__thiscall sub_6C5A40(_DWORD *this)
   *this = &TClassFactory<ParticleSystemTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70865,7 +69818,6 @@ retn
 } }
 // 0x6C5BC0
 namespace gamemd { void* WinMain_Helper_6C5BC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5BC0(_DWORD *this)
 {
@@ -70873,8 +69825,6 @@ _DWORD *__thiscall sub_6C5BC0(_DWORD *this)
   *this = &TClassFactory<AITriggerTypeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70885,7 +69835,6 @@ retn
 } }
 // 0x6C5D40
 namespace gamemd { void* WinMain_Helper_6C5D40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5D40(_DWORD *this)
 {
@@ -70893,8 +69842,6 @@ _DWORD *__thiscall sub_6C5D40(_DWORD *this)
   *this = &TClassFactory<NeuronClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70905,7 +69852,6 @@ retn
 } }
 // 0x6C5EC0
 namespace gamemd { void* WinMain_Helper_6C5EC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5EC0(_DWORD *this)
 {
@@ -70913,8 +69859,6 @@ _DWORD *__thiscall sub_6C5EC0(_DWORD *this)
   *this = &TClassFactory<FoggedObjectClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70925,7 +69869,6 @@ retn
 } }
 // 0x6C6040
 namespace gamemd { void* WinMain_Helper_6C6040() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C6040(_DWORD *this)
 {
@@ -70933,8 +69876,6 @@ _DWORD *__thiscall sub_6C6040(_DWORD *this)
   *this = &TClassFactory<AlphaShapeClass>::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -70945,7 +69886,6 @@ retn
 } }
 // 0x6C61C0
 namespace gamemd { int COM_SafeRelease() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6C61C0(int *this)
 {
@@ -70956,8 +69896,6 @@ int __thiscall sub_6C61C0(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -70973,7 +69911,6 @@ retn
 } }
 // 0x6C6B00
 namespace gamemd { void* Audio_Read_6C6B00(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C6B00(_DWORD *this, _DWORD *a2)
 {
@@ -70990,8 +69927,6 @@ _DWORD *__thiscall sub_6C6B00(_DWORD *this, _DWORD *a2)
     result[1] = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -71024,7 +69959,6 @@ retn    4
 } }
 // 0x6C8870
 namespace gamemd { int Audio_Read_6C8870() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Audio_Read_6C8870(int *this)
 {
@@ -71054,8 +69988,6 @@ char __thiscall Audio_Read_6C8870(int *this)
   *(this + 1) = v5;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -71140,7 +70072,6 @@ retn
 } }
 // 0x6C9900
 namespace gamemd { void* Render_Parse() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C9900(_DWORD *this)
 {
@@ -71152,8 +70083,6 @@ _DWORD *__thiscall sub_6C9900(_DWORD *this)
   *(this + 5) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -71168,7 +70097,6 @@ retn
 } }
 // 0x6C9F10
 namespace gamemd { int ParseMovieSubtitles(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ParseMovieSubtitles(char *this, char *Source)
 {
@@ -71323,8 +70251,6 @@ LABEL_39:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String2         = byte ptr -40h
@@ -71600,7 +70526,6 @@ retn    4
 } }
 // 0x6CABA0
 namespace gamemd { void* Render_Parse_6CABA0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Render_Parse_6CABA0(_DWORD *this, int a2, int a3)
 {
@@ -71621,8 +70546,6 @@ _DWORD *__thiscall Render_Parse_6CABA0(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -71661,7 +70584,6 @@ retn    8
 } }
 // 0x6CEE60
 namespace gamemd { int ObjectTypeClass_Read() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6CEE60(void *this)
 {
@@ -71679,8 +70601,6 @@ int __thiscall sub_6CEE60(void *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -71725,7 +70645,6 @@ retn
 } }
 // 0x6CF1D0
 namespace gamemd { void SmallFunc_6CF1D0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6CF1D0(_DWORD *this)
 {
@@ -71753,8 +70672,6 @@ void __thiscall sub_6CF1D0(_DWORD *this)
   *((_BYTE *)this + 17) = 0;
   *(this + 3) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -71800,7 +70717,6 @@ retn
 } }
 // 0x6D04D0
 namespace gamemd { int SidebarUpdateAll() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D04D0(void *this)
 {
@@ -71816,8 +70732,6 @@ int __thiscall sub_6D04D0(void *this)
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi             ; TODO: classify (grp=blit, sz=0x1f)
@@ -71840,7 +70754,6 @@ retn
 } }
 // 0x6D1E30
 namespace gamemd { void* SmallFunc_6D1E30(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SmallFunc_6D1E30(_DWORD *this, int a2)
 {
@@ -71853,8 +70766,6 @@ _DWORD *__thiscall SmallFunc_6D1E30(_DWORD *this, int a2)
   *(this + 3) = &Tactical::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -71877,7 +70788,6 @@ retn    4
 } }
 // 0x6D3290
 namespace gamemd { int DrawBuildingAnimFrame(void* a1, void* a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D3290(_DWORD *this, int *a2, int *a3, char a4)
 {
@@ -71967,8 +70877,6 @@ int __thiscall sub_6D3290(_DWORD *this, int *a2, int *a3, char a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -72150,7 +71058,6 @@ retn    0Ch
 } }
 // 0x6D3470
 namespace gamemd { int DrawBuildingShadow(void* a1, void* a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DrawBuildingShadow(_DWORD *this, int *a2, int *a3, char a4)
 {
@@ -72247,8 +71154,6 @@ LABEL_9:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -72429,7 +71334,6 @@ retn    0Ch
 } }
 // 0x6D5730
 namespace gamemd { int RenderBridgeRadarBlips(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderBridgeRadarBlips(_DWORD *this, char a2, _DWORD *a3)
 {
@@ -72556,8 +71460,6 @@ LABEL_15:
   while ( v3 < 8 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -72764,7 +71666,6 @@ retn    8
 } }
 // 0x6D5C50
 namespace gamemd { int RenderRadarBlips(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D5C50(_DWORD *this, char a2, int a3)
 {
@@ -72905,8 +71806,6 @@ LABEL_14:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 50h
@@ -73139,7 +72038,6 @@ retn    8
 } }
 // 0x6D6170
 namespace gamemd { void* RequestMapSnapshot(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6D6170(_DWORD *this, _DWORD *a2)
 {
@@ -73147,8 +72045,6 @@ _DWORD *__thiscall sub_6D6170(_DWORD *this, _DWORD *a2)
   a2[1] = *(this + 858);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -73161,7 +72057,6 @@ retn    4
 } }
 // 0x6D9CE0
 namespace gamemd { int FindBuildingsInScreenRect(int a1, int a2, int a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FindBuildingsInScreenRect(_DWORD *this, int a2, int a3, int a4, int a5)
 {
@@ -73234,8 +72129,6 @@ int __thiscall FindBuildingsInScreenRect(_DWORD *this, int a2, int a3, int a4, i
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -73403,7 +72296,6 @@ retn    10h
 } }
 // 0x6DA9D0
 namespace gamemd { void* RenderSelectionBeacons(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall RenderSelectionBeacons(_DWORD *this, int a2)
 {
@@ -73532,8 +72424,6 @@ char *__thiscall RenderSelectionBeacons(_DWORD *this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 64h
@@ -73829,7 +72719,6 @@ retn    4
 } }
 // 0x6DAD60
 namespace gamemd { int RenderRallyPointLines(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderRallyPointLines(_DWORD *this, int a2)
 {
@@ -74064,8 +72953,6 @@ LABEL_16:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 80h
@@ -74456,7 +73343,6 @@ retn    4
 } }
 // 0x6DB620
 namespace gamemd { int RenderLWCViewCells() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LWCViewClass::RenderCells(_DWORD *this)
 {
@@ -74673,8 +73559,6 @@ int __thiscall LWCViewClass::RenderCells(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1C4h
@@ -75042,14 +73926,11 @@ retn
 } }
 // 0x6DC420
 namespace gamemd { int GetHeightMap() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_GetHeight(_DWORD *this)
 {
   return *(this + 876);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0DB0h]
@@ -75058,7 +73939,6 @@ retn
 } }
 // 0x6E0490
 namespace gamemd { int PlayWaypointEffect(int a1, int a2, int a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlayWaypointEffect(int *this, int a2, int a3, int a4, int a5)
 {
@@ -75132,8 +74012,6 @@ char __thiscall PlayWaypointEffect(int *this, int a2, int a3, int a4, int a5)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 38h
@@ -75378,7 +74256,6 @@ retn    10h
 } }
 // 0x6E14A0
 namespace gamemd { int ProcessDataObjectClass(int a1, int a2, int a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E14A0(_DWORD *this, int a2, int a3, int a4, int a5)
 {
@@ -75429,8 +74306,6 @@ char __thiscall sub_6E14A0(_DWORD *this, int a2, int a3, int a4, int a5)
   ObjectClass::PreDraw(&MEMORY[0x87F7E8]);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -75505,7 +74380,6 @@ retn    10h
 } }
 // 0x6E5FE0
 namespace gamemd { int SaveTriggerTagsToINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SaveTriggerTagsToINI(char *this)
 {
@@ -75540,8 +74414,6 @@ int __thiscall SaveTriggerTagsToINI(char *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -20h
@@ -75615,7 +74487,6 @@ retn
 } }
 // 0x6E7330
 namespace gamemd { int System_Read_6E7330() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_6E7330(_BYTE *this)
 {
@@ -75685,8 +74556,6 @@ LABEL_13:
            (struct #262 *)&TechnoTypeClass `RTTI Type Descriptor',
            0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -75788,7 +74657,6 @@ retn
 } }
 // 0x6E7C20
 namespace gamemd { void* Network_Process_6E7C20() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_6E7C20(_BYTE *this)
 {
@@ -75803,8 +74671,6 @@ void *__thiscall sub_6E7C20(_BYTE *this)
   HIWORD(v3) = v1 / 1000;
   return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v3);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -75841,7 +74707,6 @@ retn
 } }
 // 0x6EA0D0
 namespace gamemd { void SelectTeamProductionBuilding() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SelectTeamProductionBuilding(int this)
 {
@@ -75970,8 +74835,6 @@ void __thiscall SelectTeamProductionBuilding(int this)
     TeamClass::UpdateMembers(this);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -76264,7 +75127,6 @@ retn
 } }
 // 0x6ED200
 namespace gamemd { int AssignTeamProductionFacilities(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall AssignTeamProductionFacilities(int **this, int a2, int a3)
 {
@@ -76430,8 +75292,6 @@ LABEL_17:
   }
   return v3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -76732,7 +75592,6 @@ retn    8
 } }
 // 0x6EE800
 namespace gamemd { int SelectTeamMembers(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SelectTeamMembers(_DWORD *this, int a2, int a3)
 {
@@ -76964,8 +75823,6 @@ LABEL_27:
     *(_BYTE *)(v3 + 128) = 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -77363,7 +76220,6 @@ retn    8
 } }
 // 0x6EF110
 namespace gamemd { int DispatchTeamOrders(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DispatchTeamOrders(_DWORD *this, int a2, int a3)
 {
@@ -77527,8 +76383,6 @@ LABEL_52:
   }
   return v10;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -77851,7 +76705,6 @@ retn    8
 } }
 // 0x6EF470
 namespace gamemd { int Team_Create() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6EF470(_DWORD *this)
 {
@@ -77876,8 +76729,6 @@ char __thiscall sub_6EF470(_DWORD *this)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -77932,7 +76783,6 @@ retn
 } }
 // 0x6EF700
 namespace gamemd { void DeployTeamMembersAtStart(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DeployTeamMembersAtStart(int this, int a2, char a3)
 {
@@ -78071,8 +76921,6 @@ void __thiscall DeployTeamMembersAtStart(int this, int a2, char a3)
   }
   TeamClass::UpdateMembers(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -78341,7 +77189,6 @@ retn    8
 } }
 // 0x6F2230
 namespace gamemd { void* Team_Helper_6F2230(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F2230(_DWORD *this, int a2, int a3)
 {
@@ -78367,8 +77214,6 @@ _DWORD *__thiscall Team_Helper_6F2230(_DWORD *this, int a2, int a3)
   *(this + 4) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -78408,7 +77253,6 @@ retn    8
 } }
 // 0x6F25E0
 namespace gamemd { int Team_Helper_6F25E0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6F25E0(_DWORD *this, _DWORD *a2)
 {
@@ -78433,8 +77277,6 @@ char __thiscall sub_6F25E0(_DWORD *this, _DWORD *a2)
   *(_DWORD *)(v7 + 8 * v6 + 4) = a2[1];
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -78487,7 +77329,6 @@ retn    4
 } }
 // 0x6F26E0
 namespace gamemd { void* Team_Helper_6F26E0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6F26E0(char *Block, char a2)
 {
@@ -78509,8 +77350,6 @@ char *__thiscall sub_6F26E0(char *Block, char a2)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -78547,7 +77386,6 @@ retn    4
 } }
 // 0x6F2780
 namespace gamemd { void* Team_Helper_6F2780(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, _DWORD *a2)
 {
@@ -78584,8 +77422,6 @@ _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, _DWORD *a2)
   while ( v6 < *(this + 2) );
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -78642,7 +77478,6 @@ retn    4
 } }
 // 0x6F27F0
 namespace gamemd { void* Team_Helper_6F27F0(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F27F0(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -78703,8 +77538,6 @@ _DWORD *__thiscall Team_Helper_6F27F0(_DWORD *this, int a2, _DWORD *a3)
   *(this + 1) = v8;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -78788,7 +77621,6 @@ retn    8
 } }
 // 0x6FD800
 namespace gamemd { int SpreadRadiationAreaEffect(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6FD800(void *this, __int16 a2)
 {
@@ -78882,8 +77714,6 @@ int __thiscall sub_6FD800(void *this, __int16 a2)
   while ( result <= 1 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -79053,7 +77883,6 @@ retn    4
 } }
 // 0x706BD0
 namespace gamemd { int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall QueueTechnoVoiceLine(
 {
@@ -79214,8 +78043,6 @@ LABEL_16:
   if ( a9 )
     goto LABEL_21;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 3Ch
@@ -79536,7 +78363,6 @@ retn    2Ch ; ','
 } }
 // 0x707280
 namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall RenderTechnoOverlaySHP(
 {
@@ -79606,8 +78432,6 @@ void *__thiscall RenderTechnoOverlaySHP(
   qmemcpy(a2, v25, 0x18u);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0D8h
@@ -79760,7 +78584,6 @@ retn    2Ch ; ','
 } }
 // 0x7087C0
 namespace gamemd { bool ValidateAttackTarget(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall ValidateAttackTarget(int this, int *a2, int a3)
 {
@@ -79880,8 +78703,6 @@ bool __thiscall ValidateAttackTarget(int this, int *a2, int a3)
       || !*(_DWORD *)(v13 + 172)
       || *(double *)(*(_DWORD *)(v13 + 172) + 8 * *(_DWORD *)((*(int (__thiscall **)(int *))(*a2 + 132))(a2) + 156) + 160) > 0.0099999998;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -80183,7 +79004,6 @@ retn    8
 } }
 // 0x70E5A0
 namespace gamemd { int UpdateTechnoIdleTimer() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateTechnoIdleTimer(int *this)
 {
@@ -80396,8 +79216,6 @@ LABEL_47:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -80722,7 +79540,6 @@ retn
 } }
 // 0x70F1D0
 namespace gamemd { int DrawBuildingRangeIndicator(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DrawBuildingRangeIndicator(void ***this, int *a2, int a3)
 {
@@ -80934,8 +79751,6 @@ char __thiscall DrawBuildingRangeIndicator(void ***this, int *a2, int a3)
   }
   return (char)v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0D4h
@@ -81283,7 +80098,6 @@ retn    8
 } }
 // 0x710750
 namespace gamemd { int Object_Helper_710750(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Object_Helper_710750(int this, int a2)
 {
@@ -81311,8 +80125,6 @@ char __thiscall Object_Helper_710750(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -81383,7 +80195,6 @@ retn    4
 } }
 // 0x721D10
 namespace gamemd { int SmallFunc_721D10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SmallFunc_721D10(char *this)
 {
@@ -81430,8 +80241,6 @@ char __thiscall SmallFunc_721D10(char *this)
   while ( v3 < KeyCount );
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -18h
@@ -81523,7 +80332,6 @@ retn
 } }
 // 0x722440
 namespace gamemd { void PropagateCellOccupancy() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PropagateCellOccupancy(int this)
 {
@@ -81729,8 +80537,6 @@ LABEL_52:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -82068,7 +80874,6 @@ retn
 } }
 // 0x722F00
 namespace gamemd { void RebuildBuildingOccupancy() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall RebuildBuildingOccupancy(int this)
 {
@@ -82263,8 +81068,6 @@ LABEL_48:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -82605,7 +81408,6 @@ retn
 } }
 // 0x724200
 namespace gamemd { void HandleToolTipMessage(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall HandleToolTipMessage(int *this, int a2)
 {
@@ -82724,8 +81526,6 @@ LABEL_8:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -82947,14 +81747,11 @@ jmp     short loc_7243C7
 } }
 // 0x724510
 namespace gamemd { int sub_724510(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_724510(_DWORD *this)
 {
   return *(this + 138);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+228h]
@@ -82963,7 +81760,6 @@ retn
 } }
 // 0x727880
 namespace gamemd { int ReadAudioEventINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_727880(char *this)
 {
@@ -83026,8 +81822,6 @@ int __thiscall sub_727880(char *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -20h
@@ -83179,7 +81973,6 @@ retn
 } }
 // 0x729580
 namespace gamemd { int FindUnitPlacementTarget() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FindUnitPlacementTarget(int this)
 {
@@ -83349,8 +82142,6 @@ int __thiscall FindUnitPlacementTarget(int this)
   }
   return (*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 436))(*(_DWORD *)(this + 12), &v29);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -83649,7 +82440,6 @@ retn
 } }
 // 0x730990
 namespace gamemd { int SidebarHasAvailableUnit() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_730990(char *this)
 {
@@ -83678,8 +82468,6 @@ char __thiscall sub_730990(char *this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0x72)
@@ -83748,7 +82536,6 @@ retn
 } }
 // 0x730A10
 namespace gamemd { int SidebarCountAvailableUnits() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_730A10(char *this)
 {
@@ -83785,8 +82572,6 @@ int __thiscall sub_730A10(char *this)
   while ( v3 < v1 );
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx             ; TODO: classify (grp=blit, sz=0x71)
@@ -83855,7 +82640,6 @@ retn
 } }
 // 0x7310D0
 namespace gamemd { void SidebarClearReferences() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7310D0(char *this)
 {
@@ -83884,8 +82668,6 @@ void __thiscall sub_7310D0(char *this)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0x5f)
@@ -83939,7 +82721,6 @@ retn
 } }
 // 0x7342C0
 namespace gamemd { int SelectAllOfType_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7342C0(_BYTE *this)
 {
@@ -83948,8 +82729,6 @@ char __thiscall sub_7342C0(_BYTE *this)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 test    ecx, ecx
@@ -83966,7 +82745,6 @@ retn
 } }
 // 0x734330
 namespace gamemd { void* SelectFactionThemeMusic_Helper_734330(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SelectFactionThemeMusic_Helper_734330(_DWORD *this, int a2, int a3)
 {
@@ -83992,8 +82770,6 @@ _DWORD *__thiscall SelectFactionThemeMusic_Helper_734330(_DWORD *this, int a2, i
   *(this + 4) = 0;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -84033,7 +82809,6 @@ retn    8
 } }
 // 0x734390
 namespace gamemd { int SelectFactionThemeMusic_Helper_734390(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_734390(_DWORD *this, _DWORD *a2)
 {
@@ -84057,8 +82832,6 @@ char __thiscall sub_734390(_DWORD *this, _DWORD *a2)
   *(_DWORD *)(v7 + 4 * v6) = *a2;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -84109,7 +82882,6 @@ retn    4
 } }
 // 0x736DF0
 namespace gamemd { int UpdateTechnoFiring() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateTechnoFiring(#377 *this)
 {
@@ -84254,8 +83026,6 @@ LABEL_52:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -84604,7 +83374,6 @@ retn
 } }
 // 0x737180
 namespace gamemd { int UpdateInfantryIdleWander() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateInfantryIdleWander(int *this)
 {
@@ -84741,8 +83510,6 @@ LABEL_15:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -84977,7 +83744,6 @@ retn
 } }
 // 0x7436E0
 namespace gamemd { int ReadFootINI() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7436E0(char *this)
 {
@@ -85104,8 +83870,6 @@ LABEL_10:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -8Ch
@@ -85281,14 +84045,11 @@ retn
 } }
 // 0x746D90
 namespace gamemd { bool Event_Process_746D90() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Event_Process_746D90(_BYTE *this)
 {
   return *(this + 1760) || *(this + 1761);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+6E0h]
@@ -85309,7 +84070,6 @@ retn
 } }
 // 0x74C9F0
 namespace gamemd { int DestroyVeinholeMonster() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DestroyVeinholeMonster(void **this)
 {
@@ -85508,8 +84268,6 @@ int __thiscall DestroyVeinholeMonster(void **this)
   }
   return ObjectClass::Dtor(v1);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -85828,7 +84586,6 @@ retn
 } }
 // 0x74CDB0
 namespace gamemd { int Helper_486E30_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_74CDB0(__int16 *this)
 {
@@ -85844,8 +84601,6 @@ int __thiscall sub_74CDB0(__int16 *this)
   }
   return *((_DWORD *)MEMORY[0xB1D294] + v1);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+8E54Ch
@@ -85884,7 +84639,6 @@ retn
 } }
 // 0x74D7C0
 namespace gamemd { void UpdateVeinholeMonster() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
 {
@@ -86133,8 +84887,6 @@ LABEL_55:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -86523,7 +85275,6 @@ retn
 } }
 // 0x74E1C0
 namespace gamemd { void ProcessVeinholeMonster() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VeinholeMonster_Process(int this)
 {
@@ -86792,8 +85543,6 @@ void __thiscall VeinholeMonster_Process(int this)
       __3_YAXPAX_Z(Block);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -87268,7 +86017,6 @@ retn
 } }
 // 0x74E8A0
 namespace gamemd { void System_Init_74E8A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74E8A0(int this)
 {
@@ -87302,8 +86050,6 @@ void __thiscall sub_74E8A0(int this)
   }
   *(_DWORD *)(this + 172) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -87370,7 +86116,6 @@ retn
 } }
 // 0x74EA70
 namespace gamemd { int LoadVeinholeMonsters() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadVeinholeMonsters(int *this)
 {
@@ -87501,8 +86246,6 @@ LABEL_32:
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+8E54Ch
@@ -87805,7 +86548,6 @@ retn
 } }
 // 0x74F620
 namespace gamemd { void DestroyVeinholeMonster_Destroy() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74F620(#350 *this)
 {
@@ -87815,8 +86557,6 @@ void __thiscall sub_74F620(#350 *this)
     ++i;
   __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx]
@@ -87835,7 +86575,6 @@ jle     short loc_74F628
 } }
 // 0x74F6F0
 namespace gamemd { int DestroyVeinholeMonster_Destroy_74F6F0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_74F6F0(_DWORD *this, int a2)
 {
@@ -87860,8 +86599,6 @@ char __thiscall sub_74F6F0(_DWORD *this, int a2)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+10h]
@@ -87896,7 +86633,6 @@ retn    4
 } }
 // 0x750060
 namespace gamemd { int Team_Create_750060(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_750060(_DWORD *this, char a2)
 {
@@ -87909,8 +86645,6 @@ char __thiscall sub_750060(_DWORD *this, char a2)
     *this = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_0]
@@ -87927,7 +86661,6 @@ retn    4
 } }
 // 0x750440
 namespace gamemd { int LoadVocFromINI(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall VocClass::LoadFromINI(char **this, unsigned __int8 ***a2)
 {
@@ -88135,8 +86868,6 @@ char __thiscall VocClass::LoadFromINI(char **this, unsigned __int8 ***a2)
   sub_406610(v37);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -800h
@@ -88635,7 +87366,6 @@ retn    4
 } }
 // 0x751520
 namespace gamemd { int System_Get_751520() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_751520(void *this)
 {
@@ -88661,8 +87391,6 @@ int __thiscall sub_751520(void *this)
   }
   return *((_DWORD *)MEMORY[0xB1D37C] + v2);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -88724,7 +87452,6 @@ retn
 } }
 // 0x7515C0
 namespace gamemd { int System_Get_7515C0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7515C0(void *this)
 {
@@ -88741,8 +87468,6 @@ int __thiscall sub_7515C0(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, dword_A8ED54+8E634h
@@ -88770,7 +87495,6 @@ retn
 } }
 // 0x756860
 namespace gamemd { int InitializeTileAudioOcclusion(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeTileAudioOcclusion(_DWORD *this, int a2, float *a3)
 {
@@ -88969,8 +87693,6 @@ int __thiscall InitializeTileAudioOcclusion(_DWORD *this, int a2, float *a3)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 68h
@@ -89238,7 +87960,6 @@ retn    8
 } }
 // 0x758B70
 namespace gamemd { int GenerateLightRemapTable(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
 {
@@ -89365,8 +88086,6 @@ int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
   while ( v15 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -89604,7 +88323,6 @@ retn    8
 } }
 // 0x7597A0
 namespace gamemd { int Render_Load_7597A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7597A0(int this)
 {
@@ -89630,8 +88348,6 @@ char __thiscall sub_7597A0(int this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -89673,7 +88389,6 @@ retn
 } }
 // 0x759830
 namespace gamemd { int Render_Load_759830(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759830(_DWORD *this, int a2)
 {
@@ -89684,8 +88399,6 @@ int __thiscall sub_759830(_DWORD *this, int a2)
     *(this + 119) = a2;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -89700,7 +88413,6 @@ retn    4
 } }
 // 0x759850
 namespace gamemd { bool Render_Render_759850(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759850(int *this, int a2, int a3)
 {
@@ -89711,8 +88423,6 @@ bool __thiscall sub_759850(int *this, int a2, int a3)
     v3 = -1;
   return Audio_Render_7C3430(*(this + 128), a2, v3, 1u) == -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -89733,7 +88443,6 @@ retn    8
 } }
 // 0x759880
 namespace gamemd { bool Render_Render_759880(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
 {
@@ -89752,8 +88461,6 @@ bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
     v6 = -1;
   return SeekAudioStream(*(this + 128), v4, v5, v6, 0) == -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -89797,14 +88504,11 @@ retn    0Ch
 } }
 // 0x759EA0
 namespace gamemd { int Render_Load_759EA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759EA0(_DWORD *this)
 {
   return *(this + 323);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+50Ch]
@@ -89813,7 +88517,6 @@ retn
 } }
 // 0x759EB0
 namespace gamemd { bool Render_Load_759EB0(int a1, int a2, int a3, int a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, int a5, int a6)
 {
@@ -89840,8 +88543,6 @@ bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, 
     v9 = 0;
   return Audio_Process_7C3270(*(this + 128), a2, v6, v7, v8, v9) == -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -89896,15 +88597,12 @@ retn    14h
 } }
 // 0x759F20
 namespace gamemd { int Render_Load_759F20(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759F20(_DWORD *this, int a2)
 {
   *(this + 324) = a2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -89914,7 +88612,6 @@ retn    4
 } }
 // 0x7639A0
 namespace gamemd { int WaypointClass_Find(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7639A0(_DWORD *this, _DWORD *a2)
 {
@@ -89957,8 +88654,6 @@ char __thiscall sub_7639A0(_DWORD *this, _DWORD *a2)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -90040,14 +88735,11 @@ retn    4
 } }
 // 0x764FA0
 namespace gamemd { bool Team_Start_764FA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_764FA0(int this)
 {
   return *(_DWORD *)(this + 48) != WDTObject::GetSize(*(_DWORD **)(this + 12));
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -90065,15 +88757,12 @@ retn
 } }
 // 0x764FC0
 namespace gamemd { bool ConstructWDTSelection_Create(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_764FC0(int this, int a2)
 {
   return *(_DWORD *)(this + 48) != WDTObject::GetSize(*(_DWORD **)(this + 12))
       || *(_DWORD *)(this + 4 * a2 + 52) != Conflict::GetOwnerHouse(*(_DWORD **)(this + 12));
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -90100,7 +88789,6 @@ retn    4
 } }
 // 0x765380
 namespace gamemd { void* FindWDTTerritoryClass_Find(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall FindWDTTerritoryClass_Find(char *this, _DWORD *a2, int a3)
 {
@@ -90128,8 +88816,6 @@ _DWORD *__thiscall FindWDTTerritoryClass_Find(char *this, _DWORD *a2, int a3)
   *a2 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable';
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -90177,7 +88863,6 @@ retn    8
 } }
 // 0x765410
 namespace gamemd { void* Team_Start_765410(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_765410(int this, char *a2)
 {
@@ -90231,8 +88916,6 @@ char *__thiscall sub_765410(int this, char *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -90333,7 +89016,6 @@ retn    4
 } }
 // 0x765C90
 namespace gamemd { void* Team_Create_765C90(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Create_765C90(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -90398,8 +89080,6 @@ _DWORD *__thiscall Team_Create_765C90(_DWORD *this, int a2, _DWORD *a3)
   *(this + 1) = a3 + 1;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -90494,7 +89174,6 @@ retn    8
 } }
 // 0x766060
 namespace gamemd { int FindWDTTerritoryClass_Find_Find() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_766060(_DWORD *this)
 {
@@ -90506,8 +89185,6 @@ int __thiscall sub_766060(_DWORD *this)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0Ch]
@@ -90524,7 +89201,6 @@ retn
 } }
 // 0x7665D0
 namespace gamemd { void* TerritorySelectWDT_Create(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 **__thiscall sub_7665D0(char *this, #72 **a2)
 {
@@ -90609,8 +89285,6 @@ namespace gamemd { void* TerritorySelectWDT_Create(void* a1) {
   DeleteAndZero::Alt(&v11);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -90770,15 +89444,12 @@ retn    4
 } }
 // 0x7668F0
 namespace gamemd { void* System_Init_7668F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7668F0(_DWORD *this)
 {
   *this = &rc_ptr<WorldDominationTour::GameOption>::`vftable';
   return ComPtr::Release(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx], offset ??_7?$rc_ptr@VGameOption@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::GameOption>::`vftable'
@@ -90787,15 +89458,12 @@ jmp     ComPtr__Release
 } }
 // 0x766900
 namespace gamemd { void* System_Init_766900() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766900(_DWORD *this)
 {
   *this = &rc_ptr<WorldDominationTour::FlagGameOption>::`vftable';
   return ComPtr::Release(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx], offset ??_7?$rc_ptr@VFlagGameOption@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::FlagGameOption>::`vftable'
@@ -90804,15 +89472,12 @@ jmp     ComPtr__Release
 } }
 // 0x766910
 namespace gamemd { void* System_Init_766910() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766910(_DWORD *this)
 {
   *this = &rc_ptr<WorldDominationTour::MapSizeGameOption>::`vftable';
   return ComPtr::Release(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx], offset ??_7?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@@@6B@ ; const rc_ptr<WorldDominationTour::MapSizeGameOption>::`vftable'
@@ -90821,7 +89486,6 @@ jmp     ComPtr__Release
 } }
 // 0x766A10
 namespace gamemd { void* System_Init_766A10(int a1, int a2, void* a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_766A10(void *this, int a2, int a3, void *a4, int a5)
 {
@@ -90838,8 +89502,6 @@ void *__thiscall sub_766A10(void *this, int a2, int a3, void *a4, int a5)
   DeleteAndZero(&a4);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -90866,7 +89528,6 @@ retn    10h
 } }
 // 0x766EE0
 namespace gamemd { int System_Init_766EE0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_766EE0(_DWORD *this, int a2)
 {
@@ -90888,8 +89549,6 @@ char __thiscall sub_766EE0(_DWORD *this, int a2)
   ComPtr::Set((_DWORD *)(*(this + 1) + 8 * v6), *(_DWORD *)(a2 + 4));
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -90942,7 +89601,6 @@ retn    4
 } }
 // 0x766F70
 namespace gamemd { void* System_Init_766F70(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766F70(_DWORD *this, int a2)
 {
@@ -90951,8 +89609,6 @@ _DWORD *__thiscall sub_766F70(_DWORD *this, int a2)
   ComPtr::Set(this, *(_DWORD *)(a2 + 4));
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -90971,7 +89627,6 @@ retn    4
 } }
 // 0x767820
 namespace gamemd { void* ConstructorWDTFlagOption_Create(int a1, void* a2, int a3, void* a4, int a5) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_767820(void *this, int a2, void *a3, int a4, void *a5, int a6)
 {
@@ -90992,8 +89647,6 @@ void *__thiscall sub_767820(void *this, int a2, void *a3, int a4, void *a5, int 
   DeleteAndZero(&a5);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -91026,7 +89679,6 @@ retn    14h
 } }
 // 0x768000
 namespace gamemd { void* ConstructWDTSelection_Create_767FB0_Create(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_768000(void *this, int a2, int a3, int a4)
 {
@@ -91063,8 +89715,6 @@ void *__thiscall sub_768000(void *this, int a2, int a3, int a4)
   *(_DWORD *)this = &WorldDominationTour::Map::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -91122,7 +89772,6 @@ retn    0Ch
 } }
 // 0x7692F0
 namespace gamemd { int ConstructWDTSelection_Create_76EEB0_Create(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7692F0(int *this, _DWORD *a2, _DWORD *a3)
 {
@@ -91140,8 +89789,6 @@ int __thiscall sub_7692F0(int *this, _DWORD *a2, _DWORD *a3)
     return (*(int (__thiscall **)(int, int))(*(_DWORD *)v5 + 4))(v5, 1);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -91175,7 +89822,6 @@ retn    8
 } }
 // 0x7694C0
 namespace gamemd { void* Map_Load_7694C0(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_7694C0(int *this, int *a2)
 {
@@ -91198,8 +89844,6 @@ int *__thiscall sub_7694C0(int *this, int *a2)
   a2[1] = v5;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -91238,7 +89882,6 @@ retn    4
 } }
 // 0x769C20
 namespace gamemd { void* Map_Load_769C20(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_769C20(_DWORD *this, int a2)
 {
@@ -91246,8 +89889,6 @@ _DWORD *__thiscall sub_769C20(_DWORD *this, int a2)
   *(this + 2) = *(_DWORD *)(a2 + 8);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -91261,7 +89902,6 @@ retn    4
 } }
 // 0x76A7E0
 namespace gamemd { void* ConstructWDTSelection_Create_767FB0_Create_Create(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_767FB0_Create_Create(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -91326,8 +89966,6 @@ _DWORD *__thiscall ConstructWDTSelection_Create_767FB0_Create_Create(_DWORD *thi
   *(this + 1) = a3 + 1;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -91422,7 +90060,6 @@ retn    8
 } }
 // 0x76AAF0
 namespace gamemd { void* ParseWDTTerritories_Parse() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76AAF0(_DWORD *this)
 {
@@ -91467,8 +90104,6 @@ _DWORD *__thiscall sub_76AAF0(_DWORD *this)
   *(this + 15) = -1;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -91523,7 +90158,6 @@ retn
 } }
 // 0x76B180
 namespace gamemd { int ParseWDTTerritories(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParseWDTTerritories(int this, int a2, int a3)
 {
@@ -91843,8 +90477,6 @@ char __thiscall ParseWDTTerritories(int this, int a2, int a3)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -92444,7 +91076,6 @@ retn    8
 } }
 // 0x76B790
 namespace gamemd { void* ParseWDTTerritories_Parse_76B790(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76B790(_DWORD *this, int a2)
 {
@@ -92453,8 +91084,6 @@ _DWORD *__thiscall sub_76B790(_DWORD *this, int a2)
   ComPtr::Set(this, a2);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -92472,7 +91101,6 @@ retn    4
 } }
 // 0x76BF00
 namespace gamemd { void* Audio_Create_76BF00(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_76BF00(char *this, int a2)
 {
@@ -92507,8 +91135,6 @@ char *__thiscall sub_76BF00(char *this, int a2)
   *(_DWORD *)this = &WorldDominationTour::CampaignProperties::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -92574,7 +91200,6 @@ retn    4
 } }
 // 0x76BFC0
 namespace gamemd { int ConstructWDTSelection_Create_76BFC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76BFC0(_DWORD *this)
 {
@@ -92586,8 +91211,6 @@ int __thiscall sub_76BFC0(_DWORD *this)
   else
     return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0Ch]
@@ -92606,7 +91229,6 @@ retn
 } }
 // 0x76C290
 namespace gamemd { int ConstructWDTSelection(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConstructWDTSelection(int this, int a2, int a3)
 {
@@ -92746,8 +91368,6 @@ int __thiscall ConstructWDTSelection(int this, int a2, int a3)
   BufferIOFileClass::Dtor(v32);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0C4h
@@ -93061,7 +91681,6 @@ retn    8
 } }
 // 0x76C6E0
 namespace gamemd { void SelectionInitializeWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SelectionInitializeWOL(int this)
 {
@@ -93161,8 +91780,6 @@ void __thiscall SelectionInitializeWOL(int this)
   ComPtr::Release((_DWORD *)(this + 72));
   MSEngine::Destruct((_DWORD *)this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -93388,7 +92005,6 @@ retn
 } }
 // 0x76C970
 namespace gamemd { void ConstructWDTSelection_Create_76C970(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76C970(int this, _DWORD *a2, int a3)
 {
@@ -93409,8 +92025,6 @@ void __thiscall sub_76C970(int this, _DWORD *a2, int a3)
   *(_DWORD *)(this + 1088) = INIClass::ReadInt(v3, (char **)&a3, *(_DWORD *)(this + 1088));
   DeleteAndZero((void **)&a3);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -93483,7 +92097,6 @@ retn    8
 } }
 // 0x76CA60
 namespace gamemd { void ConstructWDTSelection_Create_76CA60(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConstructWDTSelection_Create_76CA60(char **this, char *a2, char **a3)
 {
@@ -93575,8 +92188,6 @@ void __thiscall ConstructWDTSelection_Create_76CA60(char **this, char *a2, char 
   }
   DeleteAndZero(&v17);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -93743,7 +92354,6 @@ retn    8
 } }
 // 0x76CBF0
 namespace gamemd { void ConstructWDTSelection_Create_76CBF0(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConstructWDTSelection_Create_76CBF0(_DWORD *this, int *a2, char **a3)
 {
@@ -93806,8 +92416,6 @@ void __thiscall ConstructWDTSelection_Create_76CBF0(_DWORD *this, int *a2, char 
   DeleteAndZero(&v17);
   DeleteAndZero(&v16);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -93956,7 +92564,6 @@ retn    8
 } }
 // 0x76CDA0
 namespace gamemd { int ShowWDTTerritorySelection(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ShowWDTTerritorySelection(int *this, _DWORD *a2)
 {
@@ -94141,8 +92748,6 @@ LABEL_38:
   }
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 3Ch
@@ -94469,7 +93074,6 @@ retn    4
 } }
 // 0x76DAD0
 namespace gamemd { bool TerritorySelectWDT(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall WDT_TerritorySelect(int *this, int a2)
 {
@@ -94627,8 +93231,6 @@ bool __thiscall WDT_TerritorySelect(int *this, int a2)
   }
   return v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -94977,7 +93579,6 @@ retn    4
 } }
 // 0x76E180
 namespace gamemd { void ShowWDTTerritorySelection_Show() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ShowWDTTerritorySelection_Show(int *this)
 {
@@ -95018,8 +93619,6 @@ void __thiscall ShowWDTTerritorySelection_Show(int *this)
     DeleteAndZero::Alt(&v4);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -95109,7 +93708,6 @@ retn
 } }
 // 0x76E2F0
 namespace gamemd { void* Team_Start_76E2F0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_76E2F0(int this, int a2)
 {
@@ -95160,8 +93758,6 @@ char *__thiscall sub_76E2F0(int this, int a2)
   ComPtr::Release(v12);
   return sub_765000(*(_DWORD *)(this + 76), v4);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -95285,7 +93881,6 @@ retn    4
 } }
 // 0x76E430
 namespace gamemd { int Team_Start_76E430(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76E430(int *this, int a2, bool *a3)
 {
@@ -95324,8 +93919,6 @@ LABEL_6:
     return 2;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -95394,7 +93987,6 @@ retn    8
 } }
 // 0x76E750
 namespace gamemd { void* Team_Start_76E750(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76E750(int this, int a2)
 {
@@ -95446,8 +94038,6 @@ _DWORD *__thiscall sub_76E750(int this, int a2)
   v9 = &rc_ptr<WorldDominationTour::State>::`vftable';
   return ComPtr::Release(&v9);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -95589,7 +94179,6 @@ retn    4
 } }
 // 0x76E8B0
 namespace gamemd { bool Team_Start_76E8B0(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_76E8B0(int *this, int a2, int a3)
 {
@@ -95652,8 +94241,6 @@ LABEL_12:
   ComPtr::Release(v15);
   return v12;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -95771,7 +94358,6 @@ retn    8
 } }
 // 0x76EEB0
 namespace gamemd { int ConstructWDTSelection_Create_76EEB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConstructWDTSelection_Create_76EEB0(int this)
 {
@@ -95807,8 +94393,6 @@ int __thiscall ConstructWDTSelection_Create_76EEB0(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -95881,7 +94465,6 @@ retn
 } }
 // 0x76F210
 namespace gamemd { void* ConstructWDTSelection_Create_76F210(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_76F210(_DWORD *this, int a2, int a3)
 {
@@ -95902,8 +94485,6 @@ _DWORD *__thiscall ConstructWDTSelection_Create_76F210(_DWORD *this, int a2, int
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -95942,7 +94523,6 @@ retn    8
 } }
 // 0x76F500
 namespace gamemd { void* ConstructWDTSelection_Create_76F500() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_76F500(_DWORD *this)
 {
@@ -95971,8 +94551,6 @@ _DWORD *__thiscall ConstructWDTSelection_Create_76F500(_DWORD *this)
   ComPtr::Set(this, (int)v3);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -96015,7 +94593,6 @@ retn
 } }
 // 0x76FEB0
 namespace gamemd { void TerritorySelectWDT_Process(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76FEB0(_DWORD *this, int a2, int *a3)
 {
@@ -96038,8 +94615,6 @@ void __thiscall sub_76FEB0(_DWORD *this, int a2, int *a3)
     MSEngine::ProcessEvents(a3, *(this + 10), 300000);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -96088,7 +94663,6 @@ retn    8
 } }
 // 0x770430
 namespace gamemd { void System_Init_770430() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall System_Init_770430(int this)
 {
@@ -96155,8 +94729,6 @@ void __thiscall System_Init_770430(int this)
   }
   while ( v9 );
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -96263,7 +94835,6 @@ retn
 } }
 // 0x7714B0
 namespace gamemd { void TerritorySelectWDT_Delete(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TerritorySelectWDT_Delete(_DWORD *this, int a2, char a3, int a4)
 {
@@ -96332,8 +94903,6 @@ void __thiscall TerritorySelectWDT_Delete(_DWORD *this, int a2, char a3, int a4)
   }
   DeleteAndZero(v17);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -96484,7 +95053,6 @@ retn    0Ch
 } }
 // 0x771800
 namespace gamemd { void* ConstructWDTSelection_Create_771800() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_771800(void *this)
 {
@@ -96504,8 +95072,6 @@ _DWORD *__thiscall ConstructWDTSelection_Create_771800(void *this)
   *v3 = &WorldDominationTour::Voices::Anim::`vftable';
   return v3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -96545,7 +95111,6 @@ retn
 } }
 // 0x776880
 namespace gamemd { bool System_Read_776880() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_776880(_DWORD *this)
 {
@@ -96556,8 +95121,6 @@ int __thiscall System_Read_776880(_DWORD *this)
   v2 = ((int (__stdcall *)(int))GetWindowContextHelpId)(v1);
   return ((int (__stdcall *)(int, char *, int, int))WinHelpA)(v1, szHelp, 8, v2);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -96575,7 +95138,6 @@ retn
 } }
 // 0x7768A0
 namespace gamemd { bool System_Read_7768A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_7768A0(void *this)
 {
@@ -96587,8 +95149,6 @@ int __thiscall System_Read_7768A0(void *this)
   dwData[1] = ((int (__stdcall *)(void *))GetWindowContextHelpId)(this);
   return ((int (__stdcall *)(void *, char *, int, _DWORD *))WinHelpA)(this, szHelp, 10, dwData);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 dwData          = dword ptr -10h
@@ -96624,7 +95184,6 @@ retn
 } }
 // 0x778710
 namespace gamemd { void* LoadAccountInfoWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LoadAccountInfoWOL(_DWORD *this)
 {
@@ -96744,8 +95303,6 @@ _DWORD *__thiscall LoadAccountInfoWOL(_DWORD *this)
   DeleteAndZero(&v13);
   return v9;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0B0h
@@ -96979,7 +95536,6 @@ retn
 } }
 // 0x779690
 namespace gamemd { void* LoadAccountInfoWOL_Load(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, void* a13, void* a14) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_779690(
 {
@@ -97003,8 +95559,6 @@ void *__thiscall sub_779690(
   *(_DWORD *)this = &PlayerProfile::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -97055,7 +95609,6 @@ retn    38h ; '8'
 } }
 // 0x779B50
 namespace gamemd { void* ReadAutoLoginWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_ReadAutoLogin(char **this)
 {
@@ -97108,8 +95661,6 @@ char **__thiscall WOL_ReadAutoLogin(char **this)
   BufferIOFileClass::Dtor(v12);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0A4h
@@ -97205,7 +95756,6 @@ retn
 } }
 // 0x779C90
 namespace gamemd { int ReadSettingsWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WOL_ReadSettings(void *this)
 {
@@ -97255,8 +95805,6 @@ int __thiscall WOL_ReadSettings(void *this)
   v11[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v11);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0A0h
@@ -97350,7 +95898,6 @@ retn
 } }
 // 0x779DD0
 namespace gamemd { void* LoadConfigWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_LoadConfig(char **this)
 {
@@ -97403,8 +95950,6 @@ char **__thiscall WOL_LoadConfig(char **this)
   BufferIOFileClass::Dtor(v12);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0A4h
@@ -97500,7 +96045,6 @@ retn
 } }
 // 0x779F10
 namespace gamemd { int SavePersonaConfigWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WOL_SavePersonaConfig(char **this)
 {
@@ -97550,8 +96094,6 @@ int __thiscall WOL_SavePersonaConfig(char **this)
   v11[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v11);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0A0h
@@ -97645,7 +96187,6 @@ retn
 } }
 // 0x77A080
 namespace gamemd { void SaveProfileWOL(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall WOL_SaveProfile(int this, const char **a2)
 {
@@ -97767,8 +96308,6 @@ LABEL_10:
     goto LABEL_10;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0ACh
@@ -98078,7 +96617,6 @@ retn    4
 } }
 // 0x77A760
 namespace gamemd { int MainLobbyDlgProcWOL_Helper(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_77A760(_BYTE *this, char a2)
 {
@@ -98092,8 +96630,6 @@ char __thiscall sub_77A760(_BYTE *this, char a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_0]
@@ -98109,7 +96645,6 @@ retn    4
 } }
 // 0x77A780
 namespace gamemd { int MainLobbyDlgProcWOL_Helper_77A780(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A780(int this, int a2)
 {
@@ -98123,8 +96658,6 @@ int __thiscall sub_77A780(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -98140,7 +96673,6 @@ retn    4
 } }
 // 0x77A7A0
 namespace gamemd { int MainLobbyDlgProcWOL_Helper_77A7A0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A7A0(int this, int a2)
 {
@@ -98154,8 +96686,6 @@ int __thiscall sub_77A7A0(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -98171,7 +96701,6 @@ retn    4
 } }
 // 0x77A870
 namespace gamemd { int Event_Process_77A870(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A870(int this, int a2)
 {
@@ -98186,8 +96715,6 @@ int __thiscall sub_77A870(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+2Ch]
@@ -98204,7 +96731,6 @@ retn    4
 } }
 // 0x77A890
 namespace gamemd { int Event_Process_77A890(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A890(int this, int a2)
 {
@@ -98219,8 +96745,6 @@ int __thiscall sub_77A890(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+30h]
@@ -98237,7 +96761,6 @@ retn    4
 } }
 // 0x77A8B0
 namespace gamemd { int Event_Process_77A8B0(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A8B0(int this, int a2)
 {
@@ -98252,8 +96775,6 @@ int __thiscall sub_77A8B0(int this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+34h]
@@ -98270,7 +96791,6 @@ retn    4
 } }
 // 0x77A9F0
 namespace gamemd { void FillPersonaInfoWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FillPersonaInfoWOL(int this, int hDlg, char **a3, #72 **a4)
 {
@@ -98598,8 +97118,6 @@ LABEL_30:
     __3_YAXPAX_Z(v68);
   DeleteAndZero::Alt((void **)&hDlg);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr  4
@@ -99227,15 +97745,12 @@ retn    0Ch
 } }
 // 0x77D1F0
 namespace gamemd { void ConnectAndLoginWOL_Connect() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_77D1F0(_DWORD *this)
 {
   *this = &off_7F7624;
   OwnerDrawControl::InitVtable(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx], offset off_7F7624
@@ -99244,7 +97759,6 @@ jmp     OwnerDrawControl__InitVtable
 } }
 // 0x77D4C0
 namespace gamemd { bool IsBuddyOrIgnoreWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall WOL_IsBuddyOrIgnore(const char *this)
 {
@@ -99360,8 +97874,6 @@ LABEL_42:
   }
   return LOBYTE(dword_A8ED54[234335]) && v7 && this && !_strcmpi(v7 + 46, this + 46);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -99660,7 +98172,6 @@ retn
 } }
 // 0x77E1D0
 namespace gamemd { int FillPlayerListWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillPlayerListWOL(#72 **this)
 {
@@ -99732,8 +98243,6 @@ int __thiscall FillPlayerListWOL(#72 **this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 78h
@@ -99857,7 +98366,6 @@ retn
 } }
 // 0x77E300
 namespace gamemd { int FillBuddyListExWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillBuddyListExWOL(#72 **this)
 {
@@ -99929,8 +98437,6 @@ int __thiscall FillBuddyListExWOL(#72 **this)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 78h
@@ -100054,7 +98560,6 @@ retn
 } }
 // 0x77EBA0
 namespace gamemd { int SendMultiplayerStartSignal_Start_77EBA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77EBA0(const char **this)
 {
@@ -100130,8 +98635,6 @@ LABEL_11:
     }
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -100260,7 +98763,6 @@ retn
 } }
 // 0x783B80
 namespace gamemd { int Render_Find() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_783B80(unsigned int *this)
 {
@@ -100289,8 +98791,6 @@ int __thiscall sub_783B80(unsigned int *this)
     return HashTable::Find(MEMORY[0xAC4848], aPrivatePcx, 0);
   return HashTable::Find(MEMORY[0xAC4848], aCorporalPcx, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 test    ecx, ecx
@@ -100399,7 +98899,6 @@ retn
 } }
 // 0x783C80
 namespace gamemd { void DisplayRankingsWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall DisplayRankingsWOL(void *this, char a2)
 {
@@ -101380,8 +99879,6 @@ LABEL_166:
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr -610h
@@ -103334,7 +101831,6 @@ retn
 } }
 // 0x785370
 namespace gamemd { int InitializeWestwoodOnline() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeWestwoodOnline(void *this)
 {
@@ -103511,8 +102007,6 @@ LABEL_41:
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Data            = dword ptr -114h
@@ -103869,7 +102363,6 @@ retn
 } }
 // 0x785740
 namespace gamemd { void LeaveChannelWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LeaveChannelWOL(const char *this)
 {
@@ -104224,8 +102717,6 @@ LABEL_97:
 LABEL_109:
   DisplayRankingsWOL(0, 0);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -0ECh
@@ -104964,7 +103455,6 @@ retn
 } }
 // 0x7864C0
 namespace gamemd { int ConnectAndLoginWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ConnectAndLoginWOL(char *this)
 {
@@ -105364,8 +103854,6 @@ LABEL_93:
   ComPtr::Release(&v52);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -94h
@@ -106173,7 +104661,6 @@ retn
 } }
 // 0x78A470
 namespace gamemd { int HandleOnlineWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HandleOnlineWOL(#72 *String1)
 {
@@ -106257,8 +104744,6 @@ int __thiscall HandleOnlineWOL(#72 *String1)
     return 1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -2ECh
@@ -106476,7 +104961,6 @@ retn
 } }
 // 0x78A6B0
 namespace gamemd { void* HandlePageWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall HandlePageWOL(#72 *String1)
 {
@@ -106597,8 +105081,6 @@ LABEL_23:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String2         = byte ptr -18Ch
@@ -106847,7 +105329,6 @@ retn
 } }
 // 0x78A8F0
 namespace gamemd { void* HandleReplyWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall HandleReplyWOL(#72 *String1)
 {
@@ -106967,8 +105448,6 @@ LABEL_28:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -36Ch
@@ -107274,7 +105753,6 @@ retn
 } }
 // 0x78F200
 namespace gamemd { void* BuildWOLPlayerTooltip() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall BuildWOLPlayerTooltip(char *this)
 {
@@ -107423,8 +105901,6 @@ LABEL_40:
   DeleteAndZero(&v19);
   return (#72 *)&dword_A8ED54[236857];
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 154h
@@ -107774,7 +106250,6 @@ retn
 } }
 // 0x791AA0
 namespace gamemd { void UI_Setup_791AA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Setup_791AA0(void *this)
 {
@@ -107791,8 +106266,6 @@ void __thiscall UI_Setup_791AA0(void *this)
       CloseDialog(this, 2);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -107840,7 +106313,6 @@ retn
 } }
 // 0x795650
 namespace gamemd { int QueryNATPortWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall QueryNATPortWOL(unsigned __int16 *this)
 {
@@ -108117,8 +106589,6 @@ LABEL_60:
     __3_YAXPAX_Z(Block);
   return v21;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -0FCh
@@ -108732,7 +107202,6 @@ retn
 } }
 // 0x798F50
 namespace gamemd { void* MainLobbyDlgProcWOL_Read() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MainLobbyDlgProcWOL_Read(void *this)
 {
@@ -108787,8 +107256,6 @@ _DWORD *__thiscall MainLobbyDlgProcWOL_Read(void *this)
   v10 = &rc_ptr<PlayerProfile>::`vftable';
   return ComPtr::Release(&v10);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -108909,7 +107376,6 @@ retn
 } }
 // 0x79AF10
 namespace gamemd { int FillBuddyListWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillBuddyListWOL(void *this)
 {
@@ -109354,8 +107820,6 @@ LABEL_88:
   ((void (__stdcall *)(int, int))EnableWindow)(v40, v46);
   return ShowUserProfileWOL(v36);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr -3DCh
@@ -110327,7 +108791,6 @@ retn
 } }
 // 0x79C040
 namespace gamemd { void ShowUserProfileWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ShowUserProfileWOL(void *this)
 {
@@ -110444,8 +108907,6 @@ void __thiscall ShowUserProfileWOL(void *this)
     ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &MEMORY[0x87F7E8][8147]);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr -78h
@@ -110737,7 +109198,6 @@ retn
 } }
 // 0x79C8D0
 namespace gamemd { void QueueWOLAuthRequest() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall QueueWOLAuthRequest(char **this)
 {
@@ -110874,8 +109334,6 @@ LABEL_34:
     goto LABEL_34;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -0B4h
@@ -111141,7 +109599,6 @@ retn
 } }
 // 0x7A28B0
 namespace gamemd { void PlayerSkirmishSlotHandler_Handle_7A28B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7A28B0(#72 *String)
 {
@@ -111183,8 +109640,6 @@ LABEL_10:
     DeleteAndZero(&v6);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 74h
@@ -111269,7 +109724,6 @@ retn
 } }
 // 0x7A2FC0
 namespace gamemd { void* System_Init_7A2FC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7A2FC0(char *this)
 {
@@ -111278,8 +109732,6 @@ char *__thiscall System_Init_7A2FC0(char *this)
   *(_DWORD *)this = &CNetUtilEventSink::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -111296,7 +109748,6 @@ retn
 } }
 // 0x7A41A0
 namespace gamemd { void* System_Init_7A41A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7A41A0(char *this)
 {
@@ -111305,8 +109756,6 @@ char *__thiscall System_Init_7A41A0(char *this)
   *(_DWORD *)this = &CChatEventSink::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -111323,7 +109772,6 @@ retn
 } }
 // 0x7AC610
 namespace gamemd { void* CreateGameWOL_Create_7AC610() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7AC610(_DWORD *this)
 {
@@ -111333,8 +109781,6 @@ _DWORD *__thiscall sub_7AC610(_DWORD *this)
   *this = &WonlineStringDialogControl::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -111351,7 +109797,6 @@ retn
 } }
 // 0x7AC670
 namespace gamemd { int System_Init_7AC670() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7AC670(int *this)
 {
@@ -111362,8 +109807,6 @@ int __thiscall sub_7AC670(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -111379,7 +109822,6 @@ retn
 } }
 // 0x7AC680
 namespace gamemd { int System_Init_7AC680() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7AC680(int *this)
 {
@@ -111390,8 +109832,6 @@ int __thiscall sub_7AC680(int *this)
     return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -111407,7 +109847,6 @@ retn
 } }
 // 0x7AC9D0
 namespace gamemd { int GetBuddyEntryWOL(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall WOL_GetBuddyEntry(int *this, _DWORD *a2, int a3)
 {
@@ -111416,8 +109855,6 @@ char __thiscall WOL_GetBuddyEntry(int *this, _DWORD *a2, int a3)
   *a2 = *(this + 2) + 248 * a3;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -111444,7 +109881,6 @@ retn    8
 } }
 // 0x7ACB90
 namespace gamemd { int StartGameWOL_Start_7ACB90(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7ACB90(int *this, void *a2, int a3)
 {
@@ -111453,8 +109889,6 @@ char __thiscall sub_7ACB90(int *this, void *a2, int a3)
   qmemcpy(a2, (const void *)(*(this + 2) + 108 * a3), 0x6Cu);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -111486,7 +109920,6 @@ retn    8
 } }
 // 0x7ACBE0
 namespace gamemd { int ConnectAndLoginWOL_Connect_7ACBE0(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ConnectAndLoginWOL_Connect_7ACBE0(int (__thiscall **this)(_DWORD), const char **a2, char **Block)
 {
@@ -111565,8 +109998,6 @@ char __thiscall ConnectAndLoginWOL_Connect_7ACBE0(int (__thiscall **this)(_DWORD
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr  8
@@ -111706,7 +110137,6 @@ retn    8
 } }
 // 0x7AD2F0
 namespace gamemd { void* ResetSystemWOL_Reset(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall sub_7AD2F0(void **Block, char a2)
 {
@@ -111715,8 +110145,6 @@ void **__thiscall sub_7AD2F0(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -111736,7 +110164,6 @@ retn    4
 } }
 // 0x7AD410
 namespace gamemd { void* System_Init_7AD410(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7AD410(char *this, int a2)
 {
@@ -111746,8 +110173,6 @@ char *__thiscall System_Init_7AD410(char *this, int a2)
   ((void (__stdcall *)(int *))InterlockedIncrement)(&dword_A8ED54[237010]);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -111766,7 +110191,6 @@ retn    4
 } }
 // 0x7ADB00
 namespace gamemd { int Network_Helper_7ADB00(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Network_Helper_7ADB00(int *this, _DWORD *a2, int a3)
 {
@@ -111841,8 +110265,6 @@ char __thiscall Network_Helper_7ADB00(int *this, _DWORD *a2, int a3)
   ++*this;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -112002,7 +110424,6 @@ retn    8
 } }
 // 0x7AE180
 namespace gamemd { bool ConnectAndLoginWOL_Connect_7AE180(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE180(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -112026,8 +110447,6 @@ bool __thiscall sub_7AE180(_DWORD *this, const char **a2, _DWORD *a3)
   *a3 = v4 + 4;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -112097,7 +110516,6 @@ retn    8
 } }
 // 0x7AE7C0
 namespace gamemd { bool GameOptionsScreenWOL_Helper_7AE7C0(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE7C0(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -112121,8 +110539,6 @@ bool __thiscall sub_7AE7C0(_DWORD *this, const char **a2, _DWORD *a3)
   *a3 = v4 + 4;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -112192,7 +110608,6 @@ retn    8
 } }
 // 0x7AE830
 namespace gamemd { void RemoveWOLPlayerLogin_Remove() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall RemoveWOLPlayerLogin_Remove(_DWORD *this)
 {
@@ -112250,8 +110665,6 @@ void __thiscall RemoveWOLPlayerLogin_Remove(_DWORD *this)
     __3_YAXPAX_Z(v3);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -112340,7 +110753,6 @@ retn
 } }
 // 0x7AE8E0
 namespace gamemd { bool GameOptionsScreenWOL_Helper_7AE8E0(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE8E0(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -112364,8 +110776,6 @@ bool __thiscall sub_7AE8E0(_DWORD *this, const char **a2, _DWORD *a3)
   *a3 = v4 + 4;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -112435,7 +110845,6 @@ retn    8
 } }
 // 0x7AECD0
 namespace gamemd { void* QueryNATPortWOL_Helper(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall QueryNATPortWOL_Helper(_DWORD *this, int a2, int a3)
 {
@@ -112456,8 +110865,6 @@ _DWORD *__thiscall QueryNATPortWOL_Helper(_DWORD *this, int a2, int a3)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -112496,7 +110903,6 @@ retn    8
 } }
 // 0x7AF3D0
 namespace gamemd { void* GetRegionStringWOL() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_GetRegionString(void *this)
 {
@@ -112532,8 +110938,6 @@ char **__thiscall WOL_GetRegionString(void *this)
   }
   return (char **)&MEMORY[0xB77EB0];
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -112623,7 +111027,6 @@ retn
 } }
 // 0x7AF500
 namespace gamemd { void Team_Start_7AF500() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7AF500(_DWORD *this)
 {
@@ -112643,8 +111046,6 @@ void __thiscall sub_7AF500(_DWORD *this)
     (**v4)(v4, 1);
   OwnerDrawControl::InitVtable(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -112682,7 +111083,6 @@ retn
 } }
 // 0x7AF540
 namespace gamemd { int WorldDominationFactionDlgProc_Helper() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WorldDominationFactionDlgProc_Helper(int *this, int hWnd, int *a3)
 {
@@ -112722,8 +111122,6 @@ int __thiscall WorldDominationFactionDlgProc_Helper(int *this, int hWnd, int *a3
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -112832,7 +111230,6 @@ retn    8
 } }
 // 0x7B0490
 namespace gamemd { void* Team_Start_7B0490() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Start_7B0490(_DWORD *this)
 {
@@ -112876,8 +111273,6 @@ _DWORD *__thiscall Team_Start_7B0490(_DWORD *this)
   *(this + 7) = *(this + 4);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -112958,7 +111353,6 @@ retn
 } }
 // 0x7B4A10
 namespace gamemd { int String_Process_7B4A10(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall String_Process_7B4A10(char **this, const char *a2)
 {
@@ -112992,8 +111386,6 @@ char __thiscall String_Process_7B4A10(char **this, const char *a2)
     __3_YAXPAX_Z(v5);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -113094,7 +111486,6 @@ retn    4
 } }
 // 0x7B6780
 namespace gamemd { bool String_Helper(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7B6780(const #72 **this, #72 *String2)
 {
@@ -113107,8 +111498,6 @@ bool __thiscall sub_7B6780(const #72 **this, #72 *String2)
     return wcscmp(v2, String2) == 0;
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String2         = dword ptr  4
@@ -113146,7 +111535,6 @@ retn    4
 } }
 // 0x7B67C0
 namespace gamemd { bool SendMultiplayerStartSignal_Start_77EBA0_Start(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7B67C0(const #72 **this, const #72 **a2)
 {
@@ -113159,8 +111547,6 @@ bool __thiscall sub_7B67C0(const #72 **this, const #72 **a2)
     return wcscmp(v2, *a2) == 0;
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -113197,7 +111583,6 @@ retn    4
 } }
 // 0x7B71D0
 namespace gamemd { int Render_Helper_7B71D0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Render_Helper_7B71D0(const #72 **this, const #72 *Src, unsigned int a3)
 {
@@ -113245,8 +111630,6 @@ char __thiscall Render_Helper_7B71D0(const #72 **this, const #72 *Src, unsigned 
     return 1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = dword ptr  4
@@ -113384,7 +111767,6 @@ retn    8
 } }
 // 0x7B7660
 namespace gamemd { int String_Helper_7B7660() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall String_Helper_7B7660(const #72 **this, __int16 a2, unsigned int a3)
 {
@@ -113393,8 +111775,6 @@ char __thiscall String_Helper_7B7660(const #72 **this, __int16 a2, unsigned int 
   *((_WORD *)*this + a3) = a2;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -113422,7 +111802,6 @@ retn    8
 } }
 // 0x7B7740
 namespace gamemd { void* SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 **__thiscall SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(const #72 **this, #72 **a2)
 {
@@ -113460,8 +111839,6 @@ namespace gamemd { void* SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(vo
   }
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -113543,7 +111920,6 @@ retn    4
 } }
 // 0x7B7980
 namespace gamemd { int UI_Helper_7B7980() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Helper_7B7980(const #72 **this, __int16 a2)
 {
@@ -113592,8 +111968,6 @@ char __thiscall UI_Helper_7B7980(const #72 **this, __int16 a2)
     __3_YAXPAX_Z(v9);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    edi
@@ -113709,7 +112083,6 @@ retn    4
 } }
 // 0x7BD170
 namespace gamemd { int Audio_Render_7BD170() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BD170(int this)
 {
@@ -113746,8 +112119,6 @@ int __thiscall sub_7BD170(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -113805,7 +112176,6 @@ retn
 } }
 // 0x7BD290
 namespace gamemd { int Audio_Process_7BD290() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7BD290(int this)
 {
@@ -113817,8 +112187,6 @@ char __thiscall sub_7BD290(int this)
   *(_DWORD *)(this + 1980) = v2;
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -113838,7 +112206,6 @@ retn
 } }
 // 0x7BD2B0
 namespace gamemd { int Audio_Process_7BD2B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7BD2B0(int this)
 {
@@ -113850,8 +112217,6 @@ char __thiscall sub_7BD2B0(int this)
   *(_DWORD *)(this + 1980) = v2;
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -113871,7 +112236,6 @@ retn
 } }
 // 0x7BE4A0
 namespace gamemd { int Audio_Process_7BE4A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE4A0(int this)
 {
@@ -113933,8 +112297,6 @@ LABEL_15:
   }
   return -9;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -114076,15 +112438,12 @@ retn
 } }
 // 0x7BE660
 namespace gamemd { int Audio_Process_7BE660() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE660(_DWORD *this)
 {
   *(this + 436) = -1;
   return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 or      eax, 0FFFFFFFFh
@@ -114094,7 +112453,6 @@ retn
 } }
 // 0x7BE670
 namespace gamemd { int Audio_Render_7BE670() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE670(int this)
 {
@@ -114197,8 +112555,6 @@ int __thiscall sub_7BE670(int this)
     return -1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -114343,7 +112699,6 @@ retn
 } }
 // 0x7C0490
 namespace gamemd { int Audio_Process_7C0490() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C0490(_DWORD *this)
 {
@@ -114364,8 +112719,6 @@ int __thiscall sub_7C0490(_DWORD *this)
   }
   return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -114410,7 +112763,6 @@ retn
 } }
 // 0x7C1150
 namespace gamemd { int Audio_Render_7C1150() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1150(int this)
 {
@@ -114451,8 +112803,6 @@ int __thiscall sub_7C1150(int this)
   else
     return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -114618,7 +112968,6 @@ retn
 } }
 // 0x7C1A70
 namespace gamemd { int Audio_Render_7C1A70() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1A70(int this)
 {
@@ -114659,8 +113008,6 @@ int __thiscall sub_7C1A70(int this)
   else
     return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -114829,7 +113176,6 @@ retn
 } }
 // 0x7C1BE0
 namespace gamemd { int Audio_Render_7C1BE0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1BE0(int this)
 {
@@ -114870,8 +113216,6 @@ int __thiscall sub_7C1BE0(int this)
   else
     return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -115037,7 +113381,6 @@ retn
 } }
 // 0x7C3750
 namespace gamemd { int Audio_Process_7C3750() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C3750(int this)
 {
@@ -115099,8 +113442,6 @@ int __thiscall sub_7C3750(int this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -115190,7 +113531,6 @@ retn
 } }
 // 0x7CAACB
 namespace gamemd { void* RTtypeid_Helper(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #355 *__thiscall sub_7CAACB(#355 *this, char *a2)
 {
@@ -115198,8 +113538,6 @@ namespace gamemd { void* RTtypeid_Helper(void* a1) {
   *(_DWORD *)this = &bad_typeid::`vftable';
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lea     eax, [esp+arg_0]
@@ -115215,7 +113553,6 @@ retn    4
 } }
 // 0x7DCDC0
 namespace gamemd { void* ThrowErrorCOM_Helper(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7DCDC0(_DWORD *this, int a2, int a3, char a4)
 {
@@ -115227,8 +113564,6 @@ _DWORD *__thiscall sub_7DCDC0(_DWORD *this, int a2, int a3, char a4)
     (*(void (__stdcall **)(int))(*(_DWORD *)a3 + 4))(a3);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]

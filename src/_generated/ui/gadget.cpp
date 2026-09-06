@@ -8,7 +8,6 @@ namespace gamemd {
 
 // 0x007E01FB (208 bytes)
 void CallObfuscateDataBlock_7E01FB() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int a5)
 {
@@ -46,8 +45,6 @@ void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int
   ObfuscateDataBlock(v11, v7, a4);
   qmemcpy(a2, v7, 4 * v8);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -125,7 +122,6 @@ retn
 
 // 0x0046DE20 (423 bytes)
 int CampaignScoreDialogProcHelper_46DE20() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_46DE20(int a1, int a2)
 {
@@ -229,8 +225,6 @@ int __fastcall sub_46DE20(int a1, int a2)
     return ((int (__stdcall *)(int, int))ShowWindow)(result, a2);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr -4
@@ -500,7 +494,6 @@ retn
 
 // 0x004AA380 (185 bytes)
 int CreateTeamCommand_Metho_4AA380() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__stdcall sub_4AA380(_BYTE *a1)
 {
@@ -544,8 +537,6 @@ LABEL_11:
       goto LABEL_12;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -639,7 +630,6 @@ retn    4
 
 // 0x004AA2B0 (203 bytes)
 int CreateTeamCommand_Method_4AA2B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__stdcall sub_4AA2B0(_BYTE *a1)
 {
@@ -689,8 +679,6 @@ LABEL_11:
       goto LABEL_12;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -788,7 +776,6 @@ retn    4
 
 // 0x0052D790 (184 bytes)
 int DialogProcess_52D790() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_52D790(int hWnd, int a2, int a3, int a4)
 {
@@ -831,8 +818,6 @@ int __stdcall sub_52D790(int hWnd, int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -934,7 +919,6 @@ retn    10h
 
 // 0x005C6080 (67 bytes)
 int DialogProcess_5C6080() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_5C6080(int hWnd, int a2, int a3, int a4)
 {
@@ -949,8 +933,6 @@ int __stdcall sub_5C6080(int hWnd, int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -993,7 +975,6 @@ retn    10h
 
 // 0x005D36A0 (179 bytes)
 int DialogProcess_5D36A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_5D36A0(int hWnd, int a2, unsigned int a3, int *a4)
 {
@@ -1035,8 +1016,6 @@ int __stdcall sub_5D36A0(int hWnd, int a2, unsigned int a3, int *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -1135,7 +1114,6 @@ retn    10h
 
 // 0x00612A60 (264 bytes)
 int DialogProcess_612A60() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_612A60(int hWnd, int Msg, int hdc, int lParam)
 {
@@ -1200,8 +1178,6 @@ LABEL_10:
   ((void (__stdcall *)(int, int))SetBkMode)(v10, 1);
   return ((int (__stdcall *)(int))GetStockObject)(5);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -10h
@@ -1327,7 +1303,6 @@ retn    10h
 
 // 0x00623DA0 (83 bytes)
 int DialogProcess_623DA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_623DA0(void *hWnd, unsigned int a2, int a3, int a4)
 {
@@ -1344,8 +1319,6 @@ int __stdcall sub_623DA0(void *hWnd, unsigned int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -1393,7 +1366,6 @@ retn    10h
 
 // 0x0065F710 (136 bytes)
 int DialogProcess_65F710() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_65F710(void *hDlg, unsigned int a2, unsigned int a3, int hWnd)
 {
@@ -1418,8 +1390,6 @@ int __stdcall sub_65F710(void *hDlg, unsigned int a2, unsigned int a3, int hWnd)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr  4
@@ -1490,7 +1460,6 @@ retn    10h
 
 // 0x00773E30 (81 bytes)
 int DialogProcess_773E30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_773E30(void *hWndParent, unsigned int a2, int a3, int a4)
 {
@@ -1510,8 +1479,6 @@ int __stdcall sub_773E30(void *hWndParent, unsigned int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lParam          = dword ptr -8
@@ -1556,7 +1523,6 @@ retn    10h
 
 // 0x0079AE00 (260 bytes)
 int Dialog_Stop_79AE00() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_79AE00(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
 {
@@ -1611,8 +1577,6 @@ int __stdcall sub_79AE00(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -1746,7 +1710,6 @@ retn    10h
 
 // 0x007A0DD0 (118 bytes)
 void Dialog_Update_7A0DD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7A0DD0(const char *this)
 {
@@ -1770,8 +1733,6 @@ void __thiscall sub_7A0DD0(const char *this)
       UpdateLobbyGraphicsWOL(GameUI, v2, -1);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1854,7 +1815,6 @@ retn
 
 // 0x00621D30 (341 bytes)
 int FindHashTable_621D30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_621D30(int *a1, int a2)
 {
@@ -1912,8 +1872,6 @@ int __fastcall sub_621D30(int *a1, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 318h
@@ -2044,7 +2002,6 @@ retn
 
 // 0x00774310 (241 bytes)
 char FindKey_774310() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_774310(#63 *a1, signed int a2)
 {
@@ -2090,8 +2047,6 @@ char __fastcall sub_774310(#63 *a1, signed int a2)
     return 1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 cbData          = dword ptr -104h
@@ -2212,7 +2167,6 @@ retn
 
 // 0x006A74A0 (231 bytes)
 int GadgetClass_SetMember5351_6A74A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6A74A0(_DWORD *this, int a2)
 {
@@ -2243,8 +2197,6 @@ int __thiscall sub_6A74A0(_DWORD *this, int a2)
   MEMORY[0x884B8F] = 1;
   return Tactical::UpdateUIVisibility(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -2327,7 +2279,6 @@ retn    4
 
 // 0x00488210 (70 bytes)
 int GadgetClass_Show_488210() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_488210(_BYTE *this, unsigned int a2, _DWORD *a3, int a4)
 {
@@ -2342,8 +2293,6 @@ int __thiscall sub_488210(_BYTE *this, unsigned int a2, _DWORD *a3, int a4)
   }
   return GadgetClass::ProcessMouseOver(this, a2, a3, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2385,7 +2334,6 @@ retn    0Ch
 
 // 0x004F18B0 (490 bytes)
 int GetDialog_4F18B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_4F18B0(int hDlg, int a2, unsigned int a3, int a4)
 {
@@ -2483,8 +2431,6 @@ LABEL_19:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr  4
@@ -2685,7 +2631,6 @@ retn    10h
 
 // 0x0055F980 (174 bytes)
 int GetDialog_55F980() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_55F980(int hWnd, int a2, int a3, int a4)
 {
@@ -2721,8 +2666,6 @@ int __stdcall sub_55F980(int hWnd, int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -2804,7 +2747,6 @@ retn    10h
 
 // 0x00561350 (174 bytes)
 int GetDialog_561350() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_561350(int hWnd, int a2, int a3, int a4)
 {
@@ -2840,8 +2782,6 @@ int __stdcall sub_561350(int hWnd, int a2, int a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -2923,7 +2863,6 @@ retn    10h
 
 // 0x00609AA0 (129 bytes)
 bool GetDialog_609AA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_609AA0(int a1, int a2)
 {
@@ -2950,8 +2889,6 @@ bool __fastcall sub_609AA0(int a1, int a2)
   v6 = v4 + 1;
   return v6 && !v6[26] && GetDialogDefaultButton(a1, a2);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -3019,7 +2956,6 @@ retn
 
 // 0x0060A250 (168 bytes)
 bool GetDialog_60A250() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_60A250(int hWnd, int a2)
 {
@@ -3058,8 +2994,6 @@ int __stdcall sub_60A250(int hWnd, int a2)
   }
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -3136,7 +3070,6 @@ retn    8
 
 // 0x00788710 (237 bytes)
 bool GetDialog_788710() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __fastcall sub_788710(int a1, char a2)
 {
@@ -3176,8 +3109,6 @@ BOOL __fastcall sub_788710(int a1, char a2)
   }
   return dword_A8ED54[238623] == 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -3269,7 +3200,6 @@ retn
 
 // 0x006D1570 (116 bytes)
 void HashTable_AddCommand_6D1570() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6D1570(void *this)
 {
@@ -3292,8 +3222,6 @@ char __thiscall sub_6D1570(void *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -3331,7 +3259,6 @@ retn
 
 // 0x00528220 (426 bytes)
 int HashTable_Add_528220() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
@@ -3454,8 +3381,6 @@ LABEL_27:
   }
   return a4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3655,7 +3580,6 @@ retn    0Ch
 
 // 0x0048BB60 (192 bytes)
 bool HotkeyOptions_Qsort_48BB60() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_48BB60(int a1)
 {
@@ -3717,8 +3641,6 @@ LABEL_12:
   v7 = &dword_A8ED54[239290];
   return !*v7 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -3825,7 +3747,6 @@ retn
 
 // 0x00796B30 (83 bytes)
 int InitSimpleDialogControl_796B30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall sub_796B30@<eax>(int a1@<ebp>)
 {
@@ -3842,8 +3763,6 @@ int __usercall sub_796B30@<eax>(int a1@<ebp>)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3879,7 +3798,6 @@ retn
 
 // 0x006096A0 (129 bytes)
 char IsDialog_6096A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_6096A0(int a1, int a2)
 {
@@ -3909,8 +3827,6 @@ char __fastcall sub_6096A0(int a1, int a2)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -3978,7 +3894,6 @@ retn
 
 // 0x00609BC0 (292 bytes)
 bool IsDialog_609BC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_609BC0(int a1, int a2)
 {
@@ -4036,8 +3951,6 @@ LABEL_7:
   v8 = v5 + 1;
   return v8 && !v8[26] && GetDialogDefaultButton(a1, a2);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -4177,7 +4090,6 @@ retn
 
 // 0x00609CF0 (292 bytes)
 bool IsDialog_609CF0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_609CF0(int a1, int a2)
 {
@@ -4235,8 +4147,6 @@ LABEL_7:
   v8 = v5 + 1;
   return v8 && !v8[26] && GetDialogDefaultButton(a1, a2);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -4376,7 +4286,6 @@ retn
 
 // 0x00759200 (90 bytes)
 char IsDialog_759200() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_759200()
 {
@@ -4393,8 +4302,6 @@ char sub_759200()
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Msg             = byte ptr -1Ch
@@ -4440,7 +4347,6 @@ retn
 
 // 0x00776320 (362 bytes)
 char MethodHitDialogTest_776320() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_776320(void *this)
 {
@@ -4486,8 +4392,6 @@ char __thiscall sub_776320(void *this)
   ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(dword_A8ED54[233683], 4363, 8, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = byte ptr -84h
@@ -4624,7 +4528,6 @@ retn
 
 // 0x00776670 (209 bytes)
 char MethodHitDialogTest_776670() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_776670(void *this)
 {
@@ -4658,8 +4561,6 @@ char __thiscall sub_776670(void *this)
   ImageList_DragMove(wParam[4] - Rect[0], wParam[5] - Rect[1]);
   return v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -60h
@@ -4756,7 +4657,6 @@ retn
 
 // 0x00631640 (151 bytes)
 void PhoneEditor_Pop_631640() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_631640(#44 *this)
 {
@@ -4792,8 +4692,6 @@ void __thiscall sub_631640(#44 *this)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -4863,7 +4761,6 @@ retn
 
 // 0x0060AA60 (50 bytes)
 bool ReturnOneDialog_60AA60() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_60AA60(int hWnd, int a2)
 {
@@ -4874,8 +4771,6 @@ int __stdcall sub_60AA60(int hWnd, int a2)
     ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1262, 0, 0);
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -4904,7 +4799,6 @@ retn    8
 
 // 0x00558A30 (341 bytes)
 int StopDialog_558A30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_558A30(int hWnd, unsigned int a2, unsigned int a3, int *a4)
 {
@@ -4965,8 +4859,6 @@ int __stdcall sub_558A30(int hWnd, unsigned int a2, unsigned int a3, int *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -5111,7 +5003,6 @@ retn    10h
 
 // 0x00558B90 (279 bytes)
 int StopDialog_558B90() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_558B90(int hWnd, unsigned int a2, unsigned int a3, int *a4)
 {
@@ -5155,8 +5046,6 @@ int __stdcall sub_558B90(int hWnd, unsigned int a2, unsigned int a3, int *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -5287,7 +5176,6 @@ retn    10h
 
 // 0x00558CB0 (279 bytes)
 int StopDialog_558CB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_558CB0(int hWnd, unsigned int a2, unsigned int a3, int *a4)
 {
@@ -5339,8 +5227,6 @@ int __stdcall sub_558CB0(int hWnd, unsigned int a2, unsigned int a3, int *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -5465,7 +5351,6 @@ retn    10h
 
 // 0x005E2E40 (145 bytes)
 const char* StopDialog_5E2E40() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_5E2E40(int hWnd, unsigned int a2, unsigned __int16 a3, int a4)
 {
@@ -5504,8 +5389,6 @@ int __stdcall sub_5E2E40(int hWnd, unsigned int a2, unsigned __int16 a3, int a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -5577,7 +5460,6 @@ retn    10h
 
 // 0x0078DA30 (306 bytes)
 int StopDialog_78DA30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_78DA30(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
 {
@@ -5637,8 +5519,6 @@ int __stdcall sub_78DA30(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -5793,7 +5673,6 @@ retn    10h
 
 // 0x00792CF0 (341 bytes)
 const char* StopDialog_792CF0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_792CF0(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
 {
@@ -5859,8 +5738,6 @@ LABEL_6:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -6009,7 +5886,6 @@ retn    10h
 
 // 0x007A2110 (287 bytes)
 const char* StopDialog_7A2110() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_7A2110(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
 {
@@ -6073,8 +5949,6 @@ int __stdcall sub_7A2110(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -6205,7 +6079,6 @@ retn    10h
 
 // 0x007A2600 (303 bytes)
 const char* StopDialog_7A2600() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_7A2600(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
 {
@@ -6256,8 +6129,6 @@ int __stdcall sub_7A2600(void *hWnd, unsigned int a2, int a3, _DWORD *a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -6396,7 +6267,6 @@ retn    10h
 
 // 0x00696950 (100 bytes)
 int String_SetListBox_696950() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_696950(char *this)
 {
@@ -6417,8 +6287,6 @@ int __thiscall sub_696950(char *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -6466,7 +6334,6 @@ retn
 
 // 0x007B8610 (160 bytes)
 int UpdateWWMouse_7B8610() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_7B8610(_DWORD *lpThreadParameter)
 {
@@ -6494,8 +6361,6 @@ int __stdcall sub_7B8610(_DWORD *lpThreadParameter)
     return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lpThreadParameter= dword ptr  4
@@ -6566,7 +6431,6 @@ retn    4
 
 // 0x006A87F0 (109 bytes)
 char VoxClass_AddTabCameoList_6A87F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A87F0(int this, int a2, int a3)
 {
@@ -6598,8 +6462,6 @@ LABEL_7:
   MEMORY[0x884B8F] = 1;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx

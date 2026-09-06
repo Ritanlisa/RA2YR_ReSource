@@ -325,14 +325,11 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // 0x4c1a90
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall DSurface_BlitWhole(int a1, int a2, int a3)
 {
   return XSurface::BlitWhole(a1, a2, a3);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]
@@ -823,7 +820,6 @@ REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 // 0x4bb5f0
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DSurface_FillRect(int *this, int a2, int a3)
 {
@@ -833,8 +829,6 @@ char __thiscall DSurface_FillRect(int *this, int a2, int a3)
   v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6);
   return DSurface::FillRectEx(this, v4, a2, a3);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -1048,7 +1042,6 @@ REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 // 0x4baf40
 bool DSurface::Unlock()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DSurface_Unlock(int *this)
 {
@@ -1092,8 +1085,6 @@ char __thiscall DSurface_Unlock(int *this)
   }
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, ds:89F978h
@@ -1183,7 +1174,6 @@ REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 // 0x4baec0
 bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
 {
@@ -1201,8 +1191,6 @@ char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
   }
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -1269,14 +1257,11 @@ int DSurface::GetPitch() const
 // 0x4baf20
 bool DSurface::CheckBltStatus()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
   return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+1Ch]
@@ -1415,7 +1400,6 @@ REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 // 0x7baeb0
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_SetPixel(void *this, _DWORD *a2, __int16 a3)
 {
@@ -1431,8 +1415,6 @@ char __thiscall XSurface_SetPixel(void *this, _DWORD *a2, __int16 a3)
   (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1491,7 +1473,6 @@ REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 // 0x7bae60
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall XSurface_GetPixel(void *this, _DWORD *a2)
 {
@@ -1513,8 +1494,6 @@ int __thiscall XSurface_GetPixel(void *this, _DWORD *a2)
   }
   return v3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1571,7 +1550,6 @@ REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
 // 0x7baf90
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_PutPixel(void *this, _DWORD *a2, __int16 a3, _DWORD *a4)
 {
@@ -1599,8 +1577,6 @@ char __thiscall XSurface_PutPixel(void *this, _DWORD *a2, __int16 a3, _DWORD *a4
   (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]
@@ -1679,7 +1655,6 @@ REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
 // 0x7baf10
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall XSurface_GetPixelAtCoords(void *this, _DWORD *a2, _DWORD *a3)
 {
@@ -1711,8 +1686,6 @@ int __thiscall XSurface_GetPixelAtCoords(void *this, _DWORD *a2, _DWORD *a3)
   }
   return v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2037,7 +2010,6 @@ bool XSurface::DrawLineEx(
 // 0x7ba5e0
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_DrawLine(void *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 {
@@ -2047,8 +2019,6 @@ char __thiscall XSurface_DrawLine(void *this, _DWORD *a2, _DWORD *a3, __int16 a4
   v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7);
   return XSurface::DrawLineEx(this, v5, a2, a3, a4);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]
@@ -2261,7 +2231,6 @@ REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 // 0x7bbab0
 bool XSurface::Fill(uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall XSurface_Fill(int *this, int a2)
 {
@@ -2276,8 +2245,6 @@ int __thiscall XSurface_Fill(int *this, int a2)
   v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4);
   return (*(int (__thiscall **)(int *, int))(v3 + 16))(this, v5);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -2332,7 +2299,6 @@ bool XSurface::DrawRectEx(
 // 0x7bad90
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_DrawRect(void *this, _DWORD *a2, int a3)
 {
@@ -2342,8 +2308,6 @@ char __thiscall XSurface_DrawRect(void *this, _DWORD *a2, int a3)
   v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
   return XSurface::DrawRectEx(this, v4, a2, a3);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -2448,7 +2412,6 @@ REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
 // 0x7bb020
 bool XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_FillRect(void *this, _DWORD *a2, int a3)
 {
@@ -2458,8 +2421,6 @@ char __thiscall XSurface_FillRect(void *this, _DWORD *a2, int a3)
   v4 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
   return XSurface::FillRectEx(this, a2, v4, a3);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -2620,7 +2581,6 @@ REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
 // 0x7bbaf0
 bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall XSurface_BlitWhole(int *this, int *a2, int a3, int a4)
 {
@@ -2660,8 +2620,6 @@ int __thiscall XSurface_BlitWhole(int *this, int *a2, int a3, int a4)
   v13 = 0;
   return (*(int (__thiscall **)(int *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, a2, &v12, a3, a4);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h

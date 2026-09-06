@@ -8,7 +8,6 @@ namespace gamemd {
 
 // 0x004B4E10 (206 bytes)
 int ShapeButtonClass_GetList_4B4E10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B4E10(
 {
@@ -28,8 +27,6 @@ int __thiscall sub_4B4E10(
   (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = dword ptr  8

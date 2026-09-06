@@ -15,14 +15,11 @@
 
 // 0x45EC90
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingTypeClass_GetFoundationWidth(_DWORD *this)
 {
   return dword_8192B8[*(this + 956)];
 }
-#endif
-
 /* ASM:
 mov     eax, [ecx+0EF0h]
 mov     eax, dword_8192B8[eax*4]
@@ -34,7 +31,6 @@ retn
 namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
 // 0x45ECA0
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(bool) const {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingTypeClass_GetFoundationHeight(int this, char a2)
 {
@@ -43,8 +39,6 @@ int __thiscall BuildingTypeClass_GetFoundationHeight(int this, char a2)
   else
     return dword_819310[*(_DWORD *)(this + 3824)];
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_0]

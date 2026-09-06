@@ -27,7 +27,6 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 bool CCFileClass::Open(const char* pFileName)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_473C50(_DWORD *this, int a2)
 {
@@ -58,8 +57,6 @@ char __thiscall sub_473C50(_DWORD *this, int a2)
     }
   }
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -146,7 +143,6 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 void CCFileClass::Reset()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCFileClass_Reset(_DWORD *this)
 {
@@ -158,8 +154,6 @@ int __thiscall CCFileClass_Reset(_DWORD *this)
   *(this + 25) = 0;
   return CCFileClass::Close(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi

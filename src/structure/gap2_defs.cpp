@@ -17,7 +17,6 @@
 
 // 0x517CC0
 namespace gamemd { int InfantryClass::PerFrameUpdate() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__usercall InfantryClass_PerFrameUpdate@<eax>(int a1@<ecx>, int a2@<edi>)
 {
@@ -73,8 +72,6 @@ LABEL_11:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -158,7 +155,6 @@ retn
 } }
 // 0x413D20
 namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge AircraftClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int a3, #37 *ppv)
 {
@@ -254,8 +250,6 @@ LABEL_25:
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr  8
@@ -462,7 +456,6 @@ retn    8
 } }
 // 0x435820
 namespace gamemd { void* BuildingLightClass::CTOR(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall BuildingLightClass::CTOR(int *this, int a2)
 {
@@ -613,8 +606,6 @@ LABEL_14:
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -871,7 +862,6 @@ retn    4
 } }
 // 0x435BE0
 namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingLightClass::Draw_Start(int *this, int a2, int a3)
 {
@@ -1156,8 +1146,6 @@ char __thiscall BuildingLightClass::Draw_Start(int *this, int a2, int a3)
   }
   return v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -0C0h
@@ -1667,7 +1655,6 @@ retn    8
 } }
 // 0x4361D0
 namespace gamemd { int BuildingLightClass::SD_vt23() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingLightClass::SD_vt23(int **this)
 {
@@ -2020,8 +2007,6 @@ LABEL_31:
   }
   return v44;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -2611,7 +2596,6 @@ retn
 } }
 // 0x436950
 namespace gamemd { int BuildingLightClass::SD_vt05(void* a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingLightClass::SD_vt05(#374 *this, _DWORD *a2, int a3)
 {
@@ -2633,8 +2617,6 @@ int __thiscall BuildingLightClass::SD_vt05(#374 *this, _DWORD *a2, int a3)
   }
   return Register;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -2677,7 +2659,6 @@ retn    8
 } }
 // 0x436A00
 namespace gamemd { int BuildingLightClass::SD_vt10(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingLightClass::SD_vt10(int this, int a2, int a3)
 {
@@ -2691,8 +2672,6 @@ int __thiscall BuildingLightClass::SD_vt10(int this, int a2, int a3)
     *(_DWORD *)(this + 228) = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -2722,7 +2701,6 @@ retn    8
 } }
 // 0x436E80
 namespace gamemd { int BuildingLightClass::CalculateDistanceIntensity() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_436E80(_DWORD **this)
 {
@@ -2749,8 +2727,6 @@ int __thiscall sub_436E80(_DWORD **this)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -2833,7 +2809,6 @@ retn
 } }
 // 0x436F40
 namespace gamemd { int BuildingLightClass::SD_vt13(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingLightClass::SD_vt13(int this, unsigned int *a2)
 {
@@ -2869,8 +2844,6 @@ int __thiscall BuildingLightClass::SD_vt13(int this, unsigned int *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2954,7 +2927,6 @@ retn    4
 } }
 // 0x437030
 namespace gamemd { int BuildingLightClass::SD_vt53() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingLightClass::SD_vt53(#374 *this)
 {
@@ -2963,8 +2935,6 @@ char __thiscall BuildingLightClass::SD_vt53(#374 *this)
   VectorClass::RemoveItem(&MEMORY[0x87F778], (int)this);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2988,7 +2958,6 @@ retn
 } }
 // 0x437050
 namespace gamemd { int BuildingLightClass::SD_vt54(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingLightClass::SD_vt54(#374 *this, int a2, int a3)
 {
@@ -2997,8 +2966,6 @@ char __thiscall BuildingLightClass::SD_vt54(#374 *this, int a2, int a3)
   ObjectClass::SetDeployState((int)this, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -3028,7 +2995,6 @@ retn    8
 } }
 // 0x43B680
 namespace gamemd { void* BuildingClass::ctor(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_43B680(_DWORD *this, int a2)
 {
@@ -3062,8 +3028,6 @@ _DWORD *__thiscall sub_43B680(_DWORD *this, int a2)
   *(this + 3) = &BuildingClass_Vtable4;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -3106,7 +3070,6 @@ retn    4
 } }
 // 0x443410
 namespace gamemd { int BuildingClass::HandleFactoryCommand() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::HandleFactoryCommand(#377 *this)
 {
@@ -3230,8 +3193,6 @@ LABEL_25:
   LOBYTE(result) = 1;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -3488,7 +3449,6 @@ retn    0Ch
 } }
 // 0x445F80
 namespace gamemd { int SuperWeapon::CreateUnits() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SuperWeapon::CreateUnits(#377 *this)
 {
@@ -4226,8 +4186,6 @@ LABEL_172:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 58h
@@ -5685,7 +5643,6 @@ retn    4
 } }
 // 0x44D760
 namespace gamemd { int BuildingClass::PushScriptAction() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::PushScriptAction(#377 *this)
 {
@@ -5711,8 +5668,6 @@ int __thiscall BuildingClass::PushScriptAction(#377 *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -5758,7 +5713,6 @@ retn    4
 } }
 // 0x459FF0
 namespace gamemd { void BuildingClass::initBuildingData() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass::sub_459FF0(int this)
 {
@@ -5774,8 +5728,6 @@ void __thiscall BuildingClass::sub_459FF0(int this)
   *(_BYTE *)(this + 13) = 0;
   *(_DWORD *)(this + 8) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -5804,7 +5756,6 @@ retn
 } }
 // 0x45A020
 namespace gamemd { int BuildingClass::updateFactoryProduction(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BuildingClass::sub_45A020(int this, int a2)
 {
@@ -5813,8 +5764,6 @@ unsigned int __thiscall BuildingClass::sub_45A020(int this, int a2)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+0Ch]
@@ -5834,14 +5783,11 @@ retn    4
 } }
 // 0x465D70
 namespace gamemd { int BuildingClass::processPowerState() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_465D70(_DWORD *this)
 {
   return *(this + 951);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0EDCh]
@@ -5850,7 +5796,6 @@ retn
 } }
 // 0x46B310
 namespace gamemd { int SuperWeapon::CreateNukePayload() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SuperWeapon::CreateNukePayload(int *this)
 {
@@ -5936,8 +5881,6 @@ int __thiscall SuperWeapon::CreateNukePayload(int *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr -60h
@@ -6115,7 +6058,6 @@ retn
 } }
 // 0x484F20
 namespace gamemd { int InfantryClass::GetType() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass_GetType(__int16 *this)
 {
@@ -6127,8 +6069,6 @@ int __thiscall InfantryClass_GetType(__int16 *this)
   else
     return *((_DWORD *)MEMORY[0x8B413C] + v1);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ax, [ecx+116h]
@@ -6151,7 +6091,6 @@ retn
 } }
 // 0x485460
 namespace gamemd { int BuildingClass::CheckAdjacentCells() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_CheckAdjacentCells(int this)
 {
@@ -6223,8 +6162,6 @@ char __thiscall BuildingClass_CheckAdjacentCells(int this)
   }
   return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -6335,15 +6272,12 @@ retn
 } }
 // 0x487110
 namespace gamemd { void* BuildingClass::checkOccupant(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_487110(_DWORD *this, char a2)
 {
   *(this + 30) |= 1 << a2;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -6356,15 +6290,12 @@ retn    4
 } }
 // 0x487130
 namespace gamemd { void* BuildingClass::updateOccupiedState(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_487130(_DWORD *this, char a2)
 {
   *(this + 30) &= ~(1 << a2);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -6380,15 +6311,12 @@ retn    4
 } }
 // 0x487170
 namespace gamemd { int BuildingClass::processGarrison(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_487170(_WORD *this, int a2)
 {
   ++*(this + a2 + 86);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -6398,15 +6326,12 @@ retn    4
 } }
 // 0x487180
 namespace gamemd { int BuildingClass::evaulateDefense(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_487180(_WORD *this, int a2)
 {
   --*(this + a2 + 86);
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -6416,7 +6341,6 @@ retn    4
 } }
 // 0x4AA290
 namespace gamemd { int BuildingClass::updateSellBack(void* a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4AA290(_DWORD *this, __int16 *a2, _DWORD *a3)
 {
@@ -6425,8 +6349,6 @@ int __thiscall sub_4AA290(_DWORD *this, __int16 *a2, _DWORD *a3)
   v3 = CellCoord::To_CellObj(this, a2);
   return Object::FindObjectCell(v3, a3, 0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -6442,7 +6364,6 @@ retn    8
 } }
 // 0x4DA030
 namespace gamemd { int InfantryClass::ProcessExitQueue() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4DA030(int *this)
 {
@@ -6498,8 +6419,6 @@ char __thiscall sub_4DA030(int *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -6584,7 +6503,6 @@ retn
 } }
 // 0x4F9750
 namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_4F9750(float *this)
 {
@@ -6596,8 +6514,6 @@ double __thiscall sub_4F9750(float *this)
   else
     return Float4::Sum(v1) / (double)*(int *)(MEMORY[0x87F7E8][7806] + 6096);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -6624,7 +6540,6 @@ retn
 } }
 // 0x4FAD20
 namespace gamemd { int SuperWeapon::SelectSuperWeaponTarget(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SelectSuperWeaponTarget(int this, int a2)
 {
@@ -6684,8 +6599,6 @@ char __thiscall SelectSuperWeaponTarget(int this, int a2)
   }
   return v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -6818,7 +6731,6 @@ retn    4
 } }
 // 0x4FAE50
 namespace gamemd { int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HouseClass_FireSuperWeapon(#375 *this, int a2, int a3)
 {
@@ -6854,8 +6766,6 @@ char __thiscall HouseClass_FireSuperWeapon(#375 *this, int a2, int a3)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -6935,7 +6845,6 @@ retn    8
 } }
 // 0x4FAF00
 namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SuperWeapon::EvaluateAITarget(int this, int a2, __int16 *a3)
 {
@@ -7024,8 +6933,6 @@ char __thiscall SuperWeapon::EvaluateAITarget(int this, int a2, __int16 *a3)
   }
   return v4;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -7190,7 +7097,6 @@ retn    8
 } }
 // 0x50B1D0
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass(#375 *this)
 {
@@ -7273,8 +7179,6 @@ LABEL_16:
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -7455,14 +7359,11 @@ retn
 } }
 // 0x5176A0
 namespace gamemd { bool InfantryClass::SetField6() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall InfantryClass::SetField6(_DWORD *this)
 {
   return (*this & 1) == 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -7473,7 +7374,6 @@ retn
 } }
 // 0x517A50
 namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge InfantryClass::Construct@<eax>(int this@<ecx>, int a2@<edi>, int a3, #37 *ppv)
 {
@@ -7574,8 +7474,6 @@ LABEL_25:
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr  8
@@ -7790,7 +7688,6 @@ retn    8
 } }
 // 0x517FA0
 namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::ProcessDeployment(_BYTE *this, int *a2, int a3, int a4, int *a5, int a6, int a7, int a8)
 {
@@ -8328,8 +8225,6 @@ LABEL_73:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0C0h
@@ -9535,7 +9430,6 @@ retn    1Ch
 } }
 // 0x51BAB0
 namespace gamemd { int InfantryClass::Update() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::Update(int this)
 {
@@ -9748,8 +9642,6 @@ LABEL_91:
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -10235,7 +10127,6 @@ retn
 } }
 // 0x523370
 namespace gamemd { void* InfantryClass::checkBridgeClearance(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_523370(int *this, int a2)
 {
@@ -10252,8 +10143,6 @@ int *__thiscall sub_523370(int *this, int a2)
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -10287,7 +10176,6 @@ retn    4
 } }
 // 0x5233D0
 namespace gamemd { void* InfantryClass::updateOccupiedBuilding(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5233D0(_DWORD *this, int (__stdcall ****a2)(_DWORD, void *, _DWORD *))
 {
@@ -10320,8 +10208,6 @@ _DWORD *__thiscall sub_5233D0(_DWORD *this, int (__stdcall ****a2)(_DWORD, void 
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -10386,7 +10272,6 @@ retn    4
 } }
 // 0x539AE0
 namespace gamemd { int SuperWeapon::SerializeSuperWeaponState() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SerializeSuperWeaponState(void *this)
 {
@@ -10672,8 +10557,6 @@ LABEL_49:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -11058,7 +10941,6 @@ retn
 } }
 // 0x5AEAD0
 namespace gamemd { void BuildingClass::processBaseExpansion(float a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AEAD0(float *this, float a2)
 {
@@ -11066,8 +10948,6 @@ void __thiscall sub_5AEAD0(float *this, float a2)
   *(this + 4) = a2 * *(this + 4);
   *(this + 8) = a2 * *(this + 8);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 fld     [esp+arg_0]
@@ -11084,7 +10964,6 @@ retn    4
 } }
 // 0x5AEAF0
 namespace gamemd { void BuildingClass::updateFoundation(float a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AEAF0(float *this, float a2)
 {
@@ -11092,8 +10971,6 @@ void __thiscall sub_5AEAF0(float *this, float a2)
   *(this + 5) = a2 * *(this + 5);
   *(this + 9) = a2 * *(this + 9);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 fld     [esp+arg_0]
@@ -11110,7 +10987,6 @@ retn    4
 } }
 // 0x5AEB20
 namespace gamemd { void BuildingClass::recalcAdjacency(float a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AEB20(float *this, float a2)
 {
@@ -11118,8 +10994,6 @@ void __thiscall sub_5AEB20(float *this, float a2)
   *(this + 6) = a2 * *(this + 6);
   *(this + 10) = a2 * *(this + 10);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 fld     [esp+arg_0]
@@ -11136,7 +11010,6 @@ retn    4
 } }
 // 0x63D540
 namespace gamemd { int BuildingClass::updateAnimationState() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63D540(char *this)
 {
@@ -11149,8 +11022,6 @@ int __thiscall sub_63D540(char *this)
     return Factory::IdleHandler();
   return -1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 movsx   eax, byte ptr [ecx+0Ch]
@@ -11172,7 +11043,6 @@ retn
 } }
 // 0x6A60E0
 namespace gamemd { void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall sub_6A60E0(int this, #72 *a2)
 {
@@ -11193,8 +11063,6 @@ namespace gamemd { void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11229,7 +11097,6 @@ retn    4
 } }
 // 0x6CBCA0
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateSuperWeaponReadyState(int this, char a2)
 {
@@ -11353,8 +11220,6 @@ char __thiscall UpdateSuperWeaponReadyState(int this, char a2)
     return 1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -11610,7 +11475,6 @@ retn    4
 } }
 // 0x6E2970
 namespace gamemd { int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E2970(_DWORD **this, int a2, int a3, int a4, int a5)
 {
@@ -11658,8 +11522,6 @@ char __thiscall sub_6E2970(_DWORD **this, int a2, int a3, int a4, int a5)
   while ( v6 < MEMORY[0xA8EB50] );
   return v5;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8EB50h
@@ -11733,7 +11595,6 @@ retn    10h
 } }
 // 0x6EFE60
 namespace gamemd { void SuperWeapon::DispatchTeam(int a1, int a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DispatchTeamSuperWeapon(int this, int a2, int a3)
 {
@@ -11879,8 +11740,6 @@ LABEL_31:
     *(_BYTE *)(v24 + 128) = 1;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -12168,14 +12027,11 @@ retn    8
 } }
 // 0x70DDC0
 namespace gamemd { int BuildingClass::checkPlacement() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_70DDC0(_DWORD *this)
 {
   return *(this + 80);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+140h]
@@ -12184,7 +12040,6 @@ retn
 } }
 // 0x7353C0
 namespace gamemd { int UnitClass::Construct() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::Construct(int this, int a2, int ppv)
 {
@@ -12370,8 +12225,6 @@ LABEL_50:
   }
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr  8

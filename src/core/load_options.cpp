@@ -95,7 +95,6 @@ LoadOptions::~LoadOptions() {
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
 void LoadOptions::Cleanup() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LoadOptions_Cleanup(_DWORD *this)
 {
@@ -120,8 +119,6 @@ void __thiscall LoadOptions_Cleanup(_DWORD *this)
   *((_BYTE *)v4 + 13) = 0;
   v4[2] = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -189,7 +186,6 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall LoadOptions::Run(const char **this)
 {
@@ -197,8 +193,6 @@ bool __thiscall LoadOptions::Run(const char **this)
   *(this + 3) = 0;
   return SaveLoadDialog::DlgProc(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     dword ptr [ecx+4], 1
@@ -210,7 +204,6 @@ jmp     SaveLoadDialog__DlgProc
 // IDA 0x559C20: Check — scan for save files matching extension
 // 0x559c20
 bool LoadOptions::Check() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadOptions::Check(const char **this)
 {
@@ -262,8 +255,6 @@ LABEL_9:
   ((void (__stdcall *)(int))FindClose)(v4);
   return v2;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 FileName        = OMOTestDerived ptr -33Ch
@@ -393,7 +384,6 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
 {
@@ -440,8 +430,6 @@ char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
     return 1;
   }
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0xae)
@@ -543,7 +531,6 @@ retn    8
 // IDA 0x55A2A0: ClearBuffer
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LoadOptions::sub_55A2A0(int this)
 {
@@ -555,8 +542,6 @@ void __thiscall LoadOptions::sub_55A2A0(int this)
   *(_BYTE *)(this + 13) = 0;
   *(_DWORD *)(this + 8) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0x27)
@@ -586,7 +571,6 @@ retn
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
 int LoadOptions::FindItem(const uint32_t* key) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
 {
@@ -607,8 +591,6 @@ int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x33)
@@ -693,8 +675,8 @@ int LoadOptions::VT04_FindByKey(const uint32_t* key) {
 }
 
 // IDA 0x55A330: vt02 — resize (same as CopyItems with capacity update)
-bool LoadOptions::VT02_Resize(uint32_t new_size, FileEntryClass** out_buffer) {
-    bool result = CopyItems(new_size, out_buffer);
+bool LoadOptions::VT02_Resize(uint32_t newSize, FileEntryClass** out_buffer) {
+    bool result = CopyItems(newSize, out_buffer);
     if (result && capacity < count)
         capacity = count;
     return result;

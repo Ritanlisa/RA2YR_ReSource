@@ -378,7 +378,6 @@ void TechnoClass::Uncloak(bool play_sound)
 // 0x6f3330
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TechnoClass::SelectWeapon(#377 *this)
 {
@@ -509,8 +508,6 @@ int __thiscall TechnoClass::SelectWeapon(#377 *this)
     return 2 * v7;
   }
 }
-#endif
-
 /* ASM:
 sub     esp, 8
 push    ebx
@@ -1149,7 +1146,6 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 // 0x423ac0
 bool TechnoClass::CreateUnit()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall TechnoClass::CreateUnit(#361 *this)
 {
@@ -1866,8 +1862,6 @@ LABEL_187:
   }
   return Speed;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp             ; TechnoClass::CreateUnit — per-frame production pipeline (4234B).
@@ -3745,7 +3739,6 @@ int TechnoClass::HandleSpecialAction() { return 0; }
 int TechnoClass::IsEnteringOrCapturingStructure() const { return false; }
 // 0x5f5390
 void TechnoClass::CreateDestructionEffect() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
 {
@@ -3961,8 +3954,6 @@ int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
     (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 328))(this, 7);
   return 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -4489,7 +4480,6 @@ int TechnoClass::CanInitiateSell() const { return false; }
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
 int TechnoClass::SelectWeapon() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TechnoClass::SelectWeapon(#377 *this)
 {
@@ -4620,8 +4610,6 @@ int __thiscall TechnoClass::SelectWeapon(#377 *this)
     return 2 * v7;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8

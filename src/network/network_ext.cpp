@@ -130,7 +130,6 @@ void NetworkManager::RemovePlayer() {}
 
 // 0x560480
 void NetworkOptions::DlgProc() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
 {
@@ -406,8 +405,6 @@ LABEL_20:
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lParam          = byte ptr -0A0h

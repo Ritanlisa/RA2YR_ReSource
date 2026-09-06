@@ -21,7 +21,6 @@ ConnectionClass::ConnectionClass() noexcept
 // 0x48b410
 void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, int a4)
 {
@@ -79,8 +78,6 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -275,7 +272,6 @@ void ConnectionClass::serviceSendQueue()
 // 0x48c5a0
 bool ConnectionClass::connect()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConnectionClass::_vt08(_DWORD *this)
 {
@@ -304,8 +300,6 @@ int __thiscall ConnectionClass::_vt08(_DWORD *this)
   }
   return 1;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi

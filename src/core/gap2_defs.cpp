@@ -16,7 +16,6 @@
 
 // 0x41DB40
 namespace gamemd { int WTFMode::ResetUnitFlags() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall WTFMode_ResetUnitFlags(int this)
 {
@@ -102,8 +101,6 @@ LABEL_8:
   }
   return (char)v1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, ds:0A8E9A0h
@@ -236,7 +233,6 @@ retn
 } }
 // 0x47EC40
 namespace gamemd { void* WTFMode::FindObjectByType(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
 {
@@ -255,8 +251,6 @@ _DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, ds:0A8E9A0h
@@ -302,7 +296,6 @@ retn    4
 } }
 // 0x4A31F0
 namespace gamemd { bool CStreamClass::IsEmpty() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall CStreamClass::IsEmpty(_DWORD *this, int a2)
 {
@@ -310,8 +303,6 @@ BOOL __thiscall CStreamClass::IsEmpty(_DWORD *this, int a2)
     WinAPI::Wrapper(-2147467261);
   return *this == 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x22)
@@ -334,7 +325,6 @@ retn    4
 } }
 // 0x4A4AD0
 namespace gamemd { void CStreamClass::ClearBuffer() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CStreamClass::sub_4A4AD0(int this)
 {
@@ -350,8 +340,6 @@ void __thiscall CStreamClass::sub_4A4AD0(int this)
   *(_BYTE *)(this + 13) = 0;
   *(_DWORD *)(this + 8) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0x2a)
@@ -380,7 +368,6 @@ retn
 } }
 // 0x4A4B00
 namespace gamemd { int CStreamClass::PointerToIndex(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CStreamClass::sub_4A4B00(int this, int a2)
 {
@@ -389,8 +376,6 @@ unsigned int __thiscall CStreamClass::sub_4A4B00(int this, int a2)
   else
     return 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x1b)
@@ -410,7 +395,6 @@ retn    4
 } }
 // 0x4A4CB0
 namespace gamemd { int CStreamClass::CopyItems(int a1, void* a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CStreamClass::CopyItems(void *this, int a2, _DWORD *a3)
 {
@@ -455,8 +439,6 @@ char __thiscall CStreamClass::CopyItems(void *this, int a2, _DWORD *a3)
     *((_DWORD *)this + 4) = v7;
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0xb0)
@@ -560,7 +542,6 @@ retn    8
 } }
 // 0x4A4D60
 namespace gamemd { int CStreamClass::FindItem(void* a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
 {
@@ -579,8 +560,6 @@ int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+10h]  ; TODO: classify (grp=blit, sz=0x26)
@@ -610,7 +589,6 @@ retn    4
 } }
 // 0x4A4DE0
 namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CStreamClass::sub_4A4DE0(_DWORD *Block, char a2)
 {
@@ -629,8 +607,6 @@ _DWORD *__thiscall CStreamClass::sub_4A4DE0(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 
@@ -638,7 +614,6 @@ _DWORD *__thiscall CStreamClass::sub_4A4DE0(_DWORD *Block, char a2)
 } }
 // 0x55A150
 namespace gamemd { void LoadOptions::vt03() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LoadOptions::vt03(int this)
 {
@@ -654,8 +629,6 @@ void __thiscall LoadOptions::vt03(int this)
   *(_BYTE *)(this + 13) = 0;
   *(_DWORD *)(this + 8) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -684,7 +657,6 @@ retn
 } }
 // 0x5AE6F0
 namespace gamemd { void* Matrix3D::Constructor(float a1, float a2) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Matrix3D_Constructor(_DWORD *this, float a2, float a3)
 {
@@ -708,8 +680,6 @@ _DWORD *__thiscall Matrix3D_Constructor(_DWORD *this, float a2, float a3)
   Matrix2D::Rotate(v5);
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -749,7 +719,6 @@ retn    8
 } }
 // 0x5AF080
 namespace gamemd { void Matrix3D::RotateZ(float a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Matrix3D_RotateZ(float *this, float a2)
 {
@@ -779,8 +748,6 @@ void __thiscall Matrix3D_RotateZ(float *this, float a2)
   *(this + 8) = v9 * v4 - v10 * v11;
   *(this + 10) = v10 * v4 + v9 * v11;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -849,7 +816,6 @@ retn    4
 } }
 // 0x5F1BF0
 namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Stream_WriteBlock(int this, int a2, int a3, int a4)
 {
@@ -867,8 +833,6 @@ int __thiscall Stream_WriteBlock(int this, int a2, int a3, int a4)
     ++*(_DWORD *)(this + 104);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -903,7 +867,6 @@ retn    0Ch
 } }
 // 0x5F1C60
 namespace gamemd { int Stream::ReadPacket() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Stream::ReadPacket(int this)
 {
@@ -1014,8 +977,6 @@ LABEL_11:
     return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56));
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Size            = dword ptr -8
@@ -1301,7 +1262,6 @@ retn
 } }
 // 0x67C690
 namespace gamemd { int Stream::ReadOLEObjects() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Stream::ReadOLEObjects(void *this)
 {
@@ -1332,8 +1292,6 @@ int __thiscall Stream::ReadOLEObjects(void *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppvObj          = dword ptr -4
@@ -1385,7 +1343,6 @@ retn
 } }
 // 0x7B0440
 namespace gamemd { void* StreamWrapper::QueryInterface(int a1) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall _do::_vt00(_DWORD *Block, char a2)
 {
@@ -1408,8 +1365,6 @@ _DWORD *__thiscall _do::_vt00(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1455,7 +1410,6 @@ retn    4
 } }
 // 0x7BCAE0
 namespace gamemd { int Stream::GetField() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Stream::GetField(_DWORD *this)
 {
@@ -1467,8 +1421,6 @@ int __thiscall Stream::GetField(_DWORD *this)
     return (**v1)(v1, 1);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+14h]
@@ -1484,14 +1436,11 @@ retn
 } }
 // 0x7BE640
 namespace gamemd { void Stream::CopyFromTemplate() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7BE640(void *this)
 {
   qmemcpy(this, &unk_84E738, 0x88u);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi             ; TODO: classify (grp=blit, sz=0x13)

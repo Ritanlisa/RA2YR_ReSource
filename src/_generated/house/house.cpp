@@ -8,7 +8,6 @@ namespace gamemd {
 
 // 0x007331B0 (450 bytes)
 char House_IsEvent_7331B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_7331B0()
 {
@@ -142,8 +141,6 @@ char sub_7331B0()
   }
   return HeightMap;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -356,7 +353,6 @@ retn
 
 // 0x0063CF10 (165 bytes)
 int House_Is_63CF10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63CF10(_DWORD *this)
 {
@@ -378,8 +374,6 @@ int __thiscall sub_63CF10(_DWORD *this)
        | ((unsigned __int8)v5 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
        | (v6 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+21Ch] ; this
@@ -435,7 +429,6 @@ retn
 
 // 0x0063CFC0 (165 bytes)
 int House_Is_63CFC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63CFC0(_DWORD *this)
 {
@@ -457,8 +450,6 @@ int __thiscall sub_63CFC0(_DWORD *this)
        | ((unsigned __int8)v5 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
        | (v6 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+21Ch] ; this
@@ -514,7 +505,6 @@ retn
 
 // 0x00731130 (130 bytes)
 const char* House_Is_731130() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_731130(char *this)
 {
@@ -549,8 +539,6 @@ LABEL_17:
       return 1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8EC88h
@@ -625,7 +613,6 @@ retn
 
 // 0x00639210 (187 bytes)
 int IsHouse_639210() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_639210(int a1, int a2, int a3, int a4, int a5)
 {
@@ -666,8 +653,6 @@ LABEL_13:
       return 0;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -761,7 +746,6 @@ retn    0Ch
 
 // 0x005D6000 (304 bytes)
 char String_ClearMultiplayerGameMode_5D6000() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5D6000(int a1, int a2)
 {
@@ -812,8 +796,6 @@ char __fastcall sub_5D6000(int a1, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch

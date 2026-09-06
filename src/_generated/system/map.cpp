@@ -8,7 +8,6 @@ namespace gamemd {
 
 // 0x00568140 (446 bytes)
 int CallZCoordToScreenY_568140() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_568140(int *a1, int a2)
 {
@@ -98,8 +97,6 @@ int __stdcall sub_568140(int *a1, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -276,7 +273,6 @@ retn    8
 
 // 0x00457A10 (144 bytes)
 char CellClass_ToCellObj_457A10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_457A10(_DWORD **this)
 {
@@ -298,8 +294,6 @@ char __thiscall sub_457A10(_DWORD **this)
   }
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -367,7 +361,6 @@ retn
 
 // 0x00594190 (343 bytes)
 int CellCoordProcess_594190() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_594190(int *a1, int a2)
 {
@@ -467,8 +460,6 @@ LABEL_19:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -611,7 +602,6 @@ retn    8
 
 // 0x006D6BB0 (337 bytes)
 int CellCoordProcess_6D6BB0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 {
@@ -695,8 +685,6 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -830,7 +818,6 @@ retn    4
 
 // 0x005A6BA0 (110 bytes)
 char CellCoord_IsCellLand_5A6BA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5A6BA0(__int16 *this)
 {
@@ -877,8 +864,6 @@ LABEL_6:
     }
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -945,7 +930,6 @@ retn
 
 // 0x004D4FC0 (164 bytes)
 void CellCoord_IsCell_4D4FC0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4D4FC0(void *this)
 {
@@ -983,8 +967,6 @@ _DWORD *__thiscall sub_4D4FC0(void *this)
   }
   return v6;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1062,7 +1044,6 @@ retn
 
 // 0x0058BEA0 (206 bytes)
 int CellCoord_IsCell_58BEA0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58BEA0(_DWORD *this)
 {
@@ -1107,8 +1088,6 @@ _DWORD *__thiscall sub_58BEA0(_DWORD *this)
   *this = v8;
   return this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -1200,7 +1179,6 @@ retn
 
 // 0x0058C3B0 (231 bytes)
 int CellCoord_IsCell_58C3B0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
 {
@@ -1243,8 +1221,6 @@ _DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
   *a2 = v9;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -1343,7 +1319,6 @@ retn    4
 
 // 0x0058C4A0 (250 bytes)
 int CellCoord_IsCell_58C4A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C4A0(_DWORD *this, _DWORD *a2)
 {
@@ -1385,8 +1360,6 @@ _DWORD *__thiscall sub_58C4A0(_DWORD *this, _DWORD *a2)
   *a2 = *(_DWORD *)v2;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -1492,7 +1465,6 @@ retn    4
 
 // 0x004DF280 (136 bytes)
 void CellCoord_SetMember370_4DF280() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_4DF280(_DWORD *this)
 {
@@ -1517,8 +1489,6 @@ void __thiscall sub_4DF280(_DWORD *this)
   }
   *(this + 371) = 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -1568,7 +1538,6 @@ retn
 
 // 0x0058D120 (157 bytes)
 int CellCoord_SetMember3_58D120() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_58D120(_DWORD *this, int a2, int a3)
 {
@@ -1612,8 +1581,6 @@ int __thiscall sub_58D120(_DWORD *this, int a2, int a3)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1681,7 +1648,6 @@ retn    8
 
 // 0x00486D90 (158 bytes)
 char CellCoord_ToCellObj_486D90() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_486D90(_DWORD *this, char a2)
 {
@@ -1722,8 +1688,6 @@ int __thiscall sub_486D90(_DWORD *this, char a2)
   while ( v5 < 8 );
   return v6;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -1798,7 +1762,6 @@ retn    4
 
 // 0x005942F0 (232 bytes)
 int CellCoord_ToCellObj_5942F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5942F0(_DWORD *this, int *a2)
 {
@@ -1857,8 +1820,6 @@ int __thiscall sub_5942F0(_DWORD *this, int *a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1957,7 +1918,6 @@ retn    4
 
 // 0x006C8B10 (304 bytes)
 int CellStruct_SetMember2_6C8B10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6C8B10(_DWORD *this, int a2, int a3, __int16 a4, __int16 a5)
 {
@@ -2011,8 +1971,6 @@ int __thiscall sub_6C8B10(_DWORD *this, int a2, int a3, __int16 a4, __int16 a5)
   (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 96))(v9);
   return v6;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -2149,7 +2107,6 @@ retn    10h
 
 // 0x006E07F0 (84 bytes)
 char Cell_Creat_6E07F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E07F0(int *this, int a2, int a3, int a4, int a5)
 {
@@ -2162,8 +2119,6 @@ char __thiscall sub_6E07F0(int *this, int a2, int a3, int a4, int a5)
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+90h]
@@ -2198,7 +2153,6 @@ retn    10h
 
 // 0x006E0850 (84 bytes)
 char Cell_Creat_6E0850() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0850(int *this, int a2, int a3, int a4, int a5)
 {
@@ -2211,8 +2165,6 @@ char __thiscall sub_6E0850(int *this, int a2, int a3, int a4, int a5)
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+90h]
@@ -2247,7 +2199,6 @@ retn    10h
 
 // 0x006E0790 (84 bytes)
 char Cell_Create_6E0790() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0790(int *this, int a2, int a3, int a4, int a5)
 {
@@ -2260,8 +2211,6 @@ char __thiscall sub_6E0790(int *this, int a2, int a3, int a4, int a5)
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+90h]
@@ -2296,7 +2245,6 @@ retn    10h
 
 // 0x0062D510 (206 bytes)
 const char* Cell_Get_62D510() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_62D510(float *this)
 {
@@ -2345,8 +2293,6 @@ int __thiscall sub_62D510(float *this)
   }
   return (*(int (__thiscall **)(float *, int *))(*(_DWORD *)this + 436))(this, &v12);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -2421,7 +2367,6 @@ retn
 
 // 0x006E3F70 (58 bytes)
 int Cell_Get_6E3F70() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6E3F70(int *this, _DWORD *a2)
 {
@@ -2434,8 +2379,6 @@ _DWORD *__thiscall sub_6E3F70(int *this, _DWORD *a2)
   a2[2] = WorldCoords[2];
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+90h]
@@ -2463,7 +2406,6 @@ retn    4
 
 // 0x00633C60 (93 bytes)
 int Coord_Get_633C60() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_633C60(_BYTE *this, _DWORD *a2)
 {
@@ -2482,8 +2424,6 @@ _DWORD *__thiscall sub_633C60(_BYTE *this, _DWORD *a2)
   a2[1] = v3;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -2518,7 +2458,6 @@ retn    4
 
 // 0x00634880 (101 bytes)
 int Coord_Get_634880() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_634880(_DWORD *this, _DWORD *a2, int a3)
 {
@@ -2538,8 +2477,6 @@ _DWORD *__thiscall sub_634880(_DWORD *this, _DWORD *a2, int a3)
   a2[1] = v4;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2576,7 +2513,6 @@ retn    8
 
 // 0x006348F0 (94 bytes)
 int Coord_Get_6348F0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6348F0(_BYTE *this, _DWORD *a2)
 {
@@ -2596,8 +2532,6 @@ _DWORD *__thiscall sub_6348F0(_BYTE *this, _DWORD *a2)
   a2[1] = v3;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2632,7 +2566,6 @@ retn    4
 
 // 0x00635DF0 (145 bytes)
 int Coord_Get_635DF0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_635DF0(_DWORD **this, _DWORD *a2)
 {
@@ -2655,8 +2588,6 @@ _DWORD *__thiscall sub_635DF0(_DWORD **this, _DWORD *a2)
   a2[3] = 16;
   return a2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -2712,7 +2643,6 @@ retn    4
 
 // 0x004C1E70 (171 bytes)
 int Coord_ToScreen_4C1E70() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
@@ -2745,8 +2675,6 @@ int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
            v12,
            0);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -2814,7 +2742,6 @@ retn    24h ; '$'
 
 // 0x00659590 (187 bytes)
 char Coord_ToScreen_659590() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 {
@@ -2849,8 +2776,6 @@ char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2919,7 +2844,6 @@ retn    0Ch
 
 // 0x004CC680 (73 bytes)
 bool GetCell_4CC680() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __fastcall sub_4CC680(int a1, int a2, int a3)
 {
@@ -2937,8 +2861,6 @@ BOOL __fastcall sub_4CC680(int a1, int a2, int a3)
   }
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2981,7 +2903,6 @@ retn    4
 
 // 0x0057A900 (178 bytes)
 int GetCell_57A900() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_57A900(_DWORD *a1, signed int a2)
 {
@@ -3021,8 +2942,6 @@ int __fastcall sub_57A900(_DWORD *a1, signed int a2)
   }
   return v3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -3109,7 +3028,6 @@ retn
 
 // 0x0058C5A0 (277 bytes)
 int IsMap_58C5A0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_58C5A0(_DWORD *a1, int a2, int a3)
 {
@@ -3151,8 +3069,6 @@ _DWORD *__fastcall sub_58C5A0(_DWORD *a1, int a2, int a3)
   *a1 = *(_DWORD *)v3;
   return a1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -3263,7 +3179,6 @@ retn    4
 
 // 0x006E1180 (55 bytes)
 char MapClass_GetMap_6E1180() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E1180(int *this, int a2, int a3, int a4, int a5)
 {
@@ -3274,8 +3189,6 @@ char __thiscall sub_6E1180(int *this, int a2, int a3, int a4, int a5)
   MapClass::TriggerEVA((__int16 *)&v6);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -3299,7 +3212,6 @@ retn    10h
 
 // 0x006EDF10 (115 bytes)
 void MapClass_TriggerEVA_6EDF10() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6EDF10(int this, int a2, int a3)
 {
@@ -3319,8 +3231,6 @@ void __thiscall sub_6EDF10(int this, int a2, int a3)
   }
   *(_BYTE *)(this + 128) = 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -3371,7 +3281,6 @@ retn    8
 
 // 0x006D84D0 (89 bytes)
 int MapProcess_6D84D0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__stdcall sub_6D84D0(int *a1, int *a2)
 {
@@ -3397,8 +3306,6 @@ int *__stdcall sub_6D84D0(int *a1, int *a2)
     return a1;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -3441,7 +3348,6 @@ retn    8
 
 // 0x004F2280 (115 bytes)
 const char* Map_Can_4F2280() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4F2280(char *this, int a2, int a3)
 {
@@ -3461,8 +3367,6 @@ int __thiscall sub_4F2280(char *this, int a2, int a3)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3511,7 +3415,6 @@ retn    8
 
 // 0x004F26E0 (139 bytes)
 void Map_Can_4F26E0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4F26E0(char *this, int a2)
 {
@@ -3539,8 +3442,6 @@ int __thiscall sub_4F26E0(char *this, int a2)
   else
     return 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3599,7 +3500,6 @@ retn    4
 
 // 0x004F2770 (139 bytes)
 void Map_Can_4F2770() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4F2770(char *this, int a2)
 {
@@ -3627,8 +3527,6 @@ int __thiscall sub_4F2770(char *this, int a2)
   else
     return 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3687,7 +3585,6 @@ retn    4
 
 // 0x004517D0 (179 bytes)
 int Matrix3x4_TransformCell_4517D0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4517D0(int **this)
 {
@@ -3737,8 +3634,6 @@ int __thiscall sub_4517D0(int **this)
   while ( v3 < 357 );
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -3810,7 +3705,6 @@ retn
 
 // 0x005A1C70 (415 bytes)
 int RandomMap_Is_5A1C70() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5A1C70(_DWORD *this)
 {
@@ -3913,8 +3807,6 @@ int __thiscall sub_5A1C70(_DWORD *this)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -4103,7 +3995,6 @@ retn
 
 // 0x00542F30 (129 bytes)
 int Terrain_Get_542F30() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_542F30(_DWORD *this)
 {
@@ -4159,8 +4050,6 @@ LABEL_12:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -4239,7 +4128,6 @@ retn
 
 // 0x005F1F20 (72 bytes)
 int Terrain_Get_5F1F20() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5F1F20(_DWORD *this)
 {
@@ -4266,8 +4154,6 @@ int __thiscall sub_5F1F20(_DWORD *this)
   }
   return *(_DWORD *)(TileIndex + 20);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -4321,7 +4207,6 @@ retn
 
 // 0x00583AD0 (392 bytes)
 int VectorClass_GetMap_583AD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_583AD0(_DWORD *this, int *a2)
 {
@@ -4435,8 +4320,6 @@ LABEL_16:
     return v16;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h
@@ -4624,7 +4507,6 @@ retn    4
 
 // 0x0042CCD0 (467 bytes)
 void WordVector_CheckMap_42CCD0() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_42CCD0(int this, int a2)
 {
@@ -4736,8 +4618,6 @@ LABEL_25:
     v2 = this;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -14h

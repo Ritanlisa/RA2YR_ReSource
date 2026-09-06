@@ -135,7 +135,6 @@ BuildingClass::BuildingClass() noexcept
 // 0x43b740
 void BuildingClass::Construct()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::Construct(int this, int a2, int a3)
 {
@@ -374,8 +373,6 @@ LABEL_30:
     return this;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -761,7 +758,6 @@ retn    8
 // 0x43bcf0
 void BuildingClass::Dtor()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::Dtor(void **this)
 {
@@ -939,8 +935,6 @@ int __thiscall BuildingClass::Dtor(void **this)
   *(this + 413) = 0;
   return TechnoClass::DTOR((int)this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -1290,7 +1284,6 @@ retn
 // 0x459f20
 int BuildingClass::ScalarDtor()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::ScalarDtor(#377 *this)
 {
@@ -1301,8 +1294,6 @@ int __thiscall BuildingClass::ScalarDtor(#377 *this)
     __3_YAXPAX_Z(this);
   return (int)this;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1333,7 +1324,6 @@ int BuildingClass::Activate()
 // 0x452480
 int BuildingClass::Deactivate()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass_Deactivate(int this)
 {
@@ -1374,8 +1364,6 @@ void __thiscall BuildingClass_Deactivate(int this)
   }
   while ( v5 < 1428 );
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1456,7 +1444,6 @@ retn
 // 0x459e80
 void BuildingClass::Destroyed(ObjectClass* killer)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::Destroyed(#377 *this)
 {
@@ -1470,8 +1457,6 @@ int __thiscall BuildingClass::Destroyed(#377 *this)
   v2[3] = -777003740;
   return 0;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -1499,7 +1484,6 @@ retn    8
 // 0x441f60
 void BuildingClass::AfterDestruction()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TriggerBuildingDestruction(_DWORD *this)
 {
@@ -1629,8 +1613,6 @@ char __thiscall TriggerBuildingDestruction(_DWORD *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -1905,7 +1887,6 @@ retn
 // 0x43eeb0
 void BuildingClass::Cleanup()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_43EEB0(int *this, int a2)
 {
@@ -1929,8 +1910,6 @@ void __thiscall sub_43EEB0(int *this, int a2)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -2039,7 +2018,6 @@ void BuildingClass::LoadFromStream(void* stream)
 // 0x454190
 int BuildingClass::Size()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::Size(#377 *this)
 {
@@ -2094,8 +2072,6 @@ LABEL_6:
       goto LABEL_6;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]
@@ -2199,7 +2175,6 @@ retn    0Ch
 // 0x4260f0
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_IsCellPlaceable(_DWORD *this, __int16 *a2)
 {
@@ -2236,14 +2211,12 @@ char __thiscall BuildingClass_IsCellPlaceable(_DWORD *this, __int16 *a2)
   }
   return 1; /*0x42614d*/
 }
-#endif
     return false; // TODO stub - retranslate via C-line pipeline
 }
 
 // IDA 0x44d310: validate placement passes all checks
 // 0x480630
 bool BuildingClass::ValidatePlacement() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
 {
@@ -2467,8 +2440,6 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
     this = v45;
   }
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0CCh
@@ -2853,7 +2824,6 @@ bool BuildingClass::ValidatePlacementEx() { return ValidateFoundation(); }
 // 0x7447b0
 void BuildingClass::FindPlacementCells()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
 {
@@ -4044,8 +4014,6 @@ LABEL_40:
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -6490,7 +6458,6 @@ retn    4
 // IDA 0x449830: find placement cells variant
 // 0x6b0300
 void BuildingClass::FindPlacementCells2() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall BuildingClass_FindPlacementCells2(_DWORD *this, _DWORD *a2, int a3)
 {
@@ -6591,8 +6558,6 @@ _DWORD *__thiscall BuildingClass_FindPlacementCells2(_DWORD *this, _DWORD *a2, i
     return a2;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -6767,7 +6732,6 @@ retn    8
 // 0x56bec0
 void BuildingClass::SearchPlacement()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
 {
@@ -6835,8 +6799,6 @@ char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
   }
   return 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -6994,7 +6956,6 @@ retn    8
 // 0x485af0
 void BuildingClass::VisualizePlacement()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass::VisualizePlacement(_BYTE *this)
 {
@@ -7316,8 +7277,6 @@ LABEL_62:
   Cell::CreateCrater(*v46, v46[1], v46[2], v46[3], 0);
   House::AnnounceUpgrade((int)v1, (_DWORD *)0xFFFFFFFF);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 rcDst           = byte ptr -160h
@@ -8177,7 +8136,6 @@ RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
 // IDA 0x44e3a0: check overlap with other buildings
 // 0x44e3a0
 bool BuildingClass::CheckOverlapWithOthers() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_44E3A0(_DWORD *this)
 {
@@ -8212,8 +8170,6 @@ LABEL_2:
   }
   return v6;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -8289,7 +8245,6 @@ retn
 // IDA 0x44e400: check footprint blocked
 // 0x4578c0
 bool BuildingClass::IsFootprintBlocked() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt169(#377 *this)
 {
@@ -8388,8 +8343,6 @@ LABEL_12:
   LOBYTE(result) = 1;
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -8523,7 +8476,6 @@ void BuildingClass::RepairPlacement() {}
 // 0x63ac70
 bool BuildingClass::CheckBuildability()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_CheckBuildability(void *this)
 {
@@ -8572,8 +8524,6 @@ int __thiscall BuildingClass_CheckBuildability(void *this)
   }
   return 3;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -8685,7 +8635,6 @@ retn
 // 0x70c5a0
 bool BuildingClass::CheckCellPassability()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt162(#377 *this)
 {
@@ -8694,8 +8643,6 @@ int __thiscall BuildingClass::_vt162(#377 *this)
   LOBYTE(result) = *((_BYTE *)this + 978) != 0;
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+3D2h]
@@ -8709,7 +8656,6 @@ retn
 // 0x710670
 void BuildingClass::OnCellPlacementComplete()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt229(#377 *this)
 {
@@ -8735,8 +8681,6 @@ int __thiscall BuildingClass::_vt229(#377 *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -8799,7 +8743,6 @@ CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) co
 CoordStruct* BuildingClass::GetAdjustedExitCoords(CoordStruct* out) const { return GetExitCoords(out, 0); }
 // 0x44f640
 CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetFactoryPosition(#377 *this)
 {
@@ -8837,8 +8780,6 @@ int __thiscall BuildingClass::GetFactoryPosition(#377 *this)
     return (int)v11;
   }
 }
-#endif
-
 /* ASM:
 mov     eax, [ecx+520h]
 sub     esp, 0Ch
@@ -8914,7 +8855,6 @@ CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 // 0x443860
 void BuildingClass::SetRallyPoint(CoordStruct* target)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass::SetRallyPoint(int this, __int16 *a2, char a3)
 {
@@ -9051,8 +8991,6 @@ LABEL_8:
     ++MEMORY[0x87F7E8][524984];
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 94h
@@ -9312,7 +9250,6 @@ retn    8
 // 0x4a9650
 void BuildingClass::MarkExitPath()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4A9650(__int16 **this, _WORD *a2, _WORD *a3)
 {
@@ -9353,8 +9290,6 @@ char __thiscall sub_4A9650(__int16 **this, _WORD *a2, _WORD *a3)
   }
   return (char)v5;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -9430,7 +9365,6 @@ retn    8
 // 0x639cb0
 bool BuildingClass::CheckExitPath()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_639CB0(_DWORD *this)
 {
@@ -9520,8 +9454,6 @@ LABEL_21:
   }
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -9671,7 +9603,6 @@ void BuildingClass::ReassignFlagPosition() {}
 // 0x447e90
 bool BuildingClass::TogglePrimaryFactory()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::TogglePrimaryFactory(#377 *this)
 {
@@ -9693,8 +9624,6 @@ int __thiscall BuildingClass::TogglePrimaryFactory(#377 *this)
   v6[2] = v3[2];
   return (int)v6;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -9756,14 +9685,11 @@ retn    8
 // 0x457620
 bool BuildingClass::IsFactorySelectable()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::IsFactorySelectable(#377 *this)
 {
   return BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(*((_DWORD *)this + 328));
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [ecx+520h]
@@ -9784,7 +9710,6 @@ int BuildingClass::Mission_Construction()
 // 0x443c60
 int BuildingClass::UpdateConstruction()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::UpdateConstruction(#377 *this)
 {
@@ -10959,8 +10884,6 @@ LABEL_146:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 130h
@@ -13216,7 +13139,6 @@ void BuildingClass::ProcessSell()
 // IDA 0x4494c0: can be sold check
 // 0x4494c0
 bool BuildingClass::CanBeSold() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::CanBeSold(#377 *this)
 {
@@ -13252,8 +13174,6 @@ LABEL_11:
     LOBYTE(result) = 1;
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -13315,7 +13235,6 @@ void BuildingClass::ToggleSellMode() { Sell(); }
 // 0x5f5dd0
 int BuildingClass::GetSellPriority()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_GetSellPriority(int *this)
 {
@@ -13343,8 +13262,6 @@ int __thiscall BuildingClass_GetSellPriority(int *this)
     return 2;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -13412,7 +13329,6 @@ retn
 // 0x480cb0
 void BuildingClass::SellEffects()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_SellEffects(int this, int a2)
 {
@@ -13613,8 +13529,6 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
   while ( v31 < 8 );
   return 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -13987,7 +13901,6 @@ retn    4
 // 0x4d9f70
 void BuildingClass::SellUnit()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_SellUnit(#375 **this, int a2)
 {
@@ -14010,8 +13923,6 @@ int __thiscall BuildingClass_SellUnit(#375 **this, int a2)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -14061,7 +13972,6 @@ retn    4
 // 0x701410
 void BuildingClass::HandleSellOrRepair()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
 {
@@ -14087,8 +13997,6 @@ int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -14152,7 +14060,6 @@ retn
 int BuildingClass::Mission_Repair()
 {
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
 {
@@ -14178,7 +14085,6 @@ int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
   }
   return result; /*0x701499*/
 }
-#endif
     return {}; // TODO stub - retranslate via C-line pipeline
 }
     return 20;
@@ -14189,7 +14095,6 @@ void BuildingClass::ProcessRepair() {}
 // IDA 0x44f480: can repair - health below max
 // 0x457ce0
 bool BuildingClass::CanRepair() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BuildingClass_CanRepair(_DWORD *this, int a2)
 {
@@ -14222,8 +14127,6 @@ bool __thiscall BuildingClass_CanRepair(_DWORD *this, int a2)
       && !(unsigned __int8)BuildingClass::IsHealthLow(this)
       && !(unsigned __int8)BuildingClass::IsBeingRepairedOrCaptured(a2);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -14323,7 +14226,6 @@ void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 // IDA 0x452630: check health below threshold for repair
 // 0x452630
 bool BuildingClass::CheckHealthForRepair() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::CheckHealthForRepair(#377 *this)
 {
@@ -14352,8 +14254,6 @@ int __thiscall BuildingClass::CheckHealthForRepair(#377 *this)
   }
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -14402,13 +14302,11 @@ bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasB
 // IDA 0x459ed0: missile building mission
 int BuildingClass::Mission_Missile()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall BuildingClass_IsBeingRepairedOrCaptured(int this)
 {
   return *(_DWORD *)(this + 704) || *(_BYTE *)(this + 708); /*0x7105f6*/
 }
-#endif
     return {}; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -14424,16 +14322,16 @@ bool BuildingClass::SWAvailable()
     // Member identity of the two mid-hops sits in til gap regions; the
     // Type/SecretBuilding/ArrayIndex chain below is the semantic reading
     // (YR secret-building unlock rule) - verify in the A1 pass.
-    int sw_index = this->Type->SuperWeapon;
-    if (sw_index == -1)
+    int superWeaponIndex = this->Type->SuperWeapon;
+    if (superWeaponIndex == -1)
         return false;
 
-    SuperWeaponTypeClass* sw_type = g_SuperWeaponTypeItems[sw_index];
-    BuildingTypeClass* bld_type = sw_type->Type;
-    BuildingTypeClass* actual_bld = bld_type->SecretBuilding;
+    SuperWeaponTypeClass* superWeaponType = g_SuperWeaponTypeItems[superWeaponIndex];
+    BuildingTypeClass* owningType = superWeaponType->Type;
+    BuildingTypeClass* requiredBuilding = owningType->SecretBuilding;
 
-    if (!actual_bld
-        || DynamicVector::GetOrGrow(&this->Owner->SuperWeaponsAvailable, actual_bld->ArrayIndex))
+    if (!requiredBuilding
+        || DynamicVector::GetOrGrow(&this->Owner->SuperWeaponsAvailable, requiredBuilding->ArrayIndex))
         return true;
 
     return false;
@@ -14464,7 +14362,6 @@ BuildingClass* BuildingClass::FindBySWType(int sw_type)
 // ordered member WRITES, two direct calls, multiple returns, no loop.
 char BuildingClass::ClearSuperWeaponAnim()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::FindBySWType(_DWORD *this, AbstractClass *aP1)
 {
@@ -14487,7 +14384,6 @@ int __thiscall BuildingClass::FindBySWType(_DWORD *this, AbstractClass *aP1)
   }
   return *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v3); /*0x50534e*/
 }
-#endif
     return {}; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -14498,7 +14394,6 @@ void BuildingClass::Disappear_PrismForward() {}
 // 0x43c2d0
 int BuildingClass::MissionController()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::MissionController(#377 *this)
 {
@@ -14892,8 +14787,6 @@ LABEL_33:
       return TechnoClass::Mission_RepairDispatch((int *)this, v1, v53, v1, v57);
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -16106,7 +15999,6 @@ int BuildingClass::Mission_Deploy() { return 0; }
 // IDA 0x450010: check if mission is guard
 // 0x458dd0
 bool BuildingClass::CheckMissionGuard() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt256(#377 *this)
 {
@@ -16117,8 +16009,6 @@ int __thiscall BuildingClass::_vt256(#377 *this)
       && *(_BYTE *)(v1 + 5500)
       && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1032))(this) > 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -16154,7 +16044,6 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // 0x454260
 int BuildingClass::PowerDrainUpdate(int a2)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::PowerDrainUpdate(#377 *this)
 {
@@ -16276,8 +16165,6 @@ int __thiscall BuildingClass::PowerDrainUpdate(#377 *this)
   LOBYTE(v29) = *((_BYTE *)this + 1794);
   return Power::FinalizeDrain(v31, v29);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -16534,7 +16421,6 @@ int BuildingClass::GetPowerOutput()
 // 0x44e880
 int BuildingClass::GetPowerDrain()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall BuildingClass_GetHealthRatio(int *this)
 {
@@ -16543,8 +16429,6 @@ double __thiscall BuildingClass_GetHealthRatio(int *this)
   v2 = (double)*(this + 27);
   return v2 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -16565,7 +16449,6 @@ int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(0); return 0; }
 // 0x4525f0
 bool BuildingClass::IsPoweredOn()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BuildingClass_IsPoweredOn(_DWORD *this)
 {
@@ -16574,7 +16457,6 @@ bool __thiscall BuildingClass_IsPoweredOn(_DWORD *this)
   return (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 24 /*0x452605*/
       && BuildingClass::CheckPowerFlags((_BYTE *)this + 848);
 }
-#endif
     return false; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -16587,7 +16469,6 @@ bool __thiscall BuildingClass_IsPoweredOn(_DWORD *this)
 // 0x4555d0
 bool BuildingClass::IsPoweredActive()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::IsPoweredActive(#377 *this)
 {
@@ -16662,7 +16543,6 @@ LABEL_20:
   LOBYTE(result) = 0; /*0x4556be*/
   return result; /*0x4556b8*/
 }
-#endif
     return false; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -16754,7 +16634,6 @@ int BuildingClass::GetPowerFrame()
 // 0x447780
 int BuildingClass::StartProduction(int type_index)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::StartProduction(int *this, int a2)
 {
@@ -16919,8 +16798,6 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -17280,7 +17157,6 @@ retn    4
 // 0x4496b0
 void BuildingClass::UpdateProduction()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::UpdateProduction(#377 *this)
 {
@@ -17398,8 +17274,6 @@ LABEL_28:
   (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 488))(this, 20, 0);
   return 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -17748,7 +17622,6 @@ retn
 // 0x639740
 void BuildingClass::CompleteProduction()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_639740(int a1, int a2)
 {
@@ -17798,8 +17671,6 @@ int __fastcall sub_639740(int a1, int a2)
   }
   return ScriptAction::FindSquadMember(v2);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -17903,7 +17774,6 @@ bool BuildingClass::ProductionCheck()
 // IDA 0x4478b0: abandon current production
 // 0x4c9ff0
 void BuildingClass::AbandonProduction() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_AbandonProduction(int this)
 {
@@ -17957,8 +17827,6 @@ char __thiscall BuildingClass_AbandonProduction(int this)
   --MEMORY[0xA8E7AC];
   return 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -18087,7 +17955,6 @@ retn
 // 0x452670
 bool BuildingClass::CanAcceptType(int type_idx)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BuildingClass_CanAcceptType(int this, int a2, int a3)
 {
@@ -18110,8 +17977,6 @@ bool __thiscall BuildingClass_CanAcceptType(int this, int a2, int a3)
   }
   return !*(_BYTE *)(this + 1794);
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -18175,7 +18040,6 @@ void BuildingClass::AddToProductionQueue(int) {}
 // 0x6395b0
 void BuildingClass::SetProduction(int type_index)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall BuildingClass::SetProduction(int a1, int a2)
 {
@@ -18267,8 +18131,6 @@ char __fastcall BuildingClass::SetProduction(int a1, int a2)
   }
   return ScriptAction::FindSquadMember(v2);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -18433,7 +18295,6 @@ int BuildingClass::ProcessCapture() { return 0; }
 // IDA 0x44c960: capture this building
 // 0x44d5d0
 void BuildingClass::CaptureBuilding() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::CaptureBuilding(#377 *this)
 {
@@ -18467,8 +18328,6 @@ int __thiscall BuildingClass::CaptureBuilding(#377 *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -18553,7 +18412,6 @@ void BuildingClass::Capture() { CaptureBuilding(); }
 // 0x4521c0
 void BuildingClass::DisableTemporal()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::DisableTemporal(int *this)
 {
@@ -18582,8 +18440,6 @@ int __thiscall BuildingClass::DisableTemporal(int *this)
   while ( v2 );
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     byte ptr [ecx+660h], 0
@@ -18614,7 +18470,6 @@ retn
 // 0x4571e0
 void BuildingClass::Infiltrate()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
 {
@@ -18753,8 +18608,6 @@ LABEL_51:
     goto LABEL_63;
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -19114,7 +18967,6 @@ bool BuildingClass::IsIdleWithNoCaptives()
 // 0x44eb10
 int BuildingClass::GetCrew()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetCrew(#377 *this)
 {
@@ -19129,7 +18981,6 @@ int __thiscall BuildingClass::GetCrew(#377 *this)
     return MEMORY[0x8871E0]->?; /*0x44eb4c*/
   }
 }
-#endif
     return {}; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -19137,7 +18988,6 @@ int __thiscall BuildingClass::GetCrew(#377 *this)
 // 0x451330
 int BuildingClass::GetCrewCount()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetCrewCount(#377 *this)
 {
@@ -19182,8 +19032,6 @@ int __thiscall BuildingClass::GetCrewCount(#377 *this)
     return 5;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -19267,7 +19115,6 @@ retn
 // 0x442d90
 void BuildingClass::EjectCrew()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
 {
@@ -19520,8 +19367,6 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
   }
   return v7;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 7Ch
@@ -20089,7 +19934,6 @@ void BuildingClass::InitBuildLimit() {}
 // 0x6b0d60
 void BuildingClass::RefreshOccupierCache()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_6B0D60(int **this)
 {
@@ -20115,8 +19959,6 @@ int *__thiscall sub_6B0D60(int **this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -20162,7 +20004,6 @@ void BuildingClass::ClearFactoryData() {}
 // 0x722390
 void BuildingClass::FreeUpgradeQueue()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int BuildingClass_FreeUpgradeQueue()
 {
@@ -20206,8 +20047,6 @@ int BuildingClass_FreeUpgradeQueue()
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+807A4h
@@ -20315,7 +20154,6 @@ void BuildingClass::CalculateTurretAngle() {}
 // 0x445e50
 int BuildingClass::GetFacingToTarget()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetFacingToTarget(#377 *this)
 {
@@ -20348,8 +20186,6 @@ int __thiscall BuildingClass::GetFacingToTarget(#377 *this)
     return (int)v12;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -20418,7 +20254,6 @@ retn    4
 // IDA 0x44d7d0: get target facing (delegates to GetFacingToTarget)
 // 0x44d7d0
 int BuildingClass::GetTargetFacing() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetTargetFacing(#377 *this)
 {
@@ -20457,8 +20292,6 @@ int __thiscall BuildingClass::GetTargetFacing(#377 *this)
     return (int)v8;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -20535,20 +20368,19 @@ int BuildingClass::GetAmmoCountScaled()
 {
     // IDA 0x44D700. Type@+0x520, PipScale@+0x3D4, HasTiberiumAmmo@+0x16BC,
     // Owner@+0x21C, vtable[29]=GetPipMax(+0x74), RoundToInt@0x7C5F00.
-    BuildingTypeClass* pType = this->Type;
-    if (pType->PipScale != PipScale::Tiberium)
+    BuildingTypeClass* buildingType = this->Type;
+    if (buildingType->PipScale != PipScale::Tiberium)
         return TechnoClass::GetAmmoCount();
-    if (!pType->HasTiberiumAmmo)
+    if (!buildingType->HasTiberiumAmmo)
         return 0;
-    double ratio = BuildingClass::checkRepairEligibility(this->Owner);
-    int maxPips = pType->GetPipMax();
-    return Math::RoundToInt((double)maxPips * ratio);
+    double repairRatio = BuildingClass::checkRepairEligibility(this->Owner);
+    int maxPips = buildingType->GetPipMax();
+    return Math::RoundToInt((double)maxPips * repairRatio);
 }
 
 // IDA 0x44d780: get fire error
 // 0x447f10
 int BuildingClass::GetFireError() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetFireError(#377 *this)
 {
@@ -20596,8 +20428,6 @@ int __thiscall BuildingClass::GetFireError(#377 *this)
   else
     return 2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -20749,7 +20579,6 @@ void BuildingClass::AcquireTarget() {}
 // 0x445f00
 int BuildingClass::SelectTargetTypeFlags()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::SelectTargetTypeFlags(#377 *this)
 {
@@ -20780,8 +20609,6 @@ int __thiscall BuildingClass::SelectTargetTypeFlags(#377 *this)
   }
   return TechnoClass::SelectAutoTarget_Start_AU(v4 | 1, v9, v10);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -20856,7 +20683,6 @@ bool BuildingClass::CheckBridge() { return false; }
 // 0x4576f0
 void BuildingClass::DestroyOnBridgeCollapse()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt184(#377 *this)
 {
@@ -20892,8 +20718,6 @@ int __thiscall BuildingClass::_vt184(#377 *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A83DF8h
@@ -20971,7 +20795,6 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 // 0x62a4a0
 int BuildingClass::Deploy()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall BuildingClass_Deploy@<eax>(unsigned int a1@<ecx>, int a2@<ebp>, int a3@<edi>)
 {
@@ -21167,8 +20990,6 @@ LABEL_11:
   *(_DWORD *)(a1 + 40) = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 2Ch
@@ -21563,7 +21384,6 @@ retn
 // 0x465d40
 bool BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWORD *this)
 {
@@ -21579,8 +21399,6 @@ BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWOR
   }
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+408h]
@@ -21645,7 +21463,6 @@ void BuildingClass::CreateIdleAnim() {}
 // 0x451750
 void BuildingClass::PlayUpgradeAnim()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_PlayUpgradeAnim(_DWORD *this, int a2, int a3, int a4, void *a5)
 {
@@ -21672,8 +21489,6 @@ int __thiscall BuildingClass_PlayUpgradeAnim(_DWORD *this, int a2, int a3, int a
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -21739,7 +21554,6 @@ retn    10h
 // 0x451f60
 void BuildingClass::SyncCrateVisuals()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_451F60(char *this, int a2, int a3)
 {
@@ -21785,8 +21599,6 @@ int __thiscall sub_451F60(char *this, int a2, int a3)
   while ( v11 );
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -21876,7 +21688,6 @@ void BuildingClass::UpdateCloak() {}
 // 0x457c90
 int BuildingClass::IronCurtain()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::ApplyIronCurtain(#377 *this)
 {
@@ -21897,8 +21708,6 @@ int __thiscall BuildingClass::ApplyIronCurtain(#377 *this)
   }
   return TechnoClass::IronCurtain(v4, v5, v6);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+6DFh]
@@ -21934,7 +21743,6 @@ retn    0Ch
 // 0x6f9e10
 bool BuildingClass::IsInvisible()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::IsInvisible(#377 *this)
 {
@@ -21952,7 +21760,6 @@ int __thiscall BuildingClass::IsInvisible(#377 *this)
   }
   return result; /*0x6f9e27*/
 }
-#endif
     return false; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -21962,7 +21769,6 @@ void BuildingClass::AnnounceReady() {}
 // 0x456580
 void BuildingClass::UpdateRevealField()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt293(#377 *this)
 {
@@ -21990,8 +21796,6 @@ int __thiscall BuildingClass::_vt293(#377 *this)
   *((_BYTE *)this + 1059) = 1;
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -22040,7 +21844,6 @@ retn
 // 0x4565e0
 void BuildingClass::UpdateGapGeneratorField()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt294(#377 *this)
 {
@@ -22068,8 +21871,6 @@ int __thiscall BuildingClass::_vt294(#377 *this)
   *((_BYTE *)this + 1059) = 0;
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -22118,7 +21919,6 @@ retn
 // 0x456640
 void BuildingClass::UpdateDetectionField()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt295(#377 *this)
 {
@@ -22152,8 +21952,6 @@ int __thiscall BuildingClass::_vt295(#377 *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -22215,7 +22013,6 @@ void BuildingClass::ProcessFogCellOccupancy() {}
 // 0x655740
 void BuildingClass::RemoveGapCellCoverage()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_655740(int this, int a2, int a3, int a4)
 {
@@ -22268,8 +22065,6 @@ void __thiscall sub_655740(int this, int a2, int a3, int a4)
     }
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -22361,7 +22156,6 @@ void BuildingClass::Update()
 // 0x44e8f0
 void BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::OnObjectExpired(#377 *this)
 {
@@ -22503,8 +22297,6 @@ LABEL_34:
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -22744,7 +22536,6 @@ retn    8
 // 0x4a5290
 void BuildingClass::UpdateTimerWithElapsed()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4A5290(int this)
 {
@@ -22770,8 +22561,6 @@ char __thiscall sub_4A5290(int this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+18h]
@@ -22822,7 +22611,6 @@ bool BuildingClass::HasActiveParam()
 // 0x455da0
 void BuildingClass::CheckSpecialUpdateFlags()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt161(#377 *this)
 {
@@ -22834,8 +22622,6 @@ int __thiscall BuildingClass::_vt161(#377 *this)
   LOBYTE(result) = v2 == 40 || v2 == 16 || *(_BYTE *)(result + 5804) || *(_BYTE *)(result + 5801);
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -22899,7 +22685,6 @@ void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
 // 0x43e900
 int BuildingClass::GetZDrawOffset() const
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetZDrawOffset(#377 *this)
 {
@@ -22915,7 +22700,6 @@ int __thiscall BuildingClass::GetZDrawOffset(#377 *this)
   else
     return -v3; /*0x43e930*/
 }
-#endif
     return {}; // TODO stub - retranslate via C-line pipeline
 }
 
@@ -22923,7 +22707,6 @@ int __thiscall BuildingClass::GetZDrawOffset(#377 *this)
 // 0x449410
 int BuildingClass::GetBoundingSizeExt() const
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
 {
@@ -22931,8 +22714,6 @@ int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
        - (*(_BYTE *)(*((_DWORD *)this + 328) + 5815) != 0 ? 0x10 : 0)
        + ObjectClass::GetBoundingSize(this);
 }
-#endif
-
 /* ASM:
 push    esi
 mov     esi, ecx
@@ -22992,7 +22773,6 @@ void BuildingClass::SaveLoad_Register()
 // 0x634310
 void BuildingClass::CopyTypeDataForRender()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634310(int *this, int a2, int a3)
 {
@@ -23032,8 +22812,6 @@ LABEL_9:
   *(_BYTE *)(a2 + 110) = v8[2];
   return a2;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+10h]
@@ -23090,14 +22868,11 @@ retn    8
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
 // 0x705d20
 BuildingTypeClass* BuildingClass::GetType() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_GetType(_DWORD *this)
 {
   return *(this + 325);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+514h]
@@ -23108,15 +22883,12 @@ retn
 // IDA 0x705d10: set type
 // 0x705d10
 void BuildingClass::SetType(BuildingTypeClass* t) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_SetType(_DWORD *this, int a2)
 {
   *(this + 325) = a2;
   return a2;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -23135,14 +22907,11 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 // 0x449a40
 HouseClass* BuildingClass::GetOwnerHouse()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetOwnerHouse(#377 *this)
 {
   return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 540))(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx]
@@ -23154,7 +22923,6 @@ jmp     dword ptr [eax+21Ch]
 // 0x6347b0
 int BuildingClass::GetTypeEntry()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6347B0(int *this, int a2)
 {
@@ -23192,8 +22960,6 @@ LABEL_9:
     return *(_DWORD *)(*(this + 9) + 4 * v6);
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -23254,14 +23020,11 @@ retn    4
 // 0x459ed0
 int BuildingClass::GetTypeField60()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetTypeField60(#377 *this)
 {
   return *(_DWORD *)(*((_DWORD *)this + 328) + 96);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -23276,7 +23039,6 @@ int BuildingClass::GetObjectData() { return 0; }
 // 0x455b90
 int BuildingClass::GetFWFlags()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::GetFWFlags(_DWORD *this)
 {
@@ -23303,8 +23065,6 @@ int __thiscall BuildingClass::GetFWFlags(_DWORD *this)
   }
   return v2;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -23374,7 +23134,6 @@ void BuildingClass::ReadConstructionData() {}
 // 0x4527d0
 bool BuildingClass::HasOccupantAudio()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::HasOccupantAudio(#377 *this)
 {
@@ -23416,8 +23175,6 @@ LABEL_2:
   LOBYTE(result) = 0;
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -23477,7 +23234,6 @@ void BuildingClass::ApplyFoundationDamage() {}
 // 0x4ff980
 void BuildingClass::DecrementTypeCounter()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4FF980(_DWORD *this, _DWORD *a2)
 {
@@ -23521,8 +23277,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -23608,7 +23362,6 @@ retn    4
 // 0x4ffa50
 void BuildingClass::IncrementOccupantTypeCounter()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4FFA50(_DWORD *this, _DWORD *a2)
 {
@@ -23652,8 +23405,6 @@ LABEL_13:
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -23739,7 +23490,6 @@ retn    4
 // 0x459c00
 bool BuildingClass::IsMassSelectable()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::IsMassSelectable(#377 *this)
 {
@@ -23750,8 +23500,6 @@ int __thiscall BuildingClass::IsMassSelectable(#377 *this)
     LOBYTE(result) = TechnoClass::CanMoveToCell(this);
   return result;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -23776,7 +23524,6 @@ retn
 // 0x6551c0
 void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_AddUpgrade(int this, int a2)
 {
@@ -23816,8 +23563,6 @@ LABEL_6:
   }
   return v3;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -23894,7 +23639,6 @@ retn    4
 // 0x726400
 void BuildingClass::ProcessUpgradeEffects()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
 {
@@ -23933,8 +23677,6 @@ int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
   }
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -24020,7 +23762,6 @@ retn
 // 0x7265c0
 void BuildingClass::ExecuteTriggers()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_ExecuteTriggers(int this, int a2, char a3)
 {
@@ -24039,8 +23780,6 @@ char __thiscall BuildingClass_ExecuteTriggers(int this, int a2, char a3)
   }
   return v4;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    edi
@@ -24103,7 +23842,6 @@ retn    8
 // 0x459c20
 void BuildingClass::ProcessUpgradeTargeting()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::_vt219(#377 *this)
 {
@@ -24136,8 +23874,6 @@ int __thiscall BuildingClass::_vt219(#377 *this)
   TechnoClass::PickAlternateTarget(this);
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    edi
@@ -24206,7 +23942,6 @@ void BuildingClass::Unlimbo_UnitDeliveryFix() {}
 // 0x452170
 void BuildingClass::SetConnectedBuildingMission()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_SetConnectedBuildingMission(int *this, int a2)
 {
@@ -24231,8 +23966,6 @@ int __thiscall BuildingClass_SetConnectedBuildingMission(int *this, int a2)
   while ( v5 );
   return result;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -24319,7 +24052,6 @@ void BuildingClass::BeginCrumblingTimer() {}
 // 0x453d60
 void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
 {
@@ -24339,13 +24071,11 @@ int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
   *(_DWORD *)result = v3; /*0x453db0*/
   return result; /*0x453db2*/
 }
-#endif
 }
 
 // 0x453dc0
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
 {
@@ -24365,7 +24095,6 @@ int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
   *(_DWORD *)result = v3; /*0x453e10*/
   return result; /*0x453e12*/
 }
-#endif
 }
 
 void BuildingClass::ScanCircleForTiberium() {}
@@ -24374,7 +24103,6 @@ void BuildingClass::UpdateTerrainEffect() {}
 // IDA 0x483620: check if eligible for tiberium collection
 // 0x483620
 bool BuildingClass::IsTiberiumCollectorEligible() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_483620(int this)
 {
@@ -24393,8 +24121,6 @@ bool __thiscall sub_483620(int this)
     return *(double *)(v4 + 176) >= 0.00001;
   return 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -24462,7 +24188,6 @@ retn
 // IDA 0x483690: check if eligible for tiberium storage
 // 0x483690
 bool BuildingClass::IsTiberiumSiloEligible() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_483690(int this)
 {
@@ -24481,8 +24206,6 @@ bool __thiscall sub_483690(int this)
     return *(_DWORD *)(this + 228) == 0;
   return 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -24587,7 +24310,6 @@ void BuildingClass::ClearLimpetCheck()
 // IDA 0x487c10: check if C4 is active
 // 0x487c10
 bool BuildingClass::CheckC4Active() {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BuildingClass_CheckC4Active(int this)
 {
@@ -24608,8 +24330,6 @@ char __thiscall BuildingClass_CheckC4Active(int this)
   }
   return 0;
 }
-#endif
-    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -24665,15 +24385,12 @@ retn
 // IDA 0x424c90: set field at offset 95
 // 0x424c90
 void BuildingClass::SetField95(int v) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Accessor_424c90(_DWORD *this, int a2)
 {
   *(this + 95) = a2;
   return a2;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -24685,14 +24402,11 @@ retn    4
 // IDA 0x425260: set field at offset 8 (activates flag)
 // 0x425260
 void BuildingClass::SetField8(int v) {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Accessor_425260(_BYTE *this)
 {
   *(this + 414) = 1;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     byte ptr [ecx+19Eh], 1
@@ -24706,7 +24420,6 @@ int BuildingClass::GetCursorAction() { return 0; }
 // 0x70f6e0
 void BuildingClass::UpdateThreatBounds()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BuildingClass::UpdateThreatBounds(_DWORD *this, _DWORD *a2)
 {
@@ -24733,8 +24446,6 @@ void __thiscall BuildingClass::UpdateThreatBounds(_DWORD *this, _DWORD *a2)
     CellClass::SetThreatBounds(a2, v7, v9);
   }
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -24777,15 +24488,12 @@ bool BuildingClass::ValidatePath() { return true; }
 // 0x717890
 void BuildingClass::SetSlot(int slot)
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass_SetSlot(_DWORD *this, int a2, int a3)
 {
   *(this + a3 + 517) = a2;
   return a3;
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -24891,7 +24599,6 @@ void BuildingClass::DisguiseDetectorActivate(CellStruct cell) {}
 void BuildingClass::DisguiseDetectorDeactivate(CellStruct cell) {}
 // 0x480110
 Point2D BuildingClass::CalcDrawPos() const {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall BuildingClass_CalcDrawPos(int this, _DWORD *a2)
 {
@@ -24923,8 +24630,6 @@ LABEL_6:
   a2[1] = v8 + 15;
   return a2;
 }
-#endif
-
 /* ASM:
 sub     esp, 8
 push    esi

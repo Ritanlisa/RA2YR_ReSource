@@ -38,7 +38,6 @@ AircraftClass::AircraftClass() noexcept
 // 0x417fe0
 int AircraftClass::Mission_Attack()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::Mission_Attack(int *this)
 {
@@ -678,8 +677,6 @@ LABEL_108:
       return v87 + Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2);
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0C8h
@@ -2000,7 +1997,6 @@ int AircraftClass::Mission_Retreat()
 // 0x4166c0
 int AircraftClass::Mission_Enter()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall AircraftClass::_vt139@<eax>(int a1@<ecx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5@<esi>)
 {
@@ -2185,8 +2181,6 @@ LABEL_6:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+6C4h]
@@ -2601,7 +2595,6 @@ retn
 // 0x419c80
 int AircraftClass::Mission_Transport()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall AircraftClass::Mission_Transport@<eax>(int a1@<ecx>, int a2@<ebp>)
 {
@@ -2831,8 +2824,6 @@ LABEL_24:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -3349,7 +3340,6 @@ retn
 // 0x4190b0
 int AircraftClass::MissionDispatch()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::MissionDispatch(int this, _DWORD *a2, int a3, void **a4)
 {
@@ -3508,8 +3498,6 @@ LABEL_4:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -4000,7 +3988,6 @@ retn    0Ch
 // 0x414310
 int AircraftClass::MoveTo()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_414310(_DWORD *this, _DWORD *a2, int a3)
 {
@@ -4067,8 +4054,6 @@ char __thiscall sub_414310(_DWORD *this, _DWORD *a2, int a3)
     (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0);
   return 1;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -4244,7 +4229,6 @@ bool AircraftClass::CanEnterCell()
 // 0x41ba90
 int AircraftClass::ProcessLanding()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::_vt122(int this, int a2, int a3)
 {
@@ -4278,8 +4262,6 @@ LABEL_4:
   }
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0ACh]
@@ -4342,7 +4324,6 @@ int AircraftClass::ValidateLandingCell()
 // 0x415a50
 int AircraftClass::ProcessReturnToBase()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::_vt140(unsigned int **this)
 {
@@ -4383,8 +4364,6 @@ int __thiscall AircraftClass::_vt140(unsigned int **this)
   }
   return 3;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -4495,7 +4474,6 @@ int AircraftClass::LandingCheckStub()
 // 0x41b870
 int AircraftClass::ProcessPassengerEjection()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::_vt123(#377 *this)
 {
@@ -4503,8 +4481,6 @@ int __thiscall AircraftClass::_vt123(#377 *this)
     *((_BYTE *)this + 1746) = 0;
   return MissionClass::AdvanceState(this);
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 cmp     dword ptr [ecx+0ACh], 1Eh
@@ -4576,7 +4552,6 @@ int AircraftClass::PowerDrainUpdate(int a2)
 // 0x41b660
 int AircraftClass::HandleTargetDestroyed()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::_vt10(int *this, int *a2, int *a3)
 {
@@ -4590,8 +4565,6 @@ int __thiscall AircraftClass::_vt10(int *this, int *a2, int *a3)
     *(this + 433) = 0;
   return result;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -4624,7 +4597,6 @@ retn    8
 // 0x414a80
 int AircraftClass::ProcessMissionTimeout()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::ProcessMissionTimeout(_DWORD *this)
 {
@@ -4682,8 +4654,6 @@ LABEL_12:
     return v3 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -4805,7 +4775,6 @@ retn
 // 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::GetMissionTimer(int this)
 {
@@ -4953,8 +4922,6 @@ LABEL_14:
     return 45;
   }
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -5342,7 +5309,6 @@ int AircraftClass::LoadFromStream()
 // 0x414080
 void AircraftClass::Destruct()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AircraftClass::Destruct(void **this)
 {
@@ -5458,8 +5424,6 @@ int __thiscall AircraftClass::Destruct(void **this)
   *((_BYTE *)this + 144) = 0;
   return FootClass::Destruct(this);
 }
-#endif
-    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -5674,7 +5638,6 @@ int AircraftClass::GetCursorOverObject()
 // 0x41b920
 int AircraftClass::IsHeightAboveThreshold()
 {
-#if 0
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall AircraftClass::_vt21(_BYTE *this)
 {
@@ -5687,8 +5650,6 @@ bool __thiscall AircraftClass::_vt21(_BYTE *this)
     WinAPI::Wrapper(-2147467261);
   return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(*((_DWORD *)this + 413)) != 0;
 }
-#endif
-    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
