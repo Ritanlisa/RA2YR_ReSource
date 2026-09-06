@@ -130,7 +130,22 @@ def main():
                 m = re.match(r"^(.*?\()(.*)\)$", new_proto, re.S)
                 if m:
                     head, body = m.group(1), m.group(2)
-                    parts = [x.strip() for x in body.split(",")] \
+                    # 深度感知切分: 函数指针参数 `int (__stdcall **)(A, B)`
+                    # 的内层形参表不能被裸 split(",") 碎切（双右括号根因）
+                    parts, cur, depth = [], "", 0
+                    for ch in body:
+                        if ch == "," and depth == 0:
+                            parts.append(cur)
+                            cur = ""
+                            continue
+                        if ch in "(<[":
+                            depth += 1
+                        elif ch in ")>]":
+                            depth -= 1
+                        cur += ch
+                    if cur.strip():
+                        parts.append(cur)
+                    parts = [x.strip() for x in parts] \
                         if body.strip() and body.strip() != "void" else []
                     changed = False
                     off = 1 if "__thiscall" in head else 0
@@ -148,12 +163,21 @@ def main():
             new_proto = re.sub(r"#[\d]+(?:\s*\*)+", "void *", new_proto)
             new_proto = re.sub(r"\s*__(?:userpurge|usercall)\b", "", new_proto)
             new_proto = re.sub(r"@<[\w:]+>\s*", "", new_proto)
-            if nm and "__thiscall(" in new_proto:
-                new_proto = new_proto.replace("__thiscall(",
-                                              f"__thiscall {nm}(", 1)
+            if nm:
+                # 无名声明不可解析（B1 根因: 637/637 失败全部是
+                # `int __stdcall(...)` / `void(...)` 匿名形——param-only
+                # 编辑路径从不插名, 旧代码只处理 __thiscall 分支）。
+                # 头部不以函数名结尾 → 在 "(" 前插入（同名重声明非改名,
+                # 不破坏 symbols-locked 1:1:1）
+                paren = new_proto.find("(")
+                if paren > 0:
+                    head = new_proto[:paren].rstrip()
+                    if not head.endswith(nm):
+                        new_proto = f"{head} {nm}" + new_proto[paren:]
             edits.append({"addr": p["addr"], "ty": name_anon_params(new_proto)})
         if edits and not args.dry_run:
             for i in range(0, len(edits), 50):
+                sub = edits[i:i + 50]
                 try:
                     res = call("type_apply_batch", {"batch": {
                         "edits": edits[i:i + 50]}})
@@ -164,8 +188,17 @@ def main():
                             st["applied"] += 1
                         else:
                             st["fail"] += 1
-                except RuntimeError:
+                            st.setdefault("fail_log", []).append({
+                                "addr": str((it.get("edit") or {})
+                                            .get("addr", "")),
+                                "ty": str((it.get("edit") or {})
+                                          .get("ty", ""))[:200],
+                                "err": str(it.get("error", ""))[:200]})
+                except RuntimeError as ex:
                     st["fail"] += len(edits[i:i + 50])
+                    st.setdefault("fail_log", []).append({
+                        "addr": "BATCH", "ty": str(ex)[:200],
+                        "err": "RuntimeError"})
         n_edits += len(edits)
         for a in chunk:
             done.add(a)

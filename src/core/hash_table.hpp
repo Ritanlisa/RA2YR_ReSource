@@ -159,7 +159,7 @@ private:
 class Hash
 {
 public:
-    Hash(); // 0x5dac00
+    Hash(); // no binary equivalent (5DAC00h belongs to WideString::Hash)
 
     // IDA 0x69D8C0
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80

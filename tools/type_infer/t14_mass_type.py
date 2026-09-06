@@ -68,6 +68,12 @@ def load_truth():
         a = _norm_addr(k)
         canon = r2c.get(cls, cls)
         truth[a] = (canon, "ctor_vtable_install")  # rank3 覆盖
+    # CRT RTTI 支持类（type_info/bad_typeid/...）的 ctor 记录是 COMDAT
+    # 折叠体: 地址常非函数起始（0x7caacb ∈ RTtypeid 内部）, vtable 安装
+    # 属 CRT 自身——从真值池整体剔除（与 _ 前缀 CRT 防御同源的确定性排除）
+    _CRT_RTTI = {"type_info", "bad_typeid", "bad_cast",
+                 "__non_rtti_object", "bad_alloc"}
+    truth = {a: v for a, v in truth.items() if v[0] not in _CRT_RTTI}
     return truth
 
 

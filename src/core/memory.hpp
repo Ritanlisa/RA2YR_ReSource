@@ -43,7 +43,7 @@ public:
     static T* Create(TAlloc& alloc, TArgs&&... args);
 
     template <typename T, typename TAlloc>
-    static void Delete(TAlloc& alloc, T* ptr); // 0x65d190
+    static void Delete(TAlloc& alloc, T* ptr); // template, no single binary equivalent (65D190h belongs to FileClass::Delete)
 
     template <typename T, typename TAlloc, typename... TArgs>
     static T* CreateArray(TAlloc& alloc, std::size_t capacity, TArgs&&... args);

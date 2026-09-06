@@ -363,7 +363,7 @@ public:
 
     virtual void DialogProc(); // 0x46DFD0
     virtual void ProcessScreen(); // 0x46FC00
-    virtual void sub_471420(); // 0x471420
+    virtual void InitScoreScreenData(); // 0x471420
     virtual void Constructor_CampaignScoreClass(); // 0x471500
     virtual void Constructor_CampaignEndScoreClass(); // 0x471520
     // +4 more virtual methods
@@ -562,7 +562,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CreditsPower() = default;
 
-    virtual void sub_4C3D00(); // 0x4C3D00
+    virtual void DrawCreditsTextLine(); // 0x4C3D00
     virtual void Display(); // 0x4C3E30
 
     uint8_t CreditsPower_field_0x04[4];
@@ -744,9 +744,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~InputManager() = default;
 
-    virtual void sub_4E15A0(); // 0x4E15A0
+    virtual void FindBestHitElement(); // 0x4E15A0
     virtual void ProcessEvents(); // 0x4E1640
-    virtual void sub_54F2F0(); // 0x54F2F0
+    virtual void EnqueueInputEvent(); // 0x54F2F0
     virtual void PushInputEvent(); // 0x54F670
     virtual void WndProc(); // 0x54F790
 
