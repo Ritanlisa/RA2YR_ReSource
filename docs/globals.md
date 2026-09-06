@@ -201,11 +201,11 @@
 |------|------|
 | `g_Audio_Enabled`, `g_pDirectSound` | 音频启用标志 + DirectSound 对象指针 |
 
-### Locomotor GUID 表 (8)
+### Locomotor GUID 表 (11)
 
 | 示例 | 用途 |
 |------|------|
-| `g_CLSID_WalkLocomotion`, `g_CLSID_DriveLocomotion`, `g_CLSID_FlyLocomotion`, `g_CLSID_HoverLocomotion`, `g_CLSID_TunnelLocomotion`, `g_CLSID_DriveLocomotion2`, `g_CLSID_JumpjetLocomotion`, `g_CLSID_ShipLocomotion` | COM 移动类型 CLSID 表 @0x7E9A60 |
+| `g_CLSID_DriveLocomotion`, `g_CLSID_HoverLocomotion`, `g_CLSID_TunnelLocomotion`, `g_CLSID_WalkLocomotion`, `g_CLSID_DropPodLocomotion`, `g_CLSID_FlyLocomotion`, `g_CLSID_TeleportLocomotion`, `g_CLSID_MechLocomotion`, `g_CLSID_ShipLocomotion`, `g_CLSID_JumpjetLocomotion`, `g_CLSID_RocketLocomotion` | COM 移动类型 CLSID 表 @0x7E9A30 |
 
 ### 音频子系统 (4)
 
@@ -221,20 +221,39 @@
 
 ---
 
-## 5. Locomotor GUID 表 (0x7E9A60)
+## 5. Locomotor GUID 表 (0x7E9A30 - 0x7E9AD0)
 
-8 个连续 CLSID，每个 16 字节 (128-bit GUID)：
+11 个连续 CLSID，每个 16 字节 (128-bit GUID)。表从 `0x7E9A30` 开始，不是
+`0x7E9A60`：`0x7E9A30/40/50` 三项（Drive / Hover / Tunnel）此前被漏掉，导致其后
+每一行的类名都错位一格。
 
-| 地址 | GUID (首 4 字节 LE) | 对应 COM 类 | 引用函数 |
-|------|---------------------|------------|----------|
-| `0x7E9A60` | `4A582744` | WalkLocomotion | WinMain COM 注册 |
-| `0x7E9A70` | `4A582745` | DriveLocomotion | WinMain |
-| `0x7E9A80` | `4A582746` | FlyLocomotion | FlyLocomotionClass::ddtor |
-| `0x7E9A90` | `4A582747` | HoverLocomotion | InfantryClass::CreateDeployLocomotor |
-| `0x7E9AA0` | `55D141B8` | TunnelLocomotion | WinMain |
-| `0x7E9AB0` | `2BEA74E1` | DriveLocomotion2 | — |
-| `0x7E9AC0` | `92612C46` | JumpjetLocomotion | 10+ 函数 (核心移动) |
-| `0x7E9AD0` | `B7B49766` | ShipLocomotion | WinMain |
+每一行的归属由**引用它的类方法**确定 —— 一个 locomotor 的 `ddtor` /
+`GetClassIdentifier` 会 push 自己的 CLSID；这 11 项也正好对应 WinMain 依次构造的
+11 个 `TClassFactory_*LocomotionClass`。
+
+| 地址 | GUID | 对应 COM 类 | 判定依据 |
+|------|------|------------|----------|
+| `0x7E9A30` | `{4A582741-9839-11D1-B709-00A024DDAFD1}` | DriveLocomotion | `DriveLocomotionClass::ddtor+0x12` |
+| `0x7E9A40` | `{4A582742-9839-11D1-B709-00A024DDAFD1}` | HoverLocomotion | `HoverLocomotionClass::ddtor+0x12` |
+| `0x7E9A50` | `{4A582743-9839-11D1-B709-00A024DDAFD1}` | TunnelLocomotion | `TunnelLocomotionClass::ddtor+0x12` |
+| `0x7E9A60` | `{4A582744-9839-11D1-B709-00A024DDAFD1}` | WalkLocomotion | `WalkLocomotionClass::ddtor+0x12` |
+| `0x7E9A70` | `{4A582745-9839-11D1-B709-00A024DDAFD1}` | DropPodLocomotion | `DropPodLocomotionClass::ddtor+0x12` |
+| `0x7E9A80` | `{4A582746-9839-11D1-B709-00A024DDAFD1}` | FlyLocomotion | `FlyLocomotionClass::ddtor+0x12` |
+| `0x7E9A90` | `{4A582747-9839-11D1-B709-00A024DDAFD1}` | TeleportLocomotion | WinMain 第 9 个工厂 (`TClassFactory_TeleportLocomotionClass`)；其 `GetClassIdentifier` 在 `0x719C60` |
+| `0x7E9AA0` | `{55D141B8-DB94-11D1-AC98-006008055BB5}` | MechLocomotion | `MechLocomotionClass::ddtor+0x12` |
+| `0x7E9AB0` | `{2BEA74E1-7CCA-11D3-BE14-00104B62A16C}` | ShipLocomotion | `ShipLocomotionClass::ddtor+0x12` |
+| `0x7E9AC0` | `{92612C46-F71F-11D1-AC9F-006008055BB5}` | JumpjetLocomotion | `JumpjetLocomotionClass::GetClassIdentifier+0x12` |
+| `0x7E9AD0` | `{B7B49766-E576-11D3-9BD9-00104B972FE8}` | RocketLocomotion | `RocketLocomotionClass::ddtor+0x12` |
+
+注意后四项的 GUID 尾部**不是** `-9839-11D1-B709-00A024DDAFD1`：Mech / Ship /
+Jumpjet / Rocket 各有自己的 Data2/Data3/Data4。
+
+`0x7E9A20` 处还有一个 `{4A582740-...}`，但全文件无任何引用，因此不计入本表。
+
+WinMain 的注册顺序（与 `src/core/com_register.cpp` 一致）为：Drive `+0x17BC`、
+Jumpjet `+0x17F9`、Hover `+0x1836`、Rocket `+0x1873`、Tunnel `+0x18B0`、Walk
+`+0x18ED`、DropPod `+0x192A`、Fly `+0x1967`、Teleport `+0x19A4`、Mech `+0x19E1`、
+Ship `+0x1A1E`。
 
 ### GUID 格式说明
 
@@ -245,7 +264,7 @@
 
 1. INI 中看到 GUID 字符串如 `{4A582746-9839-11d1-B709-00A024DDAFD1}`
 2. 在 IDA 中用 `find_bytes` 搜索 GUID 的 16 字节二进制格式（注意 Windows GUID 小端序）
-3. GUID 表位于 `.rdata` 段 (0x7E9A60)
+3. GUID 表位于 `.rdata` 段 (0x7E9A30)
 4. 用 `xrefs_to` 查每个 GUID 的引用 → 确认对应类名
 
 ---
