@@ -203,6 +203,7 @@ cmake --build build_linux
 | `docs/coverage.md` | 编译状态、函数覆盖、vtable、类层次、成员变量 inventory |
 | `docs/ecosystem.md` | 四重参考源、Ares/Phobos/Spawner/Syringe 完整生态 |
 | `docs/todo.md` | R0-R1 + P0-P5 完整工作分解 |
+| `docs/roadmap_post_csp.md` | **CSP 后时代路线图**（当前活跃）：A 语义命名轮 / B 类型收尾 / C 批量翻译 / D 集成验收 |
 | `docs/menu_architecture.md` | 19-case 状态机、Dialog 系统、BINK 渲染链 |
 | `docs/menu_lessons.md` | BINK/主菜单踩坑记录、失败尝试、工作基线 |
 | `docs/dsurface.md` | Surface 继承链、38 条 vtable、IDDS7 映射 |
@@ -878,6 +879,10 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-05 (夜)**: 快照 v2 导出 + CSP 后路线图（docs/roadmap_post_csp.md）
+  - **full_export v2**: 19,087 函数 100%（19,078 带伪代码 / 9 纯汇编兜底）、1,343 类头、10,674 全局、26,498 索引；**类型化伪代码质变**（0x532150 从 0 → 29+ 个 `CreateTeamCommand*` 类型化局部；this ~9,840 / locals ~19,695 全部渲染进伪代码）
+  - **路线图**: Phase A 语义命名轮（成员/函数/局部/一致性, 快照消费无需 IDA）→ B 类型收尾（550 sigs 失败/枚举通道/7 零观测考古）→ C 函数体批量翻译（pre_translate 门控 → 翻译 → Clang AST 门控 → REVERSE 对拍）→ D 集成验收; 含度量/风险/依赖图
+  - v1 快照备份为 `full_export_v1_pre_b10/`
 - **2026-09-05 (终)**: 导入闭环 + 终态清点 — CSP 全通道落盘 IDB
   - **mass_type 重跑**: 最小 struct 放行 → **+961 个 this 签名**（累计 ~9,840 应用, retruth 真值修正累计 612）; 1 失败（RTtypeid CRT 折叠, 非函数起始地址）
   - **t14_apply_sigs**: 参数/返回通道 **1,419 处编辑落盘**（return+param）
