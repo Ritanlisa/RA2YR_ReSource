@@ -39,7 +39,7 @@ public:
 protected:
     struct noinit_t {};
     // unmatched: no callgraph reference and no git history record
-    ParticleTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
+    ParticleTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

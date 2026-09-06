@@ -20,8 +20,7 @@ struct WarheadFlags
     bool PassiveAcquire;
 
     WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true)
-        // unmatched: no callgraph reference and no git history record
-        : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {}
+; // unmatched: no callgraph reference and no git history record
 };
 
 class WarheadTypeClass : public AbstractTypeClass
@@ -36,15 +35,15 @@ public:
     // wrapper: delegates to WarheadTypeClass::FindOrCreate at 0x75E3B0
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524ED0 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x524ED0 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x524F00 (as LoadTypeData)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }  // 0x524FB0 (as SaveToINI)
+    virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x524F00 (as LoadTypeData)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x524FB0 (as SaveToINI)
 
     virtual ~WarheadTypeClass() = default;  // 0x75E510 (as Destructor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::WarheadType; }  // 0x75E500 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x75E4F0 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override;  // 0x75E500 (as GetTypeIdentifier)
+    virtual int objectSize() const override;  // 0x75E4F0 (as GetObjectSize)
 
     WarheadTypeClass(const char* pID) noexcept;  // 0x75CEC0 (as Construct)
 

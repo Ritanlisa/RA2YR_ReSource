@@ -35,12 +35,12 @@ std::ostream& operator<<(std::ostream& os, const RectangleStruct& r)
 namespace gamemd::math
 {
 
-double Deg2Rad(double deg)
+double Deg2Rad(double deg) noexcept
 {
     return deg * Pi / 180.0;
 }
 
-double Rad2Deg(double rad)
+double Rad2Deg(double rad) noexcept
 {
     return rad * 180.0 / Pi;
 }

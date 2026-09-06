@@ -19,7 +19,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x71A660
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x71A700
 
-    virtual ~TemporalClass() = default;  // 0x71A720
+    virtual ~TemporalClass();  // 0x71A720
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

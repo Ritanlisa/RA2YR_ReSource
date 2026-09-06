@@ -39,7 +39,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::SuperWeaponType;
     static DynamicVectorClass<AbstractTypeClass*>* Array; // data: 0x87F668
 
-    virtual ~SuperWeaponTypeClass() = default;                                       // 0x6CEFE0 (SDDTOR)
+    virtual ~SuperWeaponTypeClass();                                       // 0x6CEFE0 (SDDTOR)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE8F0 (SD_vt11)
     virtual int32_t objectSize() const override; // 0x6CE900 (SD_vt12)
@@ -101,7 +101,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::Super;
     static DynamicVectorClass<SuperClass*>* Array; // data: 0x87F670
 
-    virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
+    virtual ~SuperClass();                                                 // 0x6CDEB0 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
     // wrapper: delegates to SuperClass::PowerDrainUpdate at 0x6CE020

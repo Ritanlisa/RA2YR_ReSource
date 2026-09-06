@@ -40,7 +40,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x4E84A0
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x4E84C0
 
-    virtual ~ParticleSystemClass() override = default;  // 0x630230
+    virtual ~ParticleSystemClass() override;  // 0x630230
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

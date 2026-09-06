@@ -5,6 +5,7 @@
 
 namespace ra2 {
 namespace game {
+using ::gamemd::DynamicVectorClass;
 
 class TechnoClass;
 class HouseClass;
@@ -28,22 +29,22 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::SpawnManager;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~SpawnManagerClass() = default;  // 0x6B7ED0
+    virtual ~SpawnManagerClass();  // 0x6B7ED0
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override;
     // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     SpawnManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int); // 0x6B6C90 (Construct)
@@ -64,8 +65,8 @@ public:
     void PowerDrainUpdate();                                     // 0x6B7DE0
 
     // Stubs
-    int StubReturn65() const { return 65; }                       // 0x6B8130
-    int StubReturn116() const { return 116; }                     // 0x6B8120
+    int StubReturn65() const;                       // 0x6B8130
+    int StubReturn116() const;                     // 0x6B8120
 
     TechnoClass*                owner;              // +0x24 (this+36)
     HouseClass*                 spawnOwner;         // +0x28 (this+40)

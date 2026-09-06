@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00517110 (169 bytes)
 int MovementAI_MainFootClass_517110() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_517110(int this)
 {
   int v2; // edi
@@ -39,6 +40,8 @@ int __thiscall sub_517110(int this)
     return MovementAI::MainFootClass((int *)this, 1);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -120,7 +123,8 @@ retn
 
 // 0x00600AF0 (369 bytes)
 void RemoveLinked_600AF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_600AF0()
 {
   unsigned int v0; // eax
@@ -210,6 +214,8 @@ void __cdecl sub_600AF0()
   }
   __3_YAXPAX_Z((void *)dword_A8ED54[52075]);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include "core/math.hpp"   // CellStruct = Vector2D<short>
 #include <windows.h>
 
 #include "core/vector.hpp"
@@ -12,7 +13,6 @@ namespace gamemd
 class HouseClass;
 class CCINIClass;
 class MPTeam;
-struct CellStruct;
 
 class MPGameModeClass
 {
@@ -75,7 +75,7 @@ public:
     virtual bool   IsPlayerEliminated(); // 0x5C0F40 (ScenarioClass::StubReturnTrue5)
     virtual void   CreateMPTeams(DynamicVectorClass<MPTeam*>*); // 0x5C0F30 (ScenarioClass::initTeams)
     virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t,
-                        DynamicVectorClass<CellStruct>*, uint8_t*) { return nullptr; }       // 0x5D6BE0 (ScenarioClass::AssignStartPositions)
+                        DynamicVectorClass<CellStruct>*, uint8_t*);       // 0x5D6BE0 (ScenarioClass::AssignStartPositions)
     virtual bool   SpawnBaseUnits(HouseClass*, uint32_t); // 0x5D6340 (ScenarioClass::createStartingForces)
     virtual bool   GenerateStartingUnits(HouseClass*, int32_t&); // 0x5D6440 (ScenarioClass::MissionStubReturnZero3)
 
@@ -103,7 +103,7 @@ class MPBattleClass : public MPGameModeClass
 public:
     MPBattleClass() noexcept;  // 0x5d8170
     // design: defaulted virtual destructor, no binary equivalent
-    virtual ~MPBattleClass() = default;
+    virtual ~MPBattleClass();
     virtual bool IsTeamsAllowed() override;  // 0x5CB570
     virtual bool IsValidMap() override;  // 0x5CACF0
     virtual bool NeedsHouseSelection() override;  // 0x5CAD30
@@ -167,7 +167,7 @@ public:
     virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;
     // unmatched: no callgraph reference and no git history record
     virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t,
-                        DynamicVectorClass<CellStruct>*, uint8_t*) override { return nullptr; }
+                        DynamicVectorClass<CellStruct>*, uint8_t*) override;
     // unmatched: no callgraph reference and no git history record
     virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
     // unmatched: no callgraph reference and no git history record
@@ -187,7 +187,7 @@ class MPFreeForAllClass : public MPGameModeClass
 {
 public:
     MPFreeForAllClass() noexcept;                                       // 0x5C5CE0 (MPBattleClass::MPFreeForAllClass)
-    virtual ~MPFreeForAllClass() = default;
+    virtual ~MPFreeForAllClass();
     virtual bool StartGame() override;
     virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
@@ -199,7 +199,7 @@ class MPUnholyAllianceClass : public MPGameModeClass
 {
 public:
     MPUnholyAllianceClass() noexcept;                                    // 0x5CB3A0 (MPBattleClass::MPUnholyAllianceClass)
-    virtual ~MPUnholyAllianceClass() = default;
+    virtual ~MPUnholyAllianceClass();
     virtual bool StartGame() override;
     virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
@@ -211,7 +211,7 @@ class MPSiegeClass : public MPGameModeClass
 {
 public:
     MPSiegeClass() noexcept;                                              // 0x5CA630 (MPBattleClass::MPSiegeClass)
-    virtual ~MPSiegeClass() = default;
+    virtual ~MPSiegeClass();
     virtual bool StartGame() override;
     virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
@@ -229,7 +229,7 @@ class MPMegawealthClass : public MPGameModeClass
 {
 public:
     MPMegawealthClass() noexcept;                                  // 0x5C93E0 (MPBattleClass::MPMegawealthClass)
-    virtual ~MPMegawealthClass() = default;
+    virtual ~MPMegawealthClass();
     virtual bool IsMegawealthAllowed() override;  // 0x5D5900
 };
 
@@ -237,7 +237,7 @@ class MPManBattleClass : public MPGameModeClass
 {
 public:
     MPManBattleClass() noexcept;  // 0x5C6150 (MPBattleClass::MPManBattleClass)
-    virtual ~MPManBattleClass() = default;
+    virtual ~MPManBattleClass();
 };
 
 // TODO: add remaining MP game modes (Cooperative, NavalBattle, etc.)

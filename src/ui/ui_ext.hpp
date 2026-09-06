@@ -358,6 +358,7 @@ public:
 class CampaignScore
 {
 public:
+    void sub_471420();  // 0x471420
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CampaignScore() = default;
 
@@ -559,6 +560,7 @@ public:
 class CreditsPower
 {
 public:
+    void sub_4C3D00();  // 0x4C3D00
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CreditsPower() = default;
 
@@ -741,6 +743,8 @@ public:
 class InputManager
 {
 public:
+    void sub_54F2F0();  // 0x54F2F0
+    void sub_4E15A0();  // 0x4E15A0
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~InputManager() = default;
 

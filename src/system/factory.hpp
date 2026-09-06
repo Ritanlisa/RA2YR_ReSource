@@ -28,7 +28,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~FactoryClass() = default;                                                   // 0x4CA230 (ddtor)
+    virtual ~FactoryClass();                                                   // 0x4CA230 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x4CA750 (StubReturn12)
     virtual int objectSize() const override; // 0x4CA760 (StubReturn116)

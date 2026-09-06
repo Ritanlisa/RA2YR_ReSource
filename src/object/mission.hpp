@@ -24,7 +24,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x5B3760
 
     // design: defaulted virtual destructor, no binary equivalent
-    virtual ~MissionClass() = default;
+    virtual ~MissionClass();
 
     virtual bool queueMission(Mission mission, bool start_mission);
     // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0

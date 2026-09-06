@@ -40,7 +40,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x691630
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x691690
 
-    virtual ~ScriptClass() = default;  // 0x6915F0
+    virtual ~ScriptClass();  // 0x6915F0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;
@@ -87,7 +87,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x691DE0
 
-    virtual ~ScriptTypeClass() = default;  // 0x691FA0
+    virtual ~ScriptTypeClass();  // 0x691FA0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

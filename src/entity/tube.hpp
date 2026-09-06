@@ -36,7 +36,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x7281A0
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x7281E0
 
-    virtual ~TubeClass() override = default;  // 0x7286D0
+    virtual ~TubeClass() override;  // 0x7286D0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

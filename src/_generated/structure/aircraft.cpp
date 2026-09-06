@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00413CD0 (68 bytes)
 bool JumpjetLocomotionClass_Method_413CD0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_413CD0(int a1)
 {
   int v2; // eax
@@ -22,6 +23,8 @@ bool __fastcall sub_413CD0(int a1)
     return *(_BYTE *)(v2 + 1753) == 0;
   return 0;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -69,7 +72,8 @@ retn
 
 // 0x004B0DF0 (242 bytes)
 char JumpjetLocomotion_MoveCrate_4B0DF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4B0DF0(int this, _DWORD *a2)
 {
   int v2; // eax
@@ -113,6 +117,8 @@ char __thiscall sub_4B0DF0(int this, _DWORD *a2)
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp

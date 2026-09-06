@@ -98,12 +98,7 @@ public:
     bool IsDefinedWaypoint(int idx);
     // design: no binary equivalent found in IDA
     CellStruct* GetWaypointCoords(CellStruct* dest, int idx);
-    CellStruct GetWaypointCoords(int idx)
-    {
-        CellStruct dest;
-        GetWaypointCoords(&dest, idx);
-        return dest;
-    }
+    CellStruct GetWaypointCoords(int idx);
 
     // design: static function, no direct binary match in IDA
     static void UpdateCellLighting();

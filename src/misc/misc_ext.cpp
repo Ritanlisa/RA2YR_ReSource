@@ -271,10 +271,6 @@ void IsoTile::Decode8Bit()
 {
 }
 
-void IsometricTileClass::IsometricTileClass()
-{
-}
-
 void IsometricTileTypeClass::CleanupMembers()
 {
 }
@@ -1115,10 +1111,6 @@ void DiskLaserClass::PointerGotInvalid()
 {
 }
 
-void DiskLaserClass::DiskLaserClass()
-{
-}
-
 void DiskLaserClass::Stat()
 {
 }
@@ -1183,23 +1175,23 @@ void FractalNoise::Release()
 {
 }
 
-void Function::41C430()
+void Function::Method_41C430()
 {
 }
 
-void Function::424CA0()
+void Function::Method_424CA0()
 {
 }
 
-void Function::46B260()
+void Function::Method_46B260()
 {
 }
 
-void Function::4B4D60()
+void Function::Method_4B4D60()
 {
 }
 
-void Function::6342D0()
+void Function::Method_6342D0()
 {
 }
 
@@ -1236,18 +1228,6 @@ void GenericVector::Resize()
 }
 
 void GenericVector::Resize2()
-{
-}
-
-void GetCurrentProcessId::0()
-{
-}
-
-void GetCurrentThread::0()
-{
-}
-
-void GetCurrentThreadId::0()
 {
 }
 
@@ -1727,10 +1707,6 @@ void NetMessage::Pack()
 {
 }
 
-void NeuronClass::NeuronClass()
-{
-}
-
 void NeuronClass::Fire()
 {
 }
@@ -1792,10 +1768,6 @@ void ObjectVector::QueryInterface()
 }
 
 void ObserverClass::FindStartingCell()
-{
-}
-
-void OleUninitialize::0()
 {
 }
 
@@ -3347,19 +3319,19 @@ void VtableStub::Push_407510()
 {
 }
 
-void VtableStub::425270()
+void VtableStub::Method_425270()
 {
 }
 
-void VtableStub::477740()
+void VtableStub::Method_477740()
 {
 }
 
-void VtableStub::5175D0()
+void VtableStub::Method_5175D0()
 {
 }
 
-void VtableStub::55CBF0()
+void VtableStub::Method_55CBF0()
 {
 }
 
@@ -3467,10 +3439,6 @@ void WorldDomination::SetupTerritoryNodes()
 {
 }
 
-void WorldDominationTour::Territory::Constructor()
-{
-}
-
 void ZBuffer::RenderSprite()
 {
 }
@@ -3479,4 +3447,22 @@ void ZoneConnectionVector::Destruct()
 {
 }
 
+// legal stubs for misc_ext.hpp cleanups (build-redline session)
+// 0x41C430 numeric-name legalized
+// 0x424CA0 numeric-name legalized
+// 0x46B260 numeric-name legalized
+// 0x4B4D60 numeric-name legalized
+// 0x6342D0 numeric-name legalized
+// 0x425270 numeric-name legalized
+// 0x477740 numeric-name legalized
+// 0x5175D0 numeric-name legalized
+// 0x55CBF0 numeric-name legalized
+// 0x543780 constructor placeholder
+IsometricTileClass::IsometricTileClass() {}
+// 0x4A7A30 constructor placeholder
+DiskLaserClass::DiskLaserClass() {}
+// 0x43A350 constructor placeholder
+NeuronClass::NeuronClass() {}
+
+WorldDominationTour::WorldDominationTour() {}
 } // namespace gamemd

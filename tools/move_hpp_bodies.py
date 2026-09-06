@@ -72,7 +72,10 @@ def namespace_chain(node):
 
 
 def find_body_span(toks):
-    """首个顶层 `{` 到配对 `}`；无 brace（= default/= delete）→ (None, 分号 idx)。"""
+    """首个顶层 `{` 到配对 `}`；无 brace（= default/= delete）→ (None, 末 token)。
+
+    注意: defaulted 函数的 cursor token 流不含结尾 `;`（libclang 行为），
+    无分号时回退到末 token。"""
     depth = 0
     i_brace = -1
     for i, (_, _, sp) in enumerate(toks):
@@ -86,7 +89,11 @@ def find_body_span(toks):
                 return i_brace, i
         elif sp == ';' and i_brace < 0 and depth == 0:
             return None, i
-    return (i_brace, len(toks) - 1) if i_brace >= 0 else (None, None)
+    if i_brace >= 0:
+        return i_brace, len(toks) - 1
+    if toks:
+        return None, len(toks) - 1
+    return None, None
 
 
 def split_trailing_comment(text):
@@ -217,7 +224,7 @@ def process(hpp, dry):
         fname = node.spelling
         # libclang extent 起点不可靠（可能落在名字中间）——用 token 流边界
         head = src[toks[0][0]:
-                   toks[i_brace][0] if i_brace is not None else toks[i_end][0]]
+                   toks[i_brace][0] if i_brace is not None else toks[i_end][1]]
         head_code, tail_comment = split_trailing_comment(head)
         # 位置保持的注释剥离副本: init-list 冒号扫描与定义头重建用它
         # （hpp 注释里的 `:` 会误判为初始化列表）
@@ -281,7 +288,14 @@ def process(hpp, dry):
             decl_in_hpp += ' ' + tail_comment
 
         qual = '::'.join(qual_cls)
-        name_for_match = fname
+        name_for_match = re.sub(r'<[^<>]*>$', '', fname)  # Node<T> -> Node
+        # windows.h 宏: GetClassName → AST spelling GetClassNameA/W
+        _probe = name_for_match
+        if not re.search(re.escape(_probe) + r'\s*\(', head_code):
+            if _probe.endswith('A') or _probe.endswith('W'):
+                _alt = _probe[:-1]
+                if re.search(re.escape(_alt) + r'\s*\(', head_code):
+                    name_for_match = _alt
         if node.kind == ci.CursorKind.CONVERSION_FUNCTION:
             # spelling 用规范类型(`operator unsigned int`), 源码可能写
             # `operator target_t` — 从声明头提取实际文本
@@ -362,7 +376,7 @@ def process(hpp, dry):
         cur = open(hpp, encoding='latin-1', newline='').read()
         if '_bodies.inl' not in cur:
             open(hpp, 'a', encoding='latin-1', newline='').write(
-                f'\n// 模板/constexpr 实现（hpp-impl 门控: 非 .hpp 扩展名）\n'
+                '\n// template/constexpr impl (hpp-impl gate: non-hpp ext)\n'
                 f'#include "{base}_bodies.inl"\n')
         out['inl'] = len(inl_edits)
     return out
@@ -375,7 +389,8 @@ def main():
                     help='只处理路径含 substr 的 hpp')
     args = ap.parse_args()
     os.chdir(ROOT)
-    hpps = sorted(set(glob.glob('src/**/*.hpp', recursive=True)))
+    hpps = sorted(set(glob.glob('src/**/*.hpp', recursive=True)) |
+                set(glob.glob('app/**/*.hpp', recursive=True)))
     if args.file:
         hpps = [f for f in hpps if any(x in f for x in args.file)]
     total = {'cpp': 0, 'inl': 0, 'default': 0}

@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004270D0 (408 bytes)
 char AnimFileddtorHelper_4270D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_4270D0(int a1, unsigned int a2, __int16 *a3, int a4, char *a5, int a6)
 {
   signed int v7; // ecx
@@ -124,6 +125,8 @@ LABEL_22:
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, [esp+arg_4]

@@ -2,6 +2,10 @@
 
 #include <cstdint>
 #include <windows.h>
+// neutralise Win32 macro that collides with the IDA method name
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
 #include "core/enums.hpp"
 #include "core/math.hpp"
 
@@ -671,7 +675,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AllocCallback() = default;
 
-    virtual void Dispatch() {} // 0x7BE5D0
+    virtual void Dispatch(); // 0x7BE5D0
 
 };
 // 22 methods in IDA
@@ -682,11 +686,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClass() = default;
 
-    virtual void RegisterAll() {} // 0x490490
-    virtual void ReleaseRef() {} // 0x65D670
-    virtual void initInterface() {} // 0x65D6A0
-    virtual void queryProperty() {} // 0x765680
-    virtual void setProperty() {} // 0x7656B0
+    virtual void RegisterAll(); // 0x490490
+    virtual void ReleaseRef(); // 0x65D670
+    virtual void initInterface(); // 0x65D6A0
+    virtual void queryProperty(); // 0x765680
+    virtual void setProperty(); // 0x7656B0
     // +17 more virtual methods
 
     uint8_t COMClass_field_0x04[4];
@@ -735,8 +739,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory() = default;
 
-    virtual void Register() {} // 0x6BEDB0
-    virtual void CreateInstance() {} // 0x6C0AC0
+    virtual void Register(); // 0x6BEDB0
+    virtual void CreateInstance(); // 0x6C0AC0
 
     uint8_t COMClassFactory_field_0x04[4];
 };
@@ -748,7 +752,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_10() = default;
 
-    virtual void Construct() {} // 0x6BFBC0
+    virtual void Construct(); // 0x6BFBC0
 
 };
 // 1 methods in IDA
@@ -759,7 +763,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_3() = default;
 
-    virtual void Construct() {} // 0x6BF140
+    virtual void Construct(); // 0x6BF140
 
 };
 // 1 methods in IDA
@@ -770,7 +774,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_4() = default;
 
-    virtual void Construct() {} // 0x6BF2C0
+    virtual void Construct(); // 0x6BF2C0
 
 };
 // 1 methods in IDA
@@ -781,7 +785,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_5() = default;
 
-    virtual void Construct() {} // 0x6BF440
+    virtual void Construct(); // 0x6BF440
 
 };
 // 1 methods in IDA
@@ -792,7 +796,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_6() = default;
 
-    virtual void Construct() {} // 0x6BF5C0
+    virtual void Construct(); // 0x6BF5C0
 
 };
 // 1 methods in IDA
@@ -803,7 +807,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_7() = default;
 
-    virtual void Construct() {} // 0x6BF740
+    virtual void Construct(); // 0x6BF740
 
 };
 // 1 methods in IDA
@@ -814,7 +818,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_8() = default;
 
-    virtual void Construct() {} // 0x6BF8C0
+    virtual void Construct(); // 0x6BF8C0
 
 };
 // 1 methods in IDA
@@ -825,7 +829,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_9() = default;
 
-    virtual void Construct() {} // 0x6BFA40
+    virtual void Construct(); // 0x6BFA40
 
 };
 // 27 methods in IDA
@@ -836,11 +840,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMObject() = default;
 
-    virtual void Release() {} // 0x437FC0
-    virtual void DetachPrimary() {} // 0x488690
-    virtual void IsValid() {} // 0x48C3B0
-    virtual void SetMember10() {} // 0x48E600
-    virtual void GetMember09() {} // 0x48E610
+    virtual void Release(); // 0x437FC0
+    virtual void DetachPrimary(); // 0x488690
+    virtual void IsValid(); // 0x48C3B0
+    virtual void SetMember10(); // 0x48E600
+    virtual void GetMember09(); // 0x48E610
     // +22 more virtual methods
 
     uint8_t COMObject_field_0x04[4];
@@ -900,7 +904,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CRC32() = default;
 
-    virtual void Compute() {} // 0x4A1FB0
+    virtual void Compute(); // 0x4A1FB0
 
 };
 // 9 methods in IDA
@@ -909,11 +913,11 @@ class ComPtr
 public:
     virtual ~ComPtr() = default;  // 0x6406F0
 
-    virtual void Release_Alt() {} // 0x4B4D50
-    virtual void ReleaseAndSet() {} // 0x4D0490
-    virtual void Dtor() {} // 0x6406F0
-    virtual void Constructor() {} // 0x65D430
-    virtual void Release() {} // 0x65D460
+    virtual void Release_Alt(); // 0x4B4D50
+    virtual void ReleaseAndSet(); // 0x4D0490
+    virtual void Dtor(); // 0x6406F0
+    virtual void Constructor(); // 0x65D430
+    virtual void Release(); // 0x65D460
     // +4 more virtual methods
 
     uint8_t ComPtr_field_0x04[4];
@@ -941,7 +945,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CountdownTimer() = default;
 
-    virtual void UpdateDisplay() {} // 0x4A2600
+    virtual void UpdateDisplay(); // 0x4A2600
 
 };
 // 1 methods in IDA
@@ -952,7 +956,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CountryCombo() = default;
 
-    virtual void IDToIndex() {} // 0x4E3830
+    virtual void IDToIndex(); // 0x4E3830
 
 };
 // 11 methods in IDA
@@ -961,11 +965,11 @@ class EnumConnectionPointsClass
 public:
     virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
 
-    virtual void QueryInterface() {} // 0x4A0920
-    virtual void AddRef() {} // 0x4A0990
-    virtual void Release() {} // 0x4A09B0
-    virtual void ddtor() {} // 0x4A0A50
-    virtual void Next() {} // 0x4A0AF0
+    virtual void QueryInterface(); // 0x4A0920
+    virtual void AddRef(); // 0x4A0990
+    virtual void Release(); // 0x4A09B0
+    virtual void ddtor(); // 0x4A0A50
+    virtual void Next(); // 0x4A0AF0
     // +6 more virtual methods
 
     uint8_t EnumConnectionPointsClass_field_0x04[4];
@@ -996,11 +1000,11 @@ class EnumConnectionsClass
 public:
     virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
 
-    virtual void QueryInterface() {} // 0x49FF80
-    virtual void AddRef() {} // 0x49FFF0
-    virtual void Release() {} // 0x4A0010
-    virtual void ddtor() {} // 0x4A00B0
-    virtual void Next() {} // 0x4A0160
+    virtual void QueryInterface(); // 0x49FF80
+    virtual void AddRef(); // 0x49FFF0
+    virtual void Release(); // 0x4A0010
+    virtual void ddtor(); // 0x4A00B0
+    virtual void Next(); // 0x4A0160
     // +1 more virtual methods
 
     uint8_t EnumConnectionsClass_field_0x04[4];
@@ -1020,7 +1024,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~EventBuffer() = default;
 
-    virtual void Enqueue() {} // 0x54F1C0
+    virtual void Enqueue(); // 0x54F1C0
 
 };
 // 3 methods in IDA
@@ -1030,9 +1034,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Flag() = default;
 
-    virtual void CheckNone() {} // 0x4A51D0
-    virtual void IsZero() {} // 0x4F4CA0
-    virtual void IsNot2() {} // 0x5176B0
+    virtual void CheckNone(); // 0x4A51D0
+    virtual void IsZero(); // 0x4F4CA0
+    virtual void IsNot2(); // 0x5176B0
 
     uint8_t Flag_field_0x04[4];
     uint8_t Flag_field_0x08[4];
@@ -1044,7 +1048,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FlagSystem() = default;
 
-    virtual void GetNextActive() {} // 0x626690
+    virtual void GetNextActive(); // 0x626690
 
 };
 // 2 methods in IDA
@@ -1055,8 +1059,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Float4() = default;
 
-    virtual void Copy() {} // 0x645D20
-    virtual void Sum() {} // 0x6C9650
+    virtual void Copy(); // 0x645D20
+    virtual void Sum(); // 0x6C9650
 
     uint8_t Float4_field_0x04[4];
 };
@@ -1068,7 +1072,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FloatArray() = default;
 
-    virtual void Get() {} // 0x6C9680
+    virtual void Get(); // 0x6C9680
 
 };
 // 6 methods in IDA
@@ -1077,11 +1081,11 @@ class GraphicMenuAnimItem
 public:
     virtual ~GraphicMenuAnimItem() = default; // 0x4F3090
 
-    virtual void Release() {} // 0x4F3090
-    virtual void QueryInterface() {} // 0x4F30E0
-    virtual void StubReturnFalse() {} // 0x4F3AD0
-    virtual void Stub() {} // 0x4F3AE0
-    virtual void AddRef() {} // 0x4F3B00
+    virtual void Release(); // 0x4F3090
+    virtual void QueryInterface(); // 0x4F30E0
+    virtual void StubReturnFalse(); // 0x4F3AD0
+    virtual void Stub(); // 0x4F3AE0
+    virtual void AddRef(); // 0x4F3B00
     // +1 more virtual methods
 
     uint8_t GraphicMenuAnimItem_field_0x04[4];
@@ -1096,11 +1100,11 @@ class GraphicMenuImageItem
 public:
     virtual ~GraphicMenuImageItem() = default;  // 0x4F37A0
 
-    virtual void Release() {} // 0x4F3640
-    virtual void Load() {} // 0x4F3690
-    virtual void Draw() {} // 0x4F3720
-    virtual void ddtor() {} // 0x4F37A0
-    virtual void QueryInterface() {} // 0x4F3840
+    virtual void Release(); // 0x4F3640
+    virtual void Load(); // 0x4F3690
+    virtual void Draw(); // 0x4F3720
+    virtual void ddtor(); // 0x4F37A0
+    virtual void QueryInterface(); // 0x4F3840
 
     uint8_t GraphicMenuImageItem_field_0x04[4];
     uint8_t GraphicMenuImageItem_field_0x08[4];
@@ -1114,8 +1118,8 @@ class GraphicMenuItem
 public:
     virtual ~GraphicMenuItem() = default; // 0x4F3A70
 
-    virtual void Constructor() {} // 0x4F3A50
-    virtual void Destructor() {} // 0x4F3A70
+    virtual void Constructor(); // 0x4F3A50
+    virtual void Destructor(); // 0x4F3A70
 
     uint8_t GraphicMenuItem_field_0x04[4];
 };
@@ -1126,8 +1130,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GraphicMenuItem_Destru() = default;
 
-    virtual void Release() {} // 0x4F3AF0
-    virtual void QueryInterface() {} // 0x4F3B20
+    virtual void Release(); // 0x4F3AF0
+    virtual void QueryInterface(); // 0x4F3B20
 
     uint8_t GraphicMenuItem_Destru_field_0x04[4];
 };
@@ -1138,8 +1142,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GraphicMenuShortcutItem() = default;
 
-    virtual void AddRef() {} // 0x4F3EE0
-    virtual void QueryInterface() {} // 0x4F3F60
+    virtual void AddRef(); // 0x4F3EE0
+    virtual void QueryInterface(); // 0x4F3F60
 
     uint8_t GraphicMenuShortcutItem_field_0x04[4];
 };
@@ -1150,9 +1154,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Hash() = default;
 
-    virtual void ComputeHashSHA1() {} // 0x476D80
-    virtual void InsertOrdered() {} // 0x4F4410
-    virtual void Reset() {} // 0x5565F0
+    virtual void ComputeHashSHA1(); // 0x476D80
+    virtual void InsertOrdered(); // 0x4F4410
+    virtual void Reset(); // 0x5565F0
 
     uint8_t Hash_field_0x04[4];
     uint8_t Hash_field_0x08[4];
@@ -1165,10 +1169,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashMap() = default;
 
-    virtual void ComputeIndex() {} // 0x624C80
-    virtual void Shrink2() {} // 0x7ADF70
-    virtual void ComputeIndex_2() {} // 0x7AE0C0
-    virtual void Shrink() {} // 0x7AE460
+    virtual void ComputeIndex(); // 0x624C80
+    virtual void Shrink2(); // 0x7ADF70
+    virtual void ComputeIndex_2(); // 0x7AE0C0
+    virtual void Shrink(); // 0x7AE460
 
     uint8_t HashMap_field_0x04[4];
     uint8_t HashMap_field_0x08[4];
@@ -1181,11 +1185,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashTable() = default;
 
-    virtual void DestroyHashTableINIClass() {} // 0x5256F0
-    virtual void BinarySearch() {} // 0x52B390
-    virtual void BinarySearchAlt() {} // 0x52B4F0
-    virtual void LookupAndMark() {} // 0x608440
-    virtual void FindAndMark() {}
+    virtual void DestroyHashTableINIClass(); // 0x5256F0
+    virtual void BinarySearch(); // 0x52B390
+    virtual void BinarySearchAlt(); // 0x52B4F0
+    virtual void LookupAndMark(); // 0x608440
+    virtual void FindAndMark();
     // +22 more virtual methods
 
     uint8_t HashTable_field_0x04[4];
@@ -1217,7 +1221,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashTableSection() = default;
 
-    virtual void FindSection() {} // 0x526B10
+    virtual void FindSection(); // 0x526B10
 
 };
 // 1 methods in IDA
@@ -1227,7 +1231,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashTree() = default;
 
-    virtual void MarkEntry() {} // 0x5B4270
+    virtual void MarkEntry(); // 0x5B4270
 
 };
 // 1 methods in IDA
@@ -1238,7 +1242,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashVector_UInt() = default;
 
-    virtual void Construct() {} // 0x58AFF0
+    virtual void Construct(); // 0x58AFF0
 
 };
 // 1 methods in IDA
@@ -1248,7 +1252,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PairVector() = default;
 
-    virtual void PushBack() {} // 0x4E0C40
+    virtual void PushBack(); // 0x4E0C40
 
 };
 // 12 methods in IDA
@@ -1259,11 +1263,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerClass() = default;
 
-    virtual void sub_430F70() {} // 0x430F70
-    virtual void ExecuteCommand() {} // 0x4AB9B0
-    virtual void CheckHumanPlayer() {} // 0x4AC2B0
-    virtual void SetTargetOrClear() {} // 0x4C6650
-    virtual void AssignPlayerIndex_0() {} // 0x5C5D30
+    virtual void sub_430F70(); // 0x430F70
+    virtual void ExecuteCommand(); // 0x4AB9B0
+    virtual void CheckHumanPlayer(); // 0x4AC2B0
+    virtual void SetTargetOrClear(); // 0x4C6650
+    virtual void AssignPlayerIndex_0(); // 0x5C5D30
     // +7 more virtual methods
 
     uint8_t PlayerClass_field_0x04[4];
@@ -1300,7 +1304,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerProfile() = default;
 
-    virtual void QueryInterface() {} // 0x77B030
+    virtual void QueryInterface(); // 0x77B030
 
 };
 // 2 methods in IDA
@@ -1311,8 +1315,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerSlot() = default;
 
-    virtual void NameToDialogID() {} // 0x510FB0
-    virtual void IndexToDlgID() {} // 0x5E98F0
+    virtual void NameToDialogID(); // 0x510FB0
+    virtual void IndexToDlgID(); // 0x5E98F0
 
     uint8_t PlayerSlot_field_0x04[4];
 };
@@ -1323,7 +1327,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerType() = default;
 
-    virtual void GetName() {} // 0x4E62B0
+    virtual void GetName(); // 0x4E62B0
 
 };
 // 1 methods in IDA
@@ -1334,7 +1338,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PtrVector() = default;
 
-    virtual void Destroy() {} // 0x5C6120
+    virtual void Destroy(); // 0x5C6120
 
 };
 // 1 methods in IDA
@@ -1344,7 +1348,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Queue() = default;
 
-    virtual void GetNext() {} // 0x407470
+    virtual void GetNext(); // 0x407470
 
 };
 // 4 methods in IDA
@@ -1354,10 +1358,10 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Random() = default;
 
-    virtual void Gaussian() {} // 0x5980C0
-    virtual void State() {} // 0x65C780
-    virtual void Range() {} // 0x65C7E0
-    virtual void sub_661850() {} // 0x661850
+    virtual void Gaussian(); // 0x5980C0
+    virtual void State(); // 0x65C780
+    virtual void Range(); // 0x65C7E0
+    virtual void sub_661850(); // 0x661850
 
     uint8_t Random_field_0x04[4];
     uint8_t Random_field_0x08[4];
@@ -1370,9 +1374,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~RandomStraw() = default;
 
-    virtual void sub_65C8B0() {} // 0x65C8B0
-    virtual void Release() {} // 0x661C10
-    virtual void QueryInterface() {} // 0x661C70
+    virtual void sub_65C8B0(); // 0x65C8B0
+    virtual void Release(); // 0x661C10
+    virtual void QueryInterface(); // 0x661C70
 
     uint8_t RandomStraw_field_0x04[4];
     uint8_t RandomStraw_field_0x08[4];
@@ -1385,7 +1389,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Rect_Point() = default;
 
-    virtual void Set() {} // 0x4E1A20
+    virtual void Set(); // 0x4E1A20
 
 };
 // 1 methods in IDA
@@ -1396,7 +1400,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ReferenceCounted() = default;
 
-    virtual void Constructor() {} // 0x65D660
+    virtual void Constructor(); // 0x65D660
 
 };
 // 6 methods in IDA
@@ -1406,11 +1410,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~SHA1() = default;
 
-    virtual void sub_69D8C0() {} // 0x69D8C0
-    virtual void Process() {} // 0x69D960
-    virtual void Compute() {} // 0x69D9E0
-    virtual void Transform() {} // 0x69DB30
-    virtual void Reset() {} // 0x69DFF0
+    virtual void sub_69D8C0(); // 0x69D8C0
+    virtual void Process(); // 0x69D960
+    virtual void Compute(); // 0x69D9E0
+    virtual void Transform(); // 0x69DB30
+    virtual void Reset(); // 0x69DFF0
     // +1 more virtual methods
 
     uint8_t SHA1_field_0x04[4];
@@ -1426,7 +1430,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SettingsClass() = default;
 
-    virtual void ClampValues() {} // 0x5975E0
+    virtual void ClampValues(); // 0x5975E0
 
 };
 // 1 methods in IDA
@@ -1436,7 +1440,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringBuffer() = default;
 
-    virtual void Reset() {} // 0x5F33A0
+    virtual void Reset(); // 0x5F33A0
 
 };
 // 1 methods in IDA
@@ -1446,7 +1450,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringList() = default;
 
-    virtual void Find() {} // 0x721210
+    virtual void Find(); // 0x721210
 
 };
 // 2 methods in IDA
@@ -1456,8 +1460,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringTable() = default;
 
-    virtual void Lookup() {} // 0x40DCE0
-    virtual void Find() {} // 0x5CF6B0
+    virtual void Lookup(); // 0x40DCE0
+    virtual void Find(); // 0x5CF6B0
 
     uint8_t StringTable_field_0x04[4];
 };
@@ -1467,11 +1471,11 @@ class StringVector
 public:
     virtual ~StringVector() = default;  // 0x49EF10
 
-    virtual void Release() {} // 0x49EE60
-    virtual void ddtor() {} // 0x49EF10
-    virtual void Add() {} // 0x49EF40
-    virtual void Remove() {} // 0x49EF80
-    virtual void QueryInterface() {} // 0x49EFA0
+    virtual void Release(); // 0x49EE60
+    virtual void ddtor(); // 0x49EF10
+    virtual void Add(); // 0x49EF40
+    virtual void Remove(); // 0x49EF80
+    virtual void QueryInterface(); // 0x49EFA0
     // +2 more virtual methods
 
     uint8_t StringVector_field_0x04[4];
@@ -1492,7 +1496,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StructTable() = default;
 
-    virtual void Append() {} // 0x4A3840
+    virtual void Append(); // 0x4A3840
 
 };
 // 1 methods in IDA
@@ -1502,7 +1506,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Timeout() = default;
 
-    virtual void GetRemaining() {} // 0x4B4D70
+    virtual void GetRemaining(); // 0x4B4D70
 
 };
 // 1 methods in IDA
@@ -1513,7 +1517,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TimerPool() = default;
 
-    virtual void AllocSlot() {} // 0x53E3C0
+    virtual void AllocSlot(); // 0x53E3C0
 
 };
 // 1 methods in IDA
@@ -1523,7 +1527,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Tree() = default;
 
-    virtual void Destructor() {} // 0x5B4080
+    virtual void Destructor(); // 0x5B4080
 
 };
 // 1 methods in IDA
@@ -1533,7 +1537,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TypeClass() = default;
 
-    virtual void FindByName() {} // 0x41CAA0
+    virtual void FindByName(); // 0x41CAA0
 
 };
 // 2 methods in IDA
@@ -1543,8 +1547,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector2() = default;
 
-    virtual void NormalizeNonZero() {} // 0x41C460
-    virtual void Subtract() {} // 0x6DC4C0
+    virtual void NormalizeNonZero(); // 0x41C460
+    virtual void Subtract(); // 0x6DC4C0
 
     uint8_t Vector2_field_0x04[4];
 };
@@ -1556,9 +1560,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector3() = default;
 
-    virtual void Magnitude() {} // 0x41C3C0
-    virtual void Subtract() {} // 0x437160
-    virtual void AddAssign() {} // 0x43A100
+    virtual void Magnitude(); // 0x41C3C0
+    virtual void Subtract(); // 0x437160
+    virtual void AddAssign(); // 0x43A100
 
     uint8_t Vector3_field_0x04[4];
     uint8_t Vector3_field_0x08[4];
@@ -1570,8 +1574,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector4() = default;
 
-    virtual void EraseAt() {} // 0x5AD790
-    virtual void EraseAt_Copy() {} // 0x63EF70
+    virtual void EraseAt(); // 0x5AD790
+    virtual void EraseAt_Copy(); // 0x63EF70
 
     uint8_t Vector4_field_0x04[4];
 };
@@ -1583,7 +1587,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector8() = default;
 
-    virtual void EraseAt() {} // 0x589290
+    virtual void EraseAt(); // 0x589290
 
 };
 // 1 methods in IDA
@@ -1594,7 +1598,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VectorClassUInt() = default;
 
-    virtual void Constructor() {} // 0x42DC50
+    virtual void Constructor(); // 0x42DC50
 
 };
 // 7 methods in IDA
@@ -1603,11 +1607,11 @@ class VectorCursor
 public:
     virtual ~VectorCursor() = default;  // 0x76F190
 
-    virtual void Construct() {} // 0x76F0C0
-    virtual void HasNext() {} // 0x76F0E0
-    virtual void initCursor() {} // 0x76F100
-    virtual void updateCursor() {} // 0x76F120
-    virtual void drawCursor() {} // 0x76F140
+    virtual void Construct(); // 0x76F0C0
+    virtual void HasNext(); // 0x76F0E0
+    virtual void initCursor(); // 0x76F100
+    virtual void updateCursor(); // 0x76F120
+    virtual void drawCursor(); // 0x76F140
     // +2 more virtual methods
 
     uint8_t VectorCursor_field_0x04[4];
@@ -1623,9 +1627,9 @@ class VectorCursor_uint_DynamicVectorClass_uint
 public:
     virtual ~VectorCursor_uint_DynamicVectorClass_uint() = default;  // 0x4F4000
 
-    virtual void AddRef() {} // 0x4F3FC0
-    virtual void Release() {} // 0x4F3FF0
-    virtual void ddtor() {} // 0x4F4000
+    virtual void AddRef(); // 0x4F3FC0
+    virtual void Release(); // 0x4F3FF0
+    virtual void ddtor(); // 0x4F4000
 
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x04[4];
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];

@@ -75,21 +75,8 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 
-// ============================================================================
-// GameMode — game mode utilities (2 methods)
-// IDA: IsValid, ReadFlagsFromINI
-// ============================================================================
-class GameMode
-{
-public:
-    // IDA 0x48B2A0 area
-    static bool IsValid(int32_t mode);  // 0x5D5DE0
-    // IDA 0x48B2A0 area
-    static void ReadFlagsFromINI();  // 0x6B8CA0
-
-    static int32_t  s_CurrentMode;  // 0x00
-    static int32_t  s_Flags;        // 0x04
-};
+// GameMode utility class removed: clashed with enums.hpp GameMode enum;
+// IDA 0x5D5DE0 is __thiscall (member) - re-model in translation pass (C line).
 
 // ============================================================================
 // GameSettings — game settings management (3 methods)
@@ -232,7 +219,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameInit() = default;
 
-    virtual void InitMultiplayerModes() {} // 0x5D86D0
+    virtual void InitMultiplayerModes(); // 0x5D86D0
 
 };
 // 1 methods in IDA
@@ -242,7 +229,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameLobby() = default;
 
-    virtual void DlgProc() {} // 0x5E1CA0
+    virtual void DlgProc(); // 0x5E1CA0
 
 };
 // 2 methods in IDA
@@ -253,8 +240,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameOption_WorldDominationTour() = default;
 
-    virtual void QueryInterface() {} // 0x766A60
-    virtual void Constructor() {} // 0x767300
+    virtual void QueryInterface(); // 0x766A60
+    virtual void Constructor(); // 0x767300
 
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
 };
@@ -266,10 +253,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameOptions() = default;
 
-    virtual void GameSpeedChanged() {} // 0x4E1DE0
-    virtual void ReadSettings() {} // 0x5B8CE0
-    virtual void SaveLoad() {} // 0x6812E0
-    virtual void GetEntry() {} // 0x777B50
+    virtual void GameSpeedChanged(); // 0x4E1DE0
+    virtual void ReadSettings(); // 0x5B8CE0
+    virtual void SaveLoad(); // 0x6812E0
+    virtual void GetEntry(); // 0x777B50
 
     uint8_t GameOptions_field_0x04[4];
     uint8_t GameOptions_field_0x08[4];
@@ -282,8 +269,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameOptionsClass() = default;
 
-    virtual void UnlockMovieIfNeeded_MoviesList() {} // 0x5FBF80
-    virtual void PopulateMovieList() {} // 0x5FC000
+    virtual void UnlockMovieIfNeeded_MoviesList(); // 0x5FBF80
+    virtual void PopulateMovieList(); // 0x5FC000
 
     uint8_t GameOptionsClass_field_0x04[4];
 };
@@ -294,7 +281,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameResult() = default;
 
-    virtual void CalcScore() {} // 0x4C6210
+    virtual void CalcScore(); // 0x4C6210
 
 };
 // 1 methods in IDA
@@ -304,7 +291,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameScreen() = default;
 
-    virtual void DlgProc() {} // 0x60D540
+    virtual void DlgProc(); // 0x60D540
 
 };
 // 7 methods in IDA
@@ -315,11 +302,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameSetup() = default;
 
-    virtual void sub_477440() {} // 0x477440
-    virtual void FormatToString() {} // 0x477510
-    virtual void GetColorTooltip() {} // 0x4E42A0
-    virtual void DisplayPlayers() {} // 0x5DAFE0
-    virtual void CompareWideString() {} // 0x5E2670
+    virtual void sub_477440(); // 0x477440
+    virtual void FormatToString(); // 0x477510
+    virtual void GetColorTooltip(); // 0x4E42A0
+    virtual void DisplayPlayers(); // 0x5DAFE0
+    virtual void CompareWideString(); // 0x5E2670
     // +2 more virtual methods
 
     uint8_t GameSetup_field_0x04[4];
@@ -341,7 +328,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameState() = default;
 
-    virtual void Reset() {} // 0x680FF0
+    virtual void Reset(); // 0x680FF0
 
 };
 // 12 methods in IDA
@@ -351,11 +338,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LoadGame() = default;
 
-    virtual void LoadIteratedData() {} // 0x4136C0
-    virtual void ClearAllSlots() {} // 0x413800
-    virtual void DeserializePointerArrays() {} // 0x439260
-    virtual void LoadBlock68() {} // 0x4C6320
-    virtual void CleanupArray() {} // 0x54E6F0
+    virtual void LoadIteratedData(); // 0x4136C0
+    virtual void ClearAllSlots(); // 0x413800
+    virtual void DeserializePointerArrays(); // 0x439260
+    virtual void LoadBlock68(); // 0x4C6320
+    virtual void CleanupArray(); // 0x54E6F0
     // +7 more virtual methods
 
     uint8_t LoadGame_field_0x04[4];
@@ -377,9 +364,9 @@ class LoadProgressMgr
 public:
     virtual ~LoadProgressMgr() = default; // 0x552AA0
 
-    virtual void GetInstance() {} // 0x552A40
-    virtual void Destroy() {} // 0x552AA0
-    virtual void ReleaseBuffer() {} // 0x554370
+    virtual void GetInstance(); // 0x552A40
+    virtual void Destroy(); // 0x552AA0
+    virtual void ReleaseBuffer(); // 0x554370
 
     uint8_t LoadProgressMgr_field_0x04[4];
     uint8_t LoadProgressMgr_field_0x08[4];
@@ -392,7 +379,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LoadSaveDialog() = default;
 
-    virtual void FillList() {} // 0x5596A0
+    virtual void FillList(); // 0x5596A0
 
 };
 // 6 methods in IDA
@@ -402,11 +389,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LoadScreen() = default;
 
-    virtual void RenderLoop() {} // 0x4B6C30
-    virtual void InitVtable() {} // 0x4BA2F0
-    virtual void Constructor() {} // 0x4BA340
-    virtual void RenderProgressBackground() {} // 0x643400
-    virtual void Render() {} // 0x643AE0
+    virtual void RenderLoop(); // 0x4B6C30
+    virtual void InitVtable(); // 0x4BA2F0
+    virtual void Constructor(); // 0x4BA340
+    virtual void RenderProgressBackground(); // 0x643400
+    virtual void Render(); // 0x643AE0
     // +1 more virtual methods
 
     uint8_t LoadScreen_field_0x04[4];
@@ -427,11 +414,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LoadingScreen() = default;
 
-    virtual void Render() {} // 0x552D60
-    virtual void AdjustForResolution() {} // 0x554100
-    virtual void sub_554150() {} // 0x554150
-    virtual void GetValue() {} // 0x642B20
-    virtual void FindLoadScreenAnim() {} // 0x642B30
+    virtual void Render(); // 0x552D60
+    virtual void AdjustForResolution(); // 0x554100
+    virtual void sub_554150(); // 0x554150
+    virtual void GetValue(); // 0x642B20
+    virtual void FindLoadScreenAnim(); // 0x642B30
     // +11 more virtual methods
 
     uint8_t LoadingScreen_field_0x04[4];
@@ -473,11 +460,11 @@ class MultiplayerGameMode
 public:
     virtual ~MultiplayerGameMode() = default;  // 0x5D5D20
 
-    virtual void Construct() {} // 0x5D5B60
-    virtual void Dtor() {} // 0x5D5D20
-    virtual void GetFirst() {} // 0x5D5E10
-    virtual void ListGet() {} // 0x5D5ED0
-    virtual void Find() {} // 0x5D5F30
+    virtual void Construct(); // 0x5D5B60
+    virtual void Dtor(); // 0x5D5D20
+    virtual void GetFirst(); // 0x5D5E10
+    virtual void ListGet(); // 0x5D5ED0
+    virtual void Find(); // 0x5D5F30
     // +2 more virtual methods
 
     uint8_t MultiplayerGameMode_field_0x04[4];
@@ -499,7 +486,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SaveLoad() = default;
 
-    virtual void StreamVector() {} // 0x67A770
+    virtual void StreamVector(); // 0x67A770
 
 };
 // 3 methods in IDA
@@ -510,9 +497,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SaveLoadDialog() = default;
 
-    virtual void DlgProc() {} // 0x558DD0
-    virtual void LookupDialogHash() {} // 0x608380
-    virtual void FindDialogTemplate() {} // 0x6083E0
+    virtual void DlgProc(); // 0x558DD0
+    virtual void LookupDialogHash(); // 0x608380
+    virtual void FindDialogTemplate(); // 0x6083E0
 
     uint8_t SaveLoadDialog_field_0x04[4];
     uint8_t SaveLoadDialog_field_0x08[4];
@@ -524,9 +511,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SkirmishDialog() = default;
 
-    virtual void FillComboBoxes() {} // 0x4E3B90
-    virtual void HandleGameStart() {} // 0x5B9A60
-    virtual void Show() {} // 0x5E68A0
+    virtual void FillComboBoxes(); // 0x4E3B90
+    virtual void HandleGameStart(); // 0x5B9A60
+    virtual void Show(); // 0x5E68A0
 
     uint8_t SkirmishDialog_field_0x04[4];
     uint8_t SkirmishDialog_field_0x08[4];
@@ -539,8 +526,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SkirmishMapGen() = default;
 
-    virtual void DlgProc() {} // 0x596300
-    virtual void LookupDialogHash() {} // 0x6067A0
+    virtual void DlgProc(); // 0x596300
+    virtual void LookupDialogHash(); // 0x6067A0
 
     uint8_t SkirmishMapGen_field_0x04[4];
 };
@@ -551,7 +538,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SkirmishVector() = default;
 
-    virtual void PushBack() {} // 0x5EEE40
+    virtual void PushBack(); // 0x5EEE40
 
 };
 // 1 methods in IDA
@@ -561,7 +548,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SyncDelayClass() = default;
 
-    virtual void ProcessNetworkSync() {} // 0x55DEE0
+    virtual void ProcessNetworkSync(); // 0x55DEE0
 
 };
 

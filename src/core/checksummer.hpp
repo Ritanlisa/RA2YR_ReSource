@@ -8,11 +8,11 @@ namespace gamemd {
 // CRC32-based checksum accumulator used by AbstractClass::calculateChecksum
 class Checksummer {
 public:
-    // Add_Buffer();
-    // Add_WORD();
-    // Add_double();
-    // Add_float();
-    // HashString();
+    void Add_WORD(uint16_t value);
+    void Add_float(float value);
+    void Add_double(double value);
+    int Add_Buffer(const uint8_t* buf, int len);
+    int HashString(const char* str);
 };
 
 } // namespace gamemd

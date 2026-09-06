@@ -1,9 +1,13 @@
 #pragma once
-#include "src/object/object.hpp"
+#include "object/object.hpp"
+#include "type/abstract_type.hpp"
+#include "type/object_type.hpp"
 
 namespace ra2 { namespace game {
 
-class TechnoTypeClass : public ObjectTypeClass {
+class WeaponTypeClass;
+
+class TechnoTypeClass : public gamemd::ObjectTypeClass {
 public:
     // unmatched: no callgraph reference and no git history record
     bool isArmed() const;
@@ -11,7 +15,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     WeaponTypeClass* getWeapon(int weaponIdx) const;
     // design: inline accessor, inlined at all call sites
-    bool hasTurret() const { return false; }
+    bool hasTurret() const;
 
     // INI-loaded members
     bool armed; bool hasTurretFlag;

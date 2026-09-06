@@ -23,15 +23,15 @@ public:
     // design: static function, no direct binary match in IDA
     static int FindIndex(const char* pID);
 
-    virtual ~AbstractTypeClass() = default;  // 0x4109C0 (as Dtor)
+    virtual ~AbstractTypeClass();  // 0x4109C0 (as Dtor)
 
     // design: inline accessor, inlined at all call sites
-    virtual void LoadTheaterSpecificArt(TheaterType th_type) {}
-    virtual bool LoadFromINI(CCINIClass* pINI) { return false; }  // 0x410A60
-    virtual bool SaveToINI(CCINIClass* pINI) { return false; }  // 0x410B90 (as WriteINI)
+    virtual void LoadTheaterSpecificArt(TheaterType th_type);
+    virtual bool LoadFromINI(CCINIClass* pINI);  // 0x410A60
+    virtual bool SaveToINI(CCINIClass* pINI);  // 0x410B90 (as WriteINI)
 
     // design: inline accessor, inlined at all call sites
-    const char* get_ID() const { return this->ID; }
+    const char* get_ID() const;
 
     AbstractTypeClass() = default;  // needed for derived class default ctors
     AbstractTypeClass(const char* pID) noexcept;  // 0x410800 (as Constructor)
@@ -40,7 +40,7 @@ public:
 
 protected:
     // unmatched: no callgraph reference and no git history record
-    AbstractTypeClass(noinit_t) noexcept {}
+    AbstractTypeClass(noinit_t) noexcept;
 
 public:
     char ID[0x18];

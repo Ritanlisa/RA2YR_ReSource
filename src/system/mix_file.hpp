@@ -16,7 +16,7 @@ public:
 
 protected:
     // design: inline accessor, inlined at all call sites
-    explicit GenericNode(const noinit_t&) noexcept {}
+    explicit GenericNode(const noinit_t&) noexcept;
 
 public:
     GenericNode* Next = nullptr;
@@ -36,7 +36,7 @@ public:
     Node() = default;
 
 protected:
-    explicit Node(const noinit_t&) noexcept : GenericNode(noinit_t()) {}
+    explicit Node(const noinit_t&) noexcept;
 };
 
 template <typename T>
@@ -50,7 +50,7 @@ public:
 
 protected:
     // design: inline accessor, inlined at all call sites
-    explicit LinkedList(const noinit_t&) noexcept {}
+    explicit LinkedList(const noinit_t&) noexcept;
 
 public:
     GenericNode Head;
@@ -124,16 +124,10 @@ public:
     // unmatched: no callgraph reference and no git history record
     static uint32_t ComputeID(const char* filename);
 
-    virtual ~MixFileClass() override
-    {
-        if (Headers)
-            free(Headers);
-        if (MemoryData)
-            free(MemoryData);
-    }
+    virtual ~MixFileClass() override;
 
     // unmatched: no callgraph reference and no git history record
-    MixFileClass() noexcept : Node(noinit_t()) {}
+    MixFileClass() noexcept;
     // unmatched: no callgraph reference and no git history record
     explicit MixFileClass(const char* pFileName) noexcept;
 
@@ -150,9 +144,7 @@ public:
     // design: no binary equivalent found in IDA
     int  GetSize(const char* filename) const;
     // design: no binary equivalent found in IDA
-    uint32_t GetFileID(int index) const {
-        return (index >= 0 && index < CountFiles) ? Headers[index].ID : 0;
-    }
+    uint32_t GetFileID(int index) const;
     // unmatched: no callgraph reference and no git history record
     bool Extract(int index, void* buffer, int buffer_size) const;
     // unmatched: no callgraph reference and no git history record
@@ -166,7 +158,7 @@ public:
 
 protected:
     // unmatched: no callgraph reference and no git history record
-    explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}
+    explicit MixFileClass(const noinit_t&) noexcept;
 
 public:
     const char* FileName = nullptr;

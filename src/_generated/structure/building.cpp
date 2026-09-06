@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004E3690 (305 bytes)
 int BuildingType_FindBuilding_4E3690() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4E3690(int a1, int a2)
 {
   int v4; // eax
@@ -93,6 +94,8 @@ int __fastcall sub_4E3690(int a1, int a2)
   Default = BuildingType::FindDefault((void *)v8);
   return CacheDialogInvalidate(v5, Default);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -266,7 +269,8 @@ jmp     CacheDialogInvalidate
 
 // 0x006435B0 (184 bytes)
 char BuildingType_FindBuilding_6435B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall sub_6435B0(int a1, int a2, int a3)
 {
   int Default; // eax
@@ -302,6 +306,8 @@ char __stdcall sub_6435B0(int a1, int a2, int a3)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -376,7 +382,8 @@ retn    0Ch
 
 // 0x00642FF0 (201 bytes)
 char BuildingType_GetBuilding_642FF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_642FF0(int a1, int a2, char a3)
 {
   int v3; // ebx
@@ -420,6 +427,8 @@ int __stdcall sub_642FF0(int a1, int a2, char a3)
     v3 = v9;
   return a1 + a2 * (v3 + 4);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -507,7 +516,8 @@ retn    0Ch
 
 // 0x006430C0 (245 bytes)
 char BuildingType_GetBuilding_6430C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_6430C0(char a1)
 {
   int v1; // ebx
@@ -553,6 +563,8 @@ int __stdcall sub_6430C0(char a1)
     v7 = v8;
   return (v7 - Building::GetFoundationSize(v11, 0)[3] - 2) / 2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 38h
@@ -656,7 +668,8 @@ retn    4
 
 // 0x006431C0 (250 bytes)
 char BuildingType_GetBuilding_6431C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_6431C0(char a1)
 {
   int v1; // edi
@@ -707,6 +720,8 @@ int __stdcall sub_6431C0(char a1)
   (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 124))(v9);
   return (v8 - (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 128))(v9)) / 2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -821,7 +836,8 @@ retn    4
 
 // 0x006432C0 (266 bytes)
 char BuildingType_GetBuilding_6432C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_6432C0(char a1)
 {
   int v1; // ebx
@@ -883,6 +899,8 @@ int __stdcall sub_6432C0(char a1)
   Text::MeasureWidth((int)v15, 0);
   return (v9 - *(_DWORD *)(v10 + 28)) / 2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -993,7 +1011,8 @@ retn    4
 
 // 0x0063F8F0 (73 bytes)
 int PowerBar_Calc_63F8F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_63F8F0(_DWORD *this)
 {
   int v2; // eax
@@ -1005,6 +1024,8 @@ __int64 __thiscall sub_63F8F0(_DWORD *this)
     v4 = v2;
   return Math::RoundToInt((double)v4 / (double)v2 * 5.0);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1035,7 +1056,8 @@ retn
 
 // 0x0063FDC0 (106 bytes)
 int PowerBar_SetMember1356_63FDC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63FDC0(_DWORD *this)
 {
   int v2; // eax
@@ -1069,6 +1091,8 @@ int __thiscall sub_63FDC0(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1122,7 +1146,8 @@ retn
 
 // 0x0063FE30 (106 bytes)
 int PowerBar_SetMember_63FE30() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63FE30(_DWORD *this)
 {
   int v2; // eax
@@ -1156,6 +1181,8 @@ int __thiscall sub_63FE30(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1209,7 +1236,8 @@ retn
 
 // 0x004C4FC0 (64 bytes)
 int Power_TimerProcess_4C4FC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4C4FC0(int *this, int a2)
 {
   int result; // eax
@@ -1228,6 +1256,8 @@ int __thiscall sub_4C4FC0(int *this, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi

@@ -131,10 +131,10 @@ public:
 
     enum { PlayerAtA = 4475, PlayerAtB, PlayerAtC, PlayerAtD, PlayerAtE, PlayerAtF, PlayerAtG, PlayerAtH };
 
-    ~HouseClass() = default;
+    ~HouseClass();
 
     // unmatched: no callgraph reference and no git history record
-    AbstractType __stdcall whatAmI() const override { return AbstractType::House; }
+    AbstractType __stdcall whatAmI() const override;
 
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
@@ -173,10 +173,10 @@ public:
     void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50E1B0
 
     // design: inline accessor, inlined at all call sites
-    bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; }
+    bool DoInfantrySelfHeal() const;
     int GetInfSelfHealStep() const;  // 0x50D9E0
     // design: inline accessor, inlined at all call sites
-    bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; }
+    bool DoUnitsSelfHeal() const;
     int GetUnitSelfHealStep() const;  // 0x50D9F0
 
     void UpdatePower(); // 0x508C30
@@ -185,9 +185,9 @@ public:
     double GetPowerPercentage() const;
 
     // design: inline accessor, inlined at all call sites
-    bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; }
+    bool HasFullPower() const;
     // design: inline accessor, inlined at all call sites
-    bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; }
+    bool HasLowPower() const;
 
     void CreateRadarOutage(int duration);  // 0x50BCD0
     void ReshroudMap();  // 0x50BD10
@@ -201,13 +201,9 @@ public:
     void GiveMoney(int amount);
 
     // unmatched: no callgraph reference and no git history record
-    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
+    bool CanTransactMoney(int amount) const;
     // unmatched: no callgraph reference and no git history record
-    void TransactMoney(int amount)
-    {
-        if (amount > 0) GiveMoney(amount);
-        else TakeMoney(-amount);
-    }
+    void TransactMoney(int amount);
 
     // unmatched: no callgraph reference and no git history record
     int AvailableMoney() const;
@@ -242,21 +238,11 @@ public:
     // unmatched: no callgraph reference and no git history record
     CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;
     // unmatched: no callgraph reference and no git history record
-    CellStruct PickTargetByType(TargetType type) const
-    {
-        CellStruct out;
-        PickTargetByType(out, type);
-        return out;
-    }
+    CellStruct PickTargetByType(TargetType type) const;
 
     // design: no binary equivalent found in IDA
     CellStruct* PickIonCannonTarget(CellStruct& out) const;
-    CellStruct PickIonCannonTarget() const
-    {
-        CellStruct out;
-        PickIonCannonTarget(out);
-        return out;
-    }
+    CellStruct PickIonCannonTarget() const;
 
     // unmatched: no callgraph reference and no git history record
     bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;
@@ -270,11 +256,7 @@ public:
     FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;
     void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);  // 0x740DF0
 
-    const CellStruct& GetBaseCenter() const
-    {
-        if (baseCenter != CellStruct{}) return baseCenter;
-        return baseSpawnCell;
-    }
+    const CellStruct& GetBaseCenter() const;
 
     // design: no binary equivalent found in IDA
     unsigned int GetAIDifficultyIndex() const;
@@ -777,6 +759,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void FindStartPositions();  // 0x5ee9d0
     // === FUNCS-MOVE (END) ===
 };
+
 
 } // namespace gamemd
 

@@ -13,7 +13,8 @@
 
 // 0x4104C0
 namespace gamemd { namespace wdt { int Map::GetInvalidCoord() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map::GetInvalidCoord(#376 *this)
 {
   _DWORD *v2; // [esp+4h] [ebp+4h]
@@ -23,6 +24,8 @@ int __thiscall Map::GetInvalidCoord(#376 *this)
   v2[2] = MEMORY[0x887688];
   return (int)v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -40,11 +43,14 @@ retn    4
 } } }
 // 0x4F28B0
 namespace gamemd { namespace wdt { bool Map::CanScroll() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Map::CanScroll(_DWORD *this)
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+4]
@@ -57,7 +63,8 @@ retn
 } } }
 // 0x4F3A90
 namespace gamemd { namespace wdt { int State::SetIfChanged(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall State_SetIfChanged(_BYTE *this, int a2)
 {
   int result; // eax
@@ -72,6 +79,8 @@ int __thiscall State_SetIfChanged(_BYTE *this, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -89,7 +98,8 @@ retn    4
 } } }
 // 0x5C2500
 namespace gamemd { namespace wdt { void Campaign::SetupMovie() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Campaign::SetupMovie(int *this, int hDlg)
 {
   int v2; // ebx
@@ -183,6 +193,8 @@ void __thiscall Campaign::SetupMovie(int *this, int hDlg)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr  4
@@ -319,7 +331,8 @@ retn    4
 } } }
 // 0x76BFE0
 namespace gamemd { namespace wdt { int Conflict::GetOwnerHouse() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Conflict_GetOwnerHouse(_DWORD *this)
 {
   int v1; // eax
@@ -330,6 +343,8 @@ int __thiscall Conflict_GetOwnerHouse(_DWORD *this)
   else
     return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0Ch]

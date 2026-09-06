@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00538F20 (487 bytes)
 const char* DDraw_ClearCCFile_538F20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_538F20(int a1, int a2, char *Source)
 {
   int *v5; // ebx
@@ -107,6 +108,8 @@ char __fastcall sub_538F20(int a1, int a2, char *Source)
     return (*(char (__thiscall **)(int))(*(_DWORD *)a2 + 96))(a2);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -308,7 +311,8 @@ retn    4
 
 // 0x00635560 (281 bytes)
 int Display_GetPixel_635560() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_635560(_DWORD *this, int a2)
 {
   int *Viewport; // eax
@@ -380,6 +384,8 @@ int __thiscall sub_635560(_DWORD *this, int a2)
   while ( v9 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 54h
@@ -488,7 +494,8 @@ retn    4
 
 // 0x00635680 (324 bytes)
 int Display_GetPixel_635680() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_635680(_DWORD **this, int a2)
 {
   int *Viewport; // eax
@@ -560,6 +567,8 @@ int __thiscall sub_635680(_DWORD **this, int a2)
   while ( v7 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 60h
@@ -678,7 +687,8 @@ retn    4
 
 // 0x00793280 (428 bytes)
 const char* DrawDialog_793280() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_793280(void *hWnd, unsigned int a2, unsigned __int16 a3, _DWORD *a4)
 {
   int result; // eax
@@ -769,6 +779,8 @@ int __stdcall sub_793280(void *hWnd, unsigned int a2, unsigned __int16 a3, _DWOR
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -966,7 +978,8 @@ retn    10h
 
 // 0x0072EA70 (83 bytes)
 void DrawSur_72EA70() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_72EA70(int a1, int *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -978,6 +991,8 @@ void __fastcall sub_72EA70(int a1, int *a2)
   v3 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
   DrawToSurfaceSHP(a1, MEMORY[0xB0FBB4], (int)MEMORY[0xB0FB1C], 0, &v2, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1019,7 +1034,8 @@ retn
 
 // 0x0072E990 (83 bytes)
 void DrawSurface_72E990() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_72E990(int a1, int *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -1031,6 +1047,8 @@ void __fastcall sub_72E990(int a1, int *a2)
   v3 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
   DrawToSurfaceSHP(a1, MEMORY[0xB0FBA8], (int)MEMORY[0xB0FB34], 0, &v2, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1072,7 +1090,8 @@ retn
 
 // 0x005BC460 (104 bytes)
 char DrawText_5BC460() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5BC460(int a1)
 {
   _BYTE *v1; // ecx
@@ -1108,6 +1127,8 @@ char __fastcall sub_5BC460(int a1)
   Text::DrawRepeated(v1, 0, 0, 80, 25);
   return Text::DrawRepeated((void *)MEMORY[0xABF23C], 0, 0, 80, 25);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, dword_A8ED54+30414h[ecx*4]
@@ -1155,7 +1176,8 @@ retn
 
 // 0x005BC4D0 (92 bytes)
 char DrawText_5BC4D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_5BC4D0()
 {
   int *v0; // ebx
@@ -1198,6 +1220,8 @@ char sub_5BC4D0()
   while ( (int)v0 < (int)&MEMORY[0xABF188] );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1246,7 +1270,8 @@ retn
 
 // 0x005E2AC0 (224 bytes)
 void DrawWideString_5E2AC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_5E2AC0()
 {
   void *Current; // edi
@@ -1296,6 +1321,8 @@ LABEL_5:
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -1394,7 +1421,8 @@ retn
 
 // 0x004C38E0 (320 bytes)
 const char* FindPalette_4C38E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char *__fastcall sub_4C38E0(char *a1, int a2, int a3, char *a4)
 {
   char *v5; // edx
@@ -1459,6 +1487,8 @@ LABEL_6:
   }
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1591,7 +1621,8 @@ retn    8
 
 // 0x00434840 (162 bytes)
 char FontClassRenderGlyphHelper_434840() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
 {
   int v3; // ecx
@@ -1626,6 +1657,8 @@ char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
     return 1;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_8]
@@ -1707,7 +1740,8 @@ retn    0Ch
 
 // 0x004C2790 (155 bytes)
 int Lightning_Draw_4C2790() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4C2790(int this)
 {
   int result; // eax
@@ -1734,6 +1768,8 @@ int __thiscall sub_4C2790(int this)
   *(_DWORD *)(this + 40) = result;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1802,7 +1838,8 @@ retn
 
 // 0x004C2830 (425 bytes)
 int Lightning_Draw_4C2830() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_4C2830()
 {
   int result; // eax
@@ -1898,6 +1935,8 @@ int sub_4C2830()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -24h
@@ -2081,7 +2120,8 @@ retn
 
 // 0x005092F0 (193 bytes)
 int MapClass_MarkForRedraw_5092F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5092F0(int this, int a2)
 {
   int result; // eax
@@ -2112,6 +2152,8 @@ int __thiscall sub_5092F0(int this, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -2188,7 +2230,8 @@ retn    4
 
 // 0x006ABA60 (90 bytes)
 char MapClass_MarkForRedraw_6ABA60() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
 {
   int v4; // esi
@@ -2210,6 +2253,8 @@ char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
   MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2264,7 +2309,8 @@ retn    0Ch
 
 // 0x004379A0 (97 bytes)
 bool MethodBlit_4379A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_4379A0(int a1, int a2, _DWORD *a3, int a4, int *a5, int a6, int a7, int a8, int a9)
 {
   _DWORD *v11; // eax
@@ -2276,6 +2322,8 @@ bool __fastcall sub_4379A0(int a1, int a2, _DWORD *a3, int a4, int *a5, int a6, 
   v11 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 120))(a1);
   return BlitterRLEBlitSHP(a1, v11, v15, a2, a3, v13, a5, a6, a7, a8, a9, 0, 0, 0, 0);
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2329,7 +2377,8 @@ retn    1Ch
 
 // 0x007BC1F0 (91 bytes)
 void MethodBlit_7BC1F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_7BC1F0(int *a1, int *a2, int a3, int a4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
@@ -2345,6 +2394,8 @@ char __fastcall sub_7BC1F0(int *a1, int *a2, int a3, int a4)
     return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -2391,7 +2442,8 @@ retn    8
 
 // 0x007BC250 (91 bytes)
 void MethodBlit_7BC250() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_7BC250(int *a1, int *a2, int a3, int a4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
@@ -2407,6 +2459,8 @@ char __fastcall sub_7BC250(int *a1, int *a2, int a3, int a4)
     return BlitterCopySimpleSHP(a1, a2, a3, a4, (int *)&v7, 0, 3, 1000, 0);
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -2453,7 +2507,8 @@ retn    8
 
 // 0x005BAA80 (122 bytes)
 void MethodDraw_5BAA80() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5BAA80(#44 *this, #72 *Format, unsigned int a3, int a4)
 {
   int v4; // edi
@@ -2474,6 +2529,8 @@ void __thiscall sub_5BAA80(#44 *this, #72 *Format, unsigned int a3, int a4)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -200h
@@ -2534,7 +2591,8 @@ retn    0Ch
 
 // 0x005BF850 (93 bytes)
 int MethodRender_5BF850() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_5BF850()
 {
   int v0; // esi
@@ -2557,6 +2615,8 @@ int sub_5BF850()
   Render_Load_759EB0(v2, 0, v4 / v5, v7, v8, 0);
   return v1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+306A0h
@@ -2609,7 +2669,8 @@ retn
 
 // 0x00634470 (152 bytes)
 bool MethodToCoordPixel_634470() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_634470(_DWORD **this, int a2, int a3)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2636,6 +2697,8 @@ BOOL __thiscall sub_634470(_DWORD **this, int a2, int a3)
   v9 = v5[3] + 8;
   return a2 >= v6 && a2 < v8 + v6 && a3 >= v7 && a3 < v9 + v7;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -2702,7 +2765,8 @@ retn    8
 
 // 0x00635E90 (144 bytes)
 int MethodToCoordPixel_635E90() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_635E90(_DWORD **this, int *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2733,6 +2797,8 @@ int *__thiscall sub_635E90(_DWORD **this, int *a2)
   a2[3] = v8 + 16;
   return a2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -2790,7 +2856,8 @@ retn    4
 
 // 0x00759BC0 (101 bytes)
 int MovieClass_RenderMovie_759BC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_759BC0(int this, signed int a2)
 {
   signed int v2; // edi
@@ -2811,6 +2878,8 @@ unsigned int __thiscall sub_759BC0(int this, signed int a2)
     *(_DWORD *)(this + 1284) = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2856,7 +2925,8 @@ retn    4
 
 // 0x004251F0 (109 bytes)
 int PlayPalette_4251F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4251F0(int a1, __int16 *a2)
 {
   int v2; // ecx
@@ -2875,6 +2945,8 @@ int __fastcall sub_4251F0(int a1, __int16 *a2)
     return FadePalette(&MEMORY[0x87F7E8][6118], 30, (void (*)(void))Event::Dispatch);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -2912,7 +2984,8 @@ retn
 
 // 0x00434B40 (80 bytes)
 int RenderFont_434B40() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_434B40(_DWORD *a1, int *a2, unsigned __int16 a3, int xLeft, int yTop)
 {
   int v5; // edi
@@ -2925,6 +2998,8 @@ int __stdcall sub_434B40(_DWORD *a1, int *a2, unsigned __int16 a3, int xLeft, in
   BufferIO::Cleanup(a1, (int)a2);
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 xLeft           = dword ptr  10h
@@ -2973,7 +3048,8 @@ retn    14h
 
 // 0x00434BF0 (224 bytes)
 int RenderFont_434BF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int yTop, int a6)
 {
   int result; // eax
@@ -3006,6 +3082,8 @@ int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int y
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 xLeft           = dword ptr  10h
@@ -3109,7 +3187,8 @@ retn    18h
 
 // 0x004AEA20 (169 bytes)
 int RenderRallyPointLinesHelper_4AEA20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge sub_4AEA20@<eax>(int a1@<ebx>, int a2)
 {
   int v2; // edx
@@ -3145,6 +3224,8 @@ int __userpurge sub_4AEA20@<eax>(int a1@<ebx>, int a2)
   while ( v3 < 8 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -3215,7 +3296,8 @@ retn    4
 
 // 0x004A65C0 (267 bytes)
 int RenderRender_4A65C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9, int a10)
 {
   int *v12; // eax
@@ -3248,6 +3330,8 @@ int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 
   a1[1] = v12[1];
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_18]
@@ -3347,7 +3431,8 @@ retn    20h ; ' '
 
 // 0x005B57D0 (390 bytes)
 int String_Draw_5B57D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall sub_5B57D0(_DWORD *this)
 {
   _WORD *result; // eax
@@ -3408,6 +3493,8 @@ _WORD *__thiscall sub_5B57D0(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Format          = dword ptr -500h
@@ -3546,7 +3633,8 @@ retn
 
 // 0x005B9250 (406 bytes)
 int String_Draw_5B9250() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall sub_5B9250(_DWORD *this)
 {
   _WORD *result; // eax
@@ -3608,6 +3696,8 @@ _WORD *__thiscall sub_5B9250(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Format          = dword ptr -500h
@@ -3750,7 +3840,8 @@ retn
 
 // 0x004C3DD0 (95 bytes)
 int TextRenderer_GetText_4C3DD0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4C3DD0(int *this, int a2)
 {
   int v3; // edx
@@ -3771,6 +3862,8 @@ int __thiscall sub_4C3DD0(int *this, int a2)
            0,
            1);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -3808,7 +3901,8 @@ retn    4
 
 // 0x0071FF20 (136 bytes)
 int TextRenderer_GetToggle_71FF20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_71FF20(int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, char a9, char a10)
 {
   int Instance; // ebx
@@ -3829,6 +3923,8 @@ int __thiscall sub_71FF20(int this, int a2, int a3, int a4, int a5, int a6, int 
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_10]
@@ -3895,7 +3991,8 @@ retn    24h ; '$'
 
 // 0x004C2FC0 (237 bytes)
 int TextRenderer_SetMember11_4C2FC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_4C2FC0(int *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   int v11; // eax
@@ -3933,6 +4030,8 @@ int *__thiscall sub_4C2FC0(int *this, int a2, #72 *String, int a4, int a5, int a
   *(this + 17) = 0;
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = dword ptr  8
@@ -4048,7 +4147,8 @@ retn    24h ; '$'
 
 // 0x006C6540 (144 bytes)
 int TextRenderer_SetMember12_6C6540() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C6540(_DWORD *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8)
 {
   int Instance; // ebx
@@ -4069,6 +4169,8 @@ _DWORD *__thiscall sub_6C6540(_DWORD *this, int a2, #72 *String, int a4, int a5,
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = dword ptr  8
@@ -4145,7 +4247,8 @@ retn    1Ch
 
 // 0x005BCB90 (132 bytes)
 int Text_Draw_5BCB90() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5BCB90(int this, int a2)
 {
   int v3; // edi
@@ -4185,6 +4288,8 @@ int __thiscall sub_5BCB90(int this, int a2)
   Text::DrawRepeated((void *)this, 0, 0, 80, 25);
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -4238,7 +4343,8 @@ retn    4
 
 // 0x005BCE10 (378 bytes)
 char Text_Draw_5BCE10() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5BCE10(int *this, int a2)
 {
   char result; // al
@@ -4352,6 +4458,8 @@ char __thiscall sub_5BCE10(int *this, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, byte ptr dword_A8ED54+304E6h

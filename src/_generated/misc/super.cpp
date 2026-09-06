@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x006E3380 (141 bytes)
 char ActionQueue_PushAction_6E3380() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 {
   _DWORD *v5; // eax
@@ -27,6 +28,8 @@ char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -78,7 +81,8 @@ retn    10h
 
 // 0x00646040 (122 bytes)
 float CallQuaternionMathMultiply_646040() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_646040(_DWORD *a1, float *a2, float *a3)
 {
   double v4; // st7
@@ -105,6 +109,8 @@ _DWORD *__fastcall sub_646040(_DWORD *a1, float *a2, float *a3)
   a1[3] = *((_DWORD *)v5 + 3);
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -152,7 +158,8 @@ retn    4
 
 // 0x004A4900 (443 bytes)
 int Callqsort_4A4900() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int *__fastcall sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
 {
   unsigned int *v5; // ebx
@@ -232,6 +239,8 @@ LABEL_13:
     __3_YAXPAX_Z(Block);
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 NumOfElements   = dword ptr -24h
@@ -419,7 +428,8 @@ retn    0Ch
 
 // 0x0056B250 (401 bytes)
 int Compression_ReadLZOPipe_56B250() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_56B250(int *this, int a2)
 {
   int *v2; // esi
@@ -488,6 +498,8 @@ int __thiscall sub_56B250(int *this, int a2)
   LZOPipe::Destructor(v17);
   return v12 + v11;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = dword ptr -30h
@@ -628,7 +640,8 @@ retn    4
 
 // 0x00483710 (112 bytes)
 char Crate_Find_483710() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_483710(int this)
 {
   int BuildingByTiberiumType; // eax
@@ -650,6 +663,8 @@ char __thiscall sub_483710(int this)
   v4 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68));
   return Crate::FindPlacement(this, v4, 1);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -698,7 +713,8 @@ retn
 
 // 0x0046D650 (446 bytes)
 bool GetSession_46D650() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool sub_46D650()
 {
   bool v0; // bl
@@ -780,6 +796,8 @@ bool sub_46D650()
   while ( (int)v4 < (int)&MEMORY[0x87F7E8][538802] );
   return v0;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8D638h
@@ -952,7 +970,8 @@ retn
 
 // 0x006E35F0 (228 bytes)
 char LightningStorm_Start_6E35F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E35F0(int *this, #375 *a2, int a3, int a4, int a5)
 {
   int v6; // [esp+0h] [ebp-14h] BYREF
@@ -975,6 +994,8 @@ char __thiscall sub_6E35F0(int *this, #375 *a2, int a3, int a4, int a5)
   LightningStorm::Start(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 6044), *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6036), v7, a2);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -1051,7 +1072,8 @@ retn    10h
 
 // 0x00777F90 (158 bytes)
 int MethodImmGetCompositionStringA_777F90() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_777F90(void *this)
 {
   int result; // eax
@@ -1093,6 +1115,8 @@ int __thiscall sub_777F90(void *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buf             = byte ptr -408h
@@ -1169,7 +1193,8 @@ retn
 
 // 0x004FBD80 (120 bytes)
 int MethodStu_4FBD80() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4FBD80(_DWORD *this, int a2, int a3)
 {
   int v3; // ecx
@@ -1215,6 +1240,8 @@ LABEL_10:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1275,7 +1302,8 @@ retn    8
 
 // 0x0052D870 (297 bytes)
 int PopGameOptions_52D870() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_52D870(int hDlg, int a2, unsigned int a3, int a4)
 {
   int v4; // esi
@@ -1345,6 +1373,8 @@ int __stdcall sub_52D870(int hDlg, int a2, unsigned int a3, int a4)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hDlg            = dword ptr  4
@@ -1485,7 +1515,8 @@ retn    10h
 
 // 0x0049F920 (135 bytes)
 bool ReadVersionInfo_49F920() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool sub_49F920()
 {
   int v0; // esi
@@ -1518,6 +1549,8 @@ bool sub_49F920()
   v1 = VersionInfo::Read((int)&MEMORY[0x87F7E8][539966]);
   return Data == v1;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 phkResult       = dword ptr -10h
@@ -1578,7 +1611,8 @@ retn
 
 // 0x0046D810 (155 bytes)
 int SendSession_46D810() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_46D810()
 {
   int result; // eax
@@ -1601,6 +1635,8 @@ int sub_46D810()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1C8h
@@ -1657,7 +1693,8 @@ retn
 
 // 0x00689960 (153 bytes)
 const char* TriggerActionQueue_ProcessAll_689960() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_689960(const char *this, const char *a2, char a3)
 {
   unsigned int v3; // edi
@@ -1683,6 +1720,8 @@ char __thiscall sub_689960(const char *this, const char *a2, char a3)
   }
   return v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1777,7 +1816,8 @@ retn    8
 
 // 0x0076DED0 (115 bytes)
 int WDTObject_RemoveSession_76DED0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76DED0(_DWORD *this)
 {
   int v2; // eax
@@ -1800,6 +1840,8 @@ int __thiscall sub_76DED0(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1847,7 +1889,8 @@ retn
 
 // 0x0076DF50 (115 bytes)
 int WDTObject_RemoveSession_76DF50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76DF50(_DWORD *this)
 {
   int v2; // eax
@@ -1870,6 +1913,8 @@ int __thiscall sub_76DF50(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1917,7 +1962,8 @@ retn
 
 // 0x006A04C0 (242 bytes)
 char WalkLocomotion_MoveCrate_6A04C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A04C0(int this, _DWORD *a2)
 {
   int v2; // eax
@@ -1961,6 +2007,8 @@ char __thiscall sub_6A04C0(int this, _DWORD *a2)
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp

@@ -31,7 +31,7 @@ struct IdleOrderEntry {
 // subscript (avoids gate false-positive on cast-index checks).
 struct IdleOrderArray {
     IdleOrderEntry** base;
-    IdleOrderEntry* operator[](int i) const { return base[i]; }
+    IdleOrderEntry* operator[](int i) const;
 };
 
 // CSP: UnitClass matched via T1
@@ -147,12 +147,8 @@ private:
     // Idle-order array accessors: the binary stores the idle-order
     // pointer at +0x3C (ambientSoundController field_00) and the count
     // at +0x48 (ambientSoundController field_0C).
-    IdleOrderEntry** idleOrderBase() const {
-        return (IdleOrderEntry**)(uintptr_t)this->ambientSoundController.AudioController_field_00;
-    }
-    int idleOrderCount() const {
-        return (int)this->ambientSoundController.AudioController_field_0C;
-    }
+    IdleOrderEntry** idleOrderBase() const;
+    int idleOrderCount() const;
 
 protected:
     UnitClass() noexcept;

@@ -15,7 +15,7 @@ using ra2::game::AbstractClass;
 using ra2::game::AbstractType;
 #endif
 
-struct WaypointClass; // forward - defined in waypoint.hpp
+class WaypointClass; // forward - defined in waypoint.hpp
 
 // sizeof ~0x44 (ctor 0x763810, ddtor 0x763C30)
 class WaypointPathClass : public AbstractClass
@@ -24,22 +24,22 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Waypoint;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~WaypointPathClass() = default;  // 0x763C30
+    virtual ~WaypointPathClass();  // 0x763C30
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override;
     // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     WaypointPathClass() noexcept;                            // 0x763810 (Construct)
@@ -53,8 +53,8 @@ public:
     void SaveState(IStream*);                                // 0x763D90
     void ProcessEvent();                                     // 0x763E20
     void computePath();                                      // 0x764760
-    int StubReturn51() const { return 51; }                   // 0x763E10
-    int StubReturn64() const { return 64; }                   // 0x763E00
+    int StubReturn51() const;                   // 0x763E10
+    int StubReturn64() const;                   // 0x763E00
 
     int32_t     idxArray;           // +0x24 (this+36)
     DynamicVectorClass<WaypointClass> waypoints; // +0x28 (this+40)

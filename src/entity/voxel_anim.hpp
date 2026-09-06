@@ -56,7 +56,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
+    virtual ~VoxelAnimClass() override;  // 0x74AAD0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

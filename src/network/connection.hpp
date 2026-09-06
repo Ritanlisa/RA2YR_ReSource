@@ -22,7 +22,7 @@ public:
     virtual ULONG   __stdcall AddRef();
     virtual ULONG   __stdcall Release();
 
-    virtual ~ConnectionClass() = default;                                                    // 0x48BEE0
+    virtual ~ConnectionClass();                                                    // 0x48BEE0
 
     virtual bool  Open();
     virtual void  Close();
@@ -67,7 +67,7 @@ class IPXConnClass : public ConnectionClass
 public:
     IPXConnClass() noexcept;                              // 0x53F430
     // design: defaulted virtual destructor, no binary equivalent
-    virtual ~IPXConnClass() = default;
+    virtual ~IPXConnClass();
     virtual bool Open() override; // 0x69BC20
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
@@ -126,7 +126,7 @@ class ModemConnectionClass : public ConnectionClass
 {
 public:
     ModemConnectionClass() noexcept;                        // 0x5F16E0
-    virtual ~ModemConnectionClass() = default;
+    virtual ~ModemConnectionClass();
     virtual bool Open() override; // 0x5F1BC0
 
     bool Init();
@@ -145,7 +145,7 @@ class NullModemClass : public ConnectionClass
 {
 public:
     NullModemClass() noexcept;
-    virtual ~NullModemClass() = default;  // 0x5F35A0
+    virtual ~NullModemClass();  // 0x5F35A0
     // wrapper: delegates to NullModemClass::ddtor at 0x5F35A0
     virtual bool Open() override;
 

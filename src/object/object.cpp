@@ -41,7 +41,8 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 // 0x5f44a0
 bool ObjectClass::Remove()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::Remove(#374 *this)
 {
   int result; // eax
@@ -70,6 +71,8 @@ int __thiscall ObjectClass::Remove(#374 *this)
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -126,7 +129,8 @@ retn
 // 0x5f65f0
 void ObjectClass::Destroy()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::Destroy(#374 *this)
 {
   int v2; // ecx
@@ -155,6 +159,9 @@ int __thiscall ObjectClass::Destroy(#374 *this)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -418,7 +425,8 @@ void ObjectClass::Reveal()
 // 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::MarkForRedraw(#374 *this)
 {
   int result; // eax
@@ -431,6 +439,9 @@ int __thiscall ObjectClass::MarkForRedraw(#374 *this)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+80h]

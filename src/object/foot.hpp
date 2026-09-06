@@ -24,7 +24,7 @@ class FootClass : public TechnoClass {
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x4);
 
-    virtual ~FootClass() = default;  // 0x4D3590
+    virtual ~FootClass();  // 0x4D3590
 
     virtual void Destroyed(ObjectClass* killer) override;  // 0x4D98C0
     // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
@@ -61,11 +61,11 @@ public:
         SHPStruct* shp, int facing_idx, Point2D* coords, RectangleStruct* rect,
         uint32_t a5, uint32_t a6, uint32_t a7, ZGradient gradient,
         uint32_t a9, int extra_light, uint32_t a11, uint32_t a12,
-        uint32_t a13, uint32_t a14, uint32_t a15, uint32_t a16) {}
+        uint32_t a13, uint32_t a14, uint32_t a15, uint32_t a16);
     virtual void Draw_A_VXL(
         VoxelStruct* vxl, int hva_frame_index, int flags, SomeVoxelCache* cache,
         RectangleStruct* rect, Point2D* center_point, Matrix3DStruct* matrix,
-        uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
+        uint32_t a8, uint32_t draw_flags, uint32_t a10);
     // design: virtual function, no binary implementation matched in IDA
     virtual void onDrawComplete();
     virtual void Panic();
@@ -285,7 +285,9 @@ protected:
     TimerStruct        FootClass_field_timer_650;
     TimerStruct        sightTimer;
     TimerStruct        blockagePathTimer;
-    YRComPtr           locomotor;
+public:
+    YRComPtr           locomotor;   // YRpp: public (written by LocomotionClass::ChangeLocomotorTo)
+protected:
     CoordStruct        unknownPoint3d678;
     signed char        tubeIndex;
     bool               unknownBool685;

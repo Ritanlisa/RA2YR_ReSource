@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+class TechnoClass;  // full definition in object/techno.hpp
+
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass
 using ra2::game::AbstractClass;
@@ -25,25 +27,25 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TeamType;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TeamTypeClass() = default;  // 0x6F20D0
+    virtual ~TeamTypeClass();  // 0x6F20D0
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override;
     // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
-    TeamTypeClass() noexcept { }                             // 0x4C98B0 (Construct)
+    TeamTypeClass() noexcept;                             // 0x4C98B0 (Construct)
     void ddtor();  // 0x6F20D0
 
     // Methods

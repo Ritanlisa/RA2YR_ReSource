@@ -14,75 +14,24 @@ public:
     constexpr MemoryBuffer() noexcept = default;
 
     explicit MemoryBuffer(int size) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : MemoryBuffer(nullptr, size)
-    {}
+; // unmatched: no callgraph reference and no git history record
 
-    MemoryBuffer(void* pBuffer, int size) noexcept
-        : Buffer(pBuffer)
-        , Size(size)
-    {
-        if (!Buffer && Size > 0)
-        {
-            Buffer = operator new(static_cast<std::size_t>(Size));
-            Allocated = true;
-        }
-    }
+    MemoryBuffer(void* pBuffer, int size) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    ~MemoryBuffer() noexcept
-    {
-        if (Allocated)
-        {
-            operator delete(Buffer);
-        }
-    }
+    ~MemoryBuffer() noexcept;
 
-    MemoryBuffer(const MemoryBuffer& other) noexcept
-        : Buffer(other.Buffer)
-        , Size(other.Size)
-    {}
+    MemoryBuffer(const MemoryBuffer& other) noexcept;
 
-    MemoryBuffer(MemoryBuffer&& other) noexcept
-        : Buffer(other.Buffer)
-        , Size(other.Size)
-        // unmatched: no callgraph reference and no git history record
-        , Allocated(other.Allocated)
-    {
-        other.Allocated = false;
-    }
+    MemoryBuffer(MemoryBuffer&& other) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept
-    {
-        if (this != &other)
-        {
-            MemoryBuffer tmp(std::move(*this));
-            Buffer = other.Buffer;
-            Size = other.Size;
-            Allocated = false;
-        }
-        return *this;
-    }
+    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept
-    {
-        MemoryBuffer tmp(std::move(*this));
-        Buffer = other.Buffer;
-        Size = other.Size;
-        Allocated = other.Allocated;
-        other.Allocated = false;
-        return *this;
-    }
+    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept;
 
-    void Clear() noexcept
-    {
-        MemoryBuffer tmp(std::move(*this));
-        Buffer = nullptr;
-        Size = 0;
-        Allocated = false;
-    }
+    void Clear() noexcept;
 
     void* Buffer = nullptr;
     int Size = 0;
@@ -103,7 +52,7 @@ public:
     void  Reset();  // 0x473CE0
 
 protected:
-    explicit CCFileClass(const noinit_t&) noexcept : CDFileClass(noinit_t()) {}
+    explicit CCFileClass(const noinit_t&) noexcept;
 
 public:
     MemoryBuffer Buffer;

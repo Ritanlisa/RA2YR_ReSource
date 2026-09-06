@@ -4,7 +4,7 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-06 会话更新）**：
+> **执行状态首查表（2026-09-06 会话更新，含深夜裁决执行）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
@@ -12,15 +12,45 @@
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
 > | A4 命名一致性 | ✅ 完成 | 511 → 0（audit 0/0） |
-> | **新** hpp-impl 存量债务 | 🔶 迁移完成/构建受阻 | 1,765 → 0 违规；构建暴露 2,874 存量编译错误 |
+> | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
+> | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
+> | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决：未完成翻译以 **IDA 原始反编译 `#if 0` 块**占位（3,437 个）→ 提交 → baseline 重锚该提交暂避门控。**⚠ ida-artifact 门控脚本为空文件（存量空转）——见执行日志** |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | **3,437 个 `#if 0` IDA 块** + 69 个 CFG 不忠实翻译 + 682 链接未解析符号 + 20 triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
 > | A1 成员语义命名 | ⬜ 未开始 | |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
 > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
-> | C1-C4 批量翻译 | ⬜ 未开始 | 输入质量投资（A 轮）已部分就位 |
-> | D1-D4 集成验收 | ⬜ 未开始 | |
+> | C1-C4 批量翻译 | 🔶 **就绪** | 输入（#if 0 IDA 原码 + 类型化快照）已就位；债清单即工作队列 |
+> | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
+
+## 用户裁决（2026-09-06 深夜，本路线图的基线事件）
+
+1. **最终目标**：翻译所有内容（全部真翻译，非 stub）。
+2. **未完成翻译的占位形态**：函数体携带 **IDA 原始反编译代码**
+   （`#if 0` 块 + `[IDA decompile]` 标记 + 编译所需的最小 stub return），
+   而非裸 stub。伪代码不是合法 C++（`#374`/`__thiscall`/`_DWORD`），
+   `#if 0` 是唯一可编译的"原码在体"形态，且是
+   `verify_execution_flow.py` 一等识别的 "disabled implementation" 模式。
+3. **baseline 重锚**：`auto-fill-baseline` tag 移到本次提交，
+   暂时避免门控对存量债的 FAIL。**重锚不是销账**——债清单全部保留
+   在本文档「最终目标债清单」节，是 C 线的工作队列。
+4. **gate 语义保持**：今后修改任何含 `#if 0` IDA 块的函数会重新触发
+   `stub-with-disabled-implementation` FAIL——**设计使然**，强制该函数
+   完成真翻译后才能过 gate。存量债只能通过真翻译清偿，不能绕过。
+
+## 最终目标债清单（C 线工作队列，重锚不清账）
+
+| 债 | 数量 | 说明 |
+|---|---|---|
+| `#if 0` IDA 原码块 | **3,437** | 含原 143 个伪翻译隔离体 + 16 个虚构 API legacy 函数（已替换为快照 IDA 原码）+ gap2/Task17-18 存根体系。分布：system 800+ / ui 200+ / structure 100+ / entity 90+ …（`grep -r "original pseudocode" src/`） |
+| CFG 不忠实真翻译 | **69** | 基线有真实译但 exec-flow CFG 校验不通过——需逐函数对照 IDA 修复（清单见执行日志 09-06 终态甄别） |
+| triage 未定位 | **20** | 行号漂移致甄别失败，需重扫 |
+| 链接未解析符号 | **682** | 有声明从未有定义；`/FORCE:UNRESOLVED` 容忍链接。`tools/gen_link_stubs.py` 已生成 101 个近似签名 stub（`src/_generated/link_stubs.cpp`），**未入构建**——需按 hpp 原声明精确签名后接入，最终全部真翻译 |
+| 无二进制对应函数 | 1 | `LocomotionClass::ChangeLocomotorTo`（历史手工编造，IDA 无此函数）——保留注释体，翻译时按调用语义重建或删除 |
+| ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
+
 
 ## 0. 当前基线（2026-09-05 终态）
 
@@ -167,9 +197,9 @@
 | 类成员语义名 | ~0（field_0xNN 占位） | ~0（A1 未开始） | >60% | — |
 | 命名不一致 | 215 | **0**（A4 完成；期间曾漂移至 511） | 0 | 0（维持） |
 | hpp-impl 违规 | 未统计（1,765 隐性） | **0**（迁移完成） | 0 | 0（红线） |
-| 完整翻译函数 | 472 | 472（C 线未开始） | — | 1,000 → 3,000 → 472+5,758 全量 |
+| 完整翻译函数 | 472 | 472（C 线未开始；gate 债清单即首批对象） | — | 1,000 → 3,000 → 472+5,758 全量 |
 | REVERSE 对拍 | 41 函数 | 41 函数 | — | Same 率 >95% |
-| 构建 | 0/0（实为 gate 假绿） | **2,874 存量错误暴露** | — | 0/0（红线，最高优先修复） |
+| 构建 | gate 假绿 | **编译 0/0 + exe 产出；gate 2/3（232+35 债显式化）** | — | 0/0 + gate 3/3（红线） |
 
 ## 风险与对策
 
@@ -283,48 +313,116 @@ ida_function_db.json 大写键同步（52+450）；hpp 侧 4 处语义名 + 2 �
 
 ### 未完成 / 阻塞
 
-**⛔ 构建红线未恢复 — 全量构建 2,874 个存量编译错误（下一会话最高优先）**
+**🔶 构建红线：编译层已恢复、gate 层 2/3（2026-09-06 深夜会话终态）**
 
-hpp 迁移完成后全量构建暴露 2,874 错误。初步归因（已完成的部分）：
+**编译层 ✅**：2,874 → **0 编译错误**（35 轮迭代），链接产出
+`build_win/Debug/gamemd.exe`（1.5MB）。主要修复（详见下方 09-06 夜日志）：
 
-- **大头是存量债务**（gate 假绿期间从未真正编译过）：
-  - surface.hpp ×734（17 个 TU 重复）：`class XSurface : public Surface`
-    基类 **Surface 未定义**——fundamentals.hpp 仅 40 行无 Surface 类
-    （迁移前 inline ctor 就引用 `Surface(width,height)`，说明此前同样
-    编不过）；
-  - _gap2/gap2_global_defs.cpp ×102：`BOOL` 未声明（缺 windows.h）；
-  - checksummer.cpp ×5：hpp 中成员声明本就被注释、cpp 却有定义；
-  - 其余 ~100 错误/TU 的模式待逐类归因（object.cpp 108 / unit.cpp 106 /
-    building.cpp 106 / ini_class.cpp 102 …）。
-- **迁移引入的部分待甄别**：command_class_bodies.cpp ×38、
-  misc_ext.hpp ×74（迁移后 hpp 仍报错，需查）等。
-- 83 个 `_bodies.cpp` + 3 个 `_bodies.inl` 与 174 个文件改动**未提交**
-  （构建不过不提交，遵守红线）。
-- 处置建议（下一会话）：
-  1. 逐错误类归因（存量 vs 迁移引入），迁移引入的先修；
-  2. 存量按文件清理（Surface 基类定义考古：dsurface.md 38 条 vtable
-     继承链是现成参考）；
-  3. 构建过 → hpp_scan 复扫 0 → `run_all_gates.py` 3/3 → 提交迁移。
+1. **IDA 嵌入体隔离**（`tools/quarantine_ida_embeds.py`）：历史"伪翻译"
+   把 IDA 反编译裸文本（`#374`/`__thiscall`/`_DWORD`）粘进函数体——
+   这些 TU 从未编译过。19 万行注释化 + 3,404 个显式 stub（保留原文本
+   为参考注释，Task 17/18 存根惯例）。62 文件。
+2. **Surface 抽象基类重建**（surface.hpp，IDA vtable 0x7E2198 实证）：
+   32 条 vtable + Width@+4/Height@+8（0x411540/0x411550 反汇编铁证）；
+   DrawSHP/DrawText 4 重载声明补齐；GetRect 出参形态（0x411510）。
+3. **misc_ext.hpp 垃圾建模清理**：4 个 kernel32 导入跳板误建类删除
+   （GetCurrent* / OleUninitialize，IDA 实证 jmp __imp）；13 个数字名
+   虚函数合法化 Method_XXXXXX；3 个构造误生成修复；IClassFactory
+   COM 头补齐。
+4. **大规模存量甄别修复**：checksummer/radbeam/shp_struct/ebolt/
+   waypoint 系成员声明恢复；GameMode 枚举/类冲突裁决（删错误工具类，
+   0x5D5DE0 实为 thiscall 成员）；CellStruct typedef 对齐（math.hpp
+   `Vector2D<short>`）；namespace 分裂缓解（locomotion FootClass 桥、
+   foot.cpp Mission 全局限定）；空指针 return 修正 197 处；
+   bodies 双重定义去重（misc_ext_bodies 852 个 = hpp inline 迁移与
+   原 cpp 定义并存）；类内 `= default` dtor 误迁出回滚（LNK2005 根因）。
+5. **链接 stub 基建**（`tools/gen_link_stubs.py`）：682 个历史未解析
+   符号（从未有定义的声明）以 /FORCE:UNRESOLVED 容忍链接（既有策略）；
+   101 个 stub 已生成（`src/_generated/link_stubs.cpp`），因 demangle
+   签名近似误差暂未入构建——后续按 hpp 原声明精确生成后接入。
 
-**⬜ 其余未开始任务**（优先序不变，但全部让位于构建红线）：
+**gate 层 🔶（2/3，ida-artifact ✅ / code-standards ❌ / exec-flow ❌）**：
 
+- exec-flow **232 translation-incomplete**（终态甄别 `.omo/triage_final.py`）：
+  - **143 个**基线即伪翻译（非法嵌入体）——隔离为 stub 后 CFG 校验
+    FAIL 是诚实反映，语义与基线等价（从未工作过）；
+  - **69 个**基线真翻译但 CFG 不忠实（building/unit/infantry 主力，
+    如 SetProduction/UpdateProduction/Mission_Harvest）——**真修复
+    对象**，即 C 线首批工作；
+  - **20 个**定位失败（行号漂移，需重扫）。
+- code-standards **35 FAIL**（26 stub + 9 comment shell）：隔离产出的
+  stub 函数与注释占比过高的函数——同批 C 线对象。
+- **决策点 → 已裁决（2026-09-06 深夜，用户）**：未完成翻译以 IDA 原始
+  反编译 `#if 0` 块占位（`tools/uncomment_ida_blocks.py` 全量转换
+  3,421 块 + `.omo/fill_isolated_ida.py` 从快照回填 16 个虚构 API legacy
+  函数），提交后 `auto-fill-baseline` 重锚该提交。gate 对存量债转绿，
+  债转入「最终目标债清单」节跟踪。object.cpp 双重前缀修正 68 行
+  （单文件试验 + 全量两次隔离所致，`.omo/fix_double_prefix.py`）。
+
+**69 个 CFG 不忠实真翻译清单**（C 线修复对象，按文件分组）：
+
+- building.cpp（32）：GetAmmoCountScaled / GetPowerOutput / SWAvailable /
+  Construct / Dtor / IsCellPlaceable / ValidatePlacement /
+  FindPlacementCells2 / SearchPlacement / CheckBuildability / SetRallyPoint /
+  CheckExitPath / SellEffects / PowerDrainUpdate / IsPoweredOn /
+  IsPoweredActive / StartProduction / UpdateProduction / SetProduction /
+  Infiltrate / GetCrew / Is1x1AndUndeployable_BuildingMassSelectable /
+  IsInvisible / OnObjectExpired / SetType / AddUpgrade / CalcDrawPos /
+  GetBoundingSizeExt / GetFactoryPosition / Mission_Missile / Mission_Repair /
+  ClearSuperWeaponAnim
+- unit.cpp（12）：Mission_Harvest / GetExitCell / SimpleDeployerDeploy /
+  SimpleDeployerUndeploy / MissionDispatch / ApproachTarget_DisallowMoving /
+  UpdateRotation_TurretFacing_EMP / CheckForNearbyEnemies / CanCrushTarget /
+  Destructor / LoadFromStream / ClearTargetRef / UnloadPassengers /
+  ProcessIdleOrders
+- infantry.cpp（7）：ProcessDeployAction / GetFireError / FindNearbyCell /
+  CalcFacingToTarget / SelectAutoTarget / CalculateApproachPath
+- aircraft.cpp（3）：MissionDispatch / GetMissionTimer / Destruct
+- tactical.cpp（11）：RenderIsometric / DrawMap / DrawTerrain /
+  DrawTerrainPartial / SetView / SetViewDimensions / SetViewportPosition /
+  ScrollViewport / AddToDrawQueue / DecrementCounter / MouseInput /
+  PixelToCellCheck / ScreenToCellLookup / TransformPixel
+- 其他：techno.cpp SelectWeapon ×2 / surface.cpp DSurface::Unlock /
+  connection.cpp queueSendPacket / network_ext.cpp NetworkOptions::DlgProc /
+  init_game.cpp CCFileClass::Open / CCFileClass::Reset / CCINIClass::Load /
+  cell.cpp CellClass::DrawDispatch / mix_file.cpp MixFileClass::Bootstrap
+
+**⚠ 新发现——ida-artifact 门控空转**：`tools/check_pointer_arithmetic.py`
+为空文件（0 字节），`git log` 显示 f5da6e4f 起所有可达版本皆空——
+三重门控之一从未真正执行检查，属 AGENTS.md「静默退化」条目的实例。
+未擅自恢复（门控基建需用户审查）；部分功能被 code-standards 的
+AST 检查（diff-scoped）覆盖，全量扫描缺失。
+
+**⬜ 其余未开始任务**（优先序不变）：
+
+- C 线主线 = 「最终目标债清单」逐一清偿（3,437 #if 0 + 69 CFG + 682 链接）；
 - A1 类成员语义命名（TechnoClass/FootClass/ObjectClass 家族优先）；
 - A2 sub_* Pass 3 反编译级命名（3,590 池外）；
 - A3 局部变量语义命名（随 C 线吸收）；
 - B4 7 零观测 struct 考古（可选）；B5 池外 thiscall（可选）；
-- C1-C4 批量翻译主线；D1-D4 集成验收。
+- D1-D4 集成验收（exe 已产出，待真翻译覆盖率提升后运行时验收）；
 - 快照重导出（本轮 IDA 侧类型/命名变更后需要：5 枚举 + 8 成员回填 +
   502 改名 + 914 签名落盘都尚未反映到 full_export）。
 
-### 本轮度量变化
+### 本轮度量变化（09-06 深夜会话，含裁决执行）
 
 | 指标 | 会话前 | 会话后 |
 |---|---|---|
-| apply_sigs return/param 落盘 | 1,419 | +914（fail 0） |
-| mass_type fail | 1 | 0 |
-| IDA 枚举 | 0（仅 CRT/COM 16 个） | +5 游戏枚举 |
-| 枚举类型 struct 成员 | 0 | 8 |
-| 命名不一致 | 511 | **0** |
-| hpp-impl 违规 | 1,765（未暴露） | **0**（迁移完成） |
-| 构建状态 | gate 假绿（实际未编译） | **2,874 存量错误暴露，待清理** |
-| 提交 | — | 9402bf24（B1/B2/B3/A4）；迁移改动在工作区待构建通过后提交 |
+| 编译错误 | 2,874 | **0** |
+| gamemd.exe | 无（从未链接成功） | **产出**（/FORCE:UNRESOLVED 容忍 682 stub 债） |
+| IDA 嵌入体形态 | 190,744 行裸文本（非法语法） | **3,437 个 `#if 0` IDA 原码块**（原码在体，可编译可 grep） |
+| hpp-impl 违规 | 0（迁移后） | **0**（hpp_scan 全量复扫维持） |
+| gate | 假绿（未真正运行） | 诚实 2/3 → **重锚后 3/3**（ida-artifact 空转存疑） |
+| Surface 基类 | 未定义（734 错根因） | 重建（IDA vtable 实证） |
+| 双重定义（LNK2005） | 852+3 | 0 |
+| 磁盘 | D: 100% | 清理 ~1GB（.omo/tmp 452M + 2 IDA 副本 486M） |
+| 提交 | — | 本次提交（含 baseline 重锚，tag 同步移动） |
+
+**新增工具**：`tools/quarantine_ida_embeds.py`（嵌入体隔离）、
+`tools/quarantine_backfill.py`（stub 补插 pass 2）、
+`tools/uncomment_ida_blocks.py`（裁决执行：注释伪代码 → `#if 0` 原码块）、
+`tools/isolate_broken_translations.py`（虚构 API 翻译隔离）、
+`tools/dedup_bodies.py`（bodies 去重）、`tools/gen_link_stubs.py`
+（链接 stub 生成）、`.omo/check_ns.py`（hpp namespace/brace 平衡检查）、
+`.omo/fill_isolated_ida.py`（快照回填 IDA 原码）、
+`.omo/fix_double_prefix.py`（双重隔离前缀修正）。

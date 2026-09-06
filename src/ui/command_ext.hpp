@@ -4,11 +4,11 @@
 #include <windows.h>
 #include "core/enums.hpp"
 #include "object/abstract.hpp"
+#include "ui/command_class.hpp"
 
 namespace gamemd
 {
 
-class CommandClass;
 class HouseClass;
 #ifndef GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_ObjectClass
@@ -260,7 +260,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CursorAnim() = default;
 
-    virtual void Load() {} // 0x6D1800
+    virtual void Load(); // 0x6D1800
 
 };
 // 3 methods in IDA
@@ -271,9 +271,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DeleteAndZero() = default;
 
-    virtual void OrFree() {} // 0x624480
-    virtual void Alt2() {} // 0x7B5340
-    virtual void Alt() {} // 0x7B6760
+    virtual void OrFree(); // 0x624480
+    virtual void Alt2(); // 0x7B5340
+    virtual void Alt(); // 0x7B6760
 
     uint8_t DeleteAndZero_field_0x04[4];
     uint8_t DeleteAndZero_field_0x08[4];
@@ -285,7 +285,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScreenCapture() = default;
 
-    virtual void Frame() {} // 0x55CC20
+    virtual void Frame(); // 0x55CC20
 
 };
 

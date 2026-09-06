@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004267F0 (406 bytes)
 char AnimFile_InitBuffer_4267F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
 {
   int v3; // edx
@@ -81,6 +82,8 @@ char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
   }
   return *(_BYTE *)(a1 + 136);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -228,7 +231,8 @@ retn
 
 // 0x007BEFE0 (203 bytes)
 char AudioCodec_Decode_7BEFE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7BEFE0(int this)
 {
   int v2; // esi
@@ -297,6 +301,8 @@ char __thiscall sub_7BEFE0(int this)
   }
   return v3;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -394,7 +400,8 @@ retn
 
 // 0x00402EF0 (108 bytes)
 void AudioStream_GetAudio_402EF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_402EF0(int *Block)
 {
   int *Next; // esi
@@ -417,6 +424,8 @@ void __thiscall sub_402EF0(int *Block)
     *(_DWORD *)(*(Block + 6) + 16) = 0;
   __3_YAXPAX_Z(Block);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -470,7 +479,8 @@ retn
 
 // 0x007BEA40 (57 bytes)
 int AudioStream_ProcessStream_7BEA40() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BEA40(int this)
 {
   int result; // eax
@@ -488,6 +498,8 @@ int __thiscall sub_7BEA40(int this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -516,7 +528,8 @@ retn
 
 // 0x007BF140 (67 bytes)
 int AudioStream_ProcessStream_7BF140() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BF140(int this)
 {
   int result; // eax
@@ -535,6 +548,8 @@ int __thiscall sub_7BF140(int this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -568,7 +583,8 @@ retn
 
 // 0x0040A090 (372 bytes)
 int AudioStream_ResetAudio_40A090() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_40A090(int this)
 {
   _DWORD *v2; // edi
@@ -628,6 +644,8 @@ int __thiscall sub_40A090(int this)
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 88h
@@ -747,7 +765,8 @@ retn
 
 // 0x00405AC0 (132 bytes)
 int AudioStream_SelectRandom_405AC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_405AC0(_DWORD *this)
 {
   _DWORD *v2; // esi
@@ -775,6 +794,8 @@ LABEL_2:
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -846,7 +867,8 @@ retn
 
 // 0x004053E0 (71 bytes)
 int Audio_Call_4053E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4053E0(int this)
 {
   __int64 v2; // rax
@@ -864,6 +886,8 @@ int __thiscall sub_4053E0(int this)
   ++*(_DWORD *)(this + 344);
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -896,7 +920,8 @@ retn
 
 // 0x00405430 (95 bytes)
 int Audio_Call_405430() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_405430(int this)
 {
   __int64 v2; // rax
@@ -924,6 +949,8 @@ int __thiscall sub_405430(int this)
   }
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -964,7 +991,8 @@ retn
 
 // 0x00405A00 (184 bytes)
 int Audio_Call_405A00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_405A00(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -1008,6 +1036,8 @@ int __thiscall sub_405A00(_DWORD *this)
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1090,7 +1120,8 @@ retn
 
 // 0x005D2650 (99 bytes)
 void Audio_Is_5D2650() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
 {
   int v4; // esi
@@ -1114,6 +1145,8 @@ void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1173,7 +1206,8 @@ retn    8
 
 // 0x00690530 (67 bytes)
 void Audio_Is_690530() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_690530(_DWORD *this, void *a2, int a3)
 {
   int i; // esi
@@ -1190,6 +1224,8 @@ void __thiscall sub_690530(_DWORD *this, void *a2, int a3)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1233,7 +1269,8 @@ retn    8
 
 // 0x00401580 (61 bytes)
 void Audio_Method_401580() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_401580(void **Block)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -1249,6 +1286,8 @@ void __thiscall sub_401580(void **Block)
     __3_YAXPAX_Z(*Block);
   __3_YAXPAX_Z(Block);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1287,7 +1326,8 @@ retn
 
 // 0x005D25D0 (128 bytes)
 const char* Audio_Set_5D25D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5D25D0(int this, char *Source, int a3)
 {
   char **v4; // eax
@@ -1319,6 +1359,8 @@ char __thiscall sub_5D25D0(int this, char *Source, int a3)
   *(_DWORD *)(v9 + 4 * v8) = v5;
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -1400,7 +1442,8 @@ retn    8
 
 // 0x00538CC0 (113 bytes)
 const char* BufferIOFileClass_ClearCCFil_538CC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_538CC0(char *Source)
 {
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
@@ -1420,6 +1463,8 @@ int __thiscall sub_538CC0(char *Source)
   v2[0] = (int)&off_7E1668;
   return BufferIOFileClass::Dtor(v2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -1456,7 +1501,8 @@ retn
 
 // 0x005595F0 (119 bytes)
 const char* BufferIOFileClass_ClearCCFil_5595F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5595F0(const char **this, char *Buffer)
 {
   int v3; // eax
@@ -1480,6 +1526,8 @@ int __thiscall sub_5595F0(const char **this, char *Buffer)
   v6[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v6);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = dword ptr  4
@@ -1525,7 +1573,8 @@ retn    4
 
 // 0x00538C40 (120 bytes)
 const char* BufferIOFileClass_ClearCCFile_538C40() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_538C40(char *Source)
 {
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
@@ -1546,6 +1595,8 @@ int __thiscall sub_538C40(char *Source)
   v2[0] = (int)&off_7E1668;
   return BufferIOFileClass::Dtor(v2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -1583,7 +1634,8 @@ retn
 
 // 0x00437290 (180 bytes)
 char Buffer_Init_437290() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_437290(int *a1, int a2, int *a3)
 {
   int v6; // ebx
@@ -1627,6 +1679,8 @@ char __fastcall sub_437290(int *a1, int a2, int *a3)
   Vector::Clear((int)v17);
   return v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 30h
@@ -1700,7 +1754,8 @@ retn    4
 
 // 0x004A6840 (430 bytes)
 const char* Buffer_Init_4A6840() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4A6840(_DWORD *this, int hWnd, int a3, int a4, int a5)
 {
   _DWORD *v6; // eax
@@ -1801,6 +1856,8 @@ LABEL_12:
     *(_BYTE *)this = 1;
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -1982,7 +2039,8 @@ retn    10h
 
 // 0x004039C0 (177 bytes)
 const char* CallAudio_4039C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4039C0(int a1, char *a2)
 {
   unsigned int v3; // edx
@@ -2017,6 +2075,8 @@ int __fastcall sub_4039C0(int a1, char *a2)
            *(_DWORD *)(a1 + 76),
            off_815E9C[*(_DWORD *)(a1 + 84)]);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = dword ptr -4
@@ -2109,7 +2169,8 @@ retn
 
 // 0x00409360 (79 bytes)
 int Callalldiv_409360() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_409360()
 {
   __int64 v0; // rax
@@ -2128,6 +2189,8 @@ int sub_409360()
   }
   return v0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Frequency       = qword ptr -8
@@ -2161,7 +2224,8 @@ retn
 
 // 0x00408560 (51 bytes)
 int Callallmul_408560() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int64 __fastcall sub_408560(int a1, int a2)
 {
   int v2; // esi
@@ -2172,6 +2236,8 @@ unsigned __int64 __fastcall sub_408560(int a1, int a2)
   else
     return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2210,7 +2276,8 @@ retn
 
 // 0x004015C0 (55 bytes)
 void Callbsearch_4015C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __fastcall sub_4015C0(int a1, const void *a2)
 {
   int v3; // eax
@@ -2221,6 +2288,8 @@ unsigned int __fastcall sub_4015C0(int a1, const void *a2)
   else
     return -1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2256,7 +2325,8 @@ retn
 
 // 0x00679CC0 (204 bytes)
 void ClearBufferIOFile_679CC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_679CC0()
 {
   void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
@@ -2294,6 +2364,8 @@ int sub_679CC0()
   }
   return MEMORY[0xB053B4];
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, byte ptr dword_A8ED54+76664h
@@ -2352,7 +2424,8 @@ retn
 
 // 0x00406DE0 (122 bytes)
 bool CreateAudio_406DE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL sub_406DE0()
 {
   int *AudioChannel; // eax
@@ -2370,6 +2443,8 @@ BOOL sub_406DE0()
   MEMORY[0x87E728] = AudioChannel;
   return AudioChannel && AudioQueue::PreallocateChannels(AudioChannel, 16) == 16;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -2411,7 +2486,8 @@ retn
 
 // 0x00406670 (181 bytes)
 void EndAudio_406670() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int *__fastcall sub_406670(void *a1, int a2)
 {
   int *result; // eax
@@ -2453,6 +2529,8 @@ int *__fastcall sub_406670(void *a1, int a2)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:87E2A0h
@@ -2543,7 +2621,8 @@ retn
 
 // 0x006232B0 (89 bytes)
 int EnqueueEventBuffer_6232B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_6232B0(void *hWnd, unsigned int a2, int a3, int a4)
 {
   int result; // eax
@@ -2565,6 +2644,8 @@ int __stdcall sub_6232B0(void *hWnd, unsigned int a2, int a3, int a4)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -2615,7 +2696,8 @@ retn    10h
 
 // 0x0040B5C0 (123 bytes)
 void FlushStream_40B5C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_40B5C0()
 {
   Stream::FlushAndReset(&dword_87F5D8);
@@ -2636,6 +2718,8 @@ void __cdecl sub_40B5C0()
   MEMORY[0x87F5E5] = 0;
   MEMORY[0x87F5E0] = 0;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2679,7 +2763,8 @@ retn
 
 // 0x004036F0 (62 bytes)
 int GetAudio_4036F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4036F0(int a1, int a2)
 {
   int *Next; // esi
@@ -2694,6 +2779,8 @@ int __fastcall sub_4036F0(int a1, int a2)
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2736,7 +2823,8 @@ retn
 
 // 0x00403FA0 (401 bytes)
 void GetAudio_403FA0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_403FA0()
 {
   int v0; // ebp
@@ -2830,6 +2918,8 @@ void sub_403FA0()
   unk_87E2A4 = 0;
   MEMORY[0x87E2A0] = 0;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:87E2A0h
@@ -2986,7 +3076,8 @@ retn
 
 // 0x00408410 (67 bytes)
 int GetAudio_408410() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_408410()
 {
   int Next; // eax
@@ -3005,6 +3096,8 @@ int sub_408410()
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword ptr unk_87E81C
@@ -3049,7 +3142,8 @@ retn
 
 // 0x0040A850 (171 bytes)
 int GetAudio_40A850() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_40A850()
 {
   _WORD *Enabled; // esi
@@ -3087,6 +3181,8 @@ int sub_40A850()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -3147,7 +3243,8 @@ retn
 
 // 0x00751040 (58 bytes)
 int GetAudio_751040() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_751040()
 {
   int result; // eax
@@ -3165,6 +3262,8 @@ int sub_751040()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3200,7 +3299,8 @@ retn
 
 // 0x00751080 (76 bytes)
 int GetAudio_751080() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_751080()
 {
   int result; // eax
@@ -3225,6 +3325,8 @@ int sub_751080()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3269,7 +3371,8 @@ retn
 
 // 0x004A2880 (174 bytes)
 void IStream_ReadI_4A2880() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_4A2880(void *this)
 {
   int v2; // eax
@@ -3305,6 +3408,8 @@ void __thiscall sub_4A2880(void *this)
   if ( v5 )
     (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 8))(v5);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -3393,7 +3498,8 @@ retn
 
 // 0x00402940 (70 bytes)
 int InitAudio_402940() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_402940()
 {
   DListNode::Init(off_815E98);
@@ -3404,6 +3510,8 @@ int sub_402940()
   dword_87DE2C = 1;
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, off_815E98
@@ -3425,7 +3533,8 @@ retn
 
 // 0x00403ED0 (202 bytes)
 int InitAudio_403ED0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_403ED0(int a1, int a2)
 {
   int v4; // ecx
@@ -3452,6 +3561,8 @@ int __fastcall sub_403ED0(int a1, int a2)
   unk_87E2A4 = 1;
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3517,7 +3628,8 @@ retn
 
 // 0x007539D0 (87 bytes)
 int InitBuffer_7539D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_7539D0()
 {
   MEMORY[0xB2D92C] = 256;
@@ -3529,6 +3641,8 @@ int sub_7539D0()
   MEMORY[0xB2D928] = (int)&BSurface_Vtable;
   return atexit(sub_753A30);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, 100h
@@ -3551,7 +3665,8 @@ retn
 
 // 0x00753A50 (87 bytes)
 int InitBuffer_753A50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_753A50()
 {
   MEMORY[0xB2D7F4] = 256;
@@ -3563,6 +3678,8 @@ int sub_753A50()
   MEMORY[0xB2D7F0] = (int)&BSurface_Vtable;
   return atexit(sub_753AB0);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, 100h
@@ -3585,7 +3702,8 @@ retn
 
 // 0x0040A900 (53 bytes)
 int InitializeSoundBufferPlaybackHelper_40A900() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_40A900(int a1)
 {
   int v1; // eax
@@ -3597,6 +3715,8 @@ int __fastcall sub_40A900(int a1)
     v1 = 0;
   return dword_816380[v1];
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lea     eax, [ecx+ecx*4]
@@ -3626,7 +3746,8 @@ retn
 
 // 0x00411B20 (447 bytes)
 int IsAudio_411B20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl sub_411B20(int dwUser, unsigned __int16 *a2, int a3)
 {
   int v3; // eax
@@ -3693,6 +3814,8 @@ int __cdecl sub_411B20(int dwUser, unsigned __int16 *a2, int a3)
   Debug::Log();
   return *((_DWORD *)v5 + 24) != 0 ? -1 : -13;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 dwUser          = dword ptr  4
@@ -3859,7 +3982,8 @@ retn
 
 // 0x00402990 (347 bytes)
 void LinkedList_GetAudio_402990() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_402990()
 {
   int *Next; // edi
@@ -3928,6 +4052,8 @@ void sub_402990()
     dword_87DE2C = 0;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_87DE2C
@@ -4072,7 +4198,8 @@ retn
 
 // 0x00403210 (251 bytes)
 void LinkedList_GetAudio_403210() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *sub_403210()
 {
   int *Next; // eax
@@ -4128,6 +4255,8 @@ void *sub_403210()
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -4241,7 +4370,8 @@ retn
 
 // 0x00406570 (76 bytes)
 int LoadVocFromINIHelper_406570() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_406570(_DWORD *a1, int a2)
 {
   int result; // eax
@@ -4268,6 +4398,8 @@ int __fastcall sub_406570(_DWORD *a1, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 test    dl, 20h
@@ -4307,7 +4439,8 @@ retn
 
 // 0x0048DEE0 (71 bytes)
 void MapClassFillRevealBufferHelper_48DEE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_48DEE0(_DWORD *a1, int a2, int a3)
 {
   int v3; // eax
@@ -4340,6 +4473,8 @@ LABEL_7:
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4384,7 +4519,8 @@ retn    4
 
 // 0x004018C0 (72 bytes)
 int MethodStub_4018C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4018C0(int a1, int a2, int a3)
 {
   int v4; // ecx
@@ -4402,6 +4538,8 @@ int __fastcall sub_4018C0(int a1, int a2, int a3)
   *(_DWORD *)(a1 + 284) -= result;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    edi
@@ -4447,7 +4585,8 @@ retn    4
 
 // 0x007AF970 (345 bytes)
 int OwnerDrawControl_ClearBufferIOFile_7AF970() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall sub_7AF970@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
   _DWORD *v2; // eax
@@ -4505,6 +4644,8 @@ int __usercall sub_7AF970@<eax>(int a1@<ebx>, int a2@<ebp>)
   OwnerDrawControl::InitVtable(v5);
   return v3;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8Ch
@@ -4617,7 +4758,8 @@ retn
 
 // 0x00408390 (54 bytes)
 int RequestAudio_408390() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_408390()
 {
   int result; // eax
@@ -4635,6 +4777,8 @@ int sub_408390()
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword ptr unk_87E81C
@@ -4667,7 +4811,8 @@ retn
 
 // 0x00407550 (302 bytes)
 void* ResetAudio_407550() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_407550()
 {
   int v0; // eax
@@ -4709,6 +4854,8 @@ int sub_407550()
   unk_87E81C = 1;
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -400h
@@ -4806,7 +4953,8 @@ retn
 
 // 0x00409100 (188 bytes)
 int SetMember_409100() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_409100(int *this)
 {
   int v1; // esi
@@ -4868,6 +5016,8 @@ LABEL_13:
   ReadAudioStream(this, 0);
   return v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4969,7 +5119,8 @@ retn
 
 // 0x0048B070 (74 bytes)
 int SetMember_48B070() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_48B070(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -4989,6 +5140,8 @@ _DWORD *__thiscall sub_48B070(_DWORD *this, int a2, int a3)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -5028,7 +5181,8 @@ retn    8
 
 // 0x00405B50 (131 bytes)
 char StopAudio_405B50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_405B50(int a1, char a2)
 {
   _DWORD *v3; // esi
@@ -5057,6 +5211,8 @@ _DWORD *__fastcall sub_405B50(int a1, char a2)
   }
   return v3;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -5118,7 +5274,8 @@ retn
 
 // 0x00407780 (218 bytes)
 void StopAudio_407780() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_407780()
 {
   int *i; // esi
@@ -5151,6 +5308,8 @@ void sub_407780()
     unk_87E81C = 0;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword ptr unk_87E81C
@@ -5233,7 +5392,8 @@ retn
 
 // 0x004DB8A0 (265 bytes)
 int StreamClass_SetMember413_4DB8A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4DB8A0(_DWORD *this)
 {
   int v2; // ebx
@@ -5291,6 +5451,8 @@ LABEL_13:
     return (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr -8
@@ -5426,7 +5588,8 @@ retn
 
 // 0x005584F0 (61 bytes)
 void StreamProcess_5584F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_5584F0(char *a1, void *a2)
 {
   int v2; // esi
@@ -5449,6 +5612,8 @@ int __fastcall sub_5584F0(char *a1, void *a2)
   }
   return v2;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 test    ecx, ecx
@@ -5495,7 +5660,8 @@ retn
 
 // 0x005B6DA0 (264 bytes)
 void Stream_Draw_5B6DA0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5B6DA0(#44 *this, #72 *Source)
 {
   unsigned int v3; // edi
@@ -5529,6 +5695,8 @@ void __thiscall sub_5B6DA0(#44 *this, #72 *Source)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Format          = dword ptr -300h
@@ -5635,7 +5803,8 @@ retn    4
 
 // 0x00764A20 (264 bytes)
 void String_PrependBufferIOFile_764A20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_764A20(char **this)
 {
   int Int; // esi
@@ -5679,6 +5848,8 @@ int __thiscall sub_764A20(char **this)
     return -1;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 9Ch
@@ -5758,7 +5929,8 @@ retn
 
 // 0x0053E070 (344 bytes)
 int UpdateAudio_53E070() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_53E070(_DWORD *lpThreadParameter)
 {
   _DWORD *v1; // esi
@@ -5823,6 +5995,8 @@ int __stdcall sub_53E070(_DWORD *lpThreadParameter)
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lpThreadParameter= dword ptr  4

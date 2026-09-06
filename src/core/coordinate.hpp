@@ -5,52 +5,27 @@
 
 namespace gamemd {
 
+// Cell lookup helper (IDA 0x5657A0 CellCoord::To_CellObj - global fn,
+// mis-modeled as a virtual member in misc_ext.hpp historically)
+class MapClass;
+class CellClass;
+namespace CellCoord {
+CellClass* To_CellObj(MapClass* map, const CellStruct* coords);  // 0x5657A0
+}
+
 constexpr int kLeptonsPerCell = 256;
 constexpr int kCellCenter = kLeptonsPerCell / 2;
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept
-{
-    return CoordStruct(
-        cell.X * kLeptonsPerCell + kCellCenter,
-        cell.Y * kLeptonsPerCell + kCellCenter,
-        z
-    );
-}
+CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept;
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline CellStruct Coord2Cell(const CoordStruct& crd) noexcept
-{
-    return CellStruct(
-        static_cast<int16_t>(crd.X / kLeptonsPerCell),
-        static_cast<int16_t>(crd.Y / kLeptonsPerCell)
-    );
-}
+CellStruct Coord2Cell(const CoordStruct& crd) noexcept;
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline int Distance(const CoordStruct& a, const CoordStruct& b) noexcept
-{
-    int dx = a.X - b.X;
-    if (dx < 0) dx = -dx;
-    int dy = a.Y - b.Y;
-    if (dy < 0) dy = -dy;
+int Distance(const CoordStruct& a, const CoordStruct& b) noexcept;
 
-    if (dx > dy)
-        return dx + (dy / 2);
-    return dy + (dx / 2);
-}
-
-inline int CellDistance(const CellStruct& a, const CellStruct& b) noexcept
-{
-    int dx = a.X - b.X;
-    if (dx < 0) dx = -dx;
-    int dy = a.Y - b.Y;
-    if (dy < 0) dy = -dy;
-
-    if (dx > dy)
-        return dx + (dy / 2);
-    return dy + (dx / 2);
-}
+int CellDistance(const CellStruct& a, const CellStruct& b) noexcept;
 
 // unmatched: no callgraph reference and no git history record
 uint8_t Direction8(const CoordStruct& from, const CoordStruct& to) noexcept;

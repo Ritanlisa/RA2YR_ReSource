@@ -174,7 +174,8 @@ int ZCoordToScreenY(int z_world)
 // 0x6d7560
 void TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TacticalClass_RenderIsometric(int this, int *a2, int a3)
 {
   int v3; // eax
@@ -292,6 +293,8 @@ unsigned int __thiscall TacticalClass_RenderIsometric(int this, int *a2, int a3)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 98h
@@ -529,7 +532,8 @@ retn    8
 // 0x480350
 void TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_480350(int this, _DWORD *a2, _DWORD *a3, char a4)
 {
   int v4; // eax
@@ -615,6 +619,8 @@ LABEL_11:
   }
   return v4;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, byte ptr [esp+arg_8]
@@ -786,7 +792,8 @@ retn    0Ch
 // 0x6d7840
 void TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
 {
   unsigned int result; // eax
@@ -964,6 +971,8 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 48h
@@ -1288,7 +1297,8 @@ retn    8
 // 0x6d7c00
 void TacticalClass::DrawTerrain(const RectangleStruct& viewRect)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
 {
   int *v3; // edi
@@ -1427,6 +1437,8 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 4Ch
@@ -1698,7 +1710,8 @@ void TacticalClass::DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* boun
 // 0x6d3040
 void TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, int *a3, char a4)
 {
   _DWORD *v5; // ebx
@@ -1804,6 +1817,8 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 54h
@@ -2056,7 +2071,8 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
 // 0x4d1890
 void TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::DrawBuildings(int *this)
 {
   int result; // eax
@@ -2556,6 +2572,8 @@ LABEL_49:
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+0E47FCh
@@ -3449,7 +3467,8 @@ void TacticalClass::RenderIsometricOverlay(const RectangleStruct& viewRect)
 // 0x658780
 void TacticalClass::renderOverlay()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TacticalClass::sub_658780(_DWORD *Block, char a2)
 {
   GadgetClass::Dtor(Block);
@@ -3457,6 +3476,8 @@ _DWORD *__thiscall TacticalClass::sub_658780(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3492,7 +3513,8 @@ void TacticalClass::RenderCellFogOfWar(int cx, int cy)
 // 0x550260
 void TacticalClass::RenderCells()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TacticalClass_RenderCells(int this)
 {
   int v2; // eax
@@ -3853,6 +3875,8 @@ char __thiscall TacticalClass_RenderCells(int this)
   }
   return v2;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -4472,7 +4496,8 @@ retn
 // 0x6d8b30
 void TacticalClass::CalcViewportCells()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TacticalClass_CalcViewportCells(int this)
 {
   int v2; // ecx
@@ -4514,6 +4539,8 @@ unsigned int __thiscall TacticalClass_CalcViewportCells(int this)
   *(_DWORD *)(this + 3468) = MEMORY[0xB0CE34] / 15 + 4;
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -4607,7 +4634,8 @@ retn
 // 0x653760
 bool TacticalClass::PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall TacticalClass_PixelToCellCheck(_DWORD *a1, int *a2)
 {
   int v2; // edx
@@ -4632,6 +4660,7 @@ _DWORD *__stdcall TacticalClass_PixelToCellCheck(_DWORD *a1, int *a2)
     return a1;
   }
 }
+#endif
 
 /* ASM:
 sub     esp, 14h
@@ -4697,6 +4726,7 @@ mov     [eax], ecx
 add     esp, 14h
 retn    8
 */
+    return false; // TODO stub - translate quarantined IDA block above
 }
 
 // IDA: 0x656750 -- TacticalClass::ScreenToCellLookup
@@ -4704,7 +4734,8 @@ retn    8
 // 0x656750
 CellStruct TacticalClass::ScreenToCellLookup(const Point2D& screen) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_656750(int this, _DWORD *a2, _DWORD *a3, _DWORD *a4)
 {
   int v4; // esi
@@ -4764,6 +4795,7 @@ LABEL_8:
   }
   return result;
 }
+#endif
 
 /* ASM:
 sub     esp, 14h
@@ -4885,6 +4917,7 @@ mov     [ecx], edx
 add     esp, 14h
 retn    0Ch
 */
+    return {}; // TODO stub - translate quarantined IDA block above
 }
 
 // ============================================================
@@ -4896,7 +4929,8 @@ retn    0Ch
 // 0x483e30
 void TacticalClass::SetView(int view_x, int view_y, int view_width, int view_height)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall TacticalClass_SetView(int this, int a2, int a3, __int16 a4, __int16 a5, __int16 a6, __int16 a7)
 {
   int v7; // eax
@@ -4988,6 +5022,8 @@ LABEL_18:
   *(_WORD *)(this + 264) = 0;
   return v18;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -5163,7 +5199,8 @@ retn    18h
 // 0x4a8960
 void TacticalClass::SetViewDimensions(int width, int height)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __stdcall TacticalClass::SetViewDimensions(int *a1)
 {
   void *v1; // esi
@@ -5261,6 +5298,8 @@ void __stdcall TacticalClass::SetViewDimensions(int *a1)
   TacticalClass::processInput((int **)&MEMORY[0x87F7E8][536862], MEMORY[0x87F7E8][7664]);
   Debug::Log();
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -5469,7 +5508,8 @@ retn    4
 // 0x537620
 void TacticalClass::InitView()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall TacticalClass_InitView(int a1)
 {
   int v1; // eax
@@ -5489,6 +5529,8 @@ _DWORD *__stdcall TacticalClass_InitView(int a1)
     return Tactical::MouseMove((int)&MEMORY[0x87F7E8], &v3, &MEMORY[0xA8F2F8]);
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -5531,7 +5573,8 @@ retn    4
 // 0x6d5f60
 void TacticalClass::SetViewportPosition(int x, int y)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_6D5F60(int this, int *a2)
 {
   int v3; // eax
@@ -5566,6 +5609,8 @@ unsigned int __thiscall sub_6D5F60(int this, int *a2)
   *(_BYTE *)(this + 3453) = 1;
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -5622,7 +5667,8 @@ retn    4
 // 0x6d2540
 void TacticalClass::ScrollViewport(int dx, int dy)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TacticalClass::ScrollViewport(int this)
 {
   int v1; // eax
@@ -5754,6 +5800,8 @@ LABEL_21:
   }
   return v1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, ds:0A8D5F8h
@@ -5953,7 +6001,8 @@ retn
 // 0x5090a0
 void TacticalClass::updateVisibility()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::updateVisibility(int *this)
 {
   int v1; // esi
@@ -5980,6 +6029,8 @@ int __thiscall TacticalClass::updateVisibility(int *this)
   }
   return v1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -6036,7 +6087,8 @@ retn
 // 0x74d490
 void TacticalClass::Render(ObjectClass* obj)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74D490(int this)
 {
   int v2; // eax
@@ -6086,6 +6138,8 @@ void __thiscall sub_74D490(int this)
       0);
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -6215,7 +6269,8 @@ void TacticalClass::RenderFrame()
 // 0x6d9ef0
 void TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TacticalClass_AddToDrawQueue(_DWORD *this, int a2, int a3, int a4)
 {
   int v4; // eax
@@ -6233,6 +6288,8 @@ char __thiscall TacticalClass_AddToDrawQueue(_DWORD *this, int a2, int a3, int a
   ++*(this + 876);
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0DB0h]
@@ -6341,7 +6398,8 @@ void TacticalClass::InterpolateView()
 // 0x6d2280
 Point2D TacticalClass::TransformPixel(const Point2D& pixel) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TacticalClass_TransformPixel(int this, _DWORD *a2, _DWORD *a3)
 {
   int v3; // esi
@@ -6381,6 +6439,7 @@ _DWORD *__thiscall TacticalClass_TransformPixel(int this, _DWORD *a2, _DWORD *a3
     return a2;
   }
 }
+#endif
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -6452,6 +6511,7 @@ mov     [ecx+8], edx
 add     esp, 18h
 retn    8
 */
+    return {}; // TODO stub - translate quarantined IDA block above
 }
 
 // IDA: 0x631E50 -- TacticalClass::InterpolateColor
@@ -6459,7 +6519,8 @@ retn    8
 // 0x631e50
 uint32_t TacticalClass::InterpolateColor(uint32_t elapsed_ms)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_631E50(_DWORD *this, int a2)
 {
   int v2; // eax
@@ -6479,6 +6540,8 @@ int __thiscall sub_631E50(_DWORD *this, int a2)
   *(this + 3) = (result * *(this + 8) + (4096 - result) * *(this + 11)) >> 12;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+14h]
@@ -6538,7 +6601,8 @@ retn    4
 // 0x631ee0
 bool TacticalClass::DecrementCounter(uint32_t delta)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_631EE0(_DWORD *this, int a2)
 {
   int v2; // eax
@@ -6550,6 +6614,8 @@ char __thiscall sub_631EE0(_DWORD *this, int a2)
   *(this + 14) = 0;
   return 1;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -6586,7 +6652,8 @@ void TacticalClass::MapSpecialDrawMode()
 // 0x653850
 void TacticalClass::MouseInput(int x, int y, int buttons)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass_MouseInput(_DWORD *this, _DWORD *a2, _DWORD *a3)
 {
   int v4; // edi
@@ -6645,6 +6712,8 @@ int __thiscall TacticalClass_MouseInput(_DWORD *this, _DWORD *a2, _DWORD *a3)
     return ChronoScreenEffect::DecrementCounter();
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -6804,7 +6873,8 @@ retn    8
 // 0x6539d0
 void TacticalClass::ProcessMouseClick(int x, int y)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::ProcessMouseClick(_BYTE *this, char a2, int a3, int a4)
 {
   int v4; // esi
@@ -7095,6 +7165,8 @@ LABEL_34:
   }
   return 0;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 44h

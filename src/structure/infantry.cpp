@@ -67,7 +67,8 @@ void InfantryClass::ProcessDeploy()
 // 0x51d6f0
 int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::ProcessDeployAction(_DWORD *this, int a2, char a3, char a4)
 {
   int v4; // edi
@@ -251,6 +252,8 @@ LABEL_12:
   }
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -648,7 +651,8 @@ retn    0Ch
 // 0x5200b0
 int InfantryClass::ProcessIdleDeploy()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5200B0(int *this)
 {
   int v2; // eax
@@ -723,6 +727,8 @@ LABEL_42:
   }
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -915,7 +921,8 @@ bool InfantryClass::IsBombDeployMission()
 // 0x514310
 int InfantryClass::DeployAnimation()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall InfantryClass::DeployAnimation(int a1)
 {
   _DWORD *v1; // edi
@@ -1253,6 +1260,8 @@ LABEL_81:
   }
   return (*(char (__stdcall **)(int))(*(_DWORD *)a1 + 16))(a1);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -2064,7 +2073,8 @@ retn    4
 // 0x521d80
 int InfantryClass::ComputeDeploySpeedFactor()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::ComputeDeploySpeedFactor(int this)
 {
   int v2; // ecx
@@ -2080,6 +2090,8 @@ int __thiscall InfantryClass::ComputeDeploySpeedFactor(int this)
   }
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2123,7 +2135,8 @@ retn
 // 0x5218e0
 int InfantryClass::GetDeployWeaponIndex()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::GetDeployWeaponIndex(#377 *this, int a2)
 {
   int v3; // ecx
@@ -2142,6 +2155,8 @@ int __thiscall InfantryClass::GetDeployWeaponIndex(#377 *this, int a2)
   }
   return *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3408);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2204,7 +2219,8 @@ retn    4
 // 0x4598a0
 bool InfantryClass::updateDeployAnimation()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
 {
   int v1; // eax
@@ -2212,6 +2228,8 @@ BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
   v1 = *(this + 328);
   return *(_BYTE *)(v1 + 5806) || *(_BYTE *)(v1 + 5807);
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -2239,7 +2257,8 @@ retn
 // 0x522600
 int InfantryClass::FireAtTargetPos()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
 {
   int v4; // eax
@@ -2257,6 +2276,8 @@ int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
            0,
            a3);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -2284,7 +2305,8 @@ retn    0Ch
 // 0x51df60
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::FireWeaponWithCleanup(#377 *this, int a2, int a3)
 {
   int v4; // edi
@@ -2313,6 +2335,8 @@ int __thiscall InfantryClass::FireWeaponWithCleanup(#377 *this, int a2, int a3)
   }
   return v4;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -2369,7 +2393,8 @@ retn    8
 // 0x51c8b0
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall InfantryClass::GetFireError(int a1, int a2, int *a3, int a4, int a5)
 {
   int v6; // eax
@@ -2482,6 +2507,8 @@ LABEL_64:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -2809,7 +2836,8 @@ retn    0Ch
 // 0x5227f0
 bool InfantryClass::CanAttackTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall InfantryClass::CanAttackTarget(#375 **this, #375 *other)
 {
   _DWORD *v3; // eax
@@ -2838,6 +2866,8 @@ bool __thiscall InfantryClass::CanAttackTarget(#375 **this, #375 *other)
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 other           = dword ptr  4
@@ -2937,7 +2967,8 @@ int InfantryClass::ProcessIdleAction()
 // 0x5239d0
 int InfantryClass::ProcessAnimation()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5239D0(int this)
 {
   int v2; // eax
@@ -2993,6 +3024,8 @@ int __thiscall sub_5239D0(int this)
   *(_DWORD *)(this + 3672) = 0;
   return TechnoTypeClass::DTOR(this);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -3095,7 +3128,8 @@ retn
 // 0x521320
 int InfantryClass::GetIdleTimer()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass_GetIdleTimer(int *this)
 {
   int v2; // eax
@@ -3220,6 +3254,8 @@ int __thiscall InfantryClass_GetIdleTimer(int *this)
     return v15 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -3552,7 +3588,8 @@ retn
 // 0x5216d0
 bool InfantryClass::CanMoveFreely()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::CanMoveFreely(int this)
 {
   char result; // al
@@ -3583,6 +3620,8 @@ char __thiscall InfantryClass::CanMoveFreely(int this)
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3679,7 +3718,8 @@ bool InfantryClass::CanMoveThroughCell()
 // 0x51dff0
 int InfantryClass::MoveToCell()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::MoveToCell(int this, int *a2, int a3)
 {
   int *v3; // esi
@@ -3728,6 +3768,8 @@ char __thiscall InfantryClass::MoveToCell(int this, int *a2, int a3)
   *(_DWORD *)(this + 1768) = 2;
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -3862,7 +3904,8 @@ retn    8
 // 0x51df10
 int InfantryClass::CancelMovement()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::CancelMovement(int this)
 {
   if ( !*(_DWORD *)(this + 1652) )
@@ -3873,6 +3916,8 @@ int __thiscall InfantryClass::CancelMovement(int this)
   *(_DWORD *)(this + 1732) = 0;
   return TechnoClass::CleanupDirection((_BYTE *)this);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3916,7 +3961,8 @@ int InfantryClass::FindMoveTarget()
 // 0x418e20
 int InfantryClass::FindNearbyCell()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
 {
   int v2; // esi
@@ -4011,6 +4057,8 @@ void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
   }
   return (void *)v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -4247,7 +4295,8 @@ retn    4
 // 0x51f330
 int InfantryClass::FindPathToBuilding()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::FindPathToBuilding(int *this)
 {
   int v2; // eax
@@ -4280,6 +4329,8 @@ int __thiscall InfantryClass::FindPathToBuilding(int *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -4357,7 +4408,8 @@ retn
 // 0x51f3e0
 int InfantryClass::EnterBuilding()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::EnterBuilding(float *this)
 {
   int v2; // ecx
@@ -4402,6 +4454,8 @@ int __thiscall InfantryClass::EnterBuilding(float *this)
     return InfantryClass::ScanTarget((int)this);
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4543,7 +4597,8 @@ retn
 // 0x51f540
 int InfantryClass::ProcessEnterOrRepair()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
 {
   int v2; // ecx
@@ -4571,6 +4626,8 @@ int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
     return InfantryClass::ProcessDeploy(this);
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4664,7 +4721,8 @@ retn
 // 0x522bc0
 bool InfantryClass::CanEnterBuilding()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall InfantryClass::CanEnterBuilding(_DWORD *this)
 {
   int v2; // eax
@@ -4680,6 +4738,8 @@ bool __thiscall InfantryClass::CanEnterBuilding(_DWORD *this)
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4728,7 +4788,8 @@ int InfantryClass::FindIdleMovePosition()
 // 0x51f640
 int InfantryClass::FindIdleAITarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::FindIdleAITarget(int *this)
 {
   int result; // eax
@@ -4738,6 +4799,8 @@ int __thiscall InfantryClass::FindIdleAITarget(int *this)
     return FootClass::FindAITarget(this);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4761,7 +4824,8 @@ retn
 // 0x521760
 int InfantryClass::ParachuteTo()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::ParachuteTo(int this, int a2)
 {
   if ( !(unsigned __int8)ObjectClass::ParachuteDrop((#374 *)this) )
@@ -4773,6 +4837,8 @@ char __thiscall InfantryClass::ParachuteTo(int this, int a2)
   (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)this + 1368))(this, 33, 1, 0);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -4827,7 +4893,8 @@ retn    4
 // 0x51f6e0
 int InfantryClass::ProcessIvanBomb()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::ProcessIvanBomb(_DWORD *this)
 {
   int v2; // ecx
@@ -4879,6 +4946,8 @@ int __thiscall InfantryClass::ProcessIvanBomb(_DWORD *this)
   else
     return AbstractClass::COMStub_143();
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -5018,7 +5087,8 @@ int InfantryClass::CheckAndApplyBomb()
 // 0x521c90
 int InfantryClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass_PowerDrainUpdate(int this, int *a2)
 {
   int v3; // edx
@@ -5053,6 +5123,8 @@ int __thiscall InfantryClass_PowerDrainUpdate(int this, int *a2)
   LOBYTE(v9) = *(_BYTE *)(this + 1757);
   return Power::FlagProcess(a2, v9);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -5118,7 +5190,8 @@ retn    4
 // 0x51aa10
 int InfantryClass::HandleTargetDestroyed()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
 {
   int result; // eax
@@ -5128,6 +5201,8 @@ int __thiscall InfantryClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
     *(this + 432) = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -5152,7 +5227,8 @@ retn    8
 // 0x51f250
 int InfantryClass::ProcessUpdate()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::_vt80(_BYTE *this, int a2, __int16 *a3, __int16 *a4, void **a5)
 {
   int v6; // eax
@@ -5167,6 +5243,8 @@ char __thiscall InfantryClass::_vt80(_BYTE *this, int a2, __int16 *a3, __int16 *
     return 0;
   return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -5233,7 +5311,8 @@ retn    10h
 // 0x51f190
 int InfantryClass::ValidateTargetAndMove()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::ValidateTargetAndMove(int *this, int a2, int *a3, int a4)
 {
   int v5; // eax
@@ -5259,6 +5338,8 @@ char __thiscall InfantryClass::ValidateTargetAndMove(int *this, int a2, int *a3,
     return 0;
   return FootClass::ValidateMove(this, v5, a3, a4);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -5348,7 +5429,8 @@ int InfantryClass::ProcessTunnelMovement()
 // 0x736579
 int InfantryClass::UpdateBehavior()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall InfantryClass::UpdateBehavior@<al>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, _BYTE *a4@<esi>, int a5)
 {
   void **v5; // eax
@@ -5508,6 +5590,8 @@ char __usercall InfantryClass::UpdateBehavior@<al>(int a1@<eax>, int a2@<ecx>, i
   }
   return (char)v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 enter   1, 0
@@ -5851,7 +5935,8 @@ retn
 // 0x51dbd0
 int InfantryClass::CalcFacingToTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::CalcFacingToTarget(_BYTE *this, int *a2)
 {
   int v3; // edx
@@ -5957,6 +6042,8 @@ char __thiscall InfantryClass::CalcFacingToTarget(_BYTE *this, int *a2)
   (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)this + 240))(this, a2);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -6228,7 +6315,8 @@ retn    4
 // 0x51bf90
 int InfantryClass::EvaluateTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, int a5, int a6)
 {
   __int64 v7; // rax
@@ -6586,6 +6674,8 @@ LABEL_159:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -7468,7 +7558,8 @@ retn    14h
 // 0x51e140
 int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int64 a3)
 {
   int v4; // ecx
@@ -7566,6 +7657,8 @@ LABEL_21:
     v9 |= 0x240u;
   return FootClass::SelectAutoTarget_Cloaked(v9, a3, HIDWORD(a3));
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -7937,7 +8030,8 @@ int InfantryClass::CaptureAttackerInfo()
 // 0x522780
 int InfantryClass::InitProductionLimits()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::InitProductionLimits(int this)
 {
   int result; // eax
@@ -7971,6 +8065,8 @@ int __thiscall InfantryClass::InitProductionLimits(int this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+6C0h]
@@ -8013,7 +8109,8 @@ retn
 // 0x522640
 int InfantryClass::GetProductionLimit()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::GetProductionLimit(int this, char a2)
 {
   int result; // eax
@@ -8036,6 +8133,8 @@ int __thiscall InfantryClass::GetProductionLimit(int this, char a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A83D4Ch
@@ -8130,11 +8229,14 @@ int InfantryClass::ResetReloadIfNeeded()
 // 0x5220f0
 int InfantryClass::SetFlag1752()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall InfantryClass::SetFlag1752(_BYTE *this)
 {
   *(this + 1752) = 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     byte ptr [ecx+6D8h], 1
@@ -8187,7 +8289,8 @@ int InfantryClass::RepairBridge()
 // 0x522340
 void InfantryClass::CalculateApproachPath()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall InfantryClass::CalculateApproachPath(int this, char a2)
 {
   int v3; // eax
@@ -8251,6 +8354,8 @@ void *__thiscall InfantryClass::CalculateApproachPath(int this, char a2)
   }
   return 0;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -8406,11 +8511,14 @@ retn    4
 // 0x5224d0
 bool InfantryClass::IsBridgeRepairEnabled()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryClass::IsBridgeRepairEnabled(_DWORD *this)
 {
   return *(_BYTE *)(*(this + 432) + 3779);
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+6C0h]
@@ -8422,7 +8530,8 @@ retn
 // 0x522d50
 int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InfantryClass::SlaveGiveMoney_RecordBalanceBefore(float *this, _DWORD *a2)
 {
   float *v2; // ebp
@@ -8475,6 +8584,8 @@ int __thiscall InfantryClass::SlaveGiveMoney_RecordBalanceBefore(float *this, _D
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -8585,7 +8696,8 @@ retn    4
 // 0x772ac0
 void InfantryClass::startPanic()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_772AC0(_DWORD *this)
 {
   int v1; // eax
@@ -8593,6 +8705,8 @@ bool __thiscall sub_772AC0(_DWORD *this)
   v1 = *(this + 43);
   return v1 && *(_BYTE *)(v1 + 324);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+0ACh]
@@ -8625,7 +8739,8 @@ int InfantryClass::CheckHealthDiff_0()
 // 0x518f90
 void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge InfantryClass::Draw@<eax>(
 {
   int v17; // edx
@@ -8958,6 +9073,7 @@ LABEL_48:
     return (*(int (__stdcall **)(int))(*(_DWORD *)v69 + 8))(v69);
   return result;
 }
+#endif
 
 /* ASM:
 sub     esp, 44h
@@ -9564,6 +9680,7 @@ pop     ebx
 add     esp, 44h
 retn    8
 */
+    // TODO stub - translate quarantined IDA block above
 }
 
 void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const

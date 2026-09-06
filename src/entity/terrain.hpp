@@ -30,7 +30,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     // wrapper: delegates to TerrainClass::LoadFromStream at 0x71CDA0
-    virtual ~TerrainClass() override = default;
+    virtual ~TerrainClass() override;
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

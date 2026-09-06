@@ -30,7 +30,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~SmudgeClass() override = default;
+    virtual ~SmudgeClass() override;
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

@@ -59,7 +59,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
-    virtual ~TiberiumClass() override = default;  // 0x721E40
+    virtual ~TiberiumClass() override;  // 0x721E40
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

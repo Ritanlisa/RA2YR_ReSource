@@ -22,16 +22,10 @@ struct TintStruct
     int32_t Blue;
 
     constexpr TintStruct() noexcept
-        // unmatched: no callgraph reference and no git history record
-        : Red(0), Green(0), Blue(0)
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
 
     constexpr TintStruct(int32_t r, int32_t g, int32_t b) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : Red(r), Green(g), Blue(b)
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
 };
 
 struct HSVClass

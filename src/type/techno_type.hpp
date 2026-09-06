@@ -56,14 +56,7 @@ struct WeaponStruct
     int BarrelThickness;
     bool TurretLocked;
 
-    WeaponStruct() noexcept
-        : WeaponType(nullptr)
-        , FLH()
-        , BarrelLength(0)
-        , BarrelThickness(0)
-        // unmatched: no callgraph reference and no git history record
-        , TurretLocked(false)
-    {}
+    WeaponStruct() noexcept;
 
     // unmatched: no callgraph reference and no git history record
     bool operator==(const WeaponStruct& rhs) const;
@@ -117,7 +110,7 @@ public:
     CoordStruct GetParticleSysOffset() const;
 
     // design: inline accessor, inlined at all call sites
-    bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; }
+    bool InOwners(DWORD bitHouseType) const;
     // unmatched: no callgraph reference and no git history record
     bool InRequiredHouses(DWORD bitHouseType) const;
     // unmatched: no callgraph reference and no git history record

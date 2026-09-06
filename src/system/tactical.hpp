@@ -55,30 +55,25 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TacticalMap;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     // design: defaulted virtual destructor, no binary equivalent
-    virtual ~TacticalClass() = default;
+    virtual ~TacticalClass();
 
     // design: inline accessor, inlined at all call sites
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TacticalMap; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override;
 
     // design: no binary equivalent found in IDA
     bool CoordsToClient(const CoordStruct& coords, Point2D* out_client) const;
     // design: no binary equivalent found in IDA
     CoordStruct* ClientToCoords(CoordStruct* out, const Point2D& client) const;
-    CoordStruct ClientToCoords(const Point2D& client) const
-    {
-        CoordStruct buf;
-        ClientToCoords(&buf, client);
-        return buf;
-    }
+    CoordStruct ClientToCoords(const Point2D& client) const;
 
     // Coordinate transforms
     // design: no binary equivalent found in IDA

@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x005E66F0 (419 bytes)
 char DispatchScenario_5E66F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_5E66F0()
 {
   int v0; // eax
@@ -106,6 +107,8 @@ LABEL_20:
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+31FECh
@@ -275,7 +278,8 @@ jmp     loc_5BB260
 
 // 0x006D0F10 (85 bytes)
 void LoadFile_6D0F10() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *sub_6D0F10()
 {
   int v0; // esi
@@ -301,6 +305,8 @@ void *sub_6D0F10()
   while ( (int)v1 < (int)&MEMORY[0xB0C1AC] );
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -100h
@@ -338,7 +344,8 @@ retn
 
 // 0x007011A0 (276 bytes)
 int ScenarioClass_CalcMath_7011A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7011A0(int *this)
 {
   int v3; // edi
@@ -378,6 +385,8 @@ int __thiscall sub_7011A0(int *this)
   Math::Sqrt((double)(v10 * v10 + (v11 << 8) * (v11 << 8)));
   return Math::RoundToInt(v9);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -484,7 +493,8 @@ retn
 
 // 0x006E0080 (130 bytes)
 char ScenarioClass_GetScenario_6E0080() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0080(int *this, int a2, int a3, int a4, int a5)
 {
   int v5; // ebx
@@ -514,6 +524,8 @@ char __thiscall sub_6E0080(int *this, int a2, int a3, int a4, int a5)
   while ( v6 < MEMORY[0xA80218] );
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -580,7 +592,8 @@ retn    10h
 
 // 0x006394E0 (193 bytes)
 char SetScenario_6394E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_6394E0(_DWORD *a1, int a2)
 {
   _BYTE *v3; // esi
@@ -664,6 +677,8 @@ char __fastcall sub_6394E0(_DWORD *a1, int a2)
   }
   return (char)v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [edx+4]
@@ -750,7 +765,8 @@ retn
 
 // 0x006E2790 (179 bytes)
 char Tactical_GetScenario_6E2790() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 {
   int v6; // [esp+0h] [ebp-14h] BYREF
@@ -771,6 +787,8 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
   Tactical::SetTacticalPosition(MEMORY[0x87F7E8][7887], v8);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h

@@ -14304,16 +14304,7 @@ static constexpr HashName kXccNames[] = {
 
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline const char* XccLookup(uint32_t hash) {
-    int lo = 0, hi = kXccNameCount - 1;
-    while (lo <= hi) {
-        int mid = (lo + hi) / 2;
-        if (kXccNames[mid].hash == hash) return kXccNames[mid].name;
-        if (kXccNames[mid].hash < hash) lo = mid + 1;
-        else hi = mid - 1;
-    }
-    return nullptr;
-}
+const char* XccLookup(uint32_t hash);
 
 } // namespace xcc
 } // namespace gamemd

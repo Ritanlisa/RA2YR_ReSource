@@ -33,7 +33,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     // design: virtual function, no binary implementation matched in IDA
-    virtual ~OverlayClass() override = default;
+    virtual ~OverlayClass() override;
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004C29E0 (115 bytes)
 void GameDestroyAllObjectsHelper_4C29E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_4C29E0()
 {
   int i; // esi
@@ -38,6 +39,8 @@ void sub_4C29E0()
   MEMORY[0x8A0E95] = 0;
   MEMORY[0x8A0E90] = 0;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:8A0E98h
@@ -94,7 +97,8 @@ retn
 
 // 0x0077F520 (481 bytes)
 char RequestDebug_77F520() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_77F520(char a1)
 {
   char result; // al
@@ -189,6 +193,8 @@ char __fastcall sub_77F520(char a1)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -390,7 +396,8 @@ retn
 
 // 0x0077F710 (492 bytes)
 char RequestDebug_77F710() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_77F710(unsigned __int8 a1, char a2)
 {
   char result; // al
@@ -485,6 +492,8 @@ char __fastcall sub_77F710(unsigned __int8 a1, char a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -692,7 +701,8 @@ retn
 
 // 0x004B5830 (108 bytes)
 int TechnoClass_SetMember2_4B5830() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
 {
   int v3; // eax
@@ -728,6 +738,8 @@ _DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
   while ( v6 < *(this + 2) );
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -785,7 +797,8 @@ retn    4
 
 // 0x00452000 (357 bytes)
 int Techno_Start_452000() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_452000(_DWORD *a1)
 {
   int v2; // eax
@@ -864,6 +877,8 @@ int __fastcall sub_452000(_DWORD *a1)
   while ( v13 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h

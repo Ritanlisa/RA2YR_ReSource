@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x005A5AE0 (107 bytes)
 double RandomProcess_5A5AE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_5A5AE0(__int16 *a1, __int16 *a2)
 {
   signed int v2; // ecx
@@ -22,6 +23,8 @@ double __stdcall sub_5A5AE0(__int16 *a1, __int16 *a2)
     v5 = v2;
   return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 3.0 * 2.328306437080797e-10 + (double)v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -65,7 +68,8 @@ retn    8
 
 // 0x0069B690 (111 bytes)
 int Random_Rang_69B690() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_69B690(_DWORD *this)
 {
   int result; // eax
@@ -114,6 +118,8 @@ LABEL_10:
     }
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -183,7 +189,8 @@ retn
 
 // 0x00404BB0 (456 bytes)
 int Random_Range_404BB0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_404BB0(int this)
 {
   _DWORD *v2; // edi
@@ -309,6 +316,8 @@ LABEL_30:
   --*(_DWORD *)(this + 616);
   return v17;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -507,7 +516,8 @@ retn
 
 // 0x0058C320 (142 bytes)
 int Random_Stat_58C320() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
 {
   int v2; // ebx
@@ -532,6 +542,8 @@ _DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
   *a2 = v6;
   return a2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:89C2DCh
@@ -594,7 +606,8 @@ retn    4
 
 // 0x0058BE20 (126 bytes)
 int Random_State_58BE20() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58BE20(_DWORD *this)
 {
   unsigned int v2; // esi
@@ -619,6 +632,8 @@ _DWORD *__thiscall sub_58BE20(_DWORD *this)
   *this = *(_DWORD *)((char *)MEMORY[0xABED10] + v5);
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:89C2DCh
@@ -674,7 +689,8 @@ retn
 
 // 0x00770970 (213 bytes)
 void String_DeleteRandom_770970() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_770970(int *this, int a2, int a3, void **a4)
 {
   char **v4; // ebx
@@ -719,6 +735,8 @@ char __thiscall sub_770970(int *this, int a2, int a3, void **a4)
   }
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -814,7 +832,8 @@ retn    0Ch
 
 // 0x00770A50 (213 bytes)
 void String_DeleteRandom_770A50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_770A50(int *this, int a2, int a3, void **a4)
 {
   char **v4; // ebx
@@ -859,6 +878,8 @@ char __thiscall sub_770A50(int *this, int a2, int a3, void **a4)
   }
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -954,7 +975,8 @@ retn    0Ch
 
 // 0x00770B30 (209 bytes)
 void String_DeleteRandom_770B30() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_770B30(int *this, int a2, void **a3)
 {
   char **v3; // ebx
@@ -1000,6 +1022,8 @@ char __thiscall sub_770B30(int *this, int a2, void **a3)
   }
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1090,7 +1114,8 @@ retn    8
 
 // 0x00770F10 (199 bytes)
 void String_DeleteRandom_770F10() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_770F10(void *this, int a2, int a3, void **a4)
 {
   char **v4; // edi
@@ -1133,6 +1158,8 @@ char __thiscall sub_770F10(void *this, int a2, int a3, void **a4)
   }
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -1220,7 +1247,8 @@ retn    0Ch
 
 // 0x00770FE0 (199 bytes)
 void String_DeleteRandom_770FE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_770FE0(void *this, int a2, int a3, void **a4)
 {
   char **v4; // edi
@@ -1263,6 +1291,8 @@ char __thiscall sub_770FE0(void *this, int a2, int a3, void **a4)
   }
   return 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx

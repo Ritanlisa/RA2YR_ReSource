@@ -595,18 +595,12 @@ extern bool MCVRedeploy;
 // 0x50AF10). Defined inline here so the golden functions link without a separate
 // TU; the callee BODIES are outside this task's golden scope.
 namespace Math {
-inline int RoundToInt(double value)  // 0x7C5F00 — round to nearest
-{
-    return (int)(value >= 0.0 ? value + 0.5 : value - 0.5);
-}
+int RoundToInt(double value); // 0x7C5F00 — round to nearest
 } // namespace Math
 
 class SuperWeapon {
 public:
-    static void UpdateSuperWeaponsOwnedHouseClass(int ownerHouse)  // 0x50AF10
-    {
-        (void)ownerHouse;  // refresh owning house's super-weapon collection (callee body out of scope)
-    }
+    static void UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateUnits();  // 0x445F80
     int CreateNukePayload();  // 0x46B310

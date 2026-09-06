@@ -131,7 +131,7 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
     virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737F0
 
-    virtual ~VoxelAnimTypeClass() override = default;  // 0x74BA30
+    virtual ~VoxelAnimTypeClass() override;  // 0x74BA30
 
     bool Normalized;
     bool Translucent;

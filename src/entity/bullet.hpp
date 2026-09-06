@@ -73,7 +73,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~BulletClass() override = default;  // 0x466560
+    virtual ~BulletClass() override;  // 0x466560
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

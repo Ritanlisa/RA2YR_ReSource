@@ -28,7 +28,7 @@ public:
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
     RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;
 
-    virtual ~ConvertClass() = default;  // 0x491430
+    virtual ~ConvertClass();  // 0x491430
 
     ConvertClass(
         BytePalette const& palette,
@@ -66,7 +66,7 @@ public:
     static DynamicVectorClass<LightConvertClass*>& Array;
 
     // design: virtual function, no binary implementation matched in IDA
-    virtual ~LightConvertClass() override = default;
+    virtual ~LightConvertClass() override;
 
     virtual void UpdateColors(int red, int green, int blue, bool tinted);  // 0x556090
 
@@ -82,7 +82,7 @@ public:
         std::size_t shadeCount);
 
 protected:
-    explicit LightConvertClass(const noinit_t&) noexcept : ConvertClass(noinit_t()) {}
+    explicit LightConvertClass(const noinit_t&) noexcept;
 
 public:
     BytePalette const* UsedPalette1 = nullptr;

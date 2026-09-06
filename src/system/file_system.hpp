@@ -35,15 +35,9 @@ public:
     // unmatched: no callgraph reference and no git history record
     static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);
 
-    static void* LoadFile(const char* pFileName)
-    {
-        return LoadFile(pFileName, false);
-    }
+    static void* LoadFile(const char* pFileName);
 
-    static void* LoadSHPFile(const char* pFileName)
-    {
-        return LoadFile(pFileName, true);
-    }
+    static void* LoadSHPFile(const char* pFileName);
 
     // design: static function, no direct binary match in IDA
     static void* LoadWholeFileEx(const char* pFilename, bool& outAllocated);

@@ -33,7 +33,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x49C5A0
 
-    virtual ~CampaignClass() = default;  // 0x46D090
+    virtual ~CampaignClass();  // 0x46D090
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

@@ -23,71 +23,21 @@ union target_composite
 };
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept
-{
-    target_composite tc;
-    tc.whole = 0;
-    tc.exponent = static_cast<unsigned>(kind);
-    tc.mantissa = value;
-    return tc.whole;
-}
+target_t BuildTarget(AbstractType kind, unsigned value) noexcept;
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline AbstractType TargetKind(target_t t) noexcept
-{
-    target_composite tc;
-    tc.whole = t;
-    return static_cast<AbstractType>(tc.exponent);
-}
+AbstractType TargetKind(target_t t) noexcept;
 
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
-inline unsigned TargetValue(target_t t) noexcept
-{
-    target_composite tc;
-    tc.whole = t;
-    return tc.mantissa;
-}
+unsigned TargetValue(target_t t) noexcept;
 
-inline bool IsTargetCell(target_t t) noexcept
-{
-    return TargetKind(t) == AbstractType::Cell;
-}
+bool IsTargetCell(target_t t) noexcept;
 
-inline bool IsTargetObject(target_t t) noexcept
-{
-    auto kind = TargetKind(t);
-    return kind == AbstractType::Infantry
-        || kind == AbstractType::Unit
-        || kind == AbstractType::Aircraft
-        || kind == AbstractType::Building
-        || kind == AbstractType::Terrain
-        || kind == AbstractType::Bullet
-        || kind == AbstractType::Anim
-        || kind == AbstractType::Overlay
-        || kind == AbstractType::Smudge
-        || kind == AbstractType::Particle
-        || kind == AbstractType::ParticleSystem
-        || kind == AbstractType::VoxelAnim
-        || kind == AbstractType::Wave
-        || kind == AbstractType::Tiberium;
-}
+bool IsTargetObject(target_t t) noexcept;
 
-inline bool IsTargetTechno(target_t t) noexcept
-{
-    auto kind = TargetKind(t);
-    return kind == AbstractType::Infantry
-        || kind == AbstractType::Unit
-        || kind == AbstractType::Aircraft
-        || kind == AbstractType::Building;
-}
+bool IsTargetTechno(target_t t) noexcept;
 
-inline bool IsTargetFoot(target_t t) noexcept
-{
-    auto kind = TargetKind(t);
-    return kind == AbstractType::Infantry
-        || kind == AbstractType::Unit
-        || kind == AbstractType::Aircraft;
-}
+bool IsTargetFoot(target_t t) noexcept;
 
 using ra2::game::ObjectClass;
 using ra2::game::TechnoClass;
@@ -106,12 +56,11 @@ class TargetClass
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    TargetClass() noexcept : m_target(kTargetNone) {}
+    TargetClass() noexcept;
     // unmatched: no callgraph reference and no git history record
-    explicit TargetClass(target_t t) noexcept : m_target(t) {}
+    explicit TargetClass(target_t t) noexcept;
     TargetClass(AbstractType kind, int id) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {}
+; // unmatched: no callgraph reference and no git history record
 
     // unmatched: no callgraph reference and no git history record
     TargetClass(const ObjectClass* obj) noexcept;
@@ -119,25 +68,25 @@ public:
     TargetClass(const CellClass* cell) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    operator target_t() const { return m_target; }
+    operator target_t() const;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; }
+    bool operator==(const TargetClass& rhs) const;
     // unmatched: no callgraph reference and no git history record
-    bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; }
+    bool operator!=(const TargetClass& rhs) const;
 
-    AbstractType Kind() const { return TargetKind(m_target); }  // 0x65AD90
+    AbstractType Kind() const;  // 0x65AD90
     // unmatched: no callgraph reference and no git history record
-    unsigned Value() const { return TargetValue(m_target); }
-    target_t AsTarget() const { return m_target; }
+    unsigned Value() const;
+    target_t AsTarget() const;
 
-    bool IsValid() const { return m_target != kTargetNone; }
+    bool IsValid() const;
     // unmatched: no callgraph reference and no git history record
-    void Invalidate() { m_target = kTargetNone; }
+    void Invalidate();
 
-    ObjectClass* AsObject() const { return gamemd::AsObject(m_target); }
-    TechnoClass* AsTechno() const { return gamemd::AsTechno(m_target); }
-    FootClass* AsFoot() const { return gamemd::AsFoot(m_target); }
+    ObjectClass* AsObject() const;
+    TechnoClass* AsTechno() const;
+    FootClass* AsFoot() const;
 
 private:
     target_t m_target;

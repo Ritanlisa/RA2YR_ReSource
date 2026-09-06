@@ -192,7 +192,8 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // 0x48e5a0
 void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
 {
   int v5; // eax
@@ -221,6 +222,7 @@ int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
     (*(void (__thiscall **)(int, int, _DWORD *, int))(*(_DWORD *)v6 + 76))(v6, a2, a3, this);
   return COMObject::ActivateThunk(a2, a3, 0);
 }
+#endif
 
 /* ASM:
 push    ebx
@@ -270,6 +272,7 @@ pop     esi
 pop     ebx
 retn    0Ch
 */
+    // TODO stub - translate quarantined IDA block above
 }
 
 // IDA: 0x4E2830 -- CellClass::DrawDispatch  
@@ -280,7 +283,8 @@ retn    0Ch
 // 0x4e2830
 void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, int a4)
 {
   unsigned int v6; // ebx
@@ -343,6 +347,7 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
   *a3 = 0;
   return 1;
 }
+#endif
 
 /* ASM:
 push    ebx
@@ -525,6 +530,7 @@ mov     eax, 1
 pop     ebx
 retn    0Ch
 */
+    // TODO stub - translate quarantined IDA block above
 }
 
 // IDA: 0x557830 -- CellClass::DrawWithFlags
@@ -539,7 +545,8 @@ retn    0Ch
 // 0x557830
 void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
 {
   int v4; // ebx
@@ -586,6 +593,8 @@ int __thiscall CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
     return CellClass::Draw((int)this, a2, a3, 0);
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -735,7 +744,8 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 // 0x7235a0
 void CellClass::RegisterForRedraw()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
 {
   _BYTE *result; // eax
@@ -802,6 +812,8 @@ _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -922,11 +934,13 @@ retn    4
 // 0x653f50
 void CellClass::DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CellClass_DrawWrapper(int *this, _DWORD *a2, int a3, char a4, char a5)
 {
   CellClass::UpdateTerrainAndWaypoints(this, a2, a3, a4, a5);
 }
+#endif
 
 /* ASM:
 mov     eax, [esp+arg_C]
@@ -940,6 +954,7 @@ push    edx
 call    CellClass__UpdateTerrainAndWaypoints
 retn    10h
 */
+    // TODO stub - translate quarantined IDA block above
 }
 
 // ============================================================
@@ -1033,7 +1048,8 @@ int GetGroundHeight(int x_leptons, int y_leptons)
 // 0x487950
 bool CellClass::QuickPassable() const
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall CellClass_QuickPassable(_DWORD *this)
 {
   int v1; // esi
@@ -1052,6 +1068,7 @@ bool __thiscall CellClass_QuickPassable(_DWORD *this)
   v6[2] = inited;
   return Cell::IsPassable(v6);
 }
+#endif
 
 /* ASM:
 sub     esp, 14h
@@ -1083,6 +1100,7 @@ pop     esi
 add     esp, 14h
 retn
 */
+    return false; // TODO stub - translate quarantined IDA block above
 }
 
 // IDA: 0x47C520 -- Cell::IsBridge

@@ -1,5 +1,9 @@
 #pragma once
 
+#include <cstdint>
+#include <windows.h>
+#include <objidl.h>   // IStream, CLSID
+
 #include "abstract.hpp"
 
 namespace ra2 {
@@ -9,15 +13,16 @@ namespace game {
 // CSP: RadBeam matched via T1
 class RadBeam : public AbstractClass {
 public:
-    // GetClassID();
-    // Load();
-    // Save();
-    // calculateChecksum();
-    // objectSize();
-    // pointerExpired();
-    // whatAmI();
+    static constexpr AbstractType kObjectDeriveId = AbstractType::None; // TODO: derive ID lacks IDA evidence - confirm in translation pass
+
+    HRESULT __stdcall GetClassID(CLSID* class_id);
+    HRESULT __stdcall Load(IStream* stream);
+    HRESULT __stdcall Save(IStream* stream, int clear_dirty);
+    void pointerExpired(AbstractClass* ptr, bool removed);
+    AbstractType __stdcall whatAmI() const;
+    int objectSize() const;
+    void calculateChecksum(void* checksum) const;
 };
 
 } // namespace game
 } // namespace ra2
-

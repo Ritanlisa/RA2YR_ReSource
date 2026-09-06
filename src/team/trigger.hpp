@@ -55,7 +55,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x726860
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x7268D0
 
-    virtual ~TriggerClass() = default;  // 0x726820
+    virtual ~TriggerClass();  // 0x726820
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
@@ -160,7 +160,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     // design: defaulted virtual destructor, no binary equivalent
-    virtual ~TriggerTypeClass() = default;
+    virtual ~TriggerTypeClass();
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

@@ -51,7 +51,8 @@ REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
 CCINIClass::CCINIClass()
     : INIClass()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
 {
   _DWORD *result; // eax
@@ -107,6 +108,8 @@ _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
   *result = &CCINIClass_Vtable;
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ecx
@@ -194,7 +197,8 @@ REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
 // 0x4741f0
 bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCINIClass::Load(char *this, int a2, char a3, char a4)
 {
   int File; // ebp
@@ -256,6 +260,8 @@ LABEL_8:
   FileStraw::Destructor((int)v10);
   return v7;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0A8h

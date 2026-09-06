@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00412610 (74 bytes)
 const char* TaskForceClass_Toupper_412610() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_412610(char *this)
 {
   char *v1; // edi
@@ -32,6 +33,8 @@ int __thiscall sub_412610(char *this)
   }
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -83,7 +86,8 @@ retn
 
 // 0x00610810 (306 bytes)
 char TriggerClass_FindTrigger_610810() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_610810(int *a1, const #72 *a2, int a3)
 {
   #72 *StringCSF; // eax
@@ -137,6 +141,8 @@ LABEL_8:
   dword_A8ED54[52256] = a3;
   return TriggerClass::FindByEventType(1);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, dword_A8ED54+33078h

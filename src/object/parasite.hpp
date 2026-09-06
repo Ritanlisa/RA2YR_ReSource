@@ -20,7 +20,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x6295B0
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6296B0
 
-    virtual ~ParasiteClass() = default;  // 0x6296D0
+    virtual ~ParasiteClass();  // 0x6296D0
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

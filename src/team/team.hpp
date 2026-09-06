@@ -42,7 +42,7 @@ public:
     // wrapper: delegates to TeamClass::SaveLoad_Prefix at 0x6EC450
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
+    virtual ~TeamClass();                                                      // 0x6EC560 (ddtor)
 
     // wrapper: delegates to TeamClass::ddtor at 0x6EC560
     virtual AbstractType __stdcall whatAmI() const override;

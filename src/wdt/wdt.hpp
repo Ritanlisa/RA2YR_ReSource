@@ -117,9 +117,9 @@ public:
     virtual void    updateLogic();
 
     // design: inline accessor, inlined at all call sites
-    void AddRef();
+    void AddRef() noexcept;
     // design: inline accessor, inlined at all call sites
-    void Release();
+    void Release() noexcept;
 
     int         Width;
     int         Height;

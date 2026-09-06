@@ -30,7 +30,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x4D2510
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x4D24A0
 
-    virtual ~FoggedObjectClass() override = default;  // 0x4D2910
+    virtual ~FoggedObjectClass() override;  // 0x4D2910
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

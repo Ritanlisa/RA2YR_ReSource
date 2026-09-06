@@ -17,7 +17,8 @@
 
 // 0x71F950
 namespace gamemd { int TEventClass::GetStateA() const {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TEventClass::GetStateA(_DWORD *this)
 {
   char result; // al
@@ -65,6 +66,7 @@ char __thiscall TEventClass::GetStateA(_DWORD *this)
   }
   return result;
 }
+#endif
 
 /* ASM:
 mov     ecx, [ecx+2Ch]
@@ -88,10 +90,12 @@ def_71F963:                             ; CODE XREF: TEventClass__GetStateA+9↑
 xor     al, al          ; jumptable 0071F963 default case, cases 5,8-17,27,28,30,32,36,37,45-47,51,52,55-58
 retn
 */
+    return {}; // TODO stub - translate quarantined IDA block above
 } }
 // 0x71F9C0
 namespace gamemd { int TEventClass::GetStateB_SpyEvent() const {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TEventClass::GetStateB_SpyEvent(_DWORD *this)
 {
   char result; // al
@@ -111,6 +115,7 @@ char __thiscall TEventClass::GetStateB_SpyEvent(_DWORD *this)
   }
   return result;
 }
+#endif
 
 /* ASM:
 mov     ecx, [ecx+2Ch]
@@ -134,10 +139,12 @@ def_71F9D3:                             ; CODE XREF: TEventClass__GetStateB_SpyE
 mov     al, 1           ; jumptable 0071F9D3 default case, cases 2-5,7-30,32-43,45-58
 retn
 */
+    return {}; // TODO stub - translate quarantined IDA block above
 } }
 // 0x6E4660
 namespace gamemd { void TActionClass::Destructor() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall TActionClass::Destructor(void **Block, char a2)
 {
   int v3; // eax
@@ -189,6 +196,8 @@ void **__thiscall TActionClass::Destructor(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -299,7 +308,8 @@ retn    4
 } }
 // 0x41E720
 namespace gamemd { int TriggerClass::EvaluateCondition(void* a1, int a2, int a3) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TriggerClass_EvaluateCondition(int this, _DWORD *a2, _DWORD *a3, char a4)
 {
   int v5; // ecx
@@ -496,6 +506,8 @@ LABEL_70:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1014,7 +1026,8 @@ retn    0Ch
 } }
 // 0x41FB10
 namespace gamemd { int TriggerTypeClass::SaveToINI(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TriggerTypeClass_SaveToINI(int this, char *a2)
 {
   const char *v3; // ebp
@@ -1087,6 +1100,8 @@ char __thiscall TriggerTypeClass_SaveToINI(int this, char *a2)
     !v10);
   return INIClass::SetString(a2, (unsigned __int8 *)aAitriggertypes, (char *)(this + 36), Source);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -400h
@@ -1238,7 +1253,8 @@ retn    4
 } }
 // 0x46CCD0
 namespace gamemd { int CampaignClass::GetMapData(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***a2)
 {
   int Int_Overwrite; // eax
@@ -1282,6 +1298,8 @@ char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***a2)
   }
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -400h
@@ -1401,7 +1419,8 @@ retn    4
 } }
 // 0x46CFC0
 namespace gamemd { int CampaignClass::Stat(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CampaignClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2);
@@ -1409,6 +1428,8 @@ int __thiscall CampaignClass::_vt13(int this, int *a2)
   Checksum::AddString((unsigned int *)a2, (unsigned __int8 *)(this + 156));
   return Power::TimerProcess(*(_DWORD *)(this + 668));
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1436,7 +1457,8 @@ retn    4
 } }
 // 0x49DB00
 namespace gamemd { int CampaignClass::LoadFromINI() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CampaignClass::LoadFromINI(int this)
 {
   int v2; // ebx
@@ -1853,6 +1875,8 @@ LABEL_80:
   v71[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v71);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -11Ch
@@ -2672,7 +2696,8 @@ retn
 } }
 // 0x49E400
 namespace gamemd { int CampaignClass::FindMission(void* a1, void* a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CampaignClass::FindMission(int this, char *String1, _DWORD *a3)
 {
   int v4; // esi
@@ -2730,6 +2755,8 @@ LABEL_10:
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String1         = dword ptr  4
@@ -2838,7 +2865,8 @@ retn    8
 } }
 // 0x49E4F0
 namespace gamemd { int CampaignClass::GetValue(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CampaignClass_GetValue(int this, _DWORD *a2)
 {
   if ( !*(_BYTE *)(this + 96) )
@@ -2846,6 +2874,8 @@ char __thiscall CampaignClass_GetValue(int this, _DWORD *a2)
   *a2 = *(_DWORD *)(this + 92);
   return *(_BYTE *)(this + 96);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -2866,7 +2896,8 @@ retn    4
 } }
 // 0x49ECD0
 namespace gamemd { void* CampaignClass::Constructor(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CampaignClass::Constructor(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -2891,6 +2922,8 @@ _DWORD *__thiscall CampaignClass::Constructor(_DWORD *this, int a2, int a3)
   *(this + 4) = 0;
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -2930,7 +2963,8 @@ retn    8
 } }
 // 0x49F090
 namespace gamemd { void* CampaignClass::Constructor_0(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CampaignClass::Constructor_0(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -2950,6 +2984,8 @@ _DWORD *__thiscall CampaignClass::Constructor_0(_DWORD *this, int a2, int a3)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -2988,7 +3024,8 @@ retn    8
 } }
 // 0x509610
 namespace gamemd { int TriggerClass::ValidateTeamTriggerConditions(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_509610(void *this, int a2)
 {
   int v2; // esi
@@ -3042,6 +3079,8 @@ char __thiscall sub_509610(void *this, int a2)
   }
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -3148,7 +3187,8 @@ retn    4
 } }
 // 0x5AE220
 namespace gamemd { int CampaignClass::LoadMovieDisplay(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CampaignClass::LoadMovieDisplay(int this, int a2)
 {
   int v2; // ebp
@@ -3234,6 +3274,8 @@ char __thiscall CampaignClass::LoadMovieDisplay(int this, int a2)
     }
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -3448,7 +3490,8 @@ retn    4
 } }
 // 0x5AE460
 namespace gamemd { int CampaignClass::ReleaseSubobjectsAndDestruct() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AE460(_DWORD *this)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -3475,6 +3518,8 @@ int __thiscall sub_5AE460(_DWORD *this)
   }
   return SessionClass::Destruct(this + 20);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi             ; TODO: classify (grp=blit, sz=0x5b)
@@ -3514,7 +3559,8 @@ retn
 } }
 // 0x5CF760
 namespace gamemd { int CampaignClass::DeleteAndZero(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CF760(_DWORD *this, const char **a2)
 {
   const char **v2; // ebx
@@ -3546,6 +3592,8 @@ int __thiscall sub_5CF760(_DWORD *this, const char **a2)
   DeleteAndZero(&v7);
   return v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx             ; TODO: classify (grp=blit, sz=0xa5)
@@ -3620,7 +3668,8 @@ retn    4
 } }
 // 0x5CF810
 namespace gamemd { int CampaignClass::Check(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CF810(_DWORD *this, unsigned __int16 a2)
 {
   if ( *(this + 4) > (int)a2 )
@@ -3628,6 +3677,8 @@ int __thiscall sub_5CF810(_DWORD *this, unsigned __int16 a2)
   else
     return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x1e)
@@ -3647,7 +3698,8 @@ retn    4
 } }
 // 0x5D2E00
 namespace gamemd { void* CampaignClass::Constructor_1(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall sub_5D2E00(_BYTE *this, __int16 a2)
 {
   *(this + 12) = 0;
@@ -3658,6 +3710,8 @@ _BYTE *__thiscall sub_5D2E00(_BYTE *this, __int16 a2)
   ++MEMORY[0xABFBE0];
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3680,7 +3734,8 @@ retn    4
 } }
 // 0x6913C0
 namespace gamemd { void* ScriptClass::Construct(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 #373 *__thiscall ScriptClass_Constructor(#373 *this, int a2)
 {
   int v3; // eax
@@ -3706,6 +3761,8 @@ namespace gamemd { void* ScriptClass::Construct(int a1) {
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3759,12 +3816,15 @@ retn    4
 } }
 // 0x6914E0
 namespace gamemd { int ScriptClass::PowerDrainUpdate(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptClass::_vt13(int this, int a2)
 {
   AbstractClass::ProcessPower((#378 *)this);
   return Power::TimerProcess(*(_DWORD *)(this + 44));
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -3784,7 +3844,8 @@ retn    4
 } }
 // 0x6916B0
 namespace gamemd { void* ScriptTypeClass::Constructor(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ScriptTypeClass_Constructor(_DWORD *this, char *Source)
 {
   int v3; // ecx
@@ -3834,6 +3895,8 @@ LABEL_11:
   *(this + 38) = v5;
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -3908,7 +3971,8 @@ retn    4
 } }
 // 0x6917F0
 namespace gamemd { int ScriptTypeClass::GetParameter(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ScriptTypeClass::_vt26(int this, char *a2)
 {
   int v3; // esi
@@ -3939,6 +4003,8 @@ char __thiscall ScriptTypeClass::_vt26(int this, char *a2)
   while ( v3 < 50 );
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -90h
@@ -4017,7 +4083,8 @@ retn    4
 } }
 // 0x6918A0
 namespace gamemd { int ScriptTypeClass::GetEvent(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ScriptTypeClass::_vt25(int this, unsigned __int8 ***a2)
 {
   int v3; // edi
@@ -4057,6 +4124,8 @@ char __thiscall ScriptTypeClass::_vt25(int this, unsigned __int8 ***a2)
   while ( v3 < 50 );
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -90h
@@ -4140,12 +4209,15 @@ retn    4
 } }
 // 0x691E00
 namespace gamemd { int ScriptTypeClass::PowerDrainUpdate(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptTypeClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2);
   return Power::TimerProcess(*(_DWORD *)(this + 160));
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -4165,7 +4237,8 @@ retn    4
 } }
 // 0x691E30
 namespace gamemd { void ScriptTypeClass::GetAction(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ScriptTypeClass::_vt10(int *this, int a2, int a3)
 {
   int v4; // ecx
@@ -4225,6 +4298,8 @@ LABEL_18:
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -4308,7 +4383,8 @@ retn    8
 } }
 // 0x691EE0
 namespace gamemd { void* ScriptClass::ProcessEvent(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall ScriptClass::_vt08(void **Block, char a2)
 {
   int v3; // eax
@@ -4335,6 +4411,8 @@ void **__thiscall ScriptClass::_vt08(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -4390,11 +4468,14 @@ retn    4
 } }
 // 0x691F90
 namespace gamemd { int ScriptTypeClass::GetAuxField() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptTypeClass::_vt16(_DWORD *this)
 {
   return *(this + 38);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+98h]
@@ -4403,7 +4484,8 @@ retn
 } }
 // 0x6DD000
 namespace gamemd { int TActionClass::ctor() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6DD000(int this)
 {
   int v2; // ecx
@@ -4490,6 +4572,8 @@ LABEL_11:
   *(_DWORD *)(this + 144) = 0;
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -4639,7 +4723,8 @@ retn
 } }
 // 0x6E3EE0
 namespace gamemd { int TriggerTypeClass::Dispatch() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6E3EE0(void *this)
 {
   int result; // eax
@@ -4661,6 +4746,8 @@ int __thiscall sub_6E3EE0(void *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 add     ecx, 0FFFFFFF2h ; TODO: classify (grp=blit, sz=0x1f)
@@ -4684,7 +4771,8 @@ retn                    ; jumptable 006E3EF2 default case, cases 15-31,33-59,63-
 } }
 // 0x6E8160
 namespace gamemd { int TeamClass::SumMemberCounts() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6E8160(int *this)
 {
   int v1; // edx
@@ -4708,6 +4796,8 @@ int __thiscall sub_6E8160(int *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [ecx+9Ch]  ; TODO: classify (grp=blit, sz=0x1f)
@@ -4731,7 +4821,8 @@ retn
 } }
 // 0x6EC9A0
 namespace gamemd { int TeamClass::SelectWaypointTarget(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6EC9A0(int this, int a2, char a3)
 {
   _DWORD *CellFromArray; // eax
@@ -4778,6 +4869,8 @@ LABEL_12:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_4]
@@ -4866,7 +4959,8 @@ retn    8
 } }
 // 0x6ECA70
 namespace gamemd { int TeamClass::SelectAttackTarget(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6ECA70(int this, int a2, char a3)
 {
   _DWORD *CellFromArray; // eax
@@ -4913,6 +5007,8 @@ LABEL_13:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_4]
@@ -5009,7 +5105,8 @@ retn    8
 } }
 // 0x6ECCE0
 namespace gamemd { void TeamClass::MoveToCellAndAttack(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6ECCE0(void *this, int a2, char a3)
 {
   int v3; // edi
@@ -5085,6 +5182,8 @@ void __thiscall sub_6ECCE0(void *this, int a2, char a3)
   else
     TeamClass::UpdateMembers(v3);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -5249,7 +5348,8 @@ retn    8
 } }
 // 0x6ECE60
 namespace gamemd { int TeamClass::AssignMemberToCoordinator(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6ECE60(int this, int a2, char a3)
 {
   void *CellFromArray; // eax
@@ -5291,6 +5391,8 @@ LABEL_10:
   }
   return ObjectCell;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_4] ; TODO: classify (grp=blit, sz=0xaf)
@@ -5375,7 +5477,8 @@ retn    8
 } }
 // 0x6ECFB0
 namespace gamemd { int TeamClass::Create(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TeamClass::Create(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -5401,6 +5504,8 @@ char __thiscall TeamClass::Create(int *this, int a2, int a3)
     LOBYTE(v4) = (*(char (__thiscall **)(int *, int))(*this + 32))(this, 1);
   return v4;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -5465,7 +5570,8 @@ retn    8
 } }
 // 0x6ED090
 namespace gamemd { int TeamClass::CoordinateSuperWeaponAttack(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6ED090(int this, int a2, int a3)
 {
   int v3; // ebp
@@ -5549,6 +5655,8 @@ LABEL_25:
   }
   return TeamClass::AttackCoordinator((int *)v3);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -5703,7 +5811,8 @@ retn    8
 } }
 // 0x6EDB50
 namespace gamemd { int TeamClass::AssignAttackTarget(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6EDB50(int this, int a2, int a3)
 {
   void **v4; // edi
@@ -5763,6 +5872,8 @@ char __thiscall sub_6EDB50(int this, int a2, int a3)
   }
   return (char)v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -5876,7 +5987,8 @@ retn    8
 } }
 // 0x6EDCA0
 namespace gamemd { void TeamClass::SyncMemberFacing(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6EDCA0(int this, int a2, int a3)
 {
   int v3; // esi
@@ -5921,6 +6033,8 @@ LABEL_14:
     *(_BYTE *)(this + 128) = 1;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -6004,7 +6118,8 @@ retn    8
 } }
 // 0x6EE310
 namespace gamemd { int TeamClass::SelectAreaAttackTarget(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6EE310(int this, int a2, char a3)
 {
   int v4; // edi
@@ -6054,6 +6169,8 @@ LABEL_9:
   }
   return TeamClass::AttackCoordinator((int *)this);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [esp+arg_4]
@@ -6150,7 +6267,8 @@ retn    8
 } }
 // 0x6EE3F0
 namespace gamemd { void TeamClass::ProcessTeamMovement(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6EE3F0(int *this, int a2, int a3)
 {
   int v3; // ebp
@@ -6246,6 +6364,8 @@ void __thiscall sub_6EE3F0(int *this, int a2, int a3)
   }
   TeamClass::UpdateMembers(v3);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -6411,7 +6531,8 @@ retn    8
 } }
 // 0x6EE5C0
 namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TeamClass::SelectBestMember(_DWORD *this, int a2, int a3)
 {
   int v3; // ebp
@@ -6524,6 +6645,8 @@ void __thiscall TeamClass::SelectBestMember(_DWORD *this, int a2, int a3)
 LABEL_22:
   TeamClass::UpdateMembers(v3);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -6740,7 +6863,8 @@ retn    8
 } }
 // 0x6EEEA0
 namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TeamClass::ScoreMember(void *this, _DWORD *a2, int a3, int a4)
 {
   _DWORD *result; // eax
@@ -6874,6 +6998,8 @@ LABEL_10:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -7102,7 +7228,8 @@ retn    0Ch
 } }
 // 0x6EF610
 namespace gamemd { void TeamClass::PlayMemberAnimation(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TeamClass::PlayMemberAnimation(int this, int a2, char a3)
 {
   int v3; // eax
@@ -7142,6 +7269,8 @@ void __thiscall TeamClass::PlayMemberAnimation(int this, int a2, char a3)
     *(_BYTE *)(this + 128) = 1;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -7225,7 +7354,8 @@ retn    8
 } }
 // 0x6EFA10
 namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
 {
   int v3; // esi
@@ -7343,6 +7473,8 @@ void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
   }
   TeamClass::UpdateMembers((int)this);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebp
@@ -7555,7 +7687,8 @@ retn    8
 } }
 // 0x6F0130
 namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
 {
   int *v3; // esi
@@ -7681,6 +7814,8 @@ LABEL_28:
   }
   *(_BYTE *)(v16 + 128) = 1;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -7925,7 +8060,8 @@ retn    8
 } }
 // 0x6F0450
 namespace gamemd { void* TeamClass::ProcessEvent(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall TeamClass::_vt08(void **Block, char a2)
 {
   TeamClass::Destructor(Block);
@@ -7933,6 +8069,8 @@ void **__thiscall TeamClass::_vt08(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -7952,7 +8090,8 @@ retn    4
 } }
 // 0x6F09C0
 namespace gamemd { int TeamClass::CreateOneOf(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TeamClass::CreateOneOf(int this, void *a2)
 {
   void *OwnerHouse; // edi
@@ -7995,6 +8134,8 @@ int __thiscall TeamClass::CreateOneOf(int this, void *a2)
     return 0;
   return MissionClass::Construct(v6, this, (int)OwnerHouse, 0);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -8071,7 +8212,8 @@ retn    4
 } }
 // 0x6F1E20
 namespace gamemd { bool TriggerClass::EvaluateObjectForTrigger(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_6F1E20(int this, int a2, int a3)
 {
   int v4; // eax
@@ -8107,6 +8249,8 @@ bool __thiscall sub_6F1E20(int this, int a2, int a3)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -8210,7 +8354,8 @@ retn    8
 } }
 // 0x71AD40
 namespace gamemd { int TriggerClass::UnlinkTags() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass_UnlinkTags(int this)
 {
   int v2; // eax
@@ -8246,6 +8391,8 @@ int __thiscall TriggerClass_UnlinkTags(int this)
   *(_DWORD *)(this + 56) = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -8298,7 +8445,8 @@ retn
 } }
 // 0x71F4E0
 namespace gamemd { void* TriggerTypeClass::ParseActionData() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall TriggerTypeClass::ParseActionData(int this)
 {
   char *v2; // eax
@@ -8357,6 +8505,8 @@ char *__thiscall TriggerTypeClass::ParseActionData(int this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -1Ch
@@ -8464,7 +8614,8 @@ retn
 } }
 // 0x71F680
 namespace gamemd { int TriggerTypeClass::GetActionCategoryFlags() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_71F680(void *this)
 {
   int v1; // esi
@@ -8570,6 +8721,8 @@ int __thiscall sub_71F680(void *this)
   }
   return v1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -8648,7 +8801,8 @@ retn
 } }
 // 0x723CA0
 namespace gamemd { void* ScriptTypeClass::SetField(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_723CA0(_DWORD *this, char *Buffer)
 {
   char *result; // eax
@@ -8666,6 +8820,8 @@ char *__thiscall sub_723CA0(_DWORD *this, char *Buffer)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = dword ptr  4
@@ -8697,7 +8853,8 @@ retn    4
 } }
 // 0x723CE0
 namespace gamemd { int ScriptTypeClass::FormatToString(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_723CE0(_DWORD *this, char *Buffer)
 {
   if ( !Buffer )
@@ -8705,6 +8862,8 @@ unsigned int __thiscall sub_723CE0(_DWORD *this, char *Buffer)
   sprintf(Buffer, "%d,%d", *this, *(this + 1));
   return strlen(Buffer);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = dword ptr  4
@@ -8739,7 +8898,8 @@ retn    4
 } }
 // 0x725FA0
 namespace gamemd { int TriggerClass::Construct(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass_Constructor(int this, int a2)
 {
   #72 *v3; // ecx
@@ -8808,6 +8968,8 @@ int __thiscall TriggerClass_Constructor(int this, int a2)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -8964,7 +9126,8 @@ retn    4
 } }
 // 0x726630
 namespace gamemd { int TriggerClass::Create() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass::Create(void *this)
 {
   int v2; // eax
@@ -8992,6 +9155,8 @@ LABEL_6:
   }
   return *(_DWORD *)(MEMORY[0x87F7E8][539841] + 4 * v2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -9050,7 +9215,8 @@ retn
 } }
 // 0x726690
 namespace gamemd { int TriggerClass::FireAction(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
@@ -9067,6 +9233,8 @@ int __thiscall TriggerClass::_vt10(_DWORD *this, int a2, int a3)
     *(this + 11) = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -9093,7 +9261,8 @@ retn    8
 } }
 // 0x726720
 namespace gamemd { int TeamClass::AddToBuildQueue() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TeamClass_AddToBuildQueue(_BYTE *this)
 {
   int result; // eax
@@ -9114,6 +9283,8 @@ int __thiscall TeamClass_AddToBuildQueue(_BYTE *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -9157,7 +9328,8 @@ retn
 } }
 // 0x726790
 namespace gamemd { int TriggerClass::FireTrigger(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass::_vt13(int this, int *a2)
 {
   int v3; // eax
@@ -9192,6 +9364,8 @@ int __thiscall TriggerClass::_vt13(int this, int *a2)
   Power::TimerProcess(v8);
   return Power::TimerProcess(*(_DWORD *)(this + 64));
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -9259,7 +9433,8 @@ retn    4
 } }
 // 0x726950
 namespace gamemd { void* TriggerClass::CheckCondition(int a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall TriggerClass::_vt08(void **Block, char a2)
 {
   int v3; // eax
@@ -9310,6 +9485,8 @@ void **__thiscall TriggerClass::_vt08(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -9419,7 +9596,8 @@ retn    4
 } }
 // 0x726C80
 namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TriggerTypeClass_Constructor(_DWORD *this, char *Source)
 {
   int v3; // eax
@@ -9477,6 +9655,8 @@ _DWORD *__thiscall TriggerTypeClass_Constructor(_DWORD *this, char *Source)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Source          = dword ptr  4
@@ -9608,7 +9788,8 @@ retn    4
 } }
 // 0x726E00
 namespace gamemd { int TriggerClass::ProcessEvents() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_726E00(int this)
 {
   int v2; // eax
@@ -9684,6 +9865,8 @@ int __thiscall sub_726E00(int this)
   }
   return AbstractTypeClass::Dtor((_DWORD *)this);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -9823,7 +10006,8 @@ retn
 } }
 // 0x727090
 namespace gamemd { int TriggerTypeClass::GetAction(int a1, int a2) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int v4; // eax
@@ -9850,6 +10034,8 @@ int __thiscall TriggerTypeClass::_vt10(_DWORD *this, int a2, int a3)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -9919,7 +10105,8 @@ retn    8
 } }
 // 0x727240
 namespace gamemd { int TriggerTypeClass::LoadFromINI(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TriggerTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   char *v3; // esi
@@ -10080,6 +10267,8 @@ LABEL_15:
   }
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Destination     = byte ptr -234h
@@ -10457,7 +10646,8 @@ retn    4
 } }
 // 0x7275D0
 namespace gamemd { int TriggerClass::Process() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerClass::Process(char *this)
 {
   int result; // eax
@@ -10498,6 +10688,8 @@ LABEL_11:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -10596,7 +10788,8 @@ retn
 } }
 // 0x7276A0
 namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
 {
   int v3; // eax
@@ -10672,6 +10865,8 @@ char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
   INIClass::SetString(a2, (unsigned __int8 *)aActions, v7, Buffer);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -200h
@@ -10873,7 +11068,8 @@ retn    4
 } }
 // 0x727B30
 namespace gamemd { int TriggerTypeClass::PowerDrainUpdate(void* a1) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerTypeClass::_vt13(int this, int *a2)
 {
   int v3; // eax
@@ -10907,6 +11103,8 @@ int __thiscall TriggerTypeClass::_vt13(int this, int *a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -10966,11 +11164,14 @@ retn    4
 } }
 // 0x727CC0
 namespace gamemd { int TriggerTypeClass::GetAuxField() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerTypeClass::_vt16(_DWORD *this)
 {
   return *(this + 38);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [ecx+98h]

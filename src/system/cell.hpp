@@ -109,20 +109,14 @@ public:
     ~CellClass() = default;
 
     // design: inline accessor, inlined at all call sites
-    AbstractType whatAmI() const { return AbstractType::Cell; }
+    AbstractType whatAmI() const;
 
     // design: inline accessor, inlined at all call sites
-    CoordStruct fetchCoordinatesHere() const { return Cell2Coord(mapCoords, height); }
+    CoordStruct fetchCoordinatesHere() const;
 
-    static CoordStruct Cell2Coord(const CellStruct& cell, int z = 0)
-    {
-        return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);
-    }
+    static CoordStruct Cell2Coord(const CellStruct& cell, int z = 0);
 
-    static CellStruct Coord2Cell(const CoordStruct& crd)
-    {
-        return CellStruct(static_cast<int16_t>(crd.X / 256), static_cast<int16_t>(crd.Y / 256));
-    }
+    static CellStruct Coord2Cell(const CoordStruct& crd);
 
     // design: no binary equivalent found in IDA
     TechnoClass* FindTechnoNearestTo(const Point2D& offset, bool alt, const TechnoClass* exclude = nullptr) const;
@@ -180,18 +174,18 @@ public:
     // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
     CoordStruct* GetCenterCoords(CoordStruct* out) const;
     // design: inline accessor, inlined at all call sites
-    CoordStruct GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; }
+    CoordStruct GetCenterCoords() const;
     // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
     void ActivateVeins();
     // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
     bool DrawObjectsCloaked(int owner_house_idx) const;
 
     // design: inline accessor, inlined at all call sites
-    bool CloakGen_InclHouse(unsigned int idx) const { return (cloakedByHouses & (1u << idx)) != 0; }
+    bool CloakGen_InclHouse(unsigned int idx) const;
     // design: inline accessor, inlined at all call sites
-    void CloakGen_AddHouse(unsigned int idx) { cloakedByHouses |= 1u << idx; }
+    void CloakGen_AddHouse(unsigned int idx);
     // design: inline accessor, inlined at all call sites
-    void CloakGen_RemHouse(unsigned int idx) { cloakedByHouses &= ~(1u << idx); }
+    void CloakGen_RemHouse(unsigned int idx);
 
     // design: no binary equivalent found in IDA
     bool Sensors_InclHouse(unsigned int idx) const;
@@ -208,9 +202,9 @@ public:
     void DisguiseSensors_RemOfHouse(unsigned int idx);
 
     // design: inline accessor, inlined at all call sites
-    void SetRadSite(RadSiteClass* rad) { radSite = rad; }
+    void SetRadSite(RadSiteClass* rad);
     // design: inline accessor, inlined at all call sites
-    RadSiteClass* GetRadSite() const { return radSite; }
+    RadSiteClass* GetRadSite() const;
     // design: no binary equivalent found in IDA
     bool IsRadiated() const;
     int GetRadLevel() const;
@@ -220,11 +214,11 @@ public:
     void RadLevelDecrease(double amount);
 
     // design: inline accessor, inlined at all call sites
-    bool ContainsBridge() const { return (static_cast<uint32_t>(flags) & 0x8000u) != 0; }
+    bool ContainsBridge() const;
     // design: inline accessor, inlined at all call sites
-    ObjectClass* GetContent() const { return ContainsBridge() ? altObject : firstObject; }
+    ObjectClass* GetContent() const;
     // design: inline accessor, inlined at all call sites
-    int GetLevel() const { return level + (ContainsBridge() ? kBridgeLevels : 0); }
+    int GetLevel() const;
 
     // design: no binary equivalent found in IDA
     bool Tile_Is_Tunnel() const;
@@ -263,16 +257,9 @@ public:
     // design: no binary equivalent found in IDA
     bool Tile_Is_DestroyableCliff() const;
 
-    CoordStruct FixHeight(CoordStruct crd) const
-    {
-        if (ContainsBridge()) crd.Z += kBridgeHeight;
-        return crd;
-    }
+    CoordStruct FixHeight(CoordStruct crd) const;
 
-    CoordStruct GetCoordsWithBridge() const
-    {
-        return FixHeight(fetchCoordinatesHere());
-    }
+    CoordStruct GetCoordsWithBridge() const;
 
     // design: no binary equivalent found in IDA
     void MarkForRedraw();
@@ -287,12 +274,7 @@ public:
     bool QuickPassable() const;  // 0x487950
     // wrapper: delegates to CellClass::QuickPassable at 0x487950
     CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
-    CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords)
-    {
-        CoordStruct buf;
-        FindInfantrySubposition(&buf, coords, ignore_contents, alt, use_cell_coords);
-        return buf;
-    }
+    CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
     // design: no binary equivalent found in IDA
     bool TryAssignJumpjet(FootClass* object);
     void AddContent(ObjectClass* content, bool on_bridge);  // 0x47E8A0

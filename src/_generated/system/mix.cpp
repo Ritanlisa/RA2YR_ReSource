@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x006A93F0 (177 bytes)
 char Hash_Insert_6A93F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A93F0(int this)
 {
   int v2; // eax
@@ -38,6 +39,8 @@ char __thiscall sub_6A93F0(int this)
   MEMORY[0x884B8F] = 1;
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx

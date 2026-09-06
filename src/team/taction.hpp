@@ -31,27 +31,27 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Action;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TActionClass() = default;  // 0x6E3D70
+    virtual ~TActionClass();  // 0x6E3D70
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0x98; }
+    virtual int objectSize() const override;
     // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
-    TActionClass() noexcept { }                               // 0x71E6A0
+    TActionClass() noexcept;                               // 0x71E6A0
     void Destructor();                                        // 0x6E4660
-    void ddtor() { Destructor(); }                           // 0x6E3D70
+    void ddtor();                           // 0x6E3D70
 
     // Save/Load
     void SaveLoad_Prefix(IStream*);                          // 0x6E3DB0
@@ -115,9 +115,9 @@ public:
     void SpawnMeteorShower();                                // 0x6E2C40
 
     // Stubs
-    void Stub() { }                                          // 0x6E4650
-    void StubReturn47() { }                                  // 0x6E4640
-    void StubReturn148() { }                                 // 0x6E4630
+    void Stub();                                          // 0x6E4650
+    void StubReturn47();                                  // 0x6E4640
+    void StubReturn148();                                 // 0x6E4630
 
     int32_t     idxArray;           // +0x24 (this+36)
     void*       TActionClass_field_28;           // +0x28 (this+40)

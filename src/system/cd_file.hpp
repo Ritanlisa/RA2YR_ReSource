@@ -15,7 +15,7 @@ public:
 
 protected:
     // unmatched: no callgraph reference and no git history record
-    explicit CDFileClass(const noinit_t&) noexcept : BufferIOFileClass(noinit_t()) {}
+    explicit CDFileClass(const noinit_t&) noexcept;
 
 public:
     uint32_t CDTrackIndex = 0;

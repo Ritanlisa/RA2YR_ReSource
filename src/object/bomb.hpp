@@ -21,7 +21,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~BombClass() = default;  // 0x438B00
+    virtual ~BombClass();  // 0x438B00
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

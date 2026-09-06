@@ -306,7 +306,7 @@ public:
     bool HasTiberiumAmmo; // +0x16BC (5820): when PipScale==Tiberium, true → use global ammo count, false → use per-type count at +0x800
 
     // design: inline accessor, inlined at all call sites
-    int  GetArrayIndex() const { return ArrayIndex; }
+    int  GetArrayIndex() const;
     // design: no binary equivalent found in IDA
     bool IsCellClearOfTerrainObstacles(const CellStruct& cell) const;
 

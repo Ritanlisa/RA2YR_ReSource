@@ -11,23 +11,179 @@ namespace gamemd
 {
 
 struct SHPStruct;
-class ConvertClass {
+class ConvertClass;  // full definition in system/convert_class.hpp
+
+// Surface — abstract render-target base class.
+// IDA evidence: vtable 0x7E2198 (32 entries; 25 slots share the
+// `xor eax,eax` default stub 0x4C9150, i.e. never called through base).
+// Width@+0x04 / Height@+0x08 proven by Surface::GetWidth (0x411540:
+// mov eax,[ecx+4]) / Surface::GetHeight (0x411550: mov eax,[ecx+8]).
+class Surface
+{
 public:
-    // DrawSHP();
-    // DrawText();
+    // vtable [0]: scalar deleting destructor
+    virtual ~Surface() = 0
+; // abstract base — deleting dtor defined in surface.cpp
+
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0;
+    virtual bool BlitPart(
+        const RectangleStruct& dest_rect, Surface* src,
+        const RectangleStruct& src_rect, bool option1, bool option2) = 0;
+    virtual bool Blit(
+        const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
+        Surface* src, const RectangleStruct& dest_rect,
+        const RectangleStruct& src_rect, bool option1, bool option2) = 0;
+    virtual bool FillRectEx(
+        const RectangleStruct& clip_rect,
+        const RectangleStruct& fill_rect, uint32_t color) = 0;
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) = 0;
+    virtual bool Fill(uint32_t color) = 0;
+    virtual bool FillRectWithFlags(
+        const RectangleStruct& clip_rect,
+        const ColorStruct& color,
+        int opacity_percent) = 0;
+    virtual bool DrawEllipseOutline(
+        const Point2D& center,
+        int radius_w, int radius_h,
+        const RectangleStruct& clip_rect,
+        uint16_t color) = 0;
+    virtual bool SetPixel(const Point2D& point, uint32_t color) = 0;
+    virtual uint32_t GetPixel(const Point2D& point) = 0;
+    virtual bool DrawLineEx(
+        const RectangleStruct& clip_rect, const Point2D& start,
+        const Point2D& end, uint32_t color) = 0;
+    virtual bool DrawLine(const Point2D& start, const Point2D& end, uint32_t color) = 0;
+    virtual bool DrawLineZBuf(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, int fade_start, int fade_end,
+        bool update_z_buffer) = 0;
+    virtual bool DrawLineModulated(
+        const Point2D& start, const Point2D& end,
+        int mod_strength, int fade_start, int fade_end,
+        bool update_z_buffer) = 0;
+    virtual bool DrawLineFaded(
+        const Point2D& start, const Point2D& end,
+        const uint8_t* stipple_pattern,
+        int fade_start, int fade_end,
+        bool z_buffer, float gradient_start,
+        float gradient_step, bool flip_dir) = 0;
+    virtual bool DrawLineZBufColored(
+        const Point2D& start, const Point2D& end,
+        const uint8_t src_rgb[3], float brightness,
+        int fade_start, int fade_end) = 0;
+    virtual bool WalkLine(
+        const Point2D& start, const Point2D& end,
+        void (*callback)(const Point2D&)) = 0;
+    virtual bool DrawDashedLine(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, const uint8_t stipple[16],
+        int dash_offset) = 0;
+    virtual bool DrawDashedLineStipple(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, const uint8_t stipple[16],
+        int dash_offset, bool update_z) = 0;
+    virtual bool DrawStippledRect(
+        const Point2D& top_left, const Point2D& bottom_right,
+        uint16_t color, bool fill_interior) = 0;
+    virtual bool DrawRectEx(
+        const RectangleStruct& clip_rect,
+        const RectangleStruct& draw_rect, uint32_t color) = 0;
+    virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) = 0;
+    virtual void* Lock(int x, int y) = 0;
+    virtual bool Unlock() = 0;
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
+    virtual bool IsLocked() const = 0;  // 0x411580
+    // XSurface vtable slots [28]/[29] hold the shared `xor eax,eax` stub —
+    // base default returns 0; BSurface/DSurface override.
+    virtual int GetBytesPerPixel() const;  // default impl in surface.cpp
+    virtual int GetPitch() const;          // default impl in surface.cpp
+    virtual RectangleStruct* GetRect(RectangleStruct* out_rect);  // 0x411510: fills {0, 0, Width, Height}, returns out_rect
+    virtual int GetWidth() const;   // 0x411540: mov eax,[ecx+4]
+    virtual int GetHeight() const;  // 0x411550: mov eax,[ecx+8]
+    // XSurface vtable [33] = StubReturnFalse (0x411590) — base default false.
+    virtual bool IsDSurface() const;  // default impl in surface.cpp
+    virtual bool PutPixel(
+        const Point2D& point,
+        uint16_t color,
+        const RectangleStruct& clip_rect) = 0;
+    virtual uint16_t GetPixelAtCoords(
+        const Point2D& point,
+        const RectangleStruct& clip_rect) = 0;
+    virtual bool DrawGradientLine(
+        const Point2D& start, const Point2D& end,
+        int palette_idx, int fade_val,
+        float* gradient_start, float* gradient_step) = 0;
+    virtual bool CheckBltStatus() = 0;
+
+    // SHP sprite blit + text draw (overloads; definitions in surface.cpp)
+    void DrawSHP(
+        ConvertClass* palette,
+        SHPStruct* shp,
+        int frame_index,
+        const Point2D& pos,
+        const RectangleStruct& bounds,
+        BlitterFlags flags,
+        uint32_t arg7,
+        int arg8,
+        uint32_t arg9,
+        uint32_t argA,
+        int tint_color,
+        SHPStruct* buildingz_sha,
+        uint32_t argD,
+        int zs_x,
+        int zs_y);
+    void DrawSHP(
+        ConvertClass* palette,
+        SHPStruct* shp,
+        int frame_index,
+        const Point2D& location);
+    Point2D* DrawText(
+        Point2D* out,
+        const wchar_t* text,
+        Surface* surface,
+        const RectangleStruct& bounds,
+        const Point2D& location,
+        uint16_t color,
+        uint32_t option3,
+        uint32_t flags,
+        uint32_t unknown9);
+    Point2D DrawText(
+        const wchar_t* text,
+        Surface* surface,
+        const RectangleStruct& bounds,
+        const Point2D& location,
+        uint16_t color,
+        uint32_t option3,
+        uint32_t flags,
+        uint32_t unknown9);
+    Point2D DrawText(
+        const wchar_t* text,
+        const RectangleStruct& bounds,
+        const Point2D& location,
+        uint16_t color,
+        uint32_t option3,
+        uint32_t flags);
+    Point2D DrawText(
+        const wchar_t* text,
+        const Point2D& location,
+        uint16_t color,
+        uint32_t option3,
+        uint32_t flags);
+
+    int Width;   // +0x04
+    int Height;  // +0x08
+
+protected:
+    Surface();  // abstract — construct via XSurface/BSurface/DSurface only
 };
 
 class XSurface : public Surface
 {
 public:
-    XSurface(int width, int height) noexcept
-        : Surface(width, height)
-        , LockCount(0)
-    {
-    }
+    XSurface(int width, int height) noexcept;
 
     // design: virtual function, no binary implementation matched in IDA
-    virtual ~XSurface() override = default;
+    virtual ~XSurface() override;
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override; // 0x7BBAF0
     virtual bool BlitPart( // 0x7BBB90
@@ -45,7 +201,7 @@ public:
     virtual bool FillRectWithFlags(  // 0x4bb830
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
-        int opacity_percent) override { return false; }
+        int opacity_percent) override;
     virtual bool DrawEllipseOutline( // 0x7BB350
         const Point2D& center,
         int radius_w, int radius_h,
@@ -61,21 +217,21 @@ public:
     virtual bool DrawLineZBuf(  // 0x4bfd30
         const Point2D& start, const Point2D& end,
         uint16_t color, int fade_start, int fade_end,
-        bool update_z_buffer) override { return false; }
+        bool update_z_buffer) override;
     virtual bool DrawLineModulated(  // 0x4bbca0
         const Point2D& start, const Point2D& end,
         int mod_strength, int fade_start, int fade_end,
-        bool update_z_buffer) override { return false; }
+        bool update_z_buffer) override;
     virtual bool DrawLineFaded(  // 0x4bc750
         const Point2D& start, const Point2D& end,
         const uint8_t* stipple_pattern,
         int fade_start, int fade_end,
         bool z_buffer, float gradient_start,
-        float gradient_step, bool flip_dir) override { return false; }
+        float gradient_step, bool flip_dir) override;
     virtual bool DrawLineZBufColored(  // 0x4bdf00
         const Point2D& start, const Point2D& end,
         const uint8_t src_rgb[3], float brightness,
-        int fade_start, int fade_end) override { return false; }
+        int fade_start, int fade_end) override;
     virtual bool WalkLine( // 0x7BAB90
         const Point2D& start, const Point2D& end,
         void (*callback)(const Point2D&)) override;
@@ -86,27 +242,19 @@ public:
     virtual bool DrawDashedLineStipple(  // 0x4c0750
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
-        int dash_offset, bool update_z) override { return false; }
+        int dash_offset, bool update_z) override;
     virtual bool DrawStippledRect(  // 0x4c0e30
         const Point2D& top_left, const Point2D& bottom_right,
-        uint16_t color, bool fill_interior) override { return false; }
+        uint16_t color, bool fill_interior) override;
     virtual bool DrawRectEx( // 0x7BADC0
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect, uint32_t color) override;
     virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;  // 0x7BAD90
 
-    virtual void* Lock(int x, int y) override // 0x411560
-    {
-        ++LockCount;
-        return nullptr;
-    }
-    virtual bool Unlock() override // 0x411570
-    {
-        --LockCount;
-        return true;
-    }
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }  // 0x4BAEC0
-    virtual bool IsLocked() const override final { return LockCount > 0; }  // 0x411580
+    virtual void* Lock(int x, int y) override; // 0x411560
+    virtual bool Unlock() override; // 0x411570
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
+    virtual bool IsLocked() const override final;  // 0x411580
 
     virtual bool PutPixel( // 0x7BAF90
         const Point2D& point,
@@ -117,53 +265,44 @@ public:
         const Point2D& point,
         const RectangleStruct& clip_rect) override;
 
+    // XSurface vtable ends at [35] GetPixelAtCoords — these two introduce
+    // new virtuals here (DSurface vtable [36]/[37]); not overrides.
     virtual bool DrawGradientLine(  // 0x4bf750
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
-        float* gradient_start, float* gradient_step) override { return false; }
+        float* gradient_start, float* gradient_step);
 
-    virtual bool CheckBltStatus() override { return false; }  // 0x4BAF20
+    virtual bool CheckBltStatus();  // 0x4BAF20 (DSurface 0x4BAF20)
 
-    virtual bool IsDSurface() const override { return false; }  // 0x4C1AB0
+    virtual bool IsDSurface() const override;  // 0x4C1AB0
 
     int LockCount;
 
 protected:
     explicit XSurface(noinit_t) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : Surface(noinit_t{})
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
 };
 
 // CSP: BSurface matched via T3
 class BSurface : public XSurface
 {
 public:
-    BSurface(int width, int height, int bytes_per_pixel) noexcept
-        : XSurface(width, height)
-        , BytesPerPixel(bytes_per_pixel)
-        , Buffer(nullptr)
-    {
-    }
+    BSurface(int width, int height, int bytes_per_pixel) noexcept;
 
     // design: virtual function, no binary implementation matched in IDA
-    virtual ~BSurface() override = default;
+    virtual ~BSurface() override;
 
     virtual void* Lock(int x, int y) override; // 0x4115F0
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; } // 0x411630
-    virtual int GetPitch() const override { return Width * BytesPerPixel; } // 0x411640
-    virtual bool IsDSurface() const override final { return false; }  // 0x4C1AB0
+    virtual int GetBytesPerPixel() const override; // 0x411630
+    virtual int GetPitch() const override; // 0x411640
+    virtual bool IsDSurface() const override final;  // 0x4C1AB0
 
     int BytesPerPixel;
     byte* Buffer;
 
 protected:
     explicit BSurface(noinit_t) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : XSurface(noinit_t{})
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     bool CreateTripleBuffer();  // 0x7b8c60 -- BSurface::CreateTripleBuffer
@@ -231,14 +370,14 @@ public:
     virtual void* Lock(int x, int y) override;  // 0x4BAD80
     virtual bool Unlock() override;  // 0x4BAF40
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // 0x4BAD60
+    virtual int GetBytesPerPixel() const override;  // 0x4BAD60
     virtual int GetPitch() const override; // 0x4BAD70
     virtual bool DrawGradientLine( // 0x4BF750
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override;
     virtual bool CheckBltStatus() override;  // 0x4BAF20
-    virtual bool IsDSurface() const override final { return true; }  // 0x4C1AB0
+    virtual bool IsDSurface() const override final;  // 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     // unmatched: no callgraph reference and no git history record
@@ -267,10 +406,7 @@ public:
 
 protected:
     explicit DSurface(noinit_t) noexcept
-        // unmatched: no callgraph reference and no git history record
-        : XSurface(noinit_t{})
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
 
 private:
     // Core Blit logic shared by Blit() and BlitTracker()

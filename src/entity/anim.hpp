@@ -29,7 +29,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~AnimClass() override = default;  // 0x4228E0
+    virtual ~AnimClass() override;  // 0x4228E0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

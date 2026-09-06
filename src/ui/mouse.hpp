@@ -27,15 +27,11 @@ struct MouseCursor
     int32_t  HotX;
     int32_t  HotY;
 
-    MouseCursor() noexcept
-        : Frame(0), Count(1), Interval(1), MiniFrame(-1), MiniCount(0), HotX(0), HotY(0) {}  // 0x55CC20
+    MouseCursor() noexcept;  // 0x55CC20
 
     MouseCursor(int32_t frame, int32_t count, int32_t interval,
                 int32_t miniFrame, int32_t miniCount,
-                int32_t hotX, int32_t hotY) noexcept
-        : Frame(frame), Count(count), Interval(interval),
-          // unmatched: no callgraph reference and no git history record
-          MiniFrame(miniFrame), MiniCount(miniCount), HotX(hotX), HotY(hotY) {}
+                int32_t hotX, int32_t hotY) noexcept;
 };
 
 class WWMouseClass
@@ -47,32 +43,32 @@ public:
     virtual ~WWMouseClass() = default;
 
     // design: inline accessor, inlined at all call sites
-    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
+    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame);
     // design: inline accessor, inlined at all call sites
-    virtual bool IsRefCountNegative() { return false; }
-    virtual void HideCursor() {}  // 0x7B9930
-    virtual void ShowCursor() {}  // 0x7C868C
-    virtual void ReleaseMouse() {}  // 0x7B9C30
-    virtual void CaptureMouse() {}  // 0x7B9A60
-    virtual uint8_t GetField10() { return 0; }  // 0x6CC2A0
-    virtual void InvalidateRect(const RectangleStruct& rect) {}  // 0x7C8608
+    virtual bool IsRefCountNegative();
+    virtual void HideCursor();  // 0x7B9930
+    virtual void ShowCursor();  // 0x7C868C
+    virtual void ReleaseMouse();  // 0x7B9C30
+    virtual void CaptureMouse();  // 0x7B9A60
+    virtual uint8_t GetField10();  // 0x6CC2A0
+    virtual void InvalidateRect(const RectangleStruct& rect);  // 0x7C8608
     // unmatched: no callgraph reference and no git history record
-    virtual void CallFunc10() {}
+    virtual void CallFunc10();
     // design: inline accessor, inlined at all call sites
-    virtual uint32_t GetRefCount() { return 0; }
+    virtual uint32_t GetRefCount();
     // unmatched: no callgraph reference and no git history record
-    virtual int32_t GetX() const { return 0; }
+    virtual int32_t GetX() const;
     // unmatched: no callgraph reference and no git history record
-    virtual int32_t GetY() const { return 0; }
+    virtual int32_t GetY() const;
     // unmatched: no callgraph reference and no git history record
-    virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; }
+    virtual Point2D* fetchCoordinatesHere(Point2D* out) const;
     // unmatched: no callgraph reference and no git history record
-    virtual void SetCoords(const Point2D& buffer) {}
-    virtual void InitSurface(DSurface* pSurface, bool unk) {}  // 0x7B9040
+    virtual void SetCoords(const Point2D& buffer);
+    virtual void InitSurface(DSurface* pSurface, bool unk);  // 0x7B9040
     // design: inline accessor, inlined at all call sites
-    virtual void InitCursor(DSurface* pSurface, bool unk) {}
+    virtual void InitCursor(DSurface* pSurface, bool unk);
     // unmatched: no callgraph reference and no git history record
-    virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {}
+    virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight);
 
     SHPStruct*       Image;
     int32_t          ImageFrameIndex;
@@ -120,15 +116,15 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MouseClass() = default;
 
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override;
     // design: inline accessor, inlined at all call sites
-    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
+    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override;
     // unmatched: no callgraph reference and no git history record
-    virtual bool RestoreCursor() override { return false; }
+    virtual bool RestoreCursor() override;
     // design: inline accessor, inlined at all call sites
-    virtual void UpdateCursorMinimapState(bool miniMap) override {}
+    virtual void UpdateCursorMinimapState(bool miniMap) override;
     // design: inline accessor, inlined at all call sites
-    virtual MouseCursorType GetLastMouseCursor() { return MouseCursorType::Default; }
+    virtual MouseCursorType GetLastMouseCursor();
 
     bool              MouseCursorIsMini;
     uint8_t           padding_01[3];

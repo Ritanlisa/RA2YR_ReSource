@@ -44,16 +44,16 @@ class BinkMovieHandle : public MovieHandle
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    BinkMovieHandle() : totalFrames(0) {}
+    BinkMovieHandle();
     // design: virtual function, no binary implementation matched in IDA
     virtual ~BinkMovieHandle() override;
 
     // design: inline accessor, inlined at all call sites
-    virtual int  GetWidth()  const override { return width; }
+    virtual int  GetWidth()  const override;
     // design: inline accessor, inlined at all call sites
-    virtual int  GetHeight() const override { return height; }
+    virtual int  GetHeight() const override;
     // design: inline accessor, inlined at all call sites
-    virtual bool IsPlaying() const override { return playing; }
+    virtual bool IsPlaying() const override;
     // design: virtual function, no binary implementation matched in IDA
     virtual bool AdvanceFrame() override;
     // unmatched: no callgraph reference and no git history record
@@ -65,11 +65,11 @@ public:
     void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
                         int dest_x = 0, int dest_y = 0);
 
-    int  GetCurrentFrame() const { return currentFrame; } // 0x438a00
+    int  GetCurrentFrame() const; // 0x438a00
     // design: inline accessor, inlined at all call sites
-    int  GetTotalFrames()  const { return totalFrames; }
+    int  GetTotalFrames()  const;
     // design: inline accessor, inlined at all call sites
-    uint32_t GetSurfaceFlags() const { return surfaceFlags; }
+    uint32_t GetSurfaceFlags() const;
 
     // unmatched: no callgraph reference and no git history record
     bool OpenFromMemory(const void* data, int size, DSurface* render_target);
@@ -117,9 +117,9 @@ public:
     VQMovieHandle() = default;
     virtual ~VQMovieHandle() override;
 
-    virtual int  GetWidth()  const override { return width; }
-    virtual int  GetHeight() const override { return height; }
-    virtual bool IsPlaying() const override { return playing; }
+    virtual int  GetWidth()  const override;
+    virtual int  GetHeight() const override;
+    virtual bool IsPlaying() const override;
     virtual bool AdvanceFrame() override;
     // unmatched: no callgraph reference and no git history record
     virtual void RenderFrame(DSurface* target) override;
@@ -145,11 +145,7 @@ class MoviePlayer
 {
 public:
     // unmatched: no callgraph reference and no git history record
-    static MoviePlayer& Instance()
-    {
-        static MoviePlayer inst;
-        return inst;
-    }
+    static MoviePlayer& Instance();
 
     // Create a movie handle from a filename
     // Returns nullptr if format unsupported or file not found
@@ -171,7 +167,7 @@ public:
     static MovieType DetectFormat(const char* filename);
 
     // unmatched: no callgraph reference and no git history record
-    MovieHandle* CurrentMovie() const { return currentMovie; }
+    MovieHandle* CurrentMovie() const;
 
 private:
     MoviePlayer() = default;

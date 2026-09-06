@@ -14,10 +14,7 @@ class SHPFile;
 struct SHPStruct
 {
     SHPStruct() noexcept
-        // unmatched: no callgraph reference and no git history record
-        : Type(0), Width(0), Height(0), Frames(0)
-    {
-    }
+; // unmatched: no callgraph reference and no git history record
 
     // unmatched: no callgraph reference and no git history record
     virtual ~SHPStruct();
@@ -43,7 +40,7 @@ struct SHPStruct
     bool HasCompression(int frame_index) const;
 
     // unmatched: no callgraph reference and no git history record
-    bool IsReference() const { return Type == 0xFFFF; }
+    bool IsReference() const;
 
     // unmatched: no callgraph reference and no git history record
     SHPReference* AsReference();
@@ -74,10 +71,7 @@ struct SHPFrame
 class SHPFile : public SHPStruct
 {
     // unmatched: no callgraph reference and no git history record
-    const SHPFrame& GetFrameHeader(int frame_index) const
-    {
-        return (&FirstFrame)[frame_index];
-    }
+    const SHPFrame& GetFrameHeader(int frame_index) const;
 
     SHPFrame FirstFrame;
 };
@@ -95,25 +89,5 @@ class SHPReference : public SHPStruct
     SHPReference*    Prev;
     uint32_t         SHPReference_field_20;
 };
-
-inline SHPReference* SHPStruct::AsReference()
-{
-    return IsReference() ? static_cast<SHPReference*>(this) : nullptr;
-}
-
-inline const SHPReference* SHPStruct::AsReference() const
-{
-    return IsReference() ? static_cast<const SHPReference*>(this) : nullptr;
-}
-
-inline SHPFile* SHPStruct::AsFile()
-{
-    return !IsReference() ? static_cast<SHPFile*>(this) : nullptr;
-}
-
-inline const SHPFile* SHPStruct::AsFile() const
-{
-    return !IsReference() ? static_cast<const SHPFile*>(this) : nullptr;
-}
 
 } // namespace gamemd

@@ -35,7 +35,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~HouseTypeClass() = default;  // 0x5116A0
+    virtual ~HouseTypeClass();  // 0x5116A0
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

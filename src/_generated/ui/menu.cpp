@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x0046D8B0 (368 bytes)
 char CampaignScore_IsSession_46D8B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_46D8B0()
 {
   char v0; // bl
@@ -85,6 +86,8 @@ char sub_46D8B0()
   }
   return v0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -242,7 +245,8 @@ retn
 
 // 0x0046DCC0 (166 bytes)
 bool GetCampaignScore_46DCC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_46DCC0(int a1, unsigned __int8 a2)
 {
   int i; // edi
@@ -280,6 +284,8 @@ int __fastcall sub_46DCC0(int a1, unsigned __int8 a2)
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -363,7 +369,8 @@ retn
 
 // 0x0077D720 (113 bytes)
 int NetworkAddressDispatch_77D720() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_77D720(_DWORD *a1, int a2)
 {
   int v3; // ecx
@@ -392,6 +399,8 @@ _DWORD *__fastcall sub_77D720(_DWORD *a1, int a2)
   a1[2] = v6;
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -436,7 +445,8 @@ retn
 
 // 0x005EFF00 (105 bytes)
 int NetworkProcess_5EFF00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_5EFF00(int hWnd, int a2, unsigned int a3, int a4)
 {
   int result; // eax
@@ -460,6 +470,8 @@ int __stdcall sub_5EFF00(int hWnd, int a2, unsigned int a3, int a4)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 hWnd            = dword ptr  4
@@ -522,7 +534,8 @@ retn    10h
 
 // 0x00663CD0 (130 bytes)
 char Network_Copy_663CD0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_663CD0(int *this, _BYTE *a2)
 {
   _DWORD *v2; // edi
@@ -554,6 +567,8 @@ char __thiscall sub_663CD0(int *this, _BYTE *a2)
   }
   return v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -634,7 +649,8 @@ retn    4
 
 // 0x005EC290 (266 bytes)
 char PlayNetwork_5EC290() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5EC290(int a1, int a2)
 {
   int v4; // ebp
@@ -670,6 +686,8 @@ char __fastcall sub_5EC290(int a1, int a2)
     RetVtableStubZero_eax_27();
   return CheckGameSettingsChanged(1, 0);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8B238h
@@ -820,7 +838,8 @@ jmp     CheckGameSettingsChanged
 
 // 0x004F2C00 (74 bytes)
 int SetMember_4F2C00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;
@@ -840,6 +859,8 @@ _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]

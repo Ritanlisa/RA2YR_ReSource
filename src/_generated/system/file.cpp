@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x007CB302 (59 bytes)
 int Calllockfile_7CB302() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl sub_7CB302(#252 *Stream, int a2, int a3)
 {
   int v3; // edi
@@ -21,6 +22,8 @@ int __cdecl sub_7CB302(#252 *Stream, int a2, int a3)
   _unlock_file(Stream);
   return v4;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Stream          = dword ptr  4
@@ -57,7 +60,8 @@ retn
 
 // 0x007BF240 (306 bytes)
 const char* Callread_7BF240() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl sub_7BF240(int a1, int a2, char *DstBuf, int MaxCharCount)
 {
   int result; // eax
@@ -119,6 +123,8 @@ int __cdecl sub_7BF240(int a1, int a2, char *DstBuf, int MaxCharCount)
       return result;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 DstBuf          = dword ptr  0Ch
@@ -293,7 +299,8 @@ retn
 
 // 0x004C9160 (80 bytes)
 char ClearCCFile_4C9160() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_4C9160()
 {
   char v0; // bl
@@ -310,6 +317,8 @@ char sub_4C9160()
   BufferIOFileClass::Dtor(v2);
   return v0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 6Ch
@@ -337,7 +346,8 @@ retn
 
 // 0x00431BC0 (457 bytes)
 bool FileClass_SetMember18_431BC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_431BC0(_DWORD *this, int a2, int a3)
 {
   int v5; // edi
@@ -446,6 +456,8 @@ LABEL_14:
   *((_BYTE *)this + 41) = 1;
   return 1;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -693,7 +705,8 @@ retn    8
 
 // 0x0065D510 (176 bytes)
 const char* FileStrawDestru_Release_65D510() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __fastcall sub_65D510(int a1, const char *a2, int a3, _BYTE *a4)
 {
   unsigned int v4; // esi
@@ -739,6 +752,8 @@ LABEL_10:
   FileStraw::Destructor((int)v10);
   return v4;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -825,7 +840,8 @@ retn    8
 
 // 0x00765580 (125 bytes)
 int IsCCFile_765580() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_765580(_DWORD *a1)
 {
   _DWORD v2[22]; // [esp+0h] [ebp-58h] BYREF
@@ -843,6 +859,8 @@ int __stdcall sub_765580(_DWORD *a1)
   v2[0] = &off_7E1668;
   return BufferIOFileClass::Dtor(v2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 58h
@@ -884,7 +902,8 @@ retn    4
 
 // 0x0075A120 (351 bytes)
 bool MethodLookupFileInfoCache_75A120() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
 {
   BOOL result; // eax
@@ -958,6 +977,8 @@ LABEL_14:
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1150,7 +1171,8 @@ retn    0Ch
 
 // 0x00408F80 (174 bytes)
 const char* MethodRead_408F80() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_408F80(int *a1, int *a2, int a3, char *a4)
 {
   int v7; // eax
@@ -1202,6 +1224,8 @@ LABEL_11:
   while ( a3 );
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -1310,7 +1334,8 @@ retn    8
 
 // 0x00798360 (116 bytes)
 char OpenStub_798360() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_798360()
 {
   int v0; // eax
@@ -1342,6 +1367,8 @@ char sub_798360()
   }
   return v0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 phkResult       = dword ptr -20Ch
@@ -1392,7 +1419,8 @@ retn
 
 // 0x004FFD90 (63 bytes)
 int PathfindingClass_FindPathfinding_4FFD90() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
 {
   int v2; // eax
@@ -1404,6 +1432,8 @@ int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
   v4[1] = (v2 << 8) + 128;
   return PathfindingClass::FindPath(this, v4);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -1427,7 +1457,8 @@ retn    4
 
 // 0x004F1B80 (286 bytes)
 const char* PrependCCFile_4F1B80() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char **__usercall sub_4F1B80@<eax>(char **a1@<edx>, char **a2@<ecx>, int a3@<edi>)
 {
   char **v5; // esi
@@ -1479,6 +1510,8 @@ char **__usercall sub_4F1B80@<eax>(char **a1@<edx>, char **a2@<ecx>, int a3@<edi
     return 0;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0ACh
@@ -1566,7 +1599,8 @@ retn
 
 // 0x0042BCA0 (371 bytes)
 int SimplifyPathFilterHelper_42BCA0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __stdcall sub_42BCA0(int a1, int a2, int a3, _DWORD *a4, int *a5)
 {
   int v6; // edx
@@ -1657,6 +1691,8 @@ LABEL_11:
   *a5 = v28;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -1798,7 +1834,8 @@ retn    14h
 
 // 0x00765000 (458 bytes)
 void String_PrependCCFile_765000() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_765000(int this, void *a2)
 {
   char **v3; // eax
@@ -1855,6 +1892,8 @@ char *__thiscall sub_765000(int this, void *a2)
   DeleteAndZero(&v7);
   return HashTable::DestroyHashTableINIClass(v8);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0F8h

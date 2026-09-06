@@ -3,13 +3,9 @@
 #include <cstdint>
 
 #include "core/enums.hpp"
+#include "core/math.hpp"   // CellStruct = Vector2D<short>
 
 namespace gamemd {
-
-#ifndef GAMEMD_USING_CellStruct
-#define GAMEMD_USING_CellStruct
-using ra2::game::CellStruct;
-#endif
 
 // CSP: WaypointPathClass matched via T1
 class WaypointPathClass;
@@ -20,10 +16,13 @@ class WaypointPathClass;
 class WaypointClass
 {
 public:
+    // required by embedded VectorClass<WaypointClass> vtable instantiation
+    // (conservative identity compare; no binary call sites observed)
+    bool operator==(const WaypointClass& other) const;
     // 0x502160 FindOrAddPath
-    bool IsCoordinateUsed(const CellStruct&) const { return false; }  // 0x5022F0
+    bool IsCoordinateUsed(const CellStruct&) const;  // 0x5022F0
     // 0x502460 FindOrCreate
-    bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; } // 0x502460
+    bool FindOrCreate(int, unsigned int*, unsigned char*); // 0x502460
 
     WaypointPathClass* paths[12];     // +0x210 (this+132)
     uint32_t           WaypointClass_field_0;     // +0x000
@@ -36,8 +35,8 @@ public:
     uint8_t            padding_18[0x1F8]; // +0x018..+0x20F
     uint32_t           activePathIndex;   // +0x20C (this+131)
 
-protected:
-    WaypointClass() noexcept = default;
+public:
+    WaypointClass() noexcept = default;  // public: VectorClass<WaypointClass> placement-construction requires access
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* FindByCell(int a1);  // 0x5023b0 -- Waypoint::FindByCell

@@ -42,33 +42,15 @@ struct CameoDataStruct
     int32_t          ProgressStep;           // 0x2C: StageClass::Step (default 1)
     int32_t          FlashEndFrame;          // 0x30: frame when build-complete flash ends
 
-    CameoDataStruct() noexcept
-        : ItemIndex(-1), ItemType(AbstractType::None), IsAlt(false),
-          CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
-          ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
-          ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          // unmatched: no callgraph reference and no git history record
-          FlashEndFrame(0) {}
+    CameoDataStruct() noexcept;
 
-    CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept
-        : ItemIndex(itemIndex), ItemType(itemType), IsAlt(false),
-          CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
-          ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
-          ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          // unmatched: no callgraph reference and no git history record
-          FlashEndFrame(0) {}
+    CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator==(const CameoDataStruct& rhs) const noexcept
-    {
-        return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType;
-    }
+    bool operator==(const CameoDataStruct& rhs) const noexcept;
 
     // unmatched: no callgraph reference and no git history record
-    bool operator!=(const CameoDataStruct& rhs) const noexcept
-    {
-        return ItemIndex != rhs.ItemIndex || ItemType != rhs.ItemType;
-    }
+    bool operator!=(const CameoDataStruct& rhs) const noexcept;
 };
 
 // YRpp: SidebarClass::StripClass

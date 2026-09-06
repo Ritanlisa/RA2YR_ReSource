@@ -75,7 +75,7 @@ public:
 
     // === Destructor ===
     // [8] 0x5F6DC0 ObjectClass::CreateInstance (dtor thunk)
-    virtual ~ObjectClass() = default;  // 0x5F3B80
+    virtual ~ObjectClass();  // 0x5F3B80
 
     // ========================================================================
     // ObjectClass virtuals (vtable[0] entries [24]-[121])
@@ -382,19 +382,14 @@ public:
 
     virtual double GetHealthPercentage() const;
 
-    HealthState GetHealthStatus() const {         // 0x5F5DD0
-        auto pct = GetHealthPercentage();
-        if (pct <= 0.3333) return static_cast<HealthState>(0);
-        if (pct <= 0.6666) return static_cast<HealthState>(1);
-        return static_cast<HealthState>(2);
-    }
+    HealthState GetHealthStatus() const;
 
     // === Convenience wrappers ===
-    CellStruct GetMapCoords() const { CellStruct ret{}; GetMapCoords(&ret); return ret; }  // 0x426A80
+    CellStruct GetMapCoords() const;  // 0x426A80
     // design: inline accessor, inlined at all call sites
-    CellStruct GetMapCoordsAgain() const { CellStruct ret{}; GetMapCoordsAgain(&ret); return ret; }
+    CellStruct GetMapCoordsAgain() const;
     // design: inline accessor, inlined at all call sites
-    CoordStruct GetFLH(int weapon_idx, const CoordStruct& base) const { CoordStruct ret{}; GetFLH(&ret, weapon_idx, base); return ret; }
+    CoordStruct GetFLH(int weapon_idx, const CoordStruct& base) const;
 
     // === ObjectClass non-virtual methods (addresses from IDA) ===
     void processPointerInvalid(); // 0x483610 ObjectClass::processPointerInvalid

@@ -29,12 +29,10 @@ struct VxlLimb
     int      DataSize;
     uint32_t DataOffset;
 
-    VxlLimb() : Scale(1.0f), NormalType(0), X(0), Y(0), Z(0),
-                // unmatched: no callgraph reference and no git history record
-                VoxelData(nullptr), DataSize(0), DataOffset(0) {}
+    VxlLimb();
 
     // unmatched: no callgraph reference and no git history record
-    ~VxlLimb() { delete[] VoxelData; VoxelData = nullptr; }
+    ~VxlLimb();
 };
 
 struct VxlFile
@@ -42,7 +40,7 @@ struct VxlFile
     int      LimbCount;
     VxlLimb* Limbs;
 
-    VxlFile() : LimbCount(0), Limbs(nullptr) {}
+    VxlFile();
     ~VxlFile();
 };
 
@@ -60,13 +58,10 @@ struct HvaFile
     HvaMatrix* Transforms;  // [FrameCount * LimbCount] matrices
     char**     LimbNames;
 
-    HvaFile() : FrameCount(0), LimbCount(0), Transforms(nullptr), LimbNames(nullptr) {}
-    ~HvaFile() { delete[] Transforms; if (LimbNames) { for (int i = 0; i < LimbCount; ++i) delete[] LimbNames[i]; delete[] LimbNames; } }
+    HvaFile();
+    ~HvaFile();
 
-    const HvaMatrix* GetTransform(int frame, int limb) const {  // 0x55A730
-        if (frame < 0 || frame >= FrameCount || limb < 0 || limb >= LimbCount) return nullptr;
-        return &Transforms[frame * LimbCount + limb];
-    }
+    const HvaMatrix* GetTransform(int frame, int limb) const;
 };
 
 // unmatched: no callgraph reference and no git history record

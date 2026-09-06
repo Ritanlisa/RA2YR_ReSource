@@ -99,7 +99,8 @@ FootClass::FootClass() noexcept
 // 0x4da530
 bool FootClass::MovementAI()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall FootClass_MovementAI(int a1)
 {
   char result; // al
@@ -478,6 +479,8 @@ LABEL_136:
   }
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 14h
@@ -1468,7 +1471,7 @@ int FootClass::Mission_Move()
     // AI-controlled units scan for nearby threats while moving.
     if (!movementDestination && missionQueued == 0)
     {
-        queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
+        queueMission((Mission)((int)(::gamemd::Mission::Guard)), true);
         return 1;
     }
 
@@ -1527,7 +1530,7 @@ int FootClass::Mission_Hunt()
     }
     if (!target)
     {
-        queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
+        queueMission((Mission)((int)(::gamemd::Mission::Guard)), true);
         return 30;
     }
     return 0;

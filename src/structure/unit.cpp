@@ -1,4 +1,5 @@
 #include "structure/unit.hpp"
+#include "structure/globals_structure.hpp"
 
 #include <cstring>
 #include <cmath>
@@ -44,7 +45,8 @@ UnitClass::UnitClass() noexcept
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
 int UnitClass::Mission_Harvest()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::Mission_Harvest(int *this)
 {
   int v2; // ecx
@@ -216,6 +218,8 @@ LABEL_9:
       return v8 + Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2);
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -593,7 +597,8 @@ retn
 // 0x73d450
 int UnitClass::ProcessResourceHarvesting()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_73D450(void *this)
 {
   __int16 *v2; // ebp
@@ -671,6 +676,8 @@ char __thiscall sub_73D450(void *this)
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -853,32 +860,35 @@ UnitClass* UnitClass::updateHarvesting()
 // 0x6b4be0
 int UnitClass::UnloadPassengers(int placementType)
 {
-    // 0x5F5850: UpdateProductionDisplay takes only this
-    if (!ObjectClass::UpdateProductionDisplay(this) || (placementType != 1 && placementType != 3))
-        return 0;
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
+{
+  int v2; // edi
+  int v4; // edx
+  _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
 
-    // 0x6b4c06: vtable[110] — GetCellCoords_Alt
-    CellStruct cellCoord;
-    this->GetCellCoords_Alt(&cellCoord);
-
-    // 0x6b4c12-0x6b4c38: IKnowWhatImDoing > 0, ArmageddonMode, IsWalkable
-    if (IKnowWhatImDoing > 0 || ArmageddonMode
-        || Cell::IsWalkable((CellClass*)this->currentMission, (int)&cellCoord, 1))
-    {
-        CreateUnloadPlacementCraters(&cellCoord);
-    }
-
-    // 0x6b4c4e: isOnMap = 0, 0x6b4c52: PreDestroy (vtable[62], offset 0xF8)
-    this->isOnMap = 0;
-    this->PreDestroy();
-    return 1;
+  v2 = a2; /*0x6b4be3*/
+  if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) || v2 != 1 && v2 != 3 ) /*0x6b4bfb*/
+    return 0; /*0x6b4c61*/
+  a2 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v6); /*0x6b4c0e*/
+  if ( MEMORY[0xA8E7AC] > 0 || MEMORY[0xA8ED6B] || Cell::IsWalkable((int *)*(this + 43), &a2, 1) ) /*0x6b4c31*/
+    UnitClass::CreateUnloadPlacementCraters(&a2); /*0x6b4c45*/
+  v4 = *this; /*0x6b4c4a*/
+  *((_BYTE *)this + 116) = 0; /*0x6b4c4e*/
+  (*(void (__thiscall **)(int *))(v4 + 248))(this); /*0x6b4c52*/
+  return 1; /*0x6b4c58*/
+}
+#endif
+    return {}; // TODO stub - retranslate via C-line pipeline
 }
 
 // IDA: 0x6B7230 (ProcessExitQueue, 2363B)
 // 0x6b7230
 int UnitClass::ProcessExitQueue()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UnitClass::ProcessExitQueue(int *this)
 {
   int v2; // edx
@@ -1445,6 +1455,8 @@ LABEL_106:
     }
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 58h
@@ -2365,7 +2377,8 @@ retn
 // 0x6b6080
 int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B6080(int this, _WORD *a2)
 {
   int result; // eax
@@ -2397,6 +2410,8 @@ int __thiscall sub_6B6080(int this, _WORD *a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -2463,7 +2478,8 @@ retn    4
 // 0x54e3b0
 int UnitClass::GetExitCell()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
 {
   _DWORD *v3; // esi
@@ -2517,6 +2533,8 @@ int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -2649,7 +2667,8 @@ retn    8
 // 0x7192f0
 int UnitClass::Deploy()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall UnitClass::Deploy(_DWORD *a1)
 {
   _DWORD *v1; // esi
@@ -3015,6 +3034,8 @@ LABEL_82:
   ++v1[13];
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -3874,7 +3895,8 @@ retn    4
 // 0x738d30
 int UnitClass::DeployToBuilding()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UnitClass_DeployToBuilding(_DWORD *this)
 {
   int v3; // eax
@@ -4080,6 +4102,8 @@ LABEL_23:
     (*(void (__thiscall **)(_DWORD *, int *, _DWORD, _DWORD))(*this + 372))(this, &dword_A8ED54[145573], 0, 0);
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 20h
@@ -4545,7 +4569,8 @@ retn
 // 0x739ac0
 int UnitClass::SimpleDeployerDeploy()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UnitClass::SimpleDeployerDeploy(int *this)
 {
   int v2; // eax
@@ -4629,6 +4654,8 @@ char __thiscall UnitClass::SimpleDeployerDeploy(int *this)
   }
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -4799,7 +4826,8 @@ retn
 // 0x739cd0
 int UnitClass::SimpleDeployerUndeploy()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UnitClass::SimpleDeployerUndeploy(int *this)
 {
   int v2; // eax
@@ -4888,6 +4916,8 @@ char __thiscall UnitClass::SimpleDeployerUndeploy(int *this)
   }
   return v2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -5051,7 +5081,8 @@ retn
 // 0x737430
 int UnitClass::MissionDispatch()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, _DWORD *a4)
 {
   int v4; // ebp
@@ -5291,6 +5322,8 @@ LABEL_54:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -6029,7 +6062,8 @@ retn    0Ch
 // 0x7359f0
 int UnitClass::CalcMoveTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UnitClass_CalcMoveTarget(int *this)
 {
   _DWORD *v2; // eax
@@ -6327,6 +6361,8 @@ LABEL_24:
     FacingClass::Set_SyncLog(v72);
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -20h
@@ -6925,7 +6961,8 @@ retn
 // 0x741970
 int UnitClass::AssignDestination_SyncLog()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UnitClass::AssignDestination_SyncLog(_DWORD *this, __int64 a2)
 {
   __int16 *v3; // ebx
@@ -7987,6 +8024,8 @@ LABEL_49:
     goto LABEL_36;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr -68h
@@ -10316,7 +10355,8 @@ retn    8
 // 0x7414e0
 int UnitClass::ApproachTarget_DisallowMoving()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
 {
   int v3; // eax
@@ -10368,6 +10408,8 @@ void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
     (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 173), 1);
   return (void *)*(this + 173);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -10547,7 +10589,8 @@ retn    4
 // 0x736990
 int UnitClass::UpdateRotation_TurretFacing_EMP()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UnitClass::UpdateRotation_TurretFacing_EMP(int this)
 {
   int v2; // eax
@@ -10645,6 +10688,8 @@ LABEL_38:
   }
   return v11;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -10890,7 +10935,8 @@ retn
 // 0x743a50
 int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::Scatter(_DWORD *this, int *a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
@@ -11130,6 +11176,8 @@ LABEL_66:
     return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 48h
@@ -11716,7 +11764,8 @@ retn    0Ch
 // 0x458a00
 int UnitClass::IsCellBlockedByBridge()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_458A00(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // edi
@@ -11735,6 +11784,8 @@ bool __thiscall sub_458A00(_DWORD *this, _DWORD *a2)
   return *(__int16 *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*this + 440))(this, &a2)
        + *(_DWORD *)(*(this + 328) + 5664) > v6;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -11798,11 +11849,14 @@ retn    4
 // 0x4d03d0
 int UnitClass::CompareCoordinateMagnitude()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_4D03D0(__int16 *this, __int16 *a2)
 {
   return abs16(*this) >= (int)abs16(*a2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -11829,11 +11883,14 @@ retn    4
 // 0x7178b0
 int UnitClass::processEnterTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7178B0(_DWORD *this, int a2)
 {
   return *(this + a2 + 517);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -11846,7 +11903,8 @@ retn    4
 // 0x7468c0
 int UnitClass::CheckForNearbyEnemies()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::CheckForNearbyEnemies(int *this)
 {
   #72 *v2; // ecx
@@ -11966,6 +12024,8 @@ LABEL_25:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -12186,7 +12246,8 @@ retn
 // 0x737c90
 int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 #375 *__userpurge UnitClass::OnUnderAttack@<eax>(
 {
   int v11; // ebx
@@ -12593,6 +12654,8 @@ LABEL_93:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 34h
@@ -13487,7 +13550,8 @@ retn    1Ch
 // 0x70dc70
 int UnitClass::SetTurret()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass_SetTurret(_DWORD *this, unsigned int a2)
 {
   int result; // eax
@@ -13511,6 +13575,8 @@ int __thiscall UnitClass_SetTurret(_DWORD *this, unsigned int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -13561,7 +13627,8 @@ retn    4
 // 0x73f0a0
 int UnitClass::EvaluateTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::EvaluateTarget(int this, int a2, int a3, int a4, int a5, char a6)
 {
   __int64 v7; // rax
@@ -14108,6 +14175,8 @@ LABEL_154:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 80h
@@ -15295,7 +15364,8 @@ retn    14h
 // 0x7438f0
 bool UnitClass::CanCrushTarget()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7438F0(int this, _BYTE *a2)
 {
   _DWORD *v3; // edi
@@ -15327,6 +15397,8 @@ bool __thiscall sub_7438F0(int this, _BYTE *a2)
         && (*(unsigned __int8 (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a2 + 200))(a2, *(_DWORD *)(this + 540)) == 0;
   return result;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -15455,11 +15527,14 @@ retn    4
 // 0x70fbd0
 int UnitClass::IsDeactivated()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UnitClass::IsDeactivated(_BYTE *this)
 {
   return *(this + 456);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     al, [ecx+1C8h]
@@ -15475,7 +15550,8 @@ retn
 // 0x6b4a50
 int UnitClass::Create()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall UnitClass::Create(void **this, void *a2, _DWORD *a3, int a4)
 {
   int v5; // eax
@@ -15510,6 +15586,8 @@ void **__thiscall UnitClass::Create(void **this, void *a2, _DWORD *a3, int a4)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -15602,7 +15680,8 @@ retn    0Ch
 // 0x6b4c80
 int UnitClass::ReadINI()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::ReadINI(char *this)
 {
   int result; // eax
@@ -15658,6 +15737,8 @@ int __thiscall UnitClass::ReadINI(char *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -80h
@@ -15778,7 +15859,8 @@ retn
 // 0x6b4fa0
 int UnitClass::DestroySmudge()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall UnitClass::DestroySmudge(void **Block, char a2)
 {
   int v3; // eax
@@ -15808,6 +15890,8 @@ void **__thiscall UnitClass::DestroySmudge(void **Block, char a2)
     __3_YAXPAX_Z(Block);
   return Block;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -15874,7 +15958,8 @@ retn    4
 // 0x735780
 void UnitClass::Destructor()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::Destructor(void **this)
 {
   _DWORD *v2; // ecx
@@ -16015,6 +16100,8 @@ int __thiscall UnitClass::Destructor(void **this)
   *((_BYTE *)this + 144) = 0;
   return FootClass::Destruct(this);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -16258,7 +16345,8 @@ retn
 // 0x744470
 int UnitClass::LoadFromStream()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall UnitClass::LoadFromStream(int a1, int pStm)
 {
   _DWORD *v2; // esi
@@ -16339,6 +16427,8 @@ LABEL_18:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 pStm            = dword ptr  8
@@ -16492,7 +16582,8 @@ retn    8
 // 0x6b4ea0
 int UnitClass::SaveLoadData()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::SaveLoadData(#374 *this, _DWORD *a2, int a3)
 {
   int Register; // edi
@@ -16512,6 +16603,8 @@ int __thiscall UnitClass::SaveLoadData(#374 *this, _DWORD *a2, int a3)
   }
   return Register;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -16553,11 +16646,14 @@ retn    8
 // 0x6b4f00
 int UnitClass::SaveState()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall UnitClass::_vt06(int *a1, int *a2, int a3)
 {
   return AbstractClass::SaveLoad_Prefix(a1, a2, a3);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]
@@ -16579,7 +16675,8 @@ retn    0Ch
 // 0x744640
 int UnitClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass_PowerDrainUpdate(int this, int *a2)
 {
   int v3; // eax
@@ -16612,6 +16709,8 @@ int __thiscall UnitClass_PowerDrainUpdate(int this, int *a2)
   LOBYTE(v10) = *(_BYTE *)(this + 1671);
   return Power::FlagProcess(a2, v10);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -16676,7 +16775,8 @@ retn    4
 // 0x746810
 int UnitClass::PerFrameUpdate()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__usercall UnitClass_PerFrameUpdate@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
 {
   _DWORD *result; // eax
@@ -16732,6 +16832,8 @@ LABEL_9:
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -16808,7 +16910,8 @@ retn
 // 0x7446e0
 int UnitClass::HandleTargetDestroyed()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
 {
   int result; // eax
@@ -16821,6 +16924,8 @@ int __thiscall UnitClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
     *(this + 433) = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]
@@ -16860,7 +16965,8 @@ int UnitClass::CheckStatus()
 // 0x6b7c60
 int UnitClass::ClearTargetRef()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6B7C60(_DWORD *this, int a2)
 {
   int v3; // eax
@@ -16920,6 +17026,8 @@ LABEL_10:
     }
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -17027,42 +17135,83 @@ retn    4
 // idleOrderBase() / idleOrderCount() (stored in ambientSoundController fields).
 int UnitClass::ProcessIdleOrders()
 {
-    int count = idleOrderCount();
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall sub_6B7C60(_DWORD *this, int a2)
+{
+  int v3; // eax
+  int v4; // eax
+  int v5; // edx
+  _DWORD **v6; // ecx
+  _DWORD *v7; // ecx
+  int v8; // edx
+  _DWORD *v9; // eax
+  int v10; // [esp+10h] [ebp-8h]
 
-    for (int i = 0; i < count; i++)
+  if ( a2 == *(this + 26) ) /*0x6b7c6f*/
+  {
+    v3 = *(this + 27); /*0x6b7c71*/
+    *(this + 26) = 0; /*0x6b7c74*/
+    if ( !v3 ) /*0x6b7c7d*/
+      UnitClass::ProcessIdleOrders(this); /*0x6b7c7f*/
+  }
+  else if ( a2 == *(this + 27) ) /*0x6b7c90*/
+  {
+    *(this + 27) = 0; /*0x6b7c92*/
+  }
+  else
+  {
+    v4 = *(this + 18) - 1; /*0x6b7ca5*/
+    if ( v4 < 0 ) /*0x6b7ca6*/
     {
-        IdleOrderArray entries = { idleOrderBase() };
-        IdleOrderEntry* entry = entries[i];
-        if (entry->status == 2)
-        {
-            UnitClass* unit = entry->unit;
-            if (unit->Type->SuppressionThreshold != 0)
-            {
-                GetExitCell(unit, (int)this->bombVisible);
-                g_MissionQueueFrame = dword_A8ED54[12];
-                g_MissionQueueParam = 0;
-                g_MissionQueueType = 2;
-                ClearTargetRef(unit);
-            }
-        }
+LABEL_10:
+      if ( a2 == *(this + 9) ) /*0x6b7cbf*/
+      {
+        TaskManager::Update(this); /*0x6b7cc3*/
+        UnitClass::ProcessIdleOrders(this); /*0x6b7cca*/
+      }
     }
-
-    this->estimatedHealth = 0;
-    this->health = 0;
-    this->bombVisible = 0;
-
-    return count;
+    else
+    {
+      v5 = *(this + 15); /*0x6b7ca8*/
+      v6 = (_DWORD **)(v5 + 4 * v4); /*0x6b7cab*/
+      while ( a2 != **v6 ) /*0x6b7cb2*/
+      {
+        --v4; /*0x6b7cb4*/
+        --v6; /*0x6b7cb5*/
+        if ( v4 < 0 ) /*0x6b7cba*/
+          goto LABEL_10; /*0x6b7cba*/
+      }
+      v7 = *(_DWORD **)(v5 + 4 * v4); /*0x6b7cd8*/
+      if ( *(int *)(*v7 + 108) <= 0 || *(_BYTE *)(*v7 + 1738) || v7[5] == 1 ) /*0x6b7cf2*/
+      {
+        *v7 = 0; /*0x6b7cf4*/
+        *(_DWORD *)(*(_DWORD *)(*(this + 15) + 4 * v4) + 4) = 7; /*0x6b7d01*/
+        v8 = *(this + 12); /*0x6b7d08*/
+        v9 = (_DWORD *)(*(_DWORD *)(*(this + 15) + 4 * v4) + 8); /*0x6b7d18*/
+        *v9 = MEMORY[0xA8ED84]; /*0x6b7d1c*/
+        v9[1] = v10; /*0x6b7d22*/
+        v9[2] = v8; /*0x6b7d25*/
+      }
+    }
+  }
+}
+#endif
+    return {}; // TODO stub - retranslate via C-line pipeline
 }
 
 // IDA: 0x6B4F30 (StubReturn176, 6B)
 // 0x6b4f30
 int UnitClass::StubReturn176()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int UnitClass::_vt12()
 {
   return 176;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, 0B0h
@@ -17074,11 +17223,14 @@ retn
 // 0x6b4f40
 int UnitClass::StubReturn29()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int UnitClass::_vt11()
 {
   return 29;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, 1Dh
@@ -17094,7 +17246,8 @@ retn
 // 0x4d4280
 int UnitClass::ApproachEvaluate()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UnitClass_ApproachEvaluate(_DWORD *this)
 {
   int v2; // eax
@@ -17484,6 +17637,8 @@ LABEL_70:
       goto LABEL_23;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 90h
@@ -18340,7 +18495,8 @@ namespace gamemd {
 
 // 0x6b4f50
 HRESULT __stdcall UnitClass::GetClassID(CLSID* pClassID) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall UnitClass::GetClassID(int a1, _DWORD *a2)
 {
   if ( !a2 )
@@ -18351,6 +18507,8 @@ int __stdcall UnitClass::GetClassID(int a1, _DWORD *a2)
   a2[3] = -777003740;
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_4]

@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00557380 (494 bytes)
 int ControlClass_CtorFromDat_557380() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_557380(int this, int a2)
 {
   int v3; // eax
@@ -81,6 +82,8 @@ int __thiscall sub_557380(int this, int a2)
   (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 132))(this + 280, this);
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -241,7 +244,8 @@ retn    4
 
 // 0x005581A0 (63 bytes)
 int ControlClass_CtorFromDat_5581A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5581A0(int this, int a2)
 {
   ControlClass::CtorFromData((_DWORD *)this, a2);
@@ -254,6 +258,8 @@ int __thiscall sub_5581A0(int this, int a2)
   *(_DWORD *)this = &GaugeClass::`vftable';
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -284,7 +290,8 @@ retn    4
 
 // 0x004B53E0 (249 bytes)
 int ControlClass_CtorFromData_4B53E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B53E0(int this, int a2)
 {
   int v3; // eax
@@ -325,6 +332,8 @@ int __thiscall sub_4B53E0(int this, int a2)
   (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this);
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -416,7 +425,8 @@ retn    4
 
 // 0x00732FF0 (365 bytes)
 void DynamicVector_AddEvent_732FF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
 {
   int HeightMap; // eax
@@ -517,6 +527,8 @@ char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
     LOBYTE(HeightMap) = (*(char (__thiscall **)(_DWORD *, int))*v4)(v4, 1);
   return HeightMap;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -691,7 +703,8 @@ retn    4
 
 // 0x004FBD00 (113 bytes)
 char DynamicVector_Get_4FBD00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4FBD00(_DWORD *this, int a2)
 {
   int v2; // edi
@@ -722,6 +735,8 @@ char __thiscall sub_4FBD00(_DWORD *this, int a2)
   }
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A80238h
@@ -787,7 +802,8 @@ retn    4
 
 // 0x0046DA70 (465 bytes)
 void GetVector_46DA70() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_46DA70()
 {
   int v0; // ebx
@@ -872,6 +888,8 @@ void sub_46DA70()
     ++v1;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1019,7 +1037,8 @@ retn
 
 // 0x007B2E50 (305 bytes)
 void UDPInterfaceClass_Destructor_7B2E50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7B2E50(int this)
 {
   int v2; // eax
@@ -1085,6 +1104,8 @@ void __thiscall sub_7B2E50(int this)
   *(_DWORD *)(this + 258880) = 0;
   WinsockInterfaceClass::WinsockInterfaceClass(this);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1201,7 +1222,8 @@ retn
 
 // 0x004FA210 (199 bytes)
 void VectorClass_ClearVector_4FA210() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4FA210(void *this, int a2, int a3)
 {
   int v3; // eax
@@ -1267,6 +1289,8 @@ int __thiscall sub_4FA210(void *this, int a2, int a3)
     __3_YAXPAX_Z(v9);
   return a2;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Block           = dword ptr -18h
@@ -1359,7 +1383,8 @@ retn    8
 
 // 0x004A0CE0 (194 bytes)
 int VectorClass_SetMember1_4A0CE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4A0CE0(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v3; // esi
@@ -1420,6 +1445,8 @@ _DWORD *__thiscall sub_4A0CE0(_DWORD *this, _DWORD *a2)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1512,7 +1539,8 @@ retn    4
 
 // 0x004A02B0 (194 bytes)
 const char* VectorClass_SetMember2_4A02B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4A02B0(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v3; // esi
@@ -1578,6 +1606,8 @@ _DWORD *__thiscall sub_4A02B0(_DWORD *this, _DWORD *a2)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -1671,7 +1701,8 @@ retn    4
 
 // 0x004A0380 (208 bytes)
 const char* VectorClass_SetMember_4A0380() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v3; // esi
@@ -1739,6 +1770,8 @@ _DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -1835,7 +1868,8 @@ retn    4
 
 // 0x00429360 (123 bytes)
 void VectorClassptrBuildChoiceClassintouseClassGetItemIndex0Helper_429360() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_429360(int a1, const void *a2, _DWORD *a3)
 {
   int result; // eax
@@ -1858,6 +1892,8 @@ int __stdcall sub_429360(int a1, const void *a2, _DWORD *a3)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     edx, [esp+arg_8]

@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004D2F00 (68 bytes)
 int DestructFoggedObjectClassHelper_4D2F00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4D2F00(int a1, int a2, int *a3)
 {
   int v3; // esi
@@ -37,6 +38,8 @@ LABEL_7:
   }
   return a1 + 8 * (v3 / 2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx

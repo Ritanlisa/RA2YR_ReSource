@@ -22,7 +22,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~AirstrikeClass() = default;  // 0x41D7A0
+    virtual ~AirstrikeClass();  // 0x41D7A0
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

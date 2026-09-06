@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x005C00E0 (177 bytes)
 char Frame_Test_5C00E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
@@ -49,6 +50,8 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -10h
@@ -119,7 +122,8 @@ retn
 
 // 0x00437F50 (110 bytes)
 int GameClass_Wrapper_437F50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_437F50(_DWORD *this)
 {
   int v2; // esi
@@ -141,6 +145,8 @@ LABEL_5:
   }
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 ppv             = dword ptr -4

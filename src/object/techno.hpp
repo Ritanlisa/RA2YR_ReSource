@@ -296,7 +296,7 @@ public:
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
     virtual bool isClearlyVisibleTo(HouseClass* house) const;
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, // 0x659470
-        uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
+        uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10);
     virtual void onSelect(uint32_t a, uint32_t b);
     virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190

@@ -25,7 +25,7 @@ struct SHPStruct;
 class GScreenClass
 {
 public:
-    virtual ~GScreenClass() = default;
+    virtual ~GScreenClass();
 
     virtual HRESULT Load(IStream* stream);
     virtual HRESULT Save(IStream* stream);
@@ -49,14 +49,14 @@ public:
 class MapClass : public GScreenClass
 {
 public:
-    virtual ~MapClass() override = default;  // 0x5652C0
+    virtual ~MapClass() override;  // 0x5652C0
 };
 #endif
 
 class DisplayClass : public MapClass
 {
 public:
-    virtual ~DisplayClass() override = default;  // 0x4A8930
+    virtual ~DisplayClass() override;  // 0x4A8930
 
     // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
     virtual void LoadFromINI(CCINIClass* ini) override;
@@ -89,7 +89,7 @@ public:
         bool shrouded,
         ObjectClass* object,
         Action action,
-        uint32_t unk) { return false; }
+        uint32_t unk);
 
     // unmatched: no callgraph reference and no git history record
     virtual void LeftMouseButtonDown(const Point2D& point);
@@ -99,7 +99,7 @@ public:
         const CellStruct& cell,
         ObjectClass* object,
         Action action,
-        uint32_t unk2) {}
+        uint32_t unk2);
     // unmatched: no callgraph reference and no git history record
     virtual void RightMouseButtonUp(uint32_t unk);
 

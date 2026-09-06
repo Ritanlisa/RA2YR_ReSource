@@ -5,6 +5,7 @@
 
 namespace ra2 {
 namespace game {
+using ::gamemd::DynamicVectorClass;
 
 class HouseClass;
 class TechnoClass;
@@ -26,22 +27,22 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::SlaveManager;
 
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     // design: inline accessor, inlined at all call sites
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // unmatched: no callgraph reference and no git history record
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~SlaveManagerClass() = default;  // 0x6B1130
+    virtual ~SlaveManagerClass();  // 0x6B1130
 
     // unmatched: no callgraph reference and no git history record
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     // unmatched: no callgraph reference and no git history record
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual AbstractType __stdcall whatAmI() const override;
     // design: inline accessor, inlined at all call sites
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override;
     // unmatched: no callgraph reference and no git history record
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     SlaveManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int);
@@ -69,8 +70,8 @@ public:
     void SaveManager(IStream*);                                  // 0x6B1300
 
     // Stubs
-    int StubReturn72() const { return 72; }                       // 0x6B1380
-    int StubReturn100() const { return 100; }                     // 0x6B1370
+    int StubReturn72() const;                       // 0x6B1380
+    int StubReturn100() const;                     // 0x6B1370
 
     TechnoClass*                master;             // +0x24 (this+36)
     HouseClass*                 house;              // +0x28 (this+40)

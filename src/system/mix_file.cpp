@@ -420,7 +420,8 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
 bool MixFileClass::Bootstrap()
 {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char MixFileClass::Bootstrap()
 {
   int i; // edi
@@ -538,6 +539,8 @@ char MixFileClass::Bootstrap()
   SetSoundWarning(v16);
   return 1;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Buffer          = byte ptr -40h

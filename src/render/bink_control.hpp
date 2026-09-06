@@ -23,8 +23,8 @@ public:
     static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData);
 
     bool IsPlaying() const;
-    int  GetWidth()  const { return movie ? movie->GetWidth() : 0; }
-    int  GetHeight() const { return movie ? movie->GetHeight() : 0; }
+    int  GetWidth()  const;
+    int  GetHeight() const;
 
     // unmatched: no callgraph reference and no git history record
     BinkMovieHandle* Movie();

@@ -42,7 +42,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~RadSiteClass() override = default;  // 0x65B470
+    virtual ~RadSiteClass() override;  // 0x65B470
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

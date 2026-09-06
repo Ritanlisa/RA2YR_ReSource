@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x0050E3A0 (143 bytes)
 int ArcMath_50E3A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_50E3A0(_DWORD *a1, int *a2, __int16 *a3, int a4)
 {
   int v6; // ebx
@@ -31,6 +32,8 @@ _DWORD *__fastcall sub_50E3A0(_DWORD *a1, int *a2, __int16 *a3, int a4)
   a1[2] = v6;
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -86,7 +89,8 @@ retn    8
 
 // 0x005A1190 (221 bytes)
 double ArcMath_5A1190() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_5A1190(__int16 *a1, __int16 *a2, double a3)
 {
   int v3; // esi
@@ -119,6 +123,8 @@ double __stdcall sub_5A1190(__int16 *a1, __int16 *a2, double a3)
     v9 = 6.283185307179586 - v5;
   return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 2.328306437080797e-10 * 2.0 + 1.5 * v9;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -198,7 +204,8 @@ jmp     loc_5A11E0
 
 // 0x004294B0 (78 bytes)
 int ArithmeticComput_4294B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_4294B0(int a1, #160 *a2)
 {
   _BYTE WideCharStr[64]; // [esp+4h] [ebp-40h] BYREF
@@ -215,6 +222,8 @@ int __stdcall sub_4294B0(int a1, #160 *a2)
   *(_DWORD *)a2 = ((int (__stdcall *)(_BYTE *))SysAllocString)(WideCharStr);
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 WideCharStr     = byte ptr -40h
@@ -255,7 +264,8 @@ retn    8
 
 // 0x0049F2F0 (172 bytes)
 int ArithmeticComput_49F2F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_49F2F0()
 {
   MEMORY[0x89F688][0] = -65536;
@@ -268,6 +278,8 @@ int sub_49F2F0()
   MEMORY[0x89F6A4] = -1;
   return -1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -315,7 +327,8 @@ retn
 
 // 0x0049F3A0 (116 bytes)
 int ArithmeticComput_49F3A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_49F3A0()
 {
   MEMORY[0x89F6DC][0] = -256;
@@ -336,6 +349,8 @@ int sub_49F3A0()
   MEMORY[0x89F714] = -256;
   return -256;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     ecx, 0FFFFFF00h
@@ -369,7 +384,8 @@ retn
 
 // 0x00549A00 (90 bytes)
 int ArithmeticComput_549A00() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_549A00(int a1, int a2, int *a3, int *a4)
 {
   int result; // eax
@@ -381,6 +397,8 @@ int __fastcall sub_549A00(int a1, int a2, int *a3, int *a4)
   *a4 += result;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lea     eax, [ecx+ecx*2]
@@ -430,7 +448,8 @@ retn    8
 
 // 0x006460C0 (69 bytes)
 float ArithmeticComput_6460C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 float *__fastcall sub_6460C0(float *a1, float *a2)
 {
   float v3; // [esp+0h] [ebp-10h]
@@ -448,6 +467,8 @@ float *__fastcall sub_6460C0(float *a1, float *a2)
   a1[3] = v6;
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -478,7 +499,8 @@ retn
 
 // 0x00646110 (69 bytes)
 float ArithmeticComput_646110() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 float *__fastcall sub_646110(float *a1, float *a2)
 {
   float v3; // [esp+0h] [ebp-10h]
@@ -496,6 +518,8 @@ float *__fastcall sub_646110(float *a1, float *a2)
   a1[3] = v6;
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -526,7 +550,8 @@ retn
 
 // 0x006BB760 (378 bytes)
 int ArithmeticComput_6BB760() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_6BB760()
 {
   char String1[72]; // [esp+8h] [ebp-1ECh] BYREF
@@ -564,6 +589,8 @@ int sub_6BB760()
   ((void (__stdcall *)(unsigned int, char *))RegDeleteKeyA)(0x80000000, String1);
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String1         = OMOTestDerived ptr -1ECh
@@ -690,7 +717,8 @@ retn
 
 // 0x006CFD60 (71 bytes)
 int ArithmeticComput_6CFD60() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
 {
   _DWORD *result; // eax
@@ -708,6 +736,8 @@ _DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
   a1[3] = v6;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -740,7 +770,8 @@ retn
 
 // 0x006D61C0 (90 bytes)
 int ArithmeticComput_6D61C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_6D61C0(int a1, int a2, int *a3, int *a4)
 {
   int result; // eax
@@ -752,6 +783,8 @@ int __fastcall sub_6D61C0(int a1, int a2, int *a3, int *a4)
   *a4 += result;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 lea     eax, [ecx+ecx*2]
@@ -801,7 +834,8 @@ retn    8
 
 // 0x00755BF0 (86 bytes)
 float ArithmeticComput_755BF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 float *__fastcall sub_755BF0(float *a1, int a2, int a3)
 {
   double v4; // st7
@@ -822,6 +856,8 @@ float *__fastcall sub_755BF0(float *a1, int a2, int a3)
   a1[2] = v9;
   return a1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -851,7 +887,8 @@ retn    4
 
 // 0x00775B50 (78 bytes)
 int ArithmeticComput_775B50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_775B50(unsigned __int16 a1, #104 (__stdcall *a2)(#44, #29, #46, #48), int a3, TechnoClass *a4)
 {
   int v4; // esi
@@ -868,6 +905,8 @@ int __fastcall sub_775B50(unsigned __int16 a1, #104 (__stdcall *a2)(#44, #29, #4
   *(_QWORD *)a4 = *((_QWORD *)&Rect + 1);
   return 1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Rect            = xmmword ptr -10h
@@ -904,7 +943,8 @@ retn    8
 
 // 0x004C37D0 (256 bytes)
 int CalcColor_4C37D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__fastcall sub_4C37D0(int a1, _BYTE *a2, int a3, unsigned __int8 a4)
 {
   int v5; // eax
@@ -957,6 +997,8 @@ _BYTE *__fastcall sub_4C37D0(int a1, _BYTE *a2, int a3, unsigned __int8 a4)
   while ( v5 < 256 );
   return a2;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1076,7 +1118,8 @@ retn    8
 
 // 0x00755AD0 (87 bytes)
 char CalcMath_755AD0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_755AD0(unsigned int *a1, int *a2)
 {
   double v2; // st7
@@ -1087,6 +1130,8 @@ char __fastcall sub_755AD0(unsigned int *a1, int *a2)
   LOWORD(v4) = Math::RoundToInt((v2 - 1.570796326794897) * -10430.06004058427);
   return 32 - (((v4 >> 7) + 1) >> 1);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1120,7 +1165,8 @@ retn
 
 // 0x005C8930 (74 bytes)
 char CallShiftBigIntAndScan_5C8930() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5C8930(int a1, int a2)
 {
   _WORD *v4; // esi
@@ -1134,6 +1180,8 @@ char __fastcall sub_5C8930(int a1, int a2)
   }
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 100h
@@ -1176,7 +1224,8 @@ retn
 
 // 0x0053D9F0 (77 bytes)
 int ComputeStub_53D9F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_53D9F0(int a1)
 {
   int v2; // edi
@@ -1200,6 +1249,8 @@ int __fastcall sub_53D9F0(int a1)
   while ( (int)v3 < (int)&MEMORY[0xA9FF6C] );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1235,7 +1286,8 @@ retn
 
 // 0x0069E9F0 (63 bytes)
 int Delegate_InvokeSHA1_69E9F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_69E9F0(int this, int a2, int a3)
 {
   int v4; // ebx
@@ -1247,6 +1299,8 @@ int __thiscall sub_69E9F0(int this, int a2, int a3)
     SHA1::Process((_DWORD *)(this + 16), a2, v4);
   return v4;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -1290,7 +1344,8 @@ retn    8
 
 // 0x00621150 (126 bytes)
 double FloatCompute_621150() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __fastcall sub_621150(int a1)
 {
   double result; // st7
@@ -1331,6 +1386,8 @@ LABEL_9:
   while ( v3 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1390,7 +1447,8 @@ retn
 
 // 0x0059D480 (137 bytes)
 double MathDispatch_59D480() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_59D480(__int16 *a1, __int16 *a2, int a3)
 {
   int v3; // eax
@@ -1404,6 +1462,8 @@ double __stdcall sub_59D480(__int16 *a1, __int16 *a2, int a3)
        + 0.5 * v6
        - (double)a3 * 0.02;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8
@@ -1449,7 +1509,8 @@ retn    0Ch
 
 // 0x005A2ED0 (117 bytes)
 double MathDispatch_5A2ED0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_5A2ED0(__int16 *a1, __int16 *a2)
 {
   int v2; // eax
@@ -1461,6 +1522,8 @@ double __stdcall sub_5A2ED0(__int16 *a1, __int16 *a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
   return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1501,7 +1564,8 @@ retn    8
 
 // 0x005A4AE0 (117 bytes)
 double MathDispatch_5A4AE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_5A4AE0(__int16 *a1, __int16 *a2)
 {
   int v2; // eax
@@ -1513,6 +1577,8 @@ double __stdcall sub_5A4AE0(__int16 *a1, __int16 *a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
   return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1553,7 +1619,8 @@ retn    8
 
 // 0x005A4FA0 (117 bytes)
 double MathDispatch_5A4FA0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall sub_5A4FA0(__int16 *a1, __int16 *a2)
 {
   int v2; // eax
@@ -1565,6 +1632,8 @@ double __stdcall sub_5A4FA0(__int16 *a1, __int16 *a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3));
   return (double)(unsigned int)Random::State(&MEMORY[0xABE890]) * 5.0 * 2.328306437080797e-10 + v5;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1605,7 +1674,8 @@ retn    8
 
 // 0x007559D0 (111 bytes)
 void MathProcess_7559D0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 float *__fastcall sub_7559D0(float *a1, float *a2, void *a3, double a4)
 {
   float *result; // eax
@@ -1628,6 +1698,8 @@ float *__fastcall sub_7559D0(float *a1, float *a2, void *a3, double a4)
   }
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 40h
@@ -1676,12 +1748,15 @@ retn    0Ch
 
 // 0x006D1BB0 (52 bytes)
 void MathSinCos_6D1BB0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_6D1BB0()
 {
   MEMORY[0xB0CE18] = 60.0 / MEMORY[0xB0CD78];
   MEMORY[0xB0CD48] = Math::SinCos(MEMORY[0xB0CD88]) * MEMORY[0xB0CE18];
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 fld     ds:dbl_7E1728
@@ -1701,7 +1776,8 @@ retn
 
 // 0x00662240 (127 bytes)
 double Math_Ar_662240() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_662240(_DWORD *this)
 {
   int v1; // eax
@@ -1718,6 +1794,8 @@ double __thiscall sub_662240(_DWORD *this)
   else
     return Math::ArcTan((double)v5 / v3);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -1773,7 +1851,8 @@ retn
 
 // 0x005AEC40 (264 bytes)
 float Math_Arc_5AEC40() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AEC40(int this, float a2)
 {
   double v2; // kr00_8
@@ -1811,6 +1890,8 @@ int __thiscall sub_5AEC40(int this, float a2)
   *(float *)(this + 44) = v12 * v4 + v13 * v14;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -1908,7 +1989,8 @@ retn    4
 
 // 0x005AF470 (93 bytes)
 void Math_Cal_5AF470() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AF470(float *this)
 {
   float *v1; // eax
@@ -1921,6 +2003,8 @@ void __thiscall sub_5AF470(float *this)
   v1 = TransformMatrix3x4Point(v3, this, v2);
   Math::CalcAngle(v1[1], *v1);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -1952,7 +2036,8 @@ retn
 
 // 0x005AF3B0 (93 bytes)
 void Math_Calc_5AF3B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AF3B0(float *this)
 {
   float *v1; // eax
@@ -1965,6 +2050,8 @@ void __thiscall sub_5AF3B0(float *this)
   v1 = TransformMatrix3x4Point(v3, this, v2);
   Math::CalcAngle(v1[2], v1[1]);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -1996,7 +2083,8 @@ retn
 
 // 0x0068B8A0 (157 bytes)
 void Math_Get_68B8A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_68B8A0(void *this)
 {
   int v1; // eax
@@ -2021,6 +2109,8 @@ __int64 __thiscall sub_68B8A0(void *this)
   }
   return Math::RoundToInt((double)v5 * 200.0 / (double)v6);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -2072,7 +2162,8 @@ retn
 
 // 0x00659A30 (136 bytes)
 int Math_RoundToInt_659A30() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall sub_659A30(int this)
 {
   int v2; // eax
@@ -2112,6 +2203,8 @@ __int16 __thiscall sub_659A30(int this)
   *(_BYTE *)(v8 + 2) = v10;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -2175,7 +2268,8 @@ retn
 
 // 0x006B1EE0 (99 bytes)
 double Math_RoundToInt_6B1EE0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_6B1EE0(int this)
 {
   int v2; // ebx
@@ -2199,6 +2293,8 @@ __int64 __thiscall sub_6B1EE0(int this)
     *(_DWORD *)(this + 80) = result;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -2261,7 +2357,8 @@ retn
 
 // 0x006D8C60 (329 bytes)
 int Math_RoundToInt_6D8C60() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_6D8C60(int a1, int a2)
 {
   _DWORD *v3; // eax
@@ -2299,6 +2396,8 @@ int __fastcall sub_6D8C60(int a1, int a2)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -2423,7 +2522,8 @@ retn
 
 // 0x005AED50 (246 bytes)
 float Math_SetMember1_5AED50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AED50(float *this, float a2)
 {
   double v2; // kr00_8
@@ -2461,6 +2561,8 @@ int __thiscall sub_5AED50(float *this, float a2)
   *(this + 11) = v12 * v5 + v13 * v4;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 1Ch
@@ -2556,7 +2658,8 @@ retn    4
 
 // 0x007294E0 (155 bytes)
 int Math_SetMember6_7294E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7294E0(_DWORD *this)
 {
   _DWORD *v2; // ecx
@@ -2588,6 +2691,8 @@ int __thiscall sub_7294E0(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 10h
@@ -2646,7 +2751,8 @@ retn
 
 // 0x005AEE50 (262 bytes)
 float Math_SetMember_5AEE50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AEE50(float *this, float a2)
 {
   double v2; // kr00_8
@@ -2684,6 +2790,8 @@ int __thiscall sub_5AEE50(float *this, float a2)
   *(this + 7) = v12 * v4 + v13 * v14;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -2781,7 +2889,8 @@ retn    4
 
 // 0x00436DA0 (221 bytes)
 double Math_Sqrt_436DA0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_436DA0(_DWORD **this)
 {
   _DWORD *v2; // edi
@@ -2811,6 +2920,8 @@ double __thiscall sub_436DA0(_DWORD **this)
   Math::RoundToInt(result);
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 28h
@@ -2901,7 +3012,8 @@ retn
 
 // 0x004528A0 (158 bytes)
 bool Math_Sqrt_4528A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_4528A0(_DWORD *this, int a2)
 {
   int *v3; // eax
@@ -2929,6 +3041,8 @@ bool __thiscall sub_4528A0(_DWORD *this, int a2)
   v10 = Math::Sqrt((double)v8 * (double)v8 + (double)(v6 - v9) * (double)(v6 - v9) + (double)v13 * (double)v13);
   return (int)Math::RoundToInt(v10) <= *(_DWORD *)(*(this + 328) + 5900) << 8;
 }
+#endif
+    return false; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -2997,7 +3111,8 @@ retn    4
 
 // 0x006599C0 (100 bytes)
 void Math_Sqrt_6599C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6599C0(int this)
 {
   int v2; // eax
@@ -3014,6 +3129,8 @@ void __thiscall sub_6599C0(int this)
                                               + *(_DWORD *)(this + 96) * *(_DWORD *)(this + 96)
                                               + *(_DWORD *)(this + 92) * *(_DWORD *)(this + 92)));
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -3063,7 +3180,8 @@ retn
 
 // 0x005AF550 (446 bytes)
 void Matrix2D_Sqrt_5AF550() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5AF550(int this, float *a2, float *a3, float a4)
 {
   double v7; // st7
@@ -3146,6 +3264,8 @@ void __thiscall sub_5AF550(int this, float *a2, float *a3, float a4)
   sub_5AF000((float *)this, v11, v18);
   Matrix2D::Rotate((float *)this, a4);
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 18h
@@ -3293,7 +3413,8 @@ retn    0Ch
 
 // 0x004AF9B0 (227 bytes)
 void Matrix3x4_Copy_4AF9B0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_4AF9B0(int *this, void *a2)
 {
   int v3; // ebx
@@ -3355,6 +3476,8 @@ LABEL_17:
   qmemcpy(a2, v13, 0x30u);
   return a2;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 68h
@@ -3466,7 +3589,8 @@ retn    4
 
 // 0x0069F0C0 (227 bytes)
 void Matrix3x4_Copy_69F0C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_69F0C0(int *this, void *a2)
 {
   int v3; // ebx
@@ -3528,6 +3652,8 @@ LABEL_17:
   qmemcpy(a2, v13, 0x30u);
   return a2;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 68h
@@ -3639,7 +3765,8 @@ retn    4
 
 // 0x007BBFF0 (79 bytes)
 char MethodCalc_7BBFF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_7BBFF0(int a1, int a2, int *a3, int a4, _BYTE *a5, int *a6, int *a7)
 {
   int v9; // eax
@@ -3651,6 +3778,8 @@ char __fastcall sub_7BBFF0(int a1, int a2, int *a3, int a4, _BYTE *a5, int *a6, 
   v9 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 120))(a1);
   return CalcSurfaceBlitRects(a1, v9, v13, a2, a3, v11, a5, a6, a7);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_10]
@@ -3694,7 +3823,8 @@ retn    14h
 
 // 0x005DAB80 (122 bytes)
 const char* MethodCompute_5DAB80() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DAB80(const char *this)
 {
   unsigned int i; // esi
@@ -3708,6 +3838,8 @@ int __thiscall sub_5DAB80(const char *this)
     ComputeHash(&v3, String[i]);
   return v3;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 String          = byte ptr -50h
@@ -3769,7 +3901,8 @@ retn
 
 // 0x005AF2C0 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF2C0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_5AF2C0(float *this)
 {
   float v2[3]; // [esp+0h] [ebp-24h] BYREF
@@ -3778,6 +3911,8 @@ double __thiscall sub_5AF2C0(float *this)
   memset(v2, 0, sizeof(v2));
   return *TransformMatrix3x4Point(v3, this, v2);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -3803,7 +3938,8 @@ retn
 
 // 0x005AF310 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF310() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_5AF310(float *this)
 {
   float *v1; // eax
@@ -3815,6 +3951,8 @@ double __thiscall sub_5AF310(float *this)
   v3[3] = *v1;
   return v1[1];
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -3840,7 +3978,8 @@ retn
 
 // 0x005AF360 (71 bytes)
 float MethodTransformMatrix3x4Point_5AF360() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_5AF360(float *this)
 {
   float *v1; // eax
@@ -3853,6 +3992,8 @@ double __thiscall sub_5AF360(float *this)
   v3[4] = v1[1];
   return v1[2];
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 24h
@@ -3878,7 +4019,8 @@ retn
 
 // 0x00661A60 (259 bytes)
 const char* SHA1_Comput_661A60() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_661A60(char *this, int a2)
 {
   char *v3; // eax
@@ -3935,6 +4077,8 @@ int __thiscall sub_661A60(char *this, int a2)
   while ( !v8 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = byte ptr -88h
@@ -4038,7 +4182,8 @@ retn    4
 
 // 0x00661B70 (151 bytes)
 void SHA1_Comput_661B70() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_661B70(char *this)
 {
   char *v1; // ebx
@@ -4074,6 +4219,8 @@ void *__thiscall sub_661B70(char *this)
   while ( v2 < 0x100 );
   return result;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = byte ptr -88h
@@ -4139,7 +4286,8 @@ retn
 
 // 0x00661960 (251 bytes)
 const char* SHA1_Compute_661960() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_661960(char *this, __int16 a2)
 {
   char *v3; // eax
@@ -4193,6 +4341,8 @@ int __thiscall sub_661960(char *this, __int16 a2)
   while ( v9 );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 Src             = byte ptr -88h

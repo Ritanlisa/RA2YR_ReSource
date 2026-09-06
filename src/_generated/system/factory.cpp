@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x004E2A50 (147 bytes)
 int ControlClass_Construct_4E2A50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E2A50(int this, int a2, int a3, int a4, int a5, int a6)
 {
   int v7; // ecx
@@ -39,6 +40,8 @@ int __thiscall sub_4E2A50(int this, int a2, int a3, int a4, int a5, int a6)
   *(_DWORD *)this = &TriColorGaugeClass::`vftable';
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_8]

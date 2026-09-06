@@ -43,7 +43,7 @@ struct GadgetEvent {
 class GadgetClass {
 public:
     GadgetClass() = default;
-    virtual ~GadgetClass() = default;  // 0x4E1390
+    virtual ~GadgetClass();  // 0x4E1390
 
     virtual void Draw(DSurface* surface, TextRenderer* text) = 0;  // 0x557920
     // wrapper: delegates to GadgetClass::DrawBuildingPlacement at 0x557920

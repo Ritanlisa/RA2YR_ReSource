@@ -40,7 +40,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x75F840
 
-    virtual ~WaveClass() override = default;  // 0x763200
+    virtual ~WaveClass() override;  // 0x763200
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

@@ -46,7 +46,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x6E5730
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E57A0
 
-    virtual ~TagClass() = default;  // 0x6E56A0
+    virtual ~TagClass();  // 0x6E56A0
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
@@ -119,7 +119,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E6470
 
-    virtual ~TagTypeClass() = default;  // 0x6E64C0
+    virtual ~TagTypeClass();  // 0x6E64C0
 
     // unmatched: no callgraph reference and no git history record
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;

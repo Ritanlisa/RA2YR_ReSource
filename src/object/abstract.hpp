@@ -28,9 +28,9 @@ using ::gamemd::TimerStruct;
 struct DirStruct {
     uint32_t Raw;
     // design: constexpr only (no runtime address), no callgraph/git history reference
-    constexpr DirStruct() noexcept : Raw(0) {}
+    constexpr DirStruct() noexcept;
     // design: constexpr only (no runtime address), no callgraph/git history reference
-    explicit constexpr DirStruct(uint32_t val) noexcept : Raw(val) {}
+    explicit constexpr DirStruct(uint32_t val) noexcept;
 };
 
 using FacingStruct = DirStruct;

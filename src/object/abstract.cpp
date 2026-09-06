@@ -29,7 +29,8 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AbstractClass::QueryInterface(#374 *this)
 {
   int *v2; // ecx
@@ -59,6 +60,8 @@ int __thiscall AbstractClass::QueryInterface(#374 *this)
   (*(void (__stdcall **)(#373 *))(*(_DWORD *)thisa + 4))(thisa);
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 this            = dword ptr  4

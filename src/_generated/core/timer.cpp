@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x00429500 (70 bytes)
 int GetTimer_429500() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __stdcall sub_429500(int a1, _DWORD *a2)
 {
   int v3; // edi
@@ -25,6 +26,8 @@ int __stdcall sub_429500(int a1, _DWORD *a2)
   *a2 = v3;
   return 0;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -62,7 +65,8 @@ retn    8
 
 // 0x004A50A0 (70 bytes)
 int GetTimer_4A50A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 signed int __fastcall sub_4A50A0(signed int a1)
 {
   int Ticks; // ecx
@@ -95,6 +99,8 @@ signed int __fastcall sub_4A50A0(signed int a1)
   while ( result );
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -137,7 +143,8 @@ retn
 
 // 0x004A80D6 (400 bytes)
 int GetTimer_4A80D6() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4A80D6(int a1, signed int a2)
 {
   int Ticks; // eax
@@ -239,6 +246,8 @@ LABEL_12:
   }
   return -1;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 MaximumComponentLength= dword ptr  0Ch
@@ -404,7 +413,8 @@ retn
 
 // 0x0043EE50 (93 bytes)
 int ProgressTimer_Get_43EE50() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_43EE50(_DWORD *this)
 {
   _DWORD *Value; // eax
@@ -424,6 +434,8 @@ int __thiscall sub_43EE50(_DWORD *this)
   }
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ecx
@@ -472,7 +484,8 @@ retn
 
 // 0x005AE530 (60 bytes)
 const char* String_GetTimer_5AE530() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AE530(char **this, const char **a2, int a3)
 {
   _DWORD *v3; // esi
@@ -490,6 +503,8 @@ int __thiscall sub_5AE530(char **this, const char **a2, int a3)
   v3[2] = a3;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -515,7 +530,8 @@ retn    8
 
 // 0x007717A0 (72 bytes)
 int Timer_Get_7717A0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_7717A0(unsigned int *this)
 {
   unsigned int result; // eax
@@ -534,6 +550,8 @@ unsigned int __thiscall sub_7717A0(unsigned int *this)
   v3[2] = 0;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -565,7 +583,8 @@ retn
 
 // 0x00793CD0 (72 bytes)
 void Timer_Get_793CD0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_793CD0(void *this)
 {
   unsigned int Ticks; // eax
@@ -580,6 +599,8 @@ int __thiscall sub_793CD0(void *this)
   v2[2] = 1200;
   return ++MEMORY[0x87F7E8][539279];
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, ds:0A8E224h
@@ -605,7 +626,8 @@ retn
 
 // 0x0063F810 (53 bytes)
 int Timer_SetMember1351_63F810() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63F810(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -620,6 +642,8 @@ int __thiscall sub_63F810(_DWORD *this)
   v1[2] = 3;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 0Ch
@@ -642,7 +666,8 @@ retn
 
 // 0x00431930 (64 bytes)
 int Timer_SetMember2_431930() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_431930(int *this, int a2)
 {
   unsigned int v3; // eax
@@ -661,6 +686,8 @@ int __thiscall sub_431930(int *this, int a2)
   *(this + 1) = v5;
   return result;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 sub     esp, 8

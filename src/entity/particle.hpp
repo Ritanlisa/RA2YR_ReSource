@@ -30,7 +30,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     // wrapper: delegates to ParticleClass::LoadParticleData at 0x62D7A0
-    virtual ~ParticleClass() override = default;
+    virtual ~ParticleClass() override;
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall whatAmI() const override;

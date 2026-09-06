@@ -8,7 +8,8 @@ namespace gamemd {
 
 // 0x0074BDC0 (210 bytes)
 int BitArray_SetMember2_74BDC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_74BDC0(unsigned int *this, unsigned int a2)
 {
   int v3; // edx
@@ -72,6 +73,8 @@ int __thiscall sub_74BDC0(unsigned int *this, unsigned int a2)
     return 1;
   }
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -184,7 +187,8 @@ retn    4
 
 // 0x0074BF40 (67 bytes)
 void BitArray_SetMember_74BF40() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74BF40(unsigned int *this, unsigned int a2)
 {
   int v3; // edi
@@ -203,6 +207,8 @@ void __thiscall sub_74BF40(unsigned int *this, unsigned int a2)
     *(this + 2) = v3;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -245,7 +251,8 @@ retn    4
 
 // 0x0047ADC0 (66 bytes)
 void Callfree_47ADC0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_47ADC0()
 {
   void **v0; // esi
@@ -270,6 +277,8 @@ void sub_47ADC0()
     MEMORY[0x89E410] = 0;
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -309,7 +318,8 @@ retn
 
 // 0x004B5780 (69 bytes)
 void LinkedList_MoveLink_4B5780() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B5780(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2);
@@ -323,6 +333,8 @@ int __thiscall sub_4B5780(int this, int a2)
   *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32);
   return this;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -356,7 +368,8 @@ retn    4
 
 // 0x004B56E0 (153 bytes)
 void LinkedList_MoveLinked_4B56E0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B56E0(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2);
@@ -384,6 +397,8 @@ int __thiscall sub_4B56E0(int this, int a2)
   *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80);
   return this;
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    esi
@@ -445,7 +460,8 @@ retn    4
 
 // 0x004887F0 (83 bytes)
 int ListClass_SetMember100_4887F0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4887F0(_DWORD *this)
 {
   int v2; // eax
@@ -468,6 +484,8 @@ int __thiscall sub_4887F0(_DWORD *this)
   v3[2] = 0;
   return ListClass::Destruct(this);
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
@@ -507,7 +525,8 @@ retn
 
 // 0x00488280 (69 bytes)
 int ListClass_SetMember372_488280() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall sub_488280(_BYTE *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   ListClass::Construct((int)this, a2, a3, a4, a5, a6, a7, a8, a9);
@@ -515,6 +534,8 @@ _BYTE *__thiscall sub_488280(_BYTE *this, int a2, int a3, int a4, int a5, int a6
   *(_DWORD *)this = &CheckListClass::`vftable';
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_1C]
@@ -547,7 +568,8 @@ retn    20h ; ' '
 
 // 0x00488760 (131 bytes)
 int ListClass_SetMember94_488760() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_488760(_DWORD *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   ListClass::Construct((int)this, a2, a3, a4, a5, a6, a7, a8, a9);
@@ -563,6 +585,8 @@ _DWORD *__thiscall sub_488760(_DWORD *this, int a2, int a3, int a4, int a5, int 
   *this = &ColorListClass::`vftable';
   return this;
 }
+#endif
+    return {}; // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 mov     eax, [esp+arg_1C]
@@ -605,7 +629,8 @@ retn    20h ; ' '
 
 // 0x0052AAF0 (143 bytes)
 void MethodFree_52AAF0() {
-// [IDA decompile]
+#if 0
+// [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_52AAF0(void *this)
 {
   void *v2; // eax
@@ -653,6 +678,8 @@ void __thiscall sub_52AAF0(void *this)
     }
   }
 }
+#endif
+    // TODO stub - translate quarantined IDA block above
 
 /* ASM:
 push    ebx
