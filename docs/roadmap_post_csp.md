@@ -27,18 +27,22 @@
 
 ## 用户裁决（2026-09-06 深夜，本路线图的基线事件）
 
+> **裁决 v2（同夜追加，取代第 2 条的 #if 0 形态）**：撤销 `#if 0` 包装，
+> IDA 原始反编译代码**直接作为函数体活代码**；**基线上的编译错误被明确
+> 允许**（解包后 3,544 个 = 3,434 块未翻译伪码的天然规模）。执行提交
+> 98fc14c2（`tools/unwrap_if0_blocks.py`，3,405 个 stub return 行同删）。
+> 翻译工作形态变为：在函数体内就地以真 C++ 替换伪码。
+
 1. **最终目标**：翻译所有内容（全部真翻译，非 stub）。
-2. **未完成翻译的占位形态**：函数体携带 **IDA 原始反编译代码**
-   （`#if 0` 块 + `[IDA decompile]` 标记 + 编译所需的最小 stub return），
-   而非裸 stub。伪代码不是合法 C++（`#374`/`__thiscall`/`_DWORD`），
-   `#if 0` 是唯一可编译的"原码在体"形态，且是
-   `verify_execution_flow.py` 一等识别的 "disabled implementation" 模式。
-3. **baseline 重锚**：`auto-fill-baseline` tag 移到本次提交，
+2. **未完成翻译的占位形态**（v2）：函数体 = **IDA 原始反编译活代码**
+   （带 `[IDA decompile]` 标记行界定），编译错误在基线被允许。
+   ~~v1 的 #if 0 形态~~已撤销。
+3. **baseline 重锚**：`auto-fill-baseline` tag 移到最新裁决执行提交，
    暂时避免门控对存量债的 FAIL。**重锚不是销账**——债清单全部保留
    在本文档「最终目标债清单」节，是 C 线的工作队列。
-4. **gate 语义保持**：今后修改任何含 `#if 0` IDA 块的函数会重新触发
-   `stub-with-disabled-implementation` FAIL——**设计使然**，强制该函数
-   完成真翻译后才能过 gate。存量债只能通过真翻译清偿，不能绕过。
+4. **gate 语义保持**：今后修改含伪码的函数，gate 的 rejectable 检查
+   （函数指针 cast/伪码形态）会 FAIL——**设计使然**，强制该函数完成
+   真翻译后才能过 gate。存量债只能通过真翻译清偿，不能绕过。
 5. **completed 虚标纠正**（本次执行附带）：`BuildingClass::GetPowerOutput`
    真翻译已恢复（语义完整），但其 CFG 缺 1 个 `vfptr+468` 事件——根因是
    src 侧继承链 vtable 槽位与二进制系统错位（实测槽 124 vs 二进制 117；
@@ -52,6 +56,21 @@
    见上条。三函数均以 IDA til 权威布局翻译（发现并绕开 member_lookup
    的 BuildingTypeClass 3800 区段错位：3808 实为 PowerBonus 而非
    DoorStages——**member_lookup 数据修正列入债清单**）。
+7. **已完成代码核验（v2 要求，98fc14c2 执行）**：
+   - **逻辑忠实**：completed=true 全集 **19 函数**，exec-flow CFG
+     双射校验 **19/19 通过**（`--auto --fetch-cache` 全缓存覆盖）；
+   - **成员访问**（`tools/audit_member_access.py`，真代码全量）：
+     49 处命中分类——surface.cpp 20 处缓冲区游标算术（`pix/zptr`
+     行进游标，**算法本体非成员访问**，保留）；globals.cpp 4 处
+     MEMORY（无标记历史粘贴，非完成代码）；**真违规 1 处**：
+     building.cpp:16619 裸偏移 `*(int*)(*(int*)updated + 180)`——
+     历史翻译的"不透明句柄"（UpdatePowered 虚调用链返回值，类型待
+     vtable[254] 语义考古），列入债清单不盲改；
+   - **命名规范（新增）**：局部变量按用途**小驼峰**命名
+     （lowerCamelCase）。真违规 3 处已改（newSize/swType/typeIndex）；
+     三函数局部重命名（superWeaponIndex/buildingType/repairRatio/
+     requiredBuilding 等）。类成员 PascalCase 现状维持，若要统一
+     小驼峰属 A1 轮（rename_symbol 四方同步），待用户裁决。
 
 ## 最终目标债清单（C 线工作队列，重锚不清账）
 
@@ -64,6 +83,7 @@
 | 无二进制对应函数 | 1 | `LocomotionClass::ChangeLocomotorTo`（历史手工编造，IDA 无此函数）——保留注释体，翻译时按调用语义重建或删除 |
 | **vtable 槽位审计** | 1 项 | src 继承链虚函数声明槽位与二进制 vtable 系统错位（object.hpp 虚区至少 2 处错位插入 + 编译器实测 124 vs 二进制 117）——波及所有含虚调用函数的 exec-flow vfptr 校验。GetPowerOutput(0x44E7B0) 真翻译已就位但被此阻塞（completed 已纠正为 false） |
 | **member_lookup 错位** | 1 区段 | BuildingTypeClass 3800 区段（3808=PowerBonus 被标 DoorStages、3816=ExtraPowerBonus 被标 BuildingAnim…整段偏移错位）——以 IDA til 为准修正数据文件 |
+| 真代码裸偏移成员访问 | 1 | building.cpp:16619 `*(int*)(*(int*)updated + 180)`（GetPowerRange 区段）——历史翻译的"不透明句柄"，updated 实为 UpdatePowered 虚调用链（vtable[33]→vtable[254]）返回值，类型待考古后改 `->` 访问 |
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
