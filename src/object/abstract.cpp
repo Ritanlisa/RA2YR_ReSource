@@ -29,37 +29,21 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x410260
-int __thiscall AbstractClass::QueryInterface(#374 *this)
-{
-  int *v2; // ecx
-  #373 *thisa; // [esp+8h] [ebp+4h]
-  const void *iid; // [esp+Ch] [ebp+8h]
-  void **ppv; // [esp+10h] [ebp+Ch]
-
   if ( !ppv )
-    return -2147467261;
+    return E_POINTER;
   *ppv = 0;
-  if ( !memcmp(iid, &IID_IUnknown, 0x10u) )
-    *ppv = thisa;
-  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) )
-    *ppv = thisa;
-  if ( !memcmp(iid, &IID_IPersist, 0x10u) )
-    *ppv = thisa;
-  if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) )
-  {
-    if ( thisa )
-      v2 = (int *)((char *)thisa + 4);
-    else
-      v2 = 0;
-    *ppv = v2;
-  }
+  if ( !memcmp(&iid, &IID_IUnknown, 0x10u) )
+    *ppv = this;
+  if ( !memcmp(&iid, &IID_IPersistStream, 0x10u) )
+    *ppv = this;
+  if ( !memcmp(&iid, &IID_IPersist, 0x10u) )
+    *ppv = this;
+  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) )
+    *ppv = this ? (IRTTITypeInfo*)this : 0;  // MI interface subobject @ +4
   if ( !*ppv )
-    return -2147467262;
-  (*(void (__stdcall **)(#373 *))(*(_DWORD *)thisa + 4))(thisa);
-  return 0;
-}
+    return E_NOINTERFACE;
+  AddRef();
+  return S_OK;
 
 /* ASM:
 this            = dword ptr  4

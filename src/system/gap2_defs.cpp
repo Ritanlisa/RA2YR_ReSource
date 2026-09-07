@@ -66900,7 +66900,7 @@ void __thiscall sub_635F80(_DWORD *this)
 
   v2 = (_DWORD *)*this;
   if ( v2 )
-    BuildingClass::SetType(v2, 0);
+    BuildingClass::SetPlanningToken(v2, 0);
   Block = this;
   if ( !MEMORY[0xAC4CF5] )
   {
@@ -86469,14 +86469,9 @@ pop     ebx
 retn
 */
 } }
-// 0x74FFC0
-namespace gamemd { bool Crate::initializeCrate() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x74ffc0
-BOOL __thiscall Crate::initializeCrate(float *this)
-{
-  return *this >= 0.0 && *this < 1.0;
-}
+bool VeterancyStruct::IsRookie() {
+    return (this->Veterancy >= 0.0f) & (this->Veterancy < 1.0f);
 
 /* ASM:
 fld     dword ptr [ecx]

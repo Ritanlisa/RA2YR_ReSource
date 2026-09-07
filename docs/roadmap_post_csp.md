@@ -4,7 +4,7 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-06 会话更新，含深夜裁决执行）**：
+> **执行状态首查表（2026-09-07 会话更新，含污染排查与命名轮）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
@@ -14,14 +14,15 @@
 > | A4 命名一致性 | ✅ 完成 | 511 → 0（audit 0/0） |
 > | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
-> | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决：未完成翻译以 **IDA 原始反编译 `#if 0` 块**占位（3,437 个）→ 提交 → baseline 重锚该提交暂避门控。**⚠ ida-artifact 门控脚本为空文件（存量空转）——见执行日志** |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | **3,437 个 `#if 0` IDA 块** + 69 个 CFG 不忠实翻译 + 682 链接未解析符号 + 20 triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
+> | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决 v2：未完成翻译保留为 **IDA 原始反编译活代码块**（不再使用 `#if 0`）；存量编译错误按基线裁决允许。**⚠ ida-artifact 门控脚本仍为空文件（存量空转）——见执行日志** |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP 当前 pending **3,428** 个活伪码块 + CFG 不忠实真翻译 + 682 链接未解析符号 + triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
 > | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`） |
-> | A1 成员语义命名 | ⬜ 未开始 | |
+> | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 轮 12 函数改名（FacingClass 族、音量三连、GameSettings/Particle/Accumulate/CDTimer/AnimClass 双 setter）与 6 处 IDB this 类型修复；成员语义命名主体未展开 |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
-> | B4 零观测 struct 考古 | ⬜ 未开始（可选） | |
+> | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；已修正 3 个 IDB this 类型、1 个 owner；剩余 `AdjustHeight`、音量三连、类型侧布局待考古 |
+> > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | 与 TechnoClass/TechnoTypeClass 中段布局和类型侧 Weapon 数组债务相互关联 |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
-> | C1-C4 批量翻译 | 🔶 **就绪（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；输入（3,434 原码块 + 类型化快照 + 成员映射）齐备 |
+> | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,428，completed=27（09-07 轮 +CDTimerClass::TimeRemaining/FacingClass::Update/Set_SyncLog/IsRookie 补验）；QueryInterface(0x410260) 真翻译因 verifier 虚调用提取不对称挂 issue #9 |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -57,38 +58,43 @@
    见上条。三函数均以 IDA til 权威布局翻译（发现并绕开 member_lookup
    的 BuildingTypeClass 3800 区段错位：3808 实为 PowerBonus 而非
    DoorStages——**member_lookup 数据修正列入债清单**）。
-7. **已完成代码核验（v2 要求，98fc14c2 执行）**：
-   - **逻辑忠实**：completed=true 全集 **19 函数**，exec-flow CFG
-     双射校验 **19/19 通过**（`--auto --fetch-cache` 全缓存覆盖）；
-   - **成员访问**（`tools/audit_member_access.py`，真代码全量）：
-     49 处命中分类——surface.cpp 20 处缓冲区游标算术（`pix/zptr`
-     行进游标，**算法本体非成员访问**，保留）；globals.cpp 4 处
-     MEMORY（无标记历史粘贴，非完成代码）；**真违规 1 处**：
-     building.cpp:16619 裸偏移 `*(int*)(*(int*)updated + 180)`——
-     历史翻译的"不透明句柄"（UpdatePowered 虚调用链返回值，类型待
-     vtable[254] 语义考古），列入债清单不盲改；
-   - **命名规范（新增）**：局部变量按用途**小驼峰**命名
-     （lowerCamelCase）。真违规 3 处已改（newSize/swType/typeIndex）；
-     三函数局部重命名（superWeaponIndex/buildingType/repairRatio/
-     requiredBuilding 等）。类成员 PascalCase 现状维持，若要统一
-     小驼峰属 A1 轮（rename_symbol 四方同步），待用户裁决。
+7. **已完成代码核验（v2，2026-09-07 增量）**：
+   - **逻辑忠实**：MCP `completed=true` 当前为 **24 函数**；本轮新增的
+     `VeterancyStruct::IsRookie` 已真翻译并通过成员访问审计，但 verifier
+     因该地址没有 IDA 伪码缓存暂未能执行 CFG，已记录 issue #8；
+   - **成员访问**：`tools/audit_member_access.py` 增加 marker 回看和注释剥离，
+     全库真代码当前 **0 个裸偏移成员访问**；剩余 14 处仅为 surface.cpp
+     帧缓冲 `pix/zptr` 行进游标，按既有裁决保留；此前 building.cpp 的
+     `*(int*)(*(int*)updated + 180)` 已考古为
+     `(*weaponSlot)->MinimumRange`（WeaponTypeClass::MinimumRange）；
+   - **语义命名/污染修复**：完成 7 个武器槽/军衔谓词函数的四方命名同步，
+     并将 `TechnoClass::HasVoiceResponse` 从错误的 TechnoTypeClass owner
+     迁回实例类；去除调用点的 `(float*)this` 污染强转；IDB 修正 3 个
+     this 参数类型；
+   - **命名规范**：局部变量继续使用 lowerCamelCase；本轮未统一类成员
+     PascalCase。A4 基线曾为 0 mismatch，但后续语义改名后
+     `audit_consistency.py` 当前报告 80 条既有 mismatch，需另行清理，
+     不把当前状态回写成 A4 已通过。
 
 ## 最终目标债清单（C 线工作队列，重锚不清账）
 
 | 债 | 数量 | 说明 |
 |---|---|---|
-| `#if 0` IDA 原码块 | **3,437** | 含原 143 个伪翻译隔离体 + 16 个虚构 API legacy 函数（已替换为快照 IDA 原码）+ gap2/Task17-18 存根体系。分布：system 800+ / ui 200+ / structure 100+ / entity 90+ …（`grep -r "original pseudocode" src/`） |
+| IDA 原码活代码块 | **3,428 pending（MCP）** | v2 已撤销 `#if 0` 包装；未完成函数以 `[IDA decompile] original pseudocode` 活代码块占位。数量以 `mcp__RA2-MCP__stats` 为权威，当前 pending=3,428；分布仍以 system/_gap2/_generated 为主。 |
 | CFG 不忠实真翻译 | **69** | 基线有真实译但 exec-flow CFG 校验不通过——需逐函数对照 IDA 修复（清单见执行日志 09-06 终态甄别） |
 | triage 未定位 | **20** | 行号漂移致甄别失败，需重扫 |
 | 链接未解析符号 | **682** | 有声明从未有定义；`/FORCE:UNRESOLVED` 容忍链接。`tools/gen_link_stubs.py` 已生成 101 个近似签名 stub（`src/_generated/link_stubs.cpp`），**未入构建**——需按 hpp 原声明精确签名后接入，最终全部真翻译 |
 | 无二进制对应函数 | 1 | `LocomotionClass::ChangeLocomotorTo`（历史手工编造，IDA 无此函数）——保留注释体，翻译时按调用语义重建或删除 |
 | **vtable 槽位审计** | 1 项 | src 继承链虚函数声明槽位与二进制 vtable 系统错位（object.hpp 虚区至少 2 处错位插入 + 编译器实测 124 vs 二进制 117）——波及所有含虚调用函数的 exec-flow vfptr 校验。GetPowerOutput(0x44E7B0) 真翻译已就位但被此阻塞（completed 已纠正为 false） |
 | **member_lookup 错位** | 1 区段 | BuildingTypeClass 3800 区段（3808=PowerBonus 被标 DoorStages、3816=ExtraPowerBonus 被标 BuildingAnim…整段偏移错位）——以 IDA til 为准修正数据文件 |
-| 真代码裸偏移成员访问 | 1 | building.cpp:16619 `*(int*)(*(int*)updated + 180)`（GetPowerRange 区段）——历史翻译的"不透明句柄"，updated 实为 UpdatePowered 虚调用链（vtable[33]→vtable[254]）返回值，类型待考古后改 `->` 访问 |
+| ~~真代码裸偏移成员访问~~ | ~~1~~ | ✅ 已清偿（2026-09-07）：`updated` 链考古完成——0x70E1A0/0x4526F0/0x7177C0/0x7177E0 实为武器槽选择器族（T19 误命名为 UpdatePowered/SelectVocOrSfx/GetAudioEntry）；返回 WeaponTypeClass** 槽位指针，+180=WeaponTypeClass::MinimumRange@+0xB4（til 与 DisplayBuildingInfoPanel@0x4B99FA 的 Name@+0x64 字符串渲染双重印证）。UpdatePowered 返回类型改为 WeaponTypeClass**，GetPowerFrame 尾段改 `(*weaponSlot)->MinimumRange` 成员访问；audit_member_access 加注释剥离+marker 回看后全库真代码 0 违规（余 surface.cpp 14 处已裁决帧缓冲游标） |
+| **T14/T19 类型与 owner 污染** | **1 项** | ✅ 已修正：IsRookie 误名、3 个 IDB primitive this 类型、HasVoiceResponse owner 与调用点污染强转；🔶 剩余 AdjustHeight owner、Audio 音量三连、TechnoTypeClass 错误局部 til、TechnoClass 中段偏移待考古（issue #7） |
+| **嵌入子对象 receiver 类型污染** | **7 高 + 3 中候选** | 🔶 新增候选：FacingClass::Set_SyncLog/Update、Coord::GetCoords、Float4::Sum、Float::Accumulate、VoxelAnimClass::QuaternionToMatrix、JumpjetLocomotionClass::Update2（高）；FootClass::CheckAccelLimit、Locomotor::GetSpeed、VeinholeClass::GetState（中）。共同特征是调用方明确传 `object + offset`，而 type_map 将 receiver 误归到外层对象、int 或其他类。 |
+| **verifier 伪码缓存缺口** | **1 项** | 🔶 IsRookie(0x74FFC0) 真翻译和 audit 已通过，但 `verify_function` 因无 IDA pseudocode cache 返回 exit=2；需补缓存后完成 CFG 校验（issue #8） |
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-05 终态）
+## 0. 当前基线（2026-09-07 MCP 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -96,15 +102,15 @@
 | 类类型变量 | 138,884（this 10,767 / SSA 103,821 / 栈槽 10,193 / 成员 8,203 / 参数 3,992 / 全局 1,781 / 返回 127） |
 | TOP 矛盾 | **0**（0 对冲突，verify_csp 七通道 ALL PASS） |
 | ORPHAN | 20.6%（结构性天花板：计算写消灭身份） |
-| IDB 落盘 | this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449 |
+| IDB 落盘 | 历史基线：this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449；本轮新增 3 处 this 类型修正并保存 IDB |
 | til struct | 1,474（1,252 全布局 + 20 观测建 + 202 最小 vfptr） |
 | struct 门 | 661 类可用，缺口 13（5 枚举 + 7 零观测 + 1 数组伪型） |
 | 反编译 | 19,067 函数全部可反编译（6 个历史失败已修复） |
 | 快照 | full_export v2（本次导出，类型化伪代码基座） |
 | src/ 树 | ~130 hpp + ~135 cpp（~110K 行），0 错误 0 警告 |
-| 完整翻译 | 472 函数经 IDA 对照验证 |
+| 完整翻译 | MCP completed=24；历史完整翻译统计 472 与 MCP completed 口径尚未统一 |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名） |
-| 命名不一致 | 215（59 method_diff + 116 wrong_class + 40 other） |
+| 命名不一致 | A4 基线曾为 0；当前 audit_consistency 报 80 条既有 mismatch，需单独清理 |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -140,7 +146,7 @@
 - 快照消费侧：LLM 依据类型+用途命名（`v28:TechnoClass*` → `pTarget`）。
 - 只影响快照/反编译可读性，不动 src/（翻译时自然吸收）。
 
-### A4. 215 命名不一致清零 ✅（2026-09-06 完成，实际起点 511）
+### A4. 命名一致性基线 ✅（2026-09-06 完成；2026-09-07 后续命名轮已追加语义改名）
 - 59 method_diff：IDA↔hpp 别名差异，逐函数查快照裁决。
 - 116 wrong_class：声明挂错类体，需移动声明（机械重构）。
 - 40 other：签名差异逐个处理。
@@ -152,7 +158,7 @@
   - 4 个 hpp 陈旧 sub_ 名改语义名（InitScoreScreenData 等）；
   - 2 个错误地址注解移除（Hash 类误认领 0x5dac00=WideString::Hash、
     Memory 模板误认领 0x65d190=FileClass::Delete，IDA 反编译验证）。
-  - **验收达成**：0 mismatch / 0 normalized mismatch。
+  - **验收达成（A4 基线）**：0 mismatch / 0 normalized mismatch；后续 2026-09-07 语义改名（武器槽/军衔谓词）已按四方同步执行，当前审计存在 80 条既有 mismatch，需单独清理，不能回写为 A4 已通过。
 
 ---
 
@@ -227,15 +233,15 @@
 
 ## 度量与检查点
 
-| 指标 | 制定时 | 2026-09-06 现状 | A 轮后目标 | C 线里程碑 |
+| 指标 | 制定时 | 2026-09-07 现状 | A 轮后目标 | C 线里程碑 |
 |---|---|---|---|---|
-| IDA 函数命名覆盖 | 70.5% | 70.5%（A2 未开始） | 85%+ | — |
-| 类成员语义名 | ~0（field_0xNN 占位） | ~0（A1 未开始） | >60% | — |
-| 命名不一致 | 215 | **0**（A4 完成；期间曾漂移至 511） | 0 | 0（维持） |
+| IDA 函数命名覆盖 | 70.5% | A2 未开始；本轮新增 7 个语义函数名 + 1 个 T19 误名纠正 | 85%+ | — |
+| 类成员语义名 | ~0（field_0xNN 占位） | A1 进入污染优先轮；尚未批量命名成员 | >60% | — |
+| 命名不一致 | 215 | A4 基线曾清零；当前 audit_consistency 报 80 条既有 mismatch，需单独清理 | 0 | 0（维持） |
 | hpp-impl 违规 | 未统计（1,765 隐性） | **0**（迁移完成） | 0 | 0（红线） |
-| 完整翻译函数 | 472 | 472（C 线未开始；gate 债清单即首批对象） | — | 1,000 → 3,000 → 472+5,758 全量 |
+| 完整翻译函数 | 472 | MCP stats：completed=24；本轮完成 IsRookie，历史“完整翻译”与 MCP completed 口径尚未统一 | — | 1,000 → 3,000 → 全量 |
 | REVERSE 对拍 | 41 函数 | 41 函数 | — | Same 率 >95% |
-| 构建 | gate 假绿 | **编译 0/0 + exe 产出；gate 2/3（232+35 债显式化）** | — | 0/0 + gate 3/3（红线） |
+| 构建 | gate 假绿 | MCP 最近记录 build errors=0；本轮单 TU 探针干净；`run_gates` 本次调用超时，未据此宣称全绿 | — | 0/0 + gate 3/3（红线） |
 
 ## 风险与对策
 
@@ -518,3 +524,166 @@ unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因�
 `verify_function` → `mark_completed`；失败路径 `issues_add` +
 `get_build_errors(file)` 定位。地址注解由 replace_body 自动维护，
 人工翻译时不再手写 `// 0xADDR`。
+
+---
+
+## 执行日志 — 2026-09-07 继续调研：T14/T19 污染排查、命名与计划刷新
+
+### 当前 MCP 统计
+
+- pending translations: **3,429**
+- completed functions: **24**
+- open issues: **5**
+- 最近 MCP build error 记录：**0**（本轮单 TU 探针编译干净；`run_gates` 本轮调用超时，未据此宣称全门控通过）
+
+### 污染排查与确定性修复
+
+对 `decompile-results/full_export/src/` 的函数原型进行标量指针 this 扫描，发现
+320 个 `float*`/`double*`/`char*` 等原型。逐个按反汇编与调用方分类，得到以下结果：
+
+1. **军衔谓词三件套已确定并命名**：
+   - `VeterancyStruct::IsRookie` @ 0x74FFC0：`fld [ecx]`，`0.0f <= value < 1.0f`；
+     原 signals/IDA 名为 `Crate::initializeCrate`/`sub_74FFC0`，已四方同步纠正，
+     并完成真翻译 `this->Veterancy`。
+   - `VeterancyStruct::IsVeteran` @ 0x74FF90：阈值 1.0f。
+   - `VeterancyStruct::IsElite` @ 0x750010：阈值 2.0f；这里的 `float*` 经 x87
+     `fld/fcomp` 指令确认是真实 ABI，不是 T14 污染；但同族 `SelectWeaponSlot`
+     的 float* this 确认为 T14 污染。
+
+2. **武器槽选择器族已命名**：`GetPoweredWeaponSlot`、`SelectWeaponSlot`
+   （Techno/Building 两个 owner）、`GetWeaponSlot`、`GetEliteWeaponSlot`。
+   `WeaponStruct` 28 字节、`Weapon[18]`/`EliteWeapon[18]` 数组和调用方
+   `lea [esi+150h]` 的 veterancy 参数共同提供证据。
+
+3. **HasVoiceResponse owner 与调用点污染已修正**：
+   `TechnoTypeClass::HasVoiceResponse` → `TechnoClass::HasVoiceResponse`；
+   调用方均传 `TechnoClass*`，并已删除 `(float*)this` 强转。IDB 参数类型同步为
+   `TechnoClass*`，源码声明从 `techno_type.hpp` 迁到 `techno.hpp`。
+
+4. **成员访问清债维持**：全库真代码审计为 0 个裸偏移成员访问；surface.cpp
+   剩余 14 处为既有裁决的帧缓冲游标，不是对象成员访问。审计器新增 marker 回看
+   与注释剥离，避免把内层 IDA 伪码签名和注释误报为真代码。
+
+### 尚未修改的污染债务
+
+- `BuildingClass::AdjustHeight` @ 0x62D5E0：`float* this` 明显可疑，函数簇同时
+  调 `ParticleClass::CheckWaterImpact` 和 `UpdateFloatPosition`；owner 搬移需要
+  进一步确认，不能只凭函数名改类声明。
+- `Audio::SetScoreVolume`/`SetSoundVolume`/`SetVoiceVolume`：`float* this` 疑似
+  音量状态结构入口，真实 owner 与现有 hpp 结构待调用方考古。
+- `TechnoTypeClass` 的 til 模型仅 0x2EC，无法容纳 Weapon[18]/EliteWeapon[18]
+  数组；类型侧函数 owner/布局仍是独立债务。
+- `HouseClass::AccumulateScore` 的 `float* this` 可能是分数累加字段指针，暂不盲改。
+- 0x750030 存在 JUMPOUT，暂不命名。
+- `VeterancyStruct::IsRookie` 的成员访问审计通过，但 verifier 因 IDA 伪码缓存缺失
+  返回 exit=2，已记录 issue #8，待预缓存该地址后补 CFG PASS。
+
+### 新增：嵌入子对象 receiver 类型污染候选
+
+本轮从 full_export 调用点和 type_map 交叉筛查出一种不同于“完整对象 owner 错误”的污染：
+函数本身属于 `FacingClass`、`Coord`、`Float4` 等嵌入结构，但调用方把外层对象的
+`base + offset` 传入；Hex-Rays 原型显示为 `char*`/`float*`/`int* this`，type_map
+却把 receiver 误归为外层对象、整数或无关类。翻译时应恢复嵌入成员的 `.`/`->` 语义
+访问，不能把外层对象类型直接传播给被调函数。
+
+**高置信候选（7）**：
+
+| 地址 | 函数 | 调用方证据 | type_map 异常 |
+|---:|---|---|---|
+| `0x4C9300` | `FacingClass::Set_SyncLog` | Aircraft/Building/Techno/Unit 多处传 `this+904/928` | this→ObjectClass / DIRECT_PROP |
+| `0x4C9220` | `FacingClass::Update` | Building/Unit/Aircraft 多处传 `this+904/928` | this→ObjectClass / DIRECT_PROP |
+| `0x4399A0` | `Coord::GetCoords` | Anim/VoxelAnim 多处传 `(float*)this+44/74` | this→int / DIRECT_PROP |
+| `0x6C9650` | `Float4::Sum` | Foot/Infantry/Techno/Unit 多处传 `(float*)this+207` | this→BuildingTypeClass / ANCHORED |
+| `0x6C9690` | `Float::Accumulate` | Infantry/Unit 多处传 `(float*)this+207` | this→BuildingTypeClass / DIRECT_PROP |
+| `0x4399E0` | `VoxelAnimClass::QuaternionToMatrix` | VoxelAnim 多处传 `(float*)this+44` | this→int / DIRECT_PROP |
+| `0x439B00` | `JumpjetLocomotionClass::Update2` | AnimClass 传 `this+296` | this→int / DIRECT_PROP |
+
+**中置信候选（3）**：
+
+| 地址 | 函数 | 证据 | 当前限制 |
+|---:|---|---|---|
+| `0x750030` | `FootClass::CheckAccelLimit` | 调用处传 `(float*)this+84` | 中间对象来源需确认 |
+| `0x426630` | `Locomotor::GetSpeed` | 多处传 `(int*)this+2`、`this+139` | receiver 可能存在多种布局 |
+| `0x74FFF0` | `VeinholeClass::GetState` | 单点传 `(float*)this+84` | 调用证据不足 |
+
+**明确排除**：`TechnoClass::Fire @ 0x70ECE0` 属 weapon 相关，按当前 weapon selector
+专项边界不纳入本组；`IsVeteran/IsElite` 的 `float*` 是真实 x87 标量 ABI；surface.cpp
+14 处是帧缓冲游标，不是对象成员访问。
+
+这些候选尚未修改。下一步应按优先级检查每个 receiver 的 vtable/struct 来源和所有调用方，
+再决定是补充嵌入成员类型、修正 `type_map`，还是保持合法的字段指针 ABI。
+
+---
+
+## 执行日志 — 2026-09-07 污染清偿轮 + 翻译推进（MCP 全流程）
+
+### 污染修复（全部证据 = 反汇编 + 调用方 xref + live IDA）
+
+**基础设施层（污染传播链切断）**：
+
+- **rename_symbol.py IDA 通道从未生效**：原实现调不存在的 `ida-pro-mcp_py_eval`
+  CLI（WinError 2）——重走 HTTP `127.0.0.1:13337/mcp`（rename 工具 func/data
+  batch + idb_save）；附带发现 0x70D0D0 的 IDA 名自上轮起一直滞留旧名，已补齐。
+- **`_by_name` / `ida_name_index` 派生索引滞后**：rename_symbol 补两处同步；
+  signals 主表 0x70D0D0 旧 owner 纠正 + `_by_name` 全量重建（25,228 条）；
+  `ida_name_index.json` 从 ida_function_db 权威重建。
+- **rename 债务账目化**：`.omo/rename_debt.json` + `--replay-debt` 重放
+  （roadmap 风险条 2 落地）；MCP 服务器 signals 缓存改 mtime 失效。
+
+**命名/类型污染修复（12 个函数改名 + 8 处 IDB 类型/结构）**：
+
+| 原名（误） | 新名（证据） |
+|---|---|
+| Locomotor::GetSpeed（虚构类） | CDTimerClass::TimeRemaining（读 {start,pad,count} 倒计时；FacingClass::Set_SyncLog 传 &RotationTimer） |
+| Audio::Set{Score,Sound,Voice}Volume | Options::Set{...}Volume（14 调用点全传 &0xA8EB60 全局；兄弟族 Options::DlgProc 同 receiver；音量槽 +0x38/0x3C/+0x40） |
+| TechnoTypeClass::CheckFlag | GameSettings::SetScoreVolume（=[this+0xC]·min(v,255)；3/3 调用方传 &0xA83D10；声明迁 game_systems.hpp） |
+| BuildingClass::AdjustHeight | ParticleClass::AdjustHeight（调用方全粒子系统；体读 location@0x9C/height@0xE4） |
+| HouseClass::AccumulateScore | VeterancyStruct::Accumulate（3/3 调用方传 TechnoClass+0x150 军衔 float；this 保持 float* 字段 ABI） |
+| BuildingClass::SetField8/SetField95 | AnimClass::SetField8/SetField95（4/4 调用方传 AnimClass：ctor 结果/建筑动画槽项；写 +0x19E byte/+0x17C dword；成员名待 AnimClass 中段考古） |
+
+IDB：FacingClass/CDTimerClass til 结构补成员声明（class_layouts 权威）；
+0x4C9220/0x4C9300 this→FacingClass*+DirStruct*、0x62D5E0→ParticleClass*、
+音量三连→Options*、0x721290→GameSettings*、0x6C9690 param1 BuildingTypeClass*→float。
+反编译立即恢复 `this->DesiredFacing`/`this->RotationTimer.StartTime` 语义渲染。
+`g_CurrentFrame`(0xA8ED84) src 类型 void*→int；该全局深埋 HouseClass_Player
+45KB 误标 mega-blob——blob 拆分记数据模型债。虚构类 Locomotor 双声明删除。
+
+**Receiver 污染候选裁决（7 高 + 3 中，issue #7 结案附全表）**：已修 6 项；
+Coord::/Float::/Float4:: 家族转 A2 逐函数证据轮；0x750030 边界损坏禁动；
+VeinholeClass::GetState 单调用点证据不足维持。
+
+### 翻译推进（completed 24 → 27）
+
+- **CDTimerClass::TimeRemaining(0x426630)**、**FacingClass::Update(0x4C9220)**、
+  **FacingClass::Set_SyncLog(0x4C9300)**：真翻译 + CFG 双射 PASS + completed。
+- **VeterancyStruct::IsRookie(0x74FFC0)**：补验 PASS（issue #8 结案；根因三重：
+  签名正则不认 namespace 单行前缀 / `&&` 切分 vs IDA 扁平单块 / IDA 离线）。
+- **AbstractClass::QueryInterface(0x410260)**：真翻译落盘（编译净/audit 0/
+  STEP3 OK/结构 10↔10 同构），但 verifier 逐块事件集合相等拒收——C++ 侧
+  AddRef 提取为 CALL、IDA 侧间接虚调用无事件（提取不对称）→ issue #9。
+- 批次 B 余 5 函数（issue #4/#10）：SetField8/95 owner 破案改名；三函数
+  （CheckC4Active/IsTiberium*）经 live til 复核维持布局考古延缓。
+
+### CFG 双射经验（翻译方法论沉淀）
+
+1. 条件方向照抄 IDA 伪码文本（`if (<=0) goto` 形态要用空真臂 if/else 镜像）。
+2. C++ `&&`/`||` 切分多块 vs Hex-Rays 扁平化——能用单块表达式（含非短路 `&`）
+   就不用短路运算。
+3. 三元 `?:` 降级为菱形块——位技巧 abs（`(x^(x>>31))-(x>>31)`）替代分支 abs。
+4. 多语句无事件臂可折叠，带 gating 事件（CALL/WRITE）或全局 READ 的臂独立成块
+   ——全局读提升到条件块外。
+5. 伪码的 if 外默认赋值（无 else 形态）必须镜像为"默认赋值+覆盖"而非 else 臂。
+
+### 工具债清偿
+
+issue #2（replace_body 双签名自动剥离）、#8（IsRookie 补验）、#7（污染全表结案）
+已 resolve；新增 #9（虚调用提取不对称）、#10（批次 B 进展记录）。
+
+### 未完成 / 下一步
+
+- **full_export 快照重导出**（本轮 IDB 变更大量未反映：12 改名 + 8 类型 +
+  2 结构声明；~30 分钟）；
+- Coord::/Float::/Float4:: 家族 A2 命名轮（逐函数证据）；
+- verifier 虚调用提取补齐（issue #9/#3 同族）或 vtable 槽位审计落地；
+- AnimClass/TechnoClass 中段布局考古（SetField8/95 与 tiberium 族解锁前提）；
+- issue #4 三函数 + 69 CFG 不忠实清单继续清偿。

@@ -51,7 +51,7 @@ extern uint32_t g_ScriptPool; // data: 0xAC4CCC
 
 extern void* g_ScenarioClass_Instance; // data: 0xA8B230
 
-extern void* g_CurrentFrame; // data: 0xA8ED84
+extern int g_CurrentFrame; // data: 0xA8ED84
 
 extern uint32_t g_GameMode_Current; // data: 0xA8B238
 

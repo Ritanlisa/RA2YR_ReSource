@@ -2,6 +2,7 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "locomotion.hpp"
 #include "object/foot.hpp"  // full FootClass for locomotor member access
+#include "structure/globals_structure.hpp"  // g_CurrentFrame (Frame @ 0xA8ED84)
 
 namespace gamemd {
 // 0x55a9b0
@@ -602,5 +603,146 @@ HRESULT __stdcall DropPodLocomotionClass::Save(IStream* stream, int clear_dirty)
 int DropPodLocomotionClass::Size() { return sizeof(*this); }
 
 DropPodLocomotionClass::DropPodLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t {}) {}
+
+// CDTimerClass - frame countdown remaining (0x426630)
+// Formerly misnamed Locomotor::GetSpeed (fabricated class). Reads
+// {StartTime@0, pad@4, TimeLeft@8}; returns frames left, or TimeLeft
+// itself when not started (StartTime == -1).
+int CDTimerClass::TimeRemaining()
+{
+    int result = TimeLeft;
+    if (StartTime != -1)
+    {
+        if (g_CurrentFrame - StartTime >= result)
+            return 0;
+        result -= g_CurrentFrame - StartTime;
+    }
+    return result;
+}
+
+// FacingClass - rotate the displayed facing one step toward the desired one
+// (0x4c9220). Interpolates StartFacing proportionally to the rotation time
+// already elapsed, then adopts the new desired facing and restarts the
+// rotation timer. Word widths follow the original (DirStruct low word holds
+// the facing value).
+int FacingClass::Update(unsigned int* a1)
+{
+    unsigned short v2 = (unsigned short)DesiredFacing;
+    if (v2 == *(unsigned short*)a1)
+        return 0;
+
+    short rot = (short)ROT;
+    unsigned int v11 = DesiredFacing;
+    if (rot <= 0)
+    {
+        // no turn rate: keep the current desired facing (snap path)
+    }
+    else
+    {
+        int timeLeft = RotationTimer.TimeLeft;
+        int startTime = RotationTimer.StartTime;
+        if (startTime != -1 && g_CurrentFrame - startTime >= timeLeft)
+        {
+            // rotation window exhausted: snap path
+        }
+        else if (timeLeft == 0)
+        {
+            // nothing left to interpolate: snap path
+        }
+        else
+        {
+            short delta = (short)(v2 - (unsigned short)StartFacing);
+            int deltaAbs = (delta ^ (delta >> 31)) - (delta >> 31);
+            int steps = deltaAbs / rot;
+            unsigned int v16 = DesiredFacing;
+            int frameNow = g_CurrentFrame;
+            if ((short)steps > 0)
+            {
+                int weight = RotationTimer.TimeLeft;
+                int start2 = RotationTimer.StartTime;
+                short v10 = (short)weight;
+                if (start2 != -1)
+                {
+                    v10 = 0;
+                    if (frameNow - start2 < weight)
+                        v10 = (short)(weight - (frameNow - start2));
+                }
+                v16 = (v16 & 0xFFFF0000u) | (unsigned short)(v10 * (delta / (short)steps));
+            }
+            v11 = v16;
+        }
+    }
+    StartFacing = v11;
+    unsigned int v12 = *a1;
+    DesiredFacing = v12;
+    int frame = g_CurrentFrame;
+    if (rot > 0)
+    {
+        short d2 = (short)((unsigned short)v12 - (unsigned short)StartFacing);
+        int d2Abs = (d2 ^ (d2 >> 31)) - (d2 >> 31);
+        RotationTimer.StartTime = frame;
+        RotationTimer.pad_04 = 0;  // original stored dead stack garbage
+        RotationTimer.TimeLeft = d2Abs / rot;
+    }
+    return 1;
+}
+
+// FacingClass - network-sync variant (0x4c9300): step the displayed facing by
+// the elapsed fraction, then either accept the desired facing immediately
+// (timer zeroed, returns 0 when already in place) or snap both facings to it.
+int FacingClass::Set_SyncLog(unsigned int* a1)
+{
+    unsigned int v11 = DesiredFacing;
+    short v7 = 0;
+    int steps = 0;
+    int timeLeft = 0;
+    int v6 = 0;
+    if ((short)ROT > 0)
+    {
+        if (RotationTimer.TimeRemaining() != 0)
+        {
+            short delta = (short)((unsigned short)DesiredFacing - (unsigned short)StartFacing);
+            int deltaAbs = (delta ^ (delta >> 31)) - (delta >> 31);
+            steps = deltaAbs / (short)ROT;
+            v11 = DesiredFacing;
+            if ((short)steps <= 0)
+            {
+                // no step this frame; keep v11 as-is
+            }
+            else
+            {
+                timeLeft = RotationTimer.TimeLeft;
+                v6 = RotationTimer.StartTime;
+                v7 = (short)timeLeft;  // fallthrough default (unstarted timer)
+                if (v6 != -1)
+                {
+                    int elapsed = g_CurrentFrame - v6;
+                    v7 = 0;  // expired (elapsed >= total) leaves the weight at 0
+                    if (elapsed < timeLeft)
+                        v7 = (short)(timeLeft - elapsed);
+                }
+                v11 = (v11 & 0xFFFF0000u) | (unsigned short)(v7 * (delta / (short)steps));
+            }
+        }
+    }
+    int frame = g_CurrentFrame;
+    int result;
+    if ((unsigned short)v11 == *(unsigned short*)a1)
+    {
+        result = 0;
+        RotationTimer.StartTime = frame;
+        RotationTimer.pad_04 = 0;  // dead garbage pad
+    }
+    else
+    {
+        DesiredFacing = *a1;
+        StartFacing = *a1;
+        RotationTimer.StartTime = frame;
+        RotationTimer.pad_04 = 0;
+        result = 1;
+    }
+    RotationTimer.TimeLeft = 0;
+    return result;
+}
 }
 

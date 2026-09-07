@@ -25399,9 +25399,9 @@ int __thiscall TechnoClass::DrawVeterancy(#377 *this)
   (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 136))(this);
   v2 = dword_A8ED54[51658];
   v3 = -1;
-  if ( (unsigned __int8)Audio::IsMediumVolume((char *)this + 336) )
+  if ( (unsigned __int8)VeterancyStruct::IsVeteran((char *)this + 336) )
     v3 = 14;
-  if ( (unsigned __int8)Audio::IsLoud((char *)this + 336) )
+  if ( (unsigned __int8)VeterancyStruct::IsElite((char *)this + 336) )
     v3 = 15;
   result = VeinholeClass::GetState((char *)this + 336);
   if ( (_BYTE)result )
@@ -26601,7 +26601,7 @@ retn
 */
 } } }
 // 0x7177E0
-namespace ra2 { namespace game { int TechnoClass::processSpyAction(int a1) {
+namespace ra2 { namespace game { WeaponStruct* TechnoClass::GetEliteWeaponSlot(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7177E0(void *this, int a2)
 {

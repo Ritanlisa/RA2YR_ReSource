@@ -461,7 +461,6 @@ public:
     double Dispatch(int a1);  // 0x50bdf0 -- TechnoTypeClass::Dispatch
     double GetThreatMultiplier(int a1);  // 0x50beb0 -- TechnoTypeClass::GetThreatMultiplier
     void* LoadBase(int a1);  // 0x6f06e0 -- TechnoTypeClass::LoadBase
-    bool HasVoiceResponse(int a1);  // 0x70d0d0 -- TechnoTypeClass::HasVoiceResponse
     void* ReadINI(int a1, int a2);  // 0x710af0 -- TechnoTypeClass::ReadINI
     bool CanAttackMove_IgnoreWeapon();  // 0x711e90 -- TechnoTypeClass::CanAttackMove_IgnoreWeapon
     double ComputeBuildTime();  // 0x711ee0 -- TechnoTypeClass::ComputeBuildTime
@@ -472,7 +471,8 @@ public:
     void* Constructor_0(int a1);  // 0x717bc0 -- TechnoTypeClass::Constructor_0
     void* Constructor_1(int a1);  // 0x717be0 -- TechnoTypeClass::Constructor_1
     int RemoveItem(int a1);  // 0x717db0 -- TechnoTypeClass::RemoveItem
-    int CheckFlag(int a1);  // 0x721290 -- TechnoTypeClass::CheckFlag
+    // 0x721290 declaration moved to GameSettings (game_systems.hpp):
+    // receiver is the settings global @0xA83D10, not a TechnoTypeClass.
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===

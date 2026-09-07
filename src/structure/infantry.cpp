@@ -4394,7 +4394,7 @@ int __thiscall InfantryClass::EnterBuilding(float *this)
   char *MissionControl; // eax
   int v10; // esi
 
-  if ( (*(_BYTE *)(*((_DWORD *)this + 432) + 3778) || TechnoTypeClass::HasVoiceResponse(this, 14))
+  if ( (*(_BYTE *)(*((_DWORD *)this + 432) + 3778) || TechnoClass::HasVoiceResponse(this, 14))
     && (v2 = *((_DWORD *)this + 173)) != 0
     && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
     && (v3 = *((_DWORD *)this + 173), v4 = *(_DWORD *)(v3 + 1312), *(_BYTE *)(v4 + 5495))
@@ -7599,7 +7599,7 @@ LABEL_21:
   {
     v9 &= 0xFFFFFF4B;
   }
-  if ( (*(_BYTE *)(*(_DWORD *)(this + 1728) + 3778) || TechnoTypeClass::HasVoiceResponse((float *)this, 14))
+  if ( (*(_BYTE *)(*(_DWORD *)(this + 1728) + 3778) || TechnoClass::HasVoiceResponse(this, 14))
     && !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) )
   {
     v9 |= 0x20u;

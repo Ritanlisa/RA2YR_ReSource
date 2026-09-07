@@ -1628,7 +1628,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
       LOBYTE(Speed) = *((_BYTE *)this + 282);
       if ( !(_BYTE)Speed )
       {
-        Speed = Locomotor::GetSpeed((int *)this + 45);
+        Speed = CDTimerClass::TimeRemaining((int *)this + 45);
         if ( Speed || (Speed = *((_DWORD *)this + 48)) == 0 )
         {
           *((_BYTE *)this + 176) = 0;
@@ -5339,7 +5339,7 @@ int TechnoClass::CompleteFactoryProduction() { return 0; }
 // 0x7099e0
 int TechnoClass::IsTimerExpired() const { return false; }
 // 0x7177c0
-int TechnoClass::GetAudioEntry() const { return 0; }
+WeaponStruct* TechnoClass::GetWeaponSlot(int index) const { return nullptr; }
 // 0x709060
 int TechnoClass::GetTertiaryTargetOrFallback() const { return 0; }
 // 0x7090a0
@@ -5489,7 +5489,7 @@ int TechnoClass::Vt279Thunk0() { return 0; }
 // 0x703860
 int TechnoClass::UpdatePowerDrain() { return 0; }
 // 0x70e1a0
-int TechnoClass::UpdatePowered() { return 0; }
+gamemd::WeaponTypeClass** TechnoClass::GetPoweredWeaponSlot() { return nullptr; }
 // 0x706640
 int TechnoClass::UpdateState() { return 0; }
 // 0x736ca0
@@ -5594,7 +5594,7 @@ int TechnoClass::DecCounter() { return 0; }
 // 0x70d8f0
 int TechnoClass::PlaceAtCell() { return 0; }
 // 0x70e140
-int TechnoClass::SelectVocOrSfx() { return 0; }
+WeaponStruct* TechnoClass::SelectWeaponSlot(int weaponIndex) { return nullptr; }
 // 0x70ed10
 int TechnoClass::Update2() { return 0; }
 // 0x70ed80

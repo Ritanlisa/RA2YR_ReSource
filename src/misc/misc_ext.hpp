@@ -151,18 +151,9 @@ public:
     int32_t     Carryall_field_00;       // 0x00
 };
 
-// ============================================================================
-// Locomotor — locomotor utilities (1 method)
-// IDA: GetSpeed
-// ============================================================================
-class Locomotor
-{
-public:
-    // IDA 0x48B2A0 area
-    static int32_t GetSpeed(TechnoClass* tech);  // 0x426630
-
-    int32_t     Locomotor_field_00;       // 0x00
-};
+// Locomotor class removed 2026-09-07: fabricated stub class (duplicate of the
+// one formerly in movement_ext.hpp). Its single method 0x426630 is
+// CDTimerClass::TimeRemaining — see locomotion.hpp.
 
 // ============================================================================
 // Explosion — explosion utilities (1 method)

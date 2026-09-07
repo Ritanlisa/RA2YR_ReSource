@@ -8219,13 +8219,13 @@ LABEL_73:
         *((_DWORD *)this + 437) = 300;
         return v11;
       }
-      if ( !*(_BYTE *)(v63 + 3772) && !TechnoTypeClass::HasVoiceResponse((float *)this, 13) )
+      if ( !*(_BYTE *)(v63 + 3772) && !TechnoClass::HasVoiceResponse(this, 13) )
       {
         *((_DWORD *)this + 437) = 100;
         return v11;
       }
     }
-    else if ( !*(_BYTE *)(*((_DWORD *)this + 432) + 3772) && !TechnoTypeClass::HasVoiceResponse((float *)this, 13) )
+    else if ( !*(_BYTE *)(*((_DWORD *)this + 432) + 3772) && !TechnoClass::HasVoiceResponse(this, 13) )
     {
       v64 = 50;
       if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(MEMORY[0x87F7E8][7806] + 5896) )

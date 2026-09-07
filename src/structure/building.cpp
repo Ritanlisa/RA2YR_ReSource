@@ -1,4 +1,5 @@
 #include "structure/building.hpp"
+#include "entity/anim.hpp"  // AnimClass::SetField95/8 pending blocks (owner-fixed 2026-09-07)
 #include "house/house.hpp"
 #include "structure/globals_structure.hpp"
 #include "type/building_type.hpp"
@@ -1360,7 +1361,7 @@ void __thiscall BuildingClass_Deactivate(int this)
     if ( *(_BYTE *)(*(_DWORD *)(this + 1312) + v5 + 3980) )
     {
       if ( *v6 )
-        BuildingClass::SetField8(*v6);
+        AnimClass::SetField8(*v6);
     }
     v5 += 68;
     ++v6;
@@ -8513,7 +8514,7 @@ int __thiscall BuildingClass_CheckBuildability(void *this)
     {
       if ( (*(_BYTE *)(v4 + 20) & 1) != 0 )
       {
-        Type = BuildingClass::GetType((_DWORD *)v4);
+        Type = BuildingClass::GetPlanningToken((_DWORD *)v4);
         v6 = Type;
         if ( Type )
         {
@@ -9405,7 +9406,7 @@ int __thiscall sub_639CB0(_DWORD *this)
   int v17; // [esp+10h] [ebp-8h]
   _DWORD *v18; // [esp+14h] [ebp-4h]
 
-  result = BuildingClass::GetType(this);
+  result = BuildingClass::GetPlanningToken(this);
   v2 = result;
   v3 = 0;
   v18 = (_DWORD *)result;
@@ -14257,35 +14258,21 @@ void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 // IDA 0x452630: check health below threshold for repair
 // 0x452630
 bool BuildingClass::CheckHealthForRepair() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x452630
-int __thiscall BuildingClass::CheckHealthForRepair(#377 *this)
-{
-  int result; // eax
-
-  result = *((_DWORD *)this + 27);
-  if ( result )
-  {
-    result = *((_DWORD *)this + 328);
-    if ( *(_BYTE *)(result + 5498) )
+    // IDA 0x452630, vtable slot 37. health@+0x6C (ASM: mov eax,[esi+6Ch]),
+    // Type@+0x520, ClickRepairable@Type+0x157A; vtable[+128] = slot 32 =
+    // IsFactorySelectable. The tail call is the original binary's direct
+    // cross-class call into InfantryClass::CheckHealthDiff (0x701140) -
+    // generic Techno code with an internal whatAmI guard (always false for
+    // buildings); passed through unchanged (single-inheritance no-op rebind).
+    if (this->health == 0)
+        return false;
+    if (this->Type->ClickRepairable)
     {
-      result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 128))(this);
-      if ( (_BYTE)result )
-        LOBYTE(result) = 0;
-      else
-        LOBYTE(result) = InfantryClass::CheckHealthDiff(this);
+        if (this->IsFactorySelectable())
+            return false;
+        return ((InfantryClass*)(ra2::game::TechnoClass*)this)->CheckHealthDiff() != 0;
     }
-    else
-    {
-      LOBYTE(result) = 0;
-    }
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
-}
+    return false;
 
 /* ASM:
 push    esi
@@ -16039,16 +16026,14 @@ int BuildingClass::Mission_Deploy() { return 0; }
 // IDA 0x450010: check if mission is guard
 // 0x458dd0
 bool BuildingClass::CheckMissionGuard() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt256(#377 *this)
-{
-  int v1; // eax
-
-  v1 = *((_DWORD *)this + 328);
-  return *(_BYTE *)(v1 + 5499)
-      && *(_BYTE *)(v1 + 5500)
-      && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1032))(this) > 0;
-}
+    // IDA 0x458DD0, BuildingClass vtable slot 256 (IDA name BuildingClass::_vt256).
+    // Type@+0x520 (ASM: mov eax,[ecx+520h]); CanBeOccupied@Type+0x157B,
+    // CanOccupyFire@Type+0x157C (INI-verified YRpp flags); vtable[+1032] =
+    // slot 258 = MissionStubReturnZero6 - returns 0 for buildings, so the
+    // third clause is inert in the original binary (kept for fidelity).
+    return this->Type->CanBeOccupied
+        && this->Type->CanOccupyFire
+        && this->MissionStubReturnZero6() > 0;
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -16630,15 +16615,15 @@ void BuildingClass::UpdatePowerAnim() { UpdatePowerAnimation(); }
 // declares it argument-less (its generated `/* param_bytes: 4 */` was never lowered
 // to a real parameter), so forward-declare the true 1-arg form here for the faithful
 // call in GetPowerFrame — avoids pulling the whole _funcs.hpp into this TU.
-int IsNonNullPtr(int handle) noexcept;
+int IsNonNullPtr(void* handle) noexcept;
 
 // GOLDEN: 0x4566B0 — BuildingClass::GetPowerFrame.  Faithful 1:1 with IDA.
 // Returns the radial-indicator radius (in cells) for this building's effect:
 // PsychicDetectionRadius override > GapGenerator radius > Cloak/Sensor radius >
-// radius derived from the powered object.  (IDA labels it GetPowerFrame; the
-// binary computes the radial-effect radius.)  Structure: Type read, result<=0
-// gate, gap/cloak/sensor branches, two direct calls in the fall-through,
-// multiple returns.  Type-relative (type->) reads emit no verifier events; their
+// weapon MinimumRange (leptons/256) via the GetPoweredWeaponSlot selector.
+// Structure: Type read, result<=0 gate, gap/cloak/sensor branches, two direct
+// calls in the fall-through, multiple returns.  Type-relative (type->) reads
+// emit no verifier events; their
 // binary // *(v2+OFF) offsets were validated against BuildingTypeClass::Construct-
 // Full (0x45DD90) defaults + the INI reader at 0x460BEA:
 //   5831 = CloakGenerator (INI "CloakGenerator"),  5832 = SensorArray,
@@ -16665,14 +16650,19 @@ int BuildingClass::GetPowerFrame()
         }
         else
         {
-            int updated = UpdatePowered();                // TechnoClass::UpdatePowered(this) -- 0x70E1A0
-            if (IsNonNullPtr(updated))                    // 0x70E240
+            // 0x70E1A0 (TechnoClass::GetPoweredWeaponSlot) is a weapon-slot selector:
+            // house-power-gated pick through vtable slot 254 (building impl
+            // 0x4526F0 walks Upgrades@+0x5EC / UpgradeLevel@+0x702 / occupant
+            // types), returning a pointer to the WeaponTypeClass* holder.
+            WeaponTypeClass** weaponSlot = GetPoweredWeaponSlot();
+            if (IsNonNullPtr(weaponSlot))                 // 0x70E240
             {
-                // *(*(_DWORD*)updated + 180) — radius (leptons) of the powered
-                // object, read through the opaque handle UpdatePowered returns.
-                int radius = *(int *)(*(int *)updated + 180);
-                if (radius > 0)
-                    return radius / 256;                  // leptons -> cells
+                // *(*(_DWORD*)updated + 180): WeaponTypeClass::MinimumRange
+                // @+0xB4 (til-verified; same object's Name@+0x64 is rendered as
+                // a string in DisplayBuildingInfoPanel @0x4B99FA).
+                int minimumRange = (*weaponSlot)->MinimumRange;
+                if (minimumRange > 0)
+                    return minimumRange / 256;            // leptons -> cells
             }
             return 0;
         }
@@ -17697,10 +17687,10 @@ int __fastcall sub_639740(int a1, int a2)
 
   v2 = a2;
   v15 = a2;
-  Type = BuildingClass::GetType((_DWORD *)a1);
+  Type = BuildingClass::GetPlanningToken((_DWORD *)a1);
   v14 = v2;
   v5 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)(Type + 4) + 16))(Type + 4, &v14);
-  v6 = BuildingClass::GetType((_DWORD *)a1);
+  v6 = BuildingClass::GetPlanningToken((_DWORD *)a1);
   v7 = *(_DWORD *)(v6 + 20);
   *(_DWORD *)(v6 + 148) = v5;
   *(_BYTE *)(v6 + 152) = 1;
@@ -18126,7 +18116,7 @@ char __fastcall BuildingClass::SetProduction(int a1, int a2)
 
   v2 = a2;
   v22 = a2;
-  Type = BuildingClass::GetType((_DWORD *)a1);
+  Type = BuildingClass::GetPlanningToken((_DWORD *)a1);
   if ( !Type )
   {
     v5 = __2_YAPAXI_Z(156);
@@ -18153,18 +18143,18 @@ char __fastcall BuildingClass::SetProduction(int a1, int a2)
       v20 = 0;
     }
     ScriptActionVector::PushBack(&dword_A8ED54[55241], &v20);
-    BuildingClass::SetType((_DWORD *)a1, v20);
+    BuildingClass::SetPlanningToken((_DWORD *)a1, v20);
     Type = v20;
   }
   v8 = *(_DWORD *)(Type + 4);
   v21 = v2;
   if ( (*(int (__thiscall **)(int, int *))(v8 + 16))(Type + 4, &v21) == -1 )
     return CompleteBuildingProduction((_DWORD *)a1, v2);
-  v9 = BuildingClass::GetType((_DWORD *)a1);
+  v9 = BuildingClass::GetPlanningToken((_DWORD *)a1);
   v10 = *(_DWORD *)(v9 + 4);
   v21 = v2;
   v11 = (*(int (__thiscall **)(int, int *))(v10 + 16))(v9 + 4, &v21);
-  v12 = BuildingClass::GetType((_DWORD *)a1);
+  v12 = BuildingClass::GetPlanningToken((_DWORD *)a1);
   v13 = *(_DWORD *)(v12 + 20);
   *(_DWORD *)(v12 + 148) = v11;
   *(_BYTE *)(v12 + 152) = 1;
@@ -21529,8 +21519,7 @@ retn
 void BuildingClass::UpdateMovingPosition() {}
 // 0x62d2a0
 void BuildingClass::UpdateFloatPosition() {}
-// 0x62d5e0
-void BuildingClass::AdjustHeight() {}
+// 0x62d5e0 ParticleClass::AdjustHeight moved to entity/particle.cpp
 
 // ============================================================
 // Section 11: Animation
@@ -23012,12 +23001,12 @@ retn    8
 
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
 // 0x705d20
-BuildingTypeClass* BuildingClass::GetType() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_GetType(_DWORD *this)
-{
-  return *(this + 325);
-}
+ra2::game::PlanningTokenClass* BuildingClass::GetPlanningToken() {
+    // IDA 0x705D20. Reads planningToken@+0x514 (ASM: mov eax,[ecx+514h]) - NOT
+    // Type(+0x520); the real type getter is GetTypePtr@0x459EE0. Formerly
+    // misnamed GetType (T19 caller-context heuristic); callers live in the
+    // 0x633-0x639 production-planning region (planning-token queue code).
+    return this->planningToken;
 
 /* ASM:
 mov     eax, [ecx+514h]
@@ -23027,13 +23016,12 @@ retn
 
 // IDA 0x705d10: set type
 // 0x705d10
-void BuildingClass::SetType(BuildingTypeClass* t) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_SetType(_DWORD *this, int a2)
-{
-  *(this + 325) = a2;
-  return a2;
-}
+void BuildingClass::SetPlanningToken(ra2::game::PlanningTokenClass* token) {
+    // IDA 0x705D10. Writes planningToken@+0x514 (ASM: mov [ecx+514h],eax).
+    // The decompiler's "return a2" is the natural eax pass-through of
+    // mov eax,[esp+arg_0]; the function is void (retn 4, no value contract).
+    this->planningToken = token;
+    return;
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -23381,7 +23369,7 @@ retn
 }
 
 // 0x4526f0
-int BuildingClass::SelectVocOrSfx() { return 0; }
+ra2::game::WeaponStruct* BuildingClass::SelectWeaponSlot(int weaponIndex) { return nullptr; }
 // 0x457de0
 void BuildingClass::UnloadUnits() {}
 // 0x4585c0
@@ -24558,7 +24546,7 @@ retn
 
 // IDA 0x424c90: set field at offset 95
 // 0x424c90
-void BuildingClass::SetField95(int v) {
+void AnimClass::SetField95(int v) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Accessor_424c90(_DWORD *this, int a2)
 {
@@ -24575,7 +24563,7 @@ retn    4
 
 // IDA 0x425260: set field at offset 8 (activates flag)
 // 0x425260
-void BuildingClass::SetField8(int v) {
+void AnimClass::SetField8(int v) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Accessor_425260(_BYTE *this)
 {

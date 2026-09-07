@@ -84,16 +84,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 // === Batch-generated MISSING class stubs ===
 
-// 1 methods in IDA
-class Locomotor
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~Locomotor() = default;
+// Locomotor class removed 2026-09-07: fabricated stub class. Its single method
+// 0x426630 is the CDTimerClass countdown helper (reads {StartTime@0,?@4,TimeLeft@8},
+// called by FacingClass::Set_SyncLog with &RotationTimer) — declared in
+// locomotion.hpp as CDTimerClass::TimeRemaining.
 
-    virtual void GetSpeed(); // 0x426630
-
-};
 // 14 methods in IDA
 // CSP: MoveFeedback matched via T1
 class MoveFeedback

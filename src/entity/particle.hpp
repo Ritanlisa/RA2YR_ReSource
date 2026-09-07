@@ -87,6 +87,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void UpdateAnimationDrift();  // 0x62C540
     int Dispatch();  // 0x62CE40
     void CheckWaterImpact();  // 0x62D3F0
+    // 2026-09-07 归位（原 BuildingClass::AdjustHeight 误挂）：receiver 是粒子
+    // （调用方 ParticleSystemClass::UpdateAllParticles / UpdateBuilding*Particles；
+    // 体读 location@+0x9C、height delta@+0xE4、type 链@+0xAC→behavior kind@+0x314）
+    void AdjustHeight();  // 0x62D5E0
     bool CheckMirrorState(int a1);  // 0x62D6F0
     int vt_entry_1E8();  // 0x62D830
     int Stub();  // 0x62D990

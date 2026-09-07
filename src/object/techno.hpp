@@ -3,6 +3,7 @@
 #include "radio.hpp"
 #include "core/vector.hpp"
 #include "fundamentals.hpp"
+#include "type/weapon_type.hpp"
 
 namespace ra2 {
 namespace game {
@@ -542,7 +543,7 @@ public:
     virtual int BeginFiringSequence();  // 0x709820
     virtual int CompleteFactoryProduction();  // 0x709A40
     virtual int IsTimerExpired() const;  // 0x7099E0
-    virtual int GetAudioEntry() const;  // 0x7177C0
+    WeaponStruct* GetWeaponSlot(int index) const;  // 0x7177C0 (&Weapon[index] on the type; real owner TechnoTypeClass - ownership debt)
     virtual int GetTertiaryTargetOrFallback() const;  // 0x709060
     virtual int VoiceAttack();  // 0x7090A0
     virtual int ResponseMove_Pickup();  // 0x708FC0
@@ -617,7 +618,7 @@ public:
     virtual int TransitionEffectState();  // 0x7036C0
     virtual int Vt279Thunk0();  // 0x703850
     virtual int UpdatePowerDrain(); // 0x703860
-    virtual int UpdatePowered();  // 0x70E1A0
+    virtual gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (vtable slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
     virtual int UpdateState(); // 0x706640
     virtual int UpdateUnitAnimation();  // 0x736CA0
     virtual int GetInfantryCursorAction() const;  // 0x7404B0
@@ -679,7 +680,7 @@ public:
     virtual int SetSpread(); // 0x70DDD0
     virtual int DecCounter();  // 0x70D670
     virtual int PlaceAtCell();  // 0x70D8F0
-    virtual int SelectVocOrSfx(); // 0x70E140
+    virtual WeaponStruct* SelectWeaponSlot(int weaponIndex); // 0x70E140 (vtable slot 254: elite-vs-regular slot by veterancy >= 2.0 at +0x150)
     virtual int Update2(); // 0x70ED10
     virtual int GetAnimationFlags() const;  // 0x70ED80
     virtual int GetTargetSpeedMultiplier() const;  // 0x50C050
@@ -1130,7 +1131,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Vt249to254();  // 0x70E120
     int CalcFlashAlpha(int a1);  // 0x70E4B0
     int ClearUnknownFlag();  // 0x70F000
-    int processSpyAction(int a1);  // 0x7177E0
+    WeaponStruct* GetEliteWeaponSlot(int index);  // 0x7177E0 (&EliteWeapon[index] on the type; real owner TechnoTypeClass - ownership debt)
+    bool HasVoiceResponse(int weaponIndex);  // 0x70D0D0 -- reads this->veterancy and type-side Voice*WeaponAttack flags
     int ShouldSkipOccupierDraw(int a1, int a2, int a3);  // 0x73B0B0
     int Draw(void* a1, void* a2);  // 0x73CEC0
     int updateTargeting();  // 0x740B10

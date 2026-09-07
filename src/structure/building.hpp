@@ -262,7 +262,9 @@ public:
     bool Is1x1AndUndeployable_BuildingMassSelectable();  // 0x465D40
     void UpdateMovingPosition();  // 0x5B17B0
     void UpdateFloatPosition();  // 0x62D2A0
-    void AdjustHeight();  // 0x62D5E0
+    // AdjustHeight(0x62D5E0) moved to ParticleClass (entity/particle.hpp):
+    // receiver is a particle (callers: ParticleSystemClass::UpdateAllParticles,
+    // UpdateBuilding*Particles); body reads particle location@+0x9C/height@+0xE4.
 
     // Animation
     void PlayAnim(int anim_index, int anim_type, int frame_count);  // 0x451890
@@ -342,8 +344,8 @@ public:
     int SquaredDistanceTo(CoordStruct* target) const;  // 0x5F6500
     void SaveLoad_Register();  // 0x5F5E80
     void CopyTypeDataForRender();  // 0x634310
-    BuildingTypeClass* GetType();  // 0x705D20
-    void SetType(BuildingTypeClass* type);  // 0x705D10
+    ra2::game::PlanningTokenClass* GetPlanningToken();  // 0x705D20 (accessor for TechnoClass::planningToken@+0x514, NOT Type)
+    void SetPlanningToken(ra2::game::PlanningTokenClass* token);  // 0x705D10
     BuildingTypeClass* GetTypePtr();  // 0x459EE0
     BuildingTypeClass* GetType_Thunk();  // 0x705D60
     HouseClass* GetOwnerHouse();  // 0x449A40
@@ -357,7 +359,7 @@ public:
     void ReadBuildingSettings();  // 0x475A60
     void ReadConstructionData();  // 0x44FEC0
     bool HasOccupantAudio();  // 0x4527D0
-    int SelectVocOrSfx();  // 0x4526F0
+    virtual ra2::game::WeaponStruct* SelectWeaponSlot(int weaponIndex);  // 0x4526F0 (slot 254 override: upgrade/occupant weapon slots)
     void UnloadUnits();  // 0x457DE0
     void AnimateUnloadUnits();  // 0x4585C0
     void SpawnParticles();  // 0x459900
@@ -390,8 +392,9 @@ public:
     void RemoveLimpet();  // 0x4593A0
     void ClearLimpetCheck();  // 0x459DB0
     bool CheckC4Active();  // 0x487C10
-    void SetField95(int value);  // 0x424C90
-    void SetField8(int value);  // 0x425260
+    // SetField95(0x424C90)/SetField8(0x425260) moved to AnimClass
+    // (entity/anim.hpp): all 4 call sites pass AnimClass receivers
+    // (AnimClass::ctor result / building anim-slot array entries), not buildings.
     int GetCursorAction();  // 0x449440
     void UpdateThreatBounds();  // 0x70F6E0
     bool ValidatePath();  // 0x716150

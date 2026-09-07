@@ -53,6 +53,7 @@ ADDR_IN_COMMENT = re.compile(r'0x([0-9A-Fa-f]{6,8})')
 _pending_index = None
 _snapshot_index = None
 _signals = None
+_signals_mtime = None
 _member_lookup = None
 _annot_cache = {"fn": None, "glob": None}
 
@@ -142,9 +143,14 @@ def snapshot_index():
 
 
 def signals():
-    global _signals
-    if _signals is None:
+    global _signals, _signals_mtime
+    try:
+        mtime = SIGNALS.stat().st_mtime
+    except OSError:
+        mtime = None
+    if _signals is None or mtime != _signals_mtime:
         _signals = json.load(open(SIGNALS, encoding="utf-8")) if SIGNALS.exists() else {"symbols": {}}
+        _signals_mtime = mtime
     return _signals
 
 
@@ -597,6 +603,22 @@ def replace_pseudocode(entry, new_body, dry_run):
                 break
         if k > marker_idx + 5000:
             return {"ok": False, "error": "pseudocode span not bounded"}
+    # Issue #2 guard: if new_body wrongly starts with a duplicate signature
+    # line ("RetType Class::Method(...) {"), auto-strip it (and its matching
+    # trailing '}') — the replacement span keeps the outer real signature, so
+    # keeping this line would compile into a double signature (C1003 bait).
+    stripped_note = None
+    fname = (entry.get("function") or "").split("::")[-1]
+    nl = new_body.split("\n")
+    first = nl[0].strip()
+    if (fname and fname in first and "(" in first
+            and first.endswith("{") and not first.startswith("//")):
+        if nl[-1].strip() == "}":
+            nl = nl[1:-1]
+        else:
+            nl = nl[1:]
+        stripped_note = f"auto-stripped duplicated signature line: '{first}'"
+        new_body = "\n".join(nl)
     bal = new_body.count("{") - new_body.count("}")
     if bal != 0:
         return {"ok": False, "error": f"new_body brace imbalance {bal:+d}"}
@@ -604,6 +626,7 @@ def replace_pseudocode(entry, new_body, dry_run):
     if dry_run:
         return {"ok": True, "dry_run": True,
                 "would_replace_lines": [marker_idx + 1, end + 1],
+                "stripped_signature": stripped_note,
                 "old_preview": old_block[:600], "new_preview": new_body[:600]}
     lines[marker_idx:end + 1] = new_body.split("\n")
     p.write_bytes("\n".join(lines).encode("latin-1"))
@@ -611,6 +634,7 @@ def replace_pseudocode(entry, new_body, dry_run):
     if entry.get("address"):
         annotation = annotate_function(entry["target"], entry["address"])
     return {"ok": True, "replaced_lines": [marker_idx + 1, end + 1],
+            "stripped_signature": stripped_note,
             "old_block_saved_chars": len(old_block),
             "address_annotation": annotation}
 

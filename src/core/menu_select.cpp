@@ -774,21 +774,21 @@ static void Options_Screen_Save(HWND hDlg) {
     HWND ctrl1327 = GetDlgItem(hDlg, 1327);
     if (ctrl1327) {
         g_ScoreVolume = (float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1);
-        // Audio::SetScoreVolume(g_ScoreVolume, 0);
+        // Options::SetScoreVolume(g_ScoreVolume, 0);
     }
 
     // DlgItem 1330: Sound volume slider
     HWND ctrl1330 = GetDlgItem(hDlg, 1330);
     if (ctrl1330) {
         g_SoundVolume = (float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1);
-        // Audio::SetSoundVolume(g_SoundVolume, 0);
+        // Options::SetSoundVolume(g_SoundVolume, 0);
     }
 
     // DlgItem 1334: Voice/Notification volume slider
     HWND ctrl1334 = GetDlgItem(hDlg, 1334);
     if (ctrl1334) {
         g_VoiceVolume = (float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1);
-        // Audio::SetVoiceVolume(g_VoiceVolume, 0);
+        // Options::SetVoiceVolume(g_VoiceVolume, 0);
     }
 }
 
@@ -1052,15 +1052,15 @@ static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, L
             } else if (ctrlId == 1327) {
                 // Score volume — live preview
                 float vol = (float)pos * 0.1f;
-                // Audio::SetScoreVolume(vol, 1);
+                // Options::SetScoreVolume(vol, 1);
             } else if (ctrlId == 1330) {
                 // Sound volume — live preview
                 float vol = (float)pos * 0.1f;
-                // Audio::SetSoundVolume(vol, 1);
+                // Options::SetSoundVolume(vol, 1);
             } else if (ctrlId == 1334) {
                 // Voice volume — live preview
                 float vol = (float)pos * 0.1f;
-                // Audio::SetVoiceVolume(vol, 1);
+                // Options::SetVoiceVolume(vol, 1);
             }
         }
         return 0;

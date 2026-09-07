@@ -92,6 +92,11 @@ public:
     static void sub_5FB050();
     // IDA 0x5FB050 area
     static int32_t FindFlagged(int32_t flag);  // 0x7931A0
+    // clamp-store [this+0xC] = min(value, 255); this = settings global @0xA83D10
+    // (2026-09-07 归位：原 TechnoTypeClass::CheckFlag 误挂；3/3 调用方
+    //  Options::SetScoreVolume/GameSettings::Read/AudioOptionsClass::ApplySettings
+    //  均传 offset 0xA83D10，写入 score volume 0-255 int)
+    void SetScoreVolume(int value);  // 0x721290
 
     static int32_t  s_Settings[32]; // 0x00
 };

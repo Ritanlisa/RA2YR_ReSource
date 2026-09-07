@@ -121,6 +121,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ProcessFrame();  // 0x761030 -- AnimClass::ProcessFrame
+    // 2026-09-07 归位（原 BuildingClass::SetField95/8 误挂）：4/4 调用方
+    // 传 AnimClass receiver（HouseClass::PsiWarn / ProcessSuperWeaponEffects
+    // 直接传 AnimClass::ctor 结果；PlayAnim/Deactivate/UpdateAnimationSlots
+    // 传建筑动画槽数组项）。写 AnimClass+0x17C(dword)/+0x19E(byte=1)，
+    // 成员语义待 AnimClass 中段布局考古（til 现为 field_17C/pad）。
+    void SetField95(int value);  // 0x424C90 -- AnimClass::SetField95
+    void SetField8(int value);  // 0x425260 -- AnimClass::SetField8
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===

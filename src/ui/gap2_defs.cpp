@@ -7731,7 +7731,7 @@ int __thiscall SidebarClass::ResetProductionState(void *this)
       v4 = *(void **)(MEMORY[0x87F7E8][528729] + 48);
     if ( v27 != v4 )
       goto LABEL_46;
-    Type = BuildingClass::GetType((_DWORD *)v2);
+    Type = BuildingClass::GetPlanningToken((_DWORD *)v2);
     v6 = Type;
     if ( !Type )
       goto LABEL_46;
@@ -7794,7 +7794,7 @@ LABEL_33:
     {
       if ( v16 )
       {
-        v19 = BuildingClass::GetType((_DWORD *)v2);
+        v19 = BuildingClass::GetPlanningToken((_DWORD *)v2);
         v20 = v19;
         if ( v19 )
         {
@@ -12692,7 +12692,7 @@ LABEL_115:
   if ( *((_DWORD *)this + 16) != -1 )
   {
     v14 = this + 8;
-    if ( Locomotor::GetSpeed((int *)this + 2) || (v15 = *((_DWORD *)this + 5)) == 0 )
+    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = *((_DWORD *)this + 5)) == 0 )
     {
       *(this + 4) = 0;
     }
@@ -12840,7 +12840,7 @@ LABEL_44:
           v30[2] = 0;
           *(v30 - 2) = 0;
         }
-        if ( Locomotor::GetSpeed(v30) || (v33 = v30[3]) == 0 )
+        if ( CDTimerClass::TimeRemaining(v30) || (v33 = v30[3]) == 0 )
         {
           *((_BYTE *)v30 - 4) = 0;
         }

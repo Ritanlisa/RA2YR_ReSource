@@ -24474,7 +24474,7 @@ void __thiscall ParticleSystemClass::UpdateAllParticles(int this)
     }
     else
     {
-      BuildingClass::AdjustHeight(*(float **)(v4 + 4 * v3));
+      ParticleClass::AdjustHeight(*(float **)(v4 + 4 * v3));
     }
     --v3;
   }
@@ -28666,7 +28666,7 @@ int __thiscall TerrainClass::Update(int this)
       }
     }
   }
-  result = Locomotor::GetSpeed((int *)(this + 180));
+  result = CDTimerClass::TimeRemaining((int *)(this + 180));
   if ( result || (result = *(_DWORD *)(this + 192)) == 0 )
   {
     *(_BYTE *)(this + 176) = 0;

@@ -42091,7 +42091,7 @@ retn
 */
 } }
 // 0x74FF50
-namespace gamemd { void HouseClass::AccumulateScore(int a1, int a2) {
+namespace gamemd { void VeterancyStruct::Accumulate(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall HouseClass_AccumulateScore(float *this, int a2, int a3)
 {

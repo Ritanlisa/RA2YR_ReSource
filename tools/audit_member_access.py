@@ -21,14 +21,55 @@ PATTERNS = [
 
 DEF_HEAD = re.compile(r'^\s*[\w:<>\*&\[\]]+(?:\s+[\w:<>\*&\[\]]+)*\s+([\w:~]+)::([\w~]+)\s*\(')
 
+def strip_comments(lines):
+    """Blank out // and /* */ comments, preserving line structure for line
+    numbers. Violations inside comments are documentation, not code."""
+    out = []
+    in_block = False
+    for ln in lines:
+        buf = []
+        j = 0
+        while j < len(ln):
+            c = ln[j]
+            nxt = ln[j + 1] if j + 1 < len(ln) else ''
+            if in_block:
+                if c == '*' and nxt == '/':
+                    buf.append('  ')
+                    j += 2
+                    in_block = False
+                    continue
+                buf.append(' ' if c != '\t' else '\t')
+                j += 1
+            elif c == '/' and nxt == '/':
+                break
+            elif c == '/' and nxt == '*':
+                buf.append('  ')
+                j += 2
+                in_block = True
+            else:
+                buf.append(c)
+                j += 1
+        out.append(''.join(buf))
+    return out
+
+
 def audit(path):
     text = pathlib.Path(path).read_bytes().decode('latin-1')
     lines = text.split('\n')
+    code_lines = strip_comments(lines)
     findings = []
     i = 0
     while i < len(lines):
         m = DEF_HEAD.match(lines[i])
         if not m or lines[i].rstrip().endswith(';'):
+            i += 1
+            continue
+        # Skip inner pseudocode defs: when the outer real function's signature
+        # does not match DEF_HEAD (free functions without ::, ctors without a
+        # return type), the pseudocode's own signature line below the marker
+        # gets matched instead. A marker line within the preceding 10 lines
+        # means this def lives inside a marker'd untranslated block.
+        if any(INSIDE in lines[j] for j in range(max(0, i - 10), i)):
             i += 1
             continue
         k = i
@@ -50,8 +91,9 @@ def audit(path):
             if started and depth <= 0:
                 break
             e += 1
-        body = '\n'.join(lines[i:e + 1])
-        if INSIDE not in body:
+        body = '\n'.join(code_lines[i:e + 1])
+        raw_body = '\n'.join(lines[i:e + 1])
+        if INSIDE not in raw_body:
             for pi, (pat, label) in enumerate(PATTERNS):
                 for mm in re.finditer(pat, body):
                     ln_no = i + body[:mm.start()].count('\n') + 1

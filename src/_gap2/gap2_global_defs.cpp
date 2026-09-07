@@ -46381,7 +46381,7 @@ void __thiscall UpdateBuildingParticleSystem(_DWORD *this)
       v13 = *(_DWORD *)(*(this + 48) + 4 * v12);
       if ( !*(_BYTE *)(v13 + 305) )
       {
-        BuildingClass::AdjustHeight((float *)v13);
+        ParticleClass::AdjustHeight((float *)v13);
         goto LABEL_29;
       }
       if ( *(_DWORD *)(*(_DWORD *)(v13 + 172) + 784) == -1 )
@@ -46997,7 +46997,7 @@ char __thiscall UpdateBuildingDamageParticles(char *this)
   {
     v3 = *(float **)(*((_DWORD *)this + 48) + 4 * i);
     ParticleClass::Dispatch((int)v3);
-    BuildingClass::AdjustHeight(v3);
+    ParticleClass::AdjustHeight(v3);
   }
   for ( j = *((_DWORD *)this + 51) - 1; j >= 0; --j )
   {
@@ -78651,15 +78651,15 @@ bool __thiscall ValidateAttackTarget(int this, int *a2, int a3)
   {
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 44))(this) == 15 && *(_BYTE *)(v5 + 3778) )
       return 0;
-    if ( (unsigned __int8)Audio::IsMediumVolume(this + 336) || (unsigned __int8)Audio::IsLoud(this + 336) )
+    if ( (unsigned __int8)VeterancyStruct::IsVeteran(this + 336) || (unsigned __int8)VeterancyStruct::IsElite(this + 336) )
     {
       v8 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 132))(this);
-      if ( (unsigned __int8)Audio::IsMediumVolume(this + 336) )
+      if ( (unsigned __int8)VeterancyStruct::IsVeteran(this + 336) )
       {
         if ( *(_BYTE *)(v8 + 682) )
           return 0;
       }
-      if ( (unsigned __int8)Audio::IsLoud(this + 336) && (*(_BYTE *)(v8 + 682) || *(_BYTE *)(v8 + 700)) )
+      if ( (unsigned __int8)VeterancyStruct::IsElite(this + 336) && (*(_BYTE *)(v8 + 682) || *(_BYTE *)(v8 + 700)) )
         return 0;
     }
   }

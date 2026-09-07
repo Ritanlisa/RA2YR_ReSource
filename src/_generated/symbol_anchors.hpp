@@ -71,11 +71,11 @@
 // 0x408540 | Audio::CalcRate
 // 0x409320 | Audio::GetSampleSize
 // 0x5d0470 | Audio::ParseVolume
-// 0x5fa4a0 | Audio::SetScoreVolume
-// 0x5fa510 | Audio::SetSoundVolume
-// 0x5fa590 | Audio::SetVoiceVolume
-// 0x74ff90 | Audio::IsMediumVolume
-// 0x750010 | Audio::IsLoud
+// 0x5fa4a0 | Options::SetScoreVolume
+// 0x5fa510 | Options::SetSoundVolume
+// 0x5fa590 | Options::SetVoiceVolume
+// 0x74ff90 | VeterancyStruct::IsVeteran
+// 0x750010 | VeterancyStruct::IsElite
 // 0x7bd130 | Audio::GetSamplePosition
 
 // ---- AudioClass (1) ----

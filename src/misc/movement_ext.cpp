@@ -3,9 +3,7 @@
 namespace gamemd {
 
 // --- Locomotor ---
-
-// 0x426630
-void Locomotor::GetSpeed() {}
+// (removed 2026-09-07: CDTimerClass::TimeRemaining 真翻译移至 locomotion_bodies.cpp)
 
 // --- MoveFeedback ---
 

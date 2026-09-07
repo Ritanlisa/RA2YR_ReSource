@@ -26,6 +26,10 @@ struct CDTimerClass {
     int32_t StartTime;
     int32_t pad_04;     // FrameTimer (empty, occupies 1B + 3B padding)
     int32_t TimeLeft;
+public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int TimeRemaining();  // 0x426630 -- CDTimerClass::TimeRemaining
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(CDTimerClass) == 0xC, "CDTimerClass size");
 static_assert(offsetof(CDTimerClass, TimeLeft) == 0x8, "CDTimerClass TimeLeft offset");
@@ -45,8 +49,8 @@ struct FacingClass {
     uint32_t ROT;               // DirStruct — Rate Of Turn
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int Update(int a1);  // 0x4c9220 -- FacingClass::Update
-    int Set_SyncLog(int a1);  // 0x4c9300 -- FacingClass::Set_SyncLog
+    int Update(unsigned int* a1);  // 0x4c9220 -- FacingClass::Update
+    int Set_SyncLog(unsigned int* a1);  // 0x4c9300 -- FacingClass::Set_SyncLog
     // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(FacingClass) == 0x18, "FacingClass size");

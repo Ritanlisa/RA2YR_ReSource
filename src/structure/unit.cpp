@@ -10342,7 +10342,7 @@ void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
     || (v3 = *(this + 173)) == 0
     || *(this + 361)
     || (v4 = (*(_BYTE *)(v3 + 20) & 1) != 0 ? (_BYTE *)v3 : 0, !*(_BYTE *)(*(this + 433) + 3368))
-    && !TechnoTypeClass::HasVoiceResponse((float *)this, 17)
+    && !TechnoClass::HasVoiceResponse(this, 17)
     || ObjectClass::DistanceTo(this, *(this + 173)) >= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5928)
     || !v4
     || !ObjectClass::IsCrushable(v4, (_DWORD **)this)
@@ -13772,7 +13772,7 @@ LABEL_26:
         if ( *(_BYTE *)(v28 + 680) )
         {
           if ( *(_BYTE *)(v28 + 557)
-            && (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
+            && (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoClass::HasVoiceResponse(this, 17))
             || *(_BYTE *)(v28 + 680) && *(_DWORD *)(*(_DWORD *)(this + 1732) + 1460) == 12 )
           {
             if ( !HouseClass::IsAllied(*(_DWORD **)(this + 540), *(_DWORD *)(a2 + 80)) )
@@ -14026,7 +14026,7 @@ LABEL_150:
               }
             }
             else if ( (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368)
-                    || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
+                    || TechnoClass::HasVoiceResponse(this, 17))
 // 0x5f6cd0
                    && ObjectClass::IsCrushable(v30, (_DWORD **)this) )
             {
@@ -14105,7 +14105,7 @@ LABEL_154:
             return 2;
           }
           else if ( !*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368)
-                 && !TechnoTypeClass::HasVoiceResponse((float *)this, 17) )
+                 && !TechnoClass::HasVoiceResponse(this, 17) )
           {
             if ( *(_BYTE *)(*(_DWORD *)(this + 1732) + 3220)
               || *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0)
@@ -15326,7 +15326,7 @@ bool __thiscall sub_7438F0(int this, _BYTE *a2)
   _BYTE v10[12]; // [esp+28h] [ebp-18h] BYREF
   _BYTE v11[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
+  result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoClass::HasVoiceResponse(this, 17))
         && a2
 // 0x5f6cd0
         && ObjectClass::IsCrushable(a2, (_DWORD **)this)
@@ -18404,17 +18404,21 @@ namespace gamemd {
 
 // 0x6b4f50
 HRESULT __stdcall UnitClass::GetClassID(CLSID* pClassID) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6b4f50
-int __stdcall UnitClass::GetClassID(int a1, _DWORD *a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448645;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
+    if (pClassID == nullptr) {
+        return E_POINTER;
+    }
+    pClassID->Data1 = 0x0E272DC5;
+    pClassID->Data2 = 0x9C0F;
+    pClassID->Data3 = 0x11D1;
+    pClassID->Data4[0] = 0xB7;
+    pClassID->Data4[1] = 0x09;
+    pClassID->Data4[2] = 0x00;
+    pClassID->Data4[3] = 0xA0;
+    pClassID->Data4[4] = 0x24;
+    pClassID->Data4[5] = 0xDD;
+    pClassID->Data4[6] = 0xAF;
+    pClassID->Data4[7] = 0xD1;
+    return S_OK;
 }
 
 /* ASM:
@@ -18437,7 +18441,6 @@ mov     [eax+0Ch], edx
 xor     eax, eax
 retn    8
 */
-}
 HRESULT __stdcall UnitClass::Load(IStream* pStm) { return S_OK; }
 HRESULT __stdcall UnitClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
 AbstractType __stdcall UnitClass::whatAmI() const { return kObjectTypeId; }
