@@ -24,6 +24,7 @@
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
 > | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,416，completed=**39**（09-09 会话 +10：含 owner 修复 Is1x1AndUndeployable→BuildingTypeClass、SetFlag1752→SetPermanentBerzerk 语义改名、TechnoClass member_lookup 452-464 区修正、verifier 三处修复后回归 34 PASS/0 FAIL；IDA 离线轮全走缓存+debt）；批次仍卡 A1 命名/签名/vtable 审计三类前置债（见执行日志） |
 > | **E 全量落盘：定义+签名+类声明+全局变量** | ✅ **E0-E4 完成（2026-09-09 会话，提交 c70eb5cd + 重锚）** | v3 快照 19,088 函数 100%；E4 物化 14,576 无体函数（pending **3,416 → 17,992 真实总账**）；E3 声明 1,057；E2 类 289；E1 全局 882；偏移→OO 重写 1,869 处；TechnoClass 452-580 考古四源对齐（issue #19 挂剩余两争议区）；93 错类声明清偿回基线 3 normalized；auto-fill-baseline 重锚 c70eb5cd（重锚不清账）。E5 后台批量 verify 进行中；E6 常量收割 374 启动（首批 10/10 PASS） |
+> | **F 证据补全轮：偏移成员访问重写收尾** | ⬜ **计划就绪（2026-09-09 用户裁决，仅计划未执行）** | F1 owner 类修复（幽灵类 SuperClass/MPCooperative/Radar 裁决 ~530 命中 + House→HouseClass 别名归一 + VectorClass 布局补建）→ F2 偏移考古（ObjectClass 早区 ~200 命中 / SessionClass 大偏移 / 其余未名点，4,379 → ≤1,000）→ F3 字宽降级重写 → F4 重写器重跑 + 重锚。解锁 ~1,630 函数沉默群体（~9,889 次命中）。见「Phase F」节 |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -288,24 +289,28 @@ E 线把它从「单函数批处理」升级为「全集合成」。
 ## 依赖关系与建议顺序
 
 ```
-快照v3重导出(E0) ──→ E1 全局变量声明 ──→ E2 类声明对齐 ──→ E3 签名合成(CSP) ──→ E4 定义占位体落盘 ──→ E5 口径统一
-                                                                                                              │
-快照v2 (done) ──→ A1 成员命名 ──→ A2 函数命名 ──→ A4 一致性清零                                               ▼
-                    │                                            │                              C1-C4 翻译主线（全量 pending 队列）
-                    ▼                                            ▼                                              │
-              B1-B3 工程债（并行随时）──────────────────────────────────────────────────────────────────────────→ ▼
-                                                                                                        D1-D4 集成验收
+E0-E4 全量落盘(done) ──→ E5 口径统一(done) ──→ E6 收割队列(G1) ──────────────┐
+                                                                            ▼
+F1 owner类修复 ──→ F2 偏移考古 ──→ F3 字宽降级 ──→ F4 重写器重跑+重锚 ──→ A1 成员命名 ──→ A2 函数命名
+                    │（F2 产出直接喂 A1）                                                │
+                    └──────────────────────────→ C 线翻译主线（17,778 pending）◄────────┘
+                                                  │
+              B 线工程债（并行随时）──────────────→ ▼
+                                              D1-D4 集成验收
 ```
 
+- **F 线是 A1 的证据输入与 C 线的质量前置**：F1/F2 的考古产出（类真身、早区成员名）
+  直接成为 A1 命名候选；重写率提升让占位体伪码可读性质变。F 与 E6 收割（G1）并行。
 - **E 线是 C 线的范围前提**（用户裁决 2026-09-09）：四层（定义/签名/类声明/
   全局变量）全部落盘之后，翻译对象才是全集 19,133 而非当前的 3,455 个有体函数。
+  ✅ 已达成（pending 17,778 真实总账浮出）。
 - **签名 = CSP 求解结果**（类型权威），IDA prototype 仅提供参数个数/调用约定
   骨架；无 CSP 证据的槽位回退 IDA 类型并标记低置信——E3 是 CSP 体系
   （type_map/csp_functions/class_db）作为「消费端」的最大单笔变现。
 - A1/A2 是 C 线的**输入质量投资**：命名后的快照让 LLM 翻译的上下文
   可读性质变（`this->AvailableCredits` vs `*(int*)(this+588)`）。
   E 线不依赖 A1——两线并行。
-- B 线与 A/C/E 并行，互不阻塞。
+- B 线与 A/C/E/F 并行，互不阻塞。
 - A3（局部变量命名）随 C 线自然吸收，不单独立项。
 
 ## 度量与检查点
@@ -319,8 +324,16 @@ E 线把它从「单函数批处理」升级为「全集合成」。
 | 完整翻译函数 | 472 | MCP stats：completed=**28**；09-08 新增 IsNonNullPtr(0x70E240)，历史“完整翻译”与 MCP completed 口径尚未统一；issue #9/#12 仍是 verifier 工具债 | — | 1,000 → 3,000 → 全量 |
 | REVERSE 对拍 | 41 函数 | 41 函数 | — | Same 率 >95% |
 | 构建 | gate 假绿 | MCP 最近记录 build errors=0；本轮单 TU 探针干净；`run_gates` 本次调用超时，未据此宣称全绿 | — | 0/0 + gate 3/3（红线） |
+| MCP completed（E5 校准后可信） | — | **406**（39 + 213 常量收割 + 154 E5 校准） | — | 1,000 → 3,000 → 全量 |
+| MCP pending（真实总账） | 3,416（失真） | **17,778** | — | → 0 |
+| 偏移重写率（F 线目标） | rewritten 1,869 / unmapped 4,379（557 函数）/ 沉默 ~9,889（1,630 函数 owner 不在布局） | 同左 | **unmapped ≤1,000；沉默清偿 ≥80%；rewritten 5,000+** | 维持 |
 
 ## 风险与对策
+
+0. **F 线考古的错误归一风险**：幽灵类名（SuperClass/Radar/MPCooperative）与别名
+   （House→HouseClass）若裁决错误，会把成员名挂到错误的类上——错名比无名胜。
+   对策：每条别名须 vtable 安装点/RTTI/单一最小祖先证据；抽检 20 类；
+   rewrite_pseudocode 保守降级（证据不足保持原始伪码）。
 
 1. **LLM 命名的正确性**：语义名是假设立——错名比 field_0xNN 更危险。
    对策：命名必须附证据（伪代码上下文/YRpp 对照）；REVERSE 对拍兜底
@@ -336,6 +349,70 @@ E 线把它从「单函数批处理」升级为「全集合成」。
    gate_check)` 使 gamemd 编译被整体跳过 → 历史"构建 0/0"报告部分为
    未编译假象。对策：标签已恢复（锚定 b01d3cf9）；任何构建验证必须
    确认 gamemd.vcxproj 实际执行了 cl 编译（非仅 gate 通过）。
+
+---
+
+## Phase F — 证据补全轮：偏移成员访问重写收尾（用户裁决 2026-09-09，本节仅计划、未执行）⬜
+
+**背景**：E4 物化时偏移→OO 语法重写只完成证据完备的 1,869 处；4,379 处「owner 在
+class_layouts 但（偏移，宽度）无具名成员」保持原始伪码（557 函数）；另有约 1,630 函数
+的 owner 类不在 class_layouts、重写器从未尝试（约 9,889 次命中，不计入 4,379）。
+本线目标：把两类缺证据清偿到接近天花板，使占位体的 OO 化率最大化——这是 A1 命名轮
+与 C 线翻译质量的直接输入。**执行顺序：F1 → F2 → F3 → F4。**
+
+**F1. owner 类修复（解锁 ~1,630 函数沉默群体）**
+
+实查构成（2026-09-09 核实，class_layouts 1,033 键）：
+
+| 形态 | 证据 | 量级 | 处置 |
+|---|---|---|---|
+| 幽灵类名 | `SuperClass`(243 命中；class_layouts 仅 SuperClassVector 变体)、`MPCooperative`(163，完全无近邻)、`Radar`(124，仅 RadarHashVector 变体) | ~530 | F1a 逐个反汇编取证真身——Hex-Rays 泛称渲染、旧名、还是真类；禁止按名臆测 |
+| 别名键不匹配 | `House`(124) → `HouseClass` 存在；csp 模板修饰名 vs canon 键同类 | ~200+ | F1b 名字键归一表（扩展 mangled_alias 机制或新建 `anchors/class_alias.json`），rewrite_pseudocode 查表前先归一；每条别名须 vtable/RTTI/单一最小祖先证据 |
+| 真缺布局的核心类 | `VectorClass`（模板容器，type_map 5.9K 变量的载体，class_layouts 无此键——仅 VectorClassUInt 等实例变体） | ~229+ | F1c 布局补建：vtable 锚 + 观测成员 + 最小 struct 路径（t14_minimal_structs 先例），IDA→header pipeline 四源同步 |
+
+- 验收：owner_not_in_layouts 命中清偿 ≥80%；错误归一 0（抽检 20 类逐一对照
+  vtable 安装点）。
+- 产出：`anchors/class_alias.json` + class_layouts 增量 + 不可解类 issue 化挂账。
+
+**F2. 偏移访问考古（清偿 4,379 unmapped 主体，557 函数）**
+
+| 子项 | 目标 | 方法 |
+|---|---|---|
+| F2a | ObjectClass 早区 +0x4/+0x8/+0xC/+0x3C/+0x40/+0x44（~200 命中，最大单项） | 先核对 owner 判定是否被 Hex-Rays 旧名污染（记录名行 vs 声明行 vs 调用方三方对照）；再 ctor 写入序列 + 访问点上下文 + YRpp 对照 → member_lookup/class_layouts/til/src hpp 四源补名 |
+| F2b | SessionClass +0x2840 大偏移（23 命中） | 布局表完整性核查——大结构疑似只建了部分；以二进制访问点上界重建尺寸 |
+| F2c | ParasiteClass +0x28 等其余未名点 | 按 B4 零观测 struct 考古方法逐类分桶 |
+
+- 验收：unmapped 4,379 → ≤1,000（其余为无证据真天花板，issue 化挂账）。
+
+**F3. 字节/字宽降级重写（w1/w2 → 已知 4B 成员）**
+
+- 对象：HashTable +0x14 w1、RulesClass +0xD w1 等「字节/字读落在已知 4B 成员」的
+  宽度不匹配命中（约 40-100 处）。
+- 形态裁决（执行前需确认）：`(uint8_t)this->member` 显式截断 vs `成员 & 0xFF` vs
+  位域——以 verifier CFG 事件等价为判据，抽样 30 处 verify PASS 后才批量。
+- 验收：宽度不匹配类命中清偿；无 verify 回归。
+
+**F4. 重写器重跑 + 门控收口**
+
+- `tools/gen_e4_materialize.py` 幂等重跑（F1-F3 落地后）。
+- 验收：括号平衡 0 破坏；注解审计 0 missing；一致性 ≤3 normalized（基线）；
+  rewritten 由 1,869 显著上升（预期 5,000+）。
+- 提交 + `auto-fill-baseline` 重锚（重锚不清账，未清偿项 issue 化保留）。
+
+**F 线定位**：F 是 A1 成员语义命名的证据输入（F2 考古产出的名字直接成为 A1 候选）、
+也是 C 线翻译质量的前置。F 与 E6 收割队列（G1）可并行。
+
+---
+
+## Phase G — 剩余工作排序（F 线之后/并行）
+
+| 序 | 工作 | 内容 | 依赖 |
+|---|---|---|---|
+| G1 | E6 收割队列继续 | 58 全局 getter → 457 证据完备（偏移已重写）函数 → 6,146 个 ≤8 行小函数长尾 | 无（可立即续） |
+| G2 | A1 成员语义命名 | F2 考古产出 + TechnoClass/FootClass/ObjectClass 家族优先 | F2 产出喂入 |
+| G3 | C 线批量翻译主线 | 17,778 pending 全量（G1 是其机械前端） | A1 提速 |
+| G4 | 既有工程债 | 69 CFG 不忠实 / 682 链接未解析 / vtable 槽位审计 / issue #4 #17 #19 | 与上并行 |
+| G5 | D1-D4 集成验收 | 翻译覆盖率达标后运行时验收 | C 线里程碑 |
 
 ---
 
