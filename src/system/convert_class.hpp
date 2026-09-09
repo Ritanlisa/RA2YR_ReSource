@@ -58,6 +58,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x491460
     int Convert(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x491490
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x491430
+// --- e4 declarations (END) ---
 };
 
 class LightConvertClass : public ConvertClass

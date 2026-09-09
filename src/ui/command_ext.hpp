@@ -46,6 +46,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Read();  // 0x536050
     int Do(int a1);  // 0x536080
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    wchar_t * ddtor();  // 0x536030
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -75,6 +78,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Read();  // 0x536140
     int Do(int a1);  // 0x536170
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    wchar_t * ddtor();  // 0x536120
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -102,6 +108,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Read();  // 0x536320
     int Do(int a1);  // 0x536350
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    wchar_t * ddtor();  // 0x536300
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -130,6 +139,9 @@ public:
     void* Read();  // 0x537e30
     int Do(int a1);  // 0x537e50
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    wchar_t * ddtor();  // 0x537E10
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -159,6 +171,10 @@ public:
     void* Read();  // 0x537f70
     int Undo(int a1);  // 0x537f90
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Constructor();  // 0x537F10
+    wchar_t * ddtor();  // 0x537F50
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -205,6 +221,9 @@ public:
     virtual void Execute(uint32_t context) const override;  // 0x537BA0
 
     int32_t     ScreenCaptureCommandClass_field_00;       // 0x00
+// --- e4 declarations (BEGIN) ---
+    wchar_t * Release();  // 0x537B80
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -247,6 +266,10 @@ public:
 
     int32_t     m_RefCount;     // 0x00
     static DynamicVectorClass<CommandClass*>* Array; // data: 0x87F658
+// --- e4 declarations (BEGIN) ---
+    _UNKNOWN ** StubReturn8550640();  // 0x537A80
+    char Execute();  // 0x537A90
+// --- e4 declarations (END) ---
 };
 
 

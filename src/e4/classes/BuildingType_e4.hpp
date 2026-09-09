@@ -1,0 +1,12 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct BuildingType {
+    void* vfptr;  // minimal E2 declaration
+    int FindDefault();  // 0x4E3560
+    int FindOwnerHouse();  // 0x510ED0
+    bool IsSpecialType();  // 0x510F60
+    int Init(unsigned int a2);  // 0x68C030
+};
+} // namespace gamemd

@@ -51,6 +51,14 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int ResetPosition(int a1, int a2);  // 0x55a710
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Set(IUnknown * aP1);  // 0x45AF20
+    BOOL IsInactive(IUnknown * aP0);  // 0x4B4C30
+    int Vt32Thunk(int a1);  // 0x4B4C50
+    int SetDirty(unsigned char * a1);  // 0x55A8F0
+    int ClearDirty(unsigned char * a1);  // 0x55A910
+    char GetDirty(int a1);  // 0x55A930
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -214,6 +222,14 @@ public:
     uint8_t Buffer_field_0x20[4];
     uint8_t Buffer_field_0x24[4];
     uint8_t Buffer_field_0x28[4];
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Init(int a2, AbstractClass * aP2);  // 0x43AD00
+    DynamicVector * Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2);  // 0x488030
+    int * RotateBufferCrypto(int * a2, int a3);  // 0x632B70
+    int AppendCellData(AbstractClass * aP1, int a3);  // 0x6C89E0
+    char * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);  // 0x7BCB50
+    int AllocateCodecFrameBuffers();  // 0x7C1730
+// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class BufferClass
@@ -295,6 +311,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int IStreamAddRef();  // 0x4a3230
     int IStreamRelease();  // 0x4a3240
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int LockRegion(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4A2F80
+    int UnlockRegion(int a1, int a2, int a3);  // 0x4A2FC0
+// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class StreamObj

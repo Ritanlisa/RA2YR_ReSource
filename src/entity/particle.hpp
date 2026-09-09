@@ -102,6 +102,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int CheckCollisionFlags(int a1, int a2, int a3);  // 0x62d810
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int CheckStateFlag();  // 0x62D770
+    int LoadParticleData(ObjectClass * aP1, int aP1a);  // 0x62D7A0
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x62D930
+    int GetObjectSize();  // 0x62D970
+    int GetTypeIdentifier();  // 0x62D980
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

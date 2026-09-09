@@ -102,6 +102,16 @@ protected:
     int HasValidHouse();  // 0x6e6220 -- TagClass::HasValidHouse
     int Unlink();  // 0x71ade0 -- TagClass::Unlink
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    void Destructor(void ** a1, AbstractClass * a2);  // 0x6E4F60
+    int ddtor(int a1, unsigned int * a2);  // 0x6E56A0
+    int LoadTag(AbstractClass * aP0, int aP1);  // 0x6E5730
+    int SaveTag(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6E57A0
+    int StubReturn56();  // 0x6E5890
+    int StubReturn44();  // 0x6E58A0
+// --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+// --- e4 declarations (END) ---
 };
 
 // --- TagTypeClass ---

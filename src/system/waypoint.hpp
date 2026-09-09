@@ -43,6 +43,9 @@ public:
     void* InitInvalid();  // 0x53ecb0 -- Waypoint::InitInvalid
     int FindCell(int a1);  // 0x763a50 -- Waypoint::FindCell
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    char FindOrAddPath(unsigned int * a2);  // 0x502160
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

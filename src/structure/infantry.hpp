@@ -186,6 +186,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int ScanTarget(int a1);  // 0x4d4dc0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Destruct(IUnknown * a1, AbstractClass * edx0);  // 0x517D90
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

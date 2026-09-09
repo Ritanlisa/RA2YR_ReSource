@@ -70,6 +70,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int LoadFromINIList();  // 0x46ce10 -- CampaignClass::LoadFromINIList
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x46CF80
+    int Write(AbstractTypeClass * aP0, int aP1);  // 0x46D000
+    int Seek(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x46D050
+    int StubReturn928();  // 0x46D070
+    int StubReturn10();  // 0x46D080
+    CampaignClass * DTOR(void ** Block, char a2);  // 0x46D090
+    char SaveProgress();  // 0x49C5A0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

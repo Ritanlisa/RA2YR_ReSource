@@ -81,6 +81,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void ProcessStream(int a1);  // 0x69e320
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char Close();  // 0x4325C0
+    int Destruct();  // 0x535A70
+    int GetFileSize();  // 0x65D0D0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

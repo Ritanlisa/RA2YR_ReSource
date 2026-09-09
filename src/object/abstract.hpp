@@ -58,6 +58,12 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int SetField(int a1);  // 0x5b36e0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int StubReturn450();  // 0x5B2E50
+    int GetMaxSize();  // 0x5B2EF0
+    int StubReturnFalse();  // 0x5B3A50
+    void Stub(BuildingTypeClass * aP0, int a2);  // 0x709A30
+// --- e4 declarations (END) ---
 };
 
 class IRTTITypeInfo : IUnknown {
@@ -77,6 +83,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int QueryInterface(int a1, int a2, int a3);  // 0x4105e0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int GetOffset();  // 0x71D150
+    unsigned int * loc_74F6A0(unsigned int * Block, char a2);  // 0x74F6A0
+// --- e4 declarations (END) ---
 };
 
 class INoticeSink {

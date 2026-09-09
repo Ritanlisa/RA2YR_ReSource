@@ -22,6 +22,10 @@ public:
     AbstractType __stdcall whatAmI() const;
     int objectSize() const;
     void calculateChecksum(void* checksum) const;
+// --- e4 declarations (BEGIN) ---
+    double * Create();  // 0x659110
+    unsigned int * InitState(rc_ptr_base * aP1);  // 0x6593F0
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

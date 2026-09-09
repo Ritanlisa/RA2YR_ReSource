@@ -48,6 +48,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int drawTabBackground();  // 0x6AC7C0
     void* Constructor();  // 0x6CFE20
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    unsigned int * initStripClass();  // 0x4A2350
+    LRESULT DrawPower(HWND hDlg, void * a1, AbstractClass * aP2);  // 0x658330
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

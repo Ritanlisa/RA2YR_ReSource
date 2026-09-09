@@ -55,6 +55,16 @@ public:
     void* ddtor(int a1);  // 0x410c30 -- AbstractTypeClass::ddtor
     void* FindName();  // 0x40dcb0 -- AbstractType::FindName
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Constructor(AbstractClass * aP1);  // 0x410800
+    int Init(AbstractTypeClass * aP1);  // 0x410960
+    int Dtor();  // 0x4109C0
+    int StubReturnFalse();  // 0x410C20
+    int GetData();  // 0x5F75B0
+    int GetType(int a1);  // 0x5F7610
+    int SetType();  // 0x5F7620
+    int Validate();  // 0x5F7630
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

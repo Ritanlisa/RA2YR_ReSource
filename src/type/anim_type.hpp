@@ -147,6 +147,16 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x428800
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x428970
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Construct(AbstractClass * aP1);  // 0x427530
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x428990
+    int Thunk_AnimTypeClass_sub_428E40();  // 0x428E40
+    int Thunk_AnimTypeClass_sub_428E50();  // 0x428E50
+    int GetObjectSize();  // 0x428E70
+    char Stub(int a1, int a2);  // 0x428E80
+    int StubReturnFalse(int a1);  // 0x428E90
+    AnimTypeClass * ddtor(unsigned int * Block, char a2);  // 0x428EA0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

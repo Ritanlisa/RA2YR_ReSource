@@ -60,6 +60,15 @@ public:
     int SaveToINI();  // 0x41ce90
     int GetGameplayValue();  // 0x712120
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char StubReturnFalse();  // 0x41CB60
+    int * CreateAircraft(int a1);  // 0x41CB70
+    char GetDimensions(int a1, int a2);  // 0x41CBE0
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x41CEB0
+    int GetTypeIdentifier();  // 0x41CFB0
+    int GetObjectSize();  // 0x41CFC0
+    AircraftTypeClass * ddtor(void ** Block, char a2);  // 0x41CFE0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

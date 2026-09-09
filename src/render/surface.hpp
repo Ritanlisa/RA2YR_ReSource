@@ -175,6 +175,19 @@ public:
 
 protected:
     Surface();  // abstract — construct via XSurface/BSurface/DSurface only
+// --- e4 declarations (BEGIN) ---
+    LPDIRECTDRAW CreateSurfacePalette(AbstractClass * Src);  // 0x4A4780
+    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2);  // 0x4AEC60
+    unsigned int * CopyRect(ObjectClass * aP1);  // 0x5D1FD0
+    char LoadToSurfaceSHP(char * Source);  // 0x641DB0
+    int RenderRadar();  // 0x655250
+    char TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5);  // 0x6BA3E0
+    char BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3);  // 0x6BA580
+    char AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x6BA690
+    void RenderToSurfaceVoxel(unsigned int * a2, int * a3);  // 0x7602E0
+    int PixelToIndex(unsigned int * a2);  // 0x769330
+    int CommitSurfaceBuffersAudio();  // 0x7BD690
+// --- e4 declarations (END) ---
 };
 
 class XSurface : public Surface
@@ -281,6 +294,19 @@ public:
 protected:
     explicit XSurface(noinit_t) noexcept
 ; // unmatched: no callgraph reference and no git history record
+// --- e4 declarations (BEGIN) ---
+    int vt_entry_40(int a1);  // 0x410600
+    char entry_68_(int a1, int a2);  // 0x411500
+    char StubReturnFalse();  // 0x411590
+    XSurface * ScalarDtor(char a2);  // 0x4115A0
+    int vt_entry_68();  // 0x4C9150
+    int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x7BAB30
+    char entry_50_(int a1, int a2, int a3, int a4);  // 0x7BAB40
+    char entry_34_(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x7BAB50
+    char entry_38_(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x7BAB60
+    char entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x7BAB80
+    char entry_1C_(int a1, int a2, int a3);  // 0x7BB340
+// --- e4 declarations (END) ---
 };
 
 // CSP: BSurface matched via T3
@@ -308,6 +334,11 @@ protected:
     bool CreateTripleBuffer();  // 0x7b8c60 -- BSurface::CreateTripleBuffer
     void* ConstructEx(int a1, int a2, int a3, int a4);  // 0x7bc970 -- BSurface::ConstructEx
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Construct(int a2, int a3, int a4, int a5);  // 0x410CE0
+    char Stub(int a1, int a2);  // 0x4114F0
+    BSurface * ScalarDtor(char * Block, char a2);  // 0x411650
+// --- e4 declarations (END) ---
 };
 
 class DSurface : public XSurface
@@ -431,6 +462,17 @@ private:
     int CommitBuffers();  // 0x7bdf80 -- DSurface::CommitBuffers
     int Flip();  // 0x7c2c60 -- DSurface::Flip
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    void Process(IUnknown * aP1, int * a2);  // 0x480180
+    long long ConstructFromHandle();  // 0x4BA480
+    char * Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5);  // 0x4BA5A0
+    int Destroy();  // 0x4BA6B0
+    void BlitStretch(int a1, int a2, int a3);  // 0x4BBB00
+    void * loc_4C1AC0(void * Block, char a2);  // 0x4C1AC0
+    int Flip2();  // 0x5D1E50
+    int RenderToSurface(ObjectClass * aP1);  // 0x5D1E70
+    int FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned signed char a4);  // 0x621B80
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

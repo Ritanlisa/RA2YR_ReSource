@@ -1,0 +1,161 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x408E70
+int Count::DecrementRefCountsAudio()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Audio_DecrementRefCounts(_DWORD *this)
+{
+  int v1; // eax
+  int result; // eax
+  int v3; // edx
+
+  v1 = *(this + 7) - 1; /*0x408e73*/
+  *(this + 7) = v1; /*0x408e76*/
+  if ( v1 < 0 ) /*0x408e79*/
+    *(this + 7) = 0; /*0x408e7b*/
+  result = *this; /*0x408e82*/
+  v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
+  *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
+  if ( v3 < 0 ) /*0x408e93*/
+  {
+    result = *this; /*0x408e95*/
+    *(_DWORD *)(*this + 152) = 0; /*0x408e97*/
+  }
+  return result; /*0x408ea1*/
+}
+}
+
+// 0x46F6D0
+BOOL Count::SetupAllCountriesLobby()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall Lobby_SetupAllCountries(HWND this)
+{
+  void *v1; // ecx
+  wchar_t **v2; // esi
+  int ResourceID2; // ebp
+  BOOL result; // eax
+  wchar_t *v5; // ebx
+  int v6; // edi
+  int PlayerSide; // esi
+  int *v8; // [esp+10h] [ebp-10h]
+  int v10; // [esp+18h] [ebp-8h]
+  HWND hWnd; // [esp+1Ch] [ebp-4h]
+
+  v1 = 0; /*0x46f6da*/
+  v2 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x46f6dc*/
+  v10 = 0; /*0x46f6e2*/
+  v8 = &MEMORY[0xA8DA90]; /*0x46f6e6*/
+  do /*0x46f7ff*/
+  {
+    ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/
+    hWnd = GetDlgItem(this, ResourceID2); /*0x46f700*/
+    result = ShowWindow(hWnd, 0); /*0x46f704*/
+    if ( result ) /*0x46f70c*/
+    {
+      v5 = *v2; /*0x46f718*/
+      v6 = -2; /*0x46f71c*/
+      if ( MEMORY[0xA8B23C] && (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) ) /*0x46f730*/
+        v6 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 40))(MEMORY[0xA8B23C]); /*0x46f737*/
+      if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
+      {
+        PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
+      }
+      else if ( v5 == (wchar_t *)MEMORY[0xAC119C] ) /*0x46f752*/
+      {
+        PlayerSide = v6; /*0x46f754*/
+      }
+      else if ( v5 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x46f75e*/
+      {
+        PlayerSide = v6; /*0x46f760*/
+      }
+      else if ( v5 == MEMORY[0xAC11B0] ) /*0x46f76a*/
+      {
+        PlayerSide = v6; /*0x46f76c*/
+      }
+      else if ( v5 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x46f776*/
+      {
+        PlayerSide = -3; /*0x46f778*/
+      }
+      else
+      {
+        PlayerSide = SessionClass::GetPlayerSide((int)v5); /*0x46f786*/
+      }
+      if ( MEMORY[0xA8B23C] /*0x46f795*/
+        && !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0xA8B23C] + 28))(
+              MEMORY[0xA8B23C],
+              PlayerSide) )
+      {
+        PlayerSide = v6; /*0x46f79e*/
+        if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f7a0*/
+        {
+          *(v8 - 2557) = v6; /*0x46f7ad*/
+        }
+        else if ( IsKnownPointer(v5) ) /*0x46f7b7*/
+        {
+          SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
+        }
+      }
+      SetupLobbyCountryCombo(this, ResourceID2, PlayerSide); /*0x46f7d3*/
+      result = ShowWindow(hWnd, 5); /*0x46f7df*/
+      v2 = (wchar_t **)v8; /*0x46f7e5*/
+    }
+    ++v2; /*0x46f7ed*/
+    v1 = (void *)++v10; /*0x46f7f0*/
+    v8 = (int *)v2; /*0x46f7fb*/
+  }
+  while ( (int)v2 < (int)&MEMORY[0xA8DAB0] ); /*0x46f7ff*/
+  return result; /*0x46f805*/
+}
+}
+
+// 0x5F1EA0
+int Count::GetCountQueue()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Queue_GetCount(_DWORD *this)
+{
+  int v1; // eax
+
+  v1 = *(this + 14); /*0x5f1ea0*/
+  if ( v1 ) /*0x5f1ea5*/
+    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
+  else
+    return 0; /*0x5f1eae*/
+}
+}
+
+// 0x76F080
+int Count::Get()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Count_Get(_DWORD *this)
+{
+  return *(this + 1); /*0x76f083*/
+}
+}
+
+// 0x76F160
+unsigned int * Count::Release()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall Count::_vt02(_DWORD *this)
+{
+  ++*(this + 2); /*0x76f162*/
+  return this; /*0x76f165*/
+}
+}
+
+// 0x76F170
+unsigned int * Count::ddtor()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall Count::_vt03(_DWORD *this)
+{
+  --*(this + 2); /*0x76f172*/
+  return this; /*0x76f175*/
+}
+}

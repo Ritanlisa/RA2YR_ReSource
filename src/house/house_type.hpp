@@ -140,6 +140,14 @@ protected:
     int readLoadoutData(int a1);  // 0x513a00
     int ReadCountryName(int a1, int a2, int a3, int a4, int a5);  // 0x67b8f0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Dtor();  // 0x5116A0
+    int StubReturnFalse(int a1);  // 0x512280
+    int GetTypeIdentifier();  // 0x512710
+    int GetObjectSize();  // 0x512720
+    unsigned int loadBuildLimits();  // 0x512730
+    HouseTypeClass * Destructor(void ** Block, char a2);  // 0x512760
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -665,6 +665,31 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     double GetFiringDistance();  // 0x48acf0
     int LoadTypeList(int a1, int a2, int a3, int a4, int a5);  // 0x67bdd0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int readCombatDamage(int a2);  // 0x661510
+    int DTOR();  // 0x667A30
+    int readAudioVisual();  // 0x66D150
+    int readSpecialWeapons();  // 0x66D1F0
+    int readCrateRules();  // 0x672280
+    int readRadiation();  // 0x6723D0
+    int readDifficulty();  // 0x6743D0
+    void readMaximums();  // 0x679FA0
+    void readInfantryTypes();  // 0x679FD0
+    void readCountries();  // 0x67A000
+    void readVehicleTypes();  // 0x67A060
+    int * readAircraftTypes(int * a2);  // 0x67A190
+    int * readSuperWeaponTypes(int * a2);  // 0x67A210
+    int * readBuildingTypes(int * a2);  // 0x67A310
+    int readTerrainTypes(TechnoTypeClass * aP1);  // 0x67A3C0
+    int readSmudgeTypes();  // 0x67A730
+    int readOverlayTypes();  // 0x67A7C0
+    int readAnimations(TechnoTypeClass * aP1);  // 0x67A7D0
+    int readWarheads();  // 0x67A8A0
+    unsigned int * readParticles();  // 0x67A8B0
+    int readParticleSystems(TechnoTypeClass * aP1);  // 0x67A8E0
+    char readAI(unsigned int * a2);  // 0x67B480
+    unsigned int * readIQ(int a2, int a3);  // 0x67C430
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

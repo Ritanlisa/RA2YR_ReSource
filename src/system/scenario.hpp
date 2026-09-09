@@ -363,6 +363,43 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessIntroTimer();  // 0x684180
     int ReadMapINI(int a1, int a2, int a3);  // 0x689e90
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char initUnits();  // 0x5C0E20
+    char StubReturnFalse();  // 0x5C0E30
+    char StubReturnFalse2();  // 0x5C0E40
+    char StubReturnFalse3(int a1);  // 0x5C0E50
+    void StubReturnTrue();  // 0x5C0E60
+    void StubReturnTrue2();  // 0x5C0E70
+    void StubReturnFalse4(int a1);  // 0x5C0E80
+    char StubReturnFalse5(int a1, int a2, int a3);  // 0x5C0ED0
+    char initTriggers();  // 0x5C0EE0
+    void StubReturnFalse6(int a1, int a2);  // 0x5C0EF0
+    void StubReturnFalse7(int a1);  // 0x5C0F00
+    void StubReturnTrue3();  // 0x5C0F10
+    void StubReturnTrue4();  // 0x5C0F20
+    int initTeams();  // 0x5C0F30
+    void StubReturnTrue5();  // 0x5C0F40
+    void StubReturnFalse8(int a1);  // 0x5C0F50
+    void StubReturnFalse9(int a1);  // 0x5C0F60
+    char StubReturnFalse10();  // 0x5C0F70
+    void StubReturnTrue6();  // 0x5C0F80
+    void StubReturnTrue7();  // 0x5C0F90
+    int StubReturnFalse11();  // 0x5C0FC0
+    char initWaypoints();  // 0x5C0FD0
+    char processTriggerEvents();  // 0x5C5E30
+    MSAnim * checkWinningConditions(unsigned int * Block, char a2);  // 0x5CEB60
+    int MissionStubReturnZero();  // 0x5D5DB0
+    char MissionStubReturnZero2(MPCooperative * aP0);  // 0x5D6310
+    char saveGame();  // 0x5D6320
+    char loadGame();  // 0x5D6330
+    char createStartingForces();  // 0x5D6340
+    int MissionStubReturnZero3();  // 0x5D6440
+    char MissionStubReturnZero4(int a1);  // 0x5D67A0
+    char processAI();  // 0x5D7570
+    void sub_5D80B0();  // 0x5D80B0
+    int Constructor();  // 0x6832C0
+    unsigned int ResetIntroFlags();  // 0x6B8AE0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

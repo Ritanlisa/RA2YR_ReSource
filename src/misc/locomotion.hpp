@@ -194,6 +194,12 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     void* UpdateAll();  // 0x4c54a0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ProcessData();  // 0x513C20
+    int Update();  // 0x54AC40
+    unsigned int * Init();  // 0x55A6C0
+    void Construct();  // 0x55A6F0
+// --- e4 declarations (END) ---
 };
 
 //============================================================================
@@ -287,6 +293,10 @@ protected:
     int BeginMove();  // 0x4af780
     int LoadFromStream();  // 0x4af800
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x4B4830
+    int StubReturn112();  // 0x4B4CF0
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -340,6 +350,10 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove(int a1, int a2);  // 0x5170b0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x517070
+    int StubReturn120();  // 0x5172B0
+// --- e4 declarations (END) ---
 };
 
 //============================================================================
@@ -409,6 +423,10 @@ protected:
     int BeginMove();  // 0x75c680
     int LoadFromStream();  // 0x75c700
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x75C640
+    int StubReturn60();  // 0x75CBD0
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -477,6 +495,11 @@ protected:
     int BeginMove(int a1, int a2);  // 0x4cfcc0
     void ILocomotion_AcquireHunterSeekerTarget(int a1);  // 0x4cfe80
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int LocomotionClass();  // 0x4CC9A0
+    int ddtor(int a1, unsigned int * a2);  // 0x4CFC80
+    int StubReturn96();  // 0x4D0390
+// --- e4 declarations (END) ---
 };
 
 //============================================================================
@@ -533,6 +556,10 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove(int a1, int a2);  // 0x663410
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x6633D0
+    int StubReturn96();  // 0x6635B0
+// --- e4 declarations (END) ---
 };
 
 //============================================================================
@@ -846,6 +873,81 @@ protected:
     int SmallStub_75CC70();  // 0x75cc70
     int SmallStub_75CC80();  // 0x75cc80
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int LoadLocomotionFromStream(unsigned int * a1, unsigned int * a2);  // 0x4AF610
+    bool StubReturnTrue(int a1);  // 0x4AFB80
+    int StubReturnZero_1(int a1);  // 0x4B4870
+    int DispatchCheckState(TunnelLocomotionClass * aP0);  // 0x4B4880
+    int MissionStub6(int a1);  // 0x4B4C60
+    void Stub3(int a1);  // 0x4B4C70
+    char MissionStub7(int a1);  // 0x4B4C80
+    void Stub4(int a1);  // 0x4B4C90
+    void Stub5(int a1);  // 0x4B4CA0
+    int loc_4B4DC0(int a1, const void * a2, int * a3);  // 0x4B4DC0
+    LONG loc_4B4DD0(int a1);  // 0x4B4DD0
+    LONG loc_4B4DE0(int a1);  // 0x4B4DE0
+    char StubReturnTrue_1(int a1);  // 0x4B5B30
+    void Stub6(int a1);  // 0x4B63A0
+    int Thunk_VtableDispatch4(int a1);  // 0x4B6610
+    void Stub7(int a1, int a2);  // 0x4B6620
+    char MissionStub8(int a1, int a2, int a3, int a4);  // 0x4B6630
+    char MissionStub9(int a1);  // 0x4B6640
+    void Stub8(int a1);  // 0x4B6650
+    void Stub9(int a1);  // 0x4B6660
+    int CheckState3(int a1);  // 0x4B6670
+    int CheckState4(int a1);  // 0x4B6680
+    int CheckState5(int a1);  // 0x4B6690
+    bool ComputeFloatExpression_0(int a1);  // 0x4CCAC0
+    char IsMapCoordVisible();  // 0x4CD510
+    char IsBridgeBlocking(int a1);  // 0x516CA0
+    int InitMovementParams(int a1, int a2);  // 0x54AD30
+    int ConvertCoordToCell_0(int a1);  // 0x54B8D0
+    int CheckAttachStatus();  // 0x54DF90
+    char MissionStub(int a1);  // 0x55A940
+    char MissionStub2(int a1, int a2);  // 0x55AB70
+    char MissionStub3(int a1, int a2);  // 0x55AB80
+    void Stub10(int a1);  // 0x55AB90
+    int StubReturnFalse(int a1);  // 0x55ABA0
+    int CheckState(TunnelLocomotionClass * aP0);  // 0x55ABB0
+    int CheckState2(int a1, int a2);  // 0x55ABC0
+    char MissionStub4(int a1);  // 0x55ABE0
+    int MissionStub5(int a1, int a2);  // 0x55ABF0
+    void Stub11(int a1, int a2, int a3, int a4);  // 0x55AC00
+    void Stub12(int a1, int a2, int a3, int a4, int a5);  // 0x55AC10
+    void Stub13(int a1);  // 0x55AC20
+    void Stub14(int a1, int a2);  // 0x55AC30
+    void Stub15(int a1, int a2, int a3, int a4);  // 0x55AC50
+    char StubReturnTrue_3(int a1);  // 0x55AC60
+    char StubReturnZero_11(int a1);  // 0x55ACD0
+    void Stub16(int a1, int a2);  // 0x55ACE0
+    int MissionStub10(int a1);  // 0x55ACF0
+    int MissionStub11(int a1);  // 0x55AD00
+    char SmallStub_5AFF70(int a1);  // 0x5AFF70
+    unsigned int * GetRenderCoordinate_0(unsigned int * a1, unsigned int * a2);  // 0x5AFFE0
+    bool StubReturnTrue_4(InfantryClass * aP0);  // 0x5B19E0
+    int DispatchVirtualCall_5(unsigned int * a1, int a2);  // 0x5B1A50
+    bool IsPositionWithinThreshold_0(int a1, int a2, int a3, int a4);  // 0x5B1AA0
+    bool CheckCompositeState_0(int a1);  // 0x661F90
+    int LoadLocomotionFromStream_2(unsigned int * a1, unsigned int * a2);  // 0x69ED20
+    int StubReturnZero_13(int a1, unsigned int * a2);  // 0x69F040
+    bool CheckPiggybackState_0(int a1);  // 0x69F080
+    int StubReturnZero_14(int a1);  // 0x6A3EA0
+    int loc_6A4330(int a1, const void * a2, int * a3);  // 0x6A4330
+    LONG loc_6A4340(int a1);  // 0x6A4340
+    LONG loc_6A4350(int a1);  // 0x6A4350
+    bool ShortFunc_718080(int a1);  // 0x718080
+    bool ShortFunc_718090();  // 0x718090
+    unsigned int * GetCoordinateConditional(unsigned int * a1, unsigned int * a2);  // 0x7180A0
+    int ResetMovementState(int a1);  // 0x718230
+    int SmallStub_71A120();  // 0x71A120
+    bool ShortFunc_728A50(int a1);  // 0x728A50
+    int SyncMovementPosition(int a1, int a2, int a3, int a4);  // 0x728AF0
+    int StubReturnZero_21(int a1, char a2);  // 0x7291D0
+    void * ComputeTurretTransform(unsigned int * a1, void * a2, int * a3);  // 0x729B40
+    bool ComputeFloatExpression_4(unsigned int * a1);  // 0x75AB40
+    unsigned int * GetRenderCoordinate_2(unsigned int * a1, unsigned int * a2);  // 0x75AC00
+    int DispatchVirtualCall_9(int a1, int a2, int a3, int a4);  // 0x75AE30
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass size");
 
@@ -917,6 +1019,11 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove();  // 0x69ee90
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    HRESULT LoadFromStream(int * a1, int * pPStm, int a3);  // 0x69EF10
+    int ddtor(int a1, unsigned int * a2);  // 0x6A3E60
+    int StubReturn112();  // 0x6A42A0
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 
@@ -1030,6 +1137,11 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove(int a1, int a2);  // 0x72a150
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    void ProcessFormationPosition(unsigned int * a1);  // 0x728C00
+    int ddtor(int a1, unsigned int * a2);  // 0x72A110
+    int StubReturn60();  // 0x72A200
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(TunnelLocomotionClass) == 0x3C, "TunnelLocomotionClass size");
 
@@ -1069,6 +1181,12 @@ protected:
     MechLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit MechLocomotionClass(noinit_t) noexcept;
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x5B1960
+    int BeginMove(int * a1, int * a2);  // 0x5B19A0
+    int StubReturn52();  // 0x5B1B40
+    MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);  // 0x5B1B50
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(MechLocomotionClass) == 0x34, "MechLocomotionClass size");
 
@@ -1135,6 +1253,10 @@ protected:
     int BeginMove();  // 0x4b6240
     int UpdateMovement();  // 0x4b62c0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x4B6200
+    int StubReturn48();  // 0x4B66E0
+// --- e4 declarations (END) ---
 };
 static_assert(sizeof(DropPodLocomotionClass) == 0x30, "DropPodLocomotionClass size");
 

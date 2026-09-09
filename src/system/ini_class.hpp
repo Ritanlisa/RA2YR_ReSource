@@ -228,6 +228,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadTypeList(int a1, int a2);  // 0x41f2e0
     int ReadInfantryTypeList(int a1, int a2);  // 0x41f490
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int GetDB();  // 0x473450
+// --- e4 declarations (END) ---
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

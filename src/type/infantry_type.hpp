@@ -117,6 +117,15 @@ public:
     int GetGameplayValue();  // 0x524790
     void* ClampToGroundHeight(int a1, int a2);  // 0x5247d0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Constructor(ObjectClass * aP1);  // 0x5236A0
+    char CreateInfantry(short * a2, AbstractClass * ppv);  // 0x523B40
+    int StubReturnFalse();  // 0x5247A0
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x524C70
+    int GetTypeIdentifier();  // 0x524D40
+    int GetObjectSize();  // 0x524D50
+    InfantryTypeClass * ddtor(int Block, char a2);  // 0x524D70
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

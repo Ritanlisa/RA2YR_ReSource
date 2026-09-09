@@ -54,6 +54,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Pump();  // 0x753620
     int Shutdown();  // 0x406e80
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int PlaySample();  // 0x4071C0
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -158,6 +161,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ClearQueues();  // 0x752370
     void GetField(int a1);  // 0x752ab0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    void * InitializeThemes(char * a2);  // 0x720590
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================

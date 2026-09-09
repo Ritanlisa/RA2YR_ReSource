@@ -74,6 +74,12 @@ protected:
     int Write(int a1, int a2);  // 0x5550c0
     int Seek(int a1, int a2, int a3);  // 0x555110
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Constructor();  // 0x554830
+    int ddtor(int a1, unsigned int * a2);  // 0x555080
+    int StubReturn76();  // 0x555130
+    int StubReturn54();  // 0x555140
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

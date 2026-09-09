@@ -169,6 +169,9 @@ struct ColorStruct
 
     // unmatched: no callgraph reference and no git history record
     bool operator!=(const ColorStruct& rhs) const;
+// --- e4 declarations (BEGIN) ---
+    int SetRGB(unsigned signed char a2, unsigned signed char a3, unsigned signed char a4);  // 0x4A35A0
+// --- e4 declarations (END) ---
 };
 
 struct TimerStruct

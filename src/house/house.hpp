@@ -68,6 +68,8 @@ struct StartingTechnoStruct
 {
     TechnoTypeClass* unit;
     CellStruct       cell;
+// --- e4 declarations (BEGIN) ---
+// --- e4 declarations (END) ---
 };
 
 struct AngerStruct

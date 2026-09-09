@@ -167,6 +167,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReleaseAll(int a1);  // 0x5d26c0 -- Team::ReleaseAll
     int AllMembersValid();  // 0x65ae30 -- Team::AllMembersValid
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x6EC560
+    int StubReturn160();  // 0x6F0430
+    int StubReturn34();  // 0x6F0440
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

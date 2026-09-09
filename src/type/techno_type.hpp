@@ -479,6 +479,12 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x7162f0
     int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x716dc0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char vt_entry_A0();  // 0x41CB50
+    int Construct(ObjectTypeClass * aP1);  // 0x711840
+    int DTOR();  // 0x711AE0
+    unsigned int * Constructor();  // 0x717AF0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

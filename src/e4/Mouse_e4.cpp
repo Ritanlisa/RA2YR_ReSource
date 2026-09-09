@@ -1,0 +1,245 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+
+// 0x4A8BF0
+namespace gamemd {
+int Mouse::SetBounds(IUnknown * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
+{
+  int result; // eax
+  __int16 v4; // cx
+  Tactical *v5; // esi
+  bool v6; // zf
+  int v7; // eax
+  __int16 v8; // cx
+  __int16 v9; // [esp+8h] [ebp-8h] BYREF
+  __int16 v10; // [esp+Ah] [ebp-6h]
+
+  result = *(_DWORD *)(this + 4476); /*0x4a8bf7*/
+  if ( result ) /*0x4a8bff*/
+  {
+    v4 = *(_WORD *)(this + 4470) + *(_WORD *)(this + 4474); /*0x4a8c16*/
+    v9 = *(_WORD *)(this + 4468) + *(_WORD *)(this + 4472); /*0x4a8c1f*/
+    v10 = v4; /*0x4a8c24*/
+    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&v9, 0); /*0x4a8c38*/
+  }
+  v5 = (Tactical *)aP1; /*0x4a8c3d*/
+  v6 = aP1 == 0; /*0x4a8c47*/
+  *(_DWORD *)(this + 4472) = *(_DWORD *)&MEMORY[0x89F690].__pad_BC0[424]; /*0x4a8c49*/
+  if ( v6 ) /*0x4a8c4f*/
+  {
+    *(_DWORD *)(this + 4476) = 0; /*0x4a8d1f*/
+  }
+  else
+  {
+    if ( (MEMORY[0x89F690].__pad_DFC[396] & 1) == 0 ) /*0x4a8c5c*/
+    {
+      MEMORY[0x89F690].__pad_DFC[396] |= 1u; /*0x4a8c68*/
+      atexit(nullsub_10); /*0x4a8c6e*/
+    }
+    qmemcpy(&MEMORY[0x89F690].__pad_BC0[460], v5, 0x1E0u); /*0x4a8c85*/
+    *(_DWORD *)(this + 4476) = &MEMORY[0x89F690].__pad_BC0[460]; /*0x4a8c8f*/
+    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&MEMORY[0x89F690].__pad_BC0[460]); /*0x4a8c9e*/
+    v9 = v7 - 1; /*0x4a8ca6*/
+    v10 = HIWORD(v7) - 1; /*0x4a8cab*/
+    LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
+    HIWORD(aP1) = (__int16)(1 - HIWORD(v7)) / 2; /*0x4a8cd1*/
+    v8 = (__int16)aP1; /*0x4a8cd6*/
+    *(_DWORD *)(this + 4472) = aP1; /*0x4a8cda*/
+    LOWORD(v7) = *(_WORD *)(this + 4474) + *(_WORD *)(this + 4470); /*0x4a8cee*/
+    LOWORD(aP1) = v8 + *(_WORD *)(this + 4468); /*0x4a8cf8*/
+    HIWORD(aP1) = v7; /*0x4a8cfd*/
+    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&aP1, (_WORD *)1); /*0x4a8d11*/
+  }
+  return result; /*0x4a8d17*/
+}
+}
+} // namespace gamemd
+
+// 0x53EC90
+namespace gamemd {
+SHORT Mouse::GetKeyState(unsigned signed char vKey)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+SHORT __thiscall Mouse::GetKeyState(unsigned __int8 vKey)
+{
+  if ( unk_AA0444 ) /*0x53ec97*/
+    return unk_AA0168[vKey]; /*0x53eca7*/
+  else
+    return GetAsyncKeyState(vKey); /*0x53ec9a*/
+}
+}
+} // namespace gamemd
+
+// 0x54F5C0
+namespace gamemd {
+BOOL Mouse::IsButtonDown(unsigned signed char a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)
+{
+  unsigned __int16 v1; // si
+
+  v1 = a1; /*0x54f5c5*/
+  if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
+    v1 = 2 - (a1 != 1); /*0x54f5eb*/
+  return (unsigned __int16)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+}
+}
+} // namespace gamemd
+
+// 0x5BC400
+namespace gamemd {
+HWND Mouse::HideWindow()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+HWND Mouse_HideWindow()
+{
+  HWND result; // eax
+
+  result = MEMORY[0xABF240]; /*0x5bc400*/
+  MEMORY[0xABF239] = 0; /*0x5bc409*/
+  if ( MEMORY[0xABF240] ) /*0x5bc40f*/
+  {
+    MEMORY[0xABF23A] = 0; /*0x5bc413*/
+    return (HWND)ShowWindow(MEMORY[0xABF240], 0); /*0x5bc419*/
+  }
+  return result; /*0x5bc41f*/
+}
+}
+} // namespace gamemd
+
+// 0x5BDC80
+namespace gamemd {
+char Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
+{
+  char v4; // bl
+  MPCooperative *v6; // edi
+  CoordStruct *Ticks; // eax
+  int Y_low; // ecx
+  int v9; // eax
+  int v10; // ebx
+  int X_high; // edi
+  int v12; // esi
+  int v13; // [esp+10h] [ebp-Ch] BYREF
+  CoordStruct *v14; // [esp+14h] [ebp-8h]
+
+  if ( MEMORY[0x82D034][7 * (_DWORD)aP1] == -1 ) /*0x5bdca6*/
+  {
+    v4 = 0; /*0x5bdca8*/
+    LOBYTE(aP2) = 0; /*0x5bdcaa*/
+  }
+  else
+  {
+    v4 = (char)aP2; /*0x5bdcb0*/
+  }
+  if ( *((_BYTE *)&g_MatrixTransformState + 1229) /*0x5bdcd6*/
+    && (!*(&g_MatrixTransformState + 289) || aP1 == *(ObjectClass **)(this + 21856) && v4 == *(_BYTE *)(this + 21852)) )
+  {
+    return 0; /*0x5bdcda*/
+  }
+  *((_BYTE *)&g_MatrixTransformState + 1229) = 1; /*0x5bdce4*/
+  v6 = (MPCooperative *)MEMORY[0x82D030][7 * (_DWORD)aP1]; /*0x5bdceb*/
+  Ticks = (CoordStruct *)Timer::GetTicks(); /*0x5bdcf2*/
+  Y_low = 0; /*0x5bdcfb*/
+  *(&g_MatrixTransformState + 292) = Ticks; /*0x5bdcfd*/
+  *(&g_MatrixTransformState + 293) = v14; /*0x5bdd02*/
+  *(&g_MatrixTransformState + 294) = (CoordStruct *)v6; /*0x5bdd08*/
+  *(_DWORD *)(this + 21864) = 0; /*0x5bdd0e*/
+  if ( !v4 || (v9 = MEMORY[0x82D034][7 * (_DWORD)aP1], v9 == -1) ) /*0x5bdd1e*/
+    v9 = MEMORY[0x82D028][7 * (_DWORD)aP1]; /*0x5bdd20*/
+  v10 = MEMORY[0x82D03C][7 * (_DWORD)aP1]; /*0x5bdd22*/
+  X_high = 0; /*0x5bdd25*/
+  if ( v10 == 12345 ) /*0x5bdd31*/
+    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
+  if ( v10 == 54321 ) /*0x5bdd50*/
+    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
+  v12 = MEMORY[0x82D040][7 * (_DWORD)aP1]; /*0x5bdd56*/
+  if ( v12 == 12345 ) /*0x5bdd5f*/
+    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
+  if ( v12 == 54321 ) /*0x5bdd72*/
+    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
+  v14 = (CoordStruct *)Y_low; /*0x5bdd7c*/
+  v13 = X_high; /*0x5bdd87*/
+  (*(void (__thiscall **)(_DWORD, int *, _DWORD, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 4))( /*0x5bdd93*/
+    *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
+    &v13,
+    *(&g_MatrixTransformState + 289),
+    v9);
+  *(_DWORD *)(this + 21856) = aP1; /*0x5bdd9f*/
+  *(_BYTE *)(this + 21852) = (_BYTE)aP2; /*0x5bdda5*/
+  return 1; /*0x5bdcd8*/
+}
+}
+} // namespace gamemd
+
+// 0x6938C0
+namespace gamemd {
+HWND Mouse::ReleaseCapture()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+HWND __thiscall Mouse_ReleaseCapture(_BYTE *this)
+{
+  HWND result; // eax
+
+  DisplayClass::ExitMode(); /*0x6938c3*/
+  *(this + 21850) = 0; /*0x6938c8*/
+  result = GetCapture(); /*0x6938cf*/
+  if ( result == g_hWnd ) /*0x6938de*/
+    return (HWND)ReleaseCapture(); /*0x6938e0*/
+  return result; /*0x6938db*/
+}
+}
+} // namespace gamemd
+
+// 0x7B93F0
+namespace gamemd {
+void Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall Mouse::DrawCursor(_DWORD *this, IUnknown *aP1, WWMouseClass *aP2, int a4)
+{
+  char **v5; // ecx
+  int v6; // ebx
+  int v7; // ebp
+  int SubFile; // eax
+  IUnknown *v9; // ecx
+  _BYTE v11[16]; // [esp+1Ch] [ebp-30h] BYREF
+  int (__thiscall **v12)(void *, char); // [esp+2Ch] [ebp-20h]
+  int v13; // [esp+30h] [ebp-1Ch]
+  int v14; // [esp+34h] [ebp-18h]
+  int v15; // [esp+38h] [ebp-14h]
+  int v16; // [esp+3Ch] [ebp-10h]
+  _DWORD v17[3]; // [esp+40h] [ebp-Ch] BYREF
+
+  v5 = (char **)*(this + 1); /*0x7b93f9*/
+  if ( v5 && aP1 && MEMORY[0x87F6C8] ) /*0x7b9418*/
+  {
+    v6 = *(this + 20); /*0x7b942e*/
+    v7 = *(this + 21); /*0x7b9431*/
+    SubFile = MixFileClass::GetSubFile(v5, *(this + 2)); /*0x7b9440*/
+    v13 = v6; /*0x7b9447*/
+    v14 = v7; /*0x7b9454*/
+    v15 = 0; /*0x7b9458*/
+    v16 = 1; /*0x7b9468*/
+    Buffer::Init(v17, SubFile, (AbstractClass *)(v7 * v6)); /*0x7b9470*/
+    v9 = aP1; /*0x7b9479*/
+    v12 = &BSurface_Vtable; /*0x7b947d*/
+    if ( aP1 != (IUnknown *)*(this + 9) ) /*0x7b9488*/
+    {
+      (*(void (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 120))(aP1, v11); /*0x7b94f6*/
+      v9 = aP1; /*0x7b9508*/
+    }
+    BlitterDrawSHP(v9); /*0x7b9516*/
+    Vector::Clear((int)v17); /*0x7b951f*/
+  }
+}
+}
+} // namespace gamemd

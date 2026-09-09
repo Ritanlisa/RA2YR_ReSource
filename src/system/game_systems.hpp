@@ -48,6 +48,9 @@ public:
     int EnableSpawnButtons();  // 0x6acd60 -- Skirmish::EnableSpawnButtons
     int SetupGame();  // 0x6ae6e0 -- Skirmish::SetupGame
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4);  // 0x6AE3F0
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -99,6 +102,9 @@ public:
     void SetScoreVolume(int value);  // 0x721290
 
     static int32_t  s_Settings[32]; // 0x00
+// --- e4 declarations (BEGIN) ---
+    char * ParseNetworkAddress();  // 0x5FB050
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -117,6 +123,9 @@ public:
 
     int32_t     SkirmishSetup_field_00;       // 0x00
     int32_t     SkirmishSetup_field_04;       // 0x04
+// --- e4 declarations (BEGIN) ---
+    char PlayButtonClickAnim(HWND hWnd);  // 0x608260
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -457,6 +466,9 @@ public:
     int FreeResources();  // 0x730400
     void FreeResources2();  // 0x730530
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char Init();  // 0x72CF40
+// --- e4 declarations (END) ---
 };
 // 7 methods in IDA
 // CSP: MultiplayerGameMode matched via T1

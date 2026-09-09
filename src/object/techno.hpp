@@ -1164,6 +1164,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Update(int a1, int a2);  // 0x6f3f40
     void GetField();  // 0x731cf0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int processPowerDrain();  // 0x4722D0
+    int DTOR();  // 0x6F4500
+    int RegisterKill();  // 0x702D40
+    int DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x705860
+    int COMStub_Return0_287();  // 0x709A20
+    int StubReturnFalse5();  // 0x70F020
+    int StubReturnFalse6();  // 0x70F030
+    int checkMovementRestrictions();  // 0x70F040
+    int StubReturnFalse7();  // 0x70F0E0
+    int StubReturnFalse8();  // 0x70F0F0
+    int StubReturnFalse9();  // 0x70F110
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

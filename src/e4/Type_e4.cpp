@@ -1,0 +1,40 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x578540
+bool Type::CheckAmbiguity(int a2, char a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
+{
+  int v3; // edx
+  int v4; // esi
+  int v5; // edi
+  int v6; // eax
+  int v7; // esi
+  bool result; // al
+
+  v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
+  v4 = 0; /*0x57854f*/
+  v5 = *(__int16 *)(a2 + 36); /*0x578552*/
+  if ( a3 ) /*0x578558*/
+  {
+    v4 = *(char *)(a2 + 283); /*0x578560*/
+    if ( *(_BYTE *)(a2 + 284) ) /*0x57855a*/
+    {
+      if ( v3 + v5 < v4 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x578582*/
+        ++v4; /*0x578584*/
+    }
+  }
+  v6 = *(this + 61); /*0x57858b*/
+  result = 0; /*0x5785e9*/
+  if ( v3 + v5 > v4 + v6 + 2 * *(this + 64) && v3 + v5 <= v4 + v6 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5785b6*/
+  {
+    v7 = *(this + 63); /*0x5785b8*/
+    if ( v5 - v3 < 2 * (v7 + *(this + 65)) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
+      return 1; /*0x57859b*/
+  }
+  return result; /*0x5785dd*/
+}
+}

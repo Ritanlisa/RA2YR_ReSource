@@ -173,6 +173,17 @@ public:
     int LoadCleanup(int a1, int a2);  // 0x5f9720
     int LoadExtras(int a1, int a2, int a3);  // 0x712170
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int * vt_entry_7C(unsigned int * a1);  // 0x41CBF0
+    unsigned int * Construct(ObjectTypeClass * aP1);  // 0x5F7320
+    int Destruct();  // 0x5F7400
+    char LoadFromINI(CCINIClass * aP1);  // 0x5F92D0
+    void SetRTTI71();  // 0x5F9710
+    ObjectTypeClass * Destru_vt08(void * Block, char a2);  // 0x5F9AE0
+    int loadTypeMember_5717A70();  // 0x717A70
+    int loadTypeMember_5717AA0();  // 0x717AA0
+    int loadTypeMember_5717AD0();  // 0x717AD0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

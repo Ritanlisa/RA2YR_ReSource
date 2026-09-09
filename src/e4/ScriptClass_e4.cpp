@@ -1,0 +1,90 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x6915F0
+namespace gamemd {
+int ScriptClass::ddtor(int a1, unsigned int * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ScriptClass::_vt03(int a1, _DWORD *a2)
+{
+  if ( !a2 ) /*0x6915f6*/
+    return -2147467261; /*0x6915f8*/
+  *a2 = 1123264070; /*0x691606*/
+  a2[1] = 298977161; /*0x69160e*/
+  a2[2] = 1610655148; /*0x691617*/
+  a2[3] = -1252326136; /*0x691620*/
+  return 0; /*0x6915fd*/
+}
+}
+} // namespace gamemd
+
+// 0x691630
+namespace gamemd {
+int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ScriptClass::LoadState(AbstractClass *aP0, int aP1)
+{
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x69163b*/
+  if ( result >= 0 ) /*0x691642*/
+  {
+    if ( aP0 ) /*0x691646*/
+    {
+      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x69164f*/
+      *(_DWORD *)aP0->__pad_0 = &ScriptClass::`vftable'; /*0x691654*/
+      *(_DWORD *)&aP0->__pad_0[4] = &ScriptClass::`vftable'; /*0x69165a*/
+      *(_DWORD *)&aP0->__pad_0[8] = &ScriptClass::`vftable'; /*0x691661*/
+      *(_DWORD *)&aP0->__pad_0[12] = &ScriptClass::`vftable'; /*0x691668*/
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x691678*/
+    return 0; /*0x69167d*/
+  }
+  return result; /*0x69167f*/
+}
+}
+} // namespace gamemd
+
+// 0x691690
+namespace gamemd {
+int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ScriptClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
+{
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x69169f*/
+  if ( result >= 0 ) /*0x6916a6*/
+    return 0; /*0x6916a8*/
+  return result; /*0x6916aa*/
+}
+}
+} // namespace gamemd
+
+// 0x691EC0
+namespace gamemd {
+int ScriptClass::StubReturn26()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int ScriptClass::_vt11()
+{
+  return 26; /*0x691ec5*/
+}
+}
+} // namespace gamemd
+
+// 0x691ED0
+namespace gamemd {
+int ScriptClass::StubReturn48()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int ScriptClass::_vt12()
+{
+  return 48; /*0x691ed5*/
+}
+}
+} // namespace gamemd

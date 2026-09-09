@@ -92,6 +92,13 @@ public:
     int GetGameplayValue();  // 0x747f20
     int LoadFromINI2(int a1, int a2);  // 0x748010
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x747F30
+    int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);  // 0x7480B0
+    int GetObjectSize();  // 0x748160
+    int GetTypeIdentifier();  // 0x748170
+    UnitTypeClass * ddtor(void ** Block, char a2);  // 0x748190
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

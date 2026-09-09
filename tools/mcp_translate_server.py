@@ -62,6 +62,7 @@ ADDR_COMMENT = re.compile(r'^//\s*0x([0-9A-Fa-f]{6,8})\s*$')
 ADDR_IN_COMMENT = re.compile(r'0x([0-9A-Fa-f]{6,8})')
 
 _pending_index = None
+_pending_index_stamp = None
 _snapshot_index = None
 _signals = None
 _signals_mtime = None
@@ -78,8 +79,9 @@ def _read_latin1(path):
 # pending-function index
 # ============================================================================
 def build_pending_index():
-    global _pending_index
-    if _pending_index is not None:
+    global _pending_index, _pending_index_stamp
+    stamp = max((p.stat().st_mtime, str(p)) for p in SRC.rglob("*.cpp"))[0]
+    if _pending_index is not None and stamp == _pending_index_stamp:
         return _pending_index
     entries = []
     for p in sorted(SRC.rglob("*.cpp")):
@@ -97,6 +99,7 @@ def build_pending_index():
                 info["pseudocode_lines"] = _pseudocode_span(lines, i)
                 entries.append(info)
     _pending_index = entries
+    _pending_index_stamp = stamp
     return entries
 
 
@@ -463,6 +466,9 @@ def _glob_addr_index():
     return _annot_cache["glob"]
 
 
+NS_LINE_RE = re.compile(r"^\s*namespace\s+\w+\s*\{\s*//.*$|^\s*namespace\s+\w+\s*\{\s*$")
+
+
 def _find_annotation(lines, def_idx):
     j = def_idx - 1
     steps = 0
@@ -472,7 +478,7 @@ def _find_annotation(lines, def_idx):
             m = ADDR_IN_COMMENT.search(s)
             if m:
                 return "0x" + m.group(1).lower(), j
-        elif s != "":
+        elif s != "" and not NS_LINE_RE.match(lines[j]):
             break
         j -= 1
         steps += 1
@@ -487,7 +493,23 @@ def audit_annotations(file_filter=None, limit=80):
         if (file_filter and file_filter not in rel) or "_generated" in rel:
             continue
         lines = _read_latin1(p).split("\n")
+        in_pseudo = False
+        pseudo_depth = 0
+        pseudo_seen_brace = False
         for i, ln in enumerate(lines):
+            if "[IDA decompile]" in ln:
+                in_pseudo = True
+                pseudo_depth = 0
+                pseudo_seen_brace = False
+                continue
+            if in_pseudo:
+                pseudo_depth += ln.count("{") - ln.count("}")
+                if "{" in ln:
+                    pseudo_seen_brace = True
+                if pseudo_depth > 0 or not pseudo_seen_brace:
+                    continue
+                in_pseudo = False  # closing brace consumed the block
+                continue
             m = DEF_HEAD.match(ln)
             if not m or ln.rstrip().endswith(";"):
                 continue
@@ -518,7 +540,23 @@ def fix_annotations(file_filter=None, dry_run=True, limit=2000):
             continue
         lines = _read_latin1(p).split("\n")
         inserts = []
+        in_pseudo = False
+        pseudo_depth = 0
+        pseudo_seen_brace = False
         for i, ln in enumerate(lines):
+            if "[IDA decompile]" in ln:
+                in_pseudo = True
+                pseudo_depth = 0
+                pseudo_seen_brace = False
+                continue
+            if in_pseudo:
+                pseudo_depth += ln.count("{") - ln.count("}")
+                if "{" in ln:
+                    pseudo_seen_brace = True
+                if pseudo_depth > 0 or not pseudo_seen_brace:
+                    continue
+                in_pseudo = False  # closing brace consumed the block
+                continue
             m = DEF_HEAD.match(ln)
             if not m or ln.rstrip().endswith(";"):
                 continue

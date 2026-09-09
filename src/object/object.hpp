@@ -341,7 +341,6 @@ public:
     // --- Cell / Coordinate queries ---
     // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
     virtual int GetCellCoords_Alt(CellStruct* out) const = 0;
-    virtual CellStruct* GetMapCoords(CellStruct* out) const = 0;  // 0x426A80
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
     // [112] 0x5F69C0 ObjectClass::CoordToCell
@@ -385,7 +384,6 @@ public:
     HealthState GetHealthStatus() const;
 
     // === Convenience wrappers ===
-    CellStruct GetMapCoords() const;  // 0x426A80
     // design: inline accessor, inlined at all call sites
     CellStruct GetMapCoordsAgain() const;
     // design: inline accessor, inlined at all call sites
@@ -596,6 +594,22 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void CleanupSidebarResources();  // 0x6a5bf0
     int FindOwner(int a1, int a2);  // 0x6e45e0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int GetMember06();  // 0x401940
+    int COMStub_108();  // 0x4264D0
+    char GetStateFlag();  // 0x4886A0
+    int GetMember09();  // 0x4CA120
+    char SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4);  // 0x4D7D50
+    float * BuildTransform(unsigned int * a1, float * a2, unsigned int * a3);  // 0x513F40
+    int GetWidth();  // 0x556620
+    void Dtor();  // 0x5F3B80
+    int DropAsBomb_Track();  // 0x5F4160
+    int GetBoundsRect();  // 0x5F4870
+    char Release();  // 0x6241C0
+    int GetMember01();  // 0x6241D0
+    char FindPlacementPosition(int a2, int a3, int a4, int a5);  // 0x718260
+    unsigned int * loc_7A2E70(char a2);  // 0x7A2E70
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

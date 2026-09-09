@@ -1,0 +1,146 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x7C8FD2
+namespace gamemd {
+int CIpow_Helper()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// local variable allocation has failed, the output may be wrong!
+long double __usercall CIpow_Helper@<st0>(
+        int CW@<eax>,
+        double a2@<st1>,
+        long double a3@<st0>,
+        int a4,
+        int a5,
+        int a6,
+        int a7)
+{
+  int v7; // ecx
+  int v8; // ecx
+  int v9; // eax
+  char v10; // zf
+  long double result; // st7
+  char v12; // cl
+  int v13; // ecx
+  int v14; // ecx
+  int v15; // eax
+  unsigned __int8 v17; // cl
+  unsigned __int8 v18; // ch
+  char v19; // cl
+  _BYTE *v20; // [esp+10h] [ebp-7Ch]
+  long double *v21; // [esp+10h] [ebp-7Ch]
+  _BYTE v22[116]; // [esp+14h] [ebp-78h] BYREF
+  int v23; // [esp+88h] [ebp-4h]
+
+  v7 = CW; /*0x7c8fd2*/
+  v23 = CW; /*0x7c8fd4*/
+  if ( (_WORD)CW != 639 ) /*0x7c8fdf*/
+    CW = _load_CW(v23); /*0x7c8fe1*/
+  v8 = v7 & 0x7FF00000; /*0x7c8fe6*/
+  if ( v8 == 2146435072 ) /*0x7c8ff6*/
+  {
+    if ( a6 | CW & 0xFFFFF ) /*0x7c90a0*/
+    {
+      _fload_withFB(0, &a4); /*0x7c906d*/
+      if ( (a7 & 0x80000) != 0 ) /*0x7c9077*/
+        goto LABEL_15; /*0x7c9077*/
+      v14 = v13 + 1; /*0x7c9079*/
+    }
+    else
+    {
+      _fload_withFB(0, &a4); /*0x7c90aa*/
+    }
+LABEL_21:
+    if ( (a5 & 0x7FF00000) != 0x7FF00000 || !(a4 | a5 & 0xFFFFF) ) /*0x7c90c7*/
+    {
+      if ( !v14 ) /*0x7c90cf*/
+      {
+        v20 = v22; /*0x7c90d6*/
+        __asm { fsave byte ptr [ecx+8] } /*0x7c90e1*/
+        v15 = _powhlp(a2, a3, v22); /*0x7c90e5*/
+        _ECX = v21; /*0x7c90ed*/
+        __asm { frstor byte ptr [ecx+8] } /*0x7c90ee*/
+        result = *v21; /*0x7c90f1*/
+        if ( !v15 ) /*0x7c90f8*/
+          return result; /*0x7c90f8*/
+        goto LABEL_11; /*0x7c90f8*/
+      }
+      goto LABEL_17; /*0x7c90cf*/
+    }
+    if ( (a5 & 0x80000) == 0 ) /*0x7c908a*/
+    {
+LABEL_17:
+      result = a3 + a2; /*0x7c908c*/
+      goto LABEL_11; /*0x7c9093*/
+    }
+LABEL_15:
+    result = a3 + a2; /*0x7c907c*/
+    goto LABEL_11; /*0x7c9083*/
+  }
+  v9 = _fload_withFB(v8, &a4); /*0x7c8ffc*/
+  if ( v10 ) /*0x7c9001*/
+  {
+    v14 = 0; /*0x7c9095*/
+    goto LABEL_21; /*0x7c9097*/
+  }
+  if ( (v9 & 0x7FF00000) != 0 || a4 | a5 & 0xFFFFF ) /*0x7c9111*/
+  {
+    if ( a5 >= 0 || (CIpow_Helper_Helper(a3), a2 = -a2, v19) ) /*0x7c918b*/
+    {
+      result = __FYL2X__(a2, a3); /*0x7c901f*/
+      _twoToTOS(); /*0x7c9021*/
+      if ( v12 == 1 ) /*0x7c9029*/
+        result = -result; /*0x7c902b*/
+      if ( !dword_B7819C ) /*0x7c9034*/
+        _check_range_exit(&off_87BED8, 29); /*0x7c9045*/
+      return result; /*0x7c9045*/
+    }
+    result = *(double *)&MEMORY[0x87C550]; /*0x7c9195*/
+LABEL_11:
+    if ( !dword_B7819C ) /*0x7c9051*/
+      _startTwoArgErrorHandling(); /*0x7c9062*/
+    return result; /*0x7c9051*/
+  }
+  if ( (a7 & 0x7FF00000) == 0 ) /*0x7c9126*/
+  {
+    if ( a6 | a7 & 0xFFFFF ) /*0x7c916c*/
+      return 0.0; /*0x7c9179*/
+    else
+      return 1.0; /*0x7c9172*/
+  }
+  CIpow_Helper_Helper(a3); /*0x7c9128*/
+  v18 = HIBYTE(a5) >> 7; /*0x7c9131*/
+  if ( a7 < 0 ) /*0x7c913c*/
+  {
+    result = *(double *)&MEMORY[0x87C4F0]; /*0x7c913e*/
+    if ( (v17 & v18) != 0 ) /*0x7c9146*/
+      result = -*(double *)&MEMORY[0x87C4F0]; /*0x7c9148*/
+    goto LABEL_11; /*0x7c9148*/
+  }
+  result = 0.0; /*0x7c9154*/
+  if ( (v17 & v18) != 0 ) /*0x7c9158*/
+    return -0.0; /*0x7c915e*/
+  return result; /*0x7cf43a*/
+}
+}
+} // namespace gamemd
+
+// 0x7C91A5
+namespace gamemd {
+void __usercall CIpow_Helper_Helper(double a1@<st0> a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __usercall CIpow_Helper_Helper(double a1@<st0>)
+{
+  _ST6 = a1; /*0x7c91a5*/
+  __asm { frndint } /*0x7c91a7*/
+  if ( _ST6 == a1 ) /*0x7c91b1*/
+  {
+    _ST6 = a1 * dbl_87BED0; /*0x7c91bb*/
+    __asm { frndint } /*0x7c91bd*/
+  }
+}
+}
+} // namespace gamemd

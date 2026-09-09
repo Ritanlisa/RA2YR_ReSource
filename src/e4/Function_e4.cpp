@@ -1,0 +1,28 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x643E80
+namespace gamemd {
+int Function_643E80()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Function::643E80(_DWORD *this, int a2)
+{
+  *(this + 1) = a2; /*0x643e84*/
+  return a2; /*0x643e87*/
+}
+}
+} // namespace gamemd
+
+// 0x645D00
+namespace gamemd {
+int Function_645D00()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *__thiscall Function::645D00(char *this, int a2)
+{
+  return this + 4 * a2; /*0x645d07*/
+}
+}
+} // namespace gamemd

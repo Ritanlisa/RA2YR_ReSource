@@ -1,0 +1,667 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x74AD80
+namespace gamemd {
+unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
+{
+  int v3; // eax
+  VoxelAnimTypeClass *v4; // eax
+
+  ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x74ad89*/
+  *(this + 183) = -1; /*0x74ad93*/
+  *(this + 184) = -1; /*0x74ad99*/
+  this->Normalized = 0; /*0x74ad9f*/
+  this->Translucent = 0; /*0x74ada8*/
+  this->SourceShared = 0; /*0x74adae*/
+  *(this + 168) = -1610612736; /*0x74adb4*/
+  *(this + 170) = 0; /*0x74adbe*/
+  *(this + 172) = 484854086; /*0x74adc4*/
+  *(this + 174) = 0; /*0x74adce*/
+  *(this + 176) = 0; /*0x74add4*/
+  *(this + 178) = 0; /*0x74adda*/
+  *(this + 166) = 0; /*0x74ade1*/
+  *(this + 167) = 30; /*0x74ade7*/
+  *(this + 169) = 1072273817; /*0x74adf1*/
+  *(this + 171) = 0; /*0x74adfb*/
+  *(this + 173) = 1069962989; /*0x74ae01*/
+  *(this + 175) = 1074528256; /*0x74ae0b*/
+  *(this + 177) = 1075052544; /*0x74ae15*/
+  *(this + 179) = 1076756480; /*0x74ae1f*/
+  this->IsMeteor = 0; /*0x74ae29*/
+  *(this + 181) = 0; /*0x74ae2f*/
+  *(this + 182) = 0; /*0x74ae35*/
+  *(this + 185) = 0; /*0x74ae3b*/
+  *(this + 186) = 0; /*0x74ae41*/
+  *(this + 187) = 0; /*0x74ae47*/
+  *(this + 188) = 0; /*0x74ae4d*/
+  *(this + 189) = 0; /*0x74ae53*/
+  *(this + 190) = 0; /*0x74ae59*/
+  *(this + 191) = 0; /*0x74ae5f*/
+  this->IsTiberium = 0; /*0x74ae65*/
+  *this = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
+  *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
+  *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
+  *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x74ae85*/
+  *((_BYTE *)this + 561) = 0; /*0x74ae8c*/
+  *((_BYTE *)this + 564) = 1; /*0x74ae92*/
+  *((_BYTE *)this + 559) = 1; /*0x74ae98*/
+  *((_BYTE *)this + 560) = 1; /*0x74ae9e*/
+  *((_BYTE *)this + 562) = 1; /*0x74aea4*/
+  *((_BYTE *)this + 563) = 1; /*0x74aeaa*/
+  *((_BYTE *)this + 565) = 0; /*0x74aeb0*/
+  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x74aeea*/
+    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
+    && *(int *)&stru_B05488.__pad_579C[19040] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
+         &stru_B05488.__pad_579C[19020],
+         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+         0) )
+  {
+    v3 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x74aef7*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v3) = this; /*0x74af06*/
+  }
+  if ( *(int *)&HouseClass_Player.__pad_5568[22660] < *(int *)&HouseClass_Player.__pad_5568[22652] /*0x74af3d*/
+    || (HouseClass_Player.__pad_5568[22657] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22652])
+    && *(int *)&HouseClass_Player.__pad_5568[22664] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22644] + 8))(
+         &HouseClass_Player.__pad_5568[22644],
+         *(_DWORD *)&HouseClass_Player.__pad_5568[22652] + *(_DWORD *)&HouseClass_Player.__pad_5568[22664],
+         0) )
+  {
+    v4 = (VoxelAnimTypeClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22660])++; /*0x74af4a*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * (_DWORD)v4) = this; /*0x74af59*/
+  }
+  return this; /*0x74af5e*/
+}
+}
+} // namespace gamemd
+
+// 0x74B050
+namespace gamemd {
+char VoxelAnimTypeClass::LoadFromINI(unsigned signed char *** aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
+{
+  char Bool_Overwrite; // al
+  char v5; // cl
+  char v6; // al
+  char v7; // al
+  double Double_Overwrite; // st7
+  double v9; // st7
+  int Int_Overwrite; // eax
+  double v11; // st7
+  INIClass *ecx6; // ecx
+  double v13; // st7
+  INIClass *v14; // eax
+  double st7_6b; // st7
+  VoxelAnimTypeClass *v12; // ecx
+  VoxelAnimTypeClass *v17; // eax
+  int v18; // eax
+  AbstractTypeClass *v15; // edx
+  int Index; // eax
+  int v21; // eax
+  AnimTypeClass *v22; // eax
+  AnimTypeClass *v19; // edx
+  AnimTypeClass *v24; // eax
+  AnimTypeClass *eax22; // eax
+  int v26; // eax
+  INIClass *v27; // ecx
+  int v28; // eax
+  WarheadTypeClass *v25; // edx
+  int v30; // eax
+  ParticleSystemTypeClass *eax28; // eax
+  bool v32; // al
+  _DWORD *TechnoType; // eax
+  WaveClass *v31; // edi
+  ObjectClass *v36; // eax
+  _DWORD *FileVXL; // eax
+  INIClass *v38; // [esp-8h] [ebp-2A0h]
+  INIClass *v39; // [esp-8h] [ebp-2A0h]
+  char v40; // [esp-4h] [ebp-29Ch]
+  VoxelAnimTypeClass *v41; // [esp+10h] [ebp-288h]
+  AbstractTypeClass *v42; // [esp+10h] [ebp-288h]
+  int v43; // [esp+10h] [ebp-288h]
+  AnimTypeClass *v44; // [esp+10h] [ebp-288h]
+  AnimTypeClass *v45; // [esp+10h] [ebp-288h]
+  AnimTypeClass *v46; // [esp+10h] [ebp-288h]
+  WarheadTypeClass *v47; // [esp+10h] [ebp-288h]
+  ParticleSystemTypeClass *v48; // [esp+10h] [ebp-288h]
+  char v49; // [esp+15h] [ebp-283h]
+  char v50; // [esp+16h] [ebp-282h]
+  char v51; // [esp+17h] [ebp-281h]
+  ObjectClass Destination[3]; // [esp+18h] [ebp-280h] BYREF
+
+  INIClass::ResetSection(aP1); /*0x74b066*/
+  if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x74b06e*/
+    return 0; /*0x74b614*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
+                     (int)aP1,
+                     (unsigned __int8 *)(this + 36),
+                     &unk_818610,
+                     this->Normalized);
+  v5 = this->Translucent; /*0x74b092*/
+  this->Normalized = Bool_Overwrite; /*0x74b098*/
+  v6 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_818604, v5); /*0x74b0a7*/
+  v40 = this->IsTiberium; /*0x74b0b4*/
+  this->Translucent = v6; /*0x74b0bb*/
+  this->IsTiberium = INIClass::ReadBool_Overwrite( /*0x74b0c6*/
+                             (int)aP1,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_8184C8.unknown50,
+                             v40);
+  v7 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_8184B0, this->IsMeteor); /*0x74b0db*/
+  v38 = *(INIClass **)(this + 672); /*0x74b0ed*/
+  this->IsMeteor = v7; /*0x74b0f6*/
+  *(double *)(this + 672) = INIClass::ReadDouble_Overwrite( /*0x74b101*/
+                              (int)aP1,
+                              (INIClass *)(this + 36),
+                              (unsigned __int8 *)&stru_8184C8.INIClass_field_2C,
+                              v38);
+  Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x74b116*/
+                       (int)aP1,
+                       (INIClass *)(this + 36),
+                       (unsigned __int8 *)&stru_830620.__pad_579C[65880],
+                       0);
+  if ( Double_Overwrite != 0.0 ) /*0x74b126*/
+    *(double *)(this + 680) = Double_Overwrite * 0.01745277777777778; /*0x74b12e*/
+  v9 = INIClass::ReadDouble_Overwrite( /*0x74b147*/
+         (int)aP1,
+         (INIClass *)(this + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[65860],
+         0);
+  if ( v9 != 0.0 ) /*0x74b157*/
+    *(double *)(this + 688) = v9 * 0.01745277777777778; /*0x74b15f*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/
+                    (int)aP1,
+                    (unsigned __int8 *)(this + 36),
+                    (CCINIClass *)&stru_830620.__pad_579C[65848],
+                    *(INIClass **)(this + 668));
+  v39 = *(INIClass **)(this + 696); /*0x74b18a*/
+  this->Duration = Int_Overwrite; /*0x74b193*/
+  v11 = INIClass::ReadDouble_Overwrite( /*0x74b199*/
+          (int)aP1,
+          (INIClass *)(this + 36),
+          (unsigned __int8 *)&stru_8184C8.sectionHead[2],
+          v39);
+  ecx6 = *(INIClass **)(this + 704); /*0x74b1a4*/
+  *(double *)(this + 696) = v11; /*0x74b1aa*/
+  v13 = INIClass::ReadDouble_Overwrite( /*0x74b1ba*/
+          (int)aP1,
+          (INIClass *)(this + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[65840],
+          ecx6);
+  v14 = *(INIClass **)(this + 712); /*0x74b1c5*/
+  *(double *)(this + 704) = v13; /*0x74b1cb*/
+  st7_6b = INIClass::ReadDouble_Overwrite( /*0x74b1db*/
+             (int)aP1,
+             (INIClass *)(this + 36),
+             (unsigned __int8 *)stru_8184C8.__pad_20,
+             v14);
+  v12 = *(VoxelAnimTypeClass **)(this + 724); /*0x74b1e0*/
+  *(double *)(this + 712) = st7_6b; /*0x74b1ea*/
+  v41 = v12; /*0x74b1fb*/
+  if ( INIClass::GetString( /*0x74b207*/
+         aP1,
+         (INIClass *)(this + 36),
+         (unsigned __int8 *)&stru_8184C8,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    v17 = globalHelper_04BB20(Destination[0].__pad_0, (int)&MEMORY[0xA8D63C].__pad_14B0[60]); /*0x74b219*/
+  }
+  else
+  {
+    v17 = v41; /*0x74b220*/
+  }
+  this->Spawns = v17; /*0x74b224*/
+  this->SpawnCount = INIClass::ReadInt_Overwrite( /*0x74b248*/
+                              (int)aP1,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_8184BC,
+                              *(INIClass **)(this + 728));
+  v51 = INIClass::ReadBool_Overwrite( /*0x74b25d*/
+          (int)aP1,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[65824],
+          0);
+  v50 = INIClass::ReadBool_Overwrite( /*0x74b270*/
+          (int)aP1,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[65808],
+          0);
+  v49 = INIClass::ReadBool_Overwrite( /*0x74b27f*/
+          (int)aP1,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[65792],
+          0);
+  v18 = INIClass::ReadInt_Overwrite( /*0x74b28c*/
+          (int)aP1,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[65780],
+          *(INIClass **)(this + 664));
+  v15 = *(AbstractTypeClass **)(this + 732); /*0x74b291*/
+  this->VoxelIndex = v18; /*0x74b297*/
+  v42 = v15; /*0x74b2b4*/
+  if ( !INIClass::GetString( /*0x74b2cd*/
+          aP1,
+          (INIClass *)(this + 36),
+          &unk_818418,
+          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)Destination,
+          128)
+    || (Index = VocClass::FindIndex(Destination), Index == -1) )
+  {
+    Index = (int)v42; /*0x74b2cf*/
+  }
+  v43 = this->StopSound; /*0x74b2e8*/
+  this->StartSound = Index; /*0x74b2f4*/
+  if ( !INIClass::GetString( /*0x74b30f*/
+          aP1,
+          (INIClass *)(this + 36),
+          &unk_818404,
+          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)Destination,
+          128)
+    || (v21 = VocClass::FindIndex(Destination), v21 == -1) )
+  {
+    v21 = v43; /*0x74b311*/
+  }
+  this->StopSound = v21; /*0x74b31f*/
+  v44 = *(AnimTypeClass **)(this + 740); /*0x74b338*/
+  if ( INIClass::GetString( /*0x74b33c*/
+         aP1,
+         (INIClass *)(this + 36),
+         &unk_8183F8,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    v22 = AnimTypeClass::FindOrCreate((AbstractClass *)Destination); /*0x74b349*/
+  }
+  else
+  {
+    v22 = v44; /*0x74b350*/
+  }
+  v19 = *(AnimTypeClass **)(this + 744); /*0x74b354*/
+  this->BounceAnim = v22; /*0x74b35a*/
+  v45 = v19; /*0x74b377*/
+  if ( INIClass::GetString( /*0x74b37b*/
+         aP1,
+         (INIClass *)(this + 36),
+         &unk_8183EC,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    v24 = AnimTypeClass::FindOrCreate((AbstractClass *)Destination); /*0x74b388*/
+  }
+  else
+  {
+    v24 = v45; /*0x74b38f*/
+  }
+  v46 = *(AnimTypeClass **)(this + 748); /*0x74b3a8*/
+  this->ExpireAnim = v24; /*0x74b3b4*/
+  if ( INIClass::GetString( /*0x74b3ba*/
+         aP1,
+         (INIClass *)(this + 36),
+         &unk_8183E0,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    eax22 = AnimTypeClass::FindOrCreate((AbstractClass *)Destination); /*0x74b3c7*/
+  }
+  else
+  {
+    eax22 = v46; /*0x74b3ce*/
+  }
+  this->TrailerAnim = eax22; /*0x74b3d2*/
+  v26 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81859C, *(INIClass **)(this + 752)); /*0x74b3e7*/
+  v27 = *(INIClass **)(this + 756); /*0x74b3ec*/
+  this->Damage = v26; /*0x74b3f2*/
+  v28 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_8183BC, v27); /*0x74b401*/
+  v25 = *(WarheadTypeClass **)(this + 760); /*0x74b406*/
+  this->DamageRadius = v28; /*0x74b40c*/
+  v47 = v25; /*0x74b429*/
+  if ( INIClass::GetString( /*0x74b42d*/
+         aP1,
+         (INIClass *)(this + 36),
+         &unk_8183B4,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    v30 = WarheadTypeClass::FindOrCreate(Destination[0].__pad_0); /*0x74b43a*/
+  }
+  else
+  {
+    v30 = (int)v47; /*0x74b441*/
+  }
+  v48 = *(ParticleSystemTypeClass **)(this + 764); /*0x74b45a*/
+  this->Warhead = v30; /*0x74b466*/
+  if ( INIClass::GetString( /*0x74b46c*/
+         aP1,
+         (INIClass *)(this + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[65764],
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)Destination,
+         128) )
+  {
+    eax28 = BuildingTypeClass::LoadOrGet(Destination); /*0x74b479*/
+  }
+  else
+  {
+    eax28 = v48; /*0x74b480*/
+  }
+  this->AttachedSystem = eax28; /*0x74b484*/
+  v32 = v51 || v49 || v50; /*0x74b4a6*/
+  this->SourceShared = v32; /*0x74b4ad*/
+  if ( v32 ) /*0x74b4b3*/
+  {
+    TechnoType = (_DWORD *)INIEntry::GetTechnoType( /*0x74b4c1*/
+                             aP1,
+                             (CCINIClass *)(this + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[65752]);
+    if ( !TechnoType ) /*0x74b4ca*/
+    {
+      *(_DWORD *)(this + 176) = 0; /*0x74b555*/
+      *(_DWORD *)(this + 180) = 0; /*0x74b55b*/
+      return 1; /*0x74b569*/
+    }
+    if ( v51 ) /*0x74b4d6*/
+    {
+      *(_DWORD *)(this + 176) = TechnoType[44]; /*0x74b4de*/
+      *(_DWORD *)(this + 180) = TechnoType[45]; /*0x74b4ea*/
+      return 1; /*0x74b4f8*/
+    }
+    if ( v50 ) /*0x74b501*/
+    {
+      *(_DWORD *)(this + 176) = TechnoType[46]; /*0x74b509*/
+      *(_DWORD *)(this + 180) = TechnoType[47]; /*0x74b515*/
+      return 1; /*0x74b523*/
+    }
+    if ( v49 ) /*0x74b52c*/
+    {
+      *(_DWORD *)(this + 176) = TechnoType[48]; /*0x74b538*/
+      *(_DWORD *)(this + 180) = TechnoType[49]; /*0x74b544*/
+      return 1; /*0x74b552*/
+    }
+  }
+  else
+  {
+    _makepath(&Destination[0].needsRedraw, 0, 0, (const char *)(this + 504), g_Str_File__VXL); /*0x74b584*/
+    CCFileClass::Construct(Destination, &Destination[0].needsRedraw); /*0x74b598*/
+    v31 = *(WaveClass **)(this + 176); /*0x74b59d*/
+    if ( v31 ) /*0x74b5a5*/
+    {
+      WaveClass::Destroy(*(_DWORD *)(this + 176)); /*0x74b5a9*/
+      __3_YAXPAX_Z(v31); /*0x74b5af*/
+    }
+    v36 = (ObjectClass *)__2_YAPAXI_Z(0x1Cu); /*0x74b5b9*/
+    if ( v36 ) /*0x74b5c3*/
+      FileVXL = File::LoadFileVXL(v36, Destination, 0); /*0x74b5ce*/
+    else
+      FileVXL = 0; /*0x74b5d5*/
+    *(_DWORD *)(this + 176) = FileVXL; /*0x74b5db*/
+    *(_DWORD *)Destination[0].__pad_0 = &CCFileClass::`vftable'; /*0x74b5e1*/
+    Destination[0].customSound = 0; /*0x74b5e9*/
+    Vector::Clear((int)&Destination[0].customSound_controller[2]); /*0x74b5f1*/
+    *(_DWORD *)Destination[0].__pad_0 = &off_7E1668; /*0x74b5fa*/
+    BufferIOFileClass::Dtor(Destination); /*0x74b602*/
+  }
+  return 1; /*0x74b4f2*/
+}
+}
+} // namespace gamemd
+
+// 0x74B690
+namespace gamemd {
+int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
+{
+  int v3; // eax
+  int v4; // ecx
+  int v5; // edx
+  int v6; // edx
+  int v7; // edx
+
+  v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x74b699*/
+  LOBYTE(v3) = this->Normalized; /*0x74b69e*/
+  Power::FlagProcess(a2, v3); /*0x74b6a7*/
+  LOBYTE(v4) = this->Translucent; /*0x74b6ac*/
+  Power::FlagProcess(a2, v4); /*0x74b6b5*/
+  LOBYTE(v5) = this->SourceShared; /*0x74b6ba*/
+  Power::FlagProcess(a2, v5); /*0x74b6c3*/
+  Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
+  Power::TimerProcess(this->Duration); /*0x74b6df*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 672), *(_DWORD *)(this + 676)); /*0x74b6f4*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 680), *(_DWORD *)(this + 684)); /*0x74b709*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 688), *(_DWORD *)(this + 692)); /*0x74b71e*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 696), *(_DWORD *)(this + 700)); /*0x74b733*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 704), *(_DWORD *)(this + 708)); /*0x74b748*/
+  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 712), *(_DWORD *)(this + 716)); /*0x74b75d*/
+  LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
+  Power::FlagProcess(a2, v6); /*0x74b76b*/
+  Power::TimerProcess(this->SpawnCount); /*0x74b779*/
+  Power::TimerProcess(this->StartSound); /*0x74b787*/
+  Power::TimerProcess(this->StopSound); /*0x74b795*/
+  Power::TimerProcess(this->Damage); /*0x74b7a3*/
+  Power::TimerProcess(this->DamageRadius); /*0x74b7b1*/
+  LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
+  return Power::FlagProcess(a2, v7); /*0x74b7c4*/
+}
+}
+} // namespace gamemd
+
+// 0x74B7D0
+namespace gamemd {
+int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall VoxelAnimTypeClass::_vt03(int a1, _DWORD *a2)
+{
+  if ( !a2 ) /*0x74b7d6*/
+    return -2147467261; /*0x74b7d8*/
+  *a2 = 784035174; /*0x74b7e6*/
+  a2[1] = 298978637; /*0x74b7ee*/
+  a2[2] = 1610642049; /*0x74b7f7*/
+  a2[3] = -1252326136; /*0x74b800*/
+  return 0; /*0x74b7dd*/
+}
+}
+} // namespace gamemd
+
+// 0x74B810
+namespace gamemd {
+int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
+{
+  int result; // eax
+
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1); /*0x74b81b*/
+  if ( result >= 0 ) /*0x74b822*/
+  {
+    if ( aP0 ) /*0x74b82a*/
+    {
+      ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x74b833*/
+      *(_DWORD *)aP0->__pad_0 = &VoxelAnimTypeClass::`vftable'; /*0x74b838*/
+      *(_DWORD *)&aP0->__pad_0[4] = &VoxelAnimTypeClass::`vftable'; /*0x74b83e*/
+      *(_DWORD *)&aP0->__pad_0[8] = &VoxelAnimTypeClass::`vftable'; /*0x74b845*/
+      *(_DWORD *)&aP0->__pad_0[12] = &VoxelAnimTypeClass::`vftable'; /*0x74b84c*/
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name); /*0x74b85f*/
+    ObjectPtr::RegisterForTracking( /*0x74b870*/
+      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (MouseClass *)&aP0[1].UINameLabel[19]);
+    ObjectPtr::RegisterForTracking( /*0x74b881*/
+      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (MouseClass *)&aP0[1].UINameLabel[23]);
+    ObjectPtr::RegisterForTracking( /*0x74b892*/
+      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (MouseClass *)&aP0[1].UINameLabel[27]);
+    ObjectPtr::RegisterForTracking( /*0x74b8a3*/
+      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (MouseClass *)&aP0[1].UINameLabel[3]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].Name[4]); /*0x74b8b4*/
+    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x74b8bb*/
+    return 0; /*0x74b8c0*/
+  }
+  return result; /*0x74b8c2*/
+}
+}
+} // namespace gamemd
+
+// 0x74B8D0
+namespace gamemd {
+int VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
+{
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x74b8df*/
+  if ( result >= 0 ) /*0x74b8e6*/
+    return 0; /*0x74b8e8*/
+  return result; /*0x74b8ea*/
+}
+}
+} // namespace gamemd
+
+// 0x74B8F0
+namespace gamemd {
+long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+__int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP1, int a3)
+{
+  __int64 result; // rax
+
+  result = (unsigned int)aP1; /*0x74b8f0*/
+  if ( (ObjectTypeClass *)*(this + 190) == aP1 ) /*0x74b8ff*/
+    *(this + 190) = 0; /*0x74b901*/
+  if ( (ObjectTypeClass *)*(this + 185) == aP1 ) /*0x74b90d*/
+    *(this + 185) = 0; /*0x74b90f*/
+  if ( (ObjectTypeClass *)*(this + 186) == aP1 ) /*0x74b91b*/
+    *(this + 186) = 0; /*0x74b91d*/
+  if ( (ObjectTypeClass *)*(this + 187) == aP1 ) /*0x74b929*/
+    *(this + 187) = 0; /*0x74b92b*/
+  if ( (ObjectTypeClass *)*(this + 181) == aP1 ) /*0x74b937*/
+    *(this + 181) = 0; /*0x74b939*/
+  if ( (ObjectTypeClass *)*(this + 191) == aP1 ) /*0x74b948*/
+    *(this + 191) = 0; /*0x74b94a*/
+  return result; /*0x74b947*/
+}
+}
+} // namespace gamemd
+
+// 0x74B9F0
+namespace gamemd {
+int VoxelAnimTypeClass::GetTypeIdentifier()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int VoxelAnimTypeClass::_vt11()
+{
+  return 42; /*0x74b9f5*/
+}
+}
+} // namespace gamemd
+
+// 0x74BA00
+namespace gamemd {
+int VoxelAnimTypeClass::GetObjectSize()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int VoxelAnimTypeClass::_vt12()
+{
+  return 776; /*0x74ba05*/
+}
+}
+} // namespace gamemd
+
+// 0x74BA10
+namespace gamemd {
+char VoxelAnimTypeClass::Stub(int a1, int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall VoxelAnimTypeClass::_vt32(int a1, int a2)
+{
+  return 0; /*0x74ba12*/
+}
+}
+} // namespace gamemd
+
+// 0x74BA20
+namespace gamemd {
+int VoxelAnimTypeClass::StubReturnFalse(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall VoxelAnimTypeClass::_vt35(int a1)
+{
+  return 0; /*0x74ba22*/
+}
+}
+} // namespace gamemd
+
+// 0x74BA30
+namespace gamemd {
+VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
+{
+  int v3; // eax
+  int v4; // eax
+  void **v6; // [esp+4h] [ebp-4h] BYREF
+
+  *Block = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
+  *(Block + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
+  *(Block + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
+  *(Block + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ba4a*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x74ba51*/
+  v6 = Block; /*0x74ba66*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x74ba6a*/
+  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x74ba85*/
+  {
+    do /*0x74ba9d*/
+    {
+      ++v3; /*0x74ba8d*/
+      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x74ba91*/
+    }
+    while ( v3 < MEMORY[0xB0F680] ); /*0x74ba9d*/
+  }
+  v6 = Block; /*0x74baaf*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EB28] + 16))(&MEMORY[0xA8EB28], &v6); /*0x74bab3*/
+  if ( v4 != -1 && v4 < MEMORY[0xA8EB38] && v4 < --MEMORY[0xA8EB38] ) /*0x74bace*/
+  {
+    do /*0x74bae6*/
+    {
+      ++v4; /*0x74bad6*/
+      *((_DWORD *)MEMORY[0xA8EB2C] + v4 - 1) = *((_DWORD *)MEMORY[0xA8EB2C] + v4); /*0x74bada*/
+    }
+    while ( v4 < MEMORY[0xA8EB38] ); /*0x74bae6*/
+  }
+  if ( *((_BYTE *)Block + 662) ) /*0x74bae8*/
+  {
+    *(Block + 44) = 0; /*0x74baf4*/
+    *(Block + 45) = 0; /*0x74bafa*/
+  }
+  ObjectTypeClass::Destruct((int)Block); /*0x74bb02*/
+  if ( (a2 & 1) != 0 ) /*0x74bb0c*/
+    __3_YAXPAX_Z(Block); /*0x74bb0f*/
+  return (VoxelAnimTypeClass *)Block; /*0x74bb19*/
+}
+}
+} // namespace gamemd

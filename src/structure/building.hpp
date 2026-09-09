@@ -584,6 +584,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindClosestForRepair(int a1);  // 0x4dfcb0
     int FindClosestForRepair2(int a1);  // 0x4dfe00
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char processCapture();  // 0x712130
+// --- e4 declarations (END) ---
 };
 
 // External globals
@@ -617,6 +620,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateSuperWeaponReadyState(int a1);  // 0x6CBCA0
     void DispatchTeam(int a1, int a2);  // 0x6EFE60
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char GetField10();  // 0x6CC2A0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

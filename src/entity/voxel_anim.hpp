@@ -80,6 +80,26 @@ public:
 
 protected:
     VoxelAnimClass() = default;
+// --- e4 declarations (BEGIN) ---
+    float * QuaternionToMatrix(float * a2);  // 0x4399E0
+    unsigned int ProcessFrame();  // 0x4CAF20
+    char UpdateMatrix();  // 0x4D02B0
+    int CleanupMembers();  // 0x7499F0
+    int DrawVoxelFrame(int a2, int a3, int a4);  // 0x749B20
+    char ProcessAnim(int * a2, unsigned int * a3);  // 0x749B70
+    int StubReturn3();  // 0x74A960
+    int SaveLoad_Prefix(ObjectClass * aP1, int aP1a);  // 0x74A970
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x74AA10
+    int GetFrameCount(int * a2);  // 0x74AA30
+    int ddtor(int a1, unsigned int * a2);  // 0x74AAD0
+    int StubReturn328();  // 0x74AB10
+    int StubReturn41();  // 0x74AB20
+    int LoadFrame();  // 0x74AB30
+    int StubReturnFalse(int a1);  // 0x74AB40
+    VoxelAnimClass * DrawVoxel(void * Block, char a2);  // 0x74AB50
+    int Reset();  // 0x75AA90
+    int Constructor();  // 0x75EBE0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -77,6 +77,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CalculateShading();  // 0x5ff850 -- BuildingLight::CalculateShading
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int SD_vt12();  // 0x436900
+    int SD_vt03(int a1, unsigned int * a2);  // 0x436910
+    int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x4369C0
+    int SD_vt34();  // 0x4369E0
+    int SD_vt30();  // 0x4369F0
+    unsigned int * FindTarget(CCINIClass * aP1);  // 0x436BE0
+    int SD_vt11();  // 0x4370B0
+    BuildingLightClass * SDDTOR(void * Block, char a2);  // 0x4370C0
+    signed int UpdateOscillation();  // 0x513D20
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -106,6 +106,9 @@ private:
     void* Close();  // 0x5c05f0 -- BinkMovieHandle::Close
     void* QueryInterface(int a1);  // 0x5c0a30 -- BinkMovieHandle::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int RenderFrameClipped(int a2, int a3);  // 0x432AB0
+// --- e4 declarations (END) ---
 };
 
 //

@@ -144,6 +144,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int ProcessWaveTick(int a1, int a2, int a3);  // 0x75f7d0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char DamageArea(ObjectClass * aP1);  // 0x75F330
+    int LoadWaveData(int a2, int a3);  // 0x75F650
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x75F840
+    int GetObjectSize();  // 0x75F880
+    int CheckStateFlag();  // 0x75F890
+    int StubReturnFalse();  // 0x75F8A0
+    int GetTypeIdentifier();  // 0x7631F0
+    WaveClass * ddtor(void ** Block, char a2);  // 0x763200
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

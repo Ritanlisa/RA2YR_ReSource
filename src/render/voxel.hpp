@@ -63,6 +63,8 @@ struct VoxLib
     float   ZCompress;
     int32_t VoxLib_field_78;
     int32_t VoxLib_field_7C;
+// --- e4 declarations (BEGIN) ---
+// --- e4 declarations (END) ---
 };
 
 struct MotLib

@@ -184,6 +184,12 @@ protected:
     int GetPlayerColorScheme(int a1);  // 0x69a310
     void BuildLaunchString();  // 0x78f000
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Destruct();  // 0x5CF5F0
+    unsigned int * saveSettings();  // 0x5D39D0
+    int GetPlayerColor();  // 0x696F20
+    void SetInstance();  // 0x7B2720
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

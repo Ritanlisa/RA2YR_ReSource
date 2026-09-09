@@ -65,6 +65,13 @@ protected:
     int SaveLoad_Prefix(int a1, int a2);  // 0x6a4780
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6a48a0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Construct(CCINIClass * aP1);  // 0x6A4550
+    int ddtor(int a1, unsigned int * a2);  // 0x6A4740
+    int StubReturn180();  // 0x6A4910
+    int StubReturn28();  // 0x6A4920
+    SideClass * Init(void ** Block, char a2);  // 0x6A4930
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

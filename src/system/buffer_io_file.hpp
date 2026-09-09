@@ -45,6 +45,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor_BitText(int a1);  // 0x435560
     int Seek();  // 0x473BA0
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int Destruct();  // 0x535A60
+    void StubReturnFalse(int a1, int a2, int a3);  // 0x65CA70
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

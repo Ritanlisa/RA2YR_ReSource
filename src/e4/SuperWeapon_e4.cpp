@@ -1,0 +1,15 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+
+// 0x6CC2A0
+namespace gamemd {
+char SuperWeapon::GetField10()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall sub_6CC2A0(_DWORD *this)
+{
+  return *(_BYTE *)(*(this + 10) + 230); /*0x6cc2a9*/
+}
+}
+} // namespace gamemd

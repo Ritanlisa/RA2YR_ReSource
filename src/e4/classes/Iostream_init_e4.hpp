@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct Iostream_init {
+    void* vfptr;  // minimal E2 declaration
+    Iostream_init * Iostream_init();  // 0x420120
+};
+} // namespace gamemd

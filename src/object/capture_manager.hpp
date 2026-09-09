@@ -93,6 +93,9 @@ public:
     int32_t                     overloadCount;     // +0x44 (this+68)
     int32_t                     linkCount;         // +0x28 (this+40)
     int32_t                     CaptureManagerClass_field_2C;          // +0x2C (this+44)
+// --- e4 declarations (BEGIN) ---
+    VectorClass * Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2);  // 0x473000
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

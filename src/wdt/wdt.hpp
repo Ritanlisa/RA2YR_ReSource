@@ -222,6 +222,9 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void SetupMovie();  // 0x5C2500
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    LONG Screen(char a1);  // 0x60D380
+// --- e4 declarations (END) ---
 };
 
 class History

@@ -92,6 +92,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CheckFrameUpdate(int a1, int a2, int a3);  // 0x71cf30
     int MissionStubReturnZero3(int a1, int a2);  // 0x71d310
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int LoadFromStream(unsigned int * a1, int a2);  // 0x71CDA0
+    int MissionStubReturnZero();  // 0x71D2F0
+    int MissionStubReturnZero2();  // 0x71D300
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

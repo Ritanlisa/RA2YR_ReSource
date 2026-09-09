@@ -55,6 +55,14 @@ public:
     int PowerDrainUpdate(int a1);  // 0x6b57f0 -- SmudgeTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x6b6150 -- SmudgeTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int LoadTypeData(ObjectTypeClass * aP0, int aP1);  // 0x6B5850
+    int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);  // 0x6B58B0
+    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x6B58D0
+    int GetTypeIdentifier();  // 0x6B6130
+    int GetObjectSize();  // 0x6B6140
+    SmudgeTypeClass * ddtor(AbstractClass * a2, char a3);  // 0x6B6160
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

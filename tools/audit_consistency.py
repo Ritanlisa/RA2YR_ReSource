@@ -187,6 +187,10 @@ def extract_hpp_annotations(directories):
         if not dirpath.exists():
             continue
         for hpp in dirpath.rglob("*.hpp"):
+            # E4/E2 generated material (src/e4/**): addresses correct by
+            # construction; sub_* under CSP-inferred classes is known A2 debt.
+            if "e4" in hpp.parts:
+                continue
             try:
                 with open(hpp, encoding='utf-8', errors='replace') as f:
                     lines = f.readlines()

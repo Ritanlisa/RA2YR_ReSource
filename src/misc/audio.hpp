@@ -118,6 +118,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* GetSampleNameByIndex(int a1);  // 0x751590
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Release();  // 0x4052F0
+    int FindByName();  // 0x753250
+// --- e4 declarations (END) ---
 };
 
 class VoxClass

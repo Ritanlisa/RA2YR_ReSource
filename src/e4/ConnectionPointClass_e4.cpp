@@ -1,0 +1,345 @@
+// E4 materialized pending bodies (auto-generated from full_export v3)
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/classes/ConnectionPointClass_9_e4.hpp"
+
+// 0x4A0630
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ConnectionPointClass::_vt05(int a1, int (__stdcall ***a2)(_DWORD, int, int *), int *a3)
+{
+  int v4; // ecx
+  int v5; // eax
+  int v6; // eax
+  int v7; // edx
+  int v8; // [esp+14h] [ebp-8h] BYREF
+  int v9; // [esp+18h] [ebp-4h]
+
+  if ( !a2 || !a3 ) /*0x4a0648*/
+    return -2147467261; /*0x4a06ec*/
+  v9 = AbstractClass::updateAITimer(MEMORY[0xA8B230]); /*0x4a0661*/
+  if ( (**a2)(a2, a1 + 4, &v8) < 0 ) /*0x4a0671*/
+    return -2147220990; /*0x4a0675*/
+  v4 = *(_DWORD *)(a1 + 36); /*0x4a0681*/
+  if ( *(_DWORD *)(a1 + 44) >= v4 ) /*0x4a068c*/
+  {
+    if ( !*(_BYTE *)(a1 + 41) && v4 ) /*0x4a0697*/
+      return -2147220991; /*0x4a0697*/
+    v5 = *(_DWORD *)(a1 + 48); /*0x4a0699*/
+    if ( v5 <= 0 /*0x4a06a9*/
+      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
+    {
+      return -2147220991; /*0x4a06de*/
+    }
+  }
+  v6 = *(_DWORD *)(a1 + 44); /*0x4a06b0*/
+  v7 = *(_DWORD *)(a1 + 32); /*0x4a06b3*/
+  *(_DWORD *)(a1 + 44) = v6 + 1; /*0x4a06ba*/
+  *(_DWORD *)(v7 + 8 * v6) = v8; /*0x4a06c1*/
+  *(_DWORD *)(v7 + 8 * v6 + 4) = v9; /*0x4a06c9*/
+  *a3 = v9; /*0x4a06d1*/
+  return 0; /*0x4a0673*/
+}
+}
+
+// 0x4A0700
+int ConnectionPointClass::EnumConnections(int a1, int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ConnectionPointClass::_vt06(int a1, int a2)
+{
+  int v2; // eax
+  int v3; // esi
+  _DWORD *i; // ecx
+  int v6; // ecx
+  int v7; // ecx
+  int v8; // ecx
+
+  v2 = 0; /*0x4a0705*/
+  v3 = *(_DWORD *)(a1 + 44); /*0x4a0707*/
+  if ( v3 <= 0 ) /*0x4a070d*/
+    return -2147220992; /*0x4a0725*/
+  for ( i = (_DWORD *)(*(_DWORD *)(a1 + 32) + 4); *i != a2; i += 2 ) /*0x4a0716*/
+  {
+    if ( ++v2 >= v3 ) /*0x4a0723*/
+      return -2147220992; /*0x4a0723*/
+  }
+  v6 = *(_DWORD *)(a1 + 44); /*0x4a072f*/
+  if ( v2 < v6 ) /*0x4a0734*/
+  {
+    v7 = v6 - 1; /*0x4a0736*/
+    for ( *(_DWORD *)(a1 + 44) = v7; v2 < *(_DWORD *)(a1 + 44); *(_DWORD *)(v8 + 8 * v2 - 4) = *(_DWORD *)(v8 + 8 * v2 + 4) ) /*0x4a073c*/
+    {
+      v8 = *(_DWORD *)(a1 + 32); /*0x4a073e*/
+      ++v2; /*0x4a0741*/
+      *(_DWORD *)(v8 + 8 * v2 - 8) = *(_DWORD *)(v8 + 8 * v2); /*0x4a0745*/
+    }
+  }
+  return 0; /*0x4a0725*/
+}
+}
+
+// 0x4A0760
+int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
+{
+  _DWORD *v3; // edi
+  int v4; // eax
+  void *v5; // eax
+  int v6; // eax
+  int v7; // ecx
+  _DWORD *v8; // edx
+  _DWORD *v9; // eax
+  int i; // esi
+  int v11; // [esp-Ch] [ebp-14h]
+
+  if ( !a2 ) /*0x4a076a*/
+    return -2147467261; /*0x4a076d*/
+  v3 = __2_YAPAXI_Z(0x24u); /*0x4a077d*/
+  if ( !v3 ) /*0x4a0784*/
+    return -2147024882; /*0x4a0864*/
+  v3[2] = 0; /*0x4a0798*/
+  v3[3] = 0; /*0x4a079b*/
+  *((_BYTE *)v3 + 16) = 1; /*0x4a079e*/
+  *((_BYTE *)v3 + 17) = 0; /*0x4a07a2*/
+  v3[1] = &VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a07a5*/
+  if ( v3 + 1 != a1 + 7 ) /*0x4a07ab*/
+  {
+    VectorClass::ClearAndFree2((int)(v3 + 1)); /*0x4a07af*/
+    v4 = a1[9]; /*0x4a07b5*/
+    v3[3] = v4; /*0x4a07ba*/
+    if ( v4 ) /*0x4a07bd*/
+    {
+      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a07c7*/
+      v3[2] = v5; /*0x4a07d1*/
+      if ( v5 ) /*0x4a07d4*/
+      {
+        v6 = v3[3]; /*0x4a07d6*/
+        v7 = 0; /*0x4a07d9*/
+        *((_BYTE *)v3 + 17) = 1; /*0x4a07dd*/
+        if ( v6 > 0 ) /*0x4a07e1*/
+        {
+          do /*0x4a0806*/
+          {
+            v8 = (_DWORD *)(a1[8] + 8 * v7); /*0x4a07ef*/
+            v9 = (_DWORD *)(v3[2] + 8 * v7++); /*0x4a07f4*/
+            *v9 = *v8; /*0x4a07f9*/
+            v9[1] = v8[1]; /*0x4a07fe*/
+          }
+          while ( v7 < v3[3] ); /*0x4a0806*/
+        }
+      }
+    }
+    else
+    {
+      v3[2] = 0; /*0x4a080c*/
+      *((_BYTE *)v3 + 17) = 0; /*0x4a080f*/
+    }
+  }
+  v3[5] = a1[11]; /*0x4a0815*/
+  v3[6] = a1[12]; /*0x4a081b*/
+  v3[1] = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a081e*/
+  v3[7] = 0; /*0x4a0824*/
+  v3[8] = 0; /*0x4a0827*/
+  *v3 = &EnumConnectionsClass::`vftable'; /*0x4a082a*/
+  for ( i = 0; i < v3[5]; ++i ) /*0x4a0837*/
+  {
+    v11 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a083f*/
+    (*(void (__stdcall **)(int))(*(_DWORD *)v11 + 4))(v11); /*0x4a0842*/
+  }
+  return (*(int (__stdcall **)(_DWORD *, void *, int))*v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
+}
+}
+
+// 0x4A0870
+unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, ConnectionPointClass *aP2)
+{
+  *(this + 1) = *a1; /*0x4a087c*/
+  *(this + 2) = a1[1]; /*0x4a0881*/
+  *(this + 3) = a1[2]; /*0x4a0887*/
+  *(this + 4) = a1[3]; /*0x4a088d*/
+  *(this + 6) = aP2; /*0x4a0896*/
+  *(this + 5) = 0; /*0x4a0899*/
+  *(this + 8) = 0; /*0x4a089c*/
+  *(this + 9) = 0; /*0x4a089f*/
+  *((_BYTE *)this + 40) = 1; /*0x4a08a2*/
+  *((_BYTE *)this + 41) = 0; /*0x4a08a6*/
+  *(this + 7) = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a08a9*/
+  *(this + 12) = 10; /*0x4a08b0*/
+  *(this + 11) = 0; /*0x4a08b7*/
+  *this = &ConnectionPointClass::`vftable'; /*0x4a08ba*/
+  (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
+  return this; /*0x4a08c8*/
+}
+}
+
+// 0x4A0F70
+namespace gamemd {
+int ConnectionPointClass_9::EnumConnections(int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall ConnectionPointClass_9_::_vt06(_DWORD *this, int a2)
+{
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4a0f7a*/
+}
+}
+} // namespace gamemd
+
+// 0x4A1240
+namespace gamemd {
+char ConnectionPointClass_9::AddRef(int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall ConnectionPointClass_9_::_vt01(int *this, int a2)
+{
+  int v2; // esi
+  int v3; // edx
+  _DWORD *v4; // eax
+  int v5; // ecx
+
+  v2 = *(this + 2); /*0x4a1242*/
+  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4a124d*/
+  {
+    v3 = 0; /*0x4a124f*/
+    if ( v2 <= 0 ) /*0x4a1253*/
+      return 1; /*0x4a1273*/
+    v4 = (_DWORD *)*(this + 1); /*0x4a1255*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4a125b*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4a1264*/
+    {
+      ++v3; /*0x4a1266*/
+      ++v4; /*0x4a1267*/
+      if ( v3 >= v2 ) /*0x4a126c*/
+        return 1; /*0x4a126c*/
+    }
+  }
+  return 0; /*0x4a126e*/
+}
+}
+} // namespace gamemd
+
+// 0x4A1280
+namespace gamemd {
+char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
+{
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 ) /*0x4a128c*/
+  {
+    *((_BYTE *)this + 12) = 0; /*0x4a1296*/
+    if ( a3 ) /*0x4a129c*/
+      v4 = a3; /*0x4a12b2*/
+    else
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
+    *((_BYTE *)this + 12) = 1; /*0x4a12b6*/
+    if ( v4 ) /*0x4a12ba*/
+    {
+      if ( *((_DWORD *)this + 1) ) /*0x4a12c5*/
+      {
+        v6 = *((_DWORD *)this + 2); /*0x4a12cc*/
+        if ( a2 < v6 ) /*0x4a12d1*/
+          v6 = a2; /*0x4a12d3*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a12d9*/
+          ++i; /*0x4a12de*/
+        if ( *((_BYTE *)this + 13) ) /*0x4a12eb*/
+        {
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
+          *((_DWORD *)this + 1) = 0; /*0x4a12fe*/
+        }
+      }
+      *((_DWORD *)this + 1) = v4; /*0x4a1307*/
+      *((_DWORD *)this + 2) = a2; /*0x4a130f*/
+      *((_BYTE *)this + 13) = a3 == 0; /*0x4a1312*/
+      return 1; /*0x4a1318*/
+    }
+    else
+    {
+      return 0; /*0x4a12bf*/
+    }
+  }
+  else
+  {
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a1322*/
+    return 1; /*0x4a1328*/
+  }
+}
+}
+} // namespace gamemd
+
+// 0x4A1360
+namespace gamemd {
+int ConnectionPointClass_9::Advise(unsigned int * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall ConnectionPointClass_9_::_vt04(int this, _DWORD *a2)
+{
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) ) /*0x4a1360*/
+    return 0; /*0x4a1368*/
+  v3 = *(_DWORD *)(this + 8); /*0x4a136e*/
+  result = 0; /*0x4a1371*/
+  if ( v3 <= 0 ) /*0x4a1375*/
+    return -1; /*0x4a138c*/
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4a137b*/
+  {
+    if ( ++result >= v3 ) /*0x4a138a*/
+      return -1; /*0x4a138a*/
+  }
+  return result; /*0x4a136a*/
+}
+}
+} // namespace gamemd
+
+// 0x4A13A0
+namespace gamemd {
+unsigned int ConnectionPointClass_9::Unadvise(int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned int __thiscall ConnectionPointClass_9_::_vt05(int this, int a2)
+{
+  if ( *(_BYTE *)(this + 12) ) /*0x4a13a0*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a13b5*/
+  else
+    return 0; /*0x4a13a7*/
+}
+}
+} // namespace gamemd
+
+// 0x4A14F0
+namespace gamemd {
+VectorClass * ConnectionPointClass_9::QueryInterface(unsigned int * Block, char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+VectorClass *__thiscall ConnectionPointClass_9_::QueryInterface(_DWORD *Block, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1); /*0x4a14f3*/
+  *Block = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a14f6*/
+  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a1500*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4a1508*/
+    *(Block + 1) = 0; /*0x4a1510*/
+  }
+  *((_BYTE *)Block + 13) = 0; /*0x4a151b*/
+  *(Block + 2) = 0; /*0x4a1521*/
+  if ( (a2 & 1) != 0 ) /*0x4a1528*/
+    __3_YAXPAX_Z(Block); /*0x4a152b*/
+  return (VectorClass *)Block; /*0x4a1535*/
+}
+}
+} // namespace gamemd

@@ -68,6 +68,9 @@ public:
     int DrawOccupiedRegion();  // 0x6da180 -- TacticalMap::DrawOccupiedRegion
     int FillScanlinesOpaque(int a1, int a2, int a3, int a4);  // 0x7bcfb0 -- TacticalMap::FillScanlinesOpaque
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int Construct();  // 0x6D1C20
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -108,6 +111,13 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int HandleSuspend();  // 0x5d2530 -- DDraw::HandleSuspend
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    int CapabilityCheck();  // 0x4A3E40
+    char CheckCapabilities();  // 0x4A4620
+    int WaitForIdle();  // 0x4A4830
+    int GetStatus();  // 0x4BBC90
+    int CleanupSurfaces();  // 0x4C19B0
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -219,6 +229,9 @@ public:
     CoordStruct m_Target;       // 0x0C
     int32_t     m_Zoom;         // 0x18
     float       m_Tilt;         // 0x1C
+// --- e4 declarations (BEGIN) ---
+    void StubReturn();  // 0x6339A0
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -256,6 +269,9 @@ public:
     static uint8_t* s_FogMap;       // 0x00
     static int32_t  s_MapWidth;     // 0x04
     static int32_t  s_MapHeight;    // 0x08
+// --- e4 declarations (BEGIN) ---
+    int Render();  // 0x657CE0
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -504,6 +520,9 @@ public:
     int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494560 -- BlitTransLucent25Alpha_ushort::CallBlit0_1
     void* Blit(int a1);  // 0x49a340 -- BlitTransLucent25Alpha_ushort::Blit
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    std::locale::facet * Constructor_Blitter(char a2);  // 0x49A380
+// --- e4 declarations (END) ---
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZReadWarp_ushort
@@ -709,6 +728,12 @@ public:
     int GetSize(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494d50 -- BlitTransXlatAlphaZRead_ushort::GetSize
     void* Blit(int a1);  // 0x49a420 -- BlitTransXlatAlphaZRead_ushort::Blit
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    std::locale::facet * Constructor_Blitter(char a2);  // 0x49A3A0
+    std::locale::facet * Constructor_Blitter_0(char a2);  // 0x49A3C0
+    std::locale::facet * Constructor_Blitter_1(char a2);  // 0x49A3E0
+    std::locale::facet * Constructor_Blitter_2(char a2);  // 0x49A400
+// --- e4 declarations (END) ---
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlphaZReadWrite_ushort
@@ -1287,6 +1312,16 @@ public:
     uint8_t ScreenEffect_field_0x28[4];
     uint8_t ScreenEffect_field_0x2C[4];
     uint8_t ScreenEffect_field_0x30[4];
+// --- e4 declarations (BEGIN) ---
+    void Stub2();  // 0x753AE0
+    void Stub3();  // 0x754B20
+    void Stub4();  // 0x754B30
+    void Stub5();  // 0x754BA0
+    void Stub6();  // 0x754BB0
+    void Stub7();  // 0x754BC0
+    void Stub8();  // 0x754BD0
+    long long UpdateBob();  // 0x7772A0
+// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class Scrollbar
@@ -1401,6 +1436,9 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int InitializeBuffers();  // 0x759fb0 -- VoxelRenderer::InitializeBuffers
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    char ProjectVertex(float a2, float a3, float a4, char a5);  // 0x758EA0
+// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 // CSP: VoxelSection matched via T1

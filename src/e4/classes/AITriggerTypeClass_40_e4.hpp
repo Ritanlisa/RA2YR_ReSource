@@ -1,0 +1,19 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct AITriggerTypeClass_40 {
+    void* vfptr;  // minimal E2 declaration
+    void ClearBuffer();  // 0x420370
+    unsigned int PointerToIndex(int a2);  // 0x4203A0
+    int Seek(int a2);  // 0x4203C0
+    char AddRef(int a2);  // 0x4203D0
+    char Release(int a2, unsigned int * a3);  // 0x420410
+    void ddtor();  // 0x4204C0
+    int Read(unsigned int * a2);  // 0x4204F0
+    unsigned int Write(int a2);  // 0x420530
+    char SetCapacity(int a2, unsigned int * a3);  // 0x420550
+    int FindItem(unsigned int * a2);  // 0x420600
+    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x420630
+};
+} // namespace gamemd

@@ -59,6 +59,12 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int release(int a1);  // 0x724AB0
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char addRef(int a1);  // 0x724AA0
+    int ddtor(char a2);  // 0x724B80
+    void read(int a1);  // 0x724BB0
+    int stubReturnFalse(int a1);  // 0x724BD0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

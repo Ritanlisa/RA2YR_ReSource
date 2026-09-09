@@ -181,6 +181,43 @@ public:
     int sub_5D39B0();
     void sub_5D58B0();
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    long long isValidMap();  // 0x5CACF0
+    void needsHouseSelection();  // 0x5CAD30
+    void validatePlayer();  // 0x5CAD60
+    long long startGame();  // 0x5CAD90
+    int stopGame();  // 0x5CADC0
+    int areTeamChangesAllowed();  // 0x5CADD0
+    int isHouseAllyChangeAllowed();  // 0x5CADF0
+    void onPlayerConnect();  // 0x5CB190
+    void onPlayerDisconnect();  // 0x5CB1C0
+    void getMaximumPlayers();  // 0x5CB1E0
+    void getMinimumPlayers();  // 0x5CB200
+    void getAlliesLimit();  // 0x5CB220
+    long long canAllyWith();  // 0x5CB260
+    void onGameBegin();  // 0x5CB2D0
+    int isAIAllowed();  // 0x5CB380
+    int isTeamsAllowed();  // 0x5CB570
+    int firstValidMapIndex();  // 0x5CEDB0
+    int populateTeamDropdown();  // 0x5D1A80
+    int drawTeamDropdown();  // 0x5D2DE0
+    int populateTeamDropdownForPlayer();  // 0x5D3470
+    void validateHouse();  // 0x5D3810
+    void validateOwner();  // 0x5D3830
+    void validateColor();  // 0x5D38F0
+    void validateStartPosition();  // 0x5D3920
+    long long isDefaultFix();  // 0x5D3950
+    int isDefaultAI();  // 0x5D3980
+    int randomHumanCountryIndex();  // 0x5D3990
+    int randomAICountryIndex();  // 0x5D39B0
+    int onDialogCreated();  // 0x5D4C30
+    int onDialogDestroyed();  // 0x5D4C50
+    int unfixAlliances();  // 0x5D4CD0
+    void startingPositionsToHouseBaseCells();  // 0x5D58B0
+    void allyTeams();  // 0x5D58E0
+    void isMegawealthAllowed();  // 0x5D5900
+    void onAIJoined();  // 0x5D5920
+// --- e4 declarations (END) ---
 };
 
 class MPFreeForAllClass : public MPGameModeClass

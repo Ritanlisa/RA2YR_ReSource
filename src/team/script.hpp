@@ -27,6 +27,8 @@ struct ScriptActionNode
 {
     int32_t Action;
     int32_t Argument;
+// --- e4 declarations (BEGIN) ---
+// --- e4 declarations (END) ---
 };
 
 // CSP: ScriptClass matched via T1
@@ -70,6 +72,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(int a1);  // 0x6914E0
     void* ProcessEvent(int a1);  // 0x691EE0
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a1, unsigned int * a2);  // 0x6915F0
+    int LoadState(AbstractClass * aP0, int aP1);  // 0x691630
+    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x691690
+    int StubReturn26();  // 0x691EC0
+    int StubReturn48();  // 0x691ED0
+// --- e4 declarations (END) ---
 };
 
 // --- ScriptTypeClass ---
