@@ -625,11 +625,7 @@ int __thiscall sub_771710(int this)
 namespace gamemd {
 void nullsub_259()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_259()
-{
-  ; /*0x771780*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -637,11 +633,7 @@ void nullsub_259()
 namespace gamemd {
 void nullsub_260()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_260()
-{
-  ; /*0x771790*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2411,17 +2403,14 @@ LRESULT __fastcall FindListBoxItem(HWND hWnd, LRESULT wParam, int a3)
 namespace gamemd {
 void nullsub_261()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_261()
-{
-  ; /*0x776ea0*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x776EB0
 namespace gamemd {
 void * sub_776EB0()
+// 0x776ea0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_776EB0(void *this)
@@ -2902,11 +2891,7 @@ LABEL_72:
 namespace gamemd {
 void nullsub_262()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_262()
-{
-  ; /*0x777ab0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -3117,11 +3102,7 @@ LONG __thiscall sub_777F90(HWND hWnd)
 namespace gamemd {
 void nullsub_48()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_48()
-{
-  ; /*0x778170*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -6659,11 +6640,7 @@ int sub_77D160()
 namespace gamemd {
 void nullsub_263()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_263()
-{
-  ; /*0x77d190*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -7176,11 +7153,7 @@ void sub_77DFD0()
 namespace gamemd {
 int sub_77E780()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_77E780()
-{
-  return CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e795*/
-}
+  return CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash;
 }
 } // namespace gamemd
 

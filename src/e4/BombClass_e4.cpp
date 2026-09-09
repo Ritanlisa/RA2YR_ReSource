@@ -160,17 +160,13 @@ namespace ra2 {
 namespace game {
 int BombClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BombClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x438b06*/
-    return -2147467261; /*0x438b08*/
-  *a2 = 108652931; /*0x438b16*/
-  a2[1] = 299085213; /*0x438b1e*/
-  a2[2] = 268441278; /*0x438b27*/
-  a2[3] = 1822515787; /*0x438b30*/
-  return 0; /*0x438b0d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652931;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

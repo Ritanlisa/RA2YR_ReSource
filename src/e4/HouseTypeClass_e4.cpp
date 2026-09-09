@@ -82,9 +82,9 @@ int __thiscall sub_5116A0(int this)
   int v7; // [esp+8h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x5116a7*/
-  this->uiName = &HouseTypeClass::`vftable'; /*0x5116ad*/
-  this->name[49] = &HouseTypeClass::`vftable'; /*0x5116b4*/
-  this->arrayIndex = &HouseTypeClass::`vftable'; /*0x5116bb*/
+  this->vtable1 = &HouseTypeClass::`vftable'; /*0x5116ad*/
+  this->vtable2 = &HouseTypeClass::`vftable'; /*0x5116b4*/
+  this->vtable3 = &HouseTypeClass::`vftable'; /*0x5116bb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x5116c2*/
   v7 = this; /*0x5116d7*/
   v2 = (*(int (__thiscall **)(int *, int *))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
@@ -728,15 +728,11 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 namespace gamemd {
 int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseTypeClass::_vt07(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x512576*/
-    return -2147467261; /*0x512578*/
-  a2[1] = 0; /*0x512580*/
-  *a2 = 436; /*0x512587*/
-  return 0; /*0x51257d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  a2[1] = 0;
+  *a2 = 436;
+  return 0;
 }
 } // namespace gamemd
 
@@ -778,17 +774,13 @@ int __stdcall HouseTypeClass::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x512646*/
-    return -2147467261; /*0x512648*/
-  *a2 = 500447528; /*0x512656*/
-  a2[1] = 298976363; /*0x51265e*/
-  a2[2] = 1610654892; /*0x512667*/
-  a2[3] = -1252326136; /*0x512670*/
-  return 0; /*0x51264d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 500447528;
+  a2[1] = 298976363;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 
@@ -796,11 +788,7 @@ int __stdcall HouseTypeClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int HouseTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int HouseTypeClass::_vt12()
-{
-  return 432; /*0x512725*/
-}
+return 432;
 }
 } // namespace gamemd
 
@@ -820,11 +808,7 @@ unsigned int __thiscall HouseTypeClass::loadBuildLimits(Concurrency::details::Sc
 namespace gamemd {
 int HouseTypeClass::AddRef(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseTypeClass::_vt01(int a1)
-{
-  return 1; /*0x512745*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -832,17 +816,14 @@ int __stdcall HouseTypeClass::_vt01(int a1)
 namespace gamemd {
 int HouseTypeClass::Release(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseTypeClass::_vt02(int a1)
-{
-  return 1; /*0x512755*/
-}
+return 1;
 }
 } // namespace gamemd
 
 // 0x512760
 namespace gamemd {
 HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
+// 0x512750
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **Block, char a2)

@@ -132,17 +132,13 @@ LABEL_8:
 // 0x72A110
 int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TunnelLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x72a116*/
-    return -2147467261; /*0x72a118*/
-  *a2 = 1247291203; /*0x72a126*/
-  a2[1] = 298948665; /*0x72a12e*/
-  a2[2] = -1610610249; /*0x72a137*/
-  a2[3] = -777003740; /*0x72a140*/
-  return 0; /*0x72a11d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291203;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x72A150

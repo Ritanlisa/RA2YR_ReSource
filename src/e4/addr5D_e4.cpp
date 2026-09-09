@@ -98,11 +98,7 @@ void __thiscall j_DeleteAndZero(void **this)
 namespace gamemd {
 void nullsub_24()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_24()
-{
-  ; /*0x5d0590*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -865,11 +861,7 @@ int __thiscall sub_5D4F20(const char *this)
 namespace gamemd {
 void nullsub_192(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_192(int a1)
-{
-  ; /*0x5d5860*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2742,17 +2734,14 @@ int sub_5DAEE0()
 namespace gamemd {
 void nullsub_194()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_194()
-{
-  ; /*0x5daf10*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x5DAF20
 namespace gamemd {
 unsigned signed char sub_5DAF20()
+// 0x5daf10
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 sub_5DAF20()
@@ -3630,11 +3619,7 @@ LABEL_32:
 namespace gamemd {
 void nullsub_25()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_25()
-{
-  ; /*0x5dfdd0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -3642,11 +3627,7 @@ void __cdecl nullsub_25()
 namespace gamemd {
 void nullsub_26()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_26()
-{
-  ; /*0x5dfde0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -3654,11 +3635,7 @@ void __cdecl nullsub_26()
 namespace gamemd {
 void nullsub_27()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_27()
-{
-  ; /*0x5dfdf0*/
-}
+  ;
 }
 } // namespace gamemd
 

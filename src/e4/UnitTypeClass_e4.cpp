@@ -94,9 +94,9 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   this->FiringFrames = 0; /*0x7471b2*/
   *(_BYTE *)(this + 3678) = 0; /*0x7471b8*/
   *(_DWORD *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
-  this->MovementRestrictedTo = &UnitTypeClass::`vftable'; /*0x7471c5*/
-  this->HalfDamageSmokeLocation = &UnitTypeClass::`vftable'; /*0x7471cb*/
-  this->Strength = &UnitTypeClass::`vftable'; /*0x7471d2*/
+  this->vtable1 = &UnitTypeClass::`vftable'; /*0x7471c5*/
+  this->vtable2 = &UnitTypeClass::`vftable'; /*0x7471cb*/
+  this->vtable3 = &UnitTypeClass::`vftable'; /*0x7471d2*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = (HouseClass *)g_CrateCount; /*0x7471e8*/
@@ -520,17 +520,13 @@ int UnitTypeClass::_vt45()
 // 0x747F30
 int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall UnitTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x747f36*/
-    return -2147467261; /*0x747f38*/
-  *a2 = -591576342; /*0x747f46*/
-  a2[1] = 298976582; /*0x747f4e*/
-  a2[2] = 1610654892; /*0x747f57*/
-  a2[3] = -1252326136; /*0x747f60*/
-  return 0; /*0x747f3d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -591576342;
+  a2[1] = 298976582;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x747F70

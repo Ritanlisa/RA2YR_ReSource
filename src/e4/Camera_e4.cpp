@@ -21,29 +21,17 @@ __int64 Camera_UpdateTilt()
 // 0x58B7B0
 void Camera::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Camera::StubReturnFalse()
-{
-  ; /*0x58b7b0*/
-}
+  ;
 }
 
 // 0x58B7C0
 void Camera::StubReturnVoid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Camera::StubReturnVoid()
-{
-  ; /*0x58b7c0*/
-}
+  ;
 }
 
 // 0x6339A0
 void Camera::StubReturn()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Camera::StubReturn()
-{
-  ; /*0x6339a0*/
-}
+  ;
 }

@@ -242,11 +242,7 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 namespace gamemd {
 int HouseClass::vt_placeholder_02()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::vt_placeholder_02(TiberianSunClassFactory *this)
-{
-  return 0; /*0x4e8262*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1709,11 +1705,7 @@ BOOL __thiscall HouseClass::GainedPoweredCenter(_DWORD *this, int a2)
 namespace gamemd {
 int HouseClass::COMStub_Ret1_1(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VtableStub_RetOne(int a1)
-{
-  return 1; /*0x50e345*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -1721,23 +1713,16 @@ int __stdcall VtableStub_RetOne(int a1)
 namespace gamemd {
 int HouseClass::COMStub_Ret1_2(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VtableStub_RetOne_2(int a1)
-{
-  return 1; /*0x50e355*/
-}
+return 1;
 }
 } // namespace gamemd
 
 // 0x53A130
 namespace gamemd {
 char HouseClass::IonSensitivesShouldBeOffline()
+// 0x50e350
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ReturnFalse()
-{
-  return 0; /*0x53a132*/
-}
+return 0;
 }
 } // namespace gamemd
 

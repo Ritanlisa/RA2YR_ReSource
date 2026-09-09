@@ -52,11 +52,7 @@ void __cdecl sub_4200C0()
 namespace gamemd {
 Iostream_init * Iostream_init::Iostream_init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this)
-{
-  return this; /*0x420122*/
-}
+return this;
 }
 } // namespace gamemd
 
@@ -64,11 +60,7 @@ Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this)
 namespace gamemd {
 void nullsub_53()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_53()
-{
-  ; /*0x420130*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -188,11 +180,7 @@ _DWORD *__thiscall sub_4202F0(_DWORD *this, int a2)
 namespace gamemd {
 void nullsub_88()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_88()
-{
-  ; /*0x420360*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -946,17 +934,14 @@ int sub_421E80()
 namespace gamemd {
 void nullsub_89()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_89()
-{
-  ; /*0x423920*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x424CE0
 namespace gamemd {
 int ProductionCompletionCallback()
+// 0x423920
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Production completion callback (543B). Handles audio, special building anims, unit creation.
@@ -2581,17 +2566,14 @@ int __thiscall sub_429480(ApplicationClass *this)
 namespace gamemd {
 int sub_4294A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4294A0(ApplicationClass *this)
-{
-  return 0; /*0x4294a2*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x4294B0
 namespace gamemd {
 int sub_4294B0()
+// 0x4294a0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4294B0(ApplicationClass *this)
@@ -3077,11 +3059,7 @@ int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
 namespace gamemd {
 void nullsub_4()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_4()
-{
-  ; /*0x42abf0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4413,11 +4391,7 @@ int sub_42E620()
 namespace gamemd {
 char sub_42E6C0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_42E6C0(int a1)
-{
-  return 1; /*0x42e6c2*/
-}
+return 1;
 }
 } // namespace gamemd
 

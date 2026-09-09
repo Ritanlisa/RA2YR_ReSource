@@ -294,17 +294,13 @@ int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
 namespace gamemd {
 int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleSystemTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6447a6*/
-    return -2147467261; /*0x6447a8*/
-  *a2 = 1883112522; /*0x6447b6*/
-  a2[1] = 298979249; /*0x6447be*/
-  a2[2] = 1610642049; /*0x6447c7*/
-  a2[3] = -1252326136; /*0x6447d0*/
-  return 0; /*0x6447ad*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1883112522;
+  a2[1] = 298979249;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 
@@ -345,11 +341,7 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, O
 namespace gamemd {
 char ParticleSystemTypeClass::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ParticleSystemTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x644942*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -357,11 +349,7 @@ char __stdcall ParticleSystemTypeClass::_vt32(int a1, int a2)
 namespace gamemd {
 int ParticleSystemTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleSystemTypeClass::_vt35(int a1)
-{
-  return 0; /*0x644952*/
-}
+return 0;
 }
 } // namespace gamemd
 

@@ -3379,11 +3379,7 @@ DWORD __thiscall sub_5AE530(char **this, ObjectClass *aP1, ObjectClass *aP2)
 namespace gamemd {
 void nullsub_170(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_170(int a1)
-{
-  ; /*0x5ae570*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -3391,11 +3387,7 @@ void __stdcall nullsub_170(int a1)
 namespace gamemd {
 void nullsub_171(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_171(int a1)
-{
-  ; /*0x5ae580*/
-}
+  ;
 }
 } // namespace gamemd
 

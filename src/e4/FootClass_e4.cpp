@@ -7,11 +7,7 @@ namespace ra2 {
 namespace game {
 void FootClass::Stub(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall FootClass::Stub(int a1)
-{
-  ; /*0x41c120*/
-}
+  ;
 }
 } // namespace game
 } // namespace ra2
@@ -36,9 +32,9 @@ int __thiscall FootClass::Destruct(void *this)
 
   v2 = this->team; /*0x4d3597*/
   *(_DWORD *)this = &FootClass::`vftable'; /*0x4d359d*/
-  this->vfptr_1 = &FootClass::`vftable'; /*0x4d35a5*/
-  this->vfptr_2 = &FootClass::`vftable'; /*0x4d35ac*/
-  this->vfptr_3 = &FootClass::`vftable'; /*0x4d35b3*/
+  this->vtable1 = &FootClass::`vftable'; /*0x4d35a5*/
+  this->vtable2 = &FootClass::`vftable'; /*0x4d35ac*/
+  this->vtable3 = &FootClass::`vftable'; /*0x4d35b3*/
   if ( v2 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/

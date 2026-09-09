@@ -24,7 +24,7 @@
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
 > | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,416，completed=**39**（09-09 会话 +10：含 owner 修复 Is1x1AndUndeployable→BuildingTypeClass、SetFlag1752→SetPermanentBerzerk 语义改名、TechnoClass member_lookup 452-464 区修正、verifier 三处修复后回归 34 PASS/0 FAIL；IDA 离线轮全走缓存+debt）；批次仍卡 A1 命名/签名/vtable 审计三类前置债（见执行日志） |
 > | **E 全量落盘：定义+签名+类声明+全局变量** | ✅ **E0-E4 完成（2026-09-09 会话，提交 c70eb5cd + 重锚）** | v3 快照 19,088 函数 100%；E4 物化 14,576 无体函数（pending **3,416 → 17,992 真实总账**）；E3 声明 1,057；E2 类 289；E1 全局 882；偏移→OO 重写 1,869 处；TechnoClass 452-580 考古四源对齐（issue #19 挂剩余两争议区）；93 错类声明清偿回基线 3 normalized；auto-fill-baseline 重锚 c70eb5cd（重锚不清账）。E5 后台批量 verify 进行中；E6 常量收割 374 启动（首批 10/10 PASS） |
-> | **F 证据补全轮：偏移成员访问重写收尾** | ⬜ **计划就绪（2026-09-09 用户裁决，仅计划未执行）** | F1 owner 类修复（幽灵类 SuperClass/MPCooperative/Radar 裁决 ~530 命中 + House→HouseClass 别名归一 + VectorClass 布局补建）→ F2 偏移考古（ObjectClass 早区 ~200 命中 / SessionClass 大偏移 / 其余未名点，4,379 → ≤1,000）→ F3 字宽降级重写 → F4 重写器重跑 + 重锚。解锁 ~1,630 函数沉默群体（~9,889 次命中）。见「Phase F」节 |
+> | **F 证据补全轮：偏移成员访问重写收尾** | ✅ **已执行（2026-09-09 F 会话，提交 1eeb4bea + 重锚）** | rewritten **1,869 → 9,217**（4.9×）；F1 til 导入 247 新类 + 4,578 填洞 + 容器语义 138 实例（SuperClass/MPCooperative/Radar/MapClass/Network/RandomMap/EventClass/JumpjetLocomotion/WarheadTypeClass 等全部真身确认——非幽灵类，是 til 有 layouts 无的缺口）；F2 重写器升级（继承链走查 + member_types 嵌套子对象解析 + own 区段防污染 + til-pad 伪条目清除 175）；F3 w1/w2 load 截断形态；F4 refresh 模式（214 翻译记录字节级保留）+ E3 前向声明 bug 修复。验收：一致性 38/3=基线、注解 0 missing、括号 0 失衡。剩余 unmapped 6,202（争议区/占位类，A1/B4 输入） |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -352,13 +352,24 @@ F1 owner类修复 ──→ F2 偏移考古 ──→ F3 字宽降级 ──→ 
 
 ---
 
-## Phase F — 证据补全轮：偏移成员访问重写收尾（用户裁决 2026-09-09，本节仅计划、未执行）⬜
+## Phase F — 证据补全轮：偏移成员访问重写收尾（✅ 2026-09-09 F 会话已执行）
 
-**背景**：E4 物化时偏移→OO 语法重写只完成证据完备的 1,869 处；4,379 处「owner 在
-class_layouts 但（偏移，宽度）无具名成员」保持原始伪码（557 函数）；另有约 1,630 函数
-的 owner 类不在 class_layouts、重写器从未尝试（约 9,889 次命中，不计入 4,379）。
-本线目标：把两类缺证据清偿到接近天花板，使占位体的 OO 化率最大化——这是 A1 命名轮
-与 C 线翻译质量的直接输入。**执行顺序：F1 → F2 → F3 → F4。**
+**执行终态**（提交 1eeb4bea，auto-fill-baseline 重锚；详细日志见文末 F 会话节）：
+
+| 子项 | 计划 | 执行结果 |
+|---|---|---|
+| F1 owner 类修复 | 幽灵类考古 ~530 + 别名归一 ~200 + VectorClass 布局 ~229 | **考古结论反转**：所谓幽灵类（SuperClass/MPCooperative/Radar/MapClass/Network/DSurface/RandomMap/EventClass/...）全部是 til 真实结构（T14 时代声明），缺口仅在 class_layouts —— live IDA til 批量导出 427 结构 → **247 新类 + 4,578 填洞**；VectorClass 族经 `src/core/vector.hpp` ctor 验证布局赋容器语义名（Items@4/Capacity@8/IsInitialized@C/IsAllocated@D/Count@10）**138 实例**；AbstractClass 四 vtable（abstract.hpp ctor 注释证据）；AudioController 嵌入子对象 |
+| F2 偏移考古 | ObjectClass 早区 ~200 / SessionClass 大偏移 / 其余 → ≤1,000 | **机制突破替代逐点考古**：① 继承链走查（class_layouts parent 链，绝对偏移系）——ObjectClass 早区（+0x10~0x20 经 AbstractClass 链直达）等基区缺口自动清偿；② member_types ANCHORED 嵌套子对象解析（覆盖成员尺寸==类布局尺寸排除数组）——`ambientSoundController.AudioController_field_04` 形态；③ til-pad 伪条目清除 175（重复名铁证判据）+ own 区段防护（条目仅 [父类 size, 本类 size) 有效——TechnoTypeClass+4="IdleRate" 基区错位行不得污染链解析）；④ 非法标识符名过滤。**unmapped 4,379 → 6,202**（分母从 6,248 扩到 15,433：沉默 owner 全部入场后） |
+| F3 字宽降级 | w1/w2 → 已知 4B 成员，形态裁决 | **load-only 截断形态**：`(unsigned char)this->member`（store 上下文保持原始伪码——截断写丢高位） |
+| F4 重写器重跑 + 重锚 | 幂等重跑 | **refresh 模式**：214 已翻译 e4 记录字节级保留 + marker 块全量重生成；E3 前向声明 bug 修复（`class X;` fwd decl 匹配后 find("{") 落进下一类体——house.hpp StartingTechnoStruct 实证，曾插错 64 条声明）；E1/E2 并集合并 |
+
+**验收**：rewritten **9,217** / unmapped 6,202（诚实保留：争议区 + 占位类 + 真无名）；括号平衡 0 破坏；
+注解审计 8,771 matched / 0 missing / 0 mismatch；一致性 38 raw / 3 normalized（=既有基线）；
+保留块 214/214 字节一致。
+
+**遗留**（A1/B4 输入）：Type 类基区遗留错位行（424 个基区名被 own 区段防护旁路，未删——B4 字段级考古后清理）；
+SessionClass +0x2840 / TechnoTypeClass 中段 / issue #4 区（0x6E9/0x534 等 til pad 内无名）；
+mega-blob 家族（House/Scenario/Mission/Tactical 21-90K，til ≥4096B pad 截断防护已内置）。
 
 **F1. owner 类修复（解锁 ~1,630 函数沉默群体）**
 
@@ -1073,6 +1084,76 @@ file_class.hpp GetFileSize 0x7C8512 导入跳板注解删除（jmp __imp_* 字�
 issue #11d 清偿，声明保留）。signals.json 0x63BE10 completed=false 附 note。
 
 ---
+
+## 执行日志 — 2026-09-09 F 会话：Phase F 证据补全执行 + G1 机械收割波次
+
+### Phase F 执行（提交 1eeb4bea + 重锚）
+
+见「Phase F」节终态表。关键认知修正与工具：
+
+- **F1 考古结论反转**：路线图预设的「幽灵类考古」（SuperClass/MPCooperative/Radar）
+  实为 **til 真实结构 vs class_layouts 缺键**——live IDA `py_exec_file` 批量导出
+  427 结构（`.omo/export_til_layouts.py`），合并策略：新类全量导入 + 既有类填洞
+  （不覆盖既有名、不越既有 size）+ mega-blob 截断（til ≥4096B pad 起点截断，
+  House/Scenario/Mission/Tactical 21-90K 家族防护）。
+- **容器语义**（`src/core/vector.hpp` ctor 验证布局）：Items@4/Capacity@8/
+  IsInitialized@C(w1)/IsAllocated@D(w1)/Count@10——138 个模板实例全部获得语义名
+  （仅当 til 全部非 pad 成员为 field_* 占位时套用——TimerClass 等具名真类不受影响）。
+- **重写器三项升级**（gen_e4_materialize.py）：
+  1. 继承链走查（parent 链 + own 区段防护 [父size, 本size)，基区遗留错位行
+     TechnoTypeClass+4="IdleRate" 实证 424 个基区名被旁路）；
+  2. 嵌套子对象解析（member_types ANCHORED 类型 + 覆盖成员尺寸==类布局尺寸
+     排除数组——`ambientSoundController.AudioController_field_04` 形态）；
+  3. w1/w2 load-only 截断（`(unsigned char)this->M`；store 保持原始伪码）。
+- **til-pad 伪条目清除**：class_layouts 中「til 显式 pad 覆盖 + 名字与 til 别处
+  赋名重复」双重铁证判据删除 175 条（BuildingClass 0x118/0x11C/0x120 与
+  0x10C/0x110/0x114 重复名实证）。首版误用「pad 覆盖即删」过激判据（误删 1,320
+  条 Type 类基区有效映射）——从备份重建后改用双重铁证。
+- **E3 前向声明 bug**：类定位正则匹配 `class X;` fwd decl 后 `find("{")` 落进
+  下一类体（house.hpp:41 fwd → :67 StartingTechnoStruct），64 条声明插错类体；
+  修复 = 跳过行尾分号的声明行。一致性曾飙至 85 normalized，修复后回基线 3。
+- **refresh 模式**：`--phase refresh` 保留已翻译 e4 记录（块级提取 + 字节级回写 +
+  used_names 预播种防重名漂移 + E1/E2 并集合并）；验收 214/214 字节一致。
+
+### G1 机械收割（wave A-E）
+
+**收割器基础设施修复（E6 遗留 bug）**：`build_pending_index` 的 marker_line 在
+同文件多次 replace 后行号上移，旧收割器按陈旧行号读块 → 每文件只处理首个候选
+（E6 需两轮收割的根因）。新收割器（`.omo/e7_harvest*.py`）改为**地址注解行 →
+向下 marker → 现算括号平衡 span** 的漂移安全定位 + 每条目重读文件。
+
+| 波次 | 模式 | 结果 |
+|---|---|---|
+| A | `return <全局>;`（src 已声明） | 50 |
+| C | `return <常量>;`（E6 残留） | 174 |
+| P | `return aN;` 参数直通 | 2 |
+| B | `return [cast]this->语义成员;` | 门控 ida-naming 排除 field_ 系名 + free-form-this 防护后少量 |
+| E | 净化直排（≤8 语句；白名单词法：禁 v\d 局部/伪码类型名/调用/goto/循环/field_ 名；free-form 禁 this） | **298 marked / 31 reverted** |
+
+**wave E 事故与恢复**：首版 E 波漏了「自由形态函数（合成时 this 参数被丢弃）
+体内禁 this」防护——59 个无效翻译（`return *(this+3);` 形）混入；人工回滚脚本
+自身有顺序替换索引失效 bug 加剧损坏（19 文件括号失衡）→ 干净恢复路径：
+`git checkout HEAD -- src/e4` + signals 取消 400 个 G1 标记 + 白名单修复 +
+refresh#3 重跑 + 收割重放（脚本确定性）。终态 0 无效翻译残留。
+
+**门控语义确认**：单行体（`return 176;`）被 code-standards 的 stub 启发式 FAIL
+（"1 real line"）——按 E6 先例 + 用户裁决模式（提交 + 重锚吸收，重锚不清账）处理。
+
+**手动批次结论**：BuildingClass 批次维持 issue #4 延缓（CanBeSold/CalcDrawPos/
+CheckOverlap 全部卡 0x6E9/0x534 争议区 + 槽 97 声明缺失 + vtable 身份未定）；
+VectorClass mega 桶（1,562 pending）属 vtable 身份债（vector.hpp 已注明 IDA
+系统性误标 _vt06=GetItem 等）——**A1/A2 命名轮是 C 线提速前置**的判断再次实证。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| 偏移重写 | 1,869 rewritten / 4,379 unmapped | **9,215 / 6,204**（沉默 owner 全部入场） |
+| class_layouts | 1,033 类 | **1,281 类**（+247 til 导入 + 容器语义） |
+| MCP completed | 406 | **919**（+524 G1：A=50 / C=174 / P=2 / E=298；含 11 return-this CRT 与 59 free-form-this 无效体回滚后终态） |
+| 一致性 | 38/3 | 38/3（维持基线） |
+| auto-fill-baseline | c70eb5cd | F+G1 提交后重锚（本会话末） |
+| src/e4 翻译记录 | 214 | **798**（214 保留 + 584 G1 收割） |
 
 ## 执行日志 — 2026-09-09 会话（续）：Phase E 全量落盘执行 + E5/E6 启动
 

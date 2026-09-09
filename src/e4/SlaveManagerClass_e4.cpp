@@ -871,17 +871,13 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SlaveManagerClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6b1136*/
-    return -2147467261; /*0x6b1138*/
-  *a2 = 861581284; /*0x6b1146*/
-  a2[1] = 299183526; /*0x6b114e*/
-  a2[2] = 268444350; /*0x6b1157*/
-  a2[3] = 1822515787; /*0x6b1160*/
-  return 0; /*0x6b113d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 861581284;
+  a2[1] = 299183526;
+  a2[2] = 268444350;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

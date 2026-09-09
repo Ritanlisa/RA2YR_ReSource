@@ -2238,11 +2238,7 @@ LABEL_13:
 namespace gamemd {
 void nullsub_264()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_264()
-{
-  ; /*0x796b20*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -41,17 +41,13 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 // 0x4CFC80
 int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FlyLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4cfc86*/
-    return -2147467261; /*0x4cfc88*/
-  *a2 = 1247291206; /*0x4cfc96*/
-  a2[1] = 298948665; /*0x4cfc9e*/
-  a2[2] = -1610610249; /*0x4cfca7*/
-  a2[3] = -777003740; /*0x4cfcb0*/
-  return 0; /*0x4cfc8d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291206;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4CFCC0

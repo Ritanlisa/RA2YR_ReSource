@@ -345,9 +345,9 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   *(this + 423) = 1; /*0x511565*/
   *(this + 424) = 0; /*0x51156c*/
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x511572*/
-  this->WeaponType = &HouseTypeClass::`vftable'; /*0x511578*/
-  this->RechargeVoice = &HouseTypeClass::`vftable'; /*0x51157f*/
-  this->ChargingVoice = &HouseTypeClass::`vftable'; /*0x511586*/
+  this->vtable1 = &HouseTypeClass::`vftable'; /*0x511578*/
+  this->vtable2 = &HouseTypeClass::`vftable'; /*0x51157f*/
+  this->vtable3 = &HouseTypeClass::`vftable'; /*0x511586*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x51158d*/
   *(this + 416) = 0; /*0x511592*/
   v4 = g_SuperWeaponTypeArray; /*0x511598*/
@@ -472,9 +472,9 @@ int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass 
   this->Range = 0; /*0x6ce65a*/
   this->LineMultiplier = 0; /*0x6ce660*/
   *(_DWORD *)this = &SuperWeaponTypeClass::`vftable'; /*0x6ce666*/
-  this->WeaponType = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
-  this->RechargeVoice = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
-  this->ChargingVoice = &SuperWeaponTypeClass::`vftable'; /*0x6ce67a*/
+  this->vtable1 = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
+  this->vtable2 = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
+  this->vtable3 = &SuperWeaponTypeClass::`vftable'; /*0x6ce67a*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x6ce681*/
   this->ArrayIndex = *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[324]; /*0x6ce68c*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[324] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[316] /*0x6ce6c4*/
@@ -499,17 +499,13 @@ int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass 
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperWeaponTypeClass::SD_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6ce7c6*/
-    return -2147467261; /*0x6ce7c8*/
-  *a2 = 217234663; /*0x6ce7d6*/
-  a2[1] = 298989284; /*0x6ce7de*/
-  a2[2] = 1610668216; /*0x6ce7e7*/
-  a2[3] = -318126072; /*0x6ce7f0*/
-  return 0; /*0x6ce7cd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 217234663;
+  a2[1] = 298989284;
+  a2[2] = 1610668216;
+  a2[3] = -318126072;
+  return 0;
 }
 } // namespace gamemd
 

@@ -103,17 +103,13 @@ int __thiscall LightSourceClass::Stat(void *this, AbstractClass *aP1)
 // 0x555080
 int LightSourceClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall LightSourceClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x555086*/
-    return -2147467261; /*0x555088*/
-  *a2 = 1872513264; /*0x555096*/
-  a2[1] = 298979847; /*0x55509e*/
-  a2[2] = 1610642561; /*0x5550a7*/
-  a2[3] = -1252326136; /*0x5550b0*/
-  return 0; /*0x55508d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1872513264;
+  a2[1] = 298979847;
+  a2[2] = 1610642561;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x5550C0

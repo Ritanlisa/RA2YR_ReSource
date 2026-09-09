@@ -6,17 +6,13 @@
 namespace gamemd {
 int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ScriptTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x691d56*/
-    return -2147467261; /*0x691d58*/
-  *a2 = 1123264071; /*0x691d66*/
-  a2[1] = 298977161; /*0x691d6e*/
-  a2[2] = 1610655148; /*0x691d77*/
-  a2[3] = -1252326136; /*0x691d80*/
-  return 0; /*0x691d5d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1123264071;
+  a2[1] = 298977161;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

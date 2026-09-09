@@ -197,11 +197,7 @@ void __cdecl sub_4301C0()
 namespace gamemd {
 void nullsub_97(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_97(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-  ; /*0x430580*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -252,11 +248,7 @@ char __thiscall sub_4305E0(_BYTE *this, char a2)
 namespace gamemd {
 void nullsub_98()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_98()
-{
-  ; /*0x430600*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2144,17 +2136,14 @@ Iostream_init *__thiscall __0Iostream_init_QAE_XZ_1(Iostream_init *this)
 namespace gamemd {
 void nullsub_99()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_99()
-{
-  ; /*0x438e60*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x439480
 namespace gamemd {
 int sub_439480()
+// 0x438e60
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_439480()

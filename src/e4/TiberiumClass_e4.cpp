@@ -367,17 +367,13 @@ LABEL_19:
 namespace gamemd {
 int TiberiumClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TiberiumClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x721e46*/
-    return -2147467261; /*0x721e48*/
-  *a2 = -985803917; /*0x721e56*/
-  a2[1] = 298980638; /*0x721e5e*/
-  a2[2] = 1610642817; /*0x721e67*/
-  a2[3] = -1252326136; /*0x721e70*/
-  return 0; /*0x721e4d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -985803917;
+  a2[1] = 298980638;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

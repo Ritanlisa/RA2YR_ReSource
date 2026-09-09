@@ -96,11 +96,7 @@ char __thiscall sub_522540(_DWORD *this)
 namespace gamemd {
 void nullsub_146(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_146(int a1)
-{
-  ; /*0x522a50*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -337,11 +333,7 @@ int sub_523680()
 namespace gamemd {
 void nullsub_147()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_147()
-{
-  ; /*0x523c80*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1401,17 +1393,14 @@ char __usercall Init::Intro@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 namespace gamemd {
 void nullsub_18()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_18()
-{
-  ; /*0x52cb80*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x52CD70
 namespace gamemd {
 char InitRules()
+// 0x52cb80
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char InitRules()
@@ -1753,11 +1742,7 @@ INT_PTR __stdcall ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int *a4)
 namespace gamemd {
 void nullsub_148()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_148()
-{
-  ; /*0x52d610*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1765,11 +1750,7 @@ void nullsub_148()
 namespace gamemd {
 void nullsub_149()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_149()
-{
-  ; /*0x52d620*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1777,11 +1758,7 @@ void nullsub_149()
 namespace gamemd {
 void nullsub_150()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_150()
-{
-  ; /*0x52d630*/
-}
+  ;
 }
 } // namespace gamemd
 

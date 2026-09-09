@@ -155,17 +155,13 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
 // 0x75C640
 int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WalkLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x75c646*/
-    return -2147467261; /*0x75c648*/
-  *a2 = 1247291204; /*0x75c656*/
-  a2[1] = 298948665; /*0x75c65e*/
-  a2[2] = -1610610249; /*0x75c667*/
-  a2[3] = -777003740; /*0x75c670*/
-  return 0; /*0x75c64d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291204;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x75C680

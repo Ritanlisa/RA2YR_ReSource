@@ -8834,11 +8834,7 @@ int sprintf(char *const Buffer, ObjectClass *aP1, INIClass *aP2)
 namespace gamemd {
 void nullsub_268()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_268()
-{
-  ; /*0x7c8f5d*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -15124,11 +15120,7 @@ void __cdecl __noreturn fast_error_exit(DWORD NumberOfBytesWritten)
 namespace gamemd {
 void nullsub_269()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_269()
-{
-  ; /*0x7cd95f*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -15222,17 +15214,14 @@ void __cdecl _unlock(int a1)
 namespace gamemd {
 void nullsub_270()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_270()
-{
-  ; /*0x7cda82*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x7CDA90
 namespace gamemd {
 int strcmp(IUnknown * aP0, IUnknown * aP1)
+// 0x7cda82
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl strcmp(IUnknown *aP0, IUnknown *aP1)
@@ -16407,11 +16396,7 @@ unsigned int _setdefaultprecision()
 namespace gamemd {
 BOOL _ms_p5_test_fdiv()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL _ms_p5_test_fdiv()
-{
-  return 4195835.0 - 4195835.0 / 3145727.0 * 3145727.0 > 1.0; /*0x7ceaf9*/
-}
+  return 4195835.0 - 4195835.0 / 3145727.0 * 3145727.0 > 1.0;
 }
 } // namespace gamemd
 
@@ -16531,11 +16516,7 @@ char *__cdecl _cropzeros(char *a1)
 namespace gamemd {
 BOOL _positive(double * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __cdecl _positive(double *a1)
-{
-  return *a1 >= 0.0; /*0x7cebe4*/
-}
+  return *a1 >= 0.0;
 }
 } // namespace gamemd
 
@@ -16795,11 +16776,7 @@ void __cdecl _shift(const char *Src, int a2)
 namespace gamemd {
 void zerotoxdone()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void zerotoxdone()
-{
-  ; /*0x7cf037*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -16807,11 +16784,7 @@ void zerotoxdone()
 namespace gamemd {
 void expbigret()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void expbigret()
-{
-  ; /*0x7cf082*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -16902,11 +16875,7 @@ int __usercall isintTOS@<eax>(double a1@<st0>)
 namespace gamemd {
 void isintTOSret()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void isintTOSret()
-{
-  ; /*0x7cf116*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -17018,11 +16987,7 @@ long double __usercall _twoToTOS@<st0>(double a1@<st0>)
 namespace gamemd {
 void _load_CW()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void _load_CW()
-{
-  ; /*0x7cf3a5*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -17047,11 +17012,7 @@ double __fastcall _fload_withFB(int a1, _DWORD *a2)
 namespace gamemd {
 int expspecial(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl expspecial(int a1, int a2)
-{
-  return a2; /*0x7cf42d*/
-}
+return a2;
 }
 } // namespace gamemd
 

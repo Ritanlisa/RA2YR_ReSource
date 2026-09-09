@@ -6,11 +6,7 @@
 namespace gamemd {
 void nullsub_272()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_272()
-{
-  ; /*0x7e0000*/
-}
+  ;
 }
 } // namespace gamemd
 

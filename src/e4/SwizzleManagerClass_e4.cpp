@@ -19,21 +19,13 @@ int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerC
 // 0x6CF4D0
 int SwizzleManagerClass::Remove(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SwizzleManagerClass::_vt07(int a1, int a2, int a3)
-{
-  return -2147467263; /*0x6cf4d5*/
-}
+return -2147467263;
 }
 
 // 0x6CF4E0
 int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SwizzleManagerClass::_vt08(int a1, int a2, int a3, int a4)
-{
-  return -2147467263; /*0x6cf4e5*/
-}
+return -2147467263;
 }
 
 // 0x6CF4F0

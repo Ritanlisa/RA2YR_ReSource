@@ -577,12 +577,8 @@ __int64 sub_561880()
 namespace gamemd {
 int sub_5618B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5618B0()
-{
-  g_MapSeedState = 0; /*0x5618b2*/
-  return 0; /*0x5618be*/
-}
+  g_MapSeedState = 0;
+  return 0;
 }
 } // namespace gamemd
 
@@ -1079,11 +1075,7 @@ int __thiscall sub_56B250(int *this, int a2)
 namespace gamemd {
 void nullsub_167()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_167()
-{
-  ; /*0x56c500*/
-}
+  ;
 }
 } // namespace gamemd
 

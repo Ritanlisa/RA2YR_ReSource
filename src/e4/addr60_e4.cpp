@@ -3845,11 +3845,7 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
 namespace gamemd {
 void nullsub_31()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_31()
-{
-  ; /*0x60d440*/
-}
+  ;
 }
 } // namespace gamemd
 

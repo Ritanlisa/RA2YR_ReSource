@@ -97,17 +97,13 @@ int __thiscall WaypointPathClass::_vt13(int this, int a2)
 namespace gamemd {
 int WaypointPathClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WaypointPathClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x763c36*/
-    return -2147467261; /*0x763c38*/
-  *a2 = -147774022; /*0x763c46*/
-  a2[1] = 298979412; /*0x763c4e*/
-  a2[2] = 1610642049; /*0x763c57*/
-  a2[3] = -1252326136; /*0x763c60*/
-  return 0; /*0x763c3d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -147774022;
+  a2[1] = 298979412;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 
@@ -254,11 +250,7 @@ int __stdcall WaypointPathClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 namespace gamemd {
 int WaypointPathClass::StubReturn51()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaypointPathClass::_vt11()
-{
-  return 51; /*0x763e15*/
-}
+return 51;
 }
 } // namespace gamemd
 

@@ -210,11 +210,7 @@ int globalHelper_0E2050()
 namespace gamemd {
 char sub_6E21D0(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6E21D0(int a1, int a2, int a3, int a4)
-{
-  return 1; /*0x6e21d2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -776,11 +772,7 @@ char __thiscall sub_6E5290(_BYTE *this)
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_18()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_18(std::codecvt_base *this)
-{
-  return 1; /*0x6e57e0*/
-}
+return 1;
 }
 } // namespace gamemd
 

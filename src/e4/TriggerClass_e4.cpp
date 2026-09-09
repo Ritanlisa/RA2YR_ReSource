@@ -149,17 +149,13 @@ LABEL_16:
 namespace gamemd {
 int TriggerClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TriggerClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x726826*/
-    return -2147467261; /*0x726828*/
-  *a2 = -1070787184; /*0x726836*/
-  a2[1] = 298977834; /*0x72683e*/
-  a2[2] = 1610655660; /*0x726847*/
-  a2[3] = -1252326136; /*0x726850*/
-  return 0; /*0x72682d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1070787184;
+  a2[1] = 298977834;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

@@ -811,17 +811,13 @@ LABEL_22:
 // 0x4D27D0
 int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FoggedObjectClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4d27d6*/
-    return -2147467261; /*0x4d27d8*/
-  *a2 = 474417934; /*0x4d27e6*/
-  a2[1] = 299002327; /*0x4d27ee*/
-  a2[2] = 1610674872; /*0x4d27f7*/
-  a2[3] = -318126072; /*0x4d2800*/
-  return 0; /*0x4d27dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 474417934;
+  a2[1] = 299002327;
+  a2[2] = 1610674872;
+  a2[3] = -318126072;
+  return 0;
 }
 
 // 0x4D2810

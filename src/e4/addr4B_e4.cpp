@@ -318,11 +318,7 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
 namespace gamemd {
 void nullsub_118()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_118()
-{
-  ; /*0x4b4770*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -925,11 +921,7 @@ int sub_4B6990()
 namespace gamemd {
 void nullsub_126()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_126()
-{
-  ; /*0x4b69d0*/
-}
+  ;
 }
 } // namespace gamemd
 

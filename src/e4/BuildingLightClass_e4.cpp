@@ -6,17 +6,13 @@
 namespace gamemd {
 int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BuildingLightClass::SD_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x436916*/
-    return -2147467261; /*0x436918*/
-  *a2 = 1417814616; /*0x436926*/
-  a2[1] = 298965160; /*0x43692e*/
-  a2[2] = 1610638004; /*0x436937*/
-  a2[3] = 2041169559; /*0x436940*/
-  return 0; /*0x43691d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1417814616;
+  a2[1] = 298965160;
+  a2[2] = 1610638004;
+  a2[3] = 2041169559;
+  return 0;
 }
 } // namespace gamemd
 
@@ -36,11 +32,7 @@ int __stdcall BuildingLightClass::SD_vt06(TechnoTypeClass *aP0, int *a1, int aP2
 namespace gamemd {
 int BuildingLightClass::SD_vt30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BuildingLightClass::SD_vt30()
-{
-  return 3; /*0x4369f5*/
-}
+return 3;
 }
 } // namespace gamemd
 
@@ -158,11 +150,7 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
 namespace gamemd {
 int BuildingLightClass::SD_vt11()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BuildingLightClass::SD_vt11()
-{
-  return 19; /*0x4370b5*/
-}
+return 19;
 }
 } // namespace gamemd
 

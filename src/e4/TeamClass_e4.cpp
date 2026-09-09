@@ -2971,17 +2971,13 @@ int __stdcall TeamClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP
 namespace gamemd {
 int TeamClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TeamClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6ec566*/
-    return -2147467261; /*0x6ec568*/
-  *a2 = 237448655; /*0x6ec576*/
-  a2[1] = 298949647; /*0x6ec57e*/
-  a2[2] = -1610610249; /*0x6ec587*/
-  a2[3] = -777003740; /*0x6ec590*/
-  return 0; /*0x6ec56d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448655;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

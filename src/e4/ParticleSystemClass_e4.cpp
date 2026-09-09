@@ -92,11 +92,7 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 namespace gamemd {
 int ParticleSystemClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleSystemClass::_vt11()
-{
-  return 24; /*0x630215*/
-}
+return 24;
 }
 } // namespace gamemd
 

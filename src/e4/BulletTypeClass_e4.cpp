@@ -161,9 +161,9 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   *(this + 758) = 0; /*0x46bcda*/
   *(this + 759) = 0; /*0x46bce0*/
   *(_DWORD *)this = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  this->SubjectToWalls = &BulletTypeClass::`vftable'; /*0x46bcec*/
-  this->Dropping = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  this->Ranged = &BulletTypeClass::`vftable'; /*0x46bcf9*/
+  this->vtable1 = &BulletTypeClass::`vftable'; /*0x46bcec*/
+  this->vtable2 = &BulletTypeClass::`vftable'; /*0x46bcf2*/
+  this->vtable3 = &BulletTypeClass::`vftable'; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x46bd00*/
   *(this + 564) = 1; /*0x46bd05*/
   *(this + 559) = 1; /*0x46bd0c*/
@@ -620,17 +620,13 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTyp
 // 0x46C750
 int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x46c756*/
-    return -2147467261; /*0x46c758*/
-  *a2 = 1525862007; /*0x46c766*/
-  a2[1] = 298976820; /*0x46c76e*/
-  a2[2] = 1610654892; /*0x46c777*/
-  a2[3] = -1252326136; /*0x46c780*/
-  return 0; /*0x46c75d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862007;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x46C820
@@ -651,21 +647,13 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // 0x46C870
 char BulletTypeClass::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall BulletTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x46c872*/
-}
+return 0;
 }
 
 // 0x46C880
 int BulletTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletTypeClass::_vt35(int a1)
-{
-  return 0; /*0x46c882*/
-}
+return 0;
 }
 
 // 0x46C890

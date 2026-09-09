@@ -467,17 +467,13 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
 namespace gamemd {
 int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VoxelAnimTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x74b7d6*/
-    return -2147467261; /*0x74b7d8*/
-  *a2 = 784035174; /*0x74b7e6*/
-  a2[1] = 298978637; /*0x74b7ee*/
-  a2[2] = 1610642049; /*0x74b7f7*/
-  a2[3] = -1252326136; /*0x74b800*/
-  return 0; /*0x74b7dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 784035174;
+  a2[1] = 298978637;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 
@@ -571,11 +567,7 @@ __int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP
 namespace gamemd {
 int VoxelAnimTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VoxelAnimTypeClass::_vt12()
-{
-  return 776; /*0x74ba05*/
-}
+return 776;
 }
 } // namespace gamemd
 
@@ -583,11 +575,7 @@ int VoxelAnimTypeClass::_vt12()
 namespace gamemd {
 char VoxelAnimTypeClass::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall VoxelAnimTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x74ba12*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -595,17 +583,14 @@ char __stdcall VoxelAnimTypeClass::_vt32(int a1, int a2)
 namespace gamemd {
 int VoxelAnimTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VoxelAnimTypeClass::_vt35(int a1)
-{
-  return 0; /*0x74ba22*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x74BA30
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
+// 0x74ba20
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)

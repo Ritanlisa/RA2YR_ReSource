@@ -24,9 +24,9 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
   *(_BYTE *)(this + 3597) = 0; /*0x41c8f4*/
   *(_BYTE *)(this + 3598) = 0; /*0x41c8fa*/
   *(_DWORD *)this = &AircraftTypeClass::`vftable'; /*0x41c900*/
-  this->Carryall = &AircraftTypeClass::`vftable'; /*0x41c906*/
-  this->Trailer = &AircraftTypeClass::`vftable'; /*0x41c90c*/
-  this->SpawnDelay = &AircraftTypeClass::`vftable'; /*0x41c913*/
+  this->vtable1 = &AircraftTypeClass::`vftable'; /*0x41c906*/
+  this->vtable2 = &AircraftTypeClass::`vftable'; /*0x41c90c*/
+  this->vtable3 = &AircraftTypeClass::`vftable'; /*0x41c913*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x41c91a*/
   v3 = MEMORY[0xA8B228]; /*0x41c91f*/
   if ( (int)MEMORY[0xA8B228] < MEMORY[0xA8B220] /*0x41c95d*/
@@ -250,37 +250,25 @@ int __stdcall AircraftTypeClass::SaveToINI(void *a0, TechnoTypeClass *aP1, int a
 // 0x41CEB0
 int AircraftTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AircraftTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x41ceb6*/
-    return -2147467261; /*0x41ceb8*/
-  *a2 = -1366608935; /*0x41cec6*/
-  a2[1] = 298976796; /*0x41cece*/
-  a2[2] = 1610654892; /*0x41ced7*/
-  a2[3] = -1252326136; /*0x41cee0*/
-  return 0; /*0x41cebd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608935;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x41CFB0
 int AircraftTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AircraftTypeClass::_vt11()
-{
-  return 3; /*0x41cfb5*/
-}
+return 3;
 }
 
 // 0x41CFC0
 int AircraftTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AircraftTypeClass::_vt12()
-{
-  return 3600; /*0x41cfc5*/
-}
+return 3600;
 }
 
 // 0x41CFD0

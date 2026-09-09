@@ -40,11 +40,7 @@ namespace ra2 {
 namespace game {
 int IPersistStream::IsDirty(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPersistStream::_vt64(int a1, int a2)
-{
-  return 0; /*0x7099d2*/
-}
+return 0;
 }
 } // namespace game
 } // namespace ra2
@@ -54,11 +50,7 @@ namespace ra2 {
 namespace game {
 void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall IPersistStream::Stub(BuildingTypeClass *aP0, int a2)
-{
-  ; /*0x709a30*/
-}
+  ;
 }
 } // namespace game
 } // namespace ra2

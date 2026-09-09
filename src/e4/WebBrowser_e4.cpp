@@ -192,11 +192,7 @@ int __thiscall WebBrowser::_vt05(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt06(WebBrowser *this)
-{
-  return 0; /*0x773b42*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -204,11 +200,7 @@ int __thiscall WebBrowser::_vt06(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::SetSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt07(WebBrowser *this)
-{
-  return 0; /*0x773b52*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -216,23 +208,16 @@ int __thiscall WebBrowser::_vt07(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::CopyTo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt08(WebBrowser *this)
-{
-  return 0; /*0x773b62*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x773B70
 namespace gamemd {
 int WebBrowser::Commit()
+// 0x773b60
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt09(WebBrowser *this)
-{
-  return 0; /*0x773b72*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -240,11 +225,7 @@ int __thiscall WebBrowser::_vt09(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::Revert()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt10(WebBrowser *this)
-{
-  return 0; /*0x773b82*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -252,11 +233,7 @@ int __thiscall WebBrowser::_vt10(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::LockRegion()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt11(WebBrowser *this)
-{
-  return 0; /*0x773b92*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -264,15 +241,11 @@ int __thiscall WebBrowser::_vt11(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::UnlockRegion()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt12(WebBrowser *this)
-{
-  return -2147467259; /*0x773ba5*/
-}
+return -2147467259;
 }
 } // namespace gamemd
 
-// 0x773BB0
+// 0x773bb0
 namespace gamemd {
 int WebBrowser::Stat()
 {

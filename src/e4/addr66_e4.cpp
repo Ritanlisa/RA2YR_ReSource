@@ -692,11 +692,7 @@ char UpdateBullets(int a1)
 namespace gamemd {
 void nullsub_224(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_224(int a1)
-{
-  ; /*0x6633c0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1188,11 +1184,7 @@ LABEL_11:
 namespace gamemd {
 void nullsub_33()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_33()
-{
-  ; /*0x664380*/
-}
+  ;
 }
 } // namespace gamemd
 

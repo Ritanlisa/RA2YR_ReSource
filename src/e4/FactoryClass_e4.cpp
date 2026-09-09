@@ -281,17 +281,13 @@ int __thiscall FactoryClass::GetBuildTimeFrames(_DWORD *this)
 namespace gamemd {
 int FactoryClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FactoryClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4ca236*/
-    return -2147467261; /*0x4ca238*/
-  *a2 = 887937448; /*0x4ca246*/
-  a2[1] = 298977968; /*0x4ca24e*/
-  a2[2] = 1610655660; /*0x4ca257*/
-  a2[3] = -1252326136; /*0x4ca260*/
-  return 0; /*0x4ca23d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 887937448;
+  a2[1] = 298977968;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

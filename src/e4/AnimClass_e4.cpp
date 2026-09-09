@@ -854,17 +854,13 @@ char __stdcall AnimClass::_vt61(_DWORD *a1)
 namespace gamemd {
 int AnimClass::MissionStubReturnZero2(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AnimClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x426546*/
-    return -2147467261; /*0x426548*/
-  *a2 = 237448643; /*0x426556*/
-  a2[1] = 298949647; /*0x42655e*/
-  a2[2] = -1610610249; /*0x426567*/
-  a2[3] = -777003740; /*0x426570*/
-  return 0; /*0x42654d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448643;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

@@ -294,17 +294,13 @@ int __stdcall ParticleClass::CheckCollisionFlags(TechnoTypeClass *aP0, int *a1, 
 namespace gamemd {
 int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x62d936*/
-    return -2147467261; /*0x62d938*/
-  *a2 = 237448652; /*0x62d946*/
-  a2[1] = 298949647; /*0x62d94e*/
-  a2[2] = -1610610249; /*0x62d957*/
-  a2[3] = -777003740; /*0x62d960*/
-  return 0; /*0x62d93d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448652;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 
@@ -312,11 +308,7 @@ int __stdcall ParticleClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int ParticleClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleClass::_vt11()
-{
-  return 22; /*0x62d985*/
-}
+return 22;
 }
 } // namespace gamemd
 

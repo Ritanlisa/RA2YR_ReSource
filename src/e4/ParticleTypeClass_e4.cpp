@@ -785,11 +785,7 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 namespace gamemd {
 char ParticleTypeClass::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ParticleTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x645932*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -797,11 +793,7 @@ char __stdcall ParticleTypeClass::_vt32(int a1, int a2)
 namespace gamemd {
 int ParticleTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleTypeClass::_vt35(int a1)
-{
-  return 0; /*0x645942*/
-}
+return 0;
 }
 } // namespace gamemd
 

@@ -102,17 +102,13 @@ int __stdcall IsometricTileTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectType
 // 0x549D90
 int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IsometricTileTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x549d96*/
-    return -2147467261; /*0x549d98*/
-  *a2 = 1525862010; /*0x549da6*/
-  a2[1] = 298976820; /*0x549dae*/
-  a2[2] = 1610654892; /*0x549db7*/
-  a2[3] = -1252326136; /*0x549dc0*/
-  return 0; /*0x549d9d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862010;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x549DD0

@@ -1429,11 +1429,7 @@ int sub_4796E0()
 namespace gamemd {
 void nullsub_109()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_109()
-{
-  ; /*0x479700*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1441,11 +1437,7 @@ void __cdecl nullsub_109()
 namespace gamemd {
 void nullsub_110()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_110()
-{
-  ; /*0x479730*/
-}
+  ;
 }
 } // namespace gamemd
 

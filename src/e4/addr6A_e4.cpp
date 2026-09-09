@@ -60,11 +60,7 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 namespace gamemd {
 void nullsub_230()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_230()
-{
-  ; /*0x6a3da0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -693,11 +689,7 @@ void __cdecl sub_6A4E10()
 namespace gamemd {
 void nullsub_36(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_36(IUnknown *aP0)
-{
-  ; /*0x6a4ff0*/
-}
+  ;
 }
 } // namespace gamemd
 

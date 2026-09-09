@@ -3152,11 +3152,7 @@ char __thiscall MPCooperative::sub_5C4E90(
 namespace gamemd {
 char MPCooperative::assignResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::assignResources(std::codecvt_base *this)
-{
-  return 1; /*0x5c4ee2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -3164,11 +3160,7 @@ char __thiscall MPCooperative::assignResources(std::codecvt_base *this)
 namespace gamemd {
 char MPCooperative::setUpAlliances()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::setUpAlliances(std::codecvt_base *this)
-{
-  return 1; /*0x5c4ef2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -3176,17 +3168,14 @@ char __thiscall MPCooperative::setUpAlliances(std::codecvt_base *this)
 namespace gamemd {
 char MPCooperative::initTurnOrder()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char MPCooperative::sub_5C4F00()
-{
-  return 0; /*0x5c4f02*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x5C4F10
 namespace gamemd {
 int MPCooperative_QueryInterface()
+// 0x5c4f00
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -3877,11 +3866,7 @@ _DWORD *__thiscall sub_5C59E0(_DWORD *this, int a2, int a3)
 namespace gamemd {
 char MPCooperative::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char MPCooperative::_vt16()
-{
-  return 0; /*0x5d6362*/
-}
+return 0;
 }
 } // namespace gamemd
 

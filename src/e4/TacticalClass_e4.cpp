@@ -6,11 +6,7 @@
 namespace gamemd {
 void TacticalClass::StubReturnTrue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass::StubReturnTrue()
-{
-  ; /*0x41b900*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -18,11 +14,7 @@ void TacticalClass::StubReturnTrue()
 namespace gamemd {
 int TacticalClass::StubReturnFalse3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetZero_1()
-{
-  return 0; /*0x41bf12*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -30,11 +22,7 @@ int NullStub_RetZero_1()
 namespace gamemd {
 int TacticalClass::StubReturnFalse4()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetZero_2()
-{
-  return 0; /*0x41bf22*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -71,23 +59,16 @@ int __thiscall TacticalClass::StubReturnFalse6(#377 *this)
 namespace gamemd {
 char TacticalClass::StubReturnFalse7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char NullStub_RetFalse_3()
-{
-  return 0; /*0x41bfb2*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x41BFC0
 namespace gamemd {
 int TacticalClass::StubReturnFalse8()
+// 0x41bfb0
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetZero_3()
-{
-  return 0; /*0x41bfc2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -95,11 +76,7 @@ int NullStub_RetZero_3()
 namespace gamemd {
 int TacticalClass::StubReturnFalse9()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetZero_4()
-{
-  return 0; /*0x41bfd2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -107,11 +84,7 @@ int NullStub_RetZero_4()
 namespace gamemd {
 void TacticalClass::StubReturnTrue2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass::StubReturnTrue2()
-{
-  ; /*0x41c000*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1908,11 +1881,7 @@ LABEL_44:
 namespace gamemd {
 char TacticalClass::StubReturnFalse11()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char VtableStub_RetZero_eax_36()
-{
-  return 0; /*0x701192*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1920,17 +1889,14 @@ char VtableStub_RetZero_eax_36()
 namespace gamemd {
 void TacticalClass::StubReturnTrue3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass::StubReturnTrue3()
-{
-  ; /*0x70d980*/
-}
+  ;
 }
 } // namespace gamemd
 
-// 0x70F0B0
+// 0x70f0b0
 namespace gamemd {
 int TacticalClass::MapSpecialDrawMode(MouseClass * aP1)
+// 0x70d980
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::MapSpecialDrawMode(void *this, MouseClass *aP1)

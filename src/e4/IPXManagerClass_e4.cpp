@@ -147,11 +147,7 @@ int __thiscall IPXManagerClass::_vt03(int this, int a2, int a3, _DWORD *a4)
 // 0x543040
 void IPXManagerClass::StubReturnFalse(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall IPXManagerClass::StubReturnFalse(int a1, int a2)
-{
-  ; /*0x543040*/
-}
+  ;
 }
 
 // 0x5430E0

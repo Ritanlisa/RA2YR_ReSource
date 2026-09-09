@@ -2776,11 +2776,7 @@ char __thiscall sub_736C10(_DWORD *this)
 namespace gamemd {
 void nullsub_248()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_248()
-{
-  ; /*0x7393b0*/
-}
+  ;
 }
 } // namespace gamemd
 

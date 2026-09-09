@@ -17,11 +17,7 @@ _DWORD *__thiscall sub_537F10(_DWORD *this)
 // 0x537F20
 char * DeleteCommandClass::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *DeleteCommandClass::_vt01()
-{
-  return aDelete; /*0x537f25*/
-}
+return aDelete;
 }
 
 // 0x537F30

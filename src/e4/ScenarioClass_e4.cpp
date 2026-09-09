@@ -68,11 +68,7 @@ void *ScenarioClass_CopyStartPositions()
 namespace gamemd {
 char ScenarioClass::StubReturnFalse2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ScenarioClass::_vt2()
-{
-  return 0; /*0x5c0e42*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -80,11 +76,7 @@ char ScenarioClass::_vt2()
 namespace gamemd {
 char ScenarioClass::StubReturnFalse3(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ScenarioClass::_vt3(int a1)
-{
-  return 1; /*0x5c0e52*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -92,11 +84,7 @@ char __stdcall ScenarioClass::_vt3(int a1)
 namespace gamemd {
 void ScenarioClass::StubReturnTrue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue()
-{
-  ; /*0x5c0e60*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -104,11 +92,7 @@ void ScenarioClass::StubReturnTrue()
 namespace gamemd {
 void ScenarioClass::StubReturnTrue2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue2()
-{
-  ; /*0x5c0e70*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -116,11 +100,7 @@ void ScenarioClass::StubReturnTrue2()
 namespace gamemd {
 void ScenarioClass::StubReturnFalse4(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall ScenarioClass::StubReturnFalse4(int a1)
-{
-  ; /*0x5c0e80*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -128,23 +108,16 @@ void __stdcall ScenarioClass::StubReturnFalse4(int a1)
 namespace gamemd {
 char ScenarioClass::StubReturnFalse5(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ScenarioClass::_vt23(int a1, int a2, int a3)
-{
-  return 1; /*0x5c0ed2*/
-}
+return 1;
 }
 } // namespace gamemd
 
 // 0x5C0EE0
 namespace gamemd {
 char ScenarioClass::initTriggers()
+// 0x5c0ed0
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::initTriggers(std::codecvt_base *this)
-{
-  return 1; /*0x5c0ee2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -152,11 +125,7 @@ char __thiscall ScenarioClass::initTriggers(std::codecvt_base *this)
 namespace gamemd {
 void ScenarioClass::StubReturnFalse6(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall ScenarioClass::StubReturnFalse6(int a1, int a2)
-{
-  ; /*0x5c0ef0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -164,11 +133,7 @@ void __stdcall ScenarioClass::StubReturnFalse6(int a1, int a2)
 namespace gamemd {
 void ScenarioClass::StubReturnFalse7(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall ScenarioClass::StubReturnFalse7(int a1)
-{
-  ; /*0x5c0f00*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -176,11 +141,7 @@ void __stdcall ScenarioClass::StubReturnFalse7(int a1)
 namespace gamemd {
 void ScenarioClass::StubReturnTrue3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue3()
-{
-  ; /*0x5c0f10*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -188,11 +149,7 @@ void ScenarioClass::StubReturnTrue3()
 namespace gamemd {
 void ScenarioClass::StubReturnTrue4()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue4()
-{
-  ; /*0x5c0f20*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -200,11 +157,7 @@ void ScenarioClass::StubReturnTrue4()
 namespace gamemd {
 int ScenarioClass::initTeams()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScenarioClass::initTeams()
-{
-  return -1; /*0x5c0f33*/
-}
+return -1;
 }
 } // namespace gamemd
 
@@ -212,11 +165,7 @@ int ScenarioClass::initTeams()
 namespace gamemd {
 void ScenarioClass::StubReturnTrue5()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue5()
-{
-  ; /*0x5c0f40*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -224,11 +173,7 @@ void ScenarioClass::StubReturnTrue5()
 namespace gamemd {
 void ScenarioClass::StubReturnFalse8(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall ScenarioClass::StubReturnFalse8(int a1)
-{
-  ; /*0x5c0f50*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -236,11 +181,7 @@ void __stdcall ScenarioClass::StubReturnFalse8(int a1)
 namespace gamemd {
 void ScenarioClass::StubReturnFalse9(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall ScenarioClass::StubReturnFalse9(int a1)
-{
-  ; /*0x5c0f60*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -248,11 +189,7 @@ void __stdcall ScenarioClass::StubReturnFalse9(int a1)
 namespace gamemd {
 char ScenarioClass::StubReturnFalse10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ScenarioClass::_vt42()
-{
-  return 0; /*0x5c0f72*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -260,15 +197,11 @@ char ScenarioClass::_vt42()
 namespace gamemd {
 void ScenarioClass::StubReturnTrue6()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue6()
-{
-  ; /*0x5c0f80*/
-}
+  ;
 }
 } // namespace gamemd
 
-// 0x5C0F90
+// 0x5c0f90
 namespace gamemd {
 void ScenarioClass::StubReturnTrue7()
 {
@@ -284,11 +217,7 @@ void ScenarioClass::StubReturnTrue7()
 namespace gamemd {
 int ScenarioClass::StubReturnFalse11()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScenarioClass::_vt46()
-{
-  return 0; /*0x5c0fc2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -296,11 +225,7 @@ int ScenarioClass::_vt46()
 namespace gamemd {
 char ScenarioClass::initWaypoints()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::initWaypoints(std::codecvt_base *this)
-{
-  return 1; /*0x5c0fd2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -308,11 +233,7 @@ char __thiscall ScenarioClass::initWaypoints(std::codecvt_base *this)
 namespace gamemd {
 char ScenarioClass::processTriggerEvents()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::processTriggerEvents(FreeForAll *this)
-{
-  return 1; /*0x5c5e32*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -509,11 +430,7 @@ MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *Block, char a2)
 namespace gamemd {
 int ScenarioClass::MissionStubReturnZero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VtableStub_RetNegTwo()
-{
-  return -2; /*0x5d5db5*/
-}
+return -2;
 }
 } // namespace gamemd
 
@@ -521,11 +438,7 @@ int VtableStub_RetNegTwo()
 namespace gamemd {
 char ScenarioClass::MissionStubReturnZero2(MPCooperative * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ScenarioClass::MissionStubReturnZero2(MPCooperative *aP0)
-{
-  return 1; /*0x5d6312*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -533,11 +446,7 @@ char __stdcall ScenarioClass::MissionStubReturnZero2(MPCooperative *aP0)
 namespace gamemd {
 char ScenarioClass::saveGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::saveGame(std::codecvt_base *this)
-{
-  return 1; /*0x5d6322*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -545,11 +454,7 @@ char __thiscall ScenarioClass::saveGame(std::codecvt_base *this)
 namespace gamemd {
 char ScenarioClass::loadGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::loadGame(std::codecvt_base *this)
-{
-  return 1; /*0x5d6332*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -557,11 +462,7 @@ char __thiscall ScenarioClass::loadGame(std::codecvt_base *this)
 namespace gamemd {
 char ScenarioClass::createStartingForces()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::createStartingForces(std::codecvt_base *this)
-{
-  return 1; /*0x5d6342*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -611,11 +512,7 @@ char ScenarioClass_ClearFlag()
 namespace gamemd {
 char ScenarioClass::MissionStubReturnZero4(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ScenarioClass::_vt7(int a1)
-{
-  return 1; /*0x5d67a2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -659,15 +556,11 @@ char __stdcall ScenarioClass_AssignStartPositions(char a1)
 namespace gamemd {
 char ScenarioClass::processAI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::processAI(std::codecvt_base *this)
-{
-  return 1; /*0x5d7572*/
-}
+return 1;
 }
 } // namespace gamemd
 
-// 0x5D80B0
+// 0x5d80b0
 namespace gamemd {
 void ScenarioClass::sub_5D80B0()
 {

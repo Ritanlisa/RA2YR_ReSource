@@ -6,17 +6,13 @@
 namespace gamemd {
 int ScriptClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ScriptClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6915f6*/
-    return -2147467261; /*0x6915f8*/
-  *a2 = 1123264070; /*0x691606*/
-  a2[1] = 298977161; /*0x69160e*/
-  a2[2] = 1610655148; /*0x691617*/
-  a2[3] = -1252326136; /*0x691620*/
-  return 0; /*0x6915fd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1123264070;
+  a2[1] = 298977161;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

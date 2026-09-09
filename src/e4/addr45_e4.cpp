@@ -6,11 +6,7 @@
 namespace gamemd {
 void nullsub_101()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_101()
-{
-  ; /*0x4503e0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -417,11 +413,7 @@ int sub_452D40()
 namespace gamemd {
 void nullsub_5()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_5()
-{
-  ; /*0x454ce0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -491,17 +483,14 @@ _DWORD *__fastcall sub_455DD0(int a1, _DWORD *a2)
 namespace gamemd {
 void nullsub_103()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_103()
-{
-  ; /*0x456970*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x456980
 namespace gamemd {
 int DrawTechnoDeployCircle()
+// 0x456970
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DrawTechnoDeployCircle(
@@ -1078,11 +1067,7 @@ int __thiscall sub_45DD50(void *this)
 namespace gamemd {
 void nullsub_6()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_6()
-{
-  ; /*0x45e750*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1157,10 +1142,6 @@ char sub_45E8F0()
 namespace gamemd {
 void nullsub_107()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_107()
-{
-  ; /*0x45ec80*/
-}
+  ;
 }
 } // namespace gamemd

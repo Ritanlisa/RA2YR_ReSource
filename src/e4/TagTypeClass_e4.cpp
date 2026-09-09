@@ -268,17 +268,13 @@ LABEL_6:
 namespace gamemd {
 int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TagTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6e63a6*/
-    return -2147467261; /*0x6e63a8*/
-  *a2 = 1425466419; /*0x6e63b6*/
-  a2[1] = 298977773; /*0x6e63be*/
-  a2[2] = 1610655148; /*0x6e63c7*/
-  a2[3] = -1252326136; /*0x6e63d0*/
-  return 0; /*0x6e63ad*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1425466419;
+  a2[1] = 298977773;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

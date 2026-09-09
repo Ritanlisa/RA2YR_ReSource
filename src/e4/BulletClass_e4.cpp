@@ -178,17 +178,13 @@ LONG __stdcall BulletClass::_vt02(volatile LONG *a1)
 namespace gamemd {
 int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x46b566*/
-    return -2147467261; /*0x46b568*/
-  *a2 = 237448649; /*0x46b576*/
-  a2[1] = 298949647; /*0x46b57e*/
-  a2[2] = -1610610249; /*0x46b587*/
-  a2[3] = -777003740; /*0x46b590*/
-  return 0; /*0x46b56d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448649;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

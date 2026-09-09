@@ -51,11 +51,7 @@ int __fastcall sub_401190(int a1, int a2)
 namespace gamemd {
 int sub_4011B0(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_4011B0(_DWORD *a1, int a2)
-{
-  return *a1 + 36 * a2; /*0x4011b8*/
-}
+  return *a1 + 36 * a2;
 }
 } // namespace gamemd
 
@@ -4153,11 +4149,7 @@ int __fastcall sub_408500(int a1, _DWORD *a2)
 namespace gamemd {
 void nullsub_2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_2()
-{
-  ; /*0x408530*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -7002,23 +6994,16 @@ void __cdecl sub_40D220()
 namespace gamemd {
 void nullsub_56()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall nullsub_56(void *this)
-{
-  ; /*0x40d260*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x40D300
 namespace gamemd {
 void nullsub_57()
+// 0x40d260
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_57()
-{
-  ; /*0x40d300*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -8522,11 +8507,7 @@ int sub_40EB50()
 namespace gamemd {
 void nullsub_59()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_59()
-{
-  ; /*0x40eb80*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -8576,11 +8557,7 @@ int sub_40EBD0()
 namespace gamemd {
 void nullsub_60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_60()
-{
-  ; /*0x40ec00*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -8851,11 +8828,7 @@ int sub_40F220()
 namespace gamemd {
 void nullsub_61()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_61()
-{
-  ; /*0x40f240*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -8863,11 +8836,7 @@ void nullsub_61()
 namespace gamemd {
 void nullsub_62()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_62()
-{
-  ; /*0x40f250*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -8875,11 +8844,7 @@ void nullsub_62()
 namespace gamemd {
 void nullsub_63()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_63()
-{
-  ; /*0x40f260*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -9357,11 +9322,7 @@ int sub_40FF10()
 namespace gamemd {
 void nullsub_64()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_64()
-{
-  ; /*0x40ff30*/
-}
+  ;
 }
 } // namespace gamemd
 

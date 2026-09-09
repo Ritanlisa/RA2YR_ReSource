@@ -195,17 +195,13 @@ int __stdcall WaveClass::_vt06(int *a1, int *a2, int a3)
 namespace gamemd {
 int WaveClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WaveClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x75f846*/
-    return -2147467261; /*0x75f848*/
-  *a2 = 237448653; /*0x75f856*/
-  a2[1] = 298949647; /*0x75f85e*/
-  a2[2] = -1610610249; /*0x75f867*/
-  a2[3] = -777003740; /*0x75f870*/
-  return 0; /*0x75f84d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448653;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 
@@ -213,11 +209,7 @@ int __stdcall WaveClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int WaveClass::CheckStateFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaveClass::_vt30()
-{
-  return 3; /*0x75f895*/
-}
+return 3;
 }
 } // namespace gamemd
 
@@ -225,11 +217,7 @@ int WaveClass::_vt30()
 namespace gamemd {
 int WaveClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaveClass::_vt34()
-{
-  return 0; /*0x75f8a2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -237,17 +225,14 @@ int WaveClass::_vt34()
 namespace gamemd {
 int WaveClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaveClass::_vt11()
-{
-  return 43; /*0x7631f5*/
-}
+return 43;
 }
 } // namespace gamemd
 
 // 0x763200
 namespace gamemd {
 WaveClass * WaveClass::ddtor(void ** Block, char a2)
+// 0x7631f0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)

@@ -662,9 +662,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   *((_DWORD *)this + 883) = 0; /*0x71167a*/
   *((_DWORD *)this + 892) = 0; /*0x711680*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
-  this->IdleRate = &TechnoTypeClass::`vftable'; /*0x71168c*/
-  this->VeteranAbilities = &TechnoTypeClass::`vftable'; /*0x711693*/
-  this->Strength = &TechnoTypeClass::`vftable'; /*0x71169a*/
+  this->vtable1 = &TechnoTypeClass::`vftable'; /*0x71168c*/
+  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711693*/
+  this->vtable3 = &TechnoTypeClass::`vftable'; /*0x71169a*/
   *(this + 3536) = 0; /*0x7116a7*/
   *(this + 564) = 1; /*0x7116ad*/
   (*(void (__thiscall **)(char *))(*((_DWORD *)this + 197) + 12))(this + 788); /*0x7116b6*/
@@ -819,9 +819,9 @@ int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
   *(_DWORD *)(this + 3268) = 1; /*0x711a40*/
   *(_BYTE *)(this + 3272) = 0; /*0x711a46*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711a4c*/
-  this->IdleRate = &TechnoTypeClass::`vftable'; /*0x711a52*/
-  this->VeteranAbilities = &TechnoTypeClass::`vftable'; /*0x711a59*/
-  this->Strength = &TechnoTypeClass::`vftable'; /*0x711a60*/
+  this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711a52*/
+  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711a59*/
+  this->vtable3 = &TechnoTypeClass::`vftable'; /*0x711a60*/
   v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[36]; /*0x711a67*/
   v4 = 0; /*0x711a6c*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[36] <= 0 ) /*0x711a70*/
@@ -880,9 +880,9 @@ int __thiscall TechnoTypeClass::DTOR(int this)
 
   v2 = *(_BYTE *)(this + 1780); /*0x711ae7*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711aed*/
-  this->IdleRate = &TechnoTypeClass::`vftable'; /*0x711af5*/
-  this->VeteranAbilities = &TechnoTypeClass::`vftable'; /*0x711afc*/
-  this->Strength = &TechnoTypeClass::`vftable'; /*0x711b03*/
+  this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711af5*/
+  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711afc*/
+  this->vtable3 = &TechnoTypeClass::`vftable'; /*0x711b03*/
   if ( v2 && *(_DWORD *)(this + 1776) ) /*0x711b0c*/
   {
     __3_YAXPAX_Z(*(void **)(this + 1776)); /*0x711b17*/

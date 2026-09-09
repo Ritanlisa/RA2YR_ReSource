@@ -466,17 +466,13 @@ int __thiscall VoxelAnimClass::_vt13(int this, int *a2)
 namespace gamemd {
 int VoxelAnimClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VoxelAnimClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x74aad6*/
-    return -2147467261; /*0x74aad8*/
-  *a2 = 237448641; /*0x74aae6*/
-  a2[1] = 298949647; /*0x74aaee*/
-  a2[2] = -1610610249; /*0x74aaf7*/
-  a2[3] = -777003740; /*0x74ab00*/
-  return 0; /*0x74aadd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448641;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 
@@ -484,11 +480,7 @@ int __stdcall VoxelAnimClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int VoxelAnimClass::StubReturn41()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VoxelAnimClass::_vt11()
-{
-  return 41; /*0x74ab25*/
-}
+return 41;
 }
 } // namespace gamemd
 
@@ -508,11 +500,7 @@ int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 namespace gamemd {
 int VoxelAnimClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VoxelAnimClass::_vt66(int a1)
-{
-  return 0; /*0x74ab42*/
-}
+return 0;
 }
 } // namespace gamemd
 

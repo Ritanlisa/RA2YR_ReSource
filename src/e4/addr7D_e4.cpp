@@ -6574,13 +6574,9 @@ char *__cdecl asctime(const struct tm *Tm)
 namespace gamemd {
 unsigned char * store_dt(unsigned char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__cdecl store_dt(_BYTE *a1, int a2)
-{
-  *a1 = a2 / 10 + 48; /*0x7d58dc*/
-  a1[1] = a2 % 10 + 48; /*0x7d58ed*/
-  return a1 + 2; /*0x7d58e6*/
-}
+  *a1 = a2 / 10 + 48;
+  a1[1] = a2 % 10 + 48;
+  return a1 + 2;
 }
 } // namespace gamemd
 
@@ -8778,14 +8774,10 @@ _DWORD *__cdecl _CopyMan(int a1, _DWORD *a2)
 namespace gamemd {
 int _FillZeroMan(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl _FillZeroMan(_DWORD *a1)
-{
-  *a1 = 0; /*0x7d7a02*/
-  a1[1] = 0; /*0x7d7a03*/
-  a1[2] = 0; /*0x7d7a04*/
-  return 0; /*0x7d7a05*/
-}
+  *a1 = 0;
+  a1[1] = 0;
+  a1[2] = 0;
+  return 0;
 }
 } // namespace gamemd
 
@@ -13837,11 +13829,7 @@ int __usercall _clrfp@<eax>(__int16 a1@<fpstat>)
 namespace gamemd {
 int _ctrlfp(short a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall _ctrlfp(__int16 a1)
-{
-  return a1; /*0x7dbc98*/
-}
+return a1;
 }
 } // namespace gamemd
 
@@ -13849,17 +13837,14 @@ int __fastcall _ctrlfp(__int16 a1)
 namespace gamemd {
 void _set_statfp()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void _set_statfp()
-{
-  ; /*0x7dbc9a*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x7DBCF0
 namespace gamemd {
 double ldexp(double X, int Y)
+// 0x7dbc9a
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __cdecl ldexp(double X, int Y)
@@ -14214,11 +14199,7 @@ void __cdecl __noreturn _unexpected_YAXXZ()
 namespace gamemd {
 int sub_7DC278()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7DC278()
-{
-  return 1; /*0x7dc27b*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -14487,11 +14468,7 @@ int __cdecl __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass *aP2, int
 namespace gamemd {
 void nullsub_271(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_271(int a1)
-{
-  ; /*0x7dc72b*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -408,11 +408,7 @@ LABEL_16:
 namespace gamemd {
 void nullsub_19()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_19()
-{
-  ; /*0x532130*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -420,11 +416,7 @@ void nullsub_19()
 namespace gamemd {
 void nullsub_151()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_151()
-{
-  ; /*0x532140*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2273,17 +2265,14 @@ void PsyDom::Update()
 namespace gamemd {
 void nullsub_152()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_152()
-{
-  ; /*0x53b3f0*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x53B460
 namespace gamemd {
 void sub_53B460(int a1)
+// 0x53b3f0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_53B460(int a1)

@@ -161,17 +161,13 @@ namespace ra2 {
 namespace game {
 int TemporalClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TemporalClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x71a726*/
-    return -2147467261; /*0x71a728*/
-  *a2 = -1810815964; /*0x71a736*/
-  a2[1] = 299099139; /*0x71a73e*/
-  a2[2] = 1342205582; /*0x71a747*/
-  a2[3] = -72177148; /*0x71a750*/
-  return 0; /*0x71a72d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1810815964;
+  a2[1] = 299099139;
+  a2[2] = 1342205582;
+  a2[3] = -72177148;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

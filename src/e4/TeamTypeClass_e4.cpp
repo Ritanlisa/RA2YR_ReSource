@@ -919,17 +919,13 @@ int __stdcall TeamTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TeamTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6f1c46*/
-    return -2147467261; /*0x6f1c48*/
-  *a2 = -774134194; /*0x6f1c56*/
-  a2[1] = 298977144; /*0x6f1c5e*/
-  a2[2] = 1610655148; /*0x6f1c67*/
-  a2[3] = -1252326136; /*0x6f1c70*/
-  return 0; /*0x6f1c4d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -774134194;
+  a2[1] = 298977144;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

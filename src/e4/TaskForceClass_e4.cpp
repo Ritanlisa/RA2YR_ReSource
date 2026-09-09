@@ -335,17 +335,13 @@ int __stdcall TaskForceClass::LoadTaskForce(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int TaskForceClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TaskForceClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6e8716*/
-    return -2147467261; /*0x6e8718*/
-  *a2 = 1641952286; /*0x6e8726*/
-  a2[1] = 298977140; /*0x6e872e*/
-  a2[2] = 1610655148; /*0x6e8737*/
-  a2[3] = -1252326136; /*0x6e8740*/
-  return 0; /*0x6e871d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1641952286;
+  a2[1] = 298977140;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

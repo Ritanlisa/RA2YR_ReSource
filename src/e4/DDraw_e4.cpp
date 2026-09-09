@@ -216,11 +216,7 @@ int DDraw_WaitForIdle()
 // 0x4BBC90
 int DDraw::GetStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int DDraw_GetStatus()
-{
-  return g_DDraw_PixelFormat; /*0x4bbc95*/
-}
+return g_DDraw_PixelFormat;
 }
 
 // 0x4C19B0

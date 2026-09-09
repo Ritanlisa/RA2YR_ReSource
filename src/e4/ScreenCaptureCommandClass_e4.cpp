@@ -16,11 +16,7 @@ _DWORD *__thiscall sub_537B40(_DWORD *this)
 // 0x537B50
 char * ScreenCaptureCommandClass::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *ScreenCaptureCommandClass::_vt01()
-{
-  return aScreencapture; /*0x537b55*/
-}
+return aScreencapture;
 }
 
 // 0x537B60

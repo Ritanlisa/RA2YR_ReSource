@@ -582,11 +582,7 @@ LABEL_70:
 namespace gamemd {
 void nullsub_240()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall nullsub_240(void *this)
-{
-  ; /*0x6f25d0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1059,10 +1055,6 @@ LABEL_34:
 namespace gamemd {
 void nullsub_45()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_45()
-{
-  ; /*0x6ff950*/
-}
+  ;
 }
 } // namespace gamemd

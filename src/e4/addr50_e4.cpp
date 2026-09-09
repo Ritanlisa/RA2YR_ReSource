@@ -228,11 +228,7 @@ int __fastcall globalHelper_005FD0(int a1, int *a2, int a3, int a4)
 namespace gamemd {
 void nullsub_16()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_16()
-{
-  ; /*0x506b70*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -240,11 +236,7 @@ void __cdecl nullsub_16()
 namespace gamemd {
 void nullsub_17()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_17()
-{
-  ; /*0x506b80*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -326,17 +318,14 @@ int __thiscall sub_5093C0(int *this, int a2)
 namespace gamemd {
 void nullsub_144(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_144(int a1)
-{
-  ; /*0x509cc0*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x50B920
 namespace gamemd {
 void sub_50B920(int a1, int a2, int a3)
+// 0x509cc0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_50B920(int a1, int a2, int a3)
@@ -443,10 +432,6 @@ _DWORD *__fastcall sub_50E3A0(_DWORD *a1, int *a2, __int16 *a3, int a4)
 namespace gamemd {
 void nullsub_145()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall nullsub_145(void *this)
-{
-  ; /*0x50ff40*/
-}
+  ;
 }
 } // namespace gamemd

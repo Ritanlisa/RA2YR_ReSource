@@ -61,9 +61,9 @@ int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
   *(_BYTE *)(this + 3786) = 0; /*0x5237dc*/
   *(_BYTE *)(this + 3787) = 0; /*0x5237e2*/
   *(_DWORD *)this = &InfantryTypeClass::`vftable'; /*0x5237e8*/
-  this->Pip = &InfantryTypeClass::`vftable'; /*0x5237ee*/
-  this->OccupyPip = &InfantryTypeClass::`vftable'; /*0x5237f4*/
-  this->OccupyWeapon = &InfantryTypeClass::`vftable'; /*0x5237fb*/
+  this->vtable1 = &InfantryTypeClass::`vftable'; /*0x5237ee*/
+  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5237f4*/
+  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5237fb*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x523802*/
   v3 = *(InfantryTypeClass **)&MEMORY[0xA8D63C].__pad_BC0[348]; /*0x523807*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[348] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[340] /*0x523845*/
@@ -820,27 +820,19 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 // 0x524C70
 int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall InfantryTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x524c76*/
-    return -2147467261; /*0x524c78*/
-  *a2 = -1366608936; /*0x524c86*/
-  a2[1] = 298976796; /*0x524c8e*/
-  a2[2] = 1610654892; /*0x524c97*/
-  a2[3] = -1252326136; /*0x524ca0*/
-  return 0; /*0x524c7d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608936;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x524D50
 int InfantryTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int InfantryTypeClass::_vt12()
-{
-  return 3792; /*0x524d55*/
-}
+return 3792;
 }
 
 // 0x524D60

@@ -724,11 +724,7 @@ LABEL_17:
 namespace gamemd {
 void nullsub_143()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_143()
-{
-  ; /*0x749010*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2165,10 +2161,6 @@ _DWORD *__thiscall unknown_libname_35(_DWORD *this)
 namespace gamemd {
 void nullsub_69()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_69()
-{
-  ; /*0x74ff40*/
-}
+  ;
 }
 } // namespace gamemd

@@ -3485,11 +3485,7 @@ int __thiscall sub_62D510(float *this)
 namespace gamemd {
 void nullsub_214()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_214()
-{
-  ; /*0x62d760*/
-}
+  ;
 }
 } // namespace gamemd
 

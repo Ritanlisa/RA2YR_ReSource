@@ -270,21 +270,13 @@ LABEL_6:
 // 0x7B1720
 void IPXInterfaceClass::StubReturnFalse(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall IPXInterfaceClass::StubReturnFalse(int a1, int a2)
-{
-  ; /*0x7b1720*/
-}
+  ;
 }
 
 // 0x7B1730
 void IPXInterfaceClass::GetQueueSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXInterfaceClass::GetQueueSize()
-{
-  ; /*0x7b1730*/
-}
+  ;
 }
 
 // 0x7B1760
@@ -301,21 +293,13 @@ int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
 // 0x7B1770
 int IPXInterfaceClass::COMStub_Return1()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int IPXInterfaceClass::_vt13()
-{
-  return 1; /*0x7b1775*/
-}
+return 1;
 }
 
 // 0x7B1780
 int IPXInterfaceClass::COMStub_Ret1139(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPXInterfaceClass::_vt14(int a1)
-{
-  return 1139; /*0x7b1785*/
-}
+return 1139;
 }
 
 // 0x7B1790

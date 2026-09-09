@@ -6,11 +6,7 @@
 namespace gamemd {
 void nullsub_236()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_236()
-{
-  ; /*0x6d0e50*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -478,11 +474,7 @@ __int64 __fastcall ZCoordToScreenY(IUnknown *aP0)
 namespace gamemd {
 void nullsub_238(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_238(int a1, int a2)
-{
-  ; /*0x6d2b50*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -664,17 +656,14 @@ int *__stdcall sub_6D84D0(int *a1, int *a2)
 namespace gamemd {
 void nullsub_41()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_41()
-{
-  ; /*0x6d8630*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x6D8640
 namespace gamemd {
 char ClampCoordMap(AbstractClass * aP0)
+// 0x6d8630
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall ClampCoordMap(AbstractClass *aP0)
@@ -780,11 +769,7 @@ int __fastcall sub_6D8C60(int a1, int a2)
 namespace gamemd {
 void nullsub_42()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_42()
-{
-  ; /*0x6da350*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -792,11 +777,7 @@ void __cdecl nullsub_42()
 namespace gamemd {
 void nullsub_239(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_239(int a1)
-{
-  ; /*0x6da370*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -804,11 +785,7 @@ void __stdcall nullsub_239(int a1)
 namespace gamemd {
 void nullsub_43()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_43()
-{
-  ; /*0x6dc400*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -816,11 +793,7 @@ void __cdecl nullsub_43()
 namespace gamemd {
 void nullsub_44()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_44()
-{
-  ; /*0x6dc410*/
-}
+  ;
 }
 } // namespace gamemd
 

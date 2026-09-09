@@ -214,11 +214,7 @@ int sub_710AD0()
 namespace gamemd {
 void nullsub_86()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_86()
-{
-  ; /*0x7179c0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -804,11 +800,7 @@ void __cdecl sub_71A410()
 namespace gamemd {
 void nullsub_246()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_246()
-{
-  ; /*0x71ad30*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1361,17 +1353,14 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
 namespace gamemd {
 void nullsub_247()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_247()
-{
-  ; /*0x71de90*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x71E410
 namespace gamemd {
 void sub_71E410()
+// 0x71de90
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_71E410()

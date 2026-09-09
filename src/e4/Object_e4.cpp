@@ -788,17 +788,13 @@ int __thiscall Object::_vt34(_DWORD *this)
 namespace gamemd {
 int Object::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Object::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x5fdf16*/
-    return -2147467261; /*0x5fdf18*/
-  *a2 = 237448647; /*0x5fdf26*/
-  a2[1] = 298949647; /*0x5fdf2e*/
-  a2[2] = -1610610249; /*0x5fdf37*/
-  a2[3] = -777003740; /*0x5fdf40*/
-  return 0; /*0x5fdf1d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448647;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

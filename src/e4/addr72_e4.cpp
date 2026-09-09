@@ -667,11 +667,7 @@ void __thiscall sub_723510(int this)
 namespace gamemd {
 void nullsub_158()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_158()
-{
-  ; /*0x7236d0*/
-}
+  ;
 }
 } // namespace gamemd
 

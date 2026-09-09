@@ -81,17 +81,13 @@ int __stdcall DiskLaserClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 // 0x4A7C30
 int DiskLaserClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DiskLaserClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4a7c36*/
-    return -2147467261; /*0x4a7c38*/
-  *a2 = 1378929064; /*0x4a7c46*/
-  a2[1] = 1206682730; /*0x4a7c4e*/
-  a2[2] = -1786862915; /*0x4a7c57*/
-  a2[3] = 1226661444; /*0x4a7c60*/
-  return 0; /*0x4a7c3d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1378929064;
+  a2[1] = 1206682730;
+  a2[2] = -1786862915;
+  a2[3] = 1226661444;
+  return 0;
 }
 
 // 0x4A7C90

@@ -922,11 +922,7 @@ int __thiscall WarheadTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // 0x75E500
 int WarheadTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WarheadTypeClass::_vt11()
-{
-  return 50; /*0x75e505*/
-}
+return 50;
 }
 
 // 0x75E510

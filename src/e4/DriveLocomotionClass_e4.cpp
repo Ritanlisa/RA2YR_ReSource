@@ -97,17 +97,13 @@ HRESULT __stdcall DriveLocomotionClass::LoadFromStream(int *a1, int *pPStm, int 
 // 0x4B4830
 int DriveLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DriveLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4b4836*/
-    return -2147467261; /*0x4b4838*/
-  *a2 = 1247291201; /*0x4b4846*/
-  a2[1] = 298948665; /*0x4b484e*/
-  a2[2] = -1610610249; /*0x4b4857*/
-  a2[3] = -777003740; /*0x4b4860*/
-  return 0; /*0x4b483d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291201;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4B4D00

@@ -1939,11 +1939,7 @@ LABEL_7:
 namespace gamemd {
 bool sub_660530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool sub_660530()
-{
-  return g_TriggerEventState == 0; /*0x66053a*/
-}
+  return g_TriggerEventState == 0;
 }
 } // namespace gamemd
 
@@ -2156,13 +2152,9 @@ int __fastcall sub_7C3690(int a1, int a2)
 namespace gamemd {
 int sub_7C3710(unsigned signed char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C3710(unsigned __int8 *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4)
-{
-  *a2 = a1[242]; /*0x7c3718*/
-  *a3 = a1[243]; /*0x7c3726*/
-  *a4 = a1[264]; /*0x7c3734*/
-  return -1; /*0x7c3739*/
-}
+  *a2 = a1[242];
+  *a3 = a1[243];
+  *a4 = a1[264];
+  return -1;
 }
 } // namespace gamemd

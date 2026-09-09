@@ -1406,11 +1406,7 @@ void __cdecl sub_4128F0()
 namespace gamemd {
 void nullsub_3(AbstractClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_3(AbstractClass *aP0)
-{
-  ; /*0x413490*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1631,11 +1627,7 @@ bool __fastcall sub_413CD0(int a1)
 namespace gamemd {
 void nullsub_71(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_71(int a1, int a2)
-{
-  ; /*0x414a10*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2026,17 +2018,14 @@ int sub_41CAF0()
 namespace gamemd {
 void nullsub_85()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_85()
-{
-  ; /*0x41cbd0*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x41D070
 namespace gamemd {
 void sub_41D070()
+// 0x41cbd0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_41D070()

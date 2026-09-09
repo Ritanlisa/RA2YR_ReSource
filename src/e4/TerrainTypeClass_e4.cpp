@@ -478,17 +478,13 @@ int __stdcall TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTy
 // 0x71E260
 int TerrainTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TerrainTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x71e266*/
-    return -2147467261; /*0x71e268*/
-  *a2 = 1525862011; /*0x71e276*/
-  a2[1] = 298976820; /*0x71e27e*/
-  a2[2] = 1610654892; /*0x71e287*/
-  a2[3] = -1252326136; /*0x71e290*/
-  return 0; /*0x71e26d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862011;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x71E2A0

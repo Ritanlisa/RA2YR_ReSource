@@ -24,11 +24,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450C()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450C(#377 *this)
-{
-  return 450; /*0x5b2e35*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -38,11 +34,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450D()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450D(#377 *this)
-{
-  return 450; /*0x5b2ed5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -52,11 +44,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450E()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450E(#377 *this)
-{
-  return 450; /*0x5b2ee5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -66,11 +54,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450G()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MissionClass_Return450G()
-{
-  return 450; /*0x5b2f15*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -80,11 +64,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450H()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MissionClass_Return450H()
-{
-  return 450; /*0x5b2f25*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -94,11 +74,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450I()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MissionClass_Return450I()
-{
-  return 450; /*0x5b2f45*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -108,11 +84,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450J()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MissionClass_Return450J()
-{
-  return 450; /*0x5b2f55*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -122,11 +94,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450K()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450K(#377 *this)
-{
-  return 450; /*0x5b2f85*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -135,12 +103,9 @@ int __thiscall MissionClass::Return450K(#377 *this)
 namespace ra2 {
 namespace game {
 int MissionClass::Return450L()
+// 0x5b2f50
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450L(#377 *this)
-{
-  return 450; /*0x5b2f95*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -150,11 +115,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450F()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450F(#377 *this)
-{
-  return 450; /*0x5b2fa5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -164,11 +125,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450M()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450M(#377 *this)
-{
-  return 450; /*0x5b2fb5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -178,11 +135,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450N()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450N(#377 *this)
-{
-  return 450; /*0x5b2fc5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2

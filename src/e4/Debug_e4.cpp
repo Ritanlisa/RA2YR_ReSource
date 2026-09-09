@@ -7,11 +7,7 @@
 namespace gamemd {
 void Debug::Log()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Debug_Log()
-{
-  ; /*0x4068e0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -19,11 +15,7 @@ void Debug_Log()
 namespace gamemd {
 void Debug::Log_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Debug::Log_0()
-{
-  ; /*0x4a4ac0*/
-}
+  ;
 }
 } // namespace gamemd
 

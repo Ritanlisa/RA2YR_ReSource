@@ -6944,15 +6944,11 @@ void __cdecl unknown_libname_12()
 namespace gamemd {
 char Hex_EncodeDigit(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Hex_EncodeDigit(int a1)
-{
-  if ( (unsigned int)a1 >= 0x10 ) /*0x49b432*/
-    return 0; /*0x49b446*/
-  if ( a1 >= 10 ) /*0x49b43c*/
-    return a1 + 55; /*0x49b442*/
-  return a1 + 48; /*0x49b441*/
-}
+  if ( (unsigned int)a1 >= 0x10 )
+    return 0;
+  if ( a1 >= 10 )
+    return a1 + 55;
+  return a1 + 48;
 }
 } // namespace gamemd
 

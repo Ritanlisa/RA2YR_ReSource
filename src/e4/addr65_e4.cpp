@@ -69,11 +69,7 @@ int Trigger_AllocateLog(int a1)
 namespace gamemd {
 void nullsub_217()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_217()
-{
-  ; /*0x652100*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -389,11 +385,7 @@ void __thiscall sub_652CD0(_DWORD *this)
 namespace gamemd {
 void nullsub_220(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_220(int a1, int a2)
-{
-  ; /*0x653750*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1827,17 +1819,14 @@ int __thiscall nullsub_0_6(RAMFileClass *this, int a2)
 namespace gamemd {
 void nullsub_0_9()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall nullsub_0_9(RAMFileClass *this)
-{
-  ; /*0x65c590*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x65C5A0
 namespace gamemd {
 void * nullsub_0_10(char a2)
+// 0x65c590
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
@@ -2280,11 +2269,7 @@ int sub_65D8B0()
 namespace gamemd {
 char ReturnFalse3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ReturnFalse3()
-{
-  return 0; /*0x65d8d2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -2882,11 +2867,7 @@ LABEL_53:
 namespace gamemd {
 char sub_65E650(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_65E650(int a1, int a2, int a3)
-{
-  return 0; /*0x65e652*/
-}
+return 0;
 }
 } // namespace gamemd
 

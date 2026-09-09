@@ -857,11 +857,7 @@ int sub_683280()
 namespace gamemd {
 void nullsub_226()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_226()
-{
-  ; /*0x6832b0*/
-}
+  ;
 }
 } // namespace gamemd
 

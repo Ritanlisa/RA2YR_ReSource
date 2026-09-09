@@ -3009,11 +3009,7 @@ ObjectClass *__thiscall sub_5BCB90(int this, int a2)
 namespace gamemd {
 void nullsub_174()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_174()
-{
-  ; /*0x5bcc20*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -20,9 +20,9 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   *(this + 672) = 0; /*0x6b528d*/
   *(this + 673) = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  this->Width = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  this->Height = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  this->Crater = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  this->vtable1 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
+  this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  this->vtable3 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
   *(this + 561) = 0; /*0x6b52c7*/
@@ -257,17 +257,13 @@ int __stdcall SmudgeTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectTypeClass *
 // 0x6B58D0
 int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SmudgeTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6b58d6*/
-    return -2147467261; /*0x6b58d8*/
-  *a2 = 1525862008; /*0x6b58e6*/
-  a2[1] = 298976820; /*0x6b58ee*/
-  a2[2] = 1610654892; /*0x6b58f7*/
-  a2[3] = -1252326136; /*0x6b5900*/
-  return 0; /*0x6b58dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862008;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x6B6150

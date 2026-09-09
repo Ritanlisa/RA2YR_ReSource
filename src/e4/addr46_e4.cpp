@@ -6,11 +6,7 @@
 namespace gamemd {
 void nullsub_7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_7()
-{
-  ; /*0x465cb0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -266,11 +262,7 @@ void __cdecl sub_466320()
 namespace gamemd {
 void nullsub_108()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_108()
-{
-  ; /*0x4666b0*/
-}
+  ;
 }
 } // namespace gamemd
 

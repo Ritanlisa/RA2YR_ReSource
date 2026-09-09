@@ -54,11 +54,7 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 namespace gamemd {
 void nullsub_176()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_176()
-{
-  ; /*0x5c0330*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4756,11 +4752,7 @@ void __thiscall sub_5CB3E0(void *this)
 namespace gamemd {
 void nullsub_189(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_189(int a1)
-{
-  ; /*0x5cca10*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4768,17 +4760,14 @@ void __stdcall nullsub_189(int a1)
 namespace gamemd {
 void nullsub_190()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_190()
-{
-  ; /*0x5cd310*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x5CD570
 namespace gamemd {
 int sub_5CD570()
+// 0x5cd310
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CD570(

@@ -4155,11 +4155,7 @@ LABEL_10:
 namespace gamemd {
 int ReturnNull2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ReturnNull2()
-{
-  return 0; /*0x75a402*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -4167,11 +4163,7 @@ int ReturnNull2()
 namespace gamemd {
 void nullsub_257()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_257()
-{
-  ; /*0x75a410*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4179,11 +4171,7 @@ void nullsub_257()
 namespace gamemd {
 void nullsub_258()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_258()
-{
-  ; /*0x75a420*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4586,17 +4574,13 @@ int sub_75CE60()
 namespace gamemd {
 int WarheadTypeClass__vt_03_(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WarheadTypeClass::vt_03_(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x75e086*/
-    return -2147467261; /*0x75e088*/
-  *a2 = -1463464540; /*0x75e096*/
-  a2[1] = 298979195; /*0x75e09e*/
-  a2[2] = 1610642049; /*0x75e0a7*/
-  a2[3] = -1252326136; /*0x75e0b0*/
-  return 0; /*0x75e08d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1463464540;
+  a2[1] = 298979195;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

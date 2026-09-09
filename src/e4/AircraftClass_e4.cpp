@@ -1012,17 +1012,13 @@ char __thiscall MiniStub_41c070(_BYTE *this)
 namespace gamemd {
 int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AircraftClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x41c196*/
-    return -2147467261; /*0x41c198*/
-  *a2 = 237448642; /*0x41c1a6*/
-  a2[1] = 298949647; /*0x41c1ae*/
-  a2[2] = -1610610249; /*0x41c1b7*/
-  a2[3] = -777003740; /*0x41c1c0*/
-  return 0; /*0x41c19d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448642;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 
@@ -1069,11 +1065,7 @@ AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **Block, char a2
 namespace gamemd {
 int AircraftClass::CheckMissionStatus2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Stub_ReturnE_NOTIMPL_9()
-{
-  return 450; /*0x5b2f35*/
-}
+return 450;
 }
 } // namespace gamemd
 

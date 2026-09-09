@@ -67,17 +67,13 @@ int VeinholeMonsterClass::_vt34()
 // 0x74F2D0
 int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VeinholeMonsterClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x74f2d6*/
-    return -2147467261; /*0x74f2d8*/
-  *a2 = 1368576106; /*0x74f2e6*/
-  a2[1] = 299025970; /*0x74f2ee*/
-  a2[2] = 1610615737; /*0x74f2f7*/
-  a2[3] = -318126072; /*0x74f300*/
-  return 0; /*0x74f2dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1368576106;
+  a2[1] = 299025970;
+  a2[2] = 1610615737;
+  a2[3] = -318126072;
+  return 0;
 }
 
 // 0x74F340

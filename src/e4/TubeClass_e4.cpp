@@ -50,17 +50,13 @@ int __stdcall TubeClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TubeClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TubeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x7286d6*/
-    return -2147467261; /*0x7286d8*/
-  *a2 = 189572124; /*0x7286e6*/
-  a2[1] = 298955687; /*0x7286ee*/
-  a2[2] = 1610635188; /*0x7286f7*/
-  a2[3] = 2041169559; /*0x728700*/
-  return 0; /*0x7286dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 189572124;
+  a2[1] = 298955687;
+  a2[2] = 1610635188;
+  a2[3] = 2041169559;
+  return 0;
 }
 } // namespace gamemd
 

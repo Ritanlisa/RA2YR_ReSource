@@ -1115,17 +1115,13 @@ bool __thiscall SuperClass::ShouldDrawProgress(int this)
 namespace gamemd {
 int SuperClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6cdeb6*/
-    return -2147467261; /*0x6cdeb8*/
-  *a2 = -671656762; /*0x6cdec6*/
-  a2[1] = 298989852; /*0x6cdece*/
-  a2[2] = 268461211; /*0x6cded7*/
-  a2[3] = -399534261; /*0x6cdee0*/
-  return 0; /*0x6cdebd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -671656762;
+  a2[1] = 298989852;
+  a2[2] = 268461211;
+  a2[3] = -399534261;
+  return 0;
 }
 } // namespace gamemd
 

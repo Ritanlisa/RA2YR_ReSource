@@ -83,11 +83,7 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 namespace gamemd {
 void nullsub_138()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall nullsub_138(void *this)
-{
-  ; /*0x4e0c30*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2932,11 +2928,7 @@ int __thiscall sub_4E6070(int this)
 namespace gamemd {
 void nullsub_54()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_54()
-{
-  ; /*0x4e6140*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -20,9 +20,9 @@ int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
   *(_BYTE *)(this + 61) = 0; /*0x41081a*/
   *(_BYTE *)(this + 100) = 0; /*0x41081e*/
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
-  this->UIName = &AbstractTypeClass::`vftable'; /*0x410829*/
-  this->Name[0x31] = &AbstractTypeClass::`vftable'; /*0x410830*/
-  this->referenceCount = &AbstractTypeClass::`vftable'; /*0x410837*/
+  this->vtable1 = &AbstractTypeClass::`vftable'; /*0x410829*/
+  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410830*/
+  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1->__pad_0, (IUnknown *)0x18); /*0x410895*/
@@ -89,9 +89,9 @@ int __thiscall AbstractTypeClass::Init(int this, AbstractTypeClass *aP1)
   AbstractClass::InitVtables((_DWORD *)this, (int)aP1); /*0x410968*/
   v3 = *(_BYTE *)(this + 61); /*0x41096d*/
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
-  this->UIName = &AbstractTypeClass::`vftable'; /*0x41097b*/
-  this->Name[0x31] = &AbstractTypeClass::`vftable'; /*0x410982*/
-  this->referenceCount = &AbstractTypeClass::`vftable'; /*0x410989*/
+  this->vtable1 = &AbstractTypeClass::`vftable'; /*0x41097b*/
+  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410982*/
+  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410989*/
   if ( v3 ) /*0x410990*/
     this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, MEMORY[0x817830], 127); /*0x4109a0*/
   else
@@ -278,11 +278,7 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *Block, char a2)
 // 0x5F7630
 int AbstractTypeClass::Validate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetFalse_22()
-{
-  return 0; /*0x5f7632*/
-}
+return 0;
 }
 
 // 0x5F75B0

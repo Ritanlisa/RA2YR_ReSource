@@ -1576,17 +1576,13 @@ char __thiscall TActionClass::executeLightningAction(int *this, int a2, int a3, 
 namespace gamemd {
 int TActionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TActionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6e3d76*/
-    return -2147467261; /*0x6e3d78*/
-  *a2 = 1326367634; /*0x6e3d86*/
-  a2[1] = 298977877; /*0x6e3d8e*/
-  a2[2] = 1610655660; /*0x6e3d97*/
-  a2[3] = -1252326136; /*0x6e3da0*/
-  return 0; /*0x6e3d7d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1326367634;
+  a2[1] = 298977877;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

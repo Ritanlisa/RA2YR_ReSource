@@ -194,17 +194,13 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParasiteClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6296d6*/
-    return -2147467261; /*0x6296d8*/
-  *a2 = 486632321; /*0x6296e6*/
-  a2[1] = 299086411; /*0x6296ee*/
-  a2[2] = 268441278; /*0x6296f7*/
-  a2[3] = 1822515787; /*0x629700*/
-  return 0; /*0x6296dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 486632321;
+  a2[1] = 299086411;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

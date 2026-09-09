@@ -706,11 +706,7 @@ int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
 namespace gamemd {
 void CellChainReact()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void CellChainReact()
-{
-  ; /*0x489270*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1673,11 +1669,7 @@ int sub_48C880()
 namespace gamemd {
 void nullsub_112()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_112()
-{
-  ; /*0x48c8a0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -1995,23 +1987,16 @@ LABEL_34:
 namespace gamemd {
 void nullsub_8()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_8()
-{
-  ; /*0x48db70*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x48DED0
 namespace gamemd {
 void nullsub_51()
+// 0x48db70
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_51()
-{
-  ; /*0x48ded0*/
-}
+  ;
 }
 } // namespace gamemd
 

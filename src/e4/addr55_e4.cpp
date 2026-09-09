@@ -146,11 +146,7 @@ LABEL_10:
 namespace gamemd {
 void nullsub_21()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_21()
-{
-  ; /*0x5509e0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -559,11 +555,7 @@ LABEL_37:
 namespace gamemd {
 void nullsub_22()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_22()
-{
-  ; /*0x5512c0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -3305,17 +3297,14 @@ int __stdcall IPersistStream_Load(int *a1, int *a2, int a3)
 namespace gamemd {
 void nullsub_164(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_164(int a1)
-{
-  ; /*0x55ac40*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x55AD30
 namespace gamemd {
 int sub_55AD30()
+// 0x55ac40
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_55AD30()
@@ -4662,11 +4651,7 @@ int GameFrameLoop()
 namespace gamemd {
 void nullsub_23()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_23()
-{
-  ; /*0x55e410*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -218,17 +218,13 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TerrainClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x71d316*/
-    return -2147467261; /*0x71d318*/
-  *a2 = 237448654; /*0x71d326*/
-  a2[1] = 298949647; /*0x71d32e*/
-  a2[2] = -1610610249; /*0x71d337*/
-  a2[3] = -777003740; /*0x71d340*/
-  return 0; /*0x71d31d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448654;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

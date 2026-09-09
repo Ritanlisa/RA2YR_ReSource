@@ -141,17 +141,13 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AirstrikeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x41d7a6*/
-    return -2147467261; /*0x41d7a8*/
-  *a2 = 1893611809; /*0x41d7b6*/
-  a2[1] = 299179558; /*0x41d7be*/
-  a2[2] = -1610574449; /*0x41d7c7*/
-  a2[3] = -1672772828; /*0x41d7d0*/
-  return 0; /*0x41d7ad*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1893611809;
+  a2[1] = 299179558;
+  a2[2] = -1610574449;
+  a2[3] = -1672772828;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

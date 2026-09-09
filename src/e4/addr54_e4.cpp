@@ -595,17 +595,13 @@ int sub_543310()
 namespace gamemd {
 int nullsub_0(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall nullsub_0(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x543ab6*/
-    return -2147467261; /*0x543ab8*/
-  *a2 = 237448640; /*0x543ac6*/
-  a2[1] = 298949647; /*0x543ace*/
-  a2[2] = -1610610249; /*0x543ad7*/
-  a2[3] = -777003740; /*0x543ae0*/
-  return 0; /*0x543abd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448640;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 
@@ -625,11 +621,7 @@ int __thiscall nullsub_0_0(_DWORD *this)
 namespace gamemd {
 void nullsub_154(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall nullsub_154(int a1, int a2)
-{
-  ; /*0x543b00*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -952,17 +944,14 @@ int sub_544690()
 namespace gamemd {
 void nullsub_155()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_155()
-{
-  ; /*0x544df0*/
-}
+  ;
 }
 } // namespace gamemd
 
 // 0x544E30
 namespace gamemd {
 int MIXFile_AccumulateIndex(int a1)
+// 0x544df0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall MIXFile_AccumulateIndex(int a1)
@@ -1550,11 +1539,7 @@ int __fastcall Map_InitCoordinateOffsets(int a1)
 namespace gamemd {
 void nullsub_20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_20()
-{
-  ; /*0x547ce0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2181,11 +2166,7 @@ int __thiscall UpdateFootMovement(int this)
 namespace gamemd {
 void nullsub_156()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_156()
-{
-  ; /*0x54d0c0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2690,11 +2671,7 @@ int sub_54EE30()
 namespace gamemd {
 void nullsub_157()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_157()
-{
-  ; /*0x54ee50*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -37,17 +37,13 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
 // 0x6633D0
 int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall RocketLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6633d6*/
-    return -2147467261; /*0x6633d8*/
-  *a2 = -1212901530; /*0x6633e6*/
-  a2[1] = 299099510; /*0x6633ee*/
-  a2[2] = 268491163; /*0x6633f7*/
-  a2[3] = -399534261; /*0x663400*/
-  return 0; /*0x6633dd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1212901530;
+  a2[1] = 299099510;
+  a2[2] = 268491163;
+  a2[3] = -399534261;
+  return 0;
 }
 
 // 0x663410

@@ -16,9 +16,5 @@ int __thiscall BufferIOFileClass_Destructor(_DWORD *this)
 // 0x65CA70
 void BufferIOFileClass::StubReturnFalse(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall BufferIOFileClass::StubReturnFalse(int a1, int a2, int a3)
-{
-  ; /*0x65ca70*/
-}
+  ;
 }

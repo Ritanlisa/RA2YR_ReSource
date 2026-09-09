@@ -2521,11 +2521,7 @@ LABEL_21:
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_38(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt38(int a1, int a2, int a3)
-{
-  return 0; /*0x7ac4a2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -2533,11 +2529,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt38(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_39(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt39(int a1, int a2, int a3)
-{
-  return 0; /*0x7ac4b2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -2545,23 +2537,16 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt39(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_45(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt45(int a1, int a2, int a3)
-{
-  return 0; /*0x7ac4c2*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x7AC4D0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_46(int a1, int a2, int a3)
+// 0x7ac4c0
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt46(int a1, int a2, int a3)
-{
-  return 0; /*0x7ac4d2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -2569,11 +2554,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt46(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt47(int a1, int a2, int a3)
-{
-  return 0; /*0x7ac4e2*/
-}
+return 0;
 }
 } // namespace gamemd
 

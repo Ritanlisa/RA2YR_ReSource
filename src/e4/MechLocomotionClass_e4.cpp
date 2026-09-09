@@ -5,17 +5,13 @@
 // 0x5B1960
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall MechLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x5b1966*/
-    return -2147467261; /*0x5b1968*/
-  *a2 = 1439777208; /*0x5b1976*/
-  a2[1] = 298965908; /*0x5b197e*/
-  a2[2] = 1610651820; /*0x5b1987*/
-  a2[3] = -1252326136; /*0x5b1990*/
-  return 0; /*0x5b196d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1439777208;
+  a2[1] = 298965908;
+  a2[2] = 1610651820;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x5B19A0

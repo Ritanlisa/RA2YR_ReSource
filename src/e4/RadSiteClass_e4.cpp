@@ -99,17 +99,13 @@ int __stdcall RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int
 namespace gamemd {
 int RadSiteClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall RadSiteClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x65b476*/
-    return -2147467261; /*0x65b478*/
-  *a2 = 1090836288; /*0x65b486*/
-  a2[1] = 299095303; /*0x65b48e*/
-  a2[2] = -1610598260; /*0x65b497*/
-  a2[3] = 1153315785; /*0x65b4a0*/
-  return 0; /*0x65b47d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1090836288;
+  a2[1] = 299095303;
+  a2[2] = -1610598260;
+  a2[3] = 1153315785;
+  return 0;
 }
 } // namespace gamemd
 

@@ -584,10 +584,6 @@ int sub_67C670()
 namespace gamemd {
 void nullsub_225()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_225()
-{
-  ; /*0x67fdc0*/
-}
+  ;
 }
 } // namespace gamemd

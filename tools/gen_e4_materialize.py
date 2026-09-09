@@ -198,7 +198,11 @@ class MemberMap:
             for k, v in offs.items():
                 if isinstance(v, dict) and "ida_name" in v:
                     try:
-                        m[(int(k), int(v.get("size", 4)))] = v["ida_name"]
+                        nm = v["ida_name"]
+                        # F2 防护：非法标识符名（如 "Name[0x31]"）= 遗留垃圾，整体跳过
+                        if not re.match(r"^[A-Za-z_]\w*$", nm or ""):
+                            continue
+                        m[(int(k), int(v.get("size", 4)))] = nm
                     except (ValueError, TypeError):
                         pass
             if m:
@@ -225,16 +229,23 @@ class MemberMap:
             cls = self.parents.get(cls)
 
     def member(self, cls, offset, width):
-        # F1: 沿继承链查（class_layouts 偏移为对象绝对坐标）
+        # F1/F2: 沿继承链查（class_layouts 偏移为对象绝对坐标）。
+        # 防护：每类只接受 own 区段 [父类 size, 本类 size) 的条目——基类短偏移区
+        # 的遗留错位行（TechnoTypeClass+4="IdleRate" 实证）污染解析；父类 size
+        # 未知（父不在 layouts）则该类不限。own 区下方由更深的祖先权威覆盖。
         for c in self._chain(cls):
             mm = self.by_class.get(c)
             if not mm:
                 continue
-            name = mm.get((offset, width))
-            if name:
-                return name
-            if width == 4 and mm.get((offset, 4)):
-                return mm[(offset, 4)]
+            parent = self.parents.get(c)
+            lo = self.sizes.get(parent, 0) if parent else 0
+            hi = self.sizes.get(c, 0)
+            if lo <= offset and (not hi or offset < hi):
+                name = mm.get((offset, width))
+                if name:
+                    return name
+                if width == 4 and mm.get((offset, 4)):
+                    return mm[(offset, 4)]
         return None
 
     def nested(self, cls, offset, width, depth=0):

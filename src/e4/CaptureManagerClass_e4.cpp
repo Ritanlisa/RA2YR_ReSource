@@ -1032,17 +1032,13 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CaptureManagerClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x472966*/
-    return -2147467261; /*0x472968*/
-  *a2 = 108652930; /*0x472976*/
-  a2[1] = 299085213; /*0x47297e*/
-  a2[2] = 268441278; /*0x472987*/
-  a2[3] = 1822515787; /*0x472990*/
-  return 0; /*0x47296d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652930;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

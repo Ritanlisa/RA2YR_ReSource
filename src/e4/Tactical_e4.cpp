@@ -1977,17 +1977,13 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
 namespace gamemd {
 int Tactical::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Tactical::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6dbce6*/
-    return -2147467261; /*0x6dbce8*/
-  *a2 = -816401526; /*0x6dbcf6*/
-  a2[1] = 298984461; /*0x6dbcfe*/
-  a2[2] = 1610644609; /*0x6dbd07*/
-  a2[3] = -1252326136; /*0x6dbd10*/
-  return 0; /*0x6dbced*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -816401526;
+  a2[1] = 298984461;
+  a2[2] = 1610644609;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

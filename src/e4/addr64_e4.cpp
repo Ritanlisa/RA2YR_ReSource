@@ -1913,11 +1913,7 @@ int sub_646D90()
 namespace gamemd {
 void nullsub_216()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_216()
-{
-  ; /*0x646db0*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -2131,11 +2127,7 @@ LABEL_31:
 namespace gamemd {
 void nullsub_32()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl nullsub_32()
-{
-  ; /*0x648340*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -4419,14 +4411,7 @@ int ComputeNetworkFrameCRC()
 namespace gamemd {
 int Hash_Compute(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Hash_Compute(_DWORD *a1, int a2)
-{
-  int result; // eax
-
-  result = a2 + (*a1 >> 31) + 2 * *a1; /*0x64de8c*/
-  *a1 = result; /*0x64de8e*/
-  return result; /*0x64de8b*/
-}
+  result = a2 + (*a1 >> 31) + 2 * *a1;
+  *a1 = result;
 }
 } // namespace gamemd

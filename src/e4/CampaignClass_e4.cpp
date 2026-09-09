@@ -15,9 +15,9 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
   *(_DWORD *)this = &CampaignClass::`vftable'; /*0x46cb70*/
   *(_DWORD *)(this + 152) = -1; /*0x46cb76*/
   *(_DWORD *)(this + 668) = -1; /*0x46cb7c*/
-  this->scenario[512] = &CampaignClass::`vftable'; /*0x46cb82*/
-  this->finalMovie = &CampaignClass::`vftable'; /*0x46cb89*/
-  this->description[128] = &CampaignClass::`vftable'; /*0x46cb90*/
+  this->vtable1 = &CampaignClass::`vftable'; /*0x46cb82*/
+  this->vtable2 = &CampaignClass::`vftable'; /*0x46cb89*/
+  this->vtable3 = &CampaignClass::`vftable'; /*0x46cb90*/
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -119,17 +119,13 @@ LABEL_7:
 namespace gamemd {
 int CampaignClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CampaignClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x46cf86*/
-    return -2147467261; /*0x46cf88*/
-  *a2 = -2439096; /*0x46cf96*/
-  a2[1] = 298980631; /*0x46cf9e*/
-  a2[2] = 1610642817; /*0x46cfa7*/
-  a2[3] = -1252326136; /*0x46cfb0*/
-  return 0; /*0x46cf8d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -2439096;
+  a2[1] = 298980631;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

@@ -380,17 +380,13 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SpawnManagerClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6b7ed6*/
-    return -2147467261; /*0x6b7ed8*/
-  *a2 = 108652929; /*0x6b7ee6*/
-  a2[1] = 299085213; /*0x6b7eee*/
-  a2[2] = 268441278; /*0x6b7ef7*/
-  a2[3] = 1822515787; /*0x6b7f00*/
-  return 0; /*0x6b7edd*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652929;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

@@ -244,17 +244,13 @@ int __thiscall SideClass::_vt13(int this, int *a2)
 namespace gamemd {
 int SideClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SideClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x6a4746*/
-    return -2147467261; /*0x6a4748*/
-  *a2 = -985803918; /*0x6a4756*/
-  a2[1] = 298980638; /*0x6a475e*/
-  a2[2] = 1610642817; /*0x6a4767*/
-  a2[3] = -1252326136; /*0x6a4770*/
-  return 0; /*0x6a474d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -985803918;
+  a2[1] = 298980638;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

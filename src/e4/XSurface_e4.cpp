@@ -37,11 +37,7 @@ char __thiscall XSurface_Unlock(_DWORD *this)
 // 0x411590
 char XSurface::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char XSurface::_vt33()
-{
-  return 0; /*0x411592*/
-}
+return 0;
 }
 
 // 0x4115A0
@@ -60,11 +56,7 @@ XSurface *__thiscall XSurface::ScalarDtor(std::locale::facet *this, char a2)
 // 0x4C9150
 int XSurface::vt_entry_68()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface::vt_entry_68(#374 *this)
-{
-  return 0; /*0x4c9152*/
-}
+return 0;
 }
 
 // 0x7BA8C0
@@ -268,74 +260,39 @@ int __thiscall XSurface::DrawDashedLine(void *this, int *a1, int *a2, XSurface *
 // 0x7BAB30
 int XSurface::entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall XSurface_vt_entry_4C(int a1, int a2, int a3, int a4, int a5, int a6)
-{
-  return 0; /*0x7bab32*/
-}
+return 0;
 }
 
 // 0x7BAB40
 char XSurface::entry_50_(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_50(int a1, int a2, int a3, int a4)
-{
-  return 0; /*0x7bab42*/
-}
+return 0;
 }
 
 // 0x7BAB50
 char XSurface::entry_34_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_34(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-  return 0; /*0x7bab52*/
-}
+return 0;
 }
 
 // 0x7BAB60
 char XSurface::entry_38_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_38(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-  return 0; /*0x7bab62*/
-}
+return 0;
 }
 
 // 0x7BAB70
 namespace gamemd {
 int XSurface_entry_3C_()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_3C(
-        int a1,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11)
-{
-  return 0; /*0x7bab72*/
-}
+  return 0;
 }
 } // namespace gamemd
 
 // 0x7BAB80
 char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_40(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-  return 0; /*0x7bab82*/
-}
+return 0;
 }
 
 // 0x7BAB90
@@ -775,11 +732,7 @@ LABEL_9:
 // 0x7BB340
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall XSurface_vt_entry_1C(int a1, int a2, int a3)
-{
-  return 0; /*0x7bb342*/
-}
+return 0;
 }
 
 // 0x7BB350

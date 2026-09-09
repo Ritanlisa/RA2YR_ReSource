@@ -4026,11 +4026,7 @@ int __thiscall sub_7BF190(_DWORD *this)
 namespace gamemd {
 void nullsub_49()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_49()
-{
-  ; /*0x7bf220*/
-}
+  ;
 }
 } // namespace gamemd
 

@@ -621,17 +621,13 @@ int __thiscall TEventClass::_vt13(int this, int a2)
 namespace gamemd {
 int TEventClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TEventClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x71f886*/
-    return -2147467261; /*0x71f888*/
-  *a2 = 1326367635; /*0x71f896*/
-  a2[1] = 298977877; /*0x71f89e*/
-  a2[2] = 1610655660; /*0x71f8a7*/
-  a2[3] = -1252326136; /*0x71f8b0*/
-  return 0; /*0x71f88d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1326367635;
+  a2[1] = 298977877;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

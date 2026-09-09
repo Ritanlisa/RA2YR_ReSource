@@ -16,19 +16,19 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 
   if ( a2 < 0 ) /*0x41c50c*/
     return 0; /*0x41c50c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->Buildup)); /*0x41c520*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable2)); /*0x41c520*/
   if ( !v3 ) /*0x41c527*/
     return 0; /*0x41c580*/
-  for ( i = 0; i < this->FoundationData; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x41c535*/
+  for ( i = 0; i < this->vtable1; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x41c535*/
   {
     v5 = 8 * i; /*0x41c539*/
     v6 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x41c542*/
     *(_DWORD *)&v3[v5] = *v6; /*0x41c547*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x41c55b*/
-  v7 = a2 + this->Buildup; /*0x41c566*/
+  v7 = a2 + this->vtable2; /*0x41c566*/
   *(_DWORD *)this = v3; /*0x41c568*/
-  this->Buildup = v7; /*0x41c56a*/
+  this->vtable2 = v7; /*0x41c56a*/
   this->uniqueId = 0; /*0x41c56d*/
   return 1; /*0x41c574*/
 }
@@ -49,7 +49,7 @@ size_t __thiscall BuildingTypeClass::Dequeue(char **this, BuildingClass *aP1)
   result = (size_t)*(this + 1); /*0x41c593*/
   if ( result ) /*0x41c598*/
   {
-    if ( !(unsigned char)this->BuildupLoaded ) /*0x41c59e*/
+    if ( !(unsigned char)this->vtable3 ) /*0x41c59e*/
     {
       qsort(*this, result, 8u, CompareFunction); /*0x41c5b0*/
       *(this + 4) = 0; /*0x41c5b8*/
@@ -307,9 +307,9 @@ int __thiscall BuildingTypeClass_ConstructorFull(int this, char *Source)
   *(_DWORD *)(this + 6024) = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   *(_BYTE *)(this + 6033) = 1; /*0x45e2c6*/
   *(_DWORD *)this = &BuildingTypeClass::`vftable'; /*0x45e2cd*/
-  this->FoundationData = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
-  this->Buildup = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
-  this->BuildupLoaded = &BuildingTypeClass::`vftable'; /*0x45e2e1*/
+  this->vtable1 = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
+  this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
+  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x45e2e8*/
   v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
@@ -2386,7 +2386,7 @@ _DWORD *__thiscall BuildingTypeClass_GetUpgradeOffset(int this, _DWORD *a2)
   if ( (unsigned char)this->DamageSparks ) /*0x7178c6*/
   {
     v3 = this->IsChargeTurret; /*0x7178d4*/
-    v4 = this->TurretWeapon[0x21]; /*0x7178da*/
+    v4 = *(_DWORD *)(this + 1972); /*0x7178da*/
     v15[0] = v3; /*0x7178e1*/
     v15[1] = v4; /*0x7178e6*/
     v5 = World::ToScreen((float *)MEMORY[0x887324], v14, v15); /*0x7178fb*/
@@ -2409,7 +2409,7 @@ _DWORD *__thiscall BuildingTypeClass_GetUpgradeOffset(int this, _DWORD *a2)
   else
   {
     *a2 = this->IsChargeTurret; /*0x71797f*/
-    a2[1] = this->TurretWeapon[0x21]; /*0x717984*/
+    a2[1] = *(_DWORD *)(this + 1972); /*0x717984*/
     a2[2] = this->ClearAllWeapons; /*0x71798b*/
     return a2; /*0x717971*/
   }

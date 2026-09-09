@@ -464,17 +464,13 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeC
 namespace gamemd {
 int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AnimTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x428996*/
-    return -2147467261; /*0x428998*/
-  *a2 = -1366608934; /*0x4289a6*/
-  a2[1] = 298976796; /*0x4289ae*/
-  a2[2] = 1610654892; /*0x4289b7*/
-  a2[3] = -1252326136; /*0x4289c0*/
-  return 0; /*0x42899d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608934;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 
@@ -678,11 +674,7 @@ int __thiscall AnimTypeClass::_vt16(_DWORD *this)
 namespace gamemd {
 int AnimTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AnimTypeClass::_vt12()
-{
-  return 888; /*0x428e75*/
-}
+return 888;
 }
 } // namespace gamemd
 
@@ -690,11 +682,7 @@ int AnimTypeClass::_vt12()
 namespace gamemd {
 char AnimTypeClass::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall AnimTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x428e82*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -702,17 +690,14 @@ char __stdcall AnimTypeClass::_vt32(int a1, int a2)
 namespace gamemd {
 int AnimTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AnimTypeClass::_vt35(int a1)
-{
-  return 0; /*0x428e92*/
-}
+return 0;
 }
 } // namespace gamemd
 
 // 0x428EA0
 namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
+// 0x428e90
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *Block, char a2)

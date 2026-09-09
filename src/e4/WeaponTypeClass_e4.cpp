@@ -281,9 +281,9 @@ int __thiscall sub_771F50(int this)
   int v7; // [esp+8h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
-  this->Burst = &WeaponTypeClass::`vftable'; /*0x771f5d*/
-  this->Projectile = &WeaponTypeClass::`vftable'; /*0x771f64*/
-  this->Damage = &WeaponTypeClass::`vftable'; /*0x771f6b*/
+  this->vtable1 = &WeaponTypeClass::`vftable'; /*0x771f5d*/
+  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f64*/
+  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x771f72*/
   this->Damage = 0; /*0x771f7d*/
   this->ROF = 0; /*0x771f83*/
@@ -438,17 +438,13 @@ int __thiscall WeaponTypeClass::ProcessPower(int this, int *a2)
 // 0x772C90
 int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WeaponTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x772c96*/
-    return -2147467261; /*0x772c98*/
-  *a2 = -1613620790; /*0x772ca6*/
-  a2[1] = 298979195; /*0x772cae*/
-  a2[2] = 1610642049; /*0x772cb7*/
-  a2[3] = -1252326136; /*0x772cc0*/
-  return 0; /*0x772c9d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1613620790;
+  a2[1] = 298979195;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x772CD0
@@ -565,11 +561,7 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WeaponTypeClass::_vt11()
-{
-  return 49; /*0x7730e5*/
-}
+return 49;
 }
 
 // 0x7730F0

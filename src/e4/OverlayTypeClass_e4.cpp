@@ -480,17 +480,13 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTy
 // 0x5FEC30
 int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall OverlayTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x5fec36*/
-    return -2147467261; /*0x5fec38*/
-  *a2 = 1525862009; /*0x5fec46*/
-  a2[1] = 298976820; /*0x5fec4e*/
-  a2[2] = 1610654892; /*0x5fec57*/
-  a2[3] = -1252326136; /*0x5fec60*/
-  return 0; /*0x5fec3d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862009;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x5FED00
