@@ -1064,22 +1064,38 @@ issue #4/#17/#19 等），是 C 线工作队列。
   均在「基线编译错误允许」框架内，翻译到具体函数时逐个吸收。
 - v3 快照长函数截断（见 E0 注）。
 
-### E5 口径统一（后台批量 verify 运行中）
+### E5 口径统一（完成）
 
 - 候选 = 有真体未标 completed 的 2,900 函数（.omo/e5_candidates.json）；
-  4 并行 verify_execution_flow 子进程（live IDA fetch 回填缓存）。
-- 中程进度：650/2,900 验完，15 PASS（存根类 FAIL 属预期——它们保留 pending 口径）。
-- PASS 批量 tool_mark_completed 收尾待跑；FAIL 并入 69-CFG 债清单口径。
+  4 并行 verify_execution_flow 子进程全量跑完（live IDA fetch 回填缓存）。
+- **终态：154 PASS → 全部 mark_completed；2,746 FAIL（存根/不忠实/受阻）诚实保留
+  pending**。stats 单数字自此可信（completed=406 @ 本会话末）。
+- ⚠ 经验：signals.json 并行写（标记）与并行读（verify 子进程）在 Windows 上撞
+  Errno 22 —— 标记操作须带 6 次退避重试（e6_harvest_const.py 已内置）。
 
 ### E6 翻译启动（纯 MCP 工作流，机械收割优先）
 
-- **常量返回收割**：374 个 `return CONST;` 型 pending 块批量真翻译
-  （.omo/e6_harvest_const.py：replace → verify → PASS 标记 / FAIL 回滚）；
-  首批 10/10 PASS（3.7s/函数）。
+- **常量返回收割完成**：374 个 `return CONST;` 型候选中 **213 个真翻译 + verify
+  PASS + 标记**（两轮收割 0 FAIL；对账清扫确认无已译未标损失）。
 - 后续批次队列：58 个全局 getter、457 个证据完备（偏移已重写）函数、
-  BuildingClass 布局争议区（issue #4）维持延缓。
+  6,146 个 ≤8 行小函数长尾、BuildingClass 布局争议区（issue #4）维持延缓。
 - 已知瓶颈再确认：单体函数成员考古成本（BombClass 0x30/0x38 hpp 缺成员实证）——
   A1 成员语义命名仍是 C 线提速前置投资。
+
+### 本会话度量变化（2026-09-09 Phase E 会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP pending | 3,416（失真，仅含有体子集） | **17,778（真实总账）** |
+| MCP completed | 39 | **406**（+213 常量收割 + 154 E5 校准） |
+| src 函数体覆盖 | ~3,455 / 19,133 | **~17,870 / 19,133**（93.5%） |
+| 类声明 | 1,120 | +289 E2 最小声明 |
+| 全局声明 | ~1,406 | +882 E1 extern |
+| IDA til TechnoClass 452-580 | 三成员错序 | 四源对齐（铁证修复） |
+| rename debt | 29 未清 | **0**（10 灾难 cancelled + 19 销账） |
+| 一致性审计 | 37 raw / 3 normalized | 38 raw / **3 normalized**（清偿 93 错类后回基线） |
+| 注解审计 | 3,345 matched | **8,771 matched / 0 missing / 0 mismatch** |
+| 快照 | v2（09-05，陈旧） | **v3（19,088 函数 100%，含全部改名/类型/布局修复）** |
 
 ---
 
