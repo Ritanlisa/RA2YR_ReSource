@@ -23,7 +23,7 @@
 > > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | 与 TechnoClass/TechnoTypeClass 中段布局和类型侧 Weapon 数组债务相互关联 |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
 > | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,416，completed=**39**（09-09 会话 +10：含 owner 修复 Is1x1AndUndeployable→BuildingTypeClass、SetFlag1752→SetPermanentBerzerk 语义改名、TechnoClass member_lookup 452-464 区修正、verifier 三处修复后回归 34 PASS/0 FAIL；IDA 离线轮全走缓存+debt）；批次仍卡 A1 命名/签名/vtable 审计三类前置债（见执行日志） |
-> | **E 全量落盘：定义+签名+类声明+全局变量** | ⬜ **计划就绪（2026-09-09 用户裁决）** | 先四层全落盘、最后翻译全部 pending：E0 IDA 回线同步（rename debt 5 条已重放 ✅ / db 刷新 / NOCACHE 复验 / **快照 v3 重导出**）→ E1 全局变量声明（10,674 地址 vs src ~1,406）→ E2 类声明对齐（class_db 1,557 vs src 1,120，差集 ~437 最小声明）→ **E3 签名合成（CSP 求解结果=类型权威，替换 IDA 的 void*/_DWORD* 垃圾；无证据槽位回退+低置信标记）** → E4 定义占位体批量落盘（pending 3,416 → ~19,000 真实总账；gate 重锚策略需裁决）→ E5 中间态口径统一（预计 +400-500 completed）→ E6 翻译全部 pending。见「Phase E」节 |
+> | **E 全量落盘：定义+签名+类声明+全局变量** | ✅ **E0-E4 完成（2026-09-09 会话，提交 c70eb5cd + 重锚）** | v3 快照 19,088 函数 100%；E4 物化 14,576 无体函数（pending **3,416 → 17,992 真实总账**）；E3 声明 1,057；E2 类 289；E1 全局 882；偏移→OO 重写 1,869 处；TechnoClass 452-580 考古四源对齐（issue #19 挂剩余两争议区）；93 错类声明清偿回基线 3 normalized；auto-fill-baseline 重锚 c70eb5cd（重锚不清账）。E5 后台批量 verify 进行中；E6 常量收割 374 启动（首批 10/10 PASS） |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -994,6 +994,92 @@ BuildingClass 15 个 pending 逐个 get_context 评估，**全部受阻于三类
 issues：#3/#9/#12 resolve；#17 新增（IsIdleWithNoCaptives 降级 + +1444 考古）。
 file_class.hpp GetFileSize 0x7C8512 导入跳板注解删除（jmp __imp_* 字节实证，
 issue #11d 清偿，声明保留）。signals.json 0x63BE10 completed=false 附 note。
+
+---
+
+## 执行日志 — 2026-09-09 会话（续）：Phase E 全量落盘执行 + E5/E6 启动
+
+### Phase E 执行终态（E0-E4 全部完成，提交 c70eb5cd，auto-fill-baseline 重锚）
+
+**E0 IDA 回线同步**：
+- rename debt 55 条全清偿：10 条 09-08 灾难条目标 cancelled（src 已回滚，永不重放）、
+  19 条 sub_* 债对 live IDA 核验「IDA 已是语义名」直接销账、2 条畸形地址校正
+  （0x4C58C0=EMPulseClass::IterateCellsInRadius、0x5D4390=Chat::RefreshMessagePositions）。
+- ida_function_db.json 双刷新（13,443 具名，含全部 09-09 改名）。
+- 5 个 NOCACHE completed 函数 live 复验全 PASS（TimeRemaining/FacingClass::Update/
+  Set_SyncLog/IsNonNullPtr/IsRookie）→ completed 池 39 PASS / 0 FAIL。
+- **full_export v3 重导出完成**：19,088 函数 100%（伪码+汇编）、globals 5,847 数据段
+  条目、include 1,343 类头、71MB。v2 归档为 full_export_v2_20260909/。
+  ⚠ v3 已知限制：export_funcs 对超长伪码有输出截断（`[NNNN chars total]` 标记，
+  ~100 个长函数受影响）——E4 物化时已检测并注释化；翻译时以 get_context live 拉取为准。
+
+**E3-IDA TechnoClass 452-580 考古修复**（三重二进制铁证）：
+- forceShielded@0x1C4（IronCurtain@0x70E2C0 `mov dword ptr [ecx+1C4h],1/0`）；
+- isDeactivated@0x1C8（IsDeactivated@0x70FBD0 `mov al,[ecx+1C8h]`）；
+- focus@0x21C 锚点（GetTarget `mov eax,[ecx+21Ch]`）+ 460-540 区 80 字节紧凑排列
+  推导 → airstrikeTintStage@0x1CC、drain 三连起于 0x1D0。
+- 裁决：til 仅 0x1C4-0x1CF 三成员顺序错；member_lookup 从 464 起整体 +4 错到 0x244
+  （09-09 会话修正了头部但把尾部带偏）。四源对齐：til（t14_structs --only 重声明）+
+  class_layouts + member_lookup + src/techno.hpp。
+- 残留两争议区挂 issue #19（244-280 区 +12、424-448 区 +4，member_lookup 单方偏离，
+  待 B4 字段级 xref 考古）。
+
+**E1-E4 全量落盘**（tools/gen_e4_materialize.py，50 秒可再生，幂等）：
+- **E4 定义占位体**：14,576 无体函数物化为裁决 v2 pending 块（src/e4/ 565 桶文件；
+  member 形态 6,080 + free 形态 8,496）。MCP pending **3,416 → 17,992 真实总账浮出**
+  （19,133 全集 − 3,455 既有体 − 39 completed − 若干信号外形态 ≈ 17,992 精确对账）。
+- **E3-src 签名合成 + hpp 声明**：1,057 条成员声明插入 94 个 hpp（签名=IDA 骨架 +
+  已应用 CSP 类型；**方法名以记录名行（IDA label/signals 权威）为准**——Hex-Rays
+  声明行会渲染 T14 时代嵌入的旧类型名（VectorClass::_vt06 vs 实际 VectorClass::Clear
+  实证））；花括号 code-aware 匹配（注释/字符串剥离——house.hpp 曾因原始计数把
+  HouseClass 声明插进 StartingTechnoStruct）。
+- **E2 最小类声明**：289 个（src/e4/classes/*.hpp，vfptr + 方法声明，CSP inferred
+  class 驱动）。
+- **E1 全局声明**：882 个伪码引用全局 extern（e4_globals.hpp；参数名噪音过滤——
+  IDA 数据自动名 a1/aP1 与参数名不可区分，保守排除）。
+- **偏移→OO 语法重写**：1,869 处 this 相对偏移改写为 `this->成员名`（owner 证据 =
+  记录名行 :: + csp_functions.inferred_real_class for sub_*；宽度按 cast 类型对齐
+  class_layouts 成员表精确匹配 offset+size）。4,379 处未映射（owner 未知/成员无名/
+  尺寸错配）保持原始形态——诚实优先。
+- 截断记录处理：v3 超长伪码截断检测 → 注释化 + 空体（括号平衡，replace_body 安全）。
+
+**审计回归清偿**（E4 曾引入 2,119 raw / 5,004 missing 两类审计噪音）：
+- MCP 注解审计补 namespace 行跳过 + 伪码块内伪 def 跳过 → **matched 8,771 /
+  missing 0 / mismatch 0**（服务源码级修复，进程热载需重启）。
+- audit_consistency 补 src/e4 跳过 + **93 条历史 wrong-class 声明删除**
+  （五组 Type↔Instance 混淆：HouseClass↔StartingTechnoStruct 104 对、TagTypeClass↔
+  TagClass 28、VoxelAnimTypeClass↔VoxLib 24、ScriptTypeClass↔ScriptActionNode 14、
+  TriggerTypeClass↔TriggerClass 12——删除错类侧，保留 IDA 权威侧）→
+  **回基线 38 raw / 3 normalized**（getMapCoords vtable 债 + 2 rename-debt 自愈型）。
+- MCP 服务器：pending 索引 mtime 失效（新增 src 文件自动入账，不再需要 annotate
+  触发重置）；build_pending_index/_signals 状态一致性维持。
+
+**auto-fill-baseline 重锚**：c70eb5cd（E4 物化提交），diff=0，门控空转通过。
+**重锚不清账**：债清单全部保留（17,992 pending / 69 CFG / 682 链接 / vtable 审计 /
+issue #4/#17/#19 等），是 C 线工作队列。
+
+**基建缺陷记录（未修）**：
+- e4 声明插入产生个别非法方法名（`int AbstractClass(); // 0x4385D0`——方法名与
+  基类同名，合法 C++ 冲突）；签名类型偶有不可解析形态（std::locale::facet* 等）——
+  均在「基线编译错误允许」框架内，翻译到具体函数时逐个吸收。
+- v3 快照长函数截断（见 E0 注）。
+
+### E5 口径统一（后台批量 verify 运行中）
+
+- 候选 = 有真体未标 completed 的 2,900 函数（.omo/e5_candidates.json）；
+  4 并行 verify_execution_flow 子进程（live IDA fetch 回填缓存）。
+- 中程进度：650/2,900 验完，15 PASS（存根类 FAIL 属预期——它们保留 pending 口径）。
+- PASS 批量 tool_mark_completed 收尾待跑；FAIL 并入 69-CFG 债清单口径。
+
+### E6 翻译启动（纯 MCP 工作流，机械收割优先）
+
+- **常量返回收割**：374 个 `return CONST;` 型 pending 块批量真翻译
+  （.omo/e6_harvest_const.py：replace → verify → PASS 标记 / FAIL 回滚）；
+  首批 10/10 PASS（3.7s/函数）。
+- 后续批次队列：58 个全局 getter、457 个证据完备（偏移已重写）函数、
+  BuildingClass 布局争议区（issue #4）维持延缓。
+- 已知瓶颈再确认：单体函数成员考古成本（BombClass 0x30/0x38 hpp 缺成员实证）——
+  A1 成员语义命名仍是 C 线提速前置投资。
 
 ---
 
