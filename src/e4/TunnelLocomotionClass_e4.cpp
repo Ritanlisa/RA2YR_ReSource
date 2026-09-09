@@ -173,12 +173,6 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
-// 0x72A200
-int TunnelLocomotionClass::StubReturn60()
-{
-return 60;
-}
-
 // 0x72A210
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -190,4 +184,10 @@ TunnelLocomotionClass *__thiscall TunnelLocomotionClass::ProcessMove(_DWORD *Blo
     __3_YAXPAX_Z(Block); /*0x72a220*/
   return (TunnelLocomotionClass *)Block; /*0x72a22a*/
 }
+}
+
+// 0x72A200
+int TunnelLocomotionClass::StubReturn60()
+{
+return 60;
 }

@@ -183,30 +183,6 @@ int __thiscall AbstractClass::COMStub_Return0_10(#378 *this)
 }
 } // namespace gamemd
 
-// 0x410490
-namespace gamemd {
-int AbstractClass::computeDistanceSquared()
-{
-return -1;
-}
-} // namespace gamemd
-
-// 0x4104A0
-namespace gamemd {
-int AbstractClass::COMStub_Return0_15()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x4104B0
-namespace gamemd {
-int AbstractClass::COMStub_Return0_16()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x410520
 namespace gamemd {
 int AbstractClass::COMStub_Return0_20()
@@ -1020,8 +996,8 @@ unsigned int AbstractClass::queueMission(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall AbstractClass::sub_4E01C0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4e01c0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4e01d5*/
+  if ( (unsigned char)this->vtable3 ) /*0x4e01c0*/
+    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e01d5*/
   else
     return 0; /*0x4e01c7*/
 }
@@ -2061,7 +2037,7 @@ char AbstractClass::processTeamOrder()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall AbstractClass::processTeamOrder(RAMFileClass *this)
 {
-  return *((_BYTE *)this + 28); /*0x65c333*/
+  return (unsigned char)this->referenceCount; /*0x65c333*/
 }
 }
 } // namespace gamemd
@@ -2376,5 +2352,29 @@ int AbstractClass::checkBuildingPlacement()
 {
   return -1; /*0x74f333*/
 }
+}
+} // namespace gamemd
+
+// 0x410490
+namespace gamemd {
+int AbstractClass::computeDistanceSquared()
+{
+return -1;
+}
+} // namespace gamemd
+
+// 0x4104A0
+namespace gamemd {
+int AbstractClass::COMStub_Return0_15()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x4104B0
+namespace gamemd {
+int AbstractClass::COMStub_Return0_16()
+{
+return 0;
 }
 } // namespace gamemd

@@ -309,7 +309,7 @@ void __thiscall sub_7AE0E0(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x7ae0e8*/
+  if ( (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
   {
     v2 = *(this + 2); /*0x7ae0f0*/
     v3 = (_DWORD *)*this; /*0x7ae0f3*/
@@ -385,7 +385,7 @@ void __thiscall sub_7AEF50(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = *(this + 2); /*0x7aef55*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aef67*/
+  if ( v2 > *(this + 12) && (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7aef67*/
   {
     v3 = (int *)*this; /*0x7aef70*/
     v4 = *(this + 3); /*0x7aef73*/

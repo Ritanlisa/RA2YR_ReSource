@@ -805,14 +805,14 @@ void __thiscall TypeList_cptr_ParticleSystemTypeClass::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x459f96*/
-  *(_DWORD *)(this + 16) = 0; /*0x459f99*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x459fa0*/
+  this->Count = 0; /*0x459f99*/
+  if ( v2 && this->IsAllocated ) /*0x459fa0*/
   {
     __3_YAXPAX_Z(v2); /*0x459fa6*/
-    *(_DWORD *)(this + 4) = 0; /*0x459fae*/
+    this->Items = 0; /*0x459fae*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x459fb1*/
-  *(_DWORD *)(this + 8) = 0; /*0x459fb4*/
+  this->IsAllocated = 0; /*0x459fb1*/
+  this->Capacity = 0; /*0x459fb4*/
 }
 }
 } // namespace gamemd
@@ -824,8 +824,8 @@ unsigned int TypeList_cptr_ParticleSystemTypeClass::LoadTypeData(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_cptr_ParticleSystemTypeClass::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x459fc0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x459fd5*/
+  if ( this->IsInitialized ) /*0x459fc0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x459fd5*/
   else
     return 0; /*0x459fc7*/
 }
@@ -846,38 +846,38 @@ char __thiscall TypeList_cptr_ParticleSystemTypeClass::Add(void *this, int a2, _
 
   if ( a2 ) /*0x45a30c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x45a312*/
+    this->IsInitialized = 0; /*0x45a312*/
     if ( a3 ) /*0x45a318*/
       v4 = a3; /*0x45a32e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x45a32a*/
-    *((_BYTE *)this + 12) = 1; /*0x45a332*/
+    this->IsInitialized = 1; /*0x45a332*/
     if ( !v4 ) /*0x45a336*/
       return 0; /*0x45a3aa*/
-    if ( *((_DWORD *)this + 1) ) /*0x45a338*/
+    if ( this->Items ) /*0x45a338*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x45a33f*/
+      v5 = this->Capacity; /*0x45a33f*/
       if ( a2 < v5 ) /*0x45a344*/
         v5 = a2; /*0x45a346*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x45a34c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x45a34c*/
         ++i; /*0x45a351*/
-      if ( *((_BYTE *)this + 13) ) /*0x45a35e*/
+      if ( this->IsAllocated ) /*0x45a35e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a369*/
-        *((_DWORD *)this + 1) = 0; /*0x45a371*/
+        this->Items = 0; /*0x45a371*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x45a37a*/
-    *((_DWORD *)this + 2) = a2; /*0x45a382*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x45a385*/
+    this->Items = v4; /*0x45a37a*/
+    this->Capacity = a2; /*0x45a382*/
+    this->IsAllocated = a3 == 0; /*0x45a385*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x45a38e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x45a391*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x45a399*/
-    *((_DWORD *)this + 4) = v7; /*0x45a39b*/
+  v7 = this->Capacity; /*0x45a391*/
+  if ( v7 < this->Count ) /*0x45a399*/
+    this->Count = v7; /*0x45a39b*/
   return 1; /*0x45a39e*/
 }
 }
@@ -943,14 +943,14 @@ void __thiscall TypeList_cptr_TerrainTypeClass::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x67a936*/
-  *(_DWORD *)(this + 16) = 0; /*0x67a939*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x67a940*/
+  this->Count = 0; /*0x67a939*/
+  if ( v2 && this->IsAllocated ) /*0x67a940*/
   {
     __3_YAXPAX_Z(v2); /*0x67a946*/
-    *(_DWORD *)(this + 4) = 0; /*0x67a94e*/
+    this->Items = 0; /*0x67a94e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x67a951*/
-  *(_DWORD *)(this + 8) = 0; /*0x67a954*/
+  this->IsAllocated = 0; /*0x67a951*/
+  this->Capacity = 0; /*0x67a954*/
 }
 }
 } // namespace gamemd
@@ -962,8 +962,8 @@ unsigned int TypeList_cptr_TerrainTypeClass::GetIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_cptr_TerrainTypeClass::GetIndex(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x67a960*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x67a975*/
+  if ( this->IsInitialized ) /*0x67a960*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a975*/
   else
     return 0; /*0x67a967*/
 }
@@ -1053,30 +1053,30 @@ char __thiscall TypeList_cptr_TerrainTypeClass::sub_67B230(void *this, int a2, _
 
   if ( a2 ) /*0x67b23c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x67b246*/
+    this->IsInitialized = 0; /*0x67b246*/
     if ( a3 ) /*0x67b24c*/
       v4 = a3; /*0x67b262*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x67b25e*/
-    *((_BYTE *)this + 12) = 1; /*0x67b266*/
+    this->IsInitialized = 1; /*0x67b266*/
     if ( v4 ) /*0x67b26a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x67b275*/
+      if ( this->Items ) /*0x67b275*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x67b27c*/
+        v6 = this->Capacity; /*0x67b27c*/
         if ( a2 < v6 ) /*0x67b281*/
           v6 = a2; /*0x67b283*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x67b289*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67b289*/
           ++i; /*0x67b28e*/
-        if ( *((_BYTE *)this + 13) ) /*0x67b29b*/
+        if ( this->IsAllocated ) /*0x67b29b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b2a6*/
-          *((_DWORD *)this + 1) = 0; /*0x67b2ae*/
+          this->Items = 0; /*0x67b2ae*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x67b2b7*/
-      *((_DWORD *)this + 2) = a2; /*0x67b2bf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x67b2c2*/
+      this->Items = v4; /*0x67b2b7*/
+      this->Capacity = a2; /*0x67b2bf*/
+      this->IsAllocated = a3 == 0; /*0x67b2c2*/
       return 1; /*0x67b2c8*/
     }
     else
@@ -1100,13 +1100,13 @@ void TypeList_cptr_TerrainTypeClass::TryFreeAndClear()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TypeList_cptr_TerrainTypeClass::sub_67B2E0(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x67b2ed*/
+  if ( this->Items && this->IsAllocated ) /*0x67b2ed*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x67b2f3*/
-    *(_DWORD *)(this + 4) = 0; /*0x67b2fb*/
+    this->Items = 0; /*0x67b2fb*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x67b2fe*/
-  *(_DWORD *)(this + 8) = 0; /*0x67b301*/
+  this->IsAllocated = 0; /*0x67b2fe*/
+  this->Capacity = 0; /*0x67b301*/
 }
 }
 } // namespace gamemd
@@ -1122,9 +1122,9 @@ int __thiscall TypeList_cptr_TerrainTypeClass::sub_67B310(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x67b310*/
+  if ( !this->IsInitialized ) /*0x67b310*/
     return 0; /*0x67b318*/
-  v3 = *(_DWORD *)(this + 8); /*0x67b31e*/
+  v3 = this->Capacity; /*0x67b31e*/
   result = 0; /*0x67b321*/
   if ( v3 <= 0 ) /*0x67b325*/
     return -1; /*0x67b33c*/
@@ -1145,8 +1145,8 @@ unsigned int TypeList_cptr_TerrainTypeClass::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_cptr_TerrainTypeClass::sub_67B350(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x67b350*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x67b365*/
+  if ( this->IsInitialized ) /*0x67b350*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x67b365*/
   else
     return 0; /*0x67b357*/
 }
@@ -1167,38 +1167,38 @@ char __thiscall TypeList_cptr_TerrainTypeClass::Remove(void *this, int a2, _DWOR
 
   if ( a2 ) /*0x67b3dc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x67b3e2*/
+    this->IsInitialized = 0; /*0x67b3e2*/
     if ( a3 ) /*0x67b3e8*/
       v4 = a3; /*0x67b3fe*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x67b3fa*/
-    *((_BYTE *)this + 12) = 1; /*0x67b402*/
+    this->IsInitialized = 1; /*0x67b402*/
     if ( !v4 ) /*0x67b406*/
       return 0; /*0x67b47a*/
-    if ( *((_DWORD *)this + 1) ) /*0x67b408*/
+    if ( this->Items ) /*0x67b408*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x67b40f*/
+      v5 = this->Capacity; /*0x67b40f*/
       if ( a2 < v5 ) /*0x67b414*/
         v5 = a2; /*0x67b416*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x67b41c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67b41c*/
         ++i; /*0x67b421*/
-      if ( *((_BYTE *)this + 13) ) /*0x67b42e*/
+      if ( this->IsAllocated ) /*0x67b42e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b439*/
-        *((_DWORD *)this + 1) = 0; /*0x67b441*/
+        this->Items = 0; /*0x67b441*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x67b44a*/
-    *((_DWORD *)this + 2) = a2; /*0x67b452*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x67b455*/
+    this->Items = v4; /*0x67b44a*/
+    this->Capacity = a2; /*0x67b452*/
+    this->IsAllocated = a3 == 0; /*0x67b455*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x67b45e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x67b461*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x67b469*/
-    *((_DWORD *)this + 4) = v7; /*0x67b46b*/
+  v7 = this->Capacity; /*0x67b461*/
+  if ( v7 < this->Count ) /*0x67b469*/
+    this->Count = v7; /*0x67b46b*/
   return 1; /*0x67b46e*/
 }
 }
@@ -1264,14 +1264,14 @@ void __thiscall TypeList_Infantry::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5128a6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5128a9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5128b0*/
+  this->Count = 0; /*0x5128a9*/
+  if ( v2 && this->IsAllocated ) /*0x5128b0*/
   {
     __3_YAXPAX_Z(v2); /*0x5128b6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5128be*/
+    this->Items = 0; /*0x5128be*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5128c1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5128c4*/
+  this->IsAllocated = 0; /*0x5128c1*/
+  this->Capacity = 0; /*0x5128c4*/
 }
 }
 } // namespace gamemd
@@ -1283,8 +1283,8 @@ unsigned int TypeList_Infantry::GetIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_Infantry::GetIndex(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5128d0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5128e5*/
+  if ( this->IsInitialized ) /*0x5128d0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5128e5*/
   else
     return 0; /*0x5128d7*/
 }
@@ -1400,38 +1400,38 @@ char __thiscall TypeList_Infantry::Remove(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x512e7c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x512e82*/
+    this->IsInitialized = 0; /*0x512e82*/
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x512e9a*/
-    *((_BYTE *)this + 12) = 1; /*0x512ea2*/
+    this->IsInitialized = 1; /*0x512ea2*/
     if ( !v4 ) /*0x512ea6*/
       return 0; /*0x512f1a*/
-    if ( *((_DWORD *)this + 1) ) /*0x512ea8*/
+    if ( this->Items ) /*0x512ea8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x512eaf*/
+      v5 = this->Capacity; /*0x512eaf*/
       if ( a2 < v5 ) /*0x512eb4*/
         v5 = a2; /*0x512eb6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x512ebc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
-      if ( *((_BYTE *)this + 13) ) /*0x512ece*/
+      if ( this->IsAllocated ) /*0x512ece*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x512ed9*/
-        *((_DWORD *)this + 1) = 0; /*0x512ee1*/
+        this->Items = 0; /*0x512ee1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x512eea*/
-    *((_DWORD *)this + 2) = a2; /*0x512ef2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x512ef5*/
+    this->Items = v4; /*0x512eea*/
+    this->Capacity = a2; /*0x512ef2*/
+    this->IsAllocated = a3 == 0; /*0x512ef5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x512efe*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x512f01*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x512f09*/
-    *((_DWORD *)this + 4) = v7; /*0x512f0b*/
+  v7 = this->Capacity; /*0x512f01*/
+  if ( v7 < this->Count ) /*0x512f09*/
+    this->Count = v7; /*0x512f0b*/
   return 1; /*0x512f0e*/
 }
 }
@@ -1570,30 +1570,30 @@ char __thiscall TypeList_Particle::Remove(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x45a1cc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x45a1d6*/
+    this->IsInitialized = 0; /*0x45a1d6*/
     if ( a3 ) /*0x45a1dc*/
       v4 = a3; /*0x45a1f2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x45a1ee*/
-    *((_BYTE *)this + 12) = 1; /*0x45a1f6*/
+    this->IsInitialized = 1; /*0x45a1f6*/
     if ( v4 ) /*0x45a1fa*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x45a205*/
+      if ( this->Items ) /*0x45a205*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x45a20c*/
+        v6 = this->Capacity; /*0x45a20c*/
         if ( a2 < v6 ) /*0x45a211*/
           v6 = a2; /*0x45a213*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x45a219*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x45a219*/
           ++i; /*0x45a21e*/
-        if ( *((_BYTE *)this + 13) ) /*0x45a22b*/
+        if ( this->IsAllocated ) /*0x45a22b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a236*/
-          *((_DWORD *)this + 1) = 0; /*0x45a23e*/
+          this->Items = 0; /*0x45a23e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x45a247*/
-      *((_DWORD *)this + 2) = a2; /*0x45a24f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x45a252*/
+      this->Items = v4; /*0x45a247*/
+      this->Capacity = a2; /*0x45a24f*/
+      this->IsAllocated = a3 == 0; /*0x45a252*/
       return 1; /*0x45a258*/
     }
     else
@@ -1621,9 +1621,9 @@ int __thiscall TypeList_Particle::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x45a2a0*/
+  if ( !this->IsInitialized ) /*0x45a2a0*/
     return 0; /*0x45a2a8*/
-  v3 = *(_DWORD *)(this + 8); /*0x45a2ae*/
+  v3 = this->Capacity; /*0x45a2ae*/
   result = 0; /*0x45a2b1*/
   if ( v3 <= 0 ) /*0x45a2b5*/
     return -1; /*0x45a2cc*/
@@ -1644,8 +1644,8 @@ unsigned int TypeList_Particle::GetCapacity(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_Particle::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x45a2e0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x45a2f5*/
+  if ( this->IsInitialized ) /*0x45a2e0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x45a2f5*/
   else
     return 0; /*0x45a2e7*/
 }
@@ -1735,30 +1735,30 @@ char __thiscall TypeList_TechnoType::Remove(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x47800c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x478016*/
+    this->IsInitialized = 0; /*0x478016*/
     if ( a3 ) /*0x47801c*/
       v4 = a3; /*0x478032*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x47802e*/
-    *((_BYTE *)this + 12) = 1; /*0x478036*/
+    this->IsInitialized = 1; /*0x478036*/
     if ( v4 ) /*0x47803a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x478045*/
+      if ( this->Items ) /*0x478045*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x47804c*/
+        v6 = this->Capacity; /*0x47804c*/
         if ( a2 < v6 ) /*0x478051*/
           v6 = a2; /*0x478053*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x478059*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x478059*/
           ++i; /*0x47805e*/
-        if ( *((_BYTE *)this + 13) ) /*0x47806b*/
+        if ( this->IsAllocated ) /*0x47806b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x478076*/
-          *((_DWORD *)this + 1) = 0; /*0x47807e*/
+          this->Items = 0; /*0x47807e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x478087*/
-      *((_DWORD *)this + 2) = a2; /*0x47808f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x478092*/
+      this->Items = v4; /*0x478087*/
+      this->Capacity = a2; /*0x47808f*/
+      this->IsAllocated = a3 == 0; /*0x478092*/
       return 1; /*0x478098*/
     }
     else
@@ -1782,13 +1782,13 @@ void TypeList_TechnoType::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TypeList_TechnoType::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4780bd*/
+  if ( this->Items && this->IsAllocated ) /*0x4780bd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4780c3*/
-    *(_DWORD *)(this + 4) = 0; /*0x4780cb*/
+    this->Items = 0; /*0x4780cb*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4780ce*/
-  *(_DWORD *)(this + 8) = 0; /*0x4780d1*/
+  this->IsAllocated = 0; /*0x4780ce*/
+  this->Capacity = 0; /*0x4780d1*/
 }
 }
 } // namespace gamemd
@@ -1804,9 +1804,9 @@ int __thiscall TypeList_TechnoType::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4780e0*/
+  if ( !this->IsInitialized ) /*0x4780e0*/
     return 0; /*0x4780e8*/
-  v3 = *(_DWORD *)(this + 8); /*0x4780ee*/
+  v3 = this->Capacity; /*0x4780ee*/
   result = 0; /*0x4780f1*/
   if ( v3 <= 0 ) /*0x4780f5*/
     return -1; /*0x47810c*/
@@ -1827,8 +1827,8 @@ unsigned int TypeList_TechnoType::GetIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_TechnoType::GetIndex(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x478120*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x478135*/
+  if ( this->IsInitialized ) /*0x478120*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x478135*/
   else
     return 0; /*0x478127*/
 }
@@ -1870,14 +1870,14 @@ void __thiscall TypeList_VoxelAnim::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x67a416*/
-  *(_DWORD *)(this + 16) = 0; /*0x67a419*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x67a420*/
+  this->Count = 0; /*0x67a419*/
+  if ( v2 && this->IsAllocated ) /*0x67a420*/
   {
     __3_YAXPAX_Z(v2); /*0x67a426*/
-    *(_DWORD *)(this + 4) = 0; /*0x67a42e*/
+    this->Items = 0; /*0x67a42e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x67a431*/
-  *(_DWORD *)(this + 8) = 0; /*0x67a434*/
+  this->IsAllocated = 0; /*0x67a431*/
+  this->Capacity = 0; /*0x67a434*/
 }
 }
 } // namespace gamemd
@@ -1889,8 +1889,8 @@ unsigned int TypeList_VoxelAnim::GetIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_VoxelAnim::GetIndex(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x67a440*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x67a455*/
+  if ( this->IsInitialized ) /*0x67a440*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a455*/
   else
     return 0; /*0x67a447*/
 }
@@ -1919,14 +1919,14 @@ void __thiscall TypeList_VoxelAnim::TypeList_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x67a686*/
-  *(_DWORD *)(this + 16) = 0; /*0x67a689*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x67a690*/
+  this->Count = 0; /*0x67a689*/
+  if ( v2 && this->IsAllocated ) /*0x67a690*/
   {
     __3_YAXPAX_Z(v2); /*0x67a696*/
-    *(_DWORD *)(this + 4) = 0; /*0x67a69e*/
+    this->Items = 0; /*0x67a69e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x67a6a1*/
-  *(_DWORD *)(this + 8) = 0; /*0x67a6a4*/
+  this->IsAllocated = 0; /*0x67a6a1*/
+  this->Capacity = 0; /*0x67a6a4*/
 }
 }
 } // namespace gamemd
@@ -1938,8 +1938,8 @@ unsigned int TypeList_VoxelAnim::TypeList_vt05(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_VoxelAnim::TypeList_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x67a6b0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x67a6c5*/
+  if ( this->IsInitialized ) /*0x67a6b0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a6c5*/
   else
     return 0; /*0x67a6b7*/
 }
@@ -2042,30 +2042,30 @@ char __thiscall TypeList_VoxelAnim::sub_67AB30(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x67ab3c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x67ab46*/
+    this->IsInitialized = 0; /*0x67ab46*/
     if ( a3 ) /*0x67ab4c*/
       v4 = a3; /*0x67ab62*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x67ab5e*/
-    *((_BYTE *)this + 12) = 1; /*0x67ab66*/
+    this->IsInitialized = 1; /*0x67ab66*/
     if ( v4 ) /*0x67ab6a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x67ab75*/
+      if ( this->Items ) /*0x67ab75*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x67ab7c*/
+        v6 = this->Capacity; /*0x67ab7c*/
         if ( a2 < v6 ) /*0x67ab81*/
           v6 = a2; /*0x67ab83*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x67ab89*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67ab89*/
           ++i; /*0x67ab8e*/
-        if ( *((_BYTE *)this + 13) ) /*0x67ab9b*/
+        if ( this->IsAllocated ) /*0x67ab9b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x67aba6*/
-          *((_DWORD *)this + 1) = 0; /*0x67abae*/
+          this->Items = 0; /*0x67abae*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x67abb7*/
-      *((_DWORD *)this + 2) = a2; /*0x67abbf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x67abc2*/
+      this->Items = v4; /*0x67abb7*/
+      this->Capacity = a2; /*0x67abbf*/
+      this->IsAllocated = a3 == 0; /*0x67abc2*/
       return 1; /*0x67abc8*/
     }
     else
@@ -2093,9 +2093,9 @@ int __thiscall TypeList_VoxelAnim::sub_67AC10(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x67ac10*/
+  if ( !this->IsInitialized ) /*0x67ac10*/
     return 0; /*0x67ac18*/
-  v3 = *(_DWORD *)(this + 8); /*0x67ac1e*/
+  v3 = this->Capacity; /*0x67ac1e*/
   result = 0; /*0x67ac21*/
   if ( v3 <= 0 ) /*0x67ac25*/
     return -1; /*0x67ac3c*/
@@ -2116,8 +2116,8 @@ unsigned int TypeList_VoxelAnim::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList_VoxelAnim::sub_67AC50(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x67ac50*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x67ac65*/
+  if ( this->IsInitialized ) /*0x67ac50*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x67ac65*/
   else
     return 0; /*0x67ac57*/
 }
@@ -2138,38 +2138,38 @@ char __thiscall TypeList_VoxelAnim::Remove(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x67acdc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x67ace2*/
+    this->IsInitialized = 0; /*0x67ace2*/
     if ( a3 ) /*0x67ace8*/
       v4 = a3; /*0x67acfe*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x67acfa*/
-    *((_BYTE *)this + 12) = 1; /*0x67ad02*/
+    this->IsInitialized = 1; /*0x67ad02*/
     if ( !v4 ) /*0x67ad06*/
       return 0; /*0x67ad7a*/
-    if ( *((_DWORD *)this + 1) ) /*0x67ad08*/
+    if ( this->Items ) /*0x67ad08*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x67ad0f*/
+      v5 = this->Capacity; /*0x67ad0f*/
       if ( a2 < v5 ) /*0x67ad14*/
         v5 = a2; /*0x67ad16*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x67ad1c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67ad1c*/
         ++i; /*0x67ad21*/
-      if ( *((_BYTE *)this + 13) ) /*0x67ad2e*/
+      if ( this->IsAllocated ) /*0x67ad2e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x67ad39*/
-        *((_DWORD *)this + 1) = 0; /*0x67ad41*/
+        this->Items = 0; /*0x67ad41*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x67ad4a*/
-    *((_DWORD *)this + 2) = a2; /*0x67ad52*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x67ad55*/
+    this->Items = v4; /*0x67ad4a*/
+    this->Capacity = a2; /*0x67ad52*/
+    this->IsAllocated = a3 == 0; /*0x67ad55*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x67ad5e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x67ad61*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x67ad69*/
-    *((_DWORD *)this + 4) = v7; /*0x67ad6b*/
+  v7 = this->Capacity; /*0x67ad61*/
+  if ( v7 < this->Count ) /*0x67ad69*/
+    this->Count = v7; /*0x67ad6b*/
   return 1; /*0x67ad6e*/
 }
 }

@@ -273,14 +273,14 @@ void __thiscall CaptureManagerClass::vt_03_(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x472a86*/
-  *(_DWORD *)(this + 16) = 0; /*0x472a89*/
+  this->uniqueId = 0; /*0x472a89*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x472a90*/
   {
     __3_YAXPAX_Z(v2); /*0x472a96*/
-    *(_DWORD *)(this + 4) = 0; /*0x472a9e*/
+    this->vtable1 = 0; /*0x472a9e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x472aa1*/
-  *(_DWORD *)(this + 8) = 0; /*0x472aa4*/
+  this->vtable2 = 0; /*0x472aa4*/
 }
 }
 } // namespace gamemd

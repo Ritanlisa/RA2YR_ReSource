@@ -586,9 +586,9 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   *(_BYTE *)(this + 652) = 0; /*0x5f7243*/
   *(_DWORD *)(this + 656) = 0; /*0x5f7249*/
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f7251*/
-  *(_DWORD *)(this + 4) = &ObjectTypeClass::`vftable'; /*0x5f7258*/
-  *(_DWORD *)(this + 8) = &ObjectTypeClass::`vftable'; /*0x5f725f*/
-  *(_DWORD *)(this + 12) = &ObjectTypeClass::`vftable'; /*0x5f7266*/
+  this->unused_9B = &ObjectTypeClass::`vftable'; /*0x5f7258*/
+  this->Armor = &ObjectTypeClass::`vftable'; /*0x5f725f*/
+  this->Strength = &ObjectTypeClass::`vftable'; /*0x5f7266*/
   if ( this + 36 != this + 504 ) /*0x5f726d*/
     qmemcpy((void *)(this + 504), (const void *)(this + 36), 0x19u); /*0x5f7274*/
   if ( &MEMORY[0x87F8E4] == (MouseClass *)-42624 ) /*0x5f727e*/
@@ -696,9 +696,9 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
-  *(_DWORD *)(this + 4) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
-  *(_DWORD *)(this + 8) = &ObjectTypeClass::`vftable'; /*0x5f7418*/
-  *(_DWORD *)(this + 12) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
+  this->unused_9B = &ObjectTypeClass::`vftable'; /*0x5f7411*/
+  this->Armor = &ObjectTypeClass::`vftable'; /*0x5f7418*/
+  this->Strength = &ObjectTypeClass::`vftable'; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xAC1418] + 16))(&MEMORY[0xAC1418], &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < MEMORY[0xAC1428] && v2 < --MEMORY[0xAC1428] ) /*0x5f7450*/
@@ -1472,10 +1472,10 @@ int __thiscall ObjectTypeClass::FreeLoaderBuffer(int this)
 {
   __3_YAXPAX_Z(*(void **)this); /*0x5f9b66*/
   *(_DWORD *)this = 0; /*0x5f9b70*/
-  *(_DWORD *)(this + 4) = 0; /*0x5f9b72*/
-  *(_DWORD *)(this + 8) = 0; /*0x5f9b75*/
+  this->unused_9B = 0; /*0x5f9b72*/
+  this->Armor = 0; /*0x5f9b75*/
   *(_BYTE *)(this + 12) = 0; /*0x5f9b78*/
-  *(_DWORD *)(this + 16) = 0; /*0x5f9b7b*/
+  this->uniqueId = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 }
 }
@@ -1663,7 +1663,7 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
   *(_DWORD *)&aP1->__pad_0[4] = *(this + 1); /*0x717a06*/
   *(_DWORD *)&aP1->__pad_0[8] = *(this + 2); /*0x717a0c*/
   *(_DWORD *)&aP1->__pad_0[12] = *(this + 3); /*0x717a12*/
-  LOWORD(aP1->uniqueId) = *((_WORD *)this + 8); /*0x717a1a*/
+  LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId; /*0x717a1a*/
   return (int)aP1->__pad_0; /*0x717a19*/
 }
 }

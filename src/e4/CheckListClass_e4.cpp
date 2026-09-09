@@ -112,12 +112,6 @@ void __stdcall CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 }
 }
 
-// 0x4AEBA0
-int CheckListClass::COMStub_Return0()
-{
-return 0;
-}
-
 // 0x4E1510
 void CheckListClass::StubReturnVoid()
 {
@@ -152,4 +146,10 @@ int __thiscall CheckListClass::_vt03(int this, int a2)
   }
   return LinkedList::InsertAfter((_DWORD *)this, a2); /*0x557e51*/
 }
+}
+
+// 0x4AEBA0
+int CheckListClass::COMStub_Return0()
+{
+return 0;
 }

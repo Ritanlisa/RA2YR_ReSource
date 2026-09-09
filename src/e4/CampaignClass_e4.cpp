@@ -15,9 +15,9 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
   *(_DWORD *)this = &CampaignClass::`vftable'; /*0x46cb70*/
   *(_DWORD *)(this + 152) = -1; /*0x46cb76*/
   *(_DWORD *)(this + 668) = -1; /*0x46cb7c*/
-  *(_DWORD *)(this + 4) = &CampaignClass::`vftable'; /*0x46cb82*/
-  *(_DWORD *)(this + 8) = &CampaignClass::`vftable'; /*0x46cb89*/
-  *(_DWORD *)(this + 12) = &CampaignClass::`vftable'; /*0x46cb90*/
+  this->scenario[512] = &CampaignClass::`vftable'; /*0x46cb82*/
+  this->finalMovie = &CampaignClass::`vftable'; /*0x46cb89*/
+  this->description[128] = &CampaignClass::`vftable'; /*0x46cb90*/
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -174,22 +174,6 @@ int __stdcall CampaignClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
     return 0; /*0x46d068*/
   return result; /*0x46d06a*/
 }
-}
-} // namespace gamemd
-
-// 0x46D070
-namespace gamemd {
-int CampaignClass::StubReturn928()
-{
-return 928;
-}
-} // namespace gamemd
-
-// 0x46D080
-namespace gamemd {
-int CampaignClass::StubReturn10()
-{
-return 10;
 }
 } // namespace gamemd
 
@@ -430,5 +414,21 @@ LABEL_47:
   *(this + 108) = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 }
+}
+} // namespace gamemd
+
+// 0x46D070
+namespace gamemd {
+int CampaignClass::StubReturn928()
+{
+return 928;
+}
+} // namespace gamemd
+
+// 0x46D080
+namespace gamemd {
+int CampaignClass::StubReturn10()
+{
+return 10;
 }
 } // namespace gamemd

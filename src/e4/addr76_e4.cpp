@@ -1596,14 +1596,6 @@ rc_ptr *__fastcall ConstructorWDTFlagOption(rc_ptr_base *a1, int a2, void *a3, i
 }
 } // namespace gamemd
 
-// 0x767600
-namespace gamemd {
-int sub_767600(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7678F0
 namespace gamemd {
 int sub_7678F0()
@@ -3937,5 +3929,13 @@ rc_ptr *__fastcall FindTerritoryWOL(ObjectClass *aP0, int a2, int a3)
   }
   return (rc_ptr *)aP0; /*0x77000a*/
 }
+}
+} // namespace gamemd
+
+// 0x767600
+namespace gamemd {
+int sub_767600(int a1)
+{
+return 0;
 }
 } // namespace gamemd

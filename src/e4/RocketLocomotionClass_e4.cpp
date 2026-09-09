@@ -16,10 +16,10 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   *(_DWORD *)(this + 28) = dword_B04E3C; /*0x661eda*/
   *(_DWORD *)(this + 32) = dword_B04E40; /*0x661ee3*/
   *(_DWORD *)(this + 36) = MEMORY[0xA8ED84]; /*0x661eee*/
-  *(_DWORD *)(this + 44) = 0; /*0x661ef1*/
-  *(_DWORD *)(this + 48) = 0; /*0x661ef4*/
+  this->MissionTimer.TimeLeft = 0; /*0x661ef1*/
+  this->MissionTimer.Rate = 0; /*0x661ef4*/
   v2 = MEMORY[0xA8ED84]; /*0x661ef7*/
-  *(_DWORD *)(this + 60) = 0; /*0x661efd*/
+  this->TrailerTimer.TimeLeft = 0; /*0x661efd*/
   *(_DWORD *)(this + 52) = v2; /*0x661f00*/
   *(_DWORD *)(this + 72) = 0; /*0x661f03*/
   this->MissionState = 0; /*0x661f06*/
@@ -77,12 +77,6 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
-// 0x6635B0
-int RocketLocomotionClass::StubReturn96()
-{
-return 96;
-}
-
 // 0x6635C0
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -108,14 +102,14 @@ void __thiscall RocketLocomotionClass_17_::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x6647b6*/
-  *(_DWORD *)(this + 16) = 0; /*0x6647b9*/
+  this->RocketLocomotionClass_17_field_0x10 = 0; /*0x6647b9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x6647c0*/
   {
     __3_YAXPAX_Z(v2); /*0x6647c6*/
-    *(_DWORD *)(this + 4) = 0; /*0x6647ce*/
+    this->RocketLocomotionClass_17_field_0x4 = 0; /*0x6647ce*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6647d1*/
-  *(_DWORD *)(this + 8) = 0; /*0x6647d4*/
+  this->RocketLocomotionClass_17_field_0x8 = 0; /*0x6647d4*/
 }
 }
 } // namespace gamemd
@@ -127,8 +121,8 @@ unsigned int RocketLocomotionClass_17::BeginMove(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall RocketLocomotionClass_17_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6647e0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x6647f5*/
+  if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC ) /*0x6647e0*/
+    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2; /*0x6647f5*/
   else
     return 0; /*0x6647e7*/
 }
@@ -201,21 +195,21 @@ char __thiscall RocketLocomotionClass_17_::sub_664850(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x664886*/
     if ( v4 ) /*0x66488a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x664895*/
+      if ( this->RocketLocomotionClass_17_field_0x4 ) /*0x664895*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x66489c*/
+        v6 = this->RocketLocomotionClass_17_field_0x8; /*0x66489c*/
         if ( a2 < v6 ) /*0x6648a1*/
           v6 = a2; /*0x6648a3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x6648a9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->RocketLocomotionClass_17_field_0x4 + 4 * i - 4) ) /*0x6648a9*/
           ++i; /*0x6648ae*/
         if ( *((_BYTE *)this + 13) ) /*0x6648bb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x6648c6*/
-          *((_DWORD *)this + 1) = 0; /*0x6648ce*/
+          this->RocketLocomotionClass_17_field_0x4 = 0; /*0x6648ce*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x6648d7*/
-      *((_DWORD *)this + 2) = a2; /*0x6648df*/
+      this->RocketLocomotionClass_17_field_0x4 = v4; /*0x6648d7*/
+      this->RocketLocomotionClass_17_field_0x8 = a2; /*0x6648df*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x6648e2*/
       return 1; /*0x6648e8*/
     }
@@ -240,13 +234,13 @@ void RocketLocomotionClass_17::Destroy()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall RocketLocomotionClass_17_::sub_664900(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x66490d*/
+  if ( this->RocketLocomotionClass_17_field_0x4 && *(_BYTE *)(this + 13) ) /*0x66490d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x664913*/
-    *(_DWORD *)(this + 4) = 0; /*0x66491b*/
+    this->RocketLocomotionClass_17_field_0x4 = 0; /*0x66491b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x66491e*/
-  *(_DWORD *)(this + 8) = 0; /*0x664921*/
+  this->RocketLocomotionClass_17_field_0x8 = 0; /*0x664921*/
 }
 }
 } // namespace gamemd
@@ -262,9 +256,9 @@ int __thiscall RocketLocomotionClass_17_::sub_664930(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x664930*/
+  if ( !(unsigned char)this->RocketLocomotionClass_17_field_0xC ) /*0x664930*/
     return 0; /*0x664938*/
-  v3 = *(_DWORD *)(this + 8); /*0x66493e*/
+  v3 = this->RocketLocomotionClass_17_field_0x8; /*0x66493e*/
   result = 0; /*0x664941*/
   if ( v3 <= 0 ) /*0x664945*/
     return -1; /*0x66495c*/
@@ -285,8 +279,8 @@ unsigned int RocketLocomotionClass_17::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall RocketLocomotionClass_17_::sub_664970(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x664970*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x664985*/
+  if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC ) /*0x664970*/
+    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2; /*0x664985*/
   else
     return 0; /*0x664977*/
 }
@@ -315,30 +309,30 @@ char __thiscall RocketLocomotionClass_17_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
-    if ( *((_DWORD *)this + 1) ) /*0x6649c8*/
+    if ( this->RocketLocomotionClass_17_field_0x4 ) /*0x6649c8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x6649cf*/
+      v5 = this->RocketLocomotionClass_17_field_0x8; /*0x6649cf*/
       if ( a2 < v5 ) /*0x6649d4*/
         v5 = a2; /*0x6649d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x6649dc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->RocketLocomotionClass_17_field_0x4 + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
       if ( *((_BYTE *)this + 13) ) /*0x6649ee*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6649f9*/
-        *((_DWORD *)this + 1) = 0; /*0x664a01*/
+        this->RocketLocomotionClass_17_field_0x4 = 0; /*0x664a01*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x664a0a*/
-    *((_DWORD *)this + 2) = a2; /*0x664a12*/
+    this->RocketLocomotionClass_17_field_0x4 = v4; /*0x664a0a*/
+    this->RocketLocomotionClass_17_field_0x8 = a2; /*0x664a12*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x664a15*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x664a1e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x664a21*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x664a29*/
-    *((_DWORD *)this + 4) = v7; /*0x664a2b*/
+  v7 = this->RocketLocomotionClass_17_field_0x8; /*0x664a21*/
+  if ( v7 < this->RocketLocomotionClass_17_field_0x10 ) /*0x664a29*/
+    this->RocketLocomotionClass_17_field_0x10 = v7; /*0x664a2b*/
   return 1; /*0x664a2e*/
 }
 }
@@ -418,3 +412,9 @@ DynamicVector *__thiscall RocketLocomotionClass_17_::QueryInterface(_DWORD *Bloc
 }
 }
 } // namespace gamemd
+
+// 0x6635B0
+int RocketLocomotionClass::StubReturn96()
+{
+return 96;
+}

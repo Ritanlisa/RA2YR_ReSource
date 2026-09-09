@@ -37,7 +37,7 @@ char __thiscall JumpjetLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
     v6 = aP3; /*0x4b0b07*/
     if ( !(_BYTE)v5 ) /*0x4b0b0d*/
     {
-      v5 = *(_DWORD *)(this + 88); /*0x4b0b13*/
+      v5 = this->JumpjetLocomotion_field_0x58; /*0x4b0b13*/
       if ( v5 != -1 ) /*0x4b0b19*/
       {
         v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
@@ -343,7 +343,7 @@ char __thiscall JumpjetLocomotion_Land(int this)
     *(_DWORD *)(this + 112) = 0; /*0x54cad8*/
     *(_DWORD *)(this + 120) = 0; /*0x54cadb*/
     v6 = v5 - *(float *)(this + 40); /*0x54cade*/
-    *(_DWORD *)(this + 116) = 0; /*0x54cae1*/
+    this->JumpjetLocomotion_field_0x74 = 0; /*0x54cae1*/
     *(_DWORD *)(this + 124) = 0; /*0x54cae4*/
     v7 = Math::RoundToInt(v6); /*0x54cae7*/
     v8 = *(float *)(this + 40) + 1.0; /*0x54caef*/
@@ -692,8 +692,8 @@ int __thiscall JumpjetLocomotion_UpdateFacing(int this)
     *(_DWORD *)(this + 12),
     LODWORD(v49),
     HIDWORD(v49));
-  v9 = *(_DWORD *)(this + 64) / 256; /*0x54d1da*/
-  v10 = *(_DWORD *)(this + 68) / 256; /*0x54d1dd*/
+  v9 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d1da*/
+  v10 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d1dd*/
   v11 = (_WORD *)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 440))( /*0x54d1e0*/
                    *(_DWORD *)(this + 12),
                    &v58);
@@ -707,7 +707,7 @@ int __thiscall JumpjetLocomotion_UpdateFacing(int this)
   else
   {
     *(_DWORD *)(this + 136) = 0; /*0x54d22e*/
-    *(_DWORD *)(this + 140) = 0; /*0x54d234*/
+    this->JumpjetLocomotion_field_0x8C = 0; /*0x54d234*/
   }
   v13 = Math::SinCos(*(double *)(this + 136)); /*0x54d248*/
   v14 = Math::RoundToInt(v13 * (double)*(int *)(this + 56) + (double)*(int *)(this + 128)); /*0x54d259*/
@@ -801,8 +801,8 @@ LABEL_49:
     goto LABEL_49; /*0x54d4b9*/
   }
 LABEL_50:
-  v31 = *(_DWORD *)(this + 64) / 256; /*0x54d4c0*/
-  v32 = *(_DWORD *)(this + 68) / 256; /*0x54d4e9*/
+  v31 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d4c0*/
+  v32 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d4e9*/
   v33 = (_WORD *)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 440))( /*0x54d4ec*/
                    *(_DWORD *)(this + 12),
                    &v58);
@@ -812,12 +812,12 @@ LABEL_50:
     if ( v23 < SLODWORD(v57) / 2 ) /*0x54d50a*/
     {
       *(_DWORD *)(this + 112) = 0; /*0x54d50e*/
-      *(_DWORD *)(this + 116) = 0; /*0x54d511*/
+      this->JumpjetLocomotion_field_0x74 = 0; /*0x54d511*/
     }
     if ( v23 < v34 / 4 ) /*0x54d525*/
     {
       *(_DWORD *)(this + 112) = 0; /*0x54d527*/
-      *(_DWORD *)(this + 116) = 0; /*0x54d52a*/
+      this->JumpjetLocomotion_field_0x74 = 0; /*0x54d52a*/
     }
   }
   if ( v54 ) /*0x54d537*/

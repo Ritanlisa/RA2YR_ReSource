@@ -43,14 +43,14 @@ void __thiscall MSPCXAnim_26_::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d06d6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d06d9*/
+  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d06d9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d06e0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d06e6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d06ee*/
+    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d06ee*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d06f1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d06f4*/
+  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d06f4*/
 }
 }
 } // namespace gamemd
@@ -62,8 +62,8 @@ unsigned int MSPCXAnim_26::Draw(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_26_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d0700*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d0715*/
+  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d0700*/
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d0715*/
   else
     return 0; /*0x5d0707*/
 }
@@ -92,14 +92,14 @@ void __thiscall MSPCXAnim_26_::sub_5D0730(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d0736*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d0739*/
+  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d0739*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0740*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0746*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d074e*/
+    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d074e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d0751*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d0754*/
+  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d0754*/
 }
 }
 } // namespace gamemd
@@ -111,8 +111,8 @@ unsigned int MSPCXAnim_26::GetCount(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_26_::sub_5D0760(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d0760*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d0775*/
+  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d0760*/
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d0775*/
   else
     return 0; /*0x5d0767*/
 }
@@ -129,14 +129,14 @@ void __thiscall MSPCXAnim_26_::sub_5D0790(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d0796*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d0799*/
+  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d0799*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d07a0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d07a6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d07ae*/
+    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d07ae*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d07b1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d07b4*/
+  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d07b4*/
 }
 }
 } // namespace gamemd
@@ -148,8 +148,8 @@ unsigned int MSPCXAnim_26::GetCount_0(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_26_::sub_5D07C0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d07c0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d07d5*/
+  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d07c0*/
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d07d5*/
   else
     return 0; /*0x5d07c7*/
 }
@@ -210,21 +210,21 @@ char __thiscall MSPCXAnim_26_::sub_5D0FE0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d1016*/
     if ( v4 ) /*0x5d101a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x5d1025*/
+      if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1025*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x5d102c*/
+        v6 = this->MSPCXAnim_26_field_0x8; /*0x5d102c*/
         if ( a2 < v6 ) /*0x5d1031*/
           v6 = a2; /*0x5d1033*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d1039*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d1039*/
           ++i; /*0x5d103e*/
         if ( *((_BYTE *)this + 13) ) /*0x5d104b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1056*/
-          *((_DWORD *)this + 1) = 0; /*0x5d105e*/
+          this->MSPCXAnim_26_field_0x4 = 0; /*0x5d105e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x5d1067*/
-      *((_DWORD *)this + 2) = a2; /*0x5d106f*/
+      this->MSPCXAnim_26_field_0x4 = v4; /*0x5d1067*/
+      this->MSPCXAnim_26_field_0x8 = a2; /*0x5d106f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x5d1072*/
       return 1; /*0x5d1078*/
     }
@@ -249,13 +249,13 @@ void MSPCXAnim_26::FreeData_1()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall MSPCXAnim_26_::sub_5D1090(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x5d109d*/
+  if ( this->MSPCXAnim_26_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d109d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d10a3*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d10ab*/
+    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d10ab*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d10ae*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d10b1*/
+  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d10b1*/
 }
 }
 } // namespace gamemd
@@ -271,9 +271,9 @@ int __thiscall MSPCXAnim_26_::sub_5D10C0(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x5d10c0*/
+  if ( !(unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d10c0*/
     return 0; /*0x5d10c8*/
-  v3 = *(_DWORD *)(this + 8); /*0x5d10ce*/
+  v3 = this->MSPCXAnim_26_field_0x8; /*0x5d10ce*/
   result = 0; /*0x5d10d1*/
   if ( v3 <= 0 ) /*0x5d10d5*/
     return -1; /*0x5d10ec*/
@@ -294,8 +294,8 @@ unsigned int MSPCXAnim_26::GetCount_1(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_26_::sub_5D1100(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d1100*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d1115*/
+  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d1100*/
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d1115*/
   else
     return 0; /*0x5d1107*/
 }
@@ -324,30 +324,30 @@ char __thiscall MSPCXAnim_26_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d1152*/
     if ( !v4 ) /*0x5d1156*/
       return 0; /*0x5d11ca*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d1158*/
+    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1158*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d115f*/
+      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d115f*/
       if ( a2 < v5 ) /*0x5d1164*/
         v5 = a2; /*0x5d1166*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d116c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d116c*/
         ++i; /*0x5d1171*/
       if ( *((_BYTE *)this + 13) ) /*0x5d117e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1189*/
-        *((_DWORD *)this + 1) = 0; /*0x5d1191*/
+        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d1191*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d119a*/
-    *((_DWORD *)this + 2) = a2; /*0x5d11a2*/
+    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d119a*/
+    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d11a2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d11a5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d11ae*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d11b1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d11b9*/
-    *((_DWORD *)this + 4) = v7; /*0x5d11bb*/
+  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d11b1*/
+  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d11b9*/
+    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d11bb*/
   return 1; /*0x5d11be*/
 }
 }
@@ -400,30 +400,30 @@ char __thiscall MSPCXAnim_26_::sub_5D1380(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d13b2*/
     if ( !v4 ) /*0x5d13b6*/
       return 0; /*0x5d142a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d13b8*/
+    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d13b8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d13bf*/
+      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d13bf*/
       if ( a2 < v5 ) /*0x5d13c4*/
         v5 = a2; /*0x5d13c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d13cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d13cc*/
         ++i; /*0x5d13d1*/
       if ( *((_BYTE *)this + 13) ) /*0x5d13de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d13e9*/
-        *((_DWORD *)this + 1) = 0; /*0x5d13f1*/
+        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d13f1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d13fa*/
-    *((_DWORD *)this + 2) = a2; /*0x5d1402*/
+    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d13fa*/
+    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d1402*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d1405*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d140e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d1411*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d1419*/
-    *((_DWORD *)this + 4) = v7; /*0x5d141b*/
+  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d1411*/
+  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d1419*/
+    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d141b*/
   return 1; /*0x5d141e*/
 }
 }
@@ -476,30 +476,30 @@ char __thiscall MSPCXAnim_26_::sub_5D15E0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d1612*/
     if ( !v4 ) /*0x5d1616*/
       return 0; /*0x5d168a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d1618*/
+    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1618*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d161f*/
+      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d161f*/
       if ( a2 < v5 ) /*0x5d1624*/
         v5 = a2; /*0x5d1626*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d162c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d162c*/
         ++i; /*0x5d1631*/
       if ( *((_BYTE *)this + 13) ) /*0x5d163e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1649*/
-        *((_DWORD *)this + 1) = 0; /*0x5d1651*/
+        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d1651*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d165a*/
-    *((_DWORD *)this + 2) = a2; /*0x5d1662*/
+    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d165a*/
+    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d1662*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d1665*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d166e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d1671*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d1679*/
-    *((_DWORD *)this + 4) = v7; /*0x5d167b*/
+  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d1671*/
+  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d1679*/
+    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d167b*/
   return 1; /*0x5d167e*/
 }
 }
@@ -640,14 +640,14 @@ void __thiscall MSPCXAnim_42_::sub_5D05A0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d05a6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d05a9*/
+  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d05a9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d05b0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d05b6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d05be*/
+    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d05be*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d05c1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d05c4*/
+  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d05c4*/
 }
 }
 } // namespace gamemd
@@ -659,8 +659,8 @@ unsigned int MSPCXAnim_42::GetCount_8B(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_42_::sub_5D05D0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d05d0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x5d05e5*/
+  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d05d0*/
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 3; /*0x5d05e5*/
   else
     return 0; /*0x5d05d7*/
 }
@@ -677,14 +677,14 @@ void __thiscall MSPCXAnim_42_::sub_5D0610(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d0616*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d0619*/
+  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d0619*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0620*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0626*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d062e*/
+    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d062e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d0631*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d0634*/
+  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d0634*/
 }
 }
 } // namespace gamemd
@@ -696,8 +696,8 @@ unsigned int MSPCXAnim_42::GetCount(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_42_::sub_5D0640(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d0640*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d0655*/
+  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d0640*/
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d0655*/
   else
     return 0; /*0x5d0647*/
 }
@@ -714,14 +714,14 @@ void __thiscall MSPCXAnim_42_::sub_5D0670(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d0676*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d0679*/
+  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d0679*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0680*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0686*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d068e*/
+    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d068e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d0691*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d0694*/
+  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d0694*/
 }
 }
 } // namespace gamemd
@@ -733,8 +733,8 @@ unsigned int MSPCXAnim_42::GetCount_0(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_42_::sub_5D06A0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d06a0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d06b5*/
+  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d06a0*/
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d06b5*/
   else
     return 0; /*0x5d06a7*/
 }
@@ -787,9 +787,9 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/
       return 0; /*0x5d0a90*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d0a12*/
+    if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0a12*/
     {
-      v7 = *((_DWORD *)this + 2); /*0x5d0a19*/
+      v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0a19*/
       if ( a2 < v7 ) /*0x5d0a1e*/
         v7 = a2; /*0x5d0a20*/
       v8 = 0; /*0x5d0a22*/
@@ -797,7 +797,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
       {
         do /*0x5d0a3e*/
         {
-          v9 = *((_DWORD *)this + 1); /*0x5d0a28*/
+          v9 = this->MSPCXAnim_42_field_0x4; /*0x5d0a28*/
           ++v8; /*0x5d0a2b*/
           v6[2 * v8 - 2] = *(_DWORD *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
           v6[2 * v8 - 1] = *(_DWORD *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
@@ -808,20 +808,20 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
       if ( *((_BYTE *)this + 13) ) /*0x5d0a44*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0a4f*/
-        *((_DWORD *)this + 1) = 0; /*0x5d0a57*/
+        this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0a57*/
       }
     }
-    *((_DWORD *)this + 1) = v6; /*0x5d0a60*/
-    *((_DWORD *)this + 2) = a2; /*0x5d0a68*/
+    this->MSPCXAnim_42_field_0x4 = v6; /*0x5d0a60*/
+    this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0a68*/
     *((_BYTE *)this + 13) = v4 == 0; /*0x5d0a6b*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0a74*/
   }
-  v10 = *((_DWORD *)this + 2); /*0x5d0a77*/
-  if ( v10 < *((_DWORD *)this + 4) ) /*0x5d0a7f*/
-    *((_DWORD *)this + 4) = v10; /*0x5d0a81*/
+  v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
+  if ( v10 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0a7f*/
+    this->MSPCXAnim_42_field_0x10 = v10; /*0x5d0a81*/
   return 1; /*0x5d0a84*/
 }
 }
@@ -874,30 +874,30 @@ char __thiscall MSPCXAnim_42_::sub_5D0C60(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d0c92*/
     if ( !v4 ) /*0x5d0c96*/
       return 0; /*0x5d0d0a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d0c98*/
+    if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0c98*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d0c9f*/
+      v5 = this->MSPCXAnim_42_field_0x8; /*0x5d0c9f*/
       if ( a2 < v5 ) /*0x5d0ca4*/
         v5 = a2; /*0x5d0ca6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d0cac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d0cac*/
         ++i; /*0x5d0cb1*/
       if ( *((_BYTE *)this + 13) ) /*0x5d0cbe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0cc9*/
-        *((_DWORD *)this + 1) = 0; /*0x5d0cd1*/
+        this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0cd1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d0cda*/
-    *((_DWORD *)this + 2) = a2; /*0x5d0ce2*/
+    this->MSPCXAnim_42_field_0x4 = v4; /*0x5d0cda*/
+    this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0ce2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d0ce5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0cee*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d0cf1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d0cf9*/
-    *((_DWORD *)this + 4) = v7; /*0x5d0cfb*/
+  v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0cf1*/
+  if ( v7 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0cf9*/
+    this->MSPCXAnim_42_field_0x10 = v7; /*0x5d0cfb*/
   return 1; /*0x5d0cfe*/
 }
 }
@@ -950,30 +950,30 @@ char __thiscall MSPCXAnim_42_::sub_5D0EC0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d0ef2*/
     if ( !v4 ) /*0x5d0ef6*/
       return 0; /*0x5d0f6a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d0ef8*/
+    if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0ef8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d0eff*/
+      v5 = this->MSPCXAnim_42_field_0x8; /*0x5d0eff*/
       if ( a2 < v5 ) /*0x5d0f04*/
         v5 = a2; /*0x5d0f06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d0f0c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d0f0c*/
         ++i; /*0x5d0f11*/
       if ( *((_BYTE *)this + 13) ) /*0x5d0f1e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0f29*/
-        *((_DWORD *)this + 1) = 0; /*0x5d0f31*/
+        this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0f31*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d0f3a*/
-    *((_DWORD *)this + 2) = a2; /*0x5d0f42*/
+    this->MSPCXAnim_42_field_0x4 = v4; /*0x5d0f3a*/
+    this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0f42*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d0f45*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0f4e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d0f51*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d0f59*/
-    *((_DWORD *)this + 4) = v7; /*0x5d0f5b*/
+  v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0f51*/
+  if ( v7 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0f59*/
+    this->MSPCXAnim_42_field_0x10 = v7; /*0x5d0f5b*/
   return 1; /*0x5d0f5e*/
 }
 }
@@ -1058,21 +1058,21 @@ char __thiscall MSPCXAnim_42_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d1276*/
     if ( v4 ) /*0x5d127a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x5d1285*/
+      if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d1285*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x5d128c*/
+        v6 = this->MSPCXAnim_42_field_0x8; /*0x5d128c*/
         if ( a2 < v6 ) /*0x5d1291*/
           v6 = a2; /*0x5d1293*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d1299*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d1299*/
           ++i; /*0x5d129e*/
         if ( *((_BYTE *)this + 13) ) /*0x5d12ab*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d12b6*/
-          *((_DWORD *)this + 1) = 0; /*0x5d12be*/
+          this->MSPCXAnim_42_field_0x4 = 0; /*0x5d12be*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x5d12c7*/
-      *((_DWORD *)this + 2) = a2; /*0x5d12cf*/
+      this->MSPCXAnim_42_field_0x4 = v4; /*0x5d12c7*/
+      this->MSPCXAnim_42_field_0x8 = a2; /*0x5d12cf*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x5d12d2*/
       return 1; /*0x5d12d8*/
     }
@@ -1097,13 +1097,13 @@ void MSPCXAnim_42::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall MSPCXAnim_42_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x5d12fd*/
+  if ( this->MSPCXAnim_42_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d12fd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d1303*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d130b*/
+    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d130b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d130e*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d1311*/
+  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d1311*/
 }
 }
 } // namespace gamemd
@@ -1119,9 +1119,9 @@ int __thiscall MSPCXAnim_42_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x5d1320*/
+  if ( !(unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d1320*/
     return 0; /*0x5d1328*/
-  v3 = *(_DWORD *)(this + 8); /*0x5d132e*/
+  v3 = this->MSPCXAnim_42_field_0x8; /*0x5d132e*/
   result = 0; /*0x5d1331*/
   if ( v3 <= 0 ) /*0x5d1335*/
     return -1; /*0x5d134c*/
@@ -1142,8 +1142,8 @@ unsigned int MSPCXAnim_42::Draw(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSPCXAnim_42_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d1360*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d1375*/
+  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d1360*/
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d1375*/
   else
     return 0; /*0x5d1367*/
 }

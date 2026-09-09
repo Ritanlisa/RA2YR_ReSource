@@ -13,9 +13,6 @@ struct AbstractClass {
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
-    int computeDistanceSquared();  // 0x410490
-    int COMStub_Return0_15();  // 0x4104A0
-    int COMStub_Return0_16();  // 0x4104B0
     int COMStub_Return0_20();  // 0x410520
     int COMStub_Return0_21();  // 0x410530
     int COMStub_Return0_23();  // 0x410570
@@ -126,5 +123,8 @@ struct AbstractClass {
     char processWeaponFire();  // 0x711E80
     void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
     int checkBuildingPlacement();  // 0x74F330
+    int computeDistanceSquared();  // 0x410490
+    int COMStub_Return0_15();  // 0x4104A0
+    int COMStub_Return0_16();  // 0x4104B0
 };
 } // namespace gamemd

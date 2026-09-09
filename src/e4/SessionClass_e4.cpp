@@ -12,7 +12,7 @@ int __thiscall sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
   void *v7; // eax
   int v8; // ecx
 
-  if ( !*(_BYTE *)(this + 4) ) /*0x540dc3*/
+  if ( !(unsigned char)this->MPGameMode ) /*0x540dc3*/
     return 0; /*0x540dca*/
   if ( *(_DWORD *)(this + 68) == 7 ) /*0x540dd4*/
     return 0; /*0x540dd6*/
@@ -54,7 +54,7 @@ int __thiscall sub_540E70(int this)
   int v5; // edi
   char *v6; // eax
 
-  if ( !*(_BYTE *)(this + 4) ) /*0x540e73*/
+  if ( !(unsigned char)this->MPGameMode ) /*0x540e73*/
     return 0; /*0x540e7a*/
   v3 = __2_YAPAXI_Z(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
@@ -628,7 +628,7 @@ void __thiscall SessionClass::loadSettings(int this)
     *(_DWORD *)(this + 40) = 0; /*0x5d0135*/
   }
   *(_BYTE *)(this + 49) = 0; /*0x5d013b*/
-  *(_DWORD *)(this + 44) = 0; /*0x5d013e*/
+  this->Config.AICount = 0; /*0x5d013e*/
   DeleteAndZero(this + 32); /*0x5d0141*/
   v10 = 2; /*0x5d0149*/
   v11 = this + 32; /*0x5d014e*/
@@ -1006,10 +1006,10 @@ char *__thiscall sub_6970A0(char *this)
 
   this->MPGameMode = 0; /*0x6970b8*/
   *((_DWORD *)this + 99) = 0; /*0x6970bb*/
-  *((_DWORD *)this + 100) = 0; /*0x6970c1*/
-  *((_DWORD *)this + 101) = 1; /*0x6970c7*/
-  *((_DWORD *)this + 102) = 10000; /*0x6970cd*/
-  *((_DWORD *)this + 103) = 10; /*0x6970d3*/
+  this->SkirmishPreferences.idxScenario = 0; /*0x6970c1*/
+  this->SkirmishPreferences.GameSpeed = 1; /*0x6970c7*/
+  this->SkirmishPreferences.Credits = 10000; /*0x6970cd*/
+  this->SkirmishPreferences.UnitCount = 10; /*0x6970d3*/
   *(this + 416) = 1; /*0x6970d9*/
   *(this + 417) = 1; /*0x6970df*/
   *(this + 418) = 1; /*0x6970e5*/
@@ -1027,10 +1027,10 @@ char *__thiscall sub_6970A0(char *this)
   }
   while ( v3 ); /*0x69710e*/
   *((_DWORD *)this + 130) = 0; /*0x697110*/
-  *((_DWORD *)this + 131) = 0; /*0x697116*/
-  *((_DWORD *)this + 132) = 1; /*0x69711c*/
-  *((_DWORD *)this + 133) = 10000; /*0x697122*/
-  *((_DWORD *)this + 134) = 10; /*0x697128*/
+  this->LANPreferences.idxScenario = 0; /*0x697116*/
+  this->LANPreferences.GameSpeed = 1; /*0x69711c*/
+  this->LANPreferences.Credits = 10000; /*0x697122*/
+  this->LANPreferences.UnitCount = 10; /*0x697128*/
   *(this + 540) = 1; /*0x69712e*/
   *(this + 541) = 1; /*0x697135*/
   *(this + 542) = 1; /*0x69713c*/
@@ -1048,10 +1048,10 @@ char *__thiscall sub_6970A0(char *this)
   }
   while ( v5 ); /*0x697168*/
   *((_DWORD *)this + 161) = 0; /*0x69716a*/
-  *((_DWORD *)this + 162) = 0; /*0x697170*/
-  *((_DWORD *)this + 163) = 1; /*0x697176*/
-  *((_DWORD *)this + 164) = 10000; /*0x69717c*/
-  *((_DWORD *)this + 165) = 10; /*0x697182*/
+  this->WOLPreferences.idxScenario = 0; /*0x697170*/
+  this->WOLPreferences.GameSpeed = 1; /*0x697176*/
+  this->WOLPreferences.Credits = 10000; /*0x69717c*/
+  this->WOLPreferences.UnitCount = 10; /*0x697182*/
   *(this + 664) = 1; /*0x697188*/
   *(this + 665) = 1; /*0x69718f*/
   *(this + 666) = 1; /*0x697196*/
@@ -1164,7 +1164,7 @@ char *__thiscall sub_6970A0(char *this)
   *(this + 12488) = 0; /*0x6973f1*/
   *(_DWORD *)this = 0; /*0x6973fc*/
   this->SessionClass_field_14 = 2; /*0x6973ff*/
-  *((_DWORD *)this + 7) = 0; /*0x697402*/
+  this->Config.Credits = 0; /*0x697402*/
   *(this + 32) = 1; /*0x697405*/
   *((_DWORD *)this + 9) = 0; /*0x697409*/
   *(this + 40) = 0; /*0x69740c*/
@@ -1174,7 +1174,7 @@ char *__thiscall sub_6970A0(char *this)
   *(this + 42) = 0; /*0x697418*/
   *(this + 43) = 0; /*0x69741b*/
   *(this + 44) = 0; /*0x69741e*/
-  *((_DWORD *)this + 12) = 0; /*0x697421*/
+  this->Config.PlayerCount = 0; /*0x697421*/
   *(this + 52) = 0; /*0x697424*/
   *(this + 228) = 0; /*0x697427*/
   *(this + 229) = 0; /*0x69742d*/
@@ -2509,7 +2509,7 @@ unsigned int SessionClass::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SessionClass::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x69c4d0*/
+  if ( (unsigned char)this->SessionClass_field_0C ) /*0x69c4d0*/
     return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c4e5*/
   else
     return 0; /*0x69c4d7*/
@@ -2657,7 +2657,7 @@ int __thiscall SessionClass::sub_69C830(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x69c830*/
+  if ( !(unsigned char)this->SessionClass_field_0C ) /*0x69c830*/
     return 0; /*0x69c838*/
   v3 = this->SessionClass_field_08; /*0x69c83e*/
   result = 0; /*0x69c841*/
@@ -2678,7 +2678,7 @@ unsigned int SessionClass::updatePlayer(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SessionClass::sub_69C870(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x69c870*/
+  if ( (unsigned char)this->SessionClass_field_0C ) /*0x69c870*/
     return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c885*/
   else
     return 0; /*0x69c877*/

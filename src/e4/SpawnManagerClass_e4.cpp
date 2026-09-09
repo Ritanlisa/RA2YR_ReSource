@@ -39,9 +39,9 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
   this->spawnOwner = a3; /*0x6b6cdf*/
   this->owner = aP1; /*0x6b6ce6*/
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b6cef*/
-  *(_DWORD *)(this + 4) = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
-  *(_DWORD *)(this + 8) = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
-  *(_DWORD *)(this + 12) = &SpawnManagerClass::`vftable'; /*0x6b6d03*/
+  this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
+  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
+  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b6d03*/
   this->spawnType = a4; /*0x6b6d0a*/
   this->spawnCount = a5; /*0x6b6d0d*/
   this->SpawnManagerClass_field_34 = a6; /*0x6b6d10*/
@@ -129,9 +129,9 @@ int __thiscall sub_6B6EA0(int this)
   this->SpawnManagerClass_field_5C = MEMORY[0xA8ED84]; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
-  *(_DWORD *)(this + 4) = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
-  *(_DWORD *)(this + 8) = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
-  *(_DWORD *)(this + 12) = &SpawnManagerClass::`vftable'; /*0x6b6efa*/
+  this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
+  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
+  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -176,9 +176,9 @@ void __thiscall sub_6B7010(int this)
   int v6; // [esp+8h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b7015*/
-  *(_DWORD *)(this + 4) = &SpawnManagerClass::`vftable'; /*0x6b701b*/
-  *(_DWORD *)(this + 8) = &SpawnManagerClass::`vftable'; /*0x6b7022*/
-  *(_DWORD *)(this + 12) = &SpawnManagerClass::`vftable'; /*0x6b7029*/
+  this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
+  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
+  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
   if ( MEMORY[0xA8E9A0] ) /*0x6b7037*/
     TaskManager::Update((_DWORD *)this); /*0x6b7039*/
   for ( i = *(_DWORD *)(this + 72) - 1; i >= 0; --i ) /*0x6b7042*/
@@ -555,26 +555,6 @@ int __stdcall SpawnManagerClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 } // namespace game
 } // namespace ra2
 
-// 0x6B8120
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::StubReturn116()
-{
-return 116;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6B8130
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::StubReturn65()
-{
-return 65;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B8140
 namespace ra2 {
 namespace game {
@@ -636,14 +616,14 @@ void __thiscall SpawnManagerClass_25_::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x6b8166*/
-  *(_DWORD *)(this + 16) = 0; /*0x6b8169*/
+  this->SpawnManagerClass_25_field_0x10 = 0; /*0x6b8169*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x6b8170*/
   {
     __3_YAXPAX_Z(v2); /*0x6b8176*/
-    *(_DWORD *)(this + 4) = 0; /*0x6b817e*/
+    this->SpawnManagerClass_25_field_0x4 = 0; /*0x6b817e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6b8181*/
-  *(_DWORD *)(this + 8) = 0; /*0x6b8184*/
+  this->SpawnManagerClass_25_field_0x8 = 0; /*0x6b8184*/
 }
 }
 } // namespace gamemd
@@ -655,8 +635,8 @@ unsigned int SpawnManagerClass_25::LoadState(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SpawnManagerClass_25_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6b8190*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x6b81a5*/
+  if ( (unsigned char)this->SpawnManagerClass_25_field_0xC ) /*0x6b8190*/
+    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
 }
@@ -730,30 +710,30 @@ char __thiscall SpawnManagerClass_25_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
-    if ( *((_DWORD *)this + 1) ) /*0x6b8438*/
+    if ( this->SpawnManagerClass_25_field_0x4 ) /*0x6b8438*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x6b843f*/
+      v5 = this->SpawnManagerClass_25_field_0x8; /*0x6b843f*/
       if ( a2 < v5 ) /*0x6b8444*/
         v5 = a2; /*0x6b8446*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x6b844c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->SpawnManagerClass_25_field_0x4 + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
       if ( *((_BYTE *)this + 13) ) /*0x6b845e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b8469*/
-        *((_DWORD *)this + 1) = 0; /*0x6b8471*/
+        this->SpawnManagerClass_25_field_0x4 = 0; /*0x6b8471*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x6b847a*/
-    *((_DWORD *)this + 2) = a2; /*0x6b8482*/
+    this->SpawnManagerClass_25_field_0x4 = v4; /*0x6b847a*/
+    this->SpawnManagerClass_25_field_0x8 = a2; /*0x6b8482*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x6b8485*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6b848e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x6b8491*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x6b8499*/
-    *((_DWORD *)this + 4) = v7; /*0x6b849b*/
+  v7 = this->SpawnManagerClass_25_field_0x8; /*0x6b8491*/
+  if ( v7 < this->SpawnManagerClass_25_field_0x10 ) /*0x6b8499*/
+    this->SpawnManagerClass_25_field_0x10 = v7; /*0x6b849b*/
   return 1; /*0x6b849e*/
 }
 }
@@ -808,3 +788,23 @@ DynamicVector *__thiscall SpawnManagerClass_25_::QueryInterface(_DWORD *Block, c
 }
 }
 } // namespace gamemd
+
+// 0x6B8120
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::StubReturn116()
+{
+return 116;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B8130
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::StubReturn65()
+{
+return 65;
+}
+} // namespace game
+} // namespace ra2

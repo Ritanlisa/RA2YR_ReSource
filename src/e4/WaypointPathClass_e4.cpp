@@ -21,9 +21,9 @@ int __thiscall sub_763730(int this)
   *(_DWORD *)(this + 60) = 10; /*0x763755*/
   *(_DWORD *)(this + 56) = 0; /*0x76375c*/
   *(_DWORD *)this = &WaypointPathClass::`vftable'; /*0x76375f*/
-  *(_DWORD *)(this + 4) = &WaypointPathClass::`vftable'; /*0x763765*/
-  *(_DWORD *)(this + 8) = &WaypointPathClass::`vftable'; /*0x76376c*/
-  *(_DWORD *)(this + 12) = &WaypointPathClass::`vftable'; /*0x763773*/
+  this->vtable1 = &WaypointPathClass::`vftable'; /*0x763765*/
+  this->vtable2 = &WaypointPathClass::`vftable'; /*0x76376c*/
+  this->vtable3 = &WaypointPathClass::`vftable'; /*0x763773*/
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
@@ -59,9 +59,9 @@ int __thiscall WaypointPathClass::Construct(int this, WaypointClass *aP1)
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   *(_DWORD *)this = &WaypointPathClass::`vftable'; /*0x763845*/
-  *(_DWORD *)(this + 4) = &WaypointPathClass::`vftable'; /*0x76384b*/
-  *(_DWORD *)(this + 8) = &WaypointPathClass::`vftable'; /*0x763852*/
-  *(_DWORD *)(this + 12) = &WaypointPathClass::`vftable'; /*0x763859*/
+  this->vtable1 = &WaypointPathClass::`vftable'; /*0x76384b*/
+  this->vtable2 = &WaypointPathClass::`vftable'; /*0x763852*/
+  this->vtable3 = &WaypointPathClass::`vftable'; /*0x763859*/
   if ( (unsigned int)aP1 < 0xC /*0x76389a*/
     && (dword_B72618 < dword_B72610
      || (byte_B72615 || !dword_B72610)
@@ -250,14 +250,6 @@ int __stdcall WaypointPathClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 }
 } // namespace gamemd
 
-// 0x763E00
-namespace gamemd {
-int WaypointPathClass::StubReturn64()
-{
-return 64;
-}
-} // namespace gamemd
-
 // 0x763E10
 namespace gamemd {
 int WaypointPathClass::StubReturn51()
@@ -386,5 +378,13 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
   *(this + 1) = a3 + 1; /*0x7647a7*/
   return this; /*0x7647ac*/
 }
+}
+} // namespace gamemd
+
+// 0x763E00
+namespace gamemd {
+int WaypointPathClass::StubReturn64()
+{
+return 64;
 }
 } // namespace gamemd

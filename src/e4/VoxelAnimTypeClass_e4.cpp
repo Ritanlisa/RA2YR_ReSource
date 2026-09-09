@@ -48,13 +48,13 @@ _DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP
   *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
   *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x74ae85*/
-  *((_BYTE *)this + 561) = 0; /*0x74ae8c*/
-  *((_BYTE *)this + 564) = 1; /*0x74ae92*/
-  *((_BYTE *)this + 559) = 1; /*0x74ae98*/
-  *((_BYTE *)this + 560) = 1; /*0x74ae9e*/
-  *((_BYTE *)this + 562) = 1; /*0x74aea4*/
-  *((_BYTE *)this + 563) = 1; /*0x74aeaa*/
-  *((_BYTE *)this + 565) = 0; /*0x74aeb0*/
+  this->LegalTarget = 0; /*0x74ae8c*/
+  this->IsLogic = 1; /*0x74ae92*/
+  this->RadarInvisible = 1; /*0x74ae98*/
+  this->Selectable = 1; /*0x74ae9e*/
+  this->Insignificant = 1; /*0x74aea4*/
+  this->Immune = 1; /*0x74aeaa*/
+  this->AllowCellContent = 0; /*0x74aeb0*/
   if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x74aeea*/
     || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
     && *(int *)&stru_B05488.__pad_579C[19040] > 0
@@ -372,26 +372,26 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
                              (unsigned __int8 *)&stru_830620.__pad_579C[65752]);
     if ( !TechnoType ) /*0x74b4ca*/
     {
-      *(_DWORD *)(this + 176) = 0; /*0x74b555*/
-      *(_DWORD *)(this + 180) = 0; /*0x74b55b*/
+      this->MainVoxel = 0; /*0x74b555*/
+      this->TurretVoxel = 0; /*0x74b55b*/
       return 1; /*0x74b569*/
     }
     if ( v51 ) /*0x74b4d6*/
     {
-      *(_DWORD *)(this + 176) = TechnoType[44]; /*0x74b4de*/
-      *(_DWORD *)(this + 180) = TechnoType[45]; /*0x74b4ea*/
+      this->MainVoxel = TechnoType[44]; /*0x74b4de*/
+      this->TurretVoxel = TechnoType[45]; /*0x74b4ea*/
       return 1; /*0x74b4f8*/
     }
     if ( v50 ) /*0x74b501*/
     {
-      *(_DWORD *)(this + 176) = TechnoType[46]; /*0x74b509*/
-      *(_DWORD *)(this + 180) = TechnoType[47]; /*0x74b515*/
+      this->MainVoxel = TechnoType[46]; /*0x74b509*/
+      this->TurretVoxel = TechnoType[47]; /*0x74b515*/
       return 1; /*0x74b523*/
     }
     if ( v49 ) /*0x74b52c*/
     {
-      *(_DWORD *)(this + 176) = TechnoType[48]; /*0x74b538*/
-      *(_DWORD *)(this + 180) = TechnoType[49]; /*0x74b544*/
+      this->MainVoxel = TechnoType[48]; /*0x74b538*/
+      this->TurretVoxel = TechnoType[49]; /*0x74b544*/
       return 1; /*0x74b552*/
     }
   }
@@ -402,7 +402,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
     v31 = *(WaveClass **)(this + 176); /*0x74b59d*/
     if ( v31 ) /*0x74b5a5*/
     {
-      WaveClass::Destroy(*(_DWORD *)(this + 176)); /*0x74b5a9*/
+      WaveClass::Destroy(this->MainVoxel); /*0x74b5a9*/
       __3_YAXPAX_Z(v31); /*0x74b5af*/
     }
     v36 = (ObjectClass *)__2_YAPAXI_Z(0x1Cu); /*0x74b5b9*/
@@ -410,7 +410,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
       FileVXL = File::LoadFileVXL(v36, Destination, 0); /*0x74b5ce*/
     else
       FileVXL = 0; /*0x74b5d5*/
-    *(_DWORD *)(this + 176) = FileVXL; /*0x74b5db*/
+    this->MainVoxel = FileVXL; /*0x74b5db*/
     *(_DWORD *)Destination[0].__pad_0 = &CCFileClass::`vftable'; /*0x74b5e1*/
     Destination[0].customSound = 0; /*0x74b5e9*/
     Vector::Clear((int)&Destination[0].customSound_controller[2]); /*0x74b5f1*/
@@ -567,14 +567,6 @@ __int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP
 }
 } // namespace gamemd
 
-// 0x74B9F0
-namespace gamemd {
-int VoxelAnimTypeClass::GetTypeIdentifier()
-{
-return 42;
-}
-} // namespace gamemd
-
 // 0x74BA00
 namespace gamemd {
 int VoxelAnimTypeClass::GetObjectSize()
@@ -659,5 +651,13 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x74bb0f*/
   return (VoxelAnimTypeClass *)Block; /*0x74bb19*/
 }
+}
+} // namespace gamemd
+
+// 0x74B9F0
+namespace gamemd {
+int VoxelAnimTypeClass::GetTypeIdentifier()
+{
+return 42;
 }
 } // namespace gamemd

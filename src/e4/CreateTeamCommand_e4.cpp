@@ -3,22 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"
 
-// 0x535BD0
-namespace gamemd {
-char CreateTeamCommand::Stub(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x535BF0
-namespace gamemd {
-char CreateTeamCommand::Do(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x535C00
 namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2)
@@ -3404,11 +3388,11 @@ void __thiscall CreateTeamCommand::sub_5384C0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5384c6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5384c9*/
+  this->CreateTeamCommand_field_0x10 = 0; /*0x5384c9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5384d0*/
   {
     __3_YAXPAX_Z(v2); /*0x5384d6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5384de*/
+    this->CreateTeamCommand_field_0x4 = 0; /*0x5384de*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5384e1*/
   *(_DWORD *)(this + 8) = 0; /*0x5384e4*/
@@ -3423,8 +3407,8 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CreateTeamCommand::sub_5384F0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5384f0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x538505*/
+  if ( (unsigned char)this->CreateTeamCommand_field_0xC ) /*0x5384f0*/
+    return (unsigned int)(a2 - this->CreateTeamCommand_field_0x4) >> 2; /*0x538505*/
   else
     return 0; /*0x5384f7*/
 }
@@ -3453,20 +3437,20 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5386d8*/
+    if ( this->CreateTeamCommand_field_0x4 ) /*0x5386d8*/
     {
       v5 = *((_DWORD *)this + 2); /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5386ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->CreateTeamCommand_field_0x4 + 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
       if ( *((_BYTE *)this + 13) ) /*0x5386fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x538709*/
-        *((_DWORD *)this + 1) = 0; /*0x538711*/
+        this->CreateTeamCommand_field_0x4 = 0; /*0x538711*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x53871a*/
+    this->CreateTeamCommand_field_0x4 = v4; /*0x53871a*/
     *((_DWORD *)this + 2) = a2; /*0x538722*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x538725*/
   }
@@ -3475,8 +3459,8 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x53872e*/
   }
   v7 = *((_DWORD *)this + 2); /*0x538731*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x538739*/
-    *((_DWORD *)this + 4) = v7; /*0x53873b*/
+  if ( v7 < this->CreateTeamCommand_field_0x10 ) /*0x538739*/
+    this->CreateTeamCommand_field_0x10 = v7; /*0x53873b*/
   return 1; /*0x53873e*/
 }
 }
@@ -3658,5 +3642,21 @@ void __thiscall sub_731060(char *this)
     }
   }
 }
+}
+} // namespace gamemd
+
+// 0x535BD0
+namespace gamemd {
+char CreateTeamCommand::Stub(int a1)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x535BF0
+namespace gamemd {
+char CreateTeamCommand::Do(int a1)
+{
+return 0;
 }
 } // namespace gamemd

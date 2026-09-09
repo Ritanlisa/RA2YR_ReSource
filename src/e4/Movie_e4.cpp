@@ -10,9 +10,9 @@ char Movie::GetSectionID(unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Movie_GetSectionID(int this, _DWORD *a2)
 {
-  if ( !*(_BYTE *)(this + 108) ) /*0x49bc80*/
+  if ( !(unsigned char)this->Movie_field_0x6C ) /*0x49bc80*/
     return 0; /*0x49bc87*/
-  *a2 = *(_DWORD *)(this + 68); /*0x49bc93*/
+  *a2 = this->Movie_field_0x44; /*0x49bc93*/
   return 1; /*0x49bc89*/
 }
 }
@@ -25,9 +25,9 @@ char Movie::GetState(CCINIClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Movie::GetState(int this, CCINIClass *aP1)
 {
-  if ( !*(_BYTE *)(this + 108) ) /*0x49bcc0*/
+  if ( !(unsigned char)this->Movie_field_0x6C ) /*0x49bcc0*/
     return 0; /*0x49bcc7*/
-  *(_DWORD *)aP1->__pad_0 = *(_DWORD *)(this + 56); /*0x49bcd3*/
+  *(_DWORD *)aP1->__pad_0 = this->Movie_field_0x38; /*0x49bcd3*/
   return 1; /*0x49bcc9*/
 }
 }
@@ -57,7 +57,7 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
     return 0; /*0x49cc46*/
   v4 = (TechnoTypeClass *)MEMORY[0x89F570]; /*0x49cb29*/
   *(_BYTE *)(this + 108) = 1; /*0x49cb2f*/
-  *(_DWORD *)(this + 56) = -1; /*0x49cb33*/
+  this->Movie_field_0x38 = -1; /*0x49cb33*/
   v5 = &v4->__pad_0[76 * (_DWORD)aP1]; /*0x49cb3a*/
   v6 = *(CCINIClass **)(this + 68); /*0x49cb3d*/
   *(_DWORD *)(this + 72) = 0; /*0x49cb42*/
@@ -102,9 +102,9 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
     }
     v3 = aP1; /*0x49cc2e*/
     *(_DWORD *)(this + 64) = v5[8]; /*0x49cc32*/
-    *(_DWORD *)(this + 56) = 0; /*0x49cc35*/
+    this->Movie_field_0x38 = 0; /*0x49cc35*/
   }
-  *(_DWORD *)(this + 68) = v3; /*0x49cc39*/
+  this->Movie_field_0x44 = v3; /*0x49cc39*/
   return 1; /*0x49cc3d*/
 }
 }
@@ -331,7 +331,7 @@ char __thiscall Movie::Update(int this)
       LOBYTE(IsSoundEnabled) = MEMORY[0xA8D63C].__pad_14B0[392]; /*0x7209ed*/
       if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x7209f4*/
       {
-        IsSoundEnabled = *(_DWORD *)(this + 12); /*0x7209fa*/
+        IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
         if ( IsSoundEnabled > 0 ) /*0x7209ff*/
         {
           v3 = *(_DWORD *)(this + 44); /*0x720a01*/
@@ -343,16 +343,16 @@ char __thiscall Movie::Update(int this)
           if ( !(_BYTE)IsSoundEnabled ) /*0x720a2f*/
           {
 LABEL_10:
-            IsSoundEnabled = *(_DWORD *)(this + 8); /*0x720a31*/
+            IsSoundEnabled = this->Movie_field_0x8; /*0x720a31*/
             if ( IsSoundEnabled != -1 && IsSoundEnabled != -3 && !*(_DWORD *)&MEMORY[0xA8D63C].__pad_1140[48] ) /*0x720a46*/
             {
               if ( IsSoundEnabled == -2 ) /*0x720a4b*/
               {
-                *(_DWORD *)(this + 8) = Movie::SelectNextBuildableType(this, *(AnimClass **)(this + 4)); /*0x720a5e*/
+                this->Movie_field_0x8 = Movie::SelectNextBuildableType(this, *(AnimClass **)(this + 4)); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
               LOBYTE(IsSoundEnabled) = ThemeClass::Play((int *)this, *(Movie **)(this + 8)); /*0x720a6f*/
-              *(_DWORD *)(this + 8) = -2; /*0x720a74*/
+              this->Movie_field_0x8 = -2; /*0x720a74*/
             }
           }
         }
@@ -394,7 +394,7 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
       v5 = (TechnoTypeClass *)Random::Range( /*0x720abe*/
                                 &MEMORY[0x87F8E4].__pad_5568[7484],
                                 0,
-                                (IUnknown *)(*(_DWORD *)(this + 36) - 1));
+                                (IUnknown *)(this->Movie_field_0x24 - 1));
       ++v4; /*0x720ac3*/
       v6 = v5; /*0x720ac4*/
       v7 = v4 == 1000; /*0x720ac6*/
@@ -412,11 +412,11 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
   }
   else
   {
-    v9 = *(_DWORD *)(this + 36) + 1; /*0x720af4*/
+    v9 = this->Movie_field_0x24 + 1; /*0x720af4*/
     while ( 1 ) /*0x720af8*/
     {
       v2 = (TechnoTypeClass *)((char *)v2 + 1); /*0x720af8*/
-      if ( (int)v2 >= *(_DWORD *)(this + 36) ) /*0x720afb*/
+      if ( (int)v2 >= this->Movie_field_0x24 ) /*0x720afb*/
         v2 = 0; /*0x720afd*/
       if ( !--v9 ) /*0x720b00*/
         break; /*0x720b00*/

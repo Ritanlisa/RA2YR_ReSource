@@ -2,22 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x487E60
-namespace gamemd {
-int CellClass::StubReturn11()
-{
-return 11;
-}
-} // namespace gamemd
-
-// 0x487E70
-namespace gamemd {
-int CellClass::StubReturn328()
-{
-return 328;
-}
-} // namespace gamemd
-
 // 0x48BA80
 namespace gamemd {
 int CellClass::GetBridgeIndex()
@@ -1970,5 +1954,21 @@ int __stdcall CellClass::GetByte284(IUnknown *aP0)
 {
   return *((unsigned __int8 *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], aP0) + 284); /*0x6d6ae9*/
 }
+}
+} // namespace gamemd
+
+// 0x487E60
+namespace gamemd {
+int CellClass::StubReturn11()
+{
+return 11;
+}
+} // namespace gamemd
+
+// 0x487E70
+namespace gamemd {
+int CellClass::StubReturn328()
+{
+return 328;
 }
 } // namespace gamemd

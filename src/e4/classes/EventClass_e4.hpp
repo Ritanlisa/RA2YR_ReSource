@@ -27,7 +27,7 @@ struct EventClass {
     int deserializeEvent(int a2, IUnknown * aP2);  // 0x542280
     char Enqueue(unsigned short a2, char a3);  // 0x54F200
     int CheckFlag();  // 0x5F19C0
-    int GetState(int a1);  // 0x5F3440
     int validateEventType();  // 0x664440
+    int GetState(int a1);  // 0x5F3440
 };
 } // namespace gamemd

@@ -224,7 +224,7 @@ char __thiscall sub_430590(_DWORD *this, int a2, int a3, int a4, int a5)
   if ( a5 < 8 ) /*0x4305cb*/
   {
     *(this + 68) = a5; /*0x4305cd*/
-    result = *((_BYTE *)this + 12) | 1; /*0x4305d6*/
+    result = (unsigned char)this->vtable3 | 1; /*0x4305d6*/
     *((_BYTE *)this + 12) = result; /*0x4305d8*/
   }
   return result; /*0x4305c6*/
@@ -468,7 +468,7 @@ void __thiscall sub_431D90(int this)
 {
   if ( this->nextObject ) /*0x431d96*/
   {
-    if ( *(_BYTE *)(this + 36) ) /*0x431d9d*/
+    if ( (unsigned char)this->objectTypeFlags ) /*0x431d9d*/
     {
       __3_YAXPAX_Z(*(void **)(this + 48)); /*0x431da3*/
       *(_BYTE *)(this + 36) = 0; /*0x431dab*/
@@ -694,17 +694,17 @@ BOOL __thiscall sub_4349F0(int this)
 {
   BOOL result; // eax
 
-  *(_DWORD *)(this + 4) = 0; /*0x4349f9*/
-  *(_DWORD *)(this + 32) = 0; /*0x4349fc*/
-  *(_DWORD *)(this + 12) = 0; /*0x4349ff*/
-  *(_DWORD *)(this + 8) = 0; /*0x434a02*/
+  this->vtable1 = 0; /*0x4349f9*/
+  this->NeedsSaveOrLink = 0; /*0x4349fc*/
+  this->vtable3 = 0; /*0x4349ff*/
+  this->vtable2 = 0; /*0x434a02*/
   *(_WORD *)(this + 36) = 0x7FFF; /*0x434a0f*/
   *(_WORD *)(this + 38) = 13653; /*0x434a15*/
   this->owningHouseIndex = 64; /*0x434a1b*/
   *(_BYTE *)(this + 64) = 1; /*0x434a22*/
   *(_BYTE *)(this + 65) = 1; /*0x434a25*/
-  *(_DWORD *)(this + 24) = 1; /*0x434a28*/
-  *(_DWORD *)(this + 28) = 1; /*0x434a2b*/
+  this->nextArrayIndex = 1; /*0x434a28*/
+  this->referenceCount = 1; /*0x434a2b*/
   result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0); /*0x434a2e*/
   this->fallRate = 1; /*0x434a34*/
   return result; /*0x434a37*/
@@ -2729,7 +2729,7 @@ ObjectClass *__thiscall sub_43ADF0(_BYTE *this, _DWORD *a1)
 {
   *(this + 8) = 0; /*0x43adf6*/
   *(_DWORD *)this = *a1; /*0x43adfc*/
-  *((_DWORD *)this + 1) = a1[1]; /*0x43ae01*/
+  this->vtable1 = a1[1]; /*0x43ae01*/
   return (ObjectClass *)this; /*0x43ae04*/
 }
 }

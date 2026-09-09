@@ -13,14 +13,14 @@ void __thiscall Dial8Class_48_::sub_4A7D20(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x4a7d26*/
-  *(_DWORD *)(this + 16) = 0; /*0x4a7d29*/
+  this->Dial8Class_48_field_0x10 = 0; /*0x4a7d29*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x4a7d30*/
   {
     __3_YAXPAX_Z(v2); /*0x4a7d36*/
-    *(_DWORD *)(this + 4) = 0; /*0x4a7d3e*/
+    this->Dial8Class_48_field_0x4 = 0; /*0x4a7d3e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4a7d41*/
-  *(_DWORD *)(this + 8) = 0; /*0x4a7d44*/
+  this->Dial8Class_48_field_0x8 = 0; /*0x4a7d44*/
 }
 }
 } // namespace gamemd
@@ -32,8 +32,8 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Dial8Class_48_::sub_4A7D50(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a7d50*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a7d65*/
+  if ( (unsigned char)this->Dial8Class_48_field_0xC ) /*0x4a7d50*/
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2; /*0x4a7d65*/
   else
     return 0; /*0x4a7d57*/
 }
@@ -106,21 +106,21 @@ char __thiscall Dial8Class_48_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4a7e05*/
+      if ( this->Dial8Class_48_field_0x4 ) /*0x4a7e05*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x4a7e0c*/
+        v6 = this->Dial8Class_48_field_0x8; /*0x4a7e0c*/
         if ( a2 < v6 ) /*0x4a7e11*/
           v6 = a2; /*0x4a7e13*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a7e19*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Dial8Class_48_field_0x4 + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
         if ( *((_BYTE *)this + 13) ) /*0x4a7e2b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7e36*/
-          *((_DWORD *)this + 1) = 0; /*0x4a7e3e*/
+          this->Dial8Class_48_field_0x4 = 0; /*0x4a7e3e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x4a7e47*/
-      *((_DWORD *)this + 2) = a2; /*0x4a7e4f*/
+      this->Dial8Class_48_field_0x4 = v4; /*0x4a7e47*/
+      this->Dial8Class_48_field_0x8 = a2; /*0x4a7e4f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
     }
@@ -145,13 +145,13 @@ void Dial8Class_48::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Dial8Class_48_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4a7e7d*/
+  if ( this->Dial8Class_48_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4a7e7d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4a7e83*/
-    *(_DWORD *)(this + 4) = 0; /*0x4a7e8b*/
+    this->Dial8Class_48_field_0x4 = 0; /*0x4a7e8b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4a7e8e*/
-  *(_DWORD *)(this + 8) = 0; /*0x4a7e91*/
+  this->Dial8Class_48_field_0x8 = 0; /*0x4a7e91*/
 }
 }
 } // namespace gamemd
@@ -167,9 +167,9 @@ int __thiscall Dial8Class_48_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4a7ea0*/
+  if ( !(unsigned char)this->Dial8Class_48_field_0xC ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
-  v3 = *(_DWORD *)(this + 8); /*0x4a7eae*/
+  v3 = this->Dial8Class_48_field_0x8; /*0x4a7eae*/
   result = 0; /*0x4a7eb1*/
   if ( v3 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
@@ -190,8 +190,8 @@ unsigned int Dial8Class_48::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Dial8Class_48_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a7ee0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a7ef5*/
+  if ( (unsigned char)this->Dial8Class_48_field_0xC ) /*0x4a7ee0*/
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2; /*0x4a7ef5*/
   else
     return 0; /*0x4a7ee7*/
 }
@@ -220,30 +220,30 @@ char __thiscall Dial8Class_48_::sub_4A7F00(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
-    if ( *((_DWORD *)this + 1) ) /*0x4a7f38*/
+    if ( this->Dial8Class_48_field_0x4 ) /*0x4a7f38*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x4a7f3f*/
+      v5 = this->Dial8Class_48_field_0x8; /*0x4a7f3f*/
       if ( a2 < v5 ) /*0x4a7f44*/
         v5 = a2; /*0x4a7f46*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a7f4c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Dial8Class_48_field_0x4 + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
       if ( *((_BYTE *)this + 13) ) /*0x4a7f5e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7f69*/
-        *((_DWORD *)this + 1) = 0; /*0x4a7f71*/
+        this->Dial8Class_48_field_0x4 = 0; /*0x4a7f71*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4a7f7a*/
-    *((_DWORD *)this + 2) = a2; /*0x4a7f82*/
+    this->Dial8Class_48_field_0x4 = v4; /*0x4a7f7a*/
+    this->Dial8Class_48_field_0x8 = a2; /*0x4a7f82*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4a7f85*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a7f8e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x4a7f91*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4a7f99*/
-    *((_DWORD *)this + 4) = v7; /*0x4a7f9b*/
+  v7 = this->Dial8Class_48_field_0x8; /*0x4a7f91*/
+  if ( v7 < this->Dial8Class_48_field_0x10 ) /*0x4a7f99*/
+    this->Dial8Class_48_field_0x10 = v7; /*0x4a7f9b*/
   return 1; /*0x4a7f9e*/
 }
 }

@@ -56,27 +56,27 @@ int __thiscall sub_6CAEC0(int this)
   int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
-  *(_DWORD *)(this + 36) = -1; /*0x6caecd*/
-  *(_DWORD *)(this + 40) = 0; /*0x6caed0*/
-  *(_DWORD *)(this + 44) = 0; /*0x6caed3*/
-  *(_DWORD *)(this + 48) = MEMORY[0xA8ED84]; /*0x6caedc*/
-  *(_DWORD *)(this + 56) = 0; /*0x6caedf*/
+  this->SuperClass_field_0x24 = -1; /*0x6caecd*/
+  this->SuperClass_field_0x28 = 0; /*0x6caed0*/
+  this->SuperClass_field_0x2C = 0; /*0x6caed3*/
+  this->SuperClass_field_0x30 = MEMORY[0xA8ED84]; /*0x6caedc*/
+  this->SuperClass_field_0x38 = 0; /*0x6caedf*/
   *(_DWORD *)(this + 72) = 0; /*0x6caee2*/
   *(_BYTE *)(this + 64) = 0; /*0x6caee5*/
   *(_DWORD *)(this + 76) = 0; /*0x6caee8*/
   *(_DWORD *)(this + 80) = -1; /*0x6caeeb*/
   *(_BYTE *)(this + 96) = 1; /*0x6caeee*/
   *(_DWORD *)(this + 98) = MEMORY[0xB0C000]; /*0x6caef8*/
-  *(_DWORD *)(this + 104) = 0; /*0x6caefb*/
+  this->SuperClass_field_0x68 = 0; /*0x6caefb*/
   *(_BYTE *)(this + 108) = 0; /*0x6caefe*/
   *(_BYTE *)(this + 109) = 0; /*0x6caf01*/
   *(_BYTE *)(this + 110) = 0; /*0x6caf04*/
   *(_BYTE *)(this + 111) = 0; /*0x6caf07*/
   *(_BYTE *)(this + 112) = 0; /*0x6caf0a*/
-  *(_DWORD *)(this + 124) = -1; /*0x6caf0d*/
+  this->SuperClass_field_0x7C = -1; /*0x6caf0d*/
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6caf10*/
-  *(_DWORD *)(this + 4) = &SuperClass::`vftable'; /*0x6caf16*/
-  *(_DWORD *)(this + 8) = &SuperClass::`vftable'; /*0x6caf1d*/
+  this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caf16*/
+  this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6caf1d*/
   *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6caf24*/
   *(_DWORD *)(this + 60) = &MEMORY[0x887734]; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
@@ -108,30 +108,30 @@ int __thiscall SuperClass::Construct(int this, int a2, CCINIClass *aP2)
   int v7; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
-  *(_DWORD *)(this + 40) = a2; /*0x6cafa4*/
-  *(_DWORD *)(this + 36) = -1; /*0x6cafa7*/
-  *(_DWORD *)(this + 44) = aP2; /*0x6cafaa*/
-  *(_DWORD *)(this + 48) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6cafb5*/
-  *(_DWORD *)(this + 56) = 0; /*0x6cafb8*/
+  this->SuperClass_field_0x28 = a2; /*0x6cafa4*/
+  this->SuperClass_field_0x24 = -1; /*0x6cafa7*/
+  this->SuperClass_field_0x2C = aP2; /*0x6cafaa*/
+  this->SuperClass_field_0x30 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6cafb5*/
+  this->SuperClass_field_0x38 = 0; /*0x6cafb8*/
   *(_DWORD *)(this + 72) = 0; /*0x6cafbb*/
   *(_BYTE *)(this + 64) = 0; /*0x6cafbe*/
   *(_DWORD *)(this + 76) = 0; /*0x6cafc1*/
   *(_DWORD *)(this + 80) = -1; /*0x6cafc4*/
   *(_BYTE *)(this + 96) = 1; /*0x6cafc7*/
   v4 = *(_DWORD *)&stru_B05488.__pad_579C[5084]; /*0x6cafcb*/
-  *(_DWORD *)(this + 120) = -1; /*0x6cafd1*/
-  *(_DWORD *)(this + 124) = -1; /*0x6cafd4*/
+  this->SuperClass_field_0x78 = -1; /*0x6cafd1*/
+  this->SuperClass_field_0x7C = -1; /*0x6cafd4*/
   *(_DWORD *)(this + 98) = v4; /*0x6cafda*/
-  *(_DWORD *)(this + 104) = 0; /*0x6cafde*/
+  this->SuperClass_field_0x68 = 0; /*0x6cafde*/
   *(_BYTE *)(this + 108) = 0; /*0x6cafe1*/
   *(_BYTE *)(this + 109) = 0; /*0x6cafe4*/
   *(_BYTE *)(this + 110) = 0; /*0x6cafe7*/
   *(_BYTE *)(this + 111) = 0; /*0x6cafea*/
   *(_BYTE *)(this + 112) = 0; /*0x6cafed*/
-  *(_DWORD *)(this + 116) = -100; /*0x6caff0*/
+  this->SuperClass_field_0x74 = -100; /*0x6caff0*/
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6caff7*/
-  *(_DWORD *)(this + 4) = &SuperClass::`vftable'; /*0x6caffd*/
-  *(_DWORD *)(this + 8) = &SuperClass::`vftable'; /*0x6cb003*/
+  this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caffd*/
+  this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb003*/
   *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
@@ -188,21 +188,21 @@ void __thiscall sub_6CB120(int this)
   int v8; // eax
   int v9; // [esp+14h] [ebp-4h] BYREF
 
-  v2 = *(_DWORD *)(this + 104); /*0x6cb124*/
+  v2 = this->SuperClass_field_0x68; /*0x6cb124*/
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6cb127*/
-  *(_DWORD *)(this + 4) = &SuperClass::`vftable'; /*0x6cb12f*/
-  *(_DWORD *)(this + 8) = &SuperClass::`vftable'; /*0x6cb136*/
+  this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6cb12f*/
+  this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb136*/
   *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     *(_BYTE *)(v2 + 405) = 0; /*0x6cb146*/
-    *(_DWORD *)(this + 104) = 0; /*0x6cb14d*/
+    this->SuperClass_field_0x68 = 0; /*0x6cb14d*/
     v9 = this; /*0x6cb164*/
     v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       DynamicVector::RemoveItem(&MEMORY[0xB0F5B8], v3); /*0x6cb176*/
   }
-  if ( *(_BYTE *)(this + 108) ) /*0x6cb17b*/
+  if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb17b*/
   {
     v9 = this; /*0x6cb192*/
     v4 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v9); /*0x6cb196*/
@@ -277,7 +277,7 @@ void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, Sup
   if ( v5 ) /*0x6cb3ab*/
   {
     v5->__pad_194[1] = 0; /*0x6cb3ad*/
-    *(_DWORD *)(this + 104) = 0; /*0x6cb3b4*/
+    this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
     v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 16))( /*0x6cb3cf*/
                        &stru_B05488.__pad_579C[18836],
@@ -285,7 +285,7 @@ void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, Sup
     if ( v6 != (IUnknown *)-1 ) /*0x6cb3d5*/
       DynamicVector::RemoveItem(&stru_B05488.__pad_579C[18836], v6); /*0x6cb3dd*/
   }
-  if ( *(_BYTE *)(this + 108) ) /*0x6cb3e2*/
+  if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
     v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 16))( /*0x6cb3fd*/
@@ -312,7 +312,7 @@ void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, Sup
                         0);
     if ( result ) /*0x6cb470*/
     {
-      *(_DWORD *)(this + 104) = result; /*0x6cb472*/
+      this->SuperClass_field_0x68 = result; /*0x6cb472*/
       result = *(void ***)&stru_B05488.__pad_579C[18844]; /*0x6cb475*/
       if ( *(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844] /*0x6cb4ae*/
         || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
@@ -346,28 +346,28 @@ char __thiscall SuperClass::SetOnHold(int this, CoordStruct *aP1)
 
   if ( !*(_BYTE *)(this + 109) /*0x6cb4ea*/
     || *(_BYTE *)(this + 110)
-    || (_BYTE)aP1 == *(_BYTE *)(this + 112)
-    || !*(_BYTE *)(this + 96) )
+    || (_BYTE)aP1 == (unsigned char)this->SuperClass_field_0x70
+    || !(unsigned char)this->SuperClass_field_0x60 )
   {
     return 0; /*0x6cb552*/
   }
-  if ( (_BYTE)aP1 || *(_BYTE *)(*(_DWORD *)(this + 40) + 245) ) /*0x6cb4f9*/
+  if ( (_BYTE)aP1 || *(_BYTE *)(this->SuperClass_field_0x28 + 245) ) /*0x6cb4f9*/
   {
     v3 = *(IUnknown **)(this + 48); /*0x6cb51c*/
     if ( v3 != (IUnknown *)-1 ) /*0x6cb522*/
     {
-      v4 = *(_DWORD *)(this + 56); /*0x6cb524*/
+      v4 = this->SuperClass_field_0x38; /*0x6cb524*/
       if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v3 >= v4 ) /*0x6cb536*/
         v5 = 0; /*0x6cb53c*/
       else
         v5 = v4 - (*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (_DWORD)v3); /*0x6cb538*/
-      *(_DWORD *)(this + 56) = v5; /*0x6cb53e*/
-      *(_DWORD *)(this + 48) = -1; /*0x6cb541*/
+      this->SuperClass_field_0x38 = v5; /*0x6cb53e*/
+      this->SuperClass_field_0x30 = -1; /*0x6cb541*/
     }
   }
-  else if ( *(_DWORD *)(this + 48) == -1 ) /*0x6cb507*/
+  else if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb507*/
   {
-    *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb510*/
+    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb510*/
     *(_BYTE *)(this + 112) = 0; /*0x6cb513*/
     return 1; /*0x6cb519*/
   }
@@ -406,31 +406,31 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
   if ( !*(_BYTE *)(this + 109) ) /*0x6cb569*/
   {
     v5 = (char)aP1; /*0x6cb572*/
-    v6 = *(_DWORD *)(this + 40); /*0x6cb576*/
+    v6 = this->SuperClass_field_0x28; /*0x6cb576*/
     *(_BYTE *)(this + 109) = 1; /*0x6cb579*/
     *(_BYTE *)(this + 110) = v5; /*0x6cb57d*/
     *(_BYTE *)(this + 64) = 0; /*0x6cb580*/
     v7 = *(_DWORD *)(v6 + 96); /*0x6cb583*/
     LOBYTE(aP1) = 0; /*0x6cb589*/
     *(_DWORD *)(this + 60) = v7; /*0x6cb58d*/
-    if ( !v5 && *(_BYTE *)(this + 112) && *(_BYTE *)(this + 96) ) /*0x6cb597*/
+    if ( !v5 && (unsigned char)this->SuperClass_field_0x70 && (unsigned char)this->SuperClass_field_0x60 ) /*0x6cb597*/
     {
       if ( *(_BYTE *)(v6 + 245) ) /*0x6cb59c*/
       {
-        if ( *(_DWORD *)(this + 48) != -1 ) /*0x6cb5bd*/
+        if ( this->SuperClass_field_0x30 != -1 ) /*0x6cb5bd*/
         {
-          *(_DWORD *)(this + 56) = CDTimerClass::TimeRemaining((int *)(this + 48)); /*0x6cb5c6*/
-          *(_DWORD *)(this + 48) = -1; /*0x6cb5c9*/
+          this->SuperClass_field_0x38 = CDTimerClass::TimeRemaining((int *)(this + 48)); /*0x6cb5c6*/
+          this->SuperClass_field_0x30 = -1; /*0x6cb5c9*/
         }
       }
-      else if ( *(_DWORD *)(this + 48) == -1 ) /*0x6cb5a8*/
+      else if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb5a8*/
       {
-        *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb5af*/
+        this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb5af*/
       }
       *(_BYTE *)(this + 112) = 0; /*0x6cb5cf*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 244) /*0x6cb61f*/
-      && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(this + 44) + 52) + 422)
+    if ( *(_BYTE *)(this->SuperClass_field_0x28 + 244) /*0x6cb61f*/
+      && !*(_BYTE *)(*(_DWORD *)(this->SuperClass_field_0x2C + 52) + 422)
       && (MEMORY[0xA83D60] < MEMORY[0xA83D58]
        || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
        && MEMORY[0xA83D64] > 0
@@ -442,45 +442,45 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
       v8 = MEMORY[0xA83D60]++; /*0x6cb62c*/
       *(_DWORD *)&MEMORY[0xA83D54]->__pad_0[4 * v8] = this; /*0x6cb63b*/
     }
-    v9 = *(_DWORD *)(this + 40); /*0x6cb63e*/
+    v9 = this->SuperClass_field_0x28; /*0x6cb63e*/
     if ( *(_BYTE *)(v9 + 245) ) /*0x6cb641*/
     {
-      v10 = *(_DWORD *)(this + 36); /*0x6cb649*/
-      *(_DWORD *)(this + 120) = -1; /*0x6cb64c*/
+      v10 = this->SuperClass_field_0x24; /*0x6cb649*/
+      this->SuperClass_field_0x78 = -1; /*0x6cb64c*/
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(_DWORD *)(v9 + 176); /*0x6cb658*/
       v11 = (TerrainTypeClass *)(this + 48); /*0x6cb664*/
-      *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb669*/
+      this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb669*/
       *(_DWORD *)(this + 52) = v22; /*0x6cb66f*/
-      *(_DWORD *)(this + 56) = v10; /*0x6cb672*/
+      this->SuperClass_field_0x38 = v10; /*0x6cb672*/
       v12 = *(IUnknown **)(this + 48); /*0x6cb675*/
       if ( v12 != (IUnknown *)-1 ) /*0x6cb67a*/
       {
-        v13 = *(_DWORD *)(this + 56); /*0x6cb680*/
+        v13 = this->SuperClass_field_0x38; /*0x6cb680*/
         v14 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (_DWORD)v12; /*0x6cb68e*/
         if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v12 >= v13 ) /*0x6cb692*/
         {
-          *(_DWORD *)(this + 56) = 0; /*0x6cb6a6*/
+          this->SuperClass_field_0x38 = 0; /*0x6cb6a6*/
           *(_DWORD *)v11->__pad_0 = -1; /*0x6cb6a9*/
         }
         else
         {
           *(_DWORD *)v11->__pad_0 = -1; /*0x6cb696*/
-          *(_DWORD *)(this + 56) = v13 - v14; /*0x6cb69c*/
+          this->SuperClass_field_0x38 = v13 - v14; /*0x6cb69c*/
         }
       }
     }
     else
     {
-      v15 = *(_DWORD *)(this + 104); /*0x6cb6b4*/
+      v15 = this->SuperClass_field_0x68; /*0x6cb6b4*/
       if ( v15 ) /*0x6cb6b9*/
       {
         *(_BYTE *)(v15 + 405) = 0; /*0x6cb6bf*/
-        *(_DWORD *)(this + 104) = 0; /*0x6cb6cb*/
+        this->SuperClass_field_0x68 = 0; /*0x6cb6cb*/
         aP1 = (IUnknown *)this; /*0x6cb6ce*/
         VectorClass::RemoveAt((int *)&MEMORY[0xB077F8].__pad_579C[9764], (int)&aP1); /*0x6cb6d2*/
       }
-      if ( *(_BYTE *)(this + 108) ) /*0x6cb6d7*/
+      if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb6d7*/
       {
         aP1 = (IUnknown *)this; /*0x6cb6e6*/
         VectorClass::RemoveAt((int *)&MEMORY[0xB077F8].__pad_579C[9764], (int)&aP1); /*0x6cb6ea*/
@@ -488,24 +488,24 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
       }
       if ( !*(_BYTE *)(this + 109) /*0x6cb704*/
         || *(_BYTE *)(this + 111)
-        || *(_BYTE *)(this + 112) && !*(_BYTE *)(*(_DWORD *)(this + 40) + 237) )
+        || (unsigned char)this->SuperClass_field_0x70 && !*(_BYTE *)(this->SuperClass_field_0x28 + 237) )
       {
         LOBYTE(aP1) = 0; /*0x6cb757*/
       }
       else
       {
-        *(_DWORD *)(this + 120) = -1; /*0x6cb70f*/
+        this->SuperClass_field_0x78 = -1; /*0x6cb70f*/
         SuperClass::SetCurrentFrame((_DWORD *)(this + 48)); /*0x6cb718*/
         DefaultTimer = (DynamicVector *)Super::GetDefaultTimer((_DWORD *)this); /*0x6cb71f*/
         Timer::Start(&v21, DefaultTimer); /*0x6cb729*/
         v17 = v22; /*0x6cb732*/
         v18 = v23; /*0x6cb736*/
-        *(_DWORD *)(this + 48) = v21; /*0x6cb73a*/
-        v19 = *(_DWORD *)(this + 40); /*0x6cb73c*/
+        this->SuperClass_field_0x30 = v21; /*0x6cb73a*/
+        v19 = this->SuperClass_field_0x28; /*0x6cb73c*/
         *(_DWORD *)(this + 52) = v17; /*0x6cb73f*/
-        *(_DWORD *)(this + 56) = v18; /*0x6cb742*/
+        this->SuperClass_field_0x38 = v18; /*0x6cb742*/
         if ( *(_BYTE *)(v19 + 229) ) /*0x6cb745*/
-          *(_DWORD *)(this + 124) = 0; /*0x6cb74d*/
+          this->SuperClass_field_0x7C = 0; /*0x6cb74d*/
         LOBYTE(aP1) = 1; /*0x6cb750*/
       }
     }
@@ -513,9 +513,9 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
     {
       if ( *(_BYTE *)(this + 110) ) /*0x6cb769*/
         goto LABEL_45; /*0x6cb76c*/
-      if ( *(_BYTE *)(this + 112) != 1 ) /*0x6cb772*/
+      if ( (unsigned char)this->SuperClass_field_0x70 != 1 ) /*0x6cb772*/
       {
-        if ( *(_BYTE *)(this + 96) ) /*0x6cb774*/
+        if ( (unsigned char)this->SuperClass_field_0x60 ) /*0x6cb774*/
         {
           SuperClass::AdvanceCountdown((int *)(this + 48)); /*0x6cb77c*/
           *(_BYTE *)(this + 112) = 1; /*0x6cb781*/
@@ -590,11 +590,11 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
   int v6; // ecx
   _DWORD v8[4]; // [esp+8h] [ebp-10h] BYREF
 
-  v3 = *(_DWORD *)(this + 104); /*0x6cb839*/
+  v3 = this->SuperClass_field_0x68; /*0x6cb839*/
   if ( v3 ) /*0x6cb83e*/
   {
     *(_BYTE *)(v3 + 405) = 0; /*0x6cb840*/
-    *(_DWORD *)(this + 104) = 0; /*0x6cb846*/
+    this->SuperClass_field_0x68 = 0; /*0x6cb846*/
     v8[0] = this; /*0x6cb859*/
     v4 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9764] + 16))( /*0x6cb85d*/
            &MEMORY[0xB077F8].__pad_579C[9764],
@@ -602,7 +602,7 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
     if ( v4 != -1 ) /*0x6cb863*/
       DynamicVector::RemoveItem(&MEMORY[0xB077F8].__pad_579C[9764], v4); /*0x6cb86b*/
   }
-  if ( *(_BYTE *)(this + 108) ) /*0x6cb870*/
+  if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
     v5 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9764] + 16))( /*0x6cb889*/
@@ -614,21 +614,21 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
   }
   if ( !*(_BYTE *)(this + 109) /*0x6cb8b1*/
     || *(_BYTE *)(this + 111)
-    || *(_BYTE *)(this + 112) && !*(_BYTE *)(*(_DWORD *)(this + 40) + 237) )
+    || (unsigned char)this->SuperClass_field_0x70 && !*(_BYTE *)(this->SuperClass_field_0x28 + 237) )
   {
     return 0; /*0x6cb90d*/
   }
-  *(_DWORD *)(this + 120) = -1; /*0x6cb8b9*/
-  if ( *(_DWORD *)(this + 48) == -1 ) /*0x6cb8c6*/
-    *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8ce*/
-  v6 = *(_DWORD *)(this + 36); /*0x6cb8d1*/
+  this->SuperClass_field_0x78 = -1; /*0x6cb8b9*/
+  if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb8c6*/
+    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8ce*/
+  v6 = this->SuperClass_field_0x24; /*0x6cb8d1*/
   if ( v6 == -1 ) /*0x6cb8d7*/
-    v6 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6cb8dc*/
-  *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8e7*/
+    v6 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cb8dc*/
+  this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8e7*/
   *(_DWORD *)(this + 52) = v8[2]; /*0x6cb8ee*/
-  *(_DWORD *)(this + 56) = v6; /*0x6cb8f1*/
-  if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 229) ) /*0x6cb8f7*/
-    *(_DWORD *)(this + 124) = 0; /*0x6cb8ff*/
+  this->SuperClass_field_0x38 = v6; /*0x6cb8f1*/
+  if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cb8f7*/
+    this->SuperClass_field_0x7C = 0; /*0x6cb8ff*/
   return 1; /*0x6cb902*/
 }
 }
@@ -668,22 +668,22 @@ char __thiscall SuperClass::ClickFire(int this, int a2, __int16 *a3)
   int v29; // ecx
   wchar_t *v30; // [esp+14h] [ebp-8h]
 
-  v4 = *(_DWORD *)(this + 40); /*0x6cb92a*/
+  v4 = this->SuperClass_field_0x28; /*0x6cb92a*/
   if ( *(_BYTE *)(v4 + 229) ) /*0x6cb92d*/
   {
     if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 44)) ) /*0x6cb93c*/
     {
-      v5 = *(_DWORD *)(this + 124); /*0x6cb949*/
+      v5 = this->SuperClass_field_0x7C; /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
       {
         v6 = *(__int16 **)(this + 36); /*0x6cb951*/
-        *(_DWORD *)(this + 124) = 1; /*0x6cb954*/
+        this->SuperClass_field_0x7C = 1; /*0x6cb954*/
         if ( v6 == (__int16 *)-1 ) /*0x6cb95e*/
-          a3 = *(__int16 **)(*(_DWORD *)(this + 40) + 176); /*0x6cb96f*/
+          a3 = *(__int16 **)(this->SuperClass_field_0x28 + 176); /*0x6cb96f*/
         else
           a3 = v6; /*0x6cb960*/
-        v7 = *(_DWORD *)(this + 48); /*0x6cb973*/
-        v8 = *(_DWORD *)(this + 56); /*0x6cb976*/
+        v7 = this->SuperClass_field_0x30; /*0x6cb973*/
+        v8 = this->SuperClass_field_0x38; /*0x6cb976*/
         v9 = MEMORY[0xA8ED84]; /*0x6cb979*/
         v10 = (wchar_t **)(this + 48); /*0x6cb97f*/
         if ( v7 != -1 ) /*0x6cb985*/
@@ -706,12 +706,12 @@ LABEL_11:
       }
       if ( v5 == 1 ) /*0x6cb9d0*/
       {
-        v13 = *(_DWORD *)(this + 36); /*0x6cb9d6*/
-        *(_DWORD *)(this + 124) = 2; /*0x6cb9d9*/
+        v13 = this->SuperClass_field_0x24; /*0x6cb9d6*/
+        this->SuperClass_field_0x7C = 2; /*0x6cb9d9*/
         if ( v13 == -1 ) /*0x6cb9e3*/
-          v13 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6cb9e8*/
-        v14 = *(_DWORD *)(this + 48); /*0x6cb9ee*/
-        v15 = *(_DWORD *)(this + 56); /*0x6cb9f1*/
+          v13 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cb9e8*/
+        v14 = this->SuperClass_field_0x30; /*0x6cb9ee*/
+        v15 = this->SuperClass_field_0x38; /*0x6cb9f1*/
         v16 = MEMORY[0xA8ED84]; /*0x6cb9f5*/
         if ( v14 != -1 ) /*0x6cb9fe*/
         {
@@ -722,14 +722,14 @@ LABEL_11:
         }
         v17 = Math::RoundToInt((double)(v13 - v15) * *(double *)&MEMORY[0x8871E0]->WallBuildSpeedCoefficient[2]); /*0x6cba23*/
         v18 = a2; /*0x6cba2c*/
-        *(_DWORD *)(this + 48) = v16; /*0x6cba30*/
+        this->SuperClass_field_0x30 = v16; /*0x6cba30*/
         *(_DWORD *)(this + 52) = v30; /*0x6cba33*/
-        *(_DWORD *)(this + 56) = v17; /*0x6cba36*/
+        this->SuperClass_field_0x38 = v17; /*0x6cba36*/
         SuperClass::Launch(this, v18, a3, v18); /*0x6cba41*/
         return 0; /*0x6cba4f*/
       }
     }
-    else if ( !*(_BYTE *)(*(_DWORD *)(this + 44) + 506) ) /*0x6cba55*/
+    else if ( !*(_BYTE *)(this->SuperClass_field_0x2C + 506) ) /*0x6cba55*/
     {
       SuperClass::Launch(this, a2, a3, a2); /*0x6cba6d*/
       return 0; /*0x6cba7a*/
@@ -737,7 +737,7 @@ LABEL_11:
     return 0; /*0x6cbc96*/
   }
   v19 = (wchar_t **)(this + 48); /*0x6cba80*/
-  if ( (*(_DWORD *)(this + 48) == -1 || !*(_BYTE *)(this + 109) || !*(_BYTE *)(this + 111)) && !*(_BYTE *)(v4 + 238) ) /*0x6cba98*/
+  if ( (this->SuperClass_field_0x30 == -1 || !*(_BYTE *)(this + 109) || !*(_BYTE *)(this + 111)) && !*(_BYTE *)(v4 + 238) ) /*0x6cba98*/
     return 0; /*0x6cba98*/
   if ( *(_DWORD *)(v4 + 180) == 2 && (unsigned __int8)Weapon_Helper() ) /*0x6cbaa7*/
   {
@@ -748,7 +748,7 @@ LABEL_11:
     }
     return 0; /*0x6cbab4*/
   }
-  if ( *(_DWORD *)(*(_DWORD *)(this + 40) + 180) == 7 && PsyDom::IsActive() ) /*0x6cbad6*/
+  if ( *(_DWORD *)(this->SuperClass_field_0x28 + 180) == 7 && PsyDom::IsActive() ) /*0x6cbad6*/
   {
     if ( (_BYTE)a2 ) /*0x6cbae3*/
     {
@@ -758,50 +758,50 @@ LABEL_11:
     return 0; /*0x6cbae3*/
   }
   SuperClass::Launch(this, a2, a3, a2); /*0x6cbb05*/
-  v20 = *(_DWORD *)(this + 40); /*0x6cbb0a*/
+  v20 = this->SuperClass_field_0x28; /*0x6cbb0a*/
   if ( !*(_BYTE *)(v20 + 238) ) /*0x6cbb0d*/
     *(_BYTE *)(this + 111) = 0; /*0x6cbb15*/
   if ( !*(_BYTE *)(this + 110) ) /*0x6cbb1b*/
   {
     if ( *(_BYTE *)(v20 + 245) ) /*0x6cbb63*/
     {
-      v23 = *(_DWORD *)(this + 36); /*0x6cbb6b*/
+      v23 = this->SuperClass_field_0x24; /*0x6cbb6b*/
       if ( v23 == -1 ) /*0x6cbb71*/
         v23 = *(_DWORD *)(v20 + 176); /*0x6cbb73*/
       v24 = MEMORY[0xA8ED84]; /*0x6cbb79*/
-      *(_DWORD *)(this + 120) = -1; /*0x6cbb80*/
+      this->SuperClass_field_0x78 = -1; /*0x6cbb80*/
       *v19 = v24; /*0x6cbb87*/
       *(_DWORD *)(this + 52) = v30; /*0x6cbb8d*/
-      *(_DWORD *)(this + 56) = v23; /*0x6cbb90*/
+      this->SuperClass_field_0x38 = v23; /*0x6cbb90*/
       v25 = *v19; /*0x6cbb93*/
       if ( *v19 != (wchar_t *)-1 ) /*0x6cbb98*/
       {
-        v26 = *(_DWORD *)(this + 56); /*0x6cbb9e*/
+        v26 = this->SuperClass_field_0x38; /*0x6cbb9e*/
         v27 = (char *)((char *)MEMORY[0xA8ED84] - (char *)v25); /*0x6cbbac*/
         if ( (char *)MEMORY[0xA8ED84] - (char *)v25 >= v26 ) /*0x6cbbb0*/
         {
-          *(_DWORD *)(this + 56) = 0; /*0x6cbbca*/
+          this->SuperClass_field_0x38 = 0; /*0x6cbbca*/
           *v19 = (wchar_t *)-1; /*0x6cbbcd*/
         }
         else
         {
           *v19 = (wchar_t *)-1; /*0x6cbbb4*/
-          *(_DWORD *)(this + 56) = v26 - (_DWORD)v27; /*0x6cbbba*/
+          this->SuperClass_field_0x38 = v26 - (_DWORD)v27; /*0x6cbbba*/
         }
         return 0; /*0x6cbbc5*/
       }
     }
     else if ( !*(_BYTE *)(v20 + 237) && !*(_BYTE *)(v20 + 238) ) /*0x6cbbea*/
     {
-      v28 = *(_DWORD *)(this + 104); /*0x6cbbf6*/
+      v28 = this->SuperClass_field_0x68; /*0x6cbbf6*/
       if ( v28 ) /*0x6cbbfb*/
       {
         *(_BYTE *)(v28 + 405) = 0; /*0x6cbc01*/
-        *(_DWORD *)(this + 104) = 0; /*0x6cbc0d*/
+        this->SuperClass_field_0x68 = 0; /*0x6cbc0d*/
         a2 = this; /*0x6cbc10*/
         VectorClass::RemoveAt(&MEMORY[0xB0F5B8], (int)&a2); /*0x6cbc14*/
       }
-      if ( *(_BYTE *)(this + 108) ) /*0x6cbc19*/
+      if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cbc19*/
       {
         a2 = this; /*0x6cbc28*/
         VectorClass::RemoveAt(&MEMORY[0xB0F5B8], (int)&a2); /*0x6cbc2c*/
@@ -809,19 +809,19 @@ LABEL_11:
       }
       if ( *(_BYTE *)(this + 109) /*0x6cbc46*/
         && !*(_BYTE *)(this + 111)
-        && (!*(_BYTE *)(this + 112) || *(_BYTE *)(*(_DWORD *)(this + 40) + 237)) )
+        && (!(unsigned char)this->SuperClass_field_0x70 || *(_BYTE *)(this->SuperClass_field_0x28 + 237)) )
       {
-        *(_DWORD *)(this + 120) = -1; /*0x6cbc4e*/
+        this->SuperClass_field_0x78 = -1; /*0x6cbc4e*/
         if ( *v19 == (wchar_t *)-1 ) /*0x6cbc5a*/
           *v19 = MEMORY[0xA8ED84]; /*0x6cbc62*/
-        v29 = *(_DWORD *)(this + 36); /*0x6cbc64*/
+        v29 = this->SuperClass_field_0x24; /*0x6cbc64*/
         if ( v29 == -1 ) /*0x6cbc6a*/
-          v29 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6cbc6f*/
+          v29 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cbc6f*/
         *v19 = MEMORY[0xA8ED84]; /*0x6cbc7a*/
         *(_DWORD *)(this + 52) = v30; /*0x6cbc80*/
-        *(_DWORD *)(this + 56) = v29; /*0x6cbc83*/
-        if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 229) ) /*0x6cbc89*/
-          *(_DWORD *)(this + 124) = 0; /*0x6cbc91*/
+        this->SuperClass_field_0x38 = v29; /*0x6cbc83*/
+        if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cbc89*/
+          this->SuperClass_field_0x7C = 0; /*0x6cbc91*/
       }
     }
     return 0; /*0x6cbb98*/
@@ -857,21 +857,21 @@ char __thiscall SuperClass::AnnounceReady(int this, DynamicVector *aP1)
   result = *(_BYTE *)(this + 109); /*0x6cc086*/
   if ( result ) /*0x6cc08b*/
   {
-    v4 = *(_DWORD *)(this + 36); /*0x6cc092*/
+    v4 = this->SuperClass_field_0x24; /*0x6cc092*/
     *(_BYTE *)(this + 111) = 1; /*0x6cc098*/
     if ( v4 == -1 ) /*0x6cc09c*/
-      v4 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6cc0a1*/
+      v4 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cc0a1*/
     v5 = v4 - Math::RoundToInt((double)v4); /*0x6cc0b4*/
     if ( !v5 ) /*0x6cc0b6*/
       *(_BYTE *)(this + 111) = 1; /*0x6cc0b8*/
-    if ( *(_DWORD *)(this + 48) == -1 ) /*0x6cc0c0*/
-      *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0c8*/
-    *(_DWORD *)(this + 48) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0d4*/
+    if ( this->SuperClass_field_0x30 == -1 ) /*0x6cc0c0*/
+      this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0c8*/
+    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0d4*/
     *(_DWORD *)(this + 52) = v7; /*0x6cc0db*/
-    *(_DWORD *)(this + 56) = v5; /*0x6cc0de*/
+    this->SuperClass_field_0x38 = v5; /*0x6cc0de*/
     if ( (_BYTE)aP1 ) /*0x6cc0e4*/
     {
-      switch ( *(_DWORD *)(*(_DWORD *)(this + 40) + 180) ) /*0x6cc0fc*/
+      switch ( *(_DWORD *)(this->SuperClass_field_0x28 + 180) ) /*0x6cc0fc*/
       {
         case 0: /*0x6cc0fc*/
           VoxClass::FindAndPlay(&stru_830620.__pad_579C[50968], -1, -1); /*0x6cc10d*/
@@ -908,11 +908,11 @@ char __thiscall SuperClass::AnnounceReady(int this, DynamicVector *aP1)
           break;
       }
     }
-    v6 = *(_DWORD *)(this + 40); /*0x6cc17e*/
-    *(_DWORD *)(this + 116) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc187*/
+    v6 = this->SuperClass_field_0x28; /*0x6cc17e*/
+    this->SuperClass_field_0x74 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc187*/
     result = *(_BYTE *)(v6 + 229); /*0x6cc18a*/
     if ( result ) /*0x6cc192*/
-      *(_DWORD *)(this + 124) = 1; /*0x6cc194*/
+      this->SuperClass_field_0x7C = 1; /*0x6cc194*/
   }
   return result; /*0x6cc19b*/
 }
@@ -937,18 +937,18 @@ char __thiscall SuperClass::SetCharge(int this, int a2)
     LOBYTE(v3) = a2; /*0x6cc1ed*/
     if ( (unsigned int)a2 <= 0x64 ) /*0x6cc1f3*/
     {
-      v4 = *(_DWORD *)(this + 36); /*0x6cc1fb*/
+      v4 = this->SuperClass_field_0x24; /*0x6cc1fb*/
       if ( v4 == -1 ) /*0x6cc201*/
-        v4 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6cc206*/
+        v4 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cc206*/
       v5 = v4 - Math::RoundToInt((double)a2 * 0.0099999998 * (double)v4); /*0x6cc223*/
       if ( !v5 ) /*0x6cc225*/
         *(_BYTE *)(this + 111) = 1; /*0x6cc227*/
       v3 = (_DWORD *)(this + 48); /*0x6cc22e*/
-      if ( *(_DWORD *)(this + 48) == -1 ) /*0x6cc234*/
+      if ( this->SuperClass_field_0x30 == -1 ) /*0x6cc234*/
         *v3 = MEMORY[0xA8ED84]; /*0x6cc23c*/
       *v3 = MEMORY[0xA8ED84]; /*0x6cc248*/
       *(_DWORD *)(this + 52) = v7; /*0x6cc24a*/
-      *(_DWORD *)(this + 56) = v5; /*0x6cc24d*/
+      this->SuperClass_field_0x38 = v5; /*0x6cc24d*/
     }
   }
   return (char)v3; /*0x6cc251*/
@@ -991,11 +991,11 @@ wchar_t *__thiscall SuperClass::NameReadiness(int this)
   int v1; // ecx
   int v2; // ecx
 
-  if ( *(_BYTE *)(this + 112) ) /*0x6cc2b0*/
+  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6cc2b0*/
     return GetStringCSF(MEMORY[0x83FB2C], 0, MEMORY[0x842510], 950); /*0x6cc34d*/
-  if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 229) ) /*0x6cc2be*/
+  if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cc2be*/
   {
-    v1 = *(_DWORD *)(this + 124); /*0x6cc2c8*/
+    v1 = this->SuperClass_field_0x7C; /*0x6cc2c8*/
     if ( v1 ) /*0x6cc2ce*/
     {
       v2 = v1 - 1; /*0x6cc2d0*/
@@ -1032,10 +1032,10 @@ char SuperClass::CanFire()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SuperClass::CanFire(int this)
 {
-  if ( *(_BYTE *)(this + 112) ) /*0x6cc360*/
+  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6cc360*/
     return 0; /*0x6cc381*/
-  if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 229) ) /*0x6cc36a*/
-    return *(_DWORD *)(this + 124) != 0; /*0x6cc379*/
+  if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cc36a*/
+    return this->SuperClass_field_0x7C != 0; /*0x6cc379*/
   return *(_BYTE *)(this + 111); /*0x6cc37c*/
 }
 }
@@ -1106,7 +1106,7 @@ bool SuperClass::ShouldDrawProgress()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall SuperClass::ShouldDrawProgress(int this)
 {
-  return *(_BYTE *)(*(_DWORD *)(this + 40) + 229) || *(_BYTE *)(this + 111) == 0; /*0x6cde9d*/
+  return *(_BYTE *)(this->SuperClass_field_0x28 + 229) || *(_BYTE *)(this + 111) == 0; /*0x6cde9d*/
 }
 }
 } // namespace gamemd
@@ -1207,13 +1207,13 @@ __int64 __thiscall SuperClass::_vt10(int this, unsigned int a2, int a3)
   __int64 result; // rax
 
   result = a2; /*0x6cdff8*/
-  if ( a2 == *(_DWORD *)(this + 44) ) /*0x6cdffc*/
-    *(_DWORD *)(this + 44) = 0; /*0x6cdffe*/
-  if ( a2 == *(_DWORD *)(this + 40) ) /*0x6ce004*/
-    *(_DWORD *)(this + 40) = 0; /*0x6ce006*/
-  if ( a2 == *(_DWORD *)(this + 104) ) /*0x6ce00f*/
+  if ( a2 == this->SuperClass_field_0x2C ) /*0x6cdffc*/
+    this->SuperClass_field_0x2C = 0; /*0x6cdffe*/
+  if ( a2 == this->SuperClass_field_0x28 ) /*0x6ce004*/
+    this->SuperClass_field_0x28 = 0; /*0x6ce006*/
+  if ( a2 == this->SuperClass_field_0x68 ) /*0x6ce00f*/
   {
-    *(_DWORD *)(this + 104) = 0; /*0x6ce011*/
+    this->SuperClass_field_0x68 = 0; /*0x6ce011*/
     *(_BYTE *)(this + 108) = 1; /*0x6ce014*/
   }
   return result; /*0x6ce00e*/
@@ -1243,17 +1243,17 @@ int __thiscall SuperClass::_vt13(int this, int *a2)
   Power::FlagProcess(a2, v4); /*0x6ce03f*/
   LOBYTE(v5) = *(_BYTE *)(this + 111); /*0x6ce044*/
   Power::FlagProcess(a2, v5); /*0x6ce04a*/
-  Power::TimerProcess(*(_DWORD *)(this + 120)); /*0x6ce055*/
-  Power::TimerProcess(*(_DWORD *)(this + 124)); /*0x6ce060*/
-  LOBYTE(v6) = *(_BYTE *)(this + 96); /*0x6ce065*/
+  Power::TimerProcess(this->SuperClass_field_0x78); /*0x6ce055*/
+  Power::TimerProcess(this->SuperClass_field_0x7C); /*0x6ce060*/
+  LOBYTE(v6) = (unsigned char)this->SuperClass_field_0x60; /*0x6ce065*/
   v7 = Power::FlagProcess(a2, v6); /*0x6ce06b*/
-  LOBYTE(v7) = *(_BYTE *)(this + 108); /*0x6ce070*/
+  LOBYTE(v7) = (unsigned char)this->SuperClass_field_0x6C; /*0x6ce070*/
   Power::FlagProcess(a2, v7); /*0x6ce076*/
-  result = *(_DWORD *)(this + 104); /*0x6ce07b*/
+  result = this->SuperClass_field_0x68; /*0x6ce07b*/
   if ( result ) /*0x6ce080*/
   {
     Power::TimerProcess(*(unsigned __int8 *)(result + 405)); /*0x6ce08d*/
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 104) + 4) + 16))(*(_DWORD *)(this + 104) + 4); /*0x6ce09c*/
+    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->SuperClass_field_0x68 + 4) + 16))(this->SuperClass_field_0x68 + 4); /*0x6ce09c*/
     return Power::TimerProcess(v9); /*0x6ce0a2*/
   }
   return result; /*0x6ce0a7*/
@@ -1280,17 +1280,17 @@ int *__thiscall SuperClass::Reset(int this)
   char *v11; // edx
   _DWORD v12[4]; // [esp+4h] [ebp-10h] BYREF
 
-  v2 = *(_DWORD *)(this + 104); /*0x6ce0b6*/
+  v2 = this->SuperClass_field_0x68; /*0x6ce0b6*/
   if ( v2 ) /*0x6ce0bb*/
   {
     *(_BYTE *)(v2 + 405) = 0; /*0x6ce0bd*/
-    *(_DWORD *)(this + 104) = 0; /*0x6ce0c4*/
+    this->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = this; /*0x6ce0db*/
     v3 = (*(int (__thiscall **)(int *, _DWORD *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], v12); /*0x6ce0df*/
     if ( v3 != -1 ) /*0x6ce0e5*/
       DynamicVector::RemoveItem(&MEMORY[0xB0F5B8], v3); /*0x6ce0ed*/
   }
-  if ( *(_BYTE *)(this + 108) ) /*0x6ce0f2*/
+  if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6ce0f2*/
   {
     v12[0] = this; /*0x6ce109*/
     v4 = (*(int (__thiscall **)(int *, _DWORD *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], v12); /*0x6ce10d*/
@@ -1298,17 +1298,17 @@ int *__thiscall SuperClass::Reset(int this)
       DynamicVector::RemoveItem(&MEMORY[0xB0F5B8], v4); /*0x6ce11b*/
     *(_BYTE *)(this + 108) = 0; /*0x6ce120*/
   }
-  v5 = *(_DWORD *)(this + 36); /*0x6ce124*/
+  v5 = this->SuperClass_field_0x24; /*0x6ce124*/
   result = (int *)(this + 48); /*0x6ce127*/
   *(_BYTE *)(this + 111) = 0; /*0x6ce12b*/
-  v7 = *(_DWORD *)(this + 48); /*0x6ce12f*/
-  *(_DWORD *)(this + 120) = -1; /*0x6ce131*/
+  v7 = this->SuperClass_field_0x30; /*0x6ce12f*/
+  this->SuperClass_field_0x78 = -1; /*0x6ce131*/
   v8 = v7 != -1; /*0x6ce13b*/
   if ( v5 == -1 ) /*0x6ce141*/
-    v5 = *(_DWORD *)(*(_DWORD *)(this + 40) + 176); /*0x6ce146*/
+    v5 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6ce146*/
   *result = (int)MEMORY[0xA8ED84]; /*0x6ce156*/
   *(_DWORD *)(this + 52) = v12[2]; /*0x6ce15d*/
-  *(_DWORD *)(this + 56) = v5; /*0x6ce160*/
+  this->SuperClass_field_0x38 = v5; /*0x6ce160*/
   if ( !v8 ) /*0x6ce163*/
   {
     v9 = *result; /*0x6ce165*/
@@ -1343,12 +1343,12 @@ bool __thiscall SuperClass::ShouldFlashTab(int this)
   int v1; // eax
   int v2; // eax
 
-  if ( *(_BYTE *)(this + 112) ) /*0x6ce1a0*/
+  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6ce1a0*/
     return 0; /*0x6ce1a5*/
-  v1 = *(_DWORD *)(this + 40); /*0x6ce1a7*/
+  v1 = this->SuperClass_field_0x28; /*0x6ce1a7*/
   if ( *(_BYTE *)(v1 + 229) ) /*0x6ce1aa*/
   {
-    if ( !*(_DWORD *)(this + 124) ) /*0x6ce1b9*/
+    if ( !this->SuperClass_field_0x7C ) /*0x6ce1b9*/
       return 0; /*0x6ce1b9*/
   }
   else if ( !*(_BYTE *)(this + 111) ) /*0x6ce1c2*/
@@ -1358,7 +1358,7 @@ bool __thiscall SuperClass::ShouldFlashTab(int this)
   v2 = *(_DWORD *)(v1 + 232); /*0x6ce1c4*/
   if ( v2 == -1 ) /*0x6ce1cd*/
     return 1; /*0x6ce1d1*/
-  return v2 && v2 + *(_DWORD *)(this + 116) > (int)MEMORY[0xA8ED84]; /*0x6ce1d1*/
+  return v2 && v2 + this->SuperClass_field_0x74 > (int)MEMORY[0xA8ED84]; /*0x6ce1d1*/
 }
 }
 } // namespace gamemd

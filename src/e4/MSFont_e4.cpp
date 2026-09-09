@@ -26,14 +26,14 @@ void __thiscall MSFont_18_::sub_5D5080(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d5086*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d5089*/
+  this->MSFont_18_field_0x10 = 0; /*0x5d5089*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d5090*/
   {
     __3_YAXPAX_Z(v2); /*0x5d5096*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d509e*/
+    this->MSFont_18_field_0x4 = 0; /*0x5d509e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d50a1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d50a4*/
+  this->MSFont_18_field_0x8 = 0; /*0x5d50a4*/
 }
 }
 } // namespace gamemd
@@ -45,8 +45,8 @@ unsigned int MSFont_18::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSFont_18_::sub_5D50B0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d50b0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d50c5*/
+  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d50b0*/
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2; /*0x5d50c5*/
   else
     return 0; /*0x5d50b7*/
 }
@@ -75,14 +75,14 @@ void __thiscall MSFont_18_::sub_5D50E0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5d50e6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d50e9*/
+  this->MSFont_18_field_0x10 = 0; /*0x5d50e9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d50f0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d50f6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d50fe*/
+    this->MSFont_18_field_0x4 = 0; /*0x5d50fe*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d5101*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d5104*/
+  this->MSFont_18_field_0x8 = 0; /*0x5d5104*/
 }
 }
 } // namespace gamemd
@@ -94,8 +94,8 @@ unsigned int MSFont_18::PointerToIndex8(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSFont_18_::sub_5D5110(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d5110*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x5d5125*/
+  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d5110*/
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 3; /*0x5d5125*/
   else
     return 0; /*0x5d5117*/
 }
@@ -156,21 +156,21 @@ char __thiscall MSFont_18_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x5d51d5*/
+      if ( this->MSFont_18_field_0x4 ) /*0x5d51d5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x5d51dc*/
+        v6 = this->MSFont_18_field_0x8; /*0x5d51dc*/
         if ( a2 < v6 ) /*0x5d51e1*/
           v6 = a2; /*0x5d51e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d51e9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSFont_18_field_0x4 + 4 * i - 4) ) /*0x5d51e9*/
           ++i; /*0x5d51ee*/
         if ( *((_BYTE *)this + 13) ) /*0x5d51fb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5206*/
-          *((_DWORD *)this + 1) = 0; /*0x5d520e*/
+          this->MSFont_18_field_0x4 = 0; /*0x5d520e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x5d5217*/
-      *((_DWORD *)this + 2) = a2; /*0x5d521f*/
+      this->MSFont_18_field_0x4 = v4; /*0x5d5217*/
+      this->MSFont_18_field_0x8 = a2; /*0x5d521f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
     }
@@ -195,13 +195,13 @@ void MSFont_18::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall MSFont_18_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x5d524d*/
+  if ( this->MSFont_18_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d524d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d5253*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d525b*/
+    this->MSFont_18_field_0x4 = 0; /*0x5d525b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d525e*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d5261*/
+  this->MSFont_18_field_0x8 = 0; /*0x5d5261*/
 }
 }
 } // namespace gamemd
@@ -217,9 +217,9 @@ int __thiscall MSFont_18_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x5d5270*/
+  if ( !(unsigned char)this->MSFont_18_field_0xC ) /*0x5d5270*/
     return 0; /*0x5d5278*/
-  v3 = *(_DWORD *)(this + 8); /*0x5d527e*/
+  v3 = this->MSFont_18_field_0x8; /*0x5d527e*/
   result = 0; /*0x5d5281*/
   if ( v3 <= 0 ) /*0x5d5285*/
     return -1; /*0x5d529c*/
@@ -240,8 +240,8 @@ unsigned int MSFont_18::Draw(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSFont_18_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5d52b0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5d52c5*/
+  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d52b0*/
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2; /*0x5d52c5*/
   else
     return 0; /*0x5d52b7*/
 }
@@ -270,30 +270,30 @@ char __thiscall MSFont_18_::sub_5D52D0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d5308*/
+    if ( this->MSFont_18_field_0x4 ) /*0x5d5308*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d530f*/
+      v5 = this->MSFont_18_field_0x8; /*0x5d530f*/
       if ( a2 < v5 ) /*0x5d5314*/
         v5 = a2; /*0x5d5316*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d531c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSFont_18_field_0x4 + 4 * i - 4) ) /*0x5d531c*/
         ++i; /*0x5d5321*/
       if ( *((_BYTE *)this + 13) ) /*0x5d532e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5339*/
-        *((_DWORD *)this + 1) = 0; /*0x5d5341*/
+        this->MSFont_18_field_0x4 = 0; /*0x5d5341*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d534a*/
-    *((_DWORD *)this + 2) = a2; /*0x5d5352*/
+    this->MSFont_18_field_0x4 = v4; /*0x5d534a*/
+    this->MSFont_18_field_0x8 = a2; /*0x5d5352*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d5355*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d535e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d5361*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d5369*/
-    *((_DWORD *)this + 4) = v7; /*0x5d536b*/
+  v7 = this->MSFont_18_field_0x8; /*0x5d5361*/
+  if ( v7 < this->MSFont_18_field_0x10 ) /*0x5d5369*/
+    this->MSFont_18_field_0x10 = v7; /*0x5d536b*/
   return 1; /*0x5d536e*/
 }
 }
@@ -393,9 +393,9 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5d5607*/
     if ( !v5 ) /*0x5d560b*/
       return 0; /*0x5d5694*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d5611*/
+    if ( this->MSFont_18_field_0x4 ) /*0x5d5611*/
     {
-      v11 = *((_DWORD *)this + 2); /*0x5d5616*/
+      v11 = this->MSFont_18_field_0x8; /*0x5d5616*/
       if ( a2 < v11 ) /*0x5d561b*/
         v11 = a2; /*0x5d561d*/
       v12 = 0; /*0x5d561f*/
@@ -404,7 +404,7 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
         do /*0x5d5642*/
         {
           v13 = 2 * v12; /*0x5d5628*/
-          v14 = (_DWORD *)(*((_DWORD *)this + 1) + 8 * v12++); /*0x5d5631*/
+          v14 = (_DWORD *)(this->MSFont_18_field_0x4 + 8 * v12++); /*0x5d5631*/
           v5[v13] = *v14; /*0x5d5638*/
           v5[v13 + 1] = v14[1]; /*0x5d563e*/
         }
@@ -414,20 +414,20 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
       if ( *((_BYTE *)this + 13) ) /*0x5d564a*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5653*/
-        *((_DWORD *)this + 1) = 0; /*0x5d565b*/
+        this->MSFont_18_field_0x4 = 0; /*0x5d565b*/
       }
     }
-    *((_DWORD *)this + 1) = v5; /*0x5d5666*/
-    *((_DWORD *)this + 2) = v3; /*0x5d566c*/
+    this->MSFont_18_field_0x4 = v5; /*0x5d5666*/
+    this->MSFont_18_field_0x8 = v3; /*0x5d566c*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5d566f*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d5678*/
   }
-  v15 = *((_DWORD *)this + 2); /*0x5d567b*/
-  if ( v15 < *((_DWORD *)this + 4) ) /*0x5d5683*/
-    *((_DWORD *)this + 4) = v15; /*0x5d5685*/
+  v15 = this->MSFont_18_field_0x8; /*0x5d567b*/
+  if ( v15 < this->MSFont_18_field_0x10 ) /*0x5d5683*/
+    this->MSFont_18_field_0x10 = v15; /*0x5d5685*/
   return 1; /*0x5d5688*/
 }
 }

@@ -633,18 +633,6 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 }
 }
 
-// 0x41FFD0
-int AITriggerTypeClass::GetTypeIdentifier()
-{
-return 59;
-}
-
-// 0x41FFE0
-int AITriggerTypeClass::GetObjectSize()
-{
-return 272;
-}
-
 // 0x41FFF0
 AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
 {
@@ -686,14 +674,14 @@ void __thiscall AITriggerTypeClass_40_::sub_420370(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x420376*/
-  *(_DWORD *)(this + 16) = 0; /*0x420379*/
+  this->AITriggerTypeClass_40_field_0x10 = 0; /*0x420379*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x420380*/
   {
     __3_YAXPAX_Z(v2); /*0x420386*/
-    *(_DWORD *)(this + 4) = 0; /*0x42038e*/
+    this->AITriggerTypeClass_40_field_0x4 = 0; /*0x42038e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x420391*/
-  *(_DWORD *)(this + 8) = 0; /*0x420394*/
+  this->AITriggerTypeClass_40_field_0x8 = 0; /*0x420394*/
 }
 }
 } // namespace gamemd
@@ -705,8 +693,8 @@ unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall AITriggerTypeClass_40_::sub_4203A0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4203a0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4203b5*/
+  if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC ) /*0x4203a0*/
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2; /*0x4203b5*/
   else
     return 0; /*0x4203a7*/
 }
@@ -779,21 +767,21 @@ char __thiscall AITriggerTypeClass_40_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x420446*/
     if ( v4 ) /*0x42044a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x420455*/
+      if ( this->AITriggerTypeClass_40_field_0x4 ) /*0x420455*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x42045c*/
+        v6 = this->AITriggerTypeClass_40_field_0x8; /*0x42045c*/
         if ( a2 < v6 ) /*0x420461*/
           v6 = a2; /*0x420463*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x420469*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->AITriggerTypeClass_40_field_0x4 + 4 * i - 4) ) /*0x420469*/
           ++i; /*0x42046e*/
         if ( *((_BYTE *)this + 13) ) /*0x42047b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x420486*/
-          *((_DWORD *)this + 1) = 0; /*0x42048e*/
+          this->AITriggerTypeClass_40_field_0x4 = 0; /*0x42048e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x420497*/
-      *((_DWORD *)this + 2) = a2; /*0x42049f*/
+      this->AITriggerTypeClass_40_field_0x4 = v4; /*0x420497*/
+      this->AITriggerTypeClass_40_field_0x8 = a2; /*0x42049f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/
     }
@@ -818,13 +806,13 @@ void AITriggerTypeClass_40::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall AITriggerTypeClass_40_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4204cd*/
+  if ( this->AITriggerTypeClass_40_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4204cd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4204d3*/
-    *(_DWORD *)(this + 4) = 0; /*0x4204db*/
+    this->AITriggerTypeClass_40_field_0x4 = 0; /*0x4204db*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4204de*/
-  *(_DWORD *)(this + 8) = 0; /*0x4204e1*/
+  this->AITriggerTypeClass_40_field_0x8 = 0; /*0x4204e1*/
 }
 }
 } // namespace gamemd
@@ -840,9 +828,9 @@ int __thiscall AITriggerTypeClass_40_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4204f0*/
+  if ( !(unsigned char)this->AITriggerTypeClass_40_field_0xC ) /*0x4204f0*/
     return 0; /*0x4204f8*/
-  v3 = *(_DWORD *)(this + 8); /*0x4204fe*/
+  v3 = this->AITriggerTypeClass_40_field_0x8; /*0x4204fe*/
   result = 0; /*0x420501*/
   if ( v3 <= 0 ) /*0x420505*/
     return -1; /*0x42051c*/
@@ -863,8 +851,8 @@ unsigned int AITriggerTypeClass_40::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall AITriggerTypeClass_40_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x420530*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x420545*/
+  if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC ) /*0x420530*/
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2; /*0x420545*/
   else
     return 0; /*0x420537*/
 }
@@ -893,30 +881,30 @@ char __thiscall AITriggerTypeClass_40_::sub_420550(void *this, int a2, _DWORD *a
     *((_BYTE *)this + 12) = 1; /*0x420582*/
     if ( !v4 ) /*0x420586*/
       return 0; /*0x4205fa*/
-    if ( *((_DWORD *)this + 1) ) /*0x420588*/
+    if ( this->AITriggerTypeClass_40_field_0x4 ) /*0x420588*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x42058f*/
+      v5 = this->AITriggerTypeClass_40_field_0x8; /*0x42058f*/
       if ( a2 < v5 ) /*0x420594*/
         v5 = a2; /*0x420596*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x42059c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->AITriggerTypeClass_40_field_0x4 + 4 * i - 4) ) /*0x42059c*/
         ++i; /*0x4205a1*/
       if ( *((_BYTE *)this + 13) ) /*0x4205ae*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4205b9*/
-        *((_DWORD *)this + 1) = 0; /*0x4205c1*/
+        this->AITriggerTypeClass_40_field_0x4 = 0; /*0x4205c1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4205ca*/
-    *((_DWORD *)this + 2) = a2; /*0x4205d2*/
+    this->AITriggerTypeClass_40_field_0x4 = v4; /*0x4205ca*/
+    this->AITriggerTypeClass_40_field_0x8 = a2; /*0x4205d2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4205d5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4205de*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x4205e1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4205e9*/
-    *((_DWORD *)this + 4) = v7; /*0x4205eb*/
+  v7 = this->AITriggerTypeClass_40_field_0x8; /*0x4205e1*/
+  if ( v7 < this->AITriggerTypeClass_40_field_0x10 ) /*0x4205e9*/
+    this->AITriggerTypeClass_40_field_0x10 = v7; /*0x4205eb*/
   return 1; /*0x4205ee*/
 }
 }
@@ -998,3 +986,15 @@ DynamicVector *__thiscall AITriggerTypeClass_40_::Constructor_VectorClass_AlphaL
 }
 }
 } // namespace gamemd
+
+// 0x41FFD0
+int AITriggerTypeClass::GetTypeIdentifier()
+{
+return 59;
+}
+
+// 0x41FFE0
+int AITriggerTypeClass::GetObjectSize()
+{
+return 272;
+}

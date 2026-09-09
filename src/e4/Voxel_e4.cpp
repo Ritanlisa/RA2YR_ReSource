@@ -1613,7 +1613,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
     v79 = *a2 + 3; /*0x75faf0*/
     v69 = *a2 + a2[2] - 3; /*0x75faf8*/
     v6 = *(_DWORD *)&aP1->__pad_0[4] - *(_DWORD *)(this + 208); /*0x75fb09*/
-    aP2 = (WaveClass *)(*(_DWORD *)aP1->__pad_0 - *(_DWORD *)(this + 204)); /*0x75fb17*/
+    aP2 = (WaveClass *)(*(_DWORD *)aP1->__pad_0 - this->Voxel_field_0xCC); /*0x75fb17*/
     v76 = v6; /*0x75fb1b*/
     ProcessVoxelVertexData((_DWORD *)(this + 328), (int *)(this + 416)); /*0x75fb1f*/
     if ( *(_DWORD *)(this + 424) ) /*0x75fb24*/
@@ -3031,10 +3031,10 @@ int __thiscall Voxel_Transform_Matrix(int this)
 
   if ( *(double *)(this + 312) - *(double *)(this + 320) > 0.1 && !*(_DWORD *)(this + 176) ) /*0x762b18*/
     *(_BYTE *)(this + 301) = 1; /*0x762b22*/
-  if ( *(_DWORD *)(this + 304) == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) && *(_DWORD *)(this + 176) == 3 ) /*0x762b49*/
+  if ( this->Voxel_field_0x130 == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) && *(_DWORD *)(this + 176) == 3 ) /*0x762b49*/
   {
     v2 = *(_DWORD *)(this + 308); /*0x762b4b*/
-    *(_DWORD *)(this + 304) = 64; /*0x762b51*/
+    this->Voxel_field_0x130 = 64; /*0x762b51*/
     *(_DWORD *)(this + 308) = v2 + 1; /*0x762b5c*/
   }
   v3 = *(_DWORD *)(this + 172); /*0x762b62*/
@@ -3043,7 +3043,7 @@ int __thiscall Voxel_Transform_Matrix(int this)
   v4 = *(_DWORD *)(this + 468); /*0x762b70*/
   if ( !v4 ) /*0x762b78*/
     goto LABEL_13; /*0x762b78*/
-  if ( *(_DWORD *)(this + 304) == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) ) /*0x762b95*/
+  if ( this->Voxel_field_0x130 == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) ) /*0x762b95*/
     goto LABEL_13; /*0x762b95*/
   if ( *(_DWORD *)(v4 + 692) != v3 ) /*0x762ba1*/
     goto LABEL_13; /*0x762ba1*/

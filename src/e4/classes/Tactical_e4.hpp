@@ -21,9 +21,9 @@ struct Tactical {
     int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int InitMap(int a1, int a2);  // 0x6DBD20
     int UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6DBE00
-    int StubReturn56();  // 0x6DC450
-    int StubReturn3608();  // 0x6DC460
     Tactical * UpdateView(unsigned int * Block, char a2);  // 0x6DC470
     int Init(unsigned int * a2);  // 0x6E4970
+    int StubReturn56();  // 0x6DC450
+    int StubReturn3608();  // 0x6DC460
 };
 } // namespace gamemd

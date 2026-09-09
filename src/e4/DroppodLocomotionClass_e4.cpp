@@ -295,12 +295,6 @@ HRESULT __stdcall DropPodLocomotionClass::UpdateMovement(int *a1, int *pPStm, in
 }
 }
 
-// 0x4B66E0
-int DropPodLocomotionClass::StubReturn48()
-{
-return 48;
-}
-
 // 0x4B66F0
 DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -320,4 +314,10 @@ DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomoti
     __3_YAXPAX_Z(Block); /*0x4b6723*/
   return (DropPodLocomotionClass *)Block; /*0x4b672d*/
 }
+}
+
+// 0x4B66E0
+int DropPodLocomotionClass::StubReturn48()
+{
+return 48;
 }

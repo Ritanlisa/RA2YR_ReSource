@@ -14,11 +14,11 @@ int __thiscall WDTState_4_::_vt03(int this)
   int result; // eax
 
   v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x76b716*/
-  *(_DWORD *)(this + 16) = 0; /*0x76b719*/
+  this->WDTState_4_field_0x10 = 0; /*0x76b719*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x76b720*/
   {
     result = (**v2)(v2, 3); /*0x76b72d*/
-    *(_DWORD *)(this + 4) = 0; /*0x76b72f*/
+    this->WDTState_4_field_0x4 = 0; /*0x76b72f*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x76b732*/
   *(_DWORD *)(this + 8) = 0; /*0x76b735*/
@@ -34,8 +34,8 @@ unsigned int WDTState_4::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall WDTState_4_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x76b740*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x76b755*/
+  if ( (unsigned char)this->WDTState_4_field_0xC ) /*0x76b740*/
+    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3; /*0x76b755*/
   else
     return 0; /*0x76b747*/
 }
@@ -111,22 +111,22 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
     *(this + 12) = 1; /*0x76baff*/
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
-    if ( *((_DWORD *)this + 1) ) /*0x76bb05*/
+    if ( this->WDTState_4_field_0x4 ) /*0x76bb05*/
     {
       if ( a2 >= *((_DWORD *)this + 2) ) /*0x76bb11*/
         v3 = *((_DWORD *)this + 2); /*0x76bb13*/
       for ( i = 0; i < v3; ++i ) /*0x76bb19*/
-        ComPtr::Set(&v6[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4)); /*0x76bb26*/
+        ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->WDTState_4_field_0x4 + 8 * i + 4)); /*0x76bb26*/
       if ( *(this + 13) ) /*0x76bb30*/
       {
-        v11 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1); /*0x76bb37*/
+        v11 = (void (__thiscall ***)(_DWORD, int))this->WDTState_4_field_0x4; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
-        *((_DWORD *)this + 1) = 0; /*0x76bb44*/
+        this->WDTState_4_field_0x4 = 0; /*0x76bb44*/
       }
       v3 = a2; /*0x76bb4b*/
     }
-    *((_DWORD *)this + 1) = v6; /*0x76bb5a*/
+    this->WDTState_4_field_0x4 = v6; /*0x76bb5a*/
     *((_DWORD *)this + 2) = v3; /*0x76bb5d*/
     *(this + 13) = a3 == 0; /*0x76bb60*/
   }
@@ -135,8 +135,8 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x76bb69*/
   }
   v12 = *((_DWORD *)this + 2); /*0x76bb6c*/
-  if ( v12 < *((_DWORD *)this + 4) ) /*0x76bb74*/
-    *((_DWORD *)this + 4) = v12; /*0x76bb76*/
+  if ( v12 < this->WDTState_4_field_0x10 ) /*0x76bb74*/
+    this->WDTState_4_field_0x10 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/
 }
 }

@@ -94,11 +94,11 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   this->FiringFrames = 0; /*0x7471b2*/
   *(_BYTE *)(this + 3678) = 0; /*0x7471b8*/
   *(_DWORD *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
-  *(_DWORD *)(this + 4) = &UnitTypeClass::`vftable'; /*0x7471c5*/
-  *(_DWORD *)(this + 8) = &UnitTypeClass::`vftable'; /*0x7471cb*/
-  *(_DWORD *)(this + 12) = &UnitTypeClass::`vftable'; /*0x7471d2*/
+  this->MovementRestrictedTo = &UnitTypeClass::`vftable'; /*0x7471c5*/
+  this->HalfDamageSmokeLocation = &UnitTypeClass::`vftable'; /*0x7471cb*/
+  this->Strength = &UnitTypeClass::`vftable'; /*0x7471d2*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
-  *(_DWORD *)(this + 1816) = 32; /*0x7471de*/
+  this->RotCount = 32; /*0x7471de*/
   v3 = (HouseClass *)g_CrateCount; /*0x7471e8*/
   if ( (int)g_CrateCount < dword_A83CE8 /*0x747226*/
     || (byte_A83CED || !dword_A83CE8)
@@ -621,18 +621,6 @@ int __stdcall UnitTypeClass::SaveToINI(void *a0, TechnoTypeClass *aP1, int a3)
 }
 }
 
-// 0x748160
-int UnitTypeClass::GetObjectSize()
-{
-return 3704;
-}
-
-// 0x748170
-int UnitTypeClass::GetTypeIdentifier()
-{
-return 40;
-}
-
 // 0x748180
 int UnitTypeClass::GetAuxField()
 {
@@ -702,4 +690,16 @@ LABEL_6:
   }
   return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2); /*0x74b9cf*/
 }
+}
+
+// 0x748160
+int UnitTypeClass::GetObjectSize()
+{
+return 3704;
+}
+
+// 0x748170
+int UnitTypeClass::GetTypeIdentifier()
+{
+return 40;
 }

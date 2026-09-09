@@ -113,12 +113,6 @@ LABEL_12:
 }
 }
 
-// 0x5CA7E0
-char MultiplayerSiege::StubReturnFalse()
-{
-return 0;
-}
-
 // 0x5CA800
 char MultiplayerSiege::ProcessTurn(char a2)
 {
@@ -355,4 +349,10 @@ MultiplayerSiege *__thiscall MultiplayerSiege::QueryInterface(_DWORD *Block, cha
     __3_YAXPAX_Z(Block); /*0x5cabe6*/
   return (MultiplayerSiege *)Block; /*0x5cabf0*/
 }
+}
+
+// 0x5CA7E0
+char MultiplayerSiege::StubReturnFalse()
+{
+return 0;
 }

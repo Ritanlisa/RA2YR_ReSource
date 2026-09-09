@@ -2914,7 +2914,7 @@ int __thiscall sub_69E9F0(int this, int a1, Straw *aP2)
   if ( !a1 || (int)aP2 < 1 ) /*0x69ea03*/
     return 0; /*0x69ea29*/
   v4 = (Pipe *)Delegate::Invoke((_DWORD *)this, a1, aP2); /*0x69ea0d*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x69ea0f*/
+  if ( !(unsigned char)this->vtable3 ) /*0x69ea0f*/
     SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4); /*0x69ea1b*/
   return (int)v4->__pad_0; /*0x69ea23*/
 }

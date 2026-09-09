@@ -25,9 +25,9 @@ int __thiscall AirstrikeClass::AirstrikeClass(int this, TechnoClass *aP1)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
   *(_DWORD *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
-  *(_DWORD *)(this + 4) = &AirstrikeClass::`vftable'; /*0x41d38f*/
-  *(_DWORD *)(this + 8) = &AirstrikeClass::`vftable'; /*0x41d396*/
-  *(_DWORD *)(this + 12) = &AirstrikeClass::`vftable'; /*0x41d39d*/
+  this->vtable1 = &AirstrikeClass::`vftable'; /*0x41d38f*/
+  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d396*/
+  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d39d*/
   if ( *(int *)&MEMORY[0x87F8E4].__pad_5568[20860] < *(int *)&MEMORY[0x87F8E4].__pad_5568[20852] /*0x41d3d9*/
     || (MEMORY[0x87F8E4].__pad_5568[20857] || !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[20852])
     && *(int *)&MEMORY[0x87F8E4].__pad_5568[20864] > 0

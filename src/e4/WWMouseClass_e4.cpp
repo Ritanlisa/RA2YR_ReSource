@@ -249,17 +249,17 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
         Debug::Log(); /*0x7b9cc1*/
       if ( *((int *)this + 20) > 0 && *((int *)this + 21) > 0 ) /*0x7b9cd6*/
       {
-        v3 = *((_DWORD *)this + 9); /*0x7b9cd8*/
+        v3 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
         if ( v3 ) /*0x7b9cdd*/
         {
-          v4 = *((_DWORD *)this + 17); /*0x7b9cdf*/
+          v4 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
           if ( v4 ) /*0x7b9ce4*/
           {
             v5 = *((_DWORD *)this + 19); /*0x7b9ce9*/
             v6 = *((_DWORD *)this + 20); /*0x7b9cef*/
             v7 = *((_DWORD *)this + 21); /*0x7b9cf3*/
-            v10[0] = *((_DWORD *)this + 11) + *((_DWORD *)this + 18); /*0x7b9cf6*/
-            v8 = *((_DWORD *)this + 12) + v5; /*0x7b9cfd*/
+            v10[0] = this->WWMouseClass_field_0x2C + *((_DWORD *)this + 18); /*0x7b9cf6*/
+            v8 = this->WWMouseClass_field_0x30 + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/
             v10[2] = v6; /*0x7b9d10*/

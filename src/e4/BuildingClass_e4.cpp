@@ -29,7 +29,7 @@ char __thiscall BuildingClass::ClearSuperWeaponAnim(int this)
       this->SuperWeaponToken = -1; /*0x4516ee*/
       if ( v4 ) /*0x4516f8*/
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(*(_DWORD *)(this + 540)); /*0x451700*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus); /*0x451700*/
         return 1; /*0x451709*/
       }
     }
@@ -40,7 +40,7 @@ char __thiscall BuildingClass::ClearSuperWeaponAnim(int this)
       this->UpgradeLevel = v6; /*0x45171b*/
       *(_DWORD *)(this + 4 * v6 + 1516) = 0; /*0x451726*/
       if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(*(_DWORD *)(this + 540)); /*0x451739*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus); /*0x451739*/
     }
     return 1; /*0x45173f*/
   }
@@ -272,7 +272,7 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
   IUnknown *aP1; // [esp+8h] [ebp+4h]
   int v4; // [esp+Ch] [ebp+8h]
 
-  if ( *((_DWORD *)this + 43) != 19 ) /*0x455d5a*/
+  if ( this->currentMission != 19 ) /*0x455d5a*/
   {
     if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 644))(this) /*0x455d73*/
       || *(_BYTE *)(this->Type + 5817) )
@@ -298,14 +298,6 @@ TechnoClass *__thiscall BuildingClass::ClearLimpetCheck(void *this)
   *(_DWORD *)v2->__pad_0 = dword_89C818; /*0x459dba*/
   return v2; /*0x459dbc*/
 }
-}
-} // namespace gamemd
-
-// 0x459E70
-namespace gamemd {
-int BuildingClass::Mission_Guard()
-{
-return 1824;
 }
 } // namespace gamemd
 
@@ -731,5 +723,13 @@ int BuildingClass_ProcessSell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
+}
+} // namespace gamemd
+
+// 0x459E70
+namespace gamemd {
+int BuildingClass::Mission_Guard()
+{
+return 1824;
 }
 } // namespace gamemd

@@ -537,7 +537,7 @@ int __thiscall Audio::ParseVolume(int this, const char **a1, ObjectClass *aP2)
   String::Assign((char **)this, 0); /*0x5d0478*/
   *(_BYTE *)(this + 4) = 0; /*0x5d0483*/
   *(_DWORD *)(this + 8) = 0; /*0x5d0487*/
-  *(_DWORD *)(this + 12) = 255; /*0x5d048e*/
+  this->Audio_field_0xC = 255; /*0x5d048e*/
   if ( String::NotEquals(a1, 0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
   {
     unknown_libname_73(&v8); /*0x5d04b5*/
@@ -547,17 +547,17 @@ int __thiscall Audio::ParseVolume(int this, const char **a1, ObjectClass *aP2)
     if ( String::NotEquals((const char **)&v7, 0) ) /*0x5d04f4*/
     {
       __1_Timevec_std__QAE_XZ((std::_Timevec *)&v7); /*0x5d0503*/
-      *(_DWORD *)(this + 12) = v5; /*0x5d050b*/
+      this->Audio_field_0xC = v5; /*0x5d050b*/
       if ( v5 <= 100 ) /*0x5d050e*/
       {
         if ( v5 < 0 ) /*0x5d051b*/
-          *(_DWORD *)(this + 12) = 0; /*0x5d051d*/
+          this->Audio_field_0xC = 0; /*0x5d051d*/
       }
       else
       {
-        *(_DWORD *)(this + 12) = 100; /*0x5d0510*/
+        this->Audio_field_0xC = 100; /*0x5d0510*/
       }
-      *(_DWORD *)(this + 12) = 255 * *(_DWORD *)(this + 12) / 100; /*0x5d053f*/
+      this->Audio_field_0xC = 255 * this->Audio_field_0xC / 100; /*0x5d053f*/
     }
     if ( *(int *)(this + 12) > 0 && String::NotEquals((const char **)&v8, 0) ) /*0x5d054f*/
       String::Reassign((char **)this, (AbstractClass *)a1); /*0x5d055f*/
@@ -1281,10 +1281,10 @@ unsigned int __thiscall Audio::GetSamplePosition(int this, MouseClass *aP1, Mous
   unsigned int result; // eax
 
   v4 = (*(int (__thiscall **)(_DWORD, MouseClass *, MouseClass *))(**(_DWORD **)(this + 20) + 92))( /*0x7bd149*/
-         *(_DWORD *)(this + 20),
+         this->Audio_field_0x14,
          aP1,
          aP2);
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 20) + 96))(*(_DWORD *)(this + 20)); /*0x7bd14d*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 20) + 96))(this->Audio_field_0x14); /*0x7bd14d*/
   result = v4 + *(_DWORD *)(this + 16); /*0x7bd156*/
   if ( result >= *(_DWORD *)(this + 28) ) /*0x7bd15a*/
     result -= *(_DWORD *)(this + 32); /*0x7bd15c*/

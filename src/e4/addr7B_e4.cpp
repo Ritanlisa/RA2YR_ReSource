@@ -255,14 +255,6 @@ rc_ptr *__fastcall FindWDTTerritoryClass(rc_ptr_base *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x7B0430
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x7B05A0
 namespace gamemd {
 int sub_7B05A0()
@@ -2611,36 +2603,36 @@ BOOL __thiscall sub_7B9530(int this)
     v3 = 0; /*0x7b9587*/
     v4 = 0; /*0x7b9589*/
     v5 = 0; /*0x7b958b*/
-    if ( *(_DWORD *)(this + 4) ) /*0x7b957f*/
+    if ( this->vtable1 ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
         Debug::Log(); /*0x7b95b9*/
-      FoundationSize = Building::GetFoundationSize(v21, *(_DWORD *)(this + 8)); /*0x7b95cd*/
+      FoundationSize = Building::GetFoundationSize(v21, this->vtable2); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
-      v8 = *(_DWORD *)(this + 20); /*0x7b95d4*/
+      v8 = this->abstractFlags; /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
       v4 = FoundationSize[2]; /*0x7b95da*/
       v10 = FoundationSize[3]; /*0x7b95dd*/
-      v11 = *(_DWORD *)(this + 24); /*0x7b95e0*/
+      v11 = this->nextArrayIndex; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
       v2 = v8 - *(_DWORD *)(this + 60) + v7; /*0x7b95f2*/
-      v3 = v11 - *(_DWORD *)(this + 64) + v9; /*0x7b95fa*/
+      v3 = v11 - this->ambientSoundController.AudioController_field_04 + v9; /*0x7b95fa*/
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
     v12 = v2 + this->fallRate; /*0x7b960c*/
-    *(_DWORD *)(this + 72) = v2; /*0x7b9610*/
+    this->ambientSoundController.AudioController_field_0C = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
     v13 = *(ObjectClass **)(this + 48); /*0x7b961a*/
     *(_DWORD *)(this + 76) = v3; /*0x7b961d*/
     v14 = &v13->__pad_0[v3]; /*0x7b9620*/
-    v15 = *(_DWORD *)(this + 68); /*0x7b9622*/
+    v15 = this->ambientSoundController.AudioController_field_08; /*0x7b9622*/
     v18[2] = v4; /*0x7b9625*/
     *(_DWORD *)(this + 80) = v4; /*0x7b9629*/
     v18[3] = v5; /*0x7b962c*/
     v18[1] = v14; /*0x7b9630*/
     v19[2] = v4; /*0x7b9634*/
-    *(_DWORD *)(this + 84) = v5; /*0x7b9638*/
+    this->customSound_controller.AudioController_field_04 = v5; /*0x7b9638*/
     v19[0] = 0; /*0x7b963d*/
     v19[1] = 0; /*0x7b9641*/
     v17 = this->objectTypeFlags; /*0x7b964e*/
@@ -4042,14 +4034,6 @@ void nullsub_49()
 }
 } // namespace gamemd
 
-// 0x7BF230
-namespace gamemd {
-int _underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7()
-{
-return -1;
-}
-} // namespace gamemd
-
 // 0x7BF240
 namespace gamemd {
 int sub_7BF240(int a1, int a2, char * DstBuf, int MaxCharCount)
@@ -4333,5 +4317,21 @@ LABEL_51:
     *(_DWORD *)(a1 + 64) = v25; /*0x7bf727*/
   return result; /*0x7bf680*/
 }
+}
+} // namespace gamemd
+
+// 0x7B0430
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x7BF230
+namespace gamemd {
+int _underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7()
+{
+return -1;
 }
 } // namespace gamemd

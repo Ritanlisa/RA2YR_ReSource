@@ -46,7 +46,7 @@ int __thiscall VocClass_Cleanup(int this)
       while ( v4 < result ); /*0x4053a8*/
     }
     this->ActiveBufferCount = 0; /*0x4053ab*/
-    *(_DWORD *)(this + 28) = 4; /*0x4053b1*/
+    this->Volume.AudioState = 4; /*0x4053b1*/
     this->Attack = 0; /*0x4053b8*/
     *(_DWORD *)(this + 632) = 0; /*0x4053be*/
     *(_DWORD *)(this + 24) |= 1u; /*0x4053ca*/

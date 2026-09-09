@@ -42,9 +42,9 @@ void *__thiscall Trigger::initTrigger(
   int v10; // edx
 
   *((_DWORD *)this + 2) = a4; /*0x5cbd2c*/
-  *((_DWORD *)this + 1) = aP2; /*0x5cbd32*/
+  this->Trigger_field_0x4 = aP2; /*0x5cbd32*/
   *((_BYTE *)this + 12) = 1; /*0x5cbd35*/
-  *((_DWORD *)this + 4) = Timer::GetTicks(); /*0x5cbd48*/
+  this->Trigger_field_0x10 = Timer::GetTicks(); /*0x5cbd48*/
   *((_DWORD *)this + 6) = 0; /*0x5cbd4f*/
   *((_DWORD *)this + 8) = a5; /*0x5cbd52*/
   *((_DWORD *)this + 14) = a7; /*0x5cbd58*/
@@ -55,7 +55,7 @@ void *__thiscall Trigger::initTrigger(
   *(_DWORD *)this = &MSShapeAnim::`vftable'; /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cbd70*/
   *((_DWORD *)this + 7) = FileClassToBuffer; /*0x5cbd75*/
-  *((_DWORD *)this + 11) = 0; /*0x5cbd78*/
+  this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
   *((_DWORD *)this + 12) = v10; /*0x5cbd87*/

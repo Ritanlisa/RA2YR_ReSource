@@ -345,9 +345,9 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   *(this + 423) = 1; /*0x511565*/
   *(this + 424) = 0; /*0x51156c*/
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x511572*/
-  *((_DWORD *)this + 1) = &HouseTypeClass::`vftable'; /*0x511578*/
-  *((_DWORD *)this + 2) = &HouseTypeClass::`vftable'; /*0x51157f*/
-  *((_DWORD *)this + 3) = &HouseTypeClass::`vftable'; /*0x511586*/
+  this->WeaponType = &HouseTypeClass::`vftable'; /*0x511578*/
+  this->RechargeVoice = &HouseTypeClass::`vftable'; /*0x51157f*/
+  this->ChargingVoice = &HouseTypeClass::`vftable'; /*0x511586*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x51158d*/
   *(this + 416) = 0; /*0x511592*/
   v4 = g_SuperWeaponTypeArray; /*0x511598*/
@@ -472,9 +472,9 @@ int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass 
   this->Range = 0; /*0x6ce65a*/
   this->LineMultiplier = 0; /*0x6ce660*/
   *(_DWORD *)this = &SuperWeaponTypeClass::`vftable'; /*0x6ce666*/
-  *(_DWORD *)(this + 4) = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
-  *(_DWORD *)(this + 8) = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
-  *(_DWORD *)(this + 12) = &SuperWeaponTypeClass::`vftable'; /*0x6ce67a*/
+  this->WeaponType = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
+  this->RechargeVoice = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
+  this->ChargingVoice = &SuperWeaponTypeClass::`vftable'; /*0x6ce67a*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x6ce681*/
   this->ArrayIndex = *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[324]; /*0x6ce68c*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[324] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[316] /*0x6ce6c4*/
@@ -565,22 +565,6 @@ int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int 
     return 0; /*0x6ce8e8*/
   return result; /*0x6ce8ea*/
 }
-}
-} // namespace gamemd
-
-// 0x6CE8F0
-namespace gamemd {
-int SuperWeaponTypeClass::SD_vt11()
-{
-return 32;
-}
-} // namespace gamemd
-
-// 0x6CE900
-namespace gamemd {
-int SuperWeaponTypeClass::SD_vt12()
-{
-return 256;
 }
 } // namespace gamemd
 
@@ -987,5 +971,21 @@ SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *Block, cha
     __3_YAXPAX_Z(Block); /*0x6cf057*/
   return (SuperWeaponTypeClass *)Block; /*0x6cf061*/
 }
+}
+} // namespace gamemd
+
+// 0x6CE8F0
+namespace gamemd {
+int SuperWeaponTypeClass::SD_vt11()
+{
+return 32;
+}
+} // namespace gamemd
+
+// 0x6CE900
+namespace gamemd {
+int SuperWeaponTypeClass::SD_vt12()
+{
+return 256;
 }
 } // namespace gamemd

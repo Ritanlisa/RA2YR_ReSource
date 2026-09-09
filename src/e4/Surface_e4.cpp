@@ -51,12 +51,6 @@ BOOL __thiscall Surface_IsLocked(_DWORD *this)
 }
 }
 
-// 0x4115C0
-char Surface::StubReturnFalse()
-{
-return 0;
-}
-
 // 0x4A4780
 LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
 {
@@ -2231,4 +2225,10 @@ LABEL_103:
   *(_DWORD *)(this + 48) += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 }
+}
+
+// 0x4115C0
+char Surface::StubReturnFalse()
+{
+return 0;
 }

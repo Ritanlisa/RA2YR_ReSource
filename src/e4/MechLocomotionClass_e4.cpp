@@ -39,12 +39,6 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
-// 0x5B1B40
-int MechLocomotionClass::StubReturn52()
-{
-return 52;
-}
-
 // 0x5B1B50
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -58,4 +52,10 @@ MechLocomotionClass *__thiscall MechLocomotionClass::ProcessMove(_DWORD *Block, 
     __3_YAXPAX_Z(Block); /*0x5b1b6d*/
   return (MechLocomotionClass *)Block; /*0x5b1b77*/
 }
+}
+
+// 0x5B1B40
+int MechLocomotionClass::StubReturn52()
+{
+return 52;
 }

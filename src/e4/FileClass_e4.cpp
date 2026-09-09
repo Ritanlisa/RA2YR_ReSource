@@ -46,18 +46,6 @@ int __thiscall FileClass::SetFileName(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// 0x65C5F0
-int FileClass::StubReturnFalse()
-{
-return 0;
-}
-
-// 0x65C600
-char FileClass::Stub(int a1)
-{
-return 0;
-}
-
 // 0x65CBF0
 char FileClass::Open(int a2)
 {
@@ -428,4 +416,16 @@ int __thiscall FileClass::SetState(_DWORD *this)
 {
   return *(this + 1); /*0x76f073*/
 }
+}
+
+// 0x65C5F0
+int FileClass::StubReturnFalse()
+{
+return 0;
+}
+
+// 0x65C600
+char FileClass::Stub(int a1)
+{
+return 0;
 }

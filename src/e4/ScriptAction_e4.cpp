@@ -41,7 +41,7 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
     *(this + 18) = a7; /*0x4c6899*/
     *(_DWORD *)(this + 19) = a8; /*0x4c68a3*/
     *(this + 23) = a9; /*0x4c68aa*/
-    *((_DWORD *)this + 6) = a10; /*0x4c68b4*/
+    this->ScriptAction_field_0x18 = a10; /*0x4c68b4*/
     *(this + 28) = a11; /*0x4c68bb*/
   }
   *(_DWORD *)(this + 3) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c68c4*/
@@ -256,20 +256,20 @@ int __thiscall ScriptAction_FindSquadMember(int this)
   char v31; // [esp+11Eh] [ebp-2h]
 
   v23 = 0; /*0x6349bc*/
-  v21 = *(_DWORD *)(this + 16); /*0x6349c9*/
+  v21 = this->ScriptAction_field_0x10; /*0x6349c9*/
   if ( v21 > 0 ) /*0x6349cd*/
   {
     do /*0x634a64*/
     {
-      v2 = *(_DWORD *)(*(_DWORD *)(this + 4) + 4 * v23); /*0x6349da*/
+      v2 = *(_DWORD *)(this->ScriptAction_field_0x4 + 4 * v23); /*0x6349da*/
       v3 = *(_DWORD **)v2; /*0x6349dd*/
       Type = BuildingClass::GetPlanningToken(*(_DWORD **)v2); /*0x6349e6*/
       v24[0] = this; /*0x6349ed*/
       if ( (*(int (__thiscall **)(int, int *))(*(_DWORD *)(Type + 4) + 16))(Type + 4, v24) == *(_DWORD *)(Type + 148) ) /*0x634a00*/
       {
         *(_BYTE *)(v2 + 12) = 1; /*0x634a02*/
-        v5 = *(_DWORD *)(this + 168) + 1; /*0x634a10*/
-        *(_DWORD *)(this + 168) = v5; /*0x634a15*/
+        v5 = this->ScriptAction_field_0xA8 + 1; /*0x634a10*/
+        this->ScriptAction_field_0xA8 = v5; /*0x634a15*/
         if ( v5 == 1 ) /*0x634a18*/
         {
           v6 = BuildingClass::GetPlanningToken(v3); /*0x634a1c*/
@@ -294,11 +294,11 @@ int __thiscall ScriptAction_FindSquadMember(int this)
     }
     while ( v23 < v21 ); /*0x634a64*/
   }
-  *(_DWORD *)(this + 176) = -1; /*0x634a6a*/
-  result = *(_DWORD *)(this + 168); /*0x634a74*/
+  this->ScriptAction_field_0xB0 = -1; /*0x634a6a*/
+  result = this->ScriptAction_field_0xA8; /*0x634a74*/
   if ( result ) /*0x634a7c*/
   {
-    result = *(_DWORD *)(this + 48); /*0x634a8e*/
+    result = this->ScriptAction_field_0x30; /*0x634a8e*/
     qmemcpy(v28, (const void *)(this + 56), 0x6Eu); /*0x634a91*/
     v13 = 0; /*0x634a95*/
     v22 = result; /*0x634a97*/
@@ -307,7 +307,7 @@ int __thiscall ScriptAction_FindSquadMember(int this)
     {
       while ( 1 ) /*0x634aaf*/
       {
-        v14 = *(_BYTE **)(*(_DWORD *)(this + 36) + 4 * v13); /*0x634aaf*/
+        v14 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v13); /*0x634aaf*/
         qmemcpy(v29, v14, sizeof(v29)); /*0x634ab6*/
         v14 += 108; /*0x634ab6*/
         v30 = *(_WORD *)v14; /*0x634ab8*/
@@ -326,7 +326,7 @@ int __thiscall ScriptAction_FindSquadMember(int this)
         if ( ++v13 >= v22 ) /*0x634aff*/
           return result; /*0x634aff*/
       }
-      *(_DWORD *)(this + 176) = v13; /*0x634b03*/
+      this->ScriptAction_field_0xB0 = v13; /*0x634b03*/
     }
   }
   return result; /*0x634b09*/
@@ -547,23 +547,23 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
       *(_BYTE *)(v16 + 110) = v37; /*0x634eef*/
       *(_DWORD *)(v16 + 112) = v17 + 1; /*0x634ef4*/
       v18 = *(_DWORD *)(this + 40); /*0x634ef7*/
-      if ( *(_DWORD *)(this + 48) < v18 /*0x634f1c*/
+      if ( this->ScriptAction_field_0x30 < v18 /*0x634f1c*/
         || (*(_BYTE *)(this + 45) || !v18)
         && (v19 = *(_DWORD *)(this + 52), v19 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 32) + 8))(this + 32, v18 + v19, 0) )
       {
-        v20 = *(_DWORD *)(this + 48); /*0x634f23*/
-        v21 = *(_DWORD *)(this + 36); /*0x634f26*/
-        *(_DWORD *)(this + 48) = v20 + 1; /*0x634f2c*/
+        v20 = this->ScriptAction_field_0x30; /*0x634f23*/
+        v21 = this->ScriptAction_field_0x24; /*0x634f26*/
+        this->ScriptAction_field_0x30 = v20 + 1; /*0x634f2c*/
         *(_DWORD *)(v21 + 4 * v20) = v16; /*0x634f2f*/
       }
-      v22 = *(_DWORD *)(this + 168); /*0x634f35*/
-      result = *(_DWORD *)(this + 48) - 1; /*0x634f3b*/
+      v22 = this->ScriptAction_field_0xA8; /*0x634f35*/
+      result = this->ScriptAction_field_0x30 - 1; /*0x634f3b*/
       v29 = result; /*0x634f3e*/
-      if ( v22 > 0 && *(_DWORD *)(this + 176) == -1 ) /*0x634f53*/
+      if ( v22 > 0 && this->ScriptAction_field_0xB0 == -1 ) /*0x634f53*/
       {
-        *(_DWORD *)(this + 176) = -1; /*0x634f59*/
-        if ( *(_DWORD *)(this + 168) ) /*0x634f5f*/
+        this->ScriptAction_field_0xB0 = -1; /*0x634f59*/
+        if ( this->ScriptAction_field_0xA8 ) /*0x634f5f*/
         {
           v23 = 0; /*0x634f79*/
           qmemcpy(v35, (const void *)(this + 56), sizeof(v35)); /*0x634f7b*/
@@ -575,7 +575,7 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
           {
             while ( 1 ) /*0x634fa2*/
             {
-              v25 = *(_BYTE **)(*(_DWORD *)(this + 36) + 4 * v23); /*0x634fa2*/
+              v25 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v23); /*0x634fa2*/
               qmemcpy(v38, v25, sizeof(v38)); /*0x634fa5*/
               v25 += 108; /*0x634fa5*/
               v39 = *(_WORD *)v25; /*0x634fa7*/
@@ -593,7 +593,7 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
               if ( ++v23 >= (int)v30 ) /*0x635004*/
                 goto LABEL_30; /*0x635004*/
             }
-            *(_DWORD *)(this + 176) = v23; /*0x635008*/
+            this->ScriptAction_field_0xB0 = v23; /*0x635008*/
 LABEL_30:
             result = v29; /*0x63500e*/
           }
@@ -605,7 +605,7 @@ LABEL_30:
   }
   else
   {
-    v28 = *(_DWORD *)(*(_DWORD *)(this + 36) + 4 * result); /*0x635038*/
+    v28 = *(_DWORD *)(this->ScriptAction_field_0x24 + 4 * result); /*0x635038*/
     *(_DWORD *)(v28 + 116) = -1; /*0x63503b*/
     *(_DWORD *)(this + 180) = -1; /*0x63503e*/
     ++*(_DWORD *)(v28 + 112); /*0x635048*/
@@ -702,12 +702,12 @@ int __thiscall sub_636CE0(int this)
   int v9; // esi
   int v10; // [esp+10h] [ebp-4h]
 
-  if ( *(_BYTE *)(this + 152) ) /*0x636ce1*/
+  if ( (unsigned char)this->ScriptAction_field_0x98 ) /*0x636ce1*/
   {
-    v1 = *(_DWORD *)(this + 148); /*0x636cf2*/
+    v1 = this->ScriptAction_field_0x94; /*0x636cf2*/
     if ( v1 != -1 ) /*0x636cfa*/
     {
-      v2 = *(_DWORD **)(*(_DWORD *)(this + 8) + 4 * v1); /*0x636cff*/
+      v2 = *(_DWORD **)(this->ScriptAction_field_0x8 + 4 * v1); /*0x636cff*/
       if ( v2 ) /*0x636d04*/
       {
         v2[45] = -1; /*0x636d06*/
@@ -719,12 +719,12 @@ int __thiscall sub_636CE0(int this)
     }
     *(_BYTE *)(this + 152) = 0; /*0x636d2a*/
   }
-  v5 = *(_DWORD *)(this + 20); /*0x636d37*/
+  v5 = this->ScriptAction_field_0x14; /*0x636d37*/
   v10 = v5; /*0x636d3c*/
-  result = *(_DWORD *)(this + 140) != -1 ? *(_DWORD *)(this + 140) : 0;
+  result = this->ScriptAction_field_0x8C != -1 ? this->ScriptAction_field_0x8C : 0;
   for ( j = result; j < v5; ++j ) /*0x636d4b*/
   {
-    result = *(_DWORD *)(this + 8); /*0x636d4d*/
+    result = this->ScriptAction_field_0x8; /*0x636d4d*/
     v8 = *(_DWORD **)(result + 4 * j); /*0x636d50*/
     if ( v8 ) /*0x636d55*/
     {
@@ -744,7 +744,7 @@ int __thiscall sub_636CE0(int this)
       v8[43] = -1; /*0x636d79*/
     }
   }
-  *(_DWORD *)(this + 140) = -1; /*0x636d84*/
+  this->ScriptAction_field_0x8C = -1; /*0x636d84*/
   return result; /*0x636d8a*/
 }
 }
@@ -1773,7 +1773,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
       v5 = (const char *)(this + 84); /*0x6dd36e*/
       goto LABEL_33; /*0x6dd371*/
   }
-  v6 = *(_DWORD *)(this + 48); /*0x6dd376*/
+  v6 = this->ScriptAction_field_0x30; /*0x6dd376*/
   if ( v6 ) /*0x6dd37b*/
   {
     if ( v3 == 40 ) /*0x6dd380*/
@@ -1951,15 +1951,15 @@ const char *__thiscall ParseScriptActionParams(int this)
     case 5: /*0x6dd60d*/
       if ( v6 == -1 ) /*0x6dd622*/
       {
-        *(_DWORD *)(this + 48) = 0; /*0x6dd624*/
+        this->ScriptAction_field_0x30 = 0; /*0x6dd624*/
       }
       else if ( strlen(v5) >= 3 ) /*0x6dd63b*/
       {
-        *(_DWORD *)(this + 48) = TechnoClass::Create(v5); /*0x6dd654*/
+        this->ScriptAction_field_0x30 = TechnoClass::Create(v5); /*0x6dd654*/
       }
       else
       {
-        *(_DWORD *)(this + 48) = *((_DWORD *)MEMORY[0xA8ECA4] + v6); /*0x6dd645*/
+        this->ScriptAction_field_0x30 = *((_DWORD *)MEMORY[0xA8ECA4] + v6); /*0x6dd645*/
       }
       break; /*0x6dd627*/
     case 2: /*0x6dd60d*/

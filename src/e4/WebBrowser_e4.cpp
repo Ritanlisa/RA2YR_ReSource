@@ -66,7 +66,7 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x849690], 0, 0x20019u, &phkResult) ) /*0x773628*/
     return 0; /*0x773628*/
   strcpy(ValueName, a2); /*0x77364f*/
-  if ( !*(_DWORD *)(this + 8) ) /*0x773653*/
+  if ( !this->WebBrowser_field_0x8 ) /*0x773653*/
     strcat(ValueName, stru_84968C); /*0x773684*/
   cbData = 512; /*0x7736b1*/
   v3 = RegQueryValueExA(phkResult, ValueName, 0, &Type, Data, &cbData); /*0x7736bf*/
@@ -74,7 +74,7 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   if ( v3 ) /*0x7736ca*/
     return 0; /*0x7736ca*/
   Debug::Log(); /*0x7736e5*/
-  if ( !*(_DWORD *)(this + 8) ) /*0x7736f2*/
+  if ( !this->WebBrowser_field_0x8 ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
   mbstowcs((wchar_t *)(this + 12), (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x84964C], 0, 0x20019u, &phkResult) ) /*0x773726*/
@@ -90,15 +90,15 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
   wcscat(Destination, stru_84962C); /*0x7737e9*/
   if ( (*(int (__stdcall **)(_DWORD, wchar_t *, _DWORD, _DWORD))(**(_DWORD **)(this + 8) + 64))( /*0x773808*/
-         *(_DWORD *)(this + 8),
+         this->WebBrowser_field_0x8,
          Destination,
          0,
          0) < 0 )
     return 0; /*0x773849*/
-  v6 = *(_DWORD *)(this + 8); /*0x77380a*/
+  v6 = this->WebBrowser_field_0x8; /*0x77380a*/
   if ( v6 ) /*0x77380f*/
   {
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v6 + 28))(*(_DWORD *)(this + 8)); /*0x773814*/
+    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v6 + 28))(this->WebBrowser_field_0x8); /*0x773814*/
     *(_BYTE *)(this + 1036) = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
@@ -164,14 +164,6 @@ int __thiscall WebBrowser::_vt02(WebBrowser *this)
   }
   return result; /*0x773aca*/
 }
-}
-} // namespace gamemd
-
-// 0x773B00
-namespace gamemd {
-int WebBrowser::COMStub_Return0()
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -494,5 +486,13 @@ int __thiscall WebBrowser::GoForward(WebBrowser *this)
     __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/
 }
+}
+} // namespace gamemd
+
+// 0x773B00
+namespace gamemd {
+int WebBrowser::COMStub_Return0()
+{
+return 0;
 }
 } // namespace gamemd

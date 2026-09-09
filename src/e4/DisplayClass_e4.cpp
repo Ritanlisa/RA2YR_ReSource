@@ -110,7 +110,7 @@ int __thiscall DisplayClass::_vt07(int this)
 
   MapClass::Destru_vt07(this); /*0x4a88c3*/
   *(_DWORD *)(this + 4516) = 0; /*0x4a88cd*/
-  *(_DWORD *)(this + 4520) = 0; /*0x4a88d3*/
+  this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(_DWORD *)(this + 4524) = -1; /*0x4a88d9*/
   *(_DWORD *)(this + 4476) = 0; /*0x4a88df*/
   *(_DWORD *)(this + 4536) = -1; /*0x4a88e5*/
@@ -650,7 +650,7 @@ char __thiscall TacticalClass_InitViewBounds(int this, _DWORD *a2)
 {
   int v2; // eax
 
-  LOBYTE(v2) = *(_BYTE *)(this + 4528); /*0x4ac310*/
+  LOBYTE(v2) = (unsigned char)this->DisplayClass_field_0x11B0; /*0x4ac310*/
   if ( !(_BYTE)v2 ) /*0x4ac318*/
   {
     LOBYTE(v2) = *(_BYTE *)(this + 4530); /*0x4ac31a*/
@@ -659,15 +659,15 @@ char __thiscall TacticalClass_InitViewBounds(int this, _DWORD *a2)
       LOBYTE(v2) = *(_BYTE *)(this + 4529); /*0x4ac324*/
       if ( !(_BYTE)v2 && *(_DWORD *)(this + 4536) == -1 ) /*0x4ac335*/
       {
-        v2 = *(_DWORD *)(this + 4520); /*0x4ac337*/
+        v2 = this->DisplayClass_field_0x11A8; /*0x4ac337*/
         if ( !v2 ) /*0x4ac33f*/
         {
           *(_BYTE *)(this + 4560) = 1; /*0x4ac345*/
-          *(_DWORD *)(this + 4564) = *a2; /*0x4ac34e*/
-          *(_DWORD *)(this + 4568) = a2[1]; /*0x4ac357*/
-          *(_DWORD *)(this + 4572) = *a2; /*0x4ac35f*/
+          this->DisplayClass_field_0x11D4 = *a2; /*0x4ac34e*/
+          this->DisplayClass_field_0x11D8 = a2[1]; /*0x4ac357*/
+          this->DisplayClass_field_0x11DC = *a2; /*0x4ac35f*/
           v2 = a2[1]; /*0x4ac365*/
-          *(_DWORD *)(this + 4576) = v2; /*0x4ac368*/
+          this->DisplayClass_field_0x11E0 = v2; /*0x4ac368*/
         }
       }
     }
@@ -914,7 +914,7 @@ bool __thiscall DisplayClass::RenderStatusText(int this, IUnknown *aP1, char a3)
       return 0; /*0x551a04*/
   }
   v7 = *(_DWORD *)(this + 16); /*0x551a0a*/
-  v8 = *(_DWORD *)(this + 4); /*0x551a0d*/
+  v8 = this->DisplayClass_field_0x4; /*0x551a0d*/
   *(_DWORD *)(this + 16) = v7 + 1; /*0x551a13*/
   *(_DWORD *)(v8 + 4 * v7) = aP1; /*0x551a1a*/
   return 1; /*0x5519c9*/
@@ -1088,7 +1088,7 @@ int __thiscall DisplayClass::ReadFromBuffer(BufferStraw *this, void *a1, signed 
   signed int v8; // eax
 
   result = 0; /*0x7ba4d4*/
-  v5 = *((_DWORD *)this + 3); /*0x7ba4d6*/
+  v5 = this->DisplayClass_field_0xC; /*0x7ba4d6*/
   if ( v5 && a1 && Size > 0 ) /*0x7ba4eb*/
   {
     v6 = *((_DWORD *)this + 4); /*0x7ba4ed*/

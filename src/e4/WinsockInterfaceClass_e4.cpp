@@ -52,12 +52,6 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
 }
 }
 
-// 0x7B2740
-int WinsockInterfaceClass::Destru_vt13()
-{
-return 0;
-}
-
 // 0x7B2750
 int WinsockInterfaceClass::Destru_vt14(int a1)
 {
@@ -139,4 +133,10 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x7b2826*/
   return Block; /*0x7b2830*/
 }
+}
+
+// 0x7B2740
+int WinsockInterfaceClass::Destru_vt13()
+{
+return 0;
 }

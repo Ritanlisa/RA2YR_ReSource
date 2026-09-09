@@ -12,7 +12,7 @@ int __thiscall AbstractClassVector::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4e0440*/
+  if ( !(unsigned char)this->AbstractClassVector_field_0x0C ) /*0x4e0440*/
     return 0; /*0x4e0448*/
   v3 = this->AbstractClassVector_field_0x08; /*0x4e044e*/
   result = 0; /*0x4e0451*/
@@ -33,7 +33,7 @@ unsigned int AbstractClassVector::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall AbstractClassVector::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4e0480*/
+  if ( (unsigned char)this->AbstractClassVector_field_0x0C ) /*0x4e0480*/
     return (unsigned int)(a2 - this->AbstractClassVector_field_0x04) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/

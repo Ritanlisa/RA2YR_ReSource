@@ -14,14 +14,14 @@ void __thiscall BlowPipe_23_::sub_63DC80(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x63dc86*/
-  *(_DWORD *)(this + 16) = 0; /*0x63dc89*/
+  this->BlowPipe_23_field_0x10 = 0; /*0x63dc89*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dc90*/
   {
     __3_YAXPAX_Z(v2); /*0x63dc96*/
-    *(_DWORD *)(this + 4) = 0; /*0x63dc9e*/
+    this->BlowPipe_23_field_0x4 = 0; /*0x63dc9e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x63dca1*/
-  *(_DWORD *)(this + 8) = 0; /*0x63dca4*/
+  this->BlowPipe_23_field_0x8 = 0; /*0x63dca4*/
 }
 }
 } // namespace gamemd
@@ -33,8 +33,8 @@ unsigned int BlowPipe_23::GetCount(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BlowPipe_23_::sub_63DCB0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x63dcb0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x63dcc5*/
+  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63dcb0*/
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63dcc5*/
   else
     return 0; /*0x63dcb7*/
 }
@@ -63,14 +63,14 @@ void __thiscall BlowPipe_23_::sub_63DCE0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x63dce6*/
-  *(_DWORD *)(this + 16) = 0; /*0x63dce9*/
+  this->BlowPipe_23_field_0x10 = 0; /*0x63dce9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dcf0*/
   {
     __3_YAXPAX_Z(v2); /*0x63dcf6*/
-    *(_DWORD *)(this + 4) = 0; /*0x63dcfe*/
+    this->BlowPipe_23_field_0x4 = 0; /*0x63dcfe*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x63dd01*/
-  *(_DWORD *)(this + 8) = 0; /*0x63dd04*/
+  this->BlowPipe_23_field_0x8 = 0; /*0x63dd04*/
 }
 }
 } // namespace gamemd
@@ -82,8 +82,8 @@ unsigned int BlowPipe_23::GetCount_0(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BlowPipe_23_::sub_63DD10(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x63dd10*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x63dd25*/
+  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63dd10*/
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63dd25*/
   else
     return 0; /*0x63dd17*/
 }
@@ -111,21 +111,21 @@ char __thiscall BlowPipe_23_::sub_63E350(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x63e386*/
     if ( v4 ) /*0x63e38a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x63e395*/
+      if ( this->BlowPipe_23_field_0x4 ) /*0x63e395*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x63e39c*/
+        v6 = this->BlowPipe_23_field_0x8; /*0x63e39c*/
         if ( a2 < v6 ) /*0x63e3a1*/
           v6 = a2; /*0x63e3a3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x63e3a9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e3a9*/
           ++i; /*0x63e3ae*/
         if ( *((_BYTE *)this + 13) ) /*0x63e3bb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e3c6*/
-          *((_DWORD *)this + 1) = 0; /*0x63e3ce*/
+          this->BlowPipe_23_field_0x4 = 0; /*0x63e3ce*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x63e3d7*/
-      *((_DWORD *)this + 2) = a2; /*0x63e3df*/
+      this->BlowPipe_23_field_0x4 = v4; /*0x63e3d7*/
+      this->BlowPipe_23_field_0x8 = a2; /*0x63e3df*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x63e3e2*/
       return 1; /*0x63e3e8*/
     }
@@ -150,13 +150,13 @@ void BlowPipe_23::Clear_1()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BlowPipe_23_::sub_63E400(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x63e40d*/
+  if ( this->BlowPipe_23_field_0x4 && *(_BYTE *)(this + 13) ) /*0x63e40d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x63e413*/
-    *(_DWORD *)(this + 4) = 0; /*0x63e41b*/
+    this->BlowPipe_23_field_0x4 = 0; /*0x63e41b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x63e41e*/
-  *(_DWORD *)(this + 8) = 0; /*0x63e421*/
+  this->BlowPipe_23_field_0x8 = 0; /*0x63e421*/
 }
 }
 } // namespace gamemd
@@ -172,9 +172,9 @@ int __thiscall BlowPipe_23_::sub_63E430(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x63e430*/
+  if ( !(unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e430*/
     return 0; /*0x63e438*/
-  v3 = *(_DWORD *)(this + 8); /*0x63e43e*/
+  v3 = this->BlowPipe_23_field_0x8; /*0x63e43e*/
   result = 0; /*0x63e441*/
   if ( v3 <= 0 ) /*0x63e445*/
     return -1; /*0x63e45c*/
@@ -195,8 +195,8 @@ unsigned int BlowPipe_23::GetCount_1(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BlowPipe_23_::sub_63E470(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x63e470*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x63e485*/
+  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e470*/
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63e485*/
   else
     return 0; /*0x63e477*/
 }
@@ -257,21 +257,21 @@ char __thiscall BlowPipe_23_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x63e6c6*/
     if ( v4 ) /*0x63e6ca*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x63e6d5*/
+      if ( this->BlowPipe_23_field_0x4 ) /*0x63e6d5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x63e6dc*/
+        v6 = this->BlowPipe_23_field_0x8; /*0x63e6dc*/
         if ( a2 < v6 ) /*0x63e6e1*/
           v6 = a2; /*0x63e6e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x63e6e9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e6e9*/
           ++i; /*0x63e6ee*/
         if ( *((_BYTE *)this + 13) ) /*0x63e6fb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e706*/
-          *((_DWORD *)this + 1) = 0; /*0x63e70e*/
+          this->BlowPipe_23_field_0x4 = 0; /*0x63e70e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x63e717*/
-      *((_DWORD *)this + 2) = a2; /*0x63e71f*/
+      this->BlowPipe_23_field_0x4 = v4; /*0x63e717*/
+      this->BlowPipe_23_field_0x8 = a2; /*0x63e71f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x63e722*/
       return 1; /*0x63e728*/
     }
@@ -296,13 +296,13 @@ void BlowPipe_23::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall BlowPipe_23_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x63e74d*/
+  if ( this->BlowPipe_23_field_0x4 && *(_BYTE *)(this + 13) ) /*0x63e74d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x63e753*/
-    *(_DWORD *)(this + 4) = 0; /*0x63e75b*/
+    this->BlowPipe_23_field_0x4 = 0; /*0x63e75b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x63e75e*/
-  *(_DWORD *)(this + 8) = 0; /*0x63e761*/
+  this->BlowPipe_23_field_0x8 = 0; /*0x63e761*/
 }
 }
 } // namespace gamemd
@@ -318,9 +318,9 @@ int __thiscall BlowPipe_23_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x63e770*/
+  if ( !(unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e770*/
     return 0; /*0x63e778*/
-  v3 = *(_DWORD *)(this + 8); /*0x63e77e*/
+  v3 = this->BlowPipe_23_field_0x8; /*0x63e77e*/
   result = 0; /*0x63e781*/
   if ( v3 <= 0 ) /*0x63e785*/
     return -1; /*0x63e79c*/
@@ -341,8 +341,8 @@ unsigned int BlowPipe_23::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BlowPipe_23_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x63e7b0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x63e7c5*/
+  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e7b0*/
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63e7c5*/
   else
     return 0; /*0x63e7b7*/
 }
@@ -371,30 +371,30 @@ char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x63e802*/
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
-    if ( *((_DWORD *)this + 1) ) /*0x63e808*/
+    if ( this->BlowPipe_23_field_0x4 ) /*0x63e808*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x63e80f*/
+      v5 = this->BlowPipe_23_field_0x8; /*0x63e80f*/
       if ( a2 < v5 ) /*0x63e814*/
         v5 = a2; /*0x63e816*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x63e81c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e81c*/
         ++i; /*0x63e821*/
       if ( *((_BYTE *)this + 13) ) /*0x63e82e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e839*/
-        *((_DWORD *)this + 1) = 0; /*0x63e841*/
+        this->BlowPipe_23_field_0x4 = 0; /*0x63e841*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x63e84a*/
-    *((_DWORD *)this + 2) = a2; /*0x63e852*/
+    this->BlowPipe_23_field_0x4 = v4; /*0x63e84a*/
+    this->BlowPipe_23_field_0x8 = a2; /*0x63e852*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x63e855*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e85e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x63e861*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x63e869*/
-    *((_DWORD *)this + 4) = v7; /*0x63e86b*/
+  v7 = this->BlowPipe_23_field_0x8; /*0x63e861*/
+  if ( v7 < this->BlowPipe_23_field_0x10 ) /*0x63e869*/
+    this->BlowPipe_23_field_0x10 = v7; /*0x63e86b*/
   return 1; /*0x63e86e*/
 }
 }
@@ -447,30 +447,30 @@ char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x63eb02*/
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
-    if ( *((_DWORD *)this + 1) ) /*0x63eb08*/
+    if ( this->BlowPipe_23_field_0x4 ) /*0x63eb08*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x63eb0f*/
+      v5 = this->BlowPipe_23_field_0x8; /*0x63eb0f*/
       if ( a2 < v5 ) /*0x63eb14*/
         v5 = a2; /*0x63eb16*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x63eb1c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63eb1c*/
         ++i; /*0x63eb21*/
       if ( *((_BYTE *)this + 13) ) /*0x63eb2e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x63eb39*/
-        *((_DWORD *)this + 1) = 0; /*0x63eb41*/
+        this->BlowPipe_23_field_0x4 = 0; /*0x63eb41*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x63eb4a*/
-    *((_DWORD *)this + 2) = a2; /*0x63eb52*/
+    this->BlowPipe_23_field_0x4 = v4; /*0x63eb4a*/
+    this->BlowPipe_23_field_0x8 = a2; /*0x63eb52*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x63eb55*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63eb5e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x63eb61*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x63eb69*/
-    *((_DWORD *)this + 4) = v7; /*0x63eb6b*/
+  v7 = this->BlowPipe_23_field_0x8; /*0x63eb61*/
+  if ( v7 < this->BlowPipe_23_field_0x10 ) /*0x63eb69*/
+    this->BlowPipe_23_field_0x10 = v7; /*0x63eb6b*/
   return 1; /*0x63eb6e*/
 }
 }
@@ -611,14 +611,14 @@ void __thiscall BlowPipe_31_::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x63dc26*/
-  *(_DWORD *)(this + 16) = 0; /*0x63dc29*/
+  this->BlowPipe_31_field_0x10 = 0; /*0x63dc29*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dc30*/
   {
     __3_YAXPAX_Z(v2); /*0x63dc36*/
-    *(_DWORD *)(this + 4) = 0; /*0x63dc3e*/
+    this->BlowPipe_31_field_0x4 = 0; /*0x63dc3e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x63dc41*/
-  *(_DWORD *)(this + 8) = 0; /*0x63dc44*/
+  this->BlowPipe_31_field_0x8 = 0; /*0x63dc44*/
 }
 }
 } // namespace gamemd
@@ -630,8 +630,8 @@ unsigned int BlowPipe_31::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall BlowPipe_31_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x63dc50*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x63dc65*/
+  if ( (unsigned char)this->BlowPipe_31_field_0xC ) /*0x63dc50*/
+    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2; /*0x63dc65*/
   else
     return 0; /*0x63dc57*/
 }
@@ -705,30 +705,30 @@ char __thiscall BlowPipe_31_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x63e4c2*/
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
-    if ( *((_DWORD *)this + 1) ) /*0x63e4c8*/
+    if ( this->BlowPipe_31_field_0x4 ) /*0x63e4c8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x63e4cf*/
+      v5 = this->BlowPipe_31_field_0x8; /*0x63e4cf*/
       if ( a2 < v5 ) /*0x63e4d4*/
         v5 = a2; /*0x63e4d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x63e4dc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_31_field_0x4 + 4 * i - 4) ) /*0x63e4dc*/
         ++i; /*0x63e4e1*/
       if ( *((_BYTE *)this + 13) ) /*0x63e4ee*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e4f9*/
-        *((_DWORD *)this + 1) = 0; /*0x63e501*/
+        this->BlowPipe_31_field_0x4 = 0; /*0x63e501*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x63e50a*/
-    *((_DWORD *)this + 2) = a2; /*0x63e512*/
+    this->BlowPipe_31_field_0x4 = v4; /*0x63e50a*/
+    this->BlowPipe_31_field_0x8 = a2; /*0x63e512*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x63e515*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e51e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x63e521*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x63e529*/
-    *((_DWORD *)this + 4) = v7; /*0x63e52b*/
+  v7 = this->BlowPipe_31_field_0x8; /*0x63e521*/
+  if ( v7 < this->BlowPipe_31_field_0x10 ) /*0x63e529*/
+    this->BlowPipe_31_field_0x10 = v7; /*0x63e52b*/
   return 1; /*0x63e52e*/
 }
 }

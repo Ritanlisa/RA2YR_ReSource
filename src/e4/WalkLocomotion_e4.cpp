@@ -37,7 +37,7 @@ char __thiscall WalkLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
     v6 = aP3; /*0x6a01d7*/
     if ( !(_BYTE)v5 ) /*0x6a01dd*/
     {
-      v5 = *(_DWORD *)(this + 88); /*0x6a01e3*/
+      v5 = this->WalkLocomotion_field_0x58; /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/

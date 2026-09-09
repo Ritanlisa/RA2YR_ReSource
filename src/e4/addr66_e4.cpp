@@ -271,11 +271,11 @@ int __thiscall sub_661960(char *this, __int16 a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661995*/
     {
-      v3 = this + (unsigned __int8)(*((_DWORD *)this + 3) / 8) + 20; /*0x661991*/
-      *v3 ^= 1 << (*((_DWORD *)this + 3) & 7); /*0x66199e*/
+      v3 = this + (unsigned __int8)(this->vtable3 / 8) + 20; /*0x661991*/
+      *v3 ^= 1 << (this->vtable3 & 7); /*0x66199e*/
     }
-    v4 = *((_DWORD *)this + 3) + 1; /*0x6619a4*/
-    *((_DWORD *)this + 3) = v4; /*0x6619a6*/
+    v4 = this->vtable3 + 1; /*0x6619a4*/
+    this->vtable3 = v4; /*0x6619a6*/
     if ( v4 == 2048 ) /*0x6619ae*/
     {
       v5 = 0; /*0x6619b4*/
@@ -333,11 +333,11 @@ int __thiscall sub_661A60(char *this, int a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661a95*/
     {
-      v3 = this + (unsigned __int8)(*((_DWORD *)this + 3) / 8) + 20; /*0x661a91*/
-      *v3 ^= 1 << (*((_DWORD *)this + 3) & 7); /*0x661a9e*/
+      v3 = this + (unsigned __int8)(this->vtable3 / 8) + 20; /*0x661a91*/
+      *v3 ^= 1 << (this->vtable3 & 7); /*0x661a9e*/
     }
-    v4 = *((_DWORD *)this + 3) + 1; /*0x661aa4*/
-    *((_DWORD *)this + 3) = v4; /*0x661aa6*/
+    v4 = this->vtable3 + 1; /*0x661aa4*/
+    this->vtable3 = v4; /*0x661aa6*/
     if ( v4 == 2048 ) /*0x661aae*/
     {
       v5 = 0; /*0x661ab4*/
@@ -993,16 +993,16 @@ void __thiscall sub_663960(void *this)
   int v4; // eax
   void *v5; // eax
 
-  while ( *((_DWORD *)this + 4) ) /*0x663966*/
+  while ( this->VectorClass_field_0x10 ) /*0x663966*/
   {
     __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663971*/
-    v2 = *((_DWORD *)this + 4); /*0x663976*/
+    v2 = this->VectorClass_field_0x10; /*0x663976*/
     if ( v2 > 0 ) /*0x66397e*/
     {
       v3 = v2 - 1; /*0x663980*/
       v4 = 0; /*0x663983*/
-      for ( *((_DWORD *)this + 4) = v3; /*0x66398a*/
-            v4 < *((_DWORD *)this + 4);
+      for ( this->VectorClass_field_0x10 = v3; /*0x66398a*/
+            v4 < this->VectorClass_field_0x10;
             *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4 - 4) = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4) )
       {
         ++v4; /*0x66398f*/
@@ -1017,7 +1017,7 @@ void __thiscall sub_663960(void *this)
     *((_DWORD *)this + 1) = 0; /*0x6639be*/
   }
   *((_BYTE *)this + 13) = 0; /*0x6639c1*/
-  *((_DWORD *)this + 2) = 0; /*0x6639c4*/
+  this->VectorClass_field_0x8 = 0; /*0x6639c4*/
 }
 }
 } // namespace gamemd
@@ -1143,7 +1143,7 @@ LABEL_10:
 LABEL_11:
   if ( CreateProcessA(MEMORY[0x8399EC], CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
   {
-    *(_DWORD *)(this + 28) = ProcessInformation.hProcess; /*0x664029*/
+    this->referenceCount = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/

@@ -61,9 +61,9 @@ int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
   *(_BYTE *)(this + 3786) = 0; /*0x5237dc*/
   *(_BYTE *)(this + 3787) = 0; /*0x5237e2*/
   *(_DWORD *)this = &InfantryTypeClass::`vftable'; /*0x5237e8*/
-  *(_DWORD *)(this + 4) = &InfantryTypeClass::`vftable'; /*0x5237ee*/
-  *(_DWORD *)(this + 8) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
-  *(_DWORD *)(this + 12) = &InfantryTypeClass::`vftable'; /*0x5237fb*/
+  this->Pip = &InfantryTypeClass::`vftable'; /*0x5237ee*/
+  this->OccupyPip = &InfantryTypeClass::`vftable'; /*0x5237f4*/
+  this->OccupyWeapon = &InfantryTypeClass::`vftable'; /*0x5237fb*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x523802*/
   v3 = *(InfantryTypeClass **)&MEMORY[0xA8D63C].__pad_BC0[348]; /*0x523807*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[348] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[340] /*0x523845*/
@@ -110,10 +110,10 @@ LABEL_11:
   *(_DWORD *)(this + 3620) = 0; /*0x5238c0*/
   *(_DWORD *)(this + 3636) = 0; /*0x5238c3*/
   *(_BYTE *)(this + 3640) = 0; /*0x5238c9*/
-  *(_DWORD *)(this + 1816) = 8; /*0x5238cf*/
+  this->RotCount = 8; /*0x5238cf*/
   *(_DWORD *)(this + 3624) = 0; /*0x5238d9*/
   *(_BYTE *)(this + 3227) = 0; /*0x5238dc*/
-  *(_BYTE *)(this + 557) = 1; /*0x5238e2*/
+  this->Crushable = 1; /*0x5238e2*/
   *(_BYTE *)(this + 3276) = 0; /*0x5238e9*/
   *(_DWORD *)(this + 3628) = 0; /*0x5238ef*/
   *(_BYTE *)(this + 3277) = 0; /*0x5238f2*/
@@ -609,12 +609,6 @@ int InfantryTypeClass::_vt45()
 }
 }
 
-// 0x5247A0
-int InfantryTypeClass::StubReturnFalse()
-{
-return 0;
-}
-
 // 0x5247D0
 unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
@@ -839,12 +833,6 @@ int __stdcall InfantryTypeClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x524D40
-int InfantryTypeClass::GetTypeIdentifier()
-{
-return 16;
-}
-
 // 0x524D50
 int InfantryTypeClass::GetObjectSize()
 {
@@ -1002,4 +990,16 @@ LABEL_6:
   }
   return *(WeaponTypeClass **)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * v2); /*0x77300f*/
 }
+}
+
+// 0x5247A0
+int InfantryTypeClass::StubReturnFalse()
+{
+return 0;
+}
+
+// 0x524D40
+int InfantryTypeClass::GetTypeIdentifier()
+{
+return 16;
 }

@@ -63,8 +63,8 @@ int __thiscall sub_554830(int this)
   AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
   *(_DWORD *)(this + 40) = 0; /*0x554840*/
-  *(_DWORD *)(this + 44) = 0; /*0x554843*/
-  *(_DWORD *)(this + 48) = 0; /*0x554846*/
+  this->LightTint.Green = 0; /*0x554843*/
+  this->LightTint.Blue = 0; /*0x554846*/
   *(_DWORD *)(this + 56) = dword_ABCA00; /*0x55484f*/
   *(_DWORD *)(this + 60) = dword_ABCA04; /*0x554857*/
   v2 = dword_ABCA08; /*0x55485a*/
@@ -72,9 +72,9 @@ int __thiscall sub_554830(int this)
   this->Activated = 0; /*0x554863*/
   *(_DWORD *)(this + 64) = v2; /*0x554866*/
   *(_DWORD *)this = &LightSourceClass::`vftable'; /*0x554869*/
-  *(_DWORD *)(this + 4) = &LightSourceClass::`vftable'; /*0x55486f*/
-  *(_DWORD *)(this + 8) = &LightSourceClass::`vftable'; /*0x554876*/
-  *(_DWORD *)(this + 12) = &LightSourceClass::`vftable'; /*0x55487d*/
+  this->vtable1 = &LightSourceClass::`vftable'; /*0x55486f*/
+  this->vtable2 = &LightSourceClass::`vftable'; /*0x554876*/
+  this->vtable3 = &LightSourceClass::`vftable'; /*0x55487d*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5548b6*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
@@ -156,18 +156,6 @@ int __stdcall LightSourceClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 }
 
-// 0x555130
-int LightSourceClass::StubReturn76()
-{
-return 76;
-}
-
-// 0x555140
-int LightSourceClass::StubReturn54()
-{
-return 54;
-}
-
 // 0x555150
 LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
 {
@@ -203,4 +191,16 @@ LightSourceClass *__thiscall LightSourceClass::CopyTo(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x5551e2*/
   return (LightSourceClass *)Block; /*0x5551ec*/
 }
+}
+
+// 0x555130
+int LightSourceClass::StubReturn76()
+{
+return 76;
+}
+
+// 0x555140
+int LightSourceClass::StubReturn54()
+{
+return 54;
 }

@@ -64,22 +64,6 @@ int __stdcall ScriptTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 } // namespace gamemd
 
-// 0x691F70
-namespace gamemd {
-int ScriptTypeClass::GetTypeIdentifier()
-{
-return 27;
-}
-} // namespace gamemd
-
-// 0x691F80
-namespace gamemd {
-int ScriptTypeClass::GetObjectSize()
-{
-return 564;
-}
-} // namespace gamemd
-
 // 0x691FA0
 namespace gamemd {
 ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
@@ -163,5 +147,21 @@ TaskForceClass *__fastcall ScriptTypeClass::ReadINI(char *a1, int a2)
   }
   return result; /*0x6e840d*/
 }
+}
+} // namespace gamemd
+
+// 0x691F70
+namespace gamemd {
+int ScriptTypeClass::GetTypeIdentifier()
+{
+return 27;
+}
+} // namespace gamemd
+
+// 0x691F80
+namespace gamemd {
+int ScriptTypeClass::GetObjectSize()
+{
+return 564;
 }
 } // namespace gamemd

@@ -80,18 +80,6 @@ int __stdcall VeinholeMonsterClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x74F310
-int VeinholeMonsterClass::StubReturn63()
-{
-return 63;
-}
-
-// 0x74F320
-int VeinholeMonsterClass::StubReturn264()
-{
-return 264;
-}
-
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char a2)
 {
@@ -103,4 +91,16 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::SpreadTiberium(void **Blo
     __3_YAXPAX_Z(Block); /*0x74f350*/
   return (VeinholeMonsterClass *)Block; /*0x74f35a*/
 }
+}
+
+// 0x74F310
+int VeinholeMonsterClass::StubReturn63()
+{
+return 63;
+}
+
+// 0x74F320
+int VeinholeMonsterClass::StubReturn264()
+{
+return 264;
 }

@@ -549,7 +549,7 @@ int __thiscall MapSeedClass_18_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x5acb80*/
+  if ( !(unsigned char)this->MapSeedClass_field_0x0C ) /*0x5acb80*/
     return 0; /*0x5acb88*/
   v3 = this->MapSeedClass_field_0x08; /*0x5acb8e*/
   result = 0; /*0x5acb91*/
@@ -574,14 +574,14 @@ void __thiscall MapSeedClass_18_::sub_5AC4C0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x5ac4c6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5ac4c9*/
+  this->MapSeedClass_18_field_0x10 = 0; /*0x5ac4c9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x5ac4d0*/
   {
     __3_YAXPAX_Z(v2); /*0x5ac4d6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5ac4de*/
+    this->MapSeedClass_18_field_0x4 = 0; /*0x5ac4de*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5ac4e1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5ac4e4*/
+  this->MapSeedClass_18_field_0x8 = 0; /*0x5ac4e4*/
 }
 }
 } // namespace gamemd
@@ -593,8 +593,8 @@ unsigned int MapSeedClass_18::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MapSeedClass_18_::sub_5AC4F0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5ac4f0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5ac505*/
+  if ( (unsigned char)this->MapSeedClass_18_field_0xC ) /*0x5ac4f0*/
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2; /*0x5ac505*/
   else
     return 0; /*0x5ac4f7*/
 }
@@ -667,21 +667,21 @@ char __thiscall MapSeedClass_18_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5acad6*/
     if ( v4 ) /*0x5acada*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x5acae5*/
+      if ( this->MapSeedClass_18_field_0x4 ) /*0x5acae5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x5acaec*/
+        v6 = this->MapSeedClass_18_field_0x8; /*0x5acaec*/
         if ( a2 < v6 ) /*0x5acaf1*/
           v6 = a2; /*0x5acaf3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5acaf9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MapSeedClass_18_field_0x4 + 4 * i - 4) ) /*0x5acaf9*/
           ++i; /*0x5acafe*/
         if ( *((_BYTE *)this + 13) ) /*0x5acb0b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x5acb16*/
-          *((_DWORD *)this + 1) = 0; /*0x5acb1e*/
+          this->MapSeedClass_18_field_0x4 = 0; /*0x5acb1e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x5acb27*/
-      *((_DWORD *)this + 2) = a2; /*0x5acb2f*/
+      this->MapSeedClass_18_field_0x4 = v4; /*0x5acb27*/
+      this->MapSeedClass_18_field_0x8 = a2; /*0x5acb2f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x5acb32*/
       return 1; /*0x5acb38*/
     }
@@ -706,13 +706,13 @@ void MapSeedClass_18::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall MapSeedClass_18_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x5acb5d*/
+  if ( this->MapSeedClass_18_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5acb5d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5acb63*/
-    *(_DWORD *)(this + 4) = 0; /*0x5acb6b*/
+    this->MapSeedClass_18_field_0x4 = 0; /*0x5acb6b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x5acb6e*/
-  *(_DWORD *)(this + 8) = 0; /*0x5acb71*/
+  this->MapSeedClass_18_field_0x8 = 0; /*0x5acb71*/
 }
 }
 } // namespace gamemd
@@ -724,8 +724,8 @@ unsigned int MapSeedClass_18::Generate(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MapSeedClass_18_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5acbc0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5acbd5*/
+  if ( (unsigned char)this->MapSeedClass_18_field_0xC ) /*0x5acbc0*/
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2; /*0x5acbd5*/
   else
     return 0; /*0x5acbc7*/
 }
@@ -754,30 +754,30 @@ char __thiscall MapSeedClass_18_::sub_5ACBE0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5acc12*/
     if ( !v4 ) /*0x5acc16*/
       return 0; /*0x5acc8a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5acc18*/
+    if ( this->MapSeedClass_18_field_0x4 ) /*0x5acc18*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5acc1f*/
+      v5 = this->MapSeedClass_18_field_0x8; /*0x5acc1f*/
       if ( a2 < v5 ) /*0x5acc24*/
         v5 = a2; /*0x5acc26*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5acc2c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MapSeedClass_18_field_0x4 + 4 * i - 4) ) /*0x5acc2c*/
         ++i; /*0x5acc31*/
       if ( *((_BYTE *)this + 13) ) /*0x5acc3e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5acc49*/
-        *((_DWORD *)this + 1) = 0; /*0x5acc51*/
+        this->MapSeedClass_18_field_0x4 = 0; /*0x5acc51*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5acc5a*/
-    *((_DWORD *)this + 2) = a2; /*0x5acc62*/
+    this->MapSeedClass_18_field_0x4 = v4; /*0x5acc5a*/
+    this->MapSeedClass_18_field_0x8 = a2; /*0x5acc62*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5acc65*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5acc6e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5acc71*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5acc79*/
-    *((_DWORD *)this + 4) = v7; /*0x5acc7b*/
+  v7 = this->MapSeedClass_18_field_0x8; /*0x5acc71*/
+  if ( v7 < this->MapSeedClass_18_field_0x10 ) /*0x5acc79*/
+    this->MapSeedClass_18_field_0x10 = v7; /*0x5acc7b*/
   return 1; /*0x5acc7e*/
 }
 }

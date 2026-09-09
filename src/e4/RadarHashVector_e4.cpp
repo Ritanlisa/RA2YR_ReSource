@@ -28,7 +28,7 @@ int __thiscall RadarHashVector::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x658aa0*/
+  if ( !(unsigned char)this->RadarHashVector_field_0x0C ) /*0x658aa0*/
     return 0; /*0x658aae*/
   v3 = this->RadarHashVector_field_0x08; /*0x658ab4*/
   result = 0; /*0x658ab7*/
@@ -49,7 +49,7 @@ unsigned int RadarHashVector::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall RadarHashVector::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x658af0*/
+  if ( (unsigned char)this->RadarHashVector_field_0x0C ) /*0x658af0*/
     return (unsigned int)(a2 - this->RadarHashVector_field_0x04) >> 4; /*0x658b05*/
   else
     return 0; /*0x658af7*/

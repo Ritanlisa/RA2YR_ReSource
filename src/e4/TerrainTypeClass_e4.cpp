@@ -138,12 +138,12 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
     *((_BYTE *)this + 148) = v11; /*0x5449c3*/
   }
   *((_BYTE *)this + 757) = 0; /*0x5449c5*/
-  *((_BYTE *)this + 559) = 1; /*0x5449cb*/
-  *((_BYTE *)this + 560) = 0; /*0x5449d2*/
-  *((_BYTE *)this + 561) = 0; /*0x5449d8*/
-  *((_BYTE *)this + 562) = 1; /*0x5449de*/
-  *((_BYTE *)this + 563) = 1; /*0x5449e5*/
-  *((_BYTE *)this + 565) = 0; /*0x5449ec*/
+  this->RadarInvisible = 1; /*0x5449cb*/
+  this->Selectable = 0; /*0x5449d2*/
+  this->LegalTarget = 0; /*0x5449d8*/
+  this->Insignificant = 1; /*0x5449de*/
+  this->Immune = 1; /*0x5449e5*/
+  this->AllowCellContent = 0; /*0x5449ec*/
   return this; /*0x5449c4*/
 }
 }
@@ -181,11 +181,11 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71db03*/
   *(this + 3) = &TerrainTypeClass::`vftable'; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71db11*/
-  *((_BYTE *)this + 560) = 0; /*0x71db18*/
-  *((_BYTE *)this + 564) = 1; /*0x71db1e*/
-  *((_BYTE *)this + 559) = 1; /*0x71db24*/
-  *((_BYTE *)this + 561) = 0; /*0x71db2a*/
-  *((_BYTE *)this + 562) = 1; /*0x71db30*/
+  this->Selectable = 0; /*0x71db18*/
+  this->IsLogic = 1; /*0x71db1e*/
+  this->RadarInvisible = 1; /*0x71db24*/
+  this->LegalTarget = 0; /*0x71db2a*/
+  this->Insignificant = 1; /*0x71db30*/
   v3 = *(TerrainTypeClass **)&HouseClass_Player.__pad_5568[20596]; /*0x71db36*/
   if ( *(int *)&HouseClass_Player.__pad_5568[20596] < *(int *)&HouseClass_Player.__pad_5568[20588] /*0x71db74*/
     || (HouseClass_Player.__pad_5568[20593] || !*(_DWORD *)&HouseClass_Player.__pad_5568[20588])
@@ -284,18 +284,18 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   INIClass::ResetSection(aP1); /*0x71deb3*/
   if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
-  if ( *(_DWORD *)(this + 160) == -1 ) /*0x71decf*/
-    *(_DWORD *)(this + 160) = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4420); /*0x71dedc*/
+  if ( this->Strength == -1 ) /*0x71decf*/
+    this->Strength = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4420); /*0x71dedc*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x71def6*/
                      (int)aP1,
                      (unsigned __int8 *)(this + 36),
                      (CCINIClass *)&stru_830620.__pad_579C[59592],
-                     *(_BYTE *)(this + 692));
+                     (unsigned char)this->FoundationData);
   *(_BYTE *)(this + 692) = Bool_Overwrite; /*0x71defd*/
   if ( Bool_Overwrite ) /*0x71df03*/
   {
-    *(_BYTE *)(this + 564) = 0; /*0x71df05*/
-    *(_BYTE *)(this + 561) = 1; /*0x71df0c*/
+    this->IsLogic = 0; /*0x71df05*/
+    this->LegalTarget = 1; /*0x71df0c*/
   }
   v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->IsVeinhole); /*0x71df22*/
   v5 = *(_BYTE *)(this + 689); /*0x71df27*/
@@ -319,12 +319,12 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                   *(_DWORD *)(this + 664));
   v8 = 5 * (_DWORD)v7; /*0x71df7e*/
   *(_DWORD *)(this + 664) = v7; /*0x71df81*/
-  LOBYTE(v7) = *(_BYTE *)(this + 556); /*0x71df87*/
+  LOBYTE(v7) = this->Theater; /*0x71df87*/
   *(_DWORD *)(this + 696) = 8 * v8 + 11595200; /*0x71df96*/
   if ( !(_BYTE)v7 ) /*0x71df9c*/
   {
     _makepath((char *)v23.headNode, 0, 0, (const char *)(this + 504), Ext); /*0x71dfad*/
-    *(_DWORD *)(this + 164) = SearchMIXFile((char *)v23.headNode, 0); /*0x71dfc0*/
+    this->Image = SearchMIXFile((char *)v23.headNode, 0); /*0x71dfc0*/
   }
   v9 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)this + 156))(this); /*0x71dfca*/
   if ( v9 ) /*0x71dfd2*/
@@ -520,18 +520,6 @@ LABEL_6:
 }
 }
 
-// 0x71E330
-int TerrainTypeClass::GetTypeIdentifier()
-{
-return 37;
-}
-
-// 0x71E340
-int TerrainTypeClass::GetObjectSize()
-{
-return 700;
-}
-
 // 0x71E350
 int TerrainTypeClass::GetAuxField()
 {
@@ -584,4 +572,16 @@ TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass 
     __3_YAXPAX_Z(this); /*0x71e3fd*/
   return (TerrainTypeClass *)this; /*0x71e407*/
 }
+}
+
+// 0x71E330
+int TerrainTypeClass::GetTypeIdentifier()
+{
+return 37;
+}
+
+// 0x71E340
+int TerrainTypeClass::GetObjectSize()
+{
+return 700;
 }

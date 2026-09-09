@@ -2145,14 +2145,6 @@ int sub_726C60()
 }
 } // namespace gamemd
 
-// 0x726FCE
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_20()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x727190
 namespace gamemd {
 ObjectClass * sub_727190()
@@ -5421,5 +5413,13 @@ _DWORD *__fastcall Screen_SetupBuffers(int a1, int a2)
   }
   return result; /*0x7300d6*/
 }
+}
+} // namespace gamemd
+
+// 0x726FCE
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_20()
+{
+return 1;
 }
 } // namespace gamemd

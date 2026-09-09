@@ -34,14 +34,14 @@ void __thiscall WonlineStringDialogControl_12_::sub_7AC970(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x7ac976*/
-  *(_DWORD *)(this + 16) = 0; /*0x7ac979*/
+  this->WonlineStringDialogControl_12_field_0x10 = 0; /*0x7ac979*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x7ac980*/
   {
     __3_YAXPAX_Z(v2); /*0x7ac986*/
-    *(_DWORD *)(this + 4) = 0; /*0x7ac98e*/
+    this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ac98e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x7ac991*/
-  *(_DWORD *)(this + 8) = 0; /*0x7ac994*/
+  this->WonlineStringDialogControl_12_field_0x8 = 0; /*0x7ac994*/
 }
 }
 } // namespace gamemd
@@ -53,8 +53,8 @@ unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall WonlineStringDialogControl_12_::sub_7AC9A0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x7ac9a0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x7ac9b5*/
+  if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ac9a0*/
+    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2; /*0x7ac9b5*/
   else
     return 0; /*0x7ac9a7*/
 }
@@ -127,21 +127,21 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x7ad106*/
     if ( v4 ) /*0x7ad10a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x7ad115*/
+      if ( this->WonlineStringDialogControl_12_field_0x4 ) /*0x7ad115*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x7ad11c*/
+        v6 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad11c*/
         if ( a2 < v6 ) /*0x7ad121*/
           v6 = a2; /*0x7ad123*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x7ad129*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) ) /*0x7ad129*/
           ++i; /*0x7ad12e*/
         if ( *((_BYTE *)this + 13) ) /*0x7ad13b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad146*/
-          *((_DWORD *)this + 1) = 0; /*0x7ad14e*/
+          this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad14e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x7ad157*/
-      *((_DWORD *)this + 2) = a2; /*0x7ad15f*/
+      this->WonlineStringDialogControl_12_field_0x4 = v4; /*0x7ad157*/
+      this->WonlineStringDialogControl_12_field_0x8 = a2; /*0x7ad15f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x7ad162*/
       return 1; /*0x7ad168*/
     }
@@ -166,13 +166,13 @@ void WonlineStringDialogControl_12::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall WonlineStringDialogControl_12_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x7ad18d*/
+  if ( this->WonlineStringDialogControl_12_field_0x4 && *(_BYTE *)(this + 13) ) /*0x7ad18d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x7ad193*/
-    *(_DWORD *)(this + 4) = 0; /*0x7ad19b*/
+    this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad19b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x7ad19e*/
-  *(_DWORD *)(this + 8) = 0; /*0x7ad1a1*/
+  this->WonlineStringDialogControl_12_field_0x8 = 0; /*0x7ad1a1*/
 }
 }
 } // namespace gamemd
@@ -188,9 +188,9 @@ int __thiscall WonlineStringDialogControl_12_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x7ad1b0*/
+  if ( !(unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ad1b0*/
     return 0; /*0x7ad1b8*/
-  v3 = *(_DWORD *)(this + 8); /*0x7ad1be*/
+  v3 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad1be*/
   result = 0; /*0x7ad1c1*/
   if ( v3 <= 0 ) /*0x7ad1c5*/
     return -1; /*0x7ad1dc*/
@@ -211,8 +211,8 @@ unsigned int WonlineStringDialogControl_12::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall WonlineStringDialogControl_12_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x7ad1f0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x7ad205*/
+  if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ad1f0*/
+    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2; /*0x7ad205*/
   else
     return 0; /*0x7ad1f7*/
 }
@@ -241,30 +241,30 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x7ad242*/
     if ( !v4 ) /*0x7ad246*/
       return 0; /*0x7ad2ba*/
-    if ( *((_DWORD *)this + 1) ) /*0x7ad248*/
+    if ( this->WonlineStringDialogControl_12_field_0x4 ) /*0x7ad248*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x7ad24f*/
+      v5 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad24f*/
       if ( a2 < v5 ) /*0x7ad254*/
         v5 = a2; /*0x7ad256*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x7ad25c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) ) /*0x7ad25c*/
         ++i; /*0x7ad261*/
       if ( *((_BYTE *)this + 13) ) /*0x7ad26e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad279*/
-        *((_DWORD *)this + 1) = 0; /*0x7ad281*/
+        this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad281*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x7ad28a*/
-    *((_DWORD *)this + 2) = a2; /*0x7ad292*/
+    this->WonlineStringDialogControl_12_field_0x4 = v4; /*0x7ad28a*/
+    this->WonlineStringDialogControl_12_field_0x8 = a2; /*0x7ad292*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x7ad295*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7ad29e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x7ad2a1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x7ad2a9*/
-    *((_DWORD *)this + 4) = v7; /*0x7ad2ab*/
+  v7 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad2a1*/
+  if ( v7 < this->WonlineStringDialogControl_12_field_0x10 ) /*0x7ad2a9*/
+    this->WonlineStringDialogControl_12_field_0x10 = v7; /*0x7ad2ab*/
   return 1; /*0x7ad2ae*/
 }
 }
@@ -450,14 +450,6 @@ int __stdcall WonlineStringDialogControl_28_::_vt07(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x7AD610
-namespace gamemd {
-int WonlineStringDialogControl_28::StubReturnFalse(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7AD620
 namespace gamemd {
 LONG WonlineStringDialogControl_28::AddRef(int a1)
@@ -543,5 +535,13 @@ LABEL_17:
   *a3 = v9; /*0x7ad778*/
   return 0; /*0x7ad6a1*/
 }
+}
+} // namespace gamemd
+
+// 0x7AD610
+namespace gamemd {
+int WonlineStringDialogControl_28::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

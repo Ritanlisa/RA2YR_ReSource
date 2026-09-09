@@ -553,14 +553,6 @@ void sub_556DF0()
 }
 } // namespace gamemd
 
-// 0x5865E0
-namespace gamemd {
-char Game::Stub3(IUnknown * aP0)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x5B56F0
 namespace gamemd {
 void Game::processStartup()
@@ -1679,7 +1671,7 @@ char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *
     &stru_830620.__pad_579C[38300],
     *(CellStruct **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * (_DWORD)v2));
   fprintf(v4, &stru_830620.__pad_579C[38284], (CellStruct *)(this + 328)); /*0x698cfd*/
-  for ( i = 0; i < *(_DWORD *)(this + 788); ++i ) /*0x698d0f*/
+  for ( i = 0; i < this->Game_field_0x314; ++i ) /*0x698d0f*/
   {
     Network::CopyAddress( /*0x698d2a*/
       (_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * i) + 40),
@@ -2626,5 +2618,13 @@ void * sub_53AB50()
   *((_BYTE *)HouseClass_Player + 22393) = 1; /*0x53ab5a*/
   return result; /*0x53ab61*/
 }
+}
+} // namespace gamemd
+
+// 0x5865E0
+namespace gamemd {
+char Game::Stub3(IUnknown * aP0)
+{
+return 0;
 }
 } // namespace gamemd

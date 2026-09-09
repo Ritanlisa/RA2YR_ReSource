@@ -58,9 +58,9 @@ __int64 __thiscall sub_6B1EE0(int this)
   __int64 result; // rax
 
   if ( *(_BYTE *)(this + 46) ) /*0x6b1ee6*/
-    v2 = *(_DWORD *)(this + 20); /*0x6b1eed*/
+    v2 = this->abstractFlags; /*0x6b1eed*/
   else
-    v2 = *(_DWORD *)(this + 24); /*0x6b1ef2*/
+    v2 = this->nextArrayIndex; /*0x6b1ef2*/
   v3 = (double)*(int *)(this + 48); /*0x6b1ef5*/
   v4 = Math::RoundToInt(v3); /*0x6b1f0f*/
   if ( v4 <= 4 ) /*0x6b1f11*/
@@ -3729,14 +3729,6 @@ void __cdecl nullsub_39()
 }
 } // namespace gamemd
 
-// 0x6BA680
-namespace gamemd {
-char sub_6BA680(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x6BB050
 namespace gamemd {
 int sub_6BB050()
@@ -4813,5 +4805,13 @@ void __thiscall __noreturn ExitProgram(void *Code)
 {
   exit((int)Code); /*0x6bec51*/
 }
+}
+} // namespace gamemd
+
+// 0x6BA680
+namespace gamemd {
+char sub_6BA680(int a1, int a2, int a3)
+{
+return 0;
 }
 } // namespace gamemd

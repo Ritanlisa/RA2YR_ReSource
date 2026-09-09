@@ -704,7 +704,7 @@ char *__thiscall sub_4C6C50(char *this, int a2, _DWORD *a3, char a4)
     *this = 41; /*0x4c6c6f*/
     Network::CopyAddress(v5, &a2, (int)&v8); /*0x4c6c72*/
     v6 = a4; /*0x4c6c7b*/
-    *((_DWORD *)this + 2) = v8; /*0x4c6c7f*/
+    this->Network_field_0x8 = v8; /*0x4c6c7f*/
     *(this + 7) = v6; /*0x4c6c82*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6c8d*/
     return this; /*0x4c6c8b*/
@@ -847,7 +847,7 @@ __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP
   __int16 result; // ax
 
   *(_DWORD *)aP2->__pad_0 = *(this + 1); /*0x53ed6a*/
-  *(_WORD *)&aP2->__pad_0[4] = *((_WORD *)this + 4); /*0x53ed71*/
+  *(_WORD *)&aP2->__pad_0[4] = (unsigned short)this->Network_field_0x8; /*0x53ed71*/
   result = dword_828140; /*0x53ed75*/
   if ( dword_828140 == 1 ) /*0x53ed7d*/
   {
@@ -874,7 +874,7 @@ char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 
   result = (char *)(this + 1); /*0x53eda4*/
   *(_DWORD *)a3 = *(this + 1); /*0x53edaa*/
-  LOWORD(result) = *((_WORD *)this + 4); /*0x53edad*/
+  LOWORD(result) = (unsigned short)this->Network_field_0x8; /*0x53edad*/
   *(_WORD *)(a3 + 4) = (_WORD)result; /*0x53edb1*/
   *a2 = *this; /*0x53edbb*/
   return result; /*0x53edac*/
@@ -953,7 +953,7 @@ bool __thiscall Network::processPacket(char *this, TechnoTypeClass *aP1)
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ef6d*/
-    return *((_DWORD *)this + 1) != *(_DWORD *)&aP1->__pad_0[4] || *(_WORD *)this != *(_WORD *)aP1->__pad_0; /*0x53ef8d*/
+    return this->Network_field_0x4 != *(_DWORD *)&aP1->__pad_0[4] || *(_WORD *)this != *(_WORD *)aP1->__pad_0; /*0x53ef8d*/
   if ( (*this || *(this + 1) || *(this + 2) || *(this + 3)) /*0x53efc8*/
     && (aP1->__pad_0[0] || aP1->__pad_0[1] || aP1->__pad_0[2] || aP1->__pad_0[3]) )
   {
@@ -1144,9 +1144,9 @@ int __thiscall Network::sendData(int this, AnimClass *aP1)
   int v10; // ecx
   int v11; // eax
 
-  if ( !*(_BYTE *)(this + 4) ) /*0x540f05*/
+  if ( !(unsigned char)this->Network_field_0x4 ) /*0x540f05*/
     return 0; /*0x540f05*/
-  v3 = *(_DWORD *)(this + 68); /*0x540f0c*/
+  v3 = this->Network_field_0x44; /*0x540f0c*/
   if ( !v3 ) /*0x540f11*/
     return 0; /*0x540f11*/
   v4 = 0; /*0x540f13*/
@@ -1161,7 +1161,7 @@ int __thiscall Network::sendData(int this, AnimClass *aP1)
   if ( v7 ) /*0x540f41*/
     (**v7)(v7, 1); /*0x540f47*/
   v8 = v4; /*0x540f4c*/
-  if ( v4 < *(_DWORD *)(this + 68) - 1 ) /*0x540f51*/
+  if ( v4 < this->Network_field_0x44 - 1 ) /*0x540f51*/
   {
     v9 = (_DWORD *)(this + 4 * v4 + 40); /*0x540f53*/
     do /*0x540f64*/
@@ -1170,11 +1170,11 @@ int __thiscall Network::sendData(int this, AnimClass *aP1)
       *v9 = v9[1]; /*0x540f59*/
       ++v9; /*0x540f5e*/
     }
-    while ( v8 < *(_DWORD *)(this + 68) - 1 ); /*0x540f64*/
+    while ( v8 < this->Network_field_0x44 - 1 ); /*0x540f64*/
   }
   v10 = *(_DWORD *)(this + 84); /*0x540f69*/
-  v11 = *(_DWORD *)(this + 68) - 1; /*0x540f6d*/
-  *(_DWORD *)(this + 68) = v11; /*0x540f6f*/
+  v11 = this->Network_field_0x44 - 1; /*0x540f6d*/
+  this->Network_field_0x44 = v11; /*0x540f6f*/
   if ( v10 >= v11 ) /*0x540f74*/
     *(_DWORD *)(this + 84) = 0; /*0x540f76*/
   return 1; /*0x540f2f*/
@@ -1270,13 +1270,13 @@ int __thiscall Network_SendMessage(int this, int a2, int a3, int a4, int a5, int
   int v9; // edi
   int v10; // ebx
 
-  if ( !*(_BYTE *)(this + 4) || !*(_BYTE *)(this + 5) ) /*0x5410fa*/
+  if ( !(unsigned char)this->Network_field_0x4 || !*(_BYTE *)(this + 5) ) /*0x5410fa*/
     return 0; /*0x541169*/
   v8 = a4; /*0x541107*/
   if ( a4 && (!a5 || Network::IsBroadcastAddr(a5)) ) /*0x541115*/
     v8 = 0; /*0x54111e*/
   v9 = (*(int (__thiscall **)(_DWORD, int, int, int, int, int, int))(**(_DWORD **)(this + 72) + 44))( /*0x54113e*/
-         *(_DWORD *)(this + 72),
+         this->Network_field_0x48,
          a2,
          a3,
          a5,
@@ -1325,7 +1325,7 @@ int __thiscall Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *S
   LOWORD(v6) = *((_WORD *)&MEMORY[0xA8E2B2] + v6); /*0x5412d1*/
   v9 += 10; /*0x5412d9*/
   v14[0] = *v9; /*0x5412de*/
-  v10 = *(_BYTE *)(this + 4); /*0x5412e2*/
+  v10 = (unsigned char)this->Network_field_0x4; /*0x5412e2*/
   v14[1] = v9[1]; /*0x5412e8*/
   v14[2] = v9[2]; /*0x5412f1*/
   if ( !v10 || !*(_BYTE *)(this + 5) ) /*0x5412f7*/
@@ -1333,7 +1333,7 @@ int __thiscall Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *S
   if ( a4 && (&v13 == (int *)-12 || Network::IsBroadcastAddr(v14)) ) /*0x54130e*/
     v8 = 0; /*0x541317*/
   v11 = (*(int (__thiscall **)(_DWORD, int, int, _DWORD *, int, int, _DWORD))(**(_DWORD **)(this + 72) + 44))( /*0x541334*/
-          *(_DWORD *)(this + 72),
+          this->Network_field_0x48,
           a2,
           a3,
           v14,
@@ -1358,9 +1358,9 @@ int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network::Send(int this, int a2, int a3, TechnoTypeClass *aP3, int a5)
 {
-  if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x541377*/
+  if ( (unsigned char)this->Network_field_0x4 && *(_BYTE *)(this + 5) ) /*0x541377*/
     return (*(int (__thiscall **)(_DWORD, int, int, TechnoTypeClass *, int))(**(_DWORD **)(this + 72) + 52))( /*0x541397*/
-             *(_DWORD *)(this + 72),
+             this->Network_field_0x48,
              a2,
              a3,
              aP3,
@@ -1378,9 +1378,9 @@ int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network::SendPacketThunk(int this, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x5413b7*/
+  if ( (unsigned char)this->Network_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5413b7*/
     return (*(int (__thiscall **)(_DWORD, int, int, int, int, int, int))(**(_DWORD **)(this + 72) + 56))( /*0x5413e1*/
-             *(_DWORD *)(this + 72),
+             this->Network_field_0x48,
              a2,
              a3,
              a4,
@@ -1402,12 +1402,12 @@ char __thiscall sub_5413F0(int this, int a2)
 {
   char result; // al
 
-  result = *(_BYTE *)(this + 4); /*0x5413f0*/
+  result = (unsigned char)this->Network_field_0x4; /*0x5413f0*/
   if ( result ) /*0x5413f5*/
   {
     result = *(_BYTE *)(this + 5); /*0x5413f7*/
     if ( result ) /*0x5413fc*/
-      return (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 72) + 60))(*(_DWORD *)(this + 72), a2); /*0x541408*/
+      return (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 72) + 60))(this->Network_field_0x48, a2); /*0x541408*/
   }
   return result; /*0x54140b*/
 }
@@ -1424,11 +1424,11 @@ int __thiscall Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
   int v5; // ecx
   int v6; // edi
 
-  if ( !*(_BYTE *)(this + 4) ) /*0x541413*/
+  if ( !(unsigned char)this->Network_field_0x4 ) /*0x541413*/
     return 0; /*0x541413*/
   if ( !*(_BYTE *)(this + 5) ) /*0x54141a*/
     return 0; /*0x54141a*/
-  v5 = *(_DWORD *)(this + 76); /*0x541421*/
+  v5 = this->Network_field_0x4C; /*0x541421*/
   if ( !v5 ) /*0x541426*/
     return 0; /*0x541475*/
   v6 = (*(int (__stdcall **)(int, int, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v5 + 44))(a2, a3, v5 + 76, a4, 0, 0); /*0x54144b*/
@@ -1449,9 +1449,9 @@ int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network::SendPacketThunk2(int this, int a2, int a3, int a4, int a5)
 {
-  if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x541487*/
+  if ( (unsigned char)this->Network_field_0x4 && *(_BYTE *)(this + 5) ) /*0x541487*/
     return (*(int (__thiscall **)(_DWORD, int, int, int, int))(**(_DWORD **)(this + 76) + 52))( /*0x5414a7*/
-             *(_DWORD *)(this + 76),
+             this->Network_field_0x4C,
              a2,
              a3,
              a4,
@@ -2028,8 +2028,8 @@ int Network::GetQueueCount()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network_GetQueueCount(int this)
 {
-  if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x5422d7*/
-    return *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 72) + 4) + 40); /*0x5422e4*/
+  if ( (unsigned char)this->Network_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5422d7*/
+    return *(_DWORD *)(*(_DWORD *)(this->Network_field_0x48 + 4) + 40); /*0x5422e4*/
   else
     return 0; /*0x5422e8*/
 }
@@ -2351,7 +2351,7 @@ LABEL_11:
       MEMORY[0xA8B570] = v6; /*0x5c4a3b*/
 LABEL_12:
       MEMORY[0xA8B56C] = 0; /*0x5c4a40*/
-      if ( !*(_BYTE *)(this + 4) ) /*0x5c4a46*/
+      if ( !(unsigned char)this->Network_field_0x4 ) /*0x5c4a46*/
         MEMORY[0xA8B570] = 0; /*0x5c4a4d*/
       v7 = 0; /*0x5c4a58*/
       if ( MEMORY[0xA8DA84] > 0 ) /*0x5c4a5c*/
@@ -2392,10 +2392,10 @@ LABEL_34:
         -1,
         8 * (120 * (60 * v7 / 1000) / 100 + 60 * v7 / 1000),
         1);
-      if ( !*(_BYTE *)(this + 4) ) /*0x5c4b10*/
+      if ( !(unsigned char)this->Network_field_0x4 ) /*0x5c4b10*/
         goto LABEL_34; /*0x5c4b10*/
       IPXManagerClass::sendPacket(5, -1, 120); /*0x5c4b20*/
-      if ( !*(_BYTE *)(this + 4) ) /*0x5c4b25*/
+      if ( !(unsigned char)this->Network_field_0x4 ) /*0x5c4b25*/
         goto LABEL_34; /*0x5c4b28*/
       v10 = MEMORY[0xA8B550]; /*0x5c4b2f*/
       switch ( (unsigned int)MEMORY[0xA8DB9C] ) /*0x5c4b3a*/
@@ -2791,7 +2791,7 @@ LABEL_16:
   while ( 1 ) /*0x5d9689*/
   {
     v19 = *(this + 4) + 1; /*0x5d9689*/
-    LOWORD(v15) = *((_WORD *)this + 8) + 1; /*0x5d968b*/
+    LOWORD(v15) = (unsigned short)this->Network_field_0x10 + 1; /*0x5d968b*/
     v20 = *(this + 4) - 65534 < 0; /*0x5d968e*/
     *(this + 4) = v19; /*0x5d9693*/
     v75 = v15; /*0x5d9696*/
@@ -3032,7 +3032,7 @@ LABEL_118:
           while ( 1 ) /*0x5d9afe*/
           {
             v52 = *(this + 4) + 1; /*0x5d9afe*/
-            LOWORD(v47) = *((_WORD *)this + 8) + 1; /*0x5d9b00*/
+            LOWORD(v47) = (unsigned short)this->Network_field_0x10 + 1; /*0x5d9b00*/
             v20 = *(this + 4) - 65534 < 0; /*0x5d9b03*/
             *(this + 4) = v52; /*0x5d9b08*/
             v75 = v47; /*0x5d9b0b*/
@@ -4205,7 +4205,7 @@ void __thiscall Network::UpdateLatencyDisplay(
     v14 = Math::RoundToInt(v12); /*0x643cff*/
     v15 = *(void (__thiscall ****)(_DWORD, int, _DWORD *))&this->__pad_0[4]; /*0x643d04*/
     v17[1] = v14; /*0x643d07*/
-    if ( v15 && *((_BYTE *)this + 96) ) /*0x643d11*/
+    if ( v15 && (unsigned char)this->Network_field_0x60 ) /*0x643d11*/
       (**v15)(v15, 4526, v17); /*0x643d24*/
     v16 = (HWND)*((_DWORD *)this + 25); /*0x643d26*/
     if ( v16 ) /*0x643d2b*/
@@ -4929,17 +4929,17 @@ void __thiscall sub_663910(int this)
   int v3; // ecx
   int v4; // eax
 
-  while ( *(_DWORD *)(this + 16) ) /*0x663916*/
+  while ( this->Network_field_0x10 ) /*0x663916*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 4)); /*0x663921*/
-    v2 = *(_DWORD *)(this + 16); /*0x663926*/
+    v2 = this->Network_field_0x10; /*0x663926*/
     if ( v2 > 0 ) /*0x66392e*/
     {
       v3 = v2 - 1; /*0x663930*/
       v4 = 0; /*0x663933*/
-      for ( *(_DWORD *)(this + 16) = v3; /*0x66393a*/
-            v4 < *(_DWORD *)(this + 16);
-            *(_DWORD *)(*(_DWORD *)(this + 4) + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)(this + 4) + 4 * v4) )
+      for ( this->Network_field_0x10 = v3; /*0x66393a*/
+            v4 < this->Network_field_0x10;
+            *(_DWORD *)(this->Network_field_0x4 + 4 * v4 - 4) = *(_DWORD *)(this->Network_field_0x4 + 4 * v4) )
       {
         ++v4; /*0x66393f*/
       }
@@ -4986,7 +4986,7 @@ char __thiscall Network_SendMasterPlayerList(int this)
       v6 = *(_DWORD *)(v1 + 4); /*0x663a40*/
       qmemcpy(v5 - 41, *(const void **)(v6 + 4 * v2), 0x2Au); /*0x663a51*/
       if ( ((_DWORD (__stdcall *)(_DWORD))IPXManagerClass::send)(**(char **)(v6 + 4 * v2)) == -1 /*0x663a80*/
-        && *((_DWORD *)HouseClass_Player + 12) != **(char **)(*(_DWORD *)(this + 4) + 4 * v2) )
+        && *((_DWORD *)HouseClass_Player + 12) != **(char **)(this->Network_field_0x4 + 4 * v2) )
       {
         Debug::Log(); /*0x663a89*/
         *v5 = 0; /*0x663a8e*/
@@ -4994,7 +4994,7 @@ char __thiscall Network_SendMasterPlayerList(int this)
       }
       ++v2; /*0x663a9c*/
       v5 += 42; /*0x663a9d*/
-      if ( v2 >= *(_DWORD *)(this + 16) ) /*0x663aa3*/
+      if ( v2 >= this->Network_field_0x10 ) /*0x663aa3*/
         break; /*0x663aa3*/
       v1 = this; /*0x663a3c*/
     }
@@ -5609,14 +5609,6 @@ int __thiscall sub_7B2DB0(int this)
   *(_DWORD *)(this + 258868) = -1; /*0x7b2e33*/
   return this; /*0x7b2e3f*/
 }
-}
-} // namespace gamemd
-
-// 0x767310
-namespace gamemd {
-char sub_767310(int a1)
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -6283,5 +6275,13 @@ int sub_7B2730()
 {
   return dword_B780A0; /*0x7b2735*/
 }
+}
+} // namespace gamemd
+
+// 0x767310
+namespace gamemd {
+char sub_767310(int a1)
+{
+return 0;
 }
 } // namespace gamemd

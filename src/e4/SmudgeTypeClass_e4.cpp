@@ -20,9 +20,9 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   *(this + 672) = 0; /*0x6b528d*/
   *(this + 673) = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  *((_DWORD *)this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  *((_DWORD *)this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  *((_DWORD *)this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  this->Width = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
+  this->Height = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  this->Crater = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
   *(this + 561) = 0; /*0x6b52c7*/
@@ -183,11 +183,11 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                               (unsigned __int8 *)(this + 36),
                               &g_INI_Key_Height,
                               *(INIClass **)(this + 668));
-  if ( *(_BYTE *)(this + 556) ) /*0x6b5764*/
+  if ( this->Theater ) /*0x6b5764*/
     _makepath(Buffer, 0, 0, (const char *)(this + 504), (const char *)&off_7E1BC6 + 112 * MEMORY[0xA8B230]->theater); /*0x6b57b4*/
   else
     _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x6b5784*/
-  *(_DWORD *)(this + 164) = SearchMIXFile(Buffer, 0); /*0x6b57c7*/
+  this->Image = SearchMIXFile(Buffer, 0); /*0x6b57c7*/
   return 1; /*0x6b57cd*/
 }
 }
@@ -270,18 +270,6 @@ int __stdcall SmudgeTypeClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x6B6130
-int SmudgeTypeClass::GetTypeIdentifier()
-{
-return 30;
-}
-
-// 0x6B6140
-int SmudgeTypeClass::GetObjectSize()
-{
-return 676;
-}
-
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {
@@ -334,4 +322,16 @@ SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a
     __3_YAXPAX_Z(this); /*0x6b61fd*/
   return (SmudgeTypeClass *)this; /*0x6b6207*/
 }
+}
+
+// 0x6B6130
+int SmudgeTypeClass::GetTypeIdentifier()
+{
+return 30;
+}
+
+// 0x6B6140
+int SmudgeTypeClass::GetObjectSize()
+{
+return 676;
 }

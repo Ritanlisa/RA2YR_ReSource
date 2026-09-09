@@ -163,8 +163,8 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
-  *((_DWORD *)this + 1) = &VoxelAnimClass::`vftable'; /*0x7499fc*/
-  *((_DWORD *)this + 2) = &VoxelAnimClass::`vftable'; /*0x749a03*/
+  this->VoxelAnimClass_field_0x4 = &VoxelAnimClass::`vftable'; /*0x7499fc*/
+  this->VoxelAnimClass_field_0x8 = &VoxelAnimClass::`vftable'; /*0x749a03*/
   *((_DWORD *)this + 3) = &VoxelAnimClass::`vftable'; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
@@ -178,11 +178,11 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
     }
     while ( v2 < MEMORY[0x887398] ); /*0x749a5d*/
   }
-  v3 = *((_DWORD *)this + 66); /*0x749a5f*/
+  v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x749a6b*/
-    *((_DWORD *)this + 66) = 0; /*0x749a71*/
+    this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
   }
   if ( MEMORY[0xA8E9A0] ) /*0x749a82*/
     ObjectClass::Undeploy(this); /*0x749a86*/
@@ -201,7 +201,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
     }
     while ( v4 < MEMORY[0xB0F680] ); /*0x749afe*/
   }
-  *((_DWORD *)this + 65) = 0; /*0x749b02*/
+  this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
   return ObjectClass::Dtor(this); /*0x749b11*/
 }
 }
@@ -378,14 +378,6 @@ int VoxelAnimClass_Update()
 }
 } // namespace gamemd
 
-// 0x74A960
-namespace gamemd {
-int VoxelAnimClass::StubReturn3()
-{
-return 3;
-}
-} // namespace gamemd
-
 // 0x74A970
 namespace gamemd {
 int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
@@ -450,22 +442,22 @@ int __thiscall VoxelAnimClass::_vt13(int this, int *a2)
   int v8; // eax
 
   HouseClass::ProcessPower((#374 *)this); /*0x74aa39*/
-  Power::TimerProcess(*(_DWORD *)(this + 256)); /*0x74aa47*/
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 260) + 4) + 16))(*(_DWORD *)(this + 260) + 4); /*0x74aa58*/
+  Power::TimerProcess(this->VoxelAnimClass_field_0x100); /*0x74aa47*/
+  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x104 + 4) + 16))(this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
-  v4 = *(_DWORD *)(this + 264); /*0x74aa63*/
+  v4 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/
   if ( v4 ) /*0x74aa6b*/
   {
     v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x74aa74*/
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
-  v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 268) + 4) + 16))(*(_DWORD *)(this + 268) + 4); /*0x74aa8b*/
+  v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x10C + 4) + 16))(this->VoxelAnimClass_field_0x10C + 4); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
   LOBYTE(v7) = *(_BYTE *)(this + 272); /*0x74aa96*/
   v8 = Power::FlagProcess(a2, v7); /*0x74aa9f*/
   LOBYTE(v8) = *(_BYTE *)(this + 316); /*0x74aaa4*/
   Power::FlagProcess(a2, v8); /*0x74aaad*/
-  return Power::TimerProcess(*(_DWORD *)(this + 320)); /*0x74aac0*/
+  return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
 }
 } // namespace gamemd
@@ -485,14 +477,6 @@ int __stdcall VoxelAnimClass::_vt03(int a1, _DWORD *a2)
   a2[3] = -777003740; /*0x74ab00*/
   return 0; /*0x74aadd*/
 }
-}
-} // namespace gamemd
-
-// 0x74AB10
-namespace gamemd {
-int VoxelAnimClass::StubReturn328()
-{
-return 328;
 }
 } // namespace gamemd
 
@@ -555,7 +539,7 @@ int VoxelAnimClass::Reset()
 int __thiscall sub_75AA90(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
-  *(_DWORD *)(this + 28) = g_AsyncMovieState; /*0x75aaa1*/
+  this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
   *(_DWORD *)(this + 32) = MEMORY[0xB45BEC]; /*0x75aaaa*/
   *(_DWORD *)(this + 36) = MEMORY[0xB45BF0]; /*0x75aab6*/
   *(_DWORD *)(this + 40) = g_AsyncMovieState; /*0x75aabe*/
@@ -566,7 +550,7 @@ int __thiscall sub_75AA90(int this)
   *(_BYTE *)(this + 54) = 0; /*0x75aad9*/
   *(_DWORD *)(this + 56) = 0; /*0x75aadc*/
   *(_DWORD *)this = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
-  *(_DWORD *)(this + 4) = &WalkLocomotionClass::`vftable'; /*0x75aae5*/
+  this->VoxelAnimClass_field_0x4 = &WalkLocomotionClass::`vftable'; /*0x75aae5*/
   *(_DWORD *)(this + 24) = &WalkLocomotionClass::`vftable'; /*0x75aaec*/
   return this; /*0x75aaf5*/
 }
@@ -585,7 +569,7 @@ int __thiscall sub_75EBE0(int this)
   ObjectClass::ctor((_DWORD *)this); /*0x75ebe4*/
   *(_BYTE *)(this + 300) = 1; /*0x75ebeb*/
   *(_DWORD *)(this + 312) = 0; /*0x75ebf2*/
-  *(_DWORD *)(this + 320) = 0; /*0x75ebf8*/
+  this->VoxelAnimClass_field_0x140 = 0; /*0x75ebf8*/
   *(_DWORD *)(this + 172) = 0; /*0x75ebfe*/
   *(_BYTE *)(this + 301) = 0; /*0x75ec04*/
   *(_DWORD *)(this + 304) = 100; /*0x75ec0a*/
@@ -610,8 +594,8 @@ int __thiscall sub_75EBE0(int this)
   *(_DWORD *)(this + 516) = 10; /*0x75ec9a*/
   *(_DWORD *)(this + 512) = 0; /*0x75eca4*/
   *(_DWORD *)this = &WaveClass::`vftable'; /*0x75ecaa*/
-  *(_DWORD *)(this + 4) = &WaveClass::`vftable'; /*0x75ecb0*/
-  *(_DWORD *)(this + 8) = &WaveClass::`vftable'; /*0x75ecb7*/
+  this->VoxelAnimClass_field_0x4 = &WaveClass::`vftable'; /*0x75ecb0*/
+  this->VoxelAnimClass_field_0x8 = &WaveClass::`vftable'; /*0x75ecb7*/
   *(_DWORD *)(this + 12) = &off_7F6BC8; /*0x75ecbe*/
   if ( MEMORY[0xA8EC48] < MEMORY[0xA8EC40] /*0x75ecfb*/
     || (MEMORY[0xA8EC45] || !MEMORY[0xA8EC40])
@@ -628,5 +612,21 @@ int __thiscall sub_75EBE0(int this)
     Voxel::InitDistanceTable(); /*0x75ed22*/
   return this; /*0x75ed29*/
 }
+}
+} // namespace gamemd
+
+// 0x74A960
+namespace gamemd {
+int VoxelAnimClass::StubReturn3()
+{
+return 3;
+}
+} // namespace gamemd
+
+// 0x74AB10
+namespace gamemd {
+int VoxelAnimClass::StubReturn328()
+{
+return 328;
 }
 } // namespace gamemd

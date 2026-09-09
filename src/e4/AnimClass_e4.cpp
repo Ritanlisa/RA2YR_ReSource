@@ -23,13 +23,13 @@ void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
 
   LOBYTE(a2) = 1; /*0x4228e3*/
   *(_DWORD *)this = &AnimClass::`vftable'; /*0x4228eb*/
-  *((_DWORD *)this + 1) = &AnimClass::`vftable'; /*0x4228f1*/
-  *((_DWORD *)this + 2) = &AnimClass::`vftable'; /*0x4228f8*/
+  this->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x4228f1*/
+  this->AnimClass_field_0x8 = &AnimClass::`vftable'; /*0x4228f8*/
   *((_DWORD *)this + 3) = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, a2); /*0x422906*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x422914*/
   {
-    v3 = (_BYTE *)*((_DWORD *)this + 51); /*0x42291a*/
+    v3 = (_BYTE *)this->AnimClass_field_0xCC; /*0x42291a*/
     if ( v3 ) /*0x422922*/
     {
       ecx3 = 0; /*0x42292a*/
@@ -47,17 +47,17 @@ void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
       }
       if ( ecx3 == *(_DWORD *)&HouseClass_Player.__pad_5568[22276] ) /*0x42294e*/
       {
-        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v3 + 380))(*((_DWORD *)this + 51)); /*0x422955*/
+        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v3 + 380))(this->AnimClass_field_0xCC); /*0x422955*/
         v3[132] = 0; /*0x42295b*/
       }
-      *((_DWORD *)this + 51) = 0; /*0x422961*/
+      this->AnimClass_field_0xCC = 0; /*0x422961*/
     }
-    v6 = *((_DWORD *)this + 50); /*0x422967*/
+    v6 = this->AnimClass_field_0xC8; /*0x422967*/
     if ( v6 && *(_BYTE *)(v6 + 853) ) /*0x422971*/
     {
-      v13[0] = *((_DWORD *)this + 39); /*0x422985*/
+      v13[0] = this->AnimClass_field_0x9C; /*0x422985*/
       v13[1] = *((_DWORD *)this + 40); /*0x422991*/
-      v13[2] = *((_DWORD *)this + 41); /*0x422998*/
+      v13[2] = this->AnimClass_field_0xA4; /*0x422998*/
       v7 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v13); /*0x4229a1*/
       v7[80] &= ~0x20000u; /*0x4229b7*/
     }
@@ -79,16 +79,16 @@ void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
       ++v8; /*0x422a06*/
     }
   }
-  v9 = *((_DWORD *)this + 50); /*0x422a18*/
+  v9 = this->AnimClass_field_0xC8; /*0x422a18*/
   if ( v9 ) /*0x422a20*/
     AnimClass::FreeRenderBuffer(v9); /*0x422a22*/
   Mixer::ReleaseChannel((int **)this + 104); /*0x422a2f*/
   Mixer::ReleaseChannel((int **)this + 109); /*0x422a3c*/
   AudioFileClass::Release((_DWORD *)this + 104); /*0x422a43*/
   AudioFileClass::Release((_DWORD *)this + 109); /*0x422a4a*/
-  *((_DWORD *)this + 51) = 0; /*0x422a52*/
-  *((_DWORD *)this + 50) = 0; /*0x422a59*/
-  if ( AbstractClass::GetVtable3((AbstractClass *)((char *)this + 4)) == -2 ) /*0x422a67*/
+  this->AnimClass_field_0xCC = 0; /*0x422a52*/
+  this->AnimClass_field_0xC8 = 0; /*0x422a59*/
+  if ( AbstractClass::GetVtable3(&this->AnimClass_field_0x4) == -2 ) /*0x422a67*/
   {
     v11 = (ObjectClass *)this; /*0x422a79*/
     v10 = (*(int (__thiscall **)(char *, ObjectClass **))(*(_DWORD *)&HouseClass_Player.__pad_74[64] + 16))( /*0x422a7d*/
@@ -850,14 +850,6 @@ char __stdcall AnimClass::_vt61(_DWORD *a1)
 }
 } // namespace gamemd
 
-// 0x426530
-namespace gamemd {
-int AnimClass::MissionStubReturnZero()
-{
-return 456;
-}
-} // namespace gamemd
-
 // 0x426540
 namespace gamemd {
 int AnimClass::MissionStubReturnZero2(int a1, unsigned int * a2)
@@ -883,13 +875,13 @@ void AnimClass::FreeRenderBuffer()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_428DE0(int this)
 {
-  if ( *(_BYTE *)(this + 862) && *(_DWORD *)(this + 164) ) /*0x428ded*/
+  if ( *(_BYTE *)(this + 862) && this->AnimClass_field_0xA4 ) /*0x428ded*/
   {
     if ( *(_BYTE *)(this + 863) ) /*0x428df7*/
     {
       Debug::Log(); /*0x428e0a*/
       __3_YAXPAX_Z(*(void **)(this + 164)); /*0x428e16*/
-      *(_DWORD *)(this + 164) = 0; /*0x428e1e*/
+      this->AnimClass_field_0xA4 = 0; /*0x428e1e*/
       *(_BYTE *)(this + 168) = 0; /*0x428e28*/
     }
   }
@@ -1002,5 +994,13 @@ int __thiscall AnimClass::ProcessFrame(#374 *this)
   else
     return (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 248))(this); /*0x761081*/
 }
+}
+} // namespace gamemd
+
+// 0x426530
+namespace gamemd {
+int AnimClass::MissionStubReturnZero()
+{
+return 456;
 }
 } // namespace gamemd

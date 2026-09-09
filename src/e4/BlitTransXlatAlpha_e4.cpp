@@ -34,7 +34,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493967*/
       {
         *a1 = 3 * (*(_WORD *)(this + 2) & (*a1 >> 2)) /*0x493996*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(*((_DWORD *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
+            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493999*/
         v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49399c*/
       }
@@ -181,7 +181,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
       {
         v12 = argC; /*0x493ac2*/
         *a1 = (*(_WORD *)(this + 2) & (*a1 >> 1)) /*0x493ac6*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(*((_DWORD *)this + 1) + 2 * (unsigned __int8)*a2) >> 1));
+            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 1));
         *a5 = argC; /*0x493ac9*/
         v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493acc*/
       }
@@ -325,7 +325,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493bc7*/
       {
         *a1 = (*(_WORD *)(this + 2) & (*a1 >> 2)) /*0x493bf6*/
-            + 3 * (*(_WORD *)(this + 2) & (*(_WORD *)(*((_DWORD *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
+            + 3 * (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493bf9*/
         v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493bfc*/
       }

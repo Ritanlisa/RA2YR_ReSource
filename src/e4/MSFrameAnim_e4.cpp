@@ -104,14 +104,14 @@ int __thiscall MSFrameAnim::sub_769C50(int this)
   int result; // eax
 
   v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x769c56*/
-  *(_DWORD *)(this + 16) = 0; /*0x769c59*/
+  this->MSFrameAnim_field_0x10 = 0; /*0x769c59*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x769c60*/
   {
     result = (**v2)(v2, 3); /*0x769c6d*/
-    *(_DWORD *)(this + 4) = 0; /*0x769c6f*/
+    this->MSFrameAnim_field_0x4 = 0; /*0x769c6f*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x769c72*/
-  *(_DWORD *)(this + 8) = 0; /*0x769c75*/
+  this->MSFrameAnim_field_0x8 = 0; /*0x769c75*/
   return result; /*0x769c78*/
 }
 }
@@ -124,8 +124,8 @@ unsigned int MSFrameAnim::startAnimation(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSFrameAnim::sub_769C80(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x769c80*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x769c95*/
+  if ( (unsigned char)this->MSFrameAnim_field_0xC ) /*0x769c80*/
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3; /*0x769c95*/
   else
     return 0; /*0x769c87*/
 }
@@ -142,14 +142,14 @@ void __thiscall MSFrameAnim::sub_769CD0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x769cd6*/
-  *(_DWORD *)(this + 16) = 0; /*0x769cd9*/
+  this->MSFrameAnim_field_0x10 = 0; /*0x769cd9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x769ce0*/
   {
     __3_YAXPAX_Z(v2); /*0x769ce6*/
-    *(_DWORD *)(this + 4) = 0; /*0x769cee*/
+    this->MSFrameAnim_field_0x4 = 0; /*0x769cee*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x769cf1*/
-  *(_DWORD *)(this + 8) = 0; /*0x769cf4*/
+  this->MSFrameAnim_field_0x8 = 0; /*0x769cf4*/
 }
 }
 } // namespace gamemd
@@ -161,8 +161,8 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MSFrameAnim::sub_769D00(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x769d00*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x769d15*/
+  if ( (unsigned char)this->MSFrameAnim_field_0xC ) /*0x769d00*/
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2; /*0x769d15*/
   else
     return 0; /*0x769d07*/
 }
@@ -254,32 +254,32 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
     *(this + 12) = 1; /*0x76a06f*/
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
-    if ( *((_DWORD *)this + 1) ) /*0x76a075*/
+    if ( this->MSFrameAnim_field_0x4 ) /*0x76a075*/
     {
-      if ( a2 >= *((_DWORD *)this + 2) ) /*0x76a081*/
-        v3 = *((_DWORD *)this + 2); /*0x76a083*/
+      if ( a2 >= this->MSFrameAnim_field_0x8 ) /*0x76a081*/
+        v3 = this->MSFrameAnim_field_0x8; /*0x76a083*/
       for ( i = 0; i < v3; ++i ) /*0x76a089*/
-        ComPtr::Set(&v6[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4)); /*0x76a096*/
+        ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->MSFrameAnim_field_0x4 + 8 * i + 4)); /*0x76a096*/
       if ( *(this + 13) ) /*0x76a0a0*/
       {
-        v11 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1); /*0x76a0a7*/
+        v11 = (void (__thiscall ***)(_DWORD, int))this->MSFrameAnim_field_0x4; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
-        *((_DWORD *)this + 1) = 0; /*0x76a0b4*/
+        this->MSFrameAnim_field_0x4 = 0; /*0x76a0b4*/
       }
       v3 = a2; /*0x76a0bb*/
     }
-    *((_DWORD *)this + 1) = v6; /*0x76a0ca*/
-    *((_DWORD *)this + 2) = v3; /*0x76a0cd*/
+    this->MSFrameAnim_field_0x4 = v6; /*0x76a0ca*/
+    this->MSFrameAnim_field_0x8 = v3; /*0x76a0cd*/
     *(this + 13) = a3 == 0; /*0x76a0d0*/
   }
   else
   {
     (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x76a0d9*/
   }
-  v12 = *((_DWORD *)this + 2); /*0x76a0dc*/
-  if ( v12 < *((_DWORD *)this + 4) ) /*0x76a0e4*/
-    *((_DWORD *)this + 4) = v12; /*0x76a0e6*/
+  v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
+  if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/
+    this->MSFrameAnim_field_0x10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
 }
 }
@@ -332,30 +332,30 @@ char __thiscall MSFrameAnim::sub_76A2B0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
-    if ( *((_DWORD *)this + 1) ) /*0x76a2e8*/
+    if ( this->MSFrameAnim_field_0x4 ) /*0x76a2e8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x76a2ef*/
+      v5 = this->MSFrameAnim_field_0x8; /*0x76a2ef*/
       if ( a2 < v5 ) /*0x76a2f4*/
         v5 = a2; /*0x76a2f6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x76a2fc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSFrameAnim_field_0x4 + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
       if ( *((_BYTE *)this + 13) ) /*0x76a30e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a319*/
-        *((_DWORD *)this + 1) = 0; /*0x76a321*/
+        this->MSFrameAnim_field_0x4 = 0; /*0x76a321*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x76a32a*/
-    *((_DWORD *)this + 2) = a2; /*0x76a332*/
+    this->MSFrameAnim_field_0x4 = v4; /*0x76a32a*/
+    this->MSFrameAnim_field_0x8 = a2; /*0x76a332*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x76a335*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x76a33e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x76a341*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x76a349*/
-    *((_DWORD *)this + 4) = v7; /*0x76a34b*/
+  v7 = this->MSFrameAnim_field_0x8; /*0x76a341*/
+  if ( v7 < this->MSFrameAnim_field_0x10 ) /*0x76a349*/
+    this->MSFrameAnim_field_0x10 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/
 }
 }

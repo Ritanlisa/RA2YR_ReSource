@@ -20,12 +20,6 @@ int __fastcall COMObject_FindNextActive(_BYTE *a1)
 }
 }
 
-// 0x4E30C0
-int COMObject::Thunk_COMObject_sub_4E30C0()
-{
-return 4;
-}
-
 // 0x4F4240
 int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
@@ -144,4 +138,10 @@ int __thiscall COMObject::QueryInterface2(TClassFactory_VTubeClass__ *this)
   (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 4))(v2); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 }
+}
+
+// 0x4E30C0
+int COMObject::Thunk_COMObject_sub_4E30C0()
+{
+return 4;
 }

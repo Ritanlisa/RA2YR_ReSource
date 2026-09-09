@@ -274,15 +274,15 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
 
   v2 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0df1*/
   v4 = (int *)(this + 64); /*0x4b0dfd*/
-  if ( *(_DWORD *)(this + 64) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0e1c*/
-    || *(_DWORD *)(this + 68) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]
-    || *(_DWORD *)(this + 72) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
+  if ( this->ambientSoundController.AudioController_field_04 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0e1c*/
+    || this->ambientSoundController.AudioController_field_08 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]
+    || this->ambientSoundController.AudioController_field_0C != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
   {
     *v4 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e20*/
-    *(_DWORD *)(this + 68) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0e28*/
+    this->ambientSoundController.AudioController_field_08 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0e28*/
     v5 = *(TechnoClass **)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0e2b*/
     *(_BYTE *)(this + 99) = 0; /*0x4b0e30*/
-    *(_DWORD *)(this + 72) = v5; /*0x4b0e34*/
+    this->ambientSoundController.AudioController_field_0C = v5; /*0x4b0e34*/
     v2 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e37*/
   }
   if ( aP1->field_0 != v2 /*0x4b0e5d*/
@@ -290,22 +290,22 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
     || aP1->field_8 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
   {
     *v4 = aP1->field_0; /*0x4b0e65*/
-    *(_DWORD *)(this + 68) = aP1->field_4; /*0x4b0e6a*/
+    this->ambientSoundController.AudioController_field_08 = aP1->field_4; /*0x4b0e6a*/
     v6 = (IUnknown *)aP1->field_8; /*0x4b0e6d*/
     *(_BYTE *)(this + 99) = 1; /*0x4b0e70*/
-    *(_DWORD *)(this + 72) = v6; /*0x4b0e74*/
+    this->ambientSoundController.AudioController_field_0C = v6; /*0x4b0e74*/
     v9 = *(AbstractClass **)(this + 12); /*0x4b0e7a*/
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x4b0e81*/
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(*(_DWORD *)(this + 12) + 129) ) /*0x4b0e94*/
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(this->vtable3 + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo(this, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)(this + 12) + 144) ) /*0x4b0eb3*/
+    if ( *(_BYTE *)(this->vtable3 + 144) ) /*0x4b0eb3*/
     {
       *v4 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0ec3*/
-      *(_DWORD *)(this + 68) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0ecb*/
-      *(_DWORD *)(this + 72) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0ed3*/
+      this->ambientSoundController.AudioController_field_08 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0ecb*/
+      this->ambientSoundController.AudioController_field_0C = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0ed3*/
       *(_BYTE *)(this + 99) = 0; /*0x4b0ed6*/
     }
   }
@@ -444,14 +444,14 @@ int sub_4B56E0(int a2)
 int __thiscall sub_4B56E0(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b56e9*/
-  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12); /*0x4b56f1*/
-  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16); /*0x4b56f7*/
-  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20); /*0x4b56fd*/
-  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24); /*0x4b5703*/
+  this->vtable3 = *(_DWORD *)(a2 + 12); /*0x4b56f1*/
+  this->uniqueId = *(_DWORD *)(a2 + 16); /*0x4b56f7*/
+  this->abstractFlags = *(_DWORD *)(a2 + 20); /*0x4b56fd*/
+  this->nextArrayIndex = *(_DWORD *)(a2 + 24); /*0x4b5703*/
   *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28); /*0x4b5709*/
   *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29); /*0x4b570f*/
   *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30); /*0x4b5715*/
-  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32); /*0x4b571b*/
+  this->NeedsSaveOrLink = *(_DWORD *)(a2 + 32); /*0x4b571b*/
   this->objectTypeFlags = *(_DWORD *)(a2 + 36); /*0x4b5721*/
   this->owningHouseIndex = *(_DWORD *)(a2 + 40); /*0x4b5727*/
   *(_BYTE *)(this + 44) = *(_BYTE *)(a2 + 44); /*0x4b572d*/
@@ -461,9 +461,9 @@ int __thiscall sub_4B56E0(int this, int a2)
   this->attachedTag = *(_DWORD *)(a2 + 52); /*0x4b5745*/
   this->attachedBomb = *(_DWORD *)(a2 + 56); /*0x4b574b*/
   *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60); /*0x4b5751*/
-  *(_DWORD *)(this + 64) = *(_DWORD *)(a2 + 64); /*0x4b5757*/
+  this->ambientSoundController.AudioController_field_04 = *(_DWORD *)(a2 + 64); /*0x4b5757*/
   *(_BYTE *)(this + 68) = *(_BYTE *)(a2 + 68); /*0x4b575d*/
-  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72); /*0x4b5763*/
+  this->ambientSoundController.AudioController_field_0C = *(_DWORD *)(a2 + 72); /*0x4b5763*/
   *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x4b5769*/
   *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x4b576f*/
   return this; /*0x4b5774*/
@@ -479,14 +479,14 @@ int sub_4B5780(int a2)
 int __thiscall sub_4B5780(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5789*/
-  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12); /*0x4b5791*/
-  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16); /*0x4b5797*/
-  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20); /*0x4b579d*/
-  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24); /*0x4b57a3*/
+  this->vtable3 = *(_DWORD *)(a2 + 12); /*0x4b5791*/
+  this->uniqueId = *(_DWORD *)(a2 + 16); /*0x4b5797*/
+  this->abstractFlags = *(_DWORD *)(a2 + 20); /*0x4b579d*/
+  this->nextArrayIndex = *(_DWORD *)(a2 + 24); /*0x4b57a3*/
   *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28); /*0x4b57a9*/
   *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29); /*0x4b57af*/
   *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30); /*0x4b57b5*/
-  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32); /*0x4b57bb*/
+  this->NeedsSaveOrLink = *(_DWORD *)(a2 + 32); /*0x4b57bb*/
   return this; /*0x4b57c0*/
 }
 }
@@ -1051,7 +1051,7 @@ char __thiscall sub_4B6B80(int this)
   int v2; // edi
   char result; // al
 
-  v2 = *(_DWORD *)(this + 16); /*0x4b6b87*/
+  v2 = this->uniqueId; /*0x4b6b87*/
   *(_BYTE *)(this + 12) = 0; /*0x4b6b8a*/
   if ( v2 > 0 ) /*0x4b6b8f*/
   {
@@ -1062,7 +1062,7 @@ char __thiscall sub_4B6B80(int this)
     }
     while ( v2 ); /*0x4b6b9a*/
   }
-  *(_DWORD *)(this + 16) = 0; /*0x4b6b9c*/
+  this->uniqueId = 0; /*0x4b6b9c*/
   this->owningHouseIndex = 0; /*0x4b6b9f*/
   return result; /*0x4b6ba2*/
 }

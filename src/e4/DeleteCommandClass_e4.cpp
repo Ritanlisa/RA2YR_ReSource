@@ -77,14 +77,14 @@ void __thiscall DeleteCommandClass_28_::sub_53C4C0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x53c4c6*/
-  *(_DWORD *)(this + 16) = 0; /*0x53c4c9*/
+  this->DeleteCommandClass_28_field_0x10 = 0; /*0x53c4c9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x53c4d0*/
   {
     __3_YAXPAX_Z(v2); /*0x53c4d6*/
-    *(_DWORD *)(this + 4) = 0; /*0x53c4de*/
+    this->DeleteCommandClass_28_field_0x4 = 0; /*0x53c4de*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x53c4e1*/
-  *(_DWORD *)(this + 8) = 0; /*0x53c4e4*/
+  this->DeleteCommandClass_28_field_0x8 = 0; /*0x53c4e4*/
 }
 }
 } // namespace gamemd
@@ -96,8 +96,8 @@ unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall DeleteCommandClass_28_::sub_53C4F0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x53c4f0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x53c505*/
+  if ( (unsigned char)this->DeleteCommandClass_28_field_0xC ) /*0x53c4f0*/
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2; /*0x53c505*/
   else
     return 0; /*0x53c4f7*/
 }
@@ -170,21 +170,21 @@ char __thiscall DeleteCommandClass_28_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x53c596*/
     if ( v4 ) /*0x53c59a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x53c5a5*/
+      if ( this->DeleteCommandClass_28_field_0x4 ) /*0x53c5a5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x53c5ac*/
+        v6 = this->DeleteCommandClass_28_field_0x8; /*0x53c5ac*/
         if ( a2 < v6 ) /*0x53c5b1*/
           v6 = a2; /*0x53c5b3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x53c5b9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->DeleteCommandClass_28_field_0x4 + 4 * i - 4) ) /*0x53c5b9*/
           ++i; /*0x53c5be*/
         if ( *((_BYTE *)this + 13) ) /*0x53c5cb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x53c5d6*/
-          *((_DWORD *)this + 1) = 0; /*0x53c5de*/
+          this->DeleteCommandClass_28_field_0x4 = 0; /*0x53c5de*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x53c5e7*/
-      *((_DWORD *)this + 2) = a2; /*0x53c5ef*/
+      this->DeleteCommandClass_28_field_0x4 = v4; /*0x53c5e7*/
+      this->DeleteCommandClass_28_field_0x8 = a2; /*0x53c5ef*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x53c5f2*/
       return 1; /*0x53c5f8*/
     }
@@ -209,13 +209,13 @@ void DeleteCommandClass_28::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DeleteCommandClass_28_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x53c61d*/
+  if ( this->DeleteCommandClass_28_field_0x4 && *(_BYTE *)(this + 13) ) /*0x53c61d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x53c623*/
-    *(_DWORD *)(this + 4) = 0; /*0x53c62b*/
+    this->DeleteCommandClass_28_field_0x4 = 0; /*0x53c62b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x53c62e*/
-  *(_DWORD *)(this + 8) = 0; /*0x53c631*/
+  this->DeleteCommandClass_28_field_0x8 = 0; /*0x53c631*/
 }
 }
 } // namespace gamemd
@@ -231,9 +231,9 @@ int __thiscall DeleteCommandClass_28_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x53c640*/
+  if ( !(unsigned char)this->DeleteCommandClass_28_field_0xC ) /*0x53c640*/
     return 0; /*0x53c648*/
-  v3 = *(_DWORD *)(this + 8); /*0x53c64e*/
+  v3 = this->DeleteCommandClass_28_field_0x8; /*0x53c64e*/
   result = 0; /*0x53c651*/
   if ( v3 <= 0 ) /*0x53c655*/
     return -1; /*0x53c66c*/
@@ -254,8 +254,8 @@ unsigned int DeleteCommandClass_28::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall DeleteCommandClass_28_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x53c680*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x53c695*/
+  if ( (unsigned char)this->DeleteCommandClass_28_field_0xC ) /*0x53c680*/
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2; /*0x53c695*/
   else
     return 0; /*0x53c687*/
 }
@@ -284,30 +284,30 @@ char __thiscall DeleteCommandClass_28_::sub_53C6A0(void *this, int a2, _DWORD *a
     *((_BYTE *)this + 12) = 1; /*0x53c6d2*/
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
-    if ( *((_DWORD *)this + 1) ) /*0x53c6d8*/
+    if ( this->DeleteCommandClass_28_field_0x4 ) /*0x53c6d8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x53c6df*/
+      v5 = this->DeleteCommandClass_28_field_0x8; /*0x53c6df*/
       if ( a2 < v5 ) /*0x53c6e4*/
         v5 = a2; /*0x53c6e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x53c6ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->DeleteCommandClass_28_field_0x4 + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
       if ( *((_BYTE *)this + 13) ) /*0x53c6fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x53c709*/
-        *((_DWORD *)this + 1) = 0; /*0x53c711*/
+        this->DeleteCommandClass_28_field_0x4 = 0; /*0x53c711*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x53c71a*/
-    *((_DWORD *)this + 2) = a2; /*0x53c722*/
+    this->DeleteCommandClass_28_field_0x4 = v4; /*0x53c71a*/
+    this->DeleteCommandClass_28_field_0x8 = a2; /*0x53c722*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x53c725*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x53c72e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x53c731*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x53c739*/
-    *((_DWORD *)this + 4) = v7; /*0x53c73b*/
+  v7 = this->DeleteCommandClass_28_field_0x8; /*0x53c731*/
+  if ( v7 < this->DeleteCommandClass_28_field_0x10 ) /*0x53c739*/
+    this->DeleteCommandClass_28_field_0x10 = v7; /*0x53c73b*/
   return 1; /*0x53c73e*/
 }
 }

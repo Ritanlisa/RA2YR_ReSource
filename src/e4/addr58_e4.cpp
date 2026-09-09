@@ -815,7 +815,7 @@ unsigned int unknown::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall unknown::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x588d10*/
+  if ( (unsigned char)this->unknown_field_0C ) /*0x588d10*/
     return (unsigned int)(a2 - this->m_Position) >> 4; /*0x588d25*/
   else
     return 0; /*0x588d17*/

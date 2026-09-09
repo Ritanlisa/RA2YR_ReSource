@@ -205,7 +205,7 @@ char __thiscall TaskForceClass::GetUnitCount(int this, unsigned __int8 ***aP1)
   if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
-  *(_DWORD *)(this + 156) = 0; /*0x6e844f*/
+  this->TaskForceClass_field_0x9C = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
     sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e8460*/
@@ -223,12 +223,12 @@ char __thiscall TaskForceClass::GetUnitCount(int this, unsigned __int8 ***aP1)
       *(_DWORD *)(this + 8 * (_DWORD)v5 + 168) = v4[1]; /*0x6e84a8*/
       v6 = *(INIClass **)(this + 156); /*0x6e84af*/
       if ( *(_DWORD *)(this + 8 * (_DWORD)v6 + 168) ) /*0x6e84b5*/
-        *(_DWORD *)(this + 156) = &v6->__pad_0[1]; /*0x6e84c1*/
+        this->TaskForceClass_field_0x9C = &v6->__pad_0[1]; /*0x6e84c1*/
     }
     v3 = (INIClass *)((char *)v3 + 1); /*0x6e84c7*/
   }
   while ( (int)v3 < 6 ); /*0x6e84cb*/
-  *(_DWORD *)(this + 152) = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
+  this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[53256],
@@ -257,7 +257,7 @@ char __thiscall TaskForceClass::_vt26(int this, char *a2)
   do /*0x6e857d*/
   {
     sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
-    if ( v3 >= *(_DWORD *)(this + 156) ) /*0x6e854a*/
+    if ( v3 >= this->TaskForceClass_field_0x9C ) /*0x6e854a*/
     {
       INIClass::ClearSection((int)a2, this + 36, (unsigned __int8 *)Buffer); /*0x6e8571*/
     }
@@ -270,7 +270,7 @@ char __thiscall TaskForceClass::_vt26(int this, char *a2)
     v4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (unsigned __int8 *)(this + 36), MEMORY[0x842DC4], *(_DWORD *)(this + 152), 0); /*0x6e8593*/
+  INIClass::SetInt(a2, (unsigned __int8 *)(this + 36), MEMORY[0x842DC4], this->TaskForceClass_field_0x98, 0); /*0x6e8593*/
   return 1; /*0x6e859a*/
 }
 }
@@ -357,25 +357,9 @@ int TaskForceClass::LoadTask(int * a2)
 int __thiscall TaskForceClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e8759*/
-  Power::TimerProcess(*(_DWORD *)(this + 152)); /*0x6e8767*/
-  return Power::TimerProcess(*(_DWORD *)(this + 156)); /*0x6e877a*/
+  Power::TimerProcess(this->TaskForceClass_field_0x98); /*0x6e8767*/
+  return Power::TimerProcess(this->TaskForceClass_field_0x9C); /*0x6e877a*/
 }
-}
-} // namespace gamemd
-
-// 0x6E87D0
-namespace gamemd {
-int TaskForceClass::StubReturn33()
-{
-return 33;
-}
-} // namespace gamemd
-
-// 0x6E87E0
-namespace gamemd {
-int TaskForceClass::StubReturn212()
-{
-return 212;
 }
 } // namespace gamemd
 
@@ -410,5 +394,21 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6e886e*/
   return (TaskForceClass *)Block; /*0x6e8878*/
 }
+}
+} // namespace gamemd
+
+// 0x6E87D0
+namespace gamemd {
+int TaskForceClass::StubReturn33()
+{
+return 33;
+}
+} // namespace gamemd
+
+// 0x6E87E0
+namespace gamemd {
+int TaskForceClass::StubReturn212()
+{
+return 212;
 }
 } // namespace gamemd

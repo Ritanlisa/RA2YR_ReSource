@@ -724,12 +724,12 @@ int sub_7719E0()
 int __thiscall sub_7719E0(_BYTE *this)
 {
   *(this + 12) = 1; /*0x7719e2*/
-  *((_DWORD *)this + 1) = 0; /*0x7719e6*/
-  *((_DWORD *)this + 2) = 0; /*0x7719e9*/
+  this->Items = 0; /*0x7719e6*/
+  this->Capacity = 0; /*0x7719e9*/
   *(this + 13) = 0; /*0x7719ec*/
   *(_DWORD *)this = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7719ef*/
-  *((_DWORD *)this + 5) = 10; /*0x7719f5*/
-  *((_DWORD *)this + 4) = 0; /*0x7719fc*/
+  this->CapacityIncrement = 10; /*0x7719f5*/
+  this->Count = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
 }
 }
@@ -752,7 +752,7 @@ void __thiscall sub_771A00(void *this)
     *((_DWORD *)this + 1) = 0; /*0x771a21*/
   }
   *((_BYTE *)this + 13) = 0; /*0x771a24*/
-  *((_DWORD *)this + 2) = 0; /*0x771a27*/
+  this->VectorClass_field_0x8 = 0; /*0x771a27*/
 }
 }
 } // namespace gamemd
@@ -1706,14 +1706,6 @@ int sub_775B30()
 }
 } // namespace gamemd
 
-// 0x775B40
-namespace gamemd {
-INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x775B50
 namespace gamemd {
 int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
@@ -2440,8 +2432,8 @@ void *__thiscall sub_776EB0(void *this)
   struct _OSVERSIONINFOA VersionInformation; // [esp+8h] [ebp-94h] BYREF
 
   *(_DWORD *)this = 0; /*0x776ec1*/
-  *((_DWORD *)this + 1) = 0; /*0x776ec3*/
-  *((_DWORD *)this + 2) = 0; /*0x776ec6*/
+  this->vtable1 = 0; /*0x776ec3*/
+  this->vtable2 = 0; /*0x776ec6*/
   this->onBridge = 0; /*0x776ec9*/
   this->isFallingDown = 0; /*0x776ecf*/
   VersionInformation.dwOSVersionInfoSize = 148; /*0x776ed5*/
@@ -2449,9 +2441,9 @@ void *__thiscall sub_776EB0(void *this)
   dwBuildNumber = VersionInformation.dwBuildNumber; /*0x776ee7*/
   dwMinorVersion = VersionInformation.dwMinorVersion; /*0x776eeb*/
   *(_DWORD *)this = VersionInformation.dwMajorVersion; /*0x776eef*/
-  *((_DWORD *)this + 2) = dwBuildNumber; /*0x776ef1*/
+  this->vtable2 = dwBuildNumber; /*0x776ef1*/
   dwPlatformId = VersionInformation.dwPlatformId; /*0x776ef4*/
-  *((_DWORD *)this + 1) = dwMinorVersion; /*0x776efd*/
+  this->vtable1 = dwMinorVersion; /*0x776efd*/
   if ( dwPlatformId == 1 ) /*0x776f02*/
   {
     this->onBridge = 1; /*0x776f04*/
@@ -8014,5 +8006,13 @@ char __fastcall sub_77F710(unsigned __int8 a1, char a2)
   }
   return result; /*0x77f72e*/
 }
+}
+} // namespace gamemd
+
+// 0x775B40
+namespace gamemd {
+INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
+{
+return 0;
 }
 } // namespace gamemd

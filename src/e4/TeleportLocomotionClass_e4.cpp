@@ -22,7 +22,7 @@ int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
   v2 = MEMORY[0xA8ED84]; /*0x71804f*/
-  *(_DWORD *)(this + 68) = 0; /*0x718055*/
+  this->Timer.TimeLeft = 0; /*0x718055*/
   *(_DWORD *)(this + 60) = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
   *(_DWORD *)this = &TeleportLocomotionClass::`vftable'; /*0x71805e*/

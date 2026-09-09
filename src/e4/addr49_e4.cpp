@@ -17,9 +17,9 @@ int __thiscall sub_490400(int this)
   COMClass::RegisterAll((_DWORD *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)(this + 368)); /*0x490416*/
   v2 = *(void **)(this + 376); /*0x49041b*/
-  *(_DWORD *)(this + 368) = 0; /*0x490421*/
+  this->ConvertClass_field_0x170 = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
-  *(_DWORD *)(this + 376) = 0; /*0x490434*/
+  this->ConvertClass_field_0x178 = 0; /*0x490434*/
   v4 = this; /*0x49044d*/
   result = (*(int (__thiscall **)(int *, int *))(MEMORY[0x89ECF8] + 16))(&MEMORY[0x89ECF8], &v4); /*0x490451*/
   if ( result != -1 && result < MEMORY[0x89ED08] && result < --MEMORY[0x89ED08] ) /*0x49046d*/
@@ -7182,41 +7182,41 @@ LABEL_44:
   }
   this->attachedBomb = INIClass::ReadInt_Overwrite(v28, unk_81F19C, 0); /*0x49c2fc*/
   INIClass::ReadInt_Overwrite(v28, unk_81F194, 0); /*0x49c2ff*/
-  *((_DWORD *)this + 17) = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
-  *((_DWORD *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
+  this->ambientSoundController.AudioController_field_08 = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
+  this->abstractFlags = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
                             (unsigned __int8 ***)v24,
                             (unsigned __int8 *)v28,
                             (unsigned __int8 *)unk_81F17C,
                             -2);
-  *((_DWORD *)this + 6) = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
+  this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
   this->nextObject = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (unsigned __int8 ***)v24,
                              (unsigned __int8 *)v28,
                              (unsigned __int8 *)unk_81F16C,
                              -2);
   this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
-  *((_DWORD *)this + 18) = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
+  this->ambientSoundController.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
   *((_DWORD *)this + 19) = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
   *((_DWORD *)this + 20) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
-  *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
-  *((_DWORD *)this + 22) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  *((_DWORD *)this + 23) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
+  this->customSound_controller.AudioController_field_04 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
+  this->customSound_controller.AudioController_field_08 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
+  this->customSound_controller.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
   *((_DWORD *)this + 24) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
   this->customSound = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
-  v20 = *((_DWORD *)this + 17); /*0x49c448*/
+  v20 = this->ambientSoundController.AudioController_field_08; /*0x49c448*/
   *((_DWORD *)this + 26) = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
   {
-    *((_DWORD *)this + 16) = 0; /*0x49c550*/
+    this->ambientSoundController.AudioController_field_04 = 0; /*0x49c550*/
     goto LABEL_44; /*0x49c550*/
   }
   v21 = MEMORY[0x89F570] + 76 * v20; /*0x49c486*/
-  *((_DWORD *)this + 16) = *(char *)(v21 + 8); /*0x49c489*/
+  this->ambientSoundController.AudioController_field_04 = *(char *)(v21 + 8); /*0x49c489*/
   *((_DWORD *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
-  for ( j = 0; j < *((_DWORD *)this + 16); ++j ) /*0x49c4a6*/
+  for ( j = 0; j < this->ambientSoundController.AudioController_field_04; ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c4b9*/
     *(_DWORD *)(*((_DWORD *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
@@ -7679,7 +7679,7 @@ char __thiscall SerializeCampaignOptions(char *this)
 
   if ( !*(this + 108) ) /*0x49d68b*/
     return 0; /*0x49d68b*/
-  v3 = *((_DWORD *)this + 17); /*0x49d6a3*/
+  v3 = this->ambientSoundController.AudioController_field_08; /*0x49d6a3*/
   if ( !MEMORY[0x89F578] ) /*0x49d6a8*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
@@ -7689,16 +7689,16 @@ char __thiscall SerializeCampaignOptions(char *this)
   sprintf( /*0x49d70c*/
     Buffer,
     stru_81F218,
-    *((_DWORD *)this + 17),
+    this->ambientSoundController.AudioController_field_08,
     this->attachedBomb,
     *((_DWORD *)this + 26),
-    *((_DWORD *)this + 18),
+    this->ambientSoundController.AudioController_field_0C,
     *((_DWORD *)this + 20),
-    *((_DWORD *)this + 22),
+    this->customSound_controller.AudioController_field_08,
     *((_DWORD *)this + 24),
     *((_DWORD *)this + 19),
-    *((_DWORD *)this + 21),
-    *((_DWORD *)this + 23),
+    this->customSound_controller.AudioController_field_04,
+    this->customSound_controller.AudioController_field_0C,
     this->customSound);
   if ( *((int *)this + 16) > 0 ) /*0x49d719*/
   {
@@ -7722,7 +7722,7 @@ char __thiscall SerializeCampaignOptions(char *this)
       ++v4; /*0x49d79b*/
       v23 += 780; /*0x49d7aa*/
     }
-    while ( v4 < *((_DWORD *)this + 16) ); /*0x49d7ae*/
+    while ( v4 < this->ambientSoundController.AudioController_field_04 ); /*0x49d7ae*/
   }
   strcat(Buffer, a1_0); /*0x49d7d9*/
   v7 = 0; /*0x49d7e7*/

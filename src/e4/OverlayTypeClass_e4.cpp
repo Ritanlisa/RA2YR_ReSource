@@ -88,10 +88,10 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
   *(this + 3) = &OverlayTypeClass::`vftable'; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
-  *((_BYTE *)this + 559) = 1; /*0x5fe310*/
-  *((_BYTE *)this + 560) = 0; /*0x5fe317*/
-  *((_BYTE *)this + 562) = 1; /*0x5fe31d*/
-  *((_BYTE *)this + 565) = 0; /*0x5fe324*/
+  this->RadarInvisible = 1; /*0x5fe310*/
+  this->Selectable = 0; /*0x5fe317*/
+  this->Insignificant = 1; /*0x5fe31d*/
+  this->AllowCellContent = 0; /*0x5fe324*/
   v3 = MEMORY[0xA83D90]; /*0x5fe32a*/
   if ( (int)MEMORY[0xA83D90] < MEMORY[0xA83D88] /*0x5fe368*/
     || (MEMORY[0xA83D8D] || !MEMORY[0xA83D88])
@@ -309,14 +309,14 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( this->IsVeinholeMonster ) /*0x5fe8c9*/
   {
     v14 = *(AnimTypeClass **)(this + 664); /*0x5fe8d3*/
-    *(_DWORD *)(this + 156) = 6; /*0x5fe8d9*/
+    this->Armor = 6; /*0x5fe8d9*/
     if ( !v14 ) /*0x5fe8e5*/
       this->CellAnim = 5; /*0x5fe8e7*/
   }
-  if ( !*(_BYTE *)(this + 556) && !this->DrawFlat ) /*0x5fe8fb*/
+  if ( !this->Theater && !this->DrawFlat ) /*0x5fe8fb*/
   {
     _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x5fe917*/
-    *(_DWORD *)(this + 164) = SearchMIXFile(Buffer, 1); /*0x5fe92d*/
+    this->Image = SearchMIXFile(Buffer, 1); /*0x5fe92d*/
   }
   Coord = INIClass::GetCoord( /*0x5fe947*/
             aP1,
@@ -556,7 +556,7 @@ void *__thiscall sub_5FEDE0(int this)
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
-    if ( *(_BYTE *)(this + 556) ) /*0x5fee13*/
+    if ( this->Theater ) /*0x5fee13*/
     {
       _makepath( /*0x5fee4f*/
         Buffer,
@@ -565,16 +565,16 @@ void *__thiscall sub_5FEDE0(int this)
         (const char *)(this + 504),
         (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174));
     }
-    else if ( *(_BYTE *)(this + 567) ) /*0x5fee59*/
+    else if ( this->NewTheater ) /*0x5fee59*/
     {
       _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x5fee90*/
     }
     CCFileClass::Construct(v4, Buffer); /*0x5fee9f*/
     EntireFile = CCFileClass::ReadEntireFile(v4); /*0x5feead*/
-    *(_DWORD *)(this + 164) = EntireFile; /*0x5feeb1*/
+    this->Image = EntireFile; /*0x5feeb1*/
     if ( EntireFile ) /*0x5feeb7*/
-      *(_BYTE *)(this + 168) = 1; /*0x5feeb9*/
+      this->ImageAllocated = 1; /*0x5feeb9*/
     v4[0] = &CCFileClass::`vftable'; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
@@ -584,18 +584,6 @@ void *__thiscall sub_5FEDE0(int this)
   }
   return result; /*0x5feeed*/
 }
-}
-
-// 0x5FEF00
-int OverlayTypeClass::GetTypeIdentifier()
-{
-return 21;
-}
-
-// 0x5FEF10
-int OverlayTypeClass::GetObjectSize()
-{
-return 700;
 }
 
 // 0x5FEF20
@@ -697,7 +685,19 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
     MEMORY[0xA83D78] = (ParticleSystemTypeClass *)((char *)MEMORY[0xA83D78] + 1); /*0x6441ff*/
     *(_DWORD *)&MEMORY[0xA83D6C]->__pad_0[4 * (_DWORD)v3] = this; /*0x64420b*/
   }
-  *((_BYTE *)this + 564) = 1; /*0x64420e*/
+  this->IsLogic = 1; /*0x64420e*/
   return this; /*0x644217*/
 }
+}
+
+// 0x5FEF00
+int OverlayTypeClass::GetTypeIdentifier()
+{
+return 21;
+}
+
+// 0x5FEF10
+int OverlayTypeClass::GetObjectSize()
+{
+return 700;
 }

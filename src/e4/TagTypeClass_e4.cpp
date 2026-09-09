@@ -19,9 +19,9 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   *((_DWORD *)this + 39) = 0; /*0x6e5b82*/
   *((_DWORD *)this + 40) = 0; /*0x6e5b88*/
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
-  *((_DWORD *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
-  *((_DWORD *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
-  *((_DWORD *)this + 3) = &TagTypeClass::`vftable'; /*0x6e5ba3*/
+  this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5b95*/
+  this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b9c*/
+  this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5ba3*/
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -81,9 +81,9 @@ int __thiscall sub_6E5CA0(int this)
   int v10; // [esp+Ch] [ebp-4h] BYREF
 
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
-  *(_DWORD *)(this + 4) = &TagTypeClass::`vftable'; /*0x6e5cad*/
-  *(_DWORD *)(this + 8) = &TagTypeClass::`vftable'; /*0x6e5cb4*/
-  *(_DWORD *)(this + 12) = &TagTypeClass::`vftable'; /*0x6e5cbb*/
+  this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5cad*/
+  this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5cb4*/
+  this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
   v2 = *(_DWORD **)(this + 160); /*0x6e5cc7*/
   *(_DWORD *)(this + 160) = 0; /*0x6e5ccd*/
@@ -342,22 +342,6 @@ int __stdcall TagTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 } // namespace gamemd
 
-// 0x6E6490
-namespace gamemd {
-int TagTypeClass::GetTypeIdentifier()
-{
-return 45;
-}
-} // namespace gamemd
-
-// 0x6E64A0
-namespace gamemd {
-int TagTypeClass::GetObjectSize()
-{
-return 164;
-}
-} // namespace gamemd
-
 // 0x6E64B0
 namespace gamemd {
 int TagTypeClass::GetAuxField()
@@ -413,5 +397,21 @@ LABEL_6:
   }
   return (TriggerTypeClass *)*((_DWORD *)unk_8B417C + v2); /*0x727b0f*/
 }
+}
+} // namespace gamemd
+
+// 0x6E6490
+namespace gamemd {
+int TagTypeClass::GetTypeIdentifier()
+{
+return 45;
+}
+} // namespace gamemd
+
+// 0x6E64A0
+namespace gamemd {
+int TagTypeClass::GetObjectSize()
+{
+return 164;
 }
 } // namespace gamemd

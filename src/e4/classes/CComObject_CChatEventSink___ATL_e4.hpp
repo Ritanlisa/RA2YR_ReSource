@@ -25,8 +25,6 @@ struct CComObject_CChatEventSink___ATL {
     int DispatchStub_42(int a1, int a2, const char * a3, wchar_t * String);  // 0x7AB0A0
     int EnumDependents(int a1, int a2, int a3, const char * a4, const char * a5);  // 0x7AB170
     int DispatchStub_43(int a1, int a2, int a3, const char * a4, wchar_t * String);  // 0x7AB260
-    int COMStub_Return0(int a1, int a2, int a3, int a4);  // 0x7AB330
-    int StubReturnFalse(int a1, int a2, int a3);  // 0x7AB340
     int DispatchStub_29(int a1, int a2, __time32_t Time);  // 0x7AB350
     int DispatchStub_31(int a1, int a2, unsigned char * a3, int a4);  // 0x7AB3C0
     int DispatchStub_30(int a1, int a2, void * a3, int a4, int a5);  // 0x7AB440
@@ -45,5 +43,7 @@ struct CComObject_CChatEventSink___ATL {
     LONG Release();  // 0x7AC6B0
     int QueryInterface();  // 0x7AC700
     int Check(TechnoTypeClass * aP1);  // 0x7AE5B0
+    int COMStub_Return0(int a1, int a2, int a3, int a4);  // 0x7AB330
+    int StubReturnFalse(int a1, int a2, int a3);  // 0x7AB340
 };
 } // namespace gamemd

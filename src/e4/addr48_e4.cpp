@@ -44,14 +44,6 @@ int __stdcall sub_484A80(int a1)
 }
 } // namespace gamemd
 
-// 0x484F10
-namespace gamemd {
-char sub_484F10(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x484F50
 namespace gamemd {
 int sub_484F50()
@@ -304,10 +296,10 @@ int __thiscall sub_4880F0(int this, int a2)
   if ( !Control::DispatchClick((_DWORD *)this, a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
   (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x488110*/
-  v3 = *(_DWORD *)(this + 16); /*0x488116*/
-  v4 = *(_DWORD *)(this + 20); /*0x488119*/
-  v15 = *(_DWORD *)(this + 12); /*0x48811c*/
-  v5 = *(_DWORD *)(this + 24); /*0x488120*/
+  v3 = this->uniqueId; /*0x488116*/
+  v4 = this->abstractFlags; /*0x488119*/
+  v15 = this->vtable3; /*0x48811c*/
+  v5 = this->nextArrayIndex; /*0x488120*/
   v16 = v3; /*0x488123*/
   v17 = v4; /*0x488127*/
   v18 = v5; /*0x488133*/
@@ -316,11 +308,11 @@ int __thiscall sub_4880F0(int this, int a2)
     v6 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 13); /*0x48814f*/
   else
     v6 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 26); /*0x48815c*/
-  v7 = *(_DWORD *)(this + 16) + 1; /*0x488167*/
-  v15 = *(_DWORD *)(this + 12) + 1; /*0x488168*/
-  v8 = *(_DWORD *)(this + 20); /*0x48816c*/
+  v7 = this->uniqueId + 1; /*0x488167*/
+  v15 = this->vtable3 + 1; /*0x488168*/
+  v8 = this->abstractFlags; /*0x48816c*/
   v16 = v7; /*0x48816f*/
-  v9 = *(_DWORD *)(this + 24) - 1; /*0x488177*/
+  v9 = this->nextArrayIndex - 1; /*0x488177*/
   v17 = v8 - 1; /*0x488178*/
   v18 = v9; /*0x488183*/
   (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], &v15, v6); /*0x48818e*/
@@ -330,11 +322,11 @@ int __thiscall sub_4880F0(int this, int a2)
       v10 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 4); /*0x4881ab*/
     else
       v10 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 8); /*0x4881b8*/
-    v11 = *(_DWORD *)(this + 16) + 1; /*0x4881c3*/
-    v15 = *(_DWORD *)(this + 12) + 1; /*0x4881c4*/
-    v12 = *(_DWORD *)(this + 20); /*0x4881c8*/
+    v11 = this->uniqueId + 1; /*0x4881c3*/
+    v15 = this->vtable3 + 1; /*0x4881c4*/
+    v12 = this->abstractFlags; /*0x4881c8*/
     v16 = v11; /*0x4881cb*/
-    v13 = *(_DWORD *)(this + 24) - 1; /*0x4881d3*/
+    v13 = this->nextArrayIndex - 1; /*0x4881d3*/
     v17 = v12 - 1; /*0x4881d4*/
     v18 = v13; /*0x4881df*/
     (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], &v15, v10); /*0x4881ea*/
@@ -2475,5 +2467,13 @@ void __cdecl sub_48E6E0()
     MEMORY[0x89ED00] = 0; /*0x48e72d*/
   }
 }
+}
+} // namespace gamemd
+
+// 0x484F10
+namespace gamemd {
+char sub_484F10(int a1)
+{
+return 1;
 }
 } // namespace gamemd

@@ -287,18 +287,6 @@ void IPXInterfaceClass::GetQueueSize()
 }
 }
 
-// 0x7B1740
-int IPXInterfaceClass::COMStub_Return0()
-{
-return 0;
-}
-
-// 0x7B1750
-int IPXInterfaceClass::Send(int a1)
-{
-return 0;
-}
-
 // 0x7B1760
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
@@ -800,4 +788,16 @@ DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *Block, char a2
     __3_YAXPAX_Z(Block); /*0x7b2b8b*/
   return (DynamicVector *)Block; /*0x7b2b95*/
 }
+}
+
+// 0x7B1740
+int IPXInterfaceClass::COMStub_Return0()
+{
+return 0;
+}
+
+// 0x7B1750
+int IPXInterfaceClass::Send(int a1)
+{
+return 0;
 }

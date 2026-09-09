@@ -313,10 +313,10 @@ int __thiscall sub_728A00(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
   *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
-  *(_DWORD *)(this + 28) = MEMORY[0xB0F910]; /*0x728a16*/
-  *(_DWORD *)(this + 32) = MEMORY[0xB0F914]; /*0x728a1e*/
-  *(_DWORD *)(this + 36) = MEMORY[0xB0F918]; /*0x728a27*/
-  *(_DWORD *)(this + 40) = MEMORY[0xA8ED84]; /*0x728a30*/
+  this->CurrentState.Players = MEMORY[0xB0F910]; /*0x728a16*/
+  this->CurrentState.AIPlayers = MEMORY[0xB0F914]; /*0x728a1e*/
+  this->CurrentState.GameSpeed = MEMORY[0xB0F918]; /*0x728a27*/
+  this->CurrentState.StartingCredits = MEMORY[0xA8ED84]; /*0x728a30*/
   *(_DWORD *)(this + 48) = 0; /*0x728a33*/
   *(_DWORD *)(this + 52) = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/

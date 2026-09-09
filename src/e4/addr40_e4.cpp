@@ -547,7 +547,7 @@ int __thiscall sub_401FC0(int this)
 {
   _DWORD **i; // esi
 
-  if ( *(_DWORD *)(this + 4) != this ) /*0x401fc8*/
+  if ( this->vtable1 != this ) /*0x401fc8*/
     LinkedList::Init((_DWORD **)this); /*0x401fca*/
   for ( i = (_DWORD **)Queue::GetNext((int *)(this + 36)); i; i = (_DWORD **)Queue::GetNext((int *)(this + 36)) ) /*0x401fdd*/
   {
@@ -982,14 +982,6 @@ void *sub_403210()
   }
   return result; /*0x403305*/
 }
-}
-} // namespace gamemd
-
-// 0x403460
-namespace gamemd {
-int sub_403460()
-{
-return -2147221504;
 }
 } // namespace gamemd
 
@@ -1859,7 +1851,7 @@ int __thiscall sub_404BB0(int this)
       }
     }
     v9 = v2[78]; /*0x404bfd*/
-    if ( v9 && (*(_BYTE *)(this + 24) & 8) == 0 ) /*0x404c0b*/
+    if ( v9 && ((unsigned char)this->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
     {
       *(_DWORD *)(this + 488) = Random::Range(MEMORY[0x886B88], 0, v9 - 1); /*0x404c1b*/
       v5 = 1; /*0x404c21*/
@@ -1914,7 +1906,7 @@ LABEL_29:
     v15 = 0; /*0x404d03*/
     goto LABEL_30; /*0x404d03*/
   }
-  if ( (*(_BYTE *)(this + 24) & 8) == 0 && *(int *)(this + 624) <= 0 ) /*0x404cf0*/
+  if ( ((unsigned char)this->nextArrayIndex & 8) == 0 && *(int *)(this + 624) <= 0 ) /*0x404cf0*/
   {
 LABEL_34:
     v20 = *(_DWORD *)(this + 624); /*0x404d5d*/
@@ -1922,7 +1914,7 @@ LABEL_34:
     *(_DWORD *)(this + 624) = v20 + 1; /*0x404d6b*/
     return v21; /*0x404d71*/
   }
-  if ( (*(_BYTE *)(this + 24) & 8) != 0 ) /*0x404cfa*/
+  if ( ((unsigned char)this->nextArrayIndex & 8) != 0 ) /*0x404cfa*/
     goto LABEL_29; /*0x404cfa*/
   v15 = 1; /*0x404cfc*/
 LABEL_30:
@@ -2062,7 +2054,7 @@ int __thiscall sub_4053E0(int this)
   LODWORD(v2) = *(_DWORD *)(this + 344); /*0x4053e3*/
   if ( !(_DWORD)v2 ) /*0x4053eb*/
   {
-    LODWORD(v2) = *(_DWORD *)(this + 28); /*0x4053ed*/
+    LODWORD(v2) = this->referenceCount; /*0x4053ed*/
     if ( (_DWORD)v2 == 2 ) /*0x4053f3*/
     {
       LODWORD(v2) = Audio::Callback(); /*0x4053f6*/
@@ -2096,7 +2088,7 @@ int __thiscall sub_405430(int this)
     LODWORD(v2) = *(_DWORD *)(this + 344); /*0x405458*/
     if ( !(_DWORD)v2 ) /*0x405460*/
     {
-      LODWORD(v2) = *(_DWORD *)(this + 28); /*0x405462*/
+      LODWORD(v2) = this->referenceCount; /*0x405462*/
       if ( (_DWORD)v2 == 2 ) /*0x405468*/
       {
         LODWORD(v4) = Audio::Callback(); /*0x40546b*/
@@ -5702,14 +5694,6 @@ int __thiscall sub_40A2D0(_DWORD *this)
   }
   return 0; /*0x40a338*/
 }
-}
-} // namespace gamemd
-
-// 0x40A770
-namespace gamemd {
-int sub_40A770()
-{
-return -2147221504;
 }
 } // namespace gamemd
 
@@ -9445,5 +9429,21 @@ void sub_40FFD0()
 {
   MEMORY[0x887698] = 0.0174532925199433 * 45.0; /*0x40ffdc*/
 }
+}
+} // namespace gamemd
+
+// 0x403460
+namespace gamemd {
+int sub_403460()
+{
+return -2147221504;
+}
+} // namespace gamemd
+
+// 0x40A770
+namespace gamemd {
+int sub_40A770()
+{
+return -2147221504;
 }
 } // namespace gamemd

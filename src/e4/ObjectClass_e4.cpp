@@ -55,16 +55,6 @@ int __thiscall ObjectClass::GetCoordsThunk2(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x4264D0
-namespace ra2 {
-namespace game {
-int ObjectClass::COMStub_108()
-{
-return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x483610
 namespace ra2 {
 namespace game {
@@ -1138,9 +1128,9 @@ char *__thiscall sub_556A20(char *this)
   *this = 0x80; /*0x556a29*/
   *(this + 1) = 0x80; /*0x556a2b*/
   *(this + 2) = 0x80; /*0x556a2e*/
-  *((_DWORD *)this + 1) = 0; /*0x556a31*/
-  *((_DWORD *)this + 2) = 16; /*0x556a34*/
-  *((_DWORD *)this + 3) = 0; /*0x556a3b*/
+  this->vtable1 = 0; /*0x556a31*/
+  this->vtable2 = 16; /*0x556a34*/
+  this->vtable3 = 0; /*0x556a3b*/
   v2 = this + 28; /*0x556a3e*/
   v3 = 32; /*0x556a41*/
   do /*0x556a6a*/
@@ -1375,8 +1365,8 @@ int __thiscall ObjectClass::DropAsBomb_Track(#374 *this)
   result = (*(int (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 1); /*0x5f41a1*/
   if ( this ) /*0x5f41a9*/
   {
-    LOBYTE(result) = (*((_BYTE *)this + 20) & 4) != 0; /*0x5f41b5*/
-    if ( (*((_BYTE *)this + 20) & 4) != 0 ) /*0x5f41bb*/
+    LOBYTE(result) = ((unsigned char)this->abstractFlags & 4) != 0; /*0x5f41b5*/
+    if ( ((unsigned char)this->abstractFlags & 4) != 0 ) /*0x5f41bb*/
     {
       if ( !*((_DWORD *)this + 413) ) /*0x5f41bd*/
         WinAPI::Wrapper(-2147467261); /*0x5f41cc*/
@@ -1608,7 +1598,7 @@ int __thiscall ObjectClass::Undeploy(#374 *this)
       && *(_BYTE *)((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this) + 564)
       && (!*(_DWORD *)&HouseClass_Player.__pad_5568[8068]
        || *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 5
-       || (*(int (__stdcall **)(char *))(*((_DWORD *)this + 1) + 16))((char *)this + 4) != -2) )
+       || (*(int (__stdcall **)(char *))(this->vtable1 + 16))((char *)this + 4) != -2) )
     {
       VectorClass::RemoveItem((int *)&stru_87C374.__pad_14B0[8020], (ObjectClass *)this); /*0x5f4dd3*/
     }
@@ -1740,7 +1730,7 @@ LABEL_41:
          || (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 44))(this) == 36 && v6[4].__pad_0[1])
         && (!*(_DWORD *)&HouseClass_Player.__pad_5568[8068]
          || *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 5
-         || (*(int (__stdcall **)(char *))(*((_DWORD *)this + 1) + 16))((char *)this + 4) != -2) )
+         || (*(int (__stdcall **)(char *))(this->vtable1 + 16))((char *)this + 4) != -2) )
       {
         ObjectClass::SetDeployState((ObjectClass *)this, 0); /*0x5f5040*/
       }
@@ -1833,7 +1823,7 @@ int __thiscall ObjectClass::Destroy2(#374 *this)
   v4 = 0; /*0x5f52ac*/
   if ( aP1 ) /*0x5f52b0*/
     goto LABEL_10; /*0x5f52b0*/
-  if ( this && (*((_BYTE *)this + 20) & 1) != 0 ) /*0x5f52c0*/
+  if ( this && ((unsigned char)this->abstractFlags & 1) != 0 ) /*0x5f52c0*/
     v4 = (*(unsigned __int8 (__thiscall **)(#374 *))(*(_DWORD *)this + 808))(this) != 0; /*0x5f52d0*/
   if ( !v3 || !(unsigned __int8)House::IsHumanPlayer((#375 *)v3) && !v4 ) /*0x5f52e3*/
 LABEL_10:
@@ -2022,7 +2012,7 @@ char ObjectClass::Release()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ObjectClass::Release(SimpleDialogControl_OwnerDraw *this)
 {
-  return *((_BYTE *)this + 8); /*0x6241c3*/
+  return (unsigned char)this->vtable2; /*0x6241c3*/
 }
 }
 } // namespace game
@@ -2036,7 +2026,7 @@ int ObjectClass::GetMember01()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::GetMember01(SimpleDialogControl_OwnerDraw *this)
 {
-  return *((_DWORD *)this + 1); /*0x6241d3*/
+  return this->vtable1; /*0x6241d3*/
 }
 }
 } // namespace game
@@ -2782,6 +2772,16 @@ _DWORD *__thiscall ObjectClass::loc_7A2E70(SimpleWonlineDialogControl *this, cha
     __3_YAXPAX_Z(this); /*0x7a2e86*/
   return &this->vfptr; /*0x7a2e90*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4264D0
+namespace ra2 {
+namespace game {
+int ObjectClass::COMStub_108()
+{
+return 0;
 }
 } // namespace game
 } // namespace ra2

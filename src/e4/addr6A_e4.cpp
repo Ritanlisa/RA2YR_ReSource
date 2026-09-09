@@ -18,36 +18,36 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 
   v2 = MEMORY[0xB077F8].field_0; /*0x6a04c1*/
   v4 = (int *)(this + 64); /*0x6a04cd*/
-  if ( *(_DWORD *)(this + 64) != MEMORY[0xB077F8].field_0 /*0x6a04ec*/
-    || *(_DWORD *)(this + 68) != MEMORY[0xB077F8].field_4
-    || *(_DWORD *)(this + 72) != MEMORY[0xB077F8].field_8 )
+  if ( this->ambientSoundController.AudioController_field_04 != MEMORY[0xB077F8].field_0 /*0x6a04ec*/
+    || this->ambientSoundController.AudioController_field_08 != MEMORY[0xB077F8].field_4
+    || this->ambientSoundController.AudioController_field_0C != MEMORY[0xB077F8].field_8 )
   {
     *v4 = MEMORY[0xB077F8].field_0; /*0x6a04f0*/
-    *(_DWORD *)(this + 68) = MEMORY[0xB077F8].field_4; /*0x6a04f8*/
+    this->ambientSoundController.AudioController_field_08 = MEMORY[0xB077F8].field_4; /*0x6a04f8*/
     v5 = (TechnoClass *)MEMORY[0xB077F8].field_8; /*0x6a04fb*/
     *(_BYTE *)(this + 99) = 0; /*0x6a0500*/
-    *(_DWORD *)(this + 72) = v5; /*0x6a0504*/
+    this->ambientSoundController.AudioController_field_0C = v5; /*0x6a0504*/
     v2 = MEMORY[0xB077F8].field_0; /*0x6a0507*/
   }
   if ( aP1->field_0 != v2 || aP1->field_4 != MEMORY[0xB077F8].field_4 || aP1->field_8 != MEMORY[0xB077F8].field_8 ) /*0x6a052d*/
   {
     *v4 = aP1->field_0; /*0x6a0535*/
-    *(_DWORD *)(this + 68) = aP1->field_4; /*0x6a053a*/
+    this->ambientSoundController.AudioController_field_08 = aP1->field_4; /*0x6a053a*/
     v6 = (IUnknown *)aP1->field_8; /*0x6a053d*/
     *(_BYTE *)(this + 99) = 1; /*0x6a0540*/
-    *(_DWORD *)(this + 72) = v6; /*0x6a0544*/
+    this->ambientSoundController.AudioController_field_0C = v6; /*0x6a0544*/
     v9 = *(AbstractClass **)(this + 12); /*0x6a054a*/
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x6a0551*/
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(*(_DWORD *)(this + 12) + 129) ) /*0x6a0564*/
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(this->vtable3 + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo(this, aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)(this + 12) + 144) ) /*0x6a0583*/
+    if ( *(_BYTE *)(this->vtable3 + 144) ) /*0x6a0583*/
     {
       *v4 = MEMORY[0xB077F8].field_0; /*0x6a0593*/
-      *(_DWORD *)(this + 68) = MEMORY[0xB077F8].field_4; /*0x6a059b*/
-      *(_DWORD *)(this + 72) = MEMORY[0xB077F8].field_8; /*0x6a05a3*/
+      this->ambientSoundController.AudioController_field_08 = MEMORY[0xB077F8].field_4; /*0x6a059b*/
+      this->ambientSoundController.AudioController_field_0C = MEMORY[0xB077F8].field_8; /*0x6a05a3*/
       *(_BYTE *)(this + 99) = 0; /*0x6a05a6*/
     }
   }
@@ -819,7 +819,7 @@ char __thiscall sub_6A87F0(int this, int a2, int a3)
   int v5; // ecx
   _DWORD *v6; // eax
 
-  v4 = *(_DWORD *)(this + 84); /*0x6a87f5*/
+  v4 = this->customSound_controller.AudioController_field_04; /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
   v5 = 0; /*0x6a8805*/
@@ -968,7 +968,7 @@ char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
   int v5; // eax
   _DWORD *i; // edx
 
-  v4 = *(_DWORD *)(this + 84); /*0x6aba62*/
+  v4 = this->customSound_controller.AudioController_field_04; /*0x6aba62*/
   v5 = 0; /*0x6aba65*/
   if ( v4 <= 0 ) /*0x6aba6a*/
     return 0; /*0x6aba88*/

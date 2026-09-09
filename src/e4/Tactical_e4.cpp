@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-#include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/Tactical_42_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -146,7 +146,7 @@ char *__thiscall ConstructTacticalSurface(char *this)
     v17[393216] = 0; /*0x42a828*/
   else
     v17 = 0; /*0x42a830*/
-  *((_DWORD *)this + 3) = v17; /*0x42a832*/
+  this->Tactical_field_0xC = v17; /*0x42a832*/
   v17[393216] = 0; /*0x42a835*/
   v18 = 0; /*0x42a83e*/
   *(_DWORD *)(*((_DWORD *)this + 4) + 0x100000) = 0; /*0x42a840*/
@@ -2070,22 +2070,6 @@ int __stdcall Tactical::UpdateMapView(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 } // namespace gamemd
 
-// 0x6DC450
-namespace gamemd {
-int Tactical::StubReturn56()
-{
-return 56;
-}
-} // namespace gamemd
-
-// 0x6DC460
-namespace gamemd {
-int Tactical::StubReturn3608()
-{
-return 3608;
-}
-} // namespace gamemd
-
 // 0x6DC470
 namespace gamemd {
 Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
@@ -2117,9 +2101,9 @@ int __thiscall Tactical_42_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x6e4970*/
+  if ( !(unsigned char)this->Tactical_field_0xC ) /*0x6e4970*/
     return 0; /*0x6e4978*/
-  v3 = *(_DWORD *)(this + 8); /*0x6e497e*/
+  v3 = this->Tactical_field_0x8; /*0x6e497e*/
   result = 0; /*0x6e4981*/
   if ( v3 <= 0 ) /*0x6e4985*/
     return -1; /*0x6e499c*/
@@ -2143,14 +2127,14 @@ void __thiscall Tactical_42_::sub_6E47F0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x6e47f6*/
-  *(_DWORD *)(this + 16) = 0; /*0x6e47f9*/
+  this->Tactical_42_field_0x10 = 0; /*0x6e47f9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x6e4800*/
   {
     __3_YAXPAX_Z(v2); /*0x6e4806*/
-    *(_DWORD *)(this + 4) = 0; /*0x6e480e*/
+    this->Tactical_42_field_0x4 = 0; /*0x6e480e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6e4811*/
-  *(_DWORD *)(this + 8) = 0; /*0x6e4814*/
+  this->Tactical_42_field_0x8 = 0; /*0x6e4814*/
 }
 }
 } // namespace gamemd
@@ -2162,8 +2146,8 @@ unsigned int Tactical_42::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Tactical_42_::sub_6E4820(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6e4820*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x6e4835*/
+  if ( (unsigned char)this->Tactical_42_field_0xC ) /*0x6e4820*/
+    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2; /*0x6e4835*/
   else
     return 0; /*0x6e4827*/
 }
@@ -2236,21 +2220,21 @@ char __thiscall Tactical_42_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6e48c6*/
     if ( v4 ) /*0x6e48ca*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x6e48d5*/
+      if ( this->Tactical_42_field_0x4 ) /*0x6e48d5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x6e48dc*/
+        v6 = this->Tactical_42_field_0x8; /*0x6e48dc*/
         if ( a2 < v6 ) /*0x6e48e1*/
           v6 = a2; /*0x6e48e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x6e48e9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Tactical_42_field_0x4 + 4 * i - 4) ) /*0x6e48e9*/
           ++i; /*0x6e48ee*/
         if ( *((_BYTE *)this + 13) ) /*0x6e48fb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e4906*/
-          *((_DWORD *)this + 1) = 0; /*0x6e490e*/
+          this->Tactical_42_field_0x4 = 0; /*0x6e490e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x6e4917*/
-      *((_DWORD *)this + 2) = a2; /*0x6e491f*/
+      this->Tactical_42_field_0x4 = v4; /*0x6e4917*/
+      this->Tactical_42_field_0x8 = a2; /*0x6e491f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x6e4922*/
       return 1; /*0x6e4928*/
     }
@@ -2275,13 +2259,13 @@ void Tactical_42::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Tactical_42_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x6e494d*/
+  if ( this->Tactical_42_field_0x4 && *(_BYTE *)(this + 13) ) /*0x6e494d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x6e4953*/
-    *(_DWORD *)(this + 4) = 0; /*0x6e495b*/
+    this->Tactical_42_field_0x4 = 0; /*0x6e495b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6e495e*/
-  *(_DWORD *)(this + 8) = 0; /*0x6e4961*/
+  this->Tactical_42_field_0x8 = 0; /*0x6e4961*/
 }
 }
 } // namespace gamemd
@@ -2293,8 +2277,8 @@ unsigned int Tactical_42::InitMap(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Tactical_42_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6e49b0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x6e49c5*/
+  if ( (unsigned char)this->Tactical_42_field_0xC ) /*0x6e49b0*/
+    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2; /*0x6e49c5*/
   else
     return 0; /*0x6e49b7*/
 }
@@ -2323,30 +2307,30 @@ char __thiscall Tactical_42_::sub_6E49D0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6e4a02*/
     if ( !v4 ) /*0x6e4a06*/
       return 0; /*0x6e4a7a*/
-    if ( *((_DWORD *)this + 1) ) /*0x6e4a08*/
+    if ( this->Tactical_42_field_0x4 ) /*0x6e4a08*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x6e4a0f*/
+      v5 = this->Tactical_42_field_0x8; /*0x6e4a0f*/
       if ( a2 < v5 ) /*0x6e4a14*/
         v5 = a2; /*0x6e4a16*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x6e4a1c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Tactical_42_field_0x4 + 4 * i - 4) ) /*0x6e4a1c*/
         ++i; /*0x6e4a21*/
       if ( *((_BYTE *)this + 13) ) /*0x6e4a2e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e4a39*/
-        *((_DWORD *)this + 1) = 0; /*0x6e4a41*/
+        this->Tactical_42_field_0x4 = 0; /*0x6e4a41*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x6e4a4a*/
-    *((_DWORD *)this + 2) = a2; /*0x6e4a52*/
+    this->Tactical_42_field_0x4 = v4; /*0x6e4a4a*/
+    this->Tactical_42_field_0x8 = a2; /*0x6e4a52*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x6e4a55*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6e4a5e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x6e4a61*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x6e4a69*/
-    *((_DWORD *)this + 4) = v7; /*0x6e4a6b*/
+  v7 = this->Tactical_42_field_0x8; /*0x6e4a61*/
+  if ( v7 < this->Tactical_42_field_0x10 ) /*0x6e4a69*/
+    this->Tactical_42_field_0x10 = v7; /*0x6e4a6b*/
   return 1; /*0x6e4a6e*/
 }
 }
@@ -2399,5 +2383,21 @@ VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6e4aeb*/
   return (VectorClass *)Block; /*0x6e4af5*/
 }
+}
+} // namespace gamemd
+
+// 0x6DC450
+namespace gamemd {
+int Tactical::StubReturn56()
+{
+return 56;
+}
+} // namespace gamemd
+
+// 0x6DC460
+namespace gamemd {
+int Tactical::StubReturn3608()
+{
+return 3608;
 }
 } // namespace gamemd

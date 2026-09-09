@@ -5698,21 +5698,21 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4e9285*/
+      if ( this->vtable1 ) /*0x4e9285*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x4e928c*/
+        v6 = this->vtable2; /*0x4e928c*/
         if ( a2 < v6 ) /*0x4e9291*/
           v6 = a2; /*0x4e9293*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e9299*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9299*/
           ++i; /*0x4e929e*/
         if ( *((_BYTE *)this + 13) ) /*0x4e92ab*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
-          *((_DWORD *)this + 1) = 0; /*0x4e92be*/
+          this->vtable1 = 0; /*0x4e92be*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x4e92c7*/
-      *((_DWORD *)this + 2) = a2; /*0x4e92cf*/
+      this->vtable1 = v4; /*0x4e92c7*/
+      this->vtable2 = a2; /*0x4e92cf*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4e92d2*/
       return 1; /*0x4e92d8*/
     }
@@ -5737,13 +5737,13 @@ void HouseClass__vt_03_()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall HouseClass::vt_03_(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4e92fd*/
+  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e92fd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4e9303*/
-    *(_DWORD *)(this + 4) = 0; /*0x4e930b*/
+    this->vtable1 = 0; /*0x4e930b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4e930e*/
-  *(_DWORD *)(this + 8) = 0; /*0x4e9311*/
+  this->vtable2 = 0; /*0x4e9311*/
 }
 }
 } // namespace gamemd
@@ -5759,9 +5759,9 @@ int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4e9320*/
+  if ( !(unsigned char)this->vtable3 ) /*0x4e9320*/
     return 0; /*0x4e9328*/
-  v3 = *(_DWORD *)(this + 8); /*0x4e932e*/
+  v3 = this->vtable2; /*0x4e932e*/
   result = 0; /*0x4e9331*/
   if ( v3 <= 0 ) /*0x4e9335*/
     return -1; /*0x4e934c*/
@@ -5782,8 +5782,8 @@ unsigned int HouseClass__vt_05_(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall HouseClass::vt_05_(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4e9360*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4e9375*/
+  if ( (unsigned char)this->vtable3 ) /*0x4e9360*/
+    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e9375*/
   else
     return 0; /*0x4e9367*/
 }
@@ -5811,21 +5811,21 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4e9e65*/
+      if ( this->vtable1 ) /*0x4e9e65*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x4e9e6c*/
+        v6 = this->vtable2; /*0x4e9e6c*/
         if ( a2 < v6 ) /*0x4e9e71*/
           v6 = a2; /*0x4e9e73*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e9e79*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
         if ( *((_BYTE *)this + 13) ) /*0x4e9e8b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
-          *((_DWORD *)this + 1) = 0; /*0x4e9e9e*/
+          this->vtable1 = 0; /*0x4e9e9e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x4e9ea7*/
-      *((_DWORD *)this + 2) = a2; /*0x4e9eaf*/
+      this->vtable1 = v4; /*0x4e9ea7*/
+      this->vtable2 = a2; /*0x4e9eaf*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
@@ -5850,13 +5850,13 @@ void ParticleSystemClass__vt_03_()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParticleSystemClass::vt_03_(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4e9edd*/
+  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e9edd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4e9ee3*/
-    *(_DWORD *)(this + 4) = 0; /*0x4e9eeb*/
+    this->vtable1 = 0; /*0x4e9eeb*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4e9eee*/
-  *(_DWORD *)(this + 8) = 0; /*0x4e9ef1*/
+  this->vtable2 = 0; /*0x4e9ef1*/
 }
 }
 } // namespace gamemd
@@ -5872,9 +5872,9 @@ int __thiscall ParticleSystemClass::vt_04_(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4e9f00*/
+  if ( !(unsigned char)this->vtable3 ) /*0x4e9f00*/
     return 0; /*0x4e9f08*/
-  v3 = *(_DWORD *)(this + 8); /*0x4e9f0e*/
+  v3 = this->vtable2; /*0x4e9f0e*/
   result = 0; /*0x4e9f11*/
   if ( v3 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
@@ -5895,8 +5895,8 @@ unsigned int ParticleSystemClass__vt_05_(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall ParticleSystemClass::vt_05_(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4e9f40*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4e9f55*/
+  if ( (unsigned char)this->vtable3 ) /*0x4e9f40*/
+    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e9f55*/
   else
     return 0; /*0x4e9f47*/
 }

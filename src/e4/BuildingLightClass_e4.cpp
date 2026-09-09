@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x436900
-namespace gamemd {
-int BuildingLightClass::SD_vt12()
-{
-return 232;
-}
-} // namespace gamemd
-
 // 0x436910
 namespace gamemd {
 int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
@@ -37,14 +29,6 @@ int __stdcall BuildingLightClass::SD_vt06(TechnoTypeClass *aP0, int *a1, int aP2
 {
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4369d4*/
 }
-}
-} // namespace gamemd
-
-// 0x4369E0
-namespace gamemd {
-int BuildingLightClass::SD_vt34()
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -258,9 +242,9 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
   int v29; // [esp+2Ch] [ebp-8h]
   int v30; // [esp+30h] [ebp-4h]
 
-  v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)); /*0x513d3a*/
+  v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(this->vtable3); /*0x513d3a*/
   v26 = v24; /*0x513d3e*/
-  v2 = *(_DWORD *)(this + 12); /*0x513d42*/
+  v2 = this->vtable3; /*0x513d42*/
   if ( *(_DWORD *)(v2 + 1504) != -1 ) /*0x513d4c*/
   {
     v3 = (int *)(v2 + 156); /*0x513d52*/
@@ -268,7 +252,7 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
     v29 = v3[1]; /*0x513d65*/
     v30 = v3[2]; /*0x513d71*/
     GroundHeight = Cell::GetGroundHeight(&v28); /*0x513d7a*/
-    v5 = *(_DWORD *)(this + 12); /*0x513d7c*/
+    v5 = this->vtable3; /*0x513d7c*/
     v6 = (int *)(v5 + 156); /*0x513d8b*/
     v7 = *(_DWORD *)(v5 + 1504) & 7; /*0x513d8d*/
     v8 = *v6; /*0x513d90*/
@@ -283,7 +267,7 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
       v26 = v24 - HIDWORD(MEMORY[0x8871E0]->ShakeScreen); /*0x513ddc*/
   }
   v25 = Math::RoundToInt((double)v24 + *(double *)(this + 96)); /*0x513dec*/
-  v13 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 12) + 4) + 16))(*(_DWORD *)(this + 12) + 4); /*0x513df9*/
+  v13 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->vtable3 + 4) + 16))(this->vtable3 + 4); /*0x513df9*/
   if ( (v13 & 1) != 0 ) /*0x513dfe*/
     v14 = 1.0; /*0x513e00*/
   else
@@ -296,14 +280,14 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
   if ( v18 < 0 ) /*0x513e66*/
   {
     *(_DWORD *)(this + 96) = 0; /*0x513e68*/
-    *(_DWORD *)(this + 100) = 0; /*0x513e6b*/
+    this->customSound = 0; /*0x513e6b*/
     v18 = 0; /*0x513e6e*/
   }
-  v19 = *(_DWORD *)(this + 12); /*0x513e70*/
+  v19 = this->vtable3; /*0x513e70*/
   v20 = *(_BYTE *)(v19 + 116); /*0x513e74*/
   *(_BYTE *)(v19 + 116) = 0; /*0x513e77*/
-  (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), v18); /*0x513e7f*/
-  result = *(_DWORD *)(this + 12); /*0x513e85*/
+  (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(this->vtable3, v18); /*0x513e7f*/
+  result = this->vtable3; /*0x513e85*/
   *(_BYTE *)(result + 116) = v20; /*0x513e8c*/
   v22 = MEMORY[0x8871E0]; /*0x513e8f*/
   if ( v26 < SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) ) /*0x513e9b*/
@@ -329,5 +313,21 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
   *(double *)(this + 96) = v23 * *(double *)&MEMORY[0x8871E0]->HoverDampen; /*0x513f27*/
   return result; /*0x513f2a*/
 }
+}
+} // namespace gamemd
+
+// 0x436900
+namespace gamemd {
+int BuildingLightClass::SD_vt12()
+{
+return 232;
+}
+} // namespace gamemd
+
+// 0x4369E0
+namespace gamemd {
+int BuildingLightClass::SD_vt34()
+{
+return 0;
 }
 } // namespace gamemd

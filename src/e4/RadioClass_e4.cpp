@@ -40,7 +40,7 @@ int RadioClass::ProcessCmd()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RadioClass::ProcessCmd(#374 *this)
 {
-  if ( !*((_BYTE *)this + 129) ) /*0x65aa83*/
+  if ( !this->inLimbo ) /*0x65aa83*/
     (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 640))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 }

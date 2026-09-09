@@ -24,9 +24,9 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
   *(_BYTE *)(this + 3597) = 0; /*0x41c8f4*/
   *(_BYTE *)(this + 3598) = 0; /*0x41c8fa*/
   *(_DWORD *)this = &AircraftTypeClass::`vftable'; /*0x41c900*/
-  *(_DWORD *)(this + 4) = &AircraftTypeClass::`vftable'; /*0x41c906*/
-  *(_DWORD *)(this + 8) = &AircraftTypeClass::`vftable'; /*0x41c90c*/
-  *(_DWORD *)(this + 12) = &AircraftTypeClass::`vftable'; /*0x41c913*/
+  this->Carryall = &AircraftTypeClass::`vftable'; /*0x41c906*/
+  this->Trailer = &AircraftTypeClass::`vftable'; /*0x41c90c*/
+  this->SpawnDelay = &AircraftTypeClass::`vftable'; /*0x41c913*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x41c91a*/
   v3 = MEMORY[0xA8B228]; /*0x41c91f*/
   if ( (int)MEMORY[0xA8B228] < MEMORY[0xA8B220] /*0x41c95d*/
@@ -92,12 +92,6 @@ AircraftClass *__thiscall AircraftTypeClass::ConstructAircraft(IUnknown *this, A
 }
 }
 
-// 0x41CB60
-char AircraftTypeClass::StubReturnFalse()
-{
-return 0;
-}
-
 // 0x41CB70
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
@@ -113,12 +107,6 @@ int *__stdcall AircraftTypeClass::_vt36(int a1)
   }
   return &MEMORY[0x889F20]; /*0x41cbc8*/
 }
-}
-
-// 0x41CBE0
-char AircraftTypeClass::GetDimensions(int a1, int a2)
-{
-return 0;
 }
 
 // 0x41CC20
@@ -345,4 +333,16 @@ int AircraftTypeClass::_vt45()
 {
   return MEMORY[0x8871E0][1].?; /*0x71212b*/
 }
+}
+
+// 0x41CB60
+char AircraftTypeClass::StubReturnFalse()
+{
+return 0;
+}
+
+// 0x41CBE0
+char AircraftTypeClass::GetDimensions(int a1, int a2)
+{
+return 0;
 }

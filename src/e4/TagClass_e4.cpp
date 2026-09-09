@@ -345,22 +345,6 @@ int __stdcall TagClass::SaveTag(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 } // namespace gamemd
 
-// 0x6E5890
-namespace gamemd {
-int TagClass::StubReturn56()
-{
-return 56;
-}
-} // namespace gamemd
-
-// 0x6E58A0
-namespace gamemd {
-int TagClass::StubReturn44()
-{
-return 44;
-}
-} // namespace gamemd
-
 // 0x6E58B0
 namespace gamemd {
 TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
@@ -436,5 +420,21 @@ int __thiscall TagClass_Unlink(int *this)
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 }
+}
+} // namespace gamemd
+
+// 0x6E5890
+namespace gamemd {
+int TagClass::StubReturn56()
+{
+return 56;
+}
+} // namespace gamemd
+
+// 0x6E58A0
+namespace gamemd {
+int TagClass::StubReturn44()
+{
+return 44;
 }
 } // namespace gamemd

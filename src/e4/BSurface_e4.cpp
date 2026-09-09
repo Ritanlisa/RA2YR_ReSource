@@ -73,12 +73,6 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
 }
 }
 
-// 0x4114F0
-char BSurface::Stub(int a1, int a2)
-{
-return 1;
-}
-
 // 0x411630
 int BSurface::GetBytesPerPixel()
 {
@@ -141,12 +135,12 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
   int v21; // ebp
   int v22; // eax
 
-  if ( !*(_DWORD *)(this + 4) ) /*0x7b8c66*/
+  if ( !this->Width ) /*0x7b8c66*/
     return 0; /*0x7b8e70*/
   v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
   if ( v2 /*0x7b8c9a*/
-    && (*(__int16 *)(*(_DWORD *)(this + 4) + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2)
-     || *(__int16 *)(*(_DWORD *)(this + 4) + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 68) + 128))(*(_DWORD *)(this + 68))) )
+    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2)
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 68) + 128))(*(_DWORD *)(this + 68))) )
   {
     v3 = *(void (__thiscall ****)(_DWORD, int))(this + 68); /*0x7b8c9c*/
     if ( v3 ) /*0x7b8ca1*/
@@ -155,8 +149,8 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
   }
   v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
   if ( v4 /*0x7b8cd7*/
-    && (*(__int16 *)(*(_DWORD *)(this + 4) + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4)
-     || *(__int16 *)(*(_DWORD *)(this + 4) + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 128))(*(_DWORD *)(this + 88))) )
+    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4)
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 128))(*(_DWORD *)(this + 88))) )
   {
     v5 = *(void (__thiscall ****)(_DWORD, int))(this + 88); /*0x7b8cd9*/
     if ( v5 ) /*0x7b8cde*/
@@ -165,8 +159,8 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
   }
   v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
   if ( v6 /*0x7b8d14*/
-    && (*(__int16 *)(*(_DWORD *)(this + 4) + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 124))(v6)
-     || *(__int16 *)(*(_DWORD *)(this + 4) + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 108) + 128))(*(_DWORD *)(this + 108))) )
+    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 124))(v6)
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 108) + 128))(*(_DWORD *)(this + 108))) )
   {
     v7 = *(void (__thiscall ****)(_DWORD, int))(this + 108); /*0x7b8d16*/
     if ( v7 ) /*0x7b8d1b*/
@@ -180,7 +174,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
       if ( v8 ) /*0x7b8d46*/
       {
-        v9 = *(_DWORD *)(this + 4); /*0x7b8d4b*/
+        v9 = this->Width; /*0x7b8d4b*/
         v10 = *(__int16 *)(v9 + 4); /*0x7b8d50*/
         v11 = *(__int16 *)(v9 + 2); /*0x7b8d54*/
         v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8d58*/
@@ -203,7 +197,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
       if ( v13 ) /*0x7b8da4*/
       {
-        v14 = *(_DWORD *)(this + 4); /*0x7b8da6*/
+        v14 = this->Width; /*0x7b8da6*/
         v15 = *(__int16 *)(v14 + 4); /*0x7b8dac*/
         v16 = *(__int16 *)(v14 + 2); /*0x7b8db0*/
         v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8db6*/
@@ -226,7 +220,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
       if ( v18 ) /*0x7b8e02*/
       {
-        v19 = *(_DWORD *)(this + 4); /*0x7b8e07*/
+        v19 = this->Width; /*0x7b8e07*/
         v20 = *(__int16 *)(v19 + 4); /*0x7b8e0c*/
         v21 = *(__int16 *)(v19 + 2); /*0x7b8e10*/
         v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8e14*/
@@ -318,4 +312,10 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x7bca3e*/
   return this; /*0x7bca43*/
 }
+}
+
+// 0x4114F0
+char BSurface::Stub(int a1, int a2)
+{
+return 1;
 }

@@ -32,12 +32,10 @@ struct MPCooperative {
     char GetMapData();  // 0x5C3220
     int ReceiveMessage();  // 0x5C34F0
     int HandleEvent();  // 0x5C35F0
-    char StubReturnFalse();  // 0x5C3700
     void LoadSettings(HWND hWnd, int a3, int a4);  // 0x5C3B10
     int Cleanup();  // 0x5C3F30
     void SetGameMode();  // 0x5C3F80
     char ProcessChat();  // 0x5C4110
-    int COMStub_Ret2();  // 0x5C42C0
     char UpdateMovieScore();  // 0x5C42D0
     void ShowScoreScreen(int a2);  // 0x5C44E0
     int checkVictory();  // 0x5C4670
@@ -71,5 +69,7 @@ struct MPCooperative {
     unsigned int * applyVoteResult(int a2, int a3);  // 0x5C59E0
     char Stub();  // 0x5D6360
     int finalizeSession();  // 0x696F30
+    char StubReturnFalse();  // 0x5C3700
+    int COMStub_Ret2();  // 0x5C42C0
 };
 } // namespace gamemd

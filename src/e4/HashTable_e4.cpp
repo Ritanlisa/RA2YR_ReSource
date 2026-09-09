@@ -45,7 +45,7 @@ void __thiscall HashTable_Grow2(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x624fc8*/
+  if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x624fc8*/
   {
     v2 = *(this + 2); /*0x624fd0*/
     v3 = (_DWORD *)*this; /*0x624fd3*/
@@ -158,7 +158,7 @@ char __thiscall HashTable::RemoveAndResize(_DWORD *this, _DWORD *a2, _BYTE *a3)
     if ( v11 || v12 ) /*0x625143*/
     {
       v13 = *(this + 2); /*0x62514c*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x62515e*/
+      if ( v13 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x62515e*/
       {
         v14 = (int *)*this; /*0x625167*/
         v35 = (int *)*this; /*0x62516b*/
@@ -221,7 +221,7 @@ LABEL_23:
     if ( v33 <= *((double *)this + 4) ) /*0x625248*/
     {
       v23 = *(this + 2); /*0x62524e*/
-      if ( v23 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625260*/
+      if ( v23 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x625260*/
       {
         v24 = *(this + 3); /*0x625262*/
         v25 = (int *)*this; /*0x625265*/
@@ -284,7 +284,7 @@ void __thiscall HashTable_Shrink2(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = *(this + 2); /*0x625785*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625797*/
+  if ( v2 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x625797*/
   {
     v3 = (int *)*this; /*0x6257a0*/
     v4 = *(this + 3); /*0x6257a3*/
@@ -346,7 +346,7 @@ void __thiscall HashTable_Rebuild2(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = *(this + 2); /*0x625835*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625847*/
+  if ( v2 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x625847*/
   {
     v3 = (int *)*this; /*0x625850*/
     v4 = *(this + 3); /*0x625853*/
@@ -527,7 +527,7 @@ void __thiscall HashTable::Clear(int this)
     if ( v11 || v12 ) /*0x6b95ed*/
     {
       v13 = this->HashTable_field_0x08; /*0x6b95f6*/
-      if ( v13 > this->HashTable_field_0x30 && *(_BYTE *)(this + 20) != 1 ) /*0x6b9608*/
+      if ( v13 > this->HashTable_field_0x30 && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x6b9608*/
       {
         v14 = this->HashTable_field_0x0C; /*0x6b960e*/
         v15 = *(int **)this; /*0x6b9611*/
@@ -596,7 +596,7 @@ LABEL_23:
   {
     do /*0x6b9725*/
     {
-      if ( *(_BYTE *)(this + 20) ) /*0x6b970f*/
+      if ( (unsigned char)this->HashTable_field_0x14 ) /*0x6b970f*/
         break; /*0x6b9714*/
       HashTable::RebuildEx((_DWORD *)this); /*0x6b9718*/
     }
@@ -820,7 +820,7 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
     if ( v11 || v12 ) /*0x6bad02*/
     {
       v13 = *(this + 2); /*0x6bad0b*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bad1d*/
+      if ( v13 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x6bad1d*/
       {
         v14 = (AbstractClass *)*this; /*0x6bad26*/
         a2a = (AbstractClass *)*this; /*0x6bad2b*/
@@ -886,7 +886,7 @@ LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x6bae34*/
     {
       v25 = *(this + 2); /*0x6bae3a*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bae4c*/
+      if ( v25 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x6bae4c*/
       {
         v26 = *(this + 3); /*0x6bae52*/
         v27 = (AbstractClass *)*this; /*0x6bae55*/
@@ -951,7 +951,7 @@ void __thiscall HashTable_RebuildEx(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = *(this + 2); /*0x6baef5*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6baf07*/
+  if ( v2 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x6baf07*/
   {
     v3 = (int *)*this; /*0x6baf10*/
     v4 = *(this + 3); /*0x6baf13*/
@@ -1146,7 +1146,7 @@ unsigned int __thiscall HashTable_CleanupAndResize(_DWORD *this)
   v6 = *(this + 2); /*0x7aceab*/
   for ( *(this + 1) = 0; v6 > result; v6 = *(this + 2) ) /*0x7aceb7*/
   {
-    if ( *((_BYTE *)this + 20) ) /*0x7acebd*/
+    if ( (unsigned char)this->HashTable_field_0x14 ) /*0x7acebd*/
       break; /*0x7acec2*/
     if ( v6 > result ) /*0x7aceca*/
     {
@@ -1232,7 +1232,7 @@ unsigned int __thiscall HashTable_Rebuild(_DWORD *this)
   v6 = *(this + 2); /*0x7acfbe*/
   for ( *(this + 1) = 0; v6 > result; v6 = *(this + 2) ) /*0x7acfca*/
   {
-    if ( *((_BYTE *)this + 20) ) /*0x7acfd0*/
+    if ( (unsigned char)this->HashTable_field_0x14 ) /*0x7acfd0*/
       break; /*0x7acfd5*/
     if ( v6 > result ) /*0x7acfdd*/
     {
@@ -1375,7 +1375,7 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
     if ( v11 || v12 ) /*0x7add8f*/
     {
       v13 = *(this + 2); /*0x7add98*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7addaa*/
+      if ( v13 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7addaa*/
       {
         v14 = (AbstractClass *)*this; /*0x7addb3*/
         a2a = (AbstractClass *)*this; /*0x7addb8*/
@@ -1441,7 +1441,7 @@ LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x7adeaf*/
     {
       v25 = *(this + 2); /*0x7adeb5*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7adec7*/
+      if ( v25 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7adec7*/
       {
         v26 = *(this + 3); /*0x7adecd*/
         v27 = (AbstractClass *)*this; /*0x7aded0*/
@@ -1548,7 +1548,7 @@ char __thiscall HashTable::Lookup(_DWORD *this, ObjectClass *aP1, TechnoTypeClas
     if ( v11 || v12 ) /*0x7ae2a3*/
     {
       v13 = *(this + 2); /*0x7ae2ac*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7ae2be*/
+      if ( v13 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7ae2be*/
       {
         v14 = *(this + 3); /*0x7ae2c0*/
         v15 = (AbstractClass *)*this; /*0x7ae2c3*/
@@ -1612,7 +1612,7 @@ LABEL_23:
     if ( v32 <= *((double *)this + 4) ) /*0x7ae3a9*/
     {
       v23 = *(this + 2); /*0x7ae3af*/
-      if ( v23 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7ae3c1*/
+      if ( v23 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7ae3c1*/
       {
         v24 = (AbstractClass *)*this; /*0x7ae3ca*/
         aP2b = (AbstractClass *)*this; /*0x7ae3ce*/
@@ -1674,7 +1674,7 @@ void __thiscall HashTable_Grow(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x7ae518*/
+  if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7ae518*/
   {
     v2 = *(this + 2); /*0x7ae520*/
     v3 = (_DWORD *)*this; /*0x7ae523*/
@@ -1785,7 +1785,7 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
     if ( v11 || v12 ) /*0x7aea12*/
     {
       v13 = *(this + 2); /*0x7aea1b*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aea2d*/
+      if ( v13 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7aea2d*/
       {
         v14 = (int *)*this; /*0x7aea36*/
         v39 = (int *)*this; /*0x7aea3b*/
@@ -1851,7 +1851,7 @@ LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x7aeb44*/
     {
       v25 = *(this + 2); /*0x7aeb4a*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aeb5c*/
+      if ( v25 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7aeb5c*/
       {
         v26 = *(this + 3); /*0x7aeb62*/
         v27 = (int *)*this; /*0x7aeb65*/
@@ -1916,7 +1916,7 @@ void __thiscall sub_7AEC00(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = *(this + 2); /*0x7aec05*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aec17*/
+  if ( v2 > *(this + 12) && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7aec17*/
   {
     v3 = (int *)*this; /*0x7aec20*/
     v4 = *(this + 3); /*0x7aec23*/

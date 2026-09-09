@@ -336,17 +336,17 @@ bool __thiscall Cell::IsBuildable(
     v10 = *(char *)(this + 283); /*0x4834ef*/
     if ( aP6 == (IUnknown *)v10 ) /*0x4834f8*/
     {
-      if ( (*(_DWORD *)(this + 320) & 0x100) != 0 && !(_BYTE)aP7 ) /*0x48351c*/
+      if ( (this->Cell_field_0x140 & 0x100) != 0 && !(_BYTE)aP7 ) /*0x48351c*/
         return 0; /*0x483524*/
     }
-    else if ( (*(_DWORD *)(this + 320) & 0x100) == 0 || aP6 != (IUnknown *)(v10 + 4) ) /*0x483507*/
+    else if ( (this->Cell_field_0x140 & 0x100) == 0 || aP6 != (IUnknown *)(v10 + 4) ) /*0x483507*/
     {
       return 0; /*0x48350f*/
     }
   }
   v11 = 0; /*0x483527*/
   if ( (aP6 == (IUnknown *)-1 || aP6 == (IUnknown *)(*(char *)(this + 283) + 4)) /*0x483542*/
-    && (*(_DWORD *)(this + 320) & 0x100) != 0 )
+    && (this->Cell_field_0x140 & 0x100) != 0 )
   {
     v11 = 1; /*0x483546*/
     v12 = *(unsigned __int8 *)(this + 296); /*0x483548*/
@@ -510,10 +510,10 @@ char __thiscall Cell_IsBuildableAdvanced(int this)
 
   if ( !Type::CheckAmbiguity(&MEMORY[0x87F7E8], this, 1) ) /*0x486ffc*/
     return 1; /*0x487009*/
-  v3 = *(_DWORD *)(this + 56); /*0x48700a*/
+  v3 = this->Cell_field_0x38; /*0x48700a*/
   if ( v3 >= 0 && v3 < MEMORY[0xA8ED38] && !*(_BYTE *)(*((_DWORD *)MEMORY[0xA8ED2C] + v3) + 773) /*0x48703f*/
     || *(_BYTE *)(this + 284)
-    || (*(_DWORD *)(this + 320) & 0x500) != 0 )
+    || (this->Cell_field_0x140 & 0x500) != 0 )
   {
     return 0; /*0x48703f*/
   }
@@ -725,7 +725,7 @@ int Cell::GetSlopeIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Cell_GetSlopeIndex(int this)
 {
-  return *(char *)(this + 283) + 4 * ((*(_DWORD *)(this + 320) >> 7) & 1); /*0x487d66*/
+  return *(char *)(this + 283) + 4 * ((this->Cell_field_0x140 >> 7) & 1); /*0x487d66*/
 }
 }
 } // namespace gamemd
@@ -1638,7 +1638,7 @@ Cell *__thiscall Cell::Clear(_WORD *this)
 {
   *this = 0; /*0x5a9942*/
   *(this + 1) = 0; /*0x5a9947*/
-  *((_DWORD *)this + 1) = -1; /*0x5a994d*/
+  this->Cell_field_0x4 = -1; /*0x5a994d*/
   return (Cell *)this; /*0x5a9954*/
 }
 }

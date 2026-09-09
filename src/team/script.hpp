@@ -127,6 +127,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadTypeData(int a1, int a2);  // 0x691d90
     int ReadINI(int a1, int a2);  // 0x6e8340
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x691DE0
+    ScriptTypeClass * ddtor(void ** Block, char a2);  // 0x691FA0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

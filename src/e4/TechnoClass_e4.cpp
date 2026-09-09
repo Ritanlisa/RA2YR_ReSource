@@ -389,7 +389,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
     v11 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10052])++; /*0x6f3216*/
     *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10040] + 4 * v11) = this; /*0x6f3225*/
   }
-  *((_BYTE *)this + 20) |= 1u; /*0x6f3237*/
+  (unsigned char)this->abstractFlags |= 1u; /*0x6f3237*/
   *(this + 83) = aP1; /*0x6f3241*/
   memset(this + 193, 0, 0x20u); /*0x6f3247*/
   *((_WORD *)this + 484) = Random::State(&MEMORY[0xA8B230]->random[1]); /*0x6f3259*/
@@ -616,9 +616,9 @@ int __thiscall TechnoClass::DTOR(int this)
 
   v2 = *(_DWORD **)(this + 1300); /*0x6f4507*/
   *(_DWORD *)this = &TechnoClass::`vftable'; /*0x6f450d*/
-  *(_DWORD *)(this + 4) = &TechnoClass::`vftable'; /*0x6f4515*/
-  *(_DWORD *)(this + 8) = &TechnoClass::`vftable'; /*0x6f451c*/
-  *(_DWORD *)(this + 12) = &off_7F4934; /*0x6f4523*/
+  this->vtable1 = &TechnoClass::`vftable'; /*0x6f4515*/
+  this->vtable2 = &TechnoClass::`vftable'; /*0x6f451c*/
+  this->vtable3 = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
@@ -686,7 +686,7 @@ int __thiscall TechnoClass::DTOR(int this)
     (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6f468b*/
     *(_DWORD *)(this + 304) = 0; /*0x6f4691*/
   }
-  *(_DWORD *)(this + 1136) = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
+  this->attackedTargets = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
   AbstractClassVector::ddtor(this + 1136); /*0x6f46a3*/
   v13 = *(void **)(this + 1116); /*0x6f46a8*/
   this->currentTargets = &VectorClass<AbstractClass *>::`vftable'; /*0x6f46ae*/
@@ -708,11 +708,11 @@ int __thiscall TechnoClass::DTOR(int this)
   *(_DWORD *)(this + 1096) = 0; /*0x6f4716*/
   nullsub_69(this + 336); /*0x6f471c*/
   *(_DWORD *)this = &RadioClass::`vftable'; /*0x6f4721*/
-  *(_DWORD *)(this + 4) = &RadioClass::`vftable'; /*0x6f4727*/
-  *(_DWORD *)(this + 8) = &RadioClass::`vftable'; /*0x6f472e*/
-  *(_DWORD *)(this + 12) = &RadioClass::`vftable'; /*0x6f4735*/
+  this->vtable1 = &RadioClass::`vftable'; /*0x6f4727*/
+  this->vtable2 = &RadioClass::`vftable'; /*0x6f472e*/
+  this->vtable3 = &RadioClass::`vftable'; /*0x6f4735*/
   v15 = *(void **)(this + 228); /*0x6f473c*/
-  *(_DWORD *)(this + 224) = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
+  this->radioLinks = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
   if ( v15 && *(_BYTE *)(this + 237) ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
@@ -721,9 +721,9 @@ int __thiscall TechnoClass::DTOR(int this)
   *(_BYTE *)(this + 237) = 0; /*0x6f4767*/
   *(_DWORD *)(this + 232) = 0; /*0x6f476d*/
   *(_DWORD *)this = &MissionClass::`vftable'; /*0x6f4775*/
-  *(_DWORD *)(this + 4) = &MissionClass::`vftable'; /*0x6f477b*/
-  *(_DWORD *)(this + 8) = &MissionClass::`vftable'; /*0x6f4782*/
-  *(_DWORD *)(this + 12) = &MissionClass::`vftable'; /*0x6f4789*/
+  this->vtable1 = &MissionClass::`vftable'; /*0x6f477b*/
+  this->vtable2 = &MissionClass::`vftable'; /*0x6f4782*/
+  this->vtable3 = &MissionClass::`vftable'; /*0x6f4789*/
   return ObjectClass::Dtor((_DWORD *)this); /*0x6f4795*/
 }
 }
@@ -769,35 +769,35 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
   v27 = 0; /*0x702d46*/
   v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x702d50*/
   v3 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 132))(v2, this->focus); /*0x702d6b*/
-  if ( *((_BYTE *)this + 144) ) /*0x702d6d*/
+  if ( this->isAliveFlag ) /*0x702d6d*/
   {
-    v4 = (void **)*((_DWORD *)this + 13); /*0x702d77*/
+    v4 = (void **)this->attachedTag; /*0x702d77*/
     if ( v4 ) /*0x702d7c*/
     {
       if ( v28 ) /*0x702d80*/
         TeamClass::Update_0(v4, 6, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702d90*/
     }
   }
-  if ( *((_BYTE *)this + 144) ) /*0x702d95*/
+  if ( this->isAliveFlag ) /*0x702d95*/
   {
-    v5 = (void **)*((_DWORD *)this + 13); /*0x702da3*/
+    v5 = (void **)this->attachedTag; /*0x702da3*/
     if ( v5 && v28 ) /*0x702dac*/
       TeamClass::Update_0(v5, 4, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702dbb*/
-    if ( *((_BYTE *)this + 144) /*0x702dd6*/
+    if ( this->isAliveFlag /*0x702dd6*/
       && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) != 1
-      && *((_BYTE *)this + 144) )
+      && this->isAliveFlag )
     {
-      v6 = (void **)*((_DWORD *)this + 13); /*0x702de0*/
+      v6 = (void **)this->attachedTag; /*0x702de0*/
       if ( v6 && v28 ) /*0x702de9*/
         TeamClass::Update_0(v6, 7, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702df8*/
-      if ( *((_BYTE *)this + 144) ) /*0x702dfd*/
+      if ( this->isAliveFlag ) /*0x702dfd*/
       {
-        v7 = (void **)*((_DWORD *)this + 13); /*0x702e07*/
+        v7 = (void **)this->attachedTag; /*0x702e07*/
         if ( v7 ) /*0x702e0c*/
           TeamClass::Update_0(v7, 48, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702e1c*/
-        if ( *((_BYTE *)this + 144) ) /*0x702e21*/
+        if ( this->isAliveFlag ) /*0x702e21*/
         {
-          v8 = (void **)*((_DWORD *)this + 13); /*0x702e2b*/
+          v8 = (void **)this->attachedTag; /*0x702e2b*/
           if ( v8 ) /*0x702e30*/
             TeamClass::Update_0(v8, 29, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702e3f*/
         }
@@ -1250,16 +1250,6 @@ int __thiscall BuildingClass::_vt300(#377 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x70F040
-namespace ra2 {
-namespace game {
-int TechnoClass::checkMovementRestrictions()
-{
-return -1;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x70F0E0
 namespace ra2 {
 namespace game {
@@ -1560,3 +1550,13 @@ int TechnoClass_DrawVoxel()
 // end truncated pseudocode
 }
 } // namespace gamemd
+
+// 0x70F040
+namespace ra2 {
+namespace game {
+int TechnoClass::checkMovementRestrictions()
+{
+return -1;
+}
+} // namespace game
+} // namespace ra2

@@ -36,9 +36,9 @@ int __thiscall BombClass::AbstractClass(int this)
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   *(_DWORD *)this = &BombClass::`vftable'; /*0x4385e1*/
-  *(_DWORD *)(this + 4) = &BombClass::`vftable'; /*0x4385e7*/
-  *(_DWORD *)(this + 8) = &BombClass::`vftable'; /*0x4385ee*/
-  *(_DWORD *)(this + 12) = &BombClass::`vftable'; /*0x4385f5*/
+  this->vtable1 = &BombClass::`vftable'; /*0x4385e7*/
+  this->vtable2 = &BombClass::`vftable'; /*0x4385ee*/
+  this->vtable3 = &BombClass::`vftable'; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/

@@ -363,21 +363,21 @@ char __thiscall CStreamClass_16_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4a4bb5*/
+      if ( this->CStreamClass_16_field_0x4 ) /*0x4a4bb5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x4a4bbc*/
+        v6 = this->CStreamClass_16_field_0x8; /*0x4a4bbc*/
         if ( a2 < v6 ) /*0x4a4bc1*/
           v6 = a2; /*0x4a4bc3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a4bc9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->CStreamClass_16_field_0x4 + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
         if ( *((_BYTE *)this + 13) ) /*0x4a4bdb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a4be6*/
-          *((_DWORD *)this + 1) = 0; /*0x4a4bee*/
+          this->CStreamClass_16_field_0x4 = 0; /*0x4a4bee*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x4a4bf7*/
-      *((_DWORD *)this + 2) = a2; /*0x4a4bff*/
+      this->CStreamClass_16_field_0x4 = v4; /*0x4a4bf7*/
+      this->CStreamClass_16_field_0x8 = a2; /*0x4a4bff*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4a4c02*/
       return 1; /*0x4a4c08*/
     }
@@ -402,13 +402,13 @@ void CStreamClass_16::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CStreamClass_16_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4a4c2d*/
+  if ( this->CStreamClass_16_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4a4c2d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4a4c33*/
-    *(_DWORD *)(this + 4) = 0; /*0x4a4c3b*/
+    this->CStreamClass_16_field_0x4 = 0; /*0x4a4c3b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4a4c3e*/
-  *(_DWORD *)(this + 8) = 0; /*0x4a4c41*/
+  this->CStreamClass_16_field_0x8 = 0; /*0x4a4c41*/
 }
 }
 } // namespace gamemd
@@ -424,9 +424,9 @@ int __thiscall CStreamClass_16_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4a4c50*/
+  if ( !(unsigned char)this->CStreamClass_16_field_0xC ) /*0x4a4c50*/
     return 0; /*0x4a4c58*/
-  v3 = *(_DWORD *)(this + 8); /*0x4a4c5e*/
+  v3 = this->CStreamClass_16_field_0x8; /*0x4a4c5e*/
   result = 0; /*0x4a4c61*/
   if ( v3 <= 0 ) /*0x4a4c65*/
     return -1; /*0x4a4c7c*/
@@ -447,8 +447,8 @@ unsigned int CStreamClass_16::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CStreamClass_16_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a4c90*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a4ca5*/
+  if ( (unsigned char)this->CStreamClass_16_field_0xC ) /*0x4a4c90*/
+    return (unsigned int)(a2 - this->CStreamClass_16_field_0x4) >> 2; /*0x4a4ca5*/
   else
     return 0; /*0x4a4c97*/
 }

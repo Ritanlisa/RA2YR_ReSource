@@ -2,18 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4C5AA0
-int EMPulseClass::StubReturn52()
-{
-return 52;
-}
-
-// 0x4C5AB0
-int EMPulseClass::StubReturn55()
-{
-return 55;
-}
-
 // 0x4C5AC0
 EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
 {
@@ -51,4 +39,16 @@ EMPulseClass *__fastcall EMPulseClass::CopyTo(AbstractClass *this, AbstractClass
     __3_YAXPAX_Z(this); /*0x4c5b4e*/
   return (EMPulseClass *)this; /*0x4c5b58*/
 }
+}
+
+// 0x4C5AA0
+int EMPulseClass::StubReturn52()
+{
+return 52;
+}
+
+// 0x4C5AB0
+int EMPulseClass::StubReturn55()
+{
+return 55;
 }

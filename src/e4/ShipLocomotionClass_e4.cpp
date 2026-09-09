@@ -110,12 +110,6 @@ int __stdcall ShipLocomotionClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x6A42A0
-int ShipLocomotionClass::StubReturn112()
-{
-return 112;
-}
-
 // 0x6A42B0
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -135,4 +129,10 @@ ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **B
     __3_YAXPAX_Z(Block); /*0x6a42e3*/
   return (ShipLocomotionClass *)Block; /*0x6a42ed*/
 }
+}
+
+// 0x6A42A0
+int ShipLocomotionClass::StubReturn112()
+{
+return 112;
 }

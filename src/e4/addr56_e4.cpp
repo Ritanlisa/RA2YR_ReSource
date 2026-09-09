@@ -1075,14 +1075,6 @@ int __thiscall sub_56B250(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x56C200
-namespace gamemd {
-int sub_56C200()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x56C500
 namespace gamemd {
 void nullsub_167()
@@ -1348,5 +1340,13 @@ char __stdcall sub_56F7A0(_WORD *a1, int a2)
   }
   return v7; /*0x56f86f*/
 }
+}
+} // namespace gamemd
+
+// 0x56C200
+namespace gamemd {
+int sub_56C200()
+{
+return 1;
 }
 } // namespace gamemd

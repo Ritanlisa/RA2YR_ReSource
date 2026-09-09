@@ -161,9 +161,9 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   *(this + 758) = 0; /*0x46bcda*/
   *(this + 759) = 0; /*0x46bce0*/
   *(_DWORD *)this = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  *((_DWORD *)this + 1) = &BulletTypeClass::`vftable'; /*0x46bcec*/
-  *((_DWORD *)this + 2) = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  *((_DWORD *)this + 3) = &BulletTypeClass::`vftable'; /*0x46bcf9*/
+  this->SubjectToWalls = &BulletTypeClass::`vftable'; /*0x46bcec*/
+  this->Dropping = &BulletTypeClass::`vftable'; /*0x46bcf2*/
+  this->Ranged = &BulletTypeClass::`vftable'; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x46bd00*/
   *(this + 564) = 1; /*0x46bd05*/
   *(this + 559) = 1; /*0x46bd0c*/
@@ -347,7 +347,7 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                              (int)a2,
                              (unsigned __int8 *)(this + 36),
                              &unk_81B064,
-                             *(_BYTE *)(this + 748));
+                             (unsigned char)this->Arm);
   if ( (int)INIClass::GetString( /*0x46c1ef*/
               a2,
               (INIClass *)(this + 36),
@@ -471,7 +471,7 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                              this->FirersPalette);
   if ( !this->Proximity ) /*0x46c3f8*/
     ObjectTypeClass::Load2DArt((char *)this); /*0x46c406*/
-  if ( *(_BYTE *)(this + 566) ) /*0x46c40b*/
+  if ( this->Voxel ) /*0x46c40b*/
     VoxelAnimType::LoadAnim((char *)this); /*0x46c417*/
   return 1; /*0x46c41c*/
 }
@@ -646,18 +646,6 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
     *(this + 182) = 0; /*0x46c82e*/
   return result; /*0x46c838*/
 }
-}
-
-// 0x46C850
-int BulletTypeClass::GetTypeIdentifier()
-{
-return 9;
-}
-
-// 0x46C860
-int BulletTypeClass::GetObjectSize()
-{
-return 760;
 }
 
 // 0x46C870
@@ -990,4 +978,16 @@ LABEL_32:
   }
   return (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1); /*0x69fd72*/
 }
+}
+
+// 0x46C850
+int BulletTypeClass::GetTypeIdentifier()
+{
+return 9;
+}
+
+// 0x46C860
+int BulletTypeClass::GetObjectSize()
+{
+return 760;
 }

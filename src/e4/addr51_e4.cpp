@@ -684,12 +684,12 @@ int __thiscall sub_517110(int this)
   {
     v2 = this->objectTypeFlags / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(*(_DWORD *)(this + 12), v8); /*0x517167*/
+    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(this->vtable3, v8); /*0x517167*/
     if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  v6 = *(_DWORD *)(this + 12); /*0x51717f*/
-  *(_DWORD *)(this + 72) = 0; /*0x517182*/
+  v6 = this->vtable3; /*0x51717f*/
+  this->ambientSoundController.AudioController_field_0C = 0; /*0x517182*/
   *(_DWORD *)(this + 76) = 1072693248; /*0x517189*/
   (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/

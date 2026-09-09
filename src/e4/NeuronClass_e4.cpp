@@ -156,21 +156,21 @@ char __thiscall NeuronClass_25_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x43abb5*/
+      if ( this->NeuronClass_25_field_0x4 ) /*0x43abb5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x43abbc*/
+        v6 = this->NeuronClass_25_field_0x8; /*0x43abbc*/
         if ( a2 < v6 ) /*0x43abc1*/
           v6 = a2; /*0x43abc3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x43abc9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->NeuronClass_25_field_0x4 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
         if ( *((_BYTE *)this + 13) ) /*0x43abdb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x43abe6*/
-          *((_DWORD *)this + 1) = 0; /*0x43abee*/
+          this->NeuronClass_25_field_0x4 = 0; /*0x43abee*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x43abf7*/
-      *((_DWORD *)this + 2) = a2; /*0x43abff*/
+      this->NeuronClass_25_field_0x4 = v4; /*0x43abf7*/
+      this->NeuronClass_25_field_0x8 = a2; /*0x43abff*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/
     }
@@ -195,13 +195,13 @@ void NeuronClass_25::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall NeuronClass_25_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x43ac2d*/
+  if ( this->NeuronClass_25_field_0x4 && *(_BYTE *)(this + 13) ) /*0x43ac2d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x43ac33*/
-    *(_DWORD *)(this + 4) = 0; /*0x43ac3b*/
+    this->NeuronClass_25_field_0x4 = 0; /*0x43ac3b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x43ac3e*/
-  *(_DWORD *)(this + 8) = 0; /*0x43ac41*/
+  this->NeuronClass_25_field_0x8 = 0; /*0x43ac41*/
 }
 }
 } // namespace gamemd
@@ -217,9 +217,9 @@ int __thiscall NeuronClass_25_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x43ac50*/
+  if ( !(unsigned char)this->NeuronClass_25_field_0xC ) /*0x43ac50*/
     return 0; /*0x43ac58*/
-  v3 = *(_DWORD *)(this + 8); /*0x43ac5e*/
+  v3 = this->NeuronClass_25_field_0x8; /*0x43ac5e*/
   result = 0; /*0x43ac61*/
   if ( v3 <= 0 ) /*0x43ac65*/
     return -1; /*0x43ac7c*/
@@ -240,8 +240,8 @@ unsigned int NeuronClass_25::Fire(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall NeuronClass_25_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x43ac90*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x43aca5*/
+  if ( (unsigned char)this->NeuronClass_25_field_0xC ) /*0x43ac90*/
+    return (unsigned int)(a2 - this->NeuronClass_25_field_0x4) >> 2; /*0x43aca5*/
   else
     return 0; /*0x43ac97*/
 }

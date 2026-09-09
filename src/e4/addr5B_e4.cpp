@@ -208,7 +208,7 @@ double *__thiscall sub_5B1D90(double *this)
 
   *(_DWORD *)this = 0; /*0x5b1d9b*/
   v4 = 0; /*0x5b1da1*/
-  *((_DWORD *)this + 1) = 1072693248; /*0x5b1da9*/
+  this->vtable1 = 1072693248; /*0x5b1da9*/
   v2 = sub_5CAF70((LONG *)&v4); /*0x5b1db5*/
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
@@ -789,32 +789,32 @@ void __thiscall sub_5B3F50(void *this)
   }
   if ( this ) /*0x5b3f9c*/
   {
-    v4 = *((_DWORD *)this + 1); /*0x5b3f9e*/
+    v4 = this->Previous; /*0x5b3f9e*/
     if ( v4 ) /*0x5b3fa3*/
     {
       v5 = *((_DWORD *)this + 2); /*0x5b3fa5*/
       if ( v5 ) /*0x5b3faa*/
       {
         *(_DWORD *)(v5 + 4) = v4; /*0x5b3fac*/
-        *(_DWORD *)(*((_DWORD *)this + 1) + 8) = *((_DWORD *)this + 2); /*0x5b3fb5*/
+        *(_DWORD *)(this->Previous + 8) = *((_DWORD *)this + 2); /*0x5b3fb5*/
         *((_DWORD *)this + 2) = 0; /*0x5b3fb8*/
-        *((_DWORD *)this + 1) = 0; /*0x5b3fbb*/
+        this->Previous = 0; /*0x5b3fbb*/
       }
     }
   }
   *(_DWORD *)this = &GenericNode::`vftable'; /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
-    v6 = *((_DWORD *)this + 1); /*0x5b3fc8*/
+    v6 = this->Previous; /*0x5b3fc8*/
     if ( v6 ) /*0x5b3fcd*/
     {
       v7 = *((_DWORD *)this + 2); /*0x5b3fcf*/
       if ( v7 ) /*0x5b3fd4*/
       {
         *(_DWORD *)(v7 + 4) = v6; /*0x5b3fd6*/
-        *(_DWORD *)(*((_DWORD *)this + 1) + 8) = *((_DWORD *)this + 2); /*0x5b3fdf*/
+        *(_DWORD *)(this->Previous + 8) = *((_DWORD *)this + 2); /*0x5b3fdf*/
         *((_DWORD *)this + 2) = 0; /*0x5b3fe2*/
-        *((_DWORD *)this + 1) = 0; /*0x5b3fe5*/
+        this->Previous = 0; /*0x5b3fe5*/
       }
     }
   }
@@ -971,22 +971,6 @@ int __thiscall sub_5B4350(void *this)
   }
   return 0; /*0x5b43c6*/
 }
-}
-} // namespace gamemd
-
-// 0x5B43E0
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5B43F0
-namespace gamemd {
-char ReturnTrue(AnimClass * aP0)
-{
-return 1;
 }
 } // namespace gamemd
 
@@ -3781,7 +3765,7 @@ int __thiscall sub_5BF360(int this)
              *(wchar_t **)(this + 20),
              0,
              16454,
-             *(_DWORD *)(this + 4),
+             this->vtable1,
              0);
   return result; /*0x5bf383*/
 }
@@ -4508,5 +4492,21 @@ char __fastcall Movie_RenderFrame(int a1, char a2, int a3, char a4)
   }
   return result; /*0x5c006b*/
 }
+}
+} // namespace gamemd
+
+// 0x5B43E0
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5B43F0
+namespace gamemd {
+char ReturnTrue(AnimClass * aP0)
+{
+return 1;
 }
 } // namespace gamemd

@@ -600,7 +600,7 @@ int __thiscall SelectClass_StripClass_SidebarClass::_vt28(int this)
 
   SidebarClass::updateStripVisibility((_DWORD *)MEMORY[0x887368]); /*0x6ab99a*/
   SidebarClass::initializeStrip((_DWORD *)MEMORY[0x887368], 0); /*0x6ab9a7*/
-  v2 = *(_DWORD *)(this + 44); /*0x6ab9ac*/
+  v2 = this->SidebarClass_field_0x2C; /*0x6ab9ac*/
   *(_BYTE *)(this + 52) = 1; /*0x6ab9b1*/
   *(_BYTE *)(v2 + 60) = 1; /*0x6ab9bb*/
   result = MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6ab9be*/
@@ -620,7 +620,7 @@ int __thiscall SelectClass_StripClass_SidebarClass::_vt29(int this)
   int result; // eax
 
   SidebarClass::updateStripPosition((_DWORD *)MEMORY[0x887368]); /*0x6ab9e9*/
-  v2 = *(_DWORD *)(this + 44); /*0x6ab9ee*/
+  v2 = this->SidebarClass_field_0x2C; /*0x6ab9ee*/
   *(_BYTE *)(this + 52) = 0; /*0x6ab9f1*/
   *(_BYTE *)(v2 + 60) = 1; /*0x6ab9fc*/
   result = MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6aba00*/

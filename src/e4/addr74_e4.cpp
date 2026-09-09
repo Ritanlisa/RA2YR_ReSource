@@ -1189,7 +1189,7 @@ char *__thiscall sub_74BBA0(char *this, int a2, int a3)
   *(_DWORD *)this = a2; /*0x74bbae*/
   v4 = this + 12; /*0x74bbb0*/
   *(this + 4) = 0; /*0x74bbb6*/
-  *((_DWORD *)this + 2) = -1; /*0x74bbb9*/
+  this->vtable2 = -1; /*0x74bbb9*/
   *((_DWORD *)v4 + 1) = 0; /*0x74bbc0*/
   *((_DWORD *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
@@ -2000,13 +2000,13 @@ _DWORD *__thiscall sub_74F730(VersionClass *this)
 {
   int v2; // edx
 
-  v2 = *((_DWORD *)this + 17); /*0x74f734*/
+  v2 = this->ambientSoundController.AudioController_field_08; /*0x74f734*/
   *(_DWORD *)&this->__pad_0[4] = 0; /*0x74f737*/
   *(_WORD *)&this->__pad_0[8] = 0; /*0x74f73d*/
   *(_WORD *)&this->__pad_0[10] = 0; /*0x74f741*/
   this->field_3C = 0; /*0x74f745*/
-  *((_DWORD *)this + 16) = 0; /*0x74f748*/
-  *((_DWORD *)this + 17) = v2 & 0xFFFFFFF0; /*0x74f74b*/
+  this->ambientSoundController.AudioController_field_04 = 0; /*0x74f748*/
+  this->ambientSoundController.AudioController_field_08 = v2 & 0xFFFFFFF0; /*0x74f74b*/
   *(_DWORD *)this->__pad_0 = &VersionClass::`vftable'; /*0x74f74e*/
   this->__pad_0[42] = 0; /*0x74f754*/
   this->__pad_0[12] = 0; /*0x74f757*/
@@ -2048,11 +2048,11 @@ char *__thiscall sub_74FAE0(int this)
       *(_BYTE *)(this + 42) = 0; /*0x74fb55*/
     }
     RawFileClass::Dtor(v9); /*0x74fb5c*/
-    v2 = *(_DWORD *)(this + 68); /*0x74fb61*/
+    v2 = this->ambientSoundController.AudioController_field_08; /*0x74fb61*/
     LOBYTE(v2) = v2 | 8; /*0x74fb64*/
-    *(_DWORD *)(this + 68) = v2; /*0x74fb66*/
+    this->ambientSoundController.AudioController_field_08 = v2; /*0x74fb66*/
   }
-  v3 = *(_DWORD *)(this + 68); /*0x74fb69*/
+  v3 = this->ambientSoundController.AudioController_field_08; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
     v4 = *(_WORD *)(this + 10); /*0x74fb70*/
@@ -2062,7 +2062,7 @@ char *__thiscall sub_74FAE0(int this)
     v4 = 1; /*0x74fb76*/
     LOBYTE(v3) = v3 | 4; /*0x74fb7b*/
     *(_WORD *)(this + 10) = 1; /*0x74fb7d*/
-    *(_DWORD *)(this + 68) = v3; /*0x74fb81*/
+    this->ambientSoundController.AudioController_field_08 = v3; /*0x74fb81*/
   }
   if ( (MEMORY[0xA8ED24] & 8) == 0 ) /*0x74fb8b*/
   {

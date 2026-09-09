@@ -396,7 +396,7 @@ int __thiscall AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, 
   _DWORD *v10; // eax
   _BYTE v11[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v7 = *(_DWORD *)(this + 1492); /*0x4196bc*/
+  v7 = this->team; /*0x4196bc*/
   if ( v7 && TechnoClass::IsWaypointHidden(v7) && !Type::CheckAmbiguity(&MEMORY[0x87F7E8], (int)a2, 1) ) /*0x4196d7*/
     return 0; /*0x4196d7*/
   v8 = a2[57]; /*0x4196e4*/
@@ -851,9 +851,9 @@ int __thiscall AircraftClass::IsBelowScreen(#374 *this)
   {
     return ObjectClass::IsBelowScreen(this); /*0x41b9a1*/
   }
-  if ( !*((_DWORD *)this + 413) ) /*0x41b9a8*/
+  if ( !this->locomotor ) /*0x41b9a8*/
     WinAPI::Wrapper(-2147467261); /*0x41b9b7*/
-  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(*((_DWORD *)this + 413)) == 0; /*0x41b9a6*/
+  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(this->locomotor) == 0; /*0x41b9a6*/
 }
 }
 } // namespace gamemd
@@ -867,14 +867,14 @@ int __thiscall AircraftClass::_vt124(int this, int a2)
 {
   int result; // eax
 
-  switch ( *(_DWORD *)(this + 172) ) /*0x41ba0b*/
+  switch ( this->currentMission ) /*0x41ba0b*/
   {
     case 4: /*0x41ba0b*/
     case 0x1A: /*0x41ba0b*/
     case 0x1B: /*0x41ba0b*/
     case 0x1E: /*0x41ba0b*/
     case 0x1F: /*0x41ba0b*/
-      if ( *(_DWORD *)(this + 660) ) /*0x41ba12*/
+      if ( this->owningHouseIndex0 ) /*0x41ba12*/
         goto LABEL_4; /*0x41ba1a*/
       result = a2 - 4; /*0x41ba1c*/
       switch ( a2 ) /*0x41ba2c*/
@@ -907,14 +907,14 @@ int __thiscall AircraftClass::OverrideMission_SyncLog(int this, int a2, int a3, 
 {
   int result; // eax
 
-  switch ( *(_DWORD *)(this + 172) ) /*0x41bb4b*/
+  switch ( this->currentMission ) /*0x41bb4b*/
   {
     case 4: /*0x41bb4b*/
     case 0x1A: /*0x41bb4b*/
     case 0x1B: /*0x41bb4b*/
     case 0x1E: /*0x41bb4b*/
     case 0x1F: /*0x41bb4b*/
-      if ( *(_DWORD *)(this + 660) ) /*0x41bb52*/
+      if ( this->owningHouseIndex0 ) /*0x41bb52*/
         goto LABEL_4; /*0x41bb5a*/
       result = a2 - 4; /*0x41bb5c*/
       switch ( a2 ) /*0x41bb6c*/
@@ -935,14 +935,6 @@ LABEL_4:
   }
   return result; /*0x41bb83*/
 }
-}
-} // namespace gamemd
-
-// 0x41BE60
-namespace gamemd {
-int AircraftClass::LandingCheckStub()
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -983,7 +975,7 @@ int __thiscall AircraftClass::_vt49(#377 *this)
 {
   int result; // eax
 
-  LOBYTE(result) = *((_BYTE *)this + 472); /*0x41c010*/
+  LOBYTE(result) = (unsigned char)this->drainAnim; /*0x41c010*/
   return result; /*0x41c016*/
 }
 }
@@ -998,7 +990,7 @@ int __thiscall AircraftClass::_vt50(#377 *this)
 {
   int result; // eax
 
-  LOBYTE(result) = *((_BYTE *)this + 472); /*0x41c020*/
+  LOBYTE(result) = (unsigned char)this->drainAnim; /*0x41c020*/
   return result; /*0x41c026*/
 }
 }
@@ -1073,14 +1065,6 @@ AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **Block, char a2
 }
 } // namespace gamemd
 
-// 0x5B2E90
-namespace gamemd {
-int AircraftClass::CheckMissionStatus()
-{
-return 450;
-}
-} // namespace gamemd
-
 // 0x5B2F30
 namespace gamemd {
 int AircraftClass::CheckMissionStatus2()
@@ -1090,5 +1074,21 @@ int Stub_ReturnE_NOTIMPL_9()
 {
   return 450; /*0x5b2f35*/
 }
+}
+} // namespace gamemd
+
+// 0x41BE60
+namespace gamemd {
+int AircraftClass::LandingCheckStub()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x5B2E90
+namespace gamemd {
+int AircraftClass::CheckMissionStatus()
+{
+return 450;
 }
 } // namespace gamemd

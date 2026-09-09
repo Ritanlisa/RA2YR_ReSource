@@ -260,12 +260,6 @@ HRESULT __stdcall WalkLocomotionClass::LoadFromStream(int *a1, int *pPStm, int a
 }
 }
 
-// 0x75CBD0
-int WalkLocomotionClass::StubReturn60()
-{
-return 60;
-}
-
 // 0x75CBE0
 WalkLocomotionClass * WalkLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -285,4 +279,10 @@ WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **B
     __3_YAXPAX_Z(Block); /*0x75cc13*/
   return (WalkLocomotionClass *)Block; /*0x75cc1d*/
 }
+}
+
+// 0x75CBD0
+int WalkLocomotionClass::StubReturn60()
+{
+return 60;
 }

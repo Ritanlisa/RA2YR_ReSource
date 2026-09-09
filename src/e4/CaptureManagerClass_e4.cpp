@@ -22,9 +22,9 @@ int __thiscall CaptureManagerClass::CaptureManagerClass(int this, TechnoClass *a
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = aP1; /*0x471800*/
   *(_DWORD *)this = &CaptureManagerClass::`vftable'; /*0x471807*/
-  *(_DWORD *)(this + 4) = &CaptureManagerClass::`vftable'; /*0x47180d*/
-  *(_DWORD *)(this + 8) = &CaptureManagerClass::`vftable'; /*0x471814*/
-  *(_DWORD *)(this + 12) = &CaptureManagerClass::`vftable'; /*0x47181b*/
+  this->vtable1 = &CaptureManagerClass::`vftable'; /*0x47180d*/
+  this->vtable2 = &CaptureManagerClass::`vftable'; /*0x471814*/
+  this->vtable3 = &CaptureManagerClass::`vftable'; /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   this->CaptureManagerClass_field_40 = a4; /*0x471825*/
   this->CaptureManagerClass_field_41 = 0; /*0x471828*/
@@ -1047,26 +1047,6 @@ int __stdcall CaptureManagerClass::_vt03(int a1, _DWORD *a2)
 } // namespace game
 } // namespace ra2
 
-// 0x4729A0
-namespace ra2 {
-namespace game {
-int CaptureManagerClass::GetObjectSize()
-{
-return 80;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4729B0
-namespace ra2 {
-namespace game {
-int CaptureManagerClass::GetTypeIdentifier()
-{
-return 66;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4729C0
 namespace ra2 {
 namespace game {
@@ -1120,8 +1100,8 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CaptureManagerClass::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x472ab0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x472ac5*/
+  if ( (unsigned char)this->vtable3 ) /*0x472ab0*/
+    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x472ac5*/
   else
     return 0; /*0x472ab7*/
 }
@@ -1186,21 +1166,21 @@ char __thiscall CaptureManagerClass::sub_472B80(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x472bb6*/
     if ( v4 ) /*0x472bba*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x472bc5*/
+      if ( this->vtable1 ) /*0x472bc5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x472bcc*/
+        v6 = this->vtable2; /*0x472bcc*/
         if ( a2 < v6 ) /*0x472bd1*/
           v6 = a2; /*0x472bd3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x472bd9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x472bd9*/
           ++i; /*0x472bde*/
         if ( *((_BYTE *)this + 13) ) /*0x472beb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x472bf6*/
-          *((_DWORD *)this + 1) = 0; /*0x472bfe*/
+          this->vtable1 = 0; /*0x472bfe*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x472c07*/
-      *((_DWORD *)this + 2) = a2; /*0x472c0f*/
+      this->vtable1 = v4; /*0x472c07*/
+      this->vtable2 = a2; /*0x472c0f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
     }
@@ -1227,13 +1207,13 @@ void CaptureManagerClass::Destroy()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CaptureManagerClass::sub_472C30(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x472c3d*/
+  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x472c3d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x472c43*/
-    *(_DWORD *)(this + 4) = 0; /*0x472c4b*/
+    this->vtable1 = 0; /*0x472c4b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x472c4e*/
-  *(_DWORD *)(this + 8) = 0; /*0x472c51*/
+  this->vtable2 = 0; /*0x472c51*/
 }
 }
 } // namespace game
@@ -1251,9 +1231,9 @@ int __thiscall CaptureManagerClass::sub_472C60(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x472c60*/
+  if ( !(unsigned char)this->vtable3 ) /*0x472c60*/
     return 0; /*0x472c68*/
-  v3 = *(_DWORD *)(this + 8); /*0x472c6e*/
+  v3 = this->vtable2; /*0x472c6e*/
   result = 0; /*0x472c71*/
   if ( v3 <= 0 ) /*0x472c75*/
     return -1; /*0x472c8c*/
@@ -1276,8 +1256,8 @@ unsigned int CaptureManagerClass::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CaptureManagerClass::sub_472CA0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x472ca0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x472cb5*/
+  if ( (unsigned char)this->vtable3 ) /*0x472ca0*/
+    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x472cb5*/
   else
     return 0; /*0x472ca7*/
 }
@@ -1308,30 +1288,30 @@ char __thiscall CaptureManagerClass::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x472cf2*/
     if ( !v4 ) /*0x472cf6*/
       return 0; /*0x472d6a*/
-    if ( *((_DWORD *)this + 1) ) /*0x472cf8*/
+    if ( this->vtable1 ) /*0x472cf8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x472cff*/
+      v5 = this->vtable2; /*0x472cff*/
       if ( a2 < v5 ) /*0x472d04*/
         v5 = a2; /*0x472d06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x472d0c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x472d0c*/
         ++i; /*0x472d11*/
       if ( *((_BYTE *)this + 13) ) /*0x472d1e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x472d29*/
-        *((_DWORD *)this + 1) = 0; /*0x472d31*/
+        this->vtable1 = 0; /*0x472d31*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x472d3a*/
-    *((_DWORD *)this + 2) = a2; /*0x472d42*/
+    this->vtable1 = v4; /*0x472d3a*/
+    this->vtable2 = a2; /*0x472d42*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x472d45*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x472d4e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x472d51*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x472d59*/
-    *((_DWORD *)this + 4) = v7; /*0x472d5b*/
+  v7 = this->vtable2; /*0x472d51*/
+  if ( v7 < this->uniqueId ) /*0x472d59*/
+    this->uniqueId = v7; /*0x472d5b*/
   return 1; /*0x472d5e*/
 }
 }
@@ -1458,6 +1438,26 @@ char __thiscall CaptureManagerClass::AddMember(void *this, TechnoClass *aP1)
 {
   return TeamClass::AddMember((int)this, (IUnknown *)aP1, (IUnknown *)1); /*0x6ea4fc*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4729A0
+namespace ra2 {
+namespace game {
+int CaptureManagerClass::GetObjectSize()
+{
+return 80;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4729B0
+namespace ra2 {
+namespace game {
+int CaptureManagerClass::GetTypeIdentifier()
+{
+return 66;
 }
 } // namespace game
 } // namespace ra2

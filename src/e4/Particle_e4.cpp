@@ -20,26 +20,26 @@ int __thiscall Particle::Init(
   AbstractClass *result; // eax
 
   result = aP1; /*0x4664c4*/
-  *(_DWORD *)(this + 268) = aP2; /*0x4664c8*/
-  *(_DWORD *)(this + 272) = a7; /*0x4664d2*/
-  *(_DWORD *)(this + 296) = aP5; /*0x4664dc*/
+  this->Particle_field_0x10C = aP2; /*0x4664c8*/
+  this->Particle_field_0x110 = a7; /*0x4664d2*/
+  this->Particle_field_0x128 = aP5; /*0x4664dc*/
   *(_BYTE *)(this + 224) = (_BYTE)aP7; /*0x4664e6*/
-  *(_DWORD *)(this + 108) = aP4; /*0x4664f6*/
-  *(_DWORD *)(this + 172) = aP1; /*0x4664fb*/
-  *(_DWORD *)(this + 176) = aP3; /*0x466501*/
+  this->Particle_field_0x6C = aP4; /*0x4664f6*/
+  this->Particle_field_0xAC = aP1; /*0x4664fb*/
+  this->Particle_field_0xB0 = aP3; /*0x466501*/
   *(_BYTE *)(this + 300) = 0; /*0x466507*/
   *(_BYTE *)(this + 301) = aP1[21].__pad_0[2]; /*0x466513*/
   if ( BYTE1(aP1[18].NeedsSaveOrLink) && aP3 ) /*0x466525*/
   {
     result = *(AbstractClass **)(aP3->field_21C + 90196); /*0x46652d*/
-    *(_DWORD *)(this + 276) = result; /*0x466533*/
+    this->Particle_field_0x114 = result; /*0x466533*/
   }
   else
   {
-    *(_DWORD *)(this + 276) = -1; /*0x46653b*/
+    this->Particle_field_0x114 = -1; /*0x46653b*/
   }
-  *(_DWORD *)(this + 336) = 256; /*0x466546*/
-  *(_DWORD *)(this + 340) = 0; /*0x466550*/
+  this->Particle_field_0x150 = 256; /*0x466546*/
+  this->Particle_field_0x154 = 0; /*0x466550*/
   *(_BYTE *)(this + 344) = 0; /*0x466556*/
   return (int)result->__pad_0; /*0x466545*/
 }

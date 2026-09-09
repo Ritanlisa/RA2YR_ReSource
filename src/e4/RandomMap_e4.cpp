@@ -13,14 +13,14 @@ void __thiscall RandomMap::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x42f426*/
-  *(_DWORD *)(this + 16) = 0; /*0x42f429*/
+  this->RandomMap_field_0x10 = 0; /*0x42f429*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x42f430*/
   {
     __3_YAXPAX_Z(v2); /*0x42f436*/
     *(_DWORD *)(this + 4) = 0; /*0x42f43e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x42f441*/
-  *(_DWORD *)(this + 8) = 0; /*0x42f444*/
+  this->RandomMap_field_0x8 = 0; /*0x42f444*/
 }
 }
 } // namespace gamemd
@@ -32,7 +32,7 @@ unsigned int RandomMap::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall RandomMap::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x42f450*/
+  if ( (unsigned char)this->RandomMap_field_0xC ) /*0x42f450*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x42f465*/
   else
     return 0; /*0x42f457*/
@@ -279,7 +279,7 @@ int __thiscall RandomMap_GenerateTerrain(int this)
   v49 = this; /*0x58c816*/
   v46 = g_MapTileArrayEnd; /*0x58c81a*/
   VectorClass::CellConstructor(&v53, 0, 0); /*0x58c81e*/
-  v2 = *(_DWORD *)(this + 36); /*0x58c823*/
+  v2 = this->RandomMap_field_0x24; /*0x58c823*/
   v53 = &DynamicVectorClass<Cell>::`vftable'; /*0x58c826*/
   v57 = 0; /*0x58c832*/
   v58 = 50000; /*0x58c838*/
@@ -1316,7 +1316,7 @@ char __thiscall sub_5905D0(int this)
   double v50; // [esp+50h] [ebp-8h]
 
   v1 = (_DWORD *)this; /*0x5905d6*/
-  LOBYTE(v2) = *(_BYTE *)(this + 20); /*0x5905dd*/
+  LOBYTE(v2) = (unsigned char)this->RandomMap_field_0x14; /*0x5905dd*/
   if ( (_BYTE)v2 ) /*0x5905e2*/
   {
     v3 = *(_DWORD *)(this + 4); /*0x5905e8*/
@@ -1441,7 +1441,7 @@ LABEL_37:
           v22 = *((_DWORD *)g_RandomMap_TerrainState + v19); /*0x5907ee*/
         }
         v23 = this; /*0x590770*/
-        if ( *(_DWORD *)(v22 + 8) > *(_DWORD *)(this + 8) && *(_DWORD *)(v22 + 16) != *(_DWORD *)(this + 16) ) /*0x590788*/
+        if ( *(_DWORD *)(v22 + 8) > this->RandomMap_field_0x8 && *(_DWORD *)(v22 + 16) != this->RandomMap_field_0x10 ) /*0x590788*/
         {
           v40 = 0; /*0x59078e*/
           do /*0x5907b6*/
@@ -1463,18 +1463,18 @@ LABEL_37:
             }
             while ( v25 > 2 ); /*0x5907ea*/
           }
-          v26 = *(_DWORD *)(this + 16); /*0x5907f8*/
+          v26 = this->RandomMap_field_0x10; /*0x5907f8*/
           v45 = v25 + 1; /*0x5907fc*/
           v27 = *(_DWORD *)(v22 + 16); /*0x590800*/
           v44 = 0; /*0x590805*/
           if ( v27 <= v26 ) /*0x590809*/
-            v28 = *(_DWORD *)(this + 8); /*0x590810*/
+            v28 = this->RandomMap_field_0x8; /*0x590810*/
           else
             v28 = *(_DWORD *)(v22 + 8); /*0x59080b*/
           if ( v27 <= v26 ) /*0x590815*/
             v43 = *(_DWORD *)(v22 + 8); /*0x590823*/
           else
-            v43 = *(_DWORD *)(this + 8); /*0x59081a*/
+            v43 = this->RandomMap_field_0x8; /*0x59081a*/
           v29 = 0; /*0x59082d*/
           if ( g_RandomMap_TileData <= 0 ) /*0x590831*/
           {
@@ -2132,7 +2132,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
                 SetLayerDataMap((__int16 *)&v66, *(this + 2)); /*0x59269d*/
                 v29 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66); /*0x5926ac*/
                 v26 = v70; /*0x5926b4*/
-                v29[283] = *((_BYTE *)this + 16); /*0x5926b8*/
+                v29[283] = (unsigned char)this->RandomMap_field_0x10; /*0x5926b8*/
               }
               ++v28; /*0x5926c2*/
             }
@@ -2165,7 +2165,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               if ( MapSeed::IsCellInBounds((__int16 *)&v66) ) /*0x59272a*/
               {
                 SetLayerDataMap((__int16 *)&v66, *(this + 2)); /*0x59273e*/
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = *((_BYTE *)this + 16); /*0x592759*/
+                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = (unsigned char)this->RandomMap_field_0x10; /*0x592759*/
               }
               ++v34; /*0x592763*/
             }
@@ -2248,7 +2248,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               v53 = *v46; /*0x592969*/
               v46 += 4; /*0x59296b*/
               v47 += 4; /*0x59296e*/
-              v52[283] = *((_BYTE *)this + 16) + v53 - 4; /*0x592977*/
+              v52[283] = (unsigned char)this->RandomMap_field_0x10 + v53 - 4; /*0x592977*/
               v54 = *(_BYTE *)(v47 - 4); /*0x59297d*/
               v52[284] = v54; /*0x592980*/
               v55 = g_CellTileLookup; /*0x592986*/
@@ -2291,7 +2291,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
             if ( g_MapTileArray ) /*0x592a58*/
               *((_DWORD *)g_MapTileArray + 20 * (__int16)(v73 + v59 - v42) + 20 * unk_89C2DC * v61 + 14) = aP2; /*0x592a73*/
             v62 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v71); /*0x592a81*/
-            v63 = *((_BYTE *)this + 16); /*0x592a8a*/
+            v63 = (unsigned char)this->RandomMap_field_0x10; /*0x592a8a*/
             v62[284] = 1; /*0x592a8d*/
             v64 = v63 - v42++ - 1; /*0x592a96*/
             v62[283] = v64; /*0x592a99*/

@@ -4239,14 +4239,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x5EF270
-namespace gamemd {
-int sub_5EF270()
-{
-return 24;
-}
-} // namespace gamemd
-
 // 0x5EF2D0
 namespace gamemd {
 int sub_5EF2D0()
@@ -4468,5 +4460,13 @@ int __stdcall sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   }
   return result; /*0x5eff39*/
 }
+}
+} // namespace gamemd
+
+// 0x5EF270
+namespace gamemd {
+int sub_5EF270()
+{
+return 24;
 }
 } // namespace gamemd

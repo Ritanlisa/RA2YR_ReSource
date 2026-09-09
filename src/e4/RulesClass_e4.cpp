@@ -754,7 +754,7 @@ int __thiscall sub_66D1F0(RulesClass *this)
                        v6,
                        (unsigned __int8 *)MEMORY[0x839E64],
                        (unsigned __int8 *)MEMORY[0x83B39C],
-                       *((_BYTE *)this + 6224));
+                       (unsigned char)this->ForceShieldColor);
     v4 = this->FallBackCoefficient; /*0x66d228*/
     *((_BYTE *)this + 6224) = Bool_Overwrite; /*0x66d22e*/
     HIDWORD(v5) = this->CrewCount; /*0x66d240*/

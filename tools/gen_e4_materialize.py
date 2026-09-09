@@ -190,6 +190,8 @@ class MemberMap:
     def __init__(self):
         cl = json.load(open(ROOT / "tools" / "class_layouts.json", encoding="utf-8"))
         self.by_class = {}
+        self.parents = {}
+        self.sizes = {}
         for cname, c in cl.items():
             offs = c.get("offsets") or {}
             m = {}
@@ -201,47 +203,131 @@ class MemberMap:
                         pass
             if m:
                 self.by_class[cname] = m
+            p = c.get("parent")
+            if p and p != cname:
+                self.parents[cname] = p
+            try:
+                self.sizes[cname] = int(c.get("size", 0))
+            except (TypeError, ValueError):
+                pass
+        # F1: 嵌入子对象类型证据（anchors/member_types.json，ANCHORED 级）
+        try:
+            self.member_types = json.load(
+                open(ROOT / "anchors" / "member_types.json", encoding="utf-8"))
+        except OSError:
+            self.member_types = {}
+
+    def _chain(self, cls):
+        seen = set()
+        while cls and cls not in seen:
+            yield cls
+            seen.add(cls)
+            cls = self.parents.get(cls)
 
     def member(self, cls, offset, width):
-        mm = self.by_class.get(cls)
-        if not mm:
-            return None
-        name = mm.get((offset, width))
-        if name:
-            return name
-        # member occupying exactly this offset with pointer/other 4B size
-        if width == 4 and mm.get((offset, 4)):
-            return mm[(offset, 4)]
+        # F1: 沿继承链查（class_layouts 偏移为对象绝对坐标）
+        for c in self._chain(cls):
+            mm = self.by_class.get(c)
+            if not mm:
+                continue
+            name = mm.get((offset, width))
+            if name:
+                return name
+            if width == 4 and mm.get((offset, 4)):
+                return mm[(offset, 4)]
         return None
+
+    def nested(self, cls, offset, width, depth=0):
+        """F2: 嵌入子对象解析。条件（全部确定性）：
+        1. 链上存在成员 M 覆盖 (M.off < offset < M.off+M.size) 且 M.size >= 8
+        2. member_types 给出 M 的类类型 T（ANCHORED 证据）
+        3. M.size == T 的布局尺寸（排除数组——数组元素访问不可下标重写）
+        然后在 T 内递归精确解析 offset - M.off。"""
+        if depth >= 2:
+            return None
+        for c in self._chain(cls):
+            mm = self.by_class.get(c)
+            if not mm:
+                continue
+            best = None
+            for (mo, msize), mname in mm.items():
+                if mo < offset < mo + msize and msize >= 8:
+                    if best is None or mo > best[0]:
+                        best = (mo, msize, mname)
+            if best:
+                mo, msize, mname = best
+                tinfo = self.member_types.get("%s+0x%X" % (c, mo)) or {}
+                t = (tinfo.get("type") or "").replace("const ", "").strip()
+                if t.endswith("*"):
+                    t = t[:-1].strip()
+                if t and t in self.by_class:
+                    if msize == self.sizes.get(t):
+                        sub = self.member(t, offset - mo, width)
+                        if sub:
+                            return "%s.%s" % (mname, sub)
+                        sub = self.nested(t, offset - mo, width, depth + 1)
+                        if sub:
+                            return "%s.%s" % (mname, sub)
+                return None  # 覆盖成员无类型证据——诚实放弃
+        return None
+
+    def resolve(self, cls, offset, width):
+        n = self.member(cls, offset, width)
+        if n:
+            return n
+        return self.nested(cls, offset, width)
+
+
+STORE_CTX_RE = re.compile(r"\s*=(?!=)")
 
 
 def rewrite_pseudocode(pseudo, cls, mmap, stats):
     if not cls:
         return pseudo
 
+    def narrow_load(m, nm, w):
+        """F3: w1/w2 读访问落在已知 4B 成员 → 显式截断形态（load only；
+        store 上下文保持原始伪码——截断写会丢失高位语义）。"""
+        if not nm:
+            return None
+        if STORE_CTX_RE.match(m.string, m.end()):
+            return None
+        stats["rewritten"] += 1
+        stats["narrow_load"] = stats.get("narrow_load", 0) + 1
+        cast = "(unsigned char)" if w == 1 else "(unsigned short)"
+        return cast + "this->" + nm
+
     def sub_idx(m):
         w = WIDTH[m.group(1)]
         off = int(m.group(2)) * w
-        nm = mmap.member(cls, off, w)
+        nm = mmap.resolve(cls, off, w)
         if nm:
             stats["rewritten"] += 1
             return "this->" + nm
+        if w in (1, 2):
+            r = narrow_load(m, mmap.member(cls, off, 4), w)
+            if r is not None:
+                return r
         stats["unmapped"] += 1
         return m.group(0)
 
     def sub_off(m, group=2):
         w = WIDTH[m.group(1)]
         off = int(m.group(group))
-        nm = mmap.member(cls, off, w)
+        nm = mmap.resolve(cls, off, w)
         if nm:
             stats["rewritten"] += 1
-            return "*&this->" + nm if False else "this->" + nm
+            return "this->" + nm
+        if w in (1, 2):
+            r = narrow_load(m, mmap.member(cls, off, 4), w)
+            if r is not None:
+                return r
         stats["unmapped"] += 1
         return m.group(0)
 
     def sub_ptr(m):
         off = int(m.group(1))
-        nm = mmap.member(cls, off, 4)
+        nm = mmap.resolve(cls, off, 4)
         if nm:
             stats["rewritten"] += 1
             return "&this->" + nm
@@ -363,12 +449,60 @@ def qualify_ns(ns):
     return ns.split("::")
 
 
+# ---------------------------------------------------------------- refresh
+REC_ADDR_LINE = re.compile(r"^// 0x[0-9A-Fa-f]+$")
+DEF_NAME_RE = re.compile(r"([A-Za-z_~][\w:]*)\s*\(")
+
+
+def scan_e4_preserved():
+    """F4 refresh：src/e4 已翻译记录（// 0xADDR 块内无 MARKER）。
+    返回 {addr: (filename, block_text)}。块边界 = 顶层 `// 0xADDR` 行到下一个。"""
+    preserved = {}
+    if not E4.exists():
+        return preserved
+    for p in sorted(E4.glob("*.cpp")):
+        lines = p.read_text(encoding="latin-1").split("\n")
+        starts = [i for i, ln in enumerate(lines) if REC_ADDR_LINE.match(ln)]
+        for bi, s in enumerate(starts):
+            e = starts[bi + 1] if bi + 1 < len(starts) else len(lines)
+            block = "\n".join(lines[s:e]).rstrip()
+            try:
+                addr = int(lines[s].strip()[3:], 16)
+            except ValueError:
+                continue
+            if MARKER not in block:
+                preserved[addr] = (p.name, block)
+    return preserved
+
+
+def preserved_names(preserved):
+    """从保留块提取定义名，用于 used_names 预播种（防止重名再分配漂移）。"""
+    names = {"member": set(), "free": set()}
+    for _, (_fn, block) in preserved.items():
+        for ln in block.split("\n"):
+            if ln.startswith("namespace") or ln.startswith("//") or not ln.strip():
+                continue
+            m = DEF_NAME_RE.search(ln)
+            if m:
+                nm = m.group(1)
+                if "::" in nm:
+                    names["member"].add(nm)
+                else:
+                    names["free"].add(nm)
+                break
+    return names
+
+
 # ---------------------------------------------------------------- apply phase
-def main_apply(bodyless, fns, src_classes):
+def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     import time
     t0 = time.time()
     os.makedirs(E4, exist_ok=True)
     (E4 / "classes").mkdir(exist_ok=True)
+    preserved = preserved or {}
+    if refresh:
+        bodyless = [f for f in bodyless if f.addr not in preserved]
+        print(f"refresh: {len(preserved)} translated e4 records preserved")
 
     mmap = MemberMap()
     csp = json.load(open(ROOT / "tools" / "csp" / "full_report" / "csp_functions.json",
@@ -391,6 +525,10 @@ def main_apply(bodyless, fns, src_classes):
     bucket_defs = defaultdict(list)     # out cpp name -> [header lines]
     bucket_e2 = defaultdict(set)        # out cpp name -> e2 class names needed
     used_names = defaultdict(set)       # namespace -> used flat/qualified names
+    if refresh:
+        pn = preserved_names(preserved)
+        used_names["member"] |= pn["member"]
+        used_names["free"] |= pn["free"]
     globals_used = set()
 
     # pre-load globals index
@@ -528,6 +666,14 @@ def main_apply(bodyless, fns, src_classes):
         else:
             missing_globals.append("extern unsigned char %s[%d];  // data: 0x%X" % (g, size, addr))
     gh = E4 / "e4_globals.hpp"
+    if refresh and gh.exists():
+        for ln in gh.read_text(encoding="latin-1").split("\n"):
+            gm = re.match(r"extern\s+.*;\s*//\s*data:\s*(0x[0-9A-Fa-f]+)", ln.strip())
+            if gm:
+                gname = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln.strip())
+                if gname and gname.group(1) not in missing_globals:
+                    missing_globals.append(ln.strip())
+        missing_globals = sorted(set(missing_globals), key=lambda s: s.lower())
     gh.write_text(
         "// E1: pseudo-body referenced globals missing from src (auto-generated)\n"
         "#pragma once\n#include <cstdint>\n\n" + "\n".join(missing_globals) + "\n",
@@ -546,6 +692,16 @@ def main_apply(bodyless, fns, src_classes):
                 continue
             seen.add(d.split("(")[0].split()[-1])
             lines.append("    %s  // 0x%X" % (d, addr))
+        if refresh and p.exists():
+            # 保留既有声明（已翻译 cpp 块可能仍引用）
+            body = p.read_text(encoding="latin-1").split("\n")
+            for ln in body:
+                ms = re.match(r"\s{4}(.*?);\s*//\s*0x[0-9A-Fa-f]+\s*$", ln)
+                if ms:
+                    mname = ms.group(1).split("(")[0].split()[-1]
+                    if mname not in seen:
+                        seen.add(mname)
+                        lines.append(ln.rstrip())
         lines.append("};")
         lines.append("} // namespace gamemd")
         p.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -565,9 +721,17 @@ def main_apply(bodyless, fns, src_classes):
             by_class[cls].append((decl, addr))
         changed = False
         for cls, decls in by_class.items():
-            # locate class definition line
-            m = re.search(r"^[ \t]*(?:class|struct)\s+%s\b[^\n]*$" % re.escape(cls),
-                          txt, re.M)
+            # locate class definition line — 跳过前向声明（行尾分号）。
+            # 曾因匹配 fwd decl `class X;` 后 find("{") 落到下一个类体，
+            # 把声明插进错误类（house.hpp StartingTechnoStruct 实证）。
+            m = None
+            for cand in re.finditer(
+                    r"^[ \t]*(?:class|struct)\s+%s\b[^\n]*$" % re.escape(cls),
+                    txt, re.M):
+                if cand.group(0).rstrip().endswith(";"):
+                    continue
+                m = cand
+                break
             if not m:
                 stats["decl_skipped"] += len(decls)
                 continue
@@ -627,9 +791,16 @@ def main_apply(bodyless, fns, src_classes):
           f"files={edited_hpp}")
 
     # ---- E4: bucket cpp files
-    for out_name, lines in sorted(bucket_defs.items()):
+    preserved_by_file = defaultdict(list)
+    if refresh:
+        for addr, (fn, block) in sorted(preserved.items()):
+            preserved_by_file[fn].append(block)
+
+    out_names = set(bucket_defs) | (set(preserved_by_file) if refresh else set())
+    for out_name in sorted(out_names):
         p = E4 / out_name
-        if p.exists():
+        lines = bucket_defs.get(out_name, [])
+        if not refresh and p.exists():
             existing = p.read_text(encoding="latin-1")
             addr_lines = [l for l in lines if l.startswith("// 0x")]
             dup = sum(1 for l in addr_lines if ("\n" + l + "\n") in existing)
@@ -637,11 +808,21 @@ def main_apply(bodyless, fns, src_classes):
                 print(f"  {out_name}: {dup} already present (idempotent skip)")
                 if dup == len(addr_lines):
                     continue
-        incs = ['#include "e4/classes/%s_e4.hpp"' % c
-                for c in sorted(bucket_e2.get(out_name, ()))]
+        # include 保留块引用的 e2 类（保守：并集全部既有 include）
+        fresh_incs = {"e4/classes/%s_e4.hpp" % c for c in bucket_e2.get(out_name, ())}
+        if refresh and p.exists():
+            fresh_incs |= set(re.findall(r'#include "(e4/classes/[^"]+)"',
+                                         p.read_text(encoding="latin-1")))
+        incs = ['#include "%s"' % c for c in sorted(fresh_incs)]
         header = ["// E4 materialized pending bodies (auto-generated from full_export v3)",
                   "#include <cstdint>", '#include "e4/e4_globals.hpp"'] + incs + [""]
-        p.write_text("\n".join(header) + "\n" + "\n".join(lines), encoding="utf-8")
+        body = "\n".join(lines)
+        tail = ""
+        if refresh and preserved_by_file.get(out_name):
+            tail = ("\n" if body else "") + "\n\n".join(
+                preserved_by_file[out_name]) + "\n"
+            body = body + ("\n" if body and not body.endswith("\n") else "")
+        p.write_text("\n".join(header) + "\n" + body + tail, encoding="utf-8")
     print(f"E4 buckets: {len(bucket_defs)} files, member={stats['member_def']} "
           f"free={stats['free_def']}")
     print(f"offset rewrite: {stats['rewritten']} rewritten, {stats['unmapped']} unmapped")
@@ -653,7 +834,8 @@ def main_apply(bodyless, fns, src_classes):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--phase", default="inventory", choices=["inventory", "apply"])
+    ap.add_argument("--phase", default="inventory",
+                    choices=["inventory", "apply", "refresh"])
     ap.add_argument("--limit", type=int, default=0, help="只处理前 N 个（测试用）")
     args = ap.parse_args()
 
@@ -687,10 +869,15 @@ def main():
 
     src_classes = scan_src_classes()
     print(f"  src classes: {len(src_classes)}")
+    preserved = {}
+    if args.phase == "refresh":
+        preserved = scan_e4_preserved()
+        print(f"  refresh: {len(preserved)} translated e4 records preserved")
     if args.limit:
         bodyless = bodyless[:args.limit]
         print(f"  --limit {args.limit}: processing subset")
-    main_apply(bodyless, fns, src_classes)
+    main_apply(bodyless, fns, src_classes,
+               refresh=(args.phase == "refresh"), preserved=preserved)
 
 
 if __name__ == "__main__":

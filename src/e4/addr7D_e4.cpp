@@ -3299,7 +3299,7 @@ const char *__thiscall _what_exception__UBEPBDXZ(exception *this)
 {
   const char *result; // eax
 
-  result = (const char *)*((_DWORD *)this + 1); /*0x7d2f57*/
+  result = (const char *)this->vtable1; /*0x7d2f57*/
   if ( !result ) /*0x7d2f5c*/
     return "Unknown exception"; /*0x7d2f5e*/
   return result; /*0x7d2f63*/
@@ -7779,14 +7779,6 @@ LABEL_38:
     return 0; /*0x7d6ce2*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x7D6CE7
-namespace gamemd {
-int ReturnNull4()
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -13816,14 +13808,6 @@ int __cdecl _errcode(char a1)
 }
 } // namespace gamemd
 
-// 0x7DBC57
-namespace gamemd {
-int ReturnNull5()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7DBC5A
 namespace gamemd {
 int __statfp()
@@ -18009,5 +17993,21 @@ int __cdecl sub_7DF9B7(int *a1)
 {
   return Voxel::FacePixelBuffer(a1);
 }
+}
+} // namespace gamemd
+
+// 0x7D6CE7
+namespace gamemd {
+int ReturnNull4()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7DBC57
+namespace gamemd {
+int ReturnNull5()
+{
+return 0;
 }
 } // namespace gamemd

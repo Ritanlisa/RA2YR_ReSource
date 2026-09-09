@@ -3331,14 +3331,6 @@ int sub_5ADCF0()
 }
 } // namespace gamemd
 
-// 0x5AE4F0
-namespace gamemd {
-int sub_5AE4F0(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x5AE500
 namespace gamemd {
 char sub_5AE500(const char ** a2)
@@ -3759,14 +3751,14 @@ void __thiscall sub_5AF550(int this, float *a2, float *a3, AbstractClass *a4)
     v24 = v14 / v8; /*0x5af617*/
   }
   *(_DWORD *)this = 1065353216; /*0x5af638*/
-  *(_DWORD *)(this + 4) = 0; /*0x5af63a*/
-  *(_DWORD *)(this + 8) = 0; /*0x5af63d*/
-  *(_DWORD *)(this + 12) = 0; /*0x5af640*/
-  *(_DWORD *)(this + 16) = 0; /*0x5af643*/
-  *(_DWORD *)(this + 20) = 1065353216; /*0x5af646*/
-  *(_DWORD *)(this + 24) = 0; /*0x5af649*/
-  *(_DWORD *)(this + 28) = 0; /*0x5af64c*/
-  *(_DWORD *)(this + 32) = 0; /*0x5af64f*/
+  this->vtable1 = 0; /*0x5af63a*/
+  this->vtable2 = 0; /*0x5af63d*/
+  this->vtable3 = 0; /*0x5af640*/
+  this->uniqueId = 0; /*0x5af643*/
+  this->abstractFlags = 1065353216; /*0x5af646*/
+  this->nextArrayIndex = 0; /*0x5af649*/
+  this->referenceCount = 0; /*0x5af64c*/
+  this->NeedsSaveOrLink = 0; /*0x5af64f*/
   this->objectTypeFlags = 0; /*0x5af652*/
   this->owningHouseIndex = 1065353216; /*0x5af655*/
   this->fallRate = 0; /*0x5af658*/
@@ -4136,5 +4128,13 @@ void __thiscall sub_5AFF50(_DWORD *this)
   *(this + 1) = &MechLocomotionClass::`vftable'; /*0x5aff56*/
   LocomotionClass::Construct(this); /*0x5aff5d*/
 }
+}
+} // namespace gamemd
+
+// 0x5AE4F0
+namespace gamemd {
+int sub_5AE4F0(int a1)
+{
+return 0;
 }
 } // namespace gamemd

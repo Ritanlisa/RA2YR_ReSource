@@ -20,9 +20,9 @@ int __thiscall sub_629210(int this)
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   *(_DWORD *)this = &ParasiteClass::`vftable'; /*0x629231*/
-  *(_DWORD *)(this + 4) = &ParasiteClass::`vftable'; /*0x629237*/
-  *(_DWORD *)(this + 8) = &ParasiteClass::`vftable'; /*0x62923e*/
-  *(_DWORD *)(this + 12) = &ParasiteClass::`vftable'; /*0x629245*/
+  this->vtable1 = &ParasiteClass::`vftable'; /*0x629237*/
+  this->vtable2 = &ParasiteClass::`vftable'; /*0x62923e*/
+  this->vtable3 = &ParasiteClass::`vftable'; /*0x629245*/
   if ( MEMORY[0xAC4920] < MEMORY[0xAC4918] /*0x62927e*/
     || (MEMORY[0xAC491D] || !MEMORY[0xAC4918])
     && MEMORY[0xAC4924] > 0
@@ -58,9 +58,9 @@ int __thiscall ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
   this->ParasiteClass_field_38 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
   *(_DWORD *)this = &ParasiteClass::`vftable'; /*0x6292d8*/
-  *(_DWORD *)(this + 4) = &ParasiteClass::`vftable'; /*0x6292de*/
-  *(_DWORD *)(this + 8) = &ParasiteClass::`vftable'; /*0x6292e5*/
-  *(_DWORD *)(this + 12) = &ParasiteClass::`vftable'; /*0x6292ec*/
+  this->vtable1 = &ParasiteClass::`vftable'; /*0x6292de*/
+  this->vtable2 = &ParasiteClass::`vftable'; /*0x6292e5*/
+  this->vtable3 = &ParasiteClass::`vftable'; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   *(_DWORD *)(this + 40) = 0; /*0x6292f6*/
   this->ParasiteClass_field_38 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x629303*/
@@ -1224,8 +1224,8 @@ LABEL_50:
   v38 = *((_DWORD *)this + 43); /*0x62c316*/
   v39 = *(_DWORD *)(v38 + 736) /*0x62c33f*/
       - *((unsigned __int16 *)this + 148)
-      + (*(int (__stdcall **)(char *))(*((_DWORD *)this + 1) + 16))(this + 4);
-  if ( !(v39 % (*(char *)(v38 + 779) + ((*(int (__stdcall **)(char *))(*((_DWORD *)this + 1) + 16))(this + 4) & 1))) ) /*0x62c355*/
+      + (*(int (__stdcall **)(char *))(this->vtable1 + 16))(this + 4);
+  if ( !(v39 % (*(char *)(v38 + 779) + ((*(int (__stdcall **)(char *))(this->vtable1 + 16))(this + 4) & 1))) ) /*0x62c355*/
     ++*(this + 302); /*0x62c35b*/
   result = *(this + 302); /*0x62c361*/
   if ( result == *(_BYTE *)(v38 + 777) ) /*0x62c36f*/

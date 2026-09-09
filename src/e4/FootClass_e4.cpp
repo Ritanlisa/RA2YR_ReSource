@@ -36,9 +36,9 @@ int __thiscall FootClass::Destruct(void *this)
 
   v2 = this->team; /*0x4d3597*/
   *(_DWORD *)this = &FootClass::`vftable'; /*0x4d359d*/
-  *((_DWORD *)this + 1) = &FootClass::`vftable'; /*0x4d35a5*/
-  *((_DWORD *)this + 2) = &FootClass::`vftable'; /*0x4d35ac*/
-  *((_DWORD *)this + 3) = &FootClass::`vftable'; /*0x4d35b3*/
+  this->vfptr_1 = &FootClass::`vftable'; /*0x4d35a5*/
+  this->vfptr_2 = &FootClass::`vftable'; /*0x4d35ac*/
+  this->vfptr_3 = &FootClass::`vftable'; /*0x4d35b3*/
   if ( v2 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -59,8 +59,8 @@ int __thiscall FootClass::Destruct(void *this)
     (*(void (__thiscall **)(AbstractClass *, int))(*(_DWORD *)v5->__pad_0 + 32))(v5, 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
-  if ( *((_WORD *)this + 690) != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4d3653*/
-    || *((_WORD *)this + 691) != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61278] )
+  if ( (unsigned short)this->currentJumpjetMapCoords != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4d3653*/
+    || (unsigned short)this->FootClass_field_566 != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61278] )
   {
     v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)this + 690); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/

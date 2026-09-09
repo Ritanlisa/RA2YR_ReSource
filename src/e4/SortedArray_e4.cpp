@@ -17,7 +17,7 @@ size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
   result = (size_t)*(this + 1); /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !*((_BYTE *)this + 12) ) /*0x52b62e*/
+    if ( !(unsigned char)this->SortedArray_field_0x0C ) /*0x52b62e*/
     {
       qsort(*this, result, 8u, CompareFunc4Int); /*0x52b640*/
       *(this + 4) = 0; /*0x52b648*/
@@ -128,7 +128,7 @@ char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
   v3 = this->SortedArray_field_0x04; /*0x5388a9*/
   if ( !v3 ) /*0x5388ae*/
     return 0; /*0x5388ae*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x5388b0*/
+  if ( !(unsigned char)this->SortedArray_field_0x0C ) /*0x5388b0*/
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
     this->SortedArray_field_0x10 = 0; /*0x5388ca*/
@@ -197,7 +197,7 @@ char __thiscall SortedArray_FindPair(int this, int *a2)
   v4 = *(_DWORD **)(this + 16); /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x5389a9*/
+  if ( !(unsigned char)this->SortedArray_field_0x0C ) /*0x5389a9*/
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
     this->SortedArray_field_0x10 = 0; /*0x5389c3*/

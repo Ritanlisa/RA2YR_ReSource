@@ -19,26 +19,6 @@ int __thiscall MissionClass::vt_entry_1FC(#377 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x5B2E10
-namespace ra2 {
-namespace game {
-int MissionClass::Return450A()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2E20
-namespace ra2 {
-namespace game {
-int MissionClass::Return450B()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5B2E30
 namespace ra2 {
 namespace game {
@@ -244,7 +224,7 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
                            (int)a2,
                            (unsigned __int8 *)v4,
                            (unsigned __int8 *)MEMORY[0x82C2B8],
-                           *((_BYTE *)this + 4));
+                           (unsigned char)this->vtable1);
   if ( *this == -1 ) /*0x5b37c7*/
     v5 = MEMORY[0x817474]; /*0x5b37c9*/
   else
@@ -280,7 +260,7 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
                            (int)a2,
                            (unsigned __int8 *)v8,
                            (unsigned __int8 *)MEMORY[0x82C28C],
-                           *((_BYTE *)this + 8));
+                           (unsigned char)this->vtable2);
   if ( *this == -1 ) /*0x5b386b*/
     v9 = MEMORY[0x817474]; /*0x5b386d*/
   else
@@ -329,6 +309,26 @@ int __thiscall MissionClass::HasValidTarget(#377 *this)
 {
   return this->suspendedMission != -1; /*0x5b3a1e*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2E10
+namespace ra2 {
+namespace game {
+int MissionClass::Return450A()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2E20
+namespace ra2 {
+namespace game {
+int MissionClass::Return450B()
+{
+return 450;
 }
 } // namespace game
 } // namespace ra2

@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-#include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/Conflict_WorldDominationTour_12__e4.hpp"
+#include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/Conflict_WorldDominationTour_26_e4.hpp"
 
 // 0x766830
@@ -12,8 +12,8 @@ unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Conflict_WorldDominationTour_12_::sub_766830(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x766830*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x766845*/
+  if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC ) /*0x766830*/
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3; /*0x766845*/
   else
     return 0; /*0x766837*/
 }
@@ -174,23 +174,23 @@ LABEL_14:
   *(this + 12) = 1; /*0x766c9f*/
   if ( !v8 ) /*0x766ca5*/
     return 0; /*0x766caa*/
-  if ( *((_DWORD *)this + 1) ) /*0x766cb1*/
+  if ( this->Conflict_WorldDominationTour_12_field_0x4 ) /*0x766cb1*/
   {
-    if ( a2 >= *((_DWORD *)this + 2) ) /*0x766cbd*/
-      v3 = *((_DWORD *)this + 2); /*0x766cbf*/
+    if ( a2 >= this->Conflict_WorldDominationTour_12_field_0x8 ) /*0x766cbd*/
+      v3 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766cbf*/
     for ( i = 0; i < v3; ++i ) /*0x766cc5*/
-      ComPtr::Set(&v8[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4)); /*0x766cd2*/
+      ComPtr::Set(&v8[2 * i], *(_DWORD *)(this->Conflict_WorldDominationTour_12_field_0x4 + 8 * i + 4)); /*0x766cd2*/
     if ( *(this + 13) ) /*0x766cdc*/
     {
-      v12 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1); /*0x766ce3*/
+      v12 = (void (__thiscall ***)(_DWORD, int))this->Conflict_WorldDominationTour_12_field_0x4; /*0x766ce3*/
       if ( v12 ) /*0x766ce8*/
         (**v12)(v12, 3); /*0x766cee*/
-      *((_DWORD *)this + 1) = 0; /*0x766cf0*/
+      this->Conflict_WorldDominationTour_12_field_0x4 = 0; /*0x766cf0*/
     }
     v3 = a2; /*0x766cf7*/
   }
-  *((_DWORD *)this + 1) = v8; /*0x766d06*/
-  *((_DWORD *)this + 2) = v3; /*0x766d09*/
+  this->Conflict_WorldDominationTour_12_field_0x4 = v8; /*0x766d06*/
+  this->Conflict_WorldDominationTour_12_field_0x8 = v3; /*0x766d09*/
   *(this + 13) = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
 }
@@ -211,10 +211,10 @@ int __thiscall Conflict_WorldDominationTour_12_::_vt03(int this)
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x766d3d*/
   {
     result = (**v2)(v2, 3); /*0x766d4a*/
-    *(_DWORD *)(this + 4) = 0; /*0x766d4c*/
+    this->Conflict_WorldDominationTour_12_field_0x4 = 0; /*0x766d4c*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x766d4f*/
-  *(_DWORD *)(this + 8) = 0; /*0x766d52*/
+  this->Conflict_WorldDominationTour_12_field_0x8 = 0; /*0x766d52*/
   return result; /*0x766d55*/
 }
 }
@@ -231,13 +231,13 @@ int __thiscall Conflict_WorldDominationTour_12_::_vt04(int this, int a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x766d60*/
+  if ( !(unsigned char)this->Conflict_WorldDominationTour_12_field_0xC ) /*0x766d60*/
     return 0; /*0x766d68*/
-  v3 = *(_DWORD *)(this + 8); /*0x766d6e*/
+  v3 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766d6e*/
   result = 0; /*0x766d71*/
   if ( v3 <= 0 ) /*0x766d75*/
     return -1; /*0x766d90*/
-  for ( i = (_DWORD *)(*(_DWORD *)(this + 4) + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x766d7e*/
+  for ( i = (_DWORD *)(this->Conflict_WorldDominationTour_12_field_0x4 + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x766d7e*/
   {
     if ( ++result >= v3 ) /*0x766d8e*/
       return -1; /*0x766d8e*/
@@ -254,8 +254,8 @@ unsigned int Conflict_WorldDominationTour_12::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Conflict_WorldDominationTour_12_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x766da0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x766db5*/
+  if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC ) /*0x766da0*/
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3; /*0x766db5*/
   else
     return 0; /*0x766da7*/
 }
@@ -331,32 +331,32 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
     *(this + 12) = 1; /*0x766e4f*/
     if ( !v6 ) /*0x766e53*/
       return 0; /*0x766ed6*/
-    if ( *((_DWORD *)this + 1) ) /*0x766e55*/
+    if ( this->Conflict_WorldDominationTour_12_field_0x4 ) /*0x766e55*/
     {
-      if ( a2 >= *((_DWORD *)this + 2) ) /*0x766e61*/
-        v3 = *((_DWORD *)this + 2); /*0x766e63*/
+      if ( a2 >= this->Conflict_WorldDominationTour_12_field_0x8 ) /*0x766e61*/
+        v3 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766e63*/
       for ( i = 0; i < v3; ++i ) /*0x766e69*/
-        ComPtr::Set(&v6[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4)); /*0x766e76*/
+        ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->Conflict_WorldDominationTour_12_field_0x4 + 8 * i + 4)); /*0x766e76*/
       if ( *(this + 13) ) /*0x766e80*/
       {
-        v11 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1); /*0x766e87*/
+        v11 = (void (__thiscall ***)(_DWORD, int))this->Conflict_WorldDominationTour_12_field_0x4; /*0x766e87*/
         if ( v11 ) /*0x766e8c*/
           (**v11)(v11, 3); /*0x766e92*/
-        *((_DWORD *)this + 1) = 0; /*0x766e94*/
+        this->Conflict_WorldDominationTour_12_field_0x4 = 0; /*0x766e94*/
       }
       v3 = a2; /*0x766e9b*/
     }
-    *((_DWORD *)this + 1) = v6; /*0x766eaa*/
-    *((_DWORD *)this + 2) = v3; /*0x766ead*/
+    this->Conflict_WorldDominationTour_12_field_0x4 = v6; /*0x766eaa*/
+    this->Conflict_WorldDominationTour_12_field_0x8 = v3; /*0x766ead*/
     *(this + 13) = a3 == 0; /*0x766eb0*/
   }
   else
   {
     (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x766eb9*/
   }
-  v12 = *((_DWORD *)this + 2); /*0x766ebc*/
-  if ( v12 < *((_DWORD *)this + 4) ) /*0x766ec4*/
-    *((_DWORD *)this + 4) = v12; /*0x766ec6*/
+  v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
+  if ( v12 < this->Conflict_WorldDominationTour_12_field_0x10 ) /*0x766ec4*/
+    this->Conflict_WorldDominationTour_12_field_0x10 = v12; /*0x766ec6*/
   return 1; /*0x766ec9*/
 }
 }

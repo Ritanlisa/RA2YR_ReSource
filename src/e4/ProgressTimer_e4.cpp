@@ -22,8 +22,8 @@ _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
   v2 = *(this + 10); /*0x4c93d2*/
   if ( v2 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  v3 = *((_DWORD *)this + 2); /*0x4c93dd*/
-  v4 = *((_DWORD *)this + 4); /*0x4c93e0*/
+  v3 = this->ProgressTimer_field_0x8; /*0x4c93dd*/
+  v4 = this->ProgressTimer_field_0x10; /*0x4c93e0*/
   if ( v3 != -1 ) /*0x4c93ec*/
   {
     if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v3 >= v4 ) /*0x4c93f4*/
@@ -42,8 +42,8 @@ LABEL_12:
       aP1->field_0 = (int)v12; /*0x4c9445*/
       return &aP1->field_0; /*0x4c9453*/
     }
-    v8 = *((_DWORD *)this + 4); /*0x4c941e*/
-    v9 = *((_DWORD *)this + 2); /*0x4c9421*/
+    v8 = this->ProgressTimer_field_0x10; /*0x4c941e*/
+    v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
     if ( v9 != -1 ) /*0x4c9427*/
     {
       if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v9 >= v8 ) /*0x4c942f*/

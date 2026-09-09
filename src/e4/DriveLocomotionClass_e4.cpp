@@ -110,12 +110,6 @@ int __stdcall DriveLocomotionClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x4B4CF0
-int DriveLocomotionClass::StubReturn112()
-{
-return 112;
-}
-
 // 0x4B4D00
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -135,4 +129,10 @@ DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion *
     __3_YAXPAX_Z(Block); /*0x4b4d33*/
   return (DriveLocomotionClass *)Block; /*0x4b4d3d*/
 }
+}
+
+// 0x4B4CF0
+int DriveLocomotionClass::StubReturn112()
+{
+return 112;
 }

@@ -688,22 +688,6 @@ int __stdcall TEventClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int 
 }
 } // namespace gamemd
 
-// 0x71FA50
-namespace gamemd {
-int TEventClass::StubReturn88()
-{
-return 88;
-}
-} // namespace gamemd
-
-// 0x71FA60
-namespace gamemd {
-int TEventClass::StubReturn48()
-{
-return 48;
-}
-} // namespace gamemd
-
 // 0x71FA70
 namespace gamemd {
 int TEventClass::Stub()
@@ -771,5 +755,21 @@ TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x71fb90*/
   return (TEventClass *)Block; /*0x71fb9a*/
 }
+}
+} // namespace gamemd
+
+// 0x71FA50
+namespace gamemd {
+int TEventClass::StubReturn88()
+{
+return 88;
+}
+} // namespace gamemd
+
+// 0x71FA60
+namespace gamemd {
+int TEventClass::StubReturn48()
+{
+return 48;
 }
 } // namespace gamemd

@@ -801,7 +801,7 @@ int __thiscall ProcessGraphicMenu(int this)
   v16 = 0; /*0x4f235d*/
   v4 = 0; /*0x4f2362*/
   Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x4f2364*/
-  v5 = *(_DWORD *)(this + 84); /*0x4f2369*/
+  v5 = this->customSound_controller.AudioController_field_04; /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((_DWORD *)(this + 4), v5, 300000); /*0x4f2379*/
   v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)MEMORY[0x887310] + 120))(MEMORY[0x887310], &v24); /*0x4f238e*/

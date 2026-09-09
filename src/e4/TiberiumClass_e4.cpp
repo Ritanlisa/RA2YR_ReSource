@@ -268,7 +268,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (CCINIClass *)&stru_830620.__pad_579C[60236],
             (INIClass *)v5);
   v19 = *(INIClass **)(this + 176); /*0x721ad8*/
-  *(_DWORD *)(this + 168) = eax2a; /*0x721ae1*/
+  this->lineTrailer = eax2a; /*0x721ae1*/
   v8 = INIClass::ReadDouble_Overwrite( /*0x721ae7*/
          (int)aP1,
          (INIClass *)(this + 36),

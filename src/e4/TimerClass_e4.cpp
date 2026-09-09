@@ -15,8 +15,8 @@ BOOL __thiscall TimerClass_Active(int this)
 
   if ( *(__int16 *)(this + 20) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
-  v1 = *(_DWORD *)(this + 8); /*0x4c9487*/
-  v2 = *(_DWORD *)(this + 16); /*0x4c948a*/
+  v1 = this->TimerClass_field_0x8; /*0x4c9487*/
+  v2 = this->TimerClass_field_0x10; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
     if ( (int)MEMORY[0xA8ED84] - v1 >= v2 ) /*0x4c949c*/
@@ -58,9 +58,9 @@ char *__thiscall TimerClass::Construct(
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
   *(this + 4) = 0; /*0x54fe6c*/
-  *((_DWORD *)this + 2) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54fe75*/
+  this->TimerClass_field_0x8 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54fe75*/
   v18 = this + 36; /*0x54fe78*/
-  *((_DWORD *)this + 4) = 0; /*0x54fe7b*/
+  this->TimerClass_field_0x10 = 0; /*0x54fe7b*/
   *(_DWORD *)v18 = a2; /*0x54fe83*/
   *((_DWORD *)this + 5) = 0; /*0x54fe89*/
   *((_DWORD *)this + 6) = 1; /*0x54fe8c*/
@@ -92,9 +92,9 @@ char *__thiscall TimerClass::Construct(
   *(_DWORD *)this = 0; /*0x54ff08*/
   v19 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54ff0a*/
   *((_DWORD *)this + 5) = 1; /*0x54ff10*/
-  *((_DWORD *)this + 2) = v19; /*0x54ff13*/
+  this->TimerClass_field_0x8 = v19; /*0x54ff13*/
   *((_DWORD *)this + 3) = a3; /*0x54ff1a*/
-  *((_DWORD *)this + 4) = 1; /*0x54ff21*/
+  this->TimerClass_field_0x10 = 1; /*0x54ff21*/
   *(_WORD *)(this + 65) = a10; /*0x54ff29*/
   *(this + 67) = BYTE2(a10); /*0x54ff32*/
   *((_WORD *)this + 34) = a11; /*0x54ff39*/

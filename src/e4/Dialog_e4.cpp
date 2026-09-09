@@ -2919,10 +2919,10 @@ void __thiscall Dialog_CleanupTree(int this)
   _DWORD *v4; // edx
   void **v5; // esi
 
-  if ( *(_DWORD *)(this + 40) ) /*0x6233a3*/
+  if ( this->Dialog_field_0x28 ) /*0x6233a3*/
   {
     __3_YAXPAX_Z(*(void **)(this + 40)); /*0x6233ab*/
-    *(_DWORD *)(this + 40) = 0; /*0x6233b3*/
+    this->Dialog_field_0x28 = 0; /*0x6233b3*/
   }
   for ( i = *(_DWORD **)(this + 52); i; i = *(_DWORD **)(this + 52) ) /*0x6233bf*/
   {
@@ -2938,7 +2938,7 @@ void __thiscall Dialog_CleanupTree(int this)
     if ( v4 ) /*0x6233dd*/
       *v4 = *v3; /*0x6233e1*/
     else
-      *(_DWORD *)(this + 52) = *v3; /*0x6233e7*/
+      this->Dialog_field_0x34 = *v3; /*0x6233e7*/
     __3_YAXPAX_Z(v3); /*0x6233eb*/
 LABEL_12:
     ; /*0x6233f3*/

@@ -209,14 +209,6 @@ int __stdcall WaveClass::_vt03(int a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x75F880
-namespace gamemd {
-int WaveClass::GetObjectSize()
-{
-return 576;
-}
-} // namespace gamemd
-
 // 0x75F890
 namespace gamemd {
 int WaveClass::CheckStateFlag()
@@ -295,5 +287,13 @@ WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x7632c1*/
   return (WaveClass *)Block; /*0x7632cb*/
 }
+}
+} // namespace gamemd
+
+// 0x75F880
+namespace gamemd {
+int WaveClass::GetObjectSize()
+{
+return 576;
 }
 } // namespace gamemd

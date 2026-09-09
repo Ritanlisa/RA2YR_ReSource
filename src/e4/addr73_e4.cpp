@@ -252,22 +252,6 @@ int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x730AD0
-namespace gamemd {
-int sub_730AD0()
-{
-return 16454;
-}
-} // namespace gamemd
-
-// 0x730AE0
-namespace gamemd {
-int sub_730AE0()
-{
-return 240;
-}
-} // namespace gamemd
-
 // 0x730AF0
 namespace gamemd {
 char ProcessSelectionExperience()
@@ -2797,5 +2781,21 @@ void __cdecl nullsub_248()
 {
   ; /*0x7393b0*/
 }
+}
+} // namespace gamemd
+
+// 0x730AD0
+namespace gamemd {
+int sub_730AD0()
+{
+return 16454;
+}
+} // namespace gamemd
+
+// 0x730AE0
+namespace gamemd {
+int sub_730AE0()
+{
+return 240;
 }
 } // namespace gamemd

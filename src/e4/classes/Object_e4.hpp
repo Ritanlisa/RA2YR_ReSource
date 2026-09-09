@@ -18,11 +18,11 @@ struct Object {
     int SaveObject(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5FD950
     void HandleAction(int * a2, int * a3);  // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
-    int StubReturn176();  // 0x5FDF00
     int ddtor(int a1, unsigned int * a2);  // 0x5FDF10
-    int StubReturn20();  // 0x5FDF50
     OverlayClass * DrawObject(void ** Block, char a2);  // 0x5FDF70
     int * CalculateObjectPlacementPosition(int * a2);  // 0x62AC30
     SessionClass * DtorWithDelete(void ** Block, char a2);  // 0x7AD330
+    int StubReturn176();  // 0x5FDF00
+    int StubReturn20();  // 0x5FDF50
 };
 } // namespace gamemd

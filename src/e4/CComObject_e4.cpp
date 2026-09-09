@@ -1702,22 +1702,6 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt43(int a1, int a2, int a3, con
 }
 } // namespace gamemd
 
-// 0x7AB330
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::COMStub_Return0(int a1, int a2, int a3, int a4)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7AB340
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7AB350
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t Time)
@@ -2696,5 +2680,21 @@ int __thiscall CComObject_CChatEventSink___ATL::Check(int this, TechnoTypeClass 
 {
   return (*(int (__thiscall **)(TechnoTypeClass *))(this + 24))(aP1) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x7ae5c4*/
 }
+}
+} // namespace gamemd
+
+// 0x7AB330
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::COMStub_Return0(int a1, int a2, int a3, int a4)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AB340
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
+{
+return 0;
 }
 } // namespace gamemd

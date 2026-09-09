@@ -1200,12 +1200,12 @@ void __thiscall sub_6599C0(int this)
   v2 = this->nextObject - this->objectTypeFlags; /*0x6599d8*/
   v3 = this->attachedBomb - this->fallRate; /*0x6599dd*/
   v4 = this->attachedTag - this->owningHouseIndex; /*0x6599e2*/
-  *(_DWORD *)(this + 92) = v2; /*0x6599e6*/
+  this->customSound_controller.AudioController_field_0C = v2; /*0x6599e6*/
   *(_DWORD *)(this + 96) = v4; /*0x6599e8*/
   this->customSound = v3; /*0x6599eb*/
   *(double *)(this + 104) = Math::Sqrt((double)(this->customSound * this->customSound /*0x659a19*/
                                               + *(_DWORD *)(this + 96) * *(_DWORD *)(this + 96)
-                                              + *(_DWORD *)(this + 92) * *(_DWORD *)(this + 92)));
+                                              + this->customSound_controller.AudioController_field_0C * this->customSound_controller.AudioController_field_0C));
 }
 }
 } // namespace gamemd
@@ -1228,7 +1228,7 @@ __int16 __thiscall sub_659A30(int this)
   char v10; // cl
 
   v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24)); /*0x659a3c*/
-  v3 = *(_DWORD *)(this + 92); /*0x659a41*/
+  v3 = this->customSound_controller.AudioController_field_0C; /*0x659a41*/
   v4 = *(_DWORD *)(this + 96); /*0x659a44*/
   v5 = this->customSound; /*0x659a47*/
   *(_DWORD *)(this + 140) = v2; /*0x659a4e*/
@@ -1820,22 +1820,6 @@ int __thiscall nullsub_0_6(RAMFileClass *this, int a2)
 {
   return (*(int (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 4))(this); /*0x65c565*/
 }
-}
-} // namespace gamemd
-
-// 0x65C570
-namespace gamemd {
-int nullsub_0_7()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x65C580
-namespace gamemd {
-char nullsub_0_8()
-{
-return 1;
 }
 } // namespace gamemd
 
@@ -4149,5 +4133,21 @@ char __fastcall sub_65FB70(int a1)
 {
   return byte_7F09A4[16 * a1]; /*0x65fb79*/
 }
+}
+} // namespace gamemd
+
+// 0x65C570
+namespace gamemd {
+int nullsub_0_7()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x65C580
+namespace gamemd {
+char nullsub_0_8()
+{
+return 1;
 }
 } // namespace gamemd

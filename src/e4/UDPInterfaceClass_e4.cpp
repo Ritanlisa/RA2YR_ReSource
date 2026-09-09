@@ -993,12 +993,6 @@ void __thiscall UDPInterfaceClass_Destru::_vt30(_DWORD *this, _DWORD *a2, __int1
 }
 }
 
-// 0x7B40F0
-int UDPInterfaceClass_Destru::COMStub_Ret2()
-{
-return 2;
-}
-
 // 0x7B4100
 int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
@@ -1020,4 +1014,10 @@ int __thiscall UDPInterfaceClass_Destru::_vt18(_DWORD *this)
 {
   return *(this + 64856); /*0x7b4146*/
 }
+}
+
+// 0x7B40F0
+int UDPInterfaceClass_Destru::COMStub_Ret2()
+{
+return 2;
 }

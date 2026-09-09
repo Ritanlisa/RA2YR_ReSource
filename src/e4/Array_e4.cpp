@@ -68,12 +68,12 @@ void __thiscall Array_Cleanup(int this)
 {
   int i; // edi
 
-  if ( *(_DWORD *)(this + 60) ) /*0x49b723*/
+  if ( this->Array_field_0x3C ) /*0x49b723*/
   {
-    for ( i = 0; i < *(_DWORD *)(this + 64); ++i ) /*0x49b732*/
+    for ( i = 0; i < this->Array_field_0x40; ++i ) /*0x49b732*/
     {
-      if ( *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * i) ) /*0x49b737*/
-        __3_YAXPAX_Z(*(void **)(*(_DWORD *)(this + 60) + 4 * i)); /*0x49b73f*/
+      if ( *(_DWORD *)(this->Array_field_0x3C + 4 * i) ) /*0x49b737*/
+        __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C + 4 * i)); /*0x49b73f*/
     }
     __3_YAXPAX_Z(*(void **)(this + 60)); /*0x49b753*/
   }
@@ -95,13 +95,13 @@ char __thiscall Array_GetElementAt(int this, _DWORD *a2, int a3)
   result = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = *(_DWORD *)(this + 56); /*0x49d086*/
-  if ( v3 < 0 || v3 >= *(_DWORD *)(this + 64) ) /*0x49d094*/
+    v3 = this->Array_field_0x38; /*0x49d086*/
+  if ( v3 < 0 || v3 >= this->Array_field_0x40 ) /*0x49d094*/
     v3 = -1; /*0x49d096*/
-  if ( *(_BYTE *)(this + 108) ) /*0x49d09a*/
+  if ( (unsigned char)this->Array_field_0x6C ) /*0x49d09a*/
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v3); /*0x49d0ad*/
+      *a2 = *(_DWORD *)(this->Array_field_0x3C + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
       return 1; /*0x49d0b4*/
   }

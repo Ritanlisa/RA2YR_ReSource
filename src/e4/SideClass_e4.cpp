@@ -367,22 +367,6 @@ int __stdcall SideClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP
 }
 } // namespace gamemd
 
-// 0x6A4910
-namespace gamemd {
-int SideClass::StubReturn180()
-{
-return 180;
-}
-} // namespace gamemd
-
-// 0x6A4920
-namespace gamemd {
-int SideClass::StubReturn28()
-{
-return 28;
-}
-} // namespace gamemd
-
 // 0x6A4930
 namespace gamemd {
 SideClass * SideClass::Init(void ** Block, char a2)
@@ -424,5 +408,21 @@ SideClass *__thiscall SideClass::Init(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
   return (SideClass *)Block; /*0x6a49fa*/
 }
+}
+} // namespace gamemd
+
+// 0x6A4910
+namespace gamemd {
+int SideClass::StubReturn180()
+{
+return 180;
+}
+} // namespace gamemd
+
+// 0x6A4920
+namespace gamemd {
+int SideClass::StubReturn28()
+{
+return 28;
 }
 } // namespace gamemd

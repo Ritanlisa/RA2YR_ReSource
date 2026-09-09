@@ -436,27 +436,27 @@ int __thiscall Object::Unlink(#374 *this)
   int v2; // [esp+4h] [ebp+4h]
   char v3; // [esp+8h] [ebp+8h]
 
-  result = *((_DWORD *)this + 13); /*0x5f5230*/
+  result = this->Object_field_0x34; /*0x5f5230*/
   if ( result == v2 && result ) /*0x5f523d*/
   {
     --*(_DWORD *)(result + 44); /*0x5f5244*/
-    *((_DWORD *)this + 13) = 0; /*0x5f5247*/
+    this->Object_field_0x34 = 0; /*0x5f5247*/
   }
   LOBYTE(result) = v3; /*0x5f524f*/
   if ( v3 ) /*0x5f5255*/
   {
-    result = *((_DWORD *)this + 12); /*0x5f5257*/
+    result = this->Object_field_0x30; /*0x5f5257*/
     if ( v2 == result ) /*0x5f525c*/
     {
       if ( v2 ) /*0x5f5260*/
       {
         result = *(_DWORD *)(result + 48); /*0x5f5262*/
-        *((_DWORD *)this + 12) = result; /*0x5f5265*/
+        this->Object_field_0x30 = result; /*0x5f5265*/
       }
     }
   }
-  if ( v2 == *((_DWORD *)this + 34) ) /*0x5f526e*/
-    *((_DWORD *)this + 34) = 0; /*0x5f5270*/
+  if ( v2 == this->Object_field_0x88 ) /*0x5f526e*/
+    this->Object_field_0x88 = 0; /*0x5f5270*/
   return result; /*0x5f527a*/
 }
 }
@@ -477,8 +477,8 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
   ObjectClass::ctor(this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
   *(_DWORD *)this = &OverlayClass::`vftable'; /*0x5fc38f*/
-  *((_DWORD *)this + 43) = v5; /*0x5fc395*/
-  *((_DWORD *)this + 2) = &OverlayClass::`vftable'; /*0x5fc39f*/
+  this->Object_field_0xAC = v5; /*0x5fc395*/
+  this->Object_field_0x8 = &OverlayClass::`vftable'; /*0x5fc39f*/
   *((_DWORD *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
   *((_DWORD *)this + 3) = &OverlayClass::`vftable'; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
@@ -610,7 +610,7 @@ void __thiscall Object::_vt70(int this, int *a2, int *a3)
   int v34; // [esp+24h] [ebp-4h]
 
   v4 = (int *)(this + 156); /*0x5fd987*/
-  v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 172) + 156))(*(_DWORD *)(this + 172)); /*0x5fd98d*/
+  v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 172) + 156))(this->Object_field_0xAC); /*0x5fd98d*/
   v32 = *v4; /*0x5fd993*/
   v33 = *(_DWORD *)(this + 160); /*0x5fd99f*/
   v34 = *(_DWORD *)(this + 164); /*0x5fd9a6*/
@@ -625,7 +625,7 @@ LABEL_5:
   else
   {
     v8 = MEMORY[0xA83D84]; /*0x5fd9d1*/
-    while ( *(_DWORD *)v8->__pad_0 != *(_DWORD *)(this + 172) ) /*0x5fd9d9*/
+    while ( *(_DWORD *)v8->__pad_0 != this->Object_field_0xAC ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
       v8 = (BuildingTypeClass *)((char *)v8 + 4); /*0x5fd9dc*/
@@ -644,7 +644,7 @@ LABEL_5:
   v11 = v9 + a2[1]; /*0x5fda30*/
   v30 = *a2; /*0x5fda32*/
   v31 = MEMORY[0x886FA4] + v11; /*0x5fda42*/
-  v12 = *(_DWORD *)(this + 172); /*0x5fda46*/
+  v12 = this->Object_field_0xAC; /*0x5fda46*/
   if ( *(_BYTE *)(v12 + 681) ) /*0x5fda4c*/
   {
     v13 = 0; /*0x5fda5a*/
@@ -670,7 +670,7 @@ LABEL_20:
     v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 156))(v17); /*0x5fdaad*/
     if ( !v18 ) /*0x5fdab5*/
     {
-      v19 = *(_DWORD *)(*(_DWORD *)(this + 172) + 668); /*0x5fdabd*/
+      v19 = *(_DWORD *)(this->Object_field_0xAC + 668); /*0x5fdabd*/
       if ( v19 ) /*0x5fdac5*/
         v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v19 + 156))(v19); /*0x5fdac9*/
     }
@@ -784,14 +784,6 @@ int __thiscall Object::_vt34(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x5FDF00
-namespace gamemd {
-int Object::StubReturn176()
-{
-return 176;
-}
-} // namespace gamemd
-
 // 0x5FDF10
 namespace gamemd {
 int Object::ddtor(int a1, unsigned int * a2)
@@ -807,14 +799,6 @@ int __stdcall Object::_vt03(int a1, _DWORD *a2)
   a2[3] = -777003740; /*0x5fdf40*/
   return 0; /*0x5fdf1d*/
 }
-}
-} // namespace gamemd
-
-// 0x5FDF50
-namespace gamemd {
-int Object::StubReturn20()
-{
-return 20;
 }
 } // namespace gamemd
 
@@ -1982,5 +1966,21 @@ char *__cdecl sub_7CBC11(char *VarName)
   _unlock(12); /*0x7cbc26*/
   return v1; /*0x7cbc30*/
 }
+}
+} // namespace gamemd
+
+// 0x5FDF00
+namespace gamemd {
+int Object::StubReturn176()
+{
+return 176;
+}
+} // namespace gamemd
+
+// 0x5FDF50
+namespace gamemd {
+int Object::StubReturn20()
+{
+return 20;
 }
 } // namespace gamemd

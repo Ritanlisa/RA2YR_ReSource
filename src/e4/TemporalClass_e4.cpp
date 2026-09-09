@@ -18,9 +18,9 @@ int __thiscall sub_71A450(int this)
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(_DWORD *)(this + 44) = v2; /*0x71a464*/
   *(_DWORD *)this = &TemporalClass::`vftable'; /*0x71a467*/
-  *(_DWORD *)(this + 4) = &TemporalClass::`vftable'; /*0x71a46d*/
-  *(_DWORD *)(this + 8) = &TemporalClass::`vftable'; /*0x71a474*/
-  *(_DWORD *)(this + 12) = &TemporalClass::`vftable'; /*0x71a47b*/
+  this->vtable1 = &TemporalClass::`vftable'; /*0x71a46d*/
+  this->vtable2 = &TemporalClass::`vftable'; /*0x71a474*/
+  this->vtable3 = &TemporalClass::`vftable'; /*0x71a47b*/
   if ( MEMORY[0xB0EC70] < MEMORY[0xB0EC68] /*0x71a4b7*/
     || (MEMORY[0xB0EC6D] || !MEMORY[0xB0EC68])
     && MEMORY[0xB0EC74] > 0

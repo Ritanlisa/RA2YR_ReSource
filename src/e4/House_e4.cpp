@@ -685,7 +685,7 @@ LABEL_53:
       }
       if ( *(_DWORD *)(this + 592) == 3 ) /*0x4fd87f*/
         goto LABEL_70; /*0x4fd87f*/
-      v25 = *(_DWORD *)(this + 120); /*0x4fd881*/
+      v25 = this->House_field_0x78; /*0x4fd881*/
       v26 = 0; /*0x4fd884*/
       if ( v25 > 0 ) /*0x4fd888*/
         break; /*0x4fd888*/
@@ -792,7 +792,7 @@ int __thiscall House::IsHumanPlayer(#375 *this)
 {
   if ( MEMORY[0xA8B238][0] ) /*0x50b6f7*/
     return this == HouseClass_Player; /*0x50b720*/
-  return *((_BYTE *)this + 492) || *((_BYTE *)this + 493); /*0x50b70f*/
+  return (unsigned char)this->House_field_0x1EC || *((_BYTE *)this + 493); /*0x50b70f*/
 }
 }
 } // namespace gamemd
@@ -807,7 +807,7 @@ int __thiscall House::IsCurrentPlayer(#375 *this)
   int result; // eax
 
   result = MEMORY[0xA8B238][0]; /*0x50b730*/
-  LOBYTE(result) = *((_BYTE *)this + 492); /*0x50b737*/
+  LOBYTE(result) = (unsigned char)this->House_field_0x1EC; /*0x50b737*/
   if ( !MEMORY[0xA8B238][0] ) /*0x50b73d*/
     LOBYTE(result) = (_BYTE)result || *((_BYTE *)this + 493); /*0x50b750*/
   return result; /*0x50b74f*/
@@ -1195,7 +1195,7 @@ int __thiscall House::PowerBeginUpdate(int this, AbstractClass *aP1)
   v8 = Power::FlagProcess(aP1, v7); /*0x70c43f*/
   LOBYTE(v8) = *(_BYTE *)(this + 978); /*0x70c444*/
   Power::FlagProcess(aP1, v8); /*0x70c44d*/
-  LOBYTE(v9) = *(_BYTE *)(this + 979); /*0x70c452*/
+  LOBYTE(v9) = (unsigned char)this->House_field_0x3D3; /*0x70c452*/
   Power::FlagProcess(aP1, v9); /*0x70c45b*/
   LOBYTE(v10) = *(_BYTE *)(this + 980); /*0x70c460*/
   v11 = Power::FlagProcess(aP1, v10); /*0x70c469*/

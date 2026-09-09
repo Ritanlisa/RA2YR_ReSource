@@ -10,7 +10,6 @@ struct Game {
     int DestroyAllObjects();  // 0x534450
     int MakeScreenshot(int a1);  // 0x537BC0
     int loadCampaignData();  // 0x550000
-    char Stub3(IUnknown * aP0);  // 0x5865E0
     void processStartup();  // 0x5B56F0
     char StartModemMultiplayer(char a2);  // 0x5B7090
     int BuildGameSetupPacket();  // 0x5BA660
@@ -32,5 +31,6 @@ struct Game {
     int CreateAIPlayer();  // 0x796DE0
     int CreateAIPlayer_Potato();  // 0x796ED0
     char SetupWOLTournament();  // 0x7A2330
+    char Stub3(IUnknown * aP0);  // 0x5865E0
 };
 } // namespace gamemd

@@ -12,12 +12,6 @@ int __stdcall INoticeSource_Stub1(int a1)
 }
 }
 
-// 0x411500
-char XSurface::entry_68_(int a1, int a2)
-{
-return 1;
-}
-
 // 0x411560
 int XSurface::Lock(int a2, int a3)
 {
@@ -1142,3 +1136,9 @@ char __thiscall XSurface::Blit(
 }
 }
 } // namespace gamemd
+
+// 0x411500
+char XSurface::entry_68_(int a1, int a2)
+{
+return 1;
+}

@@ -12,8 +12,8 @@ int __thiscall sub_466380(int this)
   int v2; // eax
 
   ObjectClass::ctor((_DWORD *)this); /*0x466384*/
-  *(_DWORD *)(this + 172) = 0; /*0x466391*/
-  *(_DWORD *)(this + 176) = 0; /*0x466397*/
+  this->BulletClass_field_0xAC = 0; /*0x466391*/
+  this->BulletClass_field_0xB0 = 0; /*0x466397*/
   *(_BYTE *)(this + 180) = 0; /*0x46639d*/
   BulletClass::ResetDetonationTimer(this + 184); /*0x4663a3*/
   *(_DWORD *)(this + 288) = 0; /*0x4663aa*/
@@ -22,7 +22,7 @@ int __thiscall sub_466380(int this)
   *(_BYTE *)(this + 224) = 0; /*0x4663bf*/
   *(_DWORD *)(this + 256) = 0; /*0x4663c5*/
   *(_DWORD *)(this + 264) = 0; /*0x4663cb*/
-  *(_DWORD *)(this + 268) = 0; /*0x4663d1*/
+  this->BulletClass_field_0x10C = 0; /*0x4663d1*/
   *(_DWORD *)(this + 272) = 0; /*0x4663d7*/
   *(_DWORD *)(this + 276) = -1; /*0x4663dd*/
   *(_DWORD *)(this + 280) = 0; /*0x4663e3*/
@@ -30,20 +30,20 @@ int __thiscall sub_466380(int this)
   *(_DWORD *)(this + 296) = 0; /*0x4663ef*/
   *(_BYTE *)(this + 300) = 0; /*0x4663f5*/
   *(_BYTE *)(this + 301) = 0; /*0x4663fb*/
-  *(_DWORD *)(this + 304) = 0; /*0x466401*/
+  this->BulletClass_field_0x130 = 0; /*0x466401*/
   *(_WORD *)(this + 332) = -1; /*0x466407*/
   *(_WORD *)(this + 334) = -1; /*0x46640e*/
-  *(_DWORD *)(this + 340) = 0; /*0x466419*/
+  this->BulletClass_field_0x154 = 0; /*0x466419*/
   *(_BYTE *)(this + 344) = 0; /*0x46641f*/
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466425*/
-  *(_DWORD *)(this + 4) = &BulletClass::`vftable'; /*0x46642b*/
-  *(_DWORD *)(this + 8) = &BulletClass::`vftable'; /*0x466431*/
+  this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
+  this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
   *(_DWORD *)(this + 12) = &BulletClass::`vftable'; /*0x466438*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x46643f*/
   *(_DWORD *)(this + 308) = 0; /*0x466444*/
   *(_DWORD *)(this + 312) = 0; /*0x46644a*/
   *(_DWORD *)(this + 316) = 0; /*0x466450*/
-  *(_DWORD *)(this + 320) = 0; /*0x466456*/
+  this->BulletClass_field_0x140 = 0; /*0x466456*/
   *(_DWORD *)(this + 324) = 0; /*0x46645c*/
   *(_DWORD *)(this + 328) = 0; /*0x466462*/
   if ( MEMORY[0xA8ED50] < MEMORY[0xA8ED48] /*0x46649b*/
@@ -74,8 +74,8 @@ int __thiscall BulletClass::Dtor(#374 *this)
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466566*/
-  *((_DWORD *)this + 1) = &BulletClass::`vftable'; /*0x46656c*/
-  *((_DWORD *)this + 2) = &BulletClass::`vftable'; /*0x466573*/
+  this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46656c*/
+  this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466573*/
   *((_DWORD *)this + 3) = &BulletClass::`vftable'; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((_BYTE *)this + 344) ) /*0x466586*/
@@ -94,9 +94,9 @@ int __thiscall BulletClass::Dtor(#374 *this)
   }
   if ( MEMORY[0xA8E9A0] ) /*0x4665e0*/
     ObjectClass::Undeploy(this); /*0x4665e4*/
-  *((_DWORD *)this + 43) = 0; /*0x4665e9*/
-  *((_DWORD *)this + 44) = 0; /*0x4665f3*/
-  *((_DWORD *)this + 85) = 0; /*0x4665fd*/
+  this->BulletClass_field_0xAC = 0; /*0x4665e9*/
+  this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
+  this->BulletClass_field_0x154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
   v3 = (*(int (__thiscall **)(int *, #374 **))(MEMORY[0xA8ED40] + 16))(&MEMORY[0xA8ED40], &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < MEMORY[0xA8ED50] && v3 < --MEMORY[0xA8ED50] ) /*0x466636*/
@@ -174,22 +174,6 @@ LONG __stdcall BulletClass::_vt02(volatile LONG *a1)
 }
 } // namespace gamemd
 
-// 0x46B540
-namespace gamemd {
-int BulletClass::MissionStubReturnZero()
-{
-return 352;
-}
-} // namespace gamemd
-
-// 0x46B550
-namespace gamemd {
-int BulletClass::MissionStubReturnZero2()
-{
-return 8;
-}
-} // namespace gamemd
-
 // 0x46B560
 namespace gamemd {
 int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
@@ -205,5 +189,21 @@ int __stdcall BulletClass::_vt03(int a1, _DWORD *a2)
   a2[3] = -777003740; /*0x46b590*/
   return 0; /*0x46b56d*/
 }
+}
+} // namespace gamemd
+
+// 0x46B540
+namespace gamemd {
+int BulletClass::MissionStubReturnZero()
+{
+return 352;
+}
+} // namespace gamemd
+
+// 0x46B550
+namespace gamemd {
+int BulletClass::MissionStubReturnZero2()
+{
+return 8;
 }
 } // namespace gamemd

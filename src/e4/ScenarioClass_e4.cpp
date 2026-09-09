@@ -64,22 +64,6 @@ void *ScenarioClass_CopyStartPositions()
 }
 } // namespace gamemd
 
-// 0x5C0E20
-namespace gamemd {
-char ScenarioClass::initUnits()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5C0E30
-namespace gamemd {
-char ScenarioClass::StubReturnFalse()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x5C0E40
 namespace gamemd {
 char ScenarioClass::StubReturnFalse2()
@@ -1245,5 +1229,21 @@ unsigned int __thiscall sub_6B8AE0(unsigned int *this)
   *this = result; /*0x6b8aec*/
   return result; /*0x6b8aee*/
 }
+}
+} // namespace gamemd
+
+// 0x5C0E20
+namespace gamemd {
+char ScenarioClass::initUnits()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5C0E30
+namespace gamemd {
+char ScenarioClass::StubReturnFalse()
+{
+return 0;
 }
 } // namespace gamemd

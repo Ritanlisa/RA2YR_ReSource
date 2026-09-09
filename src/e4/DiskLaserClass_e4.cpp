@@ -94,18 +94,6 @@ int __stdcall DiskLaserClass::_vt03(int a1, _DWORD *a2)
 }
 }
 
-// 0x4A7C70
-int DiskLaserClass::StubReturn64()
-{
-return 64;
-}
-
-// 0x4A7C80
-int DiskLaserClass::StubReturn73()
-{
-return 73;
-}
-
 // 0x4A7C90
 DiskLaserClass * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
@@ -135,4 +123,16 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x4a7d07*/
   return (DiskLaserClass *)Block; /*0x4a7d11*/
 }
+}
+
+// 0x4A7C70
+int DiskLaserClass::StubReturn64()
+{
+return 64;
+}
+
+// 0x4A7C80
+int DiskLaserClass::StubReturn73()
+{
+return 73;
 }

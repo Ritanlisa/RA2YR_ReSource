@@ -1084,22 +1084,6 @@ unsigned int j_Time_GetElapsedMS()
 }
 } // namespace gamemd
 
-// 0x4125F0
-namespace gamemd {
-int sub_4125F0()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x412600
-namespace gamemd {
-int sub_412600()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x412610
 namespace gamemd {
 int sub_412610()
@@ -1427,14 +1411,6 @@ void __stdcall nullsub_3(AbstractClass *aP0)
 {
   ; /*0x413490*/
 }
-}
-} // namespace gamemd
-
-// 0x413590
-namespace gamemd {
-int sub_413590()
-{
-return 750;
 }
 } // namespace gamemd
 
@@ -2293,7 +2269,7 @@ char sub_41DD10()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_41DD10(int this)
 {
-  *(_DWORD *)(this + 64) = MEMORY[0xA8ED84]; /*0x41dd15*/
+  this->ambientSoundController.AudioController_field_04 = MEMORY[0xA8ED84]; /*0x41dd15*/
   *(_BYTE *)(this + 60) = 0; /*0x41dd1a*/
   *(_BYTE *)(this + 61) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
@@ -2577,5 +2553,29 @@ bool __stdcall globalHelper_01FEE0(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
   }
   return 1; /*0x41ff8c*/
 }
+}
+} // namespace gamemd
+
+// 0x4125F0
+namespace gamemd {
+int sub_4125F0()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x412600
+namespace gamemd {
+int sub_412600()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x413590
+namespace gamemd {
+int sub_413590()
+{
+return 750;
 }
 } // namespace gamemd

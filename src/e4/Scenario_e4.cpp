@@ -363,7 +363,7 @@ int __thiscall sub_4C6180(int this)
     i += 41; /*0x4c618d*/
     ++v2; /*0x4c6190*/
   }
-  *(_DWORD *)(this + 52) = (*(int (__stdcall **)(char *))(*((_DWORD *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36); /*0x4c61b1*/
+  this->Scenario_field_0x34 = (*(int (__stdcall **)(char *))(*((_DWORD *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36); /*0x4c61b1*/
   v4 = *((_DWORD *)MEMORY[0xA8B230] + 1146); /*0x4c61ba*/
   v5 = *((_DWORD *)MEMORY[0xA8B230] + 1148); /*0x4c61c0*/
   if ( v4 != -1 ) /*0x4c61c9*/
@@ -373,7 +373,7 @@ int __thiscall sub_4C6180(int this)
     else
       v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x4c61d7*/
   }
-  *(_DWORD *)(this + 56) = v5; /*0x4c61dd*/
+  this->Scenario_field_0x38 = v5; /*0x4c61dd*/
   result = *((_DWORD *)HouseClass_Player + 97); /*0x4c61e6*/
   *(_DWORD *)(this + 60) = result; /*0x4c61ec*/
   *(_WORD *)(this + 64) = *((_WORD *)MEMORY[0xA8B230] + 6864); /*0x4c61fc*/
@@ -1008,7 +1008,7 @@ int Scenario::SetDword32(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 {
-  *((_DWORD *)this + 32) = a2; /*0x642b14*/
+  this->Scenario_field_0x80 = a2; /*0x642b14*/
   return a2; /*0x642b1a*/
 }
 }
@@ -1021,7 +1021,7 @@ int Scenario::SetDword30(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Scenario::SetDword30(ProgressScreenClass *this, int a2)
 {
-  *((_DWORD *)this + 30) = a2; /*0x642df4*/
+  this->Scenario_field_0x78 = a2; /*0x642df4*/
   return a2; /*0x642df7*/
 }
 }

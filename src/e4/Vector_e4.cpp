@@ -28,10 +28,10 @@ void Vector::Clear()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Vector_Clear(int this)
 {
-  if ( *(_BYTE *)(this + 8) ) /*0x43ae53*/
+  if ( (unsigned char)this->Vector_field_0x8 ) /*0x43ae53*/
     __3_YAXPAX_Z(*(void **)this); /*0x43ae5d*/
   *(_DWORD *)this = 0; /*0x43ae65*/
-  *(_DWORD *)(this + 4) = 0; /*0x43ae6b*/
+  this->Vector_field_0x4 = 0; /*0x43ae6b*/
   *(_BYTE *)(this + 8) = 0; /*0x43ae72*/
 }
 }
@@ -99,20 +99,20 @@ char __thiscall ReallocDynamicVector(int this, int a2)
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *(_DWORD *)(this + 8))); /*0x4d2e60*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->Vector_field_0x8)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  for ( i = 0; i < this->Vector_field_0x4; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
     v6 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x4d2e82*/
     *(_DWORD *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
-  v7 = a2 + *(_DWORD *)(this + 8); /*0x4d2ea6*/
+  v7 = a2 + this->Vector_field_0x8; /*0x4d2ea6*/
   *(_DWORD *)this = v3; /*0x4d2ea8*/
-  *(_DWORD *)(this + 8) = v7; /*0x4d2eaa*/
-  *(_DWORD *)(this + 16) = 0; /*0x4d2ead*/
+  this->Vector_field_0x8 = v7; /*0x4d2eaa*/
+  this->Vector_field_0x10 = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
 }
 }
@@ -150,13 +150,13 @@ void Vector::Cleanup()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Vector_Cleanup(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x512d3d*/
+  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x512d3d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x512d43*/
-    *(_DWORD *)(this + 4) = 0; /*0x512d4b*/
+    this->Vector_field_0x4 = 0; /*0x512d4b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x512d4e*/
-  *(_DWORD *)(this + 8) = 0; /*0x512d51*/
+  this->Vector_field_0x8 = 0; /*0x512d51*/
 }
 }
 } // namespace gamemd
@@ -168,13 +168,13 @@ void Vector::Destructor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Vector_Destructor(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x51310d*/
+  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x51310d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x513113*/
-    *(_DWORD *)(this + 4) = 0; /*0x51311b*/
+    this->Vector_field_0x4 = 0; /*0x51311b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x51311e*/
-  *(_DWORD *)(this + 8) = 0; /*0x513121*/
+  this->Vector_field_0x8 = 0; /*0x513121*/
 }
 }
 } // namespace gamemd
@@ -200,13 +200,13 @@ void Vector::Cleanup2()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Vector_Cleanup2(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x67abed*/
+  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x67abed*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x67abf3*/
-    *(_DWORD *)(this + 4) = 0; /*0x67abfb*/
+    this->Vector_field_0x4 = 0; /*0x67abfb*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x67abfe*/
-  *(_DWORD *)(this + 8) = 0; /*0x67ac01*/
+  this->Vector_field_0x8 = 0; /*0x67ac01*/
 }
 }
 } // namespace gamemd

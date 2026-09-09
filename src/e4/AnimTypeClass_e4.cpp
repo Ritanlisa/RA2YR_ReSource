@@ -151,13 +151,13 @@ _DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
   *(this + 2) = &AnimTypeClass::`vftable'; /*0x42773d*/
   *(this + 3) = &AnimTypeClass::`vftable'; /*0x427744*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x42774b*/
-  *((_BYTE *)this + 564) = 1; /*0x427750*/
-  *((_BYTE *)this + 559) = 1; /*0x427757*/
-  *((_BYTE *)this + 560) = 0; /*0x42775e*/
-  *((_BYTE *)this + 561) = 0; /*0x427764*/
-  *((_BYTE *)this + 562) = 1; /*0x42776a*/
-  *((_BYTE *)this + 563) = 1; /*0x427771*/
-  *((_BYTE *)this + 565) = 0; /*0x427778*/
+  this->IsLogic = 1; /*0x427750*/
+  this->RadarInvisible = 1; /*0x427757*/
+  this->Selectable = 0; /*0x42775e*/
+  this->LegalTarget = 0; /*0x427764*/
+  this->Insignificant = 1; /*0x42776a*/
+  this->Immune = 1; /*0x427771*/
+  this->AllowCellContent = 0; /*0x427778*/
   if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] < *(int *)&MEMORY[0x89F690].__pad_579C[62252] /*0x4277b0*/
     || (MEMORY[0x89F690].__pad_579C[62257] || !*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62252])
     && *(int *)&MEMORY[0x89F690].__pad_579C[62264] > 0
@@ -216,23 +216,23 @@ char __thiscall AnimTypeClass::_vt24(void *this, int a2)
   LOBYTE(v2) = MEMORY[0xA8ED6B]; /*0x427a80*/
   if ( MEMORY[0xA8ED6B] || a2 != dword_822CF8 ) /*0x427aa0*/
   {
-    if ( !*((_BYTE *)this + 556) || this->DemandLoad ) /*0x427ab0*/
+    if ( !this->Theater || this->DemandLoad ) /*0x427ab0*/
     {
-      LOBYTE(v2) = *((_BYTE *)this + 567); /*0x427b2b*/
+      LOBYTE(v2) = this->NewTheater; /*0x427b2b*/
       if ( (_BYTE)v2 ) /*0x427b33*/
         LOBYTE(v2) = (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 160))(this, a2); /*0x427b3a*/
     }
     else
     {
-      if ( *((_DWORD *)this + 41) && *((_BYTE *)this + 168) ) /*0x427ac4*/
+      if ( this->Image && this->ImageAllocated ) /*0x427ac4*/
       {
         __3_YAXPAX_Z(*((void **)this + 41)); /*0x427acf*/
-        *((_BYTE *)this + 168) = 0; /*0x427ad7*/
+        this->ImageAllocated = 0; /*0x427ad7*/
       }
-      *((_DWORD *)this + 41) = 0; /*0x427af6*/
+      this->Image = 0; /*0x427af6*/
       _makepath(Buffer, 0, 0, (const char *)this + 36, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = SearchMIXFile(Buffer, 1); /*0x427b15*/
-      *((_DWORD *)this + 41) = v2; /*0x427b1a*/
+      this->Image = v2; /*0x427b1a*/
     }
   }
   return v2; /*0x427b20*/
@@ -259,35 +259,35 @@ char __thiscall AnimTypeClass::_vt40(int this, int a2)
   LOBYTE(v3) = this->DemandLoad; /*0x427b59*/
   if ( !(_BYTE)v3 ) /*0x427b61*/
   {
-    if ( *(_BYTE *)(this + 556) ) /*0x427b67*/
+    if ( this->Theater ) /*0x427b67*/
     {
       LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
     }
     else
     {
-      if ( *(_DWORD *)(this + 164) && *(_BYTE *)(this + 168) ) /*0x427b85*/
+      if ( this->Image && this->ImageAllocated ) /*0x427b85*/
       {
         __3_YAXPAX_Z(*(void **)(this + 164)); /*0x427b90*/
-        *(_BYTE *)(this + 168) = 0; /*0x427b98*/
+        this->ImageAllocated = 0; /*0x427b98*/
       }
       v4 = *(_BYTE *)(this + 504); /*0x427b9f*/
       v5 = (const char *)(this + 504); /*0x427ba5*/
-      *(_DWORD *)(this + 164) = 0; /*0x427bad*/
+      this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)(this + 36); /*0x427bb9*/
       _makepath(Buffer, 0, 0, v5, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = SearchMIXFile(Buffer, 1); /*0x427be9*/
-      *(_DWORD *)(this + 164) = v3; /*0x427bf0*/
+      this->Image = v3; /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ObjectTypeClass::SetRTTI71(Buffer); /*0x427bfc*/
         v3 = SearchMIXFile(Buffer, 1); /*0x427c07*/
-        *(_DWORD *)(this + 164) = v3; /*0x427c0c*/
+        this->Image = v3; /*0x427c0c*/
       }
     }
   }
-  v6 = *(_DWORD *)(this + 164); /*0x427c12*/
+  v6 = this->Image; /*0x427c12*/
   if ( v6 ) /*0x427c1a*/
   {
     v7 = this->End; /*0x427c1c*/
@@ -535,7 +535,7 @@ int __thiscall AnimTypeClass::_vt13(int this, int *a2)
   Power::TimerProcess(this->DetailLevel); /*0x428b22*/
   Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
   Power::TimerProcess(*(_DWORD *)(this + 732)); /*0x428b3e*/
-  Power::TimerProcess(*(_DWORD *)(this + 736)); /*0x428b4c*/
+  Power::TimerProcess(this->RandomLoopDelay.Max); /*0x428b4c*/
   Power::TimerProcess(this->Translucency); /*0x428b5a*/
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Power::FlagProcess(a2, v14); /*0x428b6d*/
@@ -611,7 +611,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
   int v12; // [esp+D4h] [ebp-208h]
   char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
 
-  result = *((_DWORD *)this + 41); /*0x428c39*/
+  result = this->Image; /*0x428c39*/
   if ( !result && *(this + 862) ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
@@ -629,7 +629,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
     }
     CCFileClass::Construct(v7, Buffer); /*0x428d04*/
     EntireFile = CCFileClass::ReadEntireFile(v7); /*0x428d0d*/
-    *((_DWORD *)this + 41) = EntireFile; /*0x428d14*/
+    this->Image = EntireFile; /*0x428d14*/
     if ( EntireFile ) /*0x428d1a*/
     {
       *(this + 168) = 1; /*0x428d1c*/
@@ -639,7 +639,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
       ObjectTypeClass::SetRTTI71(Buffer); /*0x428d2c*/
       CCFileClass::Construct(v10, Buffer); /*0x428d3d*/
       v5 = CCFileClass::ReadEntireFile(v10); /*0x428d46*/
-      *((_DWORD *)this + 41) = v5; /*0x428d4d*/
+      this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         *(this + 168) = 1; /*0x428d55*/
       v10[0] = &CCFileClass::`vftable'; /*0x428d63*/
@@ -649,7 +649,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
       BufferIOFileClass::Dtor(v10); /*0x428d87*/
     }
     (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 160))(this, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x428d9c*/
-    v6 = *((_DWORD *)this + 41); /*0x428da2*/
+    v6 = this->Image; /*0x428da2*/
     v7[0] = &CCFileClass::`vftable'; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
@@ -659,22 +659,6 @@ int __thiscall AnimTypeClass::_vt39(char *this)
   }
   return result; /*0x428dd4*/
 }
-}
-} // namespace gamemd
-
-// 0x428E40
-namespace gamemd {
-int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
-{
-return -1;
-}
-} // namespace gamemd
-
-// 0x428E50
-namespace gamemd {
-int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
-{
-return 5;
 }
 } // namespace gamemd
 
@@ -813,5 +797,21 @@ int __thiscall AnimTypeClass::LookupByName(void *this)
   }
   return v2; /*0x48e07c*/
 }
+}
+} // namespace gamemd
+
+// 0x428E40
+namespace gamemd {
+int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
+{
+return -1;
+}
+} // namespace gamemd
+
+// 0x428E50
+namespace gamemd {
+int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
+{
+return 5;
 }
 } // namespace gamemd

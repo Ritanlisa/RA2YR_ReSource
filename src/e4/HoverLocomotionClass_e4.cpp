@@ -39,12 +39,6 @@ int __stdcall HoverLocomotionClass::_vt05(int a1, int *a2)
 }
 }
 
-// 0x5172B0
-int HoverLocomotionClass::StubReturn120()
-{
-return 120;
-}
-
 // 0x5172C0
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -58,4 +52,10 @@ HoverLocomotionClass *__thiscall HoverLocomotionClass::ProcessMove(_DWORD *Block
     __3_YAXPAX_Z(Block); /*0x5172dd*/
   return (HoverLocomotionClass *)Block; /*0x5172e7*/
 }
+}
+
+// 0x5172B0
+int HoverLocomotionClass::StubReturn120()
+{
+return 120;
 }

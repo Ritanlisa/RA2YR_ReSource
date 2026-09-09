@@ -208,7 +208,7 @@ unsigned int LoadOptions::vt05(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall LoadOptions::vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x55a180*/
+  if ( (unsigned char)this->field_0C ) /*0x55a180*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x55a195*/
   else
     return 0; /*0x55a187*/

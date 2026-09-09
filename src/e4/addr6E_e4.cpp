@@ -3,22 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Tactical_42_e4.hpp"
 
-// 0x6E0030
-namespace gamemd {
-char sub_6E0030(int a1, int a2, int a3, int a4)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x6E0040
-namespace gamemd {
-char sub_6E0040(int a1, int a2, int a3, int a4)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x6E0080
 namespace gamemd {
 char sub_6E0080(int a2, int a3, int a4, int a5)
@@ -1746,7 +1730,7 @@ char __thiscall sub_6EA080(int this)
   int v2; // eax
   char result; // al
 
-  v2 = *(_DWORD *)(this + 84); /*0x6ea086*/
+  v2 = this->customSound_controller.AudioController_field_04; /*0x6ea086*/
   *(_BYTE *)(this + 127) = 1; /*0x6ea089*/
   *(_BYTE *)(this + 120) = 1; /*0x6ea08e*/
   for ( *(_BYTE *)(this + 122) = 0; v2; v2 = *(_DWORD *)(v2 + 1496) ) /*0x6ea095*/
@@ -1939,7 +1923,7 @@ void __thiscall sub_6EDFD0(int this, int a2, int a3)
 
   do /*0x6ee038*/
   {
-    v4 = *(_DWORD *)(this + 84); /*0x6edfd5*/
+    v4 = this->customSound_controller.AudioController_field_04; /*0x6edfd5*/
     v5 = 0; /*0x6edfd8*/
     if ( !v4 ) /*0x6edfdc*/
       break; /*0x6edfdc*/
@@ -2285,5 +2269,21 @@ LABEL_24:
     *((_BYTE *)v17 + 128) = 1; /*0x6efe42*/
   }
 }
+}
+} // namespace gamemd
+
+// 0x6E0030
+namespace gamemd {
+char sub_6E0030(int a1, int a2, int a3, int a4)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x6E0040
+namespace gamemd {
+char sub_6E0040(int a1, int a2, int a3, int a4)
+{
+return 1;
 }
 } // namespace gamemd

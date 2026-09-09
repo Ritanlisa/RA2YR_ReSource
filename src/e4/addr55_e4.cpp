@@ -2444,8 +2444,8 @@ int __thiscall sub_557380(int this, int a2)
   *(_BYTE *)(this + 65) = 0; /*0x5573b1*/
   this->attachedTag = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
   sub_4B5830((_DWORD *)(this + 52), (_DWORD *)(a2 + 52)); /*0x5573ba*/
-  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68); /*0x5573c2*/
-  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72); /*0x5573c8*/
+  this->ambientSoundController.AudioController_field_08 = *(_DWORD *)(a2 + 68); /*0x5573c2*/
+  this->ambientSoundController.AudioController_field_0C = *(_DWORD *)(a2 + 72); /*0x5573c8*/
   this->attachedTag = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
   *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x5573d7*/
   *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x5573dd*/
@@ -2454,7 +2454,7 @@ int __thiscall sub_557380(int this, int a2)
   this->hasParachute = *(_BYTE *)(a2 + 132); /*0x5573fa*/
   *(_BYTE *)(this + 133) = *(_BYTE *)(a2 + 133); /*0x557400*/
   this->parachute = *(_DWORD *)(a2 + 136); /*0x557406*/
-  *(_DWORD *)(this + 88) = &ToggleClass::`vftable'; /*0x557409*/
+  this->customSound_controller.AudioController_field_08 = &ToggleClass::`vftable'; /*0x557409*/
   this->onBridge = *(_BYTE *)(a2 + 140); /*0x557413*/
   *(_DWORD *)(this + 144) = *(_DWORD *)(a2 + 144); /*0x557419*/
   this->lastLayer = *(_DWORD *)(a2 + 148); /*0x55741f*/
@@ -2467,7 +2467,7 @@ int __thiscall sub_557380(int this, int a2)
   *(_BYTE *)(this + 173) = *(_BYTE *)(a2 + 173); /*0x557449*/
   *(_DWORD *)(this + 176) = *(_DWORD *)(a2 + 176); /*0x55744f*/
   *(_BYTE *)(this + 180) = *(_BYTE *)(a2 + 180); /*0x55745b*/
-  *(_DWORD *)(this + 88) = &ShapeButtonClass::`vftable'; /*0x557460*/
+  this->customSound_controller.AudioController_field_08 = &ShapeButtonClass::`vftable'; /*0x557460*/
   ControlClass::CtorFromData((_DWORD *)(this + 184), a2 + 184); /*0x557466*/
   *(_BYTE *)(this + 228) = *(_BYTE *)(a2 + 228); /*0x55746e*/
   *(_BYTE *)(this + 229) = *(_BYTE *)(a2 + 229); /*0x557474*/
@@ -2495,7 +2495,7 @@ int __thiscall sub_557380(int this, int a2)
   *(_DWORD *)(this + 360) = *(_DWORD *)(a2 + 360); /*0x55751c*/
   *(_DWORD *)(this + 280) = &SliderClass::`vftable'; /*0x55751f*/
   *(_DWORD *)(this + 364) = *(_DWORD *)(a2 + 364); /*0x55752c*/
-  v3 = *(_DWORD *)(this + 88); /*0x557538*/
+  v3 = this->customSound_controller.AudioController_field_08; /*0x557538*/
   *(_DWORD *)(this + 368) = *(_DWORD *)(a2 + 368); /*0x55753c*/
   *(_DWORD *)this = &ListClass::`vftable'; /*0x557542*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(this + 88, this); /*0x557548*/
@@ -2790,10 +2790,10 @@ bool __thiscall ShowSaveLoadDialog(int this, CampaignScore *aP1)
   CampaignScore *v2; // eax
 
   v2 = aP1; /*0x558810*/
-  *(_DWORD *)(this + 4) = 2; /*0x558814*/
+  this->vtable1 = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
     v2 = (CampaignScore *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4960); /*0x558824*/
-  *(_DWORD *)(this + 12) = v2; /*0x558829*/
+  this->vtable3 = v2; /*0x558829*/
   return SaveLoadDialog::DlgProc((const char **)this); /*0x558831*/
 }
 }

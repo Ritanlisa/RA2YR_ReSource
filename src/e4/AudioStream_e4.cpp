@@ -112,7 +112,7 @@ int __thiscall sub_4028B0(int this)
   int v2; // esi
   int result; // eax
 
-  v2 = *(_DWORD *)(this + 172); /*0x4028b4*/
+  v2 = this->AudioStream_field_0xAC; /*0x4028b4*/
   LinkedList::Init((_DWORD **)this); /*0x4028ba*/
   --*(_DWORD *)(v2 + 240); /*0x4028c6*/
   ++*(_DWORD *)(v2 + 260); /*0x4028d3*/
@@ -236,27 +236,27 @@ int __thiscall AudioStream_SetupPlayback(int this)
   int v4; // edi
   int *v6; // edx
 
-  v1 = *(_DWORD *)(this + 168); /*0x404700*/
+  v1 = this->AudioStream_field_0xA8; /*0x404700*/
   v2 = 0; /*0x404707*/
   v3 = 0; /*0x404709*/
-  *(_DWORD *)(this + 480) = v1; /*0x40470e*/
-  if ( !v1 || (*(_BYTE *)(this + 24) & 0x20) != 0 ) /*0x40471a*/
+  this->AudioStream_field_0x1E0 = v1; /*0x40470e*/
+  if ( !v1 || ((unsigned char)this->AudioStream_field_0x18 & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
-  v4 = *(_DWORD *)(this + 36); /*0x40471c*/
+  v4 = this->AudioStream_field_0x24; /*0x40471c*/
   if ( *(_DWORD *)(v4 + 88) >= 0x21u ) /*0x404727*/
-    return *(_DWORD *)(this + 40) + 28; /*0x404727*/
+    return this->AudioStream_field_0x28 + 28; /*0x404727*/
   if ( (*(_BYTE *)(v4 + 16) & 0x20) != 0 ) /*0x40472d*/
   {
     v3 = 1; /*0x404730*/
-    *(_DWORD *)(this + 480) = v1 - 1; /*0x404735*/
-    *(_DWORD *)(this + 172) = 0; /*0x40473b*/
+    this->AudioStream_field_0x1E0 = v1 - 1; /*0x404735*/
+    this->AudioStream_field_0xAC = 0; /*0x40473b*/
   }
   else
   {
-    *(_DWORD *)(this + 172) = -1; /*0x404743*/
+    this->AudioStream_field_0xAC = -1; /*0x404743*/
   }
   if ( (*(_BYTE *)(v4 + 16) & 0x40) != 0 ) /*0x404751*/
-    --*(_DWORD *)(this + 480); /*0x404753*/
+    --this->AudioStream_field_0x1E0; /*0x404753*/
   if ( *(int *)(this + 480) <= 0 ) /*0x404761*/
   {
     *(_DWORD *)(v4 + 12) = 0; /*0x404763*/
@@ -270,9 +270,9 @@ int __thiscall AudioStream_SetupPlayback(int this)
     ++v6; /*0x40477a*/
     ++v3; /*0x40477d*/
   }
-  while ( v2 < *(_DWORD *)(this + 480) ); /*0x404780*/
-  if ( (*(_BYTE *)(this + 24) & 8) == 0 && (*(_BYTE *)(*(_DWORD *)(this + 36) + 16) & 0x20) != 0 ) /*0x40478f*/
-    return *(_DWORD *)(this + 40) + 28; /*0x402030*/
+  while ( v2 < this->AudioStream_field_0x1E0 ); /*0x404780*/
+  if ( ((unsigned char)this->AudioStream_field_0x18 & 8) == 0 && (*(_BYTE *)(this->AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40478f*/
+    return this->AudioStream_field_0x28 + 28; /*0x402030*/
   else
     return AudioStream::SelectRandom(); /*0x404793*/
 }
@@ -299,16 +299,16 @@ int __thiscall AudioStream_SelectRandom(int this)
 
   v2 = *(_DWORD **)(this + 36); /*0x4047b3*/
   v3 = v2[4]; /*0x4047b9*/
-  if ( v2[22] >= 0x21u && (*(_BYTE *)(this + 24) & 0x20) == 0 ) /*0x4047c5*/
+  if ( v2[22] >= 0x21u && ((unsigned char)this->AudioStream_field_0x18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
-  v4 = *(_DWORD *)(this + 480); /*0x4047cb*/
-  if ( v4 && (*(_BYTE *)(this + 24) & 0x20) == 0 ) /*0x4047d9*/
+  v4 = this->AudioStream_field_0x1E0; /*0x4047cb*/
+  if ( v4 && ((unsigned char)this->AudioStream_field_0x18 & 0x20) == 0 ) /*0x4047d9*/
   {
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
       v5 = Random::Range(MEMORY[0x886B88], 0, v4 - 1); /*0x4047ea*/
-      v6 = *(_DWORD *)(this + 480) - 1; /*0x404803*/
-      *(_DWORD *)(this + 172) = *(_DWORD *)(this + 4 * v5 + 352); /*0x404804*/
+      v6 = this->AudioStream_field_0x1E0 - 1; /*0x404803*/
+      this->AudioStream_field_0xAC = *(_DWORD *)(this + 4 * v5 + 352); /*0x404804*/
       v7 = v5; /*0x40480c*/
       if ( v5 < v6 ) /*0x40480f*/
       {
@@ -319,18 +319,18 @@ int __thiscall AudioStream_SelectRandom(int this)
           *v8 = v8[1]; /*0x404817*/
           ++v8; /*0x40481f*/
         }
-        while ( v7 < *(_DWORD *)(this + 480) - 1 ); /*0x404825*/
+        while ( v7 < this->AudioStream_field_0x1E0 - 1 ); /*0x404825*/
       }
     }
     else
     {
-      ++*(_DWORD *)(this + 172); /*0x404829*/
+      ++this->AudioStream_field_0xAC; /*0x404829*/
     }
-    --*(_DWORD *)(this + 480); /*0x404836*/
-    v9 = *(_DWORD *)(this + 4 * *(_DWORD *)(this + 172) + 40); /*0x404842*/
+    --this->AudioStream_field_0x1E0; /*0x404836*/
+    v9 = *(_DWORD *)(this + 4 * this->AudioStream_field_0xAC + 40); /*0x404842*/
     return v9 + 28; /*0x404847*/
   }
-  if ( (v3 & 1) != 0 && (*(_BYTE *)(this + 24) & 0x20) == 0 ) /*0x404855*/
+  if ( (v3 & 1) != 0 && ((unsigned char)this->AudioStream_field_0x18 & 0x20) == 0 ) /*0x404855*/
   {
     v10 = v2[19]; /*0x404857*/
     if ( !v10 || *(_DWORD *)(this + 484) < v10 - 1 ) /*0x404867*/
@@ -341,12 +341,12 @@ int __thiscall AudioStream_SelectRandom(int this)
   }
   if ( (v3 & 0x40) == 0 ) /*0x404881*/
     return 0; /*0x404881*/
-  if ( (*(_BYTE *)(this + 24) & 0x10) != 0 ) /*0x404887*/
+  if ( ((unsigned char)this->AudioStream_field_0x18 & 0x10) != 0 ) /*0x404887*/
     return 0; /*0x404887*/
-  v12 = *(_DWORD *)(this + 168); /*0x404889*/
+  v12 = this->AudioStream_field_0xA8; /*0x404889*/
   if ( v12 < 1 ) /*0x404892*/
     return 0; /*0x4048aa*/
-  *(_DWORD *)(this + 24) |= 0x10u; /*0x40489a*/
+  this->AudioStream_field_0x18 |= 0x10u; /*0x40489a*/
   v9 = *(_DWORD *)(this + 4 * v12 + 36); /*0x40489d*/
   return v9 + 28; /*0x404878*/
 }
@@ -1360,7 +1360,7 @@ int __thiscall AudioStream_CalcReadPos(int this)
   }
   if ( v17 > v8 ) /*0x7bd36a*/
   {
-    v13 = *(_DWORD *)(this + 152) - v4; /*0x7bd3cd*/
+    v13 = this->AudioStream_field_0x98 - v4; /*0x7bd3cd*/
     qmemcpy((void *)(*(_DWORD *)(this + 1932) + v4), v6, v13); /*0x7bd3e4*/
     qmemcpy(*(void **)(this + 1932), &v6[v13], v7 - v13); /*0x7bd404*/
     v14 = v17; /*0x7bd40f*/

@@ -14,22 +14,6 @@ void TacticalClass::StubReturnTrue()
 }
 } // namespace gamemd
 
-// 0x41BEE0
-namespace gamemd {
-char TacticalClass::StubReturnFalse()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x41BF00
-namespace gamemd {
-int TacticalClass::StubReturnFalse2()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x41BF10
 namespace gamemd {
 int TacticalClass::StubReturnFalse3()
@@ -2146,5 +2130,21 @@ LABEL_11:
   while ( v30 < (int)v31 ); /*0x732fc9*/
   return v2; /*0x732fd0*/
 }
+}
+} // namespace gamemd
+
+// 0x41BEE0
+namespace gamemd {
+char TacticalClass::StubReturnFalse()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41BF00
+namespace gamemd {
+int TacticalClass::StubReturnFalse2()
+{
+return 0;
 }
 } // namespace gamemd

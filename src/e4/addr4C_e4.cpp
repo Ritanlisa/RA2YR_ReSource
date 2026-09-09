@@ -624,13 +624,13 @@ int __thiscall sub_4C2790(int this)
       Lightning::Draw(
         (_DWORD *)this,
         *(_DWORD *)this,
-        *(_DWORD *)(this + 4),
-        *(_DWORD *)(this + 8),
-        *(_DWORD *)(this + 12),
-        *(_DWORD *)(this + 16),
-        *(_DWORD *)(this + 20),
-        *(_BYTE *)(this + 44) != 0 ? 5 : 10);
-    ++*(_DWORD *)(this + 28); /*0x4c281a*/
+        this->vtable1,
+        this->vtable2,
+        this->vtable3,
+        this->uniqueId,
+        this->abstractFlags,
+        (unsigned char)this->fallRate != 0 ? 5 : 10);
+    ++this->referenceCount; /*0x4c281a*/
   }
   result = *(int *)(this + 40) >> 1; /*0x4c2821*/
   this->owningHouseIndex = result; /*0x4c2823*/
@@ -2809,14 +2809,6 @@ char sub_4C9160()
 }
 } // namespace gamemd
 
-// 0x4C91B0
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x4C95D0
 namespace gamemd {
 unsigned int * sub_4C95D0(unsigned int * a2, unsigned short * a3)
@@ -2839,8 +2831,8 @@ _DWORD *__thiscall sub_4C95D0(_WORD *this, _DWORD *a2, _WORD *a3)
   v3 = *(this + 10); /*0x4c95d2*/
   if ( v3 <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
-  v4 = *((_DWORD *)this + 2); /*0x4c95dd*/
-  v5 = *((_DWORD *)this + 4); /*0x4c95e0*/
+  v4 = this->vtable2; /*0x4c95dd*/
+  v5 = this->uniqueId; /*0x4c95e0*/
   if ( v4 != -1 ) /*0x4c95ec*/
   {
     if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x4c95f4*/
@@ -2859,8 +2851,8 @@ LABEL_14:
   v14 = *(_DWORD *)this; /*0x4c9615*/
   if ( (__int16)v8 > 0 ) /*0x4c961c*/
   {
-    v9 = *((_DWORD *)this + 4); /*0x4c961e*/
-    v10 = *((_DWORD *)this + 2); /*0x4c9621*/
+    v9 = this->uniqueId; /*0x4c961e*/
+    v10 = this->vtable2; /*0x4c9621*/
     if ( v10 != -1 ) /*0x4c9627*/
     {
       if ( (int)MEMORY[0xA8ED84] - v10 >= v9 ) /*0x4c962f*/
@@ -3338,7 +3330,7 @@ u_short __thiscall sub_4CB8B0(int this)
   u_short v3; // cx
   u_short result; // ax
 
-  switch ( *(_WORD *)(this + 4) ) /*0x4cb8c1*/
+  switch ( (unsigned short)this->vtable1 ) /*0x4cb8c1*/
   {
     case 3: /*0x4cb8c1*/
     case 4: /*0x4cb8c1*/
@@ -3351,7 +3343,7 @@ u_short __thiscall sub_4CB8B0(int this)
     default:
       break;
   }
-  v2 = htons(*(_WORD *)(this + 4)); /*0x4cb8ec*/
+  v2 = htons((unsigned short)this->vtable1); /*0x4cb8ec*/
   v3 = *(_WORD *)(this + 6); /*0x4cb8f6*/
   *(_WORD *)(this + 4) = v2; /*0x4cb8fa*/
   result = htons(v3); /*0x4cb8ff*/
@@ -4303,5 +4295,13 @@ LABEL_60:
     (*(void (__stdcall **)(int))(*(_DWORD *)v55 + 8))(v55); /*0x4cf5fd*/
   return v23; /*0x4cf600*/
 }
+}
+} // namespace gamemd
+
+// 0x4C91B0
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
+{
+return 1;
 }
 } // namespace gamemd

@@ -537,7 +537,7 @@ int __thiscall sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, in
     {
       if ( a2 == *(unsigned __int8 **)(this + 4) ) /*0x528248*/
       {
-        v7 = *(_DWORD *)(this + 8); /*0x52824e*/
+        v7 = this->vtable2; /*0x52824e*/
 LABEL_5:
         if ( v7 ) /*0x528253*/
         {
@@ -614,14 +614,14 @@ LABEL_29:
         if ( v7 ) /*0x528362*/
         {
           v6 = a3; /*0x528364*/
-          *(_DWORD *)(this + 8) = v7; /*0x528368*/
-          *(_DWORD *)(this + 4) = v4; /*0x52836b*/
+          this->vtable2 = v7; /*0x528368*/
+          this->vtable1 = v4; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
         }
       }
 LABEL_27:
-      *(_DWORD *)(this + 4) = 0; /*0x528375*/
-      *(_DWORD *)(this + 8) = 0; /*0x52837c*/
+      this->vtable1 = 0; /*0x528375*/
+      this->vtable2 = 0; /*0x52837c*/
       return a4; /*0x528388*/
     }
   }
@@ -972,7 +972,7 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
   v6 = *(_DWORD **)(this + 60); /*0x52a51a*/
   if ( v6 && *v6 == v5 ) /*0x52a523*/
     goto LABEL_9; /*0x52a523*/
-  if ( !*(_BYTE *)(this + 56) ) /*0x52a525*/
+  if ( !(unsigned char)this->attachedBomb ) /*0x52a525*/
   {
     qsort(*(void **)(this + 44), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a536*/
     *(_DWORD *)(this + 60) = 0; /*0x52a53e*/
@@ -992,7 +992,7 @@ LABEL_9:
   v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
     return *(_DWORD *)(*(_DWORD *)(this + 60) + 4); /*0x52a5f3*/
-  if ( !*(_BYTE *)(this + 56) ) /*0x52a577*/
+  if ( !(unsigned char)this->attachedBomb ) /*0x52a577*/
   {
     qsort(*(void **)(this + 44), v10, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a588*/
     *(_DWORD *)(this + 60) = 0; /*0x52a590*/

@@ -36,9 +36,9 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
   int v28; // [esp+2Ch] [ebp-8h]
   int v29; // [esp+30h] [ebp-4h]
 
-  if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(*((_DWORD *)this + 43) + 744) ) /*0x62cedc*/
+  if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(this->ParticleClass_field_0xAC + 744) ) /*0x62cedc*/
   {
-    if ( MEMORY[0xA8EB78] || (v4 = *(_DWORD *)(*((_DWORD *)this + 43) + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+    if ( MEMORY[0xA8EB78] || (v4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
       if ( MEMORY[0xA8ED6B] /*0x62cf58*/
         || !g_hWnd
@@ -48,7 +48,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
             v29 = *((_DWORD *)this + 41),
             !Game::Stub3((int)&v27)) )
       {
-        v5 = *(_DWORD *)(*((_DWORD *)this + 43) + 788); /*0x62cf6b*/
+        v5 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
           v26[0] = *((_DWORD *)this + 39); /*0x62d036*/
@@ -76,9 +76,9 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
                     - 50;
                 if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)MEMORY[0x887644], v26[0], v15) ) /*0x62d11e*/
                 {
-                  v18 = *((_DWORD *)this + 45); /*0x62d124*/
+                  v18 = this->ParticleClass_field_0xB4; /*0x62d124*/
                   if ( v18 ) /*0x62d12c*/
-                    v19 = *(_DWORD *)(*((_DWORD *)this + 43) + 700) + 3 * v18; /*0x62d13f*/
+                    v19 = *(_DWORD *)(this->ParticleClass_field_0xAC + 700) + 3 * v18; /*0x62d13f*/
                   else
                     v19 = (int)this + 176; /*0x62d12e*/
                   v20 = *(_WORD *)v19; /*0x62d145*/
@@ -243,14 +243,6 @@ int *__stdcall ParticleClass::_vt66(int a1)
 }
 } // namespace gamemd
 
-// 0x62D770
-namespace gamemd {
-int ParticleClass::CheckStateFlag()
-{
-return 3;
-}
-} // namespace gamemd
-
 // 0x62D7A0
 namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
@@ -316,14 +308,6 @@ int __stdcall ParticleClass::_vt03(int a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x62D970
-namespace gamemd {
-int ParticleClass::GetObjectSize()
-{
-return 312;
-}
-} // namespace gamemd
-
 // 0x62D980
 namespace gamemd {
 int ParticleClass::GetTypeIdentifier()
@@ -333,5 +317,21 @@ int ParticleClass::_vt11()
 {
   return 22; /*0x62d985*/
 }
+}
+} // namespace gamemd
+
+// 0x62D770
+namespace gamemd {
+int ParticleClass::CheckStateFlag()
+{
+return 3;
+}
+} // namespace gamemd
+
+// 0x62D970
+namespace gamemd {
+int ParticleClass::GetObjectSize()
+{
+return 312;
 }
 } // namespace gamemd

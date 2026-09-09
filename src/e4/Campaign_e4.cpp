@@ -213,23 +213,23 @@ LABEL_14:
   *(this + 12) = 1; /*0x7658cf*/
   if ( !v8 ) /*0x7658d5*/
     return 0; /*0x7658da*/
-  if ( *((_DWORD *)this + 1) ) /*0x7658e1*/
+  if ( this->Campaign_WorldDominationTour_16_field_0x4 ) /*0x7658e1*/
   {
-    if ( a2 >= *((_DWORD *)this + 2) ) /*0x7658ed*/
-      v3 = *((_DWORD *)this + 2); /*0x7658ef*/
+    if ( a2 >= this->Campaign_WorldDominationTour_16_field_0x8 ) /*0x7658ed*/
+      v3 = this->Campaign_WorldDominationTour_16_field_0x8; /*0x7658ef*/
     for ( i = 0; i < v3; ++i ) /*0x7658f5*/
-      ComPtr::Set(&v8[2 * i], *(_DWORD *)(*((_DWORD *)this + 1) + 8 * i + 4)); /*0x765902*/
+      ComPtr::Set(&v8[2 * i], *(_DWORD *)(this->Campaign_WorldDominationTour_16_field_0x4 + 8 * i + 4)); /*0x765902*/
     if ( *(this + 13) ) /*0x76590c*/
     {
-      v12 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 1); /*0x765913*/
+      v12 = (void (__thiscall ***)(_DWORD, int))this->Campaign_WorldDominationTour_16_field_0x4; /*0x765913*/
       if ( v12 ) /*0x765918*/
         (**v12)(v12, 3); /*0x76591e*/
-      *((_DWORD *)this + 1) = 0; /*0x765920*/
+      this->Campaign_WorldDominationTour_16_field_0x4 = 0; /*0x765920*/
     }
     v3 = a2; /*0x765927*/
   }
-  *((_DWORD *)this + 1) = v8; /*0x765936*/
-  *((_DWORD *)this + 2) = v3; /*0x765939*/
+  this->Campaign_WorldDominationTour_16_field_0x4 = v8; /*0x765936*/
+  this->Campaign_WorldDominationTour_16_field_0x8 = v3; /*0x765939*/
   *(this + 13) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 }
@@ -250,10 +250,10 @@ int __thiscall Campaign_WorldDominationTour_16_::_vt03(int this)
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x76596d*/
   {
     result = (**v2)(v2, 3); /*0x76597a*/
-    *(_DWORD *)(this + 4) = 0; /*0x76597c*/
+    this->Campaign_WorldDominationTour_16_field_0x4 = 0; /*0x76597c*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x76597f*/
-  *(_DWORD *)(this + 8) = 0; /*0x765982*/
+  this->Campaign_WorldDominationTour_16_field_0x8 = 0; /*0x765982*/
   return result; /*0x765985*/
 }
 }
@@ -270,13 +270,13 @@ int __thiscall Campaign_WorldDominationTour_16_::_vt04(int this, int a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x765990*/
+  if ( !(unsigned char)this->Campaign_WorldDominationTour_16_field_0xC ) /*0x765990*/
     return 0; /*0x765998*/
-  v3 = *(_DWORD *)(this + 8); /*0x76599e*/
+  v3 = this->Campaign_WorldDominationTour_16_field_0x8; /*0x76599e*/
   result = 0; /*0x7659a1*/
   if ( v3 <= 0 ) /*0x7659a5*/
     return -1; /*0x7659c0*/
-  for ( i = (_DWORD *)(*(_DWORD *)(this + 4) + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x7659ae*/
+  for ( i = (_DWORD *)(this->Campaign_WorldDominationTour_16_field_0x4 + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x7659ae*/
   {
     if ( ++result >= v3 ) /*0x7659be*/
       return -1; /*0x7659be*/
@@ -293,8 +293,8 @@ unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall Campaign_WorldDominationTour_16_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x7659d0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x7659e5*/
+  if ( (unsigned char)this->Campaign_WorldDominationTour_16_field_0xC ) /*0x7659d0*/
+    return (unsigned int)(a2 - this->Campaign_WorldDominationTour_16_field_0x4) >> 3; /*0x7659e5*/
   else
     return 0; /*0x7659d7*/
 }

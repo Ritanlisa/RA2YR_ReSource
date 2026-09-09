@@ -14,8 +14,8 @@ struct TaskForceClass {
     int LoadTaskForce(AbstractTypeClass * aP0, int aP1);  // 0x6E86A0
     int ddtor(int a1, unsigned int * a2);  // 0x6E8710
     int LoadTask(int * a2);  // 0x6E8750
+    TaskForceClass * ExecuteAction(void ** Block, char a2);  // 0x6E87F0
     int StubReturn33();  // 0x6E87D0
     int StubReturn212();  // 0x6E87E0
-    TaskForceClass * ExecuteAction(void ** Block, char a2);  // 0x6E87F0
 };
 } // namespace gamemd

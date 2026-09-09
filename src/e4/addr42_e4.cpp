@@ -1554,14 +1554,6 @@ void __thiscall sub_4266D0(void *this)
 }
 } // namespace gamemd
 
-// 0x426740
-namespace gamemd {
-int sub_426740()
-{
-return 2816;
-}
-} // namespace gamemd
-
 // 0x4267F0
 namespace gamemd {
 int sub_4267F0()
@@ -1667,7 +1659,7 @@ char __thiscall sub_426990(int this)
     if ( *(_BYTE *)(this + 169) <= 1u /*0x426a17*/
       && *(_BYTE *)(this + 171) == 1
       && !*(_BYTE *)(this + 170)
-      && !*(_BYTE *)(this + 168) )
+      && !(unsigned char)this->lineTrailer )
     {
       v2 = 0; /*0x426a23*/
       v3 = *(unsigned __int16 *)(this + 146); /*0x426a25*/
@@ -1774,7 +1766,7 @@ int __thiscall sub_426ED0(int this, int a2)
   }
   if ( v3 == -1 ) /*0x426f20*/
     return 0; /*0x426f14*/
-  if ( *(_BYTE *)(this + 136) && *(_DWORD *)(this + 3608) != v3 ) /*0x426f32*/
+  if ( (unsigned char)this->parachute && *(_DWORD *)(this + 3608) != v3 ) /*0x426f32*/
   {
     v8 = *(_DWORD *)(this + 132); /*0x426f34*/
     *(_DWORD *)(this + 3608) = v3; /*0x426f3f*/
@@ -1846,7 +1838,7 @@ unsigned __int16 __thiscall sub_426FD0(int this, int a2)
       }
       if ( v5 == -1 ) /*0x427022*/
         return 0; /*0x427022*/
-      if ( *(_BYTE *)(this + 136) && *(_DWORD *)(this + 3608) != v5 ) /*0x427034*/
+      if ( (unsigned char)this->parachute && *(_DWORD *)(this + 3608) != v5 ) /*0x427034*/
       {
         v9 = *(_DWORD *)(this + 132); /*0x427036*/
         *(_DWORD *)(this + 3608) = v5; /*0x427041*/
@@ -2521,22 +2513,6 @@ int __thiscall sub_429360(ApplicationClass *this)
 }
 } // namespace gamemd
 
-// 0x4293E0
-namespace gamemd {
-int sub_4293E0()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x4293F0
-namespace gamemd {
-int sub_4293F0()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x429400
 namespace gamemd {
 int sub_429400()
@@ -2927,7 +2903,7 @@ void __thiscall sub_42A900(int this)
     __3_YAXPAX_Z(v2); /*0x42a918*/
   }
   v3 = *(void ***)(this + 104); /*0x42a920*/
-  *(_DWORD *)(this + 20) = 0; /*0x42a923*/
+  this->abstractFlags = 0; /*0x42a923*/
   if ( v3 ) /*0x42a928*/
   {
     __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
@@ -2938,30 +2914,30 @@ void __thiscall sub_42A900(int this)
   if ( v4 ) /*0x42a944*/
     __3_YAXPAX_Z(v4); /*0x42a947*/
   v5 = *(void **)(this + 12); /*0x42a94f*/
-  *(_DWORD *)(this + 16) = 0; /*0x42a952*/
+  this->uniqueId = 0; /*0x42a952*/
   if ( v5 ) /*0x42a957*/
     __3_YAXPAX_Z(v5); /*0x42a95a*/
   v6 = *(void **)(this + 24); /*0x42a962*/
-  *(_DWORD *)(this + 12) = 0; /*0x42a965*/
+  this->vtable3 = 0; /*0x42a965*/
   if ( v6 ) /*0x42a96a*/
   {
     __3_YAXPAX_Z(v6); /*0x42a96d*/
-    *(_DWORD *)(this + 24) = 0; /*0x42a975*/
+    this->nextArrayIndex = 0; /*0x42a975*/
   }
-  if ( *(_DWORD *)(this + 28) ) /*0x42a978*/
+  if ( this->referenceCount ) /*0x42a978*/
   {
     __3_YAXPAX_Z(*(void **)(this + 28)); /*0x42a980*/
-    *(_DWORD *)(this + 28) = 0; /*0x42a988*/
+    this->referenceCount = 0; /*0x42a988*/
   }
   if ( this->objectTypeFlags ) /*0x42a98b*/
   {
     __3_YAXPAX_Z(*(void **)(this + 36)); /*0x42a993*/
     this->objectTypeFlags = 0; /*0x42a99b*/
   }
-  if ( *(_DWORD *)(this + 32) ) /*0x42a99e*/
+  if ( this->NeedsSaveOrLink ) /*0x42a99e*/
   {
     __3_YAXPAX_Z(*(void **)(this + 32)); /*0x42a9a6*/
-    *(_DWORD *)(this + 32) = 0; /*0x42a9ae*/
+    this->NeedsSaveOrLink = 0; /*0x42a9ae*/
   }
   v7 = (void **)(this + 76); /*0x42a9b2*/
   v8 = 3; /*0x42a9b5*/
@@ -3846,7 +3822,7 @@ LABEL_18:
     aP4b = (IUnknown *)((char *)aP4b + 1); /*0x42cc75*/
     sub_42CCD0(this, aP4); /*0x42cc79*/
     CellClass::ClearOccupancyGrid((_DWORD *)this); /*0x42cc80*/
-    v28 = *(_BYTE *)(this + 56); /*0x42cc85*/
+    v28 = (unsigned char)this->attachedBomb; /*0x42cc85*/
     LOBYTE(aP6) = v28 != 0; /*0x42cc93*/
     if ( (int)aP4b >= (int)TileIndexMapClass /*0x42ccb3*/
       || v28
@@ -4824,5 +4800,29 @@ void sub_42FFF0()
 {
   unk_89C450 = 1.0 / unk_89C468; /*0x42fffc*/
 }
+}
+} // namespace gamemd
+
+// 0x426740
+namespace gamemd {
+int sub_426740()
+{
+return 2816;
+}
+} // namespace gamemd
+
+// 0x4293E0
+namespace gamemd {
+int sub_4293E0()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4293F0
+namespace gamemd {
+int sub_4293F0()
+{
+return 1;
 }
 } // namespace gamemd

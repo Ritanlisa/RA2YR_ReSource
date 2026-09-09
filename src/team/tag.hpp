@@ -179,6 +179,11 @@ protected:
     int GetClassIdentifier(int a1, int a2);  // 0x6e63a0
     int LoadTypeData(int a1, int a2);  // 0x6e6410
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char * Construct(ObjectClass * aP1);  // 0x6E5B60
+    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6E6470
+    TagTypeClass * ddtor(void * Block, char a2);  // 0x6E64C0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

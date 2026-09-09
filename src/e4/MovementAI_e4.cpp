@@ -35,7 +35,7 @@ bool __thiscall sub_4A5150(int this)
   int v2; // edx
   int v3; // eax
 
-  if ( !*(_BYTE *)(this + 24) ) /*0x4a5150*/
+  if ( !(unsigned char)this->MovementAI_field_18 ) /*0x4a5150*/
     return 1; /*0x4a5150*/
   v1 = this->MovementAI_field_14; /*0x4a515b*/
   if ( !v1 ) /*0x4a5164*/

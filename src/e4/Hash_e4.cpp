@@ -14,14 +14,6 @@ void *sub_5C61D0()
 }
 } // namespace gamemd
 
-// 0x5C61E0
-namespace gamemd {
-int sub_5C61E0()
-{
-return 3511;
-}
-} // namespace gamemd
-
 // 0x5E94D0
 namespace gamemd {
 int sub_5E94D0()
@@ -83,5 +75,13 @@ char sub_5E9580()
   }
   return 1; /*0x5e95d0*/
 }
+}
+} // namespace gamemd
+
+// 0x5C61E0
+namespace gamemd {
+int sub_5C61E0()
+{
+return 3511;
 }
 } // namespace gamemd

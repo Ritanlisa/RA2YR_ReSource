@@ -728,13 +728,13 @@ int __thiscall sub_636120(int this)
   int i; // [esp+10h] [ebp-8h]
   int v18; // [esp+14h] [ebp-4h] BYREF
 
-  v2 = *(_DWORD *)(this + 20); /*0x636127*/
+  v2 = this->abstractFlags; /*0x636127*/
   v15 = v2 == 0; /*0x63612c*/
   v3 = 0; /*0x636131*/
   v18 = v2; /*0x636133*/
   for ( i = 0; i < v18; ++i ) /*0x63613d*/
   {
-    v4 = *(int **)(*(_DWORD *)(this + 8) + 4 * v3); /*0x636148*/
+    v4 = *(int **)(this->vtable2 + 4 * v3); /*0x636148*/
     Value = Array::FindValue(v4, *(_DWORD *)this); /*0x636150*/
     if ( Value == -1 ) /*0x636158*/
       v6 = 0; /*0x63615a*/
@@ -795,7 +795,7 @@ int __thiscall sub_636120(int this)
       while ( v13 < MEMORY[0xAC4C50] ); /*0x6362d6*/
     }
   }
-  result = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 4) + 12))(this + 4); /*0x6362e3*/
+  result = (*(int (__thiscall **)(int))(this->vtable1 + 12))(this + 4); /*0x6362e3*/
   *(_DWORD *)(this + 140) = -1; /*0x6362e6*/
   *(_DWORD *)(this + 144) = -1; /*0x6362ec*/
   *(_DWORD *)(this + 148) = -1; /*0x6362f2*/
@@ -1284,7 +1284,7 @@ char __thiscall TeamClass::Update_0(
   v7 = 0; /*0x6e53a7*/
   v16 = 0; /*0x6e53ae*/
   v15 = 0; /*0x6e53b2*/
-  if ( HouseClass_Player.__pad_5568[23223] || *((_BYTE *)this + 53) || *((_BYTE *)this + 52) || !*(this + 9) ) /*0x6e53d2*/
+  if ( HouseClass_Player.__pad_5568[23223] || *((_BYTE *)this + 53) || (unsigned char)this->spawnCell || !*(this + 9) ) /*0x6e53d2*/
     return 0; /*0x6e5552*/
   v8 = (TriggerClass *)*(this + 10); /*0x6e53de*/
   for ( *((_BYTE *)this + 53) = 1; v8; v8 = (TriggerClass *)v8->nextTrigger ) /*0x6e53ec*/

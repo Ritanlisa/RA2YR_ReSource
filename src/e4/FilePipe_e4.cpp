@@ -14,11 +14,11 @@ void __thiscall FilePipe_30_::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x4778a6*/
-  *(_DWORD *)(this + 16) = 0; /*0x4778a9*/
+  this->FilePipe_30_field_0x10 = 0; /*0x4778a9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x4778b0*/
   {
     __3_YAXPAX_Z(v2); /*0x4778b6*/
-    *(_DWORD *)(this + 4) = 0; /*0x4778be*/
+    this->FilePipe_30_field_0x4 = 0; /*0x4778be*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4778c1*/
   *(_DWORD *)(this + 8) = 0; /*0x4778c4*/
@@ -33,8 +33,8 @@ unsigned int FilePipe_30::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall FilePipe_30_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4778d0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4778e5*/
+  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4778d0*/
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4778e5*/
   else
     return 0; /*0x4778d7*/
 }
@@ -88,20 +88,20 @@ char __thiscall FilePipe_30_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x478172*/
     if ( !v4 ) /*0x478176*/
       return 0; /*0x4781ea*/
-    if ( *((_DWORD *)this + 1) ) /*0x478178*/
+    if ( this->FilePipe_30_field_0x4 ) /*0x478178*/
     {
       v5 = *((_DWORD *)this + 2); /*0x47817f*/
       if ( a2 < v5 ) /*0x478184*/
         v5 = a2; /*0x478186*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x47818c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->FilePipe_30_field_0x4 + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
       if ( *((_BYTE *)this + 13) ) /*0x47819e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4781a9*/
-        *((_DWORD *)this + 1) = 0; /*0x4781b1*/
+        this->FilePipe_30_field_0x4 = 0; /*0x4781b1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4781ba*/
+    this->FilePipe_30_field_0x4 = v4; /*0x4781ba*/
     *((_DWORD *)this + 2) = a2; /*0x4781c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4781c5*/
   }
@@ -110,8 +110,8 @@ char __thiscall FilePipe_30_::_vt02(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4781ce*/
   }
   v7 = *((_DWORD *)this + 2); /*0x4781d1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4781d9*/
-    *((_DWORD *)this + 4) = v7; /*0x4781db*/
+  if ( v7 < this->FilePipe_30_field_0x10 ) /*0x4781d9*/
+    this->FilePipe_30_field_0x10 = v7; /*0x4781db*/
   return 1; /*0x4781de*/
 }
 }
@@ -152,11 +152,11 @@ void __thiscall FilePipe_30_::sub_4B9BE0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x4b9be6*/
-  *(_DWORD *)(this + 16) = 0; /*0x4b9be9*/
+  this->FilePipe_30_field_0x10 = 0; /*0x4b9be9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x4b9bf0*/
   {
     __3_YAXPAX_Z(v2); /*0x4b9bf6*/
-    *(_DWORD *)(this + 4) = 0; /*0x4b9bfe*/
+    this->FilePipe_30_field_0x4 = 0; /*0x4b9bfe*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4b9c01*/
   *(_DWORD *)(this + 8) = 0; /*0x4b9c04*/
@@ -171,8 +171,8 @@ unsigned int FilePipe_30::GetCount(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall FilePipe_30_::sub_4B9C10(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4b9c10*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4b9c25*/
+  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4b9c10*/
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4b9c25*/
   else
     return 0; /*0x4b9c17*/
 }
@@ -189,11 +189,11 @@ void __thiscall FilePipe_30_::sub_4B9C40(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x4b9c46*/
-  *(_DWORD *)(this + 16) = 0; /*0x4b9c49*/
+  this->FilePipe_30_field_0x10 = 0; /*0x4b9c49*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x4b9c50*/
   {
     __3_YAXPAX_Z(v2); /*0x4b9c56*/
-    *(_DWORD *)(this + 4) = 0; /*0x4b9c5e*/
+    this->FilePipe_30_field_0x4 = 0; /*0x4b9c5e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x4b9c61*/
   *(_DWORD *)(this + 8) = 0; /*0x4b9c64*/
@@ -208,8 +208,8 @@ unsigned int FilePipe_30::GetCount_0(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall FilePipe_30_::sub_4B9C70(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4b9c70*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4b9c85*/
+  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4b9c70*/
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4b9c85*/
   else
     return 0; /*0x4b9c77*/
 }
@@ -238,20 +238,20 @@ char __thiscall FilePipe_30_::sub_4B9E20(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4b9e52*/
     if ( !v4 ) /*0x4b9e56*/
       return 0; /*0x4b9eca*/
-    if ( *((_DWORD *)this + 1) ) /*0x4b9e58*/
+    if ( this->FilePipe_30_field_0x4 ) /*0x4b9e58*/
     {
       v5 = *((_DWORD *)this + 2); /*0x4b9e5f*/
       if ( a2 < v5 ) /*0x4b9e64*/
         v5 = a2; /*0x4b9e66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4b9e6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->FilePipe_30_field_0x4 + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
       if ( *((_BYTE *)this + 13) ) /*0x4b9e7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9e89*/
-        *((_DWORD *)this + 1) = 0; /*0x4b9e91*/
+        this->FilePipe_30_field_0x4 = 0; /*0x4b9e91*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4b9e9a*/
+    this->FilePipe_30_field_0x4 = v4; /*0x4b9e9a*/
     *((_DWORD *)this + 2) = a2; /*0x4b9ea2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4b9ea5*/
   }
@@ -260,8 +260,8 @@ char __thiscall FilePipe_30_::sub_4B9E20(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4b9eae*/
   }
   v7 = *((_DWORD *)this + 2); /*0x4b9eb1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4b9eb9*/
-    *((_DWORD *)this + 4) = v7; /*0x4b9ebb*/
+  if ( v7 < this->FilePipe_30_field_0x10 ) /*0x4b9eb9*/
+    this->FilePipe_30_field_0x10 = v7; /*0x4b9ebb*/
   return 1; /*0x4b9ebe*/
 }
 }
@@ -314,20 +314,20 @@ char __thiscall FilePipe_30_::sub_4BA080(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4ba0b2*/
     if ( !v4 ) /*0x4ba0b6*/
       return 0; /*0x4ba12a*/
-    if ( *((_DWORD *)this + 1) ) /*0x4ba0b8*/
+    if ( this->FilePipe_30_field_0x4 ) /*0x4ba0b8*/
     {
       v5 = *((_DWORD *)this + 2); /*0x4ba0bf*/
       if ( a2 < v5 ) /*0x4ba0c4*/
         v5 = a2; /*0x4ba0c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4ba0cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->FilePipe_30_field_0x4 + 4 * i - 4) ) /*0x4ba0cc*/
         ++i; /*0x4ba0d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ba0de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ba0e9*/
-        *((_DWORD *)this + 1) = 0; /*0x4ba0f1*/
+        this->FilePipe_30_field_0x4 = 0; /*0x4ba0f1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4ba0fa*/
+    this->FilePipe_30_field_0x4 = v4; /*0x4ba0fa*/
     *((_DWORD *)this + 2) = a2; /*0x4ba102*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ba105*/
   }
@@ -336,8 +336,8 @@ char __thiscall FilePipe_30_::sub_4BA080(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4ba10e*/
   }
   v7 = *((_DWORD *)this + 2); /*0x4ba111*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4ba119*/
-    *((_DWORD *)this + 4) = v7; /*0x4ba11b*/
+  if ( v7 < this->FilePipe_30_field_0x10 ) /*0x4ba119*/
+    this->FilePipe_30_field_0x10 = v7; /*0x4ba11b*/
   return 1; /*0x4ba11e*/
 }
 }
@@ -570,7 +570,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
     {
       if ( *((_DWORD *)this + 1) ) /*0x4783bb*/
       {
-        v12 = *((_DWORD *)this + 2); /*0x4783c0*/
+        v12 = this->FilePipe_38_field_0x8; /*0x4783c0*/
         if ( a2 < v12 ) /*0x4783c5*/
           v12 = a2; /*0x4783c7*/
         if ( v12 > 0 ) /*0x4783cb*/
@@ -595,7 +595,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
         }
       }
       *((_DWORD *)this + 1) = v5; /*0x47840d*/
-      *((_DWORD *)this + 2) = v3; /*0x478413*/
+      this->FilePipe_38_field_0x8 = v3; /*0x478413*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x478416*/
       return 1; /*0x47841c*/
     }
@@ -626,7 +626,7 @@ void __thiscall FilePipe_38_::_vt03(int this)
     *(_DWORD *)(this + 4) = 0; /*0x47845b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x47845e*/
-  *(_DWORD *)(this + 8) = 0; /*0x478461*/
+  this->FilePipe_38_field_0x8 = 0; /*0x478461*/
 }
 }
 } // namespace gamemd
@@ -642,9 +642,9 @@ int __thiscall FilePipe_38_::_vt04(int this, _BYTE *a2)
   int v3; // esi
   _BYTE *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x478470*/
+  if ( !(unsigned char)this->FilePipe_38_field_0xC ) /*0x478470*/
     return 0; /*0x47847c*/
-  v3 = *(_DWORD *)(this + 8); /*0x478482*/
+  v3 = this->FilePipe_38_field_0x8; /*0x478482*/
   result = 0; /*0x478485*/
   if ( v3 <= 0 ) /*0x478489*/
     return -1; /*0x4784b0*/
@@ -665,7 +665,7 @@ unsigned int FilePipe_38::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall FilePipe_38_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4784c0*/
+  if ( (unsigned char)this->FilePipe_38_field_0xC ) /*0x4784c0*/
     return (a2 - *(_DWORD *)(this + 4)) / 3u; /*0x4784de*/
   else
     return 0; /*0x4784c7*/

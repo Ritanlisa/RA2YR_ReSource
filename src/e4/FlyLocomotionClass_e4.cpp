@@ -209,12 +209,6 @@ LABEL_45:
 }
 }
 
-// 0x4D0390
-int FlyLocomotionClass::StubReturn96()
-{
-return 96;
-}
-
 // 0x4D03A0
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -228,4 +222,10 @@ FlyLocomotionClass *__thiscall FlyLocomotionClass::ProcessMove(_DWORD *Block, ch
     __3_YAXPAX_Z(Block); /*0x4d03bd*/
   return (FlyLocomotionClass *)Block; /*0x4d03c7*/
 }
+}
+
+// 0x4D0390
+int FlyLocomotionClass::StubReturn96()
+{
+return 96;
 }

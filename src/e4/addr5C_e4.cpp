@@ -4884,8 +4884,8 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
     v21 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd825*/
     result = sub_5D30C0(*(size_t **)(this + 52), v21, (_DWORD *)(this + 56)); /*0x5cd82e*/
-    v22 = *(_DWORD *)(this + 8); /*0x5cd836*/
-    *v20 = *(_DWORD *)(this + 4); /*0x5cd839*/
+    v22 = this->vtable2; /*0x5cd836*/
+    *v20 = this->vtable1; /*0x5cd839*/
     *(_DWORD *)(this + 60) = v22; /*0x5cd83b*/
   }
   else
@@ -4895,18 +4895,18 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     v5 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd6ba*/
     sub_5D30C0(*(size_t **)(this + 52), v5, v23); /*0x5cd6c3*/
     v6 = this->attachedTag; /*0x5cd6dc*/
-    *(_DWORD *)(this + 4) += (a2[2] - *(_DWORD *)(this + 64)) / 2; /*0x5cd6df*/
-    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + *(_DWORD *)(this + 8); /*0x5cd706*/
+    this->vtable1 += (a2[2] - this->ambientSoundController.AudioController_field_04) / 2; /*0x5cd6df*/
+    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->vtable2; /*0x5cd706*/
     v8 = *(_DWORD *)(this + 60); /*0x5cd70d*/
-    *v4 += *(_DWORD *)(this + 4); /*0x5cd710*/
-    *(_DWORD *)(this + 8) = v7; /*0x5cd71a*/
+    *v4 += this->vtable1; /*0x5cd710*/
+    this->vtable2 = v7; /*0x5cd71a*/
     *(_DWORD *)(this + 60) = v7 + v8; /*0x5cd71d*/
     Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
     v10 = *(_DWORD *)(this + 60); /*0x5cd729*/
-    v11 = *(_DWORD *)(this + 64); /*0x5cd72c*/
+    v11 = this->ambientSoundController.AudioController_field_04; /*0x5cd72c*/
     v27 = v11; /*0x5cd72f*/
-    v28 = *(_DWORD *)(this + 68); /*0x5cd736*/
+    v28 = this->ambientSoundController.AudioController_field_08; /*0x5cd736*/
     v29 = a2[2]; /*0x5cd73f*/
     if ( a2[2] <= 0 ) /*0x5cd743*/
       goto LABEL_20; /*0x5cd743*/
@@ -4955,10 +4955,10 @@ LABEL_20:
     *v4 = v17; /*0x5cd7f6*/
     v18 = this->attachedTag; /*0x5cd7f8*/
     *(_DWORD *)(this + 60) = v10; /*0x5cd7fb*/
-    *(_DWORD *)(this + 64) = v16; /*0x5cd7fe*/
-    *(_DWORD *)(this + 68) = v15; /*0x5cd801*/
+    this->ambientSoundController.AudioController_field_04 = v16; /*0x5cd7fe*/
+    this->ambientSoundController.AudioController_field_08 = v15; /*0x5cd801*/
     result = (_DWORD *)(*(_DWORD *)(v18 + 4) / 2); /*0x5cd80f*/
-    *(_DWORD *)(this + 4) += result; /*0x5cd813*/
+    this->vtable1 += result; /*0x5cd813*/
   }
   return result; /*0x5cd80e*/
 }
@@ -5204,10 +5204,10 @@ char __thiscall sub_5CE0C0(int this, int a2, _DWORD *a3)
   int v20; // [esp+24h] [ebp-8h]
   int v21; // [esp+30h] [ebp+4h]
 
-  v4 = *(_DWORD *)(this + 24); /*0x5ce0cb*/
-  if ( *(_DWORD *)(this + 16) != -1 ) /*0x5ce0d1*/
+  v4 = this->nextArrayIndex; /*0x5ce0cb*/
+  if ( this->uniqueId != -1 ) /*0x5ce0d1*/
   {
-    v5 = Timer::GetTicks() - *(_DWORD *)(this + 16); /*0x5ce0db*/
+    v5 = Timer::GetTicks() - this->uniqueId; /*0x5ce0db*/
     if ( v5 >= v4 ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     v4 -= v5; /*0x5ce0e2*/
@@ -5222,19 +5222,19 @@ LABEL_24:
     return 0; /*0x5ce296*/
   }
 LABEL_5:
-  if ( *(_BYTE *)(this + 12) != 1 ) /*0x5ce0f6*/
+  if ( (unsigned char)this->vtable3 != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
   v6 = this->fallRate; /*0x5ce0fc*/
-  *(_DWORD *)(this + 16) = Timer::GetTicks(); /*0x5ce108*/
-  *(_DWORD *)(this + 20) = v20; /*0x5ce10f*/
-  *(_DWORD *)(this + 24) = v6; /*0x5ce112*/
-  if ( *(_DWORD *)(this + 32) >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
+  this->uniqueId = Timer::GetTicks(); /*0x5ce108*/
+  this->abstractFlags = v20; /*0x5ce10f*/
+  this->nextArrayIndex = v6; /*0x5ce112*/
+  if ( this->NeedsSaveOrLink >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
   {
     v7 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
-  if ( *(_BYTE *)(this + 48) == 1 && *(int *)(this + 92) > 0 && *(int *)(this + 96) > 0 ) /*0x5ce15f*/
+  if ( (unsigned char)this->nextObject == 1 && *(int *)(this + 92) > 0 && *(int *)(this + 96) > 0 ) /*0x5ce15f*/
     (*(void (__thiscall **)(int, int, int, int, _DWORD, int))(*(_DWORD *)a2 + 8))( /*0x5ce173*/
       a2,
       this + 84,
@@ -5242,10 +5242,10 @@ LABEL_5:
       this + 84,
       0,
       1);
-  v9 = *(_DWORD *)(this + 4); /*0x5ce179*/
+  v9 = this->vtable1; /*0x5ce179*/
   if ( *(_BYTE *)(this + 73) ) /*0x5ce176*/
     v9 += *(_DWORD *)(this + 76); /*0x5ce180*/
-  v18 = *(_DWORD *)(this + 32); /*0x5ce18b*/
+  v18 = this->NeedsSaveOrLink; /*0x5ce18b*/
   v10 = v18 + 1; /*0x5ce18c*/
   LOWORD(v11) = WideString::GetChar((const wchar_t **)(this + 28), v18); /*0x5ce18d*/
   v12 = v11; /*0x5ce192*/
@@ -5270,7 +5270,7 @@ LABEL_5:
     }
     while ( (_WORD)v13 != 10 ); /*0x5ce1d5*/
   }
-  v14 = *(_DWORD *)(this + 64); /*0x5ce1e0*/
+  v14 = this->ambientSoundController.AudioController_field_04; /*0x5ce1e0*/
   v15 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce1e3*/
   v21 = *(_DWORD *)(this + 80); /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
@@ -5279,11 +5279,11 @@ LABEL_5:
   a3[3] = v15; /*0x5ce1fa*/
   if ( this->objectTypeFlags == 2 ) /*0x5ce203*/
   {
-    *(_DWORD *)(this + 84) = 0; /*0x5ce20b*/
-    *(_DWORD *)(this + 88) = 0; /*0x5ce20e*/
-    *(_DWORD *)(this + 92) = 0; /*0x5ce211*/
+    this->customSound_controller.AudioController_field_04 = 0; /*0x5ce20b*/
+    this->customSound_controller.AudioController_field_08 = 0; /*0x5ce20e*/
+    this->customSound_controller.AudioController_field_0C = 0; /*0x5ce211*/
     *(_DWORD *)(this + 96) = 0; /*0x5ce214*/
-    *(_DWORD *)(this + 32) = v10; /*0x5ce217*/
+    this->NeedsSaveOrLink = v10; /*0x5ce217*/
     if ( (_WORD)v12 == 10 ) /*0x5ce21a*/
     {
       v16 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce228*/
@@ -5293,12 +5293,12 @@ LABEL_5:
   }
   else
   {
-    *(_DWORD *)(this + 84) = *a3; /*0x5ce24e*/
-    *(_DWORD *)(this + 88) = a3[1]; /*0x5ce254*/
-    *(_DWORD *)(this + 92) = a3[2]; /*0x5ce25a*/
+    this->customSound_controller.AudioController_field_04 = *a3; /*0x5ce24e*/
+    this->customSound_controller.AudioController_field_08 = a3[1]; /*0x5ce254*/
+    this->customSound_controller.AudioController_field_0C = a3[2]; /*0x5ce25a*/
     *(_DWORD *)(this + 96) = a3[3]; /*0x5ce260*/
   }
-  if ( *(_BYTE *)(this + 48) == 1 ) /*0x5ce26c*/
+  if ( (unsigned char)this->nextObject == 1 ) /*0x5ce26c*/
   {
     v17 = this->objectTypeFlags + 1; /*0x5ce271*/
     this->objectTypeFlags = v17; /*0x5ce274*/
@@ -5368,16 +5368,16 @@ int __thiscall sub_5CE3A0(int this, int a2, int *a3)
   if ( !a3 /*0x5ce3e1*/
     || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
   {
-    result = *(_DWORD *)(this + 32); /*0x5ce3e7*/
-    v7 = *(_DWORD *)(this + 8); /*0x5ce3ea*/
-    v8 = *(_DWORD *)(this + 4); /*0x5ce3ed*/
+    result = this->NeedsSaveOrLink; /*0x5ce3e7*/
+    v7 = this->vtable2; /*0x5ce3ea*/
+    v8 = this->vtable1; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
     v18 = v7; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 ) /*0x5ce40f*/
       {
-        v8 = *(_DWORD *)(this + 4); /*0x5ce414*/
+        v8 = this->vtable1; /*0x5ce414*/
         v7 += *(_DWORD *)(this->attachedTag + 8); /*0x5ce41e*/
         v14 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce420*/
         v18 = v7; /*0x5ce426*/

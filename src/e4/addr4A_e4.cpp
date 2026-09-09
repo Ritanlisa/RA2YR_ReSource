@@ -1363,14 +1363,6 @@ int __fastcall sub_4A3A10(int *a1, void **a2, void **a3, int a4)
 }
 } // namespace gamemd
 
-// 0x4A3B30
-namespace gamemd {
-int ReturnNull()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x4A3B40
 namespace gamemd {
 HRSRC FindResource(unsigned short a1, const CHAR * a2)
@@ -1389,14 +1381,6 @@ HRSRC __fastcall FindResource(unsigned __int16 a1, const CHAR *a2)
   }
   return result; /*0x4a3b58*/
 }
-}
-} // namespace gamemd
-
-// 0x4A3BF0
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_3()
-{
-return 1;
 }
 } // namespace gamemd
 
@@ -2997,66 +2981,66 @@ char *__thiscall sub_4A6840(char *this, HWND hWnd, int a3, int a4, int a5)
   int v17; // ecx
 
   *this = 0; /*0x4a6855*/
-  *((_DWORD *)this + 1) = 0; /*0x4a6857*/
-  *((_DWORD *)this + 2) = 0; /*0x4a685a*/
-  *((_DWORD *)this + 3) = 0; /*0x4a685d*/
-  *((_DWORD *)this + 4) = a3; /*0x4a6860*/
-  *((_DWORD *)this + 5) = a4; /*0x4a6863*/
-  *((_DWORD *)this + 6) = 0; /*0x4a6866*/
-  *((_DWORD *)this + 7) = 0; /*0x4a6869*/
-  *((_DWORD *)this + 8) = 0; /*0x4a686c*/
+  this->vtable1 = 0; /*0x4a6857*/
+  this->vtable2 = 0; /*0x4a685a*/
+  this->vtable3 = 0; /*0x4a685d*/
+  this->uniqueId = a3; /*0x4a6860*/
+  this->abstractFlags = a4; /*0x4a6863*/
+  this->nextArrayIndex = 0; /*0x4a6866*/
+  this->referenceCount = 0; /*0x4a6869*/
+  this->NeedsSaveOrLink = 0; /*0x4a686c*/
   v6 = __2_YAPAXI_Z(0x42Cu); /*0x4a686f*/
-  *((_DWORD *)this + 1) = v6; /*0x4a6879*/
+  this->vtable1 = v6; /*0x4a6879*/
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 4) = a3; /*0x4a688d*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 8) = -a4; /*0x4a6893*/
-  *(_WORD *)(*((_DWORD *)this + 1) + 12) = 1; /*0x4a689d*/
-  *(_WORD *)(*((_DWORD *)this + 1) + 14) = 8; /*0x4a68a6*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 16) = 0; /*0x4a68af*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 20) = 0; /*0x4a68b5*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 24) = 0; /*0x4a68bb*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 28) = 0; /*0x4a68c6*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 32) = 256; /*0x4a68cc*/
-  *(_DWORD *)(*((_DWORD *)this + 1) + 36) = 256; /*0x4a68d2*/
-  for ( i = 0; i < 256; *(_BYTE *)(*((_DWORD *)this + 1) + 4 * i + 39) = 0 ) /*0x4a68d5*/
+  *(_DWORD *)(this->vtable1 + 4) = a3; /*0x4a688d*/
+  *(_DWORD *)(this->vtable1 + 8) = -a4; /*0x4a6893*/
+  *(_WORD *)(this->vtable1 + 12) = 1; /*0x4a689d*/
+  *(_WORD *)(this->vtable1 + 14) = 8; /*0x4a68a6*/
+  *(_DWORD *)(this->vtable1 + 16) = 0; /*0x4a68af*/
+  *(_DWORD *)(this->vtable1 + 20) = 0; /*0x4a68b5*/
+  *(_DWORD *)(this->vtable1 + 24) = 0; /*0x4a68bb*/
+  *(_DWORD *)(this->vtable1 + 28) = 0; /*0x4a68c6*/
+  *(_DWORD *)(this->vtable1 + 32) = 256; /*0x4a68cc*/
+  *(_DWORD *)(this->vtable1 + 36) = 256; /*0x4a68d2*/
+  for ( i = 0; i < 256; *(_BYTE *)(this->vtable1 + 4 * i + 39) = 0 ) /*0x4a68d5*/
   {
     v8 = (_BYTE *)(a5 + 2 * (i % 256) + i % 256); /*0x4a68ef*/
     ++i; /*0x4a68f1*/
-    *(_BYTE *)(*((_DWORD *)this + 1) + 4 * i + 36) = v8[2]; /*0x4a68fa*/
-    *(_BYTE *)(*((_DWORD *)this + 1) + 4 * i + 37) = v8[1]; /*0x4a6904*/
-    *(_BYTE *)(*((_DWORD *)this + 1) + 4 * i + 38) = *v8; /*0x4a690d*/
+    *(_BYTE *)(this->vtable1 + 4 * i + 36) = v8[2]; /*0x4a68fa*/
+    *(_BYTE *)(this->vtable1 + 4 * i + 37) = v8[1]; /*0x4a6904*/
+    *(_BYTE *)(this->vtable1 + 4 * i + 38) = *v8; /*0x4a690d*/
   }
   v9 = this + 12; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
-  *((_DWORD *)this + 2) = CreateDIBSection(DC, *((const BITMAPINFO **)this + 1), 0, (void **)this + 3, 0, 0); /*0x4a693f*/
+  this->vtable2 = CreateDIBSection(DC, *((const BITMAPINFO **)this + 1), 0, (void **)this + 3, 0, 0); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
-  if ( !*((_DWORD *)this + 2) ) /*0x4a6948*/
+  if ( !this->vtable2 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  v11 = *((_DWORD *)this + 1); /*0x4a6951*/
-  *((_DWORD *)this + 4) = *(_DWORD *)(v11 + 4); /*0x4a6957*/
-  v12 = *((_DWORD *)this + 4); /*0x4a6962*/
-  *((_DWORD *)this + 5) = abs32(*(_DWORD *)(v11 + 8)); /*0x4a6965*/
+  v11 = this->vtable1; /*0x4a6951*/
+  this->uniqueId = *(_DWORD *)(v11 + 4); /*0x4a6957*/
+  v12 = this->uniqueId; /*0x4a6962*/
+  this->abstractFlags = abs32(*(_DWORD *)(v11 + 8)); /*0x4a6965*/
   v13 = v12 + 3; /*0x4a6968*/
   LOBYTE(v13) = (v12 + 3) & 0xFC; /*0x4a696b*/
-  *((_DWORD *)this + 7) = v13; /*0x4a696d*/
+  this->referenceCount = v13; /*0x4a696d*/
   if ( *(int *)(v11 + 8) <= 0 ) /*0x4a6975*/
   {
-    *((_DWORD *)this + 6) = *v9; /*0x4a698b*/
+    this->nextArrayIndex = *v9; /*0x4a698b*/
   }
   else
   {
-    *((_DWORD *)this + 6) = *v9 + v12 * (*((_DWORD *)this + 5) - 1); /*0x4a6981*/
+    this->nextArrayIndex = *v9 + v12 * (this->abstractFlags - 1); /*0x4a6981*/
     v13 = -v13; /*0x4a6984*/
   }
-  *((_DWORD *)this + 7) = v13; /*0x4a698e*/
+  this->referenceCount = v13; /*0x4a698e*/
   v14 = abs32(v13); /*0x4a6998*/
   v15 = __2_YAPAXI_Z(0x20u); /*0x4a699f*/
   if ( v15 ) /*0x4a69a6*/
   {
-    v16 = *((_DWORD *)this + 5); /*0x4a69a8*/
-    v17 = *((_DWORD *)this + 3); /*0x4a69ab*/
+    v16 = this->abstractFlags; /*0x4a69a8*/
+    v17 = this->vtable3; /*0x4a69ab*/
     v15[2] = v16; /*0x4a69ae*/
     v15[1] = v14; /*0x4a69b9*/
     v15[3] = 0; /*0x4a69bc*/
@@ -3069,7 +3053,7 @@ char *__thiscall sub_4A6840(char *this, HWND hWnd, int a3, int a4, int a5)
   {
     v15 = 0; /*0x4a69d9*/
   }
-  *((_DWORD *)this + 8) = v15; /*0x4a69dd*/
+  this->NeedsSaveOrLink = v15; /*0x4a69dd*/
   if ( !v15 ) /*0x4a69e0*/
 LABEL_12:
     *this = 1; /*0x4a69e2*/
@@ -3449,14 +3433,6 @@ __int64 Direction_InitOffsets()
   MEMORY[0x8A01F8] = result; /*0x4a718f*/
   return result; /*0x4a7194*/
 }
-}
-} // namespace gamemd
-
-// 0x4A80D0
-namespace gamemd {
-int AlwaysFindYRCD()
-{
-return 2;
 }
 } // namespace gamemd
 
@@ -5214,5 +5190,29 @@ BOOL __thiscall sub_4AFED0(_DWORD *this)
   }
   return result; /*0x4aff54*/
 }
+}
+} // namespace gamemd
+
+// 0x4A3B30
+namespace gamemd {
+int ReturnNull()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x4A3BF0
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_3()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4A80D0
+namespace gamemd {
+int AlwaysFindYRCD()
+{
+return 2;
 }
 } // namespace gamemd

@@ -15592,14 +15592,6 @@ char *__cdecl _expandlocale(IUnknown *aP0, IUnknown *aP1, _WORD *a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x7CE046
-namespace gamemd {
-int ReturnNull3()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7CE049
 namespace gamemd {
 char * _strcats(CCINIClass * aP0, int a2)
@@ -18077,5 +18069,13 @@ int __cdecl __sbh_resize_block(_DWORD *a0, CCINIClass *aP1, AbstractClass *aP2)
   }
   return 1; /*0x7d02b9*/
 }
+}
+} // namespace gamemd
+
+// 0x7CE046
+namespace gamemd {
+int ReturnNull3()
+{
+return 0;
 }
 } // namespace gamemd

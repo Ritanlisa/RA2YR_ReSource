@@ -16,18 +16,6 @@ int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerC
 }
 }
 
-// 0x6CF4B0
-int SwizzleManagerClass::AddRef(int a1)
-{
-return 1;
-}
-
-// 0x6CF4C0
-int SwizzleManagerClass::Release(int a1)
-{
-return 1;
-}
-
 // 0x6CF4D0
 int SwizzleManagerClass::Remove(int a1, int a2, int a3)
 {
@@ -58,14 +46,14 @@ void __thiscall SwizzleManagerClass_19_::sub_6CF4F0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x6cf4f6*/
-  *(_DWORD *)(this + 16) = 0; /*0x6cf4f9*/
+  this->SwizzleManagerClass_19_field_0x10 = 0; /*0x6cf4f9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x6cf500*/
   {
     __3_YAXPAX_Z(v2); /*0x6cf506*/
-    *(_DWORD *)(this + 4) = 0; /*0x6cf50e*/
+    this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf50e*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6cf511*/
-  *(_DWORD *)(this + 8) = 0; /*0x6cf514*/
+  this->SwizzleManagerClass_19_field_0x8 = 0; /*0x6cf514*/
 }
 }
 } // namespace gamemd
@@ -77,8 +65,8 @@ unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SwizzleManagerClass_19_::sub_6CF520(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6cf520*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x6cf535*/
+  if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC ) /*0x6cf520*/
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3; /*0x6cf535*/
   else
     return 0; /*0x6cf527*/
 }
@@ -203,9 +191,9 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x6cf616*/
+      if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf616*/
       {
-        v12 = *((_DWORD *)this + 2); /*0x6cf61b*/
+        v12 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf61b*/
         if ( a2 < v12 ) /*0x6cf620*/
           v12 = a2; /*0x6cf622*/
         v13 = 0; /*0x6cf624*/
@@ -214,7 +202,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
           do /*0x6cf647*/
           {
             v14 = 2 * v13; /*0x6cf62d*/
-            v15 = (_DWORD *)(*((_DWORD *)this + 1) + 8 * v13++); /*0x6cf636*/
+            v15 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
           }
@@ -224,11 +212,11 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
         if ( *((_BYTE *)this + 13) ) /*0x6cf64f*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf658*/
-          *((_DWORD *)this + 1) = 0; /*0x6cf660*/
+          this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf660*/
         }
       }
-      *((_DWORD *)this + 1) = v5; /*0x6cf66b*/
-      *((_DWORD *)this + 2) = v3; /*0x6cf671*/
+      this->SwizzleManagerClass_19_field_0x4 = v5; /*0x6cf66b*/
+      this->SwizzleManagerClass_19_field_0x8 = v3; /*0x6cf671*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
     }
@@ -253,13 +241,13 @@ void SwizzleManagerClass_19::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SwizzleManagerClass_19_::_vt03(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x6cf69d*/
+  if ( this->SwizzleManagerClass_19_field_0x4 && *(_BYTE *)(this + 13) ) /*0x6cf69d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x6cf6a3*/
-    *(_DWORD *)(this + 4) = 0; /*0x6cf6ab*/
+    this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf6ab*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x6cf6ae*/
-  *(_DWORD *)(this + 8) = 0; /*0x6cf6b1*/
+  this->SwizzleManagerClass_19_field_0x8 = 0; /*0x6cf6b1*/
 }
 }
 } // namespace gamemd
@@ -275,9 +263,9 @@ int __thiscall SwizzleManagerClass_19_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x6cf6c0*/
+  if ( !(unsigned char)this->SwizzleManagerClass_19_field_0xC ) /*0x6cf6c0*/
     return 0; /*0x6cf6c8*/
-  v3 = *(_DWORD *)(this + 8); /*0x6cf6ce*/
+  v3 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf6ce*/
   result = 0; /*0x6cf6d1*/
   if ( v3 <= 0 ) /*0x6cf6d5*/
     return -1; /*0x6cf6ec*/
@@ -298,8 +286,8 @@ unsigned int SwizzleManagerClass_19::Add(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SwizzleManagerClass_19_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x6cf700*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 3; /*0x6cf715*/
+  if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC ) /*0x6cf700*/
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3; /*0x6cf715*/
   else
     return 0; /*0x6cf707*/
 }
@@ -375,9 +363,9 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
     *((_BYTE *)this + 12) = 1; /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
-    if ( *((_DWORD *)this + 1) ) /*0x6cf791*/
+    if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf791*/
     {
-      v11 = *((_DWORD *)this + 2); /*0x6cf796*/
+      v11 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf796*/
       if ( a2 < v11 ) /*0x6cf79b*/
         v11 = a2; /*0x6cf79d*/
       v12 = 0; /*0x6cf79f*/
@@ -386,7 +374,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
         do /*0x6cf7c2*/
         {
           v13 = 2 * v12; /*0x6cf7a8*/
-          v14 = (_DWORD *)(*((_DWORD *)this + 1) + 8 * v12++); /*0x6cf7b1*/
+          v14 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
         }
@@ -396,20 +384,20 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
       if ( *((_BYTE *)this + 13) ) /*0x6cf7ca*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf7d3*/
-        *((_DWORD *)this + 1) = 0; /*0x6cf7db*/
+        this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf7db*/
       }
     }
-    *((_DWORD *)this + 1) = v5; /*0x6cf7e6*/
-    *((_DWORD *)this + 2) = v3; /*0x6cf7ec*/
+    this->SwizzleManagerClass_19_field_0x4 = v5; /*0x6cf7e6*/
+    this->SwizzleManagerClass_19_field_0x8 = v3; /*0x6cf7ec*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x6cf7ef*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6cf7f8*/
   }
-  v15 = *((_DWORD *)this + 2); /*0x6cf7fb*/
-  if ( v15 < *((_DWORD *)this + 4) ) /*0x6cf803*/
-    *((_DWORD *)this + 4) = v15; /*0x6cf805*/
+  v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
+  if ( v15 < this->SwizzleManagerClass_19_field_0x10 ) /*0x6cf803*/
+    this->SwizzleManagerClass_19_field_0x10 = v15; /*0x6cf805*/
   return 1; /*0x6cf808*/
 }
 }
@@ -489,3 +477,15 @@ DynamicVector *__thiscall SwizzleManagerClass_19_::Constructor_VectorClass_Swizz
 }
 }
 } // namespace gamemd
+
+// 0x6CF4B0
+int SwizzleManagerClass::AddRef(int a1)
+{
+return 1;
+}
+
+// 0x6CF4C0
+int SwizzleManagerClass::Release(int a1)
+{
+return 1;
+}

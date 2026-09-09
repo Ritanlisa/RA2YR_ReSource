@@ -132,18 +132,6 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 }
 
-// 0x54A140
-int IsometricTileTypeClass::GetTypeIdentifier()
-{
-return 18;
-}
-
-// 0x54A150
-int IsometricTileTypeClass::GetObjectSize()
-{
-return 780;
-}
-
 // 0x54A160
 int IsometricTileTypeClass::GetAuxField()
 {
@@ -193,7 +181,7 @@ unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall IsometricTileTypeClass::sub_54A1C0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x54a1c0*/
+  if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C ) /*0x54a1c0*/
     return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2; /*0x54a1d5*/
   else
     return 0; /*0x54a1c7*/
@@ -318,4 +306,16 @@ _DWORD *__thiscall sub_54A850(_DWORD *this, int a2, int a3)
   }
   return this; /*0x54a87d*/
 }
+}
+
+// 0x54A140
+int IsometricTileTypeClass::GetTypeIdentifier()
+{
+return 18;
+}
+
+// 0x54A150
+int IsometricTileTypeClass::GetObjectSize()
+{
+return 780;
 }

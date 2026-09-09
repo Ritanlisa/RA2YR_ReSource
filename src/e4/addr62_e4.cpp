@@ -3191,14 +3191,14 @@ void __thiscall sub_629530(int this)
   int v3; // eax
   int v4; // [esp+8h] [ebp-4h] BYREF
 
-  v2 = *(_DWORD *)(this + 68); /*0x629537*/
+  v2 = this->ambientSoundController.AudioController_field_08; /*0x629537*/
   *(_DWORD *)(this + 76) = 0; /*0x62953a*/
   *(_DWORD *)(this + 80) = 0; /*0x62953f*/
-  *(_DWORD *)(this + 72) = 0; /*0x629542*/
+  this->ambientSoundController.AudioController_field_0C = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2); /*0x629549*/
-    *(_DWORD *)(this + 68) = 0; /*0x62954f*/
+    this->ambientSoundController.AudioController_field_08 = 0; /*0x62954f*/
   }
   if ( *(_BYTE *)(this + 84) ) /*0x629552*/
   {

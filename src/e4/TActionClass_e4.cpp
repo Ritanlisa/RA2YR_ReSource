@@ -1981,22 +1981,6 @@ char __thiscall TActionClass::executeEMPulseAction(int this, int a2, int a3, int
 }
 } // namespace gamemd
 
-// 0x6E4630
-namespace gamemd {
-int TActionClass::StubReturn148()
-{
-return 148;
-}
-} // namespace gamemd
-
-// 0x6E4640
-namespace gamemd {
-int TActionClass::StubReturn47()
-{
-return 47;
-}
-} // namespace gamemd
-
 // 0x6E4650
 namespace gamemd {
 int TActionClass::Stub()
@@ -2031,9 +2015,9 @@ int __thiscall TActionClass::TActionClass(int this)
   *(_BYTE *)(this + 56) = 0; /*0x71e6bb*/
   *(_DWORD *)(this + 84) = 0; /*0x71e6be*/
   *(_DWORD *)this = &TEventClass::`vftable'; /*0x71e6c1*/
-  *(_DWORD *)(this + 4) = &TEventClass::`vftable'; /*0x71e6c7*/
-  *(_DWORD *)(this + 8) = &TEventClass::`vftable'; /*0x71e6ce*/
-  *(_DWORD *)(this + 12) = &TEventClass::`vftable'; /*0x71e6d5*/
+  this->vtable1 = &TEventClass::`vftable'; /*0x71e6c7*/
+  this->vtable2 = &TEventClass::`vftable'; /*0x71e6ce*/
+  this->vtable3 = &TEventClass::`vftable'; /*0x71e6d5*/
   v2 = MEMORY[0xB0F1B0]; /*0x71e6dc*/
   if ( MEMORY[0xB0F1B0] < MEMORY[0xB0F1A8] /*0x71e71a*/
     || (MEMORY[0xB0F1AD] || !MEMORY[0xB0F1A8])
@@ -2117,5 +2101,21 @@ void __thiscall sub_726900(_BYTE *this)
 {
   *(this + 68) = 0; /*0x726900*/
 }
+}
+} // namespace gamemd
+
+// 0x6E4630
+namespace gamemd {
+int TActionClass::StubReturn148()
+{
+return 148;
+}
+} // namespace gamemd
+
+// 0x6E4640
+namespace gamemd {
+int TActionClass::StubReturn47()
+{
+return 47;
 }
 } // namespace gamemd

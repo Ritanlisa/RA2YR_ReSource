@@ -281,9 +281,9 @@ int __thiscall sub_771F50(int this)
   int v7; // [esp+8h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
-  *(_DWORD *)(this + 4) = &WeaponTypeClass::`vftable'; /*0x771f5d*/
-  *(_DWORD *)(this + 8) = &WeaponTypeClass::`vftable'; /*0x771f64*/
-  *(_DWORD *)(this + 12) = &WeaponTypeClass::`vftable'; /*0x771f6b*/
+  this->Burst = &WeaponTypeClass::`vftable'; /*0x771f5d*/
+  this->Projectile = &WeaponTypeClass::`vftable'; /*0x771f64*/
+  this->Damage = &WeaponTypeClass::`vftable'; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x771f72*/
   this->Damage = 0; /*0x771f7d*/
   this->ROF = 0; /*0x771f83*/
@@ -562,12 +562,6 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 }
 } // namespace gamemd
 
-// 0x7730D0
-int WeaponTypeClass::GetObjectSize()
-{
-return 352;
-}
-
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {
@@ -640,4 +634,10 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x773222*/
   return (WeaponTypeClass *)Block; /*0x77322c*/
 }
+}
+
+// 0x7730D0
+int WeaponTypeClass::GetObjectSize()
+{
+return 352;
 }

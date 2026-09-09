@@ -245,21 +245,21 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4a12c5*/
+      if ( this->ConnectionPointClass_9_field_0x4 ) /*0x4a12c5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x4a12cc*/
+        v6 = this->ConnectionPointClass_9_field_0x8; /*0x4a12cc*/
         if ( a2 < v6 ) /*0x4a12d1*/
           v6 = a2; /*0x4a12d3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a12d9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->ConnectionPointClass_9_field_0x4 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
         if ( *((_BYTE *)this + 13) ) /*0x4a12eb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
-          *((_DWORD *)this + 1) = 0; /*0x4a12fe*/
+          this->ConnectionPointClass_9_field_0x4 = 0; /*0x4a12fe*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x4a1307*/
-      *((_DWORD *)this + 2) = a2; /*0x4a130f*/
+      this->ConnectionPointClass_9_field_0x4 = v4; /*0x4a1307*/
+      this->ConnectionPointClass_9_field_0x8 = a2; /*0x4a130f*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x4a1312*/
       return 1; /*0x4a1318*/
     }
@@ -288,9 +288,9 @@ int __thiscall ConnectionPointClass_9_::_vt04(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4a1360*/
+  if ( !(unsigned char)this->ConnectionPointClass_9_field_0xC ) /*0x4a1360*/
     return 0; /*0x4a1368*/
-  v3 = *(_DWORD *)(this + 8); /*0x4a136e*/
+  v3 = this->ConnectionPointClass_9_field_0x8; /*0x4a136e*/
   result = 0; /*0x4a1371*/
   if ( v3 <= 0 ) /*0x4a1375*/
     return -1; /*0x4a138c*/
@@ -311,8 +311,8 @@ unsigned int ConnectionPointClass_9::Unadvise(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall ConnectionPointClass_9_::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a13a0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a13b5*/
+  if ( (unsigned char)this->ConnectionPointClass_9_field_0xC ) /*0x4a13a0*/
+    return (unsigned int)(a2 - this->ConnectionPointClass_9_field_0x4) >> 2; /*0x4a13b5*/
   else
     return 0; /*0x4a13a7*/
 }

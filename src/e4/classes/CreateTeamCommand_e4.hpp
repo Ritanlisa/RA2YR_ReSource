@@ -4,8 +4,6 @@
 namespace gamemd {
 struct CreateTeamCommand {
     void* vfptr;  // minimal E2 declaration
-    char Stub(int a1);  // 0x535BD0
-    char Do(int a1);  // 0x535BF0
     unsigned int * Construct(int a2);  // 0x535C00
     ObjectClass * AddRef();  // 0x535C20
     wchar_t * Release();  // 0x535C40
@@ -251,5 +249,7 @@ struct CreateTeamCommand {
     DynamicVector * performAction_244(unsigned int * Block, char a2);  // 0x538AE0
     char performAction_245(char a2, int a3);  // 0x6A6A00
     void performAction_246();  // 0x731060
+    char Stub(int a1);  // 0x535BD0
+    char Do(int a1);  // 0x535BF0
 };
 } // namespace gamemd

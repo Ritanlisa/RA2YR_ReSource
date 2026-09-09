@@ -445,7 +445,7 @@ _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
   *(_DWORD *)&this->__pad_4C[4] = 0; /*0x6429ee*/
   this->field_54 = 0; /*0x6429f1*/
   *((_BYTE *)this + 88) = 0; /*0x6429f4*/
-  *((_DWORD *)this + 23) = 0; /*0x6429f7*/
+  this->customSound_controller.AudioController_field_0C = 0; /*0x6429f7*/
   *((_BYTE *)this + 96) = 0; /*0x6429fa*/
   *((_BYTE *)this + 97) = 0; /*0x6429fd*/
   *((_BYTE *)this + 98) = 0; /*0x642a00*/
@@ -1226,9 +1226,9 @@ float *__thiscall sub_645D60(float *this, float *a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   v21 = *this; /*0x645d6f*/
-  v22 = *((_DWORD *)this + 1); /*0x645d76*/
-  v23 = *((_DWORD *)this + 2); /*0x645d7d*/
-  v24 = *((_DWORD *)this + 3); /*0x645d88*/
+  v22 = this->vtable1; /*0x645d76*/
+  v23 = this->vtable2; /*0x645d7d*/
+  v24 = this->vtable3; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply(v30, &v21, v3); /*0x645d9c*/
   v5 = *(this + 3); /*0x645da3*/

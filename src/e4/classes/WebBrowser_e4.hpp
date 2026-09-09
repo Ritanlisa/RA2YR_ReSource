@@ -9,7 +9,6 @@ struct WebBrowser {
     int QueryInterface();  // 0x773A40
     int AddRef();  // 0x773AA0
     int Release();  // 0x773AB0
-    int COMStub_Return0();  // 0x773B00
     int Write();  // 0x773B10
     int StubReturnFalse();  // 0x773B40
     int SetSize();  // 0x773B50
@@ -24,5 +23,6 @@ struct WebBrowser {
     int GoBack();  // 0x773D40
     HWND ShowDialog();  // 0x773E90
     int GoForward();  // 0x7740A0
+    int COMStub_Return0();  // 0x773B00
 };
 } // namespace gamemd
