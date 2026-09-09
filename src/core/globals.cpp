@@ -46,7 +46,7 @@ int  g_DDraw_Initialized   = 0;   // 0x89F978 (window mode flag)
 bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
 
 // 0xA8ED80 -- g_DDraw_Active (defined in ddraw_init.cpp, declared here for core access)
-extern bool g_DDraw_Active;
+extern bool g_DDraw_Active;  // data: 0xa8ed80
 
 // ============================================================
 // Stub functions (TODO: full IDA translation)
@@ -561,7 +561,7 @@ retn    4
 int  g_MenuReturnState = 1;
 
 // 0xA8E7AC: IKnowWhatImDoing -- developer skip flag
-bool IKnowWhatImDoing = false;
+bool IKnowWhatImDoing = false;  // data: 0xa8e7ac
 
 // 0xA8B238: GameMode_Current -- current game mode (0=menu, 1/2=campaign, 3=internet, 4=skirmish, 5=setup)
 int  GameMode_Current = 0;
@@ -570,7 +570,7 @@ int  GameMode_Current = 0;
 int  g_MainGameState = 0;
 
 // 0xA8ED9C: g_GameActive -- game active flag
-bool g_GameActive = false;
+bool g_GameActive = false;  // data: 0xa8ed9c
 
 // 0xA8ED84: CurrentFrame -- frame counter
 int  CurrentFrame = 0;
@@ -1463,7 +1463,7 @@ bool g_NetResponseActive = false;
 void* ObjectClass_CurrentObjects = nullptr;
 
 // IDA: 0xA8ECBC -- g_ObjectClass_CurrentCount
-void* g_ObjectClass_CurrentCount = nullptr;
+void* g_ObjectClass_CurrentCount = nullptr;  // data: 0xa8ecbc
 
 // IDA: 0xA8ECC8 -- g_SelectionManager (selection count)
 int   g_SelectionManager = 0;
@@ -1524,7 +1524,7 @@ void* dword_B0F6C8 = nullptr;
 void* WWMouseClass_Instance = nullptr;
 
 // IDA: 0x87F770 -- g_BinkMoviePlayer
-void* g_BinkMoviePlayer = nullptr;
+void* g_BinkMoviePlayer = nullptr;  // data: 0x87f770
 
 // ============================================================
 // BuildingClass::CalcDrawPos (0x480110) — required global variables

@@ -67,7 +67,8 @@ void CampaignProperties_WorldDominationTour::QueryInterface() {} // 0x76C030
 void CampaignScore::DialogProc() {} // 0x46DFD0
 // 0x46fc00
 void CampaignScore::ProcessScreen() {} // 0x46FC00
-void CampaignScore::sub_471420() {} // 0x471420
+// 0x471420
+void CampaignScore::InitScoreScreenData() {} // 0x471420
 // 0x471500
 void CampaignScore::Constructor_CampaignScoreClass() {} // 0x471500
 // 0x471520
@@ -164,7 +165,8 @@ void ControlClass::Constructor() {} // 0x4E1340
 // CreditsPower
 // ============================================================================
 
-void CreditsPower::sub_4C3D00() {} // 0x4C3D00
+// 0x4c3d00
+void CreditsPower::DrawCreditsTextLine() {} // 0x4C3D00
 // 0x4c3e30
 void CreditsPower::Display() {} // 0x4C3E30
 
@@ -234,10 +236,12 @@ void FontRenderer::DrawText() {} // 0x434B90
 // InputManager
 // ============================================================================
 
-void InputManager::sub_4E15A0() {} // 0x4E15A0
+// 0x4e15a0
+void InputManager::FindBestHitElement() {} // 0x4E15A0
 // 0x4e1640
 void InputManager::ProcessEvents() {} // 0x4E1640
-void InputManager::sub_54F2F0() {} // 0x54F2F0
+// 0x54f2f0
+void InputManager::EnqueueInputEvent() {} // 0x54F2F0
 // 0x54f670
 void InputManager::PushInputEvent() {} // 0x54F670
 // 0x54f790

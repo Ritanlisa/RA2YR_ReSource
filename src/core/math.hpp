@@ -137,7 +137,7 @@ std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v);
 
 struct Matrix3D
 {
-    float Data[12] = {};
+    float Data[12] = {};  // data: 0x840b4c
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor(float a1, float a2);  // 0x5AE6F0
     void RotateZ(float a1);  // 0x5AF080

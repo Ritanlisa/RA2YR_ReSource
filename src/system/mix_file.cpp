@@ -125,7 +125,7 @@ uint32_t Crc32(const void* data, size_t len, uint32_t crc = 0xFFFFFFFF)
 MixFileClass::MixFileClass(const char* pFileName) noexcept
     : Node(noinit_t())
 {
-    FileName        = pFileName;
+    FileName        = pFileName;  // data: 0x8221f8
     Blowfish        = false;
     Encryption      = false;
     CountFiles      = 0;
@@ -310,7 +310,7 @@ MixFileClass::MixFileClass(const uint8_t* data, int dataSize, const char* name) 
 {
     MemoryData     = const_cast<uint8_t*>(data);
     MemoryDataSize = dataSize;
-    FileName       = name ? _strdup(name) : _strdup("[mem]");
+    FileName       = name ? _strdup(name) : _strdup("[mem]");  // data: 0x8221f8
     Blowfish       = false;
     Encryption     = false;
     CountFiles     = 0;

@@ -307,7 +307,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameSetup() = default;
 
-    virtual void sub_477440(); // 0x477440
+    virtual void ParseCoordTriple(); // 0x477440
     virtual void FormatToString(); // 0x477510
     virtual void GetColorTooltip(); // 0x4E42A0
     virtual void DisplayPlayers(); // 0x5DAFE0
@@ -421,7 +421,7 @@ public:
 
     virtual void Render(); // 0x552D60
     virtual void AdjustForResolution(); // 0x554100
-    virtual void sub_554150(); // 0x554150
+    virtual void CalcProgressBarRect(); // 0x554150
     virtual void GetValue(); // 0x642B20
     virtual void FindLoadScreenAnim(); // 0x642B30
     // +11 more virtual methods

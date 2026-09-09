@@ -8,7 +8,7 @@ namespace gamemd {
 // ============================================================================
 
 // IDA 0x476D80: Hash::ComputeHashSHA1 (stub) -- full-hash compute (SHA1::ComputeThunk + Checksummer).
-// NOTE: 0x69D8C0 (the previous annotation) is SHA1::ProcessBlock, a different function.
+// NOTE: 69D8C0 (the previous annotation) is SHA1::ProcessBlock, a different function.
 uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 {
     // Original uses SHA1 class, returns 32-bit hash

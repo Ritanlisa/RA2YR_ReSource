@@ -74,7 +74,7 @@ int gamemd::MapClass::GetCellIndex(gamemd::Vector2D<short> const& a0) { return {
 // link stub (no binary body yet)
 bool gamemd::AbstractTypeClass::LoadFromINI(gamemd::CCINIClass* a0) { return {}; }
 // link stub (no binary body yet)
-bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0) { return {}; }
+bool gamemd::AbstractTypeClass::WriteINI(gamemd::CCINIClass* a0) { return {}; }
 // link stub (no binary body yet)
 bool gamemd::DSurface::FillRectEx(gamemd::RectangleStruct const& a0, gamemd::RectangleStruct const& a1, unsigned int a2) { return {}; }
 // link stub (no binary body yet)

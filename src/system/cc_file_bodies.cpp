@@ -9,7 +9,7 @@ MemoryBuffer::MemoryBuffer(void* pBuffer, int size) noexcept : Buffer(pBuffer)
         , Size(size) {
         if (!Buffer && Size > 0)
         {
-            Buffer = operator new(static_cast<std::size_t>(Size));
+            Buffer = operator new(static_cast<std::size_t>(Size));  // data: 0x8a3a08
             Allocated = true;
         }
     }
@@ -35,8 +35,8 @@ MemoryBuffer& MemoryBuffer::operator=(const MemoryBuffer& other) noexcept {
         if (this != &other)
         {
             MemoryBuffer tmp(std::move(*this));
-            Buffer = other.Buffer;
-            Size = other.Size;
+            Buffer = other.Buffer;  // data: 0x8a3a08
+            Size = other.Size;  // data: 0x87cba0
             Allocated = false;
         }
         return *this;
@@ -44,8 +44,8 @@ MemoryBuffer& MemoryBuffer::operator=(const MemoryBuffer& other) noexcept {
 
 MemoryBuffer& MemoryBuffer::operator=(MemoryBuffer&& other) noexcept {
         MemoryBuffer tmp(std::move(*this));
-        Buffer = other.Buffer;
-        Size = other.Size;
+        Buffer = other.Buffer;  // data: 0x8a3a08
+        Size = other.Size;  // data: 0x87cba0
         Allocated = other.Allocated;
         other.Allocated = false;
         return *this;
@@ -53,8 +53,8 @@ MemoryBuffer& MemoryBuffer::operator=(MemoryBuffer&& other) noexcept {
 
 void MemoryBuffer::Clear() noexcept {
         MemoryBuffer tmp(std::move(*this));
-        Buffer = nullptr;
-        Size = 0;
+        Buffer = nullptr;  // data: 0x8a3a08
+        Size = 0;  // data: 0x87cba0
         Allocated = false;
     }
 

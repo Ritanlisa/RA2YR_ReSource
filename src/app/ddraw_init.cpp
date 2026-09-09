@@ -8,10 +8,10 @@
 namespace gamemd {
 
 // IDA: 0x8A0094 -- g_lpDirectDraw7
-LPDIRECTDRAW7 g_lpDirectDraw7 = nullptr;
+LPDIRECTDRAW7 g_lpDirectDraw7 = nullptr;  // data: 0x8a0094
 
 // IDA: 0xA8ED80 -- g_DDraw_Active
-bool g_DDraw_Active = false;
+bool g_DDraw_Active = false;  // data: 0xa8ed80
 
 // IDA: 0x8A00A4 -- g_DisplayWidth
 int g_DisplayWidth = 0;
@@ -30,7 +30,7 @@ void (*g_DDraw_ErrorCallback)(int) = nullptr;
 LPDIRECTDRAWPALETTE g_DDraw_Palette = nullptr;
 
 // IDA: 0x89FC94 -- g_DDraw_PaletteEntries (256 COLORENTRY = 1024 bytes)
-PALETTEENTRY g_DDraw_PaletteEntries[256] = {};
+PALETTEENTRY g_DDraw_PaletteEntries[256] = {};  // data: 0x89fc94
 
 // IDA: 0x8205D4 -- g_DDraw_UseHWBlit
 bool g_DDraw_UseHWBlit = false;
@@ -116,7 +116,7 @@ int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp)
         return 0; // IDA: "SetDisplayMode failed"
     }
 
-    g_DisplayWidth  = width;
+    g_DisplayWidth  = width;  // data: 0x8a00a4
     g_DisplayHeight = height;
     g_DisplayBPP    = bpp;
 

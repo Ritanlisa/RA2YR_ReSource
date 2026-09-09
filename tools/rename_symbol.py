@@ -30,6 +30,7 @@ import subprocess
 import argparse
 from datetime import datetime
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = PROJECT_ROOT / "src"
@@ -39,140 +40,363 @@ CLASS_LAYOUTS_JSON = PROJECT_ROOT / "tools" / "class_layouts.json"
 
 
 def find_files_with_symbol(symbol_name):
-    """Find all .hpp and .cpp files containing the symbol."""
+    """Find source files containing a complete symbol or its class-local form."""
+    pattern = _symbol_pattern(symbol_name)
+    qualified = "::" in symbol_name
+    class_name, member_name = (symbol_name.rsplit("::", 1)
+                               if qualified else (None, None))
+    member_pattern = _symbol_pattern(member_name) if qualified else None
+    class_re = (re.compile(r"(?:class|struct)\s+" + re.escape(class_name) + r"\b")
+                if qualified else None)
     matches = []
     for ext in ("*.hpp", "*.cpp"):
         for fp in SRC_DIR.rglob(ext):
             try:
                 content = fp.read_text(encoding="utf-8", errors="replace")
-                if symbol_name in content:
-                    matches.append(fp)
-            except Exception:
+            except OSError:
                 continue
+            if pattern.search(content):
+                matches.append(fp)
+                continue
+            if qualified and class_re.search(content) and member_pattern.search(content):
+                matches.append(fp)
     return matches
 
 
+def _replace_class_member_lines(text, class_name, old_member, new_member):
+    """Rename a member's unqualified spelling only inside its class body."""
+    if not class_name or not old_member or old_member == new_member:
+        return text, 0
+    member_pattern = _symbol_pattern(old_member)
+    lines = text.splitlines(keepends=True)
+    depth = 0
+    classes = []
+    count = 0
+    out = []
+    class_re = re.compile(r'^\s*(?:class|struct)\s+([A-Za-z_]\w*)')
+    for line in lines:
+        match = class_re.match(line)
+        if match and "{" in line:
+            classes.append((match.group(1), depth + line.count("{") - line.count("}")))
+        active = any(name == class_name and depth >= start for name, start in classes)
+        if active:
+            line, n = member_pattern.subn(new_member, line)
+            count += n
+        out.append(line)
+        depth += line.count("{") - line.count("}")
+        classes = [(name, start) for name, start in classes if depth >= start]
+    return "".join(out), count
+
+
 def replace_in_file(filepath, old_name, new_name, dry_run=False):
-    """Replace all occurrences of old_name with new_name in a file.
-    
-    Uses word-boundary-aware replacement to avoid partial matches.
-    """
+    """Replace a complete C++ symbol and its class-local declaration spelling."""
     content = filepath.read_text(encoding="utf-8", errors="replace")
-    if old_name not in content:
-        return 0
-    
-    # Use word-boundary regex to avoid partial matches
-    # (e.g., renaming "foo" should not affect "foobar")
-    pattern = re.compile(r'\b' + re.escape(old_name) + r'\b')
+    pattern = _symbol_pattern(old_name)
     new_content, count = pattern.subn(new_name, content)
-    
+    if "::" in old_name:
+        class_name, old_member = old_name.rsplit("::", 1)
+        new_member = new_name.rsplit("::", 1)[-1] if "::" in new_name else new_name
+        new_content, local_count = _replace_class_member_lines(
+            new_content, class_name, old_member, new_member)
+        count += local_count
     if not dry_run and count > 0:
-        filepath.write_text(new_content, encoding="utf-8")
-    
+        filepath.write_text(new_content, encoding="utf-8", newline="\n")
     return count
 
 
+def _write_json_atomic(path, data, indent=2):
+    """Write canonical LF/indent=2 JSON without partial-file exposure."""
+    path = Path(path)
+    payload = json.dumps(data, indent=indent, ensure_ascii=False) + "\n"
+    with NamedTemporaryFile("w", encoding="utf-8", newline="\n",
+                            dir=str(path.parent), delete=False) as tmp:
+        tmp.write(payload)
+        temp_name = tmp.name
+    os.replace(temp_name, path)
+
+
 def update_signals_json(old_name, new_name, dry_run=False):
-    """Update symbol name in signals.json."""
+    """Update canonical symbols, globals and derived name indexes."""
     if not SIGNALS_JSON.exists():
         print("  WARNING: signals.json not found, skipping")
-        return 0
-    
-    with open(SIGNALS_JSON, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    
+        return {"symbols": 0, "globals": 0, "by_name": 0, "member_indexes": 0}
+    data = json.loads(SIGNALS_JSON.read_text(encoding="utf-8"))
+    counts = {"symbols": 0, "globals": 0, "by_name": 0, "member_indexes": 0}
+    class_name, old_member = (old_name.rsplit("::", 1)
+                               if "::" in old_name else (None, old_name))
+    new_member = new_name.rsplit("::", 1)[-1] if "::" in new_name else new_name
+
     symbols = data.get("symbols", {})
-    updated = 0
-    
-    # Check function symbols
     for addr_str, sym in list(symbols.items()):
         if isinstance(sym, dict) and sym.get("name") == old_name:
             if not dry_run:
                 sym["name"] = new_name
-            updated += 1
+                if addr_str == old_name:
+                    symbols[new_name] = symbols.pop(addr_str)
+            counts["symbols"] += 1
             print(f"  signals.json: {addr_str} -> {new_name}")
-    
-    # Check global symbols (if in "globals" section)
+
     globals_section = data.get("globals", {})
-    for addr_str, gsym in list(globals_section.items()):
+    if old_name in globals_section:
+        if not dry_run:
+            globals_section[new_name] = globals_section.pop(old_name)
+        counts["globals"] += 1
+        print(f"  signals.json globals: {old_name} -> {new_name}")
+    for addr_str, gsym in globals_section.items():
         if isinstance(gsym, dict) and gsym.get("name") == old_name:
             if not dry_run:
                 gsym["name"] = new_name
-            updated += 1
-            print(f"  signals.json globals: {addr_str} -> {new_name}")
+            counts["globals"] += 1
 
-    # Keep the _by_name lookup index in sync (name -> {"symbols": {key: kind}}).
-    # Without this the index keeps serving stale names to every consumer until
-    # the next full build_signals run.
     by_name = data.get("_by_name", {})
     if old_name in by_name:
         if not dry_run:
             entry = by_name.pop(old_name)
-            if new_name in by_name:
-                by_name[new_name]["symbols"].update(entry.get("symbols", {}))
-            else:
-                by_name[new_name] = entry
-        updated += 1
+            dest = by_name.setdefault(new_name, {"symbols": {}})
+            dest.setdefault("symbols", {}).update(entry.get("symbols", {}))
+        counts["by_name"] += 1
         print(f"  signals.json _by_name: {old_name} -> {new_name}")
 
-    if updated > 0 and not dry_run:
-        with open(SIGNALS_JSON, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+    if class_name:
+        classes = data.get("classes", {}).get(class_name, {})
+        offsets = classes.get("offsets", {}) if isinstance(classes, dict) else {}
+        member_index = data.get("_member_by_name", {}).get(class_name, {})
+        for info in offsets.values():
+            if isinstance(info, dict) and info.get("ida_name") == old_member:
+                if not dry_run:
+                    info["ida_name"] = new_member
+                counts["member_indexes"] += 1
+        if old_member in member_index:
+            if not dry_run:
+                member_index[new_member] = member_index.pop(old_member)
+            counts["member_indexes"] += 1
 
-    return updated
+    total = sum(counts.values())
+    if total and not dry_run:
+        _write_json_atomic(SIGNALS_JSON, data)
+    return counts
+
 
 
 IDA_NAME_INDEX = PROJECT_ROOT / "tools" / "ida_name_index.json"
 
 
 def update_ida_name_index(old_name, new_name, dry_run=False):
-    """Keep tools/ida_name_index.json (name -> addr) aligned with the rename.
-
-    The index is derived from ida_function_db.json at export time; without this
-    it keeps mapping the old name to the address until the next IDA re-export.
-    """
+    """Keep tools/ida_name_index.json aligned with a rename."""
     if not IDA_NAME_INDEX.exists():
         return 0
-    with open(IDA_NAME_INDEX, "r", encoding="utf-8") as f:
-        idx = json.load(f)
+    idx = json.loads(IDA_NAME_INDEX.read_text(encoding="utf-8"))
     if old_name not in idx:
         return 0
+    addr = idx[old_name]
+    if new_name in idx and idx[new_name] != addr:
+        raise ValueError(f"ida_name_index collision: {new_name} -> {idx[new_name]} vs {addr}")
     if not dry_run:
-        addr = idx.pop(old_name)
+        idx.pop(old_name, None)
         idx[new_name] = addr
-        with open(IDA_NAME_INDEX, "w", encoding="utf-8") as f:
-            json.dump(idx, f, indent=2, ensure_ascii=False)
+        _write_json_atomic(IDA_NAME_INDEX, idx)
         print(f"  ida_name_index.json: {old_name} -> {new_name} ({addr})")
     return 1
 
 
 def update_member_lookup(old_name, new_name, dry_run=False):
-    """Update member name in member_lookup.json."""
+    """Update legacy member names, optionally restricted to a class."""
     if not MEMBER_LOOKUP_JSON.exists():
         return 0
-    
-    with open(MEMBER_LOOKUP_JSON, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    
+    data = json.loads(MEMBER_LOOKUP_JSON.read_text(encoding="utf-8"))
+    class_name = None
+    member_name = old_name
+    if "::" in old_name:
+        class_name, member_name = old_name.rsplit("::", 1)
+    new_member = new_name.rsplit("::", 1)[-1]
     updated = 0
     for cls_name, members in data.items():
+        if class_name and cls_name != class_name:
+            continue
         if not isinstance(members, dict):
             continue
         for offset_str, member in list(members.items()):
-            if isinstance(member, dict) and member.get("name") == old_name:
+            if isinstance(member, dict) and member.get("name") == member_name:
                 if not dry_run:
-                    member["name"] = new_name
+                    member["name"] = new_member
                 updated += 1
-                print(f"  member_lookup.json: {cls_name}+{offset_str} -> {new_name}")
-    
+                print(f"  member_lookup.json: {cls_name}+{offset_str} -> {new_member}")
     if updated > 0 and not dry_run:
-        with open(MEMBER_LOOKUP_JSON, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
-    
+        _write_json_atomic(MEMBER_LOOKUP_JSON, data)
+    return updated
+
+
+def update_class_layouts(old_name, new_name, dry_run=False):
+    """Keep class_layouts.json's offset names and reverse indexes aligned."""
+    if "::" not in old_name or not CLASS_LAYOUTS_JSON.exists():
+        return 0
+    class_name, old_member = old_name.rsplit("::", 1)
+    new_member = new_name.rsplit("::", 1)[-1]
+    data = json.loads(CLASS_LAYOUTS_JSON.read_text(encoding="utf-8"))
+    cls = data.get(class_name)
+    if not isinstance(cls, dict):
+        return 0
+    updated = 0
+    for info in cls.get("offsets", {}).values():
+        if isinstance(info, dict) and info.get("ida_name") == old_member:
+            if not dry_run:
+                info["ida_name"] = new_member
+            updated += 1
+    reverse = cls.get("_member_by_name", {})
+    if old_member in reverse:
+        if not dry_run:
+            reverse[new_member] = reverse.pop(old_member)
+        updated += 1
+    if updated and not dry_run:
+        _write_json_atomic(CLASS_LAYOUTS_JSON, data)
     return updated
 
 
 RENAME_DEBT = PROJECT_ROOT / ".omo" / "rename_debt.json"
+
+
+def _validate_name_pair(old_name, new_name):
+    """Validate names before any source or metadata write.
+
+    C++ scope separators are part of the symbol and must never be parsed as
+    batch delimiters. Reject whitespace/control-bearing names and no-ops early.
+    """
+    for label, name in (("old_name", old_name), ("new_name", new_name)):
+        if not isinstance(name, str) or not name:
+            raise ValueError(f"{label} must be a non-empty string")
+        if name != name.strip():
+            raise ValueError(f"{label} must not have surrounding whitespace")
+        if any(ord(ch) < 32 for ch in name):
+            raise ValueError(f"{label} contains a control character")
+    if old_name == new_name:
+        raise ValueError("old_name and new_name are the same")
+
+
+def _symbol_pattern(name):
+    """Match a complete C++ symbol without treating `::` as a delimiter."""
+    return re.compile(r"(?<![A-Za-z0-9_])" + re.escape(name) +
+                      r"(?![A-Za-z0-9_])")
+
+
+def _source_match_count(old_name, new_name):
+    """Count exactly what replace_in_file will replace, including class-local declarations."""
+    total = 0
+    files = []
+    for ext in ("*.hpp", "*.cpp"):
+        for fp in SRC_DIR.rglob(ext):
+            try:
+                text = fp.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+            pattern = _symbol_pattern(old_name)
+            _, count = pattern.subn(new_name, text)
+            if "::" in old_name:
+                class_name, old_member = old_name.rsplit("::", 1)
+                new_member = new_name.rsplit("::", 1)[-1]
+                replaced = pattern.sub(new_name, text)
+                _, local_count = _replace_class_member_lines(
+                    replaced, class_name, old_member, new_member)
+                count += local_count
+            if count:
+                total += count
+                files.append((fp, count))
+    return total, files
+
+
+def _metadata_entities(old_name):
+    """Return canonical entities currently named old_name."""
+    if not SIGNALS_JSON.exists():
+        return []
+    data = json.loads(SIGNALS_JSON.read_text(encoding="utf-8"))
+    entities = []
+    for addr, sym in data.get("symbols", {}).items():
+        if isinstance(sym, dict) and sym.get("name") == old_name:
+            entities.append(("symbols", addr, sym.get("kind")))
+    globals_section = data.get("globals", {})
+    if old_name in globals_section:
+        entities.append(("globals", old_name, "global"))
+    if old_name in data.get("_by_name", {}):
+        for addr, kind in data["_by_name"][old_name].get("symbols", {}).items():
+            entities.append(("_by_name", addr, kind))
+    return entities
+
+
+def _member_lookup_matches(old_name):
+    if not MEMBER_LOOKUP_JSON.exists():
+        return []
+    data = json.loads(MEMBER_LOOKUP_JSON.read_text(encoding="utf-8"))
+    matches = []
+    for cls_name, members in data.items():
+        if not isinstance(members, dict):
+            continue
+        for offset, member in members.items():
+            if isinstance(member, dict) and member.get("name") == old_name:
+                matches.append((cls_name, offset))
+    return matches
+
+
+def _preflight(old_name, new_name):
+    _validate_name_pair(old_name, new_name)
+    source_count, source_files = _source_match_count(old_name, new_name)
+    entities = _metadata_entities(old_name)
+    member_name = old_name.rsplit("::", 1)[-1]
+    member_matches = _member_lookup_matches(member_name)
+    if "::" in old_name:
+        class_name = old_name.rsplit("::", 1)[0]
+        class_matches = [m for m in member_matches if m[0] == class_name]
+        if class_matches:
+            member_matches = class_matches
+    if source_count == 0 and not entities and not member_matches:
+        raise ValueError(f"symbol not found: {old_name}")
+    # A bare name with multiple member owners is ambiguous. Qualified names
+    # retain their C++ scope and are the safe form for class members.
+    if "::" not in old_name and len({m[0] for m in member_matches}) > 1:
+        owners = ", ".join(sorted({m[0] for m in member_matches})[:5])
+        raise ValueError(
+            f"ambiguous bare member '{old_name}' (owners: {owners}); "
+            "use a fully-qualified C++ name")
+    if "::" not in old_name and not entities and source_count > 1:
+        raise ValueError(
+            f"ambiguous bare symbol '{old_name}' ({source_count} source matches); "
+            "use a fully-qualified C++ name")
+
+    conflicts = []
+    if SIGNALS_JSON.exists():
+        data = json.loads(SIGNALS_JSON.read_text(encoding="utf-8"))
+        for addr, sym in data.get("symbols", {}).items():
+            if isinstance(sym, dict) and sym.get("name") == new_name:
+                if not any(e[1] == addr for e in entities):
+                    conflicts.append(f"signals.symbols:{addr}")
+        by_name = data.get("_by_name", {})
+        if new_name in by_name and old_name != new_name:
+            old_addrs = {e[1] for e in entities if e[0] == "_by_name"}
+            new_addrs = set(by_name[new_name].get("symbols", {}))
+            if not new_addrs.issubset(old_addrs):
+                conflicts.append("signals._by_name")
+        globals_section = data.get("globals", {})
+        if new_name in globals_section and old_name != new_name:
+            conflicts.append("signals.globals")
+    if IDA_NAME_INDEX.exists():
+        idx = json.loads(IDA_NAME_INDEX.read_text(encoding="utf-8"))
+        if new_name in idx and old_name in idx and idx[new_name] != idx[old_name]:
+            conflicts.append("ida_name_index")
+    if "::" in old_name:
+        class_name = old_name.rsplit("::", 1)[0]
+        new_member = new_name.rsplit("::", 1)[-1]
+        for owner, _offset in _member_lookup_matches(new_member):
+            if owner == class_name and new_member != member_name:
+                conflicts.append(f"member_lookup:{class_name}::{new_member}")
+        layout = json.loads(CLASS_LAYOUTS_JSON.read_text(encoding="utf-8")) if CLASS_LAYOUTS_JSON.exists() else {}
+        reverse = ((layout.get(class_name) or {}).get("_member_by_name") or {})
+        if new_member in reverse and new_member != member_name:
+            conflicts.append(f"class_layouts:{class_name}::{new_member}")
+    if conflicts:
+        raise ValueError("rename target collision: " + ", ".join(conflicts))
+    return {"source_matches": source_count,
+            "source_files": len(source_files),
+            "metadata_entities": len(entities),
+            "member_matches": len(member_matches),
+            "qualified": "::" in old_name}
 
 
 def record_rename_debt(old_name, new_name, reason):
@@ -295,15 +519,17 @@ def main():
 
     old_name = args.old_name
     new_name = args.new_name
-    
-    if old_name == new_name:
-        print("ERROR: old and new names are the same.")
-        sys.exit(1)
-    
+    try:
+        plan = _preflight(old_name, new_name)
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        sys.exit(2)
+
     print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Renaming: {old_name} -> {new_name}")
     print("=" * 60)
-    
-    # 1. Find all files containing the symbol
+    print("Preflight:", json.dumps(plan, ensure_ascii=False, sort_keys=True))
+
+    # 1. Find all files containing the complete symbol
     files = find_files_with_symbol(old_name)
     print(f"\nFiles containing '{old_name}': {len(files)}")
     
@@ -320,15 +546,16 @@ def main():
     
     # 2. Update signals.json
     print(f"\nUpdating signals.json...")
-    sig_updated = update_signals_json(old_name, new_name, args.dry_run)
+    sig_counts = update_signals_json(old_name, new_name, args.dry_run)
 
     # 2b. Keep the derived name->addr index aligned
     idx_updated = update_ida_name_index(old_name, new_name, args.dry_run)
 
-    # 3. Update member_lookup.json
+    # 3. Update member_lookup.json (legacy lookup uses unqualified names)
     print(f"\nUpdating member_lookup.json...")
     mem_updated = update_member_lookup(old_name, new_name, args.dry_run)
-    
+    layout_updated = update_class_layouts(old_name, new_name, args.dry_run)
+
     # 4. Update IDA
     if not args.no_ida:
         print(f"\nUpdating IDA...")
@@ -339,13 +566,14 @@ def main():
         ida_updated = 0
         if not args.dry_run:
             record_rename_debt(old_name, new_name, "no_ida_flag")
-    
-    # Summary
-    print("\n" + "=" * 60)
-    print(f"Summary: {total_replacements} source replacements, "
-          f"{sig_updated} signal(s), {idx_updated} name-index, "
-          f"{mem_updated} member(s), {ida_updated} IDA")
-    
+
+    result = {"ok": True, "exit": 0,
+              "source_replacements": total_replacements,
+              "signals": sig_counts, "name_index": idx_updated,
+              "member_lookup": mem_updated, "class_layouts": layout_updated,
+              "ida": ida_updated,
+              "dry_run": args.dry_run, "qualified": plan["qualified"]}
+    print("\nRENAME_RESULT: " + json.dumps(result, ensure_ascii=False, sort_keys=True))
     if args.dry_run:
         print("DRY RUN — no changes made. Remove --dry-run to apply.")
     else:

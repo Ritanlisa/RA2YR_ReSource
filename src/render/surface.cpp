@@ -9,7 +9,7 @@
 
 // g_ZBufferDescriptor (IDA: 0x887644) — Z-buffer descriptor pointer
 // Null in standalone build (no DDraw Z-buffer available)
-extern void* g_ZBufferDescriptor;
+extern void* g_ZBufferDescriptor;  // data: 0x887644
 
 // StreamClass::ReadAndSeek (IDA: 0x4114B0)
 // Returns WORD* buffer into visible surface stipple/Z space at (x, y).
@@ -34,7 +34,7 @@ static DWORD g_VisibleSurfaceDescStub[16] = {
     0,                                                        // [10] word_pitch (set at runtime)
     0, 0, 0, 0, 0
 };
-void* g_VisibleSurfaceDescriptor = g_VisibleSurfaceDescStub;
+void* g_VisibleSurfaceDescriptor = g_VisibleSurfaceDescStub;  // data: 0x87e8a4
 
 namespace gamemd
 {
@@ -252,9 +252,9 @@ void DSurface::DetectPixelFormat(const DDPIXELFORMAT& pf)
     while (gShift < 16 && (gM & 1) == 0) { gM >>= 1; ++gShift; }
     while (bShift < 16 && (bM & 1) == 0) { bM >>= 1; ++bShift; }
 
-    g_BitShift_Red   = rShift;
+    g_BitShift_Red   = rShift;  // data: 0x8a0dd0
     g_BitShift_Green = gShift;
-    g_BitShift_Blue  = bShift;
+    g_BitShift_Blue  = bShift;  // data: 0x8a0dd8
 
     // Count bits set (= mask width)
     DWORD rT = rM, gT = gM, bT = bM;
@@ -262,9 +262,9 @@ void DSurface::DetectPixelFormat(const DDPIXELFORMAT& pf)
     while (gWidth < 8 && (gT & 0x80)) { gT <<= 1; ++gWidth; }
     while (bWidth < 8 && (bT & 0x80)) { bT <<= 1; ++bWidth; }
 
-    g_BitMask_Red   = rWidth;
-    g_BitMask_Green = gWidth;
-    g_BitMask_Blue  = bWidth;
+    g_BitMask_Red   = rWidth;  // data: 0x8a0ddc
+    g_BitMask_Green = gWidth;  // data: 0x8a0de0
+    g_BitMask_Blue  = bWidth;  // data: 0x8a0de4
 
     // IDA: determine pixel format enum
     g_DDraw_PixelFormat = -1; // unknown
@@ -1288,10 +1288,10 @@ void* BSurface::Lock(int x, int y)
     (void)x;
     (void)y;
     if (!Buffer) {
-        Buffer = new byte[Width * Height * BytesPerPixel];
+        Buffer = new byte[Width * Height * BytesPerPixel];  // data: 0x8a3a08
         std::memset(Buffer, 0, Width * Height * BytesPerPixel);
     }
-    return Buffer;
+    return Buffer;  // data: 0x8a3a08
 }
 
 void Surface::DrawSHP(

@@ -1,4 +1,5 @@
 #include "structure/infantry.hpp"
+#include "type/infantry_type.hpp"  // InfantryTypeClass full definition (Type->Engineer access)
 
 #include <cstring>
 #include <cmath>
@@ -8197,13 +8198,9 @@ int InfantryClass::ResetReloadIfNeeded()
 }
 
 // 0x5220f0
-int InfantryClass::SetFlag1752()
+void InfantryClass::SetPermanentBerzerk()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5220f0
-void __thiscall InfantryClass::SetFlag1752(_BYTE *this)
-{
-  *(this + 1752) = 1;
+PermanentBerzerk = true;
 }
 
 /* ASM:
@@ -8483,13 +8480,9 @@ retn    4
 
 // 0x5224d0
 bool InfantryClass::IsBridgeRepairEnabled()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5224d0
-char __thiscall InfantryClass::IsBridgeRepairEnabled(_DWORD *this)
 {
-  return *(_BYTE *)(*(this + 432) + 3779);
-}
+return this->Type->Engineer;
 
 /* ASM:
 mov     eax, [ecx+6C0h]

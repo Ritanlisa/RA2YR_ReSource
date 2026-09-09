@@ -494,7 +494,7 @@ public:
     virtual ~CSFClass() = default;
 
     virtual void CopyString(); // 0x595710
-    virtual void sub_6977C0(); // 0x6977C0
+    virtual void LoadMissingStrings(); // 0x6977C0
     virtual void LoadFile(); // 0x7346A0
 
     uint8_t CSFClass_field_0x04[4];
@@ -623,7 +623,7 @@ class EMPulseClass
 public:
     virtual ~EMPulseClass() = default;  // 0x4C59F0
 
-    virtual void sub_54C58C0(); // 0x4C58C0
+    virtual void IterateCellsInRadius(); // 0x4C58C0
     virtual void Stat(); // 0x4C59A0
     virtual void ddtor(); // 0x4C59F0
     virtual void Write(); // 0x4C5A30
@@ -663,7 +663,7 @@ public:
 
     virtual void MapHandler(); // 0x6263D0
     virtual void Constructor(); // 0x628240
-    virtual void sub_628D10(); // 0x628D10
+    virtual void CheckExtensionMatch(); // 0x628D10
     virtual void Check(); // 0x628DD0
 
     uint8_t FileExtension_field_0x04[4];
@@ -681,7 +681,7 @@ public:
     virtual void Next(); // 0x47B0C0
     virtual void CloseHandle(); // 0x47B130
     virtual void Close(); // 0x5BBED0
-    virtual void sub_5BBEE0(); // 0x5BBEE0
+    virtual void ReleaseAllHandles(); // 0x5BBEE0
 
     uint8_t FileFind_field_0x04[4];
     uint8_t FileFind_field_0x08[4];
@@ -1096,7 +1096,7 @@ public:
     virtual ~PlanningNodeClass() = default; // 0x6370B0
 
     virtual void CleanupAll(); // 0x6370B0
-    virtual void sub_63EBD0(); // 0x63EBD0
+    virtual void RemoveFromArray(); // 0x63EBD0
 
     uint8_t PlanningNodeClass_field_0x04[4];
 };
@@ -1142,7 +1142,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreAnimClass() = default;
 
-    virtual void sub_690C00(); // 0x690C00
+    virtual void AdvanceFrame(); // 0x690C00
     virtual void AnimateText(); // 0x690D60
     virtual void AddRef(); // 0x690F70
     virtual void Release(); // 0x690FC0
@@ -1207,7 +1207,7 @@ public:
 
     virtual void Display(); // 0x68CD20
     virtual void Check(); // 0x68EC00
-    virtual void sub_68EF20(); // 0x68EF20
+    virtual void AccumulateScoreStats(); // 0x68EF20
     virtual void DisplayTimeText(); // 0x68F9B0
     virtual void LoadAudio(); // 0x690640
     // +5 more virtual methods
@@ -1340,10 +1340,10 @@ class TClassFactory_CampaignClass
 public:
     virtual ~TClassFactory_CampaignClass() = default;  // 0x6C0290
 
-    virtual void sub_6C00C0(); // 0x6C00C0
+    virtual void AddRefCOM(); // 0x6C00C0
     virtual void Release(); // 0x6C00E0
-    virtual void sub_6C0110(); // 0x6C0110
-    virtual void sub_6C0190(); // 0x6C0190
+    virtual void CreateInstanceCOM(); // 0x6C0110
+    virtual void AdjustRefCOM(); // 0x6C0190
     virtual void AddRef(); // 0x6C0240
     // +3 more virtual methods
 
@@ -1678,9 +1678,9 @@ public:
 class BlowStraw
 {
 public:
-    virtual ~BlowStraw() = default; // 0x438210
+    virtual ~BlowStraw() = default;
 
-    virtual void Release(); // 0x438210
+    virtual void Get(); // 0x438210
     virtual void QueryInterface(); // 0x5B45C0
     virtual void Constructor_MixFileClass(); // 0x5B4630
 
@@ -1910,7 +1910,7 @@ public:
     virtual ~Chat() = default;
 
     virtual void ProcessMessages(); // 0x55E420
-    virtual void sub_55D4390(); // 0x5D4390
+    virtual void RefreshMessagePositions(); // 0x5D4390
 
     uint8_t Chat_field_0x04[4];
 };
@@ -2298,7 +2298,7 @@ public:
 class FractalNoise
 {
 public:
-    virtual ~FractalNoise() = default; // 0x420270
+    virtual ~FractalNoise() = default;
 
     virtual void Release(); // 0x420270
 
@@ -3812,7 +3812,7 @@ public:
 
     virtual void BuildGraph(); // 0x581F90
     virtual void Constructor(); // 0x589100
-    virtual void sub_58A500(); // 0x58A500
+    virtual void CopyDataFrom(); // 0x58A500
 
     uint8_t Subzone_field_0x04[4];
     uint8_t Subzone_field_0x08[4];
@@ -5382,7 +5382,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WorldDominationTour() = default;
 
-    WorldDominationTour(); // 0x76F970 (constructor)
+    WorldDominationTour();
 
 };
 // 1 methods in IDA

@@ -58,6 +58,9 @@ public:
     bool IsVehicle() const;
     short GetFoundationWidth() const;  // 0x45EC90
     short GetFoundationHeight(bool bIncludeBib) const;  // 0x45ECA0
+    // owner-fixed 2026-09-09: callers (0x457620/0x459C00) pass BuildingClass+0x520
+    // (Type pointer) in ECX; body reads Foundation@+0xEF0 into 1x1 width/height tables
+    bool Is1x1AndUndeployable_BuildingMassSelectable();  // 0x465D40
     // unmatched: no callgraph reference and no git history record
     bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
 

@@ -24,10 +24,10 @@ enum class GameOption : int
     BuildOffAlly   = 4,
     FogOfWar       = 5,
     MCVRedeploys   = 6,
-    AlliesAllowed  = 7,
-    ShortGame      = 8,
-    Crates         = 9,
-    MultiEngineer  = 10,
+    AlliesAllowed  = 7,  // data: 0xa8b31c
+    ShortGame      = 8,  // data: 0xa8b262
+    Crates         = 9,  // data: 0xa8b261
+    MultiEngineer  = 10,  // data: 0xa8b26c
     Bridies        = 11
 };
 
@@ -88,10 +88,10 @@ public:
     bool            BuildOffAlly;
     bool            FogOfWar;
     bool            MCVRedeploys;
-    bool            AlliesAllowed;
-    bool            ShortGame;
-    bool            Crates;
-    bool            MultiEngineer;
+    bool            AlliesAllowed;  // data: 0xa8b31c
+    bool            ShortGame;  // data: 0xa8b262
+    bool            Crates;  // data: 0xa8b261
+    bool            MultiEngineer;  // data: 0xa8b26c
     bool            Bridies;
     int             ScenIndex;
     int             MapIndex;
@@ -239,7 +239,7 @@ public:
     struct Entry
     {
         int         Frame;
-        char        Text[256];
+        char        Text[256];  // data: 0x81fc98
     };
 
     std::vector<Entry> entries;

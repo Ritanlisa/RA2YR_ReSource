@@ -53,7 +53,7 @@ enum { IDC_LOADGAME = 1673, IDC_NEWGAME = 1674, IDC_STARTSCENARIO = 1672,
 // ============================================================================
 static int        g_GameMode = 0;
 static MenuState  g_MenuState = MenuState::MenuIdle;
-static bool       g_LoadScreenFlag = false;
+static bool       g_LoadScreenFlag = false;  // data: 0x8a00a0
 static uint8_t    g_palette[256][4];
 
 // ============================================================================
@@ -432,7 +432,7 @@ static void MainMenu_RenderLoop(HWND hDlg, HWND hBink, const MenuLayout& lay,
         }
         // IDA: handle g_LoadScreenFlag (screen capture for transitions)
         if (g_LoadScreenFlag) {
-            g_LoadScreenFlag = false;
+            g_LoadScreenFlag = false;  // data: 0x8a00a0
             Screen_Capture(1, 0);
             Frame_Present(0);
         }
@@ -453,7 +453,7 @@ static MenuState MainMenu_Screen() {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState(7);
 
-    g_DisplayWidth = ctx->width;
+    g_DisplayWidth = ctx->width;  // data: 0x8a00a4
     g_DisplayHeight = ctx->height;
     SetSoundWarning(-1);
 
@@ -700,10 +700,10 @@ static void CampaignSelect_LookupByName(const char*) {}
 // Section 13: Global game options state (mirrors IDA .data section)
 // ============================================================================
 // IDA: g_GameModeOptions @ 0xA8EB60 — 0xB8 bytes of game option values
-static uint8_t  g_GameModeOptions[0xB8];
+static uint8_t  g_GameModeOptions[0xB8];  // data: 0xa8eb60
 
 // IDA: WTFMode @ 0xA8E9A0 — flag: 1=windowed/test mode
-static bool g_WTFMode = false;
+static bool g_WTFMode = false;  // data: 0xa8e9a0
 
 // IDA: Individual option globals
 static int   g_GameSpeed         = 2;    // dword_A8EB64 — 0-4 slider
@@ -833,7 +833,7 @@ REVERSE(0x55fc80, "Options::Screen_Dialog: main options dialog loop", "OptionsSc
 static void Options_Screen_Dialog() {
     // IDA: saves WTFMode, restores on exit
     bool savedWTF = g_WTFMode;
-    g_WTFMode = false;
+    g_WTFMode = false;  // data: 0xa8e9a0
 
     // IDA: outer loop — can re-enter after sub-dialogs
     while (true) {
@@ -901,7 +901,7 @@ static void Options_Screen_Dialog() {
 
     // IDA: persist options to INI
     // ScenarioClass::SaveGameOptions(g_GameModeOptions);
-    g_WTFMode = savedWTF;
+    g_WTFMode = savedWTF;  // data: 0xa8e9a0
 }
 
 // ============================================================================
@@ -1563,7 +1563,7 @@ void MainGame() {
             if (GameFrameLoop() && GameFrameCheck()) break;
             MainGameFrame();
         }
-        CmdLine_NoCD = true;
+        CmdLine_NoCD = true;  // data: 0x89e410
     }
     Event_Dispatch();
     LOG_INFO("MainGame: exiting");

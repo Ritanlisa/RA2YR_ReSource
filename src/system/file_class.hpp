@@ -40,15 +40,15 @@ public:
     virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
     virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;
     virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65CF00
-    virtual int GetFileSize() = 0;  // 0x7C8512
+    virtual int GetFileSize() = 0;  // kernel32 import thunk (jmp __imp_GetFileSize) - address annotation removed 2026-09-08
     virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0;  // 0x411310
     virtual void Close() = 0;  // 0x65D150
-    virtual uint32_t GetFileTime();  // 0x7C855A
-    virtual bool SetFileTime(uint32_t fileTime);  // 0x7C8524
+    virtual uint32_t GetFileTime();
+    virtual bool SetFileTime(uint32_t fileTime);
     // unmatched: no callgraph reference and no git history record
     virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0;
 
-    // wrapper: delegates to SetFileTime at 0x7C8524
+    // wrapper: delegates to SetFileTime (kernel32 import thunk 7C8524)
     void* ReadWholeFile();
 
     template <typename T>
@@ -147,7 +147,7 @@ public:
     int FilePointer = 0;
     int FileSize = 0;
     void* Handle = nullptr;
-    const char* FileName = nullptr;
+    const char* FileName = nullptr;  // data: 0x8221f8
     int16_t FileTimeDateLo = 0;
     int16_t FileTimeDateHi = 0;
     bool FileNameAllocated = false;

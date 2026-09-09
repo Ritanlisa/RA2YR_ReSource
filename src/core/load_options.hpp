@@ -24,7 +24,7 @@ struct FileEntryClass {
     uint32_t    field_252;          // 0x3F0 (dword at +252) — filter flag
     uint8_t     field_436;          // 0x1B4 — is_available flag
     uint8_t     field_437;          // 0x1B5 — is_multiplayer flag
-    char        FileName[128];      // 0x100 — raw filename on disk
+    char        FileName[128];  // data: 0x8221f8  // 0x100 — raw filename on disk
     uint32_t    FileTime_lo;        // 0x1AC — FILETIME low (stored as dword pair)
     uint32_t    FileTime_hi;        // 0x1B0 — FILETIME high
 };

@@ -474,17 +474,17 @@ public:
     int32_t              GameSpeed;
     int32_t              AIPlayers;
     int32_t              Players;
-    bool                 BridgeDestruction;
+    bool                 BridgeDestruction;  // data: 0xa8b260
     bool                 ShadowGrow;
     bool                 Shroud;
-    bool                 Bases;
+    bool                 Bases;  // data: 0xa8b258
     bool                 TiberiumGrows;
-    bool                 Crates;
+    bool                 Crates;  // data: 0xa8b261
     bool                 CaptureTheFlag;
-    bool                 HarvesterTruce;
-    bool                 MultiEngineer;
-    bool                 AlliesAllowed;
-    bool                 ShortGame;
+    bool                 HarvesterTruce;  // data: 0xa8b31d
+    bool                 MultiEngineer;  // data: 0xa8b26c
+    bool                 AlliesAllowed;  // data: 0xa8b31c
+    bool                 ShortGame;  // data: 0xa8b262
     bool                 FogOfWar;
     bool                 MCVRedeploys;
     bool                 SuperWeaponsAllowed;

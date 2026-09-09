@@ -85,6 +85,21 @@ from efv_model import (
 # T7's structural CFG builder (used by build_events_cfg + the self-test).
 from efv_ida_cfg import build_ida_cfg
 
+# GENERAL indirect-call form the shared verifier does not cover (LOCAL regex --
+# this module deliberately keeps local overrides instead of touching the
+# protected verifier file): `(*(CAST)(<expr> + N))(<args>)`. RESTRICTED to
+# THIS-relative vtable bases (`this`, `thisa->__pad_0[0]`, ...): the
+# `CALL(vfptr+N)` event vocabulary is this-relative, and a dispatch through a
+# LOCAL pointer (e.g. GetAmmoCountScaled 0x44d700's `*(_DWORD *)v1 + 116` --
+# v1 = the BuildingTypeClass* member) belongs to ANOTHER class's vtable, which
+# the C++ side cannot express as vfptr -- admitting it only fabricates
+# asymmetry (regression-verified 2026-09-08). The lazy body may cross
+# single-level nested parens (function-pointer casts) but must contain `this`
+# somewhere before the `+ N`.
+import re as _re
+_IDA_VTABLE_INDIRECT = _re.compile(
+    r'\(\*(?:[^();]|\([^()]*\))*?this[^();]*?\+\s*(\d+)\s*\)\s*\)\s*\(')
+
 # PROVEN leaf-extraction logic, imported verbatim from the original verifier.
 # `verify_execution_flow.py` is a REVERSE-pipeline protected file: imported,
 # never modified. It has no import-time side effects (loaders are functions,
@@ -213,6 +228,16 @@ def make_ida_leaf(this_type, M):
         # --- vtable dispatch via local var `(vN + N))(this)` -> CALL(vfptr+N) ---
         for m in _IDA_VTABLE_LOCAL.finditer(text):
             hits.append((m.start(), m.end(), call_virtual(int(m.group(2)))))
+        # --- GENERAL indirect call `(*(CAST)(<expr> + N))(<args>)` -> CALL(vfptr+N)
+        # e.g. QueryInterface 0x410260: `(*(void (__stdcall **)(AbstractClass *))(
+        # thisa->__pad_0[0] + 4))(thisa)` -- the vtable pointer is read from a
+        # MEMBER (not `*this`), so neither _IDA_VTABLE nor _IDA_VTABLE_LOCAL
+        # fires; the block used to extract NO call event while the C++ side had
+        # one (issue #9). The `+ N` inside the call-closure parens is the vtable
+        # byte offset. Overlap de-dup collapses the double hit when the
+        # `*this`-forms also match the same dispatch.
+        for m in _IDA_VTABLE_INDIRECT.finditer(text):
+            hits.append((m.start(), m.end(), call_virtual(int(m.group(1)))))
 
         # --- named calls (qualified Class::Method first, then PascalCase) ---
         for m in _IDA_QUAL_CALL.finditer(text):

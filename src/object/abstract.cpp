@@ -3,6 +3,7 @@
 // Verified member offsets: +0x00/+0x04/+0x08/+0x0C vtables, +0x10 id, +0x14 flags, +0x18..+0x23 fields
 
 #include "object/abstract.hpp"
+#include "object/object.hpp"
 #include "system/scenario.hpp"
 #include "core/reverse_marker.hpp"
 
@@ -42,7 +43,7 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
     *ppv = this ? (IRTTITypeInfo*)this : 0;  // MI interface subobject @ +4
   if ( !*ppv )
     return E_NOINTERFACE;
-  AddRef();
+  this->COMStub_AddRef();  // vtable[0][1] @0x7E1F54 -> 0x410300 (indirect dispatch)
   return S_OK;
 
 /* ASM:
@@ -196,17 +197,23 @@ void AbstractClass::createId() {
 }
 
 // IDA: 0x410540 -- vtable[0][22], AbstractClass::GetCoords
-// Calls vtable[0][18] (GetInvalidCoord @ 0x4104C0) through virtual dispatch,
-// then copies the returned XYZ to output.
-// This allows derived classes to override GetInvalidCoord with valid coordinates.
-CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
-    // IDA: v1 = (*(this->vtable[0] + 72))(this, v3)  -- calls vtable[18] GetInvalidCoord
-    // Returns invalid XYZ from the class's virtual GetInvalidCoord (overridable in derived classes)
-    // Base class returns static invalid coord (0, 0, 0) from dword_887680/684/688
-    out->X = 0;
-    out->Y = 0;
-    out->Z = 0;
+// Dispatches vtable[0][18] (+72; base impl GetInvalidCoord @ 0x4104C0,
+// overridden e.g. by BuildingClass::GetExitCoords @ 0x447AC0) into a local
+// buffer, then copies the returned XYZ to the out param.
+// 0x410540
+CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
+    CoordStruct buf;
+    CoordStruct* v1 = ((ObjectClass*)this)->GetExitCoords(&buf, 0);
+    out->X = v1->X;
+    out->Y = v1->Y;
+    out->Z = v1->Z;
     return out;
+}
+
+// src-model helper kept for the existing callers (techno.cpp): the pointer
+// flavor simply forwards to the virtual GetCoords above.
+CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
+    return GetCoords(out);
 }
 
 } // namespace game

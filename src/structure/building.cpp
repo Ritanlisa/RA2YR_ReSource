@@ -2011,7 +2011,7 @@ void BuildingClass::Place(bool bUnk)
     }
 }
 
-// IDA 0x43bfa0: Load from save stream
+// IDA 0x453e20: Load from save stream  [43bfa0 is inside BuildingClass::Dtor]
 void BuildingClass::LoadFromStream(void* stream)
 {
     // IStream* pStm = (IStream*)(stream);
@@ -9705,13 +9705,9 @@ retn    8
 // IDA 0x44f640: is factory selectable
 // 0x457620
 bool BuildingClass::IsFactorySelectable()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x457620
-int __thiscall BuildingClass::IsFactorySelectable(#377 *this)
 {
-  return BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(*((_DWORD *)this + 328));
-}
+return this->Type->Is1x1AndUndeployable_BuildingMassSelectable();
 
 /* ASM:
 mov     ecx, [ecx+520h]
@@ -13151,7 +13147,7 @@ int BuildingClass::Mission_Selling()
 int BuildingClass::Sell() { BeingProduced = false; CompleteSell(); return 5; }
 void BuildingClass::CompleteSell() { Remove(); }
 
-// IDA 0x4d9f70: process sell - create MCV/sell unit
+// IDA 0x739ec0: process sell - create MCV/sell unit  [4d9f70 is BuildingClass::SellUnit]
 void BuildingClass::ProcessSell()
 {
     if (!Type) return;
@@ -14260,19 +14256,34 @@ void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 bool BuildingClass::CheckHealthForRepair() {
     // IDA 0x452630, vtable slot 37. health@+0x6C (ASM: mov eax,[esi+6Ch]),
     // Type@+0x520, ClickRepairable@Type+0x157A; vtable[+128] = slot 32 =
-    // IsFactorySelectable. The tail call is the original binary's direct
-    // cross-class call into InfantryClass::CheckHealthDiff (0x701140) -
-    // generic Techno code with an internal whatAmI guard (always false for
-    // buildings); passed through unchanged (single-inheritance no-op rebind).
-    if (this->health == 0)
-        return false;
-    if (this->Type->ClickRepairable)
+    // IsFactorySelectable (binary vtable@0x7E3EBC slot32 = 0x457620, verified
+    // this session; vtable_offsets.json slot-128 entry fixed accordingly).
+    // The tail call is the original binary's direct cross-class call into
+    // InfantryClass::CheckHealthDiff (0x701140) - generic Techno code with an
+    // internal whatAmI guard (always false for buildings); passed through
+    // unchanged (single-inheritance no-op rebind).
+    // CFG mirrors the Hex-Rays single-exit shape (shared `return result` tail).
+    bool result;
+    if (this->health)
     {
-        if (this->IsFactorySelectable())
-            return false;
-        return ((InfantryClass*)(ra2::game::TechnoClass*)this)->CheckHealthDiff() != 0;
+        if (this->Type->ClickRepairable)
+        {
+            result = this->IsFactorySelectable();
+            if (result)
+                result = false;
+            else
+                result = ((InfantryClass*)(ra2::game::TechnoClass*)this)->CheckHealthDiff() != 0;
+        }
+        else
+        {
+            result = false;
+        }
     }
-    return false;
+    else
+    {
+        result = false;
+    }
+    return result;
 
 /* ASM:
 push    esi
@@ -14316,7 +14327,13 @@ retn
 
 // IDA 0x7105e0: check if being repaired or captured
 // 0x7105e0
-bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasBeenCaptured; }
+bool BuildingClass::IsBeingRepairedOrCaptured()
+{
+    // Binary: dword@+0x2C0 (locomotorTarget) nonzero OR byte@+0x2C4
+    // (locomotorSource) nonzero. The old IsBeingRepaired||HasBeenCaptured
+    // rendering read unrelated bools at +0x6E8/+0x6E3 (blind-verifier era).
+    return locomotorTarget || locomotorSource;
+}
 
 // IDA 0x459ed0: missile building mission
 int BuildingClass::Mission_Missile()
@@ -21474,11 +21491,11 @@ retn
 
 // IDA 0x465d40: check if 1x1 and undeployable
 // 0x465d40
-bool BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable()
+bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x465d40
-BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWORD *this)
+BOOL __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWORD *this)
 {
   int v1; // eax
   BOOL result; // eax
@@ -22719,7 +22736,11 @@ retn
 // 0x458db0
 bool BuildingClass::HasActiveParam()
 {
-    if (BuildingClass_field_bool_6E9)
+    // Binary: virtual self-dispatch through vtable slot 256 (+1024) =
+    // BuildingClass::CheckMissionGuard (binary-verified 2026-09-08; the old
+    // member-read rendering was a mistranslation made under the verifier's
+    // indirect-call blind spot).
+    if (this->CheckMissionGuard())
         return true;
     return TechnoClass::HasActiveParam();
 }
@@ -22889,11 +22910,21 @@ bool BuildingClass::IsHealthLow() { return GetHealthRatio() < 0.5; }
 
 // IDA 0x5f6500: squared distance to target
 // 0x5f6500
-int BuildingClass::SquaredDistanceTo(CoordStruct* target) const
+int BuildingClass::SquaredDistanceTo(ObjectClass* target) const
 {
-    if (!target) return 0;
-    int dx = target->X - location.X;
-    int dy = target->Y - location.Y;
+    // Binary: fetch each object's coords through the vtable slot 18 (+72)
+    // virtual (BuildingClass override = GetExitCoords @0x447AC0; the target
+    // dispatch goes through TARGET's own vtable), then 2D squared distance.
+    // The old location.X/Y body was a blind-verifier-era fabrication (the IDA
+    // side could not see the indirect dispatches then).
+    if (!target)
+        return 0;
+    CoordStruct myBuf;
+    CoordStruct* mine = this->GetExitCoords(&myBuf, 0);
+    CoordStruct tgBuf;
+    CoordStruct* theirs = target->GetExitCoords(&tgBuf, 0);
+    int dx = mine->X - theirs->X;
+    int dy = mine->Y - theirs->Y;
     return dx * dx + dy * dy;
 }
 
@@ -23153,14 +23184,10 @@ retn    4
 
 // IDA 0x459ed0: get type field at offset 60
 // 0x459ed0
-int BuildingClass::GetTypeField60()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
+const wchar_t* BuildingClass::GetTypeField60()
 // 0x459ed0
-int __thiscall BuildingClass::GetTypeField60(#377 *this)
 {
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 96);
-}
+return this->Type->UIName;
 
 /* ASM:
 mov     eax, [ecx+520h]
@@ -23638,18 +23665,12 @@ retn    4
 // IDA 0x459c00: check if mass selectable
 // 0x459c00
 bool BuildingClass::IsMassSelectable()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x459c00
-int __thiscall BuildingClass::IsMassSelectable(#377 *this)
 {
-  int result; // eax
-
-  result = BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(*((_DWORD *)this + 328));
-  if ( (_BYTE)result )
-    LOBYTE(result) = TechnoClass::CanMoveToCell(this);
-  return result;
-}
+int result = 0;
+if (this->Type->Is1x1AndUndeployable_BuildingMassSelectable())
+    result = TechnoClass::CanMoveToCell();
+return result != 0;
 
 /* ASM:
 push    esi

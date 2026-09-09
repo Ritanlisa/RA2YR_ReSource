@@ -71,7 +71,7 @@ public:
 
     VocClassHeader   Header;             // 0x00 (0x0C bytes)
     int32_t          SamplesOK;          // 0x0C: 0 or 1, all samples usable
-    SoundControl     Control;            // 0x10: sound.ini Control flags (bit5→Attack, bit6→Decay)
+    SoundControl     Control;  // data: 0x8423d8  // 0x10: sound.ini Control flags (bit5→Attack, bit6→Decay)
     SoundType        Type;               // 0x14: sound.ini Type flags
     VolumeStruct     Volume;             // 0x18: volume/fade/buffer state (0x20 bytes)
     // 0x38: VocClass::Cleanup iterates 4 DS buffer slots at this+0x28

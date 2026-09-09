@@ -20,7 +20,7 @@ import ida_name
 import ida_idp
 import ida_bytes
 
-OUTPUT_DIR = r"H:\RA2YR_ReSource\tools"
+OUTPUT_DIR = r"D:\RA2YR_ReSource\tools"
 MAX_CALLERS = 30
 MAX_CALLEES = 30
 BATCH_SIZE = 500  # Progress reporting interval

@@ -73,7 +73,8 @@ void CSFClass::CopyString()
 {
 }
 
-void CSFClass::sub_6977C0()
+// 0x6977c0
+void CSFClass::LoadMissingStrings()
 {
 }
 
@@ -162,7 +163,8 @@ void DamageAnimClass::Constructor()
 {
 }
 
-void EMPulseClass::sub_54C58C0()
+// 0x4c58c0
+void EMPulseClass::IterateCellsInRadius()
 {
 }
 
@@ -201,7 +203,8 @@ void FileExtension::Constructor()
 {
 }
 
-void FileExtension::sub_628D10()
+// 0x628d10
+void FileExtension::CheckExtensionMatch()
 {
 }
 
@@ -225,7 +228,8 @@ void FileFind::Close()
 {
 }
 
-void FileFind::sub_5BBEE0()
+// 0x5bbee0
+void FileFind::ReleaseAllHandles()
 {
 }
 
@@ -539,7 +543,8 @@ void PlanningNodeClass::CleanupAll()
 {
 }
 
-void PlanningNodeClass::sub_63EBD0()
+// 0x63ebd0
+void PlanningNodeClass::RemoveFromArray()
 {
 }
 
@@ -568,7 +573,8 @@ void RadarHashVector::Release()
 {
 }
 
-void ScoreAnimClass::sub_690C00()
+// 0x690c00
+void ScoreAnimClass::AdvanceFrame()
 {
 }
 
@@ -632,7 +638,8 @@ void ScoreScreen::Check()
 {
 }
 
-void ScoreScreen::sub_68EF20()
+// 0x68ef20
+void ScoreScreen::AccumulateScoreStats()
 {
 }
 
@@ -746,7 +753,8 @@ void TClassFactory_BulletClass::GetSize()
 {
 }
 
-void TClassFactory_CampaignClass::sub_6C00C0()
+// 0x6c00c0
+void TClassFactory_CampaignClass::AddRefCOM()
 {
 }
 
@@ -755,11 +763,13 @@ void TClassFactory_CampaignClass::Release()
 {
 }
 
-void TClassFactory_CampaignClass::sub_6C0110()
+// 0x6c0110
+void TClassFactory_CampaignClass::CreateInstanceCOM()
 {
 }
 
-void TClassFactory_CampaignClass::sub_6C0190()
+// 0x6c0190
+void TClassFactory_CampaignClass::AdjustRefCOM()
 {
 }
 
@@ -1038,7 +1048,8 @@ void BlowPipe::QueryInterface()
 {
 }
 
-void BlowStraw::Release()
+// 0x438210
+void BlowStraw::Get()
 {
 }
 
@@ -1202,7 +1213,8 @@ void Chat::ProcessMessages()
 {
 }
 
-void Chat::sub_55D4390()
+// 0x5d4390
+void Chat::RefreshMessagePositions()
 {
 }
 
@@ -1451,26 +1463,32 @@ void Field::Int_Set()
 {
 }
 
+// 0x420270
 void FractalNoise::Release()
 {
 }
 
+// 0x41c430
 void Function::Method_41C430()
 {
 }
 
+// 0x424ca0
 void Function::Method_424CA0()
 {
 }
 
+// 0x46b260
 void Function::Method_46B260()
 {
 }
 
+// 0x4b4d60
 void Function::Method_4B4D60()
 {
 }
 
+// 0x6342d0
 void Function::Method_6342D0()
 {
 }
@@ -2603,7 +2621,8 @@ void Subzone::Constructor()
 {
 }
 
-void Subzone::sub_58A500()
+// 0x58a500
+void Subzone::CopyDataFrom()
 {
 }
 
@@ -4127,18 +4146,22 @@ void VtableStub::Push_407510()
 {
 }
 
+// 0x425270
 void VtableStub::Method_425270()
 {
 }
 
+// 0x477740
 void VtableStub::Method_477740()
 {
 }
 
+// 0x5175d0
 void VtableStub::Method_5175D0()
 {
 }
 
+// 0x55cbf0
 void VtableStub::Method_55CBF0()
 {
 }

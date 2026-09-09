@@ -20,14 +20,10 @@ namespace gamemd { int g_ScrollOffsetX = {}; }
 namespace gamemd { int g_ScrollOffsetY = {}; }
 extern "C" int BlitterCopySimpleSHP() { return 0; }  // LNK2019 cdecl
 // LNK2019 data global
-void * g_ZBufferDescriptor = nullptr;
+void * g_ZBufferDescriptor = nullptr;  // data: 0x887644
 // 0x70E240
-namespace gamemd { int IsNonNullPtr(int) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall IsNonNullPtr(_DWORD *a1)
-{
-  return a1 && *a1;
-}
+namespace gamemd { int IsNonNullPtr(int* ptr) {
+return ptr != nullptr && *ptr != 0;
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -49248,7 +49244,7 @@ int __thiscall RenderScenarioActionLines(int this)
       v31 = -1;
     }
   }
-  v7 = (_BYTE *)Function::6342D0((_DWORD *)this, 0);
+  v7 = (_BYTE *)Function::Method_6342D0((_DWORD *)this, 0);
   v32 = (void *)Render_Render_63D0F0(v7);
   v8 = 0;
   v47 = *(_DWORD *)(this + 48);
@@ -49786,7 +49782,7 @@ int __thiscall RenderScenarioActionLines2(int this)
       v29 = -1;
     }
   }
-  v7 = (_BYTE *)((_BYTE *(__stdcall *)(_DWORD))Function::6342D0)(0);
+  v7 = (_BYTE *)((_BYTE *(__stdcall *)(_DWORD))Function::Method_6342D0)(0);
   v39 = Render_Render_63D0F0(v7);
   v8 = 0;
   v37 = *(_DWORD *)(this + 48);

@@ -92,7 +92,7 @@ public:
     void OnMouseEnter() override;
     void OnMouseLeave() override;
 
-    std::string Text;
+    std::string Text;  // data: 0x81fc98
     uint8_t R = 255, G = 255, B = 255;
     bool Hovered = false;
     std::function<void()> Callback;
@@ -111,7 +111,7 @@ public:
     void OnMouseEnter() override;
     void OnMouseLeave() override;
 
-    std::string Text;
+    std::string Text;  // data: 0x81fc98
     uint8_t R, G, B;
 };
 

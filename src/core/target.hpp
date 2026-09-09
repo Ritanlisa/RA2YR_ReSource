@@ -75,7 +75,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     bool operator!=(const TargetClass& rhs) const;
 
-    AbstractType Kind() const;  // 0x65AD90
+    AbstractType Kind() const;
     // unmatched: no callgraph reference and no git history record
     unsigned Value() const;
     target_t AsTarget() const;

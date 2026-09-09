@@ -53,6 +53,11 @@ public:
 
 struct VeterancyStruct {
     float Veterancy;
+
+public:
+    bool IsRookie();   // 0x74FFC0
+    bool IsVeteran();  // 0x74FF90
+    bool IsElite();    // 0x750010
 };
 
 struct TurretControl {

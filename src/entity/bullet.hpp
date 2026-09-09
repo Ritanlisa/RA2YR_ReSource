@@ -89,7 +89,7 @@ public:
     BulletTypeClass*    Type;
     TechnoClass*        Owner;
     bool                BulletClass_field_B4;
-    BulletData          Data;
+    BulletData          Data;  // data: 0x840b4c
     bool                Bright;
     uint32_t            BulletClass_field_E4;
     BulletVelocity      Velocity;

@@ -135,7 +135,7 @@ public:
     int SetMissionOnCondition();  // 0x521C60
     int InitVoiceResponseTimer();  // 0x521C10
     int ResetReloadIfNeeded();  // 0x521C40
-    int SetFlag1752();  // 0x5220F0
+    void SetPermanentBerzerk();  // 0x5220F0 (writes PermanentBerzerk@+0x6D8)
     int StubReturn15();  // 0x523340
     int StubReturn1776();  // 0x5232F0
     int ProcessIdle();  // 0x70E1E0

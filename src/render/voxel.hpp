@@ -71,7 +71,7 @@ struct MotLib
     int32_t Frames;
     int32_t Layers;
     int32_t MotLib_field_8;
-    uint32_t* Data;
+    uint32_t* Data;  // data: 0x840b4c
     int16_t MotLib_field_10;
     int16_t MotLib_field_12;
     int16_t MotLib_field_14;

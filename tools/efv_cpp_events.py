@@ -322,6 +322,60 @@ def _locals_per_block(cfg):
 _MEMBER_PREFIX_OPS = frozenset({".", "->", "::"})
 
 
+def _strict_resolve_call(name, M):
+    """Object-expression method call resolution (issue #3/#12): emit an event
+    ONLY when the bare method name is UNAMBIGUOUS. Unlike the shared
+    `_resolve_call` (which min-picks among multiple same-name candidates --
+    acceptable for the symmetric global-name path where BOTH sides min-pick
+    identically, but fabrication for a method name that exists on many classes,
+    e.g. AddRef on ~200 COM classes), a bare METHOD name reached via
+    `receiver.Method(...)` / `receiver->Method(...)` resolves to exactly one
+    in-range address or to NOTHING (same under-emission as before the fix --
+    never a wrong address)."""
+    if name in SKIP_NAMES:
+        return None
+    a = M.name_to_addr.get(name)
+    if a:
+        return a
+    cand = [x for x in M.simple_to_addrs.get(name, [])
+            if 0x400000 <= x <= 0x7FFFFF]
+    if len(cand) == 1:
+        return cand[0]
+    return None
+
+
+def _is_known_virtual(name, M):
+    """True if `name` occupies a vtable slot in ANY class of the binary ground
+    truth (vtable_offsets.json). A call on ANOTHER object to a known-virtual
+    method is a VIRTUAL DISPATCH whose receiver type the leaf cannot see --
+    out of the event vocabulary (the IDA side renders it as a local-variable
+    vtable walk it likewise does not extract). Suppress the direct-CALL event
+    so the two sides stay symmetric; `this->X()` dispatches never come here
+    (they take the this-branch with its own vtable resolution)."""
+    for entries in (M.vtable_offsets or {}).values():
+        if name in entries:
+            return True
+    return False
+
+
+def _receiver_is_cast_of_this(toks, i):
+    """True when the token at index `i` (an IDENT method name) is reached
+    through `->` / `.` whose receiver expression is a PAREN group ending in
+    `this` -- i.e. `((ObjectClass*)this)->GetExitCoords(...)`. A cast of
+    `this` is still `this`: the dispatch goes through THIS object's vtable,
+    so it belongs to the this-branch vocabulary (vfptr+N via the ground-truth
+    slot -- same slot numbering across the single-inheritance chain). The
+    shape test is purely local: tokens `... ) -> X(` with `this` immediately
+    before that closing paren."""
+    j = i - 1
+    if j < 2 or not (_is_op(toks[j], "->") or _is_op(toks[j], ".")):
+        return False
+    if not _is_op(toks[j - 1], ")"):
+        return False
+    t2 = toks[j - 2]
+    return t2.kind == KIND_IDENT and t2.value == "this"
+
+
 def _is_ident(tok):
     return tok is not None and tok.kind == KIND_IDENT
 
@@ -339,6 +393,35 @@ def _is_pascal_case(name):
     """First character is an upper-case ASCII letter (a callable/type name shape;
     matches the legacy `[A-Z][A-Za-z0-9_]*` simple/qualified-call regexes)."""
     return bool(name) and "A" <= name[0] <= "Z"
+
+
+def _looks_like_definition(toks, lparen_idx, n):
+    """True when `Ident ( ... ) {` / `Ident ( ... ) const {` — a function
+    DEFINITION header, not a call. Gap2 TU bodies embed their own signature
+    line (e.g. `namespace gamemd { int IsNonNullPtr(int* ptr) {`); without
+    this guard the signature's own name tokenizes as a PascalCase call and
+    fabricates CALL(self-address)."""
+    depth = 0
+    k = lparen_idx
+    while k < n:
+        tk = toks[k]
+        if tk.kind == KIND_OP:
+            if tk.value == "(":
+                depth += 1
+            elif tk.value == ")":
+                depth -= 1
+                if depth == 0:
+                    nxt1 = toks[k + 1] if k + 1 < n else None
+                    nxt2 = toks[k + 2] if k + 2 < n else None
+                    v1 = nxt1.value if nxt1 is not None else None
+                    v2 = nxt2.value if nxt2 is not None else None
+                    if v1 == "{":
+                        return True
+                    if v1 == "const" and v2 == "{":
+                        return True
+                    return False
+        k += 1
+    return False
 
 
 # ============================================================
@@ -474,14 +557,53 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                 i += 1
                 continue
 
-            # -- an IDENT after `.`/`->`/`::` is a chained / scoped access ----
-            #    (`Type->PowerOutput`: only the `this`-relative Type read counts).
-            prev = toks[i - 1] if i > 0 else None
-            if prev is not None and prev.kind == KIND_OP and prev.value in _MEMBER_PREFIX_OPS:
+            nxt = toks[i + 1] if i + 1 < n else None
+
+            # -- a `this` cast receiver `((Type*)this)->X(...)` is a THIS-call --
+            #    (single-inheritance slot numbering makes the cast target's
+            #    vtable offset valid for this object; issue #3 suggestion)
+            prev0 = toks[i - 1] if i > 0 else None
+            if (prev0 is not None and prev0.kind == KIND_OP
+                    and prev0.value in ("->", ".")
+                    and _is_op(nxt, "(")
+                    and _receiver_is_cast_of_this(toks, i)
+                    and not _looks_like_definition(toks, i + 1, n)):
+                off = (get_vtable_byte_offset(val, class_name, M)
+                       if has_class else None)
+                if off is not None:
+                    hits.append((t.pos, _tok_end(t), call_virtual(off)))
+                else:
+                    addr = (_resolve_call(class_name + "::" + val, M)
+                            if has_class else None)
+                    if not addr:
+                        # cross-class direct call through a cast-of-this
+                        # receiver (e.g. ((InfantryClass*)this)->CheckHealthDiff)
+                        addr = _strict_resolve_call(val, M)
+                    if addr:
+                        hits.append((t.pos, _tok_end(t), call_direct(addr)))
                 i += 1
                 continue
 
-            nxt = toks[i + 1] if i + 1 < n else None
+            # -- an IDENT after `.`/`->`/`::` is a chained / scoped access ----
+            #    (`Type->PowerOutput`: only the `this`-relative Type read counts).
+            #    EXCEPT `.`/`->` + `(` -- a method call on ANOTHER object
+            #    (`RotationTimer.TimeRemaining()`, `((InfantryClass*)x)->CheckHealthDiff()`).
+            #    The IDA side renders the same call as a direct CALL(0xADDR)
+            #    (qualified / simple name in pseudocode), so the C++ side must
+            #    emit CALL(0xADDR) too -- resolved STRICTLY (unique bare name
+            #    only; ambiguous names stay event-less, never min-picked).
+            #    A KNOWN-VIRTUAL method name is suppressed entirely: that call
+            #    is a cross-object virtual dispatch the IDA side renders as an
+            #    unextractable local vtable walk (vocabulary symmetry).
+            if prev0 is not None and prev0.kind == KIND_OP and prev0.value in _MEMBER_PREFIX_OPS:
+                if prev0.value in (".", "->") and _is_op(nxt, "(") \
+                        and not _looks_like_definition(toks, i + 1, n) \
+                        and not _is_known_virtual(val, M):
+                    addr = _strict_resolve_call(val, M)
+                    if addr:
+                        hits.append((t.pos, _tok_end(t), call_direct(addr)))
+                i += 1
+                continue
 
             # -- qualified name  A :: B (:: C)*  -> direct call if `(` follows --
             if _is_op(nxt, "::"):
@@ -493,10 +615,13 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                     k += 2
                 after = toks[k + 1] if k + 1 < n else None
                 if _is_op(after, "("):
-                    qual_name = text[t.pos:_tok_end(last_ident)]
-                    addr = _resolve_call(qual_name, M)
-                    if addr:
-                        hits.append((t.pos, _tok_end(last_ident), call_direct(addr)))
+                    # definition-header guard (same as the simple-call path):
+                    # `RetType Class::Method(...) {` is a definition, not a call
+                    if not _looks_like_definition(toks, k + 1, n):
+                        qual_name = text[t.pos:_tok_end(last_ident)]
+                        addr = _resolve_call(qual_name, M)
+                        if addr:
+                            hits.append((t.pos, _tok_end(last_ident), call_direct(addr)))
                 # qualified name (call or not) is consumed as one unit; its inner
                 # idents are scope-qualified (never `this`-relative reads).
                 i = k + 1
@@ -504,9 +629,10 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
 
             # -- simple PascalCase call  Func(...) --------------------------
             if _is_op(nxt, "(") and _is_pascal_case(val):
-                addr = _resolve_call(val, M)
-                if addr:
-                    hits.append((t.pos, _tok_end(t), call_direct(addr)))
+                if not _looks_like_definition(toks, i + 1, n):
+                    addr = _resolve_call(val, M)
+                    if addr:
+                        hits.append((t.pos, _tok_end(t), call_direct(addr)))
                 i += 1
                 continue
 

@@ -239,7 +239,8 @@ void HashVector_UInt::Construct() {}
 // 0x4e0c40
 void PairVector::PushBack() {}
 
-void PlayerClass::sub_430F70() {}
+// 0x430f70
+void PlayerClass::FindNearestWaypoint() {}
 
 // 0x4ab9b0
 void PlayerClass::ExecuteCommand() {}
@@ -280,9 +281,11 @@ void Random::State() {}
 // 0x65c7e0
 void Random::Range() {}
 
-void Random::sub_661850() {}
+// 0x661850
+void Random::AdvanceRandomBytes() {}
 
-void RandomStraw::sub_65C8B0() {}
+// 0x65c8b0
+void RandomStraw::AdvanceState() {}
 
 // 0x661c10
 void RandomStraw::Release() {}
@@ -296,7 +299,8 @@ void Rect_Point::Set() {}
 // 0x65d660
 void ReferenceCounted::Constructor() {}
 
-void SHA1::sub_69D8C0() {}
+// 0x69d8c0
+void SHA1::ProcessBlock() {}
 
 // 0x69d960
 void SHA1::Process() {}

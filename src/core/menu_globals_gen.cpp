@@ -113,7 +113,7 @@ int CampaignScreen_Init(void* /*CampaignScreen*/ self) {
     return 0;
 }
 
-// CampaignScore::sub_471420 @ 0x471420 (210B)
+// CampaignScore::CampaignScore::InitScoreScreenData @ 0x471420 (210B)
 REVERSE(0x471420, "IDA decompilation", "None")
 void CampaignScore_sub_471420(void* /*CampaignScore*/ self) {
     (void)self;
@@ -203,7 +203,7 @@ void CreditsScreen_sub_4A3C00(void* /*CreditsScreen*/ self) {
     (void)self;
 }
 
-// CreditsPower::sub_4C3D00 @ 0x4C3D00 (199B)
+// CreditsPower::DrawCreditsTextLine @ 0x4C3D00 (199B)
 REVERSE(0x4C3D00, "IDA decompilation", "None")
 int CreditsPower_sub_4C3D00(void* /*CreditsPower*/ self) {
     return 0;

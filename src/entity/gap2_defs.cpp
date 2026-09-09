@@ -128,7 +128,7 @@ double *__thiscall BulletClass::FlightUpdate(#377 *this, int a2, int a3)
         v8[2] = v13;
         Value = ProgressTimer::GetValue((_WORD *)this + 464, v53);
         Vector2::NormalizeNonZero(v8);
-        Function::41C430(v8);
+        Function::Method_41C430(v8);
         v15 = *(__int16 *)Value;
         v54 = v13;
         v52 = v15 - 0x3FFF;
@@ -159,7 +159,7 @@ double *__thiscall BulletClass::FlightUpdate(#377 *this, int a2, int a3)
         v24 = Math::RoundToInt(v23);
         v25 = v51 + 29;
         Vector2::NormalizeNonZero(v51 + 29);
-        Function::41C430(v51 + 29);
+        Function::Method_41C430(v51 + 29);
         v54 = v23;
         v52 = v24 - 0x3FFF;
         *(double *)v53 = (double)v52 * -0.00009587672516830327;
@@ -3973,7 +3973,7 @@ int __thiscall AnimClass::drawFrame(#377 *this)
       do
       {
         if ( *(_BYTE *)(v22 + *((_DWORD *)this + 328) + 3980) && *v23 )
-          VtableStub::425270(*v23);
+          VtableStub::Method_425270(*v23);
         v22 += 68;
         ++v23;
       }
@@ -15865,7 +15865,7 @@ LABEL_205:
           }
         }
 LABEL_271:
-        FractalNoise::Dtor(Block);
+        FractalNoise::Release(Block);
         return;
       }
       v50 = MEMORY[0xAA10FC];

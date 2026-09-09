@@ -20,7 +20,7 @@ struct VxlLimb
     char     Name[16];
     float    Scale;
     float    Bounds[6];    // minX, minY, minZ, maxX, maxY, maxZ
-    uint8_t  Size[3];      // x, y, z
+    uint8_t  Size[3];  // data: 0x87cba0  // x, y, z
     uint8_t  NormalType;
 
     // Voxel data: array[Size.x][Size.y], each cell is a map z->VxlElement

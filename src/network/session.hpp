@@ -19,7 +19,7 @@ struct GameTypePreferencesStruct;
 // CSP: PlayerData matched via T3
 struct PlayerData
 {
-    uint8_t  Data[10];
+    uint8_t  Data[10];  // data: 0x840b4c
     uint8_t  padding_A[2];
 };
 
@@ -55,7 +55,7 @@ struct GameTypePreferencesStruct
     int32_t   GameSpeed;
     int32_t   Credits;
     int32_t   UnitCount;
-    bool      ShortGame;
+    bool      ShortGame;  // data: 0xa8b262
     bool      SuperWeapons;
     bool      BuildOffAlly;
     bool      MCVRepacks;
@@ -69,12 +69,12 @@ struct GameModeOptionsClass
     int32_t   GameSpeed;
     int32_t   Credits;
     int32_t   UnitCount;
-    bool      ShortGame;
+    bool      ShortGame;  // data: 0xa8b262
     bool      SuperWeaponsAllowed;
     bool      BuildOffAlly;
     bool      MCVRedeploys;
     bool      CratesAppear;
-    bool      AlliesAllowed;
+    bool      AlliesAllowed;  // data: 0xa8b31c
     bool      FogOfWar;
     bool      CaptureTheFlag;
     uint32_t  AICount;
@@ -111,7 +111,7 @@ public:
     GameTypePreferencesStruct    SkirmishPreferences;
     GameTypePreferencesStruct    LANPreferences;
     GameTypePreferencesStruct    WOLPreferences;
-    bool                         MuteSWLaunches;
+    bool                         MuteSWLaunches;  // data: 0xa8b538
     uint8_t                      SessionClass_field_304[4];
     bool                         WOLLimitResolution;
     int32_t                      LastNickSlot;

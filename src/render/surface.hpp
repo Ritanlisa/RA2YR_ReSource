@@ -272,7 +272,7 @@ public:
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step);
 
-    virtual bool CheckBltStatus();  // 0x4BAF20 (DSurface 0x4BAF20)
+    virtual bool CheckBltStatus();  // impl at DSurface 0x4BAF20 (declared here, annotated there)
 
     virtual bool IsDSurface() const override;  // 0x4C1AB0
 
@@ -298,7 +298,7 @@ public:
     virtual bool IsDSurface() const override final;  // 0x4C1AB0
 
     int BytesPerPixel;
-    byte* Buffer;
+    byte* Buffer;  // data: 0x8a3a08
 
 protected:
     explicit BSurface(noinit_t) noexcept

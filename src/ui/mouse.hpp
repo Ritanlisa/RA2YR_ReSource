@@ -20,7 +20,7 @@ struct MouseHotSpotY {};
 struct MouseCursor
 {
     int32_t  Frame;
-    int32_t  Count;
+    int32_t  Count;  // data: 0xb79be0
     int32_t  Interval;
     int32_t  MiniFrame;
     int32_t  MiniCount;
@@ -47,11 +47,11 @@ public:
     // design: inline accessor, inlined at all call sites
     virtual bool IsRefCountNegative();
     virtual void HideCursor();  // 0x7B9930
-    virtual void ShowCursor();  // 0x7C868C
+    virtual void ShowCursor();
     virtual void ReleaseMouse();  // 0x7B9C30
     virtual void CaptureMouse();  // 0x7B9A60
-    virtual uint8_t GetField10();  // 0x6CC2A0
-    virtual void InvalidateRect(const RectangleStruct& rect);  // 0x7C8608
+    virtual uint8_t GetField10();
+    virtual void InvalidateRect(const RectangleStruct& rect);
     // unmatched: no callgraph reference and no git history record
     virtual void CallFunc10();
     // design: inline accessor, inlined at all call sites

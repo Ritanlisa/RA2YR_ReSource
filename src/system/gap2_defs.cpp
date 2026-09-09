@@ -64778,7 +64778,7 @@ BOOL __usercall CD::CreateDialog@<eax>(int a1@<ecx>, int a2@<ebp>)
             || MEMORY[0x87F7E8][536212] == 5
             || BYTE2(MEMORY[0x87F7E8][538505])
             || MEMORY[0x87F7E8][538803]
-            || VtableStub::55CBF0()
+            || VtableStub::Method_55CBF0()
             || !GameFrameLoop(a2))
            && dwNewLong < 0 );
     }

@@ -88,7 +88,7 @@ public:
     char*            MapFilter;
     bool             AIAllowed;
     CCINIClass*      INI;
-    bool             AlliesAllowed;
+    bool             AlliesAllowed;  // data: 0xa8b31c
     bool             WOLTourney;
     bool             WOLClanTourney;
     bool             MustAlly;

@@ -80,10 +80,14 @@ async def main():
             results["get_build_errors"] = "log ok" if "by_file" in d else str(d)[:80]
 
             if HEAVY:
-                d = await call("rename_symbol", {"old_name": "NoneXyz", "new_name": "AlsoNone",
+                d = await call("rename_symbol", {"old_name": "Function::Method_41C430",
+                                                 "new_name": "Function::Method_41C430_Probe",
                                                  "dry_run": True, "sync_ida": False},
                                timeout=300)
-                results["rename_symbol(dry)"] = f"exit={d.get('exit')}"
+                results["rename_symbol(dry)"] = (
+                    f"ok={d.get('ok')} exit={d.get('exit')} "
+                    f"qualified={d.get('qualified')} "
+                    f"src={d.get('source_replacements')}")
                 d = await call("build", {"scope": "file",
                                          "file": "system/waypoint_bodies.cpp"}, timeout=300)
                 results["build(file)"] = f"exit={d.get('exit')} errs={d.get('error_count')}"

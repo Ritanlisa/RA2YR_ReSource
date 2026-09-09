@@ -4505,7 +4505,7 @@ int AircraftClass::CheckPassengerCount()
 // Phase 3: Spawn/Dock
 // ============================================================
 
-// IDA: 0x41ADF0 (ProcessDockCheck, 37B)
+// IDA: 0x41ADC0 (ProcessDockCheck, 37B)  [0x41ADF0 is RevealSight, a different function]
 int AircraftClass::ProcessDockCheck()
 {
     // Check docking status with airfield/helipad

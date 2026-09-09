@@ -621,7 +621,7 @@ enum class Direction : unsigned char
     SW    = 80,
     W     = 96,
     NW    = 112,
-    Count = 8
+    Count = 8  // data: 0xb79be0
 };
 
 enum class FireError : int

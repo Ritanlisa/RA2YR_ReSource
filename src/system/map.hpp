@@ -76,7 +76,6 @@ struct Crate
     CellStruct  location;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindPlacement(int a1, int a2);  // 0x487190
-    bool initializeCrate();  // 0x74FFC0
     void processCratePickup(int a1);  // 0x750080
     int applyCrateEffect();  // 0x75E4A0
     // --- gap2 auto-generated stub declarations (END) ---
@@ -146,7 +145,7 @@ public:
 
     virtual ~MapClass();  // 0x5652C0
 
-    virtual void AllocateCells();  // 0x5D80B0
+    virtual void AllocateCells();
     // unmatched: no callgraph reference and no git history record
     virtual void DestructCells();
     // unmatched: no callgraph reference and no git history record

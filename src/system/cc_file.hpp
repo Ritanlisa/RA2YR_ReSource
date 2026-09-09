@@ -33,7 +33,7 @@ public:
 
     void Clear() noexcept;
 
-    void* Buffer = nullptr;
+    void* Buffer = nullptr;  // data: 0x8a3a08
     int Size = 0;
     bool Allocated = false;
 };
@@ -55,7 +55,7 @@ protected:
     explicit CCFileClass(const noinit_t&) noexcept;
 
 public:
-    MemoryBuffer Buffer;
+    MemoryBuffer Buffer;  // data: 0x8a3a08
     uint32_t FileID = 0;
     uint32_t MixFileIndex = 0;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---

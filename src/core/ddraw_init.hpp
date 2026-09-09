@@ -8,13 +8,13 @@ namespace gamemd {
 
 // IDA: DDraw globals
 // data: 0x8A0094: g_lpDirectDraw7 -- main DDraw7 object
-extern LPDIRECTDRAW7 g_lpDirectDraw7;
+extern LPDIRECTDRAW7 g_lpDirectDraw7;  // data: 0x8a0094
 // data: 0x89F978: g_DDraw_Initialized -- window mode flag (-WIN)
 extern int  g_DDraw_Initialized;
 // data: 0xA8ED80: g_DDraw_Active -- DDraw activity flag
-extern bool g_DDraw_Active;
+extern bool g_DDraw_Active;  // data: 0xa8ed80
 // data: 0x8A00A4/A8/AC: g_DisplayWidth/Height/BPP
-extern int  g_DisplayWidth;
+extern int  g_DisplayWidth;  // data: 0x8a00a4
 extern int  g_DisplayHeight;
 extern int  g_DisplayBPP;
 // data: 0x8205D4: g_DDraw_UseHWBlit -- hardware blit available
@@ -26,13 +26,13 @@ extern DWORD g_DDraw_RedMask;
 extern DWORD g_DDraw_GreenMask;
 extern DWORD g_DDraw_BlueMask;
 // data: 0x8A0DD0/D4/D8: RGB bit shifts
-extern int g_BitShift_Red;
+extern int g_BitShift_Red;  // data: 0x8a0dd0
 extern int g_BitShift_Green;
-extern int g_BitShift_Blue;
+extern int g_BitShift_Blue;  // data: 0x8a0dd8
 // data: 0x8A0DDC/E0/E4: RGB bit mask widths
-extern int g_BitMask_Red;
-extern int g_BitMask_Green;
-extern int g_BitMask_Blue;
+extern int g_BitMask_Red;  // data: 0x8a0ddc
+extern int g_BitMask_Green;  // data: 0x8a0de0
+extern int g_BitMask_Blue;  // data: 0x8a0de4
 // data: 0x8205D0: pixel format enum (0=RGB565, 1=RGB555, 2=RGB444, -1=unknown)
 extern int g_DDraw_PixelFormat;
 // data: 0x8A0DE8: gray127 color (16-bit)

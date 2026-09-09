@@ -15472,14 +15472,10 @@ retn    4
 
 // IDA: 0x70FBD0 (IsDeactivated, 7B)
 // 0x70fbd0
-int UnitClass::IsDeactivated()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
+bool UnitClass::IsDeactivated()
 // 0x70fbd0
-char __thiscall UnitClass::IsDeactivated(_BYTE *this)
 {
-  return *(this + 456);
-}
+return isDeactivated;
 
 /* ASM:
 mov     al, [ecx+1C8h]
@@ -17120,12 +17116,9 @@ LABEL_10:
 // IDA: 0x6B4F30 (StubReturn176, 6B)
 // 0x6b4f30
 int UnitClass::StubReturn176()
+// 0x6b4f30
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UnitClass::_vt12()
-{
-  return 176;
-}
+return 176;
 
 /* ASM:
 mov     eax, 0B0h
@@ -17136,12 +17129,9 @@ retn
 // IDA: 0x6B4F40 (StubReturn29, 6B)
 // 0x6b4f40
 int UnitClass::StubReturn29()
+// 0x6b4f40
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UnitClass::_vt11()
-{
-  return 29;
-}
+return 29;
 
 /* ASM:
 mov     eax, 1Dh

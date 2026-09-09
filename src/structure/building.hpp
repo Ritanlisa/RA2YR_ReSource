@@ -259,7 +259,8 @@ public:
 
     // Deploy / Undeploy
     int Deploy() override;  // 0x62A4A0
-    bool Is1x1AndUndeployable_BuildingMassSelectable();  // 0x465D40
+    // Is1x1AndUndeployable_BuildingMassSelectable(0x465D40) moved to
+    // BuildingTypeClass (type/building_type.hpp): callers pass the Type pointer.
     void UpdateMovingPosition();  // 0x5B17B0
     void UpdateFloatPosition();  // 0x62D2A0
     // AdjustHeight(0x62D5E0) moved to ParticleClass (entity/particle.hpp):
@@ -341,7 +342,7 @@ public:
     bool IsHealthLow();  // 0x5F5CD0
 
     // Misc
-    int SquaredDistanceTo(CoordStruct* target) const;  // 0x5F6500
+    int SquaredDistanceTo(ObjectClass* target) const;  // 0x5F6500
     void SaveLoad_Register();  // 0x5F5E80
     void CopyTypeDataForRender();  // 0x634310
     ra2::game::PlanningTokenClass* GetPlanningToken();  // 0x705D20 (accessor for TechnoClass::planningToken@+0x514, NOT Type)
@@ -350,7 +351,7 @@ public:
     BuildingTypeClass* GetType_Thunk();  // 0x705D60
     HouseClass* GetOwnerHouse();  // 0x449A40
     int GetTypeEntry();  // 0x6347B0
-    int GetTypeField60();  // 0x459ED0
+    const wchar_t* GetTypeField60();  // 0x459ED0 (returns Type->UIName@+0x60)
     int GetObjectData();  // 0x6385C0
     int GetFWFlags();  // 0x455B90
     void FlushScriptActions();  // 0x639BC0
@@ -588,7 +589,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // External globals
 extern RulesClass* RulesClass_Instance;
 extern bool IKnowWhatImDoing; // data: 0xA8E7AC
-extern bool MCVRedeploy;
+extern bool MCVRedeploy;  // data: 0xa8b320
 
 // ------------------------------------------------------------
 // Faithful callees referenced by BuildingClass::GetPowerOutput (0x44E7B0) and

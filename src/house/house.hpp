@@ -719,7 +719,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int IncrementStat(int a1);  // 0x749020
     int InitStatArray(int a1);  // 0x749060
     int NetworkConvert();  // 0x749100
-    void AccumulateScore(int a1, int a2);  // 0x74FF50
+    void AccumulateScore(int a1, int a2);
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===

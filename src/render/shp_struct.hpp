@@ -81,8 +81,8 @@ class SHPReference : public SHPStruct
     // unmatched: no callgraph reference and no git history record
     SHPReference(const char* filename);
 
-    char*            Filename;
-    SHPStruct*       Data;
+    char*            Filename;  // data: 0xb783f8
+    SHPStruct*       Data;  // data: 0x840b4c
     bool             Loaded;
     int32_t          Index;
     SHPReference*    Next;

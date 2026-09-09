@@ -20,7 +20,7 @@ int ParseCommandLine(int argc, char** argv)
     ResetIntroFlags(&g_IntroMovieObject);
 
     // 0x52F63E: ArmageddonMode = 0
-    ArmageddonMode = false;
+    ArmageddonMode = false;  // data: 0xa8ed6b
 
     // 0x52F644: if argc <= 1, return 1
     if (argc <= 1)

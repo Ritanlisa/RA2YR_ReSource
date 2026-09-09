@@ -39,7 +39,8 @@ void GameResult::CalcScore() {}
 // 0x60d540
 void GameScreen::DlgProc() {}
 
-void GameSetup::sub_477440() {}
+// 0x477440
+void GameSetup::ParseCoordTriple() {}
 
 // 0x477510
 void GameSetup::FormatToString() {}
@@ -104,7 +105,8 @@ void LoadingScreen::Render() {}
 // 0x554100
 void LoadingScreen::AdjustForResolution() {}
 
-void LoadingScreen::sub_554150() {}
+// 0x554150
+void LoadingScreen::CalcProgressBarRect() {}
 
 // 0x642b20
 void LoadingScreen::GetValue() {}

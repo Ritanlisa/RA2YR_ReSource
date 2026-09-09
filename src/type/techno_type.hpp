@@ -151,7 +151,7 @@ public:
     double TechnoTypeClass_field_double_368;
     double Weight;
     double PhysicalSize;
-    double Size;
+    double Size;  // data: 0x87cba0
     double SizeLimit;
     bool HoverAttack;
     int VHPScan;

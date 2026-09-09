@@ -40,8 +40,19 @@ VCVARS = (r"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools"
           r"\VC\Auxiliary\Build\vcvars32.bat")
 
 KNOWN_BAD_MEMBER_ZONES = {
-    "BuildingTypeClass": [(3700, 3950,
-                           "shifted: 3808=PowerBonus(not DoorStages), 3816=ExtraPowerBonus, 3840=DoorStages")],
+    # BuildingTypeClass 3700-3950 zone was realigned to the IDA til layout on
+    # 2026-09-08 (name-anchored re-placement, verified 0 residual mismatches);
+    # no warning needed anymore. Keep the table for future bad zones.
+}
+# x86 assembly mnemonics that begin operand lines inside gap2 asm dumps
+_ASM_MNEMONICS = {
+    "push", "pop", "mov", "lea", "call", "add", "sub", "cmp", "test", "jz",
+    "jnz", "je", "jne", "jmp", "jl", "jg", "jle", "jge", "ret", "retn",
+    "xor", "and", "or", "not", "neg", "inc", "dec", "imul", "idiv", "mul",
+    "div", "shl", "shr", "sar", "movsx", "movzx", "cdq", "fld", "fstp",
+    "fild", "fistp", "fcompp", "fnstsw", "sete", "setne", "setg", "setl",
+    "setge", "setle", "cmov", "nop", "int", "leave", "enter", "lock",
+    "rep", "stosd", "stosb", "lodsd", "movsd", "movsb",
 }
 CORE_CLASSES = ["ObjectClass", "TechnoClass", "FootClass", "BuildingClass",
                 "UnitClass", "InfantryClass", "AircraftClass"]
@@ -55,6 +66,7 @@ _snapshot_index = None
 _signals = None
 _signals_mtime = None
 _member_lookup = None
+_member_lookup_mtime = None
 _annot_cache = {"fn": None, "glob": None}
 
 
@@ -155,9 +167,15 @@ def signals():
 
 
 def member_lookup():
-    global _member_lookup
-    if _member_lookup is None:
-        _member_lookup = json.load(open(MEMBER_LOOKUP, encoding="utf-8")) if MEMBER_LOOKUP.exists() else {}
+    global _member_lookup, _member_lookup_mtime
+    try:
+        mtime = MEMBER_LOOKUP.stat().st_mtime
+    except OSError:
+        mtime = None
+    if _member_lookup is None or mtime != _member_lookup_mtime:
+        _member_lookup = (json.load(open(MEMBER_LOOKUP, encoding="utf-8"))
+                          if MEMBER_LOOKUP.exists() else {})
+        _member_lookup_mtime = mtime
     return _member_lookup
 
 
@@ -531,8 +549,32 @@ def audit_global_annotations(file_filter=None, limit=60):
         if (file_filter and file_filter not in rel) or "_generated" in rel:
             continue
         lines = _read_latin1(p).split("\n")
+        # Skip raw IDA pseudocode blocks: identifiers inside them (Destination,
+        # Source, Buffer, ...) are decompiler artifacts that merely collide with
+        # real globals of the same name — they carry no annotation duty.
+        in_pseudo = False
+        pseudo_depth = 0
+        pseudo_seen_brace = False
         for i, ln in enumerate(lines):
+            if "[IDA decompile]" in ln:
+                in_pseudo = True
+                pseudo_depth = 0
+                pseudo_seen_brace = False
+                continue
+            if in_pseudo:
+                pseudo_depth += ln.count("{") - ln.count("}")
+                if "{" in ln:
+                    pseudo_seen_brace = True
+                if pseudo_depth > 0 or not pseudo_seen_brace:
+                    continue
+                in_pseudo = False  # closing brace consumed the block
+                continue
             code, _, comment = ln.partition("//")
+            # Skip inline-assembly text lines (gap2 dumps): their operands
+            # (push offset Delimiter, mov eax, String) are labels, not decls.
+            first = code.strip().split(None, 1)[0] if code.strip() else ""
+            if first.lower() in _ASM_MNEMONICS or " offset " in code or "ds:" in code:
+                continue
             m = re.match(r'^\s*(?:extern\s+|static\s+)?[\w:<>\*&\s]+\b'
                          r'([A-Z]\w{3,}|g_\w+)\s*(?:=|;|\[)', code)
             if not m:
@@ -767,7 +809,7 @@ def tool_mark_completed(target, note=""):
     e["completed"] = True
     if note:
         e["note"] = note
-    SIGNALS.write_text(json.dumps(sig, ensure_ascii=False, indent=1),
+    SIGNALS.write_text(json.dumps(sig, ensure_ascii=False, indent=2),
                        encoding="utf-8")
     global _signals
     _signals = None
@@ -793,6 +835,8 @@ def tool_function_state(target):
 
 
 def tool_rename_symbol(old_name, new_name, dry_run, sync_ida):
+    # Keep names as independent argv entries. In particular, `::` is symbol
+    # content, never a batch delimiter or shell syntax.
     cmd = [sys.executable, "tools/rename_symbol.py"]
     if dry_run:
         cmd.append("--dry-run")
@@ -802,8 +846,23 @@ def tool_rename_symbol(old_name, new_name, dry_run, sync_ida):
     proc = subprocess.run(cmd, capture_output=True, text=True,
                           encoding="utf-8", errors="replace", timeout=600,
                           cwd=str(PROJECT_ROOT))
-    return {"exit": proc.returncode,
-            "output": ((proc.stdout or "") + (proc.stderr or ""))[-3000:]}
+    output = ((proc.stdout or "") + (proc.stderr or ""))
+    structured = None
+    for line in reversed(output.splitlines()):
+        if line.startswith("RENAME_RESULT: "):
+            try:
+                structured = json.loads(line.split(": ", 1)[1])
+            except json.JSONDecodeError:
+                structured = None
+            break
+    result = structured or {"ok": proc.returncode == 0,
+                            "exit": proc.returncode}
+    result["exit"] = proc.returncode
+    result["output"] = output[-3000:]
+    result["ok"] = bool(proc.returncode == 0 and result.get("ok", True))
+    if proc.returncode != 0:
+        result["error"] = "rename_symbol failed"
+    return result
 
 
 def tool_rename_local(target, old_name, new_name, dry_run):
@@ -1188,6 +1247,11 @@ def handle_message(msg):
                                            {"ok": False,
                                             "error": str(e)[:300]})}],
                           "isError": True}
+            else:
+                # Tool-level failures (notably rename_symbol preflight or
+                # collision rejection) must be MCP errors, not protocol success.
+                if isinstance(payload, dict) and payload.get("ok") is False:
+                    result["isError"] = True
         else:
             return {"jsonrpc": "2.0", "id": mid,
                     "error": {"code": -32601,

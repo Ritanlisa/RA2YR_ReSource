@@ -3,8 +3,8 @@
 
 namespace gamemd {
 
-extern HWND      g_hWnd;
-extern HINSTANCE g_hInstance;
+extern HWND      g_hWnd;  // data: 0xb73550
+extern HINSTANCE g_hInstance;  // data: 0xb732f0
 
 int  InitGame(bool no_cd);  // 0x52BA60
 // unmatched: no callgraph reference and no git history record

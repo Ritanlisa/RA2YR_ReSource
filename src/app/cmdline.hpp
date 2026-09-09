@@ -35,7 +35,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // --- Global variables (IDA addresses) ---
 
 // data: 0xA8E960: g_IntroMovieObject
-extern int  g_IntroMovieObject;
+extern int  g_IntroMovieObject;  // data: 0xa8e960
 
 // data: 0xA8ED6B: ArmageddonMode
 extern bool ArmageddonMode; // data: 0xA8ED6B
@@ -75,10 +75,10 @@ extern bool byte_A8D60C;
 extern bool byte_A8D60D;
 
 // data: 0xA8D5F8: g_NetworkEventPending
-extern int  g_NetworkEventPending;
+extern int  g_NetworkEventPending;  // data: 0xa8d5f8
 
 // data: 0xA8EB84/A8EB88: g_CommandLineFlags / g_CommandLineParam
-extern int  g_CommandLineFlags;
+extern int  g_CommandLineFlags;  // data: 0xa8eb84
 extern int  g_CommandLineParam;
 
 // data: 0x8175B0: g_Is16BitMode

@@ -72,7 +72,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Blitter() = default;
 
-    byte* Data = nullptr;
+    byte* Data = nullptr;  // data: 0x840b4c
 };
 
 class RLEBlitterCore
@@ -99,7 +99,7 @@ public:
         int a6, int a7, int a8, int a9, int a10, int a11,
         uint32_t useless) = 0;
 
-    byte* Data = nullptr;
+    byte* Data = nullptr;  // data: 0x840b4c
 };
 
 template <typename T>

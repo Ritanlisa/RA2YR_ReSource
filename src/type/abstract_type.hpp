@@ -28,7 +28,7 @@ public:
     // design: inline accessor, inlined at all call sites
     virtual void LoadTheaterSpecificArt(TheaterType th_type);
     virtual bool LoadFromINI(CCINIClass* pINI);  // 0x410A60
-    virtual bool SaveToINI(CCINIClass* pINI);  // 0x410B90 (as WriteINI)
+    virtual bool WriteINI(CCINIClass* pINI);  // 0x410B90
 
     // design: inline accessor, inlined at all call sites
     const char* get_ID() const;

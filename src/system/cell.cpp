@@ -920,13 +920,10 @@ retn    4
 // Thin wrapper that calls Draw.
 // 28 bytes: takes TransformStruct and delegates to Draw.
 // 0x653f50
-void CellClass::DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const
+void CellClass::DrawWrapper(void* a1, int a2, int a3, int a4)
+// 0x653f50
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CellClass_DrawWrapper(int *this, _DWORD *a2, int a3, char a4, char a5)
-{
-  CellClass::UpdateTerrainAndWaypoints(this, a2, a3, a4, a5);
-}
+UpdateTerrainAndWaypoints(a1, a2, a3, a4);
 /* ASM:
 mov     eax, [esp+arg_C]
 mov     edx, [esp+arg_8]
@@ -939,7 +936,6 @@ push    edx
 call    CellClass__UpdateTerrainAndWaypoints
 retn    10h
 */
-    // TODO stub - translate quarantined IDA block above
 }
 
 // ============================================================

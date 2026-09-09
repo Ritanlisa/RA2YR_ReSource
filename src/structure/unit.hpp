@@ -92,7 +92,7 @@ public:
     int SetTurret();  // 0x70DC70
     virtual int EvaluateTarget();  // 0x73F0A0
     bool CanCrushTarget();  // 0x7438F0
-    int IsDeactivated();  // 0x70FBD0
+    bool IsDeactivated();  // 0x70FBD0 (reads TechnoClass isDeactivated@+0x1C8)
 
     // === Phase 3: Construction & Destruct ===
     static int Create();  // 0x6B4A50

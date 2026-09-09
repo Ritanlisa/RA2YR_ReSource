@@ -229,6 +229,22 @@ def load_signals(M):
                 M.simple_to_addrs[simple].append(addr)
         elif sym.get("kind") == "global":
             M.global_to_addr.setdefault(name, addr)
+    # Rename-debt aliases: cached/live-IDA pseudocode still carries pre-rename
+    # names while IDA is offline; unresolved debt entries map old -> new addr.
+    debt_path = PROJECT_ROOT / ".omo" / "rename_debt.json"
+    if debt_path.exists():
+        try:
+            with open(debt_path, "r", encoding="utf-8") as f:
+                for e in json.load(f) or []:
+                    if not isinstance(e, dict) or e.get("resolved"):
+                        continue
+                    old, new = e.get("old"), e.get("new")
+                    if old and new and new in M.name_to_addr:
+                        a = M.name_to_addr[new]
+                        M.name_to_addr.setdefault(old, a)
+                        M.sig_name_to_addr.setdefault(old, a)
+        except (json.JSONDecodeError, OSError):
+            pass
 
 
 def load_globals_map(M):
@@ -813,7 +829,7 @@ def find_cpp_function(func_name):
     method_name = parts[-1]
     class_prefix = rf'{re.escape(class_name)}::' if class_name else ''
     def_pattern = re.compile(
-        rf'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
+        rf'^\s*(?:namespace\s+\w+\s*\{{\s*)*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
         rf'{class_prefix}{re.escape(method_name)}'
         r'\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
     ctor_re = _ctor_def_re(class_name, method_name)
@@ -838,7 +854,7 @@ def find_cpp_function(func_name):
 def find_cpp_function_by_addr(ida_addr):
     addr_pattern = re.compile(rf'//\s*(?:IDA:?\s*)?0x{ida_addr:0>6X}\b', re.IGNORECASE)
     def_re = re.compile(
-        r'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
+        r'^\s*(?:namespace\s+\w+\s*\{\s*)*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
         r'(?:([\w:]+)::)?(~?\w+)\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
 
     def _is_def_line(lns, j):
@@ -1243,13 +1259,17 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     ida_cfg = _build_ida_cfg_events(efv, ida_decompiled, this_type, M)
 
     # ---- locate the C++ implementation ----
+    # Name-first (exact def-pattern match), addr as fallback: the by-addr
+    # backward walk can false-positive onto a def-SHAPED line inside the
+    # PREVIOUS function's body (e.g. an ASM comment block carrying call-like
+    # text), which once made 0x7105E0 extract CheckHealthForRepair's middle.
     body = None
-    if ida_addr:
-        body = find_cpp_function_by_addr(ida_addr)
-    if not body and func_name:
+    if func_name:
         body = find_cpp_function(func_name)
     if not body and display_name and display_name != func_name:
         body = find_cpp_function(display_name)
+    if not body and ida_addr:
+        body = find_cpp_function_by_addr(ida_addr)
     if not body:
         if verbose:
             print("  C++ source : NOT FOUND", file=sys.stderr)

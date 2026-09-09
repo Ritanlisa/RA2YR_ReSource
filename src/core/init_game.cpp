@@ -408,7 +408,7 @@ REVERSE(0x52ba60, "InitGame: master init pipeline", "None")
 int InitGame(bool no_cd)
 {
     if (no_cd)
-        CmdLine_NoCD = true;
+        CmdLine_NoCD = true;  // data: 0x89e410
 
     // ============================================================
     // Phase 1: Bootstrap Preamble (BBs 1-20)
@@ -451,7 +451,7 @@ int InitGame(bool no_cd)
         EventQueueProcess(g_BinkMoviePlayer);
 
     // IDA 0x52BB51: g_LoadScreenFlag = 0
-    g_LoadScreenFlag = 0;
+    g_LoadScreenFlag = 0;  // data: 0x8a00a0
 
     // IDA 0x52BB58: TextBuffer::Init(GetTextBufferEntry(4))
     TextBufferInit(GetTextBufferEntry(4));

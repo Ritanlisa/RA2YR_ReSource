@@ -769,14 +769,7 @@ retn    4
 } } }
 // 0x410450
 namespace ra2 { namespace game { int AbstractClass::IsClean() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x410450
-int __thiscall AbstractClass::IsClean(#374 *this)
-{
-  int v2; // [esp+4h] [ebp+4h]
-
-  return *(_BYTE *)(v2 + 32) == 0;
-}
+return !NeedsSaveOrLink;
 
 /* ASM:
 mov     ecx, [esp+arg_0]

@@ -137,6 +137,14 @@ def _find_enclosing_class(lines, line_no, depth=None):
     target_d = depth[min(line_no, len(depth) - 1)]
     
     for j in range(line_no, -1, -1):
+        # Namespace boundary: a free function inside `namespace Math { ... }`
+        # is NOT a member of any class declared outside that namespace —
+        # stop the enclosing-class search at the enclosing namespace brace.
+        # depth[j] < target_d  <=>  the annotation line sits inside this namespace.
+        ns_match = re.match(r'^\s*namespace\s+\w+', lines[j])
+        if ns_match and depth[min(j, len(depth) - 1)] < target_d:
+            return None
+
         cls_match = re.search(r'^\s*(?:class|struct)\s+(\w+)', lines[j])
         if not cls_match:
             continue
@@ -161,7 +169,9 @@ def extract_hpp_annotations(directories):
     """
     addr_pattern = re.compile(r'//\s*(?:IDA\s+)?(0x[0-9A-Fa-f]{5,8})')
     # Simple function name extraction: last identifier before (params) before the comment
-    func_pattern = re.compile(r'(\w[\w:]*(?:<[^>]*>)?)\s*\([^)]*\)\s*(?:const\s*)?\s*;\s*//\s*0x')
+    # (~ capture: destructor declarations `~X();` must keep their tilde, otherwise
+    #  X::~X degrades to X::X and reads as a constructor in the comparison below)
+    func_pattern = re.compile(r'(~?\w[\w:]*(?:<[^>]*>)?)\s*\([^)]*\)\s*(?:const\s*)?\s*;\s*//\s*0x')
     # Broader: any word before the // 0x comment that looks like a function signature
     line_pattern = re.compile(r'(?:^|\n)([^\n]*?)\s*//\s*(?:IDA\s+)?(0x[0-9A-Fa-f]{5,8})')
     # Comment-based name extraction: "// 0xADDR (ClassName::Method)" 
@@ -396,6 +406,11 @@ def normalize_name_core(name):
     return n
 
 
+# Destructor spellings IDA uses for the same ~X() / Destructor declaration.
+_DTOR_NAME_ALIASES = {'Dtor', 'ddtor', 'dtor', 'DTOR', 'SDDTOR', 'Destruct',
+                      'Destructor'}
+
+
 def _has_ctor_pattern(name):
     """Check if name matches ClassName::ClassName or ClassName_ClassName (constructor).
     Returns the class name if found, None otherwise."""
@@ -460,7 +475,23 @@ def normalize_name_bidirectional(name_a, name_b):
     has_tilde_b = '~' in b
     a = a.replace('~', '')
     b = b.replace('~', '')
-    
+
+    # Step 2.5: Destructor normalization.
+    # hpp declares dtors as ~X() (extracted name carries the tilde) or literally
+    # `Destructor`; IDA names the same function Dtor/ddtor/dtor/DTOR/SDDTOR/
+    # Destruct. These are the SAME function in two legal spellings — normalize
+    # the destructor side(s) to a unified `Destructor` last segment.
+    # A tilde-marked hpp name is a dtor by definition; a bare X::X (real ctor)
+    # vs an IDA Dtor stays a genuine mismatch.
+    def _norm_dtor(n, has_tilde):
+        parts = n.rsplit('::', 1)
+        if has_tilde or parts[-1] in _DTOR_NAME_ALIASES:
+            parts[-1] = 'Destructor'
+            return '::'.join(parts)
+        return n
+    a = _norm_dtor(a, has_tilde_a)
+    b = _norm_dtor(b, has_tilde_b)
+
     # Step 3: Constructor normalization
     # ClassName::ClassName → ClassName::Constructor
     a = _normalize_to_constructor(a)
@@ -475,7 +506,21 @@ def normalize_name_bidirectional(name_a, name_b):
     a_flat = re.sub(r'(^|_)Construct(_|$)', r'\1Constructor\2', a_flat)
     b_flat = re.sub(r'(^|_)Construct(_|$)', r'\1Constructor\2', b_flat)
     
-    # Step 6: Case-insensitive comparison
+    # Step 6: Namespace-prefix transparency. The hpp extractor deliberately
+    # does NOT prepend namespace names ("Namespace names are intentionally
+    # NOT prepended"), so a free function in `namespace Math { ... }` extracts
+    # as `RoundToInt` while signals/IDA carry `Math::RoundToInt`. When one
+    # side carries no scope separator, allow the other side's single leading
+    # namespace segment to be dropped. (Class members always have :: on both
+    # sides, so this cannot mask a genuine owner mismatch.)
+    if '::' not in name_a and '::' in name_b and name_b.count('::') == 1:
+        b = name_b.split('::', 1)[1]
+        b_flat = _flatten_for_compare(b)
+    elif '::' not in name_b and '::' in name_a and name_a.count('::') == 1:
+        a = name_a.split('::', 1)[1]
+        a_flat = _flatten_for_compare(a)
+
+    # Step 7: Case-insensitive comparison
     if a_flat.lower() == b_flat.lower():
         if has_tilde_a or has_tilde_b:
             warnings.append("destructor naming difference (~)")

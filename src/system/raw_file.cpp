@@ -7,14 +7,14 @@ namespace gamemd
 
 const char* RawFileClass::SetFileName(const char* pFileName)
 {
-    FileName = pFileName;
-    return FileName;
+    FileName = pFileName;  // data: 0x8221f8
+    return FileName;  // data: 0x8221f8
 }
 
 RawFileClass::RawFileClass(const char* pFileName)
     : FileClass()
 {
-    FileName = pFileName;
+    FileName = pFileName;  // data: 0x8221f8
 }
 
 } // namespace gamemd

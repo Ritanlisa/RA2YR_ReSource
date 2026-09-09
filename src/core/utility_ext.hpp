@@ -1263,7 +1263,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerClass() = default;
 
-    virtual void sub_430F70(); // 0x430F70
+    virtual void FindNearestWaypoint(); // 0x430F70
     virtual void ExecuteCommand(); // 0x4AB9B0
     virtual void CheckHumanPlayer(); // 0x4AC2B0
     virtual void SetTargetOrClear(); // 0x4C6650
@@ -1361,7 +1361,7 @@ public:
     virtual void Gaussian(); // 0x5980C0
     virtual void State(); // 0x65C780
     virtual void Range(); // 0x65C7E0
-    virtual void sub_661850(); // 0x661850
+    virtual void AdvanceRandomBytes(); // 0x661850
 
     uint8_t Random_field_0x04[4];
     uint8_t Random_field_0x08[4];
@@ -1374,7 +1374,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~RandomStraw() = default;
 
-    virtual void sub_65C8B0(); // 0x65C8B0
+    virtual void AdvanceState(); // 0x65C8B0
     virtual void Release(); // 0x661C10
     virtual void QueryInterface(); // 0x661C70
 
@@ -1410,7 +1410,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~SHA1() = default;
 
-    virtual void sub_69D8C0(); // 0x69D8C0
+    virtual void ProcessBlock(); // 0x69D8C0
     virtual void Process(); // 0x69D960
     virtual void Compute(); // 0x69D9E0
     virtual void Transform(); // 0x69DB30

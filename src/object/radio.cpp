@@ -93,7 +93,7 @@ void RadioClass::sendToEachLink(RadioCommand command)
 // ExecuteAction (IDA: 0x65aac0, vt10)
 // IDA: Object::Unlink(this) — removes from global object table
 // Then iterates radioLinks to match and clear obj.
-// Called from ObjectClass::NotifyExpired @ 0x7077C0.
+// Called from ObjectClass::NotifyExpired @ 7077C0.
 // ============================================================
 void RadioClass::ExecuteAction(TechnoClass* obj, bool clear)
 {
@@ -160,7 +160,7 @@ bool RadioClass::hasFreeLink() const
 // link count (radioLinks.Capacity), then iterates each non-null link calling the
 // COM-interface vtable[4] (on link+4) and the primary vtable[11], passing both
 // results to Power::TimerProcess. Returns the (re-read) link Capacity.
-// Called from House::PowerBeginUpdate @ 0x70C270.
+// Called from House::PowerBeginUpdate @ 70C270.
 // ============================================================
 int RadioClass::PowerDrainUpdate(int a2)
 {
@@ -183,7 +183,7 @@ int RadioClass::PowerDrainUpdate(int a2)
 // IDA: if (!inLimbo) — i.e., object is deployed/on-map:
 //   vtable[640](this, 3) — pre-undeploy processing
 // Then always calls ObjectClass::Undeploy(this)
-// Called from TechnoClass::CleanupDeploy @ 0x6F6AC0.
+// Called from TechnoClass::CleanupDeploy @ 6F6AC0.
 // ============================================================
 void RadioClass::ProcessCmd()
 {

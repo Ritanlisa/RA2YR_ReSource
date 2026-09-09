@@ -11,8 +11,8 @@
 
 namespace gamemd {
 
-HINSTANCE g_hInstance;
-HWND      g_hWnd;
+HINSTANCE g_hInstance;  // data: 0xb732f0
+HWND      g_hWnd;  // data: 0xb73550
 HICON     g_hIcon;
 HCURSOR   g_hCursor;
 int       g_ScreenWidth;
@@ -70,7 +70,7 @@ static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight,
 
     if (g_windowed) {
         // IDA: CreateWindowExA(0, "Yuri's Revenge", "Yuri's Revenge", 0x2CA0000, ...)
-        g_hWnd = CreateWindowExA(
+        g_hWnd = CreateWindowExA(  // data: 0xb73550
             0, WINDOW_CLASS, WINDOW_CLASS,
             WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
             0, 0, 0, 0,
@@ -86,7 +86,7 @@ static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight,
         // IDA: fullscreen mode
         int h = GetSystemMetrics(SM_CYSCREEN);
         int w = GetSystemMetrics(SM_CXSCREEN);
-        g_hWnd = CreateWindowExA(
+        g_hWnd = CreateWindowExA(  // data: 0xb73550
             WS_EX_TOPMOST, WINDOW_CLASS, WINDOW_CLASS,
             WS_POPUP,
             0, 0, w, h,
@@ -126,7 +126,7 @@ bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     (void)hPrevInstance;
     (void)nShowCmd;
 
-    g_hInstance = hInstance;
+    g_hInstance = hInstance;  // data: 0xb732f0
 
     // IDA: ParseCommandLine with argc/argv
     GameConfig config;
@@ -195,7 +195,7 @@ void GameLoopShutdown()
     AudioShutdown();
     if (g_hWnd) {
         DestroyWindow(g_hWnd);
-        g_hWnd = nullptr;
+        g_hWnd = nullptr;  // data: 0xb73550
     }
     UnregisterClassA(WINDOW_CLASS, g_hInstance);
     LOG_INFO("MainGame: shutdown complete");

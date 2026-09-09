@@ -10,8 +10,8 @@ namespace gamemd
 {
 
 // External globals used by the blitter (defined by IDA analysis)
-extern void* g_ZBufferDescriptor;
-extern void* g_VisibleSurfaceDescriptor;
+extern void* g_ZBufferDescriptor;  // data: 0x887644
+extern void* g_VisibleSurfaceDescriptor;  // data: 0x87e8a4
 
 // Forward declares
 struct SHPStruct;

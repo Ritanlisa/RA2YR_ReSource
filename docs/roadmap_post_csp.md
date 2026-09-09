@@ -4,25 +4,26 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-07 会话更新，含污染排查与命名轮）**：
+> **执行状态首查表（2026-09-08 会话更新，含污染清偿与翻译管线修复）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
-> | A4 命名一致性 | ✅ 完成 | 511 → 0（audit 0/0） |
+> | A4 命名一致性 | ✅ **完成（含 09-08 清偿）** | 511 → 0（09-06 基线）→ 87 → **1**（09-08 轮；唯一剩余 = getMapCoords vtable 槽位审计债挂账）；审计器补 dtor 形态归一/namespace 边界/~ 保留 |
 > | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
 > | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决 v2：未完成翻译保留为 **IDA 原始反编译活代码块**（不再使用 `#if 0`）；存量编译错误按基线裁决允许。**⚠ ida-artifact 门控脚本仍为空文件（存量空转）——见执行日志** |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP 当前 pending **3,428** 个活伪码块 + CFG 不忠实真翻译 + 682 链接未解析符号 + triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
-> | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`） |
-> | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 轮 12 函数改名（FacingClass 族、音量三连、GameSettings/Particle/Accumulate/CDTimer/AnimClass 双 setter）与 6 处 IDB this 类型修复；成员语义命名主体未展开 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP 当前 pending **3,416** 个活伪码块 + CFG 不忠实真翻译 + 682 链接未解析符号 + triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
+> | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`）；09-08 补全局注解审计的伪码块/ASM 行跳过 |
+> | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 污染清偿轮 12 函数改名 + **09-08 大轮：member_lookup BuildingTypeClass 3800 区段 til 对齐清偿（0 残留）+ 20 hpp sub_ 滞留名 + 9 Method_ 对齐 + 12 owner 冲突裁决**；成员语义命名主体未展开 |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
-> | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；已修正 3 个 IDB this 类型、1 个 owner；剩余 `AdjustHeight`、音量三连、类型侧布局待考古 |
+> | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；09-07 清偿 owner/命名污染 + **09-08：signals/_by_name 同步缺口全修复（0 missing/0 extra）、receiver 候选 4 高置信 live 复核（Coord::GetCoords 出参修正，type_map 侧债记 issue #11）**；剩余 TechnoTypeClass 中段布局、AnimClass 中段成员与 tiberium/C4/draw-position 函数待考古 |
 > > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | 与 TechnoClass/TechnoTypeClass 中段布局和类型侧 Weapon 数组债务相互关联 |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
-> | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,428，completed=27（09-07 轮 +CDTimerClass::TimeRemaining/FacingClass::Update/Set_SyncLog/IsRookie 补验）；QueryInterface(0x410260) 真翻译因 verifier 虚调用提取不对称挂 issue #9 |
+> | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,416，completed=**39**（09-09 会话 +10：含 owner 修复 Is1x1AndUndeployable→BuildingTypeClass、SetFlag1752→SetPermanentBerzerk 语义改名、TechnoClass member_lookup 452-464 区修正、verifier 三处修复后回归 34 PASS/0 FAIL；IDA 离线轮全走缓存+debt）；批次仍卡 A1 命名/签名/vtable 审计三类前置债（见执行日志） |
+> | **E 全量落盘：定义+签名+类声明+全局变量** | ⬜ **计划就绪（2026-09-09 用户裁决）** | 先四层全落盘、最后翻译全部 pending：E0 IDA 回线同步（rename debt 5 条已重放 ✅ / db 刷新 / NOCACHE 复验 / **快照 v3 重导出**）→ E1 全局变量声明（10,674 地址 vs src ~1,406）→ E2 类声明对齐（class_db 1,557 vs src 1,120，差集 ~437 最小声明）→ **E3 签名合成（CSP 求解结果=类型权威，替换 IDA 的 void*/_DWORD* 垃圾；无证据槽位回退+低置信标记）** → E4 定义占位体批量落盘（pending 3,416 → ~19,000 真实总账；gate 重锚策略需裁决）→ E5 中间态口径统一（预计 +400-500 completed）→ E6 翻译全部 pending。见「Phase E」节 |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
 > 详细过程与遗留问题见文末「执行日志」。
@@ -58,43 +59,31 @@
    见上条。三函数均以 IDA til 权威布局翻译（发现并绕开 member_lookup
    的 BuildingTypeClass 3800 区段错位：3808 实为 PowerBonus 而非
    DoorStages——**member_lookup 数据修正列入债清单**）。
-7. **已完成代码核验（v2，2026-09-07 增量）**：
-   - **逻辑忠实**：MCP `completed=true` 当前为 **24 函数**；本轮新增的
-     `VeterancyStruct::IsRookie` 已真翻译并通过成员访问审计，但 verifier
-     因该地址没有 IDA 伪码缓存暂未能执行 CFG，已记录 issue #8；
-   - **成员访问**：`tools/audit_member_access.py` 增加 marker 回看和注释剥离，
-     全库真代码当前 **0 个裸偏移成员访问**；剩余 14 处仅为 surface.cpp
-     帧缓冲 `pix/zptr` 行进游标，按既有裁决保留；此前 building.cpp 的
-     `*(int*)(*(int*)updated + 180)` 已考古为
-     `(*weaponSlot)->MinimumRange`（WeaponTypeClass::MinimumRange）；
-   - **语义命名/污染修复**：完成 7 个武器槽/军衔谓词函数的四方命名同步，
-     并将 `TechnoClass::HasVoiceResponse` 从错误的 TechnoTypeClass owner
-     迁回实例类；去除调用点的 `(float*)this` 污染强转；IDB 修正 3 个
-     this 参数类型；
-   - **命名规范**：局部变量继续使用 lowerCamelCase；本轮未统一类成员
-     PascalCase。A4 基线曾为 0 mismatch，但后续语义改名后
-     `audit_consistency.py` 当前报告 80 条既有 mismatch，需另行清理，
-     不把当前状态回写成 A4 已通过。
+7. **已完成代码核验（v2，2026-09-08 增量）**：
+   - **逻辑忠实**：MCP `completed=true` 当前为 **28 函数**；09-08 新增 `IsNonNullPtr(0x70E240)` 并通过 CFG 双射。27 个既有 completed 回归中 26 PASS；`FacingClass::Set_SyncLog` 的对象表达式调用暴露 issue #12（工具债），`AbstractClass::QueryInterface` 仍受 issue #9 虚调用提取不对称影响；
+   - **成员访问**：`tools/audit_member_access.py` 增加 marker 回看和注释剥离，全库真代码当前 **0 个裸偏移成员访问**；剩余 14 处仅为 surface.cpp 帧缓冲 `pix/zptr` 行进游标，按既有裁决保留；
+   - **语义命名/污染修复**：09-08 完成函数注解 7 mismatch→0、signals/_by_name 同步 0 missing/0 extra、BuildingTypeClass 3800 区段 til 对齐、20 个 hpp `sub_` 名和 9 个 `Method_` 名对齐、导入跳板/owner 误认领清理；`Coord::GetCoords` 出参修正为 `int*`；issue #7 相关 receiver 复核债转为 issue #11；
+   - **命名规范**：局部变量继续使用 lowerCamelCase；当前 `audit_consistency.py` 为 37 raw / **1 normalized mismatch**，唯一剩余为 getMapCoords vtable 槽位审计债。
 
 ## 最终目标债清单（C 线工作队列，重锚不清账）
 
 | 债 | 数量 | 说明 |
 |---|---|---|
-| IDA 原码活代码块 | **3,428 pending（MCP）** | v2 已撤销 `#if 0` 包装；未完成函数以 `[IDA decompile] original pseudocode` 活代码块占位。数量以 `mcp__RA2-MCP__stats` 为权威，当前 pending=3,428；分布仍以 system/_gap2/_generated 为主。 |
+| IDA 原码活代码块 | **3,416 pending（MCP）** | v2 已撤销 `#if 0` 包装；未完成函数以 `[IDA decompile] original pseudocode` 活代码块占位。数量以 `mcp__RA2-MCP__stats` 为权威（09-09 会话完成 10 个）。**⚠ 这只是「已落体」子集**：全集 19,133 中 ~13,700 尚无 src 函数体（仅声明/无声明）——E4 落盘后 pending 将升到 ~19,000 真实总账，见「Phase E」节。 |
 | CFG 不忠实真翻译 | **69** | 基线有真实译但 exec-flow CFG 校验不通过——需逐函数对照 IDA 修复（清单见执行日志 09-06 终态甄别） |
 | triage 未定位 | **20** | 行号漂移致甄别失败，需重扫 |
 | 链接未解析符号 | **682** | 有声明从未有定义；`/FORCE:UNRESOLVED` 容忍链接。`tools/gen_link_stubs.py` 已生成 101 个近似签名 stub（`src/_generated/link_stubs.cpp`），**未入构建**——需按 hpp 原声明精确签名后接入，最终全部真翻译 |
 | 无二进制对应函数 | 1 | `LocomotionClass::ChangeLocomotorTo`（历史手工编造，IDA 无此函数）——保留注释体，翻译时按调用语义重建或删除 |
 | **vtable 槽位审计** | 1 项 | src 继承链虚函数声明槽位与二进制 vtable 系统错位（object.hpp 虚区至少 2 处错位插入 + 编译器实测 124 vs 二进制 117）——波及所有含虚调用函数的 exec-flow vfptr 校验。GetPowerOutput(0x44E7B0) 真翻译已就位但被此阻塞（completed 已纠正为 false） |
-| **member_lookup 错位** | 1 区段 | BuildingTypeClass 3800 区段（3808=PowerBonus 被标 DoorStages、3816=ExtraPowerBonus 被标 BuildingAnim…整段偏移错位）——以 IDA til 为准修正数据文件 |
+| **member_lookup 错位** | ✅ 已清偿 | BuildingTypeClass 3800 区段已按 IDA til 名字锚定重排；3808=PowerBonus、3816=ExtraPowerBonus、3840=DoorStages，债区残留 mismatch=0；基类短偏移区（0-3572）保持历史形态 |
 | ~~真代码裸偏移成员访问~~ | ~~1~~ | ✅ 已清偿（2026-09-07）：`updated` 链考古完成——0x70E1A0/0x4526F0/0x7177C0/0x7177E0 实为武器槽选择器族（T19 误命名为 UpdatePowered/SelectVocOrSfx/GetAudioEntry）；返回 WeaponTypeClass** 槽位指针，+180=WeaponTypeClass::MinimumRange@+0xB4（til 与 DisplayBuildingInfoPanel@0x4B99FA 的 Name@+0x64 字符串渲染双重印证）。UpdatePowered 返回类型改为 WeaponTypeClass**，GetPowerFrame 尾段改 `(*weaponSlot)->MinimumRange` 成员访问；audit_member_access 加注释剥离+marker 回看后全库真代码 0 违规（余 surface.cpp 14 处已裁决帧缓冲游标） |
-| **T14/T19 类型与 owner 污染** | **1 项** | ✅ 已修正：IsRookie 误名、3 个 IDB primitive this 类型、HasVoiceResponse owner 与调用点污染强转；🔶 剩余 AdjustHeight owner、Audio 音量三连、TechnoTypeClass 错误局部 til、TechnoClass 中段偏移待考古（issue #7） |
-| **嵌入子对象 receiver 类型污染** | **7 高 + 3 中候选** | 🔶 新增候选：FacingClass::Set_SyncLog/Update、Coord::GetCoords、Float4::Sum、Float::Accumulate、VoxelAnimClass::QuaternionToMatrix、JumpjetLocomotionClass::Update2（高）；FootClass::CheckAccelLimit、Locomotor::GetSpeed、VeinholeClass::GetState（中）。共同特征是调用方明确传 `object + offset`，而 type_map 将 receiver 误归到外层对象、int 或其他类。 |
-| **verifier 伪码缓存缺口** | **1 项** | 🔶 IsRookie(0x74FFC0) 真翻译和 audit 已通过，但 `verify_function` 因无 IDA pseudocode cache 返回 exit=2；需补缓存后完成 CFG 校验（issue #8） |
+| **T14/T19 类型与 owner 污染** | **1 项** | ✅ 已修正：IsRookie 误名、3 个 IDB primitive this 类型、HasVoiceResponse owner 与调用点污染强转；🔶 剩余 TechnoTypeClass 中段布局、AnimClass 中段成员与 tiberium/C4/draw-position 函数待考古（issue #7 已结案） |
+| 嵌入子对象 receiver 类型污染 | **已复核，剩余 type_map 债** | 🔶 FacingClass/CDTimerClass/Coord 等 IDB ABI 已按 live IDA 复核；Coord::GetCoords 出参已修正为 `int*`。Float4::Sum 的 type_map `BuildingTypeClass*` 误锚记录为 issue #11；VoxelAnimClass::QuaternionToMatrix 等名称/布局债留 A2 证据轮。 |
+| ~~verifier 伪码缓存缺口~~ | ~~1 项~~ | ✅ `VeterancyStruct::IsRookie` 已补齐 IDA 伪码并通过 CFG 双射，issue #8 结案；后续 verifier 主债转为虚调用事件提取不对称（issue #9） |
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-07 MCP 会话刷新）
+## 0. 当前基线（2026-09-08 MCP 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -102,15 +91,15 @@
 | 类类型变量 | 138,884（this 10,767 / SSA 103,821 / 栈槽 10,193 / 成员 8,203 / 参数 3,992 / 全局 1,781 / 返回 127） |
 | TOP 矛盾 | **0**（0 对冲突，verify_csp 七通道 ALL PASS） |
 | ORPHAN | 20.6%（结构性天花板：计算写消灭身份） |
-| IDB 落盘 | 历史基线：this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449；本轮新增 3 处 this 类型修正并保存 IDB |
+| IDB 落盘 | 历史基线：this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449；09-08 继续修正 Coord::GetCoords 出参并保存 IDB |
 | til struct | 1,474（1,252 全布局 + 20 观测建 + 202 最小 vfptr） |
 | struct 门 | 661 类可用，缺口 13（5 枚举 + 7 零观测 + 1 数组伪型） |
 | 反编译 | 19,067 函数全部可反编译（6 个历史失败已修复） |
 | 快照 | full_export v2（本次导出，类型化伪代码基座） |
 | src/ 树 | ~130 hpp + ~135 cpp（~110K 行），0 错误 0 警告 |
-| 完整翻译 | MCP completed=24；历史完整翻译统计 472 与 MCP completed 口径尚未统一 |
+| 完整翻译 | MCP completed=**28**；历史完整翻译统计 472 与 MCP completed 口径尚未统一 |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名） |
-| 命名不一致 | A4 基线曾为 0；当前 audit_consistency 报 80 条既有 mismatch，需单独清理 |
+| 命名不一致 | 09-08 audit_consistency：37 raw / **1 normalized**（唯一剩余为 getMapCoords vtable 槽位债） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -158,7 +147,7 @@
   - 4 个 hpp 陈旧 sub_ 名改语义名（InitScoreScreenData 等）；
   - 2 个错误地址注解移除（Hash 类误认领 0x5dac00=WideString::Hash、
     Memory 模板误认领 0x65d190=FileClass::Delete，IDA 反编译验证）。
-  - **验收达成（A4 基线）**：0 mismatch / 0 normalized mismatch；后续 2026-09-07 语义改名（武器槽/军衔谓词）已按四方同步执行，当前审计存在 80 条既有 mismatch，需单独清理，不能回写为 A4 已通过。
+  - **验收达成（A4 基线）**：0 mismatch / 0 normalized mismatch；后续 2026-09-07 语义改名（武器槽/军衔谓词）曾引入 87 条报告差异，已在 2026-09-08 清偿轮中复核，当前为 37 raw / 1 normalized（唯一剩余为 getMapCoords vtable 槽位审计债）。
 
 ---
 
@@ -214,32 +203,120 @@
 
 ---
 
+## Phase E — 全量落盘：定义 + 签名 + 类声明 + 全局变量（用户裁决 2026-09-09）⬜ 计划就绪
+
+**目标形态（用户裁决原话）**：先全部把 **①代码的定义（反编译）②签名（CSP 求解
+结果）③类声明 ④全局变量声明** 弄好，**最后完成全部 pending 的翻译**。
+终态：全集 19,133 函数统一为「completed + pending」两态，无中间层。
+
+**签名来源裁决（纠正 09-09 早版计划——CSP 就是签名的类型权威）**：
+IDA 原生原型满是 `void*`/`_DWORD*` 的 C 反编译结构，**不能**直接当签名落盘。
+分工：
+
+| 层 | 来源 | 提供什么 |
+|---|---|---|
+| 结构骨架 | IDA prototype（full_export） | 参数个数/顺序、调用约定、函数名、地址 |
+| **参数/返回类型** | **CSP 求解结果**（type_map 732,742 / csp_param 3,992 / return 通道 B10c / member_types / class_db 归属） | 类类型指针、枚举、已知结构——把 `void*` 升级成 `TechnoClass*` 这类语义类型 |
+| 无证据槽位 | 回退 IDA 原生类型占位 | 标记低置信，随类型体系升级替换 |
+
+这正是 T14 已验证的路径（apply_sigs 按此落盘过 1,419 处 param/return 编辑），
+E 线把它从「单函数批处理」升级为「全集合成」。
+
+**数据源**：
+
+| 源 | 内容 | 用途 | 局限 |
+|---|---|---|---|
+| `decompile-results/full_export/` v2 | 19,087 函数 prototype+类型化伪码+汇编 100%；全局 10,674 地址/globals.hpp 15,797 条；1,343 类头 | 结构骨架 + 占位体来源 + 全局清单 | 09-05 时点快照，其后改名/类型变更未反映（TechnoClass 452-464 实证陈旧）→ E0 重导出 v3 |
+| CSP 体系 | type_map / csp_functions 13,949 / member_types / class_db 1,557 类 / 各锚 | **签名类型权威** + 类归属 | return 通道覆盖低（127）——无证据槽位回退 IDA 类型并标记 |
+| `signals.json` | 19,133 元数据 + 0xADDR/全局地址权威 | 对账基准 | — |
+
+### E0. IDA 在线窗口同步（IDA 已回线，尽快执行）
+
+1. rename debt 重放 ✅（09-09 已执行：5 条全部落 IDA）；
+2. `ida_function_db.json` 重刷新（消除 2 条 rename-debt 陈旧镜像 mismatch）；
+3. 5 个 NOCACHE completed 函数 live 复验 + 缓存回填（回归 → 39 PASS）；
+4. **full_export v3 重导出**（~30 分钟）——E1-E4 全部锁定 v3，v2 归档。
+
+### E1. 全局变量声明（第④层）
+
+- 盘点：full_export 全局 10,674 地址 vs src 已声明+注解 ~1,406——差集批量补
+  src 声明（extern + `// data: 0xADDR`）。
+- 类型来源：type_map 全局通道（类类型全局 1,781）→ global_types/ida_global_types
+  锚 → 无类型数据 `uint8_t[]`/`int` 占位。
+- 验收：伪码体引用的全局 100% 有 src 声明；globals_annotations_audit 0 missing。
+
+### E2. 类声明对齐（第③层）
+
+- 盘点：src hpp（1,120 IDA 类，6 月完成）vs class_db 1,557 / til 1,474
+  （含 t14 最小 struct 202 + 观测建 20）——差集 ~437（模板实例/COM 内部件/
+  匿名类）按既有惯例补最小声明（vfptr/观测成员）。
+- 验收：class_db 每类在 src 有可编译声明（最小形态可）；E4 占位体引用的类
+  100% 已声明。
+
+### E3. 签名合成 + hpp 声明补全（第②层）
+
+- 全集 19,133 逐函数合成签名：骨架=IDA prototype，**类型=CSP 通道优先**
+  （vtable/ctor 锚 > csp_param/return > type_map 置信度分级），无证据回退
+  IDA 原生类型+低置信标记。
+- 清洗沿用 T14 教训清单：无名参数补名、非法名 `[N]`→`_N`、双 CC 归一、
+  函数指针形参深度切分、CRT `?` 修饰名识别。
+- 产出：~2,900 JSON-only 函数补 hpp 声明 + 既有声明的 CSP 类型升级。
+- 验收：audit_consistency JSON-only / missing annotation → 0；抽样 100 签名
+  人工核对 CSP 证据链。
+
+### E4. 定义（反编译占位体）批量落盘（第①层）
+
+- ~13,700 无体函数 → 裁决 v2 pending 块（def 行 + marker + 伪码 + ASM 注释），
+  按模块/类分桶；MCP pending 3,416 → **~19,000 真实总账浮出**。
+- **gate 策略（执行前需用户裁决）**：批量新符号触发 new-symbol 门控——按
+  09-06 先例物化提交后 `auto-fill-baseline` 重锚、重锚不清账。
+- 编译验证：全量单 TU 不可行（C1003），分层抽样探针 TU + 新 hpp 的
+  check_hpp_implementations 全查。
+
+### E5. 中间态口径统一（~1,900 有体未标）
+
+- 批量 CFG 回归（退出码）：PASS → mark_completed（预计 +400-500，历史 472
+  真翻译为主）；FAIL → 并入 69-CFG 债清单。完成后 stats 单数字可信。
+
+### E6. → C 线：翻译全部 pending
+
+- 全量队列上按 调用频次 × 类核心度 排序；A1/A2 命名轮继续作为提速前置
+  （E 线不依赖 A1，可并行）。
+
+---
+
 ## 依赖关系与建议顺序
 
 ```
-快照v2 (done) ──→ A1 成员命名 ──→ A2 函数命名 ──→ A4 一致性清零
-                    │                                  │
-                    ▼                                  ▼
-              B1-B3 工程债（并行随时）          C1-C4 翻译主线
-                                                       │
-                                                       ▼
-                                                 D1-D4 集成验收
+快照v3重导出(E0) ──→ E1 全局变量声明 ──→ E2 类声明对齐 ──→ E3 签名合成(CSP) ──→ E4 定义占位体落盘 ──→ E5 口径统一
+                                                                                                              │
+快照v2 (done) ──→ A1 成员命名 ──→ A2 函数命名 ──→ A4 一致性清零                                               ▼
+                    │                                            │                              C1-C4 翻译主线（全量 pending 队列）
+                    ▼                                            ▼                                              │
+              B1-B3 工程债（并行随时）──────────────────────────────────────────────────────────────────────────→ ▼
+                                                                                                        D1-D4 集成验收
 ```
 
+- **E 线是 C 线的范围前提**（用户裁决 2026-09-09）：四层（定义/签名/类声明/
+  全局变量）全部落盘之后，翻译对象才是全集 19,133 而非当前的 3,455 个有体函数。
+- **签名 = CSP 求解结果**（类型权威），IDA prototype 仅提供参数个数/调用约定
+  骨架；无 CSP 证据的槽位回退 IDA 类型并标记低置信——E3 是 CSP 体系
+  （type_map/csp_functions/class_db）作为「消费端」的最大单笔变现。
 - A1/A2 是 C 线的**输入质量投资**：命名后的快照让 LLM 翻译的上下文
   可读性质变（`this->AvailableCredits` vs `*(int*)(this+588)`）。
-- B 线与 A/C 并行，互不阻塞。
+  E 线不依赖 A1——两线并行。
+- B 线与 A/C/E 并行，互不阻塞。
 - A3（局部变量命名）随 C 线自然吸收，不单独立项。
 
 ## 度量与检查点
 
-| 指标 | 制定时 | 2026-09-07 现状 | A 轮后目标 | C 线里程碑 |
+| 指标 | 制定时 | 2026-09-08 现状 | A 轮后目标 | C 线里程碑 |
 |---|---|---|---|---|
 | IDA 函数命名覆盖 | 70.5% | A2 未开始；本轮新增 7 个语义函数名 + 1 个 T19 误名纠正 | 85%+ | — |
 | 类成员语义名 | ~0（field_0xNN 占位） | A1 进入污染优先轮；尚未批量命名成员 | >60% | — |
-| 命名不一致 | 215 | A4 基线曾清零；当前 audit_consistency 报 80 条既有 mismatch，需单独清理 | 0 | 0（维持） |
+| 命名不一致 | 215 | 09-08 audit_consistency：37 raw / **1 normalized**（唯一剩余为 getMapCoords vtable 槽位债） | 0 | 0（维持） |
 | hpp-impl 违规 | 未统计（1,765 隐性） | **0**（迁移完成） | 0 | 0（红线） |
-| 完整翻译函数 | 472 | MCP stats：completed=24；本轮完成 IsRookie，历史“完整翻译”与 MCP completed 口径尚未统一 | — | 1,000 → 3,000 → 全量 |
+| 完整翻译函数 | 472 | MCP stats：completed=**28**；09-08 新增 IsNonNullPtr(0x70E240)，历史“完整翻译”与 MCP completed 口径尚未统一；issue #9/#12 仍是 verifier 工具债 | — | 1,000 → 3,000 → 全量 |
 | REVERSE 对拍 | 41 函数 | 41 函数 | — | Same 率 >95% |
 | 构建 | gate 假绿 | MCP 最近记录 build errors=0；本轮单 TU 探针干净；`run_gates` 本次调用超时，未据此宣称全绿 | — | 0/0 + gate 3/3（红线） |
 
@@ -500,12 +577,13 @@ AST 检查（diff-scoped）覆盖，全量扫描缺失。
   全部 22 工具（--heavy 附带 build/verify）
 - 文档：`docs/mcp_tools.md`（注册 JSON ×2 + 纯 MCP 标准工作流）
 
-### 地址注解初始化（annotations_fix 全量执行）
+### 地址注解初始化与 09-08 清偿终态
 
-补齐 **2,689** 条函数 `// 0xADDR` 注解 → 终态
-**matched 3,313 / missing 0 / mismatch 7（真实差异待审）/
-unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因）。
-全局变量注解：annotated 1,034 / missing 22。
+初始 `annotations_fix` 补齐 **2,689** 条函数 `// 0xADDR` 注解；09-08 逐条
+对照 live IDA 后终态为 **matched 3,319 / missing with known address 0 /
+addr mismatch 0 / unknown in signals 2,051**（helper/别名形态，翻译时甄别归因）。
+全局变量注解终态：**annotated 1,406 / missing 0**；审计器已排除伪码块和
+inline ASM 操作数误报。
 
 ### 关键实现决策
 
@@ -513,8 +591,10 @@ unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因�
   分发以 -32602（ValidationError→"Invalid request parameters"）拒绝
   经典 tools/call 信封（实测多轮定位）——改为直接实现 stdio
   JSON-RPC 循环（~80 行）；官方 SDK **客户端**连接验证正常。
-- member_lookup 已知坏区（BuildingTypeClass 3800 段）在 get_context
-  中自动警告；IDA til 在线（:13337）优先提供权威成员名。
+- member_lookup：IDA 在线（:13337）时以 til 为权威；BuildingTypeClass 3800
+  区段已完成重排，get_context 不再把该区段报告为已知坏区。
+- signals 写回统一使用仓库的 `indent=2` JSON 格式，避免 MCP 写回造成整文件
+  缩进漂移和无意义大 diff。
 
 ### C 线工作方式（自此变更）
 
@@ -531,9 +611,9 @@ unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因�
 
 ### 当前 MCP 统计
 
-- pending translations: **3,429**
-- completed functions: **24**
-- open issues: **5**
+- pending translations: **3,426**
+- completed functions: **28**
+- open issues: **6**
 - 最近 MCP build error 记录：**0**（本轮单 TU 探针编译干净；`run_gates` 本轮调用超时，未据此宣称全门控通过）
 
 ### 污染排查与确定性修复
@@ -566,17 +646,12 @@ unknown 2,085**（signals 外形态——helper/别名，翻译时甄别归因�
 
 ### 尚未修改的污染债务
 
-- `BuildingClass::AdjustHeight` @ 0x62D5E0：`float* this` 明显可疑，函数簇同时
-  调 `ParticleClass::CheckWaterImpact` 和 `UpdateFloatPosition`；owner 搬移需要
-  进一步确认，不能只凭函数名改类声明。
-- `Audio::SetScoreVolume`/`SetSoundVolume`/`SetVoiceVolume`：`float* this` 疑似
-  音量状态结构入口，真实 owner 与现有 hpp 结构待调用方考古。
-- `TechnoTypeClass` 的 til 模型仅 0x2EC，无法容纳 Weapon[18]/EliteWeapon[18]
-  数组；类型侧函数 owner/布局仍是独立债务。
-- `HouseClass::AccumulateScore` 的 `float* this` 可能是分数累加字段指针，暂不盲改。
+- `BuildingClass::AdjustHeight` @ 0x62D5E0：已裁决为 `ParticleClass::AdjustHeight`，owner 已修正；后续留给布局考古与真翻译。
+- `Audio::SetScoreVolume`/`SetSoundVolume`/`SetVoiceVolume`：已裁决为 `Options::Set{...}Volume`，owner 已修正。
+- `TechnoTypeClass` 的 til 模型仅 0x2EC，无法容纳 Weapon[18]/EliteWeapon[18] 数组；类型侧函数 owner/布局仍是独立债务。
+- `HouseClass::AccumulateScore` 已裁决为 `VeterancyStruct::Accumulate`，owner 已修正。
 - 0x750030 存在 JUMPOUT，暂不命名。
-- `VeterancyStruct::IsRookie` 的成员访问审计通过，但 verifier 因 IDA 伪码缓存缺失
-  返回 exit=2，已记录 issue #8，待预缓存该地址后补 CFG PASS。
+- `VeterancyStruct::IsRookie` 的成员访问审计通过并已补验 PASS（issue #8 结案）；`AbstractClass::QueryInterface` 的虚调用提取不对称另挂 issue #9。
 
 ### 新增：嵌入子对象 receiver 类型污染候选
 
@@ -679,6 +754,50 @@ VeinholeClass::GetState 单调用点证据不足维持。
 issue #2（replace_body 双签名自动剥离）、#8（IsRookie 补验）、#7（污染全表结案）
 已 resolve；新增 #9（虚调用提取不对称）、#10（批次 B 进展记录）。
 
+---
+
+## 执行日志 — rename_symbol MCP 安全修复
+
+`rename_symbol` 的当前 MCP 链路使用独立 argv，不会主动拆分 `::`；本轮修复了
+真正会导致同类事故的安全和一致性缺口：
+
+- 预检拒绝空名、控制字符、no-op、危险裸类名和多 owner 裸成员名；目标名称
+  与不同地址 canonical symbol/index 冲突时拒绝执行。
+- 源码替换改为 C++ 符号边界；限定名仍作为一个完整参数传递，并同步类内裸声明，
+  不会把 `Class::` 前缀注入类体。
+- 同步范围补齐：`signals.symbols`、顶层 `globals`、`_by_name`、`classes`、
+  `_member_by_name`、`class_layouts.json`、`member_lookup.json`、
+  `ida_name_index.json`；JSON 原子写回统一 `indent=2` + LF。
+- MCP wrapper 解析 `RENAME_RESULT`，返回 `ok/exit/source_replacements/signals/
+  member_lookup/class_layouts/IDA` 等结构化字段；子进程非零时返回 `isError=true`，
+  不再把协议成功误当成 rename 成功。
+- `member_lookup` 缓存增加 mtime 失效；MCP heavy smoke 改用真实
+  `Function::Method_41C430 → Function::Method_41C430_Probe` dry-run。
+- 新增 `tools/test_rename_symbol.py` 隔离回归：限定名 dry-run 无副作用、类内声明
+  替换、后缀边界、多 owner 拒绝、同类成员冲突拒绝、signals/member/index/layout
+  同步均通过（5/5）。
+
+### 修复后测试与审计（2026-09-08 终态）
+
+- **隔离回归**：`tools/test_rename_symbol.py` **5/5 PASS**（限定名 dry-run
+  hash 校验 unchanged、类内声明替换且 `OldMethodExtra` 后缀不受影响、
+  多 owner 裸名拒绝、同类成员冲突拒绝、全索引同步断言）。
+- **MCP heavy smoke**：`rename_symbol(dry) ok=True exit=0 qualified=True
+  src=3`（真实 `Function::Method_41C430` 探针）；其余 22 工具全绿。
+- **危险裸名拒绝**：`BuildingClass→SelectWeaponSlot` CLI exit=2
+  （"ambiguous bare symbol"），MCP 层 `isError=true`——09-07 灾难场景现在
+  在预检即被拦截。
+- **真实仓库 dry-run**：`Function::Method_41C430` 探针对 signals/
+  ida_name_index/member_lookup/class_layouts/rename_debt/受影响 src 的
+  sha256 快照 **unchanged=True**。
+- **一致性审计**：audit_consistency 37 raw / **1 normalized**（getMapCoords
+  vtable 债，维持）；signals `_by_name` vs 主表 **0 missing / 0 extra /
+  0 name conflicts**，completed=**28**。
+- **注解审计终态**：rename 引入的 33 个 bodies 定义缺注解由 `annotations_fix`
+  补齐 → **matched 3,352 / missing 0 / mismatch 0**；全局注解
+  **annotated 1,406 / missing 0**。
+- 附带清理：`audit_consistency.py` 2 处行尾空白（git diff --check 归零）。
+
 ### 未完成 / 下一步
 
 - **full_export 快照重导出**（本轮 IDB 变更大量未反映：12 改名 + 8 类型 +
@@ -687,3 +806,296 @@ issue #2（replace_body 双签名自动剥离）、#8（IsRookie 补验）、#7�
 - verifier 虚调用提取补齐（issue #9/#3 同族）或 vtable 槽位审计落地；
 - AnimClass/TechnoClass 中段布局考古（SetField8/95 与 tiberium 族解锁前提）；
 - issue #4 三函数 + 69 CFG 不忠实清单继续清偿。
+
+---
+
+## 执行日志 — 2026-09-08 污染清偿大轮 + 翻译管线打通
+
+### 污染检验与修复（全部 live IDA 取证）
+
+**函数注解（annotations_audit 7 mismatch → 0）**：hash_table/radio×3 的
+调用方地址混入注释被审计器误读（改写为无 0x 前缀形态）；aircraft/building×3
+为真实错注（0x41ADF0→0x41ADC0、0x43bfa0 在 Dtor 内→0x453e20、
+0x4d9f70=SellUnit 张冠李戴→0x739ec0），逐个以 live IDA 函数名+尺寸证据修正。
+
+**命名一致性（audit_consistency 87 → 1）**，1 = getMapCoords（vtable 槽位
+审计债挂账，有意保留）：
+
+- **09-07 改名轮的四方同步缺口修复**：signals 主表 4 条旧名
+  （Locomotor::GetSpeed→CDTimerClass::TimeRemaining 等）+ `_by_name` 索引
+  10 缺 10 旧键残留（武器槽/军衔族）+ 音量三连（Audio::→Options::）+
+  HouseClass::AccumulateScore→VeterinaryStruct::Accumulate——全部对照
+  live IDA 确认后修复，`_by_name` 与主表达成 0 missing / 0 extra。
+- **审计器等价盲区修复**（audit_consistency.py）：dtor 形态归一
+  （X::ddtor/Dtor/DTOR/SDDTOR/Destruct ↔ ~X()/Destructor 同一函数）；
+  hpp 提取保留 `~`（此前源信息丢失）；namespace 边界感知（namespace 内
+  自由函数不再误挂外层类名）+ 单段 namespace 前缀透明（Math::RoundToInt
+  vs RoundToInt）。
+- **hpp 滞留 sub_ 名 20 条**（含 2 条畸形 sub_54C58C0/sub_55D4390）全部
+  rename 为 IDA 语义名；**Method_ 前缀 9 条** IDA 侧改名对齐。
+- **owner 冲突 12 条裁决**：4 条 kernel32/user32 导入跳板误认领（SetFileTime/
+  GetFileTime/InvalidateRect/ShowCursor——`jmp __imp_*` 单指令铁证，删 hpp
+  地址注解保留声明）；WriteINI（h p p SaveToINI 别名→统一 IDA 名）；
+  FractalNoise::Dtor 函数体为引用计数 Release（--refcount/向量摘除/delete，
+  38 个 Blit dtor 调用方）→ IDA 改名 Release；BlowStraw::Get（函数体为解压
+  Get 实现，hpp Release 误名→改 Get）；ScenarioClass::allocateCells（函数体
+  为 delete+清零的释放例程，语义相反）→ IDA 回退 sub_5D80B0 + hpp 注解删除；
+  CheckBltStatus（DSurface_Vtable slot 37 铁证→删 XSurface 侧重复注解）；
+  RoundToInt（namespace 修复消解）；GetField10/FindLinkIndex/AccumulateScore/
+  Territory ctor 4 条误认领注解删除。
+- ** VeterancyStruct 三谓词归属修复**：map.hpp struct Crate 的误声明删除，
+  techno.hpp 补 IsRookie/IsVeteran/IsElite 声明（owner=live IDA 确认）。
+
+**member_lookup BuildingTypeClass 3800 区段错位（债清单项）→ 清偿**：
+根因 = 数组尺寸被低估（BuildupFile 16B 按 4B、PowersUpBuilding 24B 按 4B、
+BuildingAnimFrame[18]/BuildingAnim[357] 同类）造成三级累积偏移（-12/-32/
+-100→-1820）。修复 = til 名字锚定重排（186+49 条重定位，17 占位名二轮锚定），
+终态**债区与 til 0 残留 mismatch**（3808=PowerBonus ✓ 3840=DoorStages ✓）。
+基类短偏移区（0-3572）保持历史形态未动（MCP KNOWN_BAD 警告区已撤）。
+
+**全局变量注解（1443 missing → 0 真缺）**：1443 中 1327 为审计器缺陷误报
+（伪码块/内联 ASM 文本的 Destination/Source/Buffer/Delimiter 撞名）——
+审计器补伪码块跳过 + ASM 助记符行排除；真缺 116 条批量补 `// data: 0xADDR`。
+
+**基础设施**：ida_export_func_db.py 的 H: 残留路径修 D:（memory 迁移债）；
+ida_function_db.json 双刷新（13,443 函数，09-07 改名全部反映）。
+
+### 事故与恢复（本轮自身失误，如实记录）
+
+**rename_symbol 批量误调灾难**：bash 循环用 `:` 做分隔符而符号名含 `::`，
+实际执行了 `BuildingClass→SelectWeaponSlot`（946 处）等 4 组灾难替换
+（共 ~2,200 行 src 破坏）。发现后 `git checkout -- src/` 全量回滚 +
+member_lookup OverlayTypeClass.22 误改（Crate→IsRookie）手工恢复 + 7 处
+合法注解修复重放。**教训：含 `::` 的参数禁止用冒号做列表分隔符；rename
+前必跑 dry-run 看 replacement 数量级。** 二次小事故：rename 新名误带
+`Class::` 限定前缀污染类内声明（4 处，手工修正）；member_lookup 修正脚本
+第二轮丢失 3680 门限把基类短偏移区误移（49 条），逆向恢复时识别出 17 条
+门内占位修正需保留、2 条同名碰撞损失（HalfDamageSmokeLocation1/2、
+BuildingAnim[0x15]）补回。
+
+### 翻译管线打通（completed 27 → 28）
+
+- **IsNonNullPtr(0x70E240)**：全流程真翻译（get_context → 签名修正
+  int→int* → replace_body → build 0 新错 → verify PASS → mark_completed）。
+- **verifier 两处工具缺陷修复**：
+  1. `verify_execution_flow.py` def 正则不认 gap2 单行 namespace 包裹形态
+     （`namespace gamemd { int F(...) {`）——加可选前缀（issue #8 根因之一
+     的正式修复，gap2 555 函数从此可验证）；
+  2. `efv_cpp_events.py` PascalCase 调用规则把签名行自身匹配为 CALL(self)
+     （裸函数名无 `::` 限定时）——加 `_looks_like_definition` 守卫
+     （`) {` / `) const {` 是定义不是调用）。
+- **27 个 completed 回归**：26 PASS；0x4C9300 FacingClass::Set_SyncLog 暴露
+  为 issue #3 文法盲区新案例（对象表达式调用 `RotationTimer.TimeRemaining()`
+  不产生 CALL 事件——符合语义访问裁决的规范形态反被旧文法卡住）→ issue #12
+  记账，维持 completed。
+- **目标筛选经验**：BuildingClass 批次（next_batch core-small-first）全卡
+  issue #4 布局争议区（0x6E9/0x534 等 til 无名成员）；CreateInstanceCOM 等
+  COM 虚调用族卡 issue #9/#12 提取不对称；`_generated` 存根无地址注解不可
+  verify。**单体函数的成员考古成本是当前翻译节奏瓶颈**——A1 成员语义命名
+  （ TechnoClass/FootClass/BuildingClass 家族优先）是 C 纡提速的前置投资，
+  与路线图依赖判断一致。
+
+### 度量变化
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| 函数注解 addr_mismatch | 7 | **0** |
+| audit_consistency normalized | 87 | **1**（vtable 债挂账） |
+| member_lookup 3800 区段 | 整段错位（-12→-32→-1820 累积） | **til 对齐 0 残留** |
+| 全局变量注解 missing | 1,443（含 1,327 误报） | **0**（审计器缺陷修复 + 116 补齐） |
+| signals _by_name 索引 | 10 缺 10 旧键残留 | **0 missing / 0 extra** |
+| MCP completed | 27 | **28** |
+| verifier 可覆盖形态 | gap2 namespace 形态不可验证 | **已覆盖**（+签名自 CALL 守卫） |
+
+---
+
+## 执行日志 — 2026-09-08 二次会话：verifier 虚调用提取盲区清偿 + completed 池校准
+
+### 污染检验（四重审计全基线）
+
+annotations_audit 0 mismatch / globals 0 missing / audit_access 14 处全部为
+surface.cpp 帧缓冲游标（既有裁决）/ audit_consistency 37 raw / 1 normalized
+（getMapCoords vtable 债挂账）——与 09-08 首轮终态一致。
+
+### verifier 提取盲区清偿（issue #3/#9/#12 同族，全数 resolve）
+
+- **efv_cpp_events 三条新文法**（全部单元验证）：
+  1. 对象表达式调用 `obj.Method()` / `ptr->Method(...)` → CALL(0xADDR)，
+     经 `_strict_resolve_call` **严格唯一解析**（歧义裸名不发事件，杜绝
+     shared `_resolve_call` 的 min-pick 臆造——AddRef 在 ~200 个 COM 类上
+     曾被解析到 VectorClass::AddRef）；
+  2. `_receiver_is_cast_of_this`：`((Type*)this)->X(...)` 按 this 分支处理
+     （vtable 槽位解析 + 严格解析兜底）；
+  3. `_is_known_virtual` 抑制：跨对象调用已知虚方法（vtable_offsets 任一
+     类占位）不发事件——IDA 侧对局部变量 vtable 派发（如
+     `(*(_DWORD*)v1+116))(v1)`）本就不提取，词汇表对称。
+- **efv_ida_events 新增 `_IDA_VTABLE_INDIRECT`**：this 相关间接调用
+  `(*(CAST)(expr + N))(...)` → CALL(vfptr+N)；**排除**局部指针 vtable 形态
+  （v1+116 属于另一对象 vtable，C++ 侧词汇表不可表达——放行即制造假不对称，
+  GetAmmoCountScaled 回归实证后收紧）。
+- **verify 查找顺序修正**：`find_cpp_function`（名字精确）优先于
+  `find_cpp_function_by_addr`（邻近启发式曾把 0x7105E0 误定位到
+  CheckHealthForRepair 体中——ASM 注释块的 def 形态假阳性）；与
+  callee provider 既有顺序一致。
+
+### 二进制直读补 vtable ground truth（tools/vtable_offsets.json）
+
+| 类 | 槽位 | 实证 | 附带效果 |
+|---|---|---|---|
+| BuildingClass | IsFactorySelectable=128 | 0x7E3EBC+128=0x457620（**修正原误名 CheckHealthDiff**——0x701140 是 InfantryClass 的方法，从不在此表） | CheckHealthForRepair PASS |
+| BuildingClass | CheckMissionGuard=1024 / MissionStubReturnZero6=1032 | 0x458dd0 / 0x4581f0 | HasActiveParam/CheckMissionGuard PASS |
+| BuildingClass | GetExitCoords=72 | 0x447ac0（override；基表 0x7E1F50+72=0x4104C0 同槽） | SquaredDistanceTo/GetCoords PASS |
+| AbstractClass | QueryInterface=0 / COMStub_AddRef=4 / COMStub_Release=8 | 0x7E1F50 头三槽 | QueryInterface PASS |
+
+另记（未动）：BuildingClass 槽 117（+468）= 0x70C5B0 = `ObjectClass::GetShroudByte`
+（object.hpp:539 地址注解双重吻合；CanRepair 的该槽调用为 byte 返回形态）。
+GetPowerOutput golden 体的 `this->Mission_Harvest()`（hpp 序 124）与二进制
+槽 117 的语义归属差异仍属 vtable 槽位审计债——**本会话不改其语义**。
+
+### 提取盲区暴露的假 completed 纠偏（盲验时期产物）
+
+| 函数 | 判定 | 处置 |
+|---|---|---|
+| HasActiveParam(0x458db0) | 旧体把虚自派发（vtable+1024 CheckMissionGuard）误译为成员读 field_bool_6E9 | 重译 + PASS + completed |
+| CheckMissionGuard(0x458dd0) | 体已对，缺槽位真值（虚调用曾被提取为直接 CALL） | 补真值 + PASS |
+| SquaredDistanceTo(0x5f6500) | 旧体 dx²+dy² 为臆造（真实 = 双虚坐标 + 2D 平方差） | 重译 + PASS |
+| IsBeingRepairedOrCaptured(0x7105e0) | 旧体读 +0x6E8/+0x6E3 无关布尔（真实 = locomotorTarget@704 ∥ locomotorSource@708） | 重译 + PASS |
+| AbstractClass::GetCoords(0x410540) | 定义误名 fetchCoordinatesHere、体为置零占位 | 改名 + 槽 18 派发重译 + PASS；fetchCoordinatesHere 保留委托（techno.cpp 2 调用方） |
+| QueryInterface(0x410260) | AddRef 裸调用被 min-pick 到 VectorClass::AddRef | this->COMStub_AddRef() + PASS + **completed** |
+| IsIdleWithNoCaptives(0x63be10) | 真实结构 = GetPrimaryOrFallback(槽 97)==11 + 标志卫；忠实重译被 +1444 无名成员阻塞 | **completed→false（GetPowerOutput 先例）+ issue #17** |
+
+### completed 池终态与回归
+
+- **completed 28 → 29**（+QueryInterface +CheckHealthForRepair −IsIdleWithNoCaptives）。
+- 逐函数回归：**22 PASS / 5 NOCACHE / 1 FAIL**（0x63BE10 issue #17）。
+  NOCACHE 5 个（TimeRemaining/FacingClass::Update/Set_SyncLog/IsNonNullPtr/
+  IsRookie）为 IDA 离线且缓存未存——09-07/08 曾对 live IDA 验证过；
+  Set_SyncLog 的文法根因（issue #12）已单元级修复，IDA 回线重缓存即过。
+- 编译：building.cpp / abstract.cpp / locomotion_bodies.cpp 全部 0 新错；
+  audit_access 全 0 违规。
+- efv_cpp_events 自测的 GetPowerOutput golden FAIL（vfptr+496 vs +468）
+  为**既有 vtable 审计债**（git stash 对照确认先于本会话存在），非本轮回归。
+
+### C 线批次推进诊断（本轮 next_batch 实测，pending=3,426 不变）
+
+BuildingClass 15 个 pending 逐个 get_context 评估，**全部受阻于三类前置债**
+（与路线图"A1 命名是 C 线提速前置投资"判断一致）：
+
+1. **无名成员**：IsIdleWithNoCaptives +1444、CanRepair aP1 侧 ironTintTimer
+   索引数学、GetFactoryPosition 哨兵全局 0x89C848-50（signals 无名）；
+2. **签名/声明缺失**：CanBeSold 需槽 97 方法（MissionClass::GetPrimaryOrFallback
+   无 hpp 声明）、GetTargetFacing 需 GetTurretAngle 签名考古（hpp 0 参 vs
+   二进制 3 参）、CanRepair 需槽 117 身份裁决；
+3. **既有争议区**：issue #4 的 +68/+286（IsTiberium*Eligible）、AnimClass
+   中段（SetField8/95）维持延缓。
+
+### 本轮账本变化
+
+issues：#3/#9/#12 resolve；#17 新增（IsIdleWithNoCaptives 降级 + +1444 考古）。
+file_class.hpp GetFileSize 0x7C8512 导入跳板注解删除（jmp __imp_* 字节实证，
+issue #11d 清偿，声明保留）。signals.json 0x63BE10 completed=false 附 note。
+
+---
+
+## 执行日志 — 2026-09-09 会话：污染复检全基线 + IDA 离线纯 MCP 翻译轮（completed 29 → 39）
+
+### 污染检验（会话首四重审计）
+
+注解 0 mismatch / 全局注解 0 missing / audit_access 全库 14 处全为 surface.cpp
+帧缓冲游标（既有裁决）/ audit_consistency 37 raw / 1 normalized（getMapCoords
+vtable 债）——与 09-08 终态一致，**无新增污染**。会话尾复核：注解 matched 3,345 /
+0 mismatch、全局 0 missing、一致性 39 raw / **3 normalized**（=getMapCoords
+既有债 + 2 条 rename-debt：0x465D40/0x5220F0 的 ida_function_db 侧仍为旧名，
+IDA 回线后 `--replay-debt` 自愈，非真污染）。
+
+### 环境约束与工作队列（IDA 离线）
+
+IDA MCP（:13337）全程离线 → get_context 走 member_lookup 回退、verify 只能用
+`.omo/ida_cache/`（581 函数 live 缓存）、rename 全走 debt。工作队列 = pending
+索引 ∩ 缓存 = **283 个可验证目标**，按伪码行数升序取小函数。
+
+### 翻译完成（10 函数，全部 CFG PASS + completed）
+
+| 函数 | 地址 | 要点 |
+|---|---|---|
+| BuildingClass::IsFactorySelectable | 0x457620 | `return this->Type->Is1x1AndUndeployable...()` tail 委托 |
+| BuildingClass::IsMassSelectable | 0x459C00 | 赋值臂独立+RET 尾块镜像；`TechnoClass::CanMoveToCell()` 限定直调（ASM call 非虚派发铁证） |
+| BuildingClass::GetTypeField60 | 0x459ED0 | `return this->Type->UIName`（快照权威 +0x60）；返回类型 int→const wchar_t* |
+| InfantryClass::SetPermanentBerzerk | 0x5220F0 | 原 SetFlag1752 语义改名（+0x6D8=PermanentBerzerk 快照名）；int→void |
+| InfantryClass::IsBridgeRepairEnabled | 0x5224D0 | `return this->Type->Engineer`（+0xEC3；FootClass 伪码 VoiceResponse(14) 并列读佐证） |
+| AbstractClass::IsClean | 0x410450 | `return !NeedsSaveOrLink`（ASM [ecx+20h] 字节判零；+0x20 双语义既有习语） |
+| UnitClass::IsDeactivated | 0x70FBD0 | `return isDeactivated`（Activate=0/Deactivate=1/ctor=bl 三重铁证）；int→bool |
+| CellClass::DrawWrapper | 0x653F50 | 纯转发 UpdateTerrainAndWaypoints；签名 2 参→4 参修正（retn 10h=4 栈参） |
+| UnitClass::StubReturn176 | 0x6B4F30 | `return 176;` |
+| UnitClass::StubReturn29 | 0x6B4F40 | `return 29;` |
+
+### 污染修复（本轮主体）
+
+1. **owner 修复**：`BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable`
+   → **BuildingTypeClass::**（0x465D40）。证据链：两调用方（0x457620/0x459C00）
+   均 `mov ecx,[esi+520h]`（this->Type）后 call；被调体读 Foundation@+0xEF0 查
+   1x1 宽高表。声明 building.hpp→building_type.hpp 迁移；IDA 侧 rename debt。
+2. **member_lookup TechnoClass 452-464 区外科修正**（备份
+   `.omo/member_lookup.backup_0909.json`）：452=forceShielded（IronCurtain
+   @0x70E2C0 写 dword 1/0）、456=isDeactivated（字节写读三重证）、
+   460=airstrikeTintStage（位移名）、464 删错位条目。原区整体 +4 错位。
+   **快照 TechnoClass.hpp 该区仍为旧形态**（重导出待办）。
+3. **GadgetClass::ClearState 受阻建账**：src 模型为宽松自定义（缺 NeedsRedraw
+   成员，hpp 注释自证 binary@+0x1C），加成员须走 IDA→header pipeline——未擅自添加。
+
+### verifier 基建修复（3 处，回归零退化）
+
+1. **rename-debt 别名**（verify_execution_flow.load_signals）：未清偿
+   `.omo/rename_debt.json` 的旧名→新地址映射，否则 IDA 缓存伪码里的旧名调用
+   解析失败→事件缺失→假 FAIL（IsFactorySelectable 实证）。
+2. **namespace 双层前缀**：def 正则 `namespace\s+\w+\s*\{\s*)?` → `*`（两处），
+   支持 `namespace ra2 { namespace game {` 形态（上次只修了单层 gamemd）。
+3. **qualified 定义头守卫**（efv_cpp_events）：`A::B(...)` 路径补
+   `_looks_like_definition`——`RetType Class::Method() {` 签名行不再伪造
+   CALL(self)（09-08 只给 PascalCase 简单路径加了守卫）。
+
+### 编译验证方法论（单 TU C1003 中止问题）
+
+带存量伪码债的文件 MSVC 在 ~100 错误即 C1003 中止，**编辑区根本没编译到**——
+MCP build 的"0 errors"字段此时无意义。本轮建立**探针 TU 方法**：抽取原文件
+include 块 + 仅含新函数定义的小 TU（`.omo/probe_*.cpp`）同 flags 编译，
+rc=0 判定（6+4 函数全过）。infantry.cpp 顺带补缺失的
+`#include "type/infantry_type.hpp"`（hpp 只有前向声明，`Type->Engineer` 不可达）。
+Clang AST 门控（check_translated_functions）在大 TU 上 40min+ 不完成（已知
+基建限制，run_gates 同症）；hpp 侧以 `check_hpp_implementations` 直查
+5 个触碰头文件全 CLEAN，cpp 侧以探针+audit_access+verify 兜底——**本轮不宣称
+gate 3/3**。
+
+### 新定位的受阻函数（下一轮考古输入）
+
+processEnterTarget（0x7178B0，+0x814 变索引 dword 数组无名）、IsPoweredOn
+（0x4525F0，+3392 CheckPowerFlags receiver 无名）、GetHealthRatio（0x5F5C60，
+vtable 槽 34 身份未知）、startPanic（0x772AC0，MissionClass+324 无名）、
+ClearState（0x4E1550，GadgetClass 模型缺成员）、IsObserver（0x5E9440，三全局
+0xAC11A4/8/C 无名且无 pending 体）、Hash::InsertOrdered（0x4F4410，全局头
+0xA8EF54 无名）、CCFileClass::Reset（0x473CE0，+88/+100 无名）、
+LoadOptions::Run（0x5587F0，成员无名）——**成员考古瓶颈再次确认**，与
+"A1 是 C 线提速前置投资"判断一致。
+
+### 基建观察（待修，未动）
+
+- MCP pending 索引对「签名与 `{` 分行」形态丢失 class/function 归属
+  （`_enclosing_function` 要求上一行以 `{` 结尾）——3,400 个 class=""
+  pending 中相当部分源于此；按地址 target 可绕过。
+- replace_body 落盘后行号移位使缓存索引 stale——file:line target 失效，
+  地址 target 稳定。
+
+### 度量变化
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 29 | **39**（+10） |
+| pending | 3,426 | 3,416 |
+| completed 池回归 | 22 PASS/5 NOCACHE/1 FAIL | **34 PASS / 0 FAIL / 5 NOCACHE** |
+| 一致性 normalized | 1（getMapCoords） | 3（+2 rename-debt 自愈型） |
+| verifier 覆盖形态 | 单层 namespace | 双层 namespace + qualified 定义头 |
+| rename debt | 3 条 | 5 条（+Is1x1 owner +SetPermanentBerzerk） |
+
+issues：#18 新增（UnitClass::SaveState 0x6B4F00 stdcall-vt06 签名建模债：
+二进制 3 栈参 thunk + ECX 不装载 this，转发 SaveLoad_Prefix@0x410320 疑似
+stdcall 3 参非 thiscall）。

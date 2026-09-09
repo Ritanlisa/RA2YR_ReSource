@@ -8041,11 +8041,11 @@ LABEL_72:
                   }
                   if ( a5 )
                   {
-                    Function::424CA0(v43, a5[135]);
+                    Function::Method_424CA0(v43, a5[135]);
                   }
                   else if ( a8 )
                   {
-                    Function::424CA0(v43, a8);
+                    Function::Method_424CA0(v43, a8);
                   }
                   break;
                 case 9:
@@ -8106,12 +8106,12 @@ LABEL_76:
                   }
                   if ( a5 )
                   {
-                    Function::424CA0(v56, a5[135]);
+                    Function::Method_424CA0(v56, a5[135]);
                     v56[53] = *(void **)(*(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(a5[135] + 90196)) + 780);
                   }
                   else if ( a8 )
                   {
-                    Function::424CA0(v56, a8);
+                    Function::Method_424CA0(v56, a8);
                     v56[53] = *(void **)(*(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(a8 + 90196)) + 780);
                   }
                   v78 = v56[39];

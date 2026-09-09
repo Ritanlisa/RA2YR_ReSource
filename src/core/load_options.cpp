@@ -52,17 +52,17 @@ static HWND CreateMessageBox(LPARAM text, int, int) {
 
 // Global externs referenced in decompilations
 extern int g_FramePresent_State;
-extern int g_BounceClassInit;
+extern int g_BounceClassInit;  // data: 0xa8ed5c
 extern int GameMode_Current[];
 extern int WWMouseClass_Instance;
-extern int g_CommandExecState;
-extern const char g_GameSetupBuffer[];
+extern int g_CommandExecState;  // data: 0xa8b3ac
+extern const char g_GameSetupBuffer[];  // data: 0xa8b380
 extern int dword_83D560;
 extern int ScenarioClass_Instance;
-extern int HouseClass_Player;
+extern int HouseClass_Player;  // data: 0xa83d4c
 extern int MapClass_Instance;
-extern int g_UIManager;
-extern int SwizzleManagerClass_Instance;
+extern int g_UIManager;  // data: 0xac4f58
+extern int SwizzleManagerClass_Instance;  // data: 0xb0c110
 
 // ============================================================================
 // LoadOptions implementation

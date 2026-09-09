@@ -61,7 +61,7 @@ struct MixHeaderData
 {
     uint32_t ID;
     uint32_t Offset;
-    uint32_t Size;
+    uint32_t Size;  // data: 0x87cba0
 };
 
 class MixFileClass : public Node<MixFileClass*>
@@ -161,7 +161,7 @@ protected:
     explicit MixFileClass(const noinit_t&) noexcept;
 
 public:
-    const char* FileName = nullptr;
+    const char* FileName = nullptr;  // data: 0x8221f8
     bool Blowfish = false;
     bool Encryption = false;
     int CountFiles = 0;
