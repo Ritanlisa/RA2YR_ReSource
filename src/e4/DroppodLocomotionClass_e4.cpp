@@ -298,11 +298,7 @@ HRESULT __stdcall DropPodLocomotionClass::UpdateMovement(int *a1, int *pPStm, in
 // 0x4B66E0
 int DropPodLocomotionClass::StubReturn48()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int DropPodLocomotionClass::_vt09()
-{
-  return 48; /*0x4b66e5*/
-}
+return 48;
 }
 
 // 0x4B66F0

@@ -565,11 +565,7 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 // 0x7730D0
 int WeaponTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WeaponTypeClass::_vt12()
-{
-  return 352; /*0x7730d5*/
-}
+return 352;
 }
 
 // 0x7730E0

@@ -92,11 +92,7 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 namespace gamemd {
 int ParticleSystemClass::StubReturn2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleSystemClass::_vt30()
-{
-  return 2; /*0x62fe85*/
-}
+return 2;
 }
 } // namespace gamemd
 
@@ -104,11 +100,7 @@ int ParticleSystemClass::_vt30()
 namespace gamemd {
 int ParticleSystemClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleSystemClass::_vt12()
-{
-  return 256; /*0x630205*/
-}
+return 256;
 }
 } // namespace gamemd
 

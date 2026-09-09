@@ -1827,11 +1827,7 @@ int __thiscall nullsub_0_6(RAMFileClass *this, int a2)
 namespace gamemd {
 int nullsub_0_7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall nullsub_0_7(RAMFileClass *this)
-{
-  return 0; /*0x65c572*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1839,11 +1835,7 @@ int __thiscall nullsub_0_7(RAMFileClass *this)
 namespace gamemd {
 char nullsub_0_8()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall nullsub_0_8(RAMFileClass *this)
-{
-  return 1; /*0x65c582*/
-}
+return 1;
 }
 } // namespace gamemd
 

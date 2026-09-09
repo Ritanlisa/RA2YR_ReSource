@@ -76,11 +76,7 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
 // 0x4114F0
 char BSurface::Stub(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Surface_CanLock_Stub(int a1, int a2)
-{
-  return 1; /*0x4114f2*/
-}
+return 1;
 }
 
 // 0x411630

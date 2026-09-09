@@ -1124,11 +1124,7 @@ int __thiscall TeamTypeClass::ProcessTaskForce(int this)
 namespace gamemd {
 int TeamTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TeamTypeClass::_vt11()
-{
-  return 35; /*0x6f20a5*/
-}
+return 35;
 }
 } // namespace gamemd
 
@@ -1136,11 +1132,7 @@ int TeamTypeClass::_vt11()
 namespace gamemd {
 int TeamTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TeamTypeClass::_vt12()
-{
-  return 248; /*0x6f20b5*/
-}
+return 248;
 }
 } // namespace gamemd
 

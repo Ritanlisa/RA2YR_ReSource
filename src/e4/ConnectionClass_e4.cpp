@@ -508,9 +508,5 @@ int __thiscall ConnectionClass_ServiceSendQueue(unsigned int *this)
 // 0x48C590
 int ConnectionClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ConnectionClass::_vt06()
-{
-  return 0; /*0x48c592*/
-}
+return 0;
 }

@@ -854,11 +854,7 @@ char __stdcall AnimClass::_vt61(_DWORD *a1)
 namespace gamemd {
 int AnimClass::MissionStubReturnZero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AnimClass::_vt12()
-{
-  return 456; /*0x426535*/
-}
+return 456;
 }
 } // namespace gamemd
 

@@ -218,11 +218,7 @@ int __stdcall TriggerClass::SaveTrigger(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TriggerClass::StubReturn72()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TriggerClass::_vt12()
-{
-  return 72; /*0x726935*/
-}
+return 72;
 }
 } // namespace gamemd
 
@@ -230,10 +226,6 @@ int TriggerClass::_vt12()
 namespace gamemd {
 int TriggerClass::StubReturn38()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TriggerClass::_vt11()
-{
-  return 38; /*0x726945*/
-}
+return 38;
 }
 } // namespace gamemd

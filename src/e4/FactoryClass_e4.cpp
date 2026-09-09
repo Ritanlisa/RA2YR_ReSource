@@ -626,11 +626,7 @@ char __thiscall FactoryClass::IsQueued(int *this, int a2)
 namespace gamemd {
 int FactoryClass::StubReturn12()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int FactoryClass::_vt11()
-{
-  return 12; /*0x4ca755*/
-}
+return 12;
 }
 } // namespace gamemd
 
@@ -638,11 +634,7 @@ int FactoryClass::_vt11()
 namespace gamemd {
 int FactoryClass::StubReturn116()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int FactoryClass::_vt12()
-{
-  return 116; /*0x4ca765*/
-}
+return 116;
 }
 } // namespace gamemd
 

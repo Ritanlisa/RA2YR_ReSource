@@ -779,11 +779,7 @@ int __thiscall EventClass::CheckFlag(_DWORD *this)
 namespace gamemd {
 int EventClass::GetState(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall EventClass::GetState(int a1)
-{
-  return 0; /*0x5f3442*/
-}
+return 0;
 }
 } // namespace gamemd
 

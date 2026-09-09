@@ -1985,11 +1985,7 @@ char __thiscall TActionClass::executeEMPulseAction(int this, int a2, int a3, int
 namespace gamemd {
 int TActionClass::StubReturn148()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TActionClass::_vt12()
-{
-  return 148; /*0x6e4635*/
-}
+return 148;
 }
 } // namespace gamemd
 
@@ -1997,11 +1993,7 @@ int TActionClass::_vt12()
 namespace gamemd {
 int TActionClass::StubReturn47()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TActionClass::_vt11()
-{
-  return 47; /*0x6e4645*/
-}
+return 47;
 }
 } // namespace gamemd
 

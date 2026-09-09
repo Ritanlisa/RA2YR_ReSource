@@ -942,11 +942,7 @@ LABEL_4:
 namespace gamemd {
 int AircraftClass::LandingCheckStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt51(#374 *this)
-{
-  return 0; /*0x41be62*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1081,11 +1077,7 @@ AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **Block, char a2
 namespace gamemd {
 int AircraftClass::CheckMissionStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Stub_ReturnE_NOTIMPL_2()
-{
-  return 450; /*0x5b2e95*/
-}
+return 450;
 }
 } // namespace gamemd
 

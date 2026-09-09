@@ -278,31 +278,19 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *Block, char a2)
 // 0x5F75B0
 int AbstractTypeClass::GetData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetFalse_20()
-{
-  return 0; /*0x5f75b2*/
-}
+return 0;
 }
 
 // 0x5F7610
 int AbstractTypeClass::GetType(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AbstractTypeClass::_vt33(int a1)
-{
-  return 0; /*0x5f7612*/
-}
+return 0;
 }
 
 // 0x5F7620
 int AbstractTypeClass::SetType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetFalse_21()
-{
-  return 0; /*0x5f7622*/
-}
+return 0;
 }
 
 // 0x5F7630

@@ -382,11 +382,7 @@ int VoxelAnimClass_Update()
 namespace gamemd {
 int VoxelAnimClass::StubReturn3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VoxelAnimClass::_vt30()
-{
-  return 3; /*0x74a965*/
-}
+return 3;
 }
 } // namespace gamemd
 
@@ -496,11 +492,7 @@ int __stdcall VoxelAnimClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int VoxelAnimClass::StubReturn328()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VoxelAnimClass::_vt12()
-{
-  return 328; /*0x74ab15*/
-}
+return 328;
 }
 } // namespace gamemd
 

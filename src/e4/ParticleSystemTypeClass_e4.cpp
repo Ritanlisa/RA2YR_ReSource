@@ -345,11 +345,7 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, O
 namespace gamemd {
 int ParticleSystemTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleSystemTypeClass::_vt12()
-{
-  return 784; /*0x644925*/
-}
+return 784;
 }
 } // namespace gamemd
 
@@ -357,11 +353,7 @@ int ParticleSystemTypeClass::_vt12()
 namespace gamemd {
 int ParticleSystemTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleSystemTypeClass::_vt11()
-{
-  return 25; /*0x644935*/
-}
+return 25;
 }
 } // namespace gamemd
 

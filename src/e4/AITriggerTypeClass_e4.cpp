@@ -636,21 +636,13 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 // 0x41FFD0
 int AITriggerTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AITriggerTypeClass::_vt11()
-{
-  return 59; /*0x41ffd5*/
-}
+return 59;
 }
 
 // 0x41FFE0
 int AITriggerTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AITriggerTypeClass::_vt12()
-{
-  return 272; /*0x41ffe5*/
-}
+return 272;
 }
 
 // 0x41FFF0

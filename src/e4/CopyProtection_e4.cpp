@@ -73,9 +73,5 @@ LABEL_9:
 // 0x49F7A0
 char CopyProtection::CheckProtectedData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char CopyProtection::CheckProtectedData()
-{
-  return 1; /*0x49f7a2*/
-}
+return 1;
 }

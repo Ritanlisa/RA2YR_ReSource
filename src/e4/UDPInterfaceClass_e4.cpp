@@ -996,11 +996,7 @@ void __thiscall UDPInterfaceClass_Destru::_vt30(_DWORD *this, _DWORD *a2, __int1
 // 0x7B40F0
 int UDPInterfaceClass_Destru::COMStub_Ret2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UDPInterfaceClass_Destru::_vt13()
-{
-  return 2; /*0x7b40f5*/
-}
+return 2;
 }
 
 // 0x7B4100

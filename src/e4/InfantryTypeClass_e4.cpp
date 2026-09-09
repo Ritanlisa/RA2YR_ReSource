@@ -612,11 +612,7 @@ int InfantryTypeClass::_vt45()
 // 0x5247A0
 int InfantryTypeClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int InfantryTypeClass::_vt44()
-{
-  return 0; /*0x5247a2*/
-}
+return 0;
 }
 
 // 0x5247D0
@@ -846,11 +842,7 @@ int __stdcall InfantryTypeClass::_vt03(int a1, _DWORD *a2)
 // 0x524D40
 int InfantryTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int InfantryTypeClass::_vt11()
-{
-  return 16; /*0x524d45*/
-}
+return 16;
 }
 
 // 0x524D50

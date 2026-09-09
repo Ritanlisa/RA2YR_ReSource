@@ -15,11 +15,7 @@ int __stdcall INoticeSource_Stub1(int a1)
 // 0x411500
 char XSurface::entry_68_(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Surface_vt_entry_68(int a1, int a2)
-{
-  return 1; /*0x411502*/
-}
+return 1;
 }
 
 // 0x411560

@@ -7786,11 +7786,7 @@ LABEL_38:
 namespace gamemd {
 int ReturnNull4()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ReturnNull4()
-{
-  return 0; /*0x7d6ce9*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -13824,11 +13820,7 @@ int __cdecl _errcode(char a1)
 namespace gamemd {
 int ReturnNull5()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ReturnNull5()
-{
-  return 0; /*0x7dbc59*/
-}
+return 0;
 }
 } // namespace gamemd
 

@@ -18,11 +18,7 @@ void *sub_5C61D0()
 namespace gamemd {
 int sub_5C61E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5C61E0()
-{
-  return 3511; /*0x5c61e5*/
-}
+return 3511;
 }
 } // namespace gamemd
 

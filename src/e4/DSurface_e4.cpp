@@ -3728,11 +3728,7 @@ char __thiscall DSurface::DrawStippledRect(void *this, _DWORD *a1, _DWORD *a2, _
 // 0x4C1AB0
 char DSurface::IsDSurface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DSurface_IsDSurface(std::codecvt_base *this)
-{
-  return 1; /*0x4c1ab2*/
-}
+return 1;
 }
 
 // 0x4C1AC0

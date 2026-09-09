@@ -55,11 +55,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
 // 0x7B2740
 int WinsockInterfaceClass::Destru_vt13()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WinsockInterfaceClass::Destru_vt13()
-{
-  return 0; /*0x7b2742*/
-}
+return 0;
 }
 
 // 0x7B2750

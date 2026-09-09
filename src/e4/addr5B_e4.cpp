@@ -978,11 +978,7 @@ int __thiscall sub_5B4350(void *this)
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_7(std::codecvt_base *this)
-{
-  return 1; /*0x5b43e2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -990,11 +986,7 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_7(std::codecvt_base 
 namespace gamemd {
 char ReturnTrue(AnimClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ReturnTrue(AnimClass *aP0)
-{
-  return 1; /*0x5b43f2*/
-}
+return 1;
 }
 } // namespace gamemd
 

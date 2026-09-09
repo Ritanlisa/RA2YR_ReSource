@@ -616,11 +616,7 @@ int __thiscall HouseTypeClass::ProcessPower(int this, int *a2)
 namespace gamemd {
 int HouseTypeClass::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseTypeClass::_vt04(int a1)
-{
-  return 0; /*0x512282*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -808,11 +804,7 @@ int __stdcall HouseTypeClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int HouseTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int HouseTypeClass::_vt11()
-{
-  return 14; /*0x512715*/
-}
+return 14;
 }
 } // namespace gamemd
 

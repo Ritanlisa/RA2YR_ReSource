@@ -1071,11 +1071,7 @@ LABEL_14:
 namespace gamemd {
 char ReturnFalse2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ReturnFalse2()
-{
-  return 0; /*0x544ff2*/
-}
+return 0;
 }
 } // namespace gamemd
 

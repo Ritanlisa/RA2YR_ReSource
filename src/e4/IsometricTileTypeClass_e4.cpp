@@ -135,21 +135,13 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // 0x54A140
 int IsometricTileTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int IsometricTileTypeClass::_vt11()
-{
-  return 18; /*0x54a145*/
-}
+return 18;
 }
 
 // 0x54A150
 int IsometricTileTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int IsometricTileTypeClass::_vt12()
-{
-  return 780; /*0x54a155*/
-}
+return 780;
 }
 
 // 0x54A160

@@ -6,11 +6,7 @@
 namespace gamemd {
 int CellClass::StubReturn11()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass::_vt11(#378 *this)
-{
-  return 11; /*0x487e65*/
-}
+return 11;
 }
 } // namespace gamemd
 
@@ -18,11 +14,7 @@ int __thiscall CellClass::_vt11(#378 *this)
 namespace gamemd {
 int CellClass::StubReturn328()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass::_vt12(#378 *this)
-{
-  return 328; /*0x487e75*/
-}
+return 328;
 }
 } // namespace gamemd
 

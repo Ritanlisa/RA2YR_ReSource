@@ -1712,21 +1712,13 @@ void __thiscall BuildingTypeClass_IsPowered(int this)
 // 0x465D90
 int BuildingTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::_vt11(#376 *this)
-{
-  return 7; /*0x465d95*/
-}
+return 7;
 }
 
 // 0x465DA0
 int BuildingTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::_vt12(#376 *this)
-{
-  return 6040; /*0x465da5*/
-}
+return 6040;
 }
 
 // 0x465DB0

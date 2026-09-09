@@ -50,11 +50,7 @@ int __stdcall TubeClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TubeClass::StubReturn452()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TubeClass::_vt12()
-{
-  return 452; /*0x7286b5*/
-}
+return 452;
 }
 } // namespace gamemd
 
@@ -62,11 +58,7 @@ int TubeClass::_vt12()
 namespace gamemd {
 int TubeClass::StubReturn53()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TubeClass::_vt11()
-{
-  return 53; /*0x7286c5*/
-}
+return 53;
 }
 } // namespace gamemd
 

@@ -42,11 +42,7 @@ int __stdcall HoverLocomotionClass::_vt05(int a1, int *a2)
 // 0x5172B0
 int HoverLocomotionClass::StubReturn120()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int HoverLocomotionClass::_vt09()
-{
-  return 120; /*0x5172b5*/
-}
+return 120;
 }
 
 // 0x5172C0

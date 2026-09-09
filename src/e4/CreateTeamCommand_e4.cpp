@@ -7,11 +7,7 @@
 namespace gamemd {
 char CreateTeamCommand::Stub(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Game_Stub2(int a1)
-{
-  return 0; /*0x535bd2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -19,11 +15,7 @@ char __stdcall Game_Stub2(int a1)
 namespace gamemd {
 char CreateTeamCommand::Do(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Game_Stub(int a1)
-{
-  return 0; /*0x535bf2*/
-}
+return 0;
 }
 } // namespace gamemd
 

@@ -666,11 +666,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
 namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
-{
-  return -1; /*0x428e43*/
-}
+return -1;
 }
 } // namespace gamemd
 
@@ -678,11 +674,7 @@ int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
 namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
-{
-  return 5; /*0x428e55*/
-}
+return 5;
 }
 } // namespace gamemd
 

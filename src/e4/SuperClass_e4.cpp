@@ -1367,11 +1367,7 @@ bool __thiscall SuperClass::ShouldFlashTab(int this)
 namespace gamemd {
 int SuperClass::StubReturn57()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SuperClass::_vt11()
-{
-  return 57; /*0x6ce205*/
-}
+return 57;
 }
 } // namespace gamemd
 
@@ -1379,10 +1375,6 @@ int SuperClass::_vt11()
 namespace gamemd {
 int SuperClass::StubReturn128()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SuperClass::_vt12()
-{
-  return 128; /*0x6ce215*/
-}
+return 128;
 }
 } // namespace gamemd

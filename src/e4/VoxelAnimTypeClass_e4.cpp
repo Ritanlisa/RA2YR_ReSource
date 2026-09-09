@@ -571,11 +571,7 @@ __int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP
 namespace gamemd {
 int VoxelAnimTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VoxelAnimTypeClass::_vt11()
-{
-  return 42; /*0x74b9f5*/
-}
+return 42;
 }
 } // namespace gamemd
 

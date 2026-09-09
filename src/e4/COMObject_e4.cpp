@@ -23,11 +23,7 @@ int __fastcall COMObject_FindNextActive(_BYTE *a1)
 // 0x4E30C0
 int COMObject::Thunk_COMObject_sub_4E30C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl COMObject::Thunk_COMObject_sub_4E30C0()
-{
-  return 4; /*0x4e30c5*/
-}
+return 4;
 }
 
 // 0x4F4240

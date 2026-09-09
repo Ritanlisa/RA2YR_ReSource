@@ -48,11 +48,7 @@ int __stdcall sub_484A80(int a1)
 namespace gamemd {
 char sub_484F10(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_484F10(int a1)
-{
-  return 1; /*0x484f12*/
-}
+return 1;
 }
 } // namespace gamemd
 

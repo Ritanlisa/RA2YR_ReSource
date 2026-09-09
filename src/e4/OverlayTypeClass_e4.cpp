@@ -589,21 +589,13 @@ void *__thiscall sub_5FEDE0(int this)
 // 0x5FEF00
 int OverlayTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int OverlayTypeClass::_vt11()
-{
-  return 21; /*0x5fef05*/
-}
+return 21;
 }
 
 // 0x5FEF10
 int OverlayTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int OverlayTypeClass::_vt12()
-{
-  return 700; /*0x5fef15*/
-}
+return 700;
 }
 
 // 0x5FEF20

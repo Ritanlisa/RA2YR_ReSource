@@ -346,11 +346,7 @@ int __stdcall TagTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TagTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TagTypeClass::_vt11()
-{
-  return 45; /*0x6e6495*/
-}
+return 45;
 }
 } // namespace gamemd
 
@@ -358,11 +354,7 @@ int TagTypeClass::_vt11()
 namespace gamemd {
 int TagTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TagTypeClass::_vt12()
-{
-  return 164; /*0x6e64a5*/
-}
+return 164;
 }
 } // namespace gamemd
 

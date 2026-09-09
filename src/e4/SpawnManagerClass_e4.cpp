@@ -560,11 +560,7 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::StubReturn116()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SpawnManagerClass::_vt12()
-{
-  return 116; /*0x6b8125*/
-}
+return 116;
 }
 } // namespace game
 } // namespace ra2
@@ -574,11 +570,7 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::StubReturn65()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SpawnManagerClass::_vt11()
-{
-  return 65; /*0x6b8135*/
-}
+return 65;
 }
 } // namespace game
 } // namespace ra2

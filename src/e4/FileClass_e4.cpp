@@ -49,21 +49,13 @@ int __thiscall FileClass::SetFileName(_DWORD *this, IUnknown *aP1)
 // 0x65C5F0
 int FileClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int FileClass::_vt14()
-{
-  return 0; /*0x65c5f2*/
-}
+return 0;
 }
 
 // 0x65C600
 char FileClass::Stub(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall FileClass::_vt15(int a1)
-{
-  return 0; /*0x65c602*/
-}
+return 0;
 }
 
 // 0x65CBF0

@@ -2074,11 +2074,7 @@ int __stdcall Tactical::UpdateMapView(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int Tactical::StubReturn56()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Tactical::_vt11()
-{
-  return 56; /*0x6dc455*/
-}
+return 56;
 }
 } // namespace gamemd
 
@@ -2086,11 +2082,7 @@ int Tactical::_vt11()
 namespace gamemd {
 int Tactical::StubReturn3608()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Tactical::_vt12()
-{
-  return 3608; /*0x6dc465*/
-}
+return 3608;
 }
 } // namespace gamemd
 

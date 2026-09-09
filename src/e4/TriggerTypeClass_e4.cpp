@@ -493,11 +493,7 @@ int __stdcall TriggerTypeClass::Write(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TriggerTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TriggerTypeClass::_vt11()
-{
-  return 39; /*0x727ca5*/
-}
+return 39;
 }
 } // namespace gamemd
 
@@ -505,10 +501,6 @@ int TriggerTypeClass::_vt11()
 namespace gamemd {
 int TriggerTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TriggerTypeClass::_vt12()
-{
-  return 180; /*0x727cb5*/
-}
+return 180;
 }
 } // namespace gamemd

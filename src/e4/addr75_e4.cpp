@@ -1492,11 +1492,7 @@ bool __fastcall sub_7532A0(std::codecvt_base *a1)
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_21()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_21(std::codecvt_base *this)
-{
-  return 1; /*0x7532c0*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -1504,11 +1500,7 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_21(std::codecvt_base
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_22()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_22(std::codecvt_base *this)
-{
-  return 1; /*0x7533a2*/
-}
+return 1;
 }
 } // namespace gamemd
 

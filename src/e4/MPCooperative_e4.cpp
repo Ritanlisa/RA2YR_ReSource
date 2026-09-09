@@ -2382,11 +2382,7 @@ int __thiscall MPCooperative::_vt28(int *this)
 namespace gamemd {
 char MPCooperative::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char MPCooperative::_vt15()
-{
-  return 0; /*0x5c3702*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -2782,11 +2778,7 @@ char __thiscall MPCooperative::vt_37_(LRESULT *this)
 namespace gamemd {
 int MPCooperative::COMStub_Ret2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MPCooperative::_vt38()
-{
-  return 2; /*0x5c42c5*/
-}
+return 2;
 }
 } // namespace gamemd
 

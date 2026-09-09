@@ -788,11 +788,7 @@ int __thiscall Object::_vt34(_DWORD *this)
 namespace gamemd {
 int Object::StubReturn176()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Object::_vt12()
-{
-  return 176; /*0x5fdf05*/
-}
+return 176;
 }
 } // namespace gamemd
 
@@ -818,11 +814,7 @@ int __stdcall Object::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int Object::StubReturn20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Object::_vt11()
-{
-  return 20; /*0x5fdf55*/
-}
+return 20;
 }
 } // namespace gamemd
 

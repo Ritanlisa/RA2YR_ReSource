@@ -218,11 +218,7 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TerrainClass::_vt12()
-{
-  return 224; /*0x71d2f5*/
-}
+return 224;
 }
 } // namespace gamemd
 
@@ -230,11 +226,7 @@ int TerrainClass::_vt12()
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TerrainClass::_vt11()
-{
-  return 36; /*0x71d305*/
-}
+return 36;
 }
 } // namespace gamemd
 

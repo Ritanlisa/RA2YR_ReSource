@@ -1088,11 +1088,7 @@ unsigned int j_Time_GetElapsedMS()
 namespace gamemd {
 int sub_4125F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4125F0()
-{
-  return 1; /*0x4125f5*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -1100,11 +1096,7 @@ int sub_4125F0()
 namespace gamemd {
 int sub_412600()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_412600()
-{
-  return 1; /*0x412605*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -1442,11 +1434,7 @@ void __stdcall nullsub_3(AbstractClass *aP0)
 namespace gamemd {
 int sub_413590()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_413590()
-{
-  return 750; /*0x413595*/
-}
+return 750;
 }
 } // namespace gamemd
 

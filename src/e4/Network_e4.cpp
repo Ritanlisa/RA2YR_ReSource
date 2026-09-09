@@ -5616,11 +5616,7 @@ int __thiscall sub_7B2DB0(int this)
 namespace gamemd {
 char sub_767310(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_767310(int a1)
-{
-  return 0; /*0x767312*/
-}
+return 0;
 }
 } // namespace gamemd
 

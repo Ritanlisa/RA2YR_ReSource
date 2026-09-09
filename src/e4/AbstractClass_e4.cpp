@@ -187,11 +187,7 @@ int __thiscall AbstractClass::COMStub_Return0_10(#378 *this)
 namespace gamemd {
 int AbstractClass::computeDistanceSquared()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::computeDistanceSquared(#374 *this)
-{
-  return -1; /*0x410493*/
-}
+return -1;
 }
 } // namespace gamemd
 
@@ -199,11 +195,7 @@ int __thiscall AbstractClass::computeDistanceSquared(#374 *this)
 namespace gamemd {
 int AbstractClass::COMStub_Return0_15()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::_vt15(#374 *this)
-{
-  return 0; /*0x4104a2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -211,11 +203,7 @@ int __thiscall AbstractClass::_vt15(#374 *this)
 namespace gamemd {
 int AbstractClass::COMStub_Return0_16()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::_vt16(#374 *this)
-{
-  return 0; /*0x4104b2*/
-}
+return 0;
 }
 } // namespace gamemd
 

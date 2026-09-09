@@ -531,11 +531,7 @@ int __stdcall TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, in
 namespace gamemd {
 int TiberiumClass::StubReturn296()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TiberiumClass::_vt12()
-{
-  return 296; /*0x7236e5*/
-}
+return 296;
 }
 } // namespace gamemd
 
@@ -543,10 +539,6 @@ int TiberiumClass::_vt12()
 namespace gamemd {
 int TiberiumClass::StubReturn46()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TiberiumClass::_vt11()
-{
-  return 46; /*0x7236f5*/
-}
+return 46;
 }
 } // namespace gamemd

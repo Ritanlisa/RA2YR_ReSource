@@ -18,11 +18,7 @@ void TacticalClass::StubReturnTrue()
 namespace gamemd {
 char TacticalClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char NullStub_RetFalse()
-{
-  return 0; /*0x41bee2*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -30,11 +26,7 @@ char NullStub_RetFalse()
 namespace gamemd {
 int TacticalClass::StubReturnFalse2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int NullStub_RetZero()
-{
-  return 0; /*0x41bf02*/
-}
+return 0;
 }
 } // namespace gamemd
 

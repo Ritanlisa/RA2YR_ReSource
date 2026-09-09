@@ -212,11 +212,7 @@ LABEL_45:
 // 0x4D0390
 int FlyLocomotionClass::StubReturn96()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int FlyLocomotionClass::_vt09()
-{
-  return 96; /*0x4d0395*/
-}
+return 96;
 }
 
 // 0x4D03A0

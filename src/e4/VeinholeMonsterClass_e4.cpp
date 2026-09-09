@@ -83,21 +83,13 @@ int __stdcall VeinholeMonsterClass::_vt03(int a1, _DWORD *a2)
 // 0x74F310
 int VeinholeMonsterClass::StubReturn63()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VeinholeMonsterClass::_vt11()
-{
-  return 63; /*0x74f315*/
-}
+return 63;
 }
 
 // 0x74F320
 int VeinholeMonsterClass::StubReturn264()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VeinholeMonsterClass::_vt12()
-{
-  return 264; /*0x74f325*/
-}
+return 264;
 }
 
 // 0x74F340

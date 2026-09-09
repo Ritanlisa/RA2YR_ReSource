@@ -1034,11 +1034,7 @@ char __fastcall sub_6ACCA0(int a1)
 namespace gamemd {
 int sub_731CB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_731CB0()
-{
-  return 71; /*0x731cb5*/
-}
+return 71;
 }
 } // namespace gamemd
 
@@ -1046,11 +1042,7 @@ int sub_731CB0()
 namespace gamemd {
 int sub_731CC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_731CC0()
-{
-  return 22; /*0x731cc5*/
-}
+return 22;
 }
 } // namespace gamemd
 

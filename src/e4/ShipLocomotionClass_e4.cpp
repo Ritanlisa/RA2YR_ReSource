@@ -113,11 +113,7 @@ int __stdcall ShipLocomotionClass::_vt03(int a1, _DWORD *a2)
 // 0x6A42A0
 int ShipLocomotionClass::StubReturn112()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ShipLocomotionClass::_vt09()
-{
-  return 112; /*0x6a42a5*/
-}
+return 112;
 }
 
 // 0x6A42B0

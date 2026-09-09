@@ -95,11 +95,7 @@ AircraftClass *__thiscall AircraftTypeClass::ConstructAircraft(IUnknown *this, A
 // 0x41CB60
 char AircraftTypeClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char AircraftTypeClass::_vt41()
-{
-  return 0; /*0x41cb62*/
-}
+return 0;
 }
 
 // 0x41CB70
@@ -122,11 +118,7 @@ int *__stdcall AircraftTypeClass::_vt36(int a1)
 // 0x41CBE0
 char AircraftTypeClass::GetDimensions(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall AircraftTypeClass::_vt32(int a1, int a2)
-{
-  return 0; /*0x41cbe2*/
-}
+return 0;
 }
 
 // 0x41CC20

@@ -7,11 +7,7 @@
 namespace gamemd {
 char sub_6E0030(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6E0030(int a1, int a2, int a3, int a4)
-{
-  return 1; /*0x6e0032*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -19,11 +15,7 @@ char __stdcall sub_6E0030(int a1, int a2, int a3, int a4)
 namespace gamemd {
 char sub_6E0040(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6E0040(int a1, int a2, int a3, int a4)
-{
-  return 1; /*0x6e0042*/
-}
+return 1;
 }
 } // namespace gamemd
 

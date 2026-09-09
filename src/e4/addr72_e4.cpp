@@ -2149,11 +2149,7 @@ int sub_726C60()
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_20(std::codecvt_base *this)
-{
-  return 1; /*0x726fd0*/
-}
+return 1;
 }
 } // namespace gamemd
 

@@ -60,11 +60,7 @@ namespace ra2 {
 namespace game {
 int ObjectClass::COMStub_108()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::_vt108(#374 *this)
-{
-  return 0; /*0x4264d2*/
-}
+return 0;
 }
 } // namespace game
 } // namespace ra2

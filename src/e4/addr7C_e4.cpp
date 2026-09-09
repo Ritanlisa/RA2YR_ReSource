@@ -15596,11 +15596,7 @@ char *__cdecl _expandlocale(IUnknown *aP0, IUnknown *aP1, _WORD *a2, _DWORD *a3)
 namespace gamemd {
 int ReturnNull3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ReturnNull3()
-{
-  return 0; /*0x7ce048*/
-}
+return 0;
 }
 } // namespace gamemd
 

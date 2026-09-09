@@ -159,21 +159,13 @@ int __stdcall LightSourceClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 // 0x555130
 int LightSourceClass::StubReturn76()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int LightSourceClass::_vt12()
-{
-  return 76; /*0x555135*/
-}
+return 76;
 }
 
 // 0x555140
 int LightSourceClass::StubReturn54()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int LightSourceClass::_vt11()
-{
-  return 54; /*0x555145*/
-}
+return 54;
 }
 
 // 0x555150

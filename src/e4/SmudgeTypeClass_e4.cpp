@@ -273,21 +273,13 @@ int __stdcall SmudgeTypeClass::_vt03(int a1, _DWORD *a2)
 // 0x6B6130
 int SmudgeTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SmudgeTypeClass::_vt11()
-{
-  return 30; /*0x6b6135*/
-}
+return 30;
 }
 
 // 0x6B6140
 int SmudgeTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SmudgeTypeClass::_vt12()
-{
-  return 676; /*0x6b6145*/
-}
+return 676;
 }
 
 // 0x6B6150

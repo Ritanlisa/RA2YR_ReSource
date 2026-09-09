@@ -1710,11 +1710,7 @@ int sub_775B30()
 namespace gamemd {
 INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
-{
-  return 0; /*0x775b42*/
-}
+return 0;
 }
 } // namespace gamemd
 

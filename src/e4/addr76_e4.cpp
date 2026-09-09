@@ -1600,11 +1600,7 @@ rc_ptr *__fastcall ConstructorWDTFlagOption(rc_ptr_base *a1, int a2, void *a3, i
 namespace gamemd {
 int sub_767600(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_767600(int a1)
-{
-  return 0; /*0x767602*/
-}
+return 0;
 }
 } // namespace gamemd
 

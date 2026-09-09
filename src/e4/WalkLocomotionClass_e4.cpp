@@ -263,11 +263,7 @@ HRESULT __stdcall WalkLocomotionClass::LoadFromStream(int *a1, int *pPStm, int a
 // 0x75CBD0
 int WalkLocomotionClass::StubReturn60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WalkLocomotionClass::_vt09()
-{
-  return 60; /*0x75cbd5*/
-}
+return 60;
 }
 
 // 0x75CBE0

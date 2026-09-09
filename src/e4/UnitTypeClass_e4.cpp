@@ -624,21 +624,13 @@ int __stdcall UnitTypeClass::SaveToINI(void *a0, TechnoTypeClass *aP1, int a3)
 // 0x748160
 int UnitTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UnitTypeClass::_vt12()
-{
-  return 3704; /*0x748165*/
-}
+return 3704;
 }
 
 // 0x748170
 int UnitTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UnitTypeClass::_vt11()
-{
-  return 40; /*0x748175*/
-}
+return 40;
 }
 
 // 0x748180

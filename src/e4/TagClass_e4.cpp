@@ -349,11 +349,7 @@ int __stdcall TagClass::SaveTag(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int TagClass::StubReturn56()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TagClass::_vt12()
-{
-  return 56; /*0x6e5895*/
-}
+return 56;
 }
 } // namespace gamemd
 
@@ -361,11 +357,7 @@ int TagClass::_vt12()
 namespace gamemd {
 int TagClass::StubReturn44()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TagClass::_vt11()
-{
-  return 44; /*0x6e58a5*/
-}
+return 44;
 }
 } // namespace gamemd
 

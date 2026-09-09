@@ -7,11 +7,7 @@ namespace ra2 {
 namespace game {
 int IPersistStream::StubReturn450()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Stub_ReturnE_NOTIMPL()
-{
-  return 450; /*0x5b2e55*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -21,11 +17,7 @@ namespace ra2 {
 namespace game {
 int IPersistStream::GetMaxSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Stub_ReturnE_NOTIMPL_3()
-{
-  return 450; /*0x5b2ef5*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2

@@ -290,21 +290,13 @@ void IPXInterfaceClass::GetQueueSize()
 // 0x7B1740
 int IPXInterfaceClass::COMStub_Return0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int IPXInterfaceClass::_vt18()
-{
-  return 0; /*0x7b1742*/
-}
+return 0;
 }
 
 // 0x7B1750
 int IPXInterfaceClass::Send(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPXInterfaceClass::_vt19(int a1)
-{
-  return 0; /*0x7b1752*/
-}
+return 0;
 }
 
 // 0x7B1760

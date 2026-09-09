@@ -785,11 +785,7 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 namespace gamemd {
 int ParticleTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleTypeClass::_vt12()
-{
-  return 792; /*0x645915*/
-}
+return 792;
 }
 } // namespace gamemd
 
@@ -797,11 +793,7 @@ int ParticleTypeClass::_vt12()
 namespace gamemd {
 int ParticleTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleTypeClass::_vt11()
-{
-  return 23; /*0x645925*/
-}
+return 23;
 }
 } // namespace gamemd
 

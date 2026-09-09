@@ -3733,11 +3733,7 @@ void __cdecl nullsub_39()
 namespace gamemd {
 char sub_6BA680(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6BA680(int a1, int a2, int a3)
-{
-  return 0; /*0x6ba682*/
-}
+return 0;
 }
 } // namespace gamemd
 

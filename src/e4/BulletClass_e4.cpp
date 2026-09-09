@@ -178,11 +178,7 @@ LONG __stdcall BulletClass::_vt02(volatile LONG *a1)
 namespace gamemd {
 int BulletClass::MissionStubReturnZero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BulletClass::_vt12()
-{
-  return 352; /*0x46b545*/
-}
+return 352;
 }
 } // namespace gamemd
 
@@ -190,11 +186,7 @@ int BulletClass::_vt12()
 namespace gamemd {
 int BulletClass::MissionStubReturnZero2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BulletClass::_vt11()
-{
-  return 8; /*0x46b555*/
-}
+return 8;
 }
 } // namespace gamemd
 

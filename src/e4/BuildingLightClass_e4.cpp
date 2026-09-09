@@ -6,11 +6,7 @@
 namespace gamemd {
 int BuildingLightClass::SD_vt12()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BuildingLightClass::SD_vt12()
-{
-  return 232; /*0x436905*/
-}
+return 232;
 }
 } // namespace gamemd
 
@@ -48,11 +44,7 @@ int __stdcall BuildingLightClass::SD_vt06(TechnoTypeClass *aP0, int *a1, int aP2
 namespace gamemd {
 int BuildingLightClass::SD_vt34()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BuildingLightClass::SD_vt34()
-{
-  return 0; /*0x4369e2*/
-}
+return 0;
 }
 } // namespace gamemd
 

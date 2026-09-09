@@ -3199,11 +3199,7 @@ void __thiscall TeamClass::MoveTeamToWaypoint(int **this, ScriptClass *aP1, Team
 namespace gamemd {
 int TeamClass::StubReturn160()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TeamClass::_vt12()
-{
-  return 160; /*0x6f0435*/
-}
+return 160;
 }
 } // namespace gamemd
 
@@ -3211,10 +3207,6 @@ int TeamClass::_vt12()
 namespace gamemd {
 int TeamClass::StubReturn34()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TeamClass::_vt11()
-{
-  return 34; /*0x6f0445*/
-}
+return 34;
 }
 } // namespace gamemd

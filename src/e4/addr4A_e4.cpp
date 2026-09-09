@@ -1367,11 +1367,7 @@ int __fastcall sub_4A3A10(int *a1, void **a2, void **a3, int a4)
 namespace gamemd {
 int ReturnNull()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ReturnNull()
-{
-  return 0; /*0x4a3b32*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1400,11 +1396,7 @@ HRSRC __fastcall FindResource(unsigned __int16 a1, const CHAR *a2)
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_3(std::codecvt_base *this)
-{
-  return 1; /*0x4a3bf2*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -3464,11 +3456,7 @@ __int64 Direction_InitOffsets()
 namespace gamemd {
 int AlwaysFindYRCD()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AlwaysFindYRCD()
-{
-  return 2; /*0x4a80d5*/
-}
+return 2;
 }
 } // namespace gamemd
 

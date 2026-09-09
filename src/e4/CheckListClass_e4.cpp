@@ -115,11 +115,7 @@ void __stdcall CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 // 0x4AEBA0
 int CheckListClass::COMStub_Return0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MiniStub_4aeba0()
-{
-  return 0; /*0x4aeba2*/
-}
+return 0;
 }
 
 // 0x4E1510

@@ -29,10 +29,6 @@ rc_ptr *__fastcall ConstructWDTSelection_Create_767FB0(rc_ptr_base *a1, int a2, 
 namespace gamemd {
 int sub_76BFB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_76BFB0()
-{
-  return 1; /*0x76bfb5*/
-}
+return 1;
 }
 } // namespace gamemd

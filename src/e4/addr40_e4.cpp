@@ -989,11 +989,7 @@ void *sub_403210()
 namespace gamemd {
 int sub_403460()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_403460()
-{
-  return -2147221504; /*0x403465*/
-}
+return -2147221504;
 }
 } // namespace gamemd
 
@@ -5713,11 +5709,7 @@ int __thiscall sub_40A2D0(_DWORD *this)
 namespace gamemd {
 int sub_40A770()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_40A770()
-{
-  return -2147221504; /*0x40a775*/
-}
+return -2147221504;
 }
 } // namespace gamemd
 

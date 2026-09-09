@@ -259,11 +259,7 @@ rc_ptr *__fastcall FindWDTTerritoryClass(rc_ptr_base *a1, int a2)
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_23(std::codecvt_base *this)
-{
-  return 1; /*0x7b0432*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -4050,11 +4046,7 @@ void nullsub_49()
 namespace gamemd {
 int _underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int _underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7()
-{
-  return -1; /*0x7bf233*/
-}
+return -1;
 }
 } // namespace gamemd
 

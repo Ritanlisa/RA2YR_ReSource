@@ -1255,11 +1255,7 @@ namespace ra2 {
 namespace game {
 int TechnoClass::checkMovementRestrictions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::checkMovementRestrictions(#377 *this)
-{
-  return -1; /*0x70f043*/
-}
+return -1;
 }
 } // namespace game
 } // namespace ra2

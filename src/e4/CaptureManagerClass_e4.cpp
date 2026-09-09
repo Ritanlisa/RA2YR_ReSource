@@ -1052,11 +1052,7 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int CaptureManagerClass::_vt12()
-{
-  return 80; /*0x4729a5*/
-}
+return 80;
 }
 } // namespace game
 } // namespace ra2
@@ -1066,11 +1062,7 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int CaptureManagerClass::_vt11()
-{
-  return 66; /*0x4729b5*/
-}
+return 66;
 }
 } // namespace game
 } // namespace ra2

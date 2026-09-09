@@ -5,21 +5,13 @@
 // 0x4C5AA0
 int EMPulseClass::StubReturn52()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int EMPulseClass::_vt12()
-{
-  return 52; /*0x4c5aa5*/
-}
+return 52;
 }
 
 // 0x4C5AB0
 int EMPulseClass::StubReturn55()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int EMPulseClass::_vt11()
-{
-  return 55; /*0x4c5ab5*/
-}
+return 55;
 }
 
 // 0x4C5AC0

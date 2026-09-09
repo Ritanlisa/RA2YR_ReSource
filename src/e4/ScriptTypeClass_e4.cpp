@@ -68,11 +68,7 @@ int __stdcall ScriptTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int ScriptTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScriptTypeClass::_vt11()
-{
-  return 27; /*0x691f75*/
-}
+return 27;
 }
 } // namespace gamemd
 
@@ -80,11 +76,7 @@ int ScriptTypeClass::_vt11()
 namespace gamemd {
 int ScriptTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScriptTypeClass::_vt12()
-{
-  return 564; /*0x691f85*/
-}
+return 564;
 }
 } // namespace gamemd
 

@@ -42,11 +42,7 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 // 0x5B1B40
 int MechLocomotionClass::StubReturn52()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int MechLocomotionClass::_vt09()
-{
-  return 52; /*0x5b1b45*/
-}
+return 52;
 }
 
 // 0x5B1B50

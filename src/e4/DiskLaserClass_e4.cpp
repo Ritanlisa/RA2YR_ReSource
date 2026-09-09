@@ -97,21 +97,13 @@ int __stdcall DiskLaserClass::_vt03(int a1, _DWORD *a2)
 // 0x4A7C70
 int DiskLaserClass::StubReturn64()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int DiskLaserClass::_vt12()
-{
-  return 64; /*0x4a7c75*/
-}
+return 64;
 }
 
 // 0x4A7C80
 int DiskLaserClass::StubReturn73()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int DiskLaserClass::_vt11()
-{
-  return 73; /*0x4a7c85*/
-}
+return 73;
 }
 
 // 0x4A7C90

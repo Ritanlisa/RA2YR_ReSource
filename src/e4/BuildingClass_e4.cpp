@@ -305,11 +305,7 @@ TechnoClass *__thiscall BuildingClass::ClearLimpetCheck(void *this)
 namespace gamemd {
 int BuildingClass::Mission_Guard()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::Mission_Guard(#377 *this)
-{
-  return 1824; /*0x459e75*/
-}
+return 1824;
 }
 } // namespace gamemd
 

@@ -1079,11 +1079,7 @@ int __thiscall sub_56B250(int *this, int a2)
 namespace gamemd {
 int sub_56C200()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_56C200()
-{
-  return 1; /*0x56c205*/
-}
+return 1;
 }
 } // namespace gamemd
 

@@ -572,11 +572,7 @@ int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int 
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt11()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SuperWeaponTypeClass::SD_vt11()
-{
-  return 32; /*0x6ce8f5*/
-}
+return 32;
 }
 } // namespace gamemd
 
@@ -584,11 +580,7 @@ int SuperWeaponTypeClass::SD_vt11()
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt12()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SuperWeaponTypeClass::SD_vt12()
-{
-  return 256; /*0x6ce905*/
-}
+return 256;
 }
 } // namespace gamemd
 

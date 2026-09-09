@@ -176,11 +176,7 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 // 0x72A200
 int TunnelLocomotionClass::StubReturn60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TunnelLocomotionClass::_vt09()
-{
-  return 60; /*0x72a205*/
-}
+return 60;
 }
 
 // 0x72A210

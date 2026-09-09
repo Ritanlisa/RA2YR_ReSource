@@ -242,11 +242,7 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 namespace gamemd {
 int HouseClass::vt_placeholder_00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::vt_placeholder_00(TiberianSunClassFactory *this)
-{
-  return 1; /*0x4e8245*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -254,11 +250,7 @@ int __thiscall HouseClass::vt_placeholder_00(TiberianSunClassFactory *this)
 namespace gamemd {
 int HouseClass::vt_placeholder_01()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::vt_placeholder_01(TiberianSunClassFactory *this)
-{
-  return 1; /*0x4e8255*/
-}
+return 1;
 }
 } // namespace gamemd
 

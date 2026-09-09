@@ -54,11 +54,7 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 namespace gamemd {
 int RadSiteClass::StubReturn116()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int RadSiteClass::_vt12()
-{
-  return 116; /*0x65b3a5*/
-}
+return 116;
 }
 } // namespace gamemd
 
@@ -66,11 +62,7 @@ int RadSiteClass::_vt12()
 namespace gamemd {
 int RadSiteClass::StubReturn69()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int RadSiteClass::_vt11()
-{
-  return 69; /*0x65b3c5*/
-}
+return 69;
 }
 } // namespace gamemd
 

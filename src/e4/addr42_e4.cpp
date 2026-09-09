@@ -1558,11 +1558,7 @@ void __thiscall sub_4266D0(void *this)
 namespace gamemd {
 int sub_426740()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_426740()
-{
-  return 2816; /*0x426745*/
-}
+return 2816;
 }
 } // namespace gamemd
 
@@ -2529,11 +2525,7 @@ int __thiscall sub_429360(ApplicationClass *this)
 namespace gamemd {
 int sub_4293E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4293E0(ApplicationClass *this)
-{
-  return 1; /*0x4293e5*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -2541,11 +2533,7 @@ int __thiscall sub_4293E0(ApplicationClass *this)
 namespace gamemd {
 int sub_4293F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4293F0(ApplicationClass *this)
-{
-  return 1; /*0x4293f5*/
-}
+return 1;
 }
 } // namespace gamemd
 

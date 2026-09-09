@@ -256,11 +256,7 @@ int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 namespace gamemd {
 int sub_730AD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_730AD0()
-{
-  return 16454; /*0x730ad5*/
-}
+return 16454;
 }
 } // namespace gamemd
 
@@ -268,11 +264,7 @@ int sub_730AD0()
 namespace gamemd {
 int sub_730AE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_730AE0()
-{
-  return 240; /*0x730ae5*/
-}
+return 240;
 }
 } // namespace gamemd
 

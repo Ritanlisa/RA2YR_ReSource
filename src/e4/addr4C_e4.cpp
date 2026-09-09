@@ -2813,11 +2813,7 @@ char sub_4C9160()
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_5(std::codecvt_base *this)
-{
-  return 1; /*0x4c91b2*/
-}
+return 1;
 }
 } // namespace gamemd
 

@@ -68,11 +68,7 @@ void *ScenarioClass_CopyStartPositions()
 namespace gamemd {
 char ScenarioClass::initUnits()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::initUnits(MultiplayerBattle *this)
-{
-  return 1; /*0x5c0e22*/
-}
+return 1;
 }
 } // namespace gamemd
 
@@ -80,11 +76,7 @@ char __thiscall ScenarioClass::initUnits(MultiplayerBattle *this)
 namespace gamemd {
 char ScenarioClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ScenarioClass::_vt1()
-{
-  return 0; /*0x5c0e32*/
-}
+return 0;
 }
 } // namespace gamemd
 

@@ -454,11 +454,7 @@ int __stdcall WonlineStringDialogControl_28_::_vt07(int a1, int a2)
 namespace gamemd {
 int WonlineStringDialogControl_28::StubReturnFalse(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt06(int a1)
-{
-  return 0; /*0x7ad612*/
-}
+return 0;
 }
 } // namespace gamemd
 

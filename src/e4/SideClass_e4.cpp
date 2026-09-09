@@ -371,11 +371,7 @@ int __stdcall SideClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP
 namespace gamemd {
 int SideClass::StubReturn180()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SideClass::_vt12()
-{
-  return 180; /*0x6a4915*/
-}
+return 180;
 }
 } // namespace gamemd
 
@@ -383,11 +379,7 @@ int SideClass::_vt12()
 namespace gamemd {
 int SideClass::StubReturn28()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SideClass::_vt11()
-{
-  return 28; /*0x6a4925*/
-}
+return 28;
 }
 } // namespace gamemd
 

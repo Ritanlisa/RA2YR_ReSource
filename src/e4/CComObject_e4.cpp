@@ -1706,11 +1706,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt43(int a1, int a2, int a3, con
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::COMStub_Return0(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt12(int a1, int a2, int a3, int a4)
-{
-  return 0; /*0x7ab332*/
-}
+return 0;
 }
 } // namespace gamemd
 
@@ -1718,11 +1714,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt12(int a1, int a2, int a3, int
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt25(int a1, int a2, int a3)
-{
-  return 0; /*0x7ab342*/
-}
+return 0;
 }
 } // namespace gamemd
 

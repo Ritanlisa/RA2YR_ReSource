@@ -24,11 +24,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450A()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450A(#377 *this)
-{
-  return 450; /*0x5b2e15*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2
@@ -38,11 +34,7 @@ namespace ra2 {
 namespace game {
 int MissionClass::Return450B()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::Return450B(#377 *this)
-{
-  return 450; /*0x5b2e25*/
-}
+return 450;
 }
 } // namespace game
 } // namespace ra2

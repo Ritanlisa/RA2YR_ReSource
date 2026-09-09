@@ -4243,11 +4243,7 @@ LABEL_16:
 namespace gamemd {
 int sub_5EF270()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5EF270()
-{
-  return 24; /*0x5ef275*/
-}
+return 24;
 }
 } // namespace gamemd
 

@@ -54,11 +54,7 @@ BOOL __thiscall Surface_IsLocked(_DWORD *this)
 // 0x4115C0
 char Surface::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char Surface::_vt33()
-{
-  return 0; /*0x4115c2*/
-}
+return 0;
 }
 
 // 0x4A4780

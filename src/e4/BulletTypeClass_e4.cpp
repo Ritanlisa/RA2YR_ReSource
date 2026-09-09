@@ -651,21 +651,13 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // 0x46C850
 int BulletTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BulletTypeClass::_vt11()
-{
-  return 9; /*0x46c855*/
-}
+return 9;
 }
 
 // 0x46C860
 int BulletTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BulletTypeClass::_vt12()
-{
-  return 760; /*0x46c865*/
-}
+return 760;
 }
 
 // 0x46C870

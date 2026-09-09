@@ -523,21 +523,13 @@ LABEL_6:
 // 0x71E330
 int TerrainTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TerrainTypeClass::_vt11()
-{
-  return 37; /*0x71e335*/
-}
+return 37;
 }
 
 // 0x71E340
 int TerrainTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TerrainTypeClass::_vt12()
-{
-  return 700; /*0x71e345*/
-}
+return 700;
 }
 
 // 0x71E350

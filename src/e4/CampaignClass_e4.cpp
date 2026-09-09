@@ -181,11 +181,7 @@ int __stdcall CampaignClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int CampaignClass::StubReturn928()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int CampaignClass::_vt12()
-{
-  return 928; /*0x46d075*/
-}
+return 928;
 }
 } // namespace gamemd
 
@@ -193,11 +189,7 @@ int CampaignClass::_vt12()
 namespace gamemd {
 int CampaignClass::StubReturn10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int CampaignClass::_vt11()
-{
-  return 10; /*0x46d085*/
-}
+return 10;
 }
 } // namespace gamemd
 

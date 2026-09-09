@@ -171,11 +171,7 @@ int __thiscall WebBrowser::_vt02(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::COMStub_Return0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt04(WebBrowser *this)
-{
-  return 0; /*0x773b02*/
-}
+return 0;
 }
 } // namespace gamemd
 

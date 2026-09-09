@@ -1039,11 +1039,7 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::StubReturn100()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SlaveManagerClass::_vt12()
-{
-  return 100; /*0x6b1375*/
-}
+return 100;
 }
 } // namespace game
 } // namespace ra2
@@ -1053,11 +1049,7 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::StubReturn72()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int SlaveManagerClass::_vt11()
-{
-  return 72; /*0x6b1385*/
-}
+return 72;
 }
 } // namespace game
 } // namespace ra2

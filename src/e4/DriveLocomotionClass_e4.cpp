@@ -113,11 +113,7 @@ int __stdcall DriveLocomotionClass::_vt03(int a1, _DWORD *a2)
 // 0x4B4CF0
 int DriveLocomotionClass::StubReturn112()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int DriveLocomotionClass::_vt09()
-{
-  return 112; /*0x4b4cf5*/
-}
+return 112;
 }
 
 // 0x4B4D00

@@ -213,11 +213,7 @@ int __stdcall WaveClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int WaveClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaveClass::_vt12()
-{
-  return 576; /*0x75f885*/
-}
+return 576;
 }
 } // namespace gamemd
 

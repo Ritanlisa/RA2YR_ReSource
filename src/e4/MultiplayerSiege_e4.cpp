@@ -116,11 +116,7 @@ LABEL_12:
 // 0x5CA7E0
 char MultiplayerSiege::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char MultiplayerSiege::_vt15()
-{
-  return 0; /*0x5ca7e2*/
-}
+return 0;
 }
 
 // 0x5CA800

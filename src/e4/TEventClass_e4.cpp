@@ -692,11 +692,7 @@ int __stdcall TEventClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int 
 namespace gamemd {
 int TEventClass::StubReturn88()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TEventClass::_vt12()
-{
-  return 88; /*0x71fa55*/
-}
+return 88;
 }
 } // namespace gamemd
 
@@ -704,11 +700,7 @@ int TEventClass::_vt12()
 namespace gamemd {
 int TEventClass::StubReturn48()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TEventClass::_vt11()
-{
-  return 48; /*0x71fa65*/
-}
+return 48;
 }
 } // namespace gamemd
 

@@ -30,21 +30,13 @@ int __thiscall NullModemClass::_vt11(int *this, int a2)
 // 0x5F3520
 int NullModemClass::COMStub_Return0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall NullModemClass::_vt05(int a1)
-{
-  return 0; /*0x5f3522*/
-}
+return 0;
 }
 
 // 0x5F3530
 int NullModemClass::Send(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall NullModemClass::_vt06(int a1)
-{
-  return 0; /*0x5f3532*/
-}
+return 0;
 }
 
 // 0x5F3540

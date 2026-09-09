@@ -1134,21 +1134,13 @@ char __stdcall JumpjetLocomotionClass::sub_4B0EF0(int a1, int a2)
 // 0x4B4820
 int JumpjetLocomotionClass::StubReturnTwo(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4820(int a1)
-{
-  return 2; /*0x4b4825*/
-}
+return 2;
 }
 
 // 0x4B4870
 int JumpjetLocomotionClass::StubReturnZero_1(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4870(int a1)
-{
-  return 0; /*0x4b4872*/
-}
+return 0;
 }
 
 // 0x4B4880

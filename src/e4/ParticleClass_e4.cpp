@@ -247,11 +247,7 @@ int *__stdcall ParticleClass::_vt66(int a1)
 namespace gamemd {
 int ParticleClass::CheckStateFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleClass::_vt30()
-{
-  return 3; /*0x62d775*/
-}
+return 3;
 }
 } // namespace gamemd
 
@@ -324,11 +320,7 @@ int __stdcall ParticleClass::_vt03(int a1, _DWORD *a2)
 namespace gamemd {
 int ParticleClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ParticleClass::_vt12()
-{
-  return 312; /*0x62d975*/
-}
+return 312;
 }
 } // namespace gamemd
 

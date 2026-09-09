@@ -367,11 +367,7 @@ int __thiscall TaskForceClass::_vt13(int this, int *a2)
 namespace gamemd {
 int TaskForceClass::StubReturn33()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TaskForceClass::_vt11()
-{
-  return 33; /*0x6e87d5*/
-}
+return 33;
 }
 } // namespace gamemd
 
@@ -379,11 +375,7 @@ int TaskForceClass::_vt11()
 namespace gamemd {
 int TaskForceClass::StubReturn212()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int TaskForceClass::_vt12()
-{
-  return 212; /*0x6e87e5*/
-}
+return 212;
 }
 } // namespace gamemd
 

@@ -69,11 +69,7 @@ int __stdcall ScriptClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 namespace gamemd {
 int ScriptClass::StubReturn26()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScriptClass::_vt11()
-{
-  return 26; /*0x691ec5*/
-}
+return 26;
 }
 } // namespace gamemd
 
@@ -81,10 +77,6 @@ int ScriptClass::_vt11()
 namespace gamemd {
 int ScriptClass::StubReturn48()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int ScriptClass::_vt12()
-{
-  return 48; /*0x691ed5*/
-}
+return 48;
 }
 } // namespace gamemd

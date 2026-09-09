@@ -3335,11 +3335,7 @@ int sub_5ADCF0()
 namespace gamemd {
 int sub_5AE4F0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_5AE4F0(int a1)
-{
-  return 0; /*0x5ae4f2*/
-}
+return 0;
 }
 } // namespace gamemd
 

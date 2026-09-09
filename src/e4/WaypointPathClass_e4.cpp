@@ -254,11 +254,7 @@ int __stdcall WaypointPathClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 namespace gamemd {
 int WaypointPathClass::StubReturn64()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WaypointPathClass::_vt12()
-{
-  return 64; /*0x763e05*/
-}
+return 64;
 }
 } // namespace gamemd
 

@@ -557,11 +557,7 @@ void sub_556DF0()
 namespace gamemd {
 char Game::Stub3(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Game::Stub3(IUnknown *aP0)
-{
-  return 0; /*0x5865e2*/
-}
+return 0;
 }
 } // namespace gamemd
 
