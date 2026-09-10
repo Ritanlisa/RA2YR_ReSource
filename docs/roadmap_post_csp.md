@@ -4,13 +4,15 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-10 G4 会话更新：G4 证据补全 + 舰队波 1 大丰收）**：
+> **执行状态首查表（2026-09-11 G5 会话更新：证据补全大轮 + 舰队波 +1,259）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
-> | **G4 证据补全轮** | ✅ **完成（2026-09-10，提交 72175ec7 + 重锚）** | vtable_offsets **+208 类**槽位真值（e4 类头方法地址 × vtable_signatures 槽位地址匹配 + 多数投票 ≥2）解锁 #40；**639 个模板实例 vtable 全局符号**三方落盘（signals vt_ + e4_globals extern + IDA 改名）解锁 #41；member_lookup **+139 容器实例类**语义成员（含 vfptr@0）；CRT B7 区 **87 个全局**结构名声明解锁 #30/#31/#37；#26 破案=FactoryClass 误归属（非布局错位，13 调用方 + YRpp 六字段双射）四方改名迁移；#48 三个 MI thunk signals 条目 + completed(+3)；#28 根因收尾（全局 Count→CRTStreamCount）；偏移→OO refresh（rewritten 9,887 / unmapped 5,425，分母缩小系已译体退出）；e4_globals keep-loop 教训（0X 大写前缀不兼容）；globals 审计器使用行四形态误报修复 |
-> | **G3 舰队波 1** | ✅ **+1,360**（提交 d9b34ee0 + 8c4cce14 + 重锚） | completed **1,106 → 2,476** / pending **15,705**。Agent A（VectorClass 桶）：**1478 → 113 pending（1,339 完成）**——规则生成器 + stdio JSON-RPC 批量驱动（replace→verify 4 并行→mark，失败自动回滚）；#24/#28/#41/#40 根因确认消除。Agent B（gap2global 551）：0 完成，定位系统性 blocker **#50**（生成器丢 ECX this，修复后 534 可立即翻）；Agent C（gap2 sys+obj）：+16，发现 **#53 CellClass 布局债（src header 与二进制差 -36B，影响全库）** 与 **#54 验证器 namespace 缺陷**（同会话已修复 + 13 回归 PASS） |
-> | **G3 舰队波 2** | 🔶 **两次中断，残留已核验（提交 8c4cce14 + 16fa3497）** | 三 agent 任务书就绪且两次发射均被运行环境中断；残留核验：addr40 audio mixer 族 5 函数 + 0x403470 共 **6 个 verified** 落账，tolower 误译按纪律回滚。桶清单不变：addr40+49（623）/ addr7C（557）/ addr77+72+4E（782）。**建议下一会话优先用 Agent A 的规则生成器+stdio 直驱范式**（.omo/fleetA_gen.py + fleetA_drive.py）替代交互式 subagent——对中断鲁棒且波 1 已实证单桶 1,339 产出 |
+> | **G5 证据补全** | ✅ **完成（2026-09-11，提交 0db19f5e + 重锚）** | **10,744 DataGlobal 全局批产**（pending 块引用全扫 + IDA 批查，解锁 #67-71/#57）；**#50 gap2 重生成**（520 Gap2Recv 接收者类 + member_lookup/vtable_offsets 用验证器 leaf 保证偏移一致 + signals._member_by_name 383 类）；#51 两块伪码 live 置换；vtable 槽位 +614/213 类（自有表锚定，AbstractClass 修正 0x7E1F50，回归 119/120）；#62 phantom 8 条补建；**验证器 ns 前缀修复**（单行 namespace+def 类提取）；OO refresh 2,273 保留 |
+> | **G5 舰队波** | ✅ **completed 2,477 → 3,736（+1,259 全 CFG 验证）** | g5_fleet.py 直驱（fleetA 规则泛化）：addr7C **414**/addr40 245/addr77 209/addr72 149/addr4E 96/addr49 46/gap2 ~91（Gap2Recv 机制首批）；PASS 率 addr 桶 97-100%、gap2 59%；生成器加固（三元/memory-chain/断词/残留 cast 跳过 + signals↔extern 同步 1,330）；波后括号零新增/审计基线维持 |
+> | **G4 证据补全轮** | ✅ 完成（2026-09-10，72175ec7） | vtable_offsets +208 类 + 639 vt_ 全局 + CRT 87 全局 + #26 FactoryClass 破案 |
+> | **G3 舰队波 1** | ✅ +1,360（VectorClass 桶） | 直驱范式确立 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **14,445**；completed **3,736**。续波队列：gap2 长尾（too-long 169/bare-this-novfptr 143）→ e4 free-with-this 1,189（#56 族，Gap2Recv 机制复用=改 synth_signature）→ addr7D/CreateTeam/Jumpjet 等类桶 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -1460,6 +1462,45 @@ CFG 双射规则写进任务书。单波 ~78 分钟 / +118 完成 / 全部 verif
    CRT 全局声明批补（#30/#31/#37，解锁 CRT 长尾）；
 4. 每波后固定动作：括号复扫 + annotations_audit + audit_consistency +
    提交重锚（舰队事故模式已两次实证——修复脚本化待做）。
+
+---
+
+## 执行日志 — 2026-09-11 G5 会话：证据补全大轮 + 舰队波（completed 2,477 → 3,736）
+
+### 证据补全（提交 0db19f5e + 重锚）
+
+| 项 | 产出 | 说明 |
+|---|---|---|
+| **无名全局批产** | **10,744 DataGlobal_<HEX> extern** | 全部 pending 块引用扫描（e4 + _gap2 + gap2_defs，11,548 引用地址）→ IDA 批查名/尺寸/类型 → extern + signals.globals 2,056→12,800。**不在 IDA 改名**（验证器 IDA 侧按 dword_XXX 形态提取事件，两侧按地址会合）。解锁 #67-71/#57 全局长尾 |
+| **#50 gap2 重生成** | 520 Gap2Recv_<HEX> 接收者类 | 551 pending 四路分类：类限定名(真类)/类型化 this(真类)/裸 this(合成类)/无 this(自由函数补参)。合成类 member_lookup M<off> + vtable_offsets Vf<off> **用验证器自身 leaf 提取**（偏移语义保证一致）；signals._member_by_name 同步 383 类 |
+| **#51 清偿** | 0x6686C0/0x74D7C0 伪码置换 | live IDA 重取（ResetRules(RulesClass*)/VeinholeMonsterClass::Update），def 迁成员形态 |
+| **vtable 槽位补齐** | +614 槽/213 类 | 自有表锚定（slot0 归属本类 > 投票）+ 决定性投票（≥2 且领先）；AbstractClass 修正 0x7E3EBC→0x7E1F50；completed 池抽样回归 119/120 |
+| **#62 清偿** | 8 条 loc_ 槽位函数 signals 补建 | VectorClass 实例 73B 同型体族，#48 先例形态（注意 signals 名用 `::` 非 `__` 形态） |
+| **验证器修复** | `_extract_function_body` ns 前缀剥离 | 单行 `namespace X { ret Cls::M() {` 形态类名提取失败→free-function 豁免路径（负测试暴露假 PASS 风险后修复） |
+| **OO refresh** | 2,273 已译记录保留 | 5,692 rewritten/5,421 unmapped（分母=已译体退出）；DataGlobal 全部幸存 keep-loop；括号 HEAD 对比零新增 |
+
+**试点验证**：0x6DC420 Gap2Recv::GetHeightMap 全流程 PASS+completed——接收者类机制端到端成立（合成类 member 事件与 IDA 侧按偏移对齐）。
+
+### 舰队波（提交 e504cab5 + 重锚；g5_fleet.py 直驱范式）
+
+| 桶 | PASS/替换 | 说明 |
+|---|---|---|
+| addr7C(CRT) | **414/435** | 全局批产直接解锁（tolower/stdio 族历史 blocker 消解） |
+| addr40 | 245/248 | |
+| addr77 | 209/216 | |
+| addr72 | 149/151 | |
+| addr4E | 96/97 | |
+| addr49 | 46/46 | |
+| gap2 | ~91 | Gap2Recv 机制首批；易收割池尽后残部 0/11 诚实回滚 |
+
+生成器加固（g5_fleet.py = fleetA 规则泛化）：三元/memory-chain/#NN 类型/断词(mangled-keyword)/残留 this-cast 跳过；`*this`→`this->vfptr`（layout 有 vfptr 时）；signals.globals↔e4_globals extern 差集同步 1,330（A8ED54 类"signals 有名无 extern"缺口）。
+
+### 遗留与下一步
+
+- **gap2 剩余 458 pending**：too-long 169（>60 行）/vftable-ref/bare-this-novfptr 143（`*this` 用法但成员提取空——需 IDA 侧确认是否 READ(member,0) 事件）/三元 7。bare-this-novfptr 族需逐个判定。
+- **e4 free-with-this 1,189**（#56 族）：Gap2Recv 机制可复用——改 gen_e4_materialize synth_signature 对 ownerless-thiscall 出成员形态即可（本会话未做，机制已验证）。
+- **PASS 率悬殊**：gap2 59%（长尾复杂体）vs addr 桶 97-100%（Globals 解锁后形态规整）。
+- 审计基线：注解 8,775/0/0；一致性 38/3。
 
 ---
 
