@@ -904,11 +904,7 @@ void *sub_403210()
 namespace gamemd {
 int sub_403470(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_403470(int a1, int a2)
-{
-  return EndBufferMixer((int *)(a1 + 104), a2);
-}
+return EndBufferMixer((int *)(a1 + 104), a2);
 }
 } // namespace gamemd
 
@@ -1978,10 +1974,9 @@ int __thiscall sub_405430(int this)
 namespace gamemd {
 int sub_405490()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_405490(_DWORD *this)
+int sub_405490(unsigned int * this_)
 {
-  return *(this + 86); /*0x405496*/
+return this_[86];
 }
 }
 } // namespace gamemd
