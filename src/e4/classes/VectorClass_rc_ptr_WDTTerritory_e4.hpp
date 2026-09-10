@@ -5,9 +5,9 @@ namespace gamemd {
 struct VectorClass_rc_ptr_WDTTerritory {
     void* vfptr;  // minimal E2 declaration
     unsigned int * loc_76B6C0(char a2);  // 0x76B6C0
+    char Release(int a2, unsigned int * a3);  // 0x76B8C0
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x76B760
     char AddRef(int a2);  // 0x76B870
-    char Release(int a2, unsigned int * a3);  // 0x76B8C0
     int ddtor();  // 0x76B9E0
     int GetSize(int a2);  // 0x76BA10
     unsigned int GetCapacity(int a2);  // 0x76BA50

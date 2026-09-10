@@ -43,7 +43,7 @@ retn    4
 */
 } }
 // 0x402F60
-namespace gamemd { int ProcessAudioMixerFrame() {
+namespace gamemd { int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ProcessAudioMixerFrame(int this)
 {
@@ -347,7 +347,7 @@ retn
 */
 } }
 // 0x403A80
-namespace gamemd { int DumpAudioDeviceDebug(void* a1, int a2) {
+namespace gamemd { int DumpAudioDeviceDebug(void* a1, char* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DumpAudioDeviceDebug(_DWORD *a1, void (__thiscall *a2)(char *), int a3)
 {
@@ -661,7 +661,7 @@ retn    4
 */
 } }
 // 0x4048B0
-namespace gamemd { int PrefetchAudioSamples() {
+namespace gamemd { int Gap2Recv_4048B0::PrefetchAudioSamples() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PrefetchAudioSamples(_DWORD *this)
 {
@@ -1065,7 +1065,7 @@ retn
 */
 } }
 // 0x4055C0
-namespace gamemd { int UpdateVoicePlayback() {
+namespace gamemd { int Gap2Recv_4055C0::UpdateVoicePlayback() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall VoiceClass_Update(int this)
 {
@@ -1663,7 +1663,7 @@ retn
 */
 } }
 // 0x40AA70
-namespace gamemd { bool ProcessAudioChannelMovement() {
+namespace gamemd { bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall ProcessAudioChannelMovement(int *this)
 {
@@ -2019,7 +2019,7 @@ retn
 */
 } }
 // 0x415C60
-namespace gamemd { int ProcessTechnoMovementAction() {
+namespace gamemd { int Gap2Recv_415C60::ProcessTechnoMovementAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ProcessTechnoMovementAction(char *this)
 {
@@ -2318,7 +2318,7 @@ retn
 */
 } }
 // 0x4197C0
-namespace gamemd { void* FindSpiralMoveTarget(int a1) {
+namespace gamemd { void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall FindSpiralMoveTarget(void **this, int a2)
 {
@@ -2771,7 +2771,7 @@ retn    4
 */
 } }
 // 0x41AF80
-namespace gamemd { int SaveAircraftToINI() {
+namespace gamemd { int Gap2Recv_41AF80::SaveAircraftToINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SaveAircraftToINI(char *this)
 {
@@ -2980,7 +2980,7 @@ retn
 */
 } }
 // 0x41C250
-namespace gamemd { int CreateInstanceCOM() {
+namespace gamemd { int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter, int dwClsContext) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateInstanceCOM(#24 *ppv, #33 *rclsid, int pUnkOuter, int dwClsContext)
 {
@@ -3086,7 +3086,7 @@ retn    0Ch
 */
 } }
 // 0x421350
-namespace gamemd { int RenderAlphaShapes() {
+namespace gamemd { int Gap2Recv_421350::RenderAlphaShapes() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderAlphaShapes(int *this)
 {
@@ -3597,7 +3597,7 @@ retn
 */
 } }
 // 0x429830
-namespace gamemd { double ComputeMovementWeight(void* a1, void* a2, int a3, int a4, int a5) {
+namespace gamemd { double Gap2Recv_429830::ComputeMovementWeight(void* a2, void* a3, char a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall ComputeMovementWeight(int this, int *a2, _DWORD *a3, char a4, int a5, int a6)
 {
@@ -3929,7 +3929,7 @@ retn    14h
 */
 } }
 // 0x42B210
-namespace gamemd { int ParsePathDirections(int a1, void* a2) {
+namespace gamemd { char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParsePathDirections(void *this, int a2, _DWORD *a3)
 {
@@ -4255,7 +4255,7 @@ retn    8
 */
 } }
 // 0x42B7F0
-namespace gamemd { void* SimplifyPathFilter(void* a1, int a2) {
+namespace gamemd { void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Path_FilterSimplify(void *this, _DWORD *a2, int a3)
 {
@@ -4916,7 +4916,7 @@ retn    8
 */
 } }
 // 0x42E1C0
-namespace gamemd { int RenderTooltipBorder() {
+namespace gamemd { int Gap2Recv_42E1C0::RenderTooltipBorder() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderTooltipBorder(int this)
 {
@@ -5314,7 +5314,7 @@ retn
 */
 } }
 // 0x430250
-namespace gamemd { int RenderBuildingTag(int a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RenderBuildingTag(int this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -5714,7 +5714,7 @@ retn    14h
 */
 } }
 // 0x430AC0
-namespace gamemd { int RenderAlliedBuildingTags(int a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -5835,7 +5835,7 @@ retn    14h
 */
 } }
 // 0x430BA0
-namespace gamemd { void PlacePlayerBeacon(int a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
@@ -6287,7 +6287,7 @@ retn    14h
 */
 } }
 // 0x432C10
-namespace gamemd { int COMStub_432C10(int a1) {
+namespace gamemd { int Gap2Recv_432C10::COMStub_432C10(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_432C10(_DWORD *this, int a2)
 {
@@ -6313,7 +6313,7 @@ retn    4
 */
 } }
 // 0x438BF0
-namespace gamemd { int DispatchBuildingAudioEvents() {
+namespace gamemd { int Gap2Recv_438BF0::DispatchBuildingAudioEvents() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DispatchBuildingAudioEvents(int *this)
 {
@@ -6763,7 +6763,7 @@ retn
 */
 } }
 // 0x43B150
-namespace gamemd { bool DetectNearbyAlliedThreat() {
+namespace gamemd { bool Gap2Recv_43B150::DetectNearbyAlliedThreat() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall DetectNearbyAlliedThreat(#375 **this)
 {
@@ -7215,7 +7215,7 @@ retn
 */
 } }
 // 0x43C0D0
-namespace gamemd { void* CreateDominatorDestructionEffects() {
+namespace gamemd { void* Gap2Recv_43C0D0::CreateDominatorDestructionEffects() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall CreateDominatorDestructionEffects(int *this)
 {
@@ -7451,7 +7451,7 @@ retn
 */
 } }
 // 0x4500F0
-namespace gamemd { void ProcessAutoProduction() {
+namespace gamemd { void Gap2Recv_4500F0::ProcessAutoProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ProcessAutoProduction(int *this)
 {
@@ -7860,7 +7860,7 @@ retn
 */
 } }
 // 0x455F10
-namespace gamemd { int MarkBuildingFoundationCells(int a1) {
+namespace gamemd { char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MarkBuildingFoundationCells(int *this, int a2)
 {
@@ -8330,7 +8330,7 @@ retn    4
 */
 } }
 // 0x4561F0
-namespace gamemd { int RecalculateBuildingFoundation() {
+namespace gamemd { int Gap2Recv_4561F0::RecalculateBuildingFoundation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RecalculateBuildingFoundation(_DWORD **this)
 {
@@ -8896,7 +8896,7 @@ retn
 */
 } }
 // 0x458330
-namespace gamemd { void* PlayHealthDependentBuildingAnim() {
+namespace gamemd { char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall PlayHealthDependentBuildingAnim(int *this)
 {
@@ -9334,7 +9334,7 @@ retn
 */
 } }
 // 0x459CA0
-namespace gamemd { int ProcessDataCellClass() {
+namespace gamemd { char Gap2Recv_459CA0::ProcessDataCellClass() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_459CA0(_DWORD *this)
 {
@@ -9477,7 +9477,7 @@ retn
 }
 }
 // 0x465570
-namespace gamemd { void* CalculateBuildingFoundationBounds(void* a1) {
+namespace gamemd { void* Gap2Recv_465570::CalculateBuildingFoundationBounds(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall CalculateBuildingFoundationBounds(int *this, int *a2)
 {
@@ -10079,7 +10079,7 @@ retn    4
 */
 } }
 // 0x471890
-namespace gamemd { int SmallFunc_471890() {
+namespace gamemd { int Gap2Recv_471890::SmallFunc_471890() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_471890(int this)
 {
@@ -10177,7 +10177,7 @@ retn
 */
 } }
 // 0x47BDB0
-namespace gamemd { int GetBridgeCellColor(void* a1, int a2) {
+namespace gamemd { int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GetBridgeCellColor(int this, _BYTE *a2, char a3)
 {
@@ -10525,7 +10525,7 @@ retn    8
 */
 } }
 // 0x47C060
-namespace gamemd { int GetCellRadarColors(int a1, int a2) {
+namespace gamemd { char Gap2Recv_47C060::GetCellRadarColors(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall GetCellRadarColors(int this, int a2, int a3)
 {
@@ -10995,7 +10995,7 @@ retn    8
 */
 } }
 // 0x4838E0
-namespace gamemd { int IsCoordValidMap(int a1) {
+namespace gamemd { char Gap2Recv_4838E0::IsCoordValidMap(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_IsCoordValid(int this, int a2)
 {
@@ -11169,7 +11169,7 @@ retn    4
 */
 } }
 // 0x486E30
-namespace gamemd { int Helper_486E30() {
+namespace gamemd { int Gap2Recv_486E30::Helper_486E30() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_486E30(__int16 *this)
 {
@@ -11251,7 +11251,7 @@ retn
 }
 }
 // 0x48DF30
-namespace gamemd { int LookupNameIndex() {
+namespace gamemd { int Gap2Recv_48DF30::LookupNameIndex() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LookupNameIndex(void *this)
 {
@@ -11319,7 +11319,7 @@ retn
 */
 } }
 // 0x49B930
-namespace gamemd { int UpdateScoreScreenStatistics() {
+namespace gamemd { char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateScoreScreenStatistics(int this)
 {
@@ -11781,7 +11781,7 @@ retn
 */
 } }
 // 0x49E740
-namespace gamemd { int SmallFunc_49E740(void* a1) {
+namespace gamemd { char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SmallFunc_49E740(int this, _DWORD *a2)
 {
@@ -11882,7 +11882,7 @@ retn    4
 */
 } }
 // 0x4A3660
-namespace gamemd { int RenderTactical3DScene(int a1) {
+namespace gamemd { int Gap2Recv_4A3660::RenderTactical3DScene(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4A3660(_DWORD *this, int a2)
 {
@@ -12209,7 +12209,7 @@ retn    4
 */
 } }
 // 0x4A42F0
-namespace gamemd { int InitializeDDraw() {
+namespace gamemd { char InitializeDDraw(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall InitializeDDraw(int a1, int a2, int a3, int a4)
 {
@@ -12505,7 +12505,7 @@ retn    8
 */
 } }
 // 0x4B5AB0
-namespace gamemd { int SmallFunc_4B5AB0() {
+namespace gamemd { int Gap2Recv_4B5AB0::SmallFunc_4B5AB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4B5AB0(int this)
 {
@@ -12544,7 +12544,7 @@ retn
 */
 } }
 // 0x4C5370
-namespace gamemd { int Helper_4C5370() {
+namespace gamemd { int Gap2Recv_4C5370::Helper_4C5370() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4C5370(int this)
 {
@@ -12583,7 +12583,7 @@ retn
 */
 } }
 // 0x4C54E0
-namespace gamemd { int ApplyEMPPulseEffect(int a1) {
+namespace gamemd { int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ApplyEMPPulseEffect(int this, int a2)
 {
@@ -13091,7 +13091,7 @@ retn    4
 */
 } }
 // 0x4CB760
-namespace gamemd { void* TerrainInitMap(void* a1, int a2) {
+namespace gamemd { char* TerrainInitMap(char* Destination, char* Source, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall TerrainInitMap(char *Destination, char *Source, int a3)
 {
@@ -13150,7 +13150,7 @@ retn    8
 */
 } }
 // 0x4CB7C0
-namespace gamemd { void* BuildResultPacket(void* a1, void* a2) {
+namespace gamemd { char* BuildResultPacket(char* Destination, char* Source, char* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall BuildResultPacket(char *Destination, char *Source, const char *a3)
 {
@@ -13222,7 +13222,7 @@ retn    8
 */
 } }
 // 0x4CBC40
-namespace gamemd { void* WalkPathfindingLine(void* a1, int a2, void* a3, int a4, int a5) {
+namespace gamemd { void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall WalkPathfindingLine(int *this, int *a2, int a3, int *a4, int a5, int a6)
 {
@@ -13620,7 +13620,7 @@ retn    14h
 */
 } }
 // 0x4CE4B0
-namespace gamemd { int ProcessDataHelper(void* a1, int a2) {
+namespace gamemd { int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4CE4B0(_DWORD *this, int *a2, int a3)
 {
@@ -13759,7 +13759,7 @@ retn
 }
 }
 // 0x4DC340
-namespace gamemd { int DrawFootTargetLine() {
+namespace gamemd { char Gap2Recv_4DC340::DrawFootTargetLine() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DrawFootTargetLine(int *this)
 {
@@ -14239,7 +14239,7 @@ retn
 */
 } }
 // 0x4E3320
-namespace gamemd { int GetResourceIDHardcodedCSF() {
+namespace gamemd { int Gap2Recv_4E3320::GetResourceIDHardcodedCSF() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E3320(void *this)
 {
@@ -14320,7 +14320,7 @@ retn
 */
 } }
 // 0x4E37D0
-namespace gamemd { int GetResourceID2CSF() {
+namespace gamemd { int Gap2Recv_4E37D0::GetResourceID2CSF() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E37D0(void *this)
 {
@@ -14401,7 +14401,7 @@ retn
 */
 } }
 // 0x4E41D0
-namespace gamemd { int GetResourceIDCSF() {
+namespace gamemd { int Gap2Recv_4E41D0::GetResourceIDCSF() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID(void *this)
 {
@@ -14482,7 +14482,7 @@ retn
 */
 } }
 // 0x4E4E60
-namespace gamemd { int GetResourceID3CSF() {
+namespace gamemd { int Gap2Recv_4E4E60::GetResourceID3CSF() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID3(void *this)
 {
@@ -14563,7 +14563,7 @@ retn
 */
 } }
 // 0x4E5940
-namespace gamemd { int GetResourceID4CSF() {
+namespace gamemd { int Gap2Recv_4E5940::GetResourceID4CSF() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CSF_GetResourceID4(void *this)
 {
@@ -14644,7 +14644,7 @@ retn
 */
 } }
 // 0x4F9F70
-namespace gamemd { int COMStub_4F9F70(int a1, int a2) {
+namespace gamemd { char Gap2Recv_4F9F70::COMStub_4F9F70(int a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4F9F70(void *this, int a2, char a3)
 {
@@ -14663,7 +14663,7 @@ retn    8
 */
 } }
 // 0x4FD9A0
-namespace gamemd { int ValidateAIBuildAffordability() {
+namespace gamemd { int Gap2Recv_4FD9A0::ValidateAIBuildAffordability() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ValidateAIBuildAffordability(int this)
 {
@@ -15176,7 +15176,7 @@ retn
 */
 } }
 // 0x504860
-namespace gamemd { int Team_Helper(int a1) {
+namespace gamemd { int Gap2Recv_504860::Team_Helper(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_504860(_DWORD *this, int a2)
 {
@@ -15231,7 +15231,7 @@ retn    4
 */
 } }
 // 0x507B80
-namespace gamemd { int CollectSuperWeaponBuildingTypes(int a1, int a2) {
+namespace gamemd { int Gap2Recv_507B80::CollectSuperWeaponBuildingTypes(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, int a3)
 {
@@ -15555,7 +15555,7 @@ retn    8
 */
 } }
 // 0x50BA00
-namespace gamemd { int ComputeSessionColorVector() {
+namespace gamemd { long long __int8::ComputeSessionColorVector() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
 {
@@ -15822,7 +15822,7 @@ retn
 */
 } }
 // 0x50D6D0
-namespace gamemd { int SelectSimilarBuildingTypes(int a1) {
+namespace gamemd { short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall SelectSimilarBuildingTypes(void *this, int a2)
 {
@@ -16215,7 +16215,7 @@ retn    4
 */
 } }
 // 0x50DA10
-namespace gamemd { int GlobalHelper_0E4440_Helper() {
+namespace gamemd { int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DA10(_DWORD *this)
 {
@@ -16233,7 +16233,7 @@ retn
 */
 } }
 // 0x50DA50
-namespace gamemd { int GlobalHelper_0E44C0_Helper() {
+namespace gamemd { int Gap2Recv_50DA50::GlobalHelper_0E44C0_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DA50(_DWORD *this)
 {
@@ -16256,7 +16256,7 @@ retn
 */
 } }
 // 0x50DFF0
-namespace gamemd { int GlobalHelper_0E4540_Helper() {
+namespace gamemd { int Gap2Recv_50DFF0::GlobalHelper_0E4540_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DFF0(_DWORD *this)
 {
@@ -16274,7 +16274,7 @@ retn
 */
 } }
 // 0x515ED0
-namespace gamemd { void UpdateFootFacing() {
+namespace gamemd { void Gap2Recv_515ED0::UpdateFootFacing() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateFootFacing(int this)
 {
@@ -16880,7 +16880,7 @@ retn
 */
 } }
 // 0x5175F0
-namespace gamemd { int ReadRegistryOptionsWOL() {
+namespace gamemd { char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ReadRegistryOptionsWOL(_BYTE *this)
 {
@@ -16990,7 +16990,7 @@ retn
 */
 } }
 // 0x5176C0
-namespace gamemd { bool WinMain_Helper() {
+namespace gamemd { bool Gap2Recv_5176C0::WinMain_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_5176C0(_DWORD *this)
 {
@@ -17006,7 +17006,7 @@ retn
 */
 } }
 // 0x518D80
-namespace gamemd { int CalculateLocomotionFrameIndex() {
+namespace gamemd { int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CalculateLocomotionFrameIndex(int *this)
 {
@@ -17289,7 +17289,7 @@ retn
 */
 } }
 // 0x51FB00
-namespace gamemd { int PlaceScenarioInfantry() {
+namespace gamemd { int Gap2Recv_51FB00::PlaceScenarioInfantry() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PlaceScenarioInfantry(char *this)
 {
@@ -17825,7 +17825,7 @@ retn
 */
 } }
 // 0x5202F0
-namespace gamemd { int ProcessTechnoSquadResponse() {
+namespace gamemd { char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ProcessTechnoSquadResponse(int *this)
 {
@@ -18333,7 +18333,7 @@ retn
 */
 } }
 // 0x5206B0
-namespace gamemd { void FireTechnoAtTarget() {
+namespace gamemd { void Gap2Recv_5206B0::FireTechnoAtTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TechnoClass_FireAtTarget(int this)
 {
@@ -18942,7 +18942,7 @@ retn
 */
 } }
 // 0x5272B0
-namespace gamemd { void* LookupCSFString(void* a1, void* a2, int a3) {
+namespace gamemd { char* Gap2Recv_5272B0::LookupCSFString(char* a2, char* Destination, int Count) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__thiscall LookupCSFString(_DWORD *this, unsigned __int8 *a2, char *Destination, int Count)
 {
@@ -19485,7 +19485,7 @@ retn    0Ch
 */
 } }
 // 0x52A670
-namespace gamemd { void* WinMain_Init(void* a1, int a2) {
+namespace gamemd { void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall WinMain_Init(void *this, void *a2, char a3)
 {
@@ -19577,7 +19577,7 @@ retn    8
 */
 } }
 // 0x53B780
-namespace gamemd { int ApplyChronoScreenColorShift() {
+namespace gamemd { int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ApplyChronoScreenColorShift(void *this)
 {
@@ -20034,7 +20034,7 @@ retn
 */
 } }
 // 0x53E4F0
-namespace gamemd { bool WinMain_Helper_53E4F0() {
+namespace gamemd { bool WinMain_Helper_53E4F0(char* FileName) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall WinMain_Helper_53E4F0(char *FileName)
 {
@@ -20087,7 +20087,7 @@ retn
 */
 } }
 // 0x53E550
-namespace gamemd { bool WinMain_Write() {
+namespace gamemd { bool WinMain_Write(char* FileName) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall WinMain_Write(char *FileName)
 {
@@ -20160,7 +20160,7 @@ retn
 */
 } }
 // 0x53FA90
-namespace gamemd { void* Network_Init_53FA90(int a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { void* Gap2Recv_53FA90::Network_Init_53FA90(int a2, int a3, int a4, short a5, short a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall Network_Init_53FA90(int *this, int a2, int a3, int a4, __int16 a5, __int16 a6)
 {
@@ -20303,7 +20303,7 @@ retn    14h
 */
 } }
 // 0x5402B0
-namespace gamemd { int Network_Init_5402B0(int a1) {
+namespace gamemd { int Gap2Recv_5402B0::Network_Init_5402B0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5402B0(_DWORD *this, int a2)
 {
@@ -20326,7 +20326,7 @@ retn    4
 */
 } }
 // 0x540A80
-namespace gamemd { int Network_Init() {
+namespace gamemd { int Gap2Recv_540A80::Network_Init() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network_Init(int this)
 {
@@ -20676,7 +20676,7 @@ retn
 */
 } }
 // 0x542FC0
-namespace gamemd { int Network_Init_542FC0(int a1) {
+namespace gamemd { int Gap2Recv_542FC0::Network_Init_542FC0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_542FC0(_DWORD *this, int a2)
 {
@@ -20702,7 +20702,7 @@ retn    4
 */
 } }
 // 0x5430C0
-namespace gamemd { int StartGameWOL_Start(int a1) {
+namespace gamemd { int Gap2Recv_5430C0::StartGameWOL_Start(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5430C0(_DWORD *this, int a2)
 {
@@ -20729,7 +20729,7 @@ retn    4
 */
 } }
 // 0x544CE0
-namespace gamemd { int Entity_Read() {
+namespace gamemd { int Gap2Recv_544CE0::Entity_Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_544CE0(void *this)
 {
@@ -20790,7 +20790,7 @@ retn
 */
 } }
 // 0x544E00
-namespace gamemd { void* Map_Get(int a1) {
+namespace gamemd { void* Gap2Recv_544E00::Map_Get(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_544E00(_DWORD *this, int a2)
 {
@@ -20836,7 +20836,7 @@ retn    4
 */
 } }
 // 0x549E50
-namespace gamemd { int Map_Get_549E50(int a1, int a2) {
+namespace gamemd { int Gap2Recv_549E50::Map_Get_549E50(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_549E50(int this, int a2, int a3)
 {
@@ -20868,7 +20868,7 @@ retn    8
 */
 } }
 // 0x54BD30
-namespace gamemd { int UpdateFootMoveToState() {
+namespace gamemd { int Gap2Recv_54BD30::UpdateFootMoveToState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateFootMoveToState(int this)
 {
@@ -21242,7 +21242,7 @@ retn
 */
 } }
 // 0x54F530
-namespace gamemd { int Event_Process(int a1) {
+namespace gamemd { char Gap2Recv_54F530::Event_Process(short a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_54F530(_BYTE *this, __int16 a2)
 {
@@ -21330,7 +21330,7 @@ retn    4
 */
 } }
 // 0x551A30
-namespace gamemd { int ProcessAutoSave() {
+namespace gamemd { int Gap2Recv_551A30::ProcessAutoSave() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_551A30(_DWORD *this)
 {
@@ -21412,7 +21412,7 @@ retn
 */
 } }
 // 0x556B70
-namespace gamemd { int Render_Render_556B70() {
+namespace gamemd { int Gap2Recv_556B70::Render_Render_556B70() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_556B70(int *this)
 {
@@ -21540,7 +21540,7 @@ retn
 */
 } }
 // 0x556C00
-namespace gamemd { void* Render_Render_556C00() {
+namespace gamemd { void* Gap2Recv_556C00::Render_Render_556C00() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_556C00(int this)
 {
@@ -21716,7 +21716,7 @@ retn
 */
 } }
 // 0x55AF50
-namespace gamemd { void Map_Init() {
+namespace gamemd { void Gap2Recv_55AF50::Map_Init() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_55AF50(void *this)
 {
@@ -21729,7 +21729,7 @@ retn
 */
 } }
 // 0x55F690
-namespace gamemd { int CheckNetworkSync(int a1, int a2) {
+namespace gamemd { int Gap2Recv_55F690::CheckNetworkSync(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_55F690(_BYTE *this, int a2, int a3)
 {
@@ -21759,7 +21759,7 @@ retn    8
 */
 } }
 // 0x569760
-namespace gamemd { void DestroyCliffMap(int a1, int a2, void* a3) {
+namespace gamemd { void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DestroyCliffMap(int *this, int a2, int a3, int *a4)
 {
@@ -23023,7 +23023,7 @@ retn    0Ch
 */
 } }
 // 0x56A080
-namespace gamemd { int PlaceTerrainCliffsRegion() {
+namespace gamemd { int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Terrain_PlaceCliffsRegion(int *this)
 {
@@ -23586,7 +23586,7 @@ retn
 */
 } }
 // 0x56A4C0
-namespace gamemd { void FlattenCliffMap(void* a1) {
+namespace gamemd { void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_FlattenCliff(int *this, _WORD *a2)
 {
@@ -24231,7 +24231,7 @@ retn    4
 */
 } }
 // 0x56A980
-namespace gamemd { void RepairMapCliff(void* a1) {
+namespace gamemd { void Gap2Recv_56A980::RepairMapCliff(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_RepairCliff(int *this, _WORD *a2)
 {
@@ -24876,7 +24876,7 @@ retn    4
 */
 } }
 // 0x56D3F0
-namespace gamemd { int CellToTileIndexMap(void* a1) {
+namespace gamemd { int Gap2Recv_56D3F0::CellToTileIndexMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_CellToTileIndex(int *this, __int16 *a2)
 {
@@ -24919,7 +24919,7 @@ retn    4
 */
 } }
 // 0x56DA10
-namespace gamemd { int GetRegionMap(void* a1, int a2, int a3) {
+namespace gamemd { int Gap2Recv_56DA10::GetRegionMap(void* a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_GetRegion(int *this, __int16 *a2, signed int a3, int a4)
 {
@@ -25051,7 +25051,7 @@ retn    0Ch
 */
 } }
 // 0x56DB70
-namespace gamemd { int InvalidateTileRegionMap(void* a1) {
+namespace gamemd { char Gap2Recv_56DB70::InvalidateTileRegionMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_InvalidateTileRegion(int *this, __int16 *a2)
 {
@@ -25185,7 +25185,7 @@ retn    4
 */
 } }
 // 0x56E890
-namespace gamemd { int ProcessDataHouseClass(void* a1, void* a2, void* a3) {
+namespace gamemd { char Gap2Recv_56E890::ProcessDataHouseClass(void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_56E890(_DWORD *this, __int16 *a2, _DWORD *a3, int *a4)
 {
@@ -25345,7 +25345,7 @@ retn    0Ch
 */
 } }
 // 0x5785F0
-namespace gamemd { bool IsCoordVisibleMap(void* a1) {
+namespace gamemd { bool Gap2Recv_5785F0::IsCoordVisibleMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Map_IsCoordVisible(_DWORD *this, _DWORD *a2)
 {
@@ -25383,7 +25383,7 @@ retn    4
 */
 } }
 // 0x578640
-namespace gamemd { bool Math_Helper(void* a1, void* a2, int a3) {
+namespace gamemd { bool Gap2Recv_578640::Math_Helper(void* a2, void* a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_578640(_DWORD *this, _DWORD *a2, __int16 *a3, char a4)
 {
@@ -25512,7 +25512,7 @@ retn    0Ch
 */
 } }
 // 0x57B870
-namespace gamemd { int Map_Create() {
+namespace gamemd { int Gap2Recv_57B870::Map_Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_57B870(_WORD *this)
 {
@@ -25684,7 +25684,7 @@ retn
 */
 } }
 // 0x57B990
-namespace gamemd { int Map_Create_57B990() {
+namespace gamemd { char Gap2Recv_57B990::Map_Create_57B990() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_57B990(__int16 *this)
 {
@@ -25847,7 +25847,7 @@ retn
 */
 } }
 // 0x57CAB0
-namespace gamemd { int Map_Create_57CAB0() {
+namespace gamemd { int Gap2Recv_57CAB0::Map_Create_57CAB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_57CAB0(_WORD *this)
 {
@@ -26019,7 +26019,7 @@ retn
 */
 } }
 // 0x57CBE0
-namespace gamemd { int Map_Create_57CBE0() {
+namespace gamemd { char Gap2Recv_57CBE0::Map_Create_57CBE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_57CBE0(__int16 *this)
 {
@@ -26182,7 +26182,7 @@ retn
 */
 } }
 // 0x580BC0
-namespace gamemd { void* FindMapSpawnCell(int a1) {
+namespace gamemd { void* Gap2Recv_580BC0::FindMapSpawnCell(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Map_FindSpawnCell(_DWORD *this, int a2)
 {
@@ -26832,7 +26832,7 @@ retn    4
 */
 } }
 // 0x581090
-namespace gamemd { int CleanupMapSystems() {
+namespace gamemd { int Gap2Recv_581090::CleanupMapSystems() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_581090(_DWORD *this)
 {
@@ -26969,7 +26969,7 @@ jmp     BuildingClass__FreeUpgradeQueue2
 */
 } }
 // 0x582D30
-namespace gamemd { int SmallFunc_582D30(int a1) {
+namespace gamemd { int Gap2Recv_582D30::SmallFunc_582D30(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_582D30(int *this, int a2)
 {
@@ -27615,7 +27615,7 @@ retn    20h ; ' '
 */
 } }
 // 0x5840C0
-namespace gamemd { int CheckMapReachability(int a1, int a2, int a3, int a4) {
+namespace gamemd { char Gap2Recv_5840C0::CheckMapReachability(int a2, int a3, int a4, int j) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_CheckReachability(_DWORD *this, int a2, int a3, int a4, int j)
 {
@@ -28373,7 +28373,7 @@ retn    10h
 */
 } }
 // 0x584E50
-namespace gamemd { int UpdateCellConnectivityGraph(void* a1) {
+namespace gamemd { int Gap2Recv_584E50::UpdateCellConnectivityGraph(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateCellConnectivityGraph(int *this, int *a2)
 {
@@ -28922,7 +28922,7 @@ retn    4
 */
 } }
 // 0x5851B0
-namespace gamemd { int BuildTileAdjacencyTable(void* a1) {
+namespace gamemd { int Gap2Recv_5851B0::BuildTileAdjacencyTable(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildTileAdjacencyTable(int *this, int *a2)
 {
@@ -29537,7 +29537,7 @@ retn    4
 */
 } }
 // 0x585930
-namespace gamemd { void FloodFillConnectedCells(int a1, int a2) {
+namespace gamemd { void Gap2Recv_585930::FloodFillConnectedCells(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FloodFillConnectedCells(_DWORD *this, int a2, int a3)
 {
@@ -30140,7 +30140,7 @@ retn    8
 */
 } }
 // 0x5866C0
-namespace gamemd { int SmallFunc_5866C0() {
+namespace gamemd { int Gap2Recv_5866C0::SmallFunc_5866C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5866C0(_DWORD *this)
 {
@@ -30195,7 +30195,7 @@ retn
 */
 } }
 // 0x5868A0
-namespace gamemd { void UpdateAreaConnectivityMap(void* a1) {
+namespace gamemd { void Gap2Recv_5868A0::UpdateAreaConnectivityMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_UpdateAreaConnectivity(int *this, int *a2)
 {
@@ -30384,7 +30384,7 @@ retn    4
 */
 } }
 // 0x587C50
-namespace gamemd { int DiagnoseMapCheck() {
+namespace gamemd { char Gap2Recv_587C50::DiagnoseMapCheck() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapCheck_Diagnostic(_DWORD *this)
 {
@@ -30997,7 +30997,7 @@ retn
 */
 } }
 // 0x588960
-namespace gamemd { int Object_Create(int a1) {
+namespace gamemd { int Gap2Recv_588960::Object_Create(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_588960(_DWORD *this, int a2)
 {
@@ -31032,7 +31032,7 @@ retn    4
 */
 } }
 // 0x591740
-namespace gamemd { int PlaceMapSeedCityArea(void* a1, void* a2, void* a3) {
+namespace gamemd { char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlaceMapSeedCityArea(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -31990,7 +31990,7 @@ retn    0Ch
 */
 } }
 // 0x592AF0
-namespace gamemd { int PlaceMapSeedCityBlockVariant(void* a1, void* a2, void* a3) {
+namespace gamemd { char MapSeedClass::PlaceCityBlockVariant(void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockVariant(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -32771,7 +32771,7 @@ retn    0Ch
 */
 } }
 // 0x593030
-namespace gamemd { int PlaceMapSeedCityBlockDiagonal(void* a1, void* a2, void* a3) {
+namespace gamemd { char MapSeedClass::PlaceCityBlockDiagonal(void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockDiagonal(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -33577,7 +33577,7 @@ retn    0Ch
 */
 } }
 // 0x593AF0
-namespace gamemd { int PlaceMapSeedCityBlockVariant2(void* a1, void* a2, void* a3) {
+namespace gamemd { char MapSeedClass::PlaceCityBlockVariant2(void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MapSeedClass::PlaceCityBlockVariant2(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
 {
@@ -34350,7 +34350,7 @@ retn    0Ch
 */
 } }
 // 0x594870
-namespace gamemd { void PlaceRandomWaypoints(int a1) {
+namespace gamemd { void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PlaceRandomWaypoints(int *this, int a2)
 {
@@ -34763,7 +34763,7 @@ retn    4
 */
 } }
 // 0x595400
-namespace gamemd { int PlaceNeutralBuilding() {
+namespace gamemd { char Gap2Recv_595400::PlaceNeutralBuilding() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlaceNeutralBuilding(_DWORD *this)
 {
@@ -35094,7 +35094,7 @@ retn
 */
 } }
 // 0x597430
-namespace gamemd { void* Team_Start_597430() {
+namespace gamemd { void* Gap2Recv_597430::Team_Start_597430() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_597430(_DWORD *this)
 {
@@ -35382,7 +35382,7 @@ retn
 */
 } }
 // 0x5A1FB0
-namespace gamemd { int SpreadMapSeedTerrainFromWaypoints() {
+namespace gamemd { char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SpreadMapSeedTerrainFromWaypoints(int *this)
 {
@@ -35987,7 +35987,7 @@ retn
 */
 } }
 // 0x5A2F50
-namespace gamemd { void SmoothTerrainMap() {
+namespace gamemd { void Gap2Recv_5A2F50::SmoothTerrainMap() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_SmoothTerrain(int *this)
 {
@@ -36629,7 +36629,7 @@ retn
 */
 } }
 // 0x5A35F0
-namespace gamemd { int GenerateTerrainHeightMap() {
+namespace gamemd { int Gap2Recv_5A35F0::GenerateTerrainHeightMap() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GenerateTerrainHeightMap(int *this)
 {
@@ -37031,7 +37031,7 @@ retn
 */
 } }
 // 0x5A82E0
-namespace gamemd { void ScatterMapSeedBuildings(void* a1) {
+namespace gamemd { void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ScatterMapSeedBuildings(_DWORD *this, __int16 *a2)
 {
@@ -37645,7 +37645,7 @@ retn    4
 */
 } }
 // 0x5A95B0
-namespace gamemd { void* PlaceRandomAIBuildings() {
+namespace gamemd { void* Gap2Recv_5A95B0::PlaceRandomAIBuildings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall PlaceRandomAIBuildings(_DWORD *this)
 {
@@ -38159,7 +38159,7 @@ retn
 */
 } }
 // 0x5A99B0
-namespace gamemd { void* Object_Helper_5A99B0() {
+namespace gamemd { void* Gap2Recv_5A99B0::Object_Helper_5A99B0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5A99B0(_DWORD *this)
 {
@@ -38191,7 +38191,7 @@ retn
 */
 } }
 // 0x5AD930
-namespace gamemd { int Map_Helper_5AD930(int a1) {
+namespace gamemd { char Gap2Recv_5AD930::Map_Helper_5AD930(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_Helper_5AD930(int this, int a2)
 {
@@ -38288,7 +38288,7 @@ retn    4
 */
 } }
 // 0x5AD9F0
-namespace gamemd { void* Map_Cleanup(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Map_Cleanup(_DWORD *this, int a2, int a3)
 {
@@ -38346,7 +38346,7 @@ retn    8
 */
 } }
 // 0x5B3910
-namespace gamemd { int LookupWaypointName() {
+namespace gamemd { int Gap2Recv_5B3910::LookupWaypointName() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LookupWaypointName(void *this)
 {
@@ -38407,7 +38407,7 @@ retn
 */
 } }
 // 0x5B6CD0
-namespace gamemd { int Surface_Lock() {
+namespace gamemd { int Gap2Recv_5B6CD0::Surface_Lock() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5B6CD0(_DWORD *this)
 {
@@ -38497,7 +38497,7 @@ retn
 */
 } }
 // 0x5B6EB0
-namespace gamemd { void UI_Setup(void* a1, int a2, int a3) {
+namespace gamemd { void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Setup(#44 *this, #72 *Format, unsigned int a3, int a4)
 {
@@ -38575,7 +38575,7 @@ retn    0Ch
 */
 } }
 // 0x5C1300
-namespace gamemd { int ReadMPMapsINI() {
+namespace gamemd { int ReadMPMapsINI(char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5C1300(char *Source)
 {
@@ -38755,7 +38755,7 @@ retn
 */
 } }
 // 0x5C80A0
-namespace gamemd { int ComputeModularInverse(void* a1, int a2) {
+namespace gamemd { int Gap2Recv_5C80A0::ComputeModularInverse(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ComputeModularInverse(int *this, _WORD *a2, int a3)
 {
@@ -39326,7 +39326,7 @@ retn    8
 */
 } }
 // 0x5CB790
-namespace gamemd { int TerritoryUpdateDisplayWOL(int a1) {
+namespace gamemd { unsigned int Gap2Recv_5CB790::TerritoryUpdateDisplayWOL(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
 {
@@ -39435,7 +39435,7 @@ retn    4
 */
 } }
 // 0x5CC690
-namespace gamemd { void Map_Process_5CC690() {
+namespace gamemd { void Gap2Recv_5CC690::Map_Process_5CC690() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5CC690(_DWORD *this)
 {
@@ -39448,7 +39448,7 @@ retn
 */
 } }
 // 0x5CE4A0
-namespace gamemd { void* UI_Load(void* a1, int a2, int a3) {
+namespace gamemd { void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall UI_Load(_DWORD *this, const char **a2, int a3, char a4)
 {
@@ -39664,7 +39664,7 @@ retn    0Ch
 */
 } }
 // 0x5CEDD0
-namespace gamemd { void* Map_Delete_5CEDD0() {
+namespace gamemd { char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_5CEDD0(char *this)
 {
@@ -39749,7 +39749,7 @@ retn
 */
 } }
 // 0x5CF830
-namespace gamemd { int Network_Load(int a1) {
+namespace gamemd { int Gap2Recv_5CF830::Network_Load(char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CF830(void *this, char a2)
 {
@@ -39765,7 +39765,7 @@ retn    4
 */
 } }
 // 0x5D1C90
-namespace gamemd { int UI_Load_5D1C90(void* a1, void* a2) {
+namespace gamemd { int Gap2Recv_5D1C90::UI_Load_5D1C90(void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Load_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int), int (__thiscall ***a3)(_DWORD, int))
 {
@@ -39934,7 +39934,7 @@ retn    8
 */
 } }
 // 0x5D4430
-namespace gamemd { int SyncFrameCounter() {
+namespace gamemd { int Gap2Recv_5D4430::SyncFrameCounter() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SyncFrameCounter(char *this)
 {
@@ -40126,7 +40126,7 @@ retn
 */
 } }
 // 0x5D6D80
-namespace gamemd { int ComputeMultiEngineerAdjustment() {
+namespace gamemd { char Gap2Recv_5D6D80::ComputeMultiEngineerAdjustment() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ComputeMultiEngineerAdjustment(int *this)
 {
@@ -40538,7 +40538,7 @@ retn
 */
 } }
 // 0x5D9360
-namespace gamemd { void SmallFunc_5D9360() {
+namespace gamemd { void Gap2Recv_5D9360::SmallFunc_5D9360() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5D9360(int *this)
 {
@@ -40595,7 +40595,7 @@ retn
 */
 } }
 // 0x5DB600
-namespace gamemd { int PlayerSkirmishSlotHandler_Handle_5DB600() {
+namespace gamemd { int Gap2Recv_5DB600::PlayerSkirmishSlotHandler_Handle_5DB600() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DB600(void *this)
 {
@@ -40632,7 +40632,7 @@ retn
 */
 } }
 // 0x5DBEC0
-namespace gamemd { int SendMultiplayerStartSignal_Start() {
+namespace gamemd { int Gap2Recv_5DBEC0::SendMultiplayerStartSignal_Start() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DBEC0(char *this)
 {
@@ -40736,7 +40736,7 @@ retn
 */
 } }
 // 0x5E23D0
-namespace gamemd { int Network_Check(int a1) {
+namespace gamemd { char Gap2Recv_5E23D0::Network_Check(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5E23D0(_DWORD *this, int a2)
 {
@@ -40794,7 +40794,7 @@ retn    4
 */
 } }
 // 0x5E9340
-namespace gamemd { int Audio_Helper() {
+namespace gamemd { int Gap2Recv_5E9340::Audio_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Audio_Helper(void *this)
 {
@@ -40944,7 +40944,7 @@ retn
 */
 } }
 // 0x5E93F0
-namespace gamemd { bool IsKnownPointer() {
+namespace gamemd { bool Gap2Recv_5E93F0::IsKnownPointer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall IsKnownPointer(void *this)
 {
@@ -40986,7 +40986,7 @@ retn
 */
 } }
 // 0x5EAAD0
-namespace gamemd { int RefreshLobbyAll_Helper_5EAAD0() {
+namespace gamemd { int Gap2Recv_5EAAD0::RefreshLobbyAll_Helper_5EAAD0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAAD0(void *this)
 {
@@ -41067,7 +41067,7 @@ retn
 */
 } }
 // 0x5EAB30
-namespace gamemd { int RefreshLobbyAll_Play_5EAB30() {
+namespace gamemd { int Gap2Recv_5EAB30::RefreshLobbyAll_Play_5EAB30() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAB30(char *this)
 {
@@ -41210,7 +41210,7 @@ retn
 */
 } }
 // 0x5EAC00
-namespace gamemd { int RefreshLobbyAll_Get_5EAC00() {
+namespace gamemd { int Gap2Recv_5EAC00::RefreshLobbyAll_Get_5EAC00() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EAC00(char *this)
 {
@@ -41353,7 +41353,7 @@ retn
 */
 } }
 // 0x5EACD0
-namespace gamemd { int RefreshLobbyAll_Get_5EACD0() {
+namespace gamemd { int Gap2Recv_5EACD0::RefreshLobbyAll_Get_5EACD0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5EACD0(char *this)
 {
@@ -41496,7 +41496,7 @@ retn
 */
 } }
 // 0x5EADA0
-namespace gamemd { int RefreshLobbyAll_Get_5EADA0() {
+namespace gamemd { char Gap2Recv_5EADA0::RefreshLobbyAll_Get_5EADA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Get_5EADA0(void *this)
 {
@@ -41621,7 +41621,7 @@ retn
 */
 } }
 // 0x5EAE40
-namespace gamemd { bool RefreshLobbyAll_Setup() {
+namespace gamemd { char Gap2Recv_5EAE40::RefreshLobbyAll_Setup() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Setup(void *this)
 {
@@ -41746,7 +41746,7 @@ retn
 */
 } }
 // 0x5EAEE0
-namespace gamemd { void* RefreshLobbyAll_Play_5EAEE0() {
+namespace gamemd { char Gap2Recv_5EAEE0::RefreshLobbyAll_Play_5EAEE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RefreshLobbyAll_Play_5EAEE0(void *this)
 {
@@ -42048,7 +42048,7 @@ retn
 */
 } }
 // 0x5EE100
-namespace gamemd { bool Network_Send() {
+namespace gamemd { bool Gap2Recv_5EE100::Network_Send() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Network_Send(const char **this)
 {
@@ -42119,7 +42119,7 @@ retn
 */
 } }
 // 0x5EEF60
-namespace gamemd { void String_Process() {
+namespace gamemd { void Gap2Recv_5EEF60::String_Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall String_Process(_DWORD *this)
 {
@@ -42264,7 +42264,7 @@ retn
 */
 } }
 // 0x5EF010
-namespace gamemd { void Map_Helper_5EF010() {
+namespace gamemd { void Gap2Recv_5EF010::Map_Helper_5EF010() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Map_Helper_5EF010(_DWORD *this)
 {
@@ -42404,7 +42404,7 @@ retn
 */
 } }
 // 0x5FD2E0
-namespace gamemd { int ReadOverlayINI() {
+namespace gamemd { int Gap2Recv_5FD2E0::ReadOverlayINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadOverlayINI(_DWORD *this)
 {
@@ -42845,7 +42845,7 @@ retn
 */
 } }
 // 0x60B350
-namespace gamemd { bool UI_Get_60B350() {
+namespace gamemd { int Gap2Recv_60B350::UI_Get_60B350() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B350(void *this)
 {
@@ -42976,7 +42976,7 @@ jmp     short loc_60B3E7
 */
 } }
 // 0x60B420
-namespace gamemd { bool UI_Get_60B420() {
+namespace gamemd { int Gap2Recv_60B420::UI_Get_60B420() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B420(void *this)
 {
@@ -43171,7 +43171,7 @@ retn
 */
 } }
 // 0x60B550
-namespace gamemd { bool UI_Get_60B550() {
+namespace gamemd { int Gap2Recv_60B550::UI_Get_60B550() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B550(void *this)
 {
@@ -43290,7 +43290,7 @@ retn
 */
 } }
 // 0x60B610
-namespace gamemd { bool UI_Get_60B610() {
+namespace gamemd { int Gap2Recv_60B610::UI_Get_60B610() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Get_60B610(void *this)
 {
@@ -43487,7 +43487,7 @@ jmp     short loc_60B6E1
 */
 } }
 // 0x60B7A0
-namespace gamemd { int UI_Get_60B7A0() {
+namespace gamemd { char Gap2Recv_60B7A0::UI_Get_60B7A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Get_60B7A0(void *this)
 {
@@ -43673,7 +43673,7 @@ retn
 */
 } }
 // 0x60C7D0
-namespace gamemd { int UI_Helper_60C7D0() {
+namespace gamemd { char Gap2Recv_60C7D0::UI_Helper_60C7D0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60C7D0(void *this)
 {
@@ -43822,7 +43822,7 @@ retn
 */
 } }
 // 0x60C930
-namespace gamemd { int UI_Helper_60C930() {
+namespace gamemd { char Gap2Recv_60C930::UI_Helper_60C930() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60C930(void *this)
 {
@@ -43932,7 +43932,7 @@ retn
 */
 } }
 // 0x60CAF0
-namespace gamemd { int UI_Helper_60CAF0() {
+namespace gamemd { char Gap2Recv_60CAF0::UI_Helper_60CAF0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CAF0(void *this)
 {
@@ -44056,7 +44056,7 @@ retn
 */
 } }
 // 0x60CCC0
-namespace gamemd { int UI_Helper_60CCC0() {
+namespace gamemd { char Gap2Recv_60CCC0::UI_Helper_60CCC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CCC0(void *this)
 {
@@ -44158,7 +44158,7 @@ retn
 */
 } }
 // 0x60CDB0
-namespace gamemd { int UI_Helper_60CDB0() {
+namespace gamemd { char Gap2Recv_60CDB0::UI_Helper_60CDB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_60CDB0(void *this)
 {
@@ -44260,7 +44260,7 @@ retn
 */
 } }
 // 0x623E00
-namespace gamemd { int Memory_Pop() {
+namespace gamemd { int Gap2Recv_623E00::Memory_Pop() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Memory_Pop(void *this)
 {
@@ -44314,7 +44314,7 @@ retn
 */
 } }
 // 0x625C00
-namespace gamemd { void* Event_Process_625C00(void* a1) {
+namespace gamemd { void* Gap2Recv_625C00::Event_Process_625C00(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #122 *__thiscall Event_Process_625C00(int this, #247 *a2)
 {
@@ -44497,7 +44497,7 @@ retn    4
 */
 } }
 // 0x626120
-namespace gamemd { int Render_Helper(int a1, int a2) {
+namespace gamemd { unsigned char __int8::Render_Helper(unsigned char a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_626120(unsigned __int8 *this, unsigned __int8 a2, int a3)
 {
@@ -44549,7 +44549,7 @@ retn    8
 */
 } }
 // 0x62C6E0
-namespace gamemd { void UpdateParticleSystem() {
+namespace gamemd { void ParticleClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParticleClass::Update(void *this)
 {
@@ -45092,7 +45092,7 @@ retn
 */
 } }
 // 0x62CB10
-namespace gamemd { void UpdateAreaDamageEffect() {
+namespace gamemd { void Gap2Recv_62CB10::UpdateAreaDamageEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateAreaDamageEffect(unsigned __int16 *this)
 {
@@ -45491,7 +45491,7 @@ retn
 */
 } }
 // 0x62E430
-namespace gamemd { int CreateFireAtSW(int a1, int a2) {
+namespace gamemd { int Gap2Recv_62E430::CreateFireAtSW(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateFireAtSW(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -45594,7 +45594,7 @@ retn    8
 */
 } }
 // 0x62E840
-namespace gamemd { int UpdateProductionParticleSystem() {
+namespace gamemd { char Gap2Recv_62E840::UpdateProductionParticleSystem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateProductionParticleSystem(int this)
 {
@@ -46276,7 +46276,7 @@ retn
 */
 } }
 // 0x62ED40
-namespace gamemd { void UpdateBuildingParticleSystem() {
+namespace gamemd { void Gap2Recv_62ED40::UpdateBuildingParticleSystem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UpdateBuildingParticleSystem(_DWORD *this)
 {
@@ -46925,7 +46925,7 @@ retn
 */
 } }
 // 0x62F9A0
-namespace gamemd { int UpdateBuildingDamageParticles() {
+namespace gamemd { char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UpdateBuildingDamageParticles(char *this)
 {
@@ -47403,7 +47403,7 @@ retn
 */
 } }
 // 0x630EA0
-namespace gamemd { int UI_Get_630EA0() {
+namespace gamemd { char Gap2Recv_630EA0::UI_Get_630EA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Get_630EA0(char *this)
 {
@@ -47672,7 +47672,7 @@ retn
 */
 } }
 // 0x631380
-namespace gamemd { void* UI_Pop() {
+namespace gamemd { void* Gap2Recv_631380::UI_Pop() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall UI_Pop(#44 *this)
 {
@@ -47916,7 +47916,7 @@ retn
 */
 } }
 // 0x631500
-namespace gamemd { void UI_Pop_631500() {
+namespace gamemd { void Gap2Recv_631500::UI_Pop_631500() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Pop_631500(#44 *this)
 {
@@ -48104,7 +48104,7 @@ retn
 */
 } }
 // 0x6316E0
-namespace gamemd { bool UI_Pop_631500_Pop() {
+namespace gamemd { bool Gap2Recv_6316E0::UI_Pop_631500_Pop(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall UI_Pop_631500_Pop(int this, int a2)
 {
@@ -48194,7 +48194,7 @@ retn    4
 */
 } }
 // 0x6319C0
-namespace gamemd { void Network_Set() {
+namespace gamemd { void Gap2Recv_6319C0::Network_Set() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Network_Set(_DWORD *this)
 {
@@ -48373,7 +48373,7 @@ retn
 */
 } }
 // 0x631B20
-namespace gamemd { int UI_Pop_631500_Pop_Pop() {
+namespace gamemd { int Gap2Recv_631B20::UI_Pop_631500_Pop_Pop() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Pop_631500_Pop_Pop(_DWORD *this)
 {
@@ -48508,7 +48508,7 @@ retn
 */
 } }
 // 0x632000
-namespace gamemd { int System_Init_632000(void* a1) {
+namespace gamemd { int Gap2Recv_632000::System_Init_632000(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_632000(_DWORD *this, _BYTE *a2)
 {
@@ -48536,7 +48536,7 @@ retn    4
 */
 } }
 // 0x632030
-namespace gamemd { int System_Init_632030(void* a1) {
+namespace gamemd { char Gap2Recv_632030::System_Init_632030(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_632030(void *this, _BYTE *a2)
 {
@@ -48552,7 +48552,7 @@ retn    4
 */
 } }
 // 0x633AC0
-namespace gamemd { void* ExecuteActionPlanManager_Helper() {
+namespace gamemd { void* Gap2Recv_633AC0::ExecuteActionPlanManager_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_633AC0(_DWORD *this)
 {
@@ -48571,7 +48571,7 @@ retn
 */
 } }
 // 0x6342E0
-namespace gamemd { int Team_Helper_6342E0(int a1, int a2) {
+namespace gamemd { int Gap2Recv_6342E0::Team_Helper_6342E0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6342E0(_DWORD *this, int a2, int a3)
 {
@@ -48604,7 +48604,7 @@ retn    8
 */
 } }
 // 0x6345A0
-namespace gamemd { void* Render_Render_6345A0(void* a1) {
+namespace gamemd { void* Gap2Recv_6345A0::Render_Render_6345A0(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6345A0(_DWORD **this, _DWORD *a2)
 {
@@ -48675,7 +48675,7 @@ retn    4
 */
 } }
 // 0x634770
-namespace gamemd { int Render_Render_634770() {
+namespace gamemd { int Gap2Recv_634770::Render_Render_634770() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634770(int *this)
 {
@@ -48729,7 +48729,7 @@ retn
 */
 } }
 // 0x634970
-namespace gamemd { int Helper_634970() {
+namespace gamemd { int Gap2Recv_634970::Helper_634970() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634970(int this)
 {
@@ -48778,7 +48778,7 @@ retn
 */
 } }
 // 0x635490
-namespace gamemd { int Render_Render_635490(int a1) {
+namespace gamemd { int Gap2Recv_635490::Render_Render_635490(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_635490(_DWORD *this, int a2)
 {
@@ -48882,7 +48882,7 @@ retn    4
 */
 } }
 // 0x636EB0
-namespace gamemd { int ExecuteActionPlanManager_Helper_636EB0() {
+namespace gamemd { int Gap2Recv_636EB0::ExecuteActionPlanManager_Helper_636EB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_636EB0(_DWORD *this)
 {
@@ -48910,7 +48910,7 @@ retn
 */
 } }
 // 0x637D00
-namespace gamemd { int UI_Delete_Delete() {
+namespace gamemd { char Gap2Recv_637D00::UI_Delete_Delete() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_637D00(_DWORD **this)
 {
@@ -49059,7 +49059,7 @@ retn
 */
 } }
 // 0x638C40
-namespace gamemd { bool ExecuteActionPlanManager_Helper_638C40(int a1, int a2) {
+namespace gamemd { bool Gap2Recv_638C40::ExecuteActionPlanManager_Helper_638C40(int a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_638C40(void *this, int a2, char a3)
 {
@@ -49100,7 +49100,7 @@ retn    8
 */
 } }
 // 0x63B050
-namespace gamemd { void* Team_Load_63B050() {
+namespace gamemd { void* Gap2Recv_63B050::Team_Load_63B050() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_63B050(_BYTE *this)
 {
@@ -49146,7 +49146,7 @@ retn
 */
 } }
 // 0x63C690
-namespace gamemd { int RenderScenarioActionLines() {
+namespace gamemd { int Gap2Recv_63C690::RenderScenarioActionLines() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScenarioActionLines(int this)
 {
@@ -49692,7 +49692,7 @@ jmp     loc_63C81C
 */
 } }
 // 0x63CAE0
-namespace gamemd { int RenderScenarioActionLines2() {
+namespace gamemd { int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScenarioActionLines2(int this)
 {
@@ -50184,7 +50184,7 @@ jmp     loc_63CC6A
 */
 } }
 // 0x63D0F0
-namespace gamemd { int Render_Render_63D0F0() {
+namespace gamemd { int Gap2Recv_63D0F0::Render_Render_63D0F0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_63D0F0(_BYTE *this)
 {
@@ -50347,7 +50347,7 @@ retn
 */
 } }
 // 0x63D480
-namespace gamemd { int DrawActionLineSegment(int a1, int a2) {
+namespace gamemd { int Gap2Recv_63D480::DrawActionLineSegment(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DrawActionLineSegment(void *this, int a2, int a3)
 {
@@ -50419,7 +50419,7 @@ retn    8
 */
 } }
 // 0x63DAD0
-namespace gamemd { int PackRGBFromBytes() {
+namespace gamemd { int __int8::PackRGBFromBytes() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall PackRGBFromBytes(unsigned __int8 *this)
 {
@@ -50458,7 +50458,7 @@ retn
 */
 } }
 // 0x63DB20
-namespace gamemd { bool HandlePlanningModeClick_Handle() {
+namespace gamemd { bool Gap2Recv_63DB20::HandlePlanningModeClick_Handle(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall HandlePlanningModeClick_Handle(_DWORD *this, _DWORD *a2)
 {
@@ -50511,7 +50511,7 @@ retn    4
 */
 } }
 // 0x63DEC0
-namespace gamemd { void* ExecuteActionPlanManager_Helper_63DEC0(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ExecuteActionPlanManager_Helper_63DEC0(_DWORD *this, int a2, int a3)
 {
@@ -50575,7 +50575,7 @@ retn    8
 */
 } }
 // 0x63E1D0
-namespace gamemd { void* ExecuteActionPlanManager_Helper_63E1D0(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ExecuteActionPlanManager_Helper_63E1D0(_DWORD *this, int a2, int a3)
 {
@@ -50639,7 +50639,7 @@ retn    8
 */
 } }
 // 0x63E5D0
-namespace gamemd { int Team_Destroy(int a1) {
+namespace gamemd { char Gap2Recv_63E5D0::Team_Destroy(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_63E5D0(int *this, int a2)
 {
@@ -50700,7 +50700,7 @@ retn    4
 */
 } }
 // 0x63EFB0
-namespace gamemd { void* Object_Set(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_63EFB0::Object_Set(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Object_Set(_DWORD *this, int a2, int a3)
 {
@@ -50758,7 +50758,7 @@ retn    8
 */
 } }
 // 0x641B00
-namespace gamemd { int LoadMapPreviewImage(void* a1) {
+namespace gamemd { char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadMapPreviewImage(char **this, int *a2)
 {
@@ -51128,7 +51128,7 @@ retn    4
 */
 } }
 // 0x643720
-namespace gamemd { int RenderBuildingProductionButton(int a1, int a2, void* a3, int a4, int a5) {
+namespace gamemd { int Gap2Recv_643720::RenderBuildingProductionButton(int a2, int a3, void* a4, int a5, char a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderBuildingProductionButton(int this, int a2, int a3, int *a4, int a5, char a6)
 {
@@ -51649,7 +51649,7 @@ retn    14h
 */
 } }
 // 0x645BB0
-namespace gamemd { int GetSuperWeaponTypeFlag() {
+namespace gamemd { int Gap2Recv_645BB0::GetSuperWeaponTypeFlag() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GetSuperWeaponTypeFlag(void *this)
 {
@@ -51760,7 +51760,7 @@ retn
 */
 } }
 // 0x64A7B0
-namespace gamemd { int RenderPlayerLatencyBars() {
+namespace gamemd { int Gap2Recv_64A7B0::RenderPlayerLatencyBars() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderPlayerLatencyBars(void *this)
 {
@@ -52129,7 +52129,7 @@ retn
 */
 } }
 // 0x652540
-namespace gamemd { int Network_Process_652540() {
+namespace gamemd { int Gap2Recv_652540::Network_Process_652540() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_652540(_DWORD *this)
 {
@@ -52161,7 +52161,7 @@ retn
 */
 } }
 // 0x652560
-namespace gamemd { int Network_Process_652560(int a1) {
+namespace gamemd { char Gap2Recv_652560::Network_Process_652560(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_652560(_DWORD *this, int a2)
 {
@@ -52219,7 +52219,7 @@ retn    4
 */
 } }
 // 0x6525A0
-namespace gamemd { int Network_Process_6525A0(int a1) {
+namespace gamemd { char Gap2Recv_6525A0::Network_Process_6525A0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Network_Process_6525A0(int this, int a2)
 {
@@ -52316,7 +52316,7 @@ retn    4
 */
 } }
 // 0x6547C0
-namespace gamemd { void* GenerateImageThumbnail(void* a1, void* a2, void* a3, int a4) {
+namespace gamemd { void* Gap2Recv_6547C0::GenerateImageThumbnail(void* a2, void* a3, void* a4, char a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
 {
@@ -53319,7 +53319,7 @@ jmp     loc_654CFC
 */
 } }
 // 0x6550C0
-namespace gamemd { void* Team_Load_6550C0(void* a1, void* a2) {
+namespace gamemd { void* Gap2Recv_6550C0::Team_Load_6550C0(void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6550C0(int this, _DWORD *a2, __int16 *a3)
 {
@@ -53397,7 +53397,7 @@ retn    8
 */
 } }
 // 0x659510
-namespace gamemd { int SpreadRadiationAreaEffect_Helper(int a1, int a2) {
+namespace gamemd { int Gap2Recv_659510::SpreadRadiationAreaEffect_Helper(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659510(_DWORD *this, int a2, int a3)
 {
@@ -53415,7 +53415,7 @@ retn    8
 */
 } }
 // 0x659530
-namespace gamemd { int SpreadRadiationAreaEffect_Helper_659530(int a1) {
+namespace gamemd { int Gap2Recv_659530::SpreadRadiationAreaEffect_Helper_659530(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659530(_DWORD *this, int a2)
 {
@@ -53430,7 +53430,7 @@ retn    4
 */
 } }
 // 0x659650
-namespace gamemd { bool RenderProjectileTrail() {
+namespace gamemd { bool Gap2Recv_659650::RenderProjectileTrail() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall RenderProjectileTrail(int this)
 {
@@ -53916,7 +53916,7 @@ retn
 */
 } }
 // 0x659E30
-namespace gamemd { int Weapon_Update_Update() {
+namespace gamemd { int Gap2Recv_659E30::Weapon_Update_Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659E30(int this)
 {
@@ -54038,7 +54038,7 @@ retn
 */
 } }
 // 0x659EE0
-namespace gamemd { int Weapon_Update_Update_659EE0() {
+namespace gamemd { int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_659EE0(int this)
 {
@@ -54209,7 +54209,7 @@ retn
 */
 } }
 // 0x659FF0
-namespace gamemd { int Weapon_Update_Update_659FF0() {
+namespace gamemd { long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_659FF0(int this)
 {
@@ -54379,7 +54379,7 @@ retn
 */
 } }
 // 0x65A1B0
-namespace gamemd { void* Render_Render_65A1B0(int a1) {
+namespace gamemd { void* Gap2Recv_65A1B0::Render_Render_65A1B0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_65A1B0(int *this, int a2)
 {
@@ -54417,7 +54417,7 @@ retn    4
 */
 } }
 // 0x65A7E0
-namespace gamemd { void* Helper_65A7E0(int a1) {
+namespace gamemd { void* Gap2Recv_65A7E0::Helper_65A7E0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_65A7E0(_DWORD *this, int a2)
 {
@@ -54447,7 +54447,7 @@ retn    4
 */
 } }
 // 0x65C250
-namespace gamemd { void* WinMain_Helper_65C250(int a1, int a2) {
+namespace gamemd { char* Gap2Recv_65C250::WinMain_Helper_65C250(int a2, int Size) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall WinMain_Helper_65C250(_BYTE *this, int a2, int Size)
 {
@@ -54503,7 +54503,7 @@ retn    8
 */
 } }
 // 0x65C2A0
-namespace gamemd { void WinMain_Helper_65C2A0() {
+namespace gamemd { void Gap2Recv_65C2A0::WinMain_Helper_65C2A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_65C2A0(void *this)
 {
@@ -54543,7 +54543,7 @@ retn
 */
 } }
 // 0x65C6D0
-namespace gamemd { void* SeedInitRNG(int a1) {
+namespace gamemd { void* Gap2Recv_65C6D0::SeedInitRNG(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall RNG_SeedInit(_DWORD *this, int a2)
 {
@@ -54663,7 +54663,7 @@ retn    4
 */
 } }
 // 0x65DD30
-namespace gamemd { void* ConstructTeamMembers() {
+namespace gamemd { void* Gap2Recv_65DD30::ConstructTeamMembers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructTeamMembers(int this)
 {
@@ -55153,7 +55153,7 @@ retn
 */
 } }
 // 0x65FB80
-namespace gamemd { void* Team_Load_65FB80(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_65FB80(_DWORD *this, int a2, int a3)
 {
@@ -55406,7 +55406,7 @@ retn    8
 */
 } }
 // 0x65FE00
-namespace gamemd { void Map_Helper_65FE00() {
+namespace gamemd { void Gap2Recv_65FE00::Map_Helper_65FE00() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_65FE00(_BYTE *this)
 {
@@ -55690,7 +55690,7 @@ retn
 */
 } }
 // 0x660050
-namespace gamemd { int RenderGradientTrapezoid() {
+namespace gamemd { char Gap2Recv_660050::RenderGradientTrapezoid() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RenderGradientTrapezoid(float *this)
 {
@@ -56216,7 +56216,7 @@ retn
 */
 } }
 // 0x660540
-namespace gamemd { int Map_Helper_660540() {
+namespace gamemd { int Gap2Recv_660540::Map_Helper_660540() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660540(int this)
 {
@@ -56564,7 +56564,7 @@ retn
 */
 } }
 // 0x660730
-namespace gamemd { int Render_Render_660730(void* a1) {
+namespace gamemd { int Gap2Recv_660730::Render_Render_660730(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660730(float *this, _DWORD *a2)
 {
@@ -56649,7 +56649,7 @@ retn    4
 */
 } }
 // 0x660BB0
-namespace gamemd { void* UI_Create_734120_Create() {
+namespace gamemd { void* Gap2Recv_660BB0::UI_Create_734120_Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_660BB0(int *this)
 {
@@ -56688,7 +56688,7 @@ retn
 */
 } }
 // 0x660BE0
-namespace gamemd { void* UI_Create_734120_Create_660BE0() {
+namespace gamemd { void* Gap2Recv_660BE0::UI_Create_734120_Create_660BE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_660BE0(int *this)
 {
@@ -56764,7 +56764,7 @@ retn
 */
 } }
 // 0x661770
-namespace gamemd { void* SHA1TickRNG(int a1) {
+namespace gamemd { void* Gap2Recv_661770::SHA1TickRNG(char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall SHA1TickRNG(_DWORD *this, char a2)
 {
@@ -56904,25 +56904,24 @@ retn    4
 */
 } }
 // 0x6686C0
-namespace gamemd { int ResetRules() {
+namespace gamemd { int RulesClass::ResetRules() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x74e6b0
-int __thiscall RulesClass::Reset(#381 *this)
+int __thiscall ResetRules(RulesClass *this)
 {
-  void *v2; // edi
+  ColorScheme *v2; // edi
   char *v3; // ebp
   char *v4; // eax
   int v5; // ecx
   char *v6; // esi
   int v7; // esi
-  int KeyCount; // ebx
+  CCINIClass *KeyCount; // ebx
   unsigned __int8 *StringByIndex; // eax
   int Coord; // eax
   char *v11; // edx
   char v12; // cl
   __int16 v14; // [esp+50h] [ebp-D0h] BYREF
   char v15; // [esp+52h] [ebp-CEh]
-  #381 *v16; // [esp+54h] [ebp-CCh]
+  RulesClass *v16; // [esp+54h] [ebp-CCh]
   char v17[4]; // [esp+58h] [ebp-C8h] BYREF
   void *v18[4]; // [esp+5Ch] [ebp-C4h] BYREF
   _DWORD v19[3]; // [esp+6Ch] [ebp-B4h] BYREF
@@ -56936,819 +56935,208 @@ int __thiscall RulesClass::Reset(#381 *this)
   int v27; // [esp+118h] [ebp-8h]
   char *v28; // [esp+124h] [ebp+4h]
 
-  v16 = this;
-  while ( dword_A8ED54[121315] )
+  v16 = this; /*0x6686d3*/
+  while ( MEMORY[0xB054E0] ) /*0x6686d7*/
   {
-    v2 = *(void **)dword_A8ED54[121312];
-    if ( *(_DWORD *)dword_A8ED54[121312] )
+    v2 = *(ColorScheme **)MEMORY[0xB054D4]; /*0x6686de*/
+    if ( *(_DWORD *)MEMORY[0xB054D4] ) /*0x6686de*/
     {
-      ColorScheme::Destructor(*(_DWORD *)dword_A8ED54[121312]);
-      __3_YAXPAX_Z(v2);
+      ColorScheme::Destructor(*(_DWORD *)MEMORY[0xB054D4]); /*0x6686e6*/
+      __3_YAXPAX_Z(v2); /*0x6686ec*/
     }
   }
-  dword_A8ED54[121315] = 0;
-  VectorClass_ptr_ColorScheme::Remove((int)&dword_A8ED54[121311]);
-  System_Reset();
-  while ( MEMORY[0x87F7E8][539954] )
+  MEMORY[0xB054E0] = 0; /*0x668702*/
+  VectorClass_ptr_ColorScheme::Remove((int)&MEMORY[0xB054D0]); /*0x66870c*/
+  System_Reset(); /*0x668711*/
+  while ( MEMORY[0xA8ECB0] ) /*0x66871d*/
   {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539951] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539951] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539951],
+    if ( *(_DWORD *)MEMORY[0xA8ECA4] ) /*0x668725*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8ECA4] + 32))(*(_DWORD *)MEMORY[0xA8ECA4], 1); /*0x66872f*/
+  }
+  while ( MEMORY[0xA8E8E0] ) /*0x668742*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8E8D4] ) /*0x668749*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E8D4] + 32))(*(_DWORD *)MEMORY[0xA8E8D4], 1); /*0x668753*/
+  }
+  while ( unk_8B41D8 ) /*0x668766*/
+  {
+    if ( *(_DWORD *)unk_8B41CC ) /*0x66876d*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)unk_8B41CC + 32))(*(_DWORD *)unk_8B41CC, 1); /*0x668777*/
+  }
+  while ( MEMORY[0xA83D90] ) /*0x66878a*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA83D84]->__pad_0 ) /*0x668791*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA83D84]->__pad_0 + 32))( /*0x66879b*/
+        *(_DWORD *)MEMORY[0xA83D84]->__pad_0,
         1);
   }
-  while ( MEMORY[0x87F7E8][539710] )
+  while ( MEMORY[0xA8EC28] ) /*0x6687ae*/
   {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539707] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539707] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539707],
+    if ( *(_DWORD *)MEMORY[0xA8EC1C] ) /*0x6687b5*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8EC1C] + 32))(*(_DWORD *)MEMORY[0xA8EC1C], 1); /*0x6687bf*/
+  }
+  while ( MEMORY[0xA8E328] ) /*0x6687d2*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8E31C] ) /*0x6687d9*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E31C] + 32))(*(_DWORD *)MEMORY[0xA8E31C], 1); /*0x6687e3*/
+  }
+  while ( MEMORY[0xA8E358] ) /*0x6687f6*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8E34C] ) /*0x6687fd*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E34C] + 32))(*(_DWORD *)MEMORY[0xA8E34C], 1); /*0x668807*/
+  }
+  while ( g_CrateCount ) /*0x66881a*/
+  {
+    if ( *(_DWORD *)g_UnitTypeCount2 ) /*0x668821*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)g_UnitTypeCount2 + 32))(*(_DWORD *)g_UnitTypeCount2, 1); /*0x66882b*/
+  }
+  while ( MEMORY[0xA8B228] ) /*0x66883e*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8B21C] ) /*0x668845*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8B21C] + 32))(*(_DWORD *)MEMORY[0xA8B21C], 1); /*0x66884f*/
+  }
+  while ( g_BulletTypeInitState ) /*0x668862*/
+  {
+    if ( *(_DWORD *)dword_A83C84 ) /*0x668869*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)dword_A83C84 + 32))(*(_DWORD *)dword_A83C84, 1); /*0x668873*/
+  }
+  while ( g_TriggerClassCount ) /*0x668886*/
+  {
+    if ( *(_DWORD *)g_TriggerTypeCount ) /*0x66888d*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)g_TriggerTypeCount + 32))(*(_DWORD *)g_TriggerTypeCount, 1); /*0x668897*/
+  }
+  while ( MEMORY[0xA8E340] ) /*0x6688aa*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8E334] ) /*0x6688b1*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E334] + 32))(*(_DWORD *)MEMORY[0xA8E334], 1); /*0x6688bb*/
+  }
+  while ( MEMORY[0x8B4160] ) /*0x6688ce*/
+  {
+    if ( *(_DWORD *)MEMORY[0x8B4154] ) /*0x6688d5*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8B4154] + 32))(*(_DWORD *)MEMORY[0x8B4154], 1); /*0x6688df*/
+  }
+  while ( MEMORY[0x887578] ) /*0x66892f*/
+  {
+    if ( *(_DWORD *)MEMORY[0x88756C] ) /*0x6688f9*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x88756C] + 32))(*(_DWORD *)MEMORY[0x88756C], 1); /*0x668903*/
+  }
+  while ( MEMORY[0x8874D0] ) /*0x668916*/
+  {
+    if ( *(_DWORD *)MEMORY[0x8874C4] ) /*0x66891d*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8874C4] + 32))(*(_DWORD *)MEMORY[0x8874C4], 1); /*0x668927*/
+  }
+  while ( MEMORY[0xA8EB38] ) /*0x66893a*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA8EB2C] ) /*0x668941*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8EB2C] + 32))(*(_DWORD *)MEMORY[0xA8EB2C], 1); /*0x66894b*/
+  }
+  while ( MEMORY[0xA83DA8] ) /*0x66895e*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA83D9C] ) /*0x668965*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA83D9C] + 32))(*(_DWORD *)MEMORY[0xA83D9C], 1); /*0x66896f*/
+  }
+  while ( MEMORY[0xA83D78] ) /*0x668982*/
+  {
+    if ( *(_DWORD *)MEMORY[0xA83D6C] ) /*0x668989*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA83D6C] + 32))(*(_DWORD *)MEMORY[0xA83D6C], 1); /*0x668993*/
+  }
+  while ( HouseClass_Count ) /*0x6689a6*/
+  {
+    if ( *(_DWORD *)HouseClass_Array->__pad_0 ) /*0x6689ad*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)HouseClass_Array->__pad_0 + 32))( /*0x6689b7*/
+        *(_DWORD *)HouseClass_Array->__pad_0,
         1);
   }
-  while ( MEMORY[0x87F7E8][53884] )
+  while ( g_SuperWeaponTypeArray ) /*0x6689ca*/
   {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][53881] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][53881] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][53881],
-        1);
+    if ( *(_DWORD *)g_SuperWeaponTypeCount ) /*0x6689d1*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)g_SuperWeaponTypeCount + 32))(*(_DWORD *)g_SuperWeaponTypeCount, 1); /*0x6689db*/
   }
-  while ( MEMORY[0x87F7E8][528746] )
+  if ( INIClass::BinarySearchSection((int)v28, (unsigned __int8 *)MEMORY[0x839E44]) ) /*0x6689f6*/
+    *(_DWORD *)&this->__pad_C3C[2196] = INIClass::ReadInt_Overwrite( /*0x668a1e*/
+                                          (int)v28,
+                                          (unsigned __int8 *)MEMORY[0x839E44],
+                                          (unsigned __int8 *)MEMORY[0x83A0BC],
+                                          *(_DWORD *)&this->__pad_C3C[2196]);
+  RulesClass::Addition(this); /*0x668a27*/
+  v3 = (char *)this + 6260; /*0x668a2e*/
+  v14 = 0; /*0x668a34*/
+  v4 = v3; /*0x668a43*/
+  v5 = 16; /*0x668a45*/
+  do /*0x668a56*/
   {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528743] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528743] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528743],
-        1);
+    v6 = v4; /*0x668a4a*/
+    v4 += 3; /*0x668a4c*/
+    --v5; /*0x668a4f*/
+    *(_WORD *)v6 = 0; /*0x668a50*/
+    v6[2] = 0; /*0x668a53*/
   }
-  while ( MEMORY[0x87F7E8][539920] )
+  while ( v5 ); /*0x668a56*/
+  CCFileClass::Construct(v25, aLangruleIni); /*0x668a61*/
+  v7 = 0; /*0x668a66*/
+  if ( CCFileClass::Open(v25, 0) == 1 ) /*0x668a74*/
   {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539917] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539917] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539917],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][539344] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539341] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539341] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539341],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][539356] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539353] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539353] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539353],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528706] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528703] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528703] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528703],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][536208] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][536205] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][536205] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][536205],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528682] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528679] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528679] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528679],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528676] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528673] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528673] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528673],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][539350] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539347] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539347] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539347],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][53854] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][53851] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][53851] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][53851],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][8036] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][8033] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][8033] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][8033],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][7994] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][7991] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][7991] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][7991],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][539860] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][539857] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][539857] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][539857],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528752] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528749] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528749] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528749],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528740] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528737] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528737] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528737],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][524948] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][524945] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][524945] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][524945],
-        1);
-  }
-  while ( MEMORY[0x87F7E8][528688] )
-  {
-    if ( *(_DWORD *)MEMORY[0x87F7E8][528685] )
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x87F7E8][528685] + 32))(
-        *(_DWORD *)MEMORY[0x87F7E8][528685],
-        1);
-  }
-  if ( INIClass::BinarySearchSection((int)v28, (unsigned __int8 *)aMaximums) )
-    *((_DWORD *)this + 1332) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 aMaximums,
-                                 aPlayers,
-                                 *((_DWORD *)this + 1332));
-  RulesClass::Addition(this);
-  v3 = (char *)this + 6260;
-  v14 = 0;
-  v4 = v3;
-  v5 = 16;
-  do
-  {
-    v6 = v4;
-    v4 += 3;
-    --v5;
-    *(_WORD *)v6 = 0;
-    v6[2] = 0;
-  }
-  while ( v5 );
-  CCFileClass::Construct(v25, aLangruleIni);
-  v7 = 0;
-  if ( CCFileClass::Open(v25, 0) == 1 )
-  {
-    v18[1] = 0;
-    v18[2] = 0;
-    GenericNode::Constructor(v19);
-    GenericNode::Constructor(v20);
-    LinkedList::Prepend(v19, (int)v20);
-    v18[3] = &List<INIClass::INISection *>::`vftable';
-    memset(&v20[3], 0, 12);
-    v21 = 0;
-    v22 = 0;
-    v23 = 0;
-    v24 = 0;
-    v18[0] = &CCINIClass_Vtable;
-    if ( CCINIClass::Load((char *)v18, (int)v25, 1, 0) > 1 )
+    v18[1] = 0; /*0x668a7e*/
+    v18[2] = 0; /*0x668a82*/
+    GenericNode::Constructor(v19); /*0x668a86*/
+    GenericNode::Constructor(v20); /*0x668a8f*/
+    LinkedList::Prepend(v19, (int)v20); /*0x668aa5*/
+    v18[3] = &List<INIClass::INISection *>::`vftable'; /*0x668ab6*/
+    memset(&v20[3], 0, 12); /*0x668abe*/
+    v21 = 0; /*0x668aca*/
+    v22 = 0; /*0x668acf*/
+    v23 = 0; /*0x668ad3*/
+    v24 = 0; /*0x668ad7*/
+    v18[0] = &CCINIClass_Vtable; /*0x668adc*/
+    if ( CCINIClass::Load(v18, (int)v25, 1, 0) > 1 ) /*0x668aec*/
     {
-      HashTable::DestroyHashTableINIClass(v18);
-      goto LABEL_99;
+      HashTable::DestroyHashTableINIClass(v18); /*0x668af2*/
+      goto LABEL_99; /*0x668af7*/
     }
-    RulesClass::Addition(v16);
-    HashTable::DestroyHashTableINIClass(v18);
+    RulesClass::Addition(v16); /*0x668b05*/
+    HashTable::DestroyHashTableINIClass(v18); /*0x668b0e*/
   }
-  if ( INIClass::BinarySearchSection((int)v28, (unsigned __int8 *)aColoradd) )
+  if ( INIClass::BinarySearchSection((int)v28, (unsigned __int8 *)MEMORY[0x839E50]) ) /*0x668b1b*/
   {
-    KeyCount = INIClass::GetKeyCount(v28, (unsigned __int8 *)aColoradd);
-    if ( KeyCount > 0 )
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(v28, (unsigned __int8 *)MEMORY[0x839E50]); /*0x668b37*/
+    if ( (int)KeyCount > 0 ) /*0x668b3b*/
     {
-      do
+      do /*0x668b8a*/
       {
-        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v28, (unsigned __int8 *)aColoradd, v7);
-        v14 = 0;
-        v15 = 0;
-        Coord = INIClass::GetCoord(
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v28, (unsigned __int8 *)MEMORY[0x839E50], v7); /*0x668b47*/
+        v14 = 0; /*0x668b60*/
+        v15 = 0; /*0x668b6a*/
+        Coord = INIClass::GetCoord( /*0x668b6f*/
                   (unsigned __int8 ***)v28,
                   (int)v17,
-                  (unsigned __int8 *)aColoradd,
+                  (unsigned __int8 *)MEMORY[0x839E50],
                   StringByIndex,
                   (unsigned __int8 *)&v14);
-        v11 = v3;
-        ++v7;
-        v3 += 3;
-        v12 = *(_BYTE *)(Coord + 2);
-        *(_WORD *)v11 = *(_WORD *)Coord;
-        v11[2] = v12;
+        v11 = v3; /*0x668b76*/
+        ++v7; /*0x668b78*/
+        v3 += 3; /*0x668b79*/
+        v12 = *(_BYTE *)(Coord + 2); /*0x668b81*/
+        *(_WORD *)v11 = *(_WORD *)Coord; /*0x668b84*/
+        v11[2] = v12; /*0x668b87*/
       }
-      while ( v7 < KeyCount );
+      while ( v7 < (int)KeyCount ); /*0x668b8a*/
     }
   }
-  if ( MEMORY[0x87F7E8][536212] && MEMORY[0x87F7E8][536213] )
+  if ( MEMORY[0xA8B238][0] && MEMORY[0xA8B23C] ) /*0x668b9e*/
   {
-    GameConfig::Constructor((char **)MEMORY[0x87F7E8][536213]);
-    RulesClass::Addition(v16);
+    GameConfig::Constructor((char **)MEMORY[0xA8B23C]); /*0x668ba0*/
+    RulesClass::Addition(v16); /*0x668baa*/
   }
 LABEL_99:
-  v25[0] = &CCFileClass::`vftable';
-  v27 = 0;
-  Vector::Clear((int)v26);
-  v25[0] = &off_7E1668;
-  return BufferIOFileClass::Dtor(v25);
+  v25[0] = &CCFileClass::`vftable'; /*0x668baf*/
+  v27 = 0; /*0x668bbe*/
+  Vector::Clear((int)v26); /*0x668bc5*/
+  v25[0] = &off_7E1668; /*0x668bce*/
+  return BufferIOFileClass::Dtor(v25); /*0x668bdb*/
 }
-
-/* ASM:
-sub     esp, 0D0h
-mov     eax, dword_A8ED54+7678Ch
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi
-test    eax, eax
-mov     [esp+0E0h+var_CC], ebp
-jz      short loc_6686FD
-
-loc_6686D9:                             ; CODE XREF: ResetRules+3B↓j
-mov     eax, dword_A8ED54+76780h
-mov     edi, [eax]
-test    edi, edi
-jz      short loc_6686F4
-mov     ecx, edi
-call    ColorScheme__Destructor
-push    edi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6686F4:                             ; CODE XREF: ResetRules+22↑j
-mov     eax, dword_A8ED54+7678Ch
-test    eax, eax
-jnz     short loc_6686D9
-
-loc_6686FD:                             ; CODE XREF: ResetRules+17↑j
-mov     ecx, (offset dword_A8ED54+7677Ch)
-mov     dword_A8ED54+7678Ch, 0
-call    VectorClass_ptr_ColorScheme__Remove
-call    System_Reset
-mov     eax, ds:0A8ECB0h
-test    eax, eax
-jz      short loc_66873B
-
-loc_66871F:                             ; CODE XREF: ResetRules+79↓j
-mov     ecx, ds:0A8ECA4h
-mov     ecx, [ecx]
-test    ecx, ecx
-jz      short loc_668732
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668732:                             ; CODE XREF: ResetRules+69↑j
-mov     eax, ds:0A8ECB0h
-test    eax, eax
-jnz     short loc_66871F
-
-loc_66873B:                             ; CODE XREF: ResetRules+5D↑j
-mov     eax, ds:0A8E8E0h
-test    eax, eax
-jz      short loc_66875F
-
-loc_668744:                             ; CODE XREF: ResetRules+9D↓j
-mov     eax, ds:0A8E8D4h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668756
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668756:                             ; CODE XREF: ResetRules+8D↑j
-mov     eax, ds:0A8E8E0h
-test    eax, eax
-jnz     short loc_668744
-
-loc_66875F:                             ; CODE XREF: ResetRules+82↑j
-mov     eax, ds:8B41D8h
-test    eax, eax
-jz      short loc_668783
-
-loc_668768:                             ; CODE XREF: ResetRules+C1↓j
-mov     eax, ds:8B41CCh
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66877A
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66877A:                             ; CODE XREF: ResetRules+B1↑j
-mov     eax, ds:8B41D8h
-test    eax, eax
-jnz     short loc_668768
-
-loc_668783:                             ; CODE XREF: ResetRules+A6↑j
-mov     eax, ds:0A83D90h
-test    eax, eax
-jz      short loc_6687A7
-
-loc_66878C:                             ; CODE XREF: ResetRules+E5↓j
-mov     eax, ds:0A83D84h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66879E
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66879E:                             ; CODE XREF: ResetRules+D5↑j
-mov     eax, ds:0A83D90h
-test    eax, eax
-jnz     short loc_66878C
-
-loc_6687A7:                             ; CODE XREF: ResetRules+CA↑j
-mov     eax, ds:0A8EC28h
-test    eax, eax
-jz      short loc_6687CB
-
-loc_6687B0:                             ; CODE XREF: ResetRules+109↓j
-mov     eax, ds:0A8EC1Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6687C2
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6687C2:                             ; CODE XREF: ResetRules+F9↑j
-mov     eax, ds:0A8EC28h
-test    eax, eax
-jnz     short loc_6687B0
-
-loc_6687CB:                             ; CODE XREF: ResetRules+EE↑j
-mov     eax, ds:0A8E328h
-test    eax, eax
-jz      short loc_6687EF
-
-loc_6687D4:                             ; CODE XREF: ResetRules+12D↓j
-mov     eax, ds:0A8E31Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6687E6
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6687E6:                             ; CODE XREF: ResetRules+11D↑j
-mov     eax, ds:0A8E328h
-test    eax, eax
-jnz     short loc_6687D4
-
-loc_6687EF:                             ; CODE XREF: ResetRules+112↑j
-mov     eax, ds:0A8E358h
-test    eax, eax
-jz      short loc_668813
-
-loc_6687F8:                             ; CODE XREF: ResetRules+151↓j
-mov     eax, ds:0A8E34Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66880A
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66880A:                             ; CODE XREF: ResetRules+141↑j
-mov     eax, ds:0A8E358h
-test    eax, eax
-jnz     short loc_6687F8
-
-loc_668813:                             ; CODE XREF: ResetRules+136↑j
-mov     eax, ds:0A83CF0h
-test    eax, eax
-jz      short loc_668837
-
-loc_66881C:                             ; CODE XREF: ResetRules+175↓j
-mov     eax, ds:0A83CE4h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66882E
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66882E:                             ; CODE XREF: ResetRules+165↑j
-mov     eax, ds:0A83CF0h
-test    eax, eax
-jnz     short loc_66881C
-
-loc_668837:                             ; CODE XREF: ResetRules+15A↑j
-mov     eax, ds:0A8B228h
-test    eax, eax
-jz      short loc_66885B
-
-loc_668840:                             ; CODE XREF: ResetRules+199↓j
-mov     eax, ds:0A8B21Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668852
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668852:                             ; CODE XREF: ResetRules+189↑j
-mov     eax, ds:0A8B228h
-test    eax, eax
-jnz     short loc_668840
-
-loc_66885B:                             ; CODE XREF: ResetRules+17E↑j
-mov     eax, ds:0A83C90h
-test    eax, eax
-jz      short loc_66887F
-
-loc_668864:                             ; CODE XREF: ResetRules+1BD↓j
-mov     eax, ds:0A83C84h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668876
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668876:                             ; CODE XREF: ResetRules+1AD↑j
-mov     eax, ds:0A83C90h
-test    eax, eax
-jnz     short loc_668864
-
-loc_66887F:                             ; CODE XREF: ResetRules+1A2↑j
-mov     eax, ds:0A83C78h
-test    eax, eax
-jz      short loc_6688A3
-
-loc_668888:                             ; CODE XREF: ResetRules+1E1↓j
-mov     eax, ds:0A83C6Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66889A
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66889A:                             ; CODE XREF: ResetRules+1D1↑j
-mov     eax, ds:0A83C78h
-test    eax, eax
-jnz     short loc_668888
-
-loc_6688A3:                             ; CODE XREF: ResetRules+1C6↑j
-mov     eax, ds:0A8E340h
-test    eax, eax
-jz      short loc_6688C7
-
-loc_6688AC:                             ; CODE XREF: ResetRules+205↓j
-mov     eax, ds:0A8E334h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6688BE
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6688BE:                             ; CODE XREF: ResetRules+1F5↑j
-mov     eax, ds:0A8E340h
-test    eax, eax
-jnz     short loc_6688AC
-
-loc_6688C7:                             ; CODE XREF: ResetRules+1EA↑j
-mov     eax, ds:8B4160h
-test    eax, eax
-jz      short loc_6688EB
-
-loc_6688D0:                             ; CODE XREF: ResetRules+229↓j
-mov     eax, ds:8B4154h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6688E2
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6688E2:                             ; CODE XREF: ResetRules+219↑j
-mov     eax, ds:8B4160h
-test    eax, eax
-jnz     short loc_6688D0
-
-loc_6688EB:                             ; CODE XREF: ResetRules+20E↑j
-mov     eax, ds:887578h
-test    eax, eax
-jz      short loc_66890F
-
-loc_6688F4:                             ; CODE XREF: ResetRules+24D↓j
-mov     eax, ds:88756Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668906
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668906:                             ; CODE XREF: ResetRules+23D↑j
-mov     eax, ds:887578h
-test    eax, eax
-jnz     short loc_6688F4
-
-loc_66890F:                             ; CODE XREF: ResetRules+232↑j
-mov     eax, ds:8874D0h
-test    eax, eax
-jz      short loc_668933
-
-loc_668918:                             ; CODE XREF: ResetRules+271↓j
-mov     eax, ds:8874C4h
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66892A
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66892A:                             ; CODE XREF: ResetRules+261↑j
-mov     eax, ds:8874D0h
-test    eax, eax
-jnz     short loc_668918
-
-loc_668933:                             ; CODE XREF: ResetRules+256↑j
-mov     eax, ds:0A8EB38h
-test    eax, eax
-jz      short loc_668957
-
-loc_66893C:                             ; CODE XREF: ResetRules+295↓j
-mov     eax, ds:0A8EB2Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_66894E
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_66894E:                             ; CODE XREF: ResetRules+285↑j
-mov     eax, ds:0A8EB38h
-test    eax, eax
-jnz     short loc_66893C
-
-loc_668957:                             ; CODE XREF: ResetRules+27A↑j
-mov     eax, ds:0A83DA8h
-test    eax, eax
-jz      short loc_66897B
-
-loc_668960:                             ; CODE XREF: ResetRules+2B9↓j
-mov     eax, ds:0A83D9Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668972
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668972:                             ; CODE XREF: ResetRules+2A9↑j
-mov     eax, ds:0A83DA8h
-test    eax, eax
-jnz     short loc_668960
-
-loc_66897B:                             ; CODE XREF: ResetRules+29E↑j
-mov     eax, ds:0A83D78h
-test    eax, eax
-jz      short loc_66899F
-
-loc_668984:                             ; CODE XREF: ResetRules+2DD↓j
-mov     eax, ds:0A83D6Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_668996
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_668996:                             ; CODE XREF: ResetRules+2CD↑j
-mov     eax, ds:0A83D78h
-test    eax, eax
-jnz     short loc_668984
-
-loc_66899F:                             ; CODE XREF: ResetRules+2C2↑j
-mov     eax, ds:0A80238h
-test    eax, eax
-jz      short loc_6689C3
-
-loc_6689A8:                             ; CODE XREF: ResetRules+301↓j
-mov     eax, ds:0A8022Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6689BA
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6689BA:                             ; CODE XREF: ResetRules+2F1↑j
-mov     eax, ds:0A80238h
-test    eax, eax
-jnz     short loc_6689A8
-
-loc_6689C3:                             ; CODE XREF: ResetRules+2E6↑j
-mov     eax, ds:0A83CA8h
-test    eax, eax
-jz      short loc_6689E7
-
-loc_6689CC:                             ; CODE XREF: ResetRules+325↓j
-mov     eax, ds:0A83C9Ch
-mov     ecx, [eax]
-test    ecx, ecx
-jz      short loc_6689DE
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_6689DE:                             ; CODE XREF: ResetRules+315↑j
-mov     eax, ds:0A83CA8h
-test    eax, eax
-jnz     short loc_6689CC
-
-loc_6689E7:                             ; CODE XREF: ResetRules+30A↑j
-mov     eax, ds:off_7F0CA4 ; "Maximums"
-mov     edi, [esp+0E0h+arg_0]
-push    eax
-mov     ecx, edi
-call    INIClass__BinarySearchSection
-test    eax, eax
-setnz   al
-test    al, al
-jz      short loc_668A24
-mov     ecx, [ebp+14D0h]
-mov     edx, ds:off_7F0CA4 ; "Maximums"
-push    ecx
-push    offset aPlayers ; "Players"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [ebp+14D0h], eax
-
-loc_668A24:                             ; CODE XREF: ResetRules+342↑j
-push    edi
-mov     ecx, ebp        ; this
-call    RulesClass__Addition
-xor     dl, dl
-add     ebp, 1874h
-mov     byte ptr [esp+0E0h+var_D0], 0
-mov     byte ptr [esp+0E0h+var_D0+1], 0
-mov     bx, [esp+0E0h+var_D0]
-mov     eax, ebp
-mov     ecx, 10h
-
-loc_668A4A:                             ; CODE XREF: ResetRules+396↓j
-mov     esi, eax
-add     eax, 3
-dec     ecx
-mov     [esi], bx
-mov     [esi+2], dl
-jnz     short loc_668A4A
-push    offset aLangruleIni ; "LANGRULE.INI"
-lea     ecx, [esp+0E4h+var_6C]
-call    CCFileClass__Construct
-xor     esi, esi
-lea     ecx, [esp+0E0h+var_6C]
-push    esi
-call    CCFileClass__Open
-cmp     al, 1
-jnz     loc_668B13
-lea     ecx, [esp+0E0h+var_B4]
-mov     [esp+0E0h+var_C0], esi
-mov     [esp+0E0h+var_BC], esi
-call    GenericNode__Constructor
-lea     ecx, [esp+0E0h+var_A8]
-call    GenericNode__Constructor
-lea     eax, [esp+0E0h+var_A8]
-lea     ecx, [esp+0E0h+var_B4]
-push    eax
-mov     [esp+0E4h+var_B8], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
-call    LinkedList__Prepend
-push    esi
-lea     ecx, [esp+0E4h+var_6C]
-push    1
-push    ecx
-lea     ecx, [esp+0ECh+var_C4]
-mov     [esp+0ECh+var_B8], offset ??_7?$List@PAUINISection@INIClass@@@@6B@ ; const List<INIClass::INISection *>::`vftable'
-mov     [esp+0ECh+var_9C], esi
-mov     [esp+0ECh+var_98], esi
-mov     [esp+0ECh+var_94], esi
-mov     [esp+0ECh+var_90], 0
-mov     [esp+0ECh+var_8C], esi
-mov     [esp+0ECh+var_88], esi
-mov     [esp+0ECh+var_84], 0
-mov     [esp+0ECh+var_C4], offset CCINIClass_Vtable
-call    CCINIClass__Load
-cmp     eax, 1
-jle     short loc_668AFC
-lea     ecx, [esp+0E0h+var_C4]
-call    HashTable__DestroyHashTableINIClass
-jmp     loc_668BAF
-; ---------------------------------------------------------------------------
-
-loc_668AFC:                             ; CODE XREF: ResetRules+42C↑j
-mov     ecx, [esp+0E0h+var_CC] ; this
-lea     edx, [esp+0E0h+var_C4]
-push    edx
-call    RulesClass__Addition
-lea     ecx, [esp+0E0h+var_C4]
-call    HashTable__DestroyHashTableINIClass
-
-loc_668B13:                             ; CODE XREF: ResetRules+3B4↑j
-mov     eax, ds:off_7F0C98 ; "ColorAdd"
-mov     ecx, edi
-push    eax
-call    INIClass__BinarySearchSection
-test    eax, eax
-setnz   al
-test    al, al
-jz      short loc_668B8E
-mov     ecx, ds:off_7F0C98 ; "ColorAdd"
-push    ecx
-mov     ecx, edi
-call    INIClass__GetKeyCount
-mov     ebx, eax
-cmp     ebx, esi
-jle     short loc_668B8E
-
-loc_668B3D:                             ; CODE XREF: ResetRules+4CA↓j
-mov     edx, ds:off_7F0C98 ; "ColorAdd"
-push    esi
-push    edx
-mov     ecx, edi
-call    INIClass__GetStringByIndex
-mov     edx, ds:off_7F0C98 ; "ColorAdd"
-lea     ecx, [esp+0E0h+var_D0]
-push    ecx
-push    eax
-lea     eax, [esp+0E8h+var_C8]
-push    edx
-push    eax
-mov     ecx, edi
-mov     byte ptr [esp+0F0h+var_D0], 0
-mov     byte ptr [esp+0F0h+var_D0+1], 0
-mov     [esp+0F0h+var_CE], 0
-call    INIClass__GetCoord
-mov     ecx, eax
-mov     edx, ebp
-inc     esi
-add     ebp, 3
-mov     ax, [ecx]
-cmp     esi, ebx
-mov     cl, [ecx+2]
-mov     [edx], ax
-mov     [edx+2], cl
-jl      short loc_668B3D
-xor     esi, esi
-
-loc_668B8E:                             ; CODE XREF: ResetRules+467↑j
-; ResetRules+47B↑j
-cmp     ds:0A8B238h, esi
-jz      short loc_668BAF
-mov     ecx, ds:0A8B23Ch
-cmp     ecx, esi
-jz      short loc_668BAF
-call    GameConfig__Constructor
-mov     ecx, [esp+0E0h+var_CC] ; this
-push    eax
-call    RulesClass__Addition
-
-loc_668BAF:                             ; CODE XREF: ResetRules+437↑j
-; ResetRules+4D4↑j ...
-lea     ecx, [esp+0E0h+var_14]
-mov     [esp+0E0h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
-mov     [esp+0E0h+var_8], esi
-call    Vector__Clear
-lea     ecx, [esp+0E0h+var_6C]
-mov     [esp+0E0h+var_6C], offset off_7E1668
-call    BufferIOFileClass__Dtor
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0D0h
-retn    4
-*/
 } }
 // 0x66B900
-namespace gamemd { int ReadCrateRulesINI() {
+namespace gamemd { int Gap2Recv_66B900::ReadCrateRulesINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadCrateRulesINI(#381 *this)
 {
@@ -58124,7 +57512,7 @@ retn    4
 */
 } }
 // 0x672230
-namespace gamemd { int ReadMaximumPlayersINI() {
+namespace gamemd { int Gap2Recv_672230::ReadMaximumPlayersINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadMaximumPlayersINI(#381 *this)
 {
@@ -58171,7 +57559,7 @@ retn    4
 */
 } }
 // 0x672840
-namespace gamemd { int ReadBuildingTypesBuildingTypeClass() {
+namespace gamemd { int Gap2Recv_672840::ReadBuildingTypesBuildingTypeClass() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_672840(#381 *this)
 {
@@ -58254,7 +57642,7 @@ retn    4
 */
 } }
 // 0x678850
-namespace gamemd { int InitInterfaceStubsCOM() {
+namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitInterfaceStubsCOM(#381 *this)
 {
@@ -61322,7 +60710,7 @@ retn    8
 */
 } }
 // 0x67BFA0
-namespace gamemd { void* System_Load_67BFA0(void* a1) {
+namespace gamemd { void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall System_Load_67BFA0(_DWORD *this, _DWORD *a2)
 {
@@ -61414,7 +60802,7 @@ retn    4
 */
 } }
 // 0x681060
-namespace gamemd { int Map_Save(int a1) {
+namespace gamemd { int Gap2Recv_681060::Map_Save(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681060(_DWORD *this, int a2)
 {
@@ -61429,7 +60817,7 @@ retn    4
 */
 } }
 // 0x681080
-namespace gamemd { int Map_Save_681080(int a1) {
+namespace gamemd { int Gap2Recv_681080::Map_Save_681080(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681080(_DWORD *this, int a2)
 {
@@ -61444,7 +60832,7 @@ retn    4
 */
 } }
 // 0x6810A0
-namespace gamemd { void* Map_Save_6810A0(void* a1) {
+namespace gamemd { void* Gap2Recv_6810A0::Map_Save_6810A0(void* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall Map_Save_6810A0(#72 *this, #72 *Source)
 {
@@ -61467,7 +60855,7 @@ retn    4
 */
 } }
 // 0x6810D0
-namespace gamemd { void* Map_Save_6810D0(void* a1) {
+namespace gamemd { void* Gap2Recv_6810D0::Map_Save_6810D0(void* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall Map_Save_6810D0(#72 *this, #72 *Source)
 {
@@ -61490,7 +60878,7 @@ retn    4
 */
 } }
 // 0x681110
-namespace gamemd { int Map_Save_681110(int a1) {
+namespace gamemd { int Gap2Recv_681110::Map_Save_681110(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681110(_DWORD *this, int a2)
 {
@@ -61505,7 +60893,7 @@ retn    4
 */
 } }
 // 0x681130
-namespace gamemd { int Map_Save_681130(int a1) {
+namespace gamemd { int Gap2Recv_681130::Map_Save_681130(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681130(_DWORD *this, int a2)
 {
@@ -61520,7 +60908,7 @@ retn    4
 */
 } }
 // 0x6811C0
-namespace gamemd { void* Map_Save_6811C0(void* a1) {
+namespace gamemd { char* Gap2Recv_6811C0::Map_Save_6811C0(char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall Map_Save_6811C0(char *this, char *Source)
 {
@@ -61543,7 +60931,7 @@ retn    4
 */
 } }
 // 0x681200
-namespace gamemd { int Map_Save_681200(void* a1) {
+namespace gamemd { int Gap2Recv_681200::Map_Save_681200(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
@@ -61565,7 +60953,7 @@ retn    4
 */
 } }
 // 0x681240
-namespace gamemd { int Map_Save_681240(void* a1) {
+namespace gamemd { int Gap2Recv_681240::Map_Save_681240(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 {
@@ -61587,7 +60975,7 @@ retn    4
 */
 } }
 // 0x681280
-namespace gamemd { int Map_Save_681280(void* a1) {
+namespace gamemd { int Gap2Recv_681280::Map_Save_681280(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 {
@@ -61609,7 +60997,7 @@ retn    4
 */
 } }
 // 0x6812C0
-namespace gamemd { int Map_Save_6812C0(int a1) {
+namespace gamemd { int Gap2Recv_6812C0::Map_Save_6812C0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6812C0(_DWORD *this, int a2)
 {
@@ -61624,7 +61012,7 @@ retn    4
 */
 } }
 // 0x681840
-namespace gamemd { int ScenarioPropertyReadCOM(int a1) {
+namespace gamemd { int Gap2Recv_681840::ScenarioPropertyReadCOM(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScenarioPropertyReadCOM(int this, int (__stdcall ***a2)(int, void *, int *))
 {
@@ -63004,7 +62392,7 @@ retn    4
 */
 } }
 // 0x683050
-namespace gamemd { int Map_Read_683050() {
+namespace gamemd { int Gap2Recv_683050::Map_Read_683050() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_683050(int *this)
 {
@@ -63029,7 +62417,7 @@ retn
 */
 } }
 // 0x683060
-namespace gamemd { int ReleaseCOM() {
+namespace gamemd { int Gap2Recv_683060::ReleaseCOM() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COM_Release(int *this)
 {
@@ -63054,7 +62442,7 @@ retn
 */
 } }
 // 0x68C260
-namespace gamemd { int DynamicVector_PushBack(void* a1) {
+namespace gamemd { char Gap2Recv_68C260::DynamicVector_PushBack(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_68C260(_DWORD *this, _DWORD *a2)
 {
@@ -63127,7 +62515,7 @@ retn    4
 */
 } }
 // 0x68C860
-namespace gamemd { int LoadTheaterClassMIX_Load(void* a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { int Gap2Recv_68C860::LoadTheaterClassMIX_Load(void* a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_68C860(int this, const void *a2, int a3, int a4, int a5, int a6)
 {
@@ -63191,7 +62579,7 @@ retn    14h
 */
 } }
 // 0x68FBB0
-namespace gamemd { int RenderScoreTypeText(int a1, int a2, int a3) {
+namespace gamemd { int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderScoreTypeText(int this, int a2, int a3, int a4)
 {
@@ -63854,7 +63242,7 @@ retn    0Ch
 */
 } }
 // 0x68FFE0
-namespace gamemd { int Render_Render_68FFE0(int a1, int a2) {
+namespace gamemd { int Gap2Recv_68FFE0::Render_Render_68FFE0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 signed int __thiscall Render_Render_68FFE0(_DWORD *this, int a2, int a3)
 {
@@ -64068,7 +63456,7 @@ retn    8
 */
 } }
 // 0x691590
-namespace gamemd { int SetLandTypeMap() {
+namespace gamemd { char Gap2Recv_691590::SetLandTypeMap() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Map_SetLandType(_DWORD *this)
 {
@@ -64083,7 +63471,7 @@ retn
 */
 } }
 // 0x692290
-namespace gamemd { int SmallFunc_692290() {
+namespace gamemd { int Gap2Recv_692290::SmallFunc_692290() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_692290(int this)
 {
@@ -64120,7 +63508,7 @@ retn
 */
 } }
 // 0x693440
-namespace gamemd { int ScrollMapEdge(void* a1) {
+namespace gamemd { char Gap2Recv_693440::ScrollMapEdge(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ScrollMapEdge(int *this, _DWORD *a2)
 {
@@ -64763,7 +64151,7 @@ retn    4
 */
 } }
 // 0x695BC0
-namespace gamemd { int ApplyModemConfigSettings() {
+namespace gamemd { char Gap2Recv_695BC0::ApplyModemConfigSettings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ApplyModemConfigSettings(_DWORD *this)
 {
@@ -65311,7 +64699,7 @@ retn
 */
 } }
 // 0x696200
-namespace gamemd { int InitializeModemPortSelect() {
+namespace gamemd { int Gap2Recv_696200::InitializeModemPortSelect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeModemPortSelect(char *this)
 {
@@ -65731,7 +65119,7 @@ retn
 */
 } }
 // 0x6967B0
-namespace gamemd { int DlgProcLoadGame_Load() {
+namespace gamemd { int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load(_DWORD *this)
 {
@@ -65994,7 +65382,7 @@ retn
 */
 } }
 // 0x696AE0
-namespace gamemd { int DlgProcLoadGame_Load_696AE0() {
+namespace gamemd { int Gap2Recv_696AE0::DlgProcLoadGame_Load_696AE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load_696AE0(_DWORD *this)
 {
@@ -66192,7 +65580,7 @@ retn
 */
 } }
 // 0x696C40
-namespace gamemd { int DlgProcLoadGame_Load_696C40() {
+namespace gamemd { int Gap2Recv_696C40::DlgProcLoadGame_Load_696C40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DlgProcLoadGame_Load_696C40(_DWORD *this)
 {
@@ -66323,7 +65711,7 @@ retn
 */
 } }
 // 0x697F10
-namespace gamemd { int ReadGameSettingsINI(void* a1, int a2, void* a3, void* a4) {
+namespace gamemd { int Gap2Recv_697F10::ReadGameSettingsINI(void* a2, int a3, void* a4, void* a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GameSetup_ReadINI(_DWORD *this, _DWORD *a2, int a3, _DWORD *a4, _DWORD *a5)
 {
@@ -66525,7 +65913,7 @@ retn    10h
 */
 } }
 // 0x6990A0
-namespace gamemd { void SaveConfigWOL() {
+namespace gamemd { void Gap2Recv_6990A0::SaveConfigWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SaveConfigWOL(int this)
 {
@@ -66959,7 +66347,7 @@ retn
 */
 } }
 // 0x69B170
-namespace gamemd { void ParseAndApplyAlliances() {
+namespace gamemd { void Gap2Recv_69B170::ParseAndApplyAlliances() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParseAndApplyAlliances(_BYTE *this)
 {
@@ -67569,7 +66957,7 @@ retn
 */
 } }
 // 0x69BBF0
-namespace gamemd { void Network_Disconnect_69BBF0(int a1) {
+namespace gamemd { void Gap2Recv_69BBF0::Network_Disconnect_69BBF0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_69BBF0(char *this, int a2)
 {
@@ -67610,7 +66998,7 @@ retn    4
 */
 } }
 // 0x69D870
-namespace gamemd { void* ParseAndApplyAlliances_Parse(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ParseAndApplyAlliances_Parse(_DWORD *this, int a2, int a3)
 {
@@ -67668,7 +67056,7 @@ retn    8
 */
 } }
 // 0x69E430
-namespace gamemd { void* LoadSHPFile(void* a1) {
+namespace gamemd { int LoadSHPFile(int lpBuffer, char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LoadSHPFile(int lpBuffer, char *Source)
 {
@@ -67773,7 +67161,7 @@ retn    4
 */
 } }
 // 0x69E900
-namespace gamemd { int Helper_69E900(int a1) {
+namespace gamemd { char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_69E900(char **this, unsigned int a2)
 {
@@ -67814,7 +67202,7 @@ retn    4
 */
 } }
 // 0x6A4F20
-namespace gamemd { int UI_Init(int a1) {
+namespace gamemd { int Gap2Recv_6A4F20::UI_Init(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Init(int this, int a2)
 {
@@ -67930,7 +67318,7 @@ retn    4
 */
 } }
 // 0x6A94F0
-namespace gamemd { int SmallFunc_6A94F0(int a1) {
+namespace gamemd { int Gap2Recv_6A94F0::SmallFunc_6A94F0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6A94F0(_DWORD *this, int a2)
 {
@@ -67988,7 +67376,7 @@ retn    4
 */
 } }
 // 0x6AC840
-namespace gamemd { void* System_Init_6AC840(int a1) {
+namespace gamemd { char* Gap2Recv_6AC840::System_Init_6AC840(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6AC840(char *this, int a2)
 {
@@ -68017,7 +67405,7 @@ retn    4
 */
 } }
 // 0x6AC8D0
-namespace gamemd { void* System_Init_6AC8D0(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall System_Init_6AC8D0(_DWORD *this, int a2, int a3)
 {
@@ -68101,7 +67489,7 @@ retn    8
 */
 } }
 // 0x6B0490
-namespace gamemd { void* Event_Process_6B0490() {
+namespace gamemd { void* Gap2Recv_6B0490::Event_Process_6B0490() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_6B0490(_DWORD *this)
 {
@@ -68154,7 +67542,7 @@ retn
 */
 } }
 // 0x6B2520
-namespace gamemd { int System_Init_6B2520() {
+namespace gamemd { char Gap2Recv_6B2520::System_Init_6B2520() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6B2520(int *this)
 {
@@ -68262,7 +67650,7 @@ retn
 */
 } }
 // 0x6B4100
-namespace gamemd { int Map_Get_6B4100() {
+namespace gamemd { int Gap2Recv_6B4100::Map_Get_6B4100() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B4100(int *this)
 {
@@ -68453,7 +67841,7 @@ retn
 */
 } }
 // 0x6B5440
-namespace gamemd { int Object_Read_6B5440() {
+namespace gamemd { int Gap2Recv_6B5440::Object_Read_6B5440() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B5440(void *this)
 {
@@ -68514,7 +67902,7 @@ retn
 */
 } }
 // 0x6B8AF0
-namespace gamemd { bool ApplyGameOptions_Helper(void* a1) {
+namespace gamemd { bool Gap2Recv_6B8AF0::ApplyGameOptions_Helper(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_6B8AF0(_DWORD *this, _DWORD *a2)
 {
@@ -68544,7 +67932,7 @@ retn    4
 */
 } }
 // 0x6BAFA0
-namespace gamemd { void Render_Load_6BAFA0() {
+namespace gamemd { void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Render_Load_6BAFA0(_DWORD *this)
 {
@@ -68684,7 +68072,7 @@ retn
 */
 } }
 // 0x6BB990
-namespace gamemd { int TopLevelExceptionFilter() {
+namespace gamemd { int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TopLevelExceptionFilter(int **this, struct _EXCEPTION_POINTERS *ExceptionInfo, int a3, int a4, int a5)
 {
@@ -68763,7 +68151,7 @@ jmp     loc_4C8FE0
 */
 } }
 // 0x6BFD40
-namespace gamemd { void* WinMain_Helper_6BFD40() {
+namespace gamemd { void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6BFD40(_DWORD *this)
 {
@@ -68780,7 +68168,7 @@ retn
 */
 } }
 // 0x6BFEC0
-namespace gamemd { void* WinMain_Helper_6BFEC0() {
+namespace gamemd { void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6BFEC0(_DWORD *this)
 {
@@ -68797,7 +68185,7 @@ retn
 */
 } }
 // 0x6C0040
-namespace gamemd { void* WinMain_Helper_6C0040() {
+namespace gamemd { void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0040(_DWORD *this)
 {
@@ -68814,7 +68202,7 @@ retn
 */
 } }
 // 0x6C01C0
-namespace gamemd { void* WinMain_Helper_6C01C0() {
+namespace gamemd { void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C01C0(_DWORD *this)
 {
@@ -68831,7 +68219,7 @@ retn
 */
 } }
 // 0x6C0340
-namespace gamemd { void* WinMain_Helper_6C0340() {
+namespace gamemd { void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0340(_DWORD *this)
 {
@@ -68848,7 +68236,7 @@ retn
 */
 } }
 // 0x6C04C0
-namespace gamemd { void* WinMain_Helper_6C04C0() {
+namespace gamemd { void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C04C0(_DWORD *this)
 {
@@ -68865,7 +68253,7 @@ retn
 */
 } }
 // 0x6C0640
-namespace gamemd { void* WinMain_Helper_6C0640() {
+namespace gamemd { void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0640(_DWORD *this)
 {
@@ -68882,7 +68270,7 @@ retn
 */
 } }
 // 0x6C07C0
-namespace gamemd { void* WinMain_Helper_6C07C0() {
+namespace gamemd { void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C07C0(_DWORD *this)
 {
@@ -68899,7 +68287,7 @@ retn
 */
 } }
 // 0x6C0940
-namespace gamemd { void* WinMain_Helper_6C0940() {
+namespace gamemd { void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0940(_DWORD *this)
 {
@@ -68916,7 +68304,7 @@ retn
 */
 } }
 // 0x6C0C40
-namespace gamemd { void* WinMain_Helper_6C0C40() {
+namespace gamemd { void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0C40(_DWORD *this)
 {
@@ -68933,7 +68321,7 @@ retn
 */
 } }
 // 0x6C0DC0
-namespace gamemd { void* WinMain_Helper_6C0DC0() {
+namespace gamemd { void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0DC0(_DWORD *this)
 {
@@ -68950,7 +68338,7 @@ retn
 */
 } }
 // 0x6C0F40
-namespace gamemd { void* WinMain_Helper_6C0F40() {
+namespace gamemd { void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C0F40(_DWORD *this)
 {
@@ -68967,7 +68355,7 @@ retn
 */
 } }
 // 0x6C10C0
-namespace gamemd { void* WinMain_Helper_6C10C0() {
+namespace gamemd { void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C10C0(_DWORD *this)
 {
@@ -68984,7 +68372,7 @@ retn
 */
 } }
 // 0x6C1240
-namespace gamemd { void* WinMain_Helper_6C1240() {
+namespace gamemd { void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1240(_DWORD *this)
 {
@@ -69001,7 +68389,7 @@ retn
 */
 } }
 // 0x6C13C0
-namespace gamemd { void* WinMain_Helper_6C13C0() {
+namespace gamemd { void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C13C0(_DWORD *this)
 {
@@ -69018,7 +68406,7 @@ retn
 */
 } }
 // 0x6C1540
-namespace gamemd { void* WinMain_Helper_6C1540() {
+namespace gamemd { void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1540(_DWORD *this)
 {
@@ -69035,7 +68423,7 @@ retn
 */
 } }
 // 0x6C16C0
-namespace gamemd { void* WinMain_Helper_6C16C0() {
+namespace gamemd { void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C16C0(_DWORD *this)
 {
@@ -69052,7 +68440,7 @@ retn
 */
 } }
 // 0x6C1840
-namespace gamemd { void* WinMain_Helper_6C1840() {
+namespace gamemd { void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1840(_DWORD *this)
 {
@@ -69069,7 +68457,7 @@ retn
 */
 } }
 // 0x6C19C0
-namespace gamemd { void* WinMain_Helper_6C19C0() {
+namespace gamemd { void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C19C0(_DWORD *this)
 {
@@ -69086,7 +68474,7 @@ retn
 */
 } }
 // 0x6C1B40
-namespace gamemd { void* WinMain_Helper_6C1B40() {
+namespace gamemd { void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1B40(_DWORD *this)
 {
@@ -69103,7 +68491,7 @@ retn
 */
 } }
 // 0x6C1CC0
-namespace gamemd { void* WinMain_Helper_6C1CC0() {
+namespace gamemd { void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1CC0(_DWORD *this)
 {
@@ -69120,7 +68508,7 @@ retn
 */
 } }
 // 0x6C1E40
-namespace gamemd { void* WinMain_Helper_6C1E40() {
+namespace gamemd { void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1E40(_DWORD *this)
 {
@@ -69137,7 +68525,7 @@ retn
 */
 } }
 // 0x6C1FC0
-namespace gamemd { void* WinMain_Helper_6C1FC0() {
+namespace gamemd { void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C1FC0(_DWORD *this)
 {
@@ -69154,7 +68542,7 @@ retn
 */
 } }
 // 0x6C2140
-namespace gamemd { void* WinMain_Helper_6C2140() {
+namespace gamemd { void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2140(_DWORD *this)
 {
@@ -69171,7 +68559,7 @@ retn
 */
 } }
 // 0x6C22C0
-namespace gamemd { void* WinMain_Helper_6C22C0() {
+namespace gamemd { void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C22C0(_DWORD *this)
 {
@@ -69188,7 +68576,7 @@ retn
 */
 } }
 // 0x6C2440
-namespace gamemd { void* WinMain_Helper_6C2440() {
+namespace gamemd { void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2440(_DWORD *this)
 {
@@ -69205,7 +68593,7 @@ retn
 */
 } }
 // 0x6C25C0
-namespace gamemd { void* WinMain_Helper_6C25C0() {
+namespace gamemd { void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C25C0(_DWORD *this)
 {
@@ -69222,7 +68610,7 @@ retn
 */
 } }
 // 0x6C2740
-namespace gamemd { void* WinMain_Helper_6C2740() {
+namespace gamemd { void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2740(_DWORD *this)
 {
@@ -69239,7 +68627,7 @@ retn
 */
 } }
 // 0x6C28C0
-namespace gamemd { void* WinMain_Helper_6C28C0() {
+namespace gamemd { void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C28C0(_DWORD *this)
 {
@@ -69256,7 +68644,7 @@ retn
 */
 } }
 // 0x6C2A40
-namespace gamemd { void* WinMain_Helper_6C2A40() {
+namespace gamemd { void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2A40(_DWORD *this)
 {
@@ -69273,7 +68661,7 @@ retn
 */
 } }
 // 0x6C2BC0
-namespace gamemd { void* WinMain_Helper_6C2BC0() {
+namespace gamemd { void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2BC0(_DWORD *this)
 {
@@ -69290,7 +68678,7 @@ retn
 */
 } }
 // 0x6C2D40
-namespace gamemd { void* WinMain_Helper_6C2D40() {
+namespace gamemd { void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2D40(_DWORD *this)
 {
@@ -69307,7 +68695,7 @@ retn
 */
 } }
 // 0x6C2EC0
-namespace gamemd { void* WinMain_Helper_6C2EC0() {
+namespace gamemd { void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C2EC0(_DWORD *this)
 {
@@ -69324,7 +68712,7 @@ retn
 */
 } }
 // 0x6C3040
-namespace gamemd { void* WinMain_Helper_6C3040() {
+namespace gamemd { void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3040(_DWORD *this)
 {
@@ -69341,7 +68729,7 @@ retn
 */
 } }
 // 0x6C31C0
-namespace gamemd { void* WinMain_Helper_6C31C0() {
+namespace gamemd { void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C31C0(_DWORD *this)
 {
@@ -69358,7 +68746,7 @@ retn
 */
 } }
 // 0x6C3340
-namespace gamemd { void* WinMain_Helper_6C3340() {
+namespace gamemd { void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3340(_DWORD *this)
 {
@@ -69375,7 +68763,7 @@ retn
 */
 } }
 // 0x6C34C0
-namespace gamemd { void* WinMain_Helper_6C34C0() {
+namespace gamemd { void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C34C0(_DWORD *this)
 {
@@ -69392,7 +68780,7 @@ retn
 */
 } }
 // 0x6C3640
-namespace gamemd { void* WinMain_Helper_6C3640() {
+namespace gamemd { void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3640(_DWORD *this)
 {
@@ -69409,7 +68797,7 @@ retn
 */
 } }
 // 0x6C37C0
-namespace gamemd { void* WinMain_Helper_6C37C0() {
+namespace gamemd { void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C37C0(_DWORD *this)
 {
@@ -69426,7 +68814,7 @@ retn
 */
 } }
 // 0x6C3940
-namespace gamemd { void* WinMain_Helper_6C3940() {
+namespace gamemd { void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3940(_DWORD *this)
 {
@@ -69443,7 +68831,7 @@ retn
 */
 } }
 // 0x6C3AC0
-namespace gamemd { void* WinMain_Helper_6C3AC0() {
+namespace gamemd { void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3AC0(_DWORD *this)
 {
@@ -69460,7 +68848,7 @@ retn
 */
 } }
 // 0x6C3C40
-namespace gamemd { void* WinMain_Helper_6C3C40() {
+namespace gamemd { void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3C40(_DWORD *this)
 {
@@ -69477,7 +68865,7 @@ retn
 */
 } }
 // 0x6C3DC0
-namespace gamemd { void* WinMain_Helper_6C3DC0() {
+namespace gamemd { void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3DC0(_DWORD *this)
 {
@@ -69494,7 +68882,7 @@ retn
 */
 } }
 // 0x6C3F40
-namespace gamemd { void* WinMain_Helper_6C3F40() {
+namespace gamemd { void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C3F40(_DWORD *this)
 {
@@ -69511,7 +68899,7 @@ retn
 */
 } }
 // 0x6C40C0
-namespace gamemd { void* WinMain_Helper_6C40C0() {
+namespace gamemd { void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C40C0(_DWORD *this)
 {
@@ -69528,7 +68916,7 @@ retn
 */
 } }
 // 0x6C4240
-namespace gamemd { void* WinMain_Helper_6C4240() {
+namespace gamemd { void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4240(_DWORD *this)
 {
@@ -69545,7 +68933,7 @@ retn
 */
 } }
 // 0x6C43C0
-namespace gamemd { void* WinMain_Helper_6C43C0() {
+namespace gamemd { void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C43C0(_DWORD *this)
 {
@@ -69562,7 +68950,7 @@ retn
 */
 } }
 // 0x6C4540
-namespace gamemd { void* WinMain_Helper_6C4540() {
+namespace gamemd { void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4540(_DWORD *this)
 {
@@ -69579,7 +68967,7 @@ retn
 */
 } }
 // 0x6C46C0
-namespace gamemd { void* WinMain_Helper_6C46C0() {
+namespace gamemd { void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C46C0(_DWORD *this)
 {
@@ -69596,7 +68984,7 @@ retn
 */
 } }
 // 0x6C4840
-namespace gamemd { void* WinMain_Helper_6C4840() {
+namespace gamemd { void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4840(_DWORD *this)
 {
@@ -69613,7 +69001,7 @@ retn
 */
 } }
 // 0x6C49C0
-namespace gamemd { void* WinMain_Helper_6C49C0() {
+namespace gamemd { void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C49C0(_DWORD *this)
 {
@@ -69630,7 +69018,7 @@ retn
 */
 } }
 // 0x6C4B40
-namespace gamemd { void* WinMain_Helper_6C4B40() {
+namespace gamemd { void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4B40(_DWORD *this)
 {
@@ -69647,7 +69035,7 @@ retn
 */
 } }
 // 0x6C4CC0
-namespace gamemd { void* WinMain_Helper_6C4CC0() {
+namespace gamemd { void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4CC0(_DWORD *this)
 {
@@ -69664,7 +69052,7 @@ retn
 */
 } }
 // 0x6C4E40
-namespace gamemd { void* WinMain_Helper_6C4E40() {
+namespace gamemd { void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4E40(_DWORD *this)
 {
@@ -69681,7 +69069,7 @@ retn
 */
 } }
 // 0x6C4FC0
-namespace gamemd { void* WinMain_Helper_6C4FC0() {
+namespace gamemd { void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C4FC0(_DWORD *this)
 {
@@ -69698,7 +69086,7 @@ retn
 */
 } }
 // 0x6C5140
-namespace gamemd { void* WinMain_Helper_6C5140() {
+namespace gamemd { void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5140(_DWORD *this)
 {
@@ -69715,7 +69103,7 @@ retn
 */
 } }
 // 0x6C52C0
-namespace gamemd { void* WinMain_Helper_6C52C0() {
+namespace gamemd { void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C52C0(_DWORD *this)
 {
@@ -69732,7 +69120,7 @@ retn
 */
 } }
 // 0x6C5440
-namespace gamemd { void* WinMain_Helper_6C5440() {
+namespace gamemd { void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5440(_DWORD *this)
 {
@@ -69749,7 +69137,7 @@ retn
 */
 } }
 // 0x6C55C0
-namespace gamemd { void* WinMain_Helper_6C55C0() {
+namespace gamemd { void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C55C0(_DWORD *this)
 {
@@ -69766,7 +69154,7 @@ retn
 */
 } }
 // 0x6C5740
-namespace gamemd { void* WinMain_Helper_6C5740() {
+namespace gamemd { void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5740(_DWORD *this)
 {
@@ -69783,7 +69171,7 @@ retn
 */
 } }
 // 0x6C58C0
-namespace gamemd { void* WinMain_Helper_6C58C0() {
+namespace gamemd { void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C58C0(_DWORD *this)
 {
@@ -69800,7 +69188,7 @@ retn
 */
 } }
 // 0x6C5A40
-namespace gamemd { void* WinMain_Helper_6C5A40() {
+namespace gamemd { void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5A40(_DWORD *this)
 {
@@ -69817,7 +69205,7 @@ retn
 */
 } }
 // 0x6C5BC0
-namespace gamemd { void* WinMain_Helper_6C5BC0() {
+namespace gamemd { void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5BC0(_DWORD *this)
 {
@@ -69834,7 +69222,7 @@ retn
 */
 } }
 // 0x6C5D40
-namespace gamemd { void* WinMain_Helper_6C5D40() {
+namespace gamemd { void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5D40(_DWORD *this)
 {
@@ -69851,7 +69239,7 @@ retn
 */
 } }
 // 0x6C5EC0
-namespace gamemd { void* WinMain_Helper_6C5EC0() {
+namespace gamemd { void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C5EC0(_DWORD *this)
 {
@@ -69868,7 +69256,7 @@ retn
 */
 } }
 // 0x6C6040
-namespace gamemd { void* WinMain_Helper_6C6040() {
+namespace gamemd { void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C6040(_DWORD *this)
 {
@@ -69885,7 +69273,7 @@ retn
 */
 } }
 // 0x6C61C0
-namespace gamemd { int COM_SafeRelease() {
+namespace gamemd { int Gap2Recv_6C61C0::COM_SafeRelease() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6C61C0(int *this)
 {
@@ -69910,7 +69298,7 @@ retn
 */
 } }
 // 0x6C6B00
-namespace gamemd { void* Audio_Read_6C6B00(void* a1) {
+namespace gamemd { void* Gap2Recv_6C6B00::Audio_Read_6C6B00(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C6B00(_DWORD *this, _DWORD *a2)
 {
@@ -69958,7 +69346,7 @@ retn    4
 */
 } }
 // 0x6C8870
-namespace gamemd { int Audio_Read_6C8870() {
+namespace gamemd { char Gap2Recv_6C8870::Audio_Read_6C8870() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Audio_Read_6C8870(int *this)
 {
@@ -70071,7 +69459,7 @@ retn
 */
 } }
 // 0x6C9900
-namespace gamemd { void* Render_Parse() {
+namespace gamemd { void* Gap2Recv_6C9900::Render_Parse() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6C9900(_DWORD *this)
 {
@@ -70096,7 +69484,7 @@ retn
 */
 } }
 // 0x6C9F10
-namespace gamemd { int ParseMovieSubtitles(void* a1) {
+namespace gamemd { int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ParseMovieSubtitles(char *this, char *Source)
 {
@@ -70525,7 +69913,7 @@ retn    4
 */
 } }
 // 0x6CABA0
-namespace gamemd { void* Render_Parse_6CABA0(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_6CABA0::Render_Parse_6CABA0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Render_Parse_6CABA0(_DWORD *this, int a2, int a3)
 {
@@ -70583,7 +69971,7 @@ retn    8
 */
 } }
 // 0x6CEE60
-namespace gamemd { int ObjectTypeClass_Read() {
+namespace gamemd { int Gap2Recv_6CEE60::ObjectTypeClass_Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6CEE60(void *this)
 {
@@ -70644,7 +70032,7 @@ retn
 */
 } }
 // 0x6CF1D0
-namespace gamemd { void SmallFunc_6CF1D0() {
+namespace gamemd { void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6CF1D0(_DWORD *this)
 {
@@ -70716,7 +70104,7 @@ retn
 */
 } }
 // 0x6D04D0
-namespace gamemd { int SidebarUpdateAll() {
+namespace gamemd { int Gap2Recv_6D04D0::SidebarUpdateAll() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D04D0(void *this)
 {
@@ -70753,7 +70141,7 @@ retn
 */
 } }
 // 0x6D1E30
-namespace gamemd { void* SmallFunc_6D1E30(int a1) {
+namespace gamemd { void* Gap2Recv_6D1E30::SmallFunc_6D1E30(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SmallFunc_6D1E30(_DWORD *this, int a2)
 {
@@ -70787,7 +70175,7 @@ retn    4
 */
 } }
 // 0x6D3290
-namespace gamemd { int DrawBuildingAnimFrame(void* a1, void* a2, int a3) {
+namespace gamemd { int Gap2Recv_6D3290::DrawBuildingAnimFrame(void* a2, void* a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D3290(_DWORD *this, int *a2, int *a3, char a4)
 {
@@ -71057,7 +70445,7 @@ retn    0Ch
 */
 } }
 // 0x6D3470
-namespace gamemd { int DrawBuildingShadow(void* a1, void* a2, int a3) {
+namespace gamemd { int Gap2Recv_6D3470::DrawBuildingShadow(void* a2, void* a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DrawBuildingShadow(_DWORD *this, int *a2, int *a3, char a4)
 {
@@ -71333,7 +70721,7 @@ retn    0Ch
 */
 } }
 // 0x6D5730
-namespace gamemd { int RenderBridgeRadarBlips(int a1, void* a2) {
+namespace gamemd { int Gap2Recv_6D5730::RenderBridgeRadarBlips(char a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderBridgeRadarBlips(_DWORD *this, char a2, _DWORD *a3)
 {
@@ -71665,7 +71053,7 @@ retn    8
 */
 } }
 // 0x6D5C50
-namespace gamemd { int RenderRadarBlips(int a1, int a2) {
+namespace gamemd { int Gap2Recv_6D5C50::RenderRadarBlips(char a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6D5C50(_DWORD *this, char a2, int a3)
 {
@@ -72037,7 +71425,7 @@ retn    8
 */
 } }
 // 0x6D6170
-namespace gamemd { void* RequestMapSnapshot(void* a1) {
+namespace gamemd { void* Gap2Recv_6D6170::RequestMapSnapshot(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6D6170(_DWORD *this, _DWORD *a2)
 {
@@ -72056,7 +71444,7 @@ retn    4
 */
 } }
 // 0x6D9CE0
-namespace gamemd { int FindBuildingsInScreenRect(int a1, int a2, int a3, int a4) {
+namespace gamemd { int Gap2Recv_6D9CE0::FindBuildingsInScreenRect(int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FindBuildingsInScreenRect(_DWORD *this, int a2, int a3, int a4, int a5)
 {
@@ -72295,7 +71683,7 @@ retn    10h
 */
 } }
 // 0x6DA9D0
-namespace gamemd { void* RenderSelectionBeacons(int a1) {
+namespace gamemd { char* Gap2Recv_6DA9D0::RenderSelectionBeacons(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall RenderSelectionBeacons(_DWORD *this, int a2)
 {
@@ -72718,7 +72106,7 @@ retn    4
 */
 } }
 // 0x6DAD60
-namespace gamemd { int RenderRallyPointLines(int a1) {
+namespace gamemd { int Gap2Recv_6DAD60::RenderRallyPointLines(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RenderRallyPointLines(_DWORD *this, int a2)
 {
@@ -73342,7 +72730,7 @@ retn    4
 */
 } }
 // 0x6DB620
-namespace gamemd { int RenderLWCViewCells() {
+namespace gamemd { int LWCViewClass::RenderCells() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LWCViewClass::RenderCells(_DWORD *this)
 {
@@ -73925,12 +73313,8 @@ retn
 */
 } }
 // 0x6DC420
-namespace gamemd { int GetHeightMap() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map_GetHeight(_DWORD *this)
-{
-  return *(this + 876);
-}
+namespace gamemd { int Gap2Recv_6DC420::GetHeightMap() {
+    return this->M3504;
 
 /* ASM:
 mov     eax, [ecx+0DB0h]
@@ -73938,7 +73322,7 @@ retn
 */
 } }
 // 0x6E0490
-namespace gamemd { int PlayWaypointEffect(int a1, int a2, int a3, int a4) {
+namespace gamemd { char Gap2Recv_6E0490::PlayWaypointEffect(int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall PlayWaypointEffect(int *this, int a2, int a3, int a4, int a5)
 {
@@ -74255,7 +73639,7 @@ retn    10h
 */
 } }
 // 0x6E14A0
-namespace gamemd { int ProcessDataObjectClass(int a1, int a2, int a3, int a4) {
+namespace gamemd { char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E14A0(_DWORD *this, int a2, int a3, int a4, int a5)
 {
@@ -74379,7 +73763,7 @@ retn    10h
 */
 } }
 // 0x6E5FE0
-namespace gamemd { int SaveTriggerTagsToINI() {
+namespace gamemd { int Gap2Recv_6E5FE0::SaveTriggerTagsToINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SaveTriggerTagsToINI(char *this)
 {
@@ -74486,7 +73870,7 @@ retn
 */
 } }
 // 0x6E7330
-namespace gamemd { int System_Read_6E7330() {
+namespace gamemd { int Gap2Recv_6E7330::System_Read_6E7330() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_6E7330(_BYTE *this)
 {
@@ -74656,7 +74040,7 @@ retn
 */
 } }
 // 0x6E7C20
-namespace gamemd { void* Network_Process_6E7C20() {
+namespace gamemd { void* Gap2Recv_6E7C20::Network_Process_6E7C20() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_6E7C20(_BYTE *this)
 {
@@ -74706,7 +74090,7 @@ retn
 */
 } }
 // 0x6EA0D0
-namespace gamemd { void SelectTeamProductionBuilding() {
+namespace gamemd { void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SelectTeamProductionBuilding(int this)
 {
@@ -75126,7 +74510,7 @@ retn
 */
 } }
 // 0x6ED200
-namespace gamemd { int AssignTeamProductionFacilities(int a1, int a2) {
+namespace gamemd { char Gap2Recv_6ED200::AssignTeamProductionFacilities(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall AssignTeamProductionFacilities(int **this, int a2, int a3)
 {
@@ -75591,7 +74975,7 @@ retn    8
 */
 } }
 // 0x6EE800
-namespace gamemd { int SelectTeamMembers(int a1, int a2) {
+namespace gamemd { char Gap2Recv_6EE800::SelectTeamMembers(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SelectTeamMembers(_DWORD *this, int a2, int a3)
 {
@@ -76219,7 +75603,7 @@ retn    8
 */
 } }
 // 0x6EF110
-namespace gamemd { int DispatchTeamOrders(int a1, int a2) {
+namespace gamemd { char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DispatchTeamOrders(_DWORD *this, int a2, int a3)
 {
@@ -76704,7 +76088,7 @@ retn    8
 */
 } }
 // 0x6EF470
-namespace gamemd { int Team_Create() {
+namespace gamemd { char Gap2Recv_6EF470::Team_Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6EF470(_DWORD *this)
 {
@@ -76782,7 +76166,7 @@ retn
 */
 } }
 // 0x6EF700
-namespace gamemd { void DeployTeamMembersAtStart(int a1, int a2) {
+namespace gamemd { void Gap2Recv_6EF700::DeployTeamMembersAtStart(int a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DeployTeamMembersAtStart(int this, int a2, char a3)
 {
@@ -77188,7 +76572,7 @@ retn    8
 */
 } }
 // 0x6F2230
-namespace gamemd { void* Team_Helper_6F2230(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F2230(_DWORD *this, int a2, int a3)
 {
@@ -77252,7 +76636,7 @@ retn    8
 */
 } }
 // 0x6F25E0
-namespace gamemd { int Team_Helper_6F25E0(void* a1) {
+namespace gamemd { char Gap2Recv_6F25E0::Team_Helper_6F25E0(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6F25E0(_DWORD *this, _DWORD *a2)
 {
@@ -77328,7 +76712,7 @@ retn    4
 */
 } }
 // 0x6F26E0
-namespace gamemd { void* Team_Helper_6F26E0(int a1) {
+namespace gamemd { char* Team_Helper_6F26E0(char* Block, char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6F26E0(char *Block, char a2)
 {
@@ -77385,7 +76769,7 @@ retn    4
 */
 } }
 // 0x6F2780
-namespace gamemd { void* Team_Helper_6F2780(void* a1) {
+namespace gamemd { void* Gap2Recv_6F2780::Team_Helper_6F2780(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, _DWORD *a2)
 {
@@ -77477,7 +76861,7 @@ retn    4
 */
 } }
 // 0x6F27F0
-namespace gamemd { void* Team_Helper_6F27F0(int a1, void* a2) {
+namespace gamemd { void* Gap2Recv_6F27F0::Team_Helper_6F27F0(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F27F0(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -77620,7 +77004,7 @@ retn    8
 */
 } }
 // 0x6FD800
-namespace gamemd { int SpreadRadiationAreaEffect(int a1) {
+namespace gamemd { int Gap2Recv_6FD800::SpreadRadiationAreaEffect(short a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6FD800(void *this, __int16 a2)
 {
@@ -78583,7 +77967,7 @@ retn    2Ch ; ','
 */
 } }
 // 0x7087C0
-namespace gamemd { bool ValidateAttackTarget(void* a1, int a2) {
+namespace gamemd { bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall ValidateAttackTarget(int this, int *a2, int a3)
 {
@@ -79003,7 +78387,7 @@ retn    8
 */
 } }
 // 0x70E5A0
-namespace gamemd { int UpdateTechnoIdleTimer() {
+namespace gamemd { int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateTechnoIdleTimer(int *this)
 {
@@ -79539,7 +78923,7 @@ retn
 */
 } }
 // 0x70F1D0
-namespace gamemd { int DrawBuildingRangeIndicator(void* a1, int a2) {
+namespace gamemd { char Gap2Recv_70F1D0::DrawBuildingRangeIndicator(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DrawBuildingRangeIndicator(void ***this, int *a2, int a3)
 {
@@ -80097,7 +79481,7 @@ retn    8
 */
 } }
 // 0x710750
-namespace gamemd { int Object_Helper_710750(int a1) {
+namespace gamemd { char Gap2Recv_710750::Object_Helper_710750(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Object_Helper_710750(int this, int a2)
 {
@@ -80194,7 +79578,7 @@ retn    4
 */
 } }
 // 0x721D10
-namespace gamemd { int SmallFunc_721D10() {
+namespace gamemd { char Gap2Recv_721D10::SmallFunc_721D10() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SmallFunc_721D10(char *this)
 {
@@ -80331,7 +79715,7 @@ retn
 */
 } }
 // 0x722440
-namespace gamemd { void PropagateCellOccupancy() {
+namespace gamemd { void Gap2Recv_722440::PropagateCellOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall PropagateCellOccupancy(int this)
 {
@@ -80873,7 +80257,7 @@ retn
 */
 } }
 // 0x722F00
-namespace gamemd { void RebuildBuildingOccupancy() {
+namespace gamemd { void Gap2Recv_722F00::RebuildBuildingOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall RebuildBuildingOccupancy(int this)
 {
@@ -81407,7 +80791,7 @@ retn
 */
 } }
 // 0x724200
-namespace gamemd { void HandleToolTipMessage(int a1) {
+namespace gamemd { void Gap2Recv_724200::HandleToolTipMessage(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall HandleToolTipMessage(int *this, int a2)
 {
@@ -81746,7 +81130,7 @@ jmp     short loc_7243C7
 */
 } }
 // 0x724510
-namespace gamemd { int sub_724510(int a1) {
+namespace gamemd { int Gap2Recv_724510::sub_724510() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_724510(_DWORD *this)
 {
@@ -81759,7 +81143,7 @@ retn
 */
 } }
 // 0x727880
-namespace gamemd { int ReadAudioEventINI() {
+namespace gamemd { int Gap2Recv_727880::ReadAudioEventINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_727880(char *this)
 {
@@ -81972,7 +81356,7 @@ retn
 */
 } }
 // 0x729580
-namespace gamemd { int FindUnitPlacementTarget() {
+namespace gamemd { int Gap2Recv_729580::FindUnitPlacementTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FindUnitPlacementTarget(int this)
 {
@@ -82439,7 +81823,7 @@ retn
 */
 } }
 // 0x730990
-namespace gamemd { int SidebarHasAvailableUnit() {
+namespace gamemd { char Gap2Recv_730990::SidebarHasAvailableUnit() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_730990(char *this)
 {
@@ -82535,7 +81919,7 @@ retn
 */
 } }
 // 0x730A10
-namespace gamemd { int SidebarCountAvailableUnits() {
+namespace gamemd { int Gap2Recv_730A10::SidebarCountAvailableUnits() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_730A10(char *this)
 {
@@ -82639,7 +82023,7 @@ retn
 */
 } }
 // 0x7310D0
-namespace gamemd { void SidebarClearReferences() {
+namespace gamemd { void Gap2Recv_7310D0::SidebarClearReferences() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7310D0(char *this)
 {
@@ -82720,7 +82104,7 @@ retn
 */
 } }
 // 0x7342C0
-namespace gamemd { int SelectAllOfType_Helper() {
+namespace gamemd { char Gap2Recv_7342C0::SelectAllOfType_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7342C0(_BYTE *this)
 {
@@ -82744,7 +82128,7 @@ retn
 */
 } }
 // 0x734330
-namespace gamemd { void* SelectFactionThemeMusic_Helper_734330(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_734330::SelectFactionThemeMusic_Helper_734330(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SelectFactionThemeMusic_Helper_734330(_DWORD *this, int a2, int a3)
 {
@@ -82808,7 +82192,7 @@ retn    8
 */
 } }
 // 0x734390
-namespace gamemd { int SelectFactionThemeMusic_Helper_734390(void* a1) {
+namespace gamemd { char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_734390(_DWORD *this, _DWORD *a2)
 {
@@ -82881,7 +82265,7 @@ retn    4
 */
 } }
 // 0x736DF0
-namespace gamemd { int UpdateTechnoFiring() {
+namespace gamemd { int Gap2Recv_736DF0::UpdateTechnoFiring() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateTechnoFiring(#377 *this)
 {
@@ -83373,7 +82757,7 @@ retn
 */
 } }
 // 0x737180
-namespace gamemd { int UpdateInfantryIdleWander() {
+namespace gamemd { int Gap2Recv_737180::UpdateInfantryIdleWander() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateInfantryIdleWander(int *this)
 {
@@ -83743,7 +83127,7 @@ retn
 */
 } }
 // 0x7436E0
-namespace gamemd { int ReadFootINI() {
+namespace gamemd { int Gap2Recv_7436E0::ReadFootINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7436E0(char *this)
 {
@@ -84044,7 +83428,7 @@ retn
 */
 } }
 // 0x746D90
-namespace gamemd { bool Event_Process_746D90() {
+namespace gamemd { bool Gap2Recv_746D90::Event_Process_746D90() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Event_Process_746D90(_BYTE *this)
 {
@@ -84069,7 +83453,7 @@ retn
 */
 } }
 // 0x74C9F0
-namespace gamemd { int DestroyVeinholeMonster() {
+namespace gamemd { int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DestroyVeinholeMonster(void **this)
 {
@@ -84585,7 +83969,7 @@ retn
 */
 } }
 // 0x74CDB0
-namespace gamemd { int Helper_486E30_Helper() {
+namespace gamemd { int Gap2Recv_74CDB0::Helper_486E30_Helper() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_74CDB0(__int16 *this)
 {
@@ -84638,9 +84022,8 @@ retn
 */
 } }
 // 0x74D7C0
-namespace gamemd { void UpdateVeinholeMonster() {
+namespace gamemd { void VeinholeMonsterClass::UpdateVeinholeMonster() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x74eee0
 void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
 {
   __int16 *v2; // ebp
@@ -84698,13 +84081,13 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
   v2 = 0;
   if ( *(this + 44) )
   {
-    VeinholeShrinkRate = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 220);
+    VeinholeShrinkRate = MEMORY[0x8871E0]->AircraftFogReveal;
     if ( *(this + 43) <= VeinholeShrinkRate - 40
       && *(this + 65) <= VeinholeShrinkRate - 100
-      && *(_BYTE *)(MEMORY[0x87F7E8][536210] + 13479) )
+      && *((_BYTE *)MEMORY[0xA8B230] + 13479) )
     {
       v49 = 0;
-      v4 = (int)abs32(Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536))) % 5;
+      v4 = (int)abs32(Random::State((_DWORD *)MEMORY[0xA8B230] + 134)) % 5;
       v5 = (int *)*(this + 44);
       v6 = *v5;
       v7 = v4 + 1;
@@ -84732,7 +84115,7 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
           {
             if ( !v2 )
               return;
-            v11 = CellCoord::To_CellObj(MEMORY[0x87F7E8], v2);
+            v11 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v2);
             v12 = v11;
             v47 = v11;
             if ( v11[286] < 0x30u )
@@ -84752,13 +84135,13 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
               for ( i = 0; i < 8; i += 2 )
               {
                 v15 = v14 & 7;
-                v16 = v2[1] + HIWORD(MEMORY[0x87F7E8][v15 + 32680]);
-                LOWORD(v45) = LOWORD(MEMORY[0x87F7E8][v15 + 32680]) + *v2;
+                v16 = v2[1] + HIWORD(MEMORY[0x89F688][v15]);
+                LOWORD(v45) = LOWORD(MEMORY[0x89F688][v15]) + *v2;
                 HIWORD(v45) = v16;
                 v44 = v45;
-                if ( LayerClass::IsWithinUsableArea(MEMORY[0x87F7E8], (__int16 *)&v44, 1) )
+                if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&v44, 1) )
                 {
-                  v17 = (char *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v44);
+                  v17 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v44);
                   v18 = v17[283] - (char)v12[283];
                   if ( (int)((HIDWORD(v18) ^ v18) - HIDWORD(v18)) < 2 )
                   {
@@ -84768,20 +84151,20 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
                     {
                       if ( BuildingClass::CheckAdjacentCells((int)v17) )
                       {
-                        if ( !*(_BYTE *)(dword_A8ED54[145767] + v19) )
+                        if ( !*((_BYTE *)MEMORY[0xB1D2F0] + v19) )
                         {
                           v20 = *(this + 43);
-                          if ( v20 < *(_DWORD *)(MEMORY[0x87F7E8][7806] + 220) )
+                          if ( v20 < MEMORY[0x8871E0]->AircraftFogReveal )
                           {
                             *(_DWORD *)(*(this + 45) + 8 * v20) = v44;
-                            v21 = dword_A8ED54[12] / 50
-                                + abs32(Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536)) % 50)
+                            v21 = (int)MEMORY[0xA8ED84] / 50
+                                + abs32(Random::State((_DWORD *)MEMORY[0xA8B230] + 134) % 50)
                                 + 1;
                             v22 = *(this + 43);
                             v23 = *(this + 45);
                             v50 = (__int16 *)v21;
                             *(float *)(v23 + 8 * v22 + 4) = (float)v21;
-                            *(_BYTE *)(dword_A8ED54[145767] + v19) = 1;
+                            *((_BYTE *)MEMORY[0xB1D2F0] + v19) = 1;
                             v24 = *(this + 43);
                             v25 = (_DWORD *)*(this + 44);
                             v26 = *(this + 45) + 8 * v24;
@@ -84888,394 +84271,9 @@ LABEL_55:
     }
   }
 }
-
-/* ASM:
-sub     esp, 28h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-xor     ebp, ebp
-push    edi
-cmp     [esi+0B0h], ebp
-jz      loc_74DBE9
-mov     eax, ds:8871E0h
-mov     edx, [esi+0ACh]
-mov     eax, [eax+0DCh]
-lea     ecx, [eax-28h]
-cmp     edx, ecx
-jg      loc_74DBE9
-mov     ecx, [esi+104h]
-add     eax, 0FFFFFF9Ch
-cmp     ecx, eax
-jg      loc_74DBE9
-mov     ecx, ds:0A8B230h
-mov     al, [ecx+34A7h]
-test    al, al
-jz      loc_74DBE9
-add     ecx, 218h
-mov     [esp+38h+var_10], ebp
-call    Random__State
-cdq
-xor     eax, edx
-mov     ecx, 5
-sub     eax, edx
-cdq
-idiv    ecx
-mov     ecx, [esi+0B0h]
-mov     ebx, edx
-mov     edx, [ecx]
-inc     ebx
-cmp     edx, ebp
-mov     [esp+38h+var_4], ebx
-jnz     short loc_74D84D
-mov     [esp+38h+var_28], ebp
-jmp     short loc_74D877
-; ---------------------------------------------------------------------------
-
-loc_74D84D:                             ; CODE XREF: UpdateVeinholeMonster+85↑j
-mov     eax, [ecx+8]
-push    1
-mov     edx, [eax+edx*4]
-mov     edi, [eax+4]
-mov     [eax+4], edx
-mov     eax, [ecx]
-mov     edx, [ecx+8]
-mov     dword ptr [edx+eax*4], 0
-mov     edx, [ecx]
-dec     edx
-mov     [ecx], edx
-call    Heap__SiftDown
-mov     [esp+38h+var_28], edi
-mov     ebp, edi
-
-loc_74D877:                             ; CODE XREF: UpdateVeinholeMonster+8B↑j
-test    ebx, ebx
-jle     loc_74DBE9
-
-loc_74D87F:                             ; CODE XREF: UpdateVeinholeMonster+331↓j
-; UpdateVeinholeMonster+424↓j
-test    ebp, ebp
-jz      loc_74DBE9
-push    ebp
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-mov     ebx, eax
-mov     [esp+38h+var_18], ebx
-cmp     byte ptr [ebx+11Eh], 30h ; '0'
-jnb     short loc_74D8AE
-mov     ecx, ebx
-call    BuildingClass__VisualizePlacement
-inc     dword ptr [esi+104h]
-
-loc_74D8AE:                             ; CODE XREF: UpdateVeinholeMonster+DF↑j
-cmp     dword ptr [ebx+44h], 7Eh ; '~'
-jnz     short loc_74D8D4
-mov     ecx, ebp
-call    Cell__PosToIndex
-mov     edi, eax
-test    edi, edi
-jl      short loc_74D8D4
-call    Object__ComputeAllocationSize
-cmp     edi, eax
-jge     short loc_74D8D4
-mov     eax, [esi+0C4h]
-mov     byte ptr [eax+edi], 1
-
-loc_74D8D4:                             ; CODE XREF: UpdateVeinholeMonster+F2↑j
-; UpdateVeinholeMonster+FF↑j ...
-cmp     byte ptr [ebx+11Eh], 30h ; '0'
-jb      loc_74DACA
-xor     eax, eax
-mov     [esp+38h+var_14], eax
-
-loc_74D8E7:                             ; CODE XREF: UpdateVeinholeMonster+304↓j
-mov     cx, [ebp+0]
-and     eax, 7
-push    1
-add     cx, ds:89F688h[eax*4]
-mov     dx, ds:89F68Ah[eax*4]
-add     dx, [ebp+2]
-lea     eax, ds:89F688h[eax*4]
-mov     word ptr [esp+3Ch+var_20], cx
-lea     ecx, [esp+3Ch+var_24]
-mov     word ptr [esp+3Ch+var_20+2], dx
-mov     eax, [esp+3Ch+var_20]
-push    ecx
-mov     ecx, 87F7E8h
-mov     [esp+40h+var_24], eax
-call    LayerClass__IsWithinUsableArea
-test    al, al
-jz      loc_74DAB6
-lea     edx, [esp+38h+var_24]
-mov     ecx, 87F7E8h
-push    edx
-call    CellCoord__To_CellObj
-movsx   ecx, byte ptr [ebx+11Bh]
-mov     edi, eax
-movsx   eax, byte ptr [edi+11Bh]
-sub     eax, ecx
-cdq
-xor     eax, edx
-sub     eax, edx
-cmp     eax, 2
-jge     loc_74DAB6
-lea     ecx, [esp+38h+var_24]
-call    Cell__PosToIndex
-mov     ebx, eax
-test    ebx, ebx
-mov     [esp+38h+var_1C], ebx
-jl      loc_74DAB2
-call    Object__ComputeAllocationSize
-cmp     ebx, eax
-jge     loc_74DAB2
-mov     ecx, edi
-call    BuildingClass__CheckAdjacentCells
-test    al, al
-jz      loc_74DAA8
-mov     edx, dword_A8ED54+8E59Ch
-cmp     byte ptr [edx+ebx], 0
-jnz     loc_74DAA8
-mov     ecx, ds:8871E0h
-mov     eax, [esi+0ACh]
-cmp     eax, [ecx+0DCh]
-jge     loc_74DAA8
-mov     edx, [esi+0B4h]
-mov     ecx, [esp+38h+var_24]
-mov     [edx+eax*8], ecx
-mov     edx, ds:0A8B230h
-lea     ecx, [edx+218h]
-call    Random__State
-cdq
-mov     ecx, 32h ; '2'
-idiv    ecx
-mov     ecx, dword_A8ED54+30h
-mov     eax, edx
-cdq
-mov     edi, eax
-mov     eax, 51EB851Fh
-xor     edi, edx
-sub     edi, edx
-imul    ecx
-sar     edx, 4
-mov     eax, edx
-add     edx, edi
-shr     eax, 1Fh
-lea     ecx, [eax+edx+1]
-mov     edx, [esi+0ACh]
-mov     eax, [esi+0B4h]
-mov     [esp+38h+var_C], ecx
-fild    [esp+38h+var_C]
-fstp    dword ptr [eax+edx*8+4]
-mov     ecx, dword_A8ED54+8E59Ch
-mov     byte ptr [ecx+ebx], 1
-mov     eax, [esi+0ACh]
-mov     edx, [esi+0B4h]
-mov     edi, [esi+0B0h]
-lea     ebp, [edx+eax*8]
-inc     eax
-mov     [esi+0ACh], eax
-mov     ecx, [edi]
-mov     eax, [ebp+4]
-inc     ecx
-mov     edx, ecx
-mov     [esp+38h+var_8], eax
-mov     eax, [edi+4]
-shr     edx, 1
-cmp     ecx, eax
-jnb     short loc_74DAA4
-cmp     ecx, 1
-jbe     short loc_74DA87
-
-loc_74DA60:                             ; CODE XREF: UpdateVeinholeMonster+2C1↓j
-mov     ebx, [edi+8]
-mov     eax, [ebx+edx*4]
-fld     dword ptr [eax+4]
-fcomp   [esp+38h+var_8]
-fnstsw  ax
-test    ah, 41h
-jnz     short loc_74DA83
-mov     eax, [ebx+edx*4]
-mov     [ebx+ecx*4], eax
-mov     ecx, edx
-shr     edx, 1
-cmp     ecx, 1
-ja      short loc_74DA60
-
-loc_74DA83:                             ; CODE XREF: UpdateVeinholeMonster+2B2↑j
-mov     ebx, [esp+38h+var_1C]
-
-loc_74DA87:                             ; CODE XREF: UpdateVeinholeMonster+29E↑j
-mov     edx, [edi+8]
-mov     [edx+ecx*4], ebp
-mov     ecx, [edi]
-mov     eax, [edi+0Ch]
-inc     ecx
-cmp     ebp, eax
-mov     [edi], ecx
-jbe     short loc_74DA9C
-mov     [edi+0Ch], ebp
-
-loc_74DA9C:                             ; CODE XREF: UpdateVeinholeMonster+2D7↑j
-cmp     ebp, [edi+10h]
-jnb     short loc_74DAA4
-mov     [edi+10h], ebp
-
-loc_74DAA4:                             ; CODE XREF: UpdateVeinholeMonster+299↑j
-; UpdateVeinholeMonster+2DF↑j
-mov     ebp, [esp+38h+var_28]
-
-loc_74DAA8:                             ; CODE XREF: UpdateVeinholeMonster+1D0↑j
-; UpdateVeinholeMonster+1E0↑j ...
-mov     eax, [esi+0C4h]
-mov     byte ptr [eax+ebx], 1
-
-loc_74DAB2:                             ; CODE XREF: UpdateVeinholeMonster+1B4↑j
-; UpdateVeinholeMonster+1C1↑j
-mov     ebx, [esp+38h+var_18]
-
-loc_74DAB6:                             ; CODE XREF: UpdateVeinholeMonster+16E↑j
-; UpdateVeinholeMonster+19D↑j
-mov     eax, [esp+38h+var_14]
-add     eax, 2
-cmp     eax, 8
-mov     [esp+38h+var_14], eax
-jl      loc_74D8E7
-
-loc_74DACA:                             ; CODE XREF: UpdateVeinholeMonster+11B↑j
-mov     eax, [esp+38h+var_10]
-mov     ecx, [esp+38h+var_4]
-inc     eax
-cmp     eax, ecx
-mov     [esp+38h+var_10], eax
-jge     loc_74DBE9
-mov     ecx, [esi+0B0h]
-mov     edx, [ecx]
-test    edx, edx
-jnz     short loc_74DAF6
-mov     [esp+38h+var_28], edx
-mov     ebp, edx
-jmp     loc_74D87F
-; ---------------------------------------------------------------------------
-
-loc_74DAF6:                             ; CODE XREF: UpdateVeinholeMonster+329↑j
-mov     eax, [ecx+8]
-mov     ebx, 1
-mov     edx, [eax+edx*4]
-mov     edi, [eax+4]
-mov     [eax+4], edx
-mov     eax, [ecx]
-mov     edx, [ecx+8]
-mov     [esp+38h+var_C], edi
-mov     dword ptr [edx+eax*4], 0
-mov     edx, [ecx]
-dec     edx
-mov     edi, edx
-mov     [ecx], edx
-cmp     edi, 2
-jl      short loc_74DB40
-mov     eax, [ecx+8]
-mov     edx, [eax+8]
-mov     eax, [eax+4]
-fld     dword ptr [edx+4]
-fld     dword ptr [eax+4]
-fcompp
-mov     edx, 2
-fnstsw  ax
-test    ah, 41h
-jz      short loc_74DB45
-
-loc_74DB40:                             ; CODE XREF: UpdateVeinholeMonster+361↑j
-mov     edx, 1
-
-loc_74DB45:                             ; CODE XREF: UpdateVeinholeMonster+37E↑j
-cmp     edi, 3
-jl      short loc_74DB69
-mov     eax, [ecx+8]
-mov     edi, [eax+0Ch]
-mov     eax, [eax+edx*4]
-fld     dword ptr [edi+4]
-fld     dword ptr [eax+4]
-fcompp
-fnstsw  ax
-test    ah, 41h
-jnz     short loc_74DB69
-mov     edx, 3
-jmp     short loc_74DB6E
-; ---------------------------------------------------------------------------
-
-loc_74DB69:                             ; CODE XREF: UpdateVeinholeMonster+388↑j
-; UpdateVeinholeMonster+3A0↑j
-cmp     edx, 1
-jz      short loc_74DBDA
-
-loc_74DB6E:                             ; CODE XREF: UpdateVeinholeMonster+3A7↑j
-; UpdateVeinholeMonster+418↓j
-mov     eax, [ecx+8]
-mov     ebp, [eax+edx*4]
-mov     edi, [eax+ebx*4]
-mov     [eax+ebx*4], ebp
-mov     eax, [ecx+8]
-mov     ebx, edx
-mov     [eax+edx*4], edi
-mov     ebp, [ecx]
-lea     edi, [edx+edx]
-lea     eax, [edx+edx+1]
-cmp     edi, ebp
-mov     [esp+38h+var_24], eax
-jg      short loc_74DBB0
-mov     eax, [ecx+8]
-mov     eax, [eax+edi*4]
-fld     dword ptr [eax+4]
-mov     eax, [ecx+8]
-mov     eax, [eax+edx*4]
-fld     dword ptr [eax+4]
-fcompp
-fnstsw  ax
-test    ah, 41h
-jnz     short loc_74DBB0
-mov     edx, edi
-
-loc_74DBB0:                             ; CODE XREF: UpdateVeinholeMonster+3D1↑j
-; UpdateVeinholeMonster+3EC↑j
-cmp     [esp+38h+var_24], ebp
-jg      short loc_74DBD6
-mov     eax, [ecx+8]
-mov     edi, [esp+38h+var_24]
-mov     edi, [eax+edi*4]
-mov     eax, [eax+edx*4]
-fld     dword ptr [edi+4]
-fld     dword ptr [eax+4]
-fcompp
-fnstsw  ax
-test    ah, 41h
-jnz     short loc_74DBD6
-mov     edx, [esp+38h+var_24]
-
-loc_74DBD6:                             ; CODE XREF: UpdateVeinholeMonster+3F4↑j
-; UpdateVeinholeMonster+410↑j
-cmp     edx, ebx
-jnz     short loc_74DB6E
-
-loc_74DBDA:                             ; CODE XREF: UpdateVeinholeMonster+3AC↑j
-mov     ecx, [esp+38h+var_C]
-mov     [esp+38h+var_28], ecx
-mov     ebp, ecx
-jmp     loc_74D87F
-; ---------------------------------------------------------------------------
-
-loc_74DBE9:                             ; CODE XREF: UpdateVeinholeMonster+11↑j
-; UpdateVeinholeMonster+2D↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 28h
-retn
-*/
 } }
 // 0x74E1C0
-namespace gamemd { void ProcessVeinholeMonster() {
+namespace gamemd { void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VeinholeMonster_Process(int this)
 {
@@ -86018,7 +85016,7 @@ retn
 */
 } }
 // 0x74E8A0
-namespace gamemd { void System_Init_74E8A0() {
+namespace gamemd { void Gap2Recv_74E8A0::System_Init_74E8A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74E8A0(int this)
 {
@@ -86117,7 +85115,7 @@ retn
 */
 } }
 // 0x74EA70
-namespace gamemd { int LoadVeinholeMonsters() {
+namespace gamemd { char Gap2Recv_74EA70::LoadVeinholeMonsters() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadVeinholeMonsters(int *this)
 {
@@ -86549,7 +85547,7 @@ retn
 */
 } }
 // 0x74F620
-namespace gamemd { void DestroyVeinholeMonster_Destroy() {
+namespace gamemd { void Gap2Recv_74F620::DestroyVeinholeMonster_Destroy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74F620(#350 *this)
 {
@@ -86576,7 +85574,7 @@ jle     short loc_74F628
 */
 } }
 // 0x74F6F0
-namespace gamemd { int DestroyVeinholeMonster_Destroy_74F6F0(int a1) {
+namespace gamemd { char Gap2Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_74F6F0(_DWORD *this, int a2)
 {
@@ -86634,7 +85632,7 @@ retn    4
 */
 } }
 // 0x750060
-namespace gamemd { int Team_Create_750060(int a1) {
+namespace gamemd { char Gap2Recv_750060::Team_Create_750060(char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_750060(_DWORD *this, char a2)
 {
@@ -86662,7 +85660,7 @@ retn    4
 */
 } }
 // 0x750440
-namespace gamemd { int LoadVocFromINI(void* a1) {
+namespace gamemd { char VocClass::LoadFromINI(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall VocClass::LoadFromINI(char **this, unsigned __int8 ***a2)
 {
@@ -87367,7 +86365,7 @@ retn    4
 */
 } }
 // 0x751520
-namespace gamemd { int System_Get_751520() {
+namespace gamemd { int Gap2Recv_751520::System_Get_751520() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_751520(void *this)
 {
@@ -87453,7 +86451,7 @@ retn
 */
 } }
 // 0x7515C0
-namespace gamemd { int System_Get_7515C0() {
+namespace gamemd { int Gap2Recv_7515C0::System_Get_7515C0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7515C0(void *this)
 {
@@ -87496,7 +86494,7 @@ retn
 */
 } }
 // 0x756860
-namespace gamemd { int InitializeTileAudioOcclusion(int a1, void* a2) {
+namespace gamemd { int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeTileAudioOcclusion(_DWORD *this, int a2, float *a3)
 {
@@ -87961,7 +86959,7 @@ retn    8
 */
 } }
 // 0x758B70
-namespace gamemd { int GenerateLightRemapTable(void* a1, int a2) {
+namespace gamemd { int Gap2Recv_758B70::GenerateLightRemapTable(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
 {
@@ -88324,7 +87322,7 @@ retn    8
 */
 } }
 // 0x7597A0
-namespace gamemd { int Render_Load_7597A0() {
+namespace gamemd { char Gap2Recv_7597A0::Render_Load_7597A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7597A0(int this)
 {
@@ -88390,7 +87388,7 @@ retn
 */
 } }
 // 0x759830
-namespace gamemd { int Render_Load_759830(int a1) {
+namespace gamemd { int Gap2Recv_759830::Render_Load_759830(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759830(_DWORD *this, int a2)
 {
@@ -88414,7 +87412,7 @@ retn    4
 */
 } }
 // 0x759850
-namespace gamemd { bool Render_Render_759850(int a1, int a2) {
+namespace gamemd { bool Gap2Recv_759850::Render_Render_759850(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759850(int *this, int a2, int a3)
 {
@@ -88444,7 +87442,7 @@ retn    8
 */
 } }
 // 0x759880
-namespace gamemd { bool Render_Render_759880(int a1, int a2, int a3) {
+namespace gamemd { bool Gap2Recv_759880::Render_Render_759880(int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
 {
@@ -88505,7 +87503,7 @@ retn    0Ch
 */
 } }
 // 0x759EA0
-namespace gamemd { int Render_Load_759EA0() {
+namespace gamemd { int Gap2Recv_759EA0::Render_Load_759EA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759EA0(_DWORD *this)
 {
@@ -88518,7 +87516,7 @@ retn
 */
 } }
 // 0x759EB0
-namespace gamemd { bool Render_Load_759EB0(int a1, int a2, int a3, int a4, int a5) {
+namespace gamemd { bool Gap2Recv_759EB0::Render_Load_759EB0(int a2, unsigned int a3, unsigned int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, int a5, int a6)
 {
@@ -88598,7 +87596,7 @@ retn    14h
 */
 } }
 // 0x759F20
-namespace gamemd { int Render_Load_759F20(int a1) {
+namespace gamemd { int Gap2Recv_759F20::Render_Load_759F20(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_759F20(_DWORD *this, int a2)
 {
@@ -88613,7 +87611,7 @@ retn    4
 */
 } }
 // 0x7639A0
-namespace gamemd { int WaypointClass_Find(void* a1) {
+namespace gamemd { char Gap2Recv_7639A0::WaypointClass_Find(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7639A0(_DWORD *this, _DWORD *a2)
 {
@@ -88736,7 +87734,7 @@ retn    4
 */
 } }
 // 0x764FA0
-namespace gamemd { bool Team_Start_764FA0() {
+namespace gamemd { bool Gap2Recv_764FA0::Team_Start_764FA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_764FA0(int this)
 {
@@ -88758,7 +87756,7 @@ retn
 */
 } }
 // 0x764FC0
-namespace gamemd { bool ConstructWDTSelection_Create(int a1) {
+namespace gamemd { bool Gap2Recv_764FC0::ConstructWDTSelection_Create(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_764FC0(int this, int a2)
 {
@@ -88790,7 +87788,7 @@ retn    4
 */
 } }
 // 0x765380
-namespace gamemd { void* FindWDTTerritoryClass_Find(void* a1, int a2) {
+namespace gamemd { void* Gap2Recv_765380::FindWDTTerritoryClass_Find(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall FindWDTTerritoryClass_Find(char *this, _DWORD *a2, int a3)
 {
@@ -88864,7 +87862,7 @@ retn    8
 */
 } }
 // 0x765410
-namespace gamemd { void* Team_Start_765410(void* a1) {
+namespace gamemd { char* Gap2Recv_765410::Team_Start_765410(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_765410(int this, char *a2)
 {
@@ -89017,7 +88015,7 @@ retn    4
 */
 } }
 // 0x765C90
-namespace gamemd { void* Team_Create_765C90(int a1, void* a2) {
+namespace gamemd { void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Create_765C90(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -89175,7 +88173,7 @@ retn    8
 */
 } }
 // 0x766060
-namespace gamemd { int FindWDTTerritoryClass_Find_Find() {
+namespace gamemd { int Gap2Recv_766060::FindWDTTerritoryClass_Find_Find() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_766060(_DWORD *this)
 {
@@ -89202,7 +88200,7 @@ retn
 */
 } }
 // 0x7665D0
-namespace gamemd { void* TerritorySelectWDT_Create(void* a1) {
+namespace gamemd { void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 **__thiscall sub_7665D0(char *this, #72 **a2)
 {
@@ -89445,7 +88443,7 @@ retn    4
 */
 } }
 // 0x7668F0
-namespace gamemd { void* System_Init_7668F0() {
+namespace gamemd { void* Gap2Recv_7668F0::System_Init_7668F0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7668F0(_DWORD *this)
 {
@@ -89459,7 +88457,7 @@ jmp     ComPtr__Release
 */
 } }
 // 0x766900
-namespace gamemd { void* System_Init_766900() {
+namespace gamemd { void* Gap2Recv_766900::System_Init_766900() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766900(_DWORD *this)
 {
@@ -89473,7 +88471,7 @@ jmp     ComPtr__Release
 */
 } }
 // 0x766910
-namespace gamemd { void* System_Init_766910() {
+namespace gamemd { void* Gap2Recv_766910::System_Init_766910() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766910(_DWORD *this)
 {
@@ -89487,7 +88485,7 @@ jmp     ComPtr__Release
 */
 } }
 // 0x766A10
-namespace gamemd { void* System_Init_766A10(int a1, int a2, void* a3, int a4) {
+namespace gamemd { void* Gap2Recv_766A10::System_Init_766A10(int a2, int a3, void* a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_766A10(void *this, int a2, int a3, void *a4, int a5)
 {
@@ -89529,7 +88527,7 @@ retn    10h
 */
 } }
 // 0x766EE0
-namespace gamemd { int System_Init_766EE0(int a1) {
+namespace gamemd { char Gap2Recv_766EE0::System_Init_766EE0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_766EE0(_DWORD *this, int a2)
 {
@@ -89602,7 +88600,7 @@ retn    4
 */
 } }
 // 0x766F70
-namespace gamemd { void* System_Init_766F70(int a1) {
+namespace gamemd { void* Gap2Recv_766F70::System_Init_766F70(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_766F70(_DWORD *this, int a2)
 {
@@ -89628,7 +88626,7 @@ retn    4
 */
 } }
 // 0x767820
-namespace gamemd { void* ConstructorWDTFlagOption_Create(int a1, void* a2, int a3, void* a4, int a5) {
+namespace gamemd { void* Gap2Recv_767820::ConstructorWDTFlagOption_Create(int a2, void* a3, int a4, void* a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_767820(void *this, int a2, void *a3, int a4, void *a5, int a6)
 {
@@ -89680,7 +88678,7 @@ retn    14h
 */
 } }
 // 0x768000
-namespace gamemd { void* ConstructWDTSelection_Create_767FB0_Create(int a1, int a2, int a3) {
+namespace gamemd { void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_768000(void *this, int a2, int a3, int a4)
 {
@@ -89773,7 +88771,7 @@ retn    0Ch
 */
 } }
 // 0x7692F0
-namespace gamemd { int ConstructWDTSelection_Create_76EEB0_Create(void* a1, void* a2) {
+namespace gamemd { int Gap2Recv_7692F0::ConstructWDTSelection_Create_76EEB0_Create(void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7692F0(int *this, _DWORD *a2, _DWORD *a3)
 {
@@ -89823,7 +88821,7 @@ retn    8
 */
 } }
 // 0x7694C0
-namespace gamemd { void* Map_Load_7694C0(void* a1) {
+namespace gamemd { void* Gap2Recv_7694C0::Map_Load_7694C0(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_7694C0(int *this, int *a2)
 {
@@ -89883,7 +88881,7 @@ retn    4
 */
 } }
 // 0x769C20
-namespace gamemd { void* Map_Load_769C20(int a1) {
+namespace gamemd { void* Gap2Recv_769C20::Map_Load_769C20(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_769C20(_DWORD *this, int a2)
 {
@@ -89903,7 +88901,7 @@ retn    4
 */
 } }
 // 0x76A7E0
-namespace gamemd { void* ConstructWDTSelection_Create_767FB0_Create_Create(int a1, void* a2) {
+namespace gamemd { void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_767FB0_Create_Create(_DWORD *this, int a2, _DWORD *a3)
 {
@@ -90061,7 +89059,7 @@ retn    8
 */
 } }
 // 0x76AAF0
-namespace gamemd { void* ParseWDTTerritories_Parse() {
+namespace gamemd { void* Gap2Recv_76AAF0::ParseWDTTerritories_Parse() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76AAF0(_DWORD *this)
 {
@@ -90159,7 +89157,7 @@ retn
 */
 } }
 // 0x76B180
-namespace gamemd { int ParseWDTTerritories(int a1, int a2) {
+namespace gamemd { char Gap2Recv_76B180::ParseWDTTerritories(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParseWDTTerritories(int this, int a2, int a3)
 {
@@ -91077,7 +90075,7 @@ retn    8
 */
 } }
 // 0x76B790
-namespace gamemd { void* ParseWDTTerritories_Parse_76B790(int a1) {
+namespace gamemd { void* Gap2Recv_76B790::ParseWDTTerritories_Parse_76B790(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76B790(_DWORD *this, int a2)
 {
@@ -91102,7 +90100,7 @@ retn    4
 */
 } }
 // 0x76BF00
-namespace gamemd { void* Audio_Create_76BF00(int a1) {
+namespace gamemd { char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_76BF00(char *this, int a2)
 {
@@ -91201,7 +90199,7 @@ retn    4
 */
 } }
 // 0x76BFC0
-namespace gamemd { int ConstructWDTSelection_Create_76BFC0() {
+namespace gamemd { int Gap2Recv_76BFC0::ConstructWDTSelection_Create_76BFC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76BFC0(_DWORD *this)
 {
@@ -91230,7 +90228,7 @@ retn
 */
 } }
 // 0x76C290
-namespace gamemd { int ConstructWDTSelection(int a1, int a2) {
+namespace gamemd { int Gap2Recv_76C290::ConstructWDTSelection(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConstructWDTSelection(int this, int a2, int a3)
 {
@@ -91682,7 +90680,7 @@ retn    8
 */
 } }
 // 0x76C6E0
-namespace gamemd { void SelectionInitializeWOL() {
+namespace gamemd { void Gap2Recv_76C6E0::SelectionInitializeWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SelectionInitializeWOL(int this)
 {
@@ -92006,7 +91004,7 @@ retn
 */
 } }
 // 0x76C970
-namespace gamemd { void ConstructWDTSelection_Create_76C970(void* a1, int a2) {
+namespace gamemd { void Gap2Recv_76C970::ConstructWDTSelection_Create_76C970(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76C970(int this, _DWORD *a2, int a3)
 {
@@ -92098,7 +91096,7 @@ retn    8
 */
 } }
 // 0x76CA60
-namespace gamemd { void ConstructWDTSelection_Create_76CA60(void* a1, void* a2) {
+namespace gamemd { void Gap2Recv_76CA60::ConstructWDTSelection_Create_76CA60(char* a2, char* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConstructWDTSelection_Create_76CA60(char **this, char *a2, char **a3)
 {
@@ -92355,7 +91353,7 @@ retn    8
 */
 } }
 // 0x76CBF0
-namespace gamemd { void ConstructWDTSelection_Create_76CBF0(void* a1, void* a2) {
+namespace gamemd { void Gap2Recv_76CBF0::ConstructWDTSelection_Create_76CBF0(void* a2, char* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConstructWDTSelection_Create_76CBF0(_DWORD *this, int *a2, char **a3)
 {
@@ -92565,7 +91563,7 @@ retn    8
 */
 } }
 // 0x76CDA0
-namespace gamemd { int ShowWDTTerritorySelection(int a1) {
+namespace gamemd { void* Gap2Recv_76CDA0::ShowWDTTerritorySelection(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ShowWDTTerritorySelection(int *this, _DWORD *a2)
 {
@@ -93075,7 +92073,7 @@ retn    4
 */
 } }
 // 0x76DAD0
-namespace gamemd { bool TerritorySelectWDT(int a1) {
+namespace gamemd { bool Gap2Recv_76DAD0::TerritorySelectWDT(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall WDT_TerritorySelect(int *this, int a2)
 {
@@ -93580,7 +92578,7 @@ retn    4
 */
 } }
 // 0x76E180
-namespace gamemd { void ShowWDTTerritorySelection_Show() {
+namespace gamemd { void Gap2Recv_76E180::ShowWDTTerritorySelection_Show() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ShowWDTTerritorySelection_Show(int *this)
 {
@@ -93709,7 +92707,7 @@ retn
 */
 } }
 // 0x76E2F0
-namespace gamemd { void* Team_Start_76E2F0(int a1) {
+namespace gamemd { char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_76E2F0(int this, int a2)
 {
@@ -93882,7 +92880,7 @@ retn    4
 */
 } }
 // 0x76E430
-namespace gamemd { int Team_Start_76E430(int a1, void* a2) {
+namespace gamemd { int Gap2Recv_76E430::Team_Start_76E430(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76E430(int *this, int a2, bool *a3)
 {
@@ -93988,7 +92986,7 @@ retn    8
 */
 } }
 // 0x76E750
-namespace gamemd { void* Team_Start_76E750(int a1) {
+namespace gamemd { void* Gap2Recv_76E750::Team_Start_76E750(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76E750(int this, int a2)
 {
@@ -94180,7 +93178,7 @@ retn    4
 */
 } }
 // 0x76E8B0
-namespace gamemd { bool Team_Start_76E8B0(int a1, int a2) {
+namespace gamemd { bool Gap2Recv_76E8B0::Team_Start_76E8B0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_76E8B0(int *this, int a2, int a3)
 {
@@ -94359,7 +93357,7 @@ retn    8
 */
 } }
 // 0x76EEB0
-namespace gamemd { int ConstructWDTSelection_Create_76EEB0() {
+namespace gamemd { int Gap2Recv_76EEB0::ConstructWDTSelection_Create_76EEB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConstructWDTSelection_Create_76EEB0(int this)
 {
@@ -94466,7 +93464,7 @@ retn
 */
 } }
 // 0x76F210
-namespace gamemd { void* ConstructWDTSelection_Create_76F210(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_76F210::ConstructWDTSelection_Create_76F210(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_76F210(_DWORD *this, int a2, int a3)
 {
@@ -94524,7 +93522,7 @@ retn    8
 */
 } }
 // 0x76F500
-namespace gamemd { void* ConstructWDTSelection_Create_76F500() {
+namespace gamemd { void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_76F500(_DWORD *this)
 {
@@ -94594,7 +93592,7 @@ retn
 */
 } }
 // 0x76FEB0
-namespace gamemd { void TerritorySelectWDT_Process(int a1, void* a2) {
+namespace gamemd { void Gap2Recv_76FEB0::TerritorySelectWDT_Process(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76FEB0(_DWORD *this, int a2, int *a3)
 {
@@ -94664,7 +93662,7 @@ retn    8
 */
 } }
 // 0x770430
-namespace gamemd { void System_Init_770430() {
+namespace gamemd { void Gap2Recv_770430::System_Init_770430() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall System_Init_770430(int this)
 {
@@ -94836,7 +93834,7 @@ retn
 */
 } }
 // 0x7714B0
-namespace gamemd { void TerritorySelectWDT_Delete(int a1, int a2, int a3) {
+namespace gamemd { void Gap2Recv_7714B0::TerritorySelectWDT_Delete(int a2, char a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TerritorySelectWDT_Delete(_DWORD *this, int a2, char a3, int a4)
 {
@@ -95054,7 +94052,7 @@ retn    0Ch
 */
 } }
 // 0x771800
-namespace gamemd { void* ConstructWDTSelection_Create_771800() {
+namespace gamemd { void* Gap2Recv_771800::ConstructWDTSelection_Create_771800() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConstructWDTSelection_Create_771800(void *this)
 {
@@ -95112,7 +94110,7 @@ retn
 */
 } }
 // 0x776880
-namespace gamemd { bool System_Read_776880() {
+namespace gamemd { int Gap2Recv_776880::System_Read_776880() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_776880(_DWORD *this)
 {
@@ -95139,7 +94137,7 @@ retn
 */
 } }
 // 0x7768A0
-namespace gamemd { bool System_Read_7768A0() {
+namespace gamemd { int Gap2Recv_7768A0::System_Read_7768A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall System_Read_7768A0(void *this)
 {
@@ -95185,7 +94183,7 @@ retn
 */
 } }
 // 0x778710
-namespace gamemd { void* LoadAccountInfoWOL() {
+namespace gamemd { void* Gap2Recv_778710::LoadAccountInfoWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LoadAccountInfoWOL(_DWORD *this)
 {
@@ -95610,7 +94608,7 @@ retn    38h ; '8'
 */
 } }
 // 0x779B50
-namespace gamemd { void* ReadAutoLoginWOL() {
+namespace gamemd { char* Gap2Recv_779B50::ReadAutoLoginWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_ReadAutoLogin(char **this)
 {
@@ -95757,7 +94755,7 @@ retn
 */
 } }
 // 0x779C90
-namespace gamemd { int ReadSettingsWOL() {
+namespace gamemd { int Gap2Recv_779C90::ReadSettingsWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WOL_ReadSettings(void *this)
 {
@@ -95899,7 +94897,7 @@ retn
 */
 } }
 // 0x779DD0
-namespace gamemd { void* LoadConfigWOL() {
+namespace gamemd { char* Gap2Recv_779DD0::LoadConfigWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_LoadConfig(char **this)
 {
@@ -96046,7 +95044,7 @@ retn
 */
 } }
 // 0x779F10
-namespace gamemd { int SavePersonaConfigWOL() {
+namespace gamemd { int Gap2Recv_779F10::SavePersonaConfigWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WOL_SavePersonaConfig(char **this)
 {
@@ -96188,7 +95186,7 @@ retn
 */
 } }
 // 0x77A080
-namespace gamemd { void SaveProfileWOL(void* a1) {
+namespace gamemd { void Gap2Recv_77A080::SaveProfileWOL(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall WOL_SaveProfile(int this, const char **a2)
 {
@@ -96618,7 +95616,7 @@ retn    4
 */
 } }
 // 0x77A760
-namespace gamemd { int MainLobbyDlgProcWOL_Helper(int a1) {
+namespace gamemd { char Gap2Recv_77A760::MainLobbyDlgProcWOL_Helper(char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_77A760(_BYTE *this, char a2)
 {
@@ -96646,7 +95644,7 @@ retn    4
 */
 } }
 // 0x77A780
-namespace gamemd { int MainLobbyDlgProcWOL_Helper_77A780(int a1) {
+namespace gamemd { int Gap2Recv_77A780::MainLobbyDlgProcWOL_Helper_77A780(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A780(int this, int a2)
 {
@@ -96674,7 +95672,7 @@ retn    4
 */
 } }
 // 0x77A7A0
-namespace gamemd { int MainLobbyDlgProcWOL_Helper_77A7A0(int a1) {
+namespace gamemd { int Gap2Recv_77A7A0::MainLobbyDlgProcWOL_Helper_77A7A0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A7A0(int this, int a2)
 {
@@ -96702,7 +95700,7 @@ retn    4
 */
 } }
 // 0x77A870
-namespace gamemd { int Event_Process_77A870(int a1) {
+namespace gamemd { int Gap2Recv_77A870::Event_Process_77A870(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A870(int this, int a2)
 {
@@ -96732,7 +95730,7 @@ retn    4
 */
 } }
 // 0x77A890
-namespace gamemd { int Event_Process_77A890(int a1) {
+namespace gamemd { int Gap2Recv_77A890::Event_Process_77A890(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A890(int this, int a2)
 {
@@ -96762,7 +95760,7 @@ retn    4
 */
 } }
 // 0x77A8B0
-namespace gamemd { int Event_Process_77A8B0(int a1) {
+namespace gamemd { int Gap2Recv_77A8B0::Event_Process_77A8B0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77A8B0(int this, int a2)
 {
@@ -96792,7 +95790,7 @@ retn    4
 */
 } }
 // 0x77A9F0
-namespace gamemd { void FillPersonaInfoWOL() {
+namespace gamemd { void Gap2Recv_77A9F0::FillPersonaInfoWOL(int hDlg, char* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FillPersonaInfoWOL(int this, int hDlg, char **a3, #72 **a4)
 {
@@ -97746,7 +96744,7 @@ retn    0Ch
 */
 } }
 // 0x77D1F0
-namespace gamemd { void ConnectAndLoginWOL_Connect() {
+namespace gamemd { void Gap2Recv_77D1F0::ConnectAndLoginWOL_Connect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_77D1F0(_DWORD *this)
 {
@@ -97760,7 +96758,7 @@ jmp     OwnerDrawControl__InitVtable
 */
 } }
 // 0x77D4C0
-namespace gamemd { bool IsBuddyOrIgnoreWOL() {
+namespace gamemd { bool Gap2Recv_77D4C0::IsBuddyOrIgnoreWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall WOL_IsBuddyOrIgnore(const char *this)
 {
@@ -98173,7 +97171,7 @@ retn
 */
 } }
 // 0x77E1D0
-namespace gamemd { int FillPlayerListWOL() {
+namespace gamemd { int Gap2Recv_77E1D0::FillPlayerListWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillPlayerListWOL(#72 **this)
 {
@@ -98367,7 +97365,7 @@ retn
 */
 } }
 // 0x77E300
-namespace gamemd { int FillBuddyListExWOL() {
+namespace gamemd { int Gap2Recv_77E300::FillBuddyListExWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillBuddyListExWOL(#72 **this)
 {
@@ -98561,7 +97559,7 @@ retn
 */
 } }
 // 0x77EBA0
-namespace gamemd { int SendMultiplayerStartSignal_Start_77EBA0() {
+namespace gamemd { int Gap2Recv_77EBA0::SendMultiplayerStartSignal_Start_77EBA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_77EBA0(const char **this)
 {
@@ -98764,7 +97762,7 @@ retn
 */
 } }
 // 0x783B80
-namespace gamemd { int Render_Find() {
+namespace gamemd { int Gap2Recv_783B80::Render_Find() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_783B80(unsigned int *this)
 {
@@ -98900,7 +97898,7 @@ retn
 */
 } }
 // 0x783C80
-namespace gamemd { void DisplayRankingsWOL() {
+namespace gamemd { void Gap2Recv_783C80::DisplayRankingsWOL(char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall DisplayRankingsWOL(void *this, char a2)
 {
@@ -101832,7 +100830,7 @@ retn
 */
 } }
 // 0x785370
-namespace gamemd { int InitializeWestwoodOnline() {
+namespace gamemd { int Gap2Recv_785370::InitializeWestwoodOnline() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall InitializeWestwoodOnline(void *this)
 {
@@ -102364,7 +101362,7 @@ retn
 */
 } }
 // 0x785740
-namespace gamemd { void LeaveChannelWOL() {
+namespace gamemd { void Gap2Recv_785740::LeaveChannelWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LeaveChannelWOL(const char *this)
 {
@@ -103456,7 +102454,7 @@ retn
 */
 } }
 // 0x7864C0
-namespace gamemd { int ConnectAndLoginWOL() {
+namespace gamemd { char Gap2Recv_7864C0::ConnectAndLoginWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ConnectAndLoginWOL(char *this)
 {
@@ -104662,7 +103660,7 @@ retn
 */
 } }
 // 0x78A470
-namespace gamemd { int HandleOnlineWOL() {
+namespace gamemd { int HandleOnlineWOL(void* String1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HandleOnlineWOL(#72 *String1)
 {
@@ -104962,7 +103960,7 @@ retn
 */
 } }
 // 0x78A6B0
-namespace gamemd { void* HandlePageWOL() {
+namespace gamemd { void* HandlePageWOL(void* String1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall HandlePageWOL(#72 *String1)
 {
@@ -105330,7 +104328,7 @@ retn
 */
 } }
 // 0x78A8F0
-namespace gamemd { void* HandleReplyWOL() {
+namespace gamemd { void* HandleReplyWOL(void* String1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall HandleReplyWOL(#72 *String1)
 {
@@ -105754,7 +104752,7 @@ retn
 */
 } }
 // 0x78F200
-namespace gamemd { void* BuildWOLPlayerTooltip() {
+namespace gamemd { void* Gap2Recv_78F200::BuildWOLPlayerTooltip() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__thiscall BuildWOLPlayerTooltip(char *this)
 {
@@ -106251,7 +105249,7 @@ retn
 */
 } }
 // 0x791AA0
-namespace gamemd { void UI_Setup_791AA0() {
+namespace gamemd { void Gap2Recv_791AA0::UI_Setup_791AA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall UI_Setup_791AA0(void *this)
 {
@@ -106314,7 +105312,7 @@ retn
 */
 } }
 // 0x795650
-namespace gamemd { int QueryNATPortWOL() {
+namespace gamemd { char Gap2Recv_795650::QueryNATPortWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall QueryNATPortWOL(unsigned __int16 *this)
 {
@@ -107203,7 +106201,7 @@ retn
 */
 } }
 // 0x798F50
-namespace gamemd { void* MainLobbyDlgProcWOL_Read() {
+namespace gamemd { void* Gap2Recv_798F50::MainLobbyDlgProcWOL_Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MainLobbyDlgProcWOL_Read(void *this)
 {
@@ -107377,7 +106375,7 @@ retn
 */
 } }
 // 0x79AF10
-namespace gamemd { int FillBuddyListWOL() {
+namespace gamemd { int Gap2Recv_79AF10::FillBuddyListWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FillBuddyListWOL(void *this)
 {
@@ -108792,7 +107790,7 @@ retn
 */
 } }
 // 0x79C040
-namespace gamemd { void ShowUserProfileWOL() {
+namespace gamemd { void Gap2Recv_79C040::ShowUserProfileWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ShowUserProfileWOL(void *this)
 {
@@ -109199,7 +108197,7 @@ retn
 */
 } }
 // 0x79C8D0
-namespace gamemd { void QueueWOLAuthRequest() {
+namespace gamemd { void Gap2Recv_79C8D0::QueueWOLAuthRequest() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall QueueWOLAuthRequest(char **this)
 {
@@ -109600,7 +108598,7 @@ retn
 */
 } }
 // 0x7A28B0
-namespace gamemd { void PlayerSkirmishSlotHandler_Handle_7A28B0() {
+namespace gamemd { void PlayerSkirmishSlotHandler_Handle_7A28B0(void* String) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7A28B0(#72 *String)
 {
@@ -109725,7 +108723,7 @@ retn
 */
 } }
 // 0x7A2FC0
-namespace gamemd { void* System_Init_7A2FC0() {
+namespace gamemd { char* Gap2Recv_7A2FC0::System_Init_7A2FC0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7A2FC0(char *this)
 {
@@ -109749,7 +108747,7 @@ retn
 */
 } }
 // 0x7A41A0
-namespace gamemd { void* System_Init_7A41A0() {
+namespace gamemd { char* Gap2Recv_7A41A0::System_Init_7A41A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7A41A0(char *this)
 {
@@ -109773,7 +108771,7 @@ retn
 */
 } }
 // 0x7AC610
-namespace gamemd { void* CreateGameWOL_Create_7AC610() {
+namespace gamemd { void* Gap2Recv_7AC610::CreateGameWOL_Create_7AC610() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7AC610(_DWORD *this)
 {
@@ -109798,7 +108796,7 @@ retn
 */
 } }
 // 0x7AC670
-namespace gamemd { int System_Init_7AC670() {
+namespace gamemd { int Gap2Recv_7AC670::System_Init_7AC670() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7AC670(int *this)
 {
@@ -109823,7 +108821,7 @@ retn
 */
 } }
 // 0x7AC680
-namespace gamemd { int System_Init_7AC680() {
+namespace gamemd { int Gap2Recv_7AC680::System_Init_7AC680() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7AC680(int *this)
 {
@@ -109848,7 +108846,7 @@ retn
 */
 } }
 // 0x7AC9D0
-namespace gamemd { int GetBuddyEntryWOL(void* a1, int a2) {
+namespace gamemd { char Gap2Recv_7AC9D0::GetBuddyEntryWOL(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall WOL_GetBuddyEntry(int *this, _DWORD *a2, int a3)
 {
@@ -109882,7 +108880,7 @@ retn    8
 */
 } }
 // 0x7ACB90
-namespace gamemd { int StartGameWOL_Start_7ACB90(void* a1, int a2) {
+namespace gamemd { char Gap2Recv_7ACB90::StartGameWOL_Start_7ACB90(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7ACB90(int *this, void *a2, int a3)
 {
@@ -109921,7 +108919,7 @@ retn    8
 */
 } }
 // 0x7ACBE0
-namespace gamemd { int ConnectAndLoginWOL_Connect_7ACBE0(void* a1, void* a2) {
+namespace gamemd { char ConnectAndLoginWOL_Connect_7ACBE0(void* a1, char* a2, char* Block) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ConnectAndLoginWOL_Connect_7ACBE0(int (__thiscall **this)(_DWORD), const char **a2, char **Block)
 {
@@ -110138,7 +109136,7 @@ retn    8
 */
 } }
 // 0x7AD2F0
-namespace gamemd { void* ResetSystemWOL_Reset(int a1) {
+namespace gamemd { void* ResetSystemWOL_Reset(void* Block, char a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall sub_7AD2F0(void **Block, char a2)
 {
@@ -110165,7 +109163,7 @@ retn    4
 */
 } }
 // 0x7AD410
-namespace gamemd { void* System_Init_7AD410(int a1) {
+namespace gamemd { char* Gap2Recv_7AD410::System_Init_7AD410(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall System_Init_7AD410(char *this, int a2)
 {
@@ -110192,7 +109190,7 @@ retn    4
 */
 } }
 // 0x7ADB00
-namespace gamemd { int Network_Helper_7ADB00(void* a1, int a2) {
+namespace gamemd { char Gap2Recv_7ADB00::Network_Helper_7ADB00(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Network_Helper_7ADB00(int *this, _DWORD *a2, int a3)
 {
@@ -110425,7 +109423,7 @@ retn    8
 */
 } }
 // 0x7AE180
-namespace gamemd { bool ConnectAndLoginWOL_Connect_7AE180(void* a1, void* a2) {
+namespace gamemd { bool Gap2Recv_7AE180::ConnectAndLoginWOL_Connect_7AE180(char* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE180(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -110517,7 +109515,7 @@ retn    8
 */
 } }
 // 0x7AE7C0
-namespace gamemd { bool GameOptionsScreenWOL_Helper_7AE7C0(void* a1, void* a2) {
+namespace gamemd { bool Gap2Recv_7AE7C0::GameOptionsScreenWOL_Helper_7AE7C0(char* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE7C0(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -110609,7 +109607,7 @@ retn    8
 */
 } }
 // 0x7AE830
-namespace gamemd { void RemoveWOLPlayerLogin_Remove() {
+namespace gamemd { void Gap2Recv_7AE830::RemoveWOLPlayerLogin_Remove() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall RemoveWOLPlayerLogin_Remove(_DWORD *this)
 {
@@ -110754,7 +109752,7 @@ retn
 */
 } }
 // 0x7AE8E0
-namespace gamemd { bool GameOptionsScreenWOL_Helper_7AE8E0(void* a1, void* a2) {
+namespace gamemd { bool Gap2Recv_7AE8E0::GameOptionsScreenWOL_Helper_7AE8E0(char* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7AE8E0(_DWORD *this, const char **a2, _DWORD *a3)
 {
@@ -110846,7 +109844,7 @@ retn    8
 */
 } }
 // 0x7AECD0
-namespace gamemd { void* QueryNATPortWOL_Helper(int a1, int a2) {
+namespace gamemd { void* Gap2Recv_7AECD0::QueryNATPortWOL_Helper(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall QueryNATPortWOL_Helper(_DWORD *this, int a2, int a3)
 {
@@ -110904,7 +109902,7 @@ retn    8
 */
 } }
 // 0x7AF3D0
-namespace gamemd { void* GetRegionStringWOL() {
+namespace gamemd { char* Gap2Recv_7AF3D0::GetRegionStringWOL() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall WOL_GetRegionString(void *this)
 {
@@ -111028,7 +110026,7 @@ retn
 */
 } }
 // 0x7AF500
-namespace gamemd { void Team_Start_7AF500() {
+namespace gamemd { void Gap2Recv_7AF500::Team_Start_7AF500() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7AF500(_DWORD *this)
 {
@@ -111084,7 +110082,7 @@ retn
 */
 } }
 // 0x7AF540
-namespace gamemd { int WorldDominationFactionDlgProc_Helper() {
+namespace gamemd { int Gap2Recv_7AF540::WorldDominationFactionDlgProc_Helper(int hWnd, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WorldDominationFactionDlgProc_Helper(int *this, int hWnd, int *a3)
 {
@@ -111231,7 +110229,7 @@ retn    8
 */
 } }
 // 0x7B0490
-namespace gamemd { void* Team_Start_7B0490() {
+namespace gamemd { void* Gap2Recv_7B0490::Team_Start_7B0490() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Start_7B0490(_DWORD *this)
 {
@@ -111354,7 +110352,7 @@ retn
 */
 } }
 // 0x7B4A10
-namespace gamemd { int String_Process_7B4A10(void* a1) {
+namespace gamemd { char Gap2Recv_7B4A10::String_Process_7B4A10(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall String_Process_7B4A10(char **this, const char *a2)
 {
@@ -111487,7 +110485,7 @@ retn    4
 */
 } }
 // 0x7B6780
-namespace gamemd { bool String_Helper(void* a1) {
+namespace gamemd { bool Gap2Recv_7B6780::String_Helper(void* String2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7B6780(const #72 **this, #72 *String2)
 {
@@ -111536,7 +110534,7 @@ retn    4
 */
 } }
 // 0x7B67C0
-namespace gamemd { bool SendMultiplayerStartSignal_Start_77EBA0_Start(void* a1) {
+namespace gamemd { bool Gap2Recv_7B67C0::SendMultiplayerStartSignal_Start_77EBA0_Start(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_7B67C0(const #72 **this, const #72 **a2)
 {
@@ -111584,7 +110582,7 @@ retn    4
 */
 } }
 // 0x7B71D0
-namespace gamemd { int Render_Helper_7B71D0() {
+namespace gamemd { char Gap2Recv_7B71D0::Render_Helper_7B71D0(void* Src, unsigned int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Render_Helper_7B71D0(const #72 **this, const #72 *Src, unsigned int a3)
 {
@@ -111768,7 +110766,7 @@ retn    8
 */
 } }
 // 0x7B7660
-namespace gamemd { int String_Helper_7B7660() {
+namespace gamemd { char Gap2Recv_7B7660::String_Helper_7B7660(short a2, unsigned int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall String_Helper_7B7660(const #72 **this, __int16 a2, unsigned int a3)
 {
@@ -111803,7 +110801,7 @@ retn    8
 */
 } }
 // 0x7B7740
-namespace gamemd { void* SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(void* a1) {
+namespace gamemd { void* Gap2Recv_7B7740::SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 **__thiscall SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740(const #72 **this, #72 **a2)
 {
@@ -111921,7 +110919,7 @@ retn    4
 */
 } }
 // 0x7B7980
-namespace gamemd { int UI_Helper_7B7980() {
+namespace gamemd { char Gap2Recv_7B7980::UI_Helper_7B7980(short a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall UI_Helper_7B7980(const #72 **this, __int16 a2)
 {
@@ -112084,7 +111082,7 @@ retn    4
 */
 } }
 // 0x7BD170
-namespace gamemd { int Audio_Render_7BD170() {
+namespace gamemd { int Gap2Recv_7BD170::Audio_Render_7BD170() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BD170(int this)
 {
@@ -112177,7 +111175,7 @@ retn
 */
 } }
 // 0x7BD290
-namespace gamemd { int Audio_Process_7BD290() {
+namespace gamemd { char Gap2Recv_7BD290::Audio_Process_7BD290() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7BD290(int this)
 {
@@ -112207,7 +111205,7 @@ retn
 */
 } }
 // 0x7BD2B0
-namespace gamemd { int Audio_Process_7BD2B0() {
+namespace gamemd { char Gap2Recv_7BD2B0::Audio_Process_7BD2B0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_7BD2B0(int this)
 {
@@ -112237,7 +111235,7 @@ retn
 */
 } }
 // 0x7BE4A0
-namespace gamemd { int Audio_Process_7BE4A0() {
+namespace gamemd { int Gap2Recv_7BE4A0::Audio_Process_7BE4A0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE4A0(int this)
 {
@@ -112439,7 +111437,7 @@ retn
 */
 } }
 // 0x7BE660
-namespace gamemd { int Audio_Process_7BE660() {
+namespace gamemd { int Gap2Recv_7BE660::Audio_Process_7BE660() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE660(_DWORD *this)
 {
@@ -112454,7 +111452,7 @@ retn
 */
 } }
 // 0x7BE670
-namespace gamemd { int Audio_Render_7BE670() {
+namespace gamemd { int Gap2Recv_7BE670::Audio_Render_7BE670() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7BE670(int this)
 {
@@ -112700,7 +111698,7 @@ retn
 */
 } }
 // 0x7C0490
-namespace gamemd { int Audio_Process_7C0490() {
+namespace gamemd { int Gap2Recv_7C0490::Audio_Process_7C0490() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C0490(_DWORD *this)
 {
@@ -112764,7 +111762,7 @@ retn
 */
 } }
 // 0x7C1150
-namespace gamemd { int Audio_Render_7C1150() {
+namespace gamemd { int Gap2Recv_7C1150::Audio_Render_7C1150() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1150(int this)
 {
@@ -112969,7 +111967,7 @@ retn
 */
 } }
 // 0x7C1A70
-namespace gamemd { int Audio_Render_7C1A70() {
+namespace gamemd { int Gap2Recv_7C1A70::Audio_Render_7C1A70() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1A70(int this)
 {
@@ -113177,7 +112175,7 @@ retn
 */
 } }
 // 0x7C1BE0
-namespace gamemd { int Audio_Render_7C1BE0() {
+namespace gamemd { int Gap2Recv_7C1BE0::Audio_Render_7C1BE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C1BE0(int this)
 {
@@ -113382,7 +112380,7 @@ retn
 */
 } }
 // 0x7C3750
-namespace gamemd { int Audio_Process_7C3750() {
+namespace gamemd { int Gap2Recv_7C3750::Audio_Process_7C3750() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7C3750(int this)
 {
@@ -113532,7 +112530,7 @@ retn
 */
 } }
 // 0x7CAACB
-namespace gamemd { void* RTtypeid_Helper(void* a1) {
+namespace gamemd { void* Gap2Recv_7CAACB::RTtypeid_Helper(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #355 *__thiscall sub_7CAACB(#355 *this, char *a2)
 {
@@ -113554,7 +112552,7 @@ retn    4
 */
 } }
 // 0x7DCDC0
-namespace gamemd { void* ThrowErrorCOM_Helper(int a1, int a2, int a3) {
+namespace gamemd { void* Gap2Recv_7DCDC0::ThrowErrorCOM_Helper(int a2, int a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7DCDC0(_DWORD *this, int a2, int a3, char a4)
 {

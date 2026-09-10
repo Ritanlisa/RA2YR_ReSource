@@ -8743,7 +8743,7 @@ int sprintf(char *const Buffer, ObjectClass *aP1, INIClass *aP2)
 
 // 0x7C8F5E
 namespace gamemd {
-int int_0x7C8F5E(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
+int int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int (__cdecl *_cfltcvt_init_13())(int, void *Src, int, size_t Size, int)

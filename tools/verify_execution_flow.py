@@ -795,8 +795,21 @@ def _order_hits(hits):
 # C++ source location
 # ===================================================================
 
+def _strip_ns_prefix(sig):
+    """Remove leading `namespace X {` wrappers from a def signature line so
+    class-name extraction sees `ret Cls::Method(...)` (gap2 single-line form:
+    `namespace gamemd { int Cls::Method() {` -- the char class of the class
+    regex cannot cross the `{`)."""
+    prev = None
+    while prev != sig:
+        prev = sig
+        sig = re.sub(r"^\s*namespace\s+\w+\s*\{\s*", "", sig)
+    return sig
+
+
 def _extract_function_body(lines, start_idx, cppf_relative):
-    class_name = _signature_class_name(_logical_signature(lines, start_idx))
+    class_name = _signature_class_name(
+        _strip_ns_prefix(_logical_signature(lines, start_idx)))
     window = lines[start_idx:min(start_idx + 1200, len(lines))]
     cleaned = "".join(clean_line(l) for l in window)
     end_line = start_idx

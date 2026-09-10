@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_UDirtyAreaStruct {
     void* vfptr;  // minimal E2 declaration
+    char SetCapacity(CCINIClass * aP1, char * a2);  // 0x6DC850
     void Destroy();  // 0x6DC4E0
     unsigned int GetItemIndex(int a2);  // 0x6DC510
     int Clear(int a2, int a3);  // 0x6DC540
@@ -14,7 +15,6 @@ struct VectorClass_UDirtyAreaStruct {
     void ddtor();  // 0x6DC780
     int GetSize(int a2);  // 0x6DC7B0
     unsigned int GetCapacity(int a2);  // 0x6DC820
-    char SetCapacity(CCINIClass * aP1, char * a2);  // 0x6DC850
     int FindItemIndex(int a2);  // 0x6DC970
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x6DCB50
     int FindItemIndex_0(unsigned int * a2);  // 0x6DCC00
