@@ -183,18 +183,6 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
 }
 } // namespace gamemd
 
-// 0x4B6200
-int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291205;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-
 // 0x4B6240
 HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
 {
@@ -310,6 +298,18 @@ DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomoti
     __3_YAXPAX_Z(Block); /*0x4b6723*/
   return (DropPodLocomotionClass *)Block; /*0x4b672d*/
 }
+}
+
+// 0x4B6200
+int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291205;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4B66E0

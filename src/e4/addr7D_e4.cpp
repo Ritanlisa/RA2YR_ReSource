@@ -1026,29 +1026,6 @@ int __cdecl __crtLCMapStringA(
 }
 } // namespace gamemd
 
-// 0x7D12E6
-namespace gamemd {
-unsigned char * strncnt(const unsigned char * String, int Count)
-{
-const unsigned char* scan = String;
-int remaining = Count - 1;
-if (Count)
-{
-    do
-    {
-        if (!*scan)
-            break;
-        ++scan;
-    }
-    while (remaining--);
-}
-if (*scan)
-    return (unsigned char *)Count;
-else
-    return (unsigned char *)(scan - String);
-}
-} // namespace gamemd
-
 // 0x7D1311
 namespace gamemd {
 int _isctype(int C, int Type)
@@ -1305,22 +1282,6 @@ int *__cdecl _dosmaperr(unsigned int a1)
   }
   return result; /*0x7d1652*/
 }
-}
-} // namespace gamemd
-
-// 0x7D168E
-namespace gamemd {
-int * _errno()
-{
-return (int *)(_getptd() + 8);
-}
-} // namespace gamemd
-
-// 0x7D1697
-namespace gamemd {
-unsigned int * __doserrno()
-{
-return (unsigned int *)(_getptd() + 12);
 }
 } // namespace gamemd
 
@@ -2158,31 +2119,6 @@ int __cdecl fgetc_0(FILE *Stream)
 }
 } // namespace gamemd
 
-// 0x7D2183
-namespace gamemd {
-int _un_inc(int Character, FILE * Stream)
-{
-if (Character != -1)
-    return ungetc_0(Character, Stream);
-return Character;
-}
-} // namespace gamemd
-
-// 0x7D219A
-namespace gamemd {
-int _whiteout(unsigned int * a1, FILE * Stream)
-{
-int current;
-do
-{
-    ++*a1;
-    current = fgetc_0(Stream);
-}
-while (isspace(current));
-return current;
-}
-} // namespace gamemd
-
 // 0x7D21BE
 namespace gamemd {
 int _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
@@ -2661,20 +2597,6 @@ LABEL_167:
   }
   return v50; /*0x7d28e6*/
 }
-}
-} // namespace gamemd
-
-// 0x7D290B
-namespace gamemd {
-unsigned int * write_char_0(wchar_t WCh, FILE * File, unsigned int * a3)
-{
-bool failed = (unsigned __int16)_putwc_lk(WCh, File) == 0xFFFF;
-unsigned int* result = a3;
-if (failed)
-    *a3 = -1;
-else
-    ++*a3;
-return result;
 }
 } // namespace gamemd
 
@@ -3841,25 +3763,6 @@ UINT __cdecl getSystemCP(UINT a1)
 }
 } // namespace gamemd
 
-// 0x7D3679
-namespace gamemd {
-int CPtoLCID(int a1)
-{
-switch (a1)
-{
-case 932:
-    return 1041;
-case 936:
-    return 2052;
-case 949:
-    return 1042;
-case 950:
-    return 1028;
-}
-return 0;
-}
-} // namespace gamemd
-
 // 0x7D36AC
 namespace gamemd {
 int setSBCS()
@@ -4953,14 +4856,6 @@ wint_t __cdecl _hextodec_0(wint_t C)
 }
 } // namespace gamemd
 
-// 0x7D4596
-namespace gamemd {
-int fgetwc(FILE * File)
-{
-return _getwc_lk(File);
-}
-} // namespace gamemd
-
 // 0x7D45A1
 namespace gamemd {
 int _un_inc_0(short MbCh, int a2)
@@ -5053,156 +4948,6 @@ int __wtomb_environ()
   }
   return -1; /*0x7d4681*/
 }
-}
-} // namespace gamemd
-
-// 0x7D468C
-namespace gamemd {
-char * _itoa(int Value, char * Buffer, int Radix)
-{
-if (Radix == 10 && Value < 0)
-    xtoa(Value, Buffer, 10, 1);
-else
-    xtoa(Value, Buffer, Radix, 0);
-return Buffer;
-}
-} // namespace gamemd
-
-// 0x7D46B9
-namespace gamemd {
-char xtoa(unsigned int a1, char * a2, unsigned int a3, int a4)
-{
-char* out = a2;
-unsigned int value;
-if (a4)
-{
-    *a2 = 45;
-    ++out;
-    value = -a1;
-}
-else
-{
-    value = a1;
-}
-char* start = out;
-char result = 0;
-do
-{
-    int digit = value % a3;
-    bool isDecimal = value % a3 <= 9;
-    value /= a3;
-    char digitChar;
-    if (isDecimal)
-        digitChar = digit + 48;
-    else
-        digitChar = digit + 87;
-    *out = digitChar;
-    ++out;
-}
-while (value);
-*out = 0;
-char* back = out;
---back;
-do
-{
-    result = *back;
-    *back = *start;
-    *start = result;
-    --back;
-    ++start;
-}
-while (start < back);
-return result;
-}
-} // namespace gamemd
-
-// 0x7D4715
-namespace gamemd {
-char * _ltoa(int Value, char * Buffer, int Radix)
-{
-int isNegative = 0;
-if (Radix == 10)
-    isNegative = Value < 0;
-xtoa(Value, Buffer, Radix, isNegative);
-return Buffer;
-}
-} // namespace gamemd
-
-// 0x7D473F
-namespace gamemd {
-char * _ultoa(unsigned int Value, char * Buffer, int Radix)
-{
-xtoa(Value, Buffer, Radix, 0);
-return Buffer;
-}
-} // namespace gamemd
-
-// 0x7D475A
-namespace gamemd {
-char * _i64toa(long long Value, char * Buffer, int Radix)
-{
-int isNegative = 0;
-if (Radix == 10 && (int)(Value >> 32) <= 0)
-    isNegative = Value < 0;
-x64toa_20(Value, Buffer, Radix, isNegative);
-return Buffer;
-}
-} // namespace gamemd
-
-// 0x7D478B
-namespace gamemd {
-char * x64toa_20(unsigned long long a1, char * a2, unsigned int a3, int a4)
-{
-char* out = a2;
-unsigned long long value;
-if (a4)
-{
-    *a2 = 45;
-    ++out;
-    value = -(__int64)a1;
-}
-else
-{
-    value = a1;
-}
-char* start = out;
-do
-{
-    unsigned int digit = value % a3;
-    value /= a3;
-    char digitChar;
-    if (digit <= 9)
-        digitChar = digit + 48;
-    else
-        digitChar = digit + 87;
-    *out = digitChar;
-    ++out;
-}
-while ((unsigned int)(value >> 32) || (unsigned int)value);
-*out = 0;
-char* back = out;
---back;
-char* result;
-do
-{
-    char temp = *back;
-    *back = *start;
-    *start = temp;
-    --back;
-    ++start;
-    result = start;
-}
-while (result < back);
-return result;
-}
-} // namespace gamemd
-
-// 0x7D4811
-namespace gamemd {
-char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
-{
-x64toa_20(Value, Buffer, Radix, 0);
-return Buffer;
 }
 } // namespace gamemd
 
@@ -5469,14 +5214,6 @@ unsigned int __cdecl siglookup(int a1, unsigned int a2)
     return 0; /*0x7d4bca*/
   return result; /*0x7d4bcc*/
 }
-}
-} // namespace gamemd
-
-// 0x7D4BD8
-namespace gamemd {
-void ** __pxcptinfoptrs()
-{
-return (void **)(_getptd() + 84);
 }
 } // namespace gamemd
 
@@ -6062,27 +5799,6 @@ struct tm *__cdecl gmtime(CampaignScore *aP0)
   v7->tm_sec = v17 % 60; /*0x7d53ba*/
   return v7; /*0x7d53be*/
 }
-}
-} // namespace gamemd
-
-// 0x7D53C2
-namespace gamemd {
-int _access(const char * FileName, int AccessMode)
-{
-DWORD FileAttributesA = GetFileAttributesA(FileName);
-if (FileAttributesA == -1)
-{
-    DWORD LastError = GetLastError();
-    _dosmaperr(LastError);
-    return -1;
-}
-if ((FileAttributesA & 1) != 0 && (AccessMode & 2) != 0)
-{
-    *_errno() = 13;
-    *__doserrno() = 5;
-    return -1;
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -7478,41 +7194,6 @@ int __cdecl _get_lc_lconv(CCINIClass *aP0)
 }
 } // namespace gamemd
 
-// 0x7D6A1D
-namespace gamemd {
-char fix_grouping_0(char * a1)
-{
-char* scan = a1;
-char result = *a1;
-for (; *scan; result = *scan)
-{
-    if (result < 48 || result > 57)
-    {
-        if (result == 59)
-        {
-            char* shift = scan;
-            char* next = shift;
-            ++next;
-            do
-            {
-                *shift = *next;
-                ++shift;
-                ++next;
-            }
-            while (*shift);
-            continue;
-        }
-    }
-    else
-    {
-        *scan = result - 48;
-    }
-    ++scan;
-}
-return result;
-}
-} // namespace gamemd
-
 // 0x7D6A54
 namespace gamemd {
 void _free_lc_lconv(CCINIClass * aP0)
@@ -7668,36 +7349,6 @@ LABEL_38:
     return 0; /*0x7d6ce2*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x7D6CF0
-namespace gamemd {
-char * strpbrk(const char * Str, const char * Control)
-{
-char* result = 0;
-int table[9];
-memset(table, 0, 32);
-while (1)
-{
-    char current = *Control;
-    if (!*Control)
-        break;
-    ++Control;
-    unsigned int bit = (unsigned char)current;
-    table[bit >> 5] |= 1 << (bit & 31);
-}
-while (1)
-{
-    char current = *Str;
-    if (!*Str)
-        break;
-    ++Str;
-    unsigned int bit = (unsigned char)current;
-    if (table[bit >> 5] & (1 << (bit & 31)))
-        return (char *)(Str - 1);
-}
-return result;
 }
 } // namespace gamemd
 
@@ -8214,49 +7865,6 @@ int __stdcall crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, i
   lpLCData[cchData - 1] = 0; /*0x7d756a*/
   return 1; /*0x7d74d8*/
 }
-}
-} // namespace gamemd
-
-// 0x7D7577
-namespace gamemd {
-int LcidFromHexString(char * a1)
-{
-int result = 0;
-char current;
-for (;; result = current + 16 * (result + 268435453))
-{
-    current = *a1;
-    ++a1;
-    if (!current)
-        break;
-    if (current < 97 || current > 102)
-    {
-        if (current >= 65 && current <= 70)
-            current -= 7;
-    }
-    else
-    {
-        current -= 39;
-    }
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x7D75B0
-namespace gamemd {
-int GetPrimaryLen(char * a1)
-{
-int result = 0;
-char current;
-for (;; ++result)
-{
-    current = *a1;
-    ++a1;
-    if ((current < 65 || current > 90) && (current < 97 || current > 122))
-        break;
-}
-return result;
 }
 } // namespace gamemd
 
@@ -9050,14 +8658,6 @@ int __usercall __dtold@<eax>(unsigned int a1@<eax>, int a2, int *a3)
   *(_WORD *)(a2 + 8) = v8 | v14; /*0x7d7ec9*/
   return result; /*0x7d7ecd*/
 }
-}
-} // namespace gamemd
-
-// 0x7D7ED2
-namespace gamemd {
-void __noreturn _fptrap()
-{
-_amsg_exit(2u);
 }
 } // namespace gamemd
 
@@ -17806,6 +17406,290 @@ int __cdecl sub_7DF9B7(int *a1)
 }
 } // namespace gamemd
 
+// 0x7D12E6
+namespace gamemd {
+unsigned char * strncnt(const unsigned char * String, int Count)
+{
+const unsigned char* scan = String;
+int remaining = Count - 1;
+if (Count)
+{
+    do
+    {
+        if (!*scan)
+            break;
+        ++scan;
+    }
+    while (remaining--);
+}
+if (*scan)
+    return (unsigned char *)Count;
+else
+    return (unsigned char *)(scan - String);
+}
+} // namespace gamemd
+
+// 0x7D168E
+namespace gamemd {
+int * _errno()
+{
+return (int *)(_getptd() + 8);
+}
+} // namespace gamemd
+
+// 0x7D1697
+namespace gamemd {
+unsigned int * __doserrno()
+{
+return (unsigned int *)(_getptd() + 12);
+}
+} // namespace gamemd
+
+// 0x7D2183
+namespace gamemd {
+int _un_inc(int Character, FILE * Stream)
+{
+if (Character != -1)
+    return ungetc_0(Character, Stream);
+return Character;
+}
+} // namespace gamemd
+
+// 0x7D219A
+namespace gamemd {
+int _whiteout(unsigned int * a1, FILE * Stream)
+{
+int current;
+do
+{
+    ++*a1;
+    current = fgetc_0(Stream);
+}
+while (isspace(current));
+return current;
+}
+} // namespace gamemd
+
+// 0x7D290B
+namespace gamemd {
+unsigned int * write_char_0(wchar_t WCh, FILE * File, unsigned int * a3)
+{
+bool failed = (unsigned __int16)_putwc_lk(WCh, File) == 0xFFFF;
+unsigned int* result = a3;
+if (failed)
+    *a3 = -1;
+else
+    ++*a3;
+return result;
+}
+} // namespace gamemd
+
+// 0x7D3679
+namespace gamemd {
+int CPtoLCID(int a1)
+{
+switch (a1)
+{
+case 932:
+    return 1041;
+case 936:
+    return 2052;
+case 949:
+    return 1042;
+case 950:
+    return 1028;
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x7D4596
+namespace gamemd {
+int fgetwc(FILE * File)
+{
+return _getwc_lk(File);
+}
+} // namespace gamemd
+
+// 0x7D468C
+namespace gamemd {
+char * _itoa(int Value, char * Buffer, int Radix)
+{
+if (Radix == 10 && Value < 0)
+    xtoa(Value, Buffer, 10, 1);
+else
+    xtoa(Value, Buffer, Radix, 0);
+return Buffer;
+}
+} // namespace gamemd
+
+// 0x7D46B9
+namespace gamemd {
+char xtoa(unsigned int a1, char * a2, unsigned int a3, int a4)
+{
+char* out = a2;
+unsigned int value;
+if (a4)
+{
+    *a2 = 45;
+    ++out;
+    value = -a1;
+}
+else
+{
+    value = a1;
+}
+char* start = out;
+char result = 0;
+do
+{
+    int digit = value % a3;
+    bool isDecimal = value % a3 <= 9;
+    value /= a3;
+    char digitChar;
+    if (isDecimal)
+        digitChar = digit + 48;
+    else
+        digitChar = digit + 87;
+    *out = digitChar;
+    ++out;
+}
+while (value);
+*out = 0;
+char* back = out;
+--back;
+do
+{
+    result = *back;
+    *back = *start;
+    *start = result;
+    --back;
+    ++start;
+}
+while (start < back);
+return result;
+}
+} // namespace gamemd
+
+// 0x7D4715
+namespace gamemd {
+char * _ltoa(int Value, char * Buffer, int Radix)
+{
+int isNegative = 0;
+if (Radix == 10)
+    isNegative = Value < 0;
+xtoa(Value, Buffer, Radix, isNegative);
+return Buffer;
+}
+} // namespace gamemd
+
+// 0x7D473F
+namespace gamemd {
+char * _ultoa(unsigned int Value, char * Buffer, int Radix)
+{
+xtoa(Value, Buffer, Radix, 0);
+return Buffer;
+}
+} // namespace gamemd
+
+// 0x7D475A
+namespace gamemd {
+char * _i64toa(long long Value, char * Buffer, int Radix)
+{
+int isNegative = 0;
+if (Radix == 10 && (int)(Value >> 32) <= 0)
+    isNegative = Value < 0;
+x64toa_20(Value, Buffer, Radix, isNegative);
+return Buffer;
+}
+} // namespace gamemd
+
+// 0x7D478B
+namespace gamemd {
+char * x64toa_20(unsigned long long a1, char * a2, unsigned int a3, int a4)
+{
+char* out = a2;
+unsigned long long value;
+if (a4)
+{
+    *a2 = 45;
+    ++out;
+    value = -(__int64)a1;
+}
+else
+{
+    value = a1;
+}
+char* start = out;
+do
+{
+    unsigned int digit = value % a3;
+    value /= a3;
+    char digitChar;
+    if (digit <= 9)
+        digitChar = digit + 48;
+    else
+        digitChar = digit + 87;
+    *out = digitChar;
+    ++out;
+}
+while ((unsigned int)(value >> 32) || (unsigned int)value);
+*out = 0;
+char* back = out;
+--back;
+char* result;
+do
+{
+    char temp = *back;
+    *back = *start;
+    *start = temp;
+    --back;
+    ++start;
+    result = start;
+}
+while (result < back);
+return result;
+}
+} // namespace gamemd
+
+// 0x7D4811
+namespace gamemd {
+char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
+{
+x64toa_20(Value, Buffer, Radix, 0);
+return Buffer;
+}
+} // namespace gamemd
+
+// 0x7D4BD8
+namespace gamemd {
+void ** __pxcptinfoptrs()
+{
+return (void **)(_getptd() + 84);
+}
+} // namespace gamemd
+
+// 0x7D53C2
+namespace gamemd {
+int _access(const char * FileName, int AccessMode)
+{
+DWORD FileAttributesA = GetFileAttributesA(FileName);
+if (FileAttributesA == -1)
+{
+    DWORD LastError = GetLastError();
+    _dosmaperr(LastError);
+    return -1;
+}
+if ((FileAttributesA & 1) != 0 && (AccessMode & 2) != 0)
+{
+    *_errno() = 13;
+    *__doserrno() = 5;
+    return -1;
+}
+return 0;
+}
+} // namespace gamemd
+
 // 0x7D58C8
 namespace gamemd {
 unsigned char * store_dt(unsigned char * a1, int a2)
@@ -17813,6 +17697,41 @@ unsigned char * store_dt(unsigned char * a1, int a2)
   *a1 = a2 / 10 + 48;
   a1[1] = a2 % 10 + 48;
   return a1 + 2;
+}
+} // namespace gamemd
+
+// 0x7D6A1D
+namespace gamemd {
+char fix_grouping_0(char * a1)
+{
+char* scan = a1;
+char result = *a1;
+for (; *scan; result = *scan)
+{
+    if (result < 48 || result > 57)
+    {
+        if (result == 59)
+        {
+            char* shift = scan;
+            char* next = shift;
+            ++next;
+            do
+            {
+                *shift = *next;
+                ++shift;
+                ++next;
+            }
+            while (*shift);
+            continue;
+        }
+    }
+    else
+    {
+        *scan = result - 48;
+    }
+    ++scan;
+}
+return result;
 }
 } // namespace gamemd
 
@@ -17824,6 +17743,79 @@ return 0;
 }
 } // namespace gamemd
 
+// 0x7D6CF0
+namespace gamemd {
+char * strpbrk(const char * Str, const char * Control)
+{
+char* result = 0;
+int table[9];
+memset(table, 0, 32);
+while (1)
+{
+    char current = *Control;
+    if (!*Control)
+        break;
+    ++Control;
+    unsigned int bit = (unsigned char)current;
+    table[bit >> 5] |= 1 << (bit & 31);
+}
+while (1)
+{
+    char current = *Str;
+    if (!*Str)
+        break;
+    ++Str;
+    unsigned int bit = (unsigned char)current;
+    if (table[bit >> 5] & (1 << (bit & 31)))
+        return (char *)(Str - 1);
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x7D7577
+namespace gamemd {
+int LcidFromHexString(char * a1)
+{
+int result = 0;
+char current;
+for (;; result = current + 16 * (result + 268435453))
+{
+    current = *a1;
+    ++a1;
+    if (!current)
+        break;
+    if (current < 97 || current > 102)
+    {
+        if (current >= 65 && current <= 70)
+            current -= 7;
+    }
+    else
+    {
+        current -= 39;
+    }
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x7D75B0
+namespace gamemd {
+int GetPrimaryLen(char * a1)
+{
+int result = 0;
+char current;
+for (;; ++result)
+{
+    current = *a1;
+    ++a1;
+    if ((current < 65 || current > 90) && (current < 97 || current > 122))
+        break;
+}
+return result;
+}
+} // namespace gamemd
+
 // 0x7D79FB
 namespace gamemd {
 int _FillZeroMan(unsigned int * a1)
@@ -17832,6 +17824,14 @@ int _FillZeroMan(unsigned int * a1)
   a1[1] = 0;
   a1[2] = 0;
   return 0;
+}
+} // namespace gamemd
+
+// 0x7D7ED2
+namespace gamemd {
+void __noreturn _fptrap()
+{
+_amsg_exit(2u);
 }
 } // namespace gamemd
 

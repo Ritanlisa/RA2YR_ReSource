@@ -546,12 +546,6 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 }
 } // namespace gamemd
 
-// 0x7730E0
-int WeaponTypeClass::GetTypeIdentifier()
-{
-return 49;
-}
-
 // 0x7730F0
 WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
 {
@@ -632,4 +626,10 @@ int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 int WeaponTypeClass::GetObjectSize()
 {
 return 352;
+}
+
+// 0x7730E0
+int WeaponTypeClass::GetTypeIdentifier()
+{
+return 49;
 }

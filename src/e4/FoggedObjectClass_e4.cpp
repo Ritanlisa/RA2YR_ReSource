@@ -808,12 +808,6 @@ LABEL_22:
 }
 }
 
-// 0x4D27B0
-int FoggedObjectClass::GetTypeIdentifier()
-{
-return 61;
-}
-
 // 0x4D2810
 int FoggedObjectClass::PowerDrainUpdate(int a2)
 {
@@ -1358,6 +1352,12 @@ VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *Block, cha
 }
 }
 } // namespace gamemd
+
+// 0x4D27B0
+int FoggedObjectClass::GetTypeIdentifier()
+{
+return 61;
+}
 
 // 0x4D27C0
 int FoggedObjectClass::GetObjectSize()

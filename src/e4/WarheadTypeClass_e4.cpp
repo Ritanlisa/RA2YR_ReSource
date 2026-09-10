@@ -919,12 +919,6 @@ int __thiscall WarheadTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 }
 
-// 0x75E4F0
-int WarheadTypeClass::GetObjectSize()
-{
-return 464;
-}
-
 // 0x75E510
 WarheadTypeClass * WarheadTypeClass::Destructor(void ** Block, char a2)
 {
@@ -1071,6 +1065,12 @@ int WarheadTypeClass_ReadINI()
 // end truncated pseudocode
 }
 } // namespace gamemd
+
+// 0x75E4F0
+int WarheadTypeClass::GetObjectSize()
+{
+return 464;
+}
 
 // 0x75E500
 int WarheadTypeClass::GetTypeIdentifier()

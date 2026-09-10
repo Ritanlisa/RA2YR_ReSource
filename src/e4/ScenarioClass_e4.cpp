@@ -64,14 +64,6 @@ void *ScenarioClass_CopyStartPositions()
 }
 } // namespace gamemd
 
-// 0x5C0F90
-namespace gamemd {
-void ScenarioClass::StubReturnTrue7()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5CA7F0
 namespace gamemd {
 int ScenarioClass_ClearFlag_0()
@@ -1052,6 +1044,14 @@ return 0;
 // 0x5C0F80
 namespace gamemd {
 void ScenarioClass::StubReturnTrue6()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F90
+namespace gamemd {
+void ScenarioClass::StubReturnTrue7()
 {
   ;
 }

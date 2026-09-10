@@ -413,7 +413,7 @@ int __thiscall Audio_GetSampleSize(_DWORD *this)
 
 // 0x4093B0
 namespace gamemd {
-unsigned long long Audio::Callback()
+int Audio::Callback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int Audio_Callback()

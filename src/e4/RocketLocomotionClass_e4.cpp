@@ -61,12 +61,6 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
-// 0x6635B0
-int RocketLocomotionClass::StubReturn96()
-{
-return 96;
-}
-
 // 0x6635C0
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
@@ -413,4 +407,10 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268491163;
   a2[3] = -399534261;
   return 0;
+}
+
+// 0x6635B0
+int RocketLocomotionClass::StubReturn96()
+{
+return 96;
 }

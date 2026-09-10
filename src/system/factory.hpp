@@ -43,7 +43,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     bool Unsuspend(bool manual);
     int GetBuildTimeFrames() const;                                                      // 0x4C9FB0
-    bool AbandonProduction();
+    bool AbandonProduction();                                                           // 0x4C9FF0
     int GetProgress() const;
     // unmatched: no callgraph reference and no git history record
     bool IsDone() const;

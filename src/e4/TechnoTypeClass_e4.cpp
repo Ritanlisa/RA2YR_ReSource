@@ -5,7 +5,11 @@
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
 {
-return 0;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char TechnoTypeClass::vt_entry_A0()
+{
+  return 0; /*0x41cb52*/
+}
 }
 
 // 0x48DCD0

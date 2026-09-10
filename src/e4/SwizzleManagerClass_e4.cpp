@@ -16,12 +16,6 @@ int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerC
 }
 }
 
-// 0x6CF4B0
-int SwizzleManagerClass::AddRef(int a1)
-{
-return 1;
-}
-
 // 0x6CF4F0
 namespace gamemd {
 void SwizzleManagerClass_19::ClearBuffer()
@@ -463,6 +457,12 @@ DynamicVector *__thiscall SwizzleManagerClass_19_::Constructor_VectorClass_Swizz
 }
 }
 } // namespace gamemd
+
+// 0x6CF4B0
+int SwizzleManagerClass::AddRef(int a1)
+{
+return 1;
+}
 
 // 0x6CF4C0
 int SwizzleManagerClass::Release(int a1)

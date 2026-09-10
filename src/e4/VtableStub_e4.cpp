@@ -26,12 +26,6 @@ void __thiscall VtableStub::643E70(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x65D690
-char VtableStub::RetZero_eax_35(int a1)
-{
-return 0;
-}
-
 // 0x72D450
 namespace gamemd {
 int VtableStub_72D450()
@@ -67,3 +61,9 @@ int VtableStub::72F510()
 }
 }
 } // namespace gamemd
+
+// 0x65D690
+char VtableStub::RetZero_eax_35(int a1)
+{
+return 0;
+}

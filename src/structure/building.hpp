@@ -124,7 +124,6 @@ public:
     void ProductionDisplayUpdate();  // 0x43F180
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
-    void AbandonProduction();  // 0x4C9FF0
     bool CanAcceptType(int type_index);  // 0x452670
     void AddToProductionQueue(int type_index);  // 0x4DA0E0
     void SetProduction(int type_index);  // 0x6395B0

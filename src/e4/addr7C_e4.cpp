@@ -8574,28 +8574,6 @@ unsigned int __cdecl shortsort(AbstractClass *aP0, unsigned int a2, int a3, int 
 }
 } // namespace gamemd
 
-// 0x7C8CEA
-namespace gamemd {
-char * swap(char * a1, char * a2, int a3)
-{
-char* result = a1;
-char* second = a2;
-if ((a1 != a2) && a3)
-{
-    int remaining = a3;
-    do
-    {
-        char tempChar = *result;
-        *result++ = *second;
-        *second++ = tempChar;
-        --remaining;
-    }
-    while (remaining);
-}
-return result;
-}
-} // namespace gamemd
-
 // 0x7C8D20
 namespace gamemd {
 int _strcmpi(char * a1, char * a2)
@@ -8674,38 +8652,6 @@ int __cdecl _strcmpi(char *a1, char *a2)
 }
 } // namespace gamemd
 
-// 0x7C8DF0
-namespace gamemd {
-char * strrchr(const char * Str, int Ch)
-{
-unsigned int remaining = strlen(Str) + 1;
-const char* match = Str;
-match += remaining - 1;
-bool found = false;
-do
-{
-    if (!remaining)
-        break;
-    found = *match == (unsigned char)Ch;
-    --match;
-    --remaining;
-}
-while (!found);
-++match;
-if (*match == (unsigned char)Ch)
-    return (char*)match;
-return 0;
-}
-} // namespace gamemd
-
-// 0x7C8E17
-namespace gamemd {
-int __2_YAPAXI_Z(size_t Size)
-{
-return _nh_malloc(Size, 1);
-}
-} // namespace gamemd
-
 // 0x7C8E25
 namespace gamemd {
 int _bsearch()
@@ -8764,16 +8710,6 @@ LABEL_11:
     return 0; /*0x7c8e92*/
   return CompareFunction(Key, Base) == 0 ? (void *)Base : 0;
 }
-}
-} // namespace gamemd
-
-// 0x7C8EC0
-namespace gamemd {
-unsigned long long _allmul(long long a1, long long a2)
-{
-if ((unsigned int)(a1 >> 32) | (unsigned int)(a2 >> 32))
-    return (unsigned long long)(a1 * a2);
-return (unsigned int)a2 * (unsigned long long)(unsigned int)a1;
 }
 } // namespace gamemd
 
@@ -9153,25 +9089,6 @@ void *__cdecl malloc(AbstractClass *aP0)
 }
 } // namespace gamemd
 
-// 0x7C9442
-namespace gamemd {
-int _nh_malloc(IUnknown * aP0, int a2)
-{
-if ((unsigned int)aP0 > 0xFFFFFFE0)
-    return 0;
-int result;
-while (1)
-{
-    result = (int)_heap_alloc(aP0);
-    if (result || !a2)
-        break;
-    if (!_callnewh(aP0))
-        return 0;
-}
-return result;
-}
-} // namespace gamemd
-
 // 0x7C946E
 namespace gamemd {
 LPVOID _heap_alloc(IUnknown * aP0)
@@ -9398,14 +9315,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x7C978A
-namespace gamemd {
-int atexit(void (__cdecl *Func)())
-{
-return (_onexit((_onexit_t)Func) != 0) - 1;
-}
-} // namespace gamemd
-
 // 0x7C979C
 namespace gamemd {
 void * __onexitinit()
@@ -9423,14 +9332,6 @@ void *__onexitinit()
   dword_B78BBC = (int)dword_B78BC0; /*0x7c97c5*/
   return dword_B78BC0; /*0x7c97ca*/
 }
-}
-} // namespace gamemd
-
-// 0x7C97CB
-namespace gamemd {
-int _toupper(int C)
-{
-return C - 32;
 }
 } // namespace gamemd
 
@@ -9685,22 +9586,6 @@ int __cdecl iscntrl(int C)
 }
 } // namespace gamemd
 
-// 0x7C9AE3
-namespace gamemd {
-int __isascii(int C)
-{
-return (unsigned int)C < 0x80;
-}
-} // namespace gamemd
-
-// 0x7C9AF0
-namespace gamemd {
-int __toascii(int C)
-{
-return C & 0x7F;
-}
-} // namespace gamemd
-
 // 0x7C9AF8
 namespace gamemd {
 int __iscsymf(int C)
@@ -9774,14 +9659,6 @@ int __cdecl atol(const char *String)
     return -v6; /*0x7c9bf6*/
   return result; /*0x7c9bf8*/
 }
-}
-} // namespace gamemd
-
-// 0x7C9BFD
-namespace gamemd {
-int atoi(const char * String)
-{
-return atol(String);
 }
 } // namespace gamemd
 
@@ -10024,84 +9901,6 @@ LABEL_44:
 }
 } // namespace gamemd
 
-// 0x7C9FD9
-namespace gamemd {
-unsigned int strtoul(const char * String, char ** EndPtr, int Radix)
-{
-return strtoxl((unsigned char*)String, (unsigned char**)EndPtr, Radix, 1);
-}
-} // namespace gamemd
-
-// 0x7C9FF0
-namespace gamemd {
-void _makepath(char * Buffer, const char * Drive, const char * Dir, const char * FName, const char * Ext)
-{
-char* out = Buffer;
-if (Drive && *Drive)
-{
-    Buffer[0] = *Drive;
-    Buffer[1] = 58;
-    out += 2;
-}
-const char* dirScan = Dir;
-if (Dir)
-{
-    char dirChar = *Dir;
-    if (*Dir)
-    {
-        do
-        {
-            *out = dirChar;
-            ++dirScan;
-            dirChar = *dirScan;
-            ++out;
-        }
-        while (dirChar);
-        unsigned char last = *_mbsdec((const unsigned char *)Dir, (const unsigned char *)dirScan);
-        if (last != 47 && last != 92)
-        {
-            *out = 92;
-            ++out;
-        }
-    }
-}
-const char* nameScan = FName;
-if (FName)
-{
-    char nameChar = FName[0];
-    while (nameChar)
-    {
-        *out = nameChar;
-        ++nameScan;
-        nameChar = *nameScan;
-        ++out;
-    }
-}
-const char* extScan = Ext;
-if (Ext)
-{
-    if (*Ext && *Ext != 46)
-    {
-        *out = 46;
-        ++out;
-    }
-    char extChar;
-    do
-    {
-        extChar = extScan[0];
-        *out = extScan[0];
-        ++out;
-        ++extScan;
-    }
-    while (extChar);
-}
-else
-{
-    *out = 0;
-}
-}
-} // namespace gamemd
-
 // 0x7CA090
 namespace gamemd {
 void * memcpy(void * a0, AbstractClass * aP1, size_t Size)
@@ -10278,133 +10077,6 @@ TrailUp3:
 }
 } // namespace gamemd
 
-// 0x7CA3C5
-namespace gamemd {
-wchar_t * wcsrchr(const wchar_t * Str, wchar_t Ch)
-{
-const wchar_t* scan = Str;
-wchar_t current = *Str;
-for (;; current = *scan)
-{
-    ++scan;
-    if (!current)
-        break;
-}
-const wchar_t* j = scan - 1;
-for (; j != Str; --j)
-{
-    if (*j == Ch)
-        break;
-}
-const wchar_t* match[2];
-match[0] = 0;
-match[1] = j;
-return (wchar_t*)match[Ch == *j];
-}
-} // namespace gamemd
-
-// 0x7CA405
-namespace gamemd {
-size_t wcslen(const wchar_t * String)
-{
-const wchar_t* scan = String;
-++scan;
-if (*String)
-{
-    while (*scan)
-        ++scan;
-}
-return scan - String - 1;
-}
-} // namespace gamemd
-
-// 0x7CA422
-namespace gamemd {
-wchar_t * wcsncpy(wchar_t * Destination, const wchar_t * Source, size_t MaxCount)
-{
-size_t remaining = MaxCount;
-wchar_t* dst = Destination;
-if (MaxCount)
-{
-    wchar_t current;
-    do
-    {
-        current = *Source;
-        *dst = *Source;
-        ++dst;
-        ++Source;
-        if (!current)
-            break;
-        --remaining;
-    }
-    while (remaining);
-    if (remaining)
-    {
-        size_t pad = remaining - 1;
-        if (pad)
-        {
-            int odd = pad & 1;
-            size_t pairs = pad >> 1;
-            memset(dst, 0, 4 * pairs);
-            wchar_t* tail = dst;
-            tail += 2 * pairs;
-            for (int i = odd; i; --i)
-            {
-                *tail = 0;
-                ++tail;
-            }
-        }
-    }
-}
-return Destination;
-}
-} // namespace gamemd
-
-// 0x7CA45F
-namespace gamemd {
-wchar_t * wcscat(wchar_t * Destination, const wchar_t * Source)
-{
-wchar_t* result = Destination;
-wchar_t* i = Destination;
-while (*i)
-    ++i;
-const wchar_t* src = Source;
-wchar_t current;
-do
-{
-    current = *src;
-    *i = *src;
-    ++i;
-    ++src;
-}
-while (current);
-return result;
-}
-} // namespace gamemd
-
-// 0x7CA489
-namespace gamemd {
-wchar_t * wcscpy(wchar_t * Destination, const wchar_t * Source)
-{
-const wchar_t* src = Source;
-wchar_t* result = Destination;
-wchar_t current = *Source;
-wchar_t* dst = Destination;
-++dst;
-*Destination = *Source;
-while (1)
-{
-    ++src;
-    if (!current)
-        break;
-    current = *src;
-    *dst = *src;
-    ++dst;
-}
-return result;
-}
-} // namespace gamemd
-
 // 0x7CA4B0
 namespace gamemd {
 char * strstr(ObjectClass * aP0, const char * SubStr)
@@ -10524,75 +10196,6 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
     *File._ptr = 0; /*0x7ca5bc*/
   return v6; /*0x7ca5d0*/
 }
-}
-} // namespace gamemd
-
-// 0x7CA5D3
-namespace gamemd {
-int wcscmp(const wchar_t * String1, const wchar_t * String2)
-{
-const wchar_t* second = String2;
-wchar_t current = *String2;
-int result;
-for (;; current = *second)
-{
-    result = *String1 - current;
-    if (result || !current)
-        break;
-    ++String1;
-    ++second;
-}
-if (result < 0)
-    return -1;
-if (result > 0)
-    return 1;
-return result;
-}
-} // namespace gamemd
-
-// 0x7CA610
-namespace gamemd {
-int strncmp(const char * Str1, const char * Str2, size_t MaxCount)
-{
-size_t remaining = MaxCount;
-if (MaxCount)
-{
-    const char* first = Str1;
-    bool endOfFirst = false;
-    do
-    {
-        if (!remaining)
-            break;
-        endOfFirst = *first == 0;
-        ++first;
-        --remaining;
-    }
-    while (!endOfFirst);
-    size_t compared = MaxCount - remaining;
-    const char* second = Str1;
-    const char* other = Str2;
-    bool equal = false;
-    do
-    {
-        if (!compared)
-            break;
-        equal = *other == *second;
-        ++other;
-        ++second;
-        --compared;
-    }
-    while (equal);
-    unsigned char lastOther = *(other - 1);
-    remaining = 0;
-    if (lastOther > *(second - 1))
-        return (int)~remaining;
-    if (lastOther != *(second - 1))
-    {
-        remaining = (size_t)-2;
-        return (int)~remaining;
-    }
-}
-return (int)remaining;
 }
 } // namespace gamemd
 
@@ -10720,19 +10323,6 @@ int __cdecl _fclose_lk(MouseClass *aP0)
 }
 } // namespace gamemd
 
-// 0x7CA7D8
-namespace gamemd {
-int fprintf(MouseClass * aP0, const char *const Format, CellStruct * aP2)
-{
-_lock_file(aP0);
-int bufmode = _stbuf((int)aP0);
-int written = _output((FILE *)aP0, (char *)Format, (int)&aP2);
-_ftbuf(bufmode, (int)aP0);
-_unlock_file(aP0);
-return written;
-}
-} // namespace gamemd
-
 // 0x7CA814
 namespace gamemd {
 FILE * _fsopen(const char * FileName, const char * Mode, int ShFlag)
@@ -10754,14 +10344,6 @@ FILE *__cdecl _fsopen(const char *FileName, const char *Mode, int ShFlag)
   }
   return result; /*0x7ca820*/
 }
-}
-} // namespace gamemd
-
-// 0x7CA845
-namespace gamemd {
-FILE * fopen(const char * FileName, const char * Mode)
-{
-return _fsopen(FileName, Mode, 64);
 }
 } // namespace gamemd
 
@@ -10794,29 +10376,6 @@ int __cdecl vswprintf(wchar_t *const Buffer, CampaignScore *aP1, ObjectClass *aP
     *File._ptr = 0; /*0x7ca8af*/
   return v6; /*0x7ca8c3*/
 }
-}
-} // namespace gamemd
-
-// 0x7CA8C6
-namespace gamemd {
-wchar_t * wcschr(wchar_t * Str, int Ch)
-{
-while (*Str && *Str != Ch)
-    ++Str;
-wchar_t* match[2];
-match[0] = 0;
-match[1] = Str;
-return match[Ch == *Str];
-}
-} // namespace gamemd
-
-// 0x7CA8EF
-namespace gamemd {
-void * __RTCastToVoid(void ** a1)
-{
-if (a1)
-    return _FindCompleteObject_YAPAXPAPAX_Z(a1);
-return 0;
 }
 } // namespace gamemd
 
@@ -11389,14 +10948,6 @@ main_loop_0:
 }
 } // namespace gamemd
 
-// 0x7CAFEC
-namespace gamemd {
-int _tolower(int C)
-{
-return C + 32;
-}
-} // namespace gamemd
-
 // 0x7CAFF4
 namespace gamemd {
 int tolower(int C)
@@ -11640,19 +11191,6 @@ int __cdecl flsall(MouseClass *aP0)
     return (int)v2; /*0x7cb2fc*/
   return result; /*0x7cb2fe*/
 }
-}
-} // namespace gamemd
-
-// 0x7CB302
-namespace gamemd {
-int sub_7CB302(FILE * Stream, int a2, int a3)
-{
-_lock_file(Stream);
-int bufmode = _stbuf(Stream);
-int written = _output(Stream, a2, a3);
-_ftbuf(bufmode, Stream);
-_unlock_file(Stream);
-return written;
 }
 } // namespace gamemd
 
@@ -17824,11 +17362,473 @@ int __cdecl __sbh_resize_block(_DWORD *a0, CCINIClass *aP1, AbstractClass *aP2)
 }
 } // namespace gamemd
 
+// 0x7C8CEA
+namespace gamemd {
+char * swap(char * a1, char * a2, int a3)
+{
+char* result = a1;
+char* second = a2;
+if ((a1 != a2) && a3)
+{
+    int remaining = a3;
+    do
+    {
+        char tempChar = *result;
+        *result++ = *second;
+        *second++ = tempChar;
+        --remaining;
+    }
+    while (remaining);
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x7C8DF0
+namespace gamemd {
+char * strrchr(const char * Str, int Ch)
+{
+unsigned int remaining = strlen(Str) + 1;
+const char* match = Str;
+match += remaining - 1;
+bool found = false;
+do
+{
+    if (!remaining)
+        break;
+    found = *match == (unsigned char)Ch;
+    --match;
+    --remaining;
+}
+while (!found);
+++match;
+if (*match == (unsigned char)Ch)
+    return (char*)match;
+return 0;
+}
+} // namespace gamemd
+
+// 0x7C8E17
+namespace gamemd {
+int __2_YAPAXI_Z(size_t Size)
+{
+return _nh_malloc(Size, 1);
+}
+} // namespace gamemd
+
+// 0x7C8EC0
+namespace gamemd {
+unsigned long long _allmul(long long a1, long long a2)
+{
+if ((unsigned int)(a1 >> 32) | (unsigned int)(a2 >> 32))
+    return (unsigned long long)(a1 * a2);
+return (unsigned int)a2 * (unsigned long long)(unsigned int)a1;
+}
+} // namespace gamemd
+
 // 0x7C8F5D
 namespace gamemd {
 void nullsub_268()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x7C9442
+namespace gamemd {
+int _nh_malloc(IUnknown * aP0, int a2)
+{
+if ((unsigned int)aP0 > 0xFFFFFFE0)
+    return 0;
+int result;
+while (1)
+{
+    result = (int)_heap_alloc(aP0);
+    if (result || !a2)
+        break;
+    if (!_callnewh(aP0))
+        return 0;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x7C978A
+namespace gamemd {
+int atexit(void (__cdecl *Func)())
+{
+return (_onexit((_onexit_t)Func) != 0) - 1;
+}
+} // namespace gamemd
+
+// 0x7C97CB
+namespace gamemd {
+int _toupper(int C)
+{
+return C - 32;
+}
+} // namespace gamemd
+
+// 0x7C9AE3
+namespace gamemd {
+int __isascii(int C)
+{
+return (unsigned int)C < 0x80;
+}
+} // namespace gamemd
+
+// 0x7C9AF0
+namespace gamemd {
+int __toascii(int C)
+{
+return C & 0x7F;
+}
+} // namespace gamemd
+
+// 0x7C9BFD
+namespace gamemd {
+int atoi(const char * String)
+{
+return atol(String);
+}
+} // namespace gamemd
+
+// 0x7C9FD9
+namespace gamemd {
+unsigned int strtoul(const char * String, char ** EndPtr, int Radix)
+{
+return strtoxl((unsigned char*)String, (unsigned char**)EndPtr, Radix, 1);
+}
+} // namespace gamemd
+
+// 0x7C9FF0
+namespace gamemd {
+void _makepath(char * Buffer, const char * Drive, const char * Dir, const char * FName, const char * Ext)
+{
+char* out = Buffer;
+if (Drive && *Drive)
+{
+    Buffer[0] = *Drive;
+    Buffer[1] = 58;
+    out += 2;
+}
+const char* dirScan = Dir;
+if (Dir)
+{
+    char dirChar = *Dir;
+    if (*Dir)
+    {
+        do
+        {
+            *out = dirChar;
+            ++dirScan;
+            dirChar = *dirScan;
+            ++out;
+        }
+        while (dirChar);
+        unsigned char last = *_mbsdec((const unsigned char *)Dir, (const unsigned char *)dirScan);
+        if (last != 47 && last != 92)
+        {
+            *out = 92;
+            ++out;
+        }
+    }
+}
+const char* nameScan = FName;
+if (FName)
+{
+    char nameChar = FName[0];
+    while (nameChar)
+    {
+        *out = nameChar;
+        ++nameScan;
+        nameChar = *nameScan;
+        ++out;
+    }
+}
+const char* extScan = Ext;
+if (Ext)
+{
+    if (*Ext && *Ext != 46)
+    {
+        *out = 46;
+        ++out;
+    }
+    char extChar;
+    do
+    {
+        extChar = extScan[0];
+        *out = extScan[0];
+        ++out;
+        ++extScan;
+    }
+    while (extChar);
+}
+else
+{
+    *out = 0;
+}
+}
+} // namespace gamemd
+
+// 0x7CA3C5
+namespace gamemd {
+wchar_t * wcsrchr(const wchar_t * Str, wchar_t Ch)
+{
+const wchar_t* scan = Str;
+wchar_t current = *Str;
+for (;; current = *scan)
+{
+    ++scan;
+    if (!current)
+        break;
+}
+const wchar_t* j = scan - 1;
+for (; j != Str; --j)
+{
+    if (*j == Ch)
+        break;
+}
+const wchar_t* match[2];
+match[0] = 0;
+match[1] = j;
+return (wchar_t*)match[Ch == *j];
+}
+} // namespace gamemd
+
+// 0x7CA405
+namespace gamemd {
+size_t wcslen(const wchar_t * String)
+{
+const wchar_t* scan = String;
+++scan;
+if (*String)
+{
+    while (*scan)
+        ++scan;
+}
+return scan - String - 1;
+}
+} // namespace gamemd
+
+// 0x7CA422
+namespace gamemd {
+wchar_t * wcsncpy(wchar_t * Destination, const wchar_t * Source, size_t MaxCount)
+{
+size_t remaining = MaxCount;
+wchar_t* dst = Destination;
+if (MaxCount)
+{
+    wchar_t current;
+    do
+    {
+        current = *Source;
+        *dst = *Source;
+        ++dst;
+        ++Source;
+        if (!current)
+            break;
+        --remaining;
+    }
+    while (remaining);
+    if (remaining)
+    {
+        size_t pad = remaining - 1;
+        if (pad)
+        {
+            int odd = pad & 1;
+            size_t pairs = pad >> 1;
+            memset(dst, 0, 4 * pairs);
+            wchar_t* tail = dst;
+            tail += 2 * pairs;
+            for (int i = odd; i; --i)
+            {
+                *tail = 0;
+                ++tail;
+            }
+        }
+    }
+}
+return Destination;
+}
+} // namespace gamemd
+
+// 0x7CA45F
+namespace gamemd {
+wchar_t * wcscat(wchar_t * Destination, const wchar_t * Source)
+{
+wchar_t* result = Destination;
+wchar_t* i = Destination;
+while (*i)
+    ++i;
+const wchar_t* src = Source;
+wchar_t current;
+do
+{
+    current = *src;
+    *i = *src;
+    ++i;
+    ++src;
+}
+while (current);
+return result;
+}
+} // namespace gamemd
+
+// 0x7CA489
+namespace gamemd {
+wchar_t * wcscpy(wchar_t * Destination, const wchar_t * Source)
+{
+const wchar_t* src = Source;
+wchar_t* result = Destination;
+wchar_t current = *Source;
+wchar_t* dst = Destination;
+++dst;
+*Destination = *Source;
+while (1)
+{
+    ++src;
+    if (!current)
+        break;
+    current = *src;
+    *dst = *src;
+    ++dst;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x7CA5D3
+namespace gamemd {
+int wcscmp(const wchar_t * String1, const wchar_t * String2)
+{
+const wchar_t* second = String2;
+wchar_t current = *String2;
+int result;
+for (;; current = *second)
+{
+    result = *String1 - current;
+    if (result || !current)
+        break;
+    ++String1;
+    ++second;
+}
+if (result < 0)
+    return -1;
+if (result > 0)
+    return 1;
+return result;
+}
+} // namespace gamemd
+
+// 0x7CA610
+namespace gamemd {
+int strncmp(const char * Str1, const char * Str2, size_t MaxCount)
+{
+size_t remaining = MaxCount;
+if (MaxCount)
+{
+    const char* first = Str1;
+    bool endOfFirst = false;
+    do
+    {
+        if (!remaining)
+            break;
+        endOfFirst = *first == 0;
+        ++first;
+        --remaining;
+    }
+    while (!endOfFirst);
+    size_t compared = MaxCount - remaining;
+    const char* second = Str1;
+    const char* other = Str2;
+    bool equal = false;
+    do
+    {
+        if (!compared)
+            break;
+        equal = *other == *second;
+        ++other;
+        ++second;
+        --compared;
+    }
+    while (equal);
+    unsigned char lastOther = *(other - 1);
+    remaining = 0;
+    if (lastOther > *(second - 1))
+        return (int)~remaining;
+    if (lastOther != *(second - 1))
+    {
+        remaining = (size_t)-2;
+        return (int)~remaining;
+    }
+}
+return (int)remaining;
+}
+} // namespace gamemd
+
+// 0x7CA7D8
+namespace gamemd {
+int fprintf(MouseClass * aP0, const char *const Format, CellStruct * aP2)
+{
+_lock_file(aP0);
+int bufmode = _stbuf((int)aP0);
+int written = _output((FILE *)aP0, (char *)Format, (int)&aP2);
+_ftbuf(bufmode, (int)aP0);
+_unlock_file(aP0);
+return written;
+}
+} // namespace gamemd
+
+// 0x7CA845
+namespace gamemd {
+FILE * fopen(const char * FileName, const char * Mode)
+{
+return _fsopen(FileName, Mode, 64);
+}
+} // namespace gamemd
+
+// 0x7CA8C6
+namespace gamemd {
+wchar_t * wcschr(wchar_t * Str, int Ch)
+{
+while (*Str && *Str != Ch)
+    ++Str;
+wchar_t* match[2];
+match[0] = 0;
+match[1] = Str;
+return match[Ch == *Str];
+}
+} // namespace gamemd
+
+// 0x7CA8EF
+namespace gamemd {
+void * __RTCastToVoid(void ** a1)
+{
+if (a1)
+    return _FindCompleteObject_YAPAXPAPAX_Z(a1);
+return 0;
+}
+} // namespace gamemd
+
+// 0x7CAFEC
+namespace gamemd {
+int _tolower(int C)
+{
+return C + 32;
+}
+} // namespace gamemd
+
+// 0x7CB302
+namespace gamemd {
+int sub_7CB302(FILE * Stream, int a2, int a3)
+{
+_lock_file(Stream);
+int bufmode = _stbuf(Stream);
+int written = _output(Stream, a2, a3);
+_ftbuf(bufmode, Stream);
+_unlock_file(Stream);
+return written;
 }
 } // namespace gamemd
 

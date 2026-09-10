@@ -618,6 +618,13 @@ def audit_global_annotations(file_filter=None, limit=60):
             if not m:
                 continue
             name = m.group(1)
+            # usage lines, not declarations: `return g_X;`, `g_X = 0;`,
+            # `Buffer[0] = *Drive;`, `T* p = g_X;` — the declaration always
+            # has the name as the DECLARED token, never RHS of an assignment.
+            if first in ("return", "return;") or code.strip() == "" or \
+                    code.strip().lstrip("*&").startswith(name) or \
+                    "=" in code[:m.start(1)]:
+                continue
             expected = gidx.get(name)
             if not expected:
                 continue

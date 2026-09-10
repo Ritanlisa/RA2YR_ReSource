@@ -647,14 +647,6 @@ DWORD __thiscall sub_7717A0(DWORD *this)
 }
 } // namespace gamemd
 
-// 0x7717F0
-namespace gamemd {
-int j_Audio_IsPlaying()
-{
-return Audio::IsPlaying();
-}
-} // namespace gamemd
-
 // 0x771850
 namespace gamemd {
 unsigned int * sub_771850(int a2)
@@ -7933,6 +7925,14 @@ namespace gamemd {
 void nullsub_260()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x7717F0
+namespace gamemd {
+int j_Audio_IsPlaying()
+{
+return Audio::IsPlaying();
 }
 } // namespace gamemd
 

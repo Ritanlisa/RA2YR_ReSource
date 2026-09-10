@@ -6,7 +6,11 @@
 // 0x724AA0
 char ToolTipManager::addRef(int a1)
 {
-return 1;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall ToolTipManager::_vt01(int a1)
+{
+  return 1; /*0x724aa2*/
+}
 }
 
 // 0x724B80

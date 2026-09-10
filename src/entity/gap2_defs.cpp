@@ -4055,7 +4055,7 @@ LABEL_66:
     v35 = *((_DWORD *)this + 329);
     if ( v35 )
     {
-      BuildingClass::AbandonProduction(v35);
+      FactoryClass::AbandonProduction(v35);
       v36 = *((_DWORD *)this + 329);
       if ( v36 )
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v36 + 32))(v36, 1);

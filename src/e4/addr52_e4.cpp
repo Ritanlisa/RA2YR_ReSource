@@ -1080,16 +1080,6 @@ void __thiscall sub_52AAF0(INIEntry_INIClass *this)
 }
 } // namespace gamemd
 
-// 0x52B6A0
-namespace gamemd {
-int CompareFunc3Int(unsigned int * a1, unsigned int * a2)
-{
-if ( *a1 == *a2 )
-    return 0;
-return 2 * (*a1 >= *a2) - 1;
-}
-} // namespace gamemd
-
 // 0x52B720
 namespace gamemd {
 int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
@@ -2215,6 +2205,16 @@ namespace gamemd {
 void nullsub_147()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x52B6A0
+namespace gamemd {
+int CompareFunc3Int(unsigned int * a1, unsigned int * a2)
+{
+if ( *a1 == *a2 )
+    return 0;
+return 2 * (*a1 >= *a2) - 1;
 }
 } // namespace gamemd
 

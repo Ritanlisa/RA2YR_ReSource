@@ -817,18 +817,6 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 }
 } // namespace gamemd
 
-// 0x524C70
-int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1366608936;
-  a2[1] = 298976796;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x524D60
 int InfantryTypeClass::GetAuxField()
 {
@@ -982,6 +970,18 @@ LABEL_6:
 int InfantryTypeClass::StubReturnFalse()
 {
 return 0;
+}
+
+// 0x524C70
+int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608936;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x524D40

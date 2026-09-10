@@ -20,7 +20,7 @@ struct Audio {
     int IsSoundPlaying();  // 0x408070
     int CalcRate(int a2, int a3);  // 0x408540
     int GetSampleSize();  // 0x409320
-    unsigned long long Callback();  // 0x4093B0
+    int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     int ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
     char ** SetSoundFileName(char * Source, int a3);  // 0x5D5820

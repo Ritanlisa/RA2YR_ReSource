@@ -44,7 +44,6 @@ struct AbstractClass {
     int COMStub_Return0_205();  // 0x459DE0
     int COMStub_Return0_270();  // 0x459E60
     bool addRef(unsigned short * a2, int a3);  // 0x464AC0
-    int compareType(int a1);  // 0x487E50
     Blitter * getTileIndex(char a2);  // 0x499CC0
     BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
     BlitTransXlat * getOverlayType(char a2);  // 0x499D00
@@ -88,6 +87,7 @@ struct AbstractClass {
     FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    int compareType(int a1);  // 0x487E50
     char Stub1INoticeSink(int a1, int a2);  // 0x410580
     void COM_Stub_Return0(int a1);  // 0x410590
     int COMStub_26();  // 0x4263A0

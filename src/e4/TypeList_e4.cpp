@@ -18,7 +18,7 @@ void __thiscall TypeList::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x477846*/
-  *(_DWORD *)(this + 16) = 0; /*0x477849*/
+  this->Count = 0; /*0x477849*/
   if ( v2 && this->IsAllocated ) /*0x477850*/
   {
     __3_YAXPAX_Z(v2); /*0x477856*/
@@ -652,8 +652,8 @@ char __thiscall TypeList::_vt02(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x67b0de*/
   }
   v7 = this->Capacity; /*0x67b0e1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x67b0e9*/
-    *((_DWORD *)this + 4) = v7; /*0x67b0eb*/
+  if ( v7 < this->Count ) /*0x67b0e9*/
+    this->Count = v7; /*0x67b0eb*/
   return 1; /*0x67b0ee*/
 }
 }

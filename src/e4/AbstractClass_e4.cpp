@@ -745,14 +745,6 @@ bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
 }
 } // namespace gamemd
 
-// 0x487E50
-namespace gamemd {
-int AbstractClass::compareType(int a1)
-{
-return 11;
-}
-} // namespace gamemd
-
 // 0x499CC0
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
@@ -2016,6 +2008,14 @@ namespace gamemd {
 char AbstractClass::finalRelease()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x487E50
+namespace gamemd {
+int AbstractClass::compareType(int a1)
+{
+return 11;
 }
 } // namespace gamemd
 

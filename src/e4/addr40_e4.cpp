@@ -1,9 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-#include "misc/audio.hpp"
-#include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x4010C0
 namespace gamemd {
@@ -32,16 +31,6 @@ int __fastcall AudioMixer_EndFrame(int *a1, _DWORD *a2)
   }
   return AudioMixer::PlaySample(a1 + 20); /*0x401140*/
 }
-}
-} // namespace gamemd
-
-// 0x401190
-namespace gamemd {
-int sub_401190(unsigned int* a1, int a2)
-{
-long long product = 1374389535LL * a2 * (a1[11] >> 16);
-int v2 = (int)((unsigned long long)product >> 32);
-return ((unsigned int)v2 >> 31) + (v2 >> 5);
 }
 } // namespace gamemd
 
@@ -512,14 +501,6 @@ int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHX
 }
 } // namespace gamemd
 
-// 0x401FB0
-namespace gamemd {
-int sub_401FB0(unsigned int* a1)
-{
-return a1[3];
-}
-} // namespace gamemd
-
 // 0x401FC0
 namespace gamemd {
 int sub_401FC0()
@@ -540,22 +521,6 @@ int __thiscall sub_401FC0(int this)
   nullsub_2(this + 28); /*0x40200a*/
   return PushFrontLinkedListAlt(*(_DWORD **)(this->ambientSoundController + 8), this); /*0x402014*/
 }
-}
-} // namespace gamemd
-
-// 0x402020
-namespace gamemd {
-int sub_402020(unsigned int* a1)
-{
-return a1[5];
-}
-} // namespace gamemd
-
-// 0x402430
-namespace gamemd {
-int sub_402430(unsigned int* a1)
-{
-return a1[41] & 8;
 }
 } // namespace gamemd
 
@@ -1025,18 +990,6 @@ int __fastcall sub_4035B0(int a1, int *a2)
 }
 } // namespace gamemd
 
-// 0x4036C0
-namespace gamemd {
-int sub_4036C0(int a1, int a2)
-{
-int channel = AudioQueue::FindBestChannel(a1, 1);
-if ( channel )
-    sub_402440(channel, a2);
-return channel;
-}
-
-} // namespace gamemd
-
 // 0x4036F0
 namespace gamemd {
 int sub_4036F0(int a1, int a2)
@@ -1056,22 +1009,6 @@ int __fastcall sub_4036F0(int a1, int a2)
   }
   return 0; /*0x403728*/
 }
-}
-} // namespace gamemd
-
-// 0x403810
-namespace gamemd {
-int sub_403810(int (**a1)(void))
-{
-return a1[67]();
-}
-} // namespace gamemd
-
-// 0x4038E0
-namespace gamemd {
-int sub_4038E0(unsigned long long* a1, unsigned long long a2)
-{
-return a2 - a1[5] >= *a1;
 }
 } // namespace gamemd
 
@@ -3283,15 +3220,6 @@ int __thiscall sub_407060(unsigned int *this)
 }
 } // namespace gamemd
 
-// 0x407080
-namespace gamemd {
-int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate)
-{
-return RequestBufferMixer(volume, rate);
-}
-
-} // namespace gamemd
-
 // 0x407100
 namespace gamemd {
 int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
@@ -3316,50 +3244,6 @@ int __fastcall SetupSampleAudioMixer(int *a0, ObjectClass *aP1)
   return AudioMixer::PlaySample(a0); /*0x40713b*/
 }
 }
-} // namespace gamemd
-
-// 0x407150
-namespace gamemd {
-int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
-{
-int result = volume->Volume | 1;
-volume->Volume = result;
-volume->ScaledVolume = scaledVolume << 16;
-return result;
-}
-
-} // namespace gamemd
-
-// 0x407160
-namespace gamemd {
-int sub_407160(VolumeStruct* volume)
-{
-int result = volume->Volume | 1;
-volume->Volume = result;
-return result;
-}
-
-} // namespace gamemd
-
-// 0x407170
-namespace gamemd {
-int RequestBufferMixer(VolumeStruct* volume, int rate)
-{
-int result = volume->ScaledVolume;
-unsigned int flags = volume->Volume;
-int audioState = volume->AudioState;
-volume->Volume = flags & 0xFFFFFFFE;
-if ( result == audioState )
-{
-    unsigned long long now = Audio::Callback();
-    volume->hBuffer = (uint32_t)now;
-    volume->MaxVolume = (int)((now >> 32) & 0xFFFFFFFF);
-    result = (int)now;
-}
-volume->ScaledVolume = rate << 16;
-return result;
-}
-
 } // namespace gamemd
 
 // 0x4071A0
@@ -9260,11 +9144,45 @@ void sub_40FFD0()
 }
 } // namespace gamemd
 
+// 0x401190
+namespace gamemd {
+int sub_401190(unsigned int* a1, int a2)
+{
+long long product = 1374389535LL * a2 * (a1[11] >> 16);
+int v2 = (int)((unsigned long long)product >> 32);
+return ((unsigned int)v2 >> 31) + (v2 >> 5);
+}
+} // namespace gamemd
+
 // 0x4011B0
 namespace gamemd {
 int sub_4011B0(unsigned int * a1, int a2)
 {
   return *a1 + 36 * a2;
+}
+} // namespace gamemd
+
+// 0x401FB0
+namespace gamemd {
+int sub_401FB0(unsigned int* a1)
+{
+return a1[3];
+}
+} // namespace gamemd
+
+// 0x402020
+namespace gamemd {
+int sub_402020(unsigned int* a1)
+{
+return a1[5];
+}
+} // namespace gamemd
+
+// 0x402430
+namespace gamemd {
+int sub_402430(unsigned int* a1)
+{
+return a1[41] & 8;
 }
 } // namespace gamemd
 
@@ -9274,6 +9192,87 @@ int sub_403460()
 {
 return -2147221504;
 }
+} // namespace gamemd
+
+// 0x4036C0
+namespace gamemd {
+int sub_4036C0(int a1, int a2)
+{
+int channel = AudioQueue::FindBestChannel(a1, 1);
+if ( channel )
+    sub_402440(channel, a2);
+return channel;
+}
+
+} // namespace gamemd
+
+// 0x403810
+namespace gamemd {
+int sub_403810(int (**a1)(void))
+{
+return a1[67]();
+}
+} // namespace gamemd
+
+// 0x4038E0
+namespace gamemd {
+int sub_4038E0(unsigned long long* a1, unsigned long long a2)
+{
+return a2 - a1[5] >= *a1;
+}
+} // namespace gamemd
+
+// 0x407080
+namespace gamemd {
+int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate)
+{
+return RequestBufferMixer(volume, rate);
+}
+
+} // namespace gamemd
+
+// 0x407150
+namespace gamemd {
+int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
+{
+int result = volume->Volume | 1;
+volume->Volume = result;
+volume->ScaledVolume = scaledVolume << 16;
+return result;
+}
+
+} // namespace gamemd
+
+// 0x407160
+namespace gamemd {
+int sub_407160(VolumeStruct* volume)
+{
+int result = volume->Volume | 1;
+volume->Volume = result;
+return result;
+}
+
+} // namespace gamemd
+
+// 0x407170
+namespace gamemd {
+int RequestBufferMixer(VolumeStruct* volume, int rate)
+{
+int result = volume->ScaledVolume;
+unsigned int flags = volume->Volume;
+int audioState = volume->AudioState;
+volume->Volume = flags & 0xFFFFFFFE;
+if ( result == audioState )
+{
+    unsigned long long now = Audio::Callback();
+    volume->hBuffer = (uint32_t)now;
+    volume->MaxVolume = (int)((now >> 32) & 0xFFFFFFFF);
+    result = (int)now;
+}
+volume->ScaledVolume = rate << 16;
+return result;
+}
+
 } // namespace gamemd
 
 // 0x408530

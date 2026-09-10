@@ -616,17 +616,6 @@ bool __stdcall JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass *aP0)
 }
 }
 
-// 0x4AFC90
-unsigned int * JumpjetLocomotionClass::GetCoordinate(unsigned int * a1, unsigned int * a2)
-{
-unsigned int coordY = a1[13];
-unsigned int coordZ = a1[14];
-*a2 = a1[12];
-a2[1] = coordY;
-a2[2] = coordZ;
-return a2;
-}
-
 // 0x4AFCC0
 unsigned int * JumpjetLocomotionClass::GetRenderCoordinate(unsigned int * a1, unsigned int * a2)
 {
@@ -1114,24 +1103,6 @@ char __stdcall JumpjetLocomotionClass::sub_4B0C40(int a1, int a2, unsigned int a
 }
 }
 
-// 0x4B0EF0
-char JumpjetLocomotionClass::UpdateFacingDirection(int a1, int a2)
-{
-return FacingClass::Update((char *)(a1[2] + 904), &a2);
-}
-
-// 0x4B4820
-int JumpjetLocomotionClass::StubReturnTwo(int a1)
-{
-return 2;
-}
-
-// 0x4B4880
-int JumpjetLocomotionClass::DispatchCheckState(TunnelLocomotionClass * aP0)
-{
-return JumpjetLocomotionClass::CheckState(aP0);
-}
-
 // 0x4B48D0
 char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
 {
@@ -1300,77 +1271,6 @@ int __stdcall JumpjetLocomotionClass::sub_4B4BF0(int a1)
   *(_BYTE *)(a1 + 97) = 1; /*0x4b4bf4*/
   return a1; /*0x4b4bf8*/
 }
-}
-
-// 0x4B4C00
-int JumpjetLocomotionClass::GetField_0x54(int a1)
-{
-return a1[21];
-}
-
-// 0x4B4C10
-int JumpjetLocomotionClass::GetField_0x58(int a1)
-{
-return a1[22];
-}
-
-// 0x4B4C20
-int JumpjetLocomotionClass::GetField_0x48(int a1)
-{
-return a1[18];
-}
-
-// 0x4B4CD0
-BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer(int a1)
-{
-return a1[20] != 0;
-}
-
-// 0x4B4D90
-int JumpjetLocomotionClass::GetField_0x78(int a1, const void * a2, int * a3)
-{
-return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
-
-// 0x4B4DA0
-LONG JumpjetLocomotionClass::GetField_0x7C(int a1)
-{
-return DriveLocomotionClass::AddRef(a1 - 4);
-}
-
-// 0x4B4DB0
-LONG JumpjetLocomotionClass::GetField_0x80(int a1)
-{
-return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
-}
-
-// 0x4B4DC0
-int JumpjetLocomotionClass::loc_4B4DC0(int a1, const void * a2, int * a3)
-{
-return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
-}
-
-// 0x4B4DD0
-LONG JumpjetLocomotionClass::loc_4B4DD0(int a1)
-{
-return DriveLocomotionClass::AddRef(a1 - 24);
-}
-
-// 0x4B4DE0
-LONG JumpjetLocomotionClass::loc_4B4DE0(int a1)
-{
-return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
-}
-
-// 0x4B5B40
-unsigned int * JumpjetLocomotionClass::GetSpeedCoordinate(unsigned int * a1, unsigned int * a2)
-{
-unsigned int coordY = a1[8];
-unsigned int coordZ = a1[9];
-*a2 = a1[7];
-a2[1] = coordY;
-a2[2] = coordZ;
-return a2;
 }
 
 // 0x4B6040
@@ -1580,54 +1480,6 @@ int __stdcall JumpjetLocomotionClass::sub_4B6610(int a1)
 {
   return (*(int (__stdcall **)(int))(*(_DWORD *)a1 + 16))(a1); /*0x4b661a*/
 }
-}
-
-// 0x4B6650
-void JumpjetLocomotionClass::Stub8(int a1)
-{
-  ;
-}
-
-// 0x4B66C0
-BOOL JumpjetLocomotionClass::ShortFunc_4B66C0(int a1)
-{
-return a1[5] != 0;
-}
-
-// 0x4B6740
-int JumpjetLocomotionClass::SmallStub_4B6740(int a1, const void * a2, int * a3)
-{
-return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
-
-// 0x4B6750
-LONG JumpjetLocomotionClass::SmallStub_4B6750(int a1)
-{
-return DropPodLocomotionClass::AddRef(a1 - 4);
-}
-
-// 0x4B6760
-LONG JumpjetLocomotionClass::SmallStub_4B6760(int a1)
-{
-return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
-}
-
-// 0x4B6770
-int JumpjetLocomotionClass::SmallStub_4B6770(int a1, const void * a2, int * a3)
-{
-return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
-}
-
-// 0x4B6780
-LONG JumpjetLocomotionClass::SmallStub_4B6780(int a1)
-{
-return DropPodLocomotionClass::AddRef(a1 - 24);
-}
-
-// 0x4B6790
-LONG JumpjetLocomotionClass::SmallStub_4B6790(int a1)
-{
-return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
 }
 
 // 0x4C94B0
@@ -2383,14 +2235,6 @@ _DWORD *__stdcall JumpjetLocomotionClass::sub_4CF830(int a1, _DWORD *a2)
 }
 }
 
-// 0x4CF940
-unsigned int * JumpjetLocomotionClass::ShortFunc_4CF940(int a1, unsigned int * a2)
-{
-*a2 = 0;
-a2[1] = 0;
-return a2;
-}
-
 // 0x4CFB00
 float * JumpjetLocomotionClass::ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3)
 {
@@ -2428,12 +2272,6 @@ float *__stdcall JumpjetLocomotionClass::sub_4CFB00(int a1, float *a2, _DWORD *a
 }
 }
 
-// 0x4CFC10
-char JumpjetLocomotionClass::SynchronizeFacingDirection(int a1, int a2)
-{
-return FacingClass::Set_SyncLog((char *)(a1[2] + 928), &a2);
-}
-
 // 0x4CFCF0
 int JumpjetLocomotionClass::DispatchVirtualCall_0(int a1)
 {
@@ -2461,12 +2299,6 @@ int __stdcall JumpjetLocomotionClass::sub_4CFD20(_BYTE *a1)
   }
   return StreamClass::ClearDirty(a1); /*0x4cfd80*/
 }
-}
-
-// 0x4CFD90
-char JumpjetLocomotionClass::ShortFunc_4CFD90(int a1)
-{
-return StreamClass::GetDirty(a1);
 }
 
 // 0x4CFDA0
@@ -2504,32 +2336,6 @@ int __stdcall JumpjetLocomotionClass::sub_4CFE50(_BYTE *a1)
     return 0; /*0x4cfe6a*/
   return 3 - ((*(unsigned __int8 (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 16))(a1) != 0); /*0x4cfe60*/
 }
-}
-
-// 0x4D0400
-BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
-{
-if (a2)
-    WinAPI::Wrapper(-2147467261);
-return *(unsigned int *)this == 0;
-}
-
-// 0x4D0510
-int JumpjetLocomotionClass::GetInterface(int a1, const void * a2, unsigned int * a3)
-{
-return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
-
-// 0x4D0520
-LONG JumpjetLocomotionClass::GetInterface2(int a1)
-{
-return COM::AddRef(a1 - 4);
-}
-
-// 0x4D0530
-LONG JumpjetLocomotionClass::Stub2(int a1)
-{
-return COM::ReleaseRef((volatile LONG *)(a1 - 4));
 }
 
 // 0x5142A0
@@ -2774,12 +2580,6 @@ _DWORD *__stdcall JumpjetLocomotionClass::sub_516320(_DWORD *a1)
   }
   return result; /*0x51636a*/
 }
-}
-
-// 0x516370
-char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
-{
-return FacingClass::Update((char *)(a1[2] + 904), &a2);
 }
 
 // 0x516BF0
@@ -3060,12 +2860,6 @@ int __stdcall JumpjetLocomotionClass::sub_54AD30(int a1, int a2)
   FacingClass::Set_SyncLog((char *)(v3 + 80), &a1); /*0x54ae38*/
   return StreamClass::ResetPosition(v3, v2); /*0x54ae44*/
 }
-}
-
-// 0x54AE50
-char JumpjetLocomotionClass::SmallStub_54AE50(int a1)
-{
-return *(unsigned char *)(a1 + 72);
 }
 
 // 0x54AE60
@@ -4144,18 +3938,6 @@ LONG __stdcall JumpjetLocomotionClass::sub_54E040(int a1)
 {
   return JumpjetLocomotionClass::Release((volatile LONG *)(a1 - 24));
 }
-}
-
-// 0x55AC50
-void JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
-{
-  ;
-}
-
-// 0x55AC60
-char JumpjetLocomotionClass::StubReturnTrue_3(int a1)
-{
-return 1;
 }
 
 // 0x55AC70
@@ -7363,10 +7145,57 @@ DynamicVector *__thiscall JumpjetLocomotionClass_26_::Constructor_VectorClass_Ka
 }
 } // namespace gamemd
 
+// 0x4AFC90
+unsigned int * JumpjetLocomotionClass::GetCoordinate(unsigned int * a1, unsigned int * a2)
+{
+unsigned int coordY = a1[13];
+unsigned int coordZ = a1[14];
+*a2 = a1[12];
+a2[1] = coordY;
+a2[2] = coordZ;
+return a2;
+}
+
+// 0x4B0EF0
+char JumpjetLocomotionClass::UpdateFacingDirection(int a1, int a2)
+{
+return FacingClass::Update((char *)(a1[2] + 904), &a2);
+}
+
+// 0x4B4820
+int JumpjetLocomotionClass::StubReturnTwo(int a1)
+{
+return 2;
+}
+
 // 0x4B4870
 int JumpjetLocomotionClass::StubReturnZero_1(int a1)
 {
 return 0;
+}
+
+// 0x4B4880
+int JumpjetLocomotionClass::DispatchCheckState(TunnelLocomotionClass * aP0)
+{
+return JumpjetLocomotionClass::CheckState(aP0);
+}
+
+// 0x4B4C00
+int JumpjetLocomotionClass::GetField_0x54(int a1)
+{
+return a1[21];
+}
+
+// 0x4B4C10
+int JumpjetLocomotionClass::GetField_0x58(int a1)
+{
+return a1[22];
+}
+
+// 0x4B4C20
+int JumpjetLocomotionClass::GetField_0x48(int a1)
+{
+return a1[18];
 }
 
 // 0x4B4C60
@@ -7399,10 +7228,63 @@ void JumpjetLocomotionClass::Stub5(int a1)
   ;
 }
 
+// 0x4B4CD0
+BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer(int a1)
+{
+return a1[20] != 0;
+}
+
+// 0x4B4D90
+int JumpjetLocomotionClass::GetField_0x78(int a1, const void * a2, int * a3)
+{
+return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
+}
+
+// 0x4B4DA0
+LONG JumpjetLocomotionClass::GetField_0x7C(int a1)
+{
+return DriveLocomotionClass::AddRef(a1 - 4);
+}
+
+// 0x4B4DB0
+LONG JumpjetLocomotionClass::GetField_0x80(int a1)
+{
+return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
+}
+
+// 0x4B4DC0
+int JumpjetLocomotionClass::loc_4B4DC0(int a1, const void * a2, int * a3)
+{
+return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
+}
+
+// 0x4B4DD0
+LONG JumpjetLocomotionClass::loc_4B4DD0(int a1)
+{
+return DriveLocomotionClass::AddRef(a1 - 24);
+}
+
+// 0x4B4DE0
+LONG JumpjetLocomotionClass::loc_4B4DE0(int a1)
+{
+return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
+}
+
 // 0x4B5B30
 char JumpjetLocomotionClass::StubReturnTrue_1(int a1)
 {
 return 1;
+}
+
+// 0x4B5B40
+unsigned int * JumpjetLocomotionClass::GetSpeedCoordinate(unsigned int * a1, unsigned int * a2)
+{
+unsigned int coordY = a1[8];
+unsigned int coordZ = a1[9];
+*a2 = a1[7];
+a2[1] = coordY;
+a2[2] = coordZ;
+return a2;
 }
 
 // 0x4B63A0
@@ -7435,6 +7317,12 @@ char JumpjetLocomotionClass::MissionStub9(int a1)
 return 0;
 }
 
+// 0x4B6650
+void JumpjetLocomotionClass::Stub8(int a1)
+{
+  ;
+}
+
 // 0x4B6660
 void JumpjetLocomotionClass::Stub9(int a1)
 {
@@ -7459,16 +7347,116 @@ int JumpjetLocomotionClass::CheckState5(int a1)
 return -1;
 }
 
+// 0x4B66C0
+BOOL JumpjetLocomotionClass::ShortFunc_4B66C0(int a1)
+{
+return a1[5] != 0;
+}
+
+// 0x4B6740
+int JumpjetLocomotionClass::SmallStub_4B6740(int a1, const void * a2, int * a3)
+{
+return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
+}
+
+// 0x4B6750
+LONG JumpjetLocomotionClass::SmallStub_4B6750(int a1)
+{
+return DropPodLocomotionClass::AddRef(a1 - 4);
+}
+
+// 0x4B6760
+LONG JumpjetLocomotionClass::SmallStub_4B6760(int a1)
+{
+return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
+}
+
+// 0x4B6770
+int JumpjetLocomotionClass::SmallStub_4B6770(int a1, const void * a2, int * a3)
+{
+return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
+}
+
+// 0x4B6780
+LONG JumpjetLocomotionClass::SmallStub_4B6780(int a1)
+{
+return DropPodLocomotionClass::AddRef(a1 - 24);
+}
+
+// 0x4B6790
+LONG JumpjetLocomotionClass::SmallStub_4B6790(int a1)
+{
+return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
+}
+
 // 0x4CCAC0
 bool JumpjetLocomotionClass::ComputeFloatExpression_0(int a1)
 {
   return *(double *)(a1 + 68) != 0.0;
 }
 
+// 0x4CF940
+unsigned int * JumpjetLocomotionClass::ShortFunc_4CF940(int a1, unsigned int * a2)
+{
+*a2 = 0;
+a2[1] = 0;
+return a2;
+}
+
+// 0x4CFC10
+char JumpjetLocomotionClass::SynchronizeFacingDirection(int a1, int a2)
+{
+return FacingClass::Set_SyncLog((char *)(a1[2] + 928), &a2);
+}
+
+// 0x4CFD90
+char JumpjetLocomotionClass::ShortFunc_4CFD90(int a1)
+{
+return StreamClass::GetDirty(a1);
+}
+
+// 0x4D0400
+BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
+{
+if (a2)
+    WinAPI::Wrapper(-2147467261);
+return *(unsigned int *)this == 0;
+}
+
+// 0x4D0510
+int JumpjetLocomotionClass::GetInterface(int a1, const void * a2, unsigned int * a3)
+{
+return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
+}
+
+// 0x4D0520
+LONG JumpjetLocomotionClass::GetInterface2(int a1)
+{
+return COM::AddRef(a1 - 4);
+}
+
+// 0x4D0530
+LONG JumpjetLocomotionClass::Stub2(int a1)
+{
+return COM::ReleaseRef((volatile LONG *)(a1 - 4));
+}
+
+// 0x516370
+char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
+{
+return FacingClass::Update((char *)(a1[2] + 904), &a2);
+}
+
 // 0x517100
 int JumpjetLocomotionClass::SmallStub_517100(int a1)
 {
 return 2;
+}
+
+// 0x54AE50
+char JumpjetLocomotionClass::SmallStub_54AE50(int a1)
+{
+return *(unsigned char *)(a1 + 72);
 }
 
 // 0x54B710
@@ -7566,6 +7554,18 @@ void JumpjetLocomotionClass::Stub13(int a1)
 void JumpjetLocomotionClass::Stub14(int a1, int a2)
 {
   ;
+}
+
+// 0x55AC50
+void JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
+{
+  ;
+}
+
+// 0x55AC60
+char JumpjetLocomotionClass::StubReturnTrue_3(int a1)
+{
+return 1;
 }
 
 // 0x55ACD0

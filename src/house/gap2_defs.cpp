@@ -12816,7 +12816,7 @@ LABEL_31:
           Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0);
         }
       }
-      BuildingClass::AbandonProduction((int)v10);
+      FactoryClass::AbandonProduction((int)v10);
       if ( v10[20] )
       {
         FactoryClass::StartProduction_2((int)v10);
@@ -16219,7 +16219,7 @@ LABEL_27:
       if ( *(_DWORD *)(v42 + 108) == this )
       {
         FactoryClass::StartProduction(v42, 1);
-        BuildingClass::AbandonProduction(*(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v40));
+        FactoryClass::AbandonProduction(*(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v40));
         v41 = MEMORY[0x87F7E8][528787];
         v43 = *(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v40);
         if ( v43 )
@@ -31407,7 +31407,7 @@ LABEL_10:
           }
           else
           {
-            BuildingClass::AbandonProduction(v6);
+            FactoryClass::AbandonProduction(v6);
             FactoryClass::StartProduction_2(v6);
           }
         }
@@ -33781,7 +33781,7 @@ char __thiscall HouseClass::AIBuildBase(#375 *this)
       if ( *(#375 **)(v6 + 108) == this )
       {
         FactoryClass::StartProduction(v6, 1);
-        BuildingClass::AbandonProduction(*(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v4));
+        FactoryClass::AbandonProduction(*(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v4));
         v5 = MEMORY[0x87F7E8][528787];
         v7 = *(_DWORD *)(MEMORY[0x87F7E8][528787] + 4 * v4);
         if ( v7 )
@@ -40166,7 +40166,7 @@ char __thiscall sub_6ABB60(int this, _DWORD *a2)
   {
     if ( (_DWORD *)*v8 == a2 )
     {
-      BuildingClass::AbandonProduction((int)a2);
+      FactoryClass::AbandonProduction((int)a2);
       *v8 = 0;
       v6 = 1;
       v8[1] = 0;

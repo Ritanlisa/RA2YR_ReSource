@@ -188,14 +188,6 @@ int __thiscall WebBrowser::_vt05(WebBrowser *this)
 }
 } // namespace gamemd
 
-// 0x773BB0
-namespace gamemd {
-int WebBrowser::Stat()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x773BC0
 namespace gamemd {
 int WebBrowser::Clone()
@@ -463,5 +455,13 @@ namespace gamemd {
 int WebBrowser::UnlockRegion()
 {
 return -2147467259;
+}
+} // namespace gamemd
+
+// 0x773BB0
+namespace gamemd {
+int WebBrowser::Stat()
+{
+return 0;
 }
 } // namespace gamemd

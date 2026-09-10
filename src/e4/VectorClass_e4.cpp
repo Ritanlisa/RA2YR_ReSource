@@ -150,165 +150,20 @@
 // 0x40B120
 int VectorClass::Clear(int a2, int a3)
 {
-*(unsigned int *)a2 = *(unsigned int *)&this->Items[a3];
-((unsigned char *)a2)[4] = ((unsigned char *)&this->Items[a3])[4];
-return a2;
-}
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall VectorClass::_vt06(_DWORD *this, int a2, int a3)
+{
+  int v3; // eax
+  int v4; // edx
+  int v5; // ecx
 
-// 0x40B140
-char VectorClass::AddRef(int a2)
-{
-VectorClass* other = (VectorClass *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[2 * i] == otherItems[2 * i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
+  v3 = *(this + 1); /*0x40b120*/
+  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x40b127*/
+  v5 = v3 + 8 * a3; /*0x40b12a*/
+  *(_DWORD *)a2 = v4; /*0x40b131*/
+  *(_BYTE *)(a2 + 4) = *(_BYTE *)(v5 + 4); /*0x40b136*/
+  return a2; /*0x40b139*/
 }
-return 0;
-}
-
-// 0x40B180
-char VectorClass::Release(int a2, char * a3)
-{
-int newCapacity = a2;
-if ( a2 )
-{
-    char* buffer = a3;
-    this->IsInitialized = 0;
-    if ( a3 )
-    {
-        char* zeroPtr = a3;
-        if ( a2 - 1 >= 0 )
-        {
-            int count = a2;
-            do
-            {
-                *(unsigned int *)zeroPtr = 0;
-                zeroPtr[4] = 0;
-                zeroPtr += 8;
-                --count;
-            }
-            while ( count );
-        }
-    }
-    else
-    {
-        char* newMem = (char *)operator new(8 * a2);
-        if ( newMem )
-        {
-            char* zeroPtr2 = newMem;
-            if ( a2 - 1 >= 0 )
-            {
-                int count2 = a2;
-                do
-                {
-                    *(unsigned int *)zeroPtr2 = 0;
-                    zeroPtr2[4] = 0;
-                    zeroPtr2 += 8;
-                    --count2;
-                }
-                while ( count2 );
-            }
-            buffer = newMem;
-        }
-        else
-        {
-            buffer = 0;
-        }
-    }
-    this->IsInitialized = 1;
-    if ( buffer )
-    {
-        if ( this->Items )
-        {
-            int copyCount = this->Capacity;
-            if ( a2 < copyCount )
-                copyCount = a2;
-            int i = 0;
-            if ( copyCount > 0 )
-            {
-                do
-                {
-                    unsigned int* src = (unsigned int *)&this->Items[i];
-                    *(unsigned int *)&buffer[8 * i] = src[0];
-                    *(unsigned int *)&buffer[8 * i + 4] = src[1];
-                    ++i;
-                }
-                while ( i < copyCount );
-                newCapacity = a2;
-            }
-            if ( this->IsAllocated )
-            {
-                operator delete(this->Items);
-                this->Items = 0;
-            }
-        }
-        this->Items = (decltype(this->Items))buffer;
-        this->Capacity = newCapacity;
-        this->IsAllocated = (a3 == 0);
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
-else
-{
-    this->Clear();
-    return 1;
-}
-}
-
-// 0x40B270
-void VectorClass::Cleanup5()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x40B2A0
-int VectorClass::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    i += 2;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-
-// 0x40B2E0
-unsigned int VectorClass::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
-else
-    return 0;
 }
 
 // 0x40B300
@@ -332,12 +187,6 @@ VectorClass *__thiscall VectorClass::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x40b33b*/
   return (VectorClass *)Block; /*0x40b345*/
 }
-}
-
-// 0x40CCC0
-int VectorClass::GetAt(int a2)
-{
-return this->Items[a2];
 }
 
 // 0x4137A0
@@ -378,59 +227,6 @@ int __thiscall VectorClass_RemoveObjectById(int this)
 }
 }
 
-// 0x42F860
-char VectorClass::ResizeEx(int a2, unsigned int * a3)
-{
-unsigned int* newItems = 0;
-if ( a2 )
-{
-    this->IsInitialized = 0;
-    if ( a3 )
-    {
-        newItems = a3;
-    }
-    else
-    {
-        unsigned int* fresh = (unsigned int *)operator new(4 * a2);
-        if ( fresh )
-            newItems = fresh;
-        else
-            newItems = 0;
-    }
-    this->IsInitialized = 1;
-    if ( !newItems )
-        return 0;
-    if ( this->Items )
-    {
-        int copyCount = this->Capacity;
-        if ( a2 < copyCount )
-            copyCount = a2;
-        int i = 0;
-        while ( i < copyCount )
-        {
-            newItems[i] = this->Items[i];
-            ++i;
-        }
-        if ( this->IsAllocated )
-        {
-            operator delete(this->Items);
-            this->Items = 0;
-        }
-    }
-    this->Items = (decltype(this->Items))newItems;
-    this->Capacity = a2;
-    this->IsAllocated = (a3 == 0);
-}
-else
-{
-    this->Clear();
-}
-int capacity = this->Capacity;
-if ( capacity < this->Count )
-    this->Count = capacity;
-return 1;
-}
-
 // 0x42FCB0
 unsigned int * VectorClass::CellConstructor(IUnknown * aP1, IUnknown * aP2)
 {
@@ -465,18 +261,6 @@ _DWORD *__thiscall VectorClass::CellConstructor(_DWORD *this, IUnknown *aP1, IUn
 }
 }
 
-// 0x45A270
-void VectorClass::Cleanup()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
 // 0x45AD80
 unsigned int * VectorClass::ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
@@ -500,15 +284,6 @@ _DWORD *__thiscall VectorClass::ConstructorWithVtable(_DWORD *this, TechnoTypeCl
   }
   return this; /*0x45adad*/
 }
-}
-
-// 0x477750
-int * VectorClass::ScalarDtor(char a2)
-{
-Pipe::Dtor((int *)this);
-if ( (a2 & 1) != 0 )
-    operator delete(this);
-return (int *)this;
 }
 
 // 0x4777B0
@@ -565,12 +340,6 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
 }
 }
 
-// 0x477890
-int VectorClass::GetAt_Copy(int a2)
-{
-return this->Items[a2];
-}
-
 // 0x477BE0
 unsigned int * VectorClass::Construct(int a2, int a3)
 {
@@ -594,95 +363,6 @@ _DWORD *__thiscall VectorClass_Constructor(_DWORD *this, int a2, int a3)
   }
   return this; /*0x477c0d*/
 }
-}
-
-// 0x477C70
-char VectorClass::vt02(int a2, unsigned int * a3)
-{
-unsigned int* newItems;
-if ( a2 )
-{
-    this->IsInitialized = 0;
-    if ( a3 )
-        newItems = a3;
-    else
-        newItems = (unsigned int *)operator new(4 * a2);
-    this->IsInitialized = 1;
-    if ( newItems )
-    {
-        if ( this->Items )
-        {
-            int copyCount = this->Capacity;
-            if ( a2 < copyCount )
-                copyCount = a2;
-            int i = 0;
-            while ( i < copyCount )
-            {
-                newItems[i] = this->Items[i];
-                ++i;
-            }
-            if ( this->IsAllocated )
-            {
-                operator delete(this->Items);
-                this->Items = 0;
-            }
-        }
-        this->Items = (decltype(this->Items))newItems;
-        this->Capacity = a2;
-        this->IsAllocated = (a3 == 0);
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
-else
-{
-    this->Clear();
-    return 1;
-}
-}
-
-// 0x477D20
-void VectorClass::Destroy()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x477D50
-int VectorClass::vt04(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-
-// 0x477D90
-unsigned int VectorClass::vt05(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
 }
 
 // 0x477E10
@@ -767,30 +447,6 @@ int __thiscall VectorClass_GetCount(_DWORD *this)
 }
 }
 
-// 0x4A10A0
-void VectorClass::ClearAndFree2()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x4A1330
-void VectorClass::CleanupTyped()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
 // 0x4A7FE0
 char VectorClass::AppendCopy(DynamicVector * aP1)
 {
@@ -817,27 +473,6 @@ char __thiscall VectorClass::AppendCopy(_DWORD *this, DynamicVector *aP1)
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x4a8028*/
   return 1; /*0x4a8011*/
 }
-}
-
-// 0x4EBFA0
-unsigned int VectorClass::GetIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-
-// 0x4ED950
-void VectorClass::Cleanup4()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
 }
 
 // 0x50EB70
@@ -874,18 +509,6 @@ char __thiscall VectorClass::InsertAt(_DWORD *this, IUnknown *aP1, int a3)
   ++*(this + 4); /*0x50ec08*/
   return 1; /*0x50eba1*/
 }
-}
-
-// 0x50F830
-void VectorClass::ClearAndFree3()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
 }
 
 // 0x510550
@@ -938,39 +561,6 @@ _DWORD *__thiscall VectorClass::BuildingTypeConstructor(_DWORD *this, TechnoType
 }
 }
 
-// 0x512FA0
-unsigned int * VectorClass::CopyConstructor(InfantryTypeClass * aP1)
-{
-VectorClass* source = (VectorClass *)aP1;
-if ( this == source )
-    return (unsigned int *)this;
-this->Clear();
-int sourceCapacity = source->Capacity;
-this->Capacity = sourceCapacity;
-if ( !sourceCapacity )
-{
-    this->Items = 0;
-    this->IsAllocated = 0;
-    return (unsigned int *)this;
-}
-unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
-this->Items = (decltype(this->Items))newItems;
-if ( !newItems )
-    return (unsigned int *)this;
-int capacity = this->Capacity;
-int i = 0;
-this->IsAllocated = 1;
-if ( capacity <= 0 )
-    return (unsigned int *)this;
-do
-{
-    ((unsigned int *)this->Items)[i] = ((unsigned int *)source->Items)[i];
-    ++i;
-}
-while ( i < this->Capacity );
-return (unsigned int *)this;
-}
-
 // 0x5132F0
 char VectorClass::PushBack(VectorClass * aP1)
 {
@@ -997,50 +587,6 @@ char __thiscall VectorClass::PushBack(_DWORD *this, VectorClass *aP1)
   *(_DWORD *)&v7->__pad_0[4 * v6] = *(_DWORD *)aP1->__pad_0; /*0x513338*/
   return 1; /*0x513321*/
 }
-}
-
-// 0x5134D0
-void VectorClass::ClearAndFree4()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x525060
-unsigned int * VectorClass::CopyDefault(VectorClass * aP1)
-{
-if ( this == aP1 )
-    return (unsigned int *)this;
-this->Clear();
-int sourceCapacity = aP1->Capacity;
-this->Capacity = sourceCapacity;
-if ( !sourceCapacity )
-{
-    this->Items = 0;
-    this->IsAllocated = 0;
-    return (unsigned int *)this;
-}
-unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
-this->Items = (decltype(this->Items))newItems;
-if ( !newItems )
-    return (unsigned int *)this;
-int capacity = this->Capacity;
-int i = 0;
-this->IsAllocated = 1;
-if ( capacity <= 0 )
-    return (unsigned int *)this;
-do
-{
-    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
-    ++i;
-}
-while ( i < this->Capacity );
-return (unsigned int *)this;
 }
 
 // 0x55BAE0
@@ -1162,30 +708,6 @@ _DWORD *__thiscall VectorClass_Constructor_Subzone(_DWORD *this, int a2, int a3)
 }
 }
 
-// 0x5D8640
-void VectorClass::ddtor()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x5EED00
-void VectorClass::Cleanup3()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
 // 0x5FFFC0
 void VectorClass::Destructor()
 {
@@ -1297,18 +819,6 @@ char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x630298*/
   return 1; /*0x630281*/
 }
-}
-
-// 0x63E140
-void VectorClass::Cleanup2()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
 }
 
 // 0x63E540
@@ -1565,115 +1075,6 @@ int __thiscall VectorClass::SaveLoad(_DWORD *this, TechnoTypeClass *aP1)
 }
 }
 
-// 0x67AA80
-unsigned int * VectorClass::CopyAssign(VectorClass * aP1)
-{
-if ( this == aP1 )
-    return (unsigned int *)this;
-this->Clear();
-int sourceCapacity = aP1->Capacity;
-this->Capacity = sourceCapacity;
-if ( !sourceCapacity )
-{
-    this->Items = 0;
-    this->IsAllocated = 0;
-    return (unsigned int *)this;
-}
-unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
-this->Items = (decltype(this->Items))newItems;
-if ( !newItems )
-    return (unsigned int *)this;
-int capacity = this->Capacity;
-int i = 0;
-this->IsAllocated = 1;
-if ( capacity <= 0 )
-    return (unsigned int *)this;
-do
-{
-    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
-    ++i;
-}
-while ( i < this->Capacity );
-return (unsigned int *)this;
-}
-
-// 0x67AE00
-unsigned int * VectorClass::CopySmudge(CCINIClass * aP1)
-{
-VectorClass* source = (VectorClass *)aP1;
-if ( this == source )
-    return (unsigned int *)this;
-this->Clear();
-int sourceCapacity = source->Capacity;
-this->Capacity = sourceCapacity;
-if ( !sourceCapacity )
-{
-    this->Items = 0;
-    this->IsAllocated = 0;
-    return (unsigned int *)this;
-}
-unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
-this->Items = (decltype(this->Items))newItems;
-if ( !newItems )
-    return (unsigned int *)this;
-int capacity = this->Capacity;
-int i = 0;
-this->IsAllocated = 1;
-if ( capacity <= 0 )
-    return (unsigned int *)this;
-do
-{
-    ((unsigned int *)this->Items)[i] = ((unsigned int *)source->Items)[i];
-    ++i;
-}
-while ( i < this->Capacity );
-return (unsigned int *)this;
-}
-
-// 0x67AF60
-void VectorClass::ClearAndFree()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// 0x67B180
-unsigned int * VectorClass::CopyBuilding(VectorClass * aP1)
-{
-if ( this == aP1 )
-    return (unsigned int *)this;
-this->Clear();
-int sourceCapacity = aP1->Capacity;
-this->Capacity = sourceCapacity;
-if ( !sourceCapacity )
-{
-    this->Items = 0;
-    this->IsAllocated = 0;
-    return (unsigned int *)this;
-}
-unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
-this->Items = (decltype(this->Items))newItems;
-if ( !newItems )
-    return (unsigned int *)this;
-int capacity = this->Capacity;
-int i = 0;
-this->IsAllocated = 1;
-if ( capacity <= 0 )
-    return (unsigned int *)this;
-do
-{
-    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
-    ++i;
-}
-while ( i < this->Capacity );
-return (unsigned int *)this;
-}
-
 // 0x691160
 char VectorClass::PushBack2(unsigned int * a2)
 {
@@ -1907,63 +1308,6 @@ char __thiscall VectorClass_Shrink(int *this)
 }
 }
 
-// 0x50E700
-namespace gamemd {
-void VectorClass__N::Destroy()
-{
-void* items = this->Items;
-this->Count = 0;
-if ( items && this->IsAllocated )
-{
-    operator delete(items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x50E730
-namespace gamemd {
-int VectorClass__N::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return a2 - this->Items;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x50E750
-namespace gamemd {
-char VectorClass__N::Clear(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
-// 0x50F9A0
-namespace gamemd {
-char VectorClass__N::AddRef(int a2)
-{
-VectorClass__N* other = (VectorClass__N *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    while ( this->Items[i] == other->Items[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
-}
-} // namespace gamemd
-
 // 0x50F9E0
 namespace gamemd {
 char VectorClass__N::Remove(signed int Size, char * a3)
@@ -2014,52 +1358,6 @@ char __thiscall VectorClass__N::Remove(void *this, signed int Size, char *a3)
     return 1; /*0x50fa81*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x50FA90
-namespace gamemd {
-void VectorClass__N::ddtor()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x50FAC0
-namespace gamemd {
-int VectorClass__N::GetSize(unsigned char * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-unsigned char* items = (unsigned char *)this->Items;
-while ( items[result] != *a2 )
-{
-    ++result;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x50FB00
-namespace gamemd {
-int VectorClass__N::Get(int a2)
-{
-if ( this->IsInitialized )
-    return a2 - this->Items;
-else
-    return 0;
 }
 } // namespace gamemd
 
@@ -2190,43 +1488,6 @@ DynamicVector *__thiscall VectorClass__N::Constructor_VectorClass_bool_(_DWORD *
 }
 } // namespace gamemd
 
-// 0x50E760
-namespace gamemd {
-void VectorClass__N_18::Destroy()
-{
-void* items = this->Items;
-this->Count = 0;
-if ( items && this->IsAllocated )
-{
-    operator delete((char *)items - 4);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x50E7A0
-namespace gamemd {
-unsigned int VectorClass__N_18::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x50E7C0
-namespace gamemd {
-unsigned int * VectorClass__N_18::Clear(unsigned int * a2, int a3)
-{
-*a2 = *(unsigned int *)&this->Items[a3];
-a2[1] = ((unsigned int *)&this->Items[a3])[1];
-return a2;
-}
-} // namespace gamemd
-
 // 0x50E8C0
 namespace gamemd {
 DynamicVector * VectorClass__N_18::Constructor(unsigned int * Block, char a2)
@@ -2249,30 +1510,6 @@ DynamicVector *__thiscall VectorClass__N_18_::Constructor(_DWORD *Block, char a2
     __3_YAXPAX_Z(Block); /*0x50e8fb*/
   return (DynamicVector *)Block; /*0x50e905*/
 }
-}
-} // namespace gamemd
-
-// 0x50FC00
-namespace gamemd {
-char VectorClass__N_18::AddRef(int a2)
-{
-VectorClass__N_18* other = (VectorClass__N_18 *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[2 * i] == otherItems[2 * i] && myItems[2 * i + 1] == otherItems[2 * i + 1] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -2386,53 +1623,6 @@ char __thiscall VectorClass__N_18_::Remove(void *this, int a2, int *a3)
     return 1; /*0x50fd5b*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x50FD70
-namespace gamemd {
-void VectorClass__N_18::ddtor()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete((char *)this->Items - 4);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x50FDB0
-namespace gamemd {
-int VectorClass__N_18::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 || i[1] != a2[1] )
-{
-    ++result;
-    i += 2;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x50FE00
-namespace gamemd {
-unsigned int VectorClass__N_18::Get(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
-else
-    return 0;
 }
 } // namespace gamemd
 
@@ -2653,38 +1843,6 @@ VectorClass *__thiscall VectorClass_BombClass::QueryInterface(_DWORD *Block, cha
 }
 } // namespace gamemd
 
-// 0x4E8340
-namespace gamemd {
-int VectorClass_Building::Count(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
-// 0x4E9460
-namespace gamemd {
-char VectorClass_Building::Get(int a2)
-{
-VectorClass_Building* other = (VectorClass_Building *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
-}
-} // namespace gamemd
-
 // 0x4E94A0
 namespace gamemd {
 char VectorClass_Building::Release(int a2, unsigned int * a3)
@@ -2738,53 +1896,6 @@ char __thiscall VectorClass_Building::_vt02(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x4E9550
-namespace gamemd {
-void VectorClass_Building::Set()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x4E9580
-namespace gamemd {
-int VectorClass_Building::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x4E95C0
-namespace gamemd {
-unsigned int VectorClass_Building::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
 // 0x4EF580
 namespace gamemd {
 VectorClass * VectorClass_Building::QueryInterface(unsigned int * Block, char a2)
@@ -2810,14 +1921,6 @@ VectorClass *__thiscall VectorClass_Building::QueryInterface(_DWORD *Block, char
 }
 } // namespace gamemd
 
-// 0x50E4F0
-namespace gamemd {
-int VectorClass_BuildingType::Count(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
 // 0x50E6A0
 namespace gamemd {
 void VectorClass_BuildingType::Destroy()
@@ -2837,25 +1940,6 @@ void __thiscall VectorClass_BuildingType::sub_50E6A0(int this)
   this->IsAllocated = 0; /*0x50e6c1*/
   this->Capacity = 0; /*0x50e6c4*/
 }
-}
-} // namespace gamemd
-
-// 0x50E6D0
-namespace gamemd {
-unsigned int VectorClass_BuildingType::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x50E6F0
-namespace gamemd {
-int VectorClass_BuildingType::GetElement(int a2)
-{
-return this->Items[a2];
 }
 } // namespace gamemd
 
@@ -2881,30 +1965,6 @@ TypeList *__thiscall VectorClass_BuildingType::Constructor(_DWORD *Block, char a
     __3_YAXPAX_Z(Block); /*0x50e81b*/
   return (TypeList *)Block; /*0x50e825*/
 }
-}
-} // namespace gamemd
-
-// 0x50E910
-namespace gamemd {
-char VectorClass_BuildingType::AddRef(int a2)
-{
-VectorClass_BuildingType* other = (VectorClass_BuildingType *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -2961,63 +2021,6 @@ char __thiscall VectorClass_BuildingType::Set(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x50EA30
-namespace gamemd {
-int VectorClass_BuildingType::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x50EA70
-namespace gamemd {
-unsigned int VectorClass_BuildingType::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x50F740
-namespace gamemd {
-char VectorClass_BuildingType::CompareVectors(int a2)
-{
-VectorClass_BuildingType* other = (VectorClass_BuildingType *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
-}
-} // namespace gamemd
-
 // 0x50F780
 namespace gamemd {
 char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
@@ -3068,39 +2071,6 @@ char __thiscall VectorClass_BuildingType::sub_50F780(void *this, int a2, _DWORD 
     return 1; /*0x50f828*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x50F860
-namespace gamemd {
-int VectorClass_BuildingType::FindItemIndex(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x50F8A0
-namespace gamemd {
-unsigned int VectorClass_BuildingType::GetItemIndex_0(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
 }
 } // namespace gamemd
 
@@ -3292,39 +2262,6 @@ char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x42F7F0
-namespace gamemd {
-int VectorClass_Cell::GetSize(unsigned short * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned short* i = (unsigned short *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 || i[1] != a2[1] )
-{
-    ++result;
-    i += 2;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x42F840
-namespace gamemd {
-unsigned int VectorClass_Cell::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
 // 0x42FBA0
 namespace gamemd {
 VectorClass * VectorClass_Cell::QueryInterface(unsigned int * Block, char a2)
@@ -3347,38 +2284,6 @@ VectorClass *__thiscall VectorClass_Cell::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x42fbdb*/
   return (VectorClass *)Block; /*0x42fbe5*/
 }
-}
-} // namespace gamemd
-
-// 0x40BEA0
-namespace gamemd {
-int VectorClass_cptr_CommandClass::Capacity(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
-// 0x40BEB0
-namespace gamemd {
-char VectorClass_cptr_CommandClass::GetAt(int a2)
-{
-VectorClass_cptr_CommandClass* other = (VectorClass_cptr_CommandClass *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -3435,53 +2340,6 @@ char __thiscall VectorClass_cptr_CommandClass::_vt02(void *this, int a2, _DWORD 
 }
 } // namespace gamemd
 
-// 0x40BFA0
-namespace gamemd {
-void VectorClass_cptr_CommandClass::SetAt()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x40BFD0
-namespace gamemd {
-int VectorClass_cptr_CommandClass::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x40C010
-namespace gamemd {
-unsigned int VectorClass_cptr_CommandClass::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
 // 0x5EEBB0
 namespace gamemd {
 void VectorClass_cptr_MultiMission::Destroy()
@@ -3501,49 +2359,6 @@ void __thiscall VectorClass_cptr_MultiMission::sub_5EEBB0(int this)
   this->IsAllocated = 0; /*0x5eebd1*/
   this->Capacity = 0; /*0x5eebd4*/
 }
-}
-} // namespace gamemd
-
-// 0x5EEBE0
-namespace gamemd {
-unsigned int VectorClass_cptr_MultiMission::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x5EEC00
-namespace gamemd {
-int VectorClass_cptr_MultiMission::Capacity(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
-// 0x5EEC10
-namespace gamemd {
-char VectorClass_cptr_MultiMission::AddRef(int a2)
-{
-VectorClass_cptr_MultiMission* other = (VectorClass_cptr_MultiMission *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -3597,39 +2412,6 @@ char __thiscall VectorClass_cptr_MultiMission::SetAt(void *this, int a2, _DWORD 
     return 1; /*0x5eecf8*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x5EED30
-namespace gamemd {
-int VectorClass_cptr_MultiMission::GetSize(unsigned int * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x5EED70
-namespace gamemd {
-unsigned int VectorClass_cptr_MultiMission::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
 }
 } // namespace gamemd
 
@@ -4007,43 +2789,6 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 }
 } // namespace gamemd
 
-// 0x4E0950
-namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::ddtor()
-{
-int items = this->Items;
-if ( items && this->IsAllocated )
-{
-    operator delete((char *)items - 4);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x4E0990
-namespace gamemd {
-int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
-{
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( i[0] != a2[0] || i[1] != a2[1] )
-{
-    ++result;
-    i += 2;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
 // 0x4E09E0
 namespace gamemd {
 int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetCapacity()
@@ -4302,14 +3047,6 @@ DynamicVector *__thiscall VectorClass_DistributionObject_ptr_CellClass___Discret
 }
 } // namespace gamemd
 
-// 0x74BF90
-namespace gamemd {
-char VectorClass_E::Clear(int a2)
-{
-return ((char *)this->Items)[a2];
-}
-} // namespace gamemd
-
 // 0x74BFA0
 namespace gamemd {
 VectorClass * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
@@ -4332,28 +3069,6 @@ VectorClass *__thiscall VectorClass_E::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x74bfdb*/
   return (VectorClass *)Block; /*0x74bfe5*/
 }
-}
-} // namespace gamemd
-
-// 0x74BFF0
-namespace gamemd {
-char VectorClass_E::AddRef(int a2)
-{
-VectorClass_E* other = (VectorClass_E *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    while ( ((char *)this->Items)[i] == ((char *)other->Items)[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -4428,38 +3143,6 @@ void __thiscall VectorClass_E::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x74C110
-namespace gamemd {
-int VectorClass_E::GetSize(unsigned char * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-char* items = (char *)this->Items;
-while ( items[result] != *a2 )
-{
-    ++result;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x74C150
-namespace gamemd {
-int VectorClass_E::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (int)((char *)a2 - (char *)this->Items);
-else
-    return 0;
-}
-} // namespace gamemd
-
 // 0x45AAB0
 namespace gamemd {
 DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
@@ -4504,49 +3187,6 @@ void __thiscall VectorClass_K::sub_6BED50(int this)
   this->IsAllocated = 0; /*0x6bed71*/
   this->Capacity = 0; /*0x6bed74*/
 }
-}
-} // namespace gamemd
-
-// 0x6BED80
-namespace gamemd {
-unsigned int VectorClass_K::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x6BEDA0
-namespace gamemd {
-int VectorClass_K::Clear(int a2)
-{
-return this->Items[a2];
-}
-} // namespace gamemd
-
-// 0x6C61D0
-namespace gamemd {
-char VectorClass_K::AddRef(int a2)
-{
-VectorClass_K* other = (VectorClass_K *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    unsigned int* myItems = (unsigned int *)this->Items;
-    unsigned int* otherItems = (unsigned int *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
 }
 } // namespace gamemd
 
@@ -5548,49 +4188,6 @@ void __thiscall VectorClass_N::sub_5AC5F0(int this)
 }
 } // namespace gamemd
 
-// 0x5AC620
-namespace gamemd {
-unsigned int VectorClass_N::GetItemIndex(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
-else
-    return 0;
-}
-} // namespace gamemd
-
-// 0x5AC640
-namespace gamemd {
-double VectorClass_N::Clear(int a2)
-{
-return ((double *)this->Items)[a2];
-}
-} // namespace gamemd
-
-// 0x5AD0F0
-namespace gamemd {
-char VectorClass_N::AddRef(int a2)
-{
-VectorClass_N* other = (VectorClass_N *)a2;
-int capacity = this->Capacity;
-if ( capacity == other->Capacity )
-{
-    int i = 0;
-    if ( capacity <= 0 )
-        return 1;
-    double* myItems = (double *)this->Items;
-    double* otherItems = (double *)other->Items;
-    while ( myItems[i] == otherItems[i] )
-    {
-        ++i;
-        if ( i >= capacity )
-            return 1;
-    }
-}
-return 0;
-}
-} // namespace gamemd
-
 // 0x5AD130
 namespace gamemd {
 char VectorClass_N::Release(int a2, unsigned int * a3)
@@ -5654,53 +4251,6 @@ char __thiscall VectorClass_N::_vt02(void *this, int a2, _DWORD *a3)
     return 1; /*0x5ad1e0*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x5AD1F0
-namespace gamemd {
-void VectorClass_N::ddtor()
-{
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-} // namespace gamemd
-
-// 0x5AD220
-namespace gamemd {
-int VectorClass_N::GetSize(double * a2)
-{
-if ( !this->IsInitialized )
-    return 0;
-double* i = (double *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( *i != *a2 )
-{
-    ++result;
-    ++i;
-    if ( result >= capacity )
-        return -1;
-}
-return result;
-}
-} // namespace gamemd
-
-// 0x5AD270
-namespace gamemd {
-unsigned int VectorClass_N::GetCapacity(int a2)
-{
-if ( this->IsInitialized )
-    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
-else
-    return 0;
 }
 } // namespace gamemd
 
@@ -43243,5 +41793,1466 @@ bool __thiscall sub_7B4860(const char **this, const char **a2)
     return strcmp(v2, *a2) != 0; /*0x7b489e*/
   return 1; /*0x7b4872*/
 }
+}
+} // namespace gamemd
+
+// 0x40B140
+char VectorClass::AddRef(int a2)
+{
+VectorClass* other = (VectorClass *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[2 * i] == otherItems[2 * i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+
+// 0x40B180
+char VectorClass::Release(int a2, char * a3)
+{
+int newCapacity = a2;
+if ( a2 )
+{
+    char* buffer = a3;
+    this->IsInitialized = 0;
+    if ( a3 )
+    {
+        char* zeroPtr = a3;
+        if ( a2 - 1 >= 0 )
+        {
+            int count = a2;
+            do
+            {
+                *(unsigned int *)zeroPtr = 0;
+                zeroPtr[4] = 0;
+                zeroPtr += 8;
+                --count;
+            }
+            while ( count );
+        }
+    }
+    else
+    {
+        char* newMem = (char *)operator new(8 * a2);
+        if ( newMem )
+        {
+            char* zeroPtr2 = newMem;
+            if ( a2 - 1 >= 0 )
+            {
+                int count2 = a2;
+                do
+                {
+                    *(unsigned int *)zeroPtr2 = 0;
+                    zeroPtr2[4] = 0;
+                    zeroPtr2 += 8;
+                    --count2;
+                }
+                while ( count2 );
+            }
+            buffer = newMem;
+        }
+        else
+        {
+            buffer = 0;
+        }
+    }
+    this->IsInitialized = 1;
+    if ( buffer )
+    {
+        if ( this->Items )
+        {
+            int copyCount = this->Capacity;
+            if ( a2 < copyCount )
+                copyCount = a2;
+            int i = 0;
+            if ( copyCount > 0 )
+            {
+                do
+                {
+                    unsigned int* src = (unsigned int *)&this->Items[i];
+                    *(unsigned int *)&buffer[8 * i] = src[0];
+                    *(unsigned int *)&buffer[8 * i + 4] = src[1];
+                    ++i;
+                }
+                while ( i < copyCount );
+                newCapacity = a2;
+            }
+            if ( this->IsAllocated )
+            {
+                operator delete(this->Items);
+                this->Items = 0;
+            }
+        }
+        this->Items = (decltype(this->Items))buffer;
+        this->Capacity = newCapacity;
+        this->IsAllocated = (a3 == 0);
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+else
+{
+    this->Clear();
+    return 1;
+}
+}
+
+// 0x40B270
+void VectorClass::Cleanup5()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x40B2A0
+int VectorClass::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    i += 2;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+
+// 0x40B2E0
+unsigned int VectorClass::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
+else
+    return 0;
+}
+
+// 0x40BEA0
+namespace gamemd {
+int VectorClass_cptr_CommandClass::Capacity(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x40BEB0
+namespace gamemd {
+char VectorClass_cptr_CommandClass::GetAt(int a2)
+{
+VectorClass_cptr_CommandClass* other = (VectorClass_cptr_CommandClass *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x40BFA0
+namespace gamemd {
+void VectorClass_cptr_CommandClass::SetAt()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x40BFD0
+namespace gamemd {
+int VectorClass_cptr_CommandClass::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x40C010
+namespace gamemd {
+unsigned int VectorClass_cptr_CommandClass::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x40CCC0
+int VectorClass::GetAt(int a2)
+{
+return this->Items[a2];
+}
+
+// 0x42F7F0
+namespace gamemd {
+int VectorClass_Cell::GetSize(unsigned short * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned short* i = (unsigned short *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 || i[1] != a2[1] )
+{
+    ++result;
+    i += 2;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x42F840
+namespace gamemd {
+unsigned int VectorClass_Cell::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x42F860
+char VectorClass::ResizeEx(int a2, unsigned int * a3)
+{
+unsigned int* newItems = 0;
+if ( a2 )
+{
+    this->IsInitialized = 0;
+    if ( a3 )
+    {
+        newItems = a3;
+    }
+    else
+    {
+        unsigned int* fresh = (unsigned int *)operator new(4 * a2);
+        if ( fresh )
+            newItems = fresh;
+        else
+            newItems = 0;
+    }
+    this->IsInitialized = 1;
+    if ( !newItems )
+        return 0;
+    if ( this->Items )
+    {
+        int copyCount = this->Capacity;
+        if ( a2 < copyCount )
+            copyCount = a2;
+        int i = 0;
+        while ( i < copyCount )
+        {
+            newItems[i] = this->Items[i];
+            ++i;
+        }
+        if ( this->IsAllocated )
+        {
+            operator delete(this->Items);
+            this->Items = 0;
+        }
+    }
+    this->Items = (decltype(this->Items))newItems;
+    this->Capacity = a2;
+    this->IsAllocated = (a3 == 0);
+}
+else
+{
+    this->Clear();
+}
+int capacity = this->Capacity;
+if ( capacity < this->Count )
+    this->Count = capacity;
+return 1;
+}
+
+// 0x45A270
+void VectorClass::Cleanup()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x477750
+int * VectorClass::ScalarDtor(char a2)
+{
+Pipe::Dtor((int *)this);
+if ( (a2 & 1) != 0 )
+    operator delete(this);
+return (int *)this;
+}
+
+// 0x477890
+int VectorClass::GetAt_Copy(int a2)
+{
+return this->Items[a2];
+}
+
+// 0x477C70
+char VectorClass::vt02(int a2, unsigned int * a3)
+{
+unsigned int* newItems;
+if ( a2 )
+{
+    this->IsInitialized = 0;
+    if ( a3 )
+        newItems = a3;
+    else
+        newItems = (unsigned int *)operator new(4 * a2);
+    this->IsInitialized = 1;
+    if ( newItems )
+    {
+        if ( this->Items )
+        {
+            int copyCount = this->Capacity;
+            if ( a2 < copyCount )
+                copyCount = a2;
+            int i = 0;
+            while ( i < copyCount )
+            {
+                newItems[i] = this->Items[i];
+                ++i;
+            }
+            if ( this->IsAllocated )
+            {
+                operator delete(this->Items);
+                this->Items = 0;
+            }
+        }
+        this->Items = (decltype(this->Items))newItems;
+        this->Capacity = a2;
+        this->IsAllocated = (a3 == 0);
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+else
+{
+    this->Clear();
+    return 1;
+}
+}
+
+// 0x477D20
+void VectorClass::Destroy()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x477D50
+int VectorClass::vt04(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+
+// 0x477D90
+unsigned int VectorClass::vt05(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+
+// 0x4A10A0
+void VectorClass::ClearAndFree2()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x4A1330
+void VectorClass::CleanupTyped()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x4E0950
+namespace gamemd {
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::ddtor()
+{
+int items = this->Items;
+if ( items && this->IsAllocated )
+{
+    operator delete((char *)items - 4);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x4E0990
+namespace gamemd {
+int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( i[0] != a2[0] || i[1] != a2[1] )
+{
+    ++result;
+    i += 2;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x4E8340
+namespace gamemd {
+int VectorClass_Building::Count(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x4E9460
+namespace gamemd {
+char VectorClass_Building::Get(int a2)
+{
+VectorClass_Building* other = (VectorClass_Building *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x4E9550
+namespace gamemd {
+void VectorClass_Building::Set()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x4E9580
+namespace gamemd {
+int VectorClass_Building::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x4E95C0
+namespace gamemd {
+unsigned int VectorClass_Building::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x4EBFA0
+unsigned int VectorClass::GetIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+
+// 0x4ED950
+void VectorClass::Cleanup4()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x50E4F0
+namespace gamemd {
+int VectorClass_BuildingType::Count(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x50E6D0
+namespace gamemd {
+unsigned int VectorClass_BuildingType::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50E6F0
+namespace gamemd {
+int VectorClass_BuildingType::GetElement(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x50E700
+namespace gamemd {
+void VectorClass__N::Destroy()
+{
+void* items = this->Items;
+this->Count = 0;
+if ( items && this->IsAllocated )
+{
+    operator delete(items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x50E730
+namespace gamemd {
+int VectorClass__N::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return a2 - this->Items;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50E750
+namespace gamemd {
+char VectorClass__N::Clear(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x50E760
+namespace gamemd {
+void VectorClass__N_18::Destroy()
+{
+void* items = this->Items;
+this->Count = 0;
+if ( items && this->IsAllocated )
+{
+    operator delete((char *)items - 4);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x50E7A0
+namespace gamemd {
+unsigned int VectorClass__N_18::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50E7C0
+namespace gamemd {
+unsigned int * VectorClass__N_18::Clear(unsigned int * a2, int a3)
+{
+*a2 = *(unsigned int *)&this->Items[a3];
+a2[1] = ((unsigned int *)&this->Items[a3])[1];
+return a2;
+}
+} // namespace gamemd
+
+// 0x50E910
+namespace gamemd {
+char VectorClass_BuildingType::AddRef(int a2)
+{
+VectorClass_BuildingType* other = (VectorClass_BuildingType *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x50EA30
+namespace gamemd {
+int VectorClass_BuildingType::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x50EA70
+namespace gamemd {
+unsigned int VectorClass_BuildingType::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50F740
+namespace gamemd {
+char VectorClass_BuildingType::CompareVectors(int a2)
+{
+VectorClass_BuildingType* other = (VectorClass_BuildingType *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x50F830
+void VectorClass::ClearAndFree3()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x50F860
+namespace gamemd {
+int VectorClass_BuildingType::FindItemIndex(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x50F8A0
+namespace gamemd {
+unsigned int VectorClass_BuildingType::GetItemIndex_0(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50F9A0
+namespace gamemd {
+char VectorClass__N::AddRef(int a2)
+{
+VectorClass__N* other = (VectorClass__N *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    while ( this->Items[i] == other->Items[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x50FA90
+namespace gamemd {
+void VectorClass__N::ddtor()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x50FAC0
+namespace gamemd {
+int VectorClass__N::GetSize(unsigned char * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+unsigned char* items = (unsigned char *)this->Items;
+while ( items[result] != *a2 )
+{
+    ++result;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x50FB00
+namespace gamemd {
+int VectorClass__N::Get(int a2)
+{
+if ( this->IsInitialized )
+    return a2 - this->Items;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x50FC00
+namespace gamemd {
+char VectorClass__N_18::AddRef(int a2)
+{
+VectorClass__N_18* other = (VectorClass__N_18 *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[2 * i] == otherItems[2 * i] && myItems[2 * i + 1] == otherItems[2 * i + 1] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x50FD70
+namespace gamemd {
+void VectorClass__N_18::ddtor()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete((char *)this->Items - 4);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x50FDB0
+namespace gamemd {
+int VectorClass__N_18::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 || i[1] != a2[1] )
+{
+    ++result;
+    i += 2;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x50FE00
+namespace gamemd {
+unsigned int VectorClass__N_18::Get(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x512FA0
+unsigned int * VectorClass::CopyConstructor(InfantryTypeClass * aP1)
+{
+VectorClass* source = (VectorClass *)aP1;
+if ( this == source )
+    return (unsigned int *)this;
+this->Clear();
+int sourceCapacity = source->Capacity;
+this->Capacity = sourceCapacity;
+if ( !sourceCapacity )
+{
+    this->Items = 0;
+    this->IsAllocated = 0;
+    return (unsigned int *)this;
+}
+unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
+this->Items = (decltype(this->Items))newItems;
+if ( !newItems )
+    return (unsigned int *)this;
+int capacity = this->Capacity;
+int i = 0;
+this->IsAllocated = 1;
+if ( capacity <= 0 )
+    return (unsigned int *)this;
+do
+{
+    ((unsigned int *)this->Items)[i] = ((unsigned int *)source->Items)[i];
+    ++i;
+}
+while ( i < this->Capacity );
+return (unsigned int *)this;
+}
+
+// 0x5134D0
+void VectorClass::ClearAndFree4()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x525060
+unsigned int * VectorClass::CopyDefault(VectorClass * aP1)
+{
+if ( this == aP1 )
+    return (unsigned int *)this;
+this->Clear();
+int sourceCapacity = aP1->Capacity;
+this->Capacity = sourceCapacity;
+if ( !sourceCapacity )
+{
+    this->Items = 0;
+    this->IsAllocated = 0;
+    return (unsigned int *)this;
+}
+unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
+this->Items = (decltype(this->Items))newItems;
+if ( !newItems )
+    return (unsigned int *)this;
+int capacity = this->Capacity;
+int i = 0;
+this->IsAllocated = 1;
+if ( capacity <= 0 )
+    return (unsigned int *)this;
+do
+{
+    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
+    ++i;
+}
+while ( i < this->Capacity );
+return (unsigned int *)this;
+}
+
+// 0x5AC620
+namespace gamemd {
+unsigned int VectorClass_N::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x5AC640
+namespace gamemd {
+double VectorClass_N::Clear(int a2)
+{
+return ((double *)this->Items)[a2];
+}
+} // namespace gamemd
+
+// 0x5AD0F0
+namespace gamemd {
+char VectorClass_N::AddRef(int a2)
+{
+VectorClass_N* other = (VectorClass_N *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    double* myItems = (double *)this->Items;
+    double* otherItems = (double *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x5AD1F0
+namespace gamemd {
+void VectorClass_N::ddtor()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+} // namespace gamemd
+
+// 0x5AD220
+namespace gamemd {
+int VectorClass_N::GetSize(double * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+double* i = (double *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x5AD270
+namespace gamemd {
+unsigned int VectorClass_N::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 3;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x5D8640
+void VectorClass::ddtor()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x5EEBE0
+namespace gamemd {
+unsigned int VectorClass_cptr_MultiMission::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x5EEC00
+namespace gamemd {
+int VectorClass_cptr_MultiMission::Capacity(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x5EEC10
+namespace gamemd {
+char VectorClass_cptr_MultiMission::AddRef(int a2)
+{
+VectorClass_cptr_MultiMission* other = (VectorClass_cptr_MultiMission *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x5EED00
+void VectorClass::Cleanup3()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x5EED30
+namespace gamemd {
+int VectorClass_cptr_MultiMission::GetSize(unsigned int * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+unsigned int* i = (unsigned int *)this->Items;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+while ( *i != *a2 )
+{
+    ++result;
+    ++i;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x5EED70
+namespace gamemd {
+unsigned int VectorClass_cptr_MultiMission::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x63E140
+void VectorClass::Cleanup2()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x67AA80
+unsigned int * VectorClass::CopyAssign(VectorClass * aP1)
+{
+if ( this == aP1 )
+    return (unsigned int *)this;
+this->Clear();
+int sourceCapacity = aP1->Capacity;
+this->Capacity = sourceCapacity;
+if ( !sourceCapacity )
+{
+    this->Items = 0;
+    this->IsAllocated = 0;
+    return (unsigned int *)this;
+}
+unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
+this->Items = (decltype(this->Items))newItems;
+if ( !newItems )
+    return (unsigned int *)this;
+int capacity = this->Capacity;
+int i = 0;
+this->IsAllocated = 1;
+if ( capacity <= 0 )
+    return (unsigned int *)this;
+do
+{
+    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
+    ++i;
+}
+while ( i < this->Capacity );
+return (unsigned int *)this;
+}
+
+// 0x67AE00
+unsigned int * VectorClass::CopySmudge(CCINIClass * aP1)
+{
+VectorClass* source = (VectorClass *)aP1;
+if ( this == source )
+    return (unsigned int *)this;
+this->Clear();
+int sourceCapacity = source->Capacity;
+this->Capacity = sourceCapacity;
+if ( !sourceCapacity )
+{
+    this->Items = 0;
+    this->IsAllocated = 0;
+    return (unsigned int *)this;
+}
+unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
+this->Items = (decltype(this->Items))newItems;
+if ( !newItems )
+    return (unsigned int *)this;
+int capacity = this->Capacity;
+int i = 0;
+this->IsAllocated = 1;
+if ( capacity <= 0 )
+    return (unsigned int *)this;
+do
+{
+    ((unsigned int *)this->Items)[i] = ((unsigned int *)source->Items)[i];
+    ++i;
+}
+while ( i < this->Capacity );
+return (unsigned int *)this;
+}
+
+// 0x67AF60
+void VectorClass::ClearAndFree()
+{
+if ( this->Items && this->IsAllocated )
+{
+    operator delete(this->Items);
+    this->Items = 0;
+}
+this->IsAllocated = 0;
+this->Capacity = 0;
+}
+
+// 0x67B180
+unsigned int * VectorClass::CopyBuilding(VectorClass * aP1)
+{
+if ( this == aP1 )
+    return (unsigned int *)this;
+this->Clear();
+int sourceCapacity = aP1->Capacity;
+this->Capacity = sourceCapacity;
+if ( !sourceCapacity )
+{
+    this->Items = 0;
+    this->IsAllocated = 0;
+    return (unsigned int *)this;
+}
+unsigned int* newItems = (unsigned int *)operator new(4 * sourceCapacity);
+this->Items = (decltype(this->Items))newItems;
+if ( !newItems )
+    return (unsigned int *)this;
+int capacity = this->Capacity;
+int i = 0;
+this->IsAllocated = 1;
+if ( capacity <= 0 )
+    return (unsigned int *)this;
+do
+{
+    ((unsigned int *)this->Items)[i] = ((unsigned int *)aP1->Items)[i];
+    ++i;
+}
+while ( i < this->Capacity );
+return (unsigned int *)this;
+}
+
+// 0x6BED80
+namespace gamemd {
+unsigned int VectorClass_K::GetItemIndex(int a2)
+{
+if ( this->IsInitialized )
+    return (unsigned int)((char *)a2 - (char *)this->Items) >> 2;
+else
+    return 0;
+}
+} // namespace gamemd
+
+// 0x6BEDA0
+namespace gamemd {
+int VectorClass_K::Clear(int a2)
+{
+return this->Items[a2];
+}
+} // namespace gamemd
+
+// 0x6C61D0
+namespace gamemd {
+char VectorClass_K::AddRef(int a2)
+{
+VectorClass_K* other = (VectorClass_K *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    unsigned int* myItems = (unsigned int *)this->Items;
+    unsigned int* otherItems = (unsigned int *)other->Items;
+    while ( myItems[i] == otherItems[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x74BF90
+namespace gamemd {
+char VectorClass_E::Clear(int a2)
+{
+return ((char *)this->Items)[a2];
+}
+} // namespace gamemd
+
+// 0x74BFF0
+namespace gamemd {
+char VectorClass_E::AddRef(int a2)
+{
+VectorClass_E* other = (VectorClass_E *)a2;
+int capacity = this->Capacity;
+if ( capacity == other->Capacity )
+{
+    int i = 0;
+    if ( capacity <= 0 )
+        return 1;
+    while ( ((char *)this->Items)[i] == ((char *)other->Items)[i] )
+    {
+        ++i;
+        if ( i >= capacity )
+            return 1;
+    }
+}
+return 0;
+}
+} // namespace gamemd
+
+// 0x74C110
+namespace gamemd {
+int VectorClass_E::GetSize(unsigned char * a2)
+{
+if ( !this->IsInitialized )
+    return 0;
+int capacity = this->Capacity;
+int result = 0;
+if ( capacity <= 0 )
+    return -1;
+char* items = (char *)this->Items;
+while ( items[result] != *a2 )
+{
+    ++result;
+    if ( result >= capacity )
+        return -1;
+}
+return result;
+}
+} // namespace gamemd
+
+// 0x74C150
+namespace gamemd {
+int VectorClass_E::GetCapacity(int a2)
+{
+if ( this->IsInitialized )
+    return (int)((char *)a2 - (char *)this->Items);
+else
+    return 0;
 }
 } // namespace gamemd

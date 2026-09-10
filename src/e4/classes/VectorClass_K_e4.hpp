@@ -5,9 +5,6 @@ namespace gamemd {
 struct VectorClass_K {
     void* vfptr;  // minimal E2 declaration
     void Destroy();  // 0x6BED50
-    unsigned int GetItemIndex(int a2);  // 0x6BED80
-    int Clear(int a2);  // 0x6BEDA0
-    char AddRef(int a2);  // 0x6C61D0
     char Release(int a2, unsigned int * a3);  // 0x6C6210
     void ddtor();  // 0x6C62C0
     int GetSize(unsigned int * a2);  // 0x6C62F0
@@ -16,5 +13,8 @@ struct VectorClass_K {
     int FindItemIndex(unsigned int * a2);  // 0x6C6450
     VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x6C6480
     DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x6C64D0
+    unsigned int GetItemIndex(int a2);  // 0x6BED80
+    int Clear(int a2);  // 0x6BEDA0
+    char AddRef(int a2);  // 0x6C61D0
 };
 } // namespace gamemd

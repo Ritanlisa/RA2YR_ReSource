@@ -7503,7 +7503,7 @@ LABEL_6:
   {
     if ( (*(int (__thiscall **)(_DWORD *))(*Type + 44))(Type) == 6 && *(_BYTE *)(Type[328] + 3278) )
       *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*Type + 60))(Type) + 496) = 0;
-    BuildingClass::AbandonProduction(*(this + 329));
+    FactoryClass::AbandonProduction(*(this + 329));
     v13 = *(this + 329);
     if ( v13 )
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v13 + 32))(v13, 1);
@@ -7557,7 +7557,7 @@ LABEL_19:
 LABEL_28:
         if ( *(_DWORD *)(v14 + 56) && !*(_BYTE *)(v14 + 112) )
           return;
-        BuildingClass::AbandonProduction(v14);
+        FactoryClass::AbandonProduction(v14);
         v17 = (_DWORD *)*(this + 329);
         goto LABEL_31;
       }
