@@ -375,22 +375,6 @@ int __thiscall SpawnManagerClass::_vt13(int this, int a2)
 } // namespace game
 } // namespace ra2
 
-// 0x6B7ED0
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 108652929;
-  a2[1] = 299085213;
-  a2[2] = 268441278;
-  a2[3] = 1822515787;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B7F10
 namespace ra2 {
 namespace game {
@@ -784,6 +768,22 @@ DynamicVector *__thiscall SpawnManagerClass_25_::QueryInterface(_DWORD *Block, c
 }
 }
 } // namespace gamemd
+
+// 0x6B7ED0
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652929;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
+}
+} // namespace game
+} // namespace ra2
 
 // 0x6B8120
 namespace ra2 {

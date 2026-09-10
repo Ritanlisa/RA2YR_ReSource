@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x6D0E50
-namespace gamemd {
-void nullsub_236()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6D0F10
 namespace gamemd {
 void * sub_6D0F10()
@@ -470,14 +462,6 @@ __int64 __fastcall ZCoordToScreenY(IUnknown *aP0)
 }
 } // namespace gamemd
 
-// 0x6D2B50
-namespace gamemd {
-void nullsub_238(int a1, int a2)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6D4E00
 namespace gamemd {
 void sub_6D4E00()
@@ -652,18 +636,9 @@ int *__stdcall sub_6D84D0(int *a1, int *a2)
 }
 } // namespace gamemd
 
-// 0x6D8630
-namespace gamemd {
-void nullsub_41()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6D8640
 namespace gamemd {
 char ClampCoordMap(AbstractClass * aP0)
-// 0x6d8630
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall ClampCoordMap(AbstractClass *aP0)
@@ -762,38 +737,6 @@ int __fastcall sub_6D8C60(int a1, int a2)
   }
   return result; /*0x6d8da1*/
 }
-}
-} // namespace gamemd
-
-// 0x6DA350
-namespace gamemd {
-void nullsub_42()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6DA370
-namespace gamemd {
-void nullsub_239(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6DC400
-namespace gamemd {
-void nullsub_43()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6DC410
-namespace gamemd {
-void nullsub_44()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1036,5 +979,61 @@ void __cdecl sub_6DCFC0()
   MEMORY[0xB0E665] = 0; /*0x6dcfed*/
   MEMORY[0xB0E660] = 0; /*0x6dcff3*/
 }
+}
+} // namespace gamemd
+
+// 0x6D0E50
+namespace gamemd {
+void nullsub_236()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6D2B50
+namespace gamemd {
+void nullsub_238(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6D8630
+namespace gamemd {
+void nullsub_41()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6DA350
+namespace gamemd {
+void nullsub_42()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6DA370
+namespace gamemd {
+void nullsub_239(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6DC400
+namespace gamemd {
+void nullsub_43()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6DC410
+namespace gamemd {
+void nullsub_44()
+{
+  ;
 }
 } // namespace gamemd

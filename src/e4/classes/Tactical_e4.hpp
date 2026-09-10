@@ -18,11 +18,11 @@ struct Tactical {
     int AddCellToDrawList(IUnknown * aP1);  // 0x6DA7D0
     int DrawTacticalConnectorLines();  // 0x6DB210
     char DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5);  // 0x6DBB60
-    int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int InitMap(int a1, int a2);  // 0x6DBD20
     int UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6DBE00
     Tactical * UpdateView(unsigned int * Block, char a2);  // 0x6DC470
     int Init(unsigned int * a2);  // 0x6E4970
+    int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460
 };

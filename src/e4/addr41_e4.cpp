@@ -1402,14 +1402,6 @@ void __cdecl sub_4128F0()
 }
 } // namespace gamemd
 
-// 0x413490
-namespace gamemd {
-void nullsub_3(AbstractClass * aP0)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x413AC0
 namespace gamemd {
 void sub_413AC0()
@@ -1620,14 +1612,6 @@ bool __fastcall sub_413CD0(int a1)
     return *(_BYTE *)(v2 + 1753) == 0; /*0x413d10*/
   return 0; /*0x413cd9*/
 }
-}
-} // namespace gamemd
-
-// 0x414A10
-namespace gamemd {
-void nullsub_71(int a1, int a2)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2014,18 +1998,9 @@ int sub_41CAF0()
 }
 } // namespace gamemd
 
-// 0x41CBD0
-namespace gamemd {
-void nullsub_85()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x41D070
 namespace gamemd {
 void sub_41D070()
-// 0x41cbd0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_41D070()
@@ -2561,10 +2536,34 @@ return 1;
 }
 } // namespace gamemd
 
+// 0x413490
+namespace gamemd {
+void nullsub_3(AbstractClass * aP0)
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x413590
 namespace gamemd {
 int sub_413590()
 {
 return 750;
+}
+} // namespace gamemd
+
+// 0x414A10
+namespace gamemd {
+void nullsub_71(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x41CBD0
+namespace gamemd {
+void nullsub_85()
+{
+  ;
 }
 } // namespace gamemd

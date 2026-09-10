@@ -290,6 +290,14 @@ int __stdcall ParticleClass::CheckCollisionFlags(TechnoTypeClass *aP0, int *a1, 
 }
 } // namespace gamemd
 
+// 0x62D770
+namespace gamemd {
+int ParticleClass::CheckStateFlag()
+{
+return 3;
+}
+} // namespace gamemd
+
 // 0x62D930
 namespace gamemd {
 int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
@@ -304,26 +312,18 @@ int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
-// 0x62D980
-namespace gamemd {
-int ParticleClass::GetTypeIdentifier()
-{
-return 22;
-}
-} // namespace gamemd
-
-// 0x62D770
-namespace gamemd {
-int ParticleClass::CheckStateFlag()
-{
-return 3;
-}
-} // namespace gamemd
-
 // 0x62D970
 namespace gamemd {
 int ParticleClass::GetObjectSize()
 {
 return 312;
+}
+} // namespace gamemd
+
+// 0x62D980
+namespace gamemd {
+int ParticleClass::GetTypeIdentifier()
+{
+return 22;
 }
 } // namespace gamemd

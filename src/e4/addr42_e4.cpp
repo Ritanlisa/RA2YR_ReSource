@@ -48,22 +48,6 @@ void __cdecl sub_4200C0()
 }
 } // namespace gamemd
 
-// 0x420120
-namespace gamemd {
-Iostream_init * Iostream_init::Iostream_init()
-{
-return this;
-}
-} // namespace gamemd
-
-// 0x420130
-namespace gamemd {
-void nullsub_53()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x420140
 namespace gamemd {
 unsigned int * CreateFractalNoise(CCINIClass * aP0)
@@ -173,14 +157,6 @@ _DWORD *__thiscall sub_4202F0(_DWORD *this, int a2)
   while ( v2 <= 0xFFFF ); /*0x420349*/
   return this; /*0x42034b*/
 }
-}
-} // namespace gamemd
-
-// 0x420360
-namespace gamemd {
-void nullsub_88()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -930,18 +906,9 @@ int sub_421E80()
 }
 } // namespace gamemd
 
-// 0x423920
-namespace gamemd {
-void nullsub_89()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x424CE0
 namespace gamemd {
 int ProductionCompletionCallback()
-// 0x423920
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Production completion callback (543B). Handles audio, special building anims, unit creation.
@@ -1632,7 +1599,7 @@ char __thiscall sub_426990(int this)
   _WORD *i; // ecx
 
   if ( *(_DWORD *)(this + 140) == 541478988 /*0x4269f7*/
-    && *(_DWORD *)(this + 156) == 1296649793
+    && this->location == 1296649793
     && *(_WORD *)(this + 144) == 256
     && this->lastLayer <= 0xFFFFu
     && *(_WORD *)(this + 152) <= 0x100u
@@ -2562,18 +2529,9 @@ int __thiscall sub_429480(ApplicationClass *this)
 }
 } // namespace gamemd
 
-// 0x4294A0
-namespace gamemd {
-int sub_4294A0()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x4294B0
 namespace gamemd {
 int sub_4294B0()
-// 0x4294a0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4294B0(ApplicationClass *this)
@@ -3052,14 +3010,6 @@ int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
     unk_89A2DC = 1; /*0x42abd4*/
   return &dword_89A2D8; /*0x42abe3*/
 }
-}
-} // namespace gamemd
-
-// 0x42ABF0
-namespace gamemd {
-void nullsub_4()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -3701,7 +3651,7 @@ void *__thiscall FindPathWithRetry(int this, FootClass *aP1, __int16 *a2, int aP
     --v10; /*0x42c924*/
   }
   while ( v10 ); /*0x42c925*/
-  *(_DWORD *)(this + 60) = aP6; /*0x42c92f*/
+  this->ambientSoundController = aP6; /*0x42c92f*/
   v31 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP1->__pad_0); /*0x42c93d*/
   v12 = (IUnknown *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], a2); /*0x42c95b*/
   if ( aP3 == -1 ) /*0x42c95d*/
@@ -4387,14 +4337,6 @@ int sub_42E620()
 }
 } // namespace gamemd
 
-// 0x42E6C0
-namespace gamemd {
-char sub_42E6C0(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x42E800
 namespace gamemd {
 char sub_42E800(int a2)
@@ -4777,6 +4719,38 @@ void sub_42FFF0()
 }
 } // namespace gamemd
 
+// 0x420120
+namespace gamemd {
+Iostream_init * Iostream_init::Iostream_init()
+{
+return this;
+}
+} // namespace gamemd
+
+// 0x420130
+namespace gamemd {
+void nullsub_53()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x420360
+namespace gamemd {
+void nullsub_88()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x423920
+namespace gamemd {
+void nullsub_89()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x426740
 namespace gamemd {
 int sub_426740()
@@ -4796,6 +4770,30 @@ return 1;
 // 0x4293F0
 namespace gamemd {
 int sub_4293F0()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4294A0
+namespace gamemd {
+int sub_4294A0()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x42ABF0
+namespace gamemd {
+void nullsub_4()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x42E6C0
+namespace gamemd {
+char sub_42E6C0(int a1)
 {
 return 1;
 }

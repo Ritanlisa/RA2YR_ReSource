@@ -238,14 +238,6 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 }
 } // namespace gamemd
 
-// 0x4E8260
-namespace gamemd {
-int HouseClass::vt_placeholder_02()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x4E8270
 namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
@@ -566,11 +558,11 @@ char __thiscall HouseClass::IsCellOccupied(int this, IUnknown *aP1, char a3)
   this->ourFlagCoords = 0; /*0x4fbef5*/
 LABEL_10:
   if ( a3 /*0x4fbf28*/
-    && (*(_WORD *)(this + 21472) != *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]
+    && ((unsigned short)this->killedUnitsOfHouses != *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]
      || *(_WORD *)(this + 21474) != *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1198]) )
   {
     *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)(this + 21472)) + 17) = -1; /*0x4fbf35*/
-    *(_DWORD *)(this + 21472) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]; /*0x4fbf41*/
+    this->killedUnitsOfHouses = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]; /*0x4fbf41*/
   }
   return v4; /*0x4fbf43*/
 }
@@ -827,7 +819,7 @@ bool __thiscall HouseClass::CanAlly(int this, HouseClass *aP1)
       return 0; /*0x50154e*/
     relatedTagsCount = aP1->relatedTagsCount; /*0x501550*/
     if ( relatedTagsCount == this->relatedTagsCount /*0x501573*/
-      || relatedTagsCount != -1 && (*(_DWORD *)(this + 22408) & (1 << relatedTagsCount)) != 0 )
+      || relatedTagsCount != -1 && (this->HouseClass_field_timer_D & (1 << relatedTagsCount)) != 0 )
     {
       return 0; /*0x501576*/
     }
@@ -857,7 +849,7 @@ bool __thiscall HouseClass::CanAlly(int this, HouseClass *aP1)
         {
           if ( v9 == this /*0x501625*/
             || (v10 = *(_DWORD *)(v9 + 48), v10 == this->relatedTagsCount)
-            || v10 != -1 && ((1 << v10) & *(_DWORD *)(this + 22408)) != 0 )
+            || v10 != -1 && ((1 << v10) & this->HouseClass_field_timer_D) != 0 )
           {
             ++v6; /*0x501627*/
           }
@@ -1149,7 +1141,7 @@ LABEL_21:
     while ( v4 < v13 ); /*0x508ca5*/
   }
   *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
-  v6 = *(_DWORD *)(this + 676); /*0x508d50*/
+  v6 = this->powerBlackoutTimer; /*0x508d50*/
   v7 = *(_DWORD *)(this + 684); /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
   {
@@ -1203,7 +1195,7 @@ void * HouseClass::CanTogglePower()
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
     v2 = *(_DWORD *)(this + 696); /*0x508e07*/
-    v3 = *(_DWORD *)(this + 688); /*0x508e10*/
+    v3 = this->radarBlackoutTimer; /*0x508e10*/
     LOBYTE(v10) = 0; /*0x508e1a*/
     if ( v3 != -1 ) /*0x508e1f*/
     {
@@ -1400,7 +1392,7 @@ int __thiscall HouseClass::CreatePowerOutage(int this, int a2)
 
   v2 = MEMORY[0xA8ED84]; /*0x50bc90*/
   *(_BYTE *)(this + 22392) = 1; /*0x50bc9c*/
-  *(_DWORD *)(this + 676) = v2; /*0x50bcaa*/
+  this->powerBlackoutTimer = v2; /*0x50bcaa*/
   *(_DWORD *)(this + 680) = v4; /*0x50bcb4*/
   *(_DWORD *)(this + 684) = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
@@ -1420,7 +1412,7 @@ int __thiscall HouseClass::CreateRadarOutage(int this, int a2)
 
   v2 = MEMORY[0xA8ED84]; /*0x50bcd0*/
   *(_BYTE *)(this + 22393) = 1; /*0x50bcdc*/
-  *(_DWORD *)(this + 688) = v2; /*0x50bcea*/
+  this->radarBlackoutTimer = v2; /*0x50bcea*/
   *(_DWORD *)(this + 692) = v4; /*0x50bcf4*/
   *(_DWORD *)(this + 696) = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
@@ -1698,31 +1690,6 @@ BOOL __thiscall HouseClass::GainedPoweredCenter(_DWORD *this, int a2)
 {
   return *(this + 182) > 0; /*0x50e1bd*/
 }
-}
-} // namespace gamemd
-
-// 0x50E340
-namespace gamemd {
-int HouseClass::COMStub_Ret1_1(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x50E350
-namespace gamemd {
-int HouseClass::COMStub_Ret1_2(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x53A130
-namespace gamemd {
-char HouseClass::IonSensitivesShouldBeOffline()
-// 0x50e350
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -2404,5 +2371,38 @@ namespace gamemd {
 int HouseClass::vt_placeholder_01()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x4E8260
+namespace gamemd {
+int HouseClass::vt_placeholder_02()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x50E340
+namespace gamemd {
+int HouseClass::COMStub_Ret1_1(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x50E350
+namespace gamemd {
+int HouseClass::COMStub_Ret1_2(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x53A130
+namespace gamemd {
+char HouseClass::IonSensitivesShouldBeOffline()
+// 0x50e350
+{
+return 0;
 }
 } // namespace gamemd

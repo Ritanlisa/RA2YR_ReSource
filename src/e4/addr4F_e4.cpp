@@ -250,22 +250,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x4F1700
-namespace gamemd {
-void nullsub_13()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4F1710
-namespace gamemd {
-void nullsub_14()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4F1840
 namespace gamemd {
 LONG sub_4F1840()
@@ -1008,8 +992,8 @@ _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x4f2c0b*/
   *(this + 2) = a2; /*0x4f2c0e*/
-  *((_BYTE *)this + 12) = 1; /*0x4f2c11*/
-  *((_BYTE *)this + 13) = 0; /*0x4f2c15*/
+  this->IsInitialized = 1; /*0x4f2c11*/
+  this->IsAllocated = 0; /*0x4f2c15*/
   *this = &VectorClass<GraphicMenuItem *>::`vftable'; /*0x4f2c18*/
   if ( a2 ) /*0x4f2c1e*/
   {
@@ -1019,7 +1003,7 @@ _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
       return this; /*0x4f2c2e*/
     }
     *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4f2c3d*/
-    *((_BYTE *)this + 13) = 1; /*0x4f2c40*/
+    this->IsAllocated = 1; /*0x4f2c40*/
   }
   return this; /*0x4f2c2d*/
 }
@@ -2251,18 +2235,9 @@ void __cdecl sub_4F5130()
 }
 } // namespace gamemd
 
-// 0x4F6EB0
-namespace gamemd {
-void nullsub_15()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4F7850
 namespace gamemd {
 unsigned int * sub_4F7850()
-// 0x4f6eb0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4F7850(_DWORD *this)
@@ -2523,14 +2498,6 @@ _DWORD *__stdcall sub_4FD120(_DWORD *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x4FF540
-namespace gamemd {
-void nullsub_100(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4FFD50
 namespace gamemd {
 int sub_4FFD50(int a2)
@@ -2565,5 +2532,37 @@ int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
   v4[1] = (v2 << 8) + 128; /*0x4ffdc0*/
   return PathfindingClass::FindPath(this, v4); /*0x4ffdc9*/
 }
+}
+} // namespace gamemd
+
+// 0x4F1700
+namespace gamemd {
+void nullsub_13()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4F1710
+namespace gamemd {
+void nullsub_14()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4F6EB0
+namespace gamemd {
+void nullsub_15()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4FF540
+namespace gamemd {
+void nullsub_100(int a1)
+{
+  ;
 }
 } // namespace gamemd

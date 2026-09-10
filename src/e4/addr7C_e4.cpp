@@ -8830,14 +8830,6 @@ int sprintf(char *const Buffer, ObjectClass *aP1, INIClass *aP2)
 }
 } // namespace gamemd
 
-// 0x7C8F5D
-namespace gamemd {
-void nullsub_268()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7C8F5E
 namespace gamemd {
 int int_0x7C8F5E(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
@@ -15116,14 +15108,6 @@ void __cdecl __noreturn fast_error_exit(DWORD NumberOfBytesWritten)
 }
 } // namespace gamemd
 
-// 0x7CD95F
-namespace gamemd {
-void nullsub_269()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7CD960
 namespace gamemd {
 void _mtinitlocks()
@@ -15210,18 +15194,9 @@ void __cdecl _unlock(int a1)
 }
 } // namespace gamemd
 
-// 0x7CDA82
-namespace gamemd {
-void nullsub_270()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7CDA90
 namespace gamemd {
 int strcmp(IUnknown * aP0, IUnknown * aP1)
-// 0x7cda82
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl strcmp(IUnknown *aP0, IUnknown *aP1)
@@ -16392,14 +16367,6 @@ unsigned int _setdefaultprecision()
 }
 } // namespace gamemd
 
-// 0x7CEAC1
-namespace gamemd {
-BOOL _ms_p5_test_fdiv()
-{
-  return 4195835.0 - 4195835.0 / 3145727.0 * 3145727.0 > 1.0;
-}
-} // namespace gamemd
-
 // 0x7CEAFF
 namespace gamemd {
 int _ms_p5_mp_test_fdiv()
@@ -16509,14 +16476,6 @@ char *__cdecl _cropzeros(char *a1)
   }
   return result; /*0x7cebcf*/
 }
-}
-} // namespace gamemd
-
-// 0x7CEBD0
-namespace gamemd {
-BOOL _positive(double * a1)
-{
-  return *a1 >= 0.0;
 }
 } // namespace gamemd
 
@@ -16772,22 +16731,6 @@ void __cdecl _shift(const char *Src, int a2)
 }
 } // namespace gamemd
 
-// 0x7CF037
-namespace gamemd {
-void zerotoxdone()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x7CF082
-namespace gamemd {
-void expbigret()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7CF0AE
 namespace gamemd {
 int __ffexpm1()
@@ -16868,14 +16811,6 @@ int __usercall isintTOS@<eax>(double a1@<st0>)
   else
     return isintTOSret(); /*0x7cf112*/
 }
-}
-} // namespace gamemd
-
-// 0x7CF116
-namespace gamemd {
-void isintTOSret()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -16983,14 +16918,6 @@ long double __usercall _twoToTOS@<st0>(double a1@<st0>)
 }
 } // namespace gamemd
 
-// 0x7CF3A5
-namespace gamemd {
-void _load_CW()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7CF3D5
 namespace gamemd {
 double _fload_withFB(int a1, unsigned int * a2)
@@ -17005,14 +16932,6 @@ double __fastcall _fload_withFB(int a1, _DWORD *a2)
   *(_QWORD *)&result = *(_QWORD *)a2 << 11; /*0x7cf409*/
   return result; /*0x7cf3e6*/
 }
-}
-} // namespace gamemd
-
-// 0x7CF429
-namespace gamemd {
-int expspecial(int a1, int a2)
-{
-return a2;
 }
 } // namespace gamemd
 
@@ -18033,10 +17952,90 @@ int __cdecl __sbh_resize_block(_DWORD *a0, CCINIClass *aP1, AbstractClass *aP2)
 }
 } // namespace gamemd
 
+// 0x7C8F5D
+namespace gamemd {
+void nullsub_268()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CD95F
+namespace gamemd {
+void nullsub_269()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CDA82
+namespace gamemd {
+void nullsub_270()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x7CE046
 namespace gamemd {
 int ReturnNull3()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x7CEAC1
+namespace gamemd {
+BOOL _ms_p5_test_fdiv()
+{
+  return 4195835.0 - 4195835.0 / 3145727.0 * 3145727.0 > 1.0;
+}
+} // namespace gamemd
+
+// 0x7CEBD0
+namespace gamemd {
+BOOL _positive(double * a1)
+{
+  return *a1 >= 0.0;
+}
+} // namespace gamemd
+
+// 0x7CF037
+namespace gamemd {
+void zerotoxdone()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CF082
+namespace gamemd {
+void expbigret()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CF116
+namespace gamemd {
+void isintTOSret()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CF3A5
+namespace gamemd {
+void _load_CW()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7CF429
+namespace gamemd {
+int expspecial(int a1, int a2)
+{
+return a2;
 }
 } // namespace gamemd

@@ -20,9 +20,9 @@ int __thiscall sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
   if ( v6 ) /*0x540deb*/
     v7 = IPXConnClass::constructor( /*0x540e0e*/
            v6,
-           this->SessionClass_field_14,
-           this->SessionClass_field_14,
-           this->SessionClass_field_10,
+           this->unknown_14,
+           this->unknown_14,
+           this->unknown_10,
            *(_WORD *)(this + 32),
            a4,
            a2,
@@ -60,13 +60,13 @@ int __thiscall sub_540E70(int this)
   if ( v3 ) /*0x540e90*/
   {
     v4 = MEMORY[0xA8DA78]; /*0x540e93*/
-    v5 = this->SessionClass_field_14; /*0x540e9a*/
+    v5 = this->unknown_14; /*0x540e9a*/
     v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
                     v5,
-                    this->SessionClass_field_10,
+                    this->unknown_10,
                     *(_WORD *)(this + 32),
                     (_DWORD *)(*(_DWORD *)v4 + 40),
                     -1,
@@ -730,16 +730,16 @@ int __thiscall sub_663B40(void *this)
   int v16; // [esp+10h] [ebp-Ch] BYREF
   int v17; // [esp+14h] [ebp-8h] BYREF
 
-  while ( this->SessionClass_field_10 ) /*0x663b46*/
+  while ( this->unknown_10 ) /*0x663b46*/
   {
     __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663b53*/
-    v2 = this->SessionClass_field_10; /*0x663b58*/
+    v2 = this->unknown_10; /*0x663b58*/
     if ( v2 > 0 ) /*0x663b60*/
     {
       v3 = v2 - 1; /*0x663b62*/
       v4 = 0; /*0x663b63*/
-      for ( this->SessionClass_field_10 = v3; /*0x663b6a*/
-            v4 < this->SessionClass_field_10;
+      for ( this->unknown_10 = v3; /*0x663b6a*/
+            v4 < this->unknown_10;
             *(_DWORD *)(this->MPGameMode + 4 * v4 - 4) = *(_DWORD *)(this->MPGameMode + 4 * v4) )
       {
         ++v4; /*0x663b6f*/
@@ -775,15 +775,15 @@ LABEL_15:
       v7[41] = 1; /*0x663c50*/
       v7[39] = MEMORY[0xA8E2AC] == *(_DWORD *)(v6 + 48); /*0x663c6a*/
       v7[40] = 1 << i; /*0x663c6d*/
-      v11 = this->SessionClass_field_08; /*0x663c70*/
-      if ( this->SessionClass_field_10 < v11 /*0x663c93*/
+      v11 = this->unknown_08; /*0x663c70*/
+      if ( this->unknown_10 < v11 /*0x663c93*/
         || (*((_BYTE *)this + 13) || !v11)
-        && (v12 = this->SessionClass_field_14, v12 > 0)
+        && (v12 = this->unknown_14, v12 > 0)
         && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 8))(this, v11 + v12, 0) )
       {
-        v13 = this->SessionClass_field_10; /*0x663c9a*/
+        v13 = this->unknown_10; /*0x663c9a*/
         v14 = this->MPGameMode; /*0x663c9d*/
-        this->SessionClass_field_10 = v13 + 1; /*0x663ca3*/
+        this->unknown_10 = v13 + 1; /*0x663ca3*/
         *(_DWORD *)(v14 + 4 * v13) = v7; /*0x663ca6*/
       }
     }
@@ -1005,7 +1005,7 @@ char *__thiscall sub_6970A0(char *this)
   int v18; // [esp+10h] [ebp-4h]
 
   this->MPGameMode = 0; /*0x6970b8*/
-  *((_DWORD *)this + 99) = 0; /*0x6970bb*/
+  this->SkirmishPreferences = 0; /*0x6970bb*/
   this->SkirmishPreferences.idxScenario = 0; /*0x6970c1*/
   this->SkirmishPreferences.GameSpeed = 1; /*0x6970c7*/
   this->SkirmishPreferences.Credits = 10000; /*0x6970cd*/
@@ -1026,7 +1026,7 @@ char *__thiscall sub_6970A0(char *this)
     --v3; /*0x69710d*/
   }
   while ( v3 ); /*0x69710e*/
-  *((_DWORD *)this + 130) = 0; /*0x697110*/
+  this->LANPreferences = 0; /*0x697110*/
   this->LANPreferences.idxScenario = 0; /*0x697116*/
   this->LANPreferences.GameSpeed = 1; /*0x69711c*/
   this->LANPreferences.Credits = 10000; /*0x697122*/
@@ -1047,7 +1047,7 @@ char *__thiscall sub_6970A0(char *this)
     --v5; /*0x697167*/
   }
   while ( v5 ); /*0x697168*/
-  *((_DWORD *)this + 161) = 0; /*0x69716a*/
+  this->WOLPreferences = 0; /*0x69716a*/
   this->WOLPreferences.idxScenario = 0; /*0x697170*/
   this->WOLPreferences.GameSpeed = 1; /*0x697176*/
   this->WOLPreferences.Credits = 10000; /*0x69717c*/
@@ -1097,27 +1097,27 @@ char *__thiscall sub_6970A0(char *this)
   CCFileClass::Construct3((int)(this + 9044)); /*0x69726c*/
   Waypoint::InitInvalid(this + 9160); /*0x697277*/
   Waypoint::InitInvalid(this + 9676); /*0x697282*/
-  *((_DWORD *)this + 2564) = 0; /*0x69728c*/
-  *((_DWORD *)this + 2565) = 0; /*0x697292*/
+  this->unknown_vector_280C.Items = 0; /*0x69728c*/
+  this->unknown_vector_280C.Capacity = 0; /*0x697292*/
   *(this + 10264) = 1; /*0x697298*/
   *(this + 10265) = 0; /*0x69729f*/
-  this->UnknownVector_280C = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972a5*/
-  *((_DWORD *)this + 2568) = 10; /*0x6972ab*/
-  *((_DWORD *)this + 2567) = 0; /*0x6972b1*/
-  this->StartSpots = 0; /*0x6972b7*/
-  *((_DWORD *)this + 2571) = 0; /*0x6972bd*/
+  this->unknown_vector_280C = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972a5*/
+  this->unknown_vector_280C.CapacityIncrement = 10; /*0x6972ab*/
+  this->unknown_vector_280C.Count = 0; /*0x6972b1*/
+  this->unknown_vector_2824.Items = 0; /*0x6972b7*/
+  this->unknown_vector_2824.Capacity = 0; /*0x6972bd*/
   *(this + 10288) = 1; /*0x6972c3*/
   *(this + 10289) = 0; /*0x6972ca*/
-  this->UnknownVector_2824 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972d0*/
-  *((_DWORD *)this + 2574) = 10; /*0x6972d6*/
-  *((_DWORD *)this + 2573) = 0; /*0x6972dc*/
-  *((_DWORD *)this + 2576) = 0; /*0x6972e2*/
-  *((_DWORD *)this + 2577) = 0; /*0x6972e8*/
+  this->unknown_vector_2824 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972d0*/
+  this->unknown_vector_2824.CapacityIncrement = 10; /*0x6972d6*/
+  this->unknown_vector_2824.Count = 0; /*0x6972dc*/
+  this->StartSpots.Items = 0; /*0x6972e2*/
+  this->StartSpots.Capacity = 0; /*0x6972e8*/
   *(this + 10312) = 1; /*0x6972ee*/
   *(this + 10313) = 0; /*0x6972f5*/
-  *((_DWORD *)this + 2575) = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972fb*/
-  *((_DWORD *)this + 2580) = 10; /*0x697301*/
-  *((_DWORD *)this + 2579) = 0; /*0x697307*/
+  this->StartSpots = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972fb*/
+  this->StartSpots.CapacityIncrement = 10; /*0x697301*/
+  this->StartSpots.Count = 0; /*0x697307*/
   *((_DWORD *)this + 2624) = 0; /*0x69730d*/
   *((_DWORD *)this + 2625) = 0; /*0x697313*/
   *(this + 10504) = 1; /*0x697319*/
@@ -1163,14 +1163,14 @@ char *__thiscall sub_6970A0(char *this)
   while ( v12 ); /*0x6973ef*/
   *(this + 12488) = 0; /*0x6973f1*/
   *(_DWORD *)this = 0; /*0x6973fc*/
-  this->SessionClass_field_14 = 2; /*0x6973ff*/
+  this->unknown_14 = 2; /*0x6973ff*/
   this->Config.Credits = 0; /*0x697402*/
   *(this + 32) = 1; /*0x697405*/
   *((_DWORD *)this + 9) = 0; /*0x697409*/
   *(this + 40) = 0; /*0x69740c*/
   *(this + 41) = 0; /*0x69740f*/
   *(this + 53) = 0; /*0x697412*/
-  *((_DWORD *)this + 14) = 0; /*0x697415*/
+  this->Handle = 0; /*0x697415*/
   *(this + 42) = 0; /*0x697418*/
   *(this + 43) = 0; /*0x69741b*/
   *(this + 44) = 0; /*0x69741e*/
@@ -1187,11 +1187,11 @@ char *__thiscall sub_6970A0(char *this)
   this->idxSide = 0; /*0x69745b*/
   this->idxSide2 = -1; /*0x697461*/
   *((_DWORD *)this + 87) = 2; /*0x697467*/
-  this->SessionClass_field_160 = -1; /*0x69746d*/
+  this->unknown_160 = -1; /*0x69746d*/
   this->Side = this->idxSide; /*0x697479*/
   this->Side2 = this->idxSide2; /*0x697485*/
   this->Color = *((_DWORD *)this + 87); /*0x697491*/
-  this->Color2 = this->SessionClass_field_160; /*0x69749d*/
+  this->Color2 = this->unknown_160; /*0x69749d*/
   *(this + 7897) = 1; /*0x6974a3*/
   *(this + 7896) = 1; /*0x6974aa*/
   *(this + 8129) = 1; /*0x6974b1*/
@@ -1211,8 +1211,8 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3079) = 0; /*0x69751c*/
   memset(MEMORY[0xB73E44], 0, 0x2000u); /*0x697522*/
   memset(dword_B76338, 0, sizeof(dword_B76338)); /*0x69752e*/
-  *((_DWORD *)this + 192) = 0; /*0x697530*/
-  this->SessionClass_field_304 = 0; /*0x697536*/
+  this->MuteSWLaunches = 0; /*0x697530*/
+  this->unknown_304 = 0; /*0x697536*/
   this->LastNickSlot = -1; /*0x69753c*/
   *(this + 776) = 0; /*0x697542*/
   *(this + 10600) = 0; /*0x697548*/
@@ -1231,7 +1231,7 @@ char *__thiscall sub_6970A0(char *this)
   *(this + 1672) = 0; /*0x69759f*/
   *(this + 1673) = 0; /*0x6975a5*/
   *(this + 1674) = 0; /*0x6975b0*/
-  *((_DWORD *)this + 196) = 8; /*0x6975b6*/
+  this->unknown_310 = 8; /*0x6975b6*/
   *((_DWORD *)this + 198) = 15; /*0x6975c0*/
   *((_DWORD *)this + 204) = 15; /*0x6975c6*/
   *((_DWORD *)this + 197) = 0; /*0x6975cc*/
@@ -1292,8 +1292,8 @@ char *__thiscall sub_6970A0(char *this)
     --v16; /*0x69778d*/
   }
   while ( v16 ); /*0x69778e*/
-  this->SessionClass_field_0C = 0; /*0x697790*/
-  this->SessionClass_field_10 = 0; /*0x697793*/
+  this->unknown_0C = 0; /*0x697790*/
+  this->unknown_10 = 0; /*0x697793*/
   *(this + 1704) = 0; /*0x697796*/
   *((_DWORD *)this + 563) = 0; /*0x69779c*/
   *(this + 2256) = 0; /*0x6977a2*/
@@ -1332,37 +1332,37 @@ int __thiscall SessionClass_CreateConnections(void *this)
     {
       Debug::Log(); /*0x697bc5*/
       if ( _wcsicmp( /*0x697be7*/
-             *(const wchar_t **)(*((_DWORD *)this + 2576) + 4 * v3),
+             *(const wchar_t **)(this->StartSpots.Items + 4 * v3),
              (const wchar_t *)(*((_DWORD *)HouseClass_Array
-                               + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111))
+                               + *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 111))
                              + 90154)) )
       {
         return 0; /*0x697bf1*/
       }
-      if ( !_wcsicmp(*(const wchar_t **)(*((_DWORD *)this + 2576) + 4 * v3), (const wchar_t *)this + 6160) ) /*0x697c04*/
+      if ( !_wcsicmp(*(const wchar_t **)(this->StartSpots.Items + 4 * v3), (const wchar_t *)this + 6160) ) /*0x697c04*/
       {
-        *((_DWORD *)this + 3101) = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111); /*0x697c25*/
+        *((_DWORD *)this + 3101) = *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 111); /*0x697c25*/
         Network::CopyAddress((_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v3) + 40), &v13, (int)v15); /*0x697c38*/
         NetworkID::Assign(&MEMORY[0xA8DBA4], &v13, (int)v15, 0); /*0x697c4d*/
         Network::SetPlayerCoords(&MEMORY[0xA8DBA4]); /*0x697c5c*/
       }
-      v4 = *(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3); /*0x697c67*/
+      v4 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697c67*/
       *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(v4 + 111)) + 516) = *(_DWORD *)(v4 + 123); /*0x697c7e*/
       Network::CopyAddress((_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v3) + 40), &v13, (int)v15); /*0x697c94*/
       v5 = 0; /*0x697c99*/
       for ( i = 0; i < 4; ++i ) /*0x697c9b*/
         v5 = (unsigned __int8)v15[i] | (v5 << 8); /*0x697ca8*/
       Debug::Log(); /*0x697cc7*/
-      *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
-      *(_BYTE *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
+      *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
+      *(_BYTE *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
       if ( v3 > 0 ) /*0x697d06*/
       {
-        v7 = *(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3); /*0x697d0e*/
+        v7 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697d0e*/
         SessionClass::initLAN(*(_DWORD *)(v7 + 111), (wchar_t *)v7, v7 + 40); /*0x697d1f*/
-        *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 115) = -1; /*0x697d2d*/
+        *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 115) = -1; /*0x697d2d*/
       }
     }
-    while ( ++v3 < *((_DWORD *)this + 2579) ); /*0x697bc5*/
+    while ( ++v3 < this->StartSpots.Count ); /*0x697bc5*/
   }
   v8 = MEMORY[0x887338]; /*0x697d43*/
   v9 = MEMORY[0xA8E284]; /*0x697d48*/
@@ -2233,17 +2233,17 @@ void __thiscall sub_69BD60(int this)
         goto LABEL_10; /*0x69be40*/
 LABEL_9:
       Network::SetPort( /*0x69be47*/
-        (_WORD *)(*(_DWORD *)(*(_DWORD *)(this + 10304) + 4 * v1) + 40),
+        (_WORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v1) + 40),
         *(_WORD *)(this + 4 * v6 + 12280));
-      ToWideStringChar(*(char **)(*(_DWORD *)(this + 10304) + 4 * v1)); /*0x69be6a*/
-      Network::FormatAddress((unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)(this + 10304) + 4 * v1) + 40), 0); /*0x69be7f*/
+      ToWideStringChar(*(char **)(this->StartSpots.Items + 4 * v1)); /*0x69be6a*/
+      Network::FormatAddress((unsigned __int16 *)(*(_DWORD *)(this->StartSpots.Items + 4 * v1) + 40), 0); /*0x69be7f*/
       Debug::Log(); /*0x69be8b*/
 LABEL_10:
       ++v1; /*0x69be93*/
     }
-    while ( v1 < *(_DWORD *)(this + 10316) ); /*0x69be9c*/
+    while ( v1 < this->StartSpots.Count ); /*0x69be9c*/
   }
-  v7 = *(_DWORD *)(this + 10316); /*0x69bea2*/
+  v7 = this->StartSpots.Count; /*0x69bea2*/
   v58 = 0; /*0x69beaa*/
   v59 = 0; /*0x69beb0*/
   v49 = 0; /*0x69beb4*/
@@ -2259,9 +2259,9 @@ LABEL_10:
         break; /*0x69becd*/
       do /*0x69bef2*/
       {
-        if ( !*((_BYTE *)&v58 + v10) && *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 10304) + 4 * v10) + 83) < v11 ) /*0x69bee9*/
+        if ( !*((_BYTE *)&v58 + v10) && *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v10) + 83) < v11 ) /*0x69bee9*/
         {
-          v11 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 10304) + 4 * v10) + 83); /*0x69beeb*/
+          v11 = *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v10) + 83); /*0x69beeb*/
           v9 = v10; /*0x69beed*/
         }
         ++v10; /*0x69beef*/
@@ -2269,7 +2269,7 @@ LABEL_10:
       while ( v10 < v7 ); /*0x69bef2*/
       if ( v9 == 0x7FFFFFFF ) /*0x69befa*/
         break; /*0x69befa*/
-      v12 = *(_DWORD *)(this + 10304); /*0x69befc*/
+      v12 = this->StartSpots.Items; /*0x69befc*/
       *((_BYTE *)&v58 + v9) = 1; /*0x69bf02*/
       v13 = (_DWORD *)(v12 + 4 * v9); /*0x69bf07*/
       if ( v66 < v8 ) /*0x69bf10*/
@@ -2284,7 +2284,7 @@ LABEL_24:
       }
       v8 = v64; /*0x69bf50*/
 LABEL_26:
-      v7 = *(_DWORD *)(this + 10316); /*0x69bf54*/
+      v7 = this->StartSpots.Count; /*0x69bf54*/
       if ( v66 != v7 && ++v49 < v7 ) /*0x69bf6d*/
         continue; /*0x69bf6d*/
       break; /*0x69bf6d*/
@@ -2414,14 +2414,14 @@ LABEL_58:
     v38 = (_WORD *)(this + 12410); /*0x69c2ab*/
     do /*0x69c2d7*/
     {
-      v39 = *(_WORD *)(*(_DWORD *)(*(_DWORD *)(this + 10304) + 4 * v37) + 40); /*0x69c2ba*/
+      v39 = *(_WORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v37) + 40); /*0x69c2ba*/
       *v38 = v39; /*0x69c2c1*/
       if ( !v39 ) /*0x69c2c4*/
         *v38 = 1234; /*0x69c2c6*/
       ++v37; /*0x69c2d1*/
       ++v38; /*0x69c2d2*/
     }
-    while ( v37 < *(_DWORD *)(this + 10316) ); /*0x69c2d7*/
+    while ( v37 < this->StartSpots.Count ); /*0x69c2d7*/
   }
   v40 = (_DWORD *)(**(_DWORD **)(this + 10304) + 40); /*0x69c2e1*/
   v60[0] = *v40; /*0x69c2e6*/
@@ -2434,9 +2434,9 @@ LABEL_58:
     v41 = 4; /*0x69c31d*/
     do /*0x69c430*/
     {
-      if ( NetworkID::Compare((int)v60, *(_DWORD *)(v41 + *(_DWORD *)(this + 10304)) + 40) ) /*0x69c333*/
+      if ( NetworkID::Compare((int)v60, *(_DWORD *)(v41 + this->StartSpots.Items) + 40) ) /*0x69c333*/
       {
-        ToWideStringChar(*(char **)(v41 + *(_DWORD *)(this + 10304))); /*0x69c349*/
+        ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c349*/
         Debug::Log(); /*0x69c354*/
         v42 = this + 10644; /*0x69c362*/
         v54 = (void *)(this + 10328); /*0x69c368*/
@@ -2444,15 +2444,15 @@ LABEL_58:
         do /*0x69c416*/
         {
           v43 = *(char **)v54; /*0x69c381*/
-          v56 = ToWideStringChar(*(char **)(v41 + *(_DWORD *)(this + 10304))); /*0x69c38a*/
+          v56 = ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c38a*/
           v44 = ToWideStringChar(v43); /*0x69c38e*/
           if ( !_strcmpi(v56, v44) ) /*0x69c399*/
           {
             Network::CopyAddress_Small(v53); /*0x69c3ac*/
-            v45 = (_DWORD *)(*(_DWORD *)(v41 + *(_DWORD *)(this + 10304)) + 40); /*0x69c3be*/
+            v45 = (_DWORD *)(*(_DWORD *)(v41 + this->StartSpots.Items) + 40); /*0x69c3be*/
             NetworkID::Assign(v45, 0, (int)v53, *(_WORD *)v45); /*0x69c3c8*/
-            ToWideStringChar(*(char **)(v41 + *(_DWORD *)(this + 10304))); /*0x69c3d6*/
-            Network::FormatAddress((unsigned __int16 *)(*(_DWORD *)(v41 + *(_DWORD *)(this + 10304)) + 40), 0); /*0x69c3eb*/
+            ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c3d6*/
+            Network::FormatAddress((unsigned __int16 *)(*(_DWORD *)(v41 + this->StartSpots.Items) + 40), 0); /*0x69c3eb*/
             Debug::Log(); /*0x69c3f7*/
           }
           v42 += 12; /*0x69c40a*/
@@ -2465,7 +2465,7 @@ LABEL_58:
       v41 += 4; /*0x69c427*/
       ++v51; /*0x69c42c*/
     }
-    while ( v51 < *(_DWORD *)(this + 10316) ); /*0x69c430*/
+    while ( v51 < this->StartSpots.Count ); /*0x69c430*/
   }
   if ( MEMORY[0x887628] ) /*0x69c440*/
   {
@@ -2492,14 +2492,14 @@ void __thiscall SessionClass::_vt03(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x69c4a6*/
-  this->SessionClass_field_10 = 0; /*0x69c4a9*/
+  this->unknown_10 = 0; /*0x69c4a9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x69c4b0*/
   {
     __3_YAXPAX_Z(v2); /*0x69c4b6*/
     this->MPGameMode = 0; /*0x69c4be*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x69c4c1*/
-  this->SessionClass_field_08 = 0; /*0x69c4c4*/
+  this->unknown_08 = 0; /*0x69c4c4*/
 }
 }
 
@@ -2509,7 +2509,7 @@ unsigned int SessionClass::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SessionClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->SessionClass_field_0C ) /*0x69c4d0*/
+  if ( (unsigned char)this->unknown_0C ) /*0x69c4d0*/
     return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c4e5*/
   else
     return 0; /*0x69c4d7*/
@@ -2602,7 +2602,7 @@ char __thiscall SessionClass::sub_69C750(void *this, int a2, _DWORD *a3)
     {
       if ( this->MPGameMode ) /*0x69c795*/
       {
-        v6 = this->SessionClass_field_08; /*0x69c79c*/
+        v6 = this->unknown_08; /*0x69c79c*/
         if ( a2 < v6 ) /*0x69c7a1*/
           v6 = a2; /*0x69c7a3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MPGameMode + 4 * i - 4) ) /*0x69c7a9*/
@@ -2614,7 +2614,7 @@ char __thiscall SessionClass::sub_69C750(void *this, int a2, _DWORD *a3)
         }
       }
       this->MPGameMode = v4; /*0x69c7d7*/
-      this->SessionClass_field_08 = a2; /*0x69c7df*/
+      this->unknown_08 = a2; /*0x69c7df*/
       *((_BYTE *)this + 13) = a3 == 0; /*0x69c7e2*/
       return 1; /*0x69c7e8*/
     }
@@ -2643,7 +2643,7 @@ void __thiscall SessionClass::sub_69C800(int this)
     this->MPGameMode = 0; /*0x69c81b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x69c81e*/
-  this->SessionClass_field_08 = 0; /*0x69c821*/
+  this->unknown_08 = 0; /*0x69c821*/
 }
 }
 
@@ -2657,9 +2657,9 @@ int __thiscall SessionClass::sub_69C830(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !(unsigned char)this->SessionClass_field_0C ) /*0x69c830*/
+  if ( !(unsigned char)this->unknown_0C ) /*0x69c830*/
     return 0; /*0x69c838*/
-  v3 = this->SessionClass_field_08; /*0x69c83e*/
+  v3 = this->unknown_08; /*0x69c83e*/
   result = 0; /*0x69c841*/
   if ( v3 <= 0 ) /*0x69c845*/
     return -1; /*0x69c85c*/
@@ -2678,7 +2678,7 @@ unsigned int SessionClass::updatePlayer(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall SessionClass::sub_69C870(int this, int a2)
 {
-  if ( (unsigned char)this->SessionClass_field_0C ) /*0x69c870*/
+  if ( (unsigned char)this->unknown_0C ) /*0x69c870*/
     return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c885*/
   else
     return 0; /*0x69c877*/
@@ -2708,7 +2708,7 @@ char __thiscall SessionClass::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x69c93a*/
     if ( this->MPGameMode ) /*0x69c8c8*/
     {
-      v5 = this->SessionClass_field_08; /*0x69c8cf*/
+      v5 = this->unknown_08; /*0x69c8cf*/
       if ( a2 < v5 ) /*0x69c8d4*/
         v5 = a2; /*0x69c8d6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MPGameMode + 4 * i - 4) ) /*0x69c8dc*/
@@ -2720,16 +2720,16 @@ char __thiscall SessionClass::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->MPGameMode = v4; /*0x69c90a*/
-    this->SessionClass_field_08 = a2; /*0x69c912*/
+    this->unknown_08 = a2; /*0x69c912*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x69c915*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x69c91e*/
   }
-  v7 = this->SessionClass_field_08; /*0x69c921*/
-  if ( v7 < this->SessionClass_field_10 ) /*0x69c929*/
-    this->SessionClass_field_10 = v7; /*0x69c92b*/
+  v7 = this->unknown_08; /*0x69c921*/
+  if ( v7 < this->unknown_10 ) /*0x69c929*/
+    this->unknown_10 = v7; /*0x69c92b*/
   return 1; /*0x69c92e*/
 }
 }

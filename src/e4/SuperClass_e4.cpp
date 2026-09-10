@@ -1111,20 +1111,6 @@ bool __thiscall SuperClass::ShouldDrawProgress(int this)
 }
 } // namespace gamemd
 
-// 0x6CDEB0
-namespace gamemd {
-int SuperClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -671656762;
-  a2[1] = 298989852;
-  a2[2] = 268461211;
-  a2[3] = -399534261;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6CDEF0
 namespace gamemd {
 int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
@@ -1356,6 +1342,20 @@ bool __thiscall SuperClass::ShouldFlashTab(int this)
     return 1; /*0x6ce1d1*/
   return v2 && v2 + this->SuperClass_field_0x74 > (int)MEMORY[0xA8ED84]; /*0x6ce1d1*/
 }
+}
+} // namespace gamemd
+
+// 0x6CDEB0
+namespace gamemd {
+int SuperClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -671656762;
+  a2[1] = 298989852;
+  a2[2] = 268461211;
+  a2[3] = -399534261;
+  return 0;
 }
 } // namespace gamemd
 

@@ -59,16 +59,16 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   CCINIClass *v6; // edx
 
   TechnoTypeClass::ReadINI((char *)this, aP1->__pad_0, -1); /*0x7470de*/
-  *(_DWORD *)(this + 3576) = -1; /*0x7470e3*/
-  *(_DWORD *)(this + 3580) = -1; /*0x7470eb*/
-  *(_DWORD *)(this + 3584) = 0; /*0x7470f1*/
+  this->ArrayIndex = -1; /*0x7470e3*/
+  this->MovementRestrictedTo = -1; /*0x7470eb*/
+  this->HalfDamageSmokeLocation = 0; /*0x7470f1*/
   *(_DWORD *)(this + 3588) = 0; /*0x7470f7*/
   *(_DWORD *)(this + 3592) = 0; /*0x7470fd*/
-  *(_BYTE *)(this + 3596) = 0; /*0x747103*/
-  *(_BYTE *)(this + 3597) = 0; /*0x747109*/
-  *(_BYTE *)(this + 3598) = 0; /*0x74710f*/
-  *(_BYTE *)(this + 3599) = 0; /*0x747115*/
-  this->UnitTypeClass_field_E10 = 0; /*0x74711b*/
+  this->Passive = 0; /*0x747103*/
+  this->CrateGoodie = 0; /*0x747109*/
+  this->Harvester = 0; /*0x74710f*/
+  this->Weeder = 0; /*0x747115*/
+  this->unknown_E10 = 0; /*0x74711b*/
   this->HasTurret = 0; /*0x747121*/
   this->DeployToFire = 0; /*0x747127*/
   this->IsSimpleDeployer = 0; /*0x74712d*/
@@ -131,7 +131,7 @@ LABEL_11:
         goto LABEL_11; /*0x747253*/
     }
   }
-  *(_DWORD *)(this + 3576) = v5; /*0x747257*/
+  this->ArrayIndex = v5; /*0x747257*/
   this->FiringSyncFrame0 = -1; /*0x74725f*/
   this->FiringSyncFrame1 = -1; /*0x747267*/
   this->BurstDelay0 = -1; /*0x74726d*/
@@ -517,18 +517,6 @@ int UnitTypeClass::_vt45()
 }
 }
 
-// 0x747F30
-int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -591576342;
-  a2[1] = 298976582;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x747F70
 int UnitTypeClass::PowerDrainUpdate(int * a2)
 {
@@ -546,16 +534,16 @@ int __thiscall UnitTypeClass::_vt13(int this, int *a2)
   int v11; // eax
 
   BuildingTypeClass::ProcessPower(this, a2); /*0x747f79*/
-  Power::TimerProcess(*(_DWORD *)(this + 3580)); /*0x747f87*/
-  LOBYTE(v3) = *(_BYTE *)(this + 3596); /*0x747f8c*/
+  Power::TimerProcess(this->MovementRestrictedTo); /*0x747f87*/
+  LOBYTE(v3) = this->Passive; /*0x747f8c*/
   Power::FlagProcess(a2, v3); /*0x747f95*/
-  LOBYTE(v4) = *(_BYTE *)(this + 3597); /*0x747f9a*/
+  LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
   v5 = Power::FlagProcess(a2, v4); /*0x747fa3*/
-  LOBYTE(v5) = *(_BYTE *)(this + 3598); /*0x747fa8*/
+  LOBYTE(v5) = this->Harvester; /*0x747fa8*/
   Power::FlagProcess(a2, v5); /*0x747fb1*/
-  LOBYTE(v6) = *(_BYTE *)(this + 3599); /*0x747fb6*/
+  LOBYTE(v6) = this->Weeder; /*0x747fb6*/
   Power::FlagProcess(a2, v6); /*0x747fbf*/
-  LOBYTE(v7) = this->UnitTypeClass_field_E10; /*0x747fc4*/
+  LOBYTE(v7) = this->unknown_E10; /*0x747fc4*/
   v8 = Power::FlagProcess(a2, v7); /*0x747fcd*/
   LOBYTE(v8) = this->HasTurret; /*0x747fd2*/
   Power::FlagProcess(a2, v8); /*0x747fdb*/
@@ -686,6 +674,18 @@ LABEL_6:
   }
   return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2); /*0x74b9cf*/
 }
+}
+
+// 0x747F30
+int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -591576342;
+  a2[1] = 298976582;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x748160

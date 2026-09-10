@@ -24,8 +24,8 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
 
   *(this + 1) = 0; /*0x4779ed*/
   *(this + 2) = 0; /*0x4779f0*/
-  *((_BYTE *)this + 12) = 1; /*0x4779f3*/
-  *((_BYTE *)this + 13) = 0; /*0x4779f7*/
+  this->IsInitialized = 1; /*0x4779f3*/
+  this->IsAllocated = 0; /*0x4779f7*/
   *this = &VectorClass<int>::`vftable'; /*0x4779fa*/
   if ( this != (_DWORD *)aP1 ) /*0x477a00*/
   {
@@ -40,7 +40,7 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
       {
         v5 = *(this + 2); /*0x477a25*/
         v6 = 0; /*0x477a28*/
-        *((_BYTE *)this + 13) = 1; /*0x477a2c*/
+        this->IsAllocated = 1; /*0x477a2c*/
         if ( v5 > 0 ) /*0x477a30*/
         {
           do /*0x477a44*/
@@ -55,7 +55,7 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
     else
     {
       *(this + 1) = 0; /*0x477a48*/
-      *((_BYTE *)this + 13) = 0; /*0x477a4b*/
+      this->IsAllocated = 0; /*0x477a4b*/
     }
   }
   *(this + 4) = aP1->field_10; /*0x477a51*/
@@ -73,8 +73,8 @@ _DWORD *__thiscall DynamicVectorClass_Constructor(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x477db9*/
   *(this + 2) = a2; /*0x477dc0*/
-  *((_BYTE *)this + 12) = 1; /*0x477dc3*/
-  *((_BYTE *)this + 13) = 0; /*0x477dc7*/
+  this->IsInitialized = 1; /*0x477dc3*/
+  this->IsAllocated = 0; /*0x477dc7*/
   *this = &VectorClass<int>::`vftable'; /*0x477dcb*/
   if ( a2 ) /*0x477dd1*/
   {
@@ -85,7 +85,7 @@ _DWORD *__thiscall DynamicVectorClass_Constructor(_DWORD *this, int a2, int a3)
     else
     {
       *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x477dec*/
-      *((_BYTE *)this + 13) = 1; /*0x477def*/
+      this->IsAllocated = 1; /*0x477def*/
     }
   }
   *this = &DynamicVectorClass<int>::`vftable'; /*0x477df3*/
@@ -101,13 +101,13 @@ void DynamicVectorClass::Destroy()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DynamicVectorClass_Destroy(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x50ea0d*/
+  if ( this->Items && this->IsAllocated ) /*0x50ea0d*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x50ea13*/
-    *(_DWORD *)(this + 4) = 0; /*0x50ea1b*/
+    this->Items = 0; /*0x50ea1b*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x50ea1e*/
-  *(_DWORD *)(this + 8) = 0; /*0x50ea21*/
+  this->IsAllocated = 0; /*0x50ea1e*/
+  this->Capacity = 0; /*0x50ea21*/
 }
 }
 
@@ -117,13 +117,13 @@ void DynamicVectorClass::Destroy_Alt()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall DynamicVectorClass_Destroy_Alt(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x5251cd*/
+  if ( this->Items && this->IsAllocated ) /*0x5251cd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5251d3*/
-    *(_DWORD *)(this + 4) = 0; /*0x5251db*/
+    this->Items = 0; /*0x5251db*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5251de*/
-  *(_DWORD *)(this + 8) = 0; /*0x5251e1*/
+  this->IsAllocated = 0; /*0x5251de*/
+  this->Capacity = 0; /*0x5251e1*/
 }
 }
 
@@ -135,8 +135,8 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
 {
   *(this + 1) = 0; /*0x525259*/
   *(this + 2) = aP1; /*0x525260*/
-  *((_BYTE *)this + 12) = 1; /*0x525263*/
-  *((_BYTE *)this + 13) = 0; /*0x525267*/
+  this->IsInitialized = 1; /*0x525263*/
+  this->IsAllocated = 0; /*0x525267*/
   *this = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52526b*/
   if ( aP1 ) /*0x525271*/
   {
@@ -147,7 +147,7 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
     else
     {
       *(this + 1) = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x52528c*/
-      *((_BYTE *)this + 13) = 1; /*0x52528f*/
+      this->IsAllocated = 1; /*0x52528f*/
     }
   }
   *this = &DynamicVectorClass<AnimTypeClass const *>::`vftable'; /*0x525293*/
@@ -165,8 +165,8 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
 {
   *(this + 1) = 0; /*0x5ac909*/
   *(this + 2) = a2; /*0x5ac910*/
-  *((_BYTE *)this + 12) = 1; /*0x5ac913*/
-  *((_BYTE *)this + 13) = 0; /*0x5ac917*/
+  this->IsInitialized = 1; /*0x5ac913*/
+  this->IsAllocated = 0; /*0x5ac917*/
   *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
@@ -177,7 +177,7 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
     else
     {
       *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5ac93c*/
-      *((_BYTE *)this + 13) = 1; /*0x5ac93f*/
+      this->IsAllocated = 1; /*0x5ac93f*/
     }
   }
   *this = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac943*/

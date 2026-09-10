@@ -52,29 +52,10 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
 }
 }
 
-// 0x7B2750
-int WinsockInterfaceClass::Destru_vt14(int a1)
-{
-return 0;
-}
-
-// 0x7B2760
-char WinsockInterfaceClass::Destru_vt15(int a1)
-{
-return 0;
-}
-
-// 0x7B2770
-int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
-{
-return 1;
-}
-
 // 0x7B2780
 SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b2780
 SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *Block, char a2)
 {
   char v3; // al
@@ -128,4 +109,22 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *Block, char a2)
 int WinsockInterfaceClass::Destru_vt13()
 {
 return 0;
+}
+
+// 0x7B2750
+int WinsockInterfaceClass::Destru_vt14(int a1)
+{
+return 0;
+}
+
+// 0x7B2760
+char WinsockInterfaceClass::Destru_vt15(int a1)
+{
+return 0;
+}
+
+// 0x7B2770
+int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
+{
+return 1;
 }

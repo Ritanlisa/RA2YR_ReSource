@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x436910
-namespace gamemd {
-int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1417814616;
-  a2[1] = 298965160;
-  a2[2] = 1610638004;
-  a2[3] = 2041169559;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x4369C0
 namespace gamemd {
 int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
@@ -25,14 +11,6 @@ int __stdcall BuildingLightClass::SD_vt06(TechnoTypeClass *aP0, int *a1, int aP2
 {
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4369d4*/
 }
-}
-} // namespace gamemd
-
-// 0x4369F0
-namespace gamemd {
-int BuildingLightClass::SD_vt30()
-{
-return 3;
 }
 } // namespace gamemd
 
@@ -143,14 +121,6 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
   }
   return result->__pad_0; /*0x436d88*/
 }
-}
-} // namespace gamemd
-
-// 0x4370B0
-namespace gamemd {
-int BuildingLightClass::SD_vt11()
-{
-return 19;
 }
 } // namespace gamemd
 
@@ -312,10 +282,40 @@ return 232;
 }
 } // namespace gamemd
 
+// 0x436910
+namespace gamemd {
+int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1417814616;
+  a2[1] = 298965160;
+  a2[2] = 1610638004;
+  a2[3] = 2041169559;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x4369E0
 namespace gamemd {
 int BuildingLightClass::SD_vt34()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x4369F0
+namespace gamemd {
+int BuildingLightClass::SD_vt30()
+{
+return 3;
+}
+} // namespace gamemd
+
+// 0x4370B0
+namespace gamemd {
+int BuildingLightClass::SD_vt11()
+{
+return 19;
 }
 } // namespace gamemd

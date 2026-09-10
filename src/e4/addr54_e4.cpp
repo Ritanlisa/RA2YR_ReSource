@@ -591,20 +591,6 @@ int sub_543310()
 }
 } // namespace gamemd
 
-// 0x543AB0
-namespace gamemd {
-int nullsub_0(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448640;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x543AF0
 namespace gamemd {
 int nullsub_0_0()
@@ -614,14 +600,6 @@ int __thiscall nullsub_0_0(_DWORD *this)
 {
   return *(this + 43); /*0x543af6*/
 }
-}
-} // namespace gamemd
-
-// 0x543B00
-namespace gamemd {
-void nullsub_154(int a1, int a2)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -940,18 +918,9 @@ int sub_544690()
 }
 } // namespace gamemd
 
-// 0x544DF0
-namespace gamemd {
-void nullsub_155()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x544E30
 namespace gamemd {
 int MIXFile_AccumulateIndex(int a1)
-// 0x544df0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall MIXFile_AccumulateIndex(int a1)
@@ -1532,14 +1501,6 @@ int __fastcall Map_InitCoordinateOffsets(int a1)
   }
   return 24 * v3 + 11250996; /*0x547cbb*/
 }
-}
-} // namespace gamemd
-
-// 0x547CE0
-namespace gamemd {
-void nullsub_20()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2127,7 +2088,7 @@ int __thiscall UpdateFootMovement(int this)
           v24 = v23[116]; /*0x54bd10*/
           (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v23 + 292))(v23, 0); /*0x54bd13*/
           result = this->vtable3; /*0x54bd19*/
-          *(_DWORD *)(this + 80) = 3; /*0x54bd1c*/
+          this->customSound_controller = 3; /*0x54bd1c*/
           *(_BYTE *)(result + 116) = v24; /*0x54bd23*/
         }
       }
@@ -2145,7 +2106,7 @@ int __thiscall UpdateFootMovement(int this)
     (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54bb3c*/
     result = this->vtable3; /*0x54bb42*/
     *(_BYTE *)(result + 116) = v9; /*0x54bb46*/
-    *(_DWORD *)(this + 80) = 3; /*0x54bb49*/
+    this->customSound_controller = 3; /*0x54bb49*/
   }
   else
   {
@@ -2155,18 +2116,10 @@ int __thiscall UpdateFootMovement(int this)
     v15 = v14[116]; /*0x54bb70*/
     result = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54bb73*/
     *(_BYTE *)(this->vtable3 + 116) = v15; /*0x54bb7d*/
-    *(_DWORD *)(this + 80) = 2; /*0x54bb80*/
+    this->customSound_controller = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
 }
-}
-} // namespace gamemd
-
-// 0x54D0C0
-namespace gamemd {
-void nullsub_156()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2456,8 +2409,8 @@ _DWORD *__thiscall sub_54EBF0(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x54ebfb*/
   *(this + 2) = a2; /*0x54ebfe*/
-  *((_BYTE *)this + 12) = 1; /*0x54ec01*/
-  *((_BYTE *)this + 13) = 0; /*0x54ec05*/
+  this->IsInitialized = 1; /*0x54ec01*/
+  this->IsAllocated = 0; /*0x54ec05*/
   *this = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
@@ -2467,7 +2420,7 @@ _DWORD *__thiscall sub_54EBF0(_DWORD *this, int a2, int a3)
       return this; /*0x54ec1e*/
     }
     *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
-    *((_BYTE *)this + 13) = 1; /*0x54ec30*/
+    this->IsAllocated = 1; /*0x54ec30*/
   }
   return this; /*0x54ec1d*/
 }
@@ -2664,14 +2617,6 @@ int sub_54EE30()
   dword_ABC6FC = 128; /*0x54ee44*/
   return 128; /*0x54ee49*/
 }
-}
-} // namespace gamemd
-
-// 0x54EE50
-namespace gamemd {
-void nullsub_157()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2925,10 +2870,64 @@ void __cdecl sub_54FE00()
 }
 } // namespace gamemd
 
+// 0x543AB0
+namespace gamemd {
+int nullsub_0(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448640;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+} // namespace gamemd
+
+// 0x543B00
+namespace gamemd {
+void nullsub_154(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x544DF0
+namespace gamemd {
+void nullsub_155()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x544FF0
 namespace gamemd {
 char ReturnFalse2()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x547CE0
+namespace gamemd {
+void nullsub_20()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x54D0C0
+namespace gamemd {
+void nullsub_156()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x54EE50
+namespace gamemd {
+void nullsub_157()
+{
+  ;
 }
 } // namespace gamemd

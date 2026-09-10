@@ -10,6 +10,12 @@ struct WebBrowser {
     int AddRef();  // 0x773AA0
     int Release();  // 0x773AB0
     int Write();  // 0x773B10
+    int Stat();  // 0x773BB0
+    int Clone();  // 0x773BC0
+    int Navigate();  // 0x773D20
+    int GoBack();  // 0x773D40
+    HWND ShowDialog();  // 0x773E90
+    int GoForward();  // 0x7740A0
     int StubReturnFalse();  // 0x773B40
     int SetSize();  // 0x773B50
     int CopyTo();  // 0x773B60
@@ -17,12 +23,6 @@ struct WebBrowser {
     int Revert();  // 0x773B80
     int LockRegion();  // 0x773B90
     int UnlockRegion();  // 0x773BA0
-    int Stat();  // 0x773BB0
-    int Clone();  // 0x773BC0
-    int Navigate();  // 0x773D20
-    int GoBack();  // 0x773D40
-    HWND ShowDialog();  // 0x773E90
-    int GoForward();  // 0x7740A0
     int COMStub_Return0();  // 0x773B00
 };
 } // namespace gamemd

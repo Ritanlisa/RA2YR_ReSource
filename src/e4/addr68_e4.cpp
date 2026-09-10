@@ -853,14 +853,6 @@ int sub_683280()
 }
 } // namespace gamemd
 
-// 0x6832B0
-namespace gamemd {
-void nullsub_226()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x683FB0
 namespace gamemd {
 int sub_683FB0()
@@ -2640,5 +2632,13 @@ _DWORD *__thiscall sub_68FB10(
   a2[3] = v13; /*0x68fb94*/
   return a2; /*0x68fb97*/
 }
+}
+} // namespace gamemd
+
+// 0x6832B0
+namespace gamemd {
+void nullsub_226()
+{
+  ;
 }
 } // namespace gamemd

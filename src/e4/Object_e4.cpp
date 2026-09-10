@@ -784,20 +784,6 @@ int __thiscall Object::_vt34(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x5FDF10
-namespace gamemd {
-int Object::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448647;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x5FDF70
 namespace gamemd {
 OverlayClass * Object::DrawObject(void ** Block, char a2)
@@ -1970,6 +1956,20 @@ namespace gamemd {
 int Object::StubReturn176()
 {
 return 176;
+}
+} // namespace gamemd
+
+// 0x5FDF10
+namespace gamemd {
+int Object::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448647;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

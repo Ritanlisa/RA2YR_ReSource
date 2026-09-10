@@ -94,18 +94,6 @@ HRESULT __stdcall DriveLocomotionClass::LoadFromStream(int *a1, int *pPStm, int 
 }
 }
 
-// 0x4B4830
-int DriveLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291201;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-
 // 0x4B4D00
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -125,6 +113,18 @@ DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion *
     __3_YAXPAX_Z(Block); /*0x4b4d33*/
   return (DriveLocomotionClass *)Block; /*0x4b4d3d*/
 }
+}
+
+// 0x4B4830
+int DriveLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291201;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4B4CF0

@@ -1027,22 +1027,6 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
 } // namespace game
 } // namespace ra2
 
-// 0x472960
-namespace ra2 {
-namespace game {
-int CaptureManagerClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 108652930;
-  a2[1] = 299085213;
-  a2[2] = 268441278;
-  a2[3] = 1822515787;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4729C0
 namespace ra2 {
 namespace game {
@@ -1434,6 +1418,22 @@ char __thiscall CaptureManagerClass::AddMember(void *this, TechnoClass *aP1)
 {
   return TeamClass::AddMember((int)this, (IUnknown *)aP1, (IUnknown *)1); /*0x6ea4fc*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x472960
+namespace ra2 {
+namespace game {
+int CaptureManagerClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652930;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

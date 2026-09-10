@@ -284,14 +284,6 @@ char __thiscall CreateTeamCommand::performAction_11(SetDefenseTabCommandClass *t
 }
 } // namespace gamemd
 
-// 0x535EA0
-namespace gamemd {
-char * CreateTeamCommand::performAction_12()
-{
-return aInfantrytab;
-}
-} // namespace gamemd
-
 // 0x535EB0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_13()
@@ -342,14 +334,6 @@ int __thiscall CreateTeamCommand::performAction_16(SetInfantryTabCommandClass *t
     return SidebarClass::SwitchTab((int)&MEMORY[0x87F7E8], 2); /*0x535f25*/
   return result; /*0x535f2a*/
 }
-}
-} // namespace gamemd
-
-// 0x535F30
-namespace gamemd {
-char * CreateTeamCommand::performAction_17()
-{
-return aUnittab;
 }
 } // namespace gamemd
 
@@ -547,18 +531,9 @@ _BYTE *__thiscall CreateTeamCommand::performAction_30(NextObjectCommandClass *th
 }
 } // namespace gamemd
 
-// 0x5366A0
-namespace gamemd {
-char * CreateTeamCommand::performAction_31()
-{
-return g_INI_Key_PlanningMode;
-}
-} // namespace gamemd
-
 // 0x5366B0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_32()
-// 0x5366a0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 wchar_t *__thiscall CreateTeamCommand::performAction_32(PlanningModeCommandClass *this)
@@ -606,14 +581,6 @@ BOOL __thiscall CreateTeamCommand::performAction_35(PlanningModeCommandClass *th
 }
 } // namespace gamemd
 
-// 0x536730
-namespace gamemd {
-char CreateTeamCommand::performAction_36()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x536740
 namespace gamemd {
 unsigned int CreateTeamCommand::performAction_37()
@@ -642,14 +609,6 @@ int __thiscall CreateTeamCommand::performAction_38(PlanningModeCommandClass *thi
   else
     return UI_Create_731A50(0); /*0x536765*/
 }
-}
-} // namespace gamemd
-
-// 0x536770
-namespace gamemd {
-char * CreateTeamCommand::performAction_39()
-{
-return aCombatantselec;
 }
 } // namespace gamemd
 
@@ -720,14 +679,6 @@ int __thiscall CreateTeamCommand::performAction_44(CombatantSelectCommandClass *
 }
 } // namespace gamemd
 
-// 0x536810
-namespace gamemd {
-char * CreateTeamCommand::performAction_45()
-{
-return g_INI_Key_TypeSelect;
-}
-} // namespace gamemd
-
 // 0x536820
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_46()
@@ -778,14 +729,6 @@ int __thiscall CreateTeamCommand::performAction_49(TypeSelectCommandClass *this)
 }
 } // namespace gamemd
 
-// 0x536890
-namespace gamemd {
-char CreateTeamCommand::performAction_50()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x5368A0
 namespace gamemd {
 unsigned int CreateTeamCommand::performAction_51()
@@ -814,14 +757,6 @@ char __thiscall CreateTeamCommand::performAction_52(TypeSelectCommandClass *this
   else
     return UI_Create_732CA0(); /*0x5368c1*/
 }
-}
-} // namespace gamemd
-
-// 0x5368D0
-namespace gamemd {
-char * CreateTeamCommand::performAction_53()
-{
-return aHealthnav;
 }
 } // namespace gamemd
 
@@ -892,14 +827,6 @@ int __thiscall CreateTeamCommand::performAction_58(HealthNavCommandClass *this)
 }
 } // namespace gamemd
 
-// 0x536970
-namespace gamemd {
-char * CreateTeamCommand::performAction_59()
-{
-return aVeterancynav;
-}
-} // namespace gamemd
-
 // 0x536980
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_60()
@@ -924,7 +851,7 @@ wchar_t *__thiscall CreateTeamCommand::performAction_61(VeterancyNavCommandClass
 }
 } // namespace gamemd
 
-// 0x5369c0
+// 0x5369C0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_62()
 {
@@ -964,14 +891,6 @@ int __thiscall CreateTeamCommand::performAction_64(VeterancyNavCommandClass *thi
   LOBYTE(v1) = (v3 & 0x100) == 0; /*0x5369f9*/
   return DrawUnitExperiencePopup(v1); /*0x536a01*/
 }
-}
-} // namespace gamemd
-
-// 0x536A10
-namespace gamemd {
-char * CreateTeamCommand::performAction_65()
-{
-return aPreviousobject;
 }
 } // namespace gamemd
 
@@ -1044,14 +963,6 @@ _BYTE *__thiscall CreateTeamCommand::performAction_69(PrevObjectCommandClass *th
 }
 } // namespace gamemd
 
-// 0x536B10
-namespace gamemd {
-char * CreateTeamCommand::performAction_70()
-{
-return aStopobject;
-}
-} // namespace gamemd
-
 // 0x536B20
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_71()
@@ -1098,14 +1009,6 @@ wchar_t *__stdcall CreateTeamCommand::sub_536B80(int a1)
 {
   return UI_Create_730EA0(); /*0x536b85*/
 }
-}
-} // namespace gamemd
-
-// 0x536B90
-namespace gamemd {
-char * CreateTeamCommand::performAction_75()
-{
-return aAlltocheer;
 }
 } // namespace gamemd
 
@@ -1158,14 +1061,6 @@ wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *
 }
 } // namespace gamemd
 
-// 0x536C10
-namespace gamemd {
-char * CreateTeamCommand::performAction_80()
-{
-return aDeployobject;
-}
-} // namespace gamemd
-
 // 0x536C20
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_81()
@@ -1208,19 +1103,10 @@ int CreateTeamCommand_performAction_84()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-// 0x536c10
 char __stdcall CreateTeamCommand::sub_536C80(int a1)
 {
   return ProcessSelectionExperience(); /*0x536c85*/
 }
-}
-} // namespace gamemd
-
-// 0x536C90
-namespace gamemd {
-char * CreateTeamCommand::performAction_85()
-{
-return aGuardobject;
 }
 } // namespace gamemd
 
@@ -1273,14 +1159,6 @@ char __stdcall CreateTeamCommand::sub_536D00(int a1)
 }
 } // namespace gamemd
 
-// 0x536D10
-namespace gamemd {
-char * CreateTeamCommand::performAction_90()
-{
-return aScatterobject;
-}
-} // namespace gamemd
-
 // 0x536D20
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_91()
@@ -1327,14 +1205,6 @@ wchar_t *__stdcall CreateTeamCommand::sub_536D80(int a1)
 {
   return UI_Create_730FE0(); /*0x536d85*/
 }
-}
-} // namespace gamemd
-
-// 0x536D90
-namespace gamemd {
-char * CreateTeamCommand::performAction_95()
-{
-return aCenterview;
 }
 } // namespace gamemd
 
@@ -1394,14 +1264,6 @@ wchar_t *__thiscall CreateTeamCommand::performAction_99(CenterViewCommandClass *
 }
 } // namespace gamemd
 
-// 0x536E30
-namespace gamemd {
-char * CreateTeamCommand::performAction_100()
-{
-return aCenterbase;
-}
-} // namespace gamemd
-
 // 0x536E40
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_101()
@@ -1448,14 +1310,6 @@ int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this
 {
   return TAction::CenterOnStartCoords(); /*0x536ea5*/
 }
-}
-} // namespace gamemd
-
-// 0x536EB0
-namespace gamemd {
-char * CreateTeamCommand::performAction_105()
-{
-return aTogglealliance;
 }
 } // namespace gamemd
 
@@ -1508,14 +1362,6 @@ char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this
 }
 } // namespace gamemd
 
-// 0x536F30
-namespace gamemd {
-char * CreateTeamCommand::performAction_110()
-{
-return aTogglerepair;
-}
-} // namespace gamemd
-
 // 0x536F40
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_111()
@@ -1549,14 +1395,6 @@ wchar_t *CreateTeamCommand::sub_536F80()
 {
   return GetStringCSF(aTxtRepairModeD, 0, g_Str_File_Init_CPP, 7107); /*0x536f96*/
 }
-}
-} // namespace gamemd
-
-// 0x536FB0
-namespace gamemd {
-char * CreateTeamCommand::performAction_114()
-{
-return aTogglesell;
 }
 } // namespace gamemd
 
@@ -1605,14 +1443,6 @@ char __stdcall CreateTeamCommand::sub_537020(int a1)
 {
   return BuildingClass::TogglePower(&MEMORY[0x87F7E8], -1); /*0x53702c*/
 }
-}
-} // namespace gamemd
-
-// 0x537030
-namespace gamemd {
-char * CreateTeamCommand::performAction_119()
-{
-return aPlacebeacon;
 }
 } // namespace gamemd
 
@@ -1672,20 +1502,11 @@ int __thiscall CreateTeamCommand::performAction_123(BeaconPlacementCommandClass 
 }
 } // namespace gamemd
 
-// 0x5370C0
-namespace gamemd {
-char * CreateTeamCommand::performAction_124()
-{
-return aCenteronradare;
-}
-} // namespace gamemd
-
 // 0x5370D0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_125()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5370d0
 wchar_t *__thiscall CreateTeamCommand::performAction_125(CenterREventCommandClass *this)
 {
   return GetStringCSF(aTxtRadarEvent, 0, g_Str_File_Init_CPP, 7195); /*0x5370e6*/
@@ -1730,14 +1551,6 @@ unsigned __int16 __thiscall CreateTeamCommand::performAction_128(CenterREventCom
 }
 } // namespace gamemd
 
-// 0x537140
-namespace gamemd {
-char * CreateTeamCommand::performAction_129()
-{
-return aSidebarup;
-}
-} // namespace gamemd
-
 // 0x537150
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_130()
@@ -1753,7 +1566,6 @@ wchar_t *__thiscall CreateTeamCommand::performAction_130(SidebarUpCommandClass *
 // 0x537170
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_131()
-// 0x5370c0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 wchar_t *__thiscall CreateTeamCommand::performAction_131(SidebarUpCommandClass *this)
@@ -1784,14 +1596,6 @@ char __thiscall CreateTeamCommand::performAction_133(SidebarUpCommandClass *this
 {
   return CreateTeamCommand::performAction_245(&MEMORY[0x87F7E8], 1, -1); /*0x5371be*/
 }
-}
-} // namespace gamemd
-
-// 0x5371D0
-namespace gamemd {
-char * CreateTeamCommand::performAction_134()
-{
-return aSidebardown;
 }
 } // namespace gamemd
 
@@ -1904,14 +1708,6 @@ char __thiscall CreateTeamCommand::performAction_143(OptionsCommandClass *this)
 }
 } // namespace gamemd
 
-// 0x5372E0
-namespace gamemd {
-char * CreateTeamCommand::performAction_144()
-{
-return aView1;
-}
-} // namespace gamemd
-
 // 0x5372F0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_145()
@@ -1975,14 +1771,6 @@ _DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
              (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
   return &result->field_0; /*0x5373c8*/
 }
-}
-} // namespace gamemd
-
-// 0x5373D0
-namespace gamemd {
-char * CreateTeamCommand::performAction_149()
-{
-return aView2;
 }
 } // namespace gamemd
 
@@ -2052,14 +1840,6 @@ _DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
 }
 } // namespace gamemd
 
-// 0x5374C0
-namespace gamemd {
-char * CreateTeamCommand::performAction_154()
-{
-return aView3;
-}
-} // namespace gamemd
-
 // 0x5374D0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_155()
@@ -2126,14 +1906,6 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
 }
 } // namespace gamemd
 
-// 0x5375B0
-namespace gamemd {
-char * CreateTeamCommand::performAction_159()
-{
-return aView4;
-}
-} // namespace gamemd
-
 // 0x5375C0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_160()
@@ -2151,7 +1923,6 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_161()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5375e0
 wchar_t *__thiscall CreateTeamCommand::performAction_161(View4CommandClass *this)
 {
   return GetStringCSF(MEMORY[0x826FEC], 0, g_Str_File_Init_CPP, 7817); /*0x5375f6*/
@@ -2168,14 +1939,6 @@ wchar_t *__thiscall CreateTeamCommand::performAction_162(View4CommandClass *this
 {
   return GetStringCSF(aTxtViewBookmar_6, 0, g_Str_File_Init_CPP, 7819); /*0x537616*/
 }
-}
-} // namespace gamemd
-
-// 0x5376A0
-namespace gamemd {
-char * CreateTeamCommand::performAction_163()
-{
-return aSetview1;
 }
 } // namespace gamemd
 
@@ -2239,14 +2002,6 @@ void *__thiscall CreateTeamCommand::performAction_167(SetView1CommandClass *this
 }
 } // namespace gamemd
 
-// 0x537760
-namespace gamemd {
-char * CreateTeamCommand::performAction_168()
-{
-return aSetview2;
-}
-} // namespace gamemd
-
 // 0x537770
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_169()
@@ -2304,14 +2059,6 @@ void *__thiscall CreateTeamCommand::performAction_172(SetView2CommandClass *this
   *(int *)((char *)MEMORY[0xA8B230]->view1 + 2) = v2; /*0x53780c*/
   return result; /*0x537812*/
 }
-}
-} // namespace gamemd
-
-// 0x537820
-namespace gamemd {
-char * CreateTeamCommand::performAction_173()
-{
-return aSetview3;
 }
 } // namespace gamemd
 
@@ -2375,14 +2122,6 @@ void *__thiscall CreateTeamCommand::performAction_177(SetView3CommandClass *this
 }
 } // namespace gamemd
 
-// 0x5378E0
-namespace gamemd {
-char * CreateTeamCommand::performAction_178()
-{
-return aSetview4;
-}
-} // namespace gamemd
-
 // 0x5378F0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_179()
@@ -2443,14 +2182,6 @@ void *__thiscall CreateTeamCommand::performAction_182(SetView4CommandClass *this
 }
 } // namespace gamemd
 
-// 0x5379A0
-namespace gamemd {
-char * CreateTeamCommand::performAction_183()
-{
-return aFollow;
-}
-} // namespace gamemd
-
 // 0x5379B0
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_184()
@@ -2499,30 +2230,6 @@ bool __thiscall CreateTeamCommand::performAction_187(FollowCommandClass *this)
   else
     return MapClass::SetScrollMode((int)&MEMORY[0x87F7E8], **(MouseClass ***)&MEMORY[0xA8D63C].__pad_14B0[464]); /*0x537a34*/
 }
-}
-} // namespace gamemd
-
-// 0x537AB0
-namespace gamemd {
-char * CreateTeamCommand::performAction_188()
-{
-return aExtrasynccheck;
-}
-} // namespace gamemd
-
-// 0x537AC0
-namespace gamemd {
-const wchar_t * CreateTeamCommand::performAction_189()
-{
-return g_INI_Key_De;
-}
-} // namespace gamemd
-
-// 0x537AD0
-namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_190()
-{
-return aGameSyncLoggin;
 }
 } // namespace gamemd
 
@@ -2654,7 +2361,7 @@ std::locale::facet *__thiscall CreateTeamCommand::performAction_199(std::locale:
 }
 } // namespace gamemd
 
-// 0x537fe0
+// 0x537FE0
 namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_200(char a2)
 {
@@ -3519,5 +3226,293 @@ namespace gamemd {
 char CreateTeamCommand::Do(int a1)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x535EA0
+namespace gamemd {
+char * CreateTeamCommand::performAction_12()
+{
+return aInfantrytab;
+}
+} // namespace gamemd
+
+// 0x535F30
+namespace gamemd {
+char * CreateTeamCommand::performAction_17()
+{
+return aUnittab;
+}
+} // namespace gamemd
+
+// 0x5366A0
+namespace gamemd {
+char * CreateTeamCommand::performAction_31()
+{
+return g_INI_Key_PlanningMode;
+}
+} // namespace gamemd
+
+// 0x536730
+namespace gamemd {
+char CreateTeamCommand::performAction_36()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x536770
+namespace gamemd {
+char * CreateTeamCommand::performAction_39()
+{
+return aCombatantselec;
+}
+} // namespace gamemd
+
+// 0x536810
+namespace gamemd {
+char * CreateTeamCommand::performAction_45()
+{
+return g_INI_Key_TypeSelect;
+}
+} // namespace gamemd
+
+// 0x536890
+namespace gamemd {
+char CreateTeamCommand::performAction_50()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5368D0
+namespace gamemd {
+char * CreateTeamCommand::performAction_53()
+{
+return aHealthnav;
+}
+} // namespace gamemd
+
+// 0x536970
+namespace gamemd {
+char * CreateTeamCommand::performAction_59()
+{
+return aVeterancynav;
+}
+} // namespace gamemd
+
+// 0x536A10
+namespace gamemd {
+char * CreateTeamCommand::performAction_65()
+{
+return aPreviousobject;
+}
+} // namespace gamemd
+
+// 0x536B10
+namespace gamemd {
+char * CreateTeamCommand::performAction_70()
+{
+return aStopobject;
+}
+} // namespace gamemd
+
+// 0x536B90
+namespace gamemd {
+char * CreateTeamCommand::performAction_75()
+{
+return aAlltocheer;
+}
+} // namespace gamemd
+
+// 0x536C10
+namespace gamemd {
+char * CreateTeamCommand::performAction_80()
+{
+return aDeployobject;
+}
+} // namespace gamemd
+
+// 0x536C90
+namespace gamemd {
+char * CreateTeamCommand::performAction_85()
+{
+return aGuardobject;
+}
+} // namespace gamemd
+
+// 0x536D10
+namespace gamemd {
+char * CreateTeamCommand::performAction_90()
+{
+return aScatterobject;
+}
+} // namespace gamemd
+
+// 0x536D90
+namespace gamemd {
+char * CreateTeamCommand::performAction_95()
+{
+return aCenterview;
+}
+} // namespace gamemd
+
+// 0x536E30
+namespace gamemd {
+char * CreateTeamCommand::performAction_100()
+{
+return aCenterbase;
+}
+} // namespace gamemd
+
+// 0x536EB0
+namespace gamemd {
+char * CreateTeamCommand::performAction_105()
+{
+return aTogglealliance;
+}
+} // namespace gamemd
+
+// 0x536F30
+namespace gamemd {
+char * CreateTeamCommand::performAction_110()
+{
+return aTogglerepair;
+}
+} // namespace gamemd
+
+// 0x536FB0
+namespace gamemd {
+char * CreateTeamCommand::performAction_114()
+{
+return aTogglesell;
+}
+} // namespace gamemd
+
+// 0x537030
+namespace gamemd {
+char * CreateTeamCommand::performAction_119()
+{
+return aPlacebeacon;
+}
+} // namespace gamemd
+
+// 0x5370C0
+namespace gamemd {
+char * CreateTeamCommand::performAction_124()
+{
+return aCenteronradare;
+}
+} // namespace gamemd
+
+// 0x537140
+namespace gamemd {
+char * CreateTeamCommand::performAction_129()
+{
+return aSidebarup;
+}
+} // namespace gamemd
+
+// 0x5371D0
+namespace gamemd {
+char * CreateTeamCommand::performAction_134()
+{
+return aSidebardown;
+}
+} // namespace gamemd
+
+// 0x5372E0
+namespace gamemd {
+char * CreateTeamCommand::performAction_144()
+{
+return aView1;
+}
+} // namespace gamemd
+
+// 0x5373D0
+namespace gamemd {
+char * CreateTeamCommand::performAction_149()
+{
+return aView2;
+}
+} // namespace gamemd
+
+// 0x5374C0
+namespace gamemd {
+char * CreateTeamCommand::performAction_154()
+{
+return aView3;
+}
+} // namespace gamemd
+
+// 0x5375B0
+namespace gamemd {
+char * CreateTeamCommand::performAction_159()
+{
+return aView4;
+}
+} // namespace gamemd
+
+// 0x5376A0
+namespace gamemd {
+char * CreateTeamCommand::performAction_163()
+{
+return aSetview1;
+}
+} // namespace gamemd
+
+// 0x537760
+namespace gamemd {
+char * CreateTeamCommand::performAction_168()
+{
+return aSetview2;
+}
+} // namespace gamemd
+
+// 0x537820
+namespace gamemd {
+char * CreateTeamCommand::performAction_173()
+{
+return aSetview3;
+}
+} // namespace gamemd
+
+// 0x5378E0
+namespace gamemd {
+char * CreateTeamCommand::performAction_178()
+{
+return aSetview4;
+}
+} // namespace gamemd
+
+// 0x5379A0
+namespace gamemd {
+char * CreateTeamCommand::performAction_183()
+{
+return aFollow;
+}
+} // namespace gamemd
+
+// 0x537AB0
+namespace gamemd {
+char * CreateTeamCommand::performAction_188()
+{
+return aExtrasynccheck;
+}
+} // namespace gamemd
+
+// 0x537AC0
+namespace gamemd {
+const wchar_t * CreateTeamCommand::performAction_189()
+{
+return g_INI_Key_De;
+}
+} // namespace gamemd
+
+// 0x537AD0
+namespace gamemd {
+wchar_t * CreateTeamCommand::performAction_190()
+{
+return aGameSyncLoggin;
 }
 } // namespace gamemd

@@ -19,13 +19,13 @@ void __thiscall TypeList::_vt03(int this)
 
   v2 = *(void **)(this + 4); /*0x477846*/
   *(_DWORD *)(this + 16) = 0; /*0x477849*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x477850*/
+  if ( v2 && this->IsAllocated ) /*0x477850*/
   {
     __3_YAXPAX_Z(v2); /*0x477856*/
-    *(_DWORD *)(this + 4) = 0; /*0x47785e*/
+    this->Items = 0; /*0x47785e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x477861*/
-  *(_DWORD *)(this + 8) = 0; /*0x477864*/
+  this->IsAllocated = 0; /*0x477861*/
+  this->Capacity = 0; /*0x477864*/
 }
 }
 
@@ -35,8 +35,8 @@ unsigned int TypeList::GetCapacity(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall TypeList::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x477870*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x477885*/
+  if ( this->IsInitialized ) /*0x477870*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x477885*/
   else
     return 0; /*0x477877*/
 }
@@ -107,7 +107,7 @@ _DWORD *__thiscall TypeList_Copy(_DWORD *this, _DWORD *a2)
   if ( !v3 ) /*0x478739*/
   {
     *(this + 1) = 0; /*0x47877a*/
-    *((_BYTE *)this + 13) = 0; /*0x478781*/
+    this->IsAllocated = 0; /*0x478781*/
     return this; /*0x478785*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x478743*/
@@ -116,7 +116,7 @@ _DWORD *__thiscall TypeList_Copy(_DWORD *this, _DWORD *a2)
     return this; /*0x478750*/
   v5 = *(this + 2); /*0x478752*/
   v6 = 0; /*0x478755*/
-  *((_BYTE *)this + 13) = 1; /*0x478759*/
+  this->IsAllocated = 1; /*0x478759*/
   if ( v5 <= 0 ) /*0x47875d*/
     return this; /*0x47875d*/
   do /*0x478771*/
@@ -137,8 +137,8 @@ _DWORD *__thiscall TypeList_TechnoType_Constructor(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x47879b*/
   *(this + 2) = a2; /*0x47879e*/
-  *((_BYTE *)this + 12) = 1; /*0x4787a1*/
-  *((_BYTE *)this + 13) = 0; /*0x4787a5*/
+  this->IsInitialized = 1; /*0x4787a1*/
+  this->IsAllocated = 0; /*0x4787a5*/
   *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
@@ -148,7 +148,7 @@ _DWORD *__thiscall TypeList_TechnoType_Constructor(_DWORD *this, int a2, int a3)
       return this; /*0x4787be*/
     }
     *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4787cd*/
-    *((_BYTE *)this + 13) = 1; /*0x4787d0*/
+    this->IsAllocated = 1; /*0x4787d0*/
   }
   return this; /*0x4787bd*/
 }
@@ -167,8 +167,8 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
 
   *(this + 1) = 0; /*0x51374d*/
   *(this + 2) = 0; /*0x513750*/
-  *((_BYTE *)this + 12) = 1; /*0x513753*/
-  *((_BYTE *)this + 13) = 0; /*0x513757*/
+  this->IsInitialized = 1; /*0x513753*/
+  this->IsAllocated = 0; /*0x513757*/
   *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51375a*/
   if ( this != (_DWORD *)aP1 ) /*0x513760*/
   {
@@ -183,7 +183,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x513785*/
         v6 = 0; /*0x513788*/
-        *((_BYTE *)this + 13) = 1; /*0x51378c*/
+        this->IsAllocated = 1; /*0x51378c*/
         if ( v5 > 0 ) /*0x513790*/
         {
           do /*0x5137a4*/
@@ -198,7 +198,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x5137a8*/
-      *((_BYTE *)this + 13) = 0; /*0x5137ab*/
+      this->IsAllocated = 0; /*0x5137ab*/
     }
   }
   *(this + 4) = aP1->field_10; /*0x5137b1*/
@@ -221,8 +221,8 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
 
   *(this + 1) = 0; /*0x5255fd*/
   *(this + 2) = 0; /*0x525600*/
-  *((_BYTE *)this + 12) = 1; /*0x525603*/
-  *((_BYTE *)this + 13) = 0; /*0x525607*/
+  this->IsInitialized = 1; /*0x525603*/
+  this->IsAllocated = 0; /*0x525607*/
   *this = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52560a*/
   if ( this != (_DWORD *)aP1 ) /*0x525610*/
   {
@@ -237,7 +237,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x525635*/
         v6 = 0; /*0x525638*/
-        *((_BYTE *)this + 13) = 1; /*0x52563c*/
+        this->IsAllocated = 1; /*0x52563c*/
         if ( v5 > 0 ) /*0x525640*/
         {
           do /*0x525654*/
@@ -252,7 +252,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x525658*/
-      *((_BYTE *)this + 13) = 0; /*0x52565b*/
+      this->IsAllocated = 0; /*0x52565b*/
     }
   }
   *(this + 4) = aP1->field_10; /*0x525661*/
@@ -270,8 +270,8 @@ CCINIClass *__thiscall TypeList::BuildingTypeConstructor(_DWORD *this)
 {
   *(this + 1) = 0; /*0x5ac404*/
   *(this + 2) = 0; /*0x5ac407*/
-  *((_BYTE *)this + 12) = 1; /*0x5ac40a*/
-  *((_BYTE *)this + 13) = 0; /*0x5ac40e*/
+  this->IsInitialized = 1; /*0x5ac40a*/
+  this->IsAllocated = 0; /*0x5ac40e*/
   *(this + 5) = 10; /*0x5ac411*/
   *(this + 4) = 0; /*0x5ac418*/
   *this = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x5ac41b*/
@@ -292,8 +292,8 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
 
   *(this + 1) = 0; /*0x5ad66d*/
   *(this + 2) = 0; /*0x5ad670*/
-  *((_BYTE *)this + 12) = 1; /*0x5ad673*/
-  *((_BYTE *)this + 13) = 0; /*0x5ad677*/
+  this->IsInitialized = 1; /*0x5ad673*/
+  this->IsAllocated = 0; /*0x5ad677*/
   *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ad67a*/
   if ( this != (_DWORD *)aP1 ) /*0x5ad680*/
   {
@@ -308,7 +308,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x5ad6a5*/
         v6 = 0; /*0x5ad6a8*/
-        *((_BYTE *)this + 13) = 1; /*0x5ad6ac*/
+        this->IsAllocated = 1; /*0x5ad6ac*/
         if ( v5 > 0 ) /*0x5ad6b0*/
         {
           do /*0x5ad6c4*/
@@ -323,7 +323,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x5ad6c8*/
-      *((_BYTE *)this + 13) = 0; /*0x5ad6cb*/
+      this->IsAllocated = 0; /*0x5ad6cb*/
     }
   }
   *(this + 4) = aP1->field_10; /*0x5ad6d1*/
@@ -343,12 +343,12 @@ void __thiscall sub_67A030(_DWORD *this)
 
   v2 = (void *)*(this + 1); /*0x67a036*/
   *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x67a039*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x67a043*/
+  if ( v2 && this->IsAllocated ) /*0x67a043*/
   {
     __3_YAXPAX_Z(v2); /*0x67a049*/
     *(this + 1) = 0; /*0x67a051*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x67a054*/
+  this->IsAllocated = 0; /*0x67a054*/
   *(this + 2) = 0; /*0x67a057*/
 }
 }
@@ -377,7 +377,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x67a0c2*/
         v6 = 0; /*0x67a0c5*/
-        *((_BYTE *)this + 13) = 1; /*0x67a0c9*/
+        this->IsAllocated = 1; /*0x67a0c9*/
         if ( v5 > 0 ) /*0x67a0cd*/
         {
           do /*0x67a0e1*/
@@ -392,7 +392,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x67a0e5*/
-      *((_BYTE *)this + 13) = 0; /*0x67a0ec*/
+      this->IsAllocated = 0; /*0x67a0ec*/
     }
   }
   *(this + 4) = (int)aP1->field_10; /*0x67a0f3*/
@@ -426,7 +426,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x67a142*/
         v6 = 0; /*0x67a145*/
-        *((_BYTE *)this + 13) = 1; /*0x67a149*/
+        this->IsAllocated = 1; /*0x67a149*/
         if ( v5 > 0 ) /*0x67a14d*/
         {
           do /*0x67a161*/
@@ -441,7 +441,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x67a165*/
-      *((_BYTE *)this + 13) = 0; /*0x67a16c*/
+      this->IsAllocated = 0; /*0x67a16c*/
     }
   }
   *(this + 4) = (int)aP1->field_10; /*0x67a173*/
@@ -475,7 +475,7 @@ int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
       {
         v5 = *(this + 2); /*0x67a2c2*/
         v6 = 0; /*0x67a2c5*/
-        *((_BYTE *)this + 13) = 1; /*0x67a2c9*/
+        this->IsAllocated = 1; /*0x67a2c9*/
         if ( v5 > 0 ) /*0x67a2cd*/
         {
           do /*0x67a2e1*/
@@ -490,7 +490,7 @@ int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x67a2e5*/
-      *((_BYTE *)this + 13) = 0; /*0x67a2ec*/
+      this->IsAllocated = 0; /*0x67a2ec*/
     }
   }
   *(this + 4) = aP1->sectionHead[0]; /*0x67a2f3*/
@@ -508,8 +508,8 @@ CCINIClass *__thiscall TypeList::VoxelAnimConstructor(_DWORD *this)
 {
   *(this + 1) = 0; /*0x67a394*/
   *(this + 2) = 0; /*0x67a397*/
-  *((_BYTE *)this + 12) = 1; /*0x67a39a*/
-  *((_BYTE *)this + 13) = 0; /*0x67a39e*/
+  this->IsInitialized = 1; /*0x67a39a*/
+  this->IsAllocated = 0; /*0x67a39e*/
   *(this + 5) = 10; /*0x67a3a1*/
   *(this + 4) = 0; /*0x67a3a8*/
   *this = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x67a3ab*/
@@ -525,8 +525,8 @@ DynamicVector *__thiscall TypeList::Construct(_DWORD *this)
 {
   *(this + 1) = 0; /*0x67a4f4*/
   *(this + 2) = 0; /*0x67a4f7*/
-  *((_BYTE *)this + 12) = 1; /*0x67a4fa*/
-  *((_BYTE *)this + 13) = 0; /*0x67a4fe*/
+  this->IsInitialized = 1; /*0x67a4fa*/
+  this->IsAllocated = 0; /*0x67a4fe*/
   *(this + 5) = 10; /*0x67a501*/
   *(this + 4) = 0; /*0x67a508*/
   *this = &TypeList<int>::`vftable'; /*0x67a50b*/
@@ -542,8 +542,8 @@ CCINIClass *__thiscall TypeList::ConstructSmudge(_DWORD *this)
 {
   *(this + 1) = 0; /*0x67a604*/
   *(this + 2) = 0; /*0x67a607*/
-  *((_BYTE *)this + 12) = 1; /*0x67a60a*/
-  *((_BYTE *)this + 13) = 0; /*0x67a60e*/
+  this->IsInitialized = 1; /*0x67a60a*/
+  this->IsAllocated = 0; /*0x67a60e*/
   *(this + 5) = 10; /*0x67a611*/
   *(this + 4) = 0; /*0x67a618*/
   *this = &TypeList<SmudgeTypeClass const *>::`vftable'; /*0x67a61b*/
@@ -569,8 +569,8 @@ _DWORD *__thiscall sub_67A820(_DWORD *this)
 {
   *(this + 1) = 0; /*0x67a824*/
   *(this + 2) = 0; /*0x67a827*/
-  *((_BYTE *)this + 12) = 1; /*0x67a82a*/
-  *((_BYTE *)this + 13) = 0; /*0x67a82e*/
+  this->IsInitialized = 1; /*0x67a82a*/
+  this->IsAllocated = 0; /*0x67a82e*/
   *(this + 5) = 10; /*0x67a831*/
   *(this + 4) = 0; /*0x67a838*/
   *this = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x67a83b*/
@@ -622,36 +622,36 @@ char __thiscall TypeList::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x67b05c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x67b062*/
+    this->IsInitialized = 0; /*0x67b062*/
     if ( a3 ) /*0x67b068*/
       v4 = a3; /*0x67b07e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x67b07a*/
-    *((_BYTE *)this + 12) = 1; /*0x67b082*/
+    this->IsInitialized = 1; /*0x67b082*/
     if ( !v4 ) /*0x67b086*/
       return 0; /*0x67b0fa*/
-    if ( *((_DWORD *)this + 1) ) /*0x67b088*/
+    if ( this->Items ) /*0x67b088*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x67b08f*/
+      v5 = this->Capacity; /*0x67b08f*/
       if ( a2 < v5 ) /*0x67b094*/
         v5 = a2; /*0x67b096*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x67b09c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67b09c*/
         ++i; /*0x67b0a1*/
-      if ( *((_BYTE *)this + 13) ) /*0x67b0ae*/
+      if ( this->IsAllocated ) /*0x67b0ae*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b0b9*/
-        *((_DWORD *)this + 1) = 0; /*0x67b0c1*/
+        this->Items = 0; /*0x67b0c1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x67b0ca*/
-    *((_DWORD *)this + 2) = a2; /*0x67b0d2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x67b0d5*/
+    this->Items = v4; /*0x67b0ca*/
+    this->Capacity = a2; /*0x67b0d2*/
+    this->IsAllocated = a3 == 0; /*0x67b0d5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x67b0de*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x67b0e1*/
+  v7 = this->Capacity; /*0x67b0e1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x67b0e9*/
     *((_DWORD *)this + 4) = v7; /*0x67b0eb*/
   return 1; /*0x67b0ee*/
@@ -671,8 +671,8 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
 
   *(this + 1) = 0; /*0x67c1fd*/
   *(this + 2) = 0; /*0x67c200*/
-  *((_BYTE *)this + 12) = 1; /*0x67c203*/
-  *((_BYTE *)this + 13) = 0; /*0x67c207*/
+  this->IsInitialized = 1; /*0x67c203*/
+  this->IsAllocated = 0; /*0x67c207*/
   *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c20a*/
   if ( this != (_DWORD *)aP1 ) /*0x67c210*/
   {
@@ -687,7 +687,7 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
       {
         v5 = *(this + 2); /*0x67c235*/
         v6 = 0; /*0x67c238*/
-        *((_BYTE *)this + 13) = 1; /*0x67c23c*/
+        this->IsAllocated = 1; /*0x67c23c*/
         if ( v5 > 0 ) /*0x67c240*/
         {
           do /*0x67c254*/
@@ -702,7 +702,7 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
     else
     {
       *(this + 1) = 0; /*0x67c258*/
-      *((_BYTE *)this + 13) = 0; /*0x67c25b*/
+      this->IsAllocated = 0; /*0x67c25b*/
     }
   }
   *(this + 4) = aP1->field_10; /*0x67c261*/
@@ -720,8 +720,8 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x717c79*/
   *(this + 2) = a2; /*0x717c80*/
-  *((_BYTE *)this + 12) = 1; /*0x717c83*/
-  *((_BYTE *)this + 13) = 0; /*0x717c87*/
+  this->IsInitialized = 1; /*0x717c83*/
+  this->IsAllocated = 0; /*0x717c87*/
   *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
@@ -732,7 +732,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
     else
     {
       *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x717cac*/
-      *((_BYTE *)this + 13) = 1; /*0x717caf*/
+      this->IsAllocated = 1; /*0x717caf*/
     }
   }
   *this = &DynamicVectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717cb3*/
@@ -756,7 +756,7 @@ char __thiscall TypeList::PushBack(_DWORD *this, VectorClass *aP1)
   v3 = *(this + 2); /*0x717cd3*/
   if ( *(this + 4) >= v3 ) /*0x717cdb*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x717ce6*/
+    if ( !this->IsAllocated && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *(this + 5); /*0x717ce8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x717cf8*/

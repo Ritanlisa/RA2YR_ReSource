@@ -621,22 +621,6 @@ int __thiscall sub_771710(int this)
 }
 } // namespace gamemd
 
-// 0x771780
-namespace gamemd {
-void nullsub_259()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x771790
-namespace gamemd {
-void nullsub_260()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7717A0
 namespace gamemd {
 DWORD sub_7717A0()
@@ -736,15 +720,15 @@ void __thiscall sub_771A00(void *this)
 {
   CCINIClass *v2; // eax
 
-  v2 = (CCINIClass *)*((_DWORD *)this + 1); /*0x771a06*/
+  v2 = (CCINIClass *)this->Items; /*0x771a06*/
   *(_DWORD *)this = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x771a13*/
+  if ( v2 && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(v2); /*0x771a19*/
-    *((_DWORD *)this + 1) = 0; /*0x771a21*/
+    this->Items = 0; /*0x771a21*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x771a24*/
-  this->VectorClass_field_0x8 = 0; /*0x771a27*/
+  this->IsAllocated = 0; /*0x771a24*/
+  this->Capacity = 0; /*0x771a27*/
 }
 }
 } // namespace gamemd
@@ -2399,18 +2383,9 @@ LRESULT __fastcall FindListBoxItem(HWND hWnd, LRESULT wParam, int a3)
 }
 } // namespace gamemd
 
-// 0x776EA0
-namespace gamemd {
-void nullsub_261()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x776EB0
 namespace gamemd {
 void * sub_776EB0()
-// 0x776ea0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_776EB0(void *this)
@@ -2887,14 +2862,6 @@ LABEL_72:
 }
 } // namespace gamemd
 
-// 0x777AB0
-namespace gamemd {
-void nullsub_262()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x777BB0
 namespace gamemd {
 ObjectClass * sub_777BB0(char * Buffer)
@@ -3095,14 +3062,6 @@ LONG __thiscall sub_777F90(HWND hWnd)
   }
   return result; /*0x778024*/
 }
-}
-} // namespace gamemd
-
-// 0x778170
-namespace gamemd {
-void nullsub_48()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -6636,14 +6595,6 @@ int sub_77D160()
 }
 } // namespace gamemd
 
-// 0x77D190
-namespace gamemd {
-void nullsub_263()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x77D1A0
 namespace gamemd {
 int sub_77D1A0()
@@ -7146,14 +7097,6 @@ void sub_77DFD0()
   Config::SaveObserverMode(); /*0x77e0f0*/
   RawFileClass::Dtor(v0); /*0x77e0f9*/
 }
-}
-} // namespace gamemd
-
-// 0x77E780
-namespace gamemd {
-int sub_77E780()
-{
-  return CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash;
 }
 } // namespace gamemd
 
@@ -7982,10 +7925,66 @@ char __fastcall sub_77F710(unsigned __int8 a1, char a2)
 }
 } // namespace gamemd
 
+// 0x771780
+namespace gamemd {
+void nullsub_259()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x771790
+namespace gamemd {
+void nullsub_260()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x775B40
 namespace gamemd {
 INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x776EA0
+namespace gamemd {
+void nullsub_261()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x777AB0
+namespace gamemd {
+void nullsub_262()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x778170
+namespace gamemd {
+void nullsub_48()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x77D190
+namespace gamemd {
+void nullsub_263()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x77E780
+namespace gamemd {
+int sub_77E780()
+{
+  return CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash;
 }
 } // namespace gamemd

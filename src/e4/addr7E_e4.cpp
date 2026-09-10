@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x7E0000
-namespace gamemd {
-void nullsub_272()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7E0001
 namespace gamemd {
 void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
@@ -228,5 +220,13 @@ void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int
   ObfuscateDataBlock(v11, v7, a4); /*0x7e02b5*/
   qmemcpy(a2, v7, 4 * v8); /*0x7e02c6*/
 }
+}
+} // namespace gamemd
+
+// 0x7E0000
+namespace gamemd {
+void nullsub_272()
+{
+  ;
 }
 } // namespace gamemd

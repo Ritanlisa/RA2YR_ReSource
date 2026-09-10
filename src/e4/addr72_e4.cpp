@@ -663,14 +663,6 @@ void __thiscall sub_723510(int this)
 }
 } // namespace gamemd
 
-// 0x7236D0
-namespace gamemd {
-void nullsub_158()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x723A90
 namespace gamemd {
 void sub_723A90()
@@ -5409,6 +5401,14 @@ _DWORD *__fastcall Screen_SetupBuffers(int a1, int a2)
   }
   return result; /*0x7300d6*/
 }
+}
+} // namespace gamemd
+
+// 0x7236D0
+namespace gamemd {
+void nullsub_158()
+{
+  ;
 }
 } // namespace gamemd
 

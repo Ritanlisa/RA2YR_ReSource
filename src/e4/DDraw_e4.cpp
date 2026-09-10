@@ -213,12 +213,6 @@ int DDraw_WaitForIdle()
 }
 }
 
-// 0x4BBC90
-int DDraw::GetStatus()
-{
-return g_DDraw_PixelFormat;
-}
-
 // 0x4C19B0
 int DDraw::CleanupSurfaces()
 {
@@ -322,4 +316,10 @@ char __thiscall DDraw_HandleSuspend(_DWORD *this)
   }
   return v1; /*0x5d25c4*/
 }
+}
+
+// 0x4BBC90
+int DDraw::GetStatus()
+{
+return g_DDraw_PixelFormat;
 }

@@ -2517,47 +2517,6 @@ LABEL_21:
 }
 } // namespace gamemd
 
-// 0x7AC4A0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_38(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7AC4B0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_39(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7AC4C0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_45(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7AC4D0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_46(int a1, int a2, int a3)
-// 0x7ac4c0
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7AC4E0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x7AC690
 namespace gamemd {
 LONG CComObject_CChatEventSink___ATL::AddRef()
@@ -2675,6 +2634,47 @@ return 0;
 // 0x7AB340
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AC4A0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_38(int a1, int a2, int a3)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AC4B0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_39(int a1, int a2, int a3)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AC4C0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_45(int a1, int a2, int a3)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AC4D0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_46(int a1, int a2, int a3)
+// 0x7ac4c0
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7AC4E0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 {
 return 0;
 }

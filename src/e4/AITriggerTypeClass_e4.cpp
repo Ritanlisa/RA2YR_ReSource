@@ -633,6 +633,16 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 }
 }
 
+// 0x41FFD0
+int AITriggerTypeClass::GetTypeIdentifier()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int AITriggerTypeClass::_vt11()
+{
+  return 59; /*0x41ffd5*/
+}
+}
+
 // 0x41FFF0
 AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
 {
@@ -986,12 +996,6 @@ DynamicVector *__thiscall AITriggerTypeClass_40_::Constructor_VectorClass_AlphaL
 }
 }
 } // namespace gamemd
-
-// 0x41FFD0
-int AITriggerTypeClass::GetTypeIdentifier()
-{
-return 59;
-}
 
 // 0x41FFE0
 int AITriggerTypeClass::GetObjectSize()

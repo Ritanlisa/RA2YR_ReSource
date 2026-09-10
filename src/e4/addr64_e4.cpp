@@ -1909,14 +1909,6 @@ int sub_646D90()
 }
 } // namespace gamemd
 
-// 0x646DB0
-namespace gamemd {
-void nullsub_216()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x646DC0
 namespace gamemd {
 unsigned int * sub_646DC0()
@@ -2120,14 +2112,6 @@ LABEL_31:
     }
   }
 }
-}
-} // namespace gamemd
-
-// 0x648340
-namespace gamemd {
-void nullsub_32()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -4404,6 +4388,22 @@ int ComputeNetworkFrameCRC()
                               + 2 * *(_DWORD *)MEMORY[0xAC51FC];
   return AllocateTriggerLog((int)MEMORY[0xA8ED84] % 256); /*0x64de75*/
 }
+}
+} // namespace gamemd
+
+// 0x646DB0
+namespace gamemd {
+void nullsub_216()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x648340
+namespace gamemd {
+void nullsub_32()
+{
+  ;
 }
 } // namespace gamemd
 

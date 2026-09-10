@@ -2,30 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41B900
-namespace gamemd {
-void TacticalClass::StubReturnTrue()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x41BF10
-namespace gamemd {
-int TacticalClass::StubReturnFalse3()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x41BF20
-namespace gamemd {
-int TacticalClass::StubReturnFalse4()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x41BF80
 namespace gamemd {
 int TacticalClass::StubReturnFalse5()
@@ -52,39 +28,6 @@ int __thiscall TacticalClass::StubReturnFalse6(#377 *this)
 
   return result; /*0x41bf90*/
 }
-}
-} // namespace gamemd
-
-// 0x41BFB0
-namespace gamemd {
-char TacticalClass::StubReturnFalse7()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x41BFC0
-namespace gamemd {
-int TacticalClass::StubReturnFalse8()
-// 0x41bfb0
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x41BFD0
-namespace gamemd {
-int TacticalClass::StubReturnFalse9()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x41C000
-namespace gamemd {
-void TacticalClass::StubReturnTrue2()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1147,7 +1090,7 @@ int *__thiscall TacticalClass::DrawBuildingsInView(int this, AbstractClass *aP1)
 
   v3 = *(_DWORD *)aP1->__pad_0; /*0x6d6d2f*/
   v42 = 0; /*0x6d6d31*/
-  v4 = *(_DWORD *)(this + 176) + v3; /*0x6d6d45*/
+  v4 = this->visibleArea + v3; /*0x6d6d45*/
   v5 = *(_DWORD *)&aP1->__pad_0[4] + *(_DWORD *)(this + 180); /*0x6d6d4c*/
   v34 = v4 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x6d6d4e*/
   v35 = v5 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x6d6d58*/
@@ -1224,7 +1167,7 @@ int *__thiscall TacticalClass::DrawBuildingsInView(int this, AbstractClass *aP1)
                 var74 = v55[1]; /*0x6d6fb6*/
                 v44 = (IUnknown *)v55[2]; /*0x6d6fc6*/
                 v21 = Coord::To_ScreenRaw((int *)&v40, &a1); /*0x6d6fca*/
-                v22 = *(_DWORD *)(this + 176); /*0x6d6fcf*/
+                v22 = this->visibleArea; /*0x6d6fcf*/
                 v23 = *(_DWORD *)(this + 180); /*0x6d6fd7*/
                 var90[0] = *v21; /*0x6d6fdf*/
                 v24 = v21[1] - v23; /*0x6d6feb*/
@@ -1877,26 +1820,9 @@ LABEL_44:
 }
 } // namespace gamemd
 
-// 0x701190
-namespace gamemd {
-char TacticalClass::StubReturnFalse11()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x70D980
-namespace gamemd {
-void TacticalClass::StubReturnTrue3()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x70f0b0
+// 0x70F0B0
 namespace gamemd {
 int TacticalClass::MapSpecialDrawMode(MouseClass * aP1)
-// 0x70d980
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::MapSpecialDrawMode(void *this, MouseClass *aP1)
@@ -2099,6 +2025,14 @@ LABEL_11:
 }
 } // namespace gamemd
 
+// 0x41B900
+namespace gamemd {
+void TacticalClass::StubReturnTrue()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x41BEE0
 namespace gamemd {
 char TacticalClass::StubReturnFalse()
@@ -2112,5 +2046,70 @@ namespace gamemd {
 int TacticalClass::StubReturnFalse2()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x41BF10
+namespace gamemd {
+int TacticalClass::StubReturnFalse3()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41BF20
+namespace gamemd {
+int TacticalClass::StubReturnFalse4()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41BFB0
+namespace gamemd {
+char TacticalClass::StubReturnFalse7()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41BFC0
+namespace gamemd {
+int TacticalClass::StubReturnFalse8()
+// 0x41bfb0
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41BFD0
+namespace gamemd {
+int TacticalClass::StubReturnFalse9()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x41C000
+namespace gamemd {
+void TacticalClass::StubReturnTrue2()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x701190
+namespace gamemd {
+char TacticalClass::StubReturnFalse11()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x70D980
+namespace gamemd {
+void TacticalClass::StubReturnTrue3()
+{
+  ;
 }
 } // namespace gamemd

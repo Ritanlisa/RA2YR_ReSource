@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x6C0025
-namespace gamemd {
-void nullsub_114(int a1, int a2)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6C6520
 namespace gamemd {
 int sub_6C6520()
@@ -265,14 +257,6 @@ int sub_6C6AD0()
   MEMORY[0xB0BD28] = Timer::GetTicks(); /*0x6c6adf*/
   return atexit(nullsub_234); /*0x6c6aea*/
 }
-}
-} // namespace gamemd
-
-// 0x6C6AF0
-namespace gamemd {
-void nullsub_234()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1312,18 +1296,9 @@ _DWORD *__thiscall sub_6C9AC0(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x6C9F00
-namespace gamemd {
-void nullsub_40()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6CA1E0
 namespace gamemd {
 char sub_6CA1E0(char * Source)
-// 0x6c9f00
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6CA1E0(char *this, char *Source)
@@ -1877,22 +1852,6 @@ int sub_6CAE00()
 }
 } // namespace gamemd
 
-// 0x6CC070
-namespace gamemd {
-void nullsub_231()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6CDE80
-namespace gamemd {
-void nullsub_235(int a1, int a2)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6CE360
 namespace gamemd {
 int sub_6CE360()
@@ -2162,8 +2121,8 @@ _DWORD *__thiscall sub_6CF8F0(_DWORD *this, int a2, _DWORD *a3)
 
   *(this + 1) = 0; /*0x6cf8fd*/
   *(this + 2) = a2; /*0x6cf900*/
-  *((_BYTE *)this + 12) = 1; /*0x6cf903*/
-  *((_BYTE *)this + 13) = 0; /*0x6cf907*/
+  this->IsInitialized = 1; /*0x6cf903*/
+  this->IsAllocated = 0; /*0x6cf907*/
   *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
     return this; /*0x6cf910*/
@@ -2185,7 +2144,7 @@ _DWORD *__thiscall sub_6CF8F0(_DWORD *this, int a2, _DWORD *a3)
         }
         while ( v9 ); /*0x6cf961*/
         *(this + 1) = v7; /*0x6cf963*/
-        *((_BYTE *)this + 13) = 1; /*0x6cf966*/
+        this->IsAllocated = 1; /*0x6cf966*/
         return this; /*0x6cf96f*/
       }
     }
@@ -2194,7 +2153,7 @@ _DWORD *__thiscall sub_6CF8F0(_DWORD *this, int a2, _DWORD *a3)
       v7 = 0; /*0x6cf972*/
     }
     *(this + 1) = v7; /*0x6cf974*/
-    *((_BYTE *)this + 13) = 1; /*0x6cf977*/
+    this->IsAllocated = 1; /*0x6cf977*/
     return this; /*0x6cf97b*/
   }
   v4 = a3; /*0x6cf91d*/
@@ -2615,5 +2574,45 @@ int __thiscall sub_6CFE10(void *this)
 {
   return (int)this - MEMORY[0xB0CC20] + 1; /*0x6cfe19*/
 }
+}
+} // namespace gamemd
+
+// 0x6C0025
+namespace gamemd {
+void nullsub_114(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6C6AF0
+namespace gamemd {
+void nullsub_234()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6C9F00
+namespace gamemd {
+void nullsub_40()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6CC070
+namespace gamemd {
+void nullsub_231()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6CDE80
+namespace gamemd {
+void nullsub_235(int a1, int a2)
+{
+  ;
 }
 } // namespace gamemd

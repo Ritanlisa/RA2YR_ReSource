@@ -156,22 +156,6 @@ int __stdcall TemporalClass::SaveTemporal(TechnoTypeClass *aP0, int *a1, int aP2
 } // namespace game
 } // namespace ra2
 
-// 0x71A720
-namespace ra2 {
-namespace game {
-int TemporalClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1810815964;
-  a2[1] = 299099139;
-  a2[2] = 1342205582;
-  a2[3] = -72177148;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x71A760
 namespace ra2 {
 namespace game {
@@ -492,6 +476,22 @@ TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x71b227*/
   return (TemporalClass *)Block; /*0x71b231*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x71A720
+namespace ra2 {
+namespace game {
+int TemporalClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1810815964;
+  a2[1] = 299099139;
+  a2[2] = 1342205582;
+  a2[3] = -72177148;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

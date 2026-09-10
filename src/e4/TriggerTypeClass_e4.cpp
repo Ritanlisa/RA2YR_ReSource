@@ -417,20 +417,6 @@ LABEL_231:
 }
 } // namespace gamemd
 
-// 0x727BB0
-namespace gamemd {
-int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1070787183;
-  a2[1] = 298977834;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x727BF0
 namespace gamemd {
 int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
@@ -482,6 +468,20 @@ int __stdcall TriggerTypeClass::Write(TechnoTypeClass *aP0, int *a1, int aP2)
     return 0; /*0x727c98*/
   return result; /*0x727c9a*/
 }
+}
+} // namespace gamemd
+
+// 0x727BB0
+namespace gamemd {
+int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1070787183;
+  a2[1] = 298977834;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

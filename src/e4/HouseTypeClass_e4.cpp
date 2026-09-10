@@ -250,7 +250,7 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                        (int)v3,
                        (INIClass *)(this + 36),
                        aFirepower,
-                       (INIClass *)*(_DWORD *)(this + 200));
+                       (INIClass *)this->firepowerMult);
   aP3 = *(INIClass **)(this + 208); /*0x51199b*/
   *(double *)(this + 200) = Double_Overwrite; /*0x5119a1*/
   v7 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(this + 36), &unk_825488, aP3); /*0x5119b1*/
@@ -596,13 +596,13 @@ int __thiscall HouseTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(this->arrayIndex2); /*0x512188*/
   Power::TimerProcess(this->sideIndex); /*0x512196*/
   Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
-  Checksummer::Add_double(*(_DWORD *)(this + 200), *(_DWORD *)(this + 204)); /*0x5121b9*/
-  Checksummer::Add_double(*(_DWORD *)(this + 208), *(_DWORD *)(this + 212)); /*0x5121ce*/
-  Checksummer::Add_double(*(_DWORD *)(this + 216), *(_DWORD *)(this + 220)); /*0x5121e3*/
-  Checksummer::Add_double(*(_DWORD *)(this + 224), *(_DWORD *)(this + 228)); /*0x5121f8*/
-  Checksummer::Add_double(*(_DWORD *)(this + 232), *(_DWORD *)(this + 236)); /*0x51220d*/
-  Checksummer::Add_double(*(_DWORD *)(this + 240), *(_DWORD *)(this + 244)); /*0x512222*/
-  Checksummer::Add_double(*(_DWORD *)(this + 248), *(_DWORD *)(this + 252)); /*0x512237*/
+  Checksummer::Add_double(this->firepowerMult, *(_DWORD *)(this + 204)); /*0x5121b9*/
+  Checksummer::Add_double(this->groundspeedMult, *(_DWORD *)(this + 212)); /*0x5121ce*/
+  Checksummer::Add_double(this->airspeedMult, *(_DWORD *)(this + 220)); /*0x5121e3*/
+  Checksummer::Add_double(this->armorMult, *(_DWORD *)(this + 228)); /*0x5121f8*/
+  Checksummer::Add_double(this->rofMult, *(_DWORD *)(this + 236)); /*0x51220d*/
+  Checksummer::Add_double(this->costMult, *(_DWORD *)(this + 244)); /*0x512222*/
+  Checksummer::Add_double(this->buildtimeMult, *(_DWORD *)(this + 252)); /*0x512237*/
   Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 416), strlen((const char *)(this + 416))); /*0x512252*/
   LOBYTE(v3) = *(_BYTE *)(this + 420); /*0x512257*/
   v4 = Power::FinalizeDrain(a2, v3); /*0x512260*/
@@ -724,18 +724,6 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 }
 } // namespace gamemd
 
-// 0x512570
-namespace gamemd {
-int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  a2[1] = 0;
-  *a2 = 436;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x5125A0
 namespace gamemd {
 int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
@@ -770,28 +758,6 @@ int __stdcall HouseTypeClass::_vt00(int a1, const void *a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x512640
-namespace gamemd {
-int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 500447528;
-  a2[1] = 298976363;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
-// 0x512720
-namespace gamemd {
-int HouseTypeClass::GetObjectSize()
-{
-return 432;
-}
-} // namespace gamemd
-
 // 0x512730
 namespace gamemd {
 unsigned int HouseTypeClass::loadBuildLimits()
@@ -804,26 +770,9 @@ unsigned int __thiscall HouseTypeClass::loadBuildLimits(Concurrency::details::Sc
 }
 } // namespace gamemd
 
-// 0x512740
-namespace gamemd {
-int HouseTypeClass::AddRef(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x512750
-namespace gamemd {
-int HouseTypeClass::Release(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x512760
 namespace gamemd {
 HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
-// 0x512750
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **Block, char a2)
@@ -1835,10 +1784,60 @@ return 0;
 }
 } // namespace gamemd
 
+// 0x512570
+namespace gamemd {
+int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  a2[1] = 0;
+  *a2 = 436;
+  return 0;
+}
+} // namespace gamemd
+
+// 0x512640
+namespace gamemd {
+int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 500447528;
+  a2[1] = 298976363;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x512710
 namespace gamemd {
 int HouseTypeClass::GetTypeIdentifier()
 {
 return 14;
+}
+} // namespace gamemd
+
+// 0x512720
+namespace gamemd {
+int HouseTypeClass::GetObjectSize()
+{
+return 432;
+}
+} // namespace gamemd
+
+// 0x512740
+namespace gamemd {
+int HouseTypeClass::AddRef(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x512750
+namespace gamemd {
+int HouseTypeClass::Release(int a1)
+{
+return 1;
 }
 } // namespace gamemd

@@ -617,20 +617,6 @@ int __thiscall TEventClass::_vt13(int this, int a2)
 }
 } // namespace gamemd
 
-// 0x71F880
-namespace gamemd {
-int TEventClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1326367635;
-  a2[1] = 298977877;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x71F8C0
 namespace gamemd {
 int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
@@ -751,6 +737,20 @@ TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x71fb90*/
   return (TEventClass *)Block; /*0x71fb9a*/
 }
+}
+} // namespace gamemd
+
+// 0x71F880
+namespace gamemd {
+int TEventClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1326367635;
+  a2[1] = 298977877;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

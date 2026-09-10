@@ -290,20 +290,6 @@ int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x6447A0
-namespace gamemd {
-int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1883112522;
-  a2[1] = 298979249;
-  a2[2] = 1610642049;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6447E0
 namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
@@ -334,22 +320,6 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, O
   AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x64483f*/
   return 0; /*0x644846*/
 }
-}
-} // namespace gamemd
-
-// 0x644940
-namespace gamemd {
-char ParticleSystemTypeClass::Stub(int a1, int a2)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x644950
-namespace gamemd {
-int ParticleSystemTypeClass::StubReturnFalse(int a1)
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -387,6 +357,20 @@ ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **Block,
 }
 } // namespace gamemd
 
+// 0x6447A0
+namespace gamemd {
+int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1883112522;
+  a2[1] = 298979249;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x644920
 namespace gamemd {
 int ParticleSystemTypeClass::GetObjectSize()
@@ -400,5 +384,21 @@ namespace gamemd {
 int ParticleSystemTypeClass::GetTypeIdentifier()
 {
 return 25;
+}
+} // namespace gamemd
+
+// 0x644940
+namespace gamemd {
+char ParticleSystemTypeClass::Stub(int a1, int a2)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x644950
+namespace gamemd {
+int ParticleSystemTypeClass::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

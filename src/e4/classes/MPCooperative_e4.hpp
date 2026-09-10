@@ -40,9 +40,6 @@ struct MPCooperative {
     void ShowScoreScreen(int a2);  // 0x5C44E0
     int checkVictory();  // 0x5C4670
     int InitializePlayers();  // 0x5C4CA0
-    char assignResources();  // 0x5C4EE0
-    char setUpAlliances();  // 0x5C4EF0
-    char initTurnOrder();  // 0x5C4F00
     unsigned int * processTurnEnd(unsigned int * a2);  // 0x5C4F30
     DynamicVector * saveGameState(unsigned int * Block, char a2);  // 0x5C4FC0
     void loadGameState();  // 0x5C5010
@@ -67,8 +64,11 @@ struct MPCooperative {
     VectorClass * processVote(unsigned int * Block, char a2);  // 0x5C58A0
     DynamicVector * tallyVotes(unsigned int * Block, char a2);  // 0x5C5990
     unsigned int * applyVoteResult(int a2, int a3);  // 0x5C59E0
-    char Stub();  // 0x5D6360
     int finalizeSession();  // 0x696F30
+    char assignResources();  // 0x5C4EE0
+    char setUpAlliances();  // 0x5C4EF0
+    char initTurnOrder();  // 0x5C4F00
+    char Stub();  // 0x5D6360
     char StubReturnFalse();  // 0x5C3700
     int COMStub_Ret2();  // 0x5C42C0
 };

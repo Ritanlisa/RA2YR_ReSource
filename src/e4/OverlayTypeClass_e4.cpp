@@ -477,18 +477,6 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTy
 }
 }
 
-// 0x5FEC30
-int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862009;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x5FED00
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
@@ -684,6 +672,18 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->IsLogic = 1; /*0x64420e*/
   return this; /*0x644217*/
 }
+}
+
+// 0x5FEC30
+int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862009;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x5FEF00

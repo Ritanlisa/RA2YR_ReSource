@@ -2967,20 +2967,6 @@ int __stdcall TeamClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP
 }
 } // namespace gamemd
 
-// 0x6EC560
-namespace gamemd {
-int TeamClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448655;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6EC5A0
 namespace gamemd {
 int TeamClass::PowerDrainUpdate(int * a2)
@@ -3031,7 +3017,7 @@ int __thiscall TeamClass::_vt13(int this, int *a2)
     v8 = (*(int (__stdcall **)(int))(*(_DWORD *)(v7 + 4) + 16))(v7 + 4); /*0x6ec613*/
     Power::TimerProcess(v8); /*0x6ec619*/
   }
-  v9 = *(_DWORD *)(this + 88); /*0x6ec61e*/
+  v9 = this->guardAreaTimer; /*0x6ec61e*/
   v10 = *(_DWORD *)(this + 96); /*0x6ec621*/
   if ( v9 != -1 ) /*0x6ec627*/
   {
@@ -3041,7 +3027,7 @@ int __thiscall TeamClass::_vt13(int this, int *a2)
       v10 -= (int)MEMORY[0xA8ED84] - v9; /*0x6ec635*/
   }
   Power::TimerProcess(v10); /*0x6ec63e*/
-  v11 = *(_DWORD *)(this + 100); /*0x6ec643*/
+  v11 = this->suspendTimer; /*0x6ec643*/
   v12 = *(_DWORD *)(this + 108); /*0x6ec646*/
   if ( v11 != -1 ) /*0x6ec64c*/
   {
@@ -3188,6 +3174,20 @@ void __thiscall TeamClass::MoveTeamToWaypoint(int **this, ScriptClass *aP1, Team
   }
   TeamClass::UpdateMembers((int)v3); /*0x6ec98b*/
 }
+}
+} // namespace gamemd
+
+// 0x6EC560
+namespace gamemd {
+int TeamClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448655;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd
 

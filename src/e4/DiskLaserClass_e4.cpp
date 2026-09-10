@@ -78,18 +78,6 @@ int __stdcall DiskLaserClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 }
 
-// 0x4A7C30
-int DiskLaserClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1378929064;
-  a2[1] = 1206682730;
-  a2[2] = -1786862915;
-  a2[3] = 1226661444;
-  return 0;
-}
-
 // 0x4A7C90
 DiskLaserClass * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
@@ -119,6 +107,18 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x4a7d07*/
   return (DiskLaserClass *)Block; /*0x4a7d11*/
 }
+}
+
+// 0x4A7C30
+int DiskLaserClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1378929064;
+  a2[1] = 1206682730;
+  a2[2] = -1786862915;
+  a2[3] = 1226661444;
+  return 0;
 }
 
 // 0x4A7C70

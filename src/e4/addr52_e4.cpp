@@ -92,14 +92,6 @@ char __thiscall sub_522540(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x522A50
-namespace gamemd {
-void nullsub_146(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x523440
 namespace gamemd {
 int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
@@ -326,14 +318,6 @@ int sub_523680()
   MEMORY[0xA8F25C] = 0; /*0x523691*/
   return 0; /*0x523696*/
 }
-}
-} // namespace gamemd
-
-// 0x523C80
-namespace gamemd {
-void nullsub_147()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -967,7 +951,7 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
   if ( !(unsigned char)this->attachedBomb ) /*0x52a525*/
   {
     qsort(*(void **)(this + 44), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a536*/
-    *(_DWORD *)(this + 60) = 0; /*0x52a53e*/
+    this->ambientSoundController = 0; /*0x52a53e*/
     *(_BYTE *)(this + 56) = 1; /*0x52a541*/
   }
   v7 = this->nextObject; /*0x52a545*/
@@ -976,18 +960,18 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
   v9 = UI_Find(v8, v7, (int *)v17); /*0x52a554*/
   if ( !v9 ) /*0x52a55b*/
     return 0; /*0x52a5f8*/
-  *(_DWORD *)(this + 60) = v9; /*0x52a561*/
+  this->ambientSoundController = v9; /*0x52a561*/
 LABEL_9:
   v10 = this->nextObject; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
     return unk_B78830; /*0x52a56a*/
   v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
-    return *(_DWORD *)(*(_DWORD *)(this + 60) + 4); /*0x52a5f3*/
+    return *(_DWORD *)(this->ambientSoundController + 4); /*0x52a5f3*/
   if ( !(unsigned char)this->attachedBomb ) /*0x52a577*/
   {
     qsort(*(void **)(this + 44), v10, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a588*/
-    *(_DWORD *)(this + 60) = 0; /*0x52a590*/
+    this->ambientSoundController = 0; /*0x52a590*/
     *(_BYTE *)(this + 56) = 1; /*0x52a593*/
   }
   v12 = this->nextObject; /*0x52a597*/
@@ -1013,8 +997,8 @@ LABEL_19:
   }
   if ( v15 ) /*0x52a5df*/
   {
-    *(_DWORD *)(this + 60) = v15; /*0x52a5e1*/
-    return *(_DWORD *)(*(_DWORD *)(this + 60) + 4); /*0x52a5e1*/
+    this->ambientSoundController = v15; /*0x52a5e1*/
+    return *(_DWORD *)(this->ambientSoundController + 4); /*0x52a5e1*/
   }
   return unk_B78830; /*0x52a5d2*/
 }
@@ -1389,18 +1373,9 @@ char __usercall Init::Intro@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 }
 } // namespace gamemd
 
-// 0x52CB80
-namespace gamemd {
-void nullsub_18()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x52CD70
 namespace gamemd {
 char InitRules()
-// 0x52cb80
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char InitRules()
@@ -1735,30 +1710,6 @@ INT_PTR __stdcall ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int *a4)
   SendMessageA(v5, 0x186u, 0, 0); /*0x52d500*/
   return 0; /*0x52d464*/
 }
-}
-} // namespace gamemd
-
-// 0x52D610
-namespace gamemd {
-void nullsub_148()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x52D620
-namespace gamemd {
-void nullsub_149()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x52D630
-namespace gamemd {
-void nullsub_150()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2253,5 +2204,53 @@ int __fastcall sub_52FFD0(char a1)
   }
   return result; /*0x52ffe2*/
 }
+}
+} // namespace gamemd
+
+// 0x522A50
+namespace gamemd {
+void nullsub_146(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x523C80
+namespace gamemd {
+void nullsub_147()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x52CB80
+namespace gamemd {
+void nullsub_18()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x52D610
+namespace gamemd {
+void nullsub_148()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x52D620
+namespace gamemd {
+void nullsub_149()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x52D630
+namespace gamemd {
+void nullsub_150()
+{
+  ;
 }
 } // namespace gamemd

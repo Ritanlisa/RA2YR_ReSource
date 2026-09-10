@@ -13,12 +13,6 @@ _DWORD *__thiscall sub_537B40(_DWORD *this)
 }
 }
 
-// 0x537B50
-char * ScreenCaptureCommandClass::AddRef()
-{
-return aScreencapture;
-}
-
 // 0x537B60
 wchar_t * ScreenCaptureCommandClass::ddtor()
 {
@@ -47,4 +41,10 @@ wchar_t *ScreenCaptureCommandClass::_vt04()
 {
   return GetStringCSF(aTxtScrncapDesc, 0, g_Str_File_Init_CPP, 8073); /*0x537bb6*/
 }
+}
+
+// 0x537B50
+char * ScreenCaptureCommandClass::AddRef()
+{
+return aScreencapture;
 }

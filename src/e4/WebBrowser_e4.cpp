@@ -188,64 +188,7 @@ int __thiscall WebBrowser::_vt05(WebBrowser *this)
 }
 } // namespace gamemd
 
-// 0x773B40
-namespace gamemd {
-int WebBrowser::StubReturnFalse()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773B50
-namespace gamemd {
-int WebBrowser::SetSize()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773B60
-namespace gamemd {
-int WebBrowser::CopyTo()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773B70
-namespace gamemd {
-int WebBrowser::Commit()
-// 0x773b60
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773B80
-namespace gamemd {
-int WebBrowser::Revert()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773B90
-namespace gamemd {
-int WebBrowser::LockRegion()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x773BA0
-namespace gamemd {
-int WebBrowser::UnlockRegion()
-{
-return -2147467259;
-}
-} // namespace gamemd
-
-// 0x773bb0
+// 0x773BB0
 namespace gamemd {
 int WebBrowser::Stat()
 {
@@ -467,5 +410,62 @@ namespace gamemd {
 int WebBrowser::COMStub_Return0()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x773B40
+namespace gamemd {
+int WebBrowser::StubReturnFalse()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773B50
+namespace gamemd {
+int WebBrowser::SetSize()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773B60
+namespace gamemd {
+int WebBrowser::CopyTo()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773B70
+namespace gamemd {
+int WebBrowser::Commit()
+// 0x773b60
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773B80
+namespace gamemd {
+int WebBrowser::Revert()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773B90
+namespace gamemd {
+int WebBrowser::LockRegion()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x773BA0
+namespace gamemd {
+int WebBrowser::UnlockRegion()
+{
+return -2147467259;
 }
 } // namespace gamemd

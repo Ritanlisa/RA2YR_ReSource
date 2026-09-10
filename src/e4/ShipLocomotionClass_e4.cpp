@@ -94,18 +94,6 @@ HRESULT __stdcall ShipLocomotionClass::LoadFromStream(int *a1, int *pPStm, int a
 }
 }
 
-// 0x6A3E60
-int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 736785633;
-  a2[1] = 299072714;
-  a2[2] = 268440766;
-  a2[3] = 1822515787;
-  return 0;
-}
-
 // 0x6A42B0
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
@@ -125,6 +113,18 @@ ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **B
     __3_YAXPAX_Z(Block); /*0x6a42e3*/
   return (ShipLocomotionClass *)Block; /*0x6a42ed*/
 }
+}
+
+// 0x6A3E60
+int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 736785633;
+  a2[1] = 299072714;
+  a2[2] = 268440766;
+  a2[3] = 1822515787;
+  return 0;
 }
 
 // 0x6A42A0

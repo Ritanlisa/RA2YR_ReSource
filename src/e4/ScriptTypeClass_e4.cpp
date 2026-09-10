@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x691D50
-namespace gamemd {
-int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1123264071;
-  a2[1] = 298977161;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x691D90
 namespace gamemd {
 int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
@@ -143,6 +129,20 @@ TaskForceClass *__fastcall ScriptTypeClass::ReadINI(char *a1, int a2)
   }
   return result; /*0x6e840d*/
 }
+}
+} // namespace gamemd
+
+// 0x691D50
+namespace gamemd {
+int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1123264071;
+  a2[1] = 298977161;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

@@ -64,144 +64,7 @@ void *ScenarioClass_CopyStartPositions()
 }
 } // namespace gamemd
 
-// 0x5C0E40
-namespace gamemd {
-char ScenarioClass::StubReturnFalse2()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x5C0E50
-namespace gamemd {
-char ScenarioClass::StubReturnFalse3(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5C0E60
-namespace gamemd {
-void ScenarioClass::StubReturnTrue()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0E70
-namespace gamemd {
-void ScenarioClass::StubReturnTrue2()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0E80
-namespace gamemd {
-void ScenarioClass::StubReturnFalse4(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0ED0
-namespace gamemd {
-char ScenarioClass::StubReturnFalse5(int a1, int a2, int a3)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5C0EE0
-namespace gamemd {
-char ScenarioClass::initTriggers()
-// 0x5c0ed0
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5C0EF0
-namespace gamemd {
-void ScenarioClass::StubReturnFalse6(int a1, int a2)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F00
-namespace gamemd {
-void ScenarioClass::StubReturnFalse7(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F10
-namespace gamemd {
-void ScenarioClass::StubReturnTrue3()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F20
-namespace gamemd {
-void ScenarioClass::StubReturnTrue4()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F30
-namespace gamemd {
-int ScenarioClass::initTeams()
-{
-return -1;
-}
-} // namespace gamemd
-
-// 0x5C0F40
-namespace gamemd {
-void ScenarioClass::StubReturnTrue5()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F50
-namespace gamemd {
-void ScenarioClass::StubReturnFalse8(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F60
-namespace gamemd {
-void ScenarioClass::StubReturnFalse9(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5C0F70
-namespace gamemd {
-char ScenarioClass::StubReturnFalse10()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x5C0F80
-namespace gamemd {
-void ScenarioClass::StubReturnTrue6()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5c0f90
+// 0x5C0F90
 namespace gamemd {
 void ScenarioClass::StubReturnTrue7()
 {
@@ -210,30 +73,6 @@ void ScenarioClass::StubReturnTrue7()
 {
   ; /*0x5c0f90*/
 }
-}
-} // namespace gamemd
-
-// 0x5C0FC0
-namespace gamemd {
-int ScenarioClass::StubReturnFalse11()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x5C0FD0
-namespace gamemd {
-char ScenarioClass::initWaypoints()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5C5E30
-namespace gamemd {
-char ScenarioClass::processTriggerEvents()
-{
-return 1;
 }
 } // namespace gamemd
 
@@ -426,46 +265,6 @@ MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *Block, char a2)
 }
 } // namespace gamemd
 
-// 0x5D5DB0
-namespace gamemd {
-int ScenarioClass::MissionStubReturnZero()
-{
-return -2;
-}
-} // namespace gamemd
-
-// 0x5D6310
-namespace gamemd {
-char ScenarioClass::MissionStubReturnZero2(MPCooperative * aP0)
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5D6320
-namespace gamemd {
-char ScenarioClass::saveGame()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5D6330
-namespace gamemd {
-char ScenarioClass::loadGame()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5D6340
-namespace gamemd {
-char ScenarioClass::createStartingForces()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x5D6430
 namespace gamemd {
 int ScenarioClass_dispatchEvents()
@@ -508,14 +307,6 @@ char ScenarioClass_ClearFlag()
 }
 } // namespace gamemd
 
-// 0x5D67A0
-namespace gamemd {
-char ScenarioClass::MissionStubReturnZero4(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x5D6BE0
 namespace gamemd {
 char ScenarioClass::AssignStartPositions(char a1)
@@ -552,15 +343,7 @@ char __stdcall ScenarioClass_AssignStartPositions(char a1)
 }
 } // namespace gamemd
 
-// 0x5D7570
-namespace gamemd {
-char ScenarioClass::processAI()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x5d80b0
+// 0x5D80B0
 namespace gamemd {
 void ScenarioClass::sub_5D80B0()
 {
@@ -602,27 +385,27 @@ int __thiscall ScenarioClass::Constructor(int this)
 
   SeedInitRNG((_DWORD *)(this + 536), 0); /*0x6832cf*/
   *(_DWORD *)(this + 1556) = Timer::GetTicks(); /*0x6832e5*/
-  *(_DWORD *)(this + 1564) = 0; /*0x6832eb*/
+  this->pauseTimer = 0; /*0x6832eb*/
   *(_DWORD *)(this + 1568) = Timer::GetTicks(); /*0x6832f6*/
   *(_DWORD *)(this + 1576) = 0; /*0x6832fc*/
   v2 = MEMORY[0xA8ED84]; /*0x683302*/
   *(_DWORD *)(this + 4592) = 0; /*0x683307*/
-  *(_DWORD *)(this + 4584) = v2; /*0x68330d*/
+  this->missionTimer = v2; /*0x68330d*/
   *(_BYTE *)(this + 4600) = 0; /*0x683313*/
   v3 = MEMORY[0xA8ED84]; /*0x683319*/
   *(_DWORD *)(this + 4640) = 0; /*0x68331f*/
-  *(_DWORD *)(this + 4632) = v3; /*0x683325*/
-  *(_DWORD *)(this + 4644) = MEMORY[0xA8ED84]; /*0x683331*/
+  this->shroudRegrowTimer = v3; /*0x683325*/
+  this->fogTimer = MEMORY[0xA8ED84]; /*0x683331*/
   *(_DWORD *)(this + 4652) = 0; /*0x683337*/
   v4 = MEMORY[0xA8ED84]; /*0x68333d*/
   *(_DWORD *)(this + 4664) = 0; /*0x683342*/
-  *(_DWORD *)(this + 4656) = v4; /*0x683348*/
-  *(_DWORD *)(this + 4668) = MEMORY[0xA8ED84]; /*0x683354*/
+  this->iceTimer = v4; /*0x683348*/
+  this->ScenarioClass_field_timer_123c = MEMORY[0xA8ED84]; /*0x683354*/
   *(_DWORD *)(this + 4676) = 0; /*0x68335a*/
   v5 = MEMORY[0xA8ED84]; /*0x683360*/
   *(_DWORD *)(this + 4688) = 0; /*0x683366*/
-  *(_DWORD *)(this + 4680) = v5; /*0x68336c*/
-  *(_DWORD *)(this + 13504) = MEMORY[0xA8ED84]; /*0x683381*/
+  this->ambientTimer = v5; /*0x68336c*/
+  this->ScenarioClass_field_timer_34C0 = MEMORY[0xA8ED84]; /*0x683381*/
   *(_DWORD *)(this + 13512) = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((_DWORD *)(this + 13524), 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
@@ -1138,5 +921,222 @@ namespace gamemd {
 char ScenarioClass::StubReturnFalse()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x5C0E40
+namespace gamemd {
+char ScenarioClass::StubReturnFalse2()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x5C0E50
+namespace gamemd {
+char ScenarioClass::StubReturnFalse3(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5C0E60
+namespace gamemd {
+void ScenarioClass::StubReturnTrue()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0E70
+namespace gamemd {
+void ScenarioClass::StubReturnTrue2()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0E80
+namespace gamemd {
+void ScenarioClass::StubReturnFalse4(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0ED0
+namespace gamemd {
+char ScenarioClass::StubReturnFalse5(int a1, int a2, int a3)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5C0EE0
+namespace gamemd {
+char ScenarioClass::initTriggers()
+// 0x5c0ed0
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5C0EF0
+namespace gamemd {
+void ScenarioClass::StubReturnFalse6(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F00
+namespace gamemd {
+void ScenarioClass::StubReturnFalse7(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F10
+namespace gamemd {
+void ScenarioClass::StubReturnTrue3()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F20
+namespace gamemd {
+void ScenarioClass::StubReturnTrue4()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F30
+namespace gamemd {
+int ScenarioClass::initTeams()
+{
+return -1;
+}
+} // namespace gamemd
+
+// 0x5C0F40
+namespace gamemd {
+void ScenarioClass::StubReturnTrue5()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F50
+namespace gamemd {
+void ScenarioClass::StubReturnFalse8(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F60
+namespace gamemd {
+void ScenarioClass::StubReturnFalse9(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0F70
+namespace gamemd {
+char ScenarioClass::StubReturnFalse10()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x5C0F80
+namespace gamemd {
+void ScenarioClass::StubReturnTrue6()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5C0FC0
+namespace gamemd {
+int ScenarioClass::StubReturnFalse11()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x5C0FD0
+namespace gamemd {
+char ScenarioClass::initWaypoints()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5C5E30
+namespace gamemd {
+char ScenarioClass::processTriggerEvents()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D5DB0
+namespace gamemd {
+int ScenarioClass::MissionStubReturnZero()
+{
+return -2;
+}
+} // namespace gamemd
+
+// 0x5D6310
+namespace gamemd {
+char ScenarioClass::MissionStubReturnZero2(MPCooperative * aP0)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D6320
+namespace gamemd {
+char ScenarioClass::saveGame()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D6330
+namespace gamemd {
+char ScenarioClass::loadGame()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D6340
+namespace gamemd {
+char ScenarioClass::createStartingForces()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D67A0
+namespace gamemd {
+char ScenarioClass::MissionStubReturnZero4(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x5D7570
+namespace gamemd {
+char ScenarioClass::processAI()
+{
+return 1;
 }
 } // namespace gamemd

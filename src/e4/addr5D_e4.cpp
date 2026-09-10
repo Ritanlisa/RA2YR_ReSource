@@ -94,14 +94,6 @@ void __thiscall j_DeleteAndZero(void **this)
 }
 } // namespace gamemd
 
-// 0x5D0590
-namespace gamemd {
-void nullsub_24()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5D2350
 namespace gamemd {
 int sub_5D2350(int a1, int * a2)
@@ -854,14 +846,6 @@ int __thiscall sub_5D4F20(const char *this)
   }
   return *((_DWORD *)MEMORY[0xABFC94] + v1); /*0x5d4f87*/
 }
-}
-} // namespace gamemd
-
-// 0x5D5860
-namespace gamemd {
-void nullsub_192(int a1)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2730,18 +2714,9 @@ int sub_5DAEE0()
 }
 } // namespace gamemd
 
-// 0x5DAF10
-namespace gamemd {
-void nullsub_194()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5DAF20
 namespace gamemd {
 unsigned signed char sub_5DAF20()
-// 0x5daf10
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 sub_5DAF20()
@@ -3615,30 +3590,6 @@ LABEL_32:
 }
 } // namespace gamemd
 
-// 0x5DFDD0
-namespace gamemd {
-void nullsub_25()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5DFDE0
-namespace gamemd {
-void nullsub_26()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5DFDF0
-namespace gamemd {
-void nullsub_27()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5DFE00
 namespace gamemd {
 char Network_SendPlayerOptions(unsigned int * a1, int a2)
@@ -3719,5 +3670,53 @@ char __fastcall Network_SendPlayerOptions(_DWORD *a1, int a2)
     return 1; /*0x5dff0d*/
   }
 }
+}
+} // namespace gamemd
+
+// 0x5D0590
+namespace gamemd {
+void nullsub_24()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5D5860
+namespace gamemd {
+void nullsub_192(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5DAF10
+namespace gamemd {
+void nullsub_194()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5DFDD0
+namespace gamemd {
+void nullsub_25()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5DFDE0
+namespace gamemd {
+void nullsub_26()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5DFDF0
+namespace gamemd {
+void nullsub_27()
+{
+  ;
 }
 } // namespace gamemd

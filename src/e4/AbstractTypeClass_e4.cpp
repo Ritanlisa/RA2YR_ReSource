@@ -87,7 +87,7 @@ int __thiscall AbstractTypeClass::Init(int this, AbstractTypeClass *aP1)
   char v3; // al
 
   AbstractClass::InitVtables((_DWORD *)this, (int)aP1); /*0x410968*/
-  v3 = *(_BYTE *)(this + 61); /*0x41096d*/
+  v3 = (unsigned char)this->UINameLabel; /*0x41096d*/
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
   this->vtable1 = &AbstractTypeClass::`vftable'; /*0x41097b*/
   this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410982*/
@@ -275,12 +275,6 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *Block, char a2)
 }
 }
 
-// 0x5F7630
-int AbstractTypeClass::Validate()
-{
-return 0;
-}
-
 // 0x5F75B0
 int AbstractTypeClass::GetData()
 {
@@ -295,6 +289,12 @@ return 0;
 
 // 0x5F7620
 int AbstractTypeClass::SetType()
+{
+return 0;
+}
+
+// 0x5F7630
+int AbstractTypeClass::Validate()
 {
 return 0;
 }

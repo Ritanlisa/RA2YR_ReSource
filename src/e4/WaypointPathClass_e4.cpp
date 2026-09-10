@@ -13,13 +13,13 @@ int __thiscall sub_763730(int this)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
-  *(_DWORD *)(this + 44) = 0; /*0x763741*/
-  *(_DWORD *)(this + 48) = 0; /*0x763744*/
-  *(_BYTE *)(this + 52) = 1; /*0x763747*/
-  *(_BYTE *)(this + 53) = 0; /*0x76374b*/
-  *(_DWORD *)(this + 40) = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x76374e*/
-  *(_DWORD *)(this + 60) = 10; /*0x763755*/
-  *(_DWORD *)(this + 56) = 0; /*0x76375c*/
+  this->waypoints.Items = 0; /*0x763741*/
+  this->waypoints.Capacity = 0; /*0x763744*/
+  this->waypoints.IsInitialized = 1; /*0x763747*/
+  this->waypoints.IsAllocated = 0; /*0x76374b*/
+  this->waypoints = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x76374e*/
+  this->waypoints.CapacityIncrement = 10; /*0x763755*/
+  this->waypoints.Count = 0; /*0x76375c*/
   *(_DWORD *)this = &WaypointPathClass::`vftable'; /*0x76375f*/
   this->vtable1 = &WaypointPathClass::`vftable'; /*0x763765*/
   this->vtable2 = &WaypointPathClass::`vftable'; /*0x76376c*/
@@ -51,13 +51,13 @@ int __thiscall WaypointPathClass::Construct(int this, WaypointClass *aP1)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
-  *(_DWORD *)(this + 44) = 0; /*0x763825*/
-  *(_DWORD *)(this + 48) = 0; /*0x763828*/
-  *(_BYTE *)(this + 52) = 1; /*0x76382b*/
-  *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  *(_DWORD *)(this + 40) = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763832*/
-  *(_DWORD *)(this + 60) = 10; /*0x763839*/
-  *(_DWORD *)(this + 56) = 0; /*0x763840*/
+  this->waypoints.Items = 0; /*0x763825*/
+  this->waypoints.Capacity = 0; /*0x763828*/
+  this->waypoints.IsInitialized = 1; /*0x76382b*/
+  this->waypoints.IsAllocated = 0; /*0x76382f*/
+  this->waypoints = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763832*/
+  this->waypoints.CapacityIncrement = 10; /*0x763839*/
+  this->waypoints.Count = 0; /*0x763840*/
   *(_DWORD *)this = &WaypointPathClass::`vftable'; /*0x763845*/
   this->vtable1 = &WaypointPathClass::`vftable'; /*0x76384b*/
   this->vtable2 = &WaypointPathClass::`vftable'; /*0x763852*/
@@ -88,22 +88,8 @@ int __thiscall WaypointPathClass::_vt13(int this, int a2)
 {
   AbstractClass::ProcessPower((#378 *)this); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
-  return Power::TimerProcess(*(_DWORD *)(this + 56)); /*0x763c24*/
+  return Power::TimerProcess(this->waypoints.Count); /*0x763c24*/
 }
-}
-} // namespace gamemd
-
-// 0x763C30
-namespace gamemd {
-int WaypointPathClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -147774022;
-  a2[1] = 298979412;
-  a2[2] = 1610642049;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 
@@ -246,14 +232,6 @@ int __stdcall WaypointPathClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 }
 } // namespace gamemd
 
-// 0x763E10
-namespace gamemd {
-int WaypointPathClass::StubReturn51()
-{
-return 51;
-}
-} // namespace gamemd
-
 // 0x763E20
 namespace gamemd {
 WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
@@ -373,10 +351,32 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
+// 0x763C30
+namespace gamemd {
+int WaypointPathClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -147774022;
+  a2[1] = 298979412;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x763E00
 namespace gamemd {
 int WaypointPathClass::StubReturn64()
 {
 return 64;
+}
+} // namespace gamemd
+
+// 0x763E10
+namespace gamemd {
+int WaypointPathClass::StubReturn51()
+{
+return 51;
 }
 } // namespace gamemd

@@ -152,18 +152,6 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
 }
 }
 
-// 0x75C640
-int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291204;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-
 // 0x75C680
 HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
 {
@@ -275,6 +263,18 @@ WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **B
     __3_YAXPAX_Z(Block); /*0x75cc13*/
   return (WalkLocomotionClass *)Block; /*0x75cc1d*/
 }
+}
+
+// 0x75C640
+int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291204;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x75CBD0

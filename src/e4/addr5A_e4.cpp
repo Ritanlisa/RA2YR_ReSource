@@ -3375,22 +3375,6 @@ DWORD __thiscall sub_5AE530(char **this, ObjectClass *aP1, ObjectClass *aP2)
 }
 } // namespace gamemd
 
-// 0x5AE570
-namespace gamemd {
-void nullsub_170(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5AE580
-namespace gamemd {
-void nullsub_171(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5AEC40
 namespace gamemd {
 int sub_5AEC40(float a2)
@@ -4128,5 +4112,21 @@ namespace gamemd {
 int sub_5AE4F0(int a1)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x5AE570
+namespace gamemd {
+void nullsub_170(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5AE580
+namespace gamemd {
+void nullsub_171(int a1)
+{
+  ;
 }
 } // namespace gamemd

@@ -189,22 +189,6 @@ int __stdcall ParasiteClass::SaveParasite(TechnoTypeClass *aP0, int *a1, int aP2
 } // namespace game
 } // namespace ra2
 
-// 0x6296D0
-namespace ra2 {
-namespace game {
-int ParasiteClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 486632321;
-  a2[1] = 299086411;
-  a2[2] = 268441278;
-  a2[3] = 1822515787;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6297F0
 namespace ra2 {
 namespace game {
@@ -1234,6 +1218,22 @@ LABEL_50:
   }
   return result; /*0x62c37b*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6296D0
+namespace ra2 {
+namespace game {
+int ParasiteClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 486632321;
+  a2[1] = 299086411;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

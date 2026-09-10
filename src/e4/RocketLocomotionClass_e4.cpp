@@ -12,16 +12,16 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   wchar_t *v2; // ecx
 
   LocomotionClass::Init((_DWORD *)this); /*0x661ec3*/
-  *(_DWORD *)(this + 24) = dword_B04E38; /*0x661ed1*/
+  this->MovingDestination = dword_B04E38; /*0x661ed1*/
   *(_DWORD *)(this + 28) = dword_B04E3C; /*0x661eda*/
   *(_DWORD *)(this + 32) = dword_B04E40; /*0x661ee3*/
-  *(_DWORD *)(this + 36) = MEMORY[0xA8ED84]; /*0x661eee*/
+  this->MissionTimer = MEMORY[0xA8ED84]; /*0x661eee*/
   this->MissionTimer.TimeLeft = 0; /*0x661ef1*/
   this->MissionTimer.Rate = 0; /*0x661ef4*/
   v2 = MEMORY[0xA8ED84]; /*0x661ef7*/
   this->TrailerTimer.TimeLeft = 0; /*0x661efd*/
-  *(_DWORD *)(this + 52) = v2; /*0x661f00*/
-  *(_DWORD *)(this + 72) = 0; /*0x661f03*/
+  this->TrailerTimer = v2; /*0x661f00*/
+  this->CurrentSpeed = 0; /*0x661f03*/
   this->MissionState = 0; /*0x661f06*/
   *(_DWORD *)(this + 76) = 0; /*0x661f09*/
   this->SpawnerIsElite = 0; /*0x661f0c*/
@@ -32,18 +32,6 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   *(_DWORD *)(this + 4) = &RocketLocomotionClass::`vftable'; /*0x661f1f*/
   return this; /*0x661f28*/
 }
-}
-
-// 0x6633D0
-int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1212901530;
-  a2[1] = 299099510;
-  a2[2] = 268491163;
-  a2[3] = -399534261;
-  return 0;
 }
 
 // 0x663410
@@ -70,6 +58,16 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
     }
   }
   return result; /*0x663452*/
+}
+}
+
+// 0x6635B0
+int RocketLocomotionClass::StubReturn96()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int RocketLocomotionClass::_vt09()
+{
+  return 96; /*0x6635b5*/
 }
 }
 
@@ -409,8 +407,14 @@ DynamicVector *__thiscall RocketLocomotionClass_17_::QueryInterface(_DWORD *Bloc
 }
 } // namespace gamemd
 
-// 0x6635B0
-int RocketLocomotionClass::StubReturn96()
+// 0x6633D0
+int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-return 96;
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1212901530;
+  a2[1] = 299099510;
+  a2[2] = 268491163;
+  a2[3] = -399534261;
+  return 0;
 }

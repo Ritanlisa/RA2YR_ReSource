@@ -324,8 +324,8 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 271) = 0; /*0x6f3046*/
   *(this + 273) = 0; /*0x6f3051*/
   *(this + 274) = 0; /*0x6f3057*/
-  *((_BYTE *)this + 1100) = 1; /*0x6f305d*/
-  *((_BYTE *)this + 1101) = 0; /*0x6f3064*/
+  this->currentTargetThreatValues.IsInitialized = 1; /*0x6f305d*/
+  this->currentTargetThreatValues.IsAllocated = 0; /*0x6f3064*/
   *(this + 272) = &DynamicVectorClass<int>::`vftable'; /*0x6f306a*/
   *(this + 277) = 10; /*0x6f3074*/
   *(this + 276) = 0; /*0x6f307a*/
@@ -696,16 +696,16 @@ int __thiscall TechnoClass::DTOR(int this)
     this->attackedTargets = 0; /*0x6f46cd*/
   }
   *(_BYTE *)(this + 1125) = 0; /*0x6f46d3*/
-  *(_DWORD *)(this + 1120) = 0; /*0x6f46d9*/
+  this->audioController3 = 0; /*0x6f46d9*/
   v14 = *(void **)(this + 1092); /*0x6f46df*/
-  *(_DWORD *)(this + 1088) = &VectorClass<int>::`vftable'; /*0x6f46e5*/
-  if ( v14 && *(_BYTE *)(this + 1101) ) /*0x6f46f3*/
+  this->currentTargetThreatValues = &VectorClass<int>::`vftable'; /*0x6f46e5*/
+  if ( v14 && this->currentTargetThreatValues.IsAllocated ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
-    *(_DWORD *)(this + 1092) = 0; /*0x6f4704*/
+    this->currentTargetThreatValues.Items = 0; /*0x6f4704*/
   }
-  *(_BYTE *)(this + 1101) = 0; /*0x6f4710*/
-  *(_DWORD *)(this + 1096) = 0; /*0x6f4716*/
+  this->currentTargetThreatValues.IsAllocated = 0; /*0x6f4710*/
+  this->currentTargetThreatValues.Capacity = 0; /*0x6f4716*/
   nullsub_69(this + 336); /*0x6f471c*/
   *(_DWORD *)this = &RadioClass::`vftable'; /*0x6f4721*/
   this->vtable1 = &RadioClass::`vftable'; /*0x6f4727*/
@@ -716,7 +716,7 @@ int __thiscall TechnoClass::DTOR(int this)
   if ( v15 && *(_BYTE *)(this + 237) ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
-    *(_DWORD *)(this + 228) = 0; /*0x6f4761*/
+    this->flashing = 0; /*0x6f4761*/
   }
   *(_BYTE *)(this + 237) = 0; /*0x6f4767*/
   *(_DWORD *)(this + 232) = 0; /*0x6f476d*/

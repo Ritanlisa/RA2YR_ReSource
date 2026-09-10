@@ -1973,20 +1973,6 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
 }
 } // namespace gamemd
 
-// 0x6DBCE0
-namespace gamemd {
-int Tactical::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -816401526;
-  a2[1] = 298984461;
-  a2[2] = 1610644609;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6DBD20
 namespace gamemd {
 int Tactical::InitMap(int a1, int a2)
@@ -2379,6 +2365,20 @@ VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6e4aeb*/
   return (VectorClass *)Block; /*0x6e4af5*/
 }
+}
+} // namespace gamemd
+
+// 0x6DBCE0
+namespace gamemd {
+int Tactical::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -816401526;
+  a2[1] = 298984461;
+  a2[2] = 1610644609;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

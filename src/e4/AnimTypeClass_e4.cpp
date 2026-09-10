@@ -270,7 +270,7 @@ char __thiscall AnimTypeClass::_vt40(int this, int a2)
         __3_YAXPAX_Z(*(void **)(this + 164)); /*0x427b90*/
         this->ImageAllocated = 0; /*0x427b98*/
       }
-      v4 = *(_BYTE *)(this + 504); /*0x427b9f*/
+      v4 = (unsigned char)this->ImageFile; /*0x427b9f*/
       v5 = (const char *)(this + 504); /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
@@ -460,20 +460,6 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeC
 }
 } // namespace gamemd
 
-// 0x428990
-namespace gamemd {
-int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1366608934;
-  a2[1] = 298976796;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x4289D0
 namespace gamemd {
 int AnimTypeClass::PowerDrainUpdate(int * a2)
@@ -517,7 +503,7 @@ int __thiscall AnimTypeClass::_vt13(int this, int *a2)
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::FlagProcess(a2, v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 680), *(_DWORD *)(this + 684)); /*0x428a96*/
+  Checksummer::Add_double((unsigned int *)a2, this->Damage, *(_DWORD *)(this + 684)); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::FlagProcess(a2, v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
@@ -530,7 +516,7 @@ int __thiscall AnimTypeClass::_vt13(int this, int *a2)
   Power::TimerProcess(this->NumParticles); /*0x428b14*/
   Power::TimerProcess(this->DetailLevel); /*0x428b22*/
   Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
-  Power::TimerProcess(*(_DWORD *)(this + 732)); /*0x428b3e*/
+  Power::TimerProcess(this->RandomLoopDelay); /*0x428b3e*/
   Power::TimerProcess(this->RandomLoopDelay.Max); /*0x428b4c*/
   Power::TimerProcess(this->Translucency); /*0x428b5a*/
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
@@ -670,34 +656,9 @@ int __thiscall AnimTypeClass::_vt16(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x428E70
-namespace gamemd {
-int AnimTypeClass::GetObjectSize()
-{
-return 888;
-}
-} // namespace gamemd
-
-// 0x428E80
-namespace gamemd {
-char AnimTypeClass::Stub(int a1, int a2)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x428E90
-namespace gamemd {
-int AnimTypeClass::StubReturnFalse(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x428EA0
 namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
-// 0x428e90
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *Block, char a2)
@@ -785,6 +746,20 @@ int __thiscall AnimTypeClass::LookupByName(void *this)
 }
 } // namespace gamemd
 
+// 0x428990
+namespace gamemd {
+int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608934;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x428E40
 namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
@@ -798,5 +773,29 @@ namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
 {
 return 5;
+}
+} // namespace gamemd
+
+// 0x428E70
+namespace gamemd {
+int AnimTypeClass::GetObjectSize()
+{
+return 888;
+}
+} // namespace gamemd
+
+// 0x428E80
+namespace gamemd {
+char AnimTypeClass::Stub(int a1, int a2)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x428E90
+namespace gamemd {
+int AnimTypeClass::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

@@ -191,48 +191,9 @@ int __stdcall WaveClass::_vt06(int *a1, int *a2, int a3)
 }
 } // namespace gamemd
 
-// 0x75F840
-namespace gamemd {
-int WaveClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448653;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
-// 0x75F890
-namespace gamemd {
-int WaveClass::CheckStateFlag()
-{
-return 3;
-}
-} // namespace gamemd
-
-// 0x75F8A0
-namespace gamemd {
-int WaveClass::StubReturnFalse()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x7631F0
-namespace gamemd {
-int WaveClass::GetTypeIdentifier()
-{
-return 43;
-}
-} // namespace gamemd
-
 // 0x763200
 namespace gamemd {
 WaveClass * WaveClass::ddtor(void ** Block, char a2)
-// 0x7631f0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)
@@ -275,10 +236,48 @@ WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)
 }
 } // namespace gamemd
 
+// 0x75F840
+namespace gamemd {
+int WaveClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448653;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x75F880
 namespace gamemd {
 int WaveClass::GetObjectSize()
 {
 return 576;
+}
+} // namespace gamemd
+
+// 0x75F890
+namespace gamemd {
+int WaveClass::CheckStateFlag()
+{
+return 3;
+}
+} // namespace gamemd
+
+// 0x75F8A0
+namespace gamemd {
+int WaveClass::StubReturnFalse()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x7631F0
+namespace gamemd {
+int WaveClass::GetTypeIdentifier()
+{
+return 43;
 }
 } // namespace gamemd

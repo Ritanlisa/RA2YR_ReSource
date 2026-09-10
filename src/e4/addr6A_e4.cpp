@@ -56,14 +56,6 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x6A3DA0
-namespace gamemd {
-void nullsub_230()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6A4360
 namespace gamemd {
 void sub_6A4360()
@@ -682,14 +674,6 @@ void __cdecl sub_6A4E10()
     while ( v1 ); /*0x6a4e3b*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x6A4FF0
-namespace gamemd {
-void nullsub_36(IUnknown * aP0)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2034,5 +2018,21 @@ LABEL_53:
   }
   return (char)v2; /*0x6afdbb*/
 }
+}
+} // namespace gamemd
+
+// 0x6A3DA0
+namespace gamemd {
+void nullsub_230()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6A4FF0
+namespace gamemd {
+void nullsub_36(IUnknown * aP0)
+{
+  ;
 }
 } // namespace gamemd

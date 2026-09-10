@@ -129,18 +129,6 @@ LABEL_8:
 }
 }
 
-// 0x72A110
-int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291203;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-
 // 0x72A150
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
@@ -180,6 +168,18 @@ TunnelLocomotionClass *__thiscall TunnelLocomotionClass::ProcessMove(_DWORD *Blo
     __3_YAXPAX_Z(Block); /*0x72a220*/
   return (TunnelLocomotionClass *)Block; /*0x72a22a*/
 }
+}
+
+// 0x72A110
+int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291203;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x72A200

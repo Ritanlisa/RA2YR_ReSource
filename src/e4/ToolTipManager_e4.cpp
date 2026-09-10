@@ -3,6 +3,16 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ToolTipManager_7_e4.hpp"
 
+// 0x724AA0
+char ToolTipManager::addRef(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall ToolTipManager::_vt01(int a1)
+{
+  return 1; /*0x724aa2*/
+}
+}
+
 // 0x724B80
 int ToolTipManager::ddtor(char a2)
 {
@@ -13,7 +23,7 @@ int __thiscall ToolTipManager::_vt03(int this, char a2)
 
   if ( a2 == 1 ) /*0x724b89*/
     ToolTipClass::initString((wchar_t *)this); /*0x724b8b*/
-  result = *(_DWORD *)(this + 4); /*0x724b90*/
+  result = this->Position; /*0x724b90*/
   if ( result ) /*0x724b95*/
     return (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 16))(this, this + 24); /*0x724b9f*/
   return result; /*0x724ba2*/
@@ -54,12 +64,6 @@ DynamicVector *__thiscall ToolTipManager_7_::QueryInterface(_DWORD *Block, char 
 }
 }
 } // namespace gamemd
-
-// 0x724AA0
-char ToolTipManager::addRef(int a1)
-{
-return 1;
-}
 
 // 0x724BD0
 int ToolTipManager::stubReturnFalse(int a1)

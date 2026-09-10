@@ -12,6 +12,16 @@ int __stdcall INoticeSource_Stub1(int a1)
 }
 }
 
+// 0x411500
+char XSurface::entry_68_(int a1, int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall Surface_vt_entry_68(int a1, int a2)
+{
+  return 1; /*0x411502*/
+}
+}
+
 // 0x411560
 int XSurface::Lock(int a2, int a3)
 {
@@ -34,12 +44,6 @@ char __thiscall XSurface_Unlock(_DWORD *this)
 }
 }
 
-// 0x411590
-char XSurface::StubReturnFalse()
-{
-return 0;
-}
-
 // 0x4115A0
 XSurface * XSurface::ScalarDtor(char a2)
 {
@@ -51,12 +55,6 @@ XSurface *__thiscall XSurface::ScalarDtor(std::locale::facet *this, char a2)
     __3_YAXPAX_Z(this); /*0x4115b2*/
   return (XSurface *)this; /*0x4115bc*/
 }
-}
-
-// 0x4C9150
-int XSurface::vt_entry_68()
-{
-return 0;
 }
 
 // 0x7BA8C0
@@ -255,44 +253,6 @@ int __thiscall XSurface::DrawDashedLine(void *this, int *a1, int *a2, XSurface *
   }
   return v13; /*0x7bab23*/
 }
-}
-
-// 0x7BAB30
-int XSurface::entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6)
-{
-return 0;
-}
-
-// 0x7BAB40
-char XSurface::entry_50_(int a1, int a2, int a3, int a4)
-{
-return 0;
-}
-
-// 0x7BAB50
-char XSurface::entry_34_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-return 0;
-}
-
-// 0x7BAB60
-char XSurface::entry_38_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-return 0;
-}
-
-// 0x7BAB70
-namespace gamemd {
-int XSurface_entry_3C_()
-{
-  return 0;
-}
-} // namespace gamemd
-
-// 0x7BAB80
-char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
-{
-return 0;
 }
 
 // 0x7BAB90
@@ -729,12 +689,6 @@ LABEL_9:
 }
 }
 
-// 0x7BB340
-char XSurface::entry_1C_(int a1, int a2, int a3)
-{
-return 0;
-}
-
 // 0x7BB350
 namespace gamemd {
 int XSurface_DrawEllipseOutline()
@@ -1090,8 +1044,58 @@ char __thiscall XSurface::Blit(
 }
 } // namespace gamemd
 
-// 0x411500
-char XSurface::entry_68_(int a1, int a2)
+// 0x411590
+char XSurface::StubReturnFalse()
 {
-return 1;
+return 0;
+}
+
+// 0x4C9150
+int XSurface::vt_entry_68()
+{
+return 0;
+}
+
+// 0x7BAB30
+int XSurface::entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+return 0;
+}
+
+// 0x7BAB40
+char XSurface::entry_50_(int a1, int a2, int a3, int a4)
+{
+return 0;
+}
+
+// 0x7BAB50
+char XSurface::entry_34_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+return 0;
+}
+
+// 0x7BAB60
+char XSurface::entry_38_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+return 0;
+}
+
+// 0x7BAB70
+namespace gamemd {
+int XSurface_entry_3C_()
+{
+  return 0;
+}
+} // namespace gamemd
+
+// 0x7BAB80
+char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+return 0;
+}
+
+// 0x7BB340
+char XSurface::entry_1C_(int a1, int a2, int a3)
+{
+return 0;
 }

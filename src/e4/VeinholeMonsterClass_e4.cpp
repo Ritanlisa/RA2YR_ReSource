@@ -64,18 +64,6 @@ int VeinholeMonsterClass::_vt34()
 }
 }
 
-// 0x74F2D0
-int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1368576106;
-  a2[1] = 299025970;
-  a2[2] = 1610615737;
-  a2[3] = -318126072;
-  return 0;
-}
-
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char a2)
 {
@@ -87,6 +75,18 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::SpreadTiberium(void **Blo
     __3_YAXPAX_Z(Block); /*0x74f350*/
   return (VeinholeMonsterClass *)Block; /*0x74f35a*/
 }
+}
+
+// 0x74F2D0
+int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1368576106;
+  a2[1] = 299025970;
+  a2[2] = 1610615737;
+  a2[3] = -318126072;
+  return 0;
 }
 
 // 0x74F310

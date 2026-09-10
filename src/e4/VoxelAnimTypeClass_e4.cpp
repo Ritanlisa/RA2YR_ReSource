@@ -444,12 +444,12 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
   Power::FlagProcess(a2, v5); /*0x74b6c3*/
   Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
   Power::TimerProcess(this->Duration); /*0x74b6df*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 672), *(_DWORD *)(this + 676)); /*0x74b6f4*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 680), *(_DWORD *)(this + 684)); /*0x74b709*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 688), *(_DWORD *)(this + 692)); /*0x74b71e*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 696), *(_DWORD *)(this + 700)); /*0x74b733*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 704), *(_DWORD *)(this + 708)); /*0x74b748*/
-  Checksummer::Add_double((unsigned int *)a2, *(_DWORD *)(this + 712), *(_DWORD *)(this + 716)); /*0x74b75d*/
+  Checksummer::Add_double((unsigned int *)a2, this->Elasticity, *(_DWORD *)(this + 676)); /*0x74b6f4*/
+  Checksummer::Add_double((unsigned int *)a2, this->MinAngularVelocity, *(_DWORD *)(this + 684)); /*0x74b709*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxAngularVelocity, *(_DWORD *)(this + 692)); /*0x74b71e*/
+  Checksummer::Add_double((unsigned int *)a2, this->MinZVel, *(_DWORD *)(this + 700)); /*0x74b733*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxZVel, *(_DWORD *)(this + 708)); /*0x74b748*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxXYVel, *(_DWORD *)(this + 716)); /*0x74b75d*/
   LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
   Power::FlagProcess(a2, v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/
@@ -460,20 +460,6 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
   LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
   return Power::FlagProcess(a2, v7); /*0x74b7c4*/
 }
-}
-} // namespace gamemd
-
-// 0x74B7D0
-namespace gamemd {
-int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 784035174;
-  a2[1] = 298978637;
-  a2[2] = 1610642049;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 
@@ -563,34 +549,9 @@ __int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP
 }
 } // namespace gamemd
 
-// 0x74BA00
-namespace gamemd {
-int VoxelAnimTypeClass::GetObjectSize()
-{
-return 776;
-}
-} // namespace gamemd
-
-// 0x74BA10
-namespace gamemd {
-char VoxelAnimTypeClass::Stub(int a1, int a2)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x74BA20
-namespace gamemd {
-int VoxelAnimTypeClass::StubReturnFalse(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x74BA30
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
-// 0x74ba20
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
@@ -639,10 +600,48 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
 }
 } // namespace gamemd
 
+// 0x74B7D0
+namespace gamemd {
+int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 784035174;
+  a2[1] = 298978637;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x74B9F0
 namespace gamemd {
 int VoxelAnimTypeClass::GetTypeIdentifier()
 {
 return 42;
+}
+} // namespace gamemd
+
+// 0x74BA00
+namespace gamemd {
+int VoxelAnimTypeClass::GetObjectSize()
+{
+return 776;
+}
+} // namespace gamemd
+
+// 0x74BA10
+namespace gamemd {
+char VoxelAnimTypeClass::Stub(int a1, int a2)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x74BA20
+namespace gamemd {
+int VoxelAnimTypeClass::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

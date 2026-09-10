@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x690150
-namespace gamemd {
-void nullsub_227()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x690400
 namespace gamemd {
 int sub_690400()
@@ -307,14 +299,6 @@ int sub_6913A0()
 }
 } // namespace gamemd
 
-// 0x691B30
-namespace gamemd {
-void nullsub_34()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x692030
 namespace gamemd {
 int sub_692030()
@@ -534,18 +518,9 @@ void __cdecl sub_692270()
 }
 } // namespace gamemd
 
-// 0x692F20
-namespace gamemd {
-void nullsub_175()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x693940
 namespace gamemd {
 int sub_693940()
-// 0x692f20
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_693940()
@@ -2468,14 +2443,6 @@ int sub_696EF0()
 }
 } // namespace gamemd
 
-// 0x697B60
-namespace gamemd {
-void nullsub_228()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6994F0
 namespace gamemd {
 int ParseMapFileHeader()
@@ -2659,14 +2626,6 @@ LABEL_20:
 }
 } // namespace gamemd
 
-// 0x69A300
-namespace gamemd {
-void nullsub_35()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x69A340
 namespace gamemd {
 DWORD sub_69A340()
@@ -2766,14 +2725,6 @@ LABEL_10:
     }
   }
 }
-}
-} // namespace gamemd
-
-// 0x69B8B0
-namespace gamemd {
-void nullsub_229(int a1, int a2)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -3255,5 +3206,53 @@ BOOL __thiscall sub_69F5E0(_DWORD *this)
   }
   return result; /*0x69f664*/
 }
+}
+} // namespace gamemd
+
+// 0x690150
+namespace gamemd {
+void nullsub_227()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x691B30
+namespace gamemd {
+void nullsub_34()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x692F20
+namespace gamemd {
+void nullsub_175()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x697B60
+namespace gamemd {
+void nullsub_228()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x69A300
+namespace gamemd {
+void nullsub_35()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x69B8B0
+namespace gamemd {
+void nullsub_229(int a1, int a2)
+{
+  ;
 }
 } // namespace gamemd

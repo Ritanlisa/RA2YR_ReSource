@@ -88,14 +88,6 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 }
 } // namespace gamemd
 
-// 0x630210
-namespace gamemd {
-int ParticleSystemClass::GetTypeIdentifier()
-{
-return 24;
-}
-} // namespace gamemd
-
 // 0x630230
 namespace gamemd {
 int ParticleSystemClass_ddtor()
@@ -898,5 +890,13 @@ namespace gamemd {
 int ParticleSystemClass::GetObjectSize()
 {
 return 256;
+}
+} // namespace gamemd
+
+// 0x630210
+namespace gamemd {
+int ParticleSystemClass::GetTypeIdentifier()
+{
+return 24;
 }
 } // namespace gamemd

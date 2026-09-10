@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x6915F0
-namespace gamemd {
-int ScriptClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1123264070;
-  a2[1] = 298977161;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x691630
 namespace gamemd {
 int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
@@ -58,6 +44,20 @@ int __stdcall ScriptClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
     return 0; /*0x6916a8*/
   return result; /*0x6916aa*/
 }
+}
+} // namespace gamemd
+
+// 0x6915F0
+namespace gamemd {
+int ScriptClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1123264070;
+  a2[1] = 298977161;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

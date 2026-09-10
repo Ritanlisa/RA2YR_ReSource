@@ -62,10 +62,10 @@ int __thiscall sub_554830(int this)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
-  *(_DWORD *)(this + 40) = 0; /*0x554840*/
+  this->LightTint = 0; /*0x554840*/
   this->LightTint.Green = 0; /*0x554843*/
   this->LightTint.Blue = 0; /*0x554846*/
-  *(_DWORD *)(this + 56) = dword_ABCA00; /*0x55484f*/
+  this->Location = dword_ABCA00; /*0x55484f*/
   *(_DWORD *)(this + 60) = dword_ABCA04; /*0x554857*/
   v2 = dword_ABCA08; /*0x55485a*/
   this->LightVisibility = 0; /*0x554860*/
@@ -98,18 +98,6 @@ int __thiscall LightSourceClass::Stat(void *this, AbstractClass *aP1)
 {
   return AbstractClass::ProcessPower((#378 *)this); /*0x55507a*/
 }
-}
-
-// 0x555080
-int LightSourceClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1872513264;
-  a2[1] = 298979847;
-  a2[2] = 1610642561;
-  a2[3] = -1252326136;
-  return 0;
 }
 
 // 0x5550C0
@@ -187,6 +175,18 @@ LightSourceClass *__thiscall LightSourceClass::CopyTo(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x5551e2*/
   return (LightSourceClass *)Block; /*0x5551ec*/
 }
+}
+
+// 0x555080
+int LightSourceClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1872513264;
+  a2[1] = 298979847;
+  a2[2] = 1610642561;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x555130

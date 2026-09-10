@@ -516,7 +516,7 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   this->MainVoxel = 0; /*0x5f70d9*/
   this->TurretVoxel = 0; /*0x5f70df*/
   this->BarrelVoxel = 0; /*0x5f70e5*/
-  *(_DWORD *)(this + 188) = 0; /*0x5f70eb*/
+  this->ChargerTurrets = 0; /*0x5f70eb*/
   *(_DWORD *)(this + 192) = 0; /*0x5f70f1*/
   *(_DWORD *)(this + 196) = 0; /*0x5f70f7*/
   v4 = 18; /*0x5f70fd*/
@@ -565,7 +565,7 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   *(_BYTE *)(this + 572) = 0x80; /*0x5f71be*/
   *(_BYTE *)(this + 573) = 0x80; /*0x5f71c4*/
   this->LineTrailColorDecrement = 16; /*0x5f71ca*/
-  *(_DWORD *)(this + 580) = 0; /*0x5f71d4*/
+  this->VoxelCaches = 0; /*0x5f71d4*/
   *(_DWORD *)(this + 584) = 0; /*0x5f71da*/
   *(_DWORD *)(this + 588) = 0; /*0x5f71e0*/
   *(_BYTE *)(this + 592) = 0; /*0x5f71e6*/
@@ -736,7 +736,7 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   *(_BYTE *)(this + 612) = 0; /*0x5f750e*/
   *(_DWORD *)(this + 616) = 0; /*0x5f7514*/
   __3_YAXPAX_Z(*(void **)(this + 580)); /*0x5f7521*/
-  *(_DWORD *)(this + 580) = 0; /*0x5f7526*/
+  this->VoxelCaches = 0; /*0x5f7526*/
   *(_DWORD *)(this + 584) = 0; /*0x5f752c*/
   *(_DWORD *)(this + 588) = 0; /*0x5f7532*/
   *(_BYTE *)(this + 592) = 0; /*0x5f7538*/

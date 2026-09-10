@@ -781,22 +781,6 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x645930
-namespace gamemd {
-char ParticleTypeClass::Stub(int a1, int a2)
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x645940
-namespace gamemd {
-int ParticleTypeClass::StubReturnFalse(int a1)
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x645950
 namespace gamemd {
 ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
@@ -940,5 +924,21 @@ namespace gamemd {
 int ParticleTypeClass::GetTypeIdentifier()
 {
 return 23;
+}
+} // namespace gamemd
+
+// 0x645930
+namespace gamemd {
+char ParticleTypeClass::Stub(int a1, int a2)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x645940
+namespace gamemd {
+int ParticleTypeClass::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

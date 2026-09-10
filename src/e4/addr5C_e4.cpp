@@ -50,14 +50,6 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 }
 } // namespace gamemd
 
-// 0x5C0330
-namespace gamemd {
-void nullsub_176()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5C0540
 namespace gamemd {
 int BinkMovieHandle___vt03(unsigned signed char a2)
@@ -4748,26 +4740,9 @@ void __thiscall sub_5CB3E0(void *this)
 }
 } // namespace gamemd
 
-// 0x5CCA10
-namespace gamemd {
-void nullsub_189(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5CD310
-namespace gamemd {
-void nullsub_190()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5CD570
 namespace gamemd {
 int sub_5CD570()
-// 0x5cd310
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CD570(
@@ -4875,7 +4850,7 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     result = sub_5D30C0(*(size_t **)(this + 52), v21, (_DWORD *)(this + 56)); /*0x5cd82e*/
     v22 = this->vtable2; /*0x5cd836*/
     *v20 = this->vtable1; /*0x5cd839*/
-    *(_DWORD *)(this + 60) = v22; /*0x5cd83b*/
+    this->ambientSoundController = v22; /*0x5cd83b*/
   }
   else
   {
@@ -4886,13 +4861,13 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     v6 = this->attachedTag; /*0x5cd6dc*/
     this->vtable1 += (a2[2] - this->ambientSoundController.AudioController_field_04) / 2; /*0x5cd6df*/
     v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->vtable2; /*0x5cd706*/
-    v8 = *(_DWORD *)(this + 60); /*0x5cd70d*/
+    v8 = this->ambientSoundController; /*0x5cd70d*/
     *v4 += this->vtable1; /*0x5cd710*/
     this->vtable2 = v7; /*0x5cd71a*/
-    *(_DWORD *)(this + 60) = v7 + v8; /*0x5cd71d*/
+    this->ambientSoundController = v7 + v8; /*0x5cd71d*/
     Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
-    v10 = *(_DWORD *)(this + 60); /*0x5cd729*/
+    v10 = this->ambientSoundController; /*0x5cd729*/
     v11 = this->ambientSoundController.AudioController_field_04; /*0x5cd72c*/
     v27 = v11; /*0x5cd72f*/
     v28 = this->ambientSoundController.AudioController_field_08; /*0x5cd736*/
@@ -4943,7 +4918,7 @@ LABEL_20:
     }
     *v4 = v17; /*0x5cd7f6*/
     v18 = this->attachedTag; /*0x5cd7f8*/
-    *(_DWORD *)(this + 60) = v10; /*0x5cd7fb*/
+    this->ambientSoundController = v10; /*0x5cd7fb*/
     this->ambientSoundController.AudioController_field_04 = v16; /*0x5cd7fe*/
     this->ambientSoundController.AudioController_field_08 = v15; /*0x5cd801*/
     result = (_DWORD *)(*(_DWORD *)(v18 + 4) / 2); /*0x5cd80f*/
@@ -5249,7 +5224,7 @@ LABEL_5:
         a2,
         v12,
         v9,
-        *(_DWORD *)(this + 80),
+        this->customSound_controller,
         this->objectTypeFlags,
         0);
       v9 += (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 52) + 4))(this->attachedTag, v12); /*0x5ce1c1*/
@@ -5261,7 +5236,7 @@ LABEL_5:
   }
   v14 = this->ambientSoundController.AudioController_field_04; /*0x5ce1e0*/
   v15 = *(_DWORD *)(this->attachedTag + 8); /*0x5ce1e3*/
-  v21 = *(_DWORD *)(this + 80); /*0x5ce1e6*/
+  v21 = this->customSound_controller; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v21; /*0x5ce1f4*/
   a3[2] = v14; /*0x5ce1f7*/
@@ -5277,7 +5252,7 @@ LABEL_5:
     {
       v16 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v16); /*0x5ce234*/
-      *(_DWORD *)(this + 80) += *(_DWORD *)(this->attachedTag + 8); /*0x5ce244*/
+      this->customSound_controller += *(_DWORD *)(this->attachedTag + 8); /*0x5ce244*/
     }
   }
   else
@@ -5436,5 +5411,29 @@ const char **__thiscall sub_5CF840(_DWORD *this, MapSelect *aP1)
   DeleteAndZero(&v7); /*0x5cf8c8*/
   return (const char **)v5; /*0x5cf8b5*/
 }
+}
+} // namespace gamemd
+
+// 0x5C0330
+namespace gamemd {
+void nullsub_176()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5CCA10
+namespace gamemd {
+void nullsub_189(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5CD310
+namespace gamemd {
+void nullsub_190()
+{
+  ;
 }
 } // namespace gamemd

@@ -192,9 +192,18 @@ class MemberMap:
         self.by_class = {}
         self.parents = {}
         self.sizes = {}
+        self.entries = {}   # G2: cls -> {offset: (name, size, type)}
+        # G2: 容器内部布局（YRpp ArrayClasses + ctor 间距铁证：TypeList=28B）
+        self.CONTAINER_SUBS = {
+            4: ("Items", 4), 8: ("Capacity", 4),
+            0xC: ("IsInitialized", 1), 0xD: ("IsAllocated", 1),
+            0x10: ("Count", 4), 0x14: ("CapacityIncrement", 4),
+            0x18: ("unknown_18", 4),
+        }
         for cname, c in cl.items():
             offs = c.get("offsets") or {}
             m = {}
+            em = {}
             for k, v in offs.items():
                 if isinstance(v, dict) and "ida_name" in v:
                     try:
@@ -202,11 +211,14 @@ class MemberMap:
                         # F2 防护：非法标识符名（如 "Name[0x31]"）= 遗留垃圾，整体跳过
                         if not re.match(r"^[A-Za-z_]\w*$", nm or ""):
                             continue
-                        m[(int(k), int(v.get("size", 4)))] = nm
+                        sz = int(v.get("size", 4))
+                        m[(int(k), sz)] = nm
+                        em[int(k)] = (nm, sz, (v.get("type") or "").strip())
                     except (ValueError, TypeError):
                         pass
             if m:
                 self.by_class[cname] = m
+                self.entries[cname] = em
             p = c.get("parent")
             if p and p != cname:
                 self.parents[cname] = p
@@ -246,6 +258,40 @@ class MemberMap:
                     return name
                 if width == 4 and mm.get((offset, 4)):
                     return mm[(offset, 4)]
+                # G2: 宽成员基址读（TypeList/WeaponStruct 首 dword = vfptr 读）
+                em = self.entries.get(c) or {}
+                ent = em.get(offset)
+                if ent and width == 4 and ent[1] >= 4:
+                    return ent[0]
+        return None
+
+    def container_sub(self, cls, offset, width):
+        """G2: 容器成员内部子访问 -> Member.Sub（Items/Capacity/Count 等）。"""
+        for c in self._chain(cls):
+            parent = self.parents.get(c)
+            lo = self.sizes.get(parent, 0) if parent else 0
+            hi = self.sizes.get(c, 0)
+            if not (lo <= offset and (not hi or offset < hi)):
+                continue
+            em = self.entries.get(c) or {}
+            ent = em.get(offset)
+            if ent is None:
+                cand = [(o, e) for o, e in em.items() if o < offset < o + e[1]]
+                if not cand:
+                    continue
+                o, ent = max(cand, key=lambda t: t[0])
+                sub_off = offset - o
+            else:
+                sub_off = 0
+            nm, sz, ty = ent
+            if not ty:
+                continue
+            base = ty.split("<")[0]
+            if base not in ("TypeList", "DynamicVectorClass", "VectorClass"):
+                continue
+            sub = self.CONTAINER_SUBS.get(sub_off)
+            if sub and sub[1] == width:
+                return "%s.%s" % (nm, sub[0])
         return None
 
     def nested(self, cls, offset, width, depth=0):
@@ -284,6 +330,9 @@ class MemberMap:
 
     def resolve(self, cls, offset, width):
         n = self.member(cls, offset, width)
+        if n:
+            return n
+        n = self.container_sub(cls, offset, width)
         if n:
             return n
         return self.nested(cls, offset, width)
@@ -473,7 +522,32 @@ def scan_e4_preserved():
         return preserved
     for p in sorted(E4.glob("*.cpp")):
         lines = p.read_text(encoding="latin-1").split("\n")
-        starts = [i for i, ln in enumerate(lines) if REC_ADDR_LINE.match(ln)]
+        # G2 修复：G1 收割会在 def 行与 '{' 之间维护内注解
+        # （`void F()` 换行 `// 0xADDR` 换行 `{`）。判据：注解行的前一非空行
+        # 是 def 头（含 '(' 且无 '{'/';'）= 内注解，不是记录头。历史文件存在
+        # 括号失衡（G1 遗留），不可用深度门——否则失衡点后的已译记录全丢。
+        starts = []
+        for i, ln in enumerate(lines):
+            if REC_ADDR_LINE.match(ln):
+                # 记录头判据（正向+上下文）：
+                #  a) 下一非空行以 'namespace' 开头（member/free 标准形态）；或
+                #  b) 下一非空行是 def 行，且上一非空行以 '}' 收尾（上一记录闭合）
+                # G1 内注解两种形态均被排除：def 行后（上一行=def 头）、
+                # pending 块 marker 区内（上一代码行='{'）。
+                k = i + 1
+                while k < len(lines) and not lines[k].strip():
+                    k += 1
+                nxt = lines[k].strip() if k < len(lines) else ""
+                if nxt.startswith("namespace"):
+                    starts.append(i)
+                    continue
+                if "(" in nxt and "{" not in nxt:
+                    j = i - 1
+                    while j >= 0 and not lines[j].strip():
+                        j -= 1
+                    prev = lines[j].strip() if j >= 0 else ""
+                    if prev.startswith("}"):
+                        starts.append(i)
         for bi, s in enumerate(starts):
             e = starts[bi + 1] if bi + 1 < len(starts) else len(lines)
             block = "\n".join(lines[s:e]).rstrip()

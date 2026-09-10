@@ -3,22 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 
-// 0x4068E0
-namespace gamemd {
-void Debug::Log()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4A4AC0
-namespace gamemd {
-void Debug::Log_0()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5BD0D0
 namespace gamemd {
 char Debug::ScrollText(CellStruct * aP1)
@@ -171,5 +155,21 @@ int __thiscall Debug_AccumFlags(_DWORD *this)
   }
   return i; /*0x6e6213*/
 }
+}
+} // namespace gamemd
+
+// 0x4068E0
+namespace gamemd {
+void Debug::Log()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4A4AC0
+namespace gamemd {
+void Debug::Log_0()
+{
+  ;
 }
 } // namespace gamemd

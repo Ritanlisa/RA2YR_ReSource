@@ -240,20 +240,6 @@ int __thiscall SideClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x6A4740
-namespace gamemd {
-int SideClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -985803918;
-  a2[1] = 298980638;
-  a2[2] = 1610642817;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6A4780
 namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
@@ -404,6 +390,20 @@ SideClass *__thiscall SideClass::Init(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
   return (SideClass *)Block; /*0x6a49fa*/
 }
+}
+} // namespace gamemd
+
+// 0x6A4740
+namespace gamemd {
+int SideClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -985803918;
+  a2[1] = 298980638;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

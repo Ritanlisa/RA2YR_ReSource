@@ -11,10 +11,10 @@ int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
   wchar_t *v2; // ecx
 
   LocomotionClass::Init((_DWORD *)this); /*0x718003*/
-  *(_DWORD *)(this + 28) = MEMORY[0xB0EBF8]; /*0x718011*/
+  this->MovingDestination = MEMORY[0xB0EBF8]; /*0x718011*/
   *(_DWORD *)(this + 32) = MEMORY[0xB0EBFC]; /*0x71801a*/
   *(_DWORD *)(this + 36) = MEMORY[0xB0EC00]; /*0x718026*/
-  *(_DWORD *)(this + 40) = MEMORY[0xB0EBF8]; /*0x71802e*/
+  this->LastCoords = MEMORY[0xB0EBF8]; /*0x71802e*/
   *(_DWORD *)(this + 44) = MEMORY[0xB0EBFC]; /*0x718036*/
   *(_DWORD *)(this + 48) = MEMORY[0xB0EC00]; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
@@ -23,7 +23,7 @@ int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
   this->State = 0; /*0x71804c*/
   v2 = MEMORY[0xA8ED84]; /*0x71804f*/
   this->Timer.TimeLeft = 0; /*0x718055*/
-  *(_DWORD *)(this + 60) = v2; /*0x718058*/
+  this->Timer = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
   *(_DWORD *)this = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
   *(_DWORD *)(this + 4) = &TeleportLocomotionClass::`vftable'; /*0x718064*/

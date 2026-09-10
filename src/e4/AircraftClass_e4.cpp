@@ -1008,20 +1008,6 @@ char __thiscall MiniStub_41c070(_BYTE *this)
 }
 } // namespace gamemd
 
-// 0x41C190
-namespace gamemd {
-int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448642;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x41C1D0
 namespace gamemd {
 int AircraftClass::CheckMissionAbort()
@@ -1061,14 +1047,6 @@ AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **Block, char a2
 }
 } // namespace gamemd
 
-// 0x5B2F30
-namespace gamemd {
-int AircraftClass::CheckMissionStatus2()
-{
-return 450;
-}
-} // namespace gamemd
-
 // 0x41BE60
 namespace gamemd {
 int AircraftClass::LandingCheckStub()
@@ -1077,9 +1055,31 @@ return 0;
 }
 } // namespace gamemd
 
+// 0x41C190
+namespace gamemd {
+int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448642;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x5B2E90
 namespace gamemd {
 int AircraftClass::CheckMissionStatus()
+{
+return 450;
+}
+} // namespace gamemd
+
+// 0x5B2F30
+namespace gamemd {
+int AircraftClass::CheckMissionStatus2()
 {
 return 450;
 }

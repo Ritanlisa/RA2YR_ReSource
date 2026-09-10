@@ -578,14 +578,6 @@ LABEL_70:
 }
 } // namespace gamemd
 
-// 0x6F25D0
-namespace gamemd {
-void nullsub_240()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6F28A0
 namespace gamemd {
 void sub_6F28A0()
@@ -1048,6 +1040,14 @@ LABEL_34:
   }
   return v18; /*0x6f89b6*/
 }
+}
+} // namespace gamemd
+
+// 0x6F25D0
+namespace gamemd {
+void nullsub_240()
+{
+  ;
 }
 } // namespace gamemd
 

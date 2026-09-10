@@ -2,16 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41C120
-namespace ra2 {
-namespace game {
-void FootClass::Stub(int a1)
-{
-  ;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4D3590
 namespace ra2 {
 namespace game {
@@ -322,3 +312,13 @@ void __userpurge FootClass::FootClass_ImbueLocomotor(
 }
 }
 } // namespace gamemd
+
+// 0x41C120
+namespace ra2 {
+namespace game {
+void FootClass::Stub(int a1)
+{
+  ;
+}
+} // namespace game
+} // namespace ra2

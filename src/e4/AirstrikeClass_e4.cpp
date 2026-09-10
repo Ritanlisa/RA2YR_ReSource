@@ -136,22 +136,6 @@ int __stdcall AirstrikeClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 } // namespace game
 } // namespace ra2
 
-// 0x41D7A0
-namespace ra2 {
-namespace game {
-int AirstrikeClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1893611809;
-  a2[1] = 299179558;
-  a2[2] = -1610574449;
-  a2[3] = -1672772828;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x41D830
 namespace ra2 {
 namespace game {
@@ -503,6 +487,22 @@ LABEL_9:
   }
   return (char)v0; /*0x420f38*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41D7A0
+namespace ra2 {
+namespace game {
+int AirstrikeClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1893611809;
+  a2[1] = 299179558;
+  a2[2] = -1610574449;
+  a2[3] = -1672772828;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

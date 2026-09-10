@@ -174,20 +174,6 @@ LONG __stdcall BulletClass::_vt02(volatile LONG *a1)
 }
 } // namespace gamemd
 
-// 0x46B560
-namespace gamemd {
-int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448649;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x46B540
 namespace gamemd {
 int BulletClass::MissionStubReturnZero()
@@ -201,5 +187,19 @@ namespace gamemd {
 int BulletClass::MissionStubReturnZero2()
 {
 return 8;
+}
+} // namespace gamemd
+
+// 0x46B560
+namespace gamemd {
+int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448649;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd

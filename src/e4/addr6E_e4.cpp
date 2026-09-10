@@ -206,14 +206,6 @@ int globalHelper_0E2050()
 }
 } // namespace gamemd
 
-// 0x6E21D0
-namespace gamemd {
-char sub_6E21D0(int a1, int a2, int a3, int a4)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x6E2790
 namespace gamemd {
 char sub_6E2790(int a2, int a3, int a4, int a5)
@@ -765,14 +757,6 @@ char __thiscall sub_6E5290(_BYTE *this)
 {
   return *(this + 52); /*0x6e5293*/
 }
-}
-} // namespace gamemd
-
-// 0x6E57DE
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_18()
-{
-return 1;
 }
 } // namespace gamemd
 
@@ -2275,6 +2259,22 @@ return 1;
 // 0x6E0040
 namespace gamemd {
 char sub_6E0040(int a1, int a2, int a3, int a4)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x6E21D0
+namespace gamemd {
+char sub_6E21D0(int a1, int a2, int a3, int a4)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x6E57DE
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_18()
 {
 return 1;
 }

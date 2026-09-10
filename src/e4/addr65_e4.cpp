@@ -65,14 +65,6 @@ int Trigger_AllocateLog(int a1)
 }
 } // namespace gamemd
 
-// 0x652100
-namespace gamemd {
-void nullsub_217()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x652630
 namespace gamemd {
 int sub_652630(unsigned int * a1, unsigned int * a2)
@@ -378,14 +370,6 @@ void __thiscall sub_652CD0(_DWORD *this)
   *(this + 1323) = 4; /*0x652cd0*/
   *(this + 1343) = 25; /*0x652cda*/
 }
-}
-} // namespace gamemd
-
-// 0x653750
-namespace gamemd {
-void nullsub_220(int a1, int a2)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1234,7 +1218,7 @@ __int16 __thiscall sub_659A30(int this)
   *(_DWORD *)(this + 144) = v3; /*0x659a80*/
   this->lastLayer = v4; /*0x659a83*/
   *(_DWORD *)(this + 152) = v5; /*0x659a86*/
-  *(_DWORD *)(this + 156) = this->objectTypeFlags; /*0x659a8b*/
+  this->location = this->objectTypeFlags; /*0x659a8b*/
   *(_DWORD *)(this + 160) = this->owningHouseIndex; /*0x659a90*/
   *(_DWORD *)(this + 164) = this->fallRate; /*0x659a96*/
   v7 = (__int16 *)(this + 32); /*0x659a99*/
@@ -1815,18 +1799,9 @@ int __thiscall nullsub_0_6(RAMFileClass *this, int a2)
 }
 } // namespace gamemd
 
-// 0x65C590
-namespace gamemd {
-void nullsub_0_9()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x65C5A0
 namespace gamemd {
 void * nullsub_0_10(char a2)
-// 0x65c590
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
@@ -2262,14 +2237,6 @@ int sub_65D8B0()
   dword_B04C34 = 0; /*0x65d8c1*/
   return 0; /*0x65d8c6*/
 }
-}
-} // namespace gamemd
-
-// 0x65D8D0
-namespace gamemd {
-char ReturnFalse3()
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -2860,14 +2827,6 @@ LABEL_53:
   }
   return v14; /*0x65e643*/
 }
-}
-} // namespace gamemd
-
-// 0x65E650
-namespace gamemd {
-char sub_65E650(int a1, int a2, int a3)
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -4117,6 +4076,22 @@ char __fastcall sub_65FB70(int a1)
 }
 } // namespace gamemd
 
+// 0x652100
+namespace gamemd {
+void nullsub_217()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x653750
+namespace gamemd {
+void nullsub_220(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x65C570
 namespace gamemd {
 int nullsub_0_7()
@@ -4130,5 +4105,29 @@ namespace gamemd {
 char nullsub_0_8()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x65C590
+namespace gamemd {
+void nullsub_0_9()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x65D8D0
+namespace gamemd {
+char ReturnFalse3()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x65E650
+namespace gamemd {
+char sub_65E650(int a1, int a2, int a3)
+{
+return 0;
 }
 } // namespace gamemd

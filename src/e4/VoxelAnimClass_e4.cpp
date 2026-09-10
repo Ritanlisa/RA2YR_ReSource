@@ -462,28 +462,6 @@ int __thiscall VoxelAnimClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x74AAD0
-namespace gamemd {
-int VoxelAnimClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448641;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
-// 0x74AB20
-namespace gamemd {
-int VoxelAnimClass::StubReturn41()
-{
-return 41;
-}
-} // namespace gamemd
-
 // 0x74AB30
 namespace gamemd {
 int VoxelAnimClass::LoadFrame()
@@ -493,14 +471,6 @@ int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 {
   return *(this + 65); /*0x74ab36*/
 }
-}
-} // namespace gamemd
-
-// 0x74AB40
-namespace gamemd {
-int VoxelAnimClass::StubReturnFalse(int a1)
-{
-return 0;
 }
 } // namespace gamemd
 
@@ -611,10 +581,40 @@ return 3;
 }
 } // namespace gamemd
 
+// 0x74AAD0
+namespace gamemd {
+int VoxelAnimClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448641;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x74AB10
 namespace gamemd {
 int VoxelAnimClass::StubReturn328()
 {
 return 328;
+}
+} // namespace gamemd
+
+// 0x74AB20
+namespace gamemd {
+int VoxelAnimClass::StubReturn41()
+{
+return 41;
+}
+} // namespace gamemd
+
+// 0x74AB40
+namespace gamemd {
+int VoxelAnimClass::StubReturnFalse(int a1)
+{
+return 0;
 }
 } // namespace gamemd

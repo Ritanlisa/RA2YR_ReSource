@@ -122,10 +122,10 @@ int __thiscall sub_5AFEF0(int this)
   int v2; // eax
 
   LocomotionClass::Init((_DWORD *)this); /*0x5afef3*/
-  *(_DWORD *)(this + 24) = g_MatrixTransformState; /*0x5aff01*/
+  this->MovingDestination = g_MatrixTransformState; /*0x5aff01*/
   *(_DWORD *)(this + 28) = MEMORY[0xABEE14]; /*0x5aff0a*/
   *(_DWORD *)(this + 32) = MEMORY[0xABEE18]; /*0x5aff16*/
-  *(_DWORD *)(this + 36) = g_MatrixTransformState; /*0x5aff1e*/
+  this->HeadToCoord = g_MatrixTransformState; /*0x5aff1e*/
   *(_DWORD *)(this + 40) = MEMORY[0xABEE14]; /*0x5aff26*/
   v2 = MEMORY[0xABEE18]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
@@ -312,7 +312,7 @@ int sub_728A00()
 int __thiscall sub_728A00(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
-  *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
+  this->CurrentState = 0; /*0x728a0d*/
   this->CurrentState.Players = MEMORY[0xB0F910]; /*0x728a16*/
   this->CurrentState.AIPlayers = MEMORY[0xB0F914]; /*0x728a1e*/
   this->CurrentState.GameSpeed = MEMORY[0xB0F918]; /*0x728a27*/

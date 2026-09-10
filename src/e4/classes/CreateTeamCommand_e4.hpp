@@ -23,12 +23,10 @@ struct CreateTeamCommand {
     wchar_t * performAction_9();  // 0x535E10
     wchar_t * performAction_10();  // 0x535E30
     char performAction_11();  // 0x535E50
-    char * performAction_12();  // 0x535EA0
     wchar_t * performAction_13();  // 0x535EB0
     wchar_t * performAction_14();  // 0x535ED0
     wchar_t * performAction_15();  // 0x535EF0
     int performAction_16();  // 0x535F10
-    char * performAction_17();  // 0x535F30
     wchar_t * performAction_18();  // 0x535F40
     wchar_t * performAction_19();  // 0x535F60
     wchar_t * performAction_20();  // 0x535F80
@@ -42,102 +40,80 @@ struct CreateTeamCommand {
     wchar_t * performAction_28();  // 0x5365D0
     wchar_t * performAction_29();  // 0x5365F0
     unsigned char * performAction_30();  // 0x536610
-    char * performAction_31();  // 0x5366A0
     wchar_t * performAction_32();  // 0x5366B0
     wchar_t * performAction_33();  // 0x5366D0
     wchar_t * performAction_34();  // 0x5366F0
     BOOL performAction_35();  // 0x536710
-    char performAction_36();  // 0x536730
     unsigned int performAction_37();  // 0x536740
     int performAction_38();  // 0x536750
-    char * performAction_39();  // 0x536770
     wchar_t * performAction_40();  // 0x536780
     wchar_t * performAction_41();  // 0x5367A0
     wchar_t * performAction_42();  // 0x5367C0
     int performAction_43();  // 0x5367E0
     int performAction_44();  // 0x5367F0
-    char * performAction_45();  // 0x536810
     wchar_t * performAction_46();  // 0x536820
     wchar_t * performAction_47();  // 0x536840
     wchar_t * performAction_48();  // 0x536860
     int performAction_49();  // 0x536880
-    char performAction_50();  // 0x536890
     unsigned int performAction_51();  // 0x5368A0
     char performAction_52();  // 0x5368B0
-    char * performAction_53();  // 0x5368D0
     wchar_t * performAction_54();  // 0x5368E0
     wchar_t * performAction_55();  // 0x536900
     wchar_t * performAction_56();  // 0x536920
     int performAction_57();  // 0x536940
     int performAction_58();  // 0x536950
-    char * performAction_59();  // 0x536970
     wchar_t * performAction_60();  // 0x536980
     wchar_t * performAction_61();  // 0x5369A0
     wchar_t * performAction_62();  // 0x5369C0
     int performAction_63();  // 0x5369E0
     int performAction_64();  // 0x5369F0
-    char * performAction_65();  // 0x536A10
     wchar_t * performAction_66();  // 0x536A20
     wchar_t * performAction_67();  // 0x536A40
     wchar_t * performAction_68();  // 0x536A60
     unsigned char * performAction_69();  // 0x536A80
-    char * performAction_70();  // 0x536B10
     wchar_t * performAction_71();  // 0x536B20
     wchar_t * performAction_72();  // 0x536B40
     wchar_t * performAction_73();  // 0x536B60
-    char * performAction_75();  // 0x536B90
     wchar_t * performAction_76();  // 0x536BA0
     wchar_t * performAction_77();  // 0x536BC0
     wchar_t * performAction_78();  // 0x536BE0
-    char * performAction_80();  // 0x536C10
     wchar_t * performAction_81();  // 0x536C20
     wchar_t * performAction_82();  // 0x536C40
     wchar_t * performAction_83();  // 0x536C60
-    char * performAction_85();  // 0x536C90
     wchar_t * performAction_86();  // 0x536CA0
     wchar_t * performAction_87();  // 0x536CC0
     wchar_t * performAction_88();  // 0x536CE0
-    char * performAction_90();  // 0x536D10
     wchar_t * performAction_91();  // 0x536D20
     wchar_t * performAction_92();  // 0x536D40
     wchar_t * performAction_93();  // 0x536D60
-    char * performAction_95();  // 0x536D90
     wchar_t * performAction_96();  // 0x536DA0
     wchar_t * performAction_97();  // 0x536DC0
     wchar_t * performAction_98();  // 0x536DE0
     wchar_t * performAction_99();  // 0x536E00
-    char * performAction_100();  // 0x536E30
     wchar_t * performAction_101();  // 0x536E40
     wchar_t * performAction_102();  // 0x536E60
     wchar_t * performAction_103();  // 0x536E80
-    char * performAction_105();  // 0x536EB0
     wchar_t * performAction_106();  // 0x536EC0
     wchar_t * performAction_107();  // 0x536EE0
     wchar_t * performAction_108();  // 0x536F00
-    char * performAction_110();  // 0x536F30
     wchar_t * performAction_111();  // 0x536F40
     wchar_t * performAction_112();  // 0x536F60
     wchar_t * performAction_113();  // 0x536F80
-    char * performAction_114();  // 0x536FB0
     wchar_t * performAction_115();  // 0x536FC0
     wchar_t * performAction_116();  // 0x536FE0
     wchar_t * performAction_117();  // 0x537000
     char performAction_118(int a1);  // 0x537020
-    char * performAction_119();  // 0x537030
     wchar_t * performAction_120();  // 0x537040
     wchar_t * performAction_121();  // 0x537060
     wchar_t * performAction_122();  // 0x537080
     int performAction_123();  // 0x5370A0
-    char * performAction_124();  // 0x5370C0
     wchar_t * performAction_125();  // 0x5370D0
     wchar_t * performAction_126();  // 0x5370F0
     wchar_t * performAction_127();  // 0x537110
-    char * performAction_129();  // 0x537140
     wchar_t * performAction_130();  // 0x537150
     wchar_t * performAction_131();  // 0x537170
     wchar_t * performAction_132();  // 0x537190
     char performAction_133();  // 0x5371B0
-    char * performAction_134();  // 0x5371D0
     wchar_t * performAction_135();  // 0x5371E0
     wchar_t * performAction_136();  // 0x537200
     wchar_t * performAction_137();  // 0x537220
@@ -146,53 +122,41 @@ struct CreateTeamCommand {
     wchar_t * performAction_140();  // 0x537270
     wchar_t * performAction_141();  // 0x537290
     wchar_t * performAction_142();  // 0x5372B0
-    char * performAction_144();  // 0x5372E0
     wchar_t * performAction_145();  // 0x5372F0
     wchar_t * performAction_146();  // 0x537310
     wchar_t * performAction_147();  // 0x537330
     unsigned int * performAction_148();  // 0x537350
-    char * performAction_149();  // 0x5373D0
     wchar_t * performAction_150();  // 0x5373E0
     wchar_t * performAction_151();  // 0x537400
     wchar_t * performAction_152();  // 0x537420
     unsigned int * performAction_153();  // 0x537440
-    char * performAction_154();  // 0x5374C0
     wchar_t * performAction_155();  // 0x5374D0
     wchar_t * performAction_156();  // 0x5374F0
     wchar_t * performAction_157();  // 0x537510
     unsigned int * performAction_158();  // 0x537530
-    char * performAction_159();  // 0x5375B0
     wchar_t * performAction_160();  // 0x5375C0
     wchar_t * performAction_161();  // 0x5375E0
     wchar_t * performAction_162();  // 0x537600
-    char * performAction_163();  // 0x5376A0
     wchar_t * performAction_164();  // 0x5376B0
     wchar_t * performAction_165();  // 0x5376D0
     wchar_t * performAction_166();  // 0x5376F0
     void * performAction_167();  // 0x537710
-    char * performAction_168();  // 0x537760
     wchar_t * performAction_169();  // 0x537770
     wchar_t * performAction_170();  // 0x537790
     wchar_t * performAction_171();  // 0x5377B0
     void * performAction_172();  // 0x5377D0
-    char * performAction_173();  // 0x537820
     wchar_t * performAction_174();  // 0x537830
     wchar_t * performAction_175();  // 0x537850
     wchar_t * performAction_176();  // 0x537870
     void * performAction_177();  // 0x537890
-    char * performAction_178();  // 0x5378E0
     wchar_t * performAction_179();  // 0x5378F0
     wchar_t * performAction_180();  // 0x537910
     wchar_t * performAction_181();  // 0x537930
     void * performAction_182();  // 0x537950
-    char * performAction_183();  // 0x5379A0
     wchar_t * performAction_184();  // 0x5379B0
     wchar_t * performAction_185();  // 0x5379D0
     wchar_t * performAction_186();  // 0x5379F0
     bool performAction_187();  // 0x537A10
-    char * performAction_188();  // 0x537AB0
-    const wchar_t * performAction_189();  // 0x537AC0
-    wchar_t * performAction_190();  // 0x537AD0
     _UNKNOWN ** performAction_191();  // 0x537AE0
     int performAction_192();  // 0x537AF0
     char * performAction_193();  // 0x537E80
@@ -249,6 +213,42 @@ struct CreateTeamCommand {
     DynamicVector * performAction_244(unsigned int * Block, char a2);  // 0x538AE0
     char performAction_245(char a2, int a3);  // 0x6A6A00
     void performAction_246();  // 0x731060
+    char * performAction_12();  // 0x535EA0
+    char * performAction_17();  // 0x535F30
+    char * performAction_31();  // 0x5366A0
+    char performAction_36();  // 0x536730
+    char * performAction_39();  // 0x536770
+    char * performAction_45();  // 0x536810
+    char performAction_50();  // 0x536890
+    char * performAction_53();  // 0x5368D0
+    char * performAction_59();  // 0x536970
+    char * performAction_65();  // 0x536A10
+    char * performAction_70();  // 0x536B10
+    char * performAction_75();  // 0x536B90
+    char * performAction_80();  // 0x536C10
+    char * performAction_85();  // 0x536C90
+    char * performAction_90();  // 0x536D10
+    char * performAction_95();  // 0x536D90
+    char * performAction_100();  // 0x536E30
+    char * performAction_105();  // 0x536EB0
+    char * performAction_110();  // 0x536F30
+    char * performAction_114();  // 0x536FB0
+    char * performAction_119();  // 0x537030
+    char * performAction_124();  // 0x5370C0
+    char * performAction_129();  // 0x537140
+    char * performAction_134();  // 0x5371D0
+    char * performAction_144();  // 0x5372E0
+    char * performAction_149();  // 0x5373D0
+    char * performAction_154();  // 0x5374C0
+    char * performAction_159();  // 0x5375B0
+    char * performAction_163();  // 0x5376A0
+    char * performAction_168();  // 0x537760
+    char * performAction_173();  // 0x537820
+    char * performAction_178();  // 0x5378E0
+    char * performAction_183();  // 0x5379A0
+    char * performAction_188();  // 0x537AB0
+    const wchar_t * performAction_189();  // 0x537AC0
+    wchar_t * performAction_190();  // 0x537AD0
     char Stub(int a1);  // 0x535BD0
     char Do(int a1);  // 0x535BF0
 };

@@ -1199,14 +1199,6 @@ _DWORD *__thiscall sub_4A3630(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x4A3650
-namespace gamemd {
-void nullsub_115()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4A38D0
 namespace gamemd {
 void * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
@@ -1938,8 +1930,8 @@ _DWORD *__thiscall sub_4A4E30(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x4a4e3b*/
   *(this + 2) = a2; /*0x4a4e3e*/
-  *((_BYTE *)this + 12) = 1; /*0x4a4e41*/
-  *((_BYTE *)this + 13) = 0; /*0x4a4e45*/
+  this->IsInitialized = 1; /*0x4a4e41*/
+  this->IsAllocated = 0; /*0x4a4e45*/
   *this = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4e48*/
   if ( a2 ) /*0x4a4e4e*/
   {
@@ -1949,7 +1941,7 @@ _DWORD *__thiscall sub_4A4E30(_DWORD *this, int a2, int a3)
       return this; /*0x4a4e5e*/
     }
     *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
-    *((_BYTE *)this + 13) = 1; /*0x4a4e70*/
+    this->IsAllocated = 1; /*0x4a4e70*/
   }
   return this; /*0x4a4e5d*/
 }
@@ -2146,14 +2138,6 @@ int sub_4A5070()
   MEMORY[0x8A011C] = 128; /*0x4a5084*/
   return 128; /*0x4a5089*/
 }
-}
-} // namespace gamemd
-
-// 0x4A5090
-namespace gamemd {
-void nullsub_116()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -3515,14 +3499,6 @@ bool __stdcall sub_4A83D0(INIClass *aP0)
 }
 } // namespace gamemd
 
-// 0x4A8410
-namespace gamemd {
-char sub_4A8410(int a1)
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x4A8420
 namespace gamemd {
 int sub_4A8420()
@@ -3813,23 +3789,6 @@ void __cdecl sub_4A8710()
     GadgetClass::Dtor(MEMORY[0x8A06F8]); /*0x4a8729*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x4A8D40
-namespace gamemd {
-void nullsub_10()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4A8EA0
-namespace gamemd {
-void nullsub_11()
-// 0x4a8d40
-{
-  ;
 }
 } // namespace gamemd
 
@@ -5174,6 +5133,14 @@ BOOL __thiscall sub_4AFED0(_DWORD *this)
 }
 } // namespace gamemd
 
+// 0x4A3650
+namespace gamemd {
+void nullsub_115()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x4A3B30
 namespace gamemd {
 int ReturnNull()
@@ -5190,10 +5157,43 @@ return 1;
 }
 } // namespace gamemd
 
+// 0x4A5090
+namespace gamemd {
+void nullsub_116()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x4A80D0
 namespace gamemd {
 int AlwaysFindYRCD()
 {
 return 2;
+}
+} // namespace gamemd
+
+// 0x4A8410
+namespace gamemd {
+char sub_4A8410(int a1)
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4A8D40
+namespace gamemd {
+void nullsub_10()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4A8EA0
+namespace gamemd {
+void nullsub_11()
+// 0x4a8d40
+{
+  ;
 }
 } // namespace gamemd

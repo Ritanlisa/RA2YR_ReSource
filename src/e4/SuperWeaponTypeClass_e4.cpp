@@ -295,7 +295,7 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->ActionValue = -1; /*0x511416*/
   this->SpecialSound = 0; /*0x51141c*/
   this->AuxBuilding = 0; /*0x511427*/
-  *((_DWORD *)this + 51) = 1072693248; /*0x51142d*/
+  this->SidebarImageFile = 1072693248; /*0x51142d*/
   *((_DWORD *)this + 52) = 0; /*0x511433*/
   *((_DWORD *)this + 53) = 1072693248; /*0x511439*/
   *((_DWORD *)this + 54) = 0; /*0x51143f*/
@@ -492,20 +492,6 @@ int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass 
     qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u); /*0x6ce6ef*/
   return this; /*0x6ce6f2*/
 }
-}
-} // namespace gamemd
-
-// 0x6CE7C0
-namespace gamemd {
-int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 217234663;
-  a2[1] = 298989284;
-  a2[2] = 1610668216;
-  a2[3] = -318126072;
-  return 0;
 }
 } // namespace gamemd
 
@@ -967,6 +953,20 @@ SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *Block, cha
     __3_YAXPAX_Z(Block); /*0x6cf057*/
   return (SuperWeaponTypeClass *)Block; /*0x6cf061*/
 }
+}
+} // namespace gamemd
+
+// 0x6CE7C0
+namespace gamemd {
+int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 217234663;
+  a2[1] = 298989284;
+  a2[2] = 1610668216;
+  a2[3] = -318126072;
+  return 0;
 }
 } // namespace gamemd
 

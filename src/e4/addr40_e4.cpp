@@ -47,14 +47,6 @@ int __fastcall sub_401190(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x4011B0
-namespace gamemd {
-int sub_4011B0(unsigned int * a1, int a2)
-{
-  return *a1 + 36 * a2;
-}
-} // namespace gamemd
-
 // 0x4011C0
 namespace gamemd {
 char * LoadAudioFile(const char * a1, const char * a2)
@@ -549,10 +541,10 @@ int __thiscall sub_401FC0(int this)
   {
     LinkedList::Init(i); /*0x401fe1*/
     AudioNode::Release(i); /*0x401fe8*/
-    PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(this + 60) + 4), (int)i); /*0x401ff5*/
+    PushFrontLinkedListAlt(*(_DWORD **)(this->ambientSoundController + 4), (int)i); /*0x401ff5*/
   }
   nullsub_2(this + 28); /*0x40200a*/
-  return PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(this + 60) + 8), this); /*0x402014*/
+  return PushFrontLinkedListAlt(*(_DWORD **)(this->ambientSoundController + 8), this); /*0x402014*/
 }
 }
 } // namespace gamemd
@@ -4145,14 +4137,6 @@ int __fastcall sub_408500(int a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x408530
-namespace gamemd {
-void nullsub_2()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x408560
 namespace gamemd {
 unsigned long long sub_408560(int a1, int a2)
@@ -5615,7 +5599,7 @@ int __thiscall sub_40A090(int this)
   v9 = 0; /*0x40a0ee*/
   v7 = v4; /*0x40a0f2*/
   LOWORD(v10) = 0; /*0x40a0f6*/
-  HIWORD(v6) = *(_WORD *)(this + 80); /*0x40a102*/
+  HIWORD(v6) = (unsigned short)this->customSound_controller; /*0x40a102*/
   LOWORD(v9) = HIWORD(v6) * v3; /*0x40a107*/
   LOWORD(v6) = 1; /*0x40a116*/
   v8 = v4 * (unsigned __int16)(HIWORD(v6) * v3); /*0x40a122*/
@@ -6987,23 +6971,6 @@ void __cdecl sub_40D220()
   if ( MEMORY[0x87F7B8] ) /*0x40d227*/
     (*(void (__stdcall **)(int))(*(_DWORD *)MEMORY[0x87F7B8] + 8))(MEMORY[0x87F7B8]); /*0x40d22c*/
 }
-}
-} // namespace gamemd
-
-// 0x40D260
-namespace gamemd {
-void nullsub_56()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x40D300
-namespace gamemd {
-void nullsub_57()
-// 0x40d260
-{
-  ;
 }
 } // namespace gamemd
 
@@ -8503,14 +8470,6 @@ int sub_40EB50()
 }
 } // namespace gamemd
 
-// 0x40EB80
-namespace gamemd {
-void nullsub_59()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x40EB90
 namespace gamemd {
 int sub_40EB90()
@@ -8550,14 +8509,6 @@ int sub_40EBD0()
   MEMORY[0x887340] = 0; /*0x40ebe4*/
   return atexit(nullsub_60); /*0x40ebf4*/
 }
-}
-} // namespace gamemd
-
-// 0x40EC00
-namespace gamemd {
-void nullsub_60()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -8821,30 +8772,6 @@ int sub_40F220()
   MEMORY[0x887414] = 0; /*0x40f231*/
   return 0; /*0x40f236*/
 }
-}
-} // namespace gamemd
-
-// 0x40F240
-namespace gamemd {
-void nullsub_61()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x40F250
-namespace gamemd {
-void nullsub_62()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x40F260
-namespace gamemd {
-void nullsub_63()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -9318,14 +9245,6 @@ int sub_40FF10()
 }
 } // namespace gamemd
 
-// 0x40FF30
-namespace gamemd {
-void nullsub_64()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x40FF40
 namespace gamemd {
 int sub_40FF40()
@@ -9393,6 +9312,14 @@ void sub_40FFD0()
 }
 } // namespace gamemd
 
+// 0x4011B0
+namespace gamemd {
+int sub_4011B0(unsigned int * a1, int a2)
+{
+  return *a1 + 36 * a2;
+}
+} // namespace gamemd
+
 // 0x403460
 namespace gamemd {
 int sub_403460()
@@ -9401,10 +9328,83 @@ return -2147221504;
 }
 } // namespace gamemd
 
+// 0x408530
+namespace gamemd {
+void nullsub_2()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x40A770
 namespace gamemd {
 int sub_40A770()
 {
 return -2147221504;
+}
+} // namespace gamemd
+
+// 0x40D260
+namespace gamemd {
+void nullsub_56()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40D300
+namespace gamemd {
+void nullsub_57()
+// 0x40d260
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40EB80
+namespace gamemd {
+void nullsub_59()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40EC00
+namespace gamemd {
+void nullsub_60()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40F240
+namespace gamemd {
+void nullsub_61()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40F250
+namespace gamemd {
+void nullsub_62()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40F260
+namespace gamemd {
+void nullsub_63()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x40FF30
+namespace gamemd {
+void nullsub_64()
+{
+  ;
 }
 } // namespace gamemd

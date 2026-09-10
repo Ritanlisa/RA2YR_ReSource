@@ -99,18 +99,6 @@ int __stdcall IsometricTileTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectType
 }
 }
 
-// 0x549D90
-int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862010;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x549DD0
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
@@ -302,6 +290,18 @@ _DWORD *__thiscall sub_54A850(_DWORD *this, int a2, int a3)
   }
   return this; /*0x54a87d*/
 }
+}
+
+// 0x549D90
+int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862010;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x54A140

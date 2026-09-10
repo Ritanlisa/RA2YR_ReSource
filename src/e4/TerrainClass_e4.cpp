@@ -214,20 +214,6 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
 }
 } // namespace gamemd
 
-// 0x71D310
-namespace gamemd {
-int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448654;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x71D2F0
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero()
@@ -241,5 +227,19 @@ namespace gamemd {
 int TerrainClass::MissionStubReturnZero2()
 {
 return 36;
+}
+} // namespace gamemd
+
+// 0x71D310
+namespace gamemd {
+int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448654;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd

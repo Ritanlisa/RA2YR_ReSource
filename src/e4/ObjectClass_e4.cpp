@@ -1378,7 +1378,7 @@ int __thiscall ObjectClass::DropAsBomb_Track(#374 *this)
       }
       else
       {
-        v5[0] = *((_DWORD *)this + 39); /*0x5f41ed*/
+        v5[0] = this->location; /*0x5f41ed*/
         v4 = *(_DWORD *)this; /*0x5f41f1*/
         v5[1] = *((_DWORD *)this + 40); /*0x5f41f6*/
         v5[2] = *((_DWORD *)this + 41); /*0x5f4204*/
@@ -1913,7 +1913,7 @@ int __thiscall ObjectClass::GetZAboveGround(#374 *this)
   int v2; // ecx
   _DWORD v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4[0] = *((_DWORD *)this + 39); /*0x5f5f52*/
+  v4[0] = this->location; /*0x5f5f52*/
   v4[1] = *((_DWORD *)this + 40); /*0x5f5f63*/
   v4[2] = *((_DWORD *)this + 41); /*0x5f5f6a*/
   v2 = *((_DWORD *)this + 41) - Cell::GetGroundHeight(v4); /*0x5f5f79*/

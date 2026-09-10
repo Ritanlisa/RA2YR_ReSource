@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4503E0
-namespace gamemd {
-void nullsub_101()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x451400
 namespace gamemd {
 char UpdateBuildingActiveAnim(int a1, int edx0)
@@ -409,14 +401,6 @@ int sub_452D40()
 }
 } // namespace gamemd
 
-// 0x454CE0
-namespace gamemd {
-void nullsub_5()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x455DD0
 namespace gamemd {
 unsigned int * sub_455DD0(int a1, unsigned int * a2)
@@ -479,18 +463,9 @@ _DWORD *__fastcall sub_455DD0(int a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x456970
-namespace gamemd {
-void nullsub_103()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x456980
 namespace gamemd {
 int DrawTechnoDeployCircle()
-// 0x456970
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DrawTechnoDeployCircle(
@@ -1063,14 +1038,6 @@ int __thiscall sub_45DD50(void *this)
 }
 } // namespace gamemd
 
-// 0x45E750
-namespace gamemd {
-void nullsub_6()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x45E8B0
 namespace gamemd {
 int sub_45E8B0(int a2, int a3, int a4, int a5)
@@ -1135,6 +1102,38 @@ char sub_45E8F0()
   }
   return SubFile; /*0x45e95d*/
 }
+}
+} // namespace gamemd
+
+// 0x4503E0
+namespace gamemd {
+void nullsub_101()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x454CE0
+namespace gamemd {
+void nullsub_5()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x456970
+namespace gamemd {
+void nullsub_103()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x45E750
+namespace gamemd {
+void nullsub_6()
+{
+  ;
 }
 } // namespace gamemd
 

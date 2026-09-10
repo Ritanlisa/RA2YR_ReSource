@@ -3841,14 +3841,6 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
 }
 } // namespace gamemd
 
-// 0x60D440
-namespace gamemd {
-void nullsub_31()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x60D520
 namespace gamemd {
 LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -3981,5 +3973,13 @@ LABEL_20:
     return 1; /*0x60f738*/
   }
 }
+}
+} // namespace gamemd
+
+// 0x60D440
+namespace gamemd {
+void nullsub_31()
+{
+  ;
 }
 } // namespace gamemd

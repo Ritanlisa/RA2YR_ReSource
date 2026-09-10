@@ -3005,14 +3005,6 @@ ObjectClass *__thiscall sub_5BCB90(int this, int a2)
 }
 } // namespace gamemd
 
-// 0x5BCC20
-namespace gamemd {
-void nullsub_174()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5BCC30
 namespace gamemd {
 int sub_5BCC30()
@@ -4504,5 +4496,13 @@ namespace gamemd {
 char ReturnTrue(AnimClass * aP0)
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x5BCC20
+namespace gamemd {
+void nullsub_174()
+{
+  ;
 }
 } // namespace gamemd

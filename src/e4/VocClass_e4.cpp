@@ -13,12 +13,12 @@ int __thiscall VocClass_Cleanup(int this)
   int v4; // ebx
   _DWORD **v5; // edi
 
-  if ( (*(_BYTE *)(this + 24) & 1) == 0 ) /*0x4052f7*/
+  if ( ((unsigned char)this->Volume & 1) == 0 ) /*0x4052f7*/
   {
     v2 = this->pVoiceChannel; /*0x4052fd*/
     if ( v2 && this == *(_DWORD *)(v2 + 192) ) /*0x405311*/
     {
-      if ( (*(_BYTE *)(this + 24) & 2) != 0 ) /*0x405317*/
+      if ( ((unsigned char)this->Volume & 2) != 0 ) /*0x405317*/
         Voice::Stop(v2); /*0x405319*/
       AudioStream::ReleaseChannel(*(_DWORD **)(this + 176)); /*0x405324*/
       *(_DWORD *)(this->pVoiceChannel + 192) = 0; /*0x40532f*/
@@ -49,7 +49,7 @@ int __thiscall VocClass_Cleanup(int this)
     this->Volume.AudioState = 4; /*0x4053b1*/
     this->Attack = 0; /*0x4053b8*/
     *(_DWORD *)(this + 632) = 0; /*0x4053be*/
-    *(_DWORD *)(this + 24) |= 1u; /*0x4053ca*/
+    this->Volume |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/
 }

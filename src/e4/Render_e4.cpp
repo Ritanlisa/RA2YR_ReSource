@@ -1935,14 +1935,6 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x660530
-namespace gamemd {
-bool sub_660530()
-{
-  return g_TriggerEventState == 0;
-}
-} // namespace gamemd
-
 // 0x6D9A50
 namespace gamemd {
 int sub_6D9A50(int a1, int a2, int a3, int a4)
@@ -2145,6 +2137,14 @@ int __fastcall sub_7C3690(int a1, int a2)
   }
   return result; /*0x7c36b8*/
 }
+}
+} // namespace gamemd
+
+// 0x660530
+namespace gamemd {
+bool sub_660530()
+{
+  return g_TriggerEventState == 0;
 }
 } // namespace gamemd
 

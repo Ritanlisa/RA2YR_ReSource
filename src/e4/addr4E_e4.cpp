@@ -20,8 +20,8 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 
   *(this + 1) = 0; /*0x4e0a0a*/
   *(this + 2) = a2; /*0x4e0a11*/
-  *((_BYTE *)this + 12) = 1; /*0x4e0a14*/
-  *((_BYTE *)this + 13) = 0; /*0x4e0a18*/
+  this->IsInitialized = 1; /*0x4e0a14*/
+  this->IsAllocated = 0; /*0x4e0a18*/
   *this = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
@@ -68,7 +68,7 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
         v10 = 0; /*0x4e0a81*/
       }
       *(this + 1) = v10; /*0x4e0a83*/
-      *((_BYTE *)this + 13) = 1; /*0x4e0a86*/
+      this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
   *this = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
@@ -76,14 +76,6 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
   *(this + 4) = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
 }
-}
-} // namespace gamemd
-
-// 0x4E0C30
-namespace gamemd {
-void nullsub_138()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2921,14 +2913,6 @@ int __thiscall sub_4E6070(int this)
   Debug::Log(); /*0x4e60d6*/
   return this; /*0x4e612c*/
 }
-}
-} // namespace gamemd
-
-// 0x4E6140
-namespace gamemd {
-void nullsub_54()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -5942,5 +5926,21 @@ VectorClass *__thiscall ParticleSystemClass::vt_00_(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x4ef83b*/
   return (VectorClass *)Block; /*0x4ef845*/
 }
+}
+} // namespace gamemd
+
+// 0x4E0C30
+namespace gamemd {
+void nullsub_138()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4E6140
+namespace gamemd {
+void nullsub_54()
+{
+  ;
 }
 } // namespace gamemd

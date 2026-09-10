@@ -573,15 +573,6 @@ __int64 sub_561880()
 }
 } // namespace gamemd
 
-// 0x5618B0
-namespace gamemd {
-int sub_5618B0()
-{
-  g_MapSeedState = 0;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x5618C0
 namespace gamemd {
 int sub_5618C0()
@@ -1071,14 +1062,6 @@ int __thiscall sub_56B250(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x56C500
-namespace gamemd {
-void nullsub_167()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x56ED40
 namespace gamemd {
 char globalHelper_06ED40(IUnknown * aP0, int a2)
@@ -1335,10 +1318,27 @@ char __stdcall sub_56F7A0(_WORD *a1, int a2)
 }
 } // namespace gamemd
 
+// 0x5618B0
+namespace gamemd {
+int sub_5618B0()
+{
+  g_MapSeedState = 0;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x56C200
 namespace gamemd {
 int sub_56C200()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x56C500
+namespace gamemd {
+void nullsub_167()
+{
+  ;
 }
 } // namespace gamemd

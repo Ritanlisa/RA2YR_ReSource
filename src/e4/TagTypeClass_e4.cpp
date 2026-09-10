@@ -264,20 +264,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x6E63A0
-namespace gamemd {
-int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1425466419;
-  a2[1] = 298977773;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6E63E0
 namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
@@ -393,6 +379,20 @@ LABEL_6:
   }
   return (TriggerTypeClass *)*((_DWORD *)unk_8B417C + v2); /*0x727b0f*/
 }
+}
+} // namespace gamemd
+
+// 0x6E63A0
+namespace gamemd {
+int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1425466419;
+  a2[1] = 298977773;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

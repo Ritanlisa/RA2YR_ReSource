@@ -435,18 +435,6 @@ int __thiscall WeaponTypeClass::ProcessPower(int this, int *a2)
 }
 }
 
-// 0x772C90
-int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1613620790;
-  a2[1] = 298979195;
-  a2[2] = 1610642049;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x772CD0
 namespace gamemd {
 int WeaponTypeClass_SaveLoad_Prefix()
@@ -561,7 +549,11 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {
-return 49;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int WeaponTypeClass::_vt11()
+{
+  return 49; /*0x7730e5*/
+}
 }
 
 // 0x7730F0
@@ -626,6 +618,18 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x773222*/
   return (WeaponTypeClass *)Block; /*0x77322c*/
 }
+}
+
+// 0x772C90
+int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1613620790;
+  a2[1] = 298979195;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x7730D0

@@ -12,17 +12,17 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
-  *(_DWORD *)(this + 28) = MEMORY[0x8B3C78]; /*0x4cc9b6*/
+  this->MovingDestination = MEMORY[0x8B3C78]; /*0x4cc9b6*/
   *(_DWORD *)(this + 32) = MEMORY[0x8B3C7C]; /*0x4cc9be*/
   *(_DWORD *)(this + 36) = MEMORY[0x8B3C80]; /*0x4cc9c7*/
-  *(_DWORD *)(this + 40) = MEMORY[0x8B3C78]; /*0x4cc9d3*/
+  this->XYZ2 = MEMORY[0x8B3C78]; /*0x4cc9d3*/
   *(_DWORD *)(this + 44) = MEMORY[0x8B3C7C]; /*0x4cc9dc*/
   v2 = MEMORY[0x8B3C80]; /*0x4cc9df*/
   *(_DWORD *)(this + 64) = 0; /*0x4cc9e5*/
   *(_DWORD *)(this + 72) = 0; /*0x4cc9e8*/
   this->HasMoveOrder = 0; /*0x4cc9eb*/
   this->FlightLevel = 0; /*0x4cc9ee*/
-  *(_DWORD *)(this + 68) = 0; /*0x4cc9f1*/
+  this->CurrentSpeed = 0; /*0x4cc9f1*/
   *(_DWORD *)(this + 76) = 0; /*0x4cc9f4*/
   *(_BYTE *)(this + 80) = 0; /*0x4cc9f7*/
   *(_BYTE *)(this + 81) = 0; /*0x4cc9fa*/
@@ -36,18 +36,6 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
   *(_DWORD *)(this + 48) = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
-}
-
-// 0x4CFC80
-int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291206;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
 }
 
 // 0x4CFCC0
@@ -218,6 +206,18 @@ FlyLocomotionClass *__thiscall FlyLocomotionClass::ProcessMove(_DWORD *Block, ch
     __3_YAXPAX_Z(Block); /*0x4d03bd*/
   return (FlyLocomotionClass *)Block; /*0x4d03c7*/
 }
+}
+
+// 0x4CFC80
+int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291206;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4D0390

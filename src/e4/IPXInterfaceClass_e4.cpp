@@ -267,18 +267,6 @@ LABEL_6:
 }
 }
 
-// 0x7B1720
-void IPXInterfaceClass::StubReturnFalse(int a1, int a2)
-{
-  ;
-}
-
-// 0x7B1730
-void IPXInterfaceClass::GetQueueSize()
-{
-  ;
-}
-
 // 0x7B1760
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
@@ -288,18 +276,6 @@ int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
   *(this + 64702) = a2; /*0x7b1764*/
   return a2; /*0x7b176a*/
 }
-}
-
-// 0x7B1770
-int IPXInterfaceClass::COMStub_Return1()
-{
-return 1;
-}
-
-// 0x7B1780
-int IPXInterfaceClass::COMStub_Ret1139(int a1)
-{
-return 1139;
 }
 
 // 0x7B1790
@@ -324,7 +300,7 @@ char *__thiscall sub_7B19C0(char *this)
   _BYTE *v2; // eax
   int v3; // edx
 
-  *((_DWORD *)this + 3) = 0; /*0x7b19d2*/
+  this->LocalNode = 0; /*0x7b19d2*/
   *((_DWORD *)this + 4) = 0; /*0x7b19d5*/
   *(this + 20) = 1; /*0x7b19d8*/
   *(this + 21) = 0; /*0x7b19db*/
@@ -457,7 +433,7 @@ void __thiscall IPXInterfaceClass::_vt05(int this)
       v5 = 0; /*0x7b1cda*/
       for ( *(_DWORD *)(this + 24) = v4; /*0x7b1ce1*/
             v5 < *(_DWORD *)(this + 24);
-            *(_DWORD *)(*(_DWORD *)(this + 12) + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)(this + 12) + 4 * v5) )
+            *(_DWORD *)(this->LocalNode + 4 * v5 - 4) = *(_DWORD *)(this->LocalNode + 4 * v5) )
       {
         ++v5; /*0x7b1ce6*/
       }
@@ -672,7 +648,7 @@ unsigned int IPXInterfaceClass::resetSocket(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall IPXInterfaceClass::sub_7B2870(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x7b2870*/
+  if ( (unsigned char)this->LocalNode ) /*0x7b2870*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x7b2885*/
   else
     return 0; /*0x7b2877*/
@@ -774,6 +750,18 @@ DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *Block, char a2
 }
 }
 
+// 0x7B1720
+void IPXInterfaceClass::StubReturnFalse(int a1, int a2)
+{
+  ;
+}
+
+// 0x7B1730
+void IPXInterfaceClass::GetQueueSize()
+{
+  ;
+}
+
 // 0x7B1740
 int IPXInterfaceClass::COMStub_Return0()
 {
@@ -784,4 +772,16 @@ return 0;
 int IPXInterfaceClass::Send(int a1)
 {
 return 0;
+}
+
+// 0x7B1770
+int IPXInterfaceClass::COMStub_Return1()
+{
+return 1;
+}
+
+// 0x7B1780
+int IPXInterfaceClass::COMStub_Ret1139(int a1)
+{
+return 1139;
 }

@@ -702,14 +702,6 @@ int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x489270
-namespace gamemd {
-void CellChainReact()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x489280
 namespace gamemd {
 int PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, ObjectClass * aP3, char a5, int aP6)
@@ -1000,8 +992,8 @@ _DWORD *__thiscall sub_48B070(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0; /*0x48b07b*/
   *(this + 2) = a2; /*0x48b07e*/
-  *((_BYTE *)this + 12) = 1; /*0x48b081*/
-  *((_BYTE *)this + 13) = 0; /*0x48b085*/
+  this->IsInitialized = 1; /*0x48b081*/
+  this->IsAllocated = 0; /*0x48b085*/
   *this = &VectorClass<DamageGroup *>::`vftable'; /*0x48b088*/
   if ( a2 ) /*0x48b08e*/
   {
@@ -1011,7 +1003,7 @@ _DWORD *__thiscall sub_48B070(_DWORD *this, int a2, int a3)
       return this; /*0x48b09e*/
     }
     *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
-    *((_BYTE *)this + 13) = 1; /*0x48b0b0*/
+    this->IsAllocated = 1; /*0x48b0b0*/
   }
   return this; /*0x48b09d*/
 }
@@ -1665,14 +1657,6 @@ int sub_48C880()
 }
 } // namespace gamemd
 
-// 0x48C8A0
-namespace gamemd {
-void nullsub_112()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x48C8B0
 namespace gamemd {
 int Main_Game_Frame()
@@ -1980,23 +1964,6 @@ LABEL_34:
     LOBYTE(inited) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 20))(*(_DWORD *)&stru_87C374.__pad_579C[23344]); /*0x48cfc3*/
   return inited; /*0x48cd8b*/
 }
-}
-} // namespace gamemd
-
-// 0x48DB70
-namespace gamemd {
-void nullsub_8()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x48DED0
-namespace gamemd {
-void nullsub_51()
-// 0x48db70
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2460,5 +2427,38 @@ namespace gamemd {
 char sub_484F10(int a1)
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x489270
+namespace gamemd {
+void CellChainReact()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x48C8A0
+namespace gamemd {
+void nullsub_112()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x48DB70
+namespace gamemd {
+void nullsub_8()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x48DED0
+namespace gamemd {
+void nullsub_51()
+// 0x48db70
+{
+  ;
 }
 } // namespace gamemd

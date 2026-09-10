@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x465CB0
-namespace gamemd {
-void nullsub_7()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x465D80
 namespace gamemd {
 Iostream_init * __0Iostream_init_QAE_XZ_2()
@@ -255,14 +247,6 @@ void __cdecl sub_466320()
     unk_89DE20 = 0; /*0x46636d*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x4666B0
-namespace gamemd {
-void nullsub_108()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1465,5 +1449,21 @@ int __fastcall HouseClass_GetSideIndex(int a1)
     return -2; /*0x46f8d9*/
   return SessionClass::GetOption((int)v2); /*0x46f89d*/
 }
+}
+} // namespace gamemd
+
+// 0x465CB0
+namespace gamemd {
+void nullsub_7()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4666B0
+namespace gamemd {
+void nullsub_108()
+{
+  ;
 }
 } // namespace gamemd

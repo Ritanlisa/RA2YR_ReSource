@@ -115,20 +115,6 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x46CF80
-namespace gamemd {
-int CampaignClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -2439096;
-  a2[1] = 298980631;
-  a2[2] = 1610642817;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x46D000
 namespace gamemd {
 int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
@@ -410,6 +396,20 @@ LABEL_47:
   *(this + 108) = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 }
+}
+} // namespace gamemd
+
+// 0x46CF80
+namespace gamemd {
+int CampaignClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -2439096;
+  a2[1] = 298980631;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

@@ -475,18 +475,6 @@ int __stdcall TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTy
 }
 }
 
-// 0x71E260
-int TerrainTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862011;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x71E2A0
 TerrainTypeClass * TerrainTypeClass::FindOrCreate(ObjectClass * Source)
 {
@@ -568,6 +556,18 @@ TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass 
     __3_YAXPAX_Z(this); /*0x71e3fd*/
   return (TerrainTypeClass *)this; /*0x71e407*/
 }
+}
+
+// 0x71E260
+int TerrainTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862011;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x71E330

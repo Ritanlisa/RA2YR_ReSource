@@ -46,20 +46,6 @@ int __stdcall TubeClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 } // namespace gamemd
 
-// 0x7286D0
-namespace gamemd {
-int TubeClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 189572124;
-  a2[1] = 298955687;
-  a2[2] = 1610635188;
-  a2[3] = 2041169559;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x7286B0
 namespace gamemd {
 int TubeClass::StubReturn452()
@@ -73,5 +59,19 @@ namespace gamemd {
 int TubeClass::StubReturn53()
 {
 return 53;
+}
+} // namespace gamemd
+
+// 0x7286D0
+namespace gamemd {
+int TubeClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 189572124;
+  a2[1] = 298955687;
+  a2[2] = 1610635188;
+  a2[3] = 2041169559;
+  return 0;
 }
 } // namespace gamemd

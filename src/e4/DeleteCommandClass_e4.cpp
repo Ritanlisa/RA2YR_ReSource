@@ -14,12 +14,6 @@ _DWORD *__thiscall sub_537F10(_DWORD *this)
 }
 }
 
-// 0x537F20
-char * DeleteCommandClass::AddRef()
-{
-return aDelete;
-}
-
 // 0x537F30
 wchar_t * DeleteCommandClass::Release()
 {
@@ -383,3 +377,9 @@ DynamicVector *__thiscall DeleteCommandClass_28_::Constructor(_DWORD *Block, cha
 }
 }
 } // namespace gamemd
+
+// 0x537F20
+char * DeleteCommandClass::AddRef()
+{
+return aDelete;
+}

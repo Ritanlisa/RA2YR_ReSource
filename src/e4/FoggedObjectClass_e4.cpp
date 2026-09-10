@@ -808,16 +808,14 @@ LABEL_22:
 }
 }
 
-// 0x4D27D0
-int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
+// 0x4D27B0
+int FoggedObjectClass::GetTypeIdentifier()
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 474417934;
-  a2[1] = 299002327;
-  a2[2] = 1610674872;
-  a2[3] = -318126072;
-  return 0;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int FoggedObjectClass::_vt11()
+{
+  return 61; /*0x4d27b5*/
+}
 }
 
 // 0x4D2810
@@ -1365,14 +1363,20 @@ VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *Block, cha
 }
 } // namespace gamemd
 
-// 0x4D27B0
-int FoggedObjectClass::GetTypeIdentifier()
-{
-return 61;
-}
-
 // 0x4D27C0
 int FoggedObjectClass::GetObjectSize()
 {
 return 120;
+}
+
+// 0x4D27D0
+int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 474417934;
+  a2[1] = 299002327;
+  a2[2] = 1610674872;
+  a2[3] = -318126072;
+  return 0;
 }

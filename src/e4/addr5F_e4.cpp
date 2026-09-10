@@ -616,14 +616,6 @@ LABEL_36:
 }
 } // namespace gamemd
 
-// 0x5F3340
-namespace gamemd {
-void nullsub_28()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5F33B0
 namespace gamemd {
 int sub_5F33B0()
@@ -862,14 +854,6 @@ int sub_5F38E0()
   MEMORY[0xAC135C] = 0; /*0x5f38f1*/
   return 0; /*0x5f38f6*/
 }
-}
-} // namespace gamemd
-
-// 0x5F5C10
-namespace gamemd {
-void nullsub_205()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1188,18 +1172,9 @@ void __cdecl sub_5F7030()
 }
 } // namespace gamemd
 
-// 0x5F76A0
-namespace gamemd {
-void nullsub_207()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5F96B0
 namespace gamemd {
 void TheaterObjectTypeClassSpecificID(char * a1, int a2)
-// 0x5f76a0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall TheaterObjectTypeClassSpecificID(char *a1, int a2)
@@ -1412,14 +1387,6 @@ int sub_5FA2C0()
   MEMORY[0xAC14A4] = 0; /*0x5fa2d1*/
   return 0; /*0x5fa2d6*/
 }
-}
-} // namespace gamemd
-
-// 0x5FA430
-namespace gamemd {
-void nullsub_29()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1650,38 +1617,6 @@ int sub_5FC360()
 }
 } // namespace gamemd
 
-// 0x5FD230
-namespace gamemd {
-void nullsub_208()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5FD240
-namespace gamemd {
-void nullsub_209()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5FD250
-namespace gamemd {
-void nullsub_210()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x5FD260
-namespace gamemd {
-void nullsub_211()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5FDCC0
 namespace gamemd {
 unsigned int * globalHelper_0FDCC0(IUnknown * aP0, int a2)
@@ -1833,14 +1768,6 @@ void sub_5FDDF0()
       __3_YAXPAX_Z(Block); /*0x5fdee6*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x5FDF60
-namespace gamemd {
-void nullsub_212(int a1, int a2)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2034,14 +1961,6 @@ int sub_5FE230()
   MEMORY[0xAC165C] = 128; /*0x5fe244*/
   return 128; /*0x5fe249*/
 }
-}
-} // namespace gamemd
-
-// 0x5FE520
-namespace gamemd {
-void nullsub_213()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2561,5 +2480,85 @@ char *GenerateRangeRingTextures()
   }
   return result; /*0x5ff7ef*/
 }
+}
+} // namespace gamemd
+
+// 0x5F3340
+namespace gamemd {
+void nullsub_28()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5F5C10
+namespace gamemd {
+void nullsub_205()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5F76A0
+namespace gamemd {
+void nullsub_207()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FA430
+namespace gamemd {
+void nullsub_29()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FD230
+namespace gamemd {
+void nullsub_208()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FD240
+namespace gamemd {
+void nullsub_209()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FD250
+namespace gamemd {
+void nullsub_210()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FD260
+namespace gamemd {
+void nullsub_211()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FDF60
+namespace gamemd {
+void nullsub_212(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5FE520
+namespace gamemd {
+void nullsub_213()
+{
+  ;
 }
 } // namespace gamemd

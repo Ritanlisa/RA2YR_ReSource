@@ -2,22 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x762060
-namespace gamemd {
-void nullsub_46()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x762AE0
-namespace gamemd {
-void nullsub_47()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x763380
 namespace gamemd {
 void sub_763380()
@@ -280,18 +264,9 @@ _DWORD *__thiscall sub_763700(_DWORD *this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x763720
-namespace gamemd {
-void nullsub_84()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x764810
 namespace gamemd {
 int sub_764810()
-// 0x763720
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_764810()
@@ -3918,6 +3893,30 @@ rc_ptr *__fastcall FindTerritoryWOL(ObjectClass *aP0, int a2, int a3)
   }
   return (rc_ptr *)aP0; /*0x77000a*/
 }
+}
+} // namespace gamemd
+
+// 0x762060
+namespace gamemd {
+void nullsub_46()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x762AE0
+namespace gamemd {
+void nullsub_47()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x763720
+namespace gamemd {
+void nullsub_84()
+{
+  ;
 }
 } // namespace gamemd
 

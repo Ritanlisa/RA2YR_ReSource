@@ -19,127 +19,6 @@ int __thiscall MissionClass::vt_entry_1FC(#377 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x5B2E30
-namespace ra2 {
-namespace game {
-int MissionClass::Return450C()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2ED0
-namespace ra2 {
-namespace game {
-int MissionClass::Return450D()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2EE0
-namespace ra2 {
-namespace game {
-int MissionClass::Return450E()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F10
-namespace ra2 {
-namespace game {
-int MissionClass::Return450G()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F20
-namespace ra2 {
-namespace game {
-int MissionClass::Return450H()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F40
-namespace ra2 {
-namespace game {
-int MissionClass::Return450I()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F50
-namespace ra2 {
-namespace game {
-int MissionClass::Return450J()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F80
-namespace ra2 {
-namespace game {
-int MissionClass::Return450K()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2F90
-namespace ra2 {
-namespace game {
-int MissionClass::Return450L()
-// 0x5b2f50
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2FA0
-namespace ra2 {
-namespace game {
-int MissionClass::Return450F()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2FB0
-namespace ra2 {
-namespace game {
-int MissionClass::Return450M()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5B2FC0
-namespace ra2 {
-namespace game {
-int MissionClass::Return450N()
-{
-return 450;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5B3760
 namespace ra2 {
 namespace game {
@@ -280,6 +159,127 @@ return 450;
 namespace ra2 {
 namespace game {
 int MissionClass::Return450B()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2E30
+namespace ra2 {
+namespace game {
+int MissionClass::Return450C()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2ED0
+namespace ra2 {
+namespace game {
+int MissionClass::Return450D()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2EE0
+namespace ra2 {
+namespace game {
+int MissionClass::Return450E()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F10
+namespace ra2 {
+namespace game {
+int MissionClass::Return450G()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F20
+namespace ra2 {
+namespace game {
+int MissionClass::Return450H()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F40
+namespace ra2 {
+namespace game {
+int MissionClass::Return450I()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F50
+namespace ra2 {
+namespace game {
+int MissionClass::Return450J()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F80
+namespace ra2 {
+namespace game {
+int MissionClass::Return450K()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2F90
+namespace ra2 {
+namespace game {
+int MissionClass::Return450L()
+// 0x5b2f50
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2FA0
+namespace ra2 {
+namespace game {
+int MissionClass::Return450F()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2FB0
+namespace ra2 {
+namespace game {
+int MissionClass::Return450M()
+{
+return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B2FC0
+namespace ra2 {
+namespace game {
+int MissionClass::Return450N()
 {
 return 450;
 }

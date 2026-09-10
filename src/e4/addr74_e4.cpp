@@ -720,14 +720,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x749010
-namespace gamemd {
-void nullsub_143()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7490A0
 namespace gamemd {
 int Array_Sum(int * a1)
@@ -2154,6 +2146,14 @@ _DWORD *__thiscall unknown_libname_35(_DWORD *this)
   *this = 0; /*0x74ff32*/
   return this; /*0x74ff38*/
 }
+}
+} // namespace gamemd
+
+// 0x749010
+namespace gamemd {
+void nullsub_143()
+{
+  ;
 }
 } // namespace gamemd
 

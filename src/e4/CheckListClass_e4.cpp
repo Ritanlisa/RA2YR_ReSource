@@ -102,29 +102,10 @@ int __thiscall CheckListClass::_vt37(_DWORD *this)
 }
 }
 
-// 0x48E650
-void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
-{
-  ;
-}
-
-// 0x4E1510
-void CheckListClass::StubReturnVoid()
-{
-  ;
-}
-
-// 0x4E1520
-void CheckListClass::StubReturn()
-{
-  ;
-}
-
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4e1520
 int __thiscall CheckListClass::_vt03(int this, int a2)
 {
   if ( *(_BYTE *)(this + 84) ) /*0x557e18*/
@@ -137,8 +118,26 @@ int __thiscall CheckListClass::_vt03(int this, int a2)
 }
 }
 
+// 0x48E650
+void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
+{
+  ;
+}
+
 // 0x4AEBA0
 int CheckListClass::COMStub_Return0()
 {
 return 0;
+}
+
+// 0x4E1510
+void CheckListClass::StubReturnVoid()
+{
+  ;
+}
+
+// 0x4E1520
+void CheckListClass::StubReturn()
+{
+  ;
 }

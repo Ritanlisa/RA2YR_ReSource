@@ -314,14 +314,6 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x4B4770
-namespace gamemd {
-void nullsub_118()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4B4DF0
 namespace gamemd {
 int sub_4B4DF0()
@@ -456,12 +448,12 @@ int __thiscall sub_4B56E0(int this, int a2)
   this->nextObject = *(_DWORD *)(a2 + 48); /*0x4b573f*/
   this->attachedTag = *(_DWORD *)(a2 + 52); /*0x4b5745*/
   this->attachedBomb = *(_DWORD *)(a2 + 56); /*0x4b574b*/
-  *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60); /*0x4b5751*/
+  this->ambientSoundController = *(_DWORD *)(a2 + 60); /*0x4b5751*/
   this->ambientSoundController.AudioController_field_04 = *(_DWORD *)(a2 + 64); /*0x4b5757*/
   *(_BYTE *)(this + 68) = *(_BYTE *)(a2 + 68); /*0x4b575d*/
   this->ambientSoundController.AudioController_field_0C = *(_DWORD *)(a2 + 72); /*0x4b5763*/
   *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x4b5769*/
-  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x4b576f*/
+  this->customSound_controller = *(_DWORD *)(a2 + 80); /*0x4b576f*/
   return this; /*0x4b5774*/
 }
 }
@@ -914,14 +906,6 @@ int sub_4B6990()
   MEMORY[0x8A089C] = 0; /*0x4b69a1*/
   return 0; /*0x4b69a6*/
 }
-}
-} // namespace gamemd
-
-// 0x4B69D0
-namespace gamemd {
-void nullsub_126()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1576,5 +1560,21 @@ __int16 __fastcall BlendMinimapPixel(unsigned __int16 a1, unsigned __int16 a2, i
   }
   return v3; /*0x4bf67c*/
 }
+}
+} // namespace gamemd
+
+// 0x4B4770
+namespace gamemd {
+void nullsub_118()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4B69D0
+namespace gamemd {
+void nullsub_126()
+{
+  ;
 }
 } // namespace gamemd

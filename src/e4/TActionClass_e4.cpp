@@ -1572,20 +1572,6 @@ char __thiscall TActionClass::executeLightningAction(int *this, int a2, int a3, 
 }
 } // namespace gamemd
 
-// 0x6E3D70
-namespace gamemd {
-int TActionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1326367634;
-  a2[1] = 298977877;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6E3DB0
 namespace gamemd {
 int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
@@ -2097,6 +2083,20 @@ void __thiscall sub_726900(_BYTE *this)
 {
   *(this + 68) = 0; /*0x726900*/
 }
+}
+} // namespace gamemd
+
+// 0x6E3D70
+namespace gamemd {
+int TActionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1326367634;
+  a2[1] = 298977877;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

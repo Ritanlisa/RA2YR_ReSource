@@ -1518,14 +1518,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x7AC4F0
-namespace gamemd {
-void nullsub_265()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7ACBD0
 namespace gamemd {
 int __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
@@ -2261,5 +2253,13 @@ LABEL_41:
     }
   }
 }
+}
+} // namespace gamemd
+
+// 0x7AC4F0
+namespace gamemd {
+void nullsub_265()
+{
+  ;
 }
 } // namespace gamemd

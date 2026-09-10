@@ -95,20 +95,6 @@ int __stdcall RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int
 }
 } // namespace gamemd
 
-// 0x65B470
-namespace gamemd {
-int RadSiteClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1090836288;
-  a2[1] = 299095303;
-  a2[2] = -1610598260;
-  a2[3] = 1153315785;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x65B3A0
 namespace gamemd {
 int RadSiteClass::StubReturn116()
@@ -122,5 +108,19 @@ namespace gamemd {
 int RadSiteClass::StubReturn69()
 {
 return 69;
+}
+} // namespace gamemd
+
+// 0x65B470
+namespace gamemd {
+int RadSiteClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1090836288;
+  a2[1] = 299095303;
+  a2[2] = -1610598260;
+  a2[3] = 1153315785;
+  return 0;
 }
 } // namespace gamemd

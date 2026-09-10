@@ -617,18 +617,6 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTyp
 }
 }
 
-// 0x46C750
-int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862007;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x46C820
 int BulletTypeClass::GetWarhead(int a2, int a3)
 {
@@ -642,18 +630,6 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
     *(this + 182) = 0; /*0x46c82e*/
   return result; /*0x46c838*/
 }
-}
-
-// 0x46C870
-char BulletTypeClass::Stub(int a1, int a2)
-{
-return 0;
-}
-
-// 0x46C880
-int BulletTypeClass::StubReturnFalse(int a1)
-{
-return 0;
 }
 
 // 0x46C890
@@ -968,6 +944,18 @@ LABEL_32:
 }
 }
 
+// 0x46C750
+int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862007;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
+}
+
 // 0x46C850
 int BulletTypeClass::GetTypeIdentifier()
 {
@@ -978,4 +966,16 @@ return 9;
 int BulletTypeClass::GetObjectSize()
 {
 return 760;
+}
+
+// 0x46C870
+char BulletTypeClass::Stub(int a1, int a2)
+{
+return 0;
+}
+
+// 0x46C880
+int BulletTypeClass::StubReturnFalse(int a1)
+{
+return 0;
 }

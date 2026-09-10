@@ -210,14 +210,6 @@ int sub_710AD0()
 }
 } // namespace gamemd
 
-// 0x7179C0
-namespace gamemd {
-void nullsub_86()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x717A40
 namespace gamemd {
 int ReadPointerFromECX4()
@@ -796,14 +788,6 @@ void __cdecl sub_71A410()
 }
 } // namespace gamemd
 
-// 0x71AD30
-namespace gamemd {
-void nullsub_246()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x71B5A0
 namespace gamemd {
 void sub_71B5A0()
@@ -1349,18 +1333,9 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
 }
 } // namespace gamemd
 
-// 0x71DE90
-namespace gamemd {
-void nullsub_247()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x71E410
 namespace gamemd {
 void sub_71E410()
-// 0x71de90
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_71E410()
@@ -1659,5 +1634,29 @@ int __thiscall sub_71FF20(
   }
   return (int)this->__pad_0; /*0x71ffa1*/
 }
+}
+} // namespace gamemd
+
+// 0x7179C0
+namespace gamemd {
+void nullsub_86()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x71AD30
+namespace gamemd {
+void nullsub_246()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x71DE90
+namespace gamemd {
+void nullsub_247()
+{
+  ;
 }
 } // namespace gamemd

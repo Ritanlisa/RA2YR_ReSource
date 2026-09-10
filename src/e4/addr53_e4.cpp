@@ -404,22 +404,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x532130
-namespace gamemd {
-void nullsub_19()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x532140
-namespace gamemd {
-void nullsub_151()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x532150
 namespace gamemd {
 char InitCommands()
@@ -2261,18 +2245,9 @@ void PsyDom::Update()
 }
 } // namespace gamemd
 
-// 0x53B3F0
-namespace gamemd {
-void nullsub_152()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x53B460
 namespace gamemd {
 void sub_53B460(int a1)
-// 0x53b3f0
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_53B460(int a1)
@@ -3979,5 +3954,29 @@ int sub_53FA70()
   unk_AA0614 = 128; /*0x53fa84*/
   return 128; /*0x53fa89*/
 }
+}
+} // namespace gamemd
+
+// 0x532130
+namespace gamemd {
+void nullsub_19()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x532140
+namespace gamemd {
+void nullsub_151()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x53B3F0
+namespace gamemd {
+void nullsub_152()
+{
+  ;
 }
 } // namespace gamemd

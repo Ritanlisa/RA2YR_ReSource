@@ -2615,7 +2615,7 @@ BOOL __thiscall sub_7B9530(int this)
       v10 = FoundationSize[3]; /*0x7b95dd*/
       v11 = this->nextArrayIndex; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
-      v2 = v8 - *(_DWORD *)(this + 60) + v7; /*0x7b95f2*/
+      v2 = v8 - this->ambientSoundController + v7; /*0x7b95f2*/
       v3 = v11 - this->ambientSoundController.AudioController_field_04 + v9; /*0x7b95fa*/
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
@@ -2628,7 +2628,7 @@ BOOL __thiscall sub_7B9530(int this)
     v14 = &v13->__pad_0[v3]; /*0x7b9620*/
     v15 = this->ambientSoundController.AudioController_field_08; /*0x7b9622*/
     v18[2] = v4; /*0x7b9625*/
-    *(_DWORD *)(this + 80) = v4; /*0x7b9629*/
+    this->customSound_controller = v4; /*0x7b9629*/
     v18[3] = v5; /*0x7b962c*/
     v18[1] = v14; /*0x7b9630*/
     v19[2] = v4; /*0x7b9634*/
@@ -4022,14 +4022,6 @@ int __thiscall sub_7BF190(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x7BF220
-namespace gamemd {
-void nullsub_49()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7BF240
 namespace gamemd {
 int sub_7BF240(int a1, int a2, char * DstBuf, int MaxCharCount)
@@ -4321,6 +4313,14 @@ namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x7BF220
+namespace gamemd {
+void nullsub_49()
+{
+  ;
 }
 } // namespace gamemd
 

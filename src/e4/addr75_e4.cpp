@@ -1305,7 +1305,7 @@ int __thiscall sub_752CB0(int this, const char *a2)
   *(_BYTE *)(this + 62) = 0; /*0x752ce5*/
   this->ambientSoundController.AudioController_field_0C = 1; /*0x752ce8*/
   *(_DWORD *)(this + 76) = 0; /*0x752cef*/
-  *(_DWORD *)(this + 80) = 2; /*0x752cf2*/
+  this->customSound_controller = 2; /*0x752cf2*/
   if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
     || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
     && MEMORY[0xB1D4B4] > 0
@@ -4151,30 +4151,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x75A400
-namespace gamemd {
-int ReturnNull2()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x75A410
-namespace gamemd {
-void nullsub_257()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x75A420
-namespace gamemd {
-void nullsub_258()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x75A7D0
 namespace gamemd {
 int AnimSystem_Reset(int a1)
@@ -4570,20 +4546,6 @@ int sub_75CE60()
 }
 } // namespace gamemd
 
-// 0x75E080
-namespace gamemd {
-int WarheadTypeClass__vt_03_(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1463464540;
-  a2[1] = 298979195;
-  a2[2] = 1610642049;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x75E740
 namespace gamemd {
 void sub_75E740()
@@ -4872,5 +4834,43 @@ namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_22()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x75A400
+namespace gamemd {
+int ReturnNull2()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x75A410
+namespace gamemd {
+void nullsub_257()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x75A420
+namespace gamemd {
+void nullsub_258()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x75E080
+namespace gamemd {
+int WarheadTypeClass__vt_03_(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1463464540;
+  a2[1] = 298979195;
+  a2[2] = 1610642049;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd

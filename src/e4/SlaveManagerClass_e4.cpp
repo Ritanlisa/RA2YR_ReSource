@@ -866,22 +866,6 @@ int __thiscall SlaveManagerClass::AssignTask(int this, AbstractClass *aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x6B1130
-namespace ra2 {
-namespace game {
-int SlaveManagerClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 861581284;
-  a2[1] = 299183526;
-  a2[2] = 268444350;
-  a2[3] = 1822515787;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B1170
 namespace ra2 {
 namespace game {
@@ -1246,6 +1230,22 @@ DynamicVector *__thiscall SlaveManagerClass_25_::QueryInterface(_DWORD *Block, c
 }
 }
 } // namespace gamemd
+
+// 0x6B1130
+namespace ra2 {
+namespace game {
+int SlaveManagerClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 861581284;
+  a2[1] = 299183526;
+  a2[2] = 268444350;
+  a2[3] = 1822515787;
+  return 0;
+}
+} // namespace game
+} // namespace ra2
 
 // 0x6B1370
 namespace ra2 {

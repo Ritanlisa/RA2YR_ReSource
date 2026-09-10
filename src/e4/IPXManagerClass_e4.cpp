@@ -144,12 +144,6 @@ int __thiscall IPXManagerClass::_vt03(int this, int a2, int a3, _DWORD *a4)
 }
 }
 
-// 0x543040
-void IPXManagerClass::StubReturnFalse(int a1, int a2)
-{
-  ;
-}
-
 // 0x5430E0
 IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
 {
@@ -161,4 +155,10 @@ IPXManagerClass *__thiscall IPXManagerClass::QueryInterface(char *Block, char a2
     __3_YAXPAX_Z(Block); /*0x5430f0*/
   return (IPXManagerClass *)Block; /*0x5430fa*/
 }
+}
+
+// 0x543040
+void IPXManagerClass::StubReturnFalse(int a1, int a2)
+{
+  ;
 }

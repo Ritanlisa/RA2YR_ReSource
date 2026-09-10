@@ -34,15 +34,15 @@ struct CComObject_CChatEventSink___ATL {
     int DispatchStub_34(int a1, int a2, float a3);  // 0x7ABD40
     int DispatchStub_36(int a1, int a2, int a3);  // 0x7ABFA0
     int DispatchStub_37(int a1, int a2, int a3);  // 0x7AC220
+    LONG AddRef();  // 0x7AC690
+    LONG Release();  // 0x7AC6B0
+    int QueryInterface();  // 0x7AC700
+    int Check(TechnoTypeClass * aP1);  // 0x7AE5B0
     int DispatchStub_38(int a1, int a2, int a3);  // 0x7AC4A0
     int DispatchStub_39(int a1, int a2, int a3);  // 0x7AC4B0
     int DispatchStub_45(int a1, int a2, int a3);  // 0x7AC4C0
     int DispatchStub_46(int a1, int a2, int a3);  // 0x7AC4D0
     int DispatchStub_47(int a1, int a2, int a3);  // 0x7AC4E0
-    LONG AddRef();  // 0x7AC690
-    LONG Release();  // 0x7AC6B0
-    int QueryInterface();  // 0x7AC700
-    int Check(TechnoTypeClass * aP1);  // 0x7AE5B0
     int COMStub_Return0(int a1, int a2, int a3, int a4);  // 0x7AB330
     int StubReturnFalse(int a1, int a2, int a3);  // 0x7AB340
 };

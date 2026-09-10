@@ -142,14 +142,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x5509E0
-namespace gamemd {
-void nullsub_21()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x5509F0
 namespace gamemd {
 int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
@@ -548,14 +540,6 @@ LABEL_37:
              0);
   }
 }
-}
-} // namespace gamemd
-
-// 0x5512C0
-namespace gamemd {
-void nullsub_22()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -2431,7 +2415,7 @@ int __thiscall sub_557380(int this, int a2)
   this->fallRate = *(_DWORD *)(a2 + 44); /*0x557396*/
   this->nextObject = *(_DWORD *)(a2 + 48); /*0x55739f*/
   this->attachedBomb = 0; /*0x5573a7*/
-  *(_DWORD *)(this + 60) = 0; /*0x5573aa*/
+  this->ambientSoundController = 0; /*0x5573aa*/
   *(_BYTE *)(this + 64) = 1; /*0x5573ad*/
   *(_BYTE *)(this + 65) = 0; /*0x5573b1*/
   this->attachedTag = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
@@ -2440,7 +2424,7 @@ int __thiscall sub_557380(int this, int a2)
   this->ambientSoundController.AudioController_field_0C = *(_DWORD *)(a2 + 72); /*0x5573c8*/
   this->attachedTag = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
   *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x5573d7*/
-  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x5573dd*/
+  this->customSound_controller = *(_DWORD *)(a2 + 80); /*0x5573dd*/
   *(_BYTE *)(this + 84) = *(_BYTE *)(a2 + 84); /*0x5573e9*/
   ControlClass::CtorFromData((_DWORD *)(this + 88), a2 + 88); /*0x5573ec*/
   this->hasParachute = *(_BYTE *)(a2 + 132); /*0x5573fa*/
@@ -2451,7 +2435,7 @@ int __thiscall sub_557380(int this, int a2)
   *(_DWORD *)(this + 144) = *(_DWORD *)(a2 + 144); /*0x557419*/
   this->lastLayer = *(_DWORD *)(a2 + 148); /*0x55741f*/
   this->isInLogic = *(_BYTE *)(a2 + 152); /*0x557425*/
-  *(_DWORD *)(this + 156) = *(_DWORD *)(a2 + 156); /*0x55742b*/
+  this->location = *(_DWORD *)(a2 + 156); /*0x55742b*/
   *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160); /*0x557431*/
   *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164); /*0x557437*/
   this->lineTrailer = *(_DWORD *)(a2 + 168); /*0x55743d*/
@@ -3293,18 +3277,9 @@ int __stdcall IPersistStream_Load(int *a1, int *a2, int a3)
 }
 } // namespace gamemd
 
-// 0x55AC40
-namespace gamemd {
-void nullsub_164(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x55AD30
 namespace gamemd {
 int sub_55AD30()
-// 0x55ac40
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_55AD30()
@@ -4647,14 +4622,6 @@ int GameFrameLoop()
 }
 } // namespace gamemd
 
-// 0x55E410
-namespace gamemd {
-void nullsub_23()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x55F1E0
 namespace gamemd {
 int * DrawHUD()
@@ -5520,5 +5487,37 @@ int __stdcall Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, 
   }
   return result; /*0x55fe5c*/
 }
+}
+} // namespace gamemd
+
+// 0x5509E0
+namespace gamemd {
+void nullsub_21()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x5512C0
+namespace gamemd {
+void nullsub_22()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x55AC40
+namespace gamemd {
+void nullsub_164(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x55E410
+namespace gamemd {
+void nullsub_23()
+{
+  ;
 }
 } // namespace gamemd

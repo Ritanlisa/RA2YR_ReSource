@@ -107,7 +107,7 @@ bool BombClass::TimeToExplode()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BombClass::TimeToExplode(int this)
 {
-  return !*(_DWORD *)(this + 48) && (int)MEMORY[0xA8ED84] > *(_DWORD *)(this + 56) && !this->BombClass_field_58; /*0x438a8c*/
+  return !this->audioController && (int)MEMORY[0xA8ED84] > *(_DWORD *)(this + 56) && !this->BombClass_field_58; /*0x438a8c*/
 }
 }
 } // namespace game
@@ -151,22 +151,6 @@ int __thiscall BombClass::_vt13(int this, int *a2)
   LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
   return Power::FlagProcess(a2, v3); /*0x438af4*/
 }
-}
-} // namespace game
-} // namespace ra2
-
-// 0x438B00
-namespace ra2 {
-namespace game {
-int BombClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 108652931;
-  a2[1] = 299085213;
-  a2[2] = 268441278;
-  a2[3] = 1822515787;
-  return 0;
 }
 } // namespace game
 } // namespace ra2
@@ -254,6 +238,22 @@ BombClass *__thiscall BombClass::CopyTo(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x43946f*/
   return (BombClass *)Block; /*0x439479*/
 }
+}
+} // namespace game
+} // namespace ra2
+
+// 0x438B00
+namespace ra2 {
+namespace game {
+int BombClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652931;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
 }
 } // namespace game
 } // namespace ra2

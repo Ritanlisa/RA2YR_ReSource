@@ -254,18 +254,6 @@ int __stdcall SmudgeTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectTypeClass *
 }
 }
 
-// 0x6B58D0
-int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862008;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {
@@ -318,6 +306,18 @@ SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a
     __3_YAXPAX_Z(this); /*0x6b61fd*/
   return (SmudgeTypeClass *)this; /*0x6b6207*/
 }
+}
+
+// 0x6B58D0
+int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862008;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x6B6130

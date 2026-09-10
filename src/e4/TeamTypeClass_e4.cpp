@@ -915,20 +915,6 @@ int __stdcall TeamTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x6F1C40
-namespace gamemd {
-int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -774134194;
-  a2[1] = 298977144;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6F1C80
 namespace gamemd {
 int TeamTypeClass::PowerDrainUpdate(int * a2)
@@ -1635,6 +1621,20 @@ DynamicVector *__thiscall TeamTypeClass_28_::Constructor(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6f2766*/
   return (DynamicVector *)Block; /*0x6f2770*/
 }
+}
+} // namespace gamemd
+
+// 0x6F1C40
+namespace gamemd {
+int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -774134194;
+  a2[1] = 298977144;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

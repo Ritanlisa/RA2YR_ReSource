@@ -26,14 +26,14 @@ char __thiscall FactoryClass::UpdateProduction(int this)
     Speed = *(_DWORD *)(this + 88); /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
-      if ( *(_DWORD *)(this + 36) == 54 ) /*0x4c9b4d*/
+      if ( this->production == 54 ) /*0x4c9b4d*/
         return Speed; /*0x4c9b4d*/
     }
     else if ( !this->specialItem ) /*0x4c9b3f*/
     {
       return Speed; /*0x4c9b3f*/
     }
-    if ( this->specialItem == -1 || *(_DWORD *)(this + 36) != 54 ) /*0x4c9b5d*/
+    if ( this->specialItem == -1 || this->production != 54 ) /*0x4c9b5d*/
     {
       v3 = (_DWORD *)(this + 44); /*0x4c9b63*/
       Speed = CDTimerClass::TimeRemaining((int *)(this + 44)); /*0x4c9b68*/
@@ -43,7 +43,7 @@ char __thiscall FactoryClass::UpdateProduction(int this)
       }
       else
       {
-        *(_DWORD *)(this + 36) += this->object; /*0x4c9b82*/
+        this->production += this->object; /*0x4c9b82*/
         *(_BYTE *)(this + 40) = 1; /*0x4c9b89*/
         *v3 = MEMORY[0xA8ED84]; /*0x4c9b92*/
         this->queuedObjects = v11; /*0x4c9b94*/
@@ -52,7 +52,7 @@ char __thiscall FactoryClass::UpdateProduction(int this)
         *(_BYTE *)(this + 93) = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
-          v5 = *(_DWORD *)(this + 36); /*0x4c9ba4*/
+          v5 = this->production; /*0x4c9ba4*/
           if ( v5 == 54 ) /*0x4c9bae*/
             v6 = this->balance; /*0x4c9bc5*/
           else
@@ -74,12 +74,12 @@ char __thiscall FactoryClass::UpdateProduction(int this)
         }
         else
         {
-          v7 = *(_DWORD *)(this + 36); /*0x4c9be5*/
+          v7 = this->production; /*0x4c9be5*/
           *(_BYTE *)(this + 92) = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
-          *(_DWORD *)(this + 36) = Speed; /*0x4c9bec*/
+          this->production = Speed; /*0x4c9bec*/
         }
-        if ( *(_DWORD *)(this + 36) == 54 ) /*0x4c9c0a*/
+        if ( this->production == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
           v9 = MEMORY[0xA8ED84]; /*0x4c9c0f*/
@@ -148,7 +148,7 @@ bool __thiscall FactoryClass::DemandProduction(int this, int a2, #375 *a3, char 
     this->queuedCapacity = 0; /*0x4c9d8b*/
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
-    *(_DWORD *)(this + 36) = 0; /*0x4c9d95*/
+    this->production = 0; /*0x4c9d95*/
     *(_DWORD *)(this + 88) = (*(int (__thiscall **)(int, #375 *))(*(_DWORD *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
@@ -218,7 +218,7 @@ char __thiscall FactoryClass::SetObject(int this, int a2)
   this->queuedCapacity = 0; /*0x4c9e3e*/
   this->queuedObjects = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
-  *(_DWORD *)(this + 36) = 54; /*0x4c9e49*/
+  this->production = 54; /*0x4c9e49*/
   *(_BYTE *)(this + 93) = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
@@ -274,20 +274,6 @@ int __thiscall FactoryClass::GetBuildTimeFrames(_DWORD *this)
     return 255; /*0x4c9fe5*/
   return result; /*0x4c9fdd*/
 }
-}
-} // namespace gamemd
-
-// 0x4CA230
-namespace gamemd {
-int FactoryClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 887937448;
-  a2[1] = 298977968;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 
@@ -698,7 +684,7 @@ char __thiscall sub_635060(int this, int a2)
   v4 = *(_DWORD *)(a2 + 8); /*0x63508c*/
   if ( v4 != -1 ) /*0x635091*/
   {
-    v4 = *(_DWORD *)(*(_DWORD *)(this + 36) + 4 * v4); /*0x635096*/
+    v4 = *(_DWORD *)(this->production + 4 * v4); /*0x635096*/
     *(_DWORD *)(v4 + 116) = -1; /*0x635099*/
     *(_DWORD *)(this + 180) = -1; /*0x63509c*/
     v5 = *(_DWORD *)(v4 + 112) - 1; /*0x6350a5*/
@@ -938,6 +924,20 @@ VectorClass *__thiscall FactoryClass_33_::QueryInterface(_DWORD *Block, char a2)
     __3_YAXPAX_Z(Block); /*0x4cab8b*/
   return (VectorClass *)Block; /*0x4cab95*/
 }
+}
+} // namespace gamemd
+
+// 0x4CA230
+namespace gamemd {
+int FactoryClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 887937448;
+  a2[1] = 298977968;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

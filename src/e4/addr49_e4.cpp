@@ -6940,18 +6940,6 @@ void __cdecl unknown_libname_12()
 }
 } // namespace gamemd
 
-// 0x49B430
-namespace gamemd {
-char Hex_EncodeDigit(int a1)
-{
-  if ( (unsigned int)a1 >= 0x10 )
-    return 0;
-  if ( a1 >= 10 )
-    return a1 + 55;
-  return a1 + 48;
-}
-} // namespace gamemd
-
 // 0x49B7E0
 namespace gamemd {
 void FillScoreScreenStats(IUnknown * Destination, char a2)
@@ -7193,7 +7181,7 @@ LABEL_44:
   this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
   this->ambientSoundController.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
   *((_DWORD *)this + 19) = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
-  *((_DWORD *)this + 20) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
+  this->customSound_controller = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
   this->customSound_controller.AudioController_field_04 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
   this->customSound_controller.AudioController_field_08 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
   this->customSound_controller.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
@@ -7211,17 +7199,17 @@ LABEL_44:
   }
   v21 = MEMORY[0x89F570] + 76 * v20; /*0x49c486*/
   this->ambientSoundController.AudioController_field_04 = *(char *)(v21 + 8); /*0x49c489*/
-  *((_DWORD *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  this->ambientSoundController = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
   for ( j = 0; j < this->ambientSoundController.AudioController_field_04; ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c4b9*/
-    *(_DWORD *)(*((_DWORD *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
+    *(_DWORD *)(this->ambientSoundController + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
     INIClass::GetString( /*0x49c4f3*/
       (unsigned __int8 ***)v24,
       (unsigned __int8 *)v28,
       (unsigned __int8 *)Buffer,
       MEMORY[0x81F108],
-      *(char **)(*((_DWORD *)this + 15) + 4 * j),
+      *(char **)(this->ambientSoundController + 4 * j),
       260);
   }
   *(this + 108) = 1; /*0x49c505*/
@@ -7689,7 +7677,7 @@ char __thiscall SerializeCampaignOptions(char *this)
     this->attachedBomb,
     *((_DWORD *)this + 26),
     this->ambientSoundController.AudioController_field_0C,
-    *((_DWORD *)this + 20),
+    this->customSound_controller,
     this->customSound_controller.AudioController_field_08,
     *((_DWORD *)this + 24),
     *((_DWORD *)this + 19),
@@ -7703,7 +7691,7 @@ char __thiscall SerializeCampaignOptions(char *this)
     {
       v5 = v23; /*0x49d723*/
       v6 = 0; /*0x49d727*/
-      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(*((_DWORD *)this + 15) + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(this->ambientSoundController + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v5 += 260; /*0x49d74b*/
@@ -8516,5 +8504,17 @@ int sub_49FF20()
   MEMORY[0x89F7C4] = 128; /*0x49ff34*/
   return 128; /*0x49ff39*/
 }
+}
+} // namespace gamemd
+
+// 0x49B430
+namespace gamemd {
+char Hex_EncodeDigit(int a1)
+{
+  if ( (unsigned int)a1 >= 0x10 )
+    return 0;
+  if ( a1 >= 10 )
+    return a1 + 55;
+  return a1 + 48;
 }
 } // namespace gamemd

@@ -6570,16 +6570,6 @@ char *__cdecl asctime(const struct tm *Tm)
 }
 } // namespace gamemd
 
-// 0x7D58C8
-namespace gamemd {
-unsigned char * store_dt(unsigned char * a1, int a2)
-{
-  *a1 = a2 / 10 + 48;
-  a1[1] = a2 % 10 + 48;
-  return a1 + 2;
-}
-} // namespace gamemd
-
 // 0x7D58F0
 namespace gamemd {
 LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
@@ -8767,17 +8757,6 @@ _DWORD *__cdecl _CopyMan(int a1, _DWORD *a2)
   while ( v3 ); /*0x7d79f7*/
   return result; /*0x7d79f9*/
 }
-}
-} // namespace gamemd
-
-// 0x7D79FB
-namespace gamemd {
-int _FillZeroMan(unsigned int * a1)
-{
-  *a1 = 0;
-  a1[1] = 0;
-  a1[2] = 0;
-  return 0;
 }
 } // namespace gamemd
 
@@ -13825,26 +13804,9 @@ int __usercall _clrfp@<eax>(__int16 a1@<fpstat>)
 }
 } // namespace gamemd
 
-// 0x7DBC77
-namespace gamemd {
-int _ctrlfp(short a1)
-{
-return a1;
-}
-} // namespace gamemd
-
-// 0x7DBC9A
-namespace gamemd {
-void _set_statfp()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x7DBCF0
 namespace gamemd {
 double ldexp(double X, int Y)
-// 0x7dbc9a
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __cdecl ldexp(double X, int Y)
@@ -14195,14 +14157,6 @@ void __cdecl __noreturn _unexpected_YAXXZ()
 }
 } // namespace gamemd
 
-// 0x7DC278
-namespace gamemd {
-int sub_7DC278()
-{
-return 1;
-}
-} // namespace gamemd
-
 // 0x7DC291
 namespace gamemd {
 int _filwbuf(unsigned short ** a1)
@@ -14461,14 +14415,6 @@ int __cdecl __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass *aP2, int
   else
     return WideCharToMultiByte(CodePage, 0x220u, v11, -1, 0, 0, 0, 0); /*0x7dc6cb*/
 }
-}
-} // namespace gamemd
-
-// 0x7DC72B
-namespace gamemd {
-void nullsub_271(int a1)
-{
-  ;
 }
 } // namespace gamemd
 
@@ -17973,6 +17919,16 @@ int __cdecl sub_7DF9B7(int *a1)
 }
 } // namespace gamemd
 
+// 0x7D58C8
+namespace gamemd {
+unsigned char * store_dt(unsigned char * a1, int a2)
+{
+  *a1 = a2 / 10 + 48;
+  a1[1] = a2 % 10 + 48;
+  return a1 + 2;
+}
+} // namespace gamemd
+
 // 0x7D6CE7
 namespace gamemd {
 int ReturnNull4()
@@ -17981,10 +17937,53 @@ return 0;
 }
 } // namespace gamemd
 
+// 0x7D79FB
+namespace gamemd {
+int _FillZeroMan(unsigned int * a1)
+{
+  *a1 = 0;
+  a1[1] = 0;
+  a1[2] = 0;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x7DBC57
 namespace gamemd {
 int ReturnNull5()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x7DBC77
+namespace gamemd {
+int _ctrlfp(short a1)
+{
+return a1;
+}
+} // namespace gamemd
+
+// 0x7DBC9A
+namespace gamemd {
+void _set_statfp()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x7DC278
+namespace gamemd {
+int sub_7DC278()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x7DC72B
+namespace gamemd {
+void nullsub_271(int a1)
+{
+  ;
 }
 } // namespace gamemd

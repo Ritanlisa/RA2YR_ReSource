@@ -113,7 +113,7 @@ char *__thiscall sub_724000(char *this, int a2)
   int v4; // edx
 
   v3 = this + 564; /*0x72400a*/
-  *((_DWORD *)this + 1) = 0; /*0x724010*/
+  this->Position = 0; /*0x724010*/
   *((_DWORD *)this + 2) = a2; /*0x724013*/
   *(this + 12) = 0; /*0x724016*/
   *((_DWORD *)this + 138) = 1000; /*0x724019*/

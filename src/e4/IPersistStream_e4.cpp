@@ -35,26 +35,6 @@ int __thiscall IPersistStream::StubReturnFalse(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x7099D0
-namespace ra2 {
-namespace game {
-int IPersistStream::IsDirty(int a1, int a2)
-{
-return 0;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x709A30
-namespace ra2 {
-namespace game {
-void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
-{
-  ;
-}
-} // namespace game
-} // namespace ra2
-
 // 0x70C250
 namespace ra2 {
 namespace game {
@@ -86,6 +66,26 @@ namespace game {
 int IPersistStream::GetMaxSize()
 {
 return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x7099D0
+namespace ra2 {
+namespace game {
+int IPersistStream::IsDirty(int a1, int a2)
+{
+return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x709A30
+namespace ra2 {
+namespace game {
+void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
+{
+  ;
 }
 } // namespace game
 } // namespace ra2

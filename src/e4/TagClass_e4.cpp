@@ -253,20 +253,6 @@ int __thiscall TagClass::CheckEvent(int this, int a2, TagTypeClass *aP2)
 }
 } // namespace gamemd
 
-// 0x6E56A0
-namespace gamemd {
-int TagClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1425466418;
-  a2[1] = 298977773;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6E56E0
 namespace gamemd {
 int TagClass::ProcessTag(int * a2)
@@ -416,6 +402,20 @@ int __thiscall TagClass_Unlink(int *this)
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 }
+}
+} // namespace gamemd
+
+// 0x6E56A0
+namespace gamemd {
+int TagClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1425466418;
+  a2[1] = 298977773;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

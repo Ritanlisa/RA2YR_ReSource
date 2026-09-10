@@ -2772,14 +2772,6 @@ char __thiscall sub_736C10(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x7393B0
-namespace gamemd {
-void nullsub_248()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x730AD0
 namespace gamemd {
 int sub_730AD0()
@@ -2793,5 +2785,13 @@ namespace gamemd {
 int sub_730AE0()
 {
 return 240;
+}
+} // namespace gamemd
+
+// 0x7393B0
+namespace gamemd {
+void nullsub_248()
+{
+  ;
 }
 } // namespace gamemd

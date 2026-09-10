@@ -331,20 +331,6 @@ int __stdcall TaskForceClass::LoadTaskForce(AbstractTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x6E8710
-namespace gamemd {
-int TaskForceClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1641952286;
-  a2[1] = 298977140;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x6E8750
 namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
@@ -390,6 +376,20 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **Block, char a2)
     __3_YAXPAX_Z(Block); /*0x6e886e*/
   return (TaskForceClass *)Block; /*0x6e8878*/
 }
+}
+} // namespace gamemd
+
+// 0x6E8710
+namespace gamemd {
+int TaskForceClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1641952286;
+  a2[1] = 298977140;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

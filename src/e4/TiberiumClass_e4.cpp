@@ -254,7 +254,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (CCINIClass *)&stru_830620.__pad_579C[60264],
                     *(INIClass **)(this + 156));
   _FFFFFFF4 = *(INIClass **)(this + 160); /*0x721a9d*/
-  *(_DWORD *)(this + 156) = Int_Overwrite; /*0x721aa6*/
+  this->location = Int_Overwrite; /*0x721aa6*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x721aac*/
                        (int)aP1,
                        (INIClass *)(this + 36),
@@ -286,7 +286,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v12 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
   v18 = *(DynamicVector **)(this + 192); /*0x721b28*/
   this->Growth = v12; /*0x721b2f*/
-  *(_DWORD *)(this + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
+  this->GrowthPercentage = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                               aP1,
                               (unsigned __int8 *)(this + 36),
                               (unsigned __int8 *)&stru_81B138,
@@ -360,20 +360,6 @@ LABEL_19:
   }
   return result; /*0x721c7b*/
 }
-}
-} // namespace gamemd
-
-// 0x721E40
-namespace gamemd {
-int TiberiumClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -985803917;
-  a2[1] = 298980638;
-  a2[2] = 1610642817;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 
@@ -520,6 +506,20 @@ int __stdcall TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, in
   }
   return result; /*0x72212c*/
 }
+}
+} // namespace gamemd
+
+// 0x721E40
+namespace gamemd {
+int TiberiumClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -985803917;
+  a2[1] = 298980638;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
 }
 } // namespace gamemd
 

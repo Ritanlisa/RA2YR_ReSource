@@ -68,9 +68,9 @@ __int64 __thiscall sub_6B1EE0(int this)
   *(_DWORD *)(this + 76) = v4; /*0x6b1f1b*/
   result = Math::RoundToInt(v3); /*0x6b1f22*/
   if ( (int)result >= v2 - v4 ) /*0x6b1f31*/
-    *(_DWORD *)(this + 80) = v2 - v4; /*0x6b1f3b*/
+    this->customSound_controller = v2 - v4; /*0x6b1f3b*/
   else
-    *(_DWORD *)(this + 80) = result; /*0x6b1f33*/
+    this->customSound_controller = result; /*0x6b1f33*/
   return result; /*0x6b1f36*/
 }
 }
@@ -1966,22 +1966,6 @@ int sub_6B4A30()
 }
 } // namespace gamemd
 
-// 0x6B4C70
-namespace gamemd {
-void nullsub_232(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6B4F90
-namespace gamemd {
-void nullsub_233(int a1, int a2)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6B5050
 namespace gamemd {
 int sub_6B5050()
@@ -3010,23 +2994,6 @@ int sub_6B8AC0()
 }
 } // namespace gamemd
 
-// 0x6B8B10
-namespace gamemd {
-void nullsub_37()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x6B8B20
-namespace gamemd {
-void nullsub_38()
-// 0x6b8b10
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6B8EE0
 namespace gamemd {
 int sub_6B8EE0()
@@ -3699,14 +3666,6 @@ LABEL_31:
     return 0; /*0x6b9d90*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x6BA220
-namespace gamemd {
-void nullsub_39()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -4786,6 +4745,47 @@ void __thiscall __noreturn ExitProgram(void *Code)
 {
   exit((int)Code); /*0x6bec51*/
 }
+}
+} // namespace gamemd
+
+// 0x6B4C70
+namespace gamemd {
+void nullsub_232(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6B4F90
+namespace gamemd {
+void nullsub_233(int a1, int a2)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6B8B10
+namespace gamemd {
+void nullsub_37()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6B8B20
+namespace gamemd {
+void nullsub_38()
+// 0x6b8b10
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6BA220
+namespace gamemd {
+void nullsub_39()
+{
+  ;
 }
 } // namespace gamemd
 

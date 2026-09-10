@@ -1916,22 +1916,6 @@ int sub_4C5470()
 }
 } // namespace gamemd
 
-// 0x4C5EC0
-namespace gamemd {
-void nullsub_127()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C5ED0
-namespace gamemd {
-void nullsub_128()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x4C5EE0
 namespace gamemd {
 void sub_4C5EE0()
@@ -2140,23 +2124,6 @@ int sub_4C60F0()
   MEMORY[0x8A3910] = 0; /*0x4c611e*/
   return atexit(nullsub_129); /*0x4c6128*/
 }
-}
-} // namespace gamemd
-
-// 0x4C6130
-namespace gamemd {
-void nullsub_129()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C6170
-namespace gamemd {
-void nullsub_130()
-// 0x4c6130
-{
-  ;
 }
 } // namespace gamemd
 
@@ -3050,30 +3017,6 @@ int sub_4C9890()
   MEMORY[0x8B3AC4] = 0; /*0x4c98a1*/
   return 0; /*0x4c98a6*/
 }
-}
-} // namespace gamemd
-
-// 0x4CAEF0
-namespace gamemd {
-void nullsub_131()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4CAF00
-namespace gamemd {
-void nullsub_132()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4CAF10
-namespace gamemd {
-void nullsub_133()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -4271,10 +4214,67 @@ LABEL_60:
 }
 } // namespace gamemd
 
+// 0x4C5EC0
+namespace gamemd {
+void nullsub_127()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C5ED0
+namespace gamemd {
+void nullsub_128()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C6130
+namespace gamemd {
+void nullsub_129()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C6170
+namespace gamemd {
+void nullsub_130()
+// 0x4c6130
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x4C91B0
 namespace gamemd {
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x4CAEF0
+namespace gamemd {
+void nullsub_131()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4CAF00
+namespace gamemd {
+void nullsub_132()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4CAF10
+namespace gamemd {
+void nullsub_133()
+{
+  ;
 }
 } // namespace gamemd

@@ -688,14 +688,6 @@ char UpdateBullets(int a1)
 }
 } // namespace gamemd
 
-// 0x6633C0
-namespace gamemd {
-void nullsub_224(int a1)
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x6635F0
 namespace gamemd {
 void sub_6635F0()
@@ -989,31 +981,31 @@ void __thiscall sub_663960(void *this)
   int v4; // eax
   void *v5; // eax
 
-  while ( this->VectorClass_field_0x10 ) /*0x663966*/
+  while ( *((_DWORD *)this + 4) ) /*0x663966*/
   {
     __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663971*/
-    v2 = this->VectorClass_field_0x10; /*0x663976*/
+    v2 = *((_DWORD *)this + 4); /*0x663976*/
     if ( v2 > 0 ) /*0x66397e*/
     {
       v3 = v2 - 1; /*0x663980*/
       v4 = 0; /*0x663983*/
-      for ( this->VectorClass_field_0x10 = v3; /*0x66398a*/
-            v4 < this->VectorClass_field_0x10;
-            *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4 - 4) = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4) )
+      for ( *((_DWORD *)this + 4) = v3; /*0x66398a*/
+            v4 < *((_DWORD *)this + 4);
+            *(_DWORD *)(this->Items + 4 * v4 - 4) = *(_DWORD *)(this->Items + 4 * v4) )
       {
         ++v4; /*0x66398f*/
       }
     }
   }
-  v5 = (void *)*((_DWORD *)this + 1); /*0x6639a3*/
+  v5 = (void *)this->Items; /*0x6639a3*/
   *(_DWORD *)this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
-  if ( v5 && *((_BYTE *)this + 13) ) /*0x6639b0*/
+  if ( v5 && this->IsAllocated ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(v5); /*0x6639b6*/
-    *((_DWORD *)this + 1) = 0; /*0x6639be*/
+    this->Items = 0; /*0x6639be*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x6639c1*/
-  this->VectorClass_field_0x8 = 0; /*0x6639c4*/
+  this->IsAllocated = 0; /*0x6639c1*/
+  this->Capacity = 0; /*0x6639c4*/
 }
 }
 } // namespace gamemd
@@ -1177,14 +1169,6 @@ LABEL_11:
     return 0; /*0x664012*/
   }
 }
-}
-} // namespace gamemd
-
-// 0x664380
-namespace gamemd {
-void nullsub_33()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -1402,5 +1386,21 @@ int sub_664D00()
   dword_B0534C = 0; /*0x664d11*/
   return 0; /*0x664d16*/
 }
+}
+} // namespace gamemd
+
+// 0x6633C0
+namespace gamemd {
+void nullsub_224(int a1)
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x664380
+namespace gamemd {
+void nullsub_33()
+{
+  ;
 }
 } // namespace gamemd

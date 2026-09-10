@@ -850,20 +850,6 @@ char __stdcall AnimClass::_vt61(_DWORD *a1)
 }
 } // namespace gamemd
 
-// 0x426540
-namespace gamemd {
-int AnimClass::MissionStubReturnZero2(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448643;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-} // namespace gamemd
-
 // 0x428DE0
 namespace gamemd {
 void AnimClass::FreeRenderBuffer()
@@ -998,5 +984,19 @@ namespace gamemd {
 int AnimClass::MissionStubReturnZero()
 {
 return 456;
+}
+} // namespace gamemd
+
+// 0x426540
+namespace gamemd {
+int AnimClass::MissionStubReturnZero2(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 237448643;
+  a2[1] = 298949647;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 } // namespace gamemd

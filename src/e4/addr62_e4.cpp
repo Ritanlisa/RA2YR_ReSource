@@ -2897,8 +2897,8 @@ _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
   v3 = a2; /*0x628b03*/
   *(this + 1) = 0; /*0x628b0c*/
   *(this + 2) = a2; /*0x628b13*/
-  *((_BYTE *)this + 12) = 1; /*0x628b16*/
-  *((_BYTE *)this + 13) = 0; /*0x628b1a*/
+  this->IsInitialized = 1; /*0x628b16*/
+  this->IsAllocated = 0; /*0x628b1a*/
   *this = &VectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b1e*/
   if ( a2 ) /*0x628b24*/
   {
@@ -2939,7 +2939,7 @@ _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
         v6 = 0; /*0x628b86*/
       }
       *(this + 1) = v6; /*0x628b88*/
-      *((_BYTE *)this + 13) = 1; /*0x628b8b*/
+      this->IsAllocated = 1; /*0x628b8b*/
     }
   }
   *this = &DynamicVectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b8f*/
@@ -3193,7 +3193,7 @@ void __thiscall sub_629530(int this)
 
   v2 = this->ambientSoundController.AudioController_field_08; /*0x629537*/
   *(_DWORD *)(this + 76) = 0; /*0x62953a*/
-  *(_DWORD *)(this + 80) = 0; /*0x62953f*/
+  this->customSound_controller = 0; /*0x62953f*/
   this->ambientSoundController.AudioController_field_0C = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
@@ -3452,7 +3452,7 @@ int __thiscall sub_62D510(float *this)
   *(float *)v15 = *(this + 39); /*0x62d532*/
   v4 = *((_DWORD *)this + 40); /*0x62d536*/
   v5 = *((_DWORD *)this + 41); /*0x62d539*/
-  v6 = *((_DWORD *)this + 39); /*0x62d53c*/
+  v6 = this->location; /*0x62d53c*/
   v15[2] = v5; /*0x62d53e*/
   v7 = *((_DWORD *)v3 + 1); /*0x62d544*/
   v12 = v6; /*0x62d547*/
@@ -3478,14 +3478,6 @@ int __thiscall sub_62D510(float *this)
   }
   return (*(int (__thiscall **)(float *, int *))(*(_DWORD *)this + 436))(this, &v12); /*0x62d5d7*/
 }
-}
-} // namespace gamemd
-
-// 0x62D760
-namespace gamemd {
-void nullsub_214()
-{
-  ;
 }
 } // namespace gamemd
 
@@ -3812,5 +3804,13 @@ int DestructParticleSystemClass(ParticleSystemClass *aP0, int a2)
   ObjectClass::Dtor(v5); /*0x62e277*/
   return result; /*0x62e27c*/
 }
+}
+} // namespace gamemd
+
+// 0x62D760
+namespace gamemd {
+void nullsub_214()
+{
+  ;
 }
 } // namespace gamemd

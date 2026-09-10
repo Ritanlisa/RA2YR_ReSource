@@ -1425,22 +1425,6 @@ int sub_4796E0()
 }
 } // namespace gamemd
 
-// 0x479700
-namespace gamemd {
-void nullsub_109()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x479730
-namespace gamemd {
-void nullsub_110()
-{
-  ;
-}
-} // namespace gamemd
-
 // 0x479740
 namespace gamemd {
 void sub_479740(DWORD BytesReturned)
@@ -3105,5 +3089,21 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
   }
   return result; /*0x47f478*/
 }
+}
+} // namespace gamemd
+
+// 0x479700
+namespace gamemd {
+void nullsub_109()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x479730
+namespace gamemd {
+void nullsub_110()
+{
+  ;
 }
 } // namespace gamemd
