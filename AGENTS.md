@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **472** — 完整 C++ 实现经 IDA 反编译验证（58 REVERSE + 183 structure + 312 other − 62 dedup） |
+| translated (完整IDA对照) | **919** — MCP completed 口径（E5 校准 + E6/G1 机械收割，全 CFG 验证）；pending 17,263 |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
@@ -878,6 +878,11 @@ python tools/type_infer/auto_name.py
 4. 允许的证据源: CSP/type_map（lattice 输出）、二进制自证（vtable 安装/ctor）、结构成员资格（vtable 槽位）——全部确定性。
 
 ### 最近完成（按时间倒序）
+
+- **2026-09-09 (F+G1)**: Phase F 证据补全执行 + G1 机械收割（提交 1eeb4bea + adf32f61，auto-fill-baseline 重锚）
+  - **F 线**：偏移→OO 重写 1,869→9,215；"幽灵类"反转 = til 真实结构缺 layouts 键 → class_layouts 1,033→1,281 类（til 导出 247 新类 + 4,578 填洞 + 容器语义 138 实例）；重写器升级（继承链 own 区段防护 / member_types 嵌套解析 / w1-w2 load 截断）；til-pad 伪条目清除 175；E3 前向声明 bug 修复
+  - **G1**：completed 406→919（A getter 50 / C 常量 174 / P 直通 2 / E 净化直排 298，全 CFG 双射）；收割器行号漂移 bug 修复（E6 两轮根因）；free-form-this / return-this 两起事故干净回滚重放
+  - 剩余主体 17,263 pending 卡 A1/A2 命名前置（占位成员名触发 ida-naming 门控）；详见 docs/roadmap_post_csp.md「Phase G」
 
 - **2026-09-05 (夜)**: 快照 v2 导出 + CSP 后路线图（docs/roadmap_post_csp.md）
   - **full_export v2**: 19,087 函数 100%（19,078 带伪代码 / 9 纯汇编兜底）、1,343 类头、10,674 全局、26,498 索引；**类型化伪代码质变**（0x532150 从 0 → 29+ 个 `CreateTeamCommand*` 类型化局部；this ~9,840 / locals ~19,695 全部渲染进伪代码）

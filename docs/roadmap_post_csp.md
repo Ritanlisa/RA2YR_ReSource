@@ -4,7 +4,7 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-08 会话更新，含污染清偿与翻译管线修复）**：
+> **执行状态首查表（2026-09-09 F+G1 会话更新：Phase F 已执行 + G1 机械收割波次）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
@@ -15,15 +15,15 @@
 > | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
 > | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决 v2：未完成翻译保留为 **IDA 原始反编译活代码块**（不再使用 `#if 0`）；存量编译错误按基线裁决允许。**⚠ ida-artifact 门控脚本仍为空文件（存量空转）——见执行日志** |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP 当前 pending **3,416** 个活伪码块 + CFG 不忠实真翻译 + 682 链接未解析符号 + triage 未定位——目标：全部真翻译（见「最终目标债清单」节） |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP 当前 pending **17,263**（E4 物化后的真实总账）+ 69 CFG 不忠实真翻译 + 682 链接未解析符号——目标：全部真翻译。已完成 **919**（含 G1 机械收割 524）；**主体积压卡 A1/A2 命名前置**（占位成员名触发 ida-naming 门控 + vtable 身份债），见「Phase G」排序 |
 > | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`）；09-08 补全局注解审计的伪码块/ASM 行跳过 |
 > | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 污染清偿轮 12 函数改名 + **09-08 大轮：member_lookup BuildingTypeClass 3800 区段 til 对齐清偿（0 残留）+ 20 hpp sub_ 滞留名 + 9 Method_ 对齐 + 12 owner 冲突裁决**；成员语义命名主体未展开 |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
 > | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；09-07 清偿 owner/命名污染 + **09-08：signals/_by_name 同步缺口全修复（0 missing/0 extra）、receiver 候选 4 高置信 live 复核（Coord::GetCoords 出参修正，type_map 侧债记 issue #11）**；剩余 TechnoTypeClass 中段布局、AnimClass 中段成员与 tiberium/C4/draw-position 函数待考古 |
 > > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | 与 TechnoClass/TechnoTypeClass 中段布局和类型侧 Weapon 数组债务相互关联 |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
-> | C1-C4 批量翻译 | 🔶 **进行中（纯 MCP 工作流）** | `next_batch → get_context → replace_body → build → audit_access → verify_function → mark_completed`；当前 pending=3,416，completed=**39**（09-09 会话 +10：含 owner 修复 Is1x1AndUndeployable→BuildingTypeClass、SetFlag1752→SetPermanentBerzerk 语义改名、TechnoClass member_lookup 452-464 区修正、verifier 三处修复后回归 34 PASS/0 FAIL；IDA 离线轮全走缓存+debt）；批次仍卡 A1 命名/签名/vtable 审计三类前置债（见执行日志） |
-> | **E 全量落盘：定义+签名+类声明+全局变量** | ✅ **E0-E4 完成（2026-09-09 会话，提交 c70eb5cd + 重锚）** | v3 快照 19,088 函数 100%；E4 物化 14,576 无体函数（pending **3,416 → 17,992 真实总账**）；E3 声明 1,057；E2 类 289；E1 全局 882；偏移→OO 重写 1,869 处；TechnoClass 452-580 考古四源对齐（issue #19 挂剩余两争议区）；93 错类声明清偿回基线 3 normalized；auto-fill-baseline 重锚 c70eb5cd（重锚不清账）。E5 后台批量 verify 进行中；E6 常量收割 374 启动（首批 10/10 PASS） |
+> | C1-C4 批量翻译 | 🔶 **进行中（机械收割前端 + A1 前置）** | completed 39 → **919**（pending 17,263）。G1 机械收割 524（A 全局 getter 50 / C 常量 174 / P 直通 2 / E 净化直排 298，全 CFG 双射 PASS）；手动批次实证 BuildingClass 卡 issue #4、VectorClass mega 桶卡 vtable 身份债——**A1/A2 命名轮是剩余主体的前置**。收割器已修复 E6 行号漂移 bug（地址注解定位 + 现算 span），`.omo/e7_harvest*.py` 带全部防护可续跑 |
+> | **E 全量落盘：定义+签名+类声明+全局变量** | ✅ **E0-E4 完成（2026-09-09 会话，提交 c70eb5cd + 重锚）** | v3 快照 19,088 函数 100%；E4 物化 14,576 无体函数（pending **3,416 → 17,992 真实总账**）；E3 声明 1,057；E2 类 289；E1 全局 882；偏移→OO 重写 1,869 处；TechnoClass 452-580 考古四源对齐（issue #19 挂剩余两争议区）；93 错类声明清偿回基线 3 normalized；auto-fill-baseline 重锚 c70eb5cd（重锚不清账）。E5 完成（154 PASS 校准）；E6 收割持续（G1 波次承接，见下行） |
 > | **F 证据补全轮：偏移成员访问重写收尾** | ✅ **已执行（2026-09-09 F 会话，提交 1eeb4bea + 重锚）** | rewritten **1,869 → 9,217**（4.9×）；F1 til 导入 247 新类 + 4,578 填洞 + 容器语义 138 实例（SuperClass/MPCooperative/Radar/MapClass/Network/RandomMap/EventClass/JumpjetLocomotion/WarheadTypeClass 等全部真身确认——非幽灵类，是 til 有 layouts 无的缺口）；F2 重写器升级（继承链走查 + member_types 嵌套子对象解析 + own 区段防污染 + til-pad 伪条目清除 175）；F3 w1/w2 load 截断形态；F4 refresh 模式（214 翻译记录字节级保留）+ E3 前向声明 bug 修复。验收：一致性 38/3=基线、注解 0 missing、括号 0 失衡。剩余 unmapped 6,202（争议区/占位类，A1/B4 输入） |
 > | D1-D4 集成验收 | ⬜ 未开始 | exe 已产出待运行时验收 |
 >
@@ -70,7 +70,7 @@
 
 | 债 | 数量 | 说明 |
 |---|---|---|
-| IDA 原码活代码块 | **3,416 pending（MCP）** | v2 已撤销 `#if 0` 包装；未完成函数以 `[IDA decompile] original pseudocode` 活代码块占位。数量以 `mcp__RA2-MCP__stats` 为权威（09-09 会话完成 10 个）。**⚠ 这只是「已落体」子集**：全集 19,133 中 ~13,700 尚无 src 函数体（仅声明/无声明）——E4 落盘后 pending 将升到 ~19,000 真实总账，见「Phase E」节。 |
+| IDA 原码活代码块 | **17,263 pending（MCP，E4 后真实总账）** | v2 已撤销 `#if 0` 包装；未完成函数以 `[IDA decompile] original pseudocode` 活代码块占位。数量以 `mcp__RA2-MCP__stats` 为权威（09-09 会话完成 10 个）。**⚠ 这只是「已落体」子集**：全集 19,133 中 ~13,700 尚无 src 函数体（仅声明/无声明）——E4 落盘后 pending 将升到 ~19,000 真实总账，见「Phase E」节。 |
 | CFG 不忠实真翻译 | **69** | 基线有真实译但 exec-flow CFG 校验不通过——需逐函数对照 IDA 修复（清单见执行日志 09-06 终态甄别） |
 | triage 未定位 | **20** | 行号漂移致甄别失败，需重扫 |
 | 链接未解析符号 | **682** | 有声明从未有定义；`/FORCE:UNRESOLVED` 容忍链接。`tools/gen_link_stubs.py` 已生成 101 个近似签名 stub（`src/_generated/link_stubs.cpp`），**未入构建**——需按 hpp 原声明精确签名后接入，最终全部真翻译 |
@@ -84,23 +84,25 @@
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-08 MCP 会话刷新）
+## 0. 当前基线（2026-09-09 F+G1 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
 | 约束/求解 | 1,196,795 条约束 → type_map 732,742 变量类型 |
 | 类类型变量 | 138,884（this 10,767 / SSA 103,821 / 栈槽 10,193 / 成员 8,203 / 参数 3,992 / 全局 1,781 / 返回 127） |
-| TOP 矛盾 | **0**（0 对冲突，verify_csp 七通道 ALL PASS） |
-| ORPHAN | 20.6%（结构性天花板：计算写消灭身份） |
-| IDB 落盘 | 历史基线：this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449；09-08 继续修正 Coord::GetCoords 出参并保存 IDB |
+| TOP 矛盾 | **0**（verify_csp 七通道 ALL PASS） |
+| IDB 落盘 | this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449 |
 | til struct | 1,474（1,252 全布局 + 20 观测建 + 202 最小 vfptr） |
-| struct 门 | 661 类可用，缺口 13（5 枚举 + 7 零观测 + 1 数组伪型） |
-| 反编译 | 19,067 函数全部可反编译（6 个历史失败已修复） |
-| 快照 | full_export v2（本次导出，类型化伪代码基座） |
-| src/ 树 | ~130 hpp + ~135 cpp（~110K 行），0 错误 0 警告 |
-| 完整翻译 | MCP completed=**28**；历史完整翻译统计 472 与 MCP completed 口径尚未统一 |
-| 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名） |
-| 命名不一致 | 09-08 audit_consistency：37 raw / **1 normalized**（唯一剩余为 getMapCoords vtable 槽位债） |
+| **class_layouts** | **1,281 类**（F1：+247 til 导入 + 4,578 填洞 + 138 容器语义 + til-pad 伪条目清除 175） |
+| **偏移重写** | **rewritten 9,215 / unmapped 6,204**（F 线；沉默 owner 全部入场） |
+| 反编译 | 19,067 函数全部可反编译 |
+| 快照 | full_export v3（19,088 函数 100%；⚠ 长函数截断 ~100 个，翻译时 get_context live 拉取） |
+| **src 函数体覆盖** | ~17,870 / 19,133（93.5%；src/e4 内已译 **798** / pending 13,837） |
+| **MCP completed** | **919**（E5 校准 154 + E6/G1 收割 524 + 历史真翻译；全部 CFG 验证口径） |
+| **MCP pending** | **17,263**（真实总账；单语句收割池近枯竭，剩余主体 = 2-8 语句块 + 占位类） |
+| 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名）——A2 |
+| 命名不一致 | 38 raw / **3 normalized**（基线维持） |
+| 基线/标签 | auto-fill-baseline = **adf32f61**（G1 提交；重锚不清账） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -289,11 +291,14 @@ E 线把它从「单函数批处理」升级为「全集合成」。
 ## 依赖关系与建议顺序
 
 ```
-E0-E4 全量落盘(done) ──→ E5 口径统一(done) ──→ E6 收割队列(G1) ──────────────┐
-                                                                            ▼
-F1 owner类修复 ──→ F2 偏移考古 ──→ F3 字宽降级 ──→ F4 重写器重跑+重锚 ──→ A1 成员命名 ──→ A2 函数命名
-                    │（F2 产出直接喂 A1）                                                │
-                    └──────────────────────────→ C 线翻译主线（17,778 pending）◄────────┘
+E0-E4 全量落盘(done) ──→ E5 口径统一(done) ──→ E6 收割队列 ─┐
+                                                            ▼
+F1-F4 证据补全(done, 1eeb4bea) ──→ G1 机械收割(进行中 +524) ─┴→ 剩余主体（≈12,800 语句块 + 占位类）⇐ 阻塞
+                    │（F 产出：6,204 unmapped 点分布 = A1 优先序）              │
+                    └────────────────────────→ A1 成员命名(G2) ──→ A2 函数命名 ┘
+                                                      │
+              B 线工程债（并行随时）──────────────────→ ▼
+                                              C 线翻译主线 + D1-D4 集成验收
                                                   │
               B 线工程债（并行随时）──────────────→ ▼
                                               D1-D4 集成验收
@@ -315,25 +320,26 @@ F1 owner类修复 ──→ F2 偏移考古 ──→ F3 字宽降级 ──→ 
 
 ## 度量与检查点
 
-| 指标 | 制定时 | 2026-09-08 现状 | A 轮后目标 | C 线里程碑 |
+| 指标 | 制定时 | 2026-09-09 F+G1 会话后 | A 轮后目标 | C 线里程碑 |
 |---|---|---|---|---|
-| IDA 函数命名覆盖 | 70.5% | A2 未开始；本轮新增 7 个语义函数名 + 1 个 T19 误名纠正 | 85%+ | — |
-| 类成员语义名 | ~0（field_0xNN 占位） | A1 进入污染优先轮；尚未批量命名成员 | >60% | — |
-| 命名不一致 | 215 | 09-08 audit_consistency：37 raw / **1 normalized**（唯一剩余为 getMapCoords vtable 槽位债） | 0 | 0（维持） |
-| hpp-impl 违规 | 未统计（1,765 隐性） | **0**（迁移完成） | 0 | 0（红线） |
-| 完整翻译函数 | 472 | MCP stats：completed=**28**；09-08 新增 IsNonNullPtr(0x70E240)，历史“完整翻译”与 MCP completed 口径尚未统一；issue #9/#12 仍是 verifier 工具债 | — | 1,000 → 3,000 → 全量 |
+| IDA 函数命名覆盖 | 70.5% | A2 未开始 | 85%+ | — |
+| 类成员语义名 | ~0（field_0xNN 占位） | 容器族 Items/Capacity/IsInitialized 138 实例（F1）；主体未展开 | >60% | — |
+| 命名不一致 | 215 | 38 raw / **3 normalized**（基线维持：getMapCoords + 2 rename-debt 自愈型） | 0 | 0（维持） |
+| hpp-impl 违规 | 1,765 隐性 | **0** | 0 | 0（红线） |
+| 完整翻译函数 | 472 | MCP completed=**919**（口径经 E5 校准 + G1 全 CFG 验证） | — | 1,000 → 3,000 → 全量 |
 | REVERSE 对拍 | 41 函数 | 41 函数 | — | Same 率 >95% |
-| 构建 | gate 假绿 | MCP 最近记录 build errors=0；本轮单 TU 探针干净；`run_gates` 本次调用超时，未据此宣称全绿 | — | 0/0 + gate 3/3（红线） |
-| MCP completed（E5 校准后可信） | — | **406**（39 + 213 常量收割 + 154 E5 校准） | — | 1,000 → 3,000 → 全量 |
-| MCP pending（真实总账） | 3,416（失真） | **17,778** | — | → 0 |
-| 偏移重写率（F 线目标） | rewritten 1,869 / unmapped 4,379（557 函数）/ 沉默 ~9,889（1,630 函数 owner 不在布局） | 同左 | **unmapped ≤1,000；沉默清偿 ≥80%；rewritten 5,000+** | 维持 |
+| 构建 | gate 假绿 | build errors=0（MCP 记录）；伪码块编译错误按裁决 v2 基线允许 | — | 0/0 + gate 3/3 |
+| MCP completed | — | **919** | — | 1,000 → 3,000 → 全量 |
+| MCP pending（真实总账） | 3,416（失真） | **17,263** | — | → 0 |
+| 偏移重写率（F 线目标） | rewritten 1,869 / unmapped 4,379 / 沉默 9,889 | **rewritten 9,215 / unmapped 6,204**（沉默 owner 全部入场，分母 15,433） | ~~rewritten 5,000+~~ ✅ 超额达成 | 维持 |
 
 ## 风险与对策
 
-0. **F 线考古的错误归一风险**：幽灵类名（SuperClass/Radar/MPCooperative）与别名
-   （House→HouseClass）若裁决错误，会把成员名挂到错误的类上——错名比无名胜。
-   对策：每条别名须 vtable 安装点/RTTI/单一最小祖先证据；抽检 20 类；
-   rewrite_pseudocode 保守降级（证据不足保持原始伪码）。
+0. **F 线考古的错误归一风险** → ✅ **已消解（F 会话执行）**：所谓幽灵类全部为
+   til 真实结构（非 Hex-Rays 泛称），直接 til 导入避免了任何别名臆测；别名归一
+   （House→HouseClass）未启用（til House 以自身骨架导入，名字带偏移可追溯）。
+   实际发生的风险转为**数据陈旧**：class_layouts 基区遗留错位行（424 个）经
+   own 区段防护旁路 + til-pad 伪条目清除 175（重复名铁证判据）双重处置。
 
 1. **LLM 命名的正确性**：语义名是假设立——错名比 field_0xNN 更危险。
    对策：命名必须附证据（伪代码上下文/YRpp 对照）；REVERSE 对拍兜底
@@ -417,13 +423,13 @@ mega-blob 家族（House/Scenario/Mission/Tactical 21-90K，til ≥4096B pad 截
 
 ## Phase G — 剩余工作排序（F 线之后/并行）
 
-| 序 | 工作 | 内容 | 依赖 |
-|---|---|---|---|
-| G1 | E6 收割队列继续 | 58 全局 getter → 457 证据完备（偏移已重写）函数 → 6,146 个 ≤8 行小函数长尾 | 无（可立即续） |
-| G2 | A1 成员语义命名 | F2 考古产出 + TechnoClass/FootClass/ObjectClass 家族优先 | F2 产出喂入 |
-| G3 | C 线批量翻译主线 | 17,778 pending 全量（G1 是其机械前端） | A1 提速 |
-| G4 | 既有工程债 | 69 CFG 不忠实 / 682 链接未解析 / vtable 槽位审计 / issue #4 #17 #19 | 与上并行 |
-| G5 | D1-D4 集成验收 | 翻译覆盖率达标后运行时验收 | C 线里程碑 |
+| 序 | 工作 | 内容 | 依赖 | 状态 |
+|---|---|---|---|---|
+| G1 | 机械收割波次 | 全局 getter / 常量 / 直通 / 净化直排（`.omo/e7_harvest*.py`，已修行号漂移 + free-form-this/return-this 防护）；剩余 ≈ 12,800 个 >8 语句块需逐个真翻译 | 无 | 🔶 **+524**（completed 919）；单语句池近枯竭，下一档 = 2-4 语句赋值/比较体（需扩白名单模板） |
+| G2 | A1 成员语义命名 | **当前最大杠杆**：占位成员名（field_ 系）触发 ida-naming 门控，是 17,263 主体积压的直接阻塞。优先序 = 未映射命中密度（F 后剩 6,204 点的 owner 分布：ObjectClass 436 / TechnoTypeClass 388 / SessionClass 230 / VectorClass mega 191…）× 调用频次；rename_symbol.py 四方同步 | F 产出（6,204 unmapped 点 + 424 基区错位名旁路清单） | ⬜ 未展开 |
+| G3 | C 线批量翻译主线 | 17,263 pending 全量（G1 是其机械前端）；手动批次 = MCP 全流程 | A1（G2） | 🔶 919/19,133 |
+| G4 | 既有工程债 | 69 CFG 不忠实 / 682 链接未解析 / vtable 槽位审计（getMapCoords 债）/ issue #4 #17 #19 / ida-artifact 门控空文件 | 与上并行 | ⬜ |
+| G5 | D1-D4 集成验收 | 翻译覆盖率达标后运行时验收 | C 线里程碑 | ⬜ |
 
 ---
 
