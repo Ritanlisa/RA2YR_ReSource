@@ -5756,83 +5756,6 @@ int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+60h]
-sub     esp, 8
-test    eax, eax
-push    ebx
-push    ebp
-push    esi
-push    edi
-jz      loc_430B8A
-mov     ebp, [esp+18h+arg_10]
-mov     ebx, [esp+18h+arg_C]
-mov     edi, ecx
-mov     [esp+18h+var_4], 8
-
-loc_430AE4:                             ; CODE XREF: RenderAlliedBuildingTags+C4↓j
-mov     [esp+18h+var_8], 3
-
-loc_430AEC:                             ; CODE XREF: RenderAlliedBuildingTags+B5↓j
-mov     esi, [edi]
-test    esi, esi
-jz      short loc_430B69
-test    byte ptr [esi+0Ch], 1
-jz      short loc_430B69
-mov     eax, [esi+110h]
-mov     ecx, ds:0A83D4Ch
-push    eax
-call    HouseClass__IsAllied
-test    al, al
-jz      short loc_430B69
-mov     ecx, ds:0A83D4Ch
-mov     edx, [esi+110h]
-mov     eax, ds:0A8022Ch
-push    ecx             ; other
-mov     ecx, [eax+edx*4] ; this
-call    HouseClass__IsAlliedWith
-test    al, al
-jz      short loc_430B69
-mov     ecx, [esi+110h]
-mov     edx, ds:0A8022Ch
-mov     eax, [edx+ecx*4]
-mov     cl, [eax+1F5h]
-test    cl, cl
-jnz     short loc_430B69
-mov     edx, [esp+18h+arg_4]
-mov     eax, [esp+18h+arg_8]
-sub     esp, 10h
-mov     ecx, esp
-mov     [ecx], edx
-mov     [ecx+4], eax
-mov     [ecx+8], ebx
-mov     [ecx+0Ch], ebp
-mov     ecx, [esp+28h+arg_0]
-push    ecx
-mov     ecx, esi
-call    RenderBuildingTag
-
-loc_430B69:                             ; CODE XREF: RenderAlliedBuildingTags+30↑j
-; RenderAlliedBuildingTags+36↑j ...
-mov     eax, [esp+18h+var_8]
-add     edi, 4
-dec     eax
-mov     [esp+18h+var_8], eax
-jnz     loc_430AEC
-mov     eax, [esp+18h+var_4]
-dec     eax
-mov     [esp+18h+var_4], eax
-jnz     loc_430AE4
-
-loc_430B8A:                             ; CODE XREF: RenderAlliedBuildingTags+C↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn    14h
-*/
 } }
 // 0x430BA0
 namespace gamemd { void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6) {
@@ -6288,16 +6211,13 @@ retn    14h
 } }
 // 0x432C10
 namespace gamemd { int Gap2Recv_432C10::COMStub_432C10(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_432C10(_DWORD *this, int a2)
 {
-  _DWORD *v2; // ecx
-  int result; // eax
-
-  v2 = (_DWORD *)*(this + 8);
-  if ( v2 )
+    int *v2;
+    int result;
+    v2 = (int *)this->M32;
+    if ( v2 )
     return AbstractClass::getTotalValue(v2, a2);
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -11170,25 +11090,22 @@ retn    4
 } }
 // 0x486E30
 namespace gamemd { int Gap2Recv_486E30::Helper_486E30() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_486E30(__int16 *this)
 {
-  __int16 *v2; // edi
-  void *v3; // eax
-  _DWORD *v5; // eax
-
-  v2 = this + 18;
-  v3 = (void *)Helper_486E30_Helper(this + 18);
-  if ( v3 )
+    short *v2;
+    void *v3;
+    int *v5;
+    v2 = this + 18;
+    v3 = (void *)Helper_486E30_Helper(this + 18);
+    if ( v3 )
   {
     RandomMap::RemoveMatching(v3, (int)this);
   }
-  else
+    else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v2);
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v2);
     CellClass::ProcessBridgeRepair(v5);
   }
-  return 0;
+    return 0;
 }
 
 /* ASM:
@@ -11252,24 +11169,21 @@ retn
 }
 // 0x48DF30
 namespace gamemd { int Gap2Recv_48DF30::LookupNameIndex() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LookupNameIndex(void *this)
 {
-  int v2; // esi
-
-  if ( !this )
+    int v2;
+    if ( !this )
     return -1;
-  if ( !_strcmpi(g_Str__none_, this) )
+    if ( !_strcmpi(g_Str__none_, this) )
     return -1;
-  v2 = 0;
-  if ( MEMORY[0xABF3A0] <= 0 )
+    v2 = 0;
+    if ( DataGlobal_ABF3A0 <= 0 )
     return -1;
-  while ( _strcmpi(this, *((const void **)MEMORY[0xABF394] + v2)) )
+    while ( _strcmpi(this, *((const void **)DataGlobal_ABF394 + v2)) )
   {
-    if ( ++v2 >= MEMORY[0xABF3A0] )
-      return -1;
+    if ( ++v2 >= DataGlobal_ABF3A0 )
+    return -1;
   }
-  return v2;
+    return v2;
 }
 
 /* ASM:
@@ -13092,24 +13006,21 @@ retn    4
 } }
 // 0x4CB760
 namespace gamemd { char* TerrainInitMap(char* Destination, char* Source, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall TerrainInitMap(char *Destination, char *Source, int a3)
 {
-  char *v4; // eax
-  unsigned int v5; // edx
-  char *v6; // edi
-
-  strncpy(Destination, Source, 4);
-  *((_WORD *)Destination + 2) = 6;
-  *((_WORD *)Destination + 3) = 4;
-  v4 = (char *)__2_YAPAXI_Z(4);
-  v5 = *((unsigned __int16 *)Destination + 3);
-  *((_DWORD *)Destination + 2) = v4;
-  qmemcpy(v4, &a3, 4 * (v5 >> 2));
-  v6 = &v4[4 * (v5 >> 2)];
-  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3);
-  *((_DWORD *)Destination + 3) = 0;
-  return Destination;
+    char *v4;
+    unsigned int v5;
+    char *v6;
+    strncpy(Destination, Source, 4);
+    *((short *)(Destination) + 2) = 6;
+    *((short *)(Destination) + 3) = 4;
+    v4 = (char *)__2_YAPAXI_Z(4);
+    v5 = *((unsigned short *)(Destination) + 3);
+    *((int *)(Destination) + 2) = v4;
+    qmemcpy(v4, &a3, 4 * (v5 >> 2));
+    v6 = &v4[4 * (v5 >> 2)];
+    qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3);
+    *((int *)(Destination) + 3) = 0;
+    return Destination;
 }
 
 /* ASM:
@@ -13151,30 +13062,27 @@ retn    8
 } }
 // 0x4CB7C0
 namespace gamemd { char* BuildResultPacket(char* Destination, char* Source, char* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall BuildResultPacket(char *Destination, char *Source, const char *a3)
 {
-  unsigned int v4; // kr04_4
-  char *v5; // eax
-  unsigned __int16 v6; // cx
-  char v7; // dl
-  int v8; // ecx
-  char *v9; // edi
-
-  strncpy(Destination, Source, 4);
-  *((_WORD *)Destination + 2) = 7;
-  v4 = strlen(a3) + 1;
-  *((_WORD *)Destination + 3) = v4;
-  v5 = (char *)__2_YAPAXI_Z((unsigned __int16)v4);
-  v6 = *((_WORD *)Destination + 3);
-  *((_DWORD *)Destination + 2) = v5;
-  v7 = v6;
-  v8 = v6 >> 2;
-  qmemcpy(v5, a3, 4 * v8);
-  v9 = &v5[4 * v8];
-  qmemcpy(v9, &a3[4 * v8], v7 & 3);
-  *((_DWORD *)Destination + 3) = 0;
-  return Destination;
+    unsigned int v4;
+    char *v5;
+    unsigned short v6;
+    char v7;
+    int v8;
+    char *v9;
+    strncpy(Destination, Source, 4);
+    *((short *)(Destination) + 2) = 7;
+    v4 = strlen(a3) + 1;
+    *((short *)(Destination) + 3) = v4;
+    v5 = (char *)__2_YAPAXI_Z((unsigned short)v4);
+    v6 = *((short *)(Destination) + 3);
+    *((int *)(Destination) + 2) = v5;
+    v7 = v6;
+    v8 = v6 >> 2;
+    qmemcpy(v5, a3, 4 * v8);
+    v9 = &v5[4 * v8];
+    qmemcpy(v9, &a3[4 * v8], v7 & 3);
+    *((int *)(Destination) + 3) = 0;
+    return Destination;
 }
 
 /* ASM:
@@ -13621,38 +13529,35 @@ retn    14h
 } }
 // 0x4CE4B0
 namespace gamemd { int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4CE4B0(_DWORD *this, int *a2, int a3)
 {
-  int v3; // edi
-  double v4; // st7
-  double v5; // st7
-  int v6; // eax
-  int v7; // edx
-  int v9; // [esp+4h] [ebp-18h]
-  double v10; // [esp+4h] [ebp-18h]
-  double v11; // [esp+Ch] [ebp-10h]
-  double v12; // [esp+14h] [ebp-8h]
-
-  v9 = (*(int (__stdcall **)(_DWORD *))(*(this + 1) + 132))(this + 1);
-  if ( v9 <= 0 )
+    int v3;
+    double v4;
+    double v5;
+    int v6;
+    int v7;
+    int v9;
+    double v10;
+    double v11;
+    double v12;
+    v9 = (*(int (__stdcall **)(int *))(this->M4 + 132))(this + 1);
+    if ( v9 <= 0 )
     return 0;
-  a3 = (__int16)a3 - 0x3FFF;
-  v3 = a2[2];
-  v11 = (double)a3 * -0.00009587672516830327;
-  v10 = (double)v9;
-  v12 = (double)a2[1];
-  v4 = Math::SinCos(v11);
-  a3 = Math::RoundToInt(v12 - v4 * v10);
-  v5 = Math::ArcTan2(v11);
-  v6 = Math::RoundToInt(v5 * v10 + (double)*a2);
-  v7 = a3;
-  *a2 = v6;
-  a2[1] = v7;
-  a2[2] = v3;
-  LOWORD(a3) = *a2 / 256;
-  HIWORD(a3) = a2[1] / 256;
-  return 2 - LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a3);
+    a3 = (short)a3 - 0x3FFF;
+    v3 = *((int*)(a2) + 2);
+    v11 = (double)a3 * -0.00009587672516830327;
+    v10 = (double)v9;
+    v12 = (double)*((int*)(a2) + 1);
+    v4 = Math::SinCos(v11);
+    a3 = Math::RoundToInt(v12 - v4 * v10);
+    v5 = Math::ArcTan2(v11);
+    v6 = Math::RoundToInt(v5 * v10 + (double)*a2);
+    v7 = a3;
+    *a2 = v6;
+    *((int*)(a2) + 1) = v7;
+    *((int*)(a2) + 2) = v3;
+    LOWORD(a3) = *a2 / 256;
+    HIWORD(a3) = *((int*)(a2) + 1) / 256;
+    return 2 - LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (short *)&a3);
 }
 
 /* ASM:
@@ -14240,84 +14145,25 @@ retn
 } }
 // 0x4E3320
 namespace gamemd { int Gap2Recv_4E3320::GetResourceIDHardcodedCSF() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4E3320(void *this)
+// [IDA decompile]
+int __thiscall GetResourceIDHardcodedCSF(void *this)
 {
   if ( !this )
     return 1754;
-  if ( this == (void *)1 )
+  if ( this == 1 )
     return 1755;
-  if ( this == (void *)2 )
+  if ( this == 2 )
     return 1756;
-  if ( this == (void *)3 )
+  if ( this == 3 )
     return 1757;
-  if ( this == (void *)4 )
+  if ( this == 4 )
     return 1758;
-  if ( this == (void *)5 )
+  if ( this == 5 )
     return 1759;
-  if ( this == (void *)6 )
+  if ( this == 6 )
     return 1760;
-  return this != (void *)7 ? -1 : 1761;
+  return this != 7 ? -1 : 1761;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_4E332C
-mov     eax, 6DAh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E332C:                             ; CODE XREF: GetResourceIDHardcodedCSF+4↑j
-cmp     eax, 1
-jnz     short loc_4E3337
-mov     eax, 6DBh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3337:                             ; CODE XREF: GetResourceIDHardcodedCSF+F↑j
-cmp     eax, 2
-jnz     short loc_4E3342
-mov     eax, 6DCh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3342:                             ; CODE XREF: GetResourceIDHardcodedCSF+1A↑j
-cmp     eax, 3
-jnz     short loc_4E334D
-mov     eax, 6DDh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E334D:                             ; CODE XREF: GetResourceIDHardcodedCSF+25↑j
-cmp     eax, 4
-jnz     short loc_4E3358
-mov     eax, 6DEh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3358:                             ; CODE XREF: GetResourceIDHardcodedCSF+30↑j
-cmp     eax, 5
-jnz     short loc_4E3363
-mov     eax, 6DFh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3363:                             ; CODE XREF: GetResourceIDHardcodedCSF+3B↑j
-cmp     eax, 6
-jnz     short loc_4E336E
-mov     eax, 6E0h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E336E:                             ; CODE XREF: GetResourceIDHardcodedCSF+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFF91Eh
-add     eax, 6E1h
-retn
-*/
 } }
 // 0x4E37D0
 namespace gamemd { int Gap2Recv_4E37D0::GetResourceID2CSF() {
@@ -14340,65 +14186,6 @@ int __thiscall sub_4E37D0(void *this)
     return 1312;
   return this != (void *)7 ? -1 : 1313;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_4E37DC
-mov     eax, 6A1h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E37DC:                             ; CODE XREF: GetResourceID2CSF+4↑j
-cmp     eax, 1
-jnz     short loc_4E37E7
-mov     eax, 510h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E37E7:                             ; CODE XREF: GetResourceID2CSF+F↑j
-cmp     eax, 2
-jnz     short loc_4E37F2
-mov     eax, 513h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E37F2:                             ; CODE XREF: GetResourceID2CSF+1A↑j
-cmp     eax, 3
-jnz     short loc_4E37FD
-mov     eax, 51Eh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E37FD:                             ; CODE XREF: GetResourceID2CSF+25↑j
-cmp     eax, 4
-jnz     short loc_4E3808
-mov     eax, 514h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3808:                             ; CODE XREF: GetResourceID2CSF+30↑j
-cmp     eax, 5
-jnz     short loc_4E3813
-mov     eax, 51Fh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E3813:                             ; CODE XREF: GetResourceID2CSF+3B↑j
-cmp     eax, 6
-jnz     short loc_4E381E
-mov     eax, 520h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E381E:                             ; CODE XREF: GetResourceID2CSF+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFFADEh
-add     eax, 521h
-retn
-*/
 } }
 // 0x4E41D0
 namespace gamemd { int Gap2Recv_4E41D0::GetResourceIDCSF() {
@@ -14421,65 +14208,6 @@ int __thiscall CSF_GetResourceID(void *this)
     return 1319;
   return this != (void *)7 ? -1 : 1320;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_4E41DC
-mov     eax, 6A2h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E41DC:                             ; CODE XREF: GetResourceIDCSF+4↑j
-cmp     eax, 1
-jnz     short loc_4E41E7
-mov     eax, 522h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E41E7:                             ; CODE XREF: GetResourceIDCSF+F↑j
-cmp     eax, 2
-jnz     short loc_4E41F2
-mov     eax, 523h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E41F2:                             ; CODE XREF: GetResourceIDCSF+1A↑j
-cmp     eax, 3
-jnz     short loc_4E41FD
-mov     eax, 524h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E41FD:                             ; CODE XREF: GetResourceIDCSF+25↑j
-cmp     eax, 4
-jnz     short loc_4E4208
-mov     eax, 525h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4208:                             ; CODE XREF: GetResourceIDCSF+30↑j
-cmp     eax, 5
-jnz     short loc_4E4213
-mov     eax, 526h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4213:                             ; CODE XREF: GetResourceIDCSF+3B↑j
-cmp     eax, 6
-jnz     short loc_4E421E
-mov     eax, 527h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E421E:                             ; CODE XREF: GetResourceIDCSF+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFFAD7h
-add     eax, 528h
-retn
-*/
 } }
 // 0x4E4E60
 namespace gamemd { int Gap2Recv_4E4E60::GetResourceID3CSF() {
@@ -14502,65 +14230,6 @@ int __thiscall CSF_GetResourceID3(void *this)
     return 1706;
   return this != (void *)7 ? -1 : 1707;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_4E4E6C
-mov     eax, 6A3h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4E6C:                             ; CODE XREF: GetResourceID3CSF+4↑j
-cmp     eax, 1
-jnz     short loc_4E4E77
-mov     eax, 6A4h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4E77:                             ; CODE XREF: GetResourceID3CSF+F↑j
-cmp     eax, 2
-jnz     short loc_4E4E82
-mov     eax, 6A5h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4E82:                             ; CODE XREF: GetResourceID3CSF+1A↑j
-cmp     eax, 3
-jnz     short loc_4E4E8D
-mov     eax, 6A6h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4E8D:                             ; CODE XREF: GetResourceID3CSF+25↑j
-cmp     eax, 4
-jnz     short loc_4E4E98
-mov     eax, 6A7h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4E98:                             ; CODE XREF: GetResourceID3CSF+30↑j
-cmp     eax, 5
-jnz     short loc_4E4EA3
-mov     eax, 6A8h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4EA3:                             ; CODE XREF: GetResourceID3CSF+3B↑j
-cmp     eax, 6
-jnz     short loc_4E4EAE
-mov     eax, 6AAh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E4EAE:                             ; CODE XREF: GetResourceID3CSF+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFF954h
-add     eax, 6ABh
-retn
-*/
 } }
 // 0x4E5940
 namespace gamemd { int Gap2Recv_4E5940::GetResourceID4CSF() {
@@ -14583,72 +14252,11 @@ int __thiscall CSF_GetResourceID4(void *this)
     return 1907;
   return this != (void *)7 ? -1 : 1908;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_4E594C
-mov     eax, 76Dh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E594C:                             ; CODE XREF: GetResourceID4CSF+4↑j
-cmp     eax, 1
-jnz     short loc_4E5957
-mov     eax, 76Eh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E5957:                             ; CODE XREF: GetResourceID4CSF+F↑j
-cmp     eax, 2
-jnz     short loc_4E5962
-mov     eax, 76Fh
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E5962:                             ; CODE XREF: GetResourceID4CSF+1A↑j
-cmp     eax, 3
-jnz     short loc_4E596D
-mov     eax, 770h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E596D:                             ; CODE XREF: GetResourceID4CSF+25↑j
-cmp     eax, 4
-jnz     short loc_4E5978
-mov     eax, 771h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E5978:                             ; CODE XREF: GetResourceID4CSF+30↑j
-cmp     eax, 5
-jnz     short loc_4E5983
-mov     eax, 772h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E5983:                             ; CODE XREF: GetResourceID4CSF+3B↑j
-cmp     eax, 6
-jnz     short loc_4E598E
-mov     eax, 773h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4E598E:                             ; CODE XREF: GetResourceID4CSF+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFF88Bh
-add     eax, 774h
-retn
-*/
 } }
 // 0x4F9F70
 namespace gamemd { char Gap2Recv_4F9F70::COMStub_4F9F70(int a2, char a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4F9F70(void *this, int a2, char a3)
 {
-  return HouseClass::SetAlliance((int)this, *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * a2), a3);
+    return HouseClass::SetAlliance((int)this, *(int *)(DataGlobal_87F7E8[524945] + 4 * a2), a3);
 }
 
 /* ASM:
@@ -15177,28 +14785,25 @@ retn
 } }
 // 0x504860
 namespace gamemd { int Gap2Recv_504860::Team_Helper(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_504860(_DWORD *this, int a2)
 {
-  __int64 v2; // rax
-  int v3; // edi
-
-  v2 = (unsigned int)*(this + 5515);
-  if ( (int)v2 > 0 )
+    __int64 v2;
+    int v3;
+    v2 = (unsigned int)this->M22060;
+    if ( (int)v2 > 0 )
   {
     do
     {
-      LODWORD(v2) = *(this + 5512);
-      v3 = *(_DWORD *)(v2 + 8 * HIDWORD(v2));
-      LODWORD(v2) = v2 + 8 * HIDWORD(v2);
-      if ( v3 == a2 )
-        *(_BYTE *)(v2 + 4) = 1;
-      LODWORD(v2) = *(this + 5515);
-      ++HIDWORD(v2);
+    LODWORD(v2) = this->M22048;
+    v3 = *(int *)(v2 + 8 * HIDWORD(v2));
+    LODWORD(v2) = v2 + 8 * HIDWORD(v2);
+    if ( v3 == a2 )
+    *(char *)(v2 + 4) = 1;
+    LODWORD(v2) = this->M22060;
+    ++HIDWORD(v2);
     }
     while ( SHIDWORD(v2) < (int)v2 );
   }
-  return v2;
+    return v2;
 }
 
 /* ASM:
@@ -16216,14 +15821,11 @@ retn    4
 } }
 // 0x50DA10
 namespace gamemd { int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DA10(_DWORD *this)
 {
-  int result; // eax
-
-  result = MEMORY[0xA8EF98];
-  *(this + 5436) = MEMORY[0xA8EF98];
-  return result;
+    int result;
+    result = g_ControlGroupState;
+    this->M21744 = g_ControlGroupState;
+    return result;
 }
 
 /* ASM:
@@ -16234,16 +15836,13 @@ retn
 } }
 // 0x50DA50
 namespace gamemd { int Gap2Recv_50DA50::GlobalHelper_0E44C0_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DA50(_DWORD *this)
 {
-  int result; // eax
-
-  result = MEMORY[0xA8EF98];
-  *(this + 5439) = -100;
-  *(this + 5437) = result;
-  *(this + 5438) = MEMORY[0xA8EF98];
-  return result;
+    int result;
+    result = g_ControlGroupState;
+    this->M21756 = -100;
+    this->M21748 = result;
+    this->M21752 = g_ControlGroupState;
+    return result;
 }
 
 /* ASM:
@@ -16257,14 +15856,11 @@ retn
 } }
 // 0x50DFF0
 namespace gamemd { int Gap2Recv_50DFF0::GlobalHelper_0E4540_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DFF0(_DWORD *this)
 {
-  int result; // eax
-
-  result = MEMORY[0xA8EF98];
-  *(this + 5413) = MEMORY[0xA8EF98];
-  return result;
+    int result;
+    result = g_ControlGroupState;
+    this->M21652 = g_ControlGroupState;
+    return result;
 }
 
 /* ASM:
@@ -16914,80 +16510,6 @@ char __thiscall ReadRegistryOptionsWOL(_BYTE *this)
   }
   return *(this + 4);
 }
-
-/* ASM:
-Data            = dword ptr -90h
-phkResult       = dword ptr -8Ch
-cbData          = dword ptr -88h
-Type            = dword ptr -84h
-SubKey          = OMOTestDerived ptr -80h
-
-sub     esp, 90h
-push    ebp
-push    esi
-mov     ebp, ecx
-push    edi
-mov     edi, offset g_Str_SOFTWARE_Westwood_WOLAPI_ ; "SOFTWARE\\Westwood\\WOLAPI\\"
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-mov     byte ptr [ebp+4], 0
-repne scasb
-not     ecx
-sub     edi, ecx
-lea     edx, [esp+9Ch+SubKey]
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-lea     edx, [esp+9Ch+SubKey]
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-mov     [esp+9Ch+cbData], 4
-and     ecx, 3
-rep movsb
-lea     ecx, [esp+9Ch+phkResult]
-push    ecx             ; phkResult
-push    0F003Fh         ; samDesired
-push    0               ; ulOptions
-push    edx             ; lpSubKey
-push    80000002h       ; hKey
-call    ds:__imp_RegOpenKeyExA
-test    eax, eax
-jnz     short loc_517693
-mov     [esp+9Ch+Data], eax
-lea     eax, [esp+9Ch+cbData]
-lea     ecx, [esp+9Ch+Data]
-push    eax             ; lpcbData
-mov     eax, [esp+0A0h+phkResult]
-lea     edx, [esp+0A0h+Type]
-push    ecx             ; lpData
-push    edx             ; lpType
-push    0               ; lpReserved
-push    offset g_INI_Key_Options ; "Options"
-push    eax             ; hKey
-call    ds:__imp_RegQueryValueExA
-test    eax, eax
-jnz     short loc_517688
-cmp     [esp+9Ch+Type], 4
-jnz     short loc_517688
-mov     ecx, [esp+9Ch+Data]
-mov     byte ptr [ebp+4], 1
-mov     [ebp+0], ecx
-
-loc_517688:                             ; CODE XREF: ReadRegistryOptionsWOL+84↑j
-; ReadRegistryOptionsWOL+8B↑j
-mov     edx, [esp+9Ch+phkResult]
-push    edx             ; hKey
-call    ds:__imp_RegCloseKey
-
-loc_517693:                             ; CODE XREF: ReadRegistryOptionsWOL+5B↑j
-mov     al, [ebp+4]
-pop     edi
-pop     esi
-pop     ebp
-add     esp, 90h
-retn
-*/
 } }
 // 0x5176C0
 namespace gamemd { bool Gap2Recv_5176C0::WinMain_Helper() {
@@ -19486,30 +19008,27 @@ retn    0Ch
 } }
 // 0x52A670
 namespace gamemd { void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall WinMain_Init(void *this, void *a2, char a3)
 {
-  _DWORD v5[129]; // [esp+8h] [ebp-504h] BYREF
-  _BYTE v6[512]; // [esp+20Ch] [ebp-300h] BYREF
-  _DWORD v7[64]; // [esp+40Ch] [ebp-100h] BYREF
-
-  InitArrayWithValue(v5, 0, 64);
-  InitArrayWithValue(&v5[64], 0, 64);
-  v5[128] = 0;
-  if ( a3 )
+    int v5[129];
+    char v6[512];
+    int v7[64];
+    InitArrayWithValue(v5, 0, 64);
+    InitArrayWithValue(&v5[64], 0, 64);
+    v5[128] = 0;
+    if ( a3 )
   {
     InitArrayWithValue(v7, 65537, 64);
     EncodeVarInt((int)v7, v6, 64);
   }
-  else
+    else
   {
     INIClass::GetBase64Data(this, aPrivatekey, (int)v6, 512);
   }
-  System_Init_632030(v5, v6);
-  INIClass::GetBase64Data(this, aPublickey, (int)v6, 512);
-  System_Init_632000(v5, v6);
-  qmemcpy(a2, v5, 0x204u);
-  return a2;
+    System_Init_632030(v5, v6);
+    INIClass::GetBase64Data(this, aPublickey, (int)v6, 512);
+    System_Init_632000(v5, v6);
+    qmemcpy(a2, v5, 0x204u);
+    return a2;
 }
 
 /* ASM:
@@ -20304,15 +19823,12 @@ retn    14h
 } }
 // 0x5402B0
 namespace gamemd { int Gap2Recv_5402B0::Network_Init_5402B0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5402B0(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = MEMORY[0xAA05A4];
-  if ( MEMORY[0xAA05A4] )
-    *(this + 49) = 0;
-  return result;
+    int result;
+    result = DataGlobal_AA05A4;
+    if ( DataGlobal_AA05A4 )
+    this->M196 = 0;
+    return result;
 }
 
 /* ASM:
@@ -20677,16 +20193,13 @@ retn
 } }
 // 0x542FC0
 namespace gamemd { int Gap2Recv_542FC0::Network_Init_542FC0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_542FC0(_DWORD *this, int a2)
 {
-  _DWORD *v2; // ecx
-  int result; // eax
-
-  v2 = (_DWORD *)*(this + 18);
-  if ( v2 )
+    int *v2;
+    int result;
+    v2 = (int *)this->M72;
+    if ( v2 )
     return Network_Init_5402B0(v2, a2);
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -20791,20 +20304,17 @@ retn
 } }
 // 0x544E00
 namespace gamemd { void* Gap2Recv_544E00::Map_Get(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_544E00(_DWORD *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *result; // eax
-
-  v2 = *(this + 188);
-  v3 = a2;
-  if ( a2 > v2 - 1 )
+    int v2;
+    int v3;
+    int *result;
+    v2 = this->M752;
+    v3 = a2;
+    if ( a2 > v2 - 1 )
     v3 = a2 % v2;
-  for ( result = this; v3; --v3 )
-    result = (_DWORD *)result[175];
-  return result;
+    for ( result = this; v3; --v3 )
+    result = (int *)result[175];
+    return result;
 }
 
 /* ASM:
@@ -20837,12 +20347,10 @@ retn    4
 } }
 // 0x549E50
 namespace gamemd { int Gap2Recv_549E50::Map_Get_549E50(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_549E50(int this, int a2, int a3)
 {
-  if ( !*(_DWORD *)(this + 164) && *(_BYTE *)(this + 756) )
+    if ( !*(int *)(this + 164) && *(char *)(this + 756) )
     MapClass::LoadFileData(this);
-  return *(_DWORD *)(*(_DWORD *)(this + 680) + 4 * a2) + 4 * a3;
+    return *(int *)(*(int *)(this + 680) + 4 * a2) + 4 * a3;
 }
 
 /* ASM:
@@ -21274,94 +20782,37 @@ char __thiscall sub_54F530(_BYTE *this, __int16 a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-test    ah, 8
-mov     esi, ecx
-jnz     short def_54F559 ; jumptable 0054F559 default case, cases 9,11,12,14-26,28-34
-and     eax, 0FFh
-mov     ecx, eax
-and     ecx, 0FFFFh
-lea     edx, [ecx-8]    ; switch 29 cases
-cmp     edx, 1Ch
-ja      short def_54F559 ; jumptable 0054F559 default case, cases 9,11,12,14-26,28-34
-xor     ecx, ecx
-mov     cl, ds:byte_54F59C[edx]
-jmp     ds:jpt_54F559[ecx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_54F560:                             ; CODE XREF: Event_Process+29↑j
-; DATA XREF: .text:jpt_54F559↓o
-mov     al, 8           ; jumptable 0054F559 case 36
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_54F566:                             ; CODE XREF: Event_Process+29↑j
-; DATA XREF: .text:jpt_54F559↓o
-mov     al, 5Ch ; '\'   ; jumptable 0054F559 case 35
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_54F56C:                             ; CODE XREF: Event_Process+29↑j
-; DATA XREF: .text:jpt_54F559↓o
-mov     al, [esi+8]     ; jumptable 0054F559 case 10
-cmp     al, 0Dh
-jnz     short loc_54F575
-xor     al, al
-
-loc_54F575:                             ; CODE XREF: Event_Process+41↑j
-mov     word ptr [esi+8], 0
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-def_54F559:                             ; CODE XREF: Event_Process+A↑j
-; Event_Process+1F↑j ...
-xor     al, al          ; jumptable 0054F559 default case, cases 9,11,12,14-26,28-34
-
-loc_54F581:                             ; CODE XREF: Event_Process+29↑j
-; DATA XREF: .text:jpt_54F559↓o
-pop     esi             ; jumptable 0054F559 cases 8,13,27
-retn    4
-*/
 } }
 // 0x551A30
 namespace gamemd { int Gap2Recv_551A30::ProcessAutoSave() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_551A30(_DWORD *this)
 {
-  int v2; // ebx
-  int result; // eax
-  int v4; // eax
-  int v5; // esi
-  int v6; // edi
-  int v7; // [esp+8h] [ebp-4h]
-
-  v2 = 0;
-  result = *(this + 4) - 1;
-  if ( result > 0 )
+    int v2;
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v2 = 0;
+    result = this->M16 - 1;
+    if ( result > 0 )
   {
     do
     {
-      v4 = *(this + 1);
-      v5 = *(_DWORD *)(v4 + 4 * v2 + 4);
-      v6 = *(_DWORD *)(v4 + 4 * v2);
-      v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 184))(v5);
-      if ( v7 < (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 184))(v6) )
+    v4 = this->M4;
+    v5 = *(int *)(v4 + 4 * v2 + 4);
+    v6 = *(int *)(v4 + 4 * v2);
+    v7 = (*(int (__thiscall **)(int))(*(int *)(v5) + 184))(v5);
+    if ( v7 < (*(int (__thiscall **)(int))(*(int *)(v6) + 184))(v6) )
       {
-        *(_DWORD *)(*(this + 1) + 4 * v2 + 4) = v6;
-        *(_DWORD *)(*(this + 1) + 4 * v2) = v5;
+    *(int *)(this->M4 + 4 * v2 + 4) = v6;
+    *(int *)(this->M4 + 4 * v2) = v5;
       }
-      ++v2;
-      result = *(this + 4) - 1;
+    ++v2;
+    result = this->M16 - 1;
     }
     while ( v2 < result );
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -21717,10 +21168,8 @@ retn
 } }
 // 0x55AF50
 namespace gamemd { void Gap2Recv_55AF50::Map_Init() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_55AF50(void *this)
 {
-  dword_829FF8 = (int)this;
+    DataGlobal_829FF8 = (int)this;
 }
 
 /* ASM:
@@ -21730,14 +21179,12 @@ retn
 } }
 // 0x55F690
 namespace gamemd { int Gap2Recv_55F690::CheckNetworkSync(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_55F690(_BYTE *this, int a2, int a3)
 {
-  *(_DWORD *)this = a3 & 0xFFFFFF;
-  *(this + 4) = HIBYTE(a3);
-  *(_DWORD *)a2 = *(_DWORD *)this;
-  *(_BYTE *)(a2 + 4) = *(this + 4);
-  return a2;
+    *(int *)this = a3 & 0xFFFFFF;
+    this->M4 = HIBYTE(a3);
+    *(int *)a2 = *(int *)this;
+    *(char *)(a2 + 4) = this->M4;
+    return a2;
 }
 
 /* ASM:
@@ -24877,19 +24324,16 @@ retn    4
 } }
 // 0x56D3F0
 namespace gamemd { int Gap2Recv_56D3F0::CellToTileIndexMap(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map_CellToTileIndex(int *this, __int16 *a2)
 {
-  int result; // eax
-  int v3; // ecx
-
-  result = *a2 + a2[1] * (*(this + 62) + *(this + 61) + 1);
-  if ( result < 0 )
+    int result;
+    int v3;
+    result = *a2 + *((int*)(a2) + 1) * (this->M248 + this->M244 + 1);
+    if ( result < 0 )
     return 0;
-  v3 = *(this + 27);
-  if ( result >= v3 )
+    v3 = this->M108;
+    if ( result >= v3 )
     return v3 - 1;
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -24956,145 +24400,42 @@ LABEL_12:
     goto LABEL_12;
   return a4;
 }
-
-/* ASM:
-sub     esp, 8
-mov     eax, [esp+8+arg_8]
-mov     edx, [ecx+60h]
-push    ebx
-push    ebp
-push    esi
-cmp     eax, edx
-push    edi
-mov     [esp+18h+arg_8], eax
-mov     [esp+18h+var_4], edx
-jge     loc_56DAB9
-mov     ecx, [ecx+54h]
-mov     edi, [esp+18h+arg_0]
-shl     eax, 4
-add     ecx, eax
-
-loc_56DA3A:                             ; CODE XREF: GetRegionMap+A7↓j
-mov     eax, [ecx+0Ch]
-test    eax, eax
-jnz     short loc_56DAA5
-mov     esi, [ecx]
-mov     eax, [ecx+4]
-movsx   edx, si
-movsx   ebx, ax
-mov     ebp, edx
-mov     [esp+18h+arg_0], esi
-sub     ebp, ebx
-mov     [esp+18h+var_8], eax
-jnz     short loc_56DA80
-mov     ax, [edi+2]
-cmp     ax, word ptr [esp+18h+arg_0+2]
-jl      short loc_56DAA5
-cmp     ax, word ptr [esp+18h+var_8+2]
-jg      short loc_56DAA5
-movsx   eax, word ptr [edi]
-sub     eax, edx
-cdq
-xor     eax, edx
-sub     eax, edx
-mov     edx, [esp+18h+arg_4]
-cmp     eax, edx
-jle     short loc_56DAC6
-jmp     short loc_56DAA5
-; ---------------------------------------------------------------------------
-
-loc_56DA80:                             ; CODE XREF: GetRegionMap+48↑j
-mov     dx, [edi]
-cmp     dx, ax
-jg      short loc_56DAA5
-cmp     dx, si
-jl      short loc_56DAA5
-movsx   eax, word ptr [edi+2]
-movsx   edx, word ptr [esp+18h+arg_0+2]
-sub     eax, edx
-cdq
-xor     eax, edx
-sub     eax, edx
-mov     edx, [esp+18h+arg_4]
-cmp     eax, edx
-jle     short loc_56DAC6
-
-loc_56DAA5:                             ; CODE XREF: GetRegionMap+2F↑j
-; GetRegionMap+53↑j ...
-mov     eax, [esp+18h+arg_8]
-mov     edx, [esp+18h+var_4]
-inc     eax
-add     ecx, 10h
-cmp     eax, edx
-mov     [esp+18h+arg_8], eax
-jl      short loc_56DA3A
-
-loc_56DAB9:                             ; CODE XREF: GetRegionMap+18↑j
-pop     edi
-pop     esi
-pop     ebp
-or      eax, 0FFFFFFFFh
-pop     ebx
-add     esp, 8
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_56DAC6:                             ; CODE XREF: GetRegionMap+6C↑j
-; GetRegionMap+93↑j
-mov     eax, [esp+18h+arg_8]
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn    0Ch
-*/
 } }
 // 0x56DB70
 namespace gamemd { char Gap2Recv_56DB70::InvalidateTileRegionMap(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Map_InvalidateTileRegion(int *this, __int16 *a2)
 {
-  int Region; // ebp
-  int v6; // eax
-  int v7; // edi
-  char v8; // cl
-  _BYTE *v9; // eax
-  char v10; // [esp+10h] [ebp+4h]
-
-  Region = GetRegionMap(this, a2, 3, 0);
-  if ( Region == -1 )
+    int Region;
+    int v6;
+    int v7;
+    char v8;
+    char *v9;
+    char v10;
+    Region = GetRegionMap(this, a2, 3, 0);
+    if ( Region == -1 )
   {
     MapClass::ProcessRegion(this);
     Region = GetRegionMap(this, a2, 3, 0);
     if ( Region == -1 )
-      return 0;
+    return 0;
   }
-  v10 = 0;
-  do
+    v10 = 0;
+    do
   {
-    v6 = *(this + 21);
+    v6 = this->M84;
     v7 = 16 * Region;
-    v8 = *(_BYTE *)(v6 + 16 * Region + 8);
-    v9 = (_BYTE *)(v6 + 16 * Region + 8);
+    v8 = *(char *)(v6 + 16 * Region + 8);
+    v9 = (char *)(v6 + 16 * Region + 8);
     if ( !v8 )
     {
-      *v9 = 1;
-      BuildTileAdjacencyTable(v7 + *(this + 21));
-      if ( !MapSeed::CheckTileMatch(
-              this,
-              (__int16 *)(*(this + 21) + v7),
-              (__int16 *)(*(this + 21) + v7 + 4),
-              0,
-              0,
-              0,
-              0) )
-        v10 = 1;
+    *v9 = 1;
+    BuildTileAdjacencyTable(v7 + this->M84);
+    if ( !MapSeed::CheckTileMatch( this, (short *)(this->M84 + v7), (short *)(this->M84 + v7 + 4), 0, 0, 0, 0) )
+    v10 = 1;
     }
     Region = GetRegionMap(this, a2, 3, Region + 1);
   }
-  while ( Region != -1 );
-  return v10;
+    while ( Region != -1 );
+    return v10;
 }
 
 /* ASM:
@@ -25346,15 +24687,12 @@ retn    0Ch
 } }
 // 0x5785F0
 namespace gamemd { bool Gap2Recv_5785F0::IsCoordVisibleMap(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Map_IsCoordVisible(_DWORD *this, _DWORD *a2)
 {
-  _DWORD *v2; // esi
-
-  v2 = a2;
-  LOWORD(a2) = *a2 / 256;
-  HIWORD(a2) = v2[1] / 256;
-  return LayerClass::IsWithinUsableArea(this, (__int16 *)&a2, 1);
+    int *v2;
+    v2 = a2;
+    LOWORD(a2) = *a2 / 256;
+    HIWORD(a2) = v2[1] / 256;
+    return LayerClass::IsWithinUsableArea(this, (short *)&a2, 1);
 }
 
 /* ASM:
@@ -25384,38 +24722,32 @@ retn    4
 } }
 // 0x578640
 namespace gamemd { bool Gap2Recv_578640::Math_Helper(void* a2, void* a3, char a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_578640(_DWORD *this, _DWORD *a2, __int16 *a3, char a4)
 {
-  int v4; // edx
-  int v5; // esi
-  int v6; // edi
-  unsigned int v7; // eax
-  _DWORD *v8; // eax
-  int v9; // ebx
-  int v10; // eax
-
-  v4 = a3[1];
-  v5 = 0;
-  v6 = *a3;
-  if ( a4 )
+    int v4;
+    int v5;
+    int v6;
+    unsigned int v7;
+    int *v8;
+    int v9;
+    int v10;
+    v4 = *((int*)(a3) + 1);
+    v5 = 0;
+    v6 = *a3;
+    if ( a4 )
   {
     v7 = v6 + (v4 << 9);
-    if ( v7 >= 0x40000 || (v8 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v7)) == 0 )
+    if ( v7 >= 0x40000 || (v8 = *(int **)(g_Shroud_CellArray + 4 * v7)) == 0 )
     {
-      MEMORY[0xABDC74] = *(_DWORD *)a3;
-      v8 = MEMORY[0xABDC50];
+    g_Map_GlobalCellIndex = *(int *)a3;
+    v8 = g_CellClassArray;
     }
-    v5 = *((char *)v8 + 283);
-    if ( *((_BYTE *)v8 + 284) && v4 + v6 < v5 + *(this + 61) + 2 * a2[1] + 4 )
-      ++v5;
+    v5 = *((char *)(v8) + 283);
+    if ( *((char *)(v8) + 284) && v4 + v6 < v5 + this->M244 + 2 * *((int*)(a2) + 1) + 4 )
+    ++v5;
   }
-  v9 = a2[1];
-  v10 = *(this + 61);
-  return v4 + v6 > v5 + v10 + 2 * v9
-      && v4 + v6 <= v5 + v10 + 2 * (v9 + a2[3]) + 2
-      && v6 - v4 < 2 * (*a2 + a2[2]) - v10
-      && v4 - v6 < v10 - 2 * *a2;
+    v9 = *((int*)(a2) + 1);
+    v10 = this->M244;
+    return v4 + v6 > v5 + v10 + 2 * v9 && v4 + v6 <= v5 + v10 + 2 * (v9 + *((int*)(a2) + 3)) + 2 && v6 - v4 < 2 * (*a2 + *((int*)(a2) + 2)) - v10 && v4 - v6 < v10 - 2 * *a2;
 }
 
 /* ASM:
@@ -26970,31 +26302,28 @@ jmp     BuildingClass__FreeUpgradeQueue2
 } }
 // 0x582D30
 namespace gamemd { int Gap2Recv_582D30::SmallFunc_582D30(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_582D30(int *this, int a2)
 {
-  int v3; // ebx
-  int result; // eax
-  int v5; // edi
-  int v6; // edx
-
-  v3 = 0;
-  result = *(this + 24);
-  if ( result > 0 )
+    int v3;
+    int result;
+    int v5;
+    int v6;
+    v3 = 0;
+    result = this->M96;
+    if ( result > 0 )
   {
     v5 = 0;
     do
     {
-      v6 = *(this + 21);
-      if ( *(_BYTE *)(v6 + v5 + 8) )
-        RadarClass::RenderBlips(this, (int *)(v6 + v5), a2);
-      result = *(this + 24);
-      ++v3;
-      v5 += 16;
+    v6 = this->M84;
+    if ( *(char *)(v6 + v5 + 8) )
+    RadarClass::RenderBlips(this, (int *)(v6 + v5), a2);
+    result = this->M96;
+    ++v3;
+    v5 += 16;
     }
     while ( v3 < result );
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -27257,362 +26586,6 @@ LABEL_31:
   }
   return result;
 }
-
-/* ASM:
-sub     esp, 70h
-mov     [esp+70h+var_64], ecx
-push    ebx
-mov     ecx, [esp+74h+arg_4]
-mov     eax, 1
-push    ebp
-push    esi
-cmp     ecx, eax
-push    edi
-mov     [esp+80h+var_68], eax
-jl      loc_584024
-or      esi, 0FFFFFFFFh
-mov     [esp+80h+var_60], esi
-
-loc_583C87:                             ; CODE XREF: CollectMatchingTileCells+3BE↓j
-cmp     esi, eax
-mov     [esp+80h+var_6C], esi
-jg      loc_583FF8
-jmp     short loc_583C99
-; ---------------------------------------------------------------------------
-
-loc_583C95:                             ; CODE XREF: CollectMatchingTileCells+38E↓j
-mov     eax, [esp+80h+var_68]
-
-loc_583C99:                             ; CODE XREF: CollectMatchingTileCells+33↑j
-mov     cx, ax
-mov     eax, [esp+80h+arg_0]
-mov     dx, si
-push    0
-add     cx, [eax]
-add     dx, [eax+2]
-mov     word ptr [esp+84h+var_5C], cx
-mov     ecx, [esp+84h+arg_C]
-mov     word ptr [esp+84h+var_5C+2], dx
-mov     eax, [esp+84h+var_5C]
-lea     edx, [esp+84h+var_70]
-push    ecx
-mov     ecx, [esp+88h+var_64]
-push    edx
-mov     [esp+8Ch+var_70], eax
-call    MapClass__GetTileIndex
-cmp     eax, [esp+80h+arg_10]
-jnz     loc_583D9D
-movsx   eax, word ptr [esp+80h+var_70+2]
-movsx   ebx, word ptr [esp+80h+var_70]
-mov     [esp+80h+var_2C], eax
-mov     eax, [esp+80h+arg_1C]
-xor     ebp, ebp
-test    eax, eax
-jle     short loc_583D55
-
-loc_583CFF:                             ; CODE XREF: CollectMatchingTileCells+EF↓j
-mov     eax, [esp+80h+arg_18]
-xor     esi, esi
-test    eax, eax
-jle     short loc_583D45
-mov     ecx, [esp+80h+var_2C]
-lea     edi, [ecx+ebp]
-
-loc_583D13:                             ; CODE XREF: CollectMatchingTileCells+E3↓j
-lea     edx, [esi+ebx]
-push    edi
-push    edx
-lea     ecx, [esp+88h+var_50]
-call    CellStruct__Set
-push    eax
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-mov     eax, [eax+4Ch]
-cmp     eax, 4
-jz      short loc_583D39
-cmp     eax, 3
-jnz     short loc_583DA6
-
-loc_583D39:                             ; CODE XREF: CollectMatchingTileCells+D2↑j
-mov     eax, [esp+80h+arg_18]
-inc     esi
-cmp     esi, eax
-jl      short loc_583D13
-
-loc_583D45:                             ; CODE XREF: CollectMatchingTileCells+AA↑j
-mov     eax, [esp+80h+arg_1C]
-inc     ebp
-cmp     ebp, eax
-jl      short loc_583CFF
-mov     esi, [esp+80h+var_6C]
-
-loc_583D55:                             ; CODE XREF: CollectMatchingTileCells+9D↑j
-mov     edi, [esp+80h+arg_14]
-mov     ecx, [edi+8]
-mov     eax, [edi+10h]
-cmp     eax, ecx
-jl      short loc_583D88
-mov     al, [edi+0Dh]
-test    al, al
-jnz     short loc_583D71
-test    ecx, ecx
-jnz     short loc_583DB1
-
-loc_583D71:                             ; CODE XREF: CollectMatchingTileCells+10B↑j
-mov     eax, [edi+14h]
-test    eax, eax
-jle     short loc_583DB1
-mov     edx, [edi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_583DB1
-
-loc_583D88:                             ; CODE XREF: CollectMatchingTileCells+104↑j
-mov     eax, [edi+10h]
-mov     edx, [edi+4]
-lea     ecx, [eax+1]
-mov     [edi+10h], ecx
-mov     ecx, [esp+80h+var_70]
-mov     [edx+eax*4], ecx
-jmp     short loc_583DB1
-; ---------------------------------------------------------------------------
-
-loc_583D9D:                             ; CODE XREF: CollectMatchingTileCells+7E↑j
-mov     edi, [esp+80h+arg_14]
-jmp     short loc_583DB1
-; ---------------------------------------------------------------------------
-
-loc_583DA6:                             ; CODE XREF: CollectMatchingTileCells+D7↑j
-mov     edi, [esp+80h+arg_14]
-mov     esi, [esp+80h+var_6C]
-
-loc_583DB1:                             ; CODE XREF: CollectMatchingTileCells+10F↑j
-; CollectMatchingTileCells+116↑j ...
-mov     eax, [esp+80h+var_68]
-mov     ecx, [esp+80h+arg_0]
-mov     dx, si
-push    0
-add     dx, [ecx+2]
-neg     eax
-add     ax, [ecx]
-mov     ecx, [esp+84h+arg_C]
-mov     word ptr [esp+84h+var_58+2], dx
-lea     edx, [esp+84h+var_70]
-mov     word ptr [esp+84h+var_58], ax
-mov     eax, [esp+84h+var_58]
-push    ecx
-mov     ecx, [esp+88h+var_64]
-push    edx
-mov     [esp+8Ch+var_70], eax
-call    MapClass__GetTileIndex
-cmp     eax, [esp+80h+arg_10]
-jnz     loc_583EBF
-movsx   eax, word ptr [esp+80h+var_70+2]
-movsx   ebx, word ptr [esp+80h+var_70]
-mov     [esp+80h+var_1C], eax
-mov     eax, [esp+80h+arg_1C]
-xor     ebp, ebp
-test    eax, eax
-jle     short loc_583E73
-
-loc_583E1A:                             ; CODE XREF: CollectMatchingTileCells+211↓j
-mov     eax, [esp+80h+arg_18]
-xor     esi, esi
-test    eax, eax
-jle     short loc_583E67
-mov     ecx, [esp+80h+var_1C]
-lea     edi, [ecx+ebp]
-
-loc_583E2E:                             ; CODE XREF: CollectMatchingTileCells+1FE↓j
-lea     edx, [esi+ebx]
-push    edi
-push    edx
-lea     ecx, [esp+88h+var_4C]
-call    CellStruct__Set
-push    eax
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-mov     eax, [eax+4Ch]
-cmp     eax, 4
-jz      short loc_583E54
-cmp     eax, 3
-jnz     short loc_583EB4
-
-loc_583E54:                             ; CODE XREF: CollectMatchingTileCells+1ED↑j
-mov     eax, [esp+80h+arg_18]
-inc     esi
-cmp     esi, eax
-jl      short loc_583E2E
-mov     edi, [esp+80h+arg_14]
-
-loc_583E67:                             ; CODE XREF: CollectMatchingTileCells+1C5↑j
-mov     eax, [esp+80h+arg_1C]
-inc     ebp
-cmp     ebp, eax
-jl      short loc_583E1A
-
-loc_583E73:                             ; CODE XREF: CollectMatchingTileCells+1B8↑j
-mov     ecx, [edi+8]
-mov     eax, [edi+10h]
-cmp     eax, ecx
-jl      short loc_583E9F
-mov     al, [edi+0Dh]
-test    al, al
-jnz     short loc_583E88
-test    ecx, ecx
-jnz     short loc_583EBB
-
-loc_583E88:                             ; CODE XREF: CollectMatchingTileCells+222↑j
-mov     eax, [edi+14h]
-test    eax, eax
-jle     short loc_583EBB
-mov     edx, [edi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_583EBB
-
-loc_583E9F:                             ; CODE XREF: CollectMatchingTileCells+21B↑j
-mov     eax, [edi+10h]
-mov     edx, [edi+4]
-lea     ecx, [eax+1]
-mov     [edi+10h], ecx
-mov     ecx, [esp+80h+var_70]
-mov     [edx+eax*4], ecx
-jmp     short loc_583EBB
-; ---------------------------------------------------------------------------
-
-loc_583EB4:                             ; CODE XREF: CollectMatchingTileCells+1F2↑j
-mov     edi, [esp+80h+arg_14]
-
-loc_583EBB:                             ; CODE XREF: CollectMatchingTileCells+226↑j
-; CollectMatchingTileCells+22D↑j ...
-mov     esi, [esp+80h+var_6C]
-
-loc_583EBF:                             ; CODE XREF: CollectMatchingTileCells+199↑j
-mov     eax, [esp+80h+var_68]
-cmp     esi, eax
-jz      loc_583FE3
-mov     ebx, [esp+80h+var_60]
-cmp     esi, ebx
-jz      loc_583FE3
-mov     ebp, [esp+80h+arg_0]
-mov     ecx, [esp+80h+arg_C]
-mov     dx, si
-push    0
-add     dx, [ebp+0]
-add     ax, [ebp+2]
-push    ecx
-mov     ecx, [esp+88h+var_64]
-mov     word ptr [esp+88h+var_54], dx
-mov     word ptr [esp+88h+var_54+2], ax
-mov     eax, [esp+88h+var_54]
-lea     edx, [esp+88h+var_70]
-push    edx
-mov     [esp+8Ch+var_70], eax
-call    MapClass__GetTileIndex
-cmp     eax, [esp+80h+arg_10]
-jnz     short loc_583F62
-movsx   ecx, word ptr [esp+80h+var_70+2]
-movsx   eax, word ptr [esp+80h+var_70]
-mov     edx, [esp+80h+arg_18]
-mov     [esp+80h+var_3C], ecx
-lea     ecx, [esp+80h+var_40]
-mov     [esp+80h+var_40], eax
-mov     eax, [esp+80h+arg_1C]
-push    ecx
-mov     ecx, [esp+84h+var_64]
-mov     [esp+84h+var_38], edx
-mov     [esp+84h+var_34], eax
-call    Map_Helper_584030
-test    al, al
-jz      short loc_583F62
-lea     edx, [esp+80h+var_70]
-mov     ecx, edi
-push    edx
-call    TileVector__PushBack
-
-loc_583F62:                             ; CODE XREF: CollectMatchingTileCells+2BA↑j
-; CollectMatchingTileCells+2F4↑j
-push    ebx
-push    esi
-lea     ecx, [esp+88h+var_48]
-call    CellStruct__Set
-push    eax
-lea     eax, [esp+84h+var_44]
-push    eax
-mov     ecx, ebp
-call    CellStruct__Add
-mov     ecx, [esp+80h+arg_C]
-mov     ebx, [esp+80h+var_64]
-mov     eax, [eax]
-push    0
-lea     edx, [esp+84h+var_70]
-push    ecx
-push    edx
-mov     ecx, ebx
-mov     [esp+8Ch+var_70], eax
-call    MapClass__GetTileIndex
-cmp     eax, [esp+80h+arg_10]
-jnz     short loc_583FE3
-mov     eax, [esp+80h+arg_1C]
-mov     ecx, [esp+80h+arg_18]
-movsx   edx, word ptr [esp+80h+var_70+2]
-push    eax
-push    ecx
-movsx   eax, word ptr [esp+88h+var_70]
-push    edx
-push    eax
-lea     ecx, [esp+90h+var_10]
-call    Rect__Set
-push    eax
-mov     ecx, ebx
-call    Map_Helper_584030
-test    al, al
-jz      short loc_583FE3
-lea     ecx, [esp+80h+var_70]
-push    ecx
-mov     ecx, edi
-call    TileVector__PushBack
-
-loc_583FE3:                             ; CODE XREF: CollectMatchingTileCells+265↑j
-; CollectMatchingTileCells+271↑j ...
-mov     eax, [esp+80h+var_68]
-inc     esi
-cmp     esi, eax
-mov     [esp+80h+var_6C], esi
-jle     loc_583C95
-mov     esi, [esp+80h+var_60]
-
-loc_583FF8:                             ; CODE XREF: CollectMatchingTileCells+2D↑j
-mov     ecx, [esp+80h+arg_14]
-mov     edx, [esp+80h+arg_8]
-cmp     [ecx+10h], edx
-jg      short loc_584024
-mov     ecx, [esp+80h+arg_4]
-inc     eax
-dec     esi
-cmp     eax, ecx
-mov     [esp+80h+var_68], eax
-mov     [esp+80h+var_60], esi
-jle     loc_583C87
-
-loc_584024:                             ; CODE XREF: CollectMatchingTileCells+1A↑j
-; CollectMatchingTileCells+3A9↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 70h
-retn    20h ; ' '
-*/
 } }
 // 0x5840C0
 namespace gamemd { char Gap2Recv_5840C0::CheckMapReachability(int a2, int a3, int a4, int j) {
@@ -30141,23 +29114,20 @@ retn    8
 } }
 // 0x5866C0
 namespace gamemd { int Gap2Recv_5866C0::SmallFunc_5866C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5866C0(_DWORD *this)
 {
-  int v2; // eax
-  int result; // eax
-
-  v2 = *(this + 61);
-  *(this + 67) = 1;
-  *(this + 68) = v2;
-  *(this + 69) = v2 - 1;
-  *(this + 70) = (v2 << 11) + *(this + 79) + 4;
-  for ( result = LayerClass::CellIteratorNext(this); result; result = LayerClass::CellIteratorNext(this) )
+    int v2;
+    int result;
+    v2 = this->M244;
+    this->M268 = 1;
+    this->M272 = v2;
+    this->M276 = v2 - 1;
+    this->M280 = (v2 << 11) + this->M316 + 4;
+    for ( result = LayerClass::CellIteratorNext(this); result; result = LayerClass::CellIteratorNext(this) )
   {
-    if ( (*(_BYTE *)(result + 320) & 2) == 0 )
-      CellClass::CreateFoggedObjects((_DWORD *)result);
+    if ( (*(char *)(result + 320) & 2) == 0 )
+    CellClass::CreateFoggedObjects((int *)result);
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -31012,24 +29982,6 @@ int __thiscall sub_588960(_DWORD *this, int a2)
   *(this + 82) = result;
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+148h]
-mov     edx, [esp+arg_0]
-cmp     eax, edx
-jl      short loc_588970
-mov     eax, edx
-
-loc_588970:                             ; CODE XREF: Object_Create+C↑j
-xor     edx, edx
-mov     [ecx+148h], eax
-test    eax, eax
-setle   dl
-dec     edx
-and     eax, edx
-mov     [ecx+148h], eax
-retn    4
-*/
 } }
 // 0x591740
 namespace gamemd { char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
@@ -38219,73 +37171,6 @@ char __thiscall Map_Helper_5AD930(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jl      short loc_5AD9AD
-mov     ebx, [esi+8]
-add     ebx, ebp
-lea     eax, ds:0[ebx*8]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-mov     edi, eax
-add     esp, 4
-test    edi, edi
-jz      short loc_5AD9AD
-mov     eax, [esi+4]
-dec     ebx
-xor     ecx, ecx
-mov     [esp+10h+arg_0], ebx
-test    eax, eax
-jle     short loc_5AD988
-
-loc_5AD967:                             ; CODE XREF: Map_Helper_5AD930+56↓j
-mov     ebx, [esi]
-lea     eax, ds:0[ecx*8]
-mov     edx, eax
-add     edx, ebx
-inc     ecx
-mov     ebx, [edx]
-mov     [eax+edi], ebx
-mov     edx, [edx+4]
-mov     [eax+edi+4], edx
-mov     eax, [esi+4]
-cmp     ecx, eax
-jl      short loc_5AD967
-
-loc_5AD988:                             ; CODE XREF: Map_Helper_5AD930+35↑j
-mov     eax, [esi]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [esi+8]
-add     esp, 4
-add     eax, ebp
-mov     [esi], edi
-mov     [esi+8], eax
-mov     dword ptr [esi+10h], 0
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5AD9AD:                             ; CODE XREF: Map_Helper_5AD930+C↑j
-; Map_Helper_5AD930+27↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    4
-*/
 } }
 // 0x5AD9F0
 namespace gamemd { void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
@@ -38366,76 +37251,34 @@ int __thiscall LookupWaypointName(void *this)
   }
   return v2;
 }
-
-/* ASM:
-push    ebx
-mov     ebx, ecx
-push    esi
-push    edi
-test    ebx, ebx
-jz      short loc_5B393C
-xor     edi, edi
-mov     esi, offset off_816CAC ; "Sleep"
-
-loc_5B3920:                             ; CODE XREF: LookupWaypointName+2A↓j
-mov     eax, [esi]
-push    ebx             ; void *
-push    eax             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_5B3943
-add     esi, 4
-inc     edi
-cmp     esi, offset aSpyplaneOverfl ; "Spyplane Overfly"
-jl      short loc_5B3920
-
-loc_5B393C:                             ; CODE XREF: LookupWaypointName+7↑j
-pop     edi
-pop     esi
-or      eax, 0FFFFFFFFh
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_5B3943:                             ; CODE XREF: LookupWaypointName+1E↑j
-mov     eax, edi
-pop     edi
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x5B6CD0
 namespace gamemd { int Gap2Recv_5B6CD0::Surface_Lock() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5B6CD0(_DWORD *this)
 {
-  int v2; // ecx
-  int v3; // eax
-  int v4; // edx
-  char v5; // dl
-  _DWORD v7[62]; // [esp+8h] [ebp-FCh] BYREF
-  __int16 v8; // [esp+100h] [ebp-4h]
-
-  memset(v7, 0, sizeof(v7));
-  v2 = *(this + 21);
-  v8 = 0;
-  v3 = *(this + 20);
-  v4 = *(this + 22);
-  v7[0] = 101;
-  *(_DWORD *)((char *)&v7[33] + 2) = v3;
-  v7[53] = v2;
-  v7[52] = v4;
-  v7[54] = GameOptions::GetEntry();
-  *(_DWORD *)((char *)&v7[7] + 2) = NetworkBuffer::GetField2();
-  *(_DWORD *)((char *)&v7[8] + 2) = NetworkBuffer::GetField3();
-  LOBYTE(v7[6]) = MEMORY[0xA8DB30];
-  v5 = MEMORY[0xA8B394];
-  strcpy((char *)&v7[1], MEMORY[0xA8B380]);
-  *(_DWORD *)((char *)&v7[6] + 1) = MEMORY[0xA8B3AC];
-  BYTE1(v7[7]) = v5;
-  return Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v7, 250, 1);
+    int v2;
+    int v3;
+    int v4;
+    char v5;
+    int v7[62];
+    short v8;
+    memset(v7, 0, sizeof(v7));
+    v2 = this->M84;
+    v8 = 0;
+    v3 = this->M80;
+    v4 = this->M88;
+    v7[0] = 101;
+    *(int *)((char *)&v7[33] + 2) = v3;
+    v7[53] = v2;
+    v7[52] = v4;
+    v7[54] = GameOptions::GetEntry();
+    *(int *)((char *)&v7[7] + 2) = NetworkBuffer::GetField2();
+    *(int *)((char *)&v7[8] + 2) = NetworkBuffer::GetField3();
+    LOBYTE(v7[6]) = g_EventDispatchState;
+    v5 = g_TauntCommandState;
+    strcpy((char *)&v7[1], g_GameSetupBuffer);
+    *(int *)((char *)&v7[6] + 1) = g_CommandExecState;
+    BYTE1(v7[7]) = v5;
+    return Stream::WriteBlock((int)&g_EventManager, (int)v7, 250, 1);
 }
 
 /* ASM:
@@ -38519,60 +37362,6 @@ void __thiscall UI_Setup(#44 *this, #72 *Format, unsigned int a3, int a4)
     }
   }
 }
-
-/* ASM:
-Buffer          = byte ptr -200h
-Format          = dword ptr  4
-arg_4           = dword ptr  8
-arg_8           = dword ptr  0Ch
-
-sub     esp, 200h
-push    ebx
-mov     ebx, [esp+204h+arg_8]
-test    ebx, ebx
-push    edi
-jz      short loc_5B6F1F
-mov     eax, [ecx]
-push    53Fh            ; nIDDlgItem
-push    eax             ; hDlg
-call    ds:__imp_GetDlgItem
-mov     edi, eax
-test    edi, edi
-jz      short loc_5B6F1F
-mov     eax, [esp+208h+arg_4]
-push    esi
-test    eax, eax
-jl      short loc_5B6EF1
-cmp     eax, 8
-jge     short loc_5B6EF1
-mov     esi, dword_8316A8[eax*4]
-jmp     short loc_5B6EF7
-; ---------------------------------------------------------------------------
-
-loc_5B6EF1:                             ; CODE XREF: UI_Setup+31↑j UI_Setup+36↑j
-mov     esi, ds:off_7EEF44
-
-loc_5B6EF7:                             ; CODE XREF: UI_Setup+3F↑j
-mov     ecx, [esp+20Ch+Format]
-push    ebx
-push    ecx             ; Format
-lea     edx, [esp+214h+Buffer]
-push    offset g_Str_Trace___s___s ; "[%s] %s"
-push    edx             ; Buffer
-call    _swprintf
-add     esp, 10h
-lea     edx, [esp+20Ch+Buffer]
-mov     ecx, esi
-push    edi
-call    DrawDialogText
-pop     esi
-
-loc_5B6F1F:                             ; CODE XREF: UI_Setup+11↑j UI_Setup+25↑j
-pop     edi
-pop     ebx
-add     esp, 200h
-retn    0Ch
-*/
 } }
 // 0x5C1300
 namespace gamemd { int ReadMPMapsINI(char* Source) {
@@ -39436,10 +38225,8 @@ retn    4
 } }
 // 0x5CC690
 namespace gamemd { void Gap2Recv_5CC690::Map_Process_5CC690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5CC690(_DWORD *this)
 {
-  *(this + 16) = 0;
+    this->M64 = 0;
 }
 
 /* ASM:
@@ -39766,55 +38553,49 @@ retn    4
 } }
 // 0x5D1C90
 namespace gamemd { int Gap2Recv_5D1C90::UI_Load_5D1C90(void* a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall UI_Load_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int), int (__thiscall ***a3)(_DWORD, int))
 {
-  _DWORD *v3; // esi
-  int v4; // edi
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int result; // eax
-  int v9; // ecx
-  int v10; // ecx
-
-  v3 = this + 6;
-  v4 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*(this + 6) + 16))(this + 6, &a3);
-  v5 = v3[2];
-  if ( v3[4] < v5
-    || (*((_BYTE *)v3 + 13) || !v5)
-    && (v6 = v3[5], v6 > 0)
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v5 + v6, 0) )
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int result;
+    int v9;
+    int v10;
+    v3 = this + 6;
+    v4 = (*(int (__thiscall **)(int *, int))(this->M24 + 16))(this + 6, &a3);
+    v5 = v3[2];
+    if ( v3[4] < v5 || (*((char *)(v3) + 13) || !v5) && (v6 = v3[5], v6 > 0) && (*(unsigned char (__thiscall **)(int *, int, int))(*v3 + 8))(v3, v5 + v6, 0) )
   {
     v7 = v3[4];
     if ( v4 < v7 - 1 )
-      memcpy((void *)(v3[1] + 4 * v4 + 8), (const void *)(v3[1] + 4 * (v4 + 1)), 4 * (v7 + 0x3FFFFFFF * (v4 + 1)));
-    *(_DWORD *)(v3[1] + 4 * v4 + 4) = a2;
+    memcpy((void *)(v3[1] + 4 * v4 + 8), (const void *)(v3[1] + 4 * (v4 + 1)), 4 * (v7 + 0x3FFFFFFF * (v4 + 1)));
+    *(int *)(v3[1] + 4 * v4 + 4) = a2;
     ++v3[4];
   }
-  result = (int)a3;
-  a2 = a3;
-  if ( a3 )
+    result = (int)a3;
+    a2 = a3;
+    if ( a3 )
   {
-    result = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v3 + 16))(v3, &a2);
+    result = (*(int (__thiscall **)(int *, int))(*v3 + 16))(v3, &a2);
     if ( result != -1 )
     {
-      result = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v3 + 16))(v3, &a2);
-      if ( result != -1 )
+    result = (*(int (__thiscall **)(int *, int))(*v3 + 16))(v3, &a2);
+    if ( result != -1 )
       {
-        v9 = v3[4];
-        if ( result < v9 )
+    v9 = v3[4];
+    if ( result < v9 )
         {
-          v10 = v9 - 1;
-          for ( v3[4] = v10; result < v3[4]; *(_DWORD *)(v3[1] + 4 * result - 4) = *(_DWORD *)(v3[1] + 4 * result) )
-            ++result;
+    v10 = v9 - 1;
+    for ( v3[4] = v10; result < v3[4]; *(int *)(v3[1] + 4 * result - 4) = *(int *)(v3[1] + 4 * result) )
+    ++result;
         }
       }
-      if ( a2 )
-        return (**a2)(a2, 1);
+    if ( a2 )
+    return (**a2)(a2, 1);
     }
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -40596,15 +39377,13 @@ retn
 } }
 // 0x5DB600
 namespace gamemd { int Gap2Recv_5DB600::PlayerSkirmishSlotHandler_Handle_5DB600() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5DB600(void *this)
 {
-  memset(&MEMORY[0xA8D638], 0, 0x1C4u);
-  *(_WORD *)((char *)&MEMORY[0xA8D7FB] + 1) = 0;
-  HIBYTE(MEMORY[0xA8D7FB]) = 0;
-  MEMORY[0xA8D638] = 8;
-  wcscpy(&MEMORY[0xA8D667], (const #72 *)"\x04");
-  return Network::SendMessage((int)MEMORY[0xA8E9C0], (int)&MEMORY[0xA8D638], 455, 1, (int)this + 40, 0, 0);
+    memset(&Network_EventType, 0, 0x1C4u);
+    *(short *)((char *)&DataGlobal_A8D7FB + 1) = 0;
+    HIBYTE(DataGlobal_A8D7FB) = 0;
+    Network_EventType = 8;
+    wcscpy(&DataGlobal_A8D667, (const #72 *)"\x04");
+    return Network::SendMessage((int)g_NetworkManager, (int)&Network_EventType, 455, 1, (int)this + 40, 0, 0);
 }
 
 /* ASM:
@@ -40665,101 +39444,29 @@ int __thiscall sub_5DBEC0(char *this)
   else
     return *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v4) + 119);
 }
-
-/* ASM:
-push    ebx
-mov     ebx, ecx
-push    esi
-push    edi
-test    ebx, ebx
-jnz     short loc_5DBECE
-mov     ebx, 0A8B380h
-
-loc_5DBECE:                             ; CODE XREF: SendMultiplayerStartSignal_Start+7↑j
-push    0A8D610h        ; String2
-mov     ecx, ebx
-call    CharToWideString
-push    eax             ; String1
-call    _wcscmp
-add     esp, 8
-test    eax, eax
-jnz     short loc_5DBEF0
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_5DBEF0:                             ; CODE XREF: SendMultiplayerStartSignal_Start+25↑j
-mov     eax, ds:0A8DA84h
-or      edi, 0FFFFFFFFh
-xor     esi, esi
-test    eax, eax
-jle     short loc_5DBF3A
-
-loc_5DBEFE:                             ; CODE XREF: SendMultiplayerStartSignal_Start+63↓j
-mov     eax, ds:0A8DA78h
-push    ebx             ; void *
-mov     ecx, [eax+esi*4]
-call    ToWideStringChar
-push    eax             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jnz     short loc_5DBF1B
-mov     edi, esi
-
-loc_5DBF1B:                             ; CODE XREF: SendMultiplayerStartSignal_Start+57↑j
-mov     eax, ds:0A8DA84h
-inc     esi
-cmp     esi, eax
-jl      short loc_5DBEFE
-cmp     edi, 0FFFFFFFFh
-jz      short loc_5DBF3A
-mov     ecx, ds:0A8DA78h
-mov     edx, [ecx+edi*4]
-pop     edi
-pop     esi
-pop     ebx
-mov     eax, [edx+77h]
-retn
-; ---------------------------------------------------------------------------
-
-loc_5DBF3A:                             ; CODE XREF: SendMultiplayerStartSignal_Start+3C↑j
-; SendMultiplayerStartSignal_Start+68↑j
-pop     edi
-pop     esi
-or      eax, 0FFFFFFFFh
-pop     ebx
-retn
-*/
 } }
 // 0x5E23D0
 namespace gamemd { char Gap2Recv_5E23D0::Network_Check(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5E23D0(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
-
-  v2 = *(this + 4);
-  v3 = a2;
-  if ( a2 >= v2 )
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->M16;
+    v3 = a2;
+    if ( a2 >= v2 )
     return 0;
-  v4 = v2 - 1;
-  *(this + 4) = v4;
-  if ( a2 < v4 )
+    v4 = v2 - 1;
+    this->M16 = v4;
+    if ( a2 < v4 )
   {
     do
     {
-      ++v3;
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3);
+    ++v3;
+    *(int *)(this->M4 + 4 * v3 - 4) = *(int *)(this->M4 + 4 * v3);
     }
-    while ( v3 < *(this + 4) );
+    while ( v3 < this->M16 );
   }
-  return 1;
+    return 1;
 }
 
 /* ASM:
@@ -41006,65 +39713,6 @@ int __thiscall sub_5EAAD0(void *this)
     return 1752;
   return this != (void *)7 ? -1 : 1753;
 }
-
-/* ASM:
-mov     eax, ecx
-test    eax, eax
-jnz     short loc_5EAADC
-mov     eax, 6D2h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAADC:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+4↑j
-cmp     eax, 1
-jnz     short loc_5EAAE7
-mov     eax, 6D3h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAAE7:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+F↑j
-cmp     eax, 2
-jnz     short loc_5EAAF2
-mov     eax, 6D4h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAAF2:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+1A↑j
-cmp     eax, 3
-jnz     short loc_5EAAFD
-mov     eax, 6D5h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAAFD:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+25↑j
-cmp     eax, 4
-jnz     short loc_5EAB08
-mov     eax, 6D6h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAB08:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+30↑j
-cmp     eax, 5
-jnz     short loc_5EAB13
-mov     eax, 6D7h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAB13:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+3B↑j
-cmp     eax, 6
-jnz     short loc_5EAB1E
-mov     eax, 6D8h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5EAB1E:                             ; CODE XREF: RefreshLobbyAll_Helper_5EAAD0+46↑j
-sub     eax, 7
-neg     eax
-sbb     eax, eax
-and     eax, 0FFFFF926h
-add     eax, 6D9h
-retn
-*/
 } }
 // 0x5EAB30
 namespace gamemd { int Gap2Recv_5EAB30::RefreshLobbyAll_Play_5EAB30() {
@@ -42049,17 +40697,15 @@ retn
 } }
 // 0x5EE100
 namespace gamemd { bool Gap2Recv_5EE100::Network_Send() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Network_Send(const char **this)
 {
 // 0x7b4710
-  return String::Equals_Alt(this, off_831704[0])
-      || String::Equals_Alt(this, off_831708[0])
-      || String::Equals_Alt(this, off_83170C[0])
-      || String::Equals_Alt(this, off_831710[0])
-      || String::Equals_Alt(this, off_831714[0])
-      || String::Equals_Alt(this, off_831718[0])
-      || String::Equals_Alt(this, off_83171C);
+    return String::Equals_Alt(this, DataGlobal_831704[0])
+    || String::Equals_Alt(this, DataGlobal_831708[0])
+    || String::Equals_Alt(this, DataGlobal_83170C[0])
+    || String::Equals_Alt(this, DataGlobal_831710[0])
+    || String::Equals_Alt(this, DataGlobal_831714[0])
+    || String::Equals_Alt(this, DataGlobal_831718[0])
+    || String::Equals_Alt(this, DataGlobal_83171C);
 }
 
 /* ASM:
@@ -44277,105 +42923,67 @@ int __thiscall Memory_Pop(void *this)
   }
   return 0;
 }
-
-/* ASM:
-push    ebx
-mov     ebx, ds:__imp_SendMessageA
-push    esi
-push    edi
-push    0               ; lParam
-mov     edi, ecx
-push    0               ; wParam
-push    18Bh            ; Msg
-push    edi             ; hWnd
-call    ebx ; __imp_SendMessageA
-mov     esi, eax
-dec     esi
-test    eax, eax
-jz      short loc_623E30
-
-loc_623E1E:                             ; CODE XREF: Memory_Pop+2E↓j
-push    0               ; lParam
-push    esi             ; wParam
-push    182h            ; Msg
-push    edi             ; hWnd
-call    ebx ; __imp_SendMessageA
-mov     ecx, esi
-dec     esi
-test    ecx, ecx
-jnz     short loc_623E1E
-
-loc_623E30:                             ; CODE XREF: Memory_Pop+1C↑j
-pop     edi
-pop     esi
-xor     eax, eax
-pop     ebx
-retn
-*/
 } }
 // 0x625C00
 namespace gamemd { void* Gap2Recv_625C00::Event_Process_625C00(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-#122 *__thiscall Event_Process_625C00(int this, #247 *a2)
 {
-  int i; // eax
-  int v4; // ecx
-  _WORD *v5; // eax
-  int v6; // ecx
-  _WORD *v7; // edi
-  int v8; // edx
-  int v9; // ebx
-  char *v10; // ebp
-  int v11; // edx
-  char *v12; // ebp
-  unsigned __int16 v13; // ax
-  int v14; // edx
-  unsigned int v15; // edx
-  char *v16; // edi
-  _WORD *v18; // [esp+14h] [ebp+4h]
-
-  *(_DWORD *)a2 = 4;
-  for ( i = *(_DWORD *)(this + 4); i; i = *(_DWORD *)(i + 12) )
+    int i;
+    int v4;
+    short *v5;
+    int v6;
+    short *v7;
+    int v8;
+    int v9;
+    char *v10;
+    int v11;
+    char *v12;
+    unsigned short v13;
+    int v14;
+    unsigned int v15;
+    char *v16;
+    short *v18;
+    *(int *)a2 = 4;
+    for ( i = *(int *)(this + 4); i; i = *(int *)(i + 12) )
   {
-    v4 = *(_DWORD *)a2 + 8;
-    *(_DWORD *)a2 = v4;
-    *(_DWORD *)a2 = *(unsigned __int16 *)(i + 6) + v4 + (-(((unsigned __int8)*(_WORD *)(i + 6) + (_BYTE)v4) & 3) & 3);
+    v4 = *(int *)(a2) + 8;
+    *(int *)a2 = v4;
+    *(int *)a2 = *(unsigned short *)(i + 6) + v4 + (-(((unsigned char)*(short *)(i + 6) + (char)v4) & 3) & 3);
   }
-  v5 = (_WORD *)__2_YAPAXI_Z(*(_DWORD *)a2);
-  LOWORD(v6) = *(_WORD *)a2;
-  v7 = v5;
-  v18 = v5;
-  *v5 = htons(v6);
-  LOWORD(v8) = *(_WORD *)(this + 2);
-  v7[1] = htons(v8);
-  v9 = *(_DWORD *)(this + 4);
-  v10 = (char *)(v7 + 2);
-  if ( !v9 )
+    v5 = (short *)__2_YAPAXI_Z(*(int *)a2);
+    LOWORD(v6) = *(short *)a2;
+    v7 = v5;
+    v18 = v5;
+    *v5 = htons(v6);
+    LOWORD(v8) = *(short *)(this + 2);
+    v7[1] = htons(v8);
+    v9 = *(int *)(this + 4);
+    v10 = (char *)(v7 + 2);
+    if ( !v9 )
     return (#122 *)v7;
-  do
+    do
   {
     sub_4CB8B0(v9);
-    *(_DWORD *)v10 = *(_DWORD *)v9;
-    *((_DWORD *)v10 + 1) = *(_DWORD *)(v9 + 4);
-    LOWORD(v11) = *(_WORD *)(v9 + 6);
+    *(int *)v10 = *(int *)v9;
+    *((int *)(v10) + 1) = *(int *)(v9 + 4);
+    LOWORD(v11) = *(short *)(v9 + 6);
     v12 = v10 + 8;
-    qmemcpy(v12, *(const void **)(v9 + 8), (unsigned __int16)ntohs(v11));
-    v13 = ntohs(*(unsigned __int16 *)(v9 + 6));
-    LOWORD(v14) = *(_WORD *)(v9 + 6);
+    qmemcpy(v12, *(const void **)(v9 + 8), (unsigned short)ntohs(v11));
+    v13 = ntohs(*(unsigned short *)(v9 + 6));
+    LOWORD(v14) = *(short *)(v9 + 6);
     v10 = &v12[v13];
     v15 = -(ntohs(v14) & 3) & 3;
     if ( v15 )
     {
-      memset(v10, 0, 4 * (v15 >> 2));
-      v16 = &v10[4 * (v15 >> 2)];
-      v10 += v15;
-      memset(v16, 0, v15 & 3);
+    memset(v10, 0, 4 * (v15 >> 2));
+    v16 = &v10[4 * (v15 >> 2)];
+    v10 += v15;
+    memset(v16, 0, v15 & 3);
     }
     File::Dispatch(v9);
-    v9 = *(_DWORD *)(v9 + 12);
+    v9 = *(int *)(v9 + 12);
   }
-  while ( v9 );
-  return (#122 *)v18;
+    while ( v9 );
+    return (#122 *)v18;
 }
 
 /* ASM:
@@ -44498,18 +43106,15 @@ retn    4
 } }
 // 0x626120
 namespace gamemd { unsigned char __int8::Render_Helper(unsigned char a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __thiscall sub_626120(unsigned __int8 *this, unsigned __int8 a2, int a3)
 {
-  int i; // esi
-  unsigned __int8 result; // al
-
-  for ( i = 0; i < 256; ++i )
+    int i;
+    unsigned char result;
+    for ( i = 0; i < 256; ++i )
   {
-    result = Color::Lerp(this, a2, (unsigned __int8 *)(a3 + 2 * (i % 256) + i % 256));
+    result = Color::Lerp(this, a2, (unsigned char *)(a3 + 2 * (i % 256) + i % 256));
     this += 3;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -48133,65 +46738,6 @@ bool __thiscall UI_Pop_631500_Pop(int this, int a2)
   }
   return *(_DWORD *)(this + 4) == 1;
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-test    edi, edi
-jnz     short loc_6316F3
-pop     edi
-xor     al, al
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6316F3:                             ; CODE XREF: UI_Pop_631500_Pop+A↑j
-push    0
-mov     edx, offset NetworkSettingsDlgProc
-mov     ecx, 0EFh
-call    CreateDialog
-test    eax, eax
-mov     [esi], eax
-jz      short loc_631751
-push    esi             ; dwNewLong
-push    8               ; nIndex
-push    eax             ; hWnd
-mov     [esi+8], edi
-mov     dword ptr [esi+4], 0FFFFFFFFh
-call    ds:__imp_SetWindowLongA
-mov     ecx, esi
-call    UI_Pop_631500_Pop_Pop
-mov     ecx, [esi]      ; hWnd
-call    Dialog__Show
-mov     eax, [esi+4]
-test    eax, eax
-jge     short loc_63174A
-
-loc_631733:                             ; CODE XREF: UI_Pop_631500_Pop+68↓j
-call    Dialog__PumpMessages
-cmp     al, 1
-jz      short loc_63174A
-xor     cl, cl
-call    ScreenSaver__Process
-mov     eax, [esi+4]
-test    eax, eax
-jl      short loc_631733
-
-loc_63174A:                             ; CODE XREF: UI_Pop_631500_Pop+51↑j
-; UI_Pop_631500_Pop+5A↑j
-mov     ecx, [esi]      ; hWnd
-call    Dialog__Destroy
-
-loc_631751:                             ; CODE XREF: UI_Pop_631500_Pop+28↑j
-mov     eax, [esi+4]
-pop     edi
-cmp     eax, 1
-pop     esi
-setz    al
-retn    4
-*/
 } }
 // 0x6319C0
 namespace gamemd { void Gap2Recv_6319C0::Network_Set() {
@@ -48509,15 +47055,12 @@ retn
 } }
 // 0x632000
 namespace gamemd { int Gap2Recv_632000::System_Init_632000(char* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_632000(_DWORD *this, _BYTE *a2)
 {
-  int result; // eax
-
-  DecodeLengthLCW((int)this, a2, 64);
-  result = FindBitArrayHighestBit((int)this, 64) - 1;
-  *(this + 128) = result;
-  return result;
+    int result;
+    DecodeLengthLCW((int)this, a2, 64);
+    result = FindBitArrayHighestBit((int)this, 64) - 1;
+    this->M512 = result;
+    return result;
 }
 
 /* ASM:
@@ -48537,10 +47080,8 @@ retn    4
 } }
 // 0x632030
 namespace gamemd { char Gap2Recv_632030::System_Init_632030(char* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_632030(void *this, _BYTE *a2)
 {
-  return DecodeLengthLCW((int)this + 256, a2, 64);
+    return DecodeLengthLCW((int)this + 256, a2, 64);
 }
 
 /* ASM:
@@ -48553,13 +47094,11 @@ retn    4
 } }
 // 0x633AC0
 namespace gamemd { void* Gap2Recv_633AC0::ExecuteActionPlanManager_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_633AC0(_DWORD *this)
 {
-  *(_BYTE *)this = 0;
-  *(this + 28) = 0;
-  *(this + 29) = -1;
-  return this;
+    *(char *)this = 0;
+    this->M112 = 0;
+    this->M116 = -1;
+    return this;
 }
 
 /* ASM:
@@ -48572,17 +47111,14 @@ retn
 } }
 // 0x6342E0
 namespace gamemd { int Gap2Recv_6342E0::Team_Helper_6342E0(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6342E0(_DWORD *this, int a2, int a3)
 {
-  _BYTE *v4; // esi
-
-  v4 = *(_BYTE **)(*(_DWORD *)(*(this + 1) + 4 * a3) + 4);
-  qmemcpy((void *)a2, v4, 0x6Cu);
-  v4 += 108;
-  *(_WORD *)(a2 + 108) = *(_WORD *)v4;
-  *(_BYTE *)(a2 + 110) = v4[2];
-  return a2;
+    char *v4;
+    v4 = *(char **)(*(int *)(this->M4 + 4 * a3) + 4);
+    qmemcpy((void *)a2, v4, 0x6Cu);
+    v4 += 108;
+    *(short *)(a2 + 108) = *(short *)v4;
+    *(char *)(a2 + 110) = v4[2];
+    return a2;
 }
 
 /* ASM:
@@ -48694,39 +47230,6 @@ int __thiscall sub_634770(int *this)
   }
   return **(_DWORD **)i;
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, [ecx+10h]
-xor     eax, eax
-test    esi, esi
-jle     short loc_63478F
-mov     ecx, [ecx+4]
-
-loc_63477E:                             ; CODE XREF: Render_Render_634770+1D↓j
-mov     edx, [ecx]
-mov     bl, [edx+0Ch]
-test    bl, bl
-jnz     short loc_634794
-inc     eax
-add     ecx, 4
-cmp     eax, esi
-jl      short loc_63477E
-
-loc_63478F:                             ; CODE XREF: Render_Render_634770+9↑j
-pop     esi
-xor     eax, eax
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_634794:                             ; CODE XREF: Render_Render_634770+15↑j
-mov     eax, [edx]
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x634970
 namespace gamemd { int Gap2Recv_634970::Helper_634970() {
@@ -48745,37 +47248,6 @@ int __thiscall sub_634970(int this)
   *(_BYTE *)(this + 28) = 0;
   return result;
 }
-
-/* ASM:
-push    ebx
-push    esi
-push    edi
-mov     esi, ecx
-call    FactoryClass__ClearObjects
-mov     ebx, [esi+10h]
-xor     edi, edi
-test    ebx, ebx
-jle     short loc_634996
-
-loc_634983:                             ; CODE XREF: Helper_634970+24↓j
-mov     eax, [esi+4]
-mov     ecx, [eax+edi*4]
-push    ecx
-mov     ecx, esi
-call    ScriptAction__PlaceObject
-inc     edi
-cmp     edi, ebx
-jl      short loc_634983
-
-loc_634996:                             ; CODE XREF: Helper_634970+11↑j
-mov     ecx, esi
-call    ScriptAction__FindSquadMember
-mov     byte ptr [esi+1Ch], 0
-pop     edi
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x635490
 namespace gamemd { int Gap2Recv_635490::Render_Render_635490(int a2) {
@@ -48883,15 +47355,12 @@ retn    4
 } }
 // 0x636EB0
 namespace gamemd { int Gap2Recv_636EB0::ExecuteActionPlanManager_Helper_636EB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_636EB0(_DWORD *this)
 {
-  int v1; // eax
-
-  v1 = *(this + 5) - 1;
-  if ( v1 >= 0 )
-    return *(_DWORD *)(*(this + 2) + 4 * v1);
-  else
+    int v1;
+    v1 = this->M20 - 1;
+    if ( v1 >= 0 )
+    return *(int *)(this->M8 + 4 * v1);
+    else
     return 0;
 }
 
@@ -49060,14 +47529,12 @@ retn
 } }
 // 0x638C40
 namespace gamemd { bool Gap2Recv_638C40::ExecuteActionPlanManager_Helper_638C40(int a2, char a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_638C40(void *this, int a2, char a3)
 {
-  if ( this != (void *)1 && this != (void *)11 )
+    if ( this != (void *)1 && this != (void *)11 )
     return 0;
-  if ( a3 == 11 )
+    if ( a3 == 11 )
     return 1;
-  return this == (void *)11 && !a3;
+    return this == (void *)11 && !a3;
 }
 
 /* ASM:
@@ -49101,19 +47568,16 @@ retn    8
 } }
 // 0x63B050
 namespace gamemd { void* Gap2Recv_63B050::Team_Load_63B050() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_63B050(_BYTE *this)
 {
-  void *result; // eax
-
-  result = 0;
-  if ( *(this + 18) )
+    void *result;
+    result = 0;
+    if ( this->M18 )
     return BuildingLoadQueue::GetNext(this + 14);
-  if ( *(this + 28) )
+    if ( this->M28 )
     return BuildingLoadQueue::GetNext(this + 24);
-  if ( *(this + 23) )
+    if ( this->M23 )
     return BuildingLoadQueue::GetNext(this + 19);
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -50185,44 +48649,41 @@ jmp     loc_63CC6A
 } }
 // 0x63D0F0
 namespace gamemd { int Gap2Recv_63D0F0::Render_Render_63D0F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_63D0F0(_BYTE *this)
 {
-  int result; // eax
-  int v2; // edi
-  int v3; // ecx
-  _DWORD **i; // edx
-
-  result = (HIBYTE(MEMORY[0xA83CDA]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8])
-         | ((unsigned __int8)MEMORY[0xA83CDA] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-         | ((unsigned __int8)MEMORY[0xA83CD9] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
-  if ( this )
+    int result;
+    int v2;
+    int v3;
+    int **i;
+    result = (HIBYTE(DataGlobal_A83CDA) >> g_BitMask_Red << g_BitShift_Blue)
+    | ((unsigned char)DataGlobal_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
+    | ((unsigned char)DataGlobal_A83CD9 >> g_BitShift_Green_0 << g_BitShift_Red);
+    if ( this )
   {
-    if ( MEMORY[0xAC4BF0] )
+    if ( g_ScriptActionPool )
     {
-      v2 = *(_DWORD *)(MEMORY[0xAC4BF0] + 16);
-      v3 = 0;
-      if ( v2 > 0 )
+    v2 = *(int *)(g_ScriptActionPool + 16);
+    v3 = 0;
+    if ( v2 > 0 )
       {
-        for ( i = *(_DWORD ***)(MEMORY[0xAC4BF0] + 4); (_BYTE *)**i != this; ++i )
+    for ( i = *(int ***)(g_ScriptActionPool + 4); (char *)**i != this; ++i )
         {
-          if ( ++v3 >= v2 )
-            return result;
+    if ( ++v3 >= v2 )
+    return result;
         }
-        if ( v3 != -1 )
-          return (HIBYTE(MEMORY[0xA80221]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8])
-               | ((unsigned __int8)MEMORY[0xA80221] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-               | ((unsigned __int8)MEMORY[0xA80220] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+    if ( v3 != -1 )
+    return (HIBYTE(DataGlobal_A80221) >> g_BitMask_Red << g_BitShift_Blue)
+    | ((unsigned char)DataGlobal_A80221 >> g_BitMask_Blue << g_BitMask_Green)
+    | ((unsigned char)DataGlobal_A80220 >> g_BitShift_Green_0 << g_BitShift_Red);
       }
     }
-    else if ( *(this + 131) )
+    else if ( this->M131 )
     {
-      return (HIBYTE(MEMORY[0xA80221]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8])
-           | ((unsigned __int8)MEMORY[0xA80221] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-           | ((unsigned __int8)MEMORY[0xA80220] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+    return (HIBYTE(DataGlobal_A80221) >> g_BitMask_Red << g_BitShift_Blue)
+    | ((unsigned char)DataGlobal_A80221 >> g_BitMask_Blue << g_BitMask_Green)
+    | ((unsigned char)DataGlobal_A80220 >> g_BitShift_Green_0 << g_BitShift_Red);
     }
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -51650,45 +50111,32 @@ retn    14h
 } }
 // 0x645BB0
 namespace gamemd { int Gap2Recv_645BB0::GetSuperWeaponTypeFlag() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GetSuperWeaponTypeFlag(void *this)
 {
-  int result; // eax
-
-  switch ( (unsigned int)this )
+    int result;
+    switch ( (unsigned int)this )
   {
-    case 2u:
-      result = 32;
-      break;
-    case 3u:
-      result = 64;
-      break;
-    case 4u:
-      result = 8;
-      break;
-    case 5u:
-      result = 16;
-      break;
-    case 6u:
-      result = 4096;
-      break;
-    case 7u:
-      result = 0x2000;
-      break;
-    case 9u:
-      result = 2048;
-      break;
-    case 0xAu:
-      result = 0x8000;
-      break;
-    case 0xBu:
-      result = 0x10000;
-      break;
-    default:
-      result = 0;
-      break;
+    case 2u: result = 32;
+    br eak;
+    case 3u: result = 64;
+    br eak;
+    case 4u: result = 8;
+    br eak;
+    case 5u: result = 16;
+    br eak;
+    case 6u: result = 4096;
+    br eak;
+    case 7u: result = 0x2000;
+    br eak;
+    case 9u: result = 2048;
+    br eak;
+    case 0xAu: result = 0x8000;
+    br eak;
+    case 0xBu: result = 0x10000;
+    br eak;
+    default: result = 0;
+    br eak;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -52162,29 +50610,26 @@ retn
 } }
 // 0x652560
 namespace gamemd { char Gap2Recv_652560::Network_Process_652560(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_652560(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
-
-  v2 = *(this + 4);
-  v3 = a2;
-  if ( a2 >= v2 )
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->M16;
+    v3 = a2;
+    if ( a2 >= v2 )
     return 0;
-  v4 = v2 - 1;
-  *(this + 4) = v4;
-  if ( a2 < v4 )
+    v4 = v2 - 1;
+    this->M16 = v4;
+    if ( a2 < v4 )
   {
     do
     {
-      ++v3;
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3);
+    ++v3;
+    *(int *)(this->M4 + 4 * v3 - 4) = *(int *)(this->M4 + 4 * v3);
     }
-    while ( v3 < *(this + 4) );
+    while ( v3 < this->M16 );
   }
-  return 1;
+    return 1;
 }
 
 /* ASM:
@@ -52247,73 +50692,6 @@ char __thiscall Network_Process_6525A0(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jl      short loc_65261D
-mov     ebx, [esi+8]
-add     ebx, ebp
-lea     eax, ds:0[ebx*8]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-mov     edi, eax
-add     esp, 4
-test    edi, edi
-jz      short loc_65261D
-mov     eax, [esi+4]
-dec     ebx
-xor     ecx, ecx
-mov     [esp+10h+arg_0], ebx
-test    eax, eax
-jle     short loc_6525F8
-
-loc_6525D7:                             ; CODE XREF: Network_Process_6525A0+56↓j
-mov     ebx, [esi]
-lea     eax, ds:0[ecx*8]
-mov     edx, eax
-add     edx, ebx
-inc     ecx
-mov     ebx, [edx]
-mov     [eax+edi], ebx
-mov     edx, [edx+4]
-mov     [eax+edi+4], edx
-mov     eax, [esi+4]
-cmp     ecx, eax
-jl      short loc_6525D7
-
-loc_6525F8:                             ; CODE XREF: Network_Process_6525A0+35↑j
-mov     eax, [esi]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [esi+8]
-add     esp, 4
-add     eax, ebp
-mov     [esi], edi
-mov     [esi+8], eax
-mov     dword ptr [esi+10h], 0
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_65261D:                             ; CODE XREF: Network_Process_6525A0+C↑j
-; Network_Process_6525A0+27↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    4
-*/
 } }
 // 0x6547C0
 namespace gamemd { void* Gap2Recv_6547C0::GenerateImageThumbnail(void* a2, void* a3, void* a4, char a5) {
@@ -53320,27 +51698,24 @@ jmp     loc_654CFC
 } }
 // 0x6550C0
 namespace gamemd { void* Gap2Recv_6550C0::Team_Load_6550C0(void* a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6550C0(int this, _DWORD *a2, __int16 *a3)
 {
-  int v3; // ebp
-  int v5; // edi
-  int v6; // ebx
-  int v7; // eax
-  int v9; // [esp+1Ch] [ebp+8h]
-
-  v3 = *a3;
-  v5 = a3[1];
-  v9 = *(_DWORD *)(this + 5276);
-  v6 = Math::RoundToInt((double)(v3 + *(_DWORD *)(this + 5264) - v5) * *(float *)(this + 5256) + (double)v9);
-  v7 = Math::RoundToInt((double)(v3 + v5 - *(_DWORD *)(this + 5272)) * *(float *)(this + 5256) + (double)*(int *)(this + 5280));
-  if ( v6 == v9 - 1 )
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    int v9;
+    v3 = *a3;
+    v5 = *((int*)(a3) + 1);
+    v9 = *(int *)(this + 5276);
+    v6 = Math::RoundToInt((double)(v3 + *(int *)(this + 5264) - v5) * *(float *)(this + 5256) + (double)v9);
+    v7 = Math::RoundToInt((double)(v3 + v5 - *(int *)(this + 5272)) * *(float *)(this + 5256) + (double)*(int *)(this + 5280));
+    if ( v6 == v9 - 1 )
     ++v6;
-  *a2 = v6;
-  a2[1] = v7;
-  a2[2] = 1;
-  a2[3] = 1;
-  return a2;
+    *a2 = v6;
+    *((int*)(a2) + 1) = v7;
+    *((int*)(a2) + 2) = 1;
+    *((int*)(a2) + 3) = 1;
+    return a2;
 }
 
 /* ASM:
@@ -53398,12 +51773,10 @@ retn    8
 } }
 // 0x659510
 namespace gamemd { int Gap2Recv_659510::SpreadRadiationAreaEffect_Helper(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_659510(_DWORD *this, int a2, int a3)
 {
-  *(this + 18) = a2;
-  *(this + 19) = a3;
-  return a2;
+    this->M72 = a2;
+    this->M76 = a3;
+    return a2;
 }
 
 /* ASM:
@@ -53416,11 +51789,9 @@ retn    8
 } }
 // 0x659530
 namespace gamemd { int Gap2Recv_659530::SpreadRadiationAreaEffect_Helper_659530(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_659530(_DWORD *this, int a2)
 {
-  *(this + 20) = a2;
-  return a2;
+    this->M80 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -53962,80 +52333,6 @@ int __thiscall sub_659E30(int this)
   v12[2] = v10;
   return result;
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     edx, [esi+38h]
-mov     edi, [esi+2Ch]
-mov     ecx, [esi+34h]
-mov     ebx, [esi+28h]
-mov     eax, [esi+30h]
-mov     ebp, [esi+24h]
-sub     edx, edi
-lea     edi, [esi+5Ch]
-sub     ecx, ebx
-mov     ebx, edi
-sub     eax, ebp
-sub     esp, 8
-mov     [ebx], eax
-mov     [ebx+4], ecx
-mov     [ebx+8], edx
-mov     edx, [edi]
-mov     ecx, [esi+60h]
-mov     eax, [esi+64h]
-mov     ebx, edx
-imul    ebx, edx
-mov     edx, ecx
-imul    edx, ecx
-mov     ecx, eax
-add     ebx, edx
-imul    ecx, eax
-add     ebx, ecx
-mov     [esp+1Ch+var_4], ebx
-fild    [esp+1Ch+var_4]
-fstp    [esp+1Ch+var_1C] ; double
-call    Math__Sqrt
-fst     qword ptr [esi+68h]
-fdiv    qword ptr [esi+18h]
-add     esp, 8
-call    Math__RoundToInt
-mov     edi, [edi]
-mov     ebx, [esi+60h]
-mov     ebp, [esi+64h]
-mov     ecx, eax
-test    ecx, ecx
-mov     [esi+8Ch], ecx
-jz      short loc_659EC1
-mov     eax, edi
-cdq
-idiv    ecx
-mov     edi, eax
-mov     eax, ebx
-cdq
-idiv    ecx
-mov     ebx, eax
-mov     eax, ebp
-cdq
-idiv    ecx
-mov     ebp, eax
-
-loc_659EC1:                             ; CODE XREF: Weapon_Update_Update+7A↑j
-add     esi, 70h ; 'p'
-mov     [esi], edi
-pop     edi
-mov     [esi+4], ebx
-mov     [esi+8], ebp
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x659EE0
 namespace gamemd { int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
@@ -54096,117 +52393,6 @@ int __thiscall sub_659EE0(int this)
   v15[2] = v13;
   return result;
 }
-
-/* ASM:
-sub     esp, 8
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     edi, [esi+3Ch]
-mov     ecx, [esi+7Ch]
-mov     eax, edi
-mov     [esp+18h+var_4], edi
-cdq
-sub     eax, edx
-sar     eax, 1
-cmp     ecx, eax
-lea     eax, [ecx+ecx]
-jge     short loc_659F0B
-mov     [esp+18h+var_8], eax
-fild    [esp+18h+var_8]
-jmp     short loc_659F18
-; ---------------------------------------------------------------------------
-
-loc_659F0B:                             ; CODE XREF: Weapon_Update_Update_659EE0+1F↑j
-cdq
-idiv    edi
-sub     edi, edx
-mov     [esp+18h+var_8], edi
-fild    [esp+18h+var_8]
-
-loc_659F18:                             ; CODE XREF: Weapon_Update_Update_659EE0+29↑j
-fild    [esp+18h+var_4]
-mov     edx, [esi+50h]
-imul    edx, ecx
-fdivr   st, st(1)
-mov     [esp+18h+var_4], edx
-fmul    qword ptr [esi+40h]
-fstp    qword ptr [esi+80h]
-fstp    st
-fild    [esp+18h+var_4]
-fmul    qword ptr [esi+48h]
-call    Math__RoundToInt
-mov     ecx, [esi+70h]
-mov     edx, [esi+74h]
-mov     ebx, [esi+78h]
-imul    ecx, eax
-imul    edx, eax
-imul    ebx, eax
-mov     eax, [esi+5Ch]
-lea     edi, [esi+5Ch]
-add     eax, ecx
-sub     esp, 8
-mov     ecx, [edi+4]
-add     ecx, edx
-mov     edx, [edi+8]
-add     edx, ebx
-mov     ebx, edi
-mov     [ebx], eax
-mov     [ebx+4], ecx
-mov     [ebx+8], edx
-mov     edx, [edi]
-mov     ecx, [esi+60h]
-mov     eax, [esi+64h]
-mov     ebx, edx
-imul    ebx, edx
-mov     edx, ecx
-imul    edx, ecx
-mov     ecx, eax
-add     ebx, edx
-imul    ecx, eax
-add     ebx, ecx
-mov     [esp+20h+var_4], ebx
-fild    [esp+20h+var_4]
-fstp    [esp+20h+var_20] ; double
-call    Math__Sqrt
-fst     qword ptr [esi+68h]
-fdiv    qword ptr [esi+18h]
-add     esp, 8
-call    Math__RoundToInt
-mov     edi, [edi]
-mov     ebx, [esi+60h]
-mov     ebp, [esi+64h]
-mov     ecx, eax
-test    ecx, ecx
-mov     [esi+8Ch], ecx
-jz      short loc_659FD2
-mov     eax, edi
-cdq
-idiv    ecx
-mov     edi, eax
-mov     eax, ebx
-cdq
-idiv    ecx
-mov     ebx, eax
-mov     eax, ebp
-cdq
-idiv    ecx
-mov     ebp, eax
-
-loc_659FD2:                             ; CODE XREF: Weapon_Update_Update_659EE0+DB↑j
-add     esi, 90h
-mov     [esi], edi
-pop     edi
-mov     [esi+4], ebx
-mov     [esi+8], ebp
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn
-*/
 } }
 // 0x659FF0
 namespace gamemd { long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
@@ -54254,129 +52440,6 @@ __int64 __thiscall sub_659FF0(int this)
   *(_BYTE *)(this + 194) = result;
   return result;
 }
-
-/* ASM:
-push    ebp
-mov     ebp, esp
-and     esp, 0FFFFFFF8h
-sub     esp, 18h
-push    esi
-mov     esi, ecx
-push    edi
-fild    dword ptr [esi+88h]
-sub     esp, 8
-fstp    [esp+28h+var_18]
-fild    dword ptr [esi+8Ch]
-fdivr   [esp+28h+var_18]
-fmul    ds:dbl_7E5F30
-fld     dbl_839530
-fmul    st, st(1)
-fstp    [esp+28h+var_28] ; double
-fstp    st
-call    Math__SinCos
-fmul    qword ptr [esi+80h]
-fld     [esp+28h+var_18]
-call    Math__RoundToInt
-mov     ecx, [esi+90h]
-mov     edx, [esi+94h]
-mov     edi, [esi+98h]
-imul    ecx, eax
-imul    edx, eax
-imul    edi, eax
-mov     eax, [esi+24h]
-add     eax, ecx
-mov     ecx, [esi+28h]
-add     ecx, edx
-mov     edx, [esi+2Ch]
-add     edx, edi
-lea     edi, [esi+9Ch]
-mov     [esi+9Ch], eax
-mov     [edi+4], ecx
-mov     [edi+8], edx
-fild    dword ptr [esi+0A4h]
-fadd    st, st(1)
-call    Math__RoundToInt
-mov     [esi+0A4h], eax
-mov     eax, [esi+88h]
-inc     eax
-fstp    st
-mov     dword ptr [esp+28h+var_18], eax
-fild    dword ptr [esp+28h+var_18]
-fstp    [esp+28h+var_18]
-fild    dword ptr [esi+8Ch]
-fdivr   [esp+28h+var_18]
-fmul    ds:dbl_7E5F30
-fld     dbl_839530
-fmul    st, st(1)
-fstp    [esp+28h+var_28] ; double
-fstp    st
-call    Math__SinCos
-fmul    qword ptr [esi+80h]
-fld     [esp+28h+var_18]
-add     esp, 8
-call    Math__RoundToInt
-mov     ecx, [esi+90h]
-mov     edx, [esi+94h]
-mov     edi, [esi+98h]
-imul    ecx, eax
-imul    edx, eax
-imul    edi, eax
-mov     eax, [esi+24h]
-add     eax, ecx
-mov     ecx, [esi+28h]
-add     ecx, edx
-mov     edx, [esi+2Ch]
-add     edx, edi
-lea     edi, [esi+0A8h]
-mov     [esi+0A8h], eax
-mov     [edi+4], ecx
-mov     [edi+8], edx
-fild    dword ptr [esi+0B0h]
-fadd    st, st(1)
-call    Math__RoundToInt
-mov     [esi+0B0h], eax
-call    Math__RoundToInt
-cdq
-xor     eax, edx
-xor     ecx, ecx
-sub     eax, edx
-xor     edx, edx
-mov     dword ptr [esp+20h+var_18], eax
-xor     eax, eax
-fild    dword ptr [esp+20h+var_18]
-mov     al, [esi+20h]
-fmul    ds:dbl_7E1738
-fdiv    qword ptr [esi+40h]
-fadd    ds:dbl_7E1738
-fst     qword ptr [esi+0B8h]
-mov     cl, [esi+21h]
-mov     dl, [esi+22h]
-mov     dword ptr [esp+20h+var_18], ecx
-fild    dword ptr [esp+20h+var_18]
-mov     dword ptr [esp+20h+var_18], edx
-fmul    st, st(1)
-fstp    [esp+20h+var_10]
-fild    dword ptr [esp+20h+var_18]
-mov     dword ptr [esp+20h+var_18], eax
-fmul    st, st(1)
-fstp    [esp+20h+var_8]
-fild    dword ptr [esp+20h+var_18]
-fmul    st, st(1)
-call    Math__RoundToInt
-fstp    st
-fld     [esp+20h+var_10]
-mov     [esi+0C0h], al
-call    Math__RoundToInt
-fld     [esp+20h+var_8]
-mov     [esi+0C1h], al
-call    Math__RoundToInt
-mov     [esi+0C2h], al
-pop     edi
-pop     esi
-mov     esp, ebp
-pop     ebp
-retn
-*/
 } }
 // 0x65A1B0
 namespace gamemd { void* Gap2Recv_65A1B0::Render_Render_65A1B0(int a2) {
@@ -54590,77 +52653,6 @@ _DWORD *__thiscall RNG_SeedInit(_DWORD *this, int a2)
   *(_BYTE *)this = 0;
   return this;
 }
-
-/* ASM:
-sub     esp, 14h
-xor     eax, eax
-push    ebx
-mov     [esp+18h+var_C], ecx
-mov     [ecx+4], eax
-mov     dword ptr [ecx+8], 67h ; 'g'
-push    ebp
-add     ecx, 0Ch
-push    esi
-push    edi
-mov     [esp+24h+var_14], ecx
-mov     [esp+24h+var_10], 0FAh
-jmp     short loc_65C6FC
-; ---------------------------------------------------------------------------
-
-loc_65C6F8:                             ; CODE XREF: SeedInitRNG+97↓j
-mov     eax, [esp+24h+var_4]
-
-loc_65C6FC:                             ; CODE XREF: SeedInitRNG+26↑j
-mov     ebp, [esp+24h+arg_0]
-mov     esi, eax
-inc     eax
-xor     ebx, ebx
-mov     [esp+24h+var_4], eax
-
-loc_65C709:                             ; CODE XREF: SeedInitRNG+7F↓j
-mov     edx, dword_839644[ebx]
-mov     eax, esi
-xor     edx, esi
-add     ebx, 4
-mov     esi, edx
-sar     edx, 10h
-and     esi, 0FFFFh
-mov     edi, edx
-imul    edx, edi
-imul    edi, esi
-mov     ecx, esi
-imul    ecx, esi
-not     edx
-add     edx, ecx
-mov     ecx, edx
-sar     ecx, 10h
-shl     edx, 10h
-or      ecx, edx
-mov     edx, dword_839690[ebx]
-xor     ecx, edx
-add     ecx, edi
-xor     ecx, ebp
-cmp     ebx, 10h
-mov     esi, ecx
-mov     ebp, eax
-jl      short loc_65C709
-mov     eax, [esp+24h+var_14]
-mov     [eax], esi
-add     eax, 4
-mov     [esp+24h+var_14], eax
-mov     eax, [esp+24h+var_10]
-dec     eax
-mov     [esp+24h+var_10], eax
-jnz     short loc_65C6F8
-mov     eax, [esp+24h+var_C]
-pop     edi
-pop     esi
-pop     ebp
-mov     byte ptr [eax], 0
-pop     ebx
-add     esp, 14h
-retn    4
-*/
 } }
 // 0x65DD30
 namespace gamemd { void* Gap2Recv_65DD30::ConstructTeamMembers() {
@@ -56565,40 +54557,37 @@ retn
 } }
 // 0x660730
 namespace gamemd { int Gap2Recv_660730::Render_Render_660730(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_660730(float *this, _DWORD *a2)
 {
-  float *v3; // eax
-  int v4; // esi
-  int result; // eax
-  int v6; // esi
-  float v7; // [esp+4h] [ebp-48h] BYREF
-  float v8; // [esp+8h] [ebp-44h]
-  int v9; // [esp+Ch] [ebp-40h]
-  float v10[3]; // [esp+10h] [ebp-3Ch] BYREF
-  float v11[12]; // [esp+1Ch] [ebp-30h] BYREF
-
-  Matrix3x4::Identity(v11);
-  Matrix2D::Rotate(v11, *(this + 4));
-  v7 = *(this + 3);
-  v8 = 0.0;
-  v9 = 0;
-  v3 = TransformMatrix3x4Point(v10, v11, &v7);
-  v7 = *v3;
-  v8 = v3[1];
-  v9 = *((_DWORD *)v3 + 2);
-  v4 = Math::RoundToInt(v7);
-  result = Math::RoundToInt(v8);
-  a2[2] = -result;
-  *a2 = v4;
-  a2[3] = v4;
-  a2[6] = result;
-  v6 = -v4;
-  a2[4] = v6;
-  a2[7] = v6;
-  a2[1] = result;
-  a2[5] = -result;
-  return result;
+    float *v3;
+    int v4;
+    int result;
+    int v6;
+    float v7;
+    float v8;
+    int v9;
+    float v10[3];
+    float v11[12];
+    Matrix3x4::Identity(v11);
+    Matrix2D::Rotate(v11, this->M16);
+    v7 = this->M12;
+    v8 = 0.0;
+    v9 = 0;
+    v3 = TransformMatrix3x4Point(v10, v11, &v7);
+    v7 = *v3;
+    v8 = v3[1];
+    v9 = *((int *)(v3) + 2);
+    v4 = Math::RoundToInt(v7);
+    result = Math::RoundToInt(v8);
+    *((int*)(a2) + 2) = -result;
+    *a2 = v4;
+    *((int*)(a2) + 3) = v4;
+    *((int*)(a2) + 6) = result;
+    v6 = -v4;
+    *((int*)(a2) + 4) = v6;
+    *((int*)(a2) + 7) = v6;
+    *((int*)(a2) + 1) = result;
+    *((int*)(a2) + 5) = -result;
+    return result;
 }
 
 /* ASM:
@@ -56765,28 +54754,25 @@ retn
 } }
 // 0x661770
 namespace gamemd { void* Gap2Recv_661770::SHA1TickRNG(char a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall SHA1TickRNG(_DWORD *this, char a2)
 {
-  int v3; // ecx
-  _BYTE *v4; // eax
-  void *result; // eax
-  _DWORD *v6; // ebx
-  unsigned int v7; // esi
-  _DWORD *v8; // edi
-  int v9; // eax
-  char Src[20]; // [esp+4h] [ebp-88h] BYREF
-  _DWORD v11[29]; // [esp+18h] [ebp-74h] BYREF
-
-  v3 = *(this + 3);
-  if ( (a2 & 1) != 0 )
+    int v3;
+    char *v4;
+    void *result;
+    int *v6;
+    unsigned int v7;
+    int *v8;
+    int v9;
+    char Src[20];
+    int v11[29];
+    v3 = this->M12;
+    if ( (a2 & 1) != 0 )
   {
-    v4 = (char *)this + (unsigned __int8)(v3 / 8) + 20;
+    v4 = (char *)(this) + (unsigned char)(v3 / 8) + 20;
     *v4 ^= 1 << (v3 & 7);
   }
-  result = (void *)(*(this + 3) + 1);
-  *(this + 3) = result;
-  if ( result == (void *)2048 )
+    result = (void *)(this->M12 + 1);
+    this->M12 = result;
+    if ( result == (void *)2048 )
   {
     v6 = this + 5;
     LOBYTE(v11[0]) = 0;
@@ -56801,18 +54787,18 @@ void *__thiscall SHA1TickRNG(_DWORD *this, char a2)
     v8 = this + 5;
     do
     {
-      SHA1::Process(v11, (int)v6, 256);
-      SHA1::Compute(v11, Src);
-      v9 = 256 - v7;
-      if ( 256 - v7 > 0x14 )
-        v9 = 20;
-      result = (void *)memcpy(v8, Src, v9);
-      ++v7;
-      v8 = (_DWORD *)((char *)v8 + 1);
+    SHA1::Process(v11, (int)v6, 256);
+    SHA1::Compute(v11, Src);
+    v9 = 256 - v7;
+    if ( 256 - v7 > 0x14 )
+    v9 = 20;
+    result = (void *)memcpy(v8, Src, v9);
+    ++v7;
+    v8 = (int *)((char *)(v8) + 1);
     }
     while ( v7 < 0x100 );
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -57513,20 +55499,17 @@ retn    4
 } }
 // 0x672230
 namespace gamemd { int Gap2Recv_672230::ReadMaximumPlayersINI() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ReadMaximumPlayersINI(#381 *this)
 {
-  int result; // eax
-  int v3; // [esp+Ch] [ebp+4h]
-
-  result = INIClass::BinarySearchSection(v3, (unsigned __int8 *)aMaximums);
-  if ( result )
+    int result;
+    int v3;
+    result = INIClass::BinarySearchSection(v3, (unsigned char *)aMaximums);
+    if ( result )
   {
-    result = INIClass::ReadInt_Overwrite(aMaximums, aPlayers, *((_DWORD *)this + 1332));
-    *((_DWORD *)this + 1332) = result;
+    result = INIClass::ReadInt_Overwrite(aMaximums, aPlayers, this->M5328);
+    this->M5328 = result;
   }
-  LOBYTE(result) = 1;
-  return result;
+    LOBYTE(result) = 1;
+    return result;
 }
 
 /* ASM:
@@ -57560,31 +55543,22 @@ retn    4
 } }
 // 0x672840
 namespace gamemd { int Gap2Recv_672840::ReadBuildingTypesBuildingTypeClass() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_672840(#381 *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aOverlaytypes);
-  for ( i = 0; i < KeyCount; ++i )
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)aOverlaytypes);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aOverlaytypes, i);
-    if ( INIClass::GetString(
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)aOverlaytypes,
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)aOverlaytypes, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)aOverlaytypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      BuildingTypeClass::FindOrCreate2(Destination);
+    BuildingTypeClass::FindOrCreate2(Destination);
     }
   }
-  return KeyCount > 0;
+    return KeyCount > 0;
 }
 
 /* ASM:
@@ -60803,11 +58777,9 @@ retn    4
 } }
 // 0x681060
 namespace gamemd { int Gap2Recv_681060::Map_Save(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681060(_DWORD *this, int a2)
 {
-  *(this + 1) = a2;
-  return a2;
+    this->M4 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -60879,11 +58851,9 @@ retn    4
 } }
 // 0x681110
 namespace gamemd { int Gap2Recv_681110::Map_Save_681110(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681110(_DWORD *this, int a2)
 {
-  *(this + 98) = a2;
-  return a2;
+    this->M392 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -60894,11 +58864,9 @@ retn    4
 } }
 // 0x681130
 namespace gamemd { int Gap2Recv_681130::Map_Save_681130(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681130(_DWORD *this, int a2)
 {
-  *(this + 99) = a2;
-  return a2;
+    this->M396 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -60909,11 +58877,9 @@ retn    4
 } }
 // 0x6811C0
 namespace gamemd { char* Gap2Recv_6811C0::Map_Save_6811C0(char* Source) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Map_Save_6811C0(char *this, char *Source)
 {
-  *(this + 983) = 0;
-  return (char *)strncpy(this + 724, Source, 259);
+    this->M983 = 0;
+    return (char *)strncpy(this + 724, Source, 259);
 }
 
 /* ASM:
@@ -60932,15 +58898,12 @@ retn    4
 } }
 // 0x681200
 namespace gamemd { int Gap2Recv_681200::Map_Save_681200(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
-  int result; // eax
-
-  *(this + 246) = *a2;
-  result = a2[1];
-  *(this + 247) = result;
-  return result;
+    int result;
+    this->M984 = *a2;
+    result = *((int*)(a2) + 1);
+    this->M988 = result;
+    return result;
 }
 
 /* ASM:
@@ -60954,15 +58917,12 @@ retn    4
 } }
 // 0x681240
 namespace gamemd { int Gap2Recv_681240::Map_Save_681240(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 {
-  int result; // eax
-
-  *(this + 248) = *a2;
-  result = a2[1];
-  *(this + 249) = result;
-  return result;
+    int result;
+    this->M992 = *a2;
+    result = *((int*)(a2) + 1);
+    this->M996 = result;
+    return result;
 }
 
 /* ASM:
@@ -60976,15 +58936,12 @@ retn    4
 } }
 // 0x681280
 namespace gamemd { int Gap2Recv_681280::Map_Save_681280(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 {
-  int result; // eax
-
-  *(this + 250) = *a2;
-  result = a2[1];
-  *(this + 251) = result;
-  return result;
+    int result;
+    this->M1000 = *a2;
+    result = *((int*)(a2) + 1);
+    this->M1004 = result;
+    return result;
 }
 
 /* ASM:
@@ -60998,11 +58955,9 @@ retn    4
 } }
 // 0x6812C0
 namespace gamemd { int Gap2Recv_6812C0::Map_Save_6812C0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6812C0(_DWORD *this, int a2)
 {
-  *(this + 252) = a2;
-  return a2;
+    this->M1008 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -63457,11 +61412,9 @@ retn    8
 } }
 // 0x691590
 namespace gamemd { char Gap2Recv_691590::SetLandTypeMap() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Map_SetLandType(_DWORD *this)
 {
-  *(this + 11) = -1;
-  return 1;
+    this->M44 = -1;
+    return 1;
 }
 
 /* ASM:
@@ -66958,21 +64911,18 @@ retn
 } }
 // 0x69BBF0
 namespace gamemd { void Gap2Recv_69BBF0::Network_Disconnect_69BBF0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_69BBF0(char *this, int a2)
 {
-  char *v2; // eax
-  int v3; // ecx
-
-  if ( a2 < 7 )
+    char *v2;
+    int v3;
+    if ( a2 < 7 )
   {
     v2 = this + 2 * a2 + 12410;
     v3 = 7 - a2;
     do
     {
-      *(_WORD *)v2 = *((_WORD *)v2 + 1);
-      v2 += 2;
-      --v3;
+    *(short *)v2 = *((short *)(v2) + 1);
+    v2 += 2;
+    --v3;
     }
     while ( v3 );
   }
@@ -67162,19 +65112,16 @@ retn    4
 } }
 // 0x69E900
 namespace gamemd { char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_69E900(char **this, unsigned int a2)
 {
-  char **SubFile; // eax
-  int v3; // eax
-  int v4; // eax
-
-  SubFile = MixFileClass::LoadSubFile(this);
-  if ( SubFile && a2 < *((__int16 *)SubFile + 3) && (v3 = (int)&SubFile[6 * a2 + 2]) != 0 )
-    return (unsigned __int8)(*(_BYTE *)(v3 + 8) & 2) >> 1;
-  else
+    char **SubFile;
+    int v3;
+    int v4;
+    SubFile = MixFileClass::LoadSubFile(this);
+    if ( SubFile && a2 < *((short *)(SubFile) + 3) && (v3 = (int)&SubFile[6 * a2 + 2]) != 0 )
+    return (unsigned char)(*(char *)(v3 + 8) & 2) >> 1;
+    else
     LOBYTE(v4) = 0;
-  return v4;
+    return v4;
 }
 
 /* ASM:
@@ -67319,24 +65266,21 @@ retn    4
 } }
 // 0x6A94F0
 namespace gamemd { int Gap2Recv_6A94F0::SmallFunc_6A94F0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6A94F0(_DWORD *this, int a2)
 {
-  int result; // eax
-  _DWORD *v4; // ecx
-  int v5; // ebx
-
-  result = 0;
-  v4 = (_DWORD *)*(this + 13 * a2 + 25);
-  if ( v4 )
+    int result;
+    int *v4;
+    int v5;
+    result = 0;
+    v4 = (int *)*(this + 13 * a2 + 25);
+    if ( v4 )
     result = ObjectClass::GetMember09(v4);
-  if ( *(this + 12 * a2 + a2 + 26) == 1 )
+    if ( *(this + 12 * a2 + a2 + 26) == 1 )
   {
     v5 = *(this + 13 * a2 + 27);
     if ( v5 > result )
-      return (v5 + result) / 2;
+    return (v5 + result) / 2;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -67490,24 +65434,22 @@ retn    8
 } }
 // 0x6B0490
 namespace gamemd { void* Gap2Recv_6B0490::Event_Process_6B0490() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_6B0490(_DWORD *this)
 {
-  int i; // esi
-  int *result; // eax
-  int v4; // ecx
-
-  for ( i = *(this + 18) - 1; i >= 0; --i )
+    int i;
+    int *result;
+    int v4;
+    i = this->M72 - 1;
+    for ( ; i >= 0; --i )
   {
-    result = *(int **)(*(this + 15) + 4 * i);
+    result = *(int **)(this->M60 + 4 * i);
     v4 = *result;
     if ( result[1] != 6 )
     {
-      if ( v4 )
-        result = (int *)(*(int (__thiscall **)(int))(*(_DWORD *)v4 + 976))(v4);
+    if ( v4 )
+    result = (int *)(*(int (__thiscall **)(int))(*(int *)(v4) + 976))(v4);
     }
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -70120,25 +68062,6 @@ int __thiscall sub_6D04D0(void *this)
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] );
   return result;
 }
-
-/* ASM:
-push    esi             ; TODO: classify (grp=blit, sz=0x1f)
-push    edi
-mov     edi, ecx
-mov     esi, (offset dword_A8ED54+7D46Ch)
-
-loc_6D04D9:                             ; CODE XREF: SidebarUpdateAll+1A↓j
-mov     eax, [edi]
-push    esi
-mov     ecx, edi
-call    dword ptr [eax+34h]
-add     esi, 60h ; '`'
-cmp     esi, (offset dword_A8ED54+7DDCCh)
-jl      short loc_6D04D9
-pop     edi
-pop     esi
-retn
-*/
 } }
 // 0x6D1E30
 namespace gamemd { void* Gap2Recv_6D1E30::SmallFunc_6D1E30(int a2) {
@@ -71426,12 +69349,10 @@ retn    8
 } }
 // 0x6D6170
 namespace gamemd { void* Gap2Recv_6D6170::RequestMapSnapshot(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6D6170(_DWORD *this, _DWORD *a2)
 {
-  *a2 = *(this + 857);
-  a2[1] = *(this + 858);
-  return a2;
+    *a2 = this->M3428;
+    *((int*)(a2) + 1) = this->M3432;
+    return a2;
 }
 
 /* ASM:
@@ -74041,19 +71962,16 @@ retn
 } }
 // 0x6E7C20
 namespace gamemd { void* Gap2Recv_6E7C20::Network_Process_6E7C20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_6E7C20(_BYTE *this)
 {
-  int v1; // ecx
-  _BYTE *v3; // [esp+0h] [ebp-4h] BYREF
-
-  v3 = this;
-  if ( *(this + 4) != 11 )
+    int v1;
+    char *v3;
+    v3 = this;
+    if ( this->M4 != 11 )
     return 0;
-  v1 = *(_DWORD *)this;
-  LOWORD(v3) = v1 % 1000;
-  HIWORD(v3) = v1 / 1000;
-  return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v3);
+    v1 = *(int *)this;
+    LOWORD(v3) = v1 % 1000;
+    HIWORD(v3) = v1 / 1000;
+    return CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v3);
 }
 
 /* ASM:
@@ -76113,57 +74031,6 @@ char __thiscall sub_6EF470(_DWORD *this)
   }
   return 1;
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi
-xor     edi, edi
-mov     eax, [ebp+24h]
-mov     eax, [eax+0E4h]
-mov     ecx, [eax+9Ch]
-test    ecx, ecx
-jle     short loc_6EF4BE
-mov     ebx, 0A8h
-
-loc_6EF490:                             ; CODE XREF: Team_Create+4C↓j
-mov     esi, [ebx+eax]
-mov     ecx, esi
-mov     edx, [esi]
-call    dword ptr [edx+2Ch]
-cmp     eax, 3
-jnz     short loc_6EF4A9
-mov     eax, [esi+5E0h]
-test    eax, eax
-jg      short loc_6EF4C5
-
-loc_6EF4A9:                             ; CODE XREF: Team_Create+2D↑j
-mov     eax, [ebp+24h]
-inc     edi
-add     ebx, 8
-mov     eax, [eax+0E4h]
-cmp     edi, [eax+9Ch]
-jl      short loc_6EF490
-
-loc_6EF4BE:                             ; CODE XREF: Team_Create+19↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_6EF4C5:                             ; CODE XREF: Team_Create+37↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn
-*/
 } }
 // 0x6EF700
 namespace gamemd { void Gap2Recv_6EF700::DeployTeamMembersAtStart(int a2, char a3) {
@@ -76713,26 +74580,23 @@ retn    4
 } }
 // 0x6F26E0
 namespace gamemd { char* Team_Helper_6F26E0(char* Block, char a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_6F26E0(char *Block, char a2)
 {
-  char *v2; // esi
-
-  v2 = Block;
-  if ( (a2 & 2) != 0 )
+    char *v2;
+    v2 = Block;
+    if ( (a2 & 2) != 0 )
   {
     v2 = Block - 4;
     if ( (a2 & 1) != 0 )
     {
-      __3_YAXPAX_Z(v2);
-      return v2;
+    __3_YAXPAX_Z(v2);
+    return v2;
     }
   }
-  else if ( (a2 & 1) != 0 )
+    else if ( (a2 & 1) != 0 )
   {
     __3_YAXPAX_Z(Block);
   }
-  return v2;
+    return v2;
 }
 
 /* ASM:
@@ -77427,323 +75291,6 @@ LABEL_16:
   if ( a9 )
     goto LABEL_21;
 }
-
-/* ASM:
-sub     esp, 3Ch
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     [esp+4Ch+var_3C], esi
-mov     eax, [esi+220h]
-test    eax, eax
-jnz     loc_706EC4
-mov     eax, [esi]
-call    dword ptr [eax+84h]
-mov     cl, [eax+0D98h]
-test    cl, cl
-jnz     loc_706EC4
-mov     edi, [esp+4Ch+arg_0]
-mov     ecx, [edi]
-cmp     byte ptr [ecx], 0
-jnz     loc_706EC4
-mov     ebx, [esp+4Ch+arg_8]
-mov     ebp, [esp+4Ch+arg_C]
-cmp     ebx, 0FFFFFFFFh
-jz      loc_706CED
-test    ebp, ebp
-jz      loc_706CE1
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     cl, [eax+0DBFh]
-test    cl, cl
-jnz     loc_706CE1
-mov     ecx, [ebp+4]
-test    ecx, ecx
-jz      short loc_706C9C
-mov     eax, [ebp+10h]
-test    eax, eax
-jz      short loc_706C53
-cmp     [eax], ebx
-jz      short loc_706C94
-
-loc_706C53:                             ; CODE XREF: QueueTechnoVoiceLine+7D↑j
-mov     al, [ebp+0Ch]
-test    al, al
-jnz     short loc_706C79
-mov     eax, [ebp+0]
-push    offset sub_710860 ; CompareFunction
-push    8               ; SizeOfElements
-push    ecx             ; NumOfElements
-push    eax             ; Base
-call    _qsort
-add     esp, 10h
-mov     dword ptr [ebp+10h], 0
-mov     byte ptr [ebp+0Ch], 1
-
-loc_706C79:                             ; CODE XREF: QueueTechnoVoiceLine+88↑j
-mov     edx, [ebp+4]
-lea     ecx, [esp+4Ch+var_38]
-push    ecx
-mov     ecx, [ebp+0]
-mov     [esp+50h+var_38], ebx
-call    Object_Helper_710890
-test    eax, eax
-jz      short loc_706C9C
-mov     [ebp+10h], eax
-
-loc_706C94:                             ; CODE XREF: QueueTechnoVoiceLine+81↑j
-mov     eax, [ebp+10h]
-add     eax, 4
-jmp     short loc_706CA1
-; ---------------------------------------------------------------------------
-
-loc_706C9C:                             ; CODE XREF: QueueTechnoVoiceLine+76↑j
-; QueueTechnoVoiceLine+BF↑j
-mov     eax, (offset dword_A8ED54+0E9AD0h)
-
-loc_706CA1:                             ; CODE XREF: QueueTechnoVoiceLine+CA↑j
-mov     eax, [eax]
-test    eax, eax
-jz      short loc_706CCF
-mov     edx, [esp+4Ch+arg_10]
-mov     ecx, [esp+4Ch+arg_14]
-push    0
-push    3E8h
-push    2001h
-push    edx
-push    ecx
-push    eax
-mov     ecx, esi
-call    Surface__BlitTechnoTo
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 3Ch
-retn    2Ch ; ','
-; ---------------------------------------------------------------------------
-
-loc_706CCF:                             ; CODE XREF: QueueTechnoVoiceLine+D5↑j
-mov     al, byte ptr [esp+4Ch+arg_1C]
-test    al, al
-jnz     short loc_706CED
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 3Ch
-retn    2Ch ; ','
-; ---------------------------------------------------------------------------
-
-loc_706CE1:                             ; CODE XREF: QueueTechnoVoiceLine+53↑j
-; QueueTechnoVoiceLine+6B↑j
-mov     [esp+4Ch+arg_8], 0FFFFFFFFh
-mov     ebx, [esp+4Ch+arg_8]
-
-loc_706CED:                             ; CODE XREF: QueueTechnoVoiceLine+4B↑j
-; QueueTechnoVoiceLine+105↑j
-mov     edx, [esp+4Ch+arg_28]
-mov     eax, [esp+4Ch+arg_24]
-mov     ecx, [esp+4Ch+arg_20]
-cmp     ebx, 0FFFFFFFFh
-push    edx
-push    eax
-mov     eax, [esp+54h+arg_4]
-push    ecx
-mov     ecx, [esp+58h+arg_10]
-setnz   dl
-push    edx
-mov     edx, [esp+5Ch+arg_14]
-push    2001h
-push    eax
-mov     eax, [esp+64h+arg_18]
-push    ecx
-push    edx
-push    eax
-lea     ecx, [esp+70h+var_18]
-push    edi
-push    ecx
-mov     ecx, esi
-call    RenderTechnoOverlaySHP
-mov     ecx, 6
-mov     esi, eax
-lea     edi, [esp+4Ch+var_30]
-cmp     ebx, 0FFFFFFFFh
-rep movsd
-jz      loc_706EC4
-lea     edx, [esp+4Ch+var_30]
-push    edx
-call    Miles__DriverGet
-push    eax
-mov     ecx, 887460h
-call    Buffer__AppendCellData
-mov     esi, eax
-test    esi, esi
-mov     [esp+4Ch+arg_1C], esi
-jz      loc_706E2A
-mov     ecx, [ebp+4]
-mov     eax, [ebp+8]
-inc     ecx
-cmp     ecx, eax
-jle     loc_706DF8
-test    eax, eax
-jnz     short loc_706D7F
-mov     ebx, 0Ah
-jmp     short loc_706D89
-; ---------------------------------------------------------------------------
-
-loc_706D7F:                             ; CODE XREF: QueueTechnoVoiceLine+1A6↑j
-mov     ebx, eax
-test    ebx, ebx
-jl      loc_706E26
-
-loc_706D89:                             ; CODE XREF: QueueTechnoVoiceLine+1AD↑j
-lea     edi, [eax+ebx]
-lea     edx, ds:0[edi*8]
-push    edx             ; Size
-call    ??2_YAPAXI_Z
-mov     esi, eax
-add     esp, 4
-test    esi, esi
-jz      short loc_706E1C
-mov     eax, [ebp+4]
-dec     edi
-xor     ecx, ecx
-mov     [esp+4Ch+arg_C], edi
-test    eax, eax
-jle     short loc_706DD2
-
-loc_706DB0:                             ; CODE XREF: QueueTechnoVoiceLine+200↓j
-mov     edi, [ebp+0]
-lea     eax, ds:0[ecx*8]
-mov     edx, eax
-add     edx, edi
-inc     ecx
-mov     edi, [edx]
-mov     [eax+esi], edi
-mov     edx, [edx+4]
-mov     [eax+esi+4], edx
-mov     eax, [ebp+4]
-cmp     ecx, eax
-jl      short loc_706DB0
-
-loc_706DD2:                             ; CODE XREF: QueueTechnoVoiceLine+1DE↑j
-mov     eax, [ebp+0]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [ebp+8]
-add     esp, 4
-add     eax, ebx
-mov     ebx, [esp+4Ch+arg_8]
-mov     [ebp+0], esi
-mov     esi, [esp+4Ch+arg_1C]
-mov     [ebp+8], eax
-mov     dword ptr [ebp+10h], 0
-
-loc_706DF8:                             ; CODE XREF: QueueTechnoVoiceLine+19E↑j
-mov     ecx, [ebp+4]
-mov     edx, [ebp+0]
-mov     edi, [esp+4Ch+var_3C]
-mov     [edx+ecx*8], ebx
-mov     eax, [ebp+4]
-mov     ecx, [ebp+0]
-mov     [ecx+eax*8+4], esi
-mov     eax, [ebp+4]
-inc     eax
-mov     byte ptr [ebp+0Ch], 0
-mov     [ebp+4], eax
-jmp     short loc_706E9A
-; ---------------------------------------------------------------------------
-
-loc_706E1C:                             ; CODE XREF: QueueTechnoVoiceLine+1D0↑j
-mov     ebx, [esp+4Ch+arg_8]
-mov     esi, [esp+4Ch+arg_1C]
-jmp     short loc_706E2A
-; ---------------------------------------------------------------------------
-
-loc_706E26:                             ; CODE XREF: QueueTechnoVoiceLine+1B3↑j
-mov     ebx, [esp+4Ch+arg_8]
-
-loc_706E2A:                             ; CODE XREF: QueueTechnoVoiceLine+18F↑j
-; QueueTechnoVoiceLine+254↑j
-mov     edi, [esp+4Ch+var_3C]
-mov     ecx, edi
-mov     edx, [edi]
-call    dword ptr [edx+88h]
-call    TechnoClass__ClearArrays
-test    esi, esi
-jnz     short loc_706E5C
-lea     eax, [esp+4Ch+var_30]
-push    eax
-call    Miles__DriverGet
-push    eax
-mov     ecx, 887460h
-call    Buffer__AppendCellData
-mov     [esp+4Ch+arg_1C], eax
-mov     esi, eax
-
-loc_706E5C:                             ; CODE XREF: QueueTechnoVoiceLine+26F↑j
-mov     ecx, [ebp+4]
-mov     eax, [ebp+8]
-inc     ecx
-cmp     ecx, eax
-jle     short loc_706E7C
-test    eax, eax
-jnz     short loc_706E70
-mov     eax, 0Ah
-
-loc_706E70:                             ; CODE XREF: QueueTechnoVoiceLine+299↑j
-push    eax
-mov     ecx, ebp
-call    Object_Helper_710750
-test    al, al
-jz      short loc_706E9A
-
-loc_706E7C:                             ; CODE XREF: QueueTechnoVoiceLine+295↑j
-mov     edx, [ebp+4]
-mov     eax, [ebp+0]
-mov     [eax+edx*8], ebx
-mov     ecx, [ebp+4]
-mov     edx, [ebp+0]
-mov     [edx+ecx*8+4], esi
-mov     eax, [ebp+4]
-inc     eax
-mov     byte ptr [ebp+0Ch], 0
-mov     [ebp+4], eax
-
-loc_706E9A:                             ; CODE XREF: QueueTechnoVoiceLine+24A↑j
-; QueueTechnoVoiceLine+2AA↑j
-mov     eax, [esp+4Ch+arg_18]
-mov     ecx, [esp+4Ch+arg_14]
-mov     edx, [esp+4Ch+arg_10]
-push    0
-push    0
-push    0
-push    0
-push    eax
-mov     eax, [esp+60h+arg_4]
-push    ecx
-mov     ecx, [esp+64h+arg_0]
-push    edx
-push    ebp
-push    ebx
-push    eax
-push    ecx
-mov     ecx, edi
-call    QueueTechnoVoiceLine
-
-loc_706EC4:                             ; CODE XREF: QueueTechnoVoiceLine+15↑j
-; QueueTechnoVoiceLine+2B↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 3Ch
-retn    2Ch ; ','
-*/
 } }
 // 0x707280
 namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
@@ -77816,155 +75363,6 @@ void *__thiscall RenderTechnoOverlaySHP(
   qmemcpy(a2, v25, 0x18u);
   return a2;
 }
-
-/* ASM:
-sub     esp, 0D8h
-xor     eax, eax
-xor     edx, edx
-push    ebx
-push    ebp
-mov     ebp, [esp+0E0h+arg_4]
-mov     ebx, ecx
-push    esi
-mov     esi, [esp+0E4h+arg_14]
-mov     ecx, [ebp+4]
-push    edi
-div     dword ptr [ecx+8]
-mov     edi, [ecx+0Ch]
-lea     eax, [esp+0E8h+var_C0]
-push    eax
-imul    edx, [ecx+4]
-add     edx, esi
-mov     ecx, 0Ch
-lea     esi, [edx+edx*2]
-mov     edx, [esp+0ECh+arg_8]
-shl     esi, 4
-add     esi, edi
-lea     edi, [esp+0ECh+var_C0]
-rep movsd
-lea     ecx, [esp+0ECh+var_30]
-call    MultiplyMatrix3x4
-mov     edx, [ebx]
-mov     ecx, 0Ch
-mov     esi, eax
-lea     edi, [esp+0E8h+var_60]
-rep movsd
-mov     ecx, ebx
-call    dword ptr [edx+84h]
-mov     cl, [eax+0DACh]
-test    cl, cl
-jz      short loc_707306
-mov     dword_A8ED54+0B442Ch, 1
-
-loc_707306:                             ; CODE XREF: RenderTechnoOverlaySHP+7A↑j
-lea     ecx, [esp+0E8h+var_90]
-call    Matrix3x4__Identity
-mov     eax, [ebx]
-mov     ecx, ebx
-call    dword ptr [eax+84h]
-mov     cl, [eax+0D96h]
-test    cl, cl
-jz      short loc_707331
-push    3F000000h       ; float
-lea     ecx, [esp+0ECh+var_90]
-call    TacticalMap__MultiplyByScalar
-
-loc_707331:                             ; CODE XREF: RenderTechnoOverlaySHP+A1↑j
-call    Viewport__Clear
-mov     ecx, [esp+0E8h+arg_28]
-mov     edx, [esp+0E8h+arg_24]
-mov     eax, [esp+0E8h+arg_20]
-push    ecx
-push    edx
-push    eax
-lea     ecx, [esp+0F4h+var_60]
-push    887420h
-lea     edx, [esp+0F8h+var_90]
-push    ecx
-push    edx
-mov     edx, 887430h
-lea     ecx, [esp+100h+var_30]
-call    MultiplyMatrix3x4
-mov     edx, [esp+0FCh+arg_14]
-mov     ecx, [ebp+0]
-push    eax
-push    0
-call    globalHelper_053F90
-lea     ecx, [esp+0E8h+var_C0]
-call    Voxel__RenderFrame
-mov     esi, eax
-mov     al, [esp+0E8h+arg_1C]
-mov     ecx, 6
-lea     edi, [esp+0E8h+var_D8]
-test    al, al
-rep movsd
-jnz     loc_707437
-call    Miles__DriverGet
-mov     edx, [eax]
-lea     ecx, [esp+0E8h+var_C0]
-push    ecx
-mov     ecx, eax
-call    dword ptr [edx+78h]
-mov     ecx, [esp+0ECh+arg_8]
-mov     edx, [esp+0ECh+var_D8]
-mov     esi, [esp+0ECh+var_DC]
-push    0
-mov     eax, [ecx]
-mov     ecx, [ecx+4]
-add     ecx, edx
-mov     edx, [ebx]
-add     eax, esi
-mov     [esp+0F0h+var_C0], ecx
-push    0
-push    3E8h
-mov     ecx, ebx
-mov     [esp+0F8h+var_C4], eax
-call    dword ptr [edx+2F0h]
-push    eax
-mov     eax, [ebx]
-mov     ecx, ebx
-call    dword ptr [eax+2ECh]
-mov     ecx, [esp+0F8h+arg_18]
-push    eax
-push    ecx
-mov     ecx, ds:87F6C4h
-call    BuildingClass__GetSHPFrame
-mov     edx, [esp+0FCh+arg_10]
-push    eax
-push    0
-lea     eax, [esp+104h+var_C0]
-push    edx
-lea     ecx, [esp+108h+var_D0]
-push    eax
-push    ecx
-call    Miles__DriverGet
-mov     edx, ds:87F6C4h
-mov     ecx, ds:887314h
-push    eax
-call    BlitterDrawSHP
-
-loc_707437:                             ; CODE XREF: RenderTechnoOverlaySHP+122↑j
-mov     edx, [ebx]
-mov     ecx, ebx
-call    dword ptr [edx+84h]
-mov     cl, [eax+0DACh]
-test    cl, cl
-jz      short loc_707455
-mov     dword_A8ED54+0B442Ch, 1
-
-loc_707455:                             ; CODE XREF: RenderTechnoOverlaySHP+1C9↑j
-mov     eax, [esp+0E8h+arg_0]
-mov     ecx, 6
-lea     esi, [esp+0E8h+var_D8]
-mov     edi, eax
-rep movsd
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0D8h
-retn    2Ch ; ','
-*/
 } }
 // 0x7087C0
 namespace gamemd { bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) {
@@ -79509,73 +76907,6 @@ char __thiscall Object_Helper_710750(int this, int a2)
   *(_DWORD *)(this + 16) = 0;
   return 1;
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jl      short loc_7107CD
-mov     ebx, [esi+8]
-add     ebx, ebp
-lea     eax, ds:0[ebx*8]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-mov     edi, eax
-add     esp, 4
-test    edi, edi
-jz      short loc_7107CD
-mov     eax, [esi+4]
-dec     ebx
-xor     ecx, ecx
-mov     [esp+10h+arg_0], ebx
-test    eax, eax
-jle     short loc_7107A8
-
-loc_710787:                             ; CODE XREF: Object_Helper_710750+56↓j
-mov     ebx, [esi]
-lea     eax, ds:0[ecx*8]
-mov     edx, eax
-add     edx, ebx
-inc     ecx
-mov     ebx, [edx]
-mov     [eax+edi], ebx
-mov     edx, [edx+4]
-mov     [eax+edi+4], edx
-mov     eax, [esi+4]
-cmp     ecx, eax
-jl      short loc_710787
-
-loc_7107A8:                             ; CODE XREF: Object_Helper_710750+35↑j
-mov     eax, [esi]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [esi+8]
-add     esp, 4
-add     eax, ebp
-mov     [esi], edi
-mov     [esi+8], eax
-mov     dword ptr [esi+10h], 0
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_7107CD:                             ; CODE XREF: Object_Helper_710750+C↑j
-; Object_Helper_710750+27↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    4
-*/
 } }
 // 0x721D10
 namespace gamemd { char Gap2Recv_721D10::SmallFunc_721D10() {
@@ -81131,10 +78462,8 @@ jmp     short loc_7243C7
 } }
 // 0x724510
 namespace gamemd { int Gap2Recv_724510::sub_724510() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_724510(_DWORD *this)
 {
-  return *(this + 138);
+    return this->M552;
 }
 
 /* ASM:
@@ -82105,12 +79434,10 @@ retn
 } }
 // 0x7342C0
 namespace gamemd { char Gap2Recv_7342C0::SelectAllOfType_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7342C0(_BYTE *this)
 {
-  if ( this )
-    return *(this + 20) & 1;
-  else
+    if ( this )
+    return this->M20 & 1;
+    else
     return 0;
 }
 
@@ -83429,10 +80756,8 @@ retn
 } }
 // 0x746D90
 namespace gamemd { bool Gap2Recv_746D90::Event_Process_746D90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Event_Process_746D90(_BYTE *this)
 {
-  return *(this + 1760) || *(this + 1761);
+    return this->M1760 || this->M1761;
 }
 
 /* ASM:
@@ -85050,69 +82375,6 @@ void __thiscall sub_74E8A0(int this)
   }
   *(_DWORD *)(this + 172) = 0;
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+0B0h]
-cmp     eax, ebx
-jz      short loc_74E8EC
-mov     edx, [eax]
-xor     ecx, ecx
-cmp     edx, ebx
-jl      short loc_74E8C6
-
-loc_74E8B8:                             ; CODE XREF: System_Init_74E8A0+24↓j
-mov     edx, [eax+8]
-inc     ecx
-mov     [edx+ecx*4-4], ebx
-mov     edx, [eax]
-cmp     ecx, edx
-jle     short loc_74E8B8
-
-loc_74E8C6:                             ; CODE XREF: System_Init_74E8A0+16↑j
-push    edi
-mov     [eax], ebx
-mov     edi, [esi+0B0h]
-cmp     edi, ebx
-jz      short loc_74E8E5
-mov     eax, [edi+8]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-push    edi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 8
-
-loc_74E8E5:                             ; CODE XREF: System_Init_74E8A0+31↑j
-mov     [esi+0B0h], ebx
-pop     edi
-
-loc_74E8EC:                             ; CODE XREF: System_Init_74E8A0+E↑j
-mov     eax, [esi+0B4h]
-cmp     eax, ebx
-jz      short loc_74E905
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+0B4h], ebx
-
-loc_74E905:                             ; CODE XREF: System_Init_74E8A0+54↑j
-mov     eax, [esi+0C4h]
-cmp     eax, ebx
-jz      short loc_74E91E
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+0C4h], ebx
-
-loc_74E91E:                             ; CODE XREF: System_Init_74E8A0+6D↑j
-mov     [esi+0ACh], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x74EA70
 namespace gamemd { char Gap2Recv_74EA70::LoadVeinholeMonsters() {
@@ -85548,14 +82810,11 @@ retn
 } }
 // 0x74F620
 namespace gamemd { void Gap2Recv_74F620::DestroyVeinholeMonster_Destroy() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_74F620(#350 *this)
 {
-  int i; // eax
-
-  for ( i = 0; i <= *(_DWORD *)this; *(_DWORD *)(*((_DWORD *)this + 2) + 4 * i - 4) = 0 )
+    int i;
+    for ( i = 0; i <= *(int *)this; *(int *)(this->M8 + 4 * i - 4) = 0 )
     ++i;
-  __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(this);
+    __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(this);
 }
 
 /* ASM:
@@ -85575,29 +82834,26 @@ jle     short loc_74F628
 } }
 // 0x74F6F0
 namespace gamemd { char Gap2Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_74F6F0(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
-
-  v2 = *(this + 4);
-  v3 = a2;
-  if ( a2 >= v2 )
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->M16;
+    v3 = a2;
+    if ( a2 >= v2 )
     return 0;
-  v4 = v2 - 1;
-  *(this + 4) = v4;
-  if ( a2 < v4 )
+    v4 = v2 - 1;
+    this->M16 = v4;
+    if ( a2 < v4 )
   {
     do
     {
-      ++v3;
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3);
+    ++v3;
+    *(int *)(this->M4 + 4 * v3 - 4) = *(int *)(this->M4 + 4 * v3);
     }
-    while ( v3 < *(this + 4) );
+    while ( v3 < this->M16 );
   }
-  return 1;
+    return 1;
 }
 
 /* ASM:
@@ -86452,21 +83708,18 @@ retn
 } }
 // 0x7515C0
 namespace gamemd { int Gap2Recv_7515C0::System_Get_7515C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7515C0(void *this)
 {
-  int result; // eax
-  void **i; // esi
-
-  result = 0;
-  if ( MEMORY[0xB1D388] <= 0 )
+    int result;
+    void **i;
+    result = 0;
+    if ( g_VocPlayState <= 0 )
     return -1;
-  for ( i = (void **)MEMORY[0xB1D37C]; *i != this; ++i )
+    for ( i = (void **)g_VocAudioConfig; *i != this; ++i )
   {
-    if ( ++result >= MEMORY[0xB1D388] )
-      return -1;
+    if ( ++result >= g_VocPlayState )
+    return -1;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -87348,56 +84601,15 @@ char __thiscall sub_7597A0(int this)
     return 0;
   }
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-push    edi
-lea     edi, [esi+200h]
-lea     edx, [esi+178h]
-push    edi
-lea     ecx, [esi+71h]
-call    RenderAudioVideoFrame
-cmp     eax, 0FFFFFFFFh
-jz      short loc_7597CA
-mov     byte ptr [esi+514h], 0
-pop     edi
-xor     al, al
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_7597CA:                             ; CODE XREF: Render_Load_7597A0+1C↑j
-mov     eax, [edi]
-xor     edx, edx
-pop     edi
-mov     ecx, [eax+10h]
-mov     [esi+508h], ecx
-mov     dx, [eax+0Ch]
-xor     ecx, ecx
-mov     [esi+50Ch], edx
-mov     cx, [eax+2]
-xor     edx, edx
-mov     [esi+518h], ecx
-mov     dx, [eax+4]
-mov     al, 1
-mov     [esi+51Ch], edx
-mov     [esi+514h], al
-pop     esi
-retn
-*/
 } }
 // 0x759830
 namespace gamemd { int Gap2Recv_759830::Render_Load_759830(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_759830(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = *(this + 119);
-  if ( a2 != -1 )
-    *(this + 119) = a2;
-  return result;
+    int result;
+    result = this->M476;
+    if ( a2 != -1 )
+    this->M476 = a2;
+    return result;
 }
 
 /* ASM:
@@ -87413,15 +84625,12 @@ retn    4
 } }
 // 0x759850
 namespace gamemd { bool Gap2Recv_759850::Render_Render_759850(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_759850(int *this, int a2, int a3)
 {
-  int v3; // eax
-
-  v3 = a3;
-  if ( a3 < 0 )
+    int v3;
+    v3 = a3;
+    if ( a3 < 0 )
     v3 = -1;
-  return Audio_Render_7C3430(*(this + 128), a2, v3, 1u) == -1;
+    return Audio_Render_7C3430(this->M512, a2, v3, 1u) == -1;
 }
 
 /* ASM:
@@ -87443,23 +84652,20 @@ retn    8
 } }
 // 0x759880
 namespace gamemd { bool Gap2Recv_759880::Render_Render_759880(int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
 {
-  signed int v4; // edx
-  signed int v5; // eax
-  int v6; // esi
-
-  v4 = a2;
-  if ( a2 < 0 || a2 >= *(this + 322) )
+    signed int v4;
+    signed int v5;
+    int v6;
+    v4 = a2;
+    if ( a2 < 0 || a2 >= this->M1288 )
     v4 = 0;
-  v5 = a3;
-  if ( a3 < 0 || a3 >= *(this + 322) )
-    v5 = *(this + 322) - 1;
-  v6 = a4;
-  if ( a4 < 0 )
+    v5 = a3;
+    if ( a3 < 0 || a3 >= this->M1288 )
+    v5 = this->M1288 - 1;
+    v6 = a4;
+    if ( a4 < 0 )
     v6 = -1;
-  return SeekAudioStream(*(this + 128), v4, v5, v6, 0) == -1;
+    return SeekAudioStream(this->M512, v4, v5, v6, 0) == -1;
 }
 
 /* ASM:
@@ -87504,10 +84710,8 @@ retn    0Ch
 } }
 // 0x759EA0
 namespace gamemd { int Gap2Recv_759EA0::Render_Load_759EA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_759EA0(_DWORD *this)
 {
-  return *(this + 323);
+    return this->M1292;
 }
 
 /* ASM:
@@ -87517,31 +84721,28 @@ retn
 } }
 // 0x759EB0
 namespace gamemd { bool Gap2Recv_759EB0::Render_Load_759EB0(int a2, unsigned int a3, unsigned int a4, int a5, int a6) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, int a5, int a6)
 {
-  unsigned int v6; // edi
-  unsigned int v7; // esi
-  int v8; // edx
-  int v9; // eax
-
-  v6 = a3;
-  if ( a3 == -1 )
-    v6 = *(this + 328);
-  else
-    *(this + 328) = a3;
-  v7 = a4;
-  if ( a4 == -1 )
-    v7 = *(this + 329);
-  else
-    *(this + 329) = a4;
-  v8 = a5;
-  if ( a5 == -1 )
+    unsigned int v6;
+    unsigned int v7;
+    int v8;
+    int v9;
+    v6 = a3;
+    if ( a3 == -1 )
+    v6 = this->M1312;
+    else
+    this->M1312 = a3;
+    v7 = a4;
+    if ( a4 == -1 )
+    v7 = this->M1316;
+    else
+    this->M1316 = a4;
+    v8 = a5;
+    if ( a5 == -1 )
     v8 = 0;
-  v9 = a6;
-  if ( a6 == -1 )
+    v9 = a6;
+    if ( a6 == -1 )
     v9 = 0;
-  return Audio_Process_7C3270(*(this + 128), a2, v6, v7, v8, v9) == -1;
+    return Audio_Process_7C3270(this->M512, a2, v6, v7, v8, v9) == -1;
 }
 
 /* ASM:
@@ -87597,11 +84798,9 @@ retn    14h
 } }
 // 0x759F20
 namespace gamemd { int Gap2Recv_759F20::Render_Load_759F20(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_759F20(_DWORD *this, int a2)
 {
-  *(this + 324) = a2;
-  return a2;
+    this->M1296 = a2;
+    return a2;
 }
 
 /* ASM:
@@ -87612,47 +84811,41 @@ retn    4
 } }
 // 0x7639A0
 namespace gamemd { char Gap2Recv_7639A0::WaypointClass_Find(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7639A0(_DWORD *this, _DWORD *a2)
 {
-  int v2; // edi
-  int v3; // ebp
-  int v4; // ebx
-  int v5; // eax
-  _DWORD *v6; // esi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // eax
-  int v10; // ecx
-  int v11; // edx
-  int v12; // eax
-  int *v13; // ecx
-
-  v2 = a2[2];
-  v3 = ((__int16)(a2[1] / 256) << 8) + 128;
-  v4 = ((__int16)(*a2 / 256) << 8) + 128;
-  if ( *(this + 9) == -1 )
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int *v13;
+    v2 = *((int*)(a2) + 2);
+    v3 = ((short)(*((int*)(a2) + 1) / 256) << 8) + 128;
+    v4 = ((short)(*a2 / 256) << 8) + 128;
+    if ( this->M36 == -1 )
   {
-    v5 = *(this + 14);
+    v5 = this->M56;
     v6 = this + 10;
-    v7 = *(this + 12);
-    if ( v5 < v7
-      || (*((_BYTE *)v6 + 13) || !v7)
-      && (v8 = v6[5], v8 > 0)
-      && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(v6, v7 + v8, 0) )
+    v7 = this->M48;
+    if ( v5 < v7 || (*((char *)(v6) + 13) || !v7) && (v8 = v6[5], v8 > 0) && (*(unsigned char (__thiscall **)(int *, int, int))(*v6 + 8))(v6, v7 + v8, 0) )
     {
-      v9 = v6[4];
-      v10 = v9 + 1;
-      v11 = 3 * v9;
-      v12 = v6[1];
-      v6[4] = v10;
-      v13 = (int *)(v12 + 4 * v11);
-      *v13 = v4;
-      v13[1] = v3;
-      v13[2] = v2;
+    v9 = v6[4];
+    v10 = v9 + 1;
+    v11 = 3 * v9;
+    v12 = v6[1];
+    v6[4] = v10;
+    v13 = (int *)(v12 + 4 * v11);
+    *v13 = v4;
+    v13[1] = v3;
+    v13[2] = v2;
     }
   }
-  return 1;
+    return 1;
 }
 
 /* ASM:
@@ -87735,10 +84928,8 @@ retn    4
 } }
 // 0x764FA0
 namespace gamemd { bool Gap2Recv_764FA0::Team_Start_764FA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_764FA0(int this)
 {
-  return *(_DWORD *)(this + 48) != WDTObject::GetSize(*(_DWORD **)(this + 12));
+    return *(int *)(this + 48) != WDTObject::GetSize(*(int **)(this + 12));
 }
 
 /* ASM:
@@ -87757,11 +84948,9 @@ retn
 } }
 // 0x764FC0
 namespace gamemd { bool Gap2Recv_764FC0::ConstructWDTSelection_Create(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_764FC0(int this, int a2)
 {
-  return *(_DWORD *)(this + 48) != WDTObject::GetSize(*(_DWORD **)(this + 12))
-      || *(_DWORD *)(this + 4 * a2 + 52) != Conflict::GetOwnerHouse(*(_DWORD **)(this + 12));
+    return *(int *)(this + 48) != WDTObject::GetSize(*(int **)(this + 12))
+    || *(int *)(this + 4 * a2 + 52) != Conflict::GetOwnerHouse(*(int **)(this + 12));
 }
 
 /* ASM:
@@ -88174,15 +85363,12 @@ retn    8
 } }
 // 0x766060
 namespace gamemd { int Gap2Recv_766060::FindWDTTerritoryClass_Find_Find() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_766060(_DWORD *this)
 {
-  int v1; // eax
-
-  v1 = *(this + 3);
-  if ( v1 )
-    return *(_DWORD *)(v1 + 8);
-  else
+    int v1;
+    v1 = this->M12;
+    if ( v1 )
+    return *(int *)(v1 + 8);
+    else
     return 0;
 }
 
@@ -88882,12 +86068,10 @@ retn    4
 } }
 // 0x769C20
 namespace gamemd { void* Gap2Recv_769C20::Map_Load_769C20(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_769C20(_DWORD *this, int a2)
 {
-  *(this + 1) = *(_DWORD *)(a2 + 4);
-  *(this + 2) = *(_DWORD *)(a2 + 8);
-  return this;
+    this->M4 = *(int *)(a2 + 4);
+    this->M8 = *(int *)(a2 + 8);
+    return this;
 }
 
 /* ASM:
@@ -90200,15 +87384,12 @@ retn    4
 } }
 // 0x76BFC0
 namespace gamemd { int Gap2Recv_76BFC0::ConstructWDTSelection_Create_76BFC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_76BFC0(_DWORD *this)
 {
-  int v1; // eax
-
-  v1 = *(this + 3);
-  if ( v1 )
-    return *(unsigned __int8 *)(v1 + 20);
-  else
+    int v1;
+    v1 = this->M12;
+    if ( v1 )
+    return *(unsigned char *)(v1 + 20);
+    else
     return 1;
 }
 
@@ -91005,25 +88186,22 @@ retn
 } }
 // 0x76C970
 namespace gamemd { void Gap2Recv_76C970::ConstructWDTSelection_Create_76C970(void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_76C970(int this, _DWORD *a2, int a3)
 {
-  char **v3; // edi
-
-  v3 = (char **)a3;
-  Animation::LoadSidebarAnimations((void **)(this + 88), a2, a3);
-  String::Assign((char **)&a3, aWinningthresho);
-  *(_DWORD *)(this + 1076) = INIClass::ReadInt(v3, (char **)&a3, *(_DWORD *)(this + 1076));
-  DeleteAndZero((void **)&a3);
-  String::Assign((char **)&a3, aMegawinningthr);
-  *(_DWORD *)(this + 1084) = INIClass::ReadInt(v3, (char **)&a3, *(_DWORD *)(this + 1084));
-  DeleteAndZero((void **)&a3);
-  String::Assign((char **)&a3, aLosingthreshol);
-  *(_DWORD *)(this + 1080) = INIClass::ReadInt(v3, (char **)&a3, *(_DWORD *)(this + 1080));
-  DeleteAndZero((void **)&a3);
-  String::Assign((char **)&a3, aMegalosingthre);
-  *(_DWORD *)(this + 1088) = INIClass::ReadInt(v3, (char **)&a3, *(_DWORD *)(this + 1088));
-  DeleteAndZero((void **)&a3);
+    char **v3;
+    v3 = (char **)a3;
+    Animation::LoadSidebarAnimations((void **)(this + 88), a2, a3);
+    String::Assign((char **)&a3, aWinningthresho);
+    *(int *)(this + 1076) = INIClass::ReadInt(v3, (char **)&a3, *(int *)(this + 1076));
+    DeleteAndZero((void **)&a3);
+    String::Assign((char **)&a3, aMegawinningthr);
+    *(int *)(this + 1084) = INIClass::ReadInt(v3, (char **)&a3, *(int *)(this + 1084));
+    DeleteAndZero((void **)&a3);
+    String::Assign((char **)&a3, aLosingthreshol);
+    *(int *)(this + 1080) = INIClass::ReadInt(v3, (char **)&a3, *(int *)(this + 1080));
+    DeleteAndZero((void **)&a3);
+    String::Assign((char **)&a3, aMegalosingthre);
+    *(int *)(this + 1088) = INIClass::ReadInt(v3, (char **)&a3, *(int *)(this + 1088));
+    DeleteAndZero((void **)&a3);
 }
 
 /* ASM:
@@ -91416,151 +88594,6 @@ void __thiscall ConstructWDTSelection_Create_76CBF0(_DWORD *this, int *a2, char 
   DeleteAndZero(&v17);
   DeleteAndZero(&v16);
 }
-
-/* ASM:
-sub     esp, 10h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-lea     ecx, [esp+20h+var_10]
-call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
-mov     eax, [esi+4Ch]
-mov     ecx, [eax+44h]
-call    StaticString__Factory
-push    eax
-lea     ecx, [esp+24h+var_C]
-call    String__AssignFromPtr
-push    0
-lea     ecx, [esp+24h+var_8]
-call    String__Assign
-lea     ecx, [esp+20h+var_10]
-lea     edx, [esp+20h+var_8]
-push    ecx
-push    edx
-lea     eax, [esp+28h+var_4]
-push    offset aZoomingtarget ; "ZoomingTarget"
-push    eax
-lea     ecx, [esp+30h+var_C]
-call    String__Concat2
-mov     edi, [esp+28h+arg_4]
-mov     ebp, [esp+28h+arg_0]
-push    eax
-push    edi
-mov     ecx, ebp
-call    INIClass__ReadString
-test    eax, eax
-lea     ecx, [esp+20h+var_4]
-setnle  bl
-call    DeleteAndZero
-lea     ecx, [esp+20h+var_8]
-call    DeleteAndZero
-test    bl, bl
-jz      short loc_76CC8F
-push    10h             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_76CC87
-lea     ecx, [esp+20h+var_10]
-push    ecx
-mov     ecx, eax
-call    String__SplitComma
-jmp     short loc_76CC89
-; ---------------------------------------------------------------------------
-
-loc_76CC87:                             ; CODE XREF: ConstructWDTSelection_Create_76CBF0+87↑j
-xor     eax, eax
-
-loc_76CC89:                             ; CODE XREF: ConstructWDTSelection_Create_76CBF0+95↑j
-mov     [esi+470h], eax
-
-loc_76CC8F:                             ; CODE XREF: ConstructWDTSelection_Create_76CBF0+79↑j
-push    0
-lea     ecx, [esp+24h+arg_4]
-call    String__Assign
-lea     edx, [esp+20h+var_10]
-lea     eax, [esp+20h+arg_4]
-push    edx
-push    eax
-lea     ecx, [esp+28h+arg_0]
-push    offset aTargetpalette ; "TargetPalette"
-push    ecx
-lea     ecx, [esp+30h+var_C]
-call    String__Concat2
-push    eax
-push    edi
-mov     ecx, ebp
-call    INIClass__ReadString
-lea     ecx, [esp+20h+arg_0]
-call    DeleteAndZero
-lea     ecx, [esp+20h+arg_4]
-call    DeleteAndZero
-lea     ecx, [esp+20h+var_10]
-call    PaletteClass__Load
-push    0
-lea     ecx, [esp+24h+arg_4]
-mov     [esi+46Ch], eax
-call    String__Assign
-lea     edx, [esp+20h+var_10]
-lea     eax, [esp+20h+arg_4]
-push    edx
-push    eax
-lea     ecx, [esp+28h+arg_0]
-push    offset aTarget  ; "Target"
-push    ecx
-lea     ecx, [esp+30h+var_C]
-call    String__Concat2
-push    eax
-push    edi
-mov     ecx, ebp
-call    INIClass__ReadString
-lea     ecx, [esp+20h+arg_0]
-call    DeleteAndZero
-lea     ecx, [esp+20h+arg_4]
-call    DeleteAndZero
-push    10h             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_76CD40
-lea     edx, [esp+20h+var_10]
-mov     ecx, eax
-push    edx
-call    String__SplitComma
-jmp     short loc_76CD42
-; ---------------------------------------------------------------------------
-
-loc_76CD40:                             ; CODE XREF: ConstructWDTSelection_Create_76CBF0+140↑j
-xor     eax, eax
-
-loc_76CD42:                             ; CODE XREF: ConstructWDTSelection_Create_76CBF0+14E↑j
-mov     [esi+474h], eax
-push    20h ; ' '
-lea     eax, [esp+24h+arg_4]
-push    offset aTargetdividing ; "TargetDividingFrame"
-push    eax
-lea     ecx, [esp+2Ch+var_C]
-call    String__Concat2
-push    eax
-push    edi
-mov     ecx, ebp
-call    INIClass__ReadInt
-lea     ecx, [esp+20h+arg_4]
-mov     [esi+478h], eax
-call    DeleteAndZero
-lea     ecx, [esp+20h+var_C]
-call    DeleteAndZero
-lea     ecx, [esp+20h+var_10]
-call    DeleteAndZero
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 10h
-retn    8
-*/
 } }
 // 0x76CDA0
 namespace gamemd { void* Gap2Recv_76CDA0::ShowWDTTerritorySelection(void* a2) {
@@ -94121,20 +91154,6 @@ int __thiscall System_Read_776880(_DWORD *this)
   v2 = ((int (__stdcall *)(int))GetWindowContextHelpId)(v1);
   return ((int (__stdcall *)(int, char *, int, int))WinHelpA)(v1, szHelp, 8, v2);
 }
-
-/* ASM:
-push    esi
-mov     esi, [ecx+0Ch]
-push    esi             ; HWND
-call    ds:__imp_GetWindowContextHelpId
-push    eax             ; dwData
-push    8               ; uCommand
-push    offset szHelp   ; "SUN.HLP"
-push    esi             ; hWndMain
-call    ds:__imp_WinHelpA
-pop     esi
-retn
-*/
 } }
 // 0x7768A0
 namespace gamemd { int Gap2Recv_7768A0::System_Read_7768A0() {
@@ -94149,38 +91168,6 @@ int __thiscall System_Read_7768A0(void *this)
   dwData[1] = ((int (__stdcall *)(void *))GetWindowContextHelpId)(this);
   return ((int (__stdcall *)(void *, char *, int, _DWORD *))WinHelpA)(this, szHelp, 10, dwData);
 }
-
-/* ASM:
-dwData          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-
-sub     esp, 10h
-push    esi
-mov     esi, ecx
-xor     eax, eax
-push    0FFFFFFF4h      ; nIndex
-push    esi             ; hWnd
-mov     [esp+1Ch+dwData], eax
-mov     [esp+1Ch+var_C], eax
-mov     [esp+1Ch+var_8], eax
-mov     [esp+1Ch+var_4], eax
-call    ds:__imp_GetWindowLongA
-push    esi             ; HWND
-mov     [esp+18h+dwData], eax
-call    ds:__imp_GetWindowContextHelpId
-mov     [esp+14h+var_C], eax
-lea     eax, [esp+14h+dwData]
-push    eax             ; dwData
-push    0Ah             ; uCommand
-push    offset szHelp   ; "SUN.HLP"
-push    esi             ; hWndMain
-call    ds:__imp_WinHelpA
-pop     esi
-add     esp, 10h
-retn
-*/
 } }
 // 0x778710
 namespace gamemd { void* Gap2Recv_778710::LoadAccountInfoWOL() {
@@ -94559,53 +91546,6 @@ void *__thiscall sub_779690(
   *(_DWORD *)this = &PlayerProfile::`vftable';
   return this;
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-xor     eax, eax
-mov     [esi+4], eax
-mov     [esi+8], al
-mov     eax, [esp+4+arg_0]
-lea     ecx, [esi+0Ch]
-push    eax
-mov     dword ptr [esi], offset ??_7ReferenceCounted@@6B@ ; const ReferenceCounted::`vftable'
-call    String__AssignFromPtr
-mov     ecx, [esp+4+arg_4]
-mov     eax, [esp+4+arg_C]
-mov     dl, [esp+4+arg_8]
-mov     [esi+10h], ecx
-mov     ecx, [esp+4+arg_10]
-mov     [esi+18h], eax
-mov     eax, [esp+4+arg_18]
-mov     [esi+14h], dl
-mov     edx, [esp+4+arg_14]
-mov     [esi+1Ch], ecx
-mov     ecx, [esp+4+arg_1C]
-mov     [esi+24h], eax
-mov     eax, [esp+4+arg_24]
-mov     [esi+20h], edx
-mov     edx, [esp+4+arg_20]
-mov     [esi+28h], ecx
-mov     ecx, [esp+4+arg_28]
-mov     [esi+30h], eax
-mov     eax, [esp+4+arg_34]
-mov     [esi+2Ch], edx
-mov     dl, [esp+4+arg_2C]
-mov     [esi+34h], ecx
-push    eax
-lea     ecx, [esi+3Ch]
-mov     [esi+38h], dl
-call    WideString__AssignFromPtr
-mov     ecx, [esp+4+arg_30]
-push    ecx
-lea     ecx, [esi+40h]
-call    WideString__AssignFromPtr
-mov     dword ptr [esi], offset ??_7PlayerProfile@@6B@ ; const PlayerProfile::`vftable'
-mov     eax, esi
-pop     esi
-retn    38h ; '8'
-*/
 } }
 // 0x779B50
 namespace gamemd { char* Gap2Recv_779B50::ReadAutoLoginWOL() {
@@ -95617,18 +92557,15 @@ retn    4
 } }
 // 0x77A760
 namespace gamemd { char Gap2Recv_77A760::MainLobbyDlgProcWOL_Helper(char a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_77A760(_BYTE *this, char a2)
 {
-  char result; // al
-
-  result = a2;
-  if ( a2 != *(this + 56) )
+    char result;
+    result = a2;
+    if ( a2 != this->M56 )
   {
-    *(this + 56) = a2;
-    *(this + 8) = 1;
+    this->M56 = a2;
+    this->M8 = 1;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -95658,18 +92595,6 @@ int __thiscall sub_77A780(int this, int a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+1Ch]
-cmp     eax, edx
-jz      short locret_77A792
-mov     [ecx+1Ch], eax
-mov     byte ptr [ecx+8], 1
-
-locret_77A792:                          ; CODE XREF: MainLobbyDlgProcWOL_Helper_77A780+9↑j
-retn    4
-*/
 } }
 // 0x77A7A0
 namespace gamemd { int Gap2Recv_77A7A0::MainLobbyDlgProcWOL_Helper_77A7A0(int a2) {
@@ -95686,18 +92611,6 @@ int __thiscall sub_77A7A0(int this, int a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+20h]
-cmp     eax, edx
-jz      short locret_77A7B2
-mov     [ecx+20h], eax
-mov     byte ptr [ecx+8], 1
-
-locret_77A7B2:                          ; CODE XREF: MainLobbyDlgProcWOL_Helper_77A7A0+9↑j
-retn    4
-*/
 } }
 // 0x77A870
 namespace gamemd { int Gap2Recv_77A870::Event_Process_77A870(int a2) {
@@ -95715,19 +92628,6 @@ int __thiscall sub_77A870(int this, int a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+2Ch]
-cmp     eax, 0FFFFFFFFh
-jz      short locret_77A885
-mov     edx, [esp+arg_0]
-mov     byte ptr [ecx+8], 1
-add     eax, edx
-mov     [ecx+2Ch], eax
-
-locret_77A885:                          ; CODE XREF: Event_Process_77A870+6↑j
-retn    4
-*/
 } }
 // 0x77A890
 namespace gamemd { int Gap2Recv_77A890::Event_Process_77A890(int a2) {
@@ -95745,19 +92645,6 @@ int __thiscall sub_77A890(int this, int a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+30h]
-cmp     eax, 0FFFFFFFFh
-jz      short locret_77A8A5
-mov     edx, [esp+arg_0]
-mov     byte ptr [ecx+8], 1
-add     eax, edx
-mov     [ecx+30h], eax
-
-locret_77A8A5:                          ; CODE XREF: Event_Process_77A890+6↑j
-retn    4
-*/
 } }
 // 0x77A8B0
 namespace gamemd { int Gap2Recv_77A8B0::Event_Process_77A8B0(int a2) {
@@ -95775,19 +92662,6 @@ int __thiscall sub_77A8B0(int this, int a2)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+34h]
-cmp     eax, 0FFFFFFFFh
-jz      short locret_77A8C5
-mov     edx, [esp+arg_0]
-mov     byte ptr [ecx+8], 1
-add     eax, edx
-mov     [ecx+34h], eax
-
-locret_77A8C5:                          ; CODE XREF: Event_Process_77A8B0+6↑j
-retn    4
-*/
 } }
 // 0x77A9F0
 namespace gamemd { void Gap2Recv_77A9F0::FillPersonaInfoWOL(int hDlg, char* a3, void* a4) {
@@ -97763,33 +94637,30 @@ retn
 } }
 // 0x783B80
 namespace gamemd { int Gap2Recv_783B80::Render_Find() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_783B80(unsigned int *this)
 {
-  unsigned int v2; // eax
-
-  if ( !this )
+    unsigned int v2;
+    if ( !this )
     return 0;
-  v2 = *(this + 3);
-  if ( v2 > 0x7D0 )
-    return HashTable::Find(MEMORY[0xAC4848], g_Str_File_comchief_pcx, 0);
-  if ( v2 > 0x5DC )
-    return HashTable::Find(MEMORY[0xAC4848], aStargenPcx, 0);
-  if ( v2 > 0x3E8 )
-    return HashTable::Find(MEMORY[0xAC4848], aGeneralPcx, 0);
-  if ( v2 > 0x1F4 )
-    return HashTable::Find(MEMORY[0xAC4848], aBriggenrPcx, 0);
-  if ( v2 > 0xFA )
-    return HashTable::Find(MEMORY[0xAC4848], aColonelPcx, 0);
-  if ( v2 > 0x96 )
-    return HashTable::Find(MEMORY[0xAC4848], aMajorPcx, 0);
-  if ( v2 > 0x50 )
-    return HashTable::Find(MEMORY[0xAC4848], aLieutenaPcx, 0);
-  if ( v2 > 0x3C )
-    return HashTable::Find(MEMORY[0xAC4848], aSergeantPcx, 0);
-  if ( v2 <= 0x1F )
-    return HashTable::Find(MEMORY[0xAC4848], aPrivatePcx, 0);
-  return HashTable::Find(MEMORY[0xAC4848], aCorporalPcx, 0);
+    v2 = this->M12;
+    if ( v2 > 0x7D0 )
+    return HashTable::Find(g_DialogHashTable, g_Str_File_comchief_pcx, 0);
+    if ( v2 > 0x5DC )
+    return HashTable::Find(g_DialogHashTable, aStargenPcx, 0);
+    if ( v2 > 0x3E8 )
+    return HashTable::Find(g_DialogHashTable, aGeneralPcx, 0);
+    if ( v2 > 0x1F4 )
+    return HashTable::Find(g_DialogHashTable, aBriggenrPcx, 0);
+    if ( v2 > 0xFA )
+    return HashTable::Find(g_DialogHashTable, aColonelPcx, 0);
+    if ( v2 > 0x96 )
+    return HashTable::Find(g_DialogHashTable, aMajorPcx, 0);
+    if ( v2 > 0x50 )
+    return HashTable::Find(g_DialogHashTable, aLieutenaPcx, 0);
+    if ( v2 > 0x3C )
+    return HashTable::Find(g_DialogHashTable, aSergeantPcx, 0);
+    if ( v2 <= 0x1F )
+    return HashTable::Find(g_DialogHashTable, aPrivatePcx, 0);
+    return HashTable::Find(g_DialogHashTable, aCorporalPcx, 0);
 }
 
 /* ASM:
@@ -109137,13 +106008,11 @@ retn    8
 } }
 // 0x7AD2F0
 namespace gamemd { void* ResetSystemWOL_Reset(void* Block, char a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall sub_7AD2F0(void **Block, char a2)
 {
-  DeleteAndZero(Block);
-  if ( (a2 & 1) != 0 )
+    DeleteAndZero(Block);
+    if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(Block);
-  return Block;
+    return Block;
 }
 
 /* ASM:
@@ -109903,40 +106772,38 @@ retn    8
 } }
 // 0x7AF3D0
 namespace gamemd { char* Gap2Recv_7AF3D0::GetRegionStringWOL() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall WOL_GetRegionString(void *this)
 {
-  if ( (MEMORY[0xB77EC4] & 1) == 0 )
+    if ( (DataGlobal_B77EC4 & 1) == 0 )
   {
-    MEMORY[0xB77EC4] |= 1u;
-    String::Assign(&MEMORY[0xB77EC0], "NA");
+    DataGlobal_B77EC4 |= 1u;
+    String::Assign(&DataGlobal_B77EC0, "NA");
     atexit(unknown_libname_68);
   }
-  if ( (MEMORY[0xB77EC4] & 2) == 0 )
+    if ( (DataGlobal_B77EC4 & 2) == 0 )
   {
-    MEMORY[0xB77EC4] |= 2u;
-    String::Assign((char **)&MEMORY[0xB77EC8], "EU");
+    DataGlobal_B77EC4 |= 2u;
+    String::Assign((char **)&DataGlobal_B77EC8, "EU");
     atexit(unknown_libname_67);
   }
-  if ( (MEMORY[0xB77EC4] & 4) == 0 )
+    if ( (DataGlobal_B77EC4 & 4) == 0 )
   {
-    MEMORY[0xB77EC4] |= 4u;
-    String::Assign(&MEMORY[0xB77F1C], "AS");
+    DataGlobal_B77EC4 |= 4u;
+    String::Assign(&DataGlobal_B77F1C, "AS");
     atexit(unknown_libname_66);
   }
-  if ( this == (void *)1 )
-    return &MEMORY[0xB77EC0];
-  if ( this == (void *)2 )
-    return (char **)&MEMORY[0xB77EC8];
-  if ( this == (void *)3 )
-    return &MEMORY[0xB77F1C];
-  if ( (MEMORY[0xB77EC4] & 8) == 0 )
+    if ( this == (void *)1 )
+    return &DataGlobal_B77EC0;
+    if ( this == (void *)2 )
+    return (char **)&DataGlobal_B77EC8;
+    if ( this == (void *)3 )
+    return &DataGlobal_B77F1C;
+    if ( (DataGlobal_B77EC4 & 8) == 0 )
   {
-    MEMORY[0xB77EC4] |= 8u;
-    String::Assign((char **)&MEMORY[0xB77EB0], "XX");
+    DataGlobal_B77EC4 |= 8u;
+    String::Assign((char **)&DataGlobal_B77EB0, "XX");
     atexit(unknown_libname_65);
   }
-  return (char **)&MEMORY[0xB77EB0];
+    return (char **)&DataGlobal_B77EB0;
 }
 
 /* ASM:
@@ -111119,60 +107986,6 @@ int __thiscall sub_7BD170(int this)
   }
   return result;
 }
-
-/* ASM:
-sub     esp, 10h
-push    esi
-mov     esi, ecx
-mov     eax, [esi+78Ch]
-test    eax, eax
-jnz     short loc_7BD18A
-mov     eax, 0FFFFFFF3h
-pop     esi
-add     esp, 10h
-retn
-; ---------------------------------------------------------------------------
-
-loc_7BD18A:                             ; CODE XREF: Audio_Render_7BD170+E↑j
-mov     dword ptr [esi+7A0h], 0
-mov     dword ptr [esi+7A4h], 0FFFFFFFFh
-mov     dword ptr [esi+7C4h], 0
-mov     ax, [esi+3Ch]
-mov     cl, [esi+3Eh]
-mov     dl, [esi+3Fh]
-mov     [esp+14h+var_10], ax
-lea     eax, [esp+14h+var_10]
-push    10h
-push    eax
-push    2
-push    esi
-mov     dword ptr [esi+38h], 0
-mov     [esp+24h+var_E], cl
-mov     [esp+24h+var_D], dl
-mov     [esp+24h+var_8], offset sub_7BD470
-mov     [esp+24h+var_4], offset sub_7BD5C0
-call    dword ptr [esi+58h]
-add     esp, 10h
-test    eax, eax
-jge     short loc_7BD1EF
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_7BD20A
-
-loc_7BD1EF:                             ; CODE XREF: Audio_Render_7BD170+78↑j
-mov     eax, [esi+7BCh]
-test    eax, 80000000h
-jnz     short loc_7BD207
-or      eax, 80000000h
-mov     [esi+7BCh], eax
-
-loc_7BD207:                             ; CODE XREF: Audio_Render_7BD170+8A↑j
-or      eax, 0FFFFFFFFh
-
-loc_7BD20A:                             ; CODE XREF: Audio_Render_7BD170+7D↑j
-pop     esi
-add     esp, 10h
-retn
-*/
 } }
 // 0x7BD290
 namespace gamemd { char Gap2Recv_7BD290::Audio_Process_7BD290() {
@@ -111187,22 +108000,6 @@ char __thiscall sub_7BD290(int this)
   *(_DWORD *)(this + 1980) = v2;
   return v2;
 }
-
-/* ASM:
-push    esi
-push    0
-mov     esi, ecx
-push    0
-push    6
-push    esi
-call    dword ptr [esi+58h]
-mov     eax, [esi+7BCh]
-add     esp, 10h
-and     al, 0BFh
-mov     [esi+7BCh], eax
-pop     esi
-retn
-*/
 } }
 // 0x7BD2B0
 namespace gamemd { char Gap2Recv_7BD2B0::Audio_Process_7BD2B0() {
@@ -111217,22 +108014,6 @@ char __thiscall sub_7BD2B0(int this)
   *(_DWORD *)(this + 1980) = v2;
   return v2;
 }
-
-/* ASM:
-push    esi
-push    0
-mov     esi, ecx
-push    0
-push    7
-push    esi
-call    dword ptr [esi+58h]
-mov     eax, [esi+7BCh]
-add     esp, 10h
-and     al, 0BFh
-mov     [esi+7BCh], eax
-pop     esi
-retn
-*/
 } }
 // 0x7BE4A0
 namespace gamemd { int Gap2Recv_7BE4A0::Audio_Process_7BE4A0() {
@@ -111297,152 +108078,12 @@ LABEL_15:
   }
   return -9;
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     ebp, [esi+60h]
-cmp     ebp, 0FFFFFFFFh
-jz      short loc_7BE4B7
-mov     eax, [esi+64h]
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_7BE4F1
-
-loc_7BE4B7:                             ; CODE XREF: Audio_Process_7BE4A0+D↑j
-xor     eax, eax
-xor     ebp, ebp
-mov     ax, [esi+0F0h]
-mov     bp, [esi+0EEh]
-mov     [esp+14h+var_4], eax
-mov     al, [esi+80h]
-test    al, 8
-jz      short loc_7BE4F5
-xor     eax, eax
-xor     ecx, ecx
-mov     ax, [esi+0FAh]
-mov     cx, [esi+0FCh]
-add     ebp, eax
-mov     eax, [esp+14h+var_4]
-add     eax, ecx
-
-loc_7BE4F1:                             ; CODE XREF: Audio_Process_7BE4A0+15↑j
-mov     [esp+14h+var_4], eax
-
-loc_7BE4F5:                             ; CODE XREF: Audio_Process_7BE4A0+35↑j
-mov     al, [esi+80h]
-mov     ebx, [esi+5Ch]
-test    al, 1
-jz      loc_7BE58F
-test    ebx, ebx
-jnz     loc_7BE593
-mov     edi, [esp+14h+var_4]
-mov     al, [esi+108h]
-imul    edi, ebp
-cmp     al, 1
-jz      short loc_7BE523
-cmp     al, 4
-jnz     short loc_7BE525
-
-loc_7BE523:                             ; CODE XREF: Audio_Process_7BE4A0+7D↑j
-add     edi, edi
-
-loc_7BE525:                             ; CODE XREF: Audio_Process_7BE4A0+81↑j
-push    edi
-push    0
-push    2
-push    esi
-call    dword ptr [esi+44h]
-mov     ebx, eax
-add     esp, 10h
-test    ebx, ebx
-jnz     short loc_7BE542
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 0FFFFFFF8h
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_7BE542:                             ; CODE XREF: Audio_Process_7BE4A0+95↑j
-mov     edx, [esi+30h]
-push    edi
-push    ebx
-add     edx, edi
-push    4
-push    esi
-mov     [esi+30h], edx
-call    dword ptr [esi+44h]
-mov     ecx, edi
-xor     eax, eax
-mov     edx, ecx
-mov     edi, ebx
-shr     ecx, 2
-rep stosd
-mov     ecx, edx
-add     esp, 10h
-and     ecx, 3
-rep stosb
-mov     eax, [esp+14h+var_4]
-mov     [esi+158h], ebx
-mov     [esi+160h], eax
-mov     eax, [esi+150h]
-or      al, 20h
-mov     [esi+15Ch], ebp
-mov     [esi+150h], eax
-jmp     short loc_7BE593
-; ---------------------------------------------------------------------------
-
-loc_7BE58F:                             ; CODE XREF: Audio_Process_7BE4A0+60↑j
-test    ebx, ebx
-jz      short loc_7BE5C1
-
-loc_7BE593:                             ; CODE XREF: Audio_Process_7BE4A0+68↑j
-; Audio_Process_7BE4A0+ED↑j
-mov     ecx, [esi+6Ch]
-mov     edx, [esi+68h]
-mov     eax, [esp+14h+var_4]
-push    ecx
-push    edx
-push    eax
-push    ebp
-mov     edx, ebx
-mov     ecx, esi
-call    Audio_Process_7C3270
-mov     eax, [esi+150h]
-or      al, 10h
-pop     edi
-mov     [esi+150h], eax
-pop     esi
-pop     ebp
-or      eax, 0FFFFFFFFh
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_7BE5C1:                             ; CODE XREF: Audio_Process_7BE4A0+F1↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 0FFFFFFF7h
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x7BE660
 namespace gamemd { int Gap2Recv_7BE660::Audio_Process_7BE660() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7BE660(_DWORD *this)
 {
-  *(this + 436) = -1;
-  return -1;
+    this->M1744 = -1;
+    return -1;
 }
 
 /* ASM:
@@ -111699,25 +108340,22 @@ retn
 } }
 // 0x7C0490
 namespace gamemd { int Gap2Recv_7C0490::Audio_Process_7C0490() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7C0490(_DWORD *this)
 {
-  int i; // edi
-  int result; // eax
-
-  for ( i = 0; i < *(this + 34); ++i )
+    int i;
+    int result;
+    for ( i = 0; i < this->M136; ++i )
   {
     result = FillAudioStreamBuffer((int)this, 32);
     if ( result == -1 )
     {
-      ++*(this + 5);
+    ++this->M20;
     }
     else if ( result != -9 && result != -11 )
     {
-      return result;
+    return result;
     }
   }
-  return -1;
+    return -1;
 }
 
 /* ASM:
@@ -111803,168 +108441,6 @@ int __thiscall sub_7C1150(int this)
   else
     return -1;
 }
-
-/* ASM:
-sub     esp, 8
-lea     eax, [esp+8+var_8]
-push    esi
-push    edi
-push    8
-mov     esi, ecx
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1176
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1176:                             ; CODE XREF: Audio_Render_7C1150+19↑j
-cmp     [esp+10h+var_8], 484E494Ch
-jz      short loc_7C118B
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C118B:                             ; CODE XREF: Audio_Render_7C1150+2E↑j
-mov     ecx, [esp+10h+var_4]
-lea     edi, [esi+714h]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-push    edi
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C11D5
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C11D5:                             ; CODE XREF: Audio_Render_7C1150+78↑j
-mov     ax, [edi]
-test    ax, ax
-jbe     loc_7C129A
-and     eax, 0FFFFh
-shl     eax, 2
-mov     edi, eax
-push    edi
-push    0
-push    2
-push    esi
-call    dword ptr [esi+44h]
-add     esp, 10h
-mov     [esi+71Ch], eax
-test    eax, eax
-jnz     short loc_7C120C
-pop     edi
-mov     eax, 0FFFFFFF8h
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C120C:                             ; CODE XREF: Audio_Render_7C1150+AF↑j
-push    edi
-push    eax
-push    4
-push    esi
-call    dword ptr [esi+44h]
-mov     eax, [esi+30h]
-push    8
-add     eax, edi
-mov     [esi+30h], eax
-lea     eax, [esp+24h+var_8]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 20h
-test    eax, eax
-jz      short loc_7C123B
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C123B:                             ; CODE XREF: Audio_Render_7C1150+DE↑j
-cmp     [esp+10h+var_8], 444E494Ch
-jz      short loc_7C1250
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1250:                             ; CODE XREF: Audio_Render_7C1150+F3↑j
-mov     ecx, [esp+10h+var_4]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-mov     eax, [esi+71Ch]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C129A
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C129A:                             ; CODE XREF: Audio_Render_7C1150+8B↑j
-; Audio_Render_7C1150+13D↑j
-pop     edi
-or      eax, 0FFFFFFFFh
-pop     esi
-add     esp, 8
-retn
-*/
 } }
 // 0x7C1A70
 namespace gamemd { int Gap2Recv_7C1A70::Audio_Render_7C1A70() {
@@ -112008,171 +108484,6 @@ int __thiscall sub_7C1A70(int this)
   else
     return -1;
 }
-
-/* ASM:
-sub     esp, 8
-lea     eax, [esp+8+var_8]
-push    esi
-push    edi
-push    8
-mov     esi, ecx
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1A96
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1A96:                             ; CODE XREF: Audio_Render_7C1A70+19↑j
-cmp     [esp+10h+var_8], 484E4943h
-jz      short loc_7C1AAB
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1AAB:                             ; CODE XREF: Audio_Render_7C1A70+2E↑j
-mov     ecx, [esp+10h+var_4]
-lea     edi, [esi+74Ch]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-push    edi
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1AF5
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1AF5:                             ; CODE XREF: Audio_Render_7C1A70+78↑j
-mov     al, [esi+0F5h]
-test    al, al
-jnz     loc_7C1BC8
-mov     ax, [edi]
-test    ax, ax
-jbe     loc_7C1BC8
-and     eax, 0FFFFh
-lea     edi, [eax+eax*2]
-shl     edi, 1
-push    edi
-push    0
-push    2
-push    esi
-call    dword ptr [esi+44h]
-add     esp, 10h
-mov     [esi+754h], eax
-test    eax, eax
-jnz     short loc_7C1B3A
-pop     edi
-mov     eax, 0FFFFFFF8h
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1B3A:                             ; CODE XREF: Audio_Render_7C1A70+BD↑j
-push    edi
-push    eax
-push    4
-push    esi
-call    dword ptr [esi+44h]
-mov     eax, [esi+30h]
-push    8
-add     eax, edi
-mov     [esi+30h], eax
-lea     eax, [esp+24h+var_8]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 20h
-test    eax, eax
-jz      short loc_7C1B69
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1B69:                             ; CODE XREF: Audio_Render_7C1A70+EC↑j
-cmp     [esp+10h+var_8], 444E4943h
-jz      short loc_7C1B7E
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1B7E:                             ; CODE XREF: Audio_Render_7C1A70+101↑j
-mov     ecx, [esp+10h+var_4]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-mov     eax, [esi+754h]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1BC8
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1BC8:                             ; CODE XREF: Audio_Render_7C1A70+8D↑j
-; Audio_Render_7C1A70+99↑j ...
-pop     edi
-or      eax, 0FFFFFFFFh
-pop     esi
-add     esp, 8
-retn
-*/
 } }
 // 0x7C1BE0
 namespace gamemd { int Gap2Recv_7C1BE0::Audio_Render_7C1BE0() {
@@ -112216,168 +108527,6 @@ int __thiscall sub_7C1BE0(int this)
   else
     return -1;
 }
-
-/* ASM:
-sub     esp, 8
-lea     eax, [esp+8+var_8]
-push    esi
-push    edi
-push    8
-mov     esi, ecx
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1C06
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1C06:                             ; CODE XREF: Audio_Render_7C1BE0+19↑j
-cmp     [esp+10h+var_8], 484E4950h
-jz      short loc_7C1C1B
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1C1B:                             ; CODE XREF: Audio_Render_7C1BE0+2E↑j
-mov     ecx, [esp+10h+var_4]
-lea     edi, [esi+758h]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-push    edi
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1C65
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1C65:                             ; CODE XREF: Audio_Render_7C1BE0+78↑j
-mov     ax, [edi]
-test    ax, ax
-jbe     loc_7C1D29
-and     eax, 0FFFFh
-shl     eax, 1
-mov     edi, eax
-push    edi
-push    0
-push    2
-push    esi
-call    dword ptr [esi+44h]
-add     esp, 10h
-mov     [esi+760h], eax
-test    eax, eax
-jnz     short loc_7C1C9B
-pop     edi
-mov     eax, 0FFFFFFF8h
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1C9B:                             ; CODE XREF: Audio_Render_7C1BE0+AE↑j
-push    edi
-push    eax
-push    4
-push    esi
-call    dword ptr [esi+44h]
-mov     eax, [esi+30h]
-push    8
-add     eax, edi
-mov     [esi+30h], eax
-lea     eax, [esp+24h+var_8]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 20h
-test    eax, eax
-jz      short loc_7C1CCA
-pop     edi
-mov     eax, 0FFFFFFFEh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1CCA:                             ; CODE XREF: Audio_Render_7C1BE0+DD↑j
-cmp     [esp+10h+var_8], 444E4950h
-jz      short loc_7C1CDF
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1CDF:                             ; CODE XREF: Audio_Render_7C1BE0+F2↑j
-mov     ecx, [esp+10h+var_4]
-mov     eax, ecx
-mov     edx, ecx
-and     eax, 0FF0000h
-shr     edx, 10h
-or      eax, edx
-mov     edx, ecx
-and     edx, 0FF00h
-shl     ecx, 10h
-or      edx, ecx
-shr     eax, 8
-shl     edx, 8
-or      eax, edx
-inc     eax
-and     al, 0FEh
-push    eax
-mov     eax, [esi+760h]
-push    eax
-push    5
-push    esi
-call    dword ptr [esi+40h]
-add     esp, 10h
-test    eax, eax
-jz      short loc_7C1D29
-pop     edi
-mov     eax, 0FFFFFFFCh
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C1D29:                             ; CODE XREF: Audio_Render_7C1BE0+8B↑j
-; Audio_Render_7C1BE0+13C↑j
-pop     edi
-or      eax, 0FFFFFFFFh
-pop     esi
-add     esp, 8
-retn
-*/
 } }
 // 0x7C3750
 namespace gamemd { int Gap2Recv_7C3750::Audio_Process_7C3750() {
@@ -112442,92 +108591,6 @@ int __thiscall sub_7C3750(int this)
   }
   return result;
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi+48h]
-mov     edi, [esi+6DCh]
-test    eax, eax
-jz      short loc_7C37C5
-mov     ecx, [edi+14h]
-test    ch, 1
-jz      short loc_7C3785
-mov     ecx, [esi+120h]
-mov     edx, [edi+1Ch]
-push    ecx
-push    edx
-push    4
-push    esi
-call    eax
-mov     eax, [edi+14h]
-add     esp, 10h
-and     ah, 0FEh
-mov     [edi+14h], eax
-
-loc_7C3785:                             ; CODE XREF: Audio_Process_7C3750+17↑j
-mov     eax, [edi+14h]
-test    ah, 2
-jz      short loc_7C37AA
-mov     eax, [esi+120h]
-mov     ecx, [edi+1Ch]
-push    eax
-push    ecx
-push    5
-push    esi
-call    dword ptr [esi+48h]
-mov     eax, [edi+14h]
-add     esp, 10h
-and     ah, 0FDh
-mov     [edi+14h], eax
-
-loc_7C37AA:                             ; CODE XREF: Audio_Process_7C3750+3B↑j
-mov     eax, [edi+14h]
-test    ah, 4
-jz      short loc_7C37C5
-mov     edx, [edi+1Ch]
-mov     ecx, esi
-call    Audio_Process_7BE830
-mov     eax, [edi+14h]
-and     ah, 0FBh
-mov     [edi+14h], eax
-
-loc_7C37C5:                             ; CODE XREF: Audio_Process_7C3750+F↑j
-; Audio_Process_7C3750+60↑j
-mov     ecx, esi
-call    dword ptr [esi+780h]
-mov     edx, [edi+1Ch]
-mov     [esi+6E0h], edx
-mov     ecx, [esi+1A4h]
-test    cl, 8
-jnz     short loc_7C37F1
-mov     ecx, [edi+14h]
-mov     dword ptr [edi+14h], 0
-mov     [edi+18h], ecx
-pop     edi
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_7C37F1:                             ; CODE XREF: Audio_Process_7C3750+8F↑j
-test    cl, 10h
-jz      short loc_7C380E
-mov     edx, [edi+14h]
-or      dh, 8
-mov     [edi+14h], edx
-mov     ecx, [esi+1A4h]
-and     ecx, 0FFFFFFEFh
-mov     [esi+1A4h], ecx
-
-loc_7C380E:                             ; CODE XREF: Audio_Process_7C3750+A4↑j
-mov     ecx, [esi+1A4h]
-pop     edi
-and     ecx, 0FFFFFFF7h
-mov     [esi+1A4h], ecx
-pop     esi
-retn
-*/
 } }
 // 0x7CAACB
 namespace gamemd { void* Gap2Recv_7CAACB::RTtypeid_Helper(char* a2) {
