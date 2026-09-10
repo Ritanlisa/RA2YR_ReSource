@@ -983,6 +983,34 @@ class _CppBuilder(_Builder):
 # Public entry point
 # ============================================================
 
+def _strip_namespace_wrappers(tokens):
+    """Strip leading `namespace NAME {` wrappers (and their matching trailing
+    `}` tokens) so the first remaining `{` is the FUNCTION body opener.
+    Fixes issue #54: namespace-wrapped defs previously made the signature
+    discard logic eat the wrong prefix, corrupting the CFG of branchy bodies.
+    Comment tokens between wrappers/closers are skipped naturally."""
+    out = list(tokens)
+    depth = 0
+    while len(out) >= 3:
+        t0, t1, t2 = out[0], out[1], out[2]
+        if (t0.kind == KIND_IDENT and t0.value == "namespace"
+                and t1.kind == KIND_IDENT
+                and t2.kind == KIND_OP and t2.value == "{"):
+            depth += 1
+            out = out[3:]
+            continue
+        break
+    if depth:
+        removed = 0
+        j = len(out) - 1
+        while j >= 0 and removed < depth:
+            if out[j].kind == KIND_OP and out[j].value == "}":
+                out = out[:j] + out[j + 1:]
+                removed += 1
+            j -= 1
+    return out
+
+
 def build_cpp_cfg(cpp_function_body_text):
     """Build an `efv_model.CFG` (basic blocks + edges) from a C++ function. The
     input may be a full definition (signature + `{ body }`), a brace-wrapped
@@ -995,6 +1023,7 @@ def build_cpp_cfg(cpp_function_body_text):
         return cfg
 
     tokens = tokenize(cpp_function_body_text)
+    tokens = _strip_namespace_wrappers(tokens)
 
     # Find the function body opener: the first '{' token. Statements before it
     # (the signature) are discarded. If there is no '{', treat the whole stream
