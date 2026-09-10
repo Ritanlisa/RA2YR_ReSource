@@ -46,6 +46,16 @@ struct VolumeStruct
     int32_t  MaxVolume;       // 0x1C: default 16384 — maximum volume
 };
 
+// Mixer volume-state operations (src/e4/addr40_e4.cpp implementations)
+// IDA 0x407150: EndBufferMixer — set stop-flag (bit0) + scaled volume
+int EndBufferMixer(VolumeStruct* volume, int scaledVolume);
+// IDA 0x407160: mark playing (set bit0, return new Volume)
+int sub_407160(VolumeStruct* volume);
+// IDA 0x407170: RequestBufferMixer — clear bit0, refresh callback timestamp, set rate
+int RequestBufferMixer(VolumeStruct* volume, int rate);
+// IDA 0x407080: thunk -> RequestBufferMixer
+int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate);
+
 // CSP: VocClass matched via T1
 class VocClass
 {

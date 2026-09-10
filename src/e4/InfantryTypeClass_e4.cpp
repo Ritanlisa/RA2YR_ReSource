@@ -820,17 +820,13 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 // 0x524C70
 int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall InfantryTypeClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x524c76*/
-    return -2147467261; /*0x524c78*/
-  *a2 = -1366608936; /*0x524c86*/
-  a2[1] = 298976796; /*0x524c8e*/
-  a2[2] = 1610654892; /*0x524c97*/
-  a2[3] = -1252326136; /*0x524ca0*/
-  return 0; /*0x524c7d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1366608936;
+  a2[1] = 298976796;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
 }
 
 // 0x524D60

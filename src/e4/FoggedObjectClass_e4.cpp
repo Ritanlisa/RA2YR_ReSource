@@ -811,11 +811,7 @@ LABEL_22:
 // 0x4D27B0
 int FoggedObjectClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int FoggedObjectClass::_vt11()
-{
-  return 61; /*0x4d27b5*/
-}
+return 61;
 }
 
 // 0x4D2810

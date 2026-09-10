@@ -619,19 +619,12 @@ bool __stdcall JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass *aP0)
 // 0x4AFC90
 unsigned int * JumpjetLocomotionClass::GetCoordinate(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall JumpjetLocomotionClass::sub_4AFC90(_DWORD *a1, _DWORD *a2)
-{
-  int v2; // edx
-  int v3; // eax
-
-  v2 = a1[13]; /*0x4afc9d*/
-  v3 = a1[14]; /*0x4afca0*/
-  *a2 = a1[12]; /*0x4afca5*/
-  a2[1] = v2; /*0x4afca7*/
-  a2[2] = v3; /*0x4afcaa*/
-  return a2; /*0x4afcaf*/
-}
+unsigned int coordY = a1[13];
+unsigned int coordZ = a1[14];
+*a2 = a1[12];
+a2[1] = coordY;
+a2[2] = coordZ;
+return a2;
 }
 
 // 0x4AFCC0
@@ -1124,31 +1117,19 @@ char __stdcall JumpjetLocomotionClass::sub_4B0C40(int a1, int a2, unsigned int a
 // 0x4B0EF0
 char JumpjetLocomotionClass::UpdateFacingDirection(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_4B0EF0(int a1, int a2)
-{
-  return FacingClass::Update((char *)(*(_DWORD *)(a1 + 8) + 904), &a2); /*0x4b0f0f*/
-}
+return FacingClass::Update((char *)(a1[2] + 904), &a2);
 }
 
 // 0x4B4820
 int JumpjetLocomotionClass::StubReturnTwo(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4820(int a1)
-{
-  return 2; /*0x4b4825*/
-}
+return 2;
 }
 
 // 0x4B4880
 int JumpjetLocomotionClass::DispatchCheckState(TunnelLocomotionClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::DispatchCheckState(TunnelLocomotionClass *aP0)
-{
-  return JumpjetLocomotionClass::CheckState(aP0); /*0x4b488a*/
-}
+return JumpjetLocomotionClass::CheckState(aP0);
 }
 
 // 0x4B48D0
@@ -1324,119 +1305,72 @@ int __stdcall JumpjetLocomotionClass::sub_4B4BF0(int a1)
 // 0x4B4C00
 int JumpjetLocomotionClass::GetField_0x54(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4C00(int a1)
-{
-  return *(_DWORD *)(a1 + 84); /*0x4b4c07*/
-}
+return a1[21];
 }
 
 // 0x4B4C10
 int JumpjetLocomotionClass::GetField_0x58(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4C10(int a1)
-{
-  return *(_DWORD *)(a1 + 88); /*0x4b4c17*/
-}
+return a1[22];
 }
 
 // 0x4B4C20
 int JumpjetLocomotionClass::GetField_0x48(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4C20(int a1)
-{
-  return *(_DWORD *)(a1 + 72); /*0x4b4c27*/
-}
+return a1[18];
 }
 
 // 0x4B4CD0
 BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall JumpjetLocomotionClass::sub_4B4CD0(int a1)
-{
-  return *(_DWORD *)(a1 + 80) != 0; /*0x4b4cde*/
-}
+return a1[20] != 0;
 }
 
 // 0x4B4D90
 int JumpjetLocomotionClass::GetField_0x78(int a1, const void * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B4D90(int a1, const void *a2, int *a3)
-{
-  return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
+return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 // 0x4B4DA0
 LONG JumpjetLocomotionClass::GetField_0x7C(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B4DA0(int a1)
-{
-  return DriveLocomotionClass::AddRef(a1 - 4);
-}
+return DriveLocomotionClass::AddRef(a1 - 4);
 }
 
 // 0x4B4DB0
 LONG JumpjetLocomotionClass::GetField_0x80(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B4DB0(int a1)
-{
-  return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
-}
+return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 // 0x4B4DC0
 int JumpjetLocomotionClass::loc_4B4DC0(int a1, const void * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::loc_4B4DC0(int a1, const void *a2, int *a3)
-{
-  return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
-}
+return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 // 0x4B4DD0
 LONG JumpjetLocomotionClass::loc_4B4DD0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::loc_4B4DD0(int a1)
-{
-  return DriveLocomotionClass::AddRef(a1 - 24);
-}
+return DriveLocomotionClass::AddRef(a1 - 24);
 }
 
 // 0x4B4DE0
 LONG JumpjetLocomotionClass::loc_4B4DE0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::loc_4B4DE0(int a1)
-{
-  return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
-}
+return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
 }
 
 // 0x4B5B40
 unsigned int * JumpjetLocomotionClass::GetSpeedCoordinate(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall JumpjetLocomotionClass::sub_4B5B40(_DWORD *a1, _DWORD *a2)
-{
-  int v2; // edx
-  int v3; // eax
-
-  v2 = a1[8]; /*0x4b5b4d*/
-  v3 = a1[9]; /*0x4b5b50*/
-  *a2 = a1[7]; /*0x4b5b55*/
-  a2[1] = v2; /*0x4b5b57*/
-  a2[2] = v3; /*0x4b5b5a*/
-  return a2; /*0x4b5b5f*/
-}
+unsigned int coordY = a1[8];
+unsigned int coordZ = a1[9];
+*a2 = a1[7];
+a2[1] = coordY;
+a2[2] = coordZ;
+return a2;
 }
 
 // 0x4B6040
@@ -1651,81 +1585,49 @@ int __stdcall JumpjetLocomotionClass::sub_4B6610(int a1)
 // 0x4B6650
 void JumpjetLocomotionClass::Stub8(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall JumpjetLocomotionClass::Stub8(int a1)
-{
-  ; /*0x4b6650*/
-}
+  ;
 }
 
 // 0x4B66C0
 BOOL JumpjetLocomotionClass::ShortFunc_4B66C0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall JumpjetLocomotionClass::sub_4B66C0(int a1)
-{
-  return *(_DWORD *)(a1 + 20) != 0; /*0x4b66ce*/
-}
+return a1[5] != 0;
 }
 
 // 0x4B6740
 int JumpjetLocomotionClass::SmallStub_4B6740(int a1, const void * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B6740(int a1, const void *a2, int *a3)
-{
-  return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
+return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 // 0x4B6750
 LONG JumpjetLocomotionClass::SmallStub_4B6750(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B6750(int a1)
-{
-  return DropPodLocomotionClass::AddRef(a1 - 4);
-}
+return DropPodLocomotionClass::AddRef(a1 - 4);
 }
 
 // 0x4B6760
 LONG JumpjetLocomotionClass::SmallStub_4B6760(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B6760(int a1)
-{
-  return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
-}
+return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 // 0x4B6770
 int JumpjetLocomotionClass::SmallStub_4B6770(int a1, const void * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4B6770(int a1, const void *a2, int *a3)
-{
-  return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
-}
+return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 // 0x4B6780
 LONG JumpjetLocomotionClass::SmallStub_4B6780(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B6780(int a1)
-{
-  return DropPodLocomotionClass::AddRef(a1 - 24);
-}
+return DropPodLocomotionClass::AddRef(a1 - 24);
 }
 
 // 0x4B6790
 LONG JumpjetLocomotionClass::SmallStub_4B6790(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::sub_4B6790(int a1)
-{
-  return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
-}
+return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
 }
 
 // 0x4C94B0
@@ -2484,13 +2386,9 @@ _DWORD *__stdcall JumpjetLocomotionClass::sub_4CF830(int a1, _DWORD *a2)
 // 0x4CF940
 unsigned int * JumpjetLocomotionClass::ShortFunc_4CF940(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall JumpjetLocomotionClass::sub_4CF940(int a1, _DWORD *a2)
-{
-  *a2 = 0; /*0x4cf948*/
-  a2[1] = 0; /*0x4cf94a*/
-  return a2; /*0x4cf94d*/
-}
+*a2 = 0;
+a2[1] = 0;
+return a2;
 }
 
 // 0x4CFB00
@@ -2533,11 +2431,7 @@ float *__stdcall JumpjetLocomotionClass::sub_4CFB00(int a1, float *a2, _DWORD *a
 // 0x4CFC10
 char JumpjetLocomotionClass::SynchronizeFacingDirection(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_4CFC10(int a1, int a2)
-{
-  return FacingClass::Set_SyncLog((char *)(*(_DWORD *)(a1 + 8) + 928), &a2); /*0x4cfc2f*/
-}
+return FacingClass::Set_SyncLog((char *)(a1[2] + 928), &a2);
 }
 
 // 0x4CFCF0
@@ -2572,11 +2466,7 @@ int __stdcall JumpjetLocomotionClass::sub_4CFD20(_BYTE *a1)
 // 0x4CFD90
 char JumpjetLocomotionClass::ShortFunc_4CFD90(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_4CFD90(int a1)
-{
-  return StreamClass::GetDirty(a1); /*0x4cfd9a*/
-}
+return StreamClass::GetDirty(a1);
 }
 
 // 0x4CFDA0
@@ -2619,43 +2509,27 @@ int __stdcall JumpjetLocomotionClass::sub_4CFE50(_BYTE *a1)
 // 0x4D0400
 BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4D0400(_DWORD *this, int a2)
-{
-  if ( a2 ) /*0x4d0409*/
-    WinAPI::Wrapper(-2147467261); /*0x4d0410*/
-  return *this == 0; /*0x4d041e*/
-}
+if (a2)
+    WinAPI::Wrapper(-2147467261);
+return *(unsigned int *)this == 0;
 }
 
 // 0x4D0510
 int JumpjetLocomotionClass::GetInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::_vt0(int a1, const void *a2, _DWORD *a3)
-{
-  return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
-}
+return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 // 0x4D0520
 LONG JumpjetLocomotionClass::GetInterface2(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::_vt1(int a1)
-{
-  return COM::AddRef(a1 - 4);
-}
+return COM::AddRef(a1 - 4);
 }
 
 // 0x4D0530
 LONG JumpjetLocomotionClass::Stub2(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall JumpjetLocomotionClass::_vt2(int a1)
-{
-  return COM::ReleaseRef((volatile LONG *)(a1 - 4));
-}
+return COM::ReleaseRef((volatile LONG *)(a1 - 4));
 }
 
 // 0x5142A0
@@ -2905,11 +2779,7 @@ _DWORD *__stdcall JumpjetLocomotionClass::sub_516320(_DWORD *a1)
 // 0x516370
 char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_516370(int a1, int a2)
-{
-  return FacingClass::Update((char *)(*(_DWORD *)(a1 + 8) + 904), &a2); /*0x51638f*/
-}
+return FacingClass::Update((char *)(a1[2] + 904), &a2);
 }
 
 // 0x516BF0
@@ -3195,11 +3065,7 @@ int __stdcall JumpjetLocomotionClass::sub_54AD30(int a1, int a2)
 // 0x54AE50
 char JumpjetLocomotionClass::SmallStub_54AE50(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_54AE50(int a1)
-{
-  return *(_BYTE *)(a1 + 72); /*0x54ae57*/
-}
+return *(unsigned char *)(a1 + 72);
 }
 
 // 0x54AE60
@@ -4283,21 +4149,13 @@ LONG __stdcall JumpjetLocomotionClass::sub_54E040(int a1)
 // 0x55AC50
 void JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
-{
-  ; /*0x55ac50*/
-}
+  ;
 }
 
 // 0x55AC60
 char JumpjetLocomotionClass::StubReturnTrue_3(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::sub_55AC60(int a1)
-{
-  return 1; /*0x55ac62*/
-}
+return 1;
 }
 
 // 0x55AC70

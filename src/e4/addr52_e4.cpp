@@ -1084,14 +1084,9 @@ void __thiscall sub_52AAF0(INIEntry_INIClass *this)
 namespace gamemd {
 int CompareFunc3Int(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl CompareFunc3Int(_DWORD *a1, _DWORD *a2)
-{
-  if ( *a1 == *a2 )
-    return 0; /*0x52b6b0*/
-  else
-    return *a1 >= *a2 ? 1 : -1;
-}
+if ( *a1 == *a2 )
+    return 0;
+return 2 * (*a1 >= *a2) - 1;
 }
 } // namespace gamemd
 

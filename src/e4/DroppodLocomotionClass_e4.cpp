@@ -186,17 +186,13 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
 // 0x4B6200
 int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DropPodLocomotionClass::_vt03(int a1, _DWORD *a2)
-{
-  if ( !a2 ) /*0x4b6206*/
-    return -2147467261; /*0x4b6208*/
-  *a2 = 1247291205; /*0x4b6216*/
-  a2[1] = 298948665; /*0x4b621e*/
-  a2[2] = -1610610249; /*0x4b6227*/
-  a2[3] = -777003740; /*0x4b6230*/
-  return 0; /*0x4b620d*/
-}
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291205;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
 }
 
 // 0x4B6240

@@ -52,7 +52,8 @@ public:
     // type I/O
     void loadSWProperties(CCINIClass* ini);                                           // 0x474EE0
     static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
-    static SuperWeaponTypeClass* FindByName(const char* name);                         // 0x5117D0
+    // returns type index: -1 = not found, -2 = "<none>" (binary returns v4[46], an int)
+    static int FindByName(const char* name);                                            // 0x5117D0
     bool IsAvailable() const;                                                         // 0x4F6540
     void Construct(const char* pID);  // 0x5113F0
 

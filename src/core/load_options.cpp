@@ -534,17 +534,13 @@ retn    8
 // IDA 0x55A2A0: ClearBuffer
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LoadOptions::sub_55A2A0(int this)
+if ( this->entries && this->owns_memory )
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    *(_DWORD *)(this + 4) = 0;
-  }
-  *(_BYTE *)(this + 13) = 0;
-  *(_DWORD *)(this + 8) = 0;
+    operator delete(this->entries);
+    this->entries = nullptr;
 }
+this->owns_memory = 0;
+this->count = 0;
 
 /* ASM:
 push    ebx             ; TODO: classify (grp=blit, sz=0x27)
@@ -573,27 +569,18 @@ retn
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
-int LoadOptions::FindItem(const uint32_t* key) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
-{
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !*(_BYTE *)(this + 12) )
+int LoadOptions::FindItem(FileEntryClass* const* key) {
+if ( !is_active )
     return 0;
-  v3 = *(_DWORD *)(this + 8);
-  result = 0;
-  if ( v3 <= 0 )
+int result = 0;
+if ( (int)count <= 0 )
     return -1;
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-      return -1;
-  }
-  return result;
+for ( FileEntryClass* const* i = entries; *i != *key; ++i )
+{
+    if ( ++result >= (int)count )
+        return -1;
 }
+return result;
 
 /* ASM:
 mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x33)

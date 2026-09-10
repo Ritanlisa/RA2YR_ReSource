@@ -29,11 +29,7 @@ void __thiscall VtableStub::643E70(_DWORD *this)
 // 0x65D690
 char VtableStub::RetZero_eax_35(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall VtableStub::RetZero_eax_35(int a1)
-{
-  return 0; /*0x65d692*/
-}
+return 0;
 }
 
 // 0x72D450

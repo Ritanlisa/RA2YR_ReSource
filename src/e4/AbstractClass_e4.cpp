@@ -749,11 +749,7 @@ bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
 namespace gamemd {
 int AbstractClass::compareType(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AbstractClass::sub_487E50(int a1)
-{
-  return 11; /*0x487e55*/
-}
+return 11;
 }
 } // namespace gamemd
 

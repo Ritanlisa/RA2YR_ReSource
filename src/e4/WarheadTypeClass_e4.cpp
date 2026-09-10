@@ -922,11 +922,7 @@ int __thiscall WarheadTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // 0x75E4F0
 int WarheadTypeClass::GetObjectSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WarheadTypeClass::_vt12()
-{
-  return 464; /*0x75e4f5*/
-}
+return 464;
 }
 
 // 0x75E510

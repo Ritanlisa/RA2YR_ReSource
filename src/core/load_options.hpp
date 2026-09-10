@@ -81,7 +81,7 @@ public:
     void ClearBuffer();  // 0x55A2A0
 
     // IDA 0x55A2D0: FindItem — linear search by dword key
-    int FindItem(const uint32_t* key);  // 0x55A2D0
+    int FindItem(FileEntryClass* const* key);  // 0x55A2D0
 
     // IDA 0x55A310: PointerToIndex — compute index from pointer
     uint32_t PointerToIndex(FileEntryClass* ptr);  // 0x55A310

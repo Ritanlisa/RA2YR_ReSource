@@ -64,11 +64,7 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
 // 0x6635B0
 int RocketLocomotionClass::StubReturn96()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int RocketLocomotionClass::_vt09()
-{
-  return 96; /*0x6635b5*/
-}
+return 96;
 }
 
 // 0x6635C0

@@ -651,12 +651,7 @@ DWORD __thiscall sub_7717A0(DWORD *this)
 namespace gamemd {
 int j_Audio_IsPlaying()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int j_Audio_IsPlaying()
-{
-  return Audio::IsPlaying();
-}
+return Audio::IsPlaying();
 }
 } // namespace gamemd
 

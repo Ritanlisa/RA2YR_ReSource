@@ -19,11 +19,7 @@ int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerC
 // 0x6CF4B0
 int SwizzleManagerClass::AddRef(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SwizzleManagerClass::_vt01(int a1)
-{
-  return 1; /*0x6cf4b5*/
-}
+return 1;
 }
 
 // 0x6CF4F0

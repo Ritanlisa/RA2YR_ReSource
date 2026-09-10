@@ -549,11 +549,7 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int WeaponTypeClass::_vt11()
-{
-  return 49; /*0x7730e5*/
-}
+return 49;
 }
 
 // 0x7730F0

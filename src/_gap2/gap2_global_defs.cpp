@@ -2,6 +2,7 @@
 // Gap 2: REAL definitions for global functions / LNK2019 globals & data.
 #include <cstdint>
 #include "_gap2/gap2_global_decls.hpp"
+#include "misc/super_weapon.hpp"
 
 // forward declarations for data-global pointer types
 namespace gamemd { class HouseTypeClass; }
@@ -9454,17 +9455,13 @@ retn
 */
 } }
 // 0x45A160
-namespace gamemd { int Release2COM() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COM_Release2(int *this)
+namespace gamemd {
+int Release2COM(IUnknown** a1)
 {
-  int result; // eax
-
-  result = *this;
-  if ( *this )
-    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
-  return result;
-}
+IUnknown* intf = *a1;
+if ( intf )
+    return intf->Release();
+return 0;
 
 /* ASM:
 mov     eax, [ecx]
@@ -9477,7 +9474,8 @@ call    dword ptr [ecx+8]
 locret_45A16C:                          ; CODE XREF: Release2COM+4↑j
 retn
 */
-} }
+}
+}
 // 0x465570
 namespace gamemd { void* CalculateBuildingFoundationBounds(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11224,18 +11222,13 @@ retn
 */
 } }
 // 0x48DEB0
-namespace gamemd { int COMStub_48DEB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_48DEB0(void *this)
+namespace gamemd {
+int COMStub_48DEB0(const char* a1)
 {
-  int v1; // eax
-
-  v1 = SuperWeaponTypeClass::FindByName(this);
-  if ( v1 == -1 )
+int idx = SuperWeaponTypeClass::FindByName(a1);
+if ( idx == -1 )
     return 0;
-  else
-    return 1 << v1;
-}
+return 1 << idx;
 
 /* ASM:
 push    esi
@@ -11255,7 +11248,8 @@ mov     eax, esi
 pop     esi
 retn
 */
-} }
+}
+}
 // 0x48DF30
 namespace gamemd { int LookupNameIndex() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13743,17 +13737,13 @@ retn    8
 */
 } }
 // 0x4D0430
-namespace gamemd { int Release3COM() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COM_Release3(int *this)
+namespace gamemd {
+int Release3COM(IUnknown** a1)
 {
-  int result; // eax
-
-  result = *this;
-  if ( *this )
-    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
-  return result;
-}
+IUnknown* intf = *a1;
+if ( intf )
+    return intf->Release();
+return 0;
 
 /* ASM:
 mov     eax, [ecx]
@@ -13766,7 +13756,8 @@ call    dword ptr [ecx+8]
 locret_4D043C:                          ; CODE XREF: Release3COM+4↑j
 retn
 */
-} }
+}
+}
 // 0x4DC340
 namespace gamemd { int DrawFootTargetLine() {
 // [IDA decompile] original pseudocode - translation pending (final goal)

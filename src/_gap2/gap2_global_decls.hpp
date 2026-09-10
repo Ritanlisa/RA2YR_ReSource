@@ -3,6 +3,7 @@
 // (and LNK2019 globals/data). Definitions in gap2_global_defs.cpp.
 #pragma once
 #include <cstdint>
+#include <unknwn.h>
 
 extern "C" int BlitterCopySimpleSHP();  // LNK2019 cdecl global
 namespace gamemd { int IsNonNullPtr(int); }  // 0x70E240
@@ -32,14 +33,14 @@ namespace gamemd { int MarkBuildingFoundationCells(int a1); }  // 0x455F10
 namespace gamemd { int RecalculateBuildingFoundation(); }  // 0x4561F0
 namespace gamemd { void* PlayHealthDependentBuildingAnim(); }  // 0x458330
 namespace gamemd { int ProcessDataCellClass(); }  // 0x459CA0
-namespace gamemd { int Release2COM(); }  // 0x45A160
+namespace gamemd { int Release2COM(IUnknown** a1); }  // 0x45A160 (thiscall: this -> interface ptr at +0)
 namespace gamemd { void* CalculateBuildingFoundationBounds(void* a1); }  // 0x465570
 namespace gamemd { int SmallFunc_471890(); }  // 0x471890
 namespace gamemd { int GetBridgeCellColor(void* a1, int a2); }  // 0x47BDB0
 namespace gamemd { int GetCellRadarColors(int a1, int a2); }  // 0x47C060
 namespace gamemd { int IsCoordValidMap(int a1); }  // 0x4838E0
 namespace gamemd { int Helper_486E30(); }  // 0x486E30
-namespace gamemd { int COMStub_48DEB0(); }  // 0x48DEB0
+namespace gamemd { int COMStub_48DEB0(const char* a1); }  // 0x48DEB0 (thiscall: this = name string)
 namespace gamemd { int LookupNameIndex(); }  // 0x48DF30
 namespace gamemd { int UpdateScoreScreenStatistics(); }  // 0x49B930
 namespace gamemd { int SmallFunc_49E740(void* a1); }  // 0x49E740
@@ -52,7 +53,7 @@ namespace gamemd { void* TerrainInitMap(void* a1, int a2); }  // 0x4CB760
 namespace gamemd { void* BuildResultPacket(void* a1, void* a2); }  // 0x4CB7C0
 namespace gamemd { void* WalkPathfindingLine(void* a1, int a2, void* a3, int a4, int a5); }  // 0x4CBC40
 namespace gamemd { int ProcessDataHelper(void* a1, int a2); }  // 0x4CE4B0
-namespace gamemd { int Release3COM(); }  // 0x4D0430
+namespace gamemd { int Release3COM(IUnknown** a1); }  // 0x4D0430 (thiscall: this -> interface ptr at +0)
 namespace gamemd { int DrawFootTargetLine(); }  // 0x4DC340
 namespace gamemd { int GetResourceIDHardcodedCSF(); }  // 0x4E3320
 namespace gamemd { int GetResourceID2CSF(); }  // 0x4E37D0

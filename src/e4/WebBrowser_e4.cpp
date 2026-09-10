@@ -192,11 +192,7 @@ int __thiscall WebBrowser::_vt05(WebBrowser *this)
 namespace gamemd {
 int WebBrowser::Stat()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::_vt13(WebBrowser *this)
-{
-  return 0; /*0x773bb2*/
-}
+return 0;
 }
 } // namespace gamemd
 

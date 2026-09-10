@@ -8758,43 +8758,23 @@ CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) co
 CoordStruct* BuildingClass::GetAdjustedExitCoords(CoordStruct* out) const { return GetExitCoords(out, 0); }
 // 0x44f640
 CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x44f640
-int __thiscall BuildingClass::GetFactoryPosition(#377 *this)
+BuildingTypeClass* buildingType = this->Type;
+CoordStruct* coords = &this->location;
+if ( buildingType->ExitCoord.X == 0 && buildingType->ExitCoord.Y == 0 && buildingType->ExitCoord.Z == 0 )
 {
-  _DWORD *v1; // eax
-  _DWORD *v2; // ecx
-  int v3; // esi
-  int v4; // edi
-  int v5; // ecx
-  int v6; // edx
-  int v7; // esi
-  int *v9; // ecx
-  char v10[12]; // [esp+4h] [ebp-Ch] BYREF
-  int *v11; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)*((_DWORD *)this + 328);
-  if ( v1[946] == MEMORY[0x89C848] && v1[947] == MEMORY[0x89C84C] && v1[948] == MEMORY[0x89C850] )
-  {
-    v9 = (int *)(*(int (__thiscall **)(#377 *, char *))(*(_DWORD *)this + 72))(this, v10);
-    *v11 = *v9;
-    v11[1] = v9[1];
-    v11[2] = v9[2];
-    return (int)v11;
-  }
-  else
-  {
-    v2 = (_DWORD *)((char *)this + 156);
-    v3 = v2[1];
-    v4 = v2[2];
-    v5 = *v2 + v1[946];
-    v6 = v3 + v1[947];
-    v7 = v1[948];
-    *v11 = v5;
-    v11[1] = v6;
-    v11[2] = v4 + v7;
-    return (int)v11;
-  }
+    CoordStruct exitCoords;
+    CoordStruct* result = this->GetExitCoords(&exitCoords, 0);
+    out->X = result->X;
+    out->Y = result->Y;
+    out->Z = result->Z;
+    return out;
+}
+else
+{
+    out->X = coords->X + buildingType->ExitCoord.X;
+    out->Y = coords->Y + buildingType->ExitCoord.Y;
+    out->Z = coords->Z + buildingType->ExitCoord.Z;
+    return out;
 }
 /* ASM:
 mov     eax, [ecx+520h]
@@ -24585,11 +24565,7 @@ retn    4
 // IDA 0x425260: set field at offset 8 (activates flag)
 // 0x425260
 void AnimClass::SetField8(int v) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Accessor_425260(_BYTE *this)
-{
-  *(this + 414) = 1;
-}
+PowerOff = 1;
 
 /* ASM:
 mov     byte ptr [ecx+19Eh], 1

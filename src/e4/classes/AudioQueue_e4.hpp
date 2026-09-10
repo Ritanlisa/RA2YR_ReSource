@@ -7,7 +7,7 @@ struct AudioQueue {
     unsigned int * CreateNode();  // 0x402AF0
     int PreallocateChannels(unsigned int * a1, int a2);  // 0x403530
     int * IteratorNext();  // 0x4035D0
-    int FindBestChannel(int a1, int a2);  // 0x4035F0
+    static int FindBestChannel(int a1, int a2);  // 0x4035F0
     int StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int);  // 0x403730
     int DeactivateAllMatching(int a1, int a2);  // 0x403770
     int GetNext();  // 0x4073C0

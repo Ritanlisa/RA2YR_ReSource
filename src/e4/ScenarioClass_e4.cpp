@@ -68,11 +68,7 @@ void *ScenarioClass_CopyStartPositions()
 namespace gamemd {
 void ScenarioClass::StubReturnTrue7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::StubReturnTrue7()
-{
-  ; /*0x5c0f90*/
-}
+  ;
 }
 } // namespace gamemd
 

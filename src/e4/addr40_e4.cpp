@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "misc/audio.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
 
 // 0x4010C0
 namespace gamemd {
@@ -34,16 +37,11 @@ int __fastcall AudioMixer_EndFrame(int *a1, _DWORD *a2)
 
 // 0x401190
 namespace gamemd {
-int sub_401190(int a1, int a2)
+int sub_401190(unsigned int* a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_401190(int a1, int a2)
-{
-  int v2; // edx
-
-  v2 = (unsigned __int64)(1374389535LL * a2 * HIWORD(*(_DWORD *)(a1 + 44))) >> 32; /*0x40119e*/
-  return ((unsigned int)v2 >> 31) + (v2 >> 5); /*0x4011ac*/
-}
+long long product = 1374389535LL * a2 * (a1[11] >> 16);
+int v2 = (int)((unsigned long long)product >> 32);
+return ((unsigned int)v2 >> 31) + (v2 >> 5);
 }
 } // namespace gamemd
 
@@ -516,13 +514,9 @@ int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHX
 
 // 0x401FB0
 namespace gamemd {
-int sub_401FB0()
+int sub_401FB0(unsigned int* a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_401FB0(_DWORD *this)
-{
-  return *(this + 3); /*0x401fb3*/
-}
+return a1[3];
 }
 } // namespace gamemd
 
@@ -551,25 +545,17 @@ int __thiscall sub_401FC0(int this)
 
 // 0x402020
 namespace gamemd {
-int sub_402020()
+int sub_402020(unsigned int* a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_402020(_DWORD *this)
-{
-  return *(this + 5); /*0x402023*/
-}
+return a1[5];
 }
 } // namespace gamemd
 
 // 0x402430
 namespace gamemd {
-int sub_402430()
+int sub_402430(unsigned int* a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_402430(_DWORD *this)
-{
-  return *(this + 41) & 8; /*0x402439*/
-}
+return a1[41] & 8;
 }
 } // namespace gamemd
 
@@ -1043,19 +1029,12 @@ int __fastcall sub_4035B0(int a1, int *a2)
 namespace gamemd {
 int sub_4036C0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_4036C0(int a1, int a2)
-{
-  int v3; // eax
-  int v4; // esi
+int channel = AudioQueue::FindBestChannel(a1, 1);
+if ( channel )
+    sub_402440(channel, a2);
+return channel;
+}
 
-  v3 = AudioQueue::FindBestChannel(a1, 1); /*0x4036c9*/
-  v4 = v3; /*0x4036ce*/
-  if ( v3 ) /*0x4036d2*/
-    sub_402440(v3, a2); /*0x4036d8*/
-  return v4; /*0x4036df*/
-}
-}
 } // namespace gamemd
 
 // 0x4036F0
@@ -1082,25 +1061,17 @@ int __fastcall sub_4036F0(int a1, int a2)
 
 // 0x403810
 namespace gamemd {
-int sub_403810(int (**this)(void) a1)
+int sub_403810(int (**a1)(void))
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_403810(int (**this)(void))
-{
-  return (*(this + 67))();
-}
+return a1[67]();
 }
 } // namespace gamemd
 
 // 0x4038E0
 namespace gamemd {
-BOOL sub_4038E0(long long a2)
+int sub_4038E0(unsigned long long* a1, unsigned long long a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4038E0(_QWORD *this, __int64 a2)
-{
-  return (unsigned __int64)(a2 - *(this + 5)) >= *this; /*0x403903*/
-}
+return a2 - a1[5] >= *a1;
 }
 } // namespace gamemd
 
@@ -3314,15 +3285,11 @@ int __thiscall sub_407060(unsigned int *this)
 
 // 0x407080
 namespace gamemd {
-int j_Mixer_RequestBuffer()
+int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __fastcall j_Mixer_RequestBuffer(unsigned int *a1, int a2)
-{
-  return RequestBufferMixer(a1, a2);
+return RequestBufferMixer(volume, rate);
 }
-}
+
 } // namespace gamemd
 
 // 0x407100
@@ -3353,65 +3320,46 @@ int __fastcall SetupSampleAudioMixer(int *a0, ObjectClass *aP1)
 
 // 0x407150
 namespace gamemd {
-int Mixer_EndBuffer(int * a1, int a2)
+int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Mixer_EndBuffer(int *a1, int a2)
-{
-  int result; // eax
+int result = volume->Volume | 1;
+volume->Volume = result;
+volume->ScaledVolume = scaledVolume << 16;
+return result;
+}
 
-  result = *a1; /*0x407150*/
-  LOBYTE(result) = *a1 | 1; /*0x407152*/
-  *a1 = result; /*0x407157*/
-  a1[2] = a2 << 16; /*0x407159*/
-  return result; /*0x40715c*/
-}
-}
 } // namespace gamemd
 
 // 0x407160
 namespace gamemd {
-int sub_407160()
+int sub_407160(VolumeStruct* volume)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_407160(int *this)
-{
-  int result; // eax
+int result = volume->Volume | 1;
+volume->Volume = result;
+return result;
+}
 
-  result = *this; /*0x407160*/
-  LOBYTE(result) = *this | 1; /*0x407162*/
-  *this = result; /*0x407164*/
-  return result; /*0x407166*/
-}
-}
 } // namespace gamemd
 
 // 0x407170
 namespace gamemd {
-int Mixer_RequestBuffer(unsigned int * a1, int a2)
+int RequestBufferMixer(VolumeStruct* volume, int rate)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Mixer_RequestBuffer(unsigned int *a1, int a2)
+int result = volume->ScaledVolume;
+unsigned int flags = volume->Volume;
+int audioState = volume->AudioState;
+volume->Volume = flags & 0xFFFFFFFE;
+if ( result == audioState )
 {
-  unsigned int v4; // edx
-  int result; // eax
-  unsigned int v6; // ecx
-  unsigned int v7; // edx
+    unsigned long long now = Audio::Callback();
+    volume->hBuffer = (uint32_t)now;
+    volume->MaxVolume = (int)((now >> 32) & 0xFFFFFFFF);
+    result = (int)now;
+}
+volume->ScaledVolume = rate << 16;
+return result;
+}
 
-  v4 = *a1; /*0x407176*/
-  result = a1[2]; /*0x407178*/
-  v6 = a1[1]; /*0x40717b*/
-  *a1 = v4 & 0xFFFFFFFE; /*0x407183*/
-  if ( result == v6 ) /*0x407185*/
-  {
-    result = Audio::Callback(); /*0x407187*/
-    a1[6] = result; /*0x40718c*/
-    a1[7] = v7; /*0x40718f*/
-  }
-  a1[2] = a2 << 16; /*0x407195*/
-  return result; /*0x407198*/
-}
-}
 } // namespace gamemd
 
 // 0x4071A0
@@ -9355,7 +9303,6 @@ void nullsub_56()
 // 0x40D300
 namespace gamemd {
 void nullsub_57()
-// 0x40d260
 {
   ;
 }
