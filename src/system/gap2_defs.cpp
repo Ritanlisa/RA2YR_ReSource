@@ -29,13 +29,8 @@
 namespace gamemd { unsigned int Randomizer::Random() { return 0; } }
 // 0x401980
 namespace gamemd { int CCFileClass::Destru_vt08(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x401980
-int __thiscall CCFileClass::Destru_vt08(void *this, int a2, int a3)
-{
-  (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 8))(this, a2);
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 28))(this, a3);
-}
+    this->SetFileName((const char*)a1);
+    return (int)this->Open((FileAccessMode)a2);
 
 /* ASM:
 push    esi
@@ -1151,11 +1146,7 @@ retn    4
 } }
 // 0x431F30
 namespace gamemd { bool BufferIOFileClass::Read() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BufferIOFileClass::_vt06(int this)
-{
-  return *(_BYTE *)(this + 37) && *(_BYTE *)(this + 41) || *(_DWORD *)(this + 20) != -1;
-}
+    return this->BufferDirty && this->CacheReadAhead || this->Handle != INVALID_HANDLE_VALUE;
 
 /* ASM:
 mov     al, [ecx+25h]
@@ -71291,11 +71282,7 @@ retn
 } }
 // 0x658770
 namespace gamemd { void* RadarClass::Destru_vt33(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall RadarClass::Destru_vt33(_DWORD *this, int a2)
-{
-  return DisplayClass::Draw(this, a2);
-}
+    return DisplayClass::Draw(a1);
 
 /* ASM:
 mov     eax, [esp+arg_0]
@@ -72382,12 +72369,7 @@ retn    4
 } }
 // 0x65D420
 namespace gamemd { bool RawFileClass::Write() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x65d420
-BOOL __thiscall RawFileClass::Write(_DWORD *this)
-{
-  return *(this + 5) != -1;
-}
+    return this->Handle != INVALID_HANDLE_VALUE;
 
 /* ASM:
 mov     edx, [ecx+14h]
@@ -76831,13 +76813,9 @@ retn    4
 } }
 // 0x68BF50
 namespace gamemd { int ScenarioClass::Set_Waypoint(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x68bf50
-int __thiscall ScenarioClass::Set_Waypoint(char *this, int a2, int a3)
-{
-  *(_DWORD *)(this + 4 * a2 + 1586) = a3;
-  return a3;
-}
+    this->waypoints[a1].X = (short)(unsigned short)a2;
+    this->waypoints[a1].Y = (short)((unsigned int)a2 >> 16);
+    return a2;
 
 /* ASM:
 mov     edx, [esp+arg_0]
@@ -86496,11 +86474,7 @@ retn
 } }
 // 0x750080
 namespace gamemd { void Crate::processCratePickup(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_750080(_DWORD *this, int a2)
-{
-  *this = 0;
-}
+    this->crate_timer.StartTime = 0;
 
 /* ASM:
 mov     dword ptr [ecx], 0

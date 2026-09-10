@@ -671,11 +671,7 @@ retn    4
 } } }
 // 0x410300
 namespace ra2 { namespace game { int AbstractClass::COMStub_AddRef() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::_vt1(#374 *this)
-{
-  return 1;
-}
+    return 1;
 
 /* ASM:
 mov     eax, 1
@@ -684,11 +680,7 @@ retn    4
 } } }
 // 0x410310
 namespace ra2 { namespace game { int AbstractClass::COMStub_Release() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::_vt2(#374 *this)
-{
-  return 1;
-}
+    return 1;
 
 /* ASM:
 mov     eax, 1
@@ -2003,11 +1995,7 @@ jmp     AircraftClass__Release
 } } }
 // 0x41CFA0
 namespace ra2 { namespace game { int ObjectClass::GetMember41_2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass_GetMember41_2(_DWORD *this)
-{
-  return *(this + 41);
-}
+    return this->location.Z;
 
 /* ASM:
 mov     eax, [ecx+0A4h]
@@ -8683,12 +8671,7 @@ retn
 } } }
 // 0x50D9D0
 namespace ra2 { namespace game { bool TechnoClass::updateVeterancy() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x50d9d0
-BOOL __thiscall TechnoClass::updateVeterancy(_DWORD *this)
-{
-  return *(this + 90) > 0;
-}
+    return this->firepowerMultiplier > 0;
 
 /* ASM:
 mov     edx, [ecx+168h]
@@ -8699,17 +8682,11 @@ retn
 */
 } } }
 // 0x50DAA0
-namespace ra2 { namespace game { int FootClass::checkTurning() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_50DAA0(unsigned int *this)
-{
-  unsigned int result; // eax
-
-  result = *(this + 120);
-  if ( result >= 4 )
-    return 0;
-  return result;
-}
+int ra2::game::FootClass::checkTurning() {
+    unsigned int result = this->disguiseCreationFrame;
+    if ( result >= 4 )
+        return 0;
+    return result;
 
 /* ASM:
 mov     eax, [ecx+1E0h]
@@ -8724,7 +8701,7 @@ xor     eax, eax
 locret_50DAB1:                          ; CODE XREF: FootClass__checkTurning+D↑j
 retn
 */
-} } }
+}
 // 0x50E010
 namespace ra2 { namespace game { void TechnoClass::Find(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -10593,18 +10570,11 @@ retn    4
 */
 } } }
 // 0x5B3040
-namespace ra2 { namespace game { int MissionClass::GetPrimaryOrFallback() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5b3040
-int __thiscall MissionClass::GetPrimaryOrFallback(#377 *this)
-{
-  int result; // eax
-
-  result = *((_DWORD *)this + 43);
-  if ( result == -1 )
-    return *((_DWORD *)this + 45);
-  return result;
-}
+int ra2::game::MissionClass::GetPrimaryOrFallback() {
+    int result = this->currentMission;
+    if ( result == -1 )
+        return this->queuedMission;
+    return result;
 
 /* ASM:
 mov     eax, [ecx+0ACh]
@@ -10615,7 +10585,7 @@ mov     eax, [ecx+0B4h]
 locret_5B3051:                          ; CODE XREF: MissionClass__GetPrimaryOrFallback+9↑j
 retn
 */
-} } }
+}
 // 0x5B3060
 namespace ra2 { namespace game { int ObjectClass::ProcessCloaking() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14824,12 +14794,7 @@ retn
 } } }
 // 0x5F5F30
 namespace ra2 { namespace game { int ObjectClass::GetMember41() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5f5f30
-int __thiscall ObjectClass::GetMember41(#374 *this)
-{
-  return *((_DWORD *)this + 41);
-}
+    return this->location.Z;
 
 /* ASM:
 mov     eax, [ecx+0A4h]
@@ -26056,11 +26021,7 @@ retn
 } } }
 // 0x70DDF0
 namespace ra2 { namespace game { int TechnoClass::GetMember81() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass_GetMember81(_DWORD *this)
-{
-  return *(this + 81);
-}
+    return this->gattlingStage;
 
 /* ASM:
 mov     eax, [ecx+144h]
@@ -26357,12 +26318,7 @@ retn
 } } }
 // 0x70FEB0
 namespace ra2 { namespace game { bool FootClass::checkPassability() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x70feb0
-BOOL __thiscall FootClass::checkPassability(_DWORD *this)
-{
-  return *(this + 115) != 0;
-}
+    return this->secondaryTurretIndex != 0;
 
 /* ASM:
 mov     edx, [ecx+1CCh]
@@ -28792,12 +28748,8 @@ retn
 } } }
 // 0x746D60
 namespace ra2 { namespace game { int TechnoClass::releaseSpawns() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::sub_746D60(#377 *this)
-{
-  TechnoClass::CreateDeathAnim((int)this);
-  return ObjectClass::FreeCaptureManager(this);
-}
+    TechnoClass::CreateDeathAnim();
+    return ObjectClass::FreeCaptureManager();
 
 /* ASM:
 push    esi

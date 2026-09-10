@@ -1117,6 +1117,6 @@ extern uint32_t g_GameScreenConfig; // data: 0xB78838
 extern uint32_t uNumber; // data: 0xB78B80
 extern void* lp; // data: 0xB78B98
 extern void* hHeap; // data: 0xB78B9C
-extern uint32_t Count; // data: 0xB79BE0
+extern uint32_t CRTStreamCount; // data: 0xB79BE0
 
 } // namespace gamemd
