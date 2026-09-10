@@ -4,12 +4,13 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-10 G2+G3 会话更新：证据补全轮 + 批量翻译第一波）**：
+> **执行状态首查表（2026-09-10 G4 会话更新：G4 证据补全 + 舰队波 1 大丰收）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
-> | **G2 证据补全轮** | ✅ **完成（2026-09-10，提交 c520e656 + 重锚）** | Type 家族布局重建（ctor 写入 + YRpp 锚点三层互证）：TechnoTypeClass 748→**3576**（249 成员）/ InfantryType 39 全解 / UnitType 37 / AircraftType 768→3600 / BuildingType 6132→**6040**（PowerBonus@0xEE0 与 GetPowerOutput 二进制+09-08 裁决三方对齐）/ SessionClass 36 成员（尾界 0x30DC）/ 容器族（VectorClass=16B/DVC=24/TypeList=28 ctor 间距铁证）。class_layouts+member_lookup+til 三方同步。**偏移→OO 重写 9,215→10,075**（unmapped 6,204→5,430） |
-> | **G3 批量翻译第一波** | ✅ **+184**（提交 47f8961a + 重锚） | completed **919→1,103** / pending **17,075**。多 agent 舰队模式验证：VectorClass 62（100% PASS）+ CRT 47（harness 抽检 46/47 零错）+ 核心类 9 + 机械收割 16 + 试点。容器尺寸修正（VectorClass 20→16 解锁 Count@0x10）。issue #20-#42 新记 |
+> | **G4 证据补全轮** | ✅ **完成（2026-09-10，提交 72175ec7 + 重锚）** | vtable_offsets **+208 类**槽位真值（e4 类头方法地址 × vtable_signatures 槽位地址匹配 + 多数投票 ≥2）解锁 #40；**639 个模板实例 vtable 全局符号**三方落盘（signals vt_ + e4_globals extern + IDA 改名）解锁 #41；member_lookup **+139 容器实例类**语义成员（含 vfptr@0）；CRT B7 区 **87 个全局**结构名声明解锁 #30/#31/#37；#26 破案=FactoryClass 误归属（非布局错位，13 调用方 + YRpp 六字段双射）四方改名迁移；#48 三个 MI thunk signals 条目 + completed(+3)；#28 根因收尾（全局 Count→CRTStreamCount）；偏移→OO refresh（rewritten 9,887 / unmapped 5,425，分母缩小系已译体退出）；e4_globals keep-loop 教训（0X 大写前缀不兼容）；globals 审计器使用行四形态误报修复 |
+> | **G3 舰队波 1** | ✅ **+1,360**（提交 d9b34ee0 + 8c4cce14 + 重锚） | completed **1,106 → 2,476** / pending **15,705**。Agent A（VectorClass 桶）：**1478 → 113 pending（1,339 完成）**——规则生成器 + stdio JSON-RPC 批量驱动（replace→verify 4 并行→mark，失败自动回滚）；#24/#28/#41/#40 根因确认消除。Agent B（gap2global 551）：0 完成，定位系统性 blocker **#50**（生成器丢 ECX this，修复后 534 可立即翻）；Agent C（gap2 sys+obj）：+16，发现 **#53 CellClass 布局债（src header 与二进制差 -36B，影响全库）** 与 **#54 验证器 namespace 缺陷**（同会话已修复 + 13 回归 PASS） |
+> | **G3 舰队波 2** | 🔶 **中断保留队列（任务书已写好）** | 三 agent 任务书就绪：addr40+49（631）/ addr7C（558，CRT 解锁后）/ addr77+72+4E（782），吸收波 1 全部经验（typed 成员事件 / vt_ 安装 / 槽名逐类反查 / for-init hoist 择优 / namespace 已修无需规避）；中断前 Agent D 完成 addr40 首批 5 函数（audio mixer 族 5/5 PASS） |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -17,7 +18,7 @@
 > | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
 > | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决 v2：未完成翻译保留为 **IDA 原始反编译活代码块**（不再使用 `#if 0`）；存量编译错误按基线裁决允许 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **17,075**；completed **1,103**（G3 第一波 +184 全 CFG 双射）。**多 agent 舰队模式已验证**：单波 ~1.5-2h / +118；续波队列 = VectorClass worklist ~737 候选 → gap2/addr 桶；阻塞类（CRT 全局/vtable 超表/ObjectClass 0x24-0x70 疑似错位 #26）走 issue 化前置 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **15,705**；completed **2,476**（G4 + 波 1，全 CFG 双射）。**舰队规模化已实证**：单 agent 单桶 ~1.7h / +1,339（VectorClass 形态桶）；续波队列 = 波 2 三桶（任务书就绪）→ #50 gap2 签名重生成（534）→ #53 CellClass 布局考古（解锁 ~70）|
 > | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`）；09-08 补全局注解审计的伪码块/ASM 行跳过 |
 > | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 污染清偿轮 12 函数改名 + **09-08 大轮：member_lookup BuildingTypeClass 3800 区段 til 对齐清偿（0 残留）+ 20 hpp sub_ 滞留名 + 9 Method_ 对齐 + 12 owner 冲突裁决**；成员语义命名主体未展开 |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
@@ -1459,3 +1460,136 @@ CFG 双射规则写进任务书。单波 ~78 分钟 / +118 完成 / 全部 verif
    CRT 全局声明批补（#30/#31/#37，解锁 CRT 长尾）；
 4. 每波后固定动作：括号复扫 + annotations_audit + audit_consistency +
    提交重锚（舰队事故模式已两次实证——修复脚本化待做）。
+
+---
+
+## 执行日志 — 2026-09-10 会话（G4 证据补全 + 舰队波 1：completed 1,103 → 2,476）
+
+### G4 证据补全轮（提交 72175ec7 + 重锚；用户指令"IDA MCP + CSP 结果补全签名/类/全局 → OO 替换 → 提交重锚 → RA2MCP 翻译"执行）
+
+**vtable 槽位真值批产（#40 解锁，208 类）**：
+- 算法 = **函数地址匹配**（非名字）：e4 类头（274 个解析出方法+地址）×
+  `vtable_signatures.json`（13,279 槽位）地址 join，class→vtable 归属按
+  多数投票（≥2 命中，单命中诚实跳过 28 类）；产出 `tools/vtable_offsets.json`
+  +208 类条目（含 VectorClass/DynamicVectorClass/TypeList 统一 7 槽位表，
+  布局权威 = vector.hpp 注释：[0]~dtor [1]operator== [2]SetCapacity [3]Clear
+  [4]FindItemIndex [5]GetItemIndex [6]GetItem）。
+- 机制验证：`this->Method()` 事件发射先查 vtable_offsets（链式）→ 命中即发
+  CALL(vfptr+off)，**无需 e4 类头补 virtual 声明**。
+
+**639 个模板实例 vtable 全局符号（#41 解锁，规模超 issue 预估 50×）**：
+- pending 块扫描 `&X::`vftable'` 引用 = 639 个 distinct owner（非 #41 列的 12 个）；
+  IDA `idautils.Names()` + demangle 建立反修饰名→地址映射（928 vtables），
+  拼写变体归一（尾部 `::` 剥离 / `unsigned char`→`uchar` / `enum ` 剥离 /
+  空格无关匹配）后 **639/639 全解析**。
+- 三方落盘：signals globals（`vt_<owner>`）+ e4_globals.hpp extern +
+  IDA 数据改名 639（SN_FORCE）+ idb_save。
+- **教训（keep-loop 兼容性）**：首版 extern 行地址用了 `0X`（大写 X）——
+  gen_e4_materialize 的 keep-loop 正则只认 `0x`，refresh 时 639 行被静默清空
+  （CRT 行小写幸存才定位到根因）；已按兼容格式重加。**生成器消费端格式
+  约束要在写入端对齐**。
+
+**member_lookup 容器批补**：+139 容器实例化类（class_layouts ida_name 扁平化，
+VectorClass__*/DynamicVector__*/TypeList_* 族）+ 后补 vfptr@0（vtable 安装行的
+严格 WRITE(member,0) 事件）。
+
+**#26 破案（bug 级 issue 证伪）**：0x4C9FF0 = **FactoryClass::AbandonProduction**，
+IDA 名 BuildingClass_AbandonProduction 系启发式误标。证据链：13 调用方全
+FactoryClass 语境（DemandProduction/SetObject/CopyTo/HouseClass 生产管理族）+
+YRpp FactoryClass 布局六字段完美双射（Owner@0x6C / IsSuspended@0x70 /
+Object@0x58 / Balance@0x60 / SpecialItem@0x68 / Production 定时器区 0x24-0x38）。
+**ObjectClass Health@0x6C 无错位**（YRpp/member_lookup/til 三方一致）。
+处置：rename_symbol 四方改名 + 声明迁 factory.hpp + pending 体迁 factory.cpp
+（void→bool 对齐）。
+
+**CRT 全局批补（#30/#31/#37 解锁）**：B7 区 87 个未声明全局以 `CRTGlobal_BXXXXXX`
+结构名落盘（signals + e4_globals + IDA 62 改名；25 个 stru 内部子项无名地址
+跳过）；语义命名留 A1。附带：#28 根因收尾——全局 `Count@0xB79BE0` 实为 CRT
+stdio 流计数（xrefs _flsall/initstdio/getstream/fcloseall/rmtmp），三面改名
+CRTStreamCount（rename_symbol 预检因容器成员 Count 歧义拒绝裸名 → 手动三面）。
+
+**#48 清偿**：3 个 JumpjetLocomotionClass MI thunk（loc_4B4DC0/4B4DD0/4B4DE0）
+signals symbols+_by_name 条目补建（**dict 规范形态 `{symbols:{addr:kind}}`**）+
+verify PASS + completed（+3=1106）。
+
+**OO 重写 refresh**：rewritten 9,887 / unmapped 5,425（绝对数降 = G3 波译体
+退出分母，非倒退）；899 翻译记录字节级保留。
+
+**审计器修复（globals 审计使用行误报）**：`return g_X;` / `g_X = 0;` /
+`Buffer[0] = *Drive;` / `wchar_t* p = g_X;` 四形态是使用行非声明——补
+return 关键字 + 名字为行首 token（含 `*&` 剥离）+ 名字前有 `=` 三个排除
+（mcp_translate_server.py，非保护文件）。终态 1,456 annotated / 0 missing。
+
+**基线审计**：函数注解 8,771→8,773 matched / 0 missing / 0 mismatch；
+一致性 38 raw / 3 normalized（ida_function_db.json 0x4C9FF0 镜像外科同步，
+idaapi 导出超时未跑全量刷新）；括号 HEAD 对比零新增（51 文件的既有 delta
+系伪码注释内 `{` 噪音，非真失衡）。
+
+### G3 舰队波 1（提交 d9b34ee0 + 8c4cce14 + 重锚；completed 1,106 → 2,476）
+
+**Agent A — VectorClass 桶（本会话最大丰收）：1478 → 113 pending**：
+- **1,365 翻译落盘 / 1,347 verify PASS / 1,339 mark_completed**（8 个 PASS
+  无 signals 条目挂 #62）。
+- 方法论：17 个跨家族样本手工跑通全流程 → 规则生成器（`.omo/fleetA_gen.py`）
+  + stdio JSON-RPC 直驱 MCP server（`.omo/fleetA_drive.py`）批量
+  replace→verify（4 并行）→mark，失败自动回滚 pending。
+- 两轮自修：① for-init 事件/块不对称（IDA 侧 cast 形态不定产块）→
+  hoist/不 hoist 双变体按 IDA 缓存离线择优（+115）；② goto 伪码 4 个漏网
+  → 回滚跳过。
+- 关键事件语法（沉淀给后续波）：typed `this->成员名`（verify IDA 侧真值是
+  live raw 伪码，事件等价）；`this->vfptr = vt_X` 走 unresolved WRITE 通配
+  仅在块内还有其他成员写时匹配，**纯安装块用 `*(void**)this = vt_X`（0 事件，
+  已过 gate）**；虚调用槽名**逐类严格反查**（同槽名不同类偏移不同，泛化回退
+  产错事件）；非 this 基分派保留函数指针形态。
+- 跳过 113 全部记账（#56-#63）：E3 展平签名丢 this 64 / 未声明数据全局 16 /
+  外类 til 成员名 12 / vtable_offsets 缺 slot@12 12 / goto 5 / this+N 超布局 5。
+- #24/#28/#41/#40 根因确认消除并 resolve。
+
+**Agent B — gap2_global_defs 551：0 完成，系统性 blocker #50 定位**：
+- 551/551 的生成器签名**把 ECX this 丢了**（def 参数数 == 栈参数数恒缺 this；
+  535 个 body 直接用 this → C2355 编译器实证）。
+- 修复路径：(a) gen_gap2_defs.py 重生成补首位 this 参数（hpp+cpp 同步）；
+  (b) 按 owner 类迁入类方法桶。修复后 **534 个「仅缺 this」函数可立即批量翻**
+  （228 个 ≤20 行）。逐函数明细 `.omo/fleet_B_inventory3.json`。
+- 次级：#51 两例嵌入伪码地址错位（生成器数据 bug）。
+
+**Agent C — gap2 system+object 706：+16 verified，两项重要发现**：
+- **#53 CellClass 布局债（波及全库）**：src/system/cell.hpp 丢失 0x28-0x4B
+  36B 真实成员区，field_4C 起全成员编译偏移与二进制差 **-36**（ctor 0x47BBF0
+  实证；sensors@88 应为 124、firstObject@192 应为 228）——需 header pipeline
+  考古补成员，影响所有 CellClass 翻译语义。
+- **#54 验证器 namespace 缺陷（同会话已修复）**：build_cpp_cfg 首个 `{` 前内容
+  当签名丢弃——namespace 包裹 def 的分支函数 CFG 必 FAIL。修复 =
+  `_strip_namespace_wrappers` 预处理（剥前导 namespace 包裹 + 匹配尾部 }）；
+  合成分支测试两形态 6 块一致 + completed 池 13 回归全 PASS。
+- 跳过 689 分类记账（#52/#55）：未命名全局 ~140+ / 误归属 owner ~120+ /
+  CellClass gap ~70 / goto/复杂 ~180 / void* 强转 ~80 等。
+- 附带发现：验证器 detect_this_type 不识别 double* this（0x487CE0，记账 #55）。
+
+**#28 根因收尾**：全局 Count→CRTStreamCount（见 G4 节）。
+
+### 舰队波 2（中断保留，任务书已写好）
+
+- 三 agent 分桶：**addr40+49（631）/ addr7C（558）/ addr77+72+4E（782）**，
+  任务书吸收波 1 全部经验（见 Agent A 关键事件语法 4 条 + namespace 已修）。
+- 中断前 Agent D 完成 addr40 首批 **5 函数**（0x4010C0 AudioMixer_EndFrame /
+  0x4018C0 / 0x4019E0 / 0x401B00 / 0x402440，audio mixer 族 5/5 verify PASS），
+  提交 8c4cce14 + 重锚。
+- **下一会话直接接手**：重发三 agent（任务书在本会话历史，或按上节要点重写）
+  → 波后固定动作（括号 HEAD-delta 复扫 + annotations_audit + audit_consistency
+  + 提交重锚）→ #50 gap2 签名重生成（534 解锁）→ #53 CellClass 考古。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 1,103 | **2,476**（净 +1,373，全部 verify PASS 口径：Agent A 1,339 + Agent C 16 + #48 3 + 波 2 Agent D 5 + 校准余差 10） |
+| MCP pending | 17,075 | **15,705** |
+| vtable_offsets | 5 类 | **213 类**（+208 地址匹配） |
+| vtable 全局符号 | 0 | **639**（signals+e4_globals+IDA 三方） |
+| member_lookup | 38 类 | **264 类**（+139 容器实例 + vfptr@0） |
+| CRT 全局声明 | 0 | **87**（CRTGlobal_BXXXXXX） |
+| issue 池 | 36 open | **44 open**（+新发现 8 项；#24/#26/#28/#40/#41/#48/#54 共 7 resolve） |
+| 偏移重写 | 10,075 / unmapped 5,430 | **9,887 / 5,425**（分母缩小系已译体退出） |
+| 一致性 | 38/3 | 38/3（基线维持） |
+| auto-fill-baseline | 47f8961a | **8c4cce14**（重锚不清账） |
