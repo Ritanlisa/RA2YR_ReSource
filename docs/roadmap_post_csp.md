@@ -10,7 +10,7 @@
 > |---|---|---|
 > | **G4 证据补全轮** | ✅ **完成（2026-09-10，提交 72175ec7 + 重锚）** | vtable_offsets **+208 类**槽位真值（e4 类头方法地址 × vtable_signatures 槽位地址匹配 + 多数投票 ≥2）解锁 #40；**639 个模板实例 vtable 全局符号**三方落盘（signals vt_ + e4_globals extern + IDA 改名）解锁 #41；member_lookup **+139 容器实例类**语义成员（含 vfptr@0）；CRT B7 区 **87 个全局**结构名声明解锁 #30/#31/#37；#26 破案=FactoryClass 误归属（非布局错位，13 调用方 + YRpp 六字段双射）四方改名迁移；#48 三个 MI thunk signals 条目 + completed(+3)；#28 根因收尾（全局 Count→CRTStreamCount）；偏移→OO refresh（rewritten 9,887 / unmapped 5,425，分母缩小系已译体退出）；e4_globals keep-loop 教训（0X 大写前缀不兼容）；globals 审计器使用行四形态误报修复 |
 > | **G3 舰队波 1** | ✅ **+1,360**（提交 d9b34ee0 + 8c4cce14 + 重锚） | completed **1,106 → 2,476** / pending **15,705**。Agent A（VectorClass 桶）：**1478 → 113 pending（1,339 完成）**——规则生成器 + stdio JSON-RPC 批量驱动（replace→verify 4 并行→mark，失败自动回滚）；#24/#28/#41/#40 根因确认消除。Agent B（gap2global 551）：0 完成，定位系统性 blocker **#50**（生成器丢 ECX this，修复后 534 可立即翻）；Agent C（gap2 sys+obj）：+16，发现 **#53 CellClass 布局债（src header 与二进制差 -36B，影响全库）** 与 **#54 验证器 namespace 缺陷**（同会话已修复 + 13 回归 PASS） |
-> | **G3 舰队波 2** | 🔶 **中断保留队列（任务书已写好）** | 三 agent 任务书就绪：addr40+49（631）/ addr7C（558，CRT 解锁后）/ addr77+72+4E（782），吸收波 1 全部经验（typed 成员事件 / vt_ 安装 / 槽名逐类反查 / for-init hoist 择优 / namespace 已修无需规避）；中断前 Agent D 完成 addr40 首批 5 函数（audio mixer 族 5/5 PASS） |
+> | **G3 舰队波 2** | 🔶 **两次中断，残留已核验（提交 8c4cce14 + 16fa3497）** | 三 agent 任务书就绪且两次发射均被运行环境中断；残留核验：addr40 audio mixer 族 5 函数 + 0x403470 共 **6 个 verified** 落账，tolower 误译按纪律回滚。桶清单不变：addr40+49（623）/ addr7C（557）/ addr77+72+4E（782）。**建议下一会话优先用 Agent A 的规则生成器+stdio 直驱范式**（.omo/fleetA_gen.py + fleetA_drive.py）替代交互式 subagent——对中断鲁棒且波 1 已实证单桶 1,339 产出 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -1592,4 +1592,4 @@ idaapi 导出超时未跑全量刷新）；括号 HEAD 对比零新增（51 文�
 | issue 池 | 36 open | **44 open**（+新发现 8 项；#24/#26/#28/#40/#41/#48/#54 共 7 resolve） |
 | 偏移重写 | 10,075 / unmapped 5,430 | **9,887 / 5,425**（分母缩小系已译体退出） |
 | 一致性 | 38/3 | 38/3（基线维持） |
-| auto-fill-baseline | 47f8961a | **8c4cce14**（重锚不清账） |
+| auto-fill-baseline | 47f8961a | **16fa3497**（重锚不清账） |
