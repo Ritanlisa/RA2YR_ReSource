@@ -849,6 +849,10 @@ def find_cpp_function(func_name):
     hint = method_name[1:] if method_name.startswith("~") else method_name
     ctor_hint = class_name if ctor_re is not None else None
     for cppf in _cpp_files():
+        # G6: Task 17/18 存根（return 0; 占位）会按名抢占匹配（glob 序 _generated
+        # 先于 e4），真体在 e4/模块文件——跳过。by_addr 回退不受影响（存根无地址注解）。
+        if "_generated" in cppf.parts:
+            continue
         try:
             with open(cppf, "r", encoding="utf-8", errors="replace") as f:
                 lines = f.readlines()

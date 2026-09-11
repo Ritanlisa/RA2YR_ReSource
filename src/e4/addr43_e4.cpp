@@ -464,16 +464,16 @@ void E4Recv_431D90::sub_431D90()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_431D90(int this)
 {
-  if ( *(_DWORD *)(this + 48) ) /*0x431d96*/
+  if ( this->M48 ) /*0x431d96*/
   {
     if ( (unsigned char)this->M36 ) /*0x431d9d*/
     {
       __3_YAXPAX_Z(*(void **)(this + 48)); /*0x431da3*/
       *(_BYTE *)(this + 36) = 0; /*0x431dab*/
     }
-    *(_DWORD *)(this + 48) = 0; /*0x431dae*/
+    this->M48 = 0; /*0x431dae*/
   }
-  *(_DWORD *)(this + 52) = 0; /*0x431db1*/
+  this->M52 = 0; /*0x431db1*/
   *(_BYTE *)(this + 37) = 0; /*0x431db4*/
   *(_BYTE *)(this + 39) = 0; /*0x431db7*/
   *(_BYTE *)(this + 40) = 0; /*0x431dba*/
@@ -692,19 +692,19 @@ BOOL __thiscall sub_4349F0(int this)
 {
   BOOL result; // eax
 
-  *(_DWORD *)(this + 4) = 0; /*0x4349f9*/
+  this->M4 = 0; /*0x4349f9*/
   this->M32 = 0; /*0x4349fc*/
-  *(_DWORD *)(this + 12) = 0; /*0x4349ff*/
-  *(_DWORD *)(this + 8) = 0; /*0x434a02*/
+  this->M12 = 0; /*0x4349ff*/
+  this->M8 = 0; /*0x434a02*/
   *(_WORD *)(this + 36) = 0x7FFF; /*0x434a0f*/
   *(_WORD *)(this + 38) = 13653; /*0x434a15*/
-  *(_DWORD *)(this + 40) = 64; /*0x434a1b*/
+  this->M40 = 64; /*0x434a1b*/
   *(_BYTE *)(this + 64) = 1; /*0x434a22*/
   *(_BYTE *)(this + 65) = 1; /*0x434a25*/
-  *(_DWORD *)(this + 24) = 1; /*0x434a28*/
-  *(_DWORD *)(this + 28) = 1; /*0x434a2b*/
+  this->M24 = 1; /*0x434a28*/
+  this->M28 = 1; /*0x434a2b*/
   result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0); /*0x434a2e*/
-  *(_DWORD *)(this + 44) = 1; /*0x434a34*/
+  this->M44 = 1; /*0x434a34*/
   return result; /*0x434a37*/
 }
 }

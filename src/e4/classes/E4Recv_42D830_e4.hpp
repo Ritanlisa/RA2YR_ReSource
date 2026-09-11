@@ -4,6 +4,7 @@
 namespace gamemd {
 struct E4Recv_42D830 {
     void* vfptr;  // minimal E2 declaration
+    int Vf8(int, ...);  // G6 vtable slot dispatch
     char sub_42D830(unsigned int * a2);  // 0x42D830
 };
 } // namespace gamemd

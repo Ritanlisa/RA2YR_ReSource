@@ -124,16 +124,16 @@ int __thiscall sub_5AFEF0(int this)
   int v2; // eax
 
   LocomotionClass::Init((_DWORD *)this); /*0x5afef3*/
-  *(_DWORD *)(this + 24) = g_MatrixTransformState; /*0x5aff01*/
-  *(_DWORD *)(this + 28) = MEMORY[0xABEE14]; /*0x5aff0a*/
-  *(_DWORD *)(this + 32) = MEMORY[0xABEE18]; /*0x5aff16*/
-  *(_DWORD *)(this + 36) = g_MatrixTransformState; /*0x5aff1e*/
-  *(_DWORD *)(this + 40) = MEMORY[0xABEE14]; /*0x5aff26*/
+  this->M24 = g_MatrixTransformState; /*0x5aff01*/
+  this->M28 = MEMORY[0xABEE14]; /*0x5aff0a*/
+  this->M32 = MEMORY[0xABEE18]; /*0x5aff16*/
+  this->M36 = g_MatrixTransformState; /*0x5aff1e*/
+  this->M40 = MEMORY[0xABEE14]; /*0x5aff26*/
   v2 = MEMORY[0xABEE18]; /*0x5aff29*/
   *(_BYTE *)(this + 48) = 0; /*0x5aff2e*/
   *(_DWORD *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
-  *(_DWORD *)(this + 44) = v2; /*0x5aff38*/
-  *(_DWORD *)(this + 4) = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
+  this->M44 = v2; /*0x5aff38*/
+  this->M4 = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
   return this; /*0x5aff44*/
 }
 }
@@ -314,16 +314,16 @@ int E4Recv_728A00::sub_728A00()
 int __thiscall sub_728A00(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
-  *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
-  *(_DWORD *)(this + 28) = MEMORY[0xB0F910]; /*0x728a16*/
-  *(_DWORD *)(this + 32) = MEMORY[0xB0F914]; /*0x728a1e*/
-  *(_DWORD *)(this + 36) = MEMORY[0xB0F918]; /*0x728a27*/
-  *(_DWORD *)(this + 40) = MEMORY[0xA8ED84]; /*0x728a30*/
-  *(_DWORD *)(this + 48) = 0; /*0x728a33*/
-  *(_DWORD *)(this + 52) = 0; /*0x728a36*/
+  this->M24 = 0; /*0x728a0d*/
+  this->M28 = MEMORY[0xB0F910]; /*0x728a16*/
+  this->M32 = MEMORY[0xB0F914]; /*0x728a1e*/
+  this->M36 = MEMORY[0xB0F918]; /*0x728a27*/
+  this->M40 = MEMORY[0xA8ED84]; /*0x728a30*/
+  this->M48 = 0; /*0x728a33*/
+  this->M52 = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/
   *(_DWORD *)this = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
-  *(_DWORD *)(this + 4) = &TunnelLocomotionClass::`vftable'; /*0x728a42*/
+  this->M4 = &TunnelLocomotionClass::`vftable'; /*0x728a42*/
   return this; /*0x728a4b*/
 }
 }

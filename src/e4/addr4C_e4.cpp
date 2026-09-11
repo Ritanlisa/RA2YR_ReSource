@@ -633,7 +633,7 @@ int __thiscall sub_4C2790(int this)
   int v3[2]; // [esp+8h] [ebp-10h] BYREF
   int v4[2]; // [esp+10h] [ebp-8h] BYREF
 
-  if ( *(_DWORD *)(this + 40) )
+  if ( this->M40 )
   {
     Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)this, (IUnknown *)v4); /*0x4c27aa*/
     Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)(this + 12), (IUnknown *)v3); /*0x4c27be*/
@@ -641,16 +641,16 @@ int __thiscall sub_4C2790(int this)
       Lightning::Draw(
         (_DWORD *)this,
         *(_DWORD *)this,
-        *(_DWORD *)(this + 4),
-        *(_DWORD *)(this + 8),
-        *(_DWORD *)(this + 12),
+        this->M4,
+        this->M8,
+        this->M12,
         this->M16,
-        *(_DWORD *)(this + 20),
+        this->M20,
         (unsigned char)this->M44 != 0 ? 5 : 10);
-    ++*(_DWORD *)(this + 28); /*0x4c281a*/
+    ++this->M28; /*0x4c281a*/
   }
   result = *(int *)(this + 40) >> 1; /*0x4c2821*/
-  *(_DWORD *)(this + 40) = result; /*0x4c2823*/
+  this->M40 = result; /*0x4c2823*/
   return result; /*0x4c2820*/
 }
 }
@@ -2394,19 +2394,19 @@ char *__thiscall sub_4C69E0(char *this, int a2, char a3, int a4, _WORD *a5)
   {
     *(this + 2) = -1; /*0x4c6a48*/
     *this = 0; /*0x4c6a4c*/
-    *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6a57*/
+    this->M3 = MEMORY[0xA8ED84]; /*0x4c6a57*/
     return this; /*0x4c6a55*/
   }
   else
   {
     *(this + 2) = a2; /*0x4c6a10*/
     *this = a3; /*0x4c6a17*/
-    *(_DWORD *)(this + 7) = a4; /*0x4c6a19*/
-    *(_DWORD *)(this + 11) = -1; /*0x4c6a1c*/
-    *(_DWORD *)(this + 15) = 0; /*0x4c6a23*/
+    this->M7 = a4; /*0x4c6a19*/
+    this->M11 = -1; /*0x4c6a1c*/
+    this->M15 = 0; /*0x4c6a23*/
     *(_WORD *)(this + 19) = *a5; /*0x4c6a2d*/
     *(_WORD *)(this + 21) = a5[1]; /*0x4c6a35*/
-    *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6a3e*/
+    this->M3 = MEMORY[0xA8ED84]; /*0x4c6a3e*/
     return this; /*0x4c6a41*/
   }
 }
@@ -2425,19 +2425,19 @@ char *__thiscall sub_4C6A60(char *this, int a2, char a3, int a4, int a5, _WORD *
   {
     *(this + 2) = -1; /*0x4c6ac8*/
     *this = 0; /*0x4c6acc*/
-    *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6ad7*/
+    this->M3 = MEMORY[0xA8ED84]; /*0x4c6ad7*/
     return this; /*0x4c6ad5*/
   }
   else
   {
     *(this + 2) = a2; /*0x4c6a90*/
     *this = a3; /*0x4c6a97*/
-    *(_DWORD *)(this + 11) = a5; /*0x4c6a99*/
-    *(_DWORD *)(this + 7) = a4; /*0x4c6aa0*/
-    *(_DWORD *)(this + 15) = 0; /*0x4c6aa3*/
+    this->M11 = a5; /*0x4c6a99*/
+    this->M7 = a4; /*0x4c6aa0*/
+    this->M15 = 0; /*0x4c6aa3*/
     *(_WORD *)(this + 19) = *a6; /*0x4c6aad*/
     *(_WORD *)(this + 21) = a6[1]; /*0x4c6ab5*/
-    *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6abe*/
+    this->M3 = MEMORY[0xA8ED84]; /*0x4c6abe*/
     return this; /*0x4c6ac1*/
   }
 }
@@ -2461,10 +2461,10 @@ char *__thiscall sub_4C6BE0(char *this, int a2, char a3, int a4, int a5)
   {
     *(this + 2) = a2; /*0x4c6c10*/
     *this = a3; /*0x4c6c17*/
-    *(_DWORD *)(this + 7) = a4; /*0x4c6c19*/
-    *(_DWORD *)(this + 11) = a5; /*0x4c6c1c*/
+    this->M7 = a4; /*0x4c6c19*/
+    this->M11 = a5; /*0x4c6c1c*/
   }
-  *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6c27*/
+  this->M3 = MEMORY[0xA8ED84]; /*0x4c6c27*/
   return this; /*0x4c6c2a*/
 }
 }
@@ -3263,7 +3263,7 @@ u_short __thiscall sub_4CB8B0(int this)
   u_short v3; // cx
   u_short result; // ax
 
-  switch ( *(_WORD *)(this + 4) ) /*0x4cb8c1*/
+  switch ( (unsigned short)this->M4 ) /*0x4cb8c1*/
   {
     case 3: /*0x4cb8c1*/
     case 4: /*0x4cb8c1*/
@@ -3276,8 +3276,8 @@ u_short __thiscall sub_4CB8B0(int this)
     default:
       break;
   }
-  v2 = htons(*(_WORD *)(this + 4)); /*0x4cb8ec*/
-  v3 = *(_WORD *)(this + 6); /*0x4cb8f6*/
+  v2 = htons((unsigned short)this->M4); /*0x4cb8ec*/
+  v3 = (unsigned short)this->M6; /*0x4cb8f6*/
   *(_WORD *)(this + 4) = v2; /*0x4cb8fa*/
   result = htons(v3); /*0x4cb8ff*/
   *(_WORD *)(this + 6) = result; /*0x4cb904*/

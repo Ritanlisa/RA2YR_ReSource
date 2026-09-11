@@ -2422,71 +2422,71 @@ int __thiscall sub_557380(int this, int a2)
   int v3; // eax
 
   ControlClass::CtorFromData((_DWORD *)this, a2); /*0x55738b*/
-  *(_DWORD *)(this + 44) = *(_DWORD *)(a2 + 44); /*0x557396*/
-  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48); /*0x55739f*/
-  *(_DWORD *)(this + 56) = 0; /*0x5573a7*/
-  *(_DWORD *)(this + 60) = 0; /*0x5573aa*/
+  this->M44 = *(_DWORD *)(a2 + 44); /*0x557396*/
+  this->M48 = *(_DWORD *)(a2 + 48); /*0x55739f*/
+  this->M56 = 0; /*0x5573a7*/
+  this->M60 = 0; /*0x5573aa*/
   *(_BYTE *)(this + 64) = 1; /*0x5573ad*/
   *(_BYTE *)(this + 65) = 0; /*0x5573b1*/
-  *(_DWORD *)(this + 52) = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
+  this->M52 = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
   sub_4B5830((_DWORD *)(this + 52), (_DWORD *)(a2 + 52)); /*0x5573ba*/
-  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68); /*0x5573c2*/
-  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72); /*0x5573c8*/
-  *(_DWORD *)(this + 52) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
-  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x5573d7*/
-  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x5573dd*/
+  this->M68 = *(_DWORD *)(a2 + 68); /*0x5573c2*/
+  this->M72 = *(_DWORD *)(a2 + 72); /*0x5573c8*/
+  this->M52 = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
+  this->M76 = *(_DWORD *)(a2 + 76); /*0x5573d7*/
+  this->M80 = *(_DWORD *)(a2 + 80); /*0x5573dd*/
   *(_BYTE *)(this + 84) = *(_BYTE *)(a2 + 84); /*0x5573e9*/
   ControlClass::CtorFromData((_DWORD *)(this + 88), a2 + 88); /*0x5573ec*/
   *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132); /*0x5573fa*/
   *(_BYTE *)(this + 133) = *(_BYTE *)(a2 + 133); /*0x557400*/
-  *(_DWORD *)(this + 136) = *(_DWORD *)(a2 + 136); /*0x557406*/
-  *(_DWORD *)(this + 88) = &ToggleClass::`vftable'; /*0x557409*/
+  this->M136 = *(_DWORD *)(a2 + 136); /*0x557406*/
+  this->M88 = &ToggleClass::`vftable'; /*0x557409*/
   *(_BYTE *)(this + 140) = *(_BYTE *)(a2 + 140); /*0x557413*/
-  *(_DWORD *)(this + 144) = *(_DWORD *)(a2 + 144); /*0x557419*/
-  *(_DWORD *)(this + 148) = *(_DWORD *)(a2 + 148); /*0x55741f*/
+  this->M144 = *(_DWORD *)(a2 + 144); /*0x557419*/
+  this->M148 = *(_DWORD *)(a2 + 148); /*0x55741f*/
   *(_BYTE *)(this + 152) = *(_BYTE *)(a2 + 152); /*0x557425*/
-  *(_DWORD *)(this + 156) = *(_DWORD *)(a2 + 156); /*0x55742b*/
-  *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160); /*0x557431*/
+  this->M156 = *(_DWORD *)(a2 + 156); /*0x55742b*/
+  this->M160 = *(_DWORD *)(a2 + 160); /*0x557431*/
   *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164); /*0x557437*/
-  *(_DWORD *)(this + 168) = *(_DWORD *)(a2 + 168); /*0x55743d*/
+  this->M168 = *(_DWORD *)(a2 + 168); /*0x55743d*/
   *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172); /*0x557443*/
   *(_BYTE *)(this + 173) = *(_BYTE *)(a2 + 173); /*0x557449*/
   this->M176 = *(_DWORD *)(a2 + 176); /*0x55744f*/
   *(_BYTE *)(this + 180) = *(_BYTE *)(a2 + 180); /*0x55745b*/
-  *(_DWORD *)(this + 88) = &ShapeButtonClass::`vftable'; /*0x557460*/
+  this->M88 = &ShapeButtonClass::`vftable'; /*0x557460*/
   ControlClass::CtorFromData((_DWORD *)(this + 184), a2 + 184); /*0x557466*/
   *(_BYTE *)(this + 228) = *(_BYTE *)(a2 + 228); /*0x55746e*/
   *(_BYTE *)(this + 229) = *(_BYTE *)(a2 + 229); /*0x557474*/
-  *(_DWORD *)(this + 232) = *(_DWORD *)(a2 + 232); /*0x55747a*/
-  *(_DWORD *)(this + 184) = &ToggleClass::`vftable'; /*0x55747d*/
+  this->M232 = *(_DWORD *)(a2 + 232); /*0x55747a*/
+  this->M184 = &ToggleClass::`vftable'; /*0x55747d*/
   *(_BYTE *)(this + 236) = *(_BYTE *)(a2 + 236); /*0x557486*/
   this->M240 = *(_DWORD *)(a2 + 240); /*0x55748c*/
-  *(_DWORD *)(this + 244) = *(_DWORD *)(a2 + 244); /*0x557492*/
+  this->M244 = *(_DWORD *)(a2 + 244); /*0x557492*/
   *(_BYTE *)(this + 248) = *(_BYTE *)(a2 + 248); /*0x557498*/
-  *(_DWORD *)(this + 252) = *(_DWORD *)(a2 + 252); /*0x55749e*/
-  *(_DWORD *)(this + 256) = *(_DWORD *)(a2 + 256); /*0x5574a4*/
+  this->M252 = *(_DWORD *)(a2 + 252); /*0x55749e*/
+  this->M256 = *(_DWORD *)(a2 + 256); /*0x5574a4*/
   *(_BYTE *)(this + 260) = *(_BYTE *)(a2 + 260); /*0x5574aa*/
-  *(_DWORD *)(this + 264) = *(_DWORD *)(a2 + 264); /*0x5574b0*/
+  this->M264 = *(_DWORD *)(a2 + 264); /*0x5574b0*/
   *(_BYTE *)(this + 268) = *(_BYTE *)(a2 + 268); /*0x5574b6*/
   *(_BYTE *)(this + 269) = *(_BYTE *)(a2 + 269); /*0x5574bc*/
   this->M272 = *(_DWORD *)(a2 + 272); /*0x5574c6*/
   *(_BYTE *)(this + 276) = *(_BYTE *)(a2 + 276); /*0x5574d2*/
-  *(_DWORD *)(this + 184) = &ShapeButtonClass::`vftable'; /*0x5574de*/
+  this->M184 = &ShapeButtonClass::`vftable'; /*0x5574de*/
   sub_5581A0(this + 280, a2 + 280); /*0x5574e4*/
-  *(_DWORD *)(this + 340) = *(_DWORD *)(a2 + 340); /*0x5574fa*/
-  *(_DWORD *)(this + 344) = *(_DWORD *)(a2 + 344); /*0x557500*/
+  this->M340 = *(_DWORD *)(a2 + 340); /*0x5574fa*/
+  this->M344 = *(_DWORD *)(a2 + 344); /*0x557500*/
   *(_BYTE *)(this + 348) = *(_BYTE *)(a2 + 348); /*0x557506*/
   this->M352 = *(_DWORD *)(a2 + 352); /*0x55750c*/
-  *(_DWORD *)(this + 356) = *(_DWORD *)(a2 + 356); /*0x557512*/
-  *(_DWORD *)(this + 360) = *(_DWORD *)(a2 + 360); /*0x55751c*/
-  *(_DWORD *)(this + 280) = &SliderClass::`vftable'; /*0x55751f*/
-  *(_DWORD *)(this + 364) = *(_DWORD *)(a2 + 364); /*0x55752c*/
-  v3 = *(_DWORD *)(this + 88); /*0x557538*/
-  *(_DWORD *)(this + 368) = *(_DWORD *)(a2 + 368); /*0x55753c*/
+  this->M356 = *(_DWORD *)(a2 + 356); /*0x557512*/
+  this->M360 = *(_DWORD *)(a2 + 360); /*0x55751c*/
+  this->M280 = &SliderClass::`vftable'; /*0x55751f*/
+  this->M364 = *(_DWORD *)(a2 + 364); /*0x55752c*/
+  v3 = this->M88; /*0x557538*/
+  this->M368 = *(_DWORD *)(a2 + 368); /*0x55753c*/
   *(_DWORD *)this = &ListClass::`vftable'; /*0x557542*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(this + 88, this); /*0x557548*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 132))(this + 184, this); /*0x557553*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 132))(this + 280, this); /*0x55755f*/
+  (*(void (__thiscall **)(int, int))(this->M184 + 132))(this + 184, this); /*0x557553*/
+  (*(void (__thiscall **)(int, int))(this->M280 + 132))(this + 280, this); /*0x55755f*/
   return this; /*0x557566*/
 }
 }
@@ -2534,9 +2534,9 @@ int __thiscall sub_5581A0(int this, GaugeClass *aP1)
   *(_BYTE *)(this + 44) = aP1[1].GaugeClass_field_0x0C; /*0x5581b1*/
   *(_BYTE *)(this + 45) = BYTE1(aP1[1].GaugeClass_field_0x0C); /*0x5581b7*/
   *(_BYTE *)(this + 46) = BYTE2(aP1[1].GaugeClass_field_0x0C); /*0x5581bd*/
-  *(_DWORD *)(this + 48) = aP1[1].GaugeClass_field_0x10; /*0x5581c3*/
-  *(_DWORD *)(this + 52) = aP1[1].GaugeClass_field_0x14; /*0x5581c9*/
-  *(_DWORD *)(this + 56) = aP1[1].GaugeClass_field_0x18; /*0x5581cf*/
+  this->M48 = aP1[1].GaugeClass_field_0x10; /*0x5581c3*/
+  this->M52 = aP1[1].GaugeClass_field_0x14; /*0x5581c9*/
+  this->M56 = aP1[1].GaugeClass_field_0x18; /*0x5581cf*/
   *(_DWORD *)this = &GaugeClass::`vftable'; /*0x5581d2*/
   return this; /*0x5581da*/
 }
@@ -2776,10 +2776,10 @@ bool __thiscall ShowSaveLoadDialog(int this, CampaignScore *aP1)
   CampaignScore *v2; // eax
 
   v2 = aP1; /*0x558810*/
-  *(_DWORD *)(this + 4) = 2; /*0x558814*/
+  this->M4 = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
     v2 = (CampaignScore *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4960); /*0x558824*/
-  *(_DWORD *)(this + 12) = v2; /*0x558829*/
+  this->M12 = v2; /*0x558829*/
   return SaveLoadDialog::DlgProc((const char **)this); /*0x558831*/
 }
 }

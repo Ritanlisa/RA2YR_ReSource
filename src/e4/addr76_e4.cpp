@@ -738,7 +738,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
   char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
   ObjectClass aP2; // [esp+10h] [ebp-F8h] BYREF
 
-  *(_DWORD *)(this + 48) = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
+  this->M48 = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
   *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52) = Conflict::GetOwnerHouse(*(_DWORD **)(this + 12)); /*0x76502c*/
   *(_DWORD *)&aP2.__pad_0[12] = 0; /*0x765030*/
   aP2.uniqueId = 0; /*0x765034*/
@@ -767,7 +767,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
   String::Concat((const char **)v3, (char **)&aP2.__pad_0[4], RegionStringWOL); /*0x765113*/
   DeleteAndZero((void **)&aP2); /*0x76511c*/
   String::Assign((char **)&aP2, g_INI_Key_CampaignID); /*0x76512a*/
-  INIClass::SetIntFormat(&aP2.__pad_0[8], (char **)(this + 72), &aP2, *(_DWORD *)(this + 48), 0); /*0x765141*/
+  INIClass::SetIntFormat(&aP2.__pad_0[8], (char **)(this + 72), &aP2, this->M48, 0); /*0x765141*/
   DeleteAndZero((void **)&aP2); /*0x76514a*/
   INIClass::SetIntFormat( /*0x76515f*/
     &aP2.__pad_0[8],

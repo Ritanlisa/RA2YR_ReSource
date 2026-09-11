@@ -326,27 +326,27 @@ int __thiscall sub_4E2A50(int this, ControlClass *aP1, int aP2, int aP3, Control
     (ControlClass *)aP5,
     7,
     (ControlClass *)1);
-  v7 = *(_DWORD *)(this + 48); /*0x4e2a79*/
+  v7 = this->M48; /*0x4e2a79*/
   *(_DWORD *)this = &GaugeClass::`vftable'; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
-    *(_DWORD *)(this + 48) = 255; /*0x4e2a8d*/
+    this->M48 = 255; /*0x4e2a8d*/
     VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
   if ( *(int *)(this + 48) < 0 ) /*0x4e2a9d*/
-    v8 = *(_DWORD *)(this + 48); /*0x4e2a9f*/
-  if ( v8 != *(_DWORD *)(this + 52) ) /*0x4e2aa4*/
+    v8 = this->M48; /*0x4e2a9f*/
+  if ( v8 != this->M52 ) /*0x4e2aa4*/
   {
-    *(_DWORD *)(this + 52) = v8; /*0x4e2aa6*/
+    this->M52 = v8; /*0x4e2aa6*/
     (*(void (__thiscall **)(int))(*(_DWORD *)this + 72))(this); /*0x4e2aad*/
   }
   *(_BYTE *)(this + 45) = 1; /*0x4e2ab2*/
   *(_BYTE *)(this + 46) = (int)aP4 > aP5; /*0x4e2ab9*/
   *(_BYTE *)(this + 44) = 1; /*0x4e2abc*/
-  *(_DWORD *)(this + 56) = 0; /*0x4e2ac0*/
-  *(_DWORD *)(this + 60) = 0; /*0x4e2ac7*/
-  *(_DWORD *)(this + 64) = 0; /*0x4e2ace*/
+  this->M56 = 0; /*0x4e2ac0*/
+  this->M60 = 0; /*0x4e2ac7*/
+  this->M64 = 0; /*0x4e2ace*/
   *(_DWORD *)this = &TriColorGaugeClass::`vftable'; /*0x4e2ad5*/
   return this; /*0x4e2add*/
 }
@@ -1954,12 +1954,12 @@ int E4Recv_4E6070::sub_4E6070()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4E6070(int this)
 {
-  *(_DWORD *)(this + 104) = 0; /*0x4e6087*/
-  *(_DWORD *)(this + 108) = 0; /*0x4e608a*/
+  this->M104 = 0; /*0x4e6087*/
+  this->M108 = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
   memset((void *)this, 0xFFu, 0x18u); /*0x4e609f*/
   *(_WORD *)(this + 24) = -1; /*0x4e60a9*/
-  *(_DWORD *)(this + 4 * (*(_DWORD *)(this + 104))++) = 2; /*0x4e60cc*/
+  *(_DWORD *)(this + 4 * (this->M104)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
   return this; /*0x4e612c*/
 }

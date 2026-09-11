@@ -1312,14 +1312,14 @@ int __thiscall sub_752CB0(int this, const char *a2)
 {
   int v3; // eax
 
-  *(_DWORD *)(this + 40) = 1065353216; /*0x752cbe*/
+  this->M40 = 1065353216; /*0x752cbe*/
   strcpy((char *)this, a2); /*0x752cd4*/
   *(_BYTE *)(this + 44) = 0; /*0x752cdf*/
   *(_BYTE *)(this + 53) = 0; /*0x752ce2*/
   *(_BYTE *)(this + 62) = 0; /*0x752ce5*/
-  *(_DWORD *)(this + 72) = 1; /*0x752ce8*/
-  *(_DWORD *)(this + 76) = 0; /*0x752cef*/
-  *(_DWORD *)(this + 80) = 2; /*0x752cf2*/
+  this->M72 = 1; /*0x752ce8*/
+  this->M76 = 0; /*0x752cef*/
+  this->M80 = 2; /*0x752cf2*/
   if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
     || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
     && MEMORY[0xB1D4B4] > 0
@@ -3966,17 +3966,17 @@ unsigned int __thiscall sub_759BC0(int this, signed int a2)
 
   v2 = a2; /*0x759bc2*/
   if ( a2 == -1 ) /*0x759bcb*/
-    v2 = *(_DWORD *)(this + 1288) - 1; /*0x759bd3*/
-  if ( *(_DWORD *)(this + 1284) != v2 ) /*0x759bda*/
+    v2 = this->M1288 - 1; /*0x759bd3*/
+  if ( this->M1284 != v2 ) /*0x759bda*/
   {
-    if ( ProcessAudioStreamBuffer(*(_DWORD *)(this + 512), v2, 0) != -6 ) /*0x759bee*/
-      *(_DWORD *)(this + 1284) = v2; /*0x759bf0*/
-    *(_DWORD *)(this + 1284) = v2; /*0x759bf6*/
+    if ( ProcessAudioStreamBuffer(this->M512, v2, 0) != -6 ) /*0x759bee*/
+      this->M1284 = v2; /*0x759bf0*/
+    this->M1284 = v2; /*0x759bf6*/
   }
   MovieClass::RenderLoop((char *)this, v2, 0); /*0x759c01*/
-  result = *(_DWORD *)(this + 1284); /*0x759c06*/
-  if ( result >= *(_DWORD *)(this + 1288) ) /*0x759c14*/
-    *(_DWORD *)(this + 1284) = 0; /*0x759c16*/
+  result = this->M1284; /*0x759c06*/
+  if ( result >= this->M1288 ) /*0x759c14*/
+    this->M1284 = 0; /*0x759c16*/
   return result; /*0x759c20*/
 }
 }
@@ -4021,31 +4021,31 @@ BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
       a3 = 0; /*0x75a147*/
       if ( !LookupFileInfoCache((const char *)(this + 113), 0, &a3, &a2, 0) ) /*0x75a15e*/
         goto LABEL_5; /*0x75a15e*/
-      v6 = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)(this + 4) + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
-      v7 = *(_DWORD *)(this + 4); /*0x75a17e*/
+      v6 = (*(int (__thiscall **)(int, int, int))(this->M4 + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
+      v7 = this->M4; /*0x75a17e*/
       v12 = a2; /*0x75a180*/
       *(_BYTE *)(this + 112) = !v6; /*0x75a186*/
       result = (*(int (__thiscall **)(int, int, int))(v7 + 40))(this + 4, v12, 1) == 0; /*0x75a191*/
       break; /*0x75a193*/
     case 4: /*0x75a136*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)(this + 4) + 52))(this + 4); /*0x75a273*/
+      (*(void (__thiscall **)(int))(this->M4 + 52))(this + 4); /*0x75a273*/
       *(_BYTE *)(this + 112) = 0; /*0x75a278*/
       return 0; /*0x75a276*/
     case 5: /*0x75a136*/
       v8 = a4; /*0x75a1a0*/
-      return (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)(this + 4) + 36))(this + 4, a3, a4) != v8; /*0x75a1b3*/
+      return (*(int (__thiscall **)(int, int *, int))(this->M4 + 36))(this + 4, a3, a4) != v8; /*0x75a1b3*/
     case 6: /*0x75a136*/
 LABEL_5:
       result = 1; /*0x75a1b6*/
       break; /*0x75a1bc*/
     case 7: /*0x75a136*/
-      result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0; /*0x75a1d7*/
+      result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(this + 4, a4, a3) == 0; /*0x75a1d7*/
       break; /*0x75a1d8*/
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
         v10 = this + 4; /*0x75a21c*/
-        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0; /*0x75a22a*/
+        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(this + 4, a4, a3) == 0; /*0x75a22a*/
         if ( !result ) /*0x75a22b*/
         {
           result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v10 + 36))(v10, &a4, 1) != 1; /*0x75a240*/
@@ -4056,13 +4056,13 @@ LABEL_5:
       else
       {
         v9 = this + 4; /*0x75a1ea*/
-        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4 - 1, a3) == 0; /*0x75a1f9*/
+        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(this + 4, a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
           result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v9 + 36))(v9, &a4, 1) != 1; /*0x75a210*/
       }
       break; /*0x75a212*/
     case 9: /*0x75a136*/
-      v11 = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 4) + 44))(this + 4); /*0x75a25e*/
+      v11 = (*(int (__thiscall **)(int))(this->M4 + 44))(this + 4); /*0x75a25e*/
       *a3 = v11; /*0x75a265*/
 LABEL_14:
       result = 0; /*0x75a267*/

@@ -1005,9 +1005,9 @@ void E4Recv_5B4400::sub_5B4400()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5B4400(int this)
 {
-  if ( *(_DWORD *)(this + 36) && (unsigned char)this->M18 ) /*0x5b440d*/
+  if ( this->M36 && (unsigned char)this->M18 ) /*0x5b440d*/
     __3_YAXPAX_Z(*(void **)(this + 36)); /*0x5b4413*/
-  *(_DWORD *)(this + 36) = 0; /*0x5b441b*/
+  this->M36 = 0; /*0x5b441b*/
   *(_BYTE *)(this + 18) = 0; /*0x5b441e*/
 }
 }
@@ -2996,13 +2996,13 @@ ObjectClass *__thiscall sub_5BCB90(int this, int a2)
   int v7; // edx
 
   v3 = 0; /*0x5bcb9c*/
-  *(_DWORD *)(this + 10008) = a2; /*0x5bcb9e*/
-  *(_DWORD *)(this + 10012) = 0; /*0x5bcba4*/
-  *(_DWORD *)(this + 10016) = 0; /*0x5bcbaa*/
-  *(_DWORD *)(this + 10020) = 0; /*0x5bcbb0*/
-  *(_DWORD *)(this + 10024) = 0; /*0x5bcbb6*/
-  *(_DWORD *)(this + 10028) = 80; /*0x5bcbbc*/
-  *(_DWORD *)(this + 10032) = 25; /*0x5bcbc6*/
+  this->M10008 = a2; /*0x5bcb9e*/
+  this->M10012 = 0; /*0x5bcba4*/
+  this->M10016 = 0; /*0x5bcbaa*/
+  this->M10020 = 0; /*0x5bcbb0*/
+  this->M10024 = 0; /*0x5bcbb6*/
+  this->M10028 = 80; /*0x5bcbbc*/
+  this->M10032 = 25; /*0x5bcbc6*/
   v4 = (_DWORD *)(this + 2000); /*0x5bcbd0*/
   do /*0x5bcbf5*/
   {
@@ -3777,7 +3777,7 @@ int __thiscall sub_5BF360(int this)
              *(wchar_t **)(this + 20),
              0,
              16454,
-             *(_DWORD *)(this + 4),
+             this->M4,
              0);
   return result; /*0x5bf383*/
 }

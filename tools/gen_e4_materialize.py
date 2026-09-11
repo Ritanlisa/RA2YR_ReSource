@@ -538,21 +538,23 @@ THIS_PRIM_TYPES = {
     "wchar_t", "struct", "union", "const", "unsigned",
 }
 
-_VERIFIER = None   # lazy: (verify_execution_flow module, maps)
+_VERIFIER = None   # lazy: (verify_execution_flow, maps, efv_ida_events)
 
 
 def recv_sites(pseudocode):
-    """G6（Gap2Recv 机制复用）：用验证器自身 leaf 提取 this 相对偏移
+    """G6（Gap2Recv 机制复用）：用验证器同源 leaf（efv_ida_events——含
+    _IDA_VTABLE_INDIRECT 通用间接调用形态）提取 this 相对偏移
     （READ/WRITE(member,N) / CALL(vfptr+N)）——保证 member_lookup 注册偏移
     与 verify 后续计算口径一致。"""
     global _VERIFIER
     if _VERIFIER is None:
         sys.path.insert(0, str(ROOT / "tools"))
         import verify_execution_flow as V
-        _VERIFIER = (V, V.load_all_maps())
-    V, M = _VERIFIER
+        import efv_ida_events as E
+        _VERIFIER = (V, V.load_all_maps(), E)
+    V, M, E = _VERIFIER
     this_type = V.detect_this_type(pseudocode)
-    leaf = V.make_ida_leaf(this_type, M)
+    leaf = E.make_ida_leaf(this_type, M)
     members, vf = {}, set()
     for line in pseudocode.split("\n"):
         for ev in leaf(line):
@@ -872,6 +874,10 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
         lines = ["// E2 minimal declaration (auto-generated, full layout via member_lookup/til)",
                  "#pragma once", "", "namespace gamemd {", "struct %s {" % cls,
                  "    void* vfptr;  // minimal E2 declaration"]
+        # G6: E4Recv 合成类的 vtable 槽位方法（变参形态——任意调用点实参可编译；
+        # 事件层按 vtable_offsets 表驱动解析为 CALL(vfptr+N)，与声明无关）
+        for slotname in sorted(recv_vt.get(cls, {})):
+            lines.append("    int %s(int, ...);  // G6 vtable slot dispatch" % slotname)
         seen = set()
         for d, addr in decls:
             if d.split("(")[0].split()[-1] in seen:

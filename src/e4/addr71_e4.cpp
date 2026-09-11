@@ -1000,11 +1000,11 @@ char __thiscall sub_71C8E0(int this)
   if ( !result ) /*0x71c8eb*/
   {
     *(_BYTE *)(this + 205) = 1; /*0x71c8ee*/
-    *(_DWORD *)(this + 180) = MEMORY[0xA8ED84]; /*0x71c905*/
-    *(_DWORD *)(this + 192) = 2; /*0x71c90b*/
-    *(_DWORD *)(this + 184) = v2; /*0x71c911*/
-    *(_DWORD *)(this + 188) = 2; /*0x71c914*/
-    *(_DWORD *)(this + 172) = 0; /*0x71c917*/
+    this->M180 = MEMORY[0xA8ED84]; /*0x71c905*/
+    this->M192 = 2; /*0x71c90b*/
+    this->M184 = v2; /*0x71c911*/
+    this->M188 = 2; /*0x71c914*/
+    this->M172 = 0; /*0x71c917*/
     return v2; /*0x71c907*/
   }
   return result; /*0x71c922*/

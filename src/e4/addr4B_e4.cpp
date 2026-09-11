@@ -286,15 +286,15 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
 
   v2 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0df1*/
   v4 = (int *)(this + 64); /*0x4b0dfd*/
-  if ( *(_DWORD *)(this + 64) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0e1c*/
-    || *(_DWORD *)(this + 68) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]
-    || *(_DWORD *)(this + 72) != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
+  if ( this->M64 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0e1c*/
+    || this->M68 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]
+    || this->M72 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
   {
     *v4 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e20*/
-    *(_DWORD *)(this + 68) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0e28*/
+    this->M68 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0e28*/
     v5 = *(TechnoClass **)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0e2b*/
     *(_BYTE *)(this + 99) = 0; /*0x4b0e30*/
-    *(_DWORD *)(this + 72) = v5; /*0x4b0e34*/
+    this->M72 = v5; /*0x4b0e34*/
     v2 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e37*/
   }
   if ( aP1->field_0 != v2 /*0x4b0e5d*/
@@ -302,22 +302,22 @@ char __thiscall sub_4B0DF0(int this, IUnknown *aP1)
     || aP1->field_8 != *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780] )
   {
     *v4 = aP1->field_0; /*0x4b0e65*/
-    *(_DWORD *)(this + 68) = aP1->field_4; /*0x4b0e6a*/
+    this->M68 = aP1->field_4; /*0x4b0e6a*/
     v6 = (IUnknown *)aP1->field_8; /*0x4b0e6d*/
     *(_BYTE *)(this + 99) = 1; /*0x4b0e70*/
-    *(_DWORD *)(this + 72) = v6; /*0x4b0e74*/
+    this->M72 = v6; /*0x4b0e74*/
     v9 = *(AbstractClass **)(this + 12); /*0x4b0e7a*/
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x4b0e81*/
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(*(_DWORD *)(this + 12) + 129) ) /*0x4b0e94*/
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(this->M12 + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo(this, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)(this + 12) + 144) ) /*0x4b0eb3*/
+    if ( *(_BYTE *)(this->M12 + 144) ) /*0x4b0eb3*/
     {
       *v4 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0ec3*/
-      *(_DWORD *)(this + 68) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0ecb*/
-      *(_DWORD *)(this + 72) = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0ed3*/
+      this->M68 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0ecb*/
+      this->M72 = *(_DWORD *)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0ed3*/
       *(_BYTE *)(this + 99) = 0; /*0x4b0ed6*/
     }
   }
@@ -365,7 +365,7 @@ DropListClass *__thiscall sub_4B4E10(
 
   sub_4C2FC0((int *)this, aP1, (ControlClass *)String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
   *(_BYTE *)(this + 72) = 0; /*0x4b4e62*/
-  *(_DWORD *)(this + 76) = a9; /*0x4b4e66*/
+  this->M76 = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((_BYTE *)(this + 80), 0, a11, (int)&aP5->__pad_0[(_DWORD)aP7], (int)aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct( /*0x4b4ea3*/
     this + 176,
@@ -379,10 +379,10 @@ DropListClass *__thiscall sub_4B4E10(
     a11);
   *(_DWORD *)this = &DropListClass::`vftable'; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
-  v13 = *(_DWORD *)(this + 176); /*0x4b4eba*/
-  *(_DWORD *)(this + 24) = Instance->referenceCount + 1; /*0x4b4ebf*/
+  v13 = this->M176; /*0x4b4eba*/
+  this->M24 = Instance->referenceCount + 1; /*0x4b4ebf*/
   (*(void (__thiscall **)(int, int))(v13 + 132))(this + 176, this); /*0x4b4ec4*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this); /*0x4b4ecf*/
+  (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this); /*0x4b4ecf*/
   return (DropListClass *)this; /*0x4b4ed7*/
 }
 }
@@ -398,39 +398,39 @@ int __thiscall sub_4B53E0(int this, int a2)
   int v3; // eax
 
   ControlClass::CtorFromData((_DWORD *)this, a2); /*0x4b53eb*/
-  *(_DWORD *)(this + 44) = *(_DWORD *)(a2 + 44); /*0x4b53f6*/
-  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48); /*0x4b53fc*/
-  *(_DWORD *)(this + 52) = *(_DWORD *)(a2 + 52); /*0x4b5402*/
-  *(_DWORD *)(this + 56) = *(_DWORD *)(a2 + 56); /*0x4b5408*/
-  *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60); /*0x4b540e*/
-  *(_DWORD *)(this + 64) = *(_DWORD *)(a2 + 64); /*0x4b5414*/
-  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68); /*0x4b541a*/
+  this->M44 = *(_DWORD *)(a2 + 44); /*0x4b53f6*/
+  this->M48 = *(_DWORD *)(a2 + 48); /*0x4b53fc*/
+  this->M52 = *(_DWORD *)(a2 + 52); /*0x4b5402*/
+  this->M56 = *(_DWORD *)(a2 + 56); /*0x4b5408*/
+  this->M60 = *(_DWORD *)(a2 + 60); /*0x4b540e*/
+  this->M64 = *(_DWORD *)(a2 + 64); /*0x4b5414*/
+  this->M68 = *(_DWORD *)(a2 + 68); /*0x4b541a*/
   *(_DWORD *)this = &EditClass::`vftable'; /*0x4b541d*/
   *(_BYTE *)(this + 72) = *(_BYTE *)(a2 + 72); /*0x4b5429*/
-  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x4b5432*/
+  this->M76 = *(_DWORD *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData((_DWORD *)(this + 80), a2 + 80); /*0x4b5435*/
   *(_BYTE *)(this + 124) = *(_BYTE *)(a2 + 124); /*0x4b5443*/
   *(_BYTE *)(this + 125) = *(_BYTE *)(a2 + 125); /*0x4b5449*/
-  *(_DWORD *)(this + 128) = *(_DWORD *)(a2 + 128); /*0x4b544f*/
-  *(_DWORD *)(this + 80) = &ToggleClass::`vftable'; /*0x4b5452*/
+  this->M128 = *(_DWORD *)(a2 + 128); /*0x4b544f*/
+  this->M80 = &ToggleClass::`vftable'; /*0x4b5452*/
   *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132); /*0x4b545c*/
-  *(_DWORD *)(this + 136) = *(_DWORD *)(a2 + 136); /*0x4b5462*/
-  *(_DWORD *)(this + 140) = *(_DWORD *)(a2 + 140); /*0x4b5468*/
+  this->M136 = *(_DWORD *)(a2 + 136); /*0x4b5462*/
+  this->M140 = *(_DWORD *)(a2 + 140); /*0x4b5468*/
   *(_BYTE *)(this + 144) = *(_BYTE *)(a2 + 144); /*0x4b546e*/
-  *(_DWORD *)(this + 148) = *(_DWORD *)(a2 + 148); /*0x4b5474*/
-  *(_DWORD *)(this + 152) = *(_DWORD *)(a2 + 152); /*0x4b547a*/
+  this->M148 = *(_DWORD *)(a2 + 148); /*0x4b5474*/
+  this->M152 = *(_DWORD *)(a2 + 152); /*0x4b547a*/
   *(_BYTE *)(this + 156) = *(_BYTE *)(a2 + 156); /*0x4b5480*/
-  *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160); /*0x4b5486*/
+  this->M160 = *(_DWORD *)(a2 + 160); /*0x4b5486*/
   *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164); /*0x4b548c*/
   *(_BYTE *)(this + 165) = *(_BYTE *)(a2 + 165); /*0x4b5492*/
-  *(_DWORD *)(this + 168) = *(_DWORD *)(a2 + 168); /*0x4b5498*/
+  this->M168 = *(_DWORD *)(a2 + 168); /*0x4b5498*/
   *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172); /*0x4b54a4*/
-  *(_DWORD *)(this + 80) = &ShapeButtonClass::`vftable'; /*0x4b54a9*/
+  this->M80 = &ShapeButtonClass::`vftable'; /*0x4b54a9*/
   sub_557380(this + 176, a2 + 176); /*0x4b54af*/
   v3 = this->M176; /*0x4b54b4*/
   *(_DWORD *)this = &DropListClass::`vftable'; /*0x4b54b9*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(this + 176, this); /*0x4b54bf*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 80) + 132))(this + 80, this); /*0x4b54ca*/
+  (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this); /*0x4b54ca*/
   return this; /*0x4b54d3*/
 }
 }
@@ -444,27 +444,27 @@ int E4Recv_4B56E0::sub_4B56E0(int a2)
 int __thiscall sub_4B56E0(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b56e9*/
-  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12); /*0x4b56f1*/
-  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16); /*0x4b56f7*/
-  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20); /*0x4b56fd*/
-  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24); /*0x4b5703*/
+  this->M12 = *(_DWORD *)(a2 + 12); /*0x4b56f1*/
+  this->M16 = *(_DWORD *)(a2 + 16); /*0x4b56f7*/
+  this->M20 = *(_DWORD *)(a2 + 20); /*0x4b56fd*/
+  this->M24 = *(_DWORD *)(a2 + 24); /*0x4b5703*/
   *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28); /*0x4b5709*/
   *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29); /*0x4b570f*/
   *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30); /*0x4b5715*/
-  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32); /*0x4b571b*/
-  *(_DWORD *)(this + 36) = *(_DWORD *)(a2 + 36); /*0x4b5721*/
-  *(_DWORD *)(this + 40) = *(_DWORD *)(a2 + 40); /*0x4b5727*/
+  this->M32 = *(_DWORD *)(a2 + 32); /*0x4b571b*/
+  this->M36 = *(_DWORD *)(a2 + 36); /*0x4b5721*/
+  this->M40 = *(_DWORD *)(a2 + 40); /*0x4b5727*/
   *(_BYTE *)(this + 44) = *(_BYTE *)(a2 + 44); /*0x4b572d*/
   *(_BYTE *)(this + 45) = *(_BYTE *)(a2 + 45); /*0x4b5733*/
   *(_BYTE *)(this + 46) = *(_BYTE *)(a2 + 46); /*0x4b5739*/
   this->M48 = *(_DWORD *)(a2 + 48); /*0x4b573f*/
-  *(_DWORD *)(this + 52) = *(_DWORD *)(a2 + 52); /*0x4b5745*/
-  *(_DWORD *)(this + 56) = *(_DWORD *)(a2 + 56); /*0x4b574b*/
-  *(_DWORD *)(this + 60) = *(_DWORD *)(a2 + 60); /*0x4b5751*/
+  this->M52 = *(_DWORD *)(a2 + 52); /*0x4b5745*/
+  this->M56 = *(_DWORD *)(a2 + 56); /*0x4b574b*/
+  this->M60 = *(_DWORD *)(a2 + 60); /*0x4b5751*/
   this->M64 = *(_DWORD *)(a2 + 64); /*0x4b5757*/
   *(_BYTE *)(this + 68) = *(_BYTE *)(a2 + 68); /*0x4b575d*/
-  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72); /*0x4b5763*/
-  *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x4b5769*/
+  this->M72 = *(_DWORD *)(a2 + 72); /*0x4b5763*/
+  this->M76 = *(_DWORD *)(a2 + 76); /*0x4b5769*/
   this->M80 = *(_DWORD *)(a2 + 80); /*0x4b576f*/
   return this; /*0x4b5774*/
 }
@@ -479,14 +479,14 @@ int E4Recv_4B5780::sub_4B5780(int a2)
 int __thiscall sub_4B5780(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5789*/
-  *(_DWORD *)(this + 12) = *(_DWORD *)(a2 + 12); /*0x4b5791*/
-  *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16); /*0x4b5797*/
-  *(_DWORD *)(this + 20) = *(_DWORD *)(a2 + 20); /*0x4b579d*/
-  *(_DWORD *)(this + 24) = *(_DWORD *)(a2 + 24); /*0x4b57a3*/
+  this->M12 = *(_DWORD *)(a2 + 12); /*0x4b5791*/
+  this->M16 = *(_DWORD *)(a2 + 16); /*0x4b5797*/
+  this->M20 = *(_DWORD *)(a2 + 20); /*0x4b579d*/
+  this->M24 = *(_DWORD *)(a2 + 24); /*0x4b57a3*/
   *(_BYTE *)(this + 28) = *(_BYTE *)(a2 + 28); /*0x4b57a9*/
   *(_BYTE *)(this + 29) = *(_BYTE *)(a2 + 29); /*0x4b57af*/
   *(_BYTE *)(this + 30) = *(_BYTE *)(a2 + 30); /*0x4b57b5*/
-  *(_DWORD *)(this + 32) = *(_DWORD *)(a2 + 32); /*0x4b57bb*/
+  this->M32 = *(_DWORD *)(a2 + 32); /*0x4b57bb*/
   return this; /*0x4b57c0*/
 }
 }
@@ -1039,7 +1039,7 @@ char __thiscall sub_4B6B80(int this)
   int v2; // edi
   char result; // al
 
-  v2 = *(_DWORD *)(this + 16); /*0x4b6b87*/
+  v2 = this->M16; /*0x4b6b87*/
   *(_BYTE *)(this + 12) = 0; /*0x4b6b8a*/
   if ( v2 > 0 ) /*0x4b6b8f*/
   {
@@ -1050,8 +1050,8 @@ char __thiscall sub_4B6B80(int this)
     }
     while ( v2 ); /*0x4b6b9a*/
   }
-  *(_DWORD *)(this + 16) = 0; /*0x4b6b9c*/
-  *(_DWORD *)(this + 40) = 0; /*0x4b6b9f*/
+  this->M16 = 0; /*0x4b6b9c*/
+  this->M40 = 0; /*0x4b6b9f*/
   return result; /*0x4b6ba2*/
 }
 }

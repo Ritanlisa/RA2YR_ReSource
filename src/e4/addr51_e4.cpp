@@ -683,19 +683,19 @@ int __thiscall sub_517110(int this)
   _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( *(_DWORD *)(this + 36) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
-    || *(_DWORD *)(this + 40) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
-    || *(_DWORD *)(this + 44) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
+  if ( this->M36 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
+    || this->M40 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
+    || this->M44 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
   {
-    v2 = *(_DWORD *)(this + 36) / 256; /*0x517161*/
-    v3 = *(_DWORD *)(this + 40) / 256; /*0x517164*/
-    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(*(_DWORD *)(this + 12), v8); /*0x517167*/
+    v2 = this->M36 / 256; /*0x517161*/
+    v3 = this->M40 / 256; /*0x517164*/
+    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(this->M12, v8); /*0x517167*/
     if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  v6 = *(_DWORD *)(this + 12); /*0x51717f*/
-  *(_DWORD *)(this + 72) = 0; /*0x517182*/
-  *(_DWORD *)(this + 76) = 1072693248; /*0x517189*/
+  v6 = this->M12; /*0x51717f*/
+  this->M72 = 0; /*0x517182*/
+  this->M76 = 1072693248; /*0x517189*/
   (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/

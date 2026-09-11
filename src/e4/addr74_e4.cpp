@@ -2052,7 +2052,7 @@ char *__thiscall sub_74FAE0(int this)
   v3 = this->M68; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
-    v4 = *(_WORD *)(this + 10); /*0x74fb70*/
+    v4 = (unsigned short)this->M10; /*0x74fb70*/
   }
   else
   {

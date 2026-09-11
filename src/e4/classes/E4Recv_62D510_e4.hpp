@@ -4,6 +4,7 @@
 namespace gamemd {
 struct E4Recv_62D510 {
     void* vfptr;  // minimal E2 declaration
+    int Vf436(int, ...);  // G6 vtable slot dispatch
     int sub_62D510();  // 0x62D510
 };
 } // namespace gamemd

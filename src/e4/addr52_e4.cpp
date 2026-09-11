@@ -525,7 +525,7 @@ int __thiscall sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, in
     {
       if ( a2 == *(unsigned __int8 **)(this + 4) ) /*0x528248*/
       {
-        v7 = *(_DWORD *)(this + 8); /*0x52824e*/
+        v7 = this->M8; /*0x52824e*/
 LABEL_5:
         if ( v7 ) /*0x528253*/
         {
@@ -583,7 +583,7 @@ LABEL_29:
       v25 = 0; /*0x5282f4*/
       v16 = Checksummer::Add_Buffer(&v23, a2, strlen((const char *)a2)); /*0x528312*/
       a2 = (unsigned __int8 *)v16; /*0x528314*/
-      if ( *(_DWORD *)(this + 44) ) /*0x528318*/
+      if ( this->M44 ) /*0x528318*/
       {
         v17 = *(_DWORD **)(this + 56); /*0x52831f*/
         if ( !v17 || *v17 != v16 ) /*0x528328*/
@@ -591,25 +591,25 @@ LABEL_29:
           v18 = SortedArray::BinarySearch((char **)(this + 40), (int *)&a2); /*0x528331*/
           if ( !v18 ) /*0x528338*/
             goto LABEL_27; /*0x528338*/
-          *(_DWORD *)(this + 56) = v18; /*0x52833a*/
+          this->M56 = v18; /*0x52833a*/
         }
         a2 = (unsigned __int8 *)v16; /*0x528341*/
         if ( HashTable::BinarySearch(this + 40, (int *)&a2) ) /*0x528348*/
-          v19 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x528354*/
+          v19 = (int *)(this->M56 + 4); /*0x528354*/
         else
           v19 = (int *)&unk_B7882C; /*0x528359*/
         v7 = *v19; /*0x52835e*/
         if ( v7 ) /*0x528362*/
         {
           v6 = a3; /*0x528364*/
-          *(_DWORD *)(this + 8) = v7; /*0x528368*/
-          *(_DWORD *)(this + 4) = v4; /*0x52836b*/
+          this->M8 = v7; /*0x528368*/
+          this->M4 = v4; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
         }
       }
 LABEL_27:
-      *(_DWORD *)(this + 4) = 0; /*0x528375*/
-      *(_DWORD *)(this + 8) = 0; /*0x52837c*/
+      this->M4 = 0; /*0x528375*/
+      this->M8 = 0; /*0x52837c*/
       return a4; /*0x528388*/
     }
   }
@@ -952,7 +952,7 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
     return 0; /*0x52a4e0*/
   memset(v17, 0, sizeof(v17)); /*0x52a4ed*/
   v3 = Checksummer::Add_Buffer(v17, a2, strlen((const char *)a2)); /*0x52a504*/
-  v4 = *(_DWORD *)(this + 48); /*0x52a509*/
+  v4 = this->M48; /*0x52a509*/
   v5 = v3; /*0x52a50c*/
   v18 = v3; /*0x52a510*/
   if ( !v4 ) /*0x52a514*/
@@ -963,31 +963,31 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
   if ( !(unsigned char)this->M56 ) /*0x52a525*/
   {
     qsort(*(void **)(this + 44), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a536*/
-    *(_DWORD *)(this + 60) = 0; /*0x52a53e*/
+    this->M60 = 0; /*0x52a53e*/
     *(_BYTE *)(this + 56) = 1; /*0x52a541*/
   }
-  v7 = *(_DWORD *)(this + 48); /*0x52a545*/
-  v8 = *(_DWORD *)(this + 44); /*0x52a54d*/
+  v7 = this->M48; /*0x52a545*/
+  v8 = this->M44; /*0x52a54d*/
   v17[0] = v5; /*0x52a550*/
   v9 = UI_Find(v8, v7, (int *)v17); /*0x52a554*/
   if ( !v9 ) /*0x52a55b*/
     return 0; /*0x52a5f8*/
-  *(_DWORD *)(this + 60) = v9; /*0x52a561*/
+  this->M60 = v9; /*0x52a561*/
 LABEL_9:
-  v10 = *(_DWORD *)(this + 48); /*0x52a564*/
+  v10 = this->M48; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
     return unk_B78830; /*0x52a56a*/
   v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
-    return *(_DWORD *)(*(_DWORD *)(this + 60) + 4); /*0x52a5f3*/
+    return *(_DWORD *)(this->M60 + 4); /*0x52a5f3*/
   if ( !(unsigned char)this->M56 ) /*0x52a577*/
   {
     qsort(*(void **)(this + 44), v10, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a588*/
-    *(_DWORD *)(this + 60) = 0; /*0x52a590*/
+    this->M60 = 0; /*0x52a590*/
     *(_BYTE *)(this + 56) = 1; /*0x52a593*/
   }
-  v12 = *(_DWORD *)(this + 48); /*0x52a597*/
-  v13 = *(_DWORD *)(this + 44); /*0x52a59a*/
+  v12 = this->M48; /*0x52a597*/
+  v13 = this->M44; /*0x52a59a*/
   if ( v12 <= 0 ) /*0x52a59f*/
     return unk_B78830; /*0x52a59f*/
   while ( 1 ) /*0x52a5ac*/
@@ -1009,8 +1009,8 @@ LABEL_19:
   }
   if ( v15 ) /*0x52a5df*/
   {
-    *(_DWORD *)(this + 60) = v15; /*0x52a5e1*/
-    return *(_DWORD *)(*(_DWORD *)(this + 60) + 4); /*0x52a5e1*/
+    this->M60 = v15; /*0x52a5e1*/
+    return *(_DWORD *)(this->M60 + 4); /*0x52a5e1*/
   }
   return unk_B78830; /*0x52a5d2*/
 }

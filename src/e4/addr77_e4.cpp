@@ -421,27 +421,27 @@ int __thiscall sub_771710(int this)
   int v7; // edx
   int result; // eax
 
-  v2 = *(_DWORD *)(this + 976); /*0x771720*/
+  v2 = this->M976; /*0x771720*/
   v3 = v2 - 1; /*0x771722*/
-  if ( v2 > *(_DWORD *)(this + 956) ) /*0x771725*/
+  if ( v2 > this->M956 ) /*0x771725*/
   {
     do /*0x771768*/
     {
-      v4 = *(_DWORD *)(this + 976); /*0x771728*/
+      v4 = this->M976; /*0x771728*/
       if ( v3 < v4 ) /*0x771730*/
       {
         v5 = v4 - 1; /*0x771732*/
         v6 = v3; /*0x771733*/
-        for ( *(_DWORD *)(this + 976) = v5; v6 < *(_DWORD *)(this + 976); ++v6 ) /*0x77173d*/
+        for ( this->M976 = v5; v6 < this->M976; ++v6 ) /*0x77173d*/
           String::Reassign( /*0x77174d*/
-            (char **)(*(_DWORD *)(this + 964) + 4 * v6),
-            (const char **)(*(_DWORD *)(this + 964) + 4 * v6 + 4));
+            (char **)(this->M964 + 4 * v6),
+            (const char **)(this->M964 + 4 * v6 + 4));
       }
       v7 = v3--; /*0x771763*/
     }
-    while ( v7 > *(_DWORD *)(this + 956) ); /*0x771768*/
+    while ( v7 > this->M956 ); /*0x771768*/
   }
-  result = *(_DWORD *)(this + 956); /*0x77176b*/
+  result = this->M956; /*0x77176b*/
   if ( !result ) /*0x771773*/
     *(_BYTE *)(this + 952) = 1; /*0x771775*/
   return result; /*0x77177c*/

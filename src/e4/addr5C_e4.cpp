@@ -4782,32 +4782,32 @@ int __thiscall sub_5CD570(
   int v16; // [esp+3Ch] [ebp+20h]
   int v17; // [esp+40h] [ebp+24h]
 
-  *(_DWORD *)(this + 8) = a4; /*0x5cd581*/
-  *(_DWORD *)(this + 4) = a3; /*0x5cd587*/
+  this->M8 = a4; /*0x5cd581*/
+  this->M4 = a3; /*0x5cd587*/
   *(_BYTE *)(this + 12) = 1; /*0x5cd58a*/
   v11 = 0; /*0x5cd597*/
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
-  *(_DWORD *)(this + 24) = 0; /*0x5cd59f*/
+  this->M24 = 0; /*0x5cd59f*/
   *(_DWORD *)this = &MSAnim::`vftable'; /*0x5cd5a5*/
   WideString::AssignFromPtr((wchar_t **)(this + 28), a2); /*0x5cd5ab*/
-  *(_DWORD *)(this + 44) = a8; /*0x5cd5c0*/
+  this->M44 = a8; /*0x5cd5c0*/
   *(_BYTE *)(this + 48) = a9; /*0x5cd5c7*/
   this->M32 = 0; /*0x5cd5ce*/
-  *(_DWORD *)(this + 36) = a7; /*0x5cd5d1*/
-  *(_DWORD *)(this + 40) = 0; /*0x5cd5d4*/
-  *(_DWORD *)(this + 52) = a5; /*0x5cd5d7*/
+  this->M36 = a7; /*0x5cd5d1*/
+  this->M40 = 0; /*0x5cd5d4*/
+  this->M52 = a5; /*0x5cd5d7*/
   *(_BYTE *)(this + 72) = 0; /*0x5cd5da*/
   *(_BYTE *)(this + 73) = a10; /*0x5cd5dd*/
-  *(_DWORD *)(this + 76) = 0; /*0x5cd5e0*/
+  this->M76 = 0; /*0x5cd5e0*/
   *(_DWORD *)this = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
   this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
-  *(_DWORD *)(this + 20) = v15; /*0x5cd5f9*/
-  *(_DWORD *)(this + 24) = a7; /*0x5cd5ff*/
+  this->M20 = v15; /*0x5cd5f9*/
+  this->M24 = a7; /*0x5cd5ff*/
   sub_5CD690(this, a6); /*0x5cd602*/
   if ( a10 ) /*0x5cd60b*/
   {
     v17 = 0; /*0x5cd611*/
-    v16 = *(_DWORD *)(*(_DWORD *)(this + 52) + 4); /*0x5cd618*/
+    v16 = *(_DWORD *)(this->M52 + 4); /*0x5cd618*/
     if ( WideString::GetChar((const wchar_t **)(this + 28), 0) ) /*0x5cd61e*/
     {
       do /*0x5cd658*/
@@ -4816,11 +4816,11 @@ int __thiscall sub_5CD570(
           break; /*0x5cd634*/
         v12 = **(_DWORD **)(this + 52); /*0x5cd63c*/
         LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v11++); /*0x5cd63e*/
-        v17 += (*(int (__thiscall **)(_DWORD, int))(v12 + 4))(*(_DWORD *)(this + 52), v13); /*0x5cd651*/
+        v17 += (*(int (__thiscall **)(_DWORD, int))(v12 + 4))(this->M52, v13); /*0x5cd651*/
       }
       while ( WideString::GetChar((const wchar_t **)(this + 28), v11) ); /*0x5cd658*/
     }
-    *(_DWORD *)(this + 76) = (this->M64 - v17 - v16) / 2; /*0x5cd676*/
+    this->M76 = (this->M64 - v17 - v16) / 2; /*0x5cd676*/
   }
   return this; /*0x5cd67b*/
 }
@@ -4866,9 +4866,9 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
     v21 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd825*/
     result = sub_5D30C0(*(size_t **)(this + 52), v21, (_DWORD *)(this + 56)); /*0x5cd82e*/
-    v22 = *(_DWORD *)(this + 8); /*0x5cd836*/
-    *v20 = *(_DWORD *)(this + 4); /*0x5cd839*/
-    *(_DWORD *)(this + 60) = v22; /*0x5cd83b*/
+    v22 = this->M8; /*0x5cd836*/
+    *v20 = this->M4; /*0x5cd839*/
+    this->M60 = v22; /*0x5cd83b*/
   }
   else
   {
@@ -4876,19 +4876,19 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     v23 = (_DWORD *)(this + 56); /*0x5cd6b6*/
     v5 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd6ba*/
     sub_5D30C0(*(size_t **)(this + 52), v5, v23); /*0x5cd6c3*/
-    v6 = *(_DWORD *)(this + 52); /*0x5cd6dc*/
-    *(_DWORD *)(this + 4) += (a2[2] - *(_DWORD *)(this + 64)) / 2; /*0x5cd6df*/
-    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + *(_DWORD *)(this + 8); /*0x5cd706*/
-    v8 = *(_DWORD *)(this + 60); /*0x5cd70d*/
-    *v4 += *(_DWORD *)(this + 4); /*0x5cd710*/
-    *(_DWORD *)(this + 8) = v7; /*0x5cd71a*/
-    *(_DWORD *)(this + 60) = v7 + v8; /*0x5cd71d*/
+    v6 = this->M52; /*0x5cd6dc*/
+    this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
+    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->M8; /*0x5cd706*/
+    v8 = this->M60; /*0x5cd70d*/
+    *v4 += this->M4; /*0x5cd710*/
+    this->M8 = v7; /*0x5cd71a*/
+    this->M60 = v7 + v8; /*0x5cd71d*/
     Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
-    v10 = *(_DWORD *)(this + 60); /*0x5cd729*/
-    v11 = *(_DWORD *)(this + 64); /*0x5cd72c*/
+    v10 = this->M60; /*0x5cd729*/
+    v11 = this->M64; /*0x5cd72c*/
     v27 = v11; /*0x5cd72f*/
-    v28 = *(_DWORD *)(this + 68); /*0x5cd736*/
+    v28 = this->M68; /*0x5cd736*/
     v29 = a2[2]; /*0x5cd73f*/
     if ( a2[2] <= 0 ) /*0x5cd743*/
       goto LABEL_20; /*0x5cd743*/
@@ -4935,12 +4935,12 @@ LABEL_20:
       v17 = v9; /*0x5cd7e2*/
     }
     *v4 = v17; /*0x5cd7f6*/
-    v18 = *(_DWORD *)(this + 52); /*0x5cd7f8*/
-    *(_DWORD *)(this + 60) = v10; /*0x5cd7fb*/
-    *(_DWORD *)(this + 64) = v16; /*0x5cd7fe*/
-    *(_DWORD *)(this + 68) = v15; /*0x5cd801*/
+    v18 = this->M52; /*0x5cd7f8*/
+    this->M60 = v10; /*0x5cd7fb*/
+    this->M64 = v16; /*0x5cd7fe*/
+    this->M68 = v15; /*0x5cd801*/
     result = (_DWORD *)(*(_DWORD *)(v18 + 4) / 2); /*0x5cd80f*/
-    *(_DWORD *)(this + 4) += result; /*0x5cd813*/
+    this->M4 += result; /*0x5cd813*/
   }
   return result; /*0x5cd80e*/
 }
@@ -5186,7 +5186,7 @@ char __thiscall sub_5CE0C0(int this, int a2, _DWORD *a3)
   int v20; // [esp+24h] [ebp-8h]
   int v21; // [esp+30h] [ebp+4h]
 
-  v4 = *(_DWORD *)(this + 24); /*0x5ce0cb*/
+  v4 = this->M24; /*0x5ce0cb*/
   if ( this->M16 != -1 ) /*0x5ce0d1*/
   {
     v5 = Timer::GetTicks() - this->M16; /*0x5ce0db*/
@@ -5206,11 +5206,11 @@ LABEL_24:
 LABEL_5:
   if ( (unsigned char)this->M12 != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
-  v6 = *(_DWORD *)(this + 44); /*0x5ce0fc*/
+  v6 = this->M44; /*0x5ce0fc*/
   this->M16 = Timer::GetTicks(); /*0x5ce108*/
-  *(_DWORD *)(this + 20) = v20; /*0x5ce10f*/
-  *(_DWORD *)(this + 24) = v6; /*0x5ce112*/
-  if ( *(_DWORD *)(this + 32) >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
+  this->M20 = v20; /*0x5ce10f*/
+  this->M24 = v6; /*0x5ce112*/
+  if ( this->M32 >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
   {
     v7 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
@@ -5224,10 +5224,10 @@ LABEL_5:
       this + 84,
       0,
       1);
-  v9 = *(_DWORD *)(this + 4); /*0x5ce179*/
+  v9 = this->M4; /*0x5ce179*/
   if ( (unsigned char)this->M73 ) /*0x5ce176*/
-    v9 += *(_DWORD *)(this + 76); /*0x5ce180*/
-  v18 = *(_DWORD *)(this + 32); /*0x5ce18b*/
+    v9 += this->M76; /*0x5ce180*/
+  v18 = this->M32; /*0x5ce18b*/
   v10 = v18 + 1; /*0x5ce18c*/
   LOWORD(v11) = WideString::GetChar((const wchar_t **)(this + 28), v18); /*0x5ce18d*/
   v12 = v11; /*0x5ce192*/
@@ -5238,14 +5238,14 @@ LABEL_5:
       if ( !(_WORD)v12 ) /*0x5ce19d*/
         break; /*0x5ce19d*/
       (*(void (__thiscall **)(_DWORD, int, int, int, _DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 52) + 16))( /*0x5ce1b5*/
-        *(_DWORD *)(this + 52),
+        this->M52,
         a2,
         v12,
         v9,
         this->M80,
-        *(_DWORD *)(this + 36),
+        this->M36,
         0);
-      v9 += (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 52) + 4))(*(_DWORD *)(this + 52), v12); /*0x5ce1c1*/
+      v9 += (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 52) + 4))(this->M52, v12); /*0x5ce1c1*/
       v19 = v10++; /*0x5ce1c5*/
       LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v19); /*0x5ce1ca*/
       v12 = v13; /*0x5ce1cf*/
@@ -5253,40 +5253,40 @@ LABEL_5:
     while ( (_WORD)v13 != 10 ); /*0x5ce1d5*/
   }
   v14 = this->M64; /*0x5ce1e0*/
-  v15 = *(_DWORD *)(*(_DWORD *)(this + 52) + 8); /*0x5ce1e3*/
+  v15 = *(_DWORD *)(this->M52 + 8); /*0x5ce1e3*/
   v21 = this->M80; /*0x5ce1e6*/
-  *a3 = *(_DWORD *)(this + 56); /*0x5ce1ee*/
+  *a3 = this->M56; /*0x5ce1ee*/
   a3[1] = v21; /*0x5ce1f4*/
   a3[2] = v14; /*0x5ce1f7*/
   a3[3] = v15; /*0x5ce1fa*/
-  if ( *(_DWORD *)(this + 36) == 2 ) /*0x5ce203*/
+  if ( this->M36 == 2 ) /*0x5ce203*/
   {
-    *(_DWORD *)(this + 84) = 0; /*0x5ce20b*/
-    *(_DWORD *)(this + 88) = 0; /*0x5ce20e*/
-    *(_DWORD *)(this + 92) = 0; /*0x5ce211*/
+    this->M84 = 0; /*0x5ce20b*/
+    this->M88 = 0; /*0x5ce20e*/
+    this->M92 = 0; /*0x5ce211*/
     this->M96 = 0; /*0x5ce214*/
-    *(_DWORD *)(this + 32) = v10; /*0x5ce217*/
+    this->M32 = v10; /*0x5ce217*/
     if ( (_WORD)v12 == 10 ) /*0x5ce21a*/
     {
       v16 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v16); /*0x5ce234*/
-      this->M80 += *(_DWORD *)(*(_DWORD *)(this + 52) + 8); /*0x5ce244*/
+      this->M80 += *(_DWORD *)(this->M52 + 8); /*0x5ce244*/
     }
   }
   else
   {
-    *(_DWORD *)(this + 84) = *a3; /*0x5ce24e*/
-    *(_DWORD *)(this + 88) = a3[1]; /*0x5ce254*/
-    *(_DWORD *)(this + 92) = a3[2]; /*0x5ce25a*/
+    this->M84 = *a3; /*0x5ce24e*/
+    this->M88 = a3[1]; /*0x5ce254*/
+    this->M92 = a3[2]; /*0x5ce25a*/
     this->M96 = a3[3]; /*0x5ce260*/
   }
   if ( (unsigned char)this->M48 == 1 ) /*0x5ce26c*/
   {
-    v17 = *(_DWORD *)(this + 36) + 1; /*0x5ce271*/
-    *(_DWORD *)(this + 36) = v17; /*0x5ce274*/
+    v17 = this->M36 + 1; /*0x5ce271*/
+    this->M36 = v17; /*0x5ce274*/
     if ( v17 > 2 ) /*0x5ce27a*/
     {
-      *(_DWORD *)(this + 36) = 0; /*0x5ce27c*/
+      this->M36 = 0; /*0x5ce27c*/
       return 0; /*0x5ce287*/
     }
   }
@@ -5351,17 +5351,17 @@ int __thiscall sub_5CE3A0(int this, int a2, int *a3)
     || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
   {
     result = this->M32; /*0x5ce3e7*/
-    v7 = *(_DWORD *)(this + 8); /*0x5ce3ea*/
-    v8 = *(_DWORD *)(this + 4); /*0x5ce3ed*/
+    v7 = this->M8; /*0x5ce3ea*/
+    v8 = this->M4; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
     v18 = v7; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 ) /*0x5ce40f*/
       {
-        v8 = *(_DWORD *)(this + 4); /*0x5ce414*/
-        v7 += *(_DWORD *)(*(_DWORD *)(this + 52) + 8); /*0x5ce41e*/
-        v14 = *(_DWORD *)(*(_DWORD *)(this + 52) + 8); /*0x5ce420*/
+        v8 = this->M4; /*0x5ce414*/
+        v7 += *(_DWORD *)(this->M52 + 8); /*0x5ce41e*/
+        v14 = *(_DWORD *)(this->M52 + 8); /*0x5ce420*/
         v18 = v7; /*0x5ce426*/
         result = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 128))(a2); /*0x5ce42a*/
         if ( v7 + v14 >= result ) /*0x5ce438*/
@@ -5372,7 +5372,7 @@ int __thiscall sub_5CE3A0(int this, int a2, int *a3)
         v15 = **(_DWORD **)(this + 52); /*0x5ce44b*/
         LOWORD(v10) = WideString::GetChar((const wchar_t **)(this + 28), v9); /*0x5ce44f*/
         (*(void (__thiscall **)(_DWORD, int, int, int, int, int, int))(v15 + 16))( /*0x5ce461*/
-          *(_DWORD *)(this + 52),
+          this->M52,
           a2,
           v10,
           v8,
@@ -5381,7 +5381,7 @@ int __thiscall sub_5CE3A0(int this, int a2, int *a3)
           1);
         v11 = **(_DWORD **)(this + 52); /*0x5ce46b*/
         LOWORD(v12) = WideString::GetChar((const wchar_t **)(this + 28), v9); /*0x5ce46d*/
-        v13 = (*(int (__thiscall **)(_DWORD, int))(v11 + 4))(*(_DWORD *)(this + 52), v12); /*0x5ce476*/
+        v13 = (*(int (__thiscall **)(_DWORD, int))(v11 + 4))(this->M52, v12); /*0x5ce476*/
         v7 = v18; /*0x5ce479*/
         v8 += v13; /*0x5ce47d*/
       }

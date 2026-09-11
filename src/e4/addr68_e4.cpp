@@ -2565,8 +2565,8 @@ int __thiscall sub_68F8A0(int this)
   v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    v5 = *(_DWORD *)(this + 12); /*0x68f8f8*/
-    v6 = *(_DWORD *)(this + 4) + 214; /*0x68f8fd*/
+    v5 = this->M12; /*0x68f8f8*/
+    v6 = this->M4 + 214; /*0x68f8fd*/
     v4[1] = 590 - 12 * (v3 - 1) + *(_DWORD *)this; /*0x68f902*/
     v4[2] = v6; /*0x68f908*/
     v4[3] = Timer::GetTicks(); /*0x68f910*/
@@ -2582,16 +2582,16 @@ int __thiscall sub_68F8A0(int this)
   {
     v4 = 0; /*0x68f934*/
   }
-  v7 = *(_DWORD *)(this + 36); /*0x68f936*/
+  v7 = this->M36; /*0x68f936*/
   v8 = (int *)(this + 28); /*0x68f93c*/
-  if ( *(_DWORD *)(this + 44) < v7 /*0x68f95e*/
+  if ( this->M44 < v7 /*0x68f95e*/
     || ((unsigned char)this->M41 || !v7)
     && (v9 = this->M48, v9 > 0)
     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*v8 + 8))(this + 28, v7 + v9, 0) )
   {
-    v10 = *(_DWORD *)(this + 44); /*0x68f965*/
-    v11 = *(_DWORD *)(this + 32); /*0x68f968*/
-    *(_DWORD *)(this + 44) = v10 + 1; /*0x68f96e*/
+    v10 = this->M44; /*0x68f965*/
+    v11 = this->M32; /*0x68f968*/
+    this->M44 = v10 + 1; /*0x68f96e*/
     *(_DWORD *)(v11 + 4 * v10) = v4; /*0x68f971*/
   }
   v12 = *v8; /*0x68f974*/

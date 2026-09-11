@@ -1185,15 +1185,15 @@ void __thiscall sub_6599C0(int this)
   int v3; // edx
   int v4; // ecx
 
-  v2 = *(_DWORD *)(this + 48) - *(_DWORD *)(this + 36); /*0x6599d8*/
-  v3 = *(_DWORD *)(this + 56) - *(_DWORD *)(this + 44); /*0x6599dd*/
-  v4 = *(_DWORD *)(this + 52) - *(_DWORD *)(this + 40); /*0x6599e2*/
-  *(_DWORD *)(this + 92) = v2; /*0x6599e6*/
-  *(_DWORD *)(this + 96) = v4; /*0x6599e8*/
-  *(_DWORD *)(this + 100) = v3; /*0x6599eb*/
-  *(double *)(this + 104) = Math::Sqrt((double)(*(_DWORD *)(this + 100) * *(_DWORD *)(this + 100) /*0x659a19*/
-                                              + *(_DWORD *)(this + 96) * *(_DWORD *)(this + 96)
-                                              + *(_DWORD *)(this + 92) * *(_DWORD *)(this + 92)));
+  v2 = this->M48 - this->M36; /*0x6599d8*/
+  v3 = this->M56 - this->M44; /*0x6599dd*/
+  v4 = this->M52 - this->M40; /*0x6599e2*/
+  this->M92 = v2; /*0x6599e6*/
+  this->M96 = v4; /*0x6599e8*/
+  this->M100 = v3; /*0x6599eb*/
+  *(double *)(this + 104) = Math::Sqrt((double)(this->M100 * this->M100 /*0x659a19*/
+                                              + this->M96 * this->M96
+                                              + this->M92 * this->M92));
 }
 }
 } // namespace gamemd
@@ -1216,10 +1216,10 @@ __int16 __thiscall sub_659A30(int this)
   char v10; // cl
 
   v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24)); /*0x659a3c*/
-  v3 = *(_DWORD *)(this + 92); /*0x659a41*/
-  v4 = *(_DWORD *)(this + 96); /*0x659a44*/
-  v5 = *(_DWORD *)(this + 100); /*0x659a47*/
-  *(_DWORD *)(this + 140) = v2; /*0x659a4e*/
+  v3 = this->M92; /*0x659a41*/
+  v4 = this->M96; /*0x659a44*/
+  v5 = this->M100; /*0x659a47*/
+  this->M140 = v2; /*0x659a4e*/
   if ( v2 ) /*0x659a54*/
   {
     v3 /= v2; /*0x659a5b*/
@@ -1228,11 +1228,11 @@ __int16 __thiscall sub_659A30(int this)
   }
   v6 = (double)*(int *)(this + 124) / (double)*(int *)(this + 60); /*0x659a6e*/
   this->M144 = v3; /*0x659a80*/
-  *(_DWORD *)(this + 148) = v4; /*0x659a83*/
-  *(_DWORD *)(this + 152) = v5; /*0x659a86*/
-  *(_DWORD *)(this + 156) = *(_DWORD *)(this + 36); /*0x659a8b*/
-  this->M160 = *(_DWORD *)(this + 40); /*0x659a90*/
-  *(_DWORD *)(this + 164) = *(_DWORD *)(this + 44); /*0x659a96*/
+  this->M148 = v4; /*0x659a83*/
+  this->M152 = v5; /*0x659a86*/
+  this->M156 = this->M36; /*0x659a8b*/
+  this->M160 = this->M40; /*0x659a90*/
+  this->M164 = this->M44; /*0x659a96*/
   v7 = (__int16 *)(this + 32); /*0x659a99*/
   v8 = this + 192; /*0x659a9c*/
   result = *v7; /*0x659aa2*/

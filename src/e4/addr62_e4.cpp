@@ -2473,7 +2473,7 @@ int E4Recv_626250::sub_626250(const char * a2, int a3)
 int __thiscall sub_626250(int this, const char *a2, int a3)
 {
   strcpy((char *)this, a2); /*0x62626c*/
-  *(_DWORD *)(this + 256) = a3; /*0x62627c*/
+  this->M256 = a3; /*0x62627c*/
   return this; /*0x62627b*/
 }
 }
@@ -3213,14 +3213,14 @@ void __thiscall sub_629530(int this)
   int v3; // eax
   int v4; // [esp+8h] [ebp-4h] BYREF
 
-  v2 = *(_DWORD *)(this + 68); /*0x629537*/
-  *(_DWORD *)(this + 76) = 0; /*0x62953a*/
-  *(_DWORD *)(this + 80) = 0; /*0x62953f*/
-  *(_DWORD *)(this + 72) = 0; /*0x629542*/
+  v2 = this->M68; /*0x629537*/
+  this->M76 = 0; /*0x62953a*/
+  this->M80 = 0; /*0x62953f*/
+  this->M72 = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2); /*0x629549*/
-    *(_DWORD *)(this + 68) = 0; /*0x62954f*/
+    this->M68 = 0; /*0x62954f*/
   }
   if ( (unsigned char)this->M84 ) /*0x629552*/
   {

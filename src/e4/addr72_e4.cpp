@@ -548,19 +548,19 @@ void __thiscall sub_722A20(int this)
       __3_YAXPAX_Z(v4[2]); /*0x722a57*/
       __3_YAXPAX_Z(v4); /*0x722a5d*/
     }
-    *(_DWORD *)(this + 244) = 0; /*0x722a65*/
+    this->M244 = 0; /*0x722a65*/
   }
-  if ( *(_DWORD *)(this + 252) ) /*0x722a6c*/
+  if ( this->M252 ) /*0x722a6c*/
   {
     __3_YAXPAX_Z(*(void **)(this + 252)); /*0x722a77*/
-    *(_DWORD *)(this + 252) = 0; /*0x722a7f*/
+    this->M252 = 0; /*0x722a7f*/
   }
-  if ( *(_DWORD *)(this + 248) ) /*0x722a85*/
+  if ( this->M248 ) /*0x722a85*/
   {
     __3_YAXPAX_Z(*(void **)(this + 248)); /*0x722a90*/
-    *(_DWORD *)(this + 248) = 0; /*0x722a98*/
+    this->M248 = 0; /*0x722a98*/
   }
-  *(_DWORD *)(this + 240) = 0; /*0x722a9e*/
+  this->M240 = 0; /*0x722a9e*/
 }
 }
 } // namespace gamemd
@@ -646,19 +646,19 @@ void __thiscall sub_723510(int this)
       __3_YAXPAX_Z(v4[2]); /*0x723547*/
       __3_YAXPAX_Z(v4); /*0x72354d*/
     }
-    *(_DWORD *)(this + 272) = 0; /*0x723555*/
+    this->M272 = 0; /*0x723555*/
   }
-  if ( *(_DWORD *)(this + 280) ) /*0x72355c*/
+  if ( this->M280 ) /*0x72355c*/
   {
     __3_YAXPAX_Z(*(void **)(this + 280)); /*0x723567*/
-    *(_DWORD *)(this + 280) = 0; /*0x72356f*/
+    this->M280 = 0; /*0x72356f*/
   }
-  if ( *(_DWORD *)(this + 276) ) /*0x723575*/
+  if ( this->M276 ) /*0x723575*/
   {
     __3_YAXPAX_Z(*(void **)(this + 276)); /*0x723580*/
-    *(_DWORD *)(this + 276) = 0; /*0x723588*/
+    this->M276 = 0; /*0x723588*/
   }
-  *(_DWORD *)(this + 268) = 0; /*0x72358e*/
+  this->M268 = 0; /*0x72358e*/
 }
 }
 } // namespace gamemd

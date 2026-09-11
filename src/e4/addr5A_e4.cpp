@@ -3748,17 +3748,17 @@ void __thiscall sub_5AF550(int this, float *a2, float *a3, AbstractClass *a4)
     v24 = v14 / v8; /*0x5af617*/
   }
   *(_DWORD *)this = 1065353216; /*0x5af638*/
-  *(_DWORD *)(this + 4) = 0; /*0x5af63a*/
-  *(_DWORD *)(this + 8) = 0; /*0x5af63d*/
-  *(_DWORD *)(this + 12) = 0; /*0x5af640*/
+  this->M4 = 0; /*0x5af63a*/
+  this->M8 = 0; /*0x5af63d*/
+  this->M12 = 0; /*0x5af640*/
   this->M16 = 0; /*0x5af643*/
-  *(_DWORD *)(this + 20) = 1065353216; /*0x5af646*/
-  *(_DWORD *)(this + 24) = 0; /*0x5af649*/
-  *(_DWORD *)(this + 28) = 0; /*0x5af64c*/
+  this->M20 = 1065353216; /*0x5af646*/
+  this->M24 = 0; /*0x5af649*/
+  this->M28 = 0; /*0x5af64c*/
   this->M32 = 0; /*0x5af64f*/
-  *(_DWORD *)(this + 36) = 0; /*0x5af652*/
-  *(_DWORD *)(this + 40) = 1065353216; /*0x5af655*/
-  *(_DWORD *)(this + 44) = 0; /*0x5af658*/
+  this->M36 = 0; /*0x5af652*/
+  this->M40 = 1065353216; /*0x5af655*/
+  this->M44 = 0; /*0x5af658*/
   v9 = *a2; /*0x5af65b*/
   *(float *)(this + 12) = *a2; /*0x5af669*/
   *(float *)(this + 28) = 0.0; /*0x5af677*/

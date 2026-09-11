@@ -797,7 +797,7 @@ int __thiscall ProcessGraphicMenu(int this)
   v16 = 0; /*0x4f235d*/
   v4 = 0; /*0x4f2362*/
   Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x4f2364*/
-  v5 = *(_DWORD *)(this + 84); /*0x4f2369*/
+  v5 = this->M84; /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((_DWORD *)(this + 4), v5, 300000); /*0x4f2379*/
   v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)MEMORY[0x887310] + 120))(MEMORY[0x887310], &v24); /*0x4f238e*/
@@ -1449,16 +1449,16 @@ int __thiscall sub_4F3460(
   GraphicMenuItem::Constructor((_DWORD *)this, (GraphicMenuAnimItem *)aP1); /*0x4f3472*/
   v12 = (Selection_WorldDominationTour *)aP2; /*0x4f3477*/
   v13 = aP4; /*0x4f347b*/
-  *(_DWORD *)(this + 16) = aP2; /*0x4f347f*/
+  this->M16 = aP2; /*0x4f347f*/
   *(ReferenceCounted *)(this + 20) = *v13; /*0x4f3487*/
   *(ReferenceCounted *)(this + 24) = v13[1]; /*0x4f348c*/
   *(ReferenceCounted *)(this + 28) = v13[2]; /*0x4f3492*/
   v14 = v13[3]; /*0x4f3495*/
-  *(_DWORD *)(this + 36) = 0; /*0x4f3498*/
+  this->M36 = 0; /*0x4f3498*/
   *(ReferenceCounted *)(this + 32) = v14; /*0x4f349b*/
-  *(_DWORD *)(this + 40) = 0; /*0x4f34a1*/
-  *(_DWORD *)(this + 44) = 0; /*0x4f34a4*/
-  *(_DWORD *)(this + 48) = 0; /*0x4f34a7*/
+  this->M40 = 0; /*0x4f34a1*/
+  this->M44 = 0; /*0x4f34a4*/
+  this->M48 = 0; /*0x4f34a7*/
   unknown_libname_73((_DWORD *)(this + 52)); /*0x4f34aa*/
   v15 = (ObjectClass *)aP8; /*0x4f34af*/
   *(_DWORD *)this = &GraphicMenuImageItem::`vftable'; /*0x4f34b3*/
@@ -1472,7 +1472,7 @@ int __thiscall sub_4F3460(
   {
     v16 = 0; /*0x4f34fa*/
   }
-  *(_DWORD *)(this + 48) = v16; /*0x4f34ff*/
+  this->M48 = v16; /*0x4f34ff*/
   if ( (v10 & 1) != 0 ) /*0x4f3502*/
     DeleteAndZero((int)&aP1); /*0x4f3508*/
   String::Reassign((char **)(this + 52), (AbstractClass *)a9); /*0x4f3515*/
@@ -1483,7 +1483,7 @@ int __thiscall sub_4F3460(
   {
     v20 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f352f*/
     v21 = v20 ? (MSAnim *)MSPCXAnim::Construct(v20, v17, (MSAnim *)&v12->__pad_4[20], v19, 1) : 0;
-    *(_DWORD *)(this + 40) = v21; /*0x4f3550*/
+    this->M40 = v21; /*0x4f3550*/
     if ( v21 ) /*0x4f3553*/
     {
       (*(void (__thiscall **)(MSAnim *, _DWORD))(*(_DWORD *)v21->__pad_0 + 4))(v21, 0); /*0x4f355b*/
@@ -1495,7 +1495,7 @@ int __thiscall sub_4F3460(
   {
     v23 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
     v24 = v23 ? (MSAnim *)MSPCXAnim::Construct(v23, v22, (MSAnim *)&v12->__pad_4[20], v19, 1) : 0;
-    *(_DWORD *)(this + 36) = v24; /*0x4f359b*/
+    this->M36 = v24; /*0x4f359b*/
     if ( v24 ) /*0x4f359e*/
       PriorityQueue::Add(v12, v24); /*0x4f35a3*/
   }
@@ -1507,7 +1507,7 @@ int __thiscall sub_4F3460(
       v27 = (MSAnim *)MSPCXAnim::Construct(v26, v25, (MSAnim *)&v12->__pad_4[20], v19, 1); /*0x4f35cf*/
     else
       v27 = 0; /*0x4f35d6*/
-    *(_DWORD *)(this + 44) = v27; /*0x4f35da*/
+    this->M44 = v27; /*0x4f35da*/
     if ( v27 ) /*0x4f35dd*/
     {
       (*(void (__thiscall **)(MSAnim *, _DWORD))(*(_DWORD *)v27->__pad_0 + 4))(v27, 0); /*0x4f35e5*/

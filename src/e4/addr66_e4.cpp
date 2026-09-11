@@ -1145,7 +1145,7 @@ LABEL_10:
 LABEL_11:
   if ( CreateProcessA(MEMORY[0x8399EC], CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
   {
-    *(_DWORD *)(this + 28) = ProcessInformation.hProcess; /*0x664029*/
+    this->M28 = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/

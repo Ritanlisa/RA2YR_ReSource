@@ -64,14 +64,14 @@ __int64 __thiscall sub_6B1EE0(int this)
   __int64 result; // rax
 
   if ( (unsigned char)this->M46 ) /*0x6b1ee6*/
-    v2 = *(_DWORD *)(this + 20); /*0x6b1eed*/
+    v2 = this->M20; /*0x6b1eed*/
   else
-    v2 = *(_DWORD *)(this + 24); /*0x6b1ef2*/
+    v2 = this->M24; /*0x6b1ef2*/
   v3 = (double)*(int *)(this + 48); /*0x6b1ef5*/
   v4 = Math::RoundToInt(v3); /*0x6b1f0f*/
   if ( v4 <= 4 ) /*0x6b1f11*/
     v4 = 4; /*0x6b1f13*/
-  *(_DWORD *)(this + 76) = v4; /*0x6b1f1b*/
+  this->M76 = v4; /*0x6b1f1b*/
   result = Math::RoundToInt(v3); /*0x6b1f22*/
   if ( (int)result >= v2 - v4 ) /*0x6b1f31*/
     this->M80 = v2 - v4; /*0x6b1f3b*/

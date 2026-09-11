@@ -2239,7 +2239,7 @@ char E4Recv_41DD10::sub_41DD10()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_41DD10(int this)
 {
-  *(_DWORD *)(this + 64) = MEMORY[0xA8ED84]; /*0x41dd15*/
+  this->M64 = MEMORY[0xA8ED84]; /*0x41dd15*/
   *(_BYTE *)(this + 60) = 0; /*0x41dd1a*/
   *(_BYTE *)(this + 61) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/

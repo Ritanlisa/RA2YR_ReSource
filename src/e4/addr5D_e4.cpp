@@ -171,21 +171,21 @@ char __thiscall sub_5D25D0(int this, char *Source, int a3)
     return 0; /*0x5d25e3*/
   v4 = (char **)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
   v5 = v4 ? Audio::SetSoundFileName(v4, Source, a3) : 0;
-  v6 = *(_DWORD *)(this + 56); /*0x5d2602*/
-  if ( *(_DWORD *)(this + 64) >= v6 ) /*0x5d260d*/
+  v6 = this->M56; /*0x5d2602*/
+  if ( this->M64 >= v6 ) /*0x5d260d*/
   {
     if ( !(unsigned char)this->M61 && v6 ) /*0x5d2618*/
       return 0; /*0x5d2618*/
-    v7 = *(_DWORD *)(this + 68); /*0x5d261a*/
+    v7 = this->M68; /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
-      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 48) + 8))(this + 48, v6 + v7, 0) )
+      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->M48 + 8))(this + 48, v6 + v7, 0) )
     {
       return 0; /*0x5d264a*/
     }
   }
-  v8 = *(_DWORD *)(this + 64); /*0x5d2631*/
-  v9 = *(_DWORD *)(this + 52); /*0x5d2634*/
-  *(_DWORD *)(this + 64) = v8 + 1; /*0x5d263a*/
+  v8 = this->M64; /*0x5d2631*/
+  v9 = this->M52; /*0x5d2634*/
+  this->M64 = v8 + 1; /*0x5d263a*/
   *(_DWORD *)(v9 + 4 * v8) = v5; /*0x5d263d*/
   return 1; /*0x5d2640*/
 }

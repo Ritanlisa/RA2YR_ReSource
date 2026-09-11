@@ -320,7 +320,7 @@ int __thiscall sub_541170(int this, int a2, int a3, int a4, int a5)
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr(v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
   v13 = (*(int (__thiscall **)(_DWORD, int, int, _DWORD *, int, int, _DWORD))(**(_DWORD **)(this + 72) + 44))( /*0x541225*/
-          *(_DWORD *)(this + 72),
+          this->M72,
           a2,
           a3,
           v15,
@@ -329,7 +329,7 @@ int __thiscall sub_541170(int this, int a2, int a3, int a4, int a5)
           0);
   if ( !v13 ) /*0x541229*/
   {
-    ++*(_DWORD *)(this + 160); /*0x541232*/
+    ++this->M160; /*0x541232*/
     Debug::Log(); /*0x541240*/
   }
   return v13; /*0x5411af*/
@@ -2034,8 +2034,8 @@ int __thiscall UpdateFootMovement(int this)
   int v30; // [esp+30h] [ebp-8h]
   int v31; // [esp+34h] [ebp-4h]
 
-  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)); /*0x54ba43*/
-  v3 = *(_DWORD *)(this + 12); /*0x54ba45*/
+  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(this->M12); /*0x54ba43*/
+  v3 = this->M12; /*0x54ba45*/
   if ( !*(_BYTE *)(v3 + 140) ) /*0x54ba48*/
   {
     v4 = (int *)(v3 + 156); /*0x54ba52*/
@@ -2045,15 +2045,15 @@ int __thiscall UpdateFootMovement(int this)
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v29) + 80) & 0x100) != 0 && v2 >= dword_ABC5DC ) /*0x54ba8c*/
       v2 -= dword_ABC5DC; /*0x54ba8e*/
   }
-  v5 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 440))(*(_DWORD *)(this + 12), &v28); /*0x54baa0*/
-  v6 = *(_DWORD *)(this + 12); /*0x54baa2*/
+  v5 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 440))(this->M12, &v28); /*0x54baa0*/
+  v6 = this->M12; /*0x54baa2*/
   v26 = v5; /*0x54baa5*/
   if ( v5 != *(_DWORD *)(v6 + 1376) ) /*0x54bab0*/
     Coord::ToGridIndex((char *)MEMORY[0x887888], v6, *(_DWORD *)(v6 + 1376), v5); /*0x54bace*/
   if ( v2 < this->M128 ) /*0x54bade*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 44))(*(_DWORD *)(this + 12)) == 1 /*0x54bba2*/
-      && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12)) + 3434) )
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 44))(this->M12) == 1 /*0x54bba2*/
+      && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->M12) + 3434) )
     {
       result = this->M128 / 2; /*0x54bbb5*/
     }
@@ -2063,14 +2063,14 @@ int __thiscall UpdateFootMovement(int this)
     }
     if ( v2 > result ) /*0x54bbca*/
     {
-      v16 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x54bbd6*/
+      v16 = (int *)(this->M12 + 156); /*0x54bbd6*/
       *(double *)(this + 120) = (double)*(int *)(this + 32); /*0x54bbdc*/
       v29 = *v16; /*0x54bbe1*/
       v17 = v16[1]; /*0x54bbe5*/
       v30 = v17; /*0x54bbe8*/
       v31 = v16[2]; /*0x54bbef*/
-      v28 = *(_DWORD *)(this + 64); /*0x54bbf8*/
-      if ( v29 == v28 && v17 == *(_DWORD *)(this + 68) ) /*0x54bc01*/
+      v28 = this->M64; /*0x54bbf8*/
+      if ( v29 == v28 && v17 == this->M68 ) /*0x54bc01*/
         LOWORD(v27) = 0; /*0x54bc03*/
       v18 = Math::CalcAngle((double)v30 - (double)*(int *)(this + 68), (double)v28 - (double)v29); /*0x54bc26*/
       LOWORD(v28) = Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427); /*0x54bc3f*/
@@ -2084,53 +2084,53 @@ int __thiscall UpdateFootMovement(int this)
         {
           v21 = *(_BYTE **)(v20 + 1312); /*0x54bc75*/
           if ( v21[5821] || v21[5860] || v21[5861] || v21[5862] ) /*0x54bc99*/
-            (**(void (__thiscall ***)(int, int, _DWORD))(*(_DWORD *)(this + 12) + 8))( /*0x54bcb3*/
-              *(_DWORD *)(this + 12) + 8,
+            (**(void (__thiscall ***)(int, int, _DWORD))(this->M12 + 8))( /*0x54bcb3*/
+              this->M12 + 8,
               4475,
               0);
         }
       }
-      result = *(_DWORD *)(this + 68) / 256; /*0x54bcd2*/
-      if ( v26 == __PAIR32__(result, *(_DWORD *)(this + 64) / 256) ) /*0x54bcda*/
+      result = this->M68 / 256; /*0x54bcd2*/
+      if ( v26 == __PAIR32__(result, this->M64 / 256) ) /*0x54bcda*/
       {
-        result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12)); /*0x54bce8*/
+        result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->M12); /*0x54bce8*/
         if ( !*(_BYTE *)(result + 3434) ) /*0x54bcee*/
         {
-          v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)); /*0x54bcfd*/
+          v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(this->M12); /*0x54bcfd*/
           v23 = *(_BYTE **)(this + 12); /*0x54bd03*/
           this->M128 = v22; /*0x54bd06*/
           v24 = v23[116]; /*0x54bd10*/
           (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v23 + 292))(v23, 0); /*0x54bd13*/
-          result = *(_DWORD *)(this + 12); /*0x54bd19*/
-          *(_DWORD *)(this + 80) = 3; /*0x54bd1c*/
+          result = this->M12; /*0x54bd19*/
+          this->M80 = 3; /*0x54bd1c*/
           *(_BYTE *)(result + 116) = v24; /*0x54bd23*/
         }
       }
     }
   }
-  else if ( ObjectClass::HasLinkedObject(*(_DWORD *)(this + 12)) ) /*0x54baea*/
+  else if ( ObjectClass::HasLinkedObject(this->M12) ) /*0x54baea*/
   {
     v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x54bb08*/
     v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v26); /*0x54bb14*/
     v9 = **(_DWORD **)(this + 12); /*0x54bb1f*/
     NeighbourContentCell = Cell::GetNeighbourContent(v8, v7); /*0x54bb23*/
-    (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(*(_DWORD *)(this + 12), NeighbourContentCell, 1); /*0x54bb2c*/
+    (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(this->M12, NeighbourContentCell, 1); /*0x54bb2c*/
     v11 = *(_BYTE **)(this + 12); /*0x54bb32*/
     LOBYTE(v9) = v11[116]; /*0x54bb39*/
     (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54bb3c*/
-    result = *(_DWORD *)(this + 12); /*0x54bb42*/
+    result = this->M12; /*0x54bb42*/
     *(_BYTE *)(result + 116) = v9; /*0x54bb46*/
-    *(_DWORD *)(this + 80) = 3; /*0x54bb49*/
+    this->M80 = 3; /*0x54bb49*/
   }
   else
   {
-    v13 = (_DWORD *)(*(int (__stdcall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(*(_DWORD *)(this + 12)); /*0x54bb5c*/
+    v13 = (_DWORD *)(*(int (__stdcall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(this->M12); /*0x54bb5c*/
     CellClass::AttachObject(v13, v25); /*0x54bb64*/
     v14 = *(_BYTE **)(this + 12); /*0x54bb69*/
     v15 = v14[116]; /*0x54bb70*/
     result = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54bb73*/
-    *(_BYTE *)(*(_DWORD *)(this + 12) + 116) = v15; /*0x54bb7d*/
-    *(_DWORD *)(this + 80) = 2; /*0x54bb80*/
+    *(_BYTE *)(this->M12 + 116) = v15; /*0x54bb7d*/
+    this->M80 = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
 }

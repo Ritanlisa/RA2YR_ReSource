@@ -2224,7 +2224,7 @@ HWND __thiscall sub_6966D0(int this)
   HWND DlgItem; // eax
   HWND result; // eax
 
-  v2 = *(_DWORD *)(this + 148) == 0; /*0x6966ec*/
+  v2 = this->M148 == 0; /*0x6966ec*/
   DlgItem = GetDlgItem(*(HWND *)this, 1628); /*0x6966ef*/
   if ( DlgItem ) /*0x6966f9*/
     SendMessageA(DlgItem, 0xF1u, v2, 0); /*0x69670c*/

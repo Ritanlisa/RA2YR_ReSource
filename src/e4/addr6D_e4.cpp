@@ -472,7 +472,7 @@ void E4Recv_6D4E00::sub_6D4E00()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6D4E00(int this)
 {
-  *(_DWORD *)(this + 164) = -1; /*0x6d4e00*/
+  this->M164 = -1; /*0x6d4e00*/
   *(_WORD *)(this + 36) = 0; /*0x6d4e0a*/
 }
 }
