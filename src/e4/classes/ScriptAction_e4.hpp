@@ -4,6 +4,7 @@
 namespace gamemd {
 struct ScriptAction {
     void* vfptr;  // minimal E2 declaration
+    IUnknown * InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11);  // 0x4C6860
     int CreatePlacementAction(AbstractClass * aP1, const void * a2);  // 0x633FA0
     unsigned int * GetCoords(unsigned int * a2);  // 0x6343C0
     unsigned int * GetScreenPos(unsigned int * a2);  // 0x634400
@@ -20,6 +21,7 @@ struct ScriptAction {
     char DispatchBuilding();  // 0x637E00
     char IsBuildingTypeMatch();  // 0x638C70
     int ClassifyAction(int * a1, char * a2);  // 0x638CE0
+    int ExecutePlacement(int a1, int a2, int a3, long long a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29);  // 0x639A50
     char HitTest(MouseClass * aP0, int a2);  // 0x63A8E0
     char ProcessIdleAction();  // 0x63B550
     int DrawPlacementMarker();  // 0x63CE40

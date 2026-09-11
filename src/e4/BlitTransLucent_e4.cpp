@@ -30,8 +30,7 @@ int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0(
 }
 
 // 0x494530
-namespace gamemd {
-int BlitTransLucent25Alpha_ushort_CallBlit0_0()
+int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0_0(
@@ -58,11 +57,9 @@ int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0_0(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494560
-namespace gamemd {
-int BlitTransLucent25Alpha_ushort_CallBlit0_1()
+int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0_1(
@@ -88,7 +85,6 @@ int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0_1(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x49A340
 BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
@@ -123,8 +119,7 @@ std::locale::facet *__thiscall BlitTransLucent25Alpha_ushort::Constructor_Blitte
 }
 
 // 0x496130
-namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort_CallBlit0()
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
@@ -155,11 +150,9 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
            a11);
 }
 }
-} // namespace gamemd
 
 // 0x496170
-namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort_Blit_RLE_Remap()
+int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(
@@ -223,11 +216,9 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(
   return result; /*0x4961fa*/
 }
 }
-} // namespace gamemd
 
 // 0x496210
-namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort_CallBlit0_0()
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(
@@ -259,11 +250,9 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(
            a11);
 }
 }
-} // namespace gamemd
 
 // 0x496250
-namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort_Blit_RLE_Lucent50()
+unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
@@ -323,11 +312,9 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
   return result; /*0x4962c3*/
 }
 }
-} // namespace gamemd
 
 // 0x4962D0
-namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort_CallBlit0_1()
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(
@@ -359,7 +346,6 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(
            a11);
 }
 }
-} // namespace gamemd
 
 // 0x49A720
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(char a2)

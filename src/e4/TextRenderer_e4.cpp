@@ -16,7 +16,7 @@ AbstractClass *TextRenderer::GetInstance()
 
 // 0x4A60E0
 namespace gamemd {
-int TextRenderer_Printf()
+unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__cdecl TextRenderer::Printf(
@@ -67,7 +67,7 @@ _DWORD *__cdecl TextRenderer::Printf(
 
 // 0x4B96A0
 namespace gamemd {
-int TextRenderer_RenderCentered()
+int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *TextRenderer::RenderCentered(

@@ -780,7 +780,7 @@ LABEL_9:
 
 // 0x6211D0
 namespace gamemd {
-int DrawTextRendererTextAligned()
+int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DrawTextRendererTextAligned(
@@ -1821,7 +1821,7 @@ LABEL_15:
 
 // 0x623880
 namespace gamemd {
-int DrawTextRendererMultiline()
+char DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DrawTextRendererMultiline(

@@ -7,6 +7,8 @@
 #include "e4/classes/E4Recv_4F26E0_e4.hpp"
 #include "e4/classes/E4Recv_4F2770_e4.hpp"
 #include "e4/classes/E4Recv_4F2C00_e4.hpp"
+#include "e4/classes/E4Recv_4F2F10_e4.hpp"
+#include "e4/classes/E4Recv_4F3460_e4.hpp"
 #include "e4/classes/E4Recv_4F3AB0_e4.hpp"
 #include "e4/classes/E4Recv_4F3C40_e4.hpp"
 #include "e4/classes/E4Recv_4F3D40_e4.hpp"
@@ -1190,7 +1192,7 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
 
 // 0x4F2F10
 namespace gamemd {
-int sub_4F2F10()
+int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, GraphicMenuAnimItem * aP3, int * a4, GraphicMenuAnimItem * aP5, char ** a6, GraphicMenuAnimItem * aP7, GraphicMenuAnimItem * aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_4F2F10(
@@ -1410,7 +1412,7 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
 
 // 0x4F3460
 namespace gamemd {
-int sub_4F3460()
+int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4F3460(

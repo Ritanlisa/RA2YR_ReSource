@@ -47,8 +47,7 @@ char __thiscall WeaponTypeClass::ReadTrajectoryData(char *this, WeaponTypeClass 
 }
 
 // 0x475C70
-namespace gamemd {
-int WeaponTypeClass_ReadVeteranData()
+char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_475C70(
@@ -95,7 +94,6 @@ char __thiscall sub_475C70(
   return v13; /*0x475d5c*/
 }
 }
-} // namespace gamemd
 
 // 0x512680
 HouseTypeClass * WeaponTypeClass::Create()

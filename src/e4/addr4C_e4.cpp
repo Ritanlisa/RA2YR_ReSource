@@ -4,6 +4,7 @@
 #include "e4/classes/E4Recv_4C2790_e4.hpp"
 #include "e4/classes/E4Recv_4C2B40_e4.hpp"
 #include "e4/classes/E4Recv_4C2C30_e4.hpp"
+#include "e4/classes/E4Recv_4C2FC0_e4.hpp"
 #include "e4/classes/E4Recv_4C38D0_e4.hpp"
 #include "e4/classes/E4Recv_4C3C90_e4.hpp"
 #include "e4/classes/E4Recv_4C3DD0_e4.hpp"
@@ -861,7 +862,7 @@ int sub_4C2FA0()
 
 // 0x4C2FC0
 namespace gamemd {
-int sub_4C2FC0()
+int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_4C2FC0(
@@ -2337,7 +2338,7 @@ int sub_4C6550()
 
 // 0x4C68E0
 namespace gamemd {
-int sub_4C68E0()
+char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_4C68E0(

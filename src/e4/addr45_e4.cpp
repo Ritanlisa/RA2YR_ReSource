@@ -471,7 +471,7 @@ _DWORD *__fastcall sub_455DD0(int a1, _DWORD *a2)
 
 // 0x456980
 namespace gamemd {
-int DrawTechnoDeployCircle()
+char DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DrawTechnoDeployCircle(

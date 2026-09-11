@@ -360,7 +360,7 @@ Iostream_init *__thiscall __0Iostream_init_QAE_XZ_4(Iostream_init *this)
 
 // 0x525430
 namespace gamemd {
-int GetINIClassIntList()
+VectorClass * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorClass *__fastcall GetINIClassIntList(

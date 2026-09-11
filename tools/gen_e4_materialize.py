@@ -471,7 +471,7 @@ def synth_signature(fn):
     raw = fn.pseudocode.split("\n")
     first = raw[0].strip()
     li = 1
-    while first.count("(") > first.count(")") and li < len(raw) and li <= 8:
+    while first.count("(") > first.count(")") and li < len(raw) and li <= 30:
         first = first + " " + raw[li].strip()
         li += 1
     first = first.rstrip(";").strip()

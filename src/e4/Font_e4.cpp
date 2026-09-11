@@ -25,8 +25,7 @@ int __thiscall Font::GetGlyphDataForChar(_DWORD *this, AbstractClass *aP1)
 }
 
 // 0x434CD0
-namespace gamemd {
-int Font_Print()
+char Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall Font::Print(
@@ -366,4 +365,3 @@ LABEL_73:
   return 1; /*0x435157*/
 }
 }
-} // namespace gamemd

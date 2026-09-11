@@ -573,7 +573,7 @@ LABEL_13:
 
 // 0x547230
 namespace gamemd {
-int TacticalClass_DrawCellOverlay()
+void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TacticalClass::DrawCellOverlay(

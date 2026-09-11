@@ -1061,8 +1061,7 @@ void __fastcall sub_4BBB00(int a1, int a2, int a3)
 }
 
 // 0x4BBCA0
-namespace gamemd {
-int DSurface_DrawLineModulated()
+char DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DSurface_DrawLineModulated(
@@ -1520,11 +1519,9 @@ LABEL_69:
   return 0; /*0x4bc28d*/
 }
 }
-} // namespace gamemd
 
 // 0x4BC750
-namespace gamemd {
-int DSurface_DrawLineFaded()
+char DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -1583,7 +1580,6 @@ int DSurface_DrawLineFaded()
 //   int v52; // ecx... [39165 chars total]
 // end truncated pseudocode
 }
-} // namespace gamemd
 
 // 0x4BDF00
 char DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
@@ -2314,8 +2310,7 @@ LABEL_58:
 }
 
 // 0x4BFD30
-namespace gamemd {
-int DSurface_DrawLineZBuf()
+char DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall DSurface_DrawLineZBuf(
@@ -2774,7 +2769,6 @@ LABEL_15:
   return 1; /*0x4c0367*/
 }
 }
-} // namespace gamemd
 
 // 0x4C0750
 int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)

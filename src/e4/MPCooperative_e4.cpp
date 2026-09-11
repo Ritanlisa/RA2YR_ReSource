@@ -1245,7 +1245,7 @@ int __thiscall MPCooperative::_vt10(int *this)
 
 // 0x5C2040
 namespace gamemd {
-int MPCooperative_StartGame()
+char MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MPCooperative::_vt22(

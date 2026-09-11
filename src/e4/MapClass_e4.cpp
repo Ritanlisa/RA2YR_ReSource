@@ -1239,8 +1239,7 @@ _DWORD *__thiscall MapClass_InitAllCells(_DWORD *this)
 }
 
 // 0x5673A0
-namespace gamemd {
-int MapClass_RevealArea0()
+int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall MapClass::RevealArea0(
@@ -1484,7 +1483,6 @@ LABEL_54:
   return MapClass::RevealArea2(this, (IUnknown *)&v48, 0, (MouseClass *)((char *)&aP2->field_0 + 3), 0); /*0x5678cf*/
 }
 }
-} // namespace gamemd
 
 // 0x5683C0
 void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
@@ -2411,8 +2409,7 @@ char __thiscall MapClass::ClearRegions(int *this, IUnknown *aP1)
 }
 
 // 0x56E7C0
-namespace gamemd {
-int MapClass_CheckCellsBuildable()
+char MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall MapClass::CheckCellsBuildable(
@@ -2466,7 +2463,6 @@ LABEL_11:
   }
 }
 }
-} // namespace gamemd
 
 // 0x574780
 int MapClass::TransitionCliff(MouseClass * aP0)

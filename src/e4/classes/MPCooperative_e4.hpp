@@ -19,6 +19,7 @@ struct MPCooperative {
     char Write(int a2);  // 0x5C1D80
     char Seek();  // 0x5C1DC0
     int Revert();  // 0x5C1FA0
+    char StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10);  // 0x5C2040
     char EndGame(int a2, int a3, int a4);  // 0x5C2100
     HWND CheckReady(HWND hDlg);  // 0x5C21A0
     void Clone(HWND hDlg);  // 0x5C2640

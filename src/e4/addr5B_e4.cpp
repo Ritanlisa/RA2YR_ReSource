@@ -4220,7 +4220,7 @@ char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
 
 // 0x5BFAA0
 namespace gamemd {
-int LoadVQMovie()
+ObjectClass * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__fastcall LoadVQMovie(

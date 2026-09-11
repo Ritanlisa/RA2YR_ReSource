@@ -4,7 +4,7 @@
 
 // 0x56DC20
 namespace gamemd {
-int LayerClass_Pathfinding_Find()
+unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall LayerClass::Pathfinding_Find(

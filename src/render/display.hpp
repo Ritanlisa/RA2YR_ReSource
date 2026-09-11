@@ -128,6 +128,10 @@ public:
     unsigned int * FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2);  // 0x703590
     int isCellShrouded(unsigned short a2);  // 0x7BCF50
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9);  // 0x5673A0
+    char CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8);  // 0x56E7C0
+// --- e4 declarations (END) ---
 };
 #endif
 

@@ -56,7 +56,7 @@ int __thiscall sub_7011A0(int *this)
 
 // 0x7049C0
 namespace gamemd {
-int DrawTacticalMapLine()
+char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall DrawTacticalMapLine(
@@ -385,7 +385,7 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
 
 // 0x706ED0
 namespace gamemd {
-int RenderTechnoClassVoxel()
+void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, const void * a5, int a6, int * a7, unsigned int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__fastcall TechnoClass_RenderVoxel(

@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x497880
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_CallBlit0_1()
+int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(
@@ -36,11 +35,9 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(
            a11);
 }
 }
-} // namespace gamemd
 
 // 0x497A10
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_AddRef()
+unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
@@ -121,11 +118,9 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
   return result; /*0x497b2a*/
 }
 }
-} // namespace gamemd
 
 // 0x497B40
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_Release()
+int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
@@ -156,7 +151,6 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
            a11);
 }
 }
-} // namespace gamemd
 
 // 0x49A9A0
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)

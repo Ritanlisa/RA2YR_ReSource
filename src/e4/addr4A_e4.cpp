@@ -2710,7 +2710,7 @@ int globalHelper_0A6010()
 
 // 0x4A6360
 namespace gamemd {
-int RenderTextLabelWordWrap()
+int * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, unsigned int * a4, int * a5, short a6, int a7, int a8, unsigned int a9, unsigned int * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__fastcall RenderTextLabelWordWrap(
@@ -2827,7 +2827,7 @@ int *__fastcall RenderTextLabelWordWrap(
 
 // 0x4A6500
 namespace gamemd {
-int FillRectangle()
+unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall FillRectangle(
@@ -4512,7 +4512,7 @@ int sub_4AED50()
 
 // 0x4AED70
 namespace gamemd {
-int DrawToSurfaceSHP()
+void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, ConvertClass * aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall DrawToSurfaceSHP(

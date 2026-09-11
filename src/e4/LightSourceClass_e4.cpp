@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x554760
-namespace gamemd {
-int LightSourceClass_Construct()
+unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP3, int a5, int a6, int a7, TintStruct * aP7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LightSourceClass::Construct(
@@ -49,7 +48,6 @@ _DWORD *__thiscall LightSourceClass::Construct(
   return this; /*0x55481e*/
 }
 }
-} // namespace gamemd
 
 // 0x554830
 int LightSourceClass::Constructor()

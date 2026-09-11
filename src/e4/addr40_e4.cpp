@@ -332,16 +332,6 @@ LABEL_38:
 }
 } // namespace gamemd
 
-// 0x401F80
-namespace gamemd {
-int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
-{
-    int result = this->M12 + 1;
-    this->M12 = result;
-    return result;
-}
-} // namespace gamemd
-
 // 0x4026C0
 namespace gamemd {
 int E4Recv_4026C0::sub_4026C0()
@@ -5132,6 +5122,16 @@ void sub_401B00(int * Block)
         VtableStub::Push_407510(v6);
     __3_YAXPAX_Z(v1);
 }
+}
+} // namespace gamemd
+
+// 0x401F80
+namespace gamemd {
+int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
+{
+    int result = this->M12 + 1;
+    this->M12 = result;
+    return result;
 }
 } // namespace gamemd
 

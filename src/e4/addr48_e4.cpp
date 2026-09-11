@@ -12,6 +12,8 @@
 #include "e4/classes/E4Recv_487C80_e4.hpp"
 #include "e4/classes/E4Recv_4880F0_e4.hpp"
 #include "e4/classes/E4Recv_488210_e4.hpp"
+#include "e4/classes/E4Recv_488280_e4.hpp"
+#include "e4/classes/E4Recv_488760_e4.hpp"
 #include "e4/classes/E4Recv_4887F0_e4.hpp"
 #include "e4/classes/E4Recv_48B070_e4.hpp"
 #include "e4/classes/E4Recv_48BB00_e4.hpp"
@@ -390,7 +392,7 @@ int sub_488260()
 
 // 0x488280
 namespace gamemd {
-int sub_488280()
+CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 CheckListClass *__thiscall sub_488280(
@@ -430,7 +432,7 @@ int sub_488740()
 
 // 0x488760
 namespace gamemd {
-int sub_488760()
+ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ColorListClass *__thiscall sub_488760(

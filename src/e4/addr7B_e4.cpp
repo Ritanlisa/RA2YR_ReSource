@@ -2857,7 +2857,7 @@ char __fastcall sub_7BBFF0(int a1, int a2, int *a4, int arg4, _BYTE *a6, int *a7
 
 // 0x7BC040
 namespace gamemd {
-int CalcSurfaceBlitRects()
+char CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall CalcSurfaceBlitRects(
@@ -3355,7 +3355,7 @@ void *__stdcall sub_7BC780(BlowStraw *aP0, void *Src, ModemGame *aP2, int a4, in
 
 // 0x7BC7A0
 namespace gamemd {
-int sub_7BC7A0()
+unsigned int sub_7BC7A0(void * a0, const void * a1, BlitPlain * aP2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __stdcall sub_7BC7A0(

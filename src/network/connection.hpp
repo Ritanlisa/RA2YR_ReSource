@@ -84,6 +84,9 @@ public:
     uint32_t  RemoteAddress[3];
     uint16_t  RemoteSocket;
     uint8_t   padding[2];
+// --- e4 declarations (BEGIN) ---
+    void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8);  // 0x53F430
+// --- e4 declarations (END) ---
 };
 
 // CSP: IPXManagerClass matched via T1

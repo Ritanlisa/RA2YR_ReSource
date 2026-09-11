@@ -31,8 +31,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_2(
 }
 
 // 0x4948C0
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_3()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_3(
@@ -60,11 +59,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_3(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x4948F0
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_4()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_4(
@@ -91,11 +88,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_4(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494920
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_Blit_Alpha_Lucent50()
+unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
@@ -139,7 +134,6 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
   return result; /*0x4949a0*/
 }
 }
-} // namespace gamemd
 
 // 0x4949B0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -170,8 +164,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_5(
 }
 
 // 0x4949E0
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_6()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_6(
@@ -199,11 +192,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_6(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494A10
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_7()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_7(
@@ -230,11 +221,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_7(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494A40
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_Blit_Alpha_Lucent50_0()
+unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
@@ -278,7 +267,6 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
   return result; /*0x494ac0*/
 }
 }
-} // namespace gamemd
 
 // 0x494AD0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -309,8 +297,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_8(
 }
 
 // 0x494B00
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_9()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_9(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_9(
@@ -338,11 +325,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_9(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494B30
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_10()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_10(
@@ -369,11 +354,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_10(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494B60
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_AddRef()
+int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
@@ -424,11 +407,9 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
   return result; /*0x494c34*/
 }
 }
-} // namespace gamemd
 
 // 0x494C40
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_BlitRect()
+int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
@@ -480,7 +461,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
   return result; /*0x494d19*/
 }
 }
-} // namespace gamemd
 
 // 0x494D20
 int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -510,8 +490,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt03(
 }
 
 // 0x494D50
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_GetSize()
+int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
@@ -538,7 +517,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
            a9);
 }
 }
-} // namespace gamemd
 
 // 0x49A3A0
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)

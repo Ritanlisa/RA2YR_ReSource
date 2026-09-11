@@ -1742,7 +1742,7 @@ char __fastcall globalHelper_053C80(_DWORD *a1, SomeVoxelCache *edx0, SomeVoxelC
 
 // 0x753F90
 namespace gamemd {
-int globalHelper_053F90()
+char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache * aP2, float * a3, float * a4, float * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__fastcall globalHelper_053F90(

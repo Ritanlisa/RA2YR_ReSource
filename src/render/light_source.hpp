@@ -80,6 +80,9 @@ protected:
     int StubReturn76();  // 0x555130
     int StubReturn54();  // 0x555140
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    unsigned int * Construct(int a2, int a3, LightSourceClass * aP3, int a5, int a6, int a7, TintStruct * aP7, int a9);  // 0x554760
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

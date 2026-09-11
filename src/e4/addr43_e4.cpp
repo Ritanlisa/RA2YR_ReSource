@@ -1146,7 +1146,7 @@ char __fastcall sub_437290(int *a1, int a2, int *a3)
 
 // 0x437350
 namespace gamemd {
-int BlitterCopySimpleSHP()
+char BlitterCopySimpleSHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, int arg4, int * a4, int aP7, int aP8, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall BlitterCopySimpleSHP(
@@ -1186,7 +1186,7 @@ char __fastcall BlitterCopySimpleSHP(
 
 // 0x4373B0
 namespace gamemd {
-int BlitterCopySHP()
+char BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall BlitterCopySHP(
@@ -1594,7 +1594,7 @@ char __fastcall BlitterCopySHP(
 
 // 0x4379A0
 namespace gamemd {
-int sub_4379A0()
+bool sub_4379A0(IUnknown * a1, IUnknown * a2, unsigned int * a4, int arg4, TechnoClass * aP6, int a6, int a7, TechnoClass * aP9, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_4379A0(
@@ -1622,7 +1622,7 @@ bool __fastcall sub_4379A0(
 
 // 0x437A10
 namespace gamemd {
-int BlitterRLEBlitSHP()
+bool BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall BlitterRLEBlitSHP(

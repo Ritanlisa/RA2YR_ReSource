@@ -5,7 +5,7 @@
 
 // 0x493930
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_Blit_Alpha_ZReadWrite_Lucent25()
+int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
@@ -86,7 +86,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0(
 
 // 0x493A00
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_0()
+int BlitTransXlatAlpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_0(
@@ -118,7 +118,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_0(
 
 // 0x493A30
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_1()
+int BlitTransXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_1(
@@ -149,7 +149,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_1(
 
 // 0x493A60
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_Blit_Alpha_ZReadWrite_Lucent50()
+int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
@@ -233,7 +233,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_2(
 
 // 0x493B30
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_3()
+int BlitTransXlatAlpha_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_3(
@@ -265,7 +265,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_3(
 
 // 0x493B60
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_4()
+int BlitTransXlatAlpha_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_4(
@@ -296,7 +296,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_4(
 
 // 0x493B90
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_Blit_Alpha_ZReadWrite_Lucent25_0()
+int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
@@ -377,7 +377,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_5(
 
 // 0x493C60
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_6()
+int BlitTransXlatAlpha_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_6(
@@ -409,7 +409,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_6(
 
 // 0x493C90
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_7()
+int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_7(
@@ -440,7 +440,7 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_7(
 
 // 0x493DF0
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_AddRef()
+int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::_vt01(
@@ -512,7 +512,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt03(void *this, int a2, int a3, int 
 
 // 0x493ED0
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_BlitRect()
+int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::BlitRect(
@@ -543,7 +543,7 @@ int __thiscall BlitTransXlatAlpha_ushort::BlitRect(
 
 // 0x493F00
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_GetSize()
+int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::_vt04(

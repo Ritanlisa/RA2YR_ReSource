@@ -5,6 +5,7 @@
 #include "e4/classes/E4Recv_7187A0_e4.hpp"
 #include "e4/classes/E4Recv_71C8E0_e4.hpp"
 #include "e4/classes/E4Recv_71FA40_e4.hpp"
+#include "e4/classes/E4Recv_71FF20_e4.hpp"
 
 // 0x710860
 namespace gamemd {
@@ -1599,7 +1600,7 @@ int sub_71FF00()
 
 // 0x71FF20
 namespace gamemd {
-int sub_71FF20()
+int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_71FF20(
@@ -1626,7 +1627,7 @@ int __thiscall sub_71FF20(
   this->__pad_0[53] = (char)aP9; /*0x71ff52*/
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->field_38 = a3; /*0x71ff5f*/
-  *((_DWORD *)this + 15) = a4; /*0x71ff62*/
+  this->M60 = a4; /*0x71ff62*/
   *(_DWORD *)this->__pad_0 = &TextButtonClass::`vftable'; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {

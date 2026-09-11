@@ -919,7 +919,7 @@ int __fastcall sub_6F6030(int *a1, _DWORD *a2, int a3)
 
 // 0x6F8960
 namespace gamemd {
-int SelectTechnoClassAreaTarget()
+char SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall SelectTechnoClassAreaTarget(

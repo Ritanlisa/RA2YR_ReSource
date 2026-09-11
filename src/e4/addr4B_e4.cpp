@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4B0DF0_e4.hpp"
+#include "e4/classes/E4Recv_4B4E10_e4.hpp"
 #include "e4/classes/E4Recv_4B53E0_e4.hpp"
 #include "e4/classes/E4Recv_4B56E0_e4.hpp"
 #include "e4/classes/E4Recv_4B5780_e4.hpp"
@@ -343,7 +344,7 @@ int sub_4B4DF0()
 
 // 0x4B4E10
 namespace gamemd {
-int sub_4B4E10()
+DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DropListClass *__thiscall sub_4B4E10(

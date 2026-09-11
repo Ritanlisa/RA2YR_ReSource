@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5B20F0
-namespace gamemd {
-int Movement_CalcVelocity()
+long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 Movement::CalcVelocity(
@@ -374,7 +373,6 @@ LABEL_48:
   return result; /*0x5b2347*/
 }
 }
-} // namespace gamemd
 
 // 0x5B2930
 unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)

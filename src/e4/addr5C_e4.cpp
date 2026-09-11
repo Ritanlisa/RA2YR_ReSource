@@ -13,6 +13,7 @@
 #include "e4/classes/E4Recv_5CAF00_e4.hpp"
 #include "e4/classes/E4Recv_5CAF70_e4.hpp"
 #include "e4/classes/E4Recv_5CB3E0_e4.hpp"
+#include "e4/classes/E4Recv_5CD570_e4.hpp"
 #include "e4/classes/E4Recv_5CD690_e4.hpp"
 #include "e4/classes/E4Recv_5CE0C0_e4.hpp"
 #include "e4/classes/E4Recv_5CE330_e4.hpp"
@@ -4759,7 +4760,7 @@ void __thiscall sub_5CB3E0(void *this)
 
 // 0x5CD570
 namespace gamemd {
-int sub_5CD570()
+int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CD570(
@@ -4785,13 +4786,13 @@ int __thiscall sub_5CD570(
   *(_DWORD *)(this + 4) = a3; /*0x5cd587*/
   *(_BYTE *)(this + 12) = 1; /*0x5cd58a*/
   v11 = 0; /*0x5cd597*/
-  *(_DWORD *)(this + 16) = Timer::GetTicks(); /*0x5cd59c*/
+  this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   *(_DWORD *)(this + 24) = 0; /*0x5cd59f*/
   *(_DWORD *)this = &MSAnim::`vftable'; /*0x5cd5a5*/
   WideString::AssignFromPtr((wchar_t **)(this + 28), a2); /*0x5cd5ab*/
   *(_DWORD *)(this + 44) = a8; /*0x5cd5c0*/
   *(_BYTE *)(this + 48) = a9; /*0x5cd5c7*/
-  *(_DWORD *)(this + 32) = 0; /*0x5cd5ce*/
+  this->M32 = 0; /*0x5cd5ce*/
   *(_DWORD *)(this + 36) = a7; /*0x5cd5d1*/
   *(_DWORD *)(this + 40) = 0; /*0x5cd5d4*/
   *(_DWORD *)(this + 52) = a5; /*0x5cd5d7*/
@@ -4799,7 +4800,7 @@ int __thiscall sub_5CD570(
   *(_BYTE *)(this + 73) = a10; /*0x5cd5dd*/
   *(_DWORD *)(this + 76) = 0; /*0x5cd5e0*/
   *(_DWORD *)this = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
-  *(_DWORD *)(this + 16) = Timer::GetTicks(); /*0x5cd5f6*/
+  this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
   *(_DWORD *)(this + 20) = v15; /*0x5cd5f9*/
   *(_DWORD *)(this + 24) = a7; /*0x5cd5ff*/
   sub_5CD690(this, a6); /*0x5cd602*/
@@ -4819,7 +4820,7 @@ int __thiscall sub_5CD570(
       }
       while ( WideString::GetChar((const wchar_t **)(this + 28), v11) ); /*0x5cd658*/
     }
-    *(_DWORD *)(this + 76) = (*(_DWORD *)(this + 64) - v17 - v16) / 2; /*0x5cd676*/
+    *(_DWORD *)(this + 76) = (this->M64 - v17 - v16) / 2; /*0x5cd676*/
   }
   return this; /*0x5cd67b*/
 }

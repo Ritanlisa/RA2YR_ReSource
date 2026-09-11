@@ -680,8 +680,7 @@ LABEL_9:
 }
 
 // 0x7BB350
-namespace gamemd {
-int XSurface_DrawEllipseOutline()
+int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall XSurface_DrawEllipseOutline(
@@ -922,7 +921,6 @@ int __thiscall XSurface_DrawEllipseOutline(
   return (*(int (__thiscall **)(int *))(*this + 96))(this); /*0x7bb90c*/
 }
 }
-} // namespace gamemd
 
 // 0x7BBB90
 char XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)

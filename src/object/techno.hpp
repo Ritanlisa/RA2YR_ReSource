@@ -1180,6 +1180,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // --- e4 declarations (BEGIN) ---
     char ProcessDeployAction();  // 0x6AFD60
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11);  // 0x73B140
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

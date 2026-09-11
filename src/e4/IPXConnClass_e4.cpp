@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x53F430
-namespace gamemd {
-int IPXConnClass_constructor()
+void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall IPXConnClass::constructor(
@@ -52,4 +51,3 @@ void *__thiscall IPXConnClass::constructor(
   return this; /*0x53f4c3*/
 }
 }
-} // namespace gamemd

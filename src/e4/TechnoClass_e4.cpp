@@ -1316,8 +1316,9 @@ void TechnoClass::GetField()
 } // namespace ra2
 
 // 0x73B140
-namespace gamemd {
-int TechnoClass_RenderTechnoSHP()
+namespace ra2 {
+namespace game {
+char TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char TechnoClass::RenderTechnoSHP(
@@ -1493,7 +1494,8 @@ char TechnoClass::RenderTechnoSHP(
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x73B470
 namespace gamemd {
