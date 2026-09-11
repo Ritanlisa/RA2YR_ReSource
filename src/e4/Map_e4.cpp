@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5ADD10_e4.hpp"
+#include "e4/classes/E4Recv_5FBF70_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_20_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_28_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_38_e4.hpp"
@@ -287,7 +289,7 @@ LABEL_16:
 
 // 0x5ADD10
 namespace gamemd {
-int Map_Delete()
+int E4Recv_5ADD10::Map_Delete()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_Delete(int this)
@@ -1233,7 +1235,7 @@ int __fastcall sub_58D010(char a1)
 
 // 0x59B940
 namespace gamemd {
-int Map_Helper_59B940()
+double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * aP2, MapResourceClass * aP3, float a5, MapResourceClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __stdcall Map_Helper_59B940(
@@ -1435,7 +1437,7 @@ LABEL_17:
 
 // 0x5FBF70
 namespace gamemd {
-int sub_5FBF70()
+int E4Recv_5FBF70::sub_5FBF70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5FBF70(_DWORD *this)
@@ -2507,15 +2509,15 @@ _DWORD *__thiscall Map_WorldDominationTour_20_::_vt06(_DWORD *this, _DWORD *a2, 
 
 // 0x769DC0
 namespace gamemd {
-VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2)
+VectorCursor * Map_WorldDominationTour_20::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorCursor *__thiscall Map_WorldDominationTour_20_::Constructor(_DWORD *Block, char a2)
+VectorCursor *__thiscall Map_WorldDominationTour_20_::Constructor(_DWORD *this, char a2)
 {
-  *Block = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769dc9*/
+  *this = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
-    __3_YAXPAX_Z(Block); /*0x769dd2*/
-  return (VectorCursor *)Block; /*0x769ddc*/
+    __3_YAXPAX_Z(this); /*0x769dd2*/
+  return (VectorCursor *)this; /*0x769ddc*/
 }
 }
 } // namespace gamemd
@@ -2714,35 +2716,35 @@ unsigned int __thiscall Map_WorldDominationTour_20_::_vt05(int this, int a2)
 
 // 0x76A5C0
 namespace gamemd {
-VectorClass * Map_WorldDominationTour_20::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Map_WorldDominationTour_20::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Map_WorldDominationTour_20_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Map_WorldDominationTour_20_::QueryInterface(_DWORD *this, char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 1); /*0x76a5c3*/
-  *Block = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a5c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76a5d0*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76a5c3*/
+  *this = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a5c6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
-    *(Block + 1) = 0; /*0x76a5e1*/
+    *(this + 1) = 0; /*0x76a5e1*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76a5ec*/
-  *(Block + 2) = 0; /*0x76a5f2*/
+  *((_BYTE *)this + 13) = 0; /*0x76a5ec*/
+  *(this + 2) = 0; /*0x76a5f2*/
   if ( (a2 & 1) != 0 ) /*0x76a5f9*/
-    __3_YAXPAX_Z(Block); /*0x76a5fc*/
-  return (VectorClass *)Block; /*0x76a606*/
+    __3_YAXPAX_Z(this); /*0x76a5fc*/
+  return (VectorClass *)this; /*0x76a606*/
 }
 }
 } // namespace gamemd
 
 // 0x76A610
 namespace gamemd {
-rc_ptr_base * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2)
+rc_ptr_base * Map_WorldDominationTour_20::Constructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *Block, char a2)
+rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *this, char a2)
 {
   int v3; // eax
   rc_ptr_base *v4; // ebp
@@ -2752,9 +2754,9 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
 
   if ( (a2 & 2) != 0 ) /*0x76a61b*/
   {
-    v3 = *((_DWORD *)Block - 1); /*0x76a61d*/
-    v4 = Block - 1; /*0x76a621*/
-    v5 = Block + 2 * v3; /*0x76a624*/
+    v3 = *((_DWORD *)this - 1); /*0x76a61d*/
+    v4 = this - 1; /*0x76a621*/
+    v5 = this + 2 * v3; /*0x76a624*/
     v6 = v3 - 1; /*0x76a627*/
     if ( v6 >= 0 ) /*0x76a628*/
     {
@@ -2774,11 +2776,11 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
   }
   else
   {
-    Block->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a65a*/
-    ComPtr::Release(Block); /*0x76a660*/
+    this->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a65a*/
+    ComPtr::Release(this); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
-      __3_YAXPAX_Z(Block); /*0x76a66b*/
-    return Block; /*0x76a673*/
+      __3_YAXPAX_Z(this); /*0x76a66b*/
+    return this; /*0x76a673*/
   }
 }
 }
@@ -2944,25 +2946,25 @@ unsigned int __thiscall Map_WorldDominationTour_28_::_vt05(int this, int a2)
 
 // 0x76A6D0
 namespace gamemd {
-VectorClass * Map_WorldDominationTour_28::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Map_WorldDominationTour_28::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Map_WorldDominationTour_28_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Map_WorldDominationTour_28_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x76a6d3*/
-  *Block = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a6d6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76a6e0*/
+  v3 = (void *)*(this + 1); /*0x76a6d3*/
+  *this = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a6d6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a6e0*/
   {
     __3_YAXPAX_Z(v3); /*0x76a6e8*/
-    *(Block + 1) = 0; /*0x76a6f0*/
+    *(this + 1) = 0; /*0x76a6f0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76a6fb*/
-  *(Block + 2) = 0; /*0x76a701*/
+  *((_BYTE *)this + 13) = 0; /*0x76a6fb*/
+  *(this + 2) = 0; /*0x76a701*/
   if ( (a2 & 1) != 0 ) /*0x76a708*/
-    __3_YAXPAX_Z(Block); /*0x76a70b*/
-  return (VectorClass *)Block; /*0x76a715*/
+    __3_YAXPAX_Z(this); /*0x76a70b*/
+  return (VectorClass *)this; /*0x76a715*/
 }
 }
 } // namespace gamemd
@@ -3239,25 +3241,25 @@ unsigned int __thiscall Map_WorldDominationTour_43_::_vt05(int this, int a2)
 
 // 0x76A770
 namespace gamemd {
-VectorClass * Map_WorldDominationTour_43::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Map_WorldDominationTour_43_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Map_WorldDominationTour_43_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x76a773*/
-  *Block = &VectorClass<WorldDominationTour::Centroid>::`vftable'; /*0x76a776*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76a780*/
+  v3 = (void *)*(this + 1); /*0x76a773*/
+  *this = &VectorClass<WorldDominationTour::Centroid>::`vftable'; /*0x76a776*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a780*/
   {
     __3_YAXPAX_Z(v3); /*0x76a788*/
-    *(Block + 1) = 0; /*0x76a790*/
+    *(this + 1) = 0; /*0x76a790*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76a79b*/
-  *(Block + 2) = 0; /*0x76a7a1*/
+  *((_BYTE *)this + 13) = 0; /*0x76a79b*/
+  *(this + 2) = 0; /*0x76a7a1*/
   if ( (a2 & 1) != 0 ) /*0x76a7a8*/
-    __3_YAXPAX_Z(Block); /*0x76a7ab*/
-  return (VectorClass *)Block; /*0x76a7b5*/
+    __3_YAXPAX_Z(this); /*0x76a7ab*/
+  return (VectorClass *)this; /*0x76a7b5*/
 }
 }
 } // namespace gamemd

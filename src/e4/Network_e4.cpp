@@ -1416,7 +1416,7 @@ char __thiscall sub_5413F0(int this, int a2)
 
 // 0x541410
 namespace gamemd {
-int Network::SendPacket(int a2, int a3, unsigned signed char a4)
+int Network::SendPacket(int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
@@ -2199,7 +2199,7 @@ HKEY __fastcall sub_5BB580(HKEY a1, const CHAR *a2, const char *a3)
 
 // 0x5BC3C0
 namespace gamemd {
-unsigned signed char sub_5BC3C0()
+unsigned char sub_5BC3C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 sub_5BC3C0()
@@ -3478,10 +3478,10 @@ void sub_5E36E0()
 
 // 0x5E3720
 namespace gamemd {
-int Network::SendOptionsGame(char * Source)
+int Network::SendOptionsGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Network::SendOptionsGame(char *Source)
+int __thiscall Network::SendOptionsGame(char *this)
 {
   int result; // eax
   ObjectClass *v2; // eax
@@ -3492,7 +3492,7 @@ int __thiscall Network::SendOptionsGame(char *Source)
 
   if ( *(&g_MatrixTransformState + 2263) ) /*0x5e3731*/
   {
-    strncpy(Destination, Source, (IUnknown *)0x3FF); /*0x5e3741*/
+    strncpy(Destination, this, (IUnknown *)0x3FF); /*0x5e3741*/
     return (*(int (__stdcall **)(_DWORD, char *))((*(&g_MatrixTransformState + 2263))->X + 60))( /*0x5e3759*/
              *(&g_MatrixTransformState + 2263),
              Destination);
@@ -3503,7 +3503,7 @@ int __thiscall Network::SendOptionsGame(char *Source)
     v5[0] = 23; /*0x5e378a*/
     strcpy((char *)&v5[1], &HouseClass_Player.__pad_5568[8396]); /*0x5e379f*/
     v2 = *(ObjectClass **)&HouseClass_Player.__pad_5568[8416]; /*0x5e37b5*/
-    strcpy((char *)&v5[11] + 3, Source); /*0x5e37c3*/
+    strcpy((char *)&v5[11] + 3, this); /*0x5e37c3*/
     *(_DWORD *)((char *)&v5[111] + 3) = v2; /*0x5e37d1*/
     *(_DWORD *)((char *)&v5[112] + 3) = WideString::Hash((wchar_t *)&HouseClass_Player.__pad_5568[17244]); /*0x5e37dd*/
     result = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x5e37e4*/
@@ -4045,10 +4045,10 @@ LABEL_121:
 
 // 0x5EFF70
 namespace gamemd {
-HWND Network::handleTimeout(HWND hDlg)
+HWND Network::handleTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Network::handleTimeout(HWND hDlg)
+HWND __thiscall Network::handleTimeout(HWND this)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -4063,13 +4063,13 @@ HWND __thiscall Network::handleTimeout(HWND hDlg)
   {
     v5 = 0; /*0x5effad*/
   }
-  DlgItem = GetDlgItem(hDlg, 1619); /*0x5effbe*/
+  DlgItem = GetDlgItem(this, 1619); /*0x5effbe*/
   if ( DlgItem ) /*0x5effcc*/
     EnableWindow(DlgItem, v5); /*0x5effd8*/
-  v3 = GetDlgItem(hDlg, 1620); /*0x5effe0*/
+  v3 = GetDlgItem(this, 1620); /*0x5effe0*/
   if ( v3 ) /*0x5effe4*/
     EnableWindow(v3, v5); /*0x5efff0*/
-  result = GetDlgItem(hDlg, 1621); /*0x5efff8*/
+  result = GetDlgItem(this, 1621); /*0x5efff8*/
   if ( result ) /*0x5efffc*/
     return (HWND)EnableWindow(result, v5); /*0x5f0006*/
   return result; /*0x5f0008*/

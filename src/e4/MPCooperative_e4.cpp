@@ -512,7 +512,7 @@ bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
 
 // 0x5C1470
 namespace gamemd {
-int MPCooperative_ctor()
+unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPCooperative::ctor(
@@ -3115,7 +3115,7 @@ LABEL_16:
 
 // 0x5C4E90
 namespace gamemd {
-int MPCooperative_spawnUnits()
+char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MPCooperative::sub_5C4E90(
@@ -3215,25 +3215,25 @@ _DWORD *__thiscall sub_5C4F30(_DWORD *this, _DWORD *a2)
 
 // 0x5C4FC0
 namespace gamemd {
-DynamicVector * MPCooperative::saveGameState(unsigned int * Block, char a2)
+DynamicVector * MPCooperative::saveGameState(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MPCooperative::saveGameState(_DWORD *Block, char a2)
+DynamicVector *__thiscall MPCooperative::saveGameState(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5c4fc3*/
-  *Block = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4fc6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5c4fd0*/
+  v3 = (void *)*(this + 1); /*0x5c4fc3*/
+  *this = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4fc6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c4fd0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c4fd8*/
-    *(Block + 1) = 0; /*0x5c4fe0*/
+    *(this + 1) = 0; /*0x5c4fe0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5c4feb*/
-  *(Block + 2) = 0; /*0x5c4ff1*/
+  *((_BYTE *)this + 13) = 0; /*0x5c4feb*/
+  *(this + 2) = 0; /*0x5c4ff1*/
   if ( (a2 & 1) != 0 ) /*0x5c4ff8*/
-    __3_YAXPAX_Z(Block); /*0x5c4ffb*/
-  return (DynamicVector *)Block; /*0x5c5005*/
+    __3_YAXPAX_Z(this); /*0x5c4ffb*/
+  return (DynamicVector *)this; /*0x5c5005*/
 }
 }
 } // namespace gamemd
@@ -3737,75 +3737,75 @@ int __thiscall MPCooperative::sub_5C5820(int *this, _DWORD *a2)
 
 // 0x5C5850
 namespace gamemd {
-VectorClass * MPCooperative::verifyGameIntegrity(unsigned int * Block, char a2)
+VectorClass * MPCooperative::verifyGameIntegrity(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MPCooperative::verifyGameIntegrity(_DWORD *Block, char a2)
+VectorClass *__thiscall MPCooperative::verifyGameIntegrity(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5c5853*/
-  *Block = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c5856*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5c5860*/
+  v3 = (void *)*(this + 1); /*0x5c5853*/
+  *this = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c5856*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c5860*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5868*/
-    *(Block + 1) = 0; /*0x5c5870*/
+    *(this + 1) = 0; /*0x5c5870*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5c587b*/
-  *(Block + 2) = 0; /*0x5c5881*/
+  *((_BYTE *)this + 13) = 0; /*0x5c587b*/
+  *(this + 2) = 0; /*0x5c5881*/
   if ( (a2 & 1) != 0 ) /*0x5c5888*/
-    __3_YAXPAX_Z(Block); /*0x5c588b*/
-  return (VectorClass *)Block; /*0x5c5895*/
+    __3_YAXPAX_Z(this); /*0x5c588b*/
+  return (VectorClass *)this; /*0x5c5895*/
 }
 }
 } // namespace gamemd
 
 // 0x5C58A0
 namespace gamemd {
-VectorClass * MPCooperative::processVote(unsigned int * Block, char a2)
+VectorClass * MPCooperative::processVote(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MPCooperative::processVote(_DWORD *Block, char a2)
+VectorClass *__thiscall MPCooperative::processVote(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5c58a3*/
-  *Block = &VectorClass<NodeNameType *>::`vftable'; /*0x5c58a6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5c58b0*/
+  v3 = (void *)*(this + 1); /*0x5c58a3*/
+  *this = &VectorClass<NodeNameType *>::`vftable'; /*0x5c58a6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c58b0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c58b8*/
-    *(Block + 1) = 0; /*0x5c58c0*/
+    *(this + 1) = 0; /*0x5c58c0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5c58cb*/
-  *(Block + 2) = 0; /*0x5c58d1*/
+  *((_BYTE *)this + 13) = 0; /*0x5c58cb*/
+  *(this + 2) = 0; /*0x5c58d1*/
   if ( (a2 & 1) != 0 ) /*0x5c58d8*/
-    __3_YAXPAX_Z(Block); /*0x5c58db*/
-  return (VectorClass *)Block; /*0x5c58e5*/
+    __3_YAXPAX_Z(this); /*0x5c58db*/
+  return (VectorClass *)this; /*0x5c58e5*/
 }
 }
 } // namespace gamemd
 
 // 0x5C5990
 namespace gamemd {
-DynamicVector * MPCooperative::tallyVotes(unsigned int * Block, char a2)
+DynamicVector * MPCooperative::tallyVotes(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MPCooperative::tallyVotes(_DWORD *Block, char a2)
+DynamicVector *__thiscall MPCooperative::tallyVotes(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5c5993*/
-  *Block = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5996*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5c59a0*/
+  v3 = (void *)*(this + 1); /*0x5c5993*/
+  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5996*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c59a0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c59a8*/
-    *(Block + 1) = 0; /*0x5c59b0*/
+    *(this + 1) = 0; /*0x5c59b0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5c59bb*/
-  *(Block + 2) = 0; /*0x5c59c1*/
+  *((_BYTE *)this + 13) = 0; /*0x5c59bb*/
+  *(this + 2) = 0; /*0x5c59c1*/
   if ( (a2 & 1) != 0 ) /*0x5c59c8*/
-    __3_YAXPAX_Z(Block); /*0x5c59cb*/
-  return (DynamicVector *)Block; /*0x5c59d5*/
+    __3_YAXPAX_Z(this); /*0x5c59cb*/
+  return (DynamicVector *)this; /*0x5c59d5*/
 }
 }
 } // namespace gamemd

@@ -128,7 +128,7 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown *aP0
 
 // 0x4CC360
 namespace gamemd {
-int TrajectoryHelper_GetObstacle()
+unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char * a2, int a3, int a4, int a5, int a6, int a7, void * other)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall TrajectoryHelper::GetObstacle(

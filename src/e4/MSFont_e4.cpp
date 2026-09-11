@@ -4,15 +4,15 @@
 #include "e4/classes/MSFont_18_e4.hpp"
 
 // 0x5D3450
-MSFont * MSFont::QueryInterface(void * Block, char a2)
+MSFont * MSFont::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MSFont *__thiscall MSFont::QueryInterface(void *Block, char a2)
+MSFont *__thiscall MSFont::QueryInterface(void *this, char a2)
 {
-  MSFont::Constructor_MSFont(Block); /*0x5d3453*/
+  MSFont::Constructor_MSFont(this); /*0x5d3453*/
   if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    __3_YAXPAX_Z(Block); /*0x5d3460*/
-  return (MSFont *)Block; /*0x5d346a*/
+    __3_YAXPAX_Z(this); /*0x5d3460*/
+  return (MSFont *)this; /*0x5d346a*/
 }
 }
 
@@ -460,75 +460,75 @@ int __thiscall MSFont_18_::sub_5D56A0(int *this, _DWORD *a2)
 
 // 0x5D56E0
 namespace gamemd {
-VectorClass * MSFont_18::QueryInterface(unsigned int * Block, char a2)
+VectorClass * MSFont_18::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MSFont_18_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall MSFont_18_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d56e3*/
-  *Block = &VectorClass<HWND__ *>::`vftable'; /*0x5d56e6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d56f0*/
+  v3 = (void *)*(this + 1); /*0x5d56e3*/
+  *this = &VectorClass<HWND__ *>::`vftable'; /*0x5d56e6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d56f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d56f8*/
-    *(Block + 1) = 0; /*0x5d5700*/
+    *(this + 1) = 0; /*0x5d5700*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5d570b*/
-  *(Block + 2) = 0; /*0x5d5711*/
+  *((_BYTE *)this + 13) = 0; /*0x5d570b*/
+  *(this + 2) = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    __3_YAXPAX_Z(Block); /*0x5d571b*/
-  return (VectorClass *)Block; /*0x5d5725*/
+    __3_YAXPAX_Z(this); /*0x5d571b*/
+  return (VectorClass *)this; /*0x5d5725*/
 }
 }
 } // namespace gamemd
 
 // 0x5D5730
 namespace gamemd {
-DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Block, char a2)
+DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_HWND_____(_DWORD *Block, char a2)
+DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_HWND_____(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d5733*/
-  *Block = &VectorClass<HWND__ *>::`vftable'; /*0x5d5736*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d5740*/
+  v3 = (void *)*(this + 1); /*0x5d5733*/
+  *this = &VectorClass<HWND__ *>::`vftable'; /*0x5d5736*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d5740*/
   {
     __3_YAXPAX_Z(v3); /*0x5d5748*/
-    *(Block + 1) = 0; /*0x5d5750*/
+    *(this + 1) = 0; /*0x5d5750*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5d575b*/
-  *(Block + 2) = 0; /*0x5d5761*/
+  *((_BYTE *)this + 13) = 0; /*0x5d575b*/
+  *(this + 2) = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    __3_YAXPAX_Z(Block); /*0x5d576b*/
-  return (DynamicVector *)Block; /*0x5d5775*/
+    __3_YAXPAX_Z(this); /*0x5d576b*/
+  return (DynamicVector *)this; /*0x5d5775*/
 }
 }
 } // namespace gamemd
 
 // 0x5D57D0
 namespace gamemd {
-DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned int * Block, char a2)
+DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_AcceleratorTracker_(_DWORD *Block, char a2)
+DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_AcceleratorTracker_(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d57d3*/
-  *Block = &VectorClass<AcceleratorTracker>::`vftable'; /*0x5d57d6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d57e0*/
+  v3 = (void *)*(this + 1); /*0x5d57d3*/
+  *this = &VectorClass<AcceleratorTracker>::`vftable'; /*0x5d57d6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d57e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d57e8*/
-    *(Block + 1) = 0; /*0x5d57f0*/
+    *(this + 1) = 0; /*0x5d57f0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5d57fb*/
-  *(Block + 2) = 0; /*0x5d5801*/
+  *((_BYTE *)this + 13) = 0; /*0x5d57fb*/
+  *(this + 2) = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
-    __3_YAXPAX_Z(Block); /*0x5d580b*/
-  return (DynamicVector *)Block; /*0x5d5815*/
+    __3_YAXPAX_Z(this); /*0x5d580b*/
+  return (DynamicVector *)this; /*0x5d5815*/
 }
 }
 } // namespace gamemd

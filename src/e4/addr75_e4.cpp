@@ -1,6 +1,20 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_752CB0_e4.hpp"
+#include "e4/classes/E4Recv_7531A0_e4.hpp"
+#include "e4/classes/E4Recv_754900_e4.hpp"
+#include "e4/classes/E4Recv_755CB0_e4.hpp"
+#include "e4/classes/E4Recv_7564A0_e4.hpp"
+#include "e4/classes/E4Recv_7564E0_e4.hpp"
+#include "e4/classes/E4Recv_756570_e4.hpp"
+#include "e4/classes/E4Recv_7589F0_e4.hpp"
+#include "e4/classes/E4Recv_758AD0_e4.hpp"
+#include "e4/classes/E4Recv_758E10_e4.hpp"
+#include "e4/classes/E4Recv_759760_e4.hpp"
+#include "e4/classes/E4Recv_759790_e4.hpp"
+#include "e4/classes/E4Recv_759BC0_e4.hpp"
+#include "e4/classes/E4Recv_75A120_e4.hpp"
 
 // 0x7500F0
 namespace gamemd {
@@ -1291,21 +1305,21 @@ void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr_
 
 // 0x752CB0
 namespace gamemd {
-int sub_752CB0(const char * a2)
+int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_752CB0(int this, const char *a2)
 {
   int v3; // eax
 
-  this->owningHouseIndex = 1065353216; /*0x752cbe*/
+  *(_DWORD *)(this + 40) = 1065353216; /*0x752cbe*/
   strcpy((char *)this, a2); /*0x752cd4*/
   *(_BYTE *)(this + 44) = 0; /*0x752cdf*/
   *(_BYTE *)(this + 53) = 0; /*0x752ce2*/
   *(_BYTE *)(this + 62) = 0; /*0x752ce5*/
-  this->ambientSoundController.AudioController_field_0C = 1; /*0x752ce8*/
+  *(_DWORD *)(this + 72) = 1; /*0x752ce8*/
   *(_DWORD *)(this + 76) = 0; /*0x752cef*/
-  this->customSound_controller = 2; /*0x752cf2*/
+  *(_DWORD *)(this + 80) = 2; /*0x752cf2*/
   if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
     || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
     && MEMORY[0xB1D4B4] > 0
@@ -1324,7 +1338,7 @@ int __thiscall sub_752CB0(int this, const char *a2)
 
 // 0x753000
 namespace gamemd {
-char InitFromINIEVA()
+char CCINIClass::InitFromINIEVA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InitFromINIEVA(CCINIClass *this)
@@ -1430,7 +1444,7 @@ LABEL_10:
 
 // 0x7531A0
 namespace gamemd {
-int EVA_LoadINI()
+int E4Recv_7531A0::EVA_LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall EVA_LoadINI(void *this)
@@ -2096,7 +2110,7 @@ int __fastcall sub_754740(int a1, int a2, unsigned int a3, int a4)
 
 // 0x754900
 namespace gamemd {
-Iostream_init * __0Iostream_init_QAE_XZ_8()
+Iostream_init * E4Recv_754900::__0Iostream_init_QAE_XZ_8()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_8(Iostream_init *this)
@@ -2510,7 +2524,7 @@ int sub_755C90()
 
 // 0x755CB0
 namespace gamemd {
-unsigned int * sub_755CB0()
+unsigned int * E4Recv_755CB0::sub_755CB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_755CB0(_DWORD *this)
@@ -2529,7 +2543,7 @@ _DWORD *__thiscall sub_755CB0(_DWORD *this)
 
 // 0x7564A0
 namespace gamemd {
-int sub_7564A0(int a2)
+int E4Recv_7564A0::sub_7564A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7564A0(_DWORD *this, int a2)
@@ -2541,7 +2555,7 @@ int __thiscall sub_7564A0(_DWORD *this, int a2)
 
 // 0x7564E0
 namespace gamemd {
-float * sub_7564E0(float * a2, int a3, int a4)
+float * E4Recv_7564E0::sub_7564E0(float * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 float *__thiscall sub_7564E0(_DWORD *this, float *a2, int a3, int a4)
@@ -2579,7 +2593,7 @@ float *__thiscall sub_7564E0(_DWORD *this, float *a2, int a3, int a4)
 
 // 0x756570
 namespace gamemd {
-int sub_756570()
+int E4Recv_756570::sub_756570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_756570(_DWORD *this)
@@ -3572,7 +3586,7 @@ char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>
 
 // 0x7589F0
 namespace gamemd {
-BOOL sub_7589F0(int a2)
+BOOL E4Recv_7589F0::sub_7589F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_7589F0(_DWORD *this, int a2)
@@ -3589,7 +3603,7 @@ BOOL __thiscall sub_7589F0(_DWORD *this, int a2)
 
 // 0x758AD0
 namespace gamemd {
-int sub_758AD0(int * a2)
+int E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_758AD0(_DWORD *this, int *a2)
@@ -3627,7 +3641,7 @@ LABEL_5:
 
 // 0x758E10
 namespace gamemd {
-char sub_758E10(float a2, float a3, float a4)
+char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_758E10(_DWORD *this, float a2, float a3, float a4)
@@ -3916,7 +3930,7 @@ char sub_759200()
 
 // 0x759760
 namespace gamemd {
-unsigned char * sub_759760(const void * a2)
+unsigned char * E4Recv_759760::sub_759760(const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall sub_759760(_BYTE *this, const void *a2)
@@ -3930,7 +3944,7 @@ _BYTE *__thiscall sub_759760(_BYTE *this, const void *a2)
 
 // 0x759790
 namespace gamemd {
-LPDIRECTDRAW sub_759790()
+LPDIRECTDRAW E4Recv_759790::sub_759790()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LPDIRECTDRAW __thiscall sub_759790(int this)
@@ -3942,7 +3956,7 @@ LPDIRECTDRAW __thiscall sub_759790(int this)
 
 // 0x759BC0
 namespace gamemd {
-unsigned int sub_759BC0(signed int a2)
+unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_759BC0(int this, signed int a2)
@@ -3982,7 +3996,7 @@ BOOL __cdecl sub_75A100(int a1, int a2, _DWORD *a3, int a4)
 
 // 0x75A120
 namespace gamemd {
-BOOL sub_75A120(int a2, int * a3, int a4)
+BOOL E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
@@ -4007,31 +4021,31 @@ BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
       a3 = 0; /*0x75a147*/
       if ( !LookupFileInfoCache((const char *)(this + 113), 0, &a3, &a2, 0) ) /*0x75a15e*/
         goto LABEL_5; /*0x75a15e*/
-      v6 = (*(int (__thiscall **)(int, int, int))(this->vtable1 + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
-      v7 = this->vtable1; /*0x75a17e*/
+      v6 = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)(this + 4) + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
+      v7 = *(_DWORD *)(this + 4); /*0x75a17e*/
       v12 = a2; /*0x75a180*/
       *(_BYTE *)(this + 112) = !v6; /*0x75a186*/
       result = (*(int (__thiscall **)(int, int, int))(v7 + 40))(this + 4, v12, 1) == 0; /*0x75a191*/
       break; /*0x75a193*/
     case 4: /*0x75a136*/
-      (*(void (__thiscall **)(int))(this->vtable1 + 52))(this + 4); /*0x75a273*/
+      (*(void (__thiscall **)(int))(*(_DWORD *)(this + 4) + 52))(this + 4); /*0x75a273*/
       *(_BYTE *)(this + 112) = 0; /*0x75a278*/
       return 0; /*0x75a276*/
     case 5: /*0x75a136*/
       v8 = a4; /*0x75a1a0*/
-      return (*(int (__thiscall **)(int, int *, int))(this->vtable1 + 36))(this + 4, a3, a4) != v8; /*0x75a1b3*/
+      return (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)(this + 4) + 36))(this + 4, a3, a4) != v8; /*0x75a1b3*/
     case 6: /*0x75a136*/
 LABEL_5:
       result = 1; /*0x75a1b6*/
       break; /*0x75a1bc*/
     case 7: /*0x75a136*/
-      result = (*(int (__thiscall **)(int, int, int *))(this->vtable1 + 40))(this + 4, a4, a3) == 0; /*0x75a1d7*/
+      result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0; /*0x75a1d7*/
       break; /*0x75a1d8*/
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
         v10 = this + 4; /*0x75a21c*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->vtable1 + 40))(this + 4, a4, a3) == 0; /*0x75a22a*/
+        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4, a3) == 0; /*0x75a22a*/
         if ( !result ) /*0x75a22b*/
         {
           result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v10 + 36))(v10, &a4, 1) != 1; /*0x75a240*/
@@ -4042,13 +4056,13 @@ LABEL_5:
       else
       {
         v9 = this + 4; /*0x75a1ea*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->vtable1 + 40))(this + 4, a4 - 1, a3) == 0; /*0x75a1f9*/
+        result = (*(int (__thiscall **)(int, int, int *))(*(_DWORD *)(this + 4) + 40))(this + 4, a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
           result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v9 + 36))(v9, &a4, 1) != 1; /*0x75a210*/
       }
       break; /*0x75a212*/
     case 9: /*0x75a136*/
-      v11 = (*(int (__thiscall **)(int))(this->vtable1 + 44))(this + 4); /*0x75a25e*/
+      v11 = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 4) + 44))(this + 4); /*0x75a25e*/
       *a3 = v11; /*0x75a265*/
 LABEL_14:
       result = 0; /*0x75a267*/

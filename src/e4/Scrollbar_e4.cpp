@@ -4,7 +4,7 @@
 
 // 0x6205D0
 namespace gamemd {
-int Scrollbar_Draw()
+char Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall Scrollbar_Draw(

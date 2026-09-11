@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_4D4FC0_e4.hpp"
+#include "e4/classes/E4Recv_4DB8A0_e4.hpp"
+#include "e4/classes/E4Recv_4DF280_e4.hpp"
 
 // 0x4D0540
 namespace gamemd {
@@ -753,7 +756,7 @@ void __cdecl sub_4D31A0()
 
 // 0x4D4FC0
 namespace gamemd {
-unsigned int * sub_4D4FC0()
+unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4D4FC0(void *this)
@@ -810,7 +813,7 @@ _DWORD *__stdcall globalHelper_0DA020(_DWORD *a0, AbstractClass *aP1)
 
 // 0x4DB8A0
 namespace gamemd {
-LPVOID sub_4DB8A0()
+LPVOID E4Recv_4DB8A0::sub_4DB8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LPVOID __thiscall sub_4DB8A0(_DWORD *this)
@@ -875,7 +878,7 @@ LABEL_13:
 
 // 0x4DF280
 namespace gamemd {
-void sub_4DF280()
+void E4Recv_4DF280::sub_4DF280()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_4DF280(_DWORD *this)

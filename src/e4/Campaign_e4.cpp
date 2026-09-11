@@ -64,47 +64,47 @@ _DWORD *__thiscall Campaign_WorldDominationTour_16_::_vt06(_DWORD *this, _DWORD 
 
 // 0x765710
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor(_DWORD *Block, char a2)
+rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor(_DWORD *this, char a2)
 {
-  *Block = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765713*/
-  ComPtr::Release(Block); /*0x765719*/
+  *this = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765713*/
+  ComPtr::Release(this); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
-    __3_YAXPAX_Z(Block); /*0x765726*/
-  return (rc_ptr *)Block; /*0x765730*/
+    __3_YAXPAX_Z(this); /*0x765726*/
+  return (rc_ptr *)this; /*0x765730*/
 }
 }
 } // namespace gamemd
 
 // 0x765740
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor_0(_DWORD *Block, char a2)
+rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor_0(_DWORD *this, char a2)
 {
-  *Block = &rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765743*/
-  ComPtr::Release(Block); /*0x765749*/
+  *this = &rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765743*/
+  ComPtr::Release(this); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
-    __3_YAXPAX_Z(Block); /*0x765756*/
-  return (rc_ptr *)Block; /*0x765760*/
+    __3_YAXPAX_Z(this); /*0x765756*/
+  return (rc_ptr *)this; /*0x765760*/
 }
 }
 } // namespace gamemd
 
 // 0x765770
 namespace gamemd {
-VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
+VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorCursor *__thiscall Campaign_WorldDominationTour_16_::Constructor_1(_DWORD *Block, char a2)
+VectorCursor *__thiscall Campaign_WorldDominationTour_16_::Constructor_1(_DWORD *this, char a2)
 {
-  *Block = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765779*/
+  *this = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
-    __3_YAXPAX_Z(Block); /*0x765782*/
-  return (VectorCursor *)Block; /*0x76578c*/
+    __3_YAXPAX_Z(this); /*0x765782*/
+  return (VectorCursor *)this; /*0x76578c*/
 }
 }
 } // namespace gamemd
@@ -303,25 +303,25 @@ unsigned int __thiscall Campaign_WorldDominationTour_16_::_vt05(int this, int a2
 
 // 0x765B60
 namespace gamemd {
-VectorClass * Campaign_WorldDominationTour_16::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Campaign_WorldDominationTour_16::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Campaign_WorldDominationTour_16_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Campaign_WorldDominationTour_16_::QueryInterface(_DWORD *this, char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 1); /*0x765b63*/
-  *Block = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765b66*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x765b70*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x765b63*/
+  *this = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765b66*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/
-    *(Block + 1) = 0; /*0x765b81*/
+    *(this + 1) = 0; /*0x765b81*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x765b8c*/
-  *(Block + 2) = 0; /*0x765b92*/
+  *((_BYTE *)this + 13) = 0; /*0x765b8c*/
+  *(this + 2) = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
-    __3_YAXPAX_Z(Block); /*0x765b9c*/
-  return (VectorClass *)Block; /*0x765ba6*/
+    __3_YAXPAX_Z(this); /*0x765b9c*/
+  return (VectorClass *)this; /*0x765ba6*/
 }
 }
 } // namespace gamemd

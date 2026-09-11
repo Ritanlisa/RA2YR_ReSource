@@ -920,7 +920,7 @@ signed int __thiscall TacticalClass::RenderIsometricOverlay(_DWORD *this, IUnkno
 
 // 0x6D3660
 namespace gamemd {
-int TacticalClass_CalcAllDrawPositions()
+int TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass * aP2, int * a3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TacticalClass::CalcAllDrawPositions(

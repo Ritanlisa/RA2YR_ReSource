@@ -4,6 +4,6 @@
 namespace gamemd {
 struct TypeList_BuildingType {
     void* vfptr;  // minimal E2 declaration
-    TypeList * Add(unsigned int * Block, char a2);  // 0x5AC650
+    TypeList * Add(char a2);  // 0x5AC650
 };
 } // namespace gamemd

@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5F15C0_e4.hpp"
+#include "e4/classes/E4Recv_5F1F20_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -377,7 +379,7 @@ int sub_5F15A0()
 
 // 0x5F15C0
 namespace gamemd {
-unsigned int * sub_5F15C0(int a2, int a3, int a4, short a5)
+unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5F15C0(_DWORD *this, int a2, int a3, int a4, __int16 a5)
@@ -415,7 +417,7 @@ _DWORD *__thiscall sub_5F15C0(_DWORD *this, int a2, int a3, int a4, __int16 a5)
 
 // 0x5F1F20
 namespace gamemd {
-int sub_5F1F20()
+int E4Recv_5F1F20::sub_5F1F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5F1F20(_DWORD *this)

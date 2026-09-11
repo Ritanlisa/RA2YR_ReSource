@@ -392,19 +392,19 @@ int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
 // 0x41DD50
 namespace ra2 {
 namespace game {
-AirstrikeClass * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
+AirstrikeClass * AirstrikeClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *Block, char a2)
+AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AirstrikeClass::`vftable'; /*0x41dd5d*/
-  *(Block + 1) = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  *(Block + 2) = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  *(Block + 3) = &AirstrikeClass::`vftable'; /*0x41dd71*/
-  v5 = Block; /*0x41dd7f*/
+  *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
+  *(this + 1) = &AirstrikeClass::`vftable'; /*0x41dd63*/
+  *(this + 2) = &AirstrikeClass::`vftable'; /*0x41dd6a*/
+  *(this + 3) = &AirstrikeClass::`vftable'; /*0x41dd71*/
+  v5 = this; /*0x41dd7f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x889FB8] + 16))(&MEMORY[0x889FB8], &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < MEMORY[0x889FC8] && v3 < --MEMORY[0x889FC8] ) /*0x41dd9e*/
   {
@@ -415,10 +415,10 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0x889FC8] ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR(Block); /*0x41ddba*/
+  AbstractClass::DTOR(this); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
-    __3_YAXPAX_Z(Block); /*0x41ddc7*/
-  return (AirstrikeClass *)Block; /*0x41ddd1*/
+    __3_YAXPAX_Z(this); /*0x41ddc7*/
+  return (AirstrikeClass *)this; /*0x41ddd1*/
 }
 }
 } // namespace game

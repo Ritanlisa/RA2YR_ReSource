@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_538C40_e4.hpp"
+#include "e4/classes/E4Recv_538CC0_e4.hpp"
+#include "e4/classes/E4Recv_538E70_e4.hpp"
+#include "e4/classes/E4Recv_53F020_e4.hpp"
+#include "e4/classes/E4Recv_53F050_e4.hpp"
+#include "e4/classes/E4Recv_53F080_e4.hpp"
+#include "e4/classes/E4Recv_53F0B0_e4.hpp"
 
 // 0x530000
 namespace gamemd {
@@ -984,16 +991,16 @@ int sub_538C20()
 
 // 0x538C40
 namespace gamemd {
-int sub_538C40(char * Source)
+int E4Recv_538C40::sub_538C40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_538C40(char *Source)
+int __thiscall sub_538C40(char *this)
 {
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
   _BYTE v3[12]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(v2, Source); /*0x538c48*/
+  CCFileClass::Construct(v2, this); /*0x538c48*/
   if ( CCFileClass::Open(v2, 0) ) /*0x538c53*/
   {
     FileClass::Load(v2, 1); /*0x538c62*/
@@ -1012,16 +1019,16 @@ int __thiscall sub_538C40(char *Source)
 
 // 0x538CC0
 namespace gamemd {
-int sub_538CC0(char * Source)
+int E4Recv_538CC0::sub_538CC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_538CC0(char *Source)
+int __thiscall sub_538CC0(char *this)
 {
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
   _BYTE v3[12]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(v2, Source); /*0x538cc8*/
+  CCFileClass::Construct(v2, this); /*0x538cc8*/
   if ( !CCFileClass::Open(v2, 0) ) /*0x538cd3*/
   {
     FileClass::Load(v2, 2); /*0x538ce2*/
@@ -1139,7 +1146,7 @@ int sub_538D40()
 
 // 0x538E70
 namespace gamemd {
-short sub_538E70(double a2)
+short E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall sub_538E70(void *this, double a2)
@@ -3525,7 +3532,7 @@ LABEL_65:
 
 // 0x53F020
 namespace gamemd {
-bool sub_53F020(const char * a2)
+bool E4Recv_53F020::sub_53F020(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_53F020(const char *this, const char *a2)
@@ -3537,7 +3544,7 @@ bool __thiscall sub_53F020(const char *this, const char *a2)
 
 // 0x53F050
 namespace gamemd {
-bool sub_53F050(const char * a2)
+bool E4Recv_53F050::sub_53F050(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_53F050(const char *this, const char *a2)
@@ -3549,7 +3556,7 @@ bool __thiscall sub_53F050(const char *this, const char *a2)
 
 // 0x53F080
 namespace gamemd {
-bool sub_53F080(const char * a2)
+bool E4Recv_53F080::sub_53F080(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_53F080(const char *this, const char *a2)
@@ -3561,7 +3568,7 @@ bool __thiscall sub_53F080(const char *this, const char *a2)
 
 // 0x53F0B0
 namespace gamemd {
-bool sub_53F0B0(const char * a2)
+bool E4Recv_53F0B0::sub_53F0B0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_53F0B0(const char *this, const char *a2)

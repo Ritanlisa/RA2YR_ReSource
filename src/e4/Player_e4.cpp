@@ -3,28 +3,28 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5E8BF0
-wchar_t * Player::FindByName(wchar_t * String2)
+wchar_t * Player::FindByName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall Player::FindByName(wchar_t *String2)
+wchar_t *__thiscall Player::FindByName(wchar_t *this)
 {
   int v3; // ebp
   int v4; // esi
   const wchar_t *v5; // edi
 
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC119C], String2) ) /*0x5e8bfd*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC119C], this) ) /*0x5e8bfd*/
     return (wchar_t *)MEMORY[0xAC119C]; /*0x5e8c09*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A0], String2) ) /*0x5e8c1b*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A0], this) ) /*0x5e8c1b*/
     return (wchar_t *)MEMORY[0xAC11A0]; /*0x5e8c27*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A4], String2) ) /*0x5e8c39*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A4], this) ) /*0x5e8c39*/
     return (wchar_t *)MEMORY[0xAC11A4]; /*0x5e8c45*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A8], String2) ) /*0x5e8c56*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A8], this) ) /*0x5e8c56*/
     return (wchar_t *)MEMORY[0xAC11A8]; /*0x5e8c62*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11AC], String2) ) /*0x5e8c74*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11AC], this) ) /*0x5e8c74*/
     return (wchar_t *)MEMORY[0xAC11AC]; /*0x5e8c80*/
-  if ( !wcscmp(MEMORY[0xAC11B0], String2) ) /*0x5e8c92*/
+  if ( !wcscmp(MEMORY[0xAC11B0], this) ) /*0x5e8c92*/
     return MEMORY[0xAC11B0]; /*0x5e8c9e*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11B4], String2) ) /*0x5e8caf*/
+  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11B4], this) ) /*0x5e8caf*/
     return (wchar_t *)MEMORY[0xAC11B4]; /*0x5e8cbb*/
   v3 = MEMORY[0xA8DA84]; /*0x5e8cc5*/
   v4 = 0; /*0x5e8ccb*/
@@ -33,7 +33,7 @@ wchar_t *__thiscall Player::FindByName(wchar_t *String2)
   while ( 1 ) /*0x5e8cd8*/
   {
     v5 = *(const wchar_t **)(MEMORY[0xA8DA78] + 4 * v4); /*0x5e8cd8*/
-    if ( !wcscmp(v5, String2) ) /*0x5e8cdc*/
+    if ( !wcscmp(v5, this) ) /*0x5e8cdc*/
       break; /*0x5e8cdc*/
     if ( ++v4 >= v3 ) /*0x5e8ceb*/
       return 0; /*0x5e8ceb*/
@@ -43,10 +43,10 @@ wchar_t *__thiscall Player::FindByName(wchar_t *String2)
 }
 
 // 0x5E8DC0
-void Player::BuildListString(wchar_t * Destination)
+void Player::BuildListString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Player::BuildListString(wchar_t *Destination)
+void __thiscall Player::BuildListString(wchar_t *this)
 {
   SessionClass *v2; // edi
   ReferenceCounted *v3; // esi
@@ -56,7 +56,7 @@ void __thiscall Player::BuildListString(wchar_t *Destination)
   char *a1; // [esp+10h] [ebp-8h] BYREF
   void *v8; // [esp+14h] [ebp-4h] BYREF
 
-  *Destination = 0; /*0x5e8dc8*/
+  *this = 0; /*0x5e8dc8*/
   v2 = (SessionClass *)&HouseClass_Player.__pad_5568[18396]; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
@@ -82,8 +82,8 @@ void __thiscall Player::BuildListString(wchar_t *Destination)
       WideString::Assign_Alt((void **)&v6, (wchar_t *)v3); /*0x5e8e1e*/
     }
     v5 = WideString::GetOrEmpty(&v6); /*0x5e8e5d*/
-    wcscat(Destination, v5); /*0x5e8e64*/
-    wcscat(Destination, (CampaignScore *)&stru_8304AC.unknown50); /*0x5e8e6f*/
+    wcscat(this, v5); /*0x5e8e64*/
+    wcscat(this, (CampaignScore *)&stru_8304AC.unknown50); /*0x5e8e6f*/
     DeleteAndZero::Alt((void **)&v6); /*0x5e8e7b*/
     v2 = (SessionClass *)((char *)v2 + 4); /*0x5e8e80*/
   }

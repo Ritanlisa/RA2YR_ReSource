@@ -6,7 +6,7 @@
 
 // 0x4756F0
 namespace gamemd {
-int HouseTypeClass::loadCountryData(unsigned signed char * a2, unsigned signed char * a3, int a4)
+int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4756F0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
@@ -131,7 +131,7 @@ int __thiscall sub_5116A0(int this)
 
 // 0x511850
 namespace gamemd {
-char HouseTypeClass::LoadFromINI(unsigned signed char *** aP1)
+char HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
@@ -772,10 +772,10 @@ unsigned int __thiscall HouseTypeClass::loadBuildLimits(Concurrency::details::Sc
 
 // 0x512760
 namespace gamemd {
-HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
+HouseTypeClass * HouseTypeClass::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **Block, char a2)
+HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **this, char a2)
 {
   int v3; // eax
   UnitTypeClass *v4; // eax
@@ -783,12 +783,12 @@ HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **Block, char a2)
   void *v6; // eax
   void **v8; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &HouseTypeClass::`vftable'; /*0x512766*/
-  *(Block + 1) = &HouseTypeClass::`vftable'; /*0x51276c*/
-  *(Block + 2) = &HouseTypeClass::`vftable'; /*0x512773*/
-  *(Block + 3) = &HouseTypeClass::`vftable'; /*0x51277a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x512781*/
-  v8 = Block; /*0x512796*/
+  *this = &HouseTypeClass::`vftable'; /*0x512766*/
+  *(this + 1) = &HouseTypeClass::`vftable'; /*0x51276c*/
+  *(this + 2) = &HouseTypeClass::`vftable'; /*0x512773*/
+  *(this + 3) = &HouseTypeClass::`vftable'; /*0x51277a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x512781*/
+  v8 = this; /*0x512796*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83C98 + 16))(&dword_A83C98, &v8); /*0x51279a*/
   if ( v3 != -1 && v3 < g_SuperWeaponTypeArray && v3 < --g_SuperWeaponTypeArray ) /*0x5127b5*/
   {
@@ -799,37 +799,37 @@ HouseTypeClass *__thiscall HouseTypeClass::Destructor(void **Block, char a2)
     }
     while ( v3 < g_SuperWeaponTypeArray ); /*0x5127cd*/
   }
-  v4 = (UnitTypeClass *)*(Block + 98); /*0x5127cf*/
-  *(Block + 97) = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5127d8*/
-  if ( v4 && *((_BYTE *)Block + 401) ) /*0x5127e6*/
+  v4 = (UnitTypeClass *)*(this + 98); /*0x5127cf*/
+  *(this + 97) = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5127d8*/
+  if ( v4 && *((_BYTE *)this + 401) ) /*0x5127e6*/
   {
     __3_YAXPAX_Z(v4); /*0x5127ef*/
-    *(Block + 98) = 0; /*0x5127f7*/
+    *(this + 98) = 0; /*0x5127f7*/
   }
-  *((_BYTE *)Block + 401) = 0; /*0x5127fd*/
-  *(Block + 99) = 0; /*0x512803*/
-  v5 = *(Block + 91); /*0x512809*/
-  *(Block + 90) = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51280f*/
-  if ( v5 && *((_BYTE *)Block + 373) ) /*0x51281d*/
+  *((_BYTE *)this + 401) = 0; /*0x5127fd*/
+  *(this + 99) = 0; /*0x512803*/
+  v5 = *(this + 91); /*0x512809*/
+  *(this + 90) = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51280f*/
+  if ( v5 && *((_BYTE *)this + 373) ) /*0x51281d*/
   {
     __3_YAXPAX_Z(v5); /*0x512826*/
-    *(Block + 91) = 0; /*0x51282e*/
+    *(this + 91) = 0; /*0x51282e*/
   }
-  *((_BYTE *)Block + 373) = 0; /*0x512834*/
-  *(Block + 92) = 0; /*0x51283a*/
-  v6 = *(Block + 84); /*0x512840*/
-  *(Block + 83) = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512846*/
-  if ( v6 && *((_BYTE *)Block + 345) ) /*0x512854*/
+  *((_BYTE *)this + 373) = 0; /*0x512834*/
+  *(this + 92) = 0; /*0x51283a*/
+  v6 = *(this + 84); /*0x512840*/
+  *(this + 83) = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512846*/
+  if ( v6 && *((_BYTE *)this + 345) ) /*0x512854*/
   {
     __3_YAXPAX_Z(v6); /*0x51285d*/
-    *(Block + 84) = 0; /*0x512865*/
+    *(this + 84) = 0; /*0x512865*/
   }
-  *((_BYTE *)Block + 345) = 0; /*0x51286d*/
-  *(Block + 85) = 0; /*0x512873*/
-  AbstractTypeClass::Dtor(Block); /*0x512879*/
+  *((_BYTE *)this + 345) = 0; /*0x51286d*/
+  *(this + 85) = 0; /*0x512873*/
+  AbstractTypeClass::Dtor(this); /*0x512879*/
   if ( (a2 & 1) != 0 ) /*0x512885*/
-    __3_YAXPAX_Z(Block); /*0x512888*/
-  return (HouseTypeClass *)Block; /*0x512892*/
+    __3_YAXPAX_Z(this); /*0x512888*/
+  return (HouseTypeClass *)this; /*0x512892*/
 }
 }
 } // namespace gamemd
@@ -1151,7 +1151,7 @@ int __stdcall HouseTypeClass::sub_513A00(int a1)
 
 // 0x67B8F0
 namespace gamemd {
-int HouseTypeClass_ReadCountryName()
+VectorClass * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorClass *__fastcall HouseTypeClass::ReadCountryName(
@@ -1341,25 +1341,25 @@ int __thiscall HouseTypeClass_28_::_vt06(_DWORD *this, int a2)
 
 // 0x512A90
 namespace gamemd {
-TypeList * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
+TypeList * HouseTypeClass_28::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall HouseTypeClass_28_::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall HouseTypeClass_28_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x512a93*/
-  *Block = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512a96*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x512aa0*/
+  v3 = (void *)*(this + 1); /*0x512a93*/
+  *this = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512a96*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x512aa0*/
   {
     __3_YAXPAX_Z(v3); /*0x512aa8*/
-    *(Block + 1) = 0; /*0x512ab0*/
+    *(this + 1) = 0; /*0x512ab0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x512abb*/
-  *(Block + 2) = 0; /*0x512ac1*/
+  *((_BYTE *)this + 13) = 0; /*0x512abb*/
+  *(this + 2) = 0; /*0x512ac1*/
   if ( (a2 & 1) != 0 ) /*0x512ac8*/
-    __3_YAXPAX_Z(Block); /*0x512acb*/
-  return (TypeList *)Block; /*0x512ad5*/
+    __3_YAXPAX_Z(this); /*0x512acb*/
+  return (TypeList *)this; /*0x512ad5*/
 }
 }
 } // namespace gamemd
@@ -1524,50 +1524,50 @@ int __thiscall HouseTypeClass_36_::_vt06(_DWORD *this, int a2)
 
 // 0x512A40
 namespace gamemd {
-TypeList * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
+TypeList * HouseTypeClass_36::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall HouseTypeClass_36_::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall HouseTypeClass_36_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x512a43*/
-  *Block = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x512a46*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x512a50*/
+  v3 = (void *)*(this + 1); /*0x512a43*/
+  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x512a46*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x512a50*/
   {
     __3_YAXPAX_Z(v3); /*0x512a58*/
-    *(Block + 1) = 0; /*0x512a60*/
+    *(this + 1) = 0; /*0x512a60*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x512a6b*/
-  *(Block + 2) = 0; /*0x512a71*/
+  *((_BYTE *)this + 13) = 0; /*0x512a6b*/
+  *(this + 2) = 0; /*0x512a71*/
   if ( (a2 & 1) != 0 ) /*0x512a78*/
-    __3_YAXPAX_Z(Block); /*0x512a7b*/
-  return (TypeList *)Block; /*0x512a85*/
+    __3_YAXPAX_Z(this); /*0x512a7b*/
+  return (TypeList *)this; /*0x512a85*/
 }
 }
 } // namespace gamemd
 
 // 0x512B80
 namespace gamemd {
-VectorClass * HouseTypeClass_36::Constructor(unsigned int * Block, char a2)
+VectorClass * HouseTypeClass_36::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall HouseTypeClass_36_::Constructor(_DWORD *Block, char a2)
+VectorClass *__thiscall HouseTypeClass_36_::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x512b83*/
-  *Block = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512b86*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x512b90*/
+  v3 = (void *)*(this + 1); /*0x512b83*/
+  *this = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512b86*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x512b90*/
   {
     __3_YAXPAX_Z(v3); /*0x512b98*/
-    *(Block + 1) = 0; /*0x512ba0*/
+    *(this + 1) = 0; /*0x512ba0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x512bab*/
-  *(Block + 2) = 0; /*0x512bb1*/
+  *((_BYTE *)this + 13) = 0; /*0x512bab*/
+  *(this + 2) = 0; /*0x512bb1*/
   if ( (a2 & 1) != 0 ) /*0x512bb8*/
-    __3_YAXPAX_Z(Block); /*0x512bbb*/
-  return (VectorClass *)Block; /*0x512bc5*/
+    __3_YAXPAX_Z(this); /*0x512bbb*/
+  return (VectorClass *)this; /*0x512bc5*/
 }
 }
 } // namespace gamemd

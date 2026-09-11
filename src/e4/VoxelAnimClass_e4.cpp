@@ -476,15 +476,15 @@ int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 
 // 0x74AB50
 namespace gamemd {
-VoxelAnimClass * VoxelAnimClass::DrawVoxel(void * Block, char a2)
+VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimClass *__thiscall VoxelAnimClass::DrawVoxel(#374 *Block, char a2)
+VoxelAnimClass *__thiscall VoxelAnimClass::DrawVoxel(#374 *this, char a2)
 {
-  VoxelAnimClass::CleanupMembers(Block); /*0x74ab53*/
+  VoxelAnimClass::CleanupMembers(this); /*0x74ab53*/
   if ( (a2 & 1) != 0 ) /*0x74ab5d*/
-    __3_YAXPAX_Z(Block); /*0x74ab60*/
-  return (VoxelAnimClass *)Block; /*0x74ab6a*/
+    __3_YAXPAX_Z(this); /*0x74ab60*/
+  return (VoxelAnimClass *)this; /*0x74ab6a*/
 }
 }
 } // namespace gamemd

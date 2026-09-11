@@ -62,22 +62,22 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
 
 // 0x53EC90
 namespace gamemd {
-SHORT Mouse::GetKeyState(unsigned signed char vKey)
+SHORT Mouse::GetKeyState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SHORT __thiscall Mouse::GetKeyState(unsigned __int8 vKey)
+SHORT __thiscall Mouse::GetKeyState(unsigned __int8 this)
 {
   if ( unk_AA0444 ) /*0x53ec97*/
-    return unk_AA0168[vKey]; /*0x53eca7*/
+    return unk_AA0168[this]; /*0x53eca7*/
   else
-    return GetAsyncKeyState(vKey); /*0x53ec9a*/
+    return GetAsyncKeyState(this); /*0x53ec9a*/
 }
 }
 } // namespace gamemd
 
 // 0x54F5C0
 namespace gamemd {
-BOOL Mouse::IsButtonDown(unsigned signed char a1)
+BOOL Mouse::IsButtonDown(unsigned char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)

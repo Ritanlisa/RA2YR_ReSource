@@ -280,23 +280,23 @@ HRESULT __stdcall DropPodLocomotionClass::UpdateMovement(int *a1, int *pPStm, in
 }
 
 // 0x4B66F0
-DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
+DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomotion **Block, char a2)
+DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(Block + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(Block + 6) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b6700*/
-  v3 = *(Block + 11); /*0x4b6707*/
+  *this = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
+  *(this + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
+  *(this + 6) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b6700*/
+  v3 = *(this + 11); /*0x4b6707*/
   if ( v3 ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/
-  LocomotionClass::Construct(Block); /*0x4b6716*/
+  LocomotionClass::Construct(this); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    __3_YAXPAX_Z(Block); /*0x4b6723*/
-  return (DropPodLocomotionClass *)Block; /*0x4b672d*/
+    __3_YAXPAX_Z(this); /*0x4b6723*/
+  return (DropPodLocomotionClass *)this; /*0x4b672d*/
 }
 }
 

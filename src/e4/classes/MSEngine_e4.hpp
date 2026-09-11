@@ -14,8 +14,8 @@ struct MSEngine {
     unsigned int Run(int a2);  // 0x5ACEB0
     char SetCapacity(int a2, char * a3);  // 0x5ACED0
     int FindItem(unsigned int * a2);  // 0x5ACFC0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x5AD4D0
-    DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x5AD520
+    VectorClass * QueryInterface(char a2);  // 0x5AD4D0
+    DynamicVector * Constructor(char a2);  // 0x5AD520
     void Destructor();  // 0x5CEE60
     unsigned int * Construct();  // 0x5D1AA0
     void Destruct();  // 0x5D1B30

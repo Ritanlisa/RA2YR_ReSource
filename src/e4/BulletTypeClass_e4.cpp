@@ -200,7 +200,7 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
 }
 
 // 0x46BEE0
-char BulletTypeClass::LoadFromINI(unsigned signed char *** a2)
+char BulletTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
@@ -633,21 +633,21 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 
 // 0x46C890
-BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
+BulletTypeClass * BulletTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **Block, char a2)
+BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &BulletTypeClass::`vftable'; /*0x46c896*/
-  *(Block + 1) = &BulletTypeClass::`vftable'; /*0x46c89c*/
-  *(Block + 2) = &BulletTypeClass::`vftable'; /*0x46c8a3*/
-  *(Block + 3) = &BulletTypeClass::`vftable'; /*0x46c8aa*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x46c8b1*/
-  v6 = Block; /*0x46c8c6*/
+  *this = &BulletTypeClass::`vftable'; /*0x46c896*/
+  *(this + 1) = &BulletTypeClass::`vftable'; /*0x46c89c*/
+  *(this + 2) = &BulletTypeClass::`vftable'; /*0x46c8a3*/
+  *(this + 3) = &BulletTypeClass::`vftable'; /*0x46c8aa*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46c8b1*/
+  v6 = this; /*0x46c8c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x46c8ca*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x46c8e5*/
   {
@@ -658,7 +658,7 @@ BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F680] ); /*0x46c8fd*/
   }
-  v6 = Block; /*0x46c90f*/
+  v6 = this; /*0x46c90f*/
   v4 = (*(int (__thiscall **)(int *, void ***))(BulletTypeClass_Array + 16))(&BulletTypeClass_Array, &v6); /*0x46c913*/
   if ( v4 != -1 && v4 < g_BulletTypeInitState && v4 < --g_BulletTypeInitState ) /*0x46c92e*/
   {
@@ -669,15 +669,15 @@ BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **Block, char a2)
     }
     while ( v4 < g_BulletTypeInitState ); /*0x46c946*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x46c94a*/
+  ObjectTypeClass::Destruct((int)this); /*0x46c94a*/
   if ( (a2 & 1) != 0 ) /*0x46c954*/
-    __3_YAXPAX_Z(Block); /*0x46c957*/
-  return (BulletTypeClass *)Block; /*0x46c961*/
+    __3_YAXPAX_Z(this); /*0x46c957*/
+  return (BulletTypeClass *)this; /*0x46c961*/
 }
 }
 
 // 0x475150
-char BulletTypeClass::ReadTrajectoryFlags(unsigned signed char * Block, char * a3, int a4)
+char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_475150(char *this, unsigned __int8 *Block, char *a3, int a4)

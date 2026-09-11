@@ -1,10 +1,18 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6A04C0_e4.hpp"
+#include "e4/classes/E4Recv_6A6AF0_e4.hpp"
+#include "e4/classes/E4Recv_6A74A0_e4.hpp"
+#include "e4/classes/E4Recv_6A87F0_e4.hpp"
+#include "e4/classes/E4Recv_6A89E0_e4.hpp"
+#include "e4/classes/E4Recv_6A93F0_e4.hpp"
+#include "e4/classes/E4Recv_6AACE0_e4.hpp"
+#include "e4/classes/E4Recv_6ABA60_e4.hpp"
 
 // 0x6A04C0
 namespace gamemd {
-char sub_6A04C0(IUnknown * aP1)
+char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A04C0(int this, IUnknown *aP1)
@@ -18,36 +26,36 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 
   v2 = MEMORY[0xB077F8].field_0; /*0x6a04c1*/
   v4 = (int *)(this + 64); /*0x6a04cd*/
-  if ( this->ambientSoundController.AudioController_field_04 != MEMORY[0xB077F8].field_0 /*0x6a04ec*/
-    || this->ambientSoundController.AudioController_field_08 != MEMORY[0xB077F8].field_4
-    || this->ambientSoundController.AudioController_field_0C != MEMORY[0xB077F8].field_8 )
+  if ( *(_DWORD *)(this + 64) != MEMORY[0xB077F8].field_0 /*0x6a04ec*/
+    || *(_DWORD *)(this + 68) != MEMORY[0xB077F8].field_4
+    || *(_DWORD *)(this + 72) != MEMORY[0xB077F8].field_8 )
   {
     *v4 = MEMORY[0xB077F8].field_0; /*0x6a04f0*/
-    this->ambientSoundController.AudioController_field_08 = MEMORY[0xB077F8].field_4; /*0x6a04f8*/
+    *(_DWORD *)(this + 68) = MEMORY[0xB077F8].field_4; /*0x6a04f8*/
     v5 = (TechnoClass *)MEMORY[0xB077F8].field_8; /*0x6a04fb*/
     *(_BYTE *)(this + 99) = 0; /*0x6a0500*/
-    this->ambientSoundController.AudioController_field_0C = v5; /*0x6a0504*/
+    *(_DWORD *)(this + 72) = v5; /*0x6a0504*/
     v2 = MEMORY[0xB077F8].field_0; /*0x6a0507*/
   }
   if ( aP1->field_0 != v2 || aP1->field_4 != MEMORY[0xB077F8].field_4 || aP1->field_8 != MEMORY[0xB077F8].field_8 ) /*0x6a052d*/
   {
     *v4 = aP1->field_0; /*0x6a0535*/
-    this->ambientSoundController.AudioController_field_08 = aP1->field_4; /*0x6a053a*/
+    *(_DWORD *)(this + 68) = aP1->field_4; /*0x6a053a*/
     v6 = (IUnknown *)aP1->field_8; /*0x6a053d*/
     *(_BYTE *)(this + 99) = 1; /*0x6a0540*/
-    this->ambientSoundController.AudioController_field_0C = v6; /*0x6a0544*/
+    *(_DWORD *)(this + 72) = v6; /*0x6a0544*/
     v9 = *(AbstractClass **)(this + 12); /*0x6a054a*/
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x6a0551*/
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(this->vtable3 + 129) ) /*0x6a0564*/
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(*(_DWORD *)(this + 12) + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo(this, aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
-    if ( *(_BYTE *)(this->vtable3 + 144) ) /*0x6a0583*/
+    if ( *(_BYTE *)(*(_DWORD *)(this + 12) + 144) ) /*0x6a0583*/
     {
       *v4 = MEMORY[0xB077F8].field_0; /*0x6a0593*/
-      this->ambientSoundController.AudioController_field_08 = MEMORY[0xB077F8].field_4; /*0x6a059b*/
-      this->ambientSoundController.AudioController_field_0C = MEMORY[0xB077F8].field_8; /*0x6a05a3*/
+      *(_DWORD *)(this + 68) = MEMORY[0xB077F8].field_4; /*0x6a059b*/
+      *(_DWORD *)(this + 72) = MEMORY[0xB077F8].field_8; /*0x6a05a3*/
       *(_BYTE *)(this + 99) = 0; /*0x6a05a6*/
     }
   }
@@ -679,7 +687,7 @@ void __cdecl sub_6A4E10()
 
 // 0x6A6AF0
 namespace gamemd {
-char sub_6A6AF0(ObjectClass * aP1, int a3)
+char E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A6AF0(_DWORD *this, ObjectClass *aP1, int a3)
@@ -749,7 +757,7 @@ LABEL_18:
 
 // 0x6A74A0
 namespace gamemd {
-int sub_6A74A0(int a2)
+int E4Recv_6A74A0::sub_6A74A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6A74A0(_DWORD *this, int a2)
@@ -786,7 +794,7 @@ int __thiscall sub_6A74A0(_DWORD *this, int a2)
 
 // 0x6A87F0
 namespace gamemd {
-char sub_6A87F0(int a2, int a3)
+char E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A87F0(int this, int a2, int a3)
@@ -795,7 +803,7 @@ char __thiscall sub_6A87F0(int this, int a2, int a3)
   int v5; // ecx
   _DWORD *v6; // eax
 
-  v4 = this->customSound_controller.AudioController_field_04; /*0x6a87f5*/
+  v4 = *(_DWORD *)(this + 84); /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
   v5 = 0; /*0x6a8805*/
@@ -824,7 +832,7 @@ LABEL_7:
 
 // 0x6A89E0
 namespace gamemd {
-char sub_6A89E0(char a2)
+char E4Recv_6A89E0::sub_6A89E0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A89E0(_DWORD *this, char a2)
@@ -884,7 +892,7 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
 
 // 0x6A93F0
 namespace gamemd {
-char sub_6A93F0()
+char E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6A93F0(int this)
@@ -907,8 +915,8 @@ char __thiscall sub_6A93F0(int this)
   {
     do /*0x6a9494*/
     {
-      Hash::Reset((_DWORD *)(56 * (v3 + 60 * this->attachedBomb) + 11566720)); /*0x6a9465*/
-      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * this->attachedBomb) + 11566720); /*0x6a948c*/
+      Hash::Reset((_DWORD *)(56 * (v3 + 60 * *(_DWORD *)(this + 56)) + 11566720)); /*0x6a9465*/
+      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * *(_DWORD *)(this + 56)) + 11566720); /*0x6a948c*/
       ++v3; /*0x6a9491*/
     }
     while ( v3 < v6 ); /*0x6a9494*/
@@ -921,7 +929,7 @@ char __thiscall sub_6A93F0(int this)
 
 // 0x6AACE0
 namespace gamemd {
-int sub_6AACE0(int a2, int a3)
+int E4Recv_6AACE0::sub_6AACE0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6AACE0(_DWORD *this, int a2, int a3)
@@ -935,7 +943,7 @@ int __thiscall sub_6AACE0(_DWORD *this, int a2, int a3)
 
 // 0x6ABA60
 namespace gamemd {
-char sub_6ABA60(int a2, int a3, int a4)
+char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
@@ -944,7 +952,7 @@ char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
   int v5; // eax
   _DWORD *i; // edx
 
-  v4 = this->customSound_controller.AudioController_field_04; /*0x6aba62*/
+  v4 = *(_DWORD *)(this + 84); /*0x6aba62*/
   v5 = 0; /*0x6aba65*/
   if ( v4 <= 0 ) /*0x6aba6a*/
     return 0; /*0x6aba88*/
@@ -1757,8 +1765,9 @@ void __cdecl sub_6AF160()
 } // namespace gamemd
 
 // 0x6AFD60
-namespace gamemd {
-char ProcessDeployAction()
+namespace ra2 {
+namespace game {
+char TechnoClass::ProcessDeployAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ProcessDeployAction(TechnoClass **this)
@@ -2019,7 +2028,8 @@ LABEL_53:
   return (char)v2; /*0x6afdbb*/
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x6A3DA0
 namespace gamemd {

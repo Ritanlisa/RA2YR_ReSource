@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_410DC0_e4.hpp"
+#include "e4/classes/E4Recv_412610_e4.hpp"
+#include "e4/classes/E4Recv_41DD10_e4.hpp"
+#include "e4/classes/E4Recv_41FD30_e4.hpp"
+#include "e4/classes/E4Recv_41FD40_e4.hpp"
+#include "e4/classes/E4Recv_41FD50_e4.hpp"
 
 // 0x410070
 namespace gamemd {
@@ -283,7 +289,7 @@ int sub_410CC0()
 
 // 0x410DC0
 namespace gamemd {
-int sub_410DC0(int a2, int a3, int a4, int a5, int a6)
+int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_410DC0(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
@@ -1086,7 +1092,7 @@ unsigned int j_Time_GetElapsedMS()
 
 // 0x412610
 namespace gamemd {
-int sub_412610()
+int E4Recv_412610::sub_412610()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_412610(char *this)
@@ -2228,12 +2234,12 @@ void __cdecl sub_41D2C0()
 
 // 0x41DD10
 namespace gamemd {
-char sub_41DD10()
+char E4Recv_41DD10::sub_41DD10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_41DD10(int this)
 {
-  this->ambientSoundController.AudioController_field_04 = MEMORY[0xA8ED84]; /*0x41dd15*/
+  *(_DWORD *)(this + 64) = MEMORY[0xA8ED84]; /*0x41dd15*/
   *(_BYTE *)(this + 60) = 0; /*0x41dd1a*/
   *(_BYTE *)(this + 61) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
@@ -2436,7 +2442,7 @@ int sub_41E330()
 
 // 0x41FD30
 namespace gamemd {
-int sub_41FD30(int a2)
+int E4Recv_41FD30::sub_41FD30(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_41FD30(_DWORD *this, int a2)
@@ -2449,7 +2455,7 @@ int __thiscall sub_41FD30(_DWORD *this, int a2)
 
 // 0x41FD40
 namespace gamemd {
-int sub_41FD40(int a2)
+int E4Recv_41FD40::sub_41FD40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_41FD40(_DWORD *this, int a2)
@@ -2462,7 +2468,7 @@ int __thiscall sub_41FD40(_DWORD *this, int a2)
 
 // 0x41FD50
 namespace gamemd {
-int sub_41FD50(int a2)
+int E4Recv_41FD50::sub_41FD50(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_41FD50(_DWORD *this, int a2)

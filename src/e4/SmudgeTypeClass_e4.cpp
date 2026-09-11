@@ -145,7 +145,7 @@ void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int
 }
 
 // 0x6B56D0
-char SmudgeTypeClass::GetSize(unsigned signed char *** aP1)
+char SmudgeTypeClass::GetSize(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
@@ -265,7 +265,7 @@ int __thiscall SmudgeTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x6B6160
-SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass * a2, char a3)
+SmudgeTypeClass * SmudgeTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a2, char a3)

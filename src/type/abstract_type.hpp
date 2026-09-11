@@ -65,6 +65,22 @@ public:
     int SetType();  // 0x5F7620
     int Validate();  // 0x5F7630
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int AddSampleVocClass();  // 0x4064A0
+    void sub_406520();  // 0x406520
+    void sub_406530();  // 0x406530
+    void sub_406540();  // 0x406540
+    int sub_406550();  // 0x406550
+    int sub_406570();  // 0x406570
+    void sub_4065C0();  // 0x4065C0
+    void sub_4065D0();  // 0x4065D0
+    void sub_4065E0();  // 0x4065E0
+    int sub_4065F0(int a2);  // 0x4065F0
+    int sub_406600();  // 0x406600
+    int sub_406610();  // 0x406610
+    int sub_406620();  // 0x406620
+    void sub_406640();  // 0x406640
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -527,15 +527,15 @@ LABEL_23:
 }
 
 // 0x5AC270
-MapSeedClass * MapSeedClass::QueryInterface(unsigned int * Block, char a2)
+MapSeedClass * MapSeedClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MapSeedClass *__thiscall MapSeedClass::QueryInterface(_DWORD *Block, char a2)
+MapSeedClass *__thiscall MapSeedClass::QueryInterface(_DWORD *this, char a2)
 {
-  LoadOptions::Cleanup(Block); /*0x5ac273*/
+  LoadOptions::Cleanup(this); /*0x5ac273*/
   if ( (a2 & 1) != 0 ) /*0x5ac27d*/
-    __3_YAXPAX_Z(Block); /*0x5ac280*/
-  return (MapSeedClass *)Block; /*0x5ac28a*/
+    __3_YAXPAX_Z(this); /*0x5ac280*/
+  return (MapSeedClass *)this; /*0x5ac28a*/
 }
 }
 
@@ -810,50 +810,50 @@ int __thiscall MapSeedClass_18_::sub_5ACC90(int *this, _DWORD *a2)
 
 // 0x5AD430
 namespace gamemd {
-VectorClass * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2)
+VectorClass * MapSeedClass_18::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MapSeedClass_18_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall MapSeedClass_18_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5ad433*/
-  *Block = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad436*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad440*/
+  v3 = (void *)*(this + 1); /*0x5ad433*/
+  *this = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad436*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad440*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad448*/
-    *(Block + 1) = 0; /*0x5ad450*/
+    *(this + 1) = 0; /*0x5ad450*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5ad45b*/
-  *(Block + 2) = 0; /*0x5ad461*/
+  *((_BYTE *)this + 13) = 0; /*0x5ad45b*/
+  *(this + 2) = 0; /*0x5ad461*/
   if ( (a2 & 1) != 0 ) /*0x5ad468*/
-    __3_YAXPAX_Z(Block); /*0x5ad46b*/
-  return (VectorClass *)Block; /*0x5ad475*/
+    __3_YAXPAX_Z(this); /*0x5ad46b*/
+  return (VectorClass *)this; /*0x5ad475*/
 }
 }
 } // namespace gamemd
 
 // 0x5AD480
 namespace gamemd {
-DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2)
+DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MapSeedClass_18_::Constructor_VectorClass__WIN32_FIND_DATAA___(_DWORD *Block, char a2)
+DynamicVector *__thiscall MapSeedClass_18_::Constructor_VectorClass__WIN32_FIND_DATAA___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5ad483*/
-  *Block = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad486*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad490*/
+  v3 = (void *)*(this + 1); /*0x5ad483*/
+  *this = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad486*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad490*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad498*/
-    *(Block + 1) = 0; /*0x5ad4a0*/
+    *(this + 1) = 0; /*0x5ad4a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5ad4ab*/
-  *(Block + 2) = 0; /*0x5ad4b1*/
+  *((_BYTE *)this + 13) = 0; /*0x5ad4ab*/
+  *(this + 2) = 0; /*0x5ad4b1*/
   if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
-    __3_YAXPAX_Z(Block); /*0x5ad4bb*/
-  return (DynamicVector *)Block; /*0x5ad4c5*/
+    __3_YAXPAX_Z(this); /*0x5ad4bb*/
+  return (DynamicVector *)this; /*0x5ad4c5*/
 }
 }
 } // namespace gamemd

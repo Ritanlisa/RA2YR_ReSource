@@ -392,15 +392,15 @@ LABEL_104:
 }
 
 // 0x7AD350
-ObjectClass * CChatEventSink::DeleteAndZero(void ** Block, char a2)
+ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CChatEventSink::DeleteAndZero(void **Block, char a2)
+ObjectClass *__thiscall CChatEventSink::DeleteAndZero(void **this, char a2)
 {
-  DeleteAndZero(Block); /*0x7ad353*/
+  DeleteAndZero(this); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    __3_YAXPAX_Z(Block); /*0x7ad360*/
-  return (ObjectClass *)Block; /*0x7ad36a*/
+    __3_YAXPAX_Z(this); /*0x7ad360*/
+  return (ObjectClass *)this; /*0x7ad36a*/
 }
 }
 

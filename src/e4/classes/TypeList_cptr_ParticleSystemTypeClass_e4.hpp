@@ -8,6 +8,6 @@ struct TypeList_cptr_ParticleSystemTypeClass {
     unsigned int LoadTypeData(int a2);  // 0x459FC0
     char Add(int a2, unsigned int * a3);  // 0x45A300
     int Remove(unsigned int * a2);  // 0x45A3B0
-    TypeList * QueryInterface(unsigned int * Block, char a2);  // 0x717B70
+    TypeList * QueryInterface(char a2);  // 0x717B70
 };
 } // namespace gamemd

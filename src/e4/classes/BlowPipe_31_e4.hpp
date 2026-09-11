@@ -10,6 +10,6 @@ struct BlowPipe_31 {
     char AddRef(int a2);  // 0x63E310
     char Release(int a2, unsigned int * a3);  // 0x63E490
     int Read(unsigned int * a2);  // 0x63E620
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x63EDE0
+    DynamicVector * QueryInterface(char a2);  // 0x63EDE0
 };
 } // namespace gamemd

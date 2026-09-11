@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x543780
-namespace gamemd {
-int IsometricTileClass_IsometricTileClass()
+IsometricTileClass * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
@@ -40,4 +39,3 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
   return this; /*0x543876*/
 }
 }
-} // namespace gamemd

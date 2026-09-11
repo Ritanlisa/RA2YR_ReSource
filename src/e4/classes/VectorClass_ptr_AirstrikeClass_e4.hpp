@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_AirstrikeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_AirstrikeClass___(char a2);  // 0x41E0F0
     void Destroy();  // 0x41DDE0
     unsigned int GetItemIndex(int a2);  // 0x41DE10
     int Get(int a2);  // 0x41DE30

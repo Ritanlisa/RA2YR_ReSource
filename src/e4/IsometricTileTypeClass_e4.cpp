@@ -127,15 +127,15 @@ int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x54A170
-IsometricTileTypeClass * IsometricTileTypeClass::ddtor(void * Block, char a2)
+IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IsometricTileTypeClass *__thiscall IsometricTileTypeClass::ddtor(void *Block, char a2)
+IsometricTileTypeClass *__thiscall IsometricTileTypeClass::ddtor(void *this, char a2)
 {
-  IsometricTileTypeClass::CleanupMembers((int)Block); /*0x54a173*/
+  IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    __3_YAXPAX_Z(Block); /*0x54a180*/
-  return (IsometricTileTypeClass *)Block; /*0x54a18a*/
+    __3_YAXPAX_Z(this); /*0x54a180*/
+  return (IsometricTileTypeClass *)this; /*0x54a18a*/
 }
 }
 
@@ -245,25 +245,25 @@ int __thiscall IsometricTileTypeClass::sub_54A480(int *this, _DWORD *a2)
 }
 
 // 0x54A760
-DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a2)
+DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall IsometricTileTypeClass::Constructor(_DWORD *Block, char a2)
+DynamicVector *__thiscall IsometricTileTypeClass::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x54a763*/
-  *Block = &VectorClass<unsigned short *>::`vftable'; /*0x54a766*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x54a770*/
+  v3 = (void *)*(this + 1); /*0x54a763*/
+  *this = &VectorClass<unsigned short *>::`vftable'; /*0x54a766*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
-    *(Block + 1) = 0; /*0x54a780*/
+    *(this + 1) = 0; /*0x54a780*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x54a78b*/
-  *(Block + 2) = 0; /*0x54a791*/
+  *((_BYTE *)this + 13) = 0; /*0x54a78b*/
+  *(this + 2) = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
-    __3_YAXPAX_Z(Block); /*0x54a79b*/
-  return (DynamicVector *)Block; /*0x54a7a5*/
+    __3_YAXPAX_Z(this); /*0x54a79b*/
+  return (DynamicVector *)this; /*0x54a7a5*/
 }
 }
 

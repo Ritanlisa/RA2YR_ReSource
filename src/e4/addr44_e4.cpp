@@ -1,10 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_44F6E0_e4.hpp"
 
 // 0x44F6E0
 namespace gamemd {
-unsigned int * sub_44F6E0(unsigned int * a2, int a3)
+unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_44F6E0(void *this, _DWORD *a2, int a3)
@@ -45,7 +46,7 @@ _DWORD *__thiscall sub_44F6E0(void *this, _DWORD *a2, int a3)
 
 // 0x44FE60
 namespace gamemd {
-int sub_44FE60()
+int INIClass::sub_44FE60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_44FE60(INIClass *this)

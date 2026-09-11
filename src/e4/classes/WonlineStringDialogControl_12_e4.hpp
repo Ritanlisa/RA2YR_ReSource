@@ -4,6 +4,7 @@
 namespace gamemd {
 struct WonlineStringDialogControl_12 {
     void* vfptr;  // minimal E2 declaration
+    CreateGameDialogControl * Constructor_WonlineStringDialogControl(char a2);  // 0x7AC630
     void ClearBuffer();  // 0x7AC970
     unsigned int PointerToIndex(int a2);  // 0x7AC9A0
     int Seek(int a2);  // 0x7AC9C0
@@ -14,6 +15,7 @@ struct WonlineStringDialogControl_12 {
     unsigned int Write(int a2);  // 0x7AD1F0
     char SetCapacity(int a2, unsigned int * a3);  // 0x7AD210
     int FindItem(unsigned int * a2);  // 0x7AD2C0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x7AD370
+    VectorClass * QueryInterface(char a2);  // 0x7AD370
+    DynamicVector * Constructor_VectorClass_tConnInfoStruct___(char a2);  // 0x7AD3C0
 };
 } // namespace gamemd

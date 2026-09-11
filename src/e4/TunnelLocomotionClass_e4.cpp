@@ -158,15 +158,15 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 }
 
 // 0x72A210
-TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TunnelLocomotionClass *__thiscall TunnelLocomotionClass::ProcessMove(_DWORD *Block, char a2)
+TunnelLocomotionClass *__thiscall TunnelLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  LocomotionClass::Construct(Block); /*0x72a213*/
+  LocomotionClass::Construct(this); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    __3_YAXPAX_Z(Block); /*0x72a220*/
-  return (TunnelLocomotionClass *)Block; /*0x72a22a*/
+    __3_YAXPAX_Z(this); /*0x72a220*/
+  return (TunnelLocomotionClass *)this; /*0x72a22a*/
 }
 }
 

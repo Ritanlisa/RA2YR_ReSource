@@ -1,10 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_7011A0_e4.hpp"
+#include "e4/classes/E4Recv_70DE20_e4.hpp"
+#include "e4/classes/E4Recv_70F740_e4.hpp"
+#include "e4/classes/E4Recv_70FE40_e4.hpp"
+#include "e4/classes/E4Recv_70FE50_e4.hpp"
 
 // 0x7011A0
 namespace gamemd {
-int sub_7011A0()
+int E4Recv_7011A0::sub_7011A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7011A0(int *this)
@@ -757,7 +762,7 @@ void __fastcall GlobalFlag_Set(char a1)
 
 // 0x70DE20
 namespace gamemd {
-int sub_70DE20(int a2)
+int E4Recv_70DE20::sub_70DE20(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_70DE20(_DWORD *this, int a2)
@@ -1024,7 +1029,7 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 
 // 0x70F740
 namespace gamemd {
-int sub_70F740(int a2)
+int E4Recv_70F740::sub_70F740(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_70F740(_DWORD *this, int a2)
@@ -1043,7 +1048,7 @@ int __thiscall sub_70F740(_DWORD *this, int a2)
 
 // 0x70FE40
 namespace gamemd {
-int sub_70FE40(int a2)
+int E4Recv_70FE40::sub_70FE40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_70FE40(_DWORD *this, int a2)
@@ -1056,7 +1061,7 @@ int __thiscall sub_70FE40(_DWORD *this, int a2)
 
 // 0x70FE50
 namespace gamemd {
-int sub_70FE50()
+int E4Recv_70FE50::sub_70FE50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_70FE50(_DWORD *this)

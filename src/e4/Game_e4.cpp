@@ -905,10 +905,10 @@ int __thiscall Game::GetMultiplayerScoreScreenBar(void *this)
 
 // 0x5DBB60
 namespace gamemd {
-void Game::BuildGameSettingsPacket(char * Buffer)
+void Game::BuildGameSettingsPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Game::BuildGameSettingsPacket(char *Buffer)
+void __thiscall Game::BuildGameSettingsPacket(char *this)
 {
   char *v1; // ebp
   char v2; // bl
@@ -924,8 +924,8 @@ void __thiscall Game::BuildGameSettingsPacket(char *Buffer)
   char *v12; // [esp+20h] [ebp-8h]
   int v13; // [esp+24h] [ebp-4h]
 
-  v1 = Buffer; /*0x5dbb6a*/
-  v12 = Buffer; /*0x5dbb70*/
+  v1 = this; /*0x5dbb6a*/
+  v12 = this; /*0x5dbb70*/
   v13 = 0; /*0x5dbb74*/
   if ( &HouseClass_Player == (MouseClass *)-30166 ) /*0x5dbb7c*/
   {
@@ -1060,7 +1060,7 @@ int Game_ResetReadyStates()
 
 // 0x6579E0
 namespace gamemd {
-unsigned signed char Game::ManageGameSpeed()
+unsigned char Game::ManageGameSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall ManageGameSpeed(int this)
@@ -1836,10 +1836,10 @@ char __thiscall Game::InitializeToolTipColor(void *this)
 
 // 0x77E430
 namespace gamemd {
-void Game::EncodeGameSetupState(char * Buffer)
+void Game::EncodeGameSetupState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Game::EncodeGameSetupState(char *Buffer)
+void __thiscall Game::EncodeGameSetupState(char *this)
 {
   char *v1; // ebp
   char v2; // bl
@@ -1868,8 +1868,8 @@ void __thiscall Game::EncodeGameSetupState(char *Buffer)
   int a1; // [esp+48h] [ebp-10h] BYREF
   _DWORD v26[3]; // [esp+4Ch] [ebp-Ch] BYREF
 
-  v1 = Buffer; /*0x77e43a*/
-  v24 = Buffer; /*0x77e440*/
+  v1 = this; /*0x77e43a*/
+  v24 = this; /*0x77e440*/
   v26[2] = 0; /*0x77e444*/
   if ( &HouseClass_Player == (MouseClass *)-30166 ) /*0x77e44c*/
   {

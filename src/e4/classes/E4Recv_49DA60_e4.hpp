@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_49DA60 {
+    void* vfptr;  // minimal E2 declaration
+    unsigned int * sub_49DA60();  // 0x49DA60
+};
+} // namespace gamemd

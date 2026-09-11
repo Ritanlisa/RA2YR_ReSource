@@ -14,10 +14,10 @@ struct Game {
     char StartModemMultiplayer(char a2);  // 0x5B7090
     int BuildGameSetupPacket();  // 0x5BA660
     int GetMultiplayerScoreScreenBar();  // 0x5CA110
-    void BuildGameSettingsPacket(char * Buffer);  // 0x5DBB60
+    void BuildGameSettingsPacket();  // 0x5DBB60
     char ResetFlags();  // 0x5E8B40
     int ResetReadyStates();  // 0x5E9850
-    unsigned signed char ManageGameSpeed();  // 0x6579E0
+    unsigned char ManageGameSpeed();  // 0x6579E0
     unsigned int * LockMutex(IUnknown * aP1, IUnknown * aP2);  // 0x67C3A0
     char LoadSaved();  // 0x67E440
     int SerializeGameSaveState();  // 0x67F9C0
@@ -26,7 +26,7 @@ struct Game {
     char LoadMultiplayerScoreAssets();  // 0x72D730
     void * shutdownGame();  // 0x72D830
     char InitializeToolTipColor();  // 0x72F440
-    void EncodeGameSetupState(char * Buffer);  // 0x77E430
+    void EncodeGameSetupState();  // 0x77E430
     char ProcessIdle();  // 0x77F900
     int CreateAIPlayer();  // 0x796DE0
     int CreateAIPlayer_Potato();  // 0x796ED0

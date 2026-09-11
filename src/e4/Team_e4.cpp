@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_634B20_e4.hpp"
+#include "e4/classes/E4Recv_637640_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
 
 // 0x561180
@@ -252,7 +254,7 @@ int __fastcall sub_6219D0(int *a1, int a2, int a3, int a4)
 
 // 0x634B20
 namespace gamemd {
-void sub_634B20()
+void E4Recv_634B20::sub_634B20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_634B20(int *this)
@@ -335,7 +337,7 @@ void __thiscall sub_634B20(int *this)
 
 // 0x637640
 namespace gamemd {
-_UNKNOWN ** sub_637640()
+_UNKNOWN ** E4Recv_637640::sub_637640()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)

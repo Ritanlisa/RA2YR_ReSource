@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_731130_e4.hpp"
+#include "e4/classes/E4Recv_7325C0_e4.hpp"
+#include "e4/classes/E4Recv_733380_e4.hpp"
+#include "e4/classes/E4Recv_7336C0_e4.hpp"
+#include "e4/classes/E4Recv_733CD0_e4.hpp"
+#include "e4/classes/E4Recv_734F50_e4.hpp"
+#include "e4/classes/E4Recv_734F80_e4.hpp"
+#include "e4/classes/E4Recv_736C10_e4.hpp"
 
 // 0x730660
 namespace gamemd {
@@ -465,7 +473,7 @@ char sub_730D60()
 
 // 0x731130
 namespace gamemd {
-char sub_731130()
+char E4Recv_731130::sub_731130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_731130(char *this)
@@ -629,7 +637,7 @@ wchar_t *__fastcall FillUnitTooltipUI(wchar_t *Destination, wchar_t *Source)
 
 // 0x731EB0
 namespace gamemd {
-unsigned int * sub_731EB0(unsigned signed char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_731EB0(unsigned __int8 (__fastcall *a1)(int, int), int a2)
@@ -691,7 +699,7 @@ _DWORD *__fastcall sub_731EB0(unsigned __int8 (__fastcall *a1)(int, int), int a2
 
 // 0x731F70
 namespace gamemd {
-unsigned int * TechnoClass_GatherFiltered(unsigned signed char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(int, int), int a2)
@@ -777,7 +785,7 @@ int __fastcall sub_732110(int a1, int (__fastcall *a2)(_DWORD, int), int a3)
 
 // 0x732140
 namespace gamemd {
-int sub_732140()
+int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_732140(
@@ -808,7 +816,7 @@ int __fastcall sub_732140(
 
 // 0x732190
 namespace gamemd {
-char sub_732190(int a1, unsigned signed char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_732190(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int), int a3)
@@ -832,7 +840,7 @@ char __fastcall sub_732190(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int)
 
 // 0x7321D0
 namespace gamemd {
-char sub_7321D0(int a1, unsigned signed char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_7321D0(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int), int a3)
@@ -856,7 +864,7 @@ char __fastcall sub_7321D0(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int)
 
 // 0x7325C0
 namespace gamemd {
-BOOL sub_7325C0()
+BOOL E4Recv_7325C0::sub_7325C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_7325C0(void *this)
@@ -1339,7 +1347,7 @@ char sub_7331B0()
 
 // 0x733380
 namespace gamemd {
-int UpdateUnitHealthTooltip()
+int E4Recv_733380::UpdateUnitHealthTooltip()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UpdateUnitHealthTooltip(HealthNavCommandClass *this)
@@ -1513,7 +1521,7 @@ LABEL_42:
 
 // 0x7336C0
 namespace gamemd {
-int DrawUnitExperiencePopup()
+int E4Recv_7336C0::DrawUnitExperiencePopup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DrawUnitExperiencePopup(VeterancyNavCommandClass *this)
@@ -1817,7 +1825,7 @@ LABEL_31:
 
 // 0x733CD0
 namespace gamemd {
-unsigned int * sub_733CD0()
+unsigned int * E4Recv_733CD0::sub_733CD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_733CD0(_DWORD *this)
@@ -2341,7 +2349,7 @@ wchar_t *__fastcall GetStringCSF(wchar_t *Format, _DWORD *a2, CampaignScore *aP3
 
 // 0x734F50
 namespace gamemd {
-int sub_734F50()
+int E4Recv_734F50::sub_734F50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_734F50(void *this)
@@ -2362,7 +2370,7 @@ int __thiscall sub_734F50(void *this)
 
 // 0x734F80
 namespace gamemd {
-int sub_734F80()
+int E4Recv_734F80::sub_734F80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_734F80(void *this)
@@ -2424,7 +2432,7 @@ int __fastcall WideMessageBox(CampaignScore *aP0, const WCHAR *a1, LPCWCH lpWide
 
 // 0x735060
 namespace gamemd {
-unsigned signed char CharToWide_Bulk(unsigned short * a1, unsigned signed char * a2, int a3)
+unsigned char CharToWide_Bulk(unsigned short * a1, unsigned char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __fastcall CharToWide_Bulk(_WORD *a1, unsigned __int8 *a2, int a3)
@@ -2747,7 +2755,7 @@ int sub_735390()
 
 // 0x736C10
 namespace gamemd {
-char sub_736C10()
+char E4Recv_736C10::sub_736C10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_736C10(_DWORD *this)
@@ -2760,7 +2768,7 @@ char __thiscall sub_736C10(_DWORD *this)
   v4[0] = *(this + 39); /*0x736c2f*/
   v4[1] = *(this + 40); /*0x736c3b*/
   v4[2] = *(this + 41); /*0x736c42*/
-  if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) || !*((_BYTE *)this + 981) ) /*0x736c54*/
+  if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) || !(unsigned char)this->M981 ) /*0x736c54*/
     return 0; /*0x736c8a*/
   v2 = *(this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/

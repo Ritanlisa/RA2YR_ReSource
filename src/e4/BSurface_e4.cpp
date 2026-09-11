@@ -94,16 +94,16 @@ int __thiscall BSurface_GetPitch(_DWORD *this)
 }
 
 // 0x411650
-BSurface * BSurface::ScalarDtor(char * Block, char a2)
+BSurface * BSurface::ScalarDtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BSurface *__thiscall BSurface::ScalarDtor(char *Block, char a2)
+BSurface *__thiscall BSurface::ScalarDtor(char *this, char a2)
 {
-  Vector::Clear((int)(Block + 20)); /*0x411656*/
-  *(_DWORD *)Block = &Surface_Vtable; /*0x41165f*/
+  Vector::Clear((int)(this + 20)); /*0x411656*/
+  *(_DWORD *)this = &Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
-    __3_YAXPAX_Z(Block); /*0x41166a*/
-  return (BSurface *)Block; /*0x411674*/
+    __3_YAXPAX_Z(this); /*0x41166a*/
+  return (BSurface *)this; /*0x411674*/
 }
 }
 

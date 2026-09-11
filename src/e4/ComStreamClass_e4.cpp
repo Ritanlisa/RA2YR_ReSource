@@ -353,15 +353,15 @@ void __thiscall sub_7AE0E0(_DWORD *this)
 }
 
 // 0x7AED20
-void ** ComStreamClass::writeData(void ** Block, char a2)
+void ** ComStreamClass::writeData(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall ComStreamClass::writeData(void **Block, char a2)
+void **__thiscall ComStreamClass::writeData(void **this, char a2)
 {
-  DeleteAndZero(Block); /*0x7aed23*/
+  DeleteAndZero(this); /*0x7aed23*/
   if ( (a2 & 1) != 0 ) /*0x7aed2d*/
-    __3_YAXPAX_Z(Block); /*0x7aed30*/
-  return Block; /*0x7aed3a*/
+    __3_YAXPAX_Z(this); /*0x7aed30*/
+  return this; /*0x7aed3a*/
 }
 }
 

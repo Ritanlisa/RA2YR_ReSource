@@ -245,23 +245,23 @@ HRESULT __stdcall WalkLocomotionClass::LoadFromStream(int *a1, int *pPStm, int a
 }
 
 // 0x75CBE0
-WalkLocomotionClass * WalkLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
+WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **Block, char a2)
+WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(Block + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(Block + 6) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbf0*/
-  v3 = *(Block + 14); /*0x75cbf7*/
+  *this = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
+  *(this + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
+  *(this + 6) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbf0*/
+  v3 = *(this + 14); /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
-  LocomotionClass::Construct(Block); /*0x75cc06*/
+  LocomotionClass::Construct(this); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
-    __3_YAXPAX_Z(Block); /*0x75cc13*/
-  return (WalkLocomotionClass *)Block; /*0x75cc1d*/
+    __3_YAXPAX_Z(this); /*0x75cc13*/
+  return (WalkLocomotionClass *)this; /*0x75cc1d*/
 }
 }
 

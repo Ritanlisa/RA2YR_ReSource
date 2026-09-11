@@ -13,7 +13,7 @@ struct MapSeedClass_18 {
     unsigned int Generate(int a2);  // 0x5ACBC0
     char SetCapacity(int a2, unsigned int * a3);  // 0x5ACBE0
     int FindItem(unsigned int * a2);  // 0x5ACC90
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x5AD430
-    DynamicVector * Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2);  // 0x5AD480
+    VectorClass * QueryInterface(char a2);  // 0x5AD430
+    DynamicVector * Constructor_VectorClass__WIN32_FIND_DATAA___(char a2);  // 0x5AD480
 };
 } // namespace gamemd

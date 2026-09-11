@@ -22,9 +22,9 @@ struct MSPCXAnim_42 {
     void ddtor();  // 0x5D12F0
     int Load(unsigned int * a2);  // 0x5D1320
     unsigned int Draw(int a2);  // 0x5D1360
-    DynamicVector * Constructor_VectorClass_Point2D_(unsigned int * Block, char a2);  // 0x5D1710
-    DynamicVector * Constructor_VectorClass_MSTextEntry___(unsigned int * Block, char a2);  // 0x5D17B0
-    DynamicVector * Constructor_VectorClass_MapSelection___(unsigned int * Block, char a2);  // 0x5D1850
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x5D1940
+    DynamicVector * Constructor_VectorClass_Point2D_(char a2);  // 0x5D1710
+    DynamicVector * Constructor_VectorClass_MSTextEntry___(char a2);  // 0x5D17B0
+    DynamicVector * Constructor_VectorClass_MapSelection___(char a2);  // 0x5D1850
+    VectorClass * QueryInterface(char a2);  // 0x5D1940
 };
 } // namespace gamemd

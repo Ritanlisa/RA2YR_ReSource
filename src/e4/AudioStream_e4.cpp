@@ -27,24 +27,24 @@ int __thiscall sub_401910(_DWORD *this)
 
 // 0x402550
 namespace gamemd {
-void AudioStream::Destructor(unsigned int * Block)
+void AudioStream::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AudioStream::Destructor(_DWORD *Block)
+void __thiscall AudioStream::Destructor(_DWORD *this)
 {
   void (__thiscall *v2)(_DWORD *); // eax
 
-  (*(void (**)(void))(*(Block + 53) + 40))(); /*0x402559*/
-  if ( (*(_BYTE *)(Block + 41) & 5) != 0 ) /*0x402563*/
-    (*(void (__thiscall **)(_DWORD *))(*(Block + 53) + 16))(Block); /*0x40256d*/
-  (*(void (__thiscall **)(_DWORD *))(*(Block + 53) + 44))(Block); /*0x402578*/
-  v2 = (void (__thiscall *)(_DWORD *))*(Block + 47); /*0x40257b*/
+  (*(void (**)(void))(*(this + 53) + 40))(); /*0x402559*/
+  if ( (*(_BYTE *)(this + 41) & 5) != 0 ) /*0x402563*/
+    (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 16))(this); /*0x40256d*/
+  (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 44))(this); /*0x402578*/
+  v2 = (void (__thiscall *)(_DWORD *))*(this + 47); /*0x40257b*/
   if ( v2 ) /*0x402583*/
-    v2(Block); /*0x402587*/
-  *(Block + 90) = 0; /*0x40258b*/
-  AudioStream::InitListAndCounters((int)Block); /*0x402595*/
-  (*(void (__thiscall **)(_DWORD *))(*(Block + 53) + 8))(Block); /*0x4025a2*/
-  __3_YAXPAX_Z(Block); /*0x4025a6*/
+    v2(this); /*0x402587*/
+  *(this + 90) = 0; /*0x40258b*/
+  AudioStream::InitListAndCounters((int)this); /*0x402595*/
+  (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 8))(this); /*0x4025a2*/
+  __3_YAXPAX_Z(this); /*0x4025a6*/
 }
 }
 } // namespace gamemd
@@ -128,10 +128,10 @@ int __thiscall sub_4028B0(int this)
 
 // 0x4033C0
 namespace gamemd {
-void AudioStream::DestroyAll(void * Block)
+void AudioStream::DestroyAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AudioStream::DestroyAll(void *Block)
+void __thiscall AudioStream::DestroyAll(void *this)
 {
   int v2; // eax
   int *Next; // edi
@@ -140,25 +140,25 @@ void __thiscall AudioStream::DestroyAll(void *Block)
   int v6; // ecx
 
   ++*((_DWORD *)off_815E98 + 6); /*0x4033cc*/
-  LinkedList::Init((_DWORD **)Block); /*0x4033d1*/
+  LinkedList::Init((_DWORD **)this); /*0x4033d1*/
   v2 = *((_DWORD *)off_815E98 + 6) - 1; /*0x4033df*/
   *((_DWORD *)off_815E98 + 6) = v2; /*0x4033e2*/
   if ( v2 < 0 ) /*0x4033e5*/
     *((_DWORD *)off_815E98 + 6) = 0; /*0x4033ed*/
-  Next = (int *)AudioQueue::GetNext((int *)Block + 62); /*0x403401*/
+  Next = (int *)AudioQueue::GetNext((int *)this + 62); /*0x403401*/
   for ( i = Next; Next; i = Next ) /*0x403407*/
   {
     Next = (int *)AudioQueue::GetNextAlt(Next); /*0x403412*/
     AudioStream::Destructor(i); /*0x403414*/
   }
-  (*(void (__thiscall **)(void *))(*(_DWORD *)(*((_DWORD *)Block + 6) + 12) + 32))(Block); /*0x403427*/
-  *(_DWORD *)(*((_DWORD *)Block + 6) + 4 * *((_DWORD *)Block + 7) + 28) = 0; /*0x403430*/
-  v5 = *((_DWORD *)Block + 6); /*0x403438*/
+  (*(void (__thiscall **)(void *))(*(_DWORD *)(this->AudioStream_field_0x18 + 12) + 32))(this); /*0x403427*/
+  *(_DWORD *)(this->AudioStream_field_0x18 + 4 * this->AudioStream_field_0x1C + 28) = 0; /*0x403430*/
+  v5 = this->AudioStream_field_0x18; /*0x403438*/
   v6 = *(_DWORD *)(v5 + 16) - 1; /*0x40343e*/
   *(_DWORD *)(v5 + 16) = v6; /*0x403440*/
   if ( v6 < 0 ) /*0x403446*/
-    *(_DWORD *)(*((_DWORD *)Block + 6) + 16) = 0; /*0x40344b*/
-  __3_YAXPAX_Z(Block); /*0x403453*/
+    *(_DWORD *)(this->AudioStream_field_0x18 + 16) = 0; /*0x40344b*/
+  __3_YAXPAX_Z(this); /*0x403453*/
 }
 }
 } // namespace gamemd
@@ -827,7 +827,7 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
 
 // 0x4BEAC0
 namespace gamemd {
-int AudioStream_DrawWaveform()
+char AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall AudioStream::DrawWaveform(

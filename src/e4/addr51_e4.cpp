@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_513D00_e4.hpp"
+#include "e4/classes/E4Recv_517110_e4.hpp"
+#include "e4/classes/E4Recv_517360_e4.hpp"
+#include "e4/classes/E4Recv_5173F0_e4.hpp"
+#include "e4/classes/E4Recv_5176D0_e4.hpp"
 
 // 0x5108F0
 namespace gamemd {
@@ -650,7 +655,7 @@ int sub_513C00()
 
 // 0x513D00
 namespace gamemd {
-void sub_513D00()
+void E4Recv_513D00::sub_513D00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_513D00(_DWORD *this)
@@ -664,7 +669,7 @@ void __thiscall sub_513D00(_DWORD *this)
 
 // 0x517110
 namespace gamemd {
-int sub_517110()
+int E4Recv_517110::sub_517110()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_517110(int this)
@@ -678,18 +683,18 @@ int __thiscall sub_517110(int this)
   _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( this->objectTypeFlags != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
-    || this->owningHouseIndex != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
-    || this->fallRate != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
+  if ( *(_DWORD *)(this + 36) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
+    || *(_DWORD *)(this + 40) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
+    || *(_DWORD *)(this + 44) != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
   {
-    v2 = this->objectTypeFlags / 256; /*0x517161*/
-    v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(this->vtable3, v8); /*0x517167*/
+    v2 = *(_DWORD *)(this + 36) / 256; /*0x517161*/
+    v3 = *(_DWORD *)(this + 40) / 256; /*0x517164*/
+    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(*(_DWORD *)(this + 12), v8); /*0x517167*/
     if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  v6 = this->vtable3; /*0x51717f*/
-  this->ambientSoundController.AudioController_field_0C = 0; /*0x517182*/
+  v6 = *(_DWORD *)(this + 12); /*0x51717f*/
+  *(_DWORD *)(this + 72) = 0; /*0x517182*/
   *(_DWORD *)(this + 76) = 1072693248; /*0x517189*/
   (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
@@ -717,7 +722,7 @@ char sub_517340()
 
 // 0x517360
 namespace gamemd {
-unsigned signed char sub_517360(unsigned signed char a2, unsigned signed char * a3)
+unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
@@ -741,7 +746,7 @@ unsigned __int8 __thiscall sub_517360(unsigned __int8 *this, unsigned __int8 a2,
 
 // 0x5173F0
 namespace gamemd {
-int sub_5173F0(unsigned signed char * a2)
+int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
@@ -766,7 +771,7 @@ int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
 
 // 0x5176D0
 namespace gamemd {
-char sub_5176D0(BYTE Data)
+char E4Recv_5176D0::sub_5176D0(BYTE Data)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5176D0(_BYTE *this, BYTE Data)

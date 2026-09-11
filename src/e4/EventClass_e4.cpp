@@ -235,25 +235,25 @@ char __thiscall MoveFeedback::_vt02(void *this, int a2, _DWORD *a3)
 
 // 0x40BC10
 namespace gamemd {
-DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
+DynamicVector * EventClass::executeAction(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall EventClass::executeAction(_DWORD *Block, char a2)
+DynamicVector *__thiscall EventClass::executeAction(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40bc13*/
-  *Block = &VectorClass<BombClass *>::`vftable'; /*0x40bc16*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40bc20*/
+  v3 = (void *)*(this + 1); /*0x40bc13*/
+  *this = &VectorClass<BombClass *>::`vftable'; /*0x40bc16*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
-    *(Block + 1) = 0; /*0x40bc30*/
+    *(this + 1) = 0; /*0x40bc30*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x40bc3b*/
-  *(Block + 2) = 0; /*0x40bc41*/
+  *((_BYTE *)this + 13) = 0; /*0x40bc3b*/
+  *(this + 2) = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    __3_YAXPAX_Z(Block); /*0x40bc4b*/
-  return (DynamicVector *)Block; /*0x40bc55*/
+    __3_YAXPAX_Z(this); /*0x40bc4b*/
+  return (DynamicVector *)this; /*0x40bc55*/
 }
 }
 } // namespace gamemd
@@ -306,25 +306,25 @@ void __cdecl sub_40BE10()
 
 // 0x40C110
 namespace gamemd {
-VectorClass * EventClass::queueEvent(unsigned int * Block, char a2)
+VectorClass * EventClass::queueEvent(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall EventClass::queueEvent(_DWORD *Block, char a2)
+VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40c113*/
-  *Block = &VectorClass<CommandClass const *>::`vftable'; /*0x40c116*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40c120*/
+  v3 = (void *)*(this + 1); /*0x40c113*/
+  *this = &VectorClass<CommandClass const *>::`vftable'; /*0x40c116*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/
-    *(Block + 1) = 0; /*0x40c130*/
+    *(this + 1) = 0; /*0x40c130*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x40c13b*/
-  *(Block + 2) = 0; /*0x40c141*/
+  *((_BYTE *)this + 13) = 0; /*0x40c13b*/
+  *(this + 2) = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
-    __3_YAXPAX_Z(Block); /*0x40c14b*/
-  return (VectorClass *)Block; /*0x40c155*/
+    __3_YAXPAX_Z(this); /*0x40c14b*/
+  return (VectorClass *)this; /*0x40c155*/
 }
 }
 } // namespace gamemd
@@ -469,7 +469,7 @@ int __thiscall EventClass::SetData(_DWORD *this, int a2, int a3, int a4, int a5,
 
 // 0x4C65E0
 namespace gamemd {
-char * EventClass::Add(AbstractClass * aP1, unsigned signed char a3, int a4, char a5)
+char * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8 a3, int a4, char a5)
@@ -497,7 +497,7 @@ char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8
 
 // 0x4C66C0
 namespace gamemd {
-char * EventClass::AddEvent(int a2, unsigned signed char a3)
+char * EventClass::AddEvent(int a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
@@ -523,7 +523,7 @@ char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
 
 // 0x4C6720
 namespace gamemd {
-char * EventClass::Add2(AnimClass * aP1, unsigned signed char a3, IUnknown * aP3)
+char * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3, IUnknown *aP3)
@@ -550,7 +550,7 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
 
 // 0x4C6970
 namespace gamemd {
-int EventClass_AddEventEx()
+char * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall EventClass::AddEventEx(
@@ -671,15 +671,15 @@ void EventClass::ProcessEvent()
 
 // 0x53EC70
 namespace gamemd {
-SHORT EventClass::GetKeyStateSafe(unsigned signed char nVirtKey)
+SHORT EventClass::GetKeyStateSafe()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SHORT __thiscall EventClass::GetKeyStateSafe(unsigned __int8 nVirtKey)
+SHORT __thiscall EventClass::GetKeyStateSafe(unsigned __int8 this)
 {
   if ( unk_AA0444 ) /*0x53ec77*/
-    return unk_AA0168[nVirtKey]; /*0x53ec87*/
+    return unk_AA0168[this]; /*0x53ec87*/
   else
-    return GetKeyState(nVirtKey); /*0x53ec7a*/
+    return GetKeyState(this); /*0x53ec7a*/
 }
 }
 } // namespace gamemd

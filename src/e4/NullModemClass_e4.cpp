@@ -137,22 +137,22 @@ int __thiscall NullModemClass::_vt10(_DWORD *this, int a2)
 }
 
 // 0x5F3650
-NullModemClass * NullModemClass::QueryInterface(void *** Block, char a2)
+NullModemClass * NullModemClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-NullModemClass *__thiscall NullModemClass::QueryInterface(void ***Block, char a2)
+NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
 {
   void **v3; // edi
 
-  v3 = *(Block + 13); /*0x5f3654*/
-  *Block = &NullModemClass::`vftable'; /*0x5f3657*/
+  v3 = *(this + 13); /*0x5f3654*/
+  *this = &NullModemClass::`vftable'; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
     __3_YAXPAX_Z(v3); /*0x5f3669*/
   }
-  ObjectClass::FreeResources((int)Block); /*0x5f3673*/
-  if ( *(Block + 16) != (void **)-1 ) /*0x5f3680*/
+  ObjectClass::FreeResources((int)this); /*0x5f3673*/
+  if ( *(this + 16) != (void **)-1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
       goto LABEL_10; /*0x5f368a*/
@@ -160,8 +160,8 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***Block, char a2
     if ( g_ClipboardBuffer ) /*0x5f3699*/
       (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
-    *(Block + 16) = (void **)-1; /*0x5f36ad*/
-    ObjectClass::FreeResources((int)Block); /*0x5f36b0*/
+    *(this + 16) = (void **)-1; /*0x5f36ad*/
+    ObjectClass::FreeResources((int)this); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
@@ -169,10 +169,10 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***Block, char a2
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
 LABEL_10:
-  *Block = &ConnManClass::`vftable'; /*0x5f36cf*/
+  *this = &ConnManClass::`vftable'; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
-    __3_YAXPAX_Z(Block); /*0x5f36de*/
-  return (NullModemClass *)Block; /*0x5f36e8*/
+    __3_YAXPAX_Z(this); /*0x5f36de*/
+  return (NullModemClass *)this; /*0x5f36e8*/
 }
 }
 

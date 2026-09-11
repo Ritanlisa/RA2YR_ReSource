@@ -448,19 +448,19 @@ char __stdcall TemporalClass::CanWarpTarget(_DWORD *a1)
 // 0x71B1B0
 namespace ra2 {
 namespace game {
-TemporalClass * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
+TemporalClass * TemporalClass::ProcessEvent(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *Block, char a2)
+TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TemporalClass::`vftable'; /*0x71b1bd*/
-  *(Block + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
-  *(Block + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
-  *(Block + 3) = &TemporalClass::`vftable'; /*0x71b1d1*/
-  v5 = Block; /*0x71b1df*/
+  *this = &TemporalClass::`vftable'; /*0x71b1bd*/
+  *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
+  *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
+  *(this + 3) = &TemporalClass::`vftable'; /*0x71b1d1*/
+  v5 = this; /*0x71b1df*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/
   {
@@ -471,10 +471,10 @@ TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0xB0EC70] ); /*0x71b216*/
   }
-  AbstractClass::DTOR(Block); /*0x71b21a*/
+  AbstractClass::DTOR(this); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
-    __3_YAXPAX_Z(Block); /*0x71b227*/
-  return (TemporalClass *)Block; /*0x71b231*/
+    __3_YAXPAX_Z(this); /*0x71b227*/
+  return (TemporalClass *)this; /*0x71b231*/
 }
 }
 } // namespace game

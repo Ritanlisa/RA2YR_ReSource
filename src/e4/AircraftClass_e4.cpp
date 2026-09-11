@@ -1034,15 +1034,15 @@ int __thiscall AircraftClass::_vt34(_DWORD *this)
 
 // 0x41C210
 namespace gamemd {
-AircraftClass * AircraftClass::CheckActionStatus(void ** Block, char a2)
+AircraftClass * AircraftClass::CheckActionStatus(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **Block, char a2)
+AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **this, char a2)
 {
-  AircraftClass::Destruct(Block); /*0x41c213*/
+  AircraftClass::Destruct(this); /*0x41c213*/
   if ( (a2 & 1) != 0 ) /*0x41c21d*/
-    __3_YAXPAX_Z(Block); /*0x41c220*/
-  return (AircraftClass *)Block; /*0x41c22a*/
+    __3_YAXPAX_Z(this); /*0x41c220*/
+  return (AircraftClass *)this; /*0x41c22a*/
 }
 }
 } // namespace gamemd

@@ -236,7 +236,7 @@ int *__stdcall InfantryTypeClass::_vt36(int a1)
 }
 
 // 0x5240A0
-char InfantryTypeClass::LoadFromINI(unsigned signed char *** a2)
+char InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
@@ -828,10 +828,10 @@ int __thiscall InfantryTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x524D70
-InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
+InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int Block, char a2)
+InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int this, char a2)
 {
   int v3; // eax
   void *v4; // eax
@@ -839,12 +839,12 @@ InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   int v8; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)Block = &InfantryTypeClass::`vftable'; /*0x524d76*/
-  *(_DWORD *)(Block + 4) = &InfantryTypeClass::`vftable'; /*0x524d7c*/
-  *(_DWORD *)(Block + 8) = &InfantryTypeClass::`vftable'; /*0x524d83*/
-  *(_DWORD *)(Block + 12) = &InfantryTypeClass::`vftable'; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x524d91*/
-  v8 = Block; /*0x524da6*/
+  *(_DWORD *)this = &InfantryTypeClass::`vftable'; /*0x524d76*/
+  this->vtable1 = &InfantryTypeClass::`vftable'; /*0x524d7c*/
+  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x524d83*/
+  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x524d8a*/
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x524d91*/
+  v8 = this; /*0x524da6*/
   v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA8E348] + 16))(&MEMORY[0xA8E348], &v8); /*0x524daa*/
   if ( v3 != -1 && v3 < MEMORY[0xA8E358] && v3 < --MEMORY[0xA8E358] ) /*0x524dc5*/
   {
@@ -855,39 +855,39 @@ InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int Block, char a2)
     }
     while ( v3 < MEMORY[0xA8E358] ); /*0x524ddd*/
   }
-  __3_YAXPAX_Z(*(void **)(Block + 3644)); /*0x524de7*/
-  *(_DWORD *)(Block + 3644) = 0; /*0x524df1*/
-  v4 = *(void **)(Block + 3724); /*0x524df7*/
-  *(_DWORD *)(Block + 3720) = &VectorClass<int>::`vftable'; /*0x524dff*/
-  if ( v4 && *(_BYTE *)(Block + 3733) ) /*0x524e0b*/
+  __3_YAXPAX_Z(*(void **)(this + 3644)); /*0x524de7*/
+  this->Sequence = 0; /*0x524df1*/
+  v4 = *(void **)(this + 3724); /*0x524df7*/
+  this->VoiceComment = &VectorClass<int>::`vftable'; /*0x524dff*/
+  if ( v4 && this->VoiceComment.IsAllocated ) /*0x524e0b*/
   {
     __3_YAXPAX_Z(v4); /*0x524e14*/
-    *(_DWORD *)(Block + 3724) = 0; /*0x524e1c*/
+    this->VoiceComment.Items = 0; /*0x524e1c*/
   }
-  *(_BYTE *)(Block + 3733) = 0; /*0x524e22*/
-  *(_DWORD *)(Block + 3728) = 0; /*0x524e28*/
-  v5 = *(void **)(Block + 3696); /*0x524e2e*/
-  *(_DWORD *)(Block + 3692) = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e34*/
-  if ( v5 && *(_BYTE *)(Block + 3705) ) /*0x524e42*/
+  this->VoiceComment.IsAllocated = 0; /*0x524e22*/
+  this->VoiceComment.Capacity = 0; /*0x524e28*/
+  v5 = *(void **)(this + 3696); /*0x524e2e*/
+  this->DeathAnims = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e34*/
+  if ( v5 && this->DeathAnims.IsAllocated ) /*0x524e42*/
   {
     __3_YAXPAX_Z(v5); /*0x524e4b*/
-    *(_DWORD *)(Block + 3696) = 0; /*0x524e53*/
+    this->DeathAnims.Items = 0; /*0x524e53*/
   }
-  *(_BYTE *)(Block + 3705) = 0; /*0x524e59*/
-  *(_DWORD *)(Block + 3700) = 0; /*0x524e5f*/
-  v6 = *(void **)(Block + 3668); /*0x524e65*/
-  *(_DWORD *)(Block + 3664) = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e6b*/
-  if ( v6 && *(_BYTE *)(Block + 3677) ) /*0x524e79*/
+  this->DeathAnims.IsAllocated = 0; /*0x524e59*/
+  this->DeathAnims.Capacity = 0; /*0x524e5f*/
+  v6 = *(void **)(this + 3668); /*0x524e65*/
+  this->DeadBodies = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e6b*/
+  if ( v6 && this->DeadBodies.IsAllocated ) /*0x524e79*/
   {
     __3_YAXPAX_Z(v6); /*0x524e82*/
-    *(_DWORD *)(Block + 3668) = 0; /*0x524e8a*/
+    this->DeadBodies.Items = 0; /*0x524e8a*/
   }
-  *(_BYTE *)(Block + 3677) = 0; /*0x524e92*/
-  *(_DWORD *)(Block + 3672) = 0; /*0x524e98*/
-  TechnoTypeClass::DTOR(Block); /*0x524e9e*/
+  this->DeadBodies.IsAllocated = 0; /*0x524e92*/
+  this->DeadBodies.Capacity = 0; /*0x524e98*/
+  TechnoTypeClass::DTOR(this); /*0x524e9e*/
   if ( (a2 & 1) != 0 ) /*0x524eaa*/
-    __3_YAXPAX_Z((void *)Block); /*0x524ead*/
-  return (InfantryTypeClass *)Block; /*0x524eb7*/
+    __3_YAXPAX_Z((void *)this); /*0x524ead*/
+  return (InfantryTypeClass *)this; /*0x524eb7*/
 }
 }
 
@@ -938,15 +938,15 @@ LABEL_8:
 }
 
 // 0x772FA0
-WeaponTypeClass * InfantryTypeClass::Find(ObjectClass * Source)
+WeaponTypeClass * InfantryTypeClass::Find()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *Source)
+WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x772fbc*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x772fbc*/
     return 0; /*0x77301f*/
   v2 = 0; /*0x772fcd*/
   if ( *(int *)&stru_87C374.__pad_579C[23144] <= 0 ) /*0x772fd1*/
@@ -954,10 +954,10 @@ WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *Source)
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x160u); /*0x772ff6*/
     if ( v3 ) /*0x773005*/
-      return (WeaponTypeClass *)WeaponTypeClass::Constructor(v3, Source); /*0x773011*/
+      return (WeaponTypeClass *)WeaponTypeClass::Constructor(v3, this); /*0x773011*/
     return 0; /*0x773005*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * v2) + 36), Source) ) /*0x772fea*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * v2) + 36), this) ) /*0x772fea*/
   {
     if ( ++v2 >= *(int *)&stru_87C374.__pad_579C[23144] ) /*0x772ff4*/
       goto LABEL_6; /*0x772ff4*/

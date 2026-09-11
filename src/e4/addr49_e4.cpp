@@ -1,10 +1,118 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_490400_e4.hpp"
+#include "e4/classes/E4Recv_4912B0_e4.hpp"
+#include "e4/classes/E4Recv_491300_e4.hpp"
+#include "e4/classes/E4Recv_491330_e4.hpp"
+#include "e4/classes/E4Recv_491360_e4.hpp"
+#include "e4/classes/E4Recv_4916B0_e4.hpp"
+#include "e4/classes/E4Recv_491710_e4.hpp"
+#include "e4/classes/E4Recv_491790_e4.hpp"
+#include "e4/classes/E4Recv_4917F0_e4.hpp"
+#include "e4/classes/E4Recv_4924C0_e4.hpp"
+#include "e4/classes/E4Recv_492500_e4.hpp"
+#include "e4/classes/E4Recv_492530_e4.hpp"
+#include "e4/classes/E4Recv_492560_e4.hpp"
+#include "e4/classes/E4Recv_4925E0_e4.hpp"
+#include "e4/classes/E4Recv_492640_e4.hpp"
+#include "e4/classes/E4Recv_492670_e4.hpp"
+#include "e4/classes/E4Recv_4926B0_e4.hpp"
+#include "e4/classes/E4Recv_4926E0_e4.hpp"
+#include "e4/classes/E4Recv_492710_e4.hpp"
+#include "e4/classes/E4Recv_4927A0_e4.hpp"
+#include "e4/classes/E4Recv_4927D0_e4.hpp"
+#include "e4/classes/E4Recv_492800_e4.hpp"
+#include "e4/classes/E4Recv_492830_e4.hpp"
+#include "e4/classes/E4Recv_492890_e4.hpp"
+#include "e4/classes/E4Recv_4928C0_e4.hpp"
+#include "e4/classes/E4Recv_4928F0_e4.hpp"
+#include "e4/classes/E4Recv_492920_e4.hpp"
+#include "e4/classes/E4Recv_492980_e4.hpp"
+#include "e4/classes/E4Recv_4929B0_e4.hpp"
+#include "e4/classes/E4Recv_4929E0_e4.hpp"
+#include "e4/classes/E4Recv_492A70_e4.hpp"
+#include "e4/classes/E4Recv_492AD0_e4.hpp"
+#include "e4/classes/E4Recv_492B70_e4.hpp"
+#include "e4/classes/E4Recv_492BA0_e4.hpp"
+#include "e4/classes/E4Recv_492BD0_e4.hpp"
+#include "e4/classes/E4Recv_492C90_e4.hpp"
+#include "e4/classes/E4Recv_492D80_e4.hpp"
+#include "e4/classes/E4Recv_492DE0_e4.hpp"
+#include "e4/classes/E4Recv_492EA0_e4.hpp"
+#include "e4/classes/E4Recv_492FC0_e4.hpp"
+#include "e4/classes/E4Recv_4930E0_e4.hpp"
+#include "e4/classes/E4Recv_493210_e4.hpp"
+#include "e4/classes/E4Recv_493340_e4.hpp"
+#include "e4/classes/E4Recv_493470_e4.hpp"
+#include "e4/classes/E4Recv_493570_e4.hpp"
+#include "e4/classes/E4Recv_493600_e4.hpp"
+#include "e4/classes/E4Recv_493680_e4.hpp"
+#include "e4/classes/E4Recv_4936B0_e4.hpp"
+#include "e4/classes/E4Recv_4936E0_e4.hpp"
+#include "e4/classes/E4Recv_4937A0_e4.hpp"
+#include "e4/classes/E4Recv_4938A0_e4.hpp"
+#include "e4/classes/E4Recv_496310_e4.hpp"
+#include "e4/classes/E4Recv_4964D0_e4.hpp"
+#include "e4/classes/E4Recv_499CA0_e4.hpp"
+#include "e4/classes/E4Recv_499D40_e4.hpp"
+#include "e4/classes/E4Recv_499D60_e4.hpp"
+#include "e4/classes/E4Recv_499D80_e4.hpp"
+#include "e4/classes/E4Recv_499DC0_e4.hpp"
+#include "e4/classes/E4Recv_499DE0_e4.hpp"
+#include "e4/classes/E4Recv_499E00_e4.hpp"
+#include "e4/classes/E4Recv_499E20_e4.hpp"
+#include "e4/classes/E4Recv_499E40_e4.hpp"
+#include "e4/classes/E4Recv_499E60_e4.hpp"
+#include "e4/classes/E4Recv_499E80_e4.hpp"
+#include "e4/classes/E4Recv_499EA0_e4.hpp"
+#include "e4/classes/E4Recv_499EC0_e4.hpp"
+#include "e4/classes/E4Recv_499EE0_e4.hpp"
+#include "e4/classes/E4Recv_499F00_e4.hpp"
+#include "e4/classes/E4Recv_499F20_e4.hpp"
+#include "e4/classes/E4Recv_499F40_e4.hpp"
+#include "e4/classes/E4Recv_499F60_e4.hpp"
+#include "e4/classes/E4Recv_499F80_e4.hpp"
+#include "e4/classes/E4Recv_499FA0_e4.hpp"
+#include "e4/classes/E4Recv_499FC0_e4.hpp"
+#include "e4/classes/E4Recv_499FE0_e4.hpp"
+#include "e4/classes/E4Recv_49A000_e4.hpp"
+#include "e4/classes/E4Recv_49A020_e4.hpp"
+#include "e4/classes/E4Recv_49A040_e4.hpp"
+#include "e4/classes/E4Recv_49A060_e4.hpp"
+#include "e4/classes/E4Recv_49A080_e4.hpp"
+#include "e4/classes/E4Recv_49A0A0_e4.hpp"
+#include "e4/classes/E4Recv_49A0C0_e4.hpp"
+#include "e4/classes/E4Recv_49A0E0_e4.hpp"
+#include "e4/classes/E4Recv_49A100_e4.hpp"
+#include "e4/classes/E4Recv_49A120_e4.hpp"
+#include "e4/classes/E4Recv_49A140_e4.hpp"
+#include "e4/classes/E4Recv_49A160_e4.hpp"
+#include "e4/classes/E4Recv_49A180_e4.hpp"
+#include "e4/classes/E4Recv_49A7C0_e4.hpp"
+#include "e4/classes/E4Recv_49A7E0_e4.hpp"
+#include "e4/classes/E4Recv_49A800_e4.hpp"
+#include "e4/classes/E4Recv_49A820_e4.hpp"
+#include "e4/classes/E4Recv_49A840_e4.hpp"
+#include "e4/classes/E4Recv_49A860_e4.hpp"
+#include "e4/classes/E4Recv_49A880_e4.hpp"
+#include "e4/classes/E4Recv_49A8A0_e4.hpp"
+#include "e4/classes/E4Recv_49A8C0_e4.hpp"
+#include "e4/classes/E4Recv_49A8E0_e4.hpp"
+#include "e4/classes/E4Recv_49A900_e4.hpp"
+#include "e4/classes/E4Recv_49A920_e4.hpp"
+#include "e4/classes/E4Recv_49A940_e4.hpp"
+#include "e4/classes/E4Recv_49A960_e4.hpp"
+#include "e4/classes/E4Recv_49A980_e4.hpp"
+#include "e4/classes/E4Recv_49C0D0_e4.hpp"
+#include "e4/classes/E4Recv_49D390_e4.hpp"
+#include "e4/classes/E4Recv_49D680_e4.hpp"
+#include "e4/classes/E4Recv_49DA60_e4.hpp"
+#include "e4/classes/E4Recv_49E7C0_e4.hpp"
 
 // 0x490400
 namespace gamemd {
-int sub_490400()
+int E4Recv_490400::sub_490400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_490400(int this)
@@ -17,9 +125,9 @@ int __thiscall sub_490400(int this)
   COMClass::RegisterAll((_DWORD *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)(this + 368)); /*0x490416*/
   v2 = *(void **)(this + 376); /*0x49041b*/
-  this->ConvertClass_field_0x170 = 0; /*0x490421*/
+  *(_DWORD *)(this + 368) = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
-  this->ConvertClass_field_0x178 = 0; /*0x490434*/
+  *(_DWORD *)(this + 376) = 0; /*0x490434*/
   v4 = this; /*0x49044d*/
   result = (*(int (__thiscall **)(int *, int *))(MEMORY[0x89ECF8] + 16))(&MEMORY[0x89ECF8], &v4); /*0x490451*/
   if ( result != -1 && result < MEMORY[0x89ED08] && result < --MEMORY[0x89ED08] ) /*0x49046d*/
@@ -102,7 +210,7 @@ int sub_491100(ObjectClass *aP0, char a2, int a3, ObjectClass *aP3, __int16 a5, 
 
 // 0x4912B0
 namespace gamemd {
-char sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+char E4Recv_4912B0::sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4912B0(_DWORD *this, int a2, _BYTE *a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -130,7 +238,7 @@ char __thiscall sub_4912B0(_DWORD *this, int a2, _BYTE *a3, int a4, int a5, int 
 
 // 0x491300
 namespace gamemd {
-int sub_491300(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_491300::sub_491300(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_491300(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -151,7 +259,7 @@ int __thiscall sub_491300(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x491330
 namespace gamemd {
-int sub_491330(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_491330::sub_491330(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_491330(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -172,7 +280,7 @@ int __thiscall sub_491330(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x491360
 namespace gamemd {
-int sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_491360::sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_491360(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -234,7 +342,7 @@ char __thiscall sub_491670(
 
 // 0x4916B0
 namespace gamemd {
-int sub_4916B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4916B0::sub_4916B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4916B0(BlitTransRemapDest_E *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -286,7 +394,7 @@ int __thiscall sub_4916E0(
 
 // 0x491710
 namespace gamemd {
-int sub_491710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_491710::sub_491710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_491710(BlitTransRemapDest_E *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -348,7 +456,7 @@ unsigned __int8 __thiscall sub_491740(
 
 // 0x491790
 namespace gamemd {
-int sub_491790(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_491790::sub_491790(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_491790(BlitTransRemapXlat_E *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -400,7 +508,7 @@ int __thiscall sub_4917C0(
 
 // 0x4917F0
 namespace gamemd {
-int sub_4917F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_4917F0::sub_4917F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4917F0(BlitTransRemapXlat_E *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -1827,7 +1935,7 @@ int __thiscall sub_492480(
 
 // 0x4924C0
 namespace gamemd {
-void sub_4924C0(int a2, unsigned signed char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -1853,7 +1961,7 @@ void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, in
 
 // 0x492500
 namespace gamemd {
-int sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492500::sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492500(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -1874,7 +1982,7 @@ int __thiscall sub_492500(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492530
 namespace gamemd {
-int sub_492530(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_492530::sub_492530(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492530(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -1895,7 +2003,7 @@ int __thiscall sub_492530(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492560
 namespace gamemd {
-int sub_492560(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492560::sub_492560(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492560(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -1959,7 +2067,7 @@ char __thiscall sub_492590(
 
 // 0x4925E0
 namespace gamemd {
-int sub_4925E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4925E0::sub_4925E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4925E0(BlitTransZRemapXlat_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2011,7 +2119,7 @@ int __thiscall sub_492610(
 
 // 0x492640
 namespace gamemd {
-int sub_492640(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492640::sub_492640(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492640(BlitTransZRemapXlat_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2032,7 +2140,7 @@ int __thiscall sub_492640(BlitTransZRemapXlat_G *this, int a2, int a3, int a4, i
 
 // 0x492670
 namespace gamemd {
-char sub_492670(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_492670(_WORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2064,7 +2172,7 @@ char __thiscall sub_492670(_WORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, in
 
 // 0x4926B0
 namespace gamemd {
-int sub_4926B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4926B0::sub_4926B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4926B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2085,7 +2193,7 @@ int __thiscall sub_4926B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4926E0
 namespace gamemd {
-int sub_4926E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_4926E0::sub_4926E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4926E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -2106,7 +2214,7 @@ int __thiscall sub_4926E0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492710
 namespace gamemd {
-int sub_492710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492710::sub_492710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492710(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2125,47 +2233,9 @@ int __thiscall sub_492710(void *this, int a2, int a3, int a4, int a5, int a6, in
 }
 } // namespace gamemd
 
-// 0x492740
-namespace gamemd {
-char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5, int a6, int a7, int a8, int a9, int a10)
-{
-{
-    int v10;
-    int v13;
-    int v14;
-    short v15;
-    unsigned char v17;
-    LOBYTE(v10) = a5;
-    if ( a5 > 0 )
-  {
-    v13 = a5;
-    do
-    {
-    LOBYTE(v10) = *a4++;
-    v17 = v10;
-    if ( (char)v10 )
-      {
-    LOWORD(a2) = *(short *)(a1 + 8);
-    v14 = (unsigned short)*a3;
-    LOWORD(v14) = (unsigned short)v14 >> 2;
-    v10 = a2 & v14;
-    v15 = a2 & (*(short *)(*(int *)(a1 + 4) + 2 * v17) >> 2);
-    a2 = 3 * v10;
-    *a3 = 3 * v10 + v15;
-      }
-    ++a3;
-    --v13;
-    }
-    while ( v13 );
-  }
-    return v10;
-}
-}
-} // namespace gamemd
-
 // 0x4927A0
 namespace gamemd {
-int sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4927A0::sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4927A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2186,7 +2256,7 @@ int __thiscall sub_4927A0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4927D0
 namespace gamemd {
-int sub_4927D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_4927D0::sub_4927D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4927D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -2207,7 +2277,7 @@ int __thiscall sub_4927D0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492800
 namespace gamemd {
-int sub_492800(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492800::sub_492800(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492800(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2228,7 +2298,7 @@ int __thiscall sub_492800(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492830
 namespace gamemd {
-unsigned int sub_492830(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_492830(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2259,7 +2329,7 @@ unsigned int __thiscall sub_492830(int this, _WORD *a2, _BYTE *a3, int a4, int a
 
 // 0x492890
 namespace gamemd {
-int sub_492890(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492890::sub_492890(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492890(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2280,7 +2350,7 @@ int __thiscall sub_492890(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4928C0
 namespace gamemd {
-int sub_4928C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_4928C0::sub_4928C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4928C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -2301,7 +2371,7 @@ int __thiscall sub_4928C0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4928F0
 namespace gamemd {
-int sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_4928F0::sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4928F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2322,7 +2392,7 @@ int __thiscall sub_4928F0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492920
 namespace gamemd {
-char sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_492920(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2355,7 +2425,7 @@ char __thiscall sub_492920(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a
 
 // 0x492980
 namespace gamemd {
-int sub_492980(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492980::sub_492980(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492980(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2376,7 +2446,7 @@ int __thiscall sub_492980(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4929B0
 namespace gamemd {
-int sub_4929B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_4929B0::sub_4929B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4929B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -2397,7 +2467,7 @@ int __thiscall sub_4929B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4929E0
 namespace gamemd {
-int sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_4929E0::sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4929E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2465,7 +2535,7 @@ unsigned __int16 *__thiscall sub_492A10(
 
 // 0x492A70
 namespace gamemd {
-int sub_492A70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492A70::sub_492A70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492A70(BlitPlainXlatZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2517,7 +2587,7 @@ int __thiscall sub_492AA0(
 
 // 0x492AD0
 namespace gamemd {
-int sub_492AD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492AD0::sub_492AD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492AD0(BlitPlainXlatZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2585,7 +2655,7 @@ unsigned __int16 *__thiscall sub_492B00(
 
 // 0x492B70
 namespace gamemd {
-int sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492B70::sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492B70(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2606,7 +2676,7 @@ int __thiscall sub_492B70(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492BA0
 namespace gamemd {
-int sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_492BA0::sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492BA0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -2627,7 +2697,7 @@ int __thiscall sub_492BA0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x492BD0
 namespace gamemd {
-int sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492BD0::sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492BD0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2697,7 +2767,7 @@ unsigned __int16 *__thiscall sub_492C00(
 
 // 0x492C90
 namespace gamemd {
-int sub_492C90(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492C90::sub_492C90(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492C90(BlitTransZRemapXlatZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2826,7 +2896,7 @@ unsigned __int16 *__thiscall sub_492D20(
 
 // 0x492D80
 namespace gamemd {
-int sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492D80::sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492D80(BlitTransDarkenZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -2878,7 +2948,7 @@ int __thiscall sub_492DB0(
 
 // 0x492DE0
 namespace gamemd {
-int sub_492DE0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_492DE0::sub_492DE0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492DE0(BlitTransDarkenZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2948,7 +3018,7 @@ int __thiscall sub_492E10(
 
 // 0x492EA0
 namespace gamemd {
-int sub_492EA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492EA0::sub_492EA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492EA0(BlitTransLucent75ZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3078,7 +3148,7 @@ unsigned __int16 *__thiscall sub_492F30(
 
 // 0x492FC0
 namespace gamemd {
-int sub_492FC0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492FC0::sub_492FC0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_492FC0(BlitTransLucent50ZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3209,7 +3279,7 @@ int __thiscall sub_493050(
 
 // 0x4930E0
 namespace gamemd {
-int sub_4930E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4930E0::sub_4930E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4930E0(BlitTransLucent25ZRead_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3340,7 +3410,7 @@ int __thiscall sub_493170(
 
 // 0x493210
 namespace gamemd {
-int sub_493210(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_493210::sub_493210(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_493210(BlitTransLucent75ZReadWarp_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3473,7 +3543,7 @@ unsigned __int16 *__thiscall sub_4932A0(
 
 // 0x493340
 namespace gamemd {
-int sub_493340(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_493340::sub_493340(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_493340(BlitTransLucent50ZReadWarp_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3607,7 +3677,7 @@ int __thiscall sub_4933D0(
 
 // 0x493470
 namespace gamemd {
-int sub_493470(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_493470::sub_493470(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_493470(BlitTransLucent25ZReadWarp_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3739,7 +3809,7 @@ _WORD *__thiscall sub_493500(
 
 // 0x493570
 namespace gamemd {
-int sub_493570(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_493570::sub_493570(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_493570(BlitPlainXlatZReadWrite_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3821,7 +3891,7 @@ int __thiscall sub_4935D0(
 
 // 0x493600
 namespace gamemd {
-unsigned short * sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
+unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, _WORD *a6, int a7, int a8, int a9)
@@ -3859,7 +3929,7 @@ _WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5,
 
 // 0x493680
 namespace gamemd {
-int sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_493680::sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_493680(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3880,7 +3950,7 @@ int __thiscall sub_493680(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4936B0
 namespace gamemd {
-int sub_4936B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int E4Recv_4936B0::sub_4936B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4936B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
@@ -3901,7 +3971,7 @@ int __thiscall sub_4936B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 
 // 0x4936E0
 namespace gamemd {
-int sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int E4Recv_4936E0::sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4936E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -3971,7 +4041,7 @@ _WORD *__thiscall sub_493710(
 
 // 0x4937A0
 namespace gamemd {
-int sub_4937A0()
+int E4Recv_4937A0::sub_4937A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4937A0(
@@ -4111,7 +4181,7 @@ _WORD *__thiscall sub_493830(
 
 // 0x4938A0
 namespace gamemd {
-int sub_4938A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4938A0::sub_4938A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4938A0(BlitTransDarkenZReadWrite_G *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4196,7 +4266,7 @@ int __thiscall sub_493900(
 
 // 0x496310
 namespace gamemd {
-int sub_496310()
+int E4Recv_496310::sub_496310()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_496310(RLEBlitTransLucent75_G *this)
@@ -4242,8 +4312,8 @@ int __thiscall sub_496310(RLEBlitTransLucent75_G *this)
     v14 = v8; /*0x496355*/
     if ( v8 ) /*0x496359*/
     {
-      v9 = *((_DWORD *)this + 1); /*0x496376*/
-      LOWORD(v1) = *((_WORD *)this + 4); /*0x496379*/
+      v9 = this->M4; /*0x496376*/
+      LOWORD(v1) = (unsigned short)this->M8; /*0x496379*/
       v3 += 2; /*0x496383*/
       v10 = *(unsigned __int16 *)(v9 + 2 * v14); /*0x496386*/
       LOWORD(v9) = *(_WORD *)(v3 - 2) >> 2; /*0x49638e*/
@@ -4405,7 +4475,7 @@ int __thiscall sub_496490(
 
 // 0x4964D0
 namespace gamemd {
-int sub_4964D0()
+int E4Recv_4964D0::sub_4964D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4964D0(RLEBlitTransLucent25_G *this)
@@ -4452,8 +4522,8 @@ int __thiscall sub_4964D0(RLEBlitTransLucent25_G *this)
     v15 = v8; /*0x496515*/
     if ( v8 ) /*0x496519*/
     {
-      v9 = *((_DWORD *)this + 1); /*0x496536*/
-      LOWORD(v1) = *((_WORD *)this + 4); /*0x496539*/
+      v9 = this->M4; /*0x496536*/
+      LOWORD(v1) = (unsigned short)this->M8; /*0x496539*/
       v3 += 2; /*0x496543*/
       LOWORD(v9) = *(_WORD *)(v9 + 2 * v15) >> 2; /*0x49654a*/
       v10 = v1 & v9; /*0x49654e*/
@@ -5956,7 +6026,7 @@ int __thiscall sub_497470(
 
 // 0x499CA0
 namespace gamemd {
-BlitTransXlat * ___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
+BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_4(std::locale::facet *this, char a2)
@@ -5971,7 +6041,7 @@ BlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_4(std::locale::facet *
 
 // 0x499D40
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
+std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_9(std::locale::facet *this, char a2)
@@ -5986,7 +6056,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_9(std::locale::fa
 
 // 0x499D60
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
+std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_10(std::locale::facet *this, char a2)
@@ -6001,7 +6071,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_10(std::locale::f
 
 // 0x499D80
 namespace gamemd {
-RLEBlitTransXlat * ___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
+RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 RLEBlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_11(std::locale::facet *this, char a2)
@@ -6016,7 +6086,7 @@ RLEBlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_11(std::locale::fac
 
 // 0x499DC0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
+std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_13(std::locale::facet *this, char a2)
@@ -6031,7 +6101,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_13(std::locale::f
 
 // 0x499DE0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
+std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_14(std::locale::facet *this, char a2)
@@ -6046,7 +6116,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_14(std::locale::f
 
 // 0x499E00
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
+std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_15(std::locale::facet *this, char a2)
@@ -6061,7 +6131,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_15(std::locale::f
 
 // 0x499E20
 namespace gamemd {
-RLEBlitTransXlatZRead * ___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
+RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_16(std::locale::facet *this, char a2)
@@ -6076,7 +6146,7 @@ RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_16(std::locale
 
 // 0x499E40
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
+std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_17(std::locale::facet *this, char a2)
@@ -6091,7 +6161,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_17(std::locale::f
 
 // 0x499E60
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
+std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_18(std::locale::facet *this, char a2)
@@ -6106,7 +6176,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_18(std::locale::f
 
 // 0x499E80
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
+std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_19(std::locale::facet *this, char a2)
@@ -6121,7 +6191,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_19(std::locale::f
 
 // 0x499EA0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
+std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_20(std::locale::facet *this, char a2)
@@ -6136,7 +6206,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_20(std::locale::f
 
 // 0x499EC0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
+std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_21(std::locale::facet *this, char a2)
@@ -6151,7 +6221,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_21(std::locale::f
 
 // 0x499EE0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
+std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_22(std::locale::facet *this, char a2)
@@ -6166,7 +6236,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_22(std::locale::f
 
 // 0x499F00
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
+std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_23(std::locale::facet *this, char a2)
@@ -6181,7 +6251,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_23(std::locale::f
 
 // 0x499F20
 namespace gamemd {
-BlitPlainXlat * ___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
+BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitPlainXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_24(std::locale::facet *this, char a2)
@@ -6196,7 +6266,7 @@ BlitPlainXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_24(std::locale::facet 
 
 // 0x499F40
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
+std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_25(std::locale::facet *this, char a2)
@@ -6211,7 +6281,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_25(std::locale::f
 
 // 0x499F60
 namespace gamemd {
-BlitTransDarken * ___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
+BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransDarken *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_26(std::locale::facet *this, char a2)
@@ -6226,7 +6296,7 @@ BlitTransDarken *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_26(std::locale::face
 
 // 0x499F80
 namespace gamemd {
-BlitTransLucent75 * ___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
+BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransLucent75 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_27(std::locale::facet *this, char a2)
@@ -6241,7 +6311,7 @@ BlitTransLucent75 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_27(std::locale::fa
 
 // 0x499FA0
 namespace gamemd {
-BlitTransLucent50 * ___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
+BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransLucent50 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_28(std::locale::facet *this, char a2)
@@ -6256,7 +6326,7 @@ BlitTransLucent50 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_28(std::locale::fa
 
 // 0x499FC0
 namespace gamemd {
-BlitTransLucent25 * ___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
+BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransLucent25 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_29(std::locale::facet *this, char a2)
@@ -6271,7 +6341,7 @@ BlitTransLucent25 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_29(std::locale::fa
 
 // 0x499FE0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
+std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_30(std::locale::facet *this, char a2)
@@ -6286,7 +6356,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_30(std::locale::f
 
 // 0x49A000
 namespace gamemd {
-BlitTransXlatZRead * ___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
+BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_31(std::locale::facet *this, char a2)
@@ -6301,7 +6371,7 @@ BlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_31(std::locale::f
 
 // 0x49A020
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
+std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_32(std::locale::facet *this, char a2)
@@ -6316,7 +6386,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_32(std::locale::f
 
 // 0x49A040
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
+std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_33(std::locale::facet *this, char a2)
@@ -6331,7 +6401,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_33(std::locale::f
 
 // 0x49A060
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
+std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_34(std::locale::facet *this, char a2)
@@ -6346,7 +6416,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_34(std::locale::f
 
 // 0x49A080
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
+std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_35(std::locale::facet *this, char a2)
@@ -6361,7 +6431,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_35(std::locale::f
 
 // 0x49A0A0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
+std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_36(std::locale::facet *this, char a2)
@@ -6376,7 +6446,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_36(std::locale::f
 
 // 0x49A0C0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
+std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_37(std::locale::facet *this, char a2)
@@ -6391,7 +6461,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_37(std::locale::f
 
 // 0x49A0E0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
+std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_38(std::locale::facet *this, char a2)
@@ -6406,7 +6476,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_38(std::locale::f
 
 // 0x49A100
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
+std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_39(std::locale::facet *this, char a2)
@@ -6421,7 +6491,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_39(std::locale::f
 
 // 0x49A120
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
+std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_40(std::locale::facet *this, char a2)
@@ -6436,7 +6506,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_40(std::locale::f
 
 // 0x49A140
 namespace gamemd {
-BlitTransXlatZReadWrite * ___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
+BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BlitTransXlatZReadWrite *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_41(std::locale::facet *this, char a2)
@@ -6451,7 +6521,7 @@ BlitTransXlatZReadWrite *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_41(std::loca
 
 // 0x49A160
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
+std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_42(std::locale::facet *this, char a2)
@@ -6466,7 +6536,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_42(std::locale::f
 
 // 0x49A180
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
+std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_43(std::locale::facet *this, char a2)
@@ -6481,7 +6551,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_43(std::locale::f
 
 // 0x49A7C0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
+std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_55(std::locale::facet *this, char a2)
@@ -6496,7 +6566,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_55(std::locale::f
 
 // 0x49A7E0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
+std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_56(std::locale::facet *this, char a2)
@@ -6511,7 +6581,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_56(std::locale::f
 
 // 0x49A800
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
+std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_57(std::locale::facet *this, char a2)
@@ -6526,7 +6596,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_57(std::locale::f
 
 // 0x49A820
 namespace gamemd {
-RLEBlitTransXlatZRead * ___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
+RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_58(std::locale::facet *this, char a2)
@@ -6541,7 +6611,7 @@ RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_58(std::locale
 
 // 0x49A840
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
+std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_59(std::locale::facet *this, char a2)
@@ -6556,7 +6626,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_59(std::locale::f
 
 // 0x49A860
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
+std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_60(std::locale::facet *this, char a2)
@@ -6571,7 +6641,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_60(std::locale::f
 
 // 0x49A880
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
+std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_61(std::locale::facet *this, char a2)
@@ -6586,7 +6656,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_61(std::locale::f
 
 // 0x49A8A0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
+std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_62(std::locale::facet *this, char a2)
@@ -6601,7 +6671,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_62(std::locale::f
 
 // 0x49A8C0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
+std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_63(std::locale::facet *this, char a2)
@@ -6616,7 +6686,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_63(std::locale::f
 
 // 0x49A8E0
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
+std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_64(std::locale::facet *this, char a2)
@@ -6631,7 +6701,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_64(std::locale::f
 
 // 0x49A900
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
+std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_65(std::locale::facet *this, char a2)
@@ -6646,7 +6716,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_65(std::locale::f
 
 // 0x49A920
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
+std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_66(std::locale::facet *this, char a2)
@@ -6661,7 +6731,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_66(std::locale::f
 
 // 0x49A940
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
+std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_67(std::locale::facet *this, char a2)
@@ -6676,7 +6746,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_67(std::locale::f
 
 // 0x49A960
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
+std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_68(std::locale::facet *this, char a2)
@@ -6691,7 +6761,7 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_68(std::locale::f
 
 // 0x49A980
 namespace gamemd {
-std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
+std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_69(std::locale::facet *this, char a2)
@@ -6700,167 +6770,6 @@ std::locale::facet *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_69(std::locale::f
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
     __3_YAXPAX_Z(this); /*0x49a992*/
   return this; /*0x49a99c*/
-}
-}
-} // namespace gamemd
-
-// 0x49B180
-namespace gamemd {
-void sub_49B180()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_89F5A0 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x49B1B0
-namespace gamemd {
-void sub_49B1B0()
-{
-{
-    *((double *)&DataGlobal_89F5D8 + 19) = DataGlobal_89F5A0 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x49B1D0
-namespace gamemd {
-void sub_49B1D0()
-{
-{
-    *((double *)&DataGlobal_89F5D8 + 16) = 1.0 / *((double *)&DataGlobal_89F5D8 + 19);
-}
-}
-} // namespace gamemd
-
-// 0x49B1F0
-namespace gamemd {
-void sub_49B1F0()
-{
-{
-    DataGlobal_89F5D0 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x49B210
-namespace gamemd {
-void sub_49B210()
-{
-{
-    DataGlobal_89F5A8 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x49B230
-namespace gamemd {
-void sub_49B230()
-{
-{
-    DataGlobal_89F580 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x49B250
-namespace gamemd {
-long long sub_49B250()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_89F580 - DataGlobal_89F5A8);
-    result = Math::RoundToInt(v0 * DataGlobal_89F5A0 * 0.5);
-    *((int *)&DataGlobal_89F5D8 + 40) = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x49B290
-namespace gamemd {
-void sub_49B290()
-{
-{
-    DataGlobal_89F5B0 = Math::ArcTan((double)*((int *)&DataGlobal_89F5D8 + 40) * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x49B2C0
-namespace gamemd {
-void sub_49B2C0()
-{
-{
-    DataGlobal_89F5C8 = Math::ArcTan((double)(2 * *((int *)&DataGlobal_89F5D8 + 40)) / DataGlobal_89F5A0);
-}
-}
-} // namespace gamemd
-
-// 0x49B2F0
-namespace gamemd {
-long long sub_49B2F0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * *((int *)&DataGlobal_89F5D8 + 40)) + 0.5);
-    *((int *)&DataGlobal_89F5D8 + 37) = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x49B320
-namespace gamemd {
-int sub_49B320()
-{
-{
-    DataGlobal_89F598 = 0;
-    DataGlobal_89F59A = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x49B330
-namespace gamemd {
-int sub_49B330()
-{
-{
-    DataGlobal_89F5B8 = 0;
-    DataGlobal_89F5BC = 0;
-    DataGlobal_89F5C0 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x49B350
-namespace gamemd {
-int sub_49B350()
-{
-{
-    *((int *)&DataGlobal_89F5D8 + 34) = 128;
-    *(__int64 *)(&DataGlobal_89F5D8 + 70) = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x49B370
-namespace gamemd {
-int sub_49B370()
-{
-{
-    DataGlobal_89F588 = 0;
-    DataGlobal_89F58C = 0;
-    DataGlobal_89F590 = 0;
-    DataGlobal_89F594 = 0;
-    return 0;
 }
 }
 } // namespace gamemd
@@ -6889,17 +6798,6 @@ int sub_49B390()
   MEMORY[0x89F518] = (int)&CCINIClass_Vtable; /*0x49b405*/
   MEMORY[0x89F578] = 0; /*0x49b40f*/
   return atexit(unknown_libname_12); /*0x49b41d*/
-}
-}
-} // namespace gamemd
-
-// 0x49B420
-namespace gamemd {
-int unknown_libname_12()
-{
-    void __cdecl unknown_libname_12()
-{
-    INIClass::ClearContents((int)&g_DDrawSurfaceManager);
 }
 }
 } // namespace gamemd
@@ -6989,7 +6887,7 @@ LABEL_8:
 
 // 0x49C0D0
 namespace gamemd {
-char CampaignClass_LoadCoopSave()
+char E4Recv_49C0D0::CampaignClass_LoadCoopSave()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CampaignClass_LoadCoopSave(char *this)
@@ -7128,52 +7026,52 @@ LABEL_44:
     BufferIOFileClass::Dtor(v29); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
-  this->attachedBomb = INIClass::ReadInt_Overwrite(v28, unk_81F19C, 0); /*0x49c2fc*/
+  this->M56 = INIClass::ReadInt_Overwrite(v28, unk_81F19C, 0); /*0x49c2fc*/
   INIClass::ReadInt_Overwrite(v28, unk_81F194, 0); /*0x49c2ff*/
-  this->ambientSoundController.AudioController_field_08 = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
-  this->abstractFlags = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
+  this->M68 = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
+  this->M20 = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
                             (unsigned __int8 ***)v24,
                             (unsigned __int8 *)v28,
                             (unsigned __int8 *)unk_81F17C,
                             -2);
-  this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
-  this->nextObject = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
+  this->M24 = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
+  this->M48 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (unsigned __int8 ***)v24,
                              (unsigned __int8 *)v28,
                              (unsigned __int8 *)unk_81F16C,
                              -2);
-  this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
-  this->ambientSoundController.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
-  *((_DWORD *)this + 19) = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
-  this->customSound_controller = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
-  this->customSound_controller.AudioController_field_04 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
-  this->customSound_controller.AudioController_field_08 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  this->customSound_controller.AudioController_field_0C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
-  *((_DWORD *)this + 24) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
-  this->customSound = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
+  this->M52 = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
+  this->M72 = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
+  this->M76 = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
+  this->M80 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
+  this->M84 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
+  this->M88 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
+  this->M92 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
+  this->M96 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
+  this->M100 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
-  v20 = this->ambientSoundController.AudioController_field_08; /*0x49c448*/
-  *((_DWORD *)this + 26) = Int_Overwrite; /*0x49c44b*/
+  v20 = this->M68; /*0x49c448*/
+  this->M104 = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
   {
-    this->ambientSoundController.AudioController_field_04 = 0; /*0x49c550*/
+    this->M64 = 0; /*0x49c550*/
     goto LABEL_44; /*0x49c550*/
   }
   v21 = MEMORY[0x89F570] + 76 * v20; /*0x49c486*/
-  this->ambientSoundController.AudioController_field_04 = *(char *)(v21 + 8); /*0x49c489*/
-  this->ambientSoundController = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
-  for ( j = 0; j < this->ambientSoundController.AudioController_field_04; ++j ) /*0x49c4a6*/
+  this->M64 = *(char *)(v21 + 8); /*0x49c489*/
+  this->M60 = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  for ( j = 0; j < this->M64; ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c4b9*/
-    *(_DWORD *)(this->ambientSoundController + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
+    *(_DWORD *)(this->M60 + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
     INIClass::GetString( /*0x49c4f3*/
       (unsigned __int8 ***)v24,
       (unsigned __int8 *)v28,
       (unsigned __int8 *)Buffer,
       MEMORY[0x81F108],
-      *(char **)(this->ambientSoundController + 4 * j),
+      *(char **)(this->M60 + 4 * j),
       260);
   }
   *(this + 108) = 1; /*0x49c505*/
@@ -7461,7 +7359,7 @@ char __thiscall sub_49CCF0(
 
 // 0x49D390
 namespace gamemd {
-char LoadCoopCampaignSave(IUnknown * aP1)
+char E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall LoadCoopCampaignSave(char *this, IUnknown *aP1)
@@ -7595,7 +7493,7 @@ LABEL_5:
 
 // 0x49D680
 namespace gamemd {
-char SerializeCampaignOptions()
+char E4Recv_49D680::SerializeCampaignOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SerializeCampaignOptions(char *this)
@@ -7627,7 +7525,7 @@ char __thiscall SerializeCampaignOptions(char *this)
 
   if ( !*(this + 108) ) /*0x49d68b*/
     return 0; /*0x49d68b*/
-  v3 = this->ambientSoundController.AudioController_field_08; /*0x49d6a3*/
+  v3 = this->M68; /*0x49d6a3*/
   if ( !MEMORY[0x89F578] ) /*0x49d6a8*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
@@ -7637,17 +7535,17 @@ char __thiscall SerializeCampaignOptions(char *this)
   sprintf( /*0x49d70c*/
     Buffer,
     stru_81F218,
-    this->ambientSoundController.AudioController_field_08,
-    this->attachedBomb,
-    *((_DWORD *)this + 26),
-    this->ambientSoundController.AudioController_field_0C,
-    this->customSound_controller,
-    this->customSound_controller.AudioController_field_08,
-    *((_DWORD *)this + 24),
-    *((_DWORD *)this + 19),
-    this->customSound_controller.AudioController_field_04,
-    this->customSound_controller.AudioController_field_0C,
-    this->customSound);
+    this->M68,
+    this->M56,
+    this->M104,
+    this->M72,
+    this->M80,
+    this->M88,
+    this->M96,
+    this->M76,
+    this->M84,
+    this->M92,
+    this->M100);
   if ( *((int *)this + 16) > 0 ) /*0x49d719*/
   {
     v23 = 0; /*0x49d71f*/
@@ -7655,7 +7553,7 @@ char __thiscall SerializeCampaignOptions(char *this)
     {
       v5 = v23; /*0x49d723*/
       v6 = 0; /*0x49d727*/
-      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(this->ambientSoundController + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(this->M60 + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v5 += 260; /*0x49d74b*/
@@ -7670,7 +7568,7 @@ char __thiscall SerializeCampaignOptions(char *this)
       ++v4; /*0x49d79b*/
       v23 += 780; /*0x49d7aa*/
     }
-    while ( v4 < this->ambientSoundController.AudioController_field_04 ); /*0x49d7ae*/
+    while ( v4 < this->M64 ); /*0x49d7ae*/
   }
   strcat(Buffer, a1_0); /*0x49d7d9*/
   v7 = 0; /*0x49d7e7*/
@@ -7763,7 +7661,7 @@ char __thiscall SerializeCampaignOptions(char *this)
 
 // 0x49DA60
 namespace gamemd {
-unsigned int * sub_49DA60()
+unsigned int * E4Recv_49DA60::sub_49DA60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_49DA60(_DWORD *this)
@@ -7827,10 +7725,10 @@ _DWORD *__thiscall sub_49DA60(_DWORD *this)
 
 // 0x49E7C0
 namespace gamemd {
-char * sub_49E7C0(char * Block, char a2)
+char * E4Recv_49E7C0::sub_49E7C0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_49E7C0(char *Block, char a2)
+char *__thiscall sub_49E7C0(char *this, char a2)
 {
   int v3; // eax
   char *v4; // edi
@@ -7846,14 +7744,14 @@ char *__thiscall sub_49E7C0(char *Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x49e7cc*/
   {
-    v3 = *((_DWORD *)Block - 1); /*0x49e7d2*/
-    v4 = Block - 4; /*0x49e7d5*/
-    v14 = Block - 4; /*0x49e7d8*/
+    v3 = *((_DWORD *)this - 1); /*0x49e7d2*/
+    v4 = this - 4; /*0x49e7d5*/
+    v14 = this - 4; /*0x49e7d8*/
     v5 = 19 * v3; /*0x49e7df*/
     v6 = v3 - 1; /*0x49e7e2*/
     if ( v6 >= 0 ) /*0x49e7e6*/
     {
-      v7 = Block + 4 * v5 + 44; /*0x49e7e9*/
+      v7 = this + 4 * v5 + 44; /*0x49e7e9*/
       v8 = v6 + 1; /*0x49e7ec*/
       do /*0x49e84a*/
       {
@@ -7889,31 +7787,331 @@ char *__thiscall sub_49E7C0(char *Block, char a2)
   }
   else
   {
-    DeleteAndZero((void **)Block + 18); /*0x49e86d*/
-    DeleteAndZero((void **)Block + 17); /*0x49e875*/
-    v12 = (void *)*((_DWORD *)Block + 11); /*0x49e87a*/
-    *((_DWORD *)Block + 10) = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
-    if ( v12 && *(Block + 53) ) /*0x49e88b*/
+    DeleteAndZero((void **)this + 18); /*0x49e86d*/
+    DeleteAndZero((void **)this + 17); /*0x49e875*/
+    v12 = (void *)this->M44; /*0x49e87a*/
+    this->M40 = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
+    if ( v12 && *(this + 53) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(v12); /*0x49e891*/
-      *((_DWORD *)Block + 11) = 0; /*0x49e899*/
+      this->M44 = 0; /*0x49e899*/
     }
-    *(Block + 53) = 0; /*0x49e89c*/
-    *((_DWORD *)Block + 12) = 0; /*0x49e89f*/
-    v13 = (ObjectClass *)*((_DWORD *)Block + 5); /*0x49e8a2*/
-    *((_DWORD *)Block + 4) = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
-    if ( v13 && *(Block + 29) ) /*0x49e8ac*/
+    *(this + 53) = 0; /*0x49e89c*/
+    this->M48 = 0; /*0x49e89f*/
+    v13 = (ObjectClass *)this->M20; /*0x49e8a2*/
+    this->M16 = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
+    if ( v13 && *(this + 29) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(v13); /*0x49e8b2*/
-      *((_DWORD *)Block + 5) = 0; /*0x49e8ba*/
+      this->M20 = 0; /*0x49e8ba*/
     }
-    *(Block + 29) = 0; /*0x49e8c1*/
-    *((_DWORD *)Block + 6) = 0; /*0x49e8c6*/
+    *(this + 29) = 0; /*0x49e8c1*/
+    this->M24 = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
-      __3_YAXPAX_Z(Block); /*0x49e8cc*/
-    return Block; /*0x49e8d4*/
+      __3_YAXPAX_Z(this); /*0x49e8cc*/
+    return this; /*0x49e8d4*/
   }
 }
+}
+} // namespace gamemd
+
+// 0x49F2F0
+namespace gamemd {
+int sub_49F2F0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_49F2F0()
+{
+  MEMORY[0x89F688][0] = -65536; /*0x49f305*/
+  MEMORY[0x89F68C] = -65535; /*0x49f322*/
+  MEMORY[0x89F690] = 1; /*0x49f336*/
+  MEMORY[0x89F694] = 65537; /*0x49f34a*/
+  MEMORY[0x89F69C] = 0x1FFFF; /*0x49f375*/
+  MEMORY[0x89F698] = 0x10000; /*0x49f388*/
+  MEMORY[0x89F6A0] = 0xFFFF; /*0x49f38e*/
+  MEMORY[0x89F6A4] = -1; /*0x49f394*/
+  return -1; /*0x49f39b*/
+}
+}
+} // namespace gamemd
+
+// 0x49F3A0
+namespace gamemd {
+int sub_49F3A0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_49F3A0()
+{
+  MEMORY[0x89F6DC][0] = -256; /*0x49f3a7*/
+  MEMORY[0x89F6E4] = -256; /*0x49f3ad*/
+  MEMORY[0x89F6D8][0] = 0; /*0x49f3b3*/
+  MEMORY[0x89F6EC] = 0; /*0x49f3bf*/
+  MEMORY[0x89F6E0] = 256; /*0x49f3c5*/
+  MEMORY[0x89F6E8] = 256; /*0x49f3ca*/
+  MEMORY[0x89F6F0] = 256; /*0x49f3d1*/
+  MEMORY[0x89F6F4] = 256; /*0x49f3d8*/
+  MEMORY[0x89F6FC] = 256; /*0x49f3de*/
+  MEMORY[0x89F704] = 256; /*0x49f3e4*/
+  MEMORY[0x89F6F8] = 0; /*0x49f3ea*/
+  MEMORY[0x89F70C] = 0; /*0x49f3f6*/
+  MEMORY[0x89F700] = -256; /*0x49f3fe*/
+  MEMORY[0x89F708] = -256; /*0x49f403*/
+  MEMORY[0x89F710] = -256; /*0x49f408*/
+  MEMORY[0x89F714] = -256; /*0x49f40d*/
+  return -256; /*0x49f413*/
+}
+}
+} // namespace gamemd
+
+// 0x49F550
+namespace gamemd {
+IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+IUnknown *__fastcall globalHelper_09F550(int *a1, IUnknown *a2, int a3)
+{
+  int v4; // eax
+  IUnknown *v5; // edi
+  char *v6; // edi
+  int GroundHeight; // eax
+  int v9; // [esp+8h] [ebp-Ch] BYREF
+  int v10; // [esp+Ch] [ebp-8h]
+  IUnknown *v11; // [esp+10h] [ebp-4h]
+
+  v4 = *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0; /*0x49f56c*/
+  v5 = (IUnknown *)a2->field_8; /*0x49f573*/
+  v10 = a2->field_4 + *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 244]; /*0x49f576*/
+  v9 = v4; /*0x49f57f*/
+  v11 = v5; /*0x49f583*/
+  v6 = (char *)v5 - Cell::GetGroundHeight(a2); /*0x49f595*/
+  GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9); /*0x49f59c*/
+  *a1 = v9; /*0x49f5aa*/
+  a1[1] = v10; /*0x49f5b0*/
+  a1[2] = (int)&v6[GroundHeight]; /*0x49f5b3*/
+  return (IUnknown *)a1; /*0x49f5a9*/
+}
+}
+} // namespace gamemd
+
+// 0x492740
+namespace gamemd {
+char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+{
+    int v10;
+    int v13;
+    int v14;
+    short v15;
+    unsigned char v17;
+    LOBYTE(v10) = a5;
+    if ( a5 > 0 )
+  {
+    v13 = a5;
+    do
+    {
+    LOBYTE(v10) = *a4++;
+    v17 = v10;
+    if ( (char)v10 )
+      {
+    LOWORD(a2) = *(short *)(a1 + 8);
+    v14 = (unsigned short)*a3;
+    LOWORD(v14) = (unsigned short)v14 >> 2;
+    v10 = a2 & v14;
+    v15 = a2 & (*(short *)(*(int *)(a1 + 4) + 2 * v17) >> 2);
+    a2 = 3 * v10;
+    *a3 = 3 * v10 + v15;
+      }
+    ++a3;
+    --v13;
+    }
+    while ( v13 );
+  }
+    return v10;
+}
+}
+} // namespace gamemd
+
+// 0x49B180
+namespace gamemd {
+void sub_49B180()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_89F5A0 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x49B1B0
+namespace gamemd {
+void sub_49B1B0()
+{
+{
+    *((double *)&DataGlobal_89F5D8 + 19) = DataGlobal_89F5A0 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x49B1D0
+namespace gamemd {
+void sub_49B1D0()
+{
+{
+    *((double *)&DataGlobal_89F5D8 + 16) = 1.0 / *((double *)&DataGlobal_89F5D8 + 19);
+}
+}
+} // namespace gamemd
+
+// 0x49B1F0
+namespace gamemd {
+void sub_49B1F0()
+{
+{
+    DataGlobal_89F5D0 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x49B210
+namespace gamemd {
+void sub_49B210()
+{
+{
+    DataGlobal_89F5A8 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x49B230
+namespace gamemd {
+void sub_49B230()
+{
+{
+    DataGlobal_89F580 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x49B250
+namespace gamemd {
+long long sub_49B250()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_89F580 - DataGlobal_89F5A8);
+    result = Math::RoundToInt(v0 * DataGlobal_89F5A0 * 0.5);
+    *((int *)&DataGlobal_89F5D8 + 40) = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x49B290
+namespace gamemd {
+void sub_49B290()
+{
+{
+    DataGlobal_89F5B0 = Math::ArcTan((double)*((int *)&DataGlobal_89F5D8 + 40) * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x49B2C0
+namespace gamemd {
+void sub_49B2C0()
+{
+{
+    DataGlobal_89F5C8 = Math::ArcTan((double)(2 * *((int *)&DataGlobal_89F5D8 + 40)) / DataGlobal_89F5A0);
+}
+}
+} // namespace gamemd
+
+// 0x49B2F0
+namespace gamemd {
+long long sub_49B2F0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * *((int *)&DataGlobal_89F5D8 + 40)) + 0.5);
+    *((int *)&DataGlobal_89F5D8 + 37) = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x49B320
+namespace gamemd {
+int sub_49B320()
+{
+{
+    DataGlobal_89F598 = 0;
+    DataGlobal_89F59A = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49B330
+namespace gamemd {
+int sub_49B330()
+{
+{
+    DataGlobal_89F5B8 = 0;
+    DataGlobal_89F5BC = 0;
+    DataGlobal_89F5C0 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49B350
+namespace gamemd {
+int sub_49B350()
+{
+{
+    *((int *)&DataGlobal_89F5D8 + 34) = 128;
+    *(__int64 *)(&DataGlobal_89F5D8 + 70) = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x49B370
+namespace gamemd {
+int sub_49B370()
+{
+{
+    DataGlobal_89F588 = 0;
+    DataGlobal_89F58C = 0;
+    DataGlobal_89F590 = 0;
+    DataGlobal_89F594 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49B420
+namespace gamemd {
+int unknown_libname_12()
+{
+    void __cdecl unknown_libname_12()
+{
+    INIClass::ClearContents((int)&g_DDrawSurfaceManager);
+}
+}
+} // namespace gamemd
+
+// 0x49B430
+namespace gamemd {
+char Hex_EncodeDigit(int a1)
+{
+  if ( (unsigned int)a1 >= 0x10 )
+    return 0;
+  if ( a1 >= 10 )
+    return a1 + 55;
+  return a1 + 48;
 }
 } // namespace gamemd
 
@@ -8079,54 +8277,6 @@ int sub_49F2D0()
 }
 } // namespace gamemd
 
-// 0x49F2F0
-namespace gamemd {
-int sub_49F2F0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_49F2F0()
-{
-  MEMORY[0x89F688][0] = -65536; /*0x49f305*/
-  MEMORY[0x89F68C] = -65535; /*0x49f322*/
-  MEMORY[0x89F690] = 1; /*0x49f336*/
-  MEMORY[0x89F694] = 65537; /*0x49f34a*/
-  MEMORY[0x89F69C] = 0x1FFFF; /*0x49f375*/
-  MEMORY[0x89F698] = 0x10000; /*0x49f388*/
-  MEMORY[0x89F6A0] = 0xFFFF; /*0x49f38e*/
-  MEMORY[0x89F6A4] = -1; /*0x49f394*/
-  return -1; /*0x49f39b*/
-}
-}
-} // namespace gamemd
-
-// 0x49F3A0
-namespace gamemd {
-int sub_49F3A0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_49F3A0()
-{
-  MEMORY[0x89F6DC][0] = -256; /*0x49f3a7*/
-  MEMORY[0x89F6E4] = -256; /*0x49f3ad*/
-  MEMORY[0x89F6D8][0] = 0; /*0x49f3b3*/
-  MEMORY[0x89F6EC] = 0; /*0x49f3bf*/
-  MEMORY[0x89F6E0] = 256; /*0x49f3c5*/
-  MEMORY[0x89F6E8] = 256; /*0x49f3ca*/
-  MEMORY[0x89F6F0] = 256; /*0x49f3d1*/
-  MEMORY[0x89F6F4] = 256; /*0x49f3d8*/
-  MEMORY[0x89F6FC] = 256; /*0x49f3de*/
-  MEMORY[0x89F704] = 256; /*0x49f3e4*/
-  MEMORY[0x89F6F8] = 0; /*0x49f3ea*/
-  MEMORY[0x89F70C] = 0; /*0x49f3f6*/
-  MEMORY[0x89F700] = -256; /*0x49f3fe*/
-  MEMORY[0x89F708] = -256; /*0x49f403*/
-  MEMORY[0x89F710] = -256; /*0x49f408*/
-  MEMORY[0x89F714] = -256; /*0x49f40d*/
-  return -256; /*0x49f413*/
-}
-}
-} // namespace gamemd
-
 // 0x49F420
 namespace gamemd {
 int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
@@ -8183,36 +8333,6 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
     v15[1] = (int)v11;
     v15[2] = v12;
     return result;
-}
-}
-} // namespace gamemd
-
-// 0x49F550
-namespace gamemd {
-IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__fastcall globalHelper_09F550(int *a1, IUnknown *a2, int a3)
-{
-  int v4; // eax
-  IUnknown *v5; // edi
-  char *v6; // edi
-  int GroundHeight; // eax
-  int v9; // [esp+8h] [ebp-Ch] BYREF
-  int v10; // [esp+Ch] [ebp-8h]
-  IUnknown *v11; // [esp+10h] [ebp-4h]
-
-  v4 = *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0; /*0x49f56c*/
-  v5 = (IUnknown *)a2->field_8; /*0x49f573*/
-  v10 = a2->field_4 + *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 244]; /*0x49f576*/
-  v9 = v4; /*0x49f57f*/
-  v11 = v5; /*0x49f583*/
-  v6 = (char *)v5 - Cell::GetGroundHeight(a2); /*0x49f595*/
-  GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9); /*0x49f59c*/
-  *a1 = v9; /*0x49f5aa*/
-  a1[1] = v10; /*0x49f5b0*/
-  a1[2] = (int)&v6[GroundHeight]; /*0x49f5b3*/
-  return (IUnknown *)a1; /*0x49f5a9*/
 }
 }
 } // namespace gamemd
@@ -8400,17 +8520,5 @@ int sub_49FF20()
     DataGlobal_89F7C4 = 128;
     return 128;
 }
-}
-} // namespace gamemd
-
-// 0x49B430
-namespace gamemd {
-char Hex_EncodeDigit(int a1)
-{
-  if ( (unsigned int)a1 >= 0x10 )
-    return 0;
-  if ( a1 >= 10 )
-    return a1 + 55;
-  return a1 + 48;
 }
 } // namespace gamemd

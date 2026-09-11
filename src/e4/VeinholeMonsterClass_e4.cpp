@@ -75,15 +75,15 @@ int VeinholeMonsterClass::_vt34()
 }
 
 // 0x74F340
-VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char a2)
+VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VeinholeMonsterClass *__thiscall VeinholeMonsterClass::SpreadTiberium(void **Block, char a2)
+VeinholeMonsterClass *__thiscall VeinholeMonsterClass::SpreadTiberium(void **this, char a2)
 {
-  DestroyVeinholeMonster(Block); /*0x74f343*/
+  DestroyVeinholeMonster(this); /*0x74f343*/
   if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    __3_YAXPAX_Z(Block); /*0x74f350*/
-  return (VeinholeMonsterClass *)Block; /*0x74f35a*/
+    __3_YAXPAX_Z(this); /*0x74f350*/
+  return (VeinholeMonsterClass *)this; /*0x74f35a*/
 }
 }
 

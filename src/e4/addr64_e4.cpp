@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6429E0_e4.hpp"
+#include "e4/classes/E4Recv_644850_e4.hpp"
+#include "e4/classes/E4Recv_6458D0_e4.hpp"
+#include "e4/classes/E4Recv_645B60_e4.hpp"
+#include "e4/classes/E4Recv_645CD0_e4.hpp"
+#include "e4/classes/E4Recv_645D60_e4.hpp"
+#include "e4/classes/E4Recv_646D00_e4.hpp"
+#include "e4/classes/E4Recv_64AAA0_e4.hpp"
 
 // 0x6404D0
 namespace gamemd {
@@ -435,7 +443,7 @@ void __cdecl sub_6429A0()
 
 // 0x6429E0
 namespace gamemd {
-unsigned int * sub_6429E0()
+unsigned int * E4Recv_6429E0::sub_6429E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
@@ -445,17 +453,17 @@ _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
   *(_DWORD *)&this->__pad_4C[4] = 0; /*0x6429ee*/
   this->field_54 = 0; /*0x6429f1*/
   *((_BYTE *)this + 88) = 0; /*0x6429f4*/
-  this->customSound_controller.AudioController_field_0C = 0; /*0x6429f7*/
+  this->M92 = 0; /*0x6429f7*/
   *((_BYTE *)this + 96) = 0; /*0x6429fa*/
   *((_BYTE *)this + 97) = 0; /*0x6429fd*/
   *((_BYTE *)this + 98) = 0; /*0x642a00*/
-  this->customSound = 0; /*0x642a03*/
-  *((_DWORD *)this + 26) = 0; /*0x642a06*/
-  this->health = 0; /*0x642a09*/
-  this->spawnStatus = -1; /*0x642a0c*/
-  *((_DWORD *)this + 32) = -1; /*0x642a0f*/
+  this->M100 = 0; /*0x642a03*/
+  this->M104 = 0; /*0x642a06*/
+  this->M108 = 0; /*0x642a09*/
+  this->M120 = -1; /*0x642a0c*/
+  this->M128 = -1; /*0x642a0f*/
   *((_BYTE *)this + 112) = 0; /*0x642a1d*/
-  this->visibilityFlags = 0; /*0x642a20*/
+  this->M124 = 0; /*0x642a20*/
   *(_DWORD *)this->__pad_0 = &ProgressScreenClass::`vftable'; /*0x642a23*/
   memset(&this->__pad_0[8], 0, 0x40u); /*0x642a29*/
   return this->__pad_0; /*0x642a2d*/
@@ -915,7 +923,7 @@ int sub_644080()
 
 // 0x644850
 namespace gamemd {
-ObjectClass * sub_644850()
+ObjectClass * E4Recv_644850::sub_644850()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall sub_644850(void *this)
@@ -1116,7 +1124,7 @@ int sub_644BC0()
 
 // 0x6458D0
 namespace gamemd {
-ObjectClass * sub_6458D0()
+ObjectClass * E4Recv_6458D0::sub_6458D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall sub_6458D0(void *this)
@@ -1140,7 +1148,7 @@ ObjectClass *__thiscall sub_6458D0(void *this)
 
 // 0x645B60
 namespace gamemd {
-ObjectClass * sub_645B60()
+ObjectClass * E4Recv_645B60::sub_645B60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall sub_645B60(void *this)
@@ -1176,7 +1184,7 @@ char *__fastcall sub_645BA0(int a1)
 
 // 0x645CD0
 namespace gamemd {
-void sub_645CD0(float a2)
+void E4Recv_645CD0::sub_645CD0(float a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_645CD0(float *this, float a2)
@@ -1191,7 +1199,7 @@ void __thiscall sub_645CD0(float *this, float a2)
 
 // 0x645D60
 namespace gamemd {
-float * sub_645D60(float * a2)
+float * E4Recv_645D60::sub_645D60(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 float *__thiscall sub_645D60(float *this, float *a2)
@@ -1226,9 +1234,9 @@ float *__thiscall sub_645D60(float *this, float *a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   v21 = *this; /*0x645d6f*/
-  v22 = this->vtable1; /*0x645d76*/
-  v23 = this->vtable2; /*0x645d7d*/
-  v24 = this->vtable3; /*0x645d88*/
+  v22 = this->M4; /*0x645d76*/
+  v23 = this->M8; /*0x645d7d*/
+  v24 = this->M12; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply(v30, &v21, v3); /*0x645d9c*/
   v5 = *(this + 3); /*0x645da3*/
@@ -1851,7 +1859,7 @@ int sub_646C70()
 
 // 0x646D00
 namespace gamemd {
-unsigned int * sub_646D00()
+unsigned int * E4Recv_646D00::sub_646D00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_646D00(_DWORD *this)
@@ -2300,7 +2308,7 @@ LABEL_23:
 
 // 0x648710
 namespace gamemd {
-int QueueNetworkProcessor()
+int QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -2879,20 +2887,20 @@ LABEL_7:
 
 // 0x64AAA0
 namespace gamemd {
-LRESULT sub_64AAA0(HWND hWnd)
+LRESULT E4Recv_64AAA0::sub_64AAA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __thiscall sub_64AAA0(HWND hWnd)
+LRESULT __thiscall sub_64AAA0(HWND this)
 {
   LRESULT v2; // esi
 
-  v2 = SendMessageA(hWnd, 0x18Bu, 0, 0); /*0x64aab7*/
+  v2 = SendMessageA(this, 0x18Bu, 0, 0); /*0x64aab7*/
   if ( v2 > 50 ) /*0x64aabc*/
   {
-    SendMessageA(hWnd, 0x182u, 0, 0); /*0x64aac8*/
+    SendMessageA(this, 0x182u, 0, 0); /*0x64aac8*/
     --v2; /*0x64aaca*/
   }
-  return SendMessageA(hWnd, 0x197u, v2 - 1, 0); /*0x64aad7*/
+  return SendMessageA(this, 0x197u, v2 - 1, 0); /*0x64aad7*/
 }
 }
 } // namespace gamemd
@@ -2994,7 +3002,7 @@ int sub_64AE30()
 
 // 0x64B240
 namespace gamemd {
-void Network_KickPlayerNow(int a1, int a2, int a3, unsigned signed char a4)
+void Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4)
@@ -3068,7 +3076,7 @@ void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4
 
 // 0x64B4D0
 namespace gamemd {
-char Compress_DictionaryLookup(unsigned signed char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
+char Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall Compress_DictionaryLookup(unsigned __int8 *a1, _DWORD *a2, _BYTE *a3, const void *a4, char a5)

@@ -168,7 +168,7 @@ int __thiscall TagTypeClass::_vt10(_DWORD *this, int a2, int a3)
 
 // 0x6E6080
 namespace gamemd {
-char TagTypeClass::GetAction(unsigned signed char *** a2)
+char TagTypeClass::GetAction(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
@@ -235,15 +235,15 @@ char __thiscall TagTypeClass::_vt26(int this, char *a2)
 
 // 0x6E6310
 namespace gamemd {
-char * TagTypeClass::FindOrCreate(ObjectClass * Source)
+char * TagTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *Source)
+char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *this)
 {
   int v2; // esi
   char *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e632c*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
   v2 = 0; /*0x6e633d*/
   if ( *(int *)&stru_B05488.__pad_579C[15212] <= 0 ) /*0x6e6341*/
@@ -251,10 +251,10 @@ char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *Source)
 LABEL_6:
     v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
-      return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
+      return TagTypeClass::Construct(v3, this); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15200] + 4 * v2) + 36), Source) ) /*0x6e635a*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15200] + 4 * v2) + 36), this) ) /*0x6e635a*/
   {
     if ( ++v2 >= *(int *)&stru_B05488.__pad_579C[15212] ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
@@ -338,30 +338,30 @@ int __thiscall TagTypeClass::_vt16(_DWORD *this)
 
 // 0x6E64C0
 namespace gamemd {
-TagTypeClass * TagTypeClass::ddtor(void * Block, char a2)
+TagTypeClass * TagTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TagTypeClass *__thiscall TagTypeClass::ddtor(void *Block, char a2)
+TagTypeClass *__thiscall TagTypeClass::ddtor(void *this, char a2)
 {
-  TagTypeClass::CleanupMembers((int)Block); /*0x6e64c3*/
+  TagTypeClass::CleanupMembers((int)this); /*0x6e64c3*/
   if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    __3_YAXPAX_Z(Block); /*0x6e64d0*/
-  return (TagTypeClass *)Block; /*0x6e64da*/
+    __3_YAXPAX_Z(this); /*0x6e64d0*/
+  return (TagTypeClass *)this; /*0x6e64da*/
 }
 }
 } // namespace gamemd
 
 // 0x727AA0
 namespace gamemd {
-TriggerTypeClass * TagTypeClass::FindOrCreateTriggerType(ObjectClass * Source)
+TriggerTypeClass * TagTypeClass::FindOrCreateTriggerType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TriggerTypeClass *__thiscall TagTypeClass::FindOrCreateTriggerType(ObjectClass *Source)
+TriggerTypeClass *__thiscall TagTypeClass::FindOrCreateTriggerType(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x727abc*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x727abc*/
     return 0; /*0x727b1f*/
   v2 = 0; /*0x727acd*/
   if ( dword_8B4188 <= 0 ) /*0x727ad1*/
@@ -369,10 +369,10 @@ TriggerTypeClass *__thiscall TagTypeClass::FindOrCreateTriggerType(ObjectClass *
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return (TriggerTypeClass *)TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
+      return (TriggerTypeClass *)TriggerTypeClass::Construct(v3, this); /*0x727b11*/
     return 0; /*0x727b05*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)unk_8B417C + v2) + 36), Source) ) /*0x727aea*/
+  while ( _strcmpi((const void *)(*((_DWORD *)unk_8B417C + v2) + 36), this) ) /*0x727aea*/
   {
     if ( ++v2 >= dword_8B4188 ) /*0x727af4*/
       goto LABEL_6; /*0x727af4*/

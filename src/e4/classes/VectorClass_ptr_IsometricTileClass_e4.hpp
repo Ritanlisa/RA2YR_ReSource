@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_IsometricTileClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_IsometricTileClass___(char a2);  // 0x40CB30
+    LogicClass * Constructor_VectorClass_ObjectClass___(char a2);  // 0x40CC20
     void Destroy();  // 0x40C820
     unsigned int GetItemIndex(int a2);  // 0x40C850
     int Get(int a2);  // 0x40C870

@@ -684,22 +684,22 @@ int __thiscall TEventClass::_vt16(_DWORD *this)
 
 // 0x71FA80
 namespace gamemd {
-TEventClass * TEventClass::Fire(void ** Block, char a2)
+TEventClass * TEventClass::Fire(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
+TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
 {
   int v3; // eax
   int v4; // eax
   int v5; // eax
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  *Block = &TEventClass::`vftable'; /*0x71fa86*/
-  *(Block + 1) = &TEventClass::`vftable'; /*0x71fa8c*/
-  *(Block + 2) = &TEventClass::`vftable'; /*0x71fa93*/
-  *(Block + 3) = &TEventClass::`vftable'; /*0x71fa9a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x71faa1*/
-  v7 = Block; /*0x71fab6*/
+  *this = &TEventClass::`vftable'; /*0x71fa86*/
+  *(this + 1) = &TEventClass::`vftable'; /*0x71fa8c*/
+  *(this + 2) = &TEventClass::`vftable'; /*0x71fa93*/
+  *(this + 3) = &TEventClass::`vftable'; /*0x71fa9a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
+  v7 = this; /*0x71fab6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v7); /*0x71faba*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F668] && v3 < --MEMORY[0xB0F668] ) /*0x71fad5*/
   {
@@ -710,7 +710,7 @@ TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F668] ); /*0x71faed*/
   }
-  v7 = Block; /*0x71faff*/
+  v7 = this; /*0x71faff*/
   v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x71fb03*/
   if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x71fb1e*/
   {
@@ -721,7 +721,7 @@ TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
     }
     while ( v4 < MEMORY[0xB0F680] ); /*0x71fb36*/
   }
-  v7 = Block; /*0x71fb48*/
+  v7 = this; /*0x71fb48*/
   v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F1A0] + 16))(&MEMORY[0xB0F1A0], &v7); /*0x71fb4c*/
   if ( v5 != -1 && v5 < MEMORY[0xB0F1B0] && v5 < --MEMORY[0xB0F1B0] ) /*0x71fb67*/
   {
@@ -732,10 +732,10 @@ TEventClass *__thiscall TEventClass::Fire(void **Block, char a2)
     }
     while ( v5 < MEMORY[0xB0F1B0] ); /*0x71fb7f*/
   }
-  AbstractClass::DTOR(Block); /*0x71fb83*/
+  AbstractClass::DTOR(this); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
-    __3_YAXPAX_Z(Block); /*0x71fb90*/
-  return (TEventClass *)Block; /*0x71fb9a*/
+    __3_YAXPAX_Z(this); /*0x71fb90*/
+  return (TEventClass *)this; /*0x71fb9a*/
 }
 }
 } // namespace gamemd

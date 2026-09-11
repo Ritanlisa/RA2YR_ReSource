@@ -44,15 +44,15 @@ int UnholyAlliance_GetResult()
 } // namespace gamemd
 
 // 0x5CB540
-UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
+UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnholyAlliance *__thiscall UnholyAlliance::QueryInterface(_DWORD *Block, char a2)
+UnholyAlliance *__thiscall UnholyAlliance::QueryInterface(_DWORD *this, char a2)
 {
-  *Block = &UnholyAlliance::`vftable'; /*0x5cb543*/
-  MultiplayerGameMode::Dtor(Block); /*0x5cb549*/
+  *this = &UnholyAlliance::`vftable'; /*0x5cb543*/
+  MultiplayerGameMode::Dtor(this); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    __3_YAXPAX_Z(Block); /*0x5cb556*/
-  return (UnholyAlliance *)Block; /*0x5cb560*/
+    __3_YAXPAX_Z(this); /*0x5cb556*/
+  return (UnholyAlliance *)this; /*0x5cb560*/
 }
 }

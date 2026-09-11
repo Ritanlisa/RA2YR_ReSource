@@ -408,14 +408,14 @@ HWND Dialog::ShowStatusText(SessionClass *aP0, CampaignScore *aP1, CampaignScore
 
 // 0x5E2F60
 namespace gamemd {
-LRESULT Dialog::ShowPlayerName(HWND hDlg)
+LRESULT Dialog::ShowPlayerName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __thiscall Dialog::ShowPlayerName(HWND hDlg)
+LRESULT __thiscall Dialog::ShowPlayerName(HWND this)
 {
   HWND DlgItem; // eax
 
-  DlgItem = GetDlgItem(hDlg, 1448); /*0x5e2f66*/
+  DlgItem = GetDlgItem(this, 1448); /*0x5e2f66*/
   return SendMessageA(DlgItem, 0x4B2u, 0, 11055906); /*0x5e2f7f*/
 }
 }
@@ -975,10 +975,10 @@ LABEL_208:
 
 // 0x607FD0
 namespace gamemd {
-char Dialog::StopBink(HWND hDlg)
+char Dialog::StopBink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Dialog::StopBink(HWND hDlg)
+char __thiscall Dialog::StopBink(HWND this)
 {
   int v1; // eax
   int v3; // esi
@@ -986,7 +986,7 @@ char __thiscall Dialog::StopBink(HWND hDlg)
   HWND v6; // [esp+8h] [ebp-4h] BYREF
 
   LOBYTE(v1) = MEMORY[0xAC1B04]; /*0x607fd1*/
-  v6 = hDlg; /*0x607fdc*/
+  v6 = this; /*0x607fdc*/
   if ( MEMORY[0xAC1B04] ) /*0x607fe0*/
   {
     v1 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v6) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x608005*/
@@ -1004,10 +1004,10 @@ char __thiscall Dialog::StopBink(HWND hDlg)
         LOBYTE(v1) = *(_BYTE *)(v1 + 194); /*0x60802d*/
         if ( (_BYTE)v1 ) /*0x608035*/
         {
-          DlgItem = GetDlgItem(hDlg, 1818); /*0x60803d*/
+          DlgItem = GetDlgItem(this, 1818); /*0x60803d*/
           if ( DlgItem ) /*0x608045*/
             SendMessageA(DlgItem, 0x4E2u, 0, 0); /*0x608051*/
-          LOBYTE(v1) = RenderGadgetClassAnimation(hDlg, 0); /*0x60805b*/
+          LOBYTE(v1) = RenderGadgetClassAnimation(this, 0); /*0x60805b*/
           *(_BYTE *)(v3 + 190) = 0; /*0x608060*/
         }
       }
@@ -1448,12 +1448,12 @@ LABEL_74:
 
 // 0x60AAA0
 namespace gamemd {
-BOOL Dialog::EnumAndCleanup(HWND hWndParent)
+BOOL Dialog::EnumAndCleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Dialog::EnumAndCleanup(HWND hWndParent)
+BOOL __thiscall Dialog::EnumAndCleanup(HWND this)
 {
-  return EnumChildWindows(hWndParent, sub_60AA60, 0); /*0x60aaae*/
+  return EnumChildWindows(this, sub_60AA60, 0); /*0x60aaae*/
 }
 }
 } // namespace gamemd
@@ -1943,10 +1943,10 @@ LABEL_71:
 
 // 0x610360
 namespace gamemd {
-int Dialog::DestroyDialogSystem(HWND hWndParent)
+int Dialog::DestroyDialogSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog::DestroyDialogSystem(HWND hWndParent)
+int __thiscall Dialog::DestroyDialogSystem(HWND this)
 {
   _DWORD *v2; // eax
   _DWORD *v3; // eax
@@ -1962,8 +1962,8 @@ int __thiscall Dialog::DestroyDialogSystem(HWND hWndParent)
   __int64 v14; // [esp+10h] [ebp-208h] BYREF
   void *v15[128]; // [esp+18h] [ebp-200h] BYREF
 
-  EnumChildWindows(hWndParent, DestroyDialogChildWindow, 0); /*0x610374*/
-  hWnd = hWndParent; /*0x610389*/
+  EnumChildWindows(this, DestroyDialogChildWindow, 0); /*0x610374*/
+  hWnd = this; /*0x610389*/
   DynamicArray::Resize(&MEMORY[0xAC1B48], (int *)&hWnd, &v14); /*0x61038d*/
   memset(v15, 0, sizeof(v15)); /*0x6103a3*/
   v15[26] = (void *)11; /*0x6103a7*/
@@ -2526,10 +2526,10 @@ LONG __thiscall Dialog_Resize(char *this)
 
 // 0x621E90
 namespace gamemd {
-void Dialog::DrawBackground(HWND hWnd)
+void Dialog::DrawBackground()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Dialog::DrawBackground(HWND hWnd)
+void __thiscall Dialog::DrawBackground(HWND this)
 {
   int v1; // ebp
   _DWORD *v3; // ebx
@@ -2576,8 +2576,8 @@ void __thiscall Dialog::DrawBackground(HWND hWnd)
 
   v1 = 0; /*0x621e9c*/
   v3 = 0; /*0x621ea0*/
-  v30 = hWnd; /*0x621ea4*/
-  v28 = hWnd; /*0x621ea8*/
+  v30 = this; /*0x621ea4*/
+  v28 = this; /*0x621ea8*/
   if ( MEMORY[0xAC1B04] ) /*0x621eac*/
   {
     v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v28)); /*0x621ec3*/
@@ -2595,8 +2595,8 @@ void __thiscall Dialog::DrawBackground(HWND hWnd)
 LABEL_7:
   if ( v3 ) /*0x621ee7*/
   {
-    GetClientRect(hWnd, &Rect); /*0x621ef3*/
-    ScreenDialogToClient(hWnd, &v38); /*0x621eff*/
+    GetClientRect(this, &Rect); /*0x621ef3*/
+    ScreenDialogToClient(this, &v38); /*0x621eff*/
     left = v38.left; /*0x621f10*/
     right = v38.right - v38.left; /*0x621f14*/
     top = v38.top; /*0x621f1a*/
@@ -2650,7 +2650,7 @@ LABEL_7:
         else if ( UI_Draw_72E260() ) /*0x621fdf*/
         {
           RenderScoreScreen((int)v7, &left, *((_BYTE *)v3 + 212) == 0); /*0x621ffe*/
-          v29 = hWnd; /*0x62200a*/
+          v29 = this; /*0x62200a*/
           if ( MEMORY[0xAC1B04] ) /*0x62200e*/
           {
             v11 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v29) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x62202f*/
@@ -2668,7 +2668,7 @@ LABEL_7:
             }
           }
 LABEL_29:
-          v29 = hWnd; /*0x622058*/
+          v29 = this; /*0x622058*/
           if ( !MEMORY[0xAC1B04] ) /*0x622063*/
             goto LABEL_33; /*0x622063*/
           v13 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v29) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x622084*/
@@ -2817,10 +2817,10 @@ LABEL_72:
 
 // 0x622720
 namespace gamemd {
-HWND Dialog::Destroy(SkirmishDialog * hWnd)
+HWND Dialog::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Dialog::Destroy(SkirmishDialog *hWnd)
+HWND __thiscall Dialog::Destroy(SkirmishDialog *this)
 {
   HWND result; // eax
   HWND *i; // ecx
@@ -2830,12 +2830,12 @@ HWND __thiscall Dialog::Destroy(SkirmishDialog *hWnd)
   int v7; // eax
 
   Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x62272a*/
-  Dialog::IdleProcess(hWnd); /*0x622731*/
-  DestroyWindow((HWND)hWnd); /*0x622737*/
+  Dialog::IdleProcess(this); /*0x622731*/
+  DestroyWindow((HWND)this); /*0x622737*/
   result = 0; /*0x622745*/
   if ( g_DialogTrackingList > 0 ) /*0x622749*/
   {
-    for ( i = (HWND *)a0; *i != (HWND)hWnd; i += 2 ) /*0x62274f*/
+    for ( i = (HWND *)a0; *i != (HWND)this; i += 2 ) /*0x62274f*/
     {
       result = (HWND)((char *)result + 1); /*0x622758*/
       if ( (int)result >= g_DialogTrackingList ) /*0x62275e*/
@@ -2874,13 +2874,13 @@ HWND __thiscall Dialog::Destroy(SkirmishDialog *hWnd)
 
 // 0x622800
 namespace gamemd {
-HWND Dialog::Show(HWND hWnd)
+HWND Dialog::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Dialog::Show(HWND hWnd)
+HWND __thiscall Dialog::Show(HWND this)
 {
-  ShowWindow(hWnd, 1); /*0x622806*/
-  SetForegroundWindow(hWnd); /*0x62280d*/
+  ShowWindow(this, 1); /*0x622806*/
+  SetForegroundWindow(this); /*0x62280d*/
   return Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x62281e*/
 }
 }
@@ -3450,16 +3450,16 @@ BOOL __thiscall Dialog::GetField(HWND this)
 
 // 0x777060
 namespace gamemd {
-HWND Dialog::RestoreParent(HWND hWnd)
+HWND Dialog::RestoreParent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Dialog::RestoreParent(HWND hWnd)
+HWND __thiscall Dialog::RestoreParent(HWND this)
 {
   HWND result; // eax
 
-  result = (HWND)GetWindowLongA(hWnd, -8); /*0x777066*/
+  result = (HWND)GetWindowLongA(this, -8); /*0x777066*/
   if ( result ) /*0x77706e*/
-    return (HWND)SetDialogParent(hWnd, result); /*0x777074*/
+    return (HWND)SetDialogParent(this, result); /*0x777074*/
   return result; /*0x777079*/
 }
 }

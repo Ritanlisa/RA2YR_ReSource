@@ -264,7 +264,7 @@ LABEL_40:
 
 // 0x432C30
 namespace gamemd {
-int BinkMovie::Pause(unsigned signed char a2)
+int BinkMovie::Pause(unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BinkMovie_Pause(_DWORD *this, unsigned __int8 a2)
@@ -826,17 +826,17 @@ void __thiscall sub_6C9930(void **this)
 
 // 0x6C99D0
 namespace gamemd {
-int * BinkMovie::CreateSurfaceTracker(char * FullPath)
+int * BinkMovie::CreateSurfaceTracker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall BinkMovie::CreateSurfaceTracker(char *FullPath)
+int *__thiscall BinkMovie::CreateSurfaceTracker(char *this)
 {
   int *v2; // esi
   _DWORD *v3; // eax
   _DWORD *v4; // edi
   ObjectClass Filename; // [esp+Ch] [ebp-100h] BYREF
 
-  if ( !FullPath || !strlen(FullPath) ) /*0x6c99e7*/
+  if ( !this || !strlen(this) ) /*0x6c99e7*/
     return 0; /*0x6c9ab2*/
   v2 = (int *)__2_YAPAXI_Z(0x34u); /*0x6c99ff*/
   if ( !v2 ) /*0x6c9a06*/
@@ -850,7 +850,7 @@ int *__thiscall BinkMovie::CreateSurfaceTracker(char *FullPath)
   v2[6] = 0; /*0x6c9a26*/
   v2[7] = 0; /*0x6c9a29*/
   v2[8] = 0; /*0x6c9a2c*/
-  _splitpath(FullPath, 0, 0, &Filename, 0); /*0x6c9a2f*/
+  _splitpath(this, 0, 0, &Filename, 0); /*0x6c9a2f*/
   if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 ) /*0x6c9a45*/
   {
     v3 = (_DWORD *)__2_YAPAXI_Z(0x20u); /*0x6c9a49*/

@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5C0DD0
-namespace gamemd {
-int MPBattleClass_initGame()
+unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::initGame(
@@ -28,11 +27,9 @@ _DWORD *__thiscall MPBattleClass::initGame(
   return &this->vfptr; /*0x5c0e00*/
 }
 }
-} // namespace gamemd
 
 // 0x5C5CE0
-namespace gamemd {
-int MPBattleClass_MPFreeForAllClass()
+unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
@@ -56,11 +53,9 @@ _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
   return &this->vfptr; /*0x5c5d10*/
 }
 }
-} // namespace gamemd
 
 // 0x5C6150
-namespace gamemd {
-int MPBattleClass_MPManBattleClass()
+unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::MPManBattleClass(
@@ -84,11 +79,9 @@ _DWORD *__thiscall MPBattleClass::MPManBattleClass(
   return this; /*0x5c6180*/
 }
 }
-} // namespace gamemd
 
 // 0x5C93E0
-namespace gamemd {
-int MPBattleClass_MPMegawealthClass()
+unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::MPMegawealthClass(
@@ -112,11 +105,9 @@ _DWORD *__thiscall MPBattleClass::MPMegawealthClass(
   return this; /*0x5c9410*/
 }
 }
-} // namespace gamemd
 
 // 0x5CA630
-namespace gamemd {
-int MPBattleClass_MPSiegeClass()
+unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::MPSiegeClass(
@@ -140,7 +131,6 @@ _DWORD *__thiscall MPBattleClass::MPSiegeClass(
   return this; /*0x5ca660*/
 }
 }
-} // namespace gamemd
 
 // 0x5CA7D0
 namespace gamemd {
@@ -337,8 +327,7 @@ int sub_5CB380()
 }
 
 // 0x5CB3A0
-namespace gamemd {
-int MPBattleClass_MPUnholyAllianceClass()
+unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall MPBattleClass::MPUnholyAllianceClass(
@@ -362,7 +351,6 @@ _DWORD *__thiscall MPBattleClass::MPUnholyAllianceClass(
   return this; /*0x5cb3d0*/
 }
 }
-} // namespace gamemd
 
 // 0x5CB570
 int MPBattleClass::isTeamsAllowed()
@@ -618,8 +606,7 @@ void sub_5D5920()
 }
 
 // 0x5D8170
-namespace gamemd {
-int MPBattleClass_MPBattleClass()
+unsigned int * MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall MPBattleClass::MPBattleClass(
@@ -639,4 +626,3 @@ _DWORD *__stdcall MPBattleClass::MPBattleClass(
     return 0; /*0x5d81a6*/
 }
 }
-} // namespace gamemd

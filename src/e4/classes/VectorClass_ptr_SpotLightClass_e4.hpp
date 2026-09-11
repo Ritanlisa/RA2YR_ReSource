@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_SpotLightClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_SpotLightClass___(char a2);  // 0x6002D0
     unsigned int GetItemIndex(int a2);  // 0x5FFFF0
     int Get(int a2);  // 0x600010
     char Add(int a2);  // 0x600020

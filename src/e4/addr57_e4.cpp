@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_578B70_e4.hpp"
+#include "e4/classes/E4Recv_578C50_e4.hpp"
 
 // 0x572230
 namespace gamemd {
@@ -366,7 +368,7 @@ char __stdcall sub_575EE0(void *a1, int a2)
 
 // 0x578B70
 namespace gamemd {
-int sub_578B70(short * a2)
+int E4Recv_578B70::sub_578B70(short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_578B70(_DWORD *this, __int16 *a2)
@@ -407,7 +409,7 @@ int __thiscall sub_578B70(_DWORD *this, __int16 *a2)
 
 // 0x578C50
 namespace gamemd {
-unsigned int * sub_578C50(unsigned int * a2, int a3)
+unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_578C50(_DWORD *this, _DWORD *a2, int a3)
@@ -1185,7 +1187,7 @@ LABEL_71:
 
 // 0x57B440
 namespace gamemd {
-int GenerateTerrainMap()
+char GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall GenerateTerrainMap(

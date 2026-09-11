@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_IonBlastClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_IonBlastClass___(char a2);  // 0x53DD50
     void Destroy();  // 0x53DA40
     unsigned int GetItemIndex(int a2);  // 0x53DA70
     int Get(int a2);  // 0x53DA90

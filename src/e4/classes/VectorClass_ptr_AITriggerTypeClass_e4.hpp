@@ -4,6 +4,9 @@
 namespace gamemd {
 struct VectorClass_ptr_AITriggerTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_AITriggerTypeClass___(char a2);  // 0x4EF710
+    DynamicVector * Constructor_VectorClass_TriggerClass___(char a2);  // 0x4EF9E0
+    DynamicVector * Constructor_VectorClass_TriggerTypeClass___(char a2);  // 0x4EFA80
     void Destroy();  // 0x4E83B0
     unsigned int GetItemIndex(int a2);  // 0x4E83E0
     int Get(int a2);  // 0x4E8400

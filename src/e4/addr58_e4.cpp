@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_583AD0_e4.hpp"
+#include "e4/classes/E4Recv_58BE20_e4.hpp"
+#include "e4/classes/E4Recv_58BEA0_e4.hpp"
+#include "e4/classes/E4Recv_58C320_e4.hpp"
+#include "e4/classes/E4Recv_58C3B0_e4.hpp"
+#include "e4/classes/E4Recv_58C4A0_e4.hpp"
+#include "e4/classes/E4Recv_58D120_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {
@@ -125,7 +132,7 @@ LABEL_28:
 
 // 0x583AD0
 namespace gamemd {
-int sub_583AD0(int * a2)
+int E4Recv_583AD0::sub_583AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_583AD0(_DWORD *this, int *a2)
@@ -1710,7 +1717,7 @@ void __cdecl sub_58BC70()
 
 // 0x58BE20
 namespace gamemd {
-unsigned int * sub_58BE20()
+unsigned int * E4Recv_58BE20::sub_58BE20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58BE20(_DWORD *this)
@@ -1742,7 +1749,7 @@ _DWORD *__thiscall sub_58BE20(_DWORD *this)
 
 // 0x58BEA0
 namespace gamemd {
-unsigned int * sub_58BEA0()
+unsigned int * E4Recv_58BEA0::sub_58BEA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58BEA0(_DWORD *this)
@@ -1859,7 +1866,7 @@ char *__fastcall TileData_GetEntry(int a1)
 
 // 0x58C320
 namespace gamemd {
-unsigned int * sub_58C320(unsigned int * a2)
+unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
@@ -1891,7 +1898,7 @@ _DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
 
 // 0x58C3B0
 namespace gamemd {
-unsigned int * sub_58C3B0(unsigned int * a2)
+unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
@@ -1940,7 +1947,7 @@ _DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
 
 // 0x58C4A0
 namespace gamemd {
-unsigned int * sub_58C4A0(ObjectClass * aP1)
+unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_58C4A0(_DWORD *this, ObjectClass *aP1)
@@ -2055,7 +2062,7 @@ int __fastcall Map_SetLayerData(__int16 *a1, int a2)
 
 // 0x58D120
 namespace gamemd {
-int sub_58D120(int a2, int a3)
+int E4Recv_58D120::sub_58D120(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_58D120(_DWORD *this, int a2, int a3)

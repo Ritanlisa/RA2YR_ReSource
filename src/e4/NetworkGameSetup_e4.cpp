@@ -64,14 +64,14 @@ void __thiscall sub_5BA970(HWND *this, wchar_t *Source)
 }
 
 // 0x5BB560
-unsigned int * NetworkGameSetup::DeleteComPtr(unsigned int * Block, char a2)
+unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall NetworkGameSetup::DeleteComPtr(_DWORD *Block, char a2)
+_DWORD *__thiscall NetworkGameSetup::DeleteComPtr(_DWORD *this, char a2)
 {
-  ComPtr::Dtor(Block); /*0x5bb563*/
+  ComPtr::Dtor(this); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    __3_YAXPAX_Z(Block); /*0x5bb570*/
-  return Block; /*0x5bb57a*/
+    __3_YAXPAX_Z(this); /*0x5bb570*/
+  return this; /*0x5bb57a*/
 }
 }

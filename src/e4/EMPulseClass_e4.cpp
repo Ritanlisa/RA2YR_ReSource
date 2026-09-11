@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4C5AC0
-EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
+EMPulseClass * EMPulseClass::CopyTo(AbstractClass * this, AbstractClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 EMPulseClass *__fastcall EMPulseClass::CopyTo(AbstractClass *this, AbstractClass *a2, char a3)

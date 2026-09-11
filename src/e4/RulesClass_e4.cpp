@@ -1602,8 +1602,7 @@ char __thiscall sub_67B480(_DWORD *this, _DWORD *a2)
 }
 
 // 0x67BDD0
-namespace gamemd {
-int RulesClass_LoadTypeList()
+VectorClass * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorClass *__fastcall RulesClass::LoadTypeList(
@@ -1716,7 +1715,6 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
   return (VectorClass *)a1; /*0x67bf02*/
 }
 }
-} // namespace gamemd
 
 // 0x67C430
 unsigned int * RulesClass::readIQ(int a2, int a3)

@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4A35A0
-int ColorStruct::SetRGB(unsigned signed char a2, unsigned signed char a3, unsigned signed char a4)
+int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ColorStruct_SetRGB(_DWORD *this, unsigned __int8 a2, unsigned __int8 a3, unsigned __int8 a4)

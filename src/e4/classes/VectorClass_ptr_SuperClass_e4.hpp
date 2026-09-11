@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_SuperClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_AbstractTypeClass___(char a2);  // 0x4F0E80
     void Destroy();  // 0x4E8350
     unsigned int GetItemIndex(int a2);  // 0x4E8380
     int Get(int a2);  // 0x4E83A0

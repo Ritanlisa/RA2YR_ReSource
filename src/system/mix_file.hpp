@@ -24,6 +24,9 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x40E320
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    GenericNode * sub_40E390(char a2);  // 0x40E390
+// --- e4 declarations (END) ---
 };
 
 template <typename T>

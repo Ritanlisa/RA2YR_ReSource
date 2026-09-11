@@ -7,7 +7,7 @@ struct CampaignProperties_WorldDominationTour_22 {
     int Seek(int a2);  // 0x5D2770
     int Read(unsigned int * a2);  // 0x5D2900
     unsigned int Write(int a2);  // 0x5D2940
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x5D2CA0
+    VectorClass * QueryInterface(char a2);  // 0x5D2CA0
     BOOL AddRef();  // 0x76F0F0
     unsigned int * Release();  // 0x76F1A0
     unsigned int * ddtor();  // 0x76F1B0

@@ -9,7 +9,7 @@ struct RandomMap {
     unsigned int * Seek(unsigned int * a2, int a3);  // 0x42F470
     char AddRef(int a2);  // 0x42F620
     int Read(unsigned short * a2);  // 0x42F930
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x42FBF0
+    DynamicVector * QueryInterface(char a2);  // 0x42FBF0
     bool Check();  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70
     int GenerateTerrain();  // 0x58C800
@@ -22,6 +22,7 @@ struct RandomMap {
     char PlaceBuildings(int a2, int a3);  // 0x58F2C0
     char AllocateArea();  // 0x5905D0
     char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x590970
+    int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4);  // 0x590FD0
     char CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2);  // 0x592440
     void CleanupRandomMapData();  // 0x5958E0
     LRESULT SetupDialog(HWND hDlg);  // 0x596E50
@@ -34,13 +35,15 @@ struct RandomMap {
     void FillTerrainProgressively();  // 0x59AFA0
     int PlaceTerrainFeatures();  // 0x59B200
     void PlaceShoreObjects();  // 0x59B740
+    int PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8);  // 0x59BBC0
     char GrowTiberium();  // 0x59C580
     unsigned int * CellListAlloc(int a2);  // 0x5A0700
+    char SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6);  // 0x5A08D0
     int PlaceRandomMapTiberium();  // 0x5A23A0
     int PlaceResources();  // 0x5A3AE0
     int GenerateRandomMapTerrain();  // 0x5A4280
     int PlaceMapSeedBuildings();  // 0x5A80B0
-    unsigned int * Constructor_VectorClass_Cell_(unsigned int * Block, char a2);  // 0x5AC290
+    unsigned int * Constructor_VectorClass_Cell_(char a2);  // 0x5AC290
     unsigned int * Constructor(int a2, int a3);  // 0x5AD820
     unsigned int * Constructor_0(int a2, int a3);  // 0x5ADA40
     unsigned int * Constructor_1(int a2, int a3);  // 0x5ADAB0

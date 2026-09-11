@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5AFEF0_e4.hpp"
+#include "e4/classes/E4Recv_728A00_e4.hpp"
 
 // 0x40D1B0
 namespace gamemd {
@@ -114,7 +116,7 @@ char sub_5A1F60()
 
 // 0x5AFEF0
 namespace gamemd {
-int sub_5AFEF0()
+int E4Recv_5AFEF0::sub_5AFEF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5AFEF0(int this)
@@ -122,13 +124,13 @@ int __thiscall sub_5AFEF0(int this)
   int v2; // eax
 
   LocomotionClass::Init((_DWORD *)this); /*0x5afef3*/
-  this->MovingDestination = g_MatrixTransformState; /*0x5aff01*/
+  *(_DWORD *)(this + 24) = g_MatrixTransformState; /*0x5aff01*/
   *(_DWORD *)(this + 28) = MEMORY[0xABEE14]; /*0x5aff0a*/
   *(_DWORD *)(this + 32) = MEMORY[0xABEE18]; /*0x5aff16*/
-  this->HeadToCoord = g_MatrixTransformState; /*0x5aff1e*/
+  *(_DWORD *)(this + 36) = g_MatrixTransformState; /*0x5aff1e*/
   *(_DWORD *)(this + 40) = MEMORY[0xABEE14]; /*0x5aff26*/
   v2 = MEMORY[0xABEE18]; /*0x5aff29*/
-  this->IsMoving = 0; /*0x5aff2e*/
+  *(_BYTE *)(this + 48) = 0; /*0x5aff2e*/
   *(_DWORD *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
   *(_DWORD *)(this + 44) = v2; /*0x5aff38*/
   *(_DWORD *)(this + 4) = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
@@ -139,7 +141,7 @@ int __thiscall sub_5AFEF0(int this)
 
 // 0x67B500
 namespace gamemd {
-int SmallFunc_67B500(unsigned signed char *** a1, INIClass * edx0, unsigned signed char * a2, int a4)
+int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall SmallFunc_67B500(unsigned __int8 ***a1, INIClass *edx0, unsigned __int8 *a2, int a4)
@@ -156,7 +158,7 @@ int __fastcall SmallFunc_67B500(unsigned __int8 ***a1, INIClass *edx0, unsigned 
 
 // 0x67BCE0
 namespace gamemd {
-BuildingTypeClass * SmallFunc_67BCE0(unsigned signed char *** a0, INIClass * aP1, unsigned signed char * a2, int a4)
+BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BuildingTypeClass *__fastcall SmallFunc_67BCE0(unsigned __int8 ***a0, INIClass *aP1, unsigned __int8 *a2, int a4)
@@ -173,7 +175,7 @@ BuildingTypeClass *__fastcall SmallFunc_67BCE0(unsigned __int8 ***a0, INIClass *
 
 // 0x67BD80
 namespace gamemd {
-TerrainTypeClass * SmallFunc_67BD80(unsigned signed char *** a1, INIClass * edx0, unsigned signed char * a2, int a4)
+TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TerrainTypeClass *__fastcall SmallFunc_67BD80(unsigned __int8 ***a1, INIClass *edx0, unsigned __int8 *a2, int a4)
@@ -306,17 +308,17 @@ LABEL_11:
 
 // 0x728A00
 namespace gamemd {
-int sub_728A00()
+int E4Recv_728A00::sub_728A00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_728A00(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
-  this->CurrentState = 0; /*0x728a0d*/
-  this->CurrentState.Players = MEMORY[0xB0F910]; /*0x728a16*/
-  this->CurrentState.AIPlayers = MEMORY[0xB0F914]; /*0x728a1e*/
-  this->CurrentState.GameSpeed = MEMORY[0xB0F918]; /*0x728a27*/
-  this->CurrentState.StartingCredits = MEMORY[0xA8ED84]; /*0x728a30*/
+  *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
+  *(_DWORD *)(this + 28) = MEMORY[0xB0F910]; /*0x728a16*/
+  *(_DWORD *)(this + 32) = MEMORY[0xB0F914]; /*0x728a1e*/
+  *(_DWORD *)(this + 36) = MEMORY[0xB0F918]; /*0x728a27*/
+  *(_DWORD *)(this + 40) = MEMORY[0xA8ED84]; /*0x728a30*/
   *(_DWORD *)(this + 48) = 0; /*0x728a33*/
   *(_DWORD *)(this + 52) = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/

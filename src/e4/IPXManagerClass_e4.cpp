@@ -145,15 +145,15 @@ int __thiscall IPXManagerClass::_vt03(int this, int a2, int a3, _DWORD *a4)
 }
 
 // 0x5430E0
-IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
+IPXManagerClass * IPXManagerClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IPXManagerClass *__thiscall IPXManagerClass::QueryInterface(char *Block, char a2)
+IPXManagerClass *__thiscall IPXManagerClass::QueryInterface(char *this, char a2)
 {
-  IPXManagerClass::processPacket(Block); /*0x5430e3*/
+  IPXManagerClass::processPacket(this); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    __3_YAXPAX_Z(Block); /*0x5430f0*/
-  return (IPXManagerClass *)Block; /*0x5430fa*/
+    __3_YAXPAX_Z(this); /*0x5430f0*/
+  return (IPXManagerClass *)this; /*0x5430fa*/
 }
 }
 

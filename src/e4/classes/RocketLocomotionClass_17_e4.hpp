@@ -14,7 +14,7 @@ struct RocketLocomotionClass_17 {
     unsigned int PointerToIndex(int a2);  // 0x664970
     char Release(int a2, unsigned int * a3);  // 0x664990
     int Launch(unsigned int * a2);  // 0x664A40
-    VectorClass * Constructor(unsigned int * Block, char a2);  // 0x664A70
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x664AC0
+    VectorClass * Constructor(char a2);  // 0x664A70
+    DynamicVector * QueryInterface(char a2);  // 0x664AC0
 };
 } // namespace gamemd

@@ -4,7 +4,7 @@
 
 // 0x603DB0
 namespace gamemd {
-LRESULT Diplomacy_Helper(HWND hWnd, unsigned signed char a2)
+LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LRESULT __fastcall Diplomacy_Helper(HWND hWnd, unsigned __int8 a2)

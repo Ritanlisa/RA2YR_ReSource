@@ -21,17 +21,17 @@ unsigned int Time_GetElapsedMS()
 }
 
 // 0x777AC0
-int Time::FormatDate(char * Buffer)
+int Time::FormatDate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Time::FormatDate(char *Buffer)
+int __thiscall Time::FormatDate(char *this)
 {
   int result; // eax
   struct _SYSTEMTIME SystemTime; // [esp+4h] [ebp-10h] BYREF
 
   result = FileTimeToSystemTime(&FileTime, &SystemTime); /*0x777ad0*/
   if ( result ) /*0x777ad8*/
-    return sprintf(Buffer, &stru_849F20, (INIClass *)SystemTime.wMonth); /*0x777b20*/
+    return sprintf(this, &stru_849F20, (INIClass *)SystemTime.wMonth); /*0x777b20*/
   return result; /*0x777b28*/
 }
 }

@@ -14,7 +14,7 @@ struct DeleteCommandClass_28 {
     unsigned int Write(int a2);  // 0x53C680
     char SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
     int FindItem(unsigned int * a2);  // 0x53C750
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x53C780
-    DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x53C7D0
+    VectorClass * QueryInterface(char a2);  // 0x53C780
+    DynamicVector * Constructor(char a2);  // 0x53C7D0
 };
 } // namespace gamemd

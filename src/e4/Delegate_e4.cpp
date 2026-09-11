@@ -166,33 +166,33 @@ int __thiscall Delegate::StreamToBuffer(CacheStraw *this, char *a1, int a3)
 }
 
 // 0x52AE20
-GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
+GenericNode * Delegate::Constructor_GenericNode(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-GenericNode *__thiscall Delegate::Constructor_GenericNode(GenericNode **Block, char a2)
+GenericNode *__thiscall Delegate::Constructor_GenericNode(GenericNode **this, char a2)
 {
   GenericNode *v3; // ecx
   GenericNode *v4; // eax
 
-  *Block = (GenericNode *)&GenericNode::`vftable'; /*0x52ae27*/
-  if ( Block ) /*0x52ae2d*/
+  *this = (GenericNode *)&GenericNode::`vftable'; /*0x52ae27*/
+  if ( this ) /*0x52ae2d*/
   {
-    v3 = *(Block + 1); /*0x52ae2f*/
+    v3 = *(this + 1); /*0x52ae2f*/
     if ( v3 ) /*0x52ae34*/
     {
-      v4 = *(Block + 2); /*0x52ae36*/
+      v4 = *(this + 2); /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
         v4->Previous = v3; /*0x52ae3d*/
-        *(_DWORD *)(*(Block + 1))[1].__pad_0 = *(Block + 2); /*0x52ae46*/
-        *(Block + 2) = 0; /*0x52ae49*/
-        *(Block + 1) = 0; /*0x52ae4c*/
+        *(_DWORD *)(*(this + 1))[1].__pad_0 = *(this + 2); /*0x52ae46*/
+        *(this + 2) = 0; /*0x52ae49*/
+        *(this + 1) = 0; /*0x52ae4c*/
       }
     }
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
-    __3_YAXPAX_Z(Block); /*0x52ae57*/
-  return (GenericNode *)Block; /*0x52ae61*/
+    __3_YAXPAX_Z(this); /*0x52ae57*/
+  return (GenericNode *)this; /*0x52ae61*/
 }
 }
 

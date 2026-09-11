@@ -152,15 +152,15 @@ int __thiscall sub_513C20(int this)
 }
 
 // 0x5172F0
-LocomotionClass * LocomotionClass::ProcessMove(unsigned int * Block, char a2)
+LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LocomotionClass *__thiscall LocomotionClass::ProcessMove(_DWORD *Block, char a2)
+LocomotionClass *__thiscall LocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  LocomotionClass::Construct(Block); /*0x5172f3*/
+  LocomotionClass::Construct(this); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
-    __3_YAXPAX_Z(Block); /*0x517300*/
-  return (LocomotionClass *)Block; /*0x51730a*/
+    __3_YAXPAX_Z(this); /*0x517300*/
+  return (LocomotionClass *)this; /*0x51730a*/
 }
 }
 

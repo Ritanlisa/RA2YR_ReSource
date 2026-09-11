@@ -3860,23 +3860,23 @@ BOOL __stdcall JumpjetLocomotionClass::sub_54DF70(int a1)
 }
 
 // 0x54DFA0
-JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char a2)
+JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-JumpjetLocomotionClass *__thiscall JumpjetLocomotionClass::ProcessAttach(int *Block, char a2)
+JumpjetLocomotionClass *__thiscall JumpjetLocomotionClass::ProcessAttach(int *this, char a2)
 {
   int v3; // eax
 
-  *Block = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa3*/
-  *(Block + 1) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa9*/
-  *(Block + 6) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfb0*/
-  v3 = *(Block + 37); /*0x54dfb7*/
+  *this = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa3*/
+  *(this + 1) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa9*/
+  *(this + 6) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfb0*/
+  v3 = *(this + 37); /*0x54dfb7*/
   if ( v3 ) /*0x54dfbf*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x54dfc4*/
-  LocomotionClass::Construct(Block); /*0x54dfc9*/
+  LocomotionClass::Construct(this); /*0x54dfc9*/
   if ( (a2 & 1) != 0 ) /*0x54dfd3*/
-    __3_YAXPAX_Z(Block); /*0x54dfd6*/
-  return (JumpjetLocomotionClass *)Block; /*0x54dfe0*/
+    __3_YAXPAX_Z(this); /*0x54dfd6*/
+  return (JumpjetLocomotionClass *)this; /*0x54dfe0*/
 }
 }
 
@@ -5772,20 +5772,20 @@ BOOL __stdcall JumpjetLocomotionClass::sub_71A100(int a1)
 }
 
 // 0x71A130
-TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(ILocomotion ** Block, char a2)
+TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TeleportLocomotionClass *__thiscall JumpjetLocomotionClass::ConstructLocomotor(ILocomotion **Block, char a2)
+TeleportLocomotionClass *__thiscall JumpjetLocomotionClass::ConstructLocomotor(ILocomotion **this, char a2)
 {
   ILocomotion *v3; // eax
 
-  v3 = *(Block + 18); /*0x71a133*/
+  v3 = *(this + 18); /*0x71a133*/
   if ( v3 ) /*0x71a138*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x71a13d*/
-  LocomotionClass::Construct(Block); /*0x71a142*/
+  LocomotionClass::Construct(this); /*0x71a142*/
   if ( (a2 & 1) != 0 ) /*0x71a14c*/
-    __3_YAXPAX_Z(Block); /*0x71a14f*/
-  return (TeleportLocomotionClass *)Block; /*0x71a159*/
+    __3_YAXPAX_Z(this); /*0x71a14f*/
+  return (TeleportLocomotionClass *)this; /*0x71a159*/
 }
 }
 
@@ -7095,52 +7095,52 @@ int __thiscall JumpjetLocomotionClass_26_::sub_54EB20(int *this, _DWORD *a2)
 
 // 0x54EB50
 namespace gamemd {
-VectorClass * JumpjetLocomotionClass_26::QueryInterface(unsigned int * Block, char a2)
+VectorClass * JumpjetLocomotionClass_26::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall JumpjetLocomotionClass_26_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall JumpjetLocomotionClass_26_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x54eb53*/
-  *Block = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eb56*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x54eb60*/
+  v3 = (void *)*(this + 1); /*0x54eb53*/
+  *this = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eb56*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x54eb60*/
   {
     __3_YAXPAX_Z(v3); /*0x54eb68*/
-    *(Block + 1) = 0; /*0x54eb70*/
+    *(this + 1) = 0; /*0x54eb70*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x54eb7b*/
-  *(Block + 2) = 0; /*0x54eb81*/
+  *((_BYTE *)this + 13) = 0; /*0x54eb7b*/
+  *(this + 2) = 0; /*0x54eb81*/
   if ( (a2 & 1) != 0 ) /*0x54eb88*/
-    __3_YAXPAX_Z(Block); /*0x54eb8b*/
-  return (VectorClass *)Block; /*0x54eb95*/
+    __3_YAXPAX_Z(this); /*0x54eb8b*/
+  return (VectorClass *)this; /*0x54eb95*/
 }
 }
 } // namespace gamemd
 
 // 0x54EBA0
 namespace gamemd {
-int JumpjetLocomotionClass_26_Constructor_VectorClass_KamikazeControl___()
+DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeControl___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DynamicVector *__thiscall JumpjetLocomotionClass_26_::Constructor_VectorClass_KamikazeControl___(
-        _DWORD *Block,
+        _DWORD *this,
         char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x54eba3*/
-  *Block = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eba6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x54ebb0*/
+  v3 = (void *)*(this + 1); /*0x54eba3*/
+  *this = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eba6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x54ebb0*/
   {
     __3_YAXPAX_Z(v3); /*0x54ebb8*/
-    *(Block + 1) = 0; /*0x54ebc0*/
+    *(this + 1) = 0; /*0x54ebc0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x54ebcb*/
-  *(Block + 2) = 0; /*0x54ebd1*/
+  *((_BYTE *)this + 13) = 0; /*0x54ebcb*/
+  *(this + 2) = 0; /*0x54ebd1*/
   if ( (a2 & 1) != 0 ) /*0x54ebd8*/
-    __3_YAXPAX_Z(Block); /*0x54ebdb*/
-  return (DynamicVector *)Block; /*0x54ebe5*/
+    __3_YAXPAX_Z(this); /*0x54ebdb*/
+  return (DynamicVector *)this; /*0x54ebe5*/
 }
 }
 } // namespace gamemd

@@ -4,6 +4,6 @@
 namespace gamemd {
 struct DynamicVectorClass_cptr_AnimTypeClass {
     void* vfptr;  // minimal E2 declaration
-    DynamicVector * Add(unsigned int * Block, char a2);  // 0x5252B0
+    DynamicVector * Add(char a2);  // 0x5252B0
 };
 } // namespace gamemd

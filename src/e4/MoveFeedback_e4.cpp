@@ -57,25 +57,25 @@ int __thiscall MoveFeedback::_vt04(int *this, _DWORD *a2)
 }
 
 // 0x40BCB0
-DynamicVector * MoveFeedback::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * MoveFeedback::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MoveFeedback::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall MoveFeedback::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40bcb3*/
-  *Block = &VectorClass<TechnoClass *>::`vftable'; /*0x40bcb6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40bcc0*/
+  v3 = (void *)*(this + 1); /*0x40bcb3*/
+  *this = &VectorClass<TechnoClass *>::`vftable'; /*0x40bcb6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
-    *(Block + 1) = 0; /*0x40bcd0*/
+    *(this + 1) = 0; /*0x40bcd0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x40bcdb*/
-  *(Block + 2) = 0; /*0x40bce1*/
+  *((_BYTE *)this + 13) = 0; /*0x40bcdb*/
+  *(this + 2) = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
-    __3_YAXPAX_Z(Block); /*0x40bceb*/
-  return (DynamicVector *)Block; /*0x40bcf5*/
+    __3_YAXPAX_Z(this); /*0x40bceb*/
+  return (DynamicVector *)this; /*0x40bcf5*/
 }
 }
 
@@ -185,25 +185,25 @@ int __thiscall MoveFeedback::sub_40C0E0(int *this, _DWORD *a2)
 }
 
 // 0x40C160
-DynamicVector * MoveFeedback::Constructor(unsigned int * Block, char a2)
+DynamicVector * MoveFeedback::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MoveFeedback::Constructor(_DWORD *Block, char a2)
+DynamicVector *__thiscall MoveFeedback::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40c163*/
-  *Block = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40c170*/
+  v3 = (void *)*(this + 1); /*0x40c163*/
+  *this = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/
-    *(Block + 1) = 0; /*0x40c180*/
+    *(this + 1) = 0; /*0x40c180*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x40c18b*/
-  *(Block + 2) = 0; /*0x40c191*/
+  *((_BYTE *)this + 13) = 0; /*0x40c18b*/
+  *(this + 2) = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
-    __3_YAXPAX_Z(Block); /*0x40c19b*/
-  return (DynamicVector *)Block; /*0x40c1a5*/
+    __3_YAXPAX_Z(this); /*0x40c19b*/
+  return (DynamicVector *)this; /*0x40c1a5*/
 }
 }
 

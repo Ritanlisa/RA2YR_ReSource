@@ -213,11 +213,11 @@ bool __thiscall sub_6607D0(int *this)
 
 // 0x67D300
 namespace gamemd {
-char SaveGame::Start(LPSTREAM pStm)
+char SaveGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
-// char __thiscall SaveGame::Start(LPSTREAM pStm)
+// char __thiscall SaveGame::Start(LPSTREAM this)
 // {
 //   int v2; // ecx
 //   int v3; // ebx

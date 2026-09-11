@@ -5,6 +5,8 @@ namespace gamemd {
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     void* vfptr;  // minimal E2 declaration
     BOOL HashEntryCompare(unsigned char * a2);  // 0x517590
+    unsigned int * Destructor(char a2);  // 0x6244A0
+    unsigned int * Destructor_0(char a2);  // 0x6244C0
     void Clear_627D20();  // 0x627D20
     unsigned int GetCount(int a2);  // 0x627D50
     void Clear_627D80();  // 0x627D80
@@ -15,11 +17,14 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     char IsEqualTo(int a2);  // 0x6281F0
     char SetCapacity_0(int a2, char * a3);  // 0x6284A0
     int ProcessAll(int a2);  // 0x6285A0
-    char * Add(unsigned int * Block, char a2);  // 0x628690
+    DynamicVector * Destructor_1(char a2);  // 0x628640
+    char * Add(char a2);  // 0x628690
+    DynamicVector * Destructor_2(char a2);  // 0x6287B0
     void ddtor();  // 0x628800
     unsigned int Get(int a2);  // 0x628830
     int Clear(int a2, int a3);  // 0x628860
     char AddRef(int a2);  // 0x6288A0
+    char Remove(CCINIClass * aP1, unsigned char * a2);  // 0x628BB0
     int GetSize(int a2);  // 0x628D80
 };
 } // namespace gamemd

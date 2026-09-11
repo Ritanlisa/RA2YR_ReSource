@@ -690,6 +690,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char readAI(unsigned int * a2);  // 0x67B480
     unsigned int * readIQ(int a2, int a3);  // 0x67C430
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int sub_674500();  // 0x674500
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

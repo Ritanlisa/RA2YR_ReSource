@@ -1177,6 +1177,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int StubReturnFalse8();  // 0x70F0F0
     int StubReturnFalse9();  // 0x70F110
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char ProcessDeployAction();  // 0x6AFD60
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

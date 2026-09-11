@@ -71,20 +71,20 @@ int __thiscall AlphaShapeClass::SD_vt10(int this, int a2, int a3)
 }
 
 // 0x421730
-AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
+AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *Block, char a2)
+AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *this, char a2)
 {
   int v3; // eax
   int v4; // eax
   _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AlphaShapeClass::`vftable'; /*0x42173d*/
-  *(Block + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
-  *(Block + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
-  *(Block + 3) = &AlphaShapeClass::`vftable'; /*0x421751*/
-  v6 = Block; /*0x42175f*/
+  *this = &AlphaShapeClass::`vftable'; /*0x42173d*/
+  *(this + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
+  *(this + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
+  *(this + 3) = &AlphaShapeClass::`vftable'; /*0x421751*/
+  v6 = this; /*0x42175f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x88A0F0] + 16))(&MEMORY[0x88A0F0], &v6); /*0x421763*/
   if ( v3 != -1 && v3 < MEMORY[0x88A100] && v3 < --MEMORY[0x88A100] ) /*0x42177e*/
   {
@@ -95,7 +95,7 @@ AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0x88A100] ); /*0x421796*/
   }
-  v6 = Block; /*0x4217a8*/
+  v6 = this; /*0x4217a8*/
   v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v6); /*0x4217ac*/
   if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4217c7*/
   {
@@ -106,9 +106,9 @@ AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *Block, char a2)
     }
     while ( v4 < MEMORY[0xB0F730] ); /*0x4217df*/
   }
-  AbstractClass::DTOR(Block); /*0x4217e3*/
+  AbstractClass::DTOR(this); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
-    __3_YAXPAX_Z(Block); /*0x4217f0*/
-  return (AlphaShapeClass *)Block; /*0x4217fa*/
+    __3_YAXPAX_Z(this); /*0x4217f0*/
+  return (AlphaShapeClass *)this; /*0x4217fa*/
 }
 }

@@ -188,6 +188,9 @@ protected:
     int PixelToIndex(unsigned int * a2);  // 0x769330
     int CommitSurfaceBuffersAudio();  // 0x7BD690
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    void BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6);  // 0x707480
+// --- e4 declarations (END) ---
 };
 
 class XSurface : public Surface

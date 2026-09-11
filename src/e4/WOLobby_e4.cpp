@@ -4,7 +4,7 @@
 
 // 0x5E3850
 namespace gamemd {
-int WOLobby_Play()
+int INIClass::WOLobby_Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WOLobby_Play(INIClass *this)

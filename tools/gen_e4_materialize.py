@@ -423,6 +423,11 @@ TYPE_MAP = [
     (re.compile(r"\b_BYTE\b"), "unsigned char"),
     (re.compile(r"\b_WORD\b"), "unsigned short"),
     (re.compile(r"\b_QWORD\b"), "unsigned long long"),
+    # G6: 复合形态须在泛化 __intN 之前（否则产出 "unsigned signed char *" 非法类型）
+    (re.compile(r"\bunsigned\s+__int8\b"), "unsigned char"),
+    (re.compile(r"\bsigned\s+__int8\b"), "char"),
+    (re.compile(r"\bunsigned\s+__int16\b"), "unsigned short"),
+    (re.compile(r"\bunsigned\s+__int64\b"), "unsigned long long"),
     (re.compile(r"\b__int64\b"), "long long"),
     (re.compile(r"\b__int32\b"), "int"),
     (re.compile(r"\b__int16\b"), "short"),
@@ -458,8 +463,17 @@ def split_params(s):
 
 
 def synth_signature(fn):
-    """从伪码声明行合成外层签名。返回 dict(ret, cc, cls, method, flat, params=[(type,name)])."""
-    first = fn.pseudocode.split("\n", 1)[0].strip()
+    """从伪码声明行合成外层签名。返回 dict(ret, cc, cls, method, flat, params=[(type,name)],
+    this_type)。G6（#56 根因）：v3 导出伪码签名常折行（首行止于 '('），旧版正则要求
+    单行完整括号 → 解析失败返回 None → 自由形态丢 this + 丢全部参数。现做括号平衡
+    拼接；__thiscall 首参即 this（IDA 可能命名为 Block/a1 而非 this），从参数表
+    剥离并记录其类型供 owner 判定。"""
+    raw = fn.pseudocode.split("\n")
+    first = raw[0].strip()
+    li = 1
+    while first.count("(") > first.count(")") and li < len(raw) and li <= 8:
+        first = first + " " + raw[li].strip()
+        li += 1
     first = first.rstrip(";").strip()
     # name: last identifier-ish token before top-level '('
     m = re.match(r"^(.*?)\b([A-Za-z_~][\w]*(?:::[A-Za-z_~][\w]*)*)\s*\((.*)\)\s*$", first)
@@ -475,8 +489,24 @@ def synth_signature(fn):
             ret_cc = ret_cc.replace(c, "").strip()
             break
     ret = clean_type(ret_cc) if ret_cc else "int"
+    plist = split_params(params_raw)
+    this_type = ""
+    this_named = ""
+    if cc == "__thiscall" and plist:
+        # thiscall 首参即 this（无论 IDA 怎么命名）；指针形态记录类型
+        p0 = plist[0].strip()
+        pm0 = re.match(r"^(.*?)\s*([A-Za-z_]\w*)\s*$", p0)
+        if pm0:
+            ty0 = pm0.group(1).strip()
+            tm = re.match(r"^([A-Za-z_]\w*)\s*\*+\s*$", ty0)
+            if tm:
+                this_type = tm.group(1)
+            this_named = pm0.group(2)
+            plist = plist[1:]
+        elif p0 == "void":
+            plist = []
     params = []
-    for p in split_params(params_raw):
+    for p in plist:
         p = p.strip()
         if not p:
             continue
@@ -486,21 +516,54 @@ def synth_signature(fn):
             pt, pn = clean_type(pm.group(1)), pm.group(2)
         else:
             pt, pn = clean_type(p), "a%d" % (len(params) + 1)
-        if pn == "this":
-            continue
         if pn in ("class", "struct", "default"):  # keywords leaked as names
             pn = "a%d" % (len(params) + 1)
         params.append((pt, pn))
     cls = method = ""
     if "::" in name:
         cls, method = name.rsplit("::", 1)
-    elif fn.proto and "__thiscall" in fn.proto:
+    elif cc == "__thiscall" or (fn.proto and "__thiscall" in fn.proto):
         cls = "__ownerless__"
     return {"ret": ret, "cc": cc, "cls": cls, "method": method,
-            "flat": name, "params": params}
+            "flat": name, "params": params, "this_type": this_type,
+            "this_named": this_named}
 
 
 IDENT_INVALID = re.compile(r"^[A-Za-z_]\w*$")
+
+# G6 (#56): this 参数的标量类型（非类 receiver）
+THIS_PRIM_TYPES = {
+    "int", "char", "void", "short", "long", "unsigned", "float", "double",
+    "_DWORD", "_BYTE", "_WORD", "_QWORD", "BOOL", "__int16", "__int64",
+    "wchar_t", "struct", "union", "const", "unsigned",
+}
+
+_VERIFIER = None   # lazy: (verify_execution_flow module, maps)
+
+
+def recv_sites(pseudocode):
+    """G6（Gap2Recv 机制复用）：用验证器自身 leaf 提取 this 相对偏移
+    （READ/WRITE(member,N) / CALL(vfptr+N)）——保证 member_lookup 注册偏移
+    与 verify 后续计算口径一致。"""
+    global _VERIFIER
+    if _VERIFIER is None:
+        sys.path.insert(0, str(ROOT / "tools"))
+        import verify_execution_flow as V
+        _VERIFIER = (V, V.load_all_maps())
+    V, M = _VERIFIER
+    this_type = V.detect_this_type(pseudocode)
+    leaf = V.make_ida_leaf(this_type, M)
+    members, vf = {}, set()
+    for line in pseudocode.split("\n"):
+        for ev in leaf(line):
+            m = re.match(r"(READ|WRITE)\(member,(\d+)\)", ev)
+            if m:
+                members[int(m.group(2))] = 4
+                continue
+            m2 = re.match(r"CALL\(vfptr\+(\d+)\)", ev)
+            if m2:
+                vf.add(int(m2.group(1)))
+    return members, vf
 
 
 def qualify_ns(ns):
@@ -605,6 +668,8 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
 
     stats = {"rewritten": 0, "unmapped": 0, "member_def": 0, "free_def": 0,
              "e2_classes": 0, "decl_inserted": 0, "decl_skipped": 0, "name_dedup": 0}
+    recv_ml = {}                          # G6: E4Recv 合成类 -> member_lookup entry
+    recv_vt = {}                          # G6: E4Recv 合成类 -> vtable_offsets entry
     hpp_inserts = defaultdict(list)     # hpp path -> [(class, decl_line, addr)]
     e2_classes = {}                     # cls -> [decl lines]
     bucket_defs = defaultdict(list)     # out cpp name -> [header lines]
@@ -665,6 +730,42 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
             owner = re.sub(r"\[", "_", owner).rstrip("]")
         if sig and sig["cls"] and not IDENT_INVALID.match(sig["cls"]):
             sig["cls"] = re.sub(r"\[", "_", sig["cls"]).rstrip("]")
+        # G6b: IDA 将 thiscall this 参数随意命名（Block/FileName/a1 等）→ 函数体
+        # 引用该名而非 this。按 ABI 首参即 this，词边界归一为 this，使 OO 重写与
+        # 验证器两侧事件文法一致（记录内标识符唯一作用于该参数，归一安全）。
+        if sig and sig["cc"] == "__thiscall" and sig.get("this_named") \
+                and sig["this_named"] != "this":
+            fn.pseudocode = re.sub(r"\b%s\b" % re.escape(sig["this_named"]),
+                                   "this", fn.pseudocode)
+        # G6 (#56 族 1,194)：ownerless-thiscall 曾因多行签名解析失败丢 this + 参数
+        # → 自由形态不可译。现出成员形态：typed this 且类在 member_lookup → 真类；
+        # 否则合成 E4Recv_<HEX> 接收者类（Gap2Recv 机制：偏移用验证器 leaf 提取，
+        # member_lookup M<off> + vtable_offsets Vf<off> 注册，两侧事件按偏移会合）。
+        if sig and sig["cls"] == "__ownerless__":
+            tt = sig.get("this_type") or ""
+            recv_cls = ""
+            if tt and tt not in THIS_PRIM_TYPES and tt in mmap.by_class:
+                recv_cls = tt
+                stats["recv_typed"] = stats.get("recv_typed", 0) + 1
+            else:
+                recv_cls = "E4Recv_%X" % fn.addr
+                members, vf = recv_sites(fn.pseudocode)
+                if members or vf:
+                    entry = {"0": {"name": "vfptr", "size": 4}}
+                    for off in sorted(members):
+                        entry[str(off)] = {"name": "M%d" % off, "size": members[off]}
+                    recv_ml[recv_cls] = entry
+                    mmap.by_class[recv_cls] = {
+                        (int(k), v["size"]): v["name"] for k, v in entry.items()}
+                    if vf:
+                        recv_vt[recv_cls] = {"Vf%d" % o: o for o in sorted(vf)}
+                stats["recv_synth"] = stats.get("recv_synth", 0) + 1
+            sig["cls"] = recv_cls
+            meth = sig["method"] or sig["flat"]
+            if not IDENT_INVALID.match(meth or ""):
+                meth = re.sub(r"[^A-Za-z0-9_]", "_", meth or "") or ("fn_0x%X" % fn.addr)
+            sig["method"] = meth
+            owner = recv_cls
         pseudo = rewrite_pseudocode(fn.pseudocode, owner if owner in mmap.by_class else "",
                                     mmap, stats)
         pseudo, was_truncated = emit_pseudo(pseudo)
@@ -908,6 +1009,35 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
                 preserved_by_file[out_name]) + "\n"
             body = body + ("\n" if body and not body.endswith("\n") else "")
         p.write_text("\n".join(header) + "\n" + body + tail, encoding="utf-8")
+    # ---- G6: E4Recv 合成接收者类落盘（member_lookup / vtable_offsets /
+    # signals._member_by_name——与 verify / get_context / rename 消费端一致）
+    if recv_ml or recv_vt:
+        ml_path = ROOT / "tools" / "member_lookup.json"
+        ml = json.load(open(ml_path, encoding="utf-8"))
+        for c, e in recv_ml.items():
+            ml[c] = e
+        with open(ml_path, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(ml, f, indent=2, ensure_ascii=False)
+        vt_path = ROOT / "tools" / "vtable_offsets.json"
+        vt = json.load(open(vt_path, encoding="utf-8"))
+        for c, e in recv_vt.items():
+            vt[c] = e
+        with open(vt_path, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(vt, f, indent=2, ensure_ascii=False)
+        sig_path = ROOT / "signals.json"
+        sdata = json.load(open(sig_path, encoding="utf-8"))
+        mbn = sdata.setdefault("_member_by_name", {})
+        for c, e in recv_ml.items():
+            mbn[c] = {v["name"]: int(k) for k, v in e.items()}
+        for attempt in range(6):
+            try:
+                with open(sig_path, "w", encoding="utf-8", newline="\n") as f:
+                    json.dump(sdata, f, indent=2, ensure_ascii=False)
+                break
+            except OSError:
+                time.sleep(0.2 * (attempt + 1))
+        print(f"G6 recv classes: synth={len(recv_ml)} (vt={len(recv_vt)}) "
+              f"typed={stats.get('recv_typed', 0)}")
     print(f"E4 buckets: {len(bucket_defs)} files, member={stats['member_def']} "
           f"free={stats['free_def']}")
     print(f"offset rewrite: {stats['rewritten']} rewritten, {stats['unmapped']} unmapped")

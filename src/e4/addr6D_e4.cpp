@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6D1570_e4.hpp"
+#include "e4/classes/E4Recv_6D1E80_e4.hpp"
+#include "e4/classes/E4Recv_6D4E00_e4.hpp"
 
 // 0x6D0F10
 namespace gamemd {
@@ -82,7 +85,7 @@ int sub_6D1130()
 
 // 0x6D1570
 namespace gamemd {
-char sub_6D1570()
+char E4Recv_6D1570::sub_6D1570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6D1570(void *this)
@@ -435,7 +438,7 @@ void sub_6D1BF0()
 
 // 0x6D1E80
 namespace gamemd {
-void sub_6D1E80()
+void E4Recv_6D1E80::sub_6D1E80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6D1E80(_DWORD *this)
@@ -464,7 +467,7 @@ __int64 __fastcall ZCoordToScreenY(IUnknown *aP0)
 
 // 0x6D4E00
 namespace gamemd {
-void sub_6D4E00()
+void E4Recv_6D4E00::sub_6D4E00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6D4E00(int this)

@@ -257,25 +257,25 @@ unsigned int __thiscall ParticleSystemClass_16_::_vt05(int this, int a2)
 
 // 0x4EFD50
 namespace gamemd {
-VectorClass * ParticleSystemClass_16::QueryInterface(unsigned int * Block, char a2)
+VectorClass * ParticleSystemClass_16::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ParticleSystemClass_16_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall ParticleSystemClass_16_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4efd53*/
-  *Block = &VectorClass<SmudgeClass *>::`vftable'; /*0x4efd56*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efd60*/
+  v3 = (void *)*(this + 1); /*0x4efd53*/
+  *this = &VectorClass<SmudgeClass *>::`vftable'; /*0x4efd56*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4efd60*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd68*/
-    *(Block + 1) = 0; /*0x4efd70*/
+    *(this + 1) = 0; /*0x4efd70*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4efd7b*/
-  *(Block + 2) = 0; /*0x4efd81*/
+  *((_BYTE *)this + 13) = 0; /*0x4efd7b*/
+  *(this + 2) = 0; /*0x4efd81*/
   if ( (a2 & 1) != 0 ) /*0x4efd88*/
-    __3_YAXPAX_Z(Block); /*0x4efd8b*/
-  return (VectorClass *)Block; /*0x4efd95*/
+    __3_YAXPAX_Z(this); /*0x4efd8b*/
+  return (VectorClass *)this; /*0x4efd95*/
 }
 }
 } // namespace gamemd
@@ -688,100 +688,100 @@ int __thiscall ParticleSystemClass_32_::sub_4EB6F0(int *this, _DWORD *a2)
 
 // 0x4EF5D0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_BuildingClass___(_DWORD *Block, char a2)
+DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_BuildingClass___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4ef5d3*/
-  *Block = &VectorClass<BuildingClass *>::`vftable'; /*0x4ef5d6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef5e0*/
+  v3 = (void *)*(this + 1); /*0x4ef5d3*/
+  *this = &VectorClass<BuildingClass *>::`vftable'; /*0x4ef5d6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4ef5e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef5e8*/
-    *(Block + 1) = 0; /*0x4ef5f0*/
+    *(this + 1) = 0; /*0x4ef5f0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4ef5fb*/
-  *(Block + 2) = 0; /*0x4ef601*/
+  *((_BYTE *)this + 13) = 0; /*0x4ef5fb*/
+  *(this + 2) = 0; /*0x4ef601*/
   if ( (a2 & 1) != 0 ) /*0x4ef608*/
-    __3_YAXPAX_Z(Block); /*0x4ef60b*/
-  return (DynamicVector *)Block; /*0x4ef615*/
+    __3_YAXPAX_Z(this); /*0x4ef60b*/
+  return (DynamicVector *)this; /*0x4ef615*/
 }
 }
 } // namespace gamemd
 
 // 0x4EFDF0
 namespace gamemd {
-VectorClass * ParticleSystemClass_32::QueryInterface(unsigned int * Block, char a2)
+VectorClass * ParticleSystemClass_32::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ParticleSystemClass_32_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall ParticleSystemClass_32_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4efdf3*/
-  *Block = &VectorClass<TerrainClass *>::`vftable'; /*0x4efdf6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efe00*/
+  v3 = (void *)*(this + 1); /*0x4efdf3*/
+  *this = &VectorClass<TerrainClass *>::`vftable'; /*0x4efdf6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4efe00*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe08*/
-    *(Block + 1) = 0; /*0x4efe10*/
+    *(this + 1) = 0; /*0x4efe10*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4efe1b*/
-  *(Block + 2) = 0; /*0x4efe21*/
+  *((_BYTE *)this + 13) = 0; /*0x4efe1b*/
+  *(this + 2) = 0; /*0x4efe21*/
   if ( (a2 & 1) != 0 ) /*0x4efe28*/
-    __3_YAXPAX_Z(Block); /*0x4efe2b*/
-  return (VectorClass *)Block; /*0x4efe35*/
+    __3_YAXPAX_Z(this); /*0x4efe2b*/
+  return (VectorClass *)this; /*0x4efe35*/
 }
 }
 } // namespace gamemd
 
 // 0x4EFE40
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(unsigned int * Block, char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_TerrainClass___(_DWORD *Block, char a2)
+DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_TerrainClass___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4efe43*/
-  *Block = &VectorClass<TerrainClass *>::`vftable'; /*0x4efe46*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efe50*/
+  v3 = (void *)*(this + 1); /*0x4efe43*/
+  *this = &VectorClass<TerrainClass *>::`vftable'; /*0x4efe46*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4efe50*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe58*/
-    *(Block + 1) = 0; /*0x4efe60*/
+    *(this + 1) = 0; /*0x4efe60*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4efe6b*/
-  *(Block + 2) = 0; /*0x4efe71*/
+  *((_BYTE *)this + 13) = 0; /*0x4efe6b*/
+  *(this + 2) = 0; /*0x4efe71*/
   if ( (a2 & 1) != 0 ) /*0x4efe78*/
-    __3_YAXPAX_Z(Block); /*0x4efe7b*/
-  return (DynamicVector *)Block; /*0x4efe85*/
+    __3_YAXPAX_Z(this); /*0x4efe7b*/
+  return (DynamicVector *)this; /*0x4efe85*/
 }
 }
 } // namespace gamemd
 
 // 0x4EFEE0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_AircraftClass___(_DWORD *Block, char a2)
+DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_AircraftClass___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4efee3*/
-  *Block = &VectorClass<AircraftClass *>::`vftable'; /*0x4efee6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efef0*/
+  v3 = (void *)*(this + 1); /*0x4efee3*/
+  *this = &VectorClass<AircraftClass *>::`vftable'; /*0x4efee6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4efef0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efef8*/
-    *(Block + 1) = 0; /*0x4eff00*/
+    *(this + 1) = 0; /*0x4eff00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4eff0b*/
-  *(Block + 2) = 0; /*0x4eff11*/
+  *((_BYTE *)this + 13) = 0; /*0x4eff0b*/
+  *(this + 2) = 0; /*0x4eff11*/
   if ( (a2 & 1) != 0 ) /*0x4eff18*/
-    __3_YAXPAX_Z(Block); /*0x4eff1b*/
-  return (DynamicVector *)Block; /*0x4eff25*/
+    __3_YAXPAX_Z(this); /*0x4eff1b*/
+  return (DynamicVector *)this; /*0x4eff25*/
 }
 }
 } // namespace gamemd

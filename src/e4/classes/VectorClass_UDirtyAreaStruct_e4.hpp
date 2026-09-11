@@ -5,6 +5,7 @@ namespace gamemd {
 struct VectorClass_UDirtyAreaStruct {
     void* vfptr;  // minimal E2 declaration
     char SetCapacity(CCINIClass * aP1, char * a2);  // 0x6DC850
+    DynamicVector * Constructor_VectorClass_ShadowControlClass___(char a2);  // 0x6DCD20
     void Destroy();  // 0x6DC4E0
     unsigned int GetItemIndex(int a2);  // 0x6DC510
     int Clear(int a2, int a3);  // 0x6DC540

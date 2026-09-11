@@ -297,15 +297,15 @@ int __thiscall WWMouseClass::_vt09(void *this)
 }
 
 // 0x7BA300
-MouseClass * WWMouseClass::updateHotspot(unsigned int * Block, char a2)
+MouseClass * WWMouseClass::updateHotspot(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MouseClass *__thiscall WWMouseClass::updateHotspot(_DWORD *Block, char a2)
+MouseClass *__thiscall WWMouseClass::updateHotspot(_DWORD *this, char a2)
 {
-  *Block = &Mouse::`vftable'; /*0x7ba309*/
+  *this = &Mouse::`vftable'; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
-    __3_YAXPAX_Z(Block); /*0x7ba312*/
-  return (MouseClass *)Block; /*0x7ba31c*/
+    __3_YAXPAX_Z(this); /*0x7ba312*/
+  return (MouseClass *)this; /*0x7ba31c*/
 }
 }
 

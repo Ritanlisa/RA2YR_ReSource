@@ -427,17 +427,17 @@ int __thiscall GameClass::sub_632FE0(void *this, int a2)
 
 // 0x632FF0
 namespace gamemd {
-PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
+PKPipe * GameClass::validateGameFile(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-PKPipe *__thiscall GameClass::validateGameFile(_DWORD *Block, char a2)
+PKPipe *__thiscall GameClass::validateGameFile(_DWORD *this, char a2)
 {
   int *v3; // ebx
   Pipe *v4; // esi
 
-  v3 = (int *)*(Block + 8); /*0x632ff5*/
-  v4 = (Pipe *)(Block + 5); /*0x632ff8*/
-  *(Block + 5) = &BlowPipe::`vftable'; /*0x632ffd*/
+  v3 = (int *)*(this + 8); /*0x632ff5*/
+  v4 = (Pipe *)(this + 5); /*0x632ff8*/
+  *(this + 5) = &BlowPipe::`vftable'; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -445,10 +445,10 @@ PKPipe *__thiscall GameClass::validateGameFile(_DWORD *Block, char a2)
   }
   v4->Pipe_field_0x0C = 0; /*0x633017*/
   Pipe::Dtor((int *)v4->__pad_0); /*0x63301e*/
-  Pipe::Dtor(Block); /*0x633025*/
+  Pipe::Dtor(this); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
-    __3_YAXPAX_Z(Block); /*0x633032*/
-  return (PKPipe *)Block; /*0x63303c*/
+    __3_YAXPAX_Z(this); /*0x633032*/
+  return (PKPipe *)this; /*0x63303c*/
 }
 }
 } // namespace gamemd
@@ -550,17 +550,17 @@ int __thiscall GameClass::sub_633360(void *this, int a2)
 
 // 0x633370
 namespace gamemd {
-PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
+PKStrawClass * GameClass::applyGameSettings(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-PKStrawClass *__thiscall GameClass::applyGameSettings(_DWORD *Block, char a2)
+PKStrawClass *__thiscall GameClass::applyGameSettings(_DWORD *this, char a2)
 {
   int *v3; // ebx
   Straw *v4; // esi
 
-  v3 = (int *)*(Block + 8); /*0x633375*/
-  v4 = (Straw *)(Block + 5); /*0x633378*/
-  *(Block + 5) = &BlowStraw::`vftable'; /*0x63337d*/
+  v3 = (int *)*(this + 8); /*0x633375*/
+  v4 = (Straw *)(this + 5); /*0x633378*/
+  *(this + 5) = &BlowStraw::`vftable'; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/
@@ -568,10 +568,10 @@ PKStrawClass *__thiscall GameClass::applyGameSettings(_DWORD *Block, char a2)
   }
   v4[1].Straw_field_0x04 = 0; /*0x633397*/
   Straw::Dtor((int *)v4->__pad_0); /*0x63339e*/
-  Straw::Dtor(Block); /*0x6333a5*/
+  Straw::Dtor(this); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
-    __3_YAXPAX_Z(Block); /*0x6333b2*/
-  return (PKStrawClass *)Block; /*0x6333bc*/
+    __3_YAXPAX_Z(this); /*0x6333b2*/
+  return (PKStrawClass *)this; /*0x6333bc*/
 }
 }
 } // namespace gamemd

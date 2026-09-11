@@ -4,7 +4,7 @@
 
 // 0x4228E0
 namespace gamemd {
-void AnimClass::Destruct(AbstractClass * a2)
+void AnimClass::Destruct(void * this, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)

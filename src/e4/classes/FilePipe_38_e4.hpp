@@ -10,6 +10,6 @@ struct FilePipe_38 {
     void ddtor();  // 0x478440
     int Read(unsigned char * a2);  // 0x478470
     unsigned int Write(int a2);  // 0x4784C0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4786D0
+    VectorClass * QueryInterface(char a2);  // 0x4786D0
 };
 } // namespace gamemd

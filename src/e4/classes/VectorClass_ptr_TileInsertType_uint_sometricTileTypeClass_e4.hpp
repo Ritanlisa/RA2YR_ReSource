@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
     void* vfptr;  // minimal E2 declaration
+    VectorClass * QueryInterface(char a2);  // 0x54A7B0
+    DynamicVector * Constructor(char a2);  // 0x54A800
     void Destroy();  // 0x54A1F0
     unsigned int GetItemIndex(int a2);  // 0x54A220
     int Get(int a2);  // 0x54A240

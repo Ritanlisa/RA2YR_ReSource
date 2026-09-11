@@ -18,10 +18,10 @@ int __thiscall Control::DispatchClick(_DWORD *this, ControlClass *aP1)
 }
 
 // 0x60B950
-char Control::RepositionControlsDialog(HWND hWnd)
+char Control::RepositionControlsDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Control::RepositionControlsDialog(HWND hWnd)
+char __thiscall Control::RepositionControlsDialog(HWND this)
 {
   HWND Parent; // esi
   int v3; // ebp
@@ -42,10 +42,10 @@ char __thiscall Control::RepositionControlsDialog(HWND hWnd)
   struct tagRECT v18; // [esp+2Ch] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+3Ch] [ebp-10h] BYREF
 
-  hWnda = hWnd; /*0x60b95a*/
-  Parent = GetParent(hWnd); /*0x60b96a*/
+  hWnda = this; /*0x60b95a*/
+  Parent = GetParent(this); /*0x60b96a*/
   GetWindowRect(Parent, &Rect); /*0x60b972*/
-  GetWindowRect(hWnd, &v18); /*0x60b97a*/
+  GetWindowRect(this, &v18); /*0x60b97a*/
   X = v18.left - Rect.left; /*0x60b996*/
   nHeight = v18.bottom - v18.top; /*0x60b9a2*/
   v3 = v18.top - Rect.top; /*0x60b9ab*/

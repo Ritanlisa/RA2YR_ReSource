@@ -159,8 +159,7 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
 } // namespace gamemd
 
 // 0x49A9A0
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_Constructor_RLEBlitter()
+std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(
@@ -173,11 +172,9 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
   return this; /*0x49a9bc*/
 }
 }
-} // namespace gamemd
 
 // 0x49A9C0
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_Constructor_RLEBlitter_0()
+std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(
@@ -190,11 +187,9 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
   return this; /*0x49a9dc*/
 }
 }
-} // namespace gamemd
 
 // 0x49A9E0
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_Constructor_RLEBlitter_1()
+std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(
@@ -207,27 +202,24 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
   return this; /*0x49a9fc*/
 }
 }
-} // namespace gamemd
 
 // 0x49AA40
-namespace gamemd {
-int RLEBlitTransZRemapXlatAlpha_ushort_QueryInterface()
+RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 RLEBlitTransZRemapXlatAlpha_ushort *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface(
-        _DWORD *Block,
+        _DWORD *this,
         char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 3); /*0x49aa48*/
-  *Block = &RLEBlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49aa4b*/
+  v3 = (void *)*(this + 3); /*0x49aa48*/
+  *this = &RLEBlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49aa4b*/
   FractalNoise::Release(v3); /*0x49aa52*/
-  *(Block + 3) = 0; /*0x49aa5b*/
-  *Block = &RLEBlitter::`vftable'; /*0x49aa64*/
+  *(this + 3) = 0; /*0x49aa5b*/
+  *this = &RLEBlitter::`vftable'; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
-    __3_YAXPAX_Z(Block); /*0x49aa6d*/
-  return (RLEBlitTransZRemapXlatAlpha_ushort *)Block; /*0x49aa77*/
+    __3_YAXPAX_Z(this); /*0x49aa6d*/
+  return (RLEBlitTransZRemapXlatAlpha_ushort *)this; /*0x49aa77*/
 }
 }
-} // namespace gamemd

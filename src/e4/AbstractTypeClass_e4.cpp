@@ -245,19 +245,19 @@ int __thiscall AbstractTypeClass::StubReturnFalse(#376 *this)
 }
 
 // 0x410C30
-AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
+AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *Block, char a2)
+AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AbstractTypeClass::`vftable'; /*0x410c3d*/
-  *(Block + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
-  *(Block + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
-  *(Block + 3) = &AbstractTypeClass::`vftable'; /*0x410c51*/
-  v5 = Block; /*0x410c5f*/
+  *this = &AbstractTypeClass::`vftable'; /*0x410c3d*/
+  *(this + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
+  *(this + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
+  *(this + 3) = &AbstractTypeClass::`vftable'; /*0x410c51*/
+  v5 = this; /*0x410c5f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < MEMORY[0xA8E978] && v3 < --MEMORY[0xA8E978] ) /*0x410c7e*/
   {
@@ -268,10 +268,10 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0xA8E978] ); /*0x410c96*/
   }
-  AbstractClass::DTOR(Block); /*0x410c9a*/
+  AbstractClass::DTOR(this); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
-    __3_YAXPAX_Z(Block); /*0x410ca7*/
-  return (AbstractTypeClass *)Block; /*0x410cb1*/
+    __3_YAXPAX_Z(this); /*0x410ca7*/
+  return (AbstractTypeClass *)this; /*0x410cb1*/
 }
 }
 

@@ -161,20 +161,20 @@ int __stdcall CampaignClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 
 // 0x46D090
 namespace gamemd {
-CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
+CampaignClass * CampaignClass::DTOR(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CampaignClass *__thiscall CampaignClass::DTOR(void **Block, char a2)
+CampaignClass *__thiscall CampaignClass::DTOR(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &CampaignClass::`vftable'; /*0x46d096*/
-  *(Block + 1) = &CampaignClass::`vftable'; /*0x46d09c*/
-  *(Block + 2) = &CampaignClass::`vftable'; /*0x46d0a3*/
-  *(Block + 3) = &CampaignClass::`vftable'; /*0x46d0aa*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x46d0b1*/
-  v5 = Block; /*0x46d0c6*/
+  *this = &CampaignClass::`vftable'; /*0x46d096*/
+  *(this + 1) = &CampaignClass::`vftable'; /*0x46d09c*/
+  *(this + 2) = &CampaignClass::`vftable'; /*0x46d0a3*/
+  *(this + 3) = &CampaignClass::`vftable'; /*0x46d0aa*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46d0b1*/
+  v5 = this; /*0x46d0c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
   if ( v3 != -1 && v3 < g_UnitTypeInitState && v3 < --g_UnitTypeInitState ) /*0x46d0e5*/
   {
@@ -185,10 +185,10 @@ CampaignClass *__thiscall CampaignClass::DTOR(void **Block, char a2)
     }
     while ( v3 < g_UnitTypeInitState ); /*0x46d0fd*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x46d101*/
+  AbstractTypeClass::Dtor(this); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
-    __3_YAXPAX_Z(Block); /*0x46d10e*/
-  return (CampaignClass *)Block; /*0x46d118*/
+    __3_YAXPAX_Z(this); /*0x46d10e*/
+  return (CampaignClass *)this; /*0x46d118*/
 }
 }
 } // namespace gamemd

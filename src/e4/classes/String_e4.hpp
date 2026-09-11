@@ -5,8 +5,8 @@ namespace gamemd {
 struct String {
     void* vfptr;  // minimal E2 declaration
     void AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
-    char * AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
-    char * CopyUpper(char * String, ObjectClass * aP1);  // 0x4F4C30
+    char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
+    char * CopyUpper(ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char * a2);  // 0x4F4C70
     char * CopyChecked(const char * a2);  // 0x4F4CB0
     bool Equals(ObjectClass * aP1);  // 0x4F4CE0
@@ -16,8 +16,8 @@ struct String {
     int NormalizeNewlines();  // 0x5F3350
     char * Trim();  // 0x727CF0
     int To_Waypoint();  // 0x763690
-    ObjectClass * FormatDword(char * Buffer);  // 0x777B30
-    ObjectClass * CopyConstant(char * Destination);  // 0x777B60
+    ObjectClass * FormatDword();  // 0x777B30
+    ObjectClass * CopyConstant();  // 0x777B60
     char ** Assign(const char * a2);  // 0x7B4630
     char ** AssignFromPtr(const char ** a2);  // 0x7B4690
     bool Equals_Alt(const char * a2);  // 0x7B4710

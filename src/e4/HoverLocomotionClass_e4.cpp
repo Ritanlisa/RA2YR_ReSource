@@ -40,17 +40,17 @@ int __stdcall HoverLocomotionClass::_vt05(int a1, int *a2)
 }
 
 // 0x5172C0
-HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HoverLocomotionClass *__thiscall HoverLocomotionClass::ProcessMove(_DWORD *Block, char a2)
+HoverLocomotionClass *__thiscall HoverLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  *Block = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
-  *(Block + 1) = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
-  LocomotionClass::Construct(Block); /*0x5172d0*/
+  *this = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
+  *(this + 1) = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
+  LocomotionClass::Construct(this); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
-    __3_YAXPAX_Z(Block); /*0x5172dd*/
-  return (HoverLocomotionClass *)Block; /*0x5172e7*/
+    __3_YAXPAX_Z(this); /*0x5172dd*/
+  return (HoverLocomotionClass *)this; /*0x5172e7*/
 }
 }
 

@@ -21,25 +21,25 @@ _DWORD *__thiscall Buffer::Init(_DWORD *this, int a2, AbstractClass *aP2)
 }
 
 // 0x488030
-DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2)
+DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD *Block, char a2)
+DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x488033*/
-  *Block = &VectorClass<ObjectClass *>::`vftable'; /*0x488036*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x488040*/
+  v3 = (void *)*(this + 1); /*0x488033*/
+  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x488036*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/
-    *(Block + 1) = 0; /*0x488050*/
+    *(this + 1) = 0; /*0x488050*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x48805b*/
-  *(Block + 2) = 0; /*0x488061*/
+  *((_BYTE *)this + 13) = 0; /*0x48805b*/
+  *(this + 2) = 0; /*0x488061*/
   if ( (a2 & 1) != 0 ) /*0x488068*/
-    __3_YAXPAX_Z(Block); /*0x48806b*/
-  return (DynamicVector *)Block; /*0x488075*/
+    __3_YAXPAX_Z(this); /*0x48806b*/
+  return (DynamicVector *)this; /*0x488075*/
 }
 }
 

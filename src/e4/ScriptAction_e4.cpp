@@ -2320,21 +2320,21 @@ int __thiscall sub_6E3B60(void *this)
 
 // 0x6E4790
 namespace gamemd {
-IUnknown * ScriptAction::CopyStringField(char * Destination, char * Source)
+IUnknown * ScriptAction::CopyStringField(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall ScriptAction::CopyStringField(char *Destination, char *Source)
+IUnknown *__thiscall ScriptAction::CopyStringField(char *this, char *Source)
 {
   if ( Source ) /*0x6e4799*/
   {
-    strncpy(Destination, Source, (IUnknown *)0x1F); /*0x6e47a7*/
-    *(Destination + 31) = 0; /*0x6e47af*/
-    return (IUnknown *)Destination; /*0x6e47b3*/
+    strncpy(this, Source, (IUnknown *)0x1F); /*0x6e47a7*/
+    *(this + 31) = 0; /*0x6e47af*/
+    return (IUnknown *)this; /*0x6e47b3*/
   }
   else
   {
-    *Destination = 0; /*0x6e479b*/
-    return (IUnknown *)Destination; /*0x6e479d*/
+    *this = 0; /*0x6e479b*/
+    return (IUnknown *)this; /*0x6e479d*/
   }
 }
 }

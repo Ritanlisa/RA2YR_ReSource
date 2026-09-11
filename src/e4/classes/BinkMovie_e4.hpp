@@ -8,7 +8,7 @@ struct BinkMovie {
     unsigned int * Open(char * FullPath, int a3);  // 0x4326C0
     int Stop();  // 0x432700
     char InitFromFile(LPCSTR * FullPath);  // 0x432750
-    int Pause(unsigned signed char a2);  // 0x432C30
+    int Pause(unsigned char a2);  // 0x432C30
     BOOL IsAtEnd();  // 0x432C50
     int Play();  // 0x432C70
     bool RenderLoop(DSurface * aP1, int a3, int a4);  // 0x432E40
@@ -20,7 +20,7 @@ struct BinkMovie {
     int HandleKeyboard(int a1, HWND a2);  // 0x6033F0
     int WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam);  // 0x6153E0
     void Destroy();  // 0x6C9930
-    int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
+    int * CreateSurfaceTracker();  // 0x6C99D0
     int FreeSurfaceTracker();  // 0x6C9AE0
     char InitKeyframeTracking(char * Source);  // 0x6C9B40
     char CheckKeyframeTransition(CellStruct * aP1);  // 0x6C9C60

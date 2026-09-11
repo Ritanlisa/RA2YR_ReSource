@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4754B0
-namespace gamemd {
-int OverlayTypeClass_ReadINIString()
+int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall OverlayTypeClass::ReadINIString(
@@ -23,7 +22,6 @@ int __thiscall OverlayTypeClass::ReadINIString(
     return (int)aP3->__pad_0; /*0x475502*/
 }
 }
-} // namespace gamemd
 
 // 0x48DF80
 int OverlayTypeClass::LookupByName()
@@ -199,7 +197,7 @@ void __thiscall OverlayTypeClass::_vt40(void *this, _DWORD *a2, int *a3, unsigne
 }
 
 // 0x5FE770
-char OverlayTypeClass::LoadFromINI(unsigned signed char *** aP1)
+char OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
@@ -581,20 +579,20 @@ int __thiscall OverlayTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x5FEF30
-OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
+OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **Block, char a2)
+OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &OverlayTypeClass::`vftable'; /*0x5fef36*/
-  *(Block + 1) = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
-  *(Block + 2) = &OverlayTypeClass::`vftable'; /*0x5fef43*/
-  *(Block + 3) = &OverlayTypeClass::`vftable'; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fef51*/
-  v5 = Block; /*0x5fef66*/
+  *this = &OverlayTypeClass::`vftable'; /*0x5fef36*/
+  *(this + 1) = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
+  *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fef43*/
+  *(this + 3) = &OverlayTypeClass::`vftable'; /*0x5fef4a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
+  v5 = this; /*0x5fef66*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D80] + 16))(&MEMORY[0xA83D80], &v5); /*0x5fef6a*/
   if ( v3 != -1 && v3 < MEMORY[0xA83D90] && v3 < --MEMORY[0xA83D90] ) /*0x5fef85*/
   {
@@ -605,10 +603,10 @@ OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xA83D90] ); /*0x5fef9d*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x5fefa1*/
+  ObjectTypeClass::Destruct((int)this); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    __3_YAXPAX_Z(Block); /*0x5fefae*/
-  return (OverlayTypeClass *)Block; /*0x5fefb8*/
+    __3_YAXPAX_Z(this); /*0x5fefae*/
+  return (OverlayTypeClass *)this; /*0x5fefb8*/
 }
 }
 

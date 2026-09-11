@@ -5,9 +5,9 @@ namespace gamemd {
 struct Options {
     void* vfptr;  // minimal E2 declaration
     int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x4F11B0
-    HWND InitDialogControls(HWND hDlg);  // 0x4F1720
-    bool PrepareSaveLoadDlg(const char ** dwNewLong);  // 0x558840
-    void Screen_Save(HWND hDlg);  // 0x55FAA0
+    HWND InitDialogControls();  // 0x4F1720
+    bool PrepareSaveLoadDlg();  // 0x558840
+    void Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
     void SetScoreVolume(float volume, int pad);  // 0x5FA4A0
     void SetSoundVolume(float volume, int pad);  // 0x5FA510
@@ -18,7 +18,7 @@ struct Options {
     char EnsureCapacity();  // 0x6248A0
     char GrowBuffer();  // 0x6253B0
     char ReadOptionValue();  // 0x6254D0
-    void * DestroyComposite(void * Block, char a2);  // 0x625560
+    void * DestroyComposite(char a2);  // 0x625560
     int * RebuildDropdownList(ObjectClass * aP1);  // 0x6255F0
     char SaveOptionValue();  // 0x625A20
 };

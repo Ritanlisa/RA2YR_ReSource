@@ -79,16 +79,16 @@ _DWORD *__stdcall MSFrameAnim::_vt06(_DWORD *a1)
 
 // 0x769BD0
 namespace gamemd {
-MSFrameAnim * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
+MSFrameAnim * MSFrameAnim::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *Block, char a2)
+MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
 {
-  *Block = &MSFrameAnim::`vftable'; /*0x769bd3*/
-  VtableStub::5CB6C0(Block); /*0x769bd9*/
+  *this = &MSFrameAnim::`vftable'; /*0x769bd3*/
+  VtableStub::5CB6C0(this); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
-    __3_YAXPAX_Z(Block); /*0x769be6*/
-  return (MSFrameAnim *)Block; /*0x769bf0*/
+    __3_YAXPAX_Z(this); /*0x769be6*/
+  return (MSFrameAnim *)this; /*0x769bf0*/
 }
 }
 } // namespace gamemd
@@ -171,16 +171,16 @@ unsigned int __thiscall MSFrameAnim::sub_769D00(int this, int a2)
 
 // 0x769D90
 namespace gamemd {
-rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
+rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall MSFrameAnim::resumeAnimation(_DWORD *Block, char a2)
+rc_ptr *__thiscall MSFrameAnim::resumeAnimation(_DWORD *this, char a2)
 {
-  *Block = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x769d93*/
-  ComPtr::Release(Block); /*0x769d99*/
+  *this = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x769d93*/
+  ComPtr::Release(this); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
-    __3_YAXPAX_Z(Block); /*0x769da6*/
-  return (rc_ptr *)Block; /*0x769db0*/
+    __3_YAXPAX_Z(this); /*0x769da6*/
+  return (rc_ptr *)this; /*0x769db0*/
 }
 }
 } // namespace gamemd
@@ -388,50 +388,50 @@ int __thiscall MSFrameAnim::sub_76A360(int *this, _DWORD *a2)
 
 // 0x76A680
 namespace gamemd {
-DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
+DynamicVector * MSFrameAnim::setPosition(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFrameAnim::setPosition(_DWORD *Block, char a2)
+DynamicVector *__thiscall MSFrameAnim::setPosition(_DWORD *this, char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 1); /*0x76a683*/
-  *Block = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a686*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76a690*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76a683*/
+  *this = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a686*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
-    *(Block + 1) = 0; /*0x76a6a1*/
+    *(this + 1) = 0; /*0x76a6a1*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76a6ac*/
-  *(Block + 2) = 0; /*0x76a6b2*/
+  *((_BYTE *)this + 13) = 0; /*0x76a6ac*/
+  *(this + 2) = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
-    __3_YAXPAX_Z(Block); /*0x76a6bc*/
-  return (DynamicVector *)Block; /*0x76a6c6*/
+    __3_YAXPAX_Z(this); /*0x76a6bc*/
+  return (DynamicVector *)this; /*0x76a6c6*/
 }
 }
 } // namespace gamemd
 
 // 0x76A720
 namespace gamemd {
-DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
+DynamicVector * MSFrameAnim::setScale(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFrameAnim::setScale(_DWORD *Block, char a2)
+DynamicVector *__thiscall MSFrameAnim::setScale(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x76a723*/
-  *Block = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a726*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76a730*/
+  v3 = (void *)*(this + 1); /*0x76a723*/
+  *this = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a726*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a730*/
   {
     __3_YAXPAX_Z(v3); /*0x76a738*/
-    *(Block + 1) = 0; /*0x76a740*/
+    *(this + 1) = 0; /*0x76a740*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76a74b*/
-  *(Block + 2) = 0; /*0x76a751*/
+  *((_BYTE *)this + 13) = 0; /*0x76a74b*/
+  *(this + 2) = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
-    __3_YAXPAX_Z(Block); /*0x76a75b*/
-  return (DynamicVector *)Block; /*0x76a765*/
+    __3_YAXPAX_Z(this); /*0x76a75b*/
+  return (DynamicVector *)this; /*0x76a765*/
 }
 }
 } // namespace gamemd

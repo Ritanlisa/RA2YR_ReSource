@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_6C3650 {
+    void* vfptr;  // minimal E2 declaration
+    int CreateTClassFactory_AircraftClass();  // 0x6C3650
+};
+} // namespace gamemd

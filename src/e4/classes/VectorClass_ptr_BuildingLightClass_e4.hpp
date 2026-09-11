@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_BuildingLightClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_BuildingLightClass___(char a2);  // 0x4EF7B0
+    DynamicVector * Constructor_VectorClass_ParticleSystemClass___(char a2);  // 0x4EFBC0
     void Destroy();  // 0x4E8410
     unsigned int GetItemIndex(int a2);  // 0x4E8440
     int Get(int a2);  // 0x4E8460

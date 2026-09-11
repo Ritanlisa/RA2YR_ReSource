@@ -240,15 +240,15 @@ LABEL_6:
 
 // 0x5CEB60
 namespace gamemd {
-MSAnim * ScenarioClass::checkWinningConditions(unsigned int * Block, char a2)
+MSAnim * ScenarioClass::checkWinningConditions(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *Block, char a2)
+MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *this, char a2)
 {
-  *Block = &MSAnim::`vftable'; /*0x5ceb69*/
+  *this = &MSAnim::`vftable'; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
-    __3_YAXPAX_Z(Block); /*0x5ceb72*/
-  return (MSAnim *)Block; /*0x5ceb7c*/
+    __3_YAXPAX_Z(this); /*0x5ceb72*/
+  return (MSAnim *)this; /*0x5ceb7c*/
 }
 }
 } // namespace gamemd

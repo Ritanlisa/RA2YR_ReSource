@@ -3,23 +3,23 @@
 #include "e4/e4_globals.hpp"
 
 // 0x7669F0
-VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
+VectorCursor * COMClass::disconnectPoint(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorCursor *__thiscall COMClass::disconnectPoint(_DWORD *Block, char a2)
+VectorCursor *__thiscall COMClass::disconnectPoint(_DWORD *this, char a2)
 {
-  *Block = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
+  *this = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(Block); /*0x766a02*/
-  return (VectorCursor *)Block; /*0x766a0c*/
+    __3_YAXPAX_Z(this); /*0x766a02*/
+  return (VectorCursor *)this; /*0x766a0c*/
 }
 }
 
 // 0x767010
-rc_ptr_base * COMClass::lockServer(rc_ptr_base * Block, char a2)
+rc_ptr_base * COMClass::lockServer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *Block, char a2)
+rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *this, char a2)
 {
   int v3; // eax
   rc_ptr_base *v4; // ebp
@@ -29,9 +29,9 @@ rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
-    v3 = *((_DWORD *)Block - 1); /*0x76701d*/
-    v4 = Block - 1; /*0x767021*/
-    v5 = Block + 2 * v3; /*0x767024*/
+    v3 = *((_DWORD *)this - 1); /*0x76701d*/
+    v4 = this - 1; /*0x767021*/
+    v5 = this + 2 * v3; /*0x767024*/
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
@@ -51,11 +51,11 @@ rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *Block, char a2)
   }
   else
   {
-    Block->vfptr = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
-    ComPtr::Release(Block); /*0x767060*/
+    this->vfptr = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
+    ComPtr::Release(this); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
-      __3_YAXPAX_Z(Block); /*0x76706b*/
-    return Block; /*0x767073*/
+      __3_YAXPAX_Z(this); /*0x76706b*/
+    return this; /*0x767073*/
   }
 }
 }

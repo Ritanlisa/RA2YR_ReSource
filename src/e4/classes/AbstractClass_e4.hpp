@@ -4,6 +4,7 @@
 namespace gamemd {
 struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
+    unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
     void DTOR();  // 0x4101F0
     int GetVtable3(AbstractClass * aP0);  // 0x410220
@@ -57,13 +58,17 @@ struct AbstractClass {
     int loadFromStream(int a1);  // 0x510A30
     int computeSize(int a1);  // 0x510A40
     int COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5439F0
-    MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
+    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     char validatePathNode();  // 0x5C02E0
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
+    unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D81F0
+    unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8230
+    unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
+    unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
     int COMStub_Return0_38();  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
@@ -84,7 +89,7 @@ struct AbstractClass {
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
     void resetTeamState();  // 0x65C540
-    FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
+    FileClass * processAITrigger(char a2);  // 0x65C610
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
     int compareType(int a1);  // 0x487E50

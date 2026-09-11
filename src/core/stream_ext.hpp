@@ -109,6 +109,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int WriteIntArray(int a1);  // 0x67a4a0 -- Stream::WriteIntArray
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    char * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);  // 0x759260
+// --- e4 declarations (END) ---
 };
 
 // ============================================================================

@@ -321,25 +321,25 @@ unsigned int __thiscall ConnectionPointClass_9_::_vt05(int this, int a2)
 
 // 0x4A14F0
 namespace gamemd {
-VectorClass * ConnectionPointClass_9::QueryInterface(unsigned int * Block, char a2)
+VectorClass * ConnectionPointClass_9::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ConnectionPointClass_9_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall ConnectionPointClass_9_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a14f3*/
-  *Block = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a14f6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a1500*/
+  v3 = (void *)*(this + 1); /*0x4a14f3*/
+  *this = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a14f6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/
-    *(Block + 1) = 0; /*0x4a1510*/
+    *(this + 1) = 0; /*0x4a1510*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a151b*/
-  *(Block + 2) = 0; /*0x4a1521*/
+  *((_BYTE *)this + 13) = 0; /*0x4a151b*/
+  *(this + 2) = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
-    __3_YAXPAX_Z(Block); /*0x4a152b*/
-  return (VectorClass *)Block; /*0x4a1535*/
+    __3_YAXPAX_Z(this); /*0x4a152b*/
+  return (VectorClass *)this; /*0x4a1535*/
 }
 }
 } // namespace gamemd

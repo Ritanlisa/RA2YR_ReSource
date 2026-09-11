@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_LightSourceClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_LightSourceClass___(char a2);  // 0x5557D0
     void Destroy();  // 0x555200
     unsigned int GetItemIndex(int a2);  // 0x555230
     int Get(int a2);  // 0x555250

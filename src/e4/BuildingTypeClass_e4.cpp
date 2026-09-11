@@ -576,7 +576,7 @@ int __thiscall BuildingTypeClass::FindIndexByName(void *this)
 }
 
 // 0x45E970
-void BuildingTypeClass::LoadRepairAnimations()
+void BuildingTypeClass::LoadRepairAnimations(void * this)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void BuildingTypeClass::LoadRepairAnimations(#376 *this)
@@ -1663,15 +1663,15 @@ int __thiscall BuildingTypeClass::_vt03(#376 *this)
 }
 
 // 0x4653C0
-BuildingTypeClass * BuildingTypeClass::FindOrCreate(char * Source)
+BuildingTypeClass * BuildingTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingTypeClass *__thiscall BuildingTypeClass::FindOrCreate(char *Source)
+BuildingTypeClass *__thiscall BuildingTypeClass::FindOrCreate(char *this)
 {
   int v2; // esi
   int v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x4653dc*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x4653dc*/
     return 0; /*0x46543f*/
   v2 = 0; /*0x4653ed*/
   if ( (int)g_TriggerClassCount <= 0 ) /*0x4653f1*/
@@ -1679,10 +1679,10 @@ BuildingTypeClass *__thiscall BuildingTypeClass::FindOrCreate(char *Source)
 LABEL_6:
     v3 = __2_YAPAXI_Z(0x1798u); /*0x465416*/
     if ( v3 ) /*0x465425*/
-      return (BuildingTypeClass *)BuildingTypeClass::ConstructFull(v3, Source); /*0x465431*/
+      return (BuildingTypeClass *)BuildingTypeClass::ConstructFull(v3, this); /*0x465431*/
     return 0; /*0x465425*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)g_TriggerTypeCount + v2) + 36), Source) ) /*0x46540a*/
+  while ( _strcmpi((const void *)(*((_DWORD *)g_TriggerTypeCount + v2) + 36), this) ) /*0x46540a*/
   {
     if ( ++v2 >= (int)g_TriggerClassCount ) /*0x465414*/
       goto LABEL_6; /*0x465414*/
@@ -1735,8 +1735,7 @@ int __thiscall BuildingTypeClass::ddtor(#376 *this)
 }
 
 // 0x474A90
-namespace gamemd {
-int BuildingTypeClass_FindAnimByName()
+int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingTypeClass::FindAnimByName(
@@ -1773,7 +1772,6 @@ int __thiscall BuildingTypeClass::FindAnimByName(
   return v4; /*0x474b08*/
 }
 }
-} // namespace gamemd
 
 // 0x478850
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
@@ -1990,15 +1988,15 @@ LABEL_15:
 }
 
 // 0x5FEC70
-OverlayTypeClass * BuildingTypeClass::FindOrCreate2(ObjectClass * Source)
+OverlayTypeClass * BuildingTypeClass::FindOrCreate2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayTypeClass *__thiscall BuildingTypeClass::FindOrCreate2(ObjectClass *Source)
+OverlayTypeClass *__thiscall BuildingTypeClass::FindOrCreate2(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x5fec8c*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x5fec8c*/
     return 0; /*0x5fecef*/
   v2 = 0; /*0x5fec9d*/
   if ( *(int *)&HouseClass_Player.__pad_3C[8] <= 0 ) /*0x5feca1*/
@@ -2006,10 +2004,10 @@ OverlayTypeClass *__thiscall BuildingTypeClass::FindOrCreate2(ObjectClass *Sourc
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x5fecc6*/
     if ( v3 ) /*0x5fecd5*/
-      return (OverlayTypeClass *)OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
+      return (OverlayTypeClass *)OverlayTypeClass::OverlayTypeClass(v3, this); /*0x5fece1*/
     return 0; /*0x5fecd5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(HouseClass_Player.field_38 + 4 * v2) + 36), Source) ) /*0x5fecba*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(HouseClass_Player.field_38 + 4 * v2) + 36), this) ) /*0x5fecba*/
   {
     if ( ++v2 >= *(int *)&HouseClass_Player.__pad_3C[8] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/
@@ -2019,15 +2017,15 @@ LABEL_6:
 }
 
 // 0x644890
-ParticleSystemTypeClass * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
+ParticleSystemTypeClass * BuildingTypeClass::LoadOrGet()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *Source)
+ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6448ac*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6448ac*/
     return 0; /*0x64490f*/
   v2 = 0; /*0x6448bd*/
   if ( *(int *)HouseClass_Player.__pad_2C <= 0 ) /*0x6448c1*/
@@ -2035,10 +2033,10 @@ ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *So
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x310u); /*0x6448e6*/
     if ( v3 ) /*0x6448f5*/
-      return (ParticleSystemTypeClass *)OverlayTypeClass::Construct(v3, Source); /*0x644901*/
+      return (ParticleSystemTypeClass *)OverlayTypeClass::Construct(v3, this); /*0x644901*/
     return 0; /*0x6448f5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v2) + 36), Source) ) /*0x6448da*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v2) + 36), this) ) /*0x6448da*/
   {
     if ( ++v2 >= *(int *)HouseClass_Player.__pad_2C ) /*0x6448e4*/
       goto LABEL_6; /*0x6448e4*/
@@ -2127,10 +2125,10 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
 }
 
 // 0x645430
-int BuildingTypeClass::FindOrCreateEx(AbstractClass * Source)
+int BuildingTypeClass::FindOrCreateEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *Source)
+int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
@@ -2138,7 +2136,7 @@ int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *Source)
   int v6; // ecx
   ObjectClass *i; // edx
 
-  if ( !_strcmpi(Source, &stru_817460.sectionHead[1]) ) /*0x645444*/
+  if ( !_strcmpi(this, &stru_817460.sectionHead[1]) ) /*0x645444*/
     return -1; /*0x645444*/
   v2 = 0; /*0x64544b*/
   if ( *(int *)&HouseClass_Player.__pad_3C[32] <= 0 ) /*0x64544f*/
@@ -2146,7 +2144,7 @@ int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *Source)
 LABEL_5:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x318u); /*0x645474*/
     if ( v3 ) /*0x645483*/
-      v4 = (ParticleTypeClass *)BuildingTypeClass::Construct(v3, Source); /*0x645488*/
+      v4 = (ParticleTypeClass *)BuildingTypeClass::Construct(v3, this); /*0x645488*/
     else
       v4 = 0; /*0x645494*/
     v6 = 0; /*0x64549c*/
@@ -2163,7 +2161,7 @@ LABEL_5:
     }
     return -1; /*0x6454b9*/
   }
-  while ( _strcmpi(Source, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * v2) + 36)) ) /*0x645468*/
+  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * v2) + 36)) ) /*0x645468*/
   {
     if ( ++v2 >= *(int *)&HouseClass_Player.__pad_3C[32] ) /*0x645472*/
       goto LABEL_5; /*0x645472*/
@@ -2474,15 +2472,15 @@ int __thiscall BuildingTypeClass::FindIndex(void *this)
 }
 
 // 0x7480D0
-UnitTypeClass * BuildingTypeClass::FindOrCreateAlt(INIClass * Source)
+UnitTypeClass * BuildingTypeClass::FindOrCreateAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnitTypeClass *__thiscall BuildingTypeClass::FindOrCreateAlt(INIClass *Source)
+UnitTypeClass *__thiscall BuildingTypeClass::FindOrCreateAlt(INIClass *this)
 {
   int v2; // esi
   int v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x7480ec*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x7480ec*/
     return 0; /*0x74814f*/
   v2 = 0; /*0x7480fd*/
   if ( (int)g_CrateCount <= 0 ) /*0x748101*/
@@ -2490,10 +2488,10 @@ UnitTypeClass *__thiscall BuildingTypeClass::FindOrCreateAlt(INIClass *Source)
 LABEL_6:
     v3 = __2_YAPAXI_Z(0xE78u); /*0x748126*/
     if ( v3 ) /*0x748135*/
-      return (UnitTypeClass *)UnitTypeClass::UnitTypeClass(v3, Source); /*0x748141*/
+      return (UnitTypeClass *)UnitTypeClass::UnitTypeClass(v3, this); /*0x748141*/
     return 0; /*0x748135*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), Source) ) /*0x74811a*/
+  while ( _strcmpi((const void *)(*(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), this) ) /*0x74811a*/
   {
     if ( ++v2 >= (int)g_CrateCount ) /*0x748124*/
       goto LABEL_6; /*0x748124*/

@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_5A9BF0 {
+    void* vfptr;  // minimal E2 declaration
+    Concurrency::details::_ReaderWriterLock * __0_ReaderWriterLock_details_Concurrency__QAE_XZ();  // 0x5A9BF0
+};
+} // namespace gamemd

@@ -276,50 +276,50 @@ int __thiscall Dial8Class_48_::sub_4A7FB0(int *this, _DWORD *a2)
 
 // 0x4A8030
 namespace gamemd {
-VectorClass * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Dial8Class_48::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Dial8Class_48_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Dial8Class_48_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8033*/
-  *Block = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8036*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a8040*/
+  v3 = (void *)*(this + 1); /*0x4a8033*/
+  *this = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8036*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a8040*/
   {
     __3_YAXPAX_Z(v3); /*0x4a8048*/
-    *(Block + 1) = 0; /*0x4a8050*/
+    *(this + 1) = 0; /*0x4a8050*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a805b*/
-  *(Block + 2) = 0; /*0x4a8061*/
+  *((_BYTE *)this + 13) = 0; /*0x4a805b*/
+  *(this + 2) = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    __3_YAXPAX_Z(Block); /*0x4a806b*/
-  return (VectorClass *)Block; /*0x4a8075*/
+    __3_YAXPAX_Z(this); /*0x4a806b*/
+  return (VectorClass *)this; /*0x4a8075*/
 }
 }
 } // namespace gamemd
 
 // 0x4A8080
 namespace gamemd {
-DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2)
+DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall Dial8Class_48_::Constructor_VectorClass_DiskLaserClass___(_DWORD *Block, char a2)
+DynamicVector *__thiscall Dial8Class_48_::Constructor_VectorClass_DiskLaserClass___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8083*/
-  *Block = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8086*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a8090*/
+  v3 = (void *)*(this + 1); /*0x4a8083*/
+  *this = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8086*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a8090*/
   {
     __3_YAXPAX_Z(v3); /*0x4a8098*/
-    *(Block + 1) = 0; /*0x4a80a0*/
+    *(this + 1) = 0; /*0x4a80a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a80ab*/
-  *(Block + 2) = 0; /*0x4a80b1*/
+  *((_BYTE *)this + 13) = 0; /*0x4a80ab*/
+  *(this + 2) = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    __3_YAXPAX_Z(Block); /*0x4a80bb*/
-  return (DynamicVector *)Block; /*0x4a80c5*/
+    __3_YAXPAX_Z(this); /*0x4a80bb*/
+  return (DynamicVector *)this; /*0x4a80c5*/
 }
 }
 } // namespace gamemd

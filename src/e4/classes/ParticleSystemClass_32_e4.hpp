@@ -19,9 +19,9 @@ struct ParticleSystemClass_32 {
     unsigned int Read(int a2);  // 0x4EB620
     char CopyParticles2(int a2, unsigned int * a3);  // 0x4EB640
     int FindParticle2(unsigned int * a2);  // 0x4EB6F0
-    DynamicVector * Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2);  // 0x4EF5D0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4EFDF0
-    DynamicVector * Constructor_VectorClass_TerrainClass___(unsigned int * Block, char a2);  // 0x4EFE40
-    DynamicVector * Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2);  // 0x4EFEE0
+    DynamicVector * Constructor_VectorClass_BuildingClass___(char a2);  // 0x4EF5D0
+    VectorClass * QueryInterface(char a2);  // 0x4EFDF0
+    DynamicVector * Constructor_VectorClass_TerrainClass___(char a2);  // 0x4EFE40
+    DynamicVector * Constructor_VectorClass_AircraftClass___(char a2);  // 0x4EFEE0
 };
 } // namespace gamemd

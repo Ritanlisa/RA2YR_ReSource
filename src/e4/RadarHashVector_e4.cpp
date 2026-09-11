@@ -193,10 +193,10 @@ int __thiscall RadarHashVector::sub_658C20(int *this, _DWORD *a2)
 }
 
 // 0x658C60
-char * RadarHashVector::Destructor(unsigned int * Block, char a2)
+char * RadarHashVector::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall RadarHashVector::Destructor(_DWORD *Block, char a2)
+char *__thiscall RadarHashVector::Destructor(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v4; // ebp
@@ -209,11 +209,11 @@ char *__thiscall RadarHashVector::Destructor(_DWORD *Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x658c6a*/
   {
-    v3 = *(Block - 1); /*0x658c6c*/
-    v4 = Block - 1; /*0x658c70*/
+    v3 = *(this - 1); /*0x658c6c*/
+    v4 = this - 1; /*0x658c70*/
     v5 = 3 * v3; /*0x658c73*/
     v6 = v3 - 1; /*0x658c76*/
-    v7 = Block + 2 * v5; /*0x658c77*/
+    v7 = this + 2 * v5; /*0x658c77*/
     if ( v6 >= 0 ) /*0x658c7a*/
     {
       v8 = v6 + 1; /*0x658c7d*/
@@ -239,42 +239,42 @@ char *__thiscall RadarHashVector::Destructor(_DWORD *Block, char a2)
   }
   else
   {
-    v11 = (void *)*(Block + 1); /*0x658cc5*/
-    *Block = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658ccc*/
-    if ( v11 && *((_BYTE *)Block + 13) ) /*0x658cd4*/
+    v11 = (void *)*(this + 1); /*0x658cc5*/
+    *this = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658ccc*/
+    if ( v11 && *((_BYTE *)this + 13) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
-      *(Block + 1) = 0; /*0x658ce2*/
+      *(this + 1) = 0; /*0x658ce2*/
     }
-    *((_BYTE *)Block + 13) = 0; /*0x658ce9*/
-    *(Block + 2) = 0; /*0x658cee*/
+    *((_BYTE *)this + 13) = 0; /*0x658ce9*/
+    *(this + 2) = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
-      __3_YAXPAX_Z(Block); /*0x658cf4*/
-    return (char *)Block; /*0x658cfc*/
+      __3_YAXPAX_Z(this); /*0x658cf4*/
+    return (char *)this; /*0x658cfc*/
   }
 }
 }
 
 // 0x658D10
-VectorClass * RadarHashVector::QueryInterface(unsigned int * Block, char a2)
+VectorClass * RadarHashVector::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall RadarHashVector::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall RadarHashVector::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x658d13*/
-  *Block = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658d16*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x658d20*/
+  v3 = (void *)*(this + 1); /*0x658d13*/
+  *this = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658d16*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x658d20*/
   {
     __3_YAXPAX_Z(v3); /*0x658d28*/
-    *(Block + 1) = 0; /*0x658d30*/
+    *(this + 1) = 0; /*0x658d30*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x658d3b*/
-  *(Block + 2) = 0; /*0x658d41*/
+  *((_BYTE *)this + 13) = 0; /*0x658d3b*/
+  *(this + 2) = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
-    __3_YAXPAX_Z(Block); /*0x658d4b*/
-  return (VectorClass *)Block; /*0x658d55*/
+    __3_YAXPAX_Z(this); /*0x658d4b*/
+  return (VectorClass *)this; /*0x658d55*/
 }
 }
 

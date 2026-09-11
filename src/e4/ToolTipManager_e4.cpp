@@ -42,25 +42,25 @@ void __stdcall ToolTipManager::_vt04(int a1)
 
 // 0x724F40
 namespace gamemd {
-DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ToolTipManager_7_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall ToolTipManager_7_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x724f43*/
-  *Block = &VectorClass<ToolTip const *>::`vftable'; /*0x724f46*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x724f50*/
+  v3 = (void *)*(this + 1); /*0x724f43*/
+  *this = &VectorClass<ToolTip const *>::`vftable'; /*0x724f46*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x724f50*/
   {
     __3_YAXPAX_Z(v3); /*0x724f58*/
-    *(Block + 1) = 0; /*0x724f60*/
+    *(this + 1) = 0; /*0x724f60*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x724f6b*/
-  *(Block + 2) = 0; /*0x724f71*/
+  *((_BYTE *)this + 13) = 0; /*0x724f6b*/
+  *(this + 2) = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
-    __3_YAXPAX_Z(Block); /*0x724f7b*/
-  return (DynamicVector *)Block; /*0x724f85*/
+    __3_YAXPAX_Z(this); /*0x724f7b*/
+  return (DynamicVector *)this; /*0x724f85*/
 }
 }
 } // namespace gamemd

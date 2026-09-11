@@ -10,6 +10,6 @@ struct ParticleSystemClass_16 {
     void ddtor();  // 0x4EB350
     int Init(unsigned int * a2);  // 0x4EB380
     unsigned int Read(int a2);  // 0x4EB3C0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4EFD50
+    VectorClass * QueryInterface(char a2);  // 0x4EFD50
 };
 } // namespace gamemd

@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_AircraftTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_AircraftTypeClass___(char a2);  // 0x4F0840
+    DynamicVector * Constructor_VectorClass_UnitTypeClass___(char a2);  // 0x4F08E0
     void Destroy();  // 0x4E8DE0
     unsigned int GetItemIndex(int a2);  // 0x4E8E10
     int Get(int a2);  // 0x4E8E30

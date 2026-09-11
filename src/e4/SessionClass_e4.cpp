@@ -1842,12 +1842,11 @@ unsigned int __stdcall SessionClass::GetPlayerColorScheme(ObjectClass *aP0)
 }
 
 // 0x69A980
-namespace gamemd {
-int SessionClass_ParseGameInfo()
+wchar_t * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 wchar_t *__thiscall SessionClass::ParseGameInfo(
-        wchar_t *Destination,
+        wchar_t *this,
         char *Source,
         CampaignScore *aP2,
         CCINIClass *aP3,
@@ -1873,9 +1872,9 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   int v22; // eax
   ObjectClass *v23; // eax
 
-  v8 = Destination; /*0x69a984*/
-  v9 = (VectorClass *)(Destination + 196); /*0x69a989*/
-  MapFile::Constructor((_DWORD *)Destination + 98, 0, 0); /*0x69a997*/
+  v8 = this; /*0x69a984*/
+  v9 = (VectorClass *)(this + 196); /*0x69a989*/
+  MapFile::Constructor((_DWORD *)this + 98, 0, 0); /*0x69a997*/
   v10 = v8 + 210; /*0x69a99c*/
   v9->field_14 = 10; /*0x69a9ad*/
   v9->field_10 = 0; /*0x69a9b0*/
@@ -1893,7 +1892,7 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   else
   {
     strcpy((char *)v8 + 88, &stru_830620.__pad_579C[39068]); /*0x69aa12*/
-    v8 = Destination; /*0x69aa1b*/
+    v8 = this; /*0x69aa1b*/
   }
   if ( aP2 ) /*0x69aa25*/
   {
@@ -1913,7 +1912,7 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   else
   {
     strcpy((char *)v8 + 348, &stru_830620.__pad_579C[38440]); /*0x69aa9d*/
-    v8 = Destination; /*0x69aaa6*/
+    v8 = this; /*0x69aaa6*/
   }
   v13 = (char)aP4; /*0x69aaae*/
   v14 = a8; /*0x69aab2*/
@@ -1986,7 +1985,6 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   return v8; /*0x69ac21*/
 }
 }
-} // namespace gamemd
 
 // 0x69B760
 int SessionClass::AssignSide(int a2, MPCooperative * aP2)
@@ -2527,25 +2525,25 @@ int __thiscall SessionClass::_vt06(_DWORD *this, int a2)
 }
 
 // 0x69C6C0
-TypeList * SessionClass::QueryInterface(unsigned int * Block, char a2)
+TypeList * SessionClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall SessionClass::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall SessionClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x69c6c3*/
-  *Block = &VectorClass<enum DiskID>::`vftable'; /*0x69c6c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x69c6d0*/
+  v3 = (void *)*(this + 1); /*0x69c6c3*/
+  *this = &VectorClass<enum DiskID>::`vftable'; /*0x69c6c6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x69c6d0*/
   {
     __3_YAXPAX_Z(v3); /*0x69c6d8*/
-    *(Block + 1) = 0; /*0x69c6e0*/
+    *(this + 1) = 0; /*0x69c6e0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x69c6eb*/
-  *(Block + 2) = 0; /*0x69c6f1*/
+  *((_BYTE *)this + 13) = 0; /*0x69c6eb*/
+  *(this + 2) = 0; /*0x69c6f1*/
   if ( (a2 & 1) != 0 ) /*0x69c6f8*/
-    __3_YAXPAX_Z(Block); /*0x69c6fb*/
-  return (TypeList *)Block; /*0x69c705*/
+    __3_YAXPAX_Z(this); /*0x69c6fb*/
+  return (TypeList *)this; /*0x69c705*/
 }
 }
 
@@ -2758,25 +2756,25 @@ int __thiscall SessionClass::_vt04(int *this, _DWORD *a2)
 }
 
 // 0x69D460
-VectorClass * SessionClass::validateGame(unsigned int * Block, char a2)
+VectorClass * SessionClass::validateGame(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall SessionClass::validateGame(_DWORD *Block, char a2)
+VectorClass *__thiscall SessionClass::validateGame(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x69d463*/
-  *Block = &VectorClass<enum DiskID>::`vftable'; /*0x69d466*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d470*/
+  v3 = (void *)*(this + 1); /*0x69d463*/
+  *this = &VectorClass<enum DiskID>::`vftable'; /*0x69d466*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x69d470*/
   {
     __3_YAXPAX_Z(v3); /*0x69d478*/
-    *(Block + 1) = 0; /*0x69d480*/
+    *(this + 1) = 0; /*0x69d480*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x69d48b*/
-  *(Block + 2) = 0; /*0x69d491*/
+  *((_BYTE *)this + 13) = 0; /*0x69d48b*/
+  *(this + 2) = 0; /*0x69d491*/
   if ( (a2 & 1) != 0 ) /*0x69d498*/
-    __3_YAXPAX_Z(Block); /*0x69d49b*/
-  return (VectorClass *)Block; /*0x69d4a5*/
+    __3_YAXPAX_Z(this); /*0x69d49b*/
+  return (VectorClass *)this; /*0x69d4a5*/
 }
 }
 

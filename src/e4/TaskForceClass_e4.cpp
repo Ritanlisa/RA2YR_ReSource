@@ -188,7 +188,7 @@ LABEL_12:
 
 // 0x6E8420
 namespace gamemd {
-char TaskForceClass::GetUnitCount(unsigned signed char *** aP1)
+char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TaskForceClass::GetUnitCount(int this, unsigned __int8 ***aP1)
@@ -347,20 +347,20 @@ int __thiscall TaskForceClass::_vt13(int this, int *a2)
 
 // 0x6E87F0
 namespace gamemd {
-TaskForceClass * TaskForceClass::ExecuteAction(void ** Block, char a2)
+TaskForceClass * TaskForceClass::ExecuteAction(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **Block, char a2)
+TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TaskForceClass::`vftable'; /*0x6e87f6*/
-  *(Block + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
-  *(Block + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
-  *(Block + 3) = &TaskForceClass::`vftable'; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
-  v5 = Block; /*0x6e8826*/
+  *this = &TaskForceClass::`vftable'; /*0x6e87f6*/
+  *(this + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
+  *(this + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
+  *(this + 3) = &TaskForceClass::`vftable'; /*0x6e880a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e8811*/
+  v5 = this; /*0x6e8826*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < MEMORY[0xA8E8E0] && v3 < --MEMORY[0xA8E8E0] ) /*0x6e8845*/
   {
@@ -371,10 +371,10 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xA8E8E0] ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x6e8861*/
+  AbstractTypeClass::Dtor(this); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    __3_YAXPAX_Z(Block); /*0x6e886e*/
-  return (TaskForceClass *)Block; /*0x6e8878*/
+    __3_YAXPAX_Z(this); /*0x6e886e*/
+  return (TaskForceClass *)this; /*0x6e8878*/
 }
 }
 } // namespace gamemd

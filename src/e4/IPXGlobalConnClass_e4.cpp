@@ -186,8 +186,7 @@ int __thiscall IPXGlobalConnClass::_vt16(_DWORD *this, int a2, __int16 a3)
 }
 
 // 0x5403F0
-namespace gamemd {
-int IPXGlobalConnClass_SetAddress()
+int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall IPXGlobalConnClass::SetAddress(
@@ -300,7 +299,6 @@ LABEL_13:
   return 1; /*0x5405f5*/
 }
 }
-} // namespace gamemd
 
 // 0x540610
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
@@ -333,29 +331,29 @@ int __thiscall IPXGlobalConnClass::_vt04(_DWORD *this, void *a2, signed int *a3)
 }
 
 // 0x540670
-IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, char a2)
+IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *Block, char a2)
+IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 52); /*0x540673*/
-  *Block = &IPXGlobalConnClass::`vftable'; /*0x540679*/
+  v3 = (void *)*(this + 52); /*0x540673*/
+  *this = &IPXGlobalConnClass::`vftable'; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
-    *(Block + 52) = 0; /*0x54068c*/
+    *(this + 52) = 0; /*0x54068c*/
   }
-  if ( *(Block + 51) ) /*0x540696*/
+  if ( *(this + 51) ) /*0x540696*/
   {
-    __3_YAXPAX_Z((void *)*(Block + 51)); /*0x5406a1*/
-    *(Block + 51) = 0; /*0x5406a9*/
+    __3_YAXPAX_Z((void *)*(this + 51)); /*0x5406a1*/
+    *(this + 51) = 0; /*0x5406a9*/
   }
-  *Block = &IPXConnClass::`vftable'; /*0x5406b5*/
-  ConnectionClass::dtor(Block); /*0x5406bb*/
+  *this = &IPXConnClass::`vftable'; /*0x5406b5*/
+  ConnectionClass::dtor(this); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
-    __3_YAXPAX_Z(Block); /*0x5406c8*/
-  return (IPXGlobalConnClass *)Block; /*0x5406d2*/
+    __3_YAXPAX_Z(this); /*0x5406c8*/
+  return (IPXGlobalConnClass *)this; /*0x5406d2*/
 }
 }

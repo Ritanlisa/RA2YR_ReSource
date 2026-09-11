@@ -457,25 +457,25 @@ unsigned int __thiscall CStreamClass_16_::_vt05(int this, int a2)
 
 // 0x4A4D90
 namespace gamemd {
-VectorClass * CStreamClass_16::QueryInterface(unsigned int * Block, char a2)
+VectorClass * CStreamClass_16::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CStreamClass_16_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall CStreamClass_16_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a4d93*/
-  *Block = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4d96*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a4da0*/
+  v3 = (void *)*(this + 1); /*0x4a4d93*/
+  *this = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4d96*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a4da0*/
   {
     __3_YAXPAX_Z(v3); /*0x4a4da8*/
-    *(Block + 1) = 0; /*0x4a4db0*/
+    *(this + 1) = 0; /*0x4a4db0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a4dbb*/
-  *(Block + 2) = 0; /*0x4a4dc1*/
+  *((_BYTE *)this + 13) = 0; /*0x4a4dbb*/
+  *(this + 2) = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
-    __3_YAXPAX_Z(Block); /*0x4a4dcb*/
-  return (VectorClass *)Block; /*0x4a4dd5*/
+    __3_YAXPAX_Z(this); /*0x4a4dcb*/
+  return (VectorClass *)this; /*0x4a4dd5*/
 }
 }
 } // namespace gamemd

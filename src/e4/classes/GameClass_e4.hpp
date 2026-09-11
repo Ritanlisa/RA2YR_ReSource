@@ -17,10 +17,10 @@ struct GameClass {
     unsigned int * saveGameState(char a2);  // 0x631F40
     Pipe * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int loadGameState(int a2);  // 0x632FE0
-    PKPipe * validateGameFile(unsigned int * Block, char a2);  // 0x632FF0
+    PKPipe * validateGameFile(char a2);  // 0x632FF0
     int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     int parseGameOptions(int a2);  // 0x633360
-    PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // 0x633370
+    PKStrawClass * applyGameSettings(char a2);  // 0x633370
     bool initPlayerData(const char ** a2);  // 0x69AE10
     int FindPlayerName(int a1);  // 0x69BC60
     void Shutdown();  // 0x6BEC60

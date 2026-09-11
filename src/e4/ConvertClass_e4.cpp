@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x48E740
-namespace gamemd {
-int ConvertClass_Construct()
+unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConvertClass::Construct(
@@ -231,7 +230,6 @@ _DWORD *__thiscall ConvertClass::Construct(
   return this; /*0x48ebd8*/
 }
 }
-} // namespace gamemd
 
 // 0x491430
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)

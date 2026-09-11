@@ -4,7 +4,7 @@
 
 // 0x52A9E0
 namespace gamemd {
-unsigned char * sub_52A9E0(unsigned signed char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
+unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__fastcall sub_52A9E0(unsigned __int8 *a1, unsigned int *a2, unsigned int *a3, unsigned int *a4)

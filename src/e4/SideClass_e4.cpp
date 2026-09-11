@@ -351,21 +351,21 @@ int __stdcall SideClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP
 
 // 0x6A4930
 namespace gamemd {
-SideClass * SideClass::Init(void ** Block, char a2)
+SideClass * SideClass::Init(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SideClass *__thiscall SideClass::Init(void **Block, char a2)
+SideClass *__thiscall SideClass::Init(void **this, char a2)
 {
   int v3; // eax
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &SideClass::`vftable'; /*0x6a4936*/
-  *(Block + 1) = &SideClass::`vftable'; /*0x6a493c*/
-  *(Block + 2) = &SideClass::`vftable'; /*0x6a4943*/
-  *(Block + 3) = &SideClass::`vftable'; /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
-  v6 = Block; /*0x6a4966*/
+  *this = &SideClass::`vftable'; /*0x6a4936*/
+  *(this + 1) = &SideClass::`vftable'; /*0x6a493c*/
+  *(this + 2) = &SideClass::`vftable'; /*0x6a4943*/
+  *(this + 3) = &SideClass::`vftable'; /*0x6a494a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6a4951*/
+  v6 = this; /*0x6a4966*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < MEMORY[0x8B4130] && v3 < --MEMORY[0x8B4130] ) /*0x6a4985*/
   {
@@ -376,19 +376,19 @@ SideClass *__thiscall SideClass::Init(void **Block, char a2)
     }
     while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
   }
-  v4 = *(Block + 39); /*0x6a499f*/
-  *(Block + 38) = &VectorClass<int>::`vftable'; /*0x6a49a5*/
-  if ( v4 && *((_BYTE *)Block + 165) ) /*0x6a49b3*/
+  v4 = *(this + 39); /*0x6a499f*/
+  *(this + 38) = &VectorClass<int>::`vftable'; /*0x6a49a5*/
+  if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(v4); /*0x6a49be*/
-    *(Block + 39) = 0; /*0x6a49c6*/
+    *(this + 39) = 0; /*0x6a49c6*/
   }
-  *((_BYTE *)Block + 165) = 0; /*0x6a49d2*/
-  *(Block + 40) = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor(Block); /*0x6a49e3*/
+  *((_BYTE *)this + 165) = 0; /*0x6a49d2*/
+  *(this + 40) = 0; /*0x6a49d9*/
+  AbstractTypeClass::Dtor(this); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
-    __3_YAXPAX_Z(Block); /*0x6a49f0*/
-  return (SideClass *)Block; /*0x6a49fa*/
+    __3_YAXPAX_Z(this); /*0x6a49f0*/
+  return (SideClass *)this; /*0x6a49fa*/
 }
 }
 } // namespace gamemd

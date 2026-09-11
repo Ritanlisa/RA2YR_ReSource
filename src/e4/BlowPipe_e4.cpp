@@ -503,100 +503,100 @@ int __thiscall BlowPipe_23_::sub_63EC20(int *this, _DWORD *a2)
 
 // 0x63ED90
 namespace gamemd {
-VectorClass * BlowPipe_23::Destructor(unsigned int * Block, char a2)
+VectorClass * BlowPipe_23::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall BlowPipe_23_::Destructor(_DWORD *Block, char a2)
+VectorClass *__thiscall BlowPipe_23_::Destructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ed93*/
-  *Block = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ed96*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x63eda0*/
+  v3 = (void *)*(this + 1); /*0x63ed93*/
+  *this = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ed96*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x63eda0*/
   {
     __3_YAXPAX_Z(v3); /*0x63eda8*/
-    *(Block + 1) = 0; /*0x63edb0*/
+    *(this + 1) = 0; /*0x63edb0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x63edbb*/
-  *(Block + 2) = 0; /*0x63edc1*/
+  *((_BYTE *)this + 13) = 0; /*0x63edbb*/
+  *(this + 2) = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    __3_YAXPAX_Z(Block); /*0x63edcb*/
-  return (VectorClass *)Block; /*0x63edd5*/
+    __3_YAXPAX_Z(this); /*0x63edcb*/
+  return (VectorClass *)this; /*0x63edd5*/
 }
 }
 } // namespace gamemd
 
 // 0x63EE30
 namespace gamemd {
-VectorClass * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
+VectorClass * BlowPipe_23::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall BlowPipe_23_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall BlowPipe_23_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee33*/
-  *Block = &VectorClass<EventClass *>::`vftable'; /*0x63ee36*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x63ee40*/
+  v3 = (void *)*(this + 1); /*0x63ee33*/
+  *this = &VectorClass<EventClass *>::`vftable'; /*0x63ee36*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee40*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee48*/
-    *(Block + 1) = 0; /*0x63ee50*/
+    *(this + 1) = 0; /*0x63ee50*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x63ee5b*/
-  *(Block + 2) = 0; /*0x63ee61*/
+  *((_BYTE *)this + 13) = 0; /*0x63ee5b*/
+  *(this + 2) = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    __3_YAXPAX_Z(Block); /*0x63ee6b*/
-  return (VectorClass *)Block; /*0x63ee75*/
+    __3_YAXPAX_Z(this); /*0x63ee6b*/
+  return (VectorClass *)this; /*0x63ee75*/
 }
 }
 } // namespace gamemd
 
 // 0x63EE80
 namespace gamemd {
-DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
+DynamicVector * BlowPipe_23::Destructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_23_::Destructor_0(_DWORD *Block, char a2)
+DynamicVector *__thiscall BlowPipe_23_::Destructor_0(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee83*/
-  *Block = &VectorClass<EventClass *>::`vftable'; /*0x63ee86*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x63ee90*/
+  v3 = (void *)*(this + 1); /*0x63ee83*/
+  *this = &VectorClass<EventClass *>::`vftable'; /*0x63ee86*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee90*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee98*/
-    *(Block + 1) = 0; /*0x63eea0*/
+    *(this + 1) = 0; /*0x63eea0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x63eeab*/
-  *(Block + 2) = 0; /*0x63eeb1*/
+  *((_BYTE *)this + 13) = 0; /*0x63eeab*/
+  *(this + 2) = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
-    __3_YAXPAX_Z(Block); /*0x63eebb*/
-  return (DynamicVector *)Block; /*0x63eec5*/
+    __3_YAXPAX_Z(this); /*0x63eebb*/
+  return (DynamicVector *)this; /*0x63eec5*/
 }
 }
 } // namespace gamemd
 
 // 0x63EF20
 namespace gamemd {
-DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
+DynamicVector * BlowPipe_23::Destructor_1(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_23_::Destructor_1(_DWORD *Block, char a2)
+DynamicVector *__thiscall BlowPipe_23_::Destructor_1(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ef23*/
-  *Block = &VectorClass<PlanningTokenClass *>::`vftable'; /*0x63ef26*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x63ef30*/
+  v3 = (void *)*(this + 1); /*0x63ef23*/
+  *this = &VectorClass<PlanningTokenClass *>::`vftable'; /*0x63ef26*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ef30*/
   {
     __3_YAXPAX_Z(v3); /*0x63ef38*/
-    *(Block + 1) = 0; /*0x63ef40*/
+    *(this + 1) = 0; /*0x63ef40*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x63ef4b*/
-  *(Block + 2) = 0; /*0x63ef51*/
+  *((_BYTE *)this + 13) = 0; /*0x63ef4b*/
+  *(this + 2) = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    __3_YAXPAX_Z(Block); /*0x63ef5b*/
-  return (DynamicVector *)Block; /*0x63ef65*/
+    __3_YAXPAX_Z(this); /*0x63ef5b*/
+  return (DynamicVector *)this; /*0x63ef65*/
 }
 }
 } // namespace gamemd
@@ -761,25 +761,25 @@ int __thiscall BlowPipe_31_::_vt04(int *this, _DWORD *a2)
 
 // 0x63EDE0
 namespace gamemd {
-DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * BlowPipe_31::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_31_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall BlowPipe_31_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ede3*/
-  *Block = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ede6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x63edf0*/
+  v3 = (void *)*(this + 1); /*0x63ede3*/
+  *this = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ede6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x63edf0*/
   {
     __3_YAXPAX_Z(v3); /*0x63edf8*/
-    *(Block + 1) = 0; /*0x63ee00*/
+    *(this + 1) = 0; /*0x63ee00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x63ee0b*/
-  *(Block + 2) = 0; /*0x63ee11*/
+  *((_BYTE *)this + 13) = 0; /*0x63ee0b*/
+  *(this + 2) = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    __3_YAXPAX_Z(Block); /*0x63ee1b*/
-  return (DynamicVector *)Block; /*0x63ee25*/
+    __3_YAXPAX_Z(this); /*0x63ee1b*/
+  return (DynamicVector *)this; /*0x63ee25*/
 }
 }
 } // namespace gamemd

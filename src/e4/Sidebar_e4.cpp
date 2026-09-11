@@ -326,10 +326,10 @@ int __thiscall Sidebar::ScrollSidebarSkipGame(const char *this)
 
 // 0x636310
 namespace gamemd {
-void Sidebar::CancelSidebarProductionQueue(int * Block)
+void Sidebar::CancelSidebarProductionQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Sidebar::CancelSidebarProductionQueue(int *Block)
+void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
 {
   int v2; // ebx
   int i; // ebp
@@ -348,11 +348,11 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *Block)
   void *Blocka; // [esp+14h] [ebp-8h] BYREF
   _DWORD *v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(Block + 5); /*0x636319*/
+  v2 = *(this + 5); /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
-    v4 = *(VectorClass **)(*(Block + 2) + 4 * i); /*0x63632c*/
-    Value = Array::FindValue((int *)v4->__pad_0, *Block); /*0x636334*/
+    v4 = *(VectorClass **)(*(this + 2) + 4 * i); /*0x63632c*/
+    Value = Array::FindValue((int *)v4->__pad_0, *this); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else
@@ -372,7 +372,7 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *Block)
   }
   if ( v2 ) /*0x6363ad*/
   {
-    Blocka = (void *)*Block; /*0x6363b1*/
+    Blocka = (void *)*this; /*0x6363b1*/
     v8 = *((_DWORD *)Blocka + 135); /*0x6363b5*/
     v9 = *(_DWORD *)(v8 + 48); /*0x6363bb*/
     if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v8) && HouseClass_Player ) /*0x6363ce*/
@@ -380,54 +380,54 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *Block)
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt(&MEMORY[0xAC4C40], (int)&Blocka); /*0x6363e4*/
   }
-  v10 = Block + 1; /*0x6363ec*/
-  (*(void (__thiscall **)(int *))(*(Block + 1) + 12))(Block + 1); /*0x6363f1*/
-  *((_BYTE *)Block + 152) = 0; /*0x6363f7*/
-  *(Block + 35) = -1; /*0x636400*/
-  *(Block + 36) = -1; /*0x636406*/
-  *(Block + 37) = -1; /*0x63640c*/
-  *((_BYTE *)Block + 153) = 0; /*0x636412*/
-  *Block = 0; /*0x636419*/
-  if ( Block ) /*0x63641f*/
+  v10 = this + 1; /*0x6363ec*/
+  (*(void (__thiscall **)(int *))(*(this + 1) + 12))(this + 1); /*0x6363f1*/
+  *((_BYTE *)this + 152) = 0; /*0x6363f7*/
+  *(this + 35) = -1; /*0x636400*/
+  *(this + 36) = -1; /*0x636406*/
+  *(this + 37) = -1; /*0x63640c*/
+  *((_BYTE *)this + 153) = 0; /*0x636412*/
+  *this = 0; /*0x636419*/
+  if ( this ) /*0x63641f*/
   {
-    if ( *Block ) /*0x636425*/
-      BuildingClass::SetPlanningToken((_DWORD *)*Block, 0); /*0x63642d*/
-    Blocka = Block; /*0x636437*/
+    if ( *this ) /*0x636425*/
+      BuildingClass::SetPlanningToken((_DWORD *)*this, 0); /*0x63642d*/
+    Blocka = this; /*0x636437*/
     if ( !MEMORY[0xAC4CF5] ) /*0x63643d*/
     {
       v11 = (*(int (__thiscall **)(int *, void **))(MEMORY[0xAC4C78] + 16))(&MEMORY[0xAC4C78], &Blocka); /*0x63644f*/
       if ( v11 != -1 ) /*0x636454*/
         Sidebar::RemoveItem(&MEMORY[0xAC4C78], v11); /*0x63645c*/
     }
-    v12 = *(Block + 5); /*0x636461*/
+    v12 = *(this + 5); /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
-      TeamClass::DestroyAllMembers(*(_DWORD **)(*(Block + 2) + 4 * j), (_DWORD *)*Block); /*0x63647a*/
+      TeamClass::DestroyAllMembers(*(_DWORD **)(*(this + 2) + 4 * j), (_DWORD *)*this); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
-      v17 = (_DWORD *)*Block; /*0x63648e*/
+      v17 = (_DWORD *)*this; /*0x63648e*/
       LeaderIndexTeamClass = (BuildingClass *)TeamClass::GetLeaderIndex(v17); /*0x636492*/
       DecFactoryClassCounter((unsigned int)LeaderIndexTeamClass); /*0x636499*/
       VectorClass::EraseAt(&MEMORY[0xAC4C40], (int)&v17); /*0x6364a8*/
     }
-    (*(void (__thiscall **)(int *))(*v10 + 12))(Block + 1); /*0x6364b1*/
-    *((_BYTE *)Block + 152) = 0; /*0x6364b7*/
-    *(Block + 35) = -1; /*0x6364be*/
-    *(Block + 36) = -1; /*0x6364c4*/
-    *(Block + 37) = -1; /*0x6364ca*/
-    *((_BYTE *)Block + 153) = 0; /*0x6364d0*/
-    v15 = (void *)*(Block + 2); /*0x6364d7*/
+    (*(void (__thiscall **)(int *))(*v10 + 12))(this + 1); /*0x6364b1*/
+    *((_BYTE *)this + 152) = 0; /*0x6364b7*/
+    *(this + 35) = -1; /*0x6364be*/
+    *(this + 36) = -1; /*0x6364c4*/
+    *(this + 37) = -1; /*0x6364ca*/
+    *((_BYTE *)this + 153) = 0; /*0x6364d0*/
+    v15 = (void *)*(this + 2); /*0x6364d7*/
     *v10 = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
-      if ( *((_BYTE *)Block + 17) ) /*0x6364e6*/
+      if ( *((_BYTE *)this + 17) ) /*0x6364e6*/
       {
         __3_YAXPAX_Z(v15); /*0x6364ee*/
-        *(Block + 2) = 0; /*0x6364f6*/
+        *(this + 2) = 0; /*0x6364f6*/
       }
     }
-    *((_BYTE *)Block + 17) = 0; /*0x6364fa*/
-    *(Block + 3) = 0; /*0x6364fe*/
-    __3_YAXPAX_Z(Block); /*0x636501*/
+    *((_BYTE *)this + 17) = 0; /*0x6364fa*/
+    *(this + 3) = 0; /*0x6364fe*/
+    __3_YAXPAX_Z(this); /*0x636501*/
   }
 }
 }

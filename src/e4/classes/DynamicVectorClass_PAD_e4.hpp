@@ -14,7 +14,7 @@ struct DynamicVectorClass_PAD {
     int GetSize(unsigned int * a2);  // 0x49EB20
     char SetCapacity(int a2, unsigned int * a3);  // 0x49ED30
     int FindItemIndex(unsigned int * a2);  // 0x49EDE0
-    DynamicVector * Add(unsigned int * Block, char a2);  // 0x49EE10
-    DynamicVector * Destructor(unsigned int * Block, char a2);  // 0x49F040
+    DynamicVector * Add(char a2);  // 0x49EE10
+    DynamicVector * Destructor(char a2);  // 0x49F040
 };
 } // namespace gamemd

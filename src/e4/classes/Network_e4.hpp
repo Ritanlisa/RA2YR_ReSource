@@ -28,7 +28,7 @@ struct Network {
     int Send(int a2, int a3, TechnoTypeClass * aP3, int a5);  // 0x541370
     int SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5413B0
     char receiveData(int a2);  // 0x5413F0
-    int SendPacket(int a2, int a3, unsigned signed char a4);  // 0x541410
+    int SendPacket(int a2, int a3, unsigned char a4);  // 0x541410
     int SendPacketThunk2(int a2, int a3, int a4, int a5);  // 0x541480
     void * ReceiveLoop();  // 0x541820
     int GetQueueCount();  // 0x5422D0
@@ -46,9 +46,9 @@ struct Network {
     unsigned short ResolveNetworkAddress(unsigned short a2);  // 0x5DA0B0
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
-    int SendOptionsGame(char * Source);  // 0x5E3720
+    int SendOptionsGame();  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60
-    HWND handleTimeout(HWND hDlg);  // 0x5EFF70
+    HWND handleTimeout();  // 0x5EFF70
     int CleanupOnDisconnect();  // 0x5F0040
     char AddFrameEvent();  // 0x6471A0
     void QueueProcessingLoop();  // 0x6475F0

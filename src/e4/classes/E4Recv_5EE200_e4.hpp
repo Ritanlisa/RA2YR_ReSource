@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_5EE200 {
+    void* vfptr;  // minimal E2 declaration
+    void UpdateObserveButtonWOL();  // 0x5EE200
+};
+} // namespace gamemd

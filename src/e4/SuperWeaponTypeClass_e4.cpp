@@ -4,7 +4,7 @@
 
 // 0x474EE0
 namespace gamemd {
-int SuperWeaponTypeClass_loadSWProperties()
+int SuperWeaponTypeClass::loadSWProperties(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SuperWeaponTypeClass::loadSWProperties(
@@ -34,7 +34,7 @@ int __thiscall SuperWeaponTypeClass::loadSWProperties(
 
 // 0x475540
 namespace gamemd {
-int SuperWeaponTypeClass_FindOrCreate()
+int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SuperWeaponTypeClass::FindOrCreate(
@@ -607,7 +607,7 @@ int __thiscall SuperWeaponTypeClass::SD_vt16(_DWORD *this)
 
 // 0x6CEA20
 namespace gamemd {
-char SuperWeaponTypeClass::SD_vt25(unsigned signed char *** aP1)
+char SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall SuperWeaponTypeClass::SD_vt25(int this, unsigned __int8 ***aP1)
@@ -925,19 +925,19 @@ int __thiscall SuperWeaponTypeClass::SD_vt27(_DWORD *this, int a2, int a3)
 
 // 0x6CEFE0
 namespace gamemd {
-SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(unsigned int * Block, char a2)
+SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *Block, char a2)
+SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
-  *(Block + 1) = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
-  *(Block + 2) = &SuperWeaponTypeClass::`vftable'; /*0x6ceffa*/
-  *(Block + 3) = &SuperWeaponTypeClass::`vftable'; /*0x6cf001*/
-  v5 = Block; /*0x6cf00f*/
+  *this = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
+  *(this + 1) = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
+  *(this + 2) = &SuperWeaponTypeClass::`vftable'; /*0x6ceffa*/
+  *(this + 3) = &SuperWeaponTypeClass::`vftable'; /*0x6cf001*/
+  v5 = this; /*0x6cf00f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E330] + 16))(&MEMORY[0xA8E330], &v5); /*0x6cf013*/
   if ( v3 != -1 && v3 < MEMORY[0xA8E340] && v3 < --MEMORY[0xA8E340] ) /*0x6cf02e*/
   {
@@ -948,10 +948,10 @@ SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *Block, cha
     }
     while ( v3 < MEMORY[0xA8E340] ); /*0x6cf046*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x6cf04a*/
+  AbstractTypeClass::Dtor(this); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
-    __3_YAXPAX_Z(Block); /*0x6cf057*/
-  return (SuperWeaponTypeClass *)Block; /*0x6cf061*/
+    __3_YAXPAX_Z(this); /*0x6cf057*/
+  return (SuperWeaponTypeClass *)this; /*0x6cf061*/
 }
 }
 } // namespace gamemd

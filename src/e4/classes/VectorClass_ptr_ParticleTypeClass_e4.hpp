@@ -4,6 +4,9 @@
 namespace gamemd {
 struct VectorClass_ptr_ParticleTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_ParticleTypeClass___(char a2);  // 0x4F0CA0
+    DynamicVector * Constructor_VectorClass_ParticleSystemTypeClass___(char a2);  // 0x4F0D40
+    DynamicVector * Constructor_VectorClass_SuperWeaponTypeClass___(char a2);  // 0x4F0DE0
     void Destroy();  // 0x4E9080
     unsigned int GetItemIndex(int a2);  // 0x4E90B0
     int Get(int a2);  // 0x4E90D0

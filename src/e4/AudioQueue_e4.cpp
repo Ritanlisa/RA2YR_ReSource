@@ -764,7 +764,7 @@ int __thiscall AudioQueue_ReadBuffer(int this, void *a2, int a3, void *a4, unsig
 
 // 0x7B23B0
 namespace gamemd {
-int AudioQueue_WriteBuffer()
+short AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall AudioQueue::WriteBuffer(

@@ -5,15 +5,15 @@
 
 // 0x5BE9E0
 namespace gamemd {
-TabClass * BlowStraw_29::Read(char * Block, char a2)
+TabClass * BlowStraw_29::Read(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TabClass *__thiscall BlowStraw_29_::Read(char *Block, char a2)
+TabClass *__thiscall BlowStraw_29_::Read(char *this, char a2)
 {
   char *v3; // esi
   int v4; // edi
 
-  v3 = Block + 21484; /*0x5be9e5*/
+  v3 = this + 21484; /*0x5be9e5*/
   v4 = 4; /*0x5be9eb*/
   do /*0x5bea06*/
   {
@@ -22,10 +22,10 @@ TabClass *__thiscall BlowStraw_29_::Read(char *Block, char a2)
     --v4; /*0x5bea05*/
   }
   while ( v4 ); /*0x5bea06*/
-  RadarClass::Destruct(Block); /*0x5bea0a*/
+  RadarClass::Destruct(this); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
-    __3_YAXPAX_Z(Block); /*0x5bea17*/
-  return (TabClass *)Block; /*0x5bea1f*/
+    __3_YAXPAX_Z(this); /*0x5bea17*/
+  return (TabClass *)this; /*0x5bea1f*/
 }
 }
 } // namespace gamemd

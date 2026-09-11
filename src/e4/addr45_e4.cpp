@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_4517D0_e4.hpp"
+#include "e4/classes/E4Recv_4528A0_e4.hpp"
+#include "e4/classes/E4Recv_457A10_e4.hpp"
+#include "e4/classes/E4Recv_45DD20_e4.hpp"
+#include "e4/classes/E4Recv_45DD50_e4.hpp"
+#include "e4/classes/E4Recv_45E8B0_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -140,7 +146,7 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 
 // 0x4517D0
 namespace gamemd {
-int sub_4517D0()
+int E4Recv_4517D0::sub_4517D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4517D0(int **this)
@@ -334,7 +340,7 @@ int __fastcall sub_452000(_DWORD *a1)
 
 // 0x4528A0
 namespace gamemd {
-bool sub_4528A0(int a2)
+bool E4Recv_4528A0::sub_4528A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_4528A0(_DWORD *this, int a2)
@@ -690,7 +696,7 @@ int __fastcall sub_456FB0(_DWORD *a1, int a2, int a3)
 
 // 0x457A10
 namespace gamemd {
-char sub_457A10()
+char E4Recv_457A10::sub_457A10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_457A10(_DWORD **this)
@@ -992,7 +998,7 @@ int Map_InitCellOffsets()
 
 // 0x45DD20
 namespace gamemd {
-char * sub_45DD20()
+char * E4Recv_45DD20::sub_45DD20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_45DD20(void *this)
@@ -1016,7 +1022,7 @@ char *__thiscall sub_45DD20(void *this)
 
 // 0x45DD50
 namespace gamemd {
-int sub_45DD50()
+int E4Recv_45DD50::sub_45DD50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_45DD50(void *this)
@@ -1040,7 +1046,7 @@ int __thiscall sub_45DD50(void *this)
 
 // 0x45E8B0
 namespace gamemd {
-int sub_45E8B0(int a2, int a3, int a4, int a5)
+int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_45E8B0(_DWORD *this, int a2, int a3, int a4, int a5)

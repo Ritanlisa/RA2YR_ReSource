@@ -13,20 +13,20 @@ int __thiscall ColorListClass::_vt34(void *this, int a2)
 }
 
 // 0x488F00
-ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
+ColorListClass * ColorListClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ColorListClass *__thiscall ColorListClass::QueryInterface(char *Block, char a2)
+ColorListClass *__thiscall ColorListClass::QueryInterface(char *this, char a2)
 {
   int v3; // eax
   char *v4; // esi
   void *v5; // eax
 
-  v3 = *((_DWORD *)Block + 93); /*0x488f05*/
-  v4 = Block + 372; /*0x488f0b*/
-  *(_DWORD *)Block = &ColorListClass::`vftable'; /*0x488f13*/
-  (*(void (__thiscall **)(char *))(v3 + 12))(Block + 372); /*0x488f19*/
-  *((_DWORD *)Block + 100) = 0; /*0x488f1e*/
+  v3 = *((_DWORD *)this + 93); /*0x488f05*/
+  v4 = this + 372; /*0x488f0b*/
+  *(_DWORD *)this = &ColorListClass::`vftable'; /*0x488f13*/
+  (*(void (__thiscall **)(char *))(v3 + 12))(this + 372); /*0x488f19*/
+  *((_DWORD *)this + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
   *(_DWORD *)v4 = &VectorClass<int>::`vftable'; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
@@ -36,10 +36,10 @@ ColorListClass *__thiscall ColorListClass::QueryInterface(char *Block, char a2)
   }
   v4[13] = 0; /*0x488f44*/
   *((_DWORD *)v4 + 2) = 0; /*0x488f47*/
-  ListClass::Destruct(Block); /*0x488f4a*/
+  ListClass::Destruct(this); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
-    __3_YAXPAX_Z(Block); /*0x488f57*/
-  return (ColorListClass *)Block; /*0x488f61*/
+    __3_YAXPAX_Z(this); /*0x488f57*/
+  return (ColorListClass *)this; /*0x488f61*/
 }
 }
 

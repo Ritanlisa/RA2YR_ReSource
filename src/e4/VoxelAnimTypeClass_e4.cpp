@@ -84,7 +84,7 @@ _DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP
 
 // 0x74B050
 namespace gamemd {
-char VoxelAnimTypeClass::LoadFromINI(unsigned signed char *** aP1)
+char VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
@@ -551,21 +551,21 @@ __int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP
 
 // 0x74BA30
 namespace gamemd {
-VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
+VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
+VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
-  *(Block + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
-  *(Block + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
-  *(Block + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ba4a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x74ba51*/
-  v6 = Block; /*0x74ba66*/
+  *this = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
+  *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
+  *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
+  *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ba4a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x74ba51*/
+  v6 = this; /*0x74ba66*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x74ba6a*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x74ba85*/
   {
@@ -576,7 +576,7 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F680] ); /*0x74ba9d*/
   }
-  v6 = Block; /*0x74baaf*/
+  v6 = this; /*0x74baaf*/
   v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EB28] + 16))(&MEMORY[0xA8EB28], &v6); /*0x74bab3*/
   if ( v4 != -1 && v4 < MEMORY[0xA8EB38] && v4 < --MEMORY[0xA8EB38] ) /*0x74bace*/
   {
@@ -587,15 +587,15 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
     }
     while ( v4 < MEMORY[0xA8EB38] ); /*0x74bae6*/
   }
-  if ( *((_BYTE *)Block + 662) ) /*0x74bae8*/
+  if ( this->SourceShared ) /*0x74bae8*/
   {
-    *(Block + 44) = 0; /*0x74baf4*/
-    *(Block + 45) = 0; /*0x74bafa*/
+    *(this + 44) = 0; /*0x74baf4*/
+    *(this + 45) = 0; /*0x74bafa*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x74bb02*/
+  ObjectTypeClass::Destruct((int)this); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
-    __3_YAXPAX_Z(Block); /*0x74bb0f*/
-  return (VoxelAnimTypeClass *)Block; /*0x74bb19*/
+    __3_YAXPAX_Z(this); /*0x74bb0f*/
+  return (VoxelAnimTypeClass *)this; /*0x74bb19*/
 }
 }
 } // namespace gamemd

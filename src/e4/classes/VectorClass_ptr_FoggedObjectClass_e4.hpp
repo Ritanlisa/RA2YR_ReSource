@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_FoggedObjectClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_FoggedObjectClass___(char a2);  // 0x45AB00
     void Destroy();  // 0x45A070
     unsigned int GetItemIndex(int a2);  // 0x45A0A0
     int Get(int a2);  // 0x45A0C0

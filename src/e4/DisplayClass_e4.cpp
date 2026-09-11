@@ -829,25 +829,25 @@ int __thiscall TacticalClass_ExitMode(_BYTE *this)
 }
 
 // 0x4AEB50
-unsigned int * DisplayClass::loc_4AEB50(unsigned int * Block, char a2)
+unsigned int * DisplayClass::loc_4AEB50(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *Block, char a2)
+_DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4aeb53*/
-  *Block = &VectorClass<ObjectClass *>::`vftable'; /*0x4aeb56*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4aeb60*/
+  v3 = (void *)*(this + 1); /*0x4aeb53*/
+  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x4aeb56*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4aeb60*/
   {
     __3_YAXPAX_Z(v3); /*0x4aeb68*/
-    *(Block + 1) = 0; /*0x4aeb70*/
+    *(this + 1) = 0; /*0x4aeb70*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4aeb7b*/
-  *(Block + 2) = 0; /*0x4aeb81*/
+  *((_BYTE *)this + 13) = 0; /*0x4aeb7b*/
+  *(this + 2) = 0; /*0x4aeb81*/
   if ( (a2 & 1) != 0 ) /*0x4aeb88*/
-    __3_YAXPAX_Z(Block); /*0x4aeb8b*/
-  return Block; /*0x4aeb95*/
+    __3_YAXPAX_Z(this); /*0x4aeb8b*/
+  return this; /*0x4aeb95*/
 }
 }
 
@@ -865,15 +865,15 @@ _DWORD *__thiscall DisplayClass::updateRenderState(TacticalClass_DisplayClass *t
 }
 
 // 0x4AEBF0
-DisplayClass * DisplayClass::Read(char * Block, char a2)
+DisplayClass * DisplayClass::Read(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DisplayClass *__thiscall DisplayClass::Read(char *Block, char a2)
+DisplayClass *__thiscall DisplayClass::Read(char *this, char a2)
 {
-  MapClass::Destruct(Block); /*0x4aebf3*/
+  MapClass::Destruct(this); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
-    __3_YAXPAX_Z(Block); /*0x4aec00*/
-  return (DisplayClass *)Block; /*0x4aec0a*/
+    __3_YAXPAX_Z(this); /*0x4aec00*/
+  return (DisplayClass *)this; /*0x4aec0a*/
 }
 }
 

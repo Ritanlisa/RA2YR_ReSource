@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_793120_e4.hpp"
+#include "e4/classes/E4Recv_793CD0_e4.hpp"
+#include "e4/classes/E4Recv_79BF50_e4.hpp"
 
 // 0x792BE0
 namespace gamemd {
@@ -129,7 +132,7 @@ LABEL_6:
 
 // 0x793120
 namespace gamemd {
-bool sub_793120()
+bool E4Recv_793120::sub_793120()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_793120(char **this)
@@ -498,7 +501,7 @@ int __fastcall sub_793B30(char a1, const char *a2)
 
 // 0x793CD0
 namespace gamemd {
-int sub_793CD0()
+int E4Recv_793CD0::sub_793CD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_793CD0(void *this)
@@ -3867,10 +3870,10 @@ LABEL_27:
 
 // 0x79BF50
 namespace gamemd {
-BOOL sub_79BF50(HWND hDlg)
+BOOL E4Recv_79BF50::sub_79BF50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_79BF50(HWND hDlg)
+BOOL __thiscall sub_79BF50(HWND this)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -3881,10 +3884,10 @@ BOOL __thiscall sub_79BF50(HWND hDlg)
   unsigned __int8 v9; // [esp+10h] [ebp-4h]
 
   v7 = String::Length(&g_WOL_LoginObject) != 0; /*0x79bf6f*/
-  DlgItem = GetDlgItem(hDlg, 1795); /*0x79bf76*/
+  DlgItem = GetDlgItem(this, 1795); /*0x79bf76*/
   EnableWindow(DlgItem, v7); /*0x79bf7f*/
   BuddyWOL = FindBuddyWOL(); /*0x79bf8b*/
-  v3 = GetDlgItem(hDlg, 1581); /*0x79bf92*/
+  v3 = GetDlgItem(this, 1581); /*0x79bf92*/
   EnableWindow(v3, BuddyWOL); /*0x79bf95*/
   if ( String::Length(&g_WOL_LoginObject) ) /*0x79bf9c*/
   {
@@ -3913,7 +3916,7 @@ LABEL_10:
     v9 = 0; /*0x79bfa5*/
   }
 LABEL_12:
-  v5 = GetDlgItem(hDlg, 1474); /*0x79c01b*/
+  v5 = GetDlgItem(this, 1474); /*0x79c01b*/
   return EnableWindow(v5, v9); /*0x79c031*/
 }
 }

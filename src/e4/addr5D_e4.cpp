@@ -1,10 +1,24 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5D0190_e4.hpp"
+#include "e4/classes/E4Recv_5D0240_e4.hpp"
+#include "e4/classes/E4Recv_5D25D0_e4.hpp"
+#include "e4/classes/E4Recv_5D2650_e4.hpp"
+#include "e4/classes/E4Recv_5D30C0_e4.hpp"
+#include "e4/classes/E4Recv_5D4F20_e4.hpp"
+#include "e4/classes/E4Recv_5D7580_e4.hpp"
+#include "e4/classes/E4Recv_5D7CD0_e4.hpp"
+#include "e4/classes/E4Recv_5D7FF0_e4.hpp"
+#include "e4/classes/E4Recv_5D8010_e4.hpp"
+#include "e4/classes/E4Recv_5D8FB0_e4.hpp"
+#include "e4/classes/E4Recv_5D8FC0_e4.hpp"
+#include "e4/classes/E4Recv_5D9060_e4.hpp"
+#include "e4/classes/E4Recv_5DAB80_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {
-int sub_5D0190(const char * a2)
+int E4Recv_5D0190::sub_5D0190(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5D0190(_DWORD *this, const char *a2)
@@ -45,7 +59,7 @@ LABEL_5:
 
 // 0x5D0240
 namespace gamemd {
-char ** sub_5D0240(char ** a2, char a3)
+char ** E4Recv_5D0240::sub_5D0240(char ** a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall sub_5D0240(int *this, char **a2, char a3)
@@ -141,7 +155,7 @@ int __stdcall sub_5D2350(int a1, int *a2)
 
 // 0x5D25D0
 namespace gamemd {
-char sub_5D25D0(char * Source, int a3)
+char E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_5D25D0(int this, char *Source, int a3)
@@ -157,21 +171,21 @@ char __thiscall sub_5D25D0(int this, char *Source, int a3)
     return 0; /*0x5d25e3*/
   v4 = (char **)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
   v5 = v4 ? Audio::SetSoundFileName(v4, Source, a3) : 0;
-  v6 = this->attachedBomb; /*0x5d2602*/
-  if ( this->ambientSoundController.AudioController_field_04 >= v6 ) /*0x5d260d*/
+  v6 = *(_DWORD *)(this + 56); /*0x5d2602*/
+  if ( *(_DWORD *)(this + 64) >= v6 ) /*0x5d260d*/
   {
-    if ( !*(_BYTE *)(this + 61) && v6 ) /*0x5d2618*/
+    if ( !(unsigned char)this->M61 && v6 ) /*0x5d2618*/
       return 0; /*0x5d2618*/
-    v7 = this->ambientSoundController.AudioController_field_08; /*0x5d261a*/
+    v7 = *(_DWORD *)(this + 68); /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
-      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->nextObject + 8))(this + 48, v6 + v7, 0) )
+      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 48) + 8))(this + 48, v6 + v7, 0) )
     {
       return 0; /*0x5d264a*/
     }
   }
-  v8 = this->ambientSoundController.AudioController_field_04; /*0x5d2631*/
-  v9 = this->attachedTag; /*0x5d2634*/
-  this->ambientSoundController.AudioController_field_04 = v8 + 1; /*0x5d263a*/
+  v8 = *(_DWORD *)(this + 64); /*0x5d2631*/
+  v9 = *(_DWORD *)(this + 52); /*0x5d2634*/
+  *(_DWORD *)(this + 64) = v8 + 1; /*0x5d263a*/
   *(_DWORD *)(v9 + 4 * v8) = v5; /*0x5d263d*/
   return 1; /*0x5d2640*/
 }
@@ -180,7 +194,7 @@ char __thiscall sub_5D25D0(int this, char *Source, int a3)
 
 // 0x5D2650
 namespace gamemd {
-void sub_5D2650(void * a2, int a3)
+void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
@@ -211,7 +225,7 @@ void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
 
 // 0x5D30C0
 namespace gamemd {
-unsigned int * sub_5D30C0(wchar_t * String, unsigned int * a3)
+unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5D30C0(size_t *this, wchar_t *String, _DWORD *a3)
@@ -826,7 +840,7 @@ LABEL_12:
 
 // 0x5D4F20
 namespace gamemd {
-int sub_5D4F20()
+int E4Recv_5D4F20::sub_5D4F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5D4F20(const char *this)
@@ -1072,7 +1086,7 @@ int __stdcall sub_5D7550(int a1)
 
 // 0x5D7580
 namespace gamemd {
-unsigned int * sub_5D7580()
+unsigned int * E4Recv_5D7580::sub_5D7580()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5D7580(InitializerBase_MultiplayerGameMode *this)
@@ -1355,7 +1369,7 @@ LABEL_50:
 
 // 0x5D7CD0
 namespace gamemd {
-void sub_5D7CD0()
+void E4Recv_5D7CD0::sub_5D7CD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5D7CD0(InitializerBase_MultiplayerGameMode *this)
@@ -1426,30 +1440,30 @@ int GameInit_Complete()
 
 // 0x5D7FF0
 namespace gamemd {
-unsigned int * ___Gfacet_locale_std__UAEPAXI_Z_127(unsigned int * Block, char a2)
+unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_127(_DWORD *Block, char a2)
+_DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_127(_DWORD *this, char a2)
 {
-  *Block = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7ff9*/
+  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7ff9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fff*/
-    __3_YAXPAX_Z(Block); /*0x5d8002*/
-  return Block; /*0x5d800c*/
+    __3_YAXPAX_Z(this); /*0x5d8002*/
+  return this; /*0x5d800c*/
 }
 }
 } // namespace gamemd
 
 // 0x5D8010
 namespace gamemd {
-unsigned int * ___Gfacet_locale_std__UAEPAXI_Z_128(unsigned int * Block, char a2)
+unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_128(_DWORD *Block, char a2)
+_DWORD *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_128(_DWORD *this, char a2)
 {
-  *Block = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8019*/
+  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8019*/
   if ( (a2 & 1) != 0 ) /*0x5d801f*/
-    __3_YAXPAX_Z(Block); /*0x5d8022*/
-  return Block; /*0x5d802c*/
+    __3_YAXPAX_Z(this); /*0x5d8022*/
+  return this; /*0x5d802c*/
 }
 }
 } // namespace gamemd
@@ -1858,7 +1872,7 @@ int sub_5D8F90()
 
 // 0x5D8FB0
 namespace gamemd {
-unsigned int * sub_5D8FB0()
+unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5D8FB0(_DWORD *this)
@@ -1874,7 +1888,7 @@ _DWORD *__thiscall sub_5D8FB0(_DWORD *this)
 
 // 0x5D8FC0
 namespace gamemd {
-void __Release__NonReentrantLock_details_Concurrency__QAEXXZ()
+void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ(Concurrency::details::_NonReentrantLock *this)
@@ -1886,7 +1900,7 @@ void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ(Concurre
 
 // 0x5D9060
 namespace gamemd {
-short sub_5D9060(int a2)
+short E4Recv_5D9060::sub_5D9060(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall sub_5D9060(_DWORD *this, int a2)
@@ -2488,7 +2502,7 @@ LABEL_54:
 
 // 0x5DAB80
 namespace gamemd {
-int sub_5DAB80()
+int E4Recv_5DAB80::sub_5DAB80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5DAB80(const char *this)
@@ -2716,7 +2730,7 @@ int sub_5DAEE0()
 
 // 0x5DAF20
 namespace gamemd {
-unsigned signed char sub_5DAF20()
+unsigned char sub_5DAF20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 sub_5DAF20()
@@ -3319,7 +3333,7 @@ int __stdcall SkirmishDialogProc(SkirmishDialog *aP0, int a2, unsigned __int16 a
 
 // 0x5DF410
 namespace gamemd {
-int Network_SendJoinRequest(int a1, unsigned signed char a2)
+int Network_SendJoinRequest(int a1, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Network_SendJoinRequest(int a1, unsigned __int8 a2)

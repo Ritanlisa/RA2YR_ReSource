@@ -218,6 +218,13 @@ public:
     void isMegawealthAllowed();  // 0x5D5900
     void onAIJoined();  // 0x5D5920
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    unsigned int * MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6);  // 0x5C5CE0
+    unsigned int * MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6);  // 0x5C6150
+    unsigned int * MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6);  // 0x5C93E0
+    unsigned int * MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6);  // 0x5CA630
+    unsigned int * MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6);  // 0x5CB3A0
+// --- e4 declarations (END) ---
 };
 
 class MPFreeForAllClass : public MPGameModeClass

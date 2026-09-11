@@ -187,7 +187,7 @@ int *TextRenderer::RenderCentered(
 
 // 0x642C80
 namespace gamemd {
-int TextRenderer_MeasureBuilding()
+char TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TextRenderer::MeasureBuilding(
@@ -348,15 +348,15 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 
 // 0x727CD0
 namespace gamemd {
-TriggerTypeClass * TextRenderer::Destructor(void * Block, char a2)
+TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TriggerTypeClass *__thiscall TextRenderer::Destructor(void *Block, char a2)
+TriggerTypeClass *__thiscall TextRenderer::Destructor(void *this, char a2)
 {
-  TriggerClass::ProcessEvents((int)Block); /*0x727cd3*/
+  TriggerClass::ProcessEvents((int)this); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    __3_YAXPAX_Z(Block); /*0x727ce0*/
-  return (TriggerTypeClass *)Block; /*0x727cea*/
+    __3_YAXPAX_Z(this); /*0x727ce0*/
+  return (TriggerTypeClass *)this; /*0x727cea*/
 }
 }
 } // namespace gamemd

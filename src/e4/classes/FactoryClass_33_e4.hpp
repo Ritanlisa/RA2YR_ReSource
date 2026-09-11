@@ -10,6 +10,6 @@ struct FactoryClass_33 {
     void ddtor();  // 0x4CA9E0
     int Read(unsigned int * a2);  // 0x4CAA10
     unsigned int Write(int a2);  // 0x4CAA50
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4CAB50
+    VectorClass * QueryInterface(char a2);  // 0x4CAB50
 };
 } // namespace gamemd

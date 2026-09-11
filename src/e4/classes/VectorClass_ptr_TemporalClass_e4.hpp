@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_TemporalClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_TemporalClass___(char a2);  // 0x71B550
     void Destroy();  // 0x71B240
     unsigned int GetItemIndex(int a2);  // 0x71B270
     int Get(int a2);  // 0x71B290

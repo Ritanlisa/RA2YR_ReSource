@@ -1,10 +1,24 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_660AD0_e4.hpp"
+#include "e4/classes/E4Recv_660AE0_e4.hpp"
+#include "e4/classes/E4Recv_660AF0_e4.hpp"
+#include "e4/classes/E4Recv_6616B0_e4.hpp"
+#include "e4/classes/E4Recv_661960_e4.hpp"
+#include "e4/classes/E4Recv_661A60_e4.hpp"
+#include "e4/classes/E4Recv_661B70_e4.hpp"
+#include "e4/classes/E4Recv_661F30_e4.hpp"
+#include "e4/classes/E4Recv_662240_e4.hpp"
+#include "e4/classes/E4Recv_6638E0_e4.hpp"
+#include "e4/classes/E4Recv_663960_e4.hpp"
+#include "e4/classes/E4Recv_663CD0_e4.hpp"
+#include "e4/classes/E4Recv_663DB0_e4.hpp"
+#include "e4/classes/E4Recv_664750_e4.hpp"
 
 // 0x660AD0
 namespace gamemd {
-int sub_660AD0()
+int E4Recv_660AD0::sub_660AD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660AD0(_DWORD *this)
@@ -16,7 +30,7 @@ int __thiscall sub_660AD0(_DWORD *this)
 
 // 0x660AE0
 namespace gamemd {
-int sub_660AE0()
+int E4Recv_660AE0::sub_660AE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660AE0(_DWORD *this)
@@ -28,7 +42,7 @@ int __thiscall sub_660AE0(_DWORD *this)
 
 // 0x660AF0
 namespace gamemd {
-int sub_660AF0()
+int E4Recv_660AF0::sub_660AF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_660AF0(_DWORD *this)
@@ -218,7 +232,7 @@ LABEL_6:
 
 // 0x6616B0
 namespace gamemd {
-unsigned int * sub_6616B0()
+unsigned int * E4Recv_6616B0::sub_6616B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6616B0(_DWORD *this)
@@ -251,7 +265,7 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
 
 // 0x661960
 namespace gamemd {
-int sub_661960(short a2)
+int E4Recv_661960::sub_661960(short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_661960(char *this, __int16 a2)
@@ -271,11 +285,11 @@ int __thiscall sub_661960(char *this, __int16 a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661995*/
     {
-      v3 = this + (unsigned __int8)(this->vtable3 / 8) + 20; /*0x661991*/
-      *v3 ^= 1 << (this->vtable3 & 7); /*0x66199e*/
+      v3 = this + (unsigned __int8)(this->M12 / 8) + 20; /*0x661991*/
+      *v3 ^= 1 << (this->M12 & 7); /*0x66199e*/
     }
-    v4 = this->vtable3 + 1; /*0x6619a4*/
-    this->vtable3 = v4; /*0x6619a6*/
+    v4 = this->M12 + 1; /*0x6619a4*/
+    this->M12 = v4; /*0x6619a6*/
     if ( v4 == 2048 ) /*0x6619ae*/
     {
       v5 = 0; /*0x6619b4*/
@@ -312,7 +326,7 @@ int __thiscall sub_661960(char *this, __int16 a2)
 
 // 0x661A60
 namespace gamemd {
-int sub_661A60(int a2)
+int E4Recv_661A60::sub_661A60(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_661A60(char *this, int a2)
@@ -333,11 +347,11 @@ int __thiscall sub_661A60(char *this, int a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661a95*/
     {
-      v3 = this + (unsigned __int8)(this->vtable3 / 8) + 20; /*0x661a91*/
-      *v3 ^= 1 << (this->vtable3 & 7); /*0x661a9e*/
+      v3 = this + (unsigned __int8)(this->M12 / 8) + 20; /*0x661a91*/
+      *v3 ^= 1 << (this->M12 & 7); /*0x661a9e*/
     }
-    v4 = this->vtable3 + 1; /*0x661aa4*/
-    this->vtable3 = v4; /*0x661aa6*/
+    v4 = this->M12 + 1; /*0x661aa4*/
+    this->M12 = v4; /*0x661aa6*/
     if ( v4 == 2048 ) /*0x661aae*/
     {
       v5 = 0; /*0x661ab4*/
@@ -376,7 +390,7 @@ int __thiscall sub_661A60(char *this, int a2)
 
 // 0x661B70
 namespace gamemd {
-void * sub_661B70()
+void * E4Recv_661B70::sub_661B70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_661B70(char *this)
@@ -594,7 +608,7 @@ int sub_661EA0()
 
 // 0x661F30
 namespace gamemd {
-void sub_661F30()
+void E4Recv_661F30::sub_661F30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_661F30(_DWORD *this)
@@ -608,7 +622,7 @@ void __thiscall sub_661F30(_DWORD *this)
 
 // 0x662240
 namespace gamemd {
-double sub_662240()
+double E4Recv_662240::sub_662240()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_662240(_DWORD *this)
@@ -950,7 +964,7 @@ void __cdecl sub_663850()
 
 // 0x6638E0
 namespace gamemd {
-unsigned int * sub_6638E0()
+unsigned int * E4Recv_6638E0::sub_6638E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6638E0(_DWORD *this)
@@ -971,7 +985,7 @@ _DWORD *__thiscall sub_6638E0(_DWORD *this)
 
 // 0x663960
 namespace gamemd {
-void sub_663960()
+void E4Recv_663960::sub_663960()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_663960(void *this)
@@ -981,38 +995,38 @@ void __thiscall sub_663960(void *this)
   int v4; // eax
   void *v5; // eax
 
-  while ( *((_DWORD *)this + 4) ) /*0x663966*/
+  while ( this->M16 ) /*0x663966*/
   {
     __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663971*/
-    v2 = *((_DWORD *)this + 4); /*0x663976*/
+    v2 = this->M16; /*0x663976*/
     if ( v2 > 0 ) /*0x66397e*/
     {
       v3 = v2 - 1; /*0x663980*/
       v4 = 0; /*0x663983*/
-      for ( *((_DWORD *)this + 4) = v3; /*0x66398a*/
-            v4 < *((_DWORD *)this + 4);
-            *(_DWORD *)(this->Items + 4 * v4 - 4) = *(_DWORD *)(this->Items + 4 * v4) )
+      for ( this->M16 = v3; /*0x66398a*/
+            v4 < this->M16;
+            *(_DWORD *)(this->M4 + 4 * v4 - 4) = *(_DWORD *)(this->M4 + 4 * v4) )
       {
         ++v4; /*0x66398f*/
       }
     }
   }
-  v5 = (void *)this->Items; /*0x6639a3*/
+  v5 = (void *)this->M4; /*0x6639a3*/
   *(_DWORD *)this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
-  if ( v5 && this->IsAllocated ) /*0x6639b0*/
+  if ( v5 && (unsigned char)this->M13 ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(v5); /*0x6639b6*/
-    this->Items = 0; /*0x6639be*/
+    this->M4 = 0; /*0x6639be*/
   }
-  this->IsAllocated = 0; /*0x6639c1*/
-  this->Capacity = 0; /*0x6639c4*/
+  *((_BYTE *)this + 13) = 0; /*0x6639c1*/
+  this->M8 = 0; /*0x6639c4*/
 }
 }
 } // namespace gamemd
 
 // 0x663CD0
 namespace gamemd {
-char sub_663CD0(unsigned char * a2)
+char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_663CD0(int *this, _BYTE *a2)
@@ -1051,7 +1065,7 @@ char __thiscall sub_663CD0(int *this, _BYTE *a2)
 
 // 0x663DB0
 namespace gamemd {
-bool LaunchMultiplayerHost(unsigned signed char * a2)
+bool E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
@@ -1131,7 +1145,7 @@ LABEL_10:
 LABEL_11:
   if ( CreateProcessA(MEMORY[0x8399EC], CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
   {
-    this->referenceCount = ProcessInformation.hProcess; /*0x664029*/
+    *(_DWORD *)(this + 28) = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/
@@ -1174,7 +1188,7 @@ LABEL_11:
 
 // 0x664750
 namespace gamemd {
-char sub_664750(char a2)
+char E4Recv_664750::sub_664750(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_664750(unsigned __int8 *this, char a2)

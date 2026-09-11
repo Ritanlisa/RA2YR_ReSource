@@ -10,6 +10,6 @@ struct Map_WorldDominationTour_43 {
     void ddtor();  // 0x76A4F0
     int Read(unsigned int * a2);  // 0x76A520
     unsigned int Write(int a2);  // 0x76A570
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x76A770
+    VectorClass * QueryInterface(char a2);  // 0x76A770
 };
 } // namespace gamemd

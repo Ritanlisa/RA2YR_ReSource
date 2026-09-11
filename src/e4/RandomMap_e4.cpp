@@ -118,25 +118,25 @@ int __thiscall RandomMap::_vt04(int *this, _WORD *a2)
 
 // 0x42FBF0
 namespace gamemd {
-DynamicVector * RandomMap::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * RandomMap::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall RandomMap::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall RandomMap::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x42fbf3*/
-  *Block = &VectorClass<Cell>::`vftable'; /*0x42fbf6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x42fc00*/
+  v3 = (void *)*(this + 1); /*0x42fbf3*/
+  *this = &VectorClass<Cell>::`vftable'; /*0x42fbf6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x42fc00*/
   {
     __3_YAXPAX_Z(v3); /*0x42fc08*/
-    *(Block + 1) = 0; /*0x42fc10*/
+    *(this + 1) = 0; /*0x42fc10*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x42fc1b*/
-  *(Block + 2) = 0; /*0x42fc21*/
+  *((_BYTE *)this + 13) = 0; /*0x42fc1b*/
+  *(this + 2) = 0; /*0x42fc21*/
   if ( (a2 & 1) != 0 ) /*0x42fc28*/
-    __3_YAXPAX_Z(Block); /*0x42fc2b*/
-  return (DynamicVector *)Block; /*0x42fc35*/
+    __3_YAXPAX_Z(this); /*0x42fc2b*/
+  return (DynamicVector *)this; /*0x42fc35*/
 }
 }
 } // namespace gamemd
@@ -1852,7 +1852,7 @@ LABEL_64:
 
 // 0x590FD0
 namespace gamemd {
-int RandomMap_CheckNeighborhoodCompatibility()
+int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RandomMap::CheckNeighborhoodCompatibility(
@@ -4247,7 +4247,7 @@ void RandomMap::PlaceShoreObjects()
 
 // 0x59BBC0
 namespace gamemd {
-int RandomMap_PlaceTerrain()
+int RandomMap::PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RandomMap::PlaceTerrain(
@@ -4910,7 +4910,7 @@ LABEL_33:
 
 // 0x5A08D0
 namespace gamemd {
-int RandomMap_SpreadArea()
+char RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall RandomMap::SpreadArea(
@@ -6323,23 +6323,23 @@ LABEL_19:
 
 // 0x5AC290
 namespace gamemd {
-unsigned int * RandomMap::Constructor_VectorClass_Cell_(unsigned int * Block, char a2)
+unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall RandomMap::Constructor_VectorClass_Cell_(_DWORD *Block, char a2)
+_DWORD *__thiscall RandomMap::Constructor_VectorClass_Cell_(_DWORD *this, char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
   int v4; // eax
   void *v5; // eax
   _DWORD *v7; // [esp+4h] [ebp-4h] BYREF
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*Block; /*0x5ac294*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*this; /*0x5ac294*/
   if ( v3 ) /*0x5ac298*/
   {
     (**v3)(v3, 1); /*0x5ac29e*/
-    *Block = 0; /*0x5ac2a0*/
+    *this = 0; /*0x5ac2a0*/
   }
-  v7 = Block; /*0x5ac2b6*/
+  v7 = this; /*0x5ac2b6*/
   v4 = (*(int (__thiscall **)(int *, _DWORD **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v7); /*0x5ac2ba*/
   if ( v4 != -1 && v4 < g_RandomMap_TileData && v4 < --g_RandomMap_TileData ) /*0x5ac2d5*/
   {
@@ -6350,18 +6350,18 @@ _DWORD *__thiscall RandomMap::Constructor_VectorClass_Cell_(_DWORD *Block, char 
     }
     while ( v4 < g_RandomMap_TileData ); /*0x5ac2ed*/
   }
-  v5 = (void *)*(Block + 11); /*0x5ac2ef*/
-  *(Block + 10) = &VectorClass<Cell>::`vftable'; /*0x5ac2f2*/
-  if ( v5 && *((_BYTE *)Block + 53) ) /*0x5ac2fd*/
+  v5 = (void *)*(this + 11); /*0x5ac2ef*/
+  *(this + 10) = &VectorClass<Cell>::`vftable'; /*0x5ac2f2*/
+  if ( v5 && *((_BYTE *)this + 53) ) /*0x5ac2fd*/
   {
     __3_YAXPAX_Z(v5); /*0x5ac305*/
-    *(Block + 11) = 0; /*0x5ac30d*/
+    *(this + 11) = 0; /*0x5ac30d*/
   }
-  *((_BYTE *)Block + 53) = 0; /*0x5ac318*/
-  *(Block + 12) = 0; /*0x5ac31e*/
+  *((_BYTE *)this + 53) = 0; /*0x5ac318*/
+  *(this + 12) = 0; /*0x5ac31e*/
   if ( (a2 & 1) != 0 ) /*0x5ac325*/
-    __3_YAXPAX_Z(Block); /*0x5ac328*/
-  return Block; /*0x5ac332*/
+    __3_YAXPAX_Z(this); /*0x5ac328*/
+  return this; /*0x5ac332*/
 }
 }
 } // namespace gamemd

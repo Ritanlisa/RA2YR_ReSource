@@ -111,8 +111,7 @@ int __thiscall Stream::WriteIntArray(_DWORD *this, TechnoTypeClass *aP1)
 }
 
 // 0x759260
-namespace gamemd {
-int Stream_InitializeBinkAudio()
+char * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall Stream::InitializeBinkAudio(
@@ -246,4 +245,3 @@ LABEL_14:
   return this; /*0x7594b6*/
 }
 }
-} // namespace gamemd

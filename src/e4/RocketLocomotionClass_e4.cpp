@@ -62,17 +62,17 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
 }
 
 // 0x6635C0
-RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-RocketLocomotionClass *__thiscall RocketLocomotionClass::ProcessMove(_DWORD *Block, char a2)
+RocketLocomotionClass *__thiscall RocketLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  *Block = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
-  *(Block + 1) = &RocketLocomotionClass::`vftable'; /*0x6635c9*/
-  LocomotionClass::Construct(Block); /*0x6635d0*/
+  *this = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
+  *(this + 1) = &RocketLocomotionClass::`vftable'; /*0x6635c9*/
+  LocomotionClass::Construct(this); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
-    __3_YAXPAX_Z(Block); /*0x6635dd*/
-  return (RocketLocomotionClass *)Block; /*0x6635e7*/
+    __3_YAXPAX_Z(this); /*0x6635dd*/
+  return (RocketLocomotionClass *)this; /*0x6635e7*/
 }
 }
 
@@ -349,50 +349,50 @@ int __thiscall RocketLocomotionClass_17_::_vt04(int *this, _DWORD *a2)
 
 // 0x664A70
 namespace gamemd {
-VectorClass * RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
+VectorClass * RocketLocomotionClass_17::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall RocketLocomotionClass_17_::Constructor(_DWORD *Block, char a2)
+VectorClass *__thiscall RocketLocomotionClass_17_::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x664a73*/
-  *Block = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x664a80*/
+  v3 = (void *)*(this + 1); /*0x664a73*/
+  *this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
-    *(Block + 1) = 0; /*0x664a90*/
+    *(this + 1) = 0; /*0x664a90*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x664a9b*/
-  *(Block + 2) = 0; /*0x664aa1*/
+  *((_BYTE *)this + 13) = 0; /*0x664a9b*/
+  *(this + 2) = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
-    __3_YAXPAX_Z(Block); /*0x664aab*/
-  return (VectorClass *)Block; /*0x664ab5*/
+    __3_YAXPAX_Z(this); /*0x664aab*/
+  return (VectorClass *)this; /*0x664ab5*/
 }
 }
 } // namespace gamemd
 
 // 0x664AC0
 namespace gamemd {
-DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * RocketLocomotionClass_17::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall RocketLocomotionClass_17_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall RocketLocomotionClass_17_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x664ac3*/
-  *Block = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664ac6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x664ad0*/
+  v3 = (void *)*(this + 1); /*0x664ac3*/
+  *this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664ac6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x664ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x664ad8*/
-    *(Block + 1) = 0; /*0x664ae0*/
+    *(this + 1) = 0; /*0x664ae0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x664aeb*/
-  *(Block + 2) = 0; /*0x664af1*/
+  *((_BYTE *)this + 13) = 0; /*0x664aeb*/
+  *(this + 2) = 0; /*0x664af1*/
   if ( (a2 & 1) != 0 ) /*0x664af8*/
-    __3_YAXPAX_Z(Block); /*0x664afb*/
-  return (DynamicVector *)Block; /*0x664b05*/
+    __3_YAXPAX_Z(this); /*0x664afb*/
+  return (DynamicVector *)this; /*0x664b05*/
 }
 }
 } // namespace gamemd

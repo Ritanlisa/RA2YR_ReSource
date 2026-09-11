@@ -1,10 +1,27 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_681070_e4.hpp"
+#include "e4/classes/E4Recv_681090_e4.hpp"
+#include "e4/classes/E4Recv_6810C0_e4.hpp"
+#include "e4/classes/E4Recv_681180_e4.hpp"
+#include "e4/classes/E4Recv_6811B0_e4.hpp"
+#include "e4/classes/E4Recv_6811F0_e4.hpp"
+#include "e4/classes/E4Recv_681220_e4.hpp"
+#include "e4/classes/E4Recv_681260_e4.hpp"
+#include "e4/classes/E4Recv_6812A0_e4.hpp"
+#include "e4/classes/E4Recv_689790_e4.hpp"
+#include "e4/classes/E4Recv_689820_e4.hpp"
+#include "e4/classes/E4Recv_689960_e4.hpp"
+#include "e4/classes/E4Recv_689A30_e4.hpp"
+#include "e4/classes/E4Recv_689AC0_e4.hpp"
+#include "e4/classes/E4Recv_68B8A0_e4.hpp"
+#include "e4/classes/E4Recv_68F8A0_e4.hpp"
+#include "e4/classes/E4Recv_68FB10_e4.hpp"
 
 // 0x681070
 namespace gamemd {
-int sub_681070()
+int E4Recv_681070::sub_681070()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_681070(_DWORD *this)
@@ -16,7 +33,7 @@ int __thiscall sub_681070(_DWORD *this)
 
 // 0x681090
 namespace gamemd {
-int ReadPointerFromECX3()
+int E4Recv_681090::ReadPointerFromECX3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadPointerFromECX3(void *this)
@@ -28,7 +45,7 @@ int __thiscall ReadPointerFromECX3(void *this)
 
 // 0x6810C0
 namespace gamemd {
-const char * _raw_name_type_info__QBEPBDXZ()
+const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
@@ -40,7 +57,7 @@ const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
 
 // 0x681180
 namespace gamemd {
-char * sub_681180()
+char * E4Recv_681180::sub_681180()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_681180(char *this)
@@ -52,7 +69,7 @@ char *__thiscall sub_681180(char *this)
 
 // 0x6811B0
 namespace gamemd {
-char * sub_6811B0()
+char * E4Recv_6811B0::sub_6811B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6811B0(char *this)
@@ -64,7 +81,7 @@ char *__thiscall sub_6811B0(char *this)
 
 // 0x6811F0
 namespace gamemd {
-char * sub_6811F0()
+char * E4Recv_6811F0::sub_6811F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6811F0(char *this)
@@ -76,7 +93,7 @@ char *__thiscall sub_6811F0(char *this)
 
 // 0x681220
 namespace gamemd {
-unsigned int * sub_681220(unsigned int * a2)
+unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_681220(_DWORD *this, _DWORD *a2)
@@ -90,7 +107,7 @@ _DWORD *__thiscall sub_681220(_DWORD *this, _DWORD *a2)
 
 // 0x681260
 namespace gamemd {
-unsigned int * sub_681260(unsigned int * a2)
+unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_681260(_DWORD *this, _DWORD *a2)
@@ -104,7 +121,7 @@ _DWORD *__thiscall sub_681260(_DWORD *this, _DWORD *a2)
 
 // 0x6812A0
 namespace gamemd {
-unsigned int * sub_6812A0(unsigned int * a2)
+unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6812A0(_DWORD *this, _DWORD *a2)
@@ -2103,7 +2120,7 @@ LABEL_8:
 
 // 0x689790
 namespace gamemd {
-char sub_689790(const char * a2, unsigned char * a3)
+char E4Recv_689790::sub_689790(const char * a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_689790(const char *this, const char *a2, _BYTE *a3)
@@ -2127,7 +2144,7 @@ char __thiscall sub_689790(const char *this, const char *a2, _BYTE *a3)
 
 // 0x689820
 namespace gamemd {
-int sub_689820(const char * a2)
+int E4Recv_689820::sub_689820(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_689820(const char *this, const char *a2)
@@ -2148,7 +2165,7 @@ int __thiscall sub_689820(const char *this, const char *a2)
 
 // 0x689960
 namespace gamemd {
-char sub_689960(const char * a2, char a3)
+char E4Recv_689960::sub_689960(const char * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_689960(const char *this, const char *a2, char a3)
@@ -2181,7 +2198,7 @@ char __thiscall sub_689960(const char *this, const char *a2, char a3)
 
 // 0x689A30
 namespace gamemd {
-char sub_689A30(const char * a2, unsigned char * a3)
+char E4Recv_689A30::sub_689A30(const char * a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_689A30(const char *this, const char *a2, _BYTE *a3)
@@ -2205,7 +2222,7 @@ char __thiscall sub_689A30(const char *this, const char *a2, _BYTE *a3)
 
 // 0x689AC0
 namespace gamemd {
-int sub_689AC0(const char * a2)
+int E4Recv_689AC0::sub_689AC0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_689AC0(const char *this, const char *a2)
@@ -2226,7 +2243,7 @@ int __thiscall sub_689AC0(const char *this, const char *a2)
 
 // 0x68B8A0
 namespace gamemd {
-long long sub_68B8A0()
+long long E4Recv_68B8A0::sub_68B8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_68B8A0(void *this)
@@ -2521,7 +2538,7 @@ int sub_68CD00()
 
 // 0x68F8A0
 namespace gamemd {
-int sub_68F8A0()
+int E4Recv_68F8A0::sub_68F8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_68F8A0(int this)
@@ -2548,8 +2565,8 @@ int __thiscall sub_68F8A0(int this)
   v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    v5 = this->vtable3; /*0x68f8f8*/
-    v6 = this->vtable1 + 214; /*0x68f8fd*/
+    v5 = *(_DWORD *)(this + 12); /*0x68f8f8*/
+    v6 = *(_DWORD *)(this + 4) + 214; /*0x68f8fd*/
     v4[1] = 590 - 12 * (v3 - 1) + *(_DWORD *)this; /*0x68f902*/
     v4[2] = v6; /*0x68f908*/
     v4[3] = Timer::GetTicks(); /*0x68f910*/
@@ -2565,16 +2582,16 @@ int __thiscall sub_68F8A0(int this)
   {
     v4 = 0; /*0x68f934*/
   }
-  v7 = this->objectTypeFlags; /*0x68f936*/
+  v7 = *(_DWORD *)(this + 36); /*0x68f936*/
   v8 = (int *)(this + 28); /*0x68f93c*/
-  if ( this->fallRate < v7 /*0x68f95e*/
-    || (*(_BYTE *)(this + 41) || !v7)
-    && (v9 = this->nextObject, v9 > 0)
+  if ( *(_DWORD *)(this + 44) < v7 /*0x68f95e*/
+    || ((unsigned char)this->M41 || !v7)
+    && (v9 = this->M48, v9 > 0)
     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*v8 + 8))(this + 28, v7 + v9, 0) )
   {
-    v10 = this->fallRate; /*0x68f965*/
-    v11 = this->NeedsSaveOrLink; /*0x68f968*/
-    this->fallRate = v10 + 1; /*0x68f96e*/
+    v10 = *(_DWORD *)(this + 44); /*0x68f965*/
+    v11 = *(_DWORD *)(this + 32); /*0x68f968*/
+    *(_DWORD *)(this + 44) = v10 + 1; /*0x68f96e*/
     *(_DWORD *)(v11 + 4 * v10) = v4; /*0x68f971*/
   }
   v12 = *v8; /*0x68f974*/
@@ -2594,7 +2611,7 @@ int __thiscall sub_68F8A0(int this)
 
 // 0x68FB10
 namespace gamemd {
-int sub_68FB10()
+unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_68FB10(

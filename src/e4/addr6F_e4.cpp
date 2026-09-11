@@ -1,10 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6F03F0_e4.hpp"
 
 // 0x6F03F0
 namespace gamemd {
-char sub_6F03F0()
+char E4Recv_6F03F0::sub_6F03F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6F03F0(int **this)

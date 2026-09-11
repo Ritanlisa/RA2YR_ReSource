@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_GlobalPacketType {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_MultiMission___(char a2);  // 0x69D5E0
+    DynamicVector * Constructor_VectorClass_GlobalPacketType___(char a2);  // 0x69D680
     void Destroy();  // 0x69C5A0
     unsigned int GetItemIndex(int a2);  // 0x69C5D0
     void Destroy_0();  // 0x69C600

@@ -3,17 +3,17 @@
 #include "e4/e4_globals.hpp"
 
 // 0x52B9B0
-HWND BINK::Background_Setup(HWND hDlg)
+HWND BINK::Background_Setup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall BINK::Background_Setup(HWND hDlg)
+HWND __thiscall BINK::Background_Setup(HWND this)
 {
   HWND result; // eax
   HWND v2; // esi
   int v3; // ecx
   int v4; // eax
 
-  result = GetDlgItem(hDlg, 1818); /*0x52b9b8*/
+  result = GetDlgItem(this, 1818); /*0x52b9b8*/
   v2 = result; /*0x52b9be*/
   if ( result ) /*0x52b9c2*/
   {

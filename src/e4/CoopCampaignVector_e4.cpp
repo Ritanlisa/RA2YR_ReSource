@@ -16,25 +16,25 @@ unsigned int __thiscall CoopCampaignVector::_vt05(int this, int a2)
 }
 
 // 0x5C5940
-VectorClass * CoopCampaignVector::QueryInterface(unsigned int * Block, char a2)
+VectorClass * CoopCampaignVector::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CoopCampaignVector::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall CoopCampaignVector::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5c5943*/
-  *Block = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5c5950*/
+  v3 = (void *)*(this + 1); /*0x5c5943*/
+  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c5950*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5958*/
-    *(Block + 1) = 0; /*0x5c5960*/
+    *(this + 1) = 0; /*0x5c5960*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5c596b*/
-  *(Block + 2) = 0; /*0x5c5971*/
+  *((_BYTE *)this + 13) = 0; /*0x5c596b*/
+  *(this + 2) = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
-    __3_YAXPAX_Z(Block); /*0x5c597b*/
-  return (VectorClass *)Block; /*0x5c5985*/
+    __3_YAXPAX_Z(this); /*0x5c597b*/
+  return (VectorClass *)this; /*0x5c5985*/
 }
 }
 

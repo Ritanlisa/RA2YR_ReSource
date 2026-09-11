@@ -786,20 +786,20 @@ int __thiscall Object::_vt34(_DWORD *this)
 
 // 0x5FDF70
 namespace gamemd {
-OverlayClass * Object::DrawObject(void ** Block, char a2)
+OverlayClass * Object::DrawObject(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayClass *__thiscall Object::DrawObject(void **Block, char a2)
+OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &OverlayClass::`vftable'; /*0x5fdf76*/
-  *(Block + 1) = &OverlayClass::`vftable'; /*0x5fdf7c*/
-  *(Block + 2) = &OverlayClass::`vftable'; /*0x5fdf83*/
-  *(Block + 3) = &OverlayClass::`vftable'; /*0x5fdf8a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fdf91*/
-  v5 = Block; /*0x5fdfa6*/
+  *this = &OverlayClass::`vftable'; /*0x5fdf76*/
+  *(this + 1) = &OverlayClass::`vftable'; /*0x5fdf7c*/
+  *(this + 2) = &OverlayClass::`vftable'; /*0x5fdf83*/
+  *(this + 3) = &OverlayClass::`vftable'; /*0x5fdf8a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fdf91*/
+  v5 = this; /*0x5fdfa6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EC50] + 16))(&MEMORY[0xA8EC50], &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < MEMORY[0xA8EC60] && v3 < --MEMORY[0xA8EC60] ) /*0x5fdfc5*/
   {
@@ -811,12 +811,12 @@ OverlayClass *__thiscall Object::DrawObject(void **Block, char a2)
     while ( v3 < MEMORY[0xA8EC60] ); /*0x5fdfdd*/
   }
   if ( MEMORY[0xA8E9A0] ) /*0x5fdfe6*/
-    ObjectClass::Undeploy((#374 *)Block); /*0x5fdfea*/
-  *(Block + 43) = 0; /*0x5fdff1*/
-  ObjectClass::Dtor(Block); /*0x5fdffb*/
+    ObjectClass::Undeploy((#374 *)this); /*0x5fdfea*/
+  *(this + 43) = 0; /*0x5fdff1*/
+  ObjectClass::Dtor(this); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
-    __3_YAXPAX_Z(Block); /*0x5fe008*/
-  return (OverlayClass *)Block; /*0x5fe012*/
+    __3_YAXPAX_Z(this); /*0x5fe008*/
+  return (OverlayClass *)this; /*0x5fe012*/
 }
 }
 } // namespace gamemd
@@ -1126,15 +1126,15 @@ char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 
 // 0x7AD330
 namespace gamemd {
-SessionClass * Object::DtorWithDelete(void ** Block, char a2)
+SessionClass * Object::DtorWithDelete(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SessionClass *__thiscall Object::DtorWithDelete(void **Block, char a2)
+SessionClass *__thiscall Object::DtorWithDelete(void **this, char a2)
 {
-  DeleteAndZero(Block); /*0x7ad333*/
+  DeleteAndZero(this); /*0x7ad333*/
   if ( (a2 & 1) != 0 ) /*0x7ad33d*/
-    __3_YAXPAX_Z(Block); /*0x7ad340*/
-  return (SessionClass *)Block; /*0x7ad34a*/
+    __3_YAXPAX_Z(this); /*0x7ad340*/
+  return (SessionClass *)this; /*0x7ad34a*/
 }
 }
 } // namespace gamemd

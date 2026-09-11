@@ -1017,15 +1017,15 @@ int __stdcall SlaveManagerClass::SaveManager(TechnoTypeClass *aP0, int *a1, int 
 // 0x6B1390
 namespace ra2 {
 namespace game {
-SlaveManagerClass * SlaveManagerClass::ProcessOrders(void * Block, char a2)
+SlaveManagerClass * SlaveManagerClass::ProcessOrders(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SlaveManagerClass *__thiscall SlaveManagerClass::ProcessOrders(void *Block, char a2)
+SlaveManagerClass *__thiscall SlaveManagerClass::ProcessOrders(void *this, char a2)
 {
-  SlaveManagerClass::Constructor_SlaveManagerClass((int)Block); /*0x6b1393*/
+  SlaveManagerClass::Constructor_SlaveManagerClass((int)this); /*0x6b1393*/
   if ( (a2 & 1) != 0 ) /*0x6b139d*/
-    __3_YAXPAX_Z(Block); /*0x6b13a0*/
-  return (SlaveManagerClass *)Block; /*0x6b13aa*/
+    __3_YAXPAX_Z(this); /*0x6b13a0*/
+  return (SlaveManagerClass *)this; /*0x6b13aa*/
 }
 }
 } // namespace game
@@ -1208,25 +1208,25 @@ int __thiscall SlaveManagerClass_25_::_vt04(int *this, _DWORD *a2)
 
 // 0x6B1980
 namespace gamemd {
-DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * SlaveManagerClass_25::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall SlaveManagerClass_25_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall SlaveManagerClass_25_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6b1983*/
-  *Block = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b1986*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b1990*/
+  v3 = (void *)*(this + 1); /*0x6b1983*/
+  *this = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b1986*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x6b1990*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1998*/
-    *(Block + 1) = 0; /*0x6b19a0*/
+    *(this + 1) = 0; /*0x6b19a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x6b19ab*/
-  *(Block + 2) = 0; /*0x6b19b1*/
+  *((_BYTE *)this + 13) = 0; /*0x6b19ab*/
+  *(this + 2) = 0; /*0x6b19b1*/
   if ( (a2 & 1) != 0 ) /*0x6b19b8*/
-    __3_YAXPAX_Z(Block); /*0x6b19bb*/
-  return (DynamicVector *)Block; /*0x6b19c5*/
+    __3_YAXPAX_Z(this); /*0x6b19bb*/
+  return (DynamicVector *)this; /*0x6b19c5*/
 }
 }
 } // namespace gamemd

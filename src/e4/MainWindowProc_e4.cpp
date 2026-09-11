@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_724000_e4.hpp"
 
 // 0x5C0980
 namespace gamemd {
@@ -104,7 +105,7 @@ int sub_5C09A0()
 
 // 0x724000
 namespace gamemd {
-char * sub_724000(int a2)
+char * E4Recv_724000::sub_724000(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_724000(char *this, int a2)
@@ -113,11 +114,11 @@ char *__thiscall sub_724000(char *this, int a2)
   int v4; // edx
 
   v3 = this + 564; /*0x72400a*/
-  this->Position = 0; /*0x724010*/
-  *((_DWORD *)this + 2) = a2; /*0x724013*/
+  this->M4 = 0; /*0x724010*/
+  this->M8 = a2; /*0x724013*/
   *(this + 12) = 0; /*0x724016*/
-  *((_DWORD *)this + 138) = 1000; /*0x724019*/
-  *((_DWORD *)this + 140) = 10000; /*0x724023*/
+  this->M552 = 1000; /*0x724019*/
+  this->M560 = 10000; /*0x724023*/
   *((_DWORD *)v3 + 1) = 0; /*0x72402d*/
   *((_DWORD *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
@@ -125,20 +126,20 @@ char *__thiscall sub_724000(char *this, int a2)
   *(_DWORD *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
   *((_DWORD *)v3 + 5) = 10; /*0x724040*/
   *((_DWORD *)v3 + 4) = 0; /*0x724047*/
-  *((_DWORD *)this + 147) = 0; /*0x72404a*/
-  *((_DWORD *)this + 148) = 0; /*0x724050*/
-  *((_DWORD *)this + 149) = 0; /*0x724056*/
+  this->M588 = 0; /*0x72404a*/
+  this->M592 = 0; /*0x724050*/
+  this->M596 = 0; /*0x724056*/
   *(this + 600) = 0; /*0x72405c*/
-  *((_DWORD *)this + 151) = 0; /*0x724062*/
+  this->M604 = 0; /*0x724062*/
   v4 = *(_DWORD *)v3; /*0x724068*/
   *(_DWORD *)this = &ToolTipManager::`vftable'; /*0x72406a*/
   (*(void (__thiscall **)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
-  *((_DWORD *)this + 147) = 0; /*0x724082*/
-  *((_DWORD *)this + 148) = 0; /*0x724088*/
-  *((_DWORD *)this + 149) = 0; /*0x72408e*/
+  this->M588 = 0; /*0x724082*/
+  this->M592 = 0; /*0x724088*/
+  this->M596 = 0; /*0x72408e*/
   *(this + 600) = 0; /*0x724094*/
-  *((_DWORD *)this + 151) = 0; /*0x72409a*/
+  this->M604 = 0; /*0x72409a*/
   return this; /*0x7240a2*/
 }
 }

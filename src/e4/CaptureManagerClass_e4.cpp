@@ -1030,20 +1030,20 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
 // 0x4729C0
 namespace ra2 {
 namespace game {
-CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
+CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *Block, char a2)
+CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *this, char a2)
 {
   int v3; // eax
   void *v4; // eax
   _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &CaptureManagerClass::`vftable'; /*0x4729cd*/
-  *(Block + 1) = &CaptureManagerClass::`vftable'; /*0x4729d3*/
-  *(Block + 2) = &CaptureManagerClass::`vftable'; /*0x4729da*/
-  *(Block + 3) = &CaptureManagerClass::`vftable'; /*0x4729e1*/
-  v6 = Block; /*0x4729ef*/
+  *this = &CaptureManagerClass::`vftable'; /*0x4729cd*/
+  *(this + 1) = &CaptureManagerClass::`vftable'; /*0x4729d3*/
+  *(this + 2) = &CaptureManagerClass::`vftable'; /*0x4729da*/
+  *(this + 3) = &CaptureManagerClass::`vftable'; /*0x4729e1*/
+  v6 = this; /*0x4729ef*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
   {
@@ -1054,19 +1054,19 @@ CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *Block, char a
     }
     while ( v3 < dword_89E100 ); /*0x472a26*/
   }
-  v4 = (void *)*(Block + 10); /*0x472a28*/
-  *(Block + 9) = &VectorClass<ControlNode *>::`vftable'; /*0x472a2b*/
-  if ( v4 && *((_BYTE *)Block + 49) ) /*0x472a36*/
+  v4 = (void *)*(this + 10); /*0x472a28*/
+  *(this + 9) = &VectorClass<ControlNode *>::`vftable'; /*0x472a2b*/
+  if ( v4 && *((_BYTE *)this + 49) ) /*0x472a36*/
   {
     __3_YAXPAX_Z(v4); /*0x472a3e*/
-    *(Block + 10) = 0; /*0x472a46*/
+    *(this + 10) = 0; /*0x472a46*/
   }
-  *((_BYTE *)Block + 49) = 0; /*0x472a4f*/
-  *(Block + 11) = 0; /*0x472a53*/
-  AbstractClass::DTOR(Block); /*0x472a5a*/
+  *((_BYTE *)this + 49) = 0; /*0x472a4f*/
+  *(this + 11) = 0; /*0x472a53*/
+  AbstractClass::DTOR(this); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
-    __3_YAXPAX_Z(Block); /*0x472a67*/
-  return (CaptureManagerClass *)Block; /*0x472a71*/
+    __3_YAXPAX_Z(this); /*0x472a67*/
+  return (CaptureManagerClass *)this; /*0x472a71*/
 }
 }
 } // namespace game
@@ -1328,25 +1328,25 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
 // 0x473000
 namespace ra2 {
 namespace game {
-VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2)
+VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CaptureManagerClass::Constructor_VectorClass_ControlNode___(_DWORD *Block, char a2)
+VectorClass *__thiscall CaptureManagerClass::Constructor_VectorClass_ControlNode___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x473003*/
-  *Block = &VectorClass<ControlNode *>::`vftable'; /*0x473006*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x473010*/
+  v3 = (void *)*(this + 1); /*0x473003*/
+  *this = &VectorClass<ControlNode *>::`vftable'; /*0x473006*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x473010*/
   {
     __3_YAXPAX_Z(v3); /*0x473018*/
-    *(Block + 1) = 0; /*0x473020*/
+    *(this + 1) = 0; /*0x473020*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x47302b*/
-  *(Block + 2) = 0; /*0x473031*/
+  *((_BYTE *)this + 13) = 0; /*0x47302b*/
+  *(this + 2) = 0; /*0x473031*/
   if ( (a2 & 1) != 0 ) /*0x473038*/
-    __3_YAXPAX_Z(Block); /*0x47303b*/
-  return (VectorClass *)Block; /*0x473045*/
+    __3_YAXPAX_Z(this); /*0x47303b*/
+  return (VectorClass *)this; /*0x473045*/
 }
 }
 } // namespace game
@@ -1355,25 +1355,25 @@ VectorClass *__thiscall CaptureManagerClass::Constructor_VectorClass_ControlNode
 // 0x473050
 namespace ra2 {
 namespace game {
-DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * CaptureManagerClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CaptureManagerClass::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall CaptureManagerClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x473053*/
-  *Block = &VectorClass<ControlNode *>::`vftable'; /*0x473056*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x473060*/
+  v3 = (void *)*(this + 1); /*0x473053*/
+  *this = &VectorClass<ControlNode *>::`vftable'; /*0x473056*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x473060*/
   {
     __3_YAXPAX_Z(v3); /*0x473068*/
-    *(Block + 1) = 0; /*0x473070*/
+    *(this + 1) = 0; /*0x473070*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x47307b*/
-  *(Block + 2) = 0; /*0x473081*/
+  *((_BYTE *)this + 13) = 0; /*0x47307b*/
+  *(this + 2) = 0; /*0x473081*/
   if ( (a2 & 1) != 0 ) /*0x473088*/
-    __3_YAXPAX_Z(Block); /*0x47308b*/
-  return (DynamicVector *)Block; /*0x473095*/
+    __3_YAXPAX_Z(this); /*0x47308b*/
+  return (DynamicVector *)this; /*0x473095*/
 }
 }
 } // namespace game

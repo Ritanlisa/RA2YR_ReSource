@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_TiberiumClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_TiberiumClass___(char a2);  // 0x723A40
     void Destroy();  // 0x723730
     unsigned int GetItemIndex(int a2);  // 0x723760
     int Get(int a2);  // 0x723780

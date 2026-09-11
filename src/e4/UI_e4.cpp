@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_642E00_e4.hpp"
+#include "e4/classes/E4Recv_642E40_e4.hpp"
+#include "e4/classes/E4Recv_643670_e4.hpp"
 
 // 0x52B6D0
 namespace gamemd {
@@ -246,7 +249,7 @@ char __stdcall UI_Handle(MouseClass *aP0, int a2)
 
 // 0x642E00
 namespace gamemd {
-unsigned int * UI_Render()
+unsigned int * E4Recv_642E00::UI_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall UI_Render(ProgressScreenClass *this)
@@ -1955,7 +1958,7 @@ int sub_639DA0()
 
 // 0x642E40
 namespace gamemd {
-int UI_Render_642E40()
+int E4Recv_642E40::UI_Render_642E40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall UI_Render_642E40(ProgressScreenClass *this)
@@ -2019,7 +2022,7 @@ int __fastcall sub_642E80(int *a1, _DWORD *a2)
 
 // 0x643670
 namespace gamemd {
-int * UI_Render_643670()
+int * E4Recv_643670::UI_Render_643670()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall UI_Render_643670(ProgressScreenClass *this)

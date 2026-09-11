@@ -32,15 +32,15 @@ _DWORD *__stdcall ObjectTypeClass::Copy(_DWORD *a0, ObjectTypeClass *aP1)
 }
 
 // 0x46C790
-BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
+BulletTypeClass * ObjectTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *Source)
+BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *this)
 {
   int v2; // esi
   _BYTE *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x46c7ac*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x46c7ac*/
     return 0; /*0x46c80f*/
   v2 = 0; /*0x46c7bd*/
   if ( (int)g_BulletTypeInitState <= 0 ) /*0x46c7c1*/
@@ -48,10 +48,10 @@ BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *Source)
 LABEL_6:
     v3 = (_BYTE *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
-      return (BulletTypeClass *)BulletTypeClass::Construct(v3, Source); /*0x46c801*/
+      return (BulletTypeClass *)BulletTypeClass::Construct(v3, this); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)&dword_A83C84->__pad_0[4 * v2] + 36), Source) ) /*0x46c7da*/
+  while ( _strcmpi((const void *)(*(_DWORD *)&dword_A83C84->__pad_0[4 * v2] + 36), this) ) /*0x46c7da*/
   {
     if ( ++v2 >= (int)g_BulletTypeInitState ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
@@ -98,7 +98,7 @@ char __thiscall ObjectTypeClass::ReadBool(char *this, INIClass *Block, INIClass 
 }
 
 // 0x4746E0
-int ObjectTypeClass::ReadPrerequisite(unsigned signed char * a2, unsigned signed char * a3, int a4)
+int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4746E0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
@@ -113,8 +113,7 @@ int __thiscall sub_4746E0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 
 // 0x474740
-namespace gamemd {
-int ObjectTypeClass_ReadSoundList()
+unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 **__thiscall sub_474740(
@@ -140,7 +139,6 @@ unsigned __int8 **__thiscall sub_474740(
   }
 }
 }
-} // namespace gamemd
 
 // 0x4747C0
 char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
@@ -156,8 +154,7 @@ char __thiscall ObjectTypeClass::ReadBool2(char *this, INIClass *Block, INIClass
 }
 
 // 0x474940
-namespace gamemd {
-int ObjectTypeClass_loadTypeMember_5474940()
+int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::loadTypeMember_5474940(
@@ -190,11 +187,9 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
   return dword_81B9B4[2 * v4]; /*0x47498b*/
 }
 }
-} // namespace gamemd
 
 // 0x4749E0
-namespace gamemd {
-int ObjectTypeClass_loadTypeMember_54749E0()
+int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::loadTypeMember_54749E0(
@@ -211,10 +206,9 @@ int __thiscall ObjectTypeClass::loadTypeMember_54749E0(
   return ObjectTypeClass::loadTypeMember_473980(Destination); /*0x474a11*/
 }
 }
-} // namespace gamemd
 
 // 0x474D50
-char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned signed char * a4)
+char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ObjectTypeClass::ReadString(char *this, INIClass *Block, INIClass *aP2, unsigned __int8 *a4)
@@ -227,8 +221,7 @@ char __thiscall ObjectTypeClass::ReadString(char *this, INIClass *Block, INIClas
 }
 
 // 0x474E40
-namespace gamemd {
-int ObjectTypeClass_loadTypeMember_5474E40()
+int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::loadTypeMember_5474E40(
@@ -254,10 +247,9 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474E40(
   return v4; /*0x474e8e*/
 }
 }
-} // namespace gamemd
 
 // 0x474F50
-int ObjectTypeClass::ReadInt(unsigned signed char * a2, unsigned signed char * a3, int a4)
+int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
@@ -281,7 +273,7 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 
 // 0x474FA0
-int ObjectTypeClass::ReadDouble(unsigned signed char * a2, unsigned signed char * a3, int a4)
+int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_474FA0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
@@ -297,7 +289,7 @@ int __thiscall sub_474FA0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 
 // 0x474FF0
-int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned signed char * a2, void * a4)
+int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::ReadDouble2(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, void *a4)
@@ -312,7 +304,7 @@ int __thiscall ObjectTypeClass::ReadDouble2(unsigned __int8 ***this, INIClass *a
 }
 
 // 0x475060
-int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned signed char * a2, void * a4)
+int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::ReadBool3(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, void *a4)
@@ -327,7 +319,7 @@ int __thiscall ObjectTypeClass::ReadBool3(unsigned __int8 ***this, INIClass *aP1
 }
 
 // 0x476240
-char ObjectTypeClass::ReadTypeListINI(unsigned signed char * Block, char * a2, ObjectTypeClass * aP3)
+char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ObjectTypeClass::ReadTypeListINI(char *this, unsigned __int8 *Block, char *a2, ObjectTypeClass *aP3)
@@ -363,8 +355,7 @@ char __thiscall ObjectTypeClass::ReadTypeListINI(char *this, unsigned __int8 *Bl
 }
 
 // 0x476FC0
-namespace gamemd {
-int ObjectTypeClass_loadTypeMember_476FC0()
+int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::loadTypeMember_476FC0(
@@ -383,11 +374,9 @@ int __thiscall ObjectTypeClass::loadTypeMember_476FC0(
     return (int)aP3->__pad_0; /*0x477012*/
 }
 }
-} // namespace gamemd
 
 // 0x477590
-namespace gamemd {
-int ObjectTypeClass_loadTypeMember_5477590()
+int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectTypeClass::loadTypeMember_5477590(
@@ -421,7 +410,6 @@ int __thiscall ObjectTypeClass::loadTypeMember_5477590(
   return (int)result->__pad_0; /*0x4775e9*/
 }
 }
-} // namespace gamemd
 
 // 0x48DFF0
 int ObjectTypeClass::loadTypeMember_48DFF0()
@@ -1452,15 +1440,15 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 }
 
 // 0x5F9AE0
-ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
+ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectTypeClass *__thiscall ObjectTypeClass::Destru_vt08(void *Block, char a2)
+ObjectTypeClass *__thiscall ObjectTypeClass::Destru_vt08(void *this, char a2)
 {
-  ObjectTypeClass::Destruct((int)Block); /*0x5f9ae3*/
+  ObjectTypeClass::Destruct((int)this); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    __3_YAXPAX_Z(Block); /*0x5f9af0*/
-  return (ObjectTypeClass *)Block; /*0x5f9afa*/
+    __3_YAXPAX_Z(this); /*0x5f9af0*/
+  return (ObjectTypeClass *)this; /*0x5f9afa*/
 }
 }
 

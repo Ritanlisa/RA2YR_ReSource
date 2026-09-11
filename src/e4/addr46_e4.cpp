@@ -1,10 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_465D80_e4.hpp"
+#include "e4/classes/E4Recv_46D350_e4.hpp"
+#include "e4/classes/E4Recv_46D490_e4.hpp"
 
 // 0x465D80
 namespace gamemd {
-Iostream_init * __0Iostream_init_QAE_XZ_2()
+Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_2(Iostream_init *this)
@@ -252,7 +255,7 @@ void __cdecl sub_466320()
 
 // 0x46B050
 namespace gamemd {
-int CreateUIObjectCOM()
+LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP2, AbstractClass * aP3, AbstractClass * aP4, int a6, AbstractClass * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LPVOID __fastcall CreateUIObjectCOM(
@@ -850,7 +853,7 @@ int sub_46D310()
 
 // 0x46D350
 namespace gamemd {
-void sub_46D350()
+void E4Recv_46D350::sub_46D350()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_46D350(_DWORD *this)
@@ -875,7 +878,7 @@ __int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
 
 // 0x46D490
 namespace gamemd {
-char sub_46D490()
+char E4Recv_46D490::sub_46D490()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_46D490(void *this)

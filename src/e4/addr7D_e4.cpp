@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_7D2E6E_e4.hpp"
+#include "e4/classes/E4Recv_7D2E7F_e4.hpp"
+#include "e4/classes/E4Recv_7D2E9B_e4.hpp"
+#include "e4/classes/E4Recv_7D2ED8_e4.hpp"
+#include "e4/classes/E4Recv_7D2F22_e4.hpp"
+#include "e4/classes/E4Recv_7D2F57_e4.hpp"
+#include "e4/classes/E4Recv_7DCDF2_e4.hpp"
+#include "e4/classes/_com_error_e4.hpp"
 
 // 0x7D038F
 namespace gamemd {
@@ -926,7 +934,7 @@ size_t __cdecl _msize(CCINIClass *aP0)
 
 // 0x7D10C2
 namespace gamemd {
-int ___crtLCMapStringA()
+int __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl __crtLCMapStringA(
@@ -1287,7 +1295,7 @@ int *__cdecl _dosmaperr(unsigned int a1)
 
 // 0x7D16A0
 namespace gamemd {
-unsigned signed char * _mbsdec(const unsigned signed char * Start, const unsigned signed char * Pos)
+unsigned char * _mbsdec(const unsigned char * Start, const unsigned char * Pos)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__cdecl _mbsdec(const unsigned __int8 *Start, const unsigned __int8 *Pos)
@@ -3081,7 +3089,7 @@ LABEL_13:
 
 // 0x7D2E6E
 namespace gamemd {
-unsigned int * sub_7D2E6E()
+unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7D2E6E(_DWORD *this)
@@ -3096,22 +3104,22 @@ _DWORD *__thiscall sub_7D2E6E(_DWORD *this)
 
 // 0x7D2E7F
 namespace gamemd {
-ObjectClass * sub_7D2E7F(void * Block, char a2)
+ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_7D2E7F(void *Block, char a2)
+ObjectClass *__thiscall sub_7D2E7F(void *this, char a2)
 {
-  Exception::Destructor(Block); /*0x7d2e82*/
+  Exception::Destructor(this); /*0x7d2e82*/
   if ( (a2 & 1) != 0 ) /*0x7d2e8c*/
-    __3_YAXPAX_Z(Block); /*0x7d2e8f*/
-  return (ObjectClass *)Block; /*0x7d2e97*/
+    __3_YAXPAX_Z(this); /*0x7d2e8f*/
+  return (ObjectClass *)this; /*0x7d2e97*/
 }
 }
 } // namespace gamemd
 
 // 0x7D2E9B
 namespace gamemd {
-exception * __0exception_QAE_ABQBD_Z(const char ** a2)
+exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 exception *__thiscall __0exception_QAE_ABQBD_Z(exception *this, const char **a2)
@@ -3122,10 +3130,10 @@ exception *__thiscall __0exception_QAE_ABQBD_Z(exception *this, const char **a2)
   *(_DWORD *)this = &exception::`vftable'; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
   v4 = (char *)__2_YAPAXI_Z(v3 + 1); /*0x7d2eb2*/
-  *((_DWORD *)this + 1) = v4; /*0x7d2eb8*/
+  this->M4 = v4; /*0x7d2eb8*/
   if ( v4 ) /*0x7d2ebe*/
     strcpy(v4, *a2); /*0x7d2ec3*/
-  *((_DWORD *)this + 2) = 1; /*0x7d2eca*/
+  this->M8 = 1; /*0x7d2eca*/
   return this; /*0x7d2ed3*/
 }
 }
@@ -3133,7 +3141,7 @@ exception *__thiscall __0exception_QAE_ABQBD_Z(exception *this, const char **a2)
 
 // 0x7D2ED8
 namespace gamemd {
-exception * __0exception_QAE_ABV0__Z(const struct exception * a2)
+exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 exception *__thiscall __0exception_QAE_ABV0__Z(exception *this, const struct exception *a2)
@@ -3144,18 +3152,18 @@ exception *__thiscall __0exception_QAE_ABV0__Z(exception *this, const struct exc
 
   *(_DWORD *)this = &exception::`vftable'; /*0x7d2ee0*/
   v3 = *((_DWORD *)a2 + 2); /*0x7d2ee6*/
-  *((_DWORD *)this + 2) = v3; /*0x7d2eeb*/
+  this->M8 = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/
   {
     v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
     v5 = (char *)__2_YAPAXI_Z(v4 + 1); /*0x7d2efa*/
-    *((_DWORD *)this + 1) = v5; /*0x7d2f00*/
+    this->M4 = v5; /*0x7d2f00*/
     if ( v5 ) /*0x7d2f06*/
       strcpy(v5, *((const char **)a2 + 1)); /*0x7d2f0c*/
   }
   else
   {
-    *((_DWORD *)this + 1) = *((_DWORD *)a2 + 1); /*0x7d2f18*/
+    this->M4 = *((_DWORD *)a2 + 1); /*0x7d2f18*/
   }
   return this; /*0x7d2f1d*/
 }
@@ -3164,7 +3172,7 @@ exception *__thiscall __0exception_QAE_ABV0__Z(exception *this, const struct exc
 
 // 0x7D2F22
 namespace gamemd {
-ObjectClass * __4exception_QAEAAV0_ABV0__Z(struct exception * a2)
+ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall __4exception_QAEAAV0_ABV0__Z(exception *this, struct exception *a2)
@@ -3181,14 +3189,14 @@ ObjectClass *__thiscall __4exception_QAEAAV0_ABV0__Z(exception *this, struct exc
 
 // 0x7D2F57
 namespace gamemd {
-const char * _what_exception__UBEPBDXZ()
+const char * E4Recv_7D2F57::_what_exception__UBEPBDXZ()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 const char *__thiscall _what_exception__UBEPBDXZ(exception *this)
 {
   const char *result; // eax
 
-  result = (const char *)this->vtable1; /*0x7d2f57*/
+  result = (const char *)this->M4; /*0x7d2f57*/
   if ( !result ) /*0x7d2f5c*/
     return "Unknown exception"; /*0x7d2f5e*/
   return result; /*0x7d2f63*/
@@ -3906,7 +3914,7 @@ int __initmbctable()
 
 // 0x7D3886
 namespace gamemd {
-unsigned signed char * _mbsnbcpy(IUnknown * aP0, const unsigned signed char * Source, size_t Count)
+unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t Count)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__cdecl _mbsnbcpy(IUnknown *aP0, const unsigned __int8 *Source, size_t Count)
@@ -4894,7 +4902,7 @@ wint_t __cdecl _whiteout_0(_DWORD *a1, FILE *File)
 
 // 0x7D45DF
 namespace gamemd {
-int _mbsnbicoll(const unsigned signed char * Str1, const unsigned signed char * Str2, size_t MaxCount)
+int _mbsnbicoll(const unsigned char * Str1, const unsigned char * Str2, size_t MaxCount)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl _mbsnbicoll(const unsigned __int8 *Str1, const unsigned __int8 *Str2, size_t MaxCount)
@@ -6051,7 +6059,7 @@ DWORD __stdcall GetCurrentProcessId()
 
 // 0x7D571F
 namespace gamemd {
-unsigned signed char * _mbsrchr(const unsigned signed char * String, unsigned int C)
+unsigned char * _mbsrchr(const unsigned char * String, unsigned int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__cdecl _mbsrchr(const unsigned __int8 *String, unsigned int C)
@@ -6437,7 +6445,7 @@ int _setargv()
 
 // 0x7D5C12
 namespace gamemd {
-unsigned int * parse_cmdline(unsigned signed char * a1, unsigned signed char ** a2, unsigned signed char * a3, unsigned int * a4, unsigned int * a5)
+unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned char * a3, unsigned int * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__cdecl parse_cmdline(unsigned __int8 *a1, unsigned __int8 **a2, unsigned __int8 *a3, _DWORD *a4, _DWORD *a5)
@@ -10462,7 +10470,7 @@ void __cdecl _unlock_fhandle(int a1)
 
 // 0x7D9729
 namespace gamemd {
-int ___crtGetStringTypeA()
+BOOL __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID Locale, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __cdecl __crtGetStringTypeA(
@@ -10979,7 +10987,7 @@ int __cdecl mbtowc(wchar_t *DstCh, const char *SrcCh, size_t SrcSizeInBytes)
 
 // 0x7D9DDC
 namespace gamemd {
-unsigned int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned signed char * lpMultiByteStr, unsigned int a3)
+unsigned int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __cdecl _mbtowc_lk(LPWSTR lpWideCharStr, unsigned __int8 *lpMultiByteStr, unsigned int a3)
@@ -11259,7 +11267,7 @@ LABEL_6:
 
 // 0x7DA0F1
 namespace gamemd {
-int ___crtGetStringTypeW()
+BOOL __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __cdecl __crtGetStringTypeW(
@@ -11356,7 +11364,7 @@ BOOL __cdecl __crtGetStringTypeW(
 
 // 0x7DA2B6
 namespace gamemd {
-int ___crtLCMapStringW()
+int __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl __crtLCMapStringW(
@@ -11660,7 +11668,7 @@ __int16 __cdecl _ungetwc_lk(wchar_t MbCh, _DWORD *a2)
 
 // 0x7DA725
 namespace gamemd {
-int ___crtCompareStringA()
+int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl __crtCompareStringA(
@@ -11962,7 +11970,7 @@ LABEL_30:
 
 // 0x7DAB54
 namespace gamemd {
-int findenv(unsigned signed char * Str1, size_t MaxCount)
+int findenv(unsigned char * Str1, size_t MaxCount)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl findenv(unsigned __int8 *Str1, size_t MaxCount)
@@ -12234,7 +12242,7 @@ int __cdecl _ismbbkana(unsigned int C)
 
 // 0x7DAE6E
 namespace gamemd {
-int isctype_CRT(unsigned signed char a1, int a2, unsigned signed char a3)
+int isctype_CRT(unsigned char a1, int a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isctype_CRT(unsigned __int8 a1, int a2, unsigned __int8 a3)
@@ -12850,7 +12858,7 @@ double __cdecl _except2(DWORD dwExceptionCode, int a2, double a3, double a4, dou
 
 // 0x7DB68B
 namespace gamemd {
-int __raise_exc()
+int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl _raise_exc(
@@ -13711,7 +13719,7 @@ int __cdecl _filwbuf(unsigned __int16 **a1)
 
 // 0x7DC378
 namespace gamemd {
-unsigned signed char * _mbschr(const unsigned signed char * Str, unsigned int C)
+unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 *__cdecl _mbschr(const unsigned __int8 *Str, unsigned int C)
@@ -13924,7 +13932,7 @@ int __cdecl sub_7DC78F(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo *per
 
 // 0x7DC7CB
 namespace gamemd {
-int HandleErrorCOM()
+int HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperrinfo, LPCWSTR lpString, int a7, void ** a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl HandleErrorCOM(
@@ -14320,22 +14328,22 @@ void __stdcall __noreturn COM_ThrowError(int a1, int a2, int a3)
 
 // 0x7DCDF2
 namespace gamemd {
-ObjectClass * sub_7DCDF2(unsigned int * Block, char a2)
+ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_7DCDF2(_DWORD *Block, char a2)
+ObjectClass *__thiscall sub_7DCDF2(_DWORD *this, char a2)
 {
-  sub_7DCE3B(Block); /*0x7dcdf5*/
+  sub_7DCE3B(this); /*0x7dcdf5*/
   if ( (a2 & 1) != 0 ) /*0x7dcdff*/
-    __3_YAXPAX_Z(Block); /*0x7dce02*/
-  return (ObjectClass *)Block; /*0x7dce0a*/
+    __3_YAXPAX_Z(this); /*0x7dce02*/
+  return (ObjectClass *)this; /*0x7dce0a*/
 }
 }
 } // namespace gamemd
 
 // 0x7DCE0E
 namespace gamemd {
-unsigned int * sub_7DCE0E(int a2)
+unsigned int * _com_error::sub_7DCE0E(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
@@ -14356,7 +14364,7 @@ _DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
 
 // 0x7DCE3B
 namespace gamemd {
-HLOCAL sub_7DCE3B()
+HLOCAL _com_error::sub_7DCE3B()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HLOCAL __thiscall sub_7DCE3B(_com_error *this)

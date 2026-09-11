@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_SlaveManagerClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_SlaveManagerClass___(char a2);  // 0x6B1A20
     void Destroy();  // 0x6B1410
     unsigned int GetItemIndex(int a2);  // 0x6B1440
     int Get(int a2);  // 0x6B1460

@@ -1,6 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_7490C0_e4.hpp"
+#include "e4/classes/E4Recv_74BBA0_e4.hpp"
+#include "e4/classes/E4Recv_74BBF0_e4.hpp"
+#include "e4/classes/E4Recv_74BCA0_e4.hpp"
+#include "e4/classes/E4Recv_74BDC0_e4.hpp"
+#include "e4/classes/E4Recv_74BF40_e4.hpp"
+#include "e4/classes/E4Recv_74F63A_e4.hpp"
+#include "e4/classes/E4Recv_74F730_e4.hpp"
+#include "e4/classes/E4Recv_74FAE0_e4.hpp"
 #include "e4/classes/__e4.hpp"
 
 // 0x743270
@@ -750,7 +759,7 @@ int __fastcall Array_Sum(int *a1)
 
 // 0x7490C0
 namespace gamemd {
-Iostream_init * __0Iostream_init_QAE_XZ_7()
+Iostream_init * E4Recv_7490C0::__0Iostream_init_QAE_XZ_7()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_7(Iostream_init *this)
@@ -1167,7 +1176,7 @@ LABEL_6:
 
 // 0x74BBA0
 namespace gamemd {
-char * sub_74BBA0(int a2, int a3)
+char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_74BBA0(char *this, int a2, int a3)
@@ -1177,7 +1186,7 @@ char *__thiscall sub_74BBA0(char *this, int a2, int a3)
   *(_DWORD *)this = a2; /*0x74bbae*/
   v4 = this + 12; /*0x74bbb0*/
   *(this + 4) = 0; /*0x74bbb6*/
-  this->vtable2 = -1; /*0x74bbb9*/
+  this->M8 = -1; /*0x74bbb9*/
   *((_DWORD *)v4 + 1) = 0; /*0x74bbc0*/
   *((_DWORD *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
@@ -1191,7 +1200,7 @@ char *__thiscall sub_74BBA0(char *this, int a2, int a3)
 
 // 0x74BBF0
 namespace gamemd {
-unsigned int * sub_74BBF0(int a2)
+unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_74BBF0(_DWORD *this, int a2)
@@ -1247,7 +1256,7 @@ LABEL_8:
 
 // 0x74BCA0
 namespace gamemd {
-unsigned int * sub_74BCA0(int a2)
+unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_74BCA0(_DWORD *this, int a2)
@@ -1302,7 +1311,7 @@ LABEL_10:
 
 // 0x74BDC0
 namespace gamemd {
-int sub_74BDC0(unsigned int a2)
+int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_74BDC0(unsigned int *this, unsigned int a2)
@@ -1373,7 +1382,7 @@ int __thiscall sub_74BDC0(unsigned int *this, unsigned int a2)
 
 // 0x74BF40
 namespace gamemd {
-void sub_74BF40(unsigned int a2)
+void E4Recv_74BF40::sub_74BF40(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_74BF40(unsigned int *this, unsigned int a2)
@@ -1943,7 +1952,7 @@ unsigned int __thiscall _::_vt05(int this, int a2)
 
 // 0x74F63A
 namespace gamemd {
-int __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0()
+void E4Recv_74F63A::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(
@@ -1956,45 +1965,45 @@ void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(
 
 // 0x74F650
 namespace gamemd {
-VectorClass * _::QueryInterface(unsigned int * Block, char a2)
+VectorClass * _::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall _::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall _::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f656*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x74f660*/
+  v3 = (void *)*(this + 1); /*0x74f653*/
+  *this = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f656*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x74f660*/
   {
     __3_YAXPAX_Z(v3); /*0x74f668*/
-    *(Block + 1) = 0; /*0x74f670*/
+    *(this + 1) = 0; /*0x74f670*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x74f67b*/
-  *(Block + 2) = 0; /*0x74f681*/
+  *((_BYTE *)this + 13) = 0; /*0x74f67b*/
+  *(this + 2) = 0; /*0x74f681*/
   if ( (a2 & 1) != 0 ) /*0x74f688*/
-    __3_YAXPAX_Z(Block); /*0x74f68b*/
-  return (VectorClass *)Block; /*0x74f695*/
+    __3_YAXPAX_Z(this); /*0x74f68b*/
+  return (VectorClass *)this; /*0x74f695*/
 }
 }
 } // namespace gamemd
 
 // 0x74F730
 namespace gamemd {
-unsigned int * sub_74F730()
+unsigned int * E4Recv_74F730::sub_74F730()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_74F730(VersionClass *this)
 {
   int v2; // edx
 
-  v2 = this->ambientSoundController.AudioController_field_08; /*0x74f734*/
+  v2 = this->M68; /*0x74f734*/
   *(_DWORD *)&this->__pad_0[4] = 0; /*0x74f737*/
   *(_WORD *)&this->__pad_0[8] = 0; /*0x74f73d*/
   *(_WORD *)&this->__pad_0[10] = 0; /*0x74f741*/
   this->field_3C = 0; /*0x74f745*/
-  this->ambientSoundController.AudioController_field_04 = 0; /*0x74f748*/
-  this->ambientSoundController.AudioController_field_08 = v2 & 0xFFFFFFF0; /*0x74f74b*/
+  this->M64 = 0; /*0x74f748*/
+  this->M68 = v2 & 0xFFFFFFF0; /*0x74f74b*/
   *(_DWORD *)this->__pad_0 = &VersionClass::`vftable'; /*0x74f74e*/
   this->__pad_0[42] = 0; /*0x74f754*/
   this->__pad_0[12] = 0; /*0x74f757*/
@@ -2005,7 +2014,7 @@ _DWORD *__thiscall sub_74F730(VersionClass *this)
 
 // 0x74FAE0
 namespace gamemd {
-char * sub_74FAE0()
+char * E4Recv_74FAE0::sub_74FAE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_74FAE0(int this)
@@ -2018,7 +2027,7 @@ char *__thiscall sub_74FAE0(int this)
   char *v7; // esi
   _BYTE v9[36]; // [esp+10h] [ebp-24h] BYREF
 
-  if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74faef*/
+  if ( ((unsigned char)this->M68 & 8) == 0 ) /*0x74faef*/
   {
     RawFileClass::Construct(MEMORY[0x84635C]); /*0x74fafa*/
     if ( (unsigned __int8)FileClass::Open(0) ) /*0x74fb04*/
@@ -2036,11 +2045,11 @@ char *__thiscall sub_74FAE0(int this)
       *(_BYTE *)(this + 42) = 0; /*0x74fb55*/
     }
     RawFileClass::Dtor(v9); /*0x74fb5c*/
-    v2 = this->ambientSoundController.AudioController_field_08; /*0x74fb61*/
+    v2 = this->M68; /*0x74fb61*/
     LOBYTE(v2) = v2 | 8; /*0x74fb64*/
-    this->ambientSoundController.AudioController_field_08 = v2; /*0x74fb66*/
+    this->M68 = v2; /*0x74fb66*/
   }
-  v3 = this->ambientSoundController.AudioController_field_08; /*0x74fb69*/
+  v3 = this->M68; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
     v4 = *(_WORD *)(this + 10); /*0x74fb70*/
@@ -2050,7 +2059,7 @@ char *__thiscall sub_74FAE0(int this)
     v4 = 1; /*0x74fb76*/
     LOBYTE(v3) = v3 | 4; /*0x74fb7b*/
     *(_WORD *)(this + 10) = 1; /*0x74fb7d*/
-    this->ambientSoundController.AudioController_field_08 = v3; /*0x74fb81*/
+    this->M68 = v3; /*0x74fb81*/
   }
   if ( (MEMORY[0xA8ED24] & 8) == 0 ) /*0x74fb8b*/
   {

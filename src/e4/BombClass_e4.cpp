@@ -209,20 +209,20 @@ int __stdcall BombClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 // 0x4393F0
 namespace ra2 {
 namespace game {
-BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
+BombClass * BombClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BombClass *__thiscall BombClass::CopyTo(_DWORD *Block, char a2)
+BombClass *__thiscall BombClass::CopyTo(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &BombClass::`vftable'; /*0x4393f7*/
-  *(Block + 1) = &BombClass::`vftable'; /*0x4393fd*/
-  *(Block + 2) = &BombClass::`vftable'; /*0x439404*/
-  *(Block + 3) = &BombClass::`vftable'; /*0x43940b*/
-  AudioFileClass::Release(Block + 15); /*0x439412*/
-  v5 = Block; /*0x439427*/
+  *this = &BombClass::`vftable'; /*0x4393f7*/
+  *(this + 1) = &BombClass::`vftable'; /*0x4393fd*/
+  *(this + 2) = &BombClass::`vftable'; /*0x439404*/
+  *(this + 3) = &BombClass::`vftable'; /*0x43940b*/
+  AudioFileClass::Release(this + 15); /*0x439412*/
+  v5 = this; /*0x439427*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
@@ -233,10 +233,10 @@ BombClass *__thiscall BombClass::CopyTo(_DWORD *Block, char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR(Block); /*0x439462*/
+  AbstractClass::DTOR(this); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(Block); /*0x43946f*/
-  return (BombClass *)Block; /*0x439479*/
+    __3_YAXPAX_Z(this); /*0x43946f*/
+  return (BombClass *)this; /*0x439479*/
 }
 }
 } // namespace game

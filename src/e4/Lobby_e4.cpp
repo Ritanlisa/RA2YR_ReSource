@@ -3,10 +3,10 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E5D60
-int Lobby::InvalidatePlayerSlots(HWND hDlg)
+int Lobby::InvalidatePlayerSlots()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Lobby_InvalidatePlayerSlots(HWND hDlg)
+int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
 {
   int i; // esi
   int v3; // edx
@@ -49,11 +49,11 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND hDlg)
     if ( (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) /*0x4e5df2*/
       && ((v4 = *(&MEMORY[0xA8DA90] + i), v4 == MEMORY[0xAC11B4]) || *(_DWORD *)(v4 + 107) == -1) )
     {
-      result = InitComboBoxNone(hDlg, v3); /*0x4e5dff*/
+      result = InitComboBoxNone(this, v3); /*0x4e5dff*/
     }
     else
     {
-      result = FillLobbyPlayerSlot(hDlg, v3); /*0x4e5df6*/
+      result = FillLobbyPlayerSlot(this, v3); /*0x4e5df6*/
     }
   }
   return result; /*0x4e5e0e*/
@@ -371,10 +371,10 @@ LABEL_111:
 }
 
 // 0x5EBA00
-void Lobby::SetupPlayerWidgets(HWND hDlg)
+void Lobby::SetupPlayerWidgets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Lobby::SetupPlayerWidgets(HWND hDlg)
+void __thiscall Lobby::SetupPlayerWidgets(HWND this)
 {
   INIClass *v1; // esi
   int v3; // ebp
@@ -463,13 +463,13 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND hDlg)
          && v6 != MEMORY[0xAC11A0]
          && (wchar_t *)v6 != MEMORY[0xAC11B0]
          && *(_DWORD *)(v6 + 107) == -1;
-      DlgItem = GetDlgItem(hDlg, v3); /*0x5ebb33*/
-      v8 = GetDlgItem(hDlg, v4); /*0x5ebb39*/
-      hWnd = GetDlgItem(hDlg, nIDDlgItem); /*0x5ebb47*/
-      v12 = GetDlgItem(hDlg, (int)ResourceIDCSF); /*0x5ebb53*/
-      v16 = GetDlgItem(hDlg, (int)ResourceID2CSF); /*0x5ebb5b*/
-      nIDDlgItema = GetDlgItem(hDlg, ResourceID3CSF); /*0x5ebb6b*/
-      v9 = GetDlgItem(hDlg, v18); /*0x5ebb79*/
+      DlgItem = GetDlgItem(this, v3); /*0x5ebb33*/
+      v8 = GetDlgItem(this, v4); /*0x5ebb39*/
+      hWnd = GetDlgItem(this, nIDDlgItem); /*0x5ebb47*/
+      v12 = GetDlgItem(this, (int)ResourceIDCSF); /*0x5ebb53*/
+      v16 = GetDlgItem(this, (int)ResourceID2CSF); /*0x5ebb5b*/
+      nIDDlgItema = GetDlgItem(this, ResourceID3CSF); /*0x5ebb6b*/
+      v9 = GetDlgItem(this, v18); /*0x5ebb79*/
       ShowWindow(DlgItem, 5); /*0x5ebb7e*/
       ShowWindow(v8, 5); /*0x5ebb83*/
       ShowWindow(hWnd, 5); /*0x5ebb8c*/

@@ -848,32 +848,32 @@ LABEL_20:
 // 0x62AF70
 namespace ra2 {
 namespace game {
-ParasiteClass * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
+ParasiteClass * ParasiteClass::UpdateParasite(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *Block, char a2)
+ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *this, char a2)
 {
   int v3; // ecx
   int v4; // eax
   int v5; // eax
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  v3 = *((_DWORD *)Block + 17); /*0x62af77*/
-  *(_DWORD *)Block->__pad_0 = &ParasiteClass::`vftable'; /*0x62af7a*/
-  *(_DWORD *)&Block->__pad_0[4] = &ParasiteClass::`vftable'; /*0x62af82*/
-  *(_DWORD *)&Block->__pad_0[8] = &ParasiteClass::`vftable'; /*0x62af89*/
-  *(_DWORD *)&Block->__pad_0[12] = &ParasiteClass::`vftable'; /*0x62af90*/
-  *((_DWORD *)Block + 19) = 0; /*0x62af97*/
-  *((_DWORD *)Block + 20) = 0; /*0x62af9a*/
-  *((_DWORD *)Block + 18) = 0; /*0x62af9d*/
+  v3 = *((_DWORD *)this + 17); /*0x62af77*/
+  *(_DWORD *)this->__pad_0 = &ParasiteClass::`vftable'; /*0x62af7a*/
+  *(_DWORD *)&this->__pad_0[4] = &ParasiteClass::`vftable'; /*0x62af82*/
+  *(_DWORD *)&this->__pad_0[8] = &ParasiteClass::`vftable'; /*0x62af89*/
+  *(_DWORD *)&this->__pad_0[12] = &ParasiteClass::`vftable'; /*0x62af90*/
+  *((_DWORD *)this + 19) = 0; /*0x62af97*/
+  *((_DWORD *)this + 20) = 0; /*0x62af9a*/
+  *((_DWORD *)this + 18) = 0; /*0x62af9d*/
   if ( v3 ) /*0x62afa0*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x62afa4*/
-    *((_DWORD *)Block + 17) = 0; /*0x62afaa*/
+    *((_DWORD *)this + 17) = 0; /*0x62afaa*/
   }
-  if ( *((_BYTE *)Block + 84) ) /*0x62afad*/
+  if ( *((_BYTE *)this + 84) ) /*0x62afad*/
   {
-    v7 = Block; /*0x62afc2*/
+    v7 = this; /*0x62afc2*/
     v4 = (*(int (__thiscall **)(int *, ParasiteClass **))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v7); /*0x62afc6*/
     if ( v4 != -1 && v4 < MEMORY[0xB0F5C8] && v4 < --MEMORY[0xB0F5C8] ) /*0x62afe1*/
     {
@@ -884,9 +884,9 @@ ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *Block, ch
       }
       while ( v4 < MEMORY[0xB0F5C8] ); /*0x62aff9*/
     }
-    *((_BYTE *)Block + 84) = 0; /*0x62affb*/
+    *((_BYTE *)this + 84) = 0; /*0x62affb*/
   }
-  v7 = Block; /*0x62b00e*/
+  v7 = this; /*0x62b00e*/
   v5 = (*(int (__thiscall **)(int *, ParasiteClass **))(MEMORY[0xAC4910] + 16))(&MEMORY[0xAC4910], &v7); /*0x62b012*/
   if ( v5 != -1 && v5 < MEMORY[0xAC4920] && v5 < --MEMORY[0xAC4920] ) /*0x62b02d*/
   {
@@ -897,10 +897,10 @@ ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *Block, ch
     }
     while ( v5 < MEMORY[0xAC4920] ); /*0x62b045*/
   }
-  AbstractClass::DTOR(Block); /*0x62b049*/
+  AbstractClass::DTOR(this); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
-    __3_YAXPAX_Z(Block); /*0x62b056*/
-  return Block; /*0x62b060*/
+    __3_YAXPAX_Z(this); /*0x62b056*/
+  return this; /*0x62b060*/
 }
 }
 } // namespace game

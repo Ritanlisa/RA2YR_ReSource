@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x752700
-void VoxClass::FindAndPlay(int a2, int a3)
+void VoxClass::FindAndPlay(void * this, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall VoxClass::FindAndPlay(void *this, int a2, int a3)

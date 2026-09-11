@@ -538,15 +538,15 @@ int __stdcall SpawnManagerClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP
 // 0x6B8140
 namespace ra2 {
 namespace game {
-SpawnManagerClass * SpawnManagerClass::ProcessEvent(void * Block, char a2)
+SpawnManagerClass * SpawnManagerClass::ProcessEvent(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SpawnManagerClass *__thiscall SpawnManagerClass::ProcessEvent(void *Block, char a2)
+SpawnManagerClass *__thiscall SpawnManagerClass::ProcessEvent(void *this, char a2)
 {
-  SpawnManagerClass::Constructor_SpawnManagerClass((int)Block); /*0x6b8143*/
+  SpawnManagerClass::Constructor_SpawnManagerClass((int)this); /*0x6b8143*/
   if ( (a2 & 1) != 0 ) /*0x6b814d*/
-    __3_YAXPAX_Z(Block); /*0x6b8150*/
-  return (SpawnManagerClass *)Block; /*0x6b815a*/
+    __3_YAXPAX_Z(this); /*0x6b8150*/
+  return (SpawnManagerClass *)this; /*0x6b815a*/
 }
 }
 } // namespace game
@@ -746,25 +746,25 @@ int __thiscall SpawnManagerClass_25_::_vt04(int *this, _DWORD *a2)
 
 // 0x6B8790
 namespace gamemd {
-DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall SpawnManagerClass_25_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall SpawnManagerClass_25_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6b8793*/
-  *Block = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b8796*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b87a0*/
+  v3 = (void *)*(this + 1); /*0x6b8793*/
+  *this = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b8796*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x6b87a0*/
   {
     __3_YAXPAX_Z(v3); /*0x6b87a8*/
-    *(Block + 1) = 0; /*0x6b87b0*/
+    *(this + 1) = 0; /*0x6b87b0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x6b87bb*/
-  *(Block + 2) = 0; /*0x6b87c1*/
+  *((_BYTE *)this + 13) = 0; /*0x6b87bb*/
+  *(this + 2) = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
-    __3_YAXPAX_Z(Block); /*0x6b87cb*/
-  return (DynamicVector *)Block; /*0x6b87d5*/
+    __3_YAXPAX_Z(this); /*0x6b87cb*/
+  return (DynamicVector *)this; /*0x6b87d5*/
 }
 }
 } // namespace gamemd

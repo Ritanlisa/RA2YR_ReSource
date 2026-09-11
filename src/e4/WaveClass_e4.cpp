@@ -193,21 +193,21 @@ int __stdcall WaveClass::_vt06(int *a1, int *a2, int a3)
 
 // 0x763200
 namespace gamemd {
-WaveClass * WaveClass::ddtor(void ** Block, char a2)
+WaveClass * WaveClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)
+WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &WaveClass::`vftable'; /*0x763206*/
-  *(Block + 1) = &WaveClass::`vftable'; /*0x76320c*/
-  *(Block + 2) = &WaveClass::`vftable'; /*0x763213*/
-  *(Block + 3) = &off_7F6BC8; /*0x76321a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x763221*/
-  v6 = Block; /*0x763236*/
+  *this = &WaveClass::`vftable'; /*0x763206*/
+  *(this + 1) = &WaveClass::`vftable'; /*0x76320c*/
+  *(this + 2) = &WaveClass::`vftable'; /*0x763213*/
+  *(this + 3) = &off_7F6BC8; /*0x76321a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x763221*/
+  v6 = this; /*0x763236*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EC38] + 16))(&MEMORY[0xA8EC38], &v6); /*0x76323a*/
   if ( v3 != -1 && v3 < MEMORY[0xA8EC48] && v3 < --MEMORY[0xA8EC48] ) /*0x763255*/
   {
@@ -218,20 +218,20 @@ WaveClass *__thiscall WaveClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xA8EC48] ); /*0x76326d*/
   }
-  (*((void (__thiscall **)(void **))*(Block + 124) + 3))(Block + 124); /*0x76327e*/
-  v4 = *(Block + 125); /*0x763281*/
-  *(Block + 124) = &VectorClass<CellClass *>::`vftable'; /*0x763284*/
-  if ( v4 && *((_BYTE *)Block + 509) ) /*0x76328e*/
+  (*((void (__thiscall **)(void **))*(this + 124) + 3))(this + 124); /*0x76327e*/
+  v4 = *(this + 125); /*0x763281*/
+  *(this + 124) = &VectorClass<CellClass *>::`vftable'; /*0x763284*/
+  if ( v4 && *((_BYTE *)this + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/
-    *(Block + 125) = 0; /*0x76329e*/
+    *(this + 125) = 0; /*0x76329e*/
   }
-  *((_BYTE *)Block + 509) = 0; /*0x7632a7*/
-  *(Block + 126) = 0; /*0x7632ab*/
-  ObjectClass::Dtor(Block); /*0x7632b2*/
+  *((_BYTE *)this + 509) = 0; /*0x7632a7*/
+  *(this + 126) = 0; /*0x7632ab*/
+  ObjectClass::Dtor(this); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
-    __3_YAXPAX_Z(Block); /*0x7632c1*/
-  return (WaveClass *)Block; /*0x7632cb*/
+    __3_YAXPAX_Z(this); /*0x7632c1*/
+  return (WaveClass *)this; /*0x7632cb*/
 }
 }
 } // namespace gamemd

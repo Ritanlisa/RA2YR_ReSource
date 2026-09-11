@@ -104,7 +104,7 @@ int __thiscall Cell_PosToIndex(__int16 *this)
 
 // 0x43B4C0
 namespace gamemd {
-char Cell::CanPlaceBuilding(unsigned int * a2)
+char Cell::CanPlaceBuilding(IUnknown * this, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall Cell::CanPlaceBuilding(IUnknown *this, _DWORD *a2)
@@ -304,7 +304,7 @@ void *__thiscall Cell_GetNeighbourContent(_DWORD *this, unsigned int a2)
 
 // 0x4834A0
 namespace gamemd {
-int Cell_IsBuildable()
+bool Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Cell::IsBuildable(

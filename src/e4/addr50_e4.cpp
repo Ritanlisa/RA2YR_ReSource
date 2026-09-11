@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_501750_e4.hpp"
+#include "e4/classes/E4Recv_5093C0_e4.hpp"
+#include "e4/classes/E4Recv_50C160_e4.hpp"
+#include "e4/classes/E4Recv_50DA40_e4.hpp"
 
 // 0x5004E0
 namespace gamemd {
@@ -24,7 +28,7 @@ int __fastcall House_GetTechLevel(int a1, int a2)
 
 // 0x501750
 namespace gamemd {
-char sub_501750(int a2)
+char E4Recv_501750::sub_501750(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_501750(_DWORD *this, int a2)
@@ -226,7 +230,7 @@ int __fastcall globalHelper_005FD0(int a1, int *a2, int a3, int a4)
 
 // 0x5092F0
 namespace gamemd {
-int sub_5092F0(int a2)
+int HouseClass::sub_5092F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5092F0(HouseClass *this, int a2)
@@ -273,7 +277,7 @@ int __thiscall sub_5092F0(HouseClass *this, int a2)
 
 // 0x5093C0
 namespace gamemd {
-int sub_5093C0(int a2)
+int E4Recv_5093C0::sub_5093C0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5093C0(int *this, int a2)
@@ -350,7 +354,7 @@ void __fastcall sub_50B920(int a1, int a2, int a3)
 
 // 0x50C160
 namespace gamemd {
-double sub_50C160()
+double E4Recv_50C160::sub_50C160()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_50C160(_DWORD *this)
@@ -362,7 +366,7 @@ double __thiscall sub_50C160(_DWORD *this)
 
 // 0x50DA40
 namespace gamemd {
-int sub_50DA40(int a2)
+int E4Recv_50DA40::sub_50DA40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_50DA40(_DWORD *this, int a2)

@@ -616,20 +616,20 @@ int __thiscall UnitTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x748190
-UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
+UnitTypeClass * UnitTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **Block, char a2)
+UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &UnitTypeClass::`vftable'; /*0x748196*/
-  *(Block + 1) = &UnitTypeClass::`vftable'; /*0x74819c*/
-  *(Block + 2) = &UnitTypeClass::`vftable'; /*0x7481a3*/
-  *(Block + 3) = &UnitTypeClass::`vftable'; /*0x7481aa*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x7481b1*/
-  v5 = Block; /*0x7481c6*/
+  *this = &UnitTypeClass::`vftable'; /*0x748196*/
+  *(this + 1) = &UnitTypeClass::`vftable'; /*0x74819c*/
+  *(this + 2) = &UnitTypeClass::`vftable'; /*0x7481a3*/
+  *(this + 3) = &UnitTypeClass::`vftable'; /*0x7481aa*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x7481b1*/
+  v5 = this; /*0x7481c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5); /*0x7481ca*/
   if ( v3 != -1 && v3 < g_CrateCount && v3 < --g_CrateCount ) /*0x7481e5*/
   {
@@ -640,23 +640,23 @@ UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < g_CrateCount ); /*0x7481fd*/
   }
-  TechnoTypeClass::DTOR((int)Block); /*0x748201*/
+  TechnoTypeClass::DTOR((int)this); /*0x748201*/
   if ( (a2 & 1) != 0 ) /*0x74820b*/
-    __3_YAXPAX_Z(Block); /*0x74820e*/
-  return (UnitTypeClass *)Block; /*0x748218*/
+    __3_YAXPAX_Z(this); /*0x74820e*/
+  return (UnitTypeClass *)this; /*0x748218*/
 }
 }
 
 // 0x74B960
-VoxelAnimTypeClass * UnitTypeClass::FindOrCreate(ObjectClass * Source)
+VoxelAnimTypeClass * UnitTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimTypeClass *__thiscall UnitTypeClass::FindOrCreate(ObjectClass *Source)
+VoxelAnimTypeClass *__thiscall UnitTypeClass::FindOrCreate(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x74b97c*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x74b97c*/
     return 0; /*0x74b9df*/
   v2 = 0; /*0x74b98d*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22660] <= 0 ) /*0x74b991*/
@@ -664,10 +664,10 @@ VoxelAnimTypeClass *__thiscall UnitTypeClass::FindOrCreate(ObjectClass *Source)
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x308u); /*0x74b9b6*/
     if ( v3 ) /*0x74b9c5*/
-      return (VoxelAnimTypeClass *)VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
+      return (VoxelAnimTypeClass *)VoxelAnimTypeClass::Constructor(v3, this); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2) + 36), Source) ) /*0x74b9aa*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2) + 36), this) ) /*0x74b9aa*/
   {
     if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[22660] ) /*0x74b9b4*/
       goto LABEL_6; /*0x74b9b4*/

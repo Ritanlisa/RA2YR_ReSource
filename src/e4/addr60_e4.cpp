@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_600660_e4.hpp"
+#include "e4/classes/E4Recv_60B740_e4.hpp"
 
 // 0x600320
 namespace gamemd {
@@ -223,7 +225,7 @@ void __cdecl unknown_libname_26()
 
 // 0x600660
 namespace gamemd {
-ObjectClass * ReadPointerFromECX()
+ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall ReadPointerFromECX(void *this)
@@ -1944,7 +1946,7 @@ HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 
 // 0x603DD0
 namespace gamemd {
-LRESULT globalHelper_003DD0(HWND hWnd, unsigned signed char a2)
+LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LRESULT __fastcall globalHelper_003DD0(HWND hWnd, unsigned __int8 a2)
@@ -3578,19 +3580,19 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
 
 // 0x60B740
 namespace gamemd {
-BOOL sub_60B740(HWND hWnd)
+BOOL E4Recv_60B740::sub_60B740()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_60B740(HWND hWnd)
+BOOL __thiscall sub_60B740(HWND this)
 {
   HWND Parent; // eax
   struct tagRECT v4; // [esp+8h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  Parent = GetParent(hWnd); /*0x60b748*/
+  Parent = GetParent(this); /*0x60b748*/
   GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect(hWnd, &v4); /*0x60b762*/
-  return MoveWindow(hWnd, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+  GetWindowRect(this, &v4); /*0x60b762*/
+  return MoveWindow(this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
 }
 }
 } // namespace gamemd
@@ -3824,8 +3826,7 @@ LABEL_41:
 } // namespace gamemd
 
 // 0x60C4A0
-namespace gamemd {
-BOOL ResizeDialogAndEnum()
+BOOL SkirmishDialog::ResizeDialogAndEnum()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
@@ -3839,7 +3840,6 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
   return EnumChildWindows((HWND)this, (WNDENUMPROC)RepositionDialogControls, v3); /*0x60c4d3*/
 }
 }
-} // namespace gamemd
 
 // 0x60D520
 namespace gamemd {

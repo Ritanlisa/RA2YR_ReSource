@@ -14,7 +14,7 @@ struct Dial8Class_48 {
     unsigned int Write(int a2);  // 0x4A7EE0
     char SetCapacity(int a2, unsigned int * a3);  // 0x4A7F00
     int FindItem(unsigned int * a2);  // 0x4A7FB0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4A8030
-    DynamicVector * Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2);  // 0x4A8080
+    VectorClass * QueryInterface(char a2);  // 0x4A8030
+    DynamicVector * Constructor_VectorClass_DiskLaserClass___(char a2);  // 0x4A8080
 };
 } // namespace gamemd

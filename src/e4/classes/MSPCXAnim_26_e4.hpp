@@ -22,9 +22,9 @@ struct MSPCXAnim_26 {
     int FindIndex_0(unsigned int * a2);  // 0x5D1430
     char AllocCopyData_4B_1(int a2, unsigned int * a3);  // 0x5D15E0
     int FindIndex_1(unsigned int * a2);  // 0x5D1690
-    VectorClass * Constructor_VectorClass_MapStage___(unsigned int * Block, char a2);  // 0x5D18A0
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x5D18F0
-    DynamicVector * Constructor_VectorClass_MSAnimEntry___(unsigned int * Block, char a2);  // 0x5D1990
-    DynamicVector * Constructor_VectorClass_MSSfxEntry___(unsigned int * Block, char a2);  // 0x5D1A30
+    VectorClass * Constructor_VectorClass_MapStage___(char a2);  // 0x5D18A0
+    DynamicVector * QueryInterface(char a2);  // 0x5D18F0
+    DynamicVector * Constructor_VectorClass_MSAnimEntry___(char a2);  // 0x5D1990
+    DynamicVector * Constructor_VectorClass_MSSfxEntry___(char a2);  // 0x5D1A30
 };
 } // namespace gamemd

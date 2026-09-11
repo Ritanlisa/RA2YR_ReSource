@@ -95,23 +95,23 @@ HRESULT __stdcall DriveLocomotionClass::LoadFromStream(int *a1, int *pPStm, int 
 }
 
 // 0x4B4D00
-DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
+DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion **Block, char a2)
+DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d03*/
-  *(Block + 1) = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d09*/
-  *(Block + 6) = (ILocomotion *)&off_7E7E8C; /*0x4b4d10*/
-  v3 = *(Block + 26); /*0x4b4d17*/
+  *this = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d03*/
+  *(this + 1) = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d09*/
+  *(this + 6) = (ILocomotion *)&off_7E7E8C; /*0x4b4d10*/
+  v3 = *(this + 26); /*0x4b4d17*/
   if ( v3 ) /*0x4b4d1c*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b4d21*/
-  LocomotionClass::Construct(Block); /*0x4b4d26*/
+  LocomotionClass::Construct(this); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    __3_YAXPAX_Z(Block); /*0x4b4d33*/
-  return (DriveLocomotionClass *)Block; /*0x4b4d3d*/
+    __3_YAXPAX_Z(this); /*0x4b4d33*/
+  return (DriveLocomotionClass *)this; /*0x4b4d3d*/
 }
 }
 

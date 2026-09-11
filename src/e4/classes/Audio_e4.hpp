@@ -7,9 +7,9 @@ struct Audio {
     int InitChannels();  // 0x401080
     int GetChannelStatus();  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80
-    int FlushChannel(unsigned int ** Block);  // 0x404DD0
+    int FlushChannel();  // 0x404DD0
     int UpdatePlaybackPosition();  // 0x4054A0
-    ObjectClass * ProcessMixerOutput(char * Source);  // 0x4063B0
+    ObjectClass * ProcessMixerOutput();  // 0x4063B0
     BOOL ApplyFormatFlags(int * a1, char * a2);  // 0x406870
     void Shutdown();  // 0x406D40
     BOOL IsSoundEnabled();  // 0x407000

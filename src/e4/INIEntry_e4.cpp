@@ -4,7 +4,7 @@
 
 // 0x476EB0
 namespace gamemd {
-int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned signed char * a2)
+int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall INIEntry::GetTechnoType(unsigned __int8 ***this, CCINIClass *aP1, unsigned __int8 *a2)

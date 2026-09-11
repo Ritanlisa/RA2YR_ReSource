@@ -3,16 +3,16 @@
 #include "e4/e4_globals.hpp"
 
 // 0x401950
-unsigned int * FileClass::loc_401950(unsigned int * Block, char a2)
+unsigned int * FileClass::loc_401950(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FileClass::loc_401950(_DWORD *Block, char a2)
+_DWORD *__thiscall FileClass::loc_401950(_DWORD *this, char a2)
 {
-  *Block = &off_7E1668; /*0x401953*/
-  BufferIOFileClass::Dtor(Block); /*0x401959*/
+  *this = &off_7E1668; /*0x401953*/
+  BufferIOFileClass::Dtor(this); /*0x401959*/
   if ( (a2 & 1) != 0 ) /*0x401963*/
-    __3_YAXPAX_Z(Block); /*0x401966*/
-  return Block; /*0x401970*/
+    __3_YAXPAX_Z(this); /*0x401966*/
+  return this; /*0x401970*/
 }
 }
 

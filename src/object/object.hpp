@@ -610,6 +610,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char FindPlacementPosition(int a2, int a3, int a4, int a5);  // 0x718260
     unsigned int * loc_7A2E70(char a2);  // 0x7A2E70
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    void sub_47A080(DWORD a2);  // 0x47A080
+    char sub_47A1B0(DWORD BytesReturned);  // 0x47A1B0
+    char sub_47A2D0(DWORD BytesReturned);  // 0x47A2D0
+    void sub_550080();  // 0x550080
+    int sub_632A70(int a2, int a3, ObjectClass * aP3);  // 0x632A70
+    GenericNode * sub_764A20();  // 0x764A20
+    unsigned char ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6);  // 0x6A7D70
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

@@ -130,8 +130,9 @@ bool __thiscall sub_70F7E0(_DWORD *this)
 } // namespace ra2
 
 // 0x710000
-namespace gamemd {
-int FootClass_FootClass_ImbueLocomotor()
+namespace ra2 {
+namespace game {
+void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __userpurge FootClass::FootClass_ImbueLocomotor(
@@ -311,7 +312,8 @@ void __userpurge FootClass::FootClass_ImbueLocomotor(
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x41C120
 namespace ra2 {

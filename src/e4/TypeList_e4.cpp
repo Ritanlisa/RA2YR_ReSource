@@ -43,25 +43,25 @@ unsigned int __thiscall TypeList::_vt05(int this, int a2)
 }
 
 // 0x477990
-TypeList * TypeList::QueryInterface(unsigned int * Block, char a2)
+TypeList * TypeList::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x477993*/
-  *Block = &VectorClass<int>::`vftable'; /*0x477996*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4779a0*/
+  v3 = (void *)*(this + 1); /*0x477993*/
+  *this = &VectorClass<int>::`vftable'; /*0x477996*/
+  if ( v3 && this->IsAllocated ) /*0x4779a0*/
   {
     __3_YAXPAX_Z(v3); /*0x4779a8*/
-    *(Block + 1) = 0; /*0x4779b0*/
+    *(this + 1) = 0; /*0x4779b0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4779bb*/
-  *(Block + 2) = 0; /*0x4779c1*/
+  this->IsAllocated = 0; /*0x4779bb*/
+  *(this + 2) = 0; /*0x4779c1*/
   if ( (a2 & 1) != 0 ) /*0x4779c8*/
-    __3_YAXPAX_Z(Block); /*0x4779cb*/
-  return (TypeList *)Block; /*0x4779d5*/
+    __3_YAXPAX_Z(this); /*0x4779cb*/
+  return (TypeList *)this; /*0x4779d5*/
 }
 }
 
@@ -772,25 +772,25 @@ char __thiscall TypeList::PushBack(_DWORD *this, VectorClass *aP1)
 
 // 0x5AC650
 namespace gamemd {
-TypeList * TypeList_BuildingType::Add(unsigned int * Block, char a2)
+TypeList * TypeList_BuildingType::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_BuildingType::Add(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_BuildingType::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5ac653*/
-  *Block = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac656*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ac660*/
+  v3 = (void *)*(this + 1); /*0x5ac653*/
+  *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac656*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5ac660*/
   {
     __3_YAXPAX_Z(v3); /*0x5ac668*/
-    *(Block + 1) = 0; /*0x5ac670*/
+    *(this + 1) = 0; /*0x5ac670*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5ac67b*/
-  *(Block + 2) = 0; /*0x5ac681*/
+  *((_BYTE *)this + 13) = 0; /*0x5ac67b*/
+  *(this + 2) = 0; /*0x5ac681*/
   if ( (a2 & 1) != 0 ) /*0x5ac688*/
-    __3_YAXPAX_Z(Block); /*0x5ac68b*/
-  return (TypeList *)Block; /*0x5ac695*/
+    __3_YAXPAX_Z(this); /*0x5ac68b*/
+  return (TypeList *)this; /*0x5ac695*/
 }
 }
 } // namespace gamemd
@@ -910,25 +910,25 @@ int __thiscall TypeList_cptr_ParticleSystemTypeClass::Remove(int *this, _DWORD *
 
 // 0x717B70
 namespace gamemd {
-TypeList * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(unsigned int * Block, char a2)
+TypeList * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_cptr_ParticleSystemTypeClass::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_cptr_ParticleSystemTypeClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x717b73*/
-  *Block = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717b76*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x717b80*/
+  v3 = (void *)*(this + 1); /*0x717b73*/
+  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717b76*/
+  if ( v3 && this->IsAllocated ) /*0x717b80*/
   {
     __3_YAXPAX_Z(v3); /*0x717b88*/
-    *(Block + 1) = 0; /*0x717b90*/
+    *(this + 1) = 0; /*0x717b90*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x717b9b*/
-  *(Block + 2) = 0; /*0x717ba1*/
+  this->IsAllocated = 0; /*0x717b9b*/
+  *(this + 2) = 0; /*0x717ba1*/
   if ( (a2 & 1) != 0 ) /*0x717ba8*/
-    __3_YAXPAX_Z(Block); /*0x717bab*/
-  return (TypeList *)Block; /*0x717bb5*/
+    __3_YAXPAX_Z(this); /*0x717bab*/
+  return (TypeList *)this; /*0x717bb5*/
 }
 }
 } // namespace gamemd
@@ -984,25 +984,25 @@ int __thiscall TypeList_cptr_TerrainTypeClass::_vt06(_DWORD *this, int a2)
 
 // 0x67AA30
 namespace gamemd {
-TypeList * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a2)
+TypeList * TypeList_cptr_TerrainTypeClass::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_cptr_TerrainTypeClass::Add(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_cptr_TerrainTypeClass::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67aa33*/
-  *Block = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67aa36*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67aa40*/
+  v3 = (void *)*(this + 1); /*0x67aa33*/
+  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67aa36*/
+  if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {
     __3_YAXPAX_Z(v3); /*0x67aa48*/
-    *(Block + 1) = 0; /*0x67aa50*/
+    *(this + 1) = 0; /*0x67aa50*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67aa5b*/
-  *(Block + 2) = 0; /*0x67aa61*/
+  this->IsAllocated = 0; /*0x67aa5b*/
+  *(this + 2) = 0; /*0x67aa61*/
   if ( (a2 & 1) != 0 ) /*0x67aa68*/
-    __3_YAXPAX_Z(Block); /*0x67aa6b*/
-  return (TypeList *)Block; /*0x67aa75*/
+    __3_YAXPAX_Z(this); /*0x67aa6b*/
+  return (TypeList *)this; /*0x67aa75*/
 }
 }
 } // namespace gamemd
@@ -1231,25 +1231,25 @@ int __thiscall TypeList_cptr_TerrainTypeClass::_vt04(int *this, _DWORD *a2)
 
 // 0x67C150
 namespace gamemd {
-VectorClass * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2)
+VectorClass * TypeList_cptr_TerrainTypeClass::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TypeList_cptr_TerrainTypeClass::Constructor(_DWORD *Block, char a2)
+VectorClass *__thiscall TypeList_cptr_TerrainTypeClass::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67c153*/
-  *Block = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c156*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67c160*/
+  v3 = (void *)*(this + 1); /*0x67c153*/
+  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c156*/
+  if ( v3 && this->IsAllocated ) /*0x67c160*/
   {
     __3_YAXPAX_Z(v3); /*0x67c168*/
-    *(Block + 1) = 0; /*0x67c170*/
+    *(this + 1) = 0; /*0x67c170*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67c17b*/
-  *(Block + 2) = 0; /*0x67c181*/
+  this->IsAllocated = 0; /*0x67c17b*/
+  *(this + 2) = 0; /*0x67c181*/
   if ( (a2 & 1) != 0 ) /*0x67c188*/
-    __3_YAXPAX_Z(Block); /*0x67c18b*/
-  return (VectorClass *)Block; /*0x67c195*/
+    __3_YAXPAX_Z(this); /*0x67c18b*/
+  return (VectorClass *)this; /*0x67c195*/
 }
 }
 } // namespace gamemd
@@ -1305,25 +1305,25 @@ int __thiscall TypeList_Infantry::_vt06(_DWORD *this, int a2)
 
 // 0x5129F0
 namespace gamemd {
-TypeList * TypeList_Infantry::Add(unsigned int * Block, char a2)
+TypeList * TypeList_Infantry::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_Infantry::Add(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_Infantry::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5129f3*/
-  *Block = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x5129f6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x512a00*/
+  v3 = (void *)*(this + 1); /*0x5129f3*/
+  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x5129f6*/
+  if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     __3_YAXPAX_Z(v3); /*0x512a08*/
-    *(Block + 1) = 0; /*0x512a10*/
+    *(this + 1) = 0; /*0x512a10*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x512a1b*/
-  *(Block + 2) = 0; /*0x512a21*/
+  this->IsAllocated = 0; /*0x512a1b*/
+  *(this + 2) = 0; /*0x512a21*/
   if ( (a2 & 1) != 0 ) /*0x512a28*/
-    __3_YAXPAX_Z(Block); /*0x512a2b*/
-  return (TypeList *)Block; /*0x512a35*/
+    __3_YAXPAX_Z(this); /*0x512a2b*/
+  return (TypeList *)this; /*0x512a35*/
 }
 }
 } // namespace gamemd
@@ -1363,25 +1363,25 @@ char __thiscall TypeList_Infantry::_vt01(int *this, int a2)
 
 // 0x512E20
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2)
+DynamicVector * TypeList_Infantry::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TypeList_Infantry::Constructor(_DWORD *Block, char a2)
+DynamicVector *__thiscall TypeList_Infantry::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x512e23*/
-  *Block = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512e26*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x512e30*/
+  v3 = (void *)*(this + 1); /*0x512e23*/
+  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512e26*/
+  if ( v3 && this->IsAllocated ) /*0x512e30*/
   {
     __3_YAXPAX_Z(v3); /*0x512e38*/
-    *(Block + 1) = 0; /*0x512e40*/
+    *(this + 1) = 0; /*0x512e40*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x512e4b*/
-  *(Block + 2) = 0; /*0x512e51*/
+  this->IsAllocated = 0; /*0x512e4b*/
+  *(this + 2) = 0; /*0x512e51*/
   if ( (a2 & 1) != 0 ) /*0x512e58*/
-    __3_YAXPAX_Z(Block); /*0x512e5b*/
-  return (DynamicVector *)Block; /*0x512e65*/
+    __3_YAXPAX_Z(this); /*0x512e5b*/
+  return (DynamicVector *)this; /*0x512e65*/
 }
 }
 } // namespace gamemd
@@ -1464,50 +1464,50 @@ int __thiscall TypeList_Infantry::_vt04(int *this, _DWORD *a2)
 
 // 0x5131F0
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2)
+DynamicVector * TypeList_Infantry::Constructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TypeList_Infantry::Constructor_0(_DWORD *Block, char a2)
+DynamicVector *__thiscall TypeList_Infantry::Constructor_0(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5131f3*/
-  *Block = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x5131f6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x513200*/
+  v3 = (void *)*(this + 1); /*0x5131f3*/
+  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x5131f6*/
+  if ( v3 && this->IsAllocated ) /*0x513200*/
   {
     __3_YAXPAX_Z(v3); /*0x513208*/
-    *(Block + 1) = 0; /*0x513210*/
+    *(this + 1) = 0; /*0x513210*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x51321b*/
-  *(Block + 2) = 0; /*0x513221*/
+  this->IsAllocated = 0; /*0x51321b*/
+  *(this + 2) = 0; /*0x513221*/
   if ( (a2 & 1) != 0 ) /*0x513228*/
-    __3_YAXPAX_Z(Block); /*0x51322b*/
-  return (DynamicVector *)Block; /*0x513235*/
+    __3_YAXPAX_Z(this); /*0x51322b*/
+  return (DynamicVector *)this; /*0x513235*/
 }
 }
 } // namespace gamemd
 
 // 0x5135C0
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
+DynamicVector * TypeList_Infantry::Constructor_1(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TypeList_Infantry::Constructor_1(_DWORD *Block, char a2)
+DynamicVector *__thiscall TypeList_Infantry::Constructor_1(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5135c3*/
-  *Block = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5135c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5135d0*/
+  v3 = (void *)*(this + 1); /*0x5135c3*/
+  *this = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5135c6*/
+  if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5135d8*/
-    *(Block + 1) = 0; /*0x5135e0*/
+    *(this + 1) = 0; /*0x5135e0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5135eb*/
-  *(Block + 2) = 0; /*0x5135f1*/
+  this->IsAllocated = 0; /*0x5135eb*/
+  *(this + 2) = 0; /*0x5135f1*/
   if ( (a2 & 1) != 0 ) /*0x5135f8*/
-    __3_YAXPAX_Z(Block); /*0x5135fb*/
-  return (DynamicVector *)Block; /*0x513605*/
+    __3_YAXPAX_Z(this); /*0x5135fb*/
+  return (DynamicVector *)this; /*0x513605*/
 }
 }
 } // namespace gamemd
@@ -1654,25 +1654,25 @@ unsigned int __thiscall TypeList_Particle::_vt05(int this, int a2)
 
 // 0x45A9C0
 namespace gamemd {
-VectorClass * TypeList_Particle::Add(unsigned int * Block, char a2)
+VectorClass * TypeList_Particle::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TypeList_Particle::Add(_DWORD *Block, char a2)
+VectorClass *__thiscall TypeList_Particle::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x45a9c3*/
-  *Block = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45a9c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x45a9d0*/
+  v3 = (void *)*(this + 1); /*0x45a9c3*/
+  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45a9c6*/
+  if ( v3 && this->IsAllocated ) /*0x45a9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x45a9d8*/
-    *(Block + 1) = 0; /*0x45a9e0*/
+    *(this + 1) = 0; /*0x45a9e0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x45a9eb*/
-  *(Block + 2) = 0; /*0x45a9f1*/
+  this->IsAllocated = 0; /*0x45a9eb*/
+  *(this + 2) = 0; /*0x45a9f1*/
   if ( (a2 & 1) != 0 ) /*0x45a9f8*/
-    __3_YAXPAX_Z(Block); /*0x45a9fb*/
-  return (VectorClass *)Block; /*0x45aa05*/
+    __3_YAXPAX_Z(this); /*0x45a9fb*/
+  return (VectorClass *)this; /*0x45aa05*/
 }
 }
 } // namespace gamemd
@@ -1837,25 +1837,25 @@ unsigned int __thiscall TypeList_TechnoType::GetIndex(int this, int a2)
 
 // 0x478680
 namespace gamemd {
-VectorClass * TypeList_TechnoType::Add(unsigned int * Block, char a2)
+VectorClass * TypeList_TechnoType::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TypeList_TechnoType::Add(_DWORD *Block, char a2)
+VectorClass *__thiscall TypeList_TechnoType::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x478683*/
-  *Block = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x478686*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x478690*/
+  v3 = (void *)*(this + 1); /*0x478683*/
+  *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x478686*/
+  if ( v3 && this->IsAllocated ) /*0x478690*/
   {
     __3_YAXPAX_Z(v3); /*0x478698*/
-    *(Block + 1) = 0; /*0x4786a0*/
+    *(this + 1) = 0; /*0x4786a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4786ab*/
-  *(Block + 2) = 0; /*0x4786b1*/
+  this->IsAllocated = 0; /*0x4786ab*/
+  *(this + 2) = 0; /*0x4786b1*/
   if ( (a2 & 1) != 0 ) /*0x4786b8*/
-    __3_YAXPAX_Z(Block); /*0x4786bb*/
-  return (VectorClass *)Block; /*0x4786c5*/
+    __3_YAXPAX_Z(this); /*0x4786bb*/
+  return (VectorClass *)this; /*0x4786c5*/
 }
 }
 } // namespace gamemd
@@ -1948,50 +1948,50 @@ unsigned int __thiscall TypeList_VoxelAnim::TypeList_vt05(int this, int a2)
 
 // 0x67A990
 namespace gamemd {
-TypeList * TypeList_VoxelAnim::Add(unsigned int * Block, char a2)
+TypeList * TypeList_VoxelAnim::Add(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_VoxelAnim::Add(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_VoxelAnim::Add(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67a993*/
-  *Block = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67a996*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67a9a0*/
+  v3 = (void *)*(this + 1); /*0x67a993*/
+  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67a996*/
+  if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9a8*/
-    *(Block + 1) = 0; /*0x67a9b0*/
+    *(this + 1) = 0; /*0x67a9b0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67a9bb*/
-  *(Block + 2) = 0; /*0x67a9c1*/
+  this->IsAllocated = 0; /*0x67a9bb*/
+  *(this + 2) = 0; /*0x67a9c1*/
   if ( (a2 & 1) != 0 ) /*0x67a9c8*/
-    __3_YAXPAX_Z(Block); /*0x67a9cb*/
-  return (TypeList *)Block; /*0x67a9d5*/
+    __3_YAXPAX_Z(this); /*0x67a9cb*/
+  return (TypeList *)this; /*0x67a9d5*/
 }
 }
 } // namespace gamemd
 
 // 0x67A9E0
 namespace gamemd {
-TypeList * TypeList_VoxelAnim::TypeList_vt00(unsigned int * Block, char a2)
+TypeList * TypeList_VoxelAnim::TypeList_vt00(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall TypeList_VoxelAnim::TypeList_vt00(_DWORD *Block, char a2)
+TypeList *__thiscall TypeList_VoxelAnim::TypeList_vt00(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67a9e3*/
-  *Block = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67a9e6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67a9f0*/
+  v3 = (void *)*(this + 1); /*0x67a9e3*/
+  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67a9e6*/
+  if ( v3 && this->IsAllocated ) /*0x67a9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9f8*/
-    *(Block + 1) = 0; /*0x67aa00*/
+    *(this + 1) = 0; /*0x67aa00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67aa0b*/
-  *(Block + 2) = 0; /*0x67aa11*/
+  this->IsAllocated = 0; /*0x67aa0b*/
+  *(this + 2) = 0; /*0x67aa11*/
   if ( (a2 & 1) != 0 ) /*0x67aa18*/
-    __3_YAXPAX_Z(Block); /*0x67aa1b*/
-  return (TypeList *)Block; /*0x67aa25*/
+    __3_YAXPAX_Z(this); /*0x67aa1b*/
+  return (TypeList *)this; /*0x67aa25*/
 }
 }
 } // namespace gamemd
@@ -2227,75 +2227,75 @@ int __thiscall TypeList_VoxelAnim::TypeList_vt04(int *this, _DWORD *a2)
 
 // 0x67C010
 namespace gamemd {
-VectorClass * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2)
+VectorClass * TypeList_VoxelAnim::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TypeList_VoxelAnim::Constructor(_DWORD *Block, char a2)
+VectorClass *__thiscall TypeList_VoxelAnim::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67c013*/
-  *Block = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c016*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67c020*/
+  v3 = (void *)*(this + 1); /*0x67c013*/
+  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c016*/
+  if ( v3 && this->IsAllocated ) /*0x67c020*/
   {
     __3_YAXPAX_Z(v3); /*0x67c028*/
-    *(Block + 1) = 0; /*0x67c030*/
+    *(this + 1) = 0; /*0x67c030*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67c03b*/
-  *(Block + 2) = 0; /*0x67c041*/
+  this->IsAllocated = 0; /*0x67c03b*/
+  *(this + 2) = 0; /*0x67c041*/
   if ( (a2 & 1) != 0 ) /*0x67c048*/
-    __3_YAXPAX_Z(Block); /*0x67c04b*/
-  return (VectorClass *)Block; /*0x67c055*/
+    __3_YAXPAX_Z(this); /*0x67c04b*/
+  return (VectorClass *)this; /*0x67c055*/
 }
 }
 } // namespace gamemd
 
 // 0x67C100
 namespace gamemd {
-DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2)
+DynamicVector * TypeList_VoxelAnim::Constructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_0(_DWORD *Block, char a2)
+DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_0(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67c103*/
-  *Block = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c106*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67c110*/
+  v3 = (void *)*(this + 1); /*0x67c103*/
+  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c106*/
+  if ( v3 && this->IsAllocated ) /*0x67c110*/
   {
     __3_YAXPAX_Z(v3); /*0x67c118*/
-    *(Block + 1) = 0; /*0x67c120*/
+    *(this + 1) = 0; /*0x67c120*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67c12b*/
-  *(Block + 2) = 0; /*0x67c131*/
+  this->IsAllocated = 0; /*0x67c12b*/
+  *(this + 2) = 0; /*0x67c131*/
   if ( (a2 & 1) != 0 ) /*0x67c138*/
-    __3_YAXPAX_Z(Block); /*0x67c13b*/
-  return (DynamicVector *)Block; /*0x67c145*/
+    __3_YAXPAX_Z(this); /*0x67c13b*/
+  return (DynamicVector *)this; /*0x67c145*/
 }
 }
 } // namespace gamemd
 
 // 0x67C1A0
 namespace gamemd {
-DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
+DynamicVector * TypeList_VoxelAnim::Constructor_1(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_1(_DWORD *Block, char a2)
+DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_1(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x67c1a3*/
-  *Block = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c1a6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x67c1b0*/
+  v3 = (void *)*(this + 1); /*0x67c1a3*/
+  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c1a6*/
+  if ( v3 && this->IsAllocated ) /*0x67c1b0*/
   {
     __3_YAXPAX_Z(v3); /*0x67c1b8*/
-    *(Block + 1) = 0; /*0x67c1c0*/
+    *(this + 1) = 0; /*0x67c1c0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x67c1cb*/
-  *(Block + 2) = 0; /*0x67c1d1*/
+  this->IsAllocated = 0; /*0x67c1cb*/
+  *(this + 2) = 0; /*0x67c1d1*/
   if ( (a2 & 1) != 0 ) /*0x67c1d8*/
-    __3_YAXPAX_Z(Block); /*0x67c1db*/
-  return (DynamicVector *)Block; /*0x67c1e5*/
+    __3_YAXPAX_Z(this); /*0x67c1db*/
+  return (DynamicVector *)this; /*0x67c1e5*/
 }
 }
 } // namespace gamemd

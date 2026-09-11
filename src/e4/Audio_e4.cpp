@@ -85,17 +85,17 @@ int __thiscall Audio::ReleaseChannelRefs(_DWORD *this)
 
 // 0x404DD0
 namespace gamemd {
-int Audio::FlushChannel(unsigned int ** Block)
+int Audio::FlushChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio::FlushChannel(_DWORD **Block)
+int __thiscall Audio::FlushChannel(_DWORD **this)
 {
-  LinkedList::Init(Block); /*0x404dd3*/
-  *(Block + 78) = 0; /*0x404dd8*/
-  if ( *((char *)Block + 24) >= 0 ) /*0x404de7*/
-    PushFrontLinkedListAlt(MEMORY[0x87E2A8], (int)Block); /*0x404e07*/
+  LinkedList::Init(this); /*0x404dd3*/
+  *(this + 78) = 0; /*0x404dd8*/
+  if ( *((char *)this + 24) >= 0 ) /*0x404de7*/
+    PushFrontLinkedListAlt(MEMORY[0x87E2A8], (int)this); /*0x404e07*/
   else
-    __3_YAXPAX_Z(Block); /*0x404dea*/
+    __3_YAXPAX_Z(this); /*0x404dea*/
   return --MEMORY[0x87E28C]; /*0x404dfd*/
 }
 }
@@ -154,10 +154,10 @@ int __thiscall sub_4054A0(int *this)
 
 // 0x4063B0
 namespace gamemd {
-ObjectClass * Audio::ProcessMixerOutput(char * Source)
+ObjectClass * Audio::ProcessMixerOutput()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall Audio::ProcessMixerOutput(char *Source)
+ObjectClass *__thiscall Audio::ProcessMixerOutput(char *this)
 {
   int *Next; // esi
   ObjectClass *v4; // esi
@@ -167,7 +167,7 @@ ObjectClass *__thiscall Audio::ProcessMixerOutput(char *Source)
   Next = (int *)AudioQueue::GetNext((int *)&stru_87C374.__pad_14B0[2604]); /*0x4063cc*/
   if ( Next ) /*0x4063d0*/
   {
-    while ( _strcmpi(Source, Next + 27) ) /*0x4063e1*/
+    while ( _strcmpi(this, Next + 27) ) /*0x4063e1*/
     {
       Next = (int *)AudioQueue::GetNextAlt(Next); /*0x4063ee*/
       if ( !Next ) /*0x4063f2*/
@@ -189,7 +189,7 @@ LABEL_6:
   v4->customSound_controller[0] = 10; /*0x40644a*/
   v4->customSound_controller[1] = 1045220557; /*0x406451*/
   SetupSampleAudioMixer(&v4->nextArrayIndex, (ObjectClass *)0x4000); /*0x406458*/
-  strncpy((char *)&v4->health, Source, (IUnknown *)0x1F); /*0x406464*/
+  strncpy((char *)&v4->health, this, (IUnknown *)0x1F); /*0x406464*/
   HIBYTE(v4->parachute) = 0; /*0x406473*/
   InsertAfterDListNode((int)&stru_87C374.__pad_14B0[2604], v4); /*0x40647a*/
   return v4; /*0x4063bd*/
@@ -1153,7 +1153,7 @@ int Audio_IsPlaying()
 
 // 0x753D00
 namespace gamemd {
-int Audio_Render()
+char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, float * a3, float * a4, float * a5, float a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall Audio_Render(

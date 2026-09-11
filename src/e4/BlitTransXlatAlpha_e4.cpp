@@ -56,7 +56,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
 
 // 0x4939D0
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0()
+int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0(
@@ -203,7 +203,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
 
 // 0x493B00
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_2()
+int BlitTransXlatAlpha_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_2(
@@ -347,7 +347,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
 
 // 0x493C30
 namespace gamemd {
-int BlitTransXlatAlpha_ushort_CallBlit0_5()
+int BlitTransXlatAlpha_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_5(
@@ -618,21 +618,21 @@ std::locale::facet *__thiscall BlitTransXlatAlpha_ushort::Constructor_Blitter_1(
 
 // 0x49A240
 namespace gamemd {
-BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block, char a2)
+BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlatAlpha_ushort *__thiscall BlitTransXlatAlpha_ushort::Blit(_DWORD *Block, char a2)
+BlitTransXlatAlpha_ushort *__thiscall BlitTransXlatAlpha_ushort::Blit(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a248*/
-  *Block = &BlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49a24b*/
+  v3 = (void *)*(this + 2); /*0x49a248*/
+  *this = &BlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49a24b*/
   FractalNoise::Release(v3); /*0x49a252*/
-  *(Block + 2) = 0; /*0x49a25b*/
-  *Block = &Blitter::`vftable'; /*0x49a264*/
+  *(this + 2) = 0; /*0x49a25b*/
+  *this = &Blitter::`vftable'; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    __3_YAXPAX_Z(Block); /*0x49a26d*/
-  return (BlitTransXlatAlpha_ushort *)Block; /*0x49a277*/
+    __3_YAXPAX_Z(this); /*0x49a26d*/
+  return (BlitTransXlatAlpha_ushort *)this; /*0x49a277*/
 }
 }
 } // namespace gamemd

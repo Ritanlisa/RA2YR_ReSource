@@ -5,8 +5,8 @@ namespace gamemd {
 struct Mouse {
     void* vfptr;  // minimal E2 declaration
     int SetBounds(IUnknown * aP1);  // 0x4A8BF0
-    SHORT GetKeyState(unsigned signed char vKey);  // 0x53EC90
-    BOOL IsButtonDown(unsigned signed char a1);  // 0x54F5C0
+    SHORT GetKeyState();  // 0x53EC90
+    BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400
     char SetCursor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5BDC80
     HWND ReleaseCapture();  // 0x6938C0

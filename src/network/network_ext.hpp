@@ -567,6 +567,9 @@ public:
 // --- e4 declarations (BEGIN) ---
     int COMStub_Ret2();  // 0x7B40F0
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    short ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8);  // 0x7B36C0
+// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class WOLGameClass

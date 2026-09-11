@@ -48,10 +48,10 @@ int __thiscall Session::RemoveTeam(_DWORD *this, MSShapeAnim *aP1)
 
 // 0x5E74E0
 namespace gamemd {
-int Session::PrepareGame(HWND hWnd)
+int Session::PrepareGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session::PrepareGame(HWND hWnd)
+int __thiscall Session::PrepareGame(HWND this)
 {
   ObjectClass *v1; // esi
   int v3; // eax
@@ -140,7 +140,7 @@ int __thiscall Session::PrepareGame(HWND hWnd)
       {
         goto LABEL_42; /*0x5e7557*/
       }
-      InvalidateRect(hWnd, 0, 0); /*0x5e7560*/
+      InvalidateRect(this, 0, 0); /*0x5e7560*/
       memset(Str, 0, sizeof(Str)); /*0x5e7571*/
       v19 = 0; /*0x5e7573*/
       v20 = 0; /*0x5e7575*/
@@ -180,14 +180,14 @@ LABEL_42:
         }
       }
       if ( IsRandMap::Sed2((int)MEMORY[0xA8B238]) ) /*0x5e76ef*/
-        return InvalidateRect(hWnd, 0, 0); /*0x5e76ef*/
+        return InvalidateRect(this, 0, 0); /*0x5e76ef*/
       v8 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e76fc*/
       if ( !MEMORY[0xAC1154] ) /*0x5e7704*/
-        return InvalidateRect(hWnd, 0, 0); /*0x5e7704*/
+        return InvalidateRect(this, 0, 0); /*0x5e7704*/
       ComPtr::Dtor(MEMORY[0xAC1154]); /*0x5e770c*/
       __3_YAXPAX_Z(v8); /*0x5e7712*/
       MEMORY[0xAC1154] = 0; /*0x5e771a*/
-      return InvalidateRect(hWnd, 0, 0); /*0x5e7733*/
+      return InvalidateRect(this, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
       v13 = CCFileClass::Construct(Str, &MEMORY[0xA8B8E0]); /*0x5e7845*/
@@ -214,12 +214,12 @@ LABEL_44:
         if ( IsRandMap::Sed2((int)MEMORY[0xA8B238]) ) /*0x5e78b7*/
         {
           ScenarioClass::CopyStartPositions(); /*0x5e78f5*/
-          return InvalidateRect(hWnd, 0, 0); /*0x5e78fa*/
+          return InvalidateRect(this, 0, 0); /*0x5e78fa*/
         }
         else
         {
           PreviewClass::ReadPreview((char **)MEMORY[0xAC1154], &MEMORY[0xA8B8E0]); /*0x5e78cb*/
-          return InvalidateRect(hWnd, 0, 0); /*0x5e78d3*/
+          return InvalidateRect(this, 0, 0); /*0x5e78d3*/
         }
       }
       return result;
@@ -257,17 +257,17 @@ LABEL_12:
 
 // 0x5ED370
 namespace gamemd {
-int Session::StartGame(HWND hWnd)
+int Session::StartGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session::StartGame(HWND hWnd)
+int __thiscall Session::StartGame(HWND this)
 {
   ObjectClass *v2; // esi
   _DWORD *v3; // eax
   ObjectClass *v4; // eax
 
   if ( !IsRandMap::Sed(*(_DWORD *)(MEMORY[0xA8B8CC] + 4 * MEMORY[0xA8B254])) ) /*0x5ed381*/
-    return Session::PrepareGame(hWnd); /*0x5ed3f1*/
+    return Session::PrepareGame(this); /*0x5ed3f1*/
   v2 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5ed38b*/
   if ( MEMORY[0xAC1154] ) /*0x5ed393*/
   {
@@ -282,8 +282,8 @@ int __thiscall Session::StartGame(HWND hWnd)
   MEMORY[0xAC1154] = v4; /*0x5ed3c6*/
   Surface::LoadToSurfaceSHP((char **)v4, stru_829ABC); /*0x5ed3cb*/
   if ( !*(_DWORD *)MEMORY[0xAC1154] ) /*0x5ed3d6*/
-    Session::PrepareGame(hWnd); /*0x5ed3dd*/
-  return InvalidateRect(hWnd, 0, 0); /*0x5ed3ed*/
+    Session::PrepareGame(this); /*0x5ed3dd*/
+  return InvalidateRect(this, 0, 0); /*0x5ed3ed*/
 }
 }
 } // namespace gamemd

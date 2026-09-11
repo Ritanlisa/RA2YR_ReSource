@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_ParasiteClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_ParasiteClass___(char a2);  // 0x62B380
     void Destroy();  // 0x62B070
     unsigned int GetItemIndex(int a2);  // 0x62B0A0
     int Get(int a2);  // 0x62B0C0

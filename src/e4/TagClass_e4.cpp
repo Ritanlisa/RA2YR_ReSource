@@ -329,15 +329,15 @@ int __stdcall TagClass::SaveTag(TechnoTypeClass *aP0, int *a1, int aP2)
 
 // 0x6E58B0
 namespace gamemd {
-TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
+TagClass * TagClass::ProcessTrigger(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TagClass *__thiscall TagClass::ProcessTrigger(void **Block, char a2)
+TagClass *__thiscall TagClass::ProcessTrigger(void **this, char a2)
 {
-  TagClass::Destructor(Block); /*0x6e58b3*/
+  TagClass::Destructor(this); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    __3_YAXPAX_Z(Block); /*0x6e58c0*/
-  return (TagClass *)Block; /*0x6e58ca*/
+    __3_YAXPAX_Z(this); /*0x6e58c0*/
+  return (TagClass *)this; /*0x6e58ca*/
 }
 }
 } // namespace gamemd

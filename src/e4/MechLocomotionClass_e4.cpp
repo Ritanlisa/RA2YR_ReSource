@@ -40,17 +40,17 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 }
 
 // 0x5B1B50
-MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MechLocomotionClass *__thiscall MechLocomotionClass::ProcessMove(_DWORD *Block, char a2)
+MechLocomotionClass *__thiscall MechLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  *Block = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
-  *(Block + 1) = &MechLocomotionClass::`vftable'; /*0x5b1b59*/
-  LocomotionClass::Construct(Block); /*0x5b1b60*/
+  *this = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
+  *(this + 1) = &MechLocomotionClass::`vftable'; /*0x5b1b59*/
+  LocomotionClass::Construct(this); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    __3_YAXPAX_Z(Block); /*0x5b1b6d*/
-  return (MechLocomotionClass *)Block; /*0x5b1b77*/
+    __3_YAXPAX_Z(this); /*0x5b1b6d*/
+  return (MechLocomotionClass *)this; /*0x5b1b77*/
 }
 }
 

@@ -214,7 +214,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
 
 // 0x721A50
 namespace gamemd {
-char TiberiumClass::LoadFromINI(unsigned signed char *** aP1)
+char TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)

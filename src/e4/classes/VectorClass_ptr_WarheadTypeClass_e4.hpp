@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_WarheadTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_WarheadTypeClass___(char a2);  // 0x40F8F0
     void Destroy();  // 0x40F5E0
     unsigned int GetItemIndex(int a2);  // 0x40F610
     int Get(int a2);  // 0x40F630

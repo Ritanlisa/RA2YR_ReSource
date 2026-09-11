@@ -534,6 +534,9 @@ public:
 
     uint8_t SkirmishDialog_field_0x04[4];
     uint8_t SkirmishDialog_field_0x08[4];
+// --- e4 declarations (BEGIN) ---
+    BOOL ResizeDialogAndEnum();  // 0x60C4A0
+// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 // CSP: SkirmishMapGen matched via T1

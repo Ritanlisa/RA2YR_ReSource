@@ -5,12 +5,12 @@ namespace gamemd {
 struct AudioStream {
     void* vfptr;  // minimal E2 declaration
     int ReleaseSubsystem();  // 0x401910
-    void Destructor(unsigned int * Block);  // 0x402550
+    void Destructor();  // 0x402550
     int Stop();  // 0x4026B0
     int ReleaseChannel();  // 0x4026F0
     int CheckFormatChanged(int a1, const void * a2);  // 0x402800
     int InitListAndCounters();  // 0x4028B0
-    void DestroyAll(void * Block);  // 0x4033C0
+    void DestroyAll();  // 0x4033C0
     int Reset();  // 0x403820
     int ResetChannel(int a2, int a3);  // 0x4038A0
     int ResetChannel2(int a2, int a3);  // 0x4038C0
@@ -27,6 +27,7 @@ struct AudioStream {
     int GetChannel();  // 0x408D50
     int ReadStreamAndReturn();  // 0x409310
     int ReadSamples(const void * a2);  // 0x4A33A0
+    char DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);  // 0x4BEAC0
     int SetFlag4C();  // 0x7BD270
     int CalcReadPos();  // 0x7BD2D0
     int ProcessStream();  // 0x7BEA80

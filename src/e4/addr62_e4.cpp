@@ -1,10 +1,32 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6223C0_e4.hpp"
+#include "e4/classes/E4Recv_6235B0_e4.hpp"
+#include "e4/classes/E4Recv_623730_e4.hpp"
+#include "e4/classes/E4Recv_624080_e4.hpp"
+#include "e4/classes/E4Recv_624090_e4.hpp"
+#include "e4/classes/E4Recv_6242B0_e4.hpp"
+#include "e4/classes/E4Recv_626020_e4.hpp"
+#include "e4/classes/E4Recv_626070_e4.hpp"
+#include "e4/classes/E4Recv_6260A0_e4.hpp"
+#include "e4/classes/E4Recv_6260F0_e4.hpp"
+#include "e4/classes/E4Recv_626170_e4.hpp"
+#include "e4/classes/E4Recv_6261B0_e4.hpp"
+#include "e4/classes/E4Recv_626250_e4.hpp"
+#include "e4/classes/E4Recv_626290_e4.hpp"
+#include "e4/classes/E4Recv_6262F0_e4.hpp"
+#include "e4/classes/E4Recv_6274F0_e4.hpp"
+#include "e4/classes/E4Recv_6278C0_e4.hpp"
+#include "e4/classes/E4Recv_627A10_e4.hpp"
+#include "e4/classes/E4Recv_628B00_e4.hpp"
+#include "e4/classes/E4Recv_629530_e4.hpp"
+#include "e4/classes/E4Recv_629710_e4.hpp"
+#include "e4/classes/E4Recv_62D510_e4.hpp"
 
 // 0x620050
 namespace gamemd {
-char Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned signed char a5)
+char Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall Surface_DrawLineAlpha(int a1, int *a2, int *a3, __int16 a4, unsigned __int8 a5)
@@ -843,7 +865,7 @@ LABEL_21:
 
 // 0x6214B0
 namespace gamemd {
-int SetupDialogRenderBuffer(int * a1, HWND a2, unsigned signed char a3)
+int SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall SetupDialogRenderBuffer(int *a1, HWND a2, unsigned __int8 a3)
@@ -1089,7 +1111,7 @@ int __fastcall sub_621D30(int *a1, int a2)
 
 // 0x6223C0
 namespace gamemd {
-unsigned int * DestroyDialog()
+unsigned int * E4Recv_6223C0::DestroyDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall DestroyDialog(void *this)
@@ -1692,7 +1714,7 @@ int __stdcall sub_6232B0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 
 // 0x6235B0
 namespace gamemd {
-void sub_6235B0(wchar_t * Format)
+void E4Recv_6235B0::sub_6235B0(wchar_t * Format)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_6235B0(void **this, wchar_t *Format)
@@ -1719,7 +1741,7 @@ void __thiscall sub_6235B0(void **this, wchar_t *Format)
 
 // 0x623730
 namespace gamemd {
-unsigned int * sub_623730(unsigned int * a2)
+unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_623730(_DWORD *this, _DWORD *a2)
@@ -2182,7 +2204,7 @@ LRESULT __fastcall GetListBoxItemText(ObjectClass *aP0, WPARAM wParam, void **a2
 
 // 0x624080
 namespace gamemd {
-unsigned int * sub_624080()
+unsigned int * E4Recv_624080::sub_624080()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_624080(DialogControl_OwnerDraw *this)
@@ -2195,7 +2217,7 @@ _DWORD *__thiscall sub_624080(DialogControl_OwnerDraw *this)
 
 // 0x624090
 namespace gamemd {
-void sub_624090()
+void E4Recv_624090::sub_624090()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_624090(DialogControl_OwnerDraw *this)
@@ -2256,18 +2278,18 @@ int __fastcall Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UIN
 
 // 0x6242B0
 namespace gamemd {
-bool sub_6242B0(HWND hWnd)
+bool E4Recv_6242B0::sub_6242B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_6242B0(HWND hWnd)
+bool __thiscall sub_6242B0(HWND this)
 {
   int v2; // eax
   HWND v3; // edi
   HWND hWnda; // [esp+Ch] [ebp-84h] BYREF
   CHAR ClassName[128]; // [esp+10h] [ebp-80h] BYREF
 
-  hWnda = hWnd; /*0x6242c4*/
-  GetClassNameA(hWnd, ClassName, 128); /*0x6242c8*/
+  hWnda = this; /*0x6242c4*/
+  GetClassNameA(this, ClassName, 128); /*0x6242c8*/
   if ( !strcmp(ClassName, MEMORY[0x833728]) ) /*0x6242df*/
     return 1; /*0x62430a*/
   if ( !strcmp(ClassName, MEMORY[0x833720]) ) /*0x624325*/
@@ -2296,7 +2318,7 @@ bool __thiscall sub_6242B0(HWND hWnd)
 
 // 0x626020
 namespace gamemd {
-char * sub_626020(int a2)
+char * E4Recv_626020::sub_626020(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_626020(char *this, int a2)
@@ -2338,7 +2360,7 @@ char *__thiscall sub_626020(char *this, int a2)
 
 // 0x626070
 namespace gamemd {
-void * sub_626070(const void * a2)
+void * E4Recv_626070::sub_626070(const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_626070(char *this, const void *a2)
@@ -2367,7 +2389,7 @@ void *__thiscall sub_626070(char *this, const void *a2)
 
 // 0x6260A0
 namespace gamemd {
-bool sub_6260A0(const void * a2)
+bool E4Recv_6260A0::sub_6260A0(const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_6260A0(const void *this, const void *a2)
@@ -2379,7 +2401,7 @@ bool __thiscall sub_6260A0(const void *this, const void *a2)
 
 // 0x6260F0
 namespace gamemd {
-unsigned signed char sub_6260F0(ObjectClass * aP1)
+unsigned char E4Recv_6260F0::sub_6260F0(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_6260F0(unsigned __int8 *this, ObjectClass *aP1)
@@ -2402,7 +2424,7 @@ unsigned __int8 __thiscall sub_6260F0(unsigned __int8 *this, ObjectClass *aP1)
 
 // 0x626170
 namespace gamemd {
-unsigned signed char sub_626170(ObjectClass * aP1, int a3)
+unsigned char E4Recv_626170::sub_626170(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_626170(unsigned __int8 *this, ObjectClass *aP1, int a3)
@@ -2423,7 +2445,7 @@ unsigned __int8 __thiscall sub_626170(unsigned __int8 *this, ObjectClass *aP1, i
 
 // 0x6261B0
 namespace gamemd {
-unsigned signed char sub_6261B0(ObjectClass * aP1, int a3, int a4)
+unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall sub_6261B0(unsigned __int8 *this, ObjectClass *aP1, int a3, int a4)
@@ -2445,7 +2467,7 @@ unsigned __int8 __thiscall sub_6261B0(unsigned __int8 *this, ObjectClass *aP1, i
 
 // 0x626250
 namespace gamemd {
-int sub_626250(const char * a2, int a3)
+int E4Recv_626250::sub_626250(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_626250(int this, const char *a2, int a3)
@@ -2459,7 +2481,7 @@ int __thiscall sub_626250(int this, const char *a2, int a3)
 
 // 0x626290
 namespace gamemd {
-void sub_626290()
+void E4Recv_626290::sub_626290()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_626290(_DWORD *this)
@@ -2496,7 +2518,7 @@ void __thiscall sub_626290(_DWORD *this)
 
 // 0x6262F0
 namespace gamemd {
-int sub_6262F0(int a2)
+int E4Recv_6262F0::sub_6262F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6262F0(_DWORD *this, int a2)
@@ -2684,7 +2706,7 @@ _DWORD *sub_627020()
 
 // 0x6274F0
 namespace gamemd {
-int sub_6274F0(ObjectClass * aP1)
+int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6274F0(_DWORD *this, ObjectClass *aP1)
@@ -2720,7 +2742,7 @@ int __thiscall sub_6274F0(_DWORD *this, ObjectClass *aP1)
 
 // 0x6278C0
 namespace gamemd {
-char sub_6278C0(const char * a2)
+char E4Recv_6278C0::sub_6278C0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6278C0(_DWORD *this, const char *a2)
@@ -2803,7 +2825,7 @@ LABEL_8:
 
 // 0x627A10
 namespace gamemd {
-unsigned int * sub_627A10(ObjectClass * aP1)
+unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_627A10(_DWORD *this, ObjectClass *aP1)
@@ -2884,7 +2906,7 @@ LABEL_5:
 
 // 0x628B00
 namespace gamemd {
-unsigned int * sub_628B00(int a2, unsigned char * a3)
+unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
@@ -2897,8 +2919,8 @@ _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
   v3 = a2; /*0x628b03*/
   *(this + 1) = 0; /*0x628b0c*/
   *(this + 2) = a2; /*0x628b13*/
-  this->IsInitialized = 1; /*0x628b16*/
-  this->IsAllocated = 0; /*0x628b1a*/
+  *((_BYTE *)this + 12) = 1; /*0x628b16*/
+  *((_BYTE *)this + 13) = 0; /*0x628b1a*/
   *this = &VectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b1e*/
   if ( a2 ) /*0x628b24*/
   {
@@ -2939,7 +2961,7 @@ _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
         v6 = 0; /*0x628b86*/
       }
       *(this + 1) = v6; /*0x628b88*/
-      this->IsAllocated = 1; /*0x628b8b*/
+      *((_BYTE *)this + 13) = 1; /*0x628b8b*/
     }
   }
   *this = &DynamicVectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b8f*/
@@ -3182,7 +3204,7 @@ void __cdecl sub_6291D0()
 
 // 0x629530
 namespace gamemd {
-void sub_629530()
+void E4Recv_629530::sub_629530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_629530(int this)
@@ -3191,16 +3213,16 @@ void __thiscall sub_629530(int this)
   int v3; // eax
   int v4; // [esp+8h] [ebp-4h] BYREF
 
-  v2 = this->ambientSoundController.AudioController_field_08; /*0x629537*/
+  v2 = *(_DWORD *)(this + 68); /*0x629537*/
   *(_DWORD *)(this + 76) = 0; /*0x62953a*/
-  this->customSound_controller = 0; /*0x62953f*/
-  this->ambientSoundController.AudioController_field_0C = 0; /*0x629542*/
+  *(_DWORD *)(this + 80) = 0; /*0x62953f*/
+  *(_DWORD *)(this + 72) = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2); /*0x629549*/
-    this->ambientSoundController.AudioController_field_08 = 0; /*0x62954f*/
+    *(_DWORD *)(this + 68) = 0; /*0x62954f*/
   }
-  if ( *(_BYTE *)(this + 84) ) /*0x629552*/
+  if ( (unsigned char)this->M84 ) /*0x629552*/
   {
     v4 = this; /*0x629567*/
     v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v4); /*0x62956b*/
@@ -3221,7 +3243,7 @@ void __thiscall sub_629530(int this)
 
 // 0x629710
 namespace gamemd {
-int sub_629710()
+int E4Recv_629710::sub_629710()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_629710(_DWORD *this)
@@ -3428,7 +3450,7 @@ int sub_62B5C0()
 
 // 0x62D510
 namespace gamemd {
-int sub_62D510()
+int E4Recv_62D510::sub_62D510()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_62D510(float *this)
@@ -3450,9 +3472,9 @@ int __thiscall sub_62D510(float *this)
   v2 = *(this + 57); /*0x62d524*/
   v3 = (char *)(this + 39); /*0x62d530*/
   *(float *)v15 = *(this + 39); /*0x62d532*/
-  v4 = *((_DWORD *)this + 40); /*0x62d536*/
-  v5 = *((_DWORD *)this + 41); /*0x62d539*/
-  v6 = this->location; /*0x62d53c*/
+  v4 = this->M160; /*0x62d536*/
+  v5 = this->M164; /*0x62d539*/
+  v6 = this->M156; /*0x62d53c*/
   v15[2] = v5; /*0x62d53e*/
   v7 = *((_DWORD *)v3 + 1); /*0x62d544*/
   v12 = v6; /*0x62d547*/
@@ -3462,9 +3484,9 @@ int __thiscall sub_62D510(float *this)
   v15[1] = v4; /*0x62d559*/
   if ( v2 > 0.0 ) /*0x62d55d*/
   {
-    v9 = *((_DWORD *)this + 66); /*0x62d565*/
-    v12 = *((_DWORD *)this + 64) + v6; /*0x62d56d*/
-    v13 = *((_DWORD *)this + 65) + v7; /*0x62d57b*/
+    v9 = this->M264; /*0x62d565*/
+    v12 = this->M256 + v6; /*0x62d56d*/
+    v13 = this->M260 + v7; /*0x62d57b*/
     v14 = v9 + v8; /*0x62d57f*/
   }
   if ( *(this + 57) > 0.0 ) /*0x62d594*/

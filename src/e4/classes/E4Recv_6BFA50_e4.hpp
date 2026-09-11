@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_6BFA50 {
+    void* vfptr;  // minimal E2 declaration
+    int CreateTClassFactory_EMPulseClass();  // 0x6BFA50
+};
+} // namespace gamemd

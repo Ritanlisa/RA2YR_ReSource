@@ -25,7 +25,7 @@ char __thiscall Trigger::EnableOnce(_BYTE *this, AbstractClass *aP1)
 
 // 0x5CBD20
 namespace gamemd {
-int Trigger_initTrigger()
+void * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall Trigger::initTrigger(

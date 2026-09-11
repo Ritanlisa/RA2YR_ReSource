@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_PlanningMemberClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_PlanningMemberClass___(char a2);  // 0x63ECA0
+    DynamicVector * Constructor_VectorClass_PlanningBranchClass___(char a2);  // 0x63ED40
     void Destroy();  // 0x63DB60
     unsigned int GetItemIndex(int a2);  // 0x63DB90
     int Get(int a2);  // 0x63DBB0

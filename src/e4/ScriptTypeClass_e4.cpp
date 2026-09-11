@@ -48,20 +48,20 @@ int __stdcall ScriptTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 
 // 0x691FA0
 namespace gamemd {
-ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
+ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ScriptTypeClass *__thiscall ScriptTypeClass::ddtor(void **Block, char a2)
+ScriptTypeClass *__thiscall ScriptTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ScriptTypeClass::`vftable'; /*0x691fa6*/
-  *(Block + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
-  *(Block + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
-  *(Block + 3) = &ScriptTypeClass::`vftable'; /*0x691fba*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x691fc1*/
-  v5 = Block; /*0x691fd6*/
+  *this = &ScriptTypeClass::`vftable'; /*0x691fa6*/
+  *(this + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
+  *(this + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
+  *(this + 3) = &ScriptTypeClass::`vftable'; /*0x691fba*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691fc1*/
+  v5 = this; /*0x691fd6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < dword_8B41D8 && v3 < --dword_8B41D8 ) /*0x691ff5*/
   {
@@ -72,10 +72,10 @@ ScriptTypeClass *__thiscall ScriptTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < dword_8B41D8 ); /*0x69200d*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x692011*/
+  AbstractTypeClass::Dtor(this); /*0x692011*/
   if ( (a2 & 1) != 0 ) /*0x69201b*/
-    __3_YAXPAX_Z(Block); /*0x69201e*/
-  return (ScriptTypeClass *)Block; /*0x692028*/
+    __3_YAXPAX_Z(this); /*0x69201e*/
+  return (ScriptTypeClass *)this; /*0x692028*/
 }
 }
 } // namespace gamemd

@@ -11,6 +11,7 @@ struct MPCooperative {
     char BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     char WriteCoopSaveINI();  // 0x49BE40
     bool ReadCoopSaveINI();  // 0x49D120
+    unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6);  // 0x5C1470
     char Read();  // 0x5C18A0
     HWND CopyTo();  // 0x5C1A10
     void COMStub();  // 0x5C1CB0
@@ -40,8 +41,9 @@ struct MPCooperative {
     void ShowScoreScreen(int a2);  // 0x5C44E0
     int checkVictory();  // 0x5C4670
     int InitializePlayers();  // 0x5C4CA0
+    char spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
     unsigned int * processTurnEnd(unsigned int * a2);  // 0x5C4F30
-    DynamicVector * saveGameState(unsigned int * Block, char a2);  // 0x5C4FC0
+    DynamicVector * saveGameState(char a2);  // 0x5C4FC0
     void loadGameState();  // 0x5C5010
     unsigned int syncPlayers(int a2);  // 0x5C5040
     int dispatchEvent(int a2);  // 0x5C5060
@@ -60,9 +62,9 @@ struct MPCooperative {
     unsigned int evaluateAIStrategy(int a2);  // 0x5C54F0
     char broadcastMessage(int a2, unsigned int * a3);  // 0x5C5770
     int handlePlayerReady(unsigned int * a2);  // 0x5C5820
-    VectorClass * verifyGameIntegrity(unsigned int * Block, char a2);  // 0x5C5850
-    VectorClass * processVote(unsigned int * Block, char a2);  // 0x5C58A0
-    DynamicVector * tallyVotes(unsigned int * Block, char a2);  // 0x5C5990
+    VectorClass * verifyGameIntegrity(char a2);  // 0x5C5850
+    VectorClass * processVote(char a2);  // 0x5C58A0
+    DynamicVector * tallyVotes(char a2);  // 0x5C5990
     unsigned int * applyVoteResult(int a2, int a3);  // 0x5C59E0
     int finalizeSession();  // 0x696F30
     char assignResources();  // 0x5C4EE0

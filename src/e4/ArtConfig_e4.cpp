@@ -4,7 +4,7 @@
 
 // 0x76F910
 namespace gamemd {
-int ArtConfig_Read()
+rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__fastcall ArtConfig_Read(
@@ -32,8 +32,7 @@ rc_ptr *__fastcall ArtConfig_Read(
 } // namespace gamemd
 
 // 0x76FC50
-namespace gamemd {
-int ArtConfig_validateConfig()
+int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ArtConfig::validateConfig(
@@ -73,4 +72,3 @@ int __thiscall ArtConfig::validateConfig(
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 }
 }
-} // namespace gamemd

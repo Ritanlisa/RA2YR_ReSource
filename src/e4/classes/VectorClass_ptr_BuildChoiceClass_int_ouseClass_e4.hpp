@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     void* vfptr;  // minimal E2 declaration
+    unsigned int * Constructor(EnumConnectionPointsClass * aP1);  // 0x4A0C20
     void * GetItemIndex_0(int a2);  // 0x4F6930
     int SetCapacity(int a1, int a2);  // 0x4F6A20
     int SetCapacity_0(int a1, int a2);  // 0x4F6A80

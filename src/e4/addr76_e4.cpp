@@ -1,6 +1,28 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_763700_e4.hpp"
+#include "e4/classes/E4Recv_764B90_e4.hpp"
+#include "e4/classes/E4Recv_764FF0_e4.hpp"
+#include "e4/classes/E4Recv_765000_e4.hpp"
+#include "e4/classes/E4Recv_7651D0_e4.hpp"
+#include "e4/classes/E4Recv_7667E0_e4.hpp"
+#include "e4/classes/E4Recv_7667F0_e4.hpp"
+#include "e4/classes/E4Recv_767320_e4.hpp"
+#include "e4/classes/E4Recv_767E90_e4.hpp"
+#include "e4/classes/E4Recv_767EC0_e4.hpp"
+#include "e4/classes/E4Recv_769490_e4.hpp"
+#include "e4/classes/E4Recv_769C40_e4.hpp"
+#include "e4/classes/E4Recv_76AB90_e4.hpp"
+#include "e4/classes/E4Recv_76ABE0_e4.hpp"
+#include "e4/classes/E4Recv_76B7B0_e4.hpp"
+#include "e4/classes/E4Recv_76D3A0_e4.hpp"
+#include "e4/classes/E4Recv_76D470_e4.hpp"
+#include "e4/classes/E4Recv_76DED0_e4.hpp"
+#include "e4/classes/E4Recv_76DF50_e4.hpp"
+#include "e4/classes/E4Recv_76DFD0_e4.hpp"
+#include "e4/classes/E4Recv_76E090_e4.hpp"
+#include "e4/classes/WorldDominationTour__Territory_e4.hpp"
 
 // 0x763380
 namespace gamemd {
@@ -251,7 +273,7 @@ _DWORD *__thiscall unknown_libname_36(_DWORD *this)
 
 // 0x763700
 namespace gamemd {
-unsigned int * sub_763700(unsigned int * a2)
+unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_763700(_DWORD *this, _DWORD *a2)
@@ -458,8 +480,9 @@ int sub_764A00()
 } // namespace gamemd
 
 // 0x764A20
-namespace gamemd {
-GenericNode * sub_764A20()
+namespace ra2 {
+namespace game {
+GenericNode * ObjectClass::sub_764A20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 GenericNode *__thiscall sub_764A20(ObjectClass *this)
@@ -506,11 +529,12 @@ GenericNode *__thiscall sub_764A20(ObjectClass *this)
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x764B90
 namespace gamemd {
-char * WDT_Campaign_Constructor(const char ** a2, int a3)
+char * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
@@ -549,23 +573,23 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
 
   v4 = this + 8; /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
-  *((_DWORD *)this + 1) = 0; /*0x764baa*/
+  this->M4 = 0; /*0x764baa*/
   *(_DWORD *)this = &ReferenceCounted::`vftable'; /*0x764bad*/
   ComPtr::Constructor((_DWORD *)this + 2); /*0x764bb3*/
   *v4 = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x764bbf*/
   ComPtr::Set(v4, *(_DWORD *)(a3 + 4)); /*0x764bcb*/
   Team_Create_767B00(this + 16, *(_DWORD *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
-  *((_DWORD *)this + 6) = &DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x764bf7*/
-  *((_DWORD *)this + 11) = 10; /*0x764bfd*/
-  *((_DWORD *)this + 10) = 0; /*0x764c04*/
-  *((_DWORD *)this + 17) = 0; /*0x764c0b*/
+  this->M24 = &DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x764bf7*/
+  this->M44 = 10; /*0x764bfd*/
+  this->M40 = 0; /*0x764c04*/
+  this->M68 = 0; /*0x764c0b*/
   String::AssignFromPtr((char **)this + 18, a2); /*0x764c0e*/
   *(_DWORD *)this = &WorldDominationTour::Campaign::`vftable'; /*0x764c18*/
-  *((_DWORD *)this + 13) = 0; /*0x764c1e*/
-  *((_DWORD *)this + 14) = 0; /*0x764c20*/
-  *((_DWORD *)this + 15) = 0; /*0x764c23*/
-  *((_DWORD *)this + 16) = 0; /*0x764c26*/
+  this->M52 = 0; /*0x764c1e*/
+  this->M56 = 0; /*0x764c20*/
+  this->M60 = 0; /*0x764c23*/
+  this->M64 = 0; /*0x764c26*/
   v5 = *(_DWORD **)(a3 + 4); /*0x764c29*/
   if ( v5[3] ) /*0x764c2c*/
   {
@@ -607,19 +631,19 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
           if ( v25[1] ) /*0x764d07*/
           {
             Team_Create_765F60(v27, v25); /*0x764d11*/
-            v12 = *((_DWORD *)this + 8); /*0x764d16*/
-            if ( *((_DWORD *)this + 10) < v12 /*0x764d3b*/
+            v12 = this->M32; /*0x764d16*/
+            if ( this->M40 < v12 /*0x764d3b*/
               || (*(this + 37) || !v12)
-              && (v13 = *((_DWORD *)this + 11), v13 > 0)
-              && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)this + 6) + 8))(
+              && (v13 = this->M44, v13 > 0)
+              && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(this->M24 + 8))(
                    this + 24,
                    v12 + v13,
                    0) )
             {
-              v14 = *((_DWORD *)this + 10); /*0x764d42*/
+              v14 = this->M40; /*0x764d42*/
               v22 = v27[1]; /*0x764d49*/
-              *((_DWORD *)this + 10) = v14 + 1; /*0x764d4d*/
-              ComPtr::Set((_DWORD *)(*((_DWORD *)this + 7) + 8 * v14), v22); /*0x764d56*/
+              this->M40 = v14 + 1; /*0x764d4d*/
+              ComPtr::Set((_DWORD *)(this->M28 + 8 * v14), v22); /*0x764d56*/
             }
             v27[0] = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x764d5f*/
             ComPtr::Release(v27); /*0x764d67*/
@@ -654,8 +678,8 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
     String::Assign((char **)&v24, g_INI_Key_CampaignID); /*0x764e1e*/
     Int = INIClass::ReadInt((char **)this + 18, (char **)&v24, -1); /*0x764e3b*/
     DeleteAndZero((void **)&v24); /*0x764e3d*/
-    *((_DWORD *)this + 12) = Int < 0 ? 0 : Int;
-    if ( *((_DWORD *)this + 12) == WDTObject::GetSize(*(_DWORD **)(a3 + 4)) )
+    this->M48 = Int < 0 ? 0 : Int;
+    if ( this->M48 == WDTObject::GetSize(*(_DWORD **)(a3 + 4)) )
     {
       v18 = this + 52; /*0x764e60*/
       do
@@ -672,15 +696,15 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
       }
       while ( v16 < 4 );
       String::Assign((char **)&v24, aPlayerfaction); /*0x764eca*/
-      *((_DWORD *)this + 17) = INIClass::ReadInt((char **)this + 18, (char **)&v24, *((_DWORD *)this + 17)); /*0x764ee9*/
+      this->M68 = INIClass::ReadInt((char **)this + 18, (char **)&v24, this->M68); /*0x764ee9*/
       DeleteAndZero((void **)&v24); /*0x764eec*/
     }
     else
     {
-      *((_DWORD *)this + 13) = 0; /*0x764ef5*/
-      *((_DWORD *)this + 14) = 0; /*0x764ef8*/
-      *((_DWORD *)this + 15) = 0; /*0x764efb*/
-      *((_DWORD *)this + 16) = 0; /*0x764efe*/
+      this->M52 = 0; /*0x764ef5*/
+      this->M56 = 0; /*0x764ef8*/
+      this->M60 = 0; /*0x764efb*/
+      this->M64 = 0; /*0x764efe*/
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
@@ -693,7 +717,7 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
 
 // 0x764FF0
 namespace gamemd {
-int sub_764FF0(ScoreScreen * aP1)
+int E4Recv_764FF0::sub_764FF0(ScoreScreen * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_764FF0(_DWORD *this, ScoreScreen *aP1)
@@ -705,7 +729,7 @@ int __thiscall sub_764FF0(_DWORD *this, ScoreScreen *aP1)
 
 // 0x765000
 namespace gamemd {
-char * sub_765000(ScoreScreen * aP1)
+char * E4Recv_765000::sub_765000(ScoreScreen * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_765000(int this, ScoreScreen *aP1)
@@ -714,7 +738,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
   char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
   ObjectClass aP2; // [esp+10h] [ebp-F8h] BYREF
 
-  this->nextObject = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
+  *(_DWORD *)(this + 48) = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
   *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52) = Conflict::GetOwnerHouse(*(_DWORD **)(this + 12)); /*0x76502c*/
   *(_DWORD *)&aP2.__pad_0[12] = 0; /*0x765030*/
   aP2.uniqueId = 0; /*0x765034*/
@@ -743,7 +767,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
   String::Concat((const char **)v3, (char **)&aP2.__pad_0[4], RegionStringWOL); /*0x765113*/
   DeleteAndZero((void **)&aP2); /*0x76511c*/
   String::Assign((char **)&aP2, g_INI_Key_CampaignID); /*0x76512a*/
-  INIClass::SetIntFormat(&aP2.__pad_0[8], (char **)(this + 72), &aP2, this->nextObject, 0); /*0x765141*/
+  INIClass::SetIntFormat(&aP2.__pad_0[8], (char **)(this + 72), &aP2, *(_DWORD *)(this + 48), 0); /*0x765141*/
   DeleteAndZero((void **)&aP2); /*0x76514a*/
   INIClass::SetIntFormat( /*0x76515f*/
     &aP2.__pad_0[8],
@@ -764,7 +788,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
 
 // 0x7651D0
 namespace gamemd {
-char * sub_7651D0()
+char * E4Recv_7651D0::sub_7651D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_7651D0(char **this)
@@ -1260,7 +1284,7 @@ int WDT_InitGameOptions()
 
 // 0x7667E0
 namespace gamemd {
-int sub_7667E0()
+int E4Recv_7667E0::sub_7667E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7667E0(unsigned __int8 *this)
@@ -1272,7 +1296,7 @@ int __thiscall sub_7667E0(unsigned __int8 *this)
 
 // 0x7667F0
 namespace gamemd {
-int sub_7667F0()
+int E4Recv_7667F0::sub_7667F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7667F0(unsigned __int8 *this)
@@ -1477,7 +1501,7 @@ int sub_7672E0()
 
 // 0x767320
 namespace gamemd {
-wchar_t ** sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
+wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 wchar_t **__thiscall sub_767320(const char **this, wchar_t **a2, int a3, const wchar_t **a4)
@@ -1961,7 +1985,7 @@ int sub_767E70()
 
 // 0x767E90
 namespace gamemd {
-unsigned int * sub_767E90()
+unsigned int * E4Recv_767E90::sub_767E90()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_767E90(_DWORD *this)
@@ -1979,7 +2003,7 @@ _DWORD *__thiscall sub_767E90(_DWORD *this)
 
 // 0x767EC0
 namespace gamemd {
-void sub_767EC0()
+void E4Recv_767EC0::sub_767EC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_767EC0(_DWORD *this)
@@ -2008,7 +2032,7 @@ ObjectClass *__thiscall unknown_libname_37(_DWORD *this)
 
 // 0x769490
 namespace gamemd {
-unsigned int * sub_769490(unsigned int * a2)
+unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_769490(_DWORD *this, _DWORD *a2)
@@ -2409,7 +2433,7 @@ LABEL_68:
 
 // 0x769C40
 namespace gamemd {
-Iostream_init * __0Iostream_init_QAE_XZ_9()
+Iostream_init * E4Recv_769C40::__0Iostream_init_QAE_XZ_9()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_9(Iostream_init *this)
@@ -2614,7 +2638,7 @@ int sub_76AA90()
 
 // 0x76AB90
 namespace gamemd {
-void sub_76AB90()
+void E4Recv_76AB90::sub_76AB90()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76AB90(WDTTerritory *this)
@@ -2627,7 +2651,7 @@ void __thiscall sub_76AB90(WDTTerritory *this)
 
 // 0x76ABE0
 namespace gamemd {
-unsigned int * sub_76ABE0()
+unsigned int * E4Recv_76ABE0::sub_76ABE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76ABE0(_DWORD *this)
@@ -2683,7 +2707,7 @@ _DWORD *__thiscall sub_76ABE0(_DWORD *this)
 
 // 0x76B7B0
 namespace gamemd {
-unsigned int * sub_76B7B0(unsigned int * a2)
+unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76B7B0(_DWORD *this, _DWORD *a2)
@@ -3140,7 +3164,7 @@ int sub_76C270()
 
 // 0x76D3A0
 namespace gamemd {
-bool sub_76D3A0(unsigned int * a2)
+bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_76D3A0(int *this, _DWORD *a2)
@@ -3178,7 +3202,7 @@ bool __thiscall sub_76D3A0(int *this, _DWORD *a2)
 
 // 0x76D470
 namespace gamemd {
-unsigned int * sub_76D470(unsigned int * a2)
+unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76D470(int *this, _DWORD *a2)
@@ -3202,7 +3226,7 @@ _DWORD *__thiscall sub_76D470(int *this, _DWORD *a2)
 
 // 0x76DED0
 namespace gamemd {
-int sub_76DED0()
+int E4Recv_76DED0::sub_76DED0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76DED0(_DWORD *this)
@@ -3232,7 +3256,7 @@ int __thiscall sub_76DED0(_DWORD *this)
 
 // 0x76DF50
 namespace gamemd {
-int sub_76DF50()
+int E4Recv_76DF50::sub_76DF50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76DF50(_DWORD *this)
@@ -3262,7 +3286,7 @@ int __thiscall sub_76DF50(_DWORD *this)
 
 // 0x76DFD0
 namespace gamemd {
-void sub_76DFD0()
+void E4Recv_76DFD0::sub_76DFD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_76DFD0(char *this)
@@ -3298,7 +3322,7 @@ void __thiscall sub_76DFD0(char *this)
 
 // 0x76E090
 namespace gamemd {
-unsigned int * sub_76E090()
+unsigned int * E4Recv_76E090::sub_76E090()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76E090(int *this)
@@ -3727,7 +3751,7 @@ int sub_76F8F0()
 
 // 0x76F970
 namespace gamemd {
-int WorldDominationTour_Territory_Constructor()
+char * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall WorldDominationTour::Territory::Constructor(

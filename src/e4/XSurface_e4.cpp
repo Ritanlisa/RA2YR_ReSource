@@ -980,8 +980,7 @@ char __thiscall XSurface::BlitPart(XSurface *this, void **a2, XSurface *a3, void
 }
 
 // 0x7BBCF0
-namespace gamemd {
-int XSurface_Blit()
+char XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface::Blit(
@@ -1032,7 +1031,6 @@ char __thiscall XSurface::Blit(
   }
 }
 }
-} // namespace gamemd
 
 // 0x411500
 char XSurface::entry_68_(int a1, int a2)

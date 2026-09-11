@@ -482,10 +482,10 @@ __int16 __thiscall UDPInterfaceClass_Destru::_vt24(_WORD *this)
 }
 
 // 0x7B4170
-UDPInterfaceClass * UDPInterfaceClass::Destructor(void *** Block, char a2)
+UDPInterfaceClass * UDPInterfaceClass::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***Block, char a2)
+UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a2)
 {
   int v3; // eax
   void **v4; // ecx
@@ -496,54 +496,54 @@ UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***Block, char 
   void *v9; // eax
   void *v10; // eax
 
-  *Block = &UDPInterfaceClass::`vftable'; /*0x7b4176*/
-  while ( *(Block + 64722) ) /*0x7b417c*/
+  *this = &UDPInterfaceClass::`vftable'; /*0x7b4176*/
+  while ( *(this + 64722) ) /*0x7b417c*/
   {
-    __3_YAXPAX_Z(**(Block + 64719)); /*0x7b418f*/
-    v3 = (int)*(Block + 64722); /*0x7b4194*/
+    __3_YAXPAX_Z(**(this + 64719)); /*0x7b418f*/
+    v3 = (int)*(this + 64722); /*0x7b4194*/
     if ( v3 > 0 ) /*0x7b419f*/
     {
       v4 = (void **)(v3 - 1); /*0x7b41a1*/
       v5 = 0; /*0x7b41a4*/
-      for ( *(Block + 64722) = v4; v5 < (int)*(Block + 64722); (*(Block + 64719))[v5 - 1] = (*(Block + 64719))[v5] ) /*0x7b41ae*/
+      for ( *(this + 64722) = v4; v5 < (int)*(this + 64722); (*(this + 64719))[v5 - 1] = (*(this + 64719))[v5] ) /*0x7b41ae*/
         ++v5; /*0x7b41b6*/
     }
   }
-  while ( *(Block + 64856) ) /*0x7b41d0*/
+  while ( *(this + 64856) ) /*0x7b41d0*/
   {
-    __3_YAXPAX_Z(**(Block + 64853)); /*0x7b41e1*/
-    v6 = (int)*(Block + 64856); /*0x7b41e6*/
+    __3_YAXPAX_Z(**(this + 64853)); /*0x7b41e1*/
+    v6 = (int)*(this + 64856); /*0x7b41e6*/
     if ( v6 > 0 ) /*0x7b41f1*/
     {
       v7 = (void **)(v6 - 1); /*0x7b41f3*/
       v8 = 0; /*0x7b41f6*/
-      for ( *(Block + 64856) = v7; v8 < (int)*(Block + 64856); (*(Block + 64853))[v8 - 1] = (*(Block + 64853))[v8] ) /*0x7b4200*/
+      for ( *(this + 64856) = v7; v8 < (int)*(this + 64856); (*(this + 64853))[v8 - 1] = (*(this + 64853))[v8] ) /*0x7b4200*/
         ++v8; /*0x7b4208*/
     }
   }
-  UDPInterfaceClass::connect(Block); /*0x7b4224*/
-  v9 = *(Block + 64853); /*0x7b4229*/
-  *(Block + 64852) = &VectorClass<unsigned char *>::`vftable'; /*0x7b422f*/
-  if ( v9 && *((_BYTE *)Block + 259421) ) /*0x7b423d*/
+  UDPInterfaceClass::connect(this); /*0x7b4224*/
+  v9 = *(this + 64853); /*0x7b4229*/
+  *(this + 64852) = &VectorClass<unsigned char *>::`vftable'; /*0x7b422f*/
+  if ( v9 && *((_BYTE *)this + 259421) ) /*0x7b423d*/
   {
     __3_YAXPAX_Z(v9); /*0x7b4246*/
-    *(Block + 64853) = 0; /*0x7b424e*/
+    *(this + 64853) = 0; /*0x7b424e*/
   }
-  *((_BYTE *)Block + 259421) = 0; /*0x7b4254*/
-  *(Block + 64854) = 0; /*0x7b425a*/
-  v10 = *(Block + 64719); /*0x7b4260*/
-  *(Block + 64718) = &VectorClass<unsigned char *>::`vftable'; /*0x7b4266*/
-  if ( v10 && *((_BYTE *)Block + 258885) ) /*0x7b4274*/
+  *((_BYTE *)this + 259421) = 0; /*0x7b4254*/
+  *(this + 64854) = 0; /*0x7b425a*/
+  v10 = *(this + 64719); /*0x7b4260*/
+  *(this + 64718) = &VectorClass<unsigned char *>::`vftable'; /*0x7b4266*/
+  if ( v10 && *((_BYTE *)this + 258885) ) /*0x7b4274*/
   {
     __3_YAXPAX_Z(v10); /*0x7b427d*/
-    *(Block + 64719) = 0; /*0x7b4285*/
+    *(this + 64719) = 0; /*0x7b4285*/
   }
-  *((_BYTE *)Block + 258885) = 0; /*0x7b428d*/
-  *(Block + 64720) = 0; /*0x7b4293*/
-  WinsockInterfaceClass::WinsockInterfaceClass((int)Block); /*0x7b4299*/
+  *((_BYTE *)this + 258885) = 0; /*0x7b428d*/
+  *(this + 64720) = 0; /*0x7b4293*/
+  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
-    __3_YAXPAX_Z(Block); /*0x7b42a6*/
-  return (UDPInterfaceClass *)Block; /*0x7b42b0*/
+    __3_YAXPAX_Z(this); /*0x7b42a6*/
+  return (UDPInterfaceClass *)this; /*0x7b42b0*/
 }
 }
 
@@ -653,25 +653,25 @@ int __thiscall UDPInterfaceClass_Destru::sub_7B4550(int *this, _DWORD *a2)
 }
 
 // 0x7B45D0
-DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2)
+DynamicVector * UDPInterfaceClass::receivePacket(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *Block, char a2)
+DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7b45d3*/
-  *Block = &VectorClass<unsigned char *>::`vftable'; /*0x7b45d6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x7b45e0*/
+  v3 = (void *)*(this + 1); /*0x7b45d3*/
+  *this = &VectorClass<unsigned char *>::`vftable'; /*0x7b45d6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x7b45e0*/
   {
     __3_YAXPAX_Z(v3); /*0x7b45e8*/
-    *(Block + 1) = 0; /*0x7b45f0*/
+    *(this + 1) = 0; /*0x7b45f0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x7b45fb*/
-  *(Block + 2) = 0; /*0x7b4601*/
+  *((_BYTE *)this + 13) = 0; /*0x7b45fb*/
+  *(this + 2) = 0; /*0x7b4601*/
   if ( (a2 & 1) != 0 ) /*0x7b4608*/
-    __3_YAXPAX_Z(Block); /*0x7b460b*/
-  return (DynamicVector *)Block; /*0x7b4615*/
+    __3_YAXPAX_Z(this); /*0x7b460b*/
+  return (DynamicVector *)this; /*0x7b4615*/
 }
 }
 
@@ -784,8 +784,7 @@ char __thiscall UDPInterfaceClass_Destru::Bind(void ***this, int a2)
 }
 
 // 0x7B36C0
-namespace gamemd {
-int UDPInterfaceClass_Destru_ddtor()
+short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall UDPInterfaceClass_Destru::ddtor(
@@ -808,7 +807,6 @@ __int16 __thiscall UDPInterfaceClass_Destru::ddtor(
     return AudioQueue::WriteBuffer((int)this, aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
 }
 }
-} // namespace gamemd
 
 // 0x7B3720
 namespace gamemd {

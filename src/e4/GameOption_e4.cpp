@@ -31,23 +31,23 @@ int __thiscall GameOption::GetField(_DWORD **this)
 }
 
 // 0x69ACD0
-wchar_t * GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
+wchar_t * GameOption::SetDescriptionWStr(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *Destination, CampaignScore *aP1)
+wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *this, CampaignScore *aP1)
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
 
   if ( aP1 ) /*0x69acd9*/
   {
-    result = wcsncpy(Destination, (const wchar_t *)aP1, (DropListClass *)0x2C); /*0x69acdf*/
-    *(Destination + 43) = 0; /*0x69ace7*/
+    result = wcsncpy(this, (const wchar_t *)aP1, (DropListClass *)0x2C); /*0x69acdf*/
+    *(this + 43) = 0; /*0x69ace7*/
   }
   else
   {
     StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[38652], 0, &stru_830620.__pad_579C[37116], 2845); /*0x69ad02*/
-    return wcscpy(Destination, StringCSF); /*0x69ad09*/
+    return wcscpy(this, StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
 }

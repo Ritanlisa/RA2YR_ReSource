@@ -11,7 +11,7 @@ struct SaveGame {
     int WriteObject(int a1, int a2);  // 0x513CB0
     int WriteDataArray(int * a2);  // 0x54E750
     bool SaveTriggerEvents();  // 0x6607D0
-    char Start(LPSTREAM pStm);  // 0x67D300
+    char Start();  // 0x67D300
     int LoadMainGameState();  // 0x67F7E0
     bool SaveAudioData(int a2);  // 0x69B560
     int VtableDispatch(int a2);  // 0x721010

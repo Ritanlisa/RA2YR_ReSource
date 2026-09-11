@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_LaserDrawClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_LaserDrawClass___(char a2);  // 0x5515E0
     void Destroy();  // 0x5512D0
     unsigned int GetItemIndex(int a2);  // 0x551300
     int Get(int a2);  // 0x551320

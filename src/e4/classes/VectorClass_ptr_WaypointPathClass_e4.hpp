@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_WaypointPathClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_WaypointPathClass___(char a2);  // 0x764710
     void Destroy();  // 0x763F90
     unsigned int GetItemIndex(int a2);  // 0x763FC0
     int Get(int a2);  // 0x763FE0

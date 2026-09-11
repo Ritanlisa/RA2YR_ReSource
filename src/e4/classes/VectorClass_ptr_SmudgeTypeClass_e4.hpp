@@ -4,6 +4,9 @@
 namespace gamemd {
 struct VectorClass_ptr_SmudgeTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_SmudgeTypeClass___(char a2);  // 0x4F0660
+    DynamicVector * Constructor_VectorClass_TerrainTypeClass___(char a2);  // 0x4F0700
+    DynamicVector * Constructor_VectorClass_BuildingTypeClass___(char a2);  // 0x4F07A0
     void Destroy();  // 0x4E8CC0
     unsigned int GetItemIndex(int a2);  // 0x4E8CF0
     int Get(int a2);  // 0x4E8D10

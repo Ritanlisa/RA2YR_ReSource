@@ -48,20 +48,20 @@ int __thiscall NeuronClass::NeuronClass(int this)
 }
 
 // 0x43A9C0
-NeuronClass * NeuronClass::Reset(unsigned int * Block, char a2)
+NeuronClass * NeuronClass::Reset(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-NeuronClass *__thiscall NeuronClass::Reset(_DWORD *Block, char a2)
+NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
 {
   int v3; // eax
   int v4; // eax
   _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &NeuronClass::`vftable'; /*0x43a9cd*/
-  *(Block + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
-  *(Block + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
-  *(Block + 3) = &NeuronClass::`vftable'; /*0x43a9e1*/
-  v6 = Block; /*0x43a9ef*/
+  *this = &NeuronClass::`vftable'; /*0x43a9cd*/
+  *(this + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
+  *(this + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
+  *(this + 3) = &NeuronClass::`vftable'; /*0x43a9e1*/
+  v6 = this; /*0x43a9ef*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x43a9f3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x43aa0e*/
   {
@@ -72,7 +72,7 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F680] ); /*0x43aa26*/
   }
-  v6 = Block; /*0x43aa38*/
+  v6 = this; /*0x43aa38*/
   v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F5D8] + 16))(&MEMORY[0xB0F5D8], &v6); /*0x43aa3c*/
   if ( v4 != -1 && v4 < MEMORY[0xB0F5E8] && v4 < --MEMORY[0xB0F5E8] ) /*0x43aa57*/
   {
@@ -83,10 +83,10 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *Block, char a2)
     }
     while ( v4 < MEMORY[0xB0F5E8] ); /*0x43aa6f*/
   }
-  AbstractClass::DTOR(Block); /*0x43aa73*/
+  AbstractClass::DTOR(this); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
-    __3_YAXPAX_Z(Block); /*0x43aa80*/
-  return (NeuronClass *)Block; /*0x43aa8a*/
+    __3_YAXPAX_Z(this); /*0x43aa80*/
+  return (NeuronClass *)this; /*0x43aa8a*/
 }
 }
 
@@ -250,25 +250,25 @@ unsigned int __thiscall NeuronClass_25_::_vt05(int this, int a2)
 
 // 0x43ACB0
 namespace gamemd {
-VectorClass * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
+VectorClass * NeuronClass_25::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall NeuronClass_25_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall NeuronClass_25_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x43acb3*/
-  *Block = &VectorClass<NeuronClass *>::`vftable'; /*0x43acb6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x43acc0*/
+  v3 = (void *)*(this + 1); /*0x43acb3*/
+  *this = &VectorClass<NeuronClass *>::`vftable'; /*0x43acb6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x43acc0*/
   {
     __3_YAXPAX_Z(v3); /*0x43acc8*/
-    *(Block + 1) = 0; /*0x43acd0*/
+    *(this + 1) = 0; /*0x43acd0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x43acdb*/
-  *(Block + 2) = 0; /*0x43ace1*/
+  *((_BYTE *)this + 13) = 0; /*0x43acdb*/
+  *(this + 2) = 0; /*0x43ace1*/
   if ( (a2 & 1) != 0 ) /*0x43ace8*/
-    __3_YAXPAX_Z(Block); /*0x43aceb*/
-  return (VectorClass *)Block; /*0x43acf5*/
+    __3_YAXPAX_Z(this); /*0x43aceb*/
+  return (VectorClass *)this; /*0x43acf5*/
 }
 }
 } // namespace gamemd

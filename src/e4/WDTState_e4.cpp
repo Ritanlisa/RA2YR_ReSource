@@ -169,25 +169,25 @@ int __thiscall WDTState_4_::_vt04(int *this, int a2)
 
 // 0x76BC10
 namespace gamemd {
-DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * WDTState_4::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *this, char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 1); /*0x76bc13*/
-  *Block = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76bc16*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x76bc20*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76bc13*/
+  *this = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76bc16*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
-    *(Block + 1) = 0; /*0x76bc31*/
+    *(this + 1) = 0; /*0x76bc31*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x76bc3c*/
-  *(Block + 2) = 0; /*0x76bc42*/
+  *((_BYTE *)this + 13) = 0; /*0x76bc3c*/
+  *(this + 2) = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    __3_YAXPAX_Z(Block); /*0x76bc4c*/
-  return (DynamicVector *)Block; /*0x76bc56*/
+    __3_YAXPAX_Z(this); /*0x76bc4c*/
+  return (DynamicVector *)this; /*0x76bc56*/
 }
 }
 } // namespace gamemd

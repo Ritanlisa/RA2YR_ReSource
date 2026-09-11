@@ -4,7 +4,7 @@
 
 // 0x53EC40
 namespace gamemd {
-int sub_53EC40(unsigned signed char a1, char a2)
+int sub_53EC40(unsigned char a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_53EC40(unsigned __int8 a1, char a2)

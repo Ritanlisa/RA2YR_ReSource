@@ -18,8 +18,8 @@ struct MSFont_18 {
     int FindItem(unsigned int * a2);  // 0x5D5380
     char SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     int FindPair8(unsigned int * a2);  // 0x5D56A0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x5D56E0
-    DynamicVector * Constructor_VectorClass_HWND_____(unsigned int * Block, char a2);  // 0x5D5730
-    DynamicVector * Constructor_VectorClass_AcceleratorTracker_(unsigned int * Block, char a2);  // 0x5D57D0
+    VectorClass * QueryInterface(char a2);  // 0x5D56E0
+    DynamicVector * Constructor_VectorClass_HWND_____(char a2);  // 0x5D5730
+    DynamicVector * Constructor_VectorClass_AcceleratorTracker_(char a2);  // 0x5D57D0
 };
 } // namespace gamemd

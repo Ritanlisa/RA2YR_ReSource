@@ -1,13 +1,22 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_554400_e4.hpp"
+#include "e4/classes/E4Recv_556510_e4.hpp"
+#include "e4/classes/E4Recv_556520_e4.hpp"
+#include "e4/classes/E4Recv_557380_e4.hpp"
+#include "e4/classes/E4Recv_5581A0_e4.hpp"
+#include "e4/classes/E4Recv_558810_e4.hpp"
+#include "e4/classes/E4Recv_5595F0_e4.hpp"
+#include "e4/classes/E4Recv_55B720_e4.hpp"
 
 // 0x550080
-namespace gamemd {
-void sub_550080(ObjectClass ** Block)
+namespace ra2 {
+namespace game {
+void ObjectClass::sub_550080()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_550080(ObjectClass **Block)
+void __thiscall sub_550080(ObjectClass **this)
 {
   int v2; // edx
   int v3; // eax
@@ -17,8 +26,8 @@ void __thiscall sub_550080(ObjectClass **Block)
   int v7; // eax
   _DWORD v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  v2 = (int)*(Block + 2); /*0x550086*/
-  v3 = (int)*(Block + 4); /*0x550089*/
+  v2 = (int)*(this + 2); /*0x550086*/
+  v3 = (int)*(this + 4); /*0x550089*/
   if ( v2 == -1 ) /*0x55008f*/
   {
 LABEL_4:
@@ -32,26 +41,26 @@ LABEL_4:
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
-  v4 = (int)*(Block + 5); /*0x5500a3*/
+  v4 = (int)*(this + 5); /*0x5500a3*/
   if ( v4 ) /*0x5500a8*/
   {
-    v5 = (ObjectClass *)((char *)*Block + (_DWORD)*(Block + 6)); /*0x5500af*/
-    *((_BYTE *)Block + 4) = 1; /*0x5500b1*/
-    *Block = v5; /*0x5500b5*/
+    v5 = (ObjectClass *)((char *)*this + (_DWORD)*(this + 6)); /*0x5500af*/
+    *((_BYTE *)this + 4) = 1; /*0x5500b1*/
+    *this = v5; /*0x5500b5*/
     v6 = v8[2]; /*0x5500bd*/
-    *(Block + 2) = (ObjectClass *)MEMORY[0xA8ED84]; /*0x5500c1*/
-    *(Block + 3) = (ObjectClass *)v6; /*0x5500c4*/
-    *(Block + 4) = (ObjectClass *)v4; /*0x5500c7*/
+    *(this + 2) = (ObjectClass *)MEMORY[0xA8ED84]; /*0x5500c1*/
+    *(this + 3) = (ObjectClass *)v6; /*0x5500c4*/
+    *(this + 4) = (ObjectClass *)v4; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
 LABEL_7:
-  *((_BYTE *)Block + 4) = 0; /*0x5500cc*/
+  *((_BYTE *)this + 4) = 0; /*0x5500cc*/
 LABEL_8:
-  if ( *((_BYTE *)Block + 80) ) /*0x5500d0*/
-    *((_BYTE *)Block + 81) = *((_BYTE *)Block + 81) == 0; /*0x5500df*/
-  if ( (int)*Block >= (int)*(Block + 19) && Block ) /*0x5500ed*/
+  if ( (unsigned char)this->customSound_controller ) /*0x5500d0*/
+    *((_BYTE *)this + 81) = *((_BYTE *)this + 81) == 0; /*0x5500df*/
+  if ( (int)*this >= (int)*(this + 19) && this ) /*0x5500ed*/
   {
-    v8[0] = Block; /*0x5500fe*/
+    v8[0] = this; /*0x5500fe*/
     v7 = (*(int (__thiscall **)(int *, _DWORD *))(dword_ABC878 + 16))(&dword_ABC878, v8); /*0x550102*/
     if ( v7 != -1 && v7 < g_TimerPool && v7 < --g_TimerPool ) /*0x55011d*/
     {
@@ -62,11 +71,12 @@ LABEL_8:
       }
       while ( v7 < g_TimerPool ); /*0x550135*/
     }
-    __3_YAXPAX_Z(Block); /*0x550138*/
+    __3_YAXPAX_Z(this); /*0x550138*/
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x550150
 namespace gamemd {
@@ -738,7 +748,7 @@ int sub_551990()
 
 // 0x551C60
 namespace gamemd {
-unsigned int LCW_BitStreamIO(unsigned signed char * a1, unsigned int a2, int a3)
+unsigned int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __fastcall LCW_BitStreamIO(unsigned __int8 *a1, unsigned int a2, int a3)
@@ -1085,7 +1095,7 @@ LABEL_35:
 
 // 0x552640
 namespace gamemd {
-unsigned int sub_552640(unsigned signed char * a1, unsigned int a2)
+unsigned int sub_552640(unsigned char * a1, unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __cdecl sub_552640(unsigned __int8 *a1, unsigned int a2)
@@ -1445,7 +1455,7 @@ int sub_552A20()
 
 // 0x554400
 namespace gamemd {
-char sub_554400(int a2, int a3)
+char E4Recv_554400::sub_554400(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_554400(_DWORD *this, int a2, int a3)
@@ -2128,7 +2138,7 @@ int sub_555D80()
 
 // 0x556510
 namespace gamemd {
-int sub_556510()
+int E4Recv_556510::sub_556510()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_556510(int this)
@@ -2141,16 +2151,16 @@ int __thiscall sub_556510(int this)
 
 // 0x556520
 namespace gamemd {
-LightConvertClass * sub_556520(unsigned int * Block, char a2)
+LightConvertClass * E4Recv_556520::sub_556520(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LightConvertClass *__thiscall sub_556520(_DWORD *Block, char a2)
+LightConvertClass *__thiscall sub_556520(_DWORD *this, char a2)
 {
-  *Block = &LightConvertClass::`vftable'; /*0x556523*/
-  sub_490400((int)Block); /*0x556529*/
+  *this = &LightConvertClass::`vftable'; /*0x556523*/
+  sub_490400((int)this); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
-    __3_YAXPAX_Z(Block); /*0x556536*/
-  return (LightConvertClass *)Block; /*0x556540*/
+    __3_YAXPAX_Z(this); /*0x556536*/
+  return (LightConvertClass *)this; /*0x556540*/
 }
 }
 } // namespace gamemd
@@ -2404,7 +2414,7 @@ int sub_557210()
 
 // 0x557380
 namespace gamemd {
-int sub_557380(int a2)
+int E4Recv_557380::sub_557380(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_557380(int this, int a2)
@@ -2412,45 +2422,45 @@ int __thiscall sub_557380(int this, int a2)
   int v3; // eax
 
   ControlClass::CtorFromData((_DWORD *)this, a2); /*0x55738b*/
-  this->fallRate = *(_DWORD *)(a2 + 44); /*0x557396*/
-  this->nextObject = *(_DWORD *)(a2 + 48); /*0x55739f*/
-  this->attachedBomb = 0; /*0x5573a7*/
-  this->ambientSoundController = 0; /*0x5573aa*/
+  *(_DWORD *)(this + 44) = *(_DWORD *)(a2 + 44); /*0x557396*/
+  *(_DWORD *)(this + 48) = *(_DWORD *)(a2 + 48); /*0x55739f*/
+  *(_DWORD *)(this + 56) = 0; /*0x5573a7*/
+  *(_DWORD *)(this + 60) = 0; /*0x5573aa*/
   *(_BYTE *)(this + 64) = 1; /*0x5573ad*/
   *(_BYTE *)(this + 65) = 0; /*0x5573b1*/
-  this->attachedTag = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
+  *(_DWORD *)(this + 52) = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
   sub_4B5830((_DWORD *)(this + 52), (_DWORD *)(a2 + 52)); /*0x5573ba*/
-  this->ambientSoundController.AudioController_field_08 = *(_DWORD *)(a2 + 68); /*0x5573c2*/
-  this->ambientSoundController.AudioController_field_0C = *(_DWORD *)(a2 + 72); /*0x5573c8*/
-  this->attachedTag = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
+  *(_DWORD *)(this + 68) = *(_DWORD *)(a2 + 68); /*0x5573c2*/
+  *(_DWORD *)(this + 72) = *(_DWORD *)(a2 + 72); /*0x5573c8*/
+  *(_DWORD *)(this + 52) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
   *(_DWORD *)(this + 76) = *(_DWORD *)(a2 + 76); /*0x5573d7*/
-  this->customSound_controller = *(_DWORD *)(a2 + 80); /*0x5573dd*/
+  *(_DWORD *)(this + 80) = *(_DWORD *)(a2 + 80); /*0x5573dd*/
   *(_BYTE *)(this + 84) = *(_BYTE *)(a2 + 84); /*0x5573e9*/
   ControlClass::CtorFromData((_DWORD *)(this + 88), a2 + 88); /*0x5573ec*/
-  this->hasParachute = *(_BYTE *)(a2 + 132); /*0x5573fa*/
+  *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132); /*0x5573fa*/
   *(_BYTE *)(this + 133) = *(_BYTE *)(a2 + 133); /*0x557400*/
-  this->parachute = *(_DWORD *)(a2 + 136); /*0x557406*/
-  this->customSound_controller.AudioController_field_08 = &ToggleClass::`vftable'; /*0x557409*/
-  this->onBridge = *(_BYTE *)(a2 + 140); /*0x557413*/
+  *(_DWORD *)(this + 136) = *(_DWORD *)(a2 + 136); /*0x557406*/
+  *(_DWORD *)(this + 88) = &ToggleClass::`vftable'; /*0x557409*/
+  *(_BYTE *)(this + 140) = *(_BYTE *)(a2 + 140); /*0x557413*/
   *(_DWORD *)(this + 144) = *(_DWORD *)(a2 + 144); /*0x557419*/
-  this->lastLayer = *(_DWORD *)(a2 + 148); /*0x55741f*/
-  this->isInLogic = *(_BYTE *)(a2 + 152); /*0x557425*/
-  this->location = *(_DWORD *)(a2 + 156); /*0x55742b*/
+  *(_DWORD *)(this + 148) = *(_DWORD *)(a2 + 148); /*0x55741f*/
+  *(_BYTE *)(this + 152) = *(_BYTE *)(a2 + 152); /*0x557425*/
+  *(_DWORD *)(this + 156) = *(_DWORD *)(a2 + 156); /*0x55742b*/
   *(_DWORD *)(this + 160) = *(_DWORD *)(a2 + 160); /*0x557431*/
   *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164); /*0x557437*/
-  this->lineTrailer = *(_DWORD *)(a2 + 168); /*0x55743d*/
+  *(_DWORD *)(this + 168) = *(_DWORD *)(a2 + 168); /*0x55743d*/
   *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172); /*0x557443*/
   *(_BYTE *)(this + 173) = *(_BYTE *)(a2 + 173); /*0x557449*/
-  *(_DWORD *)(this + 176) = *(_DWORD *)(a2 + 176); /*0x55744f*/
+  this->M176 = *(_DWORD *)(a2 + 176); /*0x55744f*/
   *(_BYTE *)(this + 180) = *(_BYTE *)(a2 + 180); /*0x55745b*/
-  this->customSound_controller.AudioController_field_08 = &ShapeButtonClass::`vftable'; /*0x557460*/
+  *(_DWORD *)(this + 88) = &ShapeButtonClass::`vftable'; /*0x557460*/
   ControlClass::CtorFromData((_DWORD *)(this + 184), a2 + 184); /*0x557466*/
   *(_BYTE *)(this + 228) = *(_BYTE *)(a2 + 228); /*0x55746e*/
   *(_BYTE *)(this + 229) = *(_BYTE *)(a2 + 229); /*0x557474*/
   *(_DWORD *)(this + 232) = *(_DWORD *)(a2 + 232); /*0x55747a*/
   *(_DWORD *)(this + 184) = &ToggleClass::`vftable'; /*0x55747d*/
   *(_BYTE *)(this + 236) = *(_BYTE *)(a2 + 236); /*0x557486*/
-  *(_DWORD *)(this + 240) = *(_DWORD *)(a2 + 240); /*0x55748c*/
+  this->M240 = *(_DWORD *)(a2 + 240); /*0x55748c*/
   *(_DWORD *)(this + 244) = *(_DWORD *)(a2 + 244); /*0x557492*/
   *(_BYTE *)(this + 248) = *(_BYTE *)(a2 + 248); /*0x557498*/
   *(_DWORD *)(this + 252) = *(_DWORD *)(a2 + 252); /*0x55749e*/
@@ -2459,19 +2469,19 @@ int __thiscall sub_557380(int this, int a2)
   *(_DWORD *)(this + 264) = *(_DWORD *)(a2 + 264); /*0x5574b0*/
   *(_BYTE *)(this + 268) = *(_BYTE *)(a2 + 268); /*0x5574b6*/
   *(_BYTE *)(this + 269) = *(_BYTE *)(a2 + 269); /*0x5574bc*/
-  *(_DWORD *)(this + 272) = *(_DWORD *)(a2 + 272); /*0x5574c6*/
+  this->M272 = *(_DWORD *)(a2 + 272); /*0x5574c6*/
   *(_BYTE *)(this + 276) = *(_BYTE *)(a2 + 276); /*0x5574d2*/
   *(_DWORD *)(this + 184) = &ShapeButtonClass::`vftable'; /*0x5574de*/
   sub_5581A0(this + 280, a2 + 280); /*0x5574e4*/
   *(_DWORD *)(this + 340) = *(_DWORD *)(a2 + 340); /*0x5574fa*/
   *(_DWORD *)(this + 344) = *(_DWORD *)(a2 + 344); /*0x557500*/
   *(_BYTE *)(this + 348) = *(_BYTE *)(a2 + 348); /*0x557506*/
-  *(_DWORD *)(this + 352) = *(_DWORD *)(a2 + 352); /*0x55750c*/
+  this->M352 = *(_DWORD *)(a2 + 352); /*0x55750c*/
   *(_DWORD *)(this + 356) = *(_DWORD *)(a2 + 356); /*0x557512*/
   *(_DWORD *)(this + 360) = *(_DWORD *)(a2 + 360); /*0x55751c*/
   *(_DWORD *)(this + 280) = &SliderClass::`vftable'; /*0x55751f*/
   *(_DWORD *)(this + 364) = *(_DWORD *)(a2 + 364); /*0x55752c*/
-  v3 = this->customSound_controller.AudioController_field_08; /*0x557538*/
+  v3 = *(_DWORD *)(this + 88); /*0x557538*/
   *(_DWORD *)(this + 368) = *(_DWORD *)(a2 + 368); /*0x55753c*/
   *(_DWORD *)this = &ListClass::`vftable'; /*0x557542*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(this + 88, this); /*0x557548*/
@@ -2515,7 +2525,7 @@ char __thiscall CheckListClass::vt_19_(_DWORD *this, char a2, int a3, _DWORD *a4
 
 // 0x5581A0
 namespace gamemd {
-int sub_5581A0(GaugeClass * aP1)
+int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5581A0(int this, GaugeClass *aP1)
@@ -2758,7 +2768,7 @@ int sub_558720()
 
 // 0x558810
 namespace gamemd {
-bool ShowSaveLoadDialog(CampaignScore * aP1)
+bool E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall ShowSaveLoadDialog(int this, CampaignScore *aP1)
@@ -2766,10 +2776,10 @@ bool __thiscall ShowSaveLoadDialog(int this, CampaignScore *aP1)
   CampaignScore *v2; // eax
 
   v2 = aP1; /*0x558810*/
-  this->vtable1 = 2; /*0x558814*/
+  *(_DWORD *)(this + 4) = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
     v2 = (CampaignScore *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4960); /*0x558824*/
-  this->vtable3 = v2; /*0x558829*/
+  *(_DWORD *)(this + 12) = v2; /*0x558829*/
   return SaveLoadDialog::DlgProc((const char **)this); /*0x558831*/
 }
 }
@@ -3006,7 +3016,7 @@ int __stdcall sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int *a4)
 
 // 0x5595F0
 namespace gamemd {
-int sub_5595F0(char * Buffer)
+int E4Recv_5595F0::sub_5595F0(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5595F0(const char **this, char *Buffer)
@@ -3471,7 +3481,7 @@ int sub_55AF20()
 
 // 0x55B720
 namespace gamemd {
-int sub_55B720()
+int E4Recv_55B720::sub_55B720()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_55B720(_DWORD *this)
@@ -3615,7 +3625,7 @@ int __fastcall WriteCompressionBlock(Pipe *aP0, BlowStraw *aP1, CCINIClass *aP2,
 
 // 0x55BC00
 namespace gamemd {
-int CompressLCWBuffer(Pipe * aP0, int edx0, unsigned signed char * a2, unsigned int * a3, int a5)
+int CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * a3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall CompressLCWBuffer(Pipe *aP0, int edx0, unsigned __int8 *a2, _DWORD *a3, int a5)

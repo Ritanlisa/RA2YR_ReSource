@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_VoxelAnimTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_VoxelAnimTypeClass___(char a2);  // 0x4F0B60
+    DynamicVector * Constructor_VectorClass_IsometricTileTypeClass___(char a2);  // 0x4F0C00
     void Destroy();  // 0x4E8FC0
     unsigned int GetItemIndex(int a2);  // 0x4E8FF0
     int Get(int a2);  // 0x4E9010

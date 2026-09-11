@@ -942,7 +942,7 @@ LABEL_48:
 
 // 0x56CB90
 namespace gamemd {
-int Terrain::FloodFillConnectivity(unsigned signed char * a1, IUnknown * aP2, AbstractClass * aP3)
+int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Terrain::FloodFillConnectivity(int this, unsigned __int8 *a1, IUnknown *aP2, AbstractClass *aP3)

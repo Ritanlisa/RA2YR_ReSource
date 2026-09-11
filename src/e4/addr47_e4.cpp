@@ -1,10 +1,18 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_470C30_e4.hpp"
+#include "e4/classes/E4Recv_473750_e4.hpp"
+#include "e4/classes/E4Recv_474540_e4.hpp"
+#include "e4/classes/E4Recv_474660_e4.hpp"
+#include "e4/classes/E4Recv_476E20_e4.hpp"
+#include "e4/classes/E4Recv_476EA0_e4.hpp"
+#include "e4/classes/E4Recv_479740_e4.hpp"
+#include "e4/classes/E4Recv_47AA00_e4.hpp"
 
 // 0x470C30
 namespace gamemd {
-void sub_470C30()
+void E4Recv_470C30::sub_470C30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_470C30(CampaignEndScoreClass *this)
@@ -673,7 +681,7 @@ int sub_473730()
 
 // 0x473750
 namespace gamemd {
-unsigned int * sub_473750(unsigned int * a2)
+unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_473750(_DWORD *this, _DWORD *a2)
@@ -938,7 +946,7 @@ int sub_4741D0()
 
 // 0x474540
 namespace gamemd {
-CCINIClass * sub_474540(CCINIClass * aP1, char a3)
+CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 CCINIClass *__thiscall sub_474540(int this, CCINIClass *aP1, char a3)
@@ -976,7 +984,7 @@ CCINIClass *__thiscall sub_474540(int this, CCINIClass *aP1, char a3)
 
 // 0x474660
 namespace gamemd {
-char sub_474660(unsigned signed char * Block, char * a3, int a4)
+char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_474660(char *this, unsigned __int8 *Block, char *a3, int a4)
@@ -988,7 +996,7 @@ char __thiscall sub_474660(char *this, unsigned __int8 *Block, char *a3, int a4)
 
 // 0x476E20
 namespace gamemd {
-int sub_476E20()
+int E4Recv_476E20::sub_476E20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_476E20(int this)
@@ -1024,7 +1032,7 @@ int __thiscall sub_476E20(int this)
 
 // 0x476EA0
 namespace gamemd {
-void sub_476EA0()
+void E4Recv_476EA0::sub_476EA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_476EA0(_BYTE *this)
@@ -1427,7 +1435,7 @@ int sub_4796E0()
 
 // 0x479740
 namespace gamemd {
-void sub_479740(DWORD BytesReturned)
+void E4Recv_479740::sub_479740(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_479740(void *this, DWORD BytesReturned)
@@ -1775,8 +1783,9 @@ LABEL_13:
 } // namespace gamemd
 
 // 0x47A080
-namespace gamemd {
-void sub_47A080(DWORD a2)
+namespace ra2 {
+namespace game {
+void ObjectClass::sub_47A080(DWORD a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_47A080(ObjectClass *this, DWORD a2)
@@ -1819,11 +1828,13 @@ LABEL_9:
   CloseHandle(FileA); /*0x47a19b*/
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x47A1B0
-namespace gamemd {
-char sub_47A1B0(DWORD BytesReturned)
+namespace ra2 {
+namespace game {
+char ObjectClass::sub_47A1B0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_47A1B0(ObjectClass *this, DWORD BytesReturned)
@@ -1862,11 +1873,13 @@ char __thiscall sub_47A1B0(ObjectClass *this, DWORD BytesReturned)
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x47A2D0
-namespace gamemd {
-char sub_47A2D0(DWORD BytesReturned)
+namespace ra2 {
+namespace game {
+char ObjectClass::sub_47A2D0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_47A2D0(ObjectClass *this, DWORD BytesReturned)
@@ -1905,7 +1918,8 @@ char __thiscall sub_47A2D0(ObjectClass *this, DWORD BytesReturned)
   }
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x47A560
 namespace gamemd {
@@ -2006,7 +2020,7 @@ LABEL_5:
 
 // 0x47AA00
 namespace gamemd {
-CDFileClass * sub_47AA00(char ** a2)
+CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 CDFileClass *__thiscall sub_47AA00(_BYTE *this, char **a2)

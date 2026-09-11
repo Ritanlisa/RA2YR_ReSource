@@ -162,11 +162,11 @@ char __thiscall sub_660F10(_DWORD *this, int a2)
 }
 
 // 0x67E730
-char LoadGame::Start(LPSTREAM pStm)
+char LoadGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
-// char __thiscall LoadGame::Start(LPSTREAM pStm)
+// char __thiscall LoadGame::Start(LPSTREAM this)
 // {
 //   char result; // al
 //   int *Viewport; // edx

@@ -14,7 +14,7 @@ struct TeamTypeClass_28 {
     unsigned int Write(int a2);  // 0x6F2490
     char SetCapacity(int a2, int * a3);  // 0x6F24B0
     int FindItem(unsigned int * a2);  // 0x6F2640
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x6F2680
-    DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x6F2720
+    VectorClass * QueryInterface(char a2);  // 0x6F2680
+    DynamicVector * Constructor(char a2);  // 0x6F2720
 };
 } // namespace gamemd

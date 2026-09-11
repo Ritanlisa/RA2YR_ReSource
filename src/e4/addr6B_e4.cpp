@@ -1,10 +1,16 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6B0A90_e4.hpp"
+#include "e4/classes/E4Recv_6B1EE0_e4.hpp"
+#include "e4/classes/E4Recv_6B93E0_e4.hpp"
+#include "e4/classes/E4Recv_6B9450_e4.hpp"
+#include "e4/classes/E4Recv_6B94E0_e4.hpp"
+#include "e4/classes/E4Recv_6BEC50_e4.hpp"
 
 // 0x6B0A90
 namespace gamemd {
-unsigned int * sub_6B0A90(int a2)
+unsigned int * E4Recv_6B0A90::sub_6B0A90(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6B0A90(_DWORD *this, int a2)
@@ -47,7 +53,7 @@ int sub_6B1B00()
 
 // 0x6B1EE0
 namespace gamemd {
-long long sub_6B1EE0()
+long long E4Recv_6B1EE0::sub_6B1EE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_6B1EE0(int this)
@@ -57,10 +63,10 @@ __int64 __thiscall sub_6B1EE0(int this)
   int v4; // edi
   __int64 result; // rax
 
-  if ( *(_BYTE *)(this + 46) ) /*0x6b1ee6*/
-    v2 = this->abstractFlags; /*0x6b1eed*/
+  if ( (unsigned char)this->M46 ) /*0x6b1ee6*/
+    v2 = *(_DWORD *)(this + 20); /*0x6b1eed*/
   else
-    v2 = this->nextArrayIndex; /*0x6b1ef2*/
+    v2 = *(_DWORD *)(this + 24); /*0x6b1ef2*/
   v3 = (double)*(int *)(this + 48); /*0x6b1ef5*/
   v4 = Math::RoundToInt(v3); /*0x6b1f0f*/
   if ( v4 <= 4 ) /*0x6b1f11*/
@@ -68,9 +74,9 @@ __int64 __thiscall sub_6B1EE0(int this)
   *(_DWORD *)(this + 76) = v4; /*0x6b1f1b*/
   result = Math::RoundToInt(v3); /*0x6b1f22*/
   if ( (int)result >= v2 - v4 ) /*0x6b1f31*/
-    this->customSound_controller = v2 - v4; /*0x6b1f3b*/
+    this->M80 = v2 - v4; /*0x6b1f3b*/
   else
-    this->customSound_controller = result; /*0x6b1f33*/
+    this->M80 = result; /*0x6b1f33*/
   return result; /*0x6b1f36*/
 }
 }
@@ -3012,7 +3018,7 @@ int sub_6B8EE0()
 
 // 0x6B8F00
 namespace gamemd {
-int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned signed char a5)
+int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Texture_DrawAffine(int a1, _DWORD *a2, int *a3, int a4, unsigned __int8 a5)
@@ -3321,7 +3327,7 @@ int sub_6B9350()
 
 // 0x6B93E0
 namespace gamemd {
-int sub_6B93E0()
+int E4Recv_6B93E0::sub_6B93E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_6B93E0(unsigned __int8 *this)
@@ -3357,7 +3363,7 @@ int __thiscall sub_6B93E0(unsigned __int8 *this)
 
 // 0x6B9450
 namespace gamemd {
-unsigned int * sub_6B9450()
+unsigned int * E4Recv_6B9450::sub_6B9450()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6B9450(_DWORD *this)
@@ -3403,7 +3409,7 @@ _DWORD *__thiscall sub_6B9450(_DWORD *this)
 
 // 0x6B94E0
 namespace gamemd {
-unsigned int sub_6B94E0()
+unsigned int E4Recv_6B94E0::sub_6B94E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall sub_6B94E0(const char **this)
@@ -4738,12 +4744,12 @@ void __cdecl WinMain_Setup()
 
 // 0x6BEC50
 namespace gamemd {
-void  __noreturn ExitProgram(void * Code)
+void  __noreturn E4Recv_6BEC50::ExitProgram()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall __noreturn ExitProgram(void *Code)
+void __thiscall __noreturn ExitProgram(void *this)
 {
-  exit((int)Code); /*0x6bec51*/
+  exit((int)this); /*0x6bec51*/
 }
 }
 } // namespace gamemd

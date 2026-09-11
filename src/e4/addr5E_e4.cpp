@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5E7160_e4.hpp"
+#include "e4/classes/E4Recv_5EE200_e4.hpp"
 
 // 0x5E2410
 namespace gamemd {
@@ -352,7 +354,7 @@ LABEL_5:
 
 // 0x5E2CD0
 namespace gamemd {
-int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned signed char (*a3)() a3, char a4)
+int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)() a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall ShowDialogConfirm(CampaignScore *aP0, int nIDDlgItem, unsigned __int8 (*a3)(), char a4)
@@ -1399,7 +1401,7 @@ LABEL_20:
 
 // 0x5E7160
 namespace gamemd {
-char HandleMultiplayerMapSelection()
+char E4Recv_5E7160::HandleMultiplayerMapSelection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HandleMultiplayerMapSelection(HWND this)
@@ -3900,10 +3902,10 @@ char **__fastcall Player_GetTypeString(char **a1, wchar_t *a2)
 
 // 0x5EE200
 namespace gamemd {
-void UpdateObserveButtonWOL(HWND hDlg)
+void E4Recv_5EE200::UpdateObserveButtonWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall UpdateObserveButtonWOL(HWND hDlg)
+void __thiscall UpdateObserveButtonWOL(HWND this)
 {
   HWND DlgItem; // eax
   IUnknown *v3; // eax
@@ -3914,9 +3916,9 @@ void __thiscall UpdateObserveButtonWOL(HWND hDlg)
   IUnknown *v8; // esi
   wchar_t *v9; // eax
 
-  if ( hDlg ) /*0x5ee207*/
+  if ( this ) /*0x5ee207*/
   {
-    DlgItem = GetDlgItem(hDlg, 1888); /*0x5ee21a*/
+    DlgItem = GetDlgItem(this, 1888); /*0x5ee21a*/
     if ( DlgItem ) /*0x5ee21e*/
       SendMessageA(DlgItem, 0xF1u, MEMORY[0xAC10C8] != 0, 0); /*0x5ee236*/
     if ( MEMORY[0xAC10C8] ) /*0x5ee245*/
@@ -3924,9 +3926,9 @@ void __thiscall UpdateObserveButtonWOL(HWND hDlg)
     else
       v3 = (IUnknown *)HashTable::Find(MEMORY[0xAC4848], MEMORY[0x831DD0], 0); /*0x5ee258*/
     v4 = v3; /*0x5ee25d*/
-    v5 = GetDlgItem(hDlg, 1887); /*0x5ee265*/
+    v5 = GetDlgItem(this, 1887); /*0x5ee265*/
     CacheDialogInvalidate(v5, (HWND)v4); /*0x5ee26b*/
-    v6 = (IUnknown *)GetDlgItem(hDlg, 1741); /*0x5ee27e*/
+    v6 = (IUnknown *)GetDlgItem(this, 1741); /*0x5ee27e*/
     if ( v6 ) /*0x5ee282*/
     {
       if ( MEMORY[0xAC10C8] ) /*0x5ee28b*/
@@ -3936,14 +3938,14 @@ void __thiscall UpdateObserveButtonWOL(HWND hDlg)
       SendMessageA((HWND)v6, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5ee2bf*/
       InvalidateRect((HWND)v6, 0, 0); /*0x5ee2ca*/
     }
-    v8 = (IUnknown *)GetDlgItem(hDlg, 1581); /*0x5ee2d4*/
+    v8 = (IUnknown *)GetDlgItem(this, 1581); /*0x5ee2d4*/
     if ( v8 ) /*0x5ee2d9*/
     {
       if ( MEMORY[0xAC10C8] ) /*0x5ee2e2*/
       {
         v9 = GetStringCSF(g_Str_GUI_Observe, 0, MEMORY[0x8317D8], 6762); /*0x5ee2f5*/
       }
-      else if ( (HWND)Dialog::FindByHandle((void *)0x113) == hDlg ) /*0x5ee303*/
+      else if ( (HWND)Dialog::FindByHandle((void *)0x113) == this ) /*0x5ee303*/
       {
         v9 = GetStringCSF((wchar_t *)MEMORY[0x831DB4], 0, MEMORY[0x8317D8], 6766); /*0x5ee316*/
       }

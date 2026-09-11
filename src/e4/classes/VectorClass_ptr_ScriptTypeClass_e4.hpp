@@ -4,6 +4,8 @@
 namespace gamemd {
 struct VectorClass_ptr_ScriptTypeClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_ScriptTypeClass___(char a2);  // 0x4F0520
+    DynamicVector * Constructor_VectorClass_OverlayTypeClass___(char a2);  // 0x4F05C0
     void Destroy();  // 0x4E8C00
     unsigned int GetItemIndex(int a2);  // 0x4E8C30
     int Get(int a2);  // 0x4E8C50

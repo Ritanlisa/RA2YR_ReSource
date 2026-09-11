@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x674500
-namespace gamemd {
-int sub_674500()
+int RulesClass::sub_674500()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_674500(RulesClass *this)
@@ -19,7 +18,6 @@ int __thiscall sub_674500(RulesClass *this)
   return result; /*0x67453e*/
 }
 }
-} // namespace gamemd
 
 // 0x679CC0
 namespace gamemd {
@@ -117,7 +115,7 @@ int ArtINI_Load()
 
 // 0x67B550
 namespace gamemd {
-int ReadINIClassBuildingTypeList()
+int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass * aP2, unsigned char * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall ReadINIClassBuildingTypeList(
@@ -236,7 +234,7 @@ int __fastcall ReadINIClassBuildingTypeList(
 
 // 0x67BAC0
 namespace gamemd {
-InfantryTypeClass * GetINIClassInt(unsigned signed char *** a0, INIClass * aP1, unsigned signed char * a2, int a4)
+InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 InfantryTypeClass *__fastcall GetINIClassInt(unsigned __int8 ***a0, INIClass *aP1, unsigned __int8 *a2, int a4)
@@ -253,7 +251,7 @@ InfantryTypeClass *__fastcall GetINIClassInt(unsigned __int8 ***a0, INIClass *aP
 
 // 0x67BB10
 namespace gamemd {
-int ReadINIClassInfantryTypeList()
+InfantryTypeClass * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
@@ -372,7 +370,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
 
 // 0x67BD30
 namespace gamemd {
-AircraftTypeClass * GetINIClassKeyword(unsigned signed char *** a0, INIClass * aP1, unsigned signed char * a2, int a4)
+AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AircraftTypeClass *__fastcall GetINIClassKeyword(unsigned __int8 ***a0, INIClass *aP1, unsigned __int8 *a2, int a4)

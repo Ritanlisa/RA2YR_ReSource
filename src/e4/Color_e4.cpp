@@ -70,7 +70,7 @@ _BYTE *__thiscall sub_661020(_BYTE *this, int a2, int a3, float a4)
 }
 
 // 0x661190
-unsigned char * Color::ScaleRGB(unsigned signed char * a2, float a3)
+unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
@@ -118,7 +118,7 @@ _BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
 }
 
 // 0x6612C0
-unsigned signed char Color::Lerp(ObjectClass * aP1, unsigned signed char * a2)
+unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __thiscall Color::Lerp(unsigned __int8 *this, ObjectClass *aP1, unsigned __int8 *a2)

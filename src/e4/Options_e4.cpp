@@ -250,10 +250,10 @@ LABEL_39:
 
 // 0x4F1720
 namespace gamemd {
-HWND Options::InitDialogControls(HWND hDlg)
+HWND Options::InitDialogControls()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Options::InitDialogControls(HWND hDlg)
+HWND __thiscall Options::InitDialogControls(HWND this)
 {
   HWND result; // eax
   HWND v3; // eax
@@ -271,10 +271,10 @@ HWND __thiscall Options::InitDialogControls(HWND hDlg)
     Options = (const char **)LoadOptions::LoadOptions(v10); /*0x4f17dd*/
     v9 = LoadOptions::Check(Options); /*0x4f17ed*/
     LoadOptions::Cleanup(v10); /*0x4f17f1*/
-    DlgItem = GetDlgItem(hDlg, 1310); /*0x4f1802*/
+    DlgItem = GetDlgItem(this, 1310); /*0x4f1802*/
     if ( DlgItem ) /*0x4f1810*/
       EnableWindow(DlgItem, v9); /*0x4f181c*/
-    result = GetDlgItem(hDlg, 1312); /*0x4f1824*/
+    result = GetDlgItem(this, 1312); /*0x4f1824*/
     if ( result ) /*0x4f1828*/
       return (HWND)EnableWindow(result, v9); /*0x4f1832*/
   }
@@ -283,7 +283,7 @@ HWND __thiscall Options::InitDialogControls(HWND hDlg)
     result = (HWND)MEMORY[0xA8B538]; /*0x4f1748*/
     if ( !MEMORY[0xA8B538] ) /*0x4f174f*/
     {
-      v3 = GetDlgItem(hDlg, 1007); /*0x4f175b*/
+      v3 = GetDlgItem(this, 1007); /*0x4f175b*/
       v4 = (IUnknown *)v3; /*0x4f1767*/
       if ( v3 ) /*0x4f176b*/
       {
@@ -291,7 +291,7 @@ HWND __thiscall Options::InitDialogControls(HWND hDlg)
         SendMessageA(v3, 0x406u, 1u, 196608); /*0x4f1787*/
         SendMessageA((HWND)v4, 0x405u, 1u, v5); /*0x4f1792*/
       }
-      result = GetDlgItem(hDlg, 1321); /*0x4f179a*/
+      result = GetDlgItem(this, 1321); /*0x4f179a*/
       v6 = (IUnknown *)result; /*0x4f17a0*/
       if ( result ) /*0x4f17a4*/
       {
@@ -307,24 +307,24 @@ HWND __thiscall Options::InitDialogControls(HWND hDlg)
 
 // 0x558840
 namespace gamemd {
-bool Options::PrepareSaveLoadDlg(const char ** dwNewLong)
+bool Options::PrepareSaveLoadDlg()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_558840(const char **dwNewLong)
+bool __thiscall sub_558840(const char **this)
 {
-  *(dwNewLong + 1) = (const char *)3; /*0x558840*/
-  *(dwNewLong + 3) = 0; /*0x558847*/
-  return SaveLoadDialog::DlgProc(dwNewLong);
+  *(this + 1) = (const char *)3; /*0x558840*/
+  *(this + 3) = 0; /*0x558847*/
+  return SaveLoadDialog::DlgProc(this);
 }
 }
 } // namespace gamemd
 
 // 0x55FAA0
 namespace gamemd {
-void Options::Screen_Save(HWND hDlg)
+void Options::Screen_Save()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Options::Screen_Save(HWND hDlg)
+void __thiscall Options::Screen_Save(HWND this)
 {
   HWND DlgItem; // eax
   int v3; // eax
@@ -341,7 +341,7 @@ void __thiscall Options::Screen_Save(HWND hDlg)
   float v14; // [esp+0h] [ebp-18h]
   float v15; // [esp+0h] [ebp-18h]
 
-  DlgItem = GetDlgItem(hDlg, 1323); /*0x55fab2*/
+  DlgItem = GetDlgItem(this, 1323); /*0x55fab2*/
   if ( DlgItem )
   {
     v3 = SendMessageA(DlgItem, 0x400u, 0, 0) != 0 ? 2 : 0;
@@ -351,25 +351,25 @@ void __thiscall Options::Screen_Save(HWND hDlg)
       TacticalClass::Initialize(&MEMORY[0x87F7E8]); /*0x55fae5*/
     }
   }
-  v4 = GetDlgItem(hDlg, 1295); /*0x55faf0*/
+  v4 = GetDlgItem(this, 1295); /*0x55faf0*/
   if ( v4 ) /*0x55faf4*/
     MEMORY[0xA8EB64] = SendMessageA(v4, 0x400u, 0, 0); /*0x55fb02*/
-  v5 = GetDlgItem(hDlg, 1537); /*0x55fb0d*/
+  v5 = GetDlgItem(this, 1537); /*0x55fb0d*/
   if ( v5 ) /*0x55fb11*/
   {
     MEMORY[0xA8EB7E] = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb25*/
     SetGlobalFlag(MEMORY[0xA8EB7E]); /*0x55fb2b*/
   }
-  v6 = GetDlgItem(hDlg, 1540); /*0x55fb36*/
+  v6 = GetDlgItem(this, 1540); /*0x55fb36*/
   if ( v6 ) /*0x55fb3a*/
     MEMORY[0xA8EB7F] = SendMessageA(v6, 0xF0u, 0, 0) == 1; /*0x55fb4e*/
-  v7 = GetDlgItem(hDlg, 1538); /*0x55fb59*/
+  v7 = GetDlgItem(this, 1538); /*0x55fb59*/
   if ( v7 ) /*0x55fb5d*/
     MEMORY[0xA8EB80] = SendMessageA(v7, 0xF0u, 0, 0) == 1; /*0x55fb71*/
-  v8 = GetDlgItem(hDlg, 1322); /*0x55fb7d*/
+  v8 = GetDlgItem(this, 1322); /*0x55fb7d*/
   if ( v8 ) /*0x55fb81*/
     MEMORY[0xA8EB70] = 6 - SendMessageA(v8, 0x400u, 0, 0); /*0x55fb96*/
-  v9 = GetDlgItem(hDlg, 1327); /*0x55fba2*/
+  v9 = GetDlgItem(this, 1327); /*0x55fba2*/
   if ( v9 ) /*0x55fba6*/
   {
     v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
@@ -383,13 +383,13 @@ void __thiscall Options::Screen_Save(HWND hDlg)
       Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x55fc06*/
     }
   }
-  v11 = GetDlgItem(hDlg, 1330); /*0x55fc11*/
+  v11 = GetDlgItem(this, 1330); /*0x55fc11*/
   if ( v11 ) /*0x55fc15*/
   {
     v14 = (double)SendMessageA(v11, 0x400u, 0, 0) * 0.1; /*0x55fc39*/
     Options::SetSoundVolume((float *)MEMORY[0xA8EB60], v14, 0); /*0x55fc3c*/
   }
-  v12 = GetDlgItem(hDlg, 1334); /*0x55fc47*/
+  v12 = GetDlgItem(this, 1334); /*0x55fc47*/
   if ( v12 ) /*0x55fc4b*/
   {
     v15 = (double)SendMessageA(v12, 0x400u, 0, 0) * 0.1; /*0x55fc6f*/
@@ -762,22 +762,22 @@ char __thiscall sub_6254D0(int *this)
 
 // 0x625560
 namespace gamemd {
-void * Options::DestroyComposite(void * Block, char a2)
+void * Options::DestroyComposite(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Options::DestroyComposite(void *Block, char a2)
+void *__thiscall Options::DestroyComposite(void *this, char a2)
 {
   _DWORD *i; // ecx
   _DWORD *v4; // eax
   _DWORD *v5; // edx
   void *v6; // esi
 
-  if ( *((_DWORD *)Block + 11) ) /*0x625563*/
+  if ( *((_DWORD *)this + 11) ) /*0x625563*/
   {
-    __3_YAXPAX_Z(*((void **)Block + 11)); /*0x62556b*/
-    *((_DWORD *)Block + 11) = 0; /*0x625573*/
+    __3_YAXPAX_Z(*((void **)this + 11)); /*0x62556b*/
+    *((_DWORD *)this + 11) = 0; /*0x625573*/
   }
-  for ( i = (_DWORD *)*((_DWORD *)Block + 14); i; i = (_DWORD *)*((_DWORD *)Block + 14) ) /*0x62557f*/
+  for ( i = (_DWORD *)*((_DWORD *)this + 14); i; i = (_DWORD *)*((_DWORD *)this + 14) ) /*0x62557f*/
   {
     v4 = i; /*0x625581*/
     v5 = 0; /*0x625583*/
@@ -791,20 +791,20 @@ void *__thiscall Options::DestroyComposite(void *Block, char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *((_DWORD *)Block + 14) = *v4; /*0x6255a7*/
+      *((_DWORD *)this + 14) = *v4; /*0x6255a7*/
     __3_YAXPAX_Z(v4); /*0x6255ab*/
 LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = (void *)*((_DWORD *)Block + 16); /*0x6255bb*/
+  v6 = (void *)*((_DWORD *)this + 16); /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*((void ***)Block + 16)); /*0x6255c4*/
+    DeleteAndZero::Alt(*((void ***)this + 16)); /*0x6255c4*/
     __3_YAXPAX_Z(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    __3_YAXPAX_Z(Block); /*0x6255dc*/
-  return Block; /*0x6255e6*/
+    __3_YAXPAX_Z(this); /*0x6255dc*/
+  return this; /*0x6255e6*/
 }
 }
 } // namespace gamemd

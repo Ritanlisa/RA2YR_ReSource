@@ -338,7 +338,7 @@ LABEL_38:
 } // namespace gamemd
 
 // 0x661350
-int Palette::CalcColorDistance(unsigned signed char * a2)
+int Palette::CalcColorDistance(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
@@ -361,10 +361,10 @@ int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
 }
 
 // 0x72B820
-int Palette::LoadFile(char * Source)
+int Palette::LoadFile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Palette_LoadFile(char *Source)
+int __thiscall Palette_LoadFile(char *this)
 {
   if ( MEMORY[0xB0FBA0] ) /*0x72b82b*/
   {
@@ -376,6 +376,6 @@ int __thiscall Palette_LoadFile(char *Source)
     __3_YAXPAX_Z(MEMORY[0xB0FB9C]); /*0x72b847*/
     MEMORY[0xB0FB9C] = 0; /*0x72b84f*/
   }
-  return LoadPaletteSimple(Source, &MEMORY[0xB0FB9C], &MEMORY[0xB0FBA0]); /*0x72b86a*/
+  return LoadPaletteSimple(this, &MEMORY[0xB0FB9C], &MEMORY[0xB0FBA0]); /*0x72b86a*/
 }
 }

@@ -330,50 +330,50 @@ int __thiscall DeleteCommandClass_28_::sub_53C750(int *this, _DWORD *a2)
 
 // 0x53C780
 namespace gamemd {
-VectorClass * DeleteCommandClass_28::QueryInterface(unsigned int * Block, char a2)
+VectorClass * DeleteCommandClass_28::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall DeleteCommandClass_28_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall DeleteCommandClass_28_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x53c783*/
-  *Block = &VectorClass<AnimClass const *>::`vftable'; /*0x53c786*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x53c790*/
+  v3 = (void *)*(this + 1); /*0x53c783*/
+  *this = &VectorClass<AnimClass const *>::`vftable'; /*0x53c786*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
-    *(Block + 1) = 0; /*0x53c7a0*/
+    *(this + 1) = 0; /*0x53c7a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x53c7ab*/
-  *(Block + 2) = 0; /*0x53c7b1*/
+  *((_BYTE *)this + 13) = 0; /*0x53c7ab*/
+  *(this + 2) = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
-    __3_YAXPAX_Z(Block); /*0x53c7bb*/
-  return (VectorClass *)Block; /*0x53c7c5*/
+    __3_YAXPAX_Z(this); /*0x53c7bb*/
+  return (VectorClass *)this; /*0x53c7c5*/
 }
 }
 } // namespace gamemd
 
 // 0x53C7D0
 namespace gamemd {
-DynamicVector * DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
+DynamicVector * DeleteCommandClass_28::Constructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DeleteCommandClass_28_::Constructor(_DWORD *Block, char a2)
+DynamicVector *__thiscall DeleteCommandClass_28_::Constructor(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x53c7d3*/
-  *Block = &VectorClass<AnimClass const *>::`vftable'; /*0x53c7d6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x53c7e0*/
+  v3 = (void *)*(this + 1); /*0x53c7d3*/
+  *this = &VectorClass<AnimClass const *>::`vftable'; /*0x53c7d6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/
-    *(Block + 1) = 0; /*0x53c7f0*/
+    *(this + 1) = 0; /*0x53c7f0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x53c7fb*/
-  *(Block + 2) = 0; /*0x53c801*/
+  *((_BYTE *)this + 13) = 0; /*0x53c7fb*/
+  *(this + 2) = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
-    __3_YAXPAX_Z(Block); /*0x53c80b*/
-  return (DynamicVector *)Block; /*0x53c815*/
+    __3_YAXPAX_Z(this); /*0x53c80b*/
+  return (DynamicVector *)this; /*0x53c815*/
 }
 }
 } // namespace gamemd

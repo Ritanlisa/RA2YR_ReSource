@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_cptr_MultiMission {
     void* vfptr;  // minimal E2 declaration
+    int j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7);  // 0x5EF190
     unsigned int * j_vt00(char a2);  // 0x5EF290
     void Destroy();  // 0x5EEBB0
     char SetAt(int a2, unsigned int * a3);  // 0x5EEC50

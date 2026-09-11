@@ -41,25 +41,25 @@ unsigned int __thiscall ParticleTypeClass::_vt05(int this, int a2)
 
 // 0x477AC0
 namespace gamemd {
-TypeList * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
+TypeList * ParticleTypeClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall ParticleTypeClass::QueryInterface(_DWORD *Block, char a2)
+TypeList *__thiscall ParticleTypeClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x477ac3*/
-  *Block = &VectorClass<RGBClass>::`vftable'; /*0x477ac6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x477ad0*/
+  v3 = (void *)*(this + 1); /*0x477ac3*/
+  *this = &VectorClass<RGBClass>::`vftable'; /*0x477ac6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x477ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x477ad8*/
-    *(Block + 1) = 0; /*0x477ae0*/
+    *(this + 1) = 0; /*0x477ae0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x477aeb*/
-  *(Block + 2) = 0; /*0x477af1*/
+  *((_BYTE *)this + 13) = 0; /*0x477aeb*/
+  *(this + 2) = 0; /*0x477af1*/
   if ( (a2 & 1) != 0 ) /*0x477af8*/
-    __3_YAXPAX_Z(Block); /*0x477afb*/
-  return (TypeList *)Block; /*0x477b05*/
+    __3_YAXPAX_Z(this); /*0x477afb*/
+  return (TypeList *)this; /*0x477b05*/
 }
 }
 } // namespace gamemd
@@ -783,22 +783,22 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 
 // 0x645950
 namespace gamemd {
-ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
+ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **Block, char a2)
+ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   int v4; // eax
   void *v5; // eax
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ParticleTypeClass::`vftable'; /*0x645956*/
-  *(Block + 1) = &ParticleTypeClass::`vftable'; /*0x64595c*/
-  *(Block + 2) = &ParticleTypeClass::`vftable'; /*0x645963*/
-  *(Block + 3) = &ParticleTypeClass::`vftable'; /*0x64596a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x645971*/
-  v7 = Block; /*0x645986*/
+  *this = &ParticleTypeClass::`vftable'; /*0x645956*/
+  *(this + 1) = &ParticleTypeClass::`vftable'; /*0x64595c*/
+  *(this + 2) = &ParticleTypeClass::`vftable'; /*0x645963*/
+  *(this + 3) = &ParticleTypeClass::`vftable'; /*0x64596a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x645971*/
+  v7 = this; /*0x645986*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x64598a*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x6459a5*/
   {
@@ -809,7 +809,7 @@ ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F680] ); /*0x6459bd*/
   }
-  v7 = Block; /*0x6459cf*/
+  v7 = this; /*0x6459cf*/
   v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D98] + 16))(&MEMORY[0xA83D98], &v7); /*0x6459d3*/
   if ( v4 != -1 && v4 < MEMORY[0xA83DA8] && v4 < --MEMORY[0xA83DA8] ) /*0x6459ee*/
   {
@@ -820,19 +820,19 @@ ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **Block, char a2)
     }
     while ( v4 < MEMORY[0xA83DA8] ); /*0x645a06*/
   }
-  v5 = *(Block + 175); /*0x645a08*/
-  *(Block + 174) = &VectorClass<RGBClass>::`vftable'; /*0x645a0e*/
-  if ( v5 && *((_BYTE *)Block + 709) ) /*0x645a1c*/
+  v5 = *(this + 175); /*0x645a08*/
+  *(this + 174) = &VectorClass<RGBClass>::`vftable'; /*0x645a0e*/
+  if ( v5 && *((_BYTE *)this + 709) ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(v5); /*0x645a27*/
-    *(Block + 175) = 0; /*0x645a2f*/
+    *(this + 175) = 0; /*0x645a2f*/
   }
-  *((_BYTE *)Block + 709) = 0; /*0x645a3b*/
-  *(Block + 176) = 0; /*0x645a42*/
-  ObjectTypeClass::Destruct((int)Block); /*0x645a4c*/
+  *((_BYTE *)this + 709) = 0; /*0x645a3b*/
+  *(this + 176) = 0; /*0x645a42*/
+  ObjectTypeClass::Destruct((int)this); /*0x645a4c*/
   if ( (a2 & 1) != 0 ) /*0x645a56*/
-    __3_YAXPAX_Z(Block); /*0x645a59*/
-  return (ParticleTypeClass *)Block; /*0x645a63*/
+    __3_YAXPAX_Z(this); /*0x645a59*/
+  return (ParticleTypeClass *)this; /*0x645a63*/
 }
 }
 } // namespace gamemd

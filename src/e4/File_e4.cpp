@@ -20,10 +20,10 @@ char __thiscall File_IsReady(_BYTE *this, int a2)
 
 // 0x433990
 namespace gamemd {
-unsigned int * File::LoadFont(char * Source)
+unsigned int * File::LoadFont()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LoadFontFile(char *Source)
+_DWORD *__thiscall LoadFontFile(char *this)
 {
   unsigned int v2; // ebp
   _DWORD *v3; // esi
@@ -63,7 +63,7 @@ _DWORD *__thiscall LoadFontFile(char *Source)
   v4 = __2_YAPAXI_Z(0x6Cu); /*0x43399f*/
   if ( v4 ) /*0x4339a9*/
   {
-    v5 = CCFileClass::Construct(v4, Source); /*0x4339b2*/
+    v5 = CCFileClass::Construct(v4, this); /*0x4339b2*/
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
@@ -417,10 +417,10 @@ bool __thiscall sub_625DB0(_DWORD *this, char *Str1, _BYTE *a3)
 
 // 0x734990
 namespace gamemd {
-int File::ParseCSFString(char * Source)
+int File::ParseCSFString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParseCSFStringFile(char *Source)
+int __thiscall ParseCSFStringFile(char *this)
 {
   int v1; // ebp
   size_t v2; // eax
@@ -448,7 +448,7 @@ int __thiscall ParseCSFStringFile(char *Source)
   int v25; // [esp+8Ch] [ebp-20h]
   char Buffer[24]; // [esp+94h] [ebp-18h] BYREF
 
-  CCFileClass::Construct(v23, Source); /*0x73499f*/
+  CCFileClass::Construct(v23, this); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
   if ( CCFileClass::Open(v23, 0) && FileClass::Load(v23, 1) && CCFileClass::Read(v23, Buffer, 24) == 24 ) /*0x7349e5*/
   {

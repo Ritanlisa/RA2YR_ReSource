@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_433CE0 {
+    void* vfptr;  // minimal E2 declaration
+    char sub_433CE0(char a2);  // 0x433CE0
+};
+} // namespace gamemd

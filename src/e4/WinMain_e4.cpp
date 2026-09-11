@@ -30,7 +30,7 @@ LSTATUS __thiscall WinMain::CleanupResource(AnimClass *this)
 
 // 0x5BC180
 namespace gamemd {
-unsigned signed char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
+unsigned char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)

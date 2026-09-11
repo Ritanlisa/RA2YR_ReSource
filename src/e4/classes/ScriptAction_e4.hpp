@@ -27,7 +27,7 @@ struct ScriptAction {
     const char * ParseScriptActionParams();  // 0x6DD5B0
     unsigned int * ReadParameter();  // 0x6E1830
     int GetActionTypeInfo();  // 0x6E3B60
-    IUnknown * CopyStringField(char * Destination, char * Source);  // 0x6E4790
+    IUnknown * CopyStringField(char * Source);  // 0x6E4790
     void * CopyStructField(void * a2, const void * a3);  // 0x6E47C0
     unsigned char * GetWaypointCoords(IUnknown * aP1);  // 0x6E6AB0
     int ExecuteMissionCmd();  // 0x6FFBE0

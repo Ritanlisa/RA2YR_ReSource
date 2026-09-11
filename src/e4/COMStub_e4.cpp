@@ -1,10 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_429550_e4.hpp"
 
 // 0x429550
 namespace gamemd {
-int COMStub_429550()
+int E4Recv_429550::COMStub_429550()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COMStub_429550(ApplicationClass *this)

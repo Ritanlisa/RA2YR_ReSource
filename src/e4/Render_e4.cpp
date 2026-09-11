@@ -1574,7 +1574,7 @@ char sub_53D850()
 
 // 0x5541C0
 namespace gamemd {
-int Render_Render_5541C0()
+int Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Render_Render_5541C0(

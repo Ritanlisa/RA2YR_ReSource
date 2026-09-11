@@ -10,6 +10,6 @@ struct HouseClass_24 {
     void ddtor();  // 0x4F29D0
     int Read(unsigned int * a2);  // 0x4F2A00
     unsigned int Write(int a2);  // 0x4F2A40
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4F2B60
+    VectorClass * QueryInterface(char a2);  // 0x4F2B60
 };
 } // namespace gamemd

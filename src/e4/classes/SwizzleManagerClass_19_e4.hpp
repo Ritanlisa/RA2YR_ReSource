@@ -14,7 +14,7 @@ struct SwizzleManagerClass_19 {
     unsigned int Add(int a2);  // 0x6CF700
     char SetCapacity(int a2, unsigned int * a3);  // 0x6CF720
     int FindItem(unsigned int * a2);  // 0x6CF820
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x6CF850
-    DynamicVector * Constructor_VectorClass_SwizzlePointerClass_(unsigned int * Block, char a2);  // 0x6CF8A0
+    VectorClass * QueryInterface(char a2);  // 0x6CF850
+    DynamicVector * Constructor_VectorClass_SwizzlePointerClass_(char a2);  // 0x6CF8A0
 };
 } // namespace gamemd

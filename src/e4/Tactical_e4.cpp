@@ -193,7 +193,7 @@ char *__thiscall ConstructTacticalSurface(char *this)
 
 // 0x484050
 namespace gamemd {
-int Tactical_CreateTacticalLightSurface()
+int * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall Tactical::CreateTacticalLightSurface(
@@ -261,7 +261,7 @@ int *__thiscall Tactical::CreateTacticalLightSurface(
 
 // 0x484180
 namespace gamemd {
-int Tactical_CalculateTacticalLighting()
+int Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Tactical::CalculateTacticalLighting(
@@ -432,7 +432,7 @@ LABEL_21:
 
 // 0x4A35F0
 namespace gamemd {
-int Tactical_SetCellTransform()
+char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall Tactical::SetCellTransform(
@@ -918,7 +918,7 @@ int *__userpurge Tactical_Radar_Render@<eax>(
 
 // 0x692300
 namespace gamemd {
-int Tactical_MouseOver()
+char Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __stdcall Tactical::MouseOver(
@@ -2054,20 +2054,20 @@ int __stdcall Tactical::UpdateMapView(TechnoTypeClass *aP0, int *a1, int aP2)
 
 // 0x6DC470
 namespace gamemd {
-Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
+Tactical * Tactical::UpdateView(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-Tactical *__thiscall Tactical::UpdateView(_DWORD *Block, char a2)
+Tactical *__thiscall Tactical::UpdateView(_DWORD *this, char a2)
 {
-  *Block = &Tactical::`vftable'; /*0x6dc473*/
-  *(Block + 1) = &Tactical::`vftable'; /*0x6dc479*/
-  *(Block + 2) = &Tactical::`vftable'; /*0x6dc480*/
-  *(Block + 3) = &Tactical::`vftable'; /*0x6dc487*/
+  *this = &Tactical::`vftable'; /*0x6dc473*/
+  *(this + 1) = &Tactical::`vftable'; /*0x6dc479*/
+  *(this + 2) = &Tactical::`vftable'; /*0x6dc480*/
+  *(this + 3) = &Tactical::`vftable'; /*0x6dc487*/
   MEMORY[0x887324] = 0; /*0x6dc48e*/
-  AbstractClass::DTOR(Block); /*0x6dc498*/
+  AbstractClass::DTOR(this); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
-    __3_YAXPAX_Z(Block); /*0x6dc4a5*/
-  return (Tactical *)Block; /*0x6dc4af*/
+    __3_YAXPAX_Z(this); /*0x6dc4a5*/
+  return (Tactical *)this; /*0x6dc4af*/
 }
 }
 } // namespace gamemd
@@ -2345,25 +2345,25 @@ int __thiscall Tactical_42_::sub_6E4A80(int *this, _DWORD *a2)
 
 // 0x6E4AB0
 namespace gamemd {
-VectorClass * Tactical_42::QueryInterface(unsigned int * Block, char a2)
+VectorClass * Tactical_42::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6e4ab3*/
-  *Block = &VectorClass<TActionClass *>::`vftable'; /*0x6e4ab6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x6e4ac0*/
+  v3 = (void *)*(this + 1); /*0x6e4ab3*/
+  *this = &VectorClass<TActionClass *>::`vftable'; /*0x6e4ab6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/
-    *(Block + 1) = 0; /*0x6e4ad0*/
+    *(this + 1) = 0; /*0x6e4ad0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x6e4adb*/
-  *(Block + 2) = 0; /*0x6e4ae1*/
+  *((_BYTE *)this + 13) = 0; /*0x6e4adb*/
+  *(this + 2) = 0; /*0x6e4ae1*/
   if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
-    __3_YAXPAX_Z(Block); /*0x6e4aeb*/
-  return (VectorClass *)Block; /*0x6e4af5*/
+    __3_YAXPAX_Z(this); /*0x6e4aeb*/
+  return (VectorClass *)this; /*0x6e4af5*/
 }
 }
 } // namespace gamemd

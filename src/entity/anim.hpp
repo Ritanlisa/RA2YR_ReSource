@@ -142,6 +142,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int InWhichLayer_AttachedObjectLayer();  // 0x424CB0
     int MissionStubReturnZero();  // 0x426530
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char sub_773590(int a2, int a3);  // 0x773590
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

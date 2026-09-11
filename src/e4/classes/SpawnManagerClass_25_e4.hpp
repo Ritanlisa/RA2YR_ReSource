@@ -10,6 +10,6 @@ struct SpawnManagerClass_25 {
     char AddRef(int a2);  // 0x6B8220
     char Release(int a2, unsigned int * a3);  // 0x6B8400
     int Spawn(unsigned int * a2);  // 0x6B84B0
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x6B8790
+    DynamicVector * QueryInterface(char a2);  // 0x6B8790
 };
 } // namespace gamemd

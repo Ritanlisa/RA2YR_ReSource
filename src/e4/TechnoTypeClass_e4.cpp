@@ -1484,8 +1484,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 
 // 0x716DC0
-namespace gamemd {
-int TechnoTypeClass_SaveLoad_Prefix_0()
+int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
@@ -1616,18 +1615,17 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
   return result; /*0x717094*/
 }
 }
-} // namespace gamemd
 
 // 0x7179A0
-TechnoTypeClass * TechnoTypeClass::ddtor(void * Block, char a2)
+TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TechnoTypeClass *__thiscall TechnoTypeClass::ddtor(void *Block, char a2)
+TechnoTypeClass *__thiscall TechnoTypeClass::ddtor(void *this, char a2)
 {
-  TechnoTypeClass::DTOR((int)Block); /*0x7179a3*/
+  TechnoTypeClass::DTOR((int)this); /*0x7179a3*/
   if ( (a2 & 1) != 0 ) /*0x7179ad*/
-    __3_YAXPAX_Z(Block); /*0x7179b0*/
-  return (TechnoTypeClass *)Block; /*0x7179ba*/
+    __3_YAXPAX_Z(this); /*0x7179b0*/
+  return (TechnoTypeClass *)this; /*0x7179ba*/
 }
 }
 

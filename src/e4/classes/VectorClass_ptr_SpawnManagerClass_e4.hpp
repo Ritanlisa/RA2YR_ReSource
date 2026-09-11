@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_SpawnManagerClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_SpawnManagerClass___(char a2);  // 0x6B8830
     void Destroy();  // 0x6B81C0
     unsigned int GetItemIndex(int a2);  // 0x6B81F0
     int Get(int a2);  // 0x6B8210

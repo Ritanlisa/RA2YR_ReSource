@@ -1138,19 +1138,19 @@ int __stdcall AbstractClass::COMStub_6(TechnoTypeClass *aP0, int *a1, int aP2)
 
 // 0x5B3A60
 namespace gamemd {
-MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
+MissionClass * AbstractClass::getWeaponRange(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MissionClass *__thiscall AbstractClass::getWeaponRange(_DWORD *Block, char a2)
+MissionClass *__thiscall AbstractClass::getWeaponRange(_DWORD *this, char a2)
 {
-  *Block = &MissionClass::`vftable'; /*0x5b3a63*/
-  *(Block + 1) = &MissionClass::`vftable'; /*0x5b3a69*/
-  *(Block + 2) = &MissionClass::`vftable'; /*0x5b3a70*/
-  *(Block + 3) = &MissionClass::`vftable'; /*0x5b3a77*/
-  ObjectClass::Dtor(Block); /*0x5b3a7e*/
+  *this = &MissionClass::`vftable'; /*0x5b3a63*/
+  *(this + 1) = &MissionClass::`vftable'; /*0x5b3a69*/
+  *(this + 2) = &MissionClass::`vftable'; /*0x5b3a70*/
+  *(this + 3) = &MissionClass::`vftable'; /*0x5b3a77*/
+  ObjectClass::Dtor(this); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    __3_YAXPAX_Z(Block); /*0x5b3a8b*/
-  return (MissionClass *)Block; /*0x5b3a95*/
+    __3_YAXPAX_Z(this); /*0x5b3a8b*/
+  return (MissionClass *)this; /*0x5b3a95*/
 }
 }
 } // namespace gamemd
@@ -1292,7 +1292,7 @@ _DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGam
 
 // 0x5D81F0
 namespace gamemd {
-int AbstractClass_processRevealArea()
+unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall AbstractClass::sub_5D81F0(
@@ -1316,7 +1316,7 @@ _DWORD *__stdcall AbstractClass::sub_5D81F0(
 
 // 0x5D8230
 namespace gamemd {
-int AbstractClass_computeRevealRadius()
+unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall AbstractClass::sub_5D8230(
@@ -1340,7 +1340,7 @@ _DWORD *__stdcall AbstractClass::sub_5D8230(
 
 // 0x5D8270
 namespace gamemd {
-int AbstractClass_applyRevealToCell()
+unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall AbstractClass::sub_5D8270(
@@ -1364,7 +1364,7 @@ _DWORD *__stdcall AbstractClass::sub_5D8270(
 
 // 0x5D82B0
 namespace gamemd {
-int AbstractClass_checkRevealCell()
+unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall AbstractClass::sub_5D82B0(
@@ -1672,15 +1672,15 @@ void __thiscall AbstractClass::resetTeamState(RAMFileClass *this)
 
 // 0x65C610
 namespace gamemd {
-FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
+FileClass * AbstractClass::processAITrigger(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FileClass *__thiscall AbstractClass::processAITrigger(_DWORD *Block, char a2)
+FileClass *__thiscall AbstractClass::processAITrigger(_DWORD *this, char a2)
 {
-  *Block = &FileClass::`vftable'; /*0x65c619*/
+  *this = &FileClass::`vftable'; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
-    __3_YAXPAX_Z(Block); /*0x65c622*/
-  return (FileClass *)Block; /*0x65c62c*/
+    __3_YAXPAX_Z(this); /*0x65c622*/
+  return (FileClass *)this; /*0x65c62c*/
 }
 }
 } // namespace gamemd

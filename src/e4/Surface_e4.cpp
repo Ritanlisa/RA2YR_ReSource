@@ -52,10 +52,10 @@ BOOL __thiscall Surface_IsLocked(_DWORD *this)
 }
 
 // 0x4A4780
-LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
+LPDIRECTDRAW Surface::CreateSurfacePalette()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LPDIRECTDRAW __thiscall Surface::CreateSurfacePalette(AbstractClass *Src)
+LPDIRECTDRAW __thiscall Surface::CreateSurfacePalette(AbstractClass *this)
 {
   LPDIRECTDRAW result; // eax
   int v3; // edi
@@ -66,15 +66,15 @@ LPDIRECTDRAW __thiscall Surface::CreateSurfacePalette(AbstractClass *Src)
   char v8; // bl
   char v9; // [esp+8h] [ebp-4h]
 
-  if ( Src != (AbstractClass *)&stru_89E138.__pad_14B0[936] ) /*0x4a478b*/
-    memcpy(&stru_89E138.__pad_14B0[936], Src, 0x300u); /*0x4a4798*/
+  if ( this != (AbstractClass *)&stru_89E138.__pad_14B0[936] ) /*0x4a478b*/
+    memcpy(&stru_89E138.__pad_14B0[936], this, 0x300u); /*0x4a4798*/
   result = *(LPDIRECTDRAW *)&stru_89E138.__pad_14B0[2732]; /*0x4a47a0*/
   if ( *(_DWORD *)&stru_89E138.__pad_14B0[2732] ) /*0x4a47a7*/
   {
     v3 = *(_DWORD *)&stru_89E138.__pad_14B0[2740]; /*0x4a47a9*/
     if ( *(_DWORD *)&stru_89E138.__pad_14B0[2740] ) /*0x4a47b1*/
     {
-      v4 = (BombClass *)Src; /*0x4a47b4*/
+      v4 = (BombClass *)this; /*0x4a47b4*/
       v5 = &stru_89E138.__pad_14B0[1709]; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
@@ -1226,8 +1226,7 @@ LABEL_43:
 }
 
 // 0x707480
-namespace gamemd {
-int Surface_BlitTechnoTo()
+void Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Surface::BlitTechnoTo(
@@ -1390,7 +1389,6 @@ void __thiscall Surface::BlitTechnoTo(
   Vector::Clear((int)v41); /*0x70773f*/
 }
 }
-} // namespace gamemd
 
 // 0x7602E0
 void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)

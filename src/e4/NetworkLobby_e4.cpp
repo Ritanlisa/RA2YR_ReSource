@@ -416,10 +416,10 @@ int NetworkLobby_MessageHandler()
 
 // 0x5E8EA0
 namespace gamemd {
-void NetworkLobby::SetupPlayers(wchar_t * Source)
+void NetworkLobby::SetupPlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall NetworkLobby::SetupPlayers(wchar_t *Source)
+void __thiscall NetworkLobby::SetupPlayers(wchar_t *this)
 {
   CCINIClass *v2; // edi
   __int64 kr00_8_2; // kr00_8
@@ -446,9 +446,9 @@ void __thiscall NetworkLobby::SetupPlayers(wchar_t *Source)
   wchar_t *v23[3]; // [esp+10h] [ebp-160h] BYREF
   wchar_t Destination[170]; // [esp+1Ch] [ebp-154h] BYREF
 
-  if ( *Source )
+  if ( *this )
   {
-    wcscpy(Destination, Source); /*0x5e8eba*/
+    wcscpy(Destination, this); /*0x5e8eba*/
     *(_QWORD *)&v2 = *(_QWORD *)&(&g_MatrixTransformState)[190]; /*0x5e8ec5*/
     kr00_8_2 = *(_QWORD *)(&g_MatrixTransformState + 2275); /*0x5e8ed1*/
     v3 = 0; /*0x5e8eda*/
@@ -854,10 +854,10 @@ char __thiscall sub_5E9720(void *this)
 
 // 0x5E9E00
 namespace gamemd {
-int NetworkLobby::InitLobbyDropdowns(SessionClass * hDlg)
+int NetworkLobby::InitLobbyDropdowns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NetworkLobby::InitLobbyDropdowns(SessionClass *hDlg)
+int __thiscall NetworkLobby::InitLobbyDropdowns(SessionClass *this)
 {
   int i; // ebp
   void *ResourceID4CSF; // esi
@@ -867,11 +867,11 @@ int __thiscall NetworkLobby::InitLobbyDropdowns(SessionClass *hDlg)
   for ( i = 0; i < 8; ++i ) /*0x5e9e06*/
   {
     ResourceID4CSF = (void *)GetResourceID4CSF((void *)i); /*0x5e9e0f*/
-    ComboBoxSelectedRaw2 = (SessionClass *)GetComboBoxSelectedRaw2((HWND)hDlg, (int)ResourceID4CSF, 0xFFFFFFFF); /*0x5e9e1e*/
+    ComboBoxSelectedRaw2 = (SessionClass *)GetComboBoxSelectedRaw2((HWND)this, (int)ResourceID4CSF, 0xFFFFFFFF); /*0x5e9e1e*/
     result = Dialog::OptionIDToIndex(ResourceID4CSF); /*0x5e9e20*/
     if ( result == *(_DWORD *)&HouseClass_Player.__pad_5568[18392] ) /*0x5e9e2b*/
     {
-      SetupLobbyPlayerSlots(hDlg, (int)ResourceID4CSF, (int)ComboBoxSelectedRaw2); /*0x5e9e32*/
+      SetupLobbyPlayerSlots(this, (int)ResourceID4CSF, (int)ComboBoxSelectedRaw2); /*0x5e9e32*/
       result = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x5e9e37*/
       if ( *(_DWORD *)&HouseClass_Player.__pad_5568[18384] ) /*0x5e9e3e*/
         result = SessionClass::SetOption2(**(_DWORD **)&HouseClass_Player.__pad_5568[18372], ComboBoxSelectedRaw2); /*0x5e9e48*/
@@ -970,10 +970,10 @@ LABEL_34:
 
 // 0x5EB660
 namespace gamemd {
-char NetworkLobby::SetupPlayerSlotControls(HWND hDlg)
+char NetworkLobby::SetupPlayerSlotControls()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND hDlg)
+char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND this)
 {
   int i; // edi
   int v3; // esi
@@ -1027,15 +1027,15 @@ char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND hDlg)
     {
       v3 = 1041; /*0x5eb6b2*/
     }
-    v4 = SendDlgItemMessageA(hDlg, v3, 0x147u, 0, 0); /*0x5eb721*/
-    v5 = SendDlgItemMessageA(hDlg, v3, 0x150u, v4, 0); /*0x5eb72d*/
+    v4 = SendDlgItemMessageA(this, v3, 0x147u, 0, 0); /*0x5eb721*/
+    v5 = SendDlgItemMessageA(this, v3, 0x150u, v4, 0); /*0x5eb72d*/
     if ( v5 && (v5 == MEMORY[0xAC11A4] || v5 == MEMORY[0xAC11A8] || v5 == MEMORY[0xAC11AC]) ) /*0x5eb749*/
     {
       if ( i >= v8 ) /*0x5eb74f*/
         *(&MEMORY[0xA8DA90] + i) = MEMORY[0xAC11A0]; /*0x5eb765*/
       else
         *(&MEMORY[0xA8DA90] + i) = MEMORY[0xAC119C]; /*0x5eb756*/
-      SetupSkirmishPlayerSlots(hDlg, (void *)i, 0); /*0x5eb772*/
+      SetupSkirmishPlayerSlots(this, (void *)i, 0); /*0x5eb772*/
       MEMORY[0xA8B27C][i] = -1; /*0x5eb77a*/
       MEMORY[0xA8B29C][i] = -1; /*0x5eb781*/
       MEMORY[0xA8B2BC][i] = -1; /*0x5eb788*/
@@ -1203,25 +1203,25 @@ LABEL_19:
 
 // 0x5EE6A0
 namespace gamemd {
-void NetworkLobby::UpdateLabels(HWND hDlg)
+void NetworkLobby::UpdateLabels()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5EE6A0(HWND hDlg)
+void __thiscall sub_5EE6A0(HWND this)
 {
   char *v2; // ebp
   int *v3; // edi
   int ResourceID3CSF; // esi
   LRESULT v5; // eax
 
-  if ( hDlg ) /*0x5ee6a5*/
+  if ( this ) /*0x5ee6a5*/
   {
     v2 = 0; /*0x5ee6aa*/
     v3 = &MEMORY[0xA8DA90]; /*0x5ee6ac*/
     do /*0x5ee6e4*/
     {
       ResourceID3CSF = GetResourceID3CSF(v2); /*0x5ee6b8*/
-      FillComboBoxSides(hDlg, ResourceID3CSF); /*0x5ee6be*/
-      v5 = SetComboBoxSelection(hDlg, ResourceID3CSF, -1); /*0x5ee6c9*/
+      FillComboBoxSides(this, ResourceID3CSF); /*0x5ee6be*/
+      v5 = SetComboBoxSelection(this, ResourceID3CSF, -1); /*0x5ee6c9*/
       if ( *v3 ) /*0x5ee6ce*/
         SessionClass::SetOption(*v3, v5); /*0x5ee6d5*/
       ++v3; /*0x5ee6da*/

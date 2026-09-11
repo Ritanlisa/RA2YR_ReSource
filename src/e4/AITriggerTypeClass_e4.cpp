@@ -291,7 +291,7 @@ bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
 }
 
 // 0x41F580
-char AITriggerTypeClass::LoadFromINI(unsigned signed char *** a2)
+char AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
@@ -634,19 +634,19 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 }
 
 // 0x41FFF0
-AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
+AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *Block, char a2)
+AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
-  *(Block + 1) = &AITriggerTypeClass::`vftable'; /*0x420003*/
-  *(Block + 2) = &AITriggerTypeClass::`vftable'; /*0x42000a*/
-  *(Block + 3) = &AITriggerTypeClass::`vftable'; /*0x420011*/
-  v5 = Block; /*0x42001f*/
+  *this = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
+  *(this + 1) = &AITriggerTypeClass::`vftable'; /*0x420003*/
+  *(this + 2) = &AITriggerTypeClass::`vftable'; /*0x42000a*/
+  *(this + 3) = &AITriggerTypeClass::`vftable'; /*0x420011*/
+  v5 = this; /*0x42001f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8B200] + 16))(&MEMORY[0xA8B200], &v5); /*0x420023*/
   if ( v3 != -1 && v3 < MEMORY[0xA8B210] && v3 < --MEMORY[0xA8B210] ) /*0x42003e*/
   {
@@ -657,10 +657,10 @@ AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0xA8B210] ); /*0x420056*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x42005a*/
+  AbstractTypeClass::Dtor(this); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
-    __3_YAXPAX_Z(Block); /*0x420067*/
-  return (AITriggerTypeClass *)Block; /*0x420071*/
+    __3_YAXPAX_Z(this); /*0x420067*/
+  return (AITriggerTypeClass *)this; /*0x420071*/
 }
 }
 
@@ -937,52 +937,52 @@ int __thiscall AITriggerTypeClass_40_::sub_420600(int *this, _DWORD *a2)
 
 // 0x420630
 namespace gamemd {
-VectorClass * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, char a2)
+VectorClass * AITriggerTypeClass_40::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall AITriggerTypeClass_40_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall AITriggerTypeClass_40_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x420633*/
-  *Block = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420636*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x420640*/
+  v3 = (void *)*(this + 1); /*0x420633*/
+  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420636*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x420640*/
   {
     __3_YAXPAX_Z(v3); /*0x420648*/
-    *(Block + 1) = 0; /*0x420650*/
+    *(this + 1) = 0; /*0x420650*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x42065b*/
-  *(Block + 2) = 0; /*0x420661*/
+  *((_BYTE *)this + 13) = 0; /*0x42065b*/
+  *(this + 2) = 0; /*0x420661*/
   if ( (a2 & 1) != 0 ) /*0x420668*/
-    __3_YAXPAX_Z(Block); /*0x42066b*/
-  return (VectorClass *)Block; /*0x420675*/
+    __3_YAXPAX_Z(this); /*0x42066b*/
+  return (VectorClass *)this; /*0x420675*/
 }
 }
 } // namespace gamemd
 
 // 0x420680
 namespace gamemd {
-int AITriggerTypeClass_40_Constructor_VectorClass_AlphaLightingRemapClass___()
+DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRemapClass___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DynamicVector *__thiscall AITriggerTypeClass_40_::Constructor_VectorClass_AlphaLightingRemapClass___(
-        _DWORD *Block,
+        _DWORD *this,
         char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x420683*/
-  *Block = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420686*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x420690*/
+  v3 = (void *)*(this + 1); /*0x420683*/
+  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420686*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x420690*/
   {
     __3_YAXPAX_Z(v3); /*0x420698*/
-    *(Block + 1) = 0; /*0x4206a0*/
+    *(this + 1) = 0; /*0x4206a0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4206ab*/
-  *(Block + 2) = 0; /*0x4206b1*/
+  *((_BYTE *)this + 13) = 0; /*0x4206ab*/
+  *(this + 2) = 0; /*0x4206b1*/
   if ( (a2 & 1) != 0 ) /*0x4206b8*/
-    __3_YAXPAX_Z(Block); /*0x4206bb*/
-  return (DynamicVector *)Block; /*0x4206c5*/
+    __3_YAXPAX_Z(this); /*0x4206bb*/
+  return (DynamicVector *)this; /*0x4206c5*/
 }
 }
 } // namespace gamemd

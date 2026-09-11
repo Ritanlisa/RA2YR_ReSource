@@ -1,10 +1,23 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_690400_e4.hpp"
+#include "e4/classes/E4Recv_690530_e4.hpp"
+#include "e4/classes/E4Recv_6905F0_e4.hpp"
+#include "e4/classes/E4Recv_6966D0_e4.hpp"
+#include "e4/classes/E4Recv_696950_e4.hpp"
+#include "e4/classes/E4Recv_69ADE0_e4.hpp"
+#include "e4/classes/E4Recv_69B690_e4.hpp"
+#include "e4/classes/E4Recv_69E060_e4.hpp"
+#include "e4/classes/E4Recv_69E9F0_e4.hpp"
+#include "e4/classes/E4Recv_69F0C0_e4.hpp"
+#include "e4/classes/E4Recv_69F1B0_e4.hpp"
+#include "e4/classes/E4Recv_69F210_e4.hpp"
+#include "e4/classes/E4Recv_69F5E0_e4.hpp"
 
 // 0x690400
 namespace gamemd {
-int sub_690400()
+int E4Recv_690400::sub_690400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_690400(int *this)
@@ -49,7 +62,7 @@ int __thiscall sub_690400(int *this)
 
 // 0x690530
 namespace gamemd {
-void sub_690530(void * a2, int a3)
+void E4Recv_690530::sub_690530(void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_690530(_DWORD *this, void *a2, int a3)
@@ -73,7 +86,7 @@ void __thiscall sub_690530(_DWORD *this, void *a2, int a3)
 
 // 0x6905F0
 namespace gamemd {
-char * sub_6905F0()
+char * E4Recv_6905F0::sub_6905F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6905F0(_DWORD *this)
@@ -83,7 +96,7 @@ char *__thiscall sub_6905F0(_DWORD *this)
 
   v2 = (void *)*(this + 3); /*0x6905f6*/
   *this = &ScoreFontClass::`vftable'; /*0x6905f9*/
-  if ( v2 && *((_BYTE *)this + 16) == 1 ) /*0x690607*/
+  if ( v2 && (unsigned char)this->M16 == 1 ) /*0x690607*/
   {
     __3_YAXPAX_Z(v2); /*0x69060a*/
     *(this + 3) = 0; /*0x690612*/
@@ -2202,7 +2215,7 @@ LABEL_38:
 
 // 0x6966D0
 namespace gamemd {
-HWND sub_6966D0()
+HWND E4Recv_6966D0::sub_6966D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND __thiscall sub_6966D0(int this)
@@ -2211,7 +2224,7 @@ HWND __thiscall sub_6966D0(int this)
   HWND DlgItem; // eax
   HWND result; // eax
 
-  v2 = this->lastLayer == 0; /*0x6966ec*/
+  v2 = *(_DWORD *)(this + 148) == 0; /*0x6966ec*/
   DlgItem = GetDlgItem(*(HWND *)this, 1628); /*0x6966ef*/
   if ( DlgItem ) /*0x6966f9*/
     SendMessageA(DlgItem, 0xF1u, v2, 0); /*0x69670c*/
@@ -2225,7 +2238,7 @@ HWND __thiscall sub_6966D0(int this)
 
 // 0x696950
 namespace gamemd {
-HWND sub_696950()
+HWND E4Recv_696950::sub_696950()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND __thiscall sub_696950(int this)
@@ -2445,7 +2458,7 @@ int sub_696EF0()
 
 // 0x6994F0
 namespace gamemd {
-int ParseMapFileHeader()
+int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall ParseMapFileHeader(
@@ -2661,7 +2674,7 @@ DWORD sub_69A340()
 
 // 0x69ADE0
 namespace gamemd {
-char sub_69ADE0(char a2)
+char E4Recv_69ADE0::sub_69ADE0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_69ADE0(_BYTE *this, char a2)
@@ -2674,7 +2687,7 @@ char __thiscall sub_69ADE0(_BYTE *this, char a2)
 
 // 0x69B690
 namespace gamemd {
-int sub_69B690()
+int E4Recv_69B690::sub_69B690()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_69B690(_DWORD *this)
@@ -2804,7 +2817,7 @@ int sub_69DCD0()
 
 // 0x69E060
 namespace gamemd {
-char sub_69E060()
+char E4Recv_69E060::sub_69E060()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_69E060(_BYTE *this)
@@ -2832,7 +2845,7 @@ int sub_69E070()
 
 // 0x69E9F0
 namespace gamemd {
-int sub_69E9F0(int a1, Straw * aP2)
+int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_69E9F0(int this, int a1, Straw *aP2)
@@ -2842,7 +2855,7 @@ int __thiscall sub_69E9F0(int this, int a1, Straw *aP2)
   if ( !a1 || (int)aP2 < 1 ) /*0x69ea03*/
     return 0; /*0x69ea29*/
   v4 = (Pipe *)Delegate::Invoke((_DWORD *)this, a1, aP2); /*0x69ea0d*/
-  if ( !(unsigned char)this->vtable3 ) /*0x69ea0f*/
+  if ( !(unsigned char)this->M12 ) /*0x69ea0f*/
     SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4); /*0x69ea1b*/
   return (int)v4->__pad_0; /*0x69ea23*/
 }
@@ -3043,7 +3056,7 @@ int sub_69EC30()
 
 // 0x69F0C0
 namespace gamemd {
-void * sub_69F0C0(void * a2)
+void * E4Recv_69F0C0::sub_69F0C0(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_69F0C0(int *this, void *a2)
@@ -3112,7 +3125,7 @@ LABEL_17:
 
 // 0x69F1B0
 namespace gamemd {
-double sub_69F1B0()
+double E4Recv_69F1B0::sub_69F1B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __thiscall sub_69F1B0(int *this)
@@ -3139,7 +3152,7 @@ double __thiscall sub_69F1B0(int *this)
 
 // 0x69F210
 namespace gamemd {
-int sub_69F210(int a2)
+int E4Recv_69F210::sub_69F210(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_69F210(_DWORD *this, int a2)
@@ -3167,7 +3180,7 @@ int __thiscall sub_69F210(_DWORD *this, int a2)
 
 // 0x69F5E0
 namespace gamemd {
-BOOL sub_69F5E0()
+BOOL E4Recv_69F5E0::sub_69F5E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_69F5E0(_DWORD *this)

@@ -4,7 +4,7 @@
 
 // 0x4E12F0
 namespace gamemd {
-int GadgetClass_Construct()
+ControlClass * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ControlClass *__thiscall GadgetClass::Construct(

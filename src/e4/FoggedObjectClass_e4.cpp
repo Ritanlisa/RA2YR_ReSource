@@ -848,15 +848,15 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 }
 
 // 0x4D2910
-FoggedObjectClass * FoggedObjectClass::ddtor(void * Block, char a2)
+FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FoggedObjectClass *__thiscall FoggedObjectClass::ddtor(void *Block, char a2)
+FoggedObjectClass *__thiscall FoggedObjectClass::ddtor(void *this, char a2)
 {
-  DestructFoggedObjectClass((int)Block); /*0x4d2913*/
+  DestructFoggedObjectClass((int)this); /*0x4d2913*/
   if ( (a2 & 1) != 0 ) /*0x4d291d*/
-    __3_YAXPAX_Z(Block); /*0x4d2920*/
-  return (FoggedObjectClass *)Block; /*0x4d292a*/
+    __3_YAXPAX_Z(this); /*0x4d2920*/
+  return (FoggedObjectClass *)this; /*0x4d292a*/
 }
 }
 
@@ -1035,25 +1035,25 @@ int __thiscall FoggedObjectClass::_vt04(int *this, _DWORD *a2)
 }
 
 // 0x4D2D60
-DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * FoggedObjectClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall FoggedObjectClass::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall FoggedObjectClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4d2d63*/
-  *Block = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2d66*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4d2d70*/
+  v3 = (void *)*(this + 1); /*0x4d2d63*/
+  *this = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2d66*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
-    *(Block + 1) = 0; /*0x4d2d80*/
+    *(this + 1) = 0; /*0x4d2d80*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4d2d8b*/
-  *(Block + 2) = 0; /*0x4d2d91*/
+  *((_BYTE *)this + 13) = 0; /*0x4d2d8b*/
+  *(this + 2) = 0; /*0x4d2d91*/
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
-    __3_YAXPAX_Z(Block); /*0x4d2d9b*/
-  return (DynamicVector *)Block; /*0x4d2da5*/
+    __3_YAXPAX_Z(this); /*0x4d2d9b*/
+  return (DynamicVector *)this; /*0x4d2da5*/
 }
 }
 
@@ -1330,25 +1330,25 @@ int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
 
 // 0x4E0CE0
 namespace gamemd {
-VectorClass * FoggedObjectClass_42::QueryInterface(unsigned int * Block, char a2)
+VectorClass * FoggedObjectClass_42::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4e0ce3*/
-  *Block = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4e0cf0*/
+  v3 = (void *)*(this + 1); /*0x4e0ce3*/
+  *this = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
-    *(Block + 1) = 0; /*0x4e0d00*/
+    *(this + 1) = 0; /*0x4e0d00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4e0d0b*/
-  *(Block + 2) = 0; /*0x4e0d11*/
+  *((_BYTE *)this + 13) = 0; /*0x4e0d0b*/
+  *(this + 2) = 0; /*0x4e0d11*/
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
-    __3_YAXPAX_Z(Block); /*0x4e0d1b*/
-  return (VectorClass *)Block; /*0x4e0d25*/
+    __3_YAXPAX_Z(this); /*0x4e0d1b*/
+  return (VectorClass *)this; /*0x4e0d25*/
 }
 }
 } // namespace gamemd

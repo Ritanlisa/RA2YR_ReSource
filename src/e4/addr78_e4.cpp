@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_786DC0_e4.hpp"
+#include "e4/classes/E4Recv_786E70_e4.hpp"
 
 // 0x780110
 namespace gamemd {
@@ -2767,7 +2769,7 @@ char WOL_HandleLogout()
 
 // 0x786DC0
 namespace gamemd {
-char sub_786DC0()
+char E4Recv_786DC0::sub_786DC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_786DC0(char **this)
@@ -2815,7 +2817,7 @@ char __thiscall sub_786DC0(char **this)
 
 // 0x786E70
 namespace gamemd {
-int sub_786E70()
+int E4Recv_786E70::sub_786E70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_786E70(const char **this)
@@ -4440,7 +4442,7 @@ LABEL_75:
 
 // 0x789500
 namespace gamemd {
-int WOL_FindChannel(const char * a1, int a2, unsigned signed char a3, int a4)
+int WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall WOL_FindChannel(const char *a1, int a2, unsigned __int8 a3, int a4)

@@ -770,6 +770,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char Set();  // 0x54B980
     int GetStatus(IUnknown * aP1);  // 0x6ABC60
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int sub_5092F0(int a2);  // 0x5092F0
+// --- e4 declarations (END) ---
 };
 
 

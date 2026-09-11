@@ -23,7 +23,7 @@ __int64 __thiscall sub_408140(_QWORD *this)
 }
 
 // 0x720480
-char ThemeClass::ReadThemeEntry(unsigned signed char *** a2)
+char ThemeClass::ReadThemeEntry(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)

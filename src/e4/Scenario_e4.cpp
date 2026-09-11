@@ -325,7 +325,7 @@ int __thiscall Scenario::ReadTeams(CCINIClass *this)
 
 // 0x4758F0
 namespace gamemd {
-int Scenario_FindBuildingTypeByName()
+int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Scenario::FindBuildingTypeByName(

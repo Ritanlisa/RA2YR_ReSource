@@ -4,7 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_ConvertClass {
     void* vfptr;  // minimal E2 declaration
-    ConvertClass * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
+    ConvertClass * Constructor_ConvertClass(char a2);  // 0x491210
     void MarkDirty();  // 0x4E1960
     void Destroy();  // 0x491390
     unsigned int GetItemIndex(int a2);  // 0x4913C0

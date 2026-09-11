@@ -6,20 +6,20 @@
 
 // 0x7AC630
 namespace gamemd {
-int WonlineStringDialogControl_12_Constructor_WonlineStringDialogControl()
+CreateGameDialogControl * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 CreateGameDialogControl *__thiscall WonlineStringDialogControl_12_::Constructor_WonlineStringDialogControl(
-        DialogControl_OwnerDraw *Block,
+        DialogControl_OwnerDraw *this,
         char a2)
 {
-  Block->vfptr = &WonlineStringDialogControl::`vftable'; /*0x7ac636*/
-  DeleteAndZero((void **)Block + 3); /*0x7ac63c*/
-  Block->vfptr = &off_7F7624; /*0x7ac643*/
-  OwnerDrawControl::InitVtable(Block); /*0x7ac649*/
+  this->vfptr = &WonlineStringDialogControl::`vftable'; /*0x7ac636*/
+  DeleteAndZero((void **)this + 3); /*0x7ac63c*/
+  this->vfptr = &off_7F7624; /*0x7ac643*/
+  OwnerDrawControl::InitVtable(this); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
-    __3_YAXPAX_Z(Block); /*0x7ac656*/
-  return (CreateGameDialogControl *)Block; /*0x7ac660*/
+    __3_YAXPAX_Z(this); /*0x7ac656*/
+  return (CreateGameDialogControl *)this; /*0x7ac660*/
 }
 }
 } // namespace gamemd
@@ -297,52 +297,52 @@ int __thiscall WonlineStringDialogControl_12_::sub_7AD2C0(int *this, _DWORD *a2)
 
 // 0x7AD370
 namespace gamemd {
-VectorClass * WonlineStringDialogControl_12::QueryInterface(unsigned int * Block, char a2)
+VectorClass * WonlineStringDialogControl_12::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall WonlineStringDialogControl_12_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall WonlineStringDialogControl_12_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7ad373*/
-  *Block = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad376*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x7ad380*/
+  v3 = (void *)*(this + 1); /*0x7ad373*/
+  *this = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad376*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad380*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad388*/
-    *(Block + 1) = 0; /*0x7ad390*/
+    *(this + 1) = 0; /*0x7ad390*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x7ad39b*/
-  *(Block + 2) = 0; /*0x7ad3a1*/
+  *((_BYTE *)this + 13) = 0; /*0x7ad39b*/
+  *(this + 2) = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    __3_YAXPAX_Z(Block); /*0x7ad3ab*/
-  return (VectorClass *)Block; /*0x7ad3b5*/
+    __3_YAXPAX_Z(this); /*0x7ad3ab*/
+  return (VectorClass *)this; /*0x7ad3b5*/
 }
 }
 } // namespace gamemd
 
 // 0x7AD3C0
 namespace gamemd {
-int WonlineStringDialogControl_12_Constructor_VectorClass_tConnInfoStruct___()
+DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfoStruct___(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DynamicVector *__thiscall WonlineStringDialogControl_12_::Constructor_VectorClass_tConnInfoStruct___(
-        _DWORD *Block,
+        _DWORD *this,
         char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7ad3c3*/
-  *Block = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad3c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x7ad3d0*/
+  v3 = (void *)*(this + 1); /*0x7ad3c3*/
+  *this = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad3c6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad3d0*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad3d8*/
-    *(Block + 1) = 0; /*0x7ad3e0*/
+    *(this + 1) = 0; /*0x7ad3e0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x7ad3eb*/
-  *(Block + 2) = 0; /*0x7ad3f1*/
+  *((_BYTE *)this + 13) = 0; /*0x7ad3eb*/
+  *(this + 2) = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    __3_YAXPAX_Z(Block); /*0x7ad3fb*/
-  return (DynamicVector *)Block; /*0x7ad405*/
+    __3_YAXPAX_Z(this); /*0x7ad3fb*/
+  return (DynamicVector *)this; /*0x7ad405*/
 }
 }
 } // namespace gamemd

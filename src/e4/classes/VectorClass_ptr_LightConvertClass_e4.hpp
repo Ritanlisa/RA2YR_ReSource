@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_LightConvertClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_LightConvertClass___(char a2);  // 0x40C540
     void Destroy();  // 0x40C230
     int Get(int a2);  // 0x40C280
     char Add(int a2);  // 0x40C290

@@ -9,6 +9,6 @@ struct ConnectionPointClass_9 {
     char Release(int a2, unsigned int * a3);  // 0x4A1280
     int Advise(unsigned int * a2);  // 0x4A1360
     unsigned int Unadvise(int a2);  // 0x4A13A0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4A14F0
+    VectorClass * QueryInterface(char a2);  // 0x4A14F0
 };
 } // namespace gamemd

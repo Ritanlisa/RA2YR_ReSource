@@ -10,6 +10,6 @@ struct SlaveManagerClass_25 {
     char AddRef(int a2);  // 0x6B1470
     char Release(int a2, unsigned int * a3);  // 0x6B15F0
     int Read(unsigned int * a2);  // 0x6B16A0
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x6B1980
+    DynamicVector * QueryInterface(char a2);  // 0x6B1980
 };
 } // namespace gamemd

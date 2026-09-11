@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_764B90 {
+    void* vfptr;  // minimal E2 declaration
+    char * WDT_Campaign_Constructor(const char ** a2, int a3);  // 0x764B90
+};
+} // namespace gamemd

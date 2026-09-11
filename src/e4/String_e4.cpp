@@ -24,40 +24,40 @@ void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, Campaig
 
 // 0x4CB5E0
 namespace gamemd {
-char * String::AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2)
+char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall String::AllocAndCopy(char *Destination, RandomStruct *aP1, IUnknown *aP2)
+char *__thiscall String::AllocAndCopy(char *this, RandomStruct *aP1, IUnknown *aP2)
 {
   char *v4; // eax
   unsigned int v5; // edx
   char *v6; // edi
 
-  strncpy(Destination, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
-  *((_WORD *)Destination + 2) = 2; /*0x4cb5f4*/
-  *((_WORD *)Destination + 3) = 1; /*0x4cb5fa*/
+  strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
+  *((_WORD *)this + 2) = 2; /*0x4cb5f4*/
+  *((_WORD *)this + 3) = 1; /*0x4cb5fa*/
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
-  v5 = *((unsigned __int16 *)Destination + 3); /*0x4cb611*/
-  *((_DWORD *)Destination + 2) = v4; /*0x4cb613*/
+  v5 = *((unsigned __int16 *)this + 3); /*0x4cb611*/
+  *((_DWORD *)this + 2) = v4; /*0x4cb613*/
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + (v5 >> 2), v5 & 3); /*0x4cb625*/
-  *((_DWORD *)Destination + 3) = 0; /*0x4cb628*/
-  return Destination; /*0x4cb627*/
+  *((_DWORD *)this + 3) = 0; /*0x4cb628*/
+  return this; /*0x4cb627*/
 }
 }
 } // namespace gamemd
 
 // 0x4F4C30
 namespace gamemd {
-char * String::CopyUpper(char * String, ObjectClass * aP1)
+char * String::CopyUpper(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall String::CopyUpper(char *String, ObjectClass *aP1)
+char *__thiscall this::CopyUpper(char *this, ObjectClass *aP1)
 {
-  strcpy(String, aP1->__pad_0); /*0x4f4c4e*/
-  _strupr(String); /*0x4f4c57*/
-  return String; /*0x4f4c61*/
+  strcpy(this, aP1->__pad_0); /*0x4f4c4e*/
+  _strupr(this); /*0x4f4c57*/
+  return this; /*0x4f4c61*/
 }
 }
 } // namespace gamemd
@@ -285,26 +285,26 @@ int __thiscall String::To_Waypoint(char *this)
 
 // 0x777B30
 namespace gamemd {
-ObjectClass * String::FormatDword(char * Buffer)
+ObjectClass * String::FormatDword()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall String::FormatDword(char *Buffer)
+ObjectClass *__thiscall String::FormatDword(char *this)
 {
-  sprintf(Buffer, (ObjectClass *)&stru_817F40.fallRate, dword_822D1C); /*0x777b3f*/
-  return (ObjectClass *)Buffer; /*0x777b49*/
+  sprintf(this, (ObjectClass *)&stru_817F40.fallRate, dword_822D1C); /*0x777b3f*/
+  return (ObjectClass *)this; /*0x777b49*/
 }
 }
 } // namespace gamemd
 
 // 0x777B60
 namespace gamemd {
-ObjectClass * String::CopyConstant(char * Destination)
+ObjectClass * String::CopyConstant()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall String::CopyConstant(char *Destination)
+ObjectClass *__thiscall String::CopyConstant(char *this)
 {
-  strncpy(Destination, g_Str_gsmallwoo, (IUnknown *)0x20); /*0x777b6b*/
-  return (ObjectClass *)Destination; /*0x777b75*/
+  strncpy(this, g_Str_gsmallwoo, (IUnknown *)0x20); /*0x777b6b*/
+  return (ObjectClass *)this; /*0x777b75*/
 }
 }
 } // namespace gamemd
@@ -1405,7 +1405,7 @@ int __cdecl String::Wrapper5to4(CampaignScore *aP0, int a2, int a3, int a4)
 
 // 0x7CCA34
 namespace gamemd {
-unsigned int sub_7CCA34(unsigned signed char * a1, unsigned int a2, unsigned signed char * a3, int a4, void * a5)
+unsigned int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, int a4, void *a5)

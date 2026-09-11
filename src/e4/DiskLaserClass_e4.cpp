@@ -79,19 +79,19 @@ int __stdcall DiskLaserClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 
 // 0x4A7C90
-DiskLaserClass * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
+DiskLaserClass * DiskLaserClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *Block, char a2)
+DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
 {
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
-  *(Block + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
-  *(Block + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
-  *(Block + 3) = &DiskLaserClass::`vftable'; /*0x4a7cb1*/
-  v5 = Block; /*0x4a7cbf*/
+  *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
+  *(this + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
+  *(this + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
+  *(this + 3) = &DiskLaserClass::`vftable'; /*0x4a7cb1*/
+  v5 = this; /*0x4a7cbf*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8A0208] + 16))(&MEMORY[0x8A0208], &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < MEMORY[0x8A0218] && v3 < --MEMORY[0x8A0218] ) /*0x4a7cde*/
   {
@@ -102,10 +102,10 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0x8A0218] ); /*0x4a7cf6*/
   }
-  AbstractClass::DTOR(Block); /*0x4a7cfa*/
+  AbstractClass::DTOR(this); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
-    __3_YAXPAX_Z(Block); /*0x4a7d07*/
-  return (DiskLaserClass *)Block; /*0x4a7d11*/
+    __3_YAXPAX_Z(this); /*0x4a7d07*/
+  return (DiskLaserClass *)this; /*0x4a7d11*/
 }
 }
 

@@ -4,7 +4,7 @@
 
 // 0x476340
 namespace gamemd {
-int ParticleSystemTypeClass_ReadXYZFromINI()
+float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 float *__thiscall ParticleSystemTypeClass::ReadXYZFromINI(
@@ -50,7 +50,7 @@ float *__thiscall ParticleSystemTypeClass::ReadXYZFromINI(
 
 // 0x6442D0
 namespace gamemd {
-char ParticleSystemTypeClass::GetType(unsigned signed char *** aP1)
+char ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP1)
@@ -325,20 +325,20 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, O
 
 // 0x644960
 namespace gamemd {
-ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
+ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **Block, char a2)
+ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
-  *(Block + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
-  *(Block + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
-  *(Block + 3) = &ParticleSystemTypeClass::`vftable'; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x644981*/
-  v5 = Block; /*0x644996*/
+  *this = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
+  *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
+  *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
+  *(this + 3) = &ParticleSystemTypeClass::`vftable'; /*0x64497a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x644981*/
+  v5 = this; /*0x644996*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D68] + 16))(&MEMORY[0xA83D68], &v5); /*0x64499a*/
   if ( v3 != -1 && v3 < MEMORY[0xA83D78] && v3 < --MEMORY[0xA83D78] ) /*0x6449b5*/
   {
@@ -349,10 +349,10 @@ ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **Block,
     }
     while ( v3 < MEMORY[0xA83D78] ); /*0x6449cd*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
+  ObjectTypeClass::Destruct((int)this); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
-    __3_YAXPAX_Z(Block); /*0x6449de*/
-  return (ParticleSystemTypeClass *)Block; /*0x6449e8*/
+    __3_YAXPAX_Z(this); /*0x6449de*/
+  return (ParticleSystemTypeClass *)this; /*0x6449e8*/
 }
 }
 } // namespace gamemd

@@ -152,16 +152,16 @@ void __thiscall Territory_WorldDominationTour_8_::_vt08(int *this, int a2)
 
 // 0x771A30
 namespace gamemd {
-unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
+unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Territory_WorldDominationTour_8_::QueryInterface(_DWORD *Block, char a2)
+_DWORD *__thiscall Territory_WorldDominationTour_8_::QueryInterface(_DWORD *this, char a2)
 {
-  *Block = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771a33*/
-  VtableStub::5CB6C0(Block); /*0x771a39*/
+  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771a33*/
+  VtableStub::5CB6C0(this); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
-    __3_YAXPAX_Z(Block); /*0x771a46*/
-  return Block; /*0x771a50*/
+    __3_YAXPAX_Z(this); /*0x771a46*/
+  return this; /*0x771a50*/
 }
 }
 } // namespace gamemd

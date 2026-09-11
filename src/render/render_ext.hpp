@@ -473,6 +473,11 @@ public:
     int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x4962d0 -- BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1
     void* Blit(int a1);  // 0x49a720 -- BlitTransLucent25AlphaZReadWrite_ushort::Blit
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    RLEBlitTransXlat * Constructor_RLEBlitter(char a2);  // 0x49A760
+    std::locale::facet * Constructor_RLEBlitter_0(char a2);  // 0x49A780
+    std::locale::facet * Constructor_RLEBlitter_1(char a2);  // 0x49A7A0
+// --- e4 declarations (END) ---
 };
 // 5 methods in IDA
 class BlitTransLucent25AlphaZRead_ushort
@@ -733,6 +738,9 @@ public:
     std::locale::facet * Constructor_Blitter_0(char a2);  // 0x49A3C0
     std::locale::facet * Constructor_Blitter_1(char a2);  // 0x49A3E0
     std::locale::facet * Constructor_Blitter_2(char a2);  // 0x49A400
+// --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494D20
 // --- e4 declarations (END) ---
 };
 // 5 methods in IDA
@@ -1285,6 +1293,11 @@ public:
     int Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x497b40 -- RLEBlitTransZRemapXlatAlpha_ushort::Release
     void* QueryInterface(int a1);  // 0x49aa40 -- RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+// --- e4 declarations (BEGIN) ---
+    std::locale::facet * Constructor_RLEBlitter(char a2);  // 0x49A9A0
+    std::locale::facet * Constructor_RLEBlitter_0(char a2);  // 0x49A9C0
+    std::locale::facet * Constructor_RLEBlitter_1(char a2);  // 0x49A9E0
+// --- e4 declarations (END) ---
 };
 // 13 methods in IDA
 class ScreenEffect

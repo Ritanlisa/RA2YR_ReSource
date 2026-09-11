@@ -5,6 +5,7 @@ namespace gamemd {
 struct Scenario {
     void* vfptr;  // minimal E2 declaration
     int ReadTeams();  // 0x44F820
+    int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);  // 0x4758F0
     int CopyLocalScenarioData();  // 0x4C6180
     int ProcessSidebarUnits();  // 0x50D610
     int ComputeDisplayPosition();  // 0x552B10

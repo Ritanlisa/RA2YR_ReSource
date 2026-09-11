@@ -1586,8 +1586,7 @@ int DSurface_DrawLineFaded()
 } // namespace gamemd
 
 // 0x4BDF00
-namespace gamemd {
-int DSurface_DrawLineZBufColored()
+char DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DSurface_DrawLineZBufColored(
@@ -2017,11 +2016,9 @@ char __thiscall DSurface_DrawLineZBufColored(
   return 1; /*0x4be59c*/
 }
 }
-} // namespace gamemd
 
 // 0x4BF750
-namespace gamemd {
-int DSurface_DrawGradientLine()
+char DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DSurface::DrawGradientLine(
@@ -2315,7 +2312,6 @@ LABEL_58:
   return 0; /*0x4bf94b*/
 }
 }
-} // namespace gamemd
 
 // 0x4BFD30
 namespace gamemd {
@@ -3726,20 +3722,20 @@ char __thiscall DSurface::DrawStippledRect(void *this, _DWORD *a1, _DWORD *a2, _
 }
 
 // 0x4C1AC0
-void * DSurface::loc_4C1AC0(void * Block, char a2)
+void * DSurface::loc_4C1AC0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall DSurface::loc_4C1AC0(void *Block, char a2)
+void *__thiscall DSurface::loc_4C1AC0(void *this, char a2)
 {
   char v3; // al
   int v4; // eax
   int v5; // eax
 
-  v3 = *((_BYTE *)Block + 24); /*0x4c1ac3*/
-  *(_DWORD *)Block = &DSurface_Vtable; /*0x4c1ac6*/
+  v3 = (unsigned char)this->DSurface_field_0x18; /*0x4c1ac3*/
+  *(_DWORD *)this = &DSurface_Vtable; /*0x4c1ac6*/
   if ( v3 ) /*0x4c1ace*/
   {
-    v4 = *((_DWORD *)Block + 7); /*0x4c1ad0*/
+    v4 = this->DSurface_field_0x1C; /*0x4c1ad0*/
     if ( v4 ) /*0x4c1ad5*/
     {
       if ( MEMORY[0x8A0DCC] ) /*0x4c1adf*/
@@ -3750,16 +3746,16 @@ void *__thiscall DSurface::loc_4C1AC0(void *Block, char a2)
       }
     }
   }
-  __3_YAXPAX_Z(*((void **)Block + 8)); /*0x4c1b02*/
-  v5 = *((_DWORD *)Block + 7); /*0x4c1b07*/
-  *((_DWORD *)Block + 8) = 0; /*0x4c1b0f*/
+  __3_YAXPAX_Z(*((void **)this + 8)); /*0x4c1b02*/
+  v5 = this->DSurface_field_0x1C; /*0x4c1b07*/
+  this->DSurface_field_0x20 = 0; /*0x4c1b0f*/
   if ( v5 ) /*0x4c1b16*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 8))(v5); /*0x4c1b1b*/
-  *((_DWORD *)Block + 7) = 0; /*0x4c1b22*/
-  *(_DWORD *)Block = &Surface_Vtable; /*0x4c1b2b*/
+  this->DSurface_field_0x1C = 0; /*0x4c1b22*/
+  *(_DWORD *)this = &Surface_Vtable; /*0x4c1b2b*/
   if ( (a2 & 1) != 0 ) /*0x4c1b31*/
-    __3_YAXPAX_Z(Block); /*0x4c1b34*/
-  return Block; /*0x4c1b3e*/
+    __3_YAXPAX_Z(this); /*0x4c1b34*/
+  return this; /*0x4c1b3e*/
 }
 }
 
@@ -3871,7 +3867,7 @@ int __thiscall DSurface::RenderToSurface(_DWORD *this, ObjectClass *aP1)
 }
 
 // 0x621B80
-int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned signed char a4)
+int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DSurface::FillRectWithColor(int *a0, ObjectClass *aP1, __int16 a3, unsigned __int8 a4)

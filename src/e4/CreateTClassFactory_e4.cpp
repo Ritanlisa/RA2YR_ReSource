@@ -1,10 +1,79 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6BF8D0_e4.hpp"
+#include "e4/classes/E4Recv_6BFA50_e4.hpp"
+#include "e4/classes/E4Recv_6BFBD0_e4.hpp"
+#include "e4/classes/E4Recv_6BFD50_e4.hpp"
+#include "e4/classes/E4Recv_6BFED0_e4.hpp"
+#include "e4/classes/E4Recv_6C01D0_e4.hpp"
+#include "e4/classes/E4Recv_6C0350_e4.hpp"
+#include "e4/classes/E4Recv_6C04D0_e4.hpp"
+#include "e4/classes/E4Recv_6C0650_e4.hpp"
+#include "e4/classes/E4Recv_6C07D0_e4.hpp"
+#include "e4/classes/E4Recv_6C0950_e4.hpp"
+#include "e4/classes/E4Recv_6C0AD0_e4.hpp"
+#include "e4/classes/E4Recv_6C0C50_e4.hpp"
+#include "e4/classes/E4Recv_6C0DD0_e4.hpp"
+#include "e4/classes/E4Recv_6C0F50_e4.hpp"
+#include "e4/classes/E4Recv_6C10D0_e4.hpp"
+#include "e4/classes/E4Recv_6C1250_e4.hpp"
+#include "e4/classes/E4Recv_6C13D0_e4.hpp"
+#include "e4/classes/E4Recv_6C1550_e4.hpp"
+#include "e4/classes/E4Recv_6C16D0_e4.hpp"
+#include "e4/classes/E4Recv_6C1850_e4.hpp"
+#include "e4/classes/E4Recv_6C19D0_e4.hpp"
+#include "e4/classes/E4Recv_6C1B50_e4.hpp"
+#include "e4/classes/E4Recv_6C1CD0_e4.hpp"
+#include "e4/classes/E4Recv_6C1E50_e4.hpp"
+#include "e4/classes/E4Recv_6C1FD0_e4.hpp"
+#include "e4/classes/E4Recv_6C2150_e4.hpp"
+#include "e4/classes/E4Recv_6C22D0_e4.hpp"
+#include "e4/classes/E4Recv_6C2450_e4.hpp"
+#include "e4/classes/E4Recv_6C25D0_e4.hpp"
+#include "e4/classes/E4Recv_6C2750_e4.hpp"
+#include "e4/classes/E4Recv_6C28D0_e4.hpp"
+#include "e4/classes/E4Recv_6C2A50_e4.hpp"
+#include "e4/classes/E4Recv_6C2BD0_e4.hpp"
+#include "e4/classes/E4Recv_6C2D50_e4.hpp"
+#include "e4/classes/E4Recv_6C2ED0_e4.hpp"
+#include "e4/classes/E4Recv_6C3050_e4.hpp"
+#include "e4/classes/E4Recv_6C31D0_e4.hpp"
+#include "e4/classes/E4Recv_6C3350_e4.hpp"
+#include "e4/classes/E4Recv_6C34D0_e4.hpp"
+#include "e4/classes/E4Recv_6C3650_e4.hpp"
+#include "e4/classes/E4Recv_6C37D0_e4.hpp"
+#include "e4/classes/E4Recv_6C3950_e4.hpp"
+#include "e4/classes/E4Recv_6C3AD0_e4.hpp"
+#include "e4/classes/E4Recv_6C3C50_e4.hpp"
+#include "e4/classes/E4Recv_6C3DD0_e4.hpp"
+#include "e4/classes/E4Recv_6C3F50_e4.hpp"
+#include "e4/classes/E4Recv_6C40D0_e4.hpp"
+#include "e4/classes/E4Recv_6C4250_e4.hpp"
+#include "e4/classes/E4Recv_6C43D0_e4.hpp"
+#include "e4/classes/E4Recv_6C4550_e4.hpp"
+#include "e4/classes/E4Recv_6C46D0_e4.hpp"
+#include "e4/classes/E4Recv_6C4850_e4.hpp"
+#include "e4/classes/E4Recv_6C49D0_e4.hpp"
+#include "e4/classes/E4Recv_6C4B50_e4.hpp"
+#include "e4/classes/E4Recv_6C4CD0_e4.hpp"
+#include "e4/classes/E4Recv_6C4E50_e4.hpp"
+#include "e4/classes/E4Recv_6C4FD0_e4.hpp"
+#include "e4/classes/E4Recv_6C5150_e4.hpp"
+#include "e4/classes/E4Recv_6C52D0_e4.hpp"
+#include "e4/classes/E4Recv_6C5450_e4.hpp"
+#include "e4/classes/E4Recv_6C55D0_e4.hpp"
+#include "e4/classes/E4Recv_6C5750_e4.hpp"
+#include "e4/classes/E4Recv_6C58D0_e4.hpp"
+#include "e4/classes/E4Recv_6C5A50_e4.hpp"
+#include "e4/classes/E4Recv_6C5BD0_e4.hpp"
+#include "e4/classes/E4Recv_6C5D50_e4.hpp"
+#include "e4/classes/E4Recv_6C5ED0_e4.hpp"
+#include "e4/classes/E4Recv_6C6050_e4.hpp"
 
 // 0x6BF8D0
 namespace gamemd {
-int CreateTClassFactory_CellClass()
+int E4Recv_6BF8D0::CreateTClassFactory_CellClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_CellClass(TClassFactory_VCellClass__ *this)
@@ -28,7 +97,7 @@ int __thiscall CreateTClassFactory_CellClass(TClassFactory_VCellClass__ *this)
 
 // 0x6BFA50
 namespace gamemd {
-int CreateTClassFactory_EMPulseClass()
+int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_EMPulseClass(TClassFactory_VEMPulseClass__ *this)
@@ -52,7 +121,7 @@ int __thiscall CreateTClassFactory_EMPulseClass(TClassFactory_VEMPulseClass__ *t
 
 // 0x6BFBD0
 namespace gamemd {
-int CreateTClassFactory_LightSourceClass()
+int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_LightSourceClass(TClassFactory_VLightSourceClass__ *this)
@@ -76,7 +145,7 @@ int __thiscall CreateTClassFactory_LightSourceClass(TClassFactory_VLightSourceCl
 
 // 0x6BFD50
 namespace gamemd {
-int CreateTClassFactory_SideClass()
+int E4Recv_6BFD50::CreateTClassFactory_SideClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_SideClass(TClassFactory_VSideClass__ *this)
@@ -100,7 +169,7 @@ int __thiscall CreateTClassFactory_SideClass(TClassFactory_VSideClass__ *this)
 
 // 0x6BFED0
 namespace gamemd {
-int CreateTClassFactory_TiberiumClass()
+int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TiberiumClass(TClassFactory_VTiberiumClass__ *this)
@@ -124,7 +193,7 @@ int __thiscall CreateTClassFactory_TiberiumClass(TClassFactory_VTiberiumClass__ 
 
 // 0x6C01D0
 namespace gamemd {
-int CreateTClassFactory_CampaignClass()
+int E4Recv_6C01D0::CreateTClassFactory_CampaignClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_CampaignClass(TClassFactory_VCampaignClass__ *this)
@@ -148,7 +217,7 @@ int __thiscall CreateTClassFactory_CampaignClass(TClassFactory_VCampaignClass__ 
 
 // 0x6C0350
 namespace gamemd {
-int CreateTClassFactory_BuildingLightClass()
+int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BuildingLightClass(TClassFactory_VBuildingLightClass__ *this)
@@ -172,7 +241,7 @@ int __thiscall CreateTClassFactory_BuildingLightClass(TClassFactory_VBuildingLig
 
 // 0x6C04D0
 namespace gamemd {
-int CreateTClassFactory_WaypointPathClass()
+int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_WaypointPathClass(TClassFactory_VWaypointPathClass__ *this)
@@ -196,7 +265,7 @@ int __thiscall CreateTClassFactory_WaypointPathClass(TClassFactory_VWaypointPath
 
 // 0x6C0650
 namespace gamemd {
-int CreateTClassFactory_TemporalClass()
+int E4Recv_6C0650::CreateTClassFactory_TemporalClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TemporalClass(TClassFactory_VTemporalClass__ *this)
@@ -220,7 +289,7 @@ int __thiscall CreateTClassFactory_TemporalClass(TClassFactory_VTemporalClass__ 
 
 // 0x6C07D0
 namespace gamemd {
-int CreateTClassFactory_AirstrikeClass()
+int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AirstrikeClass(TClassFactory_VAirstrikeClass__ *this)
@@ -244,7 +313,7 @@ int __thiscall CreateTClassFactory_AirstrikeClass(TClassFactory_VAirstrikeClass_
 
 // 0x6C0950
 namespace gamemd {
-int CreateTClassFactory_SpawnManagerClass()
+int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_SpawnManagerClass(TClassFactory_VSpawnManagerClass__ *this)
@@ -268,7 +337,7 @@ int __thiscall CreateTClassFactory_SpawnManagerClass(TClassFactory_VSpawnManager
 
 // 0x6C0AD0
 namespace gamemd {
-int CreateTClassFactory_SlaveManagerClass()
+int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_SlaveManagerClass(TClassFactory_VSlaveManagerClass__ *this)
@@ -292,7 +361,7 @@ int __thiscall CreateTClassFactory_SlaveManagerClass(TClassFactory_VSlaveManager
 
 // 0x6C0C50
 namespace gamemd {
-int CreateTClassFactory_CaptureManagerClass()
+int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_CaptureManagerClass(TClassFactory_VCaptureManagerClass__ *this)
@@ -316,7 +385,7 @@ int __thiscall CreateTClassFactory_CaptureManagerClass(TClassFactory_VCaptureMan
 
 // 0x6C0DD0
 namespace gamemd {
-int CreateTClassFactory_DiskLaserClass()
+int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_DiskLaserClass(TClassFactory_VDiskLaserClass__ *this)
@@ -340,7 +409,7 @@ int __thiscall CreateTClassFactory_DiskLaserClass(TClassFactory_VDiskLaserClass_
 
 // 0x6C0F50
 namespace gamemd {
-int CreateTClassFactory_ParasiteClass()
+int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ParasiteClass(TClassFactory_VParasiteClass__ *this)
@@ -364,7 +433,7 @@ int __thiscall CreateTClassFactory_ParasiteClass(TClassFactory_VParasiteClass__ 
 
 // 0x6C10D0
 namespace gamemd {
-int CreateTClassFactory_BombClass()
+int E4Recv_6C10D0::CreateTClassFactory_BombClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BombClass(TClassFactory_VBombClass__ *this)
@@ -388,7 +457,7 @@ int __thiscall CreateTClassFactory_BombClass(TClassFactory_VBombClass__ *this)
 
 // 0x6C1250
 namespace gamemd {
-int CreateTClassFactory_RadSiteClass()
+int E4Recv_6C1250::CreateTClassFactory_RadSiteClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_RadSiteClass(TClassFactory_VRadSiteClass__ *this)
@@ -412,7 +481,7 @@ int __thiscall CreateTClassFactory_RadSiteClass(TClassFactory_VRadSiteClass__ *t
 
 // 0x6C13D0
 namespace gamemd {
-int CreateTClassFactory_TEventClass()
+int E4Recv_6C13D0::CreateTClassFactory_TEventClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TEventClass(TClassFactory_VTEventClass__ *this)
@@ -436,7 +505,7 @@ int __thiscall CreateTClassFactory_TEventClass(TClassFactory_VTEventClass__ *thi
 
 // 0x6C1550
 namespace gamemd {
-int CreateTClassFactory_VoxelAnimTypeClass()
+int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_VoxelAnimTypeClass(TClassFactory_VVoxelAnimTypeClass__ *this)
@@ -460,7 +529,7 @@ int __thiscall CreateTClassFactory_VoxelAnimTypeClass(TClassFactory_VVoxelAnimTy
 
 // 0x6C16D0
 namespace gamemd {
-int CreateTClassFactory_VoxelAnimClass()
+int E4Recv_6C16D0::CreateTClassFactory_VoxelAnimClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_VoxelAnimClass(TClassFactory_VVoxelAnimClass__ *this)
@@ -484,7 +553,7 @@ int __thiscall CreateTClassFactory_VoxelAnimClass(TClassFactory_VVoxelAnimClass_
 
 // 0x6C1850
 namespace gamemd {
-int CreateTClassFactory_TActionClass()
+int E4Recv_6C1850::CreateTClassFactory_TActionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TActionClass(TClassFactory_VTActionClass__ *this)
@@ -508,7 +577,7 @@ int __thiscall CreateTClassFactory_TActionClass(TClassFactory_VTActionClass__ *t
 
 // 0x6C19D0
 namespace gamemd {
-int CreateTClassFactory_TriggerClass()
+int E4Recv_6C19D0::CreateTClassFactory_TriggerClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TriggerClass(TClassFactory_VTriggerClass__ *this)
@@ -532,7 +601,7 @@ int __thiscall CreateTClassFactory_TriggerClass(TClassFactory_VTriggerClass__ *t
 
 // 0x6C1B50
 namespace gamemd {
-int CreateTClassFactory_TriggerTypeClass()
+int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TriggerTypeClass(TClassFactory_VTriggerTypeClass__ *this)
@@ -556,7 +625,7 @@ int __thiscall CreateTClassFactory_TriggerTypeClass(TClassFactory_VTriggerTypeCl
 
 // 0x6C1CD0
 namespace gamemd {
-int CreateTClassFactory_ScriptClass()
+int E4Recv_6C1CD0::CreateTClassFactory_ScriptClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ScriptClass(TClassFactory_VScriptClass__ *this)
@@ -580,7 +649,7 @@ int __thiscall CreateTClassFactory_ScriptClass(TClassFactory_VScriptClass__ *thi
 
 // 0x6C1E50
 namespace gamemd {
-int CreateTClassFactory_ScriptTypeClass()
+int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ScriptTypeClass(TClassFactory_VScriptTypeClass__ *this)
@@ -604,7 +673,7 @@ int __thiscall CreateTClassFactory_ScriptTypeClass(TClassFactory_VScriptTypeClas
 
 // 0x6C1FD0
 namespace gamemd {
-int CreateTClassFactory_TagClass()
+int E4Recv_6C1FD0::CreateTClassFactory_TagClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TagClass(TClassFactory_VTagClass__ *this)
@@ -628,7 +697,7 @@ int __thiscall CreateTClassFactory_TagClass(TClassFactory_VTagClass__ *this)
 
 // 0x6C2150
 namespace gamemd {
-int CreateTClassFactory_TagTypeClass()
+int E4Recv_6C2150::CreateTClassFactory_TagTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TagTypeClass(TClassFactory_VTagTypeClass__ *this)
@@ -652,7 +721,7 @@ int __thiscall CreateTClassFactory_TagTypeClass(TClassFactory_VTagTypeClass__ *t
 
 // 0x6C22D0
 namespace gamemd {
-int CreateTClassFactory_TeamClass()
+int E4Recv_6C22D0::CreateTClassFactory_TeamClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TeamClass(TClassFactory_VTeamClass__ *this)
@@ -676,7 +745,7 @@ int __thiscall CreateTClassFactory_TeamClass(TClassFactory_VTeamClass__ *this)
 
 // 0x6C2450
 namespace gamemd {
-int CreateTClassFactory_TeamTypeClass()
+int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TeamTypeClass(TClassFactory_VTeamTypeClass__ *this)
@@ -700,7 +769,7 @@ int __thiscall CreateTClassFactory_TeamTypeClass(TClassFactory_VTeamTypeClass__ 
 
 // 0x6C25D0
 namespace gamemd {
-int CreateTClassFactory_TaskForceClass()
+int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TaskForceClass(TClassFactory_VTaskForceClass__ *this)
@@ -724,7 +793,7 @@ int __thiscall CreateTClassFactory_TaskForceClass(TClassFactory_VTaskForceClass_
 
 // 0x6C2750
 namespace gamemd {
-int CreateTClassFactory_UnitTypeClass()
+int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_UnitTypeClass(TClassFactory_VUnitTypeClass__ *this)
@@ -748,7 +817,7 @@ int __thiscall CreateTClassFactory_UnitTypeClass(TClassFactory_VUnitTypeClass__ 
 
 // 0x6C28D0
 namespace gamemd {
-int CreateTClassFactory_BuildingTypeClass()
+int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BuildingTypeClass(TClassFactory_VBuildingTypeClass__ *this)
@@ -772,7 +841,7 @@ int __thiscall CreateTClassFactory_BuildingTypeClass(TClassFactory_VBuildingType
 
 // 0x6C2A50
 namespace gamemd {
-int CreateTClassFactory_AircraftTypeClass()
+int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AircraftTypeClass(TClassFactory_VAircraftTypeClass__ *this)
@@ -796,7 +865,7 @@ int __thiscall CreateTClassFactory_AircraftTypeClass(TClassFactory_VAircraftType
 
 // 0x6C2BD0
 namespace gamemd {
-int CreateTClassFactory_InfantryTypeClass()
+int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_InfantryTypeClass(TClassFactory_VInfantryTypeClass__ *this)
@@ -820,7 +889,7 @@ int __thiscall CreateTClassFactory_InfantryTypeClass(TClassFactory_VInfantryType
 
 // 0x6C2D50
 namespace gamemd {
-int CreateTClassFactory_BulletTypeClass()
+int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BulletTypeClass(TClassFactory_VBulletTypeClass__ *this)
@@ -844,7 +913,7 @@ int __thiscall CreateTClassFactory_BulletTypeClass(TClassFactory_VBulletTypeClas
 
 // 0x6C2ED0
 namespace gamemd {
-int CreateTClassFactory_IsometricTileTypeClass()
+int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_IsometricTileTypeClass(TClassFactory_VIsometricTileTypeClass__ *this)
@@ -868,7 +937,7 @@ int __thiscall CreateTClassFactory_IsometricTileTypeClass(TClassFactory_VIsometr
 
 // 0x6C3050
 namespace gamemd {
-int CreateTClassFactory_OverlayTypeClass()
+int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_OverlayTypeClass(TClassFactory_VOverlayTypeClass__ *this)
@@ -892,7 +961,7 @@ int __thiscall CreateTClassFactory_OverlayTypeClass(TClassFactory_VOverlayTypeCl
 
 // 0x6C31D0
 namespace gamemd {
-int CreateTClassFactory_SmudgeTypeClass()
+int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_SmudgeTypeClass(TClassFactory_VSmudgeTypeClass__ *this)
@@ -916,7 +985,7 @@ int __thiscall CreateTClassFactory_SmudgeTypeClass(TClassFactory_VSmudgeTypeClas
 
 // 0x6C3350
 namespace gamemd {
-int CreateTClassFactory_UnitClass()
+int E4Recv_6C3350::CreateTClassFactory_UnitClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_UnitClass(TClassFactory_VUnitClass__ *this)
@@ -940,7 +1009,7 @@ int __thiscall CreateTClassFactory_UnitClass(TClassFactory_VUnitClass__ *this)
 
 // 0x6C34D0
 namespace gamemd {
-int CreateTClassFactory_BuildingClass()
+int E4Recv_6C34D0::CreateTClassFactory_BuildingClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BuildingClass(TClassFactory_VBuildingClass__ *this)
@@ -964,7 +1033,7 @@ int __thiscall CreateTClassFactory_BuildingClass(TClassFactory_VBuildingClass__ 
 
 // 0x6C3650
 namespace gamemd {
-int CreateTClassFactory_AircraftClass()
+int E4Recv_6C3650::CreateTClassFactory_AircraftClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AircraftClass(TClassFactory_VAircraftClass__ *this)
@@ -988,7 +1057,7 @@ int __thiscall CreateTClassFactory_AircraftClass(TClassFactory_VAircraftClass__ 
 
 // 0x6C37D0
 namespace gamemd {
-int CreateTClassFactory_InfantryClass()
+int E4Recv_6C37D0::CreateTClassFactory_InfantryClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_InfantryClass(TClassFactory_VInfantryClass__ *this)
@@ -1012,7 +1081,7 @@ int __thiscall CreateTClassFactory_InfantryClass(TClassFactory_VInfantryClass__ 
 
 // 0x6C3950
 namespace gamemd {
-int CreateTClassFactory_AnimClass()
+int E4Recv_6C3950::CreateTClassFactory_AnimClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AnimClass(TClassFactory_VAnimClass__ *this)
@@ -1036,7 +1105,7 @@ int __thiscall CreateTClassFactory_AnimClass(TClassFactory_VAnimClass__ *this)
 
 // 0x6C3AD0
 namespace gamemd {
-int CreateTClassFactory_AnimTypeClass()
+int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AnimTypeClass(TClassFactory_VAnimTypeClass__ *this)
@@ -1060,7 +1129,7 @@ int __thiscall CreateTClassFactory_AnimTypeClass(TClassFactory_VAnimTypeClass__ 
 
 // 0x6C3C50
 namespace gamemd {
-int CreateTClassFactory_HouseTypeClass()
+int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_HouseTypeClass(TClassFactory_VHouseTypeClass__ *this)
@@ -1084,7 +1153,7 @@ int __thiscall CreateTClassFactory_HouseTypeClass(TClassFactory_VHouseTypeClass_
 
 // 0x6C3DD0
 namespace gamemd {
-int CreateTClassFactory_HouseClass()
+int E4Recv_6C3DD0::CreateTClassFactory_HouseClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_HouseClass(TClassFactory_VHouseClass__ *this)
@@ -1108,7 +1177,7 @@ int __thiscall CreateTClassFactory_HouseClass(TClassFactory_VHouseClass__ *this)
 
 // 0x6C3F50
 namespace gamemd {
-int CreateTClassFactory_DriveLocomotionClass()
+int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_DriveLocomotionClass(TClassFactory_VDriveLocomotionClass__ *this)
@@ -1132,7 +1201,7 @@ int __thiscall CreateTClassFactory_DriveLocomotionClass(TClassFactory_VDriveLoco
 
 // 0x6C40D0
 namespace gamemd {
-int CreateTClassFactory_JumpjetLocomotionClass()
+int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_JumpjetLocomotionClass(TClassFactory_VJumpjetLocomotionClass__ *this)
@@ -1156,7 +1225,7 @@ int __thiscall CreateTClassFactory_JumpjetLocomotionClass(TClassFactory_VJumpjet
 
 // 0x6C4250
 namespace gamemd {
-int CreateTClassFactory_HoverLocomotionClass()
+int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_HoverLocomotionClass(TClassFactory_VHoverLocomotionClass__ *this)
@@ -1180,7 +1249,7 @@ int __thiscall CreateTClassFactory_HoverLocomotionClass(TClassFactory_VHoverLoco
 
 // 0x6C43D0
 namespace gamemd {
-int CreateTClassFactory_RocketLocomotionClass()
+int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_RocketLocomotionClass(TClassFactory_VRocketLocomotionClass__ *this)
@@ -1204,7 +1273,7 @@ int __thiscall CreateTClassFactory_RocketLocomotionClass(TClassFactory_VRocketLo
 
 // 0x6C4550
 namespace gamemd {
-int CreateTClassFactory_TunnelLocomotionClass()
+int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TunnelLocomotionClass(TClassFactory_VTunnelLocomotionClass__ *this)
@@ -1228,7 +1297,7 @@ int __thiscall CreateTClassFactory_TunnelLocomotionClass(TClassFactory_VTunnelLo
 
 // 0x6C46D0
 namespace gamemd {
-int CreateTClassFactory_WalkLocomotionClass()
+int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_WalkLocomotionClass(TClassFactory_VWalkLocomotionClass__ *this)
@@ -1252,7 +1321,7 @@ int __thiscall CreateTClassFactory_WalkLocomotionClass(TClassFactory_VWalkLocomo
 
 // 0x6C4850
 namespace gamemd {
-int CreateTClassFactory_DropPodLocomotionClass()
+int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_DropPodLocomotionClass(TClassFactory_VDropPodLocomotionClass__ *this)
@@ -1276,7 +1345,7 @@ int __thiscall CreateTClassFactory_DropPodLocomotionClass(TClassFactory_VDropPod
 
 // 0x6C49D0
 namespace gamemd {
-int CreateTClassFactory_FlyLocomotionClass()
+int E4Recv_6C49D0::CreateTClassFactory_FlyLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_FlyLocomotionClass(TClassFactory_VFlyLocomotionClass__ *this)
@@ -1300,7 +1369,7 @@ int __thiscall CreateTClassFactory_FlyLocomotionClass(TClassFactory_VFlyLocomoti
 
 // 0x6C4B50
 namespace gamemd {
-int CreateTClassFactory_TeleportLocomotionClass()
+int E4Recv_6C4B50::CreateTClassFactory_TeleportLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_TeleportLocomotionClass(TClassFactory_VTeleportLocomotionClass__ *this)
@@ -1324,7 +1393,7 @@ int __thiscall CreateTClassFactory_TeleportLocomotionClass(TClassFactory_VTelepo
 
 // 0x6C4CD0
 namespace gamemd {
-int CreateTClassFactory_MechLocomotionClass()
+int E4Recv_6C4CD0::CreateTClassFactory_MechLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_MechLocomotionClass(TClassFactory_VMechLocomotionClass__ *this)
@@ -1348,7 +1417,7 @@ int __thiscall CreateTClassFactory_MechLocomotionClass(TClassFactory_VMechLocomo
 
 // 0x6C4E50
 namespace gamemd {
-int CreateTClassFactory_ShipLocomotionClass()
+int E4Recv_6C4E50::CreateTClassFactory_ShipLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ShipLocomotionClass(TClassFactory_VShipLocomotionClass__ *this)
@@ -1372,7 +1441,7 @@ int __thiscall CreateTClassFactory_ShipLocomotionClass(TClassFactory_VShipLocomo
 
 // 0x6C4FD0
 namespace gamemd {
-int CreateTClassFactory_BulletClass()
+int E4Recv_6C4FD0::CreateTClassFactory_BulletClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_BulletClass(TClassFactory_VBulletClass__ *this)
@@ -1396,7 +1465,7 @@ int __thiscall CreateTClassFactory_BulletClass(TClassFactory_VBulletClass__ *thi
 
 // 0x6C5150
 namespace gamemd {
-int CreateTClassFactory_FactoryClass()
+int E4Recv_6C5150::CreateTClassFactory_FactoryClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_FactoryClass(TClassFactory_VFactoryClass__ *this)
@@ -1420,7 +1489,7 @@ int __thiscall CreateTClassFactory_FactoryClass(TClassFactory_VFactoryClass__ *t
 
 // 0x6C52D0
 namespace gamemd {
-int CreateTClassFactory_WarheadTypeClass()
+int E4Recv_6C52D0::CreateTClassFactory_WarheadTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_WarheadTypeClass(TClassFactory_VWarheadTypeClass__ *this)
@@ -1444,7 +1513,7 @@ int __thiscall CreateTClassFactory_WarheadTypeClass(TClassFactory_VWarheadTypeCl
 
 // 0x6C5450
 namespace gamemd {
-int CreateTClassFactory_WeaponTypeClass()
+int E4Recv_6C5450::CreateTClassFactory_WeaponTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_WeaponTypeClass(TClassFactory_VWeaponTypeClass__ *this)
@@ -1468,7 +1537,7 @@ int __thiscall CreateTClassFactory_WeaponTypeClass(TClassFactory_VWeaponTypeClas
 
 // 0x6C55D0
 namespace gamemd {
-int CreateTClassFactory_ParticleClass()
+int E4Recv_6C55D0::CreateTClassFactory_ParticleClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ParticleClass(TClassFactory_VParticleClass__ *this)
@@ -1492,7 +1561,7 @@ int __thiscall CreateTClassFactory_ParticleClass(TClassFactory_VParticleClass__ 
 
 // 0x6C5750
 namespace gamemd {
-int CreateTClassFactory_ParticleTypeClass()
+int E4Recv_6C5750::CreateTClassFactory_ParticleTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ParticleTypeClass(TClassFactory_VParticleTypeClass__ *this)
@@ -1516,7 +1585,7 @@ int __thiscall CreateTClassFactory_ParticleTypeClass(TClassFactory_VParticleType
 
 // 0x6C58D0
 namespace gamemd {
-int CreateTClassFactory_ParticleSystemClass()
+int E4Recv_6C58D0::CreateTClassFactory_ParticleSystemClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ParticleSystemClass(TClassFactory_VParticleSystemClass__ *this)
@@ -1540,7 +1609,7 @@ int __thiscall CreateTClassFactory_ParticleSystemClass(TClassFactory_VParticleSy
 
 // 0x6C5A50
 namespace gamemd {
-int CreateTClassFactory_ParticleSystemTypeClass()
+int E4Recv_6C5A50::CreateTClassFactory_ParticleSystemTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_ParticleSystemTypeClass(TClassFactory_VParticleSystemTypeClass__ *this)
@@ -1564,7 +1633,7 @@ int __thiscall CreateTClassFactory_ParticleSystemTypeClass(TClassFactory_VPartic
 
 // 0x6C5BD0
 namespace gamemd {
-int CreateTClassFactory_AITriggerTypeClass()
+int E4Recv_6C5BD0::CreateTClassFactory_AITriggerTypeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AITriggerTypeClass(TClassFactory_VAITriggerTypeClass__ *this)
@@ -1588,7 +1657,7 @@ int __thiscall CreateTClassFactory_AITriggerTypeClass(TClassFactory_VAITriggerTy
 
 // 0x6C5D50
 namespace gamemd {
-int CreateTClassFactory_NeuronClass()
+int E4Recv_6C5D50::CreateTClassFactory_NeuronClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_NeuronClass(TClassFactory_VNeuronClass__ *this)
@@ -1612,7 +1681,7 @@ int __thiscall CreateTClassFactory_NeuronClass(TClassFactory_VNeuronClass__ *thi
 
 // 0x6C5ED0
 namespace gamemd {
-int CreateTClassFactory_FoggedObjectClass()
+int E4Recv_6C5ED0::CreateTClassFactory_FoggedObjectClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_FoggedObjectClass(TClassFactory_VFoggedObjectClass__ *this)
@@ -1636,7 +1705,7 @@ int __thiscall CreateTClassFactory_FoggedObjectClass(TClassFactory_VFoggedObject
 
 // 0x6C6050
 namespace gamemd {
-int CreateTClassFactory_AlphaShapeClass()
+int E4Recv_6C6050::CreateTClassFactory_AlphaShapeClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CreateTClassFactory_AlphaShapeClass(TClassFactory_VAlphaShapeClass__ *this)

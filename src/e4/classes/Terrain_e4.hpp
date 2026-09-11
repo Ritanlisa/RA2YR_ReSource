@@ -8,7 +8,7 @@ struct Terrain {
     int GetTileType(AnimClass * aP1);  // 0x48B9E0
     void PlaceCliffs(int a2, int a3, IUnknown * aP3);  // 0x568E40
     int ConnectivityGraph();  // 0x56C510
-    int FloodFillConnectivity(unsigned signed char * a1, IUnknown * aP2, AbstractClass * aP3);  // 0x56CB90
+    int FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3);  // 0x56CB90
     void ProcessCellModification(IUnknown * aP1);  // 0x570050
     void RecursiveModify(IUnknown * aP1);  // 0x573540
     char CreateCrater(IUnknown * aP1);  // 0x576770

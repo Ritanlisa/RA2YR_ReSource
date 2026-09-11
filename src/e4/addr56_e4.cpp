@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5654E0_e4.hpp"
+#include "e4/classes/E4Recv_565610_e4.hpp"
+#include "e4/classes/E4Recv_56AE40_e4.hpp"
+#include "e4/classes/E4Recv_56AF40_e4.hpp"
+#include "e4/classes/E4Recv_56B0F0_e4.hpp"
+#include "e4/classes/E4Recv_56B250_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {
@@ -631,7 +637,7 @@ void __cdecl unknown_libname_22()
 
 // 0x5654E0
 namespace gamemd {
-unsigned int * sub_5654E0(unsigned int * a2, int * a3)
+unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5654E0(_DWORD *this, _DWORD *a2, int *a3)
@@ -659,7 +665,7 @@ _DWORD *__thiscall sub_5654E0(_DWORD *this, _DWORD *a2, int *a3)
 
 // 0x565610
 namespace gamemd {
-unsigned int * sub_565610(unsigned int * a2, short * a3)
+unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_565610(_DWORD *this, _DWORD *a2, __int16 *a3)
@@ -785,7 +791,7 @@ int __stdcall sub_568140(int *a1, int a2)
 
 // 0x56AE40
 namespace gamemd {
-int sub_56AE40(int a2)
+int E4Recv_56AE40::sub_56AE40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_56AE40(_DWORD *this, int a2)
@@ -840,7 +846,7 @@ int __thiscall sub_56AE40(_DWORD *this, int a2)
 
 // 0x56AF40
 namespace gamemd {
-char * sub_56AF40(int a2)
+char * E4Recv_56AF40::sub_56AF40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_56AF40(int *this, int a2)
@@ -923,7 +929,7 @@ char *__thiscall sub_56AF40(int *this, int a2)
 
 // 0x56B0F0
 namespace gamemd {
-int sub_56B0F0(int * a2)
+int E4Recv_56B0F0::sub_56B0F0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_56B0F0(_DWORD *this, int *a2)
@@ -988,7 +994,7 @@ int __thiscall sub_56B0F0(_DWORD *this, int *a2)
 
 // 0x56B250
 namespace gamemd {
-int sub_56B250(int a2)
+int E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_56B250(int *this, int a2)

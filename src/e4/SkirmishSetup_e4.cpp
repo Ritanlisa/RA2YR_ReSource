@@ -401,10 +401,10 @@ LABEL_28:
 }
 
 // 0x608260
-char SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
+char SkirmishSetup::PlayButtonClickAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
+char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
 {
   HWND *v2; // eax
   _DWORD *v4; // eax
@@ -414,7 +414,7 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
 
   if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60826a*/
     return 0; /*0x60826a*/
-  v7 = hWnd; /*0x608278*/
+  v7 = this; /*0x608278*/
   if ( !MEMORY[0xAC1B04] ) /*0x60827e*/
     return 0; /*0x60827e*/
   v2 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60829f*/
@@ -430,17 +430,17 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
   if ( !v4 ) /*0x6082c7*/
     return 0; /*0x6082c7*/
   v5 = *((_BYTE *)v4 + 189) && v4[44] == 1; /*0x6082d1*/
-  v6 = IsWindowVisible(hWnd); /*0x6082eb*/
+  v6 = IsWindowVisible(this); /*0x6082eb*/
   if ( !v5 || !v6 ) /*0x6082f4*/
     return 0; /*0x6082b8*/
   PlayVocClass(MEMORY[0x8871E0]->VoiceIFVRepair, 0x2000, 1.0, 0); /*0x60830f*/
-  LOBYTE(v7) = IsWindowEnabled(hWnd); /*0x608329*/
-  EnableWindow(hWnd, 0); /*0x60832d*/
-  EnumChildWindows(hWnd, Dialog::MapControlToAction, 1); /*0x60833d*/
-  RenderGadgetClassAnimation(hWnd, 1); /*0x608343*/
-  EnumChildWindows(hWnd, Dialog::MapControlToAction, 0); /*0x608350*/
-  EnableWindow(hWnd, (unsigned __int8)v7); /*0x60835d*/
-  InvalidateRect(hWnd, 0, 0); /*0x608364*/
+  LOBYTE(v7) = IsWindowEnabled(this); /*0x608329*/
+  EnableWindow(this, 0); /*0x60832d*/
+  EnumChildWindows(this, Dialog::MapControlToAction, 1); /*0x60833d*/
+  RenderGadgetClassAnimation(this, 1); /*0x608343*/
+  EnumChildWindows(this, Dialog::MapControlToAction, 0); /*0x608350*/
+  EnableWindow(this, (unsigned __int8)v7); /*0x60835d*/
+  InvalidateRect(this, 0, 0); /*0x608364*/
   return 1; /*0x6082b8*/
 }
 }

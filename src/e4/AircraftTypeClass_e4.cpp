@@ -258,20 +258,20 @@ int __thiscall AircraftTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x41CFE0
-AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
+AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **Block, char a2)
+AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **this, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
-  *(Block + 1) = &AircraftTypeClass::`vftable'; /*0x41cfec*/
-  *(Block + 2) = &AircraftTypeClass::`vftable'; /*0x41cff3*/
-  *(Block + 3) = &AircraftTypeClass::`vftable'; /*0x41cffa*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x41d001*/
-  v5 = Block; /*0x41d016*/
+  *this = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
+  *(this + 1) = &AircraftTypeClass::`vftable'; /*0x41cfec*/
+  *(this + 2) = &AircraftTypeClass::`vftable'; /*0x41cff3*/
+  *(this + 3) = &AircraftTypeClass::`vftable'; /*0x41cffa*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x41d001*/
+  v5 = this; /*0x41d016*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8B218] + 16))(&MEMORY[0xA8B218], &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < MEMORY[0xA8B228] && v3 < --MEMORY[0xA8B228] ) /*0x41d035*/
   {
@@ -282,10 +282,10 @@ AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **Block, char a2)
     }
     while ( v3 < MEMORY[0xA8B228] ); /*0x41d04d*/
   }
-  TechnoTypeClass::DTOR((int)Block); /*0x41d051*/
+  TechnoTypeClass::DTOR((int)this); /*0x41d051*/
   if ( (a2 & 1) != 0 ) /*0x41d05b*/
-    __3_YAXPAX_Z(Block); /*0x41d05e*/
-  return (AircraftTypeClass *)Block; /*0x41d068*/
+    __3_YAXPAX_Z(this); /*0x41d05e*/
+  return (AircraftTypeClass *)this; /*0x41d068*/
 }
 }
 

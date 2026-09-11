@@ -338,7 +338,7 @@ int __thiscall AnimTypeClass::FindIndex(void *this)
 
 // 0x427D00
 namespace gamemd {
-char AnimTypeClass::LoadFromINI(unsigned signed char *** a2)
+char AnimTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -527,15 +527,15 @@ int __thiscall AnimTypeClass::_vt13(int this, int *a2)
 
 // 0x428B80
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::FindOrCreate(AbstractClass * Source)
+AnimTypeClass * AnimTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AnimTypeClass *__thiscall AnimTypeClass::FindOrCreate(AbstractClass *Source)
+AnimTypeClass *__thiscall AnimTypeClass::FindOrCreate(AbstractClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x428b9c*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x428b9c*/
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
   if ( *(int *)&stru_89E138.__pad_1600D[27] <= 0 ) /*0x428bb1*/
@@ -543,10 +543,10 @@ AnimTypeClass *__thiscall AnimTypeClass::FindOrCreate(AbstractClass *Source)
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
     if ( v3 ) /*0x428be5*/
-      return (AnimTypeClass *)AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
+      return (AnimTypeClass *)AnimTypeClass::Construct(v3, this); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * v2) + 36), Source) ) /*0x428bca*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * v2) + 36), this) ) /*0x428bca*/
   {
     if ( ++v2 >= *(int *)&stru_89E138.__pad_1600D[27] ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
@@ -658,20 +658,20 @@ int __thiscall AnimTypeClass::_vt16(_DWORD *this)
 
 // 0x428EA0
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
+AnimTypeClass * AnimTypeClass::ddtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *Block, char a2)
+AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *this, char a2)
 {
   int v3; // eax
   int v4; // eax
   _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AnimTypeClass::`vftable'; /*0x428ead*/
-  *(Block + 1) = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  *(Block + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
-  *(Block + 3) = &AnimTypeClass::`vftable'; /*0x428ec1*/
-  v6 = Block; /*0x428ecf*/
+  *this = &AnimTypeClass::`vftable'; /*0x428ead*/
+  *(this + 1) = &AnimTypeClass::`vftable'; /*0x428eb3*/
+  *(this + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
+  *(this + 3) = &AnimTypeClass::`vftable'; /*0x428ec1*/
+  v6 = this; /*0x428ecf*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x428ed3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x428eee*/
   {
@@ -682,7 +682,7 @@ AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *Block, char a2)
     }
     while ( v3 < MEMORY[0xB0F680] ); /*0x428f06*/
   }
-  v6 = Block; /*0x428f18*/
+  v6 = this; /*0x428f18*/
   v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8B4150] + 16))(&MEMORY[0x8B4150], &v6); /*0x428f1c*/
   if ( v4 != -1 && v4 < MEMORY[0x8B4160] && v4 < --MEMORY[0x8B4160] ) /*0x428f37*/
   {
@@ -693,17 +693,17 @@ AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *Block, char a2)
     }
     while ( v4 < MEMORY[0x8B4160] ); /*0x428f4f*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x428f53*/
+  ObjectTypeClass::Destruct((int)this); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
-    __3_YAXPAX_Z(Block); /*0x428f60*/
-  return (AnimTypeClass *)Block; /*0x428f6a*/
+    __3_YAXPAX_Z(this); /*0x428f60*/
+  return (AnimTypeClass *)this; /*0x428f6a*/
 }
 }
 } // namespace gamemd
 
 // 0x477050
 namespace gamemd {
-int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned signed char * a2, Layer a3)
+int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AnimTypeClass::ReadINIString(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, Layer a3)

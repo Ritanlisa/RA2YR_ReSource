@@ -33,7 +33,7 @@ int __thiscall sub_60D320(void *this)
 }
 
 // 0x698F90
-int GameSetup::WriteINI(CCINIClass * aP1, unsigned signed char * Block)
+int GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *Block)

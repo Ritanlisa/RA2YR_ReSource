@@ -50,10 +50,10 @@ char *__thiscall LoadingScreen::GetOverlayImage(void *this, ScenarioClass *aP1)
 }
 
 // 0x72B390
-int LoadingScreen::ReleaseAnimObjects(char * Source)
+int LoadingScreen::ReleaseAnimObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_72B390(char *Source)
+int __thiscall sub_72B390(char *this)
 {
   if ( MEMORY[0xB0FB88] ) /*0x72b39b*/
   {
@@ -65,7 +65,7 @@ int __thiscall sub_72B390(char *Source)
     __3_YAXPAX_Z(MEMORY[0xB0FB84]); /*0x72b3b7*/
     MEMORY[0xB0FB84] = 0; /*0x72b3bf*/
   }
-  return LoadPaletteSimple(Source, &MEMORY[0xB0FB84], &MEMORY[0xB0FB88]); /*0x72b3da*/
+  return LoadPaletteSimple(this, &MEMORY[0xB0FB84], &MEMORY[0xB0FB88]); /*0x72b3da*/
 }
 }
 

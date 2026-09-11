@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_7A0DD0_e4.hpp"
+#include "e4/classes/E4Recv_7A2830_e4.hpp"
+#include "e4/classes/E4Recv_7ACBD0_e4.hpp"
+#include "e4/classes/E4Recv_7AF640_e4.hpp"
 
 // 0x7A0430
 namespace gamemd {
@@ -432,7 +436,7 @@ int sub_7A0D10()
 
 // 0x7A0DD0
 namespace gamemd {
-void sub_7A0DD0()
+void E4Recv_7A0DD0::sub_7A0DD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_7A0DD0(const char *this)
@@ -462,7 +466,7 @@ void __thiscall sub_7A0DD0(const char *this)
 
 // 0x7A0EA0
 namespace gamemd {
-void SetGameOptionsPing()
+void INIClass::SetGameOptionsPing()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall SetGameOptionsPing(INIClass *this)
@@ -1158,7 +1162,7 @@ int __stdcall sub_7A2600(HWND hWnd, unsigned int a2, int a3, char *a4)
 
 // 0x7A2830
 namespace gamemd {
-int sub_7A2830()
+int E4Recv_7A2830::sub_7A2830()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7A2830(char **this)
@@ -1520,7 +1524,7 @@ LABEL_16:
 
 // 0x7ACBD0
 namespace gamemd {
-int __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
+void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1(
@@ -1830,7 +1834,7 @@ void __cdecl unknown_libname_68()
 
 // 0x7AF640
 namespace gamemd {
-int sub_7AF640(int a2)
+int E4Recv_7AF640::sub_7AF640(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_7AF640(_DWORD *this, int a2)

@@ -167,7 +167,7 @@ bool __thiscall sub_5090F0(unsigned int *this)
 
 // 0x5824A0
 namespace gamemd {
-int Radar_ProcessSubzone()
+int Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Radar::ProcessSubzone(

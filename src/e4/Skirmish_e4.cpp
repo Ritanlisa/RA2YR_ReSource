@@ -51,10 +51,10 @@ LABEL_9:
 }
 
 // 0x46F8F0
-void Skirmish::SetupAllSpawnLocations(HWND hDlg)
+void Skirmish::SetupAllSpawnLocations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Skirmish::SetupAllSpawnLocations(HWND hDlg)
+void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
 {
   int v1; // ebp
   int ResourceIDCSF; // eax
@@ -100,7 +100,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND hDlg)
     {
       PlayerColor = SessionClass::GetPlayerColor((int)v4); /*0x46f96e*/
     }
-    SetupSkirmishSpawnLocations(hDlg, v5, PlayerColor); /*0x46f978*/
+    SetupSkirmishSpawnLocations(this, v5, PlayerColor); /*0x46f978*/
   }
   v7 = 0; /*0x46f97d*/
   v8 = MEMORY[0xA8B2BC]; /*0x46f97f*/
@@ -135,7 +135,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND hDlg)
       {
         v12 = SessionClass::GetPlayerColor((int)v10); /*0x46f9e4*/
       }
-      SetupSkirmishSpawnLocations(hDlg, v11, v12); /*0x46f9f0*/
+      SetupSkirmishSpawnLocations(this, v11, v12); /*0x46f9f0*/
       v1 = v14; /*0x46f9f5*/
     }
     ++v8; /*0x46f9f9*/
@@ -466,10 +466,10 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
 }
 
 // 0x6ACD60
-HWND Skirmish::EnableSpawnButtons(HWND hDlg)
+HWND Skirmish::EnableSpawnButtons()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Skirmish::EnableSpawnButtons(HWND hDlg)
+HWND __thiscall Skirmish::EnableSpawnButtons(HWND this)
 {
   HWND v1; // ebp
   HWND result; // eax
@@ -479,8 +479,8 @@ HWND __thiscall Skirmish::EnableSpawnButtons(HWND hDlg)
   SkirmishDialog *v6; // esi
   char v7; // [esp+7h] [ebp-1h]
 
-  v1 = hDlg; /*0x6acd62*/
-  if ( !hDlg ) /*0x6acd66*/
+  v1 = this; /*0x6acd62*/
+  if ( !this ) /*0x6acd66*/
     v1 = (HWND)Dialog::FindByHandle((void *)0x102); /*0x6acd72*/
   v7 = 0; /*0x6acd79*/
   if ( MEMORY[0xA8B23C] ) /*0x6acd80*/
@@ -671,10 +671,10 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
 }
 
 // 0x6AE6E0
-int Skirmish::SetupGame(SkirmishDialog * hWnd, int a2)
+int Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
+int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
 {
   HWND DlgItem; // eax
   HWND v4; // esi
@@ -735,7 +735,7 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
   ObjectClass *First; // [esp+1Ch] [ebp-4h]
 
   Network::processGameEvent(&HouseClass_Player.__pad_5568[8092]); /*0x6ae6ed*/
-  DlgItem = GetDlgItem((HWND)hWnd, 1696); /*0x6ae6f8*/
+  DlgItem = GetDlgItem((HWND)this, 1696); /*0x6ae6f8*/
   v4 = DlgItem; /*0x6ae704*/
   if ( DlgItem ) /*0x6ae708*/
   {
@@ -774,7 +774,7 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
     {
       v7 = 1291; /*0x6ae73e*/
     }
-    v8 = GetDlgItem((HWND)hWnd, v7); /*0x6ae79c*/
+    v8 = GetDlgItem((HWND)this, v7); /*0x6ae79c*/
     SendMessageA(v8, 0x14Bu, 0, 0); /*0x6ae7a8*/
     StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40652], 0, &stru_830620.__pad_579C[40592], 158); /*0x6ae7bb*/
     v10 = SendMessageA(v8, 0x4C2u, 0, (LPARAM)StringCSF); /*0x6ae7c9*/
@@ -790,17 +790,17 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
     SendMessageA(v8, 0x151u, v16, 0); /*0x6ae858*/
     SendMessageA(v8, 0x14Eu, 0, 0); /*0x6ae864*/
   }
-  SkirmishDialog::FillComboBoxes(hWnd); /*0x6ae872*/
+  SkirmishDialog::FillComboBoxes(this); /*0x6ae872*/
   InitGameDropdownColors(); /*0x6ae877*/
-  Lobby::FillPlayerFactions((HWND)hWnd); /*0x6ae87e*/
+  Lobby::FillPlayerFactions((HWND)this); /*0x6ae87e*/
   _cfltcvt_init(); /*0x6ae883*/
-  Lobby::InvalidateFactionCombos((HWND)hWnd); /*0x6ae88a*/
+  Lobby::InvalidateFactionCombos((HWND)this); /*0x6ae88a*/
   GDlg::LoadLetterStrings(); /*0x6ae88f*/
-  Lobby::InvalidatePlayerSlots((HWND)hWnd); /*0x6ae896*/
-  SetupSkirmishDialogPlayerSlot((HWND)hWnd, 0); /*0x6ae89f*/
-  MapSkirmishDialogPlayerToControl((HWND)hWnd, 0); /*0x6ae8a8*/
-  FillLobbyFactionComboBox((HWND)hWnd, 0); /*0x6ae8b1*/
-  SetupLobbyPlayerSlotDialog((HWND)hWnd, 0); /*0x6ae8ba*/
+  Lobby::InvalidatePlayerSlots((HWND)this); /*0x6ae896*/
+  SetupSkirmishDialogPlayerSlot((HWND)this, 0); /*0x6ae89f*/
+  MapSkirmishDialogPlayerToControl((HWND)this, 0); /*0x6ae8a8*/
+  FillLobbyFactionComboBox((HWND)this, 0); /*0x6ae8b1*/
+  SetupLobbyPlayerSlotDialog((HWND)this, 0); /*0x6ae8ba*/
   v53 = 0; /*0x6ae8bf*/
   v52 = (int *)&HouseClass_Player.__pad_5568[8508]; /*0x6ae8c7*/
   v17 = 0; /*0x6ae8cf*/
@@ -856,15 +856,15 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
         break;
     }
     v21 = 0; /*0x6ae982*/
-    v57 = (HWND)SendDlgItemMessageA((HWND)hWnd, v18, 0x146u, 0, 0); /*0x6ae986*/
+    v57 = (HWND)SendDlgItemMessageA((HWND)this, v18, 0x146u, 0, 0); /*0x6ae986*/
     if ( (int)v57 > 0 ) /*0x6ae98a*/
     {
-      while ( SendDlgItemMessageA((HWND)hWnd, v18, 0x150u, v21, 0) != hWnda ) /*0x6ae9a0*/
+      while ( SendDlgItemMessageA((HWND)this, v18, 0x150u, v21, 0) != hWnda ) /*0x6ae9a0*/
       {
         if ( (int)++v21 >= (int)v57 ) /*0x6ae9a9*/
           goto LABEL_44; /*0x6ae9a9*/
       }
-      SendDlgItemMessageA((HWND)hWnd, v18, 0x14Eu, v21, 0); /*0x6ae9b7*/
+      SendDlgItemMessageA((HWND)this, v18, 0x14Eu, v21, 0); /*0x6ae9b7*/
     }
 LABEL_44:
     v53 = (SkirmishDialog *)((char *)v53 + 1); /*0x6ae9bd*/
@@ -874,14 +874,14 @@ LABEL_44:
     ResourceID4CSF = (HWND)GetResourceID4CSF(v53); /*0x6ae9f0*/
     if ( hWnda == -1 ) /*0x6ae9fb*/
     {
-      SetupLobbyCountryCombo(hWnd, (int)ResourceID2CSF, -2); /*0x6aea07*/
-      SetupSkirmishSpawnLocations((HWND)hWnd, (int)ResourceIDCSF, -2); /*0x6aea12*/
-      SetupLobbyFactionSlots((SessionClass *)hWnd, nIDDlgItem, -2); /*0x6aea1f*/
-      SetupLobbyPlayerSlots((SessionClass *)hWnd, (int)ResourceID4CSF, -2); /*0x6aea2c*/
-      hWndb = GetDlgItem((HWND)hWnd, (int)ResourceID2CSF); /*0x6aea3d*/
-      v24 = GetDlgItem((HWND)hWnd, (int)ResourceIDCSF); /*0x6aea43*/
-      nIDDlgItemb = GetDlgItem((HWND)hWnd, nIDDlgItem); /*0x6aea4d*/
-      v59 = GetDlgItem((HWND)hWnd, (int)ResourceID4CSF); /*0x6aea66*/
+      SetupLobbyCountryCombo(this, (int)ResourceID2CSF, -2); /*0x6aea07*/
+      SetupSkirmishSpawnLocations((HWND)this, (int)ResourceIDCSF, -2); /*0x6aea12*/
+      SetupLobbyFactionSlots((SessionClass *)this, nIDDlgItem, -2); /*0x6aea1f*/
+      SetupLobbyPlayerSlots((SessionClass *)this, (int)ResourceID4CSF, -2); /*0x6aea2c*/
+      hWndb = GetDlgItem((HWND)this, (int)ResourceID2CSF); /*0x6aea3d*/
+      v24 = GetDlgItem((HWND)this, (int)ResourceIDCSF); /*0x6aea43*/
+      nIDDlgItemb = GetDlgItem((HWND)this, nIDDlgItem); /*0x6aea4d*/
+      v59 = GetDlgItem((HWND)this, (int)ResourceID4CSF); /*0x6aea66*/
       EnableWindow(hWndb, 0); /*0x6aea6a*/
       EnableWindow(v24, 0); /*0x6aea6f*/
       EnableWindow(nIDDlgItemb, 0); /*0x6aea78*/
@@ -889,8 +889,8 @@ LABEL_44:
     }
     else
     {
-      SetupLobbyCountryCombo(hWnd, (int)ResourceID2CSF, *v52); /*0x6aea90*/
-      SetupSkirmishSpawnLocations((HWND)hWnd, (int)ResourceIDCSF, v52[1]); /*0x6aeaa1*/
+      SetupLobbyCountryCombo(this, (int)ResourceID2CSF, *v52); /*0x6aea90*/
+      SetupSkirmishSpawnLocations((HWND)this, (int)ResourceIDCSF, v52[1]); /*0x6aeaa1*/
     }
     v17 = v53; /*0x6aeaa6*/
     v52 += 3; /*0x6aeab8*/
@@ -910,8 +910,8 @@ LABEL_44:
   *(_DWORD *)&HouseClass_Player.__pad_5568[8464] = v27->owningHouseIndex; /*0x6aeaff*/
   *(_DWORD *)&HouseClass_Player.__pad_5568[8092] = v27->owningHouseIndex; /*0x6aeb07*/
   GDlg::LoadLetterStrings(); /*0x6aeb0d*/
-  Lobby::InvalidatePlayerSlots((HWND)hWnd); /*0x6aeb14*/
-  SetupLobbyPlayerSlotDialog((HWND)hWnd, 0); /*0x6aeb1d*/
+  Lobby::InvalidatePlayerSlots((HWND)this); /*0x6aeb14*/
+  SetupLobbyPlayerSlotDialog((HWND)this, 0); /*0x6aeb1d*/
   v28 = *(CCINIClass **)&HouseClass_Player.__pad_5568[8468]; /*0x6aeb22*/
   if ( *(int *)&HouseClass_Player.__pad_5568[8468] < 0 /*0x6aeb32*/
     || *(int *)&HouseClass_Player.__pad_5568[8468] >= *(int *)&HouseClass_Player.__pad_5568[9764] )
@@ -949,9 +949,9 @@ LABEL_44:
     v32 = PlayerCountMap; /*0x6aec09*/
   }
   ResetLobbyFactionTable(v32); /*0x6aec0b*/
-  Lobby::InvalidateFactionCombos((HWND)hWnd); /*0x6aec12*/
-  Lobby::InvalidatePlayerSlots((HWND)hWnd); /*0x6aec19*/
-  if ( hWnd && *(_DWORD *)&HouseClass_Player.__pad_5568[8072] ) /*0x6aec29*/
+  Lobby::InvalidateFactionCombos((HWND)this); /*0x6aec12*/
+  Lobby::InvalidatePlayerSlots((HWND)this); /*0x6aec19*/
+  if ( this && *(_DWORD *)&HouseClass_Player.__pad_5568[8072] ) /*0x6aec29*/
   {
     for ( j = 1; j < 8; ++j ) /*0x6aec2b*/
     {
@@ -959,26 +959,26 @@ LABEL_44:
       if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8072] /*0x6aec41*/
         && *(_BYTE *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8072] + 60) )
       {
-        SetupLobbyPlayerSlots((SessionClass *)hWnd, v34, 3); /*0x6aec4a*/
+        SetupLobbyPlayerSlots((SessionClass *)this, v34, 3); /*0x6aec4a*/
       }
       else
       {
-        SetupLobbyPlayerSlots((SessionClass *)hWnd, v34, -2); /*0x6aec52*/
+        SetupLobbyPlayerSlots((SessionClass *)this, v34, -2); /*0x6aec52*/
       }
     }
   }
-  Skirmish_Setup_6ADDF0((HWND)hWnd, -1, *(int *)&HouseClass_Player.__pad_5568[8096]); /*0x6aec69*/
+  Skirmish_Setup_6ADDF0((HWND)this, -1, *(int *)&HouseClass_Player.__pad_5568[8096]); /*0x6aec69*/
   *(_DWORD *)&HouseClass_Player.__pad_5568[8072] = v27; /*0x6aec6e*/
   (*(void (__thiscall **)(ObjectClass *))(*(_DWORD *)v27->__pad_0 + 32))(v27); /*0x6aec78*/
-  Skirmish::EnableSpawnButtons((HWND)hWnd); /*0x6aec7d*/
-  SetDialogPlayerName((HWND)hWnd, (int)v27); /*0x6aec86*/
-  Dialog::ShowPlayerName((HWND)hWnd); /*0x6aec8d*/
+  Skirmish::EnableSpawnButtons((HWND)this); /*0x6aec7d*/
+  SetDialogPlayerName((HWND)this, (int)v27); /*0x6aec86*/
+  Dialog::ShowPlayerName((HWND)this); /*0x6aec8d*/
   PtrVector::Destroy(&HouseClass_Player.__pad_5568[18368]); /*0x6aec97*/
   v35 = GetDlgItem; /*0x6aecad*/
   *(_DWORD *)&HouseClass_Player.__pad_5568[8116] = *(_DWORD *)&HouseClass_Player.__pad_5568[8472]; /*0x6aecb9*/
   *(_DWORD *)&HouseClass_Player.__pad_5568[8104] = *(_DWORD *)&HouseClass_Player.__pad_5568[8476]; /*0x6aecbf*/
   *(_DWORD *)&HouseClass_Player.__pad_5568[8124] = *(_DWORD *)&HouseClass_Player.__pad_5568[8480]; /*0x6aecc5*/
-  v36 = GetDlgItem((HWND)hWnd, 1321); /*0x6aecca*/
+  v36 = GetDlgItem((HWND)this, 1321); /*0x6aecca*/
   v38 = (ObjectClass *)v36; /*0x6aeccc*/
   if ( v36 ) /*0x6aecd0*/
   {
@@ -987,7 +987,7 @@ LABEL_44:
     SendMessageA((HWND)v38, 0x405u, 1u, edi70); /*0x6aecf7*/
     v35 = GetDlgItem; /*0x6aecf9*/
   }
-  v40 = (ObjectClass *)v35((HWND)hWnd, 1297); /*0x6aed07*/
+  v40 = (ObjectClass *)v35((HWND)this, 1297); /*0x6aed07*/
   if ( v40 ) /*0x6aed0b*/
   {
     SendMessageA( /*0x6aed32*/
@@ -999,7 +999,7 @@ LABEL_44:
     SendMessageA((HWND)v40, 0x405u, 1u, *(LPARAM *)&HouseClass_Player.__pad_5568[8104]); /*0x6aed42*/
     SendMessageA((HWND)v40, 0x4ABu, 0, *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5260)); /*0x6aed59*/
   }
-  v41 = (ObjectClass *)v35((HWND)hWnd, 1292); /*0x6aed63*/
+  v41 = (ObjectClass *)v35((HWND)this, 1292); /*0x6aed63*/
   if ( v41 ) /*0x6aed67*/
   {
     SendMessageA( /*0x6aed8e*/
@@ -1015,19 +1015,19 @@ LABEL_44:
   HouseClass_Player.__pad_5568[8112] = HouseClass_Player.__pad_5568[8486]; /*0x6aedcf*/
   HouseClass_Player.__pad_5568[8300] = HouseClass_Player.__pad_5568[8487]; /*0x6aedd4*/
   HouseClass_Player.__pad_5568[8109] = HouseClass_Player.__pad_5568[8488]; /*0x6aedda*/
-  eax75 = v35((HWND)hWnd, 1358); /*0x6aede0*/
+  eax75 = v35((HWND)this, 1358); /*0x6aede0*/
   if ( eax75 ) /*0x6aede4*/
     SendMessageA(eax75, 0xF1u, HouseClass_Player.__pad_5568[8110] != 0, 0); /*0x6aedfc*/
-  v42 = v35((HWND)hWnd, 1690); /*0x6aee04*/
+  v42 = v35((HWND)this, 1690); /*0x6aee04*/
   if ( v42 ) /*0x6aee08*/
     SendMessageA(v42, 0xF1u, HouseClass_Player.__pad_5568[8111] != 0, 0); /*0x6aee20*/
-  v43 = v35((HWND)hWnd, 1693); /*0x6aee28*/
+  v43 = v35((HWND)this, 1693); /*0x6aee28*/
   if ( v43 ) /*0x6aee2c*/
     SendMessageA(v43, 0xF1u, HouseClass_Player.__pad_5568[8112] != 0, 0); /*0x6aee44*/
-  v44 = v35((HWND)hWnd, 1683); /*0x6aee4c*/
+  v44 = v35((HWND)this, 1683); /*0x6aee4c*/
   if ( v44 ) /*0x6aee50*/
     SendMessageA(v44, 0xF1u, HouseClass_Player.__pad_5568[8300] != 0, 0); /*0x6aee68*/
-  v45 = v35((HWND)hWnd, 1686); /*0x6aee70*/
+  v45 = v35((HWND)this, 1686); /*0x6aee70*/
   if ( v45 ) /*0x6aee75*/
     SendMessageA(v45, 0xF1u, HouseClass_Player.__pad_5568[8109] != 0, 0); /*0x6aee8d*/
   if ( !IsRandMap::Sed(nIDDlgItema) ) /*0x6aee93*/
@@ -1045,7 +1045,7 @@ LABEL_44:
   Surface::LoadToSurfaceSHP((char **)v49, stru_829ABC.__pad_0); /*0x6aeee0*/
   if ( !(*(&g_MatrixTransformState + 2257))->X ) /*0x6aeeeb*/
 LABEL_92:
-    Session::PrepareGame((HWND)hWnd); /*0x6aeef2*/
+    Session::PrepareGame((HWND)this); /*0x6aeef2*/
   return 0; /*0x6aeef7*/
 }
 }

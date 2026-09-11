@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x53FFA0
-namespace gamemd {
-int TerrainTypeClass_GetTileData()
+int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TerrainTypeClass::GetTileData(
@@ -43,11 +42,9 @@ int __thiscall TerrainTypeClass::GetTileData(
   return 1; /*0x540021*/
 }
 }
-} // namespace gamemd
 
 // 0x5447C0
-namespace gamemd {
-int TerrainTypeClass_Construct()
+unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TerrainTypeClass::Construct(
@@ -147,7 +144,6 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   return this; /*0x5449c4*/
 }
 }
-} // namespace gamemd
 
 // 0x71DA80
 unsigned int * TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
@@ -255,7 +251,7 @@ TerrainClass *__thiscall TerrainTypeClass::GetTileIndex(TerrainTypeClass *this, 
 }
 
 // 0x71DEA0
-char TerrainTypeClass::LoadFromINI(unsigned signed char *** aP1)
+char TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
@@ -476,15 +472,15 @@ int __stdcall TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTy
 }
 
 // 0x71E2A0
-TerrainTypeClass * TerrainTypeClass::FindOrCreate(ObjectClass * Source)
+TerrainTypeClass * TerrainTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *Source)
+TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *this)
 {
   int v2; // esi
   _DWORD *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x71e2bc*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/
     return 0; /*0x71e31f*/
   v2 = 0; /*0x71e2cd*/
   if ( *(int *)&HouseClass_Player.__pad_5568[20596] <= 0 ) /*0x71e2d1*/
@@ -492,10 +488,10 @@ TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *Source)
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x71e2f6*/
     if ( v3 ) /*0x71e305*/
-      return (TerrainTypeClass *)TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
+      return (TerrainTypeClass *)TerrainTypeClass::TerrainTypeClass(v3, this); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36), Source) ) /*0x71e2ea*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36), this) ) /*0x71e2ea*/
   {
     if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20596] ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/
@@ -515,7 +511,7 @@ int __thiscall TerrainTypeClass::_vt16(_DWORD *this)
 }
 
 // 0x71E360
-TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass * a2, char a3)
+TerrainTypeClass * TerrainTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass *a2, char a3)

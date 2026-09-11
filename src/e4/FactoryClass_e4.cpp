@@ -606,22 +606,22 @@ char __thiscall FactoryClass::IsQueued(int *this, int a2)
 
 // 0x4CA770
 namespace gamemd {
-FactoryClass * FactoryClass::CopyTo(void ** Block, char a2)
+FactoryClass * FactoryClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FactoryClass *__thiscall FactoryClass::CopyTo(void **Block, char a2)
+FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
 {
   int v3; // eax
   int v4; // eax
   void *v5; // eax
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &FactoryClass::`vftable'; /*0x4ca776*/
-  *(Block + 1) = &FactoryClass::`vftable'; /*0x4ca77c*/
-  *(Block + 2) = &FactoryClass::`vftable'; /*0x4ca783*/
-  *(Block + 3) = &FactoryClass::`vftable'; /*0x4ca78a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x4ca791*/
-  v7 = Block; /*0x4ca7a6*/
+  *this = &FactoryClass::`vftable'; /*0x4ca776*/
+  *(this + 1) = &FactoryClass::`vftable'; /*0x4ca77c*/
+  *(this + 2) = &FactoryClass::`vftable'; /*0x4ca783*/
+  *(this + 3) = &FactoryClass::`vftable'; /*0x4ca78a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
+  v7 = this; /*0x4ca7a6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83E30] + 16))(&MEMORY[0xA83E30], &v7); /*0x4ca7aa*/
   if ( v3 != -1 && v3 < MEMORY[0xA83E40] && v3 < --MEMORY[0xA83E40] ) /*0x4ca7c5*/
   {
@@ -633,8 +633,8 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **Block, char a2)
     while ( v3 < MEMORY[0xA83E40] ); /*0x4ca7dd*/
   }
   if ( MEMORY[0xA8E9A0] ) /*0x4ca7e6*/
-    BuildingClass::AbandonProduction((int)Block); /*0x4ca7ea*/
-  v7 = Block; /*0x4ca7ff*/
+    BuildingClass::AbandonProduction((int)this); /*0x4ca7ea*/
+  v7 = this; /*0x4ca7ff*/
   v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v7); /*0x4ca803*/
   if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4ca81e*/
   {
@@ -645,19 +645,19 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **Block, char a2)
     }
     while ( v4 < MEMORY[0xB0F730] ); /*0x4ca836*/
   }
-  v5 = *(Block + 17); /*0x4ca838*/
-  *(Block + 16) = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca83b*/
-  if ( v5 && *((_BYTE *)Block + 77) ) /*0x4ca846*/
+  v5 = *(this + 17); /*0x4ca838*/
+  *(this + 16) = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca83b*/
+  if ( v5 && *((_BYTE *)this + 77) ) /*0x4ca846*/
   {
     __3_YAXPAX_Z(v5); /*0x4ca84e*/
-    *(Block + 17) = 0; /*0x4ca856*/
+    *(this + 17) = 0; /*0x4ca856*/
   }
-  *((_BYTE *)Block + 77) = 0; /*0x4ca85f*/
-  *(Block + 18) = 0; /*0x4ca863*/
-  AbstractClass::DTOR(Block); /*0x4ca86a*/
+  *((_BYTE *)this + 77) = 0; /*0x4ca85f*/
+  *(this + 18) = 0; /*0x4ca863*/
+  AbstractClass::DTOR(this); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
-    __3_YAXPAX_Z(Block); /*0x4ca877*/
-  return (FactoryClass *)Block; /*0x4ca881*/
+    __3_YAXPAX_Z(this); /*0x4ca877*/
+  return (FactoryClass *)this; /*0x4ca881*/
 }
 }
 } // namespace gamemd
@@ -904,25 +904,25 @@ unsigned int __thiscall FactoryClass_33_::_vt05(int this, int a2)
 
 // 0x4CAB50
 namespace gamemd {
-VectorClass * FactoryClass_33::QueryInterface(unsigned int * Block, char a2)
+VectorClass * FactoryClass_33::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall FactoryClass_33_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall FactoryClass_33_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4cab53*/
-  *Block = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4cab56*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4cab60*/
+  v3 = (void *)*(this + 1); /*0x4cab53*/
+  *this = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4cab56*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4cab60*/
   {
     __3_YAXPAX_Z(v3); /*0x4cab68*/
-    *(Block + 1) = 0; /*0x4cab70*/
+    *(this + 1) = 0; /*0x4cab70*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4cab7b*/
-  *(Block + 2) = 0; /*0x4cab81*/
+  *((_BYTE *)this + 13) = 0; /*0x4cab7b*/
+  *(this + 2) = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
-    __3_YAXPAX_Z(Block); /*0x4cab8b*/
-  return (VectorClass *)Block; /*0x4cab95*/
+    __3_YAXPAX_Z(this); /*0x4cab8b*/
+  return (VectorClass *)this; /*0x4cab95*/
 }
 }
 } // namespace gamemd

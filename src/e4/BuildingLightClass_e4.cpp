@@ -126,21 +126,21 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
 
 // 0x4370C0
 namespace gamemd {
-BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
+BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingLightClass *__thiscall BuildingLightClass::SDDTOR(#374 *Block, char a2)
+BuildingLightClass *__thiscall BuildingLightClass::SDDTOR(#374 *this, char a2)
 {
   int v3; // eax
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)Block = &BuildingLightClass::`vftable'; /*0x4370c4*/
-  *((_DWORD *)Block + 1) = &BuildingLightClass::`vftable'; /*0x4370ca*/
-  *((_DWORD *)Block + 2) = &BuildingLightClass::`vftable'; /*0x4370d1*/
-  *((_DWORD *)Block + 3) = &BuildingLightClass::`vftable'; /*0x4370d8*/
-  if ( (unsigned __int8)ObjectClass::Undeploy(Block) ) /*0x4370df*/
-    VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)Block); /*0x4370ee*/
-  v5 = Block; /*0x437103*/
+  *(_DWORD *)this = &BuildingLightClass::`vftable'; /*0x4370c4*/
+  this->vtable1 = &BuildingLightClass::`vftable'; /*0x4370ca*/
+  this->vtable2 = &BuildingLightClass::`vftable'; /*0x4370d1*/
+  this->vtable3 = &BuildingLightClass::`vftable'; /*0x4370d8*/
+  if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
+    VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)this); /*0x4370ee*/
+  v5 = this; /*0x437103*/
   v3 = (*(int (__thiscall **)(char *, #374 **))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62308] + 16))( /*0x437107*/
          &MEMORY[0x89F690].__pad_579C[62308],
          &v5);
@@ -155,10 +155,10 @@ BuildingLightClass *__thiscall BuildingLightClass::SDDTOR(#374 *Block, char a2)
       ++v3; /*0x43712a*/
     }
   }
-  ObjectClass::Dtor(Block); /*0x43713e*/
+  ObjectClass::Dtor(this); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
-    __3_YAXPAX_Z(Block); /*0x43714b*/
-  return (BuildingLightClass *)Block; /*0x437155*/
+    __3_YAXPAX_Z(this); /*0x43714b*/
+  return (BuildingLightClass *)this; /*0x437155*/
 }
 }
 } // namespace gamemd

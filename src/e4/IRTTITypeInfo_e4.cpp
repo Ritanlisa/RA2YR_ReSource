@@ -33,25 +33,25 @@ unsigned int __thiscall IRTTITypeInfo::GetOffset(Concurrency::details::Scheduler
 // 0x74F6A0
 namespace ra2 {
 namespace game {
-unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int * Block, char a2)
+unsigned int * IRTTITypeInfo::loc_74F6A0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *Block, char a2)
+_DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x74f6a3*/
-  *Block = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f6a6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x74f6b0*/
+  v3 = (void *)*(this + 1); /*0x74f6a3*/
+  *this = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f6a6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x74f6b0*/
   {
     __3_YAXPAX_Z(v3); /*0x74f6b8*/
-    *(Block + 1) = 0; /*0x74f6c0*/
+    *(this + 1) = 0; /*0x74f6c0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x74f6cb*/
-  *(Block + 2) = 0; /*0x74f6d1*/
+  *((_BYTE *)this + 13) = 0; /*0x74f6cb*/
+  *(this + 2) = 0; /*0x74f6d1*/
   if ( (a2 & 1) != 0 ) /*0x74f6d8*/
-    __3_YAXPAX_Z(Block); /*0x74f6db*/
-  return Block; /*0x74f6e5*/
+    __3_YAXPAX_Z(this); /*0x74f6db*/
+  return this; /*0x74f6e5*/
 }
 }
 } // namespace game

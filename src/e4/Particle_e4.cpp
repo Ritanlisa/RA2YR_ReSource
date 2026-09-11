@@ -1,10 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Particle_e4.hpp"
 
 // 0x4664C0
 namespace gamemd {
-int Particle_Init()
+int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Particle::Init(

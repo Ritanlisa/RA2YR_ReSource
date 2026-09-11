@@ -5,10 +5,14 @@ namespace gamemd {
 struct Tactical {
     void* vfptr;  // minimal E2 declaration
     char * ConstructTacticalSurface();  // 0x42A6D0
+    int * CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5);  // 0x484050
+    int CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8);  // 0x484180
+    char * SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7);  // 0x4A35F0
     unsigned int * MouseMove(MouseClass * aP1, MouseClass * aP2);  // 0x4A91B0
     char SelectObject(int a2);  // 0x4F4450
     bool IsCellVisible(IUnknown * aP1);  // 0x568350
     char * GetCellData();  // 0x58C2A0
+    char MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5);  // 0x692300
     char HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4);  // 0x6930A0
     int UpdateUIVisibility();  // 0x6A6610
     void DisplayTacticalOverlayText(wchar_t * String);  // 0x6D4E20
@@ -20,7 +24,7 @@ struct Tactical {
     char DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5);  // 0x6DBB60
     int InitMap(int a1, int a2);  // 0x6DBD20
     int UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6DBE00
-    Tactical * UpdateView(unsigned int * Block, char a2);  // 0x6DC470
+    Tactical * UpdateView(char a2);  // 0x6DC470
     int Init(unsigned int * a2);  // 0x6E4970
     int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450

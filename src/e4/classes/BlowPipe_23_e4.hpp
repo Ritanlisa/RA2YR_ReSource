@@ -22,9 +22,9 @@ struct BlowPipe_23 {
     int FindItemIndex_0(unsigned int * a2);  // 0x63E8D0
     char SetCapacity_1(int a2, unsigned int * a3);  // 0x63EAD0
     int FindItemIndex_1(unsigned int * a2);  // 0x63EC20
-    VectorClass * Destructor(unsigned int * Block, char a2);  // 0x63ED90
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x63EE30
-    DynamicVector * Destructor_0(unsigned int * Block, char a2);  // 0x63EE80
-    DynamicVector * Destructor_1(unsigned int * Block, char a2);  // 0x63EF20
+    VectorClass * Destructor(char a2);  // 0x63ED90
+    VectorClass * QueryInterface(char a2);  // 0x63EE30
+    DynamicVector * Destructor_0(char a2);  // 0x63EE80
+    DynamicVector * Destructor_1(char a2);  // 0x63EF20
 };
 } // namespace gamemd

@@ -10,6 +10,6 @@ struct CStreamClass_16 {
     void ddtor();  // 0x4A4C20
     int Read(unsigned int * a2);  // 0x4A4C50
     unsigned int Write(int a2);  // 0x4A4C90
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x4A4D90
+    VectorClass * QueryInterface(char a2);  // 0x4A4D90
 };
 } // namespace gamemd

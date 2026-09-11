@@ -73,10 +73,10 @@ LABEL_18:
 
 // 0x5DAC00
 namespace gamemd {
-int WideString::Hash(wchar_t * Source)
+int WideString::Hash()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WideString::Hash(wchar_t *Source)
+int __thiscall WideString::Hash(wchar_t *this)
 {
   size_t v1; // esi
   wchar_t *v2; // edi
@@ -85,7 +85,7 @@ int __thiscall WideString::Hash(wchar_t *Source)
 
   v1 = 0; /*0x5dac0b*/
   v4 = 0; /*0x5dac0f*/
-  wcscpy(String, Source); /*0x5dac13*/
+  wcscpy(String, this); /*0x5dac13*/
   _wcsupr(String); /*0x5dac1d*/
   if ( !wcslen(String) ) /*0x5dac27*/
     return v4; /*0x5dac68*/
@@ -104,21 +104,21 @@ int __thiscall WideString::Hash(wchar_t *Source)
 
 // 0x727D60
 namespace gamemd {
-wchar_t * WideString::Trim(wchar_t * Source)
+wchar_t * WideString::Trim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall WideString::Trim(wchar_t *Source)
+wchar_t *__thiscall WideString::Trim(wchar_t *this)
 {
   wchar_t v2; // ax
   wchar_t *v3; // esi
   signed int v4; // eax
   wchar_t *v5; // ecx
 
-  if ( Source ) /*0x727d66*/
+  if ( this ) /*0x727d66*/
   {
-    v2 = *Source; /*0x727d68*/
-    v3 = Source; /*0x727d6b*/
-    if ( *Source ) /*0x727d68*/
+    v2 = *this; /*0x727d68*/
+    v3 = this; /*0x727d6b*/
+    if ( *this ) /*0x727d68*/
     {
       do /*0x727d82*/
       {
@@ -128,13 +128,13 @@ wchar_t *__thiscall WideString::Trim(wchar_t *Source)
         ++v3; /*0x727d7c*/
       }
       while ( v2 ); /*0x727d82*/
-      if ( v3 != Source ) /*0x727d86*/
-        wcscpy(Source, v3); /*0x727d8a*/
+      if ( v3 != this ) /*0x727d86*/
+        wcscpy(this, v3); /*0x727d8a*/
     }
-    v4 = wcslen(Source) - 1; /*0x727d9b*/
+    v4 = wcslen(this) - 1; /*0x727d9b*/
     if ( v4 >= 0 ) /*0x727d9c*/
     {
-      v5 = Source + v4; /*0x727d9e*/
+      v5 = this + v4; /*0x727d9e*/
       do /*0x727db8*/
       {
         if ( !*v3 ) /*0x727da1*/
@@ -148,7 +148,7 @@ wchar_t *__thiscall WideString::Trim(wchar_t *Source)
       while ( v4 >= 0 ); /*0x727db8*/
     }
   }
-  return Source; /*0x727dbc*/
+  return this; /*0x727dbc*/
 }
 }
 } // namespace gamemd

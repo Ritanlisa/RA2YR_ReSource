@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_717A40_e4.hpp"
+#include "e4/classes/E4Recv_7187A0_e4.hpp"
+#include "e4/classes/E4Recv_71C8E0_e4.hpp"
+#include "e4/classes/E4Recv_71FA40_e4.hpp"
 
 // 0x710860
 namespace gamemd {
@@ -212,7 +216,7 @@ int sub_710AD0()
 
 // 0x717A40
 namespace gamemd {
-int ReadPointerFromECX4()
+int E4Recv_717A40::ReadPointerFromECX4()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ReadPointerFromECX4(void *this)
@@ -416,7 +420,7 @@ int sub_717FE0()
 
 // 0x7187A0
 namespace gamemd {
-char ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
+char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
@@ -983,7 +987,7 @@ int sub_71B790()
 
 // 0x71C8E0
 namespace gamemd {
-char sub_71C8E0()
+char E4Recv_71C8E0::sub_71C8E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_71C8E0(int this)
@@ -991,7 +995,7 @@ char __thiscall sub_71C8E0(int this)
   char result; // al
   int v2; // [esp+4h] [ebp-8h]
 
-  result = *(_BYTE *)(this + 205); /*0x71c8e0*/
+  result = (unsigned char)this->M205; /*0x71c8e0*/
   if ( !result ) /*0x71c8eb*/
   {
     *(_BYTE *)(this + 205) = 1; /*0x71c8ee*/
@@ -1566,7 +1570,7 @@ void __cdecl sub_71E660()
 
 // 0x71FA40
 namespace gamemd {
-int sub_71FA40(int a2)
+int E4Recv_71FA40::sub_71FA40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_71FA40(_DWORD *this, int a2)

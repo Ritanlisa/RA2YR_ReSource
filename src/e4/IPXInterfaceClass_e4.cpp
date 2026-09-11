@@ -279,15 +279,15 @@ int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
 }
 
 // 0x7B1790
-IPXInterfaceClass * IPXInterfaceClass::QueryInterface(void * Block, char a2)
+IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IPXInterfaceClass *__thiscall IPXInterfaceClass::QueryInterface(void *Block, char a2)
+IPXInterfaceClass *__thiscall IPXInterfaceClass::QueryInterface(void *this, char a2)
 {
-  WinsockInterfaceClass::WinsockInterfaceClass((int)Block); /*0x7b1793*/
+  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
-    __3_YAXPAX_Z(Block); /*0x7b17a0*/
-  return (IPXInterfaceClass *)Block; /*0x7b17aa*/
+    __3_YAXPAX_Z(this); /*0x7b17a0*/
+  return (IPXInterfaceClass *)this; /*0x7b17aa*/
 }
 }
 
@@ -728,25 +728,25 @@ int __thiscall IPXInterfaceClass::sub_7B2AD0(int *this, _DWORD *a2)
 }
 
 // 0x7B2B50
-DynamicVector * IPXInterfaceClass::closeSession(unsigned int * Block, char a2)
+DynamicVector * IPXInterfaceClass::closeSession(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *Block, char a2)
+DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7b2b53*/
-  *Block = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x7b2b60*/
+  v3 = (void *)*(this + 1); /*0x7b2b53*/
+  *this = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
-    *(Block + 1) = 0; /*0x7b2b70*/
+    *(this + 1) = 0; /*0x7b2b70*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x7b2b7b*/
-  *(Block + 2) = 0; /*0x7b2b81*/
+  *((_BYTE *)this + 13) = 0; /*0x7b2b7b*/
+  *(this + 2) = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
-    __3_YAXPAX_Z(Block); /*0x7b2b8b*/
-  return (DynamicVector *)Block; /*0x7b2b95*/
+    __3_YAXPAX_Z(this); /*0x7b2b8b*/
+  return (DynamicVector *)this; /*0x7b2b95*/
 }
 }
 

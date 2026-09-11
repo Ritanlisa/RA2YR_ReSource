@@ -3,8 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x494890
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_2()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_2(
@@ -30,7 +29,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_2(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x4948C0
 namespace gamemd {
@@ -144,8 +142,7 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
 } // namespace gamemd
 
 // 0x4949B0
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_5()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_5(
@@ -171,7 +168,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_5(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x4949E0
 namespace gamemd {
@@ -285,8 +281,7 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
 } // namespace gamemd
 
 // 0x494AD0
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_CallBlit0_8()
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_8(
@@ -312,7 +307,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_8(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494B00
 namespace gamemd {
@@ -489,8 +483,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
 } // namespace gamemd
 
 // 0x494D20
-namespace gamemd {
-int BlitTransXlatAlphaZRead_ushort_ddtor()
+int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BlitTransXlatAlphaZRead_ushort::_vt03(
@@ -515,7 +508,6 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt03(
            0);
 }
 }
-} // namespace gamemd
 
 // 0x494D50
 namespace gamemd {
@@ -601,20 +593,20 @@ std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitt
 }
 
 // 0x49A420
-BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned int * Block, char a2)
+BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlatAlphaZRead_ushort *__thiscall BlitTransXlatAlphaZRead_ushort::Blit(_DWORD *Block, char a2)
+BlitTransXlatAlphaZRead_ushort *__thiscall BlitTransXlatAlphaZRead_ushort::Blit(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a428*/
-  *Block = &BlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a42b*/
+  v3 = (void *)*(this + 2); /*0x49a428*/
+  *this = &BlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a42b*/
   FractalNoise::Release(v3); /*0x49a432*/
-  *(Block + 2) = 0; /*0x49a43b*/
-  *Block = &Blitter::`vftable'; /*0x49a444*/
+  *(this + 2) = 0; /*0x49a43b*/
+  *this = &Blitter::`vftable'; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    __3_YAXPAX_Z(Block); /*0x49a44d*/
-  return (BlitTransXlatAlphaZRead_ushort *)Block; /*0x49a457*/
+    __3_YAXPAX_Z(this); /*0x49a44d*/
+  return (BlitTransXlatAlphaZRead_ushort *)this; /*0x49a457*/
 }
 }

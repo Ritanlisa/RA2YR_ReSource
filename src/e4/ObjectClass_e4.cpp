@@ -2227,8 +2227,9 @@ void CleanupSidebarResources()
 } // namespace ra2
 
 // 0x6A7D70
-namespace gamemd {
-int ObjectClass_ToggleSidebarDisplay()
+namespace ra2 {
+namespace game {
+unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned __int8 ObjectClass::ToggleSidebarDisplay(
@@ -2364,7 +2365,8 @@ unsigned __int8 ObjectClass::ToggleSidebarDisplay(
   return (unsigned __int8)aP1; /*0x6a7fbf*/
 }
 }
-} // namespace gamemd
+} // namespace game
+} // namespace ra2
 
 // 0x6ABA40
 namespace ra2 {

@@ -10,6 +10,6 @@ struct TypeList_TechnoType {
     void ddtor();  // 0x4780B0
     int GetSize(unsigned int * a2);  // 0x4780E0
     unsigned int GetIndex(int a2);  // 0x478120
-    VectorClass * Add(unsigned int * Block, char a2);  // 0x478680
+    VectorClass * Add(char a2);  // 0x478680
 };
 } // namespace gamemd

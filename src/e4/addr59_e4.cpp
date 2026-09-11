@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5942F0_e4.hpp"
+#include "e4/classes/E4Recv_5980A0_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {
@@ -174,7 +176,7 @@ LABEL_19:
 
 // 0x5942F0
 namespace gamemd {
-int sub_5942F0(int * a2)
+int E4Recv_5942F0::sub_5942F0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5942F0(_DWORD *this, int *a2)
@@ -920,7 +922,7 @@ double sub_598000()
 
 // 0x5980A0
 namespace gamemd {
-unsigned int * sub_5980A0(int a2)
+unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5980A0(_DWORD *this, int a2)

@@ -367,10 +367,10 @@ _DWORD *__thiscall sub_633F20(_DWORD *this, _DWORD *a2)
 
 // 0x6340B0
 namespace gamemd {
-void TeamClass::DestroyAllMembers(unsigned int * Block, TechnoClass * aP1)
+void TeamClass::DestroyAllMembers(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TeamClass::DestroyAllMembers(_DWORD *Block, TechnoClass *aP1)
+void __thiscall TeamClass::DestroyAllMembers(_DWORD *this, TechnoClass *aP1)
 {
   int v3; // eax
   int v4; // edx
@@ -389,10 +389,10 @@ void __thiscall TeamClass::DestroyAllMembers(_DWORD *Block, TechnoClass *aP1)
   void *Blocka; // [esp+10h] [ebp-4h] BYREF
 
   v3 = 0; /*0x6340b8*/
-  v4 = *(Block + 4); /*0x6340ba*/
+  v4 = *(this + 4); /*0x6340ba*/
   if ( v4 <= 0 ) /*0x6340c0*/
     goto LABEL_7; /*0x6340c0*/
-  v5 = (ObjectClass *)*(Block + 1); /*0x6340c2*/
+  v5 = (ObjectClass *)*(this + 1); /*0x6340c2*/
   v6 = v5; /*0x6340c9*/
   while ( **(TechnoClass ***)v6->__pad_0 != aP1 ) /*0x6340d0*/
   {
@@ -416,27 +416,27 @@ LABEL_9:
     if ( *(_BYTE *)(v7 + 12) ) /*0x6340fc*/
     {
       *(_BYTE *)(v7 + 12) = 0; /*0x634101*/
-      v8 = *(Block + 42) - 1; /*0x63410a*/
-      *(Block + 42) = v8; /*0x63410b*/
+      v8 = *(this + 42) - 1; /*0x63410a*/
+      *(this + 42) = v8; /*0x63410b*/
       if ( !v8 ) /*0x634111*/
-        *(Block + 44) = -1; /*0x634113*/
+        *(this + 44) = -1; /*0x634113*/
     }
     v9 = *(_DWORD *)(v7 + 8); /*0x63411d*/
     if ( v9 != -1 ) /*0x634123*/
     {
-      v10 = *(_DWORD *)(*(Block + 9) + 4 * v9); /*0x634129*/
+      v10 = *(_DWORD *)(*(this + 9) + 4 * v9); /*0x634129*/
       *(_DWORD *)(v10 + 116) = -1; /*0x63412e*/
-      TeamClass::Reset(Block, 0); /*0x634135*/
+      TeamClass::Reset(this, 0); /*0x634135*/
       v11 = *(_DWORD *)(v10 + 112) - 1; /*0x63413d*/
       *(_DWORD *)(v10 + 112) = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
       {
-        aP1 = (TechnoClass *)Block; /*0x634145*/
-        if ( Block ) /*0x634149*/
+        aP1 = (TechnoClass *)this; /*0x634145*/
+        if ( this ) /*0x634149*/
         {
-          if ( !*((_BYTE *)Block + 28) ) /*0x63414b*/
+          if ( !(unsigned char)this->referenceCount ) /*0x63414b*/
           {
-            *((_BYTE *)Block + 28) = 1; /*0x63415a*/
+            *((_BYTE *)this + 28) = 1; /*0x63415a*/
             VectorClass::Append(&g_MatrixTransformState + 6050, (VectorClass *)&aP1); /*0x63415e*/
           }
         }
@@ -444,26 +444,26 @@ LABEL_9:
     }
     *(_DWORD *)(v7 + 8) = -1; /*0x634163*/
     __3_YAXPAX_Z(*((void **)Blocka + 1)); /*0x634172*/
-    v12 = (*(int (__thiscall **)(_DWORD *, void **))(*Block + 16))(Block, &Blocka); /*0x634183*/
+    v12 = (*(int (__thiscall **)(_DWORD *, void **))(*this + 16))(this, &Blocka); /*0x634183*/
     if ( v12 != -1 ) /*0x634189*/
     {
-      v13 = *(Block + 4); /*0x63418b*/
+      v13 = *(this + 4); /*0x63418b*/
       if ( v12 < v13 ) /*0x634190*/
       {
         v14 = v13 - 1; /*0x634192*/
-        for ( *(Block + 4) = v14; /*0x634198*/
-              v12 < *(Block + 4);
-              *(_DWORD *)(*(Block + 1) + 4 * v12 - 4) = *(_DWORD *)(*(Block + 1) + 4 * v12) )
+        for ( *(this + 4) = v14; /*0x634198*/
+              v12 < *(this + 4);
+              *(_DWORD *)(*(this + 1) + 4 * v12 - 4) = *(_DWORD *)(*(this + 1) + 4 * v12) )
         {
           ++v12; /*0x63419d*/
         }
       }
     }
     __3_YAXPAX_Z(Blocka); /*0x6341b1*/
-    if ( !*(Block + 4) && Block ) /*0x6341c6*/
+    if ( !*(this + 4) && this ) /*0x6341c6*/
     {
-      FactoryClass::ClearObjects(Block); /*0x6341ce*/
-      aP1 = (TechnoClass *)Block; /*0x6341e3*/
+      FactoryClass::ClearObjects(this); /*0x6341ce*/
+      aP1 = (TechnoClass *)this; /*0x6341e3*/
       v15 = ((int (__thiscall *)(CoordStruct **, TechnoClass **))(*(&g_MatrixTransformState + 6050))[1].Y)( /*0x6341e7*/
               &(&g_MatrixTransformState)[504] + 2,
               &aP1);
@@ -477,21 +477,21 @@ LABEL_9:
         *(&g_MatrixTransformState + 6026) = 0; /*0x634234*/
       if ( *(&g_MatrixTransformState + 6008) == (CoordStruct *)aP1 ) /*0x634240*/
         *(&g_MatrixTransformState + 6008) = 0; /*0x634242*/
-      *(Block + 8) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63424b*/
-      VectorClass::Cleanup2((int)(Block + 8)); /*0x634251*/
-      v16 = (ObjectClass *)*(Block + 1); /*0x634256*/
-      *Block = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x634259*/
+      *(this + 8) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63424b*/
+      VectorClass::Cleanup2((int)(this + 8)); /*0x634251*/
+      v16 = (ObjectClass *)*(this + 1); /*0x634256*/
+      *this = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
-        if ( *((_BYTE *)Block + 13) ) /*0x634263*/
+        if ( *((_BYTE *)this + 13) ) /*0x634263*/
         {
           __3_YAXPAX_Z(v16); /*0x634269*/
-          *(Block + 1) = 0; /*0x634271*/
+          *(this + 1) = 0; /*0x634271*/
         }
       }
-      *((_BYTE *)Block + 13) = 0; /*0x634275*/
-      *(Block + 2) = 0; /*0x634278*/
-      __3_YAXPAX_Z(Block); /*0x63427b*/
+      *((_BYTE *)this + 13) = 0; /*0x634275*/
+      *(this + 2) = 0; /*0x634278*/
+      __3_YAXPAX_Z(this); /*0x63427b*/
     }
   }
 }
@@ -1260,7 +1260,7 @@ LABEL_5:
 
 // 0x6E53A0
 namespace gamemd {
-int TeamClass_Update_0()
+char TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TeamClass::Update_0(
@@ -1361,7 +1361,7 @@ LABEL_14:
 
 // 0x6E8DE0
 namespace gamemd {
-void TeamClass::Destructor(AbstractClass * a2)
+void TeamClass::Destructor(void ** this, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall TeamClass::Destructor(void **this, AbstractClass *a2)

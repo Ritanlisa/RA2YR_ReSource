@@ -410,50 +410,50 @@ int __thiscall SwizzleManagerClass_19_::sub_6CF820(int *this, _DWORD *a2)
 
 // 0x6CF850
 namespace gamemd {
-VectorClass * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, char a2)
+VectorClass * SwizzleManagerClass_19::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall SwizzleManagerClass_19_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall SwizzleManagerClass_19_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6cf853*/
-  *Block = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf856*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x6cf860*/
+  v3 = (void *)*(this + 1); /*0x6cf853*/
+  *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf856*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x6cf860*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf868*/
-    *(Block + 1) = 0; /*0x6cf870*/
+    *(this + 1) = 0; /*0x6cf870*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x6cf87b*/
-  *(Block + 2) = 0; /*0x6cf881*/
+  *((_BYTE *)this + 13) = 0; /*0x6cf87b*/
+  *(this + 2) = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
-    __3_YAXPAX_Z(Block); /*0x6cf88b*/
-  return (VectorClass *)Block; /*0x6cf895*/
+    __3_YAXPAX_Z(this); /*0x6cf88b*/
+  return (VectorClass *)this; /*0x6cf895*/
 }
 }
 } // namespace gamemd
 
 // 0x6CF8A0
 namespace gamemd {
-DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerClass_(unsigned int * Block, char a2)
+DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerClass_(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall SwizzleManagerClass_19_::Constructor_VectorClass_SwizzlePointerClass_(_DWORD *Block, char a2)
+DynamicVector *__thiscall SwizzleManagerClass_19_::Constructor_VectorClass_SwizzlePointerClass_(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6cf8a3*/
-  *Block = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf8a6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x6cf8b0*/
+  v3 = (void *)*(this + 1); /*0x6cf8a3*/
+  *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf8a6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x6cf8b0*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf8b8*/
-    *(Block + 1) = 0; /*0x6cf8c0*/
+    *(this + 1) = 0; /*0x6cf8c0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x6cf8cb*/
-  *(Block + 2) = 0; /*0x6cf8d1*/
+  *((_BYTE *)this + 13) = 0; /*0x6cf8cb*/
+  *(this + 2) = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
-    __3_YAXPAX_Z(Block); /*0x6cf8db*/
-  return (DynamicVector *)Block; /*0x6cf8e5*/
+    __3_YAXPAX_Z(this); /*0x6cf8db*/
+  return (DynamicVector *)this; /*0x6cf8e5*/
 }
 }
 } // namespace gamemd

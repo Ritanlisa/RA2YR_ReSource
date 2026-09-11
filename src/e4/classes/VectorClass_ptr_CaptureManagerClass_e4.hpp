@@ -4,6 +4,7 @@
 namespace gamemd {
 struct VectorClass_ptr_CaptureManagerClass {
     void* vfptr;  // minimal E2 declaration
+    DynamicVector * Constructor_VectorClass_CaptureManagerClass___(char a2);  // 0x4730F0
     void Destroy();  // 0x472AE0
     unsigned int GetItemIndex(int a2);  // 0x472B10
     int Get(int a2);  // 0x472B30

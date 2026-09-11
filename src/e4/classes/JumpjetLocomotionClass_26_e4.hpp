@@ -14,6 +14,7 @@ struct JumpjetLocomotionClass_26 {
     unsigned int Write(int a2);  // 0x54EA50
     char SetCapacity(int a2, unsigned int * a3);  // 0x54EA70
     int FindItem(unsigned int * a2);  // 0x54EB20
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x54EB50
+    VectorClass * QueryInterface(char a2);  // 0x54EB50
+    DynamicVector * Constructor_VectorClass_KamikazeControl___(char a2);  // 0x54EBA0
 };
 } // namespace gamemd

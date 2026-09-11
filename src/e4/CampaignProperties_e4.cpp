@@ -59,25 +59,25 @@ unsigned int __thiscall CampaignProperties_WorldDominationTour_22_::_vt05(int th
 
 // 0x5D2CA0
 namespace gamemd {
-VectorClass * CampaignProperties_WorldDominationTour_22::QueryInterface(unsigned int * Block, char a2)
+VectorClass * CampaignProperties_WorldDominationTour_22::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CampaignProperties_WorldDominationTour_22_::QueryInterface(_DWORD *Block, char a2)
+VectorClass *__thiscall CampaignProperties_WorldDominationTour_22_::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d2ca3*/
-  *Block = &VectorClass<MSAnim *>::`vftable'; /*0x5d2ca6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d2cb0*/
+  v3 = (void *)*(this + 1); /*0x5d2ca3*/
+  *this = &VectorClass<MSAnim *>::`vftable'; /*0x5d2ca6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d2cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2cb8*/
-    *(Block + 1) = 0; /*0x5d2cc0*/
+    *(this + 1) = 0; /*0x5d2cc0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5d2ccb*/
-  *(Block + 2) = 0; /*0x5d2cd1*/
+  *((_BYTE *)this + 13) = 0; /*0x5d2ccb*/
+  *(this + 2) = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
-    __3_YAXPAX_Z(Block); /*0x5d2cdb*/
-  return (VectorClass *)Block; /*0x5d2ce5*/
+    __3_YAXPAX_Z(this); /*0x5d2cdb*/
+  return (VectorClass *)this; /*0x5d2ce5*/
 }
 }
 } // namespace gamemd
