@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x004E3690 (305 bytes)
 int BuildingType_FindBuilding_4E3690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_4E3690(int a1, int a2)
 {
   int v4; // eax
@@ -266,7 +266,7 @@ jmp     CacheDialogInvalidate
 
 // 0x006435B0 (184 bytes)
 char BuildingType_FindBuilding_6435B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __stdcall sub_6435B0(int a1, int a2, int a3)
 {
   int Default; // eax
@@ -376,7 +376,7 @@ retn    0Ch
 
 // 0x00642FF0 (201 bytes)
 char BuildingType_GetBuilding_642FF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_642FF0(int a1, int a2, char a3)
 {
   int v3; // ebx
@@ -507,7 +507,7 @@ retn    0Ch
 
 // 0x006430C0 (245 bytes)
 char BuildingType_GetBuilding_6430C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_6430C0(char a1)
 {
   int v1; // ebx
@@ -656,7 +656,7 @@ retn    4
 
 // 0x006431C0 (250 bytes)
 char BuildingType_GetBuilding_6431C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_6431C0(char a1)
 {
   int v1; // edi
@@ -821,7 +821,7 @@ retn    4
 
 // 0x006432C0 (266 bytes)
 char BuildingType_GetBuilding_6432C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_6432C0(char a1)
 {
   int v1; // ebx
@@ -993,7 +993,7 @@ retn    4
 
 // 0x0063F8F0 (73 bytes)
 int PowerBar_Calc_63F8F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 __int64 __thiscall sub_63F8F0(_DWORD *this)
 {
   int v2; // eax
@@ -1035,7 +1035,7 @@ retn
 
 // 0x0063FDC0 (106 bytes)
 int PowerBar_SetMember1356_63FDC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_63FDC0(_DWORD *this)
 {
   int v2; // eax
@@ -1122,7 +1122,7 @@ retn
 
 // 0x0063FE30 (106 bytes)
 int PowerBar_SetMember_63FE30() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_63FE30(_DWORD *this)
 {
   int v2; // eax
@@ -1209,7 +1209,7 @@ retn
 
 // 0x004C4FC0 (64 bytes)
 int Power_TimerProcess_4C4FC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4C4FC0(int *this, int a2)
 {
   int result; // eax

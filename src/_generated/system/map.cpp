@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00568140 (446 bytes)
 int CallZCoordToScreenY_568140() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_568140(int *a1, int a2)
 {
   int v2; // esi
@@ -273,7 +273,7 @@ retn    8
 
 // 0x00457A10 (144 bytes)
 char CellClass_ToCellObj_457A10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_457A10(_DWORD **this)
 {
   int v2; // edi
@@ -361,7 +361,7 @@ retn
 
 // 0x00594190 (343 bytes)
 int CellCoordProcess_594190() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_594190(int *a1, int a2)
 {
   int *v2; // ebp
@@ -602,7 +602,7 @@ retn    8
 
 // 0x006D6BB0 (337 bytes)
 int CellCoordProcess_6D6BB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 {
   _WORD *v1; // edi
@@ -818,7 +818,7 @@ retn    4
 
 // 0x005A6BA0 (110 bytes)
 char CellCoord_IsCellLand_5A6BA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5A6BA0(__int16 *this)
 {
   int v1; // eax
@@ -930,7 +930,7 @@ retn
 
 // 0x004D4FC0 (164 bytes)
 void CellCoord_IsCell_4D4FC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_4D4FC0(void *this)
 {
   int v2; // ebx
@@ -1044,7 +1044,7 @@ retn
 
 // 0x0058BEA0 (206 bytes)
 int CellCoord_IsCell_58BEA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_58BEA0(_DWORD *this)
 {
   int v2; // ebx
@@ -1179,7 +1179,7 @@ retn
 
 // 0x0058C3B0 (231 bytes)
 int CellCoord_IsCell_58C3B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_58C3B0(_DWORD *this, _DWORD *a2)
 {
   int v3; // ebx
@@ -1319,7 +1319,7 @@ retn    4
 
 // 0x0058C4A0 (250 bytes)
 int CellCoord_IsCell_58C4A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_58C4A0(_DWORD *this, _DWORD *a2)
 {
   _WORD *v2; // ebp
@@ -1465,7 +1465,7 @@ retn    4
 
 // 0x004DF280 (136 bytes)
 void CellCoord_SetMember370_4DF280() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_4DF280(_DWORD *this)
 {
   int v2; // ecx
@@ -1538,7 +1538,7 @@ retn
 
 // 0x0058D120 (157 bytes)
 int CellCoord_SetMember3_58D120() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_58D120(_DWORD *this, int a2, int a3)
 {
   int result; // eax
@@ -1648,7 +1648,7 @@ retn    8
 
 // 0x00486D90 (158 bytes)
 char CellCoord_ToCellObj_486D90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_486D90(_DWORD *this, char a2)
 {
   int v3; // ebx
@@ -1762,7 +1762,7 @@ retn    4
 
 // 0x005942F0 (232 bytes)
 int CellCoord_ToCellObj_5942F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5942F0(_DWORD *this, int *a2)
 {
   int *v2; // ebp
@@ -1918,7 +1918,7 @@ retn    4
 
 // 0x006C8B10 (304 bytes)
 int CellStruct_SetMember2_6C8B10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_6C8B10(_DWORD *this, int a2, int a3, __int16 a4, __int16 a5)
 {
   int v6; // edi
@@ -2107,7 +2107,7 @@ retn    10h
 
 // 0x006E07F0 (84 bytes)
 char Cell_Creat_6E07F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E07F0(int *this, int a2, int a3, int a4, int a5)
 {
   int v5; // esi
@@ -2153,7 +2153,7 @@ retn    10h
 
 // 0x006E0850 (84 bytes)
 char Cell_Creat_6E0850() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E0850(int *this, int a2, int a3, int a4, int a5)
 {
   int v5; // esi
@@ -2199,7 +2199,7 @@ retn    10h
 
 // 0x006E0790 (84 bytes)
 char Cell_Create_6E0790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E0790(int *this, int a2, int a3, int a4, int a5)
 {
   int v5; // esi
@@ -2245,7 +2245,7 @@ retn    10h
 
 // 0x0062D510 (206 bytes)
 const char* Cell_Get_62D510() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_62D510(float *this)
 {
   double v2; // st7
@@ -2367,7 +2367,7 @@ retn
 
 // 0x006E3F70 (58 bytes)
 int Cell_Get_6E3F70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_6E3F70(int *this, _DWORD *a2)
 {
   _DWORD *WorldCoords; // edx
@@ -2406,7 +2406,7 @@ retn    4
 
 // 0x00633C60 (93 bytes)
 int Coord_Get_633C60() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_633C60(_BYTE *this, _DWORD *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2458,7 +2458,7 @@ retn    4
 
 // 0x00634880 (101 bytes)
 int Coord_Get_634880() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_634880(_DWORD *this, _DWORD *a2, int a3)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2513,7 +2513,7 @@ retn    8
 
 // 0x006348F0 (94 bytes)
 int Coord_Get_6348F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_6348F0(_BYTE *this, _DWORD *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2566,7 +2566,7 @@ retn    4
 
 // 0x00635DF0 (145 bytes)
 int Coord_Get_635DF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_635DF0(_DWORD **this, _DWORD *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2643,7 +2643,7 @@ retn    4
 
 // 0x004C1E70 (171 bytes)
 int Coord_ToScreen_4C1E70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v9; // eax
@@ -2742,7 +2742,7 @@ retn    24h ; '$'
 
 // 0x00659590 (187 bytes)
 char Coord_ToScreen_659590() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 {
   char result; // al
@@ -2844,7 +2844,7 @@ retn    0Ch
 
 // 0x004CC680 (73 bytes)
 bool GetCell_4CC680() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 BOOL __fastcall sub_4CC680(int a1, int a2, int a3)
 {
   int SlopeIndex; // ebx
@@ -2903,7 +2903,7 @@ retn    4
 
 // 0x0057A900 (178 bytes)
 int GetCell_57A900() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_57A900(_DWORD *a1, signed int a2)
 {
   int v3; // ebx
@@ -3028,7 +3028,7 @@ retn
 
 // 0x0058C5A0 (277 bytes)
 int IsMap_58C5A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_58C5A0(_DWORD *a1, int a2, int a3)
 {
   _WORD *v3; // ebx
@@ -3179,7 +3179,7 @@ retn    4
 
 // 0x006E1180 (55 bytes)
 char MapClass_GetMap_6E1180() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E1180(int *this, int a2, int a3, int a4, int a5)
 {
   int v6; // [esp+0h] [ebp-8h] BYREF
@@ -3212,7 +3212,7 @@ retn    10h
 
 // 0x006EDF10 (115 bytes)
 void MapClass_TriggerEVA_6EDF10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_6EDF10(int this, int a2, int a3)
 {
   _DWORD *i; // esi
@@ -3281,7 +3281,7 @@ retn    8
 
 // 0x006D84D0 (89 bytes)
 int MapProcess_6D84D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__stdcall sub_6D84D0(int *a1, int *a2)
 {
   int v2; // edx
@@ -3348,7 +3348,7 @@ retn    8
 
 // 0x004F2280 (115 bytes)
 const char* Map_Can_4F2280() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4F2280(char *this, int a2, int a3)
 {
   int result; // eax
@@ -3415,7 +3415,7 @@ retn    8
 
 // 0x004F26E0 (139 bytes)
 void Map_Can_4F26E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4F26E0(char *this, int a2)
 {
   int v2; // ecx
@@ -3500,7 +3500,7 @@ retn    4
 
 // 0x004F2770 (139 bytes)
 void Map_Can_4F2770() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4F2770(char *this, int a2)
 {
   int v2; // ecx
@@ -3585,7 +3585,7 @@ retn    4
 
 // 0x004517D0 (179 bytes)
 int Matrix3x4_TransformCell_4517D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4517D0(int **this)
 {
   int *v2; // eax
@@ -3705,7 +3705,7 @@ retn
 
 // 0x005A1C70 (415 bytes)
 int RandomMap_Is_5A1C70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5A1C70(_DWORD *this)
 {
   int v1; // ecx
@@ -3995,7 +3995,7 @@ retn
 
 // 0x00542F30 (129 bytes)
 int Terrain_Get_542F30() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_542F30(_DWORD *this)
 {
   unsigned int v1; // ebx
@@ -4128,7 +4128,7 @@ retn
 
 // 0x005F1F20 (72 bytes)
 int Terrain_Get_5F1F20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5F1F20(_DWORD *this)
 {
   int v2; // esi
@@ -4207,7 +4207,7 @@ retn
 
 // 0x00583AD0 (392 bytes)
 int VectorClass_GetMap_583AD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_583AD0(_DWORD *this, int *a2)
 {
   __int16 *i; // eax
@@ -4507,7 +4507,7 @@ retn    4
 
 // 0x0042CCD0 (467 bytes)
 void WordVector_CheckMap_42CCD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_42CCD0(int this, int a2)
 {
   int v2; // ebx

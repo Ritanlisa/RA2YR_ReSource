@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x007331B0 (450 bytes)
 char House_IsEvent_7331B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_7331B0()
 {
   int v0; // ebp
@@ -353,7 +353,7 @@ retn
 
 // 0x0063CF10 (165 bytes)
 int House_Is_63CF10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_63CF10(_DWORD *this)
 {
   int v1; // ecx
@@ -429,7 +429,7 @@ retn
 
 // 0x0063CFC0 (165 bytes)
 int House_Is_63CFC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_63CFC0(_DWORD *this)
 {
   int v1; // ecx
@@ -505,7 +505,7 @@ retn
 
 // 0x00731130 (130 bytes)
 const char* House_Is_731130() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_731130(char *this)
 {
   int v1; // edi
@@ -613,7 +613,7 @@ retn
 
 // 0x00639210 (187 bytes)
 int IsHouse_639210() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_639210(int a1, int a2, int a3, int a4, int a5)
 {
   int v5; // edi
@@ -746,7 +746,7 @@ retn    0Ch
 
 // 0x005D6000 (304 bytes)
 char String_ClearMultiplayerGameMode_5D6000() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_5D6000(int a1, int a2)
 {
   int v3; // esi

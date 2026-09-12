@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x006A93F0 (177 bytes)
 char Hash_Insert_6A93F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6A93F0(int this)
 {
   int v2; // eax

@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x005A5AE0 (107 bytes)
 double RandomProcess_5A5AE0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 double __stdcall sub_5A5AE0(__int16 *a1, __int16 *a2)
 {
   signed int v2; // ecx
@@ -65,7 +65,7 @@ retn    8
 
 // 0x0069B690 (111 bytes)
 int Random_Rang_69B690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_69B690(_DWORD *this)
 {
   int result; // eax
@@ -183,7 +183,7 @@ retn
 
 // 0x00404BB0 (456 bytes)
 int Random_Range_404BB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_404BB0(int this)
 {
   _DWORD *v2; // edi
@@ -507,7 +507,7 @@ retn
 
 // 0x0058C320 (142 bytes)
 int Random_Stat_58C320() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_58C320(_DWORD *this, _DWORD *a2)
 {
   int v2; // ebx
@@ -594,7 +594,7 @@ retn    4
 
 // 0x0058BE20 (126 bytes)
 int Random_State_58BE20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_58BE20(_DWORD *this)
 {
   unsigned int v2; // esi
@@ -674,7 +674,7 @@ retn
 
 // 0x00770970 (213 bytes)
 void String_DeleteRandom_770970() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_770970(int *this, int a2, int a3, void **a4)
 {
   char **v4; // ebx
@@ -814,7 +814,7 @@ retn    0Ch
 
 // 0x00770A50 (213 bytes)
 void String_DeleteRandom_770A50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_770A50(int *this, int a2, int a3, void **a4)
 {
   char **v4; // ebx
@@ -954,7 +954,7 @@ retn    0Ch
 
 // 0x00770B30 (209 bytes)
 void String_DeleteRandom_770B30() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_770B30(int *this, int a2, void **a3)
 {
   char **v3; // ebx
@@ -1090,7 +1090,7 @@ retn    8
 
 // 0x00770F10 (199 bytes)
 void String_DeleteRandom_770F10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_770F10(void *this, int a2, int a3, void **a4)
 {
   char **v4; // edi
@@ -1220,7 +1220,7 @@ retn    0Ch
 
 // 0x00770FE0 (199 bytes)
 void String_DeleteRandom_770FE0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_770FE0(void *this, int a2, int a3, void **a4)
 {
   char **v4; // edi

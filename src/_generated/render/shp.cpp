@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x004B4E10 (206 bytes)
 int ShapeButtonClass_GetList_4B4E10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4B4E10(
 {
   int Instance; // eax

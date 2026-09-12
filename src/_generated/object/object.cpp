@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x004C29E0 (115 bytes)
 void GameDestroyAllObjectsHelper_4C29E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void sub_4C29E0()
 {
   int i; // esi
@@ -94,7 +94,7 @@ retn
 
 // 0x0077F520 (481 bytes)
 char RequestDebug_77F520() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_77F520(char a1)
 {
   char result; // al
@@ -390,7 +390,7 @@ retn
 
 // 0x0077F710 (492 bytes)
 char RequestDebug_77F710() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_77F710(unsigned __int8 a1, char a2)
 {
   char result; // al
@@ -692,7 +692,7 @@ retn
 
 // 0x004B5830 (108 bytes)
 int TechnoClass_SetMember2_4B5830() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
 {
   int v3; // eax
@@ -785,7 +785,7 @@ retn    4
 
 // 0x00452000 (357 bytes)
 int Techno_Start_452000() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_452000(_DWORD *a1)
 {
   int v2; // eax

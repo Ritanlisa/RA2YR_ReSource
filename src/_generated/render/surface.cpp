@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00538F20 (487 bytes)
 const char* DDraw_ClearCCFile_538F20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_538F20(int a1, int a2, char *Source)
 {
   int *v5; // ebx
@@ -308,7 +308,7 @@ retn    4
 
 // 0x00635560 (281 bytes)
 int Display_GetPixel_635560() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_635560(_DWORD *this, int a2)
 {
   int *Viewport; // eax
@@ -488,7 +488,7 @@ retn    4
 
 // 0x00635680 (324 bytes)
 int Display_GetPixel_635680() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_635680(_DWORD **this, int a2)
 {
   int *Viewport; // eax
@@ -678,7 +678,7 @@ retn    4
 
 // 0x00793280 (428 bytes)
 const char* DrawDialog_793280() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_793280(void *hWnd, unsigned int a2, unsigned __int16 a3, _DWORD *a4)
 {
   int result; // eax
@@ -966,7 +966,7 @@ retn    10h
 
 // 0x0072EA70 (83 bytes)
 void DrawSur_72EA70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __fastcall sub_72EA70(int a1, int *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -1019,7 +1019,7 @@ retn
 
 // 0x0072E990 (83 bytes)
 void DrawSurface_72E990() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __fastcall sub_72E990(int a1, int *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -1072,7 +1072,7 @@ retn
 
 // 0x005BC460 (104 bytes)
 char DrawText_5BC460() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_5BC460(int a1)
 {
   _BYTE *v1; // ecx
@@ -1155,7 +1155,7 @@ retn
 
 // 0x005BC4D0 (92 bytes)
 char DrawText_5BC4D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_5BC4D0()
 {
   int *v0; // ebx
@@ -1246,7 +1246,7 @@ retn
 
 // 0x005E2AC0 (224 bytes)
 void DrawWideString_5E2AC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void sub_5E2AC0()
 {
   void *Current; // edi
@@ -1394,7 +1394,7 @@ retn
 
 // 0x004C38E0 (320 bytes)
 const char* FindPalette_4C38E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__fastcall sub_4C38E0(char *a1, int a2, int a3, char *a4)
 {
   char *v5; // edx
@@ -1591,7 +1591,7 @@ retn    8
 
 // 0x00434840 (162 bytes)
 char FontClassRenderGlyphHelper_434840() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
 {
   int v3; // ecx
@@ -1707,7 +1707,7 @@ retn    0Ch
 
 // 0x004C2790 (155 bytes)
 int Lightning_Draw_4C2790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4C2790(int this)
 {
   int result; // eax
@@ -1802,7 +1802,7 @@ retn
 
 // 0x004C2830 (425 bytes)
 int Lightning_Draw_4C2830() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_4C2830()
 {
   int result; // eax
@@ -2081,7 +2081,7 @@ retn
 
 // 0x005092F0 (193 bytes)
 int MapClass_MarkForRedraw_5092F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5092F0(int this, int a2)
 {
   int result; // eax
@@ -2188,7 +2188,7 @@ retn    4
 
 // 0x006ABA60 (90 bytes)
 char MapClass_MarkForRedraw_6ABA60() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
 {
   int v4; // esi
@@ -2264,7 +2264,7 @@ retn    0Ch
 
 // 0x004379A0 (97 bytes)
 bool MethodBlit_4379A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool __fastcall sub_4379A0(int a1, int a2, _DWORD *a3, int a4, int *a5, int a6, int a7, int a8, int a9)
 {
   _DWORD *v11; // eax
@@ -2329,7 +2329,7 @@ retn    1Ch
 
 // 0x007BC1F0 (91 bytes)
 void MethodBlit_7BC1F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_7BC1F0(int *a1, int *a2, int a3, int a4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
@@ -2391,7 +2391,7 @@ retn    8
 
 // 0x007BC250 (91 bytes)
 void MethodBlit_7BC250() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_7BC250(int *a1, int *a2, int a3, int a4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
@@ -2453,7 +2453,7 @@ retn    8
 
 // 0x005BAA80 (122 bytes)
 void MethodDraw_5BAA80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_5BAA80(#44 *this, #72 *Format, unsigned int a3, int a4)
 {
   int v4; // edi
@@ -2534,7 +2534,7 @@ retn    0Ch
 
 // 0x005BF850 (93 bytes)
 int MethodRender_5BF850() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_5BF850()
 {
   int v0; // esi
@@ -2609,7 +2609,7 @@ retn
 
 // 0x00634470 (152 bytes)
 bool MethodToCoordPixel_634470() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 BOOL __thiscall sub_634470(_DWORD **this, int a2, int a3)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2702,7 +2702,7 @@ retn    8
 
 // 0x00635E90 (144 bytes)
 int MethodToCoordPixel_635E90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__thiscall sub_635E90(_DWORD **this, int *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -2790,7 +2790,7 @@ retn    4
 
 // 0x00759BC0 (101 bytes)
 int MovieClass_RenderMovie_759BC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __thiscall sub_759BC0(int this, signed int a2)
 {
   signed int v2; // edi
@@ -2856,7 +2856,7 @@ retn    4
 
 // 0x004251F0 (109 bytes)
 int PlayPalette_4251F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_4251F0(int a1, __int16 *a2)
 {
   int v2; // ecx
@@ -2912,7 +2912,7 @@ retn
 
 // 0x00434B40 (80 bytes)
 int RenderFont_434B40() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_434B40(_DWORD *a1, int *a2, unsigned __int16 a3, int xLeft, int yTop)
 {
   int v5; // edi
@@ -2973,7 +2973,7 @@ retn    14h
 
 // 0x00434BF0 (224 bytes)
 int RenderFont_434BF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int yTop, int a6)
 {
   int result; // eax
@@ -3109,7 +3109,7 @@ retn    18h
 
 // 0x004AEA20 (169 bytes)
 int RenderRallyPointLinesHelper_4AEA20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __userpurge sub_4AEA20@<eax>(int a1@<ebx>, int a2)
 {
   int v2; // edx
@@ -3215,7 +3215,7 @@ retn    4
 
 // 0x004A65C0 (267 bytes)
 int RenderRender_4A65C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9, int a10)
 {
   int *v12; // eax
@@ -3347,7 +3347,7 @@ retn    20h ; ' '
 
 // 0x005B57D0 (390 bytes)
 int String_Draw_5B57D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _WORD *__thiscall sub_5B57D0(_DWORD *this)
 {
   _WORD *result; // eax
@@ -3546,7 +3546,7 @@ retn
 
 // 0x005B9250 (406 bytes)
 int String_Draw_5B9250() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _WORD *__thiscall sub_5B9250(_DWORD *this)
 {
   _WORD *result; // eax
@@ -3750,7 +3750,7 @@ retn
 
 // 0x004C3DD0 (95 bytes)
 int TextRenderer_GetText_4C3DD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4C3DD0(int *this, int a2)
 {
   int v3; // edx
@@ -3808,7 +3808,7 @@ retn    4
 
 // 0x0071FF20 (136 bytes)
 int TextRenderer_GetToggle_71FF20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_71FF20(int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, char a9, char a10)
 {
   int Instance; // ebx
@@ -3895,7 +3895,7 @@ retn    24h ; '$'
 
 // 0x004C2FC0 (237 bytes)
 int TextRenderer_SetMember11_4C2FC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__thiscall sub_4C2FC0(int *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   int v11; // eax
@@ -4048,7 +4048,7 @@ retn    24h ; '$'
 
 // 0x006C6540 (144 bytes)
 int TextRenderer_SetMember12_6C6540() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_6C6540(_DWORD *this, int a2, #72 *String, int a4, int a5, int a6, int a7, int a8)
 {
   int Instance; // ebx
@@ -4145,7 +4145,7 @@ retn    1Ch
 
 // 0x005BCB90 (132 bytes)
 int Text_Draw_5BCB90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5BCB90(int this, int a2)
 {
   int v3; // edi
@@ -4238,7 +4238,7 @@ retn    4
 
 // 0x005BCE10 (378 bytes)
 char Text_Draw_5BCE10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5BCE10(int *this, int a2)
 {
   char result; // al

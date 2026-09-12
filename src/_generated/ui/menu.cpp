@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x0046D8B0 (368 bytes)
 char CampaignScore_IsSession_46D8B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_46D8B0()
 {
   char v0; // bl
@@ -242,7 +242,7 @@ retn
 
 // 0x0046DCC0 (166 bytes)
 bool GetCampaignScore_46DCC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_46DCC0(int a1, unsigned __int8 a2)
 {
   int i; // edi
@@ -363,7 +363,7 @@ retn
 
 // 0x0077D720 (113 bytes)
 int NetworkAddressDispatch_77D720() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_77D720(_DWORD *a1, int a2)
 {
   int v3; // ecx
@@ -436,7 +436,7 @@ retn
 
 // 0x005EFF00 (105 bytes)
 int NetworkProcess_5EFF00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_5EFF00(int hWnd, int a2, unsigned int a3, int a4)
 {
   int result; // eax
@@ -522,7 +522,7 @@ retn    10h
 
 // 0x00663CD0 (130 bytes)
 char Network_Copy_663CD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_663CD0(int *this, _BYTE *a2)
 {
   _DWORD *v2; // edi
@@ -634,7 +634,7 @@ retn    4
 
 // 0x005EC290 (266 bytes)
 char PlayNetwork_5EC290() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_5EC290(int a1, int a2)
 {
   int v4; // ebp
@@ -820,7 +820,7 @@ jmp     CheckGameSettingsChanged
 
 // 0x004F2C00 (74 bytes)
 int SetMember_4F2C00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = 0;

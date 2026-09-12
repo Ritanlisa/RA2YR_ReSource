@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x004D2F00 (68 bytes)
 int DestructFoggedObjectClassHelper_4D2F00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_4D2F00(int a1, int a2, int *a3)
 {
   int v3; // esi

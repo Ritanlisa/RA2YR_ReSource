@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00664750 (96 bytes)
 char Debug_Send_664750() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_664750(unsigned __int8 *this, char a2)
 {
   int v2; // eax

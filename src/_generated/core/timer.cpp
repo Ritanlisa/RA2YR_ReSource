@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00429500 (70 bytes)
 int GetTimer_429500() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_429500(int a1, _DWORD *a2)
 {
   int v3; // edi
@@ -62,7 +62,7 @@ retn    8
 
 // 0x004A50A0 (70 bytes)
 int GetTimer_4A50A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 signed int __fastcall sub_4A50A0(signed int a1)
 {
   int Ticks; // ecx
@@ -137,7 +137,7 @@ retn
 
 // 0x004A80D6 (400 bytes)
 int GetTimer_4A80D6() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_4A80D6(int a1, signed int a2)
 {
   int Ticks; // eax
@@ -404,7 +404,7 @@ retn
 
 // 0x0043EE50 (93 bytes)
 int ProgressTimer_Get_43EE50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_43EE50(_DWORD *this)
 {
   _DWORD *Value; // eax
@@ -472,7 +472,7 @@ retn
 
 // 0x005AE530 (60 bytes)
 const char* String_GetTimer_5AE530() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5AE530(char **this, const char **a2, int a3)
 {
   _DWORD *v3; // esi
@@ -515,7 +515,7 @@ retn    8
 
 // 0x007717A0 (72 bytes)
 int Timer_Get_7717A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __thiscall sub_7717A0(unsigned int *this)
 {
   unsigned int result; // eax
@@ -565,7 +565,7 @@ retn
 
 // 0x00793CD0 (72 bytes)
 void Timer_Get_793CD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_793CD0(void *this)
 {
   unsigned int Ticks; // eax
@@ -605,7 +605,7 @@ retn
 
 // 0x0063F810 (53 bytes)
 int Timer_SetMember1351_63F810() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_63F810(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -642,7 +642,7 @@ retn
 
 // 0x00431930 (64 bytes)
 int Timer_SetMember2_431930() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_431930(int *this, int a2)
 {
   unsigned int v3; // eax

@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x005C00E0 (177 bytes)
 char Frame_Test_5C00E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
@@ -119,7 +119,7 @@ retn
 
 // 0x00437F50 (110 bytes)
 int GameClass_Wrapper_437F50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_437F50(_DWORD *this)
 {
   int v2; // esi

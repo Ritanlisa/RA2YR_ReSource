@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x0069BCC0 (63 bytes)
 void CallToWideStringChar_69BCC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_69BCC0(void *a1)
 {
   int v1; // edi
@@ -69,7 +69,7 @@ retn    4
 
 // 0x0069BD00 (90 bytes)
 const char* CallToWideStringChar_69BD00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_69BD00(int a1)
 {
   int v1; // ebx
@@ -144,7 +144,7 @@ retn    4
 
 // 0x005F34D0 (73 bytes)
 const char* Callisdigit_5F34D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_5F34D0(char *String)
 {
   int v1; // esi
@@ -212,7 +212,7 @@ retn    4
 
 // 0x004A40C0 (108 bytes)
 void* Callsprintf_4A40C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_4A40C0()
 {
   int result; // eax
@@ -290,7 +290,7 @@ retn
 
 // 0x004067D0 (69 bytes)
 void Callstrcmpi_4067D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 BOOL __fastcall sub_4067D0(void *a1, _DWORD *a2)
 {
   char **v4; // esi
@@ -358,7 +358,7 @@ retn
 
 // 0x00406820 (73 bytes)
 void Callstrcmpi_406820() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 BOOL __fastcall sub_406820(_DWORD *a1, const void *a2)
 {
   const void **v4; // esi
@@ -428,7 +428,7 @@ retn
 
 // 0x00751EA0 (369 bytes)
 void* Callstrcmpi_751EA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_751EA0(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4)
 {
   const char *v4; // edi
@@ -618,7 +618,7 @@ retn    8
 
 // 0x007830C0 (219 bytes)
 int Callstrcmpi_7830C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7830C0(signed int *a1, signed int *a2)
 {
   signed int v2; // eax
@@ -773,7 +773,7 @@ retn
 
 // 0x007831A0 (208 bytes)
 int Callstrcmpi_7831A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7831A0(signed int *a1, signed int *a2)
 {
   signed int v2; // eax
@@ -916,7 +916,7 @@ retn
 
 // 0x00783520 (79 bytes)
 const char* Callstrcmpi_783520() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_783520(const char *a1, const char *a2)
 {
   unsigned int v2; // kr04_4
@@ -990,7 +990,7 @@ retn
 
 // 0x00783570 (79 bytes)
 const char* Callstrcmpi_783570() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_783570(const char *a1, const char *a2)
 {
   unsigned int v2; // kr04_4
@@ -1064,7 +1064,7 @@ retn
 
 // 0x007835C0 (284 bytes)
 int Callstrcmpi_7835C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7835C0(int a1, signed int *a2)
 {
   int v2; // eax
@@ -1244,7 +1244,7 @@ retn
 
 // 0x007836E0 (284 bytes)
 void Callstrcmpi_7836E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7836E0(const void *a1, signed int *a2)
 {
   int v2; // eax
@@ -1424,7 +1424,7 @@ retn
 
 // 0x005C7BA0 (462 bytes)
 const char* Calltoupper_5C7BA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 {
   unsigned __int16 *v3; // ebp
@@ -1794,7 +1794,7 @@ retn    4
 
 // 0x00789630 (103 bytes)
 void DeleteString_789630() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char **__fastcall sub_789630(char **a1, int a2)
 {
   int v3; // eax
@@ -1854,7 +1854,7 @@ retn
 
 // 0x0079F0A0 (152 bytes)
 const char* GetString_79F0A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_79F0A0(char **a1, int *a2, char *a3)
 {
   char *v3; // esi
@@ -1977,7 +1977,7 @@ retn    4
 
 // 0x00406760 (100 bytes)
 void MethodSprintf_406760() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *__thiscall sub_406760(void (__thiscall *this)(char *))
 {
   void *result; // eax
@@ -2035,7 +2035,7 @@ retn
 
 // 0x005B3E90 (188 bytes)
 void MethodStrcmpi_5B3E90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5B3E90(void *this)
 {
   int i; // esi
@@ -2147,7 +2147,7 @@ retn
 
 // 0x005B4350 (138 bytes)
 void MethodStrcmpi_5B4350() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5B4350(void *this)
 {
   int i; // esi
@@ -2234,7 +2234,7 @@ retn
 
 // 0x00644850 (53 bytes)
 void MethodStrcmpi_644850() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_644850(void *this)
 {
   int v2; // edi
@@ -2290,7 +2290,7 @@ retn
 
 // 0x006458D0 (53 bytes)
 void MethodStrcmpi_6458D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_6458D0(void *this)
 {
   int v2; // edi
@@ -2346,7 +2346,7 @@ retn
 
 // 0x00645B60 (52 bytes)
 void MethodStrcmpi_645B60() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_645B60(void *this)
 {
   int v2; // edi
@@ -2402,7 +2402,7 @@ retn
 
 // 0x006CE570 (53 bytes)
 void MethodStrcmpi_6CE570() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_6CE570(void *this)
 {
   int v2; // edi
@@ -2458,7 +2458,7 @@ retn
 
 // 0x00727190 (52 bytes)
 void MethodStrcmpi_727190() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_727190(void *this)
 {
   int v2; // edi
@@ -2514,7 +2514,7 @@ retn
 
 // 0x004CB580 (84 bytes)
 const char* MethodStrncpy_4CB580() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_4CB580(char *Destination, char *Source, int a3)
 {
   char *v4; // eax
@@ -2575,7 +2575,7 @@ retn    8
 
 // 0x004CB640 (84 bytes)
 const char* MethodStrncpy_4CB640() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_4CB640(char *Destination, char *Source, int a3)
 {
   char *v4; // eax
@@ -2635,7 +2635,7 @@ retn    8
 
 // 0x004CB6A0 (84 bytes)
 const char* MethodStrncpy_4CB6A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_4CB6A0(char *Destination, char *Source, int a3)
 {
   char *v4; // eax
@@ -2695,7 +2695,7 @@ retn    8
 
 // 0x00776EB0 (139 bytes)
 void MethodStrncpy_776EB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *__thiscall sub_776EB0(void *this)
 {
   int v2; // eax
@@ -2785,7 +2785,7 @@ retn
 
 // 0x007B53B0 (80 bytes)
 const char* MethodStrncpy_7B53B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_7B53B0(const char **this, char *Destination, unsigned int Count)
 {
   unsigned int v4; // kr08_4
@@ -2850,7 +2850,7 @@ retn    8
 
 // 0x007B60E0 (405 bytes)
 void MethodStrncpy_7B60E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_7B60E0(const char **this, signed int a2, void **a3)
 {
   signed int v5; // esi
@@ -3152,7 +3152,7 @@ retn    8
 
 // 0x007B5C50 (66 bytes)
 void MethodToupper_7B5C50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_7B5C50(const char **this)
 {
   unsigned int i; // esi
@@ -3214,7 +3214,7 @@ retn
 
 // 0x007B5CA0 (202 bytes)
 const char* MethodToupper_7B5CA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char **__thiscall sub_7B5CA0(const char **this, char **a2)
 {
   char *v3; // ebx
@@ -3354,7 +3354,7 @@ retn    4
 
 // 0x0045DD50 (57 bytes)
 void ObjectTypeClass_Strcmpi_45DD50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_45DD50(void *this)
 {
   int v2; // edi
@@ -3410,7 +3410,7 @@ retn
 
 // 0x005CDB90 (185 bytes)
 int StringWideString_5CDB90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_5CDB90(const #72 **a1, int a2, int a3)
 {
   int v4; // ebx
@@ -3543,7 +3543,7 @@ retn    4
 
 // 0x005D0240 (80 bytes)
 const char* String_Assign_5D0240() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char **__thiscall sub_5D0240(int *this, char **a2, char a3)
 {
   int v3; // esi
@@ -3624,7 +3624,7 @@ retn    8
 
 // 0x005B5A50 (114 bytes)
 char String_CopyWideString_5B5A50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5B5A50(_BYTE *this, char a2)
 {
   int v3; // eax
@@ -3702,7 +3702,7 @@ retn    4
 
 // 0x006274F0 (160 bytes)
 const char* String_Copy_6274F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_6274F0(_DWORD *this, const char *a2)
 {
   int v3; // esi
@@ -3814,7 +3814,7 @@ retn    4
 
 // 0x006278C0 (321 bytes)
 const char* String_Copy_6278C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6278C0(_DWORD *this, const char *a2)
 {
   int v3; // edx
@@ -4028,7 +4028,7 @@ retn    4
 
 // 0x00627A10 (272 bytes)
 const char* String_Copy_627A10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_627A10(_DWORD *this, const char *a2)
 {
   int v3; // esi
@@ -4223,7 +4223,7 @@ retn    4
 
 // 0x004F3D40 (328 bytes)
 const char* String_Delet_4F3D40() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4F3D40(const char **this)
 {
   int v1; // ebx
@@ -4425,7 +4425,7 @@ jmp     short loc_4F3E47
 
 // 0x005D0190 (163 bytes)
 const char* String_Delet_5D0190() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5D0190(_DWORD *this, const char *a2)
 {
   int v3; // esi
@@ -4532,7 +4532,7 @@ retn    4
 
 // 0x00770D70 (159 bytes)
 void String_Delet_770D70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __fastcall sub_770D70(const char **a1, _DWORD *a2)
 {
   int i; // edi
@@ -4651,7 +4651,7 @@ retn
 
 // 0x0077D3F0 (160 bytes)
 const char* String_Delet_77D3F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_77D3F0(const char *this)
 {
   int v2; // ebx
@@ -4780,7 +4780,7 @@ retn
 
 // 0x004F3C40 (249 bytes)
 const char* String_Delete_4F3C40() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_4F3C40(_DWORD *this, int a2, const char **a3)
 {
   _DWORD *v3; // ebp
@@ -4941,7 +4941,7 @@ retn    8
 
 // 0x00786E70 (117 bytes)
 const char* String_EqualsAlt_786E70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_786E70(const char **this)
 {
   int v2; // ecx
@@ -5043,7 +5043,7 @@ retn
 
 // 0x007B6EE0 (84 bytes)
 int String_Erase_7B6EE0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 __int16 __thiscall sub_7B6EE0(const #72 **this, const #72 **a2)
 {
   unsigned int i; // esi
@@ -5124,7 +5124,7 @@ retn    4
 
 // 0x0079BF50 (231 bytes)
 bool String_Find_79BF50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_79BF50(void *this)
 {
   int v2; // eax
@@ -5284,7 +5284,7 @@ retn
 
 // 0x005CD570 (277 bytes)
 int String_GetWideString_5CD570() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_5CD570(
 {
   int v11; // ebx
@@ -5450,7 +5450,7 @@ retn    24h ; '$'
 
 // 0x005CE0C0 (484 bytes)
 char String_GetWideString_5CE0C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5CE0C0(int this, int a2, _DWORD *a3)
 {
   int v4; // edi
@@ -5786,7 +5786,7 @@ retn    8
 
 // 0x006B94E0 (68 bytes)
 const char* String_Get_6B94E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __thiscall sub_6B94E0(const char **this)
 {
   unsigned int v2; // esi
@@ -5842,7 +5842,7 @@ retn
 
 // 0x00767320 (221 bytes)
 const char* String_Get_767320() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 #72 **__thiscall sub_767320(const char **this, #72 **a2, int a3, const #72 **a4)
 {
   int v5; // eax
@@ -5960,7 +5960,7 @@ retn    0Ch
 
 // 0x0077D240 (89 bytes)
 const char* String_Get_77D240() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_77D240(char **this)
 {
   signed int v1; // eax
@@ -6047,7 +6047,7 @@ retn
 
 // 0x00786DC0 (164 bytes)
 const char* String_Get_786DC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_786DC0(char **this)
 {
   int v2; // esi
@@ -6165,7 +6165,7 @@ retn
 
 // 0x00793120 (117 bytes)
 bool String_Get_793120() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool __thiscall sub_793120(char **this)
 {
   int v1; // eax
@@ -6261,7 +6261,7 @@ retn
 
 // 0x007A2830 (127 bytes)
 const char* String_Get_7A2830() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_7A2830(char **this)
 {
   int result; // eax
@@ -6363,7 +6363,7 @@ retn
 
 // 0x0076DFD0 (181 bytes)
 void String_Has_76DFD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_76DFD0(char *this)
 {
   void *v2; // [esp+4h] [ebp-10h] BYREF
@@ -6458,7 +6458,7 @@ retn
 
 // 0x005CF840 (151 bytes)
 const char* String_Is_5CF840() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 const char **__thiscall sub_5CF840(_DWORD *this, const char **a2)
 {
   int v3; // esi
@@ -6562,7 +6562,7 @@ retn    4
 
 // 0x004F3460 (413 bytes)
 int String_Parse_4F3460() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_4F3460(
 {
   char v10; // bl
@@ -6847,7 +6847,7 @@ retn    24h ; '$'
 
 // 0x007651D0 (425 bytes)
 const char* String_PrependCCFil_7651D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_7651D0(char **this)
 {
   char **v2; // edi
@@ -7031,7 +7031,7 @@ retn
 
 // 0x00771710 (111 bytes)
 int String_Reassign_771710() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_771710(int this)
 {
   int v2; // eax
@@ -7125,7 +7125,7 @@ retn
 
 // 0x00529E70 (455 bytes)
 const char* String_SetMember1_529E70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, char **a5)
 {
   char **v6; // edi
@@ -7395,7 +7395,7 @@ retn    10h
 
 // 0x0076E090 (237 bytes)
 void String_SetMember280_76E090() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_76E090(int *this)
 {
   void *v3; // [esp+4h] [ebp-18h] BYREF
@@ -7508,7 +7508,7 @@ retn
 
 // 0x004F2F10 (348 bytes)
 int String_SetMember4_4F2F10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__thiscall sub_4F2F10(int *this, int a2, _DWORD *a3, int *a4, int *a5, char **a6, char **a7, int a8, char a9)
 {
   int v10; // edx
@@ -7672,7 +7672,7 @@ retn    20h ; ' '
 
 // 0x0052A110 (475 bytes)
 float String_SetMember_52A110() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float a4, float *a5)
 {
   unsigned __int8 *v6; // ebx
@@ -7964,7 +7964,7 @@ retn    10h
 
 // 0x0052A2F0 (479 bytes)
 const char* String_SetMember_52A2F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, float *a5)
 {
   char **v6; // edi
@@ -8246,7 +8246,7 @@ retn    10h
 
 // 0x005CD690 (439 bytes)
 int String_SetRect_5CD690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_5CD690(int this, int *a2)
 {
   int *v4; // edi
@@ -8547,7 +8547,7 @@ retn    4
 
 // 0x005B94C0 (141 bytes)
 char String_Trim_5B94C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_5B94C0(_BYTE *this, char a2)
 {
   int v3; // eax
@@ -8637,7 +8637,7 @@ retn    4
 
 // 0x006CA4F0 (172 bytes)
 int String_Trim_6CA4F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 #72 *__fastcall sub_6CA4F0(_DWORD *a1)
 {
   #72 *v1; // ebp
@@ -8781,7 +8781,7 @@ retn
 
 // 0x007767F0 (138 bytes)
 const char* String_Trim_7767F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __thiscall sub_7767F0(char **this)
 {
   char *v2; // edi
@@ -8864,7 +8864,7 @@ retn
 
 // 0x006CA730 (120 bytes)
 int WideCharManager_6CA730() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_6CA730(#72 *Str, _DWORD *a2)
 {
   int v4; // edi
@@ -8940,7 +8940,7 @@ retn
 
 // 0x006CA5A0 (196 bytes)
 int WideChar_ToLong_6CA5A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __thiscall sub_6CA5A0(#72 *Source)
 {
   const #72 *v1; // esi
@@ -9053,7 +9053,7 @@ retn
 
 // 0x00603FC0 (152 bytes)
 int WideStringManager_603FC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 #72 **__fastcall sub_603FC0(#72 **a1, int a2, int hWnd, unsigned __int16 a4, void *a5)
 {
   _DWORD lParam[2]; // [esp+10h] [ebp-Ch] BYREF
@@ -9136,7 +9136,7 @@ retn    0Ch
 
 // 0x005CE330 (100 bytes)
 int WideString_Get_5CE330() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5CE330(_DWORD **this, const #72 **a2)
 {
   int v3; // ebp
@@ -9214,7 +9214,7 @@ retn    4
 
 // 0x005CE3A0 (246 bytes)
 int WideString_Get_5CE3A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_5CE3A0(int *this, int a2, int *a3)
 {
   _DWORD *v4; // ecx

@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x005E66F0 (419 bytes)
 char DispatchScenario_5E66F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_5E66F0()
 {
   int v0; // eax
@@ -275,7 +275,7 @@ jmp     loc_5BB260
 
 // 0x006D0F10 (85 bytes)
 void LoadFile_6D0F10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *sub_6D0F10()
 {
   int v0; // esi
@@ -338,7 +338,7 @@ retn
 
 // 0x007011A0 (276 bytes)
 int ScenarioClass_CalcMath_7011A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_7011A0(int *this)
 {
   int v3; // edi
@@ -484,7 +484,7 @@ retn
 
 // 0x006E0080 (130 bytes)
 char ScenarioClass_GetScenario_6E0080() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E0080(int *this, int a2, int a3, int a4, int a5)
 {
   int v5; // ebx
@@ -580,7 +580,7 @@ retn    10h
 
 // 0x006394E0 (193 bytes)
 char SetScenario_6394E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_6394E0(_DWORD *a1, int a2)
 {
   _BYTE *v3; // esi
@@ -750,7 +750,7 @@ retn
 
 // 0x006E2790 (179 bytes)
 char Tactical_GetScenario_6E2790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 {
   int v6; // [esp+0h] [ebp-14h] BYREF

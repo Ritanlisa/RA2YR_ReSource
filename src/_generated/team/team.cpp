@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00412610 (74 bytes)
 const char* TaskForceClass_Toupper_412610() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_412610(char *this)
 {
   char *v1; // edi
@@ -83,7 +83,7 @@ retn
 
 // 0x00610810 (306 bytes)
 char TriggerClass_FindTrigger_610810() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_610810(int *a1, const #72 *a2, int a3)
 {
   #72 *StringCSF; // eax

@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x007CB302 (59 bytes)
 int Calllockfile_7CB302() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7CB302(#252 *Stream, int a2, int a3)
 {
   int v3; // edi
@@ -57,7 +57,7 @@ retn
 
 // 0x007BF240 (306 bytes)
 const char* Callread_7BF240() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __cdecl sub_7BF240(int a1, int a2, char *DstBuf, int MaxCharCount)
 {
   int result; // eax
@@ -293,7 +293,7 @@ retn
 
 // 0x004C9160 (80 bytes)
 char ClearCCFile_4C9160() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_4C9160()
 {
   char v0; // bl
@@ -337,7 +337,7 @@ retn
 
 // 0x00431BC0 (457 bytes)
 bool FileClass_SetMember18_431BC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool __thiscall sub_431BC0(_DWORD *this, int a2, int a3)
 {
   int v5; // edi
@@ -693,7 +693,7 @@ retn    8
 
 // 0x0065D510 (176 bytes)
 const char* FileStrawDestru_Release_65D510() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int __fastcall sub_65D510(int a1, const char *a2, int a3, _BYTE *a4)
 {
   unsigned int v4; // esi
@@ -825,7 +825,7 @@ retn    8
 
 // 0x00765580 (125 bytes)
 int IsCCFile_765580() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_765580(_DWORD *a1)
 {
   _DWORD v2[22]; // [esp+0h] [ebp-58h] BYREF
@@ -884,7 +884,7 @@ retn    4
 
 // 0x0075A120 (351 bytes)
 bool MethodLookupFileInfoCache_75A120() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
 {
   BOOL result; // eax
@@ -1150,7 +1150,7 @@ retn    0Ch
 
 // 0x00408F80 (174 bytes)
 const char* MethodRead_408F80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_408F80(int *a1, int *a2, int a3, char *a4)
 {
   int v7; // eax
@@ -1310,7 +1310,7 @@ retn    8
 
 // 0x00798360 (116 bytes)
 char OpenStub_798360() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char sub_798360()
 {
   int v0; // eax
@@ -1392,7 +1392,7 @@ retn
 
 // 0x004FFD90 (63 bytes)
 int PathfindingClass_FindPathfinding_4FFD90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
 {
   int v2; // eax
@@ -1427,7 +1427,7 @@ retn    4
 
 // 0x004F1B80 (286 bytes)
 const char* PrependCCFile_4F1B80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char **__usercall sub_4F1B80@<eax>(char **a1@<edx>, char **a2@<ecx>, int a3@<edi>)
 {
   char **v5; // esi
@@ -1566,7 +1566,7 @@ retn
 
 // 0x0042BCA0 (371 bytes)
 int SimplifyPathFilterHelper_42BCA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 __int16 __stdcall sub_42BCA0(int a1, int a2, int a3, _DWORD *a4, int *a5)
 {
   int v6; // edx
@@ -1798,7 +1798,7 @@ retn    14h
 
 // 0x00765000 (458 bytes)
 void String_PrependCCFile_765000() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char *__thiscall sub_765000(int this, void *a2)
 {
   char **v3; // eax

@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00408460 (92 bytes)
 void DListNode_Init_408460() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__thiscall sub_408460(void *this)
 {
   _DWORD *v2; // esi
@@ -83,7 +83,7 @@ retn
 
 // 0x00474540 (223 bytes)
 char INIClass_ClearINI_474540() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_474540(int this, int a2, char a3)
 {
   int v5; // edi
@@ -192,7 +192,7 @@ retn    8
 
 // 0x0044FE60 (82 bytes)
 const char* INIClass_ReadBuilding_44FE60() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_44FE60(char *this)
 {
   int result; // eax
@@ -253,7 +253,7 @@ retn
 
 // 0x0052A610 (90 bytes)
 void INIClass_ReadINI_52A610() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_52A610(char *this, void *a2)
 {
   signed int v3; // eax
@@ -303,7 +303,7 @@ retn    4
 
 // 0x00674500 (69 bytes)
 int INIClass_ReadINI_674500() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_674500(#381 *this)
 {
   int result; // eax
@@ -342,7 +342,7 @@ retn    4
 
 // 0x00770850 (286 bytes)
 void INIClass_ReadINI_770850() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_770850(void **this, _DWORD *a2, char **a3, int a4, int a5)
 {
   char **v6; // eax
@@ -505,7 +505,7 @@ retn    10h
 
 // 0x00770E70 (147 bytes)
 void INIClass_ReadINI_770E70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_770E70(char **this, _DWORD *a2, char **a3, void *a4)
 {
   void *v5; // edi
@@ -583,7 +583,7 @@ retn    0Ch
 
 // 0x00476E20 (123 bytes)
 int INIClass_WriteINI_476E20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_476E20(int this)
 {
   int v3[3]; // [esp+4h] [ebp-80h] BYREF
@@ -647,7 +647,7 @@ retn
 
 // 0x00491100 (268 bytes)
 char InitConvert_491100() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __userpurge sub_491100@<eax>(char a1@<dl>, char a2@<cl>, int a3@<ebx>, char a4, __int16 a5, char a6, __int16 a7)
 {
   int result; // eax
@@ -788,7 +788,7 @@ retn    10h
 
 // 0x004087F0 (77 bytes)
 int InitDListNo_4087F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *sub_4087F0()
 {
   _DWORD *v0; // esi
@@ -852,7 +852,7 @@ retn
 
 // 0x00408B40 (235 bytes)
 int InitDListNo_408B40() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_408B40(_DWORD *a1, int a2, int a3, int Size)
 {
   int result; // eax
@@ -1011,7 +1011,7 @@ retn    8
 
 // 0x00408D80 (115 bytes)
 void InitDListNo_408D80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_408D80(int a1, int a2)
 {
   _DWORD *v4; // esi
@@ -1099,7 +1099,7 @@ retn
 
 // 0x004093F0 (123 bytes)
 int InitGlobal_4093F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 __int64 sub_4093F0()
 {
   int v0; // esi
@@ -1181,7 +1181,7 @@ retn
 
 // 0x00585EE0 (89 bytes)
 int InitGlobal_585EE0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_585EE0()
 {
   MEMORY[0xABD460][0] = 0;
@@ -1218,7 +1218,7 @@ retn
 
 // 0x007767B0 (62 bytes)
 int InitGlobal_7767B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_7767B0(int a1, int a2, int wParam)
 {
   int result; // eax
@@ -1268,7 +1268,7 @@ retn    4
 
 // 0x006B3CD0 (393 bytes)
 char InitIni_6B3CD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
 {
   int v5; // esi
@@ -1518,7 +1518,7 @@ retn    8
 
 // 0x006D6A90 (51 bytes)
 void InitIsometric_6D6A90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 __int64 __stdcall sub_6D6A90(_DWORD *a1)
 {
   void *v1; // eax
@@ -1555,7 +1555,7 @@ retn    4
 
 // 0x004019E0 (275 bytes)
 int InitLinked_4019E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__fastcall sub_4019E0(int a1, int a2, int a3, int a4)
 {
   int *v6; // ebx
@@ -1721,7 +1721,7 @@ retn    8
 
 // 0x0040FB70 (59 bytes)
 void InitZero_40FB70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40FB70()
 {
   MEMORY[0x887568] = (#387 *)&VectorClass<WeaponTypeClass *>::`vftable';
@@ -1759,7 +1759,7 @@ retn
 
 // 0x004301C0 (71 bytes)
 void InitZero_4301C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4301C0()
 {
   void **v0; // esi
@@ -1831,7 +1831,7 @@ retn
 
 // 0x004E65A0 (59 bytes)
 void InitZero_4E65A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E65A0()
 {
   MEMORY[0x8B4178] = (int)&VectorClass<TriggerTypeClass *>::`vftable';
@@ -1869,7 +1869,7 @@ retn
 
 // 0x004E6620 (59 bytes)
 void InitZero_4E6620() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6620()
 {
   MEMORY[0xA8EAE8] = (int)&VectorClass<TriggerClass *>::`vftable';
@@ -1907,7 +1907,7 @@ retn
 
 // 0x004E67A0 (59 bytes)
 void InitZero_4E67A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E67A0()
 {
   MEMORY[0x8B4138] = (int)&VectorClass<TubeClass *>::`vftable';
@@ -1945,7 +1945,7 @@ retn
 
 // 0x004E6920 (59 bytes)
 void InitZero_4E6920() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6920()
 {
   MEMORY[0xA8EC50] = (int)&VectorClass<OverlayClass *>::`vftable';
@@ -1983,7 +1983,7 @@ retn
 
 // 0x004E6B20 (59 bytes)
 void InitZero_4E6B20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6B20()
 {
   MEMORY[0xA83DE8] = (int)&VectorClass<InfantryClass *>::`vftable';
@@ -2021,7 +2021,7 @@ retn
 
 // 0x004E6BA0 (59 bytes)
 void InitZero_4E6BA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6BA0()
 {
   MEMORY[0xA8EB40] = (int)&VectorClass<BuildingClass *>::`vftable';
@@ -2059,7 +2059,7 @@ retn
 
 // 0x004E6CA0 (59 bytes)
 void InitZero_4E6CA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6CA0()
 {
   MEMORY[0x8B4108] = (int)&VectorClass<UnitClass *>::`vftable';
@@ -2097,7 +2097,7 @@ retn
 
 // 0x004E6D20 (59 bytes)
 void InitZero_4E6D20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6D20()
 {
   MEMORY[0xA80228] = (int)&VectorClass<HouseClass *>::`vftable';
@@ -2135,7 +2135,7 @@ retn
 
 // 0x004E6DA0 (59 bytes)
 void InitZero_4E6DA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6DA0()
 {
   MEMORY[0xA8E9A8] = (int)&VectorClass<AnimClass *>::`vftable';
@@ -2173,7 +2173,7 @@ retn
 
 // 0x004E6E20 (59 bytes)
 void InitZero_4E6E20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6E20()
 {
   MEMORY[0x8B40E8] = (int)&VectorClass<TeamClass *>::`vftable';
@@ -2211,7 +2211,7 @@ retn
 
 // 0x004E6EA0 (59 bytes)
 void InitZero_4E6EA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6EA0()
 {
   MEMORY[0xA83E30] = (int)&VectorClass<FactoryClass *>::`vftable';
@@ -2249,7 +2249,7 @@ retn
 
 // 0x004E6F20 (59 bytes)
 void InitZero_4E6F20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6F20()
 {
   MEMORY[0xA83CF8] = (int)&VectorClass<CampaignClass *>::`vftable';
@@ -2287,7 +2287,7 @@ retn
 
 // 0x004E7020 (59 bytes)
 void InitZero_4E7020() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7020()
 {
   MEMORY[0xA83C98] = (int)&VectorClass<HouseTypeClass *>::`vftable';
@@ -2325,7 +2325,7 @@ retn
 
 // 0x004E70A0 (59 bytes)
 void InitZero_4E70A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E70A0()
 {
   MEMORY[0xA8E8D0] = (int)&VectorClass<TaskForceClass *>::`vftable';
@@ -2363,7 +2363,7 @@ retn
 
 // 0x004E7120 (59 bytes)
 void InitZero_4E7120() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7120()
 {
   MEMORY[0xA8ECA0] = (int)&VectorClass<TeamTypeClass *>::`vftable';
@@ -2401,7 +2401,7 @@ retn
 
 // 0x004E71A0 (59 bytes)
 void InitZero_4E71A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E71A0()
 {
   MEMORY[0x8B41C8] = (int)&VectorClass<ScriptTypeClass *>::`vftable';
@@ -2439,7 +2439,7 @@ retn
 
 // 0x004E7220 (59 bytes)
 void InitZero_4E7220() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7220()
 {
   MEMORY[0xA83D80] = (int)&VectorClass<OverlayTypeClass *>::`vftable';
@@ -2477,7 +2477,7 @@ retn
 
 // 0x004E72A0 (59 bytes)
 void InitZero_4E72A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E72A0()
 {
   MEMORY[0xA8EC18] = (int)&VectorClass<SmudgeTypeClass *>::`vftable';
@@ -2515,7 +2515,7 @@ retn
 
 // 0x004E73A0 (59 bytes)
 void InitZero_4E73A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E73A0()
 {
   MEMORY[0xA83C68] = (int)&VectorClass<BuildingTypeClass *>::`vftable';
@@ -2553,7 +2553,7 @@ retn
 
 // 0x004E7420 (59 bytes)
 void InitZero_4E7420() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7420()
 {
   MEMORY[0xA8B218] = (int)&VectorClass<AircraftTypeClass *>::`vftable';
@@ -2591,7 +2591,7 @@ retn
 
 // 0x004E74A0 (59 bytes)
 void InitZero_4E74A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E74A0()
 {
   MEMORY[0xA83CE0] = (int)&VectorClass<UnitTypeClass *>::`vftable';
@@ -2629,7 +2629,7 @@ retn
 
 // 0x004E7520 (59 bytes)
 void InitZero_4E7520() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7520()
 {
   MEMORY[0x8B4150] = (int)&VectorClass<AnimTypeClass *>::`vftable';
@@ -2667,7 +2667,7 @@ retn
 
 // 0x004E75A0 (59 bytes)
 void InitZero_4E75A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E75A0()
 {
   MEMORY[0xA8E348] = (int)&VectorClass<InfantryTypeClass *>::`vftable';
@@ -2705,7 +2705,7 @@ retn
 
 // 0x004E7720 (59 bytes)
 void InitZero_4E7720() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7720()
 {
   MEMORY[0xA8ED28] = (int)&VectorClass<IsometricTileTypeClass *>::`vftable';
@@ -2743,7 +2743,7 @@ retn
 
 // 0x004E77A0 (59 bytes)
 void InitZero_4E77A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E77A0()
 {
   MEMORY[0xA83D98] = (int)&VectorClass<ParticleTypeClass *>::`vftable';
@@ -2781,7 +2781,7 @@ retn
 
 // 0x004E78A0 (59 bytes)
 void InitZero_4E78A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E78A0()
 {
   MEMORY[0xA8E330] = (int)&VectorClass<SuperWeaponTypeClass *>::`vftable';
@@ -2819,7 +2819,7 @@ retn
 
 // 0x004E7A20 (59 bytes)
 void InitZero_4E7A20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7A20()
 {
   MEMORY[0xA8EC78] = (#401 *)&VectorClass<TechnoClass *>::`vftable';
@@ -2857,7 +2857,7 @@ retn
 
 // 0x004E7D80 (59 bytes)
 void InitZero_4E7D80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7D80()
 {
   MEMORY[0xA8ECB8] = (#382 *)&VectorClass<ObjectClass *>::`vftable';
@@ -2895,7 +2895,7 @@ retn
 
 // 0x0058BC70 (88 bytes)
 void InitZero_58BC70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_58BC70()
 {
   if ( (MEMORY[0xABDFB0] & 1) == 0 )
@@ -2947,7 +2947,7 @@ retn
 
 // 0x00612930 (291 bytes)
 void InitZero_612930() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_612930()
 {
   unsigned int v0; // eax
@@ -3143,7 +3143,7 @@ retn
 
 // 0x006429A0 (51 bytes)
 void InitZero_6429A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6429A0()
 {
   MEMORY[0xAC4F58][0] = (int)&ProgressScreenClass::`vftable';
@@ -3174,7 +3174,7 @@ retn
 
 // 0x0065F9F0 (88 bytes)
 void InitZero_65F9F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_65F9F0()
 {
   if ( (MEMORY[0xB04D28] & 1) == 0 )
@@ -3226,7 +3226,7 @@ retn
 
 // 0x0068C370 (59 bytes)
 void InitZero_68C370() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_68C370()
 {
   MEMORY[0xB054D0] = (int)&VectorClass<ColorScheme *>::`vftable';
@@ -3264,7 +3264,7 @@ retn
 
 // 0x006BB2A0 (59 bytes)
 void InitZero_6BB2A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6BB2A0()
 {
   MEMORY[0xB0BC88] = (int)&VectorClass<unsigned long>::`vftable';
@@ -3302,7 +3302,7 @@ retn
 
 // 0x006D1AA0 (88 bytes)
 void InitZero_6D1AA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6D1AA0()
 {
   if ( (MEMORY[0xB0CD58] & 1) == 0 )
@@ -3354,7 +3354,7 @@ retn
 
 // 0x006E4DA0 (59 bytes)
 void InitZero_6E4DA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6E4DA0()
 {
   MEMORY[0xB0E720] = (int)&VectorClass<TagClass *>::`vftable';
@@ -3392,7 +3392,7 @@ retn
 
 // 0x00721680 (59 bytes)
 void InitZero_721680() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_721680()
 {
   MEMORY[0xB0F4E8] = (int)&VectorClass<TiberiumClass *>::`vftable';
@@ -3430,7 +3430,7 @@ retn
 
 // 0x00725510 (59 bytes)
 void InitZero_725510() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725510()
 {
   MEMORY[0xB0F5B8] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -3468,7 +3468,7 @@ retn
 
 // 0x0074C3C0 (88 bytes)
 void InitZero_74C3C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_74C3C0()
 {
   if ( (MEMORY[0xB1D250] & 1) == 0 )
@@ -3520,7 +3520,7 @@ retn
 
 // 0x00750340 (59 bytes)
 void InitZero_750340() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_750340()
 {
   MEMORY[0xB1D378] = (int)&VectorClass<VocClass *>::`vftable';
@@ -3558,7 +3558,7 @@ retn
 
 // 0x00752250 (59 bytes)
 void InitZero_752250() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_752250()
 {
   MEMORY[0xB1D4A0] = (int)&VectorClass<VoxClass *>::`vftable';
@@ -3596,7 +3596,7 @@ retn
 
 // 0x007591C0 (59 bytes)
 void InitZero_7591C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_7591C0()
 {
   MEMORY[0xB45B58] = (int)&VectorClass<MovieHandle *>::`vftable';
@@ -3634,7 +3634,7 @@ retn
 
 // 0x004C14D0 (296 bytes)
 int InitializeRadialGradientTextureHelper_4C14D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_4C14D0()
 {
   int result; // eax
@@ -3845,7 +3845,7 @@ retn
 
 // 0x004879B0 (86 bytes)
 char Isometric_Init_4879B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_4879B0(_DWORD *this)
 {
   int v1; // esi
@@ -3899,7 +3899,7 @@ retn
 
 // 0x00401FC0 (95 bytes)
 int LinkedList_InitLink_401FC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_401FC0(int this)
 {
   _DWORD **i; // esi
@@ -3963,7 +3963,7 @@ jmp     PushFrontLinkedListAlt
 
 // 0x00408970 (242 bytes)
 int LinkedList_InitLink_408970() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_408970(_DWORD *this)
 {
   _DWORD *v1; // edx
@@ -4184,7 +4184,7 @@ retn
 
 // 0x00401B00 (172 bytes)
 void LinkedList_InitLinked_401B00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __thiscall sub_401B00(int *Block)
 {
   int *v1; // esi
@@ -4310,7 +4310,7 @@ retn
 
 // 0x006329C0 (82 bytes)
 void MethodInit_6329C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *__thiscall sub_6329C0(unsigned __int16 *this, void *a2, unsigned __int16 a3)
 {
   _DWORD v5[64]; // [esp+8h] [ebp-100h] BYREF
@@ -4352,7 +4352,7 @@ retn    8
 
 // 0x00632A20 (75 bytes)
 void MethodInit_632A20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *__thiscall sub_632A20(const void *this, void *a2, const void *a3)
 {
   _DWORD v5[64]; // [esp+8h] [ebp-100h] BYREF
@@ -4392,7 +4392,7 @@ retn    8
 
 // 0x00632AC0 (87 bytes)
 int MethodInit_632AC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int *__thiscall sub_632AC0(unsigned int *this, unsigned int *a2, unsigned __int16 a3)
 {
   unsigned int v5[64]; // [esp+8h] [ebp-100h] BYREF
@@ -4435,7 +4435,7 @@ retn    8
 
 // 0x00632B20 (80 bytes)
 void MethodInit_632B20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void *__thiscall sub_632B20(unsigned __int16 *this, void *a2, __int16 a3)
 {
   _DWORD v5[64]; // [esp+8h] [ebp-100h] BYREF
@@ -4476,7 +4476,7 @@ retn    8
 
 // 0x004F38B0 (412 bytes)
 const char* ParseINI_4F38B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_4F38B0(char **Source, _DWORD *a2, _DWORD *a3, _DWORD *a4)
 {
   _DWORD *v6; // ebp
@@ -4699,7 +4699,7 @@ retn    8
 
 // 0x004F3B80 (189 bytes)
 const char* ReadINI_4F3B80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_4F3B80(char **a1, _DWORD *a2)
 {
   char **v4; // eax
@@ -4811,7 +4811,7 @@ retn
 
 // 0x00776CD0 (98 bytes)
 bool SetINI_776CD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __fastcall sub_776CD0(unsigned __int8 *a1, int a2, char *lParam)
 {
   int result; // eax
@@ -4879,7 +4879,7 @@ retn    4
 
 // 0x004A3270 (244 bytes)
 int SetMember28_4A3270() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__thiscall sub_4A3270(int *this, int a2, int a3, int a4)
 {
   int *v5; // ebx
@@ -5047,7 +5047,7 @@ retn    0Ch
 
 // 0x0048B0E0 (269 bytes)
 int Struct_SetMember1_48B0E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__thiscall sub_48B0E0(int *this, int a2, int a3, int Size, int a5)
 {
   int v6; // ebx
@@ -5220,7 +5220,7 @@ retn    10h
 
 // 0x0040C1F0 (59 bytes)
 void ZeroInitGlobals_40C1F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40C1F0()
 {
   MEMORY[0x87F698] = (int)&VectorClass<LightConvertClass *>::`vftable';
@@ -5258,7 +5258,7 @@ retn
 
 // 0x0040C7E0 (59 bytes)
 void ZeroInitGlobals_40C7E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40C7E0()
 {
   MEMORY[0x87F750] = (int)&VectorClass<IsometricTileClass *>::`vftable';
@@ -5296,7 +5296,7 @@ retn
 
 // 0x0040CBC0 (59 bytes)
 void ZeroInitGlobals_40CBC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40CBC0()
 {
   MEMORY[0x87F778] = (int)&VectorClass<ObjectClass *>::`vftable';
@@ -5334,7 +5334,7 @@ retn
 
 // 0x0040D400 (59 bytes)
 void ZeroInitGlobals_40D400() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40D400()
 {
   MEMORY[0x884DC0] = (int)&VectorClass<MixFileClass *>::`vftable';
@@ -5372,7 +5372,7 @@ retn
 
 // 0x0040D480 (59 bytes)
 void ZeroInitGlobals_40D480() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40D480()
 {
   MEMORY[0x884DA8] = (int)&VectorClass<MixFileClass *>::`vftable';
@@ -5410,7 +5410,7 @@ retn
 
 // 0x0040D500 (59 bytes)
 void ZeroInitGlobals_40D500() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40D500()
 {
   MEMORY[0x884DE0] = (int)&VectorClass<MixFileClass *>::`vftable';
@@ -5448,7 +5448,7 @@ retn
 
 // 0x0040E7B0 (59 bytes)
 void ZeroInitGlobals_40E7B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40E7B0()
 {
   MEMORY[0x8872B0] = (int)&VectorClass<ScriptClass *>::`vftable';
@@ -5486,7 +5486,7 @@ retn
 
 // 0x0040EE80 (59 bytes)
 void ZeroInitGlobals_40EE80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40EE80()
 {
   MEMORY[0x887388] = (int)&VectorClass<VoxelAnimClass *>::`vftable';
@@ -5524,7 +5524,7 @@ retn
 
 // 0x0040F4D0 (59 bytes)
 void ZeroInitGlobals_40F4D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_40F4D0()
 {
   MEMORY[0x8874C0] = (#386 *)&VectorClass<WarheadTypeClass *>::`vftable';
@@ -5562,7 +5562,7 @@ retn
 
 // 0x0041D2C0 (59 bytes)
 void ZeroInitGlobals_41D2C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_41D2C0()
 {
   MEMORY[0x889FB8] = (int)&VectorClass<AirstrikeClass *>::`vftable';
@@ -5600,7 +5600,7 @@ retn
 
 // 0x004200C0 (88 bytes)
 void ZeroInitGlobals_4200C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4200C0()
 {
   if ( (MEMORY[0x88A098] & 1) == 0 )
@@ -5652,7 +5652,7 @@ retn
 
 // 0x00420920 (59 bytes)
 void ZeroInitGlobals_420920() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_420920()
 {
   MEMORY[0x88A0F0] = (int)&VectorClass<AlphaShapeClass *>::`vftable';
@@ -5690,7 +5690,7 @@ retn
 
 // 0x00466320 (88 bytes)
 void ZeroInitGlobals_466320() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_466320()
 {
   if ( (MEMORY[0x89DDD0] & 1) == 0 )
@@ -5742,7 +5742,7 @@ retn
 
 // 0x00471790 (59 bytes)
 void ZeroInitGlobals_471790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_471790()
 {
   MEMORY[0x89E0F0] = (int)&VectorClass<CaptureManagerClass *>::`vftable';
@@ -5780,7 +5780,7 @@ retn
 
 // 0x0048E480 (116 bytes)
 int ZeroInitGlobals_48E480() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_48E480()
 {
   MEMORY[0x89E9F0][0] = 128;
@@ -5832,7 +5832,7 @@ retn
 
 // 0x0048E6E0 (88 bytes)
 void ZeroInitGlobals_48E6E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_48E6E0()
 {
   if ( (MEMORY[0x89ED10] & 1) == 0 )
@@ -5884,7 +5884,7 @@ retn
 
 // 0x004A67E0 (52 bytes)
 char ZeroInitGlobals_4A67E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int *__fastcall sub_4A67E0(char a1, int a2)
 {
   int v2; // ecx
@@ -5921,7 +5921,7 @@ retn
 
 // 0x004A6CB0 (59 bytes)
 void ZeroInitGlobals_4A6CB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4A6CB0()
 {
   MEMORY[0x8A0208] = (int)&VectorClass<DiskLaserClass *>::`vftable';
@@ -5959,7 +5959,7 @@ retn
 
 // 0x004C1DD0 (59 bytes)
 void ZeroInitGlobals_4C1DD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4C1DD0()
 {
   MEMORY[0x8A0E88] = (int)&VectorClass<EBolt *>::`vftable';
@@ -5997,7 +5997,7 @@ retn
 
 // 0x004C3C50 (59 bytes)
 void ZeroInitGlobals_4C3C50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4C3C50()
 {
   MEMORY[0x8A3770] = (int)&VectorClass<EgoClass *>::`vftable';
@@ -6035,7 +6035,7 @@ retn
 
 // 0x004C5250 (88 bytes)
 void ZeroInitGlobals_4C5250() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4C5250()
 {
   if ( (MEMORY[0x8A3818] & 1) == 0 )
@@ -6087,7 +6087,7 @@ retn
 
 // 0x004D0790 (88 bytes)
 void ZeroInitGlobals_4D0790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4D0790()
 {
   if ( (MEMORY[0x8B3CD5] & 1) == 0 )
@@ -6139,7 +6139,7 @@ retn
 
 // 0x004D0820 (64 bytes)
 void ZeroInitGlobals_4D0820() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4D0820()
 {
   if ( (MEMORY[0x87F7E8][53563] & 1) == 0 )
@@ -6180,7 +6180,7 @@ retn
 
 // 0x004D31A0 (59 bytes)
 void ZeroInitGlobals_4D31A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4D31A0()
 {
   MEMORY[0x8B3DC0] = (int)&VectorClass<FootClass *>::`vftable';
@@ -6218,7 +6218,7 @@ retn
 
 // 0x004E6520 (59 bytes)
 void ZeroInitGlobals_4E6520() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6520()
 {
   MEMORY[0xA8B200] = (int)&VectorClass<AITriggerTypeClass *>::`vftable';
@@ -6256,7 +6256,7 @@ retn
 
 // 0x004E66A0 (59 bytes)
 void ZeroInitGlobals_4E66A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E66A0()
 {
   MEMORY[0x8B4190] = (int)&VectorClass<BuildingLightClass *>::`vftable';
@@ -6294,7 +6294,7 @@ retn
 
 // 0x004E6720 (59 bytes)
 void ZeroInitGlobals_4E6720() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6720()
 {
   MEMORY[0xA80208] = (int)&VectorClass<ParticleSystemClass *>::`vftable';
@@ -6332,7 +6332,7 @@ retn
 
 // 0x004E6820 (59 bytes)
 void ZeroInitGlobals_4E6820() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6820()
 {
   MEMORY[0xA8EC38] = (int)&VectorClass<WaveClass *>::`vftable';
@@ -6370,7 +6370,7 @@ retn
 
 // 0x004E68A0 (59 bytes)
 void ZeroInitGlobals_4E68A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E68A0()
 {
   MEMORY[0xA8ED40] = (int)&VectorClass<BulletClass *>::`vftable';
@@ -6408,7 +6408,7 @@ retn
 
 // 0x004E69A0 (59 bytes)
 void ZeroInitGlobals_4E69A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E69A0()
 {
   MEMORY[0xA83DC8] = (int)&VectorClass<ParticleClass *>::`vftable';
@@ -6446,7 +6446,7 @@ retn
 
 // 0x004E6A20 (59 bytes)
 void ZeroInitGlobals_4E6A20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6A20()
 {
   MEMORY[0xA8B1E0] = (int)&VectorClass<SmudgeClass *>::`vftable';
@@ -6484,7 +6484,7 @@ retn
 
 // 0x004E6AA0 (59 bytes)
 void ZeroInitGlobals_4E6AA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6AA0()
 {
   MEMORY[0xA8E988] = (int)&VectorClass<TerrainClass *>::`vftable';
@@ -6522,7 +6522,7 @@ retn
 
 // 0x004E6C20 (59 bytes)
 void ZeroInitGlobals_4E6C20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6C20()
 {
   MEMORY[0xA8E390] = (int)&VectorClass<AircraftClass *>::`vftable';
@@ -6560,7 +6560,7 @@ retn
 
 // 0x004E6FA0 (59 bytes)
 void ZeroInitGlobals_4E6FA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E6FA0()
 {
   MEMORY[0x8B4120] = (int)&VectorClass<SideClass *>::`vftable';
@@ -6598,7 +6598,7 @@ retn
 
 // 0x004E7320 (59 bytes)
 void ZeroInitGlobals_4E7320() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7320()
 {
   MEMORY[0xA8E318] = (int)&VectorClass<TerrainTypeClass *>::`vftable';
@@ -6636,7 +6636,7 @@ retn
 
 // 0x004E7620 (59 bytes)
 void ZeroInitGlobals_4E7620() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7620()
 {
   MEMORY[0xA83C80] = (int)&VectorClass<BulletTypeClass *>::`vftable';
@@ -6674,7 +6674,7 @@ retn
 
 // 0x004E76A0 (59 bytes)
 void ZeroInitGlobals_4E76A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E76A0()
 {
   MEMORY[0xA8EB28] = (int)&VectorClass<VoxelAnimTypeClass *>::`vftable';
@@ -6712,7 +6712,7 @@ retn
 
 // 0x004E7820 (59 bytes)
 void ZeroInitGlobals_4E7820() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7820()
 {
   MEMORY[0xA83D68] = (int)&VectorClass<ParticleSystemTypeClass *>::`vftable';
@@ -6750,7 +6750,7 @@ retn
 
 // 0x004E7920 (59 bytes)
 void ZeroInitGlobals_4E7920() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7920()
 {
   MEMORY[0xA83CB8] = (int)&VectorClass<SuperClass *>::`vftable';
@@ -6788,7 +6788,7 @@ retn
 
 // 0x004E79A0 (59 bytes)
 void ZeroInitGlobals_4E79A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E79A0()
 {
   MEMORY[0xA83D50] = (int)&VectorClass<SuperClass *>::`vftable';
@@ -6826,7 +6826,7 @@ retn
 
 // 0x004E7AA0 (59 bytes)
 void ZeroInitGlobals_4E7AA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7AA0()
 {
   MEMORY[0xA8EB00] = (int)&VectorClass<TechnoTypeClass *>::`vftable';
@@ -6864,7 +6864,7 @@ retn
 
 // 0x004E7B20 (59 bytes)
 void ZeroInitGlobals_4E7B20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7B20()
 {
   MEMORY[0xA8E360] = (int)&VectorClass<ObjectClass *>::`vftable';
@@ -6902,7 +6902,7 @@ retn
 
 // 0x004E7BA0 (59 bytes)
 void ZeroInitGlobals_4E7BA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7BA0()
 {
   MEMORY[0xA8E968] = (int)&VectorClass<AbstractTypeClass *>::`vftable';
@@ -6940,7 +6940,7 @@ retn
 
 // 0x004E7C20 (59 bytes)
 void ZeroInitGlobals_4E7C20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7C20()
 {
   MEMORY[0x8B41E0] = (int)&VectorClass<BuildingClass *>::`vftable';
@@ -6978,7 +6978,7 @@ retn
 
 // 0x004E7CA0 (59 bytes)
 void ZeroInitGlobals_4E7CA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7CA0()
 {
   MEMORY[0xA83E00] = (int)&VectorClass<AnimClass *>::`vftable';
@@ -7016,7 +7016,7 @@ retn
 
 // 0x004E7E50 (59 bytes)
 void ZeroInitGlobals_4E7E50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7E50()
 {
   MEMORY[0xA83D24] = (int)&VectorClass<ThemeControl *>::`vftable';
@@ -7054,7 +7054,7 @@ retn
 
 // 0x004E7F70 (59 bytes)
 void ZeroInitGlobals_4E7F70() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7F70()
 {
   MEMORY[0x8B41A8] = (int)&VectorClass<TagClass *>::`vftable';
@@ -7092,7 +7092,7 @@ retn
 
 // 0x004E7FF0 (59 bytes)
 void ZeroInitGlobals_4E7FF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4E7FF0()
 {
   MEMORY[0x8B40C8] = (int)&VectorClass<TagClass *>::`vftable';
@@ -7130,7 +7130,7 @@ retn
 
 // 0x004F5130 (88 bytes)
 void ZeroInitGlobals_4F5130() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_4F5130()
 {
   if ( (MEMORY[0xA8EF60] & 1) == 0 )
@@ -7182,7 +7182,7 @@ retn
 
 // 0x005395C0 (88 bytes)
 void ZeroInitGlobals_5395C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5395C0()
 {
   if ( (MEMORY[0xA9F9A9] & 1) == 0 )
@@ -7234,7 +7234,7 @@ retn
 
 // 0x00539660 (88 bytes)
 void ZeroInitGlobals_539660() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_539660()
 {
   if ( (MEMORY[0xA9F9A8] & 1) == 0 )
@@ -7286,7 +7286,7 @@ retn
 
 // 0x00539700 (88 bytes)
 void ZeroInitGlobals_539700() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_539700()
 {
   if ( (MEMORY[0xA9F9A8] & 2) == 0 )
@@ -7338,7 +7338,7 @@ retn
 
 // 0x0053CAB0 (88 bytes)
 void ZeroInitGlobals_53CAB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_53CAB0()
 {
   if ( (MEMORY[0xA9FAD8] & 1) == 0 )
@@ -7390,7 +7390,7 @@ retn
 
 // 0x00543EB0 (88 bytes)
 void ZeroInitGlobals_543EB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_543EB0()
 {
   if ( (MEMORY[0xAA0E2C] & 1) == 0 )
@@ -7442,7 +7442,7 @@ retn
 
 // 0x00544690 (297 bytes)
 int ZeroInitGlobals_544690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_544690()
 {
   MEMORY[0xABC21C] = 0;
@@ -7557,7 +7557,7 @@ retn
 
 // 0x0054FE00 (88 bytes)
 void ZeroInitGlobals_54FE00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_54FE00()
 {
   if ( (MEMORY[0xABC718] & 1) == 0 )
@@ -7609,7 +7609,7 @@ retn
 
 // 0x00554680 (59 bytes)
 void ZeroInitGlobals_554680() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_554680()
 {
   MEMORY[0xABCA10] = (int)&VectorClass<LightSourceClass *>::`vftable';
@@ -7647,7 +7647,7 @@ retn
 
 // 0x00554700 (88 bytes)
 void ZeroInitGlobals_554700() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_554700()
 {
   if ( (MEMORY[0xABC9C0] & 1) == 0 )
@@ -7699,7 +7699,7 @@ retn
 
 // 0x005569E0 (59 bytes)
 void ZeroInitGlobals_5569E0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5569E0()
 {
   MEMORY[0xABCB78] = (int)&VectorClass<LineTrail *>::`vftable';
@@ -7737,7 +7737,7 @@ retn
 
 // 0x005B3B10 (236 bytes)
 void ZeroInitGlobals_5B3B10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5B3B10()
 {
   int v0; // edx
@@ -7886,7 +7886,7 @@ retn
 
 // 0x005BF810 (59 bytes)
 void ZeroInitGlobals_5BF810() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5BF810()
 {
   MEMORY[0xABF390] = (int)&VectorClass<char const *>::`vftable';
@@ -7924,7 +7924,7 @@ retn
 
 // 0x005D4C90 (59 bytes)
 void ZeroInitGlobals_5D4C90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5D4C90()
 {
   MEMORY[0xABFC90] = (int)&VectorClass<HWND__ *>::`vftable';
@@ -7962,7 +7962,7 @@ retn
 
 // 0x005D4D10 (59 bytes)
 void ZeroInitGlobals_5D4D10() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5D4D10()
 {
   MEMORY[0xABFCB8] = (int)&VectorClass<AcceleratorTracker>::`vftable';
@@ -8000,7 +8000,7 @@ retn
 
 // 0x005F7030 (88 bytes)
 void ZeroInitGlobals_5F7030() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5F7030()
 {
   if ( (MEMORY[0xAC1470] & 1) == 0 )
@@ -8052,7 +8052,7 @@ retn
 
 // 0x005FF210 (59 bytes)
 void ZeroInitGlobals_5FF210() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_5FF210()
 {
   MEMORY[0xAC1678] = (int)&VectorClass<SpotLightClass *>::`vftable';
@@ -8090,7 +8090,7 @@ retn
 
 // 0x006291D0 (59 bytes)
 void ZeroInitGlobals_6291D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6291D0()
 {
   MEMORY[0xAC4910] = (int)&VectorClass<ParasiteClass *>::`vftable';
@@ -8128,7 +8128,7 @@ retn
 
 // 0x00633620 (88 bytes)
 void ZeroInitGlobals_633620() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_633620()
 {
   if ( (MEMORY[0xAC4B61] & 1) == 0 )
@@ -8180,7 +8180,7 @@ retn
 
 // 0x006336C0 (88 bytes)
 void ZeroInitGlobals_6336C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6336C0()
 {
   if ( (MEMORY[0xAC4B60] & 1) == 0 )
@@ -8232,7 +8232,7 @@ retn
 
 // 0x00633760 (88 bytes)
 void ZeroInitGlobals_633760() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_633760()
 {
   if ( (MEMORY[0xAC4B63] & 1) == 0 )
@@ -8284,7 +8284,7 @@ retn
 
 // 0x00633800 (88 bytes)
 void ZeroInitGlobals_633800() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_633800()
 {
   if ( (MEMORY[0xAC4B62] & 1) == 0 )
@@ -8336,7 +8336,7 @@ retn
 
 // 0x006338A0 (88 bytes)
 void ZeroInitGlobals_6338A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6338A0()
 {
   if ( (MEMORY[0xAC4B62] & 2) == 0 )
@@ -8388,7 +8388,7 @@ retn
 
 // 0x00633940 (88 bytes)
 void ZeroInitGlobals_633940() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_633940()
 {
   if ( (MEMORY[0xAC4B62] & 4) == 0 )
@@ -8440,7 +8440,7 @@ retn
 
 // 0x006590D0 (59 bytes)
 void ZeroInitGlobals_6590D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6590D0()
 {
   MEMORY[0xB04A60] = (int)&VectorClass<RadBeam *>::`vftable';
@@ -8478,7 +8478,7 @@ retn
 
 // 0x0065B1A0 (59 bytes)
 void ZeroInitGlobals_65B1A0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_65B1A0()
 {
   MEMORY[0xB04BD0] = (int)&VectorClass<RadSiteClass *>::`vftable';
@@ -8516,7 +8516,7 @@ retn
 
 // 0x00663850 (135 bytes)
 void ZeroInitGlobals_663850() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_663850()
 {
   bool v0; // zf
@@ -8615,7 +8615,7 @@ retn
 
 // 0x006AF160 (59 bytes)
 void ZeroInitGlobals_6AF160() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6AF160()
 {
   MEMORY[0xB0B5F0] = (int)&VectorClass<SlaveManagerClass *>::`vftable';
@@ -8653,7 +8653,7 @@ retn
 
 // 0x006B23F0 (59 bytes)
 void ZeroInitGlobals_6B23F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6B23F0()
 {
   MEMORY[0xB0B650] = (int)&VectorClass<UndoInfoStruct>::`vftable';
@@ -8691,7 +8691,7 @@ retn
 
 // 0x006B6C50 (59 bytes)
 void ZeroInitGlobals_6B6C50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6B6C50()
 {
   MEMORY[0xB0B880] = (int)&VectorClass<SpawnManagerClass *>::`vftable';
@@ -8729,7 +8729,7 @@ retn
 
 // 0x006CAE00 (191 bytes)
 int ZeroInitGlobals_6CAE00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_6CAE00()
 {
   MEMORY[0xB0C038] = 0;
@@ -8794,7 +8794,7 @@ retn
 
 // 0x006D1B50 (88 bytes)
 void ZeroInitGlobals_6D1B50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6D1B50()
 {
   if ( (MEMORY[0xB0CD59] & 1) == 0 )
@@ -8846,7 +8846,7 @@ retn
 
 // 0x006DCFC0 (59 bytes)
 void ZeroInitGlobals_6DCFC0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6DCFC0()
 {
   MEMORY[0xB0E658] = (int)&VectorClass<TActionClass *>::`vftable';
@@ -8884,7 +8884,7 @@ retn
 
 // 0x006E5B20 (59 bytes)
 void ZeroInitGlobals_6E5B20() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_6E5B20()
 {
   MEMORY[0xB0E780] = (int)&VectorClass<TagTypeClass *>::`vftable';
@@ -8922,7 +8922,7 @@ retn
 
 // 0x0071A410 (59 bytes)
 void ZeroInitGlobals_71A410() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_71A410()
 {
   MEMORY[0xB0EC60] = (int)&VectorClass<TemporalClass *>::`vftable';
@@ -8960,7 +8960,7 @@ retn
 
 // 0x0071E660 (59 bytes)
 void ZeroInitGlobals_71E660() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_71E660()
 {
   MEMORY[0xB0F1A0] = (int)&VectorClass<TEventClass *>::`vftable';
@@ -8998,7 +8998,7 @@ retn
 
 // 0x00725310 (59 bytes)
 void ZeroInitGlobals_725310() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725310()
 {
   MEMORY[0xB0F720] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9036,7 +9036,7 @@ retn
 
 // 0x00725410 (59 bytes)
 void ZeroInitGlobals_725410() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725410()
 {
   MEMORY[0xB0F618] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9074,7 +9074,7 @@ retn
 
 // 0x00725490 (59 bytes)
 void ZeroInitGlobals_725490() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725490()
 {
   MEMORY[0xB0F708] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9112,7 +9112,7 @@ retn
 
 // 0x00725590 (59 bytes)
 void ZeroInitGlobals_725590() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725590()
 {
   MEMORY[0xB0F640] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9150,7 +9150,7 @@ retn
 
 // 0x00725610 (59 bytes)
 void ZeroInitGlobals_725610() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725610()
 {
   MEMORY[0xB0F658] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9188,7 +9188,7 @@ retn
 
 // 0x00725690 (59 bytes)
 void ZeroInitGlobals_725690() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725690()
 {
   MEMORY[0xB0F5F0] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9226,7 +9226,7 @@ retn
 
 // 0x00725710 (59 bytes)
 void ZeroInitGlobals_725710() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725710()
 {
   MEMORY[0xB0F5D8] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9264,7 +9264,7 @@ retn
 
 // 0x00725790 (59 bytes)
 void ZeroInitGlobals_725790() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725790()
 {
   MEMORY[0xB0F6C8] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9302,7 +9302,7 @@ retn
 
 // 0x00725810 (59 bytes)
 void ZeroInitGlobals_725810() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725810()
 {
   MEMORY[0xB0F6F0] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9340,7 +9340,7 @@ retn
 
 // 0x00725890 (59 bytes)
 void ZeroInitGlobals_725890() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_725890()
 {
   MEMORY[0xB0F698] = (int)&VectorClass<AbstractClass *>::`vftable';
@@ -9378,7 +9378,7 @@ retn
 
 // 0x007635D0 (59 bytes)
 void ZeroInitGlobals_7635D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_7635D0()
 {
   MEMORY[0xB72608] = (int)&VectorClass<WaypointPathClass *>::`vftable';

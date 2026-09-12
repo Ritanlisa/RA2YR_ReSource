@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x006E3380 (141 bytes)
 char ActionQueue_PushAction_6E3380() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 {
   _DWORD *v5; // eax
@@ -78,7 +78,7 @@ retn    10h
 
 // 0x00646040 (122 bytes)
 float CallQuaternionMathMultiply_646040() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 _DWORD *__fastcall sub_646040(_DWORD *a1, float *a2, float *a3)
 {
   double v4; // st7
@@ -152,7 +152,7 @@ retn    4
 
 // 0x004A4900 (443 bytes)
 int Callqsort_4A4900() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 unsigned int *__fastcall sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
 {
   unsigned int *v5; // ebx
@@ -419,7 +419,7 @@ retn    0Ch
 
 // 0x0056B250 (401 bytes)
 int Compression_ReadLZOPipe_56B250() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_56B250(int *this, int a2)
 {
   int *v2; // esi
@@ -628,7 +628,7 @@ retn    4
 
 // 0x00483710 (112 bytes)
 char Crate_Find_483710() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_483710(int this)
 {
   int BuildingByTiberiumType; // eax
@@ -698,7 +698,7 @@ retn
 
 // 0x0046D650 (446 bytes)
 bool GetSession_46D650() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool sub_46D650()
 {
   bool v0; // bl
@@ -952,7 +952,7 @@ retn
 
 // 0x006E35F0 (228 bytes)
 char LightningStorm_Start_6E35F0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6E35F0(int *this, #375 *a2, int a3, int a4, int a5)
 {
   int v6; // [esp+0h] [ebp-14h] BYREF
@@ -1051,7 +1051,7 @@ retn    10h
 
 // 0x00777F90 (158 bytes)
 int MethodImmGetCompositionStringA_777F90() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_777F90(void *this)
 {
   int result; // eax
@@ -1169,7 +1169,7 @@ retn
 
 // 0x004FBD80 (120 bytes)
 int MethodStu_4FBD80() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_4FBD80(_DWORD *this, int a2, int a3)
 {
   int v3; // ecx
@@ -1275,7 +1275,7 @@ retn    8
 
 // 0x0052D870 (297 bytes)
 int PopGameOptions_52D870() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __stdcall sub_52D870(int hDlg, int a2, unsigned int a3, int a4)
 {
   int v4; // esi
@@ -1485,7 +1485,7 @@ retn    10h
 
 // 0x0049F920 (135 bytes)
 bool ReadVersionInfo_49F920() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool sub_49F920()
 {
   int v0; // esi
@@ -1578,7 +1578,7 @@ retn
 
 // 0x0046D810 (155 bytes)
 int SendSession_46D810() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int sub_46D810()
 {
   int result; // eax
@@ -1657,7 +1657,7 @@ retn
 
 // 0x00689960 (153 bytes)
 const char* TriggerActionQueue_ProcessAll_689960() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_689960(const char *this, const char *a2, char a3)
 {
   unsigned int v3; // edi
@@ -1777,7 +1777,7 @@ retn    8
 
 // 0x0076DED0 (115 bytes)
 int WDTObject_RemoveSession_76DED0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_76DED0(_DWORD *this)
 {
   int v2; // eax
@@ -1847,7 +1847,7 @@ retn
 
 // 0x0076DF50 (115 bytes)
 int WDTObject_RemoveSession_76DF50() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_76DF50(_DWORD *this)
 {
   int v2; // eax
@@ -1917,7 +1917,7 @@ retn
 
 // 0x006A04C0 (242 bytes)
 char WalkLocomotion_MoveCrate_6A04C0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_6A04C0(int this, _DWORD *a2)
 {
   int v2; // eax

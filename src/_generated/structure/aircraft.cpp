@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00413CD0 (68 bytes)
 bool JumpjetLocomotionClass_Method_413CD0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 bool __fastcall sub_413CD0(int a1)
 {
   int v2; // eax
@@ -69,7 +69,7 @@ retn
 
 // 0x004B0DF0 (242 bytes)
 char JumpjetLocomotion_MoveCrate_4B0DF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __thiscall sub_4B0DF0(int this, _DWORD *a2)
 {
   int v2; // eax

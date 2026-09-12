@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x00517110 (169 bytes)
 int MovementAI_MainFootClass_517110() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 int __thiscall sub_517110(int this)
 {
   int v2; // edi
@@ -120,7 +120,7 @@ retn
 
 // 0x00600AF0 (369 bytes)
 void RemoveLinked_600AF0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 void __cdecl sub_600AF0()
 {
   unsigned int v0; // eax

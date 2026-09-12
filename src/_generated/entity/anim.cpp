@@ -8,7 +8,7 @@ namespace gamemd {
 
 // 0x004270D0 (408 bytes)
 char AnimFileddtorHelper_4270D0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+// [Task18 legacy stub - canonical pending record in src/e4/]
 char __fastcall sub_4270D0(int a1, unsigned int a2, __int16 *a3, int a4, char *a5, int a6)
 {
   signed int v7; // ecx
