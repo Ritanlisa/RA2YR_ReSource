@@ -1637,7 +1637,7 @@ idaapi 导出超时未跑全量刷新）；括号 HEAD 对比零新增（51 文�
 
 ---
 
-## 执行日志 — 2026-09-12 G6 会话：E4Recv 合成类机制 + 舰队量产（completed 3,736 → 6,513+）
+## 执行日志 — 2026-09-12 G6 会话：E4Recv 合成类机制 + 舰队量产（completed 3,736 → 7,548）
 
 ### 证据补全（#56 族根因修复 + E4Recv 机制落地）
 
@@ -1691,6 +1691,8 @@ glob 序先于 e4，按名抢占 sub_* 匹配 → 假 translation-incomplete；g
 | 3 | addr5B/4A/62/43/5A/76/77/4F | **682**（addr76 161/162） |
 | 4 | addr7D/CreateTeamCommand/Jumpjet/4C/55/75 | **978** |
 | 5 | addr5C/65/7C/4E/6C/54/47 | **542** |
+| 6 | addr5F/53/6B/72/41/5D/VectorClass | **482** |
+| 7 | addr64/69/Network/48/71/AbstractClass/UI/6A | **555** |
 
 每波后固定动作：括号扫描（全平衡）/ phantom-s 扫描 / annotations_audit /
 audit_consistency（3 normalized 基线维持）/ 提交重锚。
@@ -1699,9 +1701,9 @@ audit_consistency（3 normalized 基线维持）/ 提交重锚。
 
 | 指标 | 会话前 | 会话后 |
 |---|---|---|
-| MCP completed | 3,736 | **6,513+**（波 6 运行中） |
-| MCP pending | 14,445 | **~11,700**（含 Task18 幻影清偿 -1,203） |
-| e4 pending | 11,145 | **8,325**（波 6 后续降） |
+| MCP completed | 3,736 | **7,548**（7 波全 CFG 验证） |
+| MCP pending | 14,445 | **~10,600**（含 Task18 幻影清偿 -1,203） |
+| e4 pending | 11,145 | **7,288** |
 | 偏移重写 | 5,692 | **6,367** |
 | member 形态 | 4,142 | **5,379**（+E4Recv 578 + typed 45 + 参数找回） |
 | 一致性 | 38/3 | 69 raw / **3 normalized**（raw 增量为 typed 真类类限定自愈型） |
