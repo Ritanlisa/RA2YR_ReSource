@@ -1634,3 +1634,83 @@ idaapi 导出超时未跑全量刷新）；括号 HEAD 对比零新增（51 文�
 | 偏移重写 | 10,075 / unmapped 5,430 | **9,887 / 5,425**（分母缩小系已译体退出） |
 | 一致性 | 38/3 | 38/3（基线维持） |
 | auto-fill-baseline | 47f8961a | **16fa3497**（重锚不清账） |
+
+---
+
+## 执行日志 — 2026-09-12 G6 会话：E4Recv 合成类机制 + 舰队量产（completed 3,736 → 6,513+）
+
+### 证据补全（#56 族根因修复 + E4Recv 机制落地）
+
+**根因（gen_e4_materialize.synth_signature 双缺陷）**：
+1. **多行签名**：v3 伪码签名折行（首行止于 `(`），单行括号正则解析失败返回 None
+   → 自由形态丢 this + 丢全部参数（1,194 free-with-this 实证）；join 上限二次坑
+   （8→30：10+ 参数的 `?$Blit` 模板族 thiscall）。
+2. **thiscall 首参命名**：IDA 把 this 命名为 Block/FileName/a1 等 → 按位次剥离
+   + G6b 词边界归一为 this（记录内标识符唯一作用于该参数，安全）。
+
+**E4Recv 机制（Gap2Recv 复用，路线图既定项落地）**：
+- ownerless-thiscall：typed this 且类在 member_lookup → 真类（45）；否则
+  `E4Recv_<HEX>` 合成类（578，其中 58 类带 Vf 槽位）。
+- **偏移提取换用 `efv_ida_events.make_ida_leaf`**（verify 同源 leaf，含
+  _IDA_VTABLE_INDIRECT 通用派发形态）——旧 leaf 提取不到 `(*CAST)(*this+N))`
+  形态 → Vf 缺失 → cpp/IDA 事件不对称（leaf 返回事件字符串列表非元组）。
+- 三方落盘：member_lookup M<off> + vtable_offsets Vf<off> +
+  signals._member_by_name（cpp 侧 Resolver 从 signals 解析 this->M12）。
+- E2 头补 `int VfN(int, ...);` 变参槽位声明（任意实参可编译，事件层表驱动）。
+- TYPE_MAP 复合形态前置（`unsigned __int8` → `unsigned char`，曾产
+  "unsigned signed char *" 非法类型）。
+
+**验证器关键修复**：find_cpp_function 跳过 `_generated`（Task 17/18 存根
+glob 序先于 e4，按名抢占 sub_* 匹配 → 假 translation-incomplete；gap2 未踩坑
+因其记录名非 sub_*）。共享验证器修改按规程跑 completed 池抽样回归
+（117/120 PASS；3 FAIL 经 stash 对照证实既有）。
+
+**Task18 幻影 pending 清零**：src/_generated 1,203 个存根带同款 marker +
+尺寸后缀地址注解（不匹配 scan_src_addrs 裸地址正则）→ 与 e4 记录双计 pending。
+全量核对 1,203/1,203 已有 e4 规范记录后剥除 marker。
+
+### 舰队词汇表（g5_fleet 移植 fleetA，波 1 暴露的简化缺陷回补）
+
+| 词汇 | 形态 | 译法 |
+|---|---|---|
+| vtable 安装 | `*this = &X<T>::vftable'` | `*(void**)this = vt_X`（0 事件） |
+| 局部目标安装 | `v9[0] = (int)&X::vftable'` | `v9[0] = (unsigned int)vt_X`（verify 兜底） |
+| vtable 派发 | `(*CAST)(*this+N))(this,args)` | `this->VfN(args)`（CALL(vfptr+N) 表驱动） |
+| fp 类型声明 | `char (__thiscall *v4)(...)` | 透传（合法局部声明；守卫恢复 fleetA 原版） |
+
+**事故与修复（本会话自身失误）**：派发实参带前导空白时 `args[len(a0):]` 切片
+产幽灵首参 `s`（`this->Vf4(s, a2, ...)`——事件层无感知但代码错误）——停止在跑
+批次 → 修复（`args.split(',',1)[1]`）→ 27 条污染确定性修复 + 复验 PASS。
+
+### 波次成绩（全 CFG 验证口径）
+
+| 波 | 桶 | 标记 |
+|---|---|---|
+| 1 | addr49 | **138/138**（100%）+ 7 前置 |
+| 2 | addr63/CreateTClassFactory/addr40/7B/6E/42 | **432**（addr42 104/104、addr7B 80/80） |
+| 3 | addr5B/4A/62/43/5A/76/77/4F | **682**（addr76 161/162） |
+| 4 | addr7D/CreateTeamCommand/Jumpjet/4C/55/75 | **978** |
+| 5 | addr5C/65/7C/4E/6C/54/47 | **542** |
+
+每波后固定动作：括号扫描（全平衡）/ phantom-s 扫描 / annotations_audit /
+audit_consistency（3 normalized 基线维持）/ 提交重锚。
+
+### 度量变化
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 3,736 | **6,513+**（波 6 运行中） |
+| MCP pending | 14,445 | **~11,700**（含 Task18 幻影清偿 -1,203） |
+| e4 pending | 11,145 | **8,325**（波 6 后续降） |
+| 偏移重写 | 5,692 | **6,367** |
+| member 形态 | 4,142 | **5,379**（+E4Recv 578 + typed 45 + 参数找回） |
+| 一致性 | 38/3 | 69 raw / **3 normalized**（raw 增量为 typed 真类类限定自愈型） |
+
+### 遗留与下一步
+
+- **剩余跳过主体**：too-long（>60 行体，需分块策略或 max-lines 提升）、
+  bare-this-novfptr、residual-this-cast（fetch 型 `v4 = (cast)(*this+N)` 局部
+  变量取槽再调用族）、全局对象裸算术审计（`*((char*)g_Scenario + N)` 类）、
+  未命名全局长尾（#67-71 族）。
+- gap2 长尾（too-long 169 / bare-this-novfptr 143）待词汇表收益评估后重试。
+- addr77 波 3 有 8 回滚未诊断（diag 被后续桶覆盖）。

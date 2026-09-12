@@ -150,19 +150,16 @@
 // 0x40B120
 int VectorClass::Clear(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass::_vt06(_DWORD *this, int a2, int a3)
 {
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-
-  v3 = *(this + 1); /*0x40b120*/
-  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x40b127*/
-  v5 = v3 + 8 * a3; /*0x40b12a*/
-  *(_DWORD *)a2 = v4; /*0x40b131*/
-  *(_BYTE *)(a2 + 4) = *(_BYTE *)(v5 + 4); /*0x40b136*/
-  return a2; /*0x40b139*/
+    int v3;
+    int v4;
+    int v5;
+    v3 = this->Items;
+    v4 = *(int *)(v3 + 8 * a3);
+    v5 = v3 + 8 * a3;
+    *(int *)a2 = v4;
+    *(char *)(a2 + 4) = *(char *)(v5 + 4);
+    return a2;
 }
 }
 
@@ -793,22 +790,16 @@ _DWORD *__thiscall VectorClass_cptr_MultiMission::j_vt00(NullModemConnClass *thi
 namespace gamemd {
 unsigned int * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt06(
-        _DWORD *this,
-        _DWORD *a2,
-        int a3)
 {
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-
-  v3 = *(this + 1); /*0x4e0250*/
-  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x4e0257*/
-  v5 = v3 + 8 * a3; /*0x4e025a*/
-  *a2 = v4; /*0x4e0261*/
-  a2[1] = *(_DWORD *)(v5 + 4); /*0x4e0266*/
-  return a2; /*0x4e0269*/
+    int v3;
+    int v4;
+    int v5;
+    v3 = this->Items;
+    v4 = *(int *)(v3 + 8 * a3);
+    v5 = v3 + 8 * a3;
+    *a2 = v4;
+    *((int*)(a2) + 1) = *(int *)(v5 + 4);
+    return a2;
 }
 }
 } // namespace gamemd
@@ -973,15 +964,11 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 namespace gamemd {
 unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt05(
-        int this,
-        int a2)
 {
-  if ( this->IsInitialized ) /*0x4e09e0*/
-    return (unsigned int)(a2 - this->Items) >> 3; /*0x4e09f5*/
-  else
-    return 0; /*0x4e09e7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -990,21 +977,17 @@ unsigned int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteD
 namespace gamemd {
 void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::sub_4E0AB0(
-        int this)
 {
-  int v2; // eax
-
-  v2 = this->Items; /*0x4e0ab6*/
-  this->Count = 0; /*0x4e0ab9*/
-  if ( v2 && this->IsAllocated ) /*0x4e0ac0*/
+    int v2;
+    v2 = this->Items;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x4e0ad1*/
-    this->Items = 0; /*0x4e0ad9*/
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x4e0adc*/
-  this->Capacity = 0; /*0x4e0adf*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1013,15 +996,11 @@ void __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 namespace gamemd {
 unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetItemIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::sub_4E0AF0(
-        int this,
-        int a2)
 {
-  if ( this->IsInitialized ) /*0x4e0af0*/
-    return (unsigned int)(a2 - this->Items) >> 3; /*0x4e0b05*/
-  else
-    return 0; /*0x4e0af7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1231,18 +1210,16 @@ DynamicVector *__thiscall VectorClass_DistributionObject_ptr_CellClass___Discret
 namespace gamemd {
 int VectorClass_K_14::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_14_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6befd7*/
-    return -2147467261; /*0x6befd9*/
-  *a3 = 0; /*0x6beff6*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf012*/
-    *a3 = a1; /*0x6bf016*/
-  if ( !*a3 ) /*0x6bf018*/
-    return -2147467262; /*0x6bf020*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf02c*/
-  return 0; /*0x6befde*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1251,18 +1228,16 @@ int __stdcall VectorClass_K_14_::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_K_20::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_20_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bf157*/
-    return -2147467261; /*0x6bf159*/
-  *a3 = 0; /*0x6bf176*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf192*/
-    *a3 = a1; /*0x6bf196*/
-  if ( !*a3 ) /*0x6bf198*/
-    return -2147467262; /*0x6bf1a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf1ac*/
-  return 0; /*0x6bf15e*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1271,18 +1246,16 @@ int __stdcall VectorClass_K_20_::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_K_26::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_26_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bf2d7*/
-    return -2147467261; /*0x6bf2d9*/
-  *a3 = 0; /*0x6bf2f6*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf312*/
-    *a3 = a1; /*0x6bf316*/
-  if ( !*a3 ) /*0x6bf318*/
-    return -2147467262; /*0x6bf320*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf32c*/
-  return 0; /*0x6bf2de*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1291,18 +1264,16 @@ int __stdcall VectorClass_K_26_::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_K_32::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_32_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bf457*/
-    return -2147467261; /*0x6bf459*/
-  *a3 = 0; /*0x6bf476*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf492*/
-    *a3 = a1; /*0x6bf496*/
-  if ( !*a3 ) /*0x6bf498*/
-    return -2147467262; /*0x6bf4a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf4ac*/
-  return 0; /*0x6bf45e*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1311,18 +1282,16 @@ int __stdcall VectorClass_K_32_::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_K_38::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_38_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bf5d7*/
-    return -2147467261; /*0x6bf5d9*/
-  *a3 = 0; /*0x6bf5f6*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf612*/
-    *a3 = a1; /*0x6bf616*/
-  if ( !*a3 ) /*0x6bf618*/
-    return -2147467262; /*0x6bf620*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf62c*/
-  return 0; /*0x6bf5de*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1331,18 +1300,16 @@ int __stdcall VectorClass_K_38_::_vt00(int a1, const void *a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_K_44::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_44_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bf757*/
-    return -2147467261; /*0x6bf759*/
-  *a3 = 0; /*0x6bf776*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bf792*/
-    *a3 = a1; /*0x6bf796*/
-  if ( !*a3 ) /*0x6bf798*/
-    return -2147467262; /*0x6bf7a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf7ac*/
-  return 0; /*0x6bf75e*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1374,18 +1341,16 @@ _DWORD *__thiscall sub_4A2820(_DWORD *this)
 namespace gamemd {
 int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_K_8_::_vt00(int a1, const void *a2, _DWORD *a3)
 {
-  if ( !a3 ) /*0x6bee57*/
-    return -2147467261; /*0x6bee59*/
-  *a3 = 0; /*0x6bee76*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6bee92*/
-    *a3 = a1; /*0x6bee96*/
-  if ( !*a3 ) /*0x6bee98*/
-    return -2147467262; /*0x6beea0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6beeac*/
-  return 0; /*0x6bee5e*/
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1758,14 +1723,11 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
 namespace gamemd {
 void * VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6930(void *this, int a2)
 {
-  void *v3; // [esp+0h] [ebp-4h] BYREF
-
-  v3 = this; /*0x4f6930*/
-  sub_429360((int)&unk_89A29C, &unk_7E36C0, &v3); /*0x4f6940*/
-  return v3; /*0x4f694a*/
+    void *v3;
+    v3 = this;
+    sub_429360((int)&punk, &DataGlobal_7E36C0, &v3);
+    return v3;
 }
 }
 } // namespace gamemd
