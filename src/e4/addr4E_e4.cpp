@@ -811,24 +811,21 @@ LABEL_6:
 namespace gamemd {
 LRESULT GetComboBoxSelected(ReferenceCounted * aP0, int nIDDlgItem, WPARAM wParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall GetComboBoxSelected(ReferenceCounted *aP0, int nIDDlgItem, WPARAM wParam)
 {
-  ReferenceCounted *v3; // eax
-  LRESULT result; // eax
-
-  v3 = (ReferenceCounted *)wParam; /*0x4e4170*/
-  if ( wParam == -1 ) /*0x4e4184*/
-    v3 = (ReferenceCounted *)SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4191*/
-  result = SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x150u, (WPARAM)v3, 0); /*0x4e419d*/
-  if ( result < -3 || result > 9 ) /*0x4e41aa*/
+    ReferenceCounted *v3;
+    LRESULT result;
+    v3 = (ReferenceCounted *)wParam;
+    if ( wParam == -1 )
+    v3 = (ReferenceCounted *)SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x147u, 0, 0);
+    result = SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x150u, (WPARAM)v3, 0);
+    if ( result < -3 || result > 9 )
   {
-    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8072] ) /*0x4e41b4*/
-      return (*(LRESULT (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player.__pad_5568[8072] + 40))(*(_DWORD *)&HouseClass_Player.__pad_5568[8072]); /*0x4e41b8*/
+    if ( *(int *)&HouseClass_Player.__pad_5568[8072] )
+    return (*(LRESULT (__thiscall **)(int))(**(int **)&HouseClass_Player.__pad_5568[8072] + 40))(*(int *)&HouseClass_Player.__pad_5568[8072]);
     else
-      return -2; /*0x4e41be*/
+    return -2;
   }
-  return result; /*0x4e41a2*/
+    return result;
 }
 }
 } // namespace gamemd

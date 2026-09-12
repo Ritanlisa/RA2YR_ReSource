@@ -984,10 +984,8 @@ int __fastcall SeekAudioStream(int a1, DSurface *aP1, DSurface *aP2, int a4, uns
 namespace gamemd {
 int E4Recv_7C35B0::sub_7C35B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7C35B0(unsigned __int16 *this)
 {
-  return *(this + 906); /*0x7c35b9*/
+    return this->M3624;
 }
 }
 } // namespace gamemd
@@ -996,13 +994,11 @@ int __thiscall sub_7C35B0(unsigned __int16 *this)
 namespace gamemd {
 int E4Recv_7C3670::sub_7C3670()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7C3670(_DWORD *this)
 {
-  *(this + 452) = -1; /*0x7c3673*/
-  *(this + 450) = -1; /*0x7c3679*/
-  *(this + 451) = -1; /*0x7c367f*/
-  return -1; /*0x7c3685*/
+    this->M1808 = -1;
+    this->M1800 = -1;
+    this->M1804 = -1;
+    return -1;
 }
 }
 } // namespace gamemd
@@ -4025,10 +4021,8 @@ ObjectClass *__thiscall ___Gtype_info_UAEPAXI_Z(type_info *this, char a2)
 namespace gamemd {
 BOOL E4Recv_7C8AD3::__8type_info_QBEHABV0__Z(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall __8type_info_QBEHABV0__Z(const char *this, int a2)
 {
-  return strcmp((const char *)(a2 + 9), this + 9) == 0; /*0x7c8aeb*/
+    return strcmp((const char *)(a2 + 9), this + 9) == 0;
 }
 }
 } // namespace gamemd
@@ -4037,10 +4031,8 @@ BOOL __thiscall __8type_info_QBEHABV0__Z(const char *this, int a2)
 namespace gamemd {
 BOOL E4Recv_7C8AEE::__9type_info_QBEHABV0__Z(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall __9type_info_QBEHABV0__Z(const char *this, int a2)
 {
-  return strcmp((const char *)(a2 + 9), this + 9) != 0; /*0x7c8b07*/
+    return strcmp((const char *)(a2 + 9), this + 9) != 0;
 }
 }
 } // namespace gamemd
@@ -4049,10 +4041,8 @@ BOOL __thiscall __9type_info_QBEHABV0__Z(const char *this, int a2)
 namespace gamemd {
 BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall _before_type_info__QBEHABV1__Z(type_info *this, const struct type_info *a2)
 {
-  return strcmp((const char *)a2 + 9, (const char *)this + 9) > 0; /*0x7c8b26*/
+    return strcmp((const char *)(a2) + 9, (const char *)(this) + 9) > 0;
 }
 }
 } // namespace gamemd
@@ -4061,10 +4051,8 @@ BOOL __thiscall _before_type_info__QBEHABV1__Z(type_info *this, const struct typ
 namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_7C8B29(char *this)
 {
-  return this + 8; /*0x7c8b2c*/
+    return this + 8;
 }
 }
 } // namespace gamemd
@@ -5729,12 +5717,10 @@ void __thiscall j_Exception_Destructor_3(void *this)
 namespace gamemd {
 exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-exception *__thiscall sub_7CAC34(exception *this, struct exception *a2)
 {
-  __0exception_QAE_ABV0__Z(this, a2); /*0x7cac3b*/
-  *(_DWORD *)this = &bad_cast::`vftable'; /*0x7cac40*/
-  return this; /*0x7cac48*/
+    __0exception_QAE_ABV0__Z(this, a2);
+    *(void**)this = vt_bad_cast;
+    return this;
 }
 }
 } // namespace gamemd

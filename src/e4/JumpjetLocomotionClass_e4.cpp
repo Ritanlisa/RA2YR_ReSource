@@ -2501,6 +2501,7 @@ int __stdcall JumpjetLocomotionClass::sub_516BF0(_BYTE *a1)
 bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
 {
 {
+// 0x55a930
     return StreamClass::GetDirty(a1)
     || (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 456))(*(int *)(a1 + 8)) > 0;
 }
