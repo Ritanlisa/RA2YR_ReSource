@@ -4,15 +4,17 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-11 G5 会话更新：证据补全大轮 + 舰队波 +1,259）**：
+> **执行状态首查表（2026-09-13 G7 会话更新：v4 快照重锚 + 证据大轮 + 舰队波 1 +776）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
+> | **G7 证据补全** | ✅ **完成（2026-09-13，提交 0103a195 + 重锚）** | **full_export v4 重导出**（19,088 函数；live IDA 已把 stru mega-blob 归一化 MEMORY[绝对地址]，v3 陈旧形态实证 0x87F7E8[539944] vs 0xB0FE64）；**gap2 pending 活码刷新 1,812/1,838**（.omo/g7_gap2_refresh.py；25 截断块诚实保留）；e4 refresh 7,288 已译记录保留 + E1 +857 extern；**171 缺失全局 DataGlobal 批产**（4 个 90,160B mega-blob = EventClass/AnimClass 族 IDA 巨型 struct 模型破案）；**til 语义成员合并 +2,136/68 类**（RulesClass +505/HouseClass +247/AircraftClass +159）；**g5_fleet 五项升级**——DECL_RE 误吃 `break;`→`br eak;`（mangled-keyword 根因，305 解锁）、bare-`*this`→`*(void**)this` 双侧 0 事件（1,367 解锁）、`*(cast*)(this+N)` 字面偏移对齐验证器 T8 语义、MEMORY 全局 vtable 安装词汇、派生类成员回退；generator-ready 2,467→3,805 |
+> | **G7 舰队波 1** | ✅ **completed 7,548 → 8,324（+776 全 CFG 验证，提交 3ff45951 + 重锚）** | 14 桶（addr4E/74/46/73/58/51/66/68 + gap2 六桶 v4 活码首批）；addr 桶 PASS 95-100%、gap2 桶 52-81%（FAIL 自动回滚）；**ida_cache v4 播种 17,270**（首轮 0/106 全灭根因 = IDA MCP 离线 exit 2 非翻译问题；v4=live 渲染，播种后**离线验证能力恢复**）；pending 9,385 → **8,600** |
 > | **G5 证据补全** | ✅ **完成（2026-09-11，提交 0db19f5e + 重锚）** | **10,744 DataGlobal 全局批产**（pending 块引用全扫 + IDA 批查，解锁 #67-71/#57）；**#50 gap2 重生成**（520 Gap2Recv 接收者类 + member_lookup/vtable_offsets 用验证器 leaf 保证偏移一致 + signals._member_by_name 383 类）；#51 两块伪码 live 置换；vtable 槽位 +614/213 类（自有表锚定，AbstractClass 修正 0x7E1F50，回归 119/120）；#62 phantom 8 条补建；**验证器 ns 前缀修复**（单行 namespace+def 类提取）；OO refresh 2,273 保留 |
 > | **G5 舰队波** | ✅ **completed 2,477 → 3,736（+1,259 全 CFG 验证）** | g5_fleet.py 直驱（fleetA 规则泛化）：addr7C **414**/addr40 245/addr77 209/addr72 149/addr4E 96/addr49 46/gap2 ~91（Gap2Recv 机制首批）；PASS 率 addr 桶 97-100%、gap2 59%；生成器加固（三元/memory-chain/断词/残留 cast 跳过 + signals↔extern 同步 1,330）；波后括号零新增/审计基线维持 |
 > | **G4 证据补全轮** | ✅ 完成（2026-09-10，72175ec7） | vtable_offsets +208 类 + 639 vt_ 全局 + CRT 87 全局 + #26 FactoryClass 破案 |
 > | **G3 舰队波 1** | ✅ +1,360（VectorClass 桶） | 直驱范式确立 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **14,445**；completed **3,736**。续波队列：gap2 长尾（too-long 169/bare-this-novfptr 143）→ e4 free-with-this 1,189（#56 族，Gap2Recv 机制复用=改 synth_signature）→ addr7D/CreateTeam/Jumpjet 等类桶 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **8,600**；completed **8,324**（G7 波 1 后）。续波队列：剩余 gap2 五桶 + addr7C/7D/72/40/VectorClass 长尾 → too-long 1,990（>60 行，max-lines 提升需 verify 风险评估）→ residual-this-cast 主体（核心类真无名区 = A1/B4 考古前置）→ free-this/audit/三元长尾 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -89,7 +91,7 @@
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-09 F+G1 会话刷新）
+## 0. 当前基线（2026-09-13 G7 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -99,15 +101,15 @@
 | IDB 落盘 | this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449 |
 | til struct | 1,474（1,252 全布局 + 20 观测建 + 202 最小 vfptr） |
 | **class_layouts** | **1,281 类**（F1：+247 til 导入 + 4,578 填洞 + 138 容器语义 + til-pad 伪条目清除 175） |
-| **偏移重写** | **rewritten 9,215 / unmapped 6,204**（F 线；沉默 owner 全部入场） |
+| **偏移重写** | **rewritten 6,300 / unmapped 5,472**（v4 refresh 口径；分母随已译体退出） |
 | 反编译 | 19,067 函数全部可反编译 |
-| 快照 | full_export v3（19,088 函数 100%；⚠ 长函数截断 ~100 个，翻译时 get_context live 拉取） |
+| 快照 | **full_export v4**（09-13 重导出，mega-blob 区 live 归一化；⚠ 截断 ~100 个 + gap2 内 25 块标记保留，翻译时 get_context live 拉取）；v3 归档 full_export_v3_20260913 |
 | **src 函数体覆盖** | ~17,870 / 19,133（93.5%；src/e4 内已译 **798** / pending 13,837） |
-| **MCP completed** | **919**（E5 校准 154 + E6/G1 收割 524 + 历史真翻译；全部 CFG 验证口径） |
-| **MCP pending** | **17,263**（真实总账；单语句收割池近枯竭，剩余主体 = 2-8 语句块 + 占位类） |
+| **MCP completed** | **8,324**（G3-G7 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
+| **MCP pending** | **8,600**（真实总账；gap2 已换 v4 活码，generator-ready 3,805；剩余主体 = too-long 1,990 + 核心类无名区 residual） |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名）——A2 |
-| 命名不一致 | 38 raw / **3 normalized**（基线维持） |
-| 基线/标签 | auto-fill-baseline = **adf32f61**（G1 提交；重锚不清账） |
+| 命名不一致 | 69 raw / **3 normalized**（基线维持；raw 增量系 typed 真类类限定自愈型） |
+| 基线/标签 | auto-fill-baseline = **3ff45951**（G7 波 1；重锚不清账） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -1716,3 +1718,116 @@ audit_consistency（3 normalized 基线维持）/ 提交重锚。
   未命名全局长尾（#67-71 族）。
 - gap2 长尾（too-long 169 / bare-this-novfptr 143）待词汇表收益评估后重试。
 - addr77 波 3 有 8 回滚未诊断（diag 被后续桶覆盖）。
+
+---
+
+## 执行日志 — 2026-09-13 G7 会话：v4 快照重锚 + 证据大轮 + 舰队波 1（completed 7,548 → 8,324）
+
+### 关键发现：v3 快照对 mega-blob 区域已陈旧（本会话最重要的考古结论）
+
+- **实证链**：gap2 块内嵌伪码 `MEMORY[0x87F7E8][539944]`（v3 渲染）vs live IDA
+  反汇编 `dword ptr HouseClass_Player.__pad_5568+59D4h`（= 0x87A280+0x5568+0x59D4）
+  vs live 反编译 `MEMORY[0xB0FE64]`——v3 时代的巨型 blob 缩放索引（`dword_A8ED54[132164]`
+  / `stru_X.__pad_Y[539944]`）在当前 IDB 已全部归一化为**绝对地址 MEMORY 形态**。
+- **4 个 90,160B blob 破案**：stru_87C374/830620/B05488/89E138/B1D188 实为
+  EventClass/AnimClass 等被 IDA 建成巨型 struct 的 mega-blob 模型（til size 90160
+  与 blob 尺寸吻合）。翻译这些区域的函数必须以 v4 为准。
+- **处置**：full_export v4 重导出（19,088 函数，归档 v3 → `full_export_v3_20260913`）；
+  gap2 pending 块活码刷新（e4 由 gen_e4_materialize refresh 覆盖，gap2 需专用刷新器）。
+
+### gap2 刷新器（.omo/g7_gap2_refresh.py）与两次事故修复
+
+gap2 文件混有舰队已译体，不能走 gen_gap2_defs 重生成（会清掉翻译）——专用刷新器
+只换 marker 块内伪码，def/marker/已译体全保留。
+
+1. **事故一（就地拼接索引漂移）**：`out[i+1:k] = body` 用原始索引在已变更列表上
+   切片，首个长度变化后所有后续拼接错位，吞掉 1,047 个 marker。git 恢复 + 改为
+   **顺序构建输出**（append-only）。
+2. **事故二（drop 尾括号）**：误以为 v4 伪码的 `}` 与文件闭合重复而丢弃——实际
+   伪码自含闭合（def 的 namespace/函数双括号由文件尾部 `} }` 配对）。恢复
+   drop 前逻辑，逐块括号平衡验证。
+3. **边界判据**：块内嵌的 `// 0x...` 行（v3 跨界粘连伪码）不是函数边界——
+   addr 注解必须后跟 `namespace` def 行才算；25 个 v4 截断块（`[NNNN chars total]`）
+   诚实保留原状。
+4. 终态：**1,812/1,838 刷新，marker 守恒 1,838，逐块括号平衡 0 失衡**
+   （string-aware 计数器 `.omo/g7_brace_check.py`）。
+
+### 证据补全产出
+
+| 项 | 产出 |
+|---|---|
+| 缺失全局 | 171 DataGlobal extern（扫描 9,385 pending 引用 vs e4_globals 差集 → IDA 批查；大 blob 按 `unsigned char[N]`） |
+| til 语义成员 | +2,136 成员 / 68 类入 member_lookup + signals._member_by_name（跳过 `__pad_*`/`field_*` 门控风险名；RulesClass +505/HouseClass +247/AircraftClass +159/FootClass +155/ScenarioClass +131/CellClass +54——CellClass 28/36/76/92/108 等 til 已有语义名，#53 时代 pad 区已被 til 演化填名） |
+| E1 refresh | +857 extern（v4 引用形态） |
+| OO 重写 | 6,300 rewritten / 5,472 unmapped（refresh 口径） |
+
+### g5_fleet 生成器五项升级（generator-ready 2,467 → 3,805，+54%）
+
+| 修复 | 解锁 | 根因/证据 |
+|---|---|---|
+| DECL_RE 关键字守卫 | 305（mangled-keyword 全灭） | `break;` 被声明正则吃成 type='br' name='eak' → `br eak;`；`return X;` 恰好原样往返所以历史无恙 |
+| bare `*this` → `*(void**)this` | 1,367（bare-this-novfptr 类别消失） | 验证器两侧 leaf 均无裸 `*this` 模式（IDA 无正则命中 / cpp 无 `this->` token）→ 双侧 0 事件对称；替代旧 `this->vfptr` 词汇（那会产 READ(member,0) 单侧事件） |
+| `*(CAST)(this + N)` 字面偏移 | ~521 | rep_paren 旧按 cast 宽度 ×4 缩放，与验证器 _IDA_CAST_PAREN 的 T8/G4 字面语义相悖（`*(_DWORD *)(this + 1532)` 真值 1532 非 6128）；cast 列表 1:1 对齐验证器（double/_QWORD 移除防单侧事件） |
+| MEMORY 全局安装词汇 | ~75（vftable-ref 480→405） | `MEMORY[0xA] = (int)&X<T>::vftable'` → `NameA = (unsigned int)vt_X;`（vt 符号 639 全解析） |
+| 派生类成员回退 + slot 别名 | ~50 | VectorClass 静态类型 receiver 写 DynamicVectorClass.Count@16（CHILDREN map from class_layouts parent）；`DynamicVector`→`DynamicVectorClass` 短名别名 |
+
+另：`THIS_CAST_AFTER` 按cast宽度缩放（旧用 this 宽度，_WORD cast 在 _DWORD-this 上
+产错偏移）+ 括号-this 容忍移除（`*((cast*)(this)+N)` IDA 侧 0 事件，重写即单侧）。
+
+### 舰队波 1 与 ida_cache v4 播种
+
+- **首轮 0/106 全灭**：verify exit 2 = "no IDA pseudocode available"（IDA MCP 离线），
+  非翻译质量问题；翻译自动回滚无损。
+- **播种**：v4 导出即 live IDA 渲染（本会话导出后 IDB 无变更），按缓存格式
+  `{"addr","decompiled","name","timestamp"}` 播种 17,270 条（不覆盖既有 1,689 条
+  live 缓存）——**IDA 离线时验证能力恢复**（旧警告"快照播种引入裸偏移渲染"针对
+  v2 前时代，v4 已带全部 til 类型）。
+- **波次成绩**（14 桶）：
+
+| 桶 | PASS/替换 | 桶 | PASS/替换 |
+|---|---|---|---|
+| addr4E | 99/106 | gap2_global | 75/93 |
+| addr74 | 64/66 | gap2_system | 90/138 |
+| addr46 | 63/64 | gap2_object | 69/91 |
+| addr73 | 53/62 | gap2_house | 29/55 |
+| addr58 | 59/62 | gap2_ui | 20/36 |
+| addr51 | 59/59 | gap2_entity | 10/23 |
+| addr66 | 53/55 | | |
+| addr68 | 47/54 | | |
+
+- addr 桶 PASS 95-100%；**gap2 桶（v4 活码块首批）52-81%**——FAIL 全部自动回滚；
+  gap2 低 PASS 率主因 = v4 伪码更长（活码含完整声明区）触发 join/事件形态差异，
+  待下波分析 diag 明细。
+- 波后审计：括号 0 新增失衡（2 个报告点为未触碰的既有已译记录）；注解
+  10,059/0/0；一致性 69 raw / 3 normalized = 基线。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 7,548 | **8,324**（+776 全 CFG 验证） |
+| MCP pending | ~10,600（G6 口径） | **8,600**（含 v4 重锚后的诚实口径修正） |
+| 快照 | v3（09-09，mega-blob 区陈旧） | **v4（19,088 函数 live 渲染）** |
+| gap2 pending 块 | v3 陈旧伪码 | **1,812 块 v4 活码** |
+| member_lookup | — | **+2,136 语义成员 / 68 类** |
+| e4_globals | — | +171 DataGlobal + 857 E1 |
+| generator-ready | 2,467 | **3,805** |
+| ida_cache | 1,711（live） | **+17,270 v4 播种** |
+| auto-fill-baseline | cc2740ef | **3ff45951**（两次重锚：0103a195 → 3ff45951；重锚不清账） |
+
+### 遗留与下一步（G7 续波队列）
+
+1. **续舰队波**（直接可跑）：gap2 剩余桶（global_defs 383/system 310/object 221/
+   ui 149/house 141/entity 115 pending）+ addr7C 137/addr7D 133/addr72 105/
+   VectorClass 102/addr40 97 + building.cpp 92——按本次 14 桶范式继续；
+   gap2 低 PASS 率先读 `.omo/g5_fleet_last.json` diag 归因。
+2. **too-long 1,990**：体长分布实测 ≤60:3,815 / 61-80:172 / 81-120:177 /
+   121-200:124 / >200:89——提升 max_lines 至 200 上限收益 ~473（其余 1,418 被
+   其他 skip 掩盖）；建议按桶试验 PASS 率后推广。
+3. **residual-this-cast 主体 = A1/B4 前置**：AbstractClass 52/BuildingClass 38/
+   HouseClass 38/ObjectClass 23——核心类真无名区（pad/争议区），需字段级 xref
+   考古，是剩余最大的单体阻塞类别。
+4. **25 个 v4 截断块** + `0x7CAACB`（导出截断/non-func 地址）：翻译时 get_context
+   live 拉取。
+5. **free-this 73 / audit / 三元长尾**：逐类小词汇或人工批次。
+6. IDA 回线后建议 `idb_save`（本会话只读查询未改 IDB，无未存变更）。

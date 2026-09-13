@@ -122,9 +122,11 @@ python tools/mcp_translate_server.py --http 13399
   this 相关形态 → CALL(vfptr+N)；局部指针形态（`(*(_DWORD*)v1+N)`）仍排除。
 - **verify 查找顺序**：函数名精确匹配优先，地址邻近启发式兜底（后者曾把
   0x7105E0 误定位到前一个函数体内的 ASM 注释块）。
-- **离线伪码缓存注意**：`.omo/ida_cache/func_0x*.json` 必须来自 live IDA；
-  用 full_export 快照播种会引入 til 补声明**之前**的裸偏移渲染（成员事件
-  形态与 C++ 体约定不匹配，制造假不匹配——09-08 二次会话实测撤回）。
+- **离线伪码缓存注意**：`.omo/ida_cache/func_0x*.json` 必须来自 live IDA。
+  例外（09-13 G7 会话确立）：**full_export v4 及之后的快照可以播种缓存**——
+  v4 是 live 渲染（含全部 til 类型），已按缓存格式播种 17,270 条
+  （`.omo` 内播种脚本，不覆盖既有 live 缓存）；旧警告针对 v2 前时代快照
+  （裸偏移渲染制造假不匹配）。截断块（`[NNN chars total]`）不播种。
   无缓存函数在 IDA 回线后 `--save-ida`/live fetch 重验。
 - `verify_execution_flow.py` 已支持 gap2 常见的单行 namespace 定义形态：
   `namespace gamemd { int Func(...) { ... }`；此前该形态会错误报告
