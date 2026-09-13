@@ -7403,7 +7403,7 @@ namespace gamemd { bool WinMain_Write(char* FileName) {
 }
 } }
 // 0x53FA90
-namespace gamemd { void* Gap2Recv_53FA90::Network_Init_53FA90(int a2, int a3, int a4, short a5, short a6) {
+namespace gamemd { void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall Network_Init_53FA90(
         int *this,
@@ -9250,7 +9250,7 @@ retn    4
 */
 } }
 // 0x56DA10
-namespace gamemd { int Gap2Recv_56DA10::GetRegionMap(void* a2, int a3, int a4) {
+namespace gamemd { int Gap2Recv_56DA10::GetRegionMap(void* aP1, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GetRegionMap(int *this, IUnknown *aP1, signed int a3, int a4)
 {
@@ -19529,7 +19529,7 @@ _DWORD *__thiscall sub_63E1D0(_DWORD *this, int a2, int a3)
 }
 } }
 // 0x63E5D0
-namespace gamemd { char Gap2Recv_63E5D0::Team_Destroy(int a2) {
+namespace gamemd { char Gap2Recv_63E5D0::Team_Destroy(int aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Team_Destroy(int *this, VectorClass *aP1)
 {
@@ -21019,7 +21019,7 @@ _DWORD *__thiscall Helper_65A7E0(_DWORD *this, TechnoClass *aP1)
 }
 } }
 // 0x65C250
-namespace gamemd { char* Gap2Recv_65C250::WinMain_Helper_65C250(int a2, int Size) {
+namespace gamemd { char* Gap2Recv_65C250::WinMain_Helper_65C250(int a2, int aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall WinMain_Helper_65C250(RAMFileClass *this, int a2, MixFileClass *aP2)
 {
@@ -21060,7 +21060,7 @@ void __thiscall WinMain_Helper_65C2A0(RAMFileClass *this)
 }
 } }
 // 0x65C6D0
-namespace gamemd { void* Gap2Recv_65C6D0::SeedInitRNG(int a2) {
+namespace gamemd { void* Gap2Recv_65C6D0::SeedInitRNG(int aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SeedInitRNG(_DWORD *this, IUnknown *aP1)
 {
@@ -26307,7 +26307,7 @@ namespace gamemd { int Gap2Recv_683060::ReleaseCOM() {
 }
 } }
 // 0x68C260
-namespace gamemd { char Gap2Recv_68C260::DynamicVector_PushBack(void* a2) {
+namespace gamemd { char Gap2Recv_68C260::DynamicVector_PushBack(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
 {
@@ -31844,7 +31844,7 @@ retn    4
 */
 } }
 // 0x6F2780
-namespace gamemd { void* Gap2Recv_6F2780::Team_Helper_6F2780(void* a2) {
+namespace gamemd { void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, IUnknown *aP1)
 {
@@ -36487,7 +36487,7 @@ void *__thiscall System_Init_766A10(GameOption_WorldDominationTour *this, int a2
 }
 } }
 // 0x766EE0
-namespace gamemd { char Gap2Recv_766EE0::System_Init_766EE0(int a2) {
+namespace gamemd { char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall System_Init_766EE0(_DWORD *this, DynamicVector *aP1)
 {
@@ -36590,7 +36590,7 @@ void *__thiscall ConstructWDTSelection_Create_767FB0_Create(void *this, int a2, 
 }
 } }
 // 0x7692F0
-namespace gamemd { int Gap2Recv_7692F0::ConstructWDTSelection_Create_76EEB0_Create(void* a2, void* a3) {
+namespace gamemd { int Gap2Recv_7692F0::ConstructWDTSelection_Create_76EEB0_Create(void* aP1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConstructWDTSelection_Create_76EEB0_Create(int *this, ObjectClass *aP1, _DWORD *a2)
 {
@@ -37580,7 +37580,7 @@ void __thiscall ConstructWDTSelection_Create_76CA60(
 }
 } }
 // 0x76CBF0
-namespace gamemd { void Gap2Recv_76CBF0::ConstructWDTSelection_Create_76CBF0(void* a2, char* a3) {
+namespace gamemd { void Gap2Recv_76CBF0::ConstructWDTSelection_Create_76CBF0(void* aP1, char* aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ConstructWDTSelection_Create_76CBF0(
         Selection_WorldDominationTour *this,
@@ -38091,7 +38091,7 @@ char *__userpurge Team_Start_76E2F0@<eax>(int this@<ecx>, ScoreScreen aP1)
 }
 } }
 // 0x76E430
-namespace gamemd { int Gap2Recv_76E430::Team_Start_76E430(int a2, void* a3) {
+namespace gamemd { int Gap2Recv_76E430::Team_Start_76E430(int a2, void* aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Team_Start_76E430(int *this, int a2, ScoreScreen *aP2)
 {
@@ -38357,7 +38357,7 @@ rc_ptr *__thiscall ConstructWDTSelection_Create_76F500(rc_ptr_base *this)
 }
 } }
 // 0x76FEB0
-namespace gamemd { void Gap2Recv_76FEB0::TerritorySelectWDT_Process(int a2, void* a3) {
+namespace gamemd { void Gap2Recv_76FEB0::TerritorySelectWDT_Process(int a2, void* aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TerritorySelectWDT_Process(_DWORD *this, int a2, ObjectClass *aP2)
 {
@@ -45755,7 +45755,7 @@ bool __thiscall sub_7AE180(_DWORD *this, const char **a2, _DWORD *a3)
 }
 } }
 // 0x7AE7C0
-namespace gamemd { bool Gap2Recv_7AE7C0::GameOptionsScreenWOL_Helper_7AE7C0(char* a2, void* a3) {
+namespace gamemd { bool Gap2Recv_7AE7C0::GameOptionsScreenWOL_Helper_7AE7C0(char* aP1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall GameOptionsScreenWOL_Helper_7AE7C0(_DWORD *this, ObjectClass *aP1, _DWORD *a2)
 {
@@ -45841,7 +45841,7 @@ void __thiscall sub_7AE830(_DWORD *this)
 }
 } }
 // 0x7AE8E0
-namespace gamemd { bool Gap2Recv_7AE8E0::GameOptionsScreenWOL_Helper_7AE8E0(char* a2, void* a3) {
+namespace gamemd { bool Gap2Recv_7AE8E0::GameOptionsScreenWOL_Helper_7AE8E0(char* aP1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall GameOptionsScreenWOL_Helper_7AE8E0(_DWORD *this, ObjectClass *aP1, _DWORD *a2)
 {

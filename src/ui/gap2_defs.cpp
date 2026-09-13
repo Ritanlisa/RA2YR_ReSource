@@ -150,24 +150,24 @@ int __thiscall MouseClass::sub_40D7D0(int *this, _DWORD *a2)
 }
 } }
 // 0x40D850
-namespace gamemd { void* MouseClass::applyCursorSettings(int a1) {
+namespace gamemd { void* MouseClass::applyCursorSettings(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MouseClass::applyCursorSettings(_DWORD *Block, char a2)
+DynamicVector *__thiscall MouseClass::applyCursorSettings(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40d853*/
-  *Block = &vt_VectorClass_MixFileClass; /*0x40d856*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40d860*/
+  v3 = (void *)*(this + 1); /*0x40d853*/
+  *this = &vt_VectorClass_MixFileClass; /*0x40d856*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x40d860*/
   {
     __3_YAXPAX_Z(v3); /*0x40d868*/
-    *(Block + 1) = 0; /*0x40d870*/
+    *(this + 1) = 0; /*0x40d870*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x40d87b*/
-  *(Block + 2) = 0; /*0x40d881*/
+  *((_BYTE *)this + 13) = 0; /*0x40d87b*/
+  *(this + 2) = 0; /*0x40d881*/
   if ( (a2 & 1) != 0 ) /*0x40d888*/
-    __3_YAXPAX_Z(Block); /*0x40d88b*/
-  return (DynamicVector *)Block; /*0x40d895*/
+    __3_YAXPAX_Z(this); /*0x40d88b*/
+  return (DynamicVector *)this; /*0x40d895*/
 }
 } }
 // 0x433F50
@@ -301,23 +301,23 @@ namespace gamemd { int CheckListClass::SetFocus(int a1) {
 }
 } }
 // 0x4886E0
-namespace gamemd { void* CheckListClass::QueryInterface(int a1) {
+namespace gamemd { void* CheckListClass::QueryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CheckListClass *__thiscall CheckListClass::QueryInterface(unsigned int *Block, char a2)
+CheckListClass *__thiscall CheckListClass::QueryInterface(unsigned int *this, char a2)
 {
   CCINIClass *Clamped; // edi
 
-  *Block = (unsigned int)&vt_CheckListClass; /*0x4886e3*/
-  while ( *(Block + 17) ) /*0x4886e9*/
+  *this = (unsigned int)&vt_CheckListClass; /*0x4886e3*/
+  while ( *(this + 17) ) /*0x4886e9*/
   {
-    Clamped = (CCINIClass *)Array::GetClamped(Block, 0); /*0x4886fe*/
-    ListClass::RemoveItem(Block, 0); /*0x488700*/
+    Clamped = (CCINIClass *)Array::GetClamped(this, 0); /*0x4886fe*/
+    ListClass::RemoveItem(this, 0); /*0x488700*/
     __3_YAXPAX_Z(Clamped); /*0x488706*/
   }
-  ListClass::Destruct(Block); /*0x488718*/
+  ListClass::Destruct(this); /*0x488718*/
   if ( (a2 & 1) != 0 ) /*0x488722*/
-    __3_YAXPAX_Z(Block); /*0x488725*/
-  return (CheckListClass *)Block; /*0x48872f*/
+    __3_YAXPAX_Z(this); /*0x488725*/
+  return (CheckListClass *)this; /*0x48872f*/
 }
 } }
 // 0x4B4FB0
@@ -475,17 +475,17 @@ int __thiscall DropListClass::_vt45(_DWORD *this, int a2)
 }
 } }
 // 0x4B55F0
-namespace gamemd { void* DropListClass::QueryInterface(int a1) {
+namespace gamemd { void* DropListClass::QueryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DropListClass *__thiscall DropListClass::QueryInterface(_DWORD *Block, char a2)
+DropListClass *__thiscall DropListClass::QueryInterface(_DWORD *this, char a2)
 {
-  *Block = &vt_DropListClass; /*0x4b55f9*/
-  ListClass::Destruct(Block + 44); /*0x4b55ff*/
-  ShapeButtonClass::Destructor((int)(Block + 20)); /*0x4b5607*/
-  DropListClass::Constructor(Block); /*0x4b560e*/
+  *this = &vt_DropListClass; /*0x4b55f9*/
+  ListClass::Destruct(this + 44); /*0x4b55ff*/
+  ShapeButtonClass::Destructor((int)(this + 20)); /*0x4b5607*/
+  DropListClass::Constructor(this); /*0x4b560e*/
   if ( (a2 & 1) != 0 ) /*0x4b5618*/
-    __3_YAXPAX_Z(Block); /*0x4b561b*/
-  return (DropListClass *)Block; /*0x4b5625*/
+    __3_YAXPAX_Z(this); /*0x4b561b*/
+  return (DropListClass *)this; /*0x4b5625*/
 }
 } }
 // 0x4C30B0
@@ -761,33 +761,33 @@ namespace gamemd { void* SidebarClass::SetFlashEntry(int a1, int a2, int a3, voi
 // 0x4E1550
 // moved to ui/gadget.cpp: GadgetClass::ClearState
 // 0x4E1A60
-namespace gamemd { void* GadgetClass::QueryInterface(int a1) {
+namespace gamemd { void* GadgetClass::QueryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-GadgetClass *__thiscall GadgetClass::QueryInterface(GadgetClass *Block, char a2)
+GadgetClass *__thiscall GadgetClass::QueryInterface(GadgetClass *this, char a2)
 {
   GadgetClass *v3; // eax
   int v4; // eax
 
-  *(_DWORD *)Block->__pad_0 = &vt_GadgetClass; /*0x4e1a65*/
+  *(_DWORD *)this->__pad_0 = &vt_GadgetClass; /*0x4e1a65*/
   v3 = (GadgetClass *)MEMORY[0x8B3E90]; /*0x4e1a6b*/
-  if ( Block == (GadgetClass *)MEMORY[0x8B3E90] ) /*0x4e1a72*/
+  if ( this == (GadgetClass *)MEMORY[0x8B3E90] ) /*0x4e1a72*/
   {
-    v4 = *((_DWORD *)Block + 8); /*0x4e1a74*/
+    v4 = *((_DWORD *)this + 8); /*0x4e1a74*/
     BYTE1(v4) &= ~1u; /*0x4e1a77*/
-    *((_DWORD *)Block + 8) = v4; /*0x4e1a7a*/
+    *((_DWORD *)this + 8) = v4; /*0x4e1a7a*/
     v3 = 0; /*0x4e1a7d*/
     MEMORY[0x8B3E90] = 0; /*0x4e1a7f*/
   }
-  if ( Block == (GadgetClass *)MEMORY[0x8B3E88] ) /*0x4e1a8a*/
+  if ( this == (GadgetClass *)MEMORY[0x8B3E88] ) /*0x4e1a8a*/
     MEMORY[0x8B3E88] = 0; /*0x4e1a8c*/
-  if ( Block == (GadgetClass *)MEMORY[0x8B3E8C] ) /*0x4e1a98*/
+  if ( this == (GadgetClass *)MEMORY[0x8B3E8C] ) /*0x4e1a98*/
     MEMORY[0x8B3E8C] = 0; /*0x4e1a9a*/
-  if ( Block == v3 ) /*0x4e1aa2*/
+  if ( this == v3 ) /*0x4e1aa2*/
     MEMORY[0x8B3E90] = 0; /*0x4e1aa4*/
-  LinkClass::Destruct(Block); /*0x4e1aac*/
+  LinkClass::Destruct(this); /*0x4e1aac*/
   if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
-    __3_YAXPAX_Z(Block); /*0x4e1ab9*/
-  return Block; /*0x4e1ac3*/
+    __3_YAXPAX_Z(this); /*0x4e1ab9*/
+  return this; /*0x4e1ac3*/
 }
 } }
 // 0x5005B0
@@ -1083,7 +1083,7 @@ unsigned int __thiscall CheckListClass::sub_556EE0(int this, int a2)
 }
 } }
 // 0x557090
-namespace gamemd { int CheckListClass::removeItem(int a1, void* a2) {
+namespace gamemd { int CheckListClass::removeItem(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CheckListClass::sub_557090(void *this, int a2, _DWORD *a3)
 {
@@ -1151,24 +1151,24 @@ int __thiscall CheckListClass::sub_557140(int *this, _DWORD *a2)
 }
 } }
 // 0x5571C0
-namespace gamemd { void* CheckListClass::toggleItem(int a1) {
+namespace gamemd { void* CheckListClass::toggleItem(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CheckListClass::toggleItem(_DWORD *Block, char a2)
+DynamicVector *__thiscall CheckListClass::toggleItem(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5571c3*/
-  *Block = &vt_VectorClass_LineTrail; /*0x5571c6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5571d0*/
+  v3 = (void *)*(this + 1); /*0x5571c3*/
+  *this = &vt_VectorClass_LineTrail; /*0x5571c6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5571d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5571d8*/
-    *(Block + 1) = 0; /*0x5571e0*/
+    *(this + 1) = 0; /*0x5571e0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x5571eb*/
-  *(Block + 2) = 0; /*0x5571f1*/
+  *((_BYTE *)this + 13) = 0; /*0x5571eb*/
+  *(this + 2) = 0; /*0x5571f1*/
   if ( (a2 & 1) != 0 ) /*0x5571f8*/
-    __3_YAXPAX_Z(Block); /*0x5571fb*/
-  return (DynamicVector *)Block; /*0x557205*/
+    __3_YAXPAX_Z(this); /*0x5571fb*/
+  return (DynamicVector *)this; /*0x557205*/
 }
 } }
 // 0x557570
@@ -1484,63 +1484,63 @@ void __thiscall CheckListClass::_vt18(int this)
 }
 } }
 // 0x558060
-namespace gamemd { void* ListClass::Destru_vt00(int a1) {
+namespace gamemd { void* ListClass::Destru_vt00(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ListClass *__thiscall ListClass::Destru_vt00(_BYTE *Block, char a2)
+ListClass *__thiscall ListClass::Destru_vt00(_BYTE *this, char a2)
 {
   char v3; // al
   GaugeClass *v4; // edx
   void *v5; // eax
 
-  v3 = *(Block + 84); /*0x558066*/
-  *(_DWORD *)Block = &vt_ListClass; /*0x558069*/
+  v3 = *(this + 84); /*0x558066*/
+  *(_DWORD *)this = &vt_ListClass; /*0x558069*/
   if ( v3 ) /*0x558071*/
   {
-    v4 = (GaugeClass *)*((_DWORD *)Block + 70); /*0x55807c*/
-    *((_DWORD *)Block + 5) += *((_DWORD *)Block + 75); /*0x558084*/
-    *(Block + 84) = 0; /*0x55808d*/
-    ((void (__thiscall *)(_BYTE *))v4[1].GaugeClass_field_0x04)(Block + 280); /*0x558090*/
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 22) + 36))(Block + 88); /*0x558099*/
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 46) + 36))(Block + 184); /*0x5580a8*/
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)Block + 72))(Block); /*0x5580af*/
+    v4 = (GaugeClass *)*((_DWORD *)this + 70); /*0x55807c*/
+    *((_DWORD *)this + 5) += *((_DWORD *)this + 75); /*0x558084*/
+    *(this + 84) = 0; /*0x55808d*/
+    ((void (__thiscall *)(_BYTE *))v4[1].GaugeClass_field_0x04)(this + 280); /*0x558090*/
+    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 36))(this + 88); /*0x558099*/
+    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 36))(this + 184); /*0x5580a8*/
+    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this); /*0x5580af*/
   }
-  SliderClass::Destructor((_DWORD *)Block + 70); /*0x5580b8*/
-  ShapeButtonClass::Destructor((int)(Block + 184)); /*0x5580c3*/
-  ShapeButtonClass::Destructor((int)(Block + 88)); /*0x5580cb*/
-  v5 = (void *)*((_DWORD *)Block + 14); /*0x5580d0*/
-  *((_DWORD *)Block + 13) = &vt_VectorClass_unsigned_short_const; /*0x5580d3*/
-  if ( v5 && *(Block + 65) ) /*0x5580de*/
+  SliderClass::Destructor((_DWORD *)this + 70); /*0x5580b8*/
+  ShapeButtonClass::Destructor((int)(this + 184)); /*0x5580c3*/
+  ShapeButtonClass::Destructor((int)(this + 88)); /*0x5580cb*/
+  v5 = (void *)*((_DWORD *)this + 14); /*0x5580d0*/
+  *((_DWORD *)this + 13) = &vt_VectorClass_unsigned_short_const; /*0x5580d3*/
+  if ( v5 && *(this + 65) ) /*0x5580de*/
   {
     __3_YAXPAX_Z(v5); /*0x5580e4*/
-    *((_DWORD *)Block + 14) = 0; /*0x5580ec*/
+    *((_DWORD *)this + 14) = 0; /*0x5580ec*/
   }
-  *(Block + 65) = 0; /*0x5580f1*/
-  *((_DWORD *)Block + 15) = 0; /*0x5580f4*/
-  GadgetClass::Dtor(Block); /*0x5580f7*/
+  *(this + 65) = 0; /*0x5580f1*/
+  *((_DWORD *)this + 15) = 0; /*0x5580f4*/
+  GadgetClass::Dtor(this); /*0x5580f7*/
   if ( (a2 & 1) != 0 ) /*0x558101*/
-    __3_YAXPAX_Z(Block); /*0x558104*/
-  return (ListClass *)Block; /*0x55810e*/
+    __3_YAXPAX_Z(this); /*0x558104*/
+  return (ListClass *)this; /*0x55810e*/
 }
 } }
 // 0x558130
-namespace gamemd { void* CheckListClass::drawList(int a1) {
+namespace gamemd { void* CheckListClass::drawList(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CheckListClass::drawList(_DWORD *Block, char a2)
+DynamicVector *__thiscall CheckListClass::drawList(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x558133*/
-  *Block = &vt_VectorClass_unsigned_short_const; /*0x558136*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x558140*/
+  v3 = (void *)*(this + 1); /*0x558133*/
+  *this = &vt_VectorClass_unsigned_short_const; /*0x558136*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x558140*/
   {
     __3_YAXPAX_Z(v3); /*0x558148*/
-    *(Block + 1) = 0; /*0x558150*/
+    *(this + 1) = 0; /*0x558150*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x55815b*/
-  *(Block + 2) = 0; /*0x558161*/
+  *((_BYTE *)this + 13) = 0; /*0x55815b*/
+  *(this + 2) = 0; /*0x558161*/
   if ( (a2 & 1) != 0 ) /*0x558168*/
-    __3_YAXPAX_Z(Block); /*0x55816b*/
-  return (DynamicVector *)Block; /*0x558175*/
+    __3_YAXPAX_Z(this); /*0x55816b*/
+  return (DynamicVector *)this; /*0x558175*/
 }
 } }
 // 0x5581E0
@@ -1573,7 +1573,7 @@ unsigned int __thiscall CheckListClass::sub_558210(int this, int a2)
 }
 } }
 // 0x5583C0
-namespace gamemd { int CheckListClass::clearList(int a1, void* a2) {
+namespace gamemd { int CheckListClass::clearList(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CheckListClass::sub_5583C0(void *this, int a2, _DWORD *a3)
 {
@@ -3502,14 +3502,14 @@ wchar_t *__thiscall PowerClass::_vt33(_DWORD *this, int a2)
 }
 } }
 // 0x6404B0
-namespace gamemd { void* PowerClass::Initialize(int a1) {
+namespace gamemd { void* PowerClass::Initialize(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-PowerClass *__thiscall PowerClass::Initialize(_DWORD *Block, char a2)
+PowerClass *__thiscall PowerClass::Initialize(_DWORD *this, char a2)
 {
-  RadarClass::Destruct(Block); /*0x6404b3*/
+  RadarClass::Destruct(this); /*0x6404b3*/
   if ( (a2 & 1) != 0 ) /*0x6404bd*/
-    __3_YAXPAX_Z(Block); /*0x6404c0*/
-  return (PowerClass *)Block; /*0x6404ca*/
+    __3_YAXPAX_Z(this); /*0x6404c0*/
+  return (PowerClass *)this; /*0x6404ca*/
 }
 } }
 // 0x6568A0
@@ -7122,14 +7122,14 @@ namespace gamemd { int SidebarClass::saveLoadPrefix2(int a1) {
 }
 } }
 // 0x6AC780
-namespace gamemd { void* SidebarClass::queryInterface(int a1) {
+namespace gamemd { void* SidebarClass::queryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SidebarClass::queryInterface(_DWORD *Block, char a2)
+_DWORD *__thiscall SidebarClass::queryInterface(_DWORD *this, char a2)
 {
-  GadgetClass::Dtor(Block); /*0x6ac783*/
+  GadgetClass::Dtor(this); /*0x6ac783*/
   if ( (a2 & 1) != 0 ) /*0x6ac78d*/
-    __3_YAXPAX_Z(Block); /*0x6ac790*/
-  return Block; /*0x6ac79a*/
+    __3_YAXPAX_Z(this); /*0x6ac790*/
+  return this; /*0x6ac79a*/
 }
 } }
 // 0x6AC7C0
@@ -8395,24 +8395,24 @@ int __thiscall ToolTipManager_7_::_vt04(int *this, _DWORD *a2)
 }
 } }
 // 0x724EF0
-namespace gamemd { void* ToolTipClass::compareString(int a1) {
+namespace gamemd { void* ToolTipClass::compareString(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ToolTipClass::compareString(_DWORD *Block, char a2)
+VectorClass *__thiscall ToolTipClass::compareString(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x724ef3*/
-  *Block = &vt_VectorClass_ToolTip_const; /*0x724ef6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x724f00*/
+  v3 = (void *)*(this + 1); /*0x724ef3*/
+  *this = &vt_VectorClass_ToolTip_const; /*0x724ef6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x724f00*/
   {
     __3_YAXPAX_Z(v3); /*0x724f08*/
-    *(Block + 1) = 0; /*0x724f10*/
+    *(this + 1) = 0; /*0x724f10*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x724f1b*/
-  *(Block + 2) = 0; /*0x724f21*/
+  *((_BYTE *)this + 13) = 0; /*0x724f1b*/
+  *(this + 2) = 0; /*0x724f21*/
   if ( (a2 & 1) != 0 ) /*0x724f28*/
-    __3_YAXPAX_Z(Block); /*0x724f2b*/
-  return (VectorClass *)Block; /*0x724f35*/
+    __3_YAXPAX_Z(this); /*0x724f2b*/
+  return (VectorClass *)this; /*0x724f35*/
 }
 } }
 // 0x724FA0

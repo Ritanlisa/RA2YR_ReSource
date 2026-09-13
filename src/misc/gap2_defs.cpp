@@ -2496,29 +2496,26 @@ _DWORD *__thiscall Pathfinding::CheckCliff(int *this, _DWORD *a1, __int16 *a2, i
 }
 } }
 // 0x5B29C0
-namespace gamemd { int Movement::CompareAbsCoords(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5B29C0(__int16 *this, __int16 *a2, __int16 *a3)
+namespace gamemd { int Movement::CompareAbsCoords(void* a2, void* a3) {
 {
-  __int16 v3; // bp
-  __int16 v4; // di
-  __int16 v5; // si
-
-  v3 = *a3; /*0x5b29ca*/
-  v4 = *a2; /*0x5b29cf*/
-  v5 = *this; /*0x5b29d2*/
-  if ( abs16(*a3) < (int)abs16(*this - *a2) ) /*0x5b29f3*/
+    short v3;
+    short v4;
+    short v5;
+    v3 = *a3;
+    v4 = *a2;
+    v5 = *(void**)this;
+    if ( abs16(*a3) < (int)abs16(*(void**)this - *a2) )
   {
-    if ( (__int16)(v4 - v5) >= 0 ) /*0x5b2a06*/
-      *this = v5 + v3; /*0x5b2a19*/
+    if ( (short)(v4 - v5) >= 0 )
+    *(void**)this = v5 + v3;
     else
-      *this = v5 - v3; /*0x5b2a0b*/
-    return 0; /*0x5b2a10*/
+    *(void**)this = v5 - v3;
+    return 0;
   }
-  else
+    else
   {
-    *this = v4; /*0x5b29f5*/
-    return 1; /*0x5b29fb*/
+    *(void**)this = v4;
+    return 1;
   }
 }
 } }
@@ -22338,14 +22335,14 @@ retn    4
 */
 } }
 // 0x6CE220
-namespace gamemd { void* SuperClass::ProcessEvent(int a1) {
+namespace gamemd { void* SuperClass::ProcessEvent(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SuperClass *__thiscall SuperClass::ProcessEvent(void *Block, char a2)
+SuperClass *__thiscall SuperClass::ProcessEvent(void *this, char a2)
 {
-  SuperClass::CleanupMembers((int)Block); /*0x6ce223*/
+  SuperClass::CleanupMembers((int)this); /*0x6ce223*/
   if ( (a2 & 1) != 0 ) /*0x6ce22d*/
-    __3_YAXPAX_Z(Block); /*0x6ce230*/
-  return (SuperClass *)Block; /*0x6ce23a*/
+    __3_YAXPAX_Z(this); /*0x6ce230*/
+  return (SuperClass *)this; /*0x6ce23a*/
 }
 } }
 // 0x6CE270

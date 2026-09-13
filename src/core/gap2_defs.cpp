@@ -231,24 +231,24 @@ int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
 }
 } }
 // 0x4A4DE0
-namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a1) {
+namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(_DWORD *Block, char a2)
+DynamicVector *__thiscall CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a4de3*/
-  *Block = &vt_VectorClass_DDSURFACEDESC; /*0x4a4de6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a4df0*/
+  v3 = (void *)*(this + 1); /*0x4a4de3*/
+  *this = &vt_VectorClass_DDSURFACEDESC; /*0x4a4de6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a4df0*/
   {
     __3_YAXPAX_Z(v3); /*0x4a4df8*/
-    *(Block + 1) = 0; /*0x4a4e00*/
+    *(this + 1) = 0; /*0x4a4e00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a4e0b*/
-  *(Block + 2) = 0; /*0x4a4e11*/
+  *((_BYTE *)this + 13) = 0; /*0x4a4e0b*/
+  *(this + 2) = 0; /*0x4a4e11*/
   if ( (a2 & 1) != 0 ) /*0x4a4e18*/
-    __3_YAXPAX_Z(Block); /*0x4a4e1b*/
-  return (DynamicVector *)Block; /*0x4a4e25*/
+    __3_YAXPAX_Z(this); /*0x4a4e1b*/
+  return (DynamicVector *)this; /*0x4a4e25*/
 }
 } }
 // 0x55A150
@@ -492,7 +492,7 @@ namespace gamemd { int Stream::ReadOLEObjects() {
 }
 } }
 // 0x7B0440
-namespace gamemd { void* StreamWrapper::QueryInterface(int a1) {
+namespace gamemd { void* StreamWrapper::QueryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall StreamWrapper::QueryInterface(FactionSelectDialogControl_WorldDominationTour *this, char a2)
 {

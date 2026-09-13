@@ -1584,50 +1584,39 @@ char __thiscall BuildingClass_CheckAdjacentCells(int this)
 }
 } }
 // 0x487110
-namespace gamemd { void* BuildingClass::checkOccupant(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_487110(_DWORD *this, char a2)
+namespace gamemd { void* BuildingClass::checkOccupant(int a2) {
 {
-  *(this + 30) |= 1 << a2; /*0x48711d*/
-  return this; /*0x487120*/
+    this->spawnStatus |= 1 << a2;
+    return this;
 }
 } }
 // 0x487130
-namespace gamemd { void* BuildingClass::updateOccupiedState(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_487130(_DWORD *this, char a2)
+namespace gamemd { void* BuildingClass::updateOccupiedState(int a2) {
 {
-  *(this + 30) &= ~(1 << a2); /*0x487144*/
-  return this; /*0x487147*/
+    this->spawnStatus &= ~(1 << a2);
+    return this;
 }
 } }
 // 0x487170
-namespace gamemd { int BuildingClass::processGarrison(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_487170(_WORD *this, int a2)
+namespace gamemd { int BuildingClass::processGarrison(int a2) {
 {
-  ++*(this + a2 + 86); /*0x487174*/
-  return a2; /*0x48717c*/
+    ++*(this + a2 + 86);
+    return a2;
 }
 } }
 // 0x487180
-namespace gamemd { int BuildingClass::evaulateDefense(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_487180(_WORD *this, int a2)
+namespace gamemd { int BuildingClass::evaulateDefense(int a2) {
 {
-  --*(this + a2 + 86); /*0x487184*/
-  return a2; /*0x48718c*/
+    --*(this + a2 + 86);
+    return a2;
 }
 } }
 // 0x4AA290
-namespace gamemd { int BuildingClass::updateSellBack(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::updateSellBack(_DWORD *this, IUnknown *aP1, AbstractClass *aP2)
+namespace gamemd { int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 {
-  _DWORD *v3; // eax
-
-  v3 = CellCoord::To_CellObj(this, (__int16 *)aP1); /*0x4aa29c*/
-  return Object::FindObjectCell(v3, (TechnoClass *)aP2, 0); /*0x4aa2a8*/
+    int *v3;
+    v3 = CellCoord::To_CellObj(this, (short *)aP1);
+    return Object::FindObjectCell(v3, (TechnoClass *)aP2, 0);
 }
 } }
 // 0x4DA030
@@ -4055,26 +4044,23 @@ LABEL_91:
 }
 } }
 // 0x523370
-namespace gamemd { void* InfantryClass::checkBridgeClearance(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_523370(int *this, int a2)
+namespace gamemd { void* InfantryClass::checkBridgeClearance(int a2) {
 {
-  int v3; // edi
-
-  v3 = *this; /*0x523378*/
-  if ( *this != a2 ) /*0x52337c*/
+    int v3;
+    v3 = *(void**)this;
+    if ( *(void**)this != a2 )
   {
-    *this = a2; /*0x523380*/
-    if ( a2 ) /*0x523382*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)a2 + 4))(a2); /*0x523387*/
-    if ( v3 ) /*0x52338c*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x523391*/
+    *(void**)this = a2;
+    if ( a2 )
+    (*(void (__stdcall **)(int))(*(int *)(a2) + 4))(a2);
+    if ( v3 )
+    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
   }
-  return this; /*0x523396*/
+    return this;
 }
 } }
 // 0x5233D0
-namespace gamemd { void* InfantryClass::updateOccupiedBuilding(void* a1) {
+namespace gamemd { void* InfantryClass::updateOccupiedBuilding(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall InfantryClass::updateOccupiedBuilding(_DWORD *this, IUnknown *aP1)
 {
@@ -4375,33 +4361,27 @@ LABEL_49:
 }
 } }
 // 0x5AEAD0
-namespace gamemd { void BuildingClass::processBaseExpansion(float a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5AEAD0(float *this, float a2)
+namespace gamemd { void BuildingClass::processBaseExpansion(float a2) {
 {
-  *this = a2 * *this; /*0x5aead6*/
-  *(this + 4) = a2 * *(this + 4); /*0x5aeadf*/
-  *(this + 8) = a2 * *(this + 8); /*0x5aeae9*/
+    *(void**)this = a2 * *(void**)this;
+    this->uniqueId = a2 *(void**)this->uniqueId;
+    this->needsSave = a2 *(void**)this->needsSave;
 }
 } }
 // 0x5AEAF0
-namespace gamemd { void BuildingClass::updateFoundation(float a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5AEAF0(float *this, float a2)
+namespace gamemd { void BuildingClass::updateFoundation(float a2) {
 {
-  *(this + 1) = a2 * *(this + 1); /*0x5aeaf7*/
-  *(this + 5) = a2 * *(this + 5); /*0x5aeb01*/
-  *(this + 9) = a2 * *(this + 9); /*0x5aeb0b*/
+    this->vtable1 = a2 *(void**)this->vtable1;
+    this->abstractFlags = a2 *(void**)this->abstractFlags;
+    this->objectTypeFlags = a2 *(void**)this->objectTypeFlags;
 }
 } }
 // 0x5AEB20
-namespace gamemd { void BuildingClass::recalcAdjacency(float a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5AEB20(float *this, float a2)
+namespace gamemd { void BuildingClass::recalcAdjacency(float a2) {
 {
-  *(this + 2) = a2 * *(this + 2); /*0x5aeb27*/
-  *(this + 6) = a2 * *(this + 6); /*0x5aeb31*/
-  *(this + 10) = a2 * *(this + 10); /*0x5aeb3b*/
+    this->vtable2 = a2 *(void**)this->vtable2;
+    this->nextArrayIndex = a2 *(void**)this->nextArrayIndex;
+    this->owningHouseIndex = a2 *(void**)this->owningHouseIndex;
 }
 } }
 // 0x63D540

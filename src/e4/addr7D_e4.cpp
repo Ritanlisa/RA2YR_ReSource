@@ -4859,79 +4859,75 @@ LABEL_25:
 namespace gamemd {
 struct tm * gmtime(CampaignScore * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-struct tm *__cdecl gmtime(CampaignScore *aP0)
 {
-  int v1; // esi
-  int v2; // ebx
-  ObjectClass *v3; // eax
-  ObjectClass *v4; // edi
-  void *v6; // eax
-  struct tm *v7; // ecx
-  int v8; // eax
-  int v9; // esi
-  int v10; // edx
-  char *v11; // edi
-  int v12; // esi
-  int v13; // eax
-  int *i; // ebx
-  int tm_yday; // edx
-  int v16; // eax
-  int v17; // esi
-
-  v1 = *(_DWORD *)aP0->__pad_0; /*0x7d52bf*/
-  v2 = 0; /*0x7d52c1*/
-  v3 = (ObjectClass *)_getptd(); /*0x7d52c3*/
-  v4 = v3; /*0x7d52ca*/
-  if ( v1 < 0 ) /*0x7d52cc*/
-    return 0; /*0x7d52ce*/
-  if ( v3->ambientSoundController[1] /*0x7d52ed*/
-    || (v6 = malloc((AbstractClass *)0x24), v4->ambientSoundController[1] = (int)v6, v7 = (struct tm *)&unk_B783B0, v6) )
+    int v1;
+    int v2;
+    ObjectClass *v3;
+    ObjectClass *v4;
+    void *v6;
+    struct tm *v7;
+    int v8;
+    int v9;
+    int v10;
+    char *v11;
+    int v12;
+    int v13;
+    int *i;
+    int tm_yday;
+    int v16;
+    int v17;
+    v1 = *(int *)aP0->__pad_0;
+    v2 = 0;
+    v3 = (ObjectClass *)_getptd();
+    v4 = v3;
+    if ( v1 < 0 )
+    return 0;
+    if ( v3->ambientSoundController[1] || (v6 = malloc((AbstractClass *)0x24), v4->ambientSoundController[1] = (int)v6, v7 = (struct tm *)&DataGlobal_B783B0, v6) )
   {
-    v7 = (struct tm *)v4->ambientSoundController[1]; /*0x7d52ef*/
+    v7 = (struct tm *)v4->ambientSoundController[1];
   }
-  v8 = v1 / 126230400; /*0x7d52fa*/
-  v9 = v1 % 126230400; /*0x7d5304*/
-  v10 = 4 * v8 + 70; /*0x7d5306*/
-  if ( v9 >= 31536000 ) /*0x7d5314*/
+    v8 = v1 / 126230400;
+    v9 = v1 % 126230400;
+    v10 = 4 * v8 + 70;
+    if ( v9 >= 31536000 )
   {
-    v9 -= 31536000; /*0x7d5316*/
-    v10 = 4 * v8 + 71; /*0x7d5318*/
-    if ( v9 >= 31536000 ) /*0x7d531b*/
+    v9 -= 31536000;
+    v10 = 4 * v8 + 71;
+    if ( v9 >= 31536000 )
     {
-      v9 -= 31536000; /*0x7d531d*/
-      v10 = 4 * v8 + 72; /*0x7d5324*/
-      if ( v9 < 31622400 ) /*0x7d5327*/
+    v9 -= 31536000;
+    v10 = 4 * v8 + 72;
+    if ( v9 < 31622400 )
       {
-        v2 = 1; /*0x7d5330*/
+    v2 = 1;
       }
-      else
+    else
       {
-        v10 = 4 * v8 + 73; /*0x7d5329*/
-        v9 -= 31622400; /*0x7d532a*/
+    v10 = 4 * v8 + 73;
+    v9 -= 31622400;
       }
     }
   }
-  v7->tm_year = v10; /*0x7d5333*/
-  v11 = &stru_87C374.__pad_1140[204]; /*0x7d533e*/
-  v7->tm_yday = v9 / 86400; /*0x7d5343*/
-  v12 = v9 % 86400; /*0x7d534c*/
-  if ( !v2 ) /*0x7d5350*/
-    v11 = &stru_87C374.__pad_1140[256]; /*0x7d5352*/
-  v13 = 1; /*0x7d535c*/
-  for ( i = (int *)(v11 + 4); *i < v7->tm_yday; ++i ) /*0x7d535d*/
-    ++v13; /*0x7d5364*/
-  tm_yday = v7->tm_yday; /*0x7d536a*/
-  v16 = v13 - 1; /*0x7d536d*/
-  v7->tm_mon = v16; /*0x7d536e*/
-  v7->tm_mday = tm_yday - *(_DWORD *)&v11[4 * v16]; /*0x7d537f*/
-  v7->tm_wday = (*(_DWORD *)aP0->__pad_0 / 86400 + 4) % 7; /*0x7d5397*/
-  v7->tm_hour = v12 / 3600; /*0x7d539e*/
-  v17 = v12 % 3600; /*0x7d53a7*/
-  v7->tm_min = v17 / 60; /*0x7d53ae*/
-  v7->tm_isdst = 0; /*0x7d53b6*/
-  v7->tm_sec = v17 % 60; /*0x7d53ba*/
-  return v7; /*0x7d53be*/
+    v7->tm_year = v10;
+    v11 = &DataGlobal_87C374.__pad_1140[204];
+    v7->tm_yday = v9 / 86400;
+    v12 = v9 % 86400;
+    if ( !v2 )
+    v11 = &DataGlobal_87C374.__pad_1140[256];
+    v13 = 1;
+    for ( i = (int *)(v11 + 4); *i < v7->tm_yday; ++i )
+    ++v13;
+    tm_yday = v7->tm_yday;
+    v16 = v13 - 1;
+    v7->tm_mon = v16;
+    v7->tm_mday = tm_yday - *(int *)&v11[4 * v16];
+    v7->tm_wday = (*(int *)aP0->__pad_0 / 86400 + 4) % 7;
+    v7->tm_hour = v12 / 3600;
+    v17 = v12 % 3600;
+    v7->tm_min = v17 / 60;
+    v7->tm_isdst = 0;
+    v7->tm_sec = v17 % 60;
+    return v7;
 }
 }
 } // namespace gamemd
@@ -5221,90 +5217,79 @@ int __cdecl _rmtmp()
 namespace gamemd {
 LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __cdecl _XcptFilter(ObjectClass *aP0, struct _EXCEPTION_POINTERS *ExceptionInfo)
 {
-  ObjectClass *v2; // esi
-  int *v3; // eax
-  ObjectClass *v4; // ebx
-  int v6; // ecx
-  int v7; // edx
-  int v8; // ecx
-  int v9; // eax
-  int v10; // edi
-  int v11; // [esp+8h] [ebp-4h]
-
-  v2 = (ObjectClass *)_getptd(); /*0x7d58fb*/
-  v3 = xcptlookup(aP0, (_DWORD *)v2->customSound_controller[0]); /*0x7d5903*/
-  if ( !v3 ) /*0x7d590c*/
-    return UnhandledExceptionFilter(ExceptionInfo); /*0x7d590c*/
-  v4 = (ObjectClass *)v3[2]; /*0x7d5912*/
-  if ( !v4 ) /*0x7d591a*/
-    return UnhandledExceptionFilter(ExceptionInfo); /*0x7d5a24*/
-  if ( v4 == (ObjectClass *)5 ) /*0x7d5923*/
+    ObjectClass *v2;
+    int *v3;
+    ObjectClass *v4;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    v2 = (ObjectClass *)_getptd();
+    v3 = xcptlookup(aP0, (int *)v2->customSound_controller[0]);
+    if ( !v3 )
+    return UnhandledExceptionFilter(ExceptionInfo);
+    v4 = (ObjectClass *)v3[2];
+    if ( !v4 )
+    return UnhandledExceptionFilter(ExceptionInfo);
+    if ( v4 == (ObjectClass *)5 )
   {
-    v3[2] = 0; /*0x7d5925*/
-    return 1; /*0x7d592b*/
+    v3[2] = 0;
+    return 1;
   }
-  else
+    else
   {
-    if ( v4 != (ObjectClass *)1 ) /*0x7d5934*/
+    if ( v4 != (ObjectClass *)1 )
     {
-      v11 = v2->customSound_controller[1]; /*0x7d593d*/
-      v2->customSound_controller[1] = (int)ExceptionInfo; /*0x7d5943*/
-      v6 = v3[1]; /*0x7d5946*/
-      if ( v6 == 8 ) /*0x7d594c*/
+    v11 = v2->customSound_controller[1];
+    v2->customSound_controller[1] = (int)ExceptionInfo;
+    v6 = v3[1];
+    if ( v6 == 8 )
       {
-        v7 = *(_DWORD *)&stru_87C374.__pad_71C[264]; /*0x7d5952*/
-        if ( *(int *)&stru_87C374.__pad_71C[264] < *(_DWORD *)&stru_87C374.__pad_71C[264] /*0x7d5963*/
-                                                 + *(_DWORD *)&stru_87C374.__pad_71C[268] )
+    v7 = *(int *)&DataGlobal_87C374.__pad_71C[264];
+    if ( *(int *)&DataGlobal_87C374.__pad_71C[264] < *(int *)&DataGlobal_87C374.__pad_71C[264] + *(int *)&DataGlobal_87C374.__pad_71C[268] )
         {
-          v8 = 12 * *(_DWORD *)&stru_87C374.__pad_71C[264]; /*0x7d5968*/
-          do /*0x7d5987*/
+    v8 = 12 * *(int *)&DataGlobal_87C374.__pad_71C[264];
+    do
           {
-            v8 += 12; /*0x7d596e*/
-            *(_DWORD *)(v8 + v2->customSound_controller[0] - 4) = 0; /*0x7d5971*/
-            ++v7; /*0x7d5982*/
+    v8 += 12;
+    *(int *)(v8 + v2->customSound_controller[0] - 4) = 0;
+    ++v7;
           }
-          while ( v7 < *(_DWORD *)&stru_87C374.__pad_71C[264] + *(_DWORD *)&stru_87C374.__pad_71C[268] ); /*0x7d5987*/
+    while ( v7 < *(int *)&DataGlobal_87C374.__pad_71C[264] + *(int *)&DataGlobal_87C374.__pad_71C[268] );
         }
-        v9 = *v3; /*0x7d598c*/
-        v10 = v2->customSound_controller[2]; /*0x7d598e*/
-        switch ( v9 ) /*0x7d5996*/
+    v9 = *v3;
+    v10 = v2->customSound_controller[2];
+    switch ( v9 )
         {
-          case -1073741682: /*0x7d5996*/
-            v2->customSound_controller[2] = 131; /*0x7d5998*/
-            break;
-          case -1073741680: /*0x7d5996*/
-            v2->customSound_controller[2] = 129; /*0x7d59a8*/
-            break;
-          case -1073741679: /*0x7d5996*/
-            v2->customSound_controller[2] = 132; /*0x7d59b8*/
-            break;
-          case -1073741677: /*0x7d5996*/
-            v2->customSound_controller[2] = 133; /*0x7d59c8*/
-            break;
-          case -1073741683: /*0x7d5996*/
-            v2->customSound_controller[2] = 130; /*0x7d59d8*/
-            break;
-          case -1073741681: /*0x7d5996*/
-            v2->customSound_controller[2] = 134; /*0x7d59e8*/
-            break;
-          case -1073741678: /*0x7d5996*/
-            v2->customSound_controller[2] = 138; /*0x7d59f8*/
-            break;
+    case -1073741682: v2->customSound_controller[2] = 131;
+    break;
+    case -1073741680: v2->customSound_controller[2] = 129;
+    break;
+    case -1073741679: v2->customSound_controller[2] = 132;
+    break;
+    case -1073741677: v2->customSound_controller[2] = 133;
+    break;
+    case -1073741683: v2->customSound_controller[2] = 130;
+    break;
+    case -1073741681: v2->customSound_controller[2] = 134;
+    break;
+    case -1073741678: v2->customSound_controller[2] = 138;
+    break;
         }
-        ((void (__cdecl *)(int))v4)(8); /*0x7d5a04*/
-        v2->customSound_controller[2] = v10; /*0x7d5a07*/
+    ((void (__cdecl *)(int))v4)(8);
+    v2->customSound_controller[2] = v10;
       }
-      else
+    else
       {
-        v3[2] = 0; /*0x7d5a0e*/
-        ((void (__cdecl *)(int))v4)(v6); /*0x7d5a13*/
+    v3[2] = 0;
+    ((void (__cdecl *)(int))v4)(v6);
       }
-      v2->customSound_controller[1] = v11; /*0x7d5a19*/
+    v2->customSound_controller[1] = v11;
     }
-    return -1; /*0x7d5a1c*/
+    return -1;
   }
 }
 }
@@ -5830,101 +5815,98 @@ int __init_time()
 namespace gamemd {
 int _get_lc_time(CCINIClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl _get_lc_time(CCINIClass *aP0)
 {
-  int v2; // edi
-  int v3; // edi
-  int v4; // edi
-  int v5; // edi
-  int v6; // edi
-  int v7; // edi
-  int v8; // edi
-  int v9; // edi
-  int v10; // edi
-  int v11; // edi
-  int v12; // edi
-  int v13; // edi
-  int v14; // edi
-  int v15; // edi
-  int v16; // edi
-  int v17; // edi
-  int v18; // edi
-  int v19; // edi
-  int v20; // edi
-  int v21; // edi
-  int v22; // edi
-  int v23; // edi
-  int v24; // edi
-  int v25; // edi
-  int v26; // edi
-  int v27; // edi
-  int v28; // edi
-  int v29; // edi
-  int v30; // edi
-  int v31; // edi
-  int v32; // edi
-  int v33; // edi
-  int v34; // edi
-  int v35; // edi
-  int v36; // edi
-  int v37; // edi
-  int v38; // edi
-  int v39; // edi
-  int v40; // edi
-  int v41; // edi
-  int v42; // edi
-  int v43; // edi
-  LCID unknown38_low; // [esp+4h] [ebp-8h]
-  LCID Locale; // [esp+8h] [ebp-4h]
-
-  Locale = *(unsigned __int16 *)&CRTGlobal_B78508.__pad_35[1]; /*0x7d615f*/
-  unknown38_low = LOWORD(CRTGlobal_B78508.unknown38); /*0x7d6162*/
-  if ( !aP0 ) /*0x7d6165*/
-    return -1; /*0x7d6167*/
-  v2 = __getlocaleinfo(1, *(unsigned __int16 *)&CRTGlobal_B78508.__pad_35[1], 0x31u, (CCINIClass *)aP0->headNode); /*0x7d6181*/
-  v3 = __getlocaleinfo(1, Locale, 0x32u, (CCINIClass *)&aP0->headNode[1]) | v2; /*0x7d6192*/
-  v4 = __getlocaleinfo(1, Locale, 0x33u, (CCINIClass *)&aP0->headNode[2]) | v3; /*0x7d61a3*/
-  v5 = __getlocaleinfo(1, Locale, 0x34u, (CCINIClass *)aP0->sectionHead) | v4; /*0x7d61b7*/
-  v6 = __getlocaleinfo(1, Locale, 0x35u, (CCINIClass *)&aP0->sectionHead[1]) | v5; /*0x7d61c8*/
-  v7 = __getlocaleinfo(1, Locale, 0x36u, (CCINIClass *)&aP0->sectionHead[2]) | v6; /*0x7d61df*/
-  v8 = __getlocaleinfo(1, Locale, 0x37u, aP0) | v7; /*0x7d61e7*/
-  v9 = __getlocaleinfo(1, Locale, 0x2Au, (CCINIClass *)aP0->__pad_20) | v8; /*0x7d61fb*/
-  v10 = __getlocaleinfo(1, Locale, 0x2Bu, (CCINIClass *)&aP0->__pad_20[4]) | v9; /*0x7d620c*/
-  v11 = __getlocaleinfo(1, Locale, 0x2Cu, (CCINIClass *)&aP0->__pad_20[8]) | v10; /*0x7d621d*/
-  v12 = __getlocaleinfo(1, Locale, 0x2Du, (CCINIClass *)&aP0->INIClass_field_2C) | v11; /*0x7d622e*/
-  v13 = __getlocaleinfo(1, Locale, 0x2Eu, (CCINIClass *)&aP0->unknown30) | v12; /*0x7d6242*/
-  v14 = __getlocaleinfo(1, Locale, 0x2Fu, (CCINIClass *)&aP0->needsSave_flag) | v13; /*0x7d6253*/
-  v15 = __getlocaleinfo(1, Locale, 0x30u, (CCINIClass *)&aP0->sectionCount) | v14; /*0x7d6264*/
-  v16 = __getlocaleinfo(1, Locale, 0x44u, (CCINIClass *)&aP0->unknown38) | v15; /*0x7d6275*/
-  v17 = __getlocaleinfo(1, Locale, 0x45u, (CCINIClass *)&aP0->INIClass_field_3C) | v16; /*0x7d6289*/
-  v18 = __getlocaleinfo(1, Locale, 0x46u, (CCINIClass *)&aP0->ownsFile) | v17; /*0x7d629a*/
-  v19 = __getlocaleinfo(1, Locale, 0x47u, (CCINIClass *)&aP0->__pad_41[3]) | v18; /*0x7d62ab*/
-  v20 = __getlocaleinfo(1, Locale, 0x48u, (CCINIClass *)aP0->__pad_48) | v19; /*0x7d62bc*/
-  v21 = __getlocaleinfo(1, Locale, 0x49u, (CCINIClass *)&aP0->CCINIClass_field_4C) | v20; /*0x7d62d0*/
-  v22 = __getlocaleinfo(1, Locale, 0x4Au, (CCINIClass *)&aP0->unknown50) | v21; /*0x7d62e1*/
-  v23 = __getlocaleinfo(1, Locale, 0x4Bu, (CCINIClass *)&aP0->unknown54) | v22; /*0x7d62f2*/
-  v24 = __getlocaleinfo(1, Locale, 0x4Cu, aP0 + 1) | v23; /*0x7d6303*/
-  v25 = __getlocaleinfo(1, Locale, 0x4Du, (CCINIClass *)((char *)aP0 + 92)) | v24; /*0x7d6317*/
-  v26 = __getlocaleinfo(1, Locale, 0x4Eu, (CCINIClass *)((char *)aP0 + 96)) | v25; /*0x7d6328*/
-  v27 = __getlocaleinfo(1, Locale, 0x4Fu, (CCINIClass *)((char *)aP0 + 100)) | v26; /*0x7d6339*/
-  v28 = __getlocaleinfo(1, Locale, 0x38u, (CCINIClass *)((char *)aP0 + 104)) | v27; /*0x7d634a*/
-  v29 = __getlocaleinfo(1, Locale, 0x39u, (CCINIClass *)((char *)aP0 + 108)) | v28; /*0x7d635e*/
-  v30 = __getlocaleinfo(1, Locale, 0x3Au, (CCINIClass *)((char *)aP0 + 112)) | v29; /*0x7d636f*/
-  v31 = __getlocaleinfo(1, Locale, 0x3Bu, (CCINIClass *)((char *)aP0 + 116)) | v30; /*0x7d6380*/
-  v32 = __getlocaleinfo(1, Locale, 0x3Cu, (CCINIClass *)((char *)aP0 + 120)) | v31; /*0x7d6391*/
-  v33 = __getlocaleinfo(1, Locale, 0x3Du, (CCINIClass *)((char *)aP0 + 124)) | v32; /*0x7d63a5*/
-  v34 = __getlocaleinfo(1, Locale, 0x3Eu, (CCINIClass *)((char *)aP0 + 128)) | v33; /*0x7d63b9*/
-  v35 = __getlocaleinfo(1, Locale, 0x3Fu, (CCINIClass *)((char *)aP0 + 132)) | v34; /*0x7d63cd*/
-  v36 = __getlocaleinfo(1, Locale, 0x40u, (CCINIClass *)((char *)aP0 + 136)) | v35; /*0x7d63e1*/
-  v37 = __getlocaleinfo(1, Locale, 0x41u, (CCINIClass *)((char *)aP0 + 140)) | v36; /*0x7d63f8*/
-  v38 = __getlocaleinfo(1, Locale, 0x42u, (CCINIClass *)((char *)aP0 + 144)) | v37; /*0x7d640c*/
-  v39 = __getlocaleinfo(1, Locale, 0x43u, (CCINIClass *)((char *)aP0 + 148)) | v38; /*0x7d6420*/
-  v40 = __getlocaleinfo(1, Locale, 0x28u, (CCINIClass *)((char *)aP0 + 152)) | v39; /*0x7d6434*/
-  v41 = __getlocaleinfo(1, Locale, 0x29u, (CCINIClass *)((char *)aP0 + 156)) | v40; /*0x7d644b*/
-  v42 = __getlocaleinfo(1, unknown38_low, 0x1Fu, (CCINIClass *)((char *)aP0 + 160)) | v41; /*0x7d645f*/
-  v43 = __getlocaleinfo(1, unknown38_low, 0x20u, (CCINIClass *)((char *)aP0 + 164)) | v42; /*0x7d6479*/
-  return v43 | __getlocaleinfo(1, unknown38_low, 0x1003u, (CCINIClass *)((char *)aP0 + 168)); /*0x7d6491*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    int v15;
+    int v16;
+    int v17;
+    int v18;
+    int v19;
+    int v20;
+    int v21;
+    int v22;
+    int v23;
+    int v24;
+    int v25;
+    int v26;
+    int v27;
+    int v28;
+    int v29;
+    int v30;
+    int v31;
+    int v32;
+    int v33;
+    int v34;
+    int v35;
+    int v36;
+    int v37;
+    int v38;
+    int v39;
+    int v40;
+    int v41;
+    int v42;
+    int v43;
+    LCID unknown38_low;
+    LCID Locale;
+    Locale = *(unsigned short *)&CRTGlobal_B78508.__pad_35[1];
+    unknown38_low = LOWORD(CRTGlobal_B78508.unknown38);
+    if ( !aP0 )
+    return -1;
+    v2 = __getlocaleinfo(1, *(unsigned short *)&CRTGlobal_B78508.__pad_35[1], 0x31u, (CCINIClass *)aP0->headNode);
+    v3 = __getlocaleinfo(1, Locale, 0x32u, (CCINIClass *)&aP0->headNode[1]) | v2;
+    v4 = __getlocaleinfo(1, Locale, 0x33u, (CCINIClass *)&aP0->headNode[2]) | v3;
+    v5 = __getlocaleinfo(1, Locale, 0x34u, (CCINIClass *)aP0->sectionHead) | v4;
+    v6 = __getlocaleinfo(1, Locale, 0x35u, (CCINIClass *)&aP0->sectionHead[1]) | v5;
+    v7 = __getlocaleinfo(1, Locale, 0x36u, (CCINIClass *)&aP0->sectionHead[2]) | v6;
+    v8 = __getlocaleinfo(1, Locale, 0x37u, aP0) | v7;
+    v9 = __getlocaleinfo(1, Locale, 0x2Au, (CCINIClass *)aP0->__pad_20) | v8;
+    v10 = __getlocaleinfo(1, Locale, 0x2Bu, (CCINIClass *)&aP0->__pad_20[4]) | v9;
+    v11 = __getlocaleinfo(1, Locale, 0x2Cu, (CCINIClass *)&aP0->__pad_20[8]) | v10;
+    v12 = __getlocaleinfo(1, Locale, 0x2Du, (CCINIClass *)&aP0->INIClass_field_2C) | v11;
+    v13 = __getlocaleinfo(1, Locale, 0x2Eu, (CCINIClass *)&aP0->unknown30) | v12;
+    v14 = __getlocaleinfo(1, Locale, 0x2Fu, (CCINIClass *)&aP0->needsSave_flag) | v13;
+    v15 = __getlocaleinfo(1, Locale, 0x30u, (CCINIClass *)&aP0->sectionCount) | v14;
+    v16 = __getlocaleinfo(1, Locale, 0x44u, (CCINIClass *)&aP0->unknown38) | v15;
+    v17 = __getlocaleinfo(1, Locale, 0x45u, (CCINIClass *)&aP0->INIClass_field_3C) | v16;
+    v18 = __getlocaleinfo(1, Locale, 0x46u, (CCINIClass *)&aP0->ownsFile) | v17;
+    v19 = __getlocaleinfo(1, Locale, 0x47u, (CCINIClass *)&aP0->__pad_41[3]) | v18;
+    v20 = __getlocaleinfo(1, Locale, 0x48u, (CCINIClass *)aP0->__pad_48) | v19;
+    v21 = __getlocaleinfo(1, Locale, 0x49u, (CCINIClass *)&aP0->CCINIClass_field_4C) | v20;
+    v22 = __getlocaleinfo(1, Locale, 0x4Au, (CCINIClass *)&aP0->unknown50) | v21;
+    v23 = __getlocaleinfo(1, Locale, 0x4Bu, (CCINIClass *)&aP0->unknown54) | v22;
+    v24 = __getlocaleinfo(1, Locale, 0x4Cu, aP0 + 1) | v23;
+    v25 = __getlocaleinfo(1, Locale, 0x4Du, (CCINIClass *)((char *)(aP0) + 92)) | v24;
+    v26 = __getlocaleinfo(1, Locale, 0x4Eu, (CCINIClass *)((char *)(aP0) + 96)) | v25;
+    v27 = __getlocaleinfo(1, Locale, 0x4Fu, (CCINIClass *)((char *)(aP0) + 100)) | v26;
+    v28 = __getlocaleinfo(1, Locale, 0x38u, (CCINIClass *)((char *)(aP0) + 104)) | v27;
+    v29 = __getlocaleinfo(1, Locale, 0x39u, (CCINIClass *)((char *)(aP0) + 108)) | v28;
+    v30 = __getlocaleinfo(1, Locale, 0x3Au, (CCINIClass *)((char *)(aP0) + 112)) | v29;
+    v31 = __getlocaleinfo(1, Locale, 0x3Bu, (CCINIClass *)((char *)(aP0) + 116)) | v30;
+    v32 = __getlocaleinfo(1, Locale, 0x3Cu, (CCINIClass *)((char *)(aP0) + 120)) | v31;
+    v33 = __getlocaleinfo(1, Locale, 0x3Du, (CCINIClass *)((char *)(aP0) + 124)) | v32;
+    v34 = __getlocaleinfo(1, Locale, 0x3Eu, (CCINIClass *)((char *)(aP0) + 128)) | v33;
+    v35 = __getlocaleinfo(1, Locale, 0x3Fu, (CCINIClass *)((char *)(aP0) + 132)) | v34;
+    v36 = __getlocaleinfo(1, Locale, 0x40u, (CCINIClass *)((char *)(aP0) + 136)) | v35;
+    v37 = __getlocaleinfo(1, Locale, 0x41u, (CCINIClass *)((char *)(aP0) + 140)) | v36;
+    v38 = __getlocaleinfo(1, Locale, 0x42u, (CCINIClass *)((char *)(aP0) + 144)) | v37;
+    v39 = __getlocaleinfo(1, Locale, 0x43u, (CCINIClass *)((char *)(aP0) + 148)) | v38;
+    v40 = __getlocaleinfo(1, Locale, 0x28u, (CCINIClass *)((char *)(aP0) + 152)) | v39;
+    v41 = __getlocaleinfo(1, Locale, 0x29u, (CCINIClass *)((char *)(aP0) + 156)) | v40;
+    v42 = __getlocaleinfo(1, unknown38_low, 0x1Fu, (CCINIClass *)((char *)(aP0) + 160)) | v41;
+    v43 = __getlocaleinfo(1, unknown38_low, 0x20u, (CCINIClass *)((char *)(aP0) + 164)) | v42;
+    return v43 | __getlocaleinfo(1, unknown38_low, 0x1003u, (CCINIClass *)((char *)(aP0) + 168));
 }
 }
 } // namespace gamemd
@@ -11263,71 +11245,68 @@ char *__cdecl _strupr(char *String)
 namespace gamemd {
 int _wcsicmp(const wchar_t * String1, const wchar_t * String2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl _wcsicmp(const wchar_t *String1, const wchar_t *String2)
 {
-  const wchar_t *v2; // eax
-  const wchar_t *v3; // edx
-  const wchar_t *v4; // ecx
-  const wchar_t *v5; // esi
-  const wchar_t *v6; // edi
-  wint_t v7; // ax
-  wint_t v8; // ax
-  wint_t v9; // ax
-  int v11; // [esp+8h] [ebp-4h]
-  wint_t String1a; // [esp+14h] [ebp+8h]
-  const wchar_t *String2a; // [esp+18h] [ebp+Ch]
-
-  if ( CRTGlobal_B782A0 ) /*0x7dd106*/
+    const wchar_t *v2;
+    const wchar_t *v3;
+    const wchar_t *v4;
+    const wchar_t *v5;
+    const wchar_t *v6;
+    wint_t v7;
+    wint_t v8;
+    wint_t v9;
+    int v11;
+    wint_t String1a;
+    const wchar_t *String2a;
+    if ( CRTGlobal_B782A0 )
   {
-    InterlockedIncrement(&CRTGlobal_B78BA4); /*0x7dd156*/
-    if ( CRTGlobal_B78BA0 ) /*0x7dd162*/
+    InterlockedIncrement(&CRTGlobal_B78BA4);
+    if ( CRTGlobal_B78BA0 )
     {
-      InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7dd165*/
-      _lock(19); /*0x7dd16d*/
-      v11 = 1; /*0x7dd173*/
+    InterlockedDecrement(&CRTGlobal_B78BA4);
+    _lock(19);
+    v11 = 1;
     }
     else
     {
-      v11 = 0; /*0x7dd17c*/
+    v11 = 0;
     }
-    v5 = String1; /*0x7dd17f*/
-    v6 = String2; /*0x7dd183*/
-    do /*0x7dd1af*/
+    v5 = String1;
+    v6 = String2;
+    do
     {
-      v7 = *v5++; /*0x7dd186*/
-      LOWORD(String2a) = towlower_0(v7); /*0x7dd191*/
-      v8 = *v6++; /*0x7dd194*/
-      v9 = towlower_0(v8); /*0x7dd19a*/
-      String1a = v9; /*0x7dd1a6*/
+    v7 = *v5++;
+    LOWORD(String2a) = towlower_0(v7);
+    v8 = *v6++;
+    v9 = towlower_0(v8);
+    String1a = v9;
     }
-    while ( (_WORD)String2a && (_WORD)String2a == v9 ); /*0x7dd1af*/
-    if ( v11 ) /*0x7dd1b6*/
-      _unlock(19); /*0x7dd1ba*/
+    while ( (short)String2a && (short)String2a == v9 );
+    if ( v11 )
+    _unlock(19);
     else
-      InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7dd1c3*/
+    InterlockedDecrement(&CRTGlobal_B78BA4);
   }
-  else
+    else
   {
-    v3 = String2; /*0x7dd108*/
-    v4 = String1; /*0x7dd10b*/
-    do /*0x7dd14c*/
+    v3 = String2;
+    v4 = String1;
+    do
     {
-      LOWORD(v2) = *v4; /*0x7dd10e*/
-      if ( *v4 <= 0x5Au && (unsigned __int16)v2 >= 0x41u ) /*0x7dd11b*/
-        v2 += 16; /*0x7dd11d*/
-      String2a = v2; /*0x7dd120*/
-      LOWORD(v2) = *v3; /*0x7dd123*/
-      if ( *v3 <= 0x5Au && (unsigned __int16)v2 >= 0x41u ) /*0x7dd130*/
-        LOWORD(v2) = (_WORD)v2 + 32; /*0x7dd132*/
-      String1a = (unsigned __int16)v2; /*0x7dd136*/
-      HIWORD(v2) = HIWORD(String2a); /*0x7dd139*/
-      ++v4; /*0x7dd13c*/
-      ++v3; /*0x7dd13e*/
+    LOWORD(v2) = *v4;
+    if ( *v4 <= 0x5Au && (unsigned short)v2 >= 0x41u )
+    v2 += 16;
+    String2a = v2;
+    LOWORD(v2) = *v3;
+    if ( *v3 <= 0x5Au && (unsigned short)v2 >= 0x41u )
+    LOWORD(v2) = (short)v2 + 32;
+    String1a = (unsigned short)v2;
+    HIWORD(v2) = HIWORD(String2a);
+    ++v4;
+    ++v3;
     }
-    while ( (_WORD)String2a && (_WORD)String2a == (_WORD)v2 ); /*0x7dd14c*/
+    while ( (short)String2a && (short)String2a == (short)v2 );
   }
-  return (unsigned __int16)String2a - String1a; /*0x7dd1d1*/
+    return (unsigned short)String2a - String1a;
 }
 }
 } // namespace gamemd
@@ -12051,84 +12030,81 @@ wchar_t *__cdecl _wcsupr(CampaignScore *aP0)
 namespace gamemd {
 int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl _wcsnicmp(ObjectClass *aP0, const wchar_t *String2, size_t MaxCount)
 {
-  int result; // eax
-  const wchar_t *v4; // edx
-  ObjectClass *v5; // ecx
-  wchar_t v6; // ax
-  ObjectClass *v7; // esi
-  const wchar_t *v8; // edi
-  wint_t v9; // ax
-  wint_t v10; // ax
-  wint_t v11; // ax
-  bool v12; // zf
-  int v13; // [esp+4h] [ebp-4h]
-  wint_t String1; // [esp+10h] [ebp+8h]
-  const wchar_t *String2a; // [esp+14h] [ebp+Ch]
-
-  result = 0; /*0x7dde87*/
-  if ( MaxCount ) /*0x7dde8c*/
+    int result;
+    const wchar_t *v4;
+    ObjectClass *v5;
+    wchar_t v6;
+    ObjectClass *v7;
+    const wchar_t *v8;
+    wint_t v9;
+    wint_t v10;
+    wint_t v11;
+    bool v12;
+    int v13;
+    wint_t String1;
+    const wchar_t *String2a;
+    result = 0;
+    if ( MaxCount )
   {
-    if ( CRTGlobal_B782A0 ) /*0x7dde99*/
+    if ( CRTGlobal_B782A0 )
     {
-      InterlockedIncrement(&CRTGlobal_B78BA4); /*0x7ddef2*/
-      if ( CRTGlobal_B78BA0 ) /*0x7ddefe*/
+    InterlockedIncrement(&CRTGlobal_B78BA4);
+    if ( CRTGlobal_B78BA0 )
       {
-        InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7ddf01*/
-        _lock(19); /*0x7ddf09*/
-        v13 = 1; /*0x7ddf0f*/
+    InterlockedDecrement(&CRTGlobal_B78BA4);
+    _lock(19);
+    v13 = 1;
       }
-      else
+    else
       {
-        v13 = 0; /*0x7ddf18*/
+    v13 = 0;
       }
-      v7 = aP0; /*0x7ddf1b*/
-      v8 = String2; /*0x7ddf1f*/
-      do /*0x7ddf50*/
+    v7 = aP0;
+    v8 = String2;
+    do
       {
-        v9 = *(_WORD *)v7->__pad_0; /*0x7ddf22*/
-        v7 = (ObjectClass *)((char *)v7 + 2); /*0x7ddf27*/
-        LOWORD(String2a) = towlower_0(v9); /*0x7ddf2d*/
-        v10 = *v8++; /*0x7ddf30*/
-        v11 = towlower_0(v10); /*0x7ddf36*/
-        v12 = MaxCount-- == 1; /*0x7ddf3b*/
-        String1 = v11; /*0x7ddf40*/
+    v9 = *(short *)v7->__pad_0;
+    v7 = (ObjectClass *)((char *)(v7) + 2);
+    LOWORD(String2a) = towlower_0(v9);
+    v10 = *v8++;
+    v11 = towlower_0(v10);
+    v12 = MaxCount-- == 1;
+    String1 = v11;
       }
-      while ( !v12 && (_WORD)String2a && (_WORD)String2a == v11 ); /*0x7ddf50*/
-      if ( v13 ) /*0x7ddf57*/
-        _unlock(19); /*0x7ddf5b*/
-      else
-        InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7ddf64*/
+    while ( !v12 && (short)String2a && (short)String2a == v11 );
+    if ( v13 )
+    _unlock(19);
+    else
+    InterlockedDecrement(&CRTGlobal_B78BA4);
     }
     else
     {
-      v4 = String2; /*0x7dde9b*/
-      v5 = aP0; /*0x7dde9e*/
-      do /*0x7ddee8*/
+    v4 = String2;
+    v5 = aP0;
+    do
       {
-        LOWORD(result) = *(_WORD *)v5->__pad_0; /*0x7ddea1*/
-        if ( *(_WORD *)v5->__pad_0 <= 0x5Au && (unsigned __int16)result >= 0x41u ) /*0x7ddeae*/
-          result += 32; /*0x7ddeb0*/
-        String2a = (const wchar_t *)result; /*0x7ddeb3*/
-        v6 = *v4; /*0x7ddeb6*/
-        if ( *v4 <= 0x5Au && v6 >= 0x41u ) /*0x7ddec3*/
-          v6 += 32; /*0x7ddec5*/
-        String1 = v6; /*0x7ddec9*/
-        v5 = (ObjectClass *)((char *)v5 + 2); /*0x7ddecc*/
-        ++v4; /*0x7ddece*/
-        if ( !--MaxCount ) /*0x7dded2*/
-          break; /*0x7dded2*/
-        HIWORD(result) = HIWORD(String2a); /*0x7dded8*/
-        if ( !(_WORD)String2a ) /*0x7ddede*/
-          break; /*0x7ddede*/
+    LOWORD(result) = *(short *)v5->__pad_0;
+    if ( *(short *)v5->__pad_0 <= 0x5Au && (unsigned short)result >= 0x41u )
+    result += 32;
+    String2a = (const wchar_t *)result;
+    v6 = *v4;
+    if ( *v4 <= 0x5Au && v6 >= 0x41u )
+    v6 += 32;
+    String1 = v6;
+    v5 = (ObjectClass *)((char *)(v5) + 2);
+    ++v4;
+    if ( !--MaxCount )
+    break;
+    HIWORD(result) = HIWORD(String2a);
+    if ( !(short)String2a )
+    break;
       }
-      while ( (_WORD)String2a == v6 ); /*0x7ddee8*/
+    while ( (short)String2a == v6 );
     }
-    return (unsigned __int16)String2a - String1; /*0x7ddf72*/
+    return (unsigned short)String2a - String1;
   }
-  return result; /*0x7ddf75*/
+    return result;
 }
 }
 } // namespace gamemd

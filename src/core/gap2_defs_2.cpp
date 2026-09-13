@@ -39,26 +39,26 @@ int __thiscall Rect_SetRedraw(_DWORD *this, char a2)
 }
 } }
 // 0x4A0E60
-namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a1) {
+namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DynamicVector *__thiscall EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(
-        _DWORD *Block,
+        _DWORD *this,
         char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a0e63*/
-  *Block = &vt_VectorClass_IConnectionPoint; /*0x4a0e66*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a0e70*/
+  v3 = (void *)*(this + 1); /*0x4a0e63*/
+  *this = &vt_VectorClass_IConnectionPoint; /*0x4a0e66*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a0e70*/
   {
     __3_YAXPAX_Z(v3); /*0x4a0e78*/
-    *(Block + 1) = 0; /*0x4a0e80*/
+    *(this + 1) = 0; /*0x4a0e80*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4a0e8b*/
-  *(Block + 2) = 0; /*0x4a0e91*/
+  *((_BYTE *)this + 13) = 0; /*0x4a0e8b*/
+  *(this + 2) = 0; /*0x4a0e91*/
   if ( (a2 & 1) != 0 ) /*0x4a0e98*/
-    __3_YAXPAX_Z(Block); /*0x4a0e9b*/
-  return (DynamicVector *)Block; /*0x4a0ea5*/
+    __3_YAXPAX_Z(this); /*0x4a0e9b*/
+  return (DynamicVector *)this; /*0x4a0ea5*/
 }
 } }
 // 0x4A0F20
@@ -91,7 +91,7 @@ unsigned int __thiscall EnumConnectionPointsClass::sub_4A0F50(int this, int a2)
 }
 } }
 // 0x4A13C0
-namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a1, void* a2) {
+namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall EnumConnectionPointsClass::sub_4A13C0(void *this, int a2, _DWORD *a3)
 {
@@ -174,22 +174,19 @@ int __thiscall COMObject_ActivateThunk(_BYTE *this, int a2, int a3, int a4)
 }
 } }
 // 0x4E1920
-namespace gamemd { int COMObject::FindInList(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COMObject_FindInList(void *this, int a2)
+namespace gamemd { int COMObject::FindInList(int a2) {
 {
-  int v2; // esi
-
-  v2 = (int)this; /*0x4e1926*/
-  if ( !a2 || !this ) /*0x4e192e*/
-    return 0; /*0x4e1948*/
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 68))(v2) != a2 ) /*0x4e1939*/
+    int v2;
+    v2 = (int)this;
+    if ( !a2 || !this )
+    return 0;
+    while ( (*(int (__thiscall **)(int))(*(int *)(v2) + 68))(v2) != a2 )
   {
-    v2 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 4))(v2); /*0x4e1942*/
-    if ( !v2 ) /*0x4e1946*/
-      return 0; /*0x4e1946*/
+    v2 = (*(int (__thiscall **)(int))(*(int *)(v2) + 4))(v2);
+    if ( !v2 )
+    return 0;
   }
-  return v2; /*0x4e1948*/
+    return v2;
 }
 } }
 // 0x4E1970
@@ -280,14 +277,12 @@ int __thiscall COMObject::SetField(TriColorGaugeClass *this, int a2)
 }
 } }
 // 0x4E30F0
-namespace gamemd { void* COMObject::ScalarDtor(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall COMObject::ScalarDtor(TriColorGaugeClass *this, char a2)
+namespace gamemd { void* COMObject::ScalarDtor(int a2) {
 {
-  GadgetClass::Dtor(this); /*0x4e30f3*/
-  if ( (a2 & 1) != 0 ) /*0x4e30fd*/
-    __3_YAXPAX_Z(this); /*0x4e3100*/
-  return &this->vfptr; /*0x4e310a*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 } }
 // 0x4F42B0
@@ -300,22 +295,19 @@ int __thiscall COMObject_DtorSequence(void *this, int a2)
 }
 } }
 // 0x5233A0
-namespace gamemd { void* COMObject::SwapReference(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall COMObject::SwapReference(int *this, int a2)
+namespace gamemd { void* COMObject::SwapReference(int a2) {
 {
-  int v3; // edi
-
-  v3 = *this; /*0x5233a8*/
-  if ( *this != a2 ) /*0x5233ac*/
+    int v3;
+    v3 = *(void**)this;
+    if ( *(void**)this != a2 )
   {
-    *this = a2; /*0x5233b0*/
-    if ( a2 ) /*0x5233b2*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)a2 + 4))(a2); /*0x5233b7*/
-    if ( v3 ) /*0x5233bc*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x5233c1*/
+    *(void**)this = a2;
+    if ( a2 )
+    (*(void (__stdcall **)(int))(*(int *)(a2) + 4))(a2);
+    if ( v3 )
+    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
   }
-  return this; /*0x5233c6*/
+    return this;
 }
 } }
 // 0x53EDE0
@@ -334,15 +326,13 @@ __int16 __thiscall Struct::Copy6Bytes(char *this, IPXManagerClass *aP1)
 }
 } }
 // 0x54A120
-namespace gamemd { void* Rect::Set4(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_54A120(_DWORD *this, int a2, int a3, int a4, int a5)
+namespace gamemd { void* Rect::Set4(int a2, int a3, int a4, int a5) {
 {
-  *this = a2; /*0x54a12a*/
-  *(this + 1) = a3; /*0x54a130*/
-  *(this + 2) = a4; /*0x54a137*/
-  *(this + 3) = a5; /*0x54a13a*/
-  return this; /*0x54a13d*/
+    *(void**)this = a2;
+    this->Y = a3;
+    this->Width = a4;
+    this->Height = a5;
+    return this;
 }
 } }
 // 0x54F6B0
@@ -537,7 +527,7 @@ wchar_t **__thiscall Struct::WideStringCopy(wchar_t **this, ObjectClass *aP1)
 }
 } }
 // 0x65D480
-namespace gamemd { int ComPtr::Set(int a1) {
+namespace gamemd { int ComPtr::Set(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ComPtr::Set(rc_ptr_base *this, int a2)
 {
@@ -931,27 +921,27 @@ char __thiscall sub_732600(void *this)
 }
 } }
 // 0x765790
-namespace gamemd { void* COMClass::invokeMethod(int a1) {
+namespace gamemd { void* COMClass::invokeMethod(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::invokeMethod(_DWORD *Block, char a2)
+rc_ptr *__thiscall COMClass::invokeMethod(_DWORD *this, char a2)
 {
-  *Block = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x765793*/
-  ComPtr::Release(Block); /*0x765799*/
+  *this = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x765793*/
+  ComPtr::Release(this); /*0x765799*/
   if ( (a2 & 1) != 0 ) /*0x7657a3*/
-    __3_YAXPAX_Z(Block); /*0x7657a6*/
-  return (rc_ptr *)Block; /*0x7657b0*/
+    __3_YAXPAX_Z(this); /*0x7657a6*/
+  return (rc_ptr *)this; /*0x7657b0*/
 }
 } }
 // 0x7657C0
-namespace gamemd { void* COMClass::getTypeInfo(int a1) {
+namespace gamemd { void* COMClass::getTypeInfo(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::getTypeInfo(_DWORD *Block, char a2)
+rc_ptr *__thiscall COMClass::getTypeInfo(_DWORD *this, char a2)
 {
-  *Block = &vt_rc_ptr_WorldDominationTour_State; /*0x7657c3*/
-  ComPtr::Release(Block); /*0x7657c9*/
+  *this = &vt_rc_ptr_WorldDominationTour_State; /*0x7657c3*/
+  ComPtr::Release(this); /*0x7657c9*/
   if ( (a2 & 1) != 0 ) /*0x7657d3*/
-    __3_YAXPAX_Z(Block); /*0x7657d6*/
-  return (rc_ptr *)Block; /*0x7657e0*/
+    __3_YAXPAX_Z(this); /*0x7657d6*/
+  return (rc_ptr *)this; /*0x7657e0*/
 }
 } }
 // 0x7659F0
@@ -1084,19 +1074,19 @@ namespace gamemd { void* COMClass::releaseInterface() {
 }
 } }
 // 0x7669C0
-namespace gamemd { void* COMClass::connectPoint(int a1) {
+namespace gamemd { void* COMClass::connectPoint(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::connectPoint(_DWORD *Block, char a2)
+rc_ptr *__thiscall COMClass::connectPoint(_DWORD *this, char a2)
 {
-  *Block = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption; /*0x7669c3*/
-  ComPtr::Release(Block); /*0x7669c9*/
+  *this = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption; /*0x7669c3*/
+  ComPtr::Release(this); /*0x7669c9*/
   if ( (a2 & 1) != 0 ) /*0x7669d3*/
-    __3_YAXPAX_Z(Block); /*0x7669d6*/
-  return (rc_ptr *)Block; /*0x7669e0*/
+    __3_YAXPAX_Z(this); /*0x7669d6*/
+  return (rc_ptr *)this; /*0x7669e0*/
 }
 } }
 // 0x766A80
-namespace gamemd { int COMClass::enumConnections(int a1) {
+namespace gamemd { int COMClass::enumConnections(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COMClass::enumConnections(ValueGameOption_E_WorldDominationTour *this, int a2)
 {
@@ -1156,7 +1146,7 @@ wchar_t **__thiscall COMClass::adviseConnection(
 }
 } }
 // 0x766B90
-namespace gamemd { void* COMClass::unadviseConnection(int a1) {
+namespace gamemd { void* COMClass::unadviseConnection(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void **__thiscall COMClass::unadviseConnection(ValueGameOption_E_WorldDominationTour *this, char a2)
 {
@@ -1168,14 +1158,12 @@ void **__thiscall COMClass::unadviseConnection(ValueGameOption_E_WorldDomination
 }
 } }
 // 0x7674E0
-namespace gamemd { int COMClass::unlockServer(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COMClass::unlockServer(FlagGameOption_WorldDominationTour *this, int a2)
+namespace gamemd { int COMClass::unlockServer(int a2) {
 {
-  if ( (*(_DWORD *)(*(_DWORD *)(a2 + 4) + 56) & *(_DWORD *)&this->__pad_0[8]) != 0 ) /*0x7674ef*/
-    return *(_DWORD *)&this->__pad_0[16]; /*0x7674f1*/
-  else
-    return *(_DWORD *)&this->__pad_0[12]; /*0x7674f7*/
+    if ( (*(int *)(*(int *)(a2 + 4) + 56) & *(int *)&this->__pad_0[8]) != 0 )
+    return *(int *)&this->__pad_0[16];
+    else
+    return *(int *)&this->__pad_0[12];
 }
 } }
 // 0x767500
@@ -1183,15 +1171,15 @@ namespace gamemd { void* COMClass::coInitialize(void* a1, int a2, void* a3) { re
 // 0x767880
 namespace gamemd { void* COMClass::coUninitialize(int a1) { return nullptr; } }
 // 0x767C50
-namespace gamemd { void* COMClass::marshalInterface(int a1) {
+namespace gamemd { void* COMClass::marshalInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::marshalInterface(_DWORD *Block, char a2)
+rc_ptr *__thiscall COMClass::marshalInterface(_DWORD *this, char a2)
 {
-  *Block = &vt_rc_ptr_WDTState; /*0x767c53*/
-  ComPtr::Release(Block); /*0x767c59*/
+  *this = &vt_rc_ptr_WDTState; /*0x767c53*/
+  ComPtr::Release(this); /*0x767c59*/
   if ( (a2 & 1) != 0 ) /*0x767c63*/
-    __3_YAXPAX_Z(Block); /*0x767c66*/
-  return (rc_ptr *)Block; /*0x767c70*/
+    __3_YAXPAX_Z(this); /*0x767c66*/
+  return (rc_ptr *)this; /*0x767c70*/
 }
 } }
 // 0x76F060

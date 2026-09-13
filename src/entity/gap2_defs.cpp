@@ -1153,14 +1153,14 @@ int __thiscall AnimClass::_vt60(void *this, _DWORD *a2)
 }
 } }
 // 0x426590
-namespace gamemd { void* AnimClass::MissionStubReturnZero3(int a1) {
+namespace gamemd { void* AnimClass::MissionStubReturnZero3(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AnimClass *__thiscall AnimClass::MissionStubReturnZero3(#374 *Block, char a2)
+AnimClass *__thiscall AnimClass::MissionStubReturnZero3(#374 *this, char a2)
 {
-  AnimClass::Destruct(Block); /*0x426593*/
+  AnimClass::Destruct(this); /*0x426593*/
   if ( (a2 & 1) != 0 ) /*0x42659d*/
-    __3_YAXPAX_Z(Block); /*0x4265a0*/
-  return (AnimClass *)Block; /*0x4265aa*/
+    __3_YAXPAX_Z(this); /*0x4265a0*/
+  return (AnimClass *)this; /*0x4265aa*/
 }
 } }
 // 0x4397E0
@@ -8076,14 +8076,14 @@ int __thiscall BulletClass::_vt34(_DWORD *this)
 }
 } }
 // 0x46B5C0
-namespace gamemd { void* BulletClass::CheckActionStatus(int a1) {
+namespace gamemd { void* BulletClass::CheckActionStatus(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BulletClass *__thiscall BulletClass::CheckActionStatus(#374 *Block, char a2)
+BulletClass *__thiscall BulletClass::CheckActionStatus(#374 *this, char a2)
 {
-  BulletClass::Dtor(Block); /*0x46b5c3*/
+  BulletClass::Dtor(this); /*0x46b5c3*/
   if ( (a2 & 1) != 0 ) /*0x46b5cd*/
-    __3_YAXPAX_Z(Block); /*0x46b5d0*/
-  return (BulletClass *)Block; /*0x46b5da*/
+    __3_YAXPAX_Z(this); /*0x46b5d0*/
+  return (BulletClass *)this; /*0x46b5da*/
 }
 } }
 // 0x46B960
@@ -8370,45 +8370,45 @@ int __thiscall ParticleSystemClass::sub_4EB490(int *this, _DWORD *a2)
 }
 } }
 // 0x4EF850
-namespace gamemd { void* ParticleSystemClass::QueryInterface(int a1) {
+namespace gamemd { void* ParticleSystemClass::QueryInterface(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ParticleSystemClass::QueryInterface(_DWORD *Block, char a2)
+DynamicVector *__thiscall ParticleSystemClass::QueryInterface(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4ef853*/
-  *Block = &vt_VectorClass_ParticleClass; /*0x4ef856*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef860*/
+  v3 = (void *)*(this + 1); /*0x4ef853*/
+  *this = &vt_VectorClass_ParticleClass; /*0x4ef856*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4ef860*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef868*/
-    *(Block + 1) = 0; /*0x4ef870*/
+    *(this + 1) = 0; /*0x4ef870*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4ef87b*/
-  *(Block + 2) = 0; /*0x4ef881*/
+  *((_BYTE *)this + 13) = 0; /*0x4ef87b*/
+  *(this + 2) = 0; /*0x4ef881*/
   if ( (a2 & 1) != 0 ) /*0x4ef888*/
-    __3_YAXPAX_Z(Block); /*0x4ef88b*/
-  return (DynamicVector *)Block; /*0x4ef895*/
+    __3_YAXPAX_Z(this); /*0x4ef88b*/
+  return (DynamicVector *)this; /*0x4ef895*/
 }
 } }
 // 0x4EFDA0
-namespace gamemd { void* ParticleSystemClass::finalizeParticles(int a1) {
+namespace gamemd { void* ParticleSystemClass::finalizeParticles(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall ParticleSystemClass::finalizeParticles(_DWORD *Block, char a2)
+DynamicVector *__thiscall ParticleSystemClass::finalizeParticles(_DWORD *this, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4efda3*/
-  *Block = &vt_VectorClass_SmudgeClass; /*0x4efda6*/
-  if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efdb0*/
+  v3 = (void *)*(this + 1); /*0x4efda3*/
+  *this = &vt_VectorClass_SmudgeClass; /*0x4efda6*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4efdb0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efdb8*/
-    *(Block + 1) = 0; /*0x4efdc0*/
+    *(this + 1) = 0; /*0x4efdc0*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x4efdcb*/
-  *(Block + 2) = 0; /*0x4efdd1*/
+  *((_BYTE *)this + 13) = 0; /*0x4efdcb*/
+  *(this + 2) = 0; /*0x4efdd1*/
   if ( (a2 & 1) != 0 ) /*0x4efdd8*/
-    __3_YAXPAX_Z(Block); /*0x4efddb*/
-  return (DynamicVector *)Block; /*0x4efde5*/
+    __3_YAXPAX_Z(this); /*0x4efddb*/
+  return (DynamicVector *)this; /*0x4efde5*/
 }
 } }
 // 0x547CF0
@@ -13483,14 +13483,14 @@ LABEL_11:
 }
 } }
 // 0x65BED0
-namespace gamemd { void* RadSiteClass::ProcessEvent(int a1) {
+namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-RadSiteClass *__thiscall RadSiteClass::ProcessEvent(void **Block, char a2)
+RadSiteClass *__thiscall RadSiteClass::ProcessEvent(void **this, char a2)
 {
-  RadSiteClass::Constructor(Block); /*0x65bed3*/
+  RadSiteClass::Constructor(this); /*0x65bed3*/
   if ( (a2 & 1) != 0 ) /*0x65bedd*/
-    __3_YAXPAX_Z(Block); /*0x65bee0*/
-  return (RadSiteClass *)Block; /*0x65beea*/
+    __3_YAXPAX_Z(this); /*0x65bee0*/
+  return (RadSiteClass *)this; /*0x65beea*/
 }
 } }
 // 0x6620F0
@@ -14541,14 +14541,14 @@ _DWORD *__thiscall TerrainClass::Export(int this, _DWORD *a2)
 }
 } }
 // 0x71D350
-namespace gamemd { void* TerrainClass::MissionStubReturnZero4(int a1) {
+namespace gamemd { void* TerrainClass::MissionStubReturnZero4(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainClass *__thiscall TerrainClass::MissionStubReturnZero4(void *Block, char a2)
+TerrainClass *__thiscall TerrainClass::MissionStubReturnZero4(void *this, char a2)
 {
-  TerrainClass::CleanupMembers((int)Block); /*0x71d353*/
+  TerrainClass::CleanupMembers((int)this); /*0x71d353*/
   if ( (a2 & 1) != 0 ) /*0x71d35d*/
-    __3_YAXPAX_Z(Block); /*0x71d360*/
-  return (TerrainClass *)Block; /*0x71d36a*/
+    __3_YAXPAX_Z(this); /*0x71d360*/
+  return (TerrainClass *)this; /*0x71d36a*/
 }
 } }
 // 0x721880
@@ -14712,14 +14712,14 @@ namespace gamemd { int TiberiumClass::Stub() {
 }
 } }
 // 0x723710
-namespace gamemd { void* TiberiumClass::DrawOre(int a1) {
+namespace gamemd { void* TiberiumClass::DrawOre(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TiberiumClass *__thiscall TiberiumClass::DrawOre(void *Block, char a2)
+TiberiumClass *__thiscall TiberiumClass::DrawOre(void *this, char a2)
 {
-  TiberiumClass::CleanupMembers((int)Block); /*0x723713*/
+  TiberiumClass::CleanupMembers((int)this); /*0x723713*/
   if ( (a2 & 1) != 0 ) /*0x72371d*/
-    __3_YAXPAX_Z(Block); /*0x723720*/
-  return (TiberiumClass *)Block; /*0x72372a*/
+    __3_YAXPAX_Z(this); /*0x723720*/
+  return (TiberiumClass *)this; /*0x72372a*/
 }
 } }
 // 0x727FD0
