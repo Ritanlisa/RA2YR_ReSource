@@ -1,8 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BSurface_e4.hpp"
 
 // 0x410CE0
+namespace gamemd {
 unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -72,8 +74,10 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   return this; /*0x410db0*/
 }
 }
+} // namespace gamemd
 
 // 0x411630
+namespace gamemd {
 int BSurface::GetBytesPerPixel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -82,8 +86,10 @@ int __thiscall BSurface_GetBytesPerPixel(_DWORD *this)
   return *(this + 4); /*0x411633*/
 }
 }
+} // namespace gamemd
 
 // 0x411640
+namespace gamemd {
 int BSurface::GetPitch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -92,8 +98,10 @@ int __thiscall BSurface_GetPitch(_DWORD *this)
   return *(this + 4) * (*(int (__thiscall **)(_DWORD *))(*this + 124))(this); /*0x41164c*/
 }
 }
+} // namespace gamemd
 
 // 0x411650
+namespace gamemd {
 BSurface * BSurface::ScalarDtor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -106,8 +114,10 @@ BSurface *__thiscall BSurface::ScalarDtor(char *this, char a2)
   return (BSurface *)this; /*0x411674*/
 }
 }
+} // namespace gamemd
 
 // 0x7B8C60
+namespace gamemd {
 bool BSurface::CreateTripleBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -242,8 +252,10 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
   return *(_DWORD *)(this + 68) && *(_DWORD *)(this + 88) && *(_DWORD *)(this + 108); /*0x7b8e62*/
 }
 }
+} // namespace gamemd
 
 // 0x7BC970
+namespace gamemd {
 unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -313,6 +325,7 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   return this; /*0x7bca43*/
 }
 }
+} // namespace gamemd
 
 // 0x4114F0
 char BSurface::Stub(int a1, int a2)

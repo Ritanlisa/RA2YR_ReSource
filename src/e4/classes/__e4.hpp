@@ -4,12 +4,12 @@
 namespace gamemd {
 struct _ {
     void* vfptr;  // minimal E2 declaration
-    int Seek(int a2);  // 0x74F3B0
     char AddRef(int a2);  // 0x74F3C0
     char Release(int a2, unsigned int * a3);  // 0x74F400
     void ddtor();  // 0x74F4B0
     int Read(unsigned int * a2);  // 0x74F4E0
     unsigned int Write(int a2);  // 0x74F520
     VectorClass * QueryInterface(char a2);  // 0x74F650
+    int Seek(int a2);  // 0x74F3B0
 };
 } // namespace gamemd

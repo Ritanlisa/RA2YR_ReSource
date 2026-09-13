@@ -813,6 +813,535 @@ void __thiscall unknown::_vt03(int this)
 }
 }
 
+// 0x5896A0
+int unknown::Read(unsigned short * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall unknown::_vt04(int *this, _WORD *a2)
+{
+  int v2; // esi
+  int result; // eax
+  _WORD *i; // ecx
+
+  v2 = *(this + 4); /*0x5896a2*/
+  result = 0; /*0x5896a5*/
+  if ( v2 <= 0 ) /*0x5896aa*/
+    return -1; /*0x5896e1*/
+  for ( i = (_WORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5896b0*/
+  {
+    if ( ++result >= v2 ) /*0x5896df*/
+      return -1; /*0x5896df*/
+  }
+  return result; /*0x5896e4*/
+}
+}
+
+// 0x58B7E0
+namespace gamemd {
+int sub_58B7E0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_58B7E0()
+{
+  return dword_ABDFD4; /*0x58b7e5*/
+}
+}
+} // namespace gamemd
+
+// 0x58B7F0
+namespace gamemd {
+int sub_58B7F0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_58B7F0()
+{
+  return dword_ABDFD0; /*0x58b7f5*/
+}
+}
+} // namespace gamemd
+
+// 0x58B800
+namespace gamemd {
+int sub_58B800()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_58B800()
+{
+  return dword_ABEC90; /*0x58b805*/
+}
+}
+} // namespace gamemd
+
+// 0x58B810
+namespace gamemd {
+MapSeedClass * sub_58B810()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+MapSeedClass *sub_58B810()
+{
+  return dword_ABECD0; /*0x58b815*/
+}
+}
+} // namespace gamemd
+
+// 0x58B820
+namespace gamemd {
+void * ComputeMapCameraBounds()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void *ComputeMapCameraBounds()
+{
+  void *result; // eax
+  int v1; // ebp
+  int i; // edi
+  __int16 *WaypointLocationScenarioClass; // eax
+  void *v4; // esi
+  int v5; // eax
+  int *v6; // eax
+  int *v7; // eax
+  int v8; // ecx
+  int v9; // esi
+  int v10; // edx
+  int v11; // edi
+  int v12; // ebx
+  __int16 *j; // esi
+  int v14; // eax
+  int *v15; // eax
+  int v16; // edx
+  int v17; // edi
+  _DWORD *v18; // ebx
+  int v19; // eax
+  int *v20; // esi
+  int v21; // ecx
+  int v22; // edx
+  int v23; // esi
+  int v24; // [esp+10h] [ebp-28h] BYREF
+  int v25; // [esp+14h] [ebp-24h] BYREF
+  int *k; // [esp+18h] [ebp-20h] BYREF
+  char v27[4]; // [esp+1Ch] [ebp-1Ch] BYREF
+  char v28[8]; // [esp+20h] [ebp-18h] BYREF
+  char v29[4]; // [esp+28h] [ebp-10h] BYREF
+  char v30[12]; // [esp+2Ch] [ebp-Ch] BYREF
+
+  result = MEMORY[0xA8B230]; /*0x58b820*/
+  v1 = 0; /*0x58b82a*/
+  dword_ABED0C = 0; /*0x58b830*/
+  if ( MEMORY[0xA8B230] && MEMORY[0x887324] ) /*0x58b842*/
+  {
+    for ( i = 0; i < 8; ++i ) /*0x58b848*/
+    {
+      if ( !(unsigned __int8)ScenarioClass::Is_Waypoint_Valid(i) ) /*0x58b851*/
+        break; /*0x58b858*/
+      WaypointLocationScenarioClass = (__int16 *)ScenarioClass::Get_Waypoint_Location(&k, i); /*0x58b86a*/
+      v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], WaypointLocationScenarioClass); /*0x58b87e*/
+      v5 = (*(int (__thiscall **)(void *))(*(_DWORD *)v4 + 72))(v4); /*0x58b88f*/
+      v6 = (int *)(*(int (__thiscall **)(void *, char *, _DWORD))(*(_DWORD *)v4 + 72))(v4, v29, *(_DWORD *)(v5 + 4)); /*0x58b89f*/
+      IsoCoord::ToScreenOffset(*v6, (int)v28, &v24, &v25); /*0x58b8ab*/
+      v7 = (int *)ScenarioClass::Get_Waypoint_Location(v27, i); /*0x58b8bc*/
+      v8 = dword_ABED0C; /*0x58b8c1*/
+      v9 = v24; /*0x58b8c9*/
+      dword_ABE304[dword_ABED0C] = *v7; /*0x58b8d2*/
+      v10 = (unsigned __int64)(2290649225LL * v25) >> 32; /*0x58b8f4*/
+      dword_ABE328[2 * v8] = v9 / 60; /*0x58b8f6*/
+      dword_ABE32C[2 * v8] = ((unsigned int)v10 >> 31) + (v10 >> 4); /*0x58b907*/
+      dword_ABED0C = v8 + 1; /*0x58b910*/
+    }
+    LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x58b924*/
+    v11 = 10000; /*0x58b929*/
+    v24 = 10000; /*0x58b933*/
+    v12 = 0; /*0x58b937*/
+    for ( j = (__int16 *)LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x58b942*/
+          j;
+          j = (__int16 *)LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+    {
+      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], j + 18, 1) ) /*0x58b953*/
+      {
+        v14 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)j + 72))(j); /*0x58b973*/
+        v15 = (int *)(*(int (__thiscall **)(__int16 *, char *, _DWORD))(*(_DWORD *)j + 72))( /*0x58b983*/
+                       j,
+                       v27,
+                       *(_DWORD *)(v14 + 4));
+        IsoCoord::ToScreenOffset(*v15, (int)v30, &v25, (int *)&k); /*0x58b98f*/
+        v16 = (int)k / 30; /*0x58b9c2*/
+        if ( v25 / 60 < v11 ) /*0x58b9c6*/
+          v11 = v25 / 60; /*0x58b9c8*/
+        if ( v25 / 60 > v1 ) /*0x58b9cc*/
+          v1 = v25 / 60; /*0x58b9ce*/
+        if ( v16 < v24 ) /*0x58b9d4*/
+          v24 = (int)k / 30; /*0x58b9d6*/
+        if ( v16 > v12 ) /*0x58b9dc*/
+          v12 = (int)k / 30; /*0x58b9de*/
+      }
+    }
+    dword_ABDFD0 = v24; /*0x58b9fa*/
+    result = MEMORY[0xA8B230]; /*0x58ba01*/
+    dword_ABDFD4 = v11; /*0x58ba06*/
+    dword_ABEC90 = v1 - v11; /*0x58ba0e*/
+    dword_ABECD0 = v12 - v24; /*0x58ba14*/
+    if ( MEMORY[0xA8B230] ) /*0x58ba1a*/
+    {
+      v17 = 0; /*0x58ba26*/
+      *((_DWORD *)MEMORY[0xA8B230] + 1103) = dword_ABED0C; /*0x58ba28*/
+      v18 = MEMORY[0xA8B230]; /*0x58ba2e*/
+      if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58ba3c*/
+      {
+        v19 = 1104; /*0x58ba3e*/
+        v20 = &dword_ABE328[-1104]; /*0x58ba48*/
+        v21 = 1136; /*0x58ba4f*/
+        for ( k = &dword_ABE328[-1104]; ; v20 = k ) /*0x58ba54*/
+        {
+          if ( v19 < 1104 || v17 >= dword_ABED0C ) /*0x58ba71*/
+          {
+            v22 = 0; /*0x58ba7c*/
+            v23 = 0; /*0x58ba7e*/
+          }
+          else
+          {
+            v22 = v20[v19]; /*0x58ba73*/
+            v23 = v20[v19 + 1]; /*0x58ba76*/
+          }
+          v18[v19] = v22; /*0x58ba80*/
+          ++v17; /*0x58ba89*/
+          ++v21; /*0x58ba8a*/
+          *(_DWORD *)((char *)MEMORY[0xA8B230] + v19 * 4 + 4) = v23; /*0x58ba8d*/
+          v19 += 2; /*0x58ba9b*/
+          *(_DWORD *)((char *)MEMORY[0xA8B230] + v21 * 4 - 4) = dword_ABE304[v21 - 1137]; /*0x58ba9e*/
+          v18 = MEMORY[0xA8B230]; /*0x58baa2*/
+          if ( v17 >= *((_DWORD *)MEMORY[0xA8B230] + 1103) ) /*0x58baae*/
+            break; /*0x58baae*/
+        }
+      }
+      v18[1099] = dword_ABDFD4; /*0x58bab5*/
+      *((_DWORD *)MEMORY[0xA8B230] + 1100) = dword_ABDFD0; /*0x58bac7*/
+      *((_DWORD *)MEMORY[0xA8B230] + 1101) = dword_ABEC90; /*0x58bad8*/
+      result = (void *)dword_ABECD0; /*0x58bae4*/
+      *((_DWORD *)MEMORY[0xA8B230] + 1102) = dword_ABECD0; /*0x58bae9*/
+    }
+  }
+  return result; /*0x58baef*/
+}
+}
+} // namespace gamemd
+
+// 0x58EBC0
+namespace gamemd {
+int BuildRandomMapTiles()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int BuildRandomMapTiles()
+{
+  int i; // esi
+  _DWORD *v1; // ecx
+  int v2; // eax
+  int v3; // esi
+  int v4; // edx
+  int v5; // ecx
+  int v6; // edi
+  int v7; // ebp
+  int v8; // eax
+  int v9; // ebx
+  int v10; // esi
+  int v11; // eax
+  int v12; // esi
+  int v13; // ecx
+  int v14; // eax
+  int *v15; // eax
+  int v16; // ecx
+  int v17; // esi
+  int v18; // ecx
+  int v19; // esi
+  bool v20; // zf
+  double v21; // st7
+  int v22; // ebx
+  int result; // eax
+  int j; // edi
+  int v25; // esi
+  int v26; // eax
+  void *v27; // eax
+  int v28; // [esp+10h] [ebp-Ch]
+  int v29; // [esp+14h] [ebp-8h]
+  int v30; // [esp+18h] [ebp-4h] BYREF
+
+  for ( i = 0; i < g_RandomMap_TileData; v1[3] = 0 ) /*0x58ebd0*/
+  {
+    (*(void (__thiscall **)(int))(*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i) + 40) + 12))(*((_DWORD *)g_RandomMap_TerrainState + i) + 40); /*0x58ebe9*/
+    *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i) + 12) = 0; /*0x58ebf4*/
+    v1 = (_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i++) + 64); /*0x58ec07*/
+    *v1 = 9999; /*0x58ec0c*/
+    v1[1] = 9999; /*0x58ec0e*/
+    v1[2] = 0; /*0x58ec11*/
+  }
+  v2 = unk_89C2DC * unk_89C2DC - 1; /*0x58ec28*/
+  if ( v2 >= 0 ) /*0x58ec29*/
+  {
+    v3 = g_MapCellHeight_Value; /*0x58ec2f*/
+    v4 = 80 * v2; /*0x58ec38*/
+    v28 = 80 * v2; /*0x58ec3c*/
+    v30 = unk_89C2DC * unk_89C2DC; /*0x58ec40*/
+    while ( 1 ) /*0x58ec49*/
+    {
+      v5 = *(_DWORD *)((char *)g_MapTileArray + v4); /*0x58ec49*/
+      v29 = v5; /*0x58ec4c*/
+      v6 = SHIWORD(v5); /*0x58ec50*/
+      v7 = (__int16)v5; /*0x58ec55*/
+      v8 = SHIWORD(v5) + (__int16)v5; /*0x58ec58*/
+      if ( v8 > v3 && (__int16)v5 - SHIWORD(v5) < v3 && SHIWORD(v5) - (__int16)v5 < v3 && v8 <= g_MapCellCount ) /*0x58ec81*/
+      {
+        v9 = *(_DWORD *)((char *)g_MapTileArray + v4 + 56); /*0x58ec8c*/
+        if ( v9 >= 0 && v9 < g_RandomMap_TileData ) /*0x58ec9e*/
+          break; /*0x58ec9e*/
+      }
+LABEL_30:
+      v4 -= 80; /*0x58ed73*/
+      v20 = v30 == 1; /*0x58ed7a*/
+      v28 = v4; /*0x58ed7b*/
+      --v30; /*0x58ed7f*/
+      if ( v20 ) /*0x58ed83*/
+        goto LABEL_31; /*0x58ed83*/
+    }
+    ++*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 12); /*0x58ecb0*/
+    v10 = *((_DWORD *)g_RandomMap_TerrainState + v9); /*0x58ecb8*/
+    v11 = *(_DWORD *)(v10 + 48); /*0x58ecbb*/
+    v12 = v10 + 40; /*0x58ecbe*/
+    if ( *(_DWORD *)(v12 + 16) >= v11 ) /*0x58ecc4*/
+    {
+      if ( !*(_BYTE *)(v12 + 13) && v11 ) /*0x58eccf*/
+        goto LABEL_19; /*0x58eccf*/
+      v13 = *(_DWORD *)(v12 + 20); /*0x58ecd1*/
+      if ( v13 <= 0 ) /*0x58ecd6*/
+        goto LABEL_19; /*0x58ecd6*/
+      if ( !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v12 + 8))(v12, v11 + v13, 0) ) /*0x58ece6*/
+      {
+LABEL_18:
+        v4 = v28; /*0x58ecfb*/
+LABEL_19:
+        v15 = (int *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 64); /*0x58ecff*/
+        if ( !*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 72) ) /*0x58ed0a*/
+        {
+          *v15 = v7; /*0x58ed16*/
+          v15[1] = v6; /*0x58ed18*/
+          v15[2] = 1; /*0x58ed1b*/
+          v15[3] = 1; /*0x58ed1e*/
+        }
+        v16 = *v15; /*0x58ed21*/
+        if ( v7 >= v15[2] + *v15 ) /*0x58ed2c*/
+          v15[2] = v7 - v16 + 1; /*0x58ed33*/
+        if ( v7 < v16 ) /*0x58ed38*/
+        {
+          v17 = v15[2]; /*0x58ed3a*/
+          *v15 = v7; /*0x58ed41*/
+          v15[2] = v16 - v7 + v17; /*0x58ed43*/
+        }
+        v18 = v15[1]; /*0x58ed46*/
+        if ( v6 >= v15[3] + v18 ) /*0x58ed52*/
+          v15[3] = v6 - v18 + 1; /*0x58ed59*/
+        if ( v6 < v18 ) /*0x58ed5e*/
+        {
+          v19 = v15[3]; /*0x58ed60*/
+          v15[1] = v6; /*0x58ed67*/
+          v15[3] = v18 - v6 + v19; /*0x58ed6a*/
+        }
+        v3 = g_MapCellHeight_Value; /*0x58ed6d*/
+        goto LABEL_30; /*0x58ed6d*/
+      }
+      v5 = v29; /*0x58ece8*/
+    }
+    v14 = *(_DWORD *)(v12 + 16); /*0x58ecec*/
+    *(_DWORD *)(v12 + 16) = v14 + 1; /*0x58ecf2*/
+    *(_DWORD *)(*(_DWORD *)(v12 + 4) + 4 * v14) = v5; /*0x58ecf8*/
+    goto LABEL_18; /*0x58ecf8*/
+  }
+LABEL_31:
+  v21 = ((double)dword_ABE048 * 0.005 + 0.05) * (double)dword_ABE15C * (double)dword_ABE158; /*0x58ed89*/
+  v22 = Math::RoundToInt(v21 + v21); /*0x58edae*/
+LABEL_32:
+  result = g_RandomMap_TileData; /*0x58edb5*/
+  for ( j = 0; j < g_RandomMap_TileData; ++j ) /*0x58edbe*/
+  {
+    v25 = *((_DWORD *)g_RandomMap_TerrainState + j); /*0x58edca*/
+    if ( !*(_BYTE *)(v25 + 26) && !*(_BYTE *)(v25 + 20) ) /*0x58edd4*/
+    {
+      if ( *(_DWORD *)(v25 + 12) <= v22 ) /*0x58edde*/
+      {
+        *(_BYTE *)(v25 + 26) = 1; /*0x58eded*/
+      }
+      else if ( TileSystem::BuildNodes(*((_DWORD *)g_RandomMap_TerrainState + j)) ) /*0x58ede2*/
+      {
+        if ( v25 ) /*0x58ee03*/
+        {
+          if ( *(_DWORD *)v25 ) /*0x58ee05*/
+          {
+            (***(void (__thiscall ****)(_DWORD, int))v25)(*(_DWORD *)v25, 1); /*0x58ee11*/
+            *(_DWORD *)v25 = 0; /*0x58ee13*/
+          }
+          v30 = v25; /*0x58ee25*/
+          v26 = (*(int (__thiscall **)(int *, int *))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v30); /*0x58ee29*/
+          if ( v26 != -1 && v26 < g_RandomMap_TileData && v26 < --g_RandomMap_TileData ) /*0x58ee44*/
+          {
+            do /*0x58ee5c*/
+            {
+              ++v26; /*0x58ee4c*/
+              *((_DWORD *)g_RandomMap_TerrainState + v26 - 1) = *((_DWORD *)g_RandomMap_TerrainState + v26); /*0x58ee50*/
+            }
+            while ( v26 < g_RandomMap_TileData ); /*0x58ee5c*/
+          }
+          v27 = *(void **)(v25 + 44); /*0x58ee5e*/
+          *(_DWORD *)(v25 + 40) = &vt_VectorClass_Cell; /*0x58ee61*/
+          if ( v27 ) /*0x58ee66*/
+          {
+            if ( *(_BYTE *)(v25 + 53) ) /*0x58ee68*/
+            {
+              __3_YAXPAX_Z(v27); /*0x58ee70*/
+              *(_DWORD *)(v25 + 44) = 0; /*0x58ee78*/
+            }
+          }
+          *(_BYTE *)(v25 + 53) = 0; /*0x58ee7c*/
+          *(_DWORD *)(v25 + 48) = 0; /*0x58ee80*/
+          __3_YAXPAX_Z((void *)v25); /*0x58ee83*/
+        }
+        goto LABEL_32; /*0x58ee8b*/
+      }
+    }
+    result = g_RandomMap_TileData; /*0x58edf1*/
+  }
+  return result; /*0x58ee90*/
+}
+}
+} // namespace gamemd
+
+// 0x58EF10
+namespace gamemd {
+char sub_58EF10()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char sub_58EF10()
+{
+  int i; // eax
+  int v1; // ecx
+  int v2; // eax
+  int v3; // ecx
+  int v4; // edi
+  void *v5; // esi
+  int v6; // esi
+  int v7; // edi
+  void *v8; // eax
+  int Terrain; // eax
+  int v10; // esi
+  int v11; // esi
+  int v12; // esi
+  void (__thiscall ***v13)(_DWORD, int); // ecx
+  char v15; // [esp+Fh] [ebp-5h]
+  _WORD v16[2]; // [esp+10h] [ebp-4h] BYREF
+
+  v15 = 1; /*0x58ef1e*/
+  Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0); /*0x58ef23*/
+  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x58ef2d*/
+  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x58ef41*/
+  {
+    if ( !v15 ) /*0x58ef47*/
+      break; /*0x58ef47*/
+    v15 = Cliff::ProcessTransitions(i, -1); /*0x58ef5a*/
+  }
+  if ( g_MapTileArray ) /*0x58ef6d*/
+  {
+    v1 = unk_89C2DC * unk_89C2DC; /*0x58ef75*/
+    if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x58ef7a*/
+    {
+      v2 = 0; /*0x58ef7c*/
+      do /*0x58ef96*/
+      {
+        v2 += 80; /*0x58ef84*/
+        --v1; /*0x58ef87*/
+        *(_DWORD *)((char *)g_MapTileArray + v2 - 24) = -1; /*0x58ef88*/
+        *(_DWORD *)((char *)g_MapTileArray + v2 - 20) = -1; /*0x58ef92*/
+      }
+      while ( v1 ); /*0x58ef96*/
+    }
+  }
+  v3 = g_RandomMap_TileData; /*0x58ef98*/
+  v4 = g_RandomMap_TileData - 1; /*0x58ef9f*/
+  if ( g_RandomMap_TileData - 1 >= 0 ) /*0x58efa4*/
+  {
+    do /*0x58efc3*/
+    {
+      v5 = (void *)*((_DWORD *)g_RandomMap_TerrainState + v4); /*0x58efab*/
+      if ( v5 ) /*0x58efb0*/
+      {
+        TileNode::Cleanup(*((_DWORD **)g_RandomMap_TerrainState + v4)); /*0x58efb4*/
+        __3_YAXPAX_Z(v5); /*0x58efba*/
+      }
+      --v4; /*0x58efc2*/
+    }
+    while ( v4 >= 0 ); /*0x58efc3*/
+    v3 = g_RandomMap_TileData; /*0x58efc5*/
+  }
+  g_MapTileArrayEnd = 0; /*0x58efd0*/
+  if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x58efdb*/
+  {
+    v6 = 0; /*0x58efdd*/
+    v7 = unk_89C2DC * unk_89C2DC; /*0x58efdf*/
+    do /*0x58f02b*/
+    {
+      if ( *(_DWORD *)((char *)g_MapTileArray + v6 + 56) == -1 ) /*0x58efec*/
+      {
+        v16[0] = 0; /*0x58eff2*/
+        v16[1] = 0; /*0x58eff8*/
+        if ( Coord::Compare2D((char *)g_MapTileArray + v6, v16) ) /*0x58effd*/
+        {
+          v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)g_MapTileArray + v6)); /*0x58f014*/
+          Terrain = RandomMap::GenerateTerrain((int)v8); /*0x58f01b*/
+          if ( Terrain ) /*0x58f022*/
+            *(_BYTE *)(Terrain + 26) = 0; /*0x58f024*/
+        }
+      }
+      v6 += 80; /*0x58f027*/
+      --v7; /*0x58f02a*/
+    }
+    while ( v7 ); /*0x58f02b*/
+    v3 = g_RandomMap_TileData; /*0x58f02d*/
+  }
+  if ( v15 ) /*0x58f03a*/
+  {
+    v10 = 0; /*0x58f03c*/
+    if ( v3 > 0 ) /*0x58f040*/
+    {
+      do /*0x58f059*/
+      {
+        RandomMap::CollectBorderCells(*((_DWORD **)g_RandomMap_TerrainState + v10)); /*0x58f04b*/
+        v3 = g_RandomMap_TileData; /*0x58f050*/
+        ++v10; /*0x58f056*/
+      }
+      while ( v10 < g_RandomMap_TileData ); /*0x58f059*/
+    }
+    v11 = 0; /*0x58f05b*/
+    if ( v3 > 0 ) /*0x58f05f*/
+    {
+      do /*0x58f077*/
+      {
+        RandomMap::AllocateArea(*((_DWORD *)g_RandomMap_TerrainState + v11)); /*0x58f069*/
+        v3 = g_RandomMap_TileData; /*0x58f06e*/
+        ++v11; /*0x58f074*/
+      }
+      while ( v11 < g_RandomMap_TileData ); /*0x58f077*/
+    }
+    v12 = 0; /*0x58f079*/
+    if ( v3 > 0 ) /*0x58f07d*/
+    {
+      do /*0x58f0aa*/
+      {
+        v13 = *(void (__thiscall ****)(_DWORD, int))(*((_DWORD *)g_RandomMap_TerrainState + v12) + 4); /*0x58f088*/
+        if ( v13 ) /*0x58f08d*/
+          (**v13)(v13, 1); /*0x58f093*/
+        *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v12++) + 4) = 0; /*0x58f0a0*/
+      }
+      while ( v12 < g_RandomMap_TileData ); /*0x58f0aa*/
+    }
+  }
+  return 1; /*0x58f0ac*/
+}
+}
+} // namespace gamemd
+
 // 0x588D10
 unsigned int unknown::Write(int a2)
 {
@@ -835,29 +1364,6 @@ int unknown::Seek(int a2, int a3)
     *(char *)(a2 + 8) = *(char *)(v3 + 8);
     *(int *)(a2 + 12) = *(int *)(v3 + 12);
     return a2;
-}
-}
-
-// 0x5896A0
-int unknown::Read(unsigned short * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall unknown::_vt04(int *this, _WORD *a2)
-{
-  int v2; // esi
-  int result; // eax
-  _WORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5896a2*/
-  result = 0; /*0x5896a5*/
-  if ( v2 <= 0 ) /*0x5896aa*/
-    return -1; /*0x5896e1*/
-  for ( i = (_WORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5896b0*/
-  {
-    if ( ++result >= v2 ) /*0x5896df*/
-      return -1; /*0x5896df*/
-  }
-  return result; /*0x5896e4*/
 }
 }
 
@@ -1377,193 +1883,6 @@ void sub_58B780()
 }
 } // namespace gamemd
 
-// 0x58B7E0
-namespace gamemd {
-int sub_58B7E0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B7E0()
-{
-  return dword_ABDFD4; /*0x58b7e5*/
-}
-}
-} // namespace gamemd
-
-// 0x58B7F0
-namespace gamemd {
-int sub_58B7F0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B7F0()
-{
-  return dword_ABDFD0; /*0x58b7f5*/
-}
-}
-} // namespace gamemd
-
-// 0x58B800
-namespace gamemd {
-int sub_58B800()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B800()
-{
-  return dword_ABEC90; /*0x58b805*/
-}
-}
-} // namespace gamemd
-
-// 0x58B810
-namespace gamemd {
-MapSeedClass * sub_58B810()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MapSeedClass *sub_58B810()
-{
-  return dword_ABECD0; /*0x58b815*/
-}
-}
-} // namespace gamemd
-
-// 0x58B820
-namespace gamemd {
-void * ComputeMapCameraBounds()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *ComputeMapCameraBounds()
-{
-  void *result; // eax
-  int v1; // ebp
-  int i; // edi
-  __int16 *WaypointLocationScenarioClass; // eax
-  void *v4; // esi
-  int v5; // eax
-  int *v6; // eax
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // esi
-  int v10; // edx
-  int v11; // edi
-  int v12; // ebx
-  __int16 *j; // esi
-  int v14; // eax
-  int *v15; // eax
-  int v16; // edx
-  int v17; // edi
-  _DWORD *v18; // ebx
-  int v19; // eax
-  int *v20; // esi
-  int v21; // ecx
-  int v22; // edx
-  int v23; // esi
-  int v24; // [esp+10h] [ebp-28h] BYREF
-  int v25; // [esp+14h] [ebp-24h] BYREF
-  int *k; // [esp+18h] [ebp-20h] BYREF
-  char v27[4]; // [esp+1Ch] [ebp-1Ch] BYREF
-  char v28[8]; // [esp+20h] [ebp-18h] BYREF
-  char v29[4]; // [esp+28h] [ebp-10h] BYREF
-  char v30[12]; // [esp+2Ch] [ebp-Ch] BYREF
-
-  result = MEMORY[0xA8B230]; /*0x58b820*/
-  v1 = 0; /*0x58b82a*/
-  dword_ABED0C = 0; /*0x58b830*/
-  if ( MEMORY[0xA8B230] && MEMORY[0x887324] ) /*0x58b842*/
-  {
-    for ( i = 0; i < 8; ++i ) /*0x58b848*/
-    {
-      if ( !(unsigned __int8)ScenarioClass::Is_Waypoint_Valid(i) ) /*0x58b851*/
-        break; /*0x58b858*/
-      WaypointLocationScenarioClass = (__int16 *)ScenarioClass::Get_Waypoint_Location(&k, i); /*0x58b86a*/
-      v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], WaypointLocationScenarioClass); /*0x58b87e*/
-      v5 = (*(int (__thiscall **)(void *))(*(_DWORD *)v4 + 72))(v4); /*0x58b88f*/
-      v6 = (int *)(*(int (__thiscall **)(void *, char *, _DWORD))(*(_DWORD *)v4 + 72))(v4, v29, *(_DWORD *)(v5 + 4)); /*0x58b89f*/
-      IsoCoord::ToScreenOffset(*v6, (int)v28, &v24, &v25); /*0x58b8ab*/
-      v7 = (int *)ScenarioClass::Get_Waypoint_Location(v27, i); /*0x58b8bc*/
-      v8 = dword_ABED0C; /*0x58b8c1*/
-      v9 = v24; /*0x58b8c9*/
-      dword_ABE304[dword_ABED0C] = *v7; /*0x58b8d2*/
-      v10 = (unsigned __int64)(2290649225LL * v25) >> 32; /*0x58b8f4*/
-      dword_ABE328[2 * v8] = v9 / 60; /*0x58b8f6*/
-      dword_ABE32C[2 * v8] = ((unsigned int)v10 >> 31) + (v10 >> 4); /*0x58b907*/
-      dword_ABED0C = v8 + 1; /*0x58b910*/
-    }
-    LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x58b924*/
-    v11 = 10000; /*0x58b929*/
-    v24 = 10000; /*0x58b933*/
-    v12 = 0; /*0x58b937*/
-    for ( j = (__int16 *)LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x58b942*/
-          j;
-          j = (__int16 *)LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
-    {
-      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], j + 18, 1) ) /*0x58b953*/
-      {
-        v14 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)j + 72))(j); /*0x58b973*/
-        v15 = (int *)(*(int (__thiscall **)(__int16 *, char *, _DWORD))(*(_DWORD *)j + 72))( /*0x58b983*/
-                       j,
-                       v27,
-                       *(_DWORD *)(v14 + 4));
-        IsoCoord::ToScreenOffset(*v15, (int)v30, &v25, (int *)&k); /*0x58b98f*/
-        v16 = (int)k / 30; /*0x58b9c2*/
-        if ( v25 / 60 < v11 ) /*0x58b9c6*/
-          v11 = v25 / 60; /*0x58b9c8*/
-        if ( v25 / 60 > v1 ) /*0x58b9cc*/
-          v1 = v25 / 60; /*0x58b9ce*/
-        if ( v16 < v24 ) /*0x58b9d4*/
-          v24 = (int)k / 30; /*0x58b9d6*/
-        if ( v16 > v12 ) /*0x58b9dc*/
-          v12 = (int)k / 30; /*0x58b9de*/
-      }
-    }
-    dword_ABDFD0 = v24; /*0x58b9fa*/
-    result = MEMORY[0xA8B230]; /*0x58ba01*/
-    dword_ABDFD4 = v11; /*0x58ba06*/
-    dword_ABEC90 = v1 - v11; /*0x58ba0e*/
-    dword_ABECD0 = v12 - v24; /*0x58ba14*/
-    if ( MEMORY[0xA8B230] ) /*0x58ba1a*/
-    {
-      v17 = 0; /*0x58ba26*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1103) = dword_ABED0C; /*0x58ba28*/
-      v18 = MEMORY[0xA8B230]; /*0x58ba2e*/
-      if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58ba3c*/
-      {
-        v19 = 1104; /*0x58ba3e*/
-        v20 = &dword_ABE328[-1104]; /*0x58ba48*/
-        v21 = 1136; /*0x58ba4f*/
-        for ( k = &dword_ABE328[-1104]; ; v20 = k ) /*0x58ba54*/
-        {
-          if ( v19 < 1104 || v17 >= dword_ABED0C ) /*0x58ba71*/
-          {
-            v22 = 0; /*0x58ba7c*/
-            v23 = 0; /*0x58ba7e*/
-          }
-          else
-          {
-            v22 = v20[v19]; /*0x58ba73*/
-            v23 = v20[v19 + 1]; /*0x58ba76*/
-          }
-          v18[v19] = v22; /*0x58ba80*/
-          ++v17; /*0x58ba89*/
-          ++v21; /*0x58ba8a*/
-          *(_DWORD *)((char *)MEMORY[0xA8B230] + v19 * 4 + 4) = v23; /*0x58ba8d*/
-          v19 += 2; /*0x58ba9b*/
-          *(_DWORD *)((char *)MEMORY[0xA8B230] + v21 * 4 - 4) = dword_ABE304[v21 - 1137]; /*0x58ba9e*/
-          v18 = MEMORY[0xA8B230]; /*0x58baa2*/
-          if ( v17 >= *((_DWORD *)MEMORY[0xA8B230] + 1103) ) /*0x58baae*/
-            break; /*0x58baae*/
-        }
-      }
-      v18[1099] = dword_ABDFD4; /*0x58bab5*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1100) = dword_ABDFD0; /*0x58bac7*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1101) = dword_ABEC90; /*0x58bad8*/
-      result = (void *)dword_ABECD0; /*0x58bae4*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1102) = dword_ABECD0; /*0x58bae9*/
-    }
-  }
-  return result; /*0x58baef*/
-}
-}
-} // namespace gamemd
-
 // 0x58BC30
 namespace gamemd {
 int sub_58BC30()
@@ -1964,325 +2283,6 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
     this->M12 = 0;
   }
     return result;
-}
-}
-} // namespace gamemd
-
-// 0x58EBC0
-namespace gamemd {
-int BuildRandomMapTiles()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BuildRandomMapTiles()
-{
-  int i; // esi
-  _DWORD *v1; // ecx
-  int v2; // eax
-  int v3; // esi
-  int v4; // edx
-  int v5; // ecx
-  int v6; // edi
-  int v7; // ebp
-  int v8; // eax
-  int v9; // ebx
-  int v10; // esi
-  int v11; // eax
-  int v12; // esi
-  int v13; // ecx
-  int v14; // eax
-  int *v15; // eax
-  int v16; // ecx
-  int v17; // esi
-  int v18; // ecx
-  int v19; // esi
-  bool v20; // zf
-  double v21; // st7
-  int v22; // ebx
-  int result; // eax
-  int j; // edi
-  int v25; // esi
-  int v26; // eax
-  void *v27; // eax
-  int v28; // [esp+10h] [ebp-Ch]
-  int v29; // [esp+14h] [ebp-8h]
-  int v30; // [esp+18h] [ebp-4h] BYREF
-
-  for ( i = 0; i < g_RandomMap_TileData; v1[3] = 0 ) /*0x58ebd0*/
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i) + 40) + 12))(*((_DWORD *)g_RandomMap_TerrainState + i) + 40); /*0x58ebe9*/
-    *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i) + 12) = 0; /*0x58ebf4*/
-    v1 = (_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + i++) + 64); /*0x58ec07*/
-    *v1 = 9999; /*0x58ec0c*/
-    v1[1] = 9999; /*0x58ec0e*/
-    v1[2] = 0; /*0x58ec11*/
-  }
-  v2 = unk_89C2DC * unk_89C2DC - 1; /*0x58ec28*/
-  if ( v2 >= 0 ) /*0x58ec29*/
-  {
-    v3 = g_MapCellHeight_Value; /*0x58ec2f*/
-    v4 = 80 * v2; /*0x58ec38*/
-    v28 = 80 * v2; /*0x58ec3c*/
-    v30 = unk_89C2DC * unk_89C2DC; /*0x58ec40*/
-    while ( 1 ) /*0x58ec49*/
-    {
-      v5 = *(_DWORD *)((char *)g_MapTileArray + v4); /*0x58ec49*/
-      v29 = v5; /*0x58ec4c*/
-      v6 = SHIWORD(v5); /*0x58ec50*/
-      v7 = (__int16)v5; /*0x58ec55*/
-      v8 = SHIWORD(v5) + (__int16)v5; /*0x58ec58*/
-      if ( v8 > v3 && (__int16)v5 - SHIWORD(v5) < v3 && SHIWORD(v5) - (__int16)v5 < v3 && v8 <= g_MapCellCount ) /*0x58ec81*/
-      {
-        v9 = *(_DWORD *)((char *)g_MapTileArray + v4 + 56); /*0x58ec8c*/
-        if ( v9 >= 0 && v9 < g_RandomMap_TileData ) /*0x58ec9e*/
-          break; /*0x58ec9e*/
-      }
-LABEL_30:
-      v4 -= 80; /*0x58ed73*/
-      v20 = v30 == 1; /*0x58ed7a*/
-      v28 = v4; /*0x58ed7b*/
-      --v30; /*0x58ed7f*/
-      if ( v20 ) /*0x58ed83*/
-        goto LABEL_31; /*0x58ed83*/
-    }
-    ++*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 12); /*0x58ecb0*/
-    v10 = *((_DWORD *)g_RandomMap_TerrainState + v9); /*0x58ecb8*/
-    v11 = *(_DWORD *)(v10 + 48); /*0x58ecbb*/
-    v12 = v10 + 40; /*0x58ecbe*/
-    if ( *(_DWORD *)(v12 + 16) >= v11 ) /*0x58ecc4*/
-    {
-      if ( !*(_BYTE *)(v12 + 13) && v11 ) /*0x58eccf*/
-        goto LABEL_19; /*0x58eccf*/
-      v13 = *(_DWORD *)(v12 + 20); /*0x58ecd1*/
-      if ( v13 <= 0 ) /*0x58ecd6*/
-        goto LABEL_19; /*0x58ecd6*/
-      if ( !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v12 + 8))(v12, v11 + v13, 0) ) /*0x58ece6*/
-      {
-LABEL_18:
-        v4 = v28; /*0x58ecfb*/
-LABEL_19:
-        v15 = (int *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 64); /*0x58ecff*/
-        if ( !*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 72) ) /*0x58ed0a*/
-        {
-          *v15 = v7; /*0x58ed16*/
-          v15[1] = v6; /*0x58ed18*/
-          v15[2] = 1; /*0x58ed1b*/
-          v15[3] = 1; /*0x58ed1e*/
-        }
-        v16 = *v15; /*0x58ed21*/
-        if ( v7 >= v15[2] + *v15 ) /*0x58ed2c*/
-          v15[2] = v7 - v16 + 1; /*0x58ed33*/
-        if ( v7 < v16 ) /*0x58ed38*/
-        {
-          v17 = v15[2]; /*0x58ed3a*/
-          *v15 = v7; /*0x58ed41*/
-          v15[2] = v16 - v7 + v17; /*0x58ed43*/
-        }
-        v18 = v15[1]; /*0x58ed46*/
-        if ( v6 >= v15[3] + v18 ) /*0x58ed52*/
-          v15[3] = v6 - v18 + 1; /*0x58ed59*/
-        if ( v6 < v18 ) /*0x58ed5e*/
-        {
-          v19 = v15[3]; /*0x58ed60*/
-          v15[1] = v6; /*0x58ed67*/
-          v15[3] = v18 - v6 + v19; /*0x58ed6a*/
-        }
-        v3 = g_MapCellHeight_Value; /*0x58ed6d*/
-        goto LABEL_30; /*0x58ed6d*/
-      }
-      v5 = v29; /*0x58ece8*/
-    }
-    v14 = *(_DWORD *)(v12 + 16); /*0x58ecec*/
-    *(_DWORD *)(v12 + 16) = v14 + 1; /*0x58ecf2*/
-    *(_DWORD *)(*(_DWORD *)(v12 + 4) + 4 * v14) = v5; /*0x58ecf8*/
-    goto LABEL_18; /*0x58ecf8*/
-  }
-LABEL_31:
-  v21 = ((double)dword_ABE048 * 0.005 + 0.05) * (double)dword_ABE15C * (double)dword_ABE158; /*0x58ed89*/
-  v22 = Math::RoundToInt(v21 + v21); /*0x58edae*/
-LABEL_32:
-  result = g_RandomMap_TileData; /*0x58edb5*/
-  for ( j = 0; j < g_RandomMap_TileData; ++j ) /*0x58edbe*/
-  {
-    v25 = *((_DWORD *)g_RandomMap_TerrainState + j); /*0x58edca*/
-    if ( !*(_BYTE *)(v25 + 26) && !*(_BYTE *)(v25 + 20) ) /*0x58edd4*/
-    {
-      if ( *(_DWORD *)(v25 + 12) <= v22 ) /*0x58edde*/
-      {
-        *(_BYTE *)(v25 + 26) = 1; /*0x58eded*/
-      }
-      else if ( TileSystem::BuildNodes(*((_DWORD *)g_RandomMap_TerrainState + j)) ) /*0x58ede2*/
-      {
-        if ( v25 ) /*0x58ee03*/
-        {
-          if ( *(_DWORD *)v25 ) /*0x58ee05*/
-          {
-            (***(void (__thiscall ****)(_DWORD, int))v25)(*(_DWORD *)v25, 1); /*0x58ee11*/
-            *(_DWORD *)v25 = 0; /*0x58ee13*/
-          }
-          v30 = v25; /*0x58ee25*/
-          v26 = (*(int (__thiscall **)(int *, int *))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v30); /*0x58ee29*/
-          if ( v26 != -1 && v26 < g_RandomMap_TileData && v26 < --g_RandomMap_TileData ) /*0x58ee44*/
-          {
-            do /*0x58ee5c*/
-            {
-              ++v26; /*0x58ee4c*/
-              *((_DWORD *)g_RandomMap_TerrainState + v26 - 1) = *((_DWORD *)g_RandomMap_TerrainState + v26); /*0x58ee50*/
-            }
-            while ( v26 < g_RandomMap_TileData ); /*0x58ee5c*/
-          }
-          v27 = *(void **)(v25 + 44); /*0x58ee5e*/
-          *(_DWORD *)(v25 + 40) = &vt_VectorClass_Cell; /*0x58ee61*/
-          if ( v27 ) /*0x58ee66*/
-          {
-            if ( *(_BYTE *)(v25 + 53) ) /*0x58ee68*/
-            {
-              __3_YAXPAX_Z(v27); /*0x58ee70*/
-              *(_DWORD *)(v25 + 44) = 0; /*0x58ee78*/
-            }
-          }
-          *(_BYTE *)(v25 + 53) = 0; /*0x58ee7c*/
-          *(_DWORD *)(v25 + 48) = 0; /*0x58ee80*/
-          __3_YAXPAX_Z((void *)v25); /*0x58ee83*/
-        }
-        goto LABEL_32; /*0x58ee8b*/
-      }
-    }
-    result = g_RandomMap_TileData; /*0x58edf1*/
-  }
-  return result; /*0x58ee90*/
-}
-}
-} // namespace gamemd
-
-// 0x58EF10
-namespace gamemd {
-char sub_58EF10()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_58EF10()
-{
-  int i; // eax
-  int v1; // ecx
-  int v2; // eax
-  int v3; // ecx
-  int v4; // edi
-  void *v5; // esi
-  int v6; // esi
-  int v7; // edi
-  void *v8; // eax
-  int Terrain; // eax
-  int v10; // esi
-  int v11; // esi
-  int v12; // esi
-  void (__thiscall ***v13)(_DWORD, int); // ecx
-  char v15; // [esp+Fh] [ebp-5h]
-  _WORD v16[2]; // [esp+10h] [ebp-4h] BYREF
-
-  v15 = 1; /*0x58ef1e*/
-  Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0); /*0x58ef23*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x58ef2d*/
-  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x58ef41*/
-  {
-    if ( !v15 ) /*0x58ef47*/
-      break; /*0x58ef47*/
-    v15 = Cliff::ProcessTransitions(i, -1); /*0x58ef5a*/
-  }
-  if ( g_MapTileArray ) /*0x58ef6d*/
-  {
-    v1 = unk_89C2DC * unk_89C2DC; /*0x58ef75*/
-    if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x58ef7a*/
-    {
-      v2 = 0; /*0x58ef7c*/
-      do /*0x58ef96*/
-      {
-        v2 += 80; /*0x58ef84*/
-        --v1; /*0x58ef87*/
-        *(_DWORD *)((char *)g_MapTileArray + v2 - 24) = -1; /*0x58ef88*/
-        *(_DWORD *)((char *)g_MapTileArray + v2 - 20) = -1; /*0x58ef92*/
-      }
-      while ( v1 ); /*0x58ef96*/
-    }
-  }
-  v3 = g_RandomMap_TileData; /*0x58ef98*/
-  v4 = g_RandomMap_TileData - 1; /*0x58ef9f*/
-  if ( g_RandomMap_TileData - 1 >= 0 ) /*0x58efa4*/
-  {
-    do /*0x58efc3*/
-    {
-      v5 = (void *)*((_DWORD *)g_RandomMap_TerrainState + v4); /*0x58efab*/
-      if ( v5 ) /*0x58efb0*/
-      {
-        TileNode::Cleanup(*((_DWORD **)g_RandomMap_TerrainState + v4)); /*0x58efb4*/
-        __3_YAXPAX_Z(v5); /*0x58efba*/
-      }
-      --v4; /*0x58efc2*/
-    }
-    while ( v4 >= 0 ); /*0x58efc3*/
-    v3 = g_RandomMap_TileData; /*0x58efc5*/
-  }
-  g_MapTileArrayEnd = 0; /*0x58efd0*/
-  if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x58efdb*/
-  {
-    v6 = 0; /*0x58efdd*/
-    v7 = unk_89C2DC * unk_89C2DC; /*0x58efdf*/
-    do /*0x58f02b*/
-    {
-      if ( *(_DWORD *)((char *)g_MapTileArray + v6 + 56) == -1 ) /*0x58efec*/
-      {
-        v16[0] = 0; /*0x58eff2*/
-        v16[1] = 0; /*0x58eff8*/
-        if ( Coord::Compare2D((char *)g_MapTileArray + v6, v16) ) /*0x58effd*/
-        {
-          v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)g_MapTileArray + v6)); /*0x58f014*/
-          Terrain = RandomMap::GenerateTerrain((int)v8); /*0x58f01b*/
-          if ( Terrain ) /*0x58f022*/
-            *(_BYTE *)(Terrain + 26) = 0; /*0x58f024*/
-        }
-      }
-      v6 += 80; /*0x58f027*/
-      --v7; /*0x58f02a*/
-    }
-    while ( v7 ); /*0x58f02b*/
-    v3 = g_RandomMap_TileData; /*0x58f02d*/
-  }
-  if ( v15 ) /*0x58f03a*/
-  {
-    v10 = 0; /*0x58f03c*/
-    if ( v3 > 0 ) /*0x58f040*/
-    {
-      do /*0x58f059*/
-      {
-        RandomMap::CollectBorderCells(*((_DWORD **)g_RandomMap_TerrainState + v10)); /*0x58f04b*/
-        v3 = g_RandomMap_TileData; /*0x58f050*/
-        ++v10; /*0x58f056*/
-      }
-      while ( v10 < g_RandomMap_TileData ); /*0x58f059*/
-    }
-    v11 = 0; /*0x58f05b*/
-    if ( v3 > 0 ) /*0x58f05f*/
-    {
-      do /*0x58f077*/
-      {
-        RandomMap::AllocateArea(*((_DWORD *)g_RandomMap_TerrainState + v11)); /*0x58f069*/
-        v3 = g_RandomMap_TileData; /*0x58f06e*/
-        ++v11; /*0x58f074*/
-      }
-      while ( v11 < g_RandomMap_TileData ); /*0x58f077*/
-    }
-    v12 = 0; /*0x58f079*/
-    if ( v3 > 0 ) /*0x58f07d*/
-    {
-      do /*0x58f0aa*/
-      {
-        v13 = *(void (__thiscall ****)(_DWORD, int))(*((_DWORD *)g_RandomMap_TerrainState + v12) + 4); /*0x58f088*/
-        if ( v13 ) /*0x58f08d*/
-          (**v13)(v13, 1); /*0x58f093*/
-        *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v12++) + 4) = 0; /*0x58f0a0*/
-      }
-      while ( v12 < g_RandomMap_TileData ); /*0x58f0aa*/
-    }
-  }
-  return 1; /*0x58f0ac*/
 }
 }
 } // namespace gamemd

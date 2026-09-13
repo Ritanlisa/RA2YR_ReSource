@@ -116,6 +116,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 class RawFileClass : public FileClass
 {
+    int SetName(int, ...); // vtable slot +8
 public:
     virtual ~RawFileClass() override;  // 0x65CA00
 

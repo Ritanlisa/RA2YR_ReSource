@@ -690,6 +690,7 @@ extern int DataGlobal_7EAF7C;  // data: 0x7EAF7C
 extern int DataGlobal_7EAF7F;  // data: 0x7EAF7F
 extern int DataGlobal_7F5C44;  // data: 0x7F5C44
 extern int DataGlobal_7F7CC0;  // data: 0x7F7CC0
+extern int DataGlobal_816204;  // data: 0x816204
 extern int DataGlobal_81B958;  // data: 0x81B958
 extern int DataGlobal_81B95C;  // data: 0x81B95C
 extern int DataGlobal_81CC70;  // data: 0x81CC70
@@ -705,8 +706,18 @@ extern int DataGlobal_825C88;  // data: 0x825C88
 extern int DataGlobal_829C20;  // data: 0x829C20
 extern int DataGlobal_829D20;  // data: 0x829D20
 extern int DataGlobal_82A280;  // data: 0x82A280
+extern int DataGlobal_839D1C;  // data: 0x839D1C
+extern int DataGlobal_839D3C;  // data: 0x839D3C
+extern int DataGlobal_83F13C;  // data: 0x83F13C
+extern int DataGlobal_89A304[4];  // data: 0x89A304
+extern int DataGlobal_89A310;  // data: 0x89A310
+extern int DataGlobal_89C428;  // data: 0x89C428
+extern int DataGlobal_A8DB3C;  // data: 0xA8DB3C
+extern int DataGlobal_A8DB44;  // data: 0xA8DB44
+extern int DataGlobal_A8DB5C;  // data: 0xA8DB5C
 extern int DataGlobal_B048D0;  // data: 0xB048D0
 extern int DataGlobal_B048D4;  // data: 0xB048D4
+extern int DataGlobal_B730E8;  // data: 0xB730E8
 extern int Delimiter;  // data: 0x817F70
 extern int Destination;  // data: 0xA8B8E0
 extern int Direction_X_Offsets;  // data: 0x89F688
@@ -1990,6 +2001,7 @@ extern int WindowName;  // data: 0x849F48
 extern int xRight;  // data: 0xA8EB8C
 extern int yBottom;  // data: 0xA8EB90
 extern int yTop;  // data: 0xAC18A4
+extern int* DataGlobal_A8DB50;  // data: 0xA8DB50
 extern unsigned char __imp_AdjustWindowRect[4];  // data: 0x7E1408
 extern unsigned char __imp_AdjustWindowRectEx[4];  // data: 0x7E1400
 extern unsigned char __imp_AllocConsole[4];  // data: 0x7E1218
@@ -3028,6 +3040,8 @@ extern unsigned char DataGlobal_818028[4];  // data: 0x818028
 extern unsigned char DataGlobal_818034[4];  // data: 0x818034
 extern unsigned char DataGlobal_81803C[4];  // data: 0x81803C
 extern unsigned char DataGlobal_81804C[4];  // data: 0x81804C
+extern unsigned char DataGlobal_818174[];  // data: 0x818174
+extern unsigned char DataGlobal_8181B0[112];  // data: 0x8181B0
 extern unsigned char DataGlobal_8183BC[4];  // data: 0x8183BC
 extern unsigned char DataGlobal_8183E0[4];  // data: 0x8183E0
 extern unsigned char DataGlobal_8183EC[4];  // data: 0x8183EC
@@ -3043,6 +3057,7 @@ extern unsigned char DataGlobal_818660[4];  // data: 0x818660
 extern unsigned char DataGlobal_818858[4];  // data: 0x818858
 extern unsigned char DataGlobal_81898C[172];  // data: 0x81898C
 extern unsigned char DataGlobal_818994[164];  // data: 0x818994
+extern unsigned char DataGlobal_818A5C[28];  // data: 0x818A5C
 extern unsigned char DataGlobal_818C08[4];  // data: 0x818C08
 extern unsigned char DataGlobal_818CB4;  // data: 0x818CB4
 extern unsigned char DataGlobal_819088[4];  // data: 0x819088
@@ -3114,6 +3129,7 @@ extern unsigned char DataGlobal_81CD28;  // data: 0x81CD28
 extern unsigned char DataGlobal_81DA20[4];  // data: 0x81DA20
 extern unsigned char DataGlobal_81DA28[4];  // data: 0x81DA28
 extern unsigned char DataGlobal_81DA58[4];  // data: 0x81DA58
+extern unsigned char DataGlobal_81F0A8[172];  // data: 0x81F0A8
 extern unsigned char DataGlobal_81F124[48];  // data: 0x81F124
 extern unsigned char DataGlobal_81F12C[40];  // data: 0x81F12C
 extern unsigned char DataGlobal_81F134[32];  // data: 0x81F134
@@ -3207,6 +3223,7 @@ extern unsigned char DataGlobal_825BB0[168];  // data: 0x825BB0
 extern unsigned char DataGlobal_825BB4[164];  // data: 0x825BB4
 extern unsigned char DataGlobal_825BB8[160];  // data: 0x825BB8
 extern unsigned char DataGlobal_825BD4[132];  // data: 0x825BD4
+extern unsigned char DataGlobal_825BD8[128];  // data: 0x825BD8
 extern unsigned char DataGlobal_825BF8[96];  // data: 0x825BF8
 extern unsigned char DataGlobal_825C2C[44];  // data: 0x825C2C
 extern unsigned char DataGlobal_825CD0[4];  // data: 0x825CD0
@@ -3249,11 +3266,15 @@ extern unsigned char DataGlobal_827014[28];  // data: 0x827014
 extern unsigned char DataGlobal_827020[16];  // data: 0x827020
 extern unsigned char DataGlobal_8270D8[172];  // data: 0x8270D8
 extern unsigned char DataGlobal_8270E8[156];  // data: 0x8270E8
+extern unsigned char DataGlobal_8270F8[140];  // data: 0x8270F8
 extern unsigned char DataGlobal_827148[60];  // data: 0x827148
+extern unsigned char DataGlobal_82715C[40];  // data: 0x82715C
 extern unsigned char DataGlobal_8271A0[172];  // data: 0x8271A0
 extern unsigned char DataGlobal_8271B0[156];  // data: 0x8271B0
+extern unsigned char DataGlobal_8271C0[140];  // data: 0x8271C0
 extern unsigned char DataGlobal_827204[72];  // data: 0x827204
 extern unsigned char DataGlobal_827218[52];  // data: 0x827218
+extern unsigned char DataGlobal_827224[40];  // data: 0x827224
 extern unsigned char DataGlobal_827234[24];  // data: 0x827234
 extern unsigned char DataGlobal_827240[12];  // data: 0x827240
 extern unsigned char DataGlobal_827A48[172];  // data: 0x827A48
@@ -3380,6 +3401,9 @@ extern unsigned char DataGlobal_832AD8[80760];  // data: 0x832AD8
 extern unsigned char DataGlobal_832AE0[80752];  // data: 0x832AE0
 extern unsigned char DataGlobal_832AE4[80748];  // data: 0x832AE4
 extern unsigned char DataGlobal_832AE8[80744];  // data: 0x832AE8
+extern unsigned char DataGlobal_8332A8[];  // data: 0x8332A8
+extern unsigned char DataGlobal_8332CC[78724];  // data: 0x8332CC
+extern unsigned char DataGlobal_8332CC[];  // data: 0x8332CC
 extern unsigned char DataGlobal_833328[78632];  // data: 0x833328
 extern unsigned char DataGlobal_8333BC[78484];  // data: 0x8333BC
 extern unsigned char DataGlobal_8333C0[78480];  // data: 0x8333C0
@@ -3420,6 +3444,9 @@ extern unsigned char DataGlobal_836CB4[63900];  // data: 0x836CB4
 extern unsigned char DataGlobal_836CD0[63872];  // data: 0x836CD0
 extern unsigned char DataGlobal_836CF0[63840];  // data: 0x836CF0
 extern unsigned char DataGlobal_836D0C[63812];  // data: 0x836D0C
+extern unsigned char DataGlobal_836D9C[63668];  // data: 0x836D9C
+extern unsigned char DataGlobal_836DA8[63656];  // data: 0x836DA8
+extern unsigned char DataGlobal_836DB8[];  // data: 0x836DB8
 extern unsigned char DataGlobal_836DF4[63580];  // data: 0x836DF4
 extern unsigned char DataGlobal_836ED8[63352];  // data: 0x836ED8
 extern unsigned char DataGlobal_837320[62256];  // data: 0x837320
@@ -3452,8 +3479,14 @@ extern unsigned char DataGlobal_839D50[51456];  // data: 0x839D50
 extern unsigned char DataGlobal_839D58[51448];  // data: 0x839D58
 extern unsigned char DataGlobal_839D68[51432];  // data: 0x839D68
 extern unsigned char DataGlobal_839D98[51384];  // data: 0x839D98
+extern unsigned char DataGlobal_839DB8[51352];  // data: 0x839DB8
+extern unsigned char DataGlobal_839DC4[51340];  // data: 0x839DC4
+extern unsigned char DataGlobal_839DCC[51332];  // data: 0x839DCC
+extern unsigned char DataGlobal_839DDC[51316];  // data: 0x839DDC
 extern unsigned char DataGlobal_839DEC[51300];  // data: 0x839DEC
 extern unsigned char DataGlobal_839E08[51272];  // data: 0x839E08
+extern unsigned char DataGlobal_839E18[51256];  // data: 0x839E18
+extern unsigned char DataGlobal_839E28[51240];  // data: 0x839E28
 extern unsigned char DataGlobal_839E34[51228];  // data: 0x839E34
 extern unsigned char DataGlobal_839E44[51212];  // data: 0x839E44
 extern unsigned char DataGlobal_839E50[51200];  // data: 0x839E50
@@ -3487,6 +3520,8 @@ extern unsigned char DataGlobal_83D098[38328];  // data: 0x83D098
 extern unsigned char DataGlobal_83D0A4[38316];  // data: 0x83D0A4
 extern unsigned char DataGlobal_83D4AC[37284];  // data: 0x83D4AC
 extern unsigned char DataGlobal_83D4CC[37252];  // data: 0x83D4CC
+extern unsigned char DataGlobal_83D4FC[];  // data: 0x83D4FC
+extern unsigned char DataGlobal_83D50C[37188];  // data: 0x83D50C
 extern unsigned char DataGlobal_83D518[37176];  // data: 0x83D518
 extern unsigned char DataGlobal_83D528[37160];  // data: 0x83D528
 extern unsigned char DataGlobal_83D53C[37140];  // data: 0x83D53C
@@ -3505,6 +3540,7 @@ extern unsigned char DataGlobal_83DA90[35776];  // data: 0x83DA90
 extern unsigned char DataGlobal_83DB0C[35652];  // data: 0x83DB0C
 extern unsigned char DataGlobal_83DB34[35612];  // data: 0x83DB34
 extern unsigned char DataGlobal_83DC8C[35268];  // data: 0x83DC8C
+extern unsigned char DataGlobal_83DE1C[34868];  // data: 0x83DE1C
 extern unsigned char DataGlobal_83E188[33992];  // data: 0x83E188
 extern unsigned char DataGlobal_83E1AC[33956];  // data: 0x83E1AC
 extern unsigned char DataGlobal_83E6DC[32628];  // data: 0x83E6DC
@@ -3534,11 +3570,15 @@ extern unsigned char DataGlobal_83EB28[31528];  // data: 0x83EB28
 extern unsigned char DataGlobal_83EB44[31500];  // data: 0x83EB44
 extern unsigned char DataGlobal_83EB54[31484];  // data: 0x83EB54
 extern unsigned char DataGlobal_83EB58[31480];  // data: 0x83EB58
+extern unsigned char DataGlobal_83ECF4[31068];  // data: 0x83ECF4
 extern unsigned char DataGlobal_83ECFC[31060];  // data: 0x83ECFC
 extern unsigned char DataGlobal_83ED04[31052];  // data: 0x83ED04
 extern unsigned char DataGlobal_83ED58[30968];  // data: 0x83ED58
 extern unsigned char DataGlobal_83EEAC[30628];  // data: 0x83EEAC
 extern unsigned char DataGlobal_83EF00[30544];  // data: 0x83EF00
+extern unsigned char DataGlobal_83F130[];  // data: 0x83F130
+extern unsigned char DataGlobal_83F170[];  // data: 0x83F170
+extern unsigned char DataGlobal_83F190[29888];  // data: 0x83F190
 extern unsigned char DataGlobal_83F318[29496];  // data: 0x83F318
 extern unsigned char DataGlobal_83F328[29480];  // data: 0x83F328
 extern unsigned char DataGlobal_83F490[29120];  // data: 0x83F490
@@ -3906,6 +3946,7 @@ extern unsigned char DataGlobal_849FC4[8];  // data: 0x849FC4
 extern unsigned char DataGlobal_849FCC[4];  // data: 0x849FCC
 extern unsigned char DataGlobal_84A11C[64];  // data: 0x84A11C
 extern unsigned char DataGlobal_84A12C[48];  // data: 0x84A12C
+extern unsigned char DataGlobal_84A14C[16];  // data: 0x84A14C
 extern unsigned char DataGlobal_84A1B8;  // data: 0x84A1B8
 extern unsigned char DataGlobal_84A210;  // data: 0x84A210
 extern unsigned char DataGlobal_84A4C4[88];  // data: 0x84A4C4
@@ -6655,7 +6696,10 @@ extern unsigned char DataGlobal_A8DA7C[49888];  // data: 0xA8DA7C
 extern unsigned char DataGlobal_A8DA81[49883];  // data: 0xA8DA81
 extern unsigned char DataGlobal_A8DA88[49876];  // data: 0xA8DA88
 extern unsigned char DataGlobal_A8DA94[49864];  // data: 0xA8DA94
-extern unsigned char DataGlobal_A8DB44[49688];  // data: 0xA8DB44
+extern unsigned char DataGlobal_A8DAC0[49820];  // data: 0xA8DAC0
+extern unsigned char DataGlobal_A8DB41;  // data: 0xA8DB41
+extern unsigned char DataGlobal_A8DB54;  // data: 0xA8DB54
+extern unsigned char DataGlobal_A8DB59;  // data: 0xA8DB59
 extern unsigned char DataGlobal_A8DB7C[49632];  // data: 0xA8DB7C
 extern unsigned char DataGlobal_A8DBA4[49592];  // data: 0xA8DBA4
 extern unsigned char DataGlobal_A8DBA8[49588];  // data: 0xA8DBA8
@@ -13841,6 +13885,7 @@ extern void* DataGlobal_816514;  // data: 0x816514
 extern void* DataGlobal_816CAC;  // data: 0x816CAC
 extern void* DataGlobal_816EE0;  // data: 0x816EE0
 extern void* DataGlobal_817134;  // data: 0x817134
+extern void* DataGlobal_817F98;  // data: 0x817F98
 extern void* DataGlobal_818114;  // data: 0x818114
 extern void* DataGlobal_818118;  // data: 0x818118
 extern void* DataGlobal_819288;  // data: 0x819288
@@ -13906,6 +13951,7 @@ extern void* DataGlobal_87C2A0;  // data: 0x87C2A0
 extern void* DataGlobal_87C2AC;  // data: 0x87C2AC
 extern void* DataGlobal_87C2CC;  // data: 0x87C2CC
 extern void* DataGlobal_87C2DC;  // data: 0x87C2DC
+extern void* DataGlobal_B78828;  // data: 0xB78828
 extern void* vt_AbstractClass;  // data: 0x7E1F24
 extern void* vt_AbstractTypeClass;  // data: 0x7E1FD4
 extern void* vt_AddTeamCommandClass;  // data: 0x7EBE8C

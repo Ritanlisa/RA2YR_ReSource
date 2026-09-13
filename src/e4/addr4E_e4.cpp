@@ -1940,286 +1940,6 @@ int __thiscall sub_4E6070(int this)
 }
 } // namespace gamemd
 
-// 0x4E6190
-namespace gamemd {
-int sub_4E6190()
-{
-{
-    int v0;
-    int result;
-    int v2;
-    char Destination[64];
-    Event_Process_7C5F3D();
-    Event_Process_7C5FFF();
-    v0 = DataGlobal_84E863;
-    if ( &v2 != (int *)-4 )
-    strncpy(Destination, Source, 0x40u);
-    if ( !v0 || !DataGlobal_84E864 )
-    return -1;
-    if ( !_strcmpi(Destination, aAuthenticamd) )
-    return 7;
-    if ( !_strcmpi(Destination, aCyrixinstead) )
-    return 8;
-    if ( v0 == 4 )
-    return 0;
-    if ( v0 == 5 )
-    return 1;
-    if ( v0 != 6 )
-    return 6;
-    switch ( DataGlobal_84E864 )
-  {
-    case 3: case 5: result = 3;
-    break;
-    case 6: result = 5;
-    break;
-    case 7: case 8: case 10: result = 4;
-    break;
-    default: result = 2;
-    break;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4E64E0
-namespace gamemd {
-int sub_4E64E0()
-{
-{
-    DataGlobal_A8B204 = 0;
-    DataGlobal_A8B208 = 0;
-    DataGlobal_A8B20C = 1;
-    DataGlobal_A8B20D = 0;
-    AITriggerTypeClass_Array = (int)&vt_DynamicVectorClass_AITriggerTypeClass;
-    DataGlobal_A8B214 = 10;
-    g_AnimTypeInitQueue = 0;
-    return atexit(sub_4E6520);
-}
-}
-} // namespace gamemd
-
-// 0x4E6520
-namespace gamemd {
-void sub_4E6520()
-{
-{
-    AITriggerTypeClass_Array = (int)&vt_VectorClass_AITriggerTypeClass;
-    if ( DataGlobal_A8B204 && DataGlobal_A8B20D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8B204);
-    DataGlobal_A8B204 = 0;
-  }
-    DataGlobal_A8B20D = 0;
-    DataGlobal_A8B208 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6560
-namespace gamemd {
-int sub_4E6560()
-{
-{
-    DataGlobal_8B417C = 0;
-    LightConvertClass_Array = 0;
-    DataGlobal_8B4184 = 1;
-    DataGlobal_8B4185 = 0;
-    DataGlobal_8B4178 = (int)&vt_DynamicVectorClass_TriggerTypeClass;
-    DataGlobal_8B418C = 10;
-    g_MultiplayerLogBuffer = 0;
-    return atexit(sub_4E65A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E65A0
-namespace gamemd {
-void sub_4E65A0()
-{
-{
-    DataGlobal_8B4178 = (int)&vt_VectorClass_TriggerTypeClass;
-    if ( DataGlobal_8B417C && DataGlobal_8B4185 )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B417C);
-    DataGlobal_8B417C = 0;
-  }
-    DataGlobal_8B4185 = 0;
-    LightConvertClass_Array = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E65E0
-namespace gamemd {
-int sub_4E65E0()
-{
-{
-    g_TriggerClassCapacity = 0;
-    DataGlobal_A8EAF0 = 0;
-    DataGlobal_A8EAF4 = 1;
-    DataGlobal_A8EAF5 = 0;
-    TriggerClass_Array = (int)&vt_DynamicVectorClass_TriggerClass;
-    DataGlobal_A8EAFC = 10;
-    g_ProductionQueueState = 0;
-    return atexit(sub_4E6620);
-}
-}
-} // namespace gamemd
-
-// 0x4E6620
-namespace gamemd {
-void sub_4E6620()
-{
-{
-    TriggerClass_Array = (int)&vt_VectorClass_TriggerClass;
-    if ( g_TriggerClassCapacity && DataGlobal_A8EAF5 )
-  {
-    __3_YAXPAX_Z(g_TriggerClassCapacity);
-    g_TriggerClassCapacity = 0;
-  }
-    DataGlobal_A8EAF5 = 0;
-    DataGlobal_A8EAF0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6660
-namespace gamemd {
-int sub_4E6660()
-{
-{
-    DataGlobal_8B4194 = 0;
-    DataGlobal_8B4198 = 0;
-    DataGlobal_8B419C = 1;
-    DataGlobal_8B419D = 0;
-    DataGlobal_8B4190 = (int)&vt_DynamicVectorClass_BuildingLightClass;
-    DataGlobal_8B41A4 = 10;
-    DataGlobal_8B41A0 = 0;
-    return atexit(sub_4E66A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E66A0
-namespace gamemd {
-void sub_4E66A0()
-{
-{
-    DataGlobal_8B4190 = (int)&vt_VectorClass_BuildingLightClass;
-    if ( DataGlobal_8B4194 && DataGlobal_8B419D )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B4194);
-    DataGlobal_8B4194 = 0;
-  }
-    DataGlobal_8B419D = 0;
-    DataGlobal_8B4198 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E66E0
-namespace gamemd {
-int sub_4E66E0()
-{
-{
-    DataGlobal_A8020C = 0;
-    DataGlobal_A80210 = 0;
-    DataGlobal_A80214 = 1;
-    DataGlobal_A80215 = 0;
-    DataGlobal_A80208 = (int)&vt_DynamicVectorClass_ParticleSystemClass;
-    DataGlobal_A8021C = 10;
-    g_GameCleanupState = 0;
-    return atexit(sub_4E6720);
-}
-}
-} // namespace gamemd
-
-// 0x4E6720
-namespace gamemd {
-void sub_4E6720()
-{
-{
-    DataGlobal_A80208 = (int)&vt_VectorClass_ParticleSystemClass;
-    if ( DataGlobal_A8020C && DataGlobal_A80215 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8020C);
-    DataGlobal_A8020C = 0;
-  }
-    DataGlobal_A80215 = 0;
-    DataGlobal_A80210 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6760
-namespace gamemd {
-int sub_4E6760()
-{
-{
-    g_PathClass_State = 0;
-    DataGlobal_8B4140 = 0;
-    DataGlobal_8B4144 = 1;
-    DataGlobal_8B4145 = 0;
-    DataGlobal_8B4138 = (int)&vt_DynamicVectorClass_TubeClass;
-    DataGlobal_8B414C = 10;
-    g_UnitTypeCount = 0;
-    return atexit(sub_4E67A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E67A0
-namespace gamemd {
-void sub_4E67A0()
-{
-{
-    DataGlobal_8B4138 = (int)&vt_VectorClass_TubeClass;
-    if ( g_PathClass_State && DataGlobal_8B4145 )
-  {
-    __3_YAXPAX_Z(g_PathClass_State);
-    g_PathClass_State = 0;
-  }
-    DataGlobal_8B4145 = 0;
-    DataGlobal_8B4140 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E67E0
-namespace gamemd {
-int sub_4E67E0()
-{
-{
-    DataGlobal_A8EC3C = 0;
-    DataGlobal_A8EC40 = 0;
-    g_GameObjectManager = 1;
-    DataGlobal_A8EC45 = 0;
-    DataGlobal_A8EC38 = (int)&vt_DynamicVectorClass_WaveClass;
-    DataGlobal_A8EC4C = 10;
-    DataGlobal_A8EC48 = 0;
-    return atexit(sub_4E6820);
-}
-}
-} // namespace gamemd
-
-// 0x4E6820
-namespace gamemd {
-void sub_4E6820()
-{
-{
-    DataGlobal_A8EC38 = (int)&vt_VectorClass_WaveClass;
-    if ( DataGlobal_A8EC3C && DataGlobal_A8EC45 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8EC3C);
-    DataGlobal_A8EC3C = 0;
-  }
-    DataGlobal_A8EC45 = 0;
-    DataGlobal_A8EC40 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E6860
 namespace gamemd {
 int sub_4E6860()
@@ -2235,295 +1955,6 @@ int sub_4E6860()
   MEMORY[0xA8ED54] = 10; /*0x4e6887*/
   MEMORY[0xA8ED50] = 0; /*0x4e6891*/
   return atexit(sub_4E68A0); /*0x4e689c*/
-}
-}
-} // namespace gamemd
-
-// 0x4E68A0
-namespace gamemd {
-void sub_4E68A0()
-{
-{
-    BulletClass_Array = (int)&vt_VectorClass_BulletClass;
-    if ( DataGlobal_A8ED44 && DataGlobal_A8ED4D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8ED44);
-    DataGlobal_A8ED44 = 0;
-  }
-    DataGlobal_A8ED4D = 0;
-    DataGlobal_A8ED48 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E68E0
-namespace gamemd {
-int sub_4E68E0()
-{
-{
-    g_ObjectClass_Capacity = 0;
-    DataGlobal_A8EC58 = 0;
-    DataGlobal_A8EC5C = 1;
-    DataGlobal_A8EC5D = 0;
-    OverlayClass_Array = (int)&vt_DynamicVectorClass_OverlayClass;
-    DataGlobal_A8EC64 = 10;
-    DataGlobal_A8EC60 = 0;
-    return atexit(sub_4E6920);
-}
-}
-} // namespace gamemd
-
-// 0x4E6920
-namespace gamemd {
-void sub_4E6920()
-{
-{
-    OverlayClass_Array = (int)&vt_VectorClass_OverlayClass;
-    if ( g_ObjectClass_Capacity && DataGlobal_A8EC5D )
-  {
-    __3_YAXPAX_Z(g_ObjectClass_Capacity);
-    g_ObjectClass_Capacity = 0;
-  }
-    DataGlobal_A8EC5D = 0;
-    DataGlobal_A8EC58 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6960
-namespace gamemd {
-int sub_4E6960()
-{
-{
-    DataGlobal_A83DCC = 0;
-    DataGlobal_A83DD0 = 0;
-    DataGlobal_A83DD4 = 1;
-    DataGlobal_A83DD5 = 0;
-    DataGlobal_A83DC8 = (int)&vt_DynamicVectorClass_ParticleClass;
-    DataGlobal_A83DDC = 10;
-    DataGlobal_A83DD8 = 0;
-    return atexit(sub_4E69A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E69A0
-namespace gamemd {
-void sub_4E69A0()
-{
-{
-    DataGlobal_A83DC8 = (int)&vt_VectorClass_ParticleClass;
-    if ( DataGlobal_A83DCC && DataGlobal_A83DD5 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83DCC);
-    DataGlobal_A83DCC = 0;
-  }
-    DataGlobal_A83DD5 = 0;
-    DataGlobal_A83DD0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E69E0
-namespace gamemd {
-int sub_4E69E0()
-{
-{
-    DataGlobal_A8B1E4 = 0;
-    DataGlobal_A8B1E8 = 0;
-    DataGlobal_A8B1EC = 1;
-    DataGlobal_A8B1ED = 0;
-    SmudgeClass_Array = (int)&vt_DynamicVectorClass_SmudgeClass;
-    DataGlobal_A8B1F4 = 10;
-    DataGlobal_A8B1F0 = 0;
-    return atexit(sub_4E6A20);
-}
-}
-} // namespace gamemd
-
-// 0x4E6A20
-namespace gamemd {
-void sub_4E6A20()
-{
-{
-    SmudgeClass_Array = (int)&vt_VectorClass_SmudgeClass;
-    if ( DataGlobal_A8B1E4 && DataGlobal_A8B1ED )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8B1E4);
-    DataGlobal_A8B1E4 = 0;
-  }
-    DataGlobal_A8B1ED = 0;
-    DataGlobal_A8B1E8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6A60
-namespace gamemd {
-int sub_4E6A60()
-{
-{
-    DataGlobal_A8E98C = 0;
-    DataGlobal_A8E990 = 0;
-    DataGlobal_A8E994 = 1;
-    DataGlobal_A8E995 = 0;
-    DataGlobal_A8E988 = (int)&vt_DynamicVectorClass_TerrainClass;
-    DataGlobal_A8E99C = 10;
-    DataGlobal_A8E998 = 0;
-    return atexit(sub_4E6AA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6AA0
-namespace gamemd {
-void sub_4E6AA0()
-{
-{
-    DataGlobal_A8E988 = (int)&vt_VectorClass_TerrainClass;
-    if ( DataGlobal_A8E98C && DataGlobal_A8E995 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8E98C);
-    DataGlobal_A8E98C = 0;
-  }
-    DataGlobal_A8E995 = 0;
-    DataGlobal_A8E990 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6AE0
-namespace gamemd {
-int sub_4E6AE0()
-{
-{
-    g_InfantryClassLimit = 0;
-    DataGlobal_A83DF0 = 0;
-    DataGlobal_A83DF4 = 1;
-    DataGlobal_A83DF5 = 0;
-    InfantryClass_Array = (int)&vt_DynamicVectorClass_InfantryClass;
-    DataGlobal_A83DFC = 10;
-    g_BuildingClass_Count = 0;
-    return atexit(sub_4E6B20);
-}
-}
-} // namespace gamemd
-
-// 0x4E6B20
-namespace gamemd {
-void sub_4E6B20()
-{
-{
-    InfantryClass_Array = (int)&vt_VectorClass_InfantryClass;
-    if ( g_InfantryClassLimit && DataGlobal_A83DF5 )
-  {
-    __3_YAXPAX_Z(g_InfantryClassLimit);
-    g_InfantryClassLimit = 0;
-  }
-    DataGlobal_A83DF5 = 0;
-    DataGlobal_A83DF0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6B60
-namespace gamemd {
-int sub_4E6B60()
-{
-{
-    g_BuildingClass_InstanceCount = 0;
-    DataGlobal_A8EB48 = 0;
-    DataGlobal_A8EB4C = 1;
-    DataGlobal_A8EB4D = 0;
-    BuildingClass_Array = (int)&vt_DynamicVectorClass_BuildingClass;
-    DataGlobal_A8EB54 = 10;
-    g_BuildingProductionState = 0;
-    return atexit(sub_4E6BA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6BA0
-namespace gamemd {
-void sub_4E6BA0()
-{
-{
-    BuildingClass_Array = (int)&vt_VectorClass_BuildingClass;
-    if ( g_BuildingClass_InstanceCount && DataGlobal_A8EB4D )
-  {
-    __3_YAXPAX_Z(g_BuildingClass_InstanceCount);
-    g_BuildingClass_InstanceCount = 0;
-  }
-    DataGlobal_A8EB4D = 0;
-    DataGlobal_A8EB48 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6BE0
-namespace gamemd {
-int sub_4E6BE0()
-{
-{
-    DataGlobal_A8E394 = 0;
-    DataGlobal_A8E398 = 0;
-    DataGlobal_A8E39C = 1;
-    DataGlobal_A8E39D = 0;
-    AircraftClass_Array = (int)&vt_DynamicVectorClass_AircraftClass;
-    DataGlobal_A8E3A4 = 10;
-    g_AircraftClassCount = 0;
-    return atexit(sub_4E6C20);
-}
-}
-} // namespace gamemd
-
-// 0x4E6C20
-namespace gamemd {
-void sub_4E6C20()
-{
-{
-    AircraftClass_Array = (int)&vt_VectorClass_AircraftClass;
-    if ( DataGlobal_A8E394 && DataGlobal_A8E39D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8E394);
-    DataGlobal_A8E394 = 0;
-  }
-    DataGlobal_A8E39D = 0;
-    DataGlobal_A8E398 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6C60
-namespace gamemd {
-int sub_4E6C60()
-{
-{
-    g_UnitClassPool = 0;
-    DataGlobal_8B4110 = 0;
-    DataGlobal_8B4114 = 1;
-    DataGlobal_8B4115 = 0;
-    UnitClass_Array = (int)&vt_DynamicVectorClass_UnitClass;
-    DataGlobal_8B411C = 10;
-    g_HouseClass_BuildState = 0;
-    return atexit(sub_4E6CA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6CA0
-namespace gamemd {
-void sub_4E6CA0()
-{
-{
-    UnitClass_Array = (int)&vt_VectorClass_UnitClass;
-    if ( g_UnitClassPool && DataGlobal_8B4115 )
-  {
-    __3_YAXPAX_Z(g_UnitClassPool);
-    g_UnitClassPool = 0;
-  }
-    DataGlobal_8B4115 = 0;
-    DataGlobal_8B4110 = 0;
 }
 }
 } // namespace gamemd
@@ -2566,482 +1997,6 @@ void __cdecl sub_4E6D20()
 }
 } // namespace gamemd
 
-// 0x4E6D60
-namespace gamemd {
-int sub_4E6D60()
-{
-{
-    g_AnimClassPool = 0;
-    DataGlobal_A8E9B0 = 0;
-    DataGlobal_A8E9B4 = 1;
-    DataGlobal_A8E9B5 = 0;
-    AnimClass_Array = (int)&vt_DynamicVectorClass_AnimClass;
-    DataGlobal_A8E9BC = 10;
-    g_AnimClassCount = 0;
-    return atexit(sub_4E6DA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6DA0
-namespace gamemd {
-void sub_4E6DA0()
-{
-{
-    AnimClass_Array = (int)&vt_VectorClass_AnimClass;
-    if ( g_AnimClassPool && DataGlobal_A8E9B5 )
-  {
-    __3_YAXPAX_Z(g_AnimClassPool);
-    g_AnimClassPool = 0;
-  }
-    DataGlobal_A8E9B5 = 0;
-    DataGlobal_A8E9B0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6DE0
-namespace gamemd {
-int sub_4E6DE0()
-{
-{
-    g_TeamClassPool = 0;
-    DataGlobal_8B40F0 = 0;
-    DataGlobal_8B40F4 = 1;
-    DataGlobal_8B40F5 = 0;
-    TeamClass_Array = (int)&vt_DynamicVectorClass_TeamClass;
-    DataGlobal_8B40FC = 10;
-    g_HouseClass_AIProductionState = 0;
-    return atexit(sub_4E6E20);
-}
-}
-} // namespace gamemd
-
-// 0x4E6E20
-namespace gamemd {
-void sub_4E6E20()
-{
-{
-    TeamClass_Array = (int)&vt_VectorClass_TeamClass;
-    if ( g_TeamClassPool && DataGlobal_8B40F5 )
-  {
-    __3_YAXPAX_Z(g_TeamClassPool);
-    g_TeamClassPool = 0;
-  }
-    DataGlobal_8B40F5 = 0;
-    DataGlobal_8B40F0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6E60
-namespace gamemd {
-int sub_4E6E60()
-{
-{
-    g_TeamTypeCount = 0;
-    DataGlobal_A83E38 = 0;
-    DataGlobal_A83E3C = 1;
-    DataGlobal_A83E3D = 0;
-    DataGlobal_A83E30 = (int)&vt_DynamicVectorClass_FactoryClass;
-    DataGlobal_A83E44 = 10;
-    g_TeamTypeCapacity = 0;
-    return atexit(sub_4E6EA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6EA0
-namespace gamemd {
-void sub_4E6EA0()
-{
-{
-    DataGlobal_A83E30 = (int)&vt_VectorClass_FactoryClass;
-    if ( g_TeamTypeCount && DataGlobal_A83E3D )
-  {
-    __3_YAXPAX_Z(g_TeamTypeCount);
-    g_TeamTypeCount = 0;
-  }
-    DataGlobal_A83E3D = 0;
-    DataGlobal_A83E38 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6EE0
-namespace gamemd {
-int sub_4E6EE0()
-{
-{
-    g_CampaignTypeArray = 0;
-    DataGlobal_A83D00 = 0;
-    DataGlobal_A83D04 = 1;
-    DataGlobal_A83D05 = 0;
-    DataGlobal_A83CF8 = (int)&vt_DynamicVectorClass_CampaignClass;
-    DataGlobal_A83D0C = 10;
-    g_UnitTypeInitState = 0;
-    return atexit(sub_4E6F20);
-}
-}
-} // namespace gamemd
-
-// 0x4E6F20
-namespace gamemd {
-void sub_4E6F20()
-{
-{
-    DataGlobal_A83CF8 = (int)&vt_VectorClass_CampaignClass;
-    if ( g_CampaignTypeArray && DataGlobal_A83D05 )
-  {
-    __3_YAXPAX_Z(g_CampaignTypeArray);
-    g_CampaignTypeArray = 0;
-  }
-    DataGlobal_A83D05 = 0;
-    DataGlobal_A83D00 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6F60
-namespace gamemd {
-int sub_4E6F60()
-{
-{
-    DataGlobal_8B4124 = 0;
-    DataGlobal_8B4128 = 0;
-    DataGlobal_8B412C = 1;
-    DataGlobal_8B412D = 0;
-    DataGlobal_8B4120 = (int)&vt_DynamicVectorClass_SideClass;
-    DataGlobal_8B4134 = 10;
-    g_ObjectTypeList = 0;
-    return atexit(sub_4E6FA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E6FA0
-namespace gamemd {
-void sub_4E6FA0()
-{
-{
-    DataGlobal_8B4120 = (int)&vt_VectorClass_SideClass;
-    if ( DataGlobal_8B4124 && DataGlobal_8B412D )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B4124);
-    DataGlobal_8B4124 = 0;
-  }
-    DataGlobal_8B412D = 0;
-    DataGlobal_8B4128 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E6FE0
-namespace gamemd {
-int sub_4E6FE0()
-{
-{
-    g_SuperWeaponTypeCount = 0;
-    DataGlobal_A83CA0 = 0;
-    DataGlobal_A83CA4 = 1;
-    DataGlobal_A83CA5 = 0;
-    DataGlobal_A83C98 = (int)&vt_DynamicVectorClass_HouseTypeClass;
-    DataGlobal_A83CAC = 10;
-    g_SuperWeaponTypeArray = 0;
-    return atexit(sub_4E7020);
-}
-}
-} // namespace gamemd
-
-// 0x4E7020
-namespace gamemd {
-void sub_4E7020()
-{
-{
-    DataGlobal_A83C98 = (int)&vt_VectorClass_HouseTypeClass;
-    if ( g_SuperWeaponTypeCount && DataGlobal_A83CA5 )
-  {
-    __3_YAXPAX_Z(g_SuperWeaponTypeCount);
-    g_SuperWeaponTypeCount = 0;
-  }
-    DataGlobal_A83CA5 = 0;
-    DataGlobal_A83CA0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7060
-namespace gamemd {
-int sub_4E7060()
-{
-{
-    g_MultiplayerLogEntry = 0;
-    DataGlobal_A8E8D8 = 0;
-    DataGlobal_A8E8DC = 1;
-    DataGlobal_A8E8DD = 0;
-    DataGlobal_A8E8D0 = (int)&vt_DynamicVectorClass_TaskForceClass;
-    DataGlobal_A8E8E4 = 10;
-    g_MultiplayerLogFlags = 0;
-    return atexit(sub_4E70A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E70A0
-namespace gamemd {
-void sub_4E70A0()
-{
-{
-    DataGlobal_A8E8D0 = (int)&vt_VectorClass_TaskForceClass;
-    if ( g_MultiplayerLogEntry && DataGlobal_A8E8DD )
-  {
-    __3_YAXPAX_Z(g_MultiplayerLogEntry);
-    g_MultiplayerLogEntry = 0;
-  }
-    DataGlobal_A8E8DD = 0;
-    DataGlobal_A8E8D8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E70E0
-namespace gamemd {
-int sub_4E70E0()
-{
-{
-    g_TeamTypePool = 0;
-    DataGlobal_A8ECA8 = 0;
-    DataGlobal_A8ECAC = 1;
-    DataGlobal_A8ECAD = 0;
-    TeamTypeClass_Array = (int)&vt_DynamicVectorClass_TeamTypeClass;
-    DataGlobal_A8ECB4 = 10;
-    g_MultiplayerLogState = 0;
-    return atexit(sub_4E7120);
-}
-}
-} // namespace gamemd
-
-// 0x4E7120
-namespace gamemd {
-void sub_4E7120()
-{
-{
-    TeamTypeClass_Array = (int)&vt_VectorClass_TeamTypeClass;
-    if ( g_TeamTypePool && DataGlobal_A8ECAD )
-  {
-    __3_YAXPAX_Z(g_TeamTypePool);
-    g_TeamTypePool = 0;
-  }
-    DataGlobal_A8ECAD = 0;
-    DataGlobal_A8ECA8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7160
-namespace gamemd {
-int sub_4E7160()
-{
-{
-    g_MultiplayerSyncState = 0;
-    DataGlobal_8B41D0 = 0;
-    DataGlobal_8B41D4 = 1;
-    DataGlobal_8B41D5 = 0;
-    DataGlobal_8B41C8 = (int)&vt_DynamicVectorClass_ScriptTypeClass;
-    DataGlobal_8B41DC = 10;
-    g_MultiplayerDebugState = 0;
-    return atexit(sub_4E71A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E71A0
-namespace gamemd {
-void sub_4E71A0()
-{
-{
-    DataGlobal_8B41C8 = (int)&vt_VectorClass_ScriptTypeClass;
-    if ( g_MultiplayerSyncState && DataGlobal_8B41D5 )
-  {
-    __3_YAXPAX_Z(g_MultiplayerSyncState);
-    g_MultiplayerSyncState = 0;
-  }
-    DataGlobal_8B41D5 = 0;
-    DataGlobal_8B41D0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E71E0
-namespace gamemd {
-int sub_4E71E0()
-{
-{
-    g_BuildingTypeClass_Array = 0;
-    DataGlobal_A83D88 = 0;
-    DataGlobal_A83D8C = 1;
-    DataGlobal_A83D8D = 0;
-    DataGlobal_A83D80 = (int)&vt_DynamicVectorClass_OverlayTypeClass;
-    DataGlobal_A83D94 = 10;
-    g_ObjectTypeConfig = 0;
-    return atexit(sub_4E7220);
-}
-}
-} // namespace gamemd
-
-// 0x4E7220
-namespace gamemd {
-void sub_4E7220()
-{
-{
-    DataGlobal_A83D80 = (int)&vt_VectorClass_OverlayTypeClass;
-    if ( g_BuildingTypeClass_Array && DataGlobal_A83D8D )
-  {
-    __3_YAXPAX_Z(g_BuildingTypeClass_Array);
-    g_BuildingTypeClass_Array = 0;
-  }
-    DataGlobal_A83D8D = 0;
-    DataGlobal_A83D88 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7260
-namespace gamemd {
-int sub_4E7260()
-{
-{
-    FactoryClass_Array = 0;
-    DataGlobal_A8EC20 = 0;
-    DataGlobal_A8EC24 = 1;
-    DataGlobal_A8EC25 = 0;
-    DataGlobal_A8EC18 = (int)&vt_DynamicVectorClass_SmudgeTypeClass;
-    DataGlobal_A8EC2C = 10;
-    FactoryClass_Count = 0;
-    return atexit(sub_4E72A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E72A0
-namespace gamemd {
-void sub_4E72A0()
-{
-{
-    DataGlobal_A8EC18 = (int)&vt_VectorClass_SmudgeTypeClass;
-    if ( FactoryClass_Array && DataGlobal_A8EC25 )
-  {
-    __3_YAXPAX_Z(FactoryClass_Array);
-    FactoryClass_Array = 0;
-  }
-    DataGlobal_A8EC25 = 0;
-    DataGlobal_A8EC20 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E72E0
-namespace gamemd {
-int sub_4E72E0()
-{
-{
-    DataGlobal_A8E31C = 0;
-    DataGlobal_A8E320 = 0;
-    DataGlobal_A8E324 = 1;
-    DataGlobal_A8E325 = 0;
-    DataGlobal_A8E318 = (int)&vt_DynamicVectorClass_TerrainTypeClass;
-    DataGlobal_A8E32C = 10;
-    g_RulesClassInitState = 0;
-    return atexit(sub_4E7320);
-}
-}
-} // namespace gamemd
-
-// 0x4E7320
-namespace gamemd {
-void sub_4E7320()
-{
-{
-    DataGlobal_A8E318 = (int)&vt_VectorClass_TerrainTypeClass;
-    if ( DataGlobal_A8E31C && DataGlobal_A8E325 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8E31C);
-    DataGlobal_A8E31C = 0;
-  }
-    DataGlobal_A8E325 = 0;
-    DataGlobal_A8E320 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7360
-namespace gamemd {
-int sub_4E7360()
-{
-{
-    g_TriggerTypeCount = 0;
-    DataGlobal_A83C70 = 0;
-    DataGlobal_A83C74 = 1;
-    DataGlobal_A83C75 = 0;
-    DataGlobal_A83C68 = (int)&vt_DynamicVectorClass_BuildingTypeClass;
-    DataGlobal_A83C7C = 10;
-    g_TriggerClassCount = 0;
-    return atexit(sub_4E73A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E73A0
-namespace gamemd {
-void sub_4E73A0()
-{
-{
-    DataGlobal_A83C68 = (int)&vt_VectorClass_BuildingTypeClass;
-    if ( g_TriggerTypeCount && DataGlobal_A83C75 )
-  {
-    __3_YAXPAX_Z(g_TriggerTypeCount);
-    g_TriggerTypeCount = 0;
-  }
-    DataGlobal_A83C75 = 0;
-    DataGlobal_A83C70 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E73E0
-namespace gamemd {
-int sub_4E73E0()
-{
-{
-    g_AircraftTypeCount = 0;
-    DataGlobal_A8B220 = 0;
-    DataGlobal_A8B224 = 1;
-    DataGlobal_A8B225 = 0;
-    AircraftTypeClass_Array = (int)&vt_DynamicVectorClass_AircraftTypeClass;
-    DataGlobal_A8B22C = 10;
-    g_TypeClass_FindCache = 0;
-    return atexit(sub_4E7420);
-}
-}
-} // namespace gamemd
-
-// 0x4E7420
-namespace gamemd {
-void sub_4E7420()
-{
-{
-    AircraftTypeClass_Array = (int)&vt_VectorClass_AircraftTypeClass;
-    if ( g_AircraftTypeCount && DataGlobal_A8B225 )
-  {
-    __3_YAXPAX_Z(g_AircraftTypeCount);
-    g_AircraftTypeCount = 0;
-  }
-    DataGlobal_A8B225 = 0;
-    DataGlobal_A8B220 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E7460
 namespace gamemd {
 int sub_4E7460()
@@ -3076,74 +2031,6 @@ void __cdecl sub_4E74A0()
   }
   byte_A83CED = 0; /*0x4e74cd*/
   dword_A83CE8 = 0; /*0x4e74d3*/
-}
-}
-} // namespace gamemd
-
-// 0x4E74E0
-namespace gamemd {
-int sub_4E74E0()
-{
-{
-    g_AnimTypeCount = 0;
-    DataGlobal_8B4158 = 0;
-    DataGlobal_8B415C = 1;
-    DataGlobal_8B415D = 0;
-    AnimTypeClass_Array = (int)&vt_DynamicVectorClass_AnimTypeClass;
-    DataGlobal_8B4164 = 10;
-    DataGlobal_8B4160 = 0;
-    return atexit(sub_4E7520);
-}
-}
-} // namespace gamemd
-
-// 0x4E7520
-namespace gamemd {
-void sub_4E7520()
-{
-{
-    AnimTypeClass_Array = (int)&vt_VectorClass_AnimTypeClass;
-    if ( g_AnimTypeCount && DataGlobal_8B415D )
-  {
-    __3_YAXPAX_Z(g_AnimTypeCount);
-    g_AnimTypeCount = 0;
-  }
-    DataGlobal_8B415D = 0;
-    DataGlobal_8B4158 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7560
-namespace gamemd {
-int sub_4E7560()
-{
-{
-    Factory_ExitCellTable = 0;
-    DataGlobal_A8E350 = 0;
-    DataGlobal_A8E354 = 1;
-    DataGlobal_A8E355 = 0;
-    InfantryTypeClass_Array = (int)&vt_DynamicVectorClass_InfantryTypeClass;
-    DataGlobal_A8E35C = 10;
-    g_LoadScreenProgress = 0;
-    return atexit(sub_4E75A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E75A0
-namespace gamemd {
-void sub_4E75A0()
-{
-{
-    InfantryTypeClass_Array = (int)&vt_VectorClass_InfantryTypeClass;
-    if ( Factory_ExitCellTable && DataGlobal_A8E355 )
-  {
-    __3_YAXPAX_Z(Factory_ExitCellTable);
-    Factory_ExitCellTable = 0;
-  }
-    DataGlobal_A8E355 = 0;
-    DataGlobal_A8E350 = 0;
 }
 }
 } // namespace gamemd
@@ -3186,458 +2073,6 @@ void __cdecl sub_4E7620()
 }
 } // namespace gamemd
 
-// 0x4E7660
-namespace gamemd {
-int sub_4E7660()
-{
-{
-    DataGlobal_A8EB2C = 0;
-    DataGlobal_A8EB30 = 0;
-    DataGlobal_A8EB34 = 1;
-    DataGlobal_A8EB35 = 0;
-    VoxelAnimTypeClass_Array = (int)&vt_DynamicVectorClass_VoxelAnimTypeClass;
-    DataGlobal_A8EB3C = 10;
-    g_MultiplayerPool = 0;
-    return atexit(sub_4E76A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E76A0
-namespace gamemd {
-void sub_4E76A0()
-{
-{
-    VoxelAnimTypeClass_Array = (int)&vt_VectorClass_VoxelAnimTypeClass;
-    if ( DataGlobal_A8EB2C && DataGlobal_A8EB35 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8EB2C);
-    DataGlobal_A8EB2C = 0;
-  }
-    DataGlobal_A8EB35 = 0;
-    DataGlobal_A8EB30 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E76E0
-namespace gamemd {
-int sub_4E76E0()
-{
-{
-    g_FrameCounter = 0;
-    DataGlobal_A8ED30 = 0;
-    DataGlobal_A8ED34 = 1;
-    DataGlobal_A8ED35 = 0;
-    DataGlobal_A8ED28 = (int)&vt_DynamicVectorClass_IsometricTileTypeClass;
-    DataGlobal_A8ED3C = 10;
-    g_TechnoClassCount = 0;
-    return atexit(sub_4E7720);
-}
-}
-} // namespace gamemd
-
-// 0x4E7720
-namespace gamemd {
-void sub_4E7720()
-{
-{
-    DataGlobal_A8ED28 = (int)&vt_VectorClass_IsometricTileTypeClass;
-    if ( g_FrameCounter && DataGlobal_A8ED35 )
-  {
-    __3_YAXPAX_Z(g_FrameCounter);
-    g_FrameCounter = 0;
-  }
-    DataGlobal_A8ED35 = 0;
-    DataGlobal_A8ED30 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7760
-namespace gamemd {
-int sub_4E7760()
-{
-{
-    g_BuildingProductionQueue = 0;
-    DataGlobal_A83DA0 = 0;
-    DataGlobal_A83DA4 = 1;
-    DataGlobal_A83DA5 = 0;
-    DataGlobal_A83D98 = (int)&vt_DynamicVectorClass_ParticleTypeClass;
-    DataGlobal_A83DAC = 10;
-    g_BuildingTypeInitState = 0;
-    return atexit(sub_4E77A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E77A0
-namespace gamemd {
-void sub_4E77A0()
-{
-{
-    DataGlobal_A83D98 = (int)&vt_VectorClass_ParticleTypeClass;
-    if ( g_BuildingProductionQueue && DataGlobal_A83DA5 )
-  {
-    __3_YAXPAX_Z(g_BuildingProductionQueue);
-    g_BuildingProductionQueue = 0;
-  }
-    DataGlobal_A83DA5 = 0;
-    DataGlobal_A83DA0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E77E0
-namespace gamemd {
-int sub_4E77E0()
-{
-{
-    DataGlobal_A83D6C = 0;
-    DataGlobal_A83D70 = 0;
-    DataGlobal_A83D74 = 1;
-    DataGlobal_A83D75 = 0;
-    DataGlobal_A83D68 = (int)&vt_DynamicVectorClass_ParticleSystemTypeClass;
-    DataGlobal_A83D7C = 10;
-    g_InfantryTypeInitState = 0;
-    return atexit(sub_4E7820);
-}
-}
-} // namespace gamemd
-
-// 0x4E7820
-namespace gamemd {
-void sub_4E7820()
-{
-{
-    DataGlobal_A83D68 = (int)&vt_VectorClass_ParticleSystemTypeClass;
-    if ( DataGlobal_A83D6C && DataGlobal_A83D75 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83D6C);
-    DataGlobal_A83D6C = 0;
-  }
-    DataGlobal_A83D75 = 0;
-    DataGlobal_A83D70 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7860
-namespace gamemd {
-int sub_4E7860()
-{
-{
-    g_SuperWeaponPool = 0;
-    DataGlobal_A8E338 = 0;
-    DataGlobal_A8E33C = 1;
-    DataGlobal_A8E33D = 0;
-    DataGlobal_A8E330 = (int)&vt_DynamicVectorClass_SuperWeaponTypeClass;
-    DataGlobal_A8E344 = 10;
-    g_HouseClassInitState = 0;
-    return atexit(sub_4E78A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E78A0
-namespace gamemd {
-void sub_4E78A0()
-{
-{
-    DataGlobal_A8E330 = (int)&vt_VectorClass_SuperWeaponTypeClass;
-    if ( g_SuperWeaponPool && DataGlobal_A8E33D )
-  {
-    __3_YAXPAX_Z(g_SuperWeaponPool);
-    g_SuperWeaponPool = 0;
-  }
-    DataGlobal_A8E33D = 0;
-    DataGlobal_A8E338 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E78E0
-namespace gamemd {
-int sub_4E78E0()
-{
-{
-    DataGlobal_A83CBC = 0;
-    DataGlobal_A83CC0 = 0;
-    DataGlobal_A83CC4 = 1;
-    DataGlobal_A83CC5 = 0;
-    DataGlobal_A83CB8 = (int)&vt_DynamicVectorClass_SuperClass;
-    DataGlobal_A83CCC = 10;
-    DataGlobal_A83CC8 = 0;
-    return atexit(sub_4E7920);
-}
-}
-} // namespace gamemd
-
-// 0x4E7920
-namespace gamemd {
-void sub_4E7920()
-{
-{
-    DataGlobal_A83CB8 = (int)&vt_VectorClass_SuperClass;
-    if ( DataGlobal_A83CBC && DataGlobal_A83CC5 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83CBC);
-    DataGlobal_A83CBC = 0;
-  }
-    DataGlobal_A83CC5 = 0;
-    DataGlobal_A83CC0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7960
-namespace gamemd {
-int sub_4E7960()
-{
-{
-    DataGlobal_A83D54 = 0;
-    DataGlobal_A83D58 = 0;
-    DataGlobal_A83D5C = 1;
-    DataGlobal_A83D5D = 0;
-    SuperClass_ShowTimers = (int)&vt_DynamicVectorClass_SuperClass;
-    DataGlobal_A83D64 = 10;
-    DataGlobal_A83D60 = 0;
-    return atexit(sub_4E79A0);
-}
-}
-} // namespace gamemd
-
-// 0x4E79A0
-namespace gamemd {
-void sub_4E79A0()
-{
-{
-    SuperClass_ShowTimers = (int)&vt_VectorClass_SuperClass;
-    if ( DataGlobal_A83D54 && DataGlobal_A83D5D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83D54);
-    DataGlobal_A83D54 = 0;
-  }
-    DataGlobal_A83D5D = 0;
-    DataGlobal_A83D58 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E79E0
-namespace gamemd {
-int sub_4E79E0()
-{
-{
-    g_TechnoClass_Count = 0;
-    DataGlobal_A8EC80 = 0;
-    DataGlobal_A8EC84 = 1;
-    DataGlobal_A8EC85 = 0;
-    TechnoClass_Array = (TechnoClass *)&vt_DynamicVectorClass_TechnoClass;
-    DataGlobal_A8EC8C = 10;
-    g_SidebarState = 0;
-    return atexit(sub_4E7A20);
-}
-}
-} // namespace gamemd
-
-// 0x4E7A20
-namespace gamemd {
-void sub_4E7A20()
-{
-{
-    TechnoClass_Array = (TechnoClass *)&vt_VectorClass_TechnoClass;
-    if ( g_TechnoClass_Count && DataGlobal_A8EC85 )
-  {
-    __3_YAXPAX_Z(g_TechnoClass_Count);
-    g_TechnoClass_Count = 0;
-  }
-    DataGlobal_A8EC85 = 0;
-    DataGlobal_A8EC80 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7A60
-namespace gamemd {
-int sub_4E7A60()
-{
-{
-    DataGlobal_A8EB04 = 0;
-    DataGlobal_A8EB08 = 0;
-    DataGlobal_A8EB0C = 1;
-    DataGlobal_A8EB0D = 0;
-    DataGlobal_A8EB00 = (int)&vt_DynamicVectorClass_TechnoTypeClass;
-    DataGlobal_A8EB14 = 10;
-    DataGlobal_A8EB10 = 0;
-    return atexit(sub_4E7AA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E7AA0
-namespace gamemd {
-void sub_4E7AA0()
-{
-{
-    DataGlobal_A8EB00 = (int)&vt_VectorClass_TechnoTypeClass;
-    if ( DataGlobal_A8EB04 && DataGlobal_A8EB0D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8EB04);
-    DataGlobal_A8EB04 = 0;
-  }
-    DataGlobal_A8EB0D = 0;
-    DataGlobal_A8EB08 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7AE0
-namespace gamemd {
-int sub_4E7AE0()
-{
-{
-    DataGlobal_A8E364 = 0;
-    DataGlobal_A8E368 = 0;
-    DataGlobal_A8E36C = 1;
-    DataGlobal_A8E36D = 0;
-    DataGlobal_A8E360 = (int)&vt_DynamicVectorClass_ObjectClass;
-    DataGlobal_A8E374 = 10;
-    DataGlobal_A8E370 = 0;
-    return atexit(sub_4E7B20);
-}
-}
-} // namespace gamemd
-
-// 0x4E7B20
-namespace gamemd {
-void sub_4E7B20()
-{
-{
-    DataGlobal_A8E360 = (int)&vt_VectorClass_ObjectClass;
-    if ( DataGlobal_A8E364 && DataGlobal_A8E36D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8E364);
-    DataGlobal_A8E364 = 0;
-  }
-    DataGlobal_A8E36D = 0;
-    DataGlobal_A8E368 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7B60
-namespace gamemd {
-int sub_4E7B60()
-{
-{
-    DataGlobal_A8E96C = 0;
-    DataGlobal_A8E970 = 0;
-    DataGlobal_A8E974 = 1;
-    DataGlobal_A8E975 = 0;
-    DataGlobal_A8E968 = (int)&vt_DynamicVectorClass_AbstractTypeClass;
-    DataGlobal_A8E97C = 10;
-    g_AbstractTypePool = 0;
-    return atexit(sub_4E7BA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E7BA0
-namespace gamemd {
-void sub_4E7BA0()
-{
-{
-    DataGlobal_A8E968 = (int)&vt_VectorClass_AbstractTypeClass;
-    if ( DataGlobal_A8E96C && DataGlobal_A8E975 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A8E96C);
-    DataGlobal_A8E96C = 0;
-  }
-    DataGlobal_A8E975 = 0;
-    DataGlobal_A8E970 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7BE0
-namespace gamemd {
-int sub_4E7BE0()
-{
-{
-    DataGlobal_8B41E4 = 0;
-    DataGlobal_8B41E8 = 0;
-    DataGlobal_8B41EC = 1;
-    DataGlobal_8B41ED = 0;
-    DataGlobal_8B41E0 = (int)&vt_DynamicVectorClass_BuildingClass;
-    DataGlobal_8B41F4 = 10;
-    DataGlobal_8B41F0 = 0;
-    return atexit(sub_4E7C20);
-}
-}
-} // namespace gamemd
-
-// 0x4E7C20
-namespace gamemd {
-void sub_4E7C20()
-{
-{
-    DataGlobal_8B41E0 = (int)&vt_VectorClass_BuildingClass;
-    if ( DataGlobal_8B41E4 && DataGlobal_8B41ED )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B41E4);
-    DataGlobal_8B41E4 = 0;
-  }
-    DataGlobal_8B41ED = 0;
-    DataGlobal_8B41E8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7C60
-namespace gamemd {
-int sub_4E7C60()
-{
-{
-    DataGlobal_A83E04 = 0;
-    DataGlobal_A83E08 = 0;
-    DataGlobal_A83E0C = 1;
-    DataGlobal_A83E0D = 0;
-    DataGlobal_A83E00 = (int)&vt_DynamicVectorClass_AnimClass;
-    DataGlobal_A83E14 = 10;
-    DataGlobal_A83E10 = 0;
-    return atexit(sub_4E7CA0);
-}
-}
-} // namespace gamemd
-
-// 0x4E7CA0
-namespace gamemd {
-void sub_4E7CA0()
-{
-{
-    DataGlobal_A83E00 = (int)&vt_VectorClass_AnimClass;
-    if ( DataGlobal_A83E04 && DataGlobal_A83E0D )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83E04);
-    DataGlobal_A83E04 = 0;
-  }
-    DataGlobal_A83E0D = 0;
-    DataGlobal_A83E08 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7CE0
-namespace gamemd {
-void sub_4E7CE0()
-{
-{
-    pUnk.field_0 = (struct IUnknownVtbl *)&vt_TiberianSunClassFactory;
-}
-}
-} // namespace gamemd
-
 // 0x4E7D30
 namespace gamemd {
 int unknown_libname_13()
@@ -3651,67 +2086,6 @@ void __cdecl unknown_libname_13()
   MEMORY[0xA8E7B0][4] = 0; /*0x661716*/
   memset(&MEMORY[0xA8E7B0][5], 0, 0x100u); /*0x661719*/
   Straw::Dtor(MEMORY[0xA8E7B0]); /*0x66171d*/
-}
-}
-} // namespace gamemd
-
-// 0x4E7D40
-namespace gamemd {
-int sub_4E7D40()
-{
-{
-    g_ObjectClass_CurrentCount = 0;
-    DataGlobal_A8ECC0 = 0;
-    DataGlobal_A8ECC4 = 1;
-    DataGlobal_A8ECC5 = 0;
-    DataGlobal_A8ECB8 = (ObjectClass *)&vt_DynamicVectorClass_ObjectClass;
-    DataGlobal_A8ECCC = 10;
-    g_SelectionManager = 0;
-    return atexit(sub_4E7D80);
-}
-}
-} // namespace gamemd
-
-// 0x4E7D80
-namespace gamemd {
-void sub_4E7D80()
-{
-{
-    DataGlobal_A8ECB8 = (ObjectClass *)&vt_VectorClass_ObjectClass;
-    if ( g_ObjectClass_CurrentCount && DataGlobal_A8ECC5 )
-  {
-    __3_YAXPAX_Z(g_ObjectClass_CurrentCount);
-    g_ObjectClass_CurrentCount = 0;
-  }
-    DataGlobal_A8ECC5 = 0;
-    DataGlobal_A8ECC0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7DE0
-namespace gamemd {
-void sub_4E7DE0()
-{
-{
-    g_CoordScatterManager = (int)&vt_VersionClass;
-}
-}
-} // namespace gamemd
-
-// 0x4E7E50
-namespace gamemd {
-void sub_4E7E50()
-{
-{
-    DataGlobal_A83D24 = (int)&vt_VectorClass_ThemeControl;
-    if ( DataGlobal_A83D28 && DataGlobal_A83D31 )
-  {
-    __3_YAXPAX_Z(DataGlobal_A83D28);
-    DataGlobal_A83D28 = 0;
-  }
-    DataGlobal_A83D31 = 0;
-    DataGlobal_A83D2C = 0;
 }
 }
 } // namespace gamemd
@@ -3739,74 +2113,6 @@ char *sub_4E7EA0()
   g_NetworkEventIndex = 0; /*0x4e7eba*/
   Networking_NextPacketIndex = 0; /*0x4e7ec0*/
   return result; /*0x4e7ec6*/
-}
-}
-} // namespace gamemd
-
-// 0x4E7F30
-namespace gamemd {
-int sub_4E7F30()
-{
-{
-    DataGlobal_8B41AC = 0;
-    DataGlobal_8B41B0 = 0;
-    DataGlobal_8B41B4 = 1;
-    DataGlobal_8B41B5 = 0;
-    DataGlobal_8B41A8 = (int)&vt_DynamicVectorClass_TagClass;
-    DataGlobal_8B41BC = 10;
-    DataGlobal_8B41B8 = 0;
-    return atexit(sub_4E7F70);
-}
-}
-} // namespace gamemd
-
-// 0x4E7F70
-namespace gamemd {
-void sub_4E7F70()
-{
-{
-    DataGlobal_8B41A8 = (int)&vt_VectorClass_TagClass;
-    if ( DataGlobal_8B41AC && DataGlobal_8B41B5 )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B41AC);
-    DataGlobal_8B41AC = 0;
-  }
-    DataGlobal_8B41B5 = 0;
-    DataGlobal_8B41B0 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E7FB0
-namespace gamemd {
-int sub_4E7FB0()
-{
-{
-    DataGlobal_8B40CC = 0;
-    DataGlobal_8B40D0 = 0;
-    DataGlobal_8B40D4 = 1;
-    DataGlobal_8B40D5 = 0;
-    DataGlobal_8B40C8 = (int)&vt_DynamicVectorClass_TagClass;
-    DataGlobal_8B40DC = 10;
-    g_ScenarioUpdateState = 0;
-    return atexit(sub_4E7FF0);
-}
-}
-} // namespace gamemd
-
-// 0x4E7FF0
-namespace gamemd {
-void sub_4E7FF0()
-{
-{
-    DataGlobal_8B40C8 = (int)&vt_VectorClass_TagClass;
-    if ( DataGlobal_8B40CC && DataGlobal_8B40D5 )
-  {
-    __3_YAXPAX_Z(DataGlobal_8B40CC);
-    DataGlobal_8B40CC = 0;
-  }
-    DataGlobal_8B40D5 = 0;
-    DataGlobal_8B40D0 = 0;
 }
 }
 } // namespace gamemd
@@ -5003,6 +3309,48 @@ char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destinati
 }
 } // namespace gamemd
 
+// 0x4E6190
+namespace gamemd {
+int sub_4E6190()
+{
+{
+    int v0;
+    int result;
+    int v2;
+    char Destination[64];
+    Event_Process_7C5F3D();
+    Event_Process_7C5FFF();
+    v0 = DataGlobal_84E863;
+    if ( &v2 != (int *)-4 )
+    strncpy(Destination, Source, 0x40u);
+    if ( !v0 || !DataGlobal_84E864 )
+    return -1;
+    if ( !_strcmpi(Destination, aAuthenticamd) )
+    return 7;
+    if ( !_strcmpi(Destination, aCyrixinstead) )
+    return 8;
+    if ( v0 == 4 )
+    return 0;
+    if ( v0 == 5 )
+    return 1;
+    if ( v0 != 6 )
+    return 6;
+    switch ( DataGlobal_84E864 )
+  {
+    case 3: case 5: result = 3;
+    break;
+    case 6: result = 5;
+    break;
+    case 7: case 8: case 10: result = 4;
+    break;
+    default: result = 2;
+    break;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4E62D0
 namespace gamemd {
 void sub_4E62D0()
@@ -5165,6 +3513,1529 @@ int sub_4E64C0()
 }
 } // namespace gamemd
 
+// 0x4E64E0
+namespace gamemd {
+int sub_4E64E0()
+{
+{
+    DataGlobal_A8B204 = 0;
+    DataGlobal_A8B208 = 0;
+    DataGlobal_A8B20C = 1;
+    DataGlobal_A8B20D = 0;
+    AITriggerTypeClass_Array = (int)&vt_DynamicVectorClass_AITriggerTypeClass;
+    DataGlobal_A8B214 = 10;
+    g_AnimTypeInitQueue = 0;
+    return atexit(sub_4E6520);
+}
+}
+} // namespace gamemd
+
+// 0x4E6520
+namespace gamemd {
+void sub_4E6520()
+{
+{
+    AITriggerTypeClass_Array = (int)&vt_VectorClass_AITriggerTypeClass;
+    if ( DataGlobal_A8B204 && DataGlobal_A8B20D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8B204);
+    DataGlobal_A8B204 = 0;
+  }
+    DataGlobal_A8B20D = 0;
+    DataGlobal_A8B208 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6560
+namespace gamemd {
+int sub_4E6560()
+{
+{
+    DataGlobal_8B417C = 0;
+    LightConvertClass_Array = 0;
+    DataGlobal_8B4184 = 1;
+    DataGlobal_8B4185 = 0;
+    DataGlobal_8B4178 = (int)&vt_DynamicVectorClass_TriggerTypeClass;
+    DataGlobal_8B418C = 10;
+    g_MultiplayerLogBuffer = 0;
+    return atexit(sub_4E65A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E65A0
+namespace gamemd {
+void sub_4E65A0()
+{
+{
+    DataGlobal_8B4178 = (int)&vt_VectorClass_TriggerTypeClass;
+    if ( DataGlobal_8B417C && DataGlobal_8B4185 )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B417C);
+    DataGlobal_8B417C = 0;
+  }
+    DataGlobal_8B4185 = 0;
+    LightConvertClass_Array = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E65E0
+namespace gamemd {
+int sub_4E65E0()
+{
+{
+    g_TriggerClassCapacity = 0;
+    DataGlobal_A8EAF0 = 0;
+    DataGlobal_A8EAF4 = 1;
+    DataGlobal_A8EAF5 = 0;
+    TriggerClass_Array = (int)&vt_DynamicVectorClass_TriggerClass;
+    DataGlobal_A8EAFC = 10;
+    g_ProductionQueueState = 0;
+    return atexit(sub_4E6620);
+}
+}
+} // namespace gamemd
+
+// 0x4E6620
+namespace gamemd {
+void sub_4E6620()
+{
+{
+    TriggerClass_Array = (int)&vt_VectorClass_TriggerClass;
+    if ( g_TriggerClassCapacity && DataGlobal_A8EAF5 )
+  {
+    __3_YAXPAX_Z(g_TriggerClassCapacity);
+    g_TriggerClassCapacity = 0;
+  }
+    DataGlobal_A8EAF5 = 0;
+    DataGlobal_A8EAF0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6660
+namespace gamemd {
+int sub_4E6660()
+{
+{
+    DataGlobal_8B4194 = 0;
+    DataGlobal_8B4198 = 0;
+    DataGlobal_8B419C = 1;
+    DataGlobal_8B419D = 0;
+    DataGlobal_8B4190 = (int)&vt_DynamicVectorClass_BuildingLightClass;
+    DataGlobal_8B41A4 = 10;
+    DataGlobal_8B41A0 = 0;
+    return atexit(sub_4E66A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E66A0
+namespace gamemd {
+void sub_4E66A0()
+{
+{
+    DataGlobal_8B4190 = (int)&vt_VectorClass_BuildingLightClass;
+    if ( DataGlobal_8B4194 && DataGlobal_8B419D )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B4194);
+    DataGlobal_8B4194 = 0;
+  }
+    DataGlobal_8B419D = 0;
+    DataGlobal_8B4198 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E66E0
+namespace gamemd {
+int sub_4E66E0()
+{
+{
+    DataGlobal_A8020C = 0;
+    DataGlobal_A80210 = 0;
+    DataGlobal_A80214 = 1;
+    DataGlobal_A80215 = 0;
+    DataGlobal_A80208 = (int)&vt_DynamicVectorClass_ParticleSystemClass;
+    DataGlobal_A8021C = 10;
+    g_GameCleanupState = 0;
+    return atexit(sub_4E6720);
+}
+}
+} // namespace gamemd
+
+// 0x4E6720
+namespace gamemd {
+void sub_4E6720()
+{
+{
+    DataGlobal_A80208 = (int)&vt_VectorClass_ParticleSystemClass;
+    if ( DataGlobal_A8020C && DataGlobal_A80215 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8020C);
+    DataGlobal_A8020C = 0;
+  }
+    DataGlobal_A80215 = 0;
+    DataGlobal_A80210 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6760
+namespace gamemd {
+int sub_4E6760()
+{
+{
+    g_PathClass_State = 0;
+    DataGlobal_8B4140 = 0;
+    DataGlobal_8B4144 = 1;
+    DataGlobal_8B4145 = 0;
+    DataGlobal_8B4138 = (int)&vt_DynamicVectorClass_TubeClass;
+    DataGlobal_8B414C = 10;
+    g_UnitTypeCount = 0;
+    return atexit(sub_4E67A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E67A0
+namespace gamemd {
+void sub_4E67A0()
+{
+{
+    DataGlobal_8B4138 = (int)&vt_VectorClass_TubeClass;
+    if ( g_PathClass_State && DataGlobal_8B4145 )
+  {
+    __3_YAXPAX_Z(g_PathClass_State);
+    g_PathClass_State = 0;
+  }
+    DataGlobal_8B4145 = 0;
+    DataGlobal_8B4140 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E67E0
+namespace gamemd {
+int sub_4E67E0()
+{
+{
+    DataGlobal_A8EC3C = 0;
+    DataGlobal_A8EC40 = 0;
+    g_GameObjectManager = 1;
+    DataGlobal_A8EC45 = 0;
+    DataGlobal_A8EC38 = (int)&vt_DynamicVectorClass_WaveClass;
+    DataGlobal_A8EC4C = 10;
+    DataGlobal_A8EC48 = 0;
+    return atexit(sub_4E6820);
+}
+}
+} // namespace gamemd
+
+// 0x4E6820
+namespace gamemd {
+void sub_4E6820()
+{
+{
+    DataGlobal_A8EC38 = (int)&vt_VectorClass_WaveClass;
+    if ( DataGlobal_A8EC3C && DataGlobal_A8EC45 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8EC3C);
+    DataGlobal_A8EC3C = 0;
+  }
+    DataGlobal_A8EC45 = 0;
+    DataGlobal_A8EC40 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E68A0
+namespace gamemd {
+void sub_4E68A0()
+{
+{
+    BulletClass_Array = (int)&vt_VectorClass_BulletClass;
+    if ( DataGlobal_A8ED44 && DataGlobal_A8ED4D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8ED44);
+    DataGlobal_A8ED44 = 0;
+  }
+    DataGlobal_A8ED4D = 0;
+    DataGlobal_A8ED48 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E68E0
+namespace gamemd {
+int sub_4E68E0()
+{
+{
+    g_ObjectClass_Capacity = 0;
+    DataGlobal_A8EC58 = 0;
+    DataGlobal_A8EC5C = 1;
+    DataGlobal_A8EC5D = 0;
+    OverlayClass_Array = (int)&vt_DynamicVectorClass_OverlayClass;
+    DataGlobal_A8EC64 = 10;
+    DataGlobal_A8EC60 = 0;
+    return atexit(sub_4E6920);
+}
+}
+} // namespace gamemd
+
+// 0x4E6920
+namespace gamemd {
+void sub_4E6920()
+{
+{
+    OverlayClass_Array = (int)&vt_VectorClass_OverlayClass;
+    if ( g_ObjectClass_Capacity && DataGlobal_A8EC5D )
+  {
+    __3_YAXPAX_Z(g_ObjectClass_Capacity);
+    g_ObjectClass_Capacity = 0;
+  }
+    DataGlobal_A8EC5D = 0;
+    DataGlobal_A8EC58 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6960
+namespace gamemd {
+int sub_4E6960()
+{
+{
+    DataGlobal_A83DCC = 0;
+    DataGlobal_A83DD0 = 0;
+    DataGlobal_A83DD4 = 1;
+    DataGlobal_A83DD5 = 0;
+    DataGlobal_A83DC8 = (int)&vt_DynamicVectorClass_ParticleClass;
+    DataGlobal_A83DDC = 10;
+    DataGlobal_A83DD8 = 0;
+    return atexit(sub_4E69A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E69A0
+namespace gamemd {
+void sub_4E69A0()
+{
+{
+    DataGlobal_A83DC8 = (int)&vt_VectorClass_ParticleClass;
+    if ( DataGlobal_A83DCC && DataGlobal_A83DD5 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83DCC);
+    DataGlobal_A83DCC = 0;
+  }
+    DataGlobal_A83DD5 = 0;
+    DataGlobal_A83DD0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E69E0
+namespace gamemd {
+int sub_4E69E0()
+{
+{
+    DataGlobal_A8B1E4 = 0;
+    DataGlobal_A8B1E8 = 0;
+    DataGlobal_A8B1EC = 1;
+    DataGlobal_A8B1ED = 0;
+    SmudgeClass_Array = (int)&vt_DynamicVectorClass_SmudgeClass;
+    DataGlobal_A8B1F4 = 10;
+    DataGlobal_A8B1F0 = 0;
+    return atexit(sub_4E6A20);
+}
+}
+} // namespace gamemd
+
+// 0x4E6A20
+namespace gamemd {
+void sub_4E6A20()
+{
+{
+    SmudgeClass_Array = (int)&vt_VectorClass_SmudgeClass;
+    if ( DataGlobal_A8B1E4 && DataGlobal_A8B1ED )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8B1E4);
+    DataGlobal_A8B1E4 = 0;
+  }
+    DataGlobal_A8B1ED = 0;
+    DataGlobal_A8B1E8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6A60
+namespace gamemd {
+int sub_4E6A60()
+{
+{
+    DataGlobal_A8E98C = 0;
+    DataGlobal_A8E990 = 0;
+    DataGlobal_A8E994 = 1;
+    DataGlobal_A8E995 = 0;
+    DataGlobal_A8E988 = (int)&vt_DynamicVectorClass_TerrainClass;
+    DataGlobal_A8E99C = 10;
+    DataGlobal_A8E998 = 0;
+    return atexit(sub_4E6AA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6AA0
+namespace gamemd {
+void sub_4E6AA0()
+{
+{
+    DataGlobal_A8E988 = (int)&vt_VectorClass_TerrainClass;
+    if ( DataGlobal_A8E98C && DataGlobal_A8E995 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8E98C);
+    DataGlobal_A8E98C = 0;
+  }
+    DataGlobal_A8E995 = 0;
+    DataGlobal_A8E990 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6AE0
+namespace gamemd {
+int sub_4E6AE0()
+{
+{
+    g_InfantryClassLimit = 0;
+    DataGlobal_A83DF0 = 0;
+    DataGlobal_A83DF4 = 1;
+    DataGlobal_A83DF5 = 0;
+    InfantryClass_Array = (int)&vt_DynamicVectorClass_InfantryClass;
+    DataGlobal_A83DFC = 10;
+    g_BuildingClass_Count = 0;
+    return atexit(sub_4E6B20);
+}
+}
+} // namespace gamemd
+
+// 0x4E6B20
+namespace gamemd {
+void sub_4E6B20()
+{
+{
+    InfantryClass_Array = (int)&vt_VectorClass_InfantryClass;
+    if ( g_InfantryClassLimit && DataGlobal_A83DF5 )
+  {
+    __3_YAXPAX_Z(g_InfantryClassLimit);
+    g_InfantryClassLimit = 0;
+  }
+    DataGlobal_A83DF5 = 0;
+    DataGlobal_A83DF0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6B60
+namespace gamemd {
+int sub_4E6B60()
+{
+{
+    g_BuildingClass_InstanceCount = 0;
+    DataGlobal_A8EB48 = 0;
+    DataGlobal_A8EB4C = 1;
+    DataGlobal_A8EB4D = 0;
+    BuildingClass_Array = (int)&vt_DynamicVectorClass_BuildingClass;
+    DataGlobal_A8EB54 = 10;
+    g_BuildingProductionState = 0;
+    return atexit(sub_4E6BA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6BA0
+namespace gamemd {
+void sub_4E6BA0()
+{
+{
+    BuildingClass_Array = (int)&vt_VectorClass_BuildingClass;
+    if ( g_BuildingClass_InstanceCount && DataGlobal_A8EB4D )
+  {
+    __3_YAXPAX_Z(g_BuildingClass_InstanceCount);
+    g_BuildingClass_InstanceCount = 0;
+  }
+    DataGlobal_A8EB4D = 0;
+    DataGlobal_A8EB48 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6BE0
+namespace gamemd {
+int sub_4E6BE0()
+{
+{
+    DataGlobal_A8E394 = 0;
+    DataGlobal_A8E398 = 0;
+    DataGlobal_A8E39C = 1;
+    DataGlobal_A8E39D = 0;
+    AircraftClass_Array = (int)&vt_DynamicVectorClass_AircraftClass;
+    DataGlobal_A8E3A4 = 10;
+    g_AircraftClassCount = 0;
+    return atexit(sub_4E6C20);
+}
+}
+} // namespace gamemd
+
+// 0x4E6C20
+namespace gamemd {
+void sub_4E6C20()
+{
+{
+    AircraftClass_Array = (int)&vt_VectorClass_AircraftClass;
+    if ( DataGlobal_A8E394 && DataGlobal_A8E39D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8E394);
+    DataGlobal_A8E394 = 0;
+  }
+    DataGlobal_A8E39D = 0;
+    DataGlobal_A8E398 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6C60
+namespace gamemd {
+int sub_4E6C60()
+{
+{
+    g_UnitClassPool = 0;
+    DataGlobal_8B4110 = 0;
+    DataGlobal_8B4114 = 1;
+    DataGlobal_8B4115 = 0;
+    UnitClass_Array = (int)&vt_DynamicVectorClass_UnitClass;
+    DataGlobal_8B411C = 10;
+    g_HouseClass_BuildState = 0;
+    return atexit(sub_4E6CA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6CA0
+namespace gamemd {
+void sub_4E6CA0()
+{
+{
+    UnitClass_Array = (int)&vt_VectorClass_UnitClass;
+    if ( g_UnitClassPool && DataGlobal_8B4115 )
+  {
+    __3_YAXPAX_Z(g_UnitClassPool);
+    g_UnitClassPool = 0;
+  }
+    DataGlobal_8B4115 = 0;
+    DataGlobal_8B4110 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6D60
+namespace gamemd {
+int sub_4E6D60()
+{
+{
+    g_AnimClassPool = 0;
+    DataGlobal_A8E9B0 = 0;
+    DataGlobal_A8E9B4 = 1;
+    DataGlobal_A8E9B5 = 0;
+    AnimClass_Array = (int)&vt_DynamicVectorClass_AnimClass;
+    DataGlobal_A8E9BC = 10;
+    g_AnimClassCount = 0;
+    return atexit(sub_4E6DA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6DA0
+namespace gamemd {
+void sub_4E6DA0()
+{
+{
+    AnimClass_Array = (int)&vt_VectorClass_AnimClass;
+    if ( g_AnimClassPool && DataGlobal_A8E9B5 )
+  {
+    __3_YAXPAX_Z(g_AnimClassPool);
+    g_AnimClassPool = 0;
+  }
+    DataGlobal_A8E9B5 = 0;
+    DataGlobal_A8E9B0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6DE0
+namespace gamemd {
+int sub_4E6DE0()
+{
+{
+    g_TeamClassPool = 0;
+    DataGlobal_8B40F0 = 0;
+    DataGlobal_8B40F4 = 1;
+    DataGlobal_8B40F5 = 0;
+    TeamClass_Array = (int)&vt_DynamicVectorClass_TeamClass;
+    DataGlobal_8B40FC = 10;
+    g_HouseClass_AIProductionState = 0;
+    return atexit(sub_4E6E20);
+}
+}
+} // namespace gamemd
+
+// 0x4E6E20
+namespace gamemd {
+void sub_4E6E20()
+{
+{
+    TeamClass_Array = (int)&vt_VectorClass_TeamClass;
+    if ( g_TeamClassPool && DataGlobal_8B40F5 )
+  {
+    __3_YAXPAX_Z(g_TeamClassPool);
+    g_TeamClassPool = 0;
+  }
+    DataGlobal_8B40F5 = 0;
+    DataGlobal_8B40F0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6E60
+namespace gamemd {
+int sub_4E6E60()
+{
+{
+    g_TeamTypeCount = 0;
+    DataGlobal_A83E38 = 0;
+    DataGlobal_A83E3C = 1;
+    DataGlobal_A83E3D = 0;
+    DataGlobal_A83E30 = (int)&vt_DynamicVectorClass_FactoryClass;
+    DataGlobal_A83E44 = 10;
+    g_TeamTypeCapacity = 0;
+    return atexit(sub_4E6EA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6EA0
+namespace gamemd {
+void sub_4E6EA0()
+{
+{
+    DataGlobal_A83E30 = (int)&vt_VectorClass_FactoryClass;
+    if ( g_TeamTypeCount && DataGlobal_A83E3D )
+  {
+    __3_YAXPAX_Z(g_TeamTypeCount);
+    g_TeamTypeCount = 0;
+  }
+    DataGlobal_A83E3D = 0;
+    DataGlobal_A83E38 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6EE0
+namespace gamemd {
+int sub_4E6EE0()
+{
+{
+    g_CampaignTypeArray = 0;
+    DataGlobal_A83D00 = 0;
+    DataGlobal_A83D04 = 1;
+    DataGlobal_A83D05 = 0;
+    DataGlobal_A83CF8 = (int)&vt_DynamicVectorClass_CampaignClass;
+    DataGlobal_A83D0C = 10;
+    g_UnitTypeInitState = 0;
+    return atexit(sub_4E6F20);
+}
+}
+} // namespace gamemd
+
+// 0x4E6F20
+namespace gamemd {
+void sub_4E6F20()
+{
+{
+    DataGlobal_A83CF8 = (int)&vt_VectorClass_CampaignClass;
+    if ( g_CampaignTypeArray && DataGlobal_A83D05 )
+  {
+    __3_YAXPAX_Z(g_CampaignTypeArray);
+    g_CampaignTypeArray = 0;
+  }
+    DataGlobal_A83D05 = 0;
+    DataGlobal_A83D00 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6F60
+namespace gamemd {
+int sub_4E6F60()
+{
+{
+    DataGlobal_8B4124 = 0;
+    DataGlobal_8B4128 = 0;
+    DataGlobal_8B412C = 1;
+    DataGlobal_8B412D = 0;
+    DataGlobal_8B4120 = (int)&vt_DynamicVectorClass_SideClass;
+    DataGlobal_8B4134 = 10;
+    g_ObjectTypeList = 0;
+    return atexit(sub_4E6FA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6FA0
+namespace gamemd {
+void sub_4E6FA0()
+{
+{
+    DataGlobal_8B4120 = (int)&vt_VectorClass_SideClass;
+    if ( DataGlobal_8B4124 && DataGlobal_8B412D )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B4124);
+    DataGlobal_8B4124 = 0;
+  }
+    DataGlobal_8B412D = 0;
+    DataGlobal_8B4128 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E6FE0
+namespace gamemd {
+int sub_4E6FE0()
+{
+{
+    g_SuperWeaponTypeCount = 0;
+    DataGlobal_A83CA0 = 0;
+    DataGlobal_A83CA4 = 1;
+    DataGlobal_A83CA5 = 0;
+    DataGlobal_A83C98 = (int)&vt_DynamicVectorClass_HouseTypeClass;
+    DataGlobal_A83CAC = 10;
+    g_SuperWeaponTypeArray = 0;
+    return atexit(sub_4E7020);
+}
+}
+} // namespace gamemd
+
+// 0x4E7020
+namespace gamemd {
+void sub_4E7020()
+{
+{
+    DataGlobal_A83C98 = (int)&vt_VectorClass_HouseTypeClass;
+    if ( g_SuperWeaponTypeCount && DataGlobal_A83CA5 )
+  {
+    __3_YAXPAX_Z(g_SuperWeaponTypeCount);
+    g_SuperWeaponTypeCount = 0;
+  }
+    DataGlobal_A83CA5 = 0;
+    DataGlobal_A83CA0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7060
+namespace gamemd {
+int sub_4E7060()
+{
+{
+    g_MultiplayerLogEntry = 0;
+    DataGlobal_A8E8D8 = 0;
+    DataGlobal_A8E8DC = 1;
+    DataGlobal_A8E8DD = 0;
+    DataGlobal_A8E8D0 = (int)&vt_DynamicVectorClass_TaskForceClass;
+    DataGlobal_A8E8E4 = 10;
+    g_MultiplayerLogFlags = 0;
+    return atexit(sub_4E70A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E70A0
+namespace gamemd {
+void sub_4E70A0()
+{
+{
+    DataGlobal_A8E8D0 = (int)&vt_VectorClass_TaskForceClass;
+    if ( g_MultiplayerLogEntry && DataGlobal_A8E8DD )
+  {
+    __3_YAXPAX_Z(g_MultiplayerLogEntry);
+    g_MultiplayerLogEntry = 0;
+  }
+    DataGlobal_A8E8DD = 0;
+    DataGlobal_A8E8D8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E70E0
+namespace gamemd {
+int sub_4E70E0()
+{
+{
+    g_TeamTypePool = 0;
+    DataGlobal_A8ECA8 = 0;
+    DataGlobal_A8ECAC = 1;
+    DataGlobal_A8ECAD = 0;
+    TeamTypeClass_Array = (int)&vt_DynamicVectorClass_TeamTypeClass;
+    DataGlobal_A8ECB4 = 10;
+    g_MultiplayerLogState = 0;
+    return atexit(sub_4E7120);
+}
+}
+} // namespace gamemd
+
+// 0x4E7120
+namespace gamemd {
+void sub_4E7120()
+{
+{
+    TeamTypeClass_Array = (int)&vt_VectorClass_TeamTypeClass;
+    if ( g_TeamTypePool && DataGlobal_A8ECAD )
+  {
+    __3_YAXPAX_Z(g_TeamTypePool);
+    g_TeamTypePool = 0;
+  }
+    DataGlobal_A8ECAD = 0;
+    DataGlobal_A8ECA8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7160
+namespace gamemd {
+int sub_4E7160()
+{
+{
+    g_MultiplayerSyncState = 0;
+    DataGlobal_8B41D0 = 0;
+    DataGlobal_8B41D4 = 1;
+    DataGlobal_8B41D5 = 0;
+    DataGlobal_8B41C8 = (int)&vt_DynamicVectorClass_ScriptTypeClass;
+    DataGlobal_8B41DC = 10;
+    g_MultiplayerDebugState = 0;
+    return atexit(sub_4E71A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E71A0
+namespace gamemd {
+void sub_4E71A0()
+{
+{
+    DataGlobal_8B41C8 = (int)&vt_VectorClass_ScriptTypeClass;
+    if ( g_MultiplayerSyncState && DataGlobal_8B41D5 )
+  {
+    __3_YAXPAX_Z(g_MultiplayerSyncState);
+    g_MultiplayerSyncState = 0;
+  }
+    DataGlobal_8B41D5 = 0;
+    DataGlobal_8B41D0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E71E0
+namespace gamemd {
+int sub_4E71E0()
+{
+{
+    g_BuildingTypeClass_Array = 0;
+    DataGlobal_A83D88 = 0;
+    DataGlobal_A83D8C = 1;
+    DataGlobal_A83D8D = 0;
+    DataGlobal_A83D80 = (int)&vt_DynamicVectorClass_OverlayTypeClass;
+    DataGlobal_A83D94 = 10;
+    g_ObjectTypeConfig = 0;
+    return atexit(sub_4E7220);
+}
+}
+} // namespace gamemd
+
+// 0x4E7220
+namespace gamemd {
+void sub_4E7220()
+{
+{
+    DataGlobal_A83D80 = (int)&vt_VectorClass_OverlayTypeClass;
+    if ( g_BuildingTypeClass_Array && DataGlobal_A83D8D )
+  {
+    __3_YAXPAX_Z(g_BuildingTypeClass_Array);
+    g_BuildingTypeClass_Array = 0;
+  }
+    DataGlobal_A83D8D = 0;
+    DataGlobal_A83D88 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7260
+namespace gamemd {
+int sub_4E7260()
+{
+{
+    FactoryClass_Array = 0;
+    DataGlobal_A8EC20 = 0;
+    DataGlobal_A8EC24 = 1;
+    DataGlobal_A8EC25 = 0;
+    DataGlobal_A8EC18 = (int)&vt_DynamicVectorClass_SmudgeTypeClass;
+    DataGlobal_A8EC2C = 10;
+    FactoryClass_Count = 0;
+    return atexit(sub_4E72A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E72A0
+namespace gamemd {
+void sub_4E72A0()
+{
+{
+    DataGlobal_A8EC18 = (int)&vt_VectorClass_SmudgeTypeClass;
+    if ( FactoryClass_Array && DataGlobal_A8EC25 )
+  {
+    __3_YAXPAX_Z(FactoryClass_Array);
+    FactoryClass_Array = 0;
+  }
+    DataGlobal_A8EC25 = 0;
+    DataGlobal_A8EC20 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E72E0
+namespace gamemd {
+int sub_4E72E0()
+{
+{
+    DataGlobal_A8E31C = 0;
+    DataGlobal_A8E320 = 0;
+    DataGlobal_A8E324 = 1;
+    DataGlobal_A8E325 = 0;
+    DataGlobal_A8E318 = (int)&vt_DynamicVectorClass_TerrainTypeClass;
+    DataGlobal_A8E32C = 10;
+    g_RulesClassInitState = 0;
+    return atexit(sub_4E7320);
+}
+}
+} // namespace gamemd
+
+// 0x4E7320
+namespace gamemd {
+void sub_4E7320()
+{
+{
+    DataGlobal_A8E318 = (int)&vt_VectorClass_TerrainTypeClass;
+    if ( DataGlobal_A8E31C && DataGlobal_A8E325 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8E31C);
+    DataGlobal_A8E31C = 0;
+  }
+    DataGlobal_A8E325 = 0;
+    DataGlobal_A8E320 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7360
+namespace gamemd {
+int sub_4E7360()
+{
+{
+    g_TriggerTypeCount = 0;
+    DataGlobal_A83C70 = 0;
+    DataGlobal_A83C74 = 1;
+    DataGlobal_A83C75 = 0;
+    DataGlobal_A83C68 = (int)&vt_DynamicVectorClass_BuildingTypeClass;
+    DataGlobal_A83C7C = 10;
+    g_TriggerClassCount = 0;
+    return atexit(sub_4E73A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E73A0
+namespace gamemd {
+void sub_4E73A0()
+{
+{
+    DataGlobal_A83C68 = (int)&vt_VectorClass_BuildingTypeClass;
+    if ( g_TriggerTypeCount && DataGlobal_A83C75 )
+  {
+    __3_YAXPAX_Z(g_TriggerTypeCount);
+    g_TriggerTypeCount = 0;
+  }
+    DataGlobal_A83C75 = 0;
+    DataGlobal_A83C70 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E73E0
+namespace gamemd {
+int sub_4E73E0()
+{
+{
+    g_AircraftTypeCount = 0;
+    DataGlobal_A8B220 = 0;
+    DataGlobal_A8B224 = 1;
+    DataGlobal_A8B225 = 0;
+    AircraftTypeClass_Array = (int)&vt_DynamicVectorClass_AircraftTypeClass;
+    DataGlobal_A8B22C = 10;
+    g_TypeClass_FindCache = 0;
+    return atexit(sub_4E7420);
+}
+}
+} // namespace gamemd
+
+// 0x4E7420
+namespace gamemd {
+void sub_4E7420()
+{
+{
+    AircraftTypeClass_Array = (int)&vt_VectorClass_AircraftTypeClass;
+    if ( g_AircraftTypeCount && DataGlobal_A8B225 )
+  {
+    __3_YAXPAX_Z(g_AircraftTypeCount);
+    g_AircraftTypeCount = 0;
+  }
+    DataGlobal_A8B225 = 0;
+    DataGlobal_A8B220 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E74E0
+namespace gamemd {
+int sub_4E74E0()
+{
+{
+    g_AnimTypeCount = 0;
+    DataGlobal_8B4158 = 0;
+    DataGlobal_8B415C = 1;
+    DataGlobal_8B415D = 0;
+    AnimTypeClass_Array = (int)&vt_DynamicVectorClass_AnimTypeClass;
+    DataGlobal_8B4164 = 10;
+    DataGlobal_8B4160 = 0;
+    return atexit(sub_4E7520);
+}
+}
+} // namespace gamemd
+
+// 0x4E7520
+namespace gamemd {
+void sub_4E7520()
+{
+{
+    AnimTypeClass_Array = (int)&vt_VectorClass_AnimTypeClass;
+    if ( g_AnimTypeCount && DataGlobal_8B415D )
+  {
+    __3_YAXPAX_Z(g_AnimTypeCount);
+    g_AnimTypeCount = 0;
+  }
+    DataGlobal_8B415D = 0;
+    DataGlobal_8B4158 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7560
+namespace gamemd {
+int sub_4E7560()
+{
+{
+    Factory_ExitCellTable = 0;
+    DataGlobal_A8E350 = 0;
+    DataGlobal_A8E354 = 1;
+    DataGlobal_A8E355 = 0;
+    InfantryTypeClass_Array = (int)&vt_DynamicVectorClass_InfantryTypeClass;
+    DataGlobal_A8E35C = 10;
+    g_LoadScreenProgress = 0;
+    return atexit(sub_4E75A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E75A0
+namespace gamemd {
+void sub_4E75A0()
+{
+{
+    InfantryTypeClass_Array = (int)&vt_VectorClass_InfantryTypeClass;
+    if ( Factory_ExitCellTable && DataGlobal_A8E355 )
+  {
+    __3_YAXPAX_Z(Factory_ExitCellTable);
+    Factory_ExitCellTable = 0;
+  }
+    DataGlobal_A8E355 = 0;
+    DataGlobal_A8E350 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7660
+namespace gamemd {
+int sub_4E7660()
+{
+{
+    DataGlobal_A8EB2C = 0;
+    DataGlobal_A8EB30 = 0;
+    DataGlobal_A8EB34 = 1;
+    DataGlobal_A8EB35 = 0;
+    VoxelAnimTypeClass_Array = (int)&vt_DynamicVectorClass_VoxelAnimTypeClass;
+    DataGlobal_A8EB3C = 10;
+    g_MultiplayerPool = 0;
+    return atexit(sub_4E76A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E76A0
+namespace gamemd {
+void sub_4E76A0()
+{
+{
+    VoxelAnimTypeClass_Array = (int)&vt_VectorClass_VoxelAnimTypeClass;
+    if ( DataGlobal_A8EB2C && DataGlobal_A8EB35 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8EB2C);
+    DataGlobal_A8EB2C = 0;
+  }
+    DataGlobal_A8EB35 = 0;
+    DataGlobal_A8EB30 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E76E0
+namespace gamemd {
+int sub_4E76E0()
+{
+{
+    g_FrameCounter = 0;
+    DataGlobal_A8ED30 = 0;
+    DataGlobal_A8ED34 = 1;
+    DataGlobal_A8ED35 = 0;
+    DataGlobal_A8ED28 = (int)&vt_DynamicVectorClass_IsometricTileTypeClass;
+    DataGlobal_A8ED3C = 10;
+    g_TechnoClassCount = 0;
+    return atexit(sub_4E7720);
+}
+}
+} // namespace gamemd
+
+// 0x4E7720
+namespace gamemd {
+void sub_4E7720()
+{
+{
+    DataGlobal_A8ED28 = (int)&vt_VectorClass_IsometricTileTypeClass;
+    if ( g_FrameCounter && DataGlobal_A8ED35 )
+  {
+    __3_YAXPAX_Z(g_FrameCounter);
+    g_FrameCounter = 0;
+  }
+    DataGlobal_A8ED35 = 0;
+    DataGlobal_A8ED30 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7760
+namespace gamemd {
+int sub_4E7760()
+{
+{
+    g_BuildingProductionQueue = 0;
+    DataGlobal_A83DA0 = 0;
+    DataGlobal_A83DA4 = 1;
+    DataGlobal_A83DA5 = 0;
+    DataGlobal_A83D98 = (int)&vt_DynamicVectorClass_ParticleTypeClass;
+    DataGlobal_A83DAC = 10;
+    g_BuildingTypeInitState = 0;
+    return atexit(sub_4E77A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E77A0
+namespace gamemd {
+void sub_4E77A0()
+{
+{
+    DataGlobal_A83D98 = (int)&vt_VectorClass_ParticleTypeClass;
+    if ( g_BuildingProductionQueue && DataGlobal_A83DA5 )
+  {
+    __3_YAXPAX_Z(g_BuildingProductionQueue);
+    g_BuildingProductionQueue = 0;
+  }
+    DataGlobal_A83DA5 = 0;
+    DataGlobal_A83DA0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E77E0
+namespace gamemd {
+int sub_4E77E0()
+{
+{
+    DataGlobal_A83D6C = 0;
+    DataGlobal_A83D70 = 0;
+    DataGlobal_A83D74 = 1;
+    DataGlobal_A83D75 = 0;
+    DataGlobal_A83D68 = (int)&vt_DynamicVectorClass_ParticleSystemTypeClass;
+    DataGlobal_A83D7C = 10;
+    g_InfantryTypeInitState = 0;
+    return atexit(sub_4E7820);
+}
+}
+} // namespace gamemd
+
+// 0x4E7820
+namespace gamemd {
+void sub_4E7820()
+{
+{
+    DataGlobal_A83D68 = (int)&vt_VectorClass_ParticleSystemTypeClass;
+    if ( DataGlobal_A83D6C && DataGlobal_A83D75 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83D6C);
+    DataGlobal_A83D6C = 0;
+  }
+    DataGlobal_A83D75 = 0;
+    DataGlobal_A83D70 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7860
+namespace gamemd {
+int sub_4E7860()
+{
+{
+    g_SuperWeaponPool = 0;
+    DataGlobal_A8E338 = 0;
+    DataGlobal_A8E33C = 1;
+    DataGlobal_A8E33D = 0;
+    DataGlobal_A8E330 = (int)&vt_DynamicVectorClass_SuperWeaponTypeClass;
+    DataGlobal_A8E344 = 10;
+    g_HouseClassInitState = 0;
+    return atexit(sub_4E78A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E78A0
+namespace gamemd {
+void sub_4E78A0()
+{
+{
+    DataGlobal_A8E330 = (int)&vt_VectorClass_SuperWeaponTypeClass;
+    if ( g_SuperWeaponPool && DataGlobal_A8E33D )
+  {
+    __3_YAXPAX_Z(g_SuperWeaponPool);
+    g_SuperWeaponPool = 0;
+  }
+    DataGlobal_A8E33D = 0;
+    DataGlobal_A8E338 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E78E0
+namespace gamemd {
+int sub_4E78E0()
+{
+{
+    DataGlobal_A83CBC = 0;
+    DataGlobal_A83CC0 = 0;
+    DataGlobal_A83CC4 = 1;
+    DataGlobal_A83CC5 = 0;
+    DataGlobal_A83CB8 = (int)&vt_DynamicVectorClass_SuperClass;
+    DataGlobal_A83CCC = 10;
+    DataGlobal_A83CC8 = 0;
+    return atexit(sub_4E7920);
+}
+}
+} // namespace gamemd
+
+// 0x4E7920
+namespace gamemd {
+void sub_4E7920()
+{
+{
+    DataGlobal_A83CB8 = (int)&vt_VectorClass_SuperClass;
+    if ( DataGlobal_A83CBC && DataGlobal_A83CC5 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83CBC);
+    DataGlobal_A83CBC = 0;
+  }
+    DataGlobal_A83CC5 = 0;
+    DataGlobal_A83CC0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7960
+namespace gamemd {
+int sub_4E7960()
+{
+{
+    DataGlobal_A83D54 = 0;
+    DataGlobal_A83D58 = 0;
+    DataGlobal_A83D5C = 1;
+    DataGlobal_A83D5D = 0;
+    SuperClass_ShowTimers = (int)&vt_DynamicVectorClass_SuperClass;
+    DataGlobal_A83D64 = 10;
+    DataGlobal_A83D60 = 0;
+    return atexit(sub_4E79A0);
+}
+}
+} // namespace gamemd
+
+// 0x4E79A0
+namespace gamemd {
+void sub_4E79A0()
+{
+{
+    SuperClass_ShowTimers = (int)&vt_VectorClass_SuperClass;
+    if ( DataGlobal_A83D54 && DataGlobal_A83D5D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83D54);
+    DataGlobal_A83D54 = 0;
+  }
+    DataGlobal_A83D5D = 0;
+    DataGlobal_A83D58 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E79E0
+namespace gamemd {
+int sub_4E79E0()
+{
+{
+    g_TechnoClass_Count = 0;
+    DataGlobal_A8EC80 = 0;
+    DataGlobal_A8EC84 = 1;
+    DataGlobal_A8EC85 = 0;
+    TechnoClass_Array = (TechnoClass *)&vt_DynamicVectorClass_TechnoClass;
+    DataGlobal_A8EC8C = 10;
+    g_SidebarState = 0;
+    return atexit(sub_4E7A20);
+}
+}
+} // namespace gamemd
+
+// 0x4E7A20
+namespace gamemd {
+void sub_4E7A20()
+{
+{
+    TechnoClass_Array = (TechnoClass *)&vt_VectorClass_TechnoClass;
+    if ( g_TechnoClass_Count && DataGlobal_A8EC85 )
+  {
+    __3_YAXPAX_Z(g_TechnoClass_Count);
+    g_TechnoClass_Count = 0;
+  }
+    DataGlobal_A8EC85 = 0;
+    DataGlobal_A8EC80 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7A60
+namespace gamemd {
+int sub_4E7A60()
+{
+{
+    DataGlobal_A8EB04 = 0;
+    DataGlobal_A8EB08 = 0;
+    DataGlobal_A8EB0C = 1;
+    DataGlobal_A8EB0D = 0;
+    DataGlobal_A8EB00 = (int)&vt_DynamicVectorClass_TechnoTypeClass;
+    DataGlobal_A8EB14 = 10;
+    DataGlobal_A8EB10 = 0;
+    return atexit(sub_4E7AA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E7AA0
+namespace gamemd {
+void sub_4E7AA0()
+{
+{
+    DataGlobal_A8EB00 = (int)&vt_VectorClass_TechnoTypeClass;
+    if ( DataGlobal_A8EB04 && DataGlobal_A8EB0D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8EB04);
+    DataGlobal_A8EB04 = 0;
+  }
+    DataGlobal_A8EB0D = 0;
+    DataGlobal_A8EB08 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7AE0
+namespace gamemd {
+int sub_4E7AE0()
+{
+{
+    DataGlobal_A8E364 = 0;
+    DataGlobal_A8E368 = 0;
+    DataGlobal_A8E36C = 1;
+    DataGlobal_A8E36D = 0;
+    DataGlobal_A8E360 = (int)&vt_DynamicVectorClass_ObjectClass;
+    DataGlobal_A8E374 = 10;
+    DataGlobal_A8E370 = 0;
+    return atexit(sub_4E7B20);
+}
+}
+} // namespace gamemd
+
+// 0x4E7B20
+namespace gamemd {
+void sub_4E7B20()
+{
+{
+    DataGlobal_A8E360 = (int)&vt_VectorClass_ObjectClass;
+    if ( DataGlobal_A8E364 && DataGlobal_A8E36D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8E364);
+    DataGlobal_A8E364 = 0;
+  }
+    DataGlobal_A8E36D = 0;
+    DataGlobal_A8E368 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7B60
+namespace gamemd {
+int sub_4E7B60()
+{
+{
+    DataGlobal_A8E96C = 0;
+    DataGlobal_A8E970 = 0;
+    DataGlobal_A8E974 = 1;
+    DataGlobal_A8E975 = 0;
+    DataGlobal_A8E968 = (int)&vt_DynamicVectorClass_AbstractTypeClass;
+    DataGlobal_A8E97C = 10;
+    g_AbstractTypePool = 0;
+    return atexit(sub_4E7BA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E7BA0
+namespace gamemd {
+void sub_4E7BA0()
+{
+{
+    DataGlobal_A8E968 = (int)&vt_VectorClass_AbstractTypeClass;
+    if ( DataGlobal_A8E96C && DataGlobal_A8E975 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A8E96C);
+    DataGlobal_A8E96C = 0;
+  }
+    DataGlobal_A8E975 = 0;
+    DataGlobal_A8E970 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7BE0
+namespace gamemd {
+int sub_4E7BE0()
+{
+{
+    DataGlobal_8B41E4 = 0;
+    DataGlobal_8B41E8 = 0;
+    DataGlobal_8B41EC = 1;
+    DataGlobal_8B41ED = 0;
+    DataGlobal_8B41E0 = (int)&vt_DynamicVectorClass_BuildingClass;
+    DataGlobal_8B41F4 = 10;
+    DataGlobal_8B41F0 = 0;
+    return atexit(sub_4E7C20);
+}
+}
+} // namespace gamemd
+
+// 0x4E7C20
+namespace gamemd {
+void sub_4E7C20()
+{
+{
+    DataGlobal_8B41E0 = (int)&vt_VectorClass_BuildingClass;
+    if ( DataGlobal_8B41E4 && DataGlobal_8B41ED )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B41E4);
+    DataGlobal_8B41E4 = 0;
+  }
+    DataGlobal_8B41ED = 0;
+    DataGlobal_8B41E8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7C60
+namespace gamemd {
+int sub_4E7C60()
+{
+{
+    DataGlobal_A83E04 = 0;
+    DataGlobal_A83E08 = 0;
+    DataGlobal_A83E0C = 1;
+    DataGlobal_A83E0D = 0;
+    DataGlobal_A83E00 = (int)&vt_DynamicVectorClass_AnimClass;
+    DataGlobal_A83E14 = 10;
+    DataGlobal_A83E10 = 0;
+    return atexit(sub_4E7CA0);
+}
+}
+} // namespace gamemd
+
+// 0x4E7CA0
+namespace gamemd {
+void sub_4E7CA0()
+{
+{
+    DataGlobal_A83E00 = (int)&vt_VectorClass_AnimClass;
+    if ( DataGlobal_A83E04 && DataGlobal_A83E0D )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83E04);
+    DataGlobal_A83E04 = 0;
+  }
+    DataGlobal_A83E0D = 0;
+    DataGlobal_A83E08 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7CE0
+namespace gamemd {
+void sub_4E7CE0()
+{
+{
+    pUnk.field_0 = (struct IUnknownVtbl *)&vt_TiberianSunClassFactory;
+}
+}
+} // namespace gamemd
+
 // 0x4E7D10
 namespace gamemd {
 int sub_4E7D10()
@@ -5176,6 +5047,40 @@ int sub_4E7D10()
 }
 } // namespace gamemd
 
+// 0x4E7D40
+namespace gamemd {
+int sub_4E7D40()
+{
+{
+    g_ObjectClass_CurrentCount = 0;
+    DataGlobal_A8ECC0 = 0;
+    DataGlobal_A8ECC4 = 1;
+    DataGlobal_A8ECC5 = 0;
+    DataGlobal_A8ECB8 = (ObjectClass *)&vt_DynamicVectorClass_ObjectClass;
+    DataGlobal_A8ECCC = 10;
+    g_SelectionManager = 0;
+    return atexit(sub_4E7D80);
+}
+}
+} // namespace gamemd
+
+// 0x4E7D80
+namespace gamemd {
+void sub_4E7D80()
+{
+{
+    DataGlobal_A8ECB8 = (ObjectClass *)&vt_VectorClass_ObjectClass;
+    if ( g_ObjectClass_CurrentCount && DataGlobal_A8ECC5 )
+  {
+    __3_YAXPAX_Z(g_ObjectClass_CurrentCount);
+    g_ObjectClass_CurrentCount = 0;
+  }
+    DataGlobal_A8ECC5 = 0;
+    DataGlobal_A8ECC0 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x4E7DC0
 namespace gamemd {
 int sub_4E7DC0()
@@ -5183,6 +5088,16 @@ int sub_4E7DC0()
 {
     sub_74F730(&g_CoordScatterManager);
     return atexit(sub_4E7DE0);
+}
+}
+} // namespace gamemd
+
+// 0x4E7DE0
+namespace gamemd {
+void sub_4E7DE0()
+{
+{
+    g_CoordScatterManager = (int)&vt_VersionClass;
 }
 }
 } // namespace gamemd
@@ -5270,6 +5185,23 @@ int sub_4E7E30()
 }
 } // namespace gamemd
 
+// 0x4E7E50
+namespace gamemd {
+void sub_4E7E50()
+{
+{
+    DataGlobal_A83D24 = (int)&vt_VectorClass_ThemeControl;
+    if ( DataGlobal_A83D28 && DataGlobal_A83D31 )
+  {
+    __3_YAXPAX_Z(DataGlobal_A83D28);
+    DataGlobal_A83D28 = 0;
+  }
+    DataGlobal_A83D31 = 0;
+    DataGlobal_A83D2C = 0;
+}
+}
+} // namespace gamemd
+
 // 0x4E7E90
 namespace gamemd {
 int unknown_libname_16()
@@ -5325,6 +5257,74 @@ unsigned char * sub_4E7F00()
     DataGlobal_A83ED4 = 0;
     DataGlobal_A83ED8 = 0;
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x4E7F30
+namespace gamemd {
+int sub_4E7F30()
+{
+{
+    DataGlobal_8B41AC = 0;
+    DataGlobal_8B41B0 = 0;
+    DataGlobal_8B41B4 = 1;
+    DataGlobal_8B41B5 = 0;
+    DataGlobal_8B41A8 = (int)&vt_DynamicVectorClass_TagClass;
+    DataGlobal_8B41BC = 10;
+    DataGlobal_8B41B8 = 0;
+    return atexit(sub_4E7F70);
+}
+}
+} // namespace gamemd
+
+// 0x4E7F70
+namespace gamemd {
+void sub_4E7F70()
+{
+{
+    DataGlobal_8B41A8 = (int)&vt_VectorClass_TagClass;
+    if ( DataGlobal_8B41AC && DataGlobal_8B41B5 )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B41AC);
+    DataGlobal_8B41AC = 0;
+  }
+    DataGlobal_8B41B5 = 0;
+    DataGlobal_8B41B0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E7FB0
+namespace gamemd {
+int sub_4E7FB0()
+{
+{
+    DataGlobal_8B40CC = 0;
+    DataGlobal_8B40D0 = 0;
+    DataGlobal_8B40D4 = 1;
+    DataGlobal_8B40D5 = 0;
+    DataGlobal_8B40C8 = (int)&vt_DynamicVectorClass_TagClass;
+    DataGlobal_8B40DC = 10;
+    g_ScenarioUpdateState = 0;
+    return atexit(sub_4E7FF0);
+}
+}
+} // namespace gamemd
+
+// 0x4E7FF0
+namespace gamemd {
+void sub_4E7FF0()
+{
+{
+    DataGlobal_8B40C8 = (int)&vt_VectorClass_TagClass;
+    if ( DataGlobal_8B40CC && DataGlobal_8B40D5 )
+  {
+    __3_YAXPAX_Z(DataGlobal_8B40CC);
+    DataGlobal_8B40CC = 0;
+  }
+    DataGlobal_8B40D5 = 0;
+    DataGlobal_8B40D0 = 0;
 }
 }
 } // namespace gamemd

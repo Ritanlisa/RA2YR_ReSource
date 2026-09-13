@@ -22,6 +22,242 @@ int __cdecl globalHelper_0108F0(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
+// 0x517110
+namespace gamemd {
+int E4Recv_517110::sub_517110()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_517110(int this)
+{
+  int v2; // edi
+  int v3; // ebx
+  _WORD *v4; // eax
+  bool v5; // bl
+  int v6; // ecx
+  int result; // eax
+  _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
+
+  v5 = 1; /*0x51717d*/
+  if ( this->M36 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
+    || this->M40 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
+    || this->M44 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
+  {
+    v2 = this->M36 / 256; /*0x517161*/
+    v3 = this->M40 / 256; /*0x517164*/
+    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(this->M12, v8); /*0x517167*/
+    if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 ) /*0x517177*/
+      v5 = 0; /*0x517138*/
+  }
+  v6 = this->M12; /*0x51717f*/
+  this->M72 = 0; /*0x517182*/
+  this->M76 = 1072693248; /*0x517189*/
+  (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
+  result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
+  if ( v5 ) /*0x5171aa*/
+    return MovementAI::MainFootClass((int *)this, 1); /*0x5171b0*/
+  return result; /*0x5171b5*/
+}
+}
+} // namespace gamemd
+
+// 0x517360
+namespace gamemd {
+unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned __int8 __thiscall sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
+{
+  unsigned __int8 v3; // bl
+  unsigned __int8 v4; // al
+  unsigned __int8 v5; // bl
+  unsigned __int8 result; // al
+
+  v3 = *(this + 1); /*0x517394*/
+  *(this + 2) += a2 * (a3[2] - *(this + 2)) / 256; /*0x517397*/
+  v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
+  v5 = *this; /*0x5173ba*/
+  *(this + 1) = v4; /*0x5173bc*/
+  result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
+  *this = result; /*0x5173e1*/
+  return result; /*0x5173cb*/
+}
+}
+} // namespace gamemd
+
+// 0x5173F0
+namespace gamemd {
+int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
+{
+  int v2; // esi
+  int v3; // edx
+  int v4; // eax
+
+  v2 = *this - *a2; /*0x517400*/
+  if ( v2 < 0 ) /*0x517402*/
+    v2 = *a2 - *this; /*0x517404*/
+  v3 = *(this + 1) - a2[1]; /*0x517410*/
+  if ( v3 < 0 ) /*0x517412*/
+    v3 = a2[1] - *(this + 1); /*0x517414*/
+  v4 = *(this + 2) - a2[2]; /*0x517422*/
+  if ( v4 < 0 ) /*0x517424*/
+    v4 = a2[2] - *(this + 2); /*0x517426*/
+  return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
+}
+}
+} // namespace gamemd
+
+// 0x5176D0
+namespace gamemd {
+char E4Recv_5176D0::sub_5176D0(BYTE Data)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall sub_5176D0(_BYTE *this, BYTE Data)
+{
+  int v4; // ecx
+  char v5; // [esp+13h] [ebp-119h]
+  HKEY phkResult; // [esp+14h] [ebp-118h] BYREF
+  BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
+  HKEY hKey; // [esp+1Ch] [ebp-110h] BYREF
+  DWORD cbData; // [esp+20h] [ebp-10Ch] BYREF
+  DWORD Type; // [esp+24h] [ebp-108h] BYREF
+  DWORD dwDisposition; // [esp+28h] [ebp-104h] BYREF
+  CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
+  CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
+
+  strcpy(SubKey, MEMORY[0x8254E4]); /*0x5176ff*/
+  v5 = 0; /*0x51770a*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
+    && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )
+  {
+    return 0; /*0x517757*/
+  }
+  if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
+    v5 = 1; /*0x517785*/
+  RegCloseKey(phkResult); /*0x51778f*/
+  *(this + 4) = 0; /*0x51779f*/
+  strcpy(v13, MEMORY[0x8254E4]); /*0x5177c0*/
+  cbData = 4; /*0x5177c4*/
+  if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
+  {
+    *(_DWORD *)v7 = 0; /*0x5177e9*/
+    if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
+    {
+      v4 = *(_DWORD *)v7; /*0x517819*/
+      *(this + 4) = 1; /*0x51781d*/
+      *(_DWORD *)this = v4; /*0x517821*/
+    }
+    RegCloseKey(hKey); /*0x517829*/
+  }
+  return v5; /*0x517754*/
+}
+}
+} // namespace gamemd
+
+// 0x51FEF0
+namespace gamemd {
+int SaveInfantryToINI()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
+{
+  int result; // eax
+  int v4; // esi
+  unsigned int v5; // edi
+  int v6; // ebp
+  const char *v7; // ebx
+  int v8; // edx
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  double HealthRatio; // st7
+  int v13; // eax
+  int v14; // [esp-34h] [ebp-F0h]
+  int v15; // [esp-30h] [ebp-ECh]
+  int v16; // [esp-2Ch] [ebp-E8h]
+  const char *v17; // [esp-28h] [ebp-E4h]
+  int v18; // [esp-24h] [ebp-E0h]
+  char *v19; // [esp-20h] [ebp-DCh]
+  const char *v20; // [esp-20h] [ebp-DCh]
+  int v21; // [esp-1Ch] [ebp-D8h]
+  int v22; // [esp-18h] [ebp-D4h]
+  int v23; // [esp-14h] [ebp-D0h]
+  int v24; // [esp-14h] [ebp-D0h]
+  int v25; // [esp-10h] [ebp-CCh]
+  int v26; // [esp-Ch] [ebp-C8h]
+  int i; // [esp+8h] [ebp-B4h]
+  char *v30; // [esp+14h] [ebp-A8h]
+  _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
+  int v32; // [esp+2Ch] [ebp-90h] BYREF
+  char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
+  char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
+
+  INIClass::ClearSection(a1, (int)g_INI_Key_Infantry, 0); /*0x51ff02*/
+  result = 0; /*0x51ff0d*/
+  for ( i = 0; result < MEMORY[0xA83DF8]; i = result ) /*0x51ff15*/
+  {
+    v4 = *((_DWORD *)MEMORY[0xA83DEC] + result); /*0x51ff25*/
+    if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
+    {
+      sprintf(Buffer, MEMORY[0x817F6C], result); /*0x51ff41*/
+      if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 388))(v4, a2, a3) == -1 ) /*0x51ff71*/
+        v30 = *(char **)(v4 + 180); /*0x51ff79*/
+      else
+        v30 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v4 + 388))(v4); /*0x51ff89*/
+      v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
+      v6 = *(_DWORD *)(v4 + 540); /*0x51ffab*/
+      v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
+      v31[0] = *(_DWORD *)(v4 + 156); /*0x51ffb6*/
+      v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
+      v31[1] = *(_DWORD *)(v4 + 160); /*0x51ffc5*/
+      v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
+      v31[2] = *(_DWORD *)(v4 + 164); /*0x51ffd4*/
+      a3 = v8; /*0x51ffe0*/
+      a2 = v9; /*0x51ffe7*/
+      v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), *(unsigned __int8 *)(v4 + 140)); /*0x52000b*/
+      v19 = FromNameIndex((int)v30); /*0x52001b*/
+      LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
+      v11 = (*(int (__thiscall **)(int, char *, int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x52002b*/
+              v4,
+              Buffer,
+              v10,
+              v19,
+              (unsigned __int8)(((v5 >> 7) + 1) >> 1));
+      v14 = *(__int16 *)(*(int (__thiscall **)(int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x520048*/
+                          v4,
+                          Buffer,
+                          *(__int16 *)(v11 + 2));
+      HealthRatio = BuildingClass::GetHealthRatio((int *)v4); /*0x52004b*/
+      v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
+      sprintf( /*0x520068*/
+        Source,
+        stru_825584,
+        (const char *)(v6 + 90100),
+        v7,
+        v13,
+        v14,
+        v15,
+        v16,
+        v17,
+        v18,
+        v20,
+        v21,
+        v22,
+        v24,
+        v25,
+        v26);
+      INIClass::SetString(v30, (unsigned __int8 *)g_INI_Key_Infantry, Buffer, Source); /*0x520085*/
+      result = i; /*0x52008a*/
+    }
+    ++result; /*0x520094*/
+  }
+  return result; /*0x5200a5*/
+}
+}
+} // namespace gamemd
+
 // 0x510B00
 namespace gamemd {
 void sub_510B00()
@@ -561,44 +797,6 @@ void E4Recv_513D00::sub_513D00()
 }
 } // namespace gamemd
 
-// 0x517110
-namespace gamemd {
-int E4Recv_517110::sub_517110()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_517110(int this)
-{
-  int v2; // edi
-  int v3; // ebx
-  _WORD *v4; // eax
-  bool v5; // bl
-  int v6; // ecx
-  int result; // eax
-  _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
-
-  v5 = 1; /*0x51717d*/
-  if ( this->M36 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
-    || this->M40 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688]
-    || this->M44 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
-  {
-    v2 = this->M36 / 256; /*0x517161*/
-    v3 = this->M40 / 256; /*0x517164*/
-    v4 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(this + 12) + 440))(this->M12, v8); /*0x517167*/
-    if ( *v4 != (_WORD)v2 || v4[1] != (_WORD)v3 ) /*0x517177*/
-      v5 = 0; /*0x517138*/
-  }
-  v6 = this->M12; /*0x51717f*/
-  this->M72 = 0; /*0x517182*/
-  this->M76 = 1072693248; /*0x517189*/
-  (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
-  result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
-  if ( v5 ) /*0x5171aa*/
-    return MovementAI::MainFootClass((int *)this, 1); /*0x5171b0*/
-  return result; /*0x5171b5*/
-}
-}
-} // namespace gamemd
-
 // 0x517340
 namespace gamemd {
 char sub_517340()
@@ -608,102 +806,6 @@ char sub_517340()
     DataGlobal_A8F1C5 = 0;
     DataGlobal_A8F1C6 = 0;
     return 0;
-}
-}
-} // namespace gamemd
-
-// 0x517360
-namespace gamemd {
-unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __thiscall sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
-{
-  unsigned __int8 v3; // bl
-  unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
-  unsigned __int8 result; // al
-
-  v3 = *(this + 1); /*0x517394*/
-  *(this + 2) += a2 * (a3[2] - *(this + 2)) / 256; /*0x517397*/
-  v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
-  v5 = *this; /*0x5173ba*/
-  *(this + 1) = v4; /*0x5173bc*/
-  result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *this = result; /*0x5173e1*/
-  return result; /*0x5173cb*/
-}
-}
-} // namespace gamemd
-
-// 0x5173F0
-namespace gamemd {
-int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
-{
-  int v2; // esi
-  int v3; // edx
-  int v4; // eax
-
-  v2 = *this - *a2; /*0x517400*/
-  if ( v2 < 0 ) /*0x517402*/
-    v2 = *a2 - *this; /*0x517404*/
-  v3 = *(this + 1) - a2[1]; /*0x517410*/
-  if ( v3 < 0 ) /*0x517412*/
-    v3 = a2[1] - *(this + 1); /*0x517414*/
-  v4 = *(this + 2) - a2[2]; /*0x517422*/
-  if ( v4 < 0 ) /*0x517424*/
-    v4 = a2[2] - *(this + 2); /*0x517426*/
-  return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
-}
-}
-} // namespace gamemd
-
-// 0x5176D0
-namespace gamemd {
-char E4Recv_5176D0::sub_5176D0(BYTE Data)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5176D0(_BYTE *this, BYTE Data)
-{
-  int v4; // ecx
-  char v5; // [esp+13h] [ebp-119h]
-  HKEY phkResult; // [esp+14h] [ebp-118h] BYREF
-  BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
-  HKEY hKey; // [esp+1Ch] [ebp-110h] BYREF
-  DWORD cbData; // [esp+20h] [ebp-10Ch] BYREF
-  DWORD Type; // [esp+24h] [ebp-108h] BYREF
-  DWORD dwDisposition; // [esp+28h] [ebp-104h] BYREF
-  CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
-  CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
-
-  strcpy(SubKey, MEMORY[0x8254E4]); /*0x5176ff*/
-  v5 = 0; /*0x51770a*/
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
-    && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )
-  {
-    return 0; /*0x517757*/
-  }
-  if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
-    v5 = 1; /*0x517785*/
-  RegCloseKey(phkResult); /*0x51778f*/
-  *(this + 4) = 0; /*0x51779f*/
-  strcpy(v13, MEMORY[0x8254E4]); /*0x5177c0*/
-  cbData = 4; /*0x5177c4*/
-  if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
-  {
-    *(_DWORD *)v7 = 0; /*0x5177e9*/
-    if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
-    {
-      v4 = *(_DWORD *)v7; /*0x517819*/
-      *(this + 4) = 1; /*0x51781d*/
-      *(_DWORD *)this = v4; /*0x517821*/
-    }
-    RegCloseKey(hKey); /*0x517829*/
-  }
-  return v5; /*0x517754*/
 }
 }
 } // namespace gamemd
@@ -865,108 +967,6 @@ int sub_517A30()
     DataGlobal_A8F1D8 = 0;
     DataGlobal_A8F1DC = 0;
     return 0;
-}
-}
-} // namespace gamemd
-
-// 0x51FEF0
-namespace gamemd {
-int SaveInfantryToINI()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
-{
-  int result; // eax
-  int v4; // esi
-  unsigned int v5; // edi
-  int v6; // ebp
-  const char *v7; // ebx
-  int v8; // edx
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  double HealthRatio; // st7
-  int v13; // eax
-  int v14; // [esp-34h] [ebp-F0h]
-  int v15; // [esp-30h] [ebp-ECh]
-  int v16; // [esp-2Ch] [ebp-E8h]
-  const char *v17; // [esp-28h] [ebp-E4h]
-  int v18; // [esp-24h] [ebp-E0h]
-  char *v19; // [esp-20h] [ebp-DCh]
-  const char *v20; // [esp-20h] [ebp-DCh]
-  int v21; // [esp-1Ch] [ebp-D8h]
-  int v22; // [esp-18h] [ebp-D4h]
-  int v23; // [esp-14h] [ebp-D0h]
-  int v24; // [esp-14h] [ebp-D0h]
-  int v25; // [esp-10h] [ebp-CCh]
-  int v26; // [esp-Ch] [ebp-C8h]
-  int i; // [esp+8h] [ebp-B4h]
-  char *v30; // [esp+14h] [ebp-A8h]
-  _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
-  int v32; // [esp+2Ch] [ebp-90h] BYREF
-  char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
-  char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
-
-  INIClass::ClearSection(a1, (int)g_INI_Key_Infantry, 0); /*0x51ff02*/
-  result = 0; /*0x51ff0d*/
-  for ( i = 0; result < MEMORY[0xA83DF8]; i = result ) /*0x51ff15*/
-  {
-    v4 = *((_DWORD *)MEMORY[0xA83DEC] + result); /*0x51ff25*/
-    if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
-    {
-      sprintf(Buffer, MEMORY[0x817F6C], result); /*0x51ff41*/
-      if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 388))(v4, a2, a3) == -1 ) /*0x51ff71*/
-        v30 = *(char **)(v4 + 180); /*0x51ff79*/
-      else
-        v30 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v4 + 388))(v4); /*0x51ff89*/
-      v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
-      v6 = *(_DWORD *)(v4 + 540); /*0x51ffab*/
-      v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
-      v31[0] = *(_DWORD *)(v4 + 156); /*0x51ffb6*/
-      v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
-      v31[1] = *(_DWORD *)(v4 + 160); /*0x51ffc5*/
-      v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
-      v31[2] = *(_DWORD *)(v4 + 164); /*0x51ffd4*/
-      a3 = v8; /*0x51ffe0*/
-      a2 = v9; /*0x51ffe7*/
-      v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), *(unsigned __int8 *)(v4 + 140)); /*0x52000b*/
-      v19 = FromNameIndex((int)v30); /*0x52001b*/
-      LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
-      v11 = (*(int (__thiscall **)(int, char *, int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x52002b*/
-              v4,
-              Buffer,
-              v10,
-              v19,
-              (unsigned __int8)(((v5 >> 7) + 1) >> 1));
-      v14 = *(__int16 *)(*(int (__thiscall **)(int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x520048*/
-                          v4,
-                          Buffer,
-                          *(__int16 *)(v11 + 2));
-      HealthRatio = BuildingClass::GetHealthRatio((int *)v4); /*0x52004b*/
-      v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
-      sprintf( /*0x520068*/
-        Source,
-        stru_825584,
-        (const char *)(v6 + 90100),
-        v7,
-        v13,
-        v14,
-        v15,
-        v16,
-        v17,
-        v18,
-        v20,
-        v21,
-        v22,
-        v24,
-        v25,
-        v26);
-      INIClass::SetString(v30, (unsigned __int8 *)g_INI_Key_Infantry, Buffer, Source); /*0x520085*/
-      result = i; /*0x52008a*/
-    }
-    ++result; /*0x520094*/
-  }
-  return result; /*0x5200a5*/
 }
 }
 } // namespace gamemd

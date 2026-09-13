@@ -37,6 +37,8 @@ class FlasherClass : public StageClass
 // CSP: AircraftClass matched via T3
 class AircraftClass : public ra2::game::FootClass, public FlasherClass
 {
+    int SelectWeaponSlot(int, ...); // vtable slot +1016
+    int GetZAboveGround(int, ...); // vtable slot +456
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Aircraft;
 

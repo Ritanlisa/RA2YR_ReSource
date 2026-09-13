@@ -10,216 +10,6 @@
 #include "e4/classes/E4Recv_734F80_e4.hpp"
 #include "e4/classes/E4Recv_736C10_e4.hpp"
 
-// 0x730660
-namespace gamemd {
-int unknown_libname_34()
-{
-    void *unknown_libname_34()
-{
-    FileTree::CleanupAll();
-    return LoadingScreen::LoadSHPs();
-}
-}
-} // namespace gamemd
-
-// 0x730740
-namespace gamemd {
-int sub_730740()
-{
-{
-    return g_CommandLineFlags;
-}
-}
-} // namespace gamemd
-
-// 0x730750
-namespace gamemd {
-int sub_730750()
-{
-{
-    return DataGlobal_A8EB88;
-}
-}
-} // namespace gamemd
-
-// 0x730760
-namespace gamemd {
-int sub_730760()
-{
-{
-    DataGlobal_B0FDE0 = 0;
-    DataGlobal_B0FDE4 = 0;
-    DataGlobal_B0FDE8 = 0;
-    DataGlobal_B0FDEC = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x730780
-namespace gamemd {
-void sub_730780()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_B0FDF8 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x7307B0
-namespace gamemd {
-void sub_7307B0()
-{
-{
-    DataGlobal_B0FE48 = DataGlobal_B0FDF8 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x7307D0
-namespace gamemd {
-void sub_7307D0()
-{
-{
-    DataGlobal_B0FE30 = 1.0 / DataGlobal_B0FE48;
-}
-}
-} // namespace gamemd
-
-// 0x7307F0
-namespace gamemd {
-void sub_7307F0()
-{
-{
-    DataGlobal_B0FE28 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x730810
-namespace gamemd {
-void sub_730810()
-{
-{
-    DataGlobal_B0FE00 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x730830
-namespace gamemd {
-void sub_730830()
-{
-{
-    DataGlobal_B0FDD8 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x730850
-namespace gamemd {
-long long sub_730850()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_B0FDD8 - DataGlobal_B0FE00);
-    result = Math::RoundToInt(v0 * DataGlobal_B0FDF8 * 0.5);
-    DataGlobal_B0FE50 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x730890
-namespace gamemd {
-void sub_730890()
-{
-{
-    DataGlobal_B0FE08 = Math::ArcTan((double)DataGlobal_B0FE50 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x7308C0
-namespace gamemd {
-void sub_7308C0()
-{
-{
-    DataGlobal_B0FE20 = Math::ArcTan((double)(2 * DataGlobal_B0FE50) / DataGlobal_B0FDF8);
-}
-}
-} // namespace gamemd
-
-// 0x7308F0
-namespace gamemd {
-long long sub_7308F0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_B0FE50) + 0.5);
-    DataGlobal_B0FE44 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x730920
-namespace gamemd {
-int sub_730920()
-{
-{
-    DataGlobal_B0FDF0 = 0;
-    DataGlobal_B0FDF2 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x730930
-namespace gamemd {
-int sub_730930()
-{
-{
-    DataGlobal_B0FE10 = 0;
-    DataGlobal_B0FE14 = 0;
-    DataGlobal_B0FE18 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x730950
-namespace gamemd {
-int sub_730950()
-{
-{
-    DataGlobal_B0FE40 = 0;
-    DataGlobal_B0FE38 = 128;
-    DataGlobal_B0FE3C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x730A90
-namespace gamemd {
-int AddMessageListPlayerMessage(CellStruct * a1, int a2)
-{
-{
-    int v2;
-    if ( a2 == -1 )
-    a2 = 240;
-    v2 = 3;
-    if ( HouseClass_Player )
-    v2 = HouseClass_Player[1].field_24;
-    return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1);
-}
-}
-} // namespace gamemd
-
 // 0x730AF0
 namespace gamemd {
 char ProcessSelectionExperience()
@@ -472,17 +262,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x731A90
-namespace gamemd {
-int j_FactoryClass_GetFlag()
-{
-    char j_FactoryClass_GetFlag(void)
-{
-    return FactoryClass::GetFlag();
-}
-}
-} // namespace gamemd
-
 // 0x731AA0
 namespace gamemd {
 char sub_731AA0()
@@ -510,80 +289,6 @@ char sub_731AA0()
       return 1; /*0x731ad6*/
   }
   return 0; /*0x731ad8*/
-}
-}
-} // namespace gamemd
-
-// 0x731BE0
-namespace gamemd {
-void sub_731BE0()
-{
-{
-    DataGlobal_B0FE58 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x731D90
-namespace gamemd {
-wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
-{
-{
-    wchar_t *v2;
-    const wchar_t *v3;
-    wchar_t *v4;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    wchar_t *StringCSF;
-    wchar_t *v12;
-    CampaignScore *v13;
-    CampaignScore Destinationa[5];
-    v2 = Destination;
-    if ( *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[21064] + 16) && Source )
-  {
-    wcscpy((wchar_t *)Destinationa, Source);
-    _wcsupr(Destinationa);
-    v3 = *(const wchar_t **)&HouseClass_Player.__pad_5568[23060];
-    if ( *(int *)&HouseClass_Player.__pad_5568[23060] )
-    {
-    v6 = 0;
-    v7 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[23060] > 0 )
-      {
-    do
-        {
-    v8 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[23048] + 4 * v7);
-    if ( v8 )
-          {
-    if ( (*(char *)(v8 + 20) & 1) != 0 )
-            {
-    v9 = *(int *)(v8 + 540);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(v8) + 136))(v8);
-    v6 += (*(int (__thiscall **)(int, int))(*(int *)(v10) + 132))(v10, v9);
-    v2 = Destination;
-            }
-          }
-    ++v7;
-        }
-    while ( v7 < (int)v3 );
-      }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63536], 0, &DataGlobal_830620.__pad_579C[63452], 1052);
-    return (wchar_t *)swprintf(v2, (const size_t)StringCSF, v3, Destinationa);
-    }
-    else
-    {
-    v4 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63552], 0, &DataGlobal_830620.__pad_579C[63452], 1032);
-    return (wchar_t *)swprintf(v2, (const size_t)v4, (const wchar_t *const)Destinationa, v13);
-    }
-  }
-    else
-  {
-    v12 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63520], 0, &DataGlobal_830620.__pad_579C[63452], 1022);
-    return wcscpy(v2, v12);
-  }
 }
 }
 } // namespace gamemd
@@ -1018,27 +723,6 @@ LABEL_36:
   if ( v5 ) /*0x732c16*/
     return (*(int (__thiscall **)(_DWORD *, int))*v5)(v5, 1); /*0x732c1e*/
   return result; /*0x732c20*/
-}
-}
-} // namespace gamemd
-
-// 0x732C30
-namespace gamemd {
-char IDTechnoClassMatches(void * a1, int a2)
-{
-{
-    int v3;
-    int v4;
-    v3 = *(int *)(a2 + 16);
-    v4 = 0;
-    if ( v3 <= 0 )
-    return 0;
-    while ( !(unsigned char)ObjectClass::StepCleanup(a1, *(void **)(*(int *)(a2 + 4) + 4 * v4)) || !(*(unsigned char (__thiscall **)(void *))(*(int *)(a1) + 316))(a1) && (!a1 || (*(int (__thiscall **)(void *))(*(int *)(a1) + 44))(a1) != 6 || !*(int *)((*(int (__thiscall **)(void *))(*(int *)(a1) + 132))(a1) + 1032)) )
-  {
-    if ( ++v4 >= v3 )
-    return 0;
-  }
-    return 1;
 }
 }
 } // namespace gamemd
@@ -2082,6 +1766,517 @@ LABEL_39:
 }
 } // namespace gamemd
 
+// 0x7345E0
+namespace gamemd {
+int sub_7345E0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_7345E0()
+{
+  *(_DWORD *)&MEMORY[0xB13EB0][104] = 0; /*0x7345e2*/
+  *(_DWORD *)&MEMORY[0xB13EB0][108] = 0; /*0x7345e7*/
+  *(_DWORD *)&MEMORY[0xB13EB0][112] = 0; /*0x7345ec*/
+  return 0; /*0x7345f1*/
+}
+}
+} // namespace gamemd
+
+// 0x734E60
+namespace gamemd {
+wchar_t * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+wchar_t *__fastcall GetStringCSF(wchar_t *Format, _DWORD *a2, CampaignScore *aP3, int a4)
+{
+  _DWORD *v7; // eax
+  wchar_t *v8; // esi
+
+  if ( a2 ) /*0x734e68*/
+    *a2 = 0; /*0x734e6a*/
+  if ( !dword_B1CF74 ) /*0x734e77*/
+    return (wchar_t *)&stru_830620.__pad_579C[64128]; /*0x734e7a*/
+  v7 = bsearch(Format, dword_B1CF74, (ObjectClass *)unk_B1CF6C, 0x28u, _strcmpi); /*0x734e93*/
+  if ( v7 ) /*0x734e9d*/
+  {
+    if ( a2 ) /*0x734ea1*/
+      *a2 = *((_DWORD *)unk_B1CF7C + v7[9]); /*0x734eaf*/
+    return (wchar_t *)*((_DWORD *)unk_B1CF78 + v7[9]); /*0x734ebc*/
+  }
+  else
+  {
+    v8 = (wchar_t *)__2_YAPAXI_Z(0x208u); /*0x734ed6*/
+    swprintf(v8 + 2, (const size_t)&stru_830620.__pad_579C[64100], Format, aP3); /*0x734ee4*/
+    Debug::Log(); /*0x734ef5*/
+    *(_DWORD *)v8 = unk_B1CF88; /*0x734f05*/
+    unk_B1CF88 = v8; /*0x734f08*/
+    return v8 + 2; /*0x734f03*/
+  }
+}
+}
+} // namespace gamemd
+
+// 0x734F50
+namespace gamemd {
+int E4Recv_734F50::sub_734F50()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_734F50(void *this)
+{
+  int result; // eax
+
+  result = unk_B1CF84; /*0x734f50*/
+  if ( (void *)unk_B1CF84 != this ) /*0x734f5a*/
+  {
+    WinMain::ShutdownCleanup(); /*0x734f5c*/
+    unk_B1CF84 = (int)this; /*0x734f67*/
+    return CSFClass::LoadFile((const char *)unk_B1CF68); /*0x734f6d*/
+  }
+  return result; /*0x734f72*/
+}
+}
+} // namespace gamemd
+
+// 0x734F80
+namespace gamemd {
+int E4Recv_734F80::sub_734F80()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_734F80(void *this)
+{
+  int result; // eax
+
+  result = unk_B1CF60; /*0x734f80*/
+  if ( (void *)unk_B1CF60 != this ) /*0x734f8a*/
+  {
+    WinMain::ShutdownCleanup(); /*0x734f8c*/
+    unk_B1CF60 = (int)this; /*0x734f97*/
+    return CSFClass::LoadFile((const char *)unk_B1CF68); /*0x734f9d*/
+  }
+  return result; /*0x734fa2*/
+}
+}
+} // namespace gamemd
+
+// 0x734FB0
+namespace gamemd {
+int sub_734FB0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_734FB0()
+{
+  return unk_B1CF84; /*0x734fb5*/
+}
+}
+} // namespace gamemd
+
+// 0x734FC0
+namespace gamemd {
+int sub_734FC0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_734FC0()
+{
+  return unk_B1CF60; /*0x734fc5*/
+}
+}
+} // namespace gamemd
+
+// 0x735120
+namespace gamemd {
+char * CharToWideString(unsigned char * a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *__fastcall CharToWideString(_BYTE *a1)
+{
+  char *result; // eax
+  int v2; // esi
+  _WORD *v3; // edx
+
+  if ( !a1 ) /*0x735122*/
+    return 0; /*0x735124*/
+  result = (char *)&MEMORY[0xB13F24] + 2048 * unk_B1CF94; /*0x735133*/
+  v2 = 1024; /*0x73513b*/
+  v3 = result; /*0x735140*/
+  while ( *a1 ) /*0x73512d*/
+  {
+    if ( !v2 ) /*0x735146*/
+      break; /*0x735146*/
+    *v3++ = (unsigned __int8)*a1++; /*0x73514c*/
+    if ( v2 != -1 ) /*0x735156*/
+      --v2; /*0x735158*/
+  }
+  *v3 = 0; /*0x73515e*/
+  *((_WORD *)result + 1023) = 0; /*0x735163*/
+  unk_B1CF94 = ((_BYTE)unk_B1CF94 + 1) & 7; /*0x735179*/
+  return result; /*0x735126*/
+}
+}
+} // namespace gamemd
+
+// 0x735370
+namespace gamemd {
+int sub_735370()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_735370()
+{
+  xmmword_B1CFA8 = 0; /*0x735372*/
+  MEMORY[0xB1CFAC] = 0; /*0x735377*/
+  MEMORY[0xB1CFB0] = 0; /*0x73537c*/
+  MEMORY[0xB1CFB4] = 0; /*0x735381*/
+  return 0; /*0x735386*/
+}
+}
+} // namespace gamemd
+
+// 0x735390
+namespace gamemd {
+int sub_735390()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_735390()
+{
+  aP6 = xmmword_B1CFA8; /*0x7353a1*/
+  MEMORY[0xB1CFC4] = MEMORY[0xB1CFAC]; /*0x7353ab*/
+  MEMORY[0xB1CFC8] = MEMORY[0xB1CFB0]; /*0x7353b1*/
+  MEMORY[0xB1CFCC] = MEMORY[0xB1CFB4]; /*0x7353b7*/
+  return MEMORY[0xB1CFB4]; /*0x7353bc*/
+}
+}
+} // namespace gamemd
+
+// 0x730660
+namespace gamemd {
+int unknown_libname_34()
+{
+    void *unknown_libname_34()
+{
+    FileTree::CleanupAll();
+    return LoadingScreen::LoadSHPs();
+}
+}
+} // namespace gamemd
+
+// 0x730740
+namespace gamemd {
+int sub_730740()
+{
+{
+    return g_CommandLineFlags;
+}
+}
+} // namespace gamemd
+
+// 0x730750
+namespace gamemd {
+int sub_730750()
+{
+{
+    return DataGlobal_A8EB88;
+}
+}
+} // namespace gamemd
+
+// 0x730760
+namespace gamemd {
+int sub_730760()
+{
+{
+    DataGlobal_B0FDE0 = 0;
+    DataGlobal_B0FDE4 = 0;
+    DataGlobal_B0FDE8 = 0;
+    DataGlobal_B0FDEC = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x730780
+namespace gamemd {
+void sub_730780()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_B0FDF8 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x7307B0
+namespace gamemd {
+void sub_7307B0()
+{
+{
+    DataGlobal_B0FE48 = DataGlobal_B0FDF8 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x7307D0
+namespace gamemd {
+void sub_7307D0()
+{
+{
+    DataGlobal_B0FE30 = 1.0 / DataGlobal_B0FE48;
+}
+}
+} // namespace gamemd
+
+// 0x7307F0
+namespace gamemd {
+void sub_7307F0()
+{
+{
+    DataGlobal_B0FE28 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x730810
+namespace gamemd {
+void sub_730810()
+{
+{
+    DataGlobal_B0FE00 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x730830
+namespace gamemd {
+void sub_730830()
+{
+{
+    DataGlobal_B0FDD8 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x730850
+namespace gamemd {
+long long sub_730850()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B0FDD8 - DataGlobal_B0FE00);
+    result = Math::RoundToInt(v0 * DataGlobal_B0FDF8 * 0.5);
+    DataGlobal_B0FE50 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x730890
+namespace gamemd {
+void sub_730890()
+{
+{
+    DataGlobal_B0FE08 = Math::ArcTan((double)DataGlobal_B0FE50 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x7308C0
+namespace gamemd {
+void sub_7308C0()
+{
+{
+    DataGlobal_B0FE20 = Math::ArcTan((double)(2 * DataGlobal_B0FE50) / DataGlobal_B0FDF8);
+}
+}
+} // namespace gamemd
+
+// 0x7308F0
+namespace gamemd {
+long long sub_7308F0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_B0FE50) + 0.5);
+    DataGlobal_B0FE44 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x730920
+namespace gamemd {
+int sub_730920()
+{
+{
+    DataGlobal_B0FDF0 = 0;
+    DataGlobal_B0FDF2 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x730930
+namespace gamemd {
+int sub_730930()
+{
+{
+    DataGlobal_B0FE10 = 0;
+    DataGlobal_B0FE14 = 0;
+    DataGlobal_B0FE18 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x730950
+namespace gamemd {
+int sub_730950()
+{
+{
+    DataGlobal_B0FE40 = 0;
+    DataGlobal_B0FE38 = 128;
+    DataGlobal_B0FE3C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x730A90
+namespace gamemd {
+int AddMessageListPlayerMessage(CellStruct * a1, int a2)
+{
+{
+    int v2;
+    if ( a2 == -1 )
+    a2 = 240;
+    v2 = 3;
+    if ( HouseClass_Player )
+    v2 = HouseClass_Player[1].field_24;
+    return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1);
+}
+}
+} // namespace gamemd
+
+// 0x730AD0
+namespace gamemd {
+int sub_730AD0()
+{
+return 16454;
+}
+} // namespace gamemd
+
+// 0x730AE0
+namespace gamemd {
+int sub_730AE0()
+{
+return 240;
+}
+} // namespace gamemd
+
+// 0x731A90
+namespace gamemd {
+int j_FactoryClass_GetFlag()
+{
+    char j_FactoryClass_GetFlag(void)
+{
+    return FactoryClass::GetFlag();
+}
+}
+} // namespace gamemd
+
+// 0x731BE0
+namespace gamemd {
+void sub_731BE0()
+{
+{
+    DataGlobal_B0FE58 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x731D90
+namespace gamemd {
+wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
+{
+{
+    wchar_t *v2;
+    const wchar_t *v3;
+    wchar_t *v4;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    wchar_t *StringCSF;
+    wchar_t *v12;
+    CampaignScore *v13;
+    CampaignScore Destinationa[5];
+    v2 = Destination;
+    if ( *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[21064] + 16) && Source )
+  {
+    wcscpy((wchar_t *)Destinationa, Source);
+    _wcsupr(Destinationa);
+    v3 = *(const wchar_t **)&HouseClass_Player.__pad_5568[23060];
+    if ( *(int *)&HouseClass_Player.__pad_5568[23060] )
+    {
+    v6 = 0;
+    v7 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[23060] > 0 )
+      {
+    do
+        {
+    v8 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[23048] + 4 * v7);
+    if ( v8 )
+          {
+    if ( (*(char *)(v8 + 20) & 1) != 0 )
+            {
+    v9 = *(int *)(v8 + 540);
+    v10 = (*(int (__thiscall **)(int))(*(int *)(v8) + 136))(v8);
+    v6 += (*(int (__thiscall **)(int, int))(*(int *)(v10) + 132))(v10, v9);
+    v2 = Destination;
+            }
+          }
+    ++v7;
+        }
+    while ( v7 < (int)v3 );
+      }
+    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63536], 0, &DataGlobal_830620.__pad_579C[63452], 1052);
+    return (wchar_t *)swprintf(v2, (const size_t)StringCSF, v3, Destinationa);
+    }
+    else
+    {
+    v4 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63552], 0, &DataGlobal_830620.__pad_579C[63452], 1032);
+    return (wchar_t *)swprintf(v2, (const size_t)v4, (const wchar_t *const)Destinationa, v13);
+    }
+  }
+    else
+  {
+    v12 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63520], 0, &DataGlobal_830620.__pad_579C[63452], 1022);
+    return wcscpy(v2, v12);
+  }
+}
+}
+} // namespace gamemd
+
+// 0x732C30
+namespace gamemd {
+char IDTechnoClassMatches(void * a1, int a2)
+{
+{
+    int v3;
+    int v4;
+    v3 = *(int *)(a2 + 16);
+    v4 = 0;
+    if ( v3 <= 0 )
+    return 0;
+    while ( !(unsigned char)ObjectClass::StepCleanup(a1, *(void **)(*(int *)(a2 + 4) + 4 * v4)) || !(*(unsigned char (__thiscall **)(void *))(*(int *)(a1) + 316))(a1) && (!a1 || (*(int (__thiscall **)(void *))(*(int *)(a1) + 44))(a1) != 6 || !*(int *)((*(int (__thiscall **)(void *))(*(int *)(a1) + 132))(a1) + 1032)) )
+  {
+    if ( ++v4 >= v3 )
+    return 0;
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x734430
 namespace gamemd {
 void sub_734430()
@@ -2204,21 +2399,6 @@ int sub_7345D0()
 }
 } // namespace gamemd
 
-// 0x7345E0
-namespace gamemd {
-int sub_7345E0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7345E0()
-{
-  *(_DWORD *)&MEMORY[0xB13EB0][104] = 0; /*0x7345e2*/
-  *(_DWORD *)&MEMORY[0xB13EB0][108] = 0; /*0x7345e7*/
-  *(_DWORD *)&MEMORY[0xB13EB0][112] = 0; /*0x7345ec*/
-  return 0; /*0x7345f1*/
-}
-}
-} // namespace gamemd
-
 // 0x734600
 namespace gamemd {
 int sub_734600()
@@ -2242,106 +2422,6 @@ int sub_734620()
     DataGlobal_B0FE88 = 0;
     DataGlobal_B0FE8C = 0;
     return 0;
-}
-}
-} // namespace gamemd
-
-// 0x734E60
-namespace gamemd {
-wchar_t * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__fastcall GetStringCSF(wchar_t *Format, _DWORD *a2, CampaignScore *aP3, int a4)
-{
-  _DWORD *v7; // eax
-  wchar_t *v8; // esi
-
-  if ( a2 ) /*0x734e68*/
-    *a2 = 0; /*0x734e6a*/
-  if ( !dword_B1CF74 ) /*0x734e77*/
-    return (wchar_t *)&stru_830620.__pad_579C[64128]; /*0x734e7a*/
-  v7 = bsearch(Format, dword_B1CF74, (ObjectClass *)unk_B1CF6C, 0x28u, _strcmpi); /*0x734e93*/
-  if ( v7 ) /*0x734e9d*/
-  {
-    if ( a2 ) /*0x734ea1*/
-      *a2 = *((_DWORD *)unk_B1CF7C + v7[9]); /*0x734eaf*/
-    return (wchar_t *)*((_DWORD *)unk_B1CF78 + v7[9]); /*0x734ebc*/
-  }
-  else
-  {
-    v8 = (wchar_t *)__2_YAPAXI_Z(0x208u); /*0x734ed6*/
-    swprintf(v8 + 2, (const size_t)&stru_830620.__pad_579C[64100], Format, aP3); /*0x734ee4*/
-    Debug::Log(); /*0x734ef5*/
-    *(_DWORD *)v8 = unk_B1CF88; /*0x734f05*/
-    unk_B1CF88 = v8; /*0x734f08*/
-    return v8 + 2; /*0x734f03*/
-  }
-}
-}
-} // namespace gamemd
-
-// 0x734F50
-namespace gamemd {
-int E4Recv_734F50::sub_734F50()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_734F50(void *this)
-{
-  int result; // eax
-
-  result = unk_B1CF84; /*0x734f50*/
-  if ( (void *)unk_B1CF84 != this ) /*0x734f5a*/
-  {
-    WinMain::ShutdownCleanup(); /*0x734f5c*/
-    unk_B1CF84 = (int)this; /*0x734f67*/
-    return CSFClass::LoadFile((const char *)unk_B1CF68); /*0x734f6d*/
-  }
-  return result; /*0x734f72*/
-}
-}
-} // namespace gamemd
-
-// 0x734F80
-namespace gamemd {
-int E4Recv_734F80::sub_734F80()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_734F80(void *this)
-{
-  int result; // eax
-
-  result = unk_B1CF60; /*0x734f80*/
-  if ( (void *)unk_B1CF60 != this ) /*0x734f8a*/
-  {
-    WinMain::ShutdownCleanup(); /*0x734f8c*/
-    unk_B1CF60 = (int)this; /*0x734f97*/
-    return CSFClass::LoadFile((const char *)unk_B1CF68); /*0x734f9d*/
-  }
-  return result; /*0x734fa2*/
-}
-}
-} // namespace gamemd
-
-// 0x734FB0
-namespace gamemd {
-int sub_734FB0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_734FB0()
-{
-  return unk_B1CF84; /*0x734fb5*/
-}
-}
-} // namespace gamemd
-
-// 0x734FC0
-namespace gamemd {
-int sub_734FC0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_734FC0()
-{
-  return unk_B1CF60; /*0x734fc5*/
 }
 }
 } // namespace gamemd
@@ -2430,38 +2510,6 @@ char * ToWideStringChar(IUnknown * aP0)
     result[1023] = 0;
     DataGlobal_B1CF90 = ((char)DataGlobal_B1CF90 + 1) & 7;
     return result;
-}
-}
-} // namespace gamemd
-
-// 0x735120
-namespace gamemd {
-char * CharToWideString(unsigned char * a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall CharToWideString(_BYTE *a1)
-{
-  char *result; // eax
-  int v2; // esi
-  _WORD *v3; // edx
-
-  if ( !a1 ) /*0x735122*/
-    return 0; /*0x735124*/
-  result = (char *)&MEMORY[0xB13F24] + 2048 * unk_B1CF94; /*0x735133*/
-  v2 = 1024; /*0x73513b*/
-  v3 = result; /*0x735140*/
-  while ( *a1 ) /*0x73512d*/
-  {
-    if ( !v2 ) /*0x735146*/
-      break; /*0x735146*/
-    *v3++ = (unsigned __int8)*a1++; /*0x73514c*/
-    if ( v2 != -1 ) /*0x735156*/
-      --v2; /*0x735158*/
-  }
-  *v3 = 0; /*0x73515e*/
-  *((_WORD *)result + 1023) = 0; /*0x735163*/
-  unk_B1CF94 = ((_BYTE)unk_B1CF94 + 1) & 7; /*0x735179*/
-  return result; /*0x735126*/
 }
 }
 } // namespace gamemd
@@ -2613,38 +2661,6 @@ int sub_735350()
 }
 } // namespace gamemd
 
-// 0x735370
-namespace gamemd {
-int sub_735370()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_735370()
-{
-  xmmword_B1CFA8 = 0; /*0x735372*/
-  MEMORY[0xB1CFAC] = 0; /*0x735377*/
-  MEMORY[0xB1CFB0] = 0; /*0x73537c*/
-  MEMORY[0xB1CFB4] = 0; /*0x735381*/
-  return 0; /*0x735386*/
-}
-}
-} // namespace gamemd
-
-// 0x735390
-namespace gamemd {
-int sub_735390()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_735390()
-{
-  aP6 = xmmword_B1CFA8; /*0x7353a1*/
-  MEMORY[0xB1CFC4] = MEMORY[0xB1CFAC]; /*0x7353ab*/
-  MEMORY[0xB1CFC8] = MEMORY[0xB1CFB0]; /*0x7353b1*/
-  MEMORY[0xB1CFCC] = MEMORY[0xB1CFB4]; /*0x7353b7*/
-  return MEMORY[0xB1CFB4]; /*0x7353bc*/
-}
-}
-} // namespace gamemd
-
 // 0x736C10
 namespace gamemd {
 char E4Recv_736C10::sub_736C10()
@@ -2666,22 +2682,6 @@ char E4Recv_736C10::sub_736C10()
     this->Vf248();
     return 1;
 }
-}
-} // namespace gamemd
-
-// 0x730AD0
-namespace gamemd {
-int sub_730AD0()
-{
-return 16454;
-}
-} // namespace gamemd
-
-// 0x730AE0
-namespace gamemd {
-int sub_730AE0()
-{
-return 240;
 }
 } // namespace gamemd
 

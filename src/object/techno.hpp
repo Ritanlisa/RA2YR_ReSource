@@ -89,6 +89,9 @@ struct OwnedTiberiumStruct {
 };
 
 class TechnoClass : public RadioClass {
+    int CheckTypeFlag1681(int, ...); // vtable slot +996
+    int COMStub_Return0_34(int, ...); // vtable slot +136
+    int Vt34Thunk(int, ...); // vtable slot +132
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 

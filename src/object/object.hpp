@@ -65,6 +65,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 //      sizeof: 0xAC (confirmed via ctor init chain)
 // ============================================================================
 class ObjectClass : public AbstractClass {
+    int COMStub_AddRef(int, ...); // vtable slot +636
+    int COMStub_Return0_34(int, ...); // vtable slot +136
+    int COMStub_Release(int, ...); // vtable slot +8
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x2);
 

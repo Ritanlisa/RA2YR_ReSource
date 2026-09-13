@@ -19,16 +19,6 @@
 #include "e4/classes/E4Recv_68F8A0_e4.hpp"
 #include "e4/classes/E4Recv_68FB10_e4.hpp"
 
-// 0x681070
-namespace gamemd {
-int E4Recv_681070::sub_681070()
-{
-{
-    return this->M4;
-}
-}
-} // namespace gamemd
-
 // 0x681090
 namespace gamemd {
 int E4Recv_681090::ReadPointerFromECX3()
@@ -49,116 +39,6 @@ const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
 {
   return (char *)this + 8; /*0x6810c3*/
-}
-}
-} // namespace gamemd
-
-// 0x681180
-namespace gamemd {
-char * E4Recv_681180::sub_681180()
-{
-{
-    return this + 400;
-}
-}
-} // namespace gamemd
-
-// 0x6811B0
-namespace gamemd {
-char * E4Recv_6811B0::sub_6811B0()
-{
-{
-    return this + 660;
-}
-}
-} // namespace gamemd
-
-// 0x6811F0
-namespace gamemd {
-char * E4Recv_6811F0::sub_6811F0()
-{
-{
-    return this + 724;
-}
-}
-} // namespace gamemd
-
-// 0x681220
-namespace gamemd {
-unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
-{
-{
-    *a2 = this->M984;
-    *((int*)(a2) + 1) = this->M988;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x681260
-namespace gamemd {
-unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
-{
-{
-    *a2 = this->M992;
-    *((int*)(a2) + 1) = this->M996;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x6812A0
-namespace gamemd {
-unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
-{
-{
-    *a2 = this->M1000;
-    *((int*)(a2) + 1) = this->M1004;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x682570
-namespace gamemd {
-int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
-{
-{
-    int *v3;
-    int v4;
-    int v6[2];
-    short v7[4];
-    int v8;
-    v3 = a3;
-    a3 = 0;
-    *v3 = 0;
-    v4 = (*(int (__stdcall **)(int, void *, int, int **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &a3);
-    if ( v4 >= 0 )
-  {
-    v6[0] = 1;
-    v6[1] = a2;
-    if ( !a3 )
-    WinAPI::Wrapper(-2147467261);
-    v4 = (*(int (__stdcall **)(int *, int, int *, short *))(*a3 + 12))(a3, 1, v6, v7);
-    if ( v4 >= 0 )
-    {
-    if ( v7[0] == 3 )
-    *v3 = v8;
-    if ( a3 )
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    }
-    else if ( a3 )
-    {
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    return v4;
-    }
-  }
-    else if ( a3 )
-  {
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    return v4;
-  }
-    return v4;
 }
 }
 } // namespace gamemd
@@ -471,57 +351,6 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x682D30
-namespace gamemd {
-int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
-{
-{
-    int *v3;
-    int v4;
-    int v6;
-    int v7[2];
-    short v8[4];
-    int v9;
-    int v10;
-    v3 = a3;
-    a3 = 0;
-    *v3 = 0;
-    v3[1] = 0;
-    v4 = (*(int (__stdcall **)(int, void *, int, int **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &a3);
-    if ( v4 >= 0 )
-  {
-    v7[0] = 1;
-    v7[1] = a2;
-    if ( !a3 )
-    WinAPI::Wrapper(-2147467261);
-    v4 = (*(int (__stdcall **)(int *, int, int *, short *))(*a3 + 12))(a3, 1, v7, v8);
-    if ( v4 >= 0 )
-    {
-    if ( v8[0] == 64 )
-      {
-    v6 = v10;
-    *v3 = v9;
-    v3[1] = v6;
-      }
-    if ( a3 )
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    }
-    else if ( a3 )
-    {
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    return v4;
-    }
-  }
-    else if ( a3 )
-  {
-    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
-    return v4;
-  }
-    return v4;
-}
-}
-} // namespace gamemd
-
 // 0x682E10
 namespace gamemd {
 int COM_WriteInt(int a1, int a2, int a3)
@@ -644,179 +473,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x683070
-namespace gamemd {
-void sub_683070()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_B05460 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x6830A0
-namespace gamemd {
-void sub_6830A0()
-{
-{
-    DataGlobal_B054C0 = DataGlobal_B05460 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x6830C0
-namespace gamemd {
-void sub_6830C0()
-{
-{
-    DataGlobal_B054A8 = 1.0 / DataGlobal_B054C0;
-}
-}
-} // namespace gamemd
-
-// 0x6830E0
-namespace gamemd {
-void sub_6830E0()
-{
-{
-    DataGlobal_B054A0 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x683100
-namespace gamemd {
-void sub_683100()
-{
-{
-    DataGlobal_B05468 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x683120
-namespace gamemd {
-void sub_683120()
-{
-{
-    DataGlobal_B05440 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x683140
-namespace gamemd {
-long long sub_683140()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_B05440 - DataGlobal_B05468);
-    result = Math::RoundToInt(v0 * DataGlobal_B05460 * 0.5);
-    DataGlobal_B054C8 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x683180
-namespace gamemd {
-void sub_683180()
-{
-{
-    DataGlobal_B05470 = Math::ArcTan((double)DataGlobal_B054C8 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x6831B0
-namespace gamemd {
-void sub_6831B0()
-{
-{
-    DataGlobal_B05498 = Math::ArcTan((double)(2 * DataGlobal_B054C8) / DataGlobal_B05460);
-}
-}
-} // namespace gamemd
-
-// 0x6831E0
-namespace gamemd {
-long long sub_6831E0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_B054C8) + 0.5);
-    DataGlobal_B054BC = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x683210
-namespace gamemd {
-int sub_683210()
-{
-{
-    DataGlobal_B05458 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x683220
-namespace gamemd {
-int sub_683220()
-{
-{
-    DataGlobal_B05488 = 0;
-    DataGlobal_B0548C = 0;
-    DataGlobal_B05490 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x683240
-namespace gamemd {
-int sub_683240()
-{
-{
-    DataGlobal_B054B8 = 0;
-    DataGlobal_B054B0 = 128;
-    DataGlobal_B054B4 = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x683260
-namespace gamemd {
-int sub_683260()
-{
-{
-    DataGlobal_B05448 = 0;
-    DataGlobal_B0544C = 0;
-    DataGlobal_B05450 = 0;
-    DataGlobal_B05454 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x683280
-namespace gamemd {
-int sub_683280()
-{
-{
-    DataGlobal_B05478 = Timer::GetTicks();
-    DataGlobal_B05480 = 0;
-    return atexit(nullsub_226);
-}
-}
-} // namespace gamemd
-
 // 0x683FB0
 namespace gamemd {
 int sub_683FB0()
@@ -930,39 +586,6 @@ HWND Mouse_Update()
   result = Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x6842e0*/
   MEMORY[0xB07784] = 0; /*0x6842e5*/
   return result; /*0x6842ef*/
-}
-}
-} // namespace gamemd
-
-// 0x6842F0
-namespace gamemd {
-char DisplayMode_Toggle(char a1)
-{
-{
-    char result;
-    if ( a1 )
-  {
-    result = g_CommandLineFlags;
-    if ( g_CreditsScreenBounds != g_CommandLineFlags || g_CreditsScreenConfig != DataGlobal_A8EB88 )
-    {
-    Debug::Log(DataGlobal_83D868, g_CommandLineFlags, DataGlobal_A8EB88);
-    return ChangeVideoMode(g_CommandLineFlags, DataGlobal_A8EB88);
-    }
-  }
-    else
-  {
-    result = g_CreditsScreenBounds;
-    if ( g_CreditsScreenBounds != xRight )
-    {
-    result = yBottom;
-    if ( g_CreditsScreenConfig != yBottom )
-      {
-    Debug::Log(g_Str_Toggle_display_mode_back_to_sh);
-    return ChangeVideoMode(xRight, yBottom);
-      }
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -2062,6 +1685,540 @@ LABEL_8:
 }
 } // namespace gamemd
 
+// 0x689960
+namespace gamemd {
+char E4Recv_689960::sub_689960(const char * a2, char a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall sub_689960(const char *this, const char *a2, char a3)
+{
+  unsigned int v3; // edi
+  const char *i; // ebp
+  char v6; // bl
+
+  v3 = 0; /*0x689964*/
+  for ( i = this + 9354; strcmp(a2, i); i += 41 ) /*0x689966*/
+  {
+    if ( (int)++v3 >= 100 ) /*0x6899a6*/
+      return 1; /*0x6899a6*/
+  }
+  if ( v3 == -1 ) /*0x6899b4*/
+    return 1; /*0x6899ae*/
+  if ( v3 >= 0x64 ) /*0x6899b9*/
+    return 0; /*0x6899f3*/
+  v6 = *(this + 40 * v3 + v3 + 9394); /*0x6899c1*/
+  if ( v6 != a3 ) /*0x6899d5*/
+  {
+    *((_BYTE *)this + 40 * v3 + v3 + 9394) = a3; /*0x6899d7*/
+    *((_BYTE *)this + 13482) = 1; /*0x6899d9*/
+    TriggerActionQueue::ProcessAll((void *)v3); /*0x6899e2*/
+  }
+  return v6; /*0x6899a8*/
+}
+}
+} // namespace gamemd
+
+// 0x68F8A0
+namespace gamemd {
+int E4Recv_68F8A0::sub_68F8A0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_68F8A0(int this)
+{
+  int v2; // eax
+  unsigned int v3; // kr04_4
+  _DWORD *v4; // esi
+  int v5; // ebx
+  int v6; // eax
+  int v7; // ecx
+  int *v8; // edi
+  int v9; // eax
+  int v10; // eax
+  int v11; // edx
+  int v12; // eax
+  int result; // eax
+  int v14; // edx
+  _DWORD *v15; // [esp+10h] [ebp-18h] BYREF
+  char Buffer[20]; // [esp+14h] [ebp-14h] BYREF
+
+  v2 = (*(int (__stdcall **)(char *))(*((_DWORD *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36); /*0x68f8b3*/
+  sprintf(Buffer, MEMORY[0x817F6C], v2); /*0x68f8c1*/
+  v3 = strlen(Buffer) + 1; /*0x68f8d1*/
+  v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
+  if ( v4 ) /*0x68f8ef*/
+  {
+    v5 = this->M12; /*0x68f8f8*/
+    v6 = this->M4 + 214; /*0x68f8fd*/
+    v4[1] = 590 - 12 * (v3 - 1) + *(_DWORD *)this; /*0x68f902*/
+    v4[2] = v6; /*0x68f908*/
+    v4[3] = Timer::GetTicks(); /*0x68f910*/
+    v4[5] = 0; /*0x68f915*/
+    v4[10] = v5; /*0x68f91c*/
+    v4[6] = Buffer; /*0x68f91f*/
+    v4[7] = 0; /*0x68f922*/
+    v4[8] = 0; /*0x68f925*/
+    *((_BYTE *)v4 + 36) = 0; /*0x68f928*/
+    *v4 = &vt_ScorePrintClass; /*0x68f92b*/
+  }
+  else
+  {
+    v4 = 0; /*0x68f934*/
+  }
+  v7 = this->M36; /*0x68f936*/
+  v8 = (int *)(this + 28); /*0x68f93c*/
+  if ( this->M44 < v7 /*0x68f95e*/
+    || ((unsigned char)this->M41 || !v7)
+    && (v9 = this->M48, v9 > 0)
+    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*v8 + 8))(this + 28, v7 + v9, 0) )
+  {
+    v10 = this->M44; /*0x68f965*/
+    v11 = this->M32; /*0x68f968*/
+    this->M44 = v10 + 1; /*0x68f96e*/
+    *(_DWORD *)(v11 + 4 * v10) = v4; /*0x68f971*/
+  }
+  v12 = *v8; /*0x68f974*/
+  v15 = v4; /*0x68f97d*/
+  for ( result = (*(int (__thiscall **)(int, _DWORD **))(v12 + 16))(this + 28, &v15); /*0x68f987*/
+        result != -1;
+        result = (*(int (__thiscall **)(int, _DWORD **))(v14 + 16))(this + 28, &v15) )
+  {
+    Screen::TransitionLoop((int *)this, 1); /*0x68f98d*/
+    v14 = *v8; /*0x68f992*/
+    v15 = v4; /*0x68f99b*/
+  }
+  return result; /*0x68f9a7*/
+}
+}
+} // namespace gamemd
+
+// 0x68FB10
+namespace gamemd {
+unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall sub_68FB10(
+        _DWORD *this,
+        _DWORD *a2,
+        int a3,
+        size_t BufferCount,
+        wchar_t *Format,
+        wchar_t *a6,
+        int a7,
+        int a8)
+{
+  wchar_t *v8; // eax
+  _DWORD *v10; // ecx
+  int v11; // esi
+  _DWORD *v12; // ecx
+  int v13; // edi
+  int v14; // eax
+  CampaignScore *v16; // [esp+8h] [ebp-8Ch]
+  wchar_t Buffer[64]; // [esp+14h] [ebp-80h] BYREF
+
+  v8 = Format; /*0x68fb16*/
+  if ( (int)Format >= (int)a6 ) /*0x68fb2b*/
+    v8 = a6; /*0x68fb2d*/
+  swprintf(Buffer, BufferCount, v8, v16); /*0x68fb3d*/
+  v10 = (_DWORD *)*(this + 3); /*0x68fb42*/
+  v11 = a8 - v10[2]; /*0x68fb5d*/
+  (*(void (__thiscall **)(_DWORD *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
+  v12 = (_DWORD *)*(this + 3); /*0x68fb71*/
+  v13 = v12[2]; /*0x68fb7b*/
+  v14 = (*(int (__thiscall **)(_DWORD *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
+  *a2 = a7; /*0x68fb8a*/
+  a2[1] = v11; /*0x68fb8c*/
+  a2[2] = v14; /*0x68fb8f*/
+  a2[3] = v13; /*0x68fb94*/
+  return a2; /*0x68fb97*/
+}
+}
+} // namespace gamemd
+
+// 0x681070
+namespace gamemd {
+int E4Recv_681070::sub_681070()
+{
+{
+    return this->M4;
+}
+}
+} // namespace gamemd
+
+// 0x681180
+namespace gamemd {
+char * E4Recv_681180::sub_681180()
+{
+{
+    return this + 400;
+}
+}
+} // namespace gamemd
+
+// 0x6811B0
+namespace gamemd {
+char * E4Recv_6811B0::sub_6811B0()
+{
+{
+    return this + 660;
+}
+}
+} // namespace gamemd
+
+// 0x6811F0
+namespace gamemd {
+char * E4Recv_6811F0::sub_6811F0()
+{
+{
+    return this + 724;
+}
+}
+} // namespace gamemd
+
+// 0x681220
+namespace gamemd {
+unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
+{
+{
+    *a2 = this->M984;
+    *((int*)(a2) + 1) = this->M988;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x681260
+namespace gamemd {
+unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
+{
+{
+    *a2 = this->M992;
+    *((int*)(a2) + 1) = this->M996;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6812A0
+namespace gamemd {
+unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
+{
+{
+    *a2 = this->M1000;
+    *((int*)(a2) + 1) = this->M1004;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x682570
+namespace gamemd {
+int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
+{
+{
+    int *v3;
+    int v4;
+    int v6[2];
+    short v7[4];
+    int v8;
+    v3 = a3;
+    a3 = 0;
+    *v3 = 0;
+    v4 = (*(int (__stdcall **)(int, void *, int, int **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &a3);
+    if ( v4 >= 0 )
+  {
+    v6[0] = 1;
+    v6[1] = a2;
+    if ( !a3 )
+    WinAPI::Wrapper(-2147467261);
+    v4 = (*(int (__stdcall **)(int *, int, int *, short *))(*a3 + 12))(a3, 1, v6, v7);
+    if ( v4 >= 0 )
+    {
+    if ( v7[0] == 3 )
+    *v3 = v8;
+    if ( a3 )
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    }
+    else if ( a3 )
+    {
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    return v4;
+    }
+  }
+    else if ( a3 )
+  {
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    return v4;
+  }
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x682D30
+namespace gamemd {
+int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
+{
+{
+    int *v3;
+    int v4;
+    int v6;
+    int v7[2];
+    short v8[4];
+    int v9;
+    int v10;
+    v3 = a3;
+    a3 = 0;
+    *v3 = 0;
+    v3[1] = 0;
+    v4 = (*(int (__stdcall **)(int, void *, int, int **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &a3);
+    if ( v4 >= 0 )
+  {
+    v7[0] = 1;
+    v7[1] = a2;
+    if ( !a3 )
+    WinAPI::Wrapper(-2147467261);
+    v4 = (*(int (__stdcall **)(int *, int, int *, short *))(*a3 + 12))(a3, 1, v7, v8);
+    if ( v4 >= 0 )
+    {
+    if ( v8[0] == 64 )
+      {
+    v6 = v10;
+    *v3 = v9;
+    v3[1] = v6;
+      }
+    if ( a3 )
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    }
+    else if ( a3 )
+    {
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    return v4;
+    }
+  }
+    else if ( a3 )
+  {
+    (*(void (__stdcall **)(int *))(*a3 + 8))(a3);
+    return v4;
+  }
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x683070
+namespace gamemd {
+void sub_683070()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_B05460 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x6830A0
+namespace gamemd {
+void sub_6830A0()
+{
+{
+    DataGlobal_B054C0 = DataGlobal_B05460 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x6830C0
+namespace gamemd {
+void sub_6830C0()
+{
+{
+    DataGlobal_B054A8 = 1.0 / DataGlobal_B054C0;
+}
+}
+} // namespace gamemd
+
+// 0x6830E0
+namespace gamemd {
+void sub_6830E0()
+{
+{
+    DataGlobal_B054A0 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x683100
+namespace gamemd {
+void sub_683100()
+{
+{
+    DataGlobal_B05468 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x683120
+namespace gamemd {
+void sub_683120()
+{
+{
+    DataGlobal_B05440 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x683140
+namespace gamemd {
+long long sub_683140()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B05440 - DataGlobal_B05468);
+    result = Math::RoundToInt(v0 * DataGlobal_B05460 * 0.5);
+    DataGlobal_B054C8 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x683180
+namespace gamemd {
+void sub_683180()
+{
+{
+    DataGlobal_B05470 = Math::ArcTan((double)DataGlobal_B054C8 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x6831B0
+namespace gamemd {
+void sub_6831B0()
+{
+{
+    DataGlobal_B05498 = Math::ArcTan((double)(2 * DataGlobal_B054C8) / DataGlobal_B05460);
+}
+}
+} // namespace gamemd
+
+// 0x6831E0
+namespace gamemd {
+long long sub_6831E0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_B054C8) + 0.5);
+    DataGlobal_B054BC = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x683210
+namespace gamemd {
+int sub_683210()
+{
+{
+    DataGlobal_B05458 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x683220
+namespace gamemd {
+int sub_683220()
+{
+{
+    DataGlobal_B05488 = 0;
+    DataGlobal_B0548C = 0;
+    DataGlobal_B05490 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x683240
+namespace gamemd {
+int sub_683240()
+{
+{
+    DataGlobal_B054B8 = 0;
+    DataGlobal_B054B0 = 128;
+    DataGlobal_B054B4 = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x683260
+namespace gamemd {
+int sub_683260()
+{
+{
+    DataGlobal_B05448 = 0;
+    DataGlobal_B0544C = 0;
+    DataGlobal_B05450 = 0;
+    DataGlobal_B05454 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x683280
+namespace gamemd {
+int sub_683280()
+{
+{
+    DataGlobal_B05478 = Timer::GetTicks();
+    DataGlobal_B05480 = 0;
+    return atexit(nullsub_226);
+}
+}
+} // namespace gamemd
+
+// 0x6832B0
+namespace gamemd {
+void nullsub_226()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x6842F0
+namespace gamemd {
+char DisplayMode_Toggle(char a1)
+{
+{
+    char result;
+    if ( a1 )
+  {
+    result = g_CommandLineFlags;
+    if ( g_CreditsScreenBounds != g_CommandLineFlags || g_CreditsScreenConfig != DataGlobal_A8EB88 )
+    {
+    Debug::Log(DataGlobal_83D868, g_CommandLineFlags, DataGlobal_A8EB88);
+    return ChangeVideoMode(g_CommandLineFlags, DataGlobal_A8EB88);
+    }
+  }
+    else
+  {
+    result = g_CreditsScreenBounds;
+    if ( g_CreditsScreenBounds != xRight )
+    {
+    result = yBottom;
+    if ( g_CreditsScreenConfig != yBottom )
+      {
+    Debug::Log(g_Str_Toggle_display_mode_back_to_sh);
+    return ChangeVideoMode(xRight, yBottom);
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x689790
 namespace gamemd {
 char E4Recv_689790::sub_689790(const char * a2, unsigned char * a3)
@@ -2097,39 +2254,6 @@ int E4Recv_689820::sub_689820(const char * a2)
     return -1;
   }
     return v2;
-}
-}
-} // namespace gamemd
-
-// 0x689960
-namespace gamemd {
-char E4Recv_689960::sub_689960(const char * a2, char a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_689960(const char *this, const char *a2, char a3)
-{
-  unsigned int v3; // edi
-  const char *i; // ebp
-  char v6; // bl
-
-  v3 = 0; /*0x689964*/
-  for ( i = this + 9354; strcmp(a2, i); i += 41 ) /*0x689966*/
-  {
-    if ( (int)++v3 >= 100 ) /*0x6899a6*/
-      return 1; /*0x6899a6*/
-  }
-  if ( v3 == -1 ) /*0x6899b4*/
-    return 1; /*0x6899ae*/
-  if ( v3 >= 0x64 ) /*0x6899b9*/
-    return 0; /*0x6899f3*/
-  v6 = *(this + 40 * v3 + v3 + 9394); /*0x6899c1*/
-  if ( v6 != a3 ) /*0x6899d5*/
-  {
-    *((_BYTE *)this + 40 * v3 + v3 + 9394) = a3; /*0x6899d7*/
-    *((_BYTE *)this + 13482) = 1; /*0x6899d9*/
-    TriggerActionQueue::ProcessAll((void *)v3); /*0x6899e2*/
-  }
-  return v6; /*0x6899a8*/
 }
 }
 } // namespace gamemd
@@ -2424,129 +2548,5 @@ int sub_68CD00()
     DataGlobal_B0556C = 128;
     return 128;
 }
-}
-} // namespace gamemd
-
-// 0x68F8A0
-namespace gamemd {
-int E4Recv_68F8A0::sub_68F8A0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_68F8A0(int this)
-{
-  int v2; // eax
-  unsigned int v3; // kr04_4
-  _DWORD *v4; // esi
-  int v5; // ebx
-  int v6; // eax
-  int v7; // ecx
-  int *v8; // edi
-  int v9; // eax
-  int v10; // eax
-  int v11; // edx
-  int v12; // eax
-  int result; // eax
-  int v14; // edx
-  _DWORD *v15; // [esp+10h] [ebp-18h] BYREF
-  char Buffer[20]; // [esp+14h] [ebp-14h] BYREF
-
-  v2 = (*(int (__stdcall **)(char *))(*((_DWORD *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36); /*0x68f8b3*/
-  sprintf(Buffer, MEMORY[0x817F6C], v2); /*0x68f8c1*/
-  v3 = strlen(Buffer) + 1; /*0x68f8d1*/
-  v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
-  if ( v4 ) /*0x68f8ef*/
-  {
-    v5 = this->M12; /*0x68f8f8*/
-    v6 = this->M4 + 214; /*0x68f8fd*/
-    v4[1] = 590 - 12 * (v3 - 1) + *(_DWORD *)this; /*0x68f902*/
-    v4[2] = v6; /*0x68f908*/
-    v4[3] = Timer::GetTicks(); /*0x68f910*/
-    v4[5] = 0; /*0x68f915*/
-    v4[10] = v5; /*0x68f91c*/
-    v4[6] = Buffer; /*0x68f91f*/
-    v4[7] = 0; /*0x68f922*/
-    v4[8] = 0; /*0x68f925*/
-    *((_BYTE *)v4 + 36) = 0; /*0x68f928*/
-    *v4 = &vt_ScorePrintClass; /*0x68f92b*/
-  }
-  else
-  {
-    v4 = 0; /*0x68f934*/
-  }
-  v7 = this->M36; /*0x68f936*/
-  v8 = (int *)(this + 28); /*0x68f93c*/
-  if ( this->M44 < v7 /*0x68f95e*/
-    || ((unsigned char)this->M41 || !v7)
-    && (v9 = this->M48, v9 > 0)
-    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*v8 + 8))(this + 28, v7 + v9, 0) )
-  {
-    v10 = this->M44; /*0x68f965*/
-    v11 = this->M32; /*0x68f968*/
-    this->M44 = v10 + 1; /*0x68f96e*/
-    *(_DWORD *)(v11 + 4 * v10) = v4; /*0x68f971*/
-  }
-  v12 = *v8; /*0x68f974*/
-  v15 = v4; /*0x68f97d*/
-  for ( result = (*(int (__thiscall **)(int, _DWORD **))(v12 + 16))(this + 28, &v15); /*0x68f987*/
-        result != -1;
-        result = (*(int (__thiscall **)(int, _DWORD **))(v14 + 16))(this + 28, &v15) )
-  {
-    Screen::TransitionLoop((int *)this, 1); /*0x68f98d*/
-    v14 = *v8; /*0x68f992*/
-    v15 = v4; /*0x68f99b*/
-  }
-  return result; /*0x68f9a7*/
-}
-}
-} // namespace gamemd
-
-// 0x68FB10
-namespace gamemd {
-unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_68FB10(
-        _DWORD *this,
-        _DWORD *a2,
-        int a3,
-        size_t BufferCount,
-        wchar_t *Format,
-        wchar_t *a6,
-        int a7,
-        int a8)
-{
-  wchar_t *v8; // eax
-  _DWORD *v10; // ecx
-  int v11; // esi
-  _DWORD *v12; // ecx
-  int v13; // edi
-  int v14; // eax
-  CampaignScore *v16; // [esp+8h] [ebp-8Ch]
-  wchar_t Buffer[64]; // [esp+14h] [ebp-80h] BYREF
-
-  v8 = Format; /*0x68fb16*/
-  if ( (int)Format >= (int)a6 ) /*0x68fb2b*/
-    v8 = a6; /*0x68fb2d*/
-  swprintf(Buffer, BufferCount, v8, v16); /*0x68fb3d*/
-  v10 = (_DWORD *)*(this + 3); /*0x68fb42*/
-  v11 = a8 - v10[2]; /*0x68fb5d*/
-  (*(void (__thiscall **)(_DWORD *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
-  v12 = (_DWORD *)*(this + 3); /*0x68fb71*/
-  v13 = v12[2]; /*0x68fb7b*/
-  v14 = (*(int (__thiscall **)(_DWORD *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
-  *a2 = a7; /*0x68fb8a*/
-  a2[1] = v11; /*0x68fb8c*/
-  a2[2] = v14; /*0x68fb8f*/
-  a2[3] = v13; /*0x68fb94*/
-  return a2; /*0x68fb97*/
-}
-}
-} // namespace gamemd
-
-// 0x6832B0
-namespace gamemd {
-void nullsub_226()
-{
-  ;
 }
 } // namespace gamemd

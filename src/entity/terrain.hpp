@@ -20,6 +20,9 @@ class TerrainTypeClass;
 
 class TerrainClass : public ObjectClass
 {
+    int GetCellCoords_Alt(int, ...); // vtable slot +440
+    int GetOrCreateResHandle(int, ...); // vtable slot +264
+    int GetCoordsThunk2(int, ...); // vtable slot +172
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Terrain;
 

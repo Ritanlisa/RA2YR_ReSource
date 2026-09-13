@@ -128,6 +128,7 @@ struct OwnedTiberiumStruct
 
 class HouseClass : public AbstractClass
 {
+    int getMovementSpeed(int, ...); // vtable slot +32
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::House;
 
