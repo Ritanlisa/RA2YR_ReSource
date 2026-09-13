@@ -4,17 +4,22 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-13 G7 会话更新：v4 快照重锚 + 证据大轮 + 舰队波 1 +776）**：
+> **执行状态首查表（2026-09-14 G8 会话更新：证据补全 + 471 桶全量舰队波 +2,026）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
+> | **G8 证据补全** | ✅ **完成（2026-09-14，提交 b18839c2 + 重锚）** | **全局 dry-scan 体系**（.omo/g8_dryscan.py：全部 pending 块 translate() 试生成 + skip 归因聚合）；**vtable 槽位 +65/35 类**（仅主表 col_offset==0 直读 + 函数名须属本类或 class_layouts 祖先链；56 诚实拒绝；2 非法标识符名剔除）；**47 全局**（使用形态类型化：字符串实参→unsigned char[]/标量算术→int/索引→int[4]/字节→char/RTDynamicCast→void*；stru_815F54 成员访问型移除保诚实 skip）；**14 til 语义成员**（InfantryClass Type@1728 等；field_*/__pad_* 按 G7 政策跳过）；槽位头声明同步 65 处（G6 变参先例）；**裁决：RulesClass/SessionClass 等 44 无 vtable 槽位类 = T19 误归属向量族 operator=（slot@12=Clear 形态），保持 skip 防 member_lookup 语义错位假 PASS（A2 owner 考古债）** |
+> | **G8 OO refresh** | ✅ rewritten 6,289 / unmapped 5,468；7,785 已译记录字节级保留（b18839c2） | 同上提交 |
+> | **G8 舰队波 1** | ✅ **completed 8,324 → 10,323（+1,999 全 CFG 验证，提交 65d17fe4 + 重锚）** | **471 桶全量直驱（61 分钟）**：replaced 2,504 / PASS 2,023 / FAIL 481 自动回滚（80.8%）；**g5_fleet 两守卫上线**（gap2 高 FAIL 诊断产物）：param-mismatch（def 签名 vs 伪码参数名错位，#50 族）+ raw-this-residue（区间内无名成员裸 this+N，cpp 侧 0 事件恒 FAIL）——system/gap2 生成浪费 49→7 清零；波后括号 HEAD-delta 0 新增、注解 18 缺失补齐后 10,071/0/0、一致性 69/3 基线 |
+> | **G8 舰队波 2（sigfix）** | ✅ **completed 10,323 → 10,350（+22，提交 f933b53f + 重锚）** | **g8_sigfix.py #50 族机械清偿**：155 成员 def 参数名对齐 v4 伪码（纯改名不动类型）+ 52 Block→this 词边界归一；param-mismatch 268 → 116（余为参数数错配需 hpp 手术）；**事故如实记录**：首版 def 行重写丢尾部 `{`（rstrip('{') 所致）→ 155 行括号失衡 → 逐行补回修复（155/155）+ HEAD-delta 复验 0 新增；**too-long 试验否决**：addr7D max-lines 200 = 5/59 PASS（8.5%），复杂形态（三元/memory-chain/goto-switch CRT）规则生成器天花板实证，维持 defer |
+> | **G8 后续队列** | 🔴 | 剩余 6,541 pending 构成（dry-scan 口径）：too-long 1,988（需语义翻译/分块策略）+ raw-this-residue 1,451（**A1 命名前置**：til field_* 占位触发 ida-naming 门控）+ residual-this-cast 610 + param-mismatch 116（参数数错配，需 hpp 手术）+ vftable-ref 275 + memory-chain 245 + ternary 126 + free-this 75——机械收割面已尽 |
 > | **G7 证据补全** | ✅ **完成（2026-09-13，提交 0103a195 + 重锚）** | **full_export v4 重导出**（19,088 函数；live IDA 已把 stru mega-blob 归一化 MEMORY[绝对地址]，v3 陈旧形态实证 0x87F7E8[539944] vs 0xB0FE64）；**gap2 pending 活码刷新 1,812/1,838**（.omo/g7_gap2_refresh.py；25 截断块诚实保留）；e4 refresh 7,288 已译记录保留 + E1 +857 extern；**171 缺失全局 DataGlobal 批产**（4 个 90,160B mega-blob = EventClass/AnimClass 族 IDA 巨型 struct 模型破案）；**til 语义成员合并 +2,136/68 类**（RulesClass +505/HouseClass +247/AircraftClass +159）；**g5_fleet 五项升级**——DECL_RE 误吃 `break;`→`br eak;`（mangled-keyword 根因，305 解锁）、bare-`*this`→`*(void**)this` 双侧 0 事件（1,367 解锁）、`*(cast*)(this+N)` 字面偏移对齐验证器 T8 语义、MEMORY 全局 vtable 安装词汇、派生类成员回退；generator-ready 2,467→3,805 |
 > | **G7 舰队波 1** | ✅ **completed 7,548 → 8,324（+776 全 CFG 验证，提交 3ff45951 + 重锚）** | 14 桶（addr4E/74/46/73/58/51/66/68 + gap2 六桶 v4 活码首批）；addr 桶 PASS 95-100%、gap2 桶 52-81%（FAIL 自动回滚）；**ida_cache v4 播种 17,270**（首轮 0/106 全灭根因 = IDA MCP 离线 exit 2 非翻译问题；v4=live 渲染，播种后**离线验证能力恢复**）；pending 9,385 → **8,600** |
 > | **G5 证据补全** | ✅ **完成（2026-09-11，提交 0db19f5e + 重锚）** | **10,744 DataGlobal 全局批产**（pending 块引用全扫 + IDA 批查，解锁 #67-71/#57）；**#50 gap2 重生成**（520 Gap2Recv 接收者类 + member_lookup/vtable_offsets 用验证器 leaf 保证偏移一致 + signals._member_by_name 383 类）；#51 两块伪码 live 置换；vtable 槽位 +614/213 类（自有表锚定，AbstractClass 修正 0x7E1F50，回归 119/120）；#62 phantom 8 条补建；**验证器 ns 前缀修复**（单行 namespace+def 类提取）；OO refresh 2,273 保留 |
 > | **G5 舰队波** | ✅ **completed 2,477 → 3,736（+1,259 全 CFG 验证）** | g5_fleet.py 直驱（fleetA 规则泛化）：addr7C **414**/addr40 245/addr77 209/addr72 149/addr4E 96/addr49 46/gap2 ~91（Gap2Recv 机制首批）；PASS 率 addr 桶 97-100%、gap2 59%；生成器加固（三元/memory-chain/断词/残留 cast 跳过 + signals↔extern 同步 1,330）；波后括号零新增/审计基线维持 |
 > | **G4 证据补全轮** | ✅ 完成（2026-09-10，72175ec7） | vtable_offsets +208 类 + 639 vt_ 全局 + CRT 87 全局 + #26 FactoryClass 破案 |
 > | **G3 舰队波 1** | ✅ +1,360（VectorClass 桶） | 直驱范式确立 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **8,600**；completed **8,324**（G7 波 1 后）。续波队列：剩余 gap2 五桶 + addr7C/7D/72/40/VectorClass 长尾 → too-long 1,990（>60 行，max-lines 提升需 verify 风险评估）→ residual-this-cast 主体（核心类真无名区 = A1/B4 考古前置）→ free-this/audit/三元长尾 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **6,541**；completed **10,350**（G8 波 2 后）。续波队列 = A1 成员命名（raw-this-residue 1,451 解锁前置）→ too-long 语义翻译/分块 → param-mismatch 参数数错配 hpp 手术 → vftable-ref/memory-chain 词汇扩展 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -1835,3 +1840,84 @@ gap2 文件混有舰队已译体，不能走 gen_gap2_defs 重生成（会清掉
 5. **free-this 73 / audit / 三元长尾**：逐类小词汇或人工批次。
 6. ~~IDA 回线后建议 `idb_save`~~ ✅ 已回线（09-13 收尾）：本会话只读查询未改
    IDB，无未存变更；播种一致性 11/11 验证通过（见上）。
+
+---
+
+## 执行日志 — 2026-09-14 G8 会话：证据补全 + 471 桶全量舰队波（completed 8,324 → 10,350）
+
+用户指令四段式（G4/G5 同款）：IDA MCP + CSP 结果补全签名/类/全局 → OO 语法
+替换 → 提交重锚 → RA2MCP 舰队翻译。
+
+### 证据补全（提交 b18839c2 + 重锚）
+
+**全局 dry-scan 体系**（`.omo/g8_dryscan.py`）：全部 pending 块（596 文件 8,569
+函数）过 g5_fleet.translate() 试生成，skip 归因聚合到 (class, offset)/(class,
+slot)/addr 三维——证据补全从"猜哪里缺"变为"精确目标清单"。首扫结论：
+GENERATED 3,135 / too-long 1,993 / residual-this-cast 1,527 / 缺成员 435 /
+缺槽位 176 / 缺全局 33。
+
+| 项 | 产出 | 过滤规则（诚实优先） |
+|---|---|---|
+| vtable 槽位 | +65 槽/35 类入 vtable_offsets + 头声明同步 | 仅主表（col_offset==0）vtable 直读；函数名须 `本类::` / 祖先链（class_layouts parent）/ 裸名；56 拒绝（foreign 22/conflict/nofunc）；`CStreamClass '?'`/`WarheadTypeClass 'vt[03]'` 非法标识符 2 项剔除 |
+| 全局 | +47 DataGlobal（33+12+2 级联） | **按 pending 块使用形态类型化**：字符串实参（sscanf/sprintf fmt、GetKeyCount section）→ `unsigned char[]`；标量算术→int；`dword_X[0]` 索引→int[4]；奇地址字节测试→unsigned char；`&MEMORY` RTDynamicCast→void*；`stru_815F54.isInLogic` 成员访问型**移除**（无法声明保诚实 skip） |
+| til 成员 | +14 纯语义（InfantryClass Type@1728/SequenceAnim@1732、HouseTypeClass veteranInfantry@332 等） | `field_*`/`__pad_*` 跳过（ida-naming 门控，G7 政策）；til 无成员的（TActionClass@144 = 最大单项 24 函数）诚实挂账 A1/B4 |
+| **误归属裁决** | 44 无 vtable 槽位类**不回填** | RulesClass/SessionClass/HouseClass 等 slot@12 家族 = T19 caller-context 命名把 DynamicVectorClass<T>::operator= 误归属；member_lookup 这些类低偏移有语义名（RulesClass@8=DetailBufferZoneWidth）——按名解析会产**语义错误但 CFG 通过**的假翻译；保持 skip 记 A2 owner 债 |
+
+### OO 语法替换（同提交）
+
+gen_e4_materialize --phase refresh：rewritten **6,289** / unmapped 5,468
+（分母随已译体退出）；**7,785 已译记录字节级保留**；E2 minimal classes 734。
+验收：括号 0 失衡（9 触碰文件逐块）、注解 10,059/0/0、一致性 69/3 基线。
+
+### 舰队波 1（提交 65d17fe4 + 重锚；+1,999）
+
+**471 桶全量直驱 61 分钟**：replaced 2,504 / verify PASS 2,023（80.8%）/
+FAIL 481 全自动回滚。addr 桶 95-100%，gap2 大桶 12-34%。
+
+**gap2 高 FAIL 两根因（g5_fleet 守卫上线）**：
+1. `param-mismatch`：def 合成签名参数名/参数数 vs v4 伪码错位（`int a1` vs
+   `Block, a2`）→ 未声明标识符；
+2. `raw-this-residue`：区间内无名成员（member() 返回 None 不报错）保持裸
+   `this + N`——IDA 侧 leaf 产 member 事件、cpp 侧无 `this->` token 恒不对称。
+两守卫把浪费型 replace+verify 周期转前置 skip（system/gap2 生成 49→7，
+剩余 7 恰为实跑 PASS 的 7——预测精确）。
+
+### 舰队波 2：sigfix 签名对齐（提交 f933b53f + 重锚；+22）
+
+`.omo/g8_sigfix.py`（#50 族机械清偿）：155 成员 def 参数名对齐 v4 伪码
+（纯改名不动类型，hpp 声明不受影响）+ 52 Block→this 词边界归一（G6b 法）。
+param-mismatch 268 → 116（余为参数数错配，需 hpp 手术，挂 A2）。
+
+**事故与修复（如实记录）**：首版 def 行重写 `sig.rstrip('{')` 丢尾部
+` {` → 155 行块开括号缺失（括号扫描器 HEAD-delta 全数定位）→ 逐行补回
+修复（155/155 一一对应）+ 复验 0 新增；脚本已修正（tail 保 `{`）。
+
+### too-long 试验否决（风险对策落地）
+
+addr7D `--max-lines 200`：**5/59 PASS（8.5%）**——长体被三元（18）/
+memory-chain（14）/goto-switch CRT 状态机主导，规则生成器天花板实证。
+维持 defer：需分块策略/语义翻译/词汇扩展（fleetA CompareFunc 三元算术化
+先例的逐形态推广），不是提参数能解决的。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 8,324 | **10,350**（+2,026 全 CFG 验证：波 1 +1,999 + 波 2 +22 + 校准余差 5） |
+| MCP pending | 8,600 | **6,541** |
+| vtable_offsets | 304 类 | **337 类**（+35 类 65 槽，主表直读） |
+| e4_globals DataGlobal | — | +47（使用形态类型化） |
+| 偏移重写 | 6,300（G7 refresh） | 6,289（本会话 refresh 口径；分母缩小系已译退出） |
+| 一致性 | 69/3 | 69/3（基线维持） |
+| 注解 | 10,059/0/0 | **10,071/0/0** |
+| auto-fill-baseline | f50f37d5 | **f933b53f**（三次重锚：b18839c2 → 65d17fe4 → f933b53f；重锚不清账） |
+
+### 遗留与下一步（G8 后续队列）
+
+1. **A1 成员语义命名 = 最大杠杆**：raw-this-residue 1,451 + 缺成员 434 distinct
+   全部卡成员名（til 有布局但 field_* 占位）；A1 命名轮直接解锁这两池主体。
+2. **too-long 1,988**：语义翻译（LLM 手动批次）或分块策略；词汇扩展收益
+   需逐形态评估（三元算术化先例在 fleetA）。
+3. **param-mismatch 116**：参数数错配需 def+hpp 双手术（e4 hpp 声明同步）。
+4. **vftable-ref 275 / memory-chain 245 / free-this 75**：小词汇扩展或人工。
+5. **44 误归属向量族 + TActionClass@144 等**：A2 owner 考古（T19 命名修正）。
